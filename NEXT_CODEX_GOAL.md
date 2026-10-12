@@ -2,83 +2,94 @@
 
 ## Objective
 
-Complete daily-fixed-basket-held-position-support-attribution-v1: determine
-which of the59 unavailable CLOSE points are actually required to price original
-positive holdings/exits, versus zero/unowned dates. This is a bounded input-
-support diagnostic that advances engine validation, not profitability research.
+Complete daily-held-only-duration-replay-development-v1: run one fresh,
+explicitly frozen developmental comparison of fixed5, carry20, carry20_quarter
+and cash using original holdings' actual required CLOSE prices, preserving
+causal entry decisions, full calendars and self-financing cash. This advances
+engine validation, not dataset qualification or a Paper profitability gate.
 
-Workdir: C:/Users/Public/Documents/thericher-v2.
+Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-127 root: D:/thericher-v2/model-artifacts/research/daily-fixed-basket-held-position-support-attribution-v1.
-126 closure: D:/thericher-v2/model-artifacts/research/daily-fixed-basket-selected-union-intake-abi-recovery-v1/integration-evidence.json
-SHA519d016ca5cded362b4fbef1f56fdb7ec065f5ae83488181360d8809f6ee53a3.
+128 root: D:/thericher-v2/model-artifacts/research/daily-held-only-duration-replay-development-v1.
+127 closure: D:/thericher-v2/model-artifacts/research/daily-fixed-basket-held-position-support-attribution-v1/integration-evidence.json
+SHA5555cc40d0995da2da5606409f1bab7591f0fbe833a76c0b8b855a8de4c00207.
 
 ## Retained Facts
 
-126 native intake/transport passed, run735f9126.../hostdc9ace83...,
-156.728278s/600/all cleanup/source closed. Original18 sealed baskets/59plan;
-retained0/59accepted pages/anchors source_exhausted,0recovered/0conflicts/
-59unresolved/next_due null. Exact point view14472424... at
-D:/market_data/us_equities/kis_paper_private/daily-selected-union-gap-recovery/v1/goal124/bb34b910b11e436e8806499c1a0d96e8/point-view.json.
-Independent R3source2/actual2/Claude limits; CLOSE-only, not Bar/PIT/finality or
-global KIS temporal limit. The acquisition scope ends; no automatic retry.
+127 native diagnostic9ae9fdf3...18.627197s/600/host73b5b50d.../resultb74f2ae5...
+source/child/container closed/no collector; same18seals/180OPENs/390marks.
+All59 exact missing CLOSEs precede first positive ownership under all9cases;
+held/exit requirements0. Original reference10bps q/quarter/cost masks agree.
+Independent2groups/e2fe8f94... and Claude supported-with-limits. This proves
+only narrow required-price attribution, not funded replay/profit/Paper readiness.
 
-Original122/123 scientific outcomes remain technical_failure/input_unavailable,
-cumulative1200 spent,48cells72checks unknown.124/125 failed Data attempts and
-126 new Data allocation remain untouched. No retrospective repair or trial3.
+122/123 full-union outcomes remain technical_failure/input_unavailable with
+48cells72checks unknown and1200 allocated seconds spent.126 exact collection
+scope is exhausted0/59 recovered/next_due null, not global KIS history proof.
+Do not rewrite originals, retry acquisition or relabel seen data as fresh.
 
 ## Required Work
 
-Engine owns pure support-attribution kernel and finite native diagnostic.
-Data reattests exact original512/old800/later71/calendar/order/123 per-block
-basket hashes and exact126 private59 point membership, not new acquisition.
-Execution independently checks original fixed-q/entry-open/exit-clock semantics.
-Temporary Validation checks counts/links without tuning. Parent integrates/Git;
-Infra invoked only to reuse frozen source-native finite CPU transport.
+Engine finishes a small versioned held-only replay and native composition;
+reuse original pure sealer/DTOs/arithmetic/metrics/screens, not the old full-
+union support audit or old run. Data reattests unchanged native intake/windows/
+source hashes; source handoff082f069c.../3checks, no acquisition. Execution
+independently checks ledger parity (source preparationd3c26ae0.../2SYN).
+Temporary Validation receives frozen source then actual aggregates/links;
+Parent owns contract, runtime composition, integration/Git. Infra only reuses
+existing pinned d6 CPU transport and custody APIs. Ready source work is parallel.
 
-Freeze one diagnostic contract before raw reads. Original18 positive baskets,
-all180 entry OPENs, original fixed5 CLOSE(e+4)/carry20 CLOSE(e+19), original
-5/10/20bps cost-sensitive fixed-q sizing/quarter scale and full390 calendar
-marks remain. Reconstruct prior-only seals and verify hashes before quantities;
-q freezes at entry OPEN under original deterministic arithmetic, never after
-seeing missing future prices. No winner, model/weight selection or sample drop.
+Freeze a NEW scientific contract before raw numerical work. SAME family
+broad512-fixed-basket-holding-duration-development-v1, explicit trial3 with
+changed held-only pricing semantics and linked122/123/127 evidence; retain
+prior1200 and record new600/cumulative1800. Not novelty, replication, refund
+or automatic technical rerun. Source-isolated root/new UUID and one allocation.
+Ask Claude for a concise falsification-first challenge before relying on the
+changed support interpretation and scientific reexamination.
 
-For each of the59 exact points, separately count pricing requirements under
-fixed5 and carry20 for every original cost case: positive q before mark/exit,
-zero q, before entry, between/after exits, or outside original mark range.
-Exit CLOSE is required BEFORE sale even when end-of-day inventory0. Positive
-held/exit missing remains unavailable. Zero/unowned exposure must not create
-an interpolated price, fabricated Bar, substitute date or omitted calendar mark.
-Reconcile classified totals to59 exactly; expose cost-mask consistency or its
-contradiction. Counts/source-safe categories only, no quantities/raw values.
+Keep original ordered512/old800/later71/calendar/CSV bytes, prior-only18 basket
+hashes and all180 ranked entry OPEN checks. Same fixed5 CLOSE(e+4), carry20
+CLOSE(e+19), quarter original q/4, cash, costs5/10/20bps per actual BUY/SELL leg.
+Quantity freezes from original initial capital and entry OPEN at reference
+10bps, unchanged across leg-cost bands; no reinvestment or future-data sizing.
+Actual rolling cash initialized once; reject insufficient funding before BUY,
+no borrowing, reset, resized q, invented inventory or substituted order.
 
-Strongest kill: any positive held or sold quantity misclassified as unowned,
-future-missingness-conditioned sizing, wrong seal/point binding or mutation of
-old values. Stop that diagnostic as technical/input unavailable, never convert
-it into support/profit/Paper evidence. This cannot alter original full-union
-contracts, interpret their unknown72checks, or qualify new research/Paper.
+Require finite exact CLOSE for positive holdings BEFORE exit sale or mark.
+Never derive support from final-flat inventory. Zero q contributes algebraic
+zero without consuming or inventing a price; source missingness stays missing.
+Retain all390 calendar marks and cash tails, original48cells72strict predicates,
+complete paired blocks, unchanged naive fixed5/cash controls. Missing positive
+held/exit price or funding failure makes its whole comparison block unavailable,
+not a cash substitute/sample deletion. Reconstruct and verify four basket hashes
+before outcomes. No new horizon, model, threshold, seed or winner rescue.
 
-ONE600s CPU diagnostic incl90s cleanup/publication,2CPU/4GiB, existing pinned
-d6 Python3.12.14/NumPy2.5.1/native source interfaces. Source/input RO,
-network-disabled, no GPU/.env/credentials/provider/account/order/scheduler calls,
-no target labels/payoff/NAV/DD/candidate comparisons/training/registry/weights.
-Source-safe artifacts A; any unavoidable private derived coordinates only M.
-No old rewrite; projected15%D:floor, existing19 owners/shared10%basis/107 intact.
+Strongest kill: wrong prior seal, future-missingness-conditioned entry/q,
+missing positive exit priced as zero, skipped mark, cash reset/borrowing,
+changed valid price, false whole-block completeness or replay parity mismatch.
+Technical/input failure stops this exact study; do not convert into rejection
+or issue another allocation. Completed negative screens reject this revision.
 
-Ask Claude for concise falsification-first scope challenge before relying on
-ownership-mask/availability interpretation; it cannot grant approval or repair
-old outcomes. Seen/current-listing/nonPIT/revised/raw-action/finality limits stay.
+ONE600s CPU2/4GiB including90s publication/cleanup; existing d6 Python3.12.14/
+NumPy2.5.1, RO source/input/networknone, no.env/credential/provider/account/
+order/scheduler/GPU/fit/weight/holdout calls. Source-safe aggregate research
+metrics/hashes/pointers A; market/private coordinates only M. Projected15%D:
+floor, seen/current-listing/nonPIT/revised/raw-action/finality/nominal execution
+and fractional modeled-cost limits stay. Original19 Paper owners/shared10%
+basis/pending107 independent and unchanged; no manual due task or live route.
 
 ## Completion And Continuation
 
-Frozen original source/seal/point contract, native-shaped SYN including exit
-day/q0/future mutation and cost-mask cases, finite actual count-only result,
-exact source/time/closure reader, independent actual evidence/Claude limits.
-Do not infer held-support completeness from a page receipt or unvalidated count.
+Frozen contract/canonical family row, source-native SYN and fully supported
+ledger parity, missing/q0/exit/funding/quarter/cost/390-mark kills, one exact
+native outcome or narrowly classified failure, source/time/cleanup reader,
+independent aggregate/link review and Claude result challenge. Close the
+canonical non-promoting outcome even for a failed allocation; preserve spend.
+Report actual cells/checks and modeled DEV/later results only when complete;
+never call analytical results broker fills or settled net returns.
 
 External-only focused checks reattach unchanged1312-source clean8 authority
 15935pass22skip; Ruff/three sample Compose checks. Tracked runtime changes
-instead require changed-path serial/fresh clean8. Refresh stateboards/HANDOFF/
-RUNBOOK, commit/push, replace with exactly ONE material next objective and
-continue. A compatible mark-only resolver/vintage source is preparation only;
-any follow-on research needs its own fresh contract/lineage/allocation.
+require changed-path serial/fresh clean8. Refresh only necessary stateboards,
+HANDOFF/RUNBOOK, verify/commit/push, replace with exactly ONE material next
+objective and continue. No per-agent goals, report family or new approval gate.

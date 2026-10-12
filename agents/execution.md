@@ -86,9 +86,13 @@ role fix reached Docker; audit1/12.445976s/no collector/point plan, exact host
 and safe tracing passed126: hostdc9ace83.../closure519d016c...156.728278s/
 audit0/native0/all cleanup/source closed.59accepted pages,0recovered/59missing,
 CLOSE-only/PITfinality unknown/not Paper grade. No account/order/custody/PnL
-inspection or19-owner/basis change.127 counts BEFORE EXIT pricing: positive
-sold q requires exit CLOSE even if end inventory0. Unowned/zero is not price
-imputation; original replay/cash/full-union failures remain unchanged.
+inspection or19-owner/basis change.127 closed5555cc40...: same original q
+reference10/quarter/cost mask, all59 before entry/required0,18.627197s/390marks.
+Exit price remains needed BEFORE sale, not final-flat inventory. Independent
+2groups/e2fe8f94...; no economic/Paper claim or original replay/result change.
+128 source parityd3c26ae0.../2SYN recommends positive pre-sale holdings only;
+preserve180ranked OPEN checks, rolling cash/fees/funding failure/full390marks.
+No reset/borrowing/reinvestment or q resizing; new scientific contract needed.
 Quarter-vintage sourcebe19eefe... independently3SYN3da94f0f... tests own-lot
 sell binding/shared cash/no reset/funding failure, not actual profitability.
 Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),

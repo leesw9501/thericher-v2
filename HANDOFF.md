@@ -237,10 +237,20 @@ next_due null. View14472424... is partial/CLOSE-only, not Bar/PIT/finality/
 global KIS reach proof. R3source2a4aa9fb4.../actual2f33c2883.../Parent6SYN/
 Claude limits pass. No retry/fit/GPU/science/19-owner changes. Resolver
 a29e212a.../3SYN/release8cc3a85a... is source-only, not actual integration.
-ONE127 daily-fixed-basket-held-position-support-attribution-v1: count whether
-59gaps are needed by old positive q at mark/exit versus zero/unowned dates.
-Preserve full-union failures; positive held/exit unknown stays unavailable.
-No payoff/48cells72screens, imputed price, science trial or Paper gate.
+127 COMPLETE/diagnostic-only5555cc40... at A/research/
+daily-fixed-basket-held-position-support-attribution-v1/integration-evidence.json.
+Native9ae9fdf3...18.627197s/600/host73b5b50d.../resultb74f2ae5...; source,
+child/container closed/no collector. Same18 seals/180OPENs/390marks; exact59
+gaps ALL before first positive entry, held/exit requirements0 across9cases.
+Fixed reference10bps q, cost/quarter masks consistent; no prices imputed,
+48cells72checks/payoffs/fits/GPU/old-outcome rewrite or Paper qualification.
+Engine4/Data2/Execution2/Parent4 SYN, independent2groups/e2fe8f94..., Claude
+contract/result supported-with-limits. Unchanged1312-source15935/22 authority
+reattached; Ruff/three sample Compose pass. Honest-host, not OS/PIT proof.
+ONE128 daily-held-only-duration-replay-development-v1: fresh explicit SAME-
+family trial3 held-only pricing contract before numeric work; prior1200 spent
+stays/cumulative1800, all390marks/cash feasibility/exit-before-sale preserved.
+This does not retroactively complete122/123 or prove a profitable model.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 is source-only, not a campaign
 or numerical-ready/GPU allocation.107/all original19 Paper owners independent.
 

@@ -174,8 +174,16 @@ all cleanup/source closed. View14472424... at
 D:/market_data/us_equities/kis_paper_private/daily-selected-union-gap-recovery/v1/goal124/bb34b910b11e436e8806499c1a0d96e8/point-view.json.
 59accepted pages/anchors source_exhausted,0recovered/0conflicts/59unresolved,
 next_due null. No replay/global KIS limit inference; partial/CLOSE-only/PIT/
-finality unknown.127 counts BEFORE EXIT support, not end inventory, retaining
-held missing/all calendar samples; no imputation, old-outcome repair or Paper.
+finality unknown.127 COMPLETE/diagnostic-only5555cc40... at
+D:/thericher-v2/model-artifacts/research/daily-fixed-basket-held-position-support-attribution-v1/integration-evidence.json.
+Actual9ae9fdf3...18.627197s/600/host73b5b50d.../resultb74f2ae5...;
+all59 before first positive entry/held-exit required0 across9fixed-q cases,
+all390marks/18seals/180OPENs unchanged, cleanup/source closed/no collector.
+Independent2groups/e2fe8f94... and Claude limits; no economic/Paper proof.
+Never rerun127 exclusive parent execute/inspect/finalize creators. ONE128
+daily-held-only-duration-replay-development-v1 explicitly freezes SAMEfamily
+trial3 before numeric work; prior1200 spent stays, no retroactive repair.
+Positive pre-sale CLOSE and funding failure remain unavailable; no imputation.
 DataR2 release5f2014d7.../collector8f272584...5SYN/independent3 closes sanitizer
 P2. Prior18 hashes/59 points, retained-first/120pages/2per anchor/90reserve/
 CLOSE-only/15%D:floor/virtual-market-only limits remain. NEXT alone is execute

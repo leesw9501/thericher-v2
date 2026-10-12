@@ -73,8 +73,12 @@ retained0/59accepted pages/anchors source_exhausted/0recovered/0conflicts/
 59unresolved/next_due null. Run735f9126.../hostdc9ace83...156.728278s/600,
 audit0/native0/all cleanup/source closed. View14472424... partial/CLOSE-only,
 not Bar/PIT/finality/global KIS reach proof. No retry. R3source2/actual2
-f33c2883.../Claude limits pass.127 attributes59 gaps to positive held/exit
-versus zero/unowned dates; no acquisition/imputed price or old-outcome repair.
+f33c2883.../Claude limits pass.127 closed5555cc40...: native18.627197s,
+all59 before first positive entry/held-exit required0 across9fixed-q cases.
+Original input bytes/seals/all390marks retained; no acquisition/imputation,
+PIT/finality/full-future-support or economic qualification. Independent2groups
+e2fe8f94.../Claude limits pass.128 uses unchanged intake/windows/seals, fresh
+held-only contract before numerical work; source handoff082f069c.../3checks.
 CLOSE-only grade, conflict/identity/hash/date/MODP checks,15%D:floor and old
 values stay; no page-floor/nearest-date/Bar imputation or Paper qualification.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone

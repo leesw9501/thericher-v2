@@ -60,8 +60,12 @@ host9e713b01.../closureb8d68ed7..., first cause/recovery unknown.126 R3 accepts
 legacy callback ABI with work-bound clock; NEW600s Data allocation, not any
 reset/refund, holdout/GPU spend or third scientific trial.126 closed519d016c...
 scoped_source_exhausted:156.728278s/600,59accepted pages/0recovered/59missing,
-intake/cleanup pass,0fits.127 support attribution is not third current-family
-profitability trial/48cells72screens/GPU job. Positive missing stays unknown.
+intake/cleanup pass,0fits.127 closed5555cc40...: zero-fit/zero-screen support
+diagnostic18.627197s/600/all59beforeentry/held-exit required0. No registry/GPU
+allocation/refund; prior full-union screens remain unknown.128 must freeze a
+fresh changed held-only-pricing scientific contract and explicitly register
+SAMEfamily trial3 before numeric work; prior1200 remains/cumulative1800.
+One CPU600/2threads4GiB/no fit/GPU/holdout; no automatic retry or novelty claim.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 source-only; no family,
 holdout/evaluation/GPU allocation. GPU usable/free;107/Paper owners independent.
 

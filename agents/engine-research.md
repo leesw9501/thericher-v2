@@ -71,9 +71,15 @@ closed technical preflight961731b0... without a point plan/recovery/fit/metric.
 125 calendar role correction reached Docker but intake failed12.445976s/600,
 host9e713b01.../closureb8d68ed7..., no point plan/recovery/metric.126 R3 intake
 passed;59accepted pages recovered0/59, closure519d016c.../156.728278s, not
-model rejection or global hold.127 zero-fit attribution uses old q at mark/
-exit clocks: positive missing versus zero/unowned, no payoff screens. Full-
-union failures unchanged; held/exit missing unavailable. Resolvera29e212a.../
+model rejection or global hold.127 closed5555cc40.../actual18.627197s:
+all59 missing before first positive entry, held/exit required0 across9cases,
+same18seals/180OPENs/390marks/reference10q. Engine4/Data2/Execution2/Parent4
+SYN/independent2groups/e2fe8f94.../Claude limits; no payoff/screens/GPU.
+Full-union outcomes/spend unchanged.128 source preparation under A/research/
+daily-held-only-duration-replay-development-v1: fresh SAMEfamily trial3 held-
+only consumption, causal q/cash/fees/390marks and original48cells72checks.
+Freeze before numeric work; positive held/exit missing and funding fail remain
+unavailable, no price fabrication/winner/Paper claim. Resolvera29e212a.../
 3SYN/release8cc3a85a... source-only, no qualification/science/GPU allocation.
 Source-only consumption receipt935129da...: existing analytical marks/exits
 may use explicit CLOSE-only resolver with old priors/entry OPENs unchanged;
