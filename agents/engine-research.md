@@ -68,8 +68,13 @@ science9526dde8.../row174d7ce2...,28.623165s/600/0fits. NativeDTO repair works;
 48cells/72checks unavailable, no metrics/rejection/third automatic retry.
 Cumulative1200 allocated seconds retains original122 failure.124 Data attempt
 closed technical preflight961731b0... without a point plan/recovery/fit/metric.
-125 corrects transport calendar role and assigns NEW bounded Data work only,
-not third current-family comparison or a global research/Paper hold.
+125 calendar role correction reached Docker but intake failed12.445976s/600,
+host9e713b01.../closureb8d68ed7..., no point plan/recovery/metric.126 R3 callback
+ABI repair is NEW Data work, not third comparison or a global research hold.
+Source-only consumption receipt935129da...: existing analytical marks/exits
+may use explicit CLOSE-only resolver with old priors/entry OPENs unchanged;
+conflicting duplicates/valid-original replacement unavailable. Not wired or
+data-qualified; no raw reads, fit, replay, campaign or GPU assignment.
 124 prior-seal helper26495427.../3SYN plus independent3groups; exact18-basket
 hashes must match before private59 plan. Quarter-vintage sourcebe19eefe.../
 release84a56c24... has4SYN and Execution3 independent groups3da94f0f.... Four

@@ -80,9 +80,11 @@ Actual/source/child/container closure honest-host, not raw-PnL/OS proof.
 or recovered values. Independent saved-return2groups do not prove OS custody.
 CollectorR1 P2 unhashable exception finding5328e6e6... fixed by DataR2 exact
 str guard8f272584...; independent3groups3f72a46b... pass, old finding preserved.
-No account/order/live inspection/calls or19-owner/basis changes.125 reuses the
-same virtual-market-only source and point-grade checks; calendar ref fix changes
-no replay or broker semantics. CLOSE-only is not fabricated Bar/Paper grade.
+No account/order/live inspection/calls or19-owner/basis changes.125 calendar
+role fix reached Docker; audit1/12.445976s/no collector/point plan, exact host
+9e713b01.../closureb8d68ed7..., actual cause/recovery unknown.126 R3 Data ABI
+and safe class/hash/line failure tracing leave collector/broker/replay unchanged;
+work clock is not extended by legacy publication flag. CLOSE-only not Bar/Paper.
 Quarter-vintage sourcebe19eefe... independently3SYN3da94f0f... tests own-lot
 sell binding/shared cash/no reset/funding failure, not actual profitability.
 Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),

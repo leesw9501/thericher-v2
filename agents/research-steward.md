@@ -55,7 +55,10 @@ science9526dde8.../row174d7ce2... allocated600s used28.623165s/0fits, original
 Source/child/container closed, no weights/holdout/GPU.124 distinct Data600s
 attempt closed technical preflight961731b0...: no point plan/immutable host
 receipt/fit, actual elapsed and recovery unknown. Original attempt stays spent;
-125 NEW finite Data600s allocation is not a reset/refund or third science trial.
+125 NEW Data600s used12.445976s, Docker intake failed/no collector or point plan;
+host9e713b01.../closureb8d68ed7..., first cause/recovery unknown.126 R3 accepts
+legacy callback ABI with work-bound clock; NEW600s Data allocation, not any
+reset/refund, holdout/GPU spend or third scientific trial.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 source-only; no family,
 holdout/evaluation/GPU allocation. GPU usable/free;107/Paper owners independent.
 

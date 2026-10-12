@@ -159,8 +159,16 @@ actual elapsed/source stability unknown. Independent2groups471a8c3e... and
 separate saved-return reader distinguish this from host evidence. Never rerun
 parent/run.py --execute or inspect with its host-receipt assumption.
 Source contradiction at host_runtime.py189: calendar JSON inherited source role.
-125 owns a NEW600s Data attempt with control-role ref/original calendar bytes/
-pins, fresh UUID/cursor in the same separate goal124 cache; no clock refund.
+125 CLOSED/technical_failureb8d68ed7... at
+D:/thericher-v2/model-artifacts/research/daily-fixed-basket-selected-union-gap-technical-recovery-v1/integration-evidence.json.
+Exact host9e713b01.../plan3c0f28db.../runbdffff20...:12.445976s/600,
+audit1/intake phase_failed/no collector or point plan/source child container
+closed. Actual first cause/recovery unknown; safe adjacent summary is not
+host-hashed first-cause trace. Never replay125 parent execute/clock.
+126 uses NEW600s Data scope/fresh UUID with R3c45b4020.../offline44522938...,
+legacy publication flag accepted without extending work clock; fault tracing
+category/sourceSHA/line only. Preserve original sources/values/attempts, same
+separate goal124 cache and exact59 point scope, no refund/scientific retry.
 DataR2 release5f2014d7.../collector8f272584...5SYN/independent3 closes sanitizer
 P2. Prior18 hashes/59 points, retained-first/120pages/2per anchor/90reserve/
 CLOSE-only/15%D:floor/virtual-market-only limits remain. NEXT alone is execute

@@ -217,11 +217,23 @@ trace. DataR2 collector8f272584... fixes independently reproduced unhashable
 exception sanitizer; originalR1 finding preserved. Data5/helper3/Infra4/Parent5
 SYN groups and independent point3/Data4/collector3 pass; Claude contract/result
 supported-with-limits. No provider recovery, fit/GPU/science/Paper change.
-ONE125 daily-fixed-basket-selected-union-gap-technical-recovery-v1: preserve
-124 attempt, classify the exact calendar transport ref as control with original
-bytes/hash/source pins, then a new finite Data-only600s attempt. Reuse frozen
-transport/source/cache roots, fresh UUID/cursor only; no clock refund or auto
-third holding-family trial. Unchanged1312-source authority/Ruff/3Compose pass.
+125 CLOSED/technical_failureb8d68ed7... at A/research/
+daily-fixed-basket-selected-union-gap-technical-recovery-v1/integration-evidence.json.
+Calendar role corrected, exact Dockerbdffff20... audit exited1/intake phase_failed;
+host9e713b01.../plan3c0f28db...,12.445976s/600/source/child/container closed.
+No collector attempt or point plan; recovery and actual first cause unknown,
+not scientific rejection. Adjacent safe failure summary is not host-hashed
+first-cause trace. Parent6SYN/source2/actual2a807fdf2... and Claude limits pass.
+Proven source ABI mismatch: native loader check(publication=True) versus
+zero-argument proxy. DataR3 releasec45b4020.../offline44522938.../7SYN accepts
+legacy flag while retaining work deadline; source-safe failure category/SHA/
+line only, never args/locals/private paths. R1/R2 and both Data attempts kept.
+ONE126 daily-fixed-basket-selected-union-intake-abi-recovery-v1: new finite600s
+Data allocation using R3, same59/retained-first scope/fresh UUID, no refund,
+third scientific trial or19-owner change. Source interface935129da... confirms
+CLOSE-only analytical marks can be resolved explicitly without fabricated Bar,
+but no consumer wiring/data qualification was performed. Shared1312-source
+authority/Ruff/3Compose reattached, not another full-suite run.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 is source-only, not a campaign
 or numerical-ready/GPU allocation.107/all original19 Paper owners independent.
 

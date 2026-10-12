@@ -9,17 +9,18 @@ NEXT_CODEX_GOAL.md owns ONE objective. A=D:/thericher-v2/model-artifacts.
 600/0fits,48cells72checks unknown, no rejection. Source/child/container links
 closed; original122 failed600 remains spent, cumulative1200/no third auto run.
 124 CLOSED/technical_failure961731b0..., no point plan/recovery result.
-ONE125: daily-fixed-basket-selected-union-gap-technical-recovery-v1; no approval wait.
+125 CLOSED/technical_failureb8d68ed7..., Docker intake failure/no point plan.
+ONE126: daily-fixed-basket-selected-union-intake-abi-recovery-v1; no approval wait.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |124 integration/source-safe docs close;125 composition repair, sole Git owner. |
+| Git/integration | Parent |124 pushed93dde9d;125 close/126 source binding, sole Git owner. |
 | Verification | Parent |Unchanged1312-source clean8 authority15935pass22skip; same supplementary serial2312s, retained scratch not helper authority. |
-| Data |125 reused frozen source |R2 collector8f272584...5SYN/independent3; exact59 retained-first plan then useful unresolved-only market pages. NEW600s/90 reserve, original124 spent. |
+| Data |126 R3 source handoff |R3c45b4020.../offline44522938...7SYN; legacy callback flag accepted with same work bound, safe failure class/hash/line. NEW600s,124/125 kept. |
 | Engine |124 source handoff complete |Prior-seal helper3SYN/independent3; vintage4SYN/independent3, source only/no new campaign. |
-| Infra |125 source composition |Calendar JSON source-role contradicts .py guard; classify exact control ref, original bytes/hash/source pins untouched. |
-| Execution |125 reused route parity |Fixed sanitizer independently3pass; virtual-market-only/CLOSE point grade, no broker/replay changes. |
-| Validation |124 handoff complete |Data4/point3/saved-return2 independent groups; latter is not host receipt/OS proof. |
+| Infra |125 actual transport |Calendar control fix reached Docker; exact source/child/container closed, no collector; existing frozen transport reused126. |
+| Execution |126 source parity |R3 work-bound callback/safe tracing focused independent; no broker/replay or19-owner changes. |
+| Validation |125 handoff complete |Source2/actual2 a807fdf2...; audit1/12.445976s/no point plan, actual first cause/recovery unknown. |
 | GPU |Steward / free |Usable; no CUDA role in zero-fit holding-duration question. |
 | Paper due |Existing owners |Oct12 22:30KST entry/original exits and recovery/shared basis unchanged. |
 | Accounting due |Existing owner |FirstOct13 05:25KST; actual captures unknown. |
@@ -39,11 +40,12 @@ not a global research/Paper gate or auto-third evaluation. Keep raw coordinates
 private and old bytes intact. Independent source preparation and due owners
 continue; worker retry next_due never becomes foreground sleep.
 
-Observed source-integration contradiction: inherited calendar JSON role=source
-fails transport .py guard before audit; exact saved return has no host receipt.
-Reversible improvement: only calendar ref becomes control, preserving bytes,
-hash and original source pins; focused SYN then positive composed preflight
-before a NEW distinct Data attempt. Original124 identity/600 allocation stays.
-Same frozen source catalog/leaf mounts/shared cleanup clock, no new framework,
-permission gate, scientific trial or blanket source rewrite. Claude contract/
-actual interpretation supported-with-limits; source-safe failure is not recovery.
+Calendar role now corrected; observed125 failure is intake/audit1, no collector
+or point plan. Concrete source ABI contradiction: loader passes publication
+keyword to zero-argument check proxy. Reversible improvement: accept legacy
+flag but retain work-end reserve, plus fault class/pinned sourceSHA/line so a
+failure can be diagnosed without private values/locals. R3 authored7SYN pass;
+NEW126 Data appointment, never replay/refund old two attempts or scientific
+family. Shared transport/catalog/owner scopes unchanged. Independent source-
+only CLOSE mark interface is compatible but not wired/qualified. No GPU role
+in Data repair; readiness, not approval or market wait, determines dispatch.

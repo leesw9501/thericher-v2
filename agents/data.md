@@ -62,9 +62,15 @@ only metadata role while original bytes/pins stay. DataR2 release5f2014d7.../
 collector8f272584.../5SYN, independent3f72a46b...3groups close sanitizer P2;
 originalR1 and reviewer/Parent harness failures retained. Independent Data4/
 point3/saved-return2 groups and Claude supported-with-limits, not raw recovery.
-125 owns the same exact59 retained-first/unresolved-only useful scope, one NEW
-600s Data allocation/120pages/2per anchor/fresh UUID under the original separate
-goal124 repair cache. It does not reset124 or revisit scientific trials.
+125 CLOSED/technical_failureb8d68ed7...; calendar control role passes actual
+transport, Docker audit1/intake phase_failed/12.445976s/600, host9e713b01...,
+source/child/container closed. No collector or point plan; first cause/recovery
+unknown. Legacy publication keyword/proxy ABI mismatch independently source-
+reproducible, not captured first-cause trace. R3 releasec45b4020.../offline
+44522938.../7SYN accepts flag but stays work-bound; safe fault class/SHA/line
+only.126 owns NEW600s exact59 retained-first/unresolved-only work,120pages/2per
+anchor/fresh UUID in original goal124 repair cache. No124/125 reset or science
+retry. Parent6SYN/independent source2+actual2/Claude supported-with-limits.
 CLOSE-only grade, conflict/identity/hash/date/MODP checks,15%D:floor and old
 values stay; no page-floor/nearest-date/Bar imputation or Paper qualification.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
