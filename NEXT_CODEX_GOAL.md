@@ -2,74 +2,73 @@
 
 ## Objective
 
-current-data-shared-budget-paper-loop-v1: make the original shared initial
-virtual-cash approximately10-percent KIS Paper loop consume current completed
-daily input and advance the existing owned baseline/portfolio through repeatable
-native submit, fill and reconciliation. Replace stale-input/one-shot dependence
-with the smallest canonical reusable runtime, not another report platform.
+broad-patch20-cost-aware-development-v1: finish one bounded broad-universe
+Patch20, raw Ridge, patch-summary Ridge and fixed-blend comparison to determine
+whether learned local temporal structure adds useful five-session decision
+evidence. An honest rejected or scoped input-unavailable result is completion,
+not a reason to rerank winners or hold already-authorized private Paper work.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
-Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
+Data D:/market_data; generated artifacts D:/thericher-v2/model-artifacts.
 
-## Parallel Ownership
+## Owned Work
 
-- Data: bind completed-session daily SPY/QQQ/TLT/GLD refresh and archived replay
-  into reusable source, preserving nominal provider dates, real availability,
-  raw/action/finality/non-PIT limitations and same serial cache ownership.
-  Repair measured pre-opener pacing phase in the successor. Existing G107
-  finite capture keeps its original forecast/job/dates/next_due independently.
-- Execution: first use current253 original252-return control, fresh post-SPY-exit
-  book/account/quotes and native portfolio preview/cycle. Then make baseline/
-  portfolio dispatch repeatable through existing owned paths, preserving exact
-  unknown requests and original shared basis. No expired job relaunch, invented
-  sell signal, fresh-per-lane capital or arbitrary inventory adoption.
-- Engine/Steward: normalized GRU/nativeTCN campaign closed/rejected; Chronos2
-  actually produced140 forecasts but economic replay lacks sealed sizing.
-  Continue separately frozen broad-TRAIN Ridge/Huber breadth, sealing full
-  sizing and five-session marks BEFORE evaluation. Current OPEN(e)->CLOSE(e+4),
-  purge/cost/selection lineage stays explicit; no old budget refund, holdout or
-  Paper strategy adoption. Bounded public-source architecture work is parallel.
-- Parent integrates source/runtime contracts and Git. Independent Validation
-  challenges changed native control, availability, repeat/recovery assumptions;
-  no permanent role or new approval gate. UI implementation remains deferred.
+- Engine/Steward: complete the already-assigned frozen actual campaign under
+  D:/thericher-v2/model-artifacts/research/daily5-broad-patch20-development-20261014-v1.
+  Existing d6 CUDA runtime, one GPU lease;6CPU/3CUDA planned,max10attempts,
+  one mechanical retry,1800active owned-worker seconds/2700elapsed seconds.
+  Same512/prior21->20x5, source-native numeric liquidity proxy, chronological
+  FIT-only scalers/target normalization/purge/INNER early stop and checkpoint.
+  No public pretrained weights or claim of exact PatchTST replication.
+- Data: finish bounded repeated historical/reference fidelity probe under
+  D:/thericher-v2/model-artifacts/data/kis-paper-historical-fidelity-probe-20261014-v1.
+  Existing Paper market-data and approved Tiingo SPY/QQQ EOD paths only; no
+  account/order/live endpoints. Prefer retained reference. Preserve exact old
+  bytes/revisions and actual capture availability; do not infer fake data,
+  corporate actions or a provider quota from overlap or a task exit.
+- Execution/Parent: retain SAME canonical daily-spy-session owned14:50UTC
+  opportunity and exact pending identity/original shared initial-cash tenth.
+  New canonical unattended current-window validation remains pending; the prior
+  runtime-installation goal is complete under its literal criterion, not an
+  unattended-success or new-worker fill claim. Do not manually invoke that task
+  or substitute a request. Existing provisional Paper authority is unchanged.
 
-## Starting Evidence
+Parent owns shared contracts/Git. Independent review checks the frozen model
+outputs/replay semantics and exact evidence, not new model selection. Data and
+GPU work continue in parallel; no foreground wait for a market opportunity.
 
-Recovery completed: actual SPY SELL once, exact accepted full fill and owned-flat
-closure19:04:21UTC Oct13. Six ledger owners/15terminal intents/zero unknown or
-pending at that visit; later native portfolio BUY fully filled/targets reconciled
-19:50:27UTC. Current six owners/16terminal intents/zero unknown-pending,three held
-instruments; original basis retained. Fees/settlement/net unobserved.
-D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
-D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
-D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/readback-result.json
-Current Data253 covers throughOct12; control is eligible only its exactOct13
-window. Tomorrow source must refresh, never redate that artifact. Existing
-native unknown-intent recovery is independent of current-input freshness.
-Canonical Docker runtime0d8cf969..., source1330/0201dd... full16190pass22skip.
-Same existing daily-spy-session Action replaced; trigger/principal/settings
-unchanged, quiet pythonw/CREATE_NO_WINDOW. Next Oct14 14:50UTC/23:50KST.
-Manual canonical off-window visit21:28 no_intent,one token12market GET,
-zero account/order/cancel, actor absent; not an unattended current-window result.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
-D:/thericher-v2/model-artifacts/execution/current-daily-portfolio-dispatch-v1/20261013T212828458184Z.json
+## Completion Evidence
 
-## Authority And Completion
+- Actual attempted/completed/failed fits, epochs/optimizer and stopping curves,
+  source/data/checkpoint identities and both time budgets are explicit.
+- Full sizing/actions/row keys/required marks are sealed before outcome
+  summaries. Five-session OPEN(e)->CLOSE(e+4), fixed quantities and costs once
+  at5/10/20bps; zero holdings need no unrelated missing quote, positive holdings
+  with missing marks make only that exact cell unknown. No imputation, outcome
+  censoring, forecast rewrite or post-outcome selection change.
+- Independent readback checks same-key OOF, unit inverse, cost/cashflows,
+  declared kill tests and count/budget/cleanup facts. Preserve unknown cells.
+- Data probe reports only support/stability/reference match counts, exact
+  evidence pointers and limitations. Source-fidelity findings restrict only
+  their named claims, not unrelated exploratory study or provisional Paper.
 
-KIS Paper credentials/account/data/orders/schedules are standing-authorized.
-Never read/route KIS_LIVE_*, enable real money, spend, accept unclear rights or
-expose a public service. Do not print credentials, raw account/order/price/cash
-data; use strict private parsers and categorical/count-only evidence.
-One actor per mutable owner; worker waits do not foreground-stop another lane.
+Seen/current-listing/non-PIT/raw-action/unknown physical units or market fidelity,
+nominal availability/latency/fractional fills/capacity remain explicit. Neither
+GPU use nor positive modeled growth proves real-market profit, independent
+replication, broker net PnL or live readiness. Closed families/debits are never
+refunded or rescued as new independent evidence. UI remains deferred.
 
-Complete with a source-pinned reusable data-to-native execution runtime, an
-actual current-window preview/owned dispatch result (honest no-intent allowed),
-exact pending/terminal recovery evidence and next eligible owned invocation.
-A passing installer/test/exit or missing receipt is not a fill. Do not wait for
-research profitability or provider-PIT qualification before private Paper.
+## Verification And Continuation
 
-Changed tracked runtime/tests require changed-path serial, fresh clean parallel
-authority, Ruff and three .env.example Compose configurations. MD/external-only
-integration may reuse exact unchanged repository authority with fresh external
-checks. Refresh current stateboards/HANDOFF/RUNBOOK, commit/push, choose exactly
-one material next company objective and continue without routine approval.
+Exact unchanged tracked production/tests/scripts/dependencies/Compose may reuse
+source1330/0201dd2489ed... clean8 authority16190pass22skip:
+D:/thericher-v2/model-artifacts/verification/current-daily-paper-loop-20261014-v1/authority.json.
+Run fresh focused/independent checks for external workers and outputs. Changed
+tracked runtime/control requires changed-path serial, clean parallel authority,
+Ruff and default/research/accounting Compose using .env.example.
+
+Refresh current stateboards/HANDOFF/RUNBOOK, verify,commit,push and replace this
+file with exactly one next material objective, then continue. Only actual live
+credential/money, paid/unclear-rights/public/major-runtime or unresolved actual
+account-risk authority requires the operator. KIS Paper/Data/GPU/CPU private
+work remains delegated. Never read/route KIS_LIVE_* or print/persist secrets.

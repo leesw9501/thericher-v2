@@ -10284,3 +10284,30 @@ D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1
 Next product objective is canonical current-data repeated native Paper inside
 original aggregate initial tenth. A rejected seen-development research gate
 does not pause separately authorized Paper; no live, public or paid authority.
+
+## 2026-10-14: Measure New Compute Appointments Separately
+
+The closed broad-TRAIN study charged1108.5052s family elapsed but its four owned
+invocations totaled about63.6s. Chronos likewise has22.4545s actual inference
+inside1533.7956s retained family elapsed. Preserve those old clocks/results;
+do not refund or call their entire elapsed time CPU/GPU utilization.
+
+NEW experiments freeze cumulative active owned-worker time, a separate
+end-to-end ceiling, attempted-fit/evaluation caps and any one technical retry
+before numerical dispatch. Count failed/synthetic/I/O/timeout/cleanup time,
+never reset caps or reopen holdouts. Record authoring/review/queue separately.
+Native solver/optimizer/checkpoint smoke must exercise the real API: SVD Ridge
+n_iter_ is None, not an integer epoch count. Existing dependency/runtime stays.
+Claude conditionally supported with a required end-to-end cap; new Patch20
+dispatch gets1800active seconds/2700elapsed,9planned/max10attempts,one mechanical
+retry without new model/data/seed/split choices. No closed-family rescue claim.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/claude-compute-calibration.json
+
+A proposed five-date post-close observer token exclusion was reversed: the
+actual observer's local session classifier already avoids its bridge/API
+outside US regular sessions. Cadence arithmetic alone did not prove a clash.
+Original Action restored; no Data task or forecast changed, no new scheduler.
+Missing outcomes remain unknown. NAS exit20 actually retained six accepted
+pages/revisions and appendedOct13, with legacy overlap projection deferred;
+it was not a token/quota/connectivity failure.
+D:/thericher-v2/model-artifacts/execution/kis-paper-snapshot-observer-runtime-recovery-v1/finite-data-slots-v1/retirement.json

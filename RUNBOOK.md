@@ -2,7 +2,10 @@
 
 ## Current Dispatch (2026-10-14 KST)
 
-ONE objective current-data-shared-budget-paper-loop-v1. Recovery is closed
+ONE objective broad-patch20-cost-aware-development-v1. Prior canonical Paper
+runtime goal is complete under literal cycle/installation/recovery/next-due
+criteria; new unattended current-window validation remains owned/pending and
+must not be described as a successful new-worker fill. Recovery is closed
 with actual SPY native SELL/full fill/owned-flat at19:04:21UTC Oct13, one
 sell POST; original six-owner shared initial tenth remains, TLT/GLD held.
 Fees/settled cash/net remain not_observed. Never read/route KIS_LIVE_*.
@@ -55,6 +58,14 @@ D:/thericher-v2/model-artifacts/data/current-paper-etf-input-refresh-20261014-v1
 Source_observed/nonPIT/rawMODP0/action-unverified/not_provider_finality persists.
 G107 capture-r3 same five future Actions, first owned21:50UTC; no manual launch.
 D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3/deployment/835d74554a404f1382a4572b3ebbe716/fresh-readback.json
+First natural R3 index1/Oct13 held_close ACTUAL captured13 endpoints. Exact
+launch b653e3dc.../4d133f78... passed existing read_first_capture.py, separate
+link/clock review; originalOct12 incomplete, PIT/finality unobserved.
+D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3/first-owned-reattachment-20261014.json
+NAS21:40 did collect:6acceptedpages/revisions,Oct13 appendedall6/56rows each;
+90overlap changes defer ONLYlegacy consumer. Existing revision-as-of reader
+is available; do not erase old rows/flags or call this a provider quota failure.
+D:/thericher-v2/model-artifacts/data/nas-forward-overlap-recovery-20261014-v1/overlap-evidence.json
 
 Observer restored enabled/Ready/original Actions after exact Data/Paper
 appointments; current image5b22345a..., bridge source6440871d... gate60/wait<=60.
@@ -62,6 +73,11 @@ Actual17:56 UUID/hash-bound completion retained. Guard is state-only atomic
 directory plus legacy OS locks, never stale-TTL reclaim. Data default300
 unchanged; old writers not universally joined. Worker waits do not idle Parent.
 Operational logging disabled: assumed-honest marker/time, not OS-origin proof.
+Five-slot observer wrapper was tested/deployed then RETIRED on source evidence:
+original session classifier already avoids postclose API. Original Action
+60551f0b... restoredReady; no trigger/newtask/Data change. Possible21:48 skip
+is NOT observer evidence. Do not re-install the unnecessary finite wrapper.
+D:/thericher-v2/model-artifacts/execution/kis-paper-snapshot-observer-runtime-recovery-v1/finite-data-slots-v1/retirement.json
 
 ## Current Verification
 

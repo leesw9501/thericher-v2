@@ -133,6 +133,18 @@ chronological inner-validation curves, and convergence/overfit checks. Early
 stopping, LR schedules, regularization and best-checkpoint restoration are
 allowed. Purge overlapping target intervals. Final evaluation/Paper outcomes
 cannot choose epochs/checkpoints. Account for selection-data reuse and trials.
+
+For NEW campaigns, distinguish cumulative active owned-worker wall time from
+end-to-end elapsed time. Freeze both ceilings and attempted-fit/evaluation caps
+before numerical dispatch. Active time includes synthetic checks, failures,
+timeouts, I/O, recovery and cleanup; log orchestration/review/queue time separately
+rather than calling it CPU/GPU spend. A technical retry is allowed only if
+predeclared inside those unchanged caps and uses the same data/seed/split/model;
+no outcome-driven reranking or holdout reopening. Closed clocks/debits remain
+unchanged, never refunded. Exercise the real native solver/optimizer and
+checkpoint/diagnostic API on small synthetic input before market fits, not
+only fake numerical fixtures. These are bounded experiment controls, not human
+approval or a block on another ready lane.
 Safe checkpoints/weights may stay on D: when the new contract permits. A short
 or timed run is not proof of convergence; storage on D: is not a dataset split.
 

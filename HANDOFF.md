@@ -2,7 +2,11 @@
 
 ## Current Work (2026-10-14 KST)
 
-ONE objective: current-data-shared-budget-paper-loop-v1. Recovery objective
+ONE objective: broad-patch20-cost-aware-development-v1. Prior reusable Paper
+runtime goal completed under its literal criterion: actual current-window
+native cycle plus source-pinned reusable installation/recovery/next invocation.
+New canonical unattended current-window result is STILL pending, not a stronger
+retroactive completion gate or a claimed fill. Recovery objective
 approved-paper10-percent-recovery-v1 closed with actual native SPY sell/fill/
 owned-flat reconciliation, not installation or a manufactured model signal.
 Parent owns integration/Git/broker dispatch; Data, Execution and Engine work
@@ -69,7 +73,8 @@ Pythonw bootstrap forces CREATE_NO_WINDOW for every child; rollback retained.
 Next owned opportunity Oct14 14:50UTC /23:50KST. Manual off-window canonical
 run21:28UTC: no_intent/current_input_unavailable,one token/12 market GET,
 zero account GET/trade/cancel; exact actor absent. This is not an unattended
-current-window submit/fill. Company objective remains active for that result.
+current-window submit/fill. That validation remains owned by the existing task
+after the bounded runtime goal; it does not hold company-objective progression.
 D:/thericher-v2/model-artifacts/execution/current-daily-portfolio-dispatch-v1/20261013T212828458184Z.json
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
 Prefer one coherent portfolio dispatch priority,
@@ -83,6 +88,21 @@ D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-prep
 Current ETF collector's pacing mark precedes variable work: measured boundary
 gaps do not prove exact wire-start1.25. Repair future source only; accepted rows
 are not invalidated merely by that measurement limitation.
+G107 FIRST owned R3 outcome actual21:50UTC index1/held_close captured13 endpoints;
+existing exact reader recomputes launch/preflight/capture/raw chain. Original
+Oct12 still incomplete; physicalPIT/provider finality not_observed, no model
+promotion or inferred success from task exit.
+D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3/first-owned-reattachment-20261014.json
+NAS forward21:40 actually accepted6pages/retained6revisions/appendedOct13 for
+all6targets (56rows each); deferred is its legacy predictive projection due
+90numeric historical overlap changes, not failed data collection. Cause unknown.
+Revision-as-of reader6positive/6preavailability-reject checks passed. New provider
+fidelity repeat/reference probe is assigned, not a global research/Paper gate.
+D:/thericher-v2/model-artifacts/data/nas-forward-overlap-recovery-20261014-v1/overlap-evidence.json
+Proposed finite observer postclose slots RETIRED before further use: actual
+observer skips its bridge outside the US session; original Action restored.
+Keep source-corrected retirement, not an unsupported token-clash explanation.
+D:/thericher-v2/model-artifacts/execution/kis-paper-snapshot-observer-runtime-recovery-v1/finite-data-slots-v1/retirement.json
 
 Engine: actual OHLCV expert campaign CLOSED/rejected, cumulative13CPU/3CUDA
 fits,39 epochs260updates, including carried technical-run spend. Learned gate
@@ -106,8 +126,17 @@ broad-TRAIN Ridge/Huber comparison is separately assigned; no old refund.
 D:/thericher-v2/model-artifacts/research/daily5-chronos2-post-checkpoint-endpoint-development-20261014-v1/first-cause.json
 D:/thericher-v2/model-artifacts/research/daily5-chronos2-post-checkpoint-endpoint-development-20261014-v1/integration-evidence-r2.json
 D:/thericher-v2/model-artifacts/research/chronos2-five-session-retained-replay-20261014-v1/receipt.json
-All comparative targets must be aligned and post-checkpoint. 131 remains superseded
+Foundation comparative targets must be aligned and post-checkpoint. 131 remains superseded
 unfinished/source-only;130 rejected/debits and all immutable results retained.
+Broad-TRAIN contrast CLOSED partial technical failure:9CPU attempts/8complete/
+1SVD-Ridge diagnostic TypeError,24,194 TRAIN rows versus1,350Top10,Huber177
+iterations,54cost cells verified/18unavailable. Later MSE improves but no full
+scientific pass; missing OOF1Top10 and whole-union mark support stay explicit.
+Family elapsed1108.5052s is not CPUbusy time; no old debit refunded. New Patch20
+source/kernel ready and actual GPU campaign assigned, not yet reported trained.
+D:/thericher-v2/model-artifacts/research/daily5-broad-train-ridge-huber-development-20261014-v1/integration-evidence.json
+New compute/elapsed ceilings and native solver smoke are in AGENTS/DECISIONS;
+held-only mark requirements avoid irrelevant unheld quote gaps in new replay.
 
 ## Verification And Operations
 

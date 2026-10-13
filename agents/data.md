@@ -20,6 +20,16 @@ D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/
 Native session uses exact pending context before refresh; owned Oct14 14:50UTC
 invocation must collect fresh prior-day input. Units source audit for broad-TRAIN
 research is assigned independently; no threshold/quality approval gate.
+Units audit source-native clos/tvol mapping only, physical units unknown.
+G107 natural21:50 index1held-close13 endpoints captured, exact chain reader
+passed; originalOct12 remains incomplete/PIT/finality unobserved.
+NAS21:40 accepted6pages/retained6revisions/appendedOct13/all6now56rows;90 numeric
+overlaps (close89/volume90/open0) defer legacy projection, not acquisition.
+Existing revision-as-of6reads/6tooearlyrejects passed; revision cause unknown.
+D:/thericher-v2/model-artifacts/data/nas-forward-overlap-recovery-20261014-v1/overlap-evidence.json
+Bounded repeated historical KIS/reference fidelity probe assigned, no account/
+order/live call or global data-quality gate. Unnecessary postclose observer
+slot wrapper retired after actual session-code check; originalAction restored.
 
 ## Exact Evidence Roots
 
