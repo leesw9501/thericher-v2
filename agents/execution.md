@@ -2,11 +2,11 @@
 
 ## Current Projection (2026-10-14 KST)
 
-Parent is closing approved-paper10-percent-recovery-v1 from ACTUAL runtime;
-next company objective current-data-shared-budget-paper-loop-v1 (Parent owns
-Goal/HANDOFF/Git). Execution current write-set: fresh external
-execution/current-paper-owner-control-v1/current253/preview-container-v1.
-After this compression keep this MD quiet until Parent's commit completes.
+Current company direction current-data-shared-budget-paper-loop-v1; recovery
+has ACTUAL linked-fill/closure evidence below. Parent owns Goal/HANDOFF/Git
+and canonical repeatable portfolio wiring. Current sidecar write-set: this MD only.
+Preview-container-v1 source is FROZEN after Parent's actual preview; no edits
+to source/helper/image/old contexts or Parent's canonical-control extraction.
 No sidecar broker call, task/observer mutation, private write or Git operation.
 
 ACTUAL Parent SPY r2 EXIT19:04:21UTC: order_complete/
@@ -16,7 +16,7 @@ exact actor absent. Same original decision06f5e9fe/session, NOT forced signal.
 D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
 Execution sourceba15af4d.../launcher62a0a5... (Parent reported).
 Parent independent offline decision -> intent -> accepted acknowledgement ->
-full exact linked fill -> terminal -> baseline flat VERIFIED: current book
+full exact linked fill -> terminal -> baseline flat VERIFIED: post-exit book
 6owners/15terminal intents/0unknown/0pending;2held instruments TLT/GLD.
 Source/private unchanged, network0. No adoption, reset or basis expansion;
 original shared initial10%, entry costs/losses and custody retained.
@@ -41,17 +41,38 @@ Host adapter48 SYN/Ruff and exact offline source ABI pass; no broker/private
 reads/writes or SPY reevaluation. Original253 baseline protection unchanged.
 D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/runtime-source-validation-r2.json
 
-ACTIVE external bridge: host p.prepare -> stdin private control -> pinned5b
-native preview, strict current binding/_owners/_states; GET-only validated
-transport plus one token/shared gate, full source/private before/after audits.
-No orders/cancel/observe()/Store/lock/private-book writes in preview; private
-volumeRO. Source readiness is NOT connected preview or deployment evidence.
-Parent owns currentportfolio actual, container qualification and dispatch;
-do not compete. Next material action: current exact account/quote preview,
-then Parent's original native cycle if technical facts permit. Refresh current
-custody after baseline closure; freeze same source/control/basis/owner contract
-for any new cycle, retain original pending contract on resume. No oldOct9
-rebind/45e93 receipt dispatch/new allocation. Operator decisions: NONE.
+ACTUAL Parent native preview19:40:04UTC: preview_feasible,1token/14GET/
+0orderPOST/0cancel,15historical intents/0pending/1proposed buy leg;
+source_input_unchanged AND private_bytes_unchangedTrue, exact container absent.
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/preview-container-v1/actual-20261013T194004334762Z.json
+Pinned5b/native source edc28abf...; readerdfe9c970.../launcherd7c5e49d....
+Strict RO scope/_read_unlocked/pure shared budget; private volumeRO, no Store
+locks, reserve/order/cancel/observe()/book writes. Source23 SYN/Ruff and offline
+stdin parity passed before this ACTUAL connected preview. No portfolio fill
+or cycle completion is implied by preview/proposed leg count. Observer Ready.
+
+ACTUAL Parent native cycle COMPLETE19:50:27UTC:2visits, first pending/
+exact_buy_advanced, second complete/no_target_delta;1token/40GET/1BUY/
+0SELL/0cancel. Original basis and cycle initial preserved, owned targets
+matchTrue, baseline_owned_flatTrue, source unchangedTrue, exact actor absent.
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/actual-20261013T195027798126Z.json
+Workeradc0c259... (Parent reported); observer restoredReady. Current portfolio
+runtime works; Parent independently replays exact new buy fill/book NOW.
+Do not invent post-cycle intent/held counts before that replay. Earlier6-owner/
+15-terminal book facts above remain their time-scoped history, not a fresh count.
+Baseline flat owner stays retained history, never adopted into portfolio custody.
+Native completion/target match is not measured fee/settlement/net PnL.
+
+Next Parent action: canonical repeatable current-data/shared-budget portfolio
+wiring, ONE coherent portfolio dispatch priority without competing baseline
+entries. Sidecar has NOT invoked any cycle/broker actor; no source/Git changes.
+Existing advance_kis_paper_portfolio_cycle advances at most one exact leg/call,
+default inert. SAME frozen control/input/session/original basis/owner/binding
+contract retained from fresh post-exit custody; no old-context rebind.
+Native unknown/duplicate/recovery/baseline/aggregate/quote/emergency guards stay;
+retain original pending contract and exact intent on resume, never substitute
+refreshed binding/source or force a target resize. OldOct9 contexts unchanged,
+current21 unselected,45e93 not dispatched. Operator decisions: NONE.
 
 ## Retained History
 

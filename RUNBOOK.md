@@ -6,6 +6,10 @@ ONE objective current-data-shared-budget-paper-loop-v1. Recovery is closed
 with actual SPY native SELL/full fill/owned-flat at19:04:21UTC Oct13, one
 sell POST; original six-owner shared initial tenth remains, TLT/GLD held.
 Fees/settled cash/net remain not_observed. Never read/route KIS_LIVE_*.
+Later portfolio current253 cycle completed19:50:27UTC with one actual BUY/full
+fill/targets reconciled; independent offline exact chain passed. Current book:
+six owners/16terminal intents/zero unknown-pending/three held instruments.
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/readback-result.json
 Parent owns broker/Git, roles own disjoint source packages; do not duplicate
 a current owner, reset an exact request or rerun an expired private intent.
 
@@ -19,6 +23,9 @@ Never infer successful submit from task exit, installer, preview or missing file
 
 Next eligible portfolio: current253 original control/252-return covariance,
 fresh post-exit strict book/account/quotes, native preview then exact cycle.
+That prototype opportunity is now complete and the US session has closed.
+Next dispatch must use new current input or the exact pending recovery path,
+not repeat the expired Oct13 actor. Canonical session wiring is in progress.
 Source adapter is host-only until container ABI/source qualification:
 D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/PORTFOLIO-API.txt
 No oldOct9 relaunch or baseline adoption. Repeatable reusable Data/dispatch

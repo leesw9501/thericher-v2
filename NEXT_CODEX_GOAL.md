@@ -36,9 +36,12 @@ Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 
 Recovery completed: actual SPY SELL once, exact accepted full fill and owned-flat
 closure19:04:21UTC Oct13. Six ledger owners/15terminal intents/zero unknown or
-pending; remaining owned instrumentsTLT/GLD. Fees/settlement/net unobserved.
+pending at that visit; later native portfolio BUY fully filled/targets reconciled
+19:50:27UTC. Current six owners/16terminal intents/zero unknown-pending,three held
+instruments; original basis retained. Fees/settlement/net unobserved.
 D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
 D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/readback-result.json
 Current Data253 covers throughOct12; control is eligible only its exactOct13
 window. Tomorrow source must refresh, never redate that artifact. Existing
 native unknown-intent recovery is independent of current-input freshness.

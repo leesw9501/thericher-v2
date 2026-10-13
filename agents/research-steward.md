@@ -1,100 +1,100 @@
 # Research Steward Stateboard
 
-Current projection 2026-10-14 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md
-owns Paper recovery. Existing custody supports bounded learning/temporal claims.
+Current 2026-10-14 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
+current-data-shared-budget-paper-loop-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
-R=A/research/daily5-ohlcv-convergence-expert-composition-20261014-v1.
+R=A/research/daily5-target-normalization-native-tcn-development-20261014-v1.
+F=A/research/daily5-chronos2-post-checkpoint-endpoint-development-20261014-v1.
+P=A/research/daily5-ohlcv-convergence-expert-composition-20261014-v1.
 R130=A/research/daily20-remaining-reference-exit-development-v1.
 R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
-## Ownership And Existing Custody
+## Ownership And Current Stage
 
-Own exclusive GPU/family/holdout custody, not model choice or approval.
-Engine owns contracts/fits; Strategy supplies proposals; Parent owns integration/
-Git/shared policy. Execution reliability preempts at a safe checkpoint.
-Ledger A/_control/ledger/2026-10.jsonl; GPU lease A/engine-research-agent/locks/gpu.lock.
-Existing campaign_registry/research_campaign_custody unchanged; no new platform.
-History stays roots/Git/RUNBOOK.
-CLOSED/rejected/frozen; worker/allocation stopped. Parent reports readback PASS,no rescue.
+Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
+Parent policy/integration/Git, Execution broker risk and safe preemption.
+Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
+Existing campaign_registry/research_campaign_custody unchanged, no new platform.
+R CLOSED/rejected; F CLOSED/technical_failure; no running worker/GPU allocation.
+Remeasure GPU owners/headroom before allocation; capability is not approval/utilization quota.
 
-## Exact Cumulative Allocation And Closure
+## Conditioning Allocation Closure
 
-Family daily5-ohlcv-convergence-expert-composition-development-v1,holdout none.
-R/contract-finish.json SHA256 9e1605097cea9921489e56d03d41111033acfc59833481b3debf874385d7dae0.
-R/integration-evidence-finish.json SHA256 76e5642db119257ac6288b2a54e1016a5a555ae941ca1aa25d99d7d49a864cae.
-R/canonical-outcome-finish.json outcome3501b839.../non_promoting_completed.
-Cumulative CPU13/CUDA3 =16 market fits INCLUDES carried CPU4/CUDA1 =5;
-Finish added CPU9/CUDA2 =11,26epochs208updates; total39epochs260updates/0failedfits,not21fits.
-R1 intake keyword failure spent0fits; R2 NumPy scalar publication failure spent
-4CPU1CUDA/13epochs52updates. Both retained,no scientific rejection/debit refund.
-SYN scalar reproducer precedes correction; OOF1 NPZ52239cee... restored WITHOUT
-refit, original curve stays missing.
-Host.started_at inherits FAMILY clock2026-10-13T16:54:24.587709UTC,
-not actual finisher start;1143.0095s is cumulative,not new invocation duration.
-Finisher source frozen17:08:26.732289UTC; exact invocation start not recorded.
-Canonical registration1460.30481s/original1800s,no reset.
-16-fit allocation exhausted; remaining time does not authorize more fits.
-Technical trials stay linked in existing custody; historical spend unchanged.
-Pinned runtime d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039:
-RTX4090/Torch2.7.0+cu128; measured before finish24564MiB total/2292 used/
-21847 free/9% utilization,D:40% free. Capability is not approval/utilization KPI.
-Actual CUDA peak125054976 allocated/161480704 reserved bytes; fraction cap0.32.
-R/study-finish-host.json attests worker0,unchanged source,child reaped,
-exact container absent,canonical GPU lease released and cleanup complete.
-Remeasure ownership/headroom before future allocation; closed receipts are not
-current-owner probes. No forced-kill injection is claimed.
+Family daily5-train-normalized-gru-native-tcn-development-v1.
+R/contract.json c5f6983f049be4cba83a7122608d0db607bd89c9467c905da43edee1fb0fb061.
+R/custody.json row7bf794a0...;integratione9af04d93eef11c79dfe3dcc015e3ea22ff5ec868b7d38073a28283178ba9615;
+outcomea3aa0fd4.../non_promoting_completed/rejected.
+CPU3/CUDA6=9fits,179epochs1121updates,0failed,max18fits/shared1800s.
+GPU228.3524s/family339.6430s through cleanup/375.8242s publication, no reset/refund.
+Actual peak139890688 allocated/230686720 reserved bytes, fraction cap.32.
+d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
+Torch2.7.0+cu128/RTX4090; before run21860MiB free,D40.04% free.
+R/gpu-host.json source unchanged/worker0/child reaped/container absent/lease released.
+Same OPEN(e)->CLOSE(e+4),FIT-only target normalization/raw Ridge/GRU32/causal TCN,
+prior21/raw20x5/latest scalar20;10bps=.1pp/side,inverse pp/100 net orpp*100bps,cost once.
+Official TCN2f8c2b817... independently retrieved/sourcef93c67de.../MIT7b9a89cb....
+Prior21 latest scalar RSI14 only; full20-step RSI14 needs prior35, no zero warmup.
+Fit/inner49/16,79/20,107/27 dates; OOF34+34/680keys,strict target purge.
+GRU43/43/26epochs selected31/31/14;TCN31/17/19 selected19/5/7,allpatience12;
+>0.1% significant selection,not global minimum.179actual curves retained/live gradients.
+All6 OOF MSE checks failed,total4true8false/rejected;66complete5/10/20bps cells.
+R/readback_check.py/frozen manifest5aaa7da1... PASS;16SYN/forced-timeout cleanup PASS.
+Claude pre/result supported-with-limits; Parent independently reports readback PASS.
+P immutable CPU13/CUDA3=16 INCLUDES carried4CPU1CUDA=5,finish added9CPU2CUDA;
+39epochs260updates,original1800s,contract9e160509.../integration76e5642d.../result7052ea0a....
+Its safe checkpoints are inference references, not refits or refunded old debit.
 
-## Frozen Scientific Facts And Readback
+## Cached Foundation Allocation And Failed Closure
 
-Raw/indicator/augmented Ridge + tree/GRU,two rules,fixed blend,OOF utility gate;
-prior21 latest scalar Cutler RSI14 only,raw20-step sequence. Full20-step RSI14
-requires declared prior35/per-step causal support; never zero-impute warmup.
-Date-group fit/inner counts49/16,79/20,107/27; OOF34+34dates/680unique rows.
-Target-end strictly precedes inner/OOF decisions; final TRAIN target695<DEV719.
-Compatible fifth-CLOSE/entry-OPEN payoff,costs5/10/20bps,78 complete cells;
-cash/raw/singles/fixed blend/matched-planned-gross controls,no member-profit gate.
-At10bps gate/blend growth DEV1.7921%/0.7471%,later_seen0.4071%/0.2239%;
-DD0.4684%/0.2941% and0.1877%/0.1191%. Four utility checks pass/two DD fail:
-frozen strongest kill rejects this gate recipe,not all model families.
-OOF2/final13epochs each,inner_patience12;epoch1 selected by >0.1% improvement,
-not global minimum (final epoch3 inner1009.2900 < epoch1 1009.4370).
-26 retained curve points. OOF1 curve missing,selected MSE recomputed and
-epoch1 inferred,never a recovered learning curve or convergence claim.
-Safe numeric D: checkpoints, sealed access0/broker_input false. R/readback_check.py
-synthetic_check()/verify(root) passed chronology/purge,
-keys/spend/fee/utility/hash checks; no worker import/fit/GPU/market-source/broker read.
-R/model-stage-frozen.json SHA256 6af55bb4efd997ce98f0c058bfd37442b259b08fdcf77f0f5cb2977cf1572148.
-Finish19SYN passed; R/review-result/claude-dual-result-outcome.json supported-with-limits.
-Author/Parent readback is not raw-price/OS/PIT replication. Seen/current-listing/
-nonPIT/action/finality/latency/capacity/six correlated cohort limits persist;
-no independent-performance promotion/Paper adoption.
+Family daily5-chronos2-post-checkpoint-endpoint-development-v1.
+F/contract-r2.json cf8fc191a9741f1bef689dfc7edd5c9164352fa823b4c2c6f36ece059a56e8e9.
+F/integration-evidence-r2.json 9f2e77e92ee4bfe4d91b0c351bae5f7f6a1524672bae3a51f3f4efe8524bb3dc;
+outcome04fc7838.../non_promoting_failed,scientific_verdict unknown.
+Actual support45cohorts450rows,TRAIN30/300,DEV14/140 after1purge.
+ALL TRAIN/DEV target starts after95a9710... release2025-10-30T14:58:57UTC.
+No old pre-release OOF/predictions as controls; no OOF/calibration/gate in this package.
+Fresh Ridge CPU1fit, zero CUDA training fits/epochs/weight updates;
+actual140cached-model forecasts/1APIcall,not GPU-load-only or dummy training.
+Direct safe loaderbef39813.../weightddcda3c7... hashed AFTER frozen custody/allocation;
+no Hub/remote code/pickle.
+d6 runtime2.2.2,grouped OPEN/CLOSE2channels/20steps/q.5/h5;OPEN[0],CLOSE[4].
+Natural price inverse/costs once, marginal-median ratio not expected return.
+First dispatch OCI parent-cache mount collision proved on pinned no-GPU dummy
+reproducer; worker never started,0fits/forecasts. Original failure remains.
+Dedicated /foundation-model namespace correction passed SYN,pre-reviewed with
+Claude supported-with-limits; exactly1correction consumed, same1800s family clock.
+R2 actual invocation22.4545s; family1533.7956s through publication,includes support/
+original failure/recovery, no refund/reset. Unused fit/time does not grant third dispatch.
+R2 replay failed overlapping_or_reordered_baskets: immutable helper requires20-session
+basket spacing and20-session marks,not frozen5-session stride. No economic replay/
+profitability claim, no inferred zero PnL or scientific rejection from technical failure.
+F/readback_check.py/author-readback.json PASS keys/postdate/purge/units/140outputs;
+prediction2/6checks pass: Chronos beats Ridge but not naive-pair/TRAIN-mean in both blocks.
+Children/containers absent,sources unchanged,leases released; predictions/actions/
+CPUcheckpoint safe numeric NPZ D:, no model-cache writes.
+Seen/current-listing/nonPIT/raw-action/nonTR/finality/latency/capacity and unknown
+pretraining corpus/instrument/context overlap remain; no holdout/independent/Paper pass.
 
-## Ready Source And Preserved Historical Work
+## One Future Source Queue
+Top10-conditioned Ridge vs all-causally-eligible TRAIN Ridge/Huber; same features/
+date weighting/purge,original Top10 vs model-universe Top10,matched costs/exposure.
+Propose complete prior21 positive prices/nonnegative volume,CLOSE>=USD1/prior20
+median dollar-volume>=USD1m ONLY after currency/volume units checked. No future
+price/liquidity/outcome-informed universe filter or individual-profitable-member gate.
+Keep finite raw targets,TRAIN-standardized pp/Huber1.35; action/tail flags are not
+adjustments or EVAL censoring. Missing EVAL/marks means paired unknown.
+Require executable five-session replay geometry before fits; one proposed9CPU-fit
+family,not allocated/executed. No extra GPU campaign, journal or approval platform.
 
-Strategy source A/strategy-research/next-breadth-20261014-v1/handoff.json SHA256 7c9eb632a3183b191fc1f426596eadcd2d3741b15c1fbbf042bf2c09326b8d2e.
-TCN2f8c2b817.../Chronos295a9710... runtime2.2.2: SOURCE PROPOSAL,not allocation.
-Prefer CURRENT OPEN(e)->CLOSE(e+4) payoff/rows/costs: TRAIN-only target normalization,
-TCN + normalized GRU/raw Ridge contrast before LR/duration axes. Current y*100 is
-uncentered percentage points (pp),not bps. Inverse head -> pp;decimal=pp/100,bps=pp*100.
-Test10bps=0.1pp/side,costs once; freeze constant-loss/output-dispersion/gradient checks,
-relative inner patience/chronological purge/finite shared budget; no old debit rewrite.
-WITH foundation member, EVERY compared TRAIN/calibration/OOF/DEV target must follow
-2025-10-30T14:58:57UTC; common postdates, no pre-release old800 OOF composition.
-Current payoff needs joint OPEN/CLOSE h5 (OPEN1,CLOSE5),verified official API/alignment;
-unsupported/unverified means isolated runtime or rejection,not CLOSE proxy/cash features.
-OPEN1->OPEN6 would be a distinct target frozen across ALL new models/replay; no old
-percentage-target checkpoint/prediction comparative controls. Corpus/instruments
-not_disclosed/context overlap remain; no OOD/independent/Paper claims.
-Source9fits/20steps is not a global cap; remeasure headroom. No next fit dispatched.
+## Preserved Historical Custody
 
 130 CLOSED/rejected,integration de64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d;
 CPU1/CUDA1,16epochs1568updates,78.42165s/original600s,0failedfits;
-132complete TRAIN/25080rows/674dates,30cells/36checks27true9false0unknown,
-both rejected; sealed spend0/no weights. Exact outcomes/debits unchanged.
-131 SUPERSEDED UNFINISHED/SOURCE-READY/QUEUED,no scientific row/actual fit/
-allocation/lease/weights. R131/engine-r1/source-release.json SHA256 102f2685feb889c6c77a8c02f001b778011725192347765e254c686ad95015a5.
-Model7fd85816.../interfaceed8364f4.../reuseee1fe908.../validation831c0f20...;
-16 NumPy/mock SYN only; never replay source creators or erase queued work.
-Old settings protect their trials, not fresh convergence/features/ensembles.
-Paper retains shared initial10%basis/losses/reservations; no broker/Data/Execution
-implementation/shared policy/Git changes here.
+132completeTRAIN25080rows674dates,30cells36checks27true9false0unknown,both rejected;
+sealed spend0/no weights.131 SUPERSEDED UNFINISHED/SOURCE-READY/QUEUED,no scientific
+row/actual fits/allocation/lease/weights. R131/engine-r1/source-release.json
+102f2685feb889c6c77a8c02f001b778011725192347765e254c686ad95015a5;
+model7fd85816.../interfaceed8364f4.../reuseee1fe908.../validation831c0f20...,
+16 NumPy/mock SYN only; never replay source creators or erase unfinished work.
+Old settings are trial-local; history stays Git/roots/RUNBOOK. Paper retains shared
+initial10%basis/losses/reservations, no broker/shared implementation/Git changes.

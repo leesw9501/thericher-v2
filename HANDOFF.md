@@ -48,13 +48,25 @@ development findings do not automatically choose the Paper strategy.
   baselineSPY flat,two retained held instruments(TLT/GLD),original tenth intact.
   D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
   Fees, settled cash and broker net PnL remain not_observed.
+- Portfolio actual19:49:30..19:50:27UTC: same frozen current253 control and
+  original shared book, one token/40 GET/one BUY/zero sell or cancel. First
+  visit advanced the exact leg; second complete/no_target_delta after fresh
+  reconciliation. Own container absent, original basis/initial preserved.
+  D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/actual-20261013T195027798126Z.json
+  SHAebf6f0255d3b0423fe37c3d24ca8fc00afcd5004c9e679c01b8dffa4b634dddf.
+  Independent network-none strict contract/stage/intent/accepted full fill/
+  terminal/target-chain replay passed: six owners,16 terminal intents,
+  zero unknown/pending,three held instruments,baseline owner still flat.
+  D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/readback-result.json
+  Both actual orders today reconciled; no settled-fee/net-profit claim.
 
 ## Ready Work And Limits
 
-Execution: qualify current253/252-return original portfolio control with fresh
-exact post-exit custody/account/quotes, then native cycle; no replay of expired
-Oct9 job or baseline adoption. Current21 is unselected. Canonical reusable
-data refresh/dispatch must replace reliance on one-shot hand-edited sources.
+Execution: current253/252-return preview/native cycle ACTUAL COMPLETE; reusable
+refresh/dispatch remains to wire. Prototype success alone does not close the
+repeatable-loop objective. Prefer one coherent portfolio dispatch priority,
+not competing baseline entries. Retain baseline history/exact recovery/basis;
+no oldOct9 replay, inventory adoption or current21 recipe selection.
 
 Data: capture-r3 deployed at17:14UTC to same five future G107 Actions, immutable
 gate-only successor. First owned next_due21:50UTC/Oct14 06:50KST remains;
@@ -70,9 +82,16 @@ failed the frozen drawdown-vs-blend test despite positive modeled growth;
 not a broker-profit or all-model-futility claim. GRU early stop13/patience12,
 selectedepoch1 under relative-min-delta; original OOF1 curve missing.
 D:/thericher-v2/model-artifacts/research/daily5-ohlcv-convergence-expert-composition-20261014-v1/integration-evidence-finish.json
-Ready informed normalized-target GRU/TCN/Ridge comparison is separate seen-data
-development. Foundation benchmarks require aligned targets/post-checkpoint
-scope; never silently reuse old OOF or relabel a holdout. 131 remains superseded
+Normalized-target GRU/TCN/Ridge comparison also CLOSED/rejected: threeCPU/sixCUDA,
+179epochs1121updates, family375.8242s. All live-gradient curves retained;4true/
+8false OOF/economic checks. Parent independent units/purge680keys/checkpoint/
+cost/spend readback passed. Seen development, not all-model futility or Paper.
+D:/thericher-v2/model-artifacts/research/daily5-target-normalization-native-tcn-development-20261014-v1/integration-evidence.json
+Chronos2 post-checkpoint preparation has an OCI mount technical failure before
+worker start,0fits/0forecasts; do not claim foundation use. Exact single mount
+correction may be prepared with old spend retained, no outcome-rescue reset:
+D:/thericher-v2/model-artifacts/research/daily5-chronos2-post-checkpoint-endpoint-development-20261014-v1/first-cause.json
+All comparative targets must be aligned and post-checkpoint. 131 remains superseded
 unfinished/source-only;130 rejected/debits and all immutable results retained.
 
 ## Verification And Operations
@@ -97,6 +116,16 @@ Prior245-task/41-project audit,9 quiet Actions/one exhausted D1 disabled and
 rollback retained. Two direct Docker/uv exclusions unchanged. No OS/third-party
 task edits, new public service, paid commitment or live authority.
 Use uv --no-env-file and Compose --env-file .env.example for verification.
+
+New canonical Data/pure-control source is focused-verified, NOT covered by the
+ba204033 full authority above. Combined117 focused pass (Data/CLI92, original
+arithmetic19, current-input adapter6); Data155 native compatibility retained.
+Docker network-none mounted/unmounted standard-path and two-key stdin checks:
+D:/thericher-v2/model-artifacts/data/current-paper-etf-input-refresh-20261014-v1/canonical-design/package-verification-v2.json
+Exact arithmetic parity includes four synthetic sets and actual retained253:
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/parity-result.json
+Fresh full authority and canonical session/context/source wiring precede new
+runtime deployment. A focused source-package commit is not company closure.
 
 Everything below is retained version-bound history, NOT current dispatch or a
 company-wide restriction. NEXT_CODEX_GOAL.md and AGENTS.md own current scope.
