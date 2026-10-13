@@ -3,43 +3,109 @@
 Current projection 2026-10-14 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
 Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 
-## Current Package
+## Current Ownership
 
-Owner Data: prospective capture source isolation and durable pre-client failure.
-Exact original R1/forecast/job/date cursor remain immutable. The current source
-reconstructs source_changed before client/receipt: 5/468 pins differ; original
-runtime exception unobserved because invocation receipts are absent.
-D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/g107-offline-diagnosis-1791899634083/diagnosis.json
-Four offline reproduction groups and twelve original SYN cases pass.
-R2 RELEASED and applied to the same five future task Actions.35 pinned files/
-26 native module origins isolated from mutable checkout. Parent31 SYN and
-26-origin/no-client validation pass; author and Parent six mocked deploy tests
-pass. No hash/type checks removed and no actual provider/task launch.
-Source release9feb1311.../bundle59f501d8... at capture-r2/source-release.json.
-Exact Action-only readback (principal/triggers/settings unchanged; private
-rollback retained):
-D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r2/deployment/57471a799a67422c99a135e1631c72c6/fresh-readback.json
-SHA98748a6b904a676b62957c13c76e6a24ab82e044ed21e20ac0f7bc99dcf15b3f.
+Data owns market data/availability; Execution owns accounts/orders. No new Data
+API/task work now. Parent reports SPY r2 EXIT closed19:04:21UTC:1sell/23GET/1token,
+baselineflat confirmed and observer restored; not independently reattached here.
+Next owned G107 due Oct13 21:50UTC (Oct14 06:50KST); waits stay worker-owned.
+Input expiry never blocks persisted original-contract unknown-intent recovery.
 
-Next owned run Oct14 06:50KST (Oct13 21:50UTC), then original remaining dates.
-Scheduled-principal execution is not yet observed. Infra owns only quiet
-interpreter/launch changes after this rebind; do not race Actions.
-Original Oct12 date remains incomplete. Accepted/failure page counts and ETA
-are unknown until actual capture; missing receipt is not zero accepted work.
+## Exact Evidence Roots
 
-## Durable Knowledge And Recovery
+ETF = D:/thericher-v2/model-artifacts/data/current-paper-etf-input-refresh-20261014-v1
+ETF_RUN = ETF/runs/786a7b63f8c34672b27dbb4ac92f6df2
+RAW = D:/market_data/us_equities/kis_paper_private/current-paper-etf-input-v1
+G107 = D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1
+R3 = G107/capture-r3
+DEPLOY = R3/deployment/835d74554a404f1382a4572b3ebbe716
+Roots plus exact relative names below resolve immutable evidence; no latest selection.
 
-Data owns market endpoints; Execution owns account/order endpoints. One client/
-token per eligible collector; guard spaces fresh token POST only. Limits are
-consumer-local, not permissions. Local retained data may support honest
-development despite non-PIT/current-listing/raw-action/finality limitations.
-No fabricated missing values or source blending.
+## Actual Paper Input
 
-131 reuse source ee1fe908... remains source-ready, superseded unfinished, no
-labels/collection/allocation. 130 target f4281218.../intake1534... geometry is
-preserved; its actual result rejected, not a data-quality promotion.
-Existing ab65 refresh and107 finite capture ownership remain separate from
-Paper. No wholesale collector restart or forecast/cursor overwrite.
+Oct13 17:45:00.231738..17:45:16.434015UTC:1token POST/12daily GET/16.2023s,
+0account/order/live. SPY/AMS,QQQ/NAS,TLT/NAS,GLD/AMS each253 completed sessions
+2025-10-09..2026-10-12; currentUSOct13 excluded.3pages/name,2identical overlaps/
+name deduplicated,45outside-window rows/name excluded; no missing imputation.
+SPY baseline2 first available17:45:02.678357UTC, raw FI02.638189UTC; never
+consumer-now or backdated. Snapshot publication clocks for every ETF are in
+ETF_RUN/outcome.json (5dc5d35e...); exact manifest/raw SHA refs, raw bytes only RAW.
+Original ETF/worker.py (d07b4f65...), ETF/recipe.json (5ccc2ee6...),
+ETF/DataMeta.json (d06d074b...)
+and prior readers/tests/receipts stay immutable. Owner released/client exited.
+ETF_RUN/reader-verification.json (0b39d293...):13actual offline reader checks.
+ETF/postpublication/actual-validation.json (463eb1df...):253x4+baseline2 validated;
+request counts/routes/clocks, calendar/dedup/positive OHLCV/availability/age bound.
+10prelaunch+5reader SYN; details/counts/source pins remain in those existing artifacts.
+
+## Reader Contract
+
+Use ETF/archive_reader.py (6fd0a9f6...) for replay, not frozen worker/consumer_reader
+whose recipe_check/calendar(now) wrongly expires archived reads on US-date rollover.
+API read_context(exact_manifest_path,exact_manifest_sha256,required_count=2|21|253,
+recipe_sha256=5ccc2ee6...,as_of_utc=optionalUTC); verifies original code/recipe/raw/
+manifest and retained253calendar420dc011..., never calls current recipe/calendar.
+Returns private/repr-hidden observations with explicit provider_date from CSV,
+unchanged Bar, actual first_available_at_utc and descriptive age (even negative).
+Current-intent freshness/session eligibility belongs evaluator, not archive reader.
+Bar.start_ts is NOMINAL provider-date UTC-midnight label, not a NY session instant:
+Oct12T00Z converts to NYOct11; use explicit provider_dateOct12 without retimestamping.
+Recipe.close_utc is calendar metadata, not observed provider close. Source-observed,
+uncertain provider finality, MODP0/corporate actions unverified, not PIT/total return.
+Fresh isolated namespace: batch-read Data FIRST; after native unload import
+RepoContracts and copy unchanged fields into RepoBar/Timeframe.D1.1014 copies checked.
+ETF/postpublication/adapter-order/read_first.json (26bafd5a...) and
+ETF/postpublication/adapter-order/repo_preimport.json (b8c39baf...);2focused pass.
+Direct old worker preimport conflict
+occurs AFTER1packed-cache read/hash, BEFORErow decode/credentials/network, not all IO.
+ETF/postpublication/archive-reader/verification.json (7f44607d...):5actual today/
+tomorrow canonical replays identical;14focused pass/hash/type/session kills,0provider.
+No current-source requalification, forecast rewrite or novel label/availability claim.
+
+## Retained Faults
+
+ETF/postpublication/original-scope-failure.xml:old ETF/test_worker.py (bb35e4f8...):9pass/
+1fail because prepublication cache/runs-absent assertion sees legitimate published
+data. No deletion/rewrite. Isolated copied SYN suite patches MARKET to tmp root;
+ETF/postpublication/isolated-focused-final.xml:17pass including date/age/phase kills.
+pacing_measurement_phase_mismatch: early Boundary-check min1.2500252s precedes
+variable source recheck/publication; published pre-opener marker min1.245146s,
+5gaps below1.25. Exact wire-start pacing UNKNOWN, not guaranteed; no invalid bars/
+provider error inferred. Future successor may move final pacing after recheck;
+no frozen patch/retry now. Details/reproducer in actual-validation.json above.
+
+## G107 Owned Future
+
+Five R3 Actions applied17:14:18UTC, preserved pythonw/principal/triggers/settings
+and original six21:50..21:55UTC windows. Remaining datesOct13/14/15/16/19;
+Oct12 unchanged/incomplete. Last readback Ready; real capture/principal run not
+observed here, pages/ETA unknown. Source-ready is not capture success.
+R3/source-release.json (5627e32b...), R3/bundle.json (b80fb7c3...),
+R3/job.private.json (7464cb28...):
+35pins/28package files/26native origins;32copied R2 dependencies unchanged, only
+gate08fcc345... replaced; narrow entry qualification changed, safe_reader unchanged.
+R3/independent-check.json and R3/focused.xml (53pass); DEPLOY/outcome.json (91ed2050...),
+DEPLOY/fresh-readback.json (e4a585fb...);11private rollback XMLs/non-Action hashes exact.
+R3/read_first_capture.py needs caller-pinned exact launch path+SHA; v3 started/
+preflight/outcome schema, no latest/raw output or retrospective prospective closure.
+Original R1 first exception unobserved; mutable-pin diagnosis is reconstruction.
+Measured lockf/flock cross-OS fault is separate. New token-only atomic directory+
+OS lock coordinates new participants, not all legacy writers; schema/300s unchanged,
+state atomics only (not HTTP), no TTL reclaim; explicit proven-dead recovery only.
+Observer240s can starve Data300s fresh-token floor: Parent coordinates named slots,
+not a global permission hold. Existing clients/token lifetime are separate.
+
+## Retained Input Support
+
+G107/verification-1791910057033/verification.json:exact daily512 manifests/packed
+rehash and masks. Prior35 old800:342695pairs/765slots; later71:18162pairs/36slots,
+earliestAug17; first14later actions lack35 prior bars without a new source contract.
+Current21 supports504scalar RSI14 names,0prior35; trailing20 RSI sequence only7
+initialized positions. Seed-only minimum34bars, prior35 supports20, not convergence/
+TA-Lib equivalence. Existing raw_context ABI only21; no splice/imputation/old trial rewrite.
+131ee1fe908... superseded unfinished;130target f4281218.../intake1534... preserved,
+result rejected. Existing ab65/G107 ownership separate from Paper; no wholesale
+collector/head/forecast/cursor restart. No source/cache/test changes in this MD refresh.
 
 Everything below is frozen historical evidence, not current dispatch. Old
 "no manual invocation" study restrictions apply to that retained attempt only.

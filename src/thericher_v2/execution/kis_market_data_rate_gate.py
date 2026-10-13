@@ -28,8 +28,13 @@ KIS_PAPER_MARKET_DATA_TOKEN_STATE_FILENAME = "token-request.json"
 KIS_PAPER_MARKET_DATA_TOKEN_LOCK_FILENAME = "token-request.lock"
 KIS_PAPER_MARKET_DATA_TOKEN_MIN_REQUEST_INTERVAL_SECONDS = 300.0
 KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON = "token_request_not_due"
+KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_BUSY_REASON = "token_request_busy"
 _SCHEMA_VERSION = 1
 _TOKEN_SCHEMA_VERSION = 1
+
+
+class KisPaperTokenStartGateBusy(ValueError):
+    """The atomic cross-platform state guard is held; no request is authorized."""
 
 
 @dataclass(frozen=True)
@@ -159,17 +164,20 @@ class KisPaperMarketDataTokenStartGate:
         another lane or its next schedule rather than sleeping for the interval.
         """
 
-        with self._locked_state() as state:
-            now = _require_utc(self._clock())
-            due = _next_token_request_due(
-                state=state,
-                minimum_interval=self._minimum_request_interval,
-            )
-            if due is not None and now < due:
-                return False
-            state["last_token_request_started_at_utc"] = _format_utc(now)
-            _write_state(self._state_path(), state)
-            return True
+        try:
+            with self._locked_state() as state:
+                now = _require_utc(self._clock())
+                due = _next_token_request_due(
+                    state=state,
+                    minimum_interval=self._minimum_request_interval,
+                )
+                if due is not None and now < due:
+                    return False
+                state["last_token_request_started_at_utc"] = _format_utc(now)
+                _write_state(self._state_path(), state)
+                return True
+        except KisPaperTokenStartGateBusy:
+            return False
 
     def token_request_is_due(self) -> bool:
         """Return whether a token POST could start now without reserving it.
@@ -180,12 +188,15 @@ class KisPaperMarketDataTokenStartGate:
         the atomic decision immediately before the actual request.
         """
 
-        with self._locked_state() as state:
-            due = _next_token_request_due(
-                state=state,
-                minimum_interval=self._minimum_request_interval,
-            )
-            return due is None or _require_utc(self._clock()) >= due
+        try:
+            with self._locked_state() as state:
+                due = _next_token_request_due(
+                    state=state,
+                    minimum_interval=self._minimum_request_interval,
+                )
+                return due is None or _require_utc(self._clock()) >= due
+        except KisPaperTokenStartGateBusy:
+            return False
 
     def snapshot(self) -> KisPaperMarketDataTokenStartGateSnapshot:
         with self._locked_state() as state:
@@ -205,14 +216,35 @@ class KisPaperMarketDataTokenStartGate:
         root.mkdir(parents=True, exist_ok=True)
         if not root.is_dir() or root.is_symlink():
             raise ValueError("market-data token control root is invalid")
-        with _exclusive_lock(root / KIS_PAPER_MARKET_DATA_TOKEN_LOCK_FILENAME):
-            yield _read_token_state(self._state_path())
+        # Windows byte locks and Docker flock do not coordinate on this host.
+        # mkdir is the cross-OS exclusion; retain the old same-OS lock as well.
+        with _atomic_token_state_guard(root):
+            with _exclusive_lock(root / KIS_PAPER_MARKET_DATA_TOKEN_LOCK_FILENAME):
+                yield _read_token_state(self._state_path())
 
     def _state_path(self) -> Path:
         path = self._control_root / KIS_PAPER_MARKET_DATA_TOKEN_STATE_FILENAME
         if path.is_symlink():
             raise ValueError("market-data token state is invalid")
         return path
+
+
+@contextmanager
+def _atomic_token_state_guard(root: Path) -> Iterator[None]:
+    directory = root / f"{KIS_PAPER_MARKET_DATA_TOKEN_LOCK_FILENAME}.d"
+    try:
+        directory.mkdir()
+    except FileExistsError as error:
+        raise KisPaperTokenStartGateBusy("market-data token control busy") from error
+    identity = directory.stat(follow_symlinks=False)
+    try:
+        yield
+    finally:
+        current = directory.stat(follow_symlinks=False)
+        if (current.st_dev, current.st_ino) != (identity.st_dev, identity.st_ino):
+            raise ValueError("market-data token control identity changed")
+        # No recursive cleanup or TTL reclamation: an interrupted owner is unknown.
+        directory.rmdir()
 
 
 def _is_positive_finite(value: object) -> bool:

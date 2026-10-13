@@ -13,6 +13,7 @@ import pytest
 
 import thericher_v2.execution.kis_paper_console_bridge as console_bridge
 from thericher_v2.contracts import SCHEMA_VERSION
+from thericher_v2.execution.kis_market_data_rate_gate import KisPaperMarketDataTokenStartGate
 from thericher_v2.execution.kis_paper_console_bridge import (
     read_kis_paper_snapshot_observer_evidence,
     recover_kis_paper_console_bridge_evidence,
@@ -107,9 +108,7 @@ def test_snapshot_reader_distinguishes_unknown_complete_stale_and_malformed(tmp_
     current = read_paper_account_snapshot(path, now=NOW + timedelta(minutes=1))
     assert current.status == "available"
     assert current.snapshot is not None
-    assert current.snapshot.positions == (
-        PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),
-    )
+    assert current.snapshot.positions == (PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),)
 
     stale = read_paper_account_snapshot(path, now=NOW + PAPER_ACCOUNT_SNAPSHOT_TTL + timedelta(1))
     assert stale.status == "unavailable"
@@ -413,8 +412,7 @@ def test_bridge_records_only_a_canonical_observer_invocation_id(tmp_path) -> Non
     payload = json.loads(outcome.observer_evidence_path.read_text(encoding="utf-8"))
     assert payload == {
         "bridge_evidence": {
-            "relative_path": "execution/kis-paper-console-bridge/"
-            + outcome.evidence_path.name,
+            "relative_path": "execution/kis-paper-console-bridge/" + outcome.evidence_path.name,
             "sha256": sha256(outcome.evidence_path.read_bytes()).hexdigest(),
         },
         "kind": "kis_paper_snapshot_observer",
@@ -431,8 +429,7 @@ def test_bridge_records_only_a_canonical_observer_invocation_id(tmp_path) -> Non
         artifact_root=tmp_path / "artifacts",
         repository_root=tmp_path / "repo",
     ) == {
-        "bridge_evidence_path": "execution/kis-paper-console-bridge/"
-        + outcome.evidence_path.name,
+        "bridge_evidence_path": "execution/kis-paper-console-bridge/" + outcome.evidence_path.name,
         "observed_at": NOW.isoformat(),
         "observer_invocation_id": invocation_id,
         "scope": "read_only",
@@ -633,11 +630,14 @@ def test_tagged_unavailable_observer_evidence_excludes_diagnostics(tmp_path) -> 
     payload = json.loads(outcome.observer_evidence_path.read_text(encoding="utf-8"))
     assert payload["reason_code"] == "open_orders_rejected"
     assert "diagnostic" not in payload
-    assert read_kis_paper_snapshot_observer_evidence(
-        evidence_path=outcome.observer_evidence_path,
-        artifact_root=tmp_path / "artifacts",
-        repository_root=tmp_path / "repo",
-    )["reason_code"] == "open_orders_rejected"
+    assert (
+        read_kis_paper_snapshot_observer_evidence(
+            evidence_path=outcome.observer_evidence_path,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+        )["reason_code"]
+        == "open_orders_rejected"
+    )
 
 
 def test_bridge_rejects_a_noncanonical_observer_invocation_id_before_snapshot_io(tmp_path) -> None:
@@ -784,9 +784,7 @@ def _complete_snapshot(observed_at: datetime) -> PaperAccountSnapshot:
         status="complete",
         observed_at=observed_at,
         expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
-        orderable_foreign_funds=PaperAccountOrderableForeignFunds(
-            "USD", Decimal("1200.50")
-        ),
+        orderable_foreign_funds=PaperAccountOrderableForeignFunds("USD", Decimal("1200.50")),
         reference_orderability=PaperAccountReferenceOrderability(
             "USD",
             Decimal("1199.75"),
@@ -816,6 +814,273 @@ def _paper_environment() -> dict[str, str]:
         "KIS_PAPER_ACCOUNT_PRODUCT_CODE": "01",
         "KIS_LIVE_APP_KEY": "live-secret-must-not-be-read",
     }
+
+
+@dataclass
+class AdvancingClock:
+    elapsed: float = 0
+    sleeps: list[float] = field(default_factory=list)
+
+    def now(self):
+        return NOW + timedelta(seconds=self.elapsed)
+
+    def sleep(self, seconds):
+        self.sleeps.append(seconds)
+        self.elapsed += seconds
+
+
+def test_guarded_bridge_waits_only_its_due_and_reuses_one_token(tmp_path):
+    timing = AdvancingClock()
+    root = tmp_path / "control"
+    first = KisPaperMarketDataTokenStartGate(
+        control_root=root,
+        minimum_request_interval_seconds=60,
+        clock=lambda: NOW - timedelta(seconds=40),
+    )
+    assert first.claim_token_request_start()
+    gate = KisPaperMarketDataTokenStartGate(
+        control_root=root, minimum_request_interval_seconds=60, clock=timing.now
+    )
+    path = tmp_path / "runtime" / "snapshot.json"
+    prior = _complete_snapshot(NOW - timedelta(minutes=1))
+    write_paper_account_snapshot(prior, path)
+    old_bytes = path.read_bytes()
+    transport = FakeKisTransport(path)
+
+    def sleep(seconds):
+        assert path.read_bytes() == old_bytes
+        timing.sleep(seconds)
+
+    outcome = run_kis_paper_console_bridge(
+        environment=_paper_environment(),
+        runtime_snapshot_path=path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=timing.now,
+        token_start_gate=gate,
+        sleeper=sleep,
+        monotonic=lambda: timing.elapsed,
+    )
+    assert outcome.status == "complete"
+    assert timing.sleeps == [10, 10]
+    assert len(transport.requests) == 6
+    assert [r.method for r in transport.requests] == ["POST"] + ["GET"] * 5
+    assert gate.snapshot().last_token_request_started_at_utc == NOW + timedelta(seconds=20)
+    assert read_paper_account_snapshot(path, now=timing.now()).snapshot.observed_at == timing.now()
+
+
+@pytest.mark.parametrize("stale", [False, True])
+def test_token_deferral_does_not_touch_network_or_renew_a_snapshot(tmp_path, stale):
+    path = tmp_path / "runtime" / "snapshot.json"
+    observed = NOW - timedelta(minutes=6 if stale else 1)
+    prior = _complete_snapshot(observed)
+    write_paper_account_snapshot(prior, path)
+    before = path.read_bytes()
+    gate = KisPaperMarketDataTokenStartGate(control_root=tmp_path / "control", clock=lambda: NOW)
+    assert gate.claim_token_request_start()
+    timing = AdvancingClock()
+    transport = FakeKisTransport(path)
+    env = _paper_environment()
+    env["THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID"] = (
+        "6b991b8c-98ef-46de-ab4e-cbfa7fe1d00e"
+    )
+    root = tmp_path / "artifacts"
+    outcome = run_kis_paper_console_bridge(
+        environment=env,
+        runtime_snapshot_path=path,
+        artifact_root=root,
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=timing.now,
+        token_start_gate=gate,
+        sleeper=timing.sleep,
+        monotonic=lambda: timing.elapsed,
+    )
+    assert outcome.status == "unavailable" and outcome.reason_code == "token_request_not_due"
+    assert not transport.requests and not timing.sleeps
+    receipt = json.loads(outcome.evidence_path.read_text())
+    assert receipt.get("runtime_snapshot_preserved", False) is (not stale)
+    if not stale:
+        assert path.read_bytes() == before
+        assert read_paper_account_snapshot(path, now=NOW).snapshot.expires_at == prior.expires_at
+    else:
+        assert read_paper_account_snapshot(path, now=NOW).status == "unavailable"
+    result = read_kis_paper_snapshot_observer_evidence(
+        evidence_path=outcome.observer_evidence_path,
+        artifact_root=root,
+        repository_root=tmp_path / "repo",
+    )
+    assert result["status"] == "unavailable"
+    assert result["reason_code"] == "token_request_not_due"
+    assert result["submit_capability"] is False
+
+
+def test_token_gate_worker_stops_on_monotonic_budget_even_if_wall_clock_lags(tmp_path):
+    gate = KisPaperMarketDataTokenStartGate(
+        control_root=tmp_path / "control",
+        minimum_request_interval_seconds=60,
+        clock=lambda: NOW - timedelta(seconds=50),
+    )
+    assert gate.claim_token_request_start()
+    gate = KisPaperMarketDataTokenStartGate(
+        control_root=tmp_path / "control", minimum_request_interval_seconds=60, clock=lambda: NOW
+    )
+    timing = AdvancingClock()
+    path = tmp_path / "runtime" / "snapshot.json"
+    transport = FakeKisTransport(path)
+    outcome = run_kis_paper_console_bridge(
+        environment=_paper_environment(),
+        runtime_snapshot_path=path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=lambda: NOW,
+        token_start_gate=gate,
+        sleeper=lambda _seconds: timing.sleep(61),
+        monotonic=lambda: timing.elapsed,
+    )
+    assert outcome.reason_code == "token_request_not_due"
+    assert not transport.requests and timing.sleeps == [61]
+
+
+def test_guarded_bridge_cli_binds_control_only_on_execution(monkeypatch, tmp_path, capsys):
+    calls = []
+    original = console_bridge.run_kis_paper_console_bridge
+
+    def run(**kwargs):
+        calls.append(kwargs)
+        kwargs.update(
+            environment=_paper_environment(),
+            transport=FakeKisTransport(kwargs["runtime_snapshot_path"]),
+            clock=lambda: NOW,
+        )
+        return original(**kwargs)
+
+    monkeypatch.setattr(console_bridge, "run_kis_paper_console_bridge", run)
+    args = [
+        "--runtime-snapshot",
+        str(tmp_path / "runtime" / "snapshot.json"),
+        "--artifact-root",
+        str(tmp_path / "artifacts"),
+        "--repository-root",
+        str(tmp_path / "repo"),
+        "--token-control-root",
+        str(tmp_path / "control"),
+        "--token-minimum-interval-seconds",
+        "60",
+        "--token-wait-seconds",
+        "0",
+    ]
+    assert console_bridge.main(args) == 0 and not calls
+    assert not (tmp_path / "control").exists()
+    assert console_bridge.main(["--execute", *args]) == 0
+    assert calls[0]["token_start_gate"].snapshot().last_token_request_started_at_utc is not None
+    assert calls[0]["token_wait_seconds"] == 0
+    assert "test-app-secret" not in capsys.readouterr().out
+
+
+def test_observer_compose_joins_existing_control_without_changing_data_default():
+    source = (Path(__file__).resolve().parents[1] / "docker-compose.yml").read_text()
+    block = source.split("  kis-readonly:\n", 1)[1].split("  kis-paper-canary:\n", 1)[0]
+    assert "--token-control-root\n      - /app/collection_control" in block
+    assert '--token-minimum-interval-seconds\n      - "60"' in block
+    assert "collection-control-v1:/app/collection_control" in block
+    assert KisPaperMarketDataTokenStartGate(
+        control_root=Path("unused")
+    )._minimum_request_interval == timedelta(seconds=300)
+
+
+def test_shared_guard_race_cannot_issue_a_second_token(tmp_path):
+    timing = AdvancingClock()
+    root = tmp_path / "control"
+    first = KisPaperMarketDataTokenStartGate(
+        control_root=root,
+        minimum_request_interval_seconds=60,
+        clock=lambda: NOW - timedelta(seconds=50),
+    )
+    assert first.claim_token_request_start()
+    gate = KisPaperMarketDataTokenStartGate(
+        control_root=root, minimum_request_interval_seconds=60, clock=timing.now
+    )
+
+    def competing_claim(seconds):
+        timing.sleep(seconds)
+        assert first.__class__(
+            control_root=root, minimum_request_interval_seconds=60, clock=timing.now
+        ).claim_token_request_start()
+
+    path = tmp_path / "runtime" / "snapshot.json"
+    transport = FakeKisTransport(path)
+    outcome = run_kis_paper_console_bridge(
+        environment=_paper_environment(),
+        runtime_snapshot_path=path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=timing.now,
+        token_start_gate=gate,
+        sleeper=competing_claim,
+        monotonic=lambda: timing.elapsed,
+    )
+    assert outcome.reason_code == "token_request_not_due"
+    assert transport.requests == [] and timing.sleeps == [10]
+
+
+def test_corrupt_shared_gate_fails_without_network(tmp_path):
+    root = tmp_path / "control"
+    root.mkdir()
+    (root / "token-request.json").write_text("not-json")
+    gate = KisPaperMarketDataTokenStartGate(control_root=root)
+    path = tmp_path / "runtime" / "snapshot.json"
+    transport = FakeKisTransport(path)
+    outcome = run_kis_paper_console_bridge(
+        environment=_paper_environment(),
+        runtime_snapshot_path=path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=lambda: NOW,
+        token_start_gate=gate,
+    )
+    assert outcome.reason_code == "unexpected_failure" and not transport.requests
+    assert (root / "token-request.json").read_text() == "not-json"
+
+
+def test_preserved_snapshot_is_not_available_after_original_expiry(tmp_path):
+    path = tmp_path / "runtime" / "snapshot.json"
+    write_paper_account_snapshot(_complete_snapshot(NOW - timedelta(seconds=299)), path)
+    gate = KisPaperMarketDataTokenStartGate(control_root=tmp_path / "control", clock=lambda: NOW)
+    assert gate.claim_token_request_start()
+    outcome = run_kis_paper_console_bridge(
+        environment=_paper_environment(),
+        runtime_snapshot_path=path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=FakeKisTransport(path),
+        clock=lambda: NOW,
+        token_start_gate=gate,
+    )
+    assert outcome.reason_code == "token_request_not_due"
+    assert read_paper_account_snapshot(path, now=NOW).status == "available"
+    assert read_paper_account_snapshot(path, now=NOW + timedelta(seconds=1)).status == "unavailable"
+
+
+@pytest.mark.parametrize("reason", [None, "auth_rejected"])
+def test_preserved_evidence_flag_cannot_hide_actual_failure_or_success(tmp_path, reason):
+    snapshot = (
+        _complete_snapshot(NOW)
+        if reason is None
+        else PaperAccountSnapshot.unavailable(observed_at=NOW, reason_code=reason)
+    )
+    with pytest.raises(ValueError, match="only a token-start deferral"):
+        write_kis_paper_console_bridge_evidence(
+            snapshot,
+            snapshot_digest="0" * 64,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+            runtime_snapshot_preserved=True,
+        )
 
 
 def _position_payload() -> dict[str, str]:

@@ -2,117 +2,101 @@
 
 ## Current Work (2026-10-14 KST)
 
-ONE objective: approved-paper10-percent-recovery-v1. The operator requested
-policy/role simplification, first-cause Paper recovery and quiet scheduled work.
-KIS Paper is standing-authorized inside the original shared initial virtual-
-cash approximately 10-percent allocation; no profitability/manual gate.
-Never read/route KIS_LIVE_*. Preserve exact unknown requests, owned custody,
-losses/reservations and the existing basis, not 10 percent per lane.
+ONE objective: current-data-shared-budget-paper-loop-v1. Recovery objective
+approved-paper10-percent-recovery-v1 closed with actual native SPY sell/fill/
+owned-flat reconciliation, not installation or a manufactured model signal.
+Parent owns integration/Git/broker dispatch; Data, Execution and Engine work
+independently. UI redesign is deferred. Never read/route KIS_LIVE_*.
 
-Parent owns policy/goal/Git. Data repairs the prospective capture dependency;
-Execution adds categorical planner/runtime diagnostics; Infra audits all tasks
-but changes only verified TheRicher owners. Strategy Research is now a small
-durable lane for causal indicators/mechanisms/executable proposals. Engine
-retains trial lineage and prepares convergence/OOF fusion under finite budgets.
-An MD is memory, not a permanent running LLM. Actual agents are bounded.
+Preserve the original aggregate initial virtual-cash tenth, losses, reservations,
+account namespace and exact unknown requests. It is not ten percent per lane.
+Private Paper is delegated; no profitability/manual permission gate. Model
+development findings do not automatically choose the Paper strategy.
 
-## Confirmed Current Evidence
+## Actual Runtime Evidence
 
-- G107 offline diagnosis reconstructs pre-client source_changed: 5/468 pins
-  differ, including contracts.py changed before the scheduled capture. Original
-  invocation receipt is absent; this is NOT a captured historical exception.
-  D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/g107-offline-diagnosis-1791899634083/diagnosis.json
-  Four reproduction groups and original12 SYN cases pass. Isolated R2 source
-  35files/26origins, Parent31 SYN/validation and six mocked deployment tests
-  pass. Applied same five future Actions; original timing/principal/settings/
-  Oct12 remain. First owned R2 run Oct14 06:50KST is unobserved, not collection
-  success. Exact Action-only readback:
-  D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r2/deployment/57471a799a67422c99a135e1631c72c6/fresh-readback.json
-- Original Oct12 G83 scoped receipts show nine lifecycle_unavailable, one
-  canonical no-intent and twenty entry-window-elapsed recoveries, with zero
-  order POSTs in those receipts. Planner reasons/exception details were erased;
-  first cause remains unproven. This does not establish whole-account state.
-- New account read-only attempt Oct13 14:08:08UTC failed_closed/auth_rejected at
-  the single token POST; no account GET or order/cancel POST happened.
-  D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T140808283476Z-failed_closed.json
-  No upstream HTTP/code captured; do not label bad credentials/expiry/quota
-  without evidence. Shared token-start guard applies to new POSTs, not foreground.
-- Later token-only probe Oct13 14:33:43UTC succeeded HTTP200, one token POST,
-  no account GET/order/cancel. Exact safe evidence:
-  D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T143343806949Z-token-capability.json
-  Current token issuance works; prior auth failure cause remains unobserved.
-  Token discarded in-process. No account/fill or runtime-recovery claim.
-- R2 actual diagnostic later failed403/EGW00133 at token;0account GET/order/
-  cancel, source/private unchanged. Exact G83 custody projection only, not
-  whole-account flatness. Parent28 SYN pass; final integrity flags required.
-  D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/delivery-r2/parent-actual-outcome.json
-  Configured observer source lacks shared token-start gate; deployed-source/
-  collision timing unverified. Next ready Execution repair is this common
-  ownership gap, not an operator request to reset valid credentials.
-- Latest native account discovery SUCCESS Oct13 15:23:34UTC: token1/GET5,
-  HTTP200, three position items/zero open orders, complete read-only snapshot.
-  No broker orders/cancels/private-book writes. This is not owned-custody,
-  fill or PnL proof. Exact source-safe evidence:
-  D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T152334198254Z-collected.json
-  SHA46c84c237e0f7b4734fbf1672c83b6c88d58bbfc453724ace5715f4e9385c985.
-- Claude policy challenge actually completed, supported-with-limits:
-  D:/thericher-v2/model-artifacts/review/operating-policy-20261013-v1/claude-outcome.json
-  Advisory only; no private/raw data supplied.
+- Oct13 17:07:08..35UTC strict inquiry: one token/11 GET, six exact historical
+  fill links, account/owned inventory match, no selected open orders; no trades.
+  D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/parent-inquiry-20261014-v1/outcome.json
+- Fresh Data at17:45:00..16UTC: one token/12 daily GET, SPY/QQQ/TLT/GLD each253
+  completed-calendar sessions throughOct12. No account/order calls. Raw stays
+  under D:/market_data/us_equities/kis_paper_private/current-paper-etf-input-v1.
+  Exact run:
+  D:/thericher-v2/model-artifacts/data/current-paper-etf-input-refresh-20261014-v1/runs/786a7b63f8c34672b27dbb4ac92f6df2/outcome.json
+  Quality: observed, non-PIT, MODP0/action-unverified, calendar completion NOT
+  provider finality. Availability is actual later capture/publication, not
+  nominal UTC-midnight provider date. New archive_reader preserves these facts
+  across tomorrow; it grants no current-intent eligibility.
+- New-source observer17:56 complete through existing UUID/hash-bound reader:
+  D:/thericher-v2/model-artifacts/execution/kis-paper-snapshot-observer/20261013T175607480460Z-696fec17-2e7a-4d8a-896f-a3d64bf42e07-complete.json
+  Source6440871d..., image5b22345a...; token gate60, worker wait at most60.
+  Data's frozen300 remains. Temporary Data/order appointment disables ended;
+  observer restored enabled/Ready with original Actions/triggers. HiddenTask is
+  False; quiet launcher behavior is separate. Operational logging is disabled:
+  marker-present assumed-honest host, not cryptographic OS scheduler proof.
+- SPY original two-close rule produced current EXIT. Parent used later published
+  availability17:45:02.678357UTC, decision06f5e9fe..., valid untilOct13 20UTC.
+  First18:56 no-intent/pause_sells was a Parent launcher RO-mount fault: retained
+  pause flags were false, but native store lock creation failed on RO. Corrected
+  only existing emergency mount to RW; flags/earlier outcome remain unchanged.
+  Actual19:03:48..19:04:21UTC: one token/23 GET/one SELL/zero cancel,
+  order_complete/exact_order_and_position_reconciled; own container absent.
+  D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
+  SHAeb94ce68ad46e15da24b2b84f283d722581ee0186f973df574a4f17ef96789d0.
+  Separate network-none strict readback matches decision/intent/ack/full fill/
+  terminal closure: six ledger owners,15 terminal intents,zero pending/unknown,
+  baselineSPY flat,two retained held instruments(TLT/GLD),original tenth intact.
+  D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
+  Fees, settled cash and broker net PnL remain not_observed.
 
-131 daily20-mean-versus-lower-quartile-exit-development-v1 is explicitly
-SUPERSEDED UNFINISHED for the operator's Paper priority: source-ready, no
-canonical allocation/fits/weights. Source102f2685.../model7fd85816... and
-Data ee1fe908... remain under their original research/data roots.
-130 CLOSED/rejectedde64b98f... had one CPU and one CUDA16-epoch fit,78.42165s,
-36checks9fail; positive modeled growth is not alpha/broker net or all-model
-futility. Old immutable study caps do not ban new convergence-aware campaigns.
+## Ready Work And Limits
 
-## Operations And Verification
+Execution: qualify current253/252-return original portfolio control with fresh
+exact post-exit custody/account/quotes, then native cycle; no replay of expired
+Oct9 job or baseline adoption. Current21 is unselected. Canonical reusable
+data refresh/dispatch must replace reliance on one-shot hand-edited sources.
 
-Existing nineteen Paper owners, shared basis, pending107 and unknown other
-custody remain independent. Private volume:
-thericher-v2-paper-canary-private-acct-20261007-v1.
-Task exits/installed jobs are not fills. Fees/settled cash/net PnL stay unknown.
-Operational logging disabled: honest-host marker/time, not OS-origin proof.
+Data: capture-r3 deployed at17:14UTC to same five future G107 Actions, immutable
+gate-only successor. First owned next_due21:50UTC/Oct14 06:50KST remains;
+missedOct12 incomplete, not backfilled or a captured historical exception.
+D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3/deployment/835d74554a404f1382a4572b3ebbe716/fresh-readback.json
+Current ETF collector's pacing mark precedes variable work: measured boundary
+gaps do not prove exact wire-start1.25. Repair future source only; accepted rows
+are not invalidated merely by that measurement limitation.
 
-Quiet task execution must preserve identity, triggers, arguments and recovery.
-Disable only proved exhausted diagnostics with rollback; skip active owners.
-Windows inventory245:190 Microsoft/14 other/41 project. Nine verified Action
-changes applied (four PowerShell Hidden, five same-venv pythonw); expired D1
-diagnostic disabled, rollback retained. No production task manually launched.
-Two direct Docker/uv exclusions unchanged; WSH/S4U not deployed. Exact readback:
-D:/thericher-v2/model-artifacts/infra/windows-task-hygiene-20261013/direct-deployment-d9fd6546ae7f4d4dbe6f82330391868a/final-readback.json
-SHA34a5affd42b6d0007024b3591e107288dc2156781864cae9f86cc79333d2c3df.
-Parent40 external tests pass; GUI/absent-stream proof is not scheduled-runtime
-success. Codex local automation definitions checked:0.
-Observer launch now selects four Paper values and explicit sample env, with
-strict redacted output, UUIDv4 and bounded exact-container timeout cleanup.
-No shared-token pacing fix/cadence change in this package. Existing observer
-alone paused during source verification, then restored for16:08UTC. That first
-owned attempt exited125 without validated observer evidence. Inert/no-key/API
-probe reproduced missing Compose plugin; forwarding required PROGRAMFILES
-resolved it, inert profile exits0/own container absent. Only observer paused
-again during this scoped repair; v3 passed and observer restored enabled/Ready/
-Hidden with Action/principal/triggers unchanged, next16:28UTC; no manual launch.
-D:/thericher-v2/model-artifacts/infra/windows-task-hygiene-20261013/compose-environment-runtime-repair.json
-Dashboard redesign is deferred: Korean primary/English technical names,
-useful holdings/orders/fault recovery and Docker private serving. No public
-port/auth change in this task; future outside access needs authenticated design.
+Engine: actual OHLCV expert campaign CLOSED/rejected, cumulative13CPU/3CUDA
+fits,39 epochs260updates, including carried technical-run spend. Learned gate
+failed the frozen drawdown-vs-blend test despite positive modeled growth;
+not a broker-profit or all-model-futility claim. GRU early stop13/patience12,
+selectedepoch1 under relative-min-delta; original OOF1 curve missing.
+D:/thericher-v2/model-artifacts/research/daily5-ohlcv-convergence-expert-composition-20261014-v1/integration-evidence-finish.json
+Ready informed normalized-target GRU/TCN/Ridge comparison is separate seen-data
+development. Foundation benchmarks require aligned targets/post-checkpoint
+scope; never silently reuse old OOF or relabel a holdout. 131 remains superseded
+unfinished/source-only;130 rejected/debits and all immutable results retained.
 
-Initial changed tracked runner/tests invalidated old source authority reuse. Fresh
-launcher/helper12 and clean8 15935passed22skipped/363.33s/helperexit0 passed;
-Ruff/three sample Compose passed. Source1312 digest778ebc50... and JUnit03c7af27...
-at D:/thericher-v2/model-artifacts/verification/operating-policy-20261013-v1/authority.json.
-That first authority does not cover subsequent observer-launcher code changes.
-Second changed-path56 pass; fresh clean8 15974pass22skip/387.82s/helperexit0,
-source1314digestbd6cd0a5... unchanged/15996collected/JUnit80563078... under
-D:/thericher-v2/model-artifacts/verification/operating-policy-20261014-v2/authority.json.
-FINAL authority: source1314digest05f2b05b... unchanged,56 focused and clean8
-15974pass22skip/374.73s/helperexit0; Ruff/three Compose pass. Exact v3 pointer:
-D:/thericher-v2/model-artifacts/verification/operating-policy-20261014-v3/authority.json.
-Earlier v1/v2 results remain version-bound; no model/filled-order promotion.
-uv --no-env-file and Compose .env.example prevent implicit
-credential loads. Do not claim runtime closure from policy or source readiness.
+## Verification And Operations
+
+Fresh authority: serial262 plus budget108; clean8 full15992passed22skipped,
+377.18s/helperexit0,16014 collected,source1314/ba204033...; Ruff and three
+sample-env Compose configurations pass.
+D:/thericher-v2/model-artifacts/verification/observer-token-ownership-20261014-v2/authority.json
+Initial v1 failed one Windows concurrency test;100 isolated reproductions did
+not reproduce it. Failure retained, assertions not relaxed, not claimed fixed.
+Reuse authority only while exact production/test/script/dependency/Compose
+bytes match. External workers require their own focused/independent checks.
+
+Actual mixed-OS flock/lockf failed coordination; token-only mkdir plus legacy
+same-OS locks passed real contention in both directions:
+D:/thericher-v2/model-artifacts/infra/token-lock-cross-os-20261014/r4-gate-3687a5d78f8a4c7e809b0c6b8017e6c0/verification.json
+Guard covers state atomics, not HTTP. Never reclaim by age/reset timestamp;
+quiescent named recovery is technical work, not operator permission. Old
+frozen writers are not universally joined; historical403 cause unproven.
+
+Prior245-task/41-project audit,9 quiet Actions/one exhausted D1 disabled and
+rollback retained. Two direct Docker/uv exclusions unchanged. No OS/third-party
+task edits, new public service, paid commitment or live authority.
+Use uv --no-env-file and Compose --env-file .env.example for verification.
 
 Everything below is retained version-bound history, NOT current dispatch or a
 company-wide restriction. NEXT_CODEX_GOAL.md and AGENTS.md own current scope.

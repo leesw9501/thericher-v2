@@ -1,47 +1,39 @@
 # Orchestration Stateboard (총괄 조정)
 
 Current projection 2026-10-14 KST. ONE objective:
-approved-paper10-percent-recovery-v1. History in Git/immutable evidence.
-Artifacts D:/thericher-v2/model-artifacts.
+current-data-shared-budget-paper-loop-v1. A=D:/thericher-v2/model-artifacts;
+M=D:/market_data. History lives in Git/external receipts, not this queue.
 
 ## Ready / Owned / Due
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/policy/integration | Parent | Sole owner; operating rules simplified, Strategy lane added; runtime completion not claimed. |
-| Repository verification | Parent |Finalv3 serial56/clean8 15974pass22skip/374.73s/helperexit0;source131405f2b05b... unchanged/JUnit82806e56.... Ruff/three Compose pass. |
-| Data source | Data | R2 original-source35files/26origins, Parent31+6pass, same five future Actions applied; first scheduled execution still unobserved. |
-| Paper diagnosis | Execution | R2 released28 SYN; actual403/EGW00133/0orders; later native account read complete, no substitute intent or reservation release. |
-| Windows tasks | Infra |245 inventoried/41project;9 direct hidden Actions verified,1 exhausted D1 disabled;2 excluded Docker/uv untouched. No OS/third-party mutation. |
-| Strategy / Engine | Engine preparation | Causal indicators, distinct experts and chronological convergence/OOF contract ready to specify; no actual new fits. |
-| GPU | Steward | Last130 lease released; no fresh GPU allocation in this turn. 131 source-ready but explicitly superseded unfinished. |
-| Account auth | Execution / Parent |Latest15:23:34UTC native1token/5GET/HTTP200;3position items/0open orders. Not owned-custody, fill or net-PnL proof. |
-| Observer source | Parent |First16:08 attempt125; ProgramFiles fix/inert profile0/own container absent. v3 passed; restored enabled/Ready/Hidden, next16:28UTC without manual launch. Shared token wiring still separate. |
-| Existing finite opportunities | Exact task owners | Original shared10%/pending requests/exits remain; task timestamps alone never prove fills. |
+| Git/integration | Parent | Recovery actual SPY exit complete; integrating verified source/docs then next canonical loop. |
+| Repository authority | Parent | Changed-path262/budget108; fresh clean8 15992pass22skip377s/ba204033...; initial v1 anomaly retained, no assertion relaxation. |
+| Observer/token | Existing observer/Parent | New source6440871d/image5b actual17:56 complete; restored Ready. Atomic directory cross-OS passed; observer60/Data frozen300, old writers not universally joined. |
+| Exact Paper | Parent/Execution |19:04:21 actual native SPY full SELL, owned-flat; six ledger owners/15terminal intents/zero unknown-pending/two held instruments. Original aggregate tenth unchanged. |
+| Next portfolio | Execution/Parent | current253/252-return original control source ready; qualify5b and fresh post-exit account/quote preview, then native cycle. No oldOct9 relaunch/baseline adoption. |
+| Data | Data | Current253x4 throughOct12 collected; rollover-safe archive reader passed. Prepare canonical refresh/actual-wire pacing successor; G107 firstR3 owned21:50UTC due independently, missingOct12 unchanged. |
+| Engine/GPU | Engine/Steward | Prior campaign closed/rejected,13CPU3CUDA/39epochs. New informed normalizedGRU/TCN/Ridge development contract and bounded actual compute assigned; no holdout/Paper adoption. |
+| Task lifecycle | Existing owners |245/41audit9 quiet actions1 exhaustedD1 disabled retained; two Docker/uv exclusions. No third-party/OS edits, no manual task launches. |
 
-## Bottleneck And Reversible Improvement
+## Bottleneck And Improvement
 
-Measured source fault: G107 R1 checks all468 mutable repo pins before creating
-its receipt;5 differ. Existing original source validates offline; current source
-fails before client. Runtime historical exception unobserved, so preserve that
-limit. Paper lifecycle erases planner/exception detail, leaving nine original
-opaque failures. Neither is a missing human approval.
+The immediate technical Paper recovery is solved with an actual trade, not a
+report. Remaining bottleneck: baseline head was stale and old portfolio was
+one-shot. Canonical completed-daily refresh and same-owner repeatable native
+dispatch now improve the Paper loop directly. Do not wait for GPU profitability,
+G107 completion or provider-PIT proof to implement private Paper execution.
 
-Improvement: dispatch isolated Data successor, allowlisted Execution diagnosis
-and quiet-task audit in parallel, rather than new experiment/source handoffs
-while actual execution faults stay opaque. Current auth failure gets bounded
-upstream classification before asking the operator to change credentials.
-Data source repair is deployed, not merely a proposed package. Known Windows
-API binding fault was repaired through supported Action-only update and exact
-readback; WSH child-survival probe prevented adoption of an unsafe wrapper.
-Snapshot launch now uses selective Paper fields/sample env and bounded
-exact-owner cleanup. The separate shared-token wiring gap remains ready work;
-no blanket credentials reset or Paper prohibition from intermittent auth.
-Claude supported-with-limits at
-D:/thericher-v2/model-artifacts/review/operating-policy-20261013-v1/claude-outcome.json.
-Independent review preserves aggregate basis/unknown identity and prevents
-qualified public-model/replication claims from weaker policy wording.
+Measured operating fixes: common token state-only cross-OS guard; exact deployed
+source reject; valid-cache deferral without expiry renewal; existing RW emergency
+mount required by native read locks. Preserve the failed RO launch and all
+previous auth/source failures rather than relabel them successful.
 
-No foreground session/token wait, new report family or platform. UI redesign
-deferred (Korean primary, English technical terms, useful Docker private monitor).
-No public service change. This projection is not a second backlog or approval.
+Primary current pointers:
+- A/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
+- A/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
+- A/verification/observer-token-ownership-20261014-v2/authority.json
+
+No operator decision currently identified. External/session waits stay with
+owners; dispatch a ready package. Korean/private UI remains later, not public.

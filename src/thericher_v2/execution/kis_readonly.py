@@ -310,6 +310,9 @@ class KisPaperRequestPacer:
             current = self._monotonic_clock()
         self._last_dispatch_at = current
 
+    def record_request_start(self) -> None:
+        self._last_dispatch_at = self._monotonic_clock()
+
 
 class UrllibKisHttpTransport:
     """Small standard-library transport guarded by the same request allowlist."""
@@ -321,10 +324,12 @@ class UrllibKisHttpTransport:
         minimum_request_interval_seconds: float = DEFAULT_KIS_PAPER_REQUEST_INTERVAL_SECONDS,
         monotonic_clock: Callable[[], float] = time.monotonic,
         sleeper: Callable[[float], None] = time.sleep,
+        before_request: Callable[[KisHttpRequest], None] | None = None,
     ) -> None:
         if timeout_seconds <= 0:
             raise ValueError("timeout_seconds must be positive")
         self._timeout_seconds = timeout_seconds
+        self._before_request = before_request
         self._pacer = KisPaperRequestPacer(
             minimum_request_interval_seconds=minimum_request_interval_seconds,
             monotonic_clock=monotonic_clock,
@@ -352,6 +357,9 @@ class UrllibKisHttpTransport:
             method=request.method,
         )
         try:
+            if self._before_request is not None:
+                self._before_request(request)
+            self._pacer.record_request_start()
             with self._opener.open(http_request, timeout=self._timeout_seconds) as response:
                 return KisHttpResponse(
                     status_code=response.status,

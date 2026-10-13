@@ -2,84 +2,71 @@
 
 ## Current Dispatch (2026-10-14 KST)
 
-ONE objective approved-paper10-percent-recovery-v1; current factual handoff in
-HANDOFF.md and agents/{data,execution,orchestration}.md. Existing Paper shared
-initial10% basis/unknown identity/custody remain. 131 is source-ready but
-superseded unfinished; no allocation/fits/weights. No live authority.
+ONE objective current-data-shared-budget-paper-loop-v1. Recovery is closed
+with actual SPY native SELL/full fill/owned-flat at19:04:21UTC Oct13, one
+sell POST; original six-owner shared initial tenth remains, TLT/GLD held.
+Fees/settled cash/net remain not_observed. Never read/route KIS_LIVE_*.
+Parent owns broker/Git, roles own disjoint source packages; do not duplicate
+a current owner, reset an exact request or rerun an expired private intent.
 
-Data capture-r2 and Execution delivery-r2 are separate prepared successors
-under their original D: roots; do not confuse source tests with deployment.
-Parent reviews source/transport/private-state boundaries before connected
-read-only diagnosis or exact same-owner task Action changes. Never invoke
-observe() or a strategy worker merely to inspect evidence.
+Exact actual evidence and independent network-none replay:
+D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
+D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
+First no-intent retained: RO emergency mount prevented native lock creation.
+Actual retained flags were clear. R2 uses original existing RW emergency volume
+for store locks, changes no flags/basis and keeps decision06f5e9fe.../same session.
+Never infer successful submit from task exit, installer, preview or missing file.
 
-Account readonly attempt Oct13 14:08:08UTC failed at token/auth_rejected.
-Exact safe receipt:
-D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T140808283476Z-failed_closed.json
-No account GET/order/cancel. Upstream cause remains unknown. Preserve token
-POST gate; no orchestrator sleep. Current task audit does not authorize touching
-OS/security/third-party jobs or launching a Paper worker to test quiet mode.
+Next eligible portfolio: current253 original control/252-return covariance,
+fresh post-exit strict book/account/quotes, native preview then exact cycle.
+Source adapter is host-only until container ABI/source qualification:
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/PORTFOLIO-API.txt
+No oldOct9 relaunch or baseline adoption. Repeatable reusable Data/dispatch
+source is next, not another one-shot manual rewrite. Expired current data may
+prevent a new intent, never inquiry/recovery of its persisted unknown request.
 
-Later14:33:43UTC native token-only probe succeeded HTTP200/1token/noGET/order/
-cancel. Current auth usable, prior failure not diagnosed. Exact pointer:
-D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T143343806949Z-token-capability.json
-Fresh serial12/clean8 15935pass22skip/helperexit0/Ruff/three Compose passed:
-D:/thericher-v2/model-artifacts/verification/operating-policy-20261013-v1/authority.json.
-The failed no-tests legacy launch is retained separately; never count it as pass.
+Data current253 throughOct12 available at actualOct13 capture/publication;
+nominal provider-date UTC-midnight is not NY close or decision-time evidence.
+Archived replay API never rechecks today's calendar:
+D:/thericher-v2/model-artifacts/data/current-paper-etf-input-refresh-20261014-v1/archive_reader.py
+Source_observed/nonPIT/rawMODP0/action-unverified/not_provider_finality persists.
+G107 capture-r3 same five future Actions, first owned21:50UTC; no manual launch.
+D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3/deployment/835d74554a404f1382a4572b3ebbe716/fresh-readback.json
 
-Latest native account read15:23:34UTC succeeded1token/5GET/HTTP200, complete
-snapshot3position items/0open orders. No submit/cancel/private-book changes:
-D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T152334198254Z-collected.json.
-Do not infer owned custody, fills or settled net.
+Observer restored enabled/Ready/original Actions after exact Data/Paper
+appointments; current image5b22345a..., bridge source6440871d... gate60/wait<=60.
+Actual17:56 UUID/hash-bound completion retained. Guard is state-only atomic
+directory plus legacy OS locks, never stale-TTL reclaim. Data default300
+unchanged; old writers not universally joined. Worker waits do not idle Parent.
+Operational logging disabled: assumed-honest marker/time, not OS-origin proof.
 
-Actual task hygiene:245 total/41project,9 direct hidden Actions and1 exhausted
-D1 diagnostic disabled; OS/third-party jobs unchanged. Exact source-safe readback:
-D:/thericher-v2/model-artifacts/infra/windows-task-hygiene-20261013/direct-deployment-d9fd6546ae7f4d4dbe6f82330391868a/final-readback.json.
-Two direct Docker/uv exclusions retained; no WSH/S4U deployment. Only observer
-temporarily disabled during mutable privacy-launcher verification; restore
-original enabled state after success. No production task manually launched.
-New host launcher uses selective four-Paper config and explicit .env.example,
-no credentials in argv/output, strict bridge projection and180s/owned cleanup
-inside originalPT4M. Hard termination before cleanup remains a limitation.
-Root token-start gate joining/due-aware retry is a separate next package.
+## Current Verification
 
-Privacy launcher changed tracked source: first authority above no longer covers
-current bytes. Serial56 pass/source1314digestbd6cd0a5.../15996collected; fresh
-clean8 now15974pass22skip/387.82s/helperexit0, JUnit80563078...:
-D:/thericher-v2/model-artifacts/verification/operating-policy-20261014-v2/authority.json.
-Observer restored enabled/Ready/Hidden, Action/principal/triggers unchanged,
-next16:08UTC without manual launch. Two rare Docker/uv windows remain; no
-scheduled-runtime, owned fill or net-PnL claim from these installations/tests.
+Changed-path262 plus budget108 passed. Fresh clean8 authority15992pass22skip,
+16014collected,377.18s/helperexit0/source1314/ba204033...:
+D:/thericher-v2/model-artifacts/verification/observer-token-ownership-20261014-v2/authority.json
+Initial v1 concurrency failure retained/unreproduced, not fixed by assertion
+relaxation;100 isolated reproductions passed. V2 is a separate fresh full pass.
+MD/external-only commits may reattach only exact unchanged source authority;
+new tracked runtime/tests/Compose require new full authority. External native
+workers/source/input replay need focused independent tests; no blanket retest
+of unchanged Python merely to consume time. Weekly serial lastOct12.
 
-First16:08UTC restored attempt returned125 before validated observer evidence.
-No-key/no-API inert reproduction found ProgramFiles absent from the restricted
-environment, hiding Docker Compose discovery. Required OS variable added;
-inert profile exits0/own container absent. Source1314digest05f2b05b...,
-56 focused and v3 clean8 15974pass22skip/374.73s/helperexit0, JUnit82806e56...
-passed at
-D:/thericher-v2/model-artifacts/verification/operating-policy-20261014-v3.
-Observer restored enabled/Ready/Hidden, next16:28UTC, no manual launch.
-Action/principal/triggers unchanged. Original failed attempt remains failed;
-inert0/setup/tests are not actual scheduled API/fill success.
-
-Credential-free verification:
-
+Credential-free commands:
 ```powershell
-uv run --no-env-file --extra dev pytest -q tests/test_start_next_codex_task.py tests/test_run_parallel_tests.py --maxfail=1 --durations=15
-& .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot -PytestArgs @('--maxfail=1', '--durations=15', '--junitxml=D:/thericher-v2/model-artifacts/verification/operating-policy-20261013-v1/pytest.xml')
+uv run --no-env-file --extra dev pytest -q <changed-test-paths> --maxfail=1 --durations=15
+& .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot -PytestArgs @('--maxfail=1', '--durations=15', '--junitxml=D:/thericher-v2/model-artifacts/verification/<fresh-owned-run>/pytest.xml')
 uv run --no-env-file --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet
 docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.accounting.yml config --quiet
 ```
 
-Use the actual current PowerShell host's policy; do not change machine policy
-or bypass a denied cleanup. Explicit -PytestArgs avoids legacy shell positional
-argument loss. A no-tests/failed helper launch is not passing authority.
-
-UI implementation deferred: existing loopback reference127.0.0.1:8787 is not
-fresh availability proof. Future Korean-first Docker monitor/private outside
-access follows ARCHITECTURE.md; no new port/auth/tunnel in this repair.
+Never reuse/overwrite exclusive artifact creators or bypass denied cleanup.
+Prior245/41 task audit/9 quiet actions/one exhausted D1 disabled retained,
+two Docker/uv exclusions unchanged. HiddenTask=False is not launcher-window
+behavior. Korean-first private Docker UI redesign deferred; no public port or
+outside-access tunnel in current work.
 
 ## Historical Dispatch (2026-10-12 KST)
 

@@ -436,6 +436,12 @@ services:
       - /app
       - --runtime-snapshot
       - /app/runtime/state/paper_account_snapshot.json
+      - --token-control-root
+      - /app/collection_control
+      - --token-minimum-interval-seconds
+      - "60"
+      - --token-wait-seconds
+      - "60"
     environment:
       THERICHER_MODE: off
       THERICHER_MODEL_ARTIFACT_ROOT: /app/model_artifacts
@@ -446,6 +452,7 @@ services:
     volumes:
       - thericher-v2-runtime:/app/runtime
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/collection-control-v1:/app/collection_control
 
   kis-paper-canary:
     image: sha256:bd41e48c0cf0d88b6b5d385dec2522b9ab31bb83182670de54c899c5e3e99bed

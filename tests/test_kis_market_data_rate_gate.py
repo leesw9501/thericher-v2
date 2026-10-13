@@ -4,6 +4,8 @@ import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
+import pytest
+
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     KisPaperMarketDataRateGate,
@@ -155,3 +157,53 @@ def test_shared_token_start_gate_yields_without_sleep_or_secret_state(tmp_path: 
 
     assert second.token_request_is_due() is True
     assert second.claim_token_request_start() is True
+
+
+def test_atomic_token_guard_defers_a_competitor_without_touching_owner(tmp_path):
+    from thericher_v2.execution.kis_market_data_rate_gate import (
+        KisPaperTokenStartGateBusy,
+        _atomic_token_state_guard,
+    )
+
+    root = tmp_path / "control"
+    root.mkdir()
+    gate = KisPaperMarketDataTokenStartGate(control_root=root, clock=lambda: _Clock().now)
+    with _atomic_token_state_guard(root):
+        assert gate.claim_token_request_start() is False
+        assert gate.token_request_is_due() is False
+        with pytest.raises(KisPaperTokenStartGateBusy):
+            gate.snapshot()
+        assert not (root / "token-request.json").exists()
+        assert (root / "token-request.lock.d").is_dir()
+    assert not (root / "token-request.lock.d").exists()
+    assert gate.claim_token_request_start() is True
+
+
+def test_interrupted_atomic_token_guard_is_not_reclaimed_by_age(tmp_path):
+    import os
+
+    from thericher_v2.execution.kis_market_data_rate_gate import KisPaperTokenStartGateBusy
+
+    root = tmp_path / "control"
+    directory = root / "token-request.lock.d"
+    directory.mkdir(parents=True)
+    os.utime(directory, (0, 0))
+    gate = KisPaperMarketDataTokenStartGate(control_root=root)
+    assert gate.claim_token_request_start() is False
+    with pytest.raises(KisPaperTokenStartGateBusy):
+        gate.snapshot()
+    assert directory.is_dir() and not (root / "token-request.json").exists()
+
+
+def test_failed_atomic_token_state_write_releases_only_the_empty_owned_guard(tmp_path, monkeypatch):
+    import thericher_v2.execution.kis_market_data_rate_gate as module
+
+    root = tmp_path / "control"
+    gate = KisPaperMarketDataTokenStartGate(control_root=root)
+    def fail(*args):
+        raise OSError("synthetic state write failure")
+    monkeypatch.setattr(module, "_write_state", fail)
+    with pytest.raises(OSError, match="synthetic state write"):
+        gate.claim_token_request_start()
+    assert not (root / "token-request.lock.d").exists()
+    assert not (root / "token-request.json").exists()

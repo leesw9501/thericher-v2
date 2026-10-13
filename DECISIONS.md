@@ -10255,3 +10255,32 @@ ProgramFiles environment value fixes it. Keep that OS variable while still
 excluding all live credentials. Inert profile0/own container absent and fresh
 v3 repository authority precede final observer restore; never rewrite the
 failed scheduled outcome or infer broker success from the test.
+
+## 2026-10-14 - Common token ownership and actual same-owner Paper recovery
+
+The configured observer joins the existing token-start file with explicit60s
+floor/at most60s owned wait, per official KIS one-issuance-per-minute README:
+https://github.com/koreainvestment/open-trading-api/blob/main/README.md?plain=1.
+Data default300/frozen settings remain. Claude rejected300/120 versus240s
+cadence arithmetic; revised60 supported-with-limits, not historical403 proof.
+D:/thericher-v2/model-artifacts/execution/kis-paper-snapshot-observer-runtime-recovery-v1/claude-challenge.json
+
+Measured Windows/Docker flock and lockf did not coordinate. New token-only
+atomic directory plus legacy same-OS lock passed actual cross-OS contention;
+guard covers state atomics, not HTTP. No age reclamation or timestamp reset.
+Interrupted guard needs quiescent named recovery, never global/human hold.
+Qualified new writer pair only; old frozen sources are not implicitly changed.
+Deferral preserves only still-current snapshot bytes/expiry, reports unavailable;
+real auth/read failure still invalidates. Exact deployed source is checked.
+
+Fresh completed daily data exposed a genuine original-rule SPY EXIT. Parent's
+first launcher mounted emergency RO, so native read-lock creation falsely
+returned fail-closed pause_sells despite retained flags false. Correct only
+existing volume mount to RW, retain flags/failed receipt/same decision/session.
+Actual same-owner sell accepted/full filled/owned-flat19:04:21UTC, strict
+offline exact chain verified. No alternative order or basis reset.
+D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
+
+Next product objective is canonical current-data repeated native Paper inside
+original aggregate initial tenth. A rejected seen-development research gate
+does not pause separately authorized Paper; no live, public or paid authority.

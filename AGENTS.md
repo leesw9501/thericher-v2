@@ -229,9 +229,20 @@ or unknown/next_due/recovery. Source-limited closes only its exact cursor,
 not all history/endpoints. Fresh-session work precedes backfill. Canonical1m
 may derive5m/10m/1h/3h; direct daily history is a separate source.
 
-Reuse one authenticated client/token while valid. The five-minute cross-process
-guard controls only a fresh token POST, not token lifetime/existing-client work/
-orchestration. Keep documented/measured pacing until a bounded single-client
+Reuse one authenticated client/token while valid. Data's default five-minute
+cross-process guard controls only a fresh token POST, not token lifetime/
+existing-client work/orchestration. The snapshot observer uses the same timing
+file with an explicit 60-second floor, per the official KIS one-per-minute
+issuance documentation; its four-minute cadence cannot sustain a 300-second
+floor. Its own due-aware wait is bounded at 60 seconds, not foreground sleep.
+This scoped calibration does not change frozen Data contracts or prove that
+every historical client joins the gate. New token-state writers use atomic
+directory exclusion plus legacy same-OS locks: Windows byte locks and Docker
+flock were measured not to coordinate. Held/interrupted directories defer only
+that token request; never reclaim by age or reset the timestamp. Recovery must
+establish quiescent named ownership and preserve the start mark. Old frozen
+mixed-OS writers are not implicitly upgraded. Keep documented/measured pacing
+until a bounded single-client
 calibration changes its evidence; inventory all end-to-end delays. No unbounded
 retries/request floods. Cooldowns belong to workers, not foreground sleeps.
 

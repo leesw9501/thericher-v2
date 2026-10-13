@@ -407,7 +407,9 @@ def test_concurrent_visits_serialize_one_submission(harness):
     with ThreadPoolExecutor(max_workers=2) as pool:
         outcomes = list(pool.map(lambda _: budget.run_kis_paper_budget_strategy(**args), range(2)))
     assert len(client.submits) == 1
-    assert {o.status for o in outcomes} == {"order_complete", "no_intent"}
+    assert {o.status for o in outcomes} == {"order_complete", "no_intent"}, [
+        o.safe_payload() for o in outcomes
+    ]
 
 
 @pytest.mark.parametrize("change", ["basis", "account", "missing_state", "fingerprint"])

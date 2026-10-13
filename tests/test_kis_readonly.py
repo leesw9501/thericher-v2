@@ -284,6 +284,68 @@ def test_real_transport_paces_only_valid_external_requests(monkeypatch) -> None:
     assert sleep_calls == [1.0, 1.0]
 
 
+def test_transport_guard_runs_after_preparation_and_pacing_before_actual_open(monkeypatch):
+    elapsed = [0.0]
+    events = []
+    original_request = urllib.request.Request
+
+    def construct(*args, **kwargs):
+        elapsed[0] += 61
+        events.append(("prepared", elapsed[0]))
+        return original_request(*args, **kwargs)
+
+    def guard(_request):
+        events.append(("guard", elapsed[0]))
+        elapsed[0] += 10
+
+    class Response:
+        status = 200
+        headers = {}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            pass
+
+        def read(self):
+            return b"{}"
+
+    class Opener:
+        def open(self, _request, *, timeout):
+            events.append(("open", elapsed[0]))
+            return Response()
+
+    sleeps = []
+
+    def sleep(seconds):
+        sleeps.append(seconds)
+        elapsed[0] += seconds
+
+    transport = UrllibKisHttpTransport(
+        before_request=guard, monotonic_clock=lambda: elapsed[0], sleeper=sleep
+    )
+    monkeypatch.setattr(urllib.request, "Request", construct)
+    monkeypatch.setattr(transport, "_opener", Opener())
+    request = KisHttpRequest(
+        method="POST",
+        url=f"{KIS_PAPER_BASE_URL}{KIS_PAPER_TOKEN_PATH}",
+        headers={"content-type": "application/json", "accept": "application/json"},
+        json_body={"grant_type": "client_credentials", "appkey": "test", "appsecret": "test"},
+    )
+    transport.request(request)
+    transport.request(request)
+    assert events == [
+        ("prepared", 61),
+        ("guard", 61),
+        ("open", 71),
+        ("prepared", 133),
+        ("guard", 133),
+        ("open", 143),
+    ]
+    assert sleeps == [1]
+
+
 def test_real_transport_paces_after_a_failed_external_attempt(monkeypatch) -> None:
     current_time = [50.0]
     sleep_calls: list[float] = []

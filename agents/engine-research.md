@@ -1,100 +1,100 @@
 # Engine Research Stateboard
 
-Current projection 2026-10-13 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md
-owns the company outcome. This lane improves feature/model research and
-cost-aware backtest/walk-forward validation.
+Current projection 2026-10-14 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md
+owns Paper recovery. This lane improves model learning and cost-aware replay.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+R=A/research/daily5-ohlcv-convergence-expert-composition-20261014-v1.
 R130=A/research/daily20-remaining-reference-exit-development-v1.
 R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
-## Ownership And Resources
+## Ownership And Current Stage
 
-Engine owns targets, features, splits, fitting, expert composition and model-side
-interpretation. Strategy Research owns source-derived proposals and assigned
-pure kernels; Engine consumes them into a bounded experiment or rejection.
-Parent owns company direction, shared policy, final composition and Git.
-Steward owns exclusive GPU/trial-family/sealed custody; Execution owns replay
-semantics and deterministic broker risk. No implementation ownership changes.
+Engine owns targets/splits/fitting/composition; Steward owns GPU/family custody.
+Strategy supplies proposals. Parent owns review/integration/Git/shared policy;
+Execution owns broker risk/replay semantics. No implementation ownership changes.
+Current campaign CLOSED/rejected/frozen; Parent reports independent readback PASS.
+No worker/GPU allocation remains running; no further numerical rescue/selection.
 
-Existing RTX4090/Torch2.7+cu128 and pinned d6 transport were exercised by 130.
-Its GPU lease was released; this edit makes no fresh resource/lease probe.
-Capability is measured evidence, not a new approval requirement or utilization
-target. No training, allocation, data/credential read or runtime dispatch here.
+## Actual Campaign And Shared Spend
 
-## Exact Current Evidence
+Family daily5-ohlcv-convergence-expert-composition-development-v1; no holdout.
+R/contract-finish.json SHA256 9e1605097cea9921489e56d03d41111033acfc59833481b3debf874385d7dae0.
+R/integration-evidence-finish.json SHA256 76e5642db119257ac6288b2a54e1016a5a555ae941ca1aa25d99d7d49a864cae.
+R/study-finish/output/result.json SHA256 7052ea0a6d2ca8ed0eb9af12c79a0a6d84fb81d417e123323b4fe3f406b3245e.
+Cumulative CPU13/CUDA3 =16 market fits INCLUDES carried CPU4/CUDA1 =5.
+Finish added CPU9/CUDA2 =11,26epochs208updates; cumulative39epochs260updates/0failedfits.
+R1 intake Budget.check(publication=True) mismatch failed before fits (0).
+R2 sklearn leaves numpy.int64 JSON failure followed five completed fits;
+serialization-repro.json proves first cause. Receipt normalization/restoration
+did not refit OOF1. Technical failures/debits remain, not scientific rejects.
+Host.started_at inherits FAMILY budget start2026-10-13T16:54:24.587709UTC,
+not finisher invocation start.1143.0095s is cumulative R1/R2/finish,not new-job time.
+Finisher contract frozen17:08:26.732289UTC; exact invocation start not recorded.
+Canonical registration1460.30481s/original1800s; no refund/reset/retry budget.
+Fit budget exhausted; complete/non_promoting_completed is not promotion.
 
-130 CLOSED/rejected; R130/integration-evidence.json
-SHA256 de64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
-Science 494e87b4... / trial1 row 0b19bf76... / outcome 9b31523f....
-Original 600s spent; actual 78.42165s, CPU1/CUDA1, 16 epochs/1568 updates,
-0 failed fits; 132 complete TRAIN/25,080 rows/674 decision dates.
-30 complete cells; 36 checks: 27 true/9 false/0 unknown; both rejected.
-Weights not retained, sealed spend0; original outcomes/debits stay immutable.
-Positive modeled growth does not erase that rejection or prove alpha.
-Source/child/container/owned-lease closure is host-attested, not independent
-OS/raw-NAV/PIT proof. Exact details remain in the immutable root and RUNBOOK.
+Retained daily512 source: prior21/raw20x5 + latest scalar20 indicators;
+raw/indicator/augmented Ridge, depth4 tree, GRU32, trend/reversion rules,
+fixed quarter blend, depth2 utility gate. No profitable-member prerequisite.
+Payoff entry OPEN(e) -> fifth CLOSE(e+4),10bps/side; recost5/10/20bps.
+135 TRAIN dates; OOF fit49/79,inner16/20,forecast34/34; final fit107/inner27.
+Strict target-end < next decision; TRAIN ends695 < DEV719.
+Gate uses680 chronological OOF rows/68 dates, not in-sample predictions.
+78 cells: cash/raw/singles/blend/gate/matched-planned-gross; six seen cohorts.
+Prior21 supports latest scalar Cutler RSI14, not full20-step RSI14 sequence:
+require declared prior35/per-step causal support for that; never zero-impute.
 
-131 UNFINISHED / SOURCE-READY / QUEUED; no actual fits or allocation.
-R131/engine-r1/source-release.json
-SHA256 102f2685feb889c6c77a8c02f001b778011725192347765e254c686ad95015a5.
-paired_models.py 7fd85816... / interface ed8364f4...; unchanged 130 model
-injection, same seed202/scaler/batches, mean-MSE versus fixed q=.25 pinball.
-16 Parent NumPy/mock SYN passed; validation-source-r1/receipt.json
-831c0f20... supports source boundaries only, not native fit/mean parity.
-Data reuse ee1fe908... is source-only; inherited counts are not new data reads.
-No canonical 131 scientific row, appointment, labels, fit or weights exist.
-Parent owns supersession of the unfinished company objective for Paper recovery;
-131 remains queued, not completed, erased or automatically replayed.
-If resumed, bind existing source handoffs, finish canonical contract/composition
-and scoped transport, then the existing two-CUDA/shared600s/16-epochs-each recipe.
-The planned mean reconstruction consumes one fit and must match 130 exactly.
-Do not rerun used source-release/exclusive creators or silently replace controls.
+## Results And Author Readback
 
-## Next Ready Preparation
+At10bps gate/blend growth: DEV1.7921%/0.7471%; later_seen0.4071%/0.2239%.
+Gate/blend DD: DEV0.4684%/0.2941%; later_seen0.1877%/0.1191%.
+Frozen kill: U>blend/cash AND DD<=blend in EACH block;4 true/2 DD false.
+Rejected named gate recipe, not all models; no substitute winner/Paper adoption.
+OOF2 GRU TRAIN MSE167.8152->166.9538,inner180.5368->180.4409;
+final TRAIN166.3978->165.3964,inner1009.4370->1009.4775 (percent-scale targets).
+Both stop13epochs/inner_patience12,restore epoch1 under >0.1% improvement rule,
+NOT global minimum: final epoch3 inner1009.2900 was lower,but below min_delta.
+Source scaled_y=y*100 is uncentered percentage points,not standardized/bps.
+26 actual curve points retained. OOF1 original curve missing; selected-checkpoint
+MSE recomputed,epoch1 inferred from13epochs/patience12,not recovered trajectory.
+Early stopping is not convergence proof; target conditioning remains a hypothesis.
+Safe numeric NPZ checkpoints retained D:,allow_pickle=False.
+R/readback_check.py API synthetic_check()/verify(root): author/Parent PASS,
+chronology/purge,680 unique OOF keys,spend,cost/utility/checks/bound hashes.
+R/model-stage-frozen.json SHA256 6af55bb4efd997ce98f0c058bfd37442b259b08fdcf77f0f5cb2977cf1572148.
+19 finish SYN passed; R/review-result/claude-dual-result-outcome.json:
+supported-with-limits. Readback is not independent raw-price/OS/PIT replication.
+Seen/current-listing/nonPIT/revised/raw-action/nonTR/availability/finality,
+fractional-fill/latency/capacity/small-correlated-support limitations remain.
 
-Prepare a fresh OHLCV convergence/technical-feature/expert-composition source proposal;
-not a new fixed production contract, frozen campaign or GPU appointment.
-Use retained daily512 old800/later71 and prior21 context, subject to exact
-Data-owned bindings; current21 is inference context, not future labels.
-Propose one five-session payoff matching replay and one 5/10/20 feature recipe.
-Use momentum/SMA distance, reversion/RSI, volatility/ATR/range, candle structure
-and relative-volume features. No implied VWAP, unsupported 30/60 context,
-snapshot splice or claim to full Alpha158/360. Freeze formulas/missing handling.
-Prior21 supports scalar RSI14, not a fully warmed 20-step RSI14 sequence.
-For that sequence, require declared prior35 coverage; freeze formula/initialization
-and per-step causal support. Never zero-impute missing indicator warmup.
+## Ready Successor And Historical Custody
 
-Compare raw, indicator-only and raw-plus-indicator Ridge; add fixed trend and
-reversion rules, one bounded tree expert and one small GRU expert.
-Compare their fixed blend and one shallow utility-tree gate against raw,
-single-expert and cash controls; no individual-profitable-member prerequisite.
-Use two expanding chronological OOF blocks within TRAIN and one final fit.
-Each expert's chronological inner checkpoint-selection block precedes its OOF
-prediction block; do not choose epochs using the gate's OOF labels.
-Group instruments by decision date, purge overlapping target intervals, fit
-scalers only on preceding eligible inputs, and report date-block support.
-Learn fusion only from aligned OOF expert outputs with identical availability,
-payoff/cost/row keys. Gate standalone utility is not optimal policy value.
+Strategy handoff A/strategy-research/next-breadth-20261014-v1/handoff.json SHA256 7c9eb632a3183b191fc1f426596eadcd2d3741b15c1fbbf042bf2c09326b8d2e.
+Ready source proposal: MIT TCN2f8c2b817.../Chronos2v2.2.2; no new frozen allocation.
+Prefer CURRENT OPEN(e)->CLOSE(e+4) payoff/rows/costs for clean conditioning contrast:
+TRAIN-only target centering/scaling,normalized GRU + TCN/raw Ridge; not LR brute force.
+Inverse head -> percentage points (pp); decimal=pp/100,bps=pp*100; costs once.
+Test10bps=0.1pp per side. Predeclare constant-zero/TRAIN-mean loss,output dispersion,
+pre/post-clip gradients,standardized/economic losses,relative inner patience/purge.
+Freeze finite axes/budget before fits; old results/debits/curves remain unchanged.
+WITH foundation member, EVERY compared TRAIN/calibration/OOF/DEV target must follow
+95a9710... release2025-10-30T14:58:57UTC; common postdates, no pre-release old800 OOF.
+Current payoff needs verified joint OPEN/CLOSE forecast h5: OPEN1,CLOSE5,not CLOSE proxy.
+If exact official API/alignment unsupported or unverified,isolate runtime/reject comparison.
+OPEN1->OPEN6 is a distinct target: freeze for ALL new models/replay; never reuse old
+percentage-target checkpoints/predictions as comparative controls for that target.
+Corpus/instruments not_disclosed/context overlap remain; no OOD/independent/Paper claim.
+Source9fits is not a global cap. No successor fits allocated/dispatched here.
 
-Proposed shared budget to freeze after source/support preparation: 16 fits
-(13 CPU/3 CUDA), 1800s including publication/cleanup, GRU up to128 epochs/fit,
-384 total epochs/6144 total updates; finite tree depth/iterations, fixed seeds.
-Predeclare TRAIN/inner-validation curves, patience, best-checkpoint restoration
-and convergence/overfit checks. Budget exhaustion is not proof of convergence.
-Freeze the decision-cost basis and sensitivity band before outcomes; compare
-utility, drawdown, turnover, exposure and matched-exposure controls.
-Strongest kill: future/OOF leakage or no incremental post-cost gate value over
-the fixed blend under the predeclared paired test; lower exposure alone is not alpha.
-
-## Policy And Recovery
-
-Old epochs/seeds/final-only/no-weight/no-rescue rules protect their exact trials,
-not fresh informed development. New safe D: checkpoints may be retained when
-contracted; record selection reuse, lineage and every fit without debit refunds.
-Seen/current-listing/nonPIT/revised/raw-action/nominal-availability limits remain;
-OOF or a new family name does not create independent replication/sealed evidence.
-Use existing A/_control/ledger/2026-10.jsonl and Steward custody; no new registry.
-History stays in Git, immutable external roots and RUNBOOK, not this projection.
-Next handoff: bounded recipe/source tests to Parent and Steward; no actual fit yet.
-Independent Paper recovery continues with its original shared10%basis/owners;
-research neither changes those controls nor adds a profitability permission gate.
+130 CLOSED/rejected,integration de64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d;
+CPU1/CUDA1,16epochs1568updates,78.42165s/original600s,0failedfits;
+132complete TRAIN/25080rows/674dates,30cells/36checks27true9false0unknown,
+both rejected; no weights/sealed spend0. Exact outcome/debits unchanged.
+131 SUPERSEDED UNFINISHED/SOURCE-READY/QUEUED; no actual fits/allocation/weights.
+R131/engine-r1/source-release.json SHA256 102f2685feb889c6c77a8c02f001b778011725192347765e254c686ad95015a5.
+Model7fd85816.../interfaceed8364f4.../reuseee1fe908.../validation831c0f20...;
+16 NumPy/mock SYN only,no canonical scientific row/native mean parity.
+Never replay source creators. Existing A/_control/ledger/2026-10.jsonl and
+A/engine-research-agent/locks/gpu.lock retain custody; history stays Git/roots/RUNBOOK.
+Old settings stay local; fresh convergence/features/ensembles allowed.
+Paper independently retains shared initial10%basis/losses/reservations.

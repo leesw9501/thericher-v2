@@ -59,7 +59,10 @@ def launch_fake(monkeypatch, tmp_path):
             return subprocess.CompletedProcess(
                 command,
                 code,
-                stdout=json.dumps(value or payload()).encode(),
+                stdout=json.dumps(
+                    (value or payload())
+                    | {"runtime_source_sha256": launcher.kis_paper_bridge_source_digest()}
+                ).encode(),
                 stderr=b"PRIVATE_RAW_ERROR",
             )
 
@@ -122,6 +125,20 @@ def test_default_inert_never_reads_credentials_or_invokes_child(monkeypatch, cap
     monkeypatch.setattr(launcher.subprocess, "run", deny)
     assert launcher.main([]) == 0
     assert json.loads(capsys.readouterr().out) == {"status": "inert", "submit_capability": False}
+
+
+@pytest.mark.parametrize("stale", [None, "0" * 64])
+def test_compatible_stale_runtime_output_is_rejected(stale):
+    value = payload()
+    if stale is not None:
+        value["runtime_source_sha256"] = stale
+    with pytest.raises(ValueError):
+        launcher.sanitize(json.dumps(value).encode(), INVOCATION)
+
+
+def test_runtime_source_pin_is_required_but_not_relayed_to_host_schema():
+    value = payload() | {"runtime_source_sha256": launcher.kis_paper_bridge_source_digest()}
+    assert launcher.sanitize(json.dumps(value).encode(), INVOCATION) == payload()
 
 
 @pytest.mark.parametrize(

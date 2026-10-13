@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import re
+import time
 from collections.abc import Callable, Iterator, Mapping
 from contextlib import contextmanager
 from dataclasses import dataclass, field
@@ -16,8 +17,17 @@ from typing import BinaryIO, Literal
 from uuid import UUID, uuid4
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_BUSY_REASON,
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
+    KisPaperMarketDataTokenStartGate,
+    KisPaperTokenStartGateBusy,
+)
 from thericher_v2.execution.kis_readonly import (
     DEFAULT_KIS_PAPER_ARTIFACT_ROOT,
+    KIS_PAPER_TOKEN_PATH,
+    KisHttpRequest,
+    KisHttpResponse,
     KisHttpTransport,
     KisPaperReadOnlyClient,
     KisPaperReadOnlyError,
@@ -44,6 +54,10 @@ _OBSERVER_EVIDENCE_KIND = "kis_paper_snapshot_observer"
 _OBSERVER_EVIDENCE_PARTS = ("execution", "kis-paper-snapshot-observer")
 _OBSERVER_BRIDGE_EVIDENCE_PARTS = ("execution", "kis-paper-console-bridge")
 _REASON_CODE_PATTERN = re.compile(r"^[a-z0-9_]{1,64}$")
+_TOKEN_DEFERRAL_REASONS = {
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_BUSY_REASON,
+}
 
 try:
     import fcntl
@@ -95,10 +109,16 @@ def run_kis_paper_console_bridge(
     repository_root: Path,
     transport: KisHttpTransport | None = None,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+    token_start_gate: KisPaperMarketDataTokenStartGate | None = None,
+    token_wait_seconds: float = 60.0,
+    sleeper: Callable[[float], None] = time.sleep,
+    monotonic: Callable[[], float] = time.monotonic,
 ) -> KisPaperConsoleBridgeOutcome:
     """Publish one snapshot while holding the shared runtime refresh lock."""
 
     started_at = require_utc(clock(), "clock")
+    if not 0 <= token_wait_seconds <= 60:
+        raise ValueError("token wait must be between zero and 60 seconds")
     with _exclusive_runtime_snapshot_refresh_lock(runtime_snapshot_path) as acquired:
         if not acquired:
             return KisPaperConsoleBridgeOutcome(
@@ -118,6 +138,10 @@ def run_kis_paper_console_bridge(
             clock=clock,
             started_at=started_at,
             observer_invocation_id=observer_invocation_id,
+            token_start_gate=token_start_gate,
+            token_wait_seconds=token_wait_seconds,
+            sleeper=sleeper,
+            monotonic=monotonic,
         )
 
 
@@ -131,22 +155,46 @@ def _run_locked_kis_paper_console_bridge(
     clock: Callable[[], datetime],
     started_at: datetime,
     observer_invocation_id: str | None,
+    token_start_gate: KisPaperMarketDataTokenStartGate | None,
+    token_wait_seconds: float,
+    sleeper: Callable[[float], None],
+    monotonic: Callable[[], float],
 ) -> KisPaperConsoleBridgeOutcome:
-    """Publish unavailable before credential I/O, then replace it with the result."""
+    """Keep a still-valid cache during refresh without renewing its old expiry."""
 
-    write_paper_account_snapshot(
-        PaperAccountSnapshot.unavailable(
-            observed_at=started_at,
-            reason_code="refresh_in_progress",
-        ),
-        runtime_snapshot_path,
-    )
+    previous = read_paper_account_snapshot(runtime_snapshot_path, now=started_at)
+    if previous.status != "available":
+        write_paper_account_snapshot(
+            PaperAccountSnapshot.unavailable(
+                observed_at=started_at,
+                reason_code="refresh_in_progress",
+            ),
+            runtime_snapshot_path,
+        )
     diagnostic: Mapping[str, str] = {}
     try:
         config = load_kis_paper_config_from_environment(environment)
+
+        def before_request(request: KisHttpRequest) -> None:
+            if token_start_gate is not None and request.method == "POST":
+                if not request.url.endswith(KIS_PAPER_TOKEN_PATH):
+                    raise KisPaperReadOnlyError("request_not_allowlisted")
+                _claim_token_start_when_due(
+                    token_start_gate,
+                    clock=clock,
+                    sleeper=sleeper,
+                    monotonic=monotonic,
+                    maximum_wait_seconds=token_wait_seconds,
+                )
+
+        actual_transport = (
+            _BeforeRequestTransport(transport, before_request)
+            if transport is not None
+            else UrllibKisHttpTransport(before_request=before_request)
+        )
         source_snapshot = KisPaperReadOnlyClient(
             config=config,
-            transport=transport or UrllibKisHttpTransport(),
+            transport=actual_transport,
         ).snapshot()
         final_snapshot = paper_account_snapshot_from_kis_readonly(
             source_snapshot,
@@ -164,7 +212,18 @@ def _run_locked_kis_paper_console_bridge(
             reason_code="unexpected_failure",
         )
 
-    snapshot_digest = write_paper_account_snapshot(final_snapshot, runtime_snapshot_path)
+    preserved_snapshot = None
+    if final_snapshot.reason_code in _TOKEN_DEFERRAL_REASONS:
+        still_current = read_paper_account_snapshot(
+            runtime_snapshot_path, now=final_snapshot.observed_at
+        )
+        if still_current.status == "available":
+            preserved_snapshot = still_current.snapshot
+    snapshot_digest = (
+        paper_account_snapshot_digest(preserved_snapshot)
+        if preserved_snapshot is not None
+        else write_paper_account_snapshot(final_snapshot, runtime_snapshot_path)
+    )
     evidence_path = write_kis_paper_console_bridge_evidence(
         final_snapshot,
         snapshot_digest=snapshot_digest,
@@ -172,6 +231,7 @@ def _run_locked_kis_paper_console_bridge(
         repository_root=repository_root,
         diagnostic=diagnostic,
         observer_invocation_id=observer_invocation_id,
+        runtime_snapshot_preserved=preserved_snapshot is not None,
     )
     observer_evidence_path = None
     if observer_invocation_id is not None:
@@ -195,13 +255,56 @@ def _run_locked_kis_paper_console_bridge(
     )
 
 
+def _claim_token_start_when_due(
+    gate: KisPaperMarketDataTokenStartGate,
+    *,
+    clock: Callable[[], datetime],
+    sleeper: Callable[[float], None],
+    monotonic: Callable[[], float],
+    maximum_wait_seconds: float,
+) -> None:
+    """Only this bounded worker owns the wait; a fresh POST needs an atomic claim."""
+
+    deadline = monotonic() + maximum_wait_seconds
+    while not gate.claim_token_request_start():
+        try:
+            due = gate.snapshot().next_token_request_not_before_utc
+        except KisPaperTokenStartGateBusy as error:
+            raise KisPaperReadOnlyError(KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_BUSY_REASON) from error
+        remaining = deadline - monotonic()
+        delay = (due - require_utc(clock(), "clock")).total_seconds() if due else 0
+        if delay <= 0 or delay > remaining or remaining <= 0:
+            raise KisPaperReadOnlyError(KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON)
+        sleeper(min(delay, 10.0))
+        if monotonic() > deadline:
+            raise KisPaperReadOnlyError(KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON)
+
+
+@dataclass
+class _BeforeRequestTransport:
+    transport: KisHttpTransport
+    before_request: Callable[[KisHttpRequest], None]
+
+    def request(self, request: KisHttpRequest) -> KisHttpResponse:
+        self.before_request(request)
+        return self.transport.request(request)
+
+
+def kis_paper_bridge_source_digest() -> str:
+    """Bind the deployed bridge, native transport and gate without private state."""
+
+    root = Path(__file__).parent
+    digest = hashlib.sha256()
+    for name in ("kis_paper_console_bridge.py", "kis_readonly.py", "kis_market_data_rate_gate.py"):
+        digest.update(name.encode("ascii") + b"\0" + (root / name).read_bytes())
+    return digest.hexdigest()
+
+
 @contextmanager
 def _exclusive_runtime_snapshot_refresh_lock(runtime_snapshot_path: Path) -> Iterator[bool]:
     """Hold one advisory lock for every bridge writer sharing the runtime volume."""
 
-    lock_path = runtime_snapshot_path.with_name(
-        f".{runtime_snapshot_path.name}.refresh.lock"
-    )
+    lock_path = runtime_snapshot_path.with_name(f".{runtime_snapshot_path.name}.refresh.lock")
     try:
         lock_path.parent.mkdir(parents=True, exist_ok=True)
         handle = lock_path.open("a+b")
@@ -261,9 +364,15 @@ def write_kis_paper_console_bridge_evidence(
     repository_root: Path,
     diagnostic: Mapping[str, str] | None = None,
     observer_invocation_id: str | None = None,
+    runtime_snapshot_preserved: bool = False,
 ) -> Path:
     """Persist an immutable fact-minimized result outside the repository."""
 
+    if runtime_snapshot_preserved and (
+        snapshot.status != "unavailable"
+        or snapshot.reason_code not in _TOKEN_DEFERRAL_REASONS
+    ):
+        raise ValueError("only a token-start deferral may preserve the runtime snapshot")
     resolved_root = _resolve_permitted_artifact_root(
         artifact_root=artifact_root,
         repository_root=repository_root,
@@ -286,6 +395,7 @@ def write_kis_paper_console_bridge_evidence(
         "paper_only": True,
         "submit_capability": False,
         "runtime_snapshot_sha256": snapshot_digest,
+        "runtime_source_sha256": kis_paper_bridge_source_digest(),
     }
     if observer_invocation_id is not None:
         payload["observer_invocation_id"] = _validated_observer_invocation_id(
@@ -293,10 +403,12 @@ def write_kis_paper_console_bridge_evidence(
         )
     if snapshot.status == "unavailable":
         payload["reason_code"] = snapshot.reason_code
+        if runtime_snapshot_preserved:
+            payload["runtime_snapshot_preserved"] = True
         if diagnostic:
             validate_kis_paper_readonly_diagnostic(diagnostic)
             payload["diagnostic"] = dict(diagnostic)
-    elif diagnostic:
+    elif diagnostic or runtime_snapshot_preserved:
         raise ValueError("complete bridge evidence cannot have a diagnostic")
     else:
         assert snapshot.orderable_foreign_funds is not None
@@ -350,8 +462,7 @@ def write_kis_paper_snapshot_observer_evidence(
     )
     destination_directory = _observer_evidence_directory(resolved_root, create=True)
     destination = destination_directory / (
-        f"{normalized_observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-"
-        f"{invocation_id}-{status}.json"
+        f"{normalized_observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{invocation_id}-{status}.json"
     )
     payload: dict[str, object] = {
         "schema_version": SCHEMA_VERSION,
@@ -572,10 +683,23 @@ def _validate_bridge_evidence_contract(
         "runtime_snapshot_sha256",
         "observer_invocation_id",
     }
+    if "runtime_source_sha256" in payload:
+        if not isinstance(payload["runtime_source_sha256"], str) or re.fullmatch(
+            r"[0-9a-f]{64}", payload["runtime_source_sha256"]
+        ) is None:
+            raise ValueError("bridge source digest is invalid")
+        expected_keys.add("runtime_source_sha256")
     if status == "complete":
         expected_keys.add("facts")
     else:
         expected_keys.add("reason_code")
+        if "runtime_snapshot_preserved" in payload:
+            if (
+                payload["runtime_snapshot_preserved"] is not True
+                or reason_code not in _TOKEN_DEFERRAL_REASONS
+            ):
+                raise ValueError("bridge preserved-snapshot flag is invalid")
+            expected_keys.add("runtime_snapshot_preserved")
         if "diagnostic" in payload:
             expected_keys.add("diagnostic")
     if set(payload) != expected_keys:
@@ -767,6 +891,11 @@ def build_parser() -> argparse.ArgumentParser:
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--execute", action="store_true")
     mode.add_argument("--recover-evidence", action="store_true")
+    parser.add_argument("--token-control-root", type=Path)
+    parser.add_argument(
+        "--token-minimum-interval-seconds", type=float, choices=(60, 300), default=300
+    )
+    parser.add_argument("--token-wait-seconds", type=float, default=60.0)
     parser.add_argument("--repository-root", type=Path, default=Path.cwd())
     parser.add_argument(
         "--artifact-root",
@@ -805,6 +934,15 @@ def main(argv: list[str] | None = None) -> int:
             runtime_snapshot_path=arguments.runtime_snapshot,
             artifact_root=arguments.artifact_root,
             repository_root=arguments.repository_root,
+            token_start_gate=(
+                KisPaperMarketDataTokenStartGate(
+                    control_root=arguments.token_control_root,
+                    minimum_request_interval_seconds=arguments.token_minimum_interval_seconds,
+                )
+                if arguments.token_control_root is not None
+                else None
+            ),
+            token_wait_seconds=arguments.token_wait_seconds,
         )
     observer_evidence = None
     if outcome.observer_evidence_path is not None:
@@ -820,9 +958,7 @@ def main(argv: list[str] | None = None) -> int:
                 "reason_code": outcome.reason_code,
                 "observed_at": outcome.observed_at.isoformat(),
                 "evidence_path": (
-                    str(outcome.evidence_path)
-                    if outcome.evidence_path is not None
-                    else None
+                    str(outcome.evidence_path) if outcome.evidence_path is not None else None
                 ),
                 "observer_evidence_path": (
                     str(outcome.observer_evidence_path)
@@ -836,6 +972,7 @@ def main(argv: list[str] | None = None) -> int:
                 ),
                 "scope": "read_only",
                 "account_snapshot_complete": outcome.status == "complete",
+                "runtime_source_sha256": kis_paper_bridge_source_digest(),
             },
             sort_keys=True,
         )

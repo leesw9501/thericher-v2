@@ -13,7 +13,10 @@ from pathlib import Path
 from uuid import UUID
 
 from thericher_v2.execution import kis_readonly as ro
-from thericher_v2.execution.kis_paper_console_bridge import KisPaperConsoleBridgeOutcome
+from thericher_v2.execution.kis_paper_console_bridge import (
+    KisPaperConsoleBridgeOutcome,
+    kis_paper_bridge_source_digest,
+)
 
 OS_DOCKER_KEYS = (
     "PATH",
@@ -61,6 +64,8 @@ SAFE_REASONS = frozenset(
         "access_token_invalid",
         "auth_response_invalid",
         "auth_rejected",
+        "token_request_not_due",
+        "token_request_busy",
         "balance_rejected",
         "open_orders_rejected",
         "orderable_funds_rejected",
@@ -120,8 +125,14 @@ def sanitize(stdout: bytes | str, invocation_id: str) -> dict[str, object]:
     if len(stdout) > 65536:
         raise ValueError("oversized output")
     value = json.loads(stdout, object_pairs_hook=unique_object)
-    if not isinstance(value, dict) or set(value) not in (FIELDS, FIELDS | {"diagnostic"}):
+    source_fields = FIELDS | {"runtime_source_sha256"}
+    if not isinstance(value, dict) or set(value) not in (
+        source_fields,
+        source_fields | {"diagnostic"},
+    ):
         raise ValueError("output schema")
+    if value["runtime_source_sha256"] != kis_paper_bridge_source_digest():
+        raise ValueError("runtime source mismatch")
     if value["scope"] != "read_only" or type(value["account_snapshot_complete"]) is not bool:
         raise ValueError("scope")
     observed = datetime.fromisoformat(value["observed_at"].replace("Z", "+00:00"))

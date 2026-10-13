@@ -1,11 +1,181 @@
 # Execution Stateboard (모의투자 실행 담당)
 
+## Current Projection (2026-10-14 KST)
+
+Parent is closing approved-paper10-percent-recovery-v1 from ACTUAL runtime;
+next company objective current-data-shared-budget-paper-loop-v1 (Parent owns
+Goal/HANDOFF/Git). Execution current write-set: fresh external
+execution/current-paper-owner-control-v1/current253/preview-container-v1.
+After this compression keep this MD quiet until Parent's commit completes.
+No sidecar broker call, task/observer mutation, private write or Git operation.
+
+ACTUAL Parent SPY r2 EXIT19:04:21UTC: order_complete/
+exact_order_and_position_reconciled,1token/23GET/1sell/0cancel;
+baseline_owned_flatTrue, exact last request closedTrue, reserved buyFalse,
+exact actor absent. Same original decision06f5e9fe/session, NOT forced signal.
+D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
+Execution sourceba15af4d.../launcher62a0a5... (Parent reported).
+Parent independent offline decision -> intent -> accepted acknowledgement ->
+full exact linked fill -> terminal -> baseline flat VERIFIED: current book
+6owners/15terminal intents/0unknown/0pending;2held instruments TLT/GLD.
+Source/private unchanged, network0. No adoption, reset or basis expansion;
+original shared initial10%, entry costs/losses and custody retained.
+Fees/settled cash/dividends/net PnL remain unmeasured, not zero.
+
+Earlier18:56 SPY attempt no_intent/pause_sells_active, all request counts0.
+Parent confirmed RO mount fault: stored pause flagsFalse but Store read
+failed closed because sibling a+b lock needs RW. R2 existing emergency volume
+RW allowed native locks, NO flag changes. Observer restoredReady.
+Source-pinned6 SYN/Ruff pass independently reproduce RO failure/RW unchanged
+JSON. Pure portfolio preview needs no Store lock; native execution does.
+
+Current253 original recipe selected; current21 stays UNSELECTED8-SYN source,
+no actual performance. Data exact recipe5ccc2ee6.../worker d07b4f65... supplies
+all4 aligned253 completedD1 nominal dates throughOct12; original252 population
+covariance/capped-thirds/shrink/risk recipe, no new strategy selector.
+Current control da043282.../input0f9fa87c...; selected published availability
+Oct13 17:45:16.433236UTC, targetOct12 20UTC, currentOct13 valid until20UTC.
+Observed/non-PIT/rawMODP0/corporate-actions unverified/not provider finality.
+Data read_context BEFORE core/config; nominal UTC-midnight is not NY-close.
+Host adapter48 SYN/Ruff and exact offline source ABI pass; no broker/private
+reads/writes or SPY reevaluation. Original253 baseline protection unchanged.
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/runtime-source-validation-r2.json
+
+ACTIVE external bridge: host p.prepare -> stdin private control -> pinned5b
+native preview, strict current binding/_owners/_states; GET-only validated
+transport plus one token/shared gate, full source/private before/after audits.
+No orders/cancel/observe()/Store/lock/private-book writes in preview; private
+volumeRO. Source readiness is NOT connected preview or deployment evidence.
+Parent owns currentportfolio actual, container qualification and dispatch;
+do not compete. Next material action: current exact account/quote preview,
+then Parent's original native cycle if technical facts permit. Refresh current
+custody after baseline closure; freeze same source/control/basis/owner contract
+for any new cycle, retain original pending contract on resume. No oldOct9
+rebind/45e93 receipt dispatch/new allocation. Operator decisions: NONE.
+
+## Retained History
+
 Current projection 2026-10-14 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
 Artifacts D:/thericher-v2/model-artifacts. Paper delegated; KIS_LIVE_* unavailable.
 
 ## Current Package
 
 Owner Execution: safe first-cause diagnostics and exact Paper recovery.
+Current sidecar write-set: this stateboard and fresh external
+execution/current-paper-owner-control-v1/current253; all older releases retained.
+Parent owns tracked observer/token-gate/Compose/base-image deployment, broker
+calls, schedules, policy and Git. No sidecar network/private-book writes.
+
+R3 strict offline audit COMPLETE Oct13 16:49:05UTC (Oct14KST), pinned113f,
+network-none/native private volume read-only. Canonical binding6ledger owners,
+14terminal intents (10submitted/4intent_recorded),0unknown,0pending,
+0unproved expired-unattempted and0reserved-buy owners. Recorded inventory:
+3owners/3instruments, baselineSPY/portfolioTLT/portfolioGLD; QQQ/stock and
+portfolioSPY recorded flat. Existing exact initial tenth and losses retained;
+remaining aggregate cap positive, not fresh broker buying-power authority.
+These6ledger owners are NOT nineteen schedule-to-custody mappings.
+Those offline facts alone did not establish broker linkage; later exact R3
+connection below establishes its scope only. Fees/settlement/net remain unknown.
+Both source/private audits exactlyTrue; independent original-parser10checks
+agree. No stale unknown-SPY assertion carried forward from historical boards.
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/delivery-r3/offline-outcome.json
+SHA7c7e91bbe34183f96fdb99682d229029bf7681485d26198a4c3b54586edbe884.
+
+R3 source READY: custody release044d7eac.../inquiry release2705f575...;
+35 SYN pass/Ruff pass/exact-source API and independent static checks pass;
+pinned113f inquiry inert/source-exact smoke passes without private mounts.
+Both final integrity flags must be exactlyTrue AND parsing complete; otherwise
+all custody/capacity/linkage claims cleared to input_unavailable. R2 immutable.
+Prepared connected read-only path uses original frozen source/image113f,
+original private volumeRO, one scoped Paper client/token, existing strict
+dated-order fill parser, no observe()/submit/modify/cancel/private-book writes.
+Exact held-owner states/IDs/dates stay only in memory. At most24requests,
+1token POST/90seconds/HTTP<=8seconds; shared /control host collection-control-v1
+explicit300second fresh-token guard. No due wait or token persistence.
+Concrete Parent command/API and mandatory linkage consumer:
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/delivery-r3/parent-command.txt
+Parent ACTUAL R3 read-only SUCCESS17:07:08..17:07:35UTC:1token/11GET/
+HTTP200,6checked/6exact current fill links,3held owners, account identity and
+owned inventory matchesTrue, selected open ordersFalse, source/privateTrue,
+exact container absent.0order/cancel/private-book writes. Strict R3 projection
+plus explicit Parent metadata verified; no new submit/fill or fee/net claim.
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/parent-inquiry-20261014-v1/outcome.json
+SHA2759cbc78d568d92cf3099460cff56ce8408ee1be99a4098bddf89b946bacb7c.
+
+SAME-OWNER policy review ACTUAL17:15:54UTC, network-none/RO/pinned113f:
+SPY selected head endsOct9 with existing first availabilityOct12 14:50:02UTC.
+Original two-close next-session validity endedOct12 20:00UTC; now stale/
+abstain, HOLD. Today's14:50 budget receipt independently records stale/no_intent.
+Do not renew that input or infer a sell from a held position.
+TLT/GLD checkpoint strictly decoded: portfolio-control-20261009-v1, frozen
+Oct9 13:45:03UTC/input throughOct8. Original one-shot session expired; native
+cycle has no time-only liquidation. HOLD, no current rebalance eligible on
+that old context. No next recurring portfolio visit exists in its original
+one-shot definition; correctly scoped current control/session required.
+Source/private/retained-input auditsTrue;6 focused SYN/Ruff pass. Four policy
+source files match current tracked bytes; no tracked runtime overlay used.
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/delivery-r3/same-owner-action-r1/outcome.json
+SHA3e3709ed8ea16dc6389cea4893ccf75d702c8208e4a143a873c945b13749a761.
+
+Fresh ACTUAL current253 consumer READY18:05:10UTC, not broker runtime:
+Data recipe5ccc2ee6.../outcome5dc5d35e... exact worker.read_context consumed
+SPY baseline2 plus all4 ETF253 manifests throughOct12, source audited unchanged.
+Original SPY two-close API produces EXIT/ready/currentTrue; decided at retained
+raw first availabilityOct13 17:45:02.638189UTC, valid untilOct13 20:00UTC.
+Opaque identityd1e5a23f.../receipt SHA45e93f98... reproduced unchanged. No signal
+manufacture, prices, private IDs, broker calls, order or availability/head writes.
+Data Bar.start_ts is NOMINAL provider xymd at UTC-midnight; never NY-convert it.
+Context.last_session Oct12 maps to official closeOct12 20:00UTC; next execution
+session is Oct13, distinct from actual first availability. Not provider finality.
+Original engineering helper1a273516... used on253 closes/252 population returns,
+unchanged capped-thirds/shrink/risk recipe. Current control da043282.../
+input0f9fa87c... targetOct12 20:00UTC;7 focused SYN/Ruff pass. Namespaces:
+load all exact Data contexts in one fresh process BEFORE core/client imports;
+afterward use retained byte audits, not another isolated-reader import over it.
+Data post-publication cache-absence fixture failure is not a Data fault; no
+recipe/cache/test modification. Current Data ABI is now explicitly bound here:
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/API.txt
+consumer1f0f9019.../control-outcomed56e6cff...; baseline-outcome0b8b85ba....
+Quote/account preview NOT invoked; fresh technical/unknown/budget checks remain
+Parent-owned. Actual observer17:56 bridge/time/source644087... verified by Parent,
+manual_launchFalse. No source-only claim substitutes for that runtime evidence.
+
+Parent owns current-paper-spy-baseline-20261014-v1 and actual baseline executor.
+Parent actual unchanged two-close EXIT/ready uses published availability
+17:45:02.678UTC, not earlier sidecar raw-row17:45:02.638189 timestamp.
+Parent decision-receipt SHA06f5e9fe166cc75d0bed08b057a0841f5d6c1fc26b235709ce5ec1189268e7f6;
+sameOct13 window until20UTC, no forced signal. Parent preparing bounded
+native budget exit in current5b image; NOT invoked/filled by this sidecar.
+Do not duplicate its source reevaluation or executor.
+
+Current253 callable portfolio adapter SOURCE READY18:26:32UTC:
+portfolio_runtime.py b035fcd0..., strict Data253 aligned chronology/nominal
+labels, original252 covariance/capped-thirds recipe. Same control da043282...;
+selected max published snapshot availability17:45:16.433236UTC rather than
+raw-row17:45:16.374713 or now; targetOct12 close/currentOct13 until20UTC.
+21 adapter SYN +27 native cycle SYN48pass/Ruff; independent scalar252 covariance
+check passes. Both native/source byte auditsTrue; broker/private/SPY evaluation0.
+Fresh prepare -> pure preview -> original advance_kis_paper_portfolio_cycle,
+one exact leg, disjoint current253-20261013-da043282a41f67e8 context. Failed
+final source audit returns no usable projection; any persisted request still
+requires its own exact recovery, never inferred zero submission.
+Readiness is HOST source ABI, not5b container deployment. Parent must bind its
+native source/private paths explicitly, not silently rebase pinned C:/D: reader.
+Original baseline protection/whole book/unknown/budget/quote/limit guards intact.
+After baseline EXIT reconciles: ONE fresh exact custody/account/quote preview,
+then freeze current contract; retain SAME original contract/binding/control on
+pending resume. No oldOct9 rebind, new signal or old worker invocation.
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/PORTFOLIO-API.txt
+D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/runtime-source-validation-r2.json
+Earlier source diagnostic remains retained; r2 is selected current source proof.
+
+Retained current21 proposal controller534a0273... is UNSELECTED8-SYN source,
+not this actual253 recovery recipe and not actual/qualified performance.
+Its immutable20-return covariance/defensive mask/API remain external for history.
+No strategy selector was promoted by Execution. Existing source/test/API bytes
+unchanged at execution/current-paper-owner-control-v1; current253 child is the
+selected original-recipe consumer. QQQ stays context, not a new portfolio owner.
+
 Original G83 Oct12 scoped evidence: nine opaque lifecycle failures, one
 canonical no-intent, twenty entry-window-elapsed recoveries; those receipts
 record zero order POSTs. Planner reason erased at lifecycle_worker line418,
@@ -48,25 +218,48 @@ run at14:53:37UTC. Exact pointer:
 D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/delivery-r2/parent-actual-outcome.json
 SHA9c84469766ddce576d9f3ebbbc059dc3c50217443654941050cc567fa34314da.
 
-Verified configured-source gap: snapshot observer starts a fresh bridge/client
-every4min without the shared token gate/control mount. Actual deployed bytes/
-collision timing unverified; do not call this the proven403 cause. Official KIS
-README documents one token request/minute. Existing300s shared guard still
-applies to its current paths; no global pause or relaxation.
+Earlier configured-source gap: observer fresh bridge/client lacked shared token
+gate/control mount; collision was not proved as403 cause. Parent validated
+scheduled16:28/16:32UTC observer completion and now temporarily disables ONLY
+that observer for tracked gate/Compose/base-image deployment. Parent owns its
+60second interval decision; Data300 contract remains local, common last-start
+state shared. Official KIS README documents one token issuance/minute; exact
+official EGW00133 mapping has not been retrieved here. No credential diagnosis.
 
 ## Recovery And Authority
 
 Preserve original shared initial virtual-cash approximately10% basis, owned
-entry costs/losses/reservations and unknown requests across all nineteen owners.
+entry costs/losses/reservations and unknown requests across all canonical owners.
 Do not adopt inventory or substitute an intent; reconcile exact unknown first.
 Private volume thericher-v2-paper-canary-private-acct-20261007-v1.
 Call-time virtual host/budget/orderability/freshness/persist-before-effect
 invariants stay. A research failure is not a Paper profitability approval gate.
 
-Ready next: unify the observer's token-start ownership with existing paths,
-preserve valid snapshots/TTL on not-due and make retries due-aware; then
-one bounded account/quote probe reusing its token. No unbounded retry, token
-artifact persistence or recovery-capable observe() as a reader.
+Ready NOW for Parent: actual fresh account/quote/exact-limit orderability
+preview under the owned client/shared token state, then reviewed SAME baseline
+SPY EXIT if original identity/unknown/full-budget/fresh-quote guards pass before
+Oct13 20:00UTC. Use fresh original custody, not old17:07 snapshot as submit proof.
+The new ready/current exit is actual source-derived, not a forced portfolio trim.
+After that exact action reconciles, refresh canonical book/reads before creating
+any new current253 original-recipe portfolio cycle; baseline remains protected.
+No old-head/forecast/context rewrite. No sidecar broker or worker invocation.
+Source-configured next recurring head/session:Oct14 22:15/23:50KST
+(13:15/14:50UTC); not fresh Scheduler readback and not a foreground wait.
+Old portfolio loader/context remains frozen. New current253 uses original
+recipe with fresh exact Data source, a distinct current253-20261013 context and
+the existing native preview/cycle. Preserve original owners/basis and retain
+any started/unknown cycle's original contract instead of rebinding Oct9 or
+using newly refreshed source for that leg. Current21 candidate not activated.
+Actual quotes/orderability/runtime are next technical work, not approval holds.
+No forced threshold/new allocation or old frozen-job invocation. Parent owns
+actual guarded action after technical review. Operator decisions: NONE.
+Retained original paths/eligibility/runtime caveat:
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/delivery-r3/same-owner-action-r1/recommendation.txt
+Compose daily-SPY still selectsbd41e48c, not reader113f/provisional observer
+base08fcc; no new tracked gate is implied for that baked worker. Attest its
+runtime and token transport before action. No unbounded retry/token persistence
+or recovery-capable observe() as a reader. Missing/ambiguous evidence stays
+scoped unknown; original identity/budget/quote/orderability guards remain.
 No forced signal/trade and no blanket no-manual ban on a new correctly owned
 Execution package. Task exit, no-intent and submit/accept/fill remain distinct;
 current custody, fees/settlement/net unknown unless exact evidence proves them.
@@ -232,7 +425,9 @@ Missing fee/finality/settlement/tax/net evidence stays unknown, never zero profi
 
 Physical volume thericher-v2-paper-canary-private-acct-20261007-v1,
 native/private/canary and existing consumers/app/private/canary.
-Preserve baseline-SPY unknown, TLT/GLD portfolio, QQQ owned-flat, stock owners,
+Current strict R3 canonical replay records baseline-SPY and TLT/GLD held,
+QQQ/stock recorded-flat; historical baseline-SPY unknown is not current evidence.
+Preserve those exact owners,
 exact reservations and pending identities. Old account volume unadopted;
 do not adopt by ticker/reset basis/erase history. Unknown exact submit requires
 its own reconciliation before replacement; independent scopes continue.
