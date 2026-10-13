@@ -473,6 +473,7 @@ def collect_daily_contexts(
     control_root: Path = CONTROL_ROOT,
     repository_root: Path = REPOSITORY_ROOT,
     token_interval_seconds: int = 300,
+    access_token: str | None = None,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     monotonic: Callable[[], float] = time.monotonic,
     sleeper: Callable[[float], None] = time.sleep,
@@ -485,9 +486,21 @@ def collect_daily_contexts(
     deadline stops new starts; each native socket timeout is capped by remaining
     time (not a guarantee against OS suspension or arbitrarily slow body trickle).
     A held claim has no TTL reclamation. Existing/frozen namespaces are untouched.
+
+    An explicit in-memory Paper ``access_token`` may be borrowed from the owned
+    Execution actor. The caller attests its Paper host/app identity and lifetime.
+    It is never loaded, returned or persisted here; rejection never refreshes it.
     """
     _require(type(config) is native.KisPaperMarketDataConfig)
     _require(type(token_interval_seconds) is int and token_interval_seconds in {60, 300})
+    _require(
+        access_token is None
+        or (
+            type(access_token) is str
+            and bool(access_token)
+            and all(33 <= ord(character) <= 126 for character in access_token)
+        )
+    )
     cache = _external(cache_root, repository_root, "market_data")
     artifacts = _external(artifact_root, repository_root, "model_artifacts")
     control = _external(control_root, repository_root, "market_data")
@@ -560,6 +573,10 @@ def collect_daily_contexts(
             client = native.KisPaperMarketDataClient(
                 config=config, transport=transport, max_daily_page_attempts=16
             )
+            if access_token is not None:
+                # Native ctor has no token argument. Only this validated, explicit
+                # caller value seeds its existing in-memory token; no refresh path.
+                client._access_token = access_token
             client.ensure_authenticated()
             for symbol, exchange in ETF_VENUES.items():
                 rows: dict[str, native.KisPaperDailyRawRow] = {}
@@ -638,7 +655,7 @@ def collect_daily_contexts(
                     cursor, continuation = next_cursor, page.page.continuation_value
     except Exception as error:
         reason = _safe_reason(error)
-        if reason == "token_request_not_due":
+        if reason == "token_request_not_due" and access_token is None:
             try:
                 next_due = token_gate.snapshot().next_token_request_not_before_utc
             except (ValueError, OSError):
@@ -646,7 +663,11 @@ def collect_daily_contexts(
         elif reason in {"rate_limited", "request_not_due"}:
             try:
                 rate = rate_gate.snapshot()
-                token = token_gate.snapshot()
+                token_due = (
+                    token_gate.snapshot().next_token_request_not_before_utc
+                    if access_token is None
+                    else None
+                )
                 due = [
                     d
                     for d in (
@@ -654,7 +675,7 @@ def collect_daily_contexts(
                         rate.last_request_started_at_utc + timedelta(seconds=1)
                         if rate.last_request_started_at_utc
                         else None,
-                        token.next_token_request_not_before_utc,
+                        token_due,
                     )
                     if d is not None
                 ]

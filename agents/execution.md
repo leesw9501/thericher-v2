@@ -8,6 +8,14 @@ and canonical repeatable portfolio wiring. Current sidecar write-set: this MD on
 Preview-container-v1 source is FROZEN after Parent's actual preview; no edits
 to source/helper/image/old contexts or Parent's canonical-control extraction.
 No sidecar broker call, task/observer mutation, private write or Git operation.
+Canonical module/test handed off FROZEN:19focused pass, native pending restart/
+after-journal crash/final caller-clock preserved. Parent added bounded one-token
+Docker worker/closed host launcher, full16190pass22skip source1330/0201dd....
+Same daily-spy-session now quiet source-pinned canonical portfolio Action,
+non-Action XML unchanged; next Oct14 14:50UTC/23:50KST. Manual off-window21:28
+canonical no_intent:1auth12market GET/0account-order-cancel, actor absent.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
+Unattended current-window result remains unobserved, not company closure.
 
 ACTUAL Parent SPY r2 EXIT19:04:21UTC: order_complete/
 exact_order_and_position_reconciled,1token/23GET/1sell/0cancel;
@@ -57,8 +65,9 @@ exact_buy_advanced, second complete/no_target_delta;1token/40GET/1BUY/
 matchTrue, baseline_owned_flatTrue, source unchangedTrue, exact actor absent.
 D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/actual-20261013T195027798126Z.json
 Workeradc0c259... (Parent reported); observer restoredReady. Current portfolio
-runtime works; Parent independently replays exact new buy fill/book NOW.
-Do not invent post-cycle intent/held counts before that replay. Earlier6-owner/
+runtime works; Parent independent network-none exact chain PASSED:6owners,
+16terminal intents/0pending-unknown/3held instruments, baseline owner flat.
+Earlier6-owner/
 15-terminal book facts above remain their time-scoped history, not a fresh count.
 Baseline flat owner stays retained history, never adopted into portfolio custody.
 Native completion/target match is not measured fee/settlement/net PnL.

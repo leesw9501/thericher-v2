@@ -23,11 +23,12 @@ Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
   portfolio dispatch repeatable through existing owned paths, preserving exact
   unknown requests and original shared basis. No expired job relaunch, invented
   sell signal, fresh-per-lane capital or arbitrary inventory adoption.
-- Engine/Steward: run the bounded informed TRAIN-normalized GRU/nativeTCN/raw
-  Ridge comparison with early-stop/convergence diagnostics and cumulative
-  resource spend. Current OPEN(e)->CLOSE(e+4), purge/cost/selection lineage stays
-  explicit; seen-development is not holdout or Paper strategy adoption.
-  Aligned source-isolated foundation work may proceed as independent breadth.
+- Engine/Steward: normalized GRU/nativeTCN campaign closed/rejected; Chronos2
+  actually produced140 forecasts but economic replay lacks sealed sizing.
+  Continue separately frozen broad-TRAIN Ridge/Huber breadth, sealing full
+  sizing and five-session marks BEFORE evaluation. Current OPEN(e)->CLOSE(e+4),
+  purge/cost/selection lineage stays explicit; no old budget refund, holdout or
+  Paper strategy adoption. Bounded public-source architecture work is parallel.
 - Parent integrates source/runtime contracts and Git. Independent Validation
   challenges changed native control, availability, repeat/recovery assumptions;
   no permanent role or new approval gate. UI implementation remains deferred.
@@ -45,6 +46,13 @@ D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current
 Current Data253 covers throughOct12; control is eligible only its exactOct13
 window. Tomorrow source must refresh, never redate that artifact. Existing
 native unknown-intent recovery is independent of current-input freshness.
+Canonical Docker runtime0d8cf969..., source1330/0201dd... full16190pass22skip.
+Same existing daily-spy-session Action replaced; trigger/principal/settings
+unchanged, quiet pythonw/CREATE_NO_WINDOW. Next Oct14 14:50UTC/23:50KST.
+Manual canonical off-window visit21:28 no_intent,one token12market GET,
+zero account/order/cancel, actor absent; not an unattended current-window result.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
+D:/thericher-v2/model-artifacts/execution/current-daily-portfolio-dispatch-v1/20261013T212828458184Z.json
 
 ## Authority And Completion
 

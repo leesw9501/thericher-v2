@@ -6,10 +6,20 @@ Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 ## Current Ownership
 
 Data owns market data/availability; Execution owns accounts/orders. No new Data
-API/task work now. Parent reports SPY r2 EXIT closed19:04:21UTC:1sell/23GET/1token,
+API/task work for the sidecar now. Parent reports SPY r2 EXIT closed19:04:21UTC:1sell/23GET/1token,
 baselineflat confirmed and observer restored; not independently reattached here.
 Next owned G107 due Oct13 21:50UTC (Oct14 06:50KST); waits stay worker-owned.
 Input expiry never blocks persisted original-contract unknown-intent recovery.
+Canonical V3 intake complete/source-frozen:108focused Data/CLI, same-memory
+borrowed token path, no second auth. Parent full16190pass22skip source1330/0201dd...
+covers canonical session/hosts. Actual Docker intake21:24:1auth12daily GET,
+253x4+baseline2 source/raw pins valid, throughOct12; currentUSdate excluded even
+post-close, so not Oct14eligible input. Final delegate gaps>=1.250104s, not
+socket-wire measurement. Exact actor absent/observer restoredReady.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/canonical-capture-readback-result.json
+Native session uses exact pending context before refresh; owned Oct14 14:50UTC
+invocation must collect fresh prior-day input. Units source audit for broad-TRAIN
+research is assigned independently; no threshold/quality approval gate.
 
 ## Exact Evidence Roots
 

@@ -676,3 +676,96 @@ def test_linux_ordinary_repo_with_similarly_named_child_rejected(linux_paths) ->
     linux_paths.mounts = {"/tmp/repo/model_artifacts"}
     with pytest.raises(data.DailyContextError, match="invalid_paths"):
         data._external(linux_paths("/tmp/repo/model_artifacts/data"), linux_paths("/tmp/repo"))
+
+
+@pytest.mark.parametrize("token_state", ["not_due", "busy", "corrupt", "absent"])
+def test_borrowed_paper_token_reuses_only_gets_without_touching_token_state(
+    intake, monkeypatch, token_state
+) -> None:
+    clock, opener, kwargs = intake
+    borrowed = "synthetic-owned-bearer"
+    control = kwargs["control_root"]
+    control.mkdir(parents=True)
+    token_path = control / "token-request.json"
+    lock = control / "token-request.lock.d"
+    if token_state == "not_due":
+        token_path.write_bytes(
+            data._json(
+                dict(schema_version=1, last_token_request_started_at_utc=clock.now().isoformat())
+            )
+        )
+    elif token_state == "busy":
+        lock.mkdir()
+    elif token_state == "corrupt":
+        token_path.write_bytes(b"corrupt")
+    before = token_path.read_bytes() if token_path.exists() else None
+    original = opener.open
+    authorizations = []
+
+    def using_same_bearer(request, *, timeout):
+        assert request.get_method() == "GET"
+        authorizations.append(request.get_header("Authorization"))
+        return original(request, timeout=timeout)
+
+    monkeypatch.setattr(opener, "open", using_same_bearer)
+    result = collect(intake, access_token=borrowed)
+    assert result.status == "complete" and result.token_posts == 0 and result.daily_gets == 12
+    assert authorizations == [f"Bearer {borrowed}"] * 12
+    assert (token_path.read_bytes() if token_path.exists() else None) == before
+    assert lock.exists() == (token_state == "busy")
+    assert all(method == "GET" for method, _, _ in opener.calls)
+    safe = json.dumps(result.safe_payload())
+    assert borrowed not in safe
+    for root in (kwargs["cache_root"], kwargs["artifact_root"]):
+        assert all(borrowed.encode() not in p.read_bytes() for p in root.rglob("*") if p.is_file())
+    assert len(load_ref(result.receipts[1], kwargs).bars) == 253
+
+
+@pytest.mark.parametrize(
+    "token", ["", " ", "leading space", "\n", "bad\rheader", "\u2603", 1, False, b"bytes", object()]
+)
+def test_invalid_borrowed_token_fails_before_files_or_client(intake, token) -> None:
+    _, opener, kwargs = intake
+    with pytest.raises(data.DailyContextError, match="invalid_contract"):
+        collect(intake, access_token=token)
+    assert opener.calls == []
+    assert not kwargs["cache_root"].exists() and not kwargs["artifact_root"].exists()
+
+
+def test_rejected_borrowed_token_does_not_retry_or_authenticate(intake, monkeypatch) -> None:
+    _, opener, kwargs = intake
+    calls = []
+
+    def reject(request, *, timeout):
+        calls.append(request.get_method())
+        response = Response(dict(rt_cd="1"))
+        response.status = 401
+        return response
+
+    monkeypatch.setattr(opener, "open", reject)
+    result = collect(intake, access_token="synthetic-rejected-bearer")
+    assert calls == ["GET"]
+    assert result.reason == "daily_response_rejected" and result.token_posts == 0
+    assert result.daily_gets == 1 and result.receipts == ()
+    assert not (kwargs["control_root"] / "token-request.json").exists()
+
+
+def test_borrowed_token_rate_cooldown_ignores_corrupt_fresh_token_gate(intake) -> None:
+    clock, opener, kwargs = intake
+    control = kwargs["control_root"]
+    control.mkdir(parents=True)
+    token_path = control / "token-request.json"
+    token_path.write_bytes(b"corrupt")
+    state = dict(
+        schema_version=1,
+        last_request_started_at_utc=None,
+        retry_not_before_utc=(clock.now() + timedelta(seconds=60)).isoformat(),
+        last_rate_limit_at_utc=clock.now().isoformat(),
+    )
+    (control / "request-rate.json").write_bytes(data._json(state))
+    result = collect(intake, access_token="synthetic-borrowed-bearer")
+    assert result.reason == "request_not_due" and result.next_due_utc == clock.now() + timedelta(
+        seconds=60
+    )
+    assert result.token_posts == result.daily_gets == 0 and opener.calls == []
+    assert clock.elapsed == 0 and token_path.read_bytes() == b"corrupt"

@@ -62,9 +62,17 @@ development findings do not automatically choose the Paper strategy.
 
 ## Ready Work And Limits
 
-Execution: current253/252-return preview/native cycle ACTUAL COMPLETE; reusable
-refresh/dispatch remains to wire. Prototype success alone does not close the
-repeatable-loop objective. Prefer one coherent portfolio dispatch priority,
+Execution: current253/252-return preview/native cycle ACTUAL COMPLETE. Canonical
+Data/control/persisted-context/native Docker runtime is now integrated and
+deployed to the SAME daily-spy-session Action; all non-Action XML unchanged.
+Pythonw bootstrap forces CREATE_NO_WINDOW for every child; rollback retained.
+Next owned opportunity Oct14 14:50UTC /23:50KST. Manual off-window canonical
+run21:28UTC: no_intent/current_input_unavailable,one token/12 market GET,
+zero account GET/trade/cancel; exact actor absent. This is not an unattended
+current-window submit/fill. Company objective remains active for that result.
+D:/thericher-v2/model-artifacts/execution/current-daily-portfolio-dispatch-v1/20261013T212828458184Z.json
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
+Prefer one coherent portfolio dispatch priority,
 not competing baseline entries. Retain baseline history/exact recovery/basis;
 no oldOct9 replay, inventory adoption or current21 recipe selection.
 
@@ -87,19 +95,27 @@ Normalized-target GRU/TCN/Ridge comparison also CLOSED/rejected: threeCPU/sixCUD
 8false OOF/economic checks. Parent independent units/purge680keys/checkpoint/
 cost/spend readback passed. Seen development, not all-model futility or Paper.
 D:/thericher-v2/model-artifacts/research/daily5-target-normalization-native-tcn-development-20261014-v1/integration-evidence.json
-Chronos2 post-checkpoint preparation has an OCI mount technical failure before
-worker start,0fits/0forecasts; do not claim foundation use. Exact single mount
-correction may be prepared with old spend retained, no outcome-rescue reset:
+Chronos2 first OCI mount attempt had0fits/0forecasts. Its single namespace
+correction actually ran GPU zero-shot140forecasts and one CPU Ridge fit,
+22.4545s invocation/cumulative1533.7956s original1800. No foundation weight
+updates. Its20-session replay helper then rejected the frozen5-session geometry;
+economic outcome unknown, not model rejection. Retained replay-only audit found
+unsealed runtime sizing weights, so no reconstructed profit. Parent independent
+140-key/unit/geometry/scalar-cost audit passed, no new fit/inference. Future
+broad-TRAIN Ridge/Huber comparison is separately assigned; no old refund.
 D:/thericher-v2/model-artifacts/research/daily5-chronos2-post-checkpoint-endpoint-development-20261014-v1/first-cause.json
+D:/thericher-v2/model-artifacts/research/daily5-chronos2-post-checkpoint-endpoint-development-20261014-v1/integration-evidence-r2.json
+D:/thericher-v2/model-artifacts/research/chronos2-five-session-retained-replay-20261014-v1/receipt.json
 All comparative targets must be aligned and post-checkpoint. 131 remains superseded
 unfinished/source-only;130 rejected/debits and all immutable results retained.
 
 ## Verification And Operations
 
-Fresh authority: serial262 plus budget108; clean8 full15992passed22skipped,
-377.18s/helperexit0,16014 collected,source1314/ba204033...; Ruff and three
-sample-env Compose configurations pass.
-D:/thericher-v2/model-artifacts/verification/observer-token-ownership-20261014-v2/authority.json
+Fresh canonical authority: changed-path198; clean8 full16190passed22skipped,
+366.84s/helperexit0,16212 collected,source1330/0201dd2489ed...; Ruff and three
+sample-env Compose configurations pass. Image0d8cf969... built from these bytes.
+D:/thericher-v2/model-artifacts/verification/current-daily-paper-loop-20261014-v1/authority.json
+Prior observer authority remains version-bound ba204033..., not this runtime.
 Initial v1 failed one Windows concurrency test;100 isolated reproductions did
 not reproduce it. Failure retained, assertions not relaxed, not claimed fixed.
 Reuse authority only while exact production/test/script/dependency/Compose
@@ -117,15 +133,22 @@ rollback retained. Two direct Docker/uv exclusions unchanged. No OS/third-party
 task edits, new public service, paid commitment or live authority.
 Use uv --no-env-file and Compose --env-file .env.example for verification.
 
-New canonical Data/pure-control source is focused-verified, NOT covered by the
-ba204033 full authority above. Combined117 focused pass (Data/CLI92, original
-arithmetic19, current-input adapter6); Data155 native compatibility retained.
-Docker network-none mounted/unmounted standard-path and two-key stdin checks:
+Canonical V3 Data includes caller-owned in-memory token reuse; no token file,
+env merge or second authorization. Source198 includes original arithmetic,
+current input, native journal/restart/final-clock and closed launch/cleanup tests.
+Independent review-r1 three P2s repaired; review-r2 no remaining P1/P2. Claude
+supported-with-limits; unattended result remains unobserved. Quiet bootstrap5SYN.
+Actual canonical Data21:24 complete1token/12GET, delegate gaps>=1.250104s,
+five exact receipts/source/raw replay valid. Current US date is excluded EVEN
+after close: retained lastOct12, not Oct14 eligible input. Next task refreshes.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/canonical-capture-readback-result.json
+Older Docker network-none mounted/unmounted standard-path/two-key stdin checks:
 D:/thericher-v2/model-artifacts/data/current-paper-etf-input-refresh-20261014-v1/canonical-design/package-verification-v2.json
 Exact arithmetic parity includes four synthetic sets and actual retained253:
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/parity-result.json
-Fresh full authority and canonical session/context/source wiring precede new
-runtime deployment. A focused source-package commit is not company closure.
+Native unknown context always resumes before Data; new-input timing cannot
+pause exact pending recovery. Passing deployment/manual off-window result is
+not company closure or proof of profitable trading.
 
 Everything below is retained version-bound history, NOT current dispatch or a
 company-wide restriction. NEXT_CODEX_GOAL.md and AGENTS.md own current scope.

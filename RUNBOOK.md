@@ -25,8 +25,24 @@ Next eligible portfolio: current253 original control/252-return covariance,
 fresh post-exit strict book/account/quotes, native preview then exact cycle.
 That prototype opportunity is now complete and the US session has closed.
 Next dispatch must use new current input or the exact pending recovery path,
-not repeat the expired Oct13 actor. Canonical session wiring is in progress.
-Source adapter is host-only until container ABI/source qualification:
+not repeat the expired Oct13 actor. Canonical V3 Data/pure control/persisted
+session/one-memory-token Docker driver is now verified and deployed. SAME
+thericher-kis-paper-daily-spy-session Action changed, original non-Action XML
+0654fe10... unchanged, private rollback installation/original-task.xml retained.
+Next Oct14 14:50UTC/23:50KST; do not manually invoke that task to infer success.
+Quiet Action uses .venv/Scripts/pythonw.exe and source-pinned quiet_dispatch.py,
+all children CREATE_NO_WINDOW. Source/image changes require owner integration,
+not reuse of a stale image or private reset. Bootstrap source76c62f88...;
+hostd2b0e27c...; image0d8cf969...; runtime source mapd5533f01....
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
+Current launch pointer:
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/scheduled-launch/current.json
+Validate pointer -> exact immutable launch SHA -> exact host dispatch SHA;
+launch/exit/installation is not a submit/fill. Strict native private-state replay
+still owns actual cycle/intent/fill/position assertions. Off-window manual
+canonical visit21:28 no_intent/current_input_unavailable,1auth12market GET,
+0account GET/order/cancel, container absent. No unattended/current-window claim.
+Older source adapter remains version-bound history:
 D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/PORTFOLIO-API.txt
 No oldOct9 relaunch or baseline adoption. Repeatable reusable Data/dispatch
 source is next, not another one-shot manual rewrite. Expired current data may
@@ -49,9 +65,15 @@ Operational logging disabled: assumed-honest marker/time, not OS-origin proof.
 
 ## Current Verification
 
-Changed-path262 plus budget108 passed. Fresh clean8 authority15992pass22skip,
-16014collected,377.18s/helperexit0/source1314/ba204033...:
-D:/thericher-v2/model-artifacts/verification/observer-token-ownership-20261014-v2/authority.json
+Current changed-path198 passed. Fresh clean8 authority16190pass22skip,
+16212collected,366.84s/helperexit0/source1330/0201dd2489ed...:
+D:/thericher-v2/model-artifacts/verification/current-daily-paper-loop-20261014-v1/authority.json
+Ruff/three sample Compose pass; runtime image0d8cf969... source-qualified.
+Independent review-r2 no remaining P1/P2 after three launch/cleanup repairs;
+Claude supported-with-limits, quiet bootstrap5SYN and actual off-window run.
+Actual canonical Data21:24 source/raw reader passed,253x4+2 baseline through
+Oct12. CurrentUSdate remains excluded even after close: not Oct14eligible input.
+Owned next session must refresh; provider finality remains not_observed.
 Initial v1 concurrency failure retained/unreproduced, not fixed by assertion
 relaxation;100 isolated reproductions passed. V2 is a separate fresh full pass.
 MD/external-only commits may reattach only exact unchanged source authority;
