@@ -3,11 +3,14 @@
 ## Mission
 
 TheRicher v2 helps one Korea-based operator build, validate, and operate
-short-term automated trading engines for US and Korean equities through KIS.
+automated trading engines for US equities through KIS, with longer-term
+market expansion only when it adds useful evidence. Profitability may come
+from rules, statistics, ML, deep learning or a composition; no model family or
+short holding period is the business objective.
 
 The center of the product is a repeatable loop:
 
-1. Collect intraday market data.
+1. Collect useful daily and intraday market data.
 2. Build features and candidate models.
 3. Backtest and walk-forward validate with realistic costs.
 4. Run KIS paper trading.

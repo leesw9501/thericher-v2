@@ -43,8 +43,8 @@ If the answer is no, it does not belong in v2.
 Preferred local workflow:
 
 ```powershell
-uv run --extra dev pytest -q
-uv run --extra dev ruff check .
+uv run --no-env-file --extra dev pytest -q <changed test paths>
+uv run --no-env-file --extra dev ruff check .
 ```
 
 For faster repeat feedback on Windows, use the bounded parallel helper:
@@ -53,8 +53,12 @@ For faster repeat feedback on Windows, use the bounded parallel helper:
 .\scripts\run_parallel_tests.ps1
 ```
 
-It uses up to eight workers with isolated short temp paths. Keep the serial
-command above for bounded-goal verification.
+It uses up to eight workers with isolated short temp paths and no implicit
+credential loading. Follow AGENTS.md for verification: focused feedback first;
+changed tracked code/runtime needs changed-path serial plus clean-root full
+parallel authority. Documentation/external-only work may reattach exact
+unchanged passing authority with fresh checks of its actual changed surface.
+Full serial pytest remains a weekly/material-recovery diagnostic.
 
 Fallback when using an existing Python environment:
 
@@ -63,5 +67,8 @@ $env:PYTHONPATH='src'
 python -m pytest -q
 ```
 
-The base engine has no runtime third-party dependencies. Heavy research
-libraries belong behind the `research` extra and Docker Compose profile.
+The base runtime pins its market-calendar dependency. Heavy research libraries
+belong behind the `research` extra and Docker Compose profile. KIS Paper uses
+the approved shared initial10-percent virtual-cash allocation independently of
+model profitability; live authority remains unavailable. Current roles and
+their scopes are listed in agents/README.md.

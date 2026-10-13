@@ -265,7 +265,7 @@ try {
     Push-Location $repoRoot
     $locationPushed = $true
     # File-level distribution preserves most test-local fixture assumptions.
-    & uv run --extra dev pytest -q -n $Workers --dist=loadfile --basetemp $baseTemp @PytestArgs
+    & uv run --no-env-file --extra dev pytest -q -n $Workers --dist=loadfile --basetemp $baseTemp @PytestArgs
     $exitCode = $LASTEXITCODE
 }
 finally {

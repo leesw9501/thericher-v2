@@ -12,6 +12,7 @@ def test_start_preflight_requires_and_reports_only_active_stateboards() -> None:
 
     for stateboard in (
         "agents/data.md",
+        "agents/strategy-research.md",
         "agents/engine-research.md",
         "agents/research-steward.md",
         "agents/execution.md",
@@ -21,6 +22,8 @@ def test_start_preflight_requires_and_reports_only_active_stateboards() -> None:
 
     assert 'Write-Host "== Active agent stateboards =="' in source
     assert "$required += $activeStateboards" in source
+    assert "uv run --no-env-file --extra dev pytest -q" in source
+    assert "docker compose --env-file .env.example config --quiet" in source
     assert 'Get-ChildItem -LiteralPath "agents" -Filter "*.md"' not in source
     assert (
         'Write-Host "Goal-boundary parallel verification: '

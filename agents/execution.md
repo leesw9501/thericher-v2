@@ -1,30 +1,79 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current projection 2026-10-12 KST; history Gita81a1ae/exact immutable receipts.
-AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns ONE company objective.
-A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
+Current projection 2026-10-14 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
+Artifacts D:/thericher-v2/model-artifacts. Paper delegated; KIS_LIVE_* unavailable.
 
 ## Current Package
 
-130 CLOSED/rejectedde64b98f...:
-D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
-SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
-SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
-CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
-674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
+Owner Execution: safe first-cause diagnostics and exact Paper recovery.
+Original G83 Oct12 scoped evidence: nine opaque lifecycle failures, one
+canonical no-intent, twenty entry-window-elapsed recoveries; those receipts
+record zero order POSTs. Planner reason erased at lifecycle_worker line418,
+exception category erased at line507. Historical first cause remains unknown.
+Whole-share flooring is a synthetic possible cause, not an observed diagnosis.
 
-Source replaydce10edf.../release8ce25e5d.../10SYN; independent DataExec3.
-Actual2groups verify all18 original128 fixed5/fixed20/cash control cells exactly,
-matching6baskets/full130marks, per-side fee/turnover/gross-minus-fees/q and
-once-frozen action hashes. Never compare129's14-anchor controls.
-D:/thericher-v2/model-artifacts/execution/daily20-remaining-reference-exit-development-v1/actual-r1/actual-check.json
-SHAb021c12fa1f46ac4fd356365192a7c7af1cb84f5007282b82899bf2f2bb7ff4c.
-Peak HHI1 among surviving holdings is not100%NAV exposure; modeled growth
-not observed broker fill/fees/settlement/net. No raw path or OS proof.
+Released diagnostic delivery-r2 under
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1:
+allowlisted planner/failure categories plus own-source location, strict counts/
+unknown semantics and a read-only diagnostic path. Preserve R1/jobs/private
+basis/identities. Parent28 SYN pass plus pinned113f offline smoke; original253
+focused cases pass. Releasebd69c154.../no order-route or private-write escape.
+Independent review found swallowed final-audit failures; Parent requires both
+source/private-integrity flags True before trusting custody assertions.
 
-Next131 source/clock/q/cost/replay unchanged; reattest exact old parity and
-new schedule custody, never choose/train models. Original19 owners/shared
-basis/pending107 unchanged. No API/order/Task/schedule change in130.
+New account probe Oct13 14:08:08UTC:
+D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T140808283476Z-failed_closed.json
+failed_closed/auth_rejected at token POST;1token/0account GET/0order/0cancel.
+Upstream code/status absent; bad credentials, account expiry and quota are not
+distinguished. Preserve shared fresh-token gate; no foreground wait or blind retry.
+
+Later native token-only probe14:33:43UTC succeeded HTTP200/1token/0GET/0order/
+0cancel; token discarded, no private book changes. Exact safe pointer:
+D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T143343806949Z-token-capability.json
+Authentication is currently usable; prior failure cause remains unknown.
+Current account/position reconciliation still needs exact read-only evidence.
+
+Latest native account discovery15:23:34UTC SUCCESS:1token/5GET/HTTP200,
+complete snapshot,3position items/0open orders, no order/cancel/book writes.
+D:/thericher-v2/model-artifacts/execution/kis-paper-readonly/20261013T152334198254Z-collected.json
+SHA46c84c237e0f7b4734fbf1672c83b6c88d58bbfc453724ace5715f4e9385c985.
+Current account reads work; scoped earlier auth failures remain. This is not
+exact owned-custody, linked-fill, settlement or net-PnL evidence.
+
+Later R2 actual probe reached snapshot auth:403/EGW00133,1token/0GET/0order/
+0cancel, source/private bytes unchanged. Exact G83 request_retained=False/
+outcome_unknown=False/basis-preserved=True; current owned-flat and all other
+owners remain unknown. Timestamp of runtime was not retained; recorded after
+run at14:53:37UTC. Exact pointer:
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/delivery-r2/parent-actual-outcome.json
+SHA9c84469766ddce576d9f3ebbbc059dc3c50217443654941050cc567fa34314da.
+
+Verified configured-source gap: snapshot observer starts a fresh bridge/client
+every4min without the shared token gate/control mount. Actual deployed bytes/
+collision timing unverified; do not call this the proven403 cause. Official KIS
+README documents one token request/minute. Existing300s shared guard still
+applies to its current paths; no global pause or relaxation.
+
+## Recovery And Authority
+
+Preserve original shared initial virtual-cash approximately10% basis, owned
+entry costs/losses/reservations and unknown requests across all nineteen owners.
+Do not adopt inventory or substitute an intent; reconcile exact unknown first.
+Private volume thericher-v2-paper-canary-private-acct-20261007-v1.
+Call-time virtual host/budget/orderability/freshness/persist-before-effect
+invariants stay. A research failure is not a Paper profitability approval gate.
+
+Ready next: unify the observer's token-start ownership with existing paths,
+preserve valid snapshots/TTL on not-due and make retries due-aware; then
+one bounded account/quote probe reusing its token. No unbounded retry, token
+artifact persistence or recovery-capable observe() as a reader.
+No forced signal/trade and no blanket no-manual ban on a new correctly owned
+Execution package. Task exit, no-intent and submit/accept/fill remain distinct;
+current custody, fees/settlement/net unknown unless exact evidence proves them.
+
+131 source-ready/superseded unfinished, no new model parity or Paper adoption.
+130 actual replay evidence b021c12f... preserved. Everything below is historical
+version-bound evidence, NOT current scheduling or a company-wide permission hold.
 
 ## Retained Evidence
 

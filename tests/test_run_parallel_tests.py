@@ -36,6 +36,7 @@ def test_parallel_test_runner_uses_bounded_workers_and_cross_session_safe_temp_r
     assert "Assert-ManagedTempDirectory" in source
     assert "Assert-SafeTempTreeForRemoval" in source
     assert "pytest -q -n $Workers --dist=loadfile --basetemp $baseTemp" in source
+    assert "& uv run --no-env-file --extra dev pytest" in source
     assert "$exitCode = $LASTEXITCODE" in source
     assert "if ($exitCode -eq 0 -and $null -ne $baseTemp" in source
     assert "Remove-Item -LiteralPath $resolvedBaseTemp -Recurse -Force -ErrorAction Stop" in source

@@ -1,99 +1,21 @@
 # Long Goal Script
 
-Paste this short launcher into Codex. Repository policy and
-`NEXT_CODEX_GOAL.md` carry the detailed instructions.
+Repository policy holds details; this launcher dispatches work rather than
+duplicating those rules.
 
 ```text
 /goal
 Working directory: C:\Users\Public\Documents\thericher-v2
 
-Run .\scripts\start_next_codex_task.ps1. Then read and follow
-`NEXT_CODEX_GOAL.md`, `HANDOFF.md`, `AGENTS.md`, and the active stateboards:
-`agents/data.md`, `agents/engine-research.md`, `agents/research-steward.md`,
-`agents/execution.md`, and `agents/orchestration.md`.
+Run .\scripts\start_next_codex_task.ps1. Read NEXT_CODEX_GOAL.md, HANDOFF.md, AGENTS.md and the active boards in agents/README.md.
 
-Act as the Codex Orchestrator. Decompose the single company objective into
-disjoint, ready work packages. Run non-conflicting Data, Engine Research, and
-Execution work in parallel; invoke temporary Validation only when a frozen
-candidate and independent evaluation input are ready. Integrate evidence and
-shared contracts before dependent work relies on them.
+Act as Codex Orchestrator: assign disjoint ready Data, Strategy Research, Engine Research and Execution packages in parallel; use Research Steward for the exclusive GPU and temporary independent review when useful. Prioritize a repeatable KIS Paper loop within the existing shared initial virtual-cash 10-percent allocation while research continues. A research result or lane-local missing input never becomes a company-wide permission gate.
 
-A prospective data condition gates only its named consumer, campaign, or
-promotion. It must not make historical Research, independent Data work, local
-simulation, or deterministic Paper preparation input-pending. When an external
-due time exists, keep every other ready bounded package moving. An owned
-`next_due` is neither company completion nor permission to end the task: do
-not report "no work" or leave the orchestrator foreground-idle while a
-non-conflicting bounded package remains ready.
+Preserve exact requests, unknown outcomes, owned inventory, losses/reservations and the original aggregate budget. Never force a model signal, substitute an unknown order, read KIS_LIVE_* or enable real money. Private no-cost KIS Paper account/data/order/recovery/schedule work is already authorized.
 
-When the company objective itself is materially blocked, write one compact
-`blocked-goal alternatives` entry in `agents/orchestration.md`: exact blocking
-fact, original plan, two to four ready alternative packages, owners/resources,
-strongest kill test, and recovery action. Ask Claude for a concise
-falsification-first challenge, record `review_unavailable` if its CLI cannot
-authenticate, and immediately run all non-conflicting packages inside standing
-authority. Do not create a separate report, second goal, or approval gate.
-Claude agreement can resolve only a reversible, no-cost choice already inside
-standing authority; it cannot replace explicit approval for live capital, paid
-commitments, unclear rights, public exposure, or a major runtime change.
+At resume/handoff/failure/long dispatch inspect ready/owned/due and fix one reversible throughput bottleneck. Workers own cooldowns; continue another ready package instead of foreground waiting. Claude challenges material direction/recovery decisions but is not a standing approval gate.
 
-When the exclusive GPU is free, have Research Steward allocate the first ready,
-frozen Engine Research campaign or record the exact data, contract, or resource
-fact that makes none eligible. Do not manufacture training merely to maximize
-utilization.
+After actual bounded company completion, verify according to AGENTS.md, commit/push, update current boards and replace NEXT_CODEX_GOAL.md with ONE next material outcome, then continue. Source preparation or a due time alone is not completion. Preserve superseded unfinished work honestly. Do not create per-agent goals, report systems or dummy GPU training.
 
-Treat a genuinely unknown private non-live provider, runtime, data-capability,
-or throughput behavior as a bounded capability probe. Do not turn it into an
-approval wait, foreground sleep, or durable rate/retry limit without official
-source evidence or measured results. Keep existing documented or
-evidence-backed controls until the source or measurement that recalibrates
-them changes. External quota/cooldown waits belong to the named worker or
-scheduler as `next_due`; continue another ready lane rather than waiting in
-the foreground.
-
-For active KIS coverage work, require the Data stateboard to project the named
-scope, durable cursor, accepted/categorical page counts, measured pace,
-remaining-work estimate or `unknown`, ETA bucket or `unknown`, recovery class,
-and that worker's `next_due`. Advance a useful durable cursor serially whenever
-the measured gate permits. This is an operational forecast for dispatch and
-recovery, never a daily-quota claim, a completion promise, or a gate on another
-lane.
-
-After each bounded company objective has completion evidence, run the required
-verification, commit, push, replace `NEXT_CODEX_GOAL.md` with exactly one next
-company objective, refresh the stateboards, and continue. A lane-local block
-does not stop another ready lane. Do not create per-agent next-goal files.
-
-An isolated role package may be focused-verified and committed while the
-company objective remains active. Its commit alone does not trigger a full
-authority suite, `NEXT_CODEX_GOAL.md` replacement, or stateboard-wide refresh;
-reserve those for company-objective integration, a changed shared
-runtime/control root, or an explicit current-goal requirement.
-
-At task resume or after an observed unexplained foreground idle period, perform
-one bounded Throughput Review from the stateboards and active-job facts. Keep
-only one measured, reversible improvement in `agents/orchestration.md`; do not
-create a standing process lane or an approval gate. Use isolated parallel tests
-only when fixtures, artifact roots, and external workers are process-isolated.
-At a goal boundary, use the changed-path serial group and
-`.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot`, followed by Ruff and
-both Compose configurations. Run full serial `pytest -q` weekly and before a
-material live-route or execution-recovery promotion as a compatibility
-diagnostic, not an unrelated foreground hold.
-
-Stop and report only for an actual operator-authority decision: reading or
-using `KIS_LIVE_*`, enabling live or real-money behavior, allocating live
-capital, paid commitments, unclear data/model rights, public exposure, a major
-framework or runtime replacement, an unapproved irreversible external action,
-or an unresolved actual account-safety risk.
-
-`KIS_PAPER_*` credential reads, data/account calls, paper submit/modify/cancel,
-and goal-owned schedules are already approved by `AGENTS.md`. Use them only
-through the named owned paths and scope of the current objective; never print
-or persist secrets. Never read or route `KIS_LIVE_*`.
-
-Keep market data under D:\market_data and generated artifacts under
-D:\thericher-v2\model-artifacts. Follow the approved free-data/public-model,
-storage, Claude challenge, KIS Paper, recovery, and orchestration policies in
-`AGENTS.md`.
+Stop only for genuinely reserved operator authority: live/real money, paid commitments, unclear rights, public exposure, major runtime replacement or unresolved actual account risk. Data stays under D:\market_data and generated artifacts under D:\thericher-v2\model-artifacts. Keep secrets/private broker data out of output, Git and Claude.
 ```

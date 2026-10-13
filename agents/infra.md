@@ -6,7 +6,7 @@ Retired as a durable lane on 2026-07-18. Infra is an invoked capability owned
 through Codex orchestration when Docker, CUDA, dependencies, mounts, storage,
 CI, or runtime reproducibility work is ready.
 
-## Current Resources
+## Historical Resources (not current runtime evidence)
 
 - GPU research runs in Docker `research` with PyTorch CUDA.
 - Model artifacts: `D:\thericher-v2\model-artifacts`.
@@ -44,9 +44,9 @@ CI, or runtime reproducibility work is ready.
 - GPU/model mounts belong only to the research profile unless runtime inference
   later needs an explicit contract.
 - Infra changes do not select models or change execution-risk policy.
-- No daemon, coordinator, dashboard expansion, notification loop, or auto-commit
-  service is currently approved. Goal-owned schedules are allowed under the
-  current `AGENTS.md` policy when an active engine objective needs one.
+- This retired board grants no authority and creates no denial. Private
+  goal-owned schedules and reversible runtime work follow current AGENTS.md.
+  No permanent agent platform is needed; the UI redesign is currently deferred.
 
 ## Recovery
 

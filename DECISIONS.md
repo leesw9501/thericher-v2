@@ -10189,3 +10189,69 @@ Read a dependent review's result before dispatching its side effect; do not
 bundle a wait and unconditional mutation into one tool script. Preserve used
 recipes/receipts on a preparation fault and audit exact observed bindings, not
 replay an exclusive creator or infer actual Paper behavior from Task metadata.
+
+## 2026-10-13 - Restore execution-first parallel work and quiet operations
+
+The operator reaffirmed private Paper use of the original shared initial
+virtual-cash approximately10-percent allocation and requested removal of
+obstructive process, a strategy/indicator role and quiet scheduled work.
+Preserve aggregate basis, losses/reservations, exact unknown requests, owned
+inventory and deterministic virtual-host/persist-before-effect checks.
+Profitability, study-local caps and missing receipts are not global approval
+gates. Never force an existing signal or substitute an unknown request.
+
+Simplify AGENTS.md/current boards rather than adding a new workflow platform.
+Activate Strategy Research for executable causal indicator/mechanism proposals;
+Engine owns scientific contracts/fits, Steward existing GPU/evaluation custody.
+New finite campaigns may use convergence curves, chronological inner selection,
+early stopping/LR schedules/checkpoint restoration and OOF expert fusion.
+Old immutable epoch/model/seed settings and spent trials remain unchanged.
+Source-ready131 is superseded unfinished for actual Paper recovery, not closed.
+
+G107 source_changed is an offline reconstruction, not an observed historical
+exception. G83 nine opaque failures have no proven first cause. A new readonly
+token attempt failed auth_rejected before account reads, with no upstream
+HTTP/code retained; do not infer expired/wrong credentials. Repair source
+isolation and allowlisted diagnostics before repeating broken schedules.
+
+Audit all Windows tasks, mutate only verified TheRicher owners. Prefer tested
+non-interactive launch with unchanged parameters/triggers and retained rollback;
+HiddenTask metadata does not hide consoles. Disable proved exhausted jobs,
+never erase unknown Paper recovery or change OS/security tasks. Skip active
+owners and do not launch orders/collectors merely to test quietness.
+
+Defer monitor implementation: Korean primary/English technical names, useful
+owned holdings/orders/faults, Docker private service; future outside access
+must be authenticated, not default public port forwarding. No public serving
+or major runtime change is granted by this direction decision.
+
+Claude actually completed supplied-facts review, supported-with-limits, at
+D:/thericher-v2/model-artifacts/review/operating-policy-20261013-v1/claude-outcome.json
+SHA5eb6a81bffc2010cbe3ffe41f4b0638c5740743e232bd6b1f78410ea378c5970.
+Interpret its D: reference as artifact storage, not a new dataset split;
+require actual cause/lane isolation/selection-reuse and exact verification
+digests. Advisory review is neither an authority grant nor runtime evidence.
+Tracked helper/preflight/test edits require fresh full verification; uv
+--no-env-file and Compose .env.example avoid accidental credential loading.
+
+Oct14 integration adds actual task hygiene:245 inventoried/41project, nine
+direct hidden Actions verified and one exhausted D1 diagnostic disabled.
+WSH was rejected after a harmless stop probe left a child alive; S4U was not
+deployed. Two Docker/uv actions remain unchanged, not mislabeled quiet.
+Actual native account read completed1token/5GET,3position items/0open orders;
+this is neither owned-fill nor settled-PnL evidence. Shared basis stays.
+
+The snapshot launcher's old implicit Compose dotenv path is replaced with
+the existing selective four-Paper loader, explicit sample env, no secret
+argv/output, strict projection and bounded exact-container cleanup. It does
+not change broker scope, cadence, token pacing or any live permission. Only
+the observer is temporarily disabled while its mutable source is verified,
+then restored to its previous enabled state; other lanes continue. This
+privacy repair is not a permanent scheduler barrier or profit gate.
+
+The first restored privacy-launch attempt returned125. An inert no-key/no-API
+probe reproduced missing Compose discovery; the single required Windows
+ProgramFiles environment value fixes it. Keep that OS variable while still
+excluding all live credentials. Inert profile0/own container absent and fresh
+v3 repository authority precede final observer restore; never rewrite the
+failed scheduled outcome or infer broker success from the test.

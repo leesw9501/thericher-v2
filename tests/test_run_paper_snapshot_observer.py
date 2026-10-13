@@ -7,6 +7,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
+import pytest
+
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "run_paper_snapshot_observer.ps1"
 
 
@@ -28,6 +30,7 @@ def _run_with_fake_host_commands(
     )
     inspector_path.parent.mkdir(parents=True)
     inspector_path.write_text("# fixture\n", encoding="ascii")
+    (inspector_path.parent / "run_kis_paper_snapshot_bridge.py").write_text("# fixture\n")
     (project_root / "docker-compose.yml").write_text("services: {}\n", encoding="ascii")
     docker_marker = tmp_path / "docker-called.txt"
     fixture_mutex_name = f"Global\\TheRicherPaperSnapshotObserver-fixture-{uuid4().hex}"
@@ -56,6 +59,30 @@ def _run_with_fake_host_commands(
         "\n".join(
             [
                 "$ErrorActionPreference = 'Stop'",
+                "$PSModuleAutoLoadingPreference = 'None'",
+                "Import-Module Microsoft.PowerShell.Management",
+                "Import-Module Microsoft.PowerShell.Utility",
+                *[
+                    f"function global:{name} {{ throw 'Scheduler entrypoint blocked' }}"
+                    for name in (
+                        "Get-ScheduledTask", "Get-ScheduledTaskInfo", "Register-ScheduledTask",
+                        "Set-ScheduledTask", "Start-ScheduledTask", "Stop-ScheduledTask",
+                        "Enable-ScheduledTask", "Disable-ScheduledTask", "Export-ScheduledTask",
+                        "Unregister-ScheduledTask", "New-ScheduledTask", "New-ScheduledTaskAction",
+                        "New-ScheduledTaskPrincipal", "New-ScheduledTaskSettingsSet",
+                        "New-ScheduledTaskTrigger",
+                    )
+                ],
+                "function global:Join-Path { param($Path,$ChildPath)",
+                "  if ($ChildPath -eq '.venv\\Scripts\\python.exe') {",
+                "    return 'fixture-python.exe' }",
+                "  Microsoft.PowerShell.Management\\Join-Path $Path $ChildPath",
+                "}",
+                "function global:Test-Path { param($LiteralPath,$PathType)",
+                "  if ($LiteralPath -eq 'fixture-python.exe') { return $true }",
+                "  Microsoft.PowerShell.Management\\Test-Path `",
+                "    -LiteralPath $LiteralPath -PathType $PathType",
+                "}",
                 *clock_fixture,
                 "function global:uv.exe {",
                 f"    $now = {inspector_clock}",
@@ -72,19 +99,20 @@ def _run_with_fake_host_commands(
                 "    } | ConvertTo-Json -Compress",
                 "    $global:LASTEXITCODE = 0",
                 "}",
-                "function global:docker.exe {",
+                "function global:docker.exe { throw 'Direct Docker launch forbidden' }",
+                "function global:fixture-python.exe {",
                 f"    $markerPath = {_powershell_literal(docker_marker)}",
                 "    [System.IO.File]::WriteAllText($markerPath, ($args -join '|'))",
                 f"    $bridgeJson = {_powershell_literal(bridge_json)}",
                 (
-                    "    $observerArgument = @($args | Where-Object { $_ -like "
-                    "'THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=*' })"
+                    "    $observerPosition = [Array]::IndexOf("
+                    "[object[]]$args, '--observer-invocation-id')"
                 ),
-                "    if ($observerArgument.Count -eq 1) {",
+                "    if ($observerPosition -ge 0) {",
                 (
                     "        $bridgeJson = $bridgeJson.Replace("
                     "'__observer_invocation_id__', "
-                    "([string]$observerArgument[0]).Split('=')[1])"
+                    "([string]$args[$observerPosition + 1]))"
                 ),
                 "    }",
                 "    Write-Output $bridgeJson",
@@ -134,7 +162,9 @@ def test_paper_snapshot_observer_is_bounded_and_uses_only_the_readonly_service()
     assert "Start-Sleep" not in source
     assert "Start-Process" not in source
 
-    assert "uv.exe run --no-sync --project $ProjectRoot python $inspectorPath" in source
+    assert (
+        "uv.exe run --no-env-file --no-sync --project $ProjectRoot python $inspectorPath" in source
+    )
     assert "inspect_kis_paper_account_snapshot_observer_session.py" in source
     assert "kis_paper_snapshot_observer_session" in source
     assert '"eligible"' in source
@@ -145,9 +175,10 @@ def test_paper_snapshot_observer_is_bounded_and_uses_only_the_readonly_service()
     assert "[TimeSpan]::FromMinutes($MinimumSessionRemainingMinutes)" in source
     assert "($eligibleUntil - $observedAt) -le" in source
 
-    assert "docker.exe compose --project-directory $ProjectRoot --profile kis-readonly" in source
-    assert "run --rm --no-deps --pull never" in source
-    assert "kis-readonly 2>&1" in source
+    assert "& docker.exe compose" not in source
+    assert "run_kis_paper_snapshot_bridge.py" in source
+    assert "& $bridgePython $bridgeLauncher --execute" in source
+    assert '--paper-credential-path (Join-Path $ProjectRoot ".env")' in source
     assert "--service-ports" not in source
     assert "--entrypoint" not in source
     assert "Get-SafeBridgeOutcome" in source
@@ -161,7 +192,7 @@ def test_paper_snapshot_observer_is_bounded_and_uses_only_the_readonly_service()
     assert 'Write-ObserverOutcome -Status "complete" -ObservedAt $bridgeObservedAt' in source
     assert "$bridgeLaunchAt = Get-ObserverUtcNow" in source
     assert '$observerInvocationId = [guid]::NewGuid().ToString("D")' in source
-    assert "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=$ObserverInvocationId" in source
+    assert "--observer-invocation-id $ObserverInvocationId" in source
     assert '$bridge.Status -eq "busy" -and $bridge.ExitCode -eq 0' in source
     assert '"observer_evidence_path"' in source
     assert '"observer_invocation_id"' in source
@@ -234,9 +265,9 @@ def test_complete_observer_uses_the_bridge_observed_time(
         2026, 7, 21, 14, 31, 2, 123000, tzinfo=UTC
     )
     invocation = docker_marker.read_text(encoding="utf-8")
-    assert "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=" in invocation
+    assert "--observer-invocation-id|" in invocation
     assert re.search(
-        r"THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID="
+        r"--observer-invocation-id\|"
         r"[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}",
         invocation,
     )
@@ -259,7 +290,7 @@ def test_busy_bridge_with_nonzero_exit_is_observer_unavailable(tmp_path: Path) -
         bridge_exit_code=1,
     )
 
-    assert completed.returncode == 3, completed.stderr
+    assert completed.returncode == 1, completed.stderr
     payload = json.loads(completed.stdout)
     assert payload["status"] == "observer_unavailable"
     assert payload["scope"] == "read_only"
@@ -292,3 +323,30 @@ def test_mismatched_bridge_observer_invocation_is_observer_unavailable(tmp_path:
     assert completed.returncode == 3, completed.stderr
     assert json.loads(completed.stdout)["status"] == "observer_unavailable"
     assert docker_marker.exists()
+
+
+@pytest.mark.parametrize(
+    "category", ["docker_timeout", "docker_timeout_cleanup_unknown", "PRIVATE"]
+)
+def test_launcher_timeout_category_is_allowlisted_and_failure_retained(
+    tmp_path: Path,
+    category: str,
+) -> None:
+    completed, _ = _run_with_fake_host_commands(
+        tmp_path,
+        eligible_minutes=10,
+        bridge_payload={
+            "kind": "kis_paper_snapshot_bridge_launcher",
+            "status": "unavailable",
+            "failure_category": category,
+            "submit_capability": False,
+        },
+        bridge_exit_code=3,
+    )
+    assert completed.returncode == 3, completed.stderr
+    result = json.loads(completed.stdout)
+    assert result["status"] == "observer_unavailable"
+    if category == "PRIVATE":
+        assert "reason_code" not in result and "PRIVATE" not in completed.stdout
+    else:
+        assert result["reason_code"] == category

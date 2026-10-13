@@ -67,7 +67,7 @@ function Get-SafeSessionStatus {
     try {
         $ErrorActionPreference = "Continue"
         $output = @(
-            & uv.exe run --no-sync --project $ProjectRoot python $inspectorPath `
+            & uv.exe run --no-env-file --no-sync --project $ProjectRoot python $inspectorPath `
                 --observed-at $ObservedAt.ToString("o", [System.Globalization.CultureInfo]::InvariantCulture) 2>&1
         )
         $exitCode = [int]$LASTEXITCODE
@@ -141,13 +141,17 @@ function Get-SafeBridgeOutcome {
     }
 
     $priorErrorActionPreference = $ErrorActionPreference
+    $bridgePython = Join-Path $ProjectRoot ".venv\Scripts\python.exe"
+    $bridgeLauncher = Join-Path $ProjectRoot "scripts\run_kis_paper_snapshot_bridge.py"
+    if (-not (Test-Path -LiteralPath $bridgePython -PathType Leaf) -or -not (Test-Path -LiteralPath $bridgeLauncher -PathType Leaf)) {
+        return [pscustomobject]@{ Status = "observer_unavailable"; ExitCode = 3; ObservedAt = $null; ReasonCode = "" }
+    }
     try {
         $ErrorActionPreference = "Continue"
         $output = @(
-            & docker.exe compose --project-directory $ProjectRoot --profile kis-readonly `
-                run --rm --no-deps --pull never `
-                -e "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=$ObserverInvocationId" `
-                kis-readonly 2>&1
+            & $bridgePython $bridgeLauncher --execute --project-root $ProjectRoot `
+                --paper-credential-path (Join-Path $ProjectRoot ".env") `
+                --observer-invocation-id $ObserverInvocationId 2>&1
         )
         $exitCode = [int]$LASTEXITCODE
     } finally {
@@ -164,6 +168,13 @@ function Get-SafeBridgeOutcome {
         "scope",
         "status"
     ) | Sort-Object
+    $failureProperties = @("failure_category", "kind", "status", "submit_capability") | Sort-Object
+    $failureCategories = @(
+        "invocation_invalid", "paper_config_unavailable", "docker_launch_failed",
+        "docker_timeout", "docker_timeout_cleanup_unknown", "bridge_output_invalid",
+        "docker_nonzero_exit", "arguments_missing", "launcher_failed"
+    )
+    $launcherFailures = @()
     $validPayloads = @()
     foreach ($line in $output) {
         $text = ([string]$line).Trim()
@@ -176,6 +187,18 @@ function Get-SafeBridgeOutcome {
             continue
         }
         $propertyNames = @($payload.PSObject.Properties.Name | Sort-Object)
+        if (
+            $exitCode -ne 0 `
+                -and ($propertyNames -join "|") -eq ($failureProperties -join "|") `
+                -and [string]$payload.kind -eq "kis_paper_snapshot_bridge_launcher" `
+                -and [string]$payload.status -eq "unavailable" `
+                -and $payload.submit_capability -is [bool] `
+                -and $payload.submit_capability -eq $false `
+                -and [string]$payload.failure_category -in $failureCategories
+        ) {
+            $launcherFailures += $payload
+            continue
+        }
         if (
             $propertyNames.Count -ne $expectedProperties.Count `
                 -or ($propertyNames -join "|") -ne ($expectedProperties -join "|") `
@@ -211,6 +234,14 @@ function Get-SafeBridgeOutcome {
             continue
         }
         $validPayloads += $payload
+    }
+    if ($launcherFailures.Count -eq 1 -and $validPayloads.Count -eq 0) {
+        return [pscustomobject]@{
+            Status = "observer_unavailable"
+            ExitCode = $exitCode
+            ObservedAt = $null
+            ReasonCode = [string]$launcherFailures[0].failure_category
+        }
     }
     if ($validPayloads.Count -ne 1) {
         return [pscustomobject]@{
@@ -305,10 +336,11 @@ try {
                         -Status "unavailable" `
                         -ObservedAt $bridgeObservedAt `
                         -ReasonCode $bridge.ReasonCode
-                    $exitCode = 2
+                    $exitCode = $(if ($bridge.ExitCode -ne 0) { $bridge.ExitCode } else { 2 })
                 } else {
-                    Write-ObserverOutcome -Status "observer_unavailable" -ObservedAt $observedAt
-                    $exitCode = 3
+                    Write-ObserverOutcome -Status "observer_unavailable" -ObservedAt $observedAt `
+                        -ReasonCode $bridge.ReasonCode
+                    $exitCode = $(if ($bridge.ExitCode -ne 0) { $bridge.ExitCode } else { 3 })
                 }
             }
         }

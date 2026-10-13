@@ -1,240 +1,100 @@
-# Engine Research Stateboard (매매 엔진 연구 담당)
+# Engine Research Stateboard
 
-Current projection 2026-10-12 KST; history Gita81a1ae/exact external roots.
-AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns ONE objective.
+Current projection 2026-10-13 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md
+owns the company outcome. This lane improves feature/model research and
+cost-aware backtest/walk-forward validation.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+R130=A/research/daily20-remaining-reference-exit-development-v1.
+R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
-## Current Package
+## Ownership And Resources
 
-130 CLOSED/rejectedde64b98f...:
-D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
-SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
-SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
-CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
-674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
+Engine owns targets, features, splits, fitting, expert composition and model-side
+interpretation. Strategy Research owns source-derived proposals and assigned
+pure kernels; Engine consumes them into a bounded experiment or rejection.
+Parent owns company direction, shared policy, final composition and Git.
+Steward owns exclusive GPU/trial-family/sealed custody; Execution owns replay
+semantics and deterministic broker risk. No implementation ownership changes.
 
-Source230ab8b3.../compositionf49ae660.../Parentmodelcb79beed.../1124params;
-scaler from prior-valid TRAIN before future targetcoverage, mean-one unique
-decision-date weighting. Native 20-clock target, fixed-reference not optimal-Q.
-All6 prior baskets sealed before payoff; model actions once/refq10 then recost.
-10bps modeled GRU DEV+2.4215%/DD1.4396%,later+1.4301%/DD.3727%;
-fixed20+2.5632%/DD3.4304%,later+1.3285%/DD.5981%. Ridge+1.9104%/+1.2597%
-with lower DD.9strict utility failures remain, no winner/epoch/threshold rescue.
-No retained weights/holdout or profitability gate on independent Paper.
-Source7SYN, independent Engine3/actual3 and Execution2/Claude limits; aggregate
-proof only, not independent raw paths or6-cohort alpha/replication.
+Existing RTX4090/Torch2.7+cu128 and pinned d6 transport were exercised by 130.
+Its GPU lease was released; this edit makes no fresh resource/lease probe.
+Capability is measured evidence, not a new approval requirement or utilization
+target. No training, allocation, data/credential read or runtime dispatch here.
 
-ONE131: daily20-mean-versus-lower-quartile-exit-development-v1.
-Same target/rows/scaler/state/entry/q/seed/architecture; paired mean-MSE versus
-fixed .25 pinball objective. Two CUDA fits/shared600, no CPUfit/grid/selection.
-Freeze fresh informed quantile-lineage contract before numerical work; no131
-allocation/fit/weights exist. No authority/environment wait or new platform.
+## Exact Current Evidence
 
-131 model source READY at A/research/
-daily20-mean-versus-lower-quartile-exit-development-v1/engine-r1/source-release.json
-102f2685.../paired_models.py7fd85816.../interfaceed8364f4.... Inject unchanged
-130 build/predictor; reset seed202 for each loss, compare initial/batch hashes,
-immutable shared scaler. Parent16 NumPy/mock SYN pass/.19s; no native Torch
-fit, CUDA allocation, actual labels or mean-reference parity. Parent took the
-small tests/release handoff; canonical science/composition remains next ready
-work, not an approval wait or a completed campaign.
-Independent validation-source-r1/receipt.json831c0f20...:3 groups/8 stable pins,
-loss oracle/AST mean loop/normalization boundary pass; two reviewer fixture
-faults retained. No native RNG/optimizer/actual mean reconstruction proof.
+130 CLOSED/rejected; R130/integration-evidence.json
+SHA256 de64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
+Science 494e87b4... / trial1 row 0b19bf76... / outcome 9b31523f....
+Original 600s spent; actual 78.42165s, CPU1/CUDA1, 16 epochs/1568 updates,
+0 failed fits; 132 complete TRAIN/25,080 rows/674 decision dates.
+30 complete cells; 36 checks: 27 true/9 false/0 unknown; both rejected.
+Weights not retained, sealed spend0; original outcomes/debits stay immutable.
+Positive modeled growth does not erase that rejection or prove alpha.
+Source/child/container/owned-lease closure is host-attested, not independent
+OS/raw-NAV/PIT proof. Exact details remain in the immutable root and RUNBOOK.
 
-One loss axis, fixed mean/q25 same seed202/GRU16/head19,1, state3/prior21.
-Quantile/forecast lineage already tested; do not claim novelty or change
-features/target/timeframe/seed. Date/scaler/action/control parity first, mean
-reconstruction must match130 exact outcomes, not replace a mismatch.
-Queues below remain history-linked; GPU works and ready frozen research is
-allocated autonomously. Current131 source preparation is unallocated.
+131 UNFINISHED / SOURCE-READY / QUEUED; no actual fits or allocation.
+R131/engine-r1/source-release.json
+SHA256 102f2685feb889c6c77a8c02f001b778011725192347765e254c686ad95015a5.
+paired_models.py 7fd85816... / interface ed8364f4...; unchanged 130 model
+injection, same seed202/scaler/batches, mean-MSE versus fixed q=.25 pinball.
+16 Parent NumPy/mock SYN passed; validation-source-r1/receipt.json
+831c0f20... supports source boundaries only, not native fit/mean parity.
+Data reuse ee1fe908... is source-only; inherited counts are not new data reads.
+No canonical 131 scientific row, appointment, labels, fit or weights exist.
+Parent owns supersession of the unfinished company objective for Paper recovery;
+131 remains queued, not completed, erased or automatically replayed.
+If resumed, bind existing source handoffs, finish canonical contract/composition
+and scoped transport, then the existing two-CUDA/shared600s/16-epochs-each recipe.
+The planned mean reconstruction consumes one fit and must match 130 exactly.
+Do not rerun used source-release/exclusive creators or silently replace controls.
 
-## Retained Evidence
+## Next Ready Preparation
 
-111 rejected3b542a4d.../outcome1025fd49... at A/research/
-kis-five-session-path-downside-admission-development-v1;1CPU2CUDA/1340rows,
-64epochs1344updates/90checks33fail, all3 rejected. GPU lease closed/free.
+Prepare a fresh OHLCV convergence/technical-feature/expert-composition source proposal;
+not a new fixed production contract, frozen campaign or GPU appointment.
+Use retained daily512 old800/later71 and prior21 context, subject to exact
+Data-owned bindings; current21 is inference context, not future labels.
+Propose one five-session payoff matching replay and one 5/10/20 feature recipe.
+Use momentum/SMA distance, reversion/RSI, volatility/ATR/range, candle structure
+and relative-volume features. No implied VWAP, unsupported 30/60 context,
+snapshot splice or claim to full Alpha158/360. Freeze formulas/missing handling.
+Prior21 supports scalar RSI14, not a fully warmed 20-step RSI14 sequence.
+For that sequence, require declared prior35 coverage; freeze formula/initialization
+and per-step causal support. Never zero-impute missing indicator warmup.
 
-106 COMPLETE/development_screen_passedb00e112b.../resultf08beb14.../outcomef7faa74a...
-at A/research/kis-peer-relative-momentum-entry-development-v1. Same512 seen
-development,24tables130marks/30pass,0trainedfits/5807analytical betas. Final
-kernel a5f60333.../worker e56eec2a.../releasef7ea64b6...; Parent24 Engine plus
-Execution8/Infra8/consumer6=46 focused. Independent actual3+2 aggregate groups,
-not raw NAV/physical publication/OS or beta reconstruction. At10bps/side growth
-residual DEV+2.58272%/later+.25028%, both controls lower; common planned gross
-does not prove matched risk, neutrality, independent alpha or Paper promotion.
-107 preparation COMPLETE5e164d61... at A/research/
-kis-peer-relative-momentum-prospective-preparation-v1/integration-evidence.json.
-Actual forecast3a15ac2c.../private fd47fe89... sealedOct11 16:02:06.573427UTC;
-246eligible/185added/246analytical estimates/union13,0predictivefits/0GPU.
-Six finite Data dates installed; future comparison pending under frozen row
-264c3b3d..., not a completed campaign, replication or new Paper teacher.
-40 focused/source2/actualmetadata2 and one direct Docker SYN group pass.
-R1/R2 SYN faults retained; no pytest exists in the image, no14Docker-test claim.
-108 target preparation COMPLETE61ee85b1...; semantic2896ac7d.../Engine59165911...
-releasebef5cc30...10 SYN. Data and canonical Execution fee bindings complete;
-35 combined source/math cases pass. Actual geometry251days,1488TRAIN episodes
-with all5held inputs/all7 OPEN support;0labels/fit/GPU/metrics. Independent
-review47348a75...1 native group,1 source-read with retained fixture failure.
-Realized CONTINUE-one-interval-then-pi0 advantage, not optimalQ/learned-policy
-value or rollout theorem; seen-data/zero-latency/physical availability limits.
-109 COMPLETE/rejectedfe3d5e23.../resulte85d9b90.../outcomeeb866597....
-Science56a33554.../trial1row410a4d63...; one600s appointment855b8f36... CLOSED.
-Actual1CPU Ridge2CUDA GRU16 seeds101/202,8epochs each/16total624updates0failed;
-7440TRAIN held rows, single parse/child.56cells32checks22fail, all6noncash3bps
-net negative inbothblocks. No winner/refit/epoch or threshold rescue/weights.
-36 focused/direct Docker CPU SYN and independent source2/actual3 groups pass;
-Claude result/next direction supported-with-limits. GPU lease released/free.
-Seen fixed-share modeling not NAV/physical availability/PIT/KIS parity/fresh
-replication. Next-direction source review examines daily peer-residual targets
-against prior families before another frozen campaign, not an intraday rescue.
-Concept sources independently retrieved; no public code/weights imported.
+Compare raw, indicator-only and raw-plus-indicator Ridge; add fixed trend and
+reversion rules, one bounded tree expert and one small GRU expert.
+Compare their fixed blend and one shallow utility-tree gate against raw,
+single-expert and cash controls; no individual-profitable-member prerequisite.
+Use two expanding chronological OOF blocks within TRAIN and one final fit.
+Each expert's chronological inner checkpoint-selection block precedes its OOF
+prediction block; do not choose epochs using the gate's OOF labels.
+Group instruments by decision date, purge overlapping target intervals, fit
+scalers only on preceding eligible inputs, and report date-block support.
+Learn fusion only from aligned OOF expert outputs with identical availability,
+payoff/cost/row keys. Gate standalone utility is not optimal policy value.
 
-Goal99 COMPLETE/rejected879bb037... at A/research/
-kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
-Sciencee5d1dbd3.../trial1b93f2526.../outcomee19f0c2c... unchanged/closed.
-Actual result9c4470d3...:1CPU ridge2CUDA GRU,8epochs/472updates,72tables,
-134 completeTRAIN/DEV15/later9 supported/all130marks;35of64 kills fail.
-10bps-per-side GRU101 DEV+.2173%/later-.5757%;GRU202-.4287%/-.7279%.
-Entry discrimination unstable; continuation does not robustly add net value.
-185 focused/23 independent source-SYN/8 JSON groups pass, not raw-price replay.
-SourceR1 and failed publication preserved; measured errno22 corrected by
-publication-only R2f243a34e..., CPU smoke/host hash+cleanup closure pass.
-NON-atomic guest visibility requires exact completed host evidence; no partial
-result promotion. No retry/refit/model rescue/weights/holdout or Paper changes.
-Current-listing/nonPIT/revised/raw-action/nominal availability, oracle-label
-upper-bound supervision and planned-exposure-proxy limitations remain.
+Proposed shared budget to freeze after source/support preparation: 16 fits
+(13 CPU/3 CUDA), 1800s including publication/cleanup, GRU up to128 epochs/fit,
+384 total epochs/6144 total updates; finite tree depth/iterations, fixed seeds.
+Predeclare TRAIN/inner-validation curves, patience, best-checkpoint restoration
+and convergence/overfit checks. Budget exhaustion is not proof of convergence.
+Freeze the decision-cost basis and sensitivity band before outcomes; compare
+utility, drawdown, turnover, exposure and matched-exposure controls.
+Strongest kill: future/OOF leakage or no incremental post-cost gate value over
+the fixed blend under the predeclared paired test; lower exposure alone is not alpha.
 
-Goal100 COMPLETE ff5b936b...; semantics150119bb...24 focused pass, official
-three-source audit44a9ec5c... leaves exact order-linked Paper fees UNKNOWN.
-Modeled per-side bps is not observed USD fees; gross-less-observed-fill-fees is
-not settled account return, FX/dividends/tax/financing/cash remain separate.
-Actual113f source/SYN-only integration complete, no model/GPU fitting in100.
-GPU99 allocation closed/released, available; no environment/permission hold.
-No rescue/depth/ensemble allocation from rejected99. Current research package
-comes solely from NEXT_CODEX_GOAL.md after prior-study novelty/causality review.
-Goal101 CLOSED/technical failed44522a70...; CPU1/CUDA2 actually completed,
-8epochs/224updates, then post-fit failure with no comparative tables/weights.
-Candidate UNKNOWN, not scientific rejection; max3 spent, no refit/clock reset.
-Scienceb261c993.../trial02520940.../failed outcome7c2307bf... preserved.
-189 focused, independent replay8/Engine6/Data6 groups pass. Engine diagnostic
-a595c98c...4 tests finds real later Panel71.universe.keys versus driver.keys
-AttributeError; Execution1fd458e5...5 tests finds original planner/Fraction cap
-parity mismatch. Actual first cause not established; no market result inferred.
-Goal102 CLOSED/source-SYN3c98f73f...; driver58c50515.../replaya5a9a0e1...,
-79 Parent source tests/10 Infra mocks; independent Data6/Validation6 pass.
-Native joint fixed-predictor integration proves both fixes; inherited CLI needs
-explicit new replay pin. Separate actual Docker test-wrapper failedf1fb92ab...,
-retired without runtime-pass claim. Stable101 model transport is reused next.
-Goal103 COMPLETE/rejected7a1cb985... deliberately reexecutes SAME hypothesis,
-not novelty/independence/performance rescue. Metadata127673d5.../releaseb48c2ad9...,
-6 Parent tests; same family trial2dc6cc8d8.../outcomeb1f850d0..., prior3 spent,
-cumulativemax6fits/16epochs/448updates/1200allocated seconds. New scientific
-freeze/source rebind/CPU prerequisite pass before actual GPU. Hostbd251f9a.../
-result5c94f579...:1CPU2CUDA complete8epochs224updates/36tables130marks,
-13of48 fixed checks fail. GRU101 DEV+.4971%/later-.0190%,GRU202+.1207%/+.1077%
-at10bps-per-side; fixed5+1.9948%/-.7110%. No robust all-block/cost improvement,
-no best seed/depth/third retry or retained weights. Parent50 focused pass,
-13 independent source/meta and11 actual chain/aggregate groups pass. Old full
-reader geometry50 versus actual71 fails; scalar predicates and pinned geometry
-separately verify rejection, not a passing full reader/raw-price replay.
-Claude cap/budget/result/next direction supported-with-limits. GPU lease closed.
-Prior104 objective: fixed price-volume basis paired CPU development. Source
-proposal d63f2658... at the103 next-direction root was made before103 outcome
-reads; official Qlib loader/MIT re-retrieved.9 continuous+6 flags,5/10/20 scales
-within21 bars, raw105 versus augmented120 ridge(alpha1),2fits600s/no CUDA.
-Data e4fe1834... shows30/60 lack first-later/current context and VWAP absent;
-no fullAlpha158/360 claim, window search, implicit splice or Paper change.
-Closed104 Ready80052ac6.../body6bd716cc... is frozen as science50ff9797.../
-feature-family trial1c6705533.... Kernel release015f2821.../source1fcb6a76...
-passes10 Parent generated math tests. Same-context raw21 inputs/15features,
-TRAIN-only continuous scaling and explicit(slot,d) paired route are frozen;
-typed drivera58c49f3.../release2b604564... passes21 additional Parent tests.
-Actual CPU2 complete/hostbb70f9dc.../result575d521d...,30tables130marks;
-15of36 fixed checks fail, COMPLETE/rejected04f16af6.../outcomefdc3bfdf....
-At10bps per-side raw/aug growth DEV+.51025%/+.37986%, later+.04354%/-.15819%.
-79 Parent focused,8 independent prospective/kernel and8 actual groups pass.
-No feature/alpha/seed rescue, weights, holdout, GPU or Paper change.
-Closed105: fixed-five entry-loss veto, one CPU logistic fit600s. Keep
-original candidates/kept quantities; no replacement or learned exit. Prior-only
-matched-gross rule and cash distinguish filtering from simple exposure reduction.
-Nearest128 already used fixed-five profit/loss labels and veto-only admission;
-105 is informed controlled reexamination of512 rule-selected rows, fixed-initial
-quantities and a prior-only matched-gross control, not new-method/independent
-evidence. Scienceeb4485b6.../trial1b5aaaecd... frozen before market work;
-ready652752ac... remains original proposal. Actual105 hostc78eeac7.../
-result43e5ad42... complete1CPU fit/40iterations/1340 TRAIN rows,0CUDA/weights.
-Closureaa330c36.../outcomea66484b4... records27of30 pass,3fail DEV DDmatched.
-10bps veto growth DEV+2.46336%/later+.19843%, both improve rule and matched;
-frozen risk failure stays rejected, not all-model futility or independent alpha.
-Claude corrected-lineage supported-with-limits at the105 parent/claude-lineage/.
-Engine50b55249.../worker36b94d40... source complete;61 Parent tests and4
-prospective/source plus5 actual independent groups pass. No model/cutoff rescue.
-ONE next106: peer-relative momentum changes selection, not105 admission/exit.
-Prior20 close-return covariance beta with self excluded; score removes beta
-movement, NOT fitted intercept. Paired prior-common-gross/control-only scaling
-is fixed before prices. Ready68949095.../bodybc1c4dbe... frozen as science
-ea00de07.../trial1 row023d797e...; signed documentf286a900... distinct from
-wrapperf94a55dd.... No106 clock/appointment/numerics yet;
-0 predictive training/GPU/weights/holdout, one CPU600s deterministic study.
+## Policy And Recovery
 
-## Prior Packages
-
-Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
-kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
-Exchange801960ca.../tests d4bf358d... committed/pushed13eac3a;44 author/26
-independent pass. Actual host serializer and exact native337-contract restore
-original Friday decision/first slot/target/TTL; no model code in Executor.
-236 focused;1311source4205ef0f.../JUnitdb40ae5a...,15829pass22skip clean8.
-Actual113f network-none preseeded SYN same-request recovery passed18.6699s;
-finite3 tasks installed, existing9 unchanged, future input/fill/PnL unknown.
-No numerical campaign/model load/fit/GPU/weights/holdout or actual inference.
-
-Goal98 COMPLETE c6e08a27...: attributionf54280aa...39 tests, archive bridgeR3
-27726cdf...58/independent6, default image SYN3.951s. Full book intact; PnL only
-from journal-bound segment, unknown fills/fees never become net profit.
-Goal99 subsequent numerical closure is recorded above; no active preparation
-or allocation remains from that family. Prior failed/recovered source receipts
-remain immutable, not a second research queue.
-
-## Recent Research Conclusions
-
-Goal92 fixed covariance allocation COMPLETE/rejected:
-A/research/kis-stock-five-session-covariance-allocation-development-v1/
-integration-evidence.json c21602f2...; sciencebc876585.../trial1.
-3tree+3ridge/142solves/1080iterations,108tables/390marks;15of20 fixed kills fail.
-Worker63.661s<600, no retry/refit/GPU/weights/holdout/Paper change.
-DEV covariance+1.3734% vs tree+2.1541%; later-.21422% vs+.37249%.
-Independent11cfac82.../aggregate checks are not optimizer/raw-price/OS proof.
-
-Goal91 cross-stock attention rejected eff354f7...:3CUDA/9450updates.
-Goal86 CatBoost rejected8ecd02b9...:3GPU/384iterations.
-Goal84 temporal/feature Mixer rejected4bc0340d...:3CUDA/804updates.
-Goal79 TabM dual expert rejected e0281290...:3CUDA/804updates.
-Goal77 OC neural ranking rejected;3CUDA/9522updates.
-Chronos same-CURRENT41cd63c0... already36cells/104CUDA calls/rejected.
-LSTM/GRU/TCN/Patch/rules/ridge/public-model results remain in exact roots/RUNBOOK.
-Do not call an already-run family untested or relabel seen data as replication.
-Goal80 unchanged HGBR later confirmation a94fc234... passed7 frozen kills;
-own teacher was exported. It is engineering evidence, not sealed alpha proof.
-Goal83 Paper deployment of that teacher remains independent of research results.
-
-## Queues, Inputs And Recovery
-
-Breadth: no new campaign allocated from a rejected model or utilization target.
-Depth: no seed/epoch/window rescue of the closed families.
-Replication: prioritize fresh prospective vintages; owned42-peer pair is
-independent, not a foreground wait or a blanket research permission gate.
-Ensemble: no member rescue. A fresh fixed exploratory composition remains
-possible under the existing finite family/OOF/cost contract.
-Discovery977061ec... re-retrieved official TSMixer files/license; no TensorFlow
-runtime replacement or stock efficacy inferred. TCN is already represented.
-
-Old512 fd559b22.../409fd7ad..., seen later5121eaebbc3.../d436ab4e...,
-current21a0bb1864.../921380f5... have distinct scopes; Data owns their facts.
-Current-listing/nonPIT/raw-action/nonTR/revised/nominal-availability limits remain.
-RTX4090/Torch2.7+cu128 works; GPU free, not permission/environment blocked.
-Research Steward owns GPU/sealed custody; no new weights or holdout spend here.
-Goal69 gate/Goal72 forecast and b860 original-slot keep/veto owners unchanged.
-Parent owns final composition/Git; source defects affect their exact package,
-not independent Paper. Retain failed source versions and exact attempt clocks.
+Old epochs/seeds/final-only/no-weight/no-rescue rules protect their exact trials,
+not fresh informed development. New safe D: checkpoints may be retained when
+contracted; record selection reuse, lineage and every fit without debit refunds.
+Seen/current-listing/nonPIT/revised/raw-action/nominal-availability limits remain;
+OOF or a new family name does not create independent replication/sealed evidence.
+Use existing A/_control/ledger/2026-10.jsonl and Steward custody; no new registry.
+History stays in Git, immutable external roots and RUNBOOK, not this projection.
+Next handoff: bounded recipe/source tests to Parent and Steward; no actual fit yet.
+Independent Paper recovery continues with its original shared10%basis/owners;
+research neither changes those controls nor adds a profitability permission gate.

@@ -91,7 +91,7 @@ candidate must freeze a distinct hypothesis and a KIS-reconstructibility or
 explicit offline-only interpretation; it cannot silently weaken the event mask
 or reuse this descriptive result as a selection pass.
 
-### Current Daily Paper Slice
+### Initial Daily Paper Slice (Version-Bound)
 
 The first deployable daily slice is deliberately narrow: a forward KIS Paper
 `SPY/AMS` D1 head is collected as one immutable source, with the current US
@@ -105,7 +105,7 @@ source, never a per-row blend.
 The receipt digest crosses the Research/Execution boundary unchanged. It
 becomes the virtual-paper durable intent identity, so a retry can reconcile the
 same request but cannot replace it with a new quote or submit a duplicate order.
-The current slice supports `enter`, `exit`, and `abstain`. Execution reads one
+This initial slice supports `enter`, `exit`, and `abstain`. Execution reads one
 fresh, complete KIS Paper account/open-order snapshot before a broker side
 effect, recognizes only `flat` or exactly one `SPY` / `AMEX` share, and maps the
 result to at most one whole-share target delta. Any existing SPY open order,
@@ -858,6 +858,15 @@ profitability, arbitrary day/trade counts, dashboards, and report chains are
 not prerequisites for starting bounded paper evidence collection.
 
 ## Dashboard Boundary
+
+The 2026-10-13 operator request defers implementation of the next monitor.
+Keep the Docker-server architecture, but redesign later around Korean primary
+labels with English technical names, owned holdings/orders, worker status,
+actionable error/recovery explanations and honest unknown/stale states.
+Future outside access should use authenticated private access (for example a
+private tunnel), not default public port forwarding. Public exposure remains
+reserved authority. No web runtime, port, language or access change is claimed
+by the current operating-policy and quiet-task repair.
 
 The dashboard is authenticated, local/LAN-bound, and mostly read-only. The
 existing Docker `web` service is a local monitor only; it neither reads KIS

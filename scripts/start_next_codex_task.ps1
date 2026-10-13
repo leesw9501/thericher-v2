@@ -27,6 +27,7 @@ Write-Host ""
 Write-Host "== Required first-read files =="
 $activeStateboards = @(
     "agents/data.md",
+    "agents/strategy-research.md",
     "agents/engine-research.md",
     "agents/research-steward.md",
     "agents/execution.md",
@@ -83,12 +84,12 @@ Write-Host "Do not store acquired market data in Git. Use this root or another e
 Write-Host ""
 
 Write-Host "== Verification commands =="
-Write-Host "uv run --extra dev pytest -q"
-Write-Host "uv run --extra dev ruff check ."
-Write-Host "docker compose config --quiet"
-Write-Host "Focused serial verification: uv run --extra dev pytest -q <changed paths>"
+Write-Host "uv run --no-env-file --extra dev pytest -q"
+Write-Host "uv run --no-env-file --extra dev ruff check ."
+Write-Host "docker compose --env-file .env.example config --quiet"
+Write-Host "Focused serial verification: uv run --no-env-file --extra dev pytest -q <changed paths>"
 Write-Host "Goal-boundary parallel verification: .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot"
-Write-Host "Periodic serial diagnostic: uv run --extra dev pytest -q"
+Write-Host "Periodic serial diagnostic: uv run --no-env-file --extra dev pytest -q"
 Write-Host ""
 
 Write-Host "== Completion handoff rule =="

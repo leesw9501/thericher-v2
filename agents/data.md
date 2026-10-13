@@ -1,37 +1,48 @@
 # Data Stateboard (시장데이터 담당)
 
-Current projection 2026-10-12 KST; history in Gita81a1ae and exact immutable
-external receipts. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns ONE objective.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Current projection 2026-10-14 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
+Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 
 ## Current Package
 
-130 CLOSED/rejectedde64b98f...:
-D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
-SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
-SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
-CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
-674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
+Owner Data: prospective capture source isolation and durable pre-client failure.
+Exact original R1/forecast/job/date cursor remain immutable. The current source
+reconstructs source_changed before client/receipt: 5/468 pins differ; original
+runtime exception unobserved because invocation receipts are absent.
+D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/g107-offline-diagnosis-1791899634083/diagnosis.json
+Four offline reproduction groups and twelve original SYN cases pass.
+R2 RELEASED and applied to the same five future task Actions.35 pinned files/
+26 native module origins isolated from mutable checkout. Parent31 SYN and
+26-origin/no-client validation pass; author and Parent six mocked deploy tests
+pass. No hash/type checks removed and no actual provider/task launch.
+Source release9feb1311.../bundle59f501d8... at capture-r2/source-release.json.
+Exact Action-only readback (principal/triggers/settings unchanged; private
+rollback retained):
+D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r2/deployment/57471a799a67422c99a135e1631c72c6/fresh-readback.json
+SHA98748a6b904a676b62957c13c76e6a24ab82e044ed21e20ac0f7bc99dcf15b3f.
 
-Data sourcef4281218.../release1d236663.../5SYN; independent Data/Execution3
-386ace7c... verifies132calendar starts/ages1..19/695TRAIN terminal and
-DEV4/later2/130marks. Actual all132 complete/0incomplete/0unsupported/cash,
-25,080 label/scaler rows,674unique decisiondates,0EVALtargets. Dates/rows and
-overlapping20labels are not independent samples. No acquisition/collector/API,
-PIT/finality/corporate-action promotion or source repair. Native old/later
-identity/hash/calendar and all original missing-price records stay.
+Next owned run Oct14 06:50KST (Oct13 21:50UTC), then original remaining dates.
+Scheduled-principal execution is not yet observed. Infra owns only quiet
+interpreter/launch changes after this rebind; do not race Actions.
+Original Oct12 date remains incomplete. Accepted/failure page counts and ETA
+are unknown until actual capture; missing receipt is not zero accepted work.
 
-Next131 reuses this exact target/helper/intake/source and masks; only model
-loss differs. Reattest unchanged source scope, do not recollect or create a
-new loader. Future original107/ab65 owners below remain independent.
+## Durable Knowledge And Recovery
 
-131 reuse source-reattestation READY:
-D:/thericher-v2/model-artifacts/data/daily20-mean-versus-lower-quartile-exit-development-v1/data-r1/source-reattestation.json
-SHAee1fe9086a531d58c45d6a74566c25911234a03b317435c0faf2cebd5374d869.
-14 pins/six AST signatures stable; Parent reference checks agree.132/25080/674
-and6/130 are inherited130 counts, not fresh support or market recomputation.
-Prior-valid scaler and unique decision-date weights unchanged; optional packet
-weights are not pooled campaign weights. No collection, labels or allocation.
+Data owns market endpoints; Execution owns account/order endpoints. One client/
+token per eligible collector; guard spaces fresh token POST only. Limits are
+consumer-local, not permissions. Local retained data may support honest
+development despite non-PIT/current-listing/raw-action/finality limitations.
+No fabricated missing values or source blending.
+
+131 reuse source ee1fe908... remains source-ready, superseded unfinished, no
+labels/collection/allocation. 130 target f4281218.../intake1534... geometry is
+preserved; its actual result rejected, not a data-quality promotion.
+Existing ab65 refresh and107 finite capture ownership remain separate from
+Paper. No wholesale collector restart or forecast/cursor overwrite.
+
+Everything below is frozen historical evidence, not current dispatch. Old
+"no manual invocation" study restrictions apply to that retained attempt only.
 
 ## Retained Evidence
 
