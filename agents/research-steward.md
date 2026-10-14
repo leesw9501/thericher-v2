@@ -1,7 +1,7 @@
 # Research Steward Stateboard
 
 Current 2026-10-15 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
-retained-relative-ranking-completion-v1. Custody is not model/Paper approval.
+future-owned-paper-runtime-recovery-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,27 @@ Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
 Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
+AB=A/infra/relative-ranking-tcn-determinism-ab-20261015-v1 CLOSED/complete_invented_determinism_AB;
+consumer future native TCN backend/throughput, independent of owned Paper recovery.
+Contractd0aea8b447089fb167db7e17267cd1c29f2c8ecb0246a013f168c1ed31b5e50d;
+17source pins still matched/Ruff F,E9/native CPU6PASS; Parent exact dispatch ONCE.
+1attempt/0retry/4pairs attempted4complete,0optimizer/marketfits/labels/privateweights/
+payoff/network/credentials; same seed303/state/inputs/RNG/fp32/noTF32/8threads.
+HOSTACTIVE48.54251609999483/120,end44.40644860267639/600,
+appointment1792008518.1579626,clock_failed=false, PREP2.1764458+2s startup included.
+Measured headroom22370MiB/exclusive native lease; exit0/childreaped/containerabsent/
+lease released+independently absent/source unchanged. No AB GPU allocation remains.
+cuDNN enabled/available=true,version90701/CUDA12.8,v8-disabled/launch-blocking unset.
+Actual profiled True6slow_dilated+3cuDNN vsFalse0slow+9cuDNN dispatches, SYN scope ONLY.
+All4output/gradient comparisons within frozen tolerances; maxarmdiff1.1921e-7/2.9802e-8.
+True bitwise repeats; False gradient nonbitwise8.3819e-9. Parity is NOT default authority.
+Events include host gaps/queues, public op counts NOT kernel compute; 2samples/arm,
+fixed order/backend caches/profiler overhead prohibit training speedup/28pct claims.
+Claude supported-with-limits7.1131s separate review; old L52.3885/48.2512 preserved.
+Receipts: [host result](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/host-result.json) 5b3ee1b2...;
+[backend/parity](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/runtime/output/diagnostic.json) 679f0d9d...;
+[worker spend](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/runtime/output/worker-spend.json) 49be9ea5....
+Creator frozen/no extra pair/tolerance/default/source/old-output changes. NEW policy scope only.
 L=A/infra/relative-ranking-tcn-latency-cause-20261015-v1 CLOSED/invented_latency_diagnostic_complete;
 consumer: future native TCN throughput attribution, no model/payoff selection.
 Contract1b0d3d0cc15ef5598ffde6995faff3baae368a0af1ec161f5a75d86375789fa9;
@@ -29,7 +50,9 @@ Exclusive native lease acquired after ownership probe/headroom22371MiB;1attempt/
 quiet exit0/childreaped/containerabsent/lease released+independent absence read/sourceRO.
 No L GPU allocation remains; network/credentials0, no rawtrace/extra profiler pair.
 TCN higher-dilation encoder spans dominate; profiled CPU other/copies88.7574%,
-explicit sync/weightnorm small. 2samples/overlap/instrumentation, no kernel/speedup claim.
+explicit sync/weightnorm small. Events include host gaps/queues; operator counts NOT
+kernel compute/runtime-cause proof; L cuDNN enabled/available/version unknown, no backfill.
+Static PyTorch2.7 rejection =SUPPORTED_SOURCE_HYPOTHESIS, no kernel/28pct speedup claim.
 Receipts: [host result](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/host-result.json) e9a80635...;
 [timing categories](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/runtime/output/diagnostic.json) 3d364bfe...;
 [worker spend](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/runtime/output/worker-spend.json) b7b0bde5....

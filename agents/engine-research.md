@@ -1,7 +1,7 @@
 # Engine Research Stateboard
 
 Current 2026-10-15 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
-retained-relative-ranking-completion-v1. Paper authority is research-independent.
+future-owned-paper-runtime-recovery-v1. Paper authority is research-independent.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,35 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and the assigned external package are worker writes.
+AB=A/infra/relative-ranking-tcn-determinism-ab-20261015-v1 CLOSED/complete_invented_determinism_AB;
+independent consumer: future native TCN throughput/backend and numerical consequences,
+NOT a Paper recovery gate, model selection or market default change.
+Contractd0aea8b447089fb167db7e17267cd1c29f2c8ecb0246a013f168c1ed31b5e50d;
+hostd6331904.../worker89770a09.../17pins still matched/Ruff F,E9/native CPU6PASS.
+Parent exact dispatch ONCE/1attempt/0retry:4pairs attempted4complete,0optimizer/fits/
+labels/privateweights/markets/payoff/network/credentials. Same weights/inputs/RNG/
+seed303/fp32/noTF32/8threads; globaldet sole SYN axis, no other flag change.
+HOSTACTIVE48.54251609999483/120,end44.40644860267639/600,
+appointment1792008518.1579626,clock_failed=false; PREP2.1764458+2s startup included.
+cuDNN enabled/available=true,version90701/CUDA12.8; v8-disabled/launch-blocking unset,
+CUBLAS original4096_8. ProfileTrue:6aten::slow_conv_dilated2d+3cudnn_convolution;
+False:0slow+9cudnn_convolution. SYN backend switch observed, consistent with source,
+NOT proof of old market kernel timing. True/False copy_98344/40,select211970/absent
+fromFalse top8,as_strided215180/146: operator counts NOT kernel counts/compute.
+Unprofiled first-pair stream forward/back ms:True1025.9448/348.8951,
+False4.5139/7.0102; fixed-order/cold/backend-cache/2profiled pairs prohibit speedup claims.
+All4output/gradient comparisons within fixed1e-5/1e-4 and1e-5/1e-3 tolerances;
+True repeats bitwise; False gradient repeats NOT bitwise(maxabs8.3819e-9).
+Across-arm maxabs output1.1920929e-7/gradient2.9802322e-8; norm-difference details sealed.
+Verdict numerical_parity_pass_NOT_default_change_authority. Event spans include host
+gaps/queues; global flag sole axis NOT sole mechanism. No market/broker/28pct claim.
+Exit0/childreaped/containerabsent/lease released+independently absent; source unchanged,
+headroom22370MiB measured before allocation. No AB GPU allocation remains/creator frozen.
+Claude7273fdf8... supported-with-limits,7.1131s review separate; old L clocks/caps unchanged.
+Receipts: [host result](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/host-result.json) 5b3ee1b2...;
+[backend/parity](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/runtime/output/diagnostic.json) 679f0d9d...;
+[worker spend](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/runtime/output/worker-spend.json) 49be9ea5....
+No extra pairs/tolerance/default changes. Future training policy requires NEW scope/evidence.
 L=A/infra/relative-ranking-tcn-latency-cause-20261015-v1 CLOSED/invented_latency_diagnostic_complete;
 consumer: future native TCN training throughput, not model/outcome selection.
 Frozen contract1b0d3d0cc15ef5598ffde6995faff3baae368a0af1ec161f5a75d86375789fa9;
@@ -29,10 +58,13 @@ and2s startup/publication debit. Torch2.7.0+cu128/fp32/noTF32/determinism/8threa
 seed303/native source/runtime defaults unchanged; headroom22371MiB before lease.
 Second-pair forward/backward stream-ms:MLP.5077/.6892,TCN60 881.7919/277.8025,
 simpleConv.3148/.5681. TCN20 ONLY profiled pair1855.2250/445.0902 is instrumented.
-Delay localized to higher-dilation encoder Conv1d spans, not head/explicit sync/weightnorm.
+Long spans observed in higher-dilation encoder Conv1d; precise runtime cause unproven.
 Profile CPU shares excluding diagnostic ranges:other69.8242%,copies/layout18.9332%,
 convolution11.1493%,sync.0069%,weightnorm.0188%. Specific kernel fallback unproven;
-2samples/overlapping event spans/profiler overhead prohibit kernel-only/speedup claims.
+CUDA events include host gaps/queues; categorized operator counts are NOT kernel compute.
+cuDNN enabled/available/version missing in L, never backfilled; static rejection is only
+SUPPORTED_SOURCE_HYPOTHESIS for L; new AB synthetic backend evidence does not backfill L.
+2samples/overlap/profiler overhead prohibit speedup claims.
 Exit0/childreaped/containerabsent/lease released; lease absence independently read,
 all15pins unchanged. No GPU allocation remains from L; no rawtrace/extra pair/retry.
 Receipts: [host result](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/host-result.json) e9a80635...;
@@ -55,6 +87,7 @@ Published-summary screen:0true15false all-cost net/no-worse-DD comparisons vs ma
 broad/original +cash net floor; fourFINAL augmented experts beat raw only, not controls.
 Nonpromoting/seen, no qualified winner/actual profit. Parent exact linked-final-v1
 PASS23555latest12/sixRidge/72scalar+wholecurves; originalprotocolfalse preserved.
+Parent company closure uses actual72PASS+Data1424/four-score PASS; no Paper/model adoption.
 HOSTACTIVE1531.8837571999902/3000,end1467.1570360660553/6000,
 appointment1792003364.0046623,clock_failed=false; includes PREP62.7684852+2s startup/publication.
 Old N1561.230424100002active/1529.266265153885end preserved; cumulativeactive

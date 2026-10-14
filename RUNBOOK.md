@@ -2,10 +2,28 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective future-owned-paper-runtime-recovery-v1. Seven existing future
-project-owned Actions/source adapter are PREP until verified installed readback,
-not runtime broker success. Same quiet daily23:50 task/imagea142 unchanged.
+ONE objective future-owned-paper-runtime-recovery-v1. Seven future quiet Actions
+r5 installed/source+nonAction readback verified. Actual20:25 data step failed
+oldcapturedexecute.data_call default; cohort offline no_owned_intent. NEWr6
+accounting-only Action installed20:56 after13SYN/cold+warm455audit; nextowned
+Oct15 20:25UTC, no manualtask/claim reset/oldmark replay. Actualr6runtime UNKNOWN.
+Same quiet dailyOct15KST23:50 task/imagea142 unchanged/Ready.
+D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1/parent-installation/after.json
+D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
 D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
+NAS512 capture creator5648039 already ranONCE; do not dispatchagain:
+504ready61/8missing/30744bars/512GET1token,101388readbackPASS.644.8538elapsed/
+670.7362active/childexit0/ownerreleased; no account/order/live. RawD:/market_data.
+D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1/actual-readback.json
+EngineAB d0aea8b also already ranONCE; fourinventedpairs/0updates, backend/parity
+measured but not marketprofit/default-change authority. Next six-fit convergence
+and current feature panel are PREP only until frozen ready reviewed.
+D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/host-result.json
+Synthetic quiet child lacked publicSystemDrive and created literal repo cache;
+fourDB files from19:25:47 were preserved outsideGit after path/time/no-link checks:
+D:/thericher-v2/model-artifacts/verification/quiet-synthetic-native-cache-20261015-v1/retained-SystemDrive-literal
+Future native child fixtures use explicit public OS paths/isolated external CWD;
+never modify oldsealedr5 tests or delete unknown caches/owner state.
 Previous retained-relative-ranking-completion-v1 CLOSED actual5newfits/72cost
 cells/independent latest12+sixRidge+fullcash-NAV PASS, originalprotocolfalse kept.
 Fresh2stock2Ridge4score consumer actualCOMPLETE/1424checks/21.02198active,

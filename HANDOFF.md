@@ -2,11 +2,34 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: future-owned-paper-runtime-recovery-v1. Static future-owned audit
-found goal83 accounting's old driver checks changedcheckout4pins despite exact
-archive455; native strict mapping/import/consumer and seven quiet Actions are
-PREP, not deployed. Goal97installed delivery-r2 uses its exactarchive/image113...
-and is not a current-source mismatch. Tonight23:50 a142quiet task unchanged.
+ONE objective: future-owned-paper-runtime-recovery-v1. Seven quiet Actions r5
+INSTALLED20:00UTC; exact non-Action definitions/source pins/rollback verified.
+Actual20:25 owned accounting: mapped parent/source preflight passed, but data
+child slot_unknown/source_changed; offline strict result no_owned_intent for
+THIS exact cohort, not global zero holdings/profit. Captured execute.data_call
+default still launched original unmapped runner; firstthrow contracts.py pin.
+NEWr6 default binding13SYN/cold+warm455audit/Claude passed. ONLY accounting83
+Action updated20:56UTC, other6/triggers/principal/basis/claims unchanged.
+Actualr6 runtime remains UNKNOWN until owned Oct15 20:25UTC; old index2 mark
+unknown/not replayed. No manual task/collector/order invocation for this repair.
+TonightOct15KST23:50 a142quiet task/source stillReady/unchanged.
+D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1/parent-installation/after.json
+D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/firstcause-r2.json
+D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
+Data NEWsameNAS512 ACTUAL snapshot:504ready61/8missing61/0unresolved,
+30744rows/512GET/1token/0account-order-live;644.8538elapsed/670.7362active,
+under1800/3600/childexit0/unknownrequestfalse. Raw onlyD:/market_data. Not all512
+complete, no imputation/PIT/finality/units/actions proof. Independent readback
+available; next useful consumer is frozen expert scoring on causal supported pool.
+D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1/actual-readback.json
+GPU inventedAB4pairs complete/0updates: strictglobaldet True used6slow dilated
+ops/3cuDNN, False used9cuDNN/0slow. Fixed output/gradient tolerance passed,
+False gradients not bitwise repeatable.48.5425active44.4064end/lease released;
+not market speed/profit proof or a global default change. NEW6TCN convergence
+campaign PREP-only uses isolatedresearch cuDNN mode; old studies immutable.
+D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/runtime/output/diagnostic.json
+Goal97installed delivery-r2 uses its exactarchive/image113... and is not a
+current-source mismatch. Execution runtime wait is lane-local; Data/Engine ready.
 D:/thericher-v2/model-artifacts/execution/future-owned-paper-runtime-readiness-20261015-v1/readback-r2.json
 D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
 Previous retained-relative-ranking-completion-v1 COMPLETE with actual research

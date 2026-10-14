@@ -3,205 +3,89 @@
 Current projection 2026-10-15 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
 Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 
-## Fresh61 NAS2 Captured
+## Current NAS512 Fresh61 Running
 
-2026-10-14 18:43:48.565686..18:43:51.735255UTC: Parent-approved exact b8c60e0d...
-command dispatched ONCE and completed fresh61_input_ready for two-stock score-only
-prototype, not the frozen512 label/reference/Top10 policy. AAPL/NAS+AMZN/NAS only.
-Actual run3e156de769954dbe9341cee4b759eb90:2dailyGET/1tokenPOST/2accepted100-row
-pages; each61 aligned sessions2026-07-20..Oct13,39older excluded/0duplicates.
-No account/order/live calls, pending unknown, cooldown or next_due. Exact actor
-absent/cache owner released; no redispatch. Supervisor7.2706576 cumulative active
-seconds including3.1088068prep,4.1618498actual elapsed; old debits unchanged.
-D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/runs/3e156de769954dbe9341cee4b759eb90/outcome.json
-is actual receipt46ef8588...; supervisor7391acad... retains exact counts/debit.
-Raw root:
-D:/market_data/us_equities/kis_paper_private/relative-ranking-fresh61-nas2/v1.
-Actual-readback.json a0d58a65... passed419 checks:122nativeBar/calendar-aligned
-rows, exact raw/manifest/availability pins, typed geometry/positive fields,
-early-asof reject and finaldelegate gaps1.2640868/1.2504208seconds; wire unknown.
-AAPL manifest8bfd51c5..., available18:43:50.330163UTC; AMZN manifest0591debc...,
-available18:43:51.594158UTC. First reader's NTFS>=high-resolution observation
-assumption failed; readback-failure-r1.json preserves14.5/573.6microsecond clock
-discrepancies. Corrected reader validates persisted hashes/source chronology,
-not NTFS fsync timestamp equality;0additionalAPI. Current source-reader hash e98b...
-matches receipt. Provider finality/units/actions/PIT remain unknown/unqualified.
+20:37:05.301657UTC Oct14: Parent-authorized exact5648039... dispatched ONCE;
+runafeca46f7c47471b989701e4f2bfb0d0, no duplicate/retry. Accounting Task Ready,
+named accounting/Data actors0 at20:37:04UTC; frozen start/deadline passed.
+Direct SAME Repo .venv Python3.14.3 -B from externalROOT, not uv; CWD isolation
+only prevents Windows native caches entering Git. actual-launch.json records it.
+20:40:03UTC cursor:140GET/1POST/137ready61/3missing61/372unresolved/8357rows;
+accepted140pages, pendingnone, next_due null. Physical4Python processes form ONE
+linked chain, dispatch2/child2 with2venv redirectors; one claim/cache owner.
+No completed-run claim yet. Future learned-score input only, not promotion.
+Own NEW D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1
+plus this board only. Contract564803931429827efbae56264395b4612b36e03b9b0b475c1f66369935a9ae3e;
+ready.json0ad4e7ef... holds exact uv --no-env-file --no-sync command. No daemon.
 
-Native provider/parser/duplicate-conflict/cache gzip IO and existing calendars
-reused. Source selects last61 official-close<observedUTC sessions at dispatch,
-including current US day only after scheduled close; no stale21/56 splice or
-future payoff. Observed availability is persisted after raw+manifest fsync,
-not provider date/finality. Missing source units/actions/PIT/finality stay explicit.
-Fresh61 consumer below now verifies latest12/frozen-checkpoint artifact parity;
-this capture alone does not prove current Paper eligibility/performance.
+Exact frozen fc018cea... training manifest:
+D:/market_data/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2/manifest.json
+fd559b22... selected_target_keys:512 unique NAS keys, exact order618d8ddf...
+unchanged; target512x61=31232rows. Actual partial progress above; unresolved
+coverage remains UNKNOWN, not zero; latest12 NOT computed. No stale21/56 splice.
+Native two-stock provider/parser/gzip journal/publisher and gate reused; dispatch
+chooses/hash-freezes one NYSE5.4.0 last61 official-completed calendar, no mid-run
+roll/future payoff/calendar-tail access. Raw/page bytes ONLY
+D:/market_data/us_equities/kis_paper_private/current-nas512-fresh61/v1.
+Native gzip validation/raw+manifest fsync then observed availability, not provider
+date/finality. Missing61 closes exact name; auth/rate/transport/schema/geometry
+stops collector. Durable attempts/pending/per-name cursors/counts/ETA/next_due;
+unresolved not zero. Only all512 ready61 gives input-ready; other coverage partial.
 
-Source preparation:40 invented native parser/IO/gate/publication checks plus26
-independent exact-pin/scope/cap/no-dispatch checks; worker/tests Ruff passed.
-Preparation had0API/credentials/control-root access; actual bounded dispatch
-used approved Paper app-only selective loader/common gate. Preparation3.1088068active
-seconds carried into300 cumulative active/600 dispatch elapsed, no refund.
-<=4GET attempts/2pages per name/1freshPOST, one reused client/in-memory token.
-No known Parent borrowed-token wire protocol: fixed approved Paper app-only
-selective loader is dispatch-only fallback, no env-secret merge or account fields.
-NEW scoped60s token floor joins common atomic-directory/legacy-OS timing gate;
-old300 defaults/contracts unchanged. Native shared1.25s plus finaldelegate1.25s
-pacing; wire timing unknown. Durable request/pending cursor before effects,
-one dispatch claim, supervisor cap/reap, no automatic retry/reclaim/resume.
-Worker yields cooldown/next_due; no foreground token wait or daemon/schedule.
+<=1024GET/2pages per name/1freshPOST; ONE reused native client/in-memory token.
+Dispatch-only approved selective Paper app loader; no invented borrowed protocol,
+account/order/live fields. NEW explicit60s common atomic-directory+legacy-OS token
+gate; old300 defaults/contracts unchanged. Shared+finaldelegate1.25s known pace,
+wire timing unknown. Cooldown/due yields owned next_due; no flood/retry/auto-resume.
+1800 cumulative active/3600 new elapsed; PREP20.2359486s incl15s conservative
+inspection/lint/startup/publication allowance, failures/I-O/cleanup carried.
+640..1280s pace-only; source latency/I-O/ETA wall unknown. Worst5120s timeout sum
+does NOT fit; unchanged supervisor cap may preserve partial ordered-tail coverage.
+63native SYN:512-key API/parser/pacer plus2page/partial/failure/no-retry/native
+publication/gate/PIPE-EOF launch; total518inventedGET/4inventedPOST, actual0.
+66PREP independent checks/23pins, all3files Ruff clean; independent-check.json6e46be3a...
+proved no PREP dispatch/credentials/production-control reads/raw-root then;
+actual dispatch above now reads approved Paper app fields/gates and writes rawD.
+Claude supported-with-limits in review.json: size success unproven; partial
+coverage cannot masquerade as512/current12 or runtime/model/Paper promotion.
 
-Claude no-tools categorical review: uncertain, not agreement or authority grant.
-D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/review.json
-and independent-check.json retain scope/limits. Parent authorized completed
-single probe at free Data/client slot; G10713endpoint21:50UTC
-and NAS-forward6 owned collectors unchanged. No core/research/goal/Git edits.
+Ownership-check.json: named G107/NASforward host actors0 at20:01:19UTC;
+Docker/other owners NOT probed. Parent reports Goal83 ACCOUNTING owns20:25..20:35UTC;
+mixed-OS account gate is not fully coordinated. No Data POST/market burst overlaps
+that owner. Parent targets20:35..20:38UTC ONLY after actual accounting owner inactive;
+20:35 is conditional due, not a free-slot observation or dispatch. No worker wait.
+Exact dispatch preflight requires start BEFORE20:39UTC Oct14 so full3600+60s
+cannot overlap NASforward6 21:40/G10721:50; rechecks named host actors then native
+token/pacer. No Scheduler/manualtask/observer changes, reclaim or foreground wait.
+Source-unit/actions/current-listing/PIT/finality limits remain explicit, not a
+company permission hold. Actual Data RUNNING from evidenced claim/cursor; PREP
+66PASS complete. Next: same supervisor final receipt/cleanup and bounded private
+artifact readback, no redispatch/frozen-clock/source edits or duplicate calls.
+Parent next company focus is scored512panel after7Actions closure; shared goal
+remains Parent-owned. No human approval or unrelated input-consumer hold.
 
-## Fresh61 Linked Launch Recovery Complete
+## Closed Consumer Evidence
 
-2026-10-14 19:37UTC: Parent dispatched exact3858c796... command ONCE; actual
-complete_score_only, childexit0/reaped/no timeout/no retry. Data independently
-read existing artifacts at19:46:56.429413UTC, no score redispatch:
-D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-launch-recovery-20261015-v1.
-Contract3858c79654daeede3beaf91495094b5227f9ba72ca7da8a42038ead0eb18baa1;
-ready.json6cb52ff9... remains PREP evidence, not the actual receipt.
-recovery-supervisor.json2c63a91c... is full-worker actual receipt;
-score-receipt.json18ade811... records2stocks/2fixedRidges/4private score values,
-one scoreattempt/0fits/GPU/API/credential/payoff. Private NPZaf2cf179... stays
-external/private; no values printed or adopted by Paper. Named Python/uv actors
-for both exact roots0 at19:43:41UTC; supervisor confirms child reaped. No daemon.
-Old35930source/contract/claim/binding/failure immutable, no old rerun/reset/refund.
-Loaded pinned old-source AST has exactly1stdinDEVNULL->PIPE and1timedcommunicate
-emptyEOF change, identical audit AST, new-root namespace only; scoring/features/
-asof/2fixed finalRidge/FITscalers/checkpoint hashes unchanged. No generic platform.
-47native checks call EXACT effective score() Popen path with invented child:
-normalEOF exits0; timeout kill/reap passes, outsidewrites/NUL/network/env denied.
-35PREP independent checks/28source+binding pins plus Ruff pass; PREP0actualscores.
-Actual score-readback.json671e7f72... PASS1424 checks, reader42bc07bf... Ruff clean:
-122finite positive-OHLC/nonnegative-volume nativeBar rows,61identical completed
-NYSE sessionsJul20..Oct13,600scalar token values/24latest12 values/824scalarFIT
-normalizations,4independent scalar dots/4FITunscales/4relativefloor comparisons
-within1e-12absolute+relative. Fixed28source/Cbinding pins, raw/manifest/availability
-hashes and native feature/private artifact parity pass. Native prefix only;
-no window/common_rows/relative_labels/scales/futurecalendar/target/fit calls.
-Score asof19:37:01.342472UTC exceeds both observed first-available timestamps
-AAPL18:43:50.330163/AMZN18:43:51.594158UTC and official retained closes.
-Early availability/missingbar reject; no stale21/56 splice, future payoff or
-cross-stock recentering. Current-listing/actions/units/finality/nonPIT limits
-retained; source-native proxyflags descriptive, not512/Top10/risk/Paper authority.
-
-Prior4.6009801s +NEW3.9099793s PREP =8.5109594s; full actualworker1.2571031s
-+2s startup/publication allowance =11.7680625s producer cumulative active.
-Readback .7539169s +5s preceding inspections +1.5s formatting/lint incl failures
-+2s startup/publication allowance =21.0219794s through readback, below120active.
-Actualscore new elapsed1.2571031s (+2s allowance), below600; original .5997599s
-failure elapsed stays distinct. Old+new elapsed sum NOT family wall; no refund.
-Reader full command1.1449663s covered by its worker+startup/publication allowance.
-Source authoring/review/orchestration separate, not CPU/GPU spend. No C edits.
-Claude supported-with-limits: strongest kill test/real effective launch path or
-delta differs, covered by exact-Popen fixtures/delta inventory/audit hash proofs.
-Exact review.json/independent-check.json preserve limits. Actual numerical/input
-readback ready for Parent integration. No oldroot/C/core/shared-control/Git writes,
-no new APIs/model selection/thresholds/Paper adoption or independent-performance claim.
-
-## Fresh61 Original Feature Consumer Failed
-
-2026-10-14 19:06:20UTC source-ready; Parent exact35930de0 dispatched ONCE at
-19:10:11.249246UTC, CLOSED/pre-score launch failure, not inference success:
-D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-prototype-20261015-v1.
-Data owns that NEW root plus this board; existing capture/source/output immutable.
-Past61/native latest12/FIT-frozen shared per-stock feature adapter and CPU Ridge
-score-only prototype,120active/600elapsed/0fits/0GPU/0payoff/oneactual score-readback.
-Contract35930de07f2e5b4c7ecaddacc29e16e7c0dcd96efdb003fabb61cc91a9d93d1d;
-ready.json7584ccf5... remains original PREP evidence, not current runtime status.
-C closed/final11-12Ridge bindings passed. Actual command exit1/generic
-scoped_source_or_input_failure,0Cscore forwards/fits/GPU/API/payoff. Score/risk/
-PnL values were NOT produced, not flat/zero values. Popen(stdin=DEVNULL)
-opens WindowsNUL O_RDWR and frozen audit raises write_scope beforeCreateProcess.
-Native fixture proves same exception/CreateProcess0; inside-write/outside-read
-allowed and outside-write/NUL denied. PIPE+emptyEOF invented child passes under
-unchanged audit. Claim/binding/source frozen, actor0, no score/private/supervisor
-or child receipt; no redispatch/reset. Full failed command wall.5997599s plus
-prep2.4095085 retained; diagnostic workers1.5917117s separately carried/no refund.
-score-first-cause.json contains actual stdout, native categorical proof/cases and
-debits. NEW linked PIPE+EOF root3858c796... above is independently verified after
-Parent dispatch, not original success/retry; original failure remains closed.
-No operator hold. Parent's
-future material Execution-recovery full tests are not a Data/C prerequisite.
-43native/archive feature/forward checks plus26
-independent exact-pin/schema/cap/no-score checks passed; all3sourcefiles Ruff clean.
-Preparation2.4095085active seconds carried;0actual Cmodel scores/fits/GPU/payoff,
-0provider/credential access. Engine numeric outputs NOT read during preparation.
-Archived2x61 at asof18:48UTC: both latest12 fully defined; raw20/60/native latest35
-parity, single-stock batch invariance, firstavailable-future/missing61/undefined12/
-frozenpin/calendar/unsafeNPZ/incompleteEngine kills passed. Invented Ridge
-coefficient/scaler fixtures only, no actual Ccheckpoint/FIT scaler or payoff use.
-
-adapter.py resolves only pinned Strategy /current-src alias to existing host
-read-only source, verifies actual loaded contracts/chain/indicator_row origins,
-and extracts only old require/tokens/transformed AST leaves. relative=None;
-no window/common_rows/relative_labels/scales/future-calendar-tail/target access.
-Source-native eligibility flags descriptive only, no512/min128/Top10 enforcement,
-recentring, fitting or broker controls. Native ndarray/Decimal/Bar CSV mapping and
-official historical-prefix closes<=asof; input/raw/availability hashes fixed.
-Scores/derived features stay private numeric-only NPZ; stdout counts/hashes only.
-
-CPU host runtime NumPy2.5.1/sklearn1.9.0/calendar5.4.0 tested/pinned, two BLAS threads,
-network/credentials/GPU imports audit-blocked, no Docker/lease/allocation. Optional
-exactd6 image unused; no image parity/performance claim. Original intended score binds
-only C finalFIT scalers and final Ridge raw20/indicator numeric checkpoints after
-closed host flags/complete final11-12ledger hashes. No running weight read or old
-fit/source rewrite; one actualscore claim/supervisor cap/reap/no automatic retry.
-Claude supported-with-limits; strongest kill alias resolves source other than
-hashed origin, covered by origin/pin/parity checks. Exact review.json and
-independent-check.json retain limits. Parent final Engine review authorized the
-failed original attempt; no duplicate raw collection/re-dispatch/global Paper
-hold. Any NEW mechanical correction needs named source/caps and Parent dispatch;
-old claim/source remain frozen. Unrelated C72PASS/Paper ready unaffected per Parent.
-
-## Relative Ranking Input Readiness
-
-Source-only sidecar complete at 2026-10-14 18:11:37UTC for the learned-score
-consumer of relative-return-risk-ranking-v1. Frozen fc018cea... contract and
-bbf7c8b3... kernels matched; original6CPU/9CUDA was assignment context, not a
-worker/GPU observation here. Parent since superseded terminalfailed original
-with retained-relative-ranking-completion-v1:9complete+1interrupted retained,
-5unattempted new final fits, no old rerun, per Parent rather than Data readback.
-No study/output/registry/lease/Engine-board/Git,
-raw rows, credentials, broker/account, Docker or Scheduler access/actions.
+NAS2 run3e156...:2GET/1POST/122bars Jul20..Oct13; actual419check readback:
+D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/actual-readback.json
+a0d58a65...; capture7.2706576s cumulative/4.1618498s elapsed, old300/600 unchanged.
+AAPL observed availability18:43:50.330163UTC; AMZN18:43:51.594158UTC.
+NTFS-mtime precision failure retained; source fsync chronology/hashes are proof.
+Linked3858c796... actual4private scores/2stocks/2fixedRidges, childexit0/reaped:
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-launch-recovery-20261015-v1/score-readback.json
+671e7f72... PASS1424:scalar dots/FIT unscale/floors/native prefix/availability/
+28pins;21.0219794s active incl old4.6009801s preserved, no fits/GPU/API/payoff.
+Original35930 pre-child NUL launch remains FAILED; generic actual exception
+detail unknown, native write_scope/CreateProcess0 proof distinct:
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-prototype-20261015-v1/score-first-cause.json
+c49e0fb3...; originalclaim/source/failure/.5997599s elapsed immutable, no retry.
+Parent closed retained-relative-ranking company outcome using C72+Data1424;
+not same512 label/Top10/performance/Paper adoption. Scores private.
+Initial metadata/subset/future-calendar inference boundary remains:
 D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
-contains exact metadata paths/hashes, input types, counts and one next package.
-
-Old800 throughJul27:496of512 have total row_count>=61; later71 throughOct6:
-505of512. These are upper bounds, not validated trailing61/all12 support.
-Both lack observed publication/finality and are stale for current decisions.
-Current512 throughOct9 has21sessions:0 canonical61 windows, assumed availability.
-One exact uncropped AAL native snapshot retains100 rows, useful for offline
-adapter preparation only after native-reader validation; not all512/fresh input.
-NAS-forward6 throughOct13 remain56rows each:0 possible61 windows;96 retained
-revisions and last90 changed overlap rows remain scoped revision/as-of limits.
-ETF253 is its own Paper input, not a NAS-stock relative-model domain substitute.
-At that source-only pass no current learned-score input set was verified; fresh
-source61 capture and separate fixed2Ridge/latest12 artifact runtime are now
-verified above, not same512/Top10 or Paper adoption. Standing Paper authority unchanged.
-
-common_rows calls window with entry+5 calendar lookup. Source tokens/latest35
-indicators/causal sigma need no future price or target. Future feature-only API
-must accept completed61 prefix, observed availability/decision and frozen FIT
-scalers; never call window/common_rows/relative_labels/scales for inference.
-14 fresh AST-leaf/invented NumPy checks passed for1/2/512 stocks, including
-future-calendar failure reproducer. No full indicator/checkpoint/runtime or
-performance compatibility claimed. Fixed512/min128 plus64 outsideoriginal128
-is frozen helper/support/reference semantics, not per-stock feature arithmetic;
-small separately named score-only work must not claim same basket/Top10 policy.
-No-tools Claude challenge: supported-with-limits, exact JSON advisory pointer.
-
-Recommended package was source-prepared then Parent-dispatched ONCE above:
-relative-ranking-fresh61-nas2-score-input-v1, one reused market-only client,
-AAPL/NAS and AMZN/NAS,61 fresh completed native bars each, observed publication
-and schema/universe pins;4daily-GET/300active/600elapsed cap. Use existing Data owner
-at its next free slot; do not compete with G10713endpoint21:50UTC or NAS-forward6.
-Worker retains cooldown/next_due; no foreground wait, gate/platform or approval.
-Other board facts below are retained prior projection, not runtime reattached
-by this sidecar. Original collector clocks/cursors and studies stay unchanged.
+Strict512/min128 is frozen reference/support semantics, not per-stock math.
+Following sections retain earlier projections/evidence; no new reattachment
+or changes to old collectors/cursors/studies from this independent PREP.
 
 ## Current Ownership
 

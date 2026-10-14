@@ -62,6 +62,23 @@ Never KIS_LIVE_*, real-money, secrets/private values in output or Git.
 
 ## Completion And Verification
 
+Current facts: r5 sevenActions installed/source-exact nonAction/readback;
+actual20:25 accounting data child failed because execute captured the old
+run_data default. r6 rebinding13SYN/cold+warmsource455 passed; accounting83-only
+Action installed, other6 unchanged. r6 runtime still UNKNOWN until owned
+Oct15 20:25UTC, oldmark/index2 claims not reopened. Do not infer success from
+installation/exit. Preserve this scoped unfinished runtime follow-up while
+continuing ready research/Data; no company foreground wait.
+D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
+Data capture ACTUAL504ready61/8missing/512GET1token, not all512 complete.
+Current supported stock scoring is ready preparation, no quality imputation.
+Engine separately prepares finite6newTCN20/60 fits with NEW isolated cuDNN
+mode after4pair nativeAB; max128/120wholefit/900active1800end/0retry,
+same old data/target/splits/seed and oldresults/debits unchanged. Parent reviews
+frozen native optimizer/restore/replay SYN before market dispatch. No broker/
+execution-risk/default/live change, no profitability prerequisite or fake Alpha.
+D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1
+
 Corrected native source preflight, tested quiet child tree, exact same-owner
 installation/rollback/readback for seven Actions, tonight's unchanged readiness
 and honest independent package results. Future broker runtime closure remains

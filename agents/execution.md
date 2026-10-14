@@ -132,6 +132,18 @@ current21 unselected,45e93 not dispatched. Operator decisions: NONE.
 
 ## Other Owned Future Paper
 
+Update21:00UTC Oct14:7quietActionsr5 actually installed/nonAction identical;
+accounting's first20:25 dispatch linked e063.../bff8957c... recorded data
+slot_unknown/source_changed, not success. Nativeoffline exactcohort status
+no_owned_intent/registry_has_no_exact_owned_request, activeRW0; not global
+inventory/PnL zero. Source-only reproducer found captured execute.data_call
+still callingunmapped native runner beforeclient. NEWr6 routebinding13tests/
+cold+warm455source/Claude passed; accounting83ONLY Action installed20:56UTC.
+Other6definitions/basis/claims preserved. NextOct15 20:25UTC; actualr6 closure
+pending, no expiredindex2 replay/newintent or mark inferred frominstallation.
+D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/firstcause-r2.json
+D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
+
 2026-10-15KST static reattachment: goal83/97 frozen archives/image113f9644...
 match and do not require the current checkout for their order lifecycle.
 Goal97 actually installed delivery-r2; old delivery-r1 references below are

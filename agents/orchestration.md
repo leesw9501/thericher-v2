@@ -9,24 +9,32 @@ M=D:/market_data. History lives in Git/external receipts, not this queue.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |030bc19 pushed dispatch/fresh61 closure. Integrating research72PASS and narrow score-launch repair; company outcome unfinished. |
+| Git/integration | Parent |4f318e2 pushed research+current2stock consumer closure. Integrating7quietActions/r6accounting-only repair and504stock capture; runtime follow-up remains scoped unfinished. |
 | Repository authority | Parent |Fresh materialrecovery compatibility:source1334/abf2b287 unchanged,serial144pass/clean8 full16235pass22skip368.019s/helperexit0. Ruff/three Compose pass. A/verification/future-accounting-recovery-20261015-v1/authority.json; not external source/deployment validation. |
 | Observer/token | Existing observer/Parent | New source6440871d/image5b actual17:56 complete; restored Ready. Atomic directory cross-OS passed; observer60/Data frozen300, old writers not universally joined. |
 | Exact Paper | Parent/Execution |19:04 SELL and19:50 native BUY full filled/targets reconciled. Independent offline chain passed: six owners/16terminal/zero unknown-pending/three held instruments, baseline owner flat. Initial aggregate tenth unchanged. |
 | Repeated execution | Existing daily-spy-session/Parent | Oct14 natural14:50..35UTC ACTUAL complete/no target delta,1token12marketGET14executionGET0orders. Exact launch/dispatch chain and privateRO native target/basis/16terminal/0unknown checks pass. NextOct15 14:50UTC Ready; imagea142 unchanged, no manual task. |
 | Data | Data/Parent | Canonical253x4+2baseline endsOct12; worker must refresh. G107 first13endpoint capture verified, nextOct14 21:50UTCReady. Fidelity6pagesstable/12uniqueTiingo matches and29pins rechecked; later reference absent/NASrevision cause/PIT/finality unknown. No stale token directory reclaimed. |
 | Owned accounting | Parent/Execution | Native6owners16intents12positivefills5sells;3realized/3no-realized/0incomplete-pending. Fresh1token11GET0orders verifies3held quantities/0otherholdings/openorders and3timestamped marks. Realizedgross positive,unrealized/totalgross negative;fees/settlement/net unknown. Exact normalizedquote SHA/originalbook/scalar replay passes privateRO/networknone, initialtenth unchanged. |
-| Engine/GPU | Engine/Steward |NEW9e59e99d CLOSED5fits/43epochs1462updates,72complete0unknown. Independent23555latest12/sixRidge/fullcashNAV PASS;0/15jointchecks.1531.8838active1467.1570end/cumulative3093.1142active, actorabsent/leasereleased. Originalfailure/debits9complete1partial kept. Invented TCN latency diagnostic PREP,0marketfits/updates; no GPU allocation yet. |
-| Data input | Data |Fresh61 ACTUAL122bars/419checks; current2Ridge4score consumer1424PASS/21.02198active/0fitGPUAPIpayoff, oldlaunchfailure kept. NEWsameNAS512 current61 capture PREP only<=1024GET/1800active3600end; no newcalls yet/oldData owners unchanged. |
+| Engine/GPU | Engine/Steward |CLOSED5fits/72costPASS/0of15jointchecks. InventedAB4pairs confirmsstrict6slow/False9cuDNN+fixedparity,48.5425active44.4064end/0updates/lease released. New isolatedcuDNN6TCN convergence campaign PREP900active1800end; oldresult/defaults unchanged, no marketdispatch yet. |
+| Data input | Data |NAS512 ACTUAL504ready61/8missing/30744bars/512GET1token0account-order-live.101388readback checks PASS,644.8538elapsed670.7362active/owner released/unknownrequestfalse. Data feature panel PREP; causal supportedpool notall512 completeness or qualified performance. Existing collectors unchanged. |
 | Engineering readback | Invoked Review closed |Linked actual72cost/fullNAV/provenance/caps PASS,21SYN. CUDA/neural restoration remains workerattested; not originalprotocol repair/independentperformance. |
 | Score consumer | Data package closed |NEW3858 fixed2Ridge4score ACTUALcomplete/1424independent checks/21.02198active,0fitGPUAPIpayoff. Old35930NUL launchfailure/source/claim/debits preserved, unchanged audit. |
-| Future Paper runtime | Invoked Execution/Infra |Static goal83/97 archives/image113... MATCH; goal97installed delivery-r2. Goal83accounting preflight still checks changedcurrentSrc4pins despite exactarchive455. NEWstrict source mapping/quiet wrappers PREP, not deployed/no actualtask or Broker invocation. |
+| Future Paper runtime | Parent/Execution |7quietActionsr5 INSTALLED/source+nonAction verified. Actual20:25 accounting data source_changed: execute capturedoldunmapped default; exactcohort offline no_owned_intent. NEWr6 singledefault route13SYN/cold+warm455PASS installedaccountingONLY20:56, other6 unchanged. NextownedOct15 20:25UTC, runtimepending/oldmarknotreplayed; no manualtask. |
 | Cash capability | Parent/Execution sidecar closed | Official VTS route actual17:45success,1token1GET0orders/complete9rowsoneUSD/cash-unsettled numericshapes.12pure11fake-wire SYN/Ruff/Claude;exactbook/tenth/privateRO unchanged/actorabsent. No amount/fee/settlement/net or production allowlist change; review/source attribution assumedhonesthost. |
 | Infra/GPU | Invoked Infra closed | Invented TCN3cases complete, no retained weights/marketfits. MoreCPU/chunking not demonstrated speedup; future predeclare sparse TRAIN curves, INNER everyepoch. No GPU actor/lease left. |
 | Strategy | Strategy Research sidecar closed |Fixed five-expert rank-mean kernel plus chronologicalOOF shallowtree proposal SYNready, no marketfit/GPU/evaluation. Partial/seen limits kept, no expert-profitability prerequisite. Parent chooses consumption after currentclosure. |
 | Task lifecycle | Existing owners |245/41audit9 quiet actions1 exhaustedD1 disabled retained; two Docker/uv exclusions. No third-party/OS edits, no manual task launches. |
 
 ## Bottleneck And Improvement
+
+Current Throughput Review: Execution's r6 actual-result dependency is owned
+tomorrow, not a company foreground wait. Data504-stock feature preparation and
+Engine six-fit convergence preparation are ready/disjoint. Improvement: test
+the actual captured callback/dispatch edge in a cold child, not only successful
+warm imports; all frozen source/job/budget identities remain. Use the measured
+cuDNN backend in a separately frozen research scope, not repeated slow fits or
+an outcome-selected change to old results. Source-only validation is not runtime.
 
 Immediate recovery and original portfolio cycle work with actual trades.
 Repeated current-data-to-native wiring now has one source-pinned Docker runtime
