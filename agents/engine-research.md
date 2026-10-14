@@ -17,6 +17,96 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and the assigned external package are worker writes.
+H=A/research/native-recurrent-attention-relative-ranking-development-20261015-v1
+SOURCE/CPU-SYN READY ONLY; consumer: native recurrent/causal-attention relative-risk
+scores -> same-key cost-aware basket selection. CUDA SYN/market fits UNDISPATCHED.
+Contractb499ad3a7f207fd828f36cc455bec19bab8bb21358bacf0e179b9fa4238f3fd7;
+host658fa72e.../worker18ccfffe.../models52149cca.../runtime30c4e1b9.../168pins unchanged.
+Frozen GRU20/60(hidden48/8913params), LSTM20/60(hidden40/8385), one-layer causal
+Transformer20/60(width32/head4/FF64/9473), fixed last embedding+latest12 -> head16.
+Exactly18NEW planned fits/3same N/C stages/54newcells; reuse45controls/no old fits.
+Same common61/splits/FITsigma/relative wholebasket labels/scalers/seed303/native
+Adam.001/clip1/LRplateau/p128/p12/best INNER restore1e-5/1e-4/TRAIN1-5-final.
+Literal NEW isolated cudnn.enabled=False/globaldetFalse/fp32/noTF32/OMP8/d6Torch2.7;
+CPU proof is NOT CUDA proof/throughput/default authority. Official sources in method.md.
+1800active/3600end/120entirefit/reserve20/0retry. Family ceiling dominates18x120;
+completion not promised, cutoff/ceilings => unknown, no outcome tuner or old refund.
+Cold CPU6invented fits/24epochs144Adamupdates/8controls/native diskrestore/causal
+prefix/LR/replay3+cash3 PASS; .4501-1.5352s invented fullfits, NOT market throughput.
+HOSTACTIVE10.204648600003566/1800,end8.233474016189575/3600,clock_failed=false,
+appointment1792014941.3566623, deadline1792018541.3566623; carries unchanged into
+future CUDA SYN/market/readback, review/queue consumes elapsed.0market fits/GPU.
+Exit0/child reaped/container absent/cleanup complete/NO GPUDeviceRequests or lease;
+network/credential/LOCALhostname0. Claude supported-with-limits4.4939s separate.
+All3policy/whole5marks seals required before costs; same originalgross/top10/.1/.5/
+reference10 quantities/scenario5-10-20; samegross NOT equal realizedrisk/Alpha.
+Old N/C/V/G(fusion) failures/results/debits immutable; seen/nonPIT/unknown publication/
+sourceunits/currentlisting/fourDEV/partial limits permanent; no Paper adoption.
+[source-only ready + future Parent command](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/source-ready.json) e0c13bfe...;
+[CPU closure](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/host-prepare-cpu.json) f0788c08...;
+[native SYN](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/prepare-cpu/output/synthetic.json) 680bc168....
+Next: Parent review + Aristotle allocation closure before exclusive lease/headroom
+probe and CUDA SYN, then separately Parent market dispatch; no GPU action now.
+G=A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1 CLOSED/independently_verified_seen_fusion;
+consumer: exact five C expert scores -> fixed ordinal ranks/shallow tree -> cost-aware
+basket selection attribution. No V substitution; partial OOF2TCN60 retained unchanged.
+Contract80700b0178dbb6a2637c7c4d57be63251d83d0cd5eb7b41e069ebd1117af1b44;
+hostc4b3a8d7.../worker255867bc.../api3901fddb.../164pins unchanged.
+Parent dispatched ONCE:2CPUgate attempts2complete/.232343s/.189179s<60,
+0expert/baseline refits/GPU/retry. Fixed3stages/treeOOF2+final=15complete0unknown;
+all3fullpolicy/5marks seals before economics. Strongest economic kill met: neither
+composition has stable all-cost net/no-worse-DD utility over broad/original controls
+on any stage. Six individual comparator checks true do NOT create a qualified winner.
+HOSTACTIVE9.812426499993308/600,end78.24365234375/1200,clock_failed=false;
+same appointment1792013293.1398418/PREP3.712941 carried/no refund.
+Native invented2Treefits/2numericrestores/9controls/6scalar-cash checks passed,
+only LOCALhostname1/no network/credentials; source-native .1/.5 risk unchanged.
+Child reaped/cleanup complete/no container/no lease/GPU allocation. Old C/N
+15attempts14complete1partial/failures/source/debits unchanged; new gates total2 only.
+Calendar/purge/FITfloor source controls, unknown physical publication => retrospective
+seen development, never PIT/untouched/independent Alpha/Paper adoption. Slot ties,
+samegross vs realizedrisk/sourceunits/currentlisting/fourDEV limits remain.
+Receipts: [host closure](D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/host-study.json) 49d76099...;
+[categorical result](D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/study/output/result.safe.json) 7c8a9d71...;
+[all-stage seal](D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/study/output/ALL-stages-sealed.json) a72359b9....
+Parent ACTUAL independent reader PASS:3stages/3fixedrank policies/2numeric checkpoint
+forwards/4FIT-INNERloss checks/15scalar cells0unknown/1830wholeNAV-exposure pairs/
+164pins,0fit/GPU/neural recompute. Rank/ties/gross/purge/FITfloor/wholemarks/cash/
+fees/comparison criteria verified; prior pure leafdcb0297e... reused.
+Reader source6707cad2.../tests6a593a8f.../8invented controls PASS/Ruff F,E9 frozen.
+Final cumulative ACTIVE16.584648299991386/600,end676.0606067180634/1200,
+same appointment1792013293.1398418,clock_failed=false; source-SYN and readback
+included once. Host9.8124265/78.2436523 and old C/N clocks unchanged/no refunds.
+[independent closure](D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json) e942f5fc...;
+native expert forwards/timing/before-summary order remain lineage/worker attestations,
+NOT independent performance/Alpha. Both fit and reader creators CLOSED/no repeats.
+Numerical/reader closure retained; next independent H source PREP only is assigned above.
+V=A/research/native-cudnn-tcn-convergence-development-20261015-v1 CLOSED/seen_development;
+consumer: native INNER trajectories -> same-key cost-aware relative-ranking replay.
+Contract36fe7eb0e31e3871a9ddb4f242e49875df1d9db6d1e37f7884ddfff55e2f51fb;
+host3b2c1ce3.../workerc416ce62.../runtime1f6340fa.../157pins unchanged.
+6attempts6CUDAcomplete/0baseline refits/122epochs2958market updates; all INNERp12
+plateau19-23epochs, fullfit2.5426-4.6733s<120,0cutoffs; NOT convergence proof.
+All3prediction/policy/full5mark seals before18cells;18complete0unknown, all-cost
+incremental-net/no-worse-DD screen0true6false. No Alpha/default/Paper adoption.
+HOSTACTIVE49.787207600005786/900,end261.91435647010803/1800,clock_failed=false;
+SYN10.9577090 carried in SAME appointment1792012168.1663914,1attempt/0retry.
+Native SYN2TCN196Adamupdates/restore/LR/curves/scalar+cash passed; prep not marketfits.
+Exact child reaped/container absent/lease released/cleanup complete, no GPU remains;
+old N/C outputs/debits/14complete1partial15attempts unchanged, no refund/resume.
+Isolated globaldetFalse/fp32/noTF32/d6Torch2.7 only; no repeat-fit variance,
+seen/currentlisting/nonPIT/sourceunits/nominalavailability/fourDEV limits permanent.
+Receipts: [host closure](D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/host-study.json) e1f79f84...;
+[categorical result](D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/study/output/result.safe.json) 2923e0ed...;
+[all-stage seal](D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/study/output/ALL-stages-sealed.json) 078fd77f...;
+[fit ledger](D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/study/output/fit-ledger.json) 66b78da1....
+Parent Maxwell actual final-r3 PASS6fits18cells0unknown/45controlcells/sixRidge
+forwards, exit0/real owner probe. [final-r3](D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/review-output/final-r3.json) 09fcfc83....
+Reader v1/r2 failures retained; r3 NUL/Windows-audit-only correction, V/N/C unchanged.
+Native neural timing/forward remains worker-attested; no repeat-fit variance or
+independent performance/convergence claim. Creator frozen/no more fits/profilers.
+Separate fusion G closed above using C, not V. Aristotle owns engine_* current504
+panel; Parent owns shared source/Paper/Git.
 AB=A/infra/relative-ranking-tcn-determinism-ab-20261015-v1 CLOSED/complete_invented_determinism_AB;
 independent consumer: future native TCN throughput/backend and numerical consequences,
 NOT a Paper recovery gate, model selection or market default change.

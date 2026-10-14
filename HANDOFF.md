@@ -26,7 +26,42 @@ GPU inventedAB4pairs complete/0updates: strictglobaldet True used6slow dilated
 ops/3cuDNN, False used9cuDNN/0slow. Fixed output/gradient tolerance passed,
 False gradients not bitwise repeatable.48.5425active44.4064end/lease released;
 not market speed/profit proof or a global default change. NEW6TCN convergence
-campaign PREP-only uses isolatedresearch cuDNN mode; old studies immutable.
+campaign ACTUAL CLOSED:6fits/122epochs/2958updates,19-23epochs and2.5426-4.6733s
+per whole fit; all stopped at INNER patience12, not a proof of convergence.
+18cost cells complete/0of6 joint control checks;49.7872active/261.9144end,
+childreaped/containerabsent/lease released. Old studies/defaults immutable.
+Independent readback r3 PASS:6fits/18newcells/45controls/sixRidge forwards,
+scalar whole cash/NAV/exposure, features/scalers/purge and metadata checked.
+Two failed readers preserved (NUL handle, Windows serialized subprocess audit);
+29SYN plus real read-only probe precede r3, no refit/economic-output change.
+Neural forwards/losses/updates/timing remain worker-attested; no Alpha/PIT proof.
+D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/host-study.json
+D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/review-output/final-r3.json
+Separate fixed-rank/shallow-tree fusion ACTUAL CLOSED:twoCPUgates/15complete
+costcells/zeroexpertrefitsGPUAPI,9.8124active78.2437end/childreaped/sourcesstable.
+No policy passes all matched controls across costs; partialOOF2TCN60 retained.
+Independent fusion PASS:164pins/15scalar cells/1830NAV-exposure pairs,
+two checkpoint forwards/four FIT-INNER loss checks;16.5846active676.0606end.
+No automatic winner/Paper adoption; fitting/chronology attestations retained.
+D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/host-study.json
+D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json
+Current NAS512 Data features55SYN/archived-prefix checks/25frozenpins pass:
+504histories/503defined12/243supported,181outsidefirst128. Data/Engine ABI
+aligned before dispatch. Original metadata cycle53cecad/ff1 preserved; new
+Data9a9d226f/Engine505cb396 rebind ONLY Data schema pin to immutableef8abf,
+same feature576b/weights/source. Data19.8464/Engine21.5265prep include4.0069repair.
+Original505 launch failed Windows venv redirector PID check before Docker;
+exact dead-owner lease recovered without changing claim/failure/clocks.
+NEW linked native-base Python3.14.3 + existing NumPy2.5.1 preserves PID guard
+and original sources, maps only output to a new root. ACTUAL worker complete:
+243x5=1215scores/GPU eval-restore SYN/0fitAPIpayoff/updates. Frozen host falsely
+rejected Docker29 lower-case no-such-object after removal; original technical
+failures retained, exact dead-parent/label absence/hash/lease cleanup recovered.
+No numerical rerun.34.5356cumulative active/6.8781end with old24.3968 carried;
+independent current-score reader still pending, no Paper/model profit claim.
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/data-ready.json
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/parent/metadata-cycle-repair-v1/outcome.json
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
 D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/runtime/output/diagnostic.json
 Goal97installed delivery-r2 uses its exactarchive/image113... and is not a
 current-source mismatch. Execution runtime wait is lane-local; Data/Engine ready.

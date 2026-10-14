@@ -16,8 +16,31 @@ NAS512 capture creator5648039 already ranONCE; do not dispatchagain:
 670.7362active/childexit0/ownerreleased; no account/order/live. RawD:/market_data.
 D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1/actual-readback.json
 EngineAB d0aea8b also already ranONCE; fourinventedpairs/0updates, backend/parity
-measured but not marketprofit/default-change authority. Next six-fit convergence
-and current feature panel are PREP only until frozen ready reviewed.
+measured but not marketprofit/default-change authority. Six-fit convergence
+creator already ran ONCE:6TCNfits/122epochs/2958updates,18cost cells/0of6joint
+checks,49.7872active/261.9144end,exact actor absent/lease released. No repeat
+training. Independent r3 PASS6fits18cells45controls/sixRidge forwards after
+NUL/Windows-subprocess reader-only repairs; both failed receipts preserved.
+Native real read-only probe and29SYN passed before r3; no GPU refit/Alpha claim.
+Fixed-rank/shallow-tree fusion creator already ran ONCE:twoCPUgates/15cells,
+9.8124active78.2437end; independent PASS15cells/1830curvepairs/164pins,
+16.5846active676.0606end. No creator replay or qualified winner.
+Current NAS512 Data-only features ready55checks/243supported. New metadata
+Data9a9d/Engine505 version fixes schema-reference cycle, feature576b unchanged.
+Original505 launch failed Windows venv redirector PID guard; old failure/claim
+retained. Linked native-base same3.14.3/venv NumPy2.5.1 launch ACTUAL worker
+completed243x5scores,0fits/API/payoff. Host cleanup predicate falsely rejected
+Docker29 lower-case no-such-object AFTER actual removal. Exact actor/dead-owner/
+output/source proof recovered ONLY owned GPU lease, no rerun/reset. Native
+worker/math-independent readback pending; source technical failure not erased.
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
+launch.py creator already consumed; DO NOT dispatch again to inspect results.
+Next18-fit GRU/LSTM/Transformer20/60 family is PREP only, independent of Paper.
+D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/host-study.json
+D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/review-output/final-r3.json
+D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/host-study.json
+D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/data-ready.json
 D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/host-result.json
 Synthetic quiet child lacked publicSystemDrive and created literal repo cache;
 fourDB files from19:25:47 were preserved outsideGit after path/time/no-link checks:

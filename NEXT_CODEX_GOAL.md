@@ -72,11 +72,27 @@ continuing ready research/Data; no company foreground wait.
 D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
 Data capture ACTUAL504ready61/8missing/512GET1token, not all512 complete.
 Current supported stock scoring is ready preparation, no quality imputation.
-Engine separately prepares finite6newTCN20/60 fits with NEW isolated cuDNN
-mode after4pair nativeAB; max128/120wholefit/900active1800end/0retry,
-same old data/target/splits/seed and oldresults/debits unchanged. Parent reviews
-frozen native optimizer/restore/replay SYN before market dispatch. No broker/
-execution-risk/default/live change, no profitability prerequisite or fake Alpha.
+Engine finite6newTCN20/60 fits with NEW isolated cuDNN mode ACTUAL CLOSED:
+6complete/122epochs2958updates/18cost cells/0of6joint checks,49.7872active/
+261.9144end,childreaped/containerabsent/lease released. All INNERpatience12,
+19-23epochs/2.5426-4.6733s wholefit; not convergence or Alpha proof. Old data/
+target/splits/seed/results/debits and global defaults unchanged. Independent
+reader-only repairs now independently PASS r3(6fits18cells45controls); NUL/
+Windows-subprocess failures retained, neural numeric/timing claims attested.
+Current Data feature-only512 panel ready55checks/25pins/243supported;
+fixed five-checkpoint ACTUAL243x5scores through separately named native-launch
+repair,0API/fit/payoff/Paper adoption. Metadata cycle and venv PID failures
+preserved; same data/weights/source/guard, no originalclaim reset. Worker complete
+but original Docker29 absence-text predicate failed after actual removal;
+exact quiescent cleanup recovered, current independent readback pending.
+Separate fixed-rank/shallow-tree
+fusion ACTUAL CLOSED reuses five unchanged prior experts:twoCPUgates/15cells,
+independent PASS15cells/1830curvepairs/164pins,16.5846active676.0606end. No outcome-driven
+substitution by the new TCN outputs, no policy passes all matched controls.
+Next finite recurrent/attention PREP compares GRU/LSTM/Transformer20/60,
+18fits54cells/1800active3600end/120wholefit/max128/INNERpatience12/0retry;
+native optimizer/restore SYN first, same old data/splits/target/costs. No new
+GPU allocation before ready Parent review; old results/caps/debits immutable.
 D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1
 
 Corrected native source preflight, tested quiet child tree, exact same-owner

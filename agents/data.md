@@ -3,66 +3,84 @@
 Current projection 2026-10-15 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
 Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 
-## Current NAS512 Fresh61 Running
+## Current NAS512 Capture Closed
 
-20:37:05.301657UTC Oct14: Parent-authorized exact5648039... dispatched ONCE;
-runafeca46f7c47471b989701e4f2bfb0d0, no duplicate/retry. Accounting Task Ready,
-named accounting/Data actors0 at20:37:04UTC; frozen start/deadline passed.
-Direct SAME Repo .venv Python3.14.3 -B from externalROOT, not uv; CWD isolation
-only prevents Windows native caches entering Git. actual-launch.json records it.
-20:40:03UTC cursor:140GET/1POST/137ready61/3missing61/372unresolved/8357rows;
-accepted140pages, pendingnone, next_due null. Physical4Python processes form ONE
-linked chain, dispatch2/child2 with2venv redirectors; one claim/cache owner.
-No completed-run claim yet. Future learned-score input only, not promotion.
-Own NEW D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1
-plus this board only. Contract564803931429827efbae56264395b4612b36e03b9b0b475c1f66369935a9ae3e;
-ready.json0ad4e7ef... holds exact uv --no-env-file --no-sync command. No daemon.
+Parent-authorized exact5648039... dispatched ONCE20:37:05UTC Oct14;
+runafeca46f7c47471b989701e4f2bfb0d0 CLOSED20:47:49.979403UTC:
+512dailyGET/1tokenPOST/512acceptedpages,504ready61/8empty-missing61/
+0unresolved/30744canonical bars, no imputation/retry. Statuspartial_snapshot_missing61,
+NOT full512ready. Unknownrequestfalse/next_due null, childexit0/reaped,
+named actors0/cache owner released. Accounting Task Ready/actors0 before launch;
+same Repo.venv Python3.14.3 -B externalCWD only, frozen source/control unchanged.
+D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1
+outcome f8f263dd...; run/full-supervisor.json be7bf579...:
+20.2359486prep +645.5555032full dispatch elapsed +5allowance =670.7914518active.
+actual-readback.json4f43765a... PASS101388/Ruff,695.7481863active through reader/
+additional inspections/UTC outer-guard failure/I-O; unchanged1800active3600end.
 
-Exact frozen fc018cea... training manifest:
-D:/market_data/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2/manifest.json
-fd559b22... selected_target_keys:512 unique NAS keys, exact order618d8ddf...
-unchanged; target512x61=31232rows. Actual partial progress above; unresolved
-coverage remains UNKNOWN, not zero; latest12 NOT computed. No stale21/56 splice.
-Native two-stock provider/parser/gzip journal/publisher and gate reused; dispatch
-chooses/hash-freezes one NYSE5.4.0 last61 official-completed calendar, no mid-run
-roll/future payoff/calendar-tail access. Raw/page bytes ONLY
-D:/market_data/us_equities/kis_paper_private/current-nas512-fresh61/v1.
-Native gzip validation/raw+manifest fsync then observed availability, not provider
-date/finality. Missing61 closes exact name; auth/rate/transport/schema/geometry
-stops collector. Durable attempts/pending/per-name cursors/counts/ETA/next_due;
-unresolved not zero. Only all512 ready61 gives input-ready; other coverage partial.
+Exact512 NAS order618d8ddf... from fd559b22... frozen training manifest.
+All504 share61NYSE completed sessionsJul21..Oct14/latest officialclose20UTC.
+Observed availability20:37:07.805096..20:47:49.826785UTC, hashes/nativeBar/schema/
+positiveOHLC/nonnegativevolume/alignment/publication chronology independently pass.
+512 finaldelegate gaps minimum1.2500138s, wire timing unknown. Eight accepted
+empty pages:AFBI/AIHS/ALOT/APGE/BNZI/BTAI/CCRN/CRNX NAS; cause unknown, no
+canonical manifest or fabricated61history. Data512 Root source/claim/cursor closed,
+no redispatch. Current-listing/actions/units/PIT/providerfinality unqualified;
+latest12 not computed there. Quality/missingness constrains named claims, not Paper authority.
 
-<=1024GET/2pages per name/1freshPOST; ONE reused native client/in-memory token.
-Dispatch-only approved selective Paper app loader; no invented borrowed protocol,
-account/order/live fields. NEW explicit60s common atomic-directory+legacy-OS token
-gate; old300 defaults/contracts unchanged. Shared+finaldelegate1.25s known pace,
-wire timing unknown. Cooldown/due yields owned next_due; no flood/retry/auto-resume.
-1800 cumulative active/3600 new elapsed; PREP20.2359486s incl15s conservative
-inspection/lint/startup/publication allowance, failures/I-O/cleanup carried.
-640..1280s pace-only; source latency/I-O/ETA wall unknown. Worst5120s timeout sum
-does NOT fit; unchanged supervisor cap may preserve partial ordered-tail coverage.
-63native SYN:512-key API/parser/pacer plus2page/partial/failure/no-retry/native
-publication/gate/PIPE-EOF launch; total518inventedGET/4inventedPOST, actual0.
-66PREP independent checks/23pins, all3files Ruff clean; independent-check.json6e46be3a...
-proved no PREP dispatch/credentials/production-control reads/raw-root then;
-actual dispatch above now reads approved Paper app fields/gates and writes rawD.
-Claude supported-with-limits in review.json: size success unproven; partial
-coverage cannot masquerade as512/current12 or runtime/model/Paper promotion.
+## Feature Data Closed; Consumer Actual, Maxwell Readback Pending
 
-Ownership-check.json: named G107/NASforward host actors0 at20:01:19UTC;
-Docker/other owners NOT probed. Parent reports Goal83 ACCOUNTING owns20:25..20:35UTC;
-mixed-OS account gate is not fully coordinated. No Data POST/market burst overlaps
-that owner. Parent targets20:35..20:38UTC ONLY after actual accounting owner inactive;
-20:35 is conditional due, not a free-slot observation or dispatch. No worker wait.
-Exact dispatch preflight requires start BEFORE20:39UTC Oct14 so full3600+60s
-cannot overlap NASforward6 21:40/G10721:50; rechecks named host actors then native
-token/pacer. No Scheduler/manualtask/observer changes, reclaim or foreground wait.
-Source-unit/actions/current-listing/PIT/finality limits remain explicit, not a
-company permission hold. Actual Data RUNNING from evidenced claim/cursor; PREP
-66PASS complete. Next: same supervisor final receipt/cleanup and bounded private
-artifact readback, no redispatch/frozen-clock/source edits or duplicate calls.
-Parent next company focus is scored512panel after7Actions closure; shared goal
-remains Parent-owned. No human approval or unrelated input-consumer hold.
+NEW D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1.
+Parent owns data-contract.json/data-ready.json/engine-contract.json/engine-ready.json;
+source/metadata now frozen. Data writes ONLY this board for the current close-out.
+Current Data9a9d226f5c4b1c03b731ee76e753a8b08711af56312fc7c105011bc094823d29;
+linked original Engine505cb396...; Parent native verify_frozen PASS after DAG repair.
+Original Data53cecad.../Engineff1eedc... and original readies retained exactly:
+parent/metadata-cycle-repair-v1 beneath this root, including first-cause/review links.
+Failure before actual claim/lease: D pinned mutable current Engine ABI metadata;
+final Engine bound D and changed digest. New D pins the EXACT consumed ef8abf...
+template at engine-output/superseded-PREP-v2/engine-contract.json instead;
+archived template ef8abf byte hash independently matched before handoff.
+No validation removal or numerical/source change. Original55native/SYN/prefix
+checks,25pins/Ruff remain linked. Parent-carried Data prep19.8463754active/120cap
+= old15.8394317 + metadata repair4.0069437, no refunds or old-clock reset.
+Data0API/fits/GPU/payoff/Cnumeric reads/scores; original600elapsed cap preserved.
+Data produced no derivative metadata during repair; Parent published the repair.
+504history61/8missing;503defined12/1undefined,243nativeproxy+common supported,
+181outsidefirst128. Exact512slot order/common availability after last capture;
+canonical compact keys digest533d35e4..., same training manifest, no replacement.
+data-output/data-features.private.npz576b2870... UNCHANGED (Parent repair attestation):
+slots/raw60/latest12/sigma plus four masks; all arrays/masks/asof unchanged.
+raw20 is last20 of raw60, missing NaN is absent input not imputation. Source-exact
+Engine ef8abf... read_data/validate_payload passed on actual persisted payload.
+ABI status ready_feature_only, past61_latest12_no_payoff; all temporal/count/
+slot/NPZ-pointer fields match unchanged Engine reader. Minimum128+64 supports
+separately named current-pool ranks only, not whole512 label/Top10/Paper authority.
+Pinned native tokens/transformed(None)/chain/indicator_row reused; no window,
+common_rows/futurecalendar/labels/scales/recenter/fit. FIT normalization tested
+with invented stats only; Engine must verify final FIT NPZ before supplying stats.
+Data API checks supplied hash, not independent actual FIT provenance. No weights
+read/scored by Data. Original feature-review verdict unknown, not agreement;
+separate metadata-DAG advisory supported-with-limits, Claude session
+461b915c-d409-4885-8910-f2246e5c8a1d; exact template checked here,
+new strict boundary PASS is Parent native verification, not a new Data run.
+Current worker ACTUAL243supported stocks x5fixed experts=1215private scores;
+GPU eval/NPZ-restore native SYN,0fits/optimizer/API/payoff,0numerical reruns.
+Counts/cleanup flags read from the receipt; payoff0 is Parent's supplied fact.
+UNCHANGED Data9a9d.../features576b.../original Engine505...; no new inputs or
+checkpoint selection. Launcher/cleanup recovery provenance is separate:
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
+01e0464a... status complete_worker_inference_with_recovered_cleanup;
+linked contractba6ea0ae..., worker-resultb9584377..., host-result0a465124...,
+private score-table17316605.../metadata0232dd63.... No private values read/printed.
+Receipt records childexit0/reaped, dead named parent checked twice, exact non-reparse
+lease identity rechecked/lease absent, source+outputs unchanged. Original non-native
+PID/uppercase Docker-absence failures preserved; cleanup recovery did not rescore.
+Independent Maxwell numerical/artifact readback PENDING; not a Data verification
+pass, original512-reference/performance/Paper promotion. Engine/Parent owns closure.
+Data CLOSED; MD held for Parent Git after this update. No capture/SYN/score retry,
+metadata/root/source/script edits or Data/GPU calls by Data.
+G10721:50/NASforward6 21:40/observer unchanged; no sharedMD/Repo/Git/C writes.
 
 ## Closed Consumer Evidence
 
