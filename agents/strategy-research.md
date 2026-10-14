@@ -1,6 +1,6 @@
 # Strategy Research Stateboard
 
-Current projection 2026-10-14 KST; bounded next-breadth sidecar.
+Current projection 2026-10-14 14:12UTC; bounded indicator-ablation sidecar.
 Activated 2026-10-13 for feature/model research and trade-policy composition.
 AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns the company outcome.
 
@@ -15,22 +15,82 @@ The MD survives; a subagent is a bounded executor, not a permanent LLM daemon.
 
 ## Current Work
 
-HANDOFF-READY / NOT FROZEN / CONSUMPTION UNOBSERVED. Engine's active actual
-OHLCV OOF Ridge/tree/GRU campaign is operator-reported, not re-probed here;
-its inputs, features and write set remain Engine-owned. The older Engine board
-is lineage memory, not evidence that actual work is absent or running.
-Consumer: Engine's next actual package after Parent integrates that campaign.
-Loop improved: actual OHLCV -> distinct sequence experts -> chronological OOF
--> shared cost-aware replay. Parent owns Paper/auth/tracked code/integration/Git.
-No training, inference, GPU, broker, scheduler, credentials or Git action here.
-Independent Paper recovery retains its authority and unfinished company goal.
+HANDOFF-READY / SYNTHETIC ONLY / CAMPAIGN NOT FROZEN / CONSUMPTION UNOBSERVED.
+Consumer: Engine's next same-key raw/indicator/combined rule/ML/DL campaign AFTER
+canonical five-session cost loop. Loop: qualified OHLCV -> distinct inputs ->
+same-key predictions/actions -> shared cost-aware replay. Parent's Oct14
+14:50UTC Paper deploy is source-frozen and CRITICAL; this work does not modify
+src/tests/scripts/dependencies/Git/shared MDs or its runtime/task/authority.
+Only this board plus the exact assigned external readiness root were written.
+No market bytes, .env, secrets, network API, broker, GPU, model fit, evaluation
+or holdout access. Official primary documentation/source web reads only.
 
-Throughput review: two proposals ready; sidecar owns this board and one external
-handoff, no worker/resource lease. Due is successor consumption, not a timer.
-Reversible improvement: reuse existing native/Chronos adapters and assets;
-no duplicated feature kernels, installs, downloads, new framework or registry.
+Throughput review: ready package owned by this sidecar, no collector/GPU lease;
+due is successor consumption, not a timer. Reversible improvement: reuse six
+existing feature outputs, implement only six missing outputs externally.
+Prep receipt closed at709.85s of900s maximum; no worker left running.
+Parent/Engine own final targets/splits/costs/trial/time budgets and integration.
+Independent Data/Execution and standing Paper permission remain unchanged.
 
 ## Small Ready Set
+
+- KEEP exactly12 fixed candidates: return5, log-trend10, RMS-volatility10,
+  mean-normalized-true-range10, log-relative-volume20, Wilder-RSI14-anchor35;
+  Bollinger-percentB20/width20, ATR14/current-close-anchor35,
+  MACD12/26/9-hist/current-close-anchor35, stochastic-FastK14,
+  normalized20-transition OBV change. Six reuse project kernels; six new pure
+  outputs share missing_kernels.py. No duplicate RSI library or new install.
+- DROP cumulative OBV level, extra MACD/stochastic outputs/period sweeps,
+  absolute-scale ATR/band/volume copies and library/unlicensed-code intake.
+  Concrete reasons and source/API/units/limitations per candidate are bound
+  in proposal.json and the single receipt, not a separate reading list.
+- Exact completed-D1 terminal dependency d-34..d. W=35/60/120 feature rows need
+  W+34=69/94/154 qualified bars, warmup inside the qualified phase; no extra
+  timeframe/period axes or zero padding. Publication availability, calendars,
+  corporate actions and physical volume units remain Engine/Data qualifiers.
+  None preserves undefined ratios; raw/indicator/combined comparisons must
+  freeze one honest same-key missingness policy before outcomes. No per-arm
+  outcome-dependent dropping. RMS is NOT centered STDDEV; normalized range
+  mean is NOT ATR; MACD finite seed is NOT TA-Lib parity/convergence.
+- Official formula/API reference TA-Lib v0.6.4, release2025-01-11,
+  commit43f9d5042ecc4bd367941846494ad907bf20ea50, BSD-3-Clause:
+  https://github.com/TA-Lib/ta-lib/releases/tag/v0.6.4
+  https://raw.githubusercontent.com/TA-Lib/ta-lib/v0.6.4/LICENSE
+  Exact RSI/BBANDS/ATR/MACD/EMA/STOCHF/ROCP/STDDEV/OBV URLs in proposal.json.
+  Algorithms have no training corpus; caller OHLCV only. No third-party code
+  copied/run, no market data tested and no predictive performance established.
+
+## Indicator Readiness Evidence
+
+Root: D:/thericher-v2/model-artifacts/strategy-research/indicator-ablation-readiness-20261014-v1
+Receipt: readiness_receipt.json; adjacent readiness_receipt.sha256.
+SHA256 2e36bff23d0e25feec2677df2d9c6cac27d9fcb18a87cb60a5efb1d2b51f42db.
+Fresh20 synthetic check groups PASS/0FAIL: invented180 SYN D1 bars, all146
+prefixes and anchor slices EXACT equal, price scaling, stated volume behavior,
+warmup/type/identity failures, None vs legitimate-zero conventions and linear
+formula oracles. W35/60/120 shapes/prefixes and extra-axis rejection passed.
+Pure bar helpers imported; daily feature/RSI leaf ASTs isolated with exact
+source hashes so their data/replay module bodies never execute. Harness accepts
+explicit symbol; only SYN/SYN_ALT used. Existing20x5 candle API needs40 bars;
+its pure terminal leaf is reused for35 compatibility, not falsely shortened.
+CPU100 terminal rows measured0.10244s; not broker latency or market runtime.
+Fresh external Ruff PASS; initial E501/I001 style findings repaired externally.
+1331 protected source/test/script/dependency/config files byte-identical across
+checks. Independent PowerShell hash/scope readback checks receipt/artifacts,
+all protected paths and exact five root entries. No full-suite authority reused.
+No deployment, fill, performance, independent replication or Paper pass claim.
+
+Next: Parent passes exact receipt hash; Engine consumes or concretely rejects
+these finite proposals in its existing campaign/board AFTER canonical costloop.
+No campaign numerical dispatch or Paper policy adoption by this sidecar.
+Parent gets advisory challenge before material integration; no Claude agreement
+inferred here. No operator decision identified within this bounded package.
+
+## Historical Breadth Handoff (Unconsumed)
+
+Previous proposal below remains preserved/unconsumed, not the current ready
+dispatch. Completed old TCN/Chronos/Patch studies, failures and debits remain
+unchanged; none repeated, refunded or rescued as independent evidence here.
 
 - Native causal TCN: existing causal_tcn family/source manifest and daily20
   prior artifact; official locuslab/TCN commit2f8c2b817050206397458dfd1f5a25ce8a32fe65,
@@ -66,7 +126,7 @@ post-cost utility over raw Ridge/matched exposure. Missing support or uncertain
 license rejects only its proposal; no Paper hold. TimesFM2.5/LSTM/attention
 are deferred budget alternatives, not globally banned or newly benchmarked.
 
-## Exact Sources
+## Historical Breadth Sources
 
 - https://arxiv.org/abs/1803.01271v2
 - https://github.com/locuslab/TCN/blob/2f8c2b817050206397458dfd1f5a25ce8a32fe65/TCN/tcn.py
@@ -79,7 +139,7 @@ single external handoff. Source forecasts/sequence tasks are not trading proof.
 Earlier technical/gating preparation remains Engine-owned, not superseded by
 this sidecar; full Alpha158/VWAP/long-window implementation is not claimed.
 
-## Recovery And Handoff
+## Historical Breadth Recovery
 
 Handoff: D:/thericher-v2/model-artifacts/strategy-research/next-breadth-20261014-v1/handoff.json
 SHA256 7c9eb632a3183b191fc1f426596eadcd2d3741b15c1fbbf042bf2c09326b8d2e.
@@ -90,7 +150,8 @@ Cached config matches official pinned config; adapter hashes are manifest
 references only. Parent verifies actual source/checkpoint integrity before use.
 Claude challenge not obtained in this bounded sidecar; no agreement inferred.
 Parent owns the falsification-first challenge before material integration.
-Next: Parent passes the exact hash; Engine binds/freezes/consumes it into its
-next actual package or records an exact source/data/support/redundancy rejection
-in its existing artifact/board. No consumed/run/completion claim until evidenced.
+Previous next action remains unconsumed; Parent/Engine may explicitly supersede
+or bind/reject it. It is not a new instruction to rerun completed studies or
+dispatch during the current canonical-costloop/deployment. No consumed/run/
+completion claim until evidenced.
 Artifacts D:/thericher-v2/model-artifacts; data D:/market_data; no new goal file.

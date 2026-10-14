@@ -2,79 +2,84 @@
 
 ## Objective
 
-canonical-five-session-research-loop-v1: restore one repeatable source-to-model-
-to-cost-aware five-session research loop after the Windows reboot and deploy
-the exact verified source in the existing nightly KIS Paper runtime. Completion
-is executable causal plumbing and deployment readiness, not an alpha claim or
-an inferred scheduled fill.
+broad-indicator-expert-ablation-v1: measure whether a finite set of technical
+and price-volume features adds useful five-session decision evidence over raw
+OHLCV, and whether tree/sequence experts or fixed/chronological-OOF fusion add
+net value. One exploratory campaign, not another architecture platform or a
+profitability gate on independently authorized KIS Paper.
 
-Workdir C:/Users/Public/Documents/thericher-v2.
-Data D:/market_data; generated artifacts D:/thericher-v2/model-artifacts.
+Workdir C:/Users/Public/Documents/thericher-v2. Market data D:/market_data;
+generated artifacts D:/thericher-v2/model-artifacts. Never read/route KIS_LIVE_*.
 
 ## Owned Work
 
-- Parent: integrate dual-clock budget and five-session analytical replay,
-  independently review restart/cash/fees/missing input, run focused serial and
-  fresh clean8 full authority, Ruff and three sample-env Compose configurations.
-  Build exact runtime and change ONLY the existing quiet dispatcher's image pin
-  before Oct14 14:50UTC/23:50KST. Preserve task definition, private volumes,
-  original shared initial tenth, pending identities/losses/reservations. Do not
-  manually invoke the task or infer a fill from deployment readiness.
-- Engine/Steward: consume existing eight real native synthetic ABI checks,
-  then ONE newly frozen CPU smoke using retained SPY253 Bar data and canonical
-  helpers. Chronological five-target purge/FIT-only conditioning; seal same-key
-  predictions/actions/weights/all five marks before economics. Ridge/cash/long
-  at5/10/20bps per side, reference10bps quantities. Active120/end600 seconds,
-  one market fit; a mechanical retry must be declared inside unchanged caps.
-  D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v1.
-  No API/credentials/broker/GPU/old replay in this process. These restrictions
-  do not bind independent Data/Execution workers or provisional Paper authority.
-- Data: reattach completed six-page fidelity probe and exact G107 owned capture;
-  confirm tonight's existing task ownership and retained-source limitations
-  without changing data/clocks/schedules. Its original immutable evidence stays.
-
-Parent owns shared contracts/Git. Independent review checks the frozen model
-outputs/replay semantics and exact evidence, not new model selection. Data and
-GPU work continue in parallel; no foreground wait for a market opportunity.
+- Engine/Steward: one new frozen campaign under
+  D:/thericher-v2/model-artifacts/research/broad-indicator-expert-ablation-20261014-v1.
+  Reuse retained broad512 source and the canonical budget/replay/native intake.
+  Finite latest12 indicators with35-bar context; raw last20x5, indicator12 and
+  combined112 use ONE pre-outcome structural coverage mask, same target/keys.
+  No period/window/timeframe cross-product or missing-value imputation.
+- Three chronological FIT/INNER/OOF-development stages with overlapping-target
+  purge and FIT-only scales/target conditioning. Fifteen planned market fits:
+  raw/indicator/combined Ridge, combined HGBR and combined native causal TCN
+  per stage (12CPU/3CUDA). TCN max128epochs, INNERpatience12, LR schedule and
+  best-checkpoint restoration. Existing CUDA runtime and one exclusive lease.
+- At most two additional shallow tree gates use only PRECEDING chronological
+  OOF expert forecasts/labels (never in-sample expert predictions). Freeze gate
+  inputs/labels/splits first; insufficient support yields scoped unavailable.
+  Fixed50:50 blends need no profitable individual member. Max18attempts,
+  one predeclared mechanical retry within unchanged caps, active1800/end3000
+  seconds frozen BEFORE numerical dispatch. Preserve all prior family debits.
+- Strategy: consume exact12-feature readiness receipt2e36bff23d0e25feec2677df2d9c6cac27d9fcb18a87cb60a5efb1d2b51f42db:
+  D:/thericher-v2/model-artifacts/strategy-research/indicator-ablation-readiness-20261014-v1/readiness_receipt.json.
+  Independently retrieve pinned official formulas/license; finite-anchor
+  RSI/ATR/MACD is not TA-Lib bit parity/convergence. Reuse existing pure leaves
+  and six missing kernels, not a new dependency/framework.
+- Parent/Execution: keep SAME daily-spy-session14:50UTC/23:50KST owned task,
+  source-pinned imagea142eea3.../bootstrap44865727..., native identity/original
+  shared initial virtual-cash tenth/losses/reservations. Inspect its exact
+  pointer->immutable launch->dispatch and strict native outcomes only AFTER
+  natural invocation; no manual task, substitute intent or reset. Preserve
+  unknown outcomes and exact recovery ownership. Data workers continue.
 
 ## Completion Evidence
 
-- Real parser/solver/checkpoint/publication ABI executes end-to-end; synthetic
-  fee oracle agrees with existing local_paper cash accounting in stated scope.
-- CPU smoke retains source/data/contract/output links, attempted-fit/time counts,
-  cleanup and full same-key cost cells or an honest exact technical failure.
-- Full sizing/actions/row keys/required marks are sealed before outcome
-  summaries. Five-session OPEN(e)->CLOSE(e+4), fixed quantities and costs once
-  at5/10/20bps; zero holdings need no unrelated missing quote, positive holdings
-  with missing marks make only that exact cell unknown. No imputation, outcome
-  censoring, forecast rewrite or post-outcome selection change.
-- Independent readback checks units/cost/cashflow/count/budget/cleanup. Exact
-  source authority matches deployed image; SAME task definition/23:50 opportunity
-  read back. Actual unattended account/order/fill result remains unknown until
-  its owned invocation.
-- Old Patch20 CLOSED: rejected prediction screen, terminal publication-ABI
-  failure and90unknown economic cells. Nine completed fits, strict cross-backend
-  failure and old debits unchanged; NOT a completed cost-aware comparison.
-- Data probe reports only support/stability/reference match counts, exact
-  evidence pointers and limitations. Source-fidelity findings restrict only
-  their named claims, not unrelated exploratory study or provisional Paper.
+- Real native synthetic intake/solver/optimizer/checkpoint AND full cost path
+  before market fits; actual source/data/contract/custody and elapsed/active
+  limits, attempted/completed/failed fits, epochs/curves/cleanup are explicit.
+- Same-key expert predictions and full policies/actions/weights/five held marks
+  sealed before economics. OPEN(entry)->CLOSE(entry+4), fixed reference10bps
+  quantities, actual costs5/10/20bps per side exactly once. Unheld missing
+  quotes do not block a cell; held missing marks make that exact cell unknown.
+- Compare cash/TRAINmean/raw/single/fixed-blend/gate at common support, costs,
+  exposure, turnover and drawdown; no outcome-driven reranking/drop/cost choice.
+  Strongest kill: temporal/OOF leakage or no stable incremental net utility
+  against raw/blend after cost and exposure/drawdown sensitivity.
+- Independent readback validates scalers/keys/purge/checkpoint/fees/cashflow and
+  count/budget facts. A rejected or scoped technical/unavailable result is
+  honest completion, not a substitute winner or a company-wide permission hold.
+- Scheduled Paper result is reported narrowly: no-intent, technical fault,
+  submit attempt/acceptance, exact fill, owned reconciliation, measured fees
+  or unknown. Installation/exit is never a fill; net PnL needs exact evidence.
 
-Seen/current-listing/non-PIT/raw-action/unknown physical units or market fidelity,
-nominal availability/latency/fractional fills/capacity remain explicit. Neither
-GPU use nor positive modeled growth proves real-market profit, independent
-replication, broker net PnL or live readiness. Closed families/debits are never
-refunded or rescued as new independent evidence. UI remains deferred.
+Seen/non-PIT/current-listing/raw-action/unknown physical units and source
+availability/finality/fractional-fill/capacity remain explicit. No untouched
+replication, alpha, Paper strategy adoption or live readiness from this study.
+Previous canonical CPU numerical/readback passed but metadata closure exceeded
+its deadline; retain that fault. Old Patch2090economicunknown/strict-forward
+failure and all immutable studies/debits remain unchanged. UI stays deferred.
 
 ## Verification And Continuation
 
-New tracked helpers/tests require fresh changed-path serial, clean parallel
-authority, Ruff and default/research/accounting Compose using .env.example.
-Prior source1330/0201dd... authority remains version-bound history, not this
-changed source. Independently verify external workers/outputs; old rejected
-studies are never replayed or refunded as new independent evidence.
+Exact unchanged production/tests/scripts/dependencies/Compose reuse clean8
+source1334/abf2b287...16235pass22skip authority:
+D:/thericher-v2/model-artifacts/verification/research-runner-recovery-20261014-v3/authority.json.
+External workers/outputs need fresh focused and independent checks. Any tracked
+runtime/control change requires new serial changed-path/full/Ruff/three Compose
+and redeployment; do not break tonight's source pin with unrelated SRC edits.
 
-Refresh current stateboards/HANDOFF/RUNBOOK, verify,commit,push and replace this
-file with exactly one next material objective, then continue. Only actual live
-credential/money, paid/unclear-rights/public/major-runtime or unresolved actual
-account-risk authority requires the operator. KIS Paper/Data/GPU/CPU private
-work remains delegated. Never read/route KIS_LIVE_* or print/persist secrets.
+Integrate evidence, refresh current boards/HANDOFF/RUNBOOK, verify/commit/push,
+replace this file with ONE next company outcome and continue the active request.
+No foreground session/quota waits; dispatch another ready disjoint package.
+Only reserved live/paid/unclear-rights/public/major-runtime or unresolved actual
+account risk requires the operator. Private Paper/Data/CPU/GPU remain delegated.

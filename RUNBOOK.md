@@ -2,7 +2,10 @@
 
 ## Current Dispatch (2026-10-14 KST)
 
-ONE objective canonical-five-session-research-loop-v1. New source integration
+ONE objective broad-indicator-expert-ablation-v1. Canonical loop/redeployment
+completed numerically: CPU1fit14keys9cost cells, Parent independent replay;
+historical executable keys0. Late metadata closure600s breach retained, not a
+full-within-cap or alpha/Paper claim. New source integration
 after reboot:45focused/224changed-path pass, independent budget review passed.
 Fresh clean8 authority PASSED16235/22skip,372.22s/source1334/abf2b287...;
 v2 superseded-source passing suite is NOT authority. Imagea142eea3... matches
@@ -97,6 +100,13 @@ Current:224changed-path/45helpers, full16235pass22skip35warnings,8workers,
 three sample-env Compose passed after full run. Superseded v2 changed during
 review, not reused. No source changes while tonight's image is pinned.
 D:/thericher-v2/model-artifacts/verification/research-runner-recovery-20261014-v3/authority.json
+
+CanonicalCPU terminal handoff/independent saved-output checks (not new fit):
+D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/HANDOFF.md
+D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/parent-readback.json
+Old creators freeze/run/verify must not be replayed; final metadata deadline
+failure preserved. New indicator campaign is source/contract preparation only,
+same existing runtime; research-only API bans never bind separate Paper owner.
 
 Prior changed-path198 passed. Version-bound clean8 authority16190pass22skip,
 16212collected,366.84s/helperexit0/source1330/0201dd2489ed...:

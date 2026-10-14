@@ -2,13 +2,19 @@
 
 ## Current Work (2026-10-14 KST)
 
-ONE objective: canonical-five-session-research-loop-v1. Reboot interrupted source
+ONE objective: broad-indicator-expert-ablation-v1. Canonical loop/redeployment
+objective CLOSED with actual one CPU fit/14keys/9cost cells and independent
+saved-output scalar/Data/scaler/purge/checkpoint validation; ZERO historically
+executable keys. Numerical/readback within120active/600elapsed; later metadata
+closure exceeded600 and remains terminal deadline failure, not an unqualified
+within-cap campaign. No alpha/untouched/Paper-model claim. Reboot interrupted source
 integration, NOT completed market fits. Helpers frozen after restart-clock,
 cleanup and exit-check repairs;45focused/224changed-path pass, independent
 review no remainingP1/P2. Fresh clean8 verification PASSED16235/22skip,
 372.22s/helperexit0,source1334/abf2b287...; v2 changed source during review and
-is NOT authority. Ruff/three Compose pass. CPU smoke is separately owned,
-no old-study replay/refund. Prior reusable Paper
+is NOT authority. Ruff/three Compose pass. Next12-indicator/raw/combined/tree/
+TCN/fusion campaign assigned outside tracked source, no old-study replay/refund.
+Prior reusable Paper
 runtime goal completed under its literal criterion: actual current-window
 native cycle plus source-pinned reusable installation/recovery/next invocation.
 New canonical unattended current-window result is STILL pending, not a stronger
@@ -156,8 +162,19 @@ TRAINmean both OOF blocks.0/90economic cells known; no full sizing/marks seals,
 no replay rescue. Strict CPU-vs-CUDA forward failed, unchanged tolerance and
 unknown cause; scoped scalar/keys/checkpoints passed, NOT full readback.
 D:/thericher-v2/model-artifacts/research/daily5-broad-patch20-development-20261014-v1/integration-evidence.json
-Next: real canonical parser/solver/checkpoint/full-policy/cost CPU smoke,
-existing8nativeSYN passed; safe generated weights D: only. No alpha/Paper pass.
+Canonical parser/solver/checkpoint/full-policy/cost CPU smoke COMPLETE numerically:
+one market Ridgefit150rows/14keys/9cells; actual archive capture follows ALL
+decisions, so historically executable keys0. v1 local socket.gethostname guard
+misclassified metadata as network; failure preserved, v2 only allows that LOCAL
+event and carries original appointment/debit. Numerical/readback completed
+5.5073active/517.7183elapsed; late metadata deadline failure retained, no old
+study rescue or unqualified full-budget-pass. Parent separate readback passed.
+D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/HANDOFF.md
+D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/parent-readback.json
+Next campaign consumes finite12 technical/price-volume kernels, common prior35
+mask, raw20x5/indicator12/combined112,15planned+2OOF-onlygate fits/max18attempts,
+active1800/end3000; actual source/contract preparation, NOT claimed trained.
+D:/thericher-v2/model-artifacts/strategy-research/indicator-ablation-readiness-20261014-v1/readiness_receipt.json
 D:/thericher-v2/model-artifacts/research/daily5-broad-train-ridge-huber-development-20261014-v1/integration-evidence.json
 New compute/elapsed ceilings and native solver smoke are in AGENTS/DECISIONS;
 held-only mark requirements avoid irrelevant unheld quote gaps in new replay.
