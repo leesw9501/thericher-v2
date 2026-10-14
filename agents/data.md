@@ -3,6 +3,57 @@
 Current projection 2026-10-15 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
 Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 
+## Current Adjustment Capability Closed; Exact Four-Pair Readback PASS
+
+NEW D:/thericher-v2/model-artifacts/data/kis-daily-adjustment-source-capability-20261015-v1.
+Consumer: future private raw-view vs corporate-action-aware stock features/replay,
+not relabeling frozen Data/E/model caches. Own this new root+this board only.
+recipe.json15793e5c.../ready.json6de4fbdf... and all producer/docs/source pins FROZEN.
+Parent ACTUAL ONE run75c4ff731f2e41c2a25e28bf065f38cf CLOSED:
+supervisor8931c9d6.../outcomed92d722b...,8GET/1POST/8accepted pages/800native rows,
+4complete61-session pairs (244paired dates/488window observations), no imputation.
+Childexit0/reaped/no timeout/no retry; pendingnone/unknownrequestfalse/owner absent.
+independent-readback.json05823446865ca7b0633d656dcf3748caba5fd3ee5debbbbc29feb09fcdeaf691
+PASS4538receipt checks+1publication-path guard (stdout4539)/Ruff:22pins before+after,
+typed CSV/geometry/session/raw-manifest-availability
+hash chain/native calendar+scalar categorical parity. All4 different_other_pattern;
+none exact nominal inverse-split signature. Factors/PIT/TR/finality remain unqualified.
+Original87native/SYN/22pins/Ruff preserved. Producer36.1280007active includes
+20.2463675prep+10.8816338actual elapsed+5cleanup/I-O allowance. Readback.9669900worker
++5inspection/lint/startup/publication allowance =>42.0949907/180cumulative active,
+232.625941/600dispatch-to-readback elapsed incl sourceauthor/queue, no refund/reset.
+Readback0API/credentials/control reads/fit/GPU/payoff; actualmarket-only scope,
+0accounts/orders/live/fit/GPU/payoff/rerun. Author/review/orchestration separate.
+Official overseas daily example documents MODP0 adjustment not reflected,
+MODP1 reflected; no inferred domestic mapping or guaranteed raw tape/factor,
+rounding/dividend/TR/volume/PIT/finality semantics. Ordinary native query fixed0;
+existing isolated probe query+transport permits0/1, Decimal native strings unchanged.
+Four exact training512 NAS keys: AAPL/AVGO/CELH/CTAS; issuer first split trading
+dates2020-08-31/2024-07-15/2023-11-15/2024-09-12. Freeze30pre+event+30post NYSE
+sessions61 per name, one non-continuation page per mode. Windows are separate
+retrospective witnesses, not a common cross-stock panel or causal historical input.
+Native client/parser/publisher/common atomic60floor+1.25pacer reused; old300 scopes
+unchanged. Exact same PIPE/EOF factory, private CSV/hash/fsync availability, native
+gate60vs300, row/window/mode/route/secret/control/outside-write/Parent-scope kills
+tested with invented input only before Parent call. Parent-owned fresh goal/scope/
+actor/Accounting/due context bound to claim; actual producer alone loaded Paper apps.
+Raw bytes retained ONLY:
+D:/market_data/us_equities/kis_paper_private/kis-daily-adjustment-source-capability/v1.
+Useful delta over old anonymous mixed2witness/sectorETF evidence: named training
+stocks+issuer trading-date windows; equal/missing/other-pattern/inverse-price-signature
+categorical outcomes, no values stdout/imputation/repeatability or qualification claim.
+official-sources.json stores official URLs/facts. Reference-code license not_disclosed;
+no official code copied/imported/new dependency. Existing own-asset private service
+scope only; third-party redistribution/unrestricted dataset/ML reuse not established.
+Claude supported-with-limits d4f64930-52f2-45fe-bea9-861d37ef181a, advisory only.
+Native finaldelegate8gaps>=1.25; socket-wire timing unknown. Query-bound source
+identity only; optional provider identity check is not proof when fields absent.
+Next: Parent integrates exact four-pair source-axis result; no capture/reader rerun,
+mode1 dataset migration or en-masse corporate-action/model/Paper promotion.
+Independent reader writes only its reserved receipt/new verifier, no producer edits.
+No global permission/quality hold; unrelated Paper/model work independent.
+All original source/capture/E/model roots, Scheduler/observer/Parent handoff unchanged.
+
 ## Current NAS512 Capture Closed
 
 Parent-authorized exact5648039... dispatched ONCE20:37:05UTC Oct14;

@@ -1,7 +1,7 @@
 # Engine Research Stateboard
 
 Current 2026-10-15 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
-future-owned-paper-runtime-recovery-v1. Paper authority is research-independent.
+current-nas-frozen-model-paper-target-preparation-v1. Paper authority is research-independent.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -18,35 +18,60 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and the assigned external package are worker writes.
 H=A/research/native-recurrent-attention-relative-ranking-development-20261015-v1
-SOURCE/CPU-SYN READY ONLY; consumer: native recurrent/causal-attention relative-risk
-scores -> same-key cost-aware basket selection. CUDA SYN/market fits UNDISPATCHED.
-Contractb499ad3a7f207fd828f36cc455bec19bab8bb21358bacf0e179b9fa4238f3fd7;
-host658fa72e.../worker18ccfffe.../models52149cca.../runtime30c4e1b9.../168pins unchanged.
-Frozen GRU20/60(hidden48/8913params), LSTM20/60(hidden40/8385), one-layer causal
-Transformer20/60(width32/head4/FF64/9473), fixed last embedding+latest12 -> head16.
-Exactly18NEW planned fits/3same N/C stages/54newcells; reuse45controls/no old fits.
-Same common61/splits/FITsigma/relative wholebasket labels/scalers/seed303/native
-Adam.001/clip1/LRplateau/p128/p12/best INNER restore1e-5/1e-4/TRAIN1-5-final.
-Literal NEW isolated cudnn.enabled=False/globaldetFalse/fp32/noTF32/OMP8/d6Torch2.7;
-CPU proof is NOT CUDA proof/throughput/default authority. Official sources in method.md.
-1800active/3600end/120entirefit/reserve20/0retry. Family ceiling dominates18x120;
-completion not promised, cutoff/ceilings => unknown, no outcome tuner or old refund.
-Cold CPU6invented fits/24epochs144Adamupdates/8controls/native diskrestore/causal
-prefix/LR/replay3+cash3 PASS; .4501-1.5352s invented fullfits, NOT market throughput.
-HOSTACTIVE10.204648600003566/1800,end8.233474016189575/3600,clock_failed=false,
-appointment1792014941.3566623, deadline1792018541.3566623; carries unchanged into
-future CUDA SYN/market/readback, review/queue consumes elapsed.0market fits/GPU.
-Exit0/child reaped/container absent/cleanup complete/NO GPUDeviceRequests or lease;
-network/credential/LOCALhostname0. Claude supported-with-limits4.4939s separate.
-All3policy/whole5marks seals required before costs; same originalgross/top10/.1/.5/
-reference10 quantities/scenario5-10-20; samegross NOT equal realizedrisk/Alpha.
-Old N/C/V/G(fusion) failures/results/debits immutable; seen/nonPIT/unknown publication/
-sourceunits/currentlisting/fourDEV/partial limits permanent; no Paper adoption.
-[source-only ready + future Parent command](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/source-ready.json) e0c13bfe...;
-[CPU closure](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/host-prepare-cpu.json) f0788c08...;
-[native SYN](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/prepare-cpu/output/synthetic.json) 680bc168....
-Next: Parent review + Aristotle allocation closure before exclusive lease/headroom
-probe and CUDA SYN, then separately Parent market dispatch; no GPU action now.
+CLOSED r2/independently_checked_seen_development; consumer: recurrent/causal-attention relative-risk scores
+-> same-key cost-aware basket selection. Parent dispatched ONCE, worker0/source unchanged.
+Contractf60974bf2acdb5a5737544969a097acef545c68c3d96a54f1b9476b593651885;
+host_r2aa4d8a92.../worker_r2cd703f46.../models52149cca.../runtime30c4e1b9.../185pins.
+18attempts18CUDAfits/0baseline refits/262epochs6178market updates; GRU/LSTM/causal
+Transformer20-60 x3same N/C stages, latest12 fusion/common61/FITstats/seed303 unchanged.
+All18 INNERpatience12,13-19epochs/selected1-7; .6934-2.6998s wholefit<120,0cutoffs.
+Plateau stopping is NOT mathematical convergence. Adam/LR/clip1/p128/bestINNER/
+TRAIN1-5-final/source-native .1/.5/defaults unchanged. All3policy/full5marks sealed
+before54cells:54complete0unknown/45frozen controls; joint all-cost net/no-worse-DD
+screen0true18false. Strongest economic kill met; no qualified winner/Alpha/Paper adoption.
+Actual r2 isolated cuDNNenabledTrue/cudnndeterministicFalse/globaldetFalse/fp32/noTF32/
+OMP8/d6Torch2.7; original b499 literal-disable was CUDA-UNDISPATCHED, byte-archived
+and superseded PRE-CUDA, NOT the measured runtime or original agreement.
+Original CPU10.2046486active/8.233474end preserved; corrected CPU9controls and CUDA
+6invented fits/288Adamupdates/NPZrestore/LR/prefix/8controls/3scalar+3cash PASS.
+HOSTACTIVE68.66646360000595/1800,end1795.0893914699554/3600,clock_failed=false;
+same appointment1792014941.3566623/deadline1792018541.3566623/0retry/no refund.
+Active includes SYN/failures/I-O/reap; elapsed includes author/review/queue, NOT GPU spend.
+Child reaped/typed container absent/lease released/cleanup complete; no H GPU remains.
+Old N/C/V/G failures/results/debits immutable; seen/nonPIT/unknown publication/sourceunits/
+currentlisting/fourDEV/partial limits permanent; samegross is NOT equal realizedrisk.
+[host closure](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/host-study.json) 24be3024...;
+[categorical result](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/study/output/result.safe.json) b82ee21f...;
+[all-stage seal](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/study/output/ALL-stages-sealed.json) e4114541...;
+[b499 supersession](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/b499-superseded.json) 44421361....
+Parent ACTUAL independent reader PASS/exit0:18newfits54newcells54complete0unknown,
+45controls/six retainedRidge forwards/305source-output hashes,0newfit/GPU/NNforward.
+Keys/purge/FITscalers/numeric best-checkpoint provenance/curves/LR/stop/caps/allmarks/
+fixedcash/fees/wholeNAV-exposure/comparisons checked;262epochs6178updates and0/18
+joint conditions confirmed as metadata/math, neural forward/loss/timing still attested.
+Reader sourcec7443659.../tests8f2a4efb... unchanged/35SYN/Ruff F,E9 passed.
+Final cumulative ACTIVE118.96696400002111/1800,end2728.5371420383453/3600,
+same appointment/clock_failed=false; reader45.79149799999141s prepublication+1s
+conservative publication debit. PREP72.1754850/2522.0410 and host68.6664636/
+1795.0893915 preserved; author/review/queue elapsed is NOT active GPU time.
+[independent closure](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json) 4441f82cb4de22b16c38b416a0e9b8a20570371ef30f0ca4ea43cfc6e25408d4;
+actual read-only Docker probe/Windows audit ABI passed/actor and lease absent.
+Fit and reader creators CLOSED/no repeat; all source/results/debits frozen, no qualified
+Alpha/untouched/convergence/Paper adoption. H package CLOSED; no further source edits,
+fit/reader creator or GPU-fill campaign. Current consumer: verified five current scores
+-> pure untrusted target proposals -> native Paper path; Aristotle exclusively owns
+the five-score target module, Execution retains deterministic broker-risk controls.
+Prior r6 runtime company focus ONLY superseded; owned next_due still pending, not closed.
+One future hypothesis QUEUED/UNTESTED: fixed five-session absolute quoted-return Ridge
+plus10bps fee-hurdle cash decision, versus forced top10 and gate-exposure-matched broad.
+Same retained common61/raw20/N-C stages; proposed3CPUfits/27newcells/45controls/
+180active600end/0retry/0GPU, NOT dispatched/native-ready. No architecture/threshold grid.
+[one queued utility hypothesis](D:/thericher-v2/model-artifacts/research/next-utility-hypothesis-20261015-v1/ready.json)
+names exact source pins/causal keys/holding/fees/kill; C/G/H categorical evidence only,
+no evaluation reopening. MODP four differing pairs are action-basis limits, NOT factors,
+target-tail causation or profit evidence. This replaces the vague tail-diagnosis queue,
+not old results/debits. Behind actual Paper target integration; no source/fit work now.
+Parent current1215-score mathreader r2 PASS/Data8GET closure are orthogonal to H evidence.
 G=A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1 CLOSED/independently_verified_seen_fusion;
 consumer: exact five C expert scores -> fixed ordinal ranks/shallow tree -> cost-aware
 basket selection attribution. No V substitution; partial OOF2TCN60 retained unchanged.

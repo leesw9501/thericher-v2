@@ -2,7 +2,35 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: future-owned-paper-runtime-recovery-v1. Seven quiet Actions r5
+Completed current-nas-frozen-model-paper-target-preparation-v1: pure fixed-five
+proposer integrated, actual243-supported/5-expert scores ->10private targets,
+exact rank parity. .005 each/.05 total ORIGINAL-basis desired fraction, NOT
+cash allocation, broker permission or qualified profitability.48focused tests,
+47independent synthetic checks and649native changed-path serial pass. Final
+consumer7SYN and independent strict10-target/native-receipt/hash readback PASS,
+no P1/P2 findings; neither creator nor model was rerun for independent reading.
+Distinct completion-observed upper bound22:06:59UTC and availability-to-this-
+consumer23:10:18.739660UTC retained; original publication/completion unknown,
+never guessed from mtime. Two preflight ABI/path failures retained/fixed before
+targets; no fits/GPU/API/credentials/orders in this preparation.
+D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
+Fresh clean8 full16283pass22skip354.577s/helperexit0; source1336/65a58a7c,
+649serial, Ruff/default+research+accounting sample-env Compose pass. Long
+Windows test-scratch persistence failures disappear with short C:/ts/nas15b;
+no broker risk/source/assertion relaxation. Exact failures preserved externally.
+D:/thericher-v2/model-artifacts/verification/current-nas-proposer-20261015-v1/authority.json
+Docker470runtimefiles/4d0481cd exactly match new source. CPU image3ccb2250
+and quietbootstrapc50c7289 DEPLOYED23:10UTC: only IMAGE literal changed,
+task XML/argv/identity/basis unchanged, ReadyOct15 14:50UTC/23:50KST.
+Network-none worker inert/no credentials/API/private writes;5quiet tests pass.
+This updates existing strategy runtime, NOT deployment of the new stock model.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+Next company outcome: current-nas-owned-model-paper-cycle-v1. Connect frozen
+targets to the existing exact-request stock lifecycle on the same original bank;
+preserve tonight's existing worker and all unknown reservations/other owners.
+Prior future-owned-paper-runtime-recovery-v1 superseded as COMPANY focus only,
+not marked runtime complete. Its follow-up remains scoped and owned.
+Seven quiet Actions r5
 INSTALLED20:00UTC; exact non-Action definitions/source pins/rollback verified.
 Actual20:25 owned accounting: mapped parent/source preflight passed, but data
 child slot_unknown/source_changed; offline strict result no_owned_intent for
@@ -12,7 +40,7 @@ NEWr6 default binding13SYN/cold+warm455audit/Claude passed. ONLY accounting83
 Action updated20:56UTC, other6/triggers/principal/basis/claims unchanged.
 Actualr6 runtime remains UNKNOWN until owned Oct15 20:25UTC; old index2 mark
 unknown/not replayed. No manual task/collector/order invocation for this repair.
-TonightOct15KST23:50 a142quiet task/source stillReady/unchanged.
+TonightOct15KST23:50 Ready; verified new image3ccb/quietc50c, definition unchanged.
 D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1/parent-installation/after.json
 D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/firstcause-r2.json
 D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
@@ -58,10 +86,32 @@ and original sources, maps only output to a new root. ACTUAL worker complete:
 rejected Docker29 lower-case no-such-object after removal; original technical
 failures retained, exact dead-parent/label absence/hash/lease cleanup recovered.
 No numerical rerun.34.5356cumulative active/6.8781end with old24.3968 carried;
-independent current-score reader still pending, no Paper/model profit claim.
+Independent current-score r2 PASS243supported/2scalarRidge/fiveunscale/2560rank/
+NPZ/model/data/missing/availability bindings. NumPybool identity-reader failure
+and3.7153s debit preserved; reader-only builtin-bool fix/twoSYN, no NN rerun.
+No Paper/model profitability or whole-reference equivalence claim.
 D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/data-ready.json
 D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/parent/metadata-cycle-repair-v1/outcome.json
 D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/review-output/final-current-linked-r2.json
+Recurrent/attention family ACTUAL CLOSED18CUDAfits/262epochs6178updates,
+GRU/LSTM/Transformer20/60 across three chronological stages,54completecostcells,
+0of18 jointcontrols. INNERp12 13-19epochs/.6934-2.6998s wholefits, not convergence.
+r2 enabledcuDNN/globaldetFalse/fp32/noTF32; b499literal-disable0CUDA archived/
+superseded BEFOREnew CUDA, never relabeled. Native6CUDA SYN288Adamupdates/
+numericrestore/LR/prefix/8controls/3scalarcash passed beforemarket.
+Independent18fits54cells45controls/sixRidge forwards PASS; cumulative118.9670
+active2728.5371end under1800/3600, originalhost68.6665/1795.0894 unchanged.
+Exact child/actor/lease closed; NN forwards/timing remain worker-attested.
+D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
+Data adjustment capability ACTUAL8dailyGET/onePOST/4pairs61D1/800rawrows,
+childexit0/reaped/unknownrequestfalse,0account-order-live. AAPL/AVGO/CELH/CTAS
+all different_other_pattern, no asserted adjustment factors/PIT/finality/TR.
+Independent paired-view PASS4538checks/800rawrows/488event-window observations,
+42.0950cumulativeactive/232.6259dispatch-throughreadbackend under180/600;
+native owner released/unknownrequestfalse. Never relabel old raw caches.
+D:/thericher-v2/model-artifacts/data/kis-daily-adjustment-source-capability-20261015-v1/runs/75c4ff731f2e41c2a25e28bf065f38cf/outcome.json
+D:/thericher-v2/model-artifacts/data/kis-daily-adjustment-source-capability-20261015-v1/independent-readback.json
 D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/runtime/output/diagnostic.json
 Goal97installed delivery-r2 uses its exactarchive/image113... and is not a
 current-source mismatch. Execution runtime wait is lane-local; Data/Engine ready.

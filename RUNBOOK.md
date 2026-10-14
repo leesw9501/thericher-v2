@@ -2,12 +2,33 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective future-owned-paper-runtime-recovery-v1. Seven future quiet Actions
+ONE objective current-nas-owned-model-paper-cycle-v1. Prior pure-target goal
+COMPLETE:243supported x5 frozen scores ->10private desired targets, no orders.
+Source module current_nas_frozen_rank_target,48focused/47independent/649serial;
+fresh clean8 full16283pass22skip354.577s, source1336/65a58a7c, Ruff/3Compose pass.
+Private actual target/observation bytes and original failures are immutable:
+D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
+Do not rerun consumer.py actual to inspect outcomes or treat .005 each as funds.
+Completion-observed bound and fresh consumer availability are NOT original
+publication timestamps. New owned coordinator must recover original intents
+before loading new scores; no ETF/foreign stock adoption or new bank.
+Tonight's existing worker now uses image3ccb2250/quietc50c7289, source470/4d0481cd,
+task definition/argv/identity unchanged/ReadyOct15 14:50UTC=23:50KST.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+Network-none image/default-inert checks and5quiet tests pass; not runtime/fill.
+New model targets are NOT yet a deployed strategy. Parent owns installation/Git.
+Changed-path serial scratch should use a freshly checked nonexistent SHORT
+non-reparse C: child (e.g. C:/ts/<unique>); long default Windows paths caused
+existing QQQ fixture persistence failures without source changes. Never reuse
+an old pytest --basetemp, which can remove that directory automatically.
+Full-suite helper still owns its Global mutex/managed C:/trpy cleanup unchanged.
+Prior future-owned-paper-runtime-recovery-v1 superseded as COMPANY focus only;
+actual r6 result remains unfinished/owned. Seven future quiet Actions
 r5 installed/source+nonAction readback verified. Actual20:25 data step failed
 oldcapturedexecute.data_call default; cohort offline no_owned_intent. NEWr6
 accounting-only Action installed20:56 after13SYN/cold+warm455audit; nextowned
 Oct15 20:25UTC, no manualtask/claim reset/oldmark replay. Actualr6runtime UNKNOWN.
-Same quiet dailyOct15KST23:50 task/imagea142 unchanged/Ready.
+Same quiet dailyOct15KST23:50 task Ready; image3ccb matched source, definition unchanged.
 D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1/parent-installation/after.json
 D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
 D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
@@ -32,10 +53,23 @@ retained. Linked native-base same3.14.3/venv NumPy2.5.1 launch ACTUAL worker
 completed243x5scores,0fits/API/payoff. Host cleanup predicate falsely rejected
 Docker29 lower-case no-such-object AFTER actual removal. Exact actor/dead-owner/
 output/source proof recovered ONLY owned GPU lease, no rerun/reset. Native
-worker/math-independent readback pending; source technical failure not erased.
+worker/math-independent r2 PASS243support/2Ridge/fiveunscale/2560ranks;
+NumPybool reader-only failure/debit retained. Source technical failure not erased.
 D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
 launch.py creator already consumed; DO NOT dispatch again to inspect results.
-Next18-fit GRU/LSTM/Transformer20/60 family is PREP only, independent of Paper.
+GRU/LSTM/Transformer20/60 ACTUAL18fits262epochs6178updates/54costcells,
+independent PASS18fits54cells45controls/sixRidge forwards, no numerical rerun.
+Original host68.6665active1795.0894end; throughreadback118.9670active2728.5371end.
+All INNERp12/not mathematicalconvergence,0of18jointcontrols; no qualified winner.
+r2cuDNNenabled measured, b499literaldisable0CUDA/superseded predispatch.
+Creators/readers consumed; inspect exact receipts, do not dispatch again.
+D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
+Data4stock MODP0/1 ACTUAL8GET/onePOST/800rawrows,8x61event-window observations,
+rawM only/worker0reaped. Independent4538checksPASS/42.0950active232.6259end.
+All4different_other_pattern, factors/adjustment/PIT/finality/TR NOTqualified;
+no repeated probe/old cache mutation. No network in readback.
+D:/thericher-v2/model-artifacts/data/kis-daily-adjustment-source-capability-20261015-v1/runs/75c4ff731f2e41c2a25e28bf065f38cf/supervisor.json
+D:/thericher-v2/model-artifacts/data/kis-daily-adjustment-source-capability-20261015-v1/independent-readback.json
 D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/host-study.json
 D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/review-output/final-r3.json
 D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/host-study.json

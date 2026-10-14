@@ -2,8 +2,34 @@
 
 ## Current Projection (2026-10-15 KST)
 
-Current company direction retained-relative-ranking-completion-v1. Parent owns broker
-dispatch/shared integration/Git. Gross accounting package COMPLETE:
+Current company direction current-nas-owned-model-paper-cycle-v1. Previous pure
+target-preparation package delivered; coordinator source work NOT started.
+Parent owns integration/Git/runtime. Producer9fe47f72/test0fd689ae and external
+consumer3c9858e3 FROZEN/read-only; Maxwell reviewing actual consumer (Parent
+reported). PREP1/2 failures
+and sources retained. ACTUAL243x5 ->10private proposals, ordinal parity/native
+receipts PASS;7external SYN/lint. Each .05 research ->.005 ORIGINAL-basis desired
+fraction, .05 gross, NOT allocated cash. Confidence0 uncalibrated; native Risk
+independent. No refit/NN rerun/GPU/broker/API/account/credential/order/schedule.
+Data20:47:49.826785 < input21:31:19.063233UTC Oct14; cleanup22:06:59UTC is a
+conservative completion-observed bound. Fresh byte observation means availability
+to THIS consumer, not original score publication; no mtime inference.
+Parent authority:649serial/clean8 full16283PASS22skip/354.577s/source1336
+digest65a58a7c...; Ruff/threeCompose PASS. Tonight BOOTSTRAP-ONLY image update
+DEPLOYED:470files/image3ccb2250abcc7b11c6ab5f7f048a38b145962755935bace495efc0ac985f3ce7.
+Quietc50c7289/XMLf35811a unchanged, Ready Oct15 14:50UTC/23:50KST;5quiettests PASS.
+Installation proves no model Paper adoption/fill/profit. Next native model Paper
+coordinator write set follows Parent commit/integration, NOT replacement of the
+daily ETF loop. Preserve .005 each/.05 ORIGINAL-basis desired gross, one pending
+leg, recovery-first, foreign-stock ownership rejection and two-session tests.
+Actual owned orders are later work; model profitability is not a permission gate.
+Prior r6 runtime remains explicitly unfinished/superseded as company focus only.
+D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
+D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/readback.json
+D:/thericher-v2/model-artifacts/verification/current-nas-proposer-20261015-v1/authority.json
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+
+Gross accounting package COMPLETE:
 D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
 Exact native whole-scope6owners16terminal intents/12positivefills5sells,
 3gross-realized owners/3no-realized-fill owners/0incomplete-pending. Gross

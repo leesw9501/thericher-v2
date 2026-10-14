@@ -2,109 +2,102 @@
 
 ## Objective
 
-future-owned-paper-runtime-recovery-v1: make the already-owned five-session
-exit/successor/accounting opportunities source-exact and non-interactive after
-reboot, without changing their request identity, triggers or shared capital.
-Tonight's existing daily portfolio opportunity remains Ready Oct15 23:50KST.
+current-nas-owned-model-paper-cycle-v1: run one repeatable, recoverable owned
+KIS Paper stock cycle from the verified frozen-five current NAS target policy
+on the existing ONE original shared initial virtual-cash tenth.
 
-Workdir C:/Users/Public/Documents/thericher-v2. Follow HANDOFF/AGENTS/current
-boards. Data D:/market_data; models/research D:/thericher-v2/model-artifacts.
-Never KIS_LIVE_*, real-money, secrets/private values in output or Git.
+Workdir C:/Users/Public/Documents/thericher-v2. Read HANDOFF/AGENTS/stateboards.
+Market data D:/market_data; generated artifacts D:/thericher-v2/model-artifacts.
+Never KIS_LIVE_*, real money, public serving, paid commitments or secret output.
+Standing private Paper credentials/reads/orders/recovery/schedules are approved.
+Profit qualification is not a prerequisite for this provisional operational loop.
 
-## Execution
+## Required Work
 
-- Static audit verified frozen goal83/97 archives and image113f9644...;
-  they intentionally use their exact archives, not today's current checkout.
-  Goal97 installed delivery-r2, not stale delivery-r1.
-  D:/thericher-v2/model-artifacts/execution/future-owned-paper-runtime-readiness-20261015-v1/readback-r2.json
-- Goal83 accounting fails before network: original driver audits four changed
-  checkout source files despite a complete exact455-file archive. New strict
-  mapping must validate that archive, original job/map hashes and all other
-  original controls. Never disable audit, restore old production source,
-  relabel archive execution as current-checkout origin or reset a reservation.
-- Finish the versioned source/import/consumer adapter and native source-only
-  preflight. Preserve original identities/argv/windows/job/map, required private
-  parser boundaries and exact native recovery. Keep explicit mapped-origin
-  evidence for later source-safe receipt interpretation; no new gate platform.
-  D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
-- Test real non-interactive Pythonw/PowerShell/child launch behavior, not only
-  Hidden metadata. Install only the seven verified project-owned quiet Actions
-  after review/tests, keeping complete original XML/rollback and all non-Action
-  fields unchanged. Skip active owners. No manual task/strategy/broker invocation
-  to prove deployment. Ensure accounting uses the corrected entry, not just a
-  quiet version of its broken old runner. Inspect source-safe installed facts.
-- Keep daily23:50 quiet a142eea3.../bootstrap44865727... unchanged. Same ONE
-  initial virtual-cash tenth, exact unknown-request recovery and buying-power
-  controls. Static readiness is not a submit/fill/current inventory/net profit.
+1. Add the smallest separately owned current-stock coordinator using the existing
+   stock plan/reserve/execute/reconcile/exit/recovery APIs. Reuse the verified
+   pure proposer; no new broker risk system or generic agent/report platform.
+   Resume retained exact requests BEFORE score loading or new selection.
+2. Bind the exact frozen target/source/observation bytes, official intended
+   session, original expiry and all five model identities. Freeze top10 once;
+   unavailable routes/funds or existing foreign ownership must NOT select
+   substitutes. Desired .005 each/.05 aggregate is ORIGINAL-basis exposure,
+   not a new bank. Native shared tenth/buying power/entry costs/realized losses/
+   pending reservations remain authoritative and may reject every proposal.
+3. Persist policy-owned identities before effects. Reject another policy's
+   same-stock registration/inventory rather than adopt or erase it. Keep ETFs,
+   other stock owners, old history and pending reservations unchanged.
+   One pending leg per visit; unknown submit/cancel outcomes reconcile exactly.
+   Declare an owned exit horizon explicitly; a different entry/exit clock from
+   the research open-to-fifth-close label is execution learning, not parity.
+4. Prove two sessions/restart/partial fills/expired unknowns/stale data or quotes/
+   cash shortage/foreign inventory/emergency controls with native synthetic
+   clients. Default entry points remain inert. Ask Claude for a short scoped
+   falsification-first routing/recovery challenge before material edits.
+5. Prepare a bounded quiet Docker host/worker using selective Paper credentials,
+   exact source/image and the original private volumes. No .env dump, Docker
+   secret argv/environment, live loader, interactive console or implicit startup.
+   After focused/serial/fresh clean8/Ruff/three sample-env Compose verification,
+   integrate its owned schedule/session if ready within the official window.
+   Preserve the existing 23:50 task; avoid competing active ledger/cache owners.
+   Do not manually replay an owned task to infer success.
+6. Read actual receipts with exact intent/fill/owned-book linkage. Distinguish
+   no-intent, technical failure, submit attempt, accepted submit, exact fill,
+   recovery and terminal owned state. Fees/settled cash/net PnL remain unknown
+   unless separately proven. Installed/source tests alone do NOT close runtime.
 
-## Parallel Ready Work
+## Exact Starting Evidence
 
-- Data prepares a fixed SAME NAS512 universe current61-completed-D1 capture,
-  reusing native source/parser/publication/one-client gates. Scope<=1024GET/
-  onefreshPOST/1800active3600end at measured1.25pace; metadata/source tests and
-  owner check before Parent dispatch. Market bytes only D:/market_data. Missing
-  names remain missing; finality/actions/units/nonPIT limit claims, not Paper
-  authority. G10721:50UTC/NAS-forward621:40UTC owners unchanged.
-  D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1
-- Engine/Infra diagnoses TCN latency with finite invented-only native timing,
-  then proposes a separately frozen backend A/B if justified. First diagnostic
-  completed8pairs/0optimizer/marketfits,52.3885active/48.2512end/lease released.
-  PyTorch2.7 source excludes deterministic dilated contiguous convolution from
-  cuDNN; measured fallback hypothesis needs exact runtime evidence. Old strict
-  settings/results stay immutable, no global flag or broker-risk change.
-  D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1
-- Strategy's fixed five-expert rank blend and one chronological OOF shallow
-  tree are executable readiness, not selected models. Prefer zero-expert-refit
-  composition after this recovery; freeze its finite cost/fit budget before
-  numerical work. No in-sample expert stacking, physical-PIT claim or automatic
-  Paper adoption. No individual-profitability prerequisite for exploratory fusion.
-  D:/thericher-v2/model-artifacts/strategy-research/relative-ranking-fusion-readiness-20261015-v1/proposal.md
+Pure-target preparation COMPLETE; immutable creator must not be rerun:
+D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
 
-## Completion And Verification
+243supported rows x5 original C experts ->10 private targets; exact rank parity.
+Completion observed bound22:06:59UTC and availability-to-this-consumer
+23:10:18.739660UTC Oct14 are NOT exact original publication/completion timestamps.
+Original first publication remains unknown. The snapshot expires at the bound
+Oct15 official close; it is not perpetual or an input to another session.
 
-Current facts: r5 sevenActions installed/source-exact nonAction/readback;
-actual20:25 accounting data child failed because execute captured the old
-run_data default. r6 rebinding13SYN/cold+warmsource455 passed; accounting83-only
-Action installed, other6 unchanged. r6 runtime still UNKNOWN until owned
-Oct15 20:25UTC, oldmark/index2 claims not reopened. Do not infer success from
-installation/exit. Preserve this scoped unfinished runtime follow-up while
-continuing ready research/Data; no company foreground wait.
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/review-output/final-current-linked-r2.json
+D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
+D:/thericher-v2/model-artifacts/execution/current-nas-model-target-path-readiness-20261015-v1/implementation.json
+
+Current listing/non-PIT/action/unit/finality limits constrain research claims,
+not independent Paper authority. New18 recurrent fits are NOT replacement experts.
+
+Fresh source1336/65a58a7c authority:649serial,16283pass22skip clean8 full354.577s,
+Ruff/default+research+accounting sample-env Compose pass.
+D:/thericher-v2/model-artifacts/verification/current-nas-proposer-20261015-v1/authority.json
+
+Existing nightlyOct15 23:50KST/14:50UTC Ready: CPU image3ccb2250,
+quietc50c7289,470runtime sources/4d0481cd. Only IMAGE literal changed,
+exact Task XML/argv/identity/original bank unchanged. This deploys the current
+existing strategy runtime, NOT the new model-target strategy.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+
+## Parallel Work / Preserved Due
+
+Parent owns direction/shared docs/Git/integration; Execution owns assigned
+coordinator/host/tests; independent Review checks frozen source/actual evidence.
+Data owns market inputs, Engine owns policy outputs, native Execution owns risk.
+
+Research may prepare the ONE fixed absolute quoted-return/fee-hurdle CPU hypothesis
+rather than another architecture grid; freeze sources/caps and native solver smoke
+before dispatch. This does not block Paper and is not a qualified model selection.
+D:/thericher-v2/model-artifacts/research/next-utility-hypothesis-20261015-v1/ready.json
+
+Data MODP four pairs and18-fit NN independent studies are CLOSED; preserve
+limitations/results/debits and do not redispatch creators. No dummy GPU work.
+
+Prior future-owned-paper-runtime-recovery-v1 remains runtime-UNFINISHED/owned,
+only superseded as company focus. Accounting83 r6 next opportunity Oct15
+20:25UTC, oldindex2/claims/basis/113 archive/image unchanged; no manual replay.
 D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
-Data capture ACTUAL504ready61/8missing/512GET1token, not all512 complete.
-Current supported stock scoring is ready preparation, no quality imputation.
-Engine finite6newTCN20/60 fits with NEW isolated cuDNN mode ACTUAL CLOSED:
-6complete/122epochs2958updates/18cost cells/0of6joint checks,49.7872active/
-261.9144end,childreaped/containerabsent/lease released. All INNERpatience12,
-19-23epochs/2.5426-4.6733s wholefit; not convergence or Alpha proof. Old data/
-target/splits/seed/results/debits and global defaults unchanged. Independent
-reader-only repairs now independently PASS r3(6fits18cells45controls); NUL/
-Windows-subprocess failures retained, neural numeric/timing claims attested.
-Current Data feature-only512 panel ready55checks/25pins/243supported;
-fixed five-checkpoint ACTUAL243x5scores through separately named native-launch
-repair,0API/fit/payoff/Paper adoption. Metadata cycle and venv PID failures
-preserved; same data/weights/source/guard, no originalclaim reset. Worker complete
-but original Docker29 absence-text predicate failed after actual removal;
-exact quiescent cleanup recovered, current independent readback pending.
-Separate fixed-rank/shallow-tree
-fusion ACTUAL CLOSED reuses five unchanged prior experts:twoCPUgates/15cells,
-independent PASS15cells/1830curvepairs/164pins,16.5846active676.0606end. No outcome-driven
-substitution by the new TCN outputs, no policy passes all matched controls.
-Next finite recurrent/attention PREP compares GRU/LSTM/Transformer20/60,
-18fits54cells/1800active3600end/120wholefit/max128/INNERpatience12/0retry;
-native optimizer/restore SYN first, same old data/splits/target/costs. No new
-GPU allocation before ready Parent review; old results/caps/debits immutable.
-D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1
 
-Corrected native source preflight, tested quiet child tree, exact same-owner
-installation/rollback/readback for seven Actions, tonight's unchanged readiness
-and honest independent package results. Future broker runtime closure remains
-with its scheduled owner; do not infer it from task exit/installation.
+## Completion
 
-Fresh source1334/abf2b287... compatibility:144serial+clean8 full16235pass22skip,
-368.019s/helperexit0, Ruff/default/research/accounting sample-env Compose pass.
-D:/thericher-v2/model-artifacts/verification/future-accounting-recovery-20261015-v1/authority.json
-Source digest must still match; new external adapters/installation need fresh
-focused native/independent checks. Material tracked/shared-control source change
-requires AGENTS full verification; no reuse of failed/partial/unclean authority.
-Integrate evidence/boards/HANDOFF/RUNBOOK, commit/push, replace this file with
-ONE material next outcome and continue. No operator decision currently needed.
+Actual current model-owned cycle evidence or exact scoped runtime failure/recovery
+classification, not installation-only closure; original shared bank/custody intact.
+Verify owned changes, commit/push, refresh stateboards/HANDOFF/RUNBOOK and choose
+ONE next material company outcome. A scheduled/session-local wait does not stop
+another ready lane. Continue the active human request until a genuine authority
+decision or no ready delegated path remains.

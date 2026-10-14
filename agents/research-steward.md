@@ -1,7 +1,7 @@
 # Research Steward Stateboard
 
 Current 2026-10-15 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
-future-owned-paper-runtime-recovery-v1. Custody is not model/Paper approval.
+current-nas-frozen-model-paper-target-preparation-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -18,28 +18,55 @@ Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
 H=A/research/native-recurrent-attention-relative-ranking-development-20261015-v1
-SOURCE/CPU-SYN READY ONLY; CUDA SYN/market fits NOT dispatched/NO H GPU allocation.
-Contractb499ad3a7f207fd828f36cc455bec19bab8bb21358bacf0e179b9fa4238f3fd7;
-168pins unchanged/Ruff F,E9/native CPU8controls PASS/Claude supported-with-limits.
-Six fixed GRU/LSTM/causalTransformer20-60 experts x3stages=18NEW planned fits,
-54cells/45frozen C controls/no old refits; comparable8385-9473params/latest12fusion.
-Same N/C common61/relative5risk/splits/FITstats/seed303/Adam-LR-p128-p12/curves;
-NEW literal cudnn.enabled=False/globaldetFalse/fp32/noTF32/d6Torch2.7 only.
-1800active3600elapsed/120wholefit/reserve20/0retry; family dominates18x120,
-unattempted/cutoff unknown rather than completion/convergence promise or refund.
-Actual CPU-only6invented fits/24epochs144Adamupdates/8controls/NPZrestore/causal
-prefix/LR/3scalar+3cash PASS. No CUDA proof/runtime-speed/market-outcome claim.
-HOSTACTIVE10.204648600003566/1800,end8.233474016189575/3600,clock_failed=false;
-appointment1792014941.3566623/deadline1792018541.3566623 shared with future CUDA
-SYN/market/readback/cleanup; sourceauthor/review separate, queue counts elapsed.
-Child reaped/container absent/cleanup complete/NO DeviceRequests or lease acquired;
-network/credentials/LOCALhostname0. Canonical exclusive lease untouched by CPU PREP.
-[source ready / Parent command](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/source-ready.json) e0c13bfe...;
-[CPU closure](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/host-prepare-cpu.json) f0788c08...;
-[native SYN](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/prepare-cpu/output/synthetic.json) 680bc168....
-Parent owns Aristotle five-score allocation closure + H GPU authorization; then
-fresh named-actor/lease/headroom probe before CUDA SYN. No GPU action now; CPU-only
-sidecar is not a company/Paper permission hold. N/C/V/fusion debits/seen limits stay.
+CLOSED r2/independently_checked_seen_development; contractf60974bf2acdb5a5737544969a097acef545c68c3d96a54f1b9476b593651885;
+185pins/host_r2aa4d8a92.../worker_r2cd703f46... unchanged. Parent ONCE/worker0,
+18attempts18CUDAfits/0baseline refits/262epochs6178market updates. Fixed6GRU/LSTM/
+causalTransformer20-60 x3stages/common61/latest12/target/splits/seed303 unchanged.
+All INNERpatience12,13-19epochs/selected1-7/.6934-2.6998s fullfit<120/0cutoffs;
+plateau NOT convergence. All3fullpolicy/5marks sealed before54complete0unknown cells,
+45controls reused; all-cost net/no-worseDD screen0true18false, strongest utility kill met.
+Actual isolated cuDNNenabledTrue/cudnndeterministicFalse/globaldetFalse/fp32/noTF32/
+OMP8/d6Torch2.7 only; no default/runtime-speed/Alpha/Paper adoption grant.
+b499 literal cudnnFalse was CUDA-UNDISPATCHED/archived/superseded PRE-CUDA;
+original CPU10.2046486active/8.233474end preserved, no false old-scope runtime claim.
+Corrected CPU9controls+CUDA6invented fits/288Adamupdates/NPZrestore/LR/prefix/
+8controls/3scalar+3cash PASS. HOSTACTIVE68.66646360000595/1800,
+end1795.0893914699554/3600,clock_failed=false; appointment1792014941.3566623/
+deadline1792018541.3566623 unchanged,0retry. SYN/I-O/reap charged; queue/review/
+author consumes elapsed, NOT active GPU time. No original or N/C/V/G debit refund.
+ACTUAL child reaped/typed actor absent/lease released/cleanup complete; no H GPU
+allocation remains. No fit/NNforward/retraining permitted in independent CPU reader.
+[host closure](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/host-study.json) 24be3024...;
+[safe result](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/study/output/result.safe.json) b82ee21f...;
+[all-stage seal](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/study/output/ALL-stages-sealed.json) e4114541...;
+[b499 supersession](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/b499-superseded.json) 44421361....
+Parent ACTUAL independent reader PASS/exit0:18newfits54newcells54complete0unknown,
+45controls/six retainedRidge forwards/305source-output hashes,0newfit/GPU/NNforward.
+Keys/purge/FITscalers/checkpoint provenance/curves/LR/stops/wholemarks/scalarcash/
+fees/wholeNAV-exposure checked;262epochs6178updates and0/18joint metadata confirmed.
+Neural forward/loss/gradient/timing remain worker-attested, not independent Alpha.
+Sourcec7443659.../tests8f2a4efb... unchanged/35SYN/Ruff F,E9 passed.
+Final cumulative ACTIVE118.96696400002111/1800,end2728.5371420383453/3600,
+same appointment/clock_failed=false; reader45.79149799999141s prepublication+1s
+conservative publication debit. PREP72.1754850/2522.0410 and old host68.6664636/
+1795.0893915 preserved; queue/review/author elapsed is NOT active GPU time.
+[independent closure](D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json) 4441f82cb4de22b16c38b416a0e9b8a20570371ef30f0ca4ea43cfc6e25408d4;
+actual named-actor and lease absent/Windows audit probe passed; no H GPU remains.
+Fit and reader creators CLOSED/no repeats/all source/results/debits frozen. Seen/nonPIT/
+currentlisting/units/fourDEV/partial limitations stay; no qualified winner/Paper hold.
+H package CLOSED/no further source edits, fit/reader creator or GPU-fill campaign.
+Current consumer: verified five scores -> pure untrusted targets -> native Paper path;
+Aristotle exclusively owns target-module source; Execution deterministic risk unchanged.
+Prior r6 runtime company focus ONLY superseded; owned next_due remains pending.
+One future hypothesis QUEUED/UNTESTED, behind actual Paper model-target integration:
+same common61/raw20/three N-C stages -> absolute five-session quoted-return Ridge ->
+fixed10bps fee-hurdle cash/forcedtop10/exposure-matched broad -> native cost replay.
+Proposed3CPUfits/27newcells/45controls/180active600end/0retry/0GPU; no allocation,
+dispatch command, new numerical evaluation or changed old source/debits.
+[queued utility hypothesis](D:/thericher-v2/model-artifacts/research/next-utility-hypothesis-20261015-v1/ready.json)
+replaces vague tail-diagnosis queue; MODP0/1 four differing pairs remain action-basis
+uncertainty, no inferred factor/causal/profit claim. No GPU-fill or architecture sweep.
+Parent current1215-score mathreader r2 PASS/Data8GET closure are orthogonal H evidence.
 G=A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1 CLOSED/independently_verified_seen_fusion;
 Contract80700b0178dbb6a2637c7c4d57be63251d83d0cd5eb7b41e069ebd1117af1b44;
 164pins unchanged; Parent ONCE/2CPUgate attempts2complete/.232343/.189179s<60,
