@@ -1,7 +1,7 @@
 # Research Steward Stateboard
 
 Current 2026-10-15 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
-retained-indicator-policy-replay-v1. Custody is not model/Paper approval.
+owned-paper-marked-equity-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,45 @@ Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
 Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
+Current Engine zero-fit contribution CLOSED/seen_attribution under existing J root;
+only new attribution.py/contract/private/receipt files, old132cells/models/seals unchanged.
+New60active/300end/1attempt/0retry, ACTIVE2.2002596/end0.2002831,
+appointment1791994805.7044723,clock_failed=false;2s conservative startup/publication debit.
+Author/review/freeze/board prose explicit preparation outside old clocks; no refunds.
+0fits/GPU/CSVreload/API/credentials/child/container/lease; source/core unchanged.
+Attribution receiptfd91d09a.../contract7befab42.../sourcee7b4a0d0...;45scalar+12exact
+exposure/signal/cost identities, focusedRuff PASS. All numeric components D: only.
+Cohort740 largest for most, but not sole positive-growth driver under fixed omissions.
+All3matched pairs fail declared net/DD/cost/cohort interpretation test; no fixed policy
+beats AlwaysLong acrossALL3costs. Four seen correlated cohorts not causal alpha/profit.
+Ready receipt consumer: Parent/Execution actual owned fill/basis/fee/mark/settlement
+classification +provisional deterministic Paper path under unchanged shared risk;
+missingfees/net unknown, no model adoption/MetaGate/operator hold. Numerical command frozen.
+J=A/research/retained-indicator-policy-replay-20261015-v1 CLOSED/seen_engineering_complete_late_MD_metadata;
+CPU-only seen engineering replay of retained17fits;0newfits/GPUlease/credential/API.
+Parent exactratio/test/direction files frozen/read-only; Engine host/worker/output owner.
+New120active/600end/onepredeclaredmechanicalretry, attempt1 complete/retry unused.
+Old debit/failure/RAW unchanged. Actualnative SYN3scalarcells/invalid rejection PASS.
+ALL3reconstructed policy/full5marks seals BEFOREANYnewmarket economics.
+135cells/132scalarcomplete/3OOF1gateunknown,1true8false/no winner/promotion.
+HOST11.6368432active/10.6956766end; through readback21.3202685active/442.7155132end,
+within120/600,appointment1791993459.0570025. Pre-board observation541.943 was not
+closure: actual boardwrite16:07:51UTC/611.943elapsed exceeded600. No full-metadata-
+within600 claim; numerical/readback evidence intact, no further numerical dispatch.
+No actor/container/GPUlease remains; exact child reaped/source+oldoutputs unchanged.
+Contract5f3a0a11...; host-result.json0a79cccc...; engine-readback.json6a48c12e...
+and Parent parent-readback.json1d1d5513... PASS all3seals/native5marks/exactratio/
+weights/actions/gateOOFkeys/132scalarfees+drawdown/17412wholemarks; source/core frozen.
+verify.py48595faf... accepts exclusive --publish parent-alternate-readback.json;
+separate Parent read-only audit has no --carry-study-budget/fit/selection/oldclock reset.
+Worker/host numerical commands FROZEN; numeric outcomes D: only. No operator hold.
+Assigned fixed-policy attribution completed above; Execution-owned netPnL classification/
+provisional baseline Paper path proceeds separately; no new architecture/training.
+Infra's disjoint TCN synthetic benchmark COMPLETE/lease released, no active
+GPU allocation. New basket-controls no-fit preparation; no GPU spend/utilization
+target. Independent attribution reader84dd49fd... PASS121pins/45scalar/
+180cohort/180omissions/3paired failures. Actual owned gross is separate Paper
+evidence, not research promotion or measured net profit.
 B CLOSED/non_promoting_failed;9fit cap exhausted,8valid/1charged failure,noGPU.
 Remeasure GPU owners/headroom before allocation; capability is not approval/utilization quota.
 U CLOSED/non_promoting_failed;9fits complete,all children/containers/oneGPUlease closed,no active worker.
@@ -40,9 +79,9 @@ source unchanged. No active worker or GPU allocation. OriginalHOSTdebit1399.3011
 active/2268.5411363end within1800/3000; metadata closure late (>3276.7731elapsed),
 posthost diagnosticactive not fully metered/no final-active/all-within-cap claim.
 I/final-closure.json binds source/seals/cleanup; RAWroot immutable, oldretry consumed.
-Ready for Parent boundary assignment only: exactFraction sameplannedgross ratio,
-NEWreplay-only seen/nonpromoting120active/600end,0fit/GPU/selection; ALL3actions/marks
-seal before summary. Not dispatched, no source/risk change. No shared ledger/platform
+Assigned sameplannedgross exactFraction replay-only engineering repair completed
+separately in J above; original I failed/debits/invalid seals unchanged. No source/risk
+change. No shared ledger/platform
 or tracked source writes. Numeric artifacts D:; no qualified/Paper pass or refund.
 ## Canonical CPU Engineering Custody
 

@@ -1,7 +1,7 @@
 # Engine Research Stateboard
 
 Current 2026-10-15 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
-retained-indicator-policy-replay-v1. Paper authority is research-independent.
+owned-paper-marked-equity-v1. Paper authority is research-independent.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,79 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and external research are worker writes.
+Current assigned Engine contribution CLOSED/seen_zero_fit_attribution under existing
+J root only: attribution.py/attribution-contract.json/attribution.private.json/
+attribution-receipt.json. Consumer: Parent/Execution owned Paper profit classification.
+0fits/GPU/CSVreload/API/envcredential/broker/policychanges; all132sealed complete cells,
+3gateunknown/17models/old clocks/debits/weights/predictions/curves/source unchanged.
+Frozen new60active/300end/1attempt/0retry; actualACTIVE2.2002596/end0.2002831,
+appointment1791994805.7044723,clock_failed=false. Includes2s conservative startup/
+publication debit; source author/review/freeze/board prose explicitly preparation
+outside old clocks, not refunded old spend. No child/container/lease created/remains.
+RuffF/E9 PASS; invented recost/decomposition SYN identities and45finalpolicy-cost
+scalar identities/12exact gross-exposure-signal-cost identities passed.
+Receiptfd91d09ad26a19b35dd0de43bb2bb4a7da4369500a48c2ac7f4a1668377bccf0;
+contract7befab42.../sourcee7b4a0d0.../private7f207318..., numeric components D: only.
+Largest absolute cohort740 for most active fixed policies, NOT sole positive-growth
+cause: raw/TCN/blendTCN/gate/AlwaysLong remain positive under every fixed single
+cohort omission. Indicator does not. No frozen policy beats AlwaysLong acrossALL3costs.
+Combined/TCN/blendTCN ALL fail predeclared matched-net+DD/cost/cohort failure test;
+TCN positive incremental cohorts2/4; combined increment nonpositive without740.
+No qualified winner/causal alpha/real profit. Gross modeled price contribution,
+planned-exposure scaling, within-basket selection and incremental fees decomposed;
+entry dates fixed, not true calendar/intraholding timing. Matched planned gross is
+not equal realized exposure or drawdown. No representative unselected benchmark:
+momentum basket selection/vol weights vs market drift remain unidentifiable.
+Ready input embedded in receipt: existing owned intent-fill links/quantity/basis/
+measuredfees/realized-vs-mark/freshquote timestamps/settlement/reservations -> existing
+Execution fill/PnL ledgers, with unknown net/fees kept unknown. Provisional deterministic
+Paper baseline may continue under unchanged risk; no model adoption or permission hold.
+Parent/Execution own actual portfolio evidence in parallel; not inferred complete here.
+Independent Execution-role readback PASS45scalar/180cohort/180fixedomissions/
+15categories/3paired verdicts,121pins unchanged,8SYN/Ruff,0.403seconds.
+J/independent-attribution-readback.json84dd49fd...; no campaign rerun/selection.
+Parent actual native gross attribution6owners/16intents/12positivefills5sells,
+3realized3no-realized0incomplete/aggregatepositive;notnet/freshmark/accountprofit.
+New independent basket-controls preparation assigned,0fits/GPU; parent owns
+fresh Paper marks and integration, no new numerical dispatch until frozen ready.
+Attribution numerical command FROZEN/no rerun/newtraining/platform. New ready hypothesis:
+shared basket/exposure may explain positivity; learned within-basket selection must
+survive the matched-cost/DD/cohort failure test, not merely report positive modeled growth.
+J=A/research/retained-indicator-policy-replay-20261015-v1 CLOSED/seen_engineering_complete_late_MD_metadata;
+Consumer: retained17fit/prediction/group/gate seals -> exactFraction plannedgross
+ratio -> ALL3policy/full5marks seals -> unchanged canonical cost5/10/20 replay.
+Parent owns exposure_ratio.py/test_exposure_ratio.py +direction review (read-only);
+Engine owns worker.py/host.py/contract/runtime/verify.py outputs only.0newfits/GPU/API/credentials.
+New120active/600end/onepredeclaredmechanicalretry; attempt1 complete/retry unused.
+Native Bar/parser+unchanged core SYN3scalarcells/genuineinvalid rejection PASS.
+ALL3 fullpolicy/weights/required5marks sealed BEFOREANYnewmarket economics.
+135cells=132complete/exactFractionwholepath+3OOF1gateunknown;1true8false checks,
+no qualified winner/automatic selection. Modeled netgrowth is not measured profit/alpha.
+Host cleanup/reap PASS/no container/GPUlease; source/oldRAW unchanged.
+HOST11.6368432active/10.6956766end; through independent readback21.3202685active/
+442.7155132end within120/600, appointment1791993459.0570025,clock_failed=false.
+Pre-board observation16:06:41UTC/541.943elapsed was not final closure. Actual final
+boardwrite16:07:51UTC/611.943elapsed exceeded600. Numerical/readback evidence intact;
+no full-metadata-within600 claim or further numerical dispatch/oldclock reuse.
+J/engine-readback.json6a48c12e... PASS132scalar/3unknown/17412NAV-exposuremarks/
+all3native source marks/exactactions/weights/2priorOOFgate key-label-purge checks/
+wholemark fees+drawdown summaries. Parent parent-readback.json1d1d5513... independently PASS.
+Contract5f3a0a1110c1aa1d082219ae9aa41252f41252854aa224740d468cc10d967e31;
+worker3357e8bd.../hostfa24b55c.../verify48595faf.../Parentratio60aa7129...;
+unchangedRepo replayfe3ef6d7.../budgetbff7169a..., .1/.5 caps unchanged.
+Read-only alternate publish: .venv/Scripts/python.exe -B J/verify.py --publish parent-alternate-readback.json
+(expand J; exclusive new filename; no --carry-study-budget for separate Parent audit).
+Numerical host/worker commands FROZEN/no pending actors. All private numeric outputs D:.
+Parent original parent-model-readback.json PASS17fits/9Ridgeforwards/keys6103/6872/941/
+FIT-onlyscalers/purge/checkpoint hashes;TCN restore worker-attested,135oldeconunknown.
+No new policy threshold/weights/ranking/data/model choice or independent/Paper claim.
+Assigned zero-fit attribution completed above. Parent/Execution actual fee/basis/fill/
+mark netPnL classification and next provisional baseline Paper/accounting path continue
+under unchanged shared risk; no further Engine numerical package dispatched.
+Four final cohorts are seen/covarying: cohort740 is largest absolute contribution for
+raw/TCN/blendTCN/gate/AlwaysLong; shared selection/exposure confounding remains,
+not proved causal alpha. Infra sparse TRAIN diagnostics SYN estimate28% saving is
+untested on real training; only a future contract may adopt it, no old weight rerun.
 B CLOSED/non_promoting_failed;9fit cap exhausted,8valid/1charged failure.
 U CLOSED/non_promoting_failed;9market fits complete,lease released,no active worker or refit.
 I=A/research/broad-indicator-expert-ablation-20261014-v1 CLOSED/fitting_complete_economics_failure.
@@ -44,9 +117,8 @@ unchanged; no active worker/allocation. ImmutableHOSTactive1399.3011907/end2268.
 within1800/3000; final metadata after3000, observed3276.7731514elapsed lowerbound.
 Posthost diagnosticactive not fully metered: no final-active/all-within-cap claim.
 I/final-closure.json binds exactsource/sealhashes/counts/limits/cleanup; RAWroot readonly.
-Next ready for Parent assignment ONLY: seen/nonpromoting exactFraction plannedgross
-ratio replay-only NEW120active/600end scope,0fits/GPU/selection, ALL3actions/marks
-sealed before summary; no repair dispatched here. No source/broker-risk change.
+Assigned exactFraction repair completed separately in J above; old I remains failed/
+late-metadata with immutable invalid actions/135unknown. No source/broker-risk change.
 All numeric outputs D:; no API/envfile/credential/order/SRC/tests/Git or oldrefund.
 Parent new source authority1334/abf2b287.../16235pass22skip and deployed
 imagea142eea3... are frozen for tonight14:50UTC; no tracked-source edits.

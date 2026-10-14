@@ -2,73 +2,69 @@
 
 ## Objective
 
-retained-indicator-policy-replay-v1: complete a deterministic cost-aware replay
-of the retained raw/indicator/combined/tree/TCN/OOF-gate outputs without refitting
-or changing the predeclared strategies. Correct only exact evaluation of the
-planned-gross control ratio, whose float dot/sum yielded1.0000000000000002.
-The canonical helper's .1/.5 sizing bounds and broker risk remain unchanged.
+owned-paper-marked-equity-v1: measure the current gross value of the existing
+owned Paper book using fresh owner-bound observations, separate realized from
+mark-only changes and missing fees/settlement, and leave the already-owned
+Oct15 23:50 KST current-data strategy ready on its exact recovered image.
+This advances attributable Paper results, not a new accounting/report platform.
 
-Workdir C:/Users/Public/Documents/thericher-v2. Market data D:/market_data;
-generated artifacts D:/thericher-v2/model-artifacts. Never read/route KIS_LIVE_*.
+Workdir C:/Users/Public/Documents/thericher-v2. Data D:/market_data;
+models/generated research D:/thericher-v2/model-artifacts. Never KIS_LIVE_*.
 
-## Owned Work
+## Ready Work
 
-- Engine: CPU-only replay root
-  D:/thericher-v2/model-artifacts/research/retained-indicator-policy-replay-20261015-v1.
-  Parent owns exposure_ratio.py/test_exposure_ratio.py; Engine owns the disjoint
-  new source/contract/worker/output/readback files. Freeze exact source/model/
-  prediction/gate/group/data hashes and reconstruction rules before dispatch.
-  Zero fits/GPU/broker/credentials/API/selection or model/data/seed/split changes.
-  Active120/end600 seconds and one predeclared mechanical retry inside unchanged
-  ceilings; old family clocks/failures/debits never reset or refunded.
-- Recompute ONLY matched-control ratios as exactFraction weighted-action sums
-  divided by exactFraction weight sums, then float. No clipping genuine invalid
-  input, changing the strategy threshold, weights, ticker ranking or gates.
-  Bind all three stages' full predictions/actions/weights/keys/all five marks
-  BEFORE any new economic summary. Preserve the original invalid OOF1 seal and
-  the absence of prior OOF2/final policy seals; this is seen engineering
-  continuation, not an untouched evaluation or rescue of a qualified winner.
-- Parent: independent source/key/scaler/gate-purge/cashflow checks, causal
-  availability limitations and exact result integration. Original study17fits
-  (14CPU/3CUDA),43epochs1045updates complete;135old economic cells unknown,
-  matched-ratio failure and late metadata closure preserved.
-- Infra: independent bounded invented-data TCN throughput probe under
-  D:/thericher-v2/model-artifacts/infra/tcn-throughput-20261015-v1.
-  One exclusive GPU lease, existing runtime, three frozen CPU/evaluation-layout
-  variants, active180/end600; no market targets or retained model weights.
-  This improves the measured316/438/566-second TCN fits, not GPU-utilization KPI.
-- Execution: Oct14 natural14:50UTC current-data cycle ACTUAL complete/no target
-  delta,0orders/fills; exact source/hash/privateRO readback passed. SAME next
-  Oct15 14:50UTC/23:50KST task/imagea142eea3.../original shared initial tenth and
-  native identities remain. No manual task, replacement intent or budget reset.
-  Scheduled Data owners continue; external waits never hold the foreground.
+- Parent/Execution: use existing native selective Paper loader, virtual-only
+  client, common token gate/pacer, strict original owner/basis parsers and pure
+  PnL/mark helpers. One bounded read-only current observation, no order/cancel
+  or scheduler mutation for accounting. Match supplied book account/custody,
+  do not adopt broker-wide holdings or reset the initial shared virtual tenth.
+  Prefer existing retained fresh observations; otherwise acquire only the
+  required Paper account/quote scope. Reuse one token, bound requests/time,
+  retain source-safe status/count/evidence and private normalized inputs only
+  in the named private data/accounting path. Never log credentials/IDs/prices/
+  amounts/raw bodies. State sequential/non-atomic and timestamp limitations.
+- Attribute gross realized, retained entry basis and fresh mark-only gross
+  changes independently. Missing quote/source/time/owner binding makes only
+  that valuation unknown. Missing measured fees/settlement keeps net unknown;
+  never substitute an assumed fee or provisional orderable-funds balance.
+- Preserve nightly task thericher-kis-paper-daily-spy-session, nextOct15
+  14:50UTC/23:50KST, imagea142eea3.../bootstrap44865727... and exact native
+  unknown-request recovery. No manual task run or substitute intent. Source
+  changes require verified source-exact redeployment, not bypassed guards.
+- Engine independent preparation: new zero-fit fixed basket-selection controls
+  under D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1.
+  Freeze causal eligibility, same-entry/five-session aligned marks and finite
+  equal/inverse-vol/representative controls before outcomes. Compare selected
+  versus representative exposure, costs and drawdown;0fits/GPU. Seen512/800
+  current-listing/nonPIT/source-unit/fidelity limits remain explicit. Do not
+  relabel old study/debits or promote a winner. Parent dispatches the frozen
+  ready package after native synthetic numerical API and caps checks.
 
 ## Completion Evidence
 
-- Exact ratio synthetic tests cover all-long floating vectors, mixed/zero
-  exposure and genuine invalid input without clipping.
-- All predeclared135 cells are narrowly complete or explicitly unknown, using
-  OPEN(entry)->CLOSE(entry+4), fixed original-capital reference10bps quantities,
-  actual per-side5/10/20bps once. Held missing input affects only that exact cell.
-- Frozen predictions/source/weights and same-key policy lineage remain unchanged
-  except the stated numerical representation correction. Validate independent
-  scalar cashflow, cleanup, counts and both clocks; no outcome-driven reranking.
-- Compare raw/indicator/combined/expert/blend/gate controls honestly on this seen
-  scope; no alpha/untouched/independent/Paper-strategy qualification. Source
-  current-listing/non-PIT/raw-action/units/fidelity/finality/latency/capacity
-  limitations persist. Paper fees/settled cash/net PnL remain unobserved.
-- Throughput probe reports measured timing/precision/cleanup or scoped failure,
-  never synthetic training as a market-model outcome.
+- Exact supplied original scope validated against actual retained states and
+  fresh observations; independent cash/basis/mark conservation checks.
+  Categorize complete/incomplete, gross realized and mark-only signs/counts,
+  fees/settlement/net individually. No broker equity or profitability inference.
+- Existing owned nightly image/task remains source-exact/quiet/ready and no
+  competing actor. Installation/task exit/no-target-delta is not a new fill.
+- One concrete next money-learning action follows actual evidence. Ready
+  research continues while external sessions/cooldowns belong to their owner.
+  Do not wait for basket research, fees or model profitability to allow Paper.
+
+Previous goal CLOSED: native read-only6owners16intents12positivefills5sells,
+3gross-realized/3no-realized/0incomplete;aggregate gross sign positive, notnet.
+D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
+Zero-fit model attribution found no policy beating AlwaysLong ALLcosts and
+paired combined/TCN/blendTCN utility failure; selection versus market drift
+unidentified. No automatic model adoption, old135unknown/132new seen cells kept.
 
 ## Verification And Continuation
 
-Unchanged source1334/abf2b287... reattaches full16235pass22skip authority:
+Exact unchanged source1334/abf2b287... may reuse full16235pass22skip authority:
 D:/thericher-v2/model-artifacts/verification/research-runner-recovery-20261014-v3/authority.json.
-Fresh focused/independent checks cover new external source/outputs. Tracked
-runtime/control changes require fresh full/changed-path/Ruff/three Compose and
-source-pinned redeployment, not stale authority or a disabled version check.
-
-Refresh boards/HANDOFF/RUNBOOK, verify/commit/push owned changes, replace this
-file with ONE next material company outcome and continue the long request.
-Stop only for reserved live/paid/unclear-rights/public/major-runtime or actual
-account-risk authority, never a routine technical fault or failed experiment.
+Fresh focused/independent checks cover new external code/outputs. Material
+tracked/runtime/recovery changes require fresh changed-path serial/full-clean
+parallel/Ruff/three sample-env Compose and actual deployment readback.
+Refresh current boards/HANDOFF/RUNBOOK, verify/commit/push, replace this file
+with ONE next company outcome and continue the active long request.

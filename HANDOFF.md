@@ -2,15 +2,39 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: retained-indicator-policy-replay-v1. Broad indicator study closed:
-17fits ALL complete(14CPU/3CUDA),43epochs1045updates, INNERselected4/2/1. Full
-economic screen failed only at IEEE planned-exposure ratio1.0000000000000002;
-native sizing caps .1/.5 valid, one matched_tcn row invalid. Original135cells
-unknown, invalid seal/failure/debits retained; no strategy/threshold/cap change.
-New CPU-only engineering replay uses exactFraction definition of SAMEratio,
-0fits/GPU/selection; all3full policies/marks sealed before new summary, seen
-scope not independent performance. Parent ratio8SYN/Ruff passed. Parallel
-invented-data TCN throughput probe has one separate GPU lease, no market fits.
+ONE objective: owned-paper-marked-equity-v1. Existing owned gross attribution
+COMPLETE without credentials/API/private writes:6owners16terminal intents,
+12positive fills5sell fills,3gross-realized owners/3no-realized-fill owners,
+0incomplete/pending. Aggregate realized GROSS sign positive;2owners positive/
+1negative, exact baseline SPY flat/positive. Native custody/retained terminal
+proofs plus independent Fraction cash/basis identities checked network-none,
+privateRO, stable present bytes AND seed absences. Current marks unavailable
+for3held owners; fees/settled cash/net NOTobserved. This is not account net profit.
+D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
+Claude supported-with-limits;14mark-layer+6snapshot SYN/Ruff pass. Two earlier
+reader failures retained: persistent released lock file was wrongly treated as
+active owner; existing states use read_unlocked/stable hashes, seed fallback
+still requires absence. No private lock/basis/order changes.
+
+Broad indicator17fits COMPLETE(14CPU/3CUDA),43epochs1045updates. Original135
+economic cells remain unknown from IEEE planned-exposure ratio1ULP; native
+.1/.5 caps valid. New exactFraction same-ratio engineering replay independently
+verified132cells/17412NAV-exposure marks,3OOF1gate cases unavailable,0newfits/GPU.
+Numeric/readback within120active600end; final MD closure611.943 exceeded600,
+explicitly retained, no all-publication-within-cap claim. Old raw/source/debits
+unchanged. Seen replay final10bps raw+1.741%,gate+1.727%,AlwaysLong+1.933%;
+no qualified selection or broker-profit claim. Zero-fit attribution45scalar/
+12exact decomposition identities shows no policy beats AlwaysLong across all
+costs; combined/TCN/blendTCN fail matched-control utility. Cohort740 largest
+for most, not sole growth driver. Basket selection versus market drift unknown.
+D:/thericher-v2/model-artifacts/research/retained-indicator-policy-replay-20261015-v1/attribution-receipt.json
+Independent attribution readback84dd49fd... verifies121pins/45scalar/180cohort/
+180fixed omissions/15categories/3paired verdicts,8SYN/Ruff,0newfit/GPU.
+D:/thericher-v2/model-artifacts/research/retained-indicator-policy-replay-20261015-v1/independent-attribution-readback.json
+Invented GPU TCN throughput probe complete/lease released:moreCPU/chunking did
+not demonstrate speedup; future predeclared sparse TRAIN curves may reduce
+diagnostic work, INNER remains every epoch. No dummy GPU work or market fits.
+D:/thericher-v2/model-artifacts/infra/tcn-throughput-20261015-v1/final-readback.json
 Canonical loop/redeployment
 objective CLOSED with actual one CPU fit/14keys/9cost cells and independent
 saved-output scalar/Data/scaler/purge/checkpoint validation; ZERO historically
@@ -21,8 +45,9 @@ integration, NOT completed market fits. Helpers frozen after restart-clock,
 cleanup and exit-check repairs;45focused/224changed-path pass, independent
 review no remainingP1/P2. Fresh clean8 verification PASSED16235/22skip,
 372.22s/helperexit0,source1334/abf2b287...; v2 changed source during review and
-is NOT authority. Ruff/three Compose pass. Next12-indicator/raw/combined/tree/
-TCN/fusion campaign assigned outside tracked source, no old-study replay/refund.
+is NOT authority. Ruff/three Compose pass. Completed12-indicator/raw/combined/
+tree/TCN/fusion campaign lives outside tracked source, no original-study rerun/
+refund. New ready basket-controls research is not a Paper permission gate.
 Prior reusable Paper
 runtime goal completed under its literal criterion: actual current-window
 native cycle plus source-pinned reusable installation/recovery/next invocation.

@@ -1,10 +1,23 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-## Current Projection (2026-10-14 KST)
+## Current Projection (2026-10-15 KST)
 
-Current company direction canonical-five-session-research-loop-v1; recovery
-has ACTUAL linked-fill/closure evidence below. Parent owns Goal/HANDOFF/Git
-and canonical repeatable portfolio wiring. Current sidecar write-set: this MD only.
+Current company direction owned-paper-marked-equity-v1. Parent owns broker
+dispatch/shared integration/Git. Gross accounting package COMPLETE:
+D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
+Exact native whole-scope6owners16terminal intents/12positivefills5sells,
+3gross-realized owners/3no-realized-fill owners/0incomplete-pending. Gross
+aggregate sign positive;2positive/1negative realized owners; baselineSPY flat/
+positive. Three flat owners need no mark;3held owners mark_missing. No current
+broker equity/fee/settlement/net claim. Network-none/privateRO/no credentials/
+sideeffects/writes; originaltenth, own history and losses retained. Independent
+Fraction owner cash/basis identity and stable bytes+absences PASS.14mark SYN+
+6snapshot SYN/Ruff; Claude supported-with-limits. Earlier false active-owner
+classification fixed only in reader: released lock files may persist, not an
+active writer; missing-state seed requires absent lock, no lock deletion.
+Next: fresh owner/book-bound marks under standing Paper readonly authority,
+no order for accounting, no inventory adoption or basis reset. Source-only
+readiness helper remains external, not assumed production deployment.
 Preview-container-v1 source is FROZEN after Parent's actual preview; no edits
 to source/helper/image/old contexts or Parent's canonical-control extraction.
 No sidecar broker call, task/observer mutation, private write or Git operation.

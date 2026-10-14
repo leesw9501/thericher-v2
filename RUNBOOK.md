@@ -2,10 +2,33 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective retained-indicator-policy-replay-v1. Original indicator17fits
-complete; economic135cells unknown due float planned-ratio1.0000000000000002.
-No old creators/refits/threshold changes; new CPU-only exactFraction replay
-under same frozen policy definitions, fully sealed3stages before new outcomes.
+ONE objective owned-paper-marked-equity-v1. Previous owned gross attribution
+complete:6owners16intents12positivefills5sells,3gross-realized/3no-realized,
+0incomplete/pending; aggregate gross sign positive, NOTnet/account profit.
+Original shared tenth unchanged. Fresh owned marks/valuation plus explicit
+fee/settlement gaps are next; no new order merely for accounting.
+Safe exact offline receipt and command:
+D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
+read_owned_gross.py is network-none/privateRO with native current-cycle/custody/
+terminal validation and independent Fraction cash/basis checks. Source-pinned
+host_readback.py creator is FROZEN (exclusive readback.json); do not rerun that
+creator. For later inspection use a separately named readback, never observe()
+or a broker strategy worker. Existing state lock files may persist after release;
+their presence alone is not a running owner. Missing-state seeds still require
+absent lock and stable absence; never erase/reclaim private locks or reservations.
+
+Original indicator17fits/135unknown costs remain immutable. New CPU-only
+exactFraction replay verified132cells/17412NAV/exposure marks,3OOF1gateunknown,
+0fits/GPU. Numeric/readback withincaps, finalMD611.943>600 retained. Zero-fit
+attribution finished2.2003active/0.2003end under60/300,45scalar/12decomposition
+identities: no policy beats AlwaysLong ALLcosts; paired combined/TCN/blendTCN
+utility fails. Final4cohorts are seen/correlated; no automatic model adoption.
+D:/thericher-v2/model-artifacts/research/retained-indicator-policy-replay-20261015-v1/attribution-receipt.json
+Source creators/fits/predictions/olddebits frozen. New representative basket
+controls prepared separately without fitting/GPU, not old holdout reopening.
+TCN SYN throughput complete: increasedCPU/chunking not proven faster. Future
+predeclare sparse TRAIN diagnostics while INNER everyepoch; no old-source edit.
+D:/thericher-v2/model-artifacts/infra/tcn-throughput-20261015-v1/final-readback.json
 Canonical loop/redeployment
 completed numerically: CPU1fit14keys9cost cells, Parent independent replay;
 historical executable keys0. Late metadata closure600s breach retained, not a
