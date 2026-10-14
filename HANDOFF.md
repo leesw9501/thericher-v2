@@ -2,8 +2,26 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: relative-return-risk-ranking-v1 (new campaign preparation,
-market fitting not yet dispatched). Previous basket-controls COMPLETE:
+ONE objective: relative-return-risk-ranking-v1, ACTUAL study running after
+Parent reviewed frozen fc018cea.../Claude supported-with-limits.15fit cap:
+6CPU Ridge raw20/indicator and9CUDA MLP20/TCN20/TCN60 across3stages. Prior61
+common input+12indicators, relative5session target/FITsigma normalization,
+INNER-only checkpoint/earlystop/LR,128maxepochs/480sperCUDA.5400active10800end,
+30.0066actualCUDA preparation carried, oneGPUlease.17:53UTC ledger4complete
+(2Ridge+MLP14epochs196updates+TCN20 19epochs266updates), TCN60 running. This is
+progress, not completed/passed or convergence. Named actor39b13d5f... running;
+GPU measured33%/2398MiB at17:44. No network/credential/broker access; nightly
+Paper source unchanged. Updated exact status belongs to Engine's ledger.
+D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/study/output/fit-ledger.json
+KIS documented VTS current-balance capability ACTUAL success17:45:30UTC,
+1token1GET0orders/privatebookwrites; complete singlepage output1=3/output2=5/
+output3=1,oneUSDrow. Cash/withdrawable/unsettled fields have numeric shape,
+NOT settledcash/fee/all-in-net evidence. Original account/book/tenth stable,
+exact readercontainer absent.12pure+11fake-wire SYN/Ruff/Claude pass; production
+allowlist unchanged, named fixed readonly boundary only, no raw values retained.
+D:/thericher-v2/model-artifacts/execution/kis-paper-current-balance-capability-20261015-v1/runs/7b83a32a8ee942ddb6e3635b4d9d0a7a/outcome.json
+
+Previous basket-controls COMPLETE:
 3policies/70entries27cost cells ALLcomplete,0unknown,0of6 net/no-worseDD
 checks pass. Some selected baskets improve growth but carry more drawdown;
 this falsifies the declared joint superiority, not all stock selection.

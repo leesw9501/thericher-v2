@@ -2,8 +2,21 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective relative-return-risk-ranking-v1. Engine new source/target/finite
-CPU-CUDA preparation, no marketfits dispatched yet. Closed controls27complete
+ONE objective relative-return-risk-ranking-v1. Engine ACTUAL source-exact
+network-none GPU study running,15fitcap6CPU9CUDA/5400active10800end;PREP30.0066
+active carried. Contractfc018cea.../oneGPUlease.17:53 ledger4complete/1running,
+not final outcome. No human or profitability permission hold, Paper unrelated.
+Do not rerun host.py freeze/prepare/dispatch creators or alter frozen source.
+Live progress only:
+D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/study/output/fit-ledger.json
+Current-balance runtime probe COMPLETE17:45:30UTC:1token1GET0orders,
+source-exactimagea142/readonlybook unchanged/actorabsent. Complete page,9rows/
+oneUSDrow, numeric cash/unsettled field shapes; no settledcash/fee/net claim.
+12request-shape+11fake-wire SYN/Ruff/Claude supported-with-limits. No raw
+body/amount retention or production allowlist changes. Do not replay the actual
+probe to read old evidence; inspect its source-safe exact receipt instead.
+D:/thericher-v2/model-artifacts/execution/kis-paper-current-balance-capability-20261015-v1/runs/7b83a32a8ee942ddb6e3635b4d9d0a7a/outcome.json
+Closed controls27complete
 cells/0unknown,0of6joint net/no-worseDD checks;selected growth gains accompanied
 by higher drawdown, not a claim of no profits/all-model futility. Host18.5568
 active/14.1103end under120/600,olddebits/source unchanged,childreaped.

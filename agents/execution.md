@@ -30,6 +30,16 @@ actual provider/private access. Native gross remains valid; current-balance
 cash/unsettled labels do not establish settledcash. Other fee-related samples
 have unknown VTS support, not proved impossible or zero. Never invent TRIDs.
 D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
+Parent documentedVTS current-balance probe ACTUAL provider_success17:45:30UTC:
+1token1GET0orders, complete9structuredrows/output1=3,output2=5,output3=1/oneUSD.
+Numeric cash/withdrawable/unsettled field shapes, not settledcash/fees/net.
+Exactoriginal account/book/tenth validated/privateRO/stable bytes+absences,
+actorabsent.12pure+11fake-wire SYN/Ruff/Claude supported-with-limits; production
+allowlist unchanged, one named readonly boundary/final exact request checks.
+No credentials/rawvalues/IDs/body in output/artifacts. No new token/schedule/
+order/budget policy; same nightly Paper ready23:50. Current research studying
+relative-risk target/20-60 inputs is independent and not a qualified adoption.
+D:/thericher-v2/model-artifacts/execution/kis-paper-current-balance-capability-20261015-v1/runs/7b83a32a8ee942ddb6e3635b4d9d0a7a/outcome.json
 Preview-container-v1 source is FROZEN after Parent's actual preview; no edits
 to source/helper/image/old contexts or Parent's canonical-control extraction.
 No sidecar broker call, task/observer mutation, private write or Git operation.
