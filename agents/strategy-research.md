@@ -1,6 +1,6 @@
 # Strategy Research Stateboard
 
-Current projection 2026-10-14 14:12UTC; bounded indicator-ablation sidecar.
+Current projection 2026-10-15 KST; completed indicator/capability contributions.
 Activated 2026-10-13 for feature/model research and trade-policy composition.
 AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns the company outcome.
 
@@ -15,7 +15,23 @@ The MD survives; a subagent is a bounded executor, not a permanent LLM daemon.
 
 ## Current Work
 
-HANDOFF-READY / SYNTHETIC ONLY / CAMPAIGN NOT FROZEN / CONSUMPTION UNOBSERVED.
+COMPLETED source readiness. Indicator proposal was consumed by the17fit study:
+14CPU3CUDA/43epochs1045updates, subsequent132seen cost cells independently
+verified. No policy beats AlwaysLong across all costs; this is not feature-wide
+futility or a qualified winner. Engine owns those fitted interpretations.
+
+Official KIS fee/settlement capability source-only sidecar CLOSED, exact
+revision2077773a69a428daf63e148182511f068cc45de3,9documents/62checks. VTS
+current-balance VTRP6504R documented; fields separate deposits/withdrawable/
+usable/unsettled amounts but do not prove settledcash. Commission/settlement
+samples name relevant fields, yet their VTS support/tax completeness remain
+unknown. No code intake/API/credentials/private input; no new accounting gate.
+D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
+Consumer: existing native ownedPnL/fill_accounting; preserve gross/mark evidence
+and unknownnet, never prefix-substitute real TRIDs or double-count currency/
+summary/detail fees. Any later runtime probe belongs to Parent/Execution.
+
+Prior indicator-readiness scope:
 Consumer: Engine's next same-key raw/indicator/combined rule/ML/DL campaign AFTER
 canonical five-session cost loop. Loop: qualified OHLCV -> distinct inputs ->
 same-key predictions/actions -> shared cost-aware replay. Parent's Oct14

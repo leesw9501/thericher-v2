@@ -2,7 +2,28 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: causal-basket-selection-controls-v1. Fresh owned Paper valuation
+ONE objective: relative-return-risk-ranking-v1 (new campaign preparation,
+market fitting not yet dispatched). Previous basket-controls COMPLETE:
+3policies/70entries27cost cells ALLcomplete,0unknown,0of6 net/no-worseDD
+checks pass. Some selected baskets improve growth but carry more drawdown;
+this falsifies the declared joint superiority, not all stock selection.
+18.5568active/14.1103elapsed under120/600 including2.4464prep carry, attempt1
+only,childreaped/no remaining actor/0fitsGPU,oldsource/debits unchanged.
+Independent Parent source/intake/70causal eligibility/original weights/
+27scalarfees/3582NAV-exposure pairs/6verdicts PASS12.8409seconds/Ruff.
+D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/parent-readback-r2.json
+Official KIS source capability review complete:VTS balance/fill/current-balance
+routes documented; current-balance cash/unsettled fields are not settled cash.
+Separate commission/settlement endpoints have no demonstrated VTS support in
+reviewed examples. Do not invent prefixed TRIDs or infer zero fees. Source-only
+62checks/revision2077773a...;no actual new broker probe or code intake.
+D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
+New Engine prep uses a separate relative-return/risk target, finite raw/indicator
+and20/60window comparisons, existingML/PyTorch, native optimizer/checkpoint SYN
+before fitting. One measured GPU allocation only once frozen/ready, no old
+retraining/refund or silent ETF-versus-stock inference compatibility claim.
+
+Fresh owned Paper valuation
 COMPLETE Oct14 16:42UTC:1token11GET/0orders,3broker held instruments match
 retained owned quantities,0other holdings/open orders. Realized gross positive;
 unrealized and TOTAL marked gross negative. Fees/settled cash/net unknown.
@@ -14,11 +35,10 @@ native and independent Fraction sell-buy+mark/equity-minus-basis identity;
 10SYN/Ruff/Claude supported-with-limits. No trade/schedule/image/budget changes.
 D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/runs/388f34a428e24d3aa4db2af64669776e/outcome.json
 D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
-Next finite research controls PREP ready:3policies/70entries27cost cells,
-0fits/GPU/120active600end,2.4464preparation carried;contract2f87975e...,
-9native invented scalar checks. Parent direction review supported-with-limits.
+Previous controls9native invented scalar checks and Parent direction review
+supported-with-limits preceded the actual completed run above. Creator frozen.
 D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/ready.json
-Strategy source-only official fee/settlement/VTS capability sidecar active;
+Strategy source-only official fee/settlement/VTS capability sidecar closed;
 no API/private-account access. Current gross observation does not qualify
 the research model. Existing owned gross attribution
 COMPLETE without credentials/API/private writes:6owners16terminal intents,

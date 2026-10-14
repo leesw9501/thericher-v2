@@ -2,7 +2,20 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective causal-basket-selection-controls-v1. Fresh owned mark valuation
+ONE objective relative-return-risk-ranking-v1. Engine new source/target/finite
+CPU-CUDA preparation, no marketfits dispatched yet. Closed controls27complete
+cells/0unknown,0of6joint net/no-worseDD checks;selected growth gains accompanied
+by higher drawdown, not a claim of no profits/all-model futility. Host18.5568
+active/14.1103end under120/600,olddebits/source unchanged,childreaped.
+Independent Parent70causal support/27scalar/3582wholeNAV-exposure pairs/6verdict
+readback PASS12.8409s/Ruff,0fitGPU/broker calls.
+D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/parent-readback-r2.json
+Official fee/cash metadata source revision2077773a.../62checks complete. Only
+documented VTS current-balance path is a candidate; sample labels do not prove
+settled cash/measured all-in fees. Never manufacture VTTS3039R or other prefix
+substitutions, change hosts or read live fields. Existing Paper remains permitted.
+D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
+Fresh owned mark valuation
 completed16:42UTC with1token11GET/0orders:3holdings match owned quantity,
 0other holdings/openorders;realizedgross positive/unrealized+totalgross negative,
 NOTnet/account profit. Originalbook/privateRO/source unchanged/actor absent.
@@ -14,7 +27,7 @@ worker; normalized quote pointer belongs to that exact receipt, never latest
 cache discovery. Originalquote timestamp/quantity scope stays historical.
 No account amounts/raw bodies retained; normalized private market bytes D:.
 
-Current ready Engine command (Parent dispatch only, once):
+Historical completed Engine command, FROZEN/DO NOT rerun:
 & 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -B 'D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/campaign.py' dispatch
 Contract2f87975e.../3fixedcontrols/70sameentries27cells/0fitsGPU/120active600end,
 2.4464preparation carried,one OSError retry pre-economics only. All-policy and
@@ -23,8 +36,8 @@ Seen current-listing/nonPIT/source-unit limits, not qualified model/Paperinput.
 Previous owned gross attribution
 complete:6owners16intents12positivefills5sells,3gross-realized/3no-realized,
 0incomplete/pending; aggregate gross sign positive, NOTnet/account profit.
-Original shared tenth unchanged. Fresh owned marks/valuation plus explicit
-fee/settlement gaps are next; no new order merely for accounting.
+Original shared tenth unchanged. Later fresh marks/valuation completed above;
+fee/settlement gaps remain, no new order merely for accounting.
 Safe exact offline receipt and command:
 D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
 read_owned_gross.py is network-none/privateRO with native current-cycle/custody/

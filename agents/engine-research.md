@@ -1,7 +1,7 @@
 # Engine Research Stateboard
 
 Current 2026-10-15 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
-causal-basket-selection-controls-v1. Paper authority is research-independent.
+relative-return-risk-ranking-v1. Paper authority is research-independent.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,7 +17,7 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and external research are worker writes.
-Supplementary S=A/research/daily5-basket-selection-controls-20261015-v1 READY/PREP_ONLY;
+S=A/research/daily5-basket-selection-controls-20261015-v1 CLOSED/complete_seen_controls_nonpromoting_failed;
 consumer: original causal basket membership vs weighting vs supported512 market drift.
 3fixed policies: ALL own prior35/price+volume eligible equal; frozen original positive-
 weight selected names equal (<=10, causal veto retained); exact original inversevol.
@@ -31,13 +31,31 @@ SYN9 realnative replay/scalar checks PASS, own35missing/heldmissing/zeroheld/nat
 sourcec7ab17e3.../contract2f87975e794f8435eb7aea024f3e08b7e393a44c99fb9f86e75f0be5835749f9,
 SYNfc9dd557.../ready93e23ea9..., RuffF/E9 PASS. Closed engineeringPREPACTIVE2.4464493/
 end.4464772 (60/300),0marketcells/fits/GPU; active debit carried, not refunded.
-Market appointment NOT started:120active/600end,1plannedattempt+1predeclared OSError
-retry beforeANYeconomics, same source/keys/policies/caps/debits. One bounded hidden CPU
-child/reap at dispatch, no current actor/lease. Single command ONLY after Parent dispatch:
-.venv/Scripts/python.exe -B S/campaign.py dispatch (expand S; not run here).
+Parent dispatched exact frozen command, source/contract unchanged. Attempt1 COMPLETE,
+0retry/0fits/GPU/broker calls; all3causal policy/full5mark seals BEFOREANYmarket economics.
+27complete/0unknown, checks0true/6false/0unknown: frozen selected equal AND original
+inversevol fail ALLcost net/no-worseDD representative advantage on each retainedstage.
+Missing broad held marks were NOT filtered/imputed; none made this run unavailable.
+Source-native/currentlisting/seen limits remain; not market-wide alpha or real profit.
+ExactHOSTACTIVE18.556751699994493/120,end14.110338687896729/600,
+appointment1791996711.8727214,clock_failed=false; includes PREP2.4464493carry+
+2s conservative startup/publication debit. Worker overlap18.1630956/14.0400844
+is NOT additive spend; no oldrefund. Quiet hardtimeout unused/exact child reaped,
+workerexit0/sourceunchanged/no container/GPUlease/no remaining actor.
+host-dispatch.jsone098d434.../dispatch-receipt.json58693f36.../
+ALL-stages-sealed.jsond72fd857.../result.safe.json47e8fe93.../
+result.private.json1a4da14f...; Parentdirection36532295... supported-with-limits.
+Parent independent final reader70causal masks/original weights/27scalar/
+3582NAV-exposure pairs/6verdicts PASS12.8409s,reader ef31247a.../Ruff.
+S/parent-readback-r2.json; no new fit/GPU/selection. New relative-return/risk
+campaign preparation assigned separately; fitting not dispatched, no GPU
+allocation inferred. Parent owns official fee-source/cash metadata integration.
+Numerical command FROZEN: .venv/Scripts/python.exe -B S/campaign.py dispatch was run
+once, NEVER rerun this creator. Parent owns independent numerical readback and official
+fee capability integration; no Engine extra checks/new fits/source/Git/broker actions.
 No broker/env/API/SRC/Git writes. Seen/currentlisting/delist/fidelity/sourceunits/
-nominalavailability limits remain. Independent money-learning supplement, NOT current
-marked-equity goal prerequisite, tonight strategy readiness, or Paper permission gate.
+nominalavailability limits remain. Independent money-learning supplement, NOT a marked-
+equity/strategy readiness prerequisite or Paper permission gate. Private numbers stay D:.
 Current assigned Engine contribution CLOSED/seen_zero_fit_attribution under existing
 J root only: attribution.py/attribution-contract.json/attribution.private.json/
 attribution-receipt.json. Consumer: Parent/Execution owned Paper profit classification.

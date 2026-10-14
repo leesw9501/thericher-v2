@@ -2,7 +2,7 @@
 
 ## Current Projection (2026-10-15 KST)
 
-Current company direction causal-basket-selection-controls-v1. Parent owns broker
+Current company direction relative-return-risk-ranking-v1. Parent owns broker
 dispatch/shared integration/Git. Gross accounting package COMPLETE:
 D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
 Exact native whole-scope6owners16terminal intents/12positivefills5sells,
@@ -25,7 +25,11 @@ D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/
 D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
 No new broker/schedule work needed for current independent basket diagnostic;
 same nightly14:50UTCOct15/23:50KST Ready, source/image frozen. Fee/settlement
-official source capability sidecar has no actual provider/private access.
+official source capability completed revision2077773a.../62source checks, no
+actual provider/private access. Native gross remains valid; current-balance
+cash/unsettled labels do not establish settledcash. Other fee-related samples
+have unknown VTS support, not proved impossible or zero. Never invent TRIDs.
+D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
 Preview-container-v1 source is FROZEN after Parent's actual preview; no edits
 to source/helper/image/old contexts or Parent's canonical-control extraction.
 No sidecar broker call, task/observer mutation, private write or Git operation.

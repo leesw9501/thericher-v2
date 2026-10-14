@@ -1,7 +1,7 @@
 # Research Steward Stateboard
 
 Current 2026-10-15 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
-causal-basket-selection-controls-v1. Custody is not model/Paper approval.
+relative-return-risk-ranking-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,17 +17,27 @@ Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
 Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
-Supplementary S=A/research/daily5-basket-selection-controls-20261015-v1 READY/PREP_ONLY;
-3causal fixed controls/3retainedstages/70sameentries/27costcells,0fits/GPU/marketreplay.
+S=A/research/daily5-basket-selection-controls-20261015-v1 CLOSED/complete_seen_controls_nonpromoting_failed;
+3causal fixed controls/3retainedstages/70sameentries/27completecostcells/0unknown,
+checks0true/6false/0unknown;0fits/GPU/broker calls. Source and frozen contract unchanged.
 NativeSYN9scalar/replay checks PASS +own35coverage/heldmissing/zeroheld/unchangedcaps,
 closedPREPACTIVE2.4464493/end.4464772, debit carried into future market allowance.
 Contract2f87975e.../sourcec7ab17e3.../SYNfc9dd557.../ready93e23ea9...;120active/600end,
 1plannedattempt+1predeclared same-source OSError retry beforeANYeconomics only.
-Market appointment NOT started/no worker/container/GPUlease; bounded CPU dispatch
-ONLY upon Parent assignment via S/campaign.py dispatch. No foreground wait/oldrefund.
+Parent actualdispatch attempt1 COMPLETE/retry unused; all3policies/full5marks sealed
+beforeANYmarket economics. ExactHOSTACTIVE18.556751699994493/end14.110338687896729,
+within120/600,appointment1791996711.8727214,clock_failed=false; PREPcarry2.4464493
+plus2s conservative startup/publication debit included. Worker clock overlap not added.
+Quiet hardtimeout unused/child reaped/workerexit0/sourceunchanged/no container/GPUlease
+or pending worker. Hoste098d434.../workercustody58693f36.../allseald72fd857.../
+safecounts47e8fe93...; Parentdirection36532295... supported-with-limits.
+No broad mark unavailable this run; missingness never an outcome membership filter.
+Frozen strongest-kill advantage tests all6false, nonpromoting/seen only, no qualified
+winner/real profit. Numerical creator FROZEN/no rerun/refund. Parent independent readback
+and officialfee integration are separate owners, no Engine source/tests/Git/broker work.
 ALL own causal35/price-volume support vs original selected equal vs unchanged inversevol,
 samegross/native .1/.5 caps, allseals before costs; no outcome membership filter/model
-selection/Paper gate. Current owned-paper-marked-equity goal proceeds independently.
+selection/Paper gate. Actual Paper authority proceeds independently of research results.
 Current Engine zero-fit contribution CLOSED/seen_attribution under existing J root;
 only new attribution.py/contract/private/receipt files, old132cells/models/seals unchanged.
 New60active/300end/1attempt/0retry, ACTIVE2.2002596/end0.2002831,
