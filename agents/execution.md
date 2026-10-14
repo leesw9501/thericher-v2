@@ -2,7 +2,7 @@
 
 ## Current Projection (2026-10-15 KST)
 
-Current company direction owned-paper-marked-equity-v1. Parent owns broker
+Current company direction causal-basket-selection-controls-v1. Parent owns broker
 dispatch/shared integration/Git. Gross accounting package COMPLETE:
 D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
 Exact native whole-scope6owners16terminal intents/12positivefills5sells,
@@ -15,9 +15,17 @@ Fraction owner cash/basis identity and stable bytes+absences PASS.14mark SYN+
 6snapshot SYN/Ruff; Claude supported-with-limits. Earlier false active-owner
 classification fixed only in reader: released lock files may persist, not an
 active writer; missing-state seed requires absent lock, no lock deletion.
-Next: fresh owner/book-bound marks under standing Paper readonly authority,
-no order for accounting, no inventory adoption or basis reset. Source-only
-readiness helper remains external, not assumed production deployment.
+Fresh owner/book-bound observation COMPLETE16:42UTC:1token11GET0order/cancel,
+3brokerheld quantities match/0otherholdings/openorders. Realizedgross positive,
+unrealized/totalmarkedgross negative;fees/settledcash/net unknown.3normalized
+market observations D:/market_data, no rawbodies/account values retained.
+Network-none exact normalizedquote/hash/originalbook replay PASS,10SYN/Ruff/
+Claude supported-with-limits,childabsent. No adoption/reset/capital change.
+D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/runs/388f34a428e24d3aa4db2af64669776e/outcome.json
+D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
+No new broker/schedule work needed for current independent basket diagnostic;
+same nightly14:50UTCOct15/23:50KST Ready, source/image frozen. Fee/settlement
+official source capability sidecar has no actual provider/private access.
 Preview-container-v1 source is FROZEN after Parent's actual preview; no edits
 to source/helper/image/old contexts or Parent's canonical-control extraction.
 No sidecar broker call, task/observer mutation, private write or Git operation.

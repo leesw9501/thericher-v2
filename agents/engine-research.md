@@ -1,7 +1,7 @@
 # Engine Research Stateboard
 
 Current 2026-10-15 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
-owned-paper-marked-equity-v1. Paper authority is research-independent.
+causal-basket-selection-controls-v1. Paper authority is research-independent.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,27 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and external research are worker writes.
+Supplementary S=A/research/daily5-basket-selection-controls-20261015-v1 READY/PREP_ONLY;
+consumer: original causal basket membership vs weighting vs supported512 market drift.
+3fixed policies: ALL own prior35/price+volume eligible equal; frozen original positive-
+weight selected names equal (<=10, causal veto retained); exact original inversevol.
+Same per-entry original gross/unchanged .1/.5 caps. ALL uses OWN structural coverage,
+not old indicator mask or future quote filtering. Native proxy5/5e6 not USD; no fill/drop.
+Same retained3stages/70entries/27costcells at5/10/20, prior-close -> entryOPEN/fifthCLOSE;
+ALLpolicy/required5mark seals before economics; missing representative marks =unknown.
+Strongest kill: selected/composite membership or original weights fail net superiority
+atALLcosts with no worseDD versus matched broad exposure; no qualified winner/selection.
+SYN9 realnative replay/scalar checks PASS, own35missing/heldmissing/zeroheld/nativecaps;
+sourcec7ab17e3.../contract2f87975e794f8435eb7aea024f3e08b7e393a44c99fb9f86e75f0be5835749f9,
+SYNfc9dd557.../ready93e23ea9..., RuffF/E9 PASS. Closed engineeringPREPACTIVE2.4464493/
+end.4464772 (60/300),0marketcells/fits/GPU; active debit carried, not refunded.
+Market appointment NOT started:120active/600end,1plannedattempt+1predeclared OSError
+retry beforeANYeconomics, same source/keys/policies/caps/debits. One bounded hidden CPU
+child/reap at dispatch, no current actor/lease. Single command ONLY after Parent dispatch:
+.venv/Scripts/python.exe -B S/campaign.py dispatch (expand S; not run here).
+No broker/env/API/SRC/Git writes. Seen/currentlisting/delist/fidelity/sourceunits/
+nominalavailability limits remain. Independent money-learning supplement, NOT current
+marked-equity goal prerequisite, tonight strategy readiness, or Paper permission gate.
 Current assigned Engine contribution CLOSED/seen_zero_fit_attribution under existing
 J root only: attribution.py/attribution-contract.json/attribution.private.json/
 attribution-receipt.json. Consumer: Parent/Execution owned Paper profit classification.

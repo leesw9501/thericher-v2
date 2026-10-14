@@ -2,7 +2,25 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective owned-paper-marked-equity-v1. Previous owned gross attribution
+ONE objective causal-basket-selection-controls-v1. Fresh owned mark valuation
+completed16:42UTC with1token11GET/0orders:3holdings match owned quantity,
+0other holdings/openorders;realizedgross positive/unrealized+totalgross negative,
+NOTnet/account profit. Originalbook/privateRO/source unchanged/actor absent.
+10network-noneSYN/Ruff and exact saved3quotes+originalbook scalar replay PASS.
+D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/runs/388f34a428e24d3aa4db2af64669776e/outcome.json
+D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
+Use exact scoped offline reader for old observation, not host.py or a strategy
+worker; normalized quote pointer belongs to that exact receipt, never latest
+cache discovery. Originalquote timestamp/quantity scope stays historical.
+No account amounts/raw bodies retained; normalized private market bytes D:.
+
+Current ready Engine command (Parent dispatch only, once):
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -B 'D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/campaign.py' dispatch
+Contract2f87975e.../3fixedcontrols/70sameentries27cells/0fitsGPU/120active600end,
+2.4464preparation carried,one OSError retry pre-economics only. All-policy and
+all5marks seals precede new outcomes; no outcome filtering or native cap change.
+Seen current-listing/nonPIT/source-unit limits, not qualified model/Paperinput.
+Previous owned gross attribution
 complete:6owners16intents12positivefills5sells,3gross-realized/3no-realized,
 0incomplete/pending; aggregate gross sign positive, NOTnet/account profit.
 Original shared tenth unchanged. Fresh owned marks/valuation plus explicit

@@ -2,14 +2,33 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: owned-paper-marked-equity-v1. Existing owned gross attribution
+ONE objective: causal-basket-selection-controls-v1. Fresh owned Paper valuation
+COMPLETE Oct14 16:42UTC:1token11GET/0orders,3broker held instruments match
+retained owned quantities,0other holdings/open orders. Realized gross positive;
+unrealized and TOTAL marked gross negative. Fees/settled cash/net unknown.
+Sequential observations/native Korea-interpreted quote timestamps, not atomic
+broker equity or independent origin.3normalized private quotes on D:/market_data,
+no raw bodies/account amounts retained. Original sharedbook stable/privateRO,
+exact actor absent. Network-none replay of exact quote SHA/book scope verifies
+native and independent Fraction sell-buy+mark/equity-minus-basis identity;
+10SYN/Ruff/Claude supported-with-limits. No trade/schedule/image/budget changes.
+D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/runs/388f34a428e24d3aa4db2af64669776e/outcome.json
+D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
+Next finite research controls PREP ready:3policies/70entries27cost cells,
+0fits/GPU/120active600end,2.4464preparation carried;contract2f87975e...,
+9native invented scalar checks. Parent direction review supported-with-limits.
+D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/ready.json
+Strategy source-only official fee/settlement/VTS capability sidecar active;
+no API/private-account access. Current gross observation does not qualify
+the research model. Existing owned gross attribution
 COMPLETE without credentials/API/private writes:6owners16terminal intents,
 12positive fills5sell fills,3gross-realized owners/3no-realized-fill owners,
 0incomplete/pending. Aggregate realized GROSS sign positive;2owners positive/
 1negative, exact baseline SPY flat/positive. Native custody/retained terminal
 proofs plus independent Fraction cash/basis identities checked network-none,
-privateRO, stable present bytes AND seed absences. Current marks unavailable
-for3held owners; fees/settled cash/net NOTobserved. This is not account net profit.
+privateRO, stable present bytes AND seed absences. That FIRST offline observation
+had3held marks unavailable; later exact fresh valuation above. Fees/settled
+cash/net NOTobserved. This is not account net profit.
 D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
 Claude supported-with-limits;14mark-layer+6snapshot SYN/Ruff pass. Two earlier
 reader failures retained: persistent released lock file was wrongly treated as
