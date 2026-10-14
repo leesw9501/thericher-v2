@@ -1,6 +1,6 @@
 # Runbook
 
-## Current Dispatch (2026-10-14 KST)
+## Current Dispatch (2026-10-15 KST)
 
 ONE objective broad-indicator-expert-ablation-v1. Canonical loop/redeployment
 completed numerically: CPU1fit14keys9cost cells, Parent independent replay;
@@ -16,8 +16,10 @@ task run or scheduled fill inferred.
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r3/after-readback.json
 Prior canonical Paper
 runtime goal is complete under literal cycle/installation/recovery/next-due
-criteria; new unattended current-window validation remains owned/pending and
-must not be described as a successful new-worker fill. Recovery is closed
+criteria; new unattended current-window cycle ACTUAL completeOct14 14:50:35UTC,
+no target delta/no new order/fill. Fresh1token/12marketGET/14account-quoteGET;
+offline pointer/cycle/whole-book replay matched targets,16terminal/0unknown,
+original tenth intact. Fees/settlement/net remain unobserved. Recovery is closed
 with actual SPY native SELL/full fill/owned-flat at19:04:21UTC Oct13, one
 sell POST; original six-owner shared initial tenth remains, TLT/GLD held.
 Fees/settled cash/net remain not_observed. Never read/route KIS_LIVE_*.
@@ -44,7 +46,7 @@ not repeat the expired Oct13 actor. Canonical V3 Data/pure control/persisted
 session/one-memory-token Docker driver is now verified and deployed. SAME
 thericher-kis-paper-daily-spy-session Action changed, original non-Action XML
 0654fe10... unchanged, private rollback installation/original-task.xml retained.
-Next Oct14 14:50UTC/23:50KST; do not manually invoke that task to infer success.
+Next Oct15 14:50UTC/23:50KST; do not manually invoke that task to infer success.
 Quiet Action uses .venv/Scripts/pythonw.exe and source-pinned quiet_dispatch.py,
 all children CREATE_NO_WINDOW. Source/image changes require owner integration,
 not reuse of a stale image or private reset. Current bootstrap44865727...;
@@ -56,7 +58,11 @@ Current launch pointer:
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/scheduled-launch/current.json
 Validate pointer -> exact immutable launch SHA -> exact host dispatch SHA;
 launch/exit/installation is not a submit/fill. Strict native private-state replay
-still owns actual cycle/intent/fill/position assertions. Off-window manual
+still owns actual cycle/intent/fill/position assertions. Oct14 natural result:
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
+Hash/time/source binding assumes honest host, not cryptographic OS/broker origin;
+Task Operational logging disabled.8readerSYN/Ruff and strict network-none RO
+book/pointer/cycle checks pass, no private mutation. Off-window manual
 canonical visit21:28 no_intent/current_input_unavailable,1auth12market GET,
 0account GET/order/cancel, container absent. No unattended/current-window claim.
 Older source adapter remains version-bound history:

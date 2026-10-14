@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-## Current Work (2026-10-14 KST)
+## Current Work (2026-10-15 KST)
 
 ONE objective: broad-indicator-expert-ablation-v1. Canonical loop/redeployment
 objective CLOSED with actual one CPU fit/14keys/9cost cells and independent
@@ -17,8 +17,12 @@ TCN/fusion campaign assigned outside tracked source, no old-study replay/refund.
 Prior reusable Paper
 runtime goal completed under its literal criterion: actual current-window
 native cycle plus source-pinned reusable installation/recovery/next invocation.
-New canonical unattended current-window result is STILL pending, not a stronger
-retroactive completion gate or a claimed fill. Recovery objective
+Canonical unattended current-window ACTUAL completeOct14 14:50:35UTC:
+1token/12marketGET/14account-quoteGET,0submit/cancel. Strict offline native
+pointer/cycle/whole-book replay: owned targets match,6owners16terminal/0unclosed
+or unknown/3retainedpositive instruments, original tenth preserved. No NEW fill;
+hold/no_target_delta is not failure. Fees/settlement/net PnL unknown. It was not
+a retroactive gate on prior runtime closure. Recovery objective
 approved-paper10-percent-recovery-v1 closed with actual native SPY sell/fill/
 owned-flat reconciliation, not installation or a manufactured model signal.
 Parent owns integration/Git/broker dispatch; Data, Execution and Engine work
@@ -82,7 +86,11 @@ Execution: current253/252-return preview/native cycle ACTUAL COMPLETE. Canonical
 Data/control/persisted-context/native Docker runtime is now integrated and
 deployed to the SAME daily-spy-session Action; all non-Action XML unchanged.
 Pythonw bootstrap forces CREATE_NO_WINDOW for every child; rollback retained.
-Next owned opportunity Oct14 14:50UTC /23:50KST. Reboot readback14:03UTC:
+Next owned opportunity Oct15 14:50UTC /23:50KST. Oct14 opportunity completed
+through exact pointer->immutable launch->dispatch hash/time/source chain;
+offline parser network-none/privateRO/unchanged bytes. Source-safe projection:
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
+Reboot readback14:03UTC:
 same task Ready/exact original definition, candidate imagea142eea3... matches
 469 runtime source files/183e1eaf... and default-inert network-none smoke.
 IMAGE pin DEPLOYED14:10UTC to a142eea3..., bootstrap44865727...,5SYN pass;
@@ -92,8 +100,8 @@ D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/
 Manual off-window canonical
 run21:28UTC: no_intent/current_input_unavailable,one token/12 market GET,
 zero account GET/trade/cancel; exact actor absent. This is not an unattended
-current-window submit/fill. That validation remains owned by the existing task
-after the bounded runtime goal; it does not hold company-objective progression.
+current-window submit/fill. LaterOct14 native cycle now observed with no target
+delta; no new trade/fill inferred from exit or installation.
 D:/thericher-v2/model-artifacts/execution/current-daily-portfolio-dispatch-v1/20261013T212828458184Z.json
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
 Prefer one coherent portfolio dispatch priority,
@@ -173,7 +181,14 @@ D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-202610
 D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/parent-readback.json
 Next campaign consumes finite12 technical/price-volume kernels, common prior35
 mask, raw20x5/indicator12/combined112,15planned+2OOF-onlygate fits/max18attempts,
-active1800/end3000; actual source/contract preparation, NOT claimed trained.
+active1800/end3000; actual study-r2 container RUNNING, OOF1 checkpoint/prediction
+outputs and OOF2 partial fit outputs retained; final count/result not yet sealed.
+Original OCI missing-mountpoint failure/retry and subsequent NVML sensor
+environment failure retained. Parent native one-variable probe: adding ONLY OS
+ProgramFiles restores sensor; no credential/live field or major runtime change.
+Named host-r2 engineering continuation keeps original appointment/debits/model/
+data/split/caps. Actual GPU34percent2739MiB at15:04UTC is use, not performance.
+D:/thericher-v2/model-artifacts/research/broad-indicator-expert-ablation-20261014-v1/parent-nvml-env-probe.json
 D:/thericher-v2/model-artifacts/strategy-research/indicator-ablation-readiness-20261014-v1/readiness_receipt.json
 D:/thericher-v2/model-artifacts/research/daily5-broad-train-ridge-huber-development-20261014-v1/integration-evidence.json
 New compute/elapsed ceilings and native solver smoke are in AGENTS/DECISIONS;

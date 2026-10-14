@@ -15,8 +15,14 @@ Same daily-spy-session now quiet source-pinned canonical portfolio Action,
 non-Action XML unchanged; next Oct14 14:50UTC/23:50KST. Manual off-window21:28
 canonical no_intent:1auth12market GET/0account-order-cancel, actor absent.
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
-Unattended current-window result remains unobserved. Prior literal runtime goal
-is complete; this validation remains owned and is not a company-wide hold.
+Unattended current-window ACTUAL completeOct14 14:50:35UTC, no target delta:
+1token/12marketGET/14account-quoteGET,0submit/cancel/newfills. Exact immutable
+launch+dispatch hash/time/source linked; strict network-none privateRO parsers
+verify pointer/cycle/initialbasis/target match.6owners16terminal/0unclosed/0unknown,
+3retainedpositive instruments/no reserved buy; no fresh net-PnL claim. Next
+Oct15 14:50UTC/23:50KST owned task, no manual invocation or substitute request.
+D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
+Assumed-honest host/disabled Operational log, not cryptographic OS/broker origin.
 Post-reboot source imagea142eea3.../469files183e1eaf... network-none checked;
 fresh full16235pass22skip/224focused/source1334abf2b287... passed. Bootstrap
 44865727... IMAGE pin DEPLOYED14:10UTC,5SYN pass. Same exact task XML Ready
