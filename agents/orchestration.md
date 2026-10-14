@@ -8,15 +8,16 @@ M=D:/market_data. History lives in Git/external receipts, not this queue.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |7ccaf01 pushed fresh mark closure/nextcontrols. Controls27complete/0unknown now independently verified70support/27scalar/3582NAV-exposure/6verdicts. Integrate and advance new target/risk training preparation, no old-study rerun. |
+| Git/integration | Parent |85f2a5b pushed original timing-failure preservation/new linked objective. Integrating actual linked dispatch and fresh61 closure; objective unfinished. |
 | Repository authority | Parent |224changed-path/45helper pass, independent budget review22pass/no remainingP1P2. Fresh clean8 v3 source1334/abf2b287... PASSED16235/22skip/372.22s/cleanchild. v2 changed source/not authority. Ruff/three Compose passed. |
 | Observer/token | Existing observer/Parent | New source6440871d/image5b actual17:56 complete; restored Ready. Atomic directory cross-OS passed; observer60/Data frozen300, old writers not universally joined. |
 | Exact Paper | Parent/Execution |19:04 SELL and19:50 native BUY full filled/targets reconciled. Independent offline chain passed: six owners/16terminal/zero unknown-pending/three held instruments, baseline owner flat. Initial aggregate tenth unchanged. |
 | Repeated execution | Existing daily-spy-session/Parent | Oct14 natural14:50..35UTC ACTUAL complete/no target delta,1token12marketGET14executionGET0orders. Exact launch/dispatch chain and privateRO native target/basis/16terminal/0unknown checks pass. NextOct15 14:50UTC Ready; imagea142 unchanged, no manual task. |
 | Data | Data/Parent | Canonical253x4+2baseline endsOct12; worker must refresh. G107 first13endpoint capture verified, nextOct14 21:50UTCReady. Fidelity6pagesstable/12uniqueTiingo matches and29pins rechecked; later reference absent/NASrevision cause/PIT/finality unknown. No stale token directory reclaimed. |
 | Owned accounting | Parent/Execution | Native6owners16intents12positivefills5sells;3realized/3no-realized/0incomplete-pending. Fresh1token11GET0orders verifies3held quantities/0otherholdings/openorders and3timestamped marks. Realizedgross positive,unrealized/totalgross negative;fees/settlement/net unknown. Exact normalizedquote SHA/originalbook/scalar replay passes privateRO/networknone, initialtenth unchanged. |
-| Engine/GPU | Engine/Steward | Originalfc018cea CLOSED technicalfailure9complete1interrupted5notfit/72costunknown,480fitcap failed toboundfinalization503.291s. Exactactorcontained/reaped/leasereleased,1561.2304active1529.2663end preserved. NEWlinked retained-completion prep,9completed reuse/partialbest inferenceonly/5new finalfits, no oldretry/refund. |
-| Data input | Data | Source-readiness37checks complete; featuremathperstock no512/future payoff/calendar need, frozenreference unchanged. NewAAPL/AMZN fresh61 market-only snapshot PREP,<=4GET/300active600end, no actualcall yet. ExistingData owners untouched. |
+| Engine/GPU | Engine/Steward | Originalfc018cea CLOSED technicalfailure9complete1interrupted5notfit/72costunknown. Independentpartialr3 mathchecked/protocolfalse. NEW9e59e99d linked nativePREP62.7685active passed, dispatchedONCE18:42UTC; actualactor running/GPU35%2399MiB.18:51UTC ledger final2Ridge+MLP complete,TCN20 running.9reuse/partialinferenceonly/5finalfits, finalresults pending, no oldretry/refund. |
+| Data input | Data | Fresh61 ACTUAL18:43UTC1token2GET122bars/0account-order,419checks passed18:48UTC/ownerreleased. Old21/56notspliced/frozen512unchanged. Preparing past61/latest12/FIT score-only adapter,0newfits/GPU/payoffeval/API. |
+| Engineering readback | Invoked Review | Linked validator preparation owns only independent_linked.py/tests in newroot. All-stage72cost/fullNAV/provenance and5newfit caps need actualclosedoutputs, not originalpartial authority. No candidate tuning or new numerical fits. |
 | Cash capability | Parent/Execution sidecar closed | Official VTS route actual17:45success,1token1GET0orders/complete9rowsoneUSD/cash-unsettled numericshapes.12pure11fake-wire SYN/Ruff/Claude;exactbook/tenth/privateRO unchanged/actorabsent. No amount/fee/settlement/net or production allowlist change; review/source attribution assumedhonesthost. |
 | Infra/GPU | Invoked Infra closed | Invented TCN3cases complete, no retained weights/marketfits. MoreCPU/chunking not demonstrated speedup; future predeclare sparse TRAIN curves, INNER everyepoch. No GPU actor/lease left. |
 | Strategy | Strategy Research |12finite indicators/6existing6missing kernels,20SYNgroups passed, exactreceipt2e36bff... handed to Engine, consumption verification in new contract prep. No fits/broker/dependency install. |
@@ -31,8 +32,10 @@ now complete/no target delta; next owner dueOct15, not a foreground wait.
 Current improvement: exact safe
 launch/cleanup status preserved; quiet Action hides all child console windows.
 Current immediate bottleneck: full fit finalization wasn't covered by individual
-timer, not GPU permission or missingdata. Retained-completion repairs only this
-timing/consumer scope, preserves9completed models and all attempts/debits. Do
+timer, not GPU permission or missingdata. NEW guarded retained-completion is
+actually running; Data is preparing its future-price-free current-input consumer
+while Review prepares independent economic readback. Preserve9completed models
+and all attempts/debits. Do
 not restart the same15fits or wait for a human cap choice. Economic bottleneck:
 fees/settlement knowledge and translating selected
 growth into risk-aware decision utility. Basket controls now identify higher

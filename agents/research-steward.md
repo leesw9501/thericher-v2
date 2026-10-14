@@ -17,6 +17,31 @@ Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
 Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
+C=A/research/retained-relative-ranking-completion-20261015-v1 RUNNING/Parent_dispatched_once;
+contract9e59e99d.../host2260efe9.../worker32a967ea.../runtime2663414c... unchanged.
+Reuse9 old models/predictions/scalers without refit; interruptedOOF2TCN60 best4/
+5b607ae3... inference ONLY/0optimizer updates, partial nevercompleted/converged.
+New remaining-ledger2e0bcb9e... final5=2CPU3CUDA, attempts11-15; combined14numerical
+complete+1retainedpartial/15totalattempts if completed. Old N failure/10attempts/
+1561.230424100002active1529.266265153885end/72UNKNOWN neverreset/refunded/reclassified.
+Newscope3000active/6000elapsed/oneattempt0retry, CUDA750 entirefit/CPU60/partial120;
+max128epochs16128updates/CUDA48384total. Full-fit guards synchronize and cover
+modelsetup/diag/bestrestore/selectedprediction/checkpointexports;90s finishing reserve.
+Original512-batch membership retained/only unselected batches skipped, no score change.
+PREP actual2inventedCPU3CUDA24epochs288updates +4guardtests/nativeparser/restore/
+selected-bitparity/partial0updates/3feeSYN/genuineinvalid PASS,0marketfits/oldinference.
+PREP ACTIVE62.76848519999476/end60.8101224899292 within300/900, source+oldoutputs
+unchanged/childreaped/containerabsent/exclusivelease released. Sensor22372MiB free,
+peak121634816reservedbytes; .32 allocatorfraction local, not globalGPUquota/convergence.
+Host963c07f8.../SYNc80a20a0.../ready0b49d21f...; entirePREPdebit carried into3000.
+Cumulative active1623.9989092999967; closed-scope elapsed sum1590.0764 explicitly
+NOT actualfamilywall3456.4686. Author/review/queue separate, no oldclock reopen.
+Parent exact C/host.py dispatch ONCE/session8490/appointment1792003364.0046623,
+one actuallease/native SYN before newmarketfits; source/data/seed/splits unchanged.
+Parentdirection supported-with-limits atC/claude-challenge.json, no rivalGPU actor.
+All3policy/5mark seals BEFORE72NEWcells; originalunknown72/sourcefailure preserved.
+Finalcounts/curves/checkpoint/per-fit proof/cleanup pending. Parent/Data fresh61 and
+Paper cashmetadata independent; production1334/nightlya142/broker risk untouched.
 N=A/research/daily5-relative-return-risk-ranking-20261015-v1 CLOSED/resource_contract_failure_contained;
 contractfc018cea.../hostdfe1e5bf.../worker0768e307.../kernelsbbf7c8b3... unchanged.
 Parent exact creator dispatch ONCE, session29578 now reaped. Planned15=6CPU9CUDA,

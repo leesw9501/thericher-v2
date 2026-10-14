@@ -11,12 +11,27 @@ Unfrozen r2files unused/retired. NEWlinked recovery reuses9completed outputs,
 partialoof2TCN60 best checkpoint inference ONLY, trains5unattempted final models
 with same data/seed/target/recipes under new full-finalization timing guards.
 Combined15attempts=10old+5new,14complete1partial; not15oldcomplete. No operator
-hold or old refit/refund; Parent reviews new frozen contract before dispatch.
+hold or old refit/refund. NEW contract9e59e99d... PREP62.7685active/60.8101end
+passed native guard/restore SYN and Claude supported-with-limits. Parent
+dispatched ONCE18:42UTC; exact completion actor observed running18:48UTC,
+GPU35%/2399MiB at this integration check. Final fits/economics remain pending,
+not inferred done.
+D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/ready.json
+Original independent partial-r3 readback PASS18:38UTC:9complete/1interrupted/
+5unattempted,4Ridge forwards; math checked but original protocol false,
+0cost cells. It does not validate the NEW linked results.
+D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/independent-final-original-partial-r3.json
 D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/first-cause.json
 Data source-readiness37checks complete: per-stock features don't need512 or
 future payoff/calendar entry+5; frozen full-reference semantics unchanged.
-Fresh61 AAPL/AMZN input preparation assigned, no API invoked yet; old21/56
-views cannot satisfy61, native100row samples may support stale engineering.
+Fresh61 AAPL/AMZN ACTUAL18:43UTC:1token2dailyGET/0account-order calls,
+122bars throughOct13. Independent419checks PASS18:48UTC,7.2707cumulative
+active/4.1618elapsed; request terminal/owner released. Source units/actions/
+PIT/provider finality remain limited. Feature-only adapter PREP assigned;
+latest12/checkpoint score compatibility not yet proved. Old21/56 views cannot
+satisfy61; no stale splicing or frozen512/Top10 reinterpretation.
+D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/actual-readback.json
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-prototype-20261015-v1
 D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
 
 Prior fc018cea... study declaration (not completion):15fit cap:

@@ -3,12 +3,74 @@
 Current projection 2026-10-15 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
 Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
 
+## Fresh61 NAS2 Captured
+
+2026-10-14 18:43:48.565686..18:43:51.735255UTC: Parent-approved exact b8c60e0d...
+command dispatched ONCE and completed fresh61_input_ready for two-stock score-only
+prototype, not the frozen512 label/reference/Top10 policy. AAPL/NAS+AMZN/NAS only.
+Actual run3e156de769954dbe9341cee4b759eb90:2dailyGET/1tokenPOST/2accepted100-row
+pages; each61 aligned sessions2026-07-20..Oct13,39older excluded/0duplicates.
+No account/order/live calls, pending unknown, cooldown or next_due. Exact actor
+absent/cache owner released; no redispatch. Supervisor7.2706576 cumulative active
+seconds including3.1088068prep,4.1618498actual elapsed; old debits unchanged.
+D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/runs/3e156de769954dbe9341cee4b759eb90/outcome.json
+is actual receipt46ef8588...; supervisor7391acad... retains exact counts/debit.
+Raw root:
+D:/market_data/us_equities/kis_paper_private/relative-ranking-fresh61-nas2/v1.
+Actual-readback.json a0d58a65... passed419 checks:122nativeBar/calendar-aligned
+rows, exact raw/manifest/availability pins, typed geometry/positive fields,
+early-asof reject and finaldelegate gaps1.2640868/1.2504208seconds; wire unknown.
+AAPL manifest8bfd51c5..., available18:43:50.330163UTC; AMZN manifest0591debc...,
+available18:43:51.594158UTC. First reader's NTFS>=high-resolution observation
+assumption failed; readback-failure-r1.json preserves14.5/573.6microsecond clock
+discrepancies. Corrected reader validates persisted hashes/source chronology,
+not NTFS fsync timestamp equality;0additionalAPI. Current source-reader hash e98b...
+matches receipt. Provider finality/units/actions/PIT remain unknown/unqualified.
+
+Native provider/parser/duplicate-conflict/cache gzip IO and existing calendars
+reused. Source selects last61 official-close<observedUTC sessions at dispatch,
+including current US day only after scheduled close; no stale21/56 splice or
+future payoff. Observed availability is persisted after raw+manifest fsync,
+not provider date/finality. Missing source units/actions/PIT/finality stay explicit.
+Latest12/checkpoint score compatibility belongs future consumer, not proved here.
+
+Source preparation:40 invented native parser/IO/gate/publication checks plus26
+independent exact-pin/scope/cap/no-dispatch checks; worker/tests Ruff passed.
+Preparation had0API/credentials/control-root access; actual bounded dispatch
+used approved Paper app-only selective loader/common gate. Preparation3.1088068active
+seconds carried into300 cumulative active/600 dispatch elapsed, no refund.
+<=4GET attempts/2pages per name/1freshPOST, one reused client/in-memory token.
+No known Parent borrowed-token wire protocol: fixed approved Paper app-only
+selective loader is dispatch-only fallback, no env-secret merge or account fields.
+NEW scoped60s token floor joins common atomic-directory/legacy-OS timing gate;
+old300 defaults/contracts unchanged. Native shared1.25s plus finaldelegate1.25s
+pacing; wire timing unknown. Durable request/pending cursor before effects,
+one dispatch claim, supervisor cap/reap, no automatic retry/reclaim/resume.
+Worker yields cooldown/next_due; no foreground token wait or daemon/schedule.
+
+Claude no-tools categorical review: uncertain, not agreement or authority grant.
+D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/review.json
+and independent-check.json retain scope/limits. Parent authorized completed
+single probe at free Data/client slot; G10713endpoint21:50UTC
+and NAS-forward6 owned collectors unchanged. No core/research/goal/Git edits.
+
+Next assigned PREP-only consumer:
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-prototype-20261015-v1.
+Data owns that NEW root plus this board; existing capture/source/output immutable.
+Past61/native latest12/FIT-frozen shared per-stock feature adapter and CPU Ridge
+score-only prototype,120active/600elapsed/0fits/0GPU/0payoff/oneactual score-readback.
+Native SYN and archived-prefix checks only before Parent reviews final Engine
+closure. Actual score NOT dispatched; no duplicate collection/new provider call.
+
 ## Relative Ranking Input Readiness
 
 Source-only sidecar complete at 2026-10-14 18:11:37UTC for the learned-score
 consumer of relative-return-risk-ranking-v1. Frozen fc018cea... contract and
-bbf7c8b3... kernels matched; active6CPU/9CUDA is assignment context, not a
-worker/GPU observation here. No study/output/registry/lease/Engine-board/Git,
+bbf7c8b3... kernels matched; original6CPU/9CUDA was assignment context, not a
+worker/GPU observation here. Parent since superseded terminalfailed original
+with retained-relative-ranking-completion-v1:9complete+1interrupted retained,
+5unattempted new final fits, no old rerun, per Parent rather than Data readback.
+No study/output/registry/lease/Engine-board/Git,
 raw rows, credentials, broker/account, Docker or Scheduler access/actions.
 D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
 contains exact metadata paths/hashes, input types, counts and one next package.
@@ -22,7 +84,9 @@ adapter preparation only after native-reader validation; not all512/fresh input.
 NAS-forward6 throughOct13 remain56rows each:0 possible61 windows;96 retained
 revisions and last90 changed overlap rows remain scoped revision/as-of limits.
 ETF253 is its own Paper input, not a NAS-stock relative-model domain substitute.
-No current learned-score input set verified; standing Paper authority unchanged.
+At that source-only pass no current learned-score input set was verified; fresh
+source61 capture is now evidenced above, while score/latest12 runtime remains
+unverified. Standing Paper authority unchanged.
 
 common_rows calls window with entry+5 calendar lookup. Source tokens/latest35
 indicators/causal sigma need no future price or target. Future feature-only API
@@ -35,10 +99,10 @@ is frozen helper/support/reference semantics, not per-stock feature arithmetic;
 small separately named score-only work must not claim same basket/Top10 policy.
 No-tools Claude challenge: supported-with-limits, exact JSON advisory pointer.
 
-Next Data package recommended, NOT invoked: relative-ranking-fresh61-nas2-score-input-v1,
-one reused market-only client, AAPL/NAS and AMZN/NAS,61 fresh completed native
-bars each, observed publication and versioned12/schema/universe pins; bounded
-4daily-GET/4accepted-page/300active/600elapsed proposal. Use existing Data owner
+Recommended package was source-prepared then Parent-dispatched ONCE above:
+relative-ranking-fresh61-nas2-score-input-v1, one reused market-only client,
+AAPL/NAS and AMZN/NAS,61 fresh completed native bars each, observed publication
+and schema/universe pins;4daily-GET/300active/600elapsed cap. Use existing Data owner
 at its next free slot; do not compete with G10713endpoint21:50UTC or NAS-forward6.
 Worker retains cooldown/next_due; no foreground wait, gate/platform or approval.
 Other board facts below are retained prior projection, not runtime reattached

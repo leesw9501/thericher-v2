@@ -17,6 +17,40 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and external research are worker writes.
+C=A/research/retained-relative-ranking-completion-20261015-v1 RUNNING/Parent_dispatched_once;
+consumer: retained relative-ranking scores -> completed all-stage cost-aware replay,
+not Paper permission/adoption/ETF compatibility/absolute-profit forecasts.
+New frozen contract9e59e99dff22865836195b880644a7731ba8ba040ad4802516b78009262017fb;
+host2260efe9.../worker32a967ea.../runtime2663414c.../guardtests a065005f....
+Old N failure/source/10attempts/9numericalcomplete/1interrupted/debits/72UNKNOWN
+immutable. Reuse9 old checkpoint/prediction/scaler outputs, no old refit. Partial
+OOF2TCN60 INNERbest4/5b607ae3... inference ONLY,0optimizer updates/no convergence claim.
+Remaining ledger2e0bcb9e... exactly5FINAL: Ridge raw20/indicator +MLP20/TCN20/TCN60,
+family attempts11-15. Combined outcome can be14complete+1retainedpartial, NEVER15oldcomplete.
+Same data/seed303/target/common61/FIT-scales/chronological splits/recipes/policies;
+unchanged .1/.5 caps/5-10-20 costs. Original512 batch membership/last-short-batch
+shape retained, skip only batches with no selected prediction rows; bit parity SYN.
+New full-fit guard before setup and before/after diag/bestrestore/selectedforward/
+checkpoint+curve exports, CUDA synchronized;750s CUDA/60CPU, reserve90 for finish.
+Native PREP actual2inventedCPU3CUDA/24epochs288updates,4guardtests/parser/3feeoracle/
+genuineinvalid/same-CUDA restore/partial0updates/sparse1-5-final TRAIN/INNER each PASS.
+PREP host963c07f8.../SYNc80a20a0.../ready0b49d21f...;ACTIVE62.76848519999476,
+end60.8101224899292 within300/900; childreaped/containerabsent/lease released,
+source+retainedoutputs unchanged. No market CSV/retained artifacts mounted in PREP.
+Newscope3000active/6000elapsed/5fits=2CPU3CUDA/oneattempt0retry;3x750+2x60=2370,
+630s for SYN/PREPcarry/partial120s/nativeintake/replay/I-O/cleanup. No oldrefund.
+Old immutable1561.230424100002active/1529.266265153885end reported separately;
+cumulative active afterPREP1623.9989092999967, NOT a restarted/refunded old clock.
+Closed-scope elapsed sum1590.0764 is NOT family wall3456.4686 atPREP closure.
+Parent exact .venv/Scripts/python.exe -B C/host.py dispatch started ONCE/session8490;
+newappointment1792003364.0046623/PREP62.7685charged+2conservative startup/publication,
+one actuallease/native SYN before marketfits. C/claude-challenge.json supported-
+with-limits. All3policy/full5mark seals required before72NEWcells; original72UNKNOWN stay.
+Final counts/per-fit proof/curves/cleanup pending. Parent originalpartial r3 numerical
+4Ridgeforward/scalers/purge PASS does NOT repair originalprotocolfalse. Parent owns
+independent numerical readback/cashmetadata/Data fresh61; source1334/nightlya142 unchanged.
+Seen engineering/currentlisting/nonPIT/sourceunits/nominalavailability/fourDEV limits;
+no qualified winner/partial convergence/Paper adoption/source/Git/API/credential writes.
 N=A/research/daily5-relative-return-risk-ranking-20261015-v1 CLOSED/resource_contract_failure_contained;
 consumer: causal stock-universe relative score/risk proposals and bounded native
 fit-finalization repair, NOT a Paper gate/ETF compatibility/absolute-profit forecast.

@@ -6,9 +6,21 @@ ONE objective retained-relative-ranking-completion-v1. Originalfc018cea study
 CLOSED technicalfailure/actorabsent/lease released:9completed1interrupted5notfit,
 0economiccells/72unknown.480perfit guard missed final diagnostics/predict/restore;
 oof2TCN20 actual503.291s,notcompliant.1561.2304active1529.2663end retained,
-original5400/10800/480 budgets unchanged/no refunds. New linked repair PREP:
+original5400/10800/480 budgets unchanged/no refunds. New linked repair RUNNING:
 9retained completed,partialtcn60best inferenceonly,5new unattemptedfinalfits,
-full-finalization timing guard/new caps. No original creator rerun/humanhold.
+full-finalization timing guard/new caps. Contract9e59e99d... native PREP passed,
+Parent dispatched host.py ONCE18:42UTC; creator FROZEN, do not dispatch again.
+750CUDA/60CPU/3000active6000end, old9 reuse and partial inference only.
+Actual ledger/cleanup/results required; no original creator rerun/humanhold.
+D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/ready.json
+Original independent partial-r3 readback math PASS/original protocol FAILED,
+not new scope authority or economics. Read exact receipt, no creator rerun:
+D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/independent-final-original-partial-r3.json
+Fresh61 market-only probe CLOSED:1token2GET122bars,7.2707active4.1618end,
+419independent checks PASS. No repeated capture to inspect retained evidence.
+Feature-only score adapter PREP has0fits/GPU/API and future-payoff-free61/
+latest12/FIT transforms; actual score only after final checkpoint/source ready.
+D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/actual-readback.json
 D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/first-cause.json
 Do not rerun host.py freeze/prepare/dispatch creators or alter frozen source.
 Historical retained partial ledger:
@@ -85,7 +97,8 @@ after reboot:45focused/224changed-path pass, independent budget review passed.
 Fresh clean8 authority PASSED16235/22skip,372.22s/source1334/abf2b287...;
 v2 superseded-source passing suite is NOT authority. Imagea142eea3... matches
 runtime183e1eaf...; bootstrap44865727... DEPLOYED14:10UTC. SAME exact task
-definition remains Ready14:50UTC/23:50KST; only IMAGE pin changed.5SYN pass,
+definition remains Ready Oct15 14:50UTC/23:50KST, recheckedOct15KST;
+pythonw Action unchanged, only IMAGE pin changed.5SYN pass,
 network-none source/inert check, zeroAPI/credentials/private writes. No manual
 task run or scheduled fill inferred.
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r3/after-readback.json
