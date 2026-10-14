@@ -2,12 +2,16 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective relative-return-risk-ranking-v1. Engine ACTUAL source-exact
-network-none GPU study running,15fitcap6CPU9CUDA/5400active10800end;PREP30.0066
-active carried. Contractfc018cea.../oneGPUlease.17:53 ledger4complete/1running,
-not final outcome. No human or profitability permission hold, Paper unrelated.
+ONE objective retained-relative-ranking-completion-v1. Originalfc018cea study
+CLOSED technicalfailure/actorabsent/lease released:9completed1interrupted5notfit,
+0economiccells/72unknown.480perfit guard missed final diagnostics/predict/restore;
+oof2TCN20 actual503.291s,notcompliant.1561.2304active1529.2663end retained,
+original5400/10800/480 budgets unchanged/no refunds. New linked repair PREP:
+9retained completed,partialtcn60best inferenceonly,5new unattemptedfinalfits,
+full-finalization timing guard/new caps. No original creator rerun/humanhold.
+D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/first-cause.json
 Do not rerun host.py freeze/prepare/dispatch creators or alter frozen source.
-Live progress only:
+Historical retained partial ledger:
 D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/study/output/fit-ledger.json
 Current-balance runtime probe COMPLETE17:45:30UTC:1token1GET0orders,
 source-exactimagea142/readonlybook unchanged/actorabsent. Complete page,9rows/

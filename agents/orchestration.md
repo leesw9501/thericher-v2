@@ -1,7 +1,7 @@
 # Orchestration Stateboard (총괄 조정)
 
 Current projection 2026-10-15 KST. ONE objective:
-relative-return-risk-ranking-v1. A=D:/thericher-v2/model-artifacts;
+retained-relative-ranking-completion-v1. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. History lives in Git/external receipts, not this queue.
 
 ## Ready / Owned / Due
@@ -15,7 +15,8 @@ M=D:/market_data. History lives in Git/external receipts, not this queue.
 | Repeated execution | Existing daily-spy-session/Parent | Oct14 natural14:50..35UTC ACTUAL complete/no target delta,1token12marketGET14executionGET0orders. Exact launch/dispatch chain and privateRO native target/basis/16terminal/0unknown checks pass. NextOct15 14:50UTC Ready; imagea142 unchanged, no manual task. |
 | Data | Data/Parent | Canonical253x4+2baseline endsOct12; worker must refresh. G107 first13endpoint capture verified, nextOct14 21:50UTCReady. Fidelity6pagesstable/12uniqueTiingo matches and29pins rechecked; later reference absent/NASrevision cause/PIT/finality unknown. No stale token directory reclaimed. |
 | Owned accounting | Parent/Execution | Native6owners16intents12positivefills5sells;3realized/3no-realized/0incomplete-pending. Fresh1token11GET0orders verifies3held quantities/0otherholdings/openorders and3timestamped marks. Realizedgross positive,unrealized/totalgross negative;fees/settlement/net unknown. Exact normalizedquote SHA/originalbook/scalar replay passes privateRO/networknone, initialtenth unchanged. |
-| Engine/GPU | Engine/Steward | Newfc018cea.../15fit6CPU9CUDA study ACTUAL running networknone,oneGPUlease/5400active10800end/30.0066PREPcarry.17:53 ledger4complete(2Ridge+MLP14epoch196updates+TCN20 19epoch266updates)/TCN60running. GPU33%2398MiB measured. No final/qualified/Paper outcome inferred. |
+| Engine/GPU | Engine/Steward | Originalfc018cea CLOSED technicalfailure9complete1interrupted5notfit/72costunknown,480fitcap failed toboundfinalization503.291s. Exactactorcontained/reaped/leasereleased,1561.2304active1529.2663end preserved. NEWlinked retained-completion prep,9completed reuse/partialbest inferenceonly/5new finalfits, no oldretry/refund. |
+| Data input | Data | Source-readiness37checks complete; featuremathperstock no512/future payoff/calendar need, frozenreference unchanged. NewAAPL/AMZN fresh61 market-only snapshot PREP,<=4GET/300active600end, no actualcall yet. ExistingData owners untouched. |
 | Cash capability | Parent/Execution sidecar closed | Official VTS route actual17:45success,1token1GET0orders/complete9rowsoneUSD/cash-unsettled numericshapes.12pure11fake-wire SYN/Ruff/Claude;exactbook/tenth/privateRO unchanged/actorabsent. No amount/fee/settlement/net or production allowlist change; review/source attribution assumedhonesthost. |
 | Infra/GPU | Invoked Infra closed | Invented TCN3cases complete, no retained weights/marketfits. MoreCPU/chunking not demonstrated speedup; future predeclare sparse TRAIN curves, INNER everyepoch. No GPU actor/lease left. |
 | Strategy | Strategy Research |12finite indicators/6existing6missing kernels,20SYNgroups passed, exactreceipt2e36bff... handed to Engine, consumption verification in new contract prep. No fits/broker/dependency install. |
@@ -29,7 +30,11 @@ and existing owned daily invocation. Actual unattended current-window evidence
 now complete/no target delta; next owner dueOct15, not a foreground wait.
 Current improvement: exact safe
 launch/cleanup status preserved; quiet Action hides all child console windows.
-Current economic bottleneck: fees/settlement knowledge and translating selected
+Current immediate bottleneck: full fit finalization wasn't covered by individual
+timer, not GPU permission or missingdata. Retained-completion repairs only this
+timing/consumer scope, preserves9completed models and all attempts/debits. Do
+not restart the same15fits or wait for a human cap choice. Economic bottleneck:
+fees/settlement knowledge and translating selected
 growth into risk-aware decision utility. Basket controls now identify higher
 growth with more drawdown in some seen stages; not pure unidentified drift or
 all-model futility. New target/risk-aware learning is ready preparation, not a

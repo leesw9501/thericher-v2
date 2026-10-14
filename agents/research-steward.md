@@ -1,7 +1,7 @@
 # Research Steward Stateboard
 
 Current 2026-10-15 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
-relative-return-risk-ranking-v1. Custody is not model/Paper approval.
+retained-relative-ranking-completion-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,31 @@ Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
 Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
+N=A/research/daily5-relative-return-risk-ranking-20261015-v1 CLOSED/resource_contract_failure_contained;
+contractfc018cea.../hostdfe1e5bf.../worker0768e307.../kernelsbbf7c8b3... unchanged.
+Parent exact creator dispatch ONCE, session29578 now reaped. Planned15=6CPU9CUDA,
+actual10attempts/9complete=4CPU5CUDA;81completedepochs1420updates lowerbounds.
+Tenth oof2/tcn60 interrupted, its epoch/update counts unknown; five final fits not
+attempted. All retained numeric checkpoints/source/ledger untouched; no fit refund.
+Measured firstcause oof2/tcn20 seconds503.2913514079992 exceeds frozen480; training
+cutoff450 does not bound final diagnostic/all-row forward/restore. Resource kill
+contained exact owned actor, exit137 is shutdown evidence not root cause. No driver/
+operator boundary; no cap relaxation/source change/automatic retry/oldfit rerun.
+host-study.json1ee2da35... ACTIVE1561.230424100002/5400,end1529.266265153885/
+10800,appointment1791999689.7294354,clock_failed=false. Includes native PREP
+30.006609399999434 debit+2s conservative startup/publication. Familyclock pass
+does NOT attest failed per-fit480 ceiling. Childreaped/containerabsent/lease
+released/sourceunchanged; no running GPU allocation/worker/container remains.
+Native PREP2CPU3CUDA/24epochs144updates/3scalarcost checks PASS, then native SYN
+before marketfits; prep not marketfit/convergence. Parent review supported-with-limits.
+Common61 before labels130groups138-254support/all5/20-60samekeys/FIT-only scales/
+whole-reference target/purge; OOF1 prediction seal retained. ALL3policy/5marks NOT
+reached;0economiccells/72UNKNOWN, no profit/qualified winner/Paper adoption. Retry
+unused but now ineligible after marketfits; original15attempt cap not reset.
+N/first-cause.json6844ce5f... pins counts/ledger/source/debit/cleanup/read-only reproducer.
+Separate r2 source/mock4tests UNUSED/unfrozen/superseded,0r2GPU/marketfits. Parent
+owns any NEW scoped repair and independent readback/cash metadata. Closedlineages,
+broker .1/.5 controls/production1334/nightlya142 untouched, Paper authority independent.
 S=A/research/daily5-basket-selection-controls-20261015-v1 CLOSED/complete_seen_controls_nonpromoting_failed;
 3causal fixed controls/3retainedstages/70sameentries/27completecostcells/0unknown,
 checks0true/6false/0unknown;0fits/GPU/broker calls. Source and frozen contract unchanged.

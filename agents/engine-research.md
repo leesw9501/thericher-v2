@@ -1,7 +1,7 @@
 # Engine Research Stateboard
 
 Current 2026-10-15 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
-relative-return-risk-ranking-v1. Paper authority is research-independent.
+retained-relative-ranking-completion-v1. Paper authority is research-independent.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,39 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and external research are worker writes.
+N=A/research/daily5-relative-return-risk-ranking-20261015-v1 CLOSED/resource_contract_failure_contained;
+consumer: causal stock-universe relative score/risk proposals and bounded native
+fit-finalization repair, NOT a Paper gate/ETF compatibility/absolute-profit forecast.
+Frozen contractfc018ceadbcd81e93b78f12a1ea89906a64a7eda8ecb63ac193733439cc4e699;
+hostdfe1e5bf.../worker0768e307.../kernelsbbf7c8b3... unchanged, mismatch0.
+Parent exact N/host.py dispatch ran ONCE; session29578 reaped, no creator rerun.
+15planned6CPU/9CUDA; actual10attempts/9complete=4CPU5CUDA,81completedepochs/
+1420completedupdates LOWERBOUNDS. Tenth oof2/tcn60 interrupted; its epochs/updates
+unknown, not zero. Five final-stage fits not attempted; six best NPZs retained.
+Firstcause oof2/tcn20 total503.2913514079992s > frozen480s;15epochs/356updates,
+INNERbest11, stop per_fit_time_cap. kernels.py199/207 stop training at450,
+but final diagnostics/all-row prediction/restore238-252 run without per-fit checks;
+worker CUDA return has no480s rejection. Not driver/operator/data/model failure.
+Strongest resource kill applied: stop_scope.py verified exact identity/image/label/
+owned output mount, stopped ONLY this actor. Exit137 is containment, NOT firstcause.
+Immutable host-study.json1ee2da35...: ACTIVE1561.230424100002/5400,
+end1529.266265153885/10800,appointment1791999689.7294354,clock_failed=false;
+includes PREP30.006609399999434 and2s conservative startup/publication. Family
+within_caps=true does NOT attest failed480 per-fit ceiling. No refund/extension.
+Actual childreaped/containerabsent/lease released/sourceunchanged; no pending actor.
+Native invented PREP2CPU3CUDA/24epochs144updates/3scalarcells PASS,30.0066active/
+28.0478end, then same native SYN reran before marketfits. Neither is a marketfit.
+Common130groups/support138-254 before labels/shared20-60/all5 keys; seal3571a002...;
+FIT-only relative-basket target/vol floor/scales/purge unchanged. OOF1 prediction
+seal5ddb1e59... retained; all3policy/required5mark seals NOT reached,0economics/
+72cells UNKNOWN, not zero profit. Ledgerb62c527f... untouched, running row preserved.
+N/first-cause.json6844ce5f... contains source pins/counts/debit/cleanup and exact read-only
+ledger-vs-contract reproducer; no numerical replay/retrain/selection. Retry0used,
+pre-fit-only OSError allowance now INELIGIBLE. Separate r2 source/mock4tests remain
+UNUSED/unfrozen/superseded,0r2GPU/marketfits. Parent owns next scoped correction/
+independent readback/Paper cash metadata; source1334/imagea142/nightly unchanged.
+Seen/currentlisting/nonPIT/rawactions/units/nominalavailability/fourDEV limits,
+no convergence/qualified winner/ETF inference/Paper adoption/API/broker/SRC/Git writes.
 S=A/research/daily5-basket-selection-controls-20261015-v1 CLOSED/complete_seen_controls_nonpromoting_failed;
 consumer: original causal basket membership vs weighting vs supported512 market drift.
 3fixed policies: ALL own prior35/price+volume eligible equal; frozen original positive-
@@ -47,9 +80,9 @@ ALL-stages-sealed.jsond72fd857.../result.safe.json47e8fe93.../
 result.private.json1a4da14f...; Parentdirection36532295... supported-with-limits.
 Parent independent final reader70causal masks/original weights/27scalar/
 3582NAV-exposure pairs/6verdicts PASS12.8409s,reader ef31247a.../Ruff.
-S/parent-readback-r2.json; no new fit/GPU/selection. New relative-return/risk
-campaign preparation assigned separately; fitting not dispatched, no GPU
-allocation inferred. Parent owns official fee-source/cash metadata integration.
+S/parent-readback-r2.json; no new fit/GPU/selection in S. New relative-return/risk
+family N was separately dispatched and contained on measured per-fit failure above.
+Parent owns official fee-source/cash metadata integration.
 Numerical command FROZEN: .venv/Scripts/python.exe -B S/campaign.py dispatch was run
 once, NEVER rerun this creator. Parent owns independent numerical readback and official
 fee capability integration; no Engine extra checks/new fits/source/Git/broker actions.

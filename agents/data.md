@@ -1,7 +1,48 @@
 # Data Stateboard (시장데이터 담당)
 
-Current projection 2026-10-14 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
+Current projection 2026-10-15 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
 Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
+
+## Relative Ranking Input Readiness
+
+Source-only sidecar complete at 2026-10-14 18:11:37UTC for the learned-score
+consumer of relative-return-risk-ranking-v1. Frozen fc018cea... contract and
+bbf7c8b3... kernels matched; active6CPU/9CUDA is assignment context, not a
+worker/GPU observation here. No study/output/registry/lease/Engine-board/Git,
+raw rows, credentials, broker/account, Docker or Scheduler access/actions.
+D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
+contains exact metadata paths/hashes, input types, counts and one next package.
+
+Old800 throughJul27:496of512 have total row_count>=61; later71 throughOct6:
+505of512. These are upper bounds, not validated trailing61/all12 support.
+Both lack observed publication/finality and are stale for current decisions.
+Current512 throughOct9 has21sessions:0 canonical61 windows, assumed availability.
+One exact uncropped AAL native snapshot retains100 rows, useful for offline
+adapter preparation only after native-reader validation; not all512/fresh input.
+NAS-forward6 throughOct13 remain56rows each:0 possible61 windows;96 retained
+revisions and last90 changed overlap rows remain scoped revision/as-of limits.
+ETF253 is its own Paper input, not a NAS-stock relative-model domain substitute.
+No current learned-score input set verified; standing Paper authority unchanged.
+
+common_rows calls window with entry+5 calendar lookup. Source tokens/latest35
+indicators/causal sigma need no future price or target. Future feature-only API
+must accept completed61 prefix, observed availability/decision and frozen FIT
+scalers; never call window/common_rows/relative_labels/scales for inference.
+14 fresh AST-leaf/invented NumPy checks passed for1/2/512 stocks, including
+future-calendar failure reproducer. No full indicator/checkpoint/runtime or
+performance compatibility claimed. Fixed512/min128 plus64 outsideoriginal128
+is frozen helper/support/reference semantics, not per-stock feature arithmetic;
+small separately named score-only work must not claim same basket/Top10 policy.
+No-tools Claude challenge: supported-with-limits, exact JSON advisory pointer.
+
+Next Data package recommended, NOT invoked: relative-ranking-fresh61-nas2-score-input-v1,
+one reused market-only client, AAPL/NAS and AMZN/NAS,61 fresh completed native
+bars each, observed publication and versioned12/schema/universe pins; bounded
+4daily-GET/4accepted-page/300active/600elapsed proposal. Use existing Data owner
+at its next free slot; do not compete with G10713endpoint21:50UTC or NAS-forward6.
+Worker retains cooldown/next_due; no foreground wait, gate/platform or approval.
+Other board facts below are retained prior projection, not runtime reattached
+by this sidecar. Original collector clocks/cursors and studies stay unchanged.
 
 ## Current Ownership
 

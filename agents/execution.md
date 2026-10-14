@@ -2,7 +2,7 @@
 
 ## Current Projection (2026-10-15 KST)
 
-Current company direction relative-return-risk-ranking-v1. Parent owns broker
+Current company direction retained-relative-ranking-completion-v1. Parent owns broker
 dispatch/shared integration/Git. Gross accounting package COMPLETE:
 D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
 Exact native whole-scope6owners16terminal intents/12positivefills5sells,

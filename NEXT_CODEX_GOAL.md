@@ -2,71 +2,79 @@
 
 ## Objective
 
-relative-return-risk-ranking-v1: build one bounded new relative-return/risk
-ranking comparison using existing KIS-compatible daily inputs, train the ready
-CPU/CUDA experts, and decide which score/risk mechanism merits a provisional
-Paper prototype. Profitability qualification is not Paper permission.
+retained-relative-ranking-completion-v1: recover economically interpretable
+outputs from the preserved relative-risk study without refitting completed
+models, and connect a small fresh stock input to a score-only prototype.
+Keep the original study's terminal timing failure and every consumed attempt
+explicit. Independent daily Paper continues on its source-exact runtime.
 
 Workdir C:/Users/Public/Documents/thericher-v2. Data D:/market_data;
 models/generated research D:/thericher-v2/model-artifacts. Never KIS_LIVE_*.
 
-## Work And Scope
+## Recovery
 
-- Engine owns a NEW finite campaign under
-  D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1.
-  Target relative five-session return versus the causal supported basket,
-  risk normalization calibrated only on permitted FIT data; finite explicit
-  Window20/60 and feature arms. Common causal support, chronological FIT/
-  INNER/OOF, purged label intervals and aligned baselines/costs. Reused raw
-  512-stock data remain seen/nonPIT/current-listing/unit/fidelity limited.
-- Reuse current NumPy/sklearn/PyTorch, no new framework. Ridge/HGBR and native
-  MLP/TCN are candidates, <=15total fits under ONE family, no hidden window/
-  feature grid. Freeze exact arms/trials/target/policies before market fitting.
-  Test real native solver/optimizer/step/curve/checkpoint restoration on tiny
-  invented input first. Measure GPU/headroom and use one allocation; tensors
-  may stay resident when safe. No dummy training/utilization target.
-- Freeze suitable max epochs/time/updates, INNER early stop/LR/regularization/
-  best restoration, TRAIN diagnostics epoch1/every5/final and INNER everyepoch.
-  Final/Paper outcomes never choose checkpoints. Freeze both cumulative active
-  and elapsed ceilings including synthetic/failure/I-O/recovery/cleanup debit.
-  Prior3TCN43epochs1045updates consumed1399active seconds; a larger justified
-  NEW cap is allowed, e.g5400active10800elapsed, never an old-clock refund.
-  Parent reviews frozen ready contract and dispatches without operator delay.
-- Freeze score-to-policy and costs before outcomes, compare broad/original/
-  cash and matched risk/exposure/turnover. Failure is absent incremental
-  decision utility, not merely an unsuccessful training or positive growth.
-  Save permitted safe weights on D: for a real inference prototype.
-  Document future input/output and universe/domain requirements; do not
-  silently apply NAS-stock relative targets to ETF or smaller-universe input.
-  No automatic Paper/model adoption or independent-alpha claim from seen data.
-- Parent/Execution may independently inspect the documented VTS current-
-  balance metadata via one named bounded readonly capability probe, existing
-  selective loader/common token guard/virtual host. No orders/schedule edits/
-  budget reset; do not invent fee TRIDs or settledcash formulas. Unknown fees/
-  settlement/net remain scoped knowledge gaps, not Paper permission holds.
-- Existing quiet source-exact nightly strategy stays ReadyOct15 23:50KST:
-  imagea142eea3.../bootstrap44865727..., original shared initial virtual-cash
-  tenth/exact recovery. No manual scheduled-task run or replacement request.
+- Original fc018cea... study is CLOSED/technical_failure, not completed.
+  Nine fits complete, tenth interrupted, five final fits not attempted.
+  Original oof2/TCN20 return took503.291s versus480: cutoff failed to bound
+  final diagnostics/prediction/restoration. Exact actor contained/reaped,
+  lease released.1561.2304241active/1529.2663elapsed retained under5400/10800.
+  No original creator retry/refund/source rewrite; original72cost cells unknown.
+  D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/first-cause.json
+- Engine owns NEW linked bounded source/contract at
+  D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1.
+  Reuse9completed checkpoints/predictions/scalers, and infer from interrupted
+  oof2/TCN60 retained INNER-best numeric checkpoint WITHOUT optimizer resume,
+  updates or retraining. Label that model partial/interrupted, not completed
+  training or convergence. Fit ONLY5previously-unattempted final models using
+  unchanged data/target/seed/splits/model/selection recipes.
+- Combined attempts remain10old+5new=15;14completed plus1partial model.
+  Preserve every old debit/curve/missing curve. New explicit full-fit guards
+  include setup/train/diagnostics/best restore/prediction/export. Freeze
+  measured suitable per-fit ceiling, e.g750seconds, and3000active6000elapsed
+  new scope with SYN/failure/I-O/cleanup included; report cumulative old+new.
+  No retrospective change to old480 or old success claim.
+- Avoid unnecessary nonprediction forwarding while retaining original
+  batch grouping where needed for numerical parity. No score/threshold/seed/
+  policy change. Native invented solver/finalization/checkpoint/deadline
+  checks before market dispatch; Parent concise challenge and ready review.
+  One measured GPU allocation, no framework/production change.
+- Seal all3aligned predictions/policies/full5marks before72newcost cells.
+  Parent/Review independently check source/keys/labels/purge/scalers/native
+  Ridge forwards/curves/cash-cost-NAV/risk. All outcomes remain seen, with
+  nonPIT/current-listing/source-unit/fidelity limits, partial-model limitations
+  and no automatic Paper adoption or independent-performance claim.
+
+## Parallel Input And Paper Work
+
+- Data prepares then Parent dispatches one NEW market-only snapshot:
+  D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1.
+  AAPL/NAS+AMZN/NAS,61aligned completed daily bars each,<=4GETattempts/
+  one reused client-token/300active600end; source-native parser/calendar,
+  named common token/pacer, no account/order endpoints. Rawmarketbytes only
+  D:/market_data/us_equities/kis_paper_private/relative-ranking-fresh61-nas2/v1.
+  Actual capture/publication and quality limits explicit; never splice stale
+  panels or infer provider finality.
+- Feature-only prototype requires past61/latest12/FIT-frozen transforms, not
+  future payoff/calendar entry+5. Smaller batches support separately named
+  engineering score-only interpretation; don't recenter labels or relabel the
+  frozen512/min128 reference or exactTop10 policy. Data readiness:
+  D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
+- Preserve same quiet daily Paper task, nextOct15 23:50KST, imagea142.../
+  bootstrap44865727.../original shared initial virtual-cash tenth and exact
+  unknown-request recovery. No manual task run/new order for accounting.
+  Current-balance VTS probe already completed1token1GET; cash/unsettled shapes
+  are not settledcash/fees/net evidence. Missing knowledge is not a permission hold.
 
 ## Completion And Verification
 
-Publish actual frozen fit/curve/best-checkpoint/cost/cleanup evidence and
-independent readback, explicit failure/unknown categories, then one concrete
-next prototype or hypothesis. A closed failed experiment is not a qualified
-model; source readiness is not runtime adoption. Keep another ready lane moving.
+Honest linked completion/partial/failure evidence, actual resource debits and
+cleanup, independent numerical readback and concrete score-input consumer.
+Do not mark incomplete company work complete merely to end the turn.
 
-Previous basket-controls complete27cells/70entries/0unknown,0of6 joint
-net/no-worseDD checks; some selected growth higher with higher drawdown.
-18.5568active14.1103end/0fitsGPU, Parent27scalar/3582NAV-exposure/70causal
-support checks passed. Official fee/settlement source62checks complete; VTS
-current-balance documented but settledcash/charge semantics remain unknown.
-D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/parent-readback-r2.json
-D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
-
-Exact source1334/abf2b287... unchanged may reuse full16235pass22skip authority:
+Exact source1334/abf2b287... unchanged may reuse full16235pass22skip:
 D:/thericher-v2/model-artifacts/verification/research-runner-recovery-20261014-v3/authority.json.
-Fresh focused/independent checks cover new external code/outputs. Material
-tracked/runtime/recovery changes need fresh serial/full-clean parallel/Ruff/
-three sample-env Compose and exact deployment. Refresh current boards and
-HANDOFF/RUNBOOK, verify/commit/push, replace this file with ONE next company
-outcome and continue while ready delegated work exists.
+New external code/results require fresh focused/independent checks; material
+tracked/runtime/recovery edits require fresh serial/full-clean parallel/Ruff/
+three sample-env Compose and source-exact deployment.
+Refresh current boards/HANDOFF/RUNBOOK, verify/commit/push, replace this file
+with ONE material next company outcome after completion evidence and continue.

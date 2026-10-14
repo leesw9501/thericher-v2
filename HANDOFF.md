@@ -2,15 +2,32 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: relative-return-risk-ranking-v1, ACTUAL study running after
-Parent reviewed frozen fc018cea.../Claude supported-with-limits.15fit cap:
+ONE objective: retained-relative-ranking-completion-v1. Prior relative study
+TERMINAL technicalfailure:individual480s cap did not bound final diagnostics/
+prediction/restoration; oof2TCN20 took503.291s.9completed/1interrupted/5notfit,
+72economic cells unknown. Exact actor contained/reaped, lease released,
+1561.2304241active1529.2663elapsed kept, no original480/clock/source rewrite.
+Unfrozen r2files unused/retired. NEWlinked recovery reuses9completed outputs,
+partialoof2TCN60 best checkpoint inference ONLY, trains5unattempted final models
+with same data/seed/target/recipes under new full-finalization timing guards.
+Combined15attempts=10old+5new,14complete1partial; not15oldcomplete. No operator
+hold or old refit/refund; Parent reviews new frozen contract before dispatch.
+D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/first-cause.json
+Data source-readiness37checks complete: per-stock features don't need512 or
+future payoff/calendar entry+5; frozen full-reference semantics unchanged.
+Fresh61 AAPL/AMZN input preparation assigned, no API invoked yet; old21/56
+views cannot satisfy61, native100row samples may support stale engineering.
+D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
+
+Prior fc018cea... study declaration (not completion):15fit cap:
 6CPU Ridge raw20/indicator and9CUDA MLP20/TCN20/TCN60 across3stages. Prior61
 common input+12indicators, relative5session target/FITsigma normalization,
 INNER-only checkpoint/earlystop/LR,128maxepochs/480sperCUDA.5400active10800end,
-30.0066actualCUDA preparation carried, oneGPUlease.17:53UTC ledger4complete
+30.0066actualCUDA preparation carried, oneGPUlease. Historical17:53UTC ledger4complete
 (2Ridge+MLP14epochs196updates+TCN20 19epochs266updates), TCN60 running. This is
-progress, not completed/passed or convergence. Named actor39b13d5f... running;
-GPU measured33%/2398MiB at17:44. No network/credential/broker access; nightly
+progress before containment, not completed/passed or convergence. Named actor
+39b13d5f... was running, NOWabsent; GPU measured33%/2398MiB at17:44. No network/
+credential/broker access; nightly
 Paper source unchanged. Updated exact status belongs to Engine's ledger.
 D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/study/output/fit-ledger.json
 KIS documented VTS current-balance capability ACTUAL success17:45:30UTC,
