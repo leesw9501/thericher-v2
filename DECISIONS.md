@@ -10311,3 +10311,22 @@ Missing outcomes remain unknown. NAS exit20 actually retained six accepted
 pages/revisions and appendedOct13, with legacy overlap projection deferred;
 it was not a token/quota/connectivity failure.
 D:/thericher-v2/model-artifacts/execution/kis-paper-snapshot-observer-runtime-recovery-v1/finite-data-slots-v1/retirement.json
+
+## 2026-10-15 - Separate Deployed Paper Source From Mutable Development
+
+The existing nightly host compared every working SRC file with its pinned image.
+An unrelated new module could therefore stop an already-tested operational
+baseline. Scheduled private Paper deployments should bind an exact verified
+source snapshot/image rather than depend on the mutable development checkout.
+Preserve request/account/basis/volume/task identity and runtime semantics.
+
+Never copy .env, credentials, private state, market data or model weights into
+a public-source snapshot. The unchanged scoped Paper loader may read the original
+operator credential file only on explicit execution; credential paths and runtime
+source roots are separate. Snapshot/import/image/argv checks and focused native
+tests validate this separation, not submit/fill/profit or new authority.
+
+The current nightly deployment retains image3ccb/470runtime files,472public
+snapshot files, drivere586/quiet6d51, same TaskXML and23:50KST opportunity.
+Claude supported-with-limits and independent Review found no P1/P2 issue.
+D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json

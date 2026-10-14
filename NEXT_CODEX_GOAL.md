@@ -69,10 +69,13 @@ Ruff/default+research+accounting sample-env Compose pass.
 D:/thericher-v2/model-artifacts/verification/current-nas-proposer-20261015-v1/authority.json
 
 Existing nightlyOct15 23:50KST/14:50UTC Ready: CPU image3ccb2250,
-quietc50c7289,470runtime sources/4d0481cd. Only IMAGE literal changed,
-exact Task XML/argv/identity/original bank unchanged. This deploys the current
-existing strategy runtime, NOT the new model-target strategy.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+quiet6d51b09d/pinned drivere5867a8a,470runtime sources/4d0481cd in an immutable
+472public-source snapshot. No .env/secrets copied: exact loader redirection to
+the approved original private file only on execution. Mutable development SRC
+cannot invalidate this baseline. Exact TaskXML/argv/identity/bank unchanged.
+8driver+5quiet/native import-image-inert checks PASS, independent noP1/P2.
+This deploys existing strategy runtime, NOT the new model-target strategy.
+D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
 
 ## Parallel Work / Preserved Due
 

@@ -1,7 +1,19 @@
 # Data Stateboard (시장데이터 담당)
 
-Current projection 2026-10-15 KST; policy AGENTS.md; ONE goal NEXT_CODEX_GOAL.md.
+Current projection 2026-10-15 KST; policy AGENTS.md.
+ONE company goal: current-nas-owned-model-paper-cycle-v1 (NEXT_CODEX_GOAL.md).
 Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts.
+
+Current Data package CLOSED: NAS512 capture504ready61/8missing and exact four-pair
+adjustment probe/independent readback integrated by Parent. No acquisition needed
+or new Data work assigned. Existing G107/NAS-forward/ab65 market tasks retain their
+ownership; observer unchanged. Execution owns account/order endpoints. No current
+Scheduler/actor status re-read or task invocation here; earlier due/next projections
+below are retained evidence, not new dispatch instructions.
+Parent reports actual pure target set10, fresh full16283pass/22skip, nightly3ccb
+installed. Installation/targets are not a new Data capture, broker fill or PnL claim.
+This board is held unchanged for Parent commit after this header-only close-out.
+No API/Scheduler/source/private edits or further work in this package.
 
 ## Current Adjustment Capability Closed; Exact Four-Pair Readback PASS
 

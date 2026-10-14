@@ -25,6 +25,15 @@ task XML/argv/identity/basis unchanged, ReadyOct15 14:50UTC/23:50KST.
 Network-none worker inert/no credentials/API/private writes;5quiet tests pass.
 This updates existing strategy runtime, NOT deployment of the new stock model.
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+Deployment isolation repaired23:25UTC: unchanged host+472public-source snapshot
+now owns nightly runtime, not mutable development SRC. Same3ccb image/470map,
+new pinned drivere5867a8a/quiet6d51b09d; exact TaskXML/argv/identity unchanged,
+ReadyOct15 23:50KST. NO.env/secrets copied; exact snapshot/.env request redirects
+only through unchanged selective Paper loader to original project's .env.
+8driver+5quietSYN, real fresh-B import/image/inert/Task readback PASS; independent
+Review no P1/P2/Claude supported-with-limits.0broker/credential/private writes.
+New development modules no longer invalidate this existing baseline image guard.
+D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
 Next company outcome: current-nas-owned-model-paper-cycle-v1. Connect frozen
 targets to the existing exact-request stock lifecycle on the same original bank;
 preserve tonight's existing worker and all unknown reservations/other owners.
@@ -40,7 +49,7 @@ NEWr6 default binding13SYN/cold+warm455audit/Claude passed. ONLY accounting83
 Action updated20:56UTC, other6/triggers/principal/basis/claims unchanged.
 Actualr6 runtime remains UNKNOWN until owned Oct15 20:25UTC; old index2 mark
 unknown/not replayed. No manual task/collector/order invocation for this repair.
-TonightOct15KST23:50 Ready; verified new image3ccb/quietc50c, definition unchanged.
+TonightOct15KST23:50 Ready; image3ccb/frozen driver/quiet6d51, definition unchanged.
 D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1/parent-installation/after.json
 D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/firstcause-r2.json
 D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json

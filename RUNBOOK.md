@@ -17,6 +17,18 @@ task definition/argv/identity unchanged/ReadyOct15 14:50UTC=23:50KST.
 D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
 Network-none image/default-inert checks and5quiet tests pass; not runtime/fill.
 New model targets are NOT yet a deployed strategy. Parent owns installation/Git.
+Nightly source isolation is now DEPLOYED: image3ccb retained, quiet6d51b09d loads
+pinned drivere5867a8a and immutable472public-source snapshot (470image map).
+Do not edit/copy .env into the frozen repository. The approved Paper loader reads
+ONLY the original project credential file when actual execution is requested.
+Mutable working SRC additions do not change nightly runtime/source comparison.
+Task definition/argv/private bank remain unchanged;8driver+5quietSYN and native
+source/import/image/inert/Task readback PASS, independent noP1/P2. Runtime/fill
+still belongs to tonight's natural opportunity, not this deployment check.
+D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
+freeze.ps1 already consumed; snapshot/driver/source pins are immutable. Rollback
+bootstrap is before-quiet_dispatch.py in that exact root. Do not rerun the
+existing Task Scheduler Action merely to inspect it.
 Changed-path serial scratch should use a freshly checked nonexistent SHORT
 non-reparse C: child (e.g. C:/ts/<unique>); long default Windows paths caused
 existing QQQ fixture persistence failures without source changes. Never reuse
