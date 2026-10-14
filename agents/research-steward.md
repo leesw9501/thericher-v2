@@ -1,7 +1,7 @@
 # Research Steward Stateboard
 
-Current 2026-10-14 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
-broad-indicator-expert-ablation-v1. Custody is not model/Paper approval.
+Current 2026-10-15 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
+retained-indicator-policy-replay-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -20,9 +20,30 @@ Existing campaign_registry/research_campaign_custody unchanged, no new platform.
 B CLOSED/non_promoting_failed;9fit cap exhausted,8valid/1charged failure,noGPU.
 Remeasure GPU owners/headroom before allocation; capability is not approval/utilization quota.
 U CLOSED/non_promoting_failed;9fits complete,all children/containers/oneGPUlease closed,no active worker.
-New indicator/expert family assigned/source preparation,15planned+2OOFgate
-fits/max18attempts/active1800/end3000; no actual allocation or numerical run
-asserted until frozen source/contract/native SYN. Preserve all prior debits.
+I=A/research/broad-indicator-expert-ablation-20261014-v1 CLOSED/fitting_complete_economics_failure;
+contract10ef7655...
+and exact Strategyreceipt2e36bff2...,15core+up-to2OOFgate/max18attempts/1800active/
+3000elapsed. Consumer: same-key indicator expert utility -> preceding OOF fusion.
+Originalappointment1791989229.2268486 preserved; OCI pre-Python bind fault used
+oldmechanicalretry, NVML preflight exit255 then caused0fits/0allocation. Parent's
+named engineering-repair-r2 continuation adds ONLY OS ProgramFiles (sensor now0),
+same worker/features/model/data/split/seed/caps, old failures/debits not erased.
+One host accounting writer/one actual GPUlease; source read-only/networknone.
+CUDA SYN3steps before17completefits=14CPU/3CUDA,43epochs1045updates;selected4/2/1.
+2priorOOFgatefits retained. All3prediction seals/weights/curves retained; OOF1 full
+actions/all5marks only, OOF2/DEV actions/marks not sealed before old failure.
+matched_tcn float dot/sum oneULP above1 (188entries/1row); weights satisfy .1/.5,
+no broker-risk/API-cap mismatch. Original seals/failure unchanged, no clip/refit.
+0persisted/135unpublished_unknown economic cells; incrementalutility unknown.
+host-study-r2.json c51a1618... proves cleanup/reap/containerabsence/lease release,
+source unchanged. No active worker or GPU allocation. OriginalHOSTdebit1399.3011907
+active/2268.5411363end within1800/3000; metadata closure late (>3276.7731elapsed),
+posthost diagnosticactive not fully metered/no final-active/all-within-cap claim.
+I/final-closure.json binds source/seals/cleanup; RAWroot immutable, oldretry consumed.
+Ready for Parent boundary assignment only: exactFraction sameplannedgross ratio,
+NEWreplay-only seen/nonpromoting120active/600end,0fit/GPU/selection; ALL3actions/marks
+seal before summary. Not dispatched, no source/risk change. No shared ledger/platform
+or tracked source writes. Numeric artifacts D:; no qualified/Paper pass or refund.
 ## Canonical CPU Engineering Custody
 
 Consumer: Parent canonical intake/native-checkpoint/sealed5-session replay integration.
@@ -52,7 +73,7 @@ Repo budgetbff7169a... snapshotboolclock_failed; restore elapsed_charged/fault/d
 No pending allocation/worker. Parent owns next dispatch/integration/fulltests/Docker.
 Parent independent parent_readback.py/json PASS,9exactFractioncells/executablekeys0;
 canonical completion established/core9e978df/imagea142... Ready23:50. CPU package
-commands FROZEN; next15fit indicator ablation not allocated/dispatched by this worker.
+commands FROZEN; assigned indicator ablation fitting/lease now closed as above.
 ## Actual CPU Breadth Custody
 Family daily5-broad-train-ridge-huber-development-v1; one original1800s clock.
 B/contract.json56cd4469038bee4be62402d605532f694fbce48a68cbdf5338ae8cd188c82b15;

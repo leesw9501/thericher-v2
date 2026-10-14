@@ -1,7 +1,7 @@
 # Engine Research Stateboard
 
-Current 2026-10-14 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
-broad-indicator-expert-ablation-v1. Paper authority is research-independent.
+Current 2026-10-15 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns
+retained-indicator-policy-replay-v1. Paper authority is research-independent.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -19,8 +19,35 @@ Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy
 Execution broker risk. Only these boards and external research are worker writes.
 B CLOSED/non_promoting_failed;9fit cap exhausted,8valid/1charged failure.
 U CLOSED/non_promoting_failed;9market fits complete,lease released,no active worker or refit.
-Next package assigned: finite raw/12-indicator/combined Ridge/HGBR/TCN and
-OOF-only gate study. Source/contract preparation only, NOT fits/GPU allocation.
+I=A/research/broad-indicator-expert-ablation-20261014-v1 CLOSED/fitting_complete_economics_failure.
+Consumer: common-key raw/12-indicator/combined experts -> prior OOF gate -> replay.
+Frozencontract10ef76552b1b6198ae7dea0e0a440e843992d79ac3cb82b4c8d22ea6af92ba46;
+Strategyreceipt2e36bff23d0e25feec2677df2d9c6cac27d9fcb18a87cb60a5efb1d2b51f42db.
+15core+up-to2gates/max18marketattempts/1800active/3000elapsed; prior35 structural
+mask BEFOREtargets/FIT-onlyscalers/purge5/three stages, latest12 only/no sequenceaxis.
+First OCI missing-bind-target failure preserved; originalmechanicalretry consumed.
+Original study preflight then failed NVML exit255 BEFORE lease/container/model;
+exact Parent probe shows public ProgramFiles omission, NOT hardware/Docker absence.
+Parent-authorized engineering-repair-r2.json/host-r2.py adds ONLY ProgramFiles;
+oldhost/contract/source/model/data/seed/split unchanged, originalappointment
+1791989229.2268486/allfailuredebits/caps carried, diagnostics conservatively charged4s.
+CUDA SYN PASS/3optimizersteps before17marketfits;14CPU/3CUDA all complete.
+TCN16/14/13epochs=43,240/350/455updates=1045,INNERselected4/2/1;2priorOOFgatefits.
+All3prediction seals/checkpoints/curves retained; keys6103/6872/941. OOF1 fullactions/
+all5marks sealed, OOF2/DEV actions/marks not sealed before old first economics.
+Firstcause: matched_tcn dot/sum ratio1.0000000000000002,188entries/1row above1;
+finite/nonnegative weights pass .1/.5 caps, no riskcap API mismatch/corechange needed.
+Original invalid NPZ/failure unchanged; no clip/refit/replay.0persisted/135unknown
+economic cells, utilityscreen unknown, full independentreadback not dispatched.
+host-study-r2.json c51a1618... proves childreaped/containerabsent/leasereleased/source
+unchanged; no active worker/allocation. ImmutableHOSTactive1399.3011907/end2268.5411363
+within1800/3000; final metadata after3000, observed3276.7731514elapsed lowerbound.
+Posthost diagnosticactive not fully metered: no final-active/all-within-cap claim.
+I/final-closure.json binds exactsource/sealhashes/counts/limits/cleanup; RAWroot readonly.
+Next ready for Parent assignment ONLY: seen/nonpromoting exactFraction plannedgross
+ratio replay-only NEW120active/600end scope,0fits/GPU/selection, ALL3actions/marks
+sealed before summary; no repair dispatched here. No source/broker-risk change.
+All numeric outputs D:; no API/envfile/credential/order/SRC/tests/Git or oldrefund.
 Parent new source authority1334/abf2b287.../16235pass22skip and deployed
 imagea142eea3... are frozen for tonight14:50UTC; no tracked-source edits.
 ## Canonical CPU Integration Handoff
@@ -53,13 +80,13 @@ independent74b59c60127a78181bd1de322b9124fc2d6ba8881451ed8bd71bce6a1c8b78df.
 RepoABIbudgetbff7169a.../replayfe3ef6d7...; carry elapsed_charged+clock_failed.
 Preparation A/research/five-session-runner-abi-preparation-20261014-v1 unchanged:
 8SYNpass/0marketfits,receipt ed4b9b71.../contractce21a069..., no recreation/rerun.
-Next Parent independent alternate-publish readback/fulltests/deploy; next Engine
-package awaits assigned Strategy readiness. All numeric artifacts D:; U unchanged.
+Parent independent readback/fulltests/deploy already complete. Numeric artifacts D:;
+U unchanged. Current ablation family terminal handoff is above.
 Parent independent parent_readback.py/json now PASS: archived253/FIT150/scalers/
 purge/nativeforward/14keys/fullpolicy/all5marks/9exactFractioncells; executablekeys0.
 Parent established canonical goal completion/core9e978df/full16235pass22skip/
-imagea142... Ready23:50. CPU package commands FROZEN/no pending worker; next15fit
-indicator ablation awaits explicit post-boundary assignment, not started here.
+imagea142... Ready23:50. CPU package commands FROZEN/no pending worker; assigned
+indicator ablation fitting completed but economics failed as above. CPU late closure unchanged.
 ## Actual Breadth Campaign
 Family daily5-broad-train-ridge-huber-development-v1.
 B/contract.json56cd4469038bee4be62402d605532f694fbce48a68cbdf5338ae8cd188c82b15;

@@ -1,7 +1,7 @@
 # Orchestration Stateboard (총괄 조정)
 
 Current projection 2026-10-15 KST. ONE objective:
-broad-indicator-expert-ablation-v1. A=D:/thericher-v2/model-artifacts;
+retained-indicator-policy-replay-v1. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. History lives in Git/external receipts, not this queue.
 
 ## Ready / Owned / Due
@@ -14,7 +14,8 @@ M=D:/market_data. History lives in Git/external receipts, not this queue.
 | Exact Paper | Parent/Execution |19:04 SELL and19:50 native BUY full filled/targets reconciled. Independent offline chain passed: six owners/16terminal/zero unknown-pending/three held instruments, baseline owner flat. Initial aggregate tenth unchanged. |
 | Repeated execution | Existing daily-spy-session/Parent | Oct14 natural14:50..35UTC ACTUAL complete/no target delta,1token12marketGET14executionGET0orders. Exact launch/dispatch chain and privateRO native target/basis/16terminal/0unknown checks pass. NextOct15 14:50UTC Ready; imagea142 unchanged, no manual task. |
 | Data | Data/Parent | Canonical253x4+2baseline endsOct12; worker must refresh. G107 first13endpoint capture verified, nextOct14 21:50UTCReady. Fidelity6pagesstable/12uniqueTiingo matches and29pins rechecked; later reference absent/NASrevision cause/PIT/finality unknown. No stale token directory reclaimed. |
-| Engine/GPU | Engine/Steward | CanonicalCPU numerics1fit14keys9cells/0historicalexecutionkeys, late metadata breach retained. New study-r2 actual container RUNNING, OOF1+partialOOF2 outputs; final fits/result not sealed. GPU observed34percent2739MiB15:04UTC, not performance. NVML sensor3-key-env failure fixed by measuredOSProgramFiles-only addition; original failure/debits/caps retained. |
+| Engine/GPU | Engine/Steward | Indicator17fits COMPLETE14CPU3CUDA/43epochs1045updates, lease released.135original costs unknown from exactratio1ULP invalid; originalcaps valid. New replay-onlyCPU root120active600end,0fits/GPU, exactratio8SYN pass; oldbytes/debits immutable. |
+| Infra/GPU | Invoked Infra | Separate frozen invented-data throughput probe for actual316/438/566s TCNfits; three CPUquota/eval-layout variants/oneGPUlease,180active600end,0marketfits/weights. No roleMD/platform or broker involvement. |
 | Strategy | Strategy Research |12finite indicators/6existing6missing kernels,20SYNgroups passed, exactreceipt2e36bff... handed to Engine, consumption verification in new contract prep. No fits/broker/dependency install. |
 | Task lifecycle | Existing owners |245/41audit9 quiet actions1 exhaustedD1 disabled retained; two Docker/uv exclusions. No third-party/OS edits, no manual task launches. |
 
@@ -26,8 +27,10 @@ and existing owned daily invocation. Actual unattended current-window evidence
 now complete/no target delta; next owner dueOct15, not a foreground wait.
 Current improvement: exact safe
 launch/cleanup status preserved; quiet Action hides all child console windows.
-Current bottleneck: preparing same-key feature/expert contract, not GPU permission
-or Paper profitability. Canonical source-to-cost ABI now works numerically.
+Current bottleneck: producer's floating planned-exposure ratio, not GPU authority
+or missing input. Mathematical exactFraction ratio restores the declared0..1
+definition without clipping real invalid input or changing native risk caps.
+Canonical source-to-cost ABI works; retained policies must complete cost replay.
 Improvement: reuse native end-to-end SYN/CPU proof before another
 architecture; carried active/elapsed clock high-water plus fault latch prevents
 restart refunds, and cleanup is charged before final exit validation. Rebuild

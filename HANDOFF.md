@@ -2,7 +2,16 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: broad-indicator-expert-ablation-v1. Canonical loop/redeployment
+ONE objective: retained-indicator-policy-replay-v1. Broad indicator study closed:
+17fits ALL complete(14CPU/3CUDA),43epochs1045updates, INNERselected4/2/1. Full
+economic screen failed only at IEEE planned-exposure ratio1.0000000000000002;
+native sizing caps .1/.5 valid, one matched_tcn row invalid. Original135cells
+unknown, invalid seal/failure/debits retained; no strategy/threshold/cap change.
+New CPU-only engineering replay uses exactFraction definition of SAMEratio,
+0fits/GPU/selection; all3full policies/marks sealed before new summary, seen
+scope not independent performance. Parent ratio8SYN/Ruff passed. Parallel
+invented-data TCN throughput probe has one separate GPU lease, no market fits.
+Canonical loop/redeployment
 objective CLOSED with actual one CPU fit/14keys/9cost cells and independent
 saved-output scalar/Data/scaler/purge/checkpoint validation; ZERO historically
 executable keys. Numerical/readback within120active/600elapsed; later metadata
@@ -181,13 +190,18 @@ D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-202610
 D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/parent-readback.json
 Next campaign consumes finite12 technical/price-volume kernels, common prior35
 mask, raw20x5/indicator12/combined112,15planned+2OOF-onlygate fits/max18attempts,
-active1800/end3000; actual study-r2 container RUNNING, OOF1 checkpoint/prediction
-outputs and OOF2 partial fit outputs retained; final count/result not yet sealed.
+active1800/end3000; actual study-r2 terminal fitting complete/economics failure.
+17fits/43epochs1045updates, OOF1/2/final prediction/checkpoint seals retained;
+135original economics unknown. Host active1399.3012/end2268.5411 insidecaps,
+childreaped/containerabsent/lease released. Final metadata after3000 recorded,
+not an all-publication-within-cap claim. No further old study run or fit.
 Original OCI missing-mountpoint failure/retry and subsequent NVML sensor
 environment failure retained. Parent native one-variable probe: adding ONLY OS
 ProgramFiles restores sensor; no credential/live field or major runtime change.
-Named host-r2 engineering continuation keeps original appointment/debits/model/
-data/split/caps. Actual GPU34percent2739MiB at15:04UTC is use, not performance.
+Named host-r2 kept original appointment/debits/model/data/split/caps. Actual
+GPU34percent2739MiB at15:04UTC was use, not performance. Exact new replay scope
+retains all old bytes; invalid matched ratio is numerical representation only,
+not source/data absence or need for weaker risk controls.
 D:/thericher-v2/model-artifacts/research/broad-indicator-expert-ablation-20261014-v1/parent-nvml-env-probe.json
 D:/thericher-v2/model-artifacts/strategy-research/indicator-ablation-readiness-20261014-v1/readiness_receipt.json
 D:/thericher-v2/model-artifacts/research/daily5-broad-train-ridge-huber-development-20261014-v1/integration-evidence.json

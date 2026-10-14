@@ -2,7 +2,11 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective broad-indicator-expert-ablation-v1. Canonical loop/redeployment
+ONE objective retained-indicator-policy-replay-v1. Original indicator17fits
+complete; economic135cells unknown due float planned-ratio1.0000000000000002.
+No old creators/refits/threshold changes; new CPU-only exactFraction replay
+under same frozen policy definitions, fully sealed3stages before new outcomes.
+Canonical loop/redeployment
 completed numerically: CPU1fit14keys9cost cells, Parent independent replay;
 historical executable keys0. Late metadata closure600s breach retained, not a
 full-within-cap or alpha/Paper claim. New source integration
