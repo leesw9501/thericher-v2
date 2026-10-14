@@ -2,79 +2,76 @@
 
 ## Objective
 
-retained-relative-ranking-completion-v1: recover economically interpretable
-outputs from the preserved relative-risk study without refitting completed
-models, and connect a small fresh stock input to a score-only prototype.
-Keep the original study's terminal timing failure and every consumed attempt
-explicit. Independent daily Paper continues on its source-exact runtime.
+future-owned-paper-runtime-recovery-v1: make the already-owned five-session
+exit/successor/accounting opportunities source-exact and non-interactive after
+reboot, without changing their request identity, triggers or shared capital.
+Tonight's existing daily portfolio opportunity remains Ready Oct15 23:50KST.
 
-Workdir C:/Users/Public/Documents/thericher-v2. Data D:/market_data;
-models/generated research D:/thericher-v2/model-artifacts. Never KIS_LIVE_*.
+Workdir C:/Users/Public/Documents/thericher-v2. Follow HANDOFF/AGENTS/current
+boards. Data D:/market_data; models/research D:/thericher-v2/model-artifacts.
+Never KIS_LIVE_*, real-money, secrets/private values in output or Git.
 
-## Recovery
+## Execution
 
-- Original fc018cea... study is CLOSED/technical_failure, not completed.
-  Nine fits complete, tenth interrupted, five final fits not attempted.
-  Original oof2/TCN20 return took503.291s versus480: cutoff failed to bound
-  final diagnostics/prediction/restoration. Exact actor contained/reaped,
-  lease released.1561.2304241active/1529.2663elapsed retained under5400/10800.
-  No original creator retry/refund/source rewrite; original72cost cells unknown.
-  D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/first-cause.json
-- Engine owns NEW linked bounded source/contract at
-  D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1.
-  Reuse9completed checkpoints/predictions/scalers, and infer from interrupted
-  oof2/TCN60 retained INNER-best numeric checkpoint WITHOUT optimizer resume,
-  updates or retraining. Label that model partial/interrupted, not completed
-  training or convergence. Fit ONLY5previously-unattempted final models using
-  unchanged data/target/seed/splits/model/selection recipes.
-- Combined attempts remain10old+5new=15;14completed plus1partial model.
-  Preserve every old debit/curve/missing curve. New explicit full-fit guards
-  include setup/train/diagnostics/best restore/prediction/export. Freeze
-  measured suitable per-fit ceiling, e.g750seconds, and3000active6000elapsed
-  new scope with SYN/failure/I-O/cleanup included; report cumulative old+new.
-  No retrospective change to old480 or old success claim.
-- Avoid unnecessary nonprediction forwarding while retaining original
-  batch grouping where needed for numerical parity. No score/threshold/seed/
-  policy change. Native invented solver/finalization/checkpoint/deadline
-  checks before market dispatch; Parent concise challenge and ready review.
-  One measured GPU allocation, no framework/production change.
-- Seal all3aligned predictions/policies/full5marks before72newcost cells.
-  Parent/Review independently check source/keys/labels/purge/scalers/native
-  Ridge forwards/curves/cash-cost-NAV/risk. All outcomes remain seen, with
-  nonPIT/current-listing/source-unit/fidelity limits, partial-model limitations
-  and no automatic Paper adoption or independent-performance claim.
+- Static audit verified frozen goal83/97 archives and image113f9644...;
+  they intentionally use their exact archives, not today's current checkout.
+  Goal97 installed delivery-r2, not stale delivery-r1.
+  D:/thericher-v2/model-artifacts/execution/future-owned-paper-runtime-readiness-20261015-v1/readback-r2.json
+- Goal83 accounting fails before network: original driver audits four changed
+  checkout source files despite a complete exact455-file archive. New strict
+  mapping must validate that archive, original job/map hashes and all other
+  original controls. Never disable audit, restore old production source,
+  relabel archive execution as current-checkout origin or reset a reservation.
+- Finish the versioned source/import/consumer adapter and native source-only
+  preflight. Preserve original identities/argv/windows/job/map, required private
+  parser boundaries and exact native recovery. Keep explicit mapped-origin
+  evidence for later source-safe receipt interpretation; no new gate platform.
+  D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
+- Test real non-interactive Pythonw/PowerShell/child launch behavior, not only
+  Hidden metadata. Install only the seven verified project-owned quiet Actions
+  after review/tests, keeping complete original XML/rollback and all non-Action
+  fields unchanged. Skip active owners. No manual task/strategy/broker invocation
+  to prove deployment. Ensure accounting uses the corrected entry, not just a
+  quiet version of its broken old runner. Inspect source-safe installed facts.
+- Keep daily23:50 quiet a142eea3.../bootstrap44865727... unchanged. Same ONE
+  initial virtual-cash tenth, exact unknown-request recovery and buying-power
+  controls. Static readiness is not a submit/fill/current inventory/net profit.
 
-## Parallel Input And Paper Work
+## Parallel Ready Work
 
-- Data prepares then Parent dispatches one NEW market-only snapshot:
-  D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1.
-  AAPL/NAS+AMZN/NAS,61aligned completed daily bars each,<=4GETattempts/
-  one reused client-token/300active600end; source-native parser/calendar,
-  named common token/pacer, no account/order endpoints. Rawmarketbytes only
-  D:/market_data/us_equities/kis_paper_private/relative-ranking-fresh61-nas2/v1.
-  Actual capture/publication and quality limits explicit; never splice stale
-  panels or infer provider finality.
-- Feature-only prototype requires past61/latest12/FIT-frozen transforms, not
-  future payoff/calendar entry+5. Smaller batches support separately named
-  engineering score-only interpretation; don't recenter labels or relabel the
-  frozen512/min128 reference or exactTop10 policy. Data readiness:
-  D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
-- Preserve same quiet daily Paper task, nextOct15 23:50KST, imagea142.../
-  bootstrap44865727.../original shared initial virtual-cash tenth and exact
-  unknown-request recovery. No manual task run/new order for accounting.
-  Current-balance VTS probe already completed1token1GET; cash/unsettled shapes
-  are not settledcash/fees/net evidence. Missing knowledge is not a permission hold.
+- Data prepares a fixed SAME NAS512 universe current61-completed-D1 capture,
+  reusing native source/parser/publication/one-client gates. Scope<=1024GET/
+  onefreshPOST/1800active3600end at measured1.25pace; metadata/source tests and
+  owner check before Parent dispatch. Market bytes only D:/market_data. Missing
+  names remain missing; finality/actions/units/nonPIT limit claims, not Paper
+  authority. G10721:50UTC/NAS-forward621:40UTC owners unchanged.
+  D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1
+- Engine/Infra diagnoses TCN latency with finite invented-only native timing,
+  then proposes a separately frozen backend A/B if justified. First diagnostic
+  completed8pairs/0optimizer/marketfits,52.3885active/48.2512end/lease released.
+  PyTorch2.7 source excludes deterministic dilated contiguous convolution from
+  cuDNN; measured fallback hypothesis needs exact runtime evidence. Old strict
+  settings/results stay immutable, no global flag or broker-risk change.
+  D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1
+- Strategy's fixed five-expert rank blend and one chronological OOF shallow
+  tree are executable readiness, not selected models. Prefer zero-expert-refit
+  composition after this recovery; freeze its finite cost/fit budget before
+  numerical work. No in-sample expert stacking, physical-PIT claim or automatic
+  Paper adoption. No individual-profitability prerequisite for exploratory fusion.
+  D:/thericher-v2/model-artifacts/strategy-research/relative-ranking-fusion-readiness-20261015-v1/proposal.md
 
 ## Completion And Verification
 
-Honest linked completion/partial/failure evidence, actual resource debits and
-cleanup, independent numerical readback and concrete score-input consumer.
-Do not mark incomplete company work complete merely to end the turn.
+Corrected native source preflight, tested quiet child tree, exact same-owner
+installation/rollback/readback for seven Actions, tonight's unchanged readiness
+and honest independent package results. Future broker runtime closure remains
+with its scheduled owner; do not infer it from task exit/installation.
 
-Exact source1334/abf2b287... unchanged may reuse full16235pass22skip:
-D:/thericher-v2/model-artifacts/verification/research-runner-recovery-20261014-v3/authority.json.
-New external code/results require fresh focused/independent checks; material
-tracked/runtime/recovery edits require fresh serial/full-clean parallel/Ruff/
-three sample-env Compose and source-exact deployment.
-Refresh current boards/HANDOFF/RUNBOOK, verify/commit/push, replace this file
-with ONE material next company outcome after completion evidence and continue.
+Fresh source1334/abf2b287... compatibility:144serial+clean8 full16235pass22skip,
+368.019s/helperexit0, Ruff/default/research/accounting sample-env Compose pass.
+D:/thericher-v2/model-artifacts/verification/future-accounting-recovery-20261015-v1/authority.json
+Source digest must still match; new external adapters/installation need fresh
+focused native/independent checks. Material tracked/shared-control source change
+requires AGENTS full verification; no reuse of failed/partial/unclean authority.
+Integrate evidence/boards/HANDOFF/RUNBOOK, commit/push, replace this file with
+ONE material next outcome and continue. No operator decision currently needed.

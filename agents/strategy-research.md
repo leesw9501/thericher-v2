@@ -1,6 +1,11 @@
 # Strategy Research Stateboard
 
-Current projection 2026-10-15 KST; completed indicator/capability contributions.
+Current projection 2026-10-15 KST; NEXT composition readiness complete, not dispatched.
+Parent reattached actual C independent72cell/23555latest12/sixRidge/fullNAV PASS
+and current2stock4score/1424check closure; no qualified winner/Paper adoption.
+Current company goal is future-owned-paper-runtime-recovery-v1. Fixed-composition
+proposal stays READY/unfitted; archived pending-readback text is historical
+preparation context, not a new company hold.
 Activated 2026-10-13 for feature/model research and trade-policy composition.
 AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns the company outcome.
 
@@ -14,6 +19,66 @@ interpretation. No credentials, broker calls, capital or execution-risk changes.
 The MD survives; a subagent is a bounded executor, not a permanent LLM daemon.
 
 ## Current Work
+
+COMPLETED invoked relative-ranking-fusion-readiness-20261015-v1 sidecar.
+Consumer: Engine's aligned retained expert scores -> zero-newfit composition ->
+original-gross five-session cost-aware replay. Parent decides only AFTER actual
+currentC readback; Engine owns final contract/targets/splits/selection. No new
+company goal/dispatch, candidate outcome choice, market fits or Paper adoption.
+Owned NEW root:
+D:/thericher-v2/model-artifacts/strategy-research/relative-ranking-fusion-readiness-20261015-v1
+proposal.md + rank_blend.py + syn_contract.json + readiness-debits.json.
+Only this board and that exact external root are writes; no Git/src/currentC
+source/output writes, broker/API/credentials/GPU/private evaluation values.
+Current goal/Engine board report Parent C contract9e59e99d... RUNNING; no worker
+or completion probe made here.14complete+1partial remains conditional until
+Parent readback, not sidecar inference from source or a timestamp.
+
+Throughput review: this bounded ready preparation is owned by Strategy, no
+collector/GPU allocation; due is Parent's retained-completion readback, not
+foreground wait or a new objective. Reversible improvement: reuse frozen
+expert OOF scores rather than fit more experts; native sklearn already present.
+Parent's independent Data/Execution/currentC mutable sets remain untouched.
+
+ONE next option: five equal-weight per-date ordinal percentile rank mean,
+descending score/stable frozen-slot ties/exactTop10/original causal gross G/10,
+unchanged .1/name/.5gross. Pure NumPy/no label or I/O input; no future reference
+mean or positive-score threshold. Same common61/latest12/currentNAS512 support,
+>=128names/>=64outside first128 and exact stage keys; no small-panel substitution.
+ONE optional shallow sklearn1.9.0 tree stack: depth2/leaves4/leaf.05/weighted
+leaf.05/seed303, five chronological OOF rank features only. Proposed2 market
+gatefits: OOF1 gateFIT/INNER -> OOF2; OOF1+OOF2 gateFIT/INNER -> final4DEV,
+strict actual target-interval purge and expert FIT+INNER-before-OOF provenance.
+No OOF1 tree score, in-sample experts, holdout checkpoint selection or refits.
+GateFIT-only sigma floor, whole causal reference relative5return, dimensionless
+units; partial OOF2TCN60 lineage/seen/currentlisting/nonPIT/fidelity limits remain.
+Proposed600active/1200end/2marketfits/0retry/15newcostcells; not frozen/dispatched
+by Strategy. Raw/all singles/fixed/original/broad/cash compare same plannedG,
+cost5/10/20 and reference10bps quantities. Return/DD/turnover/fee/risk/realized
+exposure differences matter; lower exposure alone not alpha, no each-expert
+profitability gate. Missing support/provenance rejects exact option, not Paper.
+
+SYN contract froze120active/600end/2fit cap before numerical checks. Initial10
+pure tests PASS; real sklearn SYN fit1/checkpoint parity/4predict calls PASS then
+publication failed on numpy.int64 get_n_leaves -> JSON. first-cause.json retains
+failed source hash/partial diagnostic/exit1. Bounded int-cast repair exercised
+from SAME owned numeric checkpoint;0refits/secondSYNfit NOT attempted/olddebits
+not refunded. Fresh10 pure checks,16 independent readbacks,3 unsafe checkpoint
+rejections PASS; cumulative1SYNfit/6predictcalls/2native numeric roundtrips.
+Project-config external Ruff PASS; failed lint/native publication remain billed.
+readiness-debits.json CLOSED15.5130856active/389.8120155end within120/600;
+includes12s conservative host carry. Claude review3.02956s pre-SYN; other source/
+orchestration/queue durations unknown, not CPU/GPU spend. Kernel SHA256
+5eded442f91e6950196350c0e38a2565001f14ccd3520b94a885f31d56ec0dbe.
+No full-suite authority
+reused and no two-SYNfit success/convergence/market-performance claim.
+Exact primary sklearn1.9 release/BSD3, OOF/time-series/tree/persistence and NumPy
+stable-sort links in proposal.md; docs1.9 resolve1.9.1, exact1.9.0 source checked.
+Claude categorical supported-with-limits at this root/claude-challenge.json;
+source-safe/tool-free/advisory, no private values/raw response retained.
+Next: Parent binds or specifically rejects after currentC actual readback;
+Engine finalizes a compatible bounded study. Sidecar stops here; no operator
+decision identified, no standalone dispatch/approval platform.
 
 COMPLETED source readiness. Indicator proposal was consumed by the17fit study:
 14CPU3CUDA/43epochs1045updates, subsequent132seen cost cells independently

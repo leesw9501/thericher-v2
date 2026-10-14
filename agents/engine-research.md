@@ -16,41 +16,59 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 ## Ownership And Current Stage
 
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
-Execution broker risk. Only these boards and external research are worker writes.
-C=A/research/retained-relative-ranking-completion-20261015-v1 RUNNING/Parent_dispatched_once;
-consumer: retained relative-ranking scores -> completed all-stage cost-aware replay,
-not Paper permission/adoption/ETF compatibility/absolute-profit forecasts.
-New frozen contract9e59e99dff22865836195b880644a7731ba8ba040ad4802516b78009262017fb;
-host2260efe9.../worker32a967ea.../runtime2663414c.../guardtests a065005f....
-Old N failure/source/10attempts/9numericalcomplete/1interrupted/debits/72UNKNOWN
-immutable. Reuse9 old checkpoint/prediction/scaler outputs, no old refit. Partial
-OOF2TCN60 INNERbest4/5b607ae3... inference ONLY,0optimizer updates/no convergence claim.
-Remaining ledger2e0bcb9e... exactly5FINAL: Ridge raw20/indicator +MLP20/TCN20/TCN60,
-family attempts11-15. Combined outcome can be14complete+1retainedpartial, NEVER15oldcomplete.
-Same data/seed303/target/common61/FIT-scales/chronological splits/recipes/policies;
-unchanged .1/.5 caps/5-10-20 costs. Original512 batch membership/last-short-batch
-shape retained, skip only batches with no selected prediction rows; bit parity SYN.
-New full-fit guard before setup and before/after diag/bestrestore/selectedforward/
-checkpoint+curve exports, CUDA synchronized;750s CUDA/60CPU, reserve90 for finish.
-Native PREP actual2inventedCPU3CUDA/24epochs288updates,4guardtests/parser/3feeoracle/
-genuineinvalid/same-CUDA restore/partial0updates/sparse1-5-final TRAIN/INNER each PASS.
-PREP host963c07f8.../SYNc80a20a0.../ready0b49d21f...;ACTIVE62.76848519999476,
-end60.8101224899292 within300/900; childreaped/containerabsent/lease released,
-source+retainedoutputs unchanged. No market CSV/retained artifacts mounted in PREP.
-Newscope3000active/6000elapsed/5fits=2CPU3CUDA/oneattempt0retry;3x750+2x60=2370,
-630s for SYN/PREPcarry/partial120s/nativeintake/replay/I-O/cleanup. No oldrefund.
-Old immutable1561.230424100002active/1529.266265153885end reported separately;
-cumulative active afterPREP1623.9989092999967, NOT a restarted/refunded old clock.
-Closed-scope elapsed sum1590.0764 is NOT family wall3456.4686 atPREP closure.
-Parent exact .venv/Scripts/python.exe -B C/host.py dispatch started ONCE/session8490;
-newappointment1792003364.0046623/PREP62.7685charged+2conservative startup/publication,
-one actuallease/native SYN before marketfits. C/claude-challenge.json supported-
-with-limits. All3policy/full5mark seals required before72NEWcells; original72UNKNOWN stay.
-Final counts/per-fit proof/curves/cleanup pending. Parent originalpartial r3 numerical
-4Ridgeforward/scalers/purge PASS does NOT repair originalprotocolfalse. Parent owns
-independent numerical readback/cashmetadata/Data fresh61; source1334/nightlya142 unchanged.
-Seen engineering/currentlisting/nonPIT/sourceunits/nominalavailability/fourDEV limits;
-no qualified winner/partial convergence/Paper adoption/source/Git/API/credential writes.
+Execution broker risk. Only these boards and the assigned external package are worker writes.
+L=A/infra/relative-ranking-tcn-latency-cause-20261015-v1 CLOSED/invented_latency_diagnostic_complete;
+consumer: future native TCN training throughput, not model/outcome selection.
+Frozen contract1b0d3d0cc15ef5598ffde6995faff3baae368a0af1ec161f5a75d86375789fa9;
+host7fc61086.../workeraf50b4cb.../15source pins independently matched/Ruff F,E9 PASS.
+Parent-authorized ONCE/1attempt/0retry:4cases2pairs each/8attempted8complete,
+0optimizer updates/fits/labels/privateweights/markets/payoff/network/credential attempts.
+HOSTACTIVE52.38849370000389/120,end48.25118708610535/600,
+appointment1792006779.6886044,clock_failed=false; includes CPU6PASS PREP2.1776869
+and2s startup/publication debit. Torch2.7.0+cu128/fp32/noTF32/determinism/8threads,
+seed303/native source/runtime defaults unchanged; headroom22371MiB before lease.
+Second-pair forward/backward stream-ms:MLP.5077/.6892,TCN60 881.7919/277.8025,
+simpleConv.3148/.5681. TCN20 ONLY profiled pair1855.2250/445.0902 is instrumented.
+Delay localized to higher-dilation encoder Conv1d spans, not head/explicit sync/weightnorm.
+Profile CPU shares excluding diagnostic ranges:other69.8242%,copies/layout18.9332%,
+convolution11.1493%,sync.0069%,weightnorm.0188%. Specific kernel fallback unproven;
+2samples/overlapping event spans/profiler overhead prohibit kernel-only/speedup claims.
+Exit0/childreaped/containerabsent/lease released; lease absence independently read,
+all15pins unchanged. No GPU allocation remains from L; no rawtrace/extra pair/retry.
+Receipts: [host result](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/host-result.json) e9a80635...;
+[timing categories](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/runtime/output/diagnostic.json) 3d364bfe...;
+[worker spend](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/runtime/output/worker-spend.json) b7b0bde5....
+Creator frozen; no James-root/old-output/SRC/Git writes. Any optimization needs NEW scope.
+C=A/research/retained-relative-ranking-completion-20261015-v1 CLOSED/seen_engineering_complete_nonpromoting;
+consumer: retained relative-ranking scores -> all-stage cost-aware replay, NOT Paper adoption.
+Frozen contract9e59e99dff22865836195b880644a7731ba8ba040ad4802516b78009262017fb;
+host2260efe9.../worker32a967ea.../runtime2663414c... unchanged. Creator ran ONCE, frozen.
+New5attempts5complete=2CPU3CUDA/43epochs1462updates; reuse9oldoutputs/no refit.
+Combined15attempts=14numericalcomplete+1retainedpartial, NEVER15oldcomplete. OOF2TCN60
+INNERbest4/5b607ae3... inferred14original batches/10.2195s/0NEWoptimizer updates;
+old interrupted counts remain unknown. Same data/seed/target/scalers/splits/recipes,
+original512 batch membership, no policy/rank change/.1-.5 caps unchanged.
+CPU fullfit.2607/.3102s<60; CUDA1.2127/691.1675/686.8340s<750,0overruns;
+MLP13epochs/best1/patience; TCN15/15epochs/best10/7/timecutoff, NOT convergence.
+All3prediction/policy/required5mark seals BEFORE72cells;72complete0unknown/wholecurves.
+Published-summary screen:0true15false all-cost net/no-worse-DD comparisons vs matched
+broad/original +cash net floor; fourFINAL augmented experts beat raw only, not controls.
+Nonpromoting/seen, no qualified winner/actual profit. Parent exact linked-final-v1
+PASS23555latest12/sixRidge/72scalar+wholecurves; originalprotocolfalse preserved.
+HOSTACTIVE1531.8837571999902/3000,end1467.1570360660553/6000,
+appointment1792003364.0046623,clock_failed=false; includes PREP62.7684852+2s startup/publication.
+Old N1561.230424100002active/1529.266265153885end preserved; cumulativeactive
+3093.114181299992. Closed-scope elapsed sum2996.4233 is NOT family wall5141.4812.
+Childreaped/containerabsent/lease released/source+oldoutputs unchanged; no GPU allocation.
+Receipts: [host-study.json](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/host-study.json) 7f98389a...;
+[result.safe.json](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/study/output/result.safe.json) 055e46ba...;
+[all-stage seal](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/study/output/ALL-stages-sealed.json) 0e69fade...;
+[whole curves](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/study/output/curves.npz) 35b1ebee....
+Fit-ledger1f7fcfcb.../partial-inference2e4bd137... retain honest counts; numeric artifacts D: only.
+Old N480s breach/source/debits/72UNKNOWN untouched; Parent r3 numerical4Ridge/scalers/purge
+PASS did not repair originalprotocolfalse. Currentlisting/nonPIT/units/availability/fourseen
+cohorts/partial limits remain; no ETF/runtime/Paper adoption. Parent/Data score-only35930,
+readback/cashmetadata/futureprofiling independent; source1334/nightlya142 unchanged.
 N=A/research/daily5-relative-return-risk-ranking-20261015-v1 CLOSED/resource_contract_failure_contained;
 consumer: causal stock-universe relative score/risk proposals and bounded native
 fit-finalization repair, NOT a Paper gate/ETF compatibility/absolute-profit forecast.

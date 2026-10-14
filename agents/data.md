@@ -32,7 +32,8 @@ reused. Source selects last61 official-close<observedUTC sessions at dispatch,
 including current US day only after scheduled close; no stale21/56 splice or
 future payoff. Observed availability is persisted after raw+manifest fsync,
 not provider date/finality. Missing source units/actions/PIT/finality stay explicit.
-Latest12/checkpoint score compatibility belongs future consumer, not proved here.
+Fresh61 consumer below now verifies latest12/frozen-checkpoint artifact parity;
+this capture alone does not prove current Paper eligibility/performance.
 
 Source preparation:40 invented native parser/IO/gate/publication checks plus26
 independent exact-pin/scope/cap/no-dispatch checks; worker/tests Ruff passed.
@@ -54,13 +55,107 @@ and independent-check.json retain scope/limits. Parent authorized completed
 single probe at free Data/client slot; G10713endpoint21:50UTC
 and NAS-forward6 owned collectors unchanged. No core/research/goal/Git edits.
 
-Next assigned PREP-only consumer:
+## Fresh61 Linked Launch Recovery Complete
+
+2026-10-14 19:37UTC: Parent dispatched exact3858c796... command ONCE; actual
+complete_score_only, childexit0/reaped/no timeout/no retry. Data independently
+read existing artifacts at19:46:56.429413UTC, no score redispatch:
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-launch-recovery-20261015-v1.
+Contract3858c79654daeede3beaf91495094b5227f9ba72ca7da8a42038ead0eb18baa1;
+ready.json6cb52ff9... remains PREP evidence, not the actual receipt.
+recovery-supervisor.json2c63a91c... is full-worker actual receipt;
+score-receipt.json18ade811... records2stocks/2fixedRidges/4private score values,
+one scoreattempt/0fits/GPU/API/credential/payoff. Private NPZaf2cf179... stays
+external/private; no values printed or adopted by Paper. Named Python/uv actors
+for both exact roots0 at19:43:41UTC; supervisor confirms child reaped. No daemon.
+Old35930source/contract/claim/binding/failure immutable, no old rerun/reset/refund.
+Loaded pinned old-source AST has exactly1stdinDEVNULL->PIPE and1timedcommunicate
+emptyEOF change, identical audit AST, new-root namespace only; scoring/features/
+asof/2fixed finalRidge/FITscalers/checkpoint hashes unchanged. No generic platform.
+47native checks call EXACT effective score() Popen path with invented child:
+normalEOF exits0; timeout kill/reap passes, outsidewrites/NUL/network/env denied.
+35PREP independent checks/28source+binding pins plus Ruff pass; PREP0actualscores.
+Actual score-readback.json671e7f72... PASS1424 checks, reader42bc07bf... Ruff clean:
+122finite positive-OHLC/nonnegative-volume nativeBar rows,61identical completed
+NYSE sessionsJul20..Oct13,600scalar token values/24latest12 values/824scalarFIT
+normalizations,4independent scalar dots/4FITunscales/4relativefloor comparisons
+within1e-12absolute+relative. Fixed28source/Cbinding pins, raw/manifest/availability
+hashes and native feature/private artifact parity pass. Native prefix only;
+no window/common_rows/relative_labels/scales/futurecalendar/target/fit calls.
+Score asof19:37:01.342472UTC exceeds both observed first-available timestamps
+AAPL18:43:50.330163/AMZN18:43:51.594158UTC and official retained closes.
+Early availability/missingbar reject; no stale21/56 splice, future payoff or
+cross-stock recentering. Current-listing/actions/units/finality/nonPIT limits
+retained; source-native proxyflags descriptive, not512/Top10/risk/Paper authority.
+
+Prior4.6009801s +NEW3.9099793s PREP =8.5109594s; full actualworker1.2571031s
++2s startup/publication allowance =11.7680625s producer cumulative active.
+Readback .7539169s +5s preceding inspections +1.5s formatting/lint incl failures
++2s startup/publication allowance =21.0219794s through readback, below120active.
+Actualscore new elapsed1.2571031s (+2s allowance), below600; original .5997599s
+failure elapsed stays distinct. Old+new elapsed sum NOT family wall; no refund.
+Reader full command1.1449663s covered by its worker+startup/publication allowance.
+Source authoring/review/orchestration separate, not CPU/GPU spend. No C edits.
+Claude supported-with-limits: strongest kill test/real effective launch path or
+delta differs, covered by exact-Popen fixtures/delta inventory/audit hash proofs.
+Exact review.json/independent-check.json preserve limits. Actual numerical/input
+readback ready for Parent integration. No oldroot/C/core/shared-control/Git writes,
+no new APIs/model selection/thresholds/Paper adoption or independent-performance claim.
+
+## Fresh61 Original Feature Consumer Failed
+
+2026-10-14 19:06:20UTC source-ready; Parent exact35930de0 dispatched ONCE at
+19:10:11.249246UTC, CLOSED/pre-score launch failure, not inference success:
 D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-prototype-20261015-v1.
 Data owns that NEW root plus this board; existing capture/source/output immutable.
 Past61/native latest12/FIT-frozen shared per-stock feature adapter and CPU Ridge
 score-only prototype,120active/600elapsed/0fits/0GPU/0payoff/oneactual score-readback.
-Native SYN and archived-prefix checks only before Parent reviews final Engine
-closure. Actual score NOT dispatched; no duplicate collection/new provider call.
+Contract35930de07f2e5b4c7ecaddacc29e16e7c0dcd96efdb003fabb61cc91a9d93d1d;
+ready.json7584ccf5... remains original PREP evidence, not current runtime status.
+C closed/final11-12Ridge bindings passed. Actual command exit1/generic
+scoped_source_or_input_failure,0Cscore forwards/fits/GPU/API/payoff. Score/risk/
+PnL values were NOT produced, not flat/zero values. Popen(stdin=DEVNULL)
+opens WindowsNUL O_RDWR and frozen audit raises write_scope beforeCreateProcess.
+Native fixture proves same exception/CreateProcess0; inside-write/outside-read
+allowed and outside-write/NUL denied. PIPE+emptyEOF invented child passes under
+unchanged audit. Claim/binding/source frozen, actor0, no score/private/supervisor
+or child receipt; no redispatch/reset. Full failed command wall.5997599s plus
+prep2.4095085 retained; diagnostic workers1.5917117s separately carried/no refund.
+score-first-cause.json contains actual stdout, native categorical proof/cases and
+debits. NEW linked PIPE+EOF root3858c796... above is independently verified after
+Parent dispatch, not original success/retry; original failure remains closed.
+No operator hold. Parent's
+future material Execution-recovery full tests are not a Data/C prerequisite.
+43native/archive feature/forward checks plus26
+independent exact-pin/schema/cap/no-score checks passed; all3sourcefiles Ruff clean.
+Preparation2.4095085active seconds carried;0actual Cmodel scores/fits/GPU/payoff,
+0provider/credential access. Engine numeric outputs NOT read during preparation.
+Archived2x61 at asof18:48UTC: both latest12 fully defined; raw20/60/native latest35
+parity, single-stock batch invariance, firstavailable-future/missing61/undefined12/
+frozenpin/calendar/unsafeNPZ/incompleteEngine kills passed. Invented Ridge
+coefficient/scaler fixtures only, no actual Ccheckpoint/FIT scaler or payoff use.
+
+adapter.py resolves only pinned Strategy /current-src alias to existing host
+read-only source, verifies actual loaded contracts/chain/indicator_row origins,
+and extracts only old require/tokens/transformed AST leaves. relative=None;
+no window/common_rows/relative_labels/scales/future-calendar-tail/target access.
+Source-native eligibility flags descriptive only, no512/min128/Top10 enforcement,
+recentring, fitting or broker controls. Native ndarray/Decimal/Bar CSV mapping and
+official historical-prefix closes<=asof; input/raw/availability hashes fixed.
+Scores/derived features stay private numeric-only NPZ; stdout counts/hashes only.
+
+CPU host runtime NumPy2.5.1/sklearn1.9.0/calendar5.4.0 tested/pinned, two BLAS threads,
+network/credentials/GPU imports audit-blocked, no Docker/lease/allocation. Optional
+exactd6 image unused; no image parity/performance claim. Original intended score binds
+only C finalFIT scalers and final Ridge raw20/indicator numeric checkpoints after
+closed host flags/complete final11-12ledger hashes. No running weight read or old
+fit/source rewrite; one actualscore claim/supervisor cap/reap/no automatic retry.
+Claude supported-with-limits; strongest kill alias resolves source other than
+hashed origin, covered by origin/pin/parity checks. Exact review.json and
+independent-check.json retain limits. Parent final Engine review authorized the
+failed original attempt; no duplicate raw collection/re-dispatch/global Paper
+hold. Any NEW mechanical correction needs named source/caps and Parent dispatch;
+old claim/source remain frozen. Unrelated C72PASS/Paper ready unaffected per Parent.
 
 ## Relative Ranking Input Readiness
 
@@ -85,8 +180,8 @@ NAS-forward6 throughOct13 remain56rows each:0 possible61 windows;96 retained
 revisions and last90 changed overlap rows remain scoped revision/as-of limits.
 ETF253 is its own Paper input, not a NAS-stock relative-model domain substitute.
 At that source-only pass no current learned-score input set was verified; fresh
-source61 capture is now evidenced above, while score/latest12 runtime remains
-unverified. Standing Paper authority unchanged.
+source61 capture and separate fixed2Ridge/latest12 artifact runtime are now
+verified above, not same512/Top10 or Paper adoption. Standing Paper authority unchanged.
 
 common_rows calls window with entry+5 calendar lookup. Source tokens/latest35
 indicators/causal sigma need no future price or target. Future feature-only API

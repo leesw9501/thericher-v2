@@ -132,6 +132,20 @@ current21 unselected,45e93 not dispatched. Operator decisions: NONE.
 
 ## Other Owned Future Paper
 
+2026-10-15KST static reattachment: goal83/97 frozen archives/image113f9644...
+match and do not require the current checkout for their order lifecycle.
+Goal97 actually installed delivery-r2; old delivery-r1 references below are
+historical, not the installed Action. Source-safe audit only, not fills/state:
+D:/thericher-v2/model-artifacts/execution/future-owned-paper-runtime-readiness-20261015-v1/readback-r2.json
+Goal83 ACCOUNTING preflight still checks four changedcheckout source pins even
+though its exact455-file archive exists. Strict archive/import mapping and
+seven verified future quiet Actions are PREP, not installed/runtime success:
+D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
+Original identities/job/map/triggers/basis/unknown recovery preserved; no manual
+task/order invocation. Parent owns this repair; independent daily23:50a142
+remains source-exact/Ready. Fresh compatibility144serial/16235pass22skip,
+clean8/368.019s/Ruff/threeCompose; external native/installation checks still needed.
+
 Goal97 owner:
 D:/thericher-v2/model-artifacts/execution/kis-five-session-history-aware-paper-delivery-v1/delivery-r1
 Exact job374ce6ae...; tasks successor-20261019-{enter,close,recover} plus accounting.

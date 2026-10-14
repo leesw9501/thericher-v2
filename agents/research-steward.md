@@ -17,31 +17,47 @@ Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
 Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
-C=A/research/retained-relative-ranking-completion-20261015-v1 RUNNING/Parent_dispatched_once;
-contract9e59e99d.../host2260efe9.../worker32a967ea.../runtime2663414c... unchanged.
-Reuse9 old models/predictions/scalers without refit; interruptedOOF2TCN60 best4/
-5b607ae3... inference ONLY/0optimizer updates, partial nevercompleted/converged.
-New remaining-ledger2e0bcb9e... final5=2CPU3CUDA, attempts11-15; combined14numerical
-complete+1retainedpartial/15totalattempts if completed. Old N failure/10attempts/
-1561.230424100002active1529.266265153885end/72UNKNOWN neverreset/refunded/reclassified.
-Newscope3000active/6000elapsed/oneattempt0retry, CUDA750 entirefit/CPU60/partial120;
-max128epochs16128updates/CUDA48384total. Full-fit guards synchronize and cover
-modelsetup/diag/bestrestore/selectedprediction/checkpointexports;90s finishing reserve.
-Original512-batch membership retained/only unselected batches skipped, no score change.
-PREP actual2inventedCPU3CUDA24epochs288updates +4guardtests/nativeparser/restore/
-selected-bitparity/partial0updates/3feeSYN/genuineinvalid PASS,0marketfits/oldinference.
-PREP ACTIVE62.76848519999476/end60.8101224899292 within300/900, source+oldoutputs
-unchanged/childreaped/containerabsent/exclusivelease released. Sensor22372MiB free,
-peak121634816reservedbytes; .32 allocatorfraction local, not globalGPUquota/convergence.
-Host963c07f8.../SYNc80a20a0.../ready0b49d21f...; entirePREPdebit carried into3000.
-Cumulative active1623.9989092999967; closed-scope elapsed sum1590.0764 explicitly
-NOT actualfamilywall3456.4686. Author/review/queue separate, no oldclock reopen.
-Parent exact C/host.py dispatch ONCE/session8490/appointment1792003364.0046623,
-one actuallease/native SYN before newmarketfits; source/data/seed/splits unchanged.
-Parentdirection supported-with-limits atC/claude-challenge.json, no rivalGPU actor.
-All3policy/5mark seals BEFORE72NEWcells; originalunknown72/sourcefailure preserved.
-Finalcounts/curves/checkpoint/per-fit proof/cleanup pending. Parent/Data fresh61 and
-Paper cashmetadata independent; production1334/nightlya142/broker risk untouched.
+L=A/infra/relative-ranking-tcn-latency-cause-20261015-v1 CLOSED/invented_latency_diagnostic_complete;
+consumer: future native TCN throughput attribution, no model/payoff selection.
+Contract1b0d3d0cc15ef5598ffde6995faff3baae368a0af1ec161f5a75d86375789fa9;
+15source pins matched/Ruff F,E9/native CPU controls6PASS; Parent exact dispatch ONCE.
+4invented cases/2pairs each/8attempted8complete,0optimizerupdates/fits/labels/privateweights;
+seed303/Torch2.7.0+cu128/fp32/noTF32/determinism/8threads/defaults unchanged.
+HOSTACTIVE52.38849370000389/120,end48.25118708610535/600,
+appointment1792006779.6886044,clock_failed=false; CPU PREP2.1776869+2s startup included.
+Exclusive native lease acquired after ownership probe/headroom22371MiB;1attempt/0retry,
+quiet exit0/childreaped/containerabsent/lease released+independent absence read/sourceRO.
+No L GPU allocation remains; network/credentials0, no rawtrace/extra profiler pair.
+TCN higher-dilation encoder spans dominate; profiled CPU other/copies88.7574%,
+explicit sync/weightnorm small. 2samples/overlap/instrumentation, no kernel/speedup claim.
+Receipts: [host result](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/host-result.json) e9a80635...;
+[timing categories](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/runtime/output/diagnostic.json) 3d364bfe...;
+[worker spend](D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-latency-cause-20261015-v1/runtime/output/worker-spend.json) b7b0bde5....
+Creator frozen/old debits untouched/James root unchanged; future optimization NEW scope.
+C=A/research/retained-relative-ranking-completion-20261015-v1 CLOSED/seen_engineering_complete_nonpromoting;
+contract9e59e99d.../host2260efe9.../worker32a967ea.../runtime2663414c... unchanged; creator frozen.
+New5attempts5complete=2CPU3CUDA/43epochs1462updates;9old outputs reused/no refit.
+Combined15attempts=14numericalcomplete+1retainedpartial. OOF2TCN60 best4/5b607ae3...
+inferred14original batches/10.2195s/0NEWupdates; original interrupted counts unknown.
+750s full CUDA guards PASS1.2127/691.1675/686.8340s;CPU.2607/.3102s<60/0overruns.
+TCNs stop reserved-finalization cutoff, NOT convergence; partial nevercompleted/converged.
+All3policy/required5marks sealed BEFORE72newcells;72complete0unknown/wholecurves,
+published-summary matched-control screen0true15false, seen/no qualified/Paper winner.
+HOSTACTIVE1531.8837571999902/3000,end1467.1570360660553/6000,
+appointment1792003364.0046623,clock_failed=false, PREP62.7684852+2s startup/publication included.
+Old immutableN1561.230424100002active/1529.266265153885end; cumulativeactive
+3093.114181299992. Closed-scope elapsed sum2996.4233 NOT familywall5141.4812.
+Exact childreaped/containerabsent/lease released/source+oldoutputs unchanged;
+session8490 reaped, no GPU allocation remains. Parent dockerpsnone19:07 confirmed.
+Receipts: [host-study.json](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/host-study.json) 7f98389a...;
+[result.safe.json](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/study/output/result.safe.json) 055e46ba...;
+[all-stage seal](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/study/output/ALL-stages-sealed.json) 0e69fade...;
+[whole curves](D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/study/output/curves.npz) 35b1ebee....
+Old N480breach/10attempts/debits/72UNKNOWN unchanged; no refund/rerun/selection.
+Parent exact linked-final-v1 PASS23555latest12/sixRidge/72scalar+wholecurves;
+originalprotocolfalse preserved. Data35930score-only separate; no currentCbatch/source
+changes. Standing Paper authority independent;
+production1334/nightlya142/broker controls untouched, permanent seen/partial limits remain.
 N=A/research/daily5-relative-return-risk-ranking-20261015-v1 CLOSED/resource_contract_failure_contained;
 contractfc018cea.../hostdfe1e5bf.../worker0768e307.../kernelsbbf7c8b3... unchanged.
 Parent exact creator dispatch ONCE, session29578 now reaped. Planned15=6CPU9CUDA,

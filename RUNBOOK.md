@@ -2,16 +2,27 @@
 
 ## Current Dispatch (2026-10-15 KST)
 
-ONE objective retained-relative-ranking-completion-v1. Originalfc018cea study
+ONE objective future-owned-paper-runtime-recovery-v1. Seven existing future
+project-owned Actions/source adapter are PREP until verified installed readback,
+not runtime broker success. Same quiet daily23:50 task/imagea142 unchanged.
+D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
+Previous retained-relative-ranking-completion-v1 CLOSED actual5newfits/72cost
+cells/independent latest12+sixRidge+fullcash-NAV PASS, originalprotocolfalse kept.
+Fresh2stock2Ridge4score consumer actualCOMPLETE/1424checks/21.02198active,
+0newfitsGPUAPIpayoff/childreaped; old35930NUL pre-launch failure preserved.
+Read exact receipts, never replay creators to inspect historical outcomes:
+D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/independent-linked-final-v1.json
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-launch-recovery-20261015-v1/score-readback.json
+Originalfc018cea study
 CLOSED technicalfailure/actorabsent/lease released:9completed1interrupted5notfit,
 0economiccells/72unknown.480perfit guard missed final diagnostics/predict/restore;
 oof2TCN20 actual503.291s,notcompliant.1561.2304active1529.2663end retained,
-original5400/10800/480 budgets unchanged/no refunds. New linked repair RUNNING:
+original5400/10800/480 budgets unchanged/no refunds. Linked repair CLOSED:
 9retained completed,partialtcn60best inferenceonly,5new unattemptedfinalfits,
 full-finalization timing guard/new caps. Contract9e59e99d... native PREP passed,
 Parent dispatched host.py ONCE18:42UTC; creator FROZEN, do not dispatch again.
 750CUDA/60CPU/3000active6000end, old9 reuse and partial inference only.
-Actual ledger/cleanup/results required; no original creator rerun/humanhold.
+Actual ledger/cleanup/results checked above; no original creator rerun/humanhold.
 D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/ready.json
 Original independent partial-r3 readback math PASS/original protocol FAILED,
 not new scope authority or economics. Read exact receipt, no creator rerun:

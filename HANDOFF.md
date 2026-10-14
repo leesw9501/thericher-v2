@@ -2,7 +2,36 @@
 
 ## Current Work (2026-10-15 KST)
 
-ONE objective: retained-relative-ranking-completion-v1. Prior relative study
+ONE objective: future-owned-paper-runtime-recovery-v1. Static future-owned audit
+found goal83 accounting's old driver checks changedcheckout4pins despite exact
+archive455; native strict mapping/import/consumer and seven quiet Actions are
+PREP, not deployed. Goal97installed delivery-r2 uses its exactarchive/image113...
+and is not a current-source mismatch. Tonight23:50 a142quiet task unchanged.
+D:/thericher-v2/model-artifacts/execution/future-owned-paper-runtime-readiness-20261015-v1/readback-r2.json
+D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
+Previous retained-relative-ranking-completion-v1 COMPLETE with actual research
+and current-input consumer, not model profitability/Paper adoption. Research
+CLOSED5newfits(2CPU3CUDA)/43epochs1462updates.72/72cost cells independently
+checked:23555latest12/sixRidge/scalers/purge/fullcash-NAV-exposure/risk paths.
+0of15 matched-control joint checks pass, not all-model futility/Paper hold.
+1531.8838active1467.1570end under3000/6000; cumulative3093.1142active,
+closedelapsed sum2996.4233 is not familywall5141.4812. TCN20/60 return691.1675/
+686.8340 under750; cutoff NOTconvergence. Actorabsent/GPUlease released.
+D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/host-study.json
+D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/independent-linked-final-v1.json
+Current-input2Ridge consumer COMPLETE:2stocks4scores/0newfitGPUAPIpayoff,
+actualchildexit0/reaped;1424independent checks of122bars/28pins/scalar dots/
+FITunscale/floors/availability/nativeprefix PASS.21.02198active throughreadback
+under120, oldfailure/debits retained. Scores private, not broker proposals.
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-launch-recovery-20261015-v1/score-readback.json
+Original35930de0 pre-scorelaunch
+failure retained: native NUL O_RDWR/audit reproducer proves pre-CreateProcess
+denial; actualstdout generic, not captured specificwrite_scope. No score/child/
+supervisor remains. NEWPIPE/emptyEOF mechanical scope carries4.6009801known
+prep/failure/diagnosticwall without audit broadening/refit/reselection.
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-prototype-20261015-v1/score-first-cause.json
+D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-launch-recovery-20261015-v1
+Prior relative study
 TERMINAL technicalfailure:individual480s cap did not bound final diagnostics/
 prediction/restoration; oof2TCN20 took503.291s.9completed/1interrupted/5notfit,
 72economic cells unknown. Exact actor contained/reaped, lease released,
@@ -10,12 +39,11 @@ prediction/restoration; oof2TCN20 took503.291s.9completed/1interrupted/5notfit,
 Unfrozen r2files unused/retired. NEWlinked recovery reuses9completed outputs,
 partialoof2TCN60 best checkpoint inference ONLY, trains5unattempted final models
 with same data/seed/target/recipes under new full-finalization timing guards.
-Combined15attempts=10old+5new,14complete1partial; not15oldcomplete. No operator
+Actual combined15attempts=10old+5new yielded14complete1partial; not15oldcomplete.
+Linked closure and current-score consumer are evidenced above. No operator
 hold or old refit/refund. NEW contract9e59e99d... PREP62.7685active/60.8101end
 passed native guard/restore SYN and Claude supported-with-limits. Parent
-dispatched ONCE18:42UTC; exact completion actor observed running18:48UTC,
-GPU35%/2399MiB at this integration check. Final fits/economics remain pending,
-not inferred done.
+dispatched ONCE18:42UTC; completedfits/economics/cleanup checked above.
 D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/ready.json
 Original independent partial-r3 readback PASS18:38UTC:9complete/1interrupted/
 5unattempted,4Ridge forwards; math checked but original protocol false,
@@ -34,16 +62,11 @@ D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v
 D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-prototype-20261015-v1
 D:/thericher-v2/model-artifacts/data/relative-ranking-input-readiness-20261015-v1/input-readiness.json
 
-Prior fc018cea... study declaration (not completion):15fit cap:
-6CPU Ridge raw20/indicator and9CUDA MLP20/TCN20/TCN60 across3stages. Prior61
-common input+12indicators, relative5session target/FITsigma normalization,
-INNER-only checkpoint/earlystop/LR,128maxepochs/480sperCUDA.5400active10800end,
-30.0066actualCUDA preparation carried, oneGPUlease. Historical17:53UTC ledger4complete
-(2Ridge+MLP14epochs196updates+TCN20 19epochs266updates), TCN60 running. This is
-progress before containment, not completed/passed or convergence. Named actor
-39b13d5f... was running, NOWabsent; GPU measured33%/2398MiB at17:44. No network/
-credential/broker access; nightly
-Paper source unchanged. Updated exact status belongs to Engine's ledger.
+Original fc018cea... uses61past bars/latest12, relative5session/FITsigma,
+INNER-only checkpoint/earlystop/LR/max128epochs. Immutable5400active10800end/
+480CUDA cap and original preparation/debits stay in its contract/ledger.
+Both study actors are absent and GPU leases released. New profiling is PREP only.
+No network/credential/broker access by either research process; Paper independent.
 D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/study/output/fit-ledger.json
 KIS documented VTS current-balance capability ACTUAL success17:45:30UTC,
 1token1GET0orders/privatebookwrites; complete singlepage output1=3/output2=5/
