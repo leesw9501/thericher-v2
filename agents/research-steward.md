@@ -10,11 +10,11 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |LongNAS actual12CUDA+3CPU CLOSED/cleanup complete. Raman owns next adjusted20 indicator15 MSE-vs-RankNet preparation/<=6CUDAfits, native SYN before market. No environment/permission hold.|
-| Next depth |One scalar MLP/two objectives/three chronological folds, no hidden window/seed grid. Freeze finite actual caps, train/INNER curves/early stop/restore, one lease and measured useful batches/headroom.|
-| CPU research |Godel HGB/rule pre-fit calendar/runtime repair,0market fits so far,max9fits/900active7200originalend. Core20 separate72cashflow diagnostic CLOSED, nativeP2 unresolved.|
-| Data |McClintock adjusted20ready12000bars/10800windows; separately bounded older adjusted backfill/overlap-anchor basis. No GPU.|
-| Strategy |Kant feature kernels/RankNet objective READY, now independent longNAS mechanics reader. Descartes current FirstRate20 sample/MTF CLOSED, now native quiet-launch test.|
+| GPU |Godel intraday CLOSED9CUDA+3CPU/245epochs/5780updates/90cells,123.670aggregateactive/103.699end; source/lease/children clean. No environment/permission hold or dummy load.|
+| Next depth |Dirac prepares causal daily252context/21session input kernel,0fits. Godel freezes meaningful longer-hold target/split/caps before next allocation. One lease/headroom; no global4GiB cap inferred from prior campaign choice.|
+| CPU research |Kant independent pairedRankNet, Raman independent longExperts, Dirac monthly12-1/6-1 fixed-policy replay.9HGB/126cells independent pass in scope,0primary; Core20 nativeP2 remains scoped.|
+| Data |Adjusted20 recovery CLOSED89723bars/87743windows, collectors released13:23:29UTC before Paper. SECmap403closed1GET/0retry/no dataset. No GPU.|
+| Strategy |LongNAS independent687pins/108cells PASSED,0restored model calls. Dirac completed MTFcausal feature adapter/420cache arrays/0fits. Descartes quiet tests/actual receipt CLOSED, startup visibility unknown.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
 Last measured hardware:RTX4090/24564MiB/driver610.88; RAM63.8GiB/36.6GiBfree.
@@ -24,7 +24,7 @@ Prepared role/MD is not evidence of a live numerical worker.
 
 ## Custody To Preserve
 
-- Latest continuation73 fitted VERSIONS(48CUDA/25CPU), not73architectures.
+- Latest continuation109 fitted VERSIONS(69CUDA/40CPU), not109architectures.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent
@@ -53,6 +53,15 @@ Prepared role/MD is not evidence of a live numerical worker.
 - LongNAS15fits/108cells(75complete/33unknown) CLOSED, primaryGRU60false.
   1024.012authoractive/1272.601end within7200/18000, zero-refit publication repair
   retains original failed write. Independent review separate; no dummy rerun.
+- Paired RankNet6CUDA/174epochs/294updates/54cells CLOSED,99.328aggregateactive/
+  729.381end; actual native train/restore2.543sec, not99secGPUspend. Cached tensors
+ 185..255KB; low occupancy is normal for this panel. No forced extra epochs.
+- Parent synthetic residency profile never ran; unsafe unexecuted lease-cleanup
+  entry retired to inert stub, exact original source retained against old contract.
+  Meaningful longer-source training has priority, not a synthetic utilization load.
+- Long adjusted20 ninefits/72cells/0unknown CLOSED96.614aggregateactive/76.637end;
+  exactold62938input,132epochs/3552updates/5160forwards. Newer89723input is a
+  separate next consumer, never a silent mid-campaign substitution. No primary pass.
 
 A/research/nas-long-history-utility-experts-development-20261015-v1/independent-review/completion.json
 A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json

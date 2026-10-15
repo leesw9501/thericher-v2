@@ -26,15 +26,17 @@ Rollback before-quiet_dispatch.py is retained in the frozen-deployment root.
 ### New model,22:40 KST
 
 Task: thericher-kis-paper-current-nas-model-20261015.
-Ready/enabled, first Oct15 13:40 UTC. Installation is NOT submit/fill/closure.
-Image sha256:ce219a8dd26c056563df916f184d17ae5942c55fcd57f502175c4c6fc90c160f.
-A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
-A/execution/current-nas-owned-model-paper-deployment-20261015-v1/deployment.json
-Full source/installed14-trigger/unchanged-nightly native readback:
-A/execution/current-nas-owned-model-paper-deployment-20261015-v1/after-installation.json
-
-Host c6e4c034/worker9e1c0473, exact474-file manifest130d1c33,
-launcher4892baa8/configa13fa7d9. Fixed targets/input/policy source bound.
+First13:40UTC visit failed pre-submit; actual read-only target0 probe reproduced
+all-zero quote date/time. Same Task recovered/re-enabled14:37:42UTC, next
+Oct15 15:05UTC/Oct16 00:05KST. Installation is NOT submit/fill/closure.
+Image sha256:87697f8e8bbf404c3f54a0d9e2d089eeb466a9029d7bb96cffbf6aa2ade9c420.
+A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
+A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/deployment.json
+Exact14triggers/nightly XML unchanged. Host2fb90e20/workerd2d4b108,
+474-file manifest13cfe08b, launcher4892baa8/config6e5fcc16.
+Fixed targets/input/policy source bound. Old ce219/receipts remain immutable.
+Only a new unreserved BUY's both exact zero-time fields may process that target
+without order/reservation. Pending recovery/SELL and all freshness checks remain.
 Same native private/runtime/emergency volumes and original shared tenth;
 no new bank or foreign inventory adoption.
 
@@ -83,6 +85,22 @@ worker. Use task facts and categorical task-folder launches/*.json instead.
 The13:08 observer became Running between metadata precheck and readback;
 that run's old/new Action selection is unknown, no worker stopped/replayed.
 Next natural launch is needed to establish the new path's runtime evidence.
+Exact13:12 natural wrapper receipt returned0/configa94021d3; independent watcher
+attached7.81seconds late, so STARTUP window visibility remains UNKNOWN. Do not
+call zero windows at closure quiet-startup proof.
+Current readonly observer phase shifted TOTAL+180seconds from original, phase3
+mod4, to reduce token coincidence with BOTH model13:40 and15:05 phases.
+Initial+60second revision is historical. Current14:28UTC r2 added120seconds.
+PT4M/PT10H/weekly
+recurrence/actions/settings/principal unchanged; no order Task change or extra
+task. Existing60secondtoken/rate guards unchanged. Next14:31 then35/39/43/etc.
+This is source-based preventive deconfliction, not measured starvation or a
+guarantee against startup jitter. Separate quiet rollback retained in:
+A/execution/readonly-observer-phase-r2-20261015-v1/before.xml (UTF-8 XML text).
+Claude supported-with-limits; independent XML delta plus negative mutations PASS.
+Earlier finite13:36:45..13:37:20 sample:1624samples/zero new visible consoles;
+not whole-PC/sub20ms/alternate-desktop proof. Hubble owns another finite14:50/
+15:05 startup metadata sample, not an order worker or permanent monitoring daemon.
 Legacy install_kis_paper_schedules.ps1 still describes old console Actions;
 do not blindly overwrite migrated definitions with it. Future owned installers
 should use this tested quiet path rather than Hidden metadata alone.
@@ -126,7 +144,7 @@ foreach ($name in @('thericher-kis-paper-daily-spy-session','thericher-kis-paper
 ```
 
 New model launch pointer:
-A/execution/current-nas-owned-model-paper-deployment-20261015-v1/launch/current.json.
+A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/launch/current.json.
 Bind pointer hash -> immutable launch -> exact runtime receipt hash/source/image/
 clock -> strict native cycle/intent/fill/book. No latest-file scans/task-exit
 fill inference. Active owner remains exclusive; missing outcome is unknown.
@@ -136,7 +154,8 @@ or broker method merely to read evidence.
 
 The old nightly reboot-recovery/read_owned_dispatch.py has STALE driver/image/
 time constants. Do not alter its historical source or use it as current proof;
-use the current r2 reader below, bound to drivere586/image3ccb and modelce219.
+use r2 for unchanged nightly drivere586/image3ccb. Model needs NEW recovery-root
+reader20df9e23, exact new root/image87697/host2fb9/manifest13cfe08b.
 Historical pure read_private_cycle.py covers the daily cycle, NOT the new model
 pointer. Model attribution uses read_native_model.py, not recovery-capable code.
 
@@ -152,7 +171,7 @@ No forced liquidation or added capital. Native models may be reduced/rejected.
 After the respective natural opportunity (future bounds are deliberately invalid
 before their time), use the source-pinned public receipt reader:
 ```powershell
-uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/read_owned_dispatch.py --read --profile model --not-before '2026-10-15T13:40:00+00:00'
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/read_owned_dispatch.py --read --profile model --not-before '2026-10-15T15:05:00+00:00'
 uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/read_owned_dispatch.py --read --profile nightly --not-before '2026-10-15T14:50:00+00:00'
 ```
 
@@ -162,7 +181,7 @@ Use ONLY an offline reader, never the deployed strategy worker. Example after
 source/owner checks, with a unique owned container name/label for typed cleanup:
 ```powershell
 $readerId = [Guid]::NewGuid().ToString('N')
-docker run --rm --name "thericher-offline-model-$readerId" --label "thericher.offline.native-read=$readerId" --network none --read-only --log-driver none --cap-drop ALL --security-opt no-new-privileges --pids-limit 128 --memory 512m --cpus 1 --env OPENBLAS_NUM_THREADS=1 --mount 'type=volume,source=thericher-v2-paper-canary-private-acct-20261007-v1,target=/app/private,readonly,volume-nocopy' --mount 'type=bind,source=D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2,target=/reader,readonly' sha256:ce219a8dd26c056563df916f184d17ae5942c55fcd57f502175c4c6fc90c160f python -B /reader/read_native_model.py --read
+docker run --rm --name "thericher-offline-model-$readerId" --label "thericher.offline.native-read=$readerId" --network none --read-only --log-driver none --cap-drop ALL --security-opt no-new-privileges --pids-limit 128 --memory 512m --cpus 1 --env OPENBLAS_NUM_THREADS=1 --mount 'type=volume,source=thericher-v2-paper-canary-private-acct-20261007-v1,target=/app/private,readonly,volume-nocopy' --mount 'type=bind,source=D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2,target=/reader,readonly' sha256:87697f8e8bbf404c3f54a0d9e2d089eeb466a9029d7bb96cffbf6aa2ade9c420 python -B /reader/read_native_model.py --read
 ```
 
 The canonical private VOLUME mounts at /app/private, NOT /app/private/canary;
@@ -187,9 +206,9 @@ decision. It does not replace the Windows workers or prove they ran.
 ## Verification
 
 Fresh exact source authority:
-A/verification/current-nas-owned-cycle-20261015-v1/authority.json
-925 changed-path serial pass; fresh clean8 full16,488pass/22skip/351.816sec,
-16,510collected/helperexit0; source1,342/digest4a1e461984894e82caa21601bcb0673dfab7cd85bb5924a8dd916bd24c71bc46.
+A/verification/current-nas-zero-quote-recovery-20261015-v1/authority.json
+870changed-path serial pass; fresh clean8 full16,595pass/22skip/415.234sec,
+16,617collected/helperexit0; source1,344/digestfacf454d238867676f114c8bd588c10e9d67946a738f2148a1f02d560fea6024.
 Ruff/default/research/accounting sample-env Compose passed.
 External deployment12SYN/native COM14triggers/actual installation readback passed.
 Claude categorical supported-with-limits is advisory, not runtime proof.

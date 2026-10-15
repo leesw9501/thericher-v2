@@ -56,6 +56,13 @@ def test_inert_does_not_read_source_credentials_or_docker(monkeypatch, capsys):
     [
         ("advanced", "native_leg_closed", 0),
         ("unavailable", "native_recovery_required", 20),
+        ("no_intent", "cycle_target_quote_unavailable", 0),
+        ("unavailable", "cycle_quote_timestamp_unavailable", 20),
+        ("unavailable", "cycle_quote_timestamp_invalid", 20),
+        ("unavailable", "cycle_quote_timestamp_stale", 20),
+        ("unavailable", "cycle_quote_tick_invalid", 20),
+        ("unavailable", "cycle_quote_bid_ask_invalid", 20),
+        ("unavailable", "cycle_readonly_snapshot_unavailable", 20),
     ],
 )
 def test_main_stdout_exact_evidence_path_binds_immutable_written_result(
@@ -233,26 +240,49 @@ def test_host_contract_agrees_with_worker_pairs_plus_fixed_failure_code():
         ("unavailable", "cycle_retirement_unproven"),
         ("unavailable", "cycle_retired_request_restored"),
         ("unavailable", "cycle_owned_not_flat"),
+        ("no_intent", "cycle_target_quote_unavailable"),
+        ("unavailable", "cycle_quote_timestamp_unavailable"),
+        ("unavailable", "cycle_quote_timestamp_invalid"),
+        ("unavailable", "cycle_quote_timestamp_stale"),
+        ("unavailable", "cycle_quote_tick_invalid"),
+        ("unavailable", "cycle_quote_bid_ask_invalid"),
+        ("unavailable", "cycle_readonly_snapshot_unavailable"),
     ],
 )
 @pytest.mark.parametrize(
-    "status", ["advanced", "complete", "hold", "no_intent", "pending", "unavailable"]
+    "status",
+    ["advanced", "complete", "hold", "no_intent", "pending", "unavailable", "inert", "unknown"],
 )
-def test_four_native_reasons_reject_every_wrong_status(allowed, reason, status):
+def test_native_reasons_reject_every_wrong_status(allowed, reason, status):
     from test_kis_paper_current_stock_cycle_worker import w as worker
 
     value = payload()
-    value.update(status=status, reason=reason)
+    leg_count = 0 if reason == "cycle_target_quote_unavailable" else 1
+    value.update(status=status, reason=reason, leg_count=leg_count)
     if status == allowed:
         assert w.validate_result(value) == value
         assert (
-            worker._categorical(dict(status=status, reason=reason, leg_count=1))["reason"] == reason
+            worker._categorical(dict(status=status, reason=reason, leg_count=leg_count))["reason"]
+            == reason
         )
         return
     with pytest.raises(ValueError, match="stock_worker_output_invalid"):
         w.validate_result(value)
     with pytest.raises(ValueError, match="native_cycle_output_invalid"):
-        worker._categorical(dict(status=status, reason=reason, leg_count=1))
+        worker._categorical(dict(status=status, reason=reason, leg_count=leg_count))
+
+
+@pytest.mark.parametrize("field", ["failure_diagnostic", "quote_payload", "private"])
+def test_new_quote_reason_does_not_expand_host_or_worker_schema(field):
+    from test_kis_paper_current_stock_cycle_worker import w as worker
+
+    native = dict(status="no_intent", reason="cycle_target_quote_unavailable", leg_count=0)
+    native[field] = {"synthetic": "never_forward"}
+    with pytest.raises(ValueError, match="native_cycle_output_invalid"):
+        worker._categorical(native)
+    value = payload() | native
+    with pytest.raises(ValueError, match="stock_worker_output_invalid"):
+        w.validate_result(value)
 
 
 def test_missing_success_counters_not_assumed_zero():

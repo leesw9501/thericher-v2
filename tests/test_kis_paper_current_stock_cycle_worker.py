@@ -157,6 +157,13 @@ def test_runtime_contract_covers_exact_native_status_and_reason_enumerations():
         ("unavailable", "cycle_retirement_unproven"),
         ("unavailable", "cycle_retired_request_restored"),
         ("unavailable", "cycle_owned_not_flat"),
+        ("no_intent", "cycle_target_quote_unavailable"),
+        ("unavailable", "cycle_quote_timestamp_unavailable"),
+        ("unavailable", "cycle_quote_timestamp_invalid"),
+        ("unavailable", "cycle_quote_timestamp_stale"),
+        ("unavailable", "cycle_quote_tick_invalid"),
+        ("unavailable", "cycle_quote_bid_ask_invalid"),
+        ("unavailable", "cycle_readonly_snapshot_unavailable"),
     ):
         assert {key for key, allowed in w.NATIVE_REASONS.items() if reason in allowed} == {status}
 
@@ -818,6 +825,121 @@ def test_native_risk_no_intent_and_safe_projection_not_a_fill(native_worker):
         0,
     )
     assert native_worker.h["submits"] == []
+
+
+def test_native_unavailable_quote_skips_only_original_unreserved_buy(native_worker, monkeypatch):
+    h = native_worker.h
+    loaded = _load(native_worker.bundle)
+    original_targets = loaded.targets
+    first_symbol = original_targets[0].proposal.symbol
+    before = (h["root"] / w.budget.BUDGET_FILE).read_bytes()
+    original_preview = NativeSyntheticStockClient.stock_preview_snapshot
+    previewed = []
+
+    def preview(self, **kwargs):
+        previewed.append(self.instrument.symbol)
+        if self.instrument.symbol == first_symbol:
+            raise w.readonly.KisPaperReadOnlyError("quote_timestamp_unavailable")
+        return original_preview(self, **kwargs)
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_preview_snapshot", preview)
+    result = native_worker.visit()
+    assert (result["status"], result["reason"], result["leg_count"]) == (
+        "no_intent",
+        "cycle_target_quote_unavailable",
+        0,
+    )
+    assert h["submits"] == [] and previewed == [first_symbol]
+    assert (h["root"] / w.budget.BUDGET_FILE).read_bytes() == before
+    record = w.budget._read_json(h["root"] / cycle.POINTER)
+    assert record["pending"] is None and record["owners"] == {}
+    assert record["active"]["entries_done"] == [first_symbol]
+    assert cycle._unpack(record["active"]["targets"]) == original_targets
+    assert record["active"]["input_ref"] == loaded.input_ref
+    assert record["policy_ref"] == loaded.policy_ref
+    assert cycle._unpack(record["active"]["entry_session"]) == loaded.entry_session
+    assert cycle._unpack(record["active"]["exit_session"]) == loaded.exit_session
+
+    for target in original_targets[1:]:
+        result = native_worker.visit()
+        assert (result["status"], result["reason"], result["leg_count"]) == (
+            "advanced",
+            "native_leg_closed",
+            1,
+        )
+        assert h["submits"][-1].symbol == target.proposal.symbol
+    assert [intent.symbol for intent in h["submits"]] == [
+        target.proposal.symbol for target in original_targets[1:]
+    ]
+    assert previewed.count(first_symbol) == 1
+    record = w.budget._read_json(h["root"] / cycle.POINTER)
+    assert cycle._unpack(record["active"]["targets"]) == original_targets
+    assert record["active"]["entries_done"] == [
+        target.proposal.symbol for target in original_targets
+    ]
+    result = native_worker.visit()
+    assert (result["status"], result["reason"]) == ("hold", "await_declared_exit")
+
+
+@pytest.mark.parametrize(
+    "code,reason",
+    [
+        ("quote_timestamp_invalid", "cycle_quote_timestamp_invalid"),
+        ("quote_timestamp_stale", "cycle_quote_timestamp_stale"),
+        ("quote_tick_invalid", "cycle_quote_tick_invalid"),
+        ("quote_bid_ask_invalid", "cycle_quote_bid_ask_invalid"),
+        ("balance_response_incomplete", "cycle_readonly_snapshot_unavailable"),
+    ],
+)
+def test_native_quote_faults_keep_unavailable_without_skipping(
+    native_worker, monkeypatch, code, reason
+):
+    h = native_worker.h
+    before = (h["root"] / w.budget.BUDGET_FILE).read_bytes()
+
+    def preview(self, **kwargs):
+        raise w.readonly.KisPaperReadOnlyError(code)
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_preview_snapshot", preview)
+    result = native_worker.visit()
+    assert (result["status"], result["reason"], result["leg_count"]) == ("unavailable", reason, 0)
+    record = w.budget._read_json(h["root"] / cycle.POINTER)
+    assert record["active"]["entries_done"] == []
+    assert record["pending"] is None and record["owners"] == {}
+    assert h["submits"] == []
+    assert (h["root"] / w.budget.BUDGET_FILE).read_bytes() == before
+
+
+@pytest.mark.parametrize("lane", ["pending_buy", "owned_sell"])
+def test_native_unavailable_timestamp_never_skips_pending_or_sell(native_worker, monkeypatch, lane):
+    h = native_worker.h
+    h["partial"] = lane == "pending_buy"
+    assert native_worker.visit()["status"] == ("pending" if lane == "pending_buy" else "advanced")
+    pointer = h["root"] / cycle.POINTER
+    before = w.budget._read_json(pointer)
+    if lane == "owned_sell":
+        h["now"] = datetime(2026, 10, 21, 14, tzinfo=UTC)
+
+    def unavailable(self, **kwargs):
+        raise w.readonly.KisPaperReadOnlyError("quote_timestamp_unavailable")
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_preview_snapshot", unavailable)
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_exit_snapshot", unavailable)
+    result = native_worker.visit()
+    assert (result["status"], result["reason"], result["leg_count"]) == (
+        "unavailable",
+        "cycle_quote_timestamp_unavailable",
+        int(lane == "pending_buy"),
+    )
+    after = w.budget._read_json(pointer)
+    assert after["active"]["entries_done"] == before["active"]["entries_done"]
+    assert after["owners"] == before["owners"]
+    if lane == "pending_buy":
+        assert after["pending"]["arguments"] == before["pending"]["arguments"]
+        assert after["pending"]["plan_ref"] == before["pending"]["plan_ref"]
+    else:
+        assert after["pending"] is None
+    assert len(h["submits"]) == 1 and h["submits"][0].side == "buy"
 
 
 def test_loader_tamper_reaches_real_coordinator_without_constructing_client(native_worker):

@@ -70,6 +70,13 @@ SAFE_REASONS = frozenset(
         "cycle_retained_quote_stale",
         "cycle_configuration_invalid",
         "cycle_target_unavailable",
+        "cycle_target_quote_unavailable",
+        "cycle_quote_timestamp_unavailable",
+        "cycle_quote_timestamp_invalid",
+        "cycle_quote_timestamp_stale",
+        "cycle_quote_tick_invalid",
+        "cycle_quote_bid_ask_invalid",
+        "cycle_readonly_snapshot_unavailable",
         "cycle_policy_changed",
         "cycle_never_reserved_retired",
         "cycle_retirement_unproven",
@@ -82,11 +89,18 @@ STATUS_REASONS = {
     "pending": {"exact_request_retained"},
     "hold": {"await_declared_exit", "outside_declared_session"},
     "complete": {"already_completed", "policy_owned_flat"},
-    "no_intent": {"native_risk_no_intent", "cycle_never_reserved_retired"},
+    "no_intent": {
+        "native_risk_no_intent",
+        "cycle_never_reserved_retired",
+        "cycle_target_quote_unavailable",
+    },
     "unavailable": {
         value
         for value in SAFE_REASONS
-        if (value.startswith("cycle_") and value != "cycle_never_reserved_retired")
+        if (
+            value.startswith("cycle_")
+            and value not in {"cycle_never_reserved_retired", "cycle_target_quote_unavailable"}
+        )
         or value in {"native_recovery_required", "worker_recovery_required"}
     },
 }

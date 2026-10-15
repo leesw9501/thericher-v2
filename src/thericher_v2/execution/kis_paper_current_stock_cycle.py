@@ -55,6 +55,7 @@ from .kis_readonly import (
     KisPaperOpenOrdersSnapshot,
     KisPaperOrderableFundsSnapshot,
     KisPaperPosition,
+    KisPaperReadOnlyError,
     KisPaperReadOnlySnapshot,
 )
 
@@ -62,12 +63,22 @@ POINTER = ".current-nas-stock-cycle.json"
 _STATUSES = frozenset(
     {"inert", "hold", "no_intent", "pending", "advanced", "complete", "unavailable"}
 )
+_READONLY_REASONS = {
+    "quote_timestamp_unavailable": "cycle_quote_timestamp_unavailable",
+    "quote_timestamp_invalid": "cycle_quote_timestamp_invalid",
+    "quote_timestamp_stale": "cycle_quote_timestamp_stale",
+    "quote_tick_invalid": "cycle_quote_tick_invalid",
+    "quote_bid_ask_invalid": "cycle_quote_bid_ask_invalid",
+}
 _REASONS = frozenset(
     {
         "execution_not_requested",
         "await_declared_exit",
         "outside_declared_session",
         "native_risk_no_intent",
+        "cycle_target_quote_unavailable",
+        "cycle_readonly_snapshot_unavailable",
+        *_READONLY_REASONS.values(),
         "exact_request_retained",
         "native_leg_closed",
         "policy_owned_flat",
@@ -859,15 +870,24 @@ def run_kis_paper_current_stock_cycle(
                         receipt.proposal_ref,
                     ),
                 )
-            reads = (
-                client.stock_preview_snapshot(
-                    expected_account_ref=expected_account_ref, clock=clock
+            try:
+                reads = (
+                    client.stock_preview_snapshot(
+                        expected_account_ref=expected_account_ref, clock=clock
+                    )
+                    if side == "buy"
+                    else client.stock_exit_snapshot(
+                        expected_account_ref=expected_account_ref, clock=clock
+                    )
                 )
-                if side == "buy"
-                else client.stock_exit_snapshot(
-                    expected_account_ref=expected_account_ref, clock=clock
-                )
-            )
+            except KisPaperReadOnlyError as error:
+                if side != "buy" or error.code != "quote_timestamp_unavailable":
+                    raise
+                # No plan or reservation exists here. Keep the basket, not a substitute.
+                _check(record["pending"] is None, "cycle_checkpoint_invalid")
+                active["entries_done"].append(instrument.symbol)
+                _save(pointer, record)
+                return CurrentStockCycleOutcome("no_intent", "cycle_target_quote_unavailable")
             at = require_utc(clock())
             args = dict(
                 expected_account_ref=expected_account_ref,
@@ -931,5 +951,11 @@ def run_kis_paper_current_stock_cycle(
             return outcome
     except _CycleFault as error:
         return CurrentStockCycleOutcome("unavailable", str(error), leg_count)
+    except KisPaperReadOnlyError as error:
+        return CurrentStockCycleOutcome(
+            "unavailable",
+            _READONLY_REASONS.get(error.code, "cycle_readonly_snapshot_unavailable"),
+            leg_count,
+        )
     except Exception:
         return CurrentStockCycleOutcome("unavailable", "native_recovery_required", leg_count)

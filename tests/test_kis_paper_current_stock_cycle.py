@@ -297,6 +297,94 @@ def test_default_inert_before_callbacks_or_state(h):
     assert h["loads"] == h["factories"] == 0 and record(h) is None
 
 
+def test_zero_quote_skips_only_unreserved_target_and_restart_continues_fixed_basket(h, monkeypatch):
+    first, second = h["data"].targets[:2]
+    original = NativeSyntheticStockClient.stock_preview_snapshot
+    before = (h["root"] / budget.BUDGET_FILE).read_bytes()
+
+    def preview(client, **arguments):
+        if client.instrument.symbol == first.proposal.symbol:
+            raise kis_readonly.KisPaperReadOnlyError("quote_timestamp_unavailable")
+        return original(client, **arguments)
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_preview_snapshot", preview)
+    assert run(h).safe_payload() == dict(
+        status="no_intent", reason="cycle_target_quote_unavailable", leg_count=0
+    )
+    saved = record(h)
+    assert saved["active"]["entries_done"] == [first.proposal.symbol]
+    assert cycle._unpack(saved["active"]["targets"]) == h["data"].targets
+    assert saved["pending"] is None and saved["owners"] == {}
+    assert (h["root"] / budget.BUDGET_FILE).read_bytes() == before
+    assert h["submits"] == []
+
+    run(h, target_loader=lambda: pytest.fail("active_identity_must_not_reload_targets"))
+    assert len(h["submits"]) == 1
+    assert h["submits"][0].symbol == second.proposal.symbol
+    assert record(h)["active"]["input_ref"] == h["data"].input_ref
+
+
+@pytest.mark.parametrize(
+    ("code", "reason"),
+    [
+        ("quote_timestamp_invalid", "cycle_quote_timestamp_invalid"),
+        ("quote_timestamp_stale", "cycle_quote_timestamp_stale"),
+        ("quote_tick_invalid", "cycle_quote_tick_invalid"),
+        ("quote_bid_ask_invalid", "cycle_quote_bid_ask_invalid"),
+        ("auth_rejected", "cycle_readonly_snapshot_unavailable"),
+        ("not_a_public_error_sensitive_marker", "cycle_readonly_snapshot_unavailable"),
+    ],
+)
+def test_other_readonly_failures_do_not_skip_or_expose_values(h, monkeypatch, code, reason):
+    def denied(*_args, **_kwargs):
+        raise kis_readonly.KisPaperReadOnlyError(code)
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_preview_snapshot", denied)
+    before = (h["root"] / budget.BUDGET_FILE).read_bytes()
+    result = run(h)
+    assert result.safe_payload() == dict(status="unavailable", reason=reason, leg_count=0)
+    assert record(h)["active"]["entries_done"] == []
+    assert record(h)["pending"] is None and h["submits"] == []
+    assert (h["root"] / budget.BUDGET_FILE).read_bytes() == before
+    assert "sensitive_marker" not in repr(result.safe_payload())
+
+
+def test_pending_unknown_is_not_skipped_by_unavailable_quote(h, monkeypatch):
+    h["unknown"] = True
+    assert run(h).status == "pending"
+    pending = copy.deepcopy(record(h)["pending"])
+    before = (h["root"] / budget.BUDGET_FILE).read_bytes()
+
+    def unavailable(*_args, **_kwargs):
+        raise kis_readonly.KisPaperReadOnlyError("quote_timestamp_unavailable")
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "reconcile", unavailable)
+    result = run(h, target_loader=lambda: pytest.fail("pending_must_not_load_new_targets"))
+    assert result.status == "unavailable" and result.reason == "cycle_quote_timestamp_unavailable"
+    assert record(h)["pending"]["arguments"] == pending["arguments"]
+    assert record(h)["active"]["entries_done"] == []
+    assert (h["root"] / budget.BUDGET_FILE).read_bytes() == before
+    assert len(h["submits"]) == 1
+
+
+def test_sell_quote_unavailable_never_retires_owned_inventory(h, monkeypatch):
+    for _ in range(10):
+        run(h)
+    assert len(h["submits"]) == 10
+    before = copy.deepcopy(record(h))
+    h["now"] = EXIT.open_ts + timedelta(seconds=1)
+
+    def unavailable(*_args, **_kwargs):
+        raise kis_readonly.KisPaperReadOnlyError("quote_timestamp_unavailable")
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_exit_snapshot", unavailable)
+    result = run(h)
+    assert result.status == "unavailable" and result.reason == "cycle_quote_timestamp_unavailable"
+    assert record(h)["active"] == before["active"]
+    assert record(h)["owners"] == before["owners"]
+    assert len(h["submits"]) == 10
+
+
 def test_two_sessions_ten_frozen_entries_then_only_owned_exits(h):
     for _ in range(10):
         result = run(h)

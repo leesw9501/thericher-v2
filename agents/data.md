@@ -1,34 +1,47 @@
 # Data Stateboard (시장데이터 담당)
 
 Current: 2026-10-15 KST. Company goal: current-nas-owned-model-paper-cycle-v1.
-Current Data: adjusted long-history CLOSED PARTIAL;Core600frozen;FirstRate currentMTFready.
+Current Data: SECcompanyfacts CLOSED source-unavailable;adjustedlong/Core600/MTFreadyfrozen.
 Parent owns training science/integration/Git; Execution owns Paper runtime.
 No account/live/Scheduler/fits/GPU/labels/returns; old inputs/claims/debits immutable.
 Market bytes: D:/market_data (M); artifacts: D:/thericher-v2/model-artifacts (A).
 
-## Adjusted Long Closed Partial
+## SEC Facts Closed Unavailable
 
-A/data/liquid-core-adjusted-long-history-20261015-v1/completion.json currentclosure;
-manifest7eeba17f.../engine-inputae2b763c.../independent-basisb37973ee....
-Actual516GET/1POST/0retry;515olderpages+EXACT120mode1seedpages,0freshhead repeats/raw0blend.
-62938canonical bars/61018past61windows/20ready61;2014-03-04..2026-10-14 overall.
-50938addedbars;12native-invalid older rows remain12gaps;515exactduplicates/0revision/conflict.
-1010nativeSYN/Ruff/371929nativechecks+248artifactchecks/3722098keycells+4234basischecksPASS.
-All516shared-page anchors/2064OHLCfields EXACT;0incompatible/unknown/microqueries.
-Only OVERLAPnominal continuity,not global older adjustment/PIT/TR/formula qualification.
-12:45UTC technicalstop:PermissionError at worker.py:136 os.replace(actual/cursor.json).
-Captured4sourceframes;errno/winerror/actualcompetingopener UNKNOWN,notprovider/actorproof.
-Failure/source/claim/temp/debits preserved;0unknownrequest,ownerreleased,11actorchecks0.
-19cursors UNFINISHED,not source-limited/floor-reached;AMD alone exactno-progress2015-01-02.
-Target2007-08-20 not reached. Durable per-keybounds/reasons:intake-outcome.json;ETAunknown.
-1079.6867chargedactive/1119.5879readbackend within2700/5400;54.59MBmeteredreads;
-28.69MBproducerIO/152.91MBpeak/1CPUthread/D40.02%free;all newreadbackdebitscarried.
-No redispatch:one-client attemptclosed/onePOSTconsumed;linkedtechnicalrecovery mustbind
-remainingrequests/tokenauthority/debits explicitly,notresetclock/retryclosedcreator.
-No currentDataworker/ownedcooldown;next_due null,not a company/Paper permissionhold.
-NativeCSV only NEW M/us_equities/kis_paper_private/liquid-core-adjusted-long-history-20261015-v1.
-EngineABI:20orderedslots,N61018past61keys->60tokens/latest12;futurepresence DIAGONLY.
-Existing600closure/Paper/sourceflags immutable;newpartialinput usableforseparate research.
+A/data/sec-liquid-core-companyfacts-20261015-v1/input-manifest.json +completion/readback.json.
+Actual1officialticker-mapGET HTTP403/0retry/0companyfactsGET/0factbytes/0typedrows.
+17corporateissuers UNMAPPED;SPY/QQQ/IWM corporatefacts NOTAPPLICABLE;0CIKguess/workaround.
+Honestproject/version/repository-URI UA,0personalemail/auth/KIS/.env/account/secretaccess.
+61nativeSYN/Ruff+42independentchecksPASS;482.8891conservativechargedupperwall/600cap,
+includingauthoring/docs/prep/native/failure/readback;elapsedcap3600,0clockrefund.
+Futureconsumer:fixed20price-plus-fundamentals Engine research;no currentmodel/targetchange.
+FiledDATE->strictnextUSsessionCLOSE proxy recipe ONLY;0actualfactparser/PITqualification.
+Officialnoauth/reuse verified;reasonbeyond403 UNKNOWN,mandatoryemailnotinferred.
+No operator decision established;exactsource unavailable,not company/Paperhold;no newcallsdue.
+
+## Adjusted Long Closed Cutoff
+
+A/data/liquid-core-adjusted-long-history-20261015-v1/recovery-r1/completion.json;
+manifestd1a2f835.../engine-inputbffe872b.../independent-basis6c0a55e1....
+Actualaggregate792GET/2POST/0transportretry;child276GET/1POST/273acceptedolderpages.
+89723canonicalbars/87743past61windows/20ready61;2007-08-20..2026-10-14 overall.
+55known-calendarquarantine/13native-invalidgaps preserved;788exactduplicates/0revision/conflict.
+QQQreached2007-08-20;15UNFINISHED at cutoff,not source-limited/globalfloor.
+Exactno-progress:AMD2015-01-02/GOOGL2014-04-03/META2012-05-18/TSLA2010-06-29.
+Lastcapture/cleanup13:23:29UTC before13:25;6newactorchecks0/ownerreleased/unknownfalse.
+No currentworker/cooldown;next_due null;childprogress.json CLOSED,oldsnapshot archived.
+532459nativechecks+250artifactchecks/5352323keycells+6437basischecks PASS;
+all792pageanchors/3168OHLCfields EXACT;OVERLAPnominal ONLY,not globalunit/PIT/TRproof.
+1578nativeSYN/RuffPASS;516oldbodies/515acceptedpages reconciled before API,0bodyreplay.
+Sharing-onlyIOretry<=3 at50/100/200ms;permanentdenialnoretry,actualIOretrycountunmeasured.
+1683.4947chargedactive/3363.7909readbackend within SAMEoriginal2700/5400,
+appointment/end unchanged/all1079.6867oldactivecarried;132.30MBreads/50.36MBproducerIO.
+NativeCSV only M/us_equities/kis_paper_private/liquid-core-adjusted-long-history-20261015-v1/recovery-r1.
+EngineABI20orderedslots,N87743past61keys->60tokens/latest12;futurepresence DIAGONLY.
+NEXTcampaign only forRaman/Godel,nocurrentfitinputswap/Paperchange/fullhistoryqualification.
+Originalcompletion.json62938bars/61018windows/ABIae2b763c.../1079.6867active IMMUTABLE:
+PermissionError os.replace(cursor),actualerrno/openerunknown;originalsource/failure/temp preserved.
+Core600closure unchanged;no furthercalls after cutoff/no blindcreatorrerun.
 
 ## Adjusted Core600 Ready
 
@@ -99,13 +112,13 @@ Older receipts/debits/failures/limits remain exact external roots/Git.
 ## Existing Owned Due
 
 These are documented owned calendar windows, NOT fresh Scheduler/actor/Ready facts.
-Execution model Oct15 13:40UTC/22:40KST;baseline14:50UTC/23:50KST,priority unchanged.
+Execution model Oct15 13:40UTC windowpassed/runtimeunknown;nextbaseline14:50UTC/23:50KST.
 Accounting83 Oct15 20:25UTC/Oct16 05:25KST;runtime unknown here.
 Data NAS-forward6 Oct15 21:40UTC/Oct16 06:40KST.
 Data G107 R3 Oct15 21:50..55UTC/Oct16 06:50..55KST.
 G107 owner: A/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3.
 ab65 owned exit: 2026-10-19 21:40UTC /2026-10-20 06:40KST;
 A/data/kis-stock-prospective-pair-owned-endpoints-v1.
-LongDataworker closed/ownerreleased;owned tasks/observer unchanged,no manual replay.
+Linked recovery-r1 closed/ownerreleased;owned tasks/observer unchanged,no manual replay.
 Existing600/versionedNAS remain usable independently,not held for fullbackfill.
 Quality constrains claims,not Paper authority. Parent integrates/Git.

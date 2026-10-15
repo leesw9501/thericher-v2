@@ -470,6 +470,14 @@ def _parse_kis_paper_limit_input(
 ) -> KisPaperSpyLimitInput:
     asking_output = _successful_output(asking_price_payload, output_key="output1")
     quote = _parse_kis_paper_spy_quote_fields(asking_output)
+    date_text, time_text = asking_output.get("dymd"), asking_output.get("dhms")
+    if (
+        isinstance(date_text, str)
+        and isinstance(time_text, str)
+        and date_text.strip() == "00000000"
+        and time_text.strip() == "000000"
+    ):
+        raise KisPaperQuoteError("quote_timestamp_unavailable")
     timestamp_state, quoted_at = _quote_timestamp_details(asking_output)
     timestamp_age_state = _quote_timestamp_age_state(quoted_at, observed_at=observed_at)
     if timestamp_state != "valid_date_and_time" or quoted_at is None:
@@ -593,8 +601,10 @@ def inspect_kis_paper_spy_asking_price_response(
             quote_timestamp_age_state="not_checked",
         )
     timestamp_state, quote_at = _quote_timestamp_details(output)
-    best_bid_state = _positive_decimal_state(output, "pbid1")
-    best_ask_state = _positive_decimal_state(output, "pask1")
+    book = payload.get("output2")
+    book = book if isinstance(book, Mapping) else {}
+    best_bid_state = _positive_decimal_state(book, "pbid1")
+    best_ask_state = _positive_decimal_state(book, "pask1")
     return KisPaperSpyAskingPriceProbe(
         http_status_class=http_status_class,
         payload_mapping="mapping",
@@ -604,7 +614,7 @@ def inspect_kis_paper_spy_asking_price_response(
         best_bid_state=best_bid_state,
         best_ask_state=best_ask_state,
         bid_ask_state=_bid_ask_state(
-            output,
+            book,
             best_bid_state=best_bid_state,
             best_ask_state=best_ask_state,
         ),

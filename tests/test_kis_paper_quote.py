@@ -311,11 +311,10 @@ def test_qqq_limit_input_and_probes_keep_provider_prices_transient() -> None:
             "output1": {
                 "last": raw_price_text,
                 "zdiv": "2",
-                "pbid1": "500.24",
-                "pask1": "500.26",
                 "dymd": "20260722",
                 "dhms": "233000",
             },
+            "output2": {"pbid1": "500.24", "pask1": "500.26"},
         },
     )
 
@@ -443,11 +442,10 @@ def test_asking_price_probe_keeps_best_price_fields_transient_and_category_only(
             "output1": {
                 "last": raw_price_text,
                 "zdiv": "2",
-                "pbid1": "600.11",
-                "pask1": "600.13",
                 "dymd": "20260722",
                 "dhms": "233000",
             },
+            "output2": {"pbid1": "600.11", "pask1": "600.13"},
         }
     )
 
@@ -487,11 +485,10 @@ def test_asking_price_probe_classifies_blank_fields_as_unusable() -> None:
                 "output1": {
                     "last": "",
                     "zdiv": "",
-                    "pbid1": "",
-                    "pask1": "",
                     "dymd": "",
                     "dhms": "",
                 },
+                "output2": {"pbid1": "", "pask1": ""},
             }
         )
     )
@@ -502,6 +499,33 @@ def test_asking_price_probe_classifies_blank_fields_as_unusable() -> None:
     assert probe.best_ask_state == "blank"
     assert probe.bid_ask_state == "not_checked"
     assert probe.quote_timestamp_state == "blank"
+
+
+def test_asking_probe_reads_book_from_output2_not_summary_or_output3():
+    payload = _fresh_asking_price_payload()
+    payload["output1"].update(pbid1="999", pask1="1")
+    payload["output2"] = {"pbid1": "600.11", "pask1": "600.13"}
+    payload["output3"] = {"pbid1": "999", "pask1": "1"}
+    probe = inspect_kis_paper_spy_asking_price_response(
+        KisHttpResponse.from_payload(payload), observed_at=NOW
+    )
+    assert probe.best_bid_state == probe.best_ask_state == "positive_decimal"
+    assert probe.bid_ask_state == "non_crossed"
+
+
+@pytest.mark.parametrize(
+    "parser", [parse_kis_paper_spy_limit_input, parse_kis_paper_qqq_limit_input]
+)
+@pytest.mark.parametrize("padding", ["", " \t"])
+def test_all_zero_quote_time_is_unavailable_not_an_imputed_clock(parser, padding):
+    payload = _fresh_asking_price_payload()
+    payload["output1"].update(dymd=padding + "00000000", dhms="000000" + padding)
+    with pytest.raises(KisPaperQuoteError, match="^quote_timestamp_unavailable$"):
+        parser(
+            asking_price_payload=payload,
+            price_detail_payload=FakeKisPaperQuoteTransport().price_detail_payload,
+            observed_at=NOW,
+        )
 
 
 @pytest.mark.parametrize(
@@ -585,7 +609,12 @@ def test_timestamp_fields_are_independently_strict_and_category_only(parser, fie
     assert probe.quote_timestamp_state == state
     assert probe.quote_timestamp_age_state == "not_checked"
     assert "dymd" not in probe.safe_payload() and "dhms" not in probe.safe_payload()
-    with pytest.raises(KisPaperQuoteError, match="^quote_timestamp_invalid$"):
+    error_code = (
+        "quote_timestamp_unavailable"
+        if fields == {"dymd": "00000000", "dhms": "000000"}
+        else "quote_timestamp_invalid"
+    )
+    with pytest.raises(KisPaperQuoteError, match=f"^{error_code}$"):
         parser(
             asking_price_payload=payload,
             price_detail_payload=FakeKisPaperQuoteTransport().price_detail_payload,

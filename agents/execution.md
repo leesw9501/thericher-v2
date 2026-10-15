@@ -5,6 +5,21 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+LATEST13:40UTC natural model visit: exact public reader validates1token/7GET,
+0BUY/0SELL/0cancel/0nativelegs; unavailable/native_recovery_required. Readonly
+probes reproduced target0 all-zero quote time. SAME Task recovered/re-enabled
+14:37:42UTC/image87697f8e, next natural15:05UTC/Oct16 00:05KST; runtime unknown.
+23:50nightly unchanged. Preserve pointer/targets/identity/original bank.
+Retained native sample0modelplans/pending/intents/fills/privatebytesstable BUT
+other future83Recover Task was Running, so not globally quiescent/broker proof.
+Only new unreserved BUY's exact all-zero quote date/time may retire that target
+as no_intent/cycle_target_quote_unavailable. No replacement/reweight; pending
+recovery and SELL never skipped. Other quote faults typed unavailable. Actual
+order BBO parser already used output2; diagnostic inspector corrected to it.
+Original natural raw response absent, reproduction is not literal replay proof.
+A/execution/current-nas-first-visit-firstcause-20261015-v1
+A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
+
 Latest quiet-ops repair: seven legacy Data/readonly observer Actions migrated
 to pinned9fe9750c pythonw/no-console wrapper. Original argv/cwd and ALL other
 XML preserved; this board's22:40/23:50 order Actions unchanged. NativePS/cmd/uv
@@ -17,7 +32,7 @@ A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
 | Owner | Current evidence | Next action |
 | --- | --- | --- |
 | Existing nightly | thericher-kis-paper-daily-spy-session Ready/enabled, quiet Pythonw, immutable image3ccb2250/public472/image470, drivere586/quiet6d51. Original XML/identity/bank unchanged. | Natural Oct15 23:50KST/14:50UTC; exact scoped receipt/native readback, no manual replay. |
-| Current NAS model | thericher-kis-paper-current-nas-model-20261015 Ready/enabled, imagece219a8d/474sources/manifest130d/configa13fa7d9. Native finite14trigger schedule installed, NOT runtime closure. | First Oct15 22:40KST/13:40UTC. Entry ONLY Oct15; later exact recovery/owned exit fromOct21 OPEN. |
+| Current NAS model | thericher-kis-paper-current-nas-model-20261015 Ready/enabled, image87697f8e/474sources/manifest13cfe08b/config6e5fcc16. Same finite14triggers/identity/bank; technical recovery installed, NOT runtime closure. | Natural Oct16 00:05KST/Oct15 15:05UTC. Entry ONLY Oct15; later exact recovery/owned exit fromOct21 OPEN. |
 | Future accounting83 | r6 accounting-only repair installed, other six Actions and oldindex2/claims retained. Runtime unknown, not replayed. | Oct15 20:25UTC/Oct16 05:25KST. Goal83 exitOct17 04:50/05:00KST. |
 | Goal97 owner | Separately owned original plan/history/source retained. Empty-registration runtime unproved; no established cross-policy adoption bug. | EntryOct19 22:30/22:40KST; exitOct24 04:50/05:00KST. Do not invoke/replace/adopt. |
 | CPU clock sidecar | COMPLETE6cells, independent noP1/P2, agent closed. | Consumed creator, retrieval only. |
@@ -73,7 +88,10 @@ no final intraday/auction/actual later-entry fill parity/model promotion.
 ## Recovery / Exact Pointers
 
 Read-only parsers only: never invoke recovery-capable observe() to inspect.
-Current r2 readers73focused/Ruff/noP1/P2; source-pinned network-none RO-volume
+Model public reader now belongs to recovery-deployment root/config6e5fcc16;
+nightly old r2 unchanged. Native reader f7990232 unchanged. New external95SYN/
+profile pins/image474hashes verified. Fresh870serial/16595fullpass22skip/helper0/
+Ruff/three sampleCompose PASS, authority sourcefacf454d. Old r2 source-pinned RO
 preflight preserved all private bytes. Use exact current launch/session/intent/
 fill/owned-state linkage; not latest-file scans, timestamps or task exits.
 TaskScheduler Operational logging disabled: host marker/time/hash provenance,
