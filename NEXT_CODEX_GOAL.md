@@ -163,13 +163,31 @@ Data1m canonical READY195,056regular bars/315,772past30/120-minute keys over
 251sessions; QQQcomplete, SPYfourmissing/onepartial, no imputation. Archive
 adjustment/time applicability and PIT/KIS parity remain unproved.
 A/data/retained-intraday-source-development-20261015-v1/readback.json
-Engine prepares QQQ30/120-minute windows at ONE fixed60-minute target, not an
-unbounded grid or running fit. Data may separately execute the named bounded
-deep-history probe: Paper market-only, at most8GET/one guarded tokenPOST,
-four existing validated venues, two predeclared historical dates,120active/
-600elapsed, existing pacing/ownership. No account/order/live/bulk/schedule work
-inside that probe. No provider splice or PIT/adjustment claim. These packages
-do not replace this company outcome or change tonight's fixed schedules/bank.
+Godel owns ONE full QQQ30/120-minute campaign at fixed60-minute target, up to
+3CPUlogit+6CUDAfits after native checks; Parent explicitly delegated numerical
+dispatch, not yet reattached actual fit evidence. No duplicate Parent invocation.
+A/research/qqq-intraday-window-mass-gate-development-20261015-v1
+Raman separately owns sixCPU boosting attempts on the frozen event target,
+indicator12/joint312, native chronological INNER and numeric checkpoints.
+A/research/spy-qqq-event-target-boosting-development-20261015-v1
+Use exact frozen/linked admission source; source PREP is not actual fitting.
+Both isolated from broker/GPU contention, bounded clocks and source-safe Claude
+supported-with-limits; frozen outputs need independent readback, not new approval.
+
+Deep-history probe CLOSED8GET/1POST/0retry/67checks. Each SPY/QQQ/AAPL/MSFT:
+BYMD20100101 returned100valid rows2009-08-11..2009-12-31; BYMD20000101 empty.
+This disproves treating the2023cropped input as provider history floor, NOT all512
+coverage/continuous history/exact earliest date. Final38.8879active/542.1806elapsed
+within120/600. Direct-base launch repaired reproduced venv self-match with the
+UNCHANGED actor predicate; original actual actor identity remains unknown.
+A/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
+The8GET/1POST budget is EXHAUSTED, never rerun creators. Proposed AAPL20090810
+cursor NOT started: old49page/2007cache may already contain it. McClintock now
+owns local-only NAS retained-long-history readiness,0API/credentials/scheduler,
+to reuse cached coverage before deciding any new acquisition.
+A/data/nas-retained-long-history-readiness-20261015-v1
+No provider splice or PIT/adjustment promotion. These packages do not replace
+this company outcome or change tonight's fixed schedules/bank.
 
 Prior future-owned-paper-runtime-recovery-v1 remains runtime-UNFINISHED/owned,
 only superseded as company focus. Accounting83 r6 next opportunity Oct15

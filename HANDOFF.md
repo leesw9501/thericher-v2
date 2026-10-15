@@ -230,10 +230,27 @@ Raw data stays under D:/market_data. Archive adjustment variant/time convention
 applicability, publication/finality/PIT and KIS parity remain unproved; this is
 private source-local engineering input, not promoted live/Paper data.
 A/data/retained-intraday-source-development-20261015-v1/readback.json
-Engine next prepares one fixed60-minute QQQ horizon with30/120-minute windows,
-shared chronological support and cost-aware controls; no market fit yet.
-Data separately probes bounded Paper daily-history depth, not account/order
-endpoints or bulk acquisition. Existing collectors and tonight's owners intact.
+Engine's QQQ fixed60-minute horizon/30vs120-minute campaign is assigned end-to-end
+to Godel, including sole numerical dispatch after native CPU/CUDA checks. Up to
+3CPUlogit+6CUDA fits; actual fits not yet reattached. Parent MUST NOT invoke its
+driver in parallel. Raman owns separate sixCPU boosting fits on frozen daily
+event inputs, no GPU/credentials; chronological INNER/numeric checkpoints.
+Source preparation alone is not a started/completed fit. Claude supported-with-
+limits; actual frozen outputs require independent readback, not human approval.
+A/research/qqq-intraday-window-mass-gate-development-20261015-v1
+A/research/spy-qqq-event-target-boosting-development-20261015-v1
+
+KIS deep-history scope probe is CLOSED8marketGET/1tokenPOST/0retry/67checks.
+All four SPY/QQQ/AAPL/MSFT2010anchors returned100valid rows2009-08-11..12-31;
+2000anchors empty. This is per-route/anchor support, not an exact global floor
+or continuous all512 coverage.38.8879carried active/542.1806elapsed within120/600.
+Venv launcher self-match reproduced; direct-base repair kept the actor predicate
+UNCHANGED, no exclusions/unknown-owner kill. Old actual actor identity unknown.
+A/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
+All eight queries consumed, no rerun. Proposed AAPL20090810 cursor NOT started;
+existing49page/2007cache may already cover it. Data now checks exact retained
+long-history cache/index locally before proposing any acquisition;0newAPI.
+Existing collectors and tonight's owners intact.
 
 GPU/CUDA works; all actual training/forecast allocations above are CLOSED,
 no environment/permission hold or dummy training. Today's research produced

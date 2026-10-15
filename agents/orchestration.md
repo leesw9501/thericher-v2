@@ -14,9 +14,10 @@ New human request: continue independent CPU/GPU engine work while Paper is due.
 | Nightly Paper | Existing daily-spy-session |Ready/enabled Oct15 23:50KST/14:50UTC. Immutable472-public-file deployment/image3ccb470map; drivere586/quiet6d51. Exact TaskXML/identity/original bank unchanged. Not a new fill. |
 | NAS model Paper | New finite Task |Ready/enabled Oct15 22:40KST/13:40UTC; imagece219/474map/manifest130d/configa13fa7d9.14triggers across7dates,4-minute native visits,1auth/1submit/1cancel/128calls/280seconds. No manual strategy invocation. EntryONLYOct15, owned exit fromOct21OPEN, exact pending recovery before new input. |
 | Future accounting | Existing83 owner |r6 accounting-only Action installed; nextOct15 20:25UTC, runtimeUNKNOWN. Oldindex2/claims/basis/other6Actions retained; no replay or assumed success. |
-| Data | McClintock |Long-history/action sidecars and retained1m195,056bars/315,772keys COMPLETE. QQQ251full/zero missing; SPYonepartial/fourmissing. Now bounded deep daily-history Paper market-only probe, max8GET/one guarded tokenPOST; no account/order/bulk/schedule. Original collectors/due retained. |
+| Data | McClintock |Deep-history probe CLOSED8GET1POST0retry/67checks:four2010anchors100valid2009rows each,four2000anchors empty.38.8879active542.1806end within120/600. Now local-only retainedNAS long-cache coverage/reuse,0API/credentials/scheduler; do not duplicate oldAAPL49pages. |
 | Strategy | Kant closed / Parent |H1long-history CPU48cells COMPLETE in2.5788elapsed/7.1445active inclSYN;1,363baskets,0fits/GPU/API. Overall5/10bps positive,20negative;global primaryfalse,2middle-regime comparisons survive. Independent23pins/48cashflow audits/4affordability cases noP1/P2, combined~12.6active. Native13SYN/48invented + researchfloat48shortparity/2missing/4fullinvented pass. No production/Paper/risk change. |
-| Engine | Godel intraday PREP |Event-target study CLOSED3CPU+3CUDA/126cells, independent141pins/126oracles noP1/P2;9jointGRU growthpositive,0/6increment. Now source/native preparation for QQQ30/120-minute windows, fixed60-minute target and shared chronological support. No actual minute fit until Parent dispatch. |
+| Engine | Godel intraday full package |Event-target CLOSED3CPU+3CUDA/126cells noP1P2. New QQQ30/120-minute fixed60-minute campaign explicitly delegated through native checks/3CPU+6CUDA/replay/cleanup; sole numerical owner, actual fits not yet reattached. Parent does NOT invoke driver. |
+| CPU nonlinear | Raman |Six fixed boosting attempts ind12/joint312 on frozen event targets, native chronological INNER/best numeric tree restore. Full bounded dispatch delegated after Claude supported-with-limits. Native Windows venv/job admission must pass before market; no GPU/sharedMD/Git/API. |
 | GPU | Free after actual studies |18CUDA+6CPU actual market fits and Chronos5newmarket forwards complete/leases cleaned. Not SYN/reader model counts. Foundation34baskets/12cells known,1positive2negativecost cases; primaryfalse. Original failed countunknown0..5,8known successful/13upper acrossold/new scopes, never actual13. No environment/permission hold or dummy work. |
 | Execution | Aristotle closed / Parent |CPU descriptive fifth-OPEN/CLOSE replay COMPLETE6cells,0fits/forwards/GPU/API. Same fixed-five rank-mean Top10/quantities/cost5/10/20. Both clocks positive in4 reused DEV groups; OPEN lower than CLOSE at all three costs.38.4008active including32PREP carry/6.4026elapsed within180/1800. Independent34pins/6native summaries/40marks noP1/P2; not deployment parity or model promotion. |
 | Runtime readback | Closed / Parent |Final r2 dispatch+native model readers73focused/Ruff/noP1P2. Actual network-none/RO-volume preflight sixowners16intents, modelpointerabsent/countsnull, original cap positive_below_desired. Original source-audit/mount faults retained/fixed in readers only, no broker/source deployment changes. Agent closed. |
@@ -37,14 +38,20 @@ reversible improvement: compact current role memory AFTER immutable/Git history
 preservation, not before completing executable work. Snapshot62b406e retains it.
 
 Ready work:
-1. Prepare then dispatch one QQQ30/120-minute input ablation with native checks.
-2. Measure provider history depth without assuming an800-session contract is an API limit.
+1. Godel directly executes the one QQQ30/120-minute input ablation after native checks.
+2. Data reuses retained long-history coverage before any duplicate acquisition.
 3. Inspect exact owned Paper outcomes at their natural opportunities; no foreground wait.
 
 Previous reader/absolute-utility alternatives are CLOSED. Claude's
 scoped deployment challenge supported-with-limits; no new approval or foreground
 sleep. If all prepared work closes before the session, hand off next_due to the
 owned Task rather than create dummy work or mark company completion.
+Latest reversible improvement: delegate the full finite numerical package to
+its role after the source-safe challenge, eliminating a second Parent-dispatch
+wait. Keep one owner/admission and independent result readback; no implicit
+follow-on or duplicate Parent command. CPU boosting runs separately while GPU
+source preparation completes. Data's own-launcher reproduction avoids confusing
+a local process admission issue with a provider quota or permission block.
 Claude separately challenged this exact runtime dependency and returned
 supported-with-limits; new ready work or an actionable fault reverses the scoped
 wait, not a global research/Data hold. No raw private data/tools were supplied.
@@ -91,6 +98,7 @@ stateboards replace stale running projections; history remains Git/external.
 - A/data/spy-qqq-long-history-target-action-fields-20261015-v1/readback.json
 - A/research/spy-qqq-event-aware-target-development-20261015-v1/independent-review/result.json
 - A/data/retained-intraday-source-development-20261015-v1/readback.json
+- A/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
 
 Keep current-listing/non-PIT/actions/units/finality limits scoped. Missing
 evidence is unknown; fees/settled cash/net PnL unobserved, not zero.

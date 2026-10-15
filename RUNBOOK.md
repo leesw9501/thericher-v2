@@ -240,9 +240,20 @@ Retained source-local1m data:195,056canonical regular bars/315,772past-only
 adjustment/time applicability/publication/PIT/KIS parity unknown. Data rights
 remain private internal scope; no new dataset/Paper eligibility assertion.
 D:/thericher-v2/model-artifacts/data/retained-intraday-source-development-20261015-v1/manifest.json
-Next QQQ fixed60-minute target preparation is separate from tonight's execution.
-Named deep-history probe may use Paper market endpoints only under its8GET/
-one guarded tokenPOST/120active/600elapsed contract; not bulk/schedule/account.
+QQQ fixed60-minute/30vs120-minute campaign is solely dispatched by Godel;
+separate sixCPU daily-event boosting campaign by Raman. Parent must not duplicate
+their drivers. Source PREP/native checks alone do not prove market fits.
+D:/thericher-v2/model-artifacts/research/qqq-intraday-window-mass-gate-development-20261015-v1
+D:/thericher-v2/model-artifacts/research/spy-qqq-event-target-boosting-development-20261015-v1
+Deep-history8GET/one guarded tokenPOST probe is CONSUMED/closed67checks:
+four2010anchors each100valid2009rows; four2000anchors empty. No account/order/
+live/schedule. Venv redirector can match its own parent in process inventories;
+native exact-chain reproducer and direct-base launch repaired this WITHOUT
+weakening the actor predicate. Old actual actor identity remains unknown.
+D:/thericher-v2/model-artifacts/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
+Never rerun exhausted queries or assume cropped800sessions is a provider floor.
+Proposed older AAPL cursor is unstarted; first inspect retained49page/2007cache.
+Current local-only Data package owns that reuse check, not newAPI/bulk/schedules.
 D:/thericher-v2/model-artifacts/data/spy-qqq-long-history-target-action-fields-20261015-v1/manifest.json
 
 Creators/fits/readers with exclusive outputs are frozen after use. Inspect exact
