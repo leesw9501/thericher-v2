@@ -1,6 +1,6 @@
 # Runbook
 
-## Current Owned Runtime (2026-10-15 KST)
+## Current Owned Runtime (2026-10-16 KST /Oct15 UTC)
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -11,24 +11,56 @@ KIS Paper work is delegated. Never read/route KIS_LIVE_*.
 ### Existing nightly,23:50 KST
 
 Task: thericher-kis-paper-daily-spy-session.
-Ready/enabled, next Oct15 14:50 UTC. Exact XML/argv/identity/bank unchanged.
-Image sha256:3ccb2250abcc7b11c6ab5f7f048a38b145962755935bace495efc0ac985f3ce7.
-Frozen driver/472-public-file repository and image470-file map isolate it
+Same Task enabled; ONE Oct15 16:30UTC natural recovery trigger installed plus
+unchanged normal14:50UTC weekday trigger. New imagefc9b1c2b/473public files.
+Oct15 14:50 failed retained_context_recovery_required, known broker-transport
+1GET/zeroorderPOST (separate Data requests are not these counters).14:56fresh
+first open-orders query parsed2xx; original response/cause UNKNOWN.
+15:01strict native pointer-only context retained.15:23later private comparison:
+sameoriginalbasis, old6/current9owners, startingbinding/owners mismatch, no
+cycle/buy/selljournal. This later custody change is distinct from original fault.
+Do not replay or rebind from journal absence alone. Native refresh checks both
+old/new exact derived plans/requests/runs, unchanged account/basis/book/pointer,
+no stage and original expiry under daily/cycle/shared locks. Only pre-intent
+starting-owner/binding refs may refresh; stage-present exact recovery unchanged.
+Diagnostic-only999962ab was NEVER installed. New recoveryfc9b1c2b IS installed;
+runtime result pending. Neither15:30/15:50/16:20 trigger was installed.
+A/execution/nightly-context-exact-recovery-deployment-20261016-v1/ready-parent.json
+A/execution/nightly-retained-context-firstcause-20261015-v1/custody-comparison.json
+Image sha256:fc9b1c2b2c20f62f73c2d15edc3a9d7e248230f683e179c3dcea3205449665e8.
+Frozen driver/473-public-file repository and image471-runtime-file map isolate it
 from mutable development SRC. No secrets were copied into the snapshot.
 A/execution/current-paper-frozen-deployment-20261015-v1/after.json
 
 Quiet Action remains Pythonw -B; every child uses CREATE_NO_WINDOW.
-A/execution/current-paper-shared-loop-20261014-v1/quiet_dispatch.py
-Driver e5867a8a/quiet6d51b09d; original TaskXML f35811a0 unchanged.
-freeze.ps1 already consumed. Do not edit frozen source/driver or rerun creators.
-Rollback before-quiet_dispatch.py is retained in the frozen-deployment root.
+NEWROOT=A/execution/nightly-preintent-refresh-deployment-20261016-v1.
+Driver8e0816ef/host44d86b1a/launcher a2ffd61e, config0ef93b92; exact disabled and
+enabled XML verified; principal/settings/normal trigger preserved. Rollback and
+parent commands retained in NEWROOT; never rerun preparation or manually StartTask.
+Use NEWROOT/read_owned_dispatch.py --read --profile nightly
+--not-before '2026-10-15T16:29:00+00:00' --max-age-seconds 3600 with python -B.
+It binds NEW launch/current -> immutable dispatch and473public/image/source map;
+oldr2 cannot attest this deployment. Native offline reader remains dba29750,
+network-none/read-only /app/private, quiescent owners; NEVER observe().
+A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
+Old3ccb source/raw natural cause retained. Parent's own synthetic probe created
+15public .pyc files there; exact source-matched15 were archived/hash-verified/
+removed nonrecursively while quiescent. Old470runtime map verified afterward.
+Use python -B/PYTHONDONTWRITEBYTECODE for ALL frozen source imports.
+A/execution/nightly-retained-context-firstcause-20261015-v1/own-probe-bytecode-20261016-v1/after.json
 
 ### New model,22:40 KST
 
 Task: thericher-kis-paper-current-nas-model-20261015.
 First13:40UTC visit failed pre-submit; actual read-only target0 probe reproduced
 all-zero quote date/time. Same Task recovered/re-enabled14:37:42UTC, next
-Oct15 15:05UTC/Oct16 00:05KST. Installation is NOT submit/fill/closure.
+Oct15 15:05UTC target0 correctlyprocessed as no_intent, no substitute.
+15:09natural actual BUY1; latest15:57:57 strict native read proves8acknowledged
+FULLfills/eightowned modelinstruments/zero unknown/no pending request.15:57bound
+dispatch hold/await_declared_exit/zeroAPI. These retained counts are not fresh
+broker inventory/PnL; Taskexit/dispatch alone cannot prove additional fills.
+A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
+Entire entry/exit/reconciliation loop remains unfinished, exitnotbeforeOct21OPEN.
 Image sha256:87697f8e8bbf404c3f54a0d9e2d089eeb466a9029d7bb96cffbf6aa2ade9c420.
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/deployment.json
@@ -100,7 +132,10 @@ A/execution/readonly-observer-phase-r2-20261015-v1/before.xml (UTF-8 XML text).
 Claude supported-with-limits; independent XML delta plus negative mutations PASS.
 Earlier finite13:36:45..13:37:20 sample:1624samples/zero new visible consoles;
 not whole-PC/sub20ms/alternate-desktop proof. Hubble owns another finite14:50/
-15:05 startup metadata sample, not an order worker or permanent monitoring daemon.
+15:05 startup metadata sample CLOSED:2863+2855samples/zero new consoles/zero
+unclassified. One existing PowerShell console was baseline, not closed/changed.
+Worker3.25CPU/1093.957elapsed, no task/API/private reads. No permanent monitor.
+A/infra/owned-paper-window-attribution-20261015-v1/result.json
 Legacy install_kis_paper_schedules.ps1 still describes old console Actions;
 do not blindly overwrite migrated definitions with it. Future owned installers
 should use this tested quiet path rather than Hidden metadata alone.
@@ -206,11 +241,15 @@ decision. It does not replace the Windows workers or prove they ran.
 ## Verification
 
 Fresh exact source authority:
-A/verification/current-nas-zero-quote-recovery-20261015-v1/authority.json
-870changed-path serial pass; fresh clean8 full16,595pass/22skip/415.234sec,
-16,617collected/helperexit0; source1,344/digestfacf454d238867676f114c8bd588c10e9d67946a738f2148a1f02d560fea6024.
+A/verification/nightly-preintent-refresh-20261016-v1/authority.json
+552changed-path serial pass; fresh clean8 full16,888pass/22skip,
+16,910collected/helperexit0; source1,345/digeste324d614f0d4bf2f7786e31a8b1f5e8faa6dbef244d53b1fbed8c7de499eb484.
+AGENTS/DECISIONS control hashes separately bound. Installedmodel87697 remains
+its old frozenfacf454d source; diagnostic999962ab was never installed. New
+nightlyfc9b1c2b is installed;473public snapshot/471runtime sources.
 Ruff/default/research/accounting sample-env Compose passed.
-External deployment12SYN/native COM14triggers/actual installation readback passed.
+External newnightly88checks+2finalprofiles/38native tests passed; same-task
+disabled/enabled exact XML verifies Action+ONE natural16:30 trigger only.
 Claude categorical supported-with-limits is advisory, not runtime proof.
 
 Credential-free commands from the absolute workdir:

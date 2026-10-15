@@ -1,10 +1,29 @@
 # Data Stateboard (시장데이터 담당)
 
-Current: 2026-10-15 KST. Company goal: current-nas-owned-model-paper-cycle-v1.
-Current Data: SECcompanyfacts CLOSED source-unavailable;adjustedlong/Core600/MTFreadyfrozen.
+Current: 2026-10-16 KST/Oct15UTC. Company goal: current-nas-owned-model-paper-cycle-v1.
+Current Data: exact-gap recapture CLOSED partial/no repair; existing inputs frozen.
 Parent owns training science/integration/Git; Execution owns Paper runtime.
 No account/live/Scheduler/fits/GPU/labels/returns; old inputs/claims/debits immutable.
 Market bytes: D:/market_data (M); artifacts: D:/thericher-v2/model-artifacts (A).
+
+## Exact Required Marks Closed
+
+Monthly consumer45cells/18unknown prompted offline exact13gap diagnosis:
+8high-containment/5low-containment source defects, no converter/calendar fault.
+All13have positive finite source OHLC; no native-valid alternate in430indexed
+bodies. No imputation/parser relaxation/old study rerun.
+A/data/liquid-core-required-mark-diagnosis-20261015-v1/readback-r1/firstcause.json
+
+Finite recapture original300tokenfloor closed0wire calls; documented4minute
+Paper/observer sources prevent a300second quiet gap. Linked scoped60floor
+ONEauth calibration (Claude supported-limits/native gates, not global default)
+closed1POST/8GET/0retry.8target rows STILLinvalid with identical original hashes;
+3156/3156sharedOHLC fields exact.0repairs/five unattempted remain UNKNOWN.
+1171independent checks/71.41cumulativeactive/900cap; no active collector/nextdue,
+global timing state reset, new Task, canonical/study/Paper-input change or refund.
+Known invalid8 need another useful source/view, not repeated same queries.
+A/data/liquid-core-exact-gap-source-recapture-20261015-v1/token-calibration-r1/independent-readback.json
+This limits the monthly comparison, not other ready research or Paper authority.
 
 ## SEC Facts Closed Unavailable
 

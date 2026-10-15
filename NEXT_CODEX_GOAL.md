@@ -6,9 +6,10 @@ current-nas-owned-model-paper-cycle-v1: repeatable, recoverable owned KIS Paper
 stock cycle from frozen-five current NAS targets on ONE existing original
 shared initial virtual-cash tenth. Actual runtime closure remains unfinished.
 
-LATEST:15:09UTC natural BUY1;15:10 strict native read verifies one acknowledged
-FULLfill/one owned model instrument/zero unknown for that request.15:05 recovered
-target0 missing quote as no_intent. Keep remaining ORIGINAL targets/exact recovery
+LATEST:15:57:57UTC strict native read verifies EIGHT acknowledged FULLfills/eight
+owned model instruments/zero unknown outcomes and no pending request. Latest
+bound model dispatch holds/await_declared_exit, zero API calls.15:05 recovered
+target0 missing quote as no_intent. Keep ORIGINAL identities/exact recovery
 and Oct21 owned exit. Company outcome unfinished, not a commit/install milestone.
 First13:40UTC natural visit failed BEFORE submit, validated1token/7GET/
 0BUY/0SELL/0cancel/0nativelegs. Scoped actual readonly probes reproduced target0
@@ -21,8 +22,12 @@ Fresh870serial/16595fullpass22skip/helper0/Ruff/three sampleCompose PASS.
 No reset/substitution/manual invocation.14:50nightly failed retained-context
 processing/zeroorderPOST, first cause unknown; pointer-only context retained.
 Readonly14:56 first open-orders request succeeded, not original-response replay.
-Diagnostic recovery candidate needs exact current-custody check before deployment;
-no new nightly trigger installed yet, normal schedule/image still unchanged.
+New pre-intent refresh proves both old/new request scopes absent under native
+locks, retaining original input/expiry/basis and any existing stage recovery.
+Installed SAME nightly Task/imagefc9b1c2b/473files, ONE Oct15 16:30UTC natural
+recovery trigger and original daily14:50UTC. No runtime success inferred yet.
+A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
+A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
 A/execution/current-nas-first-visit-firstcause-20261015-v1
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
 A/execution/current-nas-first-visit-firstcause-20261015-v1/recovered-second-visit-native.json
@@ -44,9 +49,9 @@ Private Paper authority is delegated; research qualification is NOT permission.
   foreign-inventory adoption, profit refill or bank reset. Desired10*.005=.05
   ORIGINAL-basis proposal may be reduced/rejected by shared bank/buying power/
   losses/reservations. Fifth-OPEN/later entry is not research fifth-CLOSE parity.
-- Existing daily-spy-session Oct15 23:50KST/14:50UTC: image3ccb2250,472public
-  snapshot/470runtime sources/4d0481cd,drivere586/quiet6d51. Original XML/identity/
-  bank retained. Both images present; no secrets copied.
+- Existing daily-spy-session: NEW imagefc9b1c2b/473public snapshot/471runtime,
+  driver8e0816ef/launcher a2ffd61e/config0ef93b92. Same identity/bank/normal
+ 14:50UTC trigger plus ONE Oct15 16:30UTC natural recovery. Old3ccb retained.
 
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
 A/execution/current-paper-frozen-deployment-20261015-v1/after.json
@@ -54,8 +59,9 @@ A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.j
 
 ## Completion Evidence
 
-At natural owned opportunities use the new recovery-root public reader for
-model and old r2 for unchanged nightly; native reader f7990232 is unchanged.
+At natural owned opportunities use the87697 recovery-root public reader for
+model; NEW nightly-preintent-refresh-deployment-20261016-v1/read_owned_dispatch.py
+for changed nightly, never oldr2. Native model reader f7990232 is unchanged.
 Never use observe(),
 task-exit/latest-file/timestamp/preview inference. Validate exact launch/time/
 source -> immutable dispatch -> native cycle/intent/fill/owned state. Distinguish
@@ -90,34 +96,38 @@ Do not redispatch closed creators; exact evidence/limits live in role boards.
   CLOSED1,197,728bars/1,161,353windows; original strictB preserved. New FirstRate
   fixed20 sample CLOSED77998RTH1m/MTF, actualSep28..Oct9; explicit missing/
   partial buckets, no imputation or Paper-input substitution.
-- Engine/Godel: intraday12fits CLOSED; longer daily252/21session actual6CUDA+
-  3CPU/137epochs/72cells CLOSED,6/9growthpositive per expert/0primary. Next
-  source/frozen-output action-diversity diagnosis, not blind architecture grid.
-- Validation/Raman: independent nine long-adjusted experts/72cells, CPU only.
-- Validation/Kant: independent six paired MSE/RankNet models/54cells, CPU only.
+- Engine/Godel: OOFfusion six meta fits CLOSED,90cells/familyfalse/zero new base
+  fits. New finite0fit completed-month SPY regime composition with samegate
+  uniform/matched exposure; no Paper switch, old study regrade or new GPU fits.
+- Validation/Raman: meta6CPUrestore/90cells42750curves PASS, zeroTop5change.
+- Validation/Kant: paired MSE/RankNet sixEVAL/54cells PASS/released.
   Core20 independent72cashflows passed, separate
   f3GRU CPU/CUDA parityP2 unresolved. Actual old command was Torch2.7, not
   evidenced2.13; no version-cause claim or company/Paper hold.
-- Invoked Infra/Hubble: finite visible-console metadata sample across natural
-  nightly/model startups; no actual Task/API invocation or unrelated-app edits.
-- Strategy/Dirac: monthly45cells27complete18unknown CLOSED, primaryUNKNOWN from
-  held marks.252context kernel consumed/released. Data exact13 invalid OHLC gaps
-  diagnosed, finite recapture owns due windows; no old input/study/Paper switch.
+- Invoked Infra/Hubble: newnightly deployed; finite16:30UTC visible-console
+  metadata sample, no actual Task/API invocation or unrelated-app edits.
+- Strategy/Dirac: pure SMA10 monthly gate READY1052rows/55baskets41ON14OFF/
+  0UNKNOWN,23SYN+55scalar checks. Separate monthly momentum45cells remains
+  27complete18unknown. Data recapture8unchangedinvalid/0repair CLOSED,
+  5unattemptedunknown; no repeated doomed queries or old input/Paper switch.
 
-Latest closed fit versions118=75CUDA+43CPU, not architectures: new9HGB/sixpaired-
+Latest closed fit versions124=77CUDA+47CPU, not architectures: new9HGB/sixpaired-
 loss/ninelongadjusted experts all completed. Longadjusted3CPU+6CUDA/132epochs/
 3552updates/72cells/0unknown,0primary; independent check dispatched. Intraday12
 fits/245epochs/5780updates/90cells completed; nine252day versions added. Not an
-environment/permission hold. Existing positive growth is not independent alpha.
+environment/permission hold. NEW six OOF meta fits/90cells completed; independent
+six CPU restores/42750curves passed, Ridgeprimary1/2/familyfalse. Next isolated
+completed-month regime gate preparation, no blind base-refit grid. Existing
+positive growth is not independent alpha.
 Foundation/reader/SYN are not fits. Exact role boards own detailed current facts.
 No qualified Alpha. Source/cost/current-listing/PIT limits constrain claims,
 not independent exploratory work or approved Paper permission.
 
 ## Verify And Continue
 
-Fresh helper authority1344source/facf454d:870changed-path serial, clean8 full
-16595pass/22skip/415.234seconds/helper0, Ruff/three sample-env Compose PASS.
-A/verification/current-nas-zero-quote-recovery-20261015-v1/authority.json.
+Fresh helper authority1345source/e324d614:552changed-path serial, clean8 full
+16888pass/22skip/helper0, Ruff/three sample-env Compose PASS.
+A/verification/nightly-preintent-refresh-20261016-v1/authority.json.
 Reuse only if exact source-map equality; external/native workers need own checks.
 
 Integrate evidence, verify, commit/push owned packages. Replace this file with

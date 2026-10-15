@@ -7,15 +7,23 @@ LATEST13:40UTC model visit failed before submit: exact reader validates1token/
 7GET/0BUY/0SELL/0cancel/0nativelegs. Actual readonly target0 probe reproduced
 all-zero quote date/time. Recovery deployed on SAME Task/re-enabled14:37:42UTC;
 15:05 natural correctly processed target0 as no_intent, no substitute.15:09
-natural BUY1; strict15:10 native read proves ONE accepted FULL fill/owned model
-position/zero unknown for that exact request. Company entry/exit loop unfinished.
+natural BUY1; strict15:57:57 native read proves EIGHT accepted FULL fills/eight
+owned model instruments/zero unknown outcomes, no pending request. Latest
+15:57 bound dispatch holds/await_declared_exit with zero API calls. These are
+retained exact-fill links, not fresh broker inventory or measured net profit.
+Company entry/exit loop unfinished; owned exit not before Oct21 regular OPEN.
 Image87697f8e/source474 remains installed. Original shared tenth unchanged.
 14:50nightly failed generic retained_context_recovery_required/1GET/zeroorders.
 Fresh14:56 readonly first open-orders request parsed2xx; original cause UNKNOWN.
 15:01native daily pointer-only/no cycle journal retained; do not replace/reset.
-Tested23reason diagnostics candidate, fresh302serial/16850fullpass22skip/helper0/
-Ruff/three sampleCompose PASS, not yet deployed. Parent checks current custody
-before any proposed exact recovery opportunity. Do not manually replay or
+Later15:23 custody mismatch is distinct from original failure. New native
+pre-intent refresh proves both old/new request scopes absent under daily/cycle/
+shared locks before changing only starting-owner/binding refs. Original basis,
+input, identities and expiry stay fixed; existing native stage is not refreshed.
+New fc9b1c2b image installed on SAME nightly Task with ONE Oct15 16:30UTC natural
+recovery trigger plus original daily14:50UTC trigger. Runtime result not yet
+observed. Fresh552serial/16888fullpass22skip/helper0/Ruff/three sampleCompose
+PASS,1345source/e324d614. Do not manually replay or
 reset targets/input/policy/identities/bank. No operator decision. Paper delegated;
 never KIS_LIVE_*, real money, public serving, paid commitments or secret output.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -25,16 +33,21 @@ Workdir C:/Users/Public/Documents/thericher-v2. AGENTS.md owns authority.
 
 | Owner | Frozen deployment | Next natural opportunity |
 | --- | --- | --- |
-| NAS model | Same finite quiet Task/image87697f8e,474files/manifest13cfe08b,host2fb90e20/config6e5fcc16 | Oct15UTC every4minutes; exact15:09 fullfill verified, no manual replay |
-| Existing daily baseline | Same Task/image3ccb2250; Oct15 14:50 failed with zeroorderPOST, pointer retained; diagnostic candidate pending deployment/custody check | Original next Oct16 14:50UTC; no new trigger installed yet |
+| NAS model | Same finite quiet Task/image87697f8e,474files/manifest13cfe08b,host2fb90e20/config6e5fcc16 | Eight exact retained FULLfills/zero unknown; hold until owned exit, no manual replay |
+| Existing daily baseline | Same Task/newfc9b1c2b image,473files; original14:50 fault unknown, pointer retained | ONE Oct15 16:30UTC natural recovery; original next Oct16 14:50UTC preserved |
 | Future accounting83 | r6 accounting-only repair installed, actual result unknown | Oct16 05:25KST/Oct15 20:25UTC |
 
 Both model/daily Tasks were enabled/Ready at Parent's latest source-safe read.
 Both exact image IDs are present in Docker29.3.1. No task manually invoked.
-Nightly XML/identity/original bank unchanged. Frozen public-source snapshots
+Nightly identity/original bank/normal trigger unchanged; only exact quiet Action
+and ONE future16:30UTC trigger changed, disabled/enabled XML independently
+verified. Frozen public-source snapshots
 isolate both deployments from mutable development; no .env/secrets were copied.
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
 A/execution/current-paper-frozen-deployment-20261015-v1/after.json
+A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
+A/execution/nightly-preintent-refresh-deployment-20261016-v1/parent-task-after-enabled.xml
+A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
 
 Read-only retained model sample: active pointer/zero plans/intents/submits/fills/
 pending at sample, private bytes unchanged. OTHER future83Recover Task was
@@ -113,11 +126,18 @@ A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-insta
 
 ## Research And Data Continuation
 
-Latest continuation contains118 fitted VERSIONS:75CUDA+43CPU, not118architectures.
+Latest continuation contains124 fitted VERSIONS:77CUDA+47CPU, not124architectures.
 Five families below contain39; one retained meta gate and nine NAS versions
 make49; nineCore20/15longNAS/nineHGB/sixpaired-loss/nineLongExperts make97.
-Twelve intraday versions bring97to109; nine252day/21session versions bring118.
+Twelve intraday versions bring97to109; nine252day/21session versions bring118;
+six OOF excess-return meta versions bring124. Zero new base fits in that family.
 Foundation/SYN are not fits.
+OOF fusion CLOSED4CPU+2CUDA/69epochs/283updates/90cells, zero unknown. Ridge
+growthpositive5/6, primary1/2 so familyfalse; HGB/MLP jointpasseszero. Independent
+six CPU restores/90cells/42750curve values passed, zero changedTop5. Seen adaptive
+development only; no alpha/Paper change. Native GPU2.834seconds; no GPU hold.
+A/research/daily252-oof-excess-fusion-development-20261016-v1/owner-handoff.json
+A/research/daily252-oof-excess-fusion-development-20261016-v1/independent-review/result.json
 No qualified Alpha/Paper adoption.
 Individual growth-positive cases are not incremental performance qualification.
 

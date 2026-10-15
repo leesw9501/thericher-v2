@@ -1,10 +1,37 @@
 # Strategy Research Stateboard
 
-Current 2026-10-15 KST. AGENTS owns authority. Parent owns company goal,
+Current 2026-10-16 KST/Oct15UTC. AGENTS owns authority. Parent owns company goal,
 final science/integration/Git; Steward owns ONE GPU allocation. Strategy
 owns source hypotheses/assigned kernels and explicitly delegated experiments,
 not broker risk or Paper adoption. A=D:/thericher-v2/model-artifacts.
 History remains in Parent Git27dface and immutable external roots.
+
+## Current Consumers
+
+Dirac pure252day/21session kernel CLOSED28SYN/226realinput smokes/81440eligible
+keys,22.74active. Allraw/12x21patch/indicator/joint views share causal past-only
+eligibility; futureprefixinvariance checked. Godel consumed it for actual9fits,
+not a reading-list proposal. Official PatchTST/TCN/momentum sources/licenses
+are pinned in its handoff; no imported public runtime or new dependency.
+A/strategy-research/daily-long-context-21session-preparation-20261015-v1/owner-handoff.json
+
+Monthly momentum45cells27complete18unknown CLOSED;13bad OHLCsource rows are
+not converter faults, repeated8captureunchanged, no repair/oldregrade. Kernel
+and turnover mechanics remain useful independently. Dirac actor released.
+Parent/Godel next OOF excess-return fusion uses retained HGB/TCN/patch ranks,
+not more absolute>0 experts; scipy/sklearn official stacking/time-split guidance
+and Claude challenge linked in new family. Already-seen development, not alpha.
+A/review/daily252-oof-fusion-20261016-v1/claude.json
+
+Dirac monthly-regime pure gate READY/closed: exact completed-calendar-month
+SPYclose>SMA10,1052OOFrows/55baskets41ON14OFF0UNKNOWN;23SYN before market and
+55/55scalar comparisons passed. Equality OFF/missing UNKNOWN, future/unfinished
+month excluded.15.65active/684.27end, zero fits/labels/economic replay. Author
+Faber source-inspired adaptation on21session grid, not literal month-end
+strategy reproduction. Godel consumes immutable gate in NEW0fit composition;
+samegate uniform/matched-exposure controls, adaptive DEV only, no Paper change.
+A/strategy-research/monthly-regime-gate-preparation-20261016-v1/SAFE_READY.json
+A/review/monthly-regime-oof-composition-20261016-v1/r1/claude.json
 
 ## Cached Adjustment Interpretation Closed
 

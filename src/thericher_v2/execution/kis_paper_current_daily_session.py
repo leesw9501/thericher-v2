@@ -192,6 +192,100 @@ def _validate(value, paths, account):
     return _native(context)
 
 
+def _preintent_contract(context):
+    native = _native(context)
+    return dict(
+        session_id=native["session_id"], account_ref=context["expected_account_ref"],
+        basis_ref=context["expected_basis_ref"], owner_refs=context["expected_owner_refs"],
+        binding_ref=context["expected_binding_ref"], input_ref=native["input_ref"],
+        control_ref=native["control_ref"], target_as_of=native["target_as_of"].isoformat(),
+        weights={s: str(native["weights_by_symbol"][s]) for s in cycle.SYMBOLS},
+        covariance={
+            s: {t: str(native["covariance_by_symbol"][s][t]) for t in cycle.SYMBOLS}
+            for s in cycle.SYMBOLS
+        },
+    )
+
+
+def _preintent_request_runs(context):
+    contract_ref = budget._digest(_preintent_contract(context))
+    account, basis = context["expected_account_ref"], context["expected_basis_ref"]
+    requests, runs = set(), set()
+    for side in ("buy", "sell"):
+        request = "portfolio-" + side + "-" + contract_ref
+        requests.add(request)
+        for symbol in cycle.SYMBOLS:
+            identity = [account, basis, request, symbol]
+            if side == "sell":
+                identity.extend([side, "portfolio-" + symbol.lower()])
+            runs.add("bp-" + budget._digest(identity))
+    return requests, runs
+
+
+def _refresh_preintent_context(record, *, root, pointer, paths, account, clock):
+    """Refresh only starting custody when no native request could have begun.
+
+    Caller retains daily ownership. Any existing native checkpoint keeps its
+    original context and exact recovery; shared-book writes remain native-only.
+    """
+    if record["completed"] or record["cycle_ref"] is not None:
+        return record
+    _validate(record, paths, account)
+    context = record["context"]
+    key = budget._digest([account, context["expected_basis_ref"], context["native"]["session_id"]])
+    directory = root / ".portfolio_cycles" / key
+    for path in (directory, directory / ".advance", directory / "..advance.lock"):
+        execution._unlinked(path)
+    with canary.exclusive_kis_paper_canary_state_lock(directory / ".advance"):
+        with cycle._shared(root):
+            _check(budget._read_json(pointer) == record)
+            entries = tuple(directory.iterdir())
+            for path in entries:
+                execution._unlinked(path)
+            # Checkpoint-before-reservation is the native ordering contract.
+            if any(path.name != "..advance.lock" for path in entries):
+                return record
+            binding = budget._load_binding(root, account)
+            _check(binding is not None and binding["version"] in {3, 4}
+                   and binding["legacy_spy"] is None
+                   and binding["basis_ref"] == context["expected_basis_ref"])
+            owner_refs = {o.owner_ref: pin for o, pin in budget._owners(binding)}
+            current_ref = "sha256:" + budget._digest(binding)
+            if (context["expected_binding_ref"] == current_ref
+                    and context["expected_owner_refs"] == owner_refs):
+                return record
+            at = require_utc(clock())
+            _check(datetime.fromisoformat(context["available_at"]) < at
+                   < datetime.fromisoformat(context["valid_until"]))
+            proposal = _record(dict(context, expected_owner_refs=owner_refs,
+                                    expected_binding_ref=current_ref))
+            _validate(proposal, paths, account)
+            old_requests, old_runs = _preintent_request_runs(context)
+            new_requests, new_runs = _preintent_request_runs(proposal["context"])
+            requests, runs = old_requests | new_requests, old_runs | new_runs
+            plans = list(binding["portfolio"]["plans"])
+            if binding["version"] == 4:
+                plans.extend(p for stock in binding["stocks"].values() for p in stock["plans"])
+            _check(not any(p["request_id"] in requests for p in plans))
+            states, replayed, proofs, _ = cycle._project(root, binding, at)
+            _check(not runs.intersection(states))
+            for run in runs:
+                path = root / (run + ".json")
+                execution._unlinked(path)
+                _check(not path.exists())
+            _check(all(budget._terminal(state, proofs.get(run))
+                       and run in binding["terminal_evidence"]
+                       for run, state in replayed.items()))
+            _check(budget._read_json(pointer) == record
+                   and budget._load_binding(root, account) == binding)
+            final_at = require_utc(clock())
+            _check(datetime.fromisoformat(context["available_at"]) < final_at
+                   < datetime.fromisoformat(context["valid_until"]))
+            budget._atomic_json(pointer, proposal)
+            _check(budget._read_json(pointer) == proposal)
+            return proposal
+
+
 def run_kis_paper_current_daily_session(
     *, state_root: Path, repository_root: Path, artifact_root: Path,
     runtime_projection_path: Path, paper_account_snapshot_path: Path,
@@ -233,6 +327,9 @@ def run_kis_paper_current_daily_session(
             record = budget._read_json(pointer)
             if record is not None:
                 _validate(record, paths, account)
+                record = _refresh_preintent_context(
+                    record, root=root, pointer=pointer, paths=paths, account=account, clock=clock,
+                )
             if record is None or record["completed"]:
                 try:
                     _check(callable(data_loader))

@@ -1,15 +1,20 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current 2026-10-15 KST. Company: current-nas-owned-model-paper-cycle-v1.
+Current 2026-10-16 KST /Oct15UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
-LATEST13:40UTC natural model visit: exact public reader validates1token/7GET,
-0BUY/0SELL/0cancel/0nativelegs; unavailable/native_recovery_required. Readonly
-probes reproduced target0 all-zero quote time. SAME Task recovered/re-enabled
-14:37:42UTC/image87697f8e, next natural15:05UTC/Oct16 00:05KST; runtime unknown.
-23:50nightly unchanged. Preserve pointer/targets/identity/original bank.
+LATEST15:57:57 strict native read verifies8acknowledged FULLfills/eightowned model
+instruments/zero unknown and no pending request.15:57bound dispatch holds/
+await_declared_exit/zeroAPI.15:05missing target0 was no_intent, no substitute.
+Retained exact fills are not current independent broker inventory or net PnL.
+SAME Task/image87697f8e/original bank/targets.14:50nightly failed retained-context
+processing/1GET/zeroorders, original cause UNKNOWN.14:56 fresh first open-orders
+query parsed2xx, not original replay.15:23 strict comparison shows later custody
+mismatch: old6/current9owners, same basis, incomplete pointer/no cycle_ref/all
+three stage journals absent. This does NOT explain the earlier14:50 failure.
+No rebind without positive absence proof for both old/new derived request scopes.
 Retained native sample0modelplans/pending/intents/fills/privatebytesstable BUT
 other future83Recover Task was Running, so not globally quiescent/broker proof.
 Only new unreserved BUY's exact all-zero quote date/time may retire that target
@@ -19,11 +24,32 @@ order BBO parser already used output2; diagnostic inspector corrected to it.
 Original natural raw response absent, reproduction is not literal replay proof.
 A/execution/current-nas-first-visit-firstcause-20261015-v1
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
+A/execution/current-nas-first-visit-firstcause-20261015-v1/recovered-second-visit-native.json
+A/execution/nightly-retained-context-firstcause-20261015-v1/custody-comparison.json
+
+New pre-intent native recovery fc9b1c2b/473publicfiles installed on SAME nightly
+Task with ONE Oct15 16:30UTC natural recovery and original14:50UTC trigger.
+Exact disabled/enabled XML passes; no manual invocation. Runtime not yet proven.
+Under daily/cycle/shared locks prove both old/new exact native requests/runs/
+plans absent and pointer/book/basis/account/expiry unchanged; refresh only
+starting-owner/binding refs. Any existing native stage uses unchanged recovery.
+552serial/16888fullpass22skip/helper0/Ruff/three sampleCompose PASS,1345/e324d614.
+Diagnostic-only999962ab remains NEVER installed; original14:50 cause unknown.
+A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
+A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
+
+Model-scoped marked gross sidecar31cases+5subtests/Ruff passes, but actual
+numeric-price pointer/account-observer chain not established; no private reads
+or quote calls. Actual8model positions' gross/net PnL remain UNKNOWN, not zero.
+195s elapsed, active-time compliance not established; don't claim capped active
+completion. This missing-input limit is not a Paper/company gate.
+A/execution/current-nas-owned-model-valuation-20261016-v1/result.json
 
 Latest quiet-ops repair: seven legacy Data/readonly observer Actions migrated
 to pinned9fe9750c pythonw/no-console wrapper. Original argv/cwd and ALL other
 XML preserved; this board's22:40/23:50 order Actions unchanged. NativePS/cmd/uv
-window/exit checks linked PASS; natural observer check separately owned.
+window/exit checks linked PASS. Natural14:50/15:05 startups:2863+2855samples,
+0newvisibleconsoles/0unclassified, finite same-desktop20ms limitation only.
 No manual task/API/order invocation for this repair; no broker-success claim.
 A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
 
@@ -31,8 +57,8 @@ A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
 
 | Owner | Current evidence | Next action |
 | --- | --- | --- |
-| Existing nightly | thericher-kis-paper-daily-spy-session Ready/enabled, quiet Pythonw, immutable image3ccb2250/public472/image470, drivere586/quiet6d51. Original XML/identity/bank unchanged. | Natural Oct15 23:50KST/14:50UTC; exact scoped receipt/native readback, no manual replay. |
-| Current NAS model | thericher-kis-paper-current-nas-model-20261015 Ready/enabled, image87697f8e/474sources/manifest13cfe08b/config6e5fcc16. Same finite14triggers/identity/bank; technical recovery installed, NOT runtime closure. | Natural Oct16 00:05KST/Oct15 15:05UTC. Entry ONLY Oct15; later exact recovery/owned exit fromOct21 OPEN. |
+| Existing nightly | Same Task/newfc9b1c2b, positive-absence refresh installed; original14:50cause unknown. | ONE Oct15 16:30UTC natural recovery; original normalOct16 14:50UTC remains. |
+| Current NAS model | Same quiet finite Task/image87697f8e/474sources/manifest13cfe08b/config6e5fcc16. EightFULLfills/zero unknown retained. | Hold/exact recovery at existing4minute slots; owned exit fromOct21OPEN, no substitute. |
 | Future accounting83 | r6 accounting-only repair installed, other six Actions and oldindex2/claims retained. Runtime unknown, not replayed. | Oct15 20:25UTC/Oct16 05:25KST. Goal83 exitOct17 04:50/05:00KST. |
 | Goal97 owner | Separately owned original plan/history/source retained. Empty-registration runtime unproved; no established cross-policy adoption bug. | EntryOct19 22:30/22:40KST; exitOct24 04:50/05:00KST. Do not invoke/replace/adopt. |
 | CPU clock sidecar | COMPLETE6cells, independent noP1/P2, agent closed. | Consumed creator, retrieval only. |

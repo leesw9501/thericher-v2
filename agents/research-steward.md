@@ -1,6 +1,6 @@
 # Research Steward Stateboard
 
-Current2026-10-15KST. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-16KST/Oct15UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/custody.
 Steward owns exclusive GPU/trial-family custody, NOT model choice, broker risk,
 human approval or a permanent daemon. Parent dispatches/integrates/Git.
@@ -10,9 +10,9 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |Godel intraday CLOSED9CUDA+3CPU/245epochs/5780updates/90cells,123.670aggregateactive/103.699end; source/lease/children clean. No environment/permission hold or dummy load.|
-| Next depth |Dirac prepares causal daily252context/21session input kernel,0fits. Godel freezes meaningful longer-hold target/split/caps before next allocation. One lease/headroom; no global4GiB cap inferred from prior campaign choice.|
-| CPU research |Kant independent pairedRankNet, Raman independent longExperts, Dirac monthly12-1/6-1 fixed-policy replay.9HGB/126cells independent pass in scope,0primary; Core20 nativeP2 remains scoped.|
+| GPU |OOFfusion CLOSED2CUDA+4CPU/69epochs/283updates/90cells; native GPU2.834sec, lease clean. No ready numerical GPU owner, no environment/permission hold or dummy load.|
+| Next depth |New completed-month SPY SMA10 gate around frozen OOF ranks, zero fits/GPU. Use existing outputs before another architecture grid; independent meta6CPUrestore/90oracles passed.|
+| CPU research |Godel new finite0fit regime composition, Dirac puregate READY55baskets41ON14OFF. RankNet54cells passed; longExpert/patch scoreparityP2 stays scoped with unchanged masks.|
 | Data |Adjusted20 recovery CLOSED89723bars/87743windows, collectors released13:23:29UTC before Paper. SECmap403closed1GET/0retry/no dataset. No GPU.|
 | Strategy |LongNAS independent687pins/108cells PASSED,0restored model calls. Dirac completed MTFcausal feature adapter/420cache arrays/0fits. Descartes quiet tests/actual receipt CLOSED, startup visibility unknown.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
@@ -24,7 +24,7 @@ Prepared role/MD is not evidence of a live numerical worker.
 
 ## Custody To Preserve
 
-- Latest continuation109 fitted VERSIONS(69CUDA/40CPU), not109architectures.
+- Latest continuation124 fitted VERSIONS(77CUDA/47CPU), not124architectures.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent

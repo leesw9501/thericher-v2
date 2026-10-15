@@ -10408,3 +10408,25 @@ Explicit monotone cash-dominance research may retain its original zero-DD aim.
 Consumer: next daily252context/21session Engine Research contract, frozen before
 new numerical dispatch. Claude supported-with-limits, advisory only.
 D:/thericher-v2/model-artifacts/review/future-research-cash-baseline-20261015-v1/claude.json
+
+## 2026-10-16 - Refresh Starting Custody Only Before Any Native Request
+
+A valid incomplete daily context with no native cycle reference may refresh
+only its starting binding/owner references after another legitimate owner
+changes the shared book. This is pre-intent metadata, not permission to replace
+a request. Native checkpoint-before-reservation ordering plus strict native
+registry/state replay and absence of BOTH old/new derived plans, seeds and run
+files must establish no request began. Any existing stage keeps its original
+exact recovery; never rekey a reserved, partial, sent or unknown request.
+
+Retain account/basis, targets/input/control/session, availability/expiry and all
+other owners/costs/losses. Commit/read back only pointer metadata under existing
+daily/cycle/shared locks; native fresh broker/window/book-change checks still
+run before effects. No cleanup, expiry rollover, capital expansion, new signal
+or mixed-OS token-lock redesign. Scope is the named private Docker-volume
+execution path under the existing assumed-honest host model, not an impossible
+proof about every historical writer. Failed proof remains locally unavailable.
+Consumer: restore the existing nightly Paper context after new model entries.
+Claude supported-with-limits; deployment still requires material source QA and
+an exact owned natural opportunity. Original14:50 first cause remains unknown.
+D:/thericher-v2/model-artifacts/review/daily-preintent-refresh-20261016-v1/claude.json

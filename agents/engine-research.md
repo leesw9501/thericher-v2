@@ -1,6 +1,6 @@
 # Engine Research Stateboard
 
-Current2026-10-15KST. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-16KST/Oct15UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts; AGENTS owns authority. Parent owns integration/
 Git, Execution owns broker risk. MD is memory, not an active worker.
 Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
@@ -26,6 +26,8 @@ features185..255KB: low sustained GPU occupancy is expected, no speedup claim.
 timeout retained, linked buffered-prefix repair, no market retries. Author
 readback only, independent check pending; lease/children cleaned.
 A/research/liquid-core-adjusted-relative-ranking-development-20261015-v1/r3/completion.json
+Independent54cells/4914curves/sixCPU EVAL/12losses matched, zero changedTop5;
+38.148active with retained reader repairs, noP1P2 in scope. Old primary unchanged.
 
 Core20 same-session unit-invariant study CLOSED:3CPUHGB+6CUDA GRU/Transformer,
 688updates/72cells/zero unknown or retries.87.479active/234.069end within1800/
@@ -97,7 +99,9 @@ Current frozen Paper C targets/source/identities/bank remain unchanged.
 Long adjusted20 experts CLOSED:3CPUHGB+6CUDA GRU60/Transformer60 x3long folds,
 132epochs/3552updates/5160forwards/72cells/0unknown. All three policies6/9
 quoted-growth positive, primary incremental0/3/all-cost0/9.96.614aggregateactive/
-76.637end; EXACTold62938 input unchanged, independent reader Raman owns scope.
+76.637end; EXACTold62938 input unchanged. Independent72cells/26952curves/nineCPU
+EVAL checked; scopedP2f1/f3Transformer score tolerance fails, zero changed sign
+masks. Stored CUDA economics checked, not full CPU portability proof.
 A/research/liquid-core-adjusted-long-experts-development-20261015-v1/owner-handoff.json
 
 Intraday Godel CLOSED: retainedSPY/QQQ251session raw30/raw120/raw120+36indicator
@@ -110,12 +114,42 @@ A/research/etf-intraday-indicator-mtf-development-20261015-v1/owner-handoff.json
 CPU monthly12-1/6-1/fixed-blend on NEW89723input CLOSED45cells27complete18unknown.
 PrimaryUNKNOWN all3folds from required marks, not zero profit.18complete rule
 cells growthpositive on two earlier folds only; no aligned dominance claim.
-22SYN/108Fraction checks;17.42active/120cap. Data diagnoses exact native gaps
-offline; source/result/debits unchanged. Dirac now owns pure daily252context/
-21session causal patch/indicator kernel for next long-hold candidate contract,
-zero labels/fits/GPU. Godel owns future target/splits/budget, no fits before freeze.
-Current20/nonPIT/native adjustment limitations persist. Kant independently checks six
-paired MSE/RankNet models; both readers are CPU/no tuning/GPU. Dirac FirstRate
+22SYN/108Fraction checks;17.42active/120cap. Data confirmed13native OHLC defects;
+freshrecapture8stillinvalid/3156exactsharedfields/zero repair/five unattempted,
+closed with no retries. Old study/input/debits unchanged.
+
+Daily252/21session CLOSED3CPUHGB+6CUDA TCN/patchTransformer/137epochs/5844updates/
+72cells/0unknown; each6/9growthpositive, primary0/3 under newly predeclared risky
+DDreference, NOT cash0.101.199aggregateactive/81.222end; source/lease clean.
+Independent check CLOSED72cells/28872curves/nineCPU forwards; patch3/3score
+tolerances fail, zero changed sign masks, scopedP2 unchanged. HGB/TCN pass.
+Dirac kernel28SYN/81440keys consumed/released.
+Retained-output0fit diagnostic5.215active: HGB55/55baskets all-uniform, TCN51/55,
+patch26/55 despite differing scores. No new economic replay/old primary regrade.
+A/research/daily-long-context-21session-development-20261015-v1/owner-handoff.json
+A/research/daily-long-context-21session-development-20261015-v1/retained-action-diversity-diagnostic-v1/diagnostic.json
+
+OOF excess-return fusion CLOSED4CPU+2CUDA meta fits, ZERO new base fits;
+69epochs/283updates/388forwards/90cells/zero unknown. Ridge5/6growthpositive,
+primary1/2 so familyfalse; HGB/MLPjointzero. Independent6CPUrestores passed
+tolerance/zeroTop5change;90cells/42750curves matched. Upstream patchP2 remains;
+reader did not rerun base forwards. Native GPU2.834sec,49.330active/137.222end,
+cleanup/lease clean. Chronological f1->f2/f1+f2->f3 remains already-seen adaptive
+DEV with cross-stage base drift, not independentAlpha or Paper adoption.
+A/research/daily252-oof-excess-fusion-development-20261016-v1/owner-handoff.json
+A/research/daily252-oof-excess-fusion-development-20261016-v1/independent-review/result.json
+
+NEXT Godel owns separately frozen0fit monthly-regime composition: exact
+completed-month SPY10monthSMA gate on inherited21session decisions, no tuned
+threshold/period. Dirac1052rows/55baskets41ON14OFF0UNKNOWN/23SYN+55scalar
+checks ready. <=72cells/180active1800end, same-gate uniform/matched exposure
+controls, no base/meta forwards, GPU, broker or old regrade. Claim is adaptive
+mechanism study; less exposure is not alpha. Claude structured retry supported-
+with-limits; initial nonverdict retained, not agreement.
+A/strategy-research/monthly-regime-gate-preparation-20261016-v1/SAFE_READY.json
+A/review/monthly-regime-oof-composition-20261016-v1/r1/claude.json
+A/review/daily252-oof-fusion-20261016-v1/claude.json
+Current20/nonPIT/native adjustment limitations persist. Dirac FirstRate
 MTF adapter READY24SYN/204120scalar checks/420cache arrays,0fits. Raw30/120
 causal eligibility72140/53969 asset-decisions; completed5m/10m/1h/3h availability
 and insufficient long3h context explicit, not imputed. Source/calendar ABI must
@@ -128,7 +162,8 @@ Earlier epochs/seed/no-rerun limits protect their OWN immutable results only.
 
 Five earlier families39fit versions(24CUDA/15CPU), plus ONE retained meta gate
 and9fit NAS plus9fitCore20 plus15longNAS plus9HGB plus6ranking plus9longExperts
-+12intraday ->109fit versions(69CUDA/40CPU), NOT109architectures.
+plus12intraday plus9daily252 plus6meta ->124fit versions(77CUDA/47CPU),
+NOT124architectures.
 SYN fits/reader forwards/foundation inference are not extra fitted models.
 
 | Study | Exact current result |

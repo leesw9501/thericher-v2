@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current2026-10-15KST. ONE objective: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-16KST/Oct15UTC. ONE objective: current-nas-owned-model-paper-cycle-v1.
 Parent owns shared policy/goal/integration/Git. A=D:/thericher-v2/model-artifacts.
 No operator decision identified; neverKIS_LIVE_* or real money/public/paid work.
 
@@ -8,22 +8,32 @@ No operator decision identified; neverKIS_LIVE_* or real money/public/paid work.
 
 | Resource | Actual owner/status |
 | --- | --- |
-| Integration/Git |Parent. Actual first visit failed pre-submit; recovery deployed14:37UTC/image87697f8e. Company runtime closure unfinished.|
-| NAS Paper |Same quiet finite Task, image87697f8e/474frozen files/manifest13cfe08b. Next15:05UTC/Oct16 00:05KST; entryONLYOct15, exact pending recovery/owned exit fromOct21OPEN. No manual invocation.|
-| Nightly baseline |Owned daily-spy-session, image3ccb2250/frozen472public snapshot. Oct15 23:50KST. XML/identity/ORIGINALshared bank retained.|
+| Integration/Git |Parent. Latest material QA1345/e324d614,552serial16888fullpass22skip/helper0/Ruff3Compose. Eight modelFULLfills verified, company entry/exit unfinished.|
+| NAS Paper |Same finite Task/image87697f8e.15:57:57 native confirms8FULLfills/8owned/0unknown/no pending. Bound dispatch hold/await_declared_exit/zeroAPI; exitfromOct21OPEN.|
+| Nightly baseline |Original14:50causeunknown. New native positive-absence refresh fc9b1c2b INSTALLED on sameTask; ONE16:30UTC natural trigger plus unchanged normal14:50. Actual result pending; no manual replay.|
 | Future accounting83 |r6 installed, nextOct15 20:25UTC/Oct16 05:25KST; actualunknown, oldindex2/claims/basis/otherActions unchanged.|
-| Data/McClintock |Recovery CLOSED89723bars,SECmap403closed1GET/no dataset. Now offline exact13invalid-gap diagnosis for monthly required marks; zero API/account competition.|
-| Validation/Raman |Owns independent nine long-adjusted experts/72cells; CPU only, not own paired-loss author output.|
-| Engine/Godel |Intraday actual9CUDA+3CPU/245epochs/90cells CLOSED,0positivegrowth per expert. Next longer-hold contract consumes Strategy252day kernel; no numerical dispatch before freeze.|
-| Validation/Kant |NineHGB independent126cells/11466curves/nineEVAL passed; now independently checks six paired-loss models/54cells, CPU only.|
-| GPU/Steward |Intraday lease released; next ready frozen campaign Godel. No environment/permission hold or dummy training.|
-| Invoked roles |Dirac monthly45cells27complete18unknown CLOSED; now pure252day/21session kernel. Hubble finite natural14:50/15:05 console metadata diagnostic. Descartes released.|
+| Data/released |13source OHLC defects diagnosed; scoped60floor1POST8GETrecapture stillinvalid/3156anchors/0repair/5unattempted, CLOSED.0retry/no more calls, existing inputs unchanged.|
+| Validation/Raman |Sixmeta CPUrestore/90cells42750curves passed, zeroTop5change. Earlier patch3/3scoreparityP2 remains with unchanged masks. Released.|
+| Engine/Godel |OOFfusion4CPU+2CUDA/90cells CLOSED,Ridgeprimary1/2/familyfalse. NEW finite0fit monthly-regime composition with samegateuniform/matchedexposure, not blind base refits.|
+| Validation/Kant |PairedRankNet54cells/sixEVAL/12losses PASS scoped; actor released. LongExperts f1/f3Transformer scoreparityP2 remains scoped, zero changedmasks.|
+| GPU/Steward |OOF actual GPU2.834sec/lease released. No ready GPU numerical campaign during0fit study; no permission/runtime hold or dummy work.|
+| Invoked roles |Descartes modelmarked kernel31cases+5subtests passed, actualmarkchain absent/PnLunknown; released. Hubble newrecoveryimage88checks/38nativeSYN passed; finite16:30 startupmetadata sample owned. Dirac55basketgate READY/released.|
 | Independent Core20 |72cashflows/196968values/144Fraction checks PASS. Nativef3GRU P2 remains,actualoldTorch2.7 not2.13; no runtime-cause claim. Aristotle released.|
-| Verification |Recovery1344source/facf454d:870serial/fresh clean8 full16595pass22skip/415.234sec/helper0/Ruff/3Compose PASS. Newimage474hashes/95SYN/profilepins; Task14triggers/nightly unchanged.|
+| Verification |Current1345source e324d614+policyhashes:552serial/fresh clean8 full16888pass22skip/helper0/Ruff/3Compose PASS. External88checks+2finalprofile/38native. Original longTEMP serialfailure retained; unchanged shortC552pass.|
 
 ## Throughput Review / Improvement
 
-Latest14:43review: actual Paper pre-submit fault had priority; scoped all-zero
+Latest16:25review: model8exactFULLfills/zero unknown established without replacing
+targets/capital. Originalnightlyfailure stillunknown; newer stale-startingbook
+positive-absence repair deployed with one natural16:30trigger, not generic retry.
+CPU0fit regime composition and finite startup sampler stay independent. Data300floor starvation
+was source-proven with4min producers; bounded1POST60calibrationworked, but
+original8bad OHLC rows remainbad. Close those exactqueries, not fullmarketData.
+One reversible improvement: learn cross-sectional allocation from already
+OOF expert ranks instead of refitting more absolute-return/sign-mask experts.
+No startupconsoles in bothfiniteactualPaperwindows; not wholePC proof.
+
+Earlier actual Paper pre-submit fault had priority; scoped all-zero
 quote diagnosis/recovery deployed without signal/identity/capital change. New
 target-only no-input action is not a fill; actual pending/SELL remain mandatory.
 Useful intraday GPU, independent CPU readers and monthly turnover study run in
@@ -66,7 +76,7 @@ challenge; do not invent a permission hold or mark unfinished work complete.
 - A/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
 - A/data/nas-retained-long-history-readiness-20261015-v1/readiness.json
 
-Latest continuation109fit versions(69CUDA/40CPU), not109architectures.
+Latest continuation124fit versions(77CUDA/47CPU), not124architectures.
 No qualified Alpha/Paper promotion. Individual positive utility remains reported;
 minute models all abstained. Fees/settled cash/net broker PnL not observed.
 Future-owned recovery superseded only as company focus, never declared complete.
