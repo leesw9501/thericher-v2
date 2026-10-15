@@ -11,8 +11,9 @@ KIS Paper work is delegated. Never read/route KIS_LIVE_*.
 ### Existing nightly,23:50 KST
 
 Task: thericher-kis-paper-daily-spy-session.
-Same Task enabled; ONE Oct15 16:30UTC natural recovery trigger installed plus
-unchanged normal14:50UTC weekday trigger. New imagefc9b1c2b/473public files.
+Same Task enabled; ONE Oct15 17:38UTC technical continuation installed plus
+unchanged normal14:50UTC weekday and consumed16:30UTC trigger. New4fd7fdd2 image,
+473publicfiles/471runtime. No manual Task invocation.
 Oct15 14:50 failed retained_context_recovery_required, known broker-transport
 1GET/zeroorderPOST (separate Data requests are not these counters).14:56fresh
 first open-orders query parsed2xx; original response/cause UNKNOWN.
@@ -24,25 +25,34 @@ old/new exact derived plans/requests/runs, unchanged account/basis/book/pointer,
 no stage and original expiry under daily/cycle/shared locks. Only pre-intent
 starting-owner/binding refs may refresh; stage-present exact recovery unchanged.
 Diagnostic-only999962ab was NEVER installed. New recoveryfc9b1c2b IS installed;
-runtime result pending. Neither15:30/15:50/16:20 trigger was installed.
+16:30fc9 run progressed2acceptedSELLs/1retainedFULL/thirdpreview. New4fd7 repairs
+expired exact reconciliation/cancellation and positively never-sent expiry,
+v2terminal_state incomplete is NOT completed/target success. Twelve bounded
+native advances/soft30sec16requestmargin; original280s/128calls/3order/3cancel/
+1token bounds unchanged.17:38 result pending. No expiry/input/bank reset.
+Neither15:30/15:50/16:20 trigger was installed.
 A/execution/nightly-context-exact-recovery-deployment-20261016-v1/ready-parent.json
 A/execution/nightly-retained-context-firstcause-20261015-v1/custody-comparison.json
-Image sha256:fc9b1c2b2c20f62f73c2d15edc3a9d7e248230f683e179c3dcea3205449665e8.
+Image sha256:4fd7fdd2191089e59b56a6b901646a8e94c1476bb0cf3072e0c49a10248459f5.
 Frozen driver/473-public-file repository and image471-runtime-file map isolate it
 from mutable development SRC. No secrets were copied into the snapshot.
 A/execution/current-paper-frozen-deployment-20261015-v1/after.json
 
 Quiet Action remains Pythonw -B; every child uses CREATE_NO_WINDOW.
-NEWROOT=A/execution/nightly-preintent-refresh-deployment-20261016-v1.
-Driver8e0816ef/host44d86b1a/launcher a2ffd61e, config0ef93b92; exact disabled and
+NEWROOT=A/execution/nightly-terminal-incomplete-deployment-20261016-v1.
+Driver64dba792/host2d7db516/launcher136c2c62, configa467c8e2; exact disabled and
 enabled XML verified; principal/settings/normal trigger preserved. Rollback and
 parent commands retained in NEWROOT; never rerun preparation or manually StartTask.
 Use NEWROOT/read_owned_dispatch.py --read --profile nightly
---not-before '2026-10-15T16:29:00+00:00' --max-age-seconds 3600 with python -B.
+--not-before '2026-10-15T17:37:00+00:00' --max-age-seconds 3600 with python -B.
 It binds NEW launch/current -> immutable dispatch and473public/image/source map;
-oldr2 cannot attest this deployment. Native offline reader remains dba29750,
-network-none/read-only /app/private, quiescent owners; NEVER observe().
-A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
+oldr2 cannot attest this deployment. Corrected native reader is
+NEWROOT/native-reader/read_outcomes.py SHA3a7b634f/pins720936eb/image4fd7;
+network-none/read-only /app/private, quiescent owners; NEVER observe(). It reads
+SELL embedded in cycle.json plus separateBUY; olddba missedSELL and falsely
+selectedzero intents. Preserveoldreader/evidence, do not reuseits zero counts.
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/prepared.json
+A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native-outcomes.json
 Old3ccb source/raw natural cause retained. Parent's own synthetic probe created
 15public .pyc files there; exact source-matched15 were archived/hash-verified/
 removed nonrecursively while quiescent. Old470runtime map verified afterward.
@@ -241,15 +251,15 @@ decision. It does not replace the Windows workers or prove they ran.
 ## Verification
 
 Fresh exact source authority:
-A/verification/nightly-preintent-refresh-20261016-v1/authority.json
-552changed-path serial pass; fresh clean8 full16,888pass/22skip,
-16,910collected/helperexit0; source1,345/digeste324d614f0d4bf2f7786e31a8b1f5e8faa6dbef244d53b1fbed8c7de499eb484.
+A/verification/nightly-terminal-incomplete-20261016-v1/authority.json
+507changed-path serial pass/no exclusions; fresh clean8 full16,941pass/22skip,
+16,963collected/379.62sec/helperexit0; source1,346/digest0b60aab264727572f7cfb2fac2fd01e9c797ff8fb4d77519ebd351b2868c367c.
 AGENTS/DECISIONS control hashes separately bound. Installedmodel87697 remains
 its old frozenfacf454d source; diagnostic999962ab was never installed. New
-nightlyfc9b1c2b is installed;473public snapshot/471runtime sources.
+nightly4fd7fdd2 is installed;473public snapshot/471runtime sources, fc9 retained.
 Ruff/default/research/accounting sample-env Compose passed.
-External newnightly88checks+2finalprofiles/38native tests passed; same-task
-disabled/enabled exact XML verifies Action+ONE natural16:30 trigger only.
+External newnightly135checks+2finalprofiles passed; same-task disabled/enabled
+exact XML verifies Action+ONE17:38 continuation, old16:30/normal trigger retained.
 Claude categorical supported-with-limits is advisory, not runtime proof.
 
 Credential-free commands from the absolute workdir:

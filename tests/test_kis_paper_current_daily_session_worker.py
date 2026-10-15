@@ -132,3 +132,58 @@ def test_owned_same_token_is_borrowed_for_market_and_portfolio(monkeypatch):
     value = w.run(w.parse_packet(json.dumps(packet()).encode()))
     assert value["calls"]["token_posts"] == 1 and value["market_daily_gets"] == 12
     assert "synthetic-bearer" not in json.dumps(value)
+
+
+@pytest.mark.parametrize("completion_visit", [8, 12, None])
+def test_three_leg_progress_is_bounded_but_not_truncated_at_four(monkeypatch, completion_visit):
+    from thericher_v2.execution import kis_paper_current_daily_session as session
+
+    transport = SimpleNamespace(
+        calls=dict(token_posts=0, get_requests=0, buy_posts=0, sell_posts=0, cancel_posts=0),
+        can_advance=lambda: True,
+    )
+    monkeypatch.setattr(w, "OwnedTransport", lambda **kwargs: transport)
+    count = 0
+
+    def advance(**kwargs):
+        nonlocal count
+        count += 1
+        assert kwargs["execute"] is True
+        complete = count == completion_visit
+        return session.CurrentDailySessionOutcome(
+            "complete" if complete else "pending",
+            "exact_cycle_complete" if complete else "exact_cycle_advanced",
+        )
+
+    monkeypatch.setattr(session, "run_kis_paper_current_daily_session", advance)
+    value = w.run(w.parse_packet(json.dumps(packet()).encode()))
+    assert count == (completion_visit or 12) == len(value["visits"])
+    assert value["status"] == ("complete" if completion_visit else "pending")
+    assert sum(value["calls"].values()) == 0
+
+
+@pytest.mark.parametrize("limit", ["time", "requests"])
+def test_soft_yield_preserves_last_pending_without_another_native_visit(
+    monkeypatch, tmp_path, limit,
+):
+    from thericher_v2.execution import kis_paper_current_daily_session as session
+
+    now = [0]
+    transport = w.OwnedTransport(control_root=tmp_path / "control", monotonic=lambda: now[0])
+    monkeypatch.setattr(w, "OwnedTransport", lambda **kwargs: transport)
+    count = 0
+
+    def advance(**kwargs):
+        nonlocal count
+        count += 1
+        if limit == "time":
+            now[0] = 250
+        else:
+            transport.calls["get_requests"] = 112
+        return session.CurrentDailySessionOutcome("pending", "exact_cycle_advanced")
+
+    monkeypatch.setattr(session, "run_kis_paper_current_daily_session", advance)
+    value = w.run(w.parse_packet(json.dumps(packet()).encode()))
+    assert count == len(value["visits"]) == 1
+    assert value["status"] == "pending"
+    assert not (tmp_path / "control").exists()

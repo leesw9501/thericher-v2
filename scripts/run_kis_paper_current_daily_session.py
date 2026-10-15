@@ -45,7 +45,7 @@ SAFE_KEYS = frozenset(
 STATUS_REASONS = {
     "complete": {"exact_cycle_complete", "already_completed"},
     "pending": {"exact_cycle_advanced"},
-    "no_intent": {"current_input_unavailable"},
+    "no_intent": {"current_input_unavailable", "terminal_cycle_incomplete"},
     "unavailable": {
         "native_recovery_required",
         "retained_context_recovery_required",
@@ -124,7 +124,7 @@ def validate_result(value):
     ):
         raise ValueError("daily_worker_output_invalid")
     if "visits" in value:
-        if type(value["visits"]) is not list or len(value["visits"]) > 4:
+        if type(value["visits"]) is not list or len(value["visits"]) > 12:
             raise ValueError("daily_worker_output_invalid")
         for row in value["visits"]:
             if (

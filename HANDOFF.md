@@ -21,9 +21,20 @@ pre-intent refresh proves both old/new request scopes absent under daily/cycle/
 shared locks before changing only starting-owner/binding refs. Original basis,
 input, identities and expiry stay fixed; existing native stage is not refreshed.
 New fc9b1c2b image installed on SAME nightly Task with ONE Oct15 16:30UTC natural
-recovery trigger plus original daily14:50UTC trigger. Runtime result not yet
-observed. Fresh552serial/16888fullpass22skip/helper0/Ruff/three sampleCompose
-PASS,1345source/e324d614. Do not manually replay or
+recovery trigger plus original daily14:50UTC trigger. Actual16:30 run advanced:
+one token/48GET/two SELL starts; corrected strict offline reader proves TWO
+acknowledged SELLs, ONE retained full fill, second submitted, third unattempted
+seed. Whole cycle unfinished. Old dba reader omitted SELL embedded in cycle.json
+and falsely selected zero current intents; its zero counts are NOT outcome proof.
+New native expiry/reconciliation repair4fd7 IS INSTALLED on same Task with ONE
+17:38UTC technical continuation; original normal nextOct16 14:50UTC and consumed
+16:30trigger preserved. Actual17:38 result not yet observed. Original
+worker's four advances can exhaust before three legs settle within five-minute
+plan validity. Preserve exact accepted identities, no expiry renewal/bank reset.
+Fresh507serial/16941fullpass22skip/379.62sec/helper0/Ruff/three sampleCompose
+PASS,1346source/0b60aab2. Exact cancellation/positive expired-seed closure and
+v2terminal_state distinguish incomplete from successful targets; v1 readable.
+No old expiry renewal or new intraday context. Do not manually replay or
 reset targets/input/policy/identities/bank. No operator decision. Paper delegated;
 never KIS_LIVE_*, real money, public serving, paid commitments or secret output.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -34,13 +45,13 @@ Workdir C:/Users/Public/Documents/thericher-v2. AGENTS.md owns authority.
 | Owner | Frozen deployment | Next natural opportunity |
 | --- | --- | --- |
 | NAS model | Same finite quiet Task/image87697f8e,474files/manifest13cfe08b,host2fb90e20/config6e5fcc16 | Eight exact retained FULLfills/zero unknown; hold until owned exit, no manual replay |
-| Existing daily baseline | Same Task/newfc9b1c2b image,473files; original14:50 fault unknown, pointer retained | ONE Oct15 16:30UTC natural recovery; original next Oct16 14:50UTC preserved |
+| Existing daily baseline | Same Task/new4fd7fdd2 image,473files; original14:50 fault unknown, pointer retained | ONE Oct15 17:38UTC technical continuation; original next Oct16 14:50UTC/consumed16:30 preserved |
 | Future accounting83 | r6 accounting-only repair installed, actual result unknown | Oct16 05:25KST/Oct15 20:25UTC |
 
 Both model/daily Tasks were enabled/Ready at Parent's latest source-safe read.
 Both exact image IDs are present in Docker29.3.1. No task manually invoked.
 Nightly identity/original bank/normal trigger unchanged; only exact quiet Action
-and ONE future16:30UTC trigger changed, disabled/enabled XML independently
+and ONE17:38UTC continuation added after consumed16:30, disabled/enabled XML independently
 verified. Frozen public-source snapshots
 isolate both deployments from mutable development; no .env/secrets were copied.
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
@@ -48,6 +59,18 @@ A/execution/current-paper-frozen-deployment-20261015-v1/after.json
 A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
 A/execution/nightly-preintent-refresh-deployment-20261016-v1/parent-task-after-enabled.xml
 A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
+A/execution/nightly-preintent-refresh-deployment-20261016-v1/validated-after.json
+A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native-outcomes.json
+
+Worker/host12-advance/source-native recovery has507serial/16941fullpasses and
+135external+2finalprofile tests. Independent archive-lock P2 fixed+two native
+fault-injection cases.4fd7 exact473sources/image/default-inert proof installed,
+no manual Task invocation. One finite16:30 console window:2893samples/zero new consoles,
+plus earlier5718. Same-desktop20ms limits, not a whole-PC guarantee.
+A/infra/nightly-recovery-window-attribution-20261016-v1/result.json
+A/verification/nightly-terminal-incomplete-20261016-v1/authority.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/parent-installed.json
+A/review/native-nightly-recovery-patch-20261016-v1/review.json
 
 Read-only retained model sample: active pointer/zero plans/intents/submits/fills/
 pending at sample, private bytes unchanged. OTHER future83Recover Task was
@@ -138,6 +161,14 @@ six CPU restores/90cells/42750curve values passed, zero changedTop5. Seen adapti
 development only; no alpha/Paper change. Native GPU2.834seconds; no GPU hold.
 A/research/daily252-oof-excess-fusion-development-20261016-v1/owner-handoff.json
 A/research/daily252-oof-excess-fusion-development-20261016-v1/independent-review/result.json
+Monthly SPY regime composition CLOSED66cells/zero unknown/zero fits or forwards;
+gatedRidgeprimary0/2 and growth improvement0/6. Independent55gates/66cells/
+31350curves passed. Reject that fixed gate for adoption; no regrade/tuning.
+A/research/monthly-regime-oof-composition-development-20261016-v1/independent-review/result.json
+New close-only source view89736=89723strict+13explicit DISPUTED provider closes
+is conditional research only; one close violates reported high/low. Correctness
+unknown, no Bar relaxation/Paper change or old27complete18unknown regrade.
+A/data/liquid-core-explicit-provider-close-view-20261016-v1/manifest.json
 No qualified Alpha/Paper adoption.
 Individual growth-positive cases are not incremental performance qualification.
 
@@ -330,6 +361,8 @@ owners and continues ready packages. At natural Paper opportunity, read exact
 launch->dispatch->native cycle/intent/fill linkage, not latest files/task exit.
 Missing unknown; never manually invoke task or substitute identity/budget.
 Scheduler Operational logging disabled: assumed-honest host marker/time/hash
-provenance, not cryptographic OS-origin proof. One existing COUNT1 app follow-up
-Oct16 00:05KST, not a replacement recurring chain. Private UI redesign deferred.
+provenance, not cryptographic OS-origin proof. Completed Oct16 00:05KST app
+follow-up was archived/deleted at17:31UTC after actual results were integrated;
+no replacement report chain. Windows Paper owners remain installed. Private UI
+redesign deferred.
 History before compaction: Git763bd37/15d71be/62b406e and immutable external roots.

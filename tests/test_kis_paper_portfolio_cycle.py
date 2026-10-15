@@ -188,10 +188,19 @@ def test_sell_fresh_funds_buy(call):
 
 
 @pytest.mark.parametrize("unknown", [False, True])
-def test_partial_or_unknown_never_funds_buy(call, unknown):
+def test_partial_or_unknown_never_funds_buy(call, monkeypatch, unknown):
     mixed(call)
     call["client"].partial, call["client"].unknown = True, unknown
     first = advance(call)
+    cancels = []
+
+    def refuse_exact_cancel(intent, *, broker_order_id):
+        assert intent == call["client"].submits[0]
+        assert intent.side == "sell" and broker_order_id
+        cancels.append(intent.fingerprint)
+        return False
+
+    monkeypatch.setattr(call["client"], "cancel_order", refuse_exact_cancel)
     terms = checkpoint(call).read_bytes()
     call["client"].now += timedelta(minutes=10)
     for _ in range(2):
@@ -199,6 +208,7 @@ def test_partial_or_unknown_never_funds_buy(call, unknown):
     assert len(call["client"].wire) == 1 and not checkpoint(call, "buy.json").exists()
     assert checkpoint(call).read_bytes() == terms and len(call["_reads"]) == 1
     assert first.stage == "sell" and not call["client"].limit_reads
+    assert len(cancels) == (0 if unknown else 2)
 
 
 def test_sell_only(call):
@@ -429,8 +439,10 @@ def test_expired_original_proposal(call, monkeypatch):
     monkeypatch.setattr(budget, "_atomic_json", original)
     call["client"].now += timedelta(minutes=10)
     assert advance(call).stage == "sell"
-    with pytest.raises(_RecoveryRequired, match="cycle_terminal_incomplete"):
-        advance(call)
+    outcome = advance(call)
+    assert outcome.status == "terminal_incomplete"
+    assert outcome.reason == "cycle_terminal_incomplete"
+    assert not checkpoint(call, "buy.json").exists()
     assert checkpoint(call).read_bytes() == terms
     assert not call["client"].wire and len(call["_reads"]) == 1
 

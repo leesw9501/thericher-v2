@@ -10,23 +10,38 @@ No operator decision identified; neverKIS_LIVE_* or real money/public/paid work.
 | --- | --- |
 | Integration/Git |Parent. Latest material QA1345/e324d614,552serial16888fullpass22skip/helper0/Ruff3Compose. Eight modelFULLfills verified, company entry/exit unfinished.|
 | NAS Paper |Same finite Task/image87697f8e.15:57:57 native confirms8FULLfills/8owned/0unknown/no pending. Bound dispatch hold/await_declared_exit/zeroAPI; exitfromOct21OPEN.|
-| Nightly baseline |Original14:50causeunknown. New native positive-absence refresh fc9b1c2b INSTALLED on sameTask; ONE16:30UTC natural trigger plus unchanged normal14:50. Actual result pending; no manual replay.|
+| Nightly baseline |16:30exactfc9run:2SELLstarts/2ack/1retainedFULL/thirdpreview. New4fd7 repair INSTALLED on sameTask, ONE17:38UTC continuation plus originalnormal/consumed16:30; runtime result not yet observed.|
 | Future accounting83 |r6 installed, nextOct15 20:25UTC/Oct16 05:25KST; actualunknown, oldindex2/claims/basis/otherActions unchanged.|
 | Data/released |13source OHLC defects diagnosed; scoped60floor1POST8GETrecapture stillinvalid/3156anchors/0repair/5unattempted, CLOSED.0retry/no more calls, existing inputs unchanged.|
 | Validation/Raman |Sixmeta CPUrestore/90cells42750curves passed, zeroTop5change. Earlier patch3/3scoreparityP2 remains with unchanged masks. Released.|
-| Engine/Godel |OOFfusion4CPU+2CUDA/90cells CLOSED,Ridgeprimary1/2/familyfalse. NEW finite0fit monthly-regime composition with samegateuniform/matchedexposure, not blind base refits.|
+| Engine/Godel |Regime66cells CLOSED/independentPASS, primary0/2. Conditional45 CLOSED27/18unknown with6vs4GiBresourcefinding. NEWtrade-and-close metric45cell prep consumesDirac20SYN/30Fraction proof; realtradeOPENmissingstaysunknown.|
 | Validation/Kant |PairedRankNet54cells/sixEVAL/12losses PASS scoped; actor released. LongExperts f1/f3Transformer scoreparityP2 remains scoped, zero changedmasks.|
 | GPU/Steward |OOF actual GPU2.834sec/lease released. No ready GPU numerical campaign during0fit study; no permission/runtime hold or dummy work.|
-| Invoked roles |Descartes modelmarked kernel31cases+5subtests passed, actualmarkchain absent/PnLunknown; released. Hubble newrecoveryimage88checks/38nativeSYN passed; finite16:30 startupmetadata sample owned. Dirac55basketgate READY/released.|
+| Invoked roles |Hubble releasednative/deployment; ownsfinite17:38consolemetadata sample. Parentintegration/Git/actualresult. Ramanreadonlygrosshost READY/fourfullSYN13host checks/verifiedimage, actualadmissionnotyet. DescartesreviewP2fixedandtested; Dirac/McClintockkernels/data released.|
 | Independent Core20 |72cashflows/196968values/144Fraction checks PASS. Nativef3GRU P2 remains,actualoldTorch2.7 not2.13; no runtime-cause claim. Aristotle released.|
-| Verification |Current1345source e324d614+policyhashes:552serial/fresh clean8 full16888pass22skip/helper0/Ruff/3Compose PASS. External88checks+2finalprofile/38native. Original longTEMP serialfailure retained; unchanged shortC552pass.|
+| Verification |NEW1346source0b60aab2:507serial/fresh clean8 full16941pass22skip/379.62sec/helper0/Ruff/3Compose PASS; no exclusions. IndependentP2archive-lock path fixed+2faultinjectioncases. Newdeployment stillpreparing; installedfc9 keepsold1345/e324authority.|
 
 ## Throughput Review / Improvement
 
-Latest16:25review: model8exactFULLfills/zero unknown established without replacing
-targets/capital. Originalnightlyfailure stillunknown; newer stale-startingbook
-positive-absence repair deployed with one natural16:30trigger, not generic retry.
-CPU0fit regime composition and finite startup sampler stay independent. Data300floor starvation
+Latest17:27review: model8exactFULLfills retained without replacing targets/capital.
+16:30actualbaselineadvanced2acceptedSELLs/1FULL; oldoffline reader's wrong
+sell.json path underreported them. Corrected27SYNnative reader validates embedded
+SELL. Four-advance worker vs three-leg5minuteTTL is a concrete throughput flaw;
+Parent's bounded12advance/30sec16requestreserve has237focusedpasses, not yet
+deployed/full-authority. Hubble exactreconcile/cancel/expiredseed/terminal-incomplete
+nativefix continues; do not schedule known-doomed thirdexpiry renewal. CPU
+conditionalclose-only research stays independent; no ready GPUfit is blocked.
+FullParentQA now16941passes507serial/22skip; new4fd7 Action+ONE17:38UTC
+continuation installed, exactXMLverified/model87697unchanged.17:38 avoids
+observerphase3mod4 token coincidence without changing floors/pacing.
+Model-only marked gross
+four fullSYN cases pass; Raman readonlyhost READY/verifiedimage, real account
+marks wait for native current-cycle reconciliation, not a human permission.
+Its label is NOT among old model launcher's two known labels; Parent must hold
+verified quiescent conflicting order Tasks for its one actual readonly visit,
+then restore exact prior Enabled states. A boolean admission is not that proof.
+One reversible improvement: enough native advancement per existing bounded
+visit, not another blind daily retry or extra capital. Data300floor starvation
 was source-proven with4min producers; bounded1POST60calibrationworked, but
 original8bad OHLC rows remainbad. Close those exactqueries, not fullmarketData.
 One reversible improvement: learn cross-sectional allocation from already
@@ -80,5 +95,6 @@ Latest continuation124fit versions(77CUDA/47CPU), not124architectures.
 No qualified Alpha/Paper promotion. Individual positive utility remains reported;
 minute models all abstained. Fees/settled cash/net broker PnL not observed.
 Future-owned recovery superseded only as company focus, never declared complete.
-One existing COUNT1 app follow-up Oct16 00:05KST; no new recurring report/chain.
+Completed Oct16 00:05KST app follow-up archived/deleted17:31UTC, no replacement
+report/chain; Windows Paper Tasks unchanged by that cleanup.
 Prior projections/history: Git763bd37/15d71be/62b406e plus immutable external roots.

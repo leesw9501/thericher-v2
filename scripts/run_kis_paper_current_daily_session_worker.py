@@ -27,6 +27,7 @@ APP = Path("/app")
 MARKET = APP / "market_data/us_equities/kis_paper_private/etf-daily-context-v1"
 CONTROL = MARKET.parent / "collection-control-v1"
 ARTIFACT = APP / "model_artifacts"
+MAX_NATIVE_VISITS = 12
 ENV_KEYS = frozenset(
     {
         "KIS_PAPER_APP_KEY",
@@ -67,6 +68,11 @@ class OwnedTransport(canary.UrllibKisPaperCanaryTransport):
         if duration > 2 or self.monotonic() + duration + 8 >= self.deadline:
             raise canary.KisPaperCanaryError("request_budget_exhausted")
         self.sleeper(duration)
+
+    def can_advance(self):
+        # Leave room for one native reconciliation; final wire guards still apply.
+        return (self.monotonic() + 30 < self.deadline
+                and sum(self.calls.values()) < 128 - 16)
 
     def _request(self, request, *, before_wire=None):
         canary.validate_kis_paper_canary_request(request)
@@ -177,7 +183,9 @@ def run(config):
         emergency_state_path=APP / "emergency/emergency_state.json",
         execution_control_path=APP / "emergency/paper_execution_control.json",
     )
-    for _ in range(4):
+    for _ in range(MAX_NATIVE_VISITS):
+        if visits and not transport.can_advance():
+            break
         outcome = run_kis_paper_current_daily_session(
             **paths, client=client, data_loader=load_data, reads_factory=reads, execute=True
         )

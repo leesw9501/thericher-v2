@@ -165,14 +165,20 @@ def _native(context):
 
 
 def _record(context):
-    value = dict(version=1, context=context, cycle_ref=None, completed=False)
+    value = dict(version=2, context=context, cycle_ref=None,
+                 completed=False, terminal_state="active")
     return value | {"ref": "sha256:" + budget._digest(value)}
 
 
 def _validate(value, paths, account):
-    _check(type(value) is dict
-           and set(value) == {"version", "context", "cycle_ref", "completed", "ref"})
-    _check(value["version"] == 1 and type(value["completed"]) is bool)
+    keys = {"version", "context", "cycle_ref", "completed", "ref"}
+    _check(type(value) is dict and type(value.get("version")) is int)
+    _check((value["version"], set(value)) in ((1, keys), (2, keys | {"terminal_state"})))
+    _check(type(value["completed"]) is bool)
+    if value["version"] == 2:
+        _check(value["terminal_state"] in {"active", "complete", "incomplete"}
+               and value["completed"] == (value["terminal_state"] == "complete")
+               and (value["terminal_state"] == "active" or value["cycle_ref"] is not None))
     _check(value["ref"] == "sha256:"
            + budget._digest({k: v for k, v in value.items() if k != "ref"}))
     context = value["context"]
@@ -286,6 +292,147 @@ def _refresh_preintent_context(record, *, root, pointer, paths, account, clock):
             return proposal
 
 
+def _incomplete_path(root, record):
+    context = record["context"]
+    return root / ".portfolio_cycles" / budget._digest([
+        context["expected_account_ref"], context["expected_basis_ref"],
+        context["native"]["session_id"],
+    ]) / "terminal-incomplete.json"
+
+
+def _incomplete_custody(root, record, account, at):
+    context = record["context"]
+    binding = budget._load_binding(root, account)
+    _check(binding is not None and binding["version"] in {3, 4}
+           and binding["legacy_spy"] is None
+           and binding["basis_ref"] == context["expected_basis_ref"])
+    directory = _incomplete_path(root, record).parent
+    for name in ("cycle.json", "buy.json"):
+        execution._unlinked(directory / name)
+    retained = budget._read_json(directory / "cycle.json")
+    _check(type(retained) is dict
+           and set(retained) == {"contract", "initial", "sell", "targets", "ref"}
+           and retained["contract"] == _preintent_contract(context)
+           and retained["ref"] == record["cycle_ref"]
+           == "sha256:" + budget._digest({k: v for k, v in retained.items() if k != "ref"})
+           and "sha256:" + budget._digest(retained["initial"])
+           == context["expected_binding_ref"])
+    stages = (retained["sell"], budget._read_json(directory / "buy.json"))
+    states, replayed, proofs, projection = cycle._project(root, binding, at)
+    _check(projection.reserved_buys == 0 and all(
+        run in binding["terminal_evidence"] and budget._terminal(state, proofs.get(run))
+        for run, state in replayed.items()
+    ))
+    current_seeds = budget._portfolio_seed_states(binding)
+    runs = set()
+    for side, stage in zip(("sell", "buy"), stages, strict=True):
+        if stage is None:
+            continue
+        _check(type(stage) is dict and set(stage) == {"parent", "proposed", "ref"}
+               and stage["ref"] == "sha256:" + budget._digest(
+                   {k: v for k, v in stage.items() if k != "ref"}))
+        plan = stage["proposed"]["portfolio"]["plans"][-1]
+        _check(plan in binding["portfolio"]["plans"]
+               and plan["request_id"] == "portfolio-" + side + "-"
+               + budget._digest(retained["contract"])
+               and plan["parent_binding_ref"] == "sha256:" + budget._digest(stage["parent"]))
+        seeds = budget._portfolio_seed_states(stage["proposed"])
+        for run in plan["states"]:
+            _check(run not in runs and run in states
+                   and seeds[run].intent == current_seeds[run].intent == states[run].intent
+                   and states[run].intent.side == side)
+            runs.add(run)
+    _check(runs and any(replayed[run].cumulative_fill is None
+                       or replayed[run].cumulative_fill.quantity != states[run].intent.quantity
+                       for run in runs))
+    return binding, projection
+
+
+def _incomplete_archive(root, pointer, record, paths, account, clock, *, create=False):
+    if record["cycle_ref"] is None or record["completed"]:
+        return None
+    path = _incomplete_path(root, record)
+    for item in (path, path.parent / ".advance", path.parent / "..advance.lock"):
+        execution._unlinked(item)
+    archived = budget._read_json(path)
+    if archived is None and not create:
+        return None
+    value = dict(version=1, classification="terminal_incomplete", record=record)
+    value["ref"] = "sha256:" + budget._digest(value)
+    _check(archived is None or archived == value)
+    _validate(record, paths, account)
+    with canary.exclusive_kis_paper_canary_state_lock(path.parent / ".advance"):
+        with cycle._shared(root):
+            _check(budget._read_json(pointer) == record)
+            if archived is None:
+                for name in ("cycle.json", "buy.json"):
+                    execution._unlinked(path.parent / name)
+                retained = budget._read_json(path.parent / "cycle.json")
+                buy = budget._read_json(path.parent / "buy.json")
+                _check(type(retained) is dict)
+                cycle._prefix(root, retained["initial"], (retained["sell"], buy),
+                              require_utc(clock()))
+            _incomplete_custody(root, record, account, require_utc(clock()))
+            cycle._record(path, value)
+    return value
+
+
+def _rollover_incomplete(root, pointer, record, proposal, paths, account, client, clock):
+    path = _incomplete_path(root, record)
+    for item in (path, path.parent / "..advance.lock"):
+        execution._unlinked(item)
+    with canary.exclusive_kis_paper_canary_state_lock(path.parent / ".advance"):
+        with cycle._shared(root):
+            _validate(record, paths, account)
+            _validate(proposal, paths, account)
+            _check(budget._read_json(pointer) == record)
+            archived = budget._read_json(path)
+            _check(type(archived) is dict
+                   and set(archived) == {"version", "classification", "record", "ref"}
+                   and type(archived["version"]) is int and archived["version"] == 1
+                   and archived["record"] == record
+                   and archived["classification"] == "terminal_incomplete"
+                   and archived["ref"] == "sha256:" + budget._digest(
+                       {k: v for k, v in archived.items() if k != "ref"}))
+            binding, projection = _incomplete_custody(root, record, account, require_utc(clock()))
+            context = proposal["context"]
+            old = record["context"]
+            _check(record.get("terminal_state") == "incomplete"
+                   and context["native"]["session_id"] != old["native"]["session_id"]
+                   and context["native"]["input_ref"] != old["native"]["input_ref"]
+                   and datetime.fromisoformat(context["native"]["target_as_of"]).date()
+                   > datetime.fromisoformat(old["native"]["target_as_of"]).date()
+                   and datetime.fromisoformat(context["valid_until"]).date()
+                   > datetime.fromisoformat(old["valid_until"]).date())
+            _check(context["expected_basis_ref"] == binding["basis_ref"]
+                   and context["expected_binding_ref"] == "sha256:" + budget._digest(binding)
+                   and context["expected_owner_refs"]
+                   == {o.owner_ref: ref for o, ref in budget._owners(binding)})
+            requests, runs = _preintent_request_runs(context)
+            _check(not any(p["request_id"] in requests for p in binding["portfolio"]["plans"]))
+            _check(not runs.intersection(budget._seed_states(binding)))
+            for run in runs:
+                journal = root / (run + ".json")
+                for item in (journal, journal.with_name("." + journal.name + ".lock")):
+                    execution._unlinked(item)
+                    _check(not item.exists())
+            directory = _incomplete_path(root, proposal).parent
+            execution._unlinked(directory)
+            if directory.exists():
+                for item in directory.iterdir():
+                    execution._unlinked(item)
+                    _check(item.name == "..advance.lock")
+            snapshot = client.snapshot()
+            execution._book(snapshot, projection, client._config, require_utc(clock()))
+            at = require_utc(clock())
+            _check(datetime.fromisoformat(context["available_at"]) < at
+                   < datetime.fromisoformat(context["valid_until"])
+                   and budget._read_json(pointer) == record
+                   and budget._load_binding(root, account) == binding)
+            budget._atomic_json(pointer, proposal)
+            _check(budget._read_json(pointer) == proposal)
+
+
 def run_kis_paper_current_daily_session(
     *, state_root: Path, repository_root: Path, artifact_root: Path,
     runtime_projection_path: Path, paper_account_snapshot_path: Path,
@@ -325,12 +472,20 @@ def run_kis_paper_current_daily_session(
             execution._unlinked(path)
         with canary.exclusive_kis_paper_canary_state_lock(lock):
             record = budget._read_json(pointer)
+            archived = None
             if record is not None:
                 _validate(record, paths, account)
+                if record.get("terminal_state") == "incomplete":
+                    archived = _incomplete_archive(
+                        root, pointer, record, paths, account, clock, create=True,
+                    )
+                    if (require_utc(clock()).date()
+                            <= datetime.fromisoformat(record["context"]["valid_until"]).date()):
+                        return CurrentDailySessionOutcome("no_intent", "terminal_cycle_incomplete")
                 record = _refresh_preintent_context(
                     record, root=root, pointer=pointer, paths=paths, account=account, clock=clock,
                 )
-            if record is None or record["completed"]:
+            if record is None or record["completed"] or archived is not None:
                 try:
                     _check(callable(data_loader))
                     control = build_current_daily_control(data_loader(), as_of=require_utc(clock()))
@@ -340,6 +495,13 @@ def run_kis_paper_current_daily_session(
                 native = control.native_arguments()
                 if record is not None:
                     old = record["context"]["native"]
+                    if archived is not None and (
+                        native["session_id"] == old["session_id"]
+                        or native["input_ref"] == old["input_ref"]
+                        or control.target_as_of.date()
+                        <= datetime.fromisoformat(old["target_as_of"]).date()
+                    ):
+                        return CurrentDailySessionOutcome("no_intent", "terminal_cycle_incomplete")
                     if all(native[k] == old[k] for k in ("session_id", "input_ref", "control_ref")):
                         return CurrentDailySessionOutcome("complete", "already_completed")
                     _check(control.target_as_of >= datetime.fromisoformat(old["target_as_of"]))
@@ -357,7 +519,7 @@ def run_kis_paper_current_daily_session(
                     s: {t: str(v) for t, v in row.items()}
                     for s, row in native["covariance_by_symbol"].items()
                 }
-                record = _record(dict(
+                proposal = _record(dict(
                     paths=paths, expected_account_ref=account,
                     expected_basis_ref=binding["basis_ref"],
                     expected_owner_refs={o.owner_ref: ref for o, ref in budget._owners(binding)},
@@ -365,8 +527,14 @@ def run_kis_paper_current_daily_session(
                     available_at=control.available_at.isoformat(),
                     valid_until=control.valid_until.isoformat(),
                 ))
-                _validate(record, paths, account)
-                budget._atomic_json(pointer, record)
+                _validate(proposal, paths, account)
+                if archived is not None:
+                    _rollover_incomplete(
+                        root, pointer, record, proposal, paths, account, client, clock,
+                    )
+                else:
+                    budget._atomic_json(pointer, proposal)
+                record = proposal
                 _check(budget._read_json(pointer) == record)
             native = _validate(record, paths, account)
             context = record["context"]
@@ -380,18 +548,26 @@ def run_kis_paper_current_daily_session(
                 expected_cycle_ref=record["cycle_ref"],
             )
             _check(type(result) is cycle.KisPaperPortfolioCycleOutcome)
-            _check(result.status in {"pending", "complete", "unavailable"})
+            _check(result.status in {"pending", "complete", "unavailable", "terminal_incomplete"})
             if result.cycle_ref is not None:
                 _check(budget._SHA.fullmatch(result.cycle_ref))
                 _check(record["cycle_ref"] is None or record["cycle_ref"] == result.cycle_ref)
                 record["cycle_ref"] = result.cycle_ref
             record["completed"] = result.status == "complete"
+            if record["version"] == 2 or result.status == "terminal_incomplete":
+                record["version"] = 2
+                record["terminal_state"] = {
+                    "complete": "complete", "terminal_incomplete": "incomplete",
+                }.get(result.status, "active")
             record["ref"] = "sha256:" + budget._digest({
                 k: v for k, v in record.items() if k != "ref"
             })
             _validate(record, paths, account)
             budget._atomic_json(pointer, record)
             _check(budget._read_json(pointer) == record)
+            if result.status == "terminal_incomplete":
+                _incomplete_archive(root, pointer, record, paths, account, clock, create=True)
+                return CurrentDailySessionOutcome("no_intent", "terminal_cycle_incomplete")
             return CurrentDailySessionOutcome(result.status, {
                 "pending": "exact_cycle_advanced", "complete": "exact_cycle_complete",
                 "unavailable": "native_recovery_required",

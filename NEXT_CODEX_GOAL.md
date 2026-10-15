@@ -25,7 +25,16 @@ Readonly14:56 first open-orders request succeeded, not original-response replay.
 New pre-intent refresh proves both old/new request scopes absent under native
 locks, retaining original input/expiry/basis and any existing stage recovery.
 Installed SAME nightly Task/imagefc9b1c2b/473files, ONE Oct15 16:30UTC natural
-recovery trigger and original daily14:50UTC. No runtime success inferred yet.
+recovery trigger and original daily14:50UTC. Actual16:30 bound run advanced two
+SELLs: corrected strict reader proves2accepted/1retainedFULL/thirdpreviewseed.
+Old dba reader missed SELL embedded in cycle.json and its zero current counts
+are invalid as outcome proof. Do not renew third seed expiry or reset capital.
+Native terminal-incomplete/reconciliation fix and bounded12visit worker are
+INSTALLED as4fd7 on SAME Task, ONE17:38UTC natural technical continuation;
+normal14:50 and consumed16:30 triggers preserved.507serial/16941fullpasses22skip/
+helper0/Ruff/three Compose,135external+2profile checks. No runtime success inferred.
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/parent-installed.json
+A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native-outcomes.json
 A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
 A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
 A/execution/current-nas-first-visit-firstcause-20261015-v1
@@ -49,9 +58,9 @@ Private Paper authority is delegated; research qualification is NOT permission.
   foreign-inventory adoption, profit refill or bank reset. Desired10*.005=.05
   ORIGINAL-basis proposal may be reduced/rejected by shared bank/buying power/
   losses/reservations. Fifth-OPEN/later entry is not research fifth-CLOSE parity.
-- Existing daily-spy-session: NEW imagefc9b1c2b/473public snapshot/471runtime,
-  driver8e0816ef/launcher a2ffd61e/config0ef93b92. Same identity/bank/normal
- 14:50UTC trigger plus ONE Oct15 16:30UTC natural recovery. Old3ccb retained.
+- Existing daily-spy-session: NEW image4fd7fdd2/473public snapshot/471runtime,
+  driver64dba792/launcher136c2c62/configa467c8e2. Same identity/bank/normal
+ 14:50UTC plus consumed16:30 and ONE17:38 technical continuation. Oldroots retained.
 
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
 A/execution/current-paper-frozen-deployment-20261015-v1/after.json
@@ -60,7 +69,7 @@ A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.j
 ## Completion Evidence
 
 At natural owned opportunities use the87697 recovery-root public reader for
-model; NEW nightly-preintent-refresh-deployment-20261016-v1/read_owned_dispatch.py
+model; NEW nightly-terminal-incomplete-deployment-20261016-v1/read_owned_dispatch.py
 for changed nightly, never oldr2. Native model reader f7990232 is unchanged.
 Never use observe(),
 task-exit/latest-file/timestamp/preview inference. Validate exact launch/time/
@@ -75,8 +84,8 @@ package commit/session time.
 Offline preflight sixowners/16terminal/zero unknown-unclosed/threeholdings;
 model pointer absent -> countsNULL, not zero. Not fresh broker funds/quotes.
 Operational logging disabled: assumed-honest host marker/time/hash is not
-cryptographic OS-scheduler-origin proof. Existing COUNT1 app follow-up Oct16
-00:05KST, no follow-up chain. Accounting83 r6 nextOct15 20:25UTC; oldindex2/
+cryptographic OS-scheduler-origin proof. Completed Oct16 00:05KST app follow-up
+archived/deleted, no follow-up chain. Accounting83 r6 nextOct15 20:25UTC; oldindex2/
 claims/basis/113archive/otherActions retained. Future83/97 duties in HANDOFF.
 
 ## Ready Parallel Packages
@@ -97,15 +106,17 @@ Do not redispatch closed creators; exact evidence/limits live in role boards.
   fixed20 sample CLOSED77998RTH1m/MTF, actualSep28..Oct9; explicit missing/
   partial buckets, no imputation or Paper-input substitution.
 - Engine/Godel: OOFfusion six meta fits CLOSED,90cells/familyfalse/zero new base
-  fits. New finite0fit completed-month SPY regime composition with samegate
-  uniform/matched exposure; no Paper switch, old study regrade or new GPU fits.
+  fits. Monthly-regime66cells/0primary CLOSED/independentPASS; rejectfixedgate.
+  New conditionalmonthly preparation uses explicit disputedcloseview/strict
+  OPENs; no missingOPEN imputation, old study regrade or Paper switch.
 - Validation/Raman: meta6CPUrestore/90cells42750curves PASS, zeroTop5change.
 - Validation/Kant: paired MSE/RankNet sixEVAL/54cells PASS/released.
   Core20 independent72cashflows passed, separate
   f3GRU CPU/CUDA parityP2 unresolved. Actual old command was Torch2.7, not
   evidenced2.13; no version-cause claim or company/Paper hold.
-- Invoked Infra/Hubble: newnightly deployed; finite16:30UTC visible-console
-  metadata sample, no actual Task/API invocation or unrelated-app edits.
+- Invoked Execution/Hubble: native portfolio/daily terminal-incomplete recovery
+  plus focused tests. Parentownsworker/host/fullQA/Git/newdeployment. Finite
+  16:30startup2893samples0newconsoles, no Task/API invocation for that sample.
 - Strategy/Dirac: pure SMA10 monthly gate READY1052rows/55baskets41ON14OFF/
   0UNKNOWN,23SYN+55scalar checks. Separate monthly momentum45cells remains
   27complete18unknown. Data recapture8unchangedinvalid/0repair CLOSED,
@@ -125,9 +136,9 @@ not independent exploratory work or approved Paper permission.
 
 ## Verify And Continue
 
-Fresh helper authority1345source/e324d614:552changed-path serial, clean8 full
-16888pass/22skip/helper0, Ruff/three sample-env Compose PASS.
-A/verification/nightly-preintent-refresh-20261016-v1/authority.json.
+Fresh helper authority1346source/0b60aab2:507changed-path serial, clean8 full
+16941pass/22skip/379.62sec/helper0, Ruff/three sample-env Compose PASS.
+A/verification/nightly-terminal-incomplete-20261016-v1/authority.json.
 Reuse only if exact source-map equality; external/native workers need own checks.
 
 Integrate evidence, verify, commit/push owned packages. Replace this file with

@@ -29,6 +29,7 @@ from .kis_paper_portfolio_plan import (
 from .kis_paper_portfolio_preview import SYMBOLS, _covariance, project_kis_paper_portfolio_preview
 from .kis_paper_quote import derive_kis_paper_marketable_limit
 from .kis_paper_spy_fill_cycle import _RecoveryRequired
+from .kis_paper_stock_session_recovery import _exact_open, _observed_fill
 from .kis_readonly import KisPaperConfig, KisPaperPortfolioPreviewReads
 
 
@@ -210,6 +211,113 @@ def _proof(root, binding, plan, intent):
     )
 
 
+def _closed_leg(root, proof, store, state, rec, config, clock):
+    observation = rec.execution
+    if observation is None or not (
+        observation.cancellation_confirmed
+        or state.current_fill is not None and state.current_fill.quantity > 0
+        and state.current_fill.remaining_quantity == 0
+    ):
+        return None
+    at = require_utc(clock())
+    fill = _observed_fill(rec, rec.snapshot, state, at)
+    _check(fill is not None and _exact_open(rec.snapshot, state) is None
+           and not rec.matching_open_order and fill.remaining_quantity == 0,
+           "cycle_terminal_unproven")
+    _, _, _, projection = execution._scope(root, proof, at)
+    execution._book(rec.snapshot, projection, config, require_utc(clock()))
+    if fill.quantity == 0:
+        store.transition(state.intent, expected=frozenset({state.phase}), phase="cancelled",
+                         reason_code="reconciliation_clean", now=require_utc(clock()))
+        return {state.intent.run_id: observation}
+    # Nonzero closed partials use terminal fill evidence, never a zero-fill proof.
+    return {}
+
+
+def _expired_leg(root, stage, intent, client, clock):
+    """Retire only the exact never-sent seed, or recover/cancel its existing order."""
+    with _shared(root):
+        at = require_utc(clock())
+        binding = budget._load_binding(root)
+        _stage_book(binding, stage)
+        plan = stage["proposed"]["portfolio"]["plans"][-1]
+        proof = _proof(root, binding, plan, intent)
+        config = execution._client_account(client, proof)
+        _, _, state, _ = execution._scope(root, proof, at)
+        _check(at >= intent.valid_until, "portfolio_validity_invalid")
+        store = canary.KisPaperCanaryStateStore(root / (intent.run_id + ".json"))
+        if state.phase == "intent_recorded":
+            _check(
+                state.intent == intent
+                and all(getattr(state, name) is None for name in (
+                    "submission_started_at", "submitted_at", "broker_order_id",
+                    "cumulative_fill", "submit_response_category", "submit_upstream_code",
+                    "fill_observed_at",
+                ))
+                and state.fill_observation_status == "not_observed",
+                "portfolio_intent_mismatch",
+            )
+            store.record_intent(intent, cancel_after_submit=False, now=at)
+            store.transition(intent, expected=frozenset({"intent_recorded"}),
+                             phase="intent_recorded", reason_code="intent_expired", now=at)
+            return {}
+        _check(state.phase in {"submitted", "cancel_started", "outcome_unknown", "cancelled"}
+               and state.broker_order_id is not None
+               and state.submission_started_at is not None
+               and state.submit_response_category == "acknowledged_order_reference",
+               "portfolio_intent_mismatch")
+        rec = client.reconcile(state, now=at)
+        state = canary._record_reconciliation_fill(store, state, rec, observed_at=at)
+        _, states, state, projection = execution._scope(root, proof, require_utc(clock()))
+        closed = _closed_leg(root, proof, store, state, rec, config, clock)
+        if closed is not None:
+            return closed
+        snapshot = rec.snapshot
+        opened = _exact_open(snapshot, state)
+        fill = _observed_fill(rec, snapshot, state, require_utc(clock()))
+        if (opened is None or fill is None or not rec.matching_open_order
+                or opened.remaining_quantity <= 0 or budget._terminal(state)):
+            return {}
+        # Account/bank/owned quantity checks remain native. Every open reference
+        # must itself map to an existing journal before clearing it for _book.
+        known = {canary._redacted_open_order_reference(s.broker_order_id): s
+                 for s in states.values() if s.broker_order_id is not None}
+        _check(all(o.order_reference in known
+                   and _exact_open(snapshot, known[o.order_reference]) == o
+                   for o in snapshot.open_orders.orders), "pre_submit_ownership_changed")
+        execution._book(replace(snapshot, open_orders=replace(snapshot.open_orders, orders=())),
+                        projection, config, require_utc(clock()))
+        if state.phase != "submitted":
+            # A fresh exact positive outstanding order resolves only this
+            # acknowledged order's uncertain cancellation, never a new submit.
+            state = store.transition(
+                intent, expected=frozenset({state.phase}), phase="submitted",
+                reason_code="reconciliation_unresolved", now=require_utc(clock()),
+            )
+        state, rec = canary._cancel_submitted_canary(
+            client=client, state_store=store, state=state, reconciliation=rec,
+            observed_at=require_utc(clock()),
+        )
+        state = canary._record_reconciliation_fill(
+            store, state, rec, observed_at=require_utc(clock())
+        )
+        return _closed_leg(root, proof, store, state, rec, config, clock) or {}
+
+
+def _reconcile_stage(root, binding, plan, paths, clock, proofs=None):
+    return reconcile_kis_paper_portfolio_plan(
+        state_root=root,
+        repository_root=paths["repository_root"],
+        artifact_root=paths["artifact_root"],
+        expected_account_ref=binding["account_ref"],
+        expected_basis_ref=binding["basis_ref"],
+        expected_owner_refs={o.owner_ref: ref for o, ref in budget._owners(binding)},
+        request_id=plan["request_id"],
+        expected_plan_ref="sha256:" + budget._digest(plan),
+        as_of=require_utc(clock()), cancellation_proofs=proofs,
+    )
+
+
 def _step(root, stage, side, paths, client, clock):
     _reserve(root, stage, require_utc(clock()))
     with _shared(root):
@@ -230,6 +338,18 @@ def _step(root, stage, side, paths, client, clock):
         ]
     if pending:
         intent = pending[0]
+        state = replayed[intent.run_id]
+        if (require_utc(clock()) >= intent.valid_until
+                and (state.phase == "intent_recorded"
+                     or side == "sell" and state.phase in {
+                         "submitted", "cancel_started", "outcome_unknown", "cancelled",
+                     } and state.broker_order_id is not None
+                     and state.submit_response_category == "acknowledged_order_reference")):
+            proofs = _expired_leg(root, stage, intent, client, clock)
+            _reconcile_stage(root, binding, plan, paths, clock, proofs)
+            return KisPaperPortfolioCycleOutcome(
+                "pending", "exact_leg_advanced", side, len(intents)
+            )
         operation = (
             execution.execute_kis_paper_portfolio_sell
             if side == "sell"
@@ -244,26 +364,16 @@ def _step(root, stage, side, paths, client, clock):
             **paths,
         )
         return KisPaperPortfolioCycleOutcome("pending", "exact_leg_advanced", side, len(intents))
-    result = reconcile_kis_paper_portfolio_plan(
-        state_root=root,
-        repository_root=paths["repository_root"],
-        artifact_root=paths["artifact_root"],
-        expected_account_ref=binding["account_ref"],
-        expected_basis_ref=binding["basis_ref"],
-        expected_owner_refs={o.owner_ref: ref for o, ref in budget._owners(binding)},
-        request_id=plan["request_id"],
-        expected_plan_ref="sha256:" + budget._digest(plan),
-        as_of=require_utc(clock()),
-    )
+    result = _reconcile_stage(root, binding, plan, paths, clock)
     _check(result.status == "reconciled", "cycle_terminal_unproven")
-    _check(
-        all(
+    if not all(
             replayed[i.run_id].cumulative_fill is not None
             and replayed[i.run_id].cumulative_fill.quantity == i.quantity
             for i in intents
-        ),
-        "cycle_terminal_incomplete",
-    )
+    ):
+        return KisPaperPortfolioCycleOutcome(
+            "terminal_incomplete", "cycle_terminal_incomplete", side, len(intents)
+        )
     return None
 
 

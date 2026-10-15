@@ -25,6 +25,18 @@ Known invalid8 need another useful source/view, not repeated same queries.
 A/data/liquid-core-exact-gap-source-recapture-20261015-v1/token-calibration-r1/independent-readback.json
 This limits the monthly comparison, not other ready research or Paper authority.
 
+Close-only assessment/derivation CLOSED:13 direct finite positive clos fields,
+8repeats/5unrepeated,2074matchingclose anchors; one close itself outside reported
+range. Correctness NOT established. NEW20 read-only M CSVs contain89736closes=
+89723strict+13explicitdisputed, no missingdate/OPEN imputation or Bar relaxation.
+31SYN/1076832readbackcells/sourcepins/RuffPASS,22.90chargedactive,0API/GPU.
+Conditional research only; source13flags affect primary qualification, not Paper
+permission. Original datasets/studies/debits unchanged. Dirac/Godel consumed
+typedview, but old full-OPEN path still18unknown; NEW trade-and-close-sampling
+kernel is prepared separately, never silently calls those missing OPENs present.
+A/data/liquid-core-close-only-capability-20261016-v1/result.json
+A/data/liquid-core-explicit-provider-close-view-20261016-v1/manifest.json
+
 ## SEC Facts Closed Unavailable
 
 A/data/sec-liquid-core-companyfacts-20261015-v1/input-manifest.json +completion/readback.json.

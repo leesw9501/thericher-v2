@@ -139,13 +139,27 @@ DEV with cross-stage base drift, not independentAlpha or Paper adoption.
 A/research/daily252-oof-excess-fusion-development-20261016-v1/owner-handoff.json
 A/research/daily252-oof-excess-fusion-development-20261016-v1/independent-review/result.json
 
-NEXT Godel owns separately frozen0fit monthly-regime composition: exact
-completed-month SPY10monthSMA gate on inherited21session decisions, no tuned
-threshold/period. Dirac1052rows/55baskets41ON14OFF0UNKNOWN/23SYN+55scalar
-checks ready. <=72cells/180active1800end, same-gate uniform/matched exposure
-controls, no base/meta forwards, GPU, broker or old regrade. Claim is adaptive
-mechanism study; less exposure is not alpha. Claude structured retry supported-
-with-limits; initial nonverdict retained, not agreement.
+Monthly-regime composition CLOSED66completecells/zero unknown,0fits/forwards/
+GPU. Gated Ridge primary0/2, growthimprovement0/6 vs ungated, DDno-worse3/6.
+Independent55gates/66cells/31350curvepoints/33SYNreplaycells PASS; same-gated
+plannedgross is not equal realized exposure or alpha.15.839authoractive/
+1102.511end,4.891readeractive/11.328end, source/children clean. Reject this
+fixed gate for adoption; no tuning/old regrade/Paper change.
+A/research/monthly-regime-oof-composition-development-20261016-v1/independent-review/result.json
+Conditional monthly12-1/6-1/blend CLOSED45cells27conditionalcomplete18unknown;
+full held-OPEN gaps remain, no close-as-OPEN.26SYN/15Fractionparitycells/83172NAV
+checks passed,0fits/forwards/GPU.29.636active/1171.008end; admission enforced6GiB
+instead of declared4GiB, actualpeakunknown: resource deviation retained, no all-
+caps claim/rerun. Old45cell27/18 and source unchanged, allaffectedprimaries
+unqualified. NEXT separately frozen trade-and-close sampling kernel/experiment,
+not old full-OPEN DD regrade: cash/quantity needOPEN at trades, not extra marks;
+missing actualtrade/finalOPEN remainsunknown. Same new samplinggrid allcontrols.
+A/research/monthly-disputed-provider-close-development-20261016-v1/owner-handoff.json
+A/research/monthly-disputed-provider-close-development-20261016-v1/resource-constraint-finding.json
+A/review/monthly-trade-close-sampling-20261016-v1/claude.json
+A/data/liquid-core-explicit-provider-close-view-20261016-v1/manifest.json
+A/strategy-research/monthly-disputed-close-replay-preparation-20261016-v1/SAFE_READY.json
+A/review/disputed-provider-close-research-20261016-v1/claude.json
 A/strategy-research/monthly-regime-gate-preparation-20261016-v1/SAFE_READY.json
 A/review/monthly-regime-oof-composition-20261016-v1/r1/claude.json
 A/review/daily252-oof-fusion-20261016-v1/claude.json

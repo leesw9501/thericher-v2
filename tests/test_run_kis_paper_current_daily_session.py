@@ -75,6 +75,31 @@ def test_closed_nested_output_schema(fault):
         w.validate_result(value)
 
 
+@pytest.mark.parametrize("count", [8, 12, 13])
+def test_bounded_native_visit_count_is_not_an_order_count(count):
+    value = payload()
+    value["visits"] = [
+        dict(kind=value["kind"], status="pending", reason="exact_cycle_advanced",
+             limitation=value["limitation"]) for _ in range(count)
+    ]
+    if count > 12:
+        with pytest.raises(ValueError):
+            w.validate_result(value)
+    else:
+        assert w.validate_result(value) is value
+        assert sum(value["calls"].values()) == 0
+
+
+@pytest.mark.parametrize("status", ["no_intent", "complete", "pending", "unavailable"])
+def test_terminal_incomplete_is_not_success_or_unknown_submit(status):
+    value = payload() | dict(status=status, reason="terminal_cycle_incomplete")
+    if status == "no_intent":
+        assert w.validate_result(value) is value
+    else:
+        with pytest.raises(ValueError):
+            w.validate_result(value)
+
+
 def test_source_mismatch_no_credential_read(monkeypatch):
     monkeypatch.setattr(w, "cleanup", lambda *a: True)
     monkeypatch.setattr(w, "source_map", lambda: dict(source="expected"))

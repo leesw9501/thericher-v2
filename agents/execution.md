@@ -29,7 +29,13 @@ A/execution/nightly-retained-context-firstcause-20261015-v1/custody-comparison.j
 
 New pre-intent native recovery fc9b1c2b/473publicfiles installed on SAME nightly
 Task with ONE Oct15 16:30UTC natural recovery and original14:50UTC trigger.
-Exact disabled/enabled XML passes; no manual invocation. Runtime not yet proven.
+Exact disabled/enabled XML passes; no manual invocation. Actual16:30 source-bound
+run pending/exact_cycle_advanced/1token48GET2SELLstarts. Corrected27SYN reader
+proves2acknowledgedSELLs/1FULL/1knownsubmitted/1unattemptedseed, cycleunfinished;
+allpresent/absent bytes unchanged, networknone/privateRO. Old dba reader searched
+non-native sell.json instead of embedded cycle.sell and selectedzero current
+intents: those zeros do NOT prove no submit/fill. New exact reader released.
+A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native-outcomes.json
 Under daily/cycle/shared locks prove both old/new exact native requests/runs/
 plans absent and pointer/book/basis/account/expiry unchanged; refresh only
 starting-owner/binding refs. Any existing native stage uses unchanged recovery.
@@ -37,6 +43,21 @@ starting-owner/binding refs. Any existing native stage uses unchanged recovery.
 Diagnostic-only999962ab remains NEVER installed; original14:50 cause unknown.
 A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
 A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
+
+Repair SOURCE+DEPLOYMENT complete: image4fd7fdd2 installed on SAME nightly Task,
+ONE17:38UTC technical continuation, preserved normal14:50/consumed16:30 triggers.
+507serial/16941fullpass22skip/379.62sec/helper0/Ruff/three sampleCompose;
+135external+2profile checks. Four native advances could expire
+third5minute seed before next daily visit. Accepted identities require exact
+reconciliation/cancellation if expired; unattempted expiry needs positive native
+proof, not renewal. Allterminal-but-notFULL is terminal-incomplete, never target
+success. Future fresh-different daily input only after exact closure/owned book
+checks, not another pending identity. v2terminal_state incomplete keeps
+completedFalse; v1readable. Actual17:38 runtime closure not yet observed.
+Original next normalOct16 14:50UTC preserved; no manual Task invocation.
+A/review/portfolio-terminal-incomplete-recovery-20261016-v1/claude.json
+A/verification/nightly-terminal-incomplete-20261016-v1/authority.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/parent-installed.json
 
 Model-scoped marked gross sidecar31cases+5subtests/Ruff passes, but actual
 numeric-price pointer/account-observer chain not established; no private reads
