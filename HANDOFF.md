@@ -126,9 +126,39 @@ A/research/native-recurrent-attention-relative-ranking-development-20261015-v1/i
 A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json
 A/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json
 
-GPU/CUDA works; all named training actors/leases closed. No environment or
-permission hold. No dummy training for utilization. Old failures, clocks,
-selection-data reuse and partial results stay immutable.
+New parallel continuation (no change to tonight's deployed policy):
+- CPU exit-clock replay COMPLETE6cells,0fits/forwards/GPU/API. The same fixed-five
+  rank-mean Top10 at5/10/20bps is positive under both fifth-OPEN and fifth-CLOSE
+  exits in four reused DEV groups; OPEN is lower in all three.38.4008 active
+  including32PREP carry/6.4026elapsed within180/1800; independent34pins/6native
+  summaries/40held marks noP1/P2, no replay redispatch.
+  This is descriptive common close-sampled NAV, not an intraday path, auction
+  fill, actual later-entry parity, fresh alpha or model promotion.
+  A/execution/model-paper-exit-clock-replay-20261015-v1/categorical.json
+- Strategy consumed: fixed trend/reversal kernel and payoff-mass-weighted BCE
+  entry mask,11SYN/Ruff. GPU PREP now compares Huber net-location/weighted BCE/
+  net q.25 with the SAME112-input MLP and original basket/weights. Nine fits
+  planned, no new market GPU fit yet. First native CPU SYN failed before Adam
+  construction on a lazy PyTorch tempfile probe denied outside owned output.
+  Zero market fits/GPU;12.5289active, cleanup closed. Linked owned-temp-only
+  repair retains original1500active/3600elapsed appointment/debits/science,
+  not a cap refund or model reranking. Claude runtime advice supported-with-limits.
+  BCE is positive-payoff mass share, NOT win probability or expected-return
+  ranking. No reranking/refill or extra horizon grid. Claude supported-with-limits.
+  A/review/parallel-engine-target-reset-20261015-v1/weighted-mask-claude.json
+- Data materialized retained SPY/QQQ6,876 common sessions,6,811 past61/future5
+  windows/13,622rows into34,877,182-byte NPZ.95,357 native readback checks and
+  parent39array/hash/schema plus key/calendar checks pass. Separate private
+  nominal-causal development input; no labels/scalers/fits/acquisition/API.
+  raw as-quoted/non-PIT/actions/availability limits remain. No provider splice,
+  new acquisition or original eligibility-flag rewrite.
+  A/data/spy-qqq-long-history-development-20261015-v1/readback.json
+  Fixed H1trend/reversal CPU rule/matched-baseline preparation now proceeds
+  independently, not another GPU architecture/window grid.
+
+GPU/CUDA works. Resource probe found no named training allocation/lease; current
+Engine PREP is not a running market fit. No environment/permission hold or dummy
+training. Old failures, clocks, selection-data reuse and partial results stay immutable.
 
 Four issuer-anchored MODP0/1 probes:8 GET/one token/800 rows,4,538 independent
 checks; all different_other_pattern, no proved adjustment factors/PIT/finality.

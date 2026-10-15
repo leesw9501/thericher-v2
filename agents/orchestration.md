@@ -3,6 +3,7 @@
 Current 2026-10-15 KST. ONE objective: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. AGENTS.md owns authority.
 No operator decision currently identified. Source-only readiness is not a fill.
+New human request: continue independent CPU/GPU engine work while Paper is due.
 
 ## Ready / Owned / Due
 
@@ -13,26 +14,30 @@ No operator decision currently identified. Source-only readiness is not a fill.
 | Nightly Paper | Existing daily-spy-session |Ready/enabled Oct15 23:50KST/14:50UTC. Immutable472-public-file deployment/image3ccb470map; drivere586/quiet6d51. Exact TaskXML/identity/original bank unchanged. Not a new fill. |
 | NAS model Paper | New finite Task |Ready/enabled Oct15 22:40KST/13:40UTC; imagece219/474map/manifest130d/configa13fa7d9.14triggers across7dates,4-minute native visits,1auth/1submit/1cancel/128calls/280seconds. No manual strategy invocation. EntryONLYOct15, owned exit fromOct21OPEN, exact pending recovery before new input. |
 | Future accounting | Existing83 owner |r6 accounting-only Action installed; nextOct15 20:25UTC, runtimeUNKNOWN. Oldindex2/claims/basis/other6Actions retained; no replay or assumed success. |
-| Data | Existing collectors / MD closed |504ready61/8missing/30744bars/101388checks. Past-only503defined/243supported. MODP4pairs closed, no factors/PIT/finality claim. G10721:50/NAS21:40UTC retained. Old/current/new generic budget-reader12SYN compatibility passed, not whole old overlay. McClintock board updated/agent closed. |
-| Engine | Closed |18new GRU/LSTM/Transformer CUDAfits54cells independently closed. New3CPU absolute-utility fits27cells45controls linked math publication complete0refits; utility hypothesis fails all3stage checks. Original creator failure preserved. No qualified alpha/adoption; boards updated/agent closed. |
-| GPU | Steward closed |CUDA works, named training actors/leases closed. No allocation or permission/environment hold. Next campaign requires a concrete ready hypothesis, not utilization-only work. |
-| Execution coordinator | Closed |V3 source/native39 tests; own runtime contract complete. Original tenth/foreign owners/unknowns preserved; terminal-partial SELL fix leaves cash reservations conservative. Execution board updated/agent closed; no source edits. |
+| Data | McClintock closed |History input COMPLETE: SPY/QQQ6,876 sessions/6,811 entrydates/13,622 rows,34,877,182-byte NPZ onD.95,357 native readback checks; parent39array/hash/schema plus key/calendar checks pass. Nominal chronology, not PIT/adjusted/Paper evidence. No acquisition/API/provider splice. Original collectors/due retained. |
+| Strategy | Kant CPU PREP |Consumed weighted-BCE proposal/11SYN. Now prepares zero-fit fixed H1trend/reversal vs original/cash/matched on separate long SPY/QQQ history; no parameter grid, market evaluation or source splice in PREP. |
+| Engine | Godel runtime repair |Frozen9-fit MLP112 family CPU SYN failed before Adam optimizer construction: lazy PyTorch tempfile probe rejected outside owned output.0marketfits/GPU,12.5289active, cleanup closed. Original0retry source failed/immutable. Linked temp-root-only repair carries original1500/3600 clocks/debits and unchanged science, no model tuning. Huber net-location/payoff-mass BCE/q.25 MASK same basket/weights, fifth-CLOSE target. |
+| GPU | Steward PREP |No allocation yet; resource probe/one frozen ready campaign needed. No environment/permission hold, no utilization-only training. New caps/resources will be explicit and independent of old studies. |
+| Execution | Aristotle closed / Parent |CPU descriptive fifth-OPEN/CLOSE replay COMPLETE6cells,0fits/forwards/GPU/API. Same fixed-five rank-mean Top10/quantities/cost5/10/20. Both clocks positive in4 reused DEV groups; OPEN lower than CLOSE at all three costs.38.4008active including32PREP carry/6.4026elapsed within180/1800. Independent34pins/6native summaries/40marks noP1/P2; not deployment parity or model promotion. |
 | Runtime readback | Closed / Parent |Final r2 dispatch+native model readers73focused/Ruff/noP1P2. Actual network-none/RO-volume preflight sixowners16intents, modelpointerabsent/countsnull, original cap positive_below_desired. Original source-audit/mount faults retained/fixed in readers only, no broker/source deployment changes. Agent closed. |
-| Independent review | Closed |Parent quiet/schedule source check noP1/P2. Old Goal97 pinned source validates full exact plan/history before recovery; no reachable cross-policy adoption bug established. Empty-registration case/runtime remain unproved, not a basis to retire tasks or hold today's independent paths. Agent closed; Claude deployment supported-with-limits. |
+| Independent review | Raman closed |Completed exact CPU clock source/seal/native arithmetic readback noP1/P2; no new replay/fit/forward. Earlier runtime source review remains noP1/P2; neither proves actual broker execution. |
 
 ## Bottleneck / One Reversible Improvement
 
-Throughput Review: today's model and nightly owners are installed and due in the
-US session. No unknown request needs a new manual broker action now. The company
-outcome cannot be honestly claimed from source/installation; actual side effects
-and their reconciliation need the natural owned opportunity.
+Throughput Review: today's model and nightly owners remain separately installed
+and due. Parent closed the CPU clock study and independently checked the new
+long-history input while Engine repairs its exact native runtime fault.
+Claude's weighted-mask and scoped runtime repair challenges are both
+supported-with-limits, not approval waits. Strategy's long-history CPU preparation
+continues independently. No market GPU allocation yet; original clocks/debits
+carry through repair, no reset or environment/permission hold.
 
-Ready alternatives:
-1. Complete exact offline result reading and native synthetic binding now.
-2. Close absolute-utility interpretation from saved outputs, without new fits.
-3. Keep existing fresh-session Data collectors running; no duplicate collection.
+Ready work:
+1. Train a materially different target/loss head family, not another blind model grid.
+2. Integrate the independent CPU exit-clock readback without refitting experts.
+3. Establish longer useful retained history and an executable complementary regime hypothesis.
 
-Alternatives1/2 are CLOSED;3 already has an owner. Claude's
+Previous reader/absolute-utility alternatives are CLOSED. Claude's
 scoped deployment challenge supported-with-limits; no new approval or foreground
 sleep. If all prepared work closes before the session, hand off next_due to the
 owned Task rather than create dummy work or mark company completion.
@@ -62,6 +67,14 @@ stateboards replace stale running projections; history remains Git/external.
 - A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
 - A/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json
 - A/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
+- A/execution/model-paper-exit-clock-replay-20261015-v1/categorical.json
+- A/execution/model-paper-exit-clock-replay-20261015-v1/closed-clock.json
+- A/execution/model-paper-exit-clock-replay-20261015-v1/independent-review/result.json
+- A/data/engine-history-extension-readiness-20261015-v1/readiness-r3.json
+- A/data/spy-qqq-long-history-development-20261015-v1/readback.json
+- A/strategy-research/cost-aware-policy-hypothesis-20261015-v1/readiness.json
+- A/review/parallel-engine-target-reset-20261015-v1/weighted-mask-claude.json
+- A/review/parallel-engine-target-reset-20261015-v1/runtime-repair-claude.json
 
 Keep current-listing/non-PIT/actions/units/finality limits scoped. Missing
 evidence is unknown; fees/settled cash/net PnL unobserved, not zero.

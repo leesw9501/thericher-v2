@@ -124,6 +124,21 @@ D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-linked-math-rec
 Data MODP four pairs and18-fit NN independent studies are CLOSED; preserve
 limitations/results/debits and do not redispatch creators. No dummy GPU work.
 
+New parallel package: CPU fixed-five Top10 fifth-OPEN/CLOSE descriptive replay
+closed6cells at5/10/20bps,0fits/forwards/API; independent34pins/6native summaries
+noP1/P2, no redispatch.
+A/execution/model-paper-exit-clock-replay-20261015-v1/categorical.json
+Engine prepares one112-input MLP loss/mask family (Huber net-location,
+payoff-mass-weighted BCE, net q.25),9fits/finite caps to be frozen before market
+dispatch. All masks preserve original basket weights, no ranking/refill.
+First CPU native SYN stopped at PyTorch lazy tempfile initialization before
+Adam construction,0marketfits/GPU; exact temp-root repair retains original
+1500active/3600elapsed appointment/debits and frozen science, not a new budget.
+Data long-history input COMPLETE13,622rows/6,811dates,34.88MB onD,95,357readback
+checks. Strategy prepares a separate zero-fit H1rule/matched-baseline CPU study.
+No new API, provider splice or PIT/adjustment claim. These packages do not replace this
+company outcome or change tonight's fixed model/nightly schedule and bank.
+
 Prior future-owned-paper-runtime-recovery-v1 remains runtime-UNFINISHED/owned,
 only superseded as company focus. Accounting83 r6 next opportunity Oct15
 20:25UTC, oldindex2/claims/basis/113 archive/image unchanged; no manual replay.

@@ -2,6 +2,19 @@
 
 ## Current Projection (2026-10-15 KST)
 
+Execution CPU exit-clock package COMPLETE, agent closed. Parent froze and ran
+same fixed-five equal-ordinal Top10 final-only935score rows/4entries, policy
+sealed before new marks/economics. Same quantities/cost5/10/20side ->6cells;
+both OPEN/CLOSE positive, OPEN lower at all three costs.38.4008active including
+32PREPcarry/6.4026elapsed within180/1800.0fits/forwards/GPU/API/broker or changes
+to source/schedules/bank. PREP23SYN/Ruff and935/935 mark coverage retained.
+Independent34pins/40heldOPEN marks/6native Fraction summaries noP1/P2, no replay
+redispatch. Four reused current-listing/non-PIT/raw-action/unit-limited DEV
+groups; common close-sampled NAV only, no final intraday path/auction/actual
+later-entry-and-exit fill parity. Descriptive, no winner/model promotion.
+D:/thericher-v2/model-artifacts/execution/model-paper-exit-clock-replay-20261015-v1/categorical.json
+D:/thericher-v2/model-artifacts/execution/model-paper-exit-clock-replay-20261015-v1/independent-review/result.json
+
 Current company direction current-nas-owned-model-paper-cycle-v1. Previous pure
 target package delivered/Parent commit81890b4. Coordinator V3 source FROZEN:
 source77318c25/testbdff2c74,39coordinator+48proposer=87PASS15.20s/Ruff PASS.
@@ -36,8 +49,8 @@ RO-volume parse verifies6owners16intents/private bytes stable; model pointer
 not recorded/countsnull, not zero. Original remaining cap positive_below_desired;
 native risk may reduce/reject, no forced ETF liquidation or new capital.
 D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
-Profitability is not an execution gate. Execution memory now FROZEN; no source/
-test edits, pytest, new model invocation or runtime changes by this worker.
+Profitability is not an execution gate. Runtime/shared source/tests remain FROZEN;
+only assigned external invented SYN ran, no new model/broker/runtime invocation.
 Producer9fe47f72/test0fd689ae/consumer3c9858e3 remain frozen; PREP1/2 retained.
 ACTUAL243x5 ->10private proposals, ordinal/native receipts PASS;7external SYN/lint.
 .005 each/.05 ORIGINAL-basis desired gross, NOT cash; confidence0 uncalibrated,

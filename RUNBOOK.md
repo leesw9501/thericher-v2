@@ -184,6 +184,21 @@ dependency/config digest is exact. External code needs its own native checks.
 
 ## Research / Recovery Knowledge
 
+Current parallel inputs/results (immutable creators already consumed; do not
+redispatch them): CPU fixed-five fifth-OPEN/CLOSE6cell descriptive replay and
+independent exact math/source check:
+D:/thericher-v2/model-artifacts/execution/model-paper-exit-clock-replay-20261015-v1/independent-review/result.json
+Separate SPY/QQQ nominal-causal long-history input13,622rows/6,811dates:
+D:/thericher-v2/model-artifacts/data/spy-qqq-long-history-development-20261015-v1/dataset-manifest.json
+Its dataset.private.npz uses history_ohlcv[n,61,5], exact calendar/asset keys,
+entry_open[n] and future_open_close[n,5,2] (OPEN,CLOSE). Future-action flags are
+diagnostic-only, never causal inputs/row filters. No labels/scalers/PIT/TR or
+Paper-input promotion. New Engine consumers freeze their own splits/targets.
+The new9fit cost-aware MLP family first failed CPU SYN at PyTorch lazy tempfile
+initialization before optimizer construction. Original failed source/output
+stays frozen; linked owned-temp-only repair retains original clocks/debits and
+science. No repeat of that consumed host.py synthetic-cpu creator.
+
 Creators/fits/readers with exclusive outputs are frozen after use. Inspect exact
 saved receipts, not a second invocation. Data raw under M; models/checkpoints/
 research artifacts under A; Docker /app/model_artifacts. Keep D:15 percent free.
