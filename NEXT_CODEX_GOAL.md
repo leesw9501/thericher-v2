@@ -154,11 +154,22 @@ CLOSED independent60pins/12oracle noP1/P2;1growthpositive2negative,primaryfalse.
 73.4566combinedactive; originalCUDAfailure retained, oldforwardsunknown0..5,
 8known successful/13aggregateupper (not actual13), newboundedscope explicit.
 A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
-Engine now prepares event-aware nominal teacher/payoff math from separately
-aligned futureactionfields; Data checks retained1msource rights/time/calendar.
-Neither prep is a running fit or a hold on tonight's execution.
-No new API, provider splice or PIT/adjustment claim. These packages do not replace this
-company outcome or change tonight's fixed model/nightly schedule and bank.
+Event-aware teacher ablation CLOSED3CPU+3CUDAfits/126cells0unknown,
+independent141pins/126oracles noP1/P2; jointGRU9growthpositive but0/6increment
+checks. Combined96.3739active. Noncash nominal pretax receivables are not broker
+PnL/settlement. No target-action fields enter causal features or row filters.
+A/research/spy-qqq-event-aware-target-development-20261015-v1/independent-review/result.json
+Data1m canonical READY195,056regular bars/315,772past30/120-minute keys over
+251sessions; QQQcomplete, SPYfourmissing/onepartial, no imputation. Archive
+adjustment/time applicability and PIT/KIS parity remain unproved.
+A/data/retained-intraday-source-development-20261015-v1/readback.json
+Engine prepares QQQ30/120-minute windows at ONE fixed60-minute target, not an
+unbounded grid or running fit. Data may separately execute the named bounded
+deep-history probe: Paper market-only, at most8GET/one guarded tokenPOST,
+four existing validated venues, two predeclared historical dates,120active/
+600elapsed, existing pacing/ownership. No account/order/live/bulk/schedule work
+inside that probe. No provider splice or PIT/adjustment claim. These packages
+do not replace this company outcome or change tonight's fixed schedules/bank.
 
 Prior future-owned-paper-runtime-recovery-v1 remains runtime-UNFINISHED/owned,
 only superseded as company focus. Accounting83 r6 next opportunity Oct15

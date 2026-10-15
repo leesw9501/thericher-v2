@@ -228,8 +228,21 @@ its callcountunknown0..5 charged, newCUDA SYN usesCPUdata/GPUmodel. Aggregate
 D:/thericher-v2/model-artifacts/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
 Action sidecar contains future_divCash/future_splitFactor on original13,622
 keys, target-only, never features/row filters. Offset0 entry ex-date is not a
-held entitlement. Engine's new nominal event-aware cashflow/teacher PREP is
-not broker fees/settled cash or a running model fit; no runtime changes.
+held entitlement. Event-aware cashflow/teacher study is CLOSED3CPU+3CUDAfits/
+126cells; independent141pins/6checkpoint/12loss/126oracles noP1/P2.77GRUepochs,
+9joint-GRU growthpositive,0/6increment checks;96.3739combinedactive. Receivables
+are nominal pretax NONCASH, not broker fees/settled cash/buying power.
+Inherited raw-teacher prose is not the new event-wrapper semantics; use exact
+independent result, never rerun consumed creators or repair attempts.
+D:/thericher-v2/model-artifacts/research/spy-qqq-event-aware-target-development-20261015-v1/independent-review/result.json
+Retained source-local1m data:195,056canonical regular bars/315,772past-only
+30/120-minute keys,251sessions. QQQcomplete; SPYfourmissing/onepartial. Archive
+adjustment/time applicability/publication/PIT/KIS parity unknown. Data rights
+remain private internal scope; no new dataset/Paper eligibility assertion.
+D:/thericher-v2/model-artifacts/data/retained-intraday-source-development-20261015-v1/manifest.json
+Next QQQ fixed60-minute target preparation is separate from tonight's execution.
+Named deep-history probe may use Paper market endpoints only under its8GET/
+one guarded tokenPOST/120active/600elapsed contract; not bulk/schedule/account.
 D:/thericher-v2/model-artifacts/data/spy-qqq-long-history-target-action-fields-20261015-v1/manifest.json
 
 Creators/fits/readers with exclusive outputs are frozen after use. Inspect exact

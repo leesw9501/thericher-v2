@@ -211,14 +211,33 @@ those entitlements/unit effects. No future flags filter features/samples.
 Separate action-field sidecar (source-only future_divCash/future_splitFactor,
 all13,622keys) is materialized/read back, no returns/labels/fits:
 A/data/spy-qqq-long-history-target-action-fields-20261015-v1/readback.json
-Engine now prepares nominal event-aware target/cashflow math with NONCASH
-receivables (not buying power/settled cash), not another architecture grid.
-Data independently checks retained1m source rights/time/calendar and possible
-small canonical base. Both are PREP/conditional, not active model training.
+Event-aware target ablation is now CLOSED:3CPU+3CUDA fits/126cells/0unknown.
+Three joint GRUs ran77epochs with INNERpatience20 stops; all9 joint-GRU growth
+cases positive,0/6 model-stage incremental checks pass. Nominal pretax dividend
+receivables remain NONCASH, never buying power/settled cash or broker PnL.
+Independent141pins/6CPUcheckpoint/12loss/126cashflow-oracle checks noP1/P2;
+combined96.3739active within1800/5400. Only targets/weights/FIT mass changed.
+Some inherited contract raw-teacher descriptions remain historical metadata;
+actual pinned event wrapper and independent checks establish the new semantics.
+Pure-math duplicate dispatch was admission-blocked, not another numeric trial.
+A/research/spy-qqq-event-aware-target-development-20261015-v1/independent-review/result.json
+
+Retained1m canonical base is READY:195,056 regular-session bars,315,772past-only
+30/120-minute window keys over251sessions,2022-09-30..2023-09-29. QQQ251full
+sessions/zero missing; SPY250full/one partial/four missing bars, not imputed.
+Ten synthetic tests/native195,056Bar reparses/window geometry pass;16.1339active.
+Raw data stays under D:/market_data. Archive adjustment variant/time convention
+applicability, publication/finality/PIT and KIS parity remain unproved; this is
+private source-local engineering input, not promoted live/Paper data.
+A/data/retained-intraday-source-development-20261015-v1/readback.json
+Engine next prepares one fixed60-minute QQQ horizon with30/120-minute windows,
+shared chronological support and cost-aware controls; no market fit yet.
+Data separately probes bounded Paper daily-history depth, not account/order
+endpoints or bulk acquisition. Existing collectors and tonight's owners intact.
 
 GPU/CUDA works; all actual training/forecast allocations above are CLOSED,
 no environment/permission hold or dummy training. Today's research produced
-15CUDA+3CPU market fits total; native SYN/reader forwards are not extra models.
+18CUDA+6CPU market fits total; native SYN/reader forwards are not extra models.
 Old failures, clocks, selection-data reuse and partial results stay immutable.
 
 Four issuer-anchored MODP0/1 probes:8 GET/one token/800 rows,4,538 independent
