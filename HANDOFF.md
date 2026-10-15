@@ -3,305 +3,149 @@
 ## Current Reality (2026-10-15 KST)
 
 ONE company objective: current-nas-owned-model-paper-cycle-v1.
-Recovery, source integration and finite deployment are complete. The new
-model-owned runtime outcome is NOT observed; installation/tests are not a fill.
-No operator decision is currently needed. Never read KIS_LIVE_*.
+New model implementation/deployment is ready; its actual Paper outcome remains
+UNOBSERVED. No operator decision identified. Private Paper is delegated;
+never KIS_LIVE_*, real money, public serving, paid commitments or secret output.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Workdir C:/Users/Public/Documents/thericher-v2. AGENTS.md owns authority.
 
-Workdir: C:/Users/Public/Documents/thericher-v2.
-Market data: D:/market_data. A below means
-D:/thericher-v2/model-artifacts. External evidence/weights remain local, not Git.
+## Owned Paper, Not Installation Claims
 
-## Tonight's Owned Paper Paths
-
-| Owner | Verified deployment | Next natural opportunity |
+| Owner | Frozen deployment | Next natural opportunity |
 | --- | --- | --- |
-| Existing daily baseline | thericher-kis-paper-daily-spy-session; Ready/enabled, quiet Pythonw; original XML/identity/bank unchanged | Oct15 23:50 KST /14:50 UTC |
-| New frozen NAS model | thericher-kis-paper-current-nas-model-20261015; Ready/enabled, quiet Pythonw; finite14 triggers,4-minute visits | Oct15 22:40 KST /13:40 UTC |
-| Existing future accounting83 | r6 accounting-only repair installed; other six Actions/basis/claims retained; runtime unknown | Oct16 05:25 KST /Oct15 20:25 UTC |
+| NAS model | thericher-kis-paper-current-nas-model-20261015; imagece219a8d,474files/manifest130d1c33,hostc6e4/configa13fa7d9 | Oct15 22:40KST/13:40UTC |
+| Existing daily baseline | thericher-kis-paper-daily-spy-session; image3ccb2250,472public files/470image sources/4d0481cd,drivere586/quiet6d51 | Oct15 23:50KST/14:50UTC |
+| Future accounting83 | r6 accounting-only repair installed, actual result unknown | Oct16 05:25KST/Oct15 20:25UTC |
 
-Daily image3ccb2250abcc is bound to immutable472-public-file deployment,
-470 image runtime files/digest4d0481cd. Driver e5867a8a/quiet6d51b09d;
-mutable development SRC no longer invalidates its source guard. No .env or
-secrets were copied. The unchanged selective Paper loader reads only the
-original private file on execution. Existing25-minute OS task limit retained.
+Both model/daily Tasks were enabled/Ready at Parent's latest source-safe read.
+Both exact image IDs are present in Docker29.3.1. No task manually invoked.
+Nightly XML/identity/original bank unchanged. Frozen public-source snapshots
+isolate both deployments from mutable development; no .env/secrets were copied.
+A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
 A/execution/current-paper-frozen-deployment-20261015-v1/after.json
 
-New model imagece219a8dd26c is bound to474 frozen runtime files,
-manifest130d1c33/hostc6e4c034/quiet4892baa8/configa13fa7d9. Image/source,
-default-inert entry points and the ACTUAL ten-target loader passed network-none.
-One native visit per invocation: one token, one combined submit, one cancel,
-128 total calls/280 seconds; eight-minute OS limit. No task was manually invoked.
-Two finite windows on Oct15/16/19/20/21/22/23 UTC:13:40..14:36 and15:05..19:41,
-every four minutes. Admission defers to an active named executor or imminent
-nightly owner. Original bank/private volumes are shared, not recreated.
-A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
-A/execution/current-nas-owned-model-paper-deployment-20261015-v1/prepared.json
-Actual after-installation readback verified all14 finite trigger boundaries/
-cadences, matching frozen sources and unchanged nightly XML; both Tasks Ready.
+Model finite14triggers on Oct15/16/19/20/21/22/23 UTC:13:40..14:36 and15:05..19:41,
+every4minutes. One280-second visit/oneauth/onecombinedsubmit/onecancel/128calls,
+OS8minute limit. Defer active/imminent nightly owner. Entry ONLY Oct15; later
+visits recover exact requests or owned exit from Oct21 regular OPEN.
+Fifth-OPEN/later entry is execution learning, NOT research fifth-CLOSE parity.
 A/execution/current-nas-owned-model-paper-deployment-20261015-v1/after-installation.json
 
-The fixed target snapshot permits new entry ONLY during Oct15's bound session.
-Later visits recover its exact pending requests, never select substitutes or
-renew expired requests. Earliest owned exit is Oct21 regular-session OPEN, then
-owned-only exit/recovery on later declared sessions. This differs from the
-research fifth-session CLOSE label: operational learning, not replay parity.
+## Input, Original Bank And Recovery
 
-## Model Input And Native Recovery
+Fresh61 capture:504/512 histories,30,744bars;503feature-defined/243supported.
+Frozen Ridge20/Ridge-indicator/MLP20/TCN20/TCN60 produced243x5scores, no refits.
+Pure proposer froze ten targets, no substitute selection. Desired .005each/.05
+aggregate references the ONE ORIGINAL shared initial virtual-cash tenth.
+Costs/losses/pending reservations/buying power/foreign custody remain native
+authority; remaining cap positive_below_desired may reduce/reject proposals.
+No new bank, profit refill or forced ETF liquidation.
 
-Existing Data capture:504 of512 histories ready with61 bars, eight missing,
-30,744 bars;512 market GET/one token, no account/order/live. Past-only features:
-503 defined/243 supported,181 outside the original first128.
-A/data/current-nas512-fresh61-preparation-20261015-v1/actual-readback.json
-
-Frozen experts: Ridge raw20, Ridge indicator, MLP20, TCN20 and TCN60.
-ACTUAL243x5=1,215 scores; strict readback checked sources/availability, two
-scalar Ridge forwards, all five unscales and2,560 rank checks. No new fits in
-this inference. Original metadata/PID/cleanup/reader failures and debits retained.
-A/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
+Completion-observed upper bound Oct14 22:06:59UTC and availability-to-consumer
+23:10:18.739660UTC are NOT exact original publication. Snapshot expires at the
+bound Oct15 close. Current-listing/nonPIT/actions/units/finality limits remain.
+A/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
 A/research/current-nas512-frozen-expert-score-panel-20261015-v1/review-output/final-current-linked-r2.json
 
-Pure proposer produced ten exact-ranked private targets. Desired .005 each/.05
-total of the ORIGINAL basis is an untrusted proposal, not available cash or a
-profit claim. Native one-shared-tenth, buying power, losses/reservations and
-foreign ownership may reject every target. No replacement selection.
-A/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
-
-Completion-observed upper bound Oct14 22:06:59 UTC and availability-to-this-
-consumer23:10:18.739660 UTC are retained, NOT guessed original publication.
-Current-listing/non-PIT/actions/units/provider-finality limits remain. They
-constrain claims, not independent Paper authority.
-
-Coordinator V3 freezes targets/policy identities, resumes exact pending work
-BEFORE input loading, rejects another policy's same-stock ownership, journals
-before side effects and rechecks owned-flat before final closure.
-Native terminal partial fills no longer falsely block owned-only SELL;
-conservative partial-BUY cash reservations are NOT released by this change.
-Journal-only never-reserved retirement needs exact positive absence/binding
-under locks. No age-based lock reclaim or unknown reservation reset.
+CoordinatorV3 journals before effects, recovers pending before new input,
+rejects foreign same-stock ownership and rechecks terminal/owned-flat.
+Native partial SELL/journal-only retirement fixes do not release unknown BUY
+reservations. Exact absence/binding under locks, never age-based reset.
 A/execution/current-nas-owned-model-paper-cycle-20261015-v1/ready-v3.json
 A/execution/current-nas-owned-model-paper-runtime-20261015-v1/ready-r3.json
 
-Offline preflight: six owners/16 terminal intents, zero unknown/unclosed,
-three retained held instruments, no selected-stock registration collisions.
-It is NOT a fresh broker-funding/quote/eligibility observation.
-A/execution/current-nas-stock-custody-preflight-20261015-v1/parent-readback.json
+Strict offline readers r2:73focused/noP1P2, actual network-none/RO-volume native
+preflight six owners/16terminal intents/zero unknown-unclosed/three holdings.
+Model pointer absent -> model counts NULL, not zero. Not fresh broker funds.
+Use canonical /app/private mount and exact pinned readers, NEVER observe().
+A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
 
-## Actual Paper Evidence, Not New-Model Claims
+## Actual Previous Paper Evidence
 
-Oct13 baseline SPY SELL and portfolio BUY were accepted, exactly filled and
-reconciled; original shared bank retained. Oct14 natural23:50 cycle completed
-with no target delta/new order/fill; six owners/16 terminal, zero unknown/pending.
+Oct13 SPY SELL/portfolio BUY accepted, exactly filled/reconciled. Oct14 natural
+23:50 cycle had no target delta/new submit/fill. Latest owned valuation matched
+three holdings; realized GROSS positive, unrealized/total marked GROSS negative.
+Fees/settled cash/net PnL unknown, not zero. New-model result still unobserved.
 A/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
-
-Last fresh owned valuation matched three holdings, zero other holdings/open
-orders. Realized GROSS positive; unrealized and total marked GROSS negative.
-Fees, settled cash and net PnL remain unobserved, never zero.
 A/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
 
-Old future-owned-paper-runtime-recovery-v1 is superseded ONLY as company focus,
-not declared runtime complete. r5 accounting failed at captured unmapped Data
-default; r6 corrected only accounting83 after native cold/warm checks.
-Old index2 remains unknown/not replayed. Goal83 exit Oct17 04:50/05:00 KST;
-Goal97 entry Oct19 22:30/22:40, exit Oct24 04:50/05:00 KST remains separately
-owned. Preserve all exact identities/unknowns; do not invoke or replace tasks.
+Prior future-owned-paper-runtime-recovery-v1 is superseded as COMPANY FOCUS,
+not runtime complete. Accounting83 r6 changes only its Data default; oldindex2
+unknown/claims/basis/113archive/other6Actions retained. Goal83 exitOct17
+04:50/05:00KST;97entryOct19 22:30/22:40,exitOct24 04:50/05:00 remain owned.
 A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
 
-## Parallel Research And Data
+## Research And Data Continuation
 
-Closed studies, not active GPU workers:
-- Six new TCN convergence fits:122 epochs/2,958 updates,18 cost cells.
-- GRU/LSTM/causal Transformer20/60:18 CUDA fits/262 epochs/6,178 updates,
-  54 complete cells. No18-model joint net/no-worse-drawdown control pass.
-- Fixed rank blend/two shallow-tree fusion:15 complete cells, zero expert refits.
-- New absolute-return/fee-hurdle Ridge hypothesis:three CPU fits,27 complete
-  cells/45 frozen controls via linked read-only math publication. Original
-  creator failed on derived mean-log bit equality; only1e-14 derived tolerance
-  accepted, exact other metrics/NAV/exposure and economic criteria retained.
-  Zero refits in linked reader;95.1834 active/1,645.4028 elapsed within180/1,800.
-  The utility hypothesis fails all three stage checks; readback correctness is
-  not alpha, untouched replication or Paper adoption.
+These five completed development families contain39 fitted VERSIONS:
+24CUDA+15CPU, not39architectures. No qualified Alpha/Paper adoption.
+Individual growth-positive cases are not incremental performance qualification.
 
-A/research/native-cudnn-tcn-convergence-development-20261015-v1/review-output/final-r3.json
-A/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
-A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json
-A/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json
+| Family | Actual output | Independent result |
+| --- | --- | --- |
+| Cost-aware MLP heads |9CUDA,191epochs,99unique cells;0joint passes|350pins/9CPUforwards; stored-path consistency, not retained exact Fraction regeneration|
+| Long-history logit/raw-joint GRU |3CPU+6CUDA,90cells; all18GRU growth cases positive,0joint passes|165pins/9checkpoint/90cashflow checks|
+| Nominal event teacher |3CPU+3CUDA,77GRUepochs,126cells;9joint-GRU growthpositive,0/6increment|141pins/6checkpoint/126oracles; nominal pretax NONCASH receivables|
+| QQQ1m30/120 windows,60min hold |3CPU+6CUDA,98epochs/2210updates,90cells; all learned masks abstain|9EVALforwards/90oracles;8FIT-INNER pairs verified, finalGRU120losses remain attested|
+| Event-target boosting |6CPU,343iterations,36new+126frozen=162unique;0/18joint passes|36oracles/6checkpoint/12loss; finaljoint312intercept-only|
 
-New parallel continuation (no change to tonight's deployed policy):
-- CPU exit-clock replay COMPLETE6cells,0fits/forwards/GPU/API. The same fixed-five
-  rank-mean Top10 at5/10/20bps is positive under both fifth-OPEN and fifth-CLOSE
-  exits in four reused DEV groups; OPEN is lower in all three.38.4008 active
-  including32PREP carry/6.4026elapsed within180/1800; independent34pins/6native
-  summaries/40held marks noP1/P2, no replay redispatch.
-  This is descriptive common close-sampled NAV, not an intraday path, auction
-  fill, actual later-entry parity, fresh alpha or model promotion.
-  A/execution/model-paper-exit-clock-replay-20261015-v1/categorical.json
-- Strategy consumed: fixed trend/reversal kernel and payoff-mass-weighted BCE
-  entry mask,11SYN/Ruff. GPU PREP now compares Huber net-location/weighted BCE/
-  net q.25 with the SAME112-input MLP and original basket/weights. Nine fits
-  completed after linked runtime repair:191epochs/4,574updates, selected1/2,
-  all patience20 stopped, NOT max256/time cutoff or convergence proof.
-  CPU/CUDA native SYN and intake passed, actual9CUDAfits/72campaigncells plus
-  45retained controls minus18overlap=99unique/0unknown. All9head-stage all-cost
-  checks/primaryBCE false; independent350pins/9CPUcheckpoint forwards, keys/
-  purge/scalers/constants/masks/99stored-path checks noP1/P2. New exact Fraction
-  paths were NOT persisted: rounded-path consistency, not exact regeneration.
-  Combined active117.7593 including review; original failed debit retained.
-  Worker conservative
-  highwater96.4060active/host522.5074elapsed within1500/3600; cleaned lease/
-  container/child, source unchanged. First native CPU SYN had failed before Adam
-  construction on a lazy PyTorch tempfile probe denied outside owned output.
-  Zero market fits/GPU;12.5289active, cleanup closed. Linked owned-temp-only
-  repair retained original appointment/debits/science, not a cap refund or
-  model reranking. Claude runtime advice supported-with-limits.
-  A/research/cost-aware-distribution-head-runtime-repair-20261015-v1/host-replay.json
-  BCE is positive-payoff mass share, NOT win probability or expected-return
-  ranking. No reranking/refill or extra horizon grid. Claude supported-with-limits.
-  A/review/parallel-engine-target-reset-20261015-v1/weighted-mask-claude.json
-- Data materialized retained SPY/QQQ6,876 common sessions,6,811 past61/future5
-  windows/13,622rows into34,877,182-byte NPZ.95,357 native readback checks and
-  parent39array/hash/schema plus key/calendar checks pass. Separate private
-  nominal-causal development input; no labels/scalers/fits/acquisition/API.
-  raw as-quoted/non-PIT/actions/availability limits remain. No provider splice,
-  new acquisition or original eligibility-flag rewrite.
-  A/data/spy-qqq-long-history-development-20261015-v1/readback.json
-  Fixed H1trend/reversal CPU preparation is closed/consumed below, not another
-  GPU architecture/window grid.
-- H1 long-history actual CPU study now COMPLETE48cells/1,363two-ETF baskets,
-  0fits/API/GPU,7.1445active including4.5662SYNcarry/2.5788elapsed within120/1200.
-  Overall net positive at5/10bps, negative at20; only two middle-regime cost
-  comparisons survive, global primary fails. Independent23pins/48vectorized
-  whole-path cashflow audits/four failclosed affordability cases noP1/P2;
-  approximate combined12.6active including review, not exact rational parity.
-  A/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
-  Research-only float64 wrapper reuses unchanged pinned native replay code
-  in isolated numeric globals; no production/Paper/risk or framework change.
-  48short native Fraction parity cells/2missing cases and4full6,876session
-  invented cells pass; original modules unchanged, affordability ambiguity
-  fails closed. Numeric comparison margins fixed before economics. Exact-rational
-  long-summary growth measured, not assumed; new research paths are explicitly
-  approximate, not exact Fraction/broker net PnL or continuous buy-and-hold.
-  A/research/long-history-float-replay-preparation-20261015-v1/checks.json
-
-Additional completed long-history trainable comparison:
-- Same60D1 inputs, CPU logistic plus raw/joint12-feature GRU32 across3 expanding
-  stages:3CPU+6CUDAfits,90cells/0unknown.6GRUs152epochs, all INNERp20 stops,
-  selected13/9/1/5/1/3, not max256/convergence. ALL18GRU growth cells positive
-  after modeled5/10/20bps; logistic4positive/5negative.0all-control joint passes,
-  so positive absolute utility is NOT demonstrated incremental predictive Alpha.
-  Independent165pins/9CPUcheckpoint/18loss/90cashflow-oracle checks noP1/P2.
-  Combined100.0679active inclreview within1800/5400. Windows-host POSIX-path
-  SYN failure preserved; host-only repair inherited exactCPU SYN/clock/debits.
-  A/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
-- Chronos2 cached exact checkpoint actually loaded/restored and used on GPU:
-  34strict-postcheckpoint baskets/68two-channel tasks,5newmarket forwards,
-  12complete cost cells. One growth positive/two negative, primaryfalse.
-  CPU2cold/restore SYN and GPU1invented SYN passed; independent60pins/68q50-
-  median/mask/12cashflow checks noP1/P2. Combined73.4566active inclreview within
-  original300/1200. First CUDA pin-memory failure stays immutable; its actual
-  forward count is UNKNOWN0..5, never zero. New bounded CUDA probe/development
-  explicitly counts old calls:8known successful total/13aggregate UPPER bound,
-  not actual13 or reuse of old7-forward authority. No model fitting/weights change.
-  Release/license evidence inherited trusted exact-source, corpus undisclosed;
-  marginal-median endpoint ratio is not expected return/joint return median.
-  A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
-
-Data confirmed canonical ETF OHLCV is unadjusted, not adj fields. Stride5held
-dividend windows88SPY/65QQQ; oneQQQsplit window. Raw quote-return teachers omit
-those entitlements/unit effects. No future flags filter features/samples.
-Separate action-field sidecar (source-only future_divCash/future_splitFactor,
-all13,622keys) is materialized/read back, no returns/labels/fits:
-A/data/spy-qqq-long-history-target-action-fields-20261015-v1/readback.json
-Event-aware target ablation is now CLOSED:3CPU+3CUDA fits/126cells/0unknown.
-Three joint GRUs ran77epochs with INNERpatience20 stops; all9 joint-GRU growth
-cases positive,0/6 model-stage incremental checks pass. Nominal pretax dividend
-receivables remain NONCASH, never buying power/settled cash or broker PnL.
-Independent141pins/6CPUcheckpoint/12loss/126cashflow-oracle checks noP1/P2;
-combined96.3739active within1800/5400. Only targets/weights/FIT mass changed.
-Some inherited contract raw-teacher descriptions remain historical metadata;
-actual pinned event wrapper and independent checks establish the new semantics.
-Pure-math duplicate dispatch was admission-blocked, not another numeric trial.
+Exact readbacks:
+A/research/cost-aware-distribution-head-runtime-repair-20261015-v1/independent-review/result.json
+A/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
 A/research/spy-qqq-event-aware-target-development-20261015-v1/independent-review/result.json
+A/research/qqq-intraday-window-mass-gate-development-20261015-v1/independent-review/readback.json
+A/research/spy-qqq-event-target-boosting-development-20261015-v1/admission-r4/independent-review/closure.json
 
-Retained1m canonical base is READY:195,056 regular-session bars,315,772past-only
-30/120-minute window keys over251sessions,2022-09-30..2023-09-29. QQQ251full
-sessions/zero missing; SPY250full/one partial/four missing bars, not imputed.
-Ten synthetic tests/native195,056Bar reparses/window geometry pass;16.1339active.
-Raw data stays under D:/market_data. Archive adjustment variant/time convention
-applicability, publication/finality/PIT and KIS parity remain unproved; this is
-private source-local engineering input, not promoted live/Paper data.
+All fits stopped by native INNER rules, not proof of convergence. Source/
+runtime/readback failures/debits preserved; no creator reruns. QQQ cash is
+inferred from NAV/exposure, only final fees retained; cross-runtime precision
+limits are explicit. Long teachers use declared event/nonTR conventions, not
+actual broker PnL. Legacy raw-teacher prose does not override pinned event code.
+
+Chronos2 actual GPU benchmark:34post-checkpoint baskets/68tasks/5newmarket
+forwards/12cells,0fits;1growthpositive/2negative. Independent60pins/12oracles.
+Original failed forwardsunknown0..5 charged;8known successful/13aggregateUPPER,
+not actual13. Cached exact trusted weights/license/date; corpus undisclosed.
+A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
+
+| Current package | Owner and actual evidence boundary |
+| --- | --- |
+| Daily decision DAG |Godel solely owns fixedmajority/confidence/one depth2gate over prespecified eventGRU/HGBjoint312/H1; only OOF1 metaFIT, later OOF2/final reused evaluation.0expertrefits/0GPU; completion not yet reattached.|
+| Retained NAS canonical |McClintock owns local parse/calendar diagnosis/canonical materialization,0API/credentials. Metadata512/1,170,543bars/6348files,396names>800bars/135pre2010,2007..2026; unique valid windows UNKNOWN until readback.|
+| TimesFM2.5 |Kant source/date/license/safe-API PREP, no market/GPU evidence yet. Official code/weights<=2.5Apache2; no defaultTimesFM3/NC adoption. Requires exact dated trusted revision before any comparative targets.|
+
+A/research/spy-qqq-fixed-and-tree-decision-dag-preparation-20261015-v1
+A/data/nas-retained-long-canonical-20261015-v1
+A/strategy-research/timesfm25-etf-benchmark-preparation-20261015-v1
+
+Data reusable inputs:13,622long-ETF rows/6,811dates; target-only action sidecar;
+retained1m195,056regular bars/315,772past-window keys,251sessions2022..2023.
+QQQcomplete/SPYfourmissing, no imputation. Archive adjustment/time applicability,
+publication/PIT/KIS parity remain unproved; scoped engineering may proceed.
 A/data/retained-intraday-source-development-20261015-v1/readback.json
-Engine's QQQ fixed60-minute horizon/30vs120-minute campaign is assigned end-to-end
-to Godel, including sole numerical dispatch after native CPU/CUDA checks. Up to
-3CPUlogit+6CUDA fits; actual fits not yet reattached. Parent MUST NOT invoke its
-driver in parallel. Raman owns separate sixCPU boosting fits on frozen daily
-event inputs, no GPU/credentials; chronological INNER/numeric checkpoints.
-Source preparation alone is not a started/completed fit. Claude supported-with-
-limits; actual frozen outputs require independent readback, not human approval.
-A/research/qqq-intraday-window-mass-gate-development-20261015-v1
-A/research/spy-qqq-event-target-boosting-development-20261015-v1
 
-KIS deep-history scope probe is CLOSED8marketGET/1tokenPOST/0retry/67checks.
-All four SPY/QQQ/AAPL/MSFT2010anchors returned100valid rows2009-08-11..12-31;
-2000anchors empty. This is per-route/anchor support, not an exact global floor
-or continuous all512 coverage.38.8879carried active/542.1806elapsed within120/600.
-Venv launcher self-match reproduced; direct-base repair kept the actor predicate
-UNCHANGED, no exclusions/unknown-owner kill. Old actual actor identity unknown.
+Deep-history probe CONSUMED8GET/1POST/0retry/67checks: all SPY/QQQ/AAPL/MSFT
+2010anchors returned100valid2009rows each;2000anchors empty. Not exact global
+floor/all512 continuity.38.8879active/542.1806end within120/600. Direct-base
+repair retained original failed actor identity UNKNOWN/unchanged predicate.
+Do not rerun exhausted queries or proposed AAPL2009cursor already in oldcache.
 A/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
-All eight queries consumed, no rerun. Proposed AAPL20090810 cursor NOT started;
-existing49page/2007cache may already cover it. Data now checks exact retained
-long-history cache/index locally before proposing any acquisition;0newAPI.
-Existing collectors and tonight's owners intact.
+A/data/nas-retained-long-history-readiness-20261015-v1/readiness.json
 
-GPU/CUDA works; all actual training/forecast allocations above are CLOSED,
-no environment/permission hold or dummy training. Today's research produced
-18CUDA+6CPU market fits total; native SYN/reader forwards are not extra models.
-Old failures, clocks, selection-data reuse and partial results stay immutable.
+## Verification And Next Action
 
-Four issuer-anchored MODP0/1 probes:8 GET/one token/800 rows,4,538 independent
-checks; all different_other_pattern, no proved adjustment factors/PIT/finality.
-Existing G107/NAS-forward collectors keep owned schedules; no manual replay.
-Older113/current3ccb/newce219 generic multi-stock budget readers pass12
-synthetic compatibility cases; this does NOT prove old whole-overlay execution.
-A/data/kis-daily-adjustment-source-capability-20261015-v1/independent-readback.json
-A/infra/old-paper-reader-multistock-compatibility-20261015-v1/compatibility.json
-
-## Verification And Resume
-
-Fresh authority:925 changed-path serial passed; clean eight-worker full16,488
-passed/22 skipped/16,510 collected,351.816 seconds/helper exit0. Ruff and
-default/research/accounting Compose with .env.example passed.
-Source1,342/digest4a1e461984894e82caa21601bcb0673dfab7cd85bb5924a8dd916bd24c71bc46.
+Exact production/test/script/dependency/config source1342/digest
+4a1e461984894e82caa21601bcb0673dfab7cd85bb5924a8dd916bd24c71bc46.
+925serial; fresh clean8 full16488passed22skipped/16510collected/351.816s/helper0.
+Ruff/default/research/accounting sample-env Compose pass. MD/external-only work
+may reuse only with exact source-map equality; external workers need OWN checks.
 A/verification/current-nas-owned-cycle-20261015-v1/authority.json
 
-External deployment:12 synthetic tests/native COM14-trigger parsing and actual
-installation readback pass; Claude supported-with-limits, advisory only.
-Long Windows test paths caused retained QQQ persistence failures; short fresh
-C:/ts children resolved them without weakening source/assertions/risk checks.
-Full helper retains its Global mutex, lease and checked-cleanup requirements.
-
-Next: strict current launch->immutable dispatch->native cycle/intent/fill
-readback at natural opportunities; fix reversible exact-identity faults.
-Reader preparation is CLOSED:73 focused tests/Ruff; native exact-plan/terminal/
-owned-flat review no P1/P2. Current source-pinned network-none/RO-volume probe
-verified six owners/16 intents/private bytes unchanged; model pointer absent,
-model counts UNKNOWN/null, not zero. Remaining original cap is positive but
-below the full .05-original desired target; native sizing may reduce/reject.
-No new budget, forced ETF liquidation or request was introduced.
-A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
-Use r2 readers, not the predecessor: its nightly source audit missed one exact
-public quiet file. Repair allows ONLY that pinned file; sibling-denial tests
-pass. Parent's initial RO probe also used the wrong nested volume target;
-canonical /app/private with volume-nocopy fixes it without creating a book.
-Original unknown results/failures are retained; neither was a broker failure.
-Native model counts are cumulative retained cycle facts, not a per-trigger
-delta or independent proof that a particular OS trigger caused a fill.
-Missing outcome is unknown. Never use recovery-capable observe() as a reader.
-Task Scheduler Operational logging is disabled: marker/time/hash provenance
-under an assumed-honest host, not cryptographic proof of OS scheduler origin.
-One app follow-up automation is installed for Oct16 00:05 KST after tonight's
-owned opportunities (automation, COUNT1). It reads strict evidence, stays quiet
-without material change and does not create a recurring report/follow-up chain.
-Private UI redesign/public access remain deferred.
-
-Historical details/superseded commands remain in Git3dbca52 and exact external
-artifacts. Retrieve selectively; do not replay historical creators.
+Parent integrates actual independent research evidence, preserves unfinished
+owners and continues ready packages. At natural Paper opportunity, read exact
+launch->dispatch->native cycle/intent/fill linkage, not latest files/task exit.
+Missing unknown; never manually invoke task or substitute identity/budget.
+Scheduler Operational logging disabled: assumed-honest host marker/time/hash
+provenance, not cryptographic OS-origin proof. One existing COUNT1 app follow-up
+Oct16 00:05KST, not a replacement recurring chain. Private UI redesign deferred.
+History before compaction: Git763bd37/15d71be/62b406e and immutable external roots.

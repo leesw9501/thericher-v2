@@ -184,103 +184,51 @@ dependency/config digest is exact. External code needs its own native checks.
 
 ## Research / Recovery Knowledge
 
-Current parallel inputs/results (immutable creators already consumed; do not
-redispatch them): CPU fixed-five fifth-OPEN/CLOSE6cell descriptive replay and
-independent exact math/source check:
-D:/thericher-v2/model-artifacts/execution/model-paper-exit-clock-replay-20261015-v1/independent-review/result.json
-Separate SPY/QQQ nominal-causal long-history input13,622rows/6,811dates:
-D:/thericher-v2/model-artifacts/data/spy-qqq-long-history-development-20261015-v1/dataset-manifest.json
-Its dataset.private.npz uses history_ohlcv[n,61,5], exact calendar/asset keys,
-entry_open[n] and future_open_close[n,5,2] (OPEN,CLOSE). Future-action flags are
-diagnostic-only, never causal inputs/row filters. No labels/scalers/PIT/TR or
-Paper-input promotion. New Engine consumers freeze their own splits/targets.
-The new9fit cost-aware MLP family is now CLOSED through actual CPU/CUDA SYN,
-intake,9CUDAfits and99unique-cell replay (independent readback pending):
-D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/host-replay.json
-All5 phase creators are consumed, never rerun. First CPU SYN's lazy PyTorch
-tempfile fault remains immutable; linked owned-temp-only repair retained the
-original clocks/debits/science.9fits stopped by INNERpatience20 at21/22epochs,
-not a max256 cap; primary/all9joint checks false, no automatic Paper adoption.
-Independent350pins/9CPUforwards/99stored-path checks noP1/P2; new exact Fraction
-paths were not retained, so do not claim independent exact rational regeneration.
+Current packages and exact frozen result links are in HANDOFF/active role boards,
+not repeated here. Completed creators/fit phases/installers are exclusive-output
+single-use artifacts: inspect their receipts, NEVER rerun to refresh a timestamp.
+Research-only bans apply to that package, not independent Data/Execution.
+No qualified performance/Paper deployment is inferred from a source test.
 
-Long-history research: the frozen H1CPU48cell creator is also consumed:
-D:/thericher-v2/model-artifacts/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
-Separate research float wrapper reuses pinned native function code with isolated
-numeric globals, NEVER patches production/Paper/risk.48short native1e-12 parity/
-2missing/4fullinvented passes; affordability ambiguity failclosed. Floats and
-predeclared comparison margins are not exact Fraction or actual broker PnL.
-D:/thericher-v2/model-artifacts/research/long-history-float-replay-preparation-20261015-v1/checks.json
-Actual H1 result independently passed23source pins/48vectorized whole-path
-cashflow audits and4failclosed affordability cases, noP1/P2. Its0fit/0API/
-0GPU recipe failed the global primary condition; partial regime survivors
-cannot be relabeled a qualified selected model or Paper-input adoption.
-D:/thericher-v2/model-artifacts/research/spy-qqq-long-history-h1-development-20261015-v1/independent-review/result.json
+Market bytes remain D:/market_data; derived features/weights/research remain
+D:/thericher-v2/model-artifacts, Docker /app/model_artifacts. Keep D:15percent
+free/warn projected20percent. Native/SYN/optimizer/restore/JSON checks precede
+market fitting; finite attempt/active/end caps and failed debits are immutable.
+Author/review/queue wall is not GPU/CPU spend. New campaigns may have new
+reasonable budgets, never label a closed clock refunded or old holdout fresh.
 
-Also CLOSED/consumed (never rerun their creators): long-history3CPU+6GRU fits/
-90cells, all18GRU growth cases positive but0joint-control passes, independent
-noP1/P2/100.0679combinedactive. Positivity is not Alpha/Paper parity.
-D:/thericher-v2/model-artifacts/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
-Chronos2 GPU34postcheckpoint baskets/68tasks/5newmarket forwards/12cells,
-independent noP1/P2/73.4566combinedactive. OriginalCUDApin-memory failure kept;
-its callcountunknown0..5 charged, newCUDA SYN usesCPUdata/GPUmodel. Aggregate
-8known successful forwards/13UPPER, not actual13/old7-cap authority reuse.
-D:/thericher-v2/model-artifacts/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
-Action sidecar contains future_divCash/future_splitFactor on original13,622
-keys, target-only, never features/row filters. Offset0 entry ex-date is not a
-held entitlement. Event-aware cashflow/teacher study is CLOSED3CPU+3CUDAfits/
-126cells; independent141pins/6checkpoint/12loss/126oracles noP1/P2.77GRUepochs,
-9joint-GRU growthpositive,0/6increment checks;96.3739combinedactive. Receivables
-are nominal pretax NONCASH, not broker fees/settled cash/buying power.
-Inherited raw-teacher prose is not the new event-wrapper semantics; use exact
-independent result, never rerun consumed creators or repair attempts.
-D:/thericher-v2/model-artifacts/research/spy-qqq-event-aware-target-development-20261015-v1/independent-review/result.json
-Retained source-local1m data:195,056canonical regular bars/315,772past-only
-30/120-minute keys,251sessions. QQQcomplete; SPYfourmissing/onepartial. Archive
-adjustment/time applicability/publication/PIT/KIS parity unknown. Data rights
-remain private internal scope; no new dataset/Paper eligibility assertion.
-D:/thericher-v2/model-artifacts/data/retained-intraday-source-development-20261015-v1/manifest.json
-QQQ fixed60-minute/30vs120-minute campaign is solely dispatched by Godel;
-separate sixCPU daily-event boosting campaign by Raman. Parent must not duplicate
-their drivers. Source PREP/native checks alone do not prove market fits.
-D:/thericher-v2/model-artifacts/research/qqq-intraday-window-mass-gate-development-20261015-v1
-D:/thericher-v2/model-artifacts/research/spy-qqq-event-target-boosting-development-20261015-v1
-Deep-history8GET/one guarded tokenPOST probe is CONSUMED/closed67checks:
-four2010anchors each100valid2009rows; four2000anchors empty. No account/order/
-live/schedule. Venv redirector can match its own parent in process inventories;
-native exact-chain reproducer and direct-base launch repaired this WITHOUT
-weakening the actor predicate. Old actual actor identity remains unknown.
+Windows native .venv python.exe can redirect through a same-script Python
+parent. It was reproduced in Data and CPU boosting. That parent can falsely
+match a generic actor predicate or exhaust a one-process Windows Job limit.
+A hash/version-bound existing direct interpreter plus explicit trusted module
+paths solved it WITHOUT weakening actor ownership. Prove exact launcher/child
+identity and native resource admission before effects; unknown actors stay
+protected. Do not exclude all Python/UV/ancestors or kill unknown owners.
+D:/thericher-v2/model-artifacts/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/ancestry-observation.json
+D:/thericher-v2/model-artifacts/research/spy-qqq-event-target-boosting-development-20261015-v1/admission-r4/author-verification.json
+
+Cross-OS feature/libm/float32 differences need explicit independent parity scope,
+not silent model changes or a wider outcome-driven tolerance. QQQ1m readback
+verified9EVALforwards/8FIT-INNER pairs; finalGRU120 losses remain attested.
+Cash inferred from NAV/exposure and only retained final-fee totals are NOT
+independently retained intermediate cash/fee curves. Nominal pretax dividend
+receivables never finance buys or prove payment/settlement/net broker PnL.
+
+Mixed-OS token flock/Windows-byte locks alone did not coordinate. New writers
+use canonical atomic-directory exclusion plus legacy same-OS locks. Never
+reclaim by age/reset start mark. Data300second fresh-POST guard is not token
+lifetime or an orchestration wait; snapshot observer's explicit60floor is scoped.
+One valid authenticated client is reused. Existing historical writers are not
+universally upgraded. Cooldowns remain worker next_due, not foreground sleeps.
+
+Deep-history8GET/1POST probe is CLOSED/exhausted; four2010anchors support2009,
+not all512 continuity/exact earliest history. Proposed AAPL2009cursor was NOT
+run because old49pages may cover it. Current Data work is LOCAL canonical reuse/
+calendar diagnosis,0API/credentials/Scheduler, not another capability-call loop.
 D:/thericher-v2/model-artifacts/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
-Never rerun exhausted queries or assume cropped800sessions is a provider floor.
-Proposed older AAPL cursor is unstarted; first inspect retained49page/2007cache.
-Current local-only Data package owns that reuse check, not newAPI/bulk/schedules.
-D:/thericher-v2/model-artifacts/data/spy-qqq-long-history-target-action-fields-20261015-v1/manifest.json
 
-Creators/fits/readers with exclusive outputs are frozen after use. Inspect exact
-saved receipts, not a second invocation. Data raw under M; models/checkpoints/
-research artifacts under A; Docker /app/model_artifacts. Keep D:15 percent free.
-No implicit .env load in research/verification.
-
-Latest independent results:
-A/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
-A/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json
-
-Absolute-utility originalcreator failed,3CPUfits retained; linked math-only
-publication27newcells45controls,0refits,95.1834active/1,645.4028end within180/1,800.
-Only derived mean-log scalar tolerance1e-14; exact othermetrics/NAV/exposure and
-economic criterion unchanged. No qualified alpha/untouched replication/Paper
-adoption. Old ABI/publication failures and clocks stay immutable.
-GPU/CUDA is usable, no permission/runtime hold; no active training allocation.
-
-Token mixed-OS flock/byte locks alone did not coordinate. Current token writers
-need atomic directory exclusion plus same-OS legacy locks; no age-based reclaim
-or timestamp reset. Existing historical writers are not universally upgraded.
-Scoped snapshot60-second issuance floor does not change Data's frozen300 guard.
-
-Last actual marks: realizedgross positive, unrealized/totalmarkedgross negative;
-no net-profit claim. Old task definitions/rollback and all private custody stay.
-Korean-first private Docker monitor remains deferred; reference127.0.0.1:8787
-was not freshly checked. No public service/tunnel or new paid dependency.
-
-History: git show 3dbca52:RUNBOOK.md. Historical commands are retrieval only,
-never a reason to replay a creator or consumed scheduled opportunity.
+Latest owned valuation was gross-only; no fee/settlement/net-profit claim.
+Private UI redesign remains deferred; reference127.0.0.1:8787 not freshly checked.
+No public service/tunnel/paid dependency. Historical commands/full closed-study
+details in Git763bd37/15d71be/62b406e and exact external roots are retrieval only,
+never authority to replay a creator, expired job or unknown request.
