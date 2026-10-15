@@ -29,6 +29,29 @@ PATHS = (
     "execution_control_path",
 )
 REF = "sha256:" + "f" * 64
+PRIVATE_ERROR = "synthetic-private-error-text-must-not-escape"
+TYPED_FAILURES = [
+    (error_type, code, reason)
+    for error_type, reasons in (
+        (daily.KisPaperReadOnlyError, daily._READONLY_REASONS),
+        (daily.canary.KisPaperCanaryError, daily._CANARY_REASONS),
+        (daily.cycle._RecoveryRequired, daily._CYCLE_REASONS),
+    )
+    for code, reason in reasons.items()
+]
+
+
+def opaque_error(error_type, code):
+    class NoErrorText(error_type):
+        def __str__(self):
+            raise AssertionError("exception_text_must_not_be_inspected")
+
+    error = NoErrorText(code)
+    if isinstance(error, (daily.KisPaperReadOnlyError, daily.canary.KisPaperCanaryError)):
+        error.args = (PRIVATE_ERROR,)
+    error.diagnostic = {"body": PRIVATE_ERROR}
+    error.__cause__ = ValueError(PRIVATE_ERROR)
+    return error
 
 
 @pytest.fixture
@@ -418,3 +441,154 @@ def test_no_credentials_model_selection_or_secret_fields_in_source():
     assert "KIS_LIVE" not in source and ".env" not in source
     payload = daily.CurrentDailySessionOutcome("pending", "exact_cycle_advanced").safe_payload()
     assert set(payload) == {"kind", "status", "reason", "limitation"}
+
+
+@pytest.mark.parametrize("error_type,code,reason", TYPED_FAILURES)
+def test_outer_typed_failure_projects_only_exact_allowlisted_reason(
+    session, monkeypatch, error_type, code, reason
+):
+    args, _, loads = session
+    before = (args["state_root"] / daily.budget.BUDGET_FILE).read_bytes()
+    wire_before = len(args["client"].wire)
+
+    def read_failure(*_args):
+        raise opaque_error(error_type, code)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(daily.budget, "_read_json", read_failure)
+        result = daily.run_kis_paper_current_daily_session(**args)
+    assert result.safe_payload() == dict(
+        kind="kis_paper_current_daily_session_v1",
+        status="unavailable",
+        reason=reason,
+        limitation="cycle_status_not_current_inventory_or_net_pnl",
+    )
+    assert PRIVATE_ERROR not in json.dumps(result.safe_payload())
+    assert not loads and len(args["client"].wire) == wire_before
+    assert not (args["state_root"] / daily.POINTER).exists()
+    assert (args["state_root"] / daily.budget.BUDGET_FILE).read_bytes() == before
+
+
+@pytest.mark.parametrize("stage", ["configuration", "retained_context"])
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "unknown_readonly",
+        "unknown_canary",
+        "unknown_cycle",
+        "wrong_family_readonly",
+        "wrong_family_canary",
+        "missing_code",
+        "nonstring_code",
+        "unhashable_code",
+        "string_subclass_code",
+        "raising_code_property",
+        "multiple_cycle_args",
+        "nonstring_cycle_arg",
+        "untyped_readonly_literal",
+        "untyped_cycle_literal",
+    ],
+)
+def test_unknown_or_malformed_outer_error_retains_original_generic(
+    session, monkeypatch, stage, fault
+):
+    args, _, loads = session
+    error = opaque_error(daily.KisPaperReadOnlyError, PRIVATE_ERROR)
+    if fault == "unknown_canary":
+        error = opaque_error(daily.canary.KisPaperCanaryError, PRIVATE_ERROR)
+    elif fault == "unknown_cycle":
+        error = opaque_error(daily.cycle._RecoveryRequired, PRIVATE_ERROR)
+    elif fault == "wrong_family_readonly":
+        error.code = "cycle_book_changed"
+    elif fault == "wrong_family_canary":
+        error = opaque_error(daily.canary.KisPaperCanaryError, "open_orders_response_incomplete")
+    elif fault == "missing_code":
+        del error.code
+    elif fault == "nonstring_code":
+        error.code = None
+    elif fault == "unhashable_code":
+        error.code = {"code": "open_orders_response_incomplete"}
+    elif fault == "string_subclass_code":
+        class HostileString(str):
+            def __hash__(self):
+                raise AssertionError("untrusted_string_subclass_must_not_be_hashed")
+
+        error.code = HostileString("open_orders_response_incomplete")
+    elif fault == "raising_code_property":
+        class BrokenCode(daily.KisPaperReadOnlyError):
+            def __getattribute__(self, name):
+                if name == "code":
+                    raise ValueError(PRIVATE_ERROR)
+                return super().__getattribute__(name)
+
+        error = BrokenCode("open_orders_response_incomplete")
+    elif fault == "multiple_cycle_args":
+        error = opaque_error(daily.cycle._RecoveryRequired, "cycle_book_changed")
+        error.args = ("cycle_book_changed", PRIVATE_ERROR)
+    elif fault == "nonstring_cycle_arg":
+        error = opaque_error(daily.cycle._RecoveryRequired, {"code": "cycle_book_changed"})
+    elif fault == "untyped_readonly_literal":
+        error = opaque_error(ValueError, "open_orders_response_incomplete")
+    elif fault == "untyped_cycle_literal":
+        error = opaque_error(RuntimeError, "cycle_book_changed")
+
+    def failure(*_args):
+        raise error
+
+    with monkeypatch.context() as patch:
+        owner, name = (
+            (daily, "_account") if stage == "configuration" else (daily.budget, "_read_json")
+        )
+        patch.setattr(owner, name, failure)
+        result = daily.run_kis_paper_current_daily_session(**args)
+    assert (result.status, result.reason) == (
+        "unavailable",
+        "session_configuration_invalid"
+        if stage == "configuration"
+        else "retained_context_recovery_required",
+    )
+    assert PRIVATE_ERROR not in json.dumps(result.safe_payload()) and not loads
+
+
+@pytest.mark.parametrize(
+    "error_type,code,reason",
+    [
+        (daily.KisPaperReadOnlyError, "open_orders_response_incomplete",
+         "readonly_open_orders_response_incomplete"),
+        (daily.canary.KisPaperCanaryError, "transport_failure", "canary_transport_failure"),
+        (daily.cycle._RecoveryRequired, "cycle_book_changed", "cycle_book_changed"),
+    ],
+)
+def test_typed_pending_recovery_failure_preserves_journal_before_data_or_alternative_order(
+    session, monkeypatch, error_type, code, reason
+):
+    args = mixed_control(session)
+    args["client"].unknown = True
+    assert daily.run_kis_paper_current_daily_session(**args).status == "pending"
+    pointer = args["state_root"] / daily.POINTER
+    before = pointer.read_bytes()
+    frozen = copy.deepcopy(record(session))
+    native_evidence = {p: p.read_bytes() for p in args["state_root"].rglob("*.json")}
+    before_wire = len(args["client"].wire)
+    before_submits = list(args["client"].submits)
+    args["data_loader"] = fail
+    seen = []
+
+    def recovery_failure(**kwargs):
+        seen.append(kwargs["expected_cycle_ref"])
+        raise opaque_error(error_type, code)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(daily.cycle, "advance_kis_paper_portfolio_cycle", recovery_failure)
+        result = daily.run_kis_paper_current_daily_session(**args)
+    assert (result.status, result.reason) == ("unavailable", reason)
+    assert seen == [frozen["cycle_ref"]]
+    assert pointer.read_bytes() == before
+    assert all(path.read_bytes() == raw for path, raw in native_evidence.items())
+    assert len(args["client"].wire) == before_wire
+    assert args["client"].submits == before_submits
+    assert PRIVATE_ERROR not in json.dumps(result.safe_payload())
+    assert daily.run_kis_paper_current_daily_session(**args).status == "pending"
+    assert record(session) == frozen
+    assert len(args["client"].wire) == before_wire
+    assert args["client"].submits == before_submits

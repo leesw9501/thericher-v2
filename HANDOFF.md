@@ -1,14 +1,21 @@
 # TheRicher v2 Handoff
 
-## Current Reality (2026-10-15 KST)
+## Current Reality (2026-10-16 KST / Oct15 UTC)
 
 ONE company objective: current-nas-owned-model-paper-cycle-v1.
 LATEST13:40UTC model visit failed before submit: exact reader validates1token/
 7GET/0BUY/0SELL/0cancel/0nativelegs. Actual readonly target0 probe reproduced
 all-zero quote date/time. Recovery deployed on SAME Task/re-enabled14:37:42UTC;
-next natural15:05UTC/Oct16 00:05KST, image87697f8e. No new runtime result yet.
-Fresh870serial/16595fullpass22skip/helper0/Ruff/three sampleCompose PASS.
-23:50nightly unchanged/enabled. Do not manually replay or
+15:05 natural correctly processed target0 as no_intent, no substitute.15:09
+natural BUY1; strict15:10 native read proves ONE accepted FULL fill/owned model
+position/zero unknown for that exact request. Company entry/exit loop unfinished.
+Image87697f8e/source474 remains installed. Original shared tenth unchanged.
+14:50nightly failed generic retained_context_recovery_required/1GET/zeroorders.
+Fresh14:56 readonly first open-orders request parsed2xx; original cause UNKNOWN.
+15:01native daily pointer-only/no cycle journal retained; do not replace/reset.
+Tested23reason diagnostics candidate, fresh302serial/16850fullpass22skip/helper0/
+Ruff/three sampleCompose PASS, not yet deployed. Parent checks current custody
+before any proposed exact recovery opportunity. Do not manually replay or
 reset targets/input/policy/identities/bank. No operator decision. Paper delegated;
 never KIS_LIVE_*, real money, public serving, paid commitments or secret output.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -18,8 +25,8 @@ Workdir C:/Users/Public/Documents/thericher-v2. AGENTS.md owns authority.
 
 | Owner | Frozen deployment | Next natural opportunity |
 | --- | --- | --- |
-| NAS model | thericher-kis-paper-current-nas-model-20261015; image87697f8e,474files/manifest13cfe08b,host2fb90e20/config6e5fcc16 | Oct16 00:05KST/Oct15 15:05UTC |
-| Existing daily baseline | thericher-kis-paper-daily-spy-session; image3ccb2250,472public files/470image sources/4d0481cd,drivere586/quiet6d51 | Oct15 23:50KST/14:50UTC |
+| NAS model | Same finite quiet Task/image87697f8e,474files/manifest13cfe08b,host2fb90e20/config6e5fcc16 | Oct15UTC every4minutes; exact15:09 fullfill verified, no manual replay |
+| Existing daily baseline | Same Task/image3ccb2250; Oct15 14:50 failed with zeroorderPOST, pointer retained; diagnostic candidate pending deployment/custody check | Original next Oct16 14:50UTC; no new trigger installed yet |
 | Future accounting83 | r6 accounting-only repair installed, actual result unknown | Oct16 05:25KST/Oct15 20:25UTC |
 
 Both model/daily Tasks were enabled/Ready at Parent's latest source-safe read.
@@ -88,7 +95,13 @@ A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.j
 Oct13 SPY SELL/portfolio BUY accepted, exactly filled/reconciled. Oct14 natural
 23:50 cycle had no target delta/new submit/fill. Latest owned valuation matched
 three holdings; realized GROSS positive, unrealized/total marked GROSS negative.
-Fees/settled cash/net PnL unknown, not zero. Recovered-image runtime unobserved.
+Recovered model15:05 no-input skip and15:09 actual BUY validated by NEW exact
+launch/source/image reader; retained15:10 native ledger7owners17intents/model
+one submit/one acknowledged FULL fill/one owned instrument/no pending unknown.
+This is exact retained linkage, not fresh broker inventory or completed SELL.
+Fees/settled cash/net PnL unknown, not zero.
+A/execution/current-nas-first-visit-firstcause-20261015-v1/recovered-second-visit-native.json
+A/execution/nightly-retained-context-firstcause-20261015-v1/probe-result.json
 A/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
 A/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
 
@@ -100,10 +113,11 @@ A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-insta
 
 ## Research And Data Continuation
 
-Latest continuation contains109 fitted VERSIONS:69CUDA+40CPU, not109architectures.
+Latest continuation contains118 fitted VERSIONS:75CUDA+43CPU, not118architectures.
 Five families below contain39; one retained meta gate and nine NAS versions
 make49; nineCore20/15longNAS/nineHGB/sixpaired-loss/nineLongExperts make97.
-Twelve intraday versions bring97to109. Foundation/SYN are not fits.
+Twelve intraday versions bring97to109; nine252day/21session versions bring118.
+Foundation/SYN are not fits.
 No qualified Alpha/Paper adoption.
 Individual growth-positive cases are not incremental performance qualification.
 
@@ -149,6 +163,7 @@ A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.j
 | MSE-vs-RankNet |CLOSED6CUDA/174epochs/294updates/54cells/0unknown; both8/9growthpositive,RankNetbeatsMSE0/9/primaryfalse. Native train+restore2.543sec, tiny185..255KBfeatures.99.328aggregateactive729.381end, not99secGPUspend.|
 | Long adjusted20 experts |CLOSED3CPUHGB+6CUDA GRU60/Transformer60/132epochs/3552updates/72cells/0unknown. Each6/9growthpositive;0/3primary incremental/0/9all-cost.96.614aggregateactive/76.637end; independent sidecar owns exact scope.|
 | Intraday MTF indicators |CLOSED3CPUHGB+9CUDA GRU30/120/120MTF x3folds,245epochs/5780updates/90cells/0unknown. Each0/9positive quoted growth;primaryfalse.123.670aggregateactive/103.699end; lease/children cleaned, independent check not yet invoked.|
+| Daily252/21session |CLOSED3CPUHGB+6CUDA TCN/patchTransformer/137epochs/5844updates/72cells/0unknown. Each6/9positivegrowth,0/3primary; future-only cashDD correction already frozen.101.199aggregateactive/81.222end, lease/children clean, independent check not yet invoked.|
 
 A/research/spy-qqq-fixed-and-tree-decision-dag-preparation-20261015-v1
 A/data/nas-retained-long-canonical-20261015-v1
@@ -209,7 +224,10 @@ experts used EXACTold62938 input, never silently switched. Newer89723 input
 fed zero-fit monthly12-1/6-1/fixed-blend momentum:45cells27complete18unknown,
 all primary folds UNKNOWN due held marks, not winner dropping. Data owns
 offline exact-gap firstcause, no new API calls. Dirac now prepares reusable
-252day/21session causal patch/indicator input kernel for longer-hold study.
+252day/21session causal patch/indicator input kernel CLOSED28SYN/81440eligible
+keys, consumed by the completed ninefit study. GPU is not permission/environment
+blocked; tiny native jobs finish quickly. Next hypothesis needs meaningful
+selection/action diversity, not additional epochs merely for utilization.
 Kant now
 independently checks six paired-ranking models; Raman nine long experts. No
 broker/credential/GPU allocation for those CPU audits. Dirac MTF adapter remains
@@ -219,6 +237,7 @@ SEC17issuer fundamentals closed source-unavailable on first official map403:
 A/research/liquid-core-adjusted-long-experts-development-20261015-v1/owner-handoff.json
 A/research/etf-intraday-indicator-mtf-preparation-20261015-v1/contract.json
 A/research/etf-intraday-indicator-mtf-development-20261015-v1/owner-handoff.json
+A/research/daily-long-context-21session-development-20261015-v1/owner-handoff.json
 A/research/liquid-core-low-turnover-momentum-20261015-v1
 A/data/sec-liquid-core-companyfacts-20261015-v1/readback.json
 A/research/liquid-core-unit-invariant-open-close-development-20261015-v1/owner-handoff.json

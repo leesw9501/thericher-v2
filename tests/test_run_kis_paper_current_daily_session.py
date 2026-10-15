@@ -5,6 +5,8 @@ from types import SimpleNamespace
 
 import pytest
 
+from thericher_v2.execution import kis_paper_current_daily_session as daily
+
 PATH = Path(__file__).resolve().parents[1] / "scripts/run_kis_paper_current_daily_session.py"
 SPEC = importlib.util.spec_from_file_location("daily_portfolio_host", PATH)
 w = importlib.util.module_from_spec(SPEC)
@@ -215,3 +217,112 @@ def test_partial_failure_never_means_no_submission():
         )
     )
     assert "calls" not in value
+
+
+def test_host_failure_reasons_exactly_match_native_allowlisted_mappings():
+    native = set().union(
+        daily._READONLY_REASONS.values(),
+        daily._CANARY_REASONS.values(),
+        daily._CYCLE_REASONS.values(),
+    )
+    assert w.STATUS_REASONS["unavailable"] == native | {
+        "native_recovery_required", "retained_context_recovery_required",
+        "session_configuration_invalid", "worker_recovery_required",
+    }
+    assert w.SAFE_REASONS == set().union(*w.STATUS_REASONS.values(), {"execution_not_requested"})
+
+
+@pytest.mark.parametrize(
+    "allowed,reason",
+    [
+        (status, reason)
+        for status, reasons in w.STATUS_REASONS.items()
+        for reason in sorted(reasons)
+    ],
+)
+@pytest.mark.parametrize("status", ["complete", "pending", "no_intent", "unavailable", "inert"])
+def test_every_daily_reason_rejects_wrong_status_at_top_and_nested_visit(allowed, reason, status):
+    value = payload()
+    value.update(status=status, reason=reason)
+    if status == allowed:
+        assert w.validate_result(value) == value
+    else:
+        with pytest.raises(ValueError, match="daily_worker_output_invalid"):
+            w.validate_result(value)
+    value = payload()
+    value["visits"] = [dict(
+        kind="kis_paper_current_daily_session_v1", status=status, reason=reason,
+        limitation="cycle_status_not_current_inventory_or_net_pnl",
+    )]
+    if status == allowed:
+        assert w.validate_result(value) == value
+    else:
+        with pytest.raises(ValueError, match="daily_worker_output_invalid"):
+            w.validate_result(value)
+
+
+@pytest.mark.parametrize("location", ["top", "visit"])
+@pytest.mark.parametrize("field", ["status", "reason"])
+@pytest.mark.parametrize("malformed", [None, True, [], {}, "unknown"])
+def test_malformed_daily_status_reason_rejected(location, field, malformed):
+    value = payload()
+    row = dict(
+        kind="kis_paper_current_daily_session_v1", status="unavailable",
+        reason="readonly_open_orders_response_incomplete",
+        limitation="cycle_status_not_current_inventory_or_net_pnl",
+    )
+    if location == "top":
+        value.update(row)
+        value[field] = malformed
+    else:
+        row[field] = malformed
+        value["visits"] = [row]
+    with pytest.raises(ValueError, match="daily_worker_output_invalid"):
+        w.validate_result(value)
+
+
+@pytest.mark.parametrize("reason", sorted(
+    set().union(daily._READONLY_REASONS.values(), daily._CANARY_REASONS.values(),
+                daily._CYCLE_REASONS.values())
+))
+def test_typed_diagnostic_routes_through_unchanged_worker_and_host(reason, monkeypatch):
+    from test_kis_paper_current_daily_session_worker import w as worker
+    from test_kis_paper_portfolio_execute import CONFIG
+
+    transport = SimpleNamespace(
+        calls=dict(token_posts=0, get_requests=0, buy_posts=0, sell_posts=0, cancel_posts=0)
+    )
+    monkeypatch.setattr(worker, "OwnedTransport", lambda **kwargs: transport)
+
+    def denied(*args, **kwargs):
+        pytest.fail("diagnostic_must_not_call_data_or_wire")
+
+    monkeypatch.setattr(worker, "collect_daily_contexts", denied)
+    monkeypatch.setattr(worker.readonly, "KisPaperReadOnlyClient", denied)
+    monkeypatch.setattr(
+        daily, "run_kis_paper_current_daily_session",
+        lambda **kwargs: daily.CurrentDailySessionOutcome("unavailable", reason),
+    )
+    result = worker.run(CONFIG)
+    assert w.validate_result(result) == result
+    assert result["reason"] == reason and result["status"] == "unavailable"
+    assert result["visits"] == [
+        daily.CurrentDailySessionOutcome("unavailable", reason).safe_payload()
+    ]
+    assert set(result["visits"][0]) == {"kind", "status", "reason", "limitation"}
+    assert sum(result["calls"].values()) == result["market_daily_gets"] == 0
+
+
+@pytest.mark.parametrize("location", ["top", "visit"])
+def test_new_reason_never_allows_raw_diagnostic_fields(location):
+    value = payload()
+    row = daily.CurrentDailySessionOutcome(
+        "unavailable", "readonly_open_orders_response_incomplete"
+    ).safe_payload()
+    if location == "top":
+        value.update(row)
+        value["failure_diagnostic"] = {"raw": "never_forward"}
+    else:
+        value["visits"] = [row | {"failure_diagnostic": {"raw": "never_forward"}}]
+    with pytest.raises(ValueError, match="daily_worker_output_invalid"):
+        w.validate_result(value)

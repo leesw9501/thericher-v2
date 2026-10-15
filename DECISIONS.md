@@ -10389,3 +10389,22 @@ outcome-based winner choice, imputation, PIT/finality/economic qualification or
 automatic change to an already-frozen Paper input follows from this policy.
 D:/thericher-v2/model-artifacts/data/nas-retained-long-current-versioned-20261015-v1/handoff.json
 D:/thericher-v2/model-artifacts/review/parallel-engine-target-reset-20261015-v1/current-source-version-claude.json
+
+## 2026-10-15 - Cash Is Not A Zero-Drawdown Gate For New Equity Research
+
+Two frozen long-expert/intraday workers conjunctively required greater growth
+AND no worse drawdown than every control, including cash. Since cash drawdown
+is zero, any strategy drawdown fails that dominance test. Preserve those actual
+failed criteria/results/debits unchanged; this observation neither makes their
+negative returns profitable nor cures source-unit/PIT limitations.
+
+New ordinary risky-equity campaigns compare growth to cash and the aligned
+past-eligible uniform reference, while predeclaring drawdown risk against the
+relevant risky/same-gross reference. Keep cash, growth, drawdown, turnover and
+trade counts visible separately. This is a future specification correction,
+not a retrospective pass, checkpoint/threshold/ranking search, independent
+performance claim or relaxation of broker identity/budget/reconciliation.
+Explicit monotone cash-dominance research may retain its original zero-DD aim.
+Consumer: next daily252context/21session Engine Research contract, frozen before
+new numerical dispatch. Claude supported-with-limits, advisory only.
+D:/thericher-v2/model-artifacts/review/future-research-cash-baseline-20261015-v1/claude.json

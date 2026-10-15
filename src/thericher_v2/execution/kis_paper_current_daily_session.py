@@ -19,13 +19,61 @@ from . import kis_paper_canary as canary
 from . import kis_paper_portfolio_cycle as cycle
 from . import kis_paper_portfolio_execute as execution
 from .kis_paper_session import is_us_equity_regular_session_window
-from .kis_readonly import KIS_PAPER_BASE_URL, KisPaperConfig
+from .kis_readonly import KIS_PAPER_BASE_URL, KisPaperConfig, KisPaperReadOnlyError
 
 POINTER = ".current_daily_portfolio.json"
 _NATIVE_KEYS = frozenset((
     "session_id", "input_ref", "control_ref", "weights_by_symbol",
     "covariance_by_symbol", "target_as_of",
 ))
+_READONLY_REASONS = {
+    "transport_failure": "readonly_transport_failure",
+    "response_invalid": "readonly_response_invalid",
+    "open_orders_rejected": "readonly_open_orders_rejected",
+    "open_orders_response_incomplete": "readonly_open_orders_response_incomplete",
+    "open_orders_response_duplicate": "readonly_open_orders_response_duplicate",
+    "open_orders_pagination_incomplete": "readonly_open_orders_pagination_incomplete",
+    "balance_response_incomplete": "readonly_balance_response_incomplete",
+    "orderable_funds_response_incomplete": "readonly_orderable_funds_response_incomplete",
+    "ccnl_response_incomplete": "readonly_ccnl_response_incomplete",
+}
+_CANARY_REASONS = {
+    "transport_failure": "canary_transport_failure",
+    "auth_rejected": "canary_auth_rejected",
+    "auth_response_invalid": "canary_auth_response_invalid",
+    "access_token_invalid": "canary_access_token_invalid",
+    "token_request_not_due": "canary_token_request_not_due",
+    "request_budget_exhausted": "canary_request_budget_exhausted",
+}
+_CYCLE_REASONS = {
+    "cycle_custody_mismatch": "cycle_custody_mismatch",
+    "portfolio_pending_identity": "portfolio_pending_identity",
+    "cycle_checkpoint_conflict": "cycle_checkpoint_conflict",
+    "cycle_checkpoint_invalid": "cycle_checkpoint_invalid",
+    "cycle_book_missing": "cycle_book_missing",
+    "cycle_book_changed": "cycle_book_changed",
+    "cycle_terminal_unproven": "cycle_terminal_unproven",
+    "cycle_target_unreached": "cycle_target_unreached",
+}
+
+
+def _failure_reason(error):
+    # Only typed local codes or one exact cycle literal may cross this boundary.
+    try:
+        if isinstance(error, KisPaperReadOnlyError):
+            code, reasons = error.code, _READONLY_REASONS
+        elif isinstance(error, canary.KisPaperCanaryError):
+            code, reasons = error.code, _CANARY_REASONS
+        elif isinstance(error, cycle._RecoveryRequired):
+            args = error.args
+            if type(args) is not tuple or len(args) != 1:
+                return None
+            code, reasons = args[0], _CYCLE_REASONS
+        else:
+            return None
+        return reasons.get(code) if type(code) is str else None
+    except Exception:
+        return None
 
 
 @dataclass(frozen=True, repr=False)
@@ -251,7 +299,9 @@ def run_kis_paper_current_daily_session(
                 "pending": "exact_cycle_advanced", "complete": "exact_cycle_complete",
                 "unavailable": "native_recovery_required",
             }[result.status])
-    except Exception:
-        reason = ("retained_context_recovery_required" if pointer is not None
-                  else "session_configuration_invalid")
+    except Exception as error:
+        reason = _failure_reason(error)
+        if reason is None:
+            reason = ("retained_context_recovery_required" if pointer is not None
+                      else "session_configuration_invalid")
         return CurrentDailySessionOutcome("unavailable", reason)

@@ -42,19 +42,41 @@ SAFE_KEYS = frozenset(
         "unknown_effects_not_assumed_zero",
     }
 )
-SAFE_REASONS = frozenset(
-    {
-        "execution_not_requested",
-        "exact_cycle_advanced",
-        "exact_cycle_complete",
-        "already_completed",
-        "current_input_unavailable",
+STATUS_REASONS = {
+    "complete": {"exact_cycle_complete", "already_completed"},
+    "pending": {"exact_cycle_advanced"},
+    "no_intent": {"current_input_unavailable"},
+    "unavailable": {
         "native_recovery_required",
         "retained_context_recovery_required",
         "session_configuration_invalid",
         "worker_recovery_required",
-    }
-)
+        "readonly_transport_failure",
+        "readonly_response_invalid",
+        "readonly_open_orders_rejected",
+        "readonly_open_orders_response_incomplete",
+        "readonly_open_orders_response_duplicate",
+        "readonly_open_orders_pagination_incomplete",
+        "readonly_balance_response_incomplete",
+        "readonly_orderable_funds_response_incomplete",
+        "readonly_ccnl_response_incomplete",
+        "canary_transport_failure",
+        "canary_auth_rejected",
+        "canary_auth_response_invalid",
+        "canary_access_token_invalid",
+        "canary_token_request_not_due",
+        "canary_request_budget_exhausted",
+        "cycle_checkpoint_conflict",
+        "cycle_custody_mismatch",
+        "portfolio_pending_identity",
+        "cycle_checkpoint_invalid",
+        "cycle_book_missing",
+        "cycle_book_changed",
+        "cycle_terminal_unproven",
+        "cycle_target_unreached",
+    },
+}
+SAFE_REASONS = frozenset().union(*STATUS_REASONS.values(), {"execution_not_requested"})
 
 
 def os_environment():
@@ -80,8 +102,10 @@ def validate_result(value):
         type(value) is not dict
         or not set(value) <= SAFE_KEYS
         or value.get("paper_only") is not True
-        or value.get("status") not in {"complete", "pending", "no_intent", "unavailable"}
-        or value.get("reason") not in SAFE_REASONS
+        or type(value.get("status")) is not str
+        or value["status"] not in STATUS_REASONS
+        or type(value.get("reason")) is not str
+        or value["reason"] not in STATUS_REASONS[value["status"]]
     ):
         raise ValueError("daily_worker_output_invalid")
     if (
@@ -107,8 +131,10 @@ def validate_result(value):
                 type(row) is not dict
                 or set(row) != {"kind", "status", "reason", "limitation"}
                 or row["kind"] != "kis_paper_current_daily_session_v1"
-                or row["status"] not in {"complete", "pending", "no_intent", "unavailable"}
-                or row["reason"] not in SAFE_REASONS
+                or type(row["status"]) is not str
+                or row["status"] not in STATUS_REASONS
+                or type(row["reason"]) is not str
+                or row["reason"] not in STATUS_REASONS[row["status"]]
                 or row["limitation"] != "cycle_status_not_current_inventory_or_net_pnl"
             ):
                 raise ValueError("daily_worker_output_invalid")

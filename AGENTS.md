@@ -156,6 +156,14 @@ Compare raw/single-model/fixed-blend/cash, costs, turnover and drawdown. Lower
 exposure alone is not alpha. Model-side research cannot alter deterministic
 broker-risk behavior; Paper permission is independent of a research pass.
 
+For NEW ordinary risky-equity campaigns, cash is a growth/opportunity-cost
+reference, not a requirement of zero strategy drawdown. Predeclare risk against
+the relevant aligned risky/same-gross baseline and report growth, drawdown and
+turnover separately. Cash-dominance studies may explicitly retain zero-DD goals.
+Never retroactively regrade old failures, rerank seen candidates or relax a
+frozen criterion; new targets/contracts remain adaptive development on reused
+data, not independent alpha or a change to deterministic Paper risk.
+
 Public foundation models stay research-isolated. Record exact trusted checkpoint
 release/hash and known/undisclosed pretraining scope. Unknown or overlapping
 target coverage supports only isolated runtime/representation studies, not

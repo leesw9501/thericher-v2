@@ -6,17 +6,26 @@ current-nas-owned-model-paper-cycle-v1: repeatable, recoverable owned KIS Paper
 stock cycle from frozen-five current NAS targets on ONE existing original
 shared initial virtual-cash tenth. Actual runtime closure remains unfinished.
 
-LATEST: first13:40UTC natural visit failed BEFORE submit, validated1token/7GET/
+LATEST:15:09UTC natural BUY1;15:10 strict native read verifies one acknowledged
+FULLfill/one owned model instrument/zero unknown for that request.15:05 recovered
+target0 missing quote as no_intent. Keep remaining ORIGINAL targets/exact recovery
+and Oct21 owned exit. Company outcome unfinished, not a commit/install milestone.
+First13:40UTC natural visit failed BEFORE submit, validated1token/7GET/
 0BUY/0SELL/0cancel/0nativelegs. Scoped actual readonly probes reproduced target0
 all-zero quote date/time. No invented timestamp or freshness bypass. Recovery
 skips only a brand-new unreserved BUY target with that exact missing quote;
 pending recovery/SELL stay mandatory and the next ORIGINAL target is unchanged.
-Same Task redeployed/re-enabled14:37:42UTC, next natural15:05UTC/Oct16 00:05KST.
+Same Task redeployed/re-enabled14:37:42UTC, actual15:05/15:09 evidence below.
 Image87697f8e, source474/manifest13cfe08b/host2fb90e20/config6e5fcc16.
 Fresh870serial/16595fullpass22skip/helper0/Ruff/three sampleCompose PASS.
-No reset/substitution/manual invocation.23:50nightly remains enabled/unchanged.
+No reset/substitution/manual invocation.14:50nightly failed retained-context
+processing/zeroorderPOST, first cause unknown; pointer-only context retained.
+Readonly14:56 first open-orders request succeeded, not original-response replay.
+Diagnostic recovery candidate needs exact current-custody check before deployment;
+no new nightly trigger installed yet, normal schedule/image still unchanged.
 A/execution/current-nas-first-visit-firstcause-20261015-v1
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
+A/execution/current-nas-first-visit-firstcause-20261015-v1/recovered-second-visit-native.json
 
 Workdir C:/Users/Public/Documents/thericher-v2. Follow HANDOFF.md, AGENTS.md,
 RUNBOOK.md and active stateboards. A=D:/thericher-v2/model-artifacts;
@@ -81,9 +90,9 @@ Do not redispatch closed creators; exact evidence/limits live in role boards.
   CLOSED1,197,728bars/1,161,353windows; original strictB preserved. New FirstRate
   fixed20 sample CLOSED77998RTH1m/MTF, actualSep28..Oct9; explicit missing/
   partial buckets, no imputation or Paper-input substitution.
-- Engine/Godel: intraday actual9CUDA+3CPU/245epochs/90cells CLOSED,0positive
-  quoted-growth cells for each expert/primaryfalse. Next longer-hold campaign
-  consumes Strategy252day kernel when ready; freeze science/caps before fits.
+- Engine/Godel: intraday12fits CLOSED; longer daily252/21session actual6CUDA+
+  3CPU/137epochs/72cells CLOSED,6/9growthpositive per expert/0primary. Next
+  source/frozen-output action-diversity diagnosis, not blind architecture grid.
 - Validation/Raman: independent nine long-adjusted experts/72cells, CPU only.
 - Validation/Kant: independent six paired MSE/RankNet models/54cells, CPU only.
   Core20 independent72cashflows passed, separate
@@ -91,14 +100,15 @@ Do not redispatch closed creators; exact evidence/limits live in role boards.
   evidenced2.13; no version-cause claim or company/Paper hold.
 - Invoked Infra/Hubble: finite visible-console metadata sample across natural
   nightly/model startups; no actual Task/API invocation or unrelated-app edits.
-- Strategy/Dirac: monthly replay CLOSED45cells27complete18unknown, primaryUNKNOWN
-  from held marks. Data owns offline exact-gap diagnosis. Now implements pure
-  daily252context/21session feature/patch adapter, no labels/fits/GPU.
+- Strategy/Dirac: monthly45cells27complete18unknown CLOSED, primaryUNKNOWN from
+  held marks.252context kernel consumed/released. Data exact13 invalid OHLC gaps
+  diagnosed, finite recapture owns due windows; no old input/study/Paper switch.
 
-Latest closed fit versions109=69CUDA+40CPU, not architectures: new9HGB/sixpaired-
+Latest closed fit versions118=75CUDA+43CPU, not architectures: new9HGB/sixpaired-
 loss/ninelongadjusted experts all completed. Longadjusted3CPU+6CUDA/132epochs/
 3552updates/72cells/0unknown,0primary; independent check dispatched. Intraday12
-fits/245epochs/5780updates/90cells completed; not an environment/permission hold.
+fits/245epochs/5780updates/90cells completed; nine252day versions added. Not an
+environment/permission hold. Existing positive growth is not independent alpha.
 Foundation/reader/SYN are not fits. Exact role boards own detailed current facts.
 No qualified Alpha. Source/cost/current-listing/PIT limits constrain claims,
 not independent exploratory work or approved Paper permission.
