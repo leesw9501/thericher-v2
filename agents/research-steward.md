@@ -12,7 +12,7 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 | --- | --- |
 | GPU |OOFfusion CLOSED2CUDA+4CPU/69epochs/283updates/90cells; native GPU2.834sec, lease clean. No ready numerical GPU owner, no environment/permission hold or dummy load.|
 | Next depth |Fixed SPY monthly gate CLOSED66cells/0primary; rejectadoption. No new GPUfit ready. Avoid dummyepochs; pipeline causal-target/risk hypotheses rather than more blind architectures.|
-| CPU research |Godel new trade-and-close metric45cell preparation,0fits/GPU; priorconditional45 stayed27/18unknown. NextRAM6GiB explicit/nativeadmissionchecked; old6vs4 deviation retained. LongExpert/patch parityP2 unchanged masks.|
+| CPU research |New trade-and-close45cells CLOSED42conditionalcomplete/3unknown; independent45/68496NAVpoint check PASS/0fits/GPU, CPU2RAM4 verified/released. Prior27/18/full-OPEN metric and6vs4RAMfinding unchanged; producer6GiB verified.|
 | Data |Adjusted20 recovery CLOSED89723bars/87743windows, collectors released13:23:29UTC before Paper. SECmap403closed1GET/0retry/no dataset. No GPU.|
 | Strategy |LongNAS independent687pins/108cells PASSED,0restored model calls. Dirac completed MTFcausal feature adapter/420cache arrays/0fits. Descartes quiet tests/actual receipt CLOSED, startup visibility unknown.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|

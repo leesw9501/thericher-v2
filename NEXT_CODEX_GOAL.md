@@ -33,7 +33,13 @@ Native terminal-incomplete/reconciliation fix and bounded12visit worker are
 INSTALLED as4fd7 on SAME Task, ONE17:38UTC natural technical continuation;
 normal14:50 and consumed16:30 triggers preserved.507serial/16941fullpasses22skip/
 helper0/Ruff/three Compose,135external+2profile checks. No runtime success inferred.
+Actual17:38 validated no_intent/terminal_cycle_incomplete,1token6GETzeroorders;
+corrected native reader proves both acceptedSELLs FULL, third unattempted expired,
+all27global intents terminal/zero unclosed/no buy reservation. This closes the
+technical recovery, NOT target success or the model's unfinished Oct21 exit.
 A/execution/nightly-terminal-incomplete-deployment-20261016-v1/parent-installed.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/validated-after.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/native-reader/parent-native-outcomes.json
 A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native-outcomes.json
 A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
 A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
@@ -107,16 +113,20 @@ Do not redispatch closed creators; exact evidence/limits live in role boards.
   partial buckets, no imputation or Paper-input substitution.
 - Engine/Godel: OOFfusion six meta fits CLOSED,90cells/familyfalse/zero new base
   fits. Monthly-regime66cells/0primary CLOSED/independentPASS; rejectfixedgate.
-  New conditionalmonthly preparation uses explicit disputedcloseview/strict
-  OPENs; no missingOPEN imputation, old study regrade or Paper switch.
+  NEW trade-and-close sampling45cells42conditionalcomplete/3unknown CLOSED;
+  old27/18 study/full-OPEN DD unchanged. Missing actualtradeOPEN not imputed,
+  affected primary unqualified; no Paper switch.
 - Validation/Raman: meta6CPUrestore/90cells42750curves PASS, zeroTop5change.
+  Independent new45cell trade-and-close/68496NAVpoints PASS/noP1P2 in scope;
+  reader CPU2RAM4 verified/released, conditional limits unchanged.
 - Validation/Kant: paired MSE/RankNet sixEVAL/54cells PASS/released.
   Core20 independent72cashflows passed, separate
   f3GRU CPU/CUDA parityP2 unresolved. Actual old command was Torch2.7, not
   evidenced2.13; no version-cause claim or company/Paper hold.
-- Invoked Execution/Hubble: native portfolio/daily terminal-incomplete recovery
-  plus focused tests. Parentownsworker/host/fullQA/Git/newdeployment. Finite
-  16:30startup2893samples0newconsoles, no Task/API invocation for that sample.
+- Invoked Execution/Hubble: native recovery deployed/runtimeclosed. Three actual
+  startup windows total11514samples/zero new consoles, same-desktop20ms limits.
+  New external readonly valuation diagnostics prepare categorical phase/counters;
+  first actual readonly visit UNKNOWN, no blind retry/zero-API inference.
 - Strategy/Dirac: pure SMA10 monthly gate READY1052rows/55baskets41ON14OFF/
   0UNKNOWN,23SYN+55scalar checks. Separate monthly momentum45cells remains
   27complete18unknown. Data recapture8unchangedinvalid/0repair CLOSED,

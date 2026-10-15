@@ -33,6 +33,16 @@ samegate uniform/matched-exposure controls, adaptive DEV only, no Paper change.
 A/strategy-research/monthly-regime-gate-preparation-20261016-v1/SAFE_READY.json
 A/review/monthly-regime-oof-composition-20261016-v1/r1/claude.json
 
+Trade-and-close pure sampling kernel consumed: scheduledtradeOPEN before/after
+costs, allCLOSEs and finalOPEN liquidation, never close-as-OPEN imputation.
+20SYN/30Fraction subset checks; Engine new45cells42conditionalcomplete/3unknown.
+27oldknown terminalcashflows unchanged; conditionalDD is a different sampled
+metric and may miss overnight/nontradingOPEN losses. Not old full-OPEN regrade,
+economicprofit/Alpha or Paper adoption. Kernel actor released; independent reader
+owns its own scope, not another new strategy search.
+A/strategy-research/monthly-trade-close-sampling-preparation-20261016-v1/SAFE_READY.json
+A/research/monthly-trade-close-development-20261016-v1/owner-handoff.json
+
 ## Cached Adjustment Interpretation Closed
 
 I=A/data/kis-adjustment-cached-interpretation-20261015-v1.

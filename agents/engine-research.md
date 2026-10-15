@@ -154,6 +154,19 @@ caps claim/rerun. Old45cell27/18 and source unchanged, allaffectedprimaries
 unqualified. NEXT separately frozen trade-and-close sampling kernel/experiment,
 not old full-OPEN DD regrade: cash/quantity needOPEN at trades, not extra marks;
 missing actualtrade/finalOPEN remainsunknown. Same new samplinggrid allcontrols.
+NEW trade-and-close sampling CLOSED45cells42conditionalcomplete/3unknown,
+20SYN/30Fractionchecks/68496NAVpoints;27oldknown terminalgrowth/fees/turnover
+bitexact. Required f2uniform MSFT2017-07-03 tradeOPEN missing at3costs remains
+UNKNOWN. New conditionalDD omits nontradingOPEN excursions; no full-OPEN DD,
+economicprofit, qualifiedAlpha or Paper adoption claim.17.277active/987.919end,
+actual6GiB admission verified, source/children clean,0fits/forwards/GPU.
+Independent review CLOSED45cells/68496NAVpoints within1e-12/27oldcomparators
+bitexact/13flags retained;20SYN/30Fraction/15numericpairs, no actionableP1P2.
+15.03active/307.01end within120/1200, actualCPU2RAM4/networknone/RO;0fits/
+forwards/GPU/API, source/cleanup clean. Conditional metrics, old failure and
+unqualified primaries unchanged; no model replay/refit.
+A/research/monthly-trade-close-development-20261016-v1/owner-handoff.json
+A/research/monthly-trade-close-development-20261016-v1/independent-review/result.json
 A/research/monthly-disputed-provider-close-development-20261016-v1/owner-handoff.json
 A/research/monthly-disputed-provider-close-development-20261016-v1/resource-constraint-finding.json
 A/review/monthly-trade-close-sampling-20261016-v1/claude.json

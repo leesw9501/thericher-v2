@@ -28,7 +28,11 @@ seed. Whole cycle unfinished. Old dba reader omitted SELL embedded in cycle.json
 and falsely selected zero current intents; its zero counts are NOT outcome proof.
 New native expiry/reconciliation repair4fd7 IS INSTALLED on same Task with ONE
 17:38UTC technical continuation; original normal nextOct16 14:50UTC and consumed
-16:30trigger preserved. Actual17:38 result not yet observed. Original
+16:30trigger preserved. Actual17:38 bound result is no_intent/
+terminal_cycle_incomplete:1token/6GET/zeroorders. Corrected17:39:48 native
+reader proves BOTH accepted SELLs fully filled, third never-attempted seed
+expired; all27global intents terminal/zero unclosed/no buy reservation. This
+is incomplete target execution, NOT a successful rebalance. Original
 worker's four advances can exhaust before three legs settle within five-minute
 plan validity. Preserve exact accepted identities, no expiry renewal/bank reset.
 Fresh507serial/16941fullpass22skip/379.62sec/helper0/Ruff/three sampleCompose
@@ -45,7 +49,7 @@ Workdir C:/Users/Public/Documents/thericher-v2. AGENTS.md owns authority.
 | Owner | Frozen deployment | Next natural opportunity |
 | --- | --- | --- |
 | NAS model | Same finite quiet Task/image87697f8e,474files/manifest13cfe08b,host2fb90e20/config6e5fcc16 | Eight exact retained FULLfills/zero unknown; hold until owned exit, no manual replay |
-| Existing daily baseline | Same Task/new4fd7fdd2 image,473files; original14:50 fault unknown, pointer retained | ONE Oct15 17:38UTC technical continuation; original next Oct16 14:50UTC/consumed16:30 preserved |
+| Existing daily baseline | Same Task/new4fd7fdd2 image,473files;17:38 exact recovery closed2FULLSELLs/thirdexpired,27globalterminal | Next normal Oct16 14:50UTC; incomplete targets preserved, no replay/reset |
 | Future accounting83 | r6 accounting-only repair installed, actual result unknown | Oct16 05:25KST/Oct15 20:25UTC |
 
 Both model/daily Tasks were enabled/Ready at Parent's latest source-safe read.
@@ -65,12 +69,25 @@ A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native
 Worker/host12-advance/source-native recovery has507serial/16941fullpasses and
 135external+2finalprofile tests. Independent archive-lock P2 fixed+two native
 fault-injection cases.4fd7 exact473sources/image/default-inert proof installed,
-no manual Task invocation. One finite16:30 console window:2893samples/zero new consoles,
-plus earlier5718. Same-desktop20ms limits, not a whole-PC guarantee.
+no manual Task invocation. Actual17:38 startup2903samples/zero new consoles,
+plus16:30's2893 and earlier5718:11514total. Same-desktop20ms limits, not a
+whole-PC guarantee. Existing visible unrelated/unattributed windows were not killed.
 A/infra/nightly-recovery-window-attribution-20261016-v1/result.json
+A/infra/nightly-terminal-window-attribution-20261016-v1/result.json
 A/verification/nightly-terminal-incomplete-20261016-v1/authority.json
 A/execution/nightly-terminal-incomplete-deployment-20261016-v1/parent-installed.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/validated-after.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/native-reader/parent-native-outcomes.json
 A/review/native-nightly-recovery-patch-20261016-v1/review.json
+
+One actual readonly model valuation r1 returned UNKNOWN in1.95hostseconds;
+cleanup proved its exact container absent and original model/daily Task Enabled
+states restored. No net/gross profit claim or zero-API inference. Timing floor,
+busy gate, model-specific preflight and authentication remain possible, not
+proved causes. New external diagnostic preparation adds categorical phase/
+request counters before ONE further bounded visit, not blind repeated retries.
+A/execution/current-nas-fresh-valuation-runtime-20261016-v1/runs/e4087cae942b431b963174caa7b4d506/receipt.json
+A/execution/current-nas-fresh-valuation-runtime-20261016-v1/parent-admission-r1/restoration.json
 
 Read-only retained model sample: active pointer/zero plans/intents/submits/fills/
 pending at sample, private bytes unchanged. OTHER future83Recover Task was
@@ -150,6 +167,13 @@ A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-insta
 ## Research And Data Continuation
 
 Latest continuation contains124 fitted VERSIONS:77CUDA+47CPU, not124architectures.
+Latest zero-fit trade-and-close monthly replay45cells42conditionalcomplete/
+3unknown; independent45/68496NAVpoints/27oldterminalcomparators PASS/noP1P2
+in checked scope. All13disputed-closeflags retained; remaining actualtradeOPEN
+missing, no imputation. New sampledDD can miss omitted nontradingOPEN losses;
+not old full-OPEN regrade, independentAlpha or Paper adoption. Producer6GiB and
+reader4GiB actually verified; old6vs4deviation/27complete18unknown unchanged.
+A/research/monthly-trade-close-development-20261016-v1/independent-review/result.json
 Five families below contain39; one retained meta gate and nine NAS versions
 make49; nineCore20/15longNAS/nineHGB/sixpaired-loss/nineLongExperts make97.
 Twelve intraday versions bring97to109; nine252day/21session versions bring118;

@@ -53,11 +53,16 @@ reconciliation/cancellation if expired; unattempted expiry needs positive native
 proof, not renewal. Allterminal-but-notFULL is terminal-incomplete, never target
 success. Future fresh-different daily input only after exact closure/owned book
 checks, not another pending identity. v2terminal_state incomplete keeps
-completedFalse; v1readable. Actual17:38 runtime closure not yet observed.
+completedFalse; v1readable. Actual17:38 bound no_intent/terminal_cycle_incomplete,
+1token6GETzeroorders. Corrected17:39:48 native reader proves2FULLSELLs and
+third unattemptedexpired, all27terminal/zero unclosed/no buy reservation.
+Technical recovery closed; incomplete targets are NOT a successful rebalance.
 Original next normalOct16 14:50UTC preserved; no manual Task invocation.
 A/review/portfolio-terminal-incomplete-recovery-20261016-v1/claude.json
 A/verification/nightly-terminal-incomplete-20261016-v1/authority.json
 A/execution/nightly-terminal-incomplete-deployment-20261016-v1/parent-installed.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/validated-after.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/native-reader/parent-native-outcomes.json
 
 Model-scoped marked gross sidecar31cases+5subtests/Ruff passes, but actual
 numeric-price pointer/account-observer chain not established; no private reads
@@ -66,11 +71,25 @@ or quote calls. Actual8model positions' gross/net PnL remain UNKNOWN, not zero.
 completion. This missing-input limit is not a Paper/company gate.
 A/execution/current-nas-owned-model-valuation-20261016-v1/result.json
 
+Later r5 Linux worker SYN passed4complete cases with9global positions/8model
+positions and independent per-owner cost/quantity proof. Model-scoped accounting
+does not require unrelated owner's historical cost to be complete; global
+quantity/budget/reconciliation still must match. This is not order/cash authority.
+Actual fresh valuation r1 returned UNKNOWN in1.95hostseconds, no counters/phase;
+token timing/busy exclusion/model preflight/auth possible, not established.
+Exact container absent; both previously enabled model/daily Tasks restored.
+Prepare categorical diagnostics before at mostONE more read-only visit; never
+print values/private errors or infer zeroAPI/netprofit from the generic result.
+A/execution/current-nas-owned-model-fresh-valuation-preparation-20261016-v1/r5/result.json
+A/execution/current-nas-fresh-valuation-runtime-20261016-v1/runs/e4087cae942b431b963174caa7b4d506/receipt.json
+
 Latest quiet-ops repair: seven legacy Data/readonly observer Actions migrated
 to pinned9fe9750c pythonw/no-console wrapper. Original argv/cwd and ALL other
 XML preserved; this board's22:40/23:50 order Actions unchanged. NativePS/cmd/uv
 window/exit checks linked PASS. Natural14:50/15:05 startups:2863+2855samples,
 0newvisibleconsoles/0unclassified, finite same-desktop20ms limitation only.
+Later16:30/17:38 added2893+2903zero-new-console samples:11514total, not a
+whole-PC guarantee. Existing unattributed visible windows were preserved.
 No manual task/API/order invocation for this repair; no broker-success claim.
 A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
 
@@ -78,7 +97,7 @@ A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
 
 | Owner | Current evidence | Next action |
 | --- | --- | --- |
-| Existing nightly | Same Task/newfc9b1c2b, positive-absence refresh installed; original14:50cause unknown. | ONE Oct15 16:30UTC natural recovery; original normalOct16 14:50UTC remains. |
+| Existing nightly | Same Task/new4fd7fdd2;17:38 exact recovery2FULLSELLs/thirdexpired/all27terminal. Original14:50cause unknown. | Next normalOct16 14:50UTC; incomplete target state preserved. |
 | Current NAS model | Same quiet finite Task/image87697f8e/474sources/manifest13cfe08b/config6e5fcc16. EightFULLfills/zero unknown retained. | Hold/exact recovery at existing4minute slots; owned exit fromOct21OPEN, no substitute. |
 | Future accounting83 | r6 accounting-only repair installed, other six Actions and oldindex2/claims retained. Runtime unknown, not replayed. | Oct15 20:25UTC/Oct16 05:25KST. Goal83 exitOct17 04:50/05:00KST. |
 | Goal97 owner | Separately owned original plan/history/source retained. Empty-registration runtime unproved; no established cross-policy adoption bug. | EntryOct19 22:30/22:40KST; exitOct24 04:50/05:00KST. Do not invoke/replace/adopt. |

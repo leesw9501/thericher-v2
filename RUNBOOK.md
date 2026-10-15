@@ -29,7 +29,10 @@ Diagnostic-only999962ab was NEVER installed. New recoveryfc9b1c2b IS installed;
 expired exact reconciliation/cancellation and positively never-sent expiry,
 v2terminal_state incomplete is NOT completed/target success. Twelve bounded
 native advances/soft30sec16requestmargin; original280s/128calls/3order/3cancel/
-1token bounds unchanged.17:38 result pending. No expiry/input/bank reset.
+1token bounds unchanged. Actual17:38 source-bound result no_intent/
+terminal_cycle_incomplete,1token6GETzeroorders. Native17:39:48 read proves
+two FULLSELLs/thirdneverattemptedexpired/all27terminal/zero unclosed/no buy
+reservation. Targets were incomplete, not successful. No expiry/input/bank reset.
 Neither15:30/15:50/16:20 trigger was installed.
 A/execution/nightly-context-exact-recovery-deployment-20261016-v1/ready-parent.json
 A/execution/nightly-retained-context-firstcause-20261015-v1/custody-comparison.json
@@ -52,6 +55,8 @@ network-none/read-only /app/private, quiescent owners; NEVER observe(). It reads
 SELL embedded in cycle.json plus separateBUY; olddba missedSELL and falsely
 selectedzero intents. Preserveoldreader/evidence, do not reuseits zero counts.
 A/execution/nightly-terminal-incomplete-deployment-20261016-v1/prepared.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/validated-after.json
+A/execution/nightly-terminal-incomplete-deployment-20261016-v1/native-reader/parent-native-outcomes.json
 A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native-outcomes.json
 Old3ccb source/raw natural cause retained. Parent's own synthetic probe created
 15public .pyc files there; exact source-matched15 were archived/hash-verified/
@@ -60,6 +65,17 @@ Use python -B/PYTHONDONTWRITEBYTECODE for ALL frozen source imports.
 A/execution/nightly-retained-context-firstcause-20261015-v1/own-probe-bytecode-20261016-v1/after.json
 
 ### New model,22:40 KST
+
+Fresh valuation r1 was one explicitly admitted READONLY visit, not a model
+strategy invocation. It returned generic UNKNOWN; no cause or API count can be
+inferred. Its exact container is absent; model/daily Enabled states restored.
+Never rerun --dispatch blindly. A new diagnostic runtime must expose finite
+categorical phase/counters and retain1auth40GETzero-retry/90second limits,
+RO private mount and no submit capability. Parent verifies native reconciliation
+and holds/restores quiescent conflicting owners for any one visit. The old model
+launcher does not recognize the valuation label. Token timing is not token
+lifetime; do not reset/reclaim gate state or change the Data300second contract.
+A/execution/current-nas-fresh-valuation-runtime-20261016-v1/runs/e4087cae942b431b963174caa7b4d506/receipt.json
 
 Task: thericher-kis-paper-current-nas-model-20261015.
 First13:40UTC visit failed pre-submit; actual read-only target0 probe reproduced

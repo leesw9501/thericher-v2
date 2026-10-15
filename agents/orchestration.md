@@ -8,35 +8,35 @@ No operator decision identified; neverKIS_LIVE_* or real money/public/paid work.
 
 | Resource | Actual owner/status |
 | --- | --- |
-| Integration/Git |Parent. Latest material QA1345/e324d614,552serial16888fullpass22skip/helper0/Ruff3Compose. Eight modelFULLfills verified, company entry/exit unfinished.|
+| Integration/Git |Parent. Latest material QA1346/0b60aab2,507serial16941fullpass22skip/helper0/Ruff3Compose. Eight modelFULLfills verified, company entry/exit unfinished.|
 | NAS Paper |Same finite Task/image87697f8e.15:57:57 native confirms8FULLfills/8owned/0unknown/no pending. Bound dispatch hold/await_declared_exit/zeroAPI; exitfromOct21OPEN.|
-| Nightly baseline |16:30exactfc9run:2SELLstarts/2ack/1retainedFULL/thirdpreview. New4fd7 repair INSTALLED on sameTask, ONE17:38UTC continuation plus originalnormal/consumed16:30; runtime result not yet observed.|
+| Nightly baseline |17:38exact4fd7run no_intent/terminal_cycle_incomplete,1token6GETzeroorders. Native2FULLSELLs/thirdexpired/all27terminal/zero unclosed/no buy reservation; normal nextOct16 14:50UTC.|
 | Future accounting83 |r6 installed, nextOct15 20:25UTC/Oct16 05:25KST; actualunknown, oldindex2/claims/basis/otherActions unchanged.|
 | Data/released |13source OHLC defects diagnosed; scoped60floor1POST8GETrecapture stillinvalid/3156anchors/0repair/5unattempted, CLOSED.0retry/no more calls, existing inputs unchanged.|
-| Validation/Raman |Sixmeta CPUrestore/90cells42750curves passed, zeroTop5change. Earlier patch3/3scoreparityP2 remains with unchanged masks. Released.|
-| Engine/Godel |Regime66cells CLOSED/independentPASS, primary0/2. Conditional45 CLOSED27/18unknown with6vs4GiBresourcefinding. NEWtrade-and-close metric45cell prep consumesDirac20SYN/30Fraction proof; realtradeOPENmissingstaysunknown.|
+| Validation/Raman |Independent newtrade-close45cells/68496NAVpoints/27oldterminalcomparators PASS/noP1P2 in scope, actualCPU2RAM4/released. Meta6CPUrestore/90cells42750curves passed; upstream patchP2 remains scoped.|
+| Engine/Godel |Newtrade-close45cells CLOSED42conditionalcomplete/3unknown,27oldterminalcosts exact; actual6GiB verified/0fits/GPU. Old27/18/full-OPEN metric and6vs4RAMfinding unchanged; actor released.|
 | Validation/Kant |PairedRankNet54cells/sixEVAL/12losses PASS scoped; actor released. LongExperts f1/f3Transformer scoreparityP2 remains scoped, zero changedmasks.|
 | GPU/Steward |OOF actual GPU2.834sec/lease released. No ready GPU numerical campaign during0fit study; no permission/runtime hold or dummy work.|
-| Invoked roles |Hubble releasednative/deployment; ownsfinite17:38consolemetadata sample. Parentintegration/Git/actualresult. Ramanreadonlygrosshost READY/fourfullSYN13host checks/verifiedimage, actualadmissionnotyet. DescartesreviewP2fixedandtested; Dirac/McClintockkernels/data released.|
+| Invoked roles |Hubble prepares new categorical readonlyvaluationdiagnostics, no actualcalls/private reads. Parent owns any admitted visit/Git. First actual valuation UNKNOWN, cleanup/restoration verified. Other creators released.|
 | Independent Core20 |72cashflows/196968values/144Fraction checks PASS. Nativef3GRU P2 remains,actualoldTorch2.7 not2.13; no runtime-cause claim. Aristotle released.|
-| Verification |NEW1346source0b60aab2:507serial/fresh clean8 full16941pass22skip/379.62sec/helper0/Ruff/3Compose PASS; no exclusions. IndependentP2archive-lock path fixed+2faultinjectioncases. Newdeployment stillpreparing; installedfc9 keepsold1345/e324authority.|
+| Verification |1346source0b60aab2:507serial/fresh clean8 full16941pass22skip/379.62sec/helper0/Ruff/3Compose PASS; no exclusions. IndependentP2archive-lock fixed+2native faultinjectioncases.4fd7 installed/runtimeclosed.|
 
 ## Throughput Review / Improvement
 
-Latest17:27review: model8exactFULLfills retained without replacing targets/capital.
-16:30actualbaselineadvanced2acceptedSELLs/1FULL; oldoffline reader's wrong
-sell.json path underreported them. Corrected27SYNnative reader validates embedded
-SELL. Four-advance worker vs three-leg5minuteTTL is a concrete throughput flaw;
-Parent's bounded12advance/30sec16requestreserve has237focusedpasses, not yet
-deployed/full-authority. Hubble exactreconcile/cancel/expiredseed/terminal-incomplete
-nativefix continues; do not schedule known-doomed thirdexpiry renewal. CPU
-conditionalclose-only research stays independent; no ready GPUfit is blocked.
-FullParentQA now16941passes507serial/22skip; new4fd7 Action+ONE17:38UTC
-continuation installed, exactXMLverified/model87697unchanged.17:38 avoids
-observerphase3mod4 token coincidence without changing floors/pacing.
-Model-only marked gross
-four fullSYN cases pass; Raman readonlyhost READY/verifiedimage, real account
-marks wait for native current-cycle reconciliation, not a human permission.
+Latest17:53review: model8exactFULLfills retained without replacing targets/capital.
+Actual17:38 nightly reconciliation closed2FULLSELLs/thirdexpired/all27terminal,
+zero unclosed/no buy reservation. This fixes technical recovery, not incomplete
+target success. Four-advance/TTL flaw repaired with12bounded native advances;
+full16941passes507serial/22skip and actual4fd7 deployment are evidenced.
+New conditionaltrade-close45cells42/3 closed; independent45/68496NAVpoint
+reader PASS/noP1P2 in scope, actualRAM4 verified/released. Legacy installer source
+still uses console Actions; Descartes owns source-only regression review before
+any edit, not a current Task reinstall or a whole-PC attribution claim.
+First readonly valuation UNKNOWN in1.95sec: neither token collision nor zeroAPI
+is proven. Add finite categorical phases/counters before ONE new admitted visit;
+retain original r1 failure/debits, no blind retry or timestamp reset. No ready
+GPUfit is blocked; tiny previousmeta fits took2.834nativeGPU seconds.
+Model-only gross four fullSYN cases pass, but actual model marks remain unknown.
 Its label is NOT among old model launcher's two known labels; Parent must hold
 verified quiescent conflicting order Tasks for its one actual readonly visit,
 then restore exact prior Enabled states. A boolean admission is not that proof.
@@ -46,7 +46,8 @@ was source-proven with4min producers; bounded1POST60calibrationworked, but
 original8bad OHLC rows remainbad. Close those exactqueries, not fullmarketData.
 One reversible improvement: learn cross-sectional allocation from already
 OOF expert ranks instead of refitting more absolute-return/sign-mask experts.
-No startupconsoles in bothfiniteactualPaperwindows; not wholePC proof.
+No startupconsoles in three actualPaperwindows/11514samples; same-desktop20ms,
+not wholePC proof. Old one-shot appfollowup deleted, no replacement chain.
 
 Earlier actual Paper pre-submit fault had priority; scoped all-zero
 quote diagnosis/recovery deployed without signal/identity/capital change. New
