@@ -80,14 +80,32 @@ A/execution/nightly-terminal-incomplete-deployment-20261016-v1/validated-after.j
 A/execution/nightly-terminal-incomplete-deployment-20261016-v1/native-reader/parent-native-outcomes.json
 A/review/native-nightly-recovery-patch-20261016-v1/review.json
 
-One actual readonly model valuation r1 returned UNKNOWN in1.95hostseconds;
-cleanup proved its exact container absent and original model/daily Task Enabled
-states restored. No net/gross profit claim or zero-API inference. Timing floor,
-busy gate, model-specific preflight and authentication remain possible, not
-proved causes. New external diagnostic preparation adds categorical phase/
-request counters before ONE further bounded visit, not blind repeated retries.
+Readonly model valuation r1 remains UNKNOWN in1.95hostseconds; its cause/API
+count were not inferred. Separate diagnostic r2's ONE admitted readonly visit
+SUCCEEDED Oct16 03:09:18KST/Oct15 18:09:18UTC:8owners/8marks, global owned
+quantities match, model accounting complete, indicative marked GROSS NEGATIVE.
+This is sequential/non-atomic current valuation, not realized loss or netprofit.
+1token/21GET opener invocations,44.14hostseconds,zero submit capability;
+fees/settledcash/netPnL UNKNOWN. Exact container absent and original model/daily
+Enabled states restored. No order, manual Task invocation, new capital or
+original-basis reset. r1 cause remains unknown; do not infer timing from r2 success.
 A/execution/current-nas-fresh-valuation-runtime-20261016-v1/runs/e4087cae942b431b963174caa7b4d506/receipt.json
 A/execution/current-nas-fresh-valuation-runtime-20261016-v1/parent-admission-r1/restoration.json
+A/execution/current-nas-fresh-valuation-diagnostic-runtime-20261016-v1/runs/3a6088a087524648bffffaf583023df9/receipt.json
+A/execution/current-nas-fresh-valuation-parent-visit-20261016-v2/6e135980c94f4b348dd286626ad24b3f/restoration.json
+
+Future-reinstall regression found: legacy installer could overwrite quiet
+Actions with direct console launch. Scoped installer/test repair now reuses
+the existing frozen/hash-bound helper across all3canonical branches. No current
+Task reinstallation; unchanged argv/nullcwd/triggers/settings/owner guards,
+nonpublishing preview and no visible fallback.35focused tests pass; fresh clean8
+full16960pass22skip/16982collected/367.376sec/helperexit0, Ruff/three sample-env
+Compose PASS,1346sources/e05812dd. Independent source review noP1P2; Claude
+supported-with-limits.15second development-time sample715/zero newconsoles,
+same-desktop20ms limit, not proof of every intermittent popup's origin.
+A/review/quiet-installer-reinstall-20261016-v1/r2/claude.json
+A/verification/quiet-schedule-installer-20261016-v1/authority.json
+A/infra/quiet-installer-regression-review-20261016-v1/development-window-sample.json
 
 Read-only retained model sample: active pointer/zero plans/intents/submits/fills/
 pending at sample, private bytes unchanged. OTHER future83Recover Task was
@@ -167,6 +185,10 @@ A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-insta
 ## Research And Data Continuation
 
 Latest continuation contains124 fitted VERSIONS:77CUDA+47CPU, not124architectures.
+Latest18:00hardware sample:RTX4090/24564MiB,1684MiBused/2percent utilization.
+GPU/runtime authority works; last2metaGPUfits took2.834native seconds. No ready
+frozen GPU numerical campaign is held; current composition/installation work
+is CPU. Do not add dummy training or assert a worker from this stateboard.
 Latest zero-fit trade-and-close monthly replay45cells42conditionalcomplete/
 3unknown; independent45/68496NAVpoints/27oldterminalcomparators PASS/noP1P2
 in checked scope. All13disputed-closeflags retained; remaining actualtradeOPEN
@@ -238,7 +260,7 @@ A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.j
 | MSE-vs-RankNet |CLOSED6CUDA/174epochs/294updates/54cells/0unknown; both8/9growthpositive,RankNetbeatsMSE0/9/primaryfalse. Native train+restore2.543sec, tiny185..255KBfeatures.99.328aggregateactive729.381end, not99secGPUspend.|
 | Long adjusted20 experts |CLOSED3CPUHGB+6CUDA GRU60/Transformer60/132epochs/3552updates/72cells/0unknown. Each6/9growthpositive;0/3primary incremental/0/9all-cost.96.614aggregateactive/76.637end; independent sidecar owns exact scope.|
 | Intraday MTF indicators |CLOSED3CPUHGB+9CUDA GRU30/120/120MTF x3folds,245epochs/5780updates/90cells/0unknown. Each0/9positive quoted growth;primaryfalse.123.670aggregateactive/103.699end; lease/children cleaned, independent check not yet invoked.|
-| Daily252/21session |CLOSED3CPUHGB+6CUDA TCN/patchTransformer/137epochs/5844updates/72cells/0unknown. Each6/9positivegrowth,0/3primary; future-only cashDD correction already frozen.101.199aggregateactive/81.222end, lease/children clean, independent check not yet invoked.|
+| Daily252/21session |CLOSED3CPUHGB+6CUDA TCN/patchTransformer/137epochs/5844updates/72cells/0unknown. Each6/9positivegrowth,0/3primary. Independent72cells/28872curves/nineCPUforwards checked; patch3/3parityP2/zerochangedmasks remains scoped. Lease/children clean.|
 
 A/research/spy-qqq-fixed-and-tree-decision-dag-preparation-20261015-v1
 A/data/nas-retained-long-canonical-20261015-v1

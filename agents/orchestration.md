@@ -17,13 +17,13 @@ No operator decision identified; neverKIS_LIVE_* or real money/public/paid work.
 | Engine/Godel |Newtrade-close45cells CLOSED42conditionalcomplete/3unknown,27oldterminalcosts exact; actual6GiB verified/0fits/GPU. Old27/18/full-OPEN metric and6vs4RAMfinding unchanged; actor released.|
 | Validation/Kant |PairedRankNet54cells/sixEVAL/12losses PASS scoped; actor released. LongExperts f1/f3Transformer scoreparityP2 remains scoped, zero changedmasks.|
 | GPU/Steward |OOF actual GPU2.834sec/lease released. No ready GPU numerical campaign during0fit study; no permission/runtime hold or dummy work.|
-| Invoked roles |Hubble prepares new categorical readonlyvaluationdiagnostics, no actualcalls/private reads. Parent owns any admitted visit/Git. First actual valuation UNKNOWN, cleanup/restoration verified. Other creators released.|
+| Invoked roles |Hubble independent source-only quiet-installer patchreview; Descartes code+test owner released35PASS. Parentreadonlyvaluationr2 SUCCEEDED8marks/GROSSnegative/21GET1auth/no submit, exactcleanup/Taskrestoration; r1 remainsunknown.|
 | Independent Core20 |72cashflows/196968values/144Fraction checks PASS. Nativef3GRU P2 remains,actualoldTorch2.7 not2.13; no runtime-cause claim. Aristotle released.|
-| Verification |1346source0b60aab2:507serial/fresh clean8 full16941pass22skip/379.62sec/helper0/Ruff/3Compose PASS; no exclusions. IndependentP2archive-lock fixed+2native faultinjectioncases.4fd7 installed/runtimeclosed.|
+| Verification |Installed4fd7 keeps1346/0b60aab2 recoveryauthority. New quiet-installer repo1346/e05812dd:35serial/clean8 full16960PASS22skip/16982collected/367.376sec/helper0/Ruff3ComposePASS. No exclusions/partial-authority reuse.|
 
 ## Throughput Review / Improvement
 
-Latest17:53review: model8exactFULLfills retained without replacing targets/capital.
+Latest18:13review: model8exactFULLfills retained without replacing targets/capital.
 Actual17:38 nightly reconciliation closed2FULLSELLs/thirdexpired/all27terminal,
 zero unclosed/no buy reservation. This fixes technical recovery, not incomplete
 target success. Four-advance/TTL flaw repaired with12bounded native advances;
@@ -32,14 +32,18 @@ New conditionaltrade-close45cells42/3 closed; independent45/68496NAVpoint
 reader PASS/noP1P2 in scope, actualRAM4 verified/released. Legacy installer source
 still uses console Actions; Descartes owns source-only regression review before
 any edit, not a current Task reinstall or a whole-PC attribution claim.
-First readonly valuation UNKNOWN in1.95sec: neither token collision nor zeroAPI
-is proven. Add finite categorical phases/counters before ONE new admitted visit;
-retain original r1 failure/debits, no blind retry or timestamp reset. No ready
-GPUfit is blocked; tiny previousmeta fits took2.834nativeGPU seconds.
-Model-only gross four fullSYN cases pass, but actual model marks remain unknown.
+Readonly valuationr2 actual SUCCEEDED18:09:18UTC/8marks/globalquantitymatch/
+indicativeGROSSnegative/21GET1auth/44.14hostseconds; model/dailyrestored and exact
+containerabsent. Originalr1 cause/counts stayunknown, never zeroed or inferred.
+No more probe queued. Original diagnostic prep readcomplianceUNKNOWN retained;
+separate unchanged44SYN finalization closed with measured128MiBbudget, no rerun.
+Parentvisit mutex P2fixed beforeactual; reviewer sourceconfirmed but late5SYN
+not within expired180end, no actualScheduler validation claim.
+No ready GPUfit is blocked; tiny previousmeta fits took2.834nativeGPU seconds.
 Its label is NOT among old model launcher's two known labels; Parent must hold
 verified quiescent conflicting order Tasks for its one actual readonly visit,
-then restore exact prior Enabled states. A boolean admission is not that proof.
+then restore exact prior Enabled states. Actual r2 supplied native closure/
+held-owner/admission/restore evidence; a boolean alone is not that proof.
 One reversible improvement: enough native advancement per existing bounded
 visit, not another blind daily retry or extra capital. Data300floor starvation
 was source-proven with4min producers; bounded1POST60calibrationworked, but

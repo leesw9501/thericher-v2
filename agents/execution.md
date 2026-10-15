@@ -78,10 +78,16 @@ quantity/budget/reconciliation still must match. This is not order/cash authorit
 Actual fresh valuation r1 returned UNKNOWN in1.95hostseconds, no counters/phase;
 token timing/busy exclusion/model preflight/auth possible, not established.
 Exact container absent; both previously enabled model/daily Tasks restored.
-Prepare categorical diagnostics before at mostONE more read-only visit; never
-print values/private errors or infer zeroAPI/netprofit from the generic result.
+One separate diagnostic visit SUCCEEDED18:09:18UTC/03:09:18KST:8modelowners/
+8marks/globalownedquantitymatch/modelaccountingcomplete, indicative GROSS
+NEGATIVE. Sequential/non-atomic, not realized loss or netPnL.1token/21GET
+openerinvocations/44.14hostseconds/submitcapabilityfalse; fees/settledcash/netPnL
+remainUNKNOWN. Exactcontainerabsent/modeldaily Enabledstatesrestored, no order/
+Taskinvocation/bankreset. Originalr1 cause/counts remainUNKNOWN, not inferred.
 A/execution/current-nas-owned-model-fresh-valuation-preparation-20261016-v1/r5/result.json
 A/execution/current-nas-fresh-valuation-runtime-20261016-v1/runs/e4087cae942b431b963174caa7b4d506/receipt.json
+A/execution/current-nas-fresh-valuation-diagnostic-runtime-20261016-v1/runs/3a6088a087524648bffffaf583023df9/receipt.json
+A/execution/current-nas-fresh-valuation-parent-visit-20261016-v2/6e135980c94f4b348dd286626ad24b3f/restoration.json
 
 Latest quiet-ops repair: seven legacy Data/readonly observer Actions migrated
 to pinned9fe9750c pythonw/no-console wrapper. Original argv/cwd and ALL other
@@ -136,9 +142,10 @@ instruments; no selected-stock registration collision. Model pointer absent,
 countsnull, not zero. Remaining original cap positive_below_desired. These are
 retained/local facts, NOT fresh broker funding/quotes/eligibility observations.
 
-Last fresh owned valuation: three holdings/no foreign/open orders; realized
-GROSS positive, unrealized/total marked GROSS negative. Fees/settled cash/net
-PnL unobserved. No claim of a new model submit/fill/owned-flat runtime yet.
+Earlier threeholding valuation: realizedGROSSpositive/unrealized-totalGROSSnegative.
+Superseded for current model marks by the exact8modelowner18:09:18UTC readonly
+valuation above. It does not supersede prior historical realized accounting.
+Fees/settled cash/netPnL remain unobserved; model owned-flat/exit unfinished.
 Missing/preview/task exit/install/source tests cannot prove a fill.
 
 ## Closed CPU Clock Study

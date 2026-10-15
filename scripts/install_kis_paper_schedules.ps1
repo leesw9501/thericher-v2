@@ -3,13 +3,133 @@ param(
     [string]$ProjectRoot = "",
     [string[]]$ScheduleName = @(),
     [switch]$RequireExisting,
-    [switch]$SkipImageBuild
+    [switch]$SkipImageBuild,
+    [string]$QuietArtifactRoot = "D:\thericher-v2\model-artifacts\infra\scheduled-task-quiet-v1"
 )
 
 $ErrorActionPreference = "Stop"
 
 if ([string]::IsNullOrWhiteSpace($ProjectRoot)) {
     $ProjectRoot = Join-Path $PSScriptRoot ".."
+}
+
+function Assert-QuietTaskPath {
+    param([string]$Path, [switch]$File)
+
+    if ($Path -notmatch '^(?:[A-Za-z]:[\\/]|\\\\[^\\/]+[\\/][^\\/]+(?:[\\/]|$))') {
+        throw "Quiet task path must be absolute."
+    }
+    $full = [System.IO.Path]::GetFullPath($Path)
+    $ancestor = $full
+    while (-not [string]::IsNullOrEmpty($ancestor)) {
+        $item = Get-Item -LiteralPath $ancestor -Force -ErrorAction SilentlyContinue
+        if ($null -ne $item -and (
+            $item.Attributes -band [System.IO.FileAttributes]::ReparsePoint
+        )) {
+            throw "Quiet task path must not contain a reparse point."
+        }
+        $ancestor = [System.IO.Path]::GetDirectoryName($ancestor)
+    }
+    if ($File -and -not [System.IO.File]::Exists($full)) {
+        throw "Quiet task file is missing: $full"
+    }
+    return $full
+}
+
+function Get-QuietTaskDigest {
+    param([byte[]]$Bytes)
+
+    $hasher = [System.Security.Cryptography.SHA256]::Create()
+    try {
+        return ([System.BitConverter]::ToString($hasher.ComputeHash($Bytes))).Replace("-", "").ToLowerInvariant()
+    } finally {
+        $hasher.Dispose()
+    }
+}
+
+function Write-QuietTaskImmutableFile {
+    param([string]$Path, [byte[]]$Bytes)
+
+    $full = Assert-QuietTaskPath -Path $Path
+    $parent = [System.IO.Path]::GetDirectoryName($full)
+    [System.IO.Directory]::CreateDirectory($parent) | Out-Null
+    $null = Assert-QuietTaskPath -Path $full
+    if (-not [System.IO.File]::Exists($full)) {
+        $stream = [System.IO.File]::Open(
+            $full, [System.IO.FileMode]::CreateNew,
+            [System.IO.FileAccess]::Write, [System.IO.FileShare]::None
+        )
+        try {
+            $stream.Write($Bytes, 0, $Bytes.Length)
+            $stream.Flush($true)
+        } finally {
+            $stream.Dispose()
+        }
+    }
+    $null = Assert-QuietTaskPath -Path $full -File
+    if ((Get-QuietTaskDigest ([System.IO.File]::ReadAllBytes($full))) -ne (Get-QuietTaskDigest $Bytes)) {
+        throw "Quiet task immutable file differs from its source."
+    }
+}
+
+function Resolve-QuietTaskExecutable {
+    param([string]$Name)
+
+    $command = Get-Command $Name -CommandType Application -ErrorAction Stop
+    return Assert-QuietTaskPath -Path $command.Source -File
+}
+
+function New-QuietLocalDockerTaskAction {
+    param(
+        [string]$ProjectRoot, [string]$ArtifactRoot, [string]$TaskName,
+        [string]$Execute, [AllowEmptyString()][string]$Arguments,
+        [AllowNull()][object]$WorkingDirectory = $null
+    )
+
+    if ($TaskName -notmatch '^[A-Za-z0-9_-]{1,160}$' -or $Arguments.Contains([char]0)) {
+        throw "Quiet task configuration is invalid."
+    }
+    $null = Assert-QuietTaskPath -Path $ProjectRoot
+    $artifact = Assert-QuietTaskPath -Path $ArtifactRoot
+    $child = Assert-QuietTaskPath -Path $Execute -File
+    if ($null -ne $WorkingDirectory) {
+        $null = Assert-QuietTaskPath -Path ([string]$WorkingDirectory)
+    }
+    $cfg = Assert-QuietTaskPath -Path (Join-Path $ProjectRoot ".venv\pyvenv.cfg") -File
+    $homes = @([System.IO.File]::ReadAllLines($cfg) | Where-Object {
+        $_ -match '^\s*home\s*='
+    } | ForEach-Object { ($_ -split '=', 2)[1].Trim() })
+    if ($homes.Count -ne 1 -or [string]::IsNullOrWhiteSpace($homes[0])) {
+        throw "Quiet task requires one base Python home in pyvenv.cfg."
+    }
+    $homePath = Assert-QuietTaskPath -Path $homes[0]
+    $pythonw = Assert-QuietTaskPath -Path (Join-Path $homePath "pythonw.exe") -File
+    $null = Assert-QuietTaskPath -Path (Join-Path $homePath "python.exe") -File
+    $source = Assert-QuietTaskPath -Path (Join-Path $ProjectRoot "scripts\run_owned_task_quiet.py") -File
+    $launcherBytes = [System.IO.File]::ReadAllBytes($source)
+    $launcherDigest = Get-QuietTaskDigest $launcherBytes
+    if ($launcherDigest -ne "9fe9750cb432a20dc0b147c32209c859803515324a9aa3c0a1fc14aed716b39c") {
+        throw "Quiet task launcher source mismatch."
+    }
+    $launcher = Join-Path $artifact "launcher-$launcherDigest.py"
+    $config = [ordered]@{
+        task = $TaskName
+        execute = $child
+        arguments = $Arguments
+        working_directory = $WorkingDirectory
+        receipt_root = (Join-Path $artifact "$TaskName\launches")
+    }
+    $bytes = [System.Text.UTF8Encoding]::new($false).GetBytes(($config | ConvertTo-Json -Compress))
+    $digest = Get-QuietTaskDigest $bytes
+    $configPath = Join-Path $artifact "$TaskName\$digest.json"
+    Write-QuietTaskImmutableFile -Path $launcher -Bytes $launcherBytes
+    Write-QuietTaskImmutableFile -Path $configPath -Bytes $bytes
+    $actionArguments = "-I -B `"$launcher`" --execute --config `"$configPath`" --sha256 $digest"
+    $actionParameters = @{Execute = $pythonw; Argument = $actionArguments}
+    if ($null -ne $WorkingDirectory) {
+        $actionParameters["WorkingDirectory"] = [string]$WorkingDirectory
+    }
+    return New-ScheduledTaskAction @actionParameters
 }
 
 function New-LocalDockerTaskDescription {
@@ -399,7 +519,7 @@ foreach ($schedule in $selectedSchedules) {
         $quotedRunner = $runnerPath.Replace("'", "''")
         $command = "& '$uvPath' run --no-sync --project '$quotedRoot' python '$quotedRunner' --execute --visits 24; exit `$LASTEXITCODE"
         $arguments = "-NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command `"$command`""
-        $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $arguments
+        $childExecute = Resolve-QuietTaskExecutable -Name "powershell.exe"
     } elseif ($schedule.ContainsKey("Runner")) {
         $runnerPath = Join-Path $resolvedProjectRoot "scripts\$($schedule.Runner)"
         if (-not (Test-Path -LiteralPath $runnerPath -PathType Leaf)) {
@@ -410,10 +530,10 @@ foreach ($schedule in $selectedSchedules) {
             $runnerArguments = " " + [string]$schedule.RunnerArguments
         }
         $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$runnerPath`" -ProjectRoot `"$resolvedProjectRoot`"$runnerArguments"
-        $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $arguments
+        $childExecute = Resolve-QuietTaskExecutable -Name "powershell.exe"
     } else {
         $arguments = "compose --project-directory `"$resolvedProjectRoot`" --profile $($schedule.Profile) run --rm --no-deps --pull never $($schedule.Service)"
-        $action = New-ScheduledTaskAction -Execute "docker.exe" -Argument $arguments
+        $childExecute = Resolve-QuietTaskExecutable -Name "docker.exe"
     }
     $times = @($schedule.At)
     $daysOfWeek = @(
@@ -427,7 +547,9 @@ foreach ($schedule in $selectedSchedules) {
     $retiredTriggers = @(
         $existingTask.Triggers |
             Where-Object {
-                -not $_.Enabled -or -not [string]::IsNullOrWhiteSpace($_.EndBoundary)
+                $null -ne $_ -and (
+                    -not $_.Enabled -or -not [string]::IsNullOrWhiteSpace($_.EndBoundary)
+                )
             }
     )
     if ($retiredTriggers.Count -gt 0) {
@@ -443,6 +565,13 @@ foreach ($schedule in $selectedSchedules) {
         -Enabled $enabled
 
     if ($PSCmdlet.ShouldProcess($schedule.Name, "create or update local Docker scheduled task")) {
+        $existingTask = Get-ScheduledTask -TaskName $schedule.Name -ErrorAction SilentlyContinue
+        if ($null -ne $existingTask -and $existingTask.State -eq "Running") {
+            throw "Cannot replace an active scheduled task: $($schedule.Name)"
+        }
+        $action = New-QuietLocalDockerTaskAction `
+            -ProjectRoot $resolvedProjectRoot -ArtifactRoot $QuietArtifactRoot `
+            -TaskName $schedule.Name -Execute $childExecute -Arguments $arguments
         Register-ScheduledTask `
             -TaskName $schedule.Name `
             -Action $action `

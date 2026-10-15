@@ -66,16 +66,20 @@ A/execution/nightly-retained-context-firstcause-20261015-v1/own-probe-bytecode-2
 
 ### New model,22:40 KST
 
-Fresh valuation r1 was one explicitly admitted READONLY visit, not a model
-strategy invocation. It returned generic UNKNOWN; no cause or API count can be
-inferred. Its exact container is absent; model/daily Enabled states restored.
-Never rerun --dispatch blindly. A new diagnostic runtime must expose finite
-categorical phase/counters and retain1auth40GETzero-retry/90second limits,
-RO private mount and no submit capability. Parent verifies native reconciliation
-and holds/restores quiescent conflicting owners for any one visit. The old model
-launcher does not recognize the valuation label. Token timing is not token
-lifetime; do not reset/reclaim gate state or change the Data300second contract.
+Fresh valuation r1 returned generic UNKNOWN; no cause or API count inferred.
+Separate diagnostic r2's one admitted visit SUCCEEDED18:09:18UTC:8owners/8marks,
+modelaccountingcomplete/globalquantitymatch/indicativeGROSSnegative,1token21GET
+openerinvocations/44.14hostseconds. Sequential/non-atomic, not realized/netPnL;
+fees/settlement/net remain unknown. Both exact containers absent; model/daily
+Enabled states restored. No further visit is queued or implied by this runbook.
+Never rerun --dispatch blindly. Diagnostics retain1auth40GETzero-retry/90second
+worker limits/ROprivate/no submit. Parent holds/restores verified quiescent
+conflicting owners and uses a nonblocking named visit mutex through restoration.
+The old model launcher does not recognize the valuation label. Token timing
+is not token lifetime; never reset/reclaim gate state/change Data300second scope.
 A/execution/current-nas-fresh-valuation-runtime-20261016-v1/runs/e4087cae942b431b963174caa7b4d506/receipt.json
+A/execution/current-nas-fresh-valuation-diagnostic-runtime-20261016-v1/runs/3a6088a087524648bffffaf583023df9/receipt.json
+A/execution/current-nas-fresh-valuation-parent-visit-20261016-v2/6e135980c94f4b348dd286626ad24b3f/restoration.json
 
 Task: thericher-kis-paper-current-nas-model-20261015.
 First13:40UTC visit failed pre-submit; actual read-only target0 probe reproduced
@@ -162,9 +166,21 @@ not whole-PC/sub20ms/alternate-desktop proof. Hubble owns another finite14:50/
 unclassified. One existing PowerShell console was baseline, not closed/changed.
 Worker3.25CPU/1093.957elapsed, no task/API/private reads. No permanent monitor.
 A/infra/owned-paper-window-attribution-20261015-v1/result.json
-Legacy install_kis_paper_schedules.ps1 still describes old console Actions;
-do not blindly overwrite migrated definitions with it. Future owned installers
-should use this tested quiet path rather than Hidden metadata alone.
+Future-install source now wraps all3canonical child branches through the SAME
+hash-bound frozen helper and trusted basepythonw, instead of direct consoles.
+Default quiet artifacts: D:/thericher-v2/model-artifacts/infra/scheduled-task-quiet-v1;
+optional -QuietArtifactRoot supports isolated tests. Immutable bytes/reparse
+checks fail closed; no visible fallback, nested wrapper or preview publication.
+35focused tests pass, independent source review noP1P2; fresh clean8 full16960
+pass22skip/367.376sec/helper0/Ruff3Compose PASS. Future installation presentation
+ONLY: do not blindly
+reinstall current frozen owned definitions, which have separate source/identity/
+input/cadence ownership. No current Task was reinstalled for this patch.
+A/infra/quiet-installer-regression-review-20261016-v1/patch-review.json
+A/review/quiet-installer-reinstall-20261016-v1/r2/claude.json
+Additional natural16:30/17:38 startup samples2893+2903 contain0newconsoles;
+combined with2863+2855 yields11514same-desktop20ms samples, not whole-PC proof.
+A/infra/nightly-terminal-window-attribution-20261016-v1/result.json
 
 ### Other preserved owners
 
@@ -258,15 +274,22 @@ Scheduler Operational logging disabled. Exact marker/time/hash chain under an
 assumed-honest host is NOT cryptographic OS-scheduler-origin proof. Fees/settled
 cash/net PnL remain not_observed unless exact independent evidence proves them.
 
-One Codex app heartbeat named 오늘 모의투자 실행 결과 확인, id automation,
-runs once Oct16 00:05 KST after both owned opportunities. No recurring report,
-task replay, substitute order or follow-up chain. It inspects exact evidence,
-not raw private output, and notifies only on material result/failure/operator
-decision. It does not replace the Windows workers or prove they ran.
+Completed Oct16 00:05KST appfollowup id automation was archived and DELETED
+Oct15 17:31UTC after integration. No replacement report/heartbeat chain. Its
+definition is retained at A/infra/obsolete-codex-follow-up-20261016-v1/automation-before.toml.
+Windows Paper Tasks were not deleted or replayed by that cleanup.
 
 ## Verification
 
-Fresh exact source authority:
+Current repo exact source authority:
+A/verification/quiet-schedule-installer-20261016-v1/authority.json
+35changed-path serial pass; clean8 full16960pass22skip/16982collected/
+367.376sec/helperexit0,1346sources/e05812ddd7964a095e058dae341ef844c8097d7820228bccf34efe5d124c9cda.
+Ruff/default/research/accounting sample-env Compose PASS. No currentTask reinstall.
+Pass -PytestArgs as the explicit array below: positional long flags can bind
+Workers and fail before helper execution. Argument failure is not test authority.
+
+Installed native recovery authority (unchanged frozen runtime):
 A/verification/nightly-terminal-incomplete-20261016-v1/authority.json
 507changed-path serial pass/no exclusions; fresh clean8 full16,941pass/22skip,
 16,963collected/379.62sec/helperexit0; source1,346/digest0b60aab264727572f7cfb2fac2fd01e9c797ff8fb4d77519ebd351b2868c367c.

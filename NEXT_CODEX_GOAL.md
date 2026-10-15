@@ -125,8 +125,11 @@ Do not redispatch closed creators; exact evidence/limits live in role boards.
   evidenced2.13; no version-cause claim or company/Paper hold.
 - Invoked Execution/Hubble: native recovery deployed/runtimeclosed. Three actual
   startup windows total11514samples/zero new consoles, same-desktop20ms limits.
-  New external readonly valuation diagnostics prepare categorical phase/counters;
-  first actual readonly visit UNKNOWN, no blind retry/zero-API inference.
+  Diagnostic readonlyvaluation completed18:09:18UTC/8owners8marks/indicative
+  GROSSnegative/quantitymatch, fees/settled/netUNKNOWN; originalr1unknowncause
+  preserved. Both owners restored/exactcontainerabsent; no more visit queued.
+  Future quiet-installer regression repaired in source/tests,35focusedPASS;
+  fresh full16960PASS22skip/367.376sec/helper0/Ruff3Compose, no currentTask reinstall.
 - Strategy/Dirac: pure SMA10 monthly gate READY1052rows/55baskets41ON14OFF/
   0UNKNOWN,23SYN+55scalar checks. Separate monthly momentum45cells remains
   27complete18unknown. Data recapture8unchangedinvalid/0repair CLOSED,
@@ -134,11 +137,13 @@ Do not redispatch closed creators; exact evidence/limits live in role boards.
 
 Latest closed fit versions124=77CUDA+47CPU, not architectures: new9HGB/sixpaired-
 loss/ninelongadjusted experts all completed. Longadjusted3CPU+6CUDA/132epochs/
-3552updates/72cells/0unknown,0primary; independent check dispatched. Intraday12
+3552updates/72cells/0unknown,0primary; independent72cells/26952curves checked,
+Transformer parityP2 remains scoped/zero changed masks. Intraday12
 fits/245epochs/5780updates/90cells completed; nine252day versions added. Not an
 environment/permission hold. NEW six OOF meta fits/90cells completed; independent
-six CPU restores/42750curves passed, Ridgeprimary1/2/familyfalse. Next isolated
-completed-month regime gate preparation, no blind base-refit grid. Existing
+six CPU restores/42750curves passed, Ridgeprimary1/2/familyfalse. Completed
+monthly-regime66cells rejected; newtrade-close45cells42/3 independently checked.
+No blind base-refit grid. Existing
 positive growth is not independent alpha.
 Foundation/reader/SYN are not fits. Exact role boards own detailed current facts.
 No qualified Alpha. Source/cost/current-listing/PIT limits constrain claims,
@@ -146,9 +151,10 @@ not independent exploratory work or approved Paper permission.
 
 ## Verify And Continue
 
-Fresh helper authority1346source/0b60aab2:507changed-path serial, clean8 full
-16941pass/22skip/379.62sec/helper0, Ruff/three sample-env Compose PASS.
-A/verification/nightly-terminal-incomplete-20261016-v1/authority.json.
+Fresh repo helper authority1346source/e05812dd:35changed-path serial, clean8 full
+16960pass/22skip/16982collected/367.376sec/helper0, Ruff/three sample-env Compose
+PASS. A/verification/quiet-schedule-installer-20261016-v1/authority.json.
+Installed native4fd7 recovery retains its prior0b60aab2/507serial/16941full authority.
 Reuse only if exact source-map equality; external/native workers need own checks.
 
 Integrate evidence, verify, commit/push owned packages. Replace this file with
