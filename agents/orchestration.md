@@ -12,31 +12,32 @@ No operator decision identified; neverKIS_LIVE_* or real money/public/paid work.
 | NAS Paper |Owned quiet finite Task, imagece219a8d/474frozen files. FirstOct15 22:40KST; entryONLYOct15, exact pending recovery/owned exit fromOct21OPEN. No manual invocation.|
 | Nightly baseline |Owned daily-spy-session, image3ccb2250/frozen472public snapshot. Oct15 23:50KST. XML/identity/ORIGINALshared bank retained.|
 | Future accounting83 |r6 installed, nextOct15 20:25UTC/Oct16 05:25KST; actualunknown, oldindex2/claims/basis/otherActions unchanged.|
-| Data/McClintock |Original long input1.17m bars/1.13m windows CLOSED. Fixed liquid-core20now47417bars/46097windows ready; linked bounded resume then NEW revised-as-of current NAS snapshot. Old B/no-current result unchanged, not global unit gate.|
-| Engine/Raman |NAS9fits/90cells independently checked; primaryfalse, quote growth unit-contaminated. Primary finalGRU/allcontrols frozen before later diagnostic. Preparing liquid-core same-session unit-invariant target; no new market fit yet.|
-| Strategy/Kant |TimesFM2.5actual GPU12cell benchmark independently CLOSED. Now cached8MODP0/1pages unit interpretation,0newAPI/fits/GPU; no corrected-PnL/filter claim.|
-| GPU/Steward |NAS6CUDA and TimesFM2.5 inference CLOSED/leases cleaned. No environment/permission hold. Next meaningful frozen campaign pending unit-invariant native preparation, not blind seeds/dummy fits.|
-| Invoked reviewers |DAG/TimesFM/NAS independent readbacks CLOSED; Godel/Aristotle released. NAS unit diagnostic flagged61/30/89percent positivegross;2flags issuer-confirmed reverse splits.|
+| Data/McClintock |NEW currentNAS1,197,728bars/1,161,353windows CLOSED. Native adjusted20:120GET/1POST/0retry/12000bars/10800windows CLOSED. New bounded older adjusted history to2007/source-limit with cross-page overlap-unit check; stop13:25UTC.|
+| Engine/Raman |Core20same-session9fits/72cells CLOSED/primaryfalse. NEW longNAS unit-invariant family preparation,max3CPU+12CUDA/3folds/GRU20vs60,LSTM60,Transformer60. Actual allocation/fits not inferred from source.|
+| Engine/Godel |Frozen laterNAS30cell0fit diagnostic CLOSED, quote growth higher/DDworse/not economic profit. New adjusted20CPU raw/indicator/joint HGB/rule/fusion preparation,max9fits; no wait for full backfill.|
+| Strategy/Kant |Cached400pair unit algebra independently CLOSED. Owns pure adjusted20 RSI/Bollinger/momentum/vol/relative-breadth kernels/SYN; no market/model/API/GPU.|
+| GPU/Steward |Core20sixCUDA CLOSED/lease clean. Next priority Raman longNAS, one lease/measured headroom. No environment/permission hold, blind seed grid or dummy training.|
+| Invoked reviewer/Aristotle |Independent Core20source/native restore/72cashflow reader RUNNING,0fits/GPU. Earlier DAG/TimesFM/NAS/cached400pairs CLOSED.|
 | Verification |Exact1342source/4a1e4619 full authority;925serial/16488pass22skip clean8/helper0/Ruff/3sample Compose. MD/external-only, external workers separately tested.|
 
 ## Throughput Review / Improvement
 
-Latest review: economic-unit integrity, NOT GPU availability or operator
-approval, is the immediate research dependency. Raw multi-session NAS gains
-include reverse-split windows; do not run more raw-return winners. Alternatives:
-cached provider-adjustment interpretation; same-session unit-invariant target;
-existing action-aware ETF inputs. Execute first two now while later-date frozen
-diagnostic waits only for actual Data ABI. No new global permission gate.
+Latest review: source preparation/model construction, NOT GPU availability or
+operator approval, explains idle intervals. Small Core20 fits really completed
+between12:07..12:08UTC, not an always-running GPU process. LongNAS uses existing
+1.13mwindow pool; keep one larger finite batch/frozen model API instead of tiny
+new one-off harnesses. Reuse pinned native optimizer/serialization/replay leaves.
+GPU occupancy is not product success; no dummy epochs or hidden extra seeds.
 
 Data measured2009 daily support despite the old2023research crop. Next use
 retained history before downloading overlaps. Reproduced venv parent self-match
 was repaired by direct-base launch with UNCHANGED actor predicate; original
 actual actor identity remains unknown. Keep unknown competitors protected.
 
-Current reversible improvement: latest positively later same-contract source
-capture owns fresh61block in a NEW revised-as-of snapshot; unknown finality/
-units remain explicit, not a blanket rejection. Old strict B/debits unchanged.
-Compact current facts here; detailed outcomes stay linked in Engine/HANDOFF.
+Current reversible improvement: pipeline adjusted historical acquisition, pure
+features, CPUexperts and deeper CUDA in disjoint roots. Cross-page unit checks
+belong to Data worker; do not serialize all work behind full history. Earlier
+strict B/debits/quote-unit limitations stay intact, no global permission gate.
 No foreground session/quota sleeps while a package is ready. Named workers own
 next_due. If no ready path, state exact dependency plus alternatives/Claude
 challenge; do not invent a permission hold or mark unfinished work complete.
@@ -52,7 +53,7 @@ challenge; do not invent a permission hold or mark unfinished work complete.
 - A/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
 - A/data/nas-retained-long-history-readiness-20261015-v1/readiness.json
 
-Latest continuation49fit versions(30CUDA/19CPU), not49architectures.
+Latest continuation58fit versions(36CUDA/22CPU), not58architectures.
 No qualified Alpha/Paper promotion. Individual positive utility remains reported;
 minute models all abstained. Fees/settled cash/net broker PnL not observed.
 Future-owned recovery superseded only as company focus, never declared complete.

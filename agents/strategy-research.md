@@ -19,8 +19,10 @@ heldoutO/C quote349pass/51fail; uncertain-anchor affine all400 compatible.
 Old different_other_pattern rejects strict split-only scaling, NOT all adjusted
 data. Constant-regime split-slope compatibility CELH supported; other3 fail that
 premise, not official split facts. Per-row compatibility does NOT identify a
-between-date factor or TR/PIT/settlement. Independent pure algebra/readback is
-PENDING before factor reliance; owner checks are not independent verification.
+between-date factor or TR/PIT/settlement. Independent pure algebra/readback
+CLOSED:I/independent-review/closure.json,all400classifications/12SYN agree,
+30.164active/120,below6MiBreads/20MiB. This verifies interval feasibility,
+NOT a between-date factor, provider formula or monetary conversion.
 This frozen evidence IS sufficient to PREPARE native mode1 source, not a global
 ban. Parent assigns separate Data0->1->0 proof, likely ASBP/NAS/BYMD20260514
 covering official May11/Jan16 events. Parent owns exact query/freeze; earlier

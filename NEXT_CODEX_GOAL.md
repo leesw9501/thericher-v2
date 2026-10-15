@@ -70,9 +70,10 @@ Current delegates:
 - Data/McClintock: long canonical CLOSED1,170,008bars/1,133,899past61entries,
   498assets/535holiday quarantines/5836duplicates/5,870,421checks. Original local
   Oct14merge CLOSED B:504July28revisions quarantined/0currentextension, not proof
-  of incompatible units. NEW revised-as-of versioned snapshot may prefer the
-  whole later-captured fresh61block under identical native source contract,
-  retaining hashes/dates/revisions/limitations and old datasets unchanged.
+  of incompatible units. NEW revised-as-of versioned snapshot CLOSED:
+  1,197,728bars/1,161,353windows/27,720new/504currentpast61; native linked readback
+  passed, original failure/debits/oldB unchanged. Latest whole fresh61block
+  source preference is NOT finality/PIT/economic-unit qualification.
   A/data/nas-retained-long-current-versioned-20261015-v1
 - Data fixed liquid-core20:20ready61/47417bars/46097windows, current-listing/
   non-PIT/action/unit/finality limits. First76GET/1POST/1retry CLOSED, complete
@@ -90,15 +91,19 @@ Current delegates:
   Large raw-close jumps explain61/30/89percent positivegross byfold; two flags
   match issuer-confirmed reverse splits. Never filter future windows or call
   proxy growth money. Existing primaryGRU/allcontrols frozen22347568;
-  Aug-Oct not automatically untouched/PIT/prospective,0newfits/tuning allowed.
+  Godel owns Aug-Oct separate30cell0fit diagnostic, ABI8a52d79b; not automatically
+  untouched/PIT/prospective/economicprofit,0newfits/tuning allowed.
   A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json
-- Engine next preparation: liquid-core20 same-session OPEN->CLOSE, past within-
+- Engine/Raman next preparation: liquid-core20 same-session OPEN->CLOSE, past within-
   bar dimensionless OHLC inputs; target avoids mechanical between-session
   split gains. Separate frozen finite campaign/native SYN before any new fit.
   A/research/liquid-core-unit-invariant-open-close-preparation-20261015-v1
 - Strategy/Kant: TimesFM2.5actual2cold/11forecasts/12cells CLOSED/independently
   checked;0fits/all3costgrowthnegative. Now cached MODP0/1 source interpretation,
   0KIS/model/GPU calls. No defaultTimesFM3/NC adoption or blind new model search.
+  Independent400pairs/12SYN checked; all rounded-scale compatible, NOT action-
+  factor/TR proof. Separate Data ASBPknownsplit0->1->0 threeGET proof assigned,
+  no second CELH probe, no monetary claim or change to current Paper.
   A/data/kis-adjustment-cached-interpretation-20261015-v1
 
 Five earlier families CLOSED39 fitted versions(24CUDA/15CPU), plus one meta

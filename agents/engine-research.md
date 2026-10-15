@@ -7,6 +7,15 @@ Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
 ## Current Material Result
 
+Core20 same-session unit-invariant study CLOSED:3CPUHGB+6CUDA GRU/Transformer,
+688updates/72cells/zero unknown or retries.87.479active/234.069end within1800/
+7200; all INNERpatience20 stops, not convergence. At50bpsPERLEG Transformer
+beats own samegross3/3folds but cash/HGB only1/3, primaryfalse. Cost20/50/100
+grid:Transformer growthpositive3/9,GRUflat9/9,HGBflat6/9negative3/9. Costs are
+proxies, not measured broker fees. Native SYN/restore/fullJSON/72author oracles
+passed; Aristotle independent reader OWNS its child, verdict pending.
+A/research/liquid-core-unit-invariant-open-close-development-20261015-v1/owner-handoff.json
+
 Raman's NAS utility study ACTUAL3Ridge+6CUDA fits/90cells/0unknown:
 143neural epochs/5506updates, all six INNERpatience stops, not convergence.
 GRU quoted-price growth positive and beats all named controls9/9fold-cost cases;
@@ -35,30 +44,34 @@ QUOTE-PRICE COST PROXY, not actual economic/settled/net broker PnL.
 Raman CLOSED the PRESPECIFIED primary finalGRU/allcontrols/code/scalers/
 eligibility/policy freeze22347568,0fit/0suffix reads. No champion choice.
 A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json
-Proposed0fit later Aug3..Oct7 diagnostic is NOT automatically untouched,
-independent or prospective. Existing usage/source/capture limitations must be
-explicit; no later data tunes weights/epochs/thresholds/risk overlays.
+Later Aug3..Oct7 diagnostic CLOSED30cells/9baskets/4459causal rows/1380scalar
+NAV-exposure pairs,0fit/GPU;31.327active/182.498end within120/1800. GRUquoted
+growth/Sharpe beat ninecomparators atall3costs, DDworseall9. Seen-custody-unknown/
+revised-as-of/raw-unit limits, NOT untouched/independent/prospective/economic
+profit. Initial ABI fault and source-only schema/path repair preserved; CPU2.13
+inference is not exact historical CUDA2.7 parity. Candidate22347568 unchanged.
+A/research/nas-long-frozen-later-diagnostic-20261015-v1/readback.json
 Current frozen Paper C targets/source/identities/bank remain unchanged.
 
 ## Breadth / Depth Queues
 
-Short breadth READY/OWNED:30cell frozen later-date diagnostic after Data's new
-revised-as-of current snapshot,0fit/no tuning/no independent claim; cached
-MODP0/1 unit interpretation. Distinct liquid-core20 input now ready47417bars/
-46097windows. Raman prepares same-session OPEN->CLOSE target with past within-
-bar dimensionless OHLC features, avoiding mechanical cross-session split gains.
-No numerical dispatch until a separate finite contract/native SYN; no blind grids.
-Long depth NEXT, NOT RUNNING: use verified economic-unit conventions and
-available useful data for a bounded risk/holding-horizon or richer-model study
-only after a concrete hypothesis/stop/caps. Current higher-DD growth is not
-solved by dummy GPU epochs or an outcome-tuned smaller exposure.
+Short breadth OWNED:Godel adjusted-core20 raw/indicator/joint HGBx3fold plus
+fixed rule/fusion preparation. Kant pure causal feature/rule SYN. Native mode1
+input ready12000bars/10800past61windows; Data checks adjusted cross-page anchor
+basis during older backfill. No assumed TR/PIT, no wait for ALL backfill.
+Long depth OWNED:Raman separate longNAS same-session invariant family, max3CPU+
+12CUDA fits/3long folds/GRU20vs60,LSTM60,Transformer60.7200active/18000end,
+max256epochs/INNERpatience20/LR/bestrestore/120000updates,0marketretry. Costs
+5/10/20bpsPERLEG(primary10), not oldCore20criterion changes. Actual fits remain
+UNOBSERVED until runtime evidence; a prepared MD/contract is not GPU activity.
+No outcome-tuned exposure, blind seed grids or old clock/holdout refunds.
 One GPU allocation, measured desktop headroom; old VRAM/time limits not global.
 Earlier epochs/seed/no-rerun limits protect their OWN immutable results only.
 
 ## Completed Studies / Consumer Limits
 
 Five earlier families39fit versions(24CUDA/15CPU), plus ONE retained meta gate
-and new9fit NAS study ->49fitted versions(30CUDA/19CPU), NOT49architectures.
+and9fit NAS plus9fitCore20 ->58fitted versions(36CUDA/22CPU), NOT58architectures.
 SYN fits/reader forwards/foundation inference are not extra fitted models.
 
 | Study | Exact current result |

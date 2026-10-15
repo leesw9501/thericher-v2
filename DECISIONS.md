@@ -10356,3 +10356,36 @@ deployment challenge supported-with-limits, advisory only; original authority
 already covers private no-cost Paper schedules/orders inside the shared bank.
 D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-deployment-20261015-v1/claude.json
 D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
+
+## 2026-10-15 - Separate Quote Units From Economic Profit
+
+Raw multi-session prices with unchanged share quantity can turn reverse splits
+into fictitious gains. Preserve those development results as quote-price proxies,
+not economic money; do not repair them by excluding future jump windows or
+relaxing a failed criterion. At least three actual held dates match issuer/SEC
+reverse-split events. Same-session OPEN-to-CLOSE targets with past within-bar
+ratios offer one separately bounded unit-invariant alternative, not a complete
+action/fill/publication solution or a claim of profitability.
+
+Native KIS MODP1 is useful adjusted-price research input, not automatically
+unusable because exact decimal split-only scaling fails. Independent cached
+400pair rounding checks and a separate3GET mode0->1->0 known-split experiment
+support this scoped source choice; they do not prove the full provider formula,
+dividend total return, PIT, finality or broker settlement. Keep raw0 and adjusted1
+source versions separate; do not infer adjustment factors to rewrite raw data.
+Acquire the fixed20 adjusted daily input for concrete momentum/indicator/model
+research under its own finite Data budget. Paper authority/deployments unchanged.
+D:/thericher-v2/model-artifacts/data/kis-adjustment-cached-interpretation-20261015-v1/independent-review/closure.json
+D:/thericher-v2/model-artifacts/data/kis-known-split-mode-stability-20261015-v1/independent-readback.json
+D:/thericher-v2/model-artifacts/review/parallel-engine-target-reset-20261015-v1/native-adjusted-core-source-claude.json
+
+## 2026-10-15 - Retrospective Capture Versions Are Not PIT Claims
+
+A positively later capture of the same symbol/venue/endpoint/GUBN/MODP may own
+its whole fresh block in a NEW revised-as-of dataset. Log source hashes, dates
+and every revision; preserve old datasets/results/clocks. Unknown publication,
+units or finality is not positive evidence of source incompatibility. No
+outcome-based winner choice, imputation, PIT/finality/economic qualification or
+automatic change to an already-frozen Paper input follows from this policy.
+D:/thericher-v2/model-artifacts/data/nas-retained-long-current-versioned-20261015-v1/handoff.json
+D:/thericher-v2/model-artifacts/review/parallel-engine-target-reset-20261015-v1/current-source-version-claude.json

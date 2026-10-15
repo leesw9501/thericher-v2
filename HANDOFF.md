@@ -77,9 +77,9 @@ A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-insta
 
 ## Research And Data Continuation
 
-Latest continuation contains49 fitted VERSIONS:30CUDA+19CPU, not49architectures.
+Latest continuation contains58 fitted VERSIONS:36CUDA+22CPU, not58architectures.
 Five families below contain39; one retained meta gate and nine NAS versions
-make49. Foundation inference/reader forwards/SYN are not fitted models.
+make49; nine newCore20versions make58. Foundation inference/reader/SYN are not fits.
 No qualified Alpha/Paper adoption.
 Individual growth-positive cases are not incremental performance qualification.
 
@@ -116,9 +116,10 @@ A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.j
 | Retained NAS canonical |CLOSED1,170,008valid bars/498assets/1,133,899past61entries,535official-holiday rows quarantined/5836duplicates/zero conflicts.5,870,421native checks. No timezone shift; first offender was Thanksgiving2010.|
 | TimesFM2.5 |CLOSED2cold/2SYN+9market forecasts/12cells/0fits. All3cost growthnegative. Independent653pins/680q50/6800quantiles/12cells; cash/intermediate fees inferred. ExactApache2weights predate all34baskets, no default3/NC.|
 | NAS utility experts |CLOSED3Ridge+6CUDA/143epochs5506updates/90cells. GRUquote growth wins9/9 but DDworse9/9; primaryfalse. Independent826pins/90cells/71490NAV-exposure pairs, noP1P2 within checked scope.|
-| Frozen later diagnostic |Primary finalGRU/allcontrols frozen22347568 before suffix reads; prepared30cell/0fit later-date diagnostic, not automatically independent/prospective.|
+| Frozen later diagnostic |Primary finalGRU/allcontrols frozen22347568 before suffix reads; Godel owns separate30cell/0fit later-date diagnostic, revised-as-of/seen-custody-unknown/raw-unit claims only.|
 | Liquid-core input |20/20past61ready,47417bars/46097windows. Bounded76GET/1POST intake completed; separately linked continuation/versioned NAS merge owned by Data.|
-| Current ready work |Strategy cached MODP0/1 unit interpretation. Engine prepares split-unit-invariant same-session target; no new fit before frozen contract/native SYN.|
+| Current ready work |Cached MODP0/1 interpretation independently checked400pairs/12SYN,rounded multiplication compatible all400,not action-factor proof. Raman prepares unit-invariant same-session CPU/GPU campaign; native SYN first.|
+| Core20same-session |CLOSED3CPUHGB+6CUDA GRU/Transformer,688updates/72cells/0unknown,87.479active234.069end. AllINNERpatience20/not convergence. Primaryfalse; independentAristotle reader active.|
 
 A/research/spy-qqq-fixed-and-tree-decision-dag-preparation-20261015-v1
 A/data/nas-retained-long-canonical-20261015-v1
@@ -142,13 +143,35 @@ A/research/spy-qqq-decision-dag-checkpoint-publication-20261015-v1/independent-r
 A/research/timesfm25-etf-mask-development-20261015-v1/admission-r2/independent-review/closure.json
 
 Original strict local current merge CLOSED B:504July28revisions quarantined,
-zero current extension; not proof of incompatible units. A NEW versioned
-revised-as-of snapshot may let positively later capture own the whole fresh61
-block under unchanged symbol/venue/endpoint/GUBN/MODP contract, logging every
-revision. No price/return-based choice, imputation, PIT/finality/economic-unit
-claim or change to old dataset/Paper snapshot. Claude supported-with-limits.
-A/data/nas-retained-long-current-versioned-20261015-v1
+zero current extension; not proof of incompatible units. NEW versioned
+revised-as-of snapshot CLOSED1,197,728bars/1,161,353past61entries/27,720newrows/
+504currentpast61assets. Later capture owns whole fresh61block under unchanged
+native source contract, logging all504numeric revisions.93.404chargedactive/
+324.270end within300/1800; one partial reader failure preserved, linked complete
+native readback passed. Old B/source/Paper unchanged. No price/return-based
+choice, imputation or PIT/finality/economic-unit qualification. Manifest5973f602,
+ABI8a52d79b,linkedreadbackbe506c4b. Claude supported-with-limits.
+A/data/nas-retained-long-current-versioned-20261015-v1/handoff.json
 A/review/parallel-engine-target-reset-20261015-v1/current-source-version-claude.json
+A/data/kis-adjustment-cached-interpretation-20261015-v1/independent-review/closure.json
+
+Native mode1 adjusted-core20 CLOSED120GET/1POST/0retry/12000bars/10800windows,
+20ready61. Manifest97271426/ABI5d965587;242metadata/source checks/658800keycells,
+not a second numeric canonical parse or full unit/TR proof. Separate3GETASBP
+0->1->0 experiment had stable original quotes/all100exactscalecompatible/two
+known event scale relations supported; optional provider echo absent/query-bound.
+Data now owns bounded older adjusted backfill with per-page overlap anchor
+continuity, not source-mode equality alone. Source limits scoped, no Paper hold.
+A/data/liquid-core-adjusted-daily-20261015-v1/handoff.json
+A/data/kis-known-split-mode-stability-20261015-v1/independent-readback.json
+
+Raman next longNAS same-session invariant family:max3CPU+12CUDA/7200active/
+18000end,GRU20vs60/LSTM60/Transformer60, one GPU allocation, native SYN first.
+Godel next CPU adjusted20 raw/indicator/joint HGB/rules/fixedfusion; Kant pure
+RSI/Bollinger/momentum/vol/relative-breadth kernels. No learned fusion from
+in-sample predictions or extra fit per feature window. Actual fits unobserved.
+A/research/liquid-core-unit-invariant-open-close-development-20261015-v1/owner-handoff.json
+A/research/nas-long-frozen-later-diagnostic-20261015-v1/readback.json
 
 Data reusable inputs:13,622long-ETF rows/6,811dates; target-only action sidecar;
 retained1m195,056regular bars/315,772past-window keys,251sessions2022..2023.
