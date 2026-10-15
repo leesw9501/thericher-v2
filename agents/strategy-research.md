@@ -7,8 +7,10 @@ passes all matched controls across costs. It is not ready/unfitted work now.
 D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json
 Frozen five-expert current scores produced ten targets and a finite owned
 Paper deployment; runtime outcome remains unknown until its natural opportunity.
-No active Strategy LLM/worker. Historical preparation below is retrieval only,
-not a new company hold, dispatch instruction or current running claim.
+New invoked Strategy long-history PREP is source-written/SYN next below; no
+numerical actor has yet been dispatched. This package authorizes no market/GPU work; it does
+not restrict independent lanes. Historical preparation is retrieval only, not
+a new company hold, dispatch instruction or current running claim.
 Activated 2026-10-13 for feature/model research and trade-policy composition.
 AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns the company outcome.
 
@@ -22,6 +24,83 @@ interpretation. No credentials, broker calls, capital or execution-risk changes.
 The MD survives; a subagent is a bounded executor, not a permanent LLM daemon.
 
 ## Current Work
+
+SOURCE_WRITTEN/SYN_PENDING spy-qqq-long-history-policy-preparation-20261015-v1.
+Owned only NEW A/strategy-research/spy-qqq-long-history-policy-preparation-20261015-v1
+and this board (A=D:/thericher-v2/model-artifacts). Consumer: longer-history
+CPU fixed-rule baseline to compare new losses; not promotion/currentexecution.
+Parent's EngineGPU repair and McClintock Data are separately owned, no actor
+state inferred from boards. Data contract/manifest/schema source read only,
+NPZ8ffc907d.../34877182bytes NOT opened/hashed. SlotsSPY/QQQ,13,622rows/
+6811entrydates/6876calendar per published metadata. Gregorian ordinal keys
+map to consecutive native calendar INDEX; no shifted decisions/calendar guess.
+Exact old H1kernel6cfe33ad.../score>0; supplied61/final21; stride5 anchored61,
+1363expected baskets/early454 middle454 later455, all previously available/
+descriptive seen history, not untouched final. Original.1/.1 fixed weights;
+H1/cash/matchedoriginal actions share keys/weights; repeated5session buyhold-LIKE,
+not continuous/fullinvestment/TR. quantitybasis10 fixed, fee5/10/20 per side.
+Decision ABI cannot access targets/diagnostics; no future-action/availability
+row filtering. Unknown H1/held marks not zero. Native all5marks/gaps/JSON proof
+and125/250/500-session varying-rational native summary/serialization probes
+frozen under SAME60active600end,2attempts/1mechanicalcorrection; each probe6s.
+Source authoring/lint separate from SYN. <=48actualcells/180active1200end is
+ONLY a Parent-freeze proposal, NOT declared long-history native ready. No
+unbounded96market calls; nonlinear Fraction pace/JSON ceiling unknown until
+bounded evidence. No newfloatbackend or shared/canonical/Paper/risk changes.
+Throughput: ready owned SYN/noGPU/collector, no Data foreground wait;
+reversible improvement reuses H1/native ABI instead of a new model/grid.
+
+## Consumed Cost-Aware Proposal
+
+COMPLETE/PARENT_CONSUMED cost-aware-policy-hypothesis-20261015-v1.
+Consumer: KIS daily OHLCV -> causal regime interactions -> fixed-basket entry
+abstention -> Engine's existing five-session cost replay. Owned only this board
+and NEW D:/thericher-v2/model-artifacts/strategy-research/cost-aware-policy-hypothesis-20261015-v1.
+Parent owns final contract/dispatch/integration; tonight22:40/23:50 deployments
+unchanged. Existing Ridge/MLP/TCN/GRU/LSTM/Transformer/fusion/absolute-Ridge kills
+are recipe-specific seen-development failures, not all-model unprofitability.
+At most TWO hypotheses: H1 fixed smooth trend/reversal interaction (zero fits),
+H2 Parent-accepted payoff-weighted BCE after-cost entry mask, paired Huber/q.25
+in CURRENT Engine GPU112input/commonMLPtrunk/ninefits. All three heads MASK
+the SAME original basket weights, never ranking. Pure twelve-output/21-D1
+diagnostics below serve H1 only, NOT replacement/additional GPU inputs. No new
+architecture, basket ranking, framework, indicator period or threshold sweep.
+Unweighted win BCE p>.5 concretely rejected: hit rate ignores loss magnitude.
+Weighted BCE sigmoid estimates positive-payoff MASS share, NOT win probability
+or expected-return ranking. Lower quantile is not mean/ES/portfolio-DD guarantee.
+Earlier separate13parameter/9CPUfit/300active1800end proposal explicitly
+SUPERSEDED UNEXECUTED/0nativefits; Parent's currentGPUfamily/caps unchanged.
+H1 purezero-fit CPU mask+matchedoriginal fits SAME frozenfamily <=90cells;
+no separatecampaign/extraheads/fits/platform. Same fixed
+basket/weights, cash on rejected slots; all-cost strict net/no-worse-DD versus
+paired Huber/ungated/matched controls is strongest kill; no substitute winner.
+Primary official AQR momentum/NBER Nagel/AEA quantile/PyTorch2.7 loss/KIS field
+links, exact features, rights boundaries and finite recipe in candidate.md.
+Pure SYN11/11 PASS twice; initial Ruff5style findings preserved/one bounded
+repair, final full project-config Ruff PASS/no cache. No native optimizer or
+market fits. Check/format/audit observed host1.5012391s, conservative5s active
+debit; checks elapsed snapshot56.116s within60active600end pure-check caps.
+Source/orchestration preparation is not called CPU/GPU spend. Final kernel
+6cfe33ad148b45381996165b256bb05e9d5b74b8398d2a4b6801ef71ac71d913;
+Parent-aligned candidate0a65fd8a.../testb421cf3d..., readiness.json binds exact
+hashes/scope; kernel/tests unchanged after Parent amendment, fresh hash readback PASS.
+No full-suite authority reused; external checks do not prove market utility.
+Chronos OPTIONAL only: existing95a9710 snapshot stat/config hash checked;
+weights never read/hashed/loaded/downloaded. Runtime2.2.2/Apache2 official code
+verified online; snapshot timestamp2025-10-30T14:58:57Z/license inherited from
+prior pinned metadata after official metadata refresh429. Exact corpus cutoff/
+overlap unknown; dated weights before every target still only seen post-checkpoint
+development, not independent/OOD evidence. Closed F study unchanged/not rerun.
+Throughput: bounded source package owned here/no collector/GPU; due is Parent
+consumption. Reversible improvement tests target/decision structure rather than
+another architecture. No market/payoff/API/env/broker/Tasks/Git/sharedsrc work.
+No Claude query/agreement in this no-API sidecar; Parent obtaining weighted-mask
+addendum now, verdict not observed here. Coordination through Parent only.
+Next: Parent integrates existing H1purekernel+SYN/hashes in its SAME GPUfamily
+if common support/cellcap permit, no new fit dispatch by Strategy. No sidecar actor;
+no operator decision identified. Historical ready sets below are not new work.
+
+## Prior Closed Preparation
 
 COMPLETED invoked relative-ranking-fusion-readiness-20261015-v1 sidecar.
 Consumer: Engine's aligned retained expert scores -> zero-newfit composition ->
@@ -116,7 +195,7 @@ Prep receipt closed at709.85s of900s maximum; no worker left running.
 Parent/Engine own final targets/splits/costs/trial/time budgets and integration.
 Independent Data/Execution and standing Paper permission remain unchanged.
 
-## Small Ready Set
+## Historical Indicator Set (Consumed)
 
 - KEEP exactly12 fixed candidates: return5, log-trend10, RMS-volatility10,
   mean-normalized-true-range10, log-relative-volume20, Wilder-RSI14-anchor35;

@@ -18,6 +18,55 @@ R131=A/research/daily20-mean-versus-lower-quartile-exit-development-v1.
 Engine owns science; Steward GPU/family custody; Strategy sources; Parent policy/Git;
 Execution broker risk. Only these boards and the assigned external package are worker writes.
 Parent reports pure targets COMPLETE/actual10/fresh full coverage/Docker installed.
+DHEAD=A/research/cost-aware-distribution-head-preparation-20261015-v1 CLOSED
+technical_failure, original contractd18a8dee.../0retry remains immutable. Parent
+native CPU SYN failed BEFORE Adam construction completed/0optimizer steps/
+0market fits/GPU. Exact guard: write_outside_owned_phase_output; lazy Adam ->
+Dynamo/FSDP/remote_module/instantiator -> tempfile.gettempdir probed /tmp.
+Host12.528902499984783active/5.636366367340088end; child reaped/container absent/
+lease released/source unchanged/cleanup complete. No broad /tmp write permission.
+DREPAIR=A/research/cost-aware-distribution-head-runtime-repair-20261015-v1
+CLOSED actual CPU/CUDA SYN/intake/train/replay all complete; Parent owns
+numerical orchestration. Raman independent readback UNDERWAY, not yet a pass.
+Contractf3727de5688046486457a6238eff6c262975391500fb4ad49da53b6bc15ec8ff;
+worker56dd3e97.../hostc2ce0485.../ready24b1e80e... frozen. Mechanical snapshot,
+heads/trainer byte-identical; only owned runtime-temp init and carry/transport
+repair plumbing. Before audit mkdir own output/runtime-temp; TMPDIR/TMP/TEMP+
+tempfile.tempdir point there. Network/credentials/other-write guards unchanged.
+20source controls/Ruff plus actual native CPU/CUDA Adam/restore/policy/replay/
+typedJSON SYN passed.9CUDAattempts9fits/191epochs4574updates; selected epochs1/2,
+all INNERpatience20 plateau, maxwholefit2.581526s<120, not convergence proof.
+72campaign+45retained-18overlap=99unique complete0unknown; all9 all-cost joint
+checks false/primaryfalse. Strongest utility kill met; no winner/Alpha/adoption.
+Same appointment1792046765.732106,1500active3600elapsed,clock_failed=false;
+host-replay95.79062049999362active/522.5073506832123end, child worker conservative
+96.40603639997425active highwater BILLED by Parent, not refunded to host95.7906.
+Original12.5289/5.6364 failure and all prep/debits preserved. All five phases
+childreaped/containerabsent/leasereleased/cleanup/source unchanged; no GPU active.
+Consumer: cached common61/raw20+latest12 -> same9345-param MLP/three net heads
+x3stages=9GPUfits -> fixed original-basket entry masks -> native cost replay.
+Huber net LOCATION, payoff-mass-weighted BCE (NOT winprob/ranking), q25 net;
+all fixed cuts0, no rerank/refill/renormalization. FIT-only scalers/RMS/no center,
+BCE dateweights*abs(u)/FITmeanabs(u), zero FIT/INNER mass undefined, no tail clip.
+Own FIT-optimal constant/proper-loss baselines/coverage diagnostics only. H1
+omitted; no extra CPU affine arm.256max/p20/INNERloss/LRplateau,120wholefit
+reserves20, numeric best-INNER restore, all3policy/5mark seals before economics.
+72campaign cells=54new masks/matched-original+18original/cash reproductions;
+45frozen control checks overlap18,99unique, 5/10/20 per-side/reference10bps.
+Exact after-cost Fraction ratio target nextOPEN->fifthCLOSE; no horizon axis.
+Paper fifthOPEN bridge is separate descriptive CPU6cells/0fits, not parity/
+winner/adoption. Existing22:40/23:50 Tasks/source/bank untouched; Parent owns
+actual Paper runtime, not inferred from source tests or installation.
+Ready/owned/due: Raman independent reader; Engine new source-only long-history
+PREP assigned separately, no market input/fits/GPU. No DREPAIR creator repeats.
+[actual host closure](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/host-replay.json) 45cf65bd...;
+[categorical actual result](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/replay/output/result.safe.json) 961cdd10...;
+[conservative worker clock](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/replay/output/worker-result.json) cbcdeef3...;
+[original terminal host](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-preparation-20261015-v1/host-synthetic-cpu.json) ca461b1b...;
+[settled method and claim limits](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/method.md).
+Parent scoped weighted-mask/runtime-repair Claude supported-with-limits; advice
+is not a new permission gate. Seen/nonPIT/actions/units/listing/selection reuse/
+fourDEV/unknown publication limits permanent, no Alpha/untouched/autoPaper claim.
 J=A/research/daily5-absolute-utility-native-tolerance-development-20261015-v1
 CLOSED technical_failure/unchanged_control_scalar; Parent dispatched ONCE/exit1,
 3attempts3successfulCPUfits/0retry. Consumer: raw20 absolute quoted5-return Ridge ->
@@ -66,11 +115,12 @@ linked conservative cumulative23.3757741/final snapshotunknown preserved separat
 never refunded/renamed retry. [old terminal](D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-abi-recovery-20261015-v1/terminal.json).
 All reused C/G/H/seen/nonPIT/action-unit/currentlisting/fourDEV limits remain; no Alpha/
 untouched/Paper adoption. Parent Paper coordinator/runtime/Scheduler independent.
-Both creator and linked reader CLOSED/frozen; no additional fits/GPU/readback dispatch.
+Both J creator and L reader CLOSED/frozen; no additional J/L dispatch.
 Next ready consumer: verified current scores -> pure untrusted targets -> owned native
 Paper cycle. Parent is deploying the frozen model task; Parent/Execution own runtime/
 reconciliation/accounting verification. Deployment progress is NOT a fill or PnL;
-no next Engine numerical campaign assigned/automatic policy promotion.
+DREPAIR is the separately assigned scientific preparation above, not automatic
+policy promotion or reopening of J/L.
 Aristotle target source remains exclusive; Parent owns NEXT/actual owned Paper cycle.
 H=A/research/native-recurrent-attention-relative-ranking-development-20261015-v1
 CLOSED r2/independently_checked_seen_development; consumer: recurrent/causal-attention relative-risk scores

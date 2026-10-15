@@ -18,6 +18,43 @@ Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
 Parent reports pure targets COMPLETE/actual10/fresh full coverage/Docker installed.
+DHEAD=A/research/cost-aware-distribution-head-preparation-20261015-v1 CLOSED
+original0retry/contractd18a8dee...; Parent native CPU SYN exited1 before Adam
+constructor completed/0optimizer steps/0market fits/0GPU. Named first cause:
+lazy Dynamo/FSDP tempfile probe /tmp rejected by owned-write audit, not a CUDA/
+hardware/permission fault. Host ACTIVE12.528902499984783/end5.636366367340088,
+same1500/3600; reaped/container absent/lease released/cleanup/source unchanged.
+DREPAIR=A/research/cost-aware-distribution-head-runtime-repair-20261015-v1
+CLOSED/Parent numerical owner; contractf3727de5688046486457a6238eff6c262975391500fb4ad49da53b6bc15ec8ff,
+worker56dd3e97.../hostc2ce0485... frozen. Scientific heads/trainer byte-identical.
+Only scoped runtime-temp init plus carry/transport repair: mkdir owned output
+tempdir before audit, TMPDIR/TMP/TEMP/tempfile.tempdir there, no /tmp/network/
+credential/write-scope relaxation.20source controls/Ruff plus actual native
+CPU/CUDA SYN/intake/train/replay complete.9CUDAfits191epochs4574updates,
+selected epochs1/2/allpatience20 plateau/not convergence.72campaign+45retained
+-18overlap=99unique complete0unknown/all9jointfalse/primaryfalse, no Alpha.
+Original appointment1792046765.732106 retained/1500active3600end;
+host-replay95.79062049999362active/522.5073506832123end, worker conservative
+96.40603639997425active highwater billed by Parent, no caprefund; clock_failedfalse.
+Original12.5289 failure/all source PREP unchanged. Every phase childreaped/
+actorabsent/leasereleased/cleanup/source unchanged. No GPU remains allocated.
+Raman independent readback UNDERWAY, not independently passed yet. No repeats.
+Same raw20+latest12/common61 cache/threechron stages/seed303/9GPUfits, one9345-
+parameter MLP; Huber net location/payoff-mass BCE/q25, fixed original-weight
+masks/no rerank/refill/renormalization. H1 omitted/no CPU extra arm.256max/p20,
+120wholefit/reserve20/INNER proper loss+constant baselines/numeric best restore.
+72campaign/54newmask/45retained/18overlap=99unique scalar/whole-curve cells,
+all3policy/full5marks seals before economics; same5/10/20fees/.1/.5 native caps.
+Research fifthCLOSE fixed; separate Execution6cell fifthOPEN comparison is
+descriptive/0fit/no adoption. New long-history Engine SOURCE PREP only assigned,
+no actual market/optimizer/GPU access. Future allocation rechecks lease/actors/
+headroom; old .32 is not globalcap. Typed cleanup/one GPU owner.
+[actual host closure](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/host-replay.json) 45cf65bd...;
+[categorical actual result](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/replay/output/result.safe.json) 961cdd10...;
+[conservative worker clock](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/replay/output/worker-result.json) cbcdeef3...;
+[original closed failure](D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-preparation-20261015-v1/host-synthetic-cpu.json) ca461b1b....
+All earlier studies/debits immutable, seen/nonPIT/rawactions/units/listing/fourDEV
+limits remain; no qualified Alpha/Paper grant.22:40/23:50 deployments/bank intact.
 J=A/research/daily5-absolute-utility-native-tolerance-development-20261015-v1
 CLOSED technical_failure/unchanged_control_scalar, Parent ONCE/exit1/0retry;
 3attempts3successfulCPUfits, all3prediction/policy/full5marks seals retained.
@@ -64,8 +101,8 @@ nonPIT/currentlisting/fourDEV limits remain; Parent owned Paper/Scheduler indepe
 J creator/L reader CLOSED/all sources/results/debits frozen/no repeats or new fits.
 Next ready consumer is Parent's frozen model-task deployment -> owned native Paper
 runtime/reconciliation/accounting verification; not a research-permission gate.
-Parent currently deploying is not actual fill/PnL evidence. No next Engine numerical
-campaign assigned/automatic policy promotion/GPU allocation; roleboard writes frozen.
+Parent deployment is not actual fill/PnL evidence. DREPAIR above is separately
+assigned preparation, not J/L reopening, automatic promotion or a GPU allocation.
 H=A/research/native-recurrent-attention-relative-ranking-development-20261015-v1
 CLOSED r2/independently_checked_seen_development; contractf60974bf2acdb5a5737544969a097acef545c68c3d96a54f1b9476b593651885;
 185pins/host_r2aa4d8a92.../worker_r2cd703f46... unchanged. Parent ONCE/worker0,
