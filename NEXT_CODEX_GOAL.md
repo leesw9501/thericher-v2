@@ -67,21 +67,43 @@ owned/unknown, not replayed. Exact future duties in HANDOFF/RUNBOOK.
 
 Parent owns integration/Git, one owner per write set and one GPU allocation.
 Current delegates:
-- Data/McClintock: local retained NAS long-canonical materialization/calendar
-  reproducer. Metadata512/1,170,543bars/6348files,396>800bars; actual valid unique
-  windows not yet read back.0API/credentials/Scheduler; reuse before acquisition.
-  A/data/nas-retained-long-canonical-20261015-v1
-- Engine/Godel: fixedmajority/confidence/one depth2decision gate from prespecified
-  eventGRU/HGBjoint312/H1; OOF1 metaFIT, OOF2/final reused evaluation,1metaCPUfit/
-  0expertrefits/0GPU/36cells within frozen scope. Sole numerical owner; Parent
-  does NOT duplicate driver. No completion yet reattached.
-  A/research/spy-qqq-fixed-and-tree-decision-dag-preparation-20261015-v1
-- Strategy/Kant: exact official Apache2TimesFM2.5 checkpoint/date/license/API
-  preparation, not defaultTimesFM3/NC adoption or market/GPU evaluation yet.
-  A/strategy-research/timesfm25-etf-benchmark-preparation-20261015-v1
+- Data/McClintock: long canonical CLOSED1,170,008bars/1,133,899past61entries,
+  498assets/535holiday quarantines/5836duplicates/5,870,421checks. Original local
+  Oct14merge CLOSED B:504July28revisions quarantined/0currentextension, not proof
+  of incompatible units. NEW revised-as-of versioned snapshot may prefer the
+  whole later-captured fresh61block under identical native source contract,
+  retaining hashes/dates/revisions/limitations and old datasets unchanged.
+  A/data/nas-retained-long-current-versioned-20261015-v1
+- Data fixed liquid-core20:20ready61/47417bars/46097windows, current-listing/
+  non-PIT/action/unit/finality limits. First76GET/1POST/1retry CLOSED, complete
+  ready input usable without more acquisition. Exact-cursor resume-r1 carries
+  ALL original600active/1800end/200GET/10retry caps, one separately named extra
+  guarded tokenPOST(maxaggregate2), measured rate-limit cooldown/2second pace.
+  Never reset expired clocks/debits;no duplicate fresh pages. No account/order/
+  positions/scheduler/live/paid/public calls. Yield Paper owners/stop13:25UTC.
+  RawonlyM/no secrets/imputation/new recurring worker. This is not old8GET scope.
+  A/data/liquid-core-market-readiness-20261015-v1
+- Engine/Raman: actual3Ridge+6CUDA/90cells done;49total fit versions across
+  latest continuation including one retained meta gate. GRUquote-growth wins9/9
+  but DDworse9/9, primaryfalse; independent826pins/90cells noP1P2 within scope.
+  Alphabetical AAL..CTRN sample, NOT representative US/Nasdaq/economicprofit.
+  Large raw-close jumps explain61/30/89percent positivegross byfold; two flags
+  match issuer-confirmed reverse splits. Never filter future windows or call
+  proxy growth money. Existing primaryGRU/allcontrols frozen22347568;
+  Aug-Oct not automatically untouched/PIT/prospective,0newfits/tuning allowed.
+  A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json
+- Engine next preparation: liquid-core20 same-session OPEN->CLOSE, past within-
+  bar dimensionless OHLC inputs; target avoids mechanical between-session
+  split gains. Separate frozen finite campaign/native SYN before any new fit.
+  A/research/liquid-core-unit-invariant-open-close-preparation-20261015-v1
+- Strategy/Kant: TimesFM2.5actual2cold/11forecasts/12cells CLOSED/independently
+  checked;0fits/all3costgrowthnegative. Now cached MODP0/1 source interpretation,
+  0KIS/model/GPU calls. No defaultTimesFM3/NC adoption or blind new model search.
+  A/data/kis-adjustment-cached-interpretation-20261015-v1
 
-Five recent families CLOSED39 fitted versions(24CUDA/15CPU), plus Chronos2
-inference0fits. Independent results/limits in HANDOFF/role boards. No joint
+Five earlier families CLOSED39 fitted versions(24CUDA/15CPU), plus one meta
+gate and nine new NAS versions ->49(30CUDA/19CPU). Chronos2/TimesFM2.5 inference
+0fits. DAG36cells independently checked/0of6joint. No qualified Alpha. No joint
 incremental performance pass; positive cases and all-cash minute masks retained,
 not a ban on composition/Paper. Completed creators MUST NOT be rerun.
 

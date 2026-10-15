@@ -1,115 +1,122 @@
 # Engine Research Stateboard
 
-Current 2026-10-15 KST. Company: current-nas-owned-model-paper-cycle-v1.
-AGENTS.md owns policy. A=D:/thericher-v2/model-artifacts.
-Engine science/targets/fits/replay; Steward GPU/custody; Parent shared docs/Git.
-Execution owns broker risk; private research is not a Paper gate.
+Current2026-10-15KST. Company: current-nas-owned-model-paper-cycle-v1.
+A=D:/thericher-v2/model-artifacts; AGENTS owns authority. Parent owns integration/
+Git, Execution owns broker risk. MD is memory, not an active worker.
+Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
-## Decision DAG Publication CLOSED
+## Current Material Result
 
-Engine solely dispatched one explicitly authorized zero-fit analysis;
-Parent did not invoke. A/research/spy-qqq-decision-dag-checkpoint-publication-
-20261015-v1 is current publication root. Contract
-13f3b79d8d1b781cb3651fda6ddd37ac2ac6704f6738db030b860956f2d33834.
-ACTUAL36complete/0unknown,0new meta attempts/fits/SYNfits/expert refits/GPU.
-Retained one OOF1 gate checkpoint EXACT7ba68d4f22c83842d6332c080adde8d05503c6b46c3b6013ecdc43b48d6827fb.
-Native safe restore/manual probability parity:3total nativecalls=1existing
-invented checkpoint+2later OOF2/final;0OOF1/extra owner forwards. Fit entrypoints
-d.fit/native classifier/regressor.fit/BaseDecisionTree._fit raise.
-Full finite metadata JSON fixture passed BEFORE actual publication; depth/leaves
-explicit int. Old partial JSON/failure never overwritten.6fit/effect denials.
-OOF1 attempt/target-end purge proof revalidated, no teacher recomputation or
-TRAIN performance claim. Both later full actions/keys/scores/allfive event marks
-sealed BEFORE first36cells. Seal05433d0a...,safe23b8c56c...,curves6142f1f1....
-Owner readback:144curve arrays/43,056NAVpoints, exact fixed-rule/fractional-control
-identities;111source/input pins unchanged. Owner check is NOT independent.
-[Owner handoff](D:/thericher-v2/model-artifacts/research/spy-qqq-decision-dag-checkpoint-publication-20261015-v1/owner-handoff.json)
-and [categorical output](D:/thericher-v2/model-artifacts/research/spy-qqq-decision-dag-checkpoint-publication-20261015-v1/run/output/result.safe.json).
-All6policy-cohort all-cost joint checks FALSE; final9of9growth comparisons
-fail vs own fractional-gross matched. No stable incremental joint utility,
-no winner/threshold/expert change/qualified Alpha/Paper adoption.
+Raman's NAS utility study ACTUAL3Ridge+6CUDA fits/90cells/0unknown:
+143neural epochs/5506updates, all six INNERpatience stops, not convergence.
+GRU quoted-price growth positive and beats all named controls9/9fold-cost cases;
+drawdown WORSE than original/same-gross9/9. Original primary FAILED; do not
+retroactively remove its drawdown condition or call it an operator risk rule.
+196.19chargedactive/1472.11elapsed within3600/10800; source unchanged,
+children/containers/GPU lease cleaned. Godel independent readback CLOSED:
+826pins/90cells/71490NAV-exposure pairs, full Ridge/MLP EVAL,64GRUrows/fold,
+12loss checks; full GRU inference attested, noP1P2 within checked scope.
+A/research/nas-long-history-utility-experts-development-20261015-v1/owner-handoff.json
+A/research/nas-long-history-utility-experts-development-20261015-v1/independent-review
 
-NEWclock appointment1792061086.885726,120active/1200end/0retry:
-host4.998220799985575active/3.016056537628174end; owner closure
-9.243510199987213active/90.84535574913025end incl4s conservative inspection
-plus measured bounded array/publication check,clock_failedfalse.
-OLDclosed21.70546420001483active/1571.0055224895477end unchanged/EXPIRED;
-combined30.948974400002044active <=180. This late analysis DID NOT finish
-within old1800end and is NOT a clock refund/retry of exhausted meta attempt.
-Child reaped, exact4CPU/6GiB job closed,0GPU allocations; no actor lease.
-No source/output creator rerun; Parent owns independent readback next.
+Interpretation: universe is alphabetical NAS512 AAL..CTRN, NOT representative
+US/Nasdaq/liquid constituents. MSFT/NVDA/META/GOOG/TSLA/ETFs absent.
+Peer4 are SAMPLE peer/regime summaries. Current listing/survivorship,
+unadjusted quote units/corporate actions/nonTR/availability limits remain.
+Reverse-split price jumps can create phantom economic profit. Fixed diagnostic
+held-day rawclose ratio>1.8/<.55 flags61/30/89percent of positive gross gains
+by fold. NOT proof of all splits, never future filtering/corrected-return claim
+or model feature. Two public issuer/SEC confirmations match flagged windows:
+[BNZI May8 2026,1for20](https://ir.banzai.io/node/9516/html),
+[ASBP May11 2026,1for30](https://www.sec.gov/Archives/edgar/data/1847345/000149315226037819/form10-q.htm).
+Growth is a
+QUOTE-PRICE COST PROXY, not actual economic/settled/net broker PnL.
 
-Science unchanged: event GRUjoint60/HGBjoint312/H1; majority>=2 fullweight,
-confidence>=2 then votes/3, single depth2/minleaf32/seed303 OOF1 gate.
-Three policies+3fractional-gross matched x2later cohorts x3costs=36cells.
-Original .1/.1/no rerank/refill/renorm. OOF2/final developmental, contract AFTER
-base outcomes existed, not preregistered-before-all-outcomes/fresh/blind/
-qualified independent selection. Calibration/version drift/nonPIT/nonTR/
-currentlisting/sourceavailability/nominal pretax NONCASH receivables/unknown
-settlement/tax retained. HGB finalprefix0 unchanged, never substituted.
-HGB independent closure noP1/P2:36ledgers/6native forwards/12loss/8SYN,
-162total0unknown;166.6187462active/1561.7579932end within600/3600.
-[HGB closure](D:/thericher-v2/model-artifacts/research/spy-qqq-event-target-boosting-development-20261015-v1/admission-r4/independent-review/closure.json).
-Source/receipt chronology attestation, not cryptographic. Profit not an input gate.
+Raman CLOSED the PRESPECIFIED primary finalGRU/allcontrols/code/scalers/
+eligibility/policy freeze22347568,0fit/0suffix reads. No champion choice.
+A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json
+Proposed0fit later Aug3..Oct7 diagnostic is NOT automatically untouched,
+independent or prospective. Existing usage/source/capture limitations must be
+explicit; no later data tunes weights/epochs/thresholds/risk overlays.
+Current frozen Paper C targets/source/identities/bank remain unchanged.
 
-Old original f00459c4 import failure CLOSED0fits/0cells: public NumPy origin
-JSON misclassified by SYN audit. Original2.4481484active/.4653401end, owner
-10.5412233/143.1369145 immutable. Explicit cd25f6e1 metadata continuation
-passed exact metadata binding/8denials/SYN1fit18replays198Fraction NAVchecks,
-then1OOF1fit/export/restore succeeded; NumPyint64 leaves JSON failed before
-later actions/0cells. Host16.2612347/1463.6273,owner21.7054642/1571.0062,
-same old180/1800 appointment1792058225.7345262; zero retry not reinterpreted.
-Both frozen failed roots/checkpoints/clocks remain immutable/searchable.
-Worker knowledge: .json suffix is NOT market-root identity; exact public
-dependency origin metadata pins allowed. SYN-serialize FULL metadata schema
-before any market fitting, not only replay summaries. No broad guard relaxation.
+## Breadth / Depth Queues
 
-## Previous QQQ Campaign Closed
+Short breadth READY/OWNED:30cell frozen later-date diagnostic after Data's new
+revised-as-of current snapshot,0fit/no tuning/no independent claim; cached
+MODP0/1 unit interpretation. Distinct liquid-core20 input now ready47417bars/
+46097windows. Raman prepares same-session OPEN->CLOSE target with past within-
+bar dimensionless OHLC features, avoiding mechanical cross-session split gains.
+No numerical dispatch until a separate finite contract/native SYN; no blind grids.
+Long depth NEXT, NOT RUNNING: use verified economic-unit conventions and
+available useful data for a bounded risk/holding-horizon or richer-model study
+only after a concrete hypothesis/stop/caps. Current higher-DD growth is not
+solved by dummy GPU epochs or an outcome-tuned smaller exposure.
+One GPU allocation, measured desktop headroom; old VRAM/time limits not global.
+Earlier epochs/seed/no-rerun limits protect their OWN immutable results only.
 
-A/research/qqq-intraday-window-mass-gate-development-20261015-v1:
-9attempts9complete=3CPUlogit+6CUDAGRU,98epochs2210updates/2882forwards.
-90complete0unknown; all learned masks abstain across3folds;27learned cells
-flat cash-like, NOT all models losing.0true9false joint. No threshold rescue.
-62.28140499997244active/298.0132086277008end under1800/7200; source/lease/
-container/reap clean. owner-handoff.json/all-stage seal43d7ce43/result2bc44cc1.
-Parent consumed; Aristotle owns child independent-review. No creator rerun.
-Same60min nominal ET-start QQQ1m30vs120/common support; archive likely seen,
-unknown adjustment/publication/PIT/KIS compatibility; no independent Alpha.
+## Completed Studies / Consumer Limits
 
-## Retained Outcomes / Custody
+Five earlier families39fit versions(24CUDA/15CPU), plus ONE retained meta gate
+and new9fit NAS study ->49fitted versions(30CUDA/19CPU), NOT49architectures.
+SYN fits/reader forwards/foundation inference are not extra fitted models.
 
-Parent EVENT6fits/126cells independent141pins/126oracles/noP1P2,increment0/6;
-raw-teacher metadata semantics explicitly qualified in shared docs. No rerun.
-EventMath SYN17tests/15native/16Fraction complete8.911134active886.414355end:
-one actual guard correction; Parent duplicate admission FileExistsError BLOCKED,
-no second numerical trial. Original import failure/source/debits immutable.
-Prior long-history9fits/90cells independently checked165pins/9CPUforwards/
-18loss/90oracles;6GRU152epochs/all18growthpositive/logit4pos5neg/0joint,
-100.067890689combinedactive; not all models unprofitable.
-DREPAIR9fits99cells independent350pins/117.7593144active,stored-path checks
-not exactFraction regeneration; initial temp-audit failure carried unchanged.
-Foundation8KNOWNsuccessful forwards/0fits,13chargedAGGREGATEUPPER NOT13actual;
-old failed-market countunknown0..5, primaryfalse,73.45656active; closed/clean.
-U rejected90economicunknown/strictcrossbackendfail never rerun/refund.
-N480breach10attempts9complete1interrupted/5unattempted,1561.2304241active/
-1529.2663end; C linked15combinedattempts14complete1retainedpartial/no updates.
-H18fits54cells45controls0/18joint,independent118.966964active2728.537142end.
-G2CPUgates15cells independentPASS/noexpertrefits. J3CPUfits creator failed only
-derivedmeanlog<=1e-14; L0newfits27cells45controls95.1833769/1645.4028485,
-original failures not retrofixed. Old0fitABI13.0559015active/expired600,
-linked firstexceptionUNKNOWN remains. Old source/results/debits never refunded.
-History preserved in immutable roots/Git:
-[62b406e](https://github.com/leesw9501/thericher-v2/commit/62b406e4d676365c2f50b1b2ed6f542712d9325c),
-[27dface](https://github.com/leesw9501/thericher-v2/commit/27dface7039fa382775c6abf05f20dd5e306c21c).
+| Study | Exact current result |
+| --- | --- |
+| MLP cost heads |9CUDA/191epochs/99unique cells,0joint; independent350pins, stored-path consistency only|
+| Long ETF |3CPU+6CUDA/90cells,18GRU growthpositive/0joint; independent165pins/9checkpoint/90oracles|
+| Event teacher |3CPU+3CUDA/126cells,9jointGRUgrowthpositive/0of6increment; independent141pins/126oracles, nominal NONCASH entitlements|
+| QQQ1m30vs120,60min |3CPU+6CUDA/98epochs2210updates/90cells; learned masks all cash,0of9joint;9nativeEVAL/90oracles,8FIT-INNER pairs checked, finalGRU120losses attested|
+| HGB event target |6CPU/343iterations/36new+126reference=162unique,0of18joint;6native/12loss/36oracles; finaljoint312intercept-only|
 
-## Next Owner
+A/research/cost-aware-distribution-head-runtime-repair-20261015-v1/independent-review/result.json
+A/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
+A/research/spy-qqq-event-aware-target-development-20261015-v1/independent-review/result.json
+A/research/qqq-intraday-window-mass-gate-development-20261015-v1/independent-review/readback.json
+A/research/spy-qqq-event-target-boosting-development-20261015-v1/admission-r4/independent-review/closure.json
 
-Publication family CLOSED; Parent owns independent math/key/cost/checkpoint
-readback/shared integration/Git. No automatic fit/replay/reader creator rerun.
-Engine handed off, no implicit follow-on/queued architecture or approval gate.
-OurGPU allocation NONE. Kant TimesFM2.5 native/12cell study has delegated first
-GPUslot; Raman NASlongutility PREP0GPU. One GPU lease, no dummy training.
-Data canonical512/calendar/fresh61 local append separate, no DAG dependency.
-Paper22:40/23:50/source/schedules/original shared bank unchanged. Existing
-5frozen experts1215scores->10untrusted targets->owned Paper independent.
-Installed/tests/Ready != runtime/fill/PnL. No genuine operator decision needed.
+## Decision DAG Closed, Zero Refit Publication
+
+Fixed eventGRU/HGBjoint312/H1 experts, majority>=2/confidencevotes3/one depth2
+OOF1-only gate; OOF2/final only, three policies/three fractional-gross controls/
+threecosts=36cells. Adaptive after base outcomes existed, not fresh blind study.
+Original import failed0fits; exact public NumPy origin metadata continuation
+passedSYN1fit18cells/8denials then ONE meta fit/export/restore succeeded.
+NumPyint64 leaves JSON failed before later decisions; checkpoint retained.
+Original21.7055active1571end/expired1800 and partialJSON remain IMMUTABLE.
+A/research/spy-qqq-fixed-and-tree-decision-dag-metadata-repair-20261015-v1/first-cause.json
+
+NEW0fit publication reused exact7ba68d4f22c83842d6332c080adde8d05503c6b46c3b6013ecdc43b48d6827fb.
+36complete/0unknown; all6joint fail, all9final growth comparisons fail own
+fractional-gross matched. No retuning or qualified Alpha/Paper adoption.
+Independent111pins/144curves/OOF1purge+leafmass/2EVAL+1leaf native checks pass,
+noP1P2 within scope. Newpublication9.2435active90.8454end within120/1200;
+reader<=24/90active, observationalcombined<=54.949/180. Late reads NOT within
+expired original1800end; no training-clock refund or extra meta attempt.
+A/research/spy-qqq-decision-dag-checkpoint-publication-20261015-v1/independent-review/readback.json
+
+## Foundation Evidence, Not Fit Counts
+
+Chronos2 actual5newmarket forwards/34baskets/12cells,0fits;1costgrowthpositive/
+2negative, primaryfalse.8knownsuccessful/13aggregateUPPER includingoldfailed
+unknown0..5, never actual13. Exact trusted checkpoint/date; corpus unknown.
+A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
+TimesFM2.5 actual9market+2SYN forecasts/2coldloads/12cells,0fits. All3costgrowth
+negative,0joint;653pins/680q50/6800quantiles/12cells independently checked.
+Raw60+4native masked padding/q50 endpoint ratio, not expected return/winprob.
+Package2.0.2/weight2.5Apache2, exact2025-10-01weight origin before targets;
+not defaultTimesFM3/NC.148.101combinedactive; old300/3600native closure and
+separate later observation clocks preserved. No new model calls in reader.
+A/research/timesfm25-etf-mask-development-20261015-v1/admission-r2/independent-review/closure.json
+
+## Recovery / Memory
+
+Exact dependency metadata is not market data by .json suffix. Freeze input
+ROOTS and known public dependency metadata hashes; keep secret/network/write
+denial. NativeSYN must serialize FULL checkpoint metadata incl NumPy integer
+fields before market fits. Publication recovery reuses checkpoints, never
+refits an exhausted trial or overwrites partial failure/old clocks.
+Stage/seed/data/selection reuse remains debited, lower exposure alone not Alpha.
+Prior detailed roles/source ledger/GPU custody: Git40ffc4f/bd62272/62b406e/
+27dface and immutable external roots. Parent owns current Steward/goal/Git;
+this board must not become another journal, database or per-agent next goal.

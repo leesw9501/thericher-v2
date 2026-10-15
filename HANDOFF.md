@@ -77,8 +77,10 @@ A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-insta
 
 ## Research And Data Continuation
 
-These five completed development families contain39 fitted VERSIONS:
-24CUDA+15CPU, not39architectures. No qualified Alpha/Paper adoption.
+Latest continuation contains49 fitted VERSIONS:30CUDA+19CPU, not49architectures.
+Five families below contain39; one retained meta gate and nine NAS versions
+make49. Foundation inference/reader forwards/SYN are not fitted models.
+No qualified Alpha/Paper adoption.
 Individual growth-positive cases are not incremental performance qualification.
 
 | Family | Actual output | Independent result |
@@ -110,13 +112,43 @@ A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.j
 
 | Current package | Owner and actual evidence boundary |
 | --- | --- |
-| Daily decision DAG |Godel solely owns fixedmajority/confidence/one depth2gate over prespecified eventGRU/HGBjoint312/H1; only OOF1 metaFIT, later OOF2/final reused evaluation.0expertrefits/0GPU; completion not yet reattached.|
-| Retained NAS canonical |McClintock owns local parse/calendar diagnosis/canonical materialization,0API/credentials. Metadata512/1,170,543bars/6348files,396names>800bars/135pre2010,2007..2026; unique valid windows UNKNOWN until readback.|
-| TimesFM2.5 |Kant source/date/license/safe-API PREP, no market/GPU evidence yet. Official code/weights<=2.5Apache2; no defaultTimesFM3/NC adoption. Requires exact dated trusted revision before any comparative targets.|
+| Daily decision DAG |CLOSED36cells/0unknown/0refits; independent111pins/144curves/purge/leafmass noP1P2.0of6joint. Original metadata failures/one retained meta fit/expired clock preserved; late publication is a separate0fit analysis.|
+| Retained NAS canonical |CLOSED1,170,008valid bars/498assets/1,133,899past61entries,535official-holiday rows quarantined/5836duplicates/zero conflicts.5,870,421native checks. No timezone shift; first offender was Thanksgiving2010.|
+| TimesFM2.5 |CLOSED2cold/2SYN+9market forecasts/12cells/0fits. All3cost growthnegative. Independent653pins/680q50/6800quantiles/12cells; cash/intermediate fees inferred. ExactApache2weights predate all34baskets, no default3/NC.|
+| NAS utility experts |CLOSED3Ridge+6CUDA/143epochs5506updates/90cells. GRUquote growth wins9/9 but DDworse9/9; primaryfalse. Independent826pins/90cells/71490NAV-exposure pairs, noP1P2 within checked scope.|
+| Frozen later diagnostic |Primary finalGRU/allcontrols frozen22347568 before suffix reads; prepared30cell/0fit later-date diagnostic, not automatically independent/prospective.|
+| Liquid-core input |20/20past61ready,47417bars/46097windows. Bounded76GET/1POST intake completed; separately linked continuation/versioned NAS merge owned by Data.|
+| Current ready work |Strategy cached MODP0/1 unit interpretation. Engine prepares split-unit-invariant same-session target; no new fit before frozen contract/native SYN.|
 
 A/research/spy-qqq-fixed-and-tree-decision-dag-preparation-20261015-v1
 A/data/nas-retained-long-canonical-20261015-v1
 A/strategy-research/timesfm25-etf-benchmark-preparation-20261015-v1
+
+The NAS512 catalog is alphabetical AAL..CTRN, NOT representative US/Nasdaq.
+Raw unadjusted units/reverse splits may create phantom economic gains; newer
+GRUgrowth is quoted-price proxy only, not actual money. Large held-window
+raw-close jumps account61/30/89percent of positive gross GRU quote gains by
+fold. This heuristic is not proof of all actions. Two flagged windows coincide
+with issuer/SEC-confirmed reverse splits:BNZI May8 2026(1for20),ASBP May11
+2026(1for30). Do not filter flagged future windows, publish corrected PnL from
+that filter or remove the original failed DD criterion. Paper C unchanged.
+A/research/nas-long-history-utility-experts-development-20261015-v1/owner-handoff.json
+A/research/nas-long-history-utility-experts-development-20261015-v1/independent-review/completion.json
+A/research/nas-long-history-utility-experts-development-20261015-v1/independent-review/r2/run/raw-jump-diagnostic.json
+A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json
+A/data/liquid-core-market-readiness-20261015-v1/completion.json
+A/data/kis-adjustment-cached-interpretation-20261015-v1
+A/research/spy-qqq-decision-dag-checkpoint-publication-20261015-v1/independent-review/readback.json
+A/research/timesfm25-etf-mask-development-20261015-v1/admission-r2/independent-review/closure.json
+
+Original strict local current merge CLOSED B:504July28revisions quarantined,
+zero current extension; not proof of incompatible units. A NEW versioned
+revised-as-of snapshot may let positively later capture own the whole fresh61
+block under unchanged symbol/venue/endpoint/GUBN/MODP contract, logging every
+revision. No price/return-based choice, imputation, PIT/finality/economic-unit
+claim or change to old dataset/Paper snapshot. Claude supported-with-limits.
+A/data/nas-retained-long-current-versioned-20261015-v1
+A/review/parallel-engine-target-reset-20261015-v1/current-source-version-claude.json
 
 Data reusable inputs:13,622long-ETF rows/6,811dates; target-only action sidecar;
 retained1m195,056regular bars/315,772past-window keys,251sessions2022..2023.
