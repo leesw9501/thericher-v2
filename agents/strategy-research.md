@@ -1,135 +1,114 @@
 # Strategy Research Stateboard
 
-Current 2026-10-15 KST. AGENTS.md owns authority. Parent owns goal/Git,
-contracts/dispatch/integration; Strategy owns source hypotheses/assigned pure
-kernels, not fitting/broker risk/Paper adoption. No permanent Strategy daemon.
+Current 2026-10-15 KST. AGENTS owns authority; Parent owns company goal/Git,
+final science/dispatch/integration. Strategy owns source hypotheses/assigned
+pure kernels, not model fitting, broker risk or Paper adoption. No permanent
+Strategy daemon. History: Parent Git27dface + immutable external roots.
 A=D:/thericher-v2/model-artifacts.
-L=A/strategy-research/spy-qqq-long-history-policy-preparation-20261015-v1.
-H=A/strategy-research/cost-aware-policy-hypothesis-20261015-v1.
+C=A/strategy-research/chronos2-post-checkpoint-ETF-mask-preparation-20261015-v1.
 
-## Current Closed Preparation
+## Current Foundation Study Closed
 
-PREP CLOSED/CONSUMED. Parent's separate research-float backend passed48short
-native parity/2missing/4full6876invented cases, original modules/Paper unchanged.
-Parent then completed actual48H1cells/1363baskets,7.1445active/2.5788elapsed
-within120/1200. Overall5/10bps positive,20negative; only2middle comparisons
-pass/global primaryfalse. Independent23pins/48cashflow-oracle/4affordability
-cases noP1/P2, combined~12.6active inclreview; no alpha/Paper adoption.
-A/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
-A/research/spy-qqq-long-history-h1-development-20261015-v1/independent-review/result.json
-A/research/long-history-float-replay-preparation-20261015-v1/checks.json
-Native exact6876 capacity remains unknown, not a hold on this separate path.
+Parent actual benchmark CLOSED/independently read, noP1/P2:34postcheckpoint
+baskets/68tasks/5newmarketGPUforwards/12complete cells. Growth1positive2negative,
+primaryfalse; not Ereturn/Alpha/Paper adoption.60pins/68q50-median/Fractionmask/
+12cashflow checks pass, combined73.4566active including failed carry/review.
+Original CUDA default-device/pin-memory failure remains immutable; original
+actualforward countunknown0..5 charged. Separate bounded CUDAprobe passed
+CPUdata/GPUmodel and retained original300/1200 clocks:8known successful calls,
+13aggregateUPPER includingoldunknown, NOTactual13/old7authorityreuse.0fits.
+A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
+No active Strategy/model/GPU actor; current Paper unchanged.
 
-Consumer: next longer-history CPU fixed-rule baseline to compare new losses,
-not promotion/currentexecution. Only L/this board written. No market NPZ/bytes/
-payoffs/fits/model forwards/GPU/API/env/credentials/Tasks/Git/sharedsrc access.
-No active Strategy worker/child/collector/GPU remains. Tonight22:40/23:50
-unchanged. No inferred running/completion claim for Parent's other workers.
+## Historical Source Preparation
 
-Data source/schema/manifest read ONLY:
-A/data/spy-qqq-long-history-development-20261015-v1.
-contract612b070e86449c7377cdc0a90c366b6cebd3bf36a890bd2aa6742a07bbc0d693;
-manifestb80293129f665d6f1a80740aeff100a53852627b9acccf0494fb80394cb483f0.
-Declared NPZ8ffc907d8058764bfdbdd4c135932189e0d3c35409dd6b9f12bb48c91a1f15d6,
-34877182bytes NOT opened/rehashed. Metadata13622rows/6811entrydates/6876calendar,
-slots0SPY/1QQQ. Raw-asquoted/nonTR/nonPIT/unknown historical availability/
-finality/private-use/source-scope limits remain; no KIS/Paper parity or widening.
+COMPLETE/CONSUMED; following facts describe Strategy's original PURE-PREP only,
+not Parent's later actual benchmark above. Never redispatch its creators.
+Owned C/this board only. No weight bytes/load/forecast/model forward/fit/GPU/
+credential/KIS/task/deployment/sharedsrc/Git work. Only THREE calendar NPZ
+members read, explicitly authorized: ordinal/OPENutc/CLOSEutc, all C-byte pins
+match published manifest; no history/entry/future/action price arrays read.
+No active Strategy actor/collector/GPU remains. Tonight22:40/23:50 unchanged.
+Consumer: source-separated SPY/QQQ60D1 Chronos diversity masks -> approved
+RESEARCH-float five-session replay, NOT Execution code/current Paper.
 
-## Fixed Consumer ABI
+Exact existing checkpoint95a9710e2596287d08352589f42634fa5abdf0a7,
+A/foundation-models/chronos-2/95a9710e2596287d08352589f42634fa5abdf0a7.
+Safetensors477930472bytes STAT only; expected ddcda3c7508bf2528087723e98a20707cc04b7f370ae275a9fd88078ddba4f42
+NOT rehashed/read. Config ef1143bf... and cached Apache2 LICENSE09e8a9bc...
+freshly hashed. EXACT2official noauth metadata queries: card unavailable,
+commitHTTP429; STOP/no loop. Snapshot2025-10-30T14:58:57Z and WEIGHT Apache2
+remain inherited exact-card/commit evidence, not a fresh web attestation.
+Corpus cutoff/project overlap not_disclosed; not new rights ambiguity or
+operator gate. Weight/code license does not license underlying datasets.
 
-consumer.py: context history_ohlcv[n,61,5]/asset_slot/entry_calendar_index/
-entry_session_ordinal/feature_defined/calendar_session_ordinal/
-calendar_open+close_utc_seconds. Gregorian ordinals remain exact keys; native
-ReplaySession.ordinal is CONSECUTIVE calendar INDEX. Decision=prior CLOSE.
-Target binding separately consumes entry_open/future_open_close[n,5,2].
-Decision cannot access targets/diagnostics. Future-action/availability/
-future_marks_defined NEVER filter/select rows. Undefined H1=unknown, not
-zero/no-signal; held missing marks=exact-cell unknown, not fabricated zero.
+Installed local chronos-forecasting2.2.2 METADATA/AST/source checked, no model
+import. Pipeline4ea97766.../dataseta719c881.../model907ddd4f... match prior
+official fd533389c300660f9d8e3a00fcb29e4ca1174745 release pins.
+Existing safe loaderbef39813... and pinned image d6b43213... reused; no pull/
+download/install/runtime replacement. Image availability not re-probed.
+Exact API supports list of [2,60] tasks; one ETF/origin per task, channels
+OPEN/CLOSE jointly conditioned, cross_learning=False prevents cross-task
+attention. It returns marginal q50 medians, including field NAMED mean;
+NOT Ereturn/joint calibration. Parent later hook must attest real forwards.
 
-Exact reused H1kernel6cfe33ad148b45381996165b256bb05e9d5b74b8398d2a4b6801ef71ac71d913.
-score=E*T-(1-E)*Z >0, final21 of supplied61, no architecture/indicator/grid.
-Stride e=61+5k,e+4<m:1363expected nonoverlap baskets/2726asset rows.
-Chronological thirds454/454/455 early/middle/later are SEEN descriptive regimes,
-NOT untouched final/replication. Prior raw availability/trials remain debited.
-Context may cross boundaries; outcomes cannot overlap. Full NAV continuous;
-regime replays reset1 separately, never spliced into full path.
+Calendar-only exact selection: anchored e=61+5k, never reset at release;
+ENTIRE5target OPEN/CLOSE strictly after checkpoint and nominal prior-CLOSE
+decision>=release. Exactly34baskets/68tasks/680channel-step scalars. No
+pre-checkpoint alpha comparison/outcome filtering/untouched or OOD claim.
+Existing61context supplies final60 past OPEN/CLOSE; raw levels accepted,
+native input-only scaling/inverse only; no future-fitted normalization.
+Score=FORECAST CLOSE5/FORECAST OPEN1*999/1001-1, fixed>0 mask.
+No actual future entry OPEN input to decision. Any nonpositive/nonfinite
+forecast or ratio=>explicit unavailable, NEVER clipping/cash/drop/replacement.
+One undefined ETF=>Chronos/matched basket unknown. Original/cash can remain known.
+Original weights.1/.1; original[1,1]/cash[0,0]/matched[k/2,k/2], no rerank/refill.
+Referencebasis10, replay gross prices with5/10/20fees ONCE via Parent's float
+research wrapper, not native6k Fraction; repeated5session buyhold-LIKE, not TR/
+continuous/fullinvestment. Fixed4policies*3costs=12cells,max24calls with audit.
+Kill proposal: net>original/matched/cash,DD<=noncash controls at every cost;
+unknown not pass/no forced winner/automatic adoption. Parent finalizes science.
 
-Original weights[.1,.1] in all policies, within unchanged native caps:
-H1binary/original[1,1]/cash[0,0]/matchedoriginal[k/2,k/2].
-No rerank/refill/survivor-renormalization. .2invested/.8cash is RESEARCH reference,
-not Paper/fullinvestment. EntryOPEN -> fifthCLOSE repeated holdings are
-buyhold-LIKE, NOT continuous buyhold/TR/overnight parity. All5OPEN/CLOSEs bound;
-native uses firstOPEN+all5CLOSEs. quantitybasis10 fixed for5/10/20bps recosts.
-Safe JSON restores identical plan/keys/weights/marks; no pickle/remote loader.
-Actual Data loader, manifest/NPZ attestation and numerical freeze remain Parent's.
+C/bounds.json freezes PREP60active600elapsed/0actual model calls.
+Pure9SYN PASS/Ruff/hash readback PASS,2.093672charged active incl2s reserve;
+authoring/metadata separate, not GPU spend. No full-suite authority reused.
+Kernel bfd311e08cc648e4d81455b40cc4f45d0a56dc110b606cdeed30ff93c6f5430f;
+receipt c6ee34445ab705b6b7d883925e58f5949854f18320cc7318e4886db0124603b0;
+metadata653bcbfb...; cold command1a4c0a93... (source ONLY/NEVER RUN here).
+Safe readback (expand C): .venv/Scripts/python.exe -s -B C/synthetic_check.py --verify.
+C/PREP.md contains exact NOT-RUN network-none CPU nativeAPI cold/strict
+safetensors restore/finiteJSON command; default inert. It needs Parent's
+frozen bounded host ownership/output/hard-timeout/reap, not just worker checks.
+Future proposed family0fits/updates,<=3coldloads(2SYN+1market),<=7forwards
+(2SYN+5market),720total channel-step scalars;16market tasks/forward.
+300cumulativeactive/1200end incl native SYN/I-O/failure/cleanup/readback,
+1attempt0retry,CPU2threads/6GiBhost; any laterGPU<=4GiB requires Parent/Steward
+allocation/headroom. Godel9fit campaign FIRST-READY PRIORITY, no lease here.
+No native pipeline/real finite forecast proof inferred from pure SYN.
+Throughput: ready bounded source/SYN, no GPU contention or new history need;
+reversible improvement reuse exact cached model/API instead of another
+framework/architecture. Parent takes numerical contract/dispatch and normal
+advisory challenge; no operator decision identified or unrelated runtime hold.
 
-## Verification And Capacity
+## Closed Pointers
 
-L/synthetic-result.json
-24dfe3c603f88ac6e5d0c9da48ae9943ab5877d8fdea09a84559013492e6f735.
-13tests PASS;48invented cells independently exactFraction checked (whole NAV/
-exposure/fees/turnover/legs);65test-process nativecalls+3 isolated probe calls.
-Causality/diagnostic exclusion/full5marks/gaps/missingness/fixedbasis10/JSON
-restore+tamper PASS. Nativefe3ef6d7.../contracts cfee0f6a... pinned. Final
-project-config Ruff/hashes-only --verify PASS; no full-suite authority reused.
-Attempt1 only/retry unused; pre-SYN I001/E501 authoring fixes not numeric failures.
-SYN3.5395021charged active/60,elapsed snapshot1.5396490/600 includes probe waits/
-imports+2s startup/publication reserve. Source authoring/review/queue separate,
-not called CPU/GPU spend. Old clocks/debits unchanged; no further probes.
+H1 PREP consumed: A/strategy-research/spy-qqq-long-history-policy-preparation-20261015-v1.
+Parent actual48cells/1363baskets completed via separate approved researchfloat:
+A/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json;
+independent-review/result.json. Primaryfalse/no alpha/Paper adoption.
+Original native6876 capacity unknown is not a hold on separate researchfloat.
+Weighted-BCE consumed, not win probability/ranking; all existing112input MLP
+heads mask same original basket, no extra CPU affine fits:
+A/strategy-research/cost-aware-policy-hypothesis-20261015-v1/candidate.md.
+H1 kernel6cfe33ad... is our construction, NOT established AQR5d stock alpha.
+Prior architecture/abs-Ridge/fusion failures are recipe-specific seen evidence,
+not all-model futility. Preserve nonPIT/raw-action/units/finality/selection limits.
 
-L/native-capability-probes.json
-86ccdad11282dd5f3d48b063541c423cb459352b77b891028702cefc458bbb49.
-Varying rational-cent125/250/500sessions,12/37/87baskets:3children exit0/
-complete_safe_JSON, each6s ceiling, no integer-limit override.
-Replay+summary .003465/.0280892/.4344755s;
-SUMMARY .0008977/.0231582/.4217924s; stored-integer digits upper bounds158/448/916.
-Sharply superlinear summary growth;6876 pace/serialization ceiling UNKNOWN.
-No measured timeout/JSON failure, no Strategy float backend. Parent's separate
-precision/throughput action is not proof of its results or a native/Paper change.
-
-Source SHA256:
-consumer e4d47c81be826b8f495f1a6c4480457c8db20dc09677eb5d489efb0fbe11503b;
-synthetic7fddcafe8b40f444a979bd4a86faeb71e499cd67b29f8232996b98b3a09180f1;
-probe0eedadbe706ad5d8a910b273b2329b8fffad4c692213543370b762f34d5d5aba.
-Readback: existing .venv/Scripts/python.exe -s -B L/synthetic_check.py --verify
-(expand L). Creator CLOSED; never rerun to consume another opportunity.
-PREP.md/preparation.json preserve suggested Parent-only actual180active/1200end/
-1attempt0retry/0fitsGPU,<=48cells/<=96nativecalls including audit, CONDITIONAL
-on capacity; not dispatched/frozen by Strategy. Parent now takes numerics.
-Kill proposal: H1 net>original/matched/cash,DD<=noncash controls at every cost
-in full AND each regime; unknown not pass. Reject recipe, not all models/Paper.
-Throughput: source consumer/SYN ready, no Data wait/GPU contention. Reversible
-improvement reused H1/native ABI rather than another model. No operator decision.
-
-## Closed Cost-Aware Proposal
-
-H/candidate.md0a65fd8a.../readinessd23c6549.../kernel above/testb421cf3d....
-Parent consumed payoff-MASS-weighted BCE (not win probability/ranking), paired
-Huber/q.25 in existing112input/commonMLPtrunk/ninefit GPU family. All heads MASK
-same original basket weights. Separate13parameter/9CPUfit proposal SUPERSEDED
-UNEXECUTED/0fits; H1zero-fit challenger may share that family cap. No new head.
-Ordinary BCE p>.5 ignores severity; Huber robust location not generally mean;
-q.25 not mean/ES/portfolio-DD guarantee. Prior11pureSYN/Ruff/hashes PASS,
-not optimizer/market evidence. No platform/Paper changes by Strategy.
-
-Chronos isolation OPTIONAL only: existing foundation-models/chronos-2/
-95a9710e2596287d08352589f42634fa5abdf0a7; config ef1143bf.../1067bytes,
-weights477930472bytes STAT only/expected ddcda3c7..., not rehashed/loaded.
-Existing chronos-forecasting2.2.2/Apache2 official code checked in H; snapshot
-Apache2/date2025-10-30T14:58:57Z inherited pinned metadata, refresh429 not fresh
-proof. Corpus cutoff/project overlap unknown; post-checkpoint seen development
-only with residual limits. Closed F not rerun; no download/framework change.
-
-## Critical Sources And History
-
-H/candidate.md retains exact official AQR2012/Nagel/AEA/PyTorch/KIS/Chronos
-links, versions/licenses. Primary mechanism sources:
-https://www.aqr.com/Insights/Research/Journal-Article/Time-Series-Momentum
-https://www.nber.org/papers/w17653
-H1 is OUR construction, not an established AQR five-day stock result.
-Prior architecture/fusion/abs-Ridge kills are seen recipe failures, not all-model
-futility. Current-listing/raw-action/units/fidelity limits remain.
-Closed fusion: A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json.
-Indicator receipt2e36bff2...: A/strategy-research/indicator-ablation-readiness-20261014-v1/readiness_receipt.json.
-Parent Git presnapshot62b406e/immutable roots preserve history. No new archive,
-report/database. Engine/Execution own actual training/Paper facts.
+F=A/research/daily5-chronos2-post-checkpoint-endpoint-development-20261014-v1:
+CLOSED140forecasts/1CPUfit/geometryfailure, no creator rerun/refund.
+F/contract.json and C/PREP.md bind full runtime/API/license/source pointers:
+https://huggingface.co/amazon/chronos-2/commit/95a9710e2596287d08352589f42634fa5abdf0a7
+https://github.com/amazon-science/chronos-forecasting/releases/tag/v2.2.2
+https://arxiv.org/html/2510.15821v1
+No new report platform/archive/database. Engine/Execution own actual running
+training/owned Paper outcomes; installation, source tests or SYN are not fills.

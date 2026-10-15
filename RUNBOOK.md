@@ -217,6 +217,21 @@ cashflow audits and4failclosed affordability cases, noP1/P2. Its0fit/0API/
 cannot be relabeled a qualified selected model or Paper-input adoption.
 D:/thericher-v2/model-artifacts/research/spy-qqq-long-history-h1-development-20261015-v1/independent-review/result.json
 
+Also CLOSED/consumed (never rerun their creators): long-history3CPU+6GRU fits/
+90cells, all18GRU growth cases positive but0joint-control passes, independent
+noP1/P2/100.0679combinedactive. Positivity is not Alpha/Paper parity.
+D:/thericher-v2/model-artifacts/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
+Chronos2 GPU34postcheckpoint baskets/68tasks/5newmarket forwards/12cells,
+independent noP1/P2/73.4566combinedactive. OriginalCUDApin-memory failure kept;
+its callcountunknown0..5 charged, newCUDA SYN usesCPUdata/GPUmodel. Aggregate
+8known successful forwards/13UPPER, not actual13/old7-cap authority reuse.
+D:/thericher-v2/model-artifacts/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
+Action sidecar contains future_divCash/future_splitFactor on original13,622
+keys, target-only, never features/row filters. Offset0 entry ex-date is not a
+held entitlement. Engine's new nominal event-aware cashflow/teacher PREP is
+not broker fees/settled cash or a running model fit; no runtime changes.
+D:/thericher-v2/model-artifacts/data/spy-qqq-long-history-target-action-fields-20261015-v1/manifest.json
+
 Creators/fits/readers with exclusive outputs are frozen after use. Inspect exact
 saved receipts, not a second invocation. Data raw under M; models/checkpoints/
 research artifacts under A; Docker /app/model_artifacts. Keep D:15 percent free.

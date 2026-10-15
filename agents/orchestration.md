@@ -14,13 +14,13 @@ New human request: continue independent CPU/GPU engine work while Paper is due.
 | Nightly Paper | Existing daily-spy-session |Ready/enabled Oct15 23:50KST/14:50UTC. Immutable472-public-file deployment/image3ccb470map; drivere586/quiet6d51. Exact TaskXML/identity/original bank unchanged. Not a new fill. |
 | NAS model Paper | New finite Task |Ready/enabled Oct15 22:40KST/13:40UTC; imagece219/474map/manifest130d/configa13fa7d9.14triggers across7dates,4-minute native visits,1auth/1submit/1cancel/128calls/280seconds. No manual strategy invocation. EntryONLYOct15, owned exit fromOct21OPEN, exact pending recovery before new input. |
 | Future accounting | Existing83 owner |r6 accounting-only Action installed; nextOct15 20:25UTC, runtimeUNKNOWN. Oldindex2/claims/basis/other6Actions retained; no replay or assumed success. |
-| Data | McClintock closed |History input COMPLETE: SPY/QQQ6,876 sessions/6,811 entrydates/13,622 rows,34,877,182-byte NPZ onD.95,357 native readback checks; parent39array/hash/schema plus key/calendar checks pass. Nominal chronology, not PIT/adjusted/Paper evidence. No acquisition/API/provider splice. Original collectors/due retained. |
+| Data | McClintock |Long-history input/action diagnostics/aligned target-only fields COMPLETE; original13,622keys retained, no labels/returns/fits. Now bounded retained1m source rights/time/calendar check and conditional canonical materialization; no API/credential/acquisition/provider splice. Original collectors/due retained. |
 | Strategy | Kant closed / Parent |H1long-history CPU48cells COMPLETE in2.5788elapsed/7.1445active inclSYN;1,363baskets,0fits/GPU/API. Overall5/10bps positive,20negative;global primaryfalse,2middle-regime comparisons survive. Independent23pins/48cashflow audits/4affordability cases noP1/P2, combined~12.6active. Native13SYN/48invented + researchfloat48shortparity/2missing/4fullinvented pass. No production/Paper/risk change. |
-| Engine | Godel next PREP |Linked temp-root repair CLOSED actual9CUDAfits/191epochs/4,574updates; all selectedepochs1/2, patience20, not256/time cap.99unique cells/0unknown;9joint/primaryBCE false. Independent350pins/9CPUforwards/99stored-path noP1/P2; exact new Fraction paths not retained. Combined117.7593active inclreview. Separate long SPY/QQQ feature/regime PREP, no new market fit yet. |
-| GPU | Parent closed |Actual9CUDAfits complete and canonical lease/container/child cleaned. Family conservative worker highwater96.4060active/522.5074hostelapsed within1500/3600, original failure/debits retained. No active training now; next long-history frozen campaign in preparation, no environment/permission hold or dummy utilization. |
+| Engine | Godel event-target PREP |Both trainable studies CLOSED: first9CUDAfits/99cells; long-history3CPU+6CUDAfits/90cells. All18longGRU growth cases positive,0jointpasses, independent noP1/P2. Prepares event-aware nominal teacher/payoff math and future6fit proposal; no market fit or action-field feature/filter yet. |
+| GPU | Parent closed |15CUDA+3CPU actual market fits and Chronos5newmarket forwards complete/leases cleaned. Not SYN/reader model counts. Foundation34baskets/12cells known,1positive2negativecost cases; primaryfalse. Original failed countunknown0..5,8known successful/13upper acrossold/new scopes, never actual13. No active GPU actor/environment hold or dummy work. |
 | Execution | Aristotle closed / Parent |CPU descriptive fifth-OPEN/CLOSE replay COMPLETE6cells,0fits/forwards/GPU/API. Same fixed-five rank-mean Top10/quantities/cost5/10/20. Both clocks positive in4 reused DEV groups; OPEN lower than CLOSE at all three costs.38.4008active including32PREP carry/6.4026elapsed within180/1800. Independent34pins/6native summaries/40marks noP1/P2; not deployment parity or model promotion. |
 | Runtime readback | Closed / Parent |Final r2 dispatch+native model readers73focused/Ruff/noP1P2. Actual network-none/RO-volume preflight sixowners16intents, modelpointerabsent/countsnull, original cap positive_below_desired. Original source-audit/mount faults retained/fixed in readers only, no broker/source deployment changes. Agent closed. |
-| Independent review | Raman closed |CPU clock,9fit/99cell and long-history48cell studies closed noP1/P2 with stated precision/claim limits. No refit/GPU/broker. New frozen trainable candidate will get a bounded independent readback when ready, not a permanent daemon. |
+| Independent review | Raman closed |CPUclock/first99cell/H1long48cell/trainablelong90cell/Foundation12cell source+math readbacks closed noP1/P2. No model refit/GPU/broker or newmarket replay. Forward/precision/source/seen-data limits retained. |
 
 ## Bottleneck / One Reversible Improvement
 
@@ -29,9 +29,10 @@ and due. Parent closed the CPU clock study, independently checked the new
 long-history input and ran the repaired9fit GPU family through actual replay.
 Claude's weighted-mask and scoped runtime repair challenges are both
 supported-with-limits, not approval waits. Strategy's long-history CPU preparation
-continues independently. GPU allocation closed after meaningful9fits; source-
-separated long-history next preparation runs while final independent readback
-continues. Original clocks/debits carry through repair, no refund. Another
+and long-history studies are now also closed and independently read. Ready
+next paths are event-aware nominal target math and existing minute-source
+preparation, not another blind architecture grid. Original clocks/debits/calls
+carry through runtime repairs, no refund. Another
 reversible improvement: compact current role memory AFTER immutable/Git history
 preservation, not before completing executable work. Snapshot62b406e retains it.
 
@@ -84,6 +85,10 @@ stateboards replace stale running projections; history remains Git/external.
 - A/research/long-history-float-replay-preparation-20261015-v1/checks.json
 - A/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
 - A/research/spy-qqq-long-history-h1-development-20261015-v1/independent-review/result.json
+- A/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
+- A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
+- A/data/spy-qqq-long-history-target-action-diagnostics-20261015-v1/diagnostic.json
+- A/data/spy-qqq-long-history-target-action-fields-20261015-v1/readback.json
 
 Keep current-listing/non-PIT/actions/units/finality limits scoped. Missing
 evidence is unknown; fees/settled cash/net PnL unobserved, not zero.

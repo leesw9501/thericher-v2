@@ -182,10 +182,44 @@ New parallel continuation (no change to tonight's deployed policy):
   approximate, not exact Fraction/broker net PnL or continuous buy-and-hold.
   A/research/long-history-float-replay-preparation-20261015-v1/checks.json
 
-GPU/CUDA works and actual new9fit allocation is CLOSED. Next Engine PREP shifts
-to longer SPY/QQQ history/feature-regime comparisons; it is not a running fit.
-No environment/permission hold or dummy training. Old failures, clocks,
-selection-data reuse and partial results stay immutable.
+Additional completed long-history trainable comparison:
+- Same60D1 inputs, CPU logistic plus raw/joint12-feature GRU32 across3 expanding
+  stages:3CPU+6CUDAfits,90cells/0unknown.6GRUs152epochs, all INNERp20 stops,
+  selected13/9/1/5/1/3, not max256/convergence. ALL18GRU growth cells positive
+  after modeled5/10/20bps; logistic4positive/5negative.0all-control joint passes,
+  so positive absolute utility is NOT demonstrated incremental predictive Alpha.
+  Independent165pins/9CPUcheckpoint/18loss/90cashflow-oracle checks noP1/P2.
+  Combined100.0679active inclreview within1800/5400. Windows-host POSIX-path
+  SYN failure preserved; host-only repair inherited exactCPU SYN/clock/debits.
+  A/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
+- Chronos2 cached exact checkpoint actually loaded/restored and used on GPU:
+  34strict-postcheckpoint baskets/68two-channel tasks,5newmarket forwards,
+  12complete cost cells. One growth positive/two negative, primaryfalse.
+  CPU2cold/restore SYN and GPU1invented SYN passed; independent60pins/68q50-
+  median/mask/12cashflow checks noP1/P2. Combined73.4566active inclreview within
+  original300/1200. First CUDA pin-memory failure stays immutable; its actual
+  forward count is UNKNOWN0..5, never zero. New bounded CUDA probe/development
+  explicitly counts old calls:8known successful total/13aggregate UPPER bound,
+  not actual13 or reuse of old7-forward authority. No model fitting/weights change.
+  Release/license evidence inherited trusted exact-source, corpus undisclosed;
+  marginal-median endpoint ratio is not expected return/joint return median.
+  A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
+
+Data confirmed canonical ETF OHLCV is unadjusted, not adj fields. Stride5held
+dividend windows88SPY/65QQQ; oneQQQsplit window. Raw quote-return teachers omit
+those entitlements/unit effects. No future flags filter features/samples.
+Separate action-field sidecar (source-only future_divCash/future_splitFactor,
+all13,622keys) is materialized/read back, no returns/labels/fits:
+A/data/spy-qqq-long-history-target-action-fields-20261015-v1/readback.json
+Engine now prepares nominal event-aware target/cashflow math with NONCASH
+receivables (not buying power/settled cash), not another architecture grid.
+Data independently checks retained1m source rights/time/calendar and possible
+small canonical base. Both are PREP/conditional, not active model training.
+
+GPU/CUDA works; all actual training/forecast allocations above are CLOSED,
+no environment/permission hold or dummy training. Today's research produced
+15CUDA+3CPU market fits total; native SYN/reader forwards are not extra models.
+Old failures, clocks, selection-data reuse and partial results stay immutable.
 
 Four issuer-anchored MODP0/1 probes:8 GET/one token/800 rows,4,538 independent
 checks; all different_other_pattern, no proved adjustment factors/PIT/finality.

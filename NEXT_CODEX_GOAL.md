@@ -145,7 +145,18 @@ independent23pins/48cashflow-oracle/four affordability cases noP1/P2, combined
 approximately12.6active inclreview. Research-only float64 native-code wrapper passes
 48short exact-native parity/2missing/4fullinvented tests, no production change.
 A/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
-Engine prepares source-separated longer-history trainable feature ablation.
+Long-history feature ablation also CLOSED3CPU+6CUDAfits/90cells0unknown,
+independent165pins/9checkpoint/90oracle noP1/P2. All18GRU growth cases positive,
+0joint-control passes, combined100.0679active inclreview; no Alpha/Paper adoption.
+A/research/spy-qqq-long-history-mass-gate-runtime-repair-20261015-v1/independent-review/result.json
+Chronos2 actual post-checkpoint34baskets/68tasks/5newmarket forwards/12cells
+CLOSED independent60pins/12oracle noP1/P2;1growthpositive2negative,primaryfalse.
+73.4566combinedactive; originalCUDAfailure retained, oldforwardsunknown0..5,
+8known successful/13aggregateupper (not actual13), newboundedscope explicit.
+A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.json
+Engine now prepares event-aware nominal teacher/payoff math from separately
+aligned futureactionfields; Data checks retained1msource rights/time/calendar.
+Neither prep is a running fit or a hold on tonight's execution.
 No new API, provider splice or PIT/adjustment claim. These packages do not replace this
 company outcome or change tonight's fixed model/nightly schedule and bank.
 
