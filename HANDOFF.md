@@ -36,6 +36,9 @@ every four minutes. Admission defers to an active named executor or imminent
 nightly owner. Original bank/private volumes are shared, not recreated.
 A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
 A/execution/current-nas-owned-model-paper-deployment-20261015-v1/prepared.json
+Actual after-installation readback verified all14 finite trigger boundaries/
+cadences, matching frozen sources and unchanged nightly XML; both Tasks Ready.
+A/execution/current-nas-owned-model-paper-deployment-20261015-v1/after-installation.json
 
 The fixed target snapshot permits new entry ONLY during Oct15's bound session.
 Later visits recover its exact pending requests, never select substitutes or
@@ -151,6 +154,20 @@ Full helper retains its Global mutex, lease and checked-cleanup requirements.
 
 Next: strict current launch->immutable dispatch->native cycle/intent/fill
 readback at natural opportunities; fix reversible exact-identity faults.
+Reader preparation is CLOSED:73 focused tests/Ruff; native exact-plan/terminal/
+owned-flat review no P1/P2. Current source-pinned network-none/RO-volume probe
+verified six owners/16 intents/private bytes unchanged; model pointer absent,
+model counts UNKNOWN/null, not zero. Remaining original cap is positive but
+below the full .05-original desired target; native sizing may reduce/reject.
+No new budget, forced ETF liquidation or request was introduced.
+A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
+Use r2 readers, not the predecessor: its nightly source audit missed one exact
+public quiet file. Repair allows ONLY that pinned file; sibling-denial tests
+pass. Parent's initial RO probe also used the wrong nested volume target;
+canonical /app/private with volume-nocopy fixes it without creating a book.
+Original unknown results/failures are retained; neither was a broker failure.
+Native model counts are cumulative retained cycle facts, not a per-trigger
+delta or independent proof that a particular OS trigger caused a fill.
 Missing outcome is unknown. Never use recovery-capable observe() as a reader.
 Task Scheduler Operational logging is disabled: marker/time/hash provenance
 under an assumed-honest host, not cryptographic proof of OS scheduler origin.

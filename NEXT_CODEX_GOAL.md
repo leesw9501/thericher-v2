@@ -30,6 +30,11 @@ No manual Task/strategy invocation or order has been performed for deployment.
 Remaining: inspect exact current launch->immutable runtime->native book/intent/
 fill linkage at natural opportunities; repair first-cause technical failures
 without substitute identities/budget reset. Missing result stays unknown.
+The strict offline reader/native parser is now READY:73focused/Ruff/noP1P2,
+network-none/RO-volume actual preflight six owners/16intents, original bank
+unchanged. Model pointer absent -> countsnull, not zero. Remaining cap positive
+but below .05-original desired total; risk may reduce/reject without a new bank.
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
 All source/risk changes require fresh exact authority; unchanged source does
 not need repeated full suites for a documentation or readback update.
 

@@ -30,6 +30,8 @@ Ready/enabled, first Oct15 13:40 UTC. Installation is NOT submit/fill/closure.
 Image sha256:ce219a8dd26c056563df916f184d17ae5942c55fcd57f502175c4c6fc90c160f.
 A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
 A/execution/current-nas-owned-model-paper-deployment-20261015-v1/deployment.json
+Full source/installed14-trigger/unchanged-nightly native readback:
+A/execution/current-nas-owned-model-paper-deployment-20261015-v1/after-installation.json
 
 Host c6e4c034/worker9e1c0473, exact474-file manifest130d1c33,
 launcher4892baa8/configa13fa7d9. Fixed targets/input/policy source bound.
@@ -42,6 +44,9 @@ Existing nightly gap plus active-owner/due admission;8-minute OS limit,
 one280-second native visit,1auth/1combined-submit/1cancel/128calls maximum.
 No nested retry scheduler. Interactive user must remain logged in; computer/
 Docker must be available. A missed trigger is not a completed opportunity.
+Read-only powercfg check Oct15: current high-performance AC/DC automatic sleep
+and hibernation delays are zero (disabled). No power settings were changed.
+This does not prevent a manual shutdown/logoff or Windows Update restart.
 
 New entry uses ONLY the fixed Oct15 session. Later visits recover retained
 identities without reselection/expiry renewal. Earliest owned exit Oct21 regular
@@ -101,9 +106,43 @@ or broker method merely to read evidence.
 
 The old nightly reboot-recovery/read_owned_dispatch.py has STALE driver/image/
 time constants. Do not alter its historical source or use it as current proof;
-a current pinned reader must bind drivere586/image3ccb before relying on tonight.
-Historical pure read_private_cycle.py checks generic native state without API;
-schema compatibility alone is not schedule causality.
+use the current r2 reader below, bound to drivere586/image3ccb and modelce219.
+Historical pure read_private_cycle.py covers the daily cycle, NOT the new model
+pointer. Model attribution uses read_native_model.py, not recovery-capable code.
+
+Current reader readiness/source pins/actual safe preflight:
+A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
+73focused/Ruff/noP1P2; native tenBUY/tenSELL/restart/unknown/missing-state and
+false-flat/journal-only cases tested. Default inert. Absent model pointer or
+pre-reservation-only journal yields countsnull/unknown, never inferred zero.
+Actual current RO preflight:6owners16intents/modelnotrecorded/privatebytesstable;
+remaining original cap positive_below_desired, not fresh broker buying power.
+No forced liquidation or added capital. Native models may be reduced/rejected.
+
+After the respective natural opportunity (future bounds are deliberately invalid
+before their time), use the source-pinned public receipt reader:
+```powershell
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/read_owned_dispatch.py --read --profile model --not-before '2026-10-15T13:40:00+00:00'
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/read_owned_dispatch.py --read --profile nightly --not-before '2026-10-15T14:50:00+00:00'
+```
+
+Before a native private read confirm named execution owners are quiescent, then
+check reader SHA f7990232992f17409d3626ecc83b43db4025ffa1c38be89a30ea1a679aa24039.
+Use ONLY an offline reader, never the deployed strategy worker. Example after
+source/owner checks, with a unique owned container name/label for typed cleanup:
+```powershell
+$readerId = [Guid]::NewGuid().ToString('N')
+docker run --rm --name "thericher-offline-model-$readerId" --label "thericher.offline.native-read=$readerId" --network none --read-only --log-driver none --cap-drop ALL --security-opt no-new-privileges --pids-limit 128 --memory 512m --cpus 1 --env OPENBLAS_NUM_THREADS=1 --mount 'type=volume,source=thericher-v2-paper-canary-private-acct-20261007-v1,target=/app/private,readonly,volume-nocopy' --mount 'type=bind,source=D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2,target=/reader,readonly' sha256:ce219a8dd26c056563df916f184d17ae5942c55fcd57f502175c4c6fc90c160f python -B /reader/read_native_model.py --read
+```
+
+The canonical private VOLUME mounts at /app/private, NOT /app/private/canary;
+the latter hid the nested book in Parent's first two harmless RO probes. Keep
+their unknown results, never recreate an apparently missing book. The original
+dispatch reader's nightly audit missed its exact public quiet file; r2 permits
+only that pinned file and still rejects sibling reads. No schedule/risk change.
+Native counts are cumulative exact retained model-cycle links, not per-trigger
+deltas or fresh broker inventory. Read receipt binding separately; hash/time/
+input-policy linkage does not prove a particular OS trigger caused each fill.
 
 Scheduler Operational logging disabled. Exact marker/time/hash chain under an
 assumed-honest host is NOT cryptographic OS-scheduler-origin proof. Fees/settled

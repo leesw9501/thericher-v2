@@ -17,8 +17,8 @@ No operator decision currently identified. Source-only readiness is not a fill.
 | Engine | Closed |18new GRU/LSTM/Transformer CUDAfits54cells independently closed. New3CPU absolute-utility fits27cells45controls linked math publication complete0refits; utility hypothesis fails all3stage checks. Original creator failure preserved. No qualified alpha/adoption; boards updated/agent closed. |
 | GPU | Steward closed |CUDA works, named training actors/leases closed. No allocation or permission/environment hold. Next campaign requires a concrete ready hypothesis, not utilization-only work. |
 | Execution coordinator | Closed |V3 source/native39 tests; own runtime contract complete. Original tenth/foreign owners/unknowns preserved; terminal-partial SELL fix leaves cash reservations conservative. Execution board updated/agent closed; no source edits. |
-| Runtime readback | Maxwell running bounded sidecar |New external strict model launch->dispatch->native reader/SYN; no repo source edits, broker/credentials/Task invocation. Old nightly reader pins stale: new current version needed, never rewrite historical reader. |
-| Independent review | Raman invoked |Parent quiet/schedule source check noP1/P2. Now bounded public-source-only old Goal97 ownership review before its Oct19 entry; no private/API/schedule changes or speculative hold on today's paths. Claude deployment supported-with-limits. |
+| Runtime readback | Closed / Parent |Final r2 dispatch+native model readers73focused/Ruff/noP1P2. Actual network-none/RO-volume preflight sixowners16intents, modelpointerabsent/countsnull, original cap positive_below_desired. Original source-audit/mount faults retained/fixed in readers only, no broker/source deployment changes. Agent closed. |
+| Independent review | Closed |Parent quiet/schedule source check noP1/P2. Old Goal97 pinned source validates full exact plan/history before recovery; no reachable cross-policy adoption bug established. Empty-registration case/runtime remain unproved, not a basis to retire tasks or hold today's independent paths. Agent closed; Claude deployment supported-with-limits. |
 
 ## Bottleneck / One Reversible Improvement
 
@@ -32,10 +32,18 @@ Ready alternatives:
 2. Close absolute-utility interpretation from saved outputs, without new fits.
 3. Keep existing fresh-session Data collectors running; no duplicate collection.
 
-Execute1/2 in parallel with parent integration;3 already has an owner. Claude's
+Alternatives1/2 are CLOSED;3 already has an owner. Claude's
 scoped deployment challenge supported-with-limits; no new approval or foreground
 sleep. If all prepared work closes before the session, hand off next_due to the
 owned Task rather than create dummy work or mark company completion.
+Claude separately challenged this exact runtime dependency and returned
+supported-with-limits; new ready work or an actionable fault reverses the scoped
+wait, not a global research/Data hold. No raw private data/tools were supplied.
+A/execution/current-nas-owned-model-paper-deployment-20261015-v1/session-dependency-review.json
+
+Source/runtime integration is pushed as5506b46. One app COUNT1 follow-up is
+installed for Oct16 00:05KST after both opportunities, not a recurring report.
+Current powercfg readback: AC/DC sleep/hibernate disabled, no settings changed.
 
 Measured reversible improvement: isolate the baseline from mutable development
 SRC using an immutable public-source snapshot. Preserve selective Paper-loader
@@ -45,6 +53,7 @@ stateboards replace stale running projections; history remains Git/external.
 ## Exact Evidence
 
 - A/verification/current-nas-owned-cycle-20261015-v1/authority.json
+- A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
 - A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
 - A/execution/current-nas-owned-model-paper-deployment-20261015-v1/prepared.json
 - A/execution/current-nas-owned-model-paper-deployment-20261015-v1/claude.json
