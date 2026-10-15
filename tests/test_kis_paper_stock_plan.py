@@ -43,7 +43,7 @@ from thericher_v2.execution.kis_paper_portfolio_budget import (
     KisPaperPortfolioStateRef,
 )
 from thericher_v2.execution.kis_paper_quote import KisPaperSpyLimitInput
-from thericher_v2.execution.kis_paper_stock_plan import size_kis_paper_stock_target
+from thericher_v2.execution.kis_paper_stock_plan import _pending, size_kis_paper_stock_target
 from thericher_v2.execution.kis_paper_stock_quote import KisPaperStockInstrument
 from thericher_v2.execution.kis_paper_stock_readonly import KisPaperStockPreviewReads
 from thericher_v2.execution.kis_readonly import (
@@ -361,6 +361,30 @@ def test_partial_stock_reservation_is_not_target_capacity():
     result = size_kis_paper_stock_target(**_arguments(owned=(state,), broker_quantity="2"))
     assert result.status == "no_intent" and result.reason == "stock_owner_pending"
     assert result.projection.reserved_buys == 30
+
+
+@pytest.mark.parametrize("phase", ["submitted", "outcome_unknown", "cancelled"])
+def test_closed_partial_is_not_open_but_does_not_invent_capital_release(phase):
+    state = _state(
+        "stock", symbol=SYMBOL, quantity="5", limit="10", filled="2", gross="20", phase=phase
+    )
+    state = replace(state, cumulative_fill=replace(state.cumulative_fill, remaining_quantity=D(0)))
+    assert not _pending(state, {})
+    # Portfolio cash-release rules stay conservative and unchanged by this fix.
+    result = size_kis_paper_stock_target(**_arguments(owned=(state,), broker_quantity="2"))
+    assert result.status == "no_intent" and result.reason == "stock_owner_pending"
+    assert result.projection.entry_cost == 20 and result.projection.reserved_buys == 30
+
+
+@pytest.mark.parametrize("phase", ["submitted", "outcome_unknown", "cancelled"])
+def test_open_or_unknown_partial_keeps_exact_residual_reserved(phase):
+    state = _state(
+        "stock", symbol=SYMBOL, quantity="5", limit="10", filled="2", gross="20", phase=phase
+    )
+    assert _pending(state, {})
+    result = size_kis_paper_stock_target(**_arguments(owned=(state,), broker_quantity="2"))
+    assert result.status == "no_intent" and result.reason == "stock_owner_pending"
+    assert result.projection.entry_cost == 20 and result.projection.reserved_buys == 30
 
 
 @pytest.mark.parametrize("quantity,expected", [("3", 7), ("10", 0), ("11", 0)])

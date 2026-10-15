@@ -1,11 +1,14 @@
 # Strategy Research Stateboard
 
-Current projection 2026-10-15 KST; NEXT composition readiness complete, not dispatched.
-Parent reattached actual C independent72cell/23555latest12/sixRidge/fullNAV PASS
-and current2stock4score/1424check closure; no qualified winner/Paper adoption.
-Current company goal is future-owned-paper-runtime-recovery-v1. Fixed-composition
-proposal stays READY/unfitted; archived pending-readback text is historical
-preparation context, not a new company hold.
+Current projection 2026-10-15 KST; company current-nas-owned-model-paper-cycle-v1.
+The fixed-rank/shallow-tree proposal below was CONSUMED and closed: two CPU
+gate fits/15 cost cells independently checked, zero expert refits, no policy
+passes all matched controls across costs. It is not ready/unfitted work now.
+D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json
+Frozen five-expert current scores produced ten targets and a finite owned
+Paper deployment; runtime outcome remains unknown until its natural opportunity.
+No active Strategy LLM/worker. Historical preparation below is retrieval only,
+not a new company hold, dispatch instruction or current running claim.
 Activated 2026-10-13 for feature/model research and trade-policy composition.
 AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns the company outcome.
 

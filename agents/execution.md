@@ -3,31 +3,55 @@
 ## Current Projection (2026-10-15 KST)
 
 Current company direction current-nas-owned-model-paper-cycle-v1. Previous pure
-target-preparation package delivered; coordinator source work NOT started.
-Parent owns integration/Git/runtime. Producer9fe47f72/test0fd689ae and external
-consumer3c9858e3 FROZEN/read-only; Maxwell reviewing actual consumer (Parent
-reported). PREP1/2 failures
-and sources retained. ACTUAL243x5 ->10private proposals, ordinal parity/native
-receipts PASS;7external SYN/lint. Each .05 research ->.005 ORIGINAL-basis desired
-fraction, .05 gross, NOT allocated cash. Confidence0 uncalibrated; native Risk
-independent. No refit/NN rerun/GPU/broker/API/account/credential/order/schedule.
-Data20:47:49.826785 < input21:31:19.063233UTC Oct14; cleanup22:06:59UTC is a
-conservative completion-observed bound. Fresh byte observation means availability
-to THIS consumer, not original score publication; no mtime inference.
-Parent authority:649serial/clean8 full16283PASS22skip/354.577s/source1336
-digest65a58a7c...; Ruff/threeCompose PASS. Tonight BOOTSTRAP-ONLY image update
-DEPLOYED:470files/image3ccb2250abcc7b11c6ab5f7f048a38b145962755935bace495efc0ac985f3ce7.
-Quietc50c7289/XMLf35811a unchanged, Ready Oct15 14:50UTC/23:50KST;5quiettests PASS.
-Installation proves no model Paper adoption/fill/profit. Next native model Paper
-coordinator write set follows Parent commit/integration, NOT replacement of the
-daily ETF loop. Preserve .005 each/.05 ORIGINAL-basis desired gross, one pending
-leg, recovery-first, foreign-stock ownership rejection and two-session tests.
-Actual owned orders are later work; model profitability is not a permission gate.
+target package delivered/Parent commit81890b4. Coordinator V3 source FROZEN:
+source77318c25/testbdff2c74,39coordinator+48proposer=87PASS15.20s/Ruff PASS.
+Parent legacy stock_plan._pending fix b011e4e8 is frozen; terminal-partial owned
+SELL boundary resolved, not the historical0200 blocker. Original0200/V2 source,
+readiness and native-boundary evidence remain immutable tested predecessors.
+Exact native journal before effects, one pending leg/visit, recovery before Data;
+retain original pending identity/TTL past expiry, reject foreign same-stock owners.
+Fifth official session OPEN is earliest owned exit horizon; later official regular
+sessions may exit remaining OWNED quantities. Operational, NOT research CLOSE parity.
+Expired unattempted materialized intents close natively; never-reserved retirement
+requires locked absence proof, never unknown/real reservation release or rebinding.
+Optional expected_input_ref/expected_policy_ref are identity hints, NOT permission.
+Matching completed hints skip expired loaders ONLY after native whole-book replay
+and policy-owned flat/terminal checks; retained-source flat, NOT fresh broker proof.
+Different hints validate new inputs normally; pending recovery ignores future hints.
+Parent reports Raman final source review: original3+hints+4pair findings resolved,
+64targeted PASS; runtime160tests reported. Parent froze1342source4a1e4619;
+925serial/fresh full8 16488PASS22skip/Ruff/threeCompose PASS (Parent).
+Parent ACTUAL finite model-task installation00:30:08UTC Oct15: Ready/enabled,
+thericher-kis-paper-current-nas-model-20261015; next due Oct15 13:40UTC/22:40KST.
+14finite triggers, Oct15/16/19/20/21/22/23 twice-window/PT4M; imagece219,
+frozen474/manifest130d, deploymentrefa13fa7d9. Receipt actual_worker_invoked=False;
+no active new-model strategy/broker invocation reported. Installation is NOT a
+submit, fill or terminal closure; runtime outcome remains unobserved, not zero.
+Parent owns deployed config/tasks/runtime/Git/actual orders; Maxwell readback
+sidecar. Original daily23:50 source-isolated3ccb untouched/protected; new cycle
+is NOT its replacement. Native risk may reduce/reject; unknown requests retain
+identity/reservations beyond TTL or finite-task end, never inventory adoption.
+Profitability is not an execution gate. Execution memory now FROZEN; no source/
+test edits, pytest, new model invocation or runtime changes by this worker.
+Producer9fe47f72/test0fd689ae/consumer3c9858e3 remain frozen; PREP1/2 retained.
+ACTUAL243x5 ->10private proposals, ordinal/native receipts PASS;7external SYN/lint.
+.005 each/.05 ORIGINAL-basis desired gross, NOT cash; confidence0 uncalibrated,
+native Risk independent. Data20:47:49.826785/input21:31:19.063233UTC Oct14;
+cleanup22:06:59 is completion-observed bound; consumer byte availability is NOT
+original score publication. No mtime inference. Target readback pointer verified
+present65d2d29b; outcome98d58064. Worker actual broker/API/credentials/orders/GPU0.
+Protected original nightly deployment Ready:472public/470image, driver e5867a8a,
+quiet6d51b09d/image3ccb2250abcc7b11c6ab5f7f048a38b145962755935bace495efc0ac985f3ce7.
+Task XML unchanged/Ready Oct15 14:50UTC23:50KST;8driver+5quiet/fresh-import-image-inert
+PASS (Parent). Original Paper.env loader redirect, no .env copy. No fill/adoption claim.
 Prior r6 runtime remains explicitly unfinished/superseded as company focus only.
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-cycle-20261015-v1/ready-v3.json
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-cycle-20261015-v1/ready-v2.json
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-cycle-20261015-v1/tested-predecessor-0200
 D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
 D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/readback.json
-D:/thericher-v2/model-artifacts/verification/current-nas-proposer-20261015-v1/authority.json
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
+D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
 
 Gross accounting package COMPLETE:
 D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json

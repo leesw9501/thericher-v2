@@ -1,7 +1,7 @@
 # Research Steward Stateboard
 
 Current 2026-10-15 KST; AGENTS.md owns policy, NEXT_CODEX_GOAL.md owns
-current-nas-frozen-model-paper-target-preparation-v1. Custody is not model/Paper approval.
+current-nas-owned-model-paper-cycle-v1. Custody is not model/Paper approval.
 A=D:/thericher-v2/model-artifacts.
 B=A/research/daily5-broad-train-ridge-huber-development-20261014-v1.
 T=A/research/daily5-broad-patch20-readiness-20261014-v1.
@@ -17,6 +17,55 @@ Own exclusive GPU/family/holdout custody; Engine owns science, Strategy sources,
 Parent policy/integration/Git, Execution broker risk and safe preemption.
 Ledger A/_control/ledger/2026-10.jsonl; lease A/engine-research-agent/locks/gpu.lock.
 Existing campaign_registry/research_campaign_custody unchanged, no new platform.
+Parent reports pure targets COMPLETE/actual10/fresh full coverage/Docker installed.
+J=A/research/daily5-absolute-utility-native-tolerance-development-20261015-v1
+CLOSED technical_failure/unchanged_control_scalar, Parent ONCE/exit1/0retry;
+3attempts3successfulCPUfits, all3prediction/policy/full5marks seals retained.
+Contract3fd69eed.../host64517fe4.../workeraffc66a1.../api02309faf... unchanged.
+130prefixes/3FITstat guards PASS fixed1e-14; retained features unchanged. Original
+host ACTIVE37.66038999999/180,end221.08508896827698/1800; child reaped/cleanup
+complete/source and old outputs unchanged/0GPU. Nine new cost calls inferred from
+source order,0persisted new cell/curve records; complete/unknown counts not retained.
+First cause OOF1 broad_equal10bps/5controls replayed: fieldsets identical, ONLY
+derived mean_log_return within1e-14, fullNAV/exposure and allotherfields exact.
+Root mapping/native Fraction summary exact; low-level reduction cause unproved.
+[first cause](D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-native-tolerance-development-20261015-v1/first-cause.json) 4b828f63...;
+[immutable failure](D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-native-tolerance-development-20261015-v1/host-study.json) 2c75b5dd...;
+[all-stage seal](D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-native-tolerance-development-20261015-v1/study/output/ALL-stages-sealed.json) 346cc7cc....
+L=A/research/daily5-absolute-utility-linked-math-recovery-20261015-v1 CLOSED;
+Parent actual reader87504 exit0/ONCE, math publication complete/original J failed.
+3original successful fits reused/0newfits/new decisions/GPU/API. Actual3nativeRidge
+forwards+3stationarity/6FIT-INNERloss checks PASS;27complete newcells0unknown/
+45controls/3447wholeNAV-cash-exposure points/130groups. Fullkeys/purge/FITstats/
+policyweights/whole5marks/native Fraction scalar arrays verified.
+One derived mean_log_return difference within fixed atol=rtol1e-14; allothercontrol
+scalars/wholeNAV-exposure exact, strict growth-DD criterion unchanged. All3stage
+all-cost joint verdicts false/development_hypothesis_survives=false; strongest kill
+met, no qualified winner/Alpha/untouched/Paper adoption. Shared scalar/parser leaves
+disclosed; timing/publication ordering creator-attested/seen/nonPIT/rawactions/units/
+currentlisting/fourDEV limits permanent. Original J failure/source/seals unchanged.
+Definitionc3a97d3b.../reader282ab3f0.../testse88f04d1... frozen/14SYN/Ruff PASS.
+Same appointment1792021878.6918864/deadline1792023678.6918864 (00:21:18.691UTC),
+180active1800end. Firstcause43.7055382/406.049732 and prior source PREP47.2557487/
+655.949775 and50.4242631/889.054956 preserved. Final numerical
+ACTIVE95.18337689997861/180,end1645.402848482132/1800,clock_failed=false;
+no reset/refund. Source/review/queue elapsed is not CPU spend; subsequent roleboard
+closure metadata is outside numerical receipt, not additional numerical authority.
+Parent reports actor exited0; no worker/container/lease/GPU allocation remains.
+[actual linked closure](D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json) eaaddbdf7dab2cd928d9e48f0b83032bfbd46746aff5db8d1c9abb34e69cd6ec;
+[frozen linked definition](D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/recovery-definition.json) c3a97d3b....
+McClintock r3 first153rowgroup witness COMPLETE/23.2459221active284.9237294end;
+only firstgroup, not fullpanel. New J proof is separate all-group evidence, not a
+retroactive old-guard fix. Old original13.0559015active324.3012893hostend/expired600/
+0marketfits and linked conservative cumulative23.3757741/snapshotunknown remain
+immutable; linked firstexception STILL UNKNOWN. [old terminal](D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-abi-recovery-20261015-v1/terminal.json).
+No refund/retry reinterpretation/new performance/Paper grant. Seen/C-G-H/action-unit/
+nonPIT/currentlisting/fourDEV limits remain; Parent owned Paper/Scheduler independent.
+J creator/L reader CLOSED/all sources/results/debits frozen/no repeats or new fits.
+Next ready consumer is Parent's frozen model-task deployment -> owned native Paper
+runtime/reconciliation/accounting verification; not a research-permission gate.
+Parent currently deploying is not actual fill/PnL evidence. No next Engine numerical
+campaign assigned/automatic policy promotion/GPU allocation; roleboard writes frozen.
 H=A/research/native-recurrent-attention-relative-ranking-development-20261015-v1
 CLOSED r2/independently_checked_seen_development; contractf60974bf2acdb5a5737544969a097acef545c68c3d96a54f1b9476b593651885;
 185pins/host_r2aa4d8a92.../worker_r2cd703f46... unchanged. Parent ONCE/worker0,
@@ -58,14 +107,10 @@ H package CLOSED/no further source edits, fit/reader creator or GPU-fill campaig
 Current consumer: verified five scores -> pure untrusted targets -> native Paper path;
 Aristotle exclusively owns target-module source; Execution deterministic risk unchanged.
 Prior r6 runtime company focus ONLY superseded; owned next_due remains pending.
-One future hypothesis QUEUED/UNTESTED, behind actual Paper model-target integration:
-same common61/raw20/three N-C stages -> absolute five-session quoted-return Ridge ->
-fixed10bps fee-hurdle cash/forcedtop10/exposure-matched broad -> native cost replay.
-Proposed3CPUfits/27newcells/45controls/180active600end/0retry/0GPU; no allocation,
-dispatch command, new numerical evaluation or changed old source/debits.
-[queued utility hypothesis](D:/thericher-v2/model-artifacts/research/next-utility-hypothesis-20261015-v1/ready.json)
-replaces vague tail-diagnosis queue; MODP0/1 four differing pairs remain action-basis
-uncertainty, no inferred factor/causal/profit claim. No GPU-fill or architecture sweep.
+The [utility hypothesis](D:/thericher-v2/model-artifacts/research/next-utility-hypothesis-20261015-v1/ready.json)
+closed with J's3retained fits/L math publication above, NOT another queued fit campaign.
+MODP0/1 four differing pairs remain action-basis uncertainty, no inferred factor/
+causal/profit claim. No GPU-fill, architecture sweep or new numerical fits.
 Parent current1215-score mathreader r2 PASS/Data8GET closure are orthogonal H evidence.
 G=A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1 CLOSED/independently_verified_seen_fusion;
 Contract80700b0178dbb6a2637c7c4d57be63251d83d0cd5eb7b41e069ebd1117af1b44;

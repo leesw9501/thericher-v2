@@ -157,15 +157,9 @@ def _buy_limit(quote: KisPaperSpyLimitInput) -> Fraction:
 
 
 def _pending(state: KisPaperCanaryState, proofs: Mapping[str, object]) -> bool:
-    if state.phase == "intent_recorded":
-        return state.updated_at < state.intent.valid_until
-    if state.phase == "rejected":
-        return state.submit_response_category != "provider_rejected"
-    if state.phase == "cancelled" and state.intent.run_id in proofs:
-        return False  # The shared replay already validated the exact cancellation.
-    if state.phase == "submitted":
-        return state.cumulative_fill is None or state.cumulative_fill.status != "filled"
-    return True
+    # Callers first validate/replay the native state and exact cancellation proof.
+    # A terminal partial owns sellable stock; this does not change cash-release rules.
+    return not budget._terminal(state, proofs.get(state.intent.run_id))
 
 
 def size_kis_paper_stock_target(

@@ -1,367 +1,175 @@
 # Runbook
 
-## Current Dispatch (2026-10-15 KST)
+## Current Owned Runtime (2026-10-15 KST)
 
-ONE objective current-nas-owned-model-paper-cycle-v1. Prior pure-target goal
-COMPLETE:243supported x5 frozen scores ->10private desired targets, no orders.
-Source module current_nas_frozen_rank_target,48focused/47independent/649serial;
-fresh clean8 full16283pass22skip354.577s, source1336/65a58a7c, Ruff/3Compose pass.
-Private actual target/observation bytes and original failures are immutable:
-D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
-Do not rerun consumer.py actual to inspect outcomes or treat .005 each as funds.
-Completion-observed bound and fresh consumer availability are NOT original
-publication timestamps. New owned coordinator must recover original intents
-before loading new scores; no ETF/foreign stock adoption or new bank.
-Tonight's existing worker now uses image3ccb2250/quietc50c7289, source470/4d0481cd,
-task definition/argv/identity unchanged/ReadyOct15 14:50UTC=23:50KST.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
-Network-none image/default-inert checks and5quiet tests pass; not runtime/fill.
-New model targets are NOT yet a deployed strategy. Parent owns installation/Git.
-Nightly source isolation is now DEPLOYED: image3ccb retained, quiet6d51b09d loads
-pinned drivere5867a8a and immutable472public-source snapshot (470image map).
-Do not edit/copy .env into the frozen repository. The approved Paper loader reads
-ONLY the original project credential file when actual execution is requested.
-Mutable working SRC additions do not change nightly runtime/source comparison.
-Task definition/argv/private bank remain unchanged;8driver+5quietSYN and native
-source/import/image/inert/Task readback PASS, independent noP1/P2. Runtime/fill
-still belongs to tonight's natural opportunity, not this deployment check.
-D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
-freeze.ps1 already consumed; snapshot/driver/source pins are immutable. Rollback
-bootstrap is before-quiet_dispatch.py in that exact root. Do not rerun the
-existing Task Scheduler Action merely to inspect it.
-Changed-path serial scratch should use a freshly checked nonexistent SHORT
-non-reparse C: child (e.g. C:/ts/<unique>); long default Windows paths caused
-existing QQQ fixture persistence failures without source changes. Never reuse
-an old pytest --basetemp, which can remove that directory automatically.
-Full-suite helper still owns its Global mutex/managed C:/trpy cleanup unchanged.
-Prior future-owned-paper-runtime-recovery-v1 superseded as COMPANY focus only;
-actual r6 result remains unfinished/owned. Seven future quiet Actions
-r5 installed/source+nonAction readback verified. Actual20:25 data step failed
-oldcapturedexecute.data_call default; cohort offline no_owned_intent. NEWr6
-accounting-only Action installed20:56 after13SYN/cold+warm455audit; nextowned
-Oct15 20:25UTC, no manualtask/claim reset/oldmark replay. Actualr6runtime UNKNOWN.
-Same quiet dailyOct15KST23:50 task Ready; image3ccb matched source, definition unchanged.
-D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1/parent-installation/after.json
-D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
-D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
-NAS512 capture creator5648039 already ranONCE; do not dispatchagain:
-504ready61/8missing/30744bars/512GET1token,101388readbackPASS.644.8538elapsed/
-670.7362active/childexit0/ownerreleased; no account/order/live. RawD:/market_data.
-D:/thericher-v2/model-artifacts/data/current-nas512-fresh61-preparation-20261015-v1/actual-readback.json
-EngineAB d0aea8b also already ranONCE; fourinventedpairs/0updates, backend/parity
-measured but not marketprofit/default-change authority. Six-fit convergence
-creator already ran ONCE:6TCNfits/122epochs/2958updates,18cost cells/0of6joint
-checks,49.7872active/261.9144end,exact actor absent/lease released. No repeat
-training. Independent r3 PASS6fits18cells45controls/sixRidge forwards after
-NUL/Windows-subprocess reader-only repairs; both failed receipts preserved.
-Native real read-only probe and29SYN passed before r3; no GPU refit/Alpha claim.
-Fixed-rank/shallow-tree fusion creator already ran ONCE:twoCPUgates/15cells,
-9.8124active78.2437end; independent PASS15cells/1830curvepairs/164pins,
-16.5846active676.0606end. No creator replay or qualified winner.
-Current NAS512 Data-only features ready55checks/243supported. New metadata
-Data9a9d/Engine505 version fixes schema-reference cycle, feature576b unchanged.
-Original505 launch failed Windows venv redirector PID guard; old failure/claim
-retained. Linked native-base same3.14.3/venv NumPy2.5.1 launch ACTUAL worker
-completed243x5scores,0fits/API/payoff. Host cleanup predicate falsely rejected
-Docker29 lower-case no-such-object AFTER actual removal. Exact actor/dead-owner/
-output/source proof recovered ONLY owned GPU lease, no rerun/reset. Native
-worker/math-independent r2 PASS243support/2Ridge/fiveunscale/2560ranks;
-NumPybool reader-only failure/debit retained. Source technical failure not erased.
-D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
-launch.py creator already consumed; DO NOT dispatch again to inspect results.
-GRU/LSTM/Transformer20/60 ACTUAL18fits262epochs6178updates/54costcells,
-independent PASS18fits54cells45controls/sixRidge forwards, no numerical rerun.
-Original host68.6665active1795.0894end; throughreadback118.9670active2728.5371end.
-All INNERp12/not mathematicalconvergence,0of18jointcontrols; no qualified winner.
-r2cuDNNenabled measured, b499literaldisable0CUDA/superseded predispatch.
-Creators/readers consumed; inspect exact receipts, do not dispatch again.
-D:/thericher-v2/model-artifacts/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
-Data4stock MODP0/1 ACTUAL8GET/onePOST/800rawrows,8x61event-window observations,
-rawM only/worker0reaped. Independent4538checksPASS/42.0950active232.6259end.
-All4different_other_pattern, factors/adjustment/PIT/finality/TR NOTqualified;
-no repeated probe/old cache mutation. No network in readback.
-D:/thericher-v2/model-artifacts/data/kis-daily-adjustment-source-capability-20261015-v1/runs/75c4ff731f2e41c2a25e28bf065f38cf/supervisor.json
-D:/thericher-v2/model-artifacts/data/kis-daily-adjustment-source-capability-20261015-v1/independent-readback.json
-D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/host-study.json
-D:/thericher-v2/model-artifacts/research/native-cudnn-tcn-convergence-development-20261015-v1/review-output/final-r3.json
-D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/host-study.json
-D:/thericher-v2/model-artifacts/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1/independent-parent.json
-D:/thericher-v2/model-artifacts/research/current-nas512-frozen-expert-score-panel-20261015-v1/data-ready.json
-D:/thericher-v2/model-artifacts/infra/relative-ranking-tcn-determinism-ab-20261015-v1/host-result.json
-Synthetic quiet child lacked publicSystemDrive and created literal repo cache;
-fourDB files from19:25:47 were preserved outsideGit after path/time/no-link checks:
-D:/thericher-v2/model-artifacts/verification/quiet-synthetic-native-cache-20261015-v1/retained-SystemDrive-literal
-Future native child fixtures use explicit public OS paths/isolated external CWD;
-never modify oldsealedr5 tests or delete unknown caches/owner state.
-Previous retained-relative-ranking-completion-v1 CLOSED actual5newfits/72cost
-cells/independent latest12+sixRidge+fullcash-NAV PASS, originalprotocolfalse kept.
-Fresh2stock2Ridge4score consumer actualCOMPLETE/1424checks/21.02198active,
-0newfitsGPUAPIpayoff/childreaped; old35930NUL pre-launch failure preserved.
-Read exact receipts, never replay creators to inspect historical outcomes:
-D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/independent-linked-final-v1.json
-D:/thericher-v2/model-artifacts/research/relative-ranking-fresh61-score-launch-recovery-20261015-v1/score-readback.json
-Originalfc018cea study
-CLOSED technicalfailure/actorabsent/lease released:9completed1interrupted5notfit,
-0economiccells/72unknown.480perfit guard missed final diagnostics/predict/restore;
-oof2TCN20 actual503.291s,notcompliant.1561.2304active1529.2663end retained,
-original5400/10800/480 budgets unchanged/no refunds. Linked repair CLOSED:
-9retained completed,partialtcn60best inferenceonly,5new unattemptedfinalfits,
-full-finalization timing guard/new caps. Contract9e59e99d... native PREP passed,
-Parent dispatched host.py ONCE18:42UTC; creator FROZEN, do not dispatch again.
-750CUDA/60CPU/3000active6000end, old9 reuse and partial inference only.
-Actual ledger/cleanup/results checked above; no original creator rerun/humanhold.
-D:/thericher-v2/model-artifacts/research/retained-relative-ranking-completion-20261015-v1/ready.json
-Original independent partial-r3 readback math PASS/original protocol FAILED,
-not new scope authority or economics. Read exact receipt, no creator rerun:
-D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/independent-final-original-partial-r3.json
-Fresh61 market-only probe CLOSED:1token2GET122bars,7.2707active4.1618end,
-419independent checks PASS. No repeated capture to inspect retained evidence.
-Feature-only score adapter PREP has0fits/GPU/API and future-payoff-free61/
-latest12/FIT transforms; actual score only after final checkpoint/source ready.
-D:/thericher-v2/model-artifacts/data/relative-ranking-fresh61-nas2-score-input-v1/actual-readback.json
-D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/first-cause.json
-Do not rerun host.py freeze/prepare/dispatch creators or alter frozen source.
-Historical retained partial ledger:
-D:/thericher-v2/model-artifacts/research/daily5-relative-return-risk-ranking-20261015-v1/study/output/fit-ledger.json
-Current-balance runtime probe COMPLETE17:45:30UTC:1token1GET0orders,
-source-exactimagea142/readonlybook unchanged/actorabsent. Complete page,9rows/
-oneUSDrow, numeric cash/unsettled field shapes; no settledcash/fee/net claim.
-12request-shape+11fake-wire SYN/Ruff/Claude supported-with-limits. No raw
-body/amount retention or production allowlist changes. Do not replay the actual
-probe to read old evidence; inspect its source-safe exact receipt instead.
-D:/thericher-v2/model-artifacts/execution/kis-paper-current-balance-capability-20261015-v1/runs/7b83a32a8ee942ddb6e3635b4d9d0a7a/outcome.json
-Closed controls27complete
-cells/0unknown,0of6joint net/no-worseDD checks;selected growth gains accompanied
-by higher drawdown, not a claim of no profits/all-model futility. Host18.5568
-active/14.1103end under120/600,olddebits/source unchanged,childreaped.
-Independent Parent70causal support/27scalar/3582wholeNAV-exposure pairs/6verdict
-readback PASS12.8409s/Ruff,0fitGPU/broker calls.
-D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/parent-readback-r2.json
-Official fee/cash metadata source revision2077773a.../62checks complete. Only
-documented VTS current-balance path is a candidate; sample labels do not prove
-settled cash/measured all-in fees. Never manufacture VTTS3039R or other prefix
-substitutions, change hosts or read live fields. Existing Paper remains permitted.
-D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
-Fresh owned mark valuation
-completed16:42UTC with1token11GET/0orders:3holdings match owned quantity,
-0other holdings/openorders;realizedgross positive/unrealized+totalgross negative,
-NOTnet/account profit. Originalbook/privateRO/source unchanged/actor absent.
-10network-noneSYN/Ruff and exact saved3quotes+originalbook scalar replay PASS.
-D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/runs/388f34a428e24d3aa4db2af64669776e/outcome.json
-D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
-Use exact scoped offline reader for old observation, not host.py or a strategy
-worker; normalized quote pointer belongs to that exact receipt, never latest
-cache discovery. Originalquote timestamp/quantity scope stays historical.
-No account amounts/raw bodies retained; normalized private market bytes D:.
+Workdir C:/Users/Public/Documents/thericher-v2.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+ONE company objective: current-nas-owned-model-paper-cycle-v1.
+AGENTS.md owns authority/risk; HANDOFF.md owns current evidence.
+KIS Paper work is delegated. Never read/route KIS_LIVE_*.
 
-Historical completed Engine command, FROZEN/DO NOT rerun:
-& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -B 'D:/thericher-v2/model-artifacts/research/daily5-basket-selection-controls-20261015-v1/campaign.py' dispatch
-Contract2f87975e.../3fixedcontrols/70sameentries27cells/0fitsGPU/120active600end,
-2.4464preparation carried,one OSError retry pre-economics only. All-policy and
-all5marks seals precede new outcomes; no outcome filtering or native cap change.
-Seen current-listing/nonPIT/source-unit limits, not qualified model/Paperinput.
-Previous owned gross attribution
-complete:6owners16intents12positivefills5sells,3gross-realized/3no-realized,
-0incomplete/pending; aggregate gross sign positive, NOTnet/account profit.
-Original shared tenth unchanged. Later fresh marks/valuation completed above;
-fee/settlement gaps remain, no new order merely for accounting.
-Safe exact offline receipt and command:
-D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
-read_owned_gross.py is network-none/privateRO with native current-cycle/custody/
-terminal validation and independent Fraction cash/basis checks. Source-pinned
-host_readback.py creator is FROZEN (exclusive readback.json); do not rerun that
-creator. For later inspection use a separately named readback, never observe()
-or a broker strategy worker. Existing state lock files may persist after release;
-their presence alone is not a running owner. Missing-state seeds still require
-absent lock and stable absence; never erase/reclaim private locks or reservations.
+### Existing nightly,23:50 KST
 
-Original indicator17fits/135unknown costs remain immutable. New CPU-only
-exactFraction replay verified132cells/17412NAV/exposure marks,3OOF1gateunknown,
-0fits/GPU. Numeric/readback withincaps, finalMD611.943>600 retained. Zero-fit
-attribution finished2.2003active/0.2003end under60/300,45scalar/12decomposition
-identities: no policy beats AlwaysLong ALLcosts; paired combined/TCN/blendTCN
-utility fails. Final4cohorts are seen/correlated; no automatic model adoption.
-D:/thericher-v2/model-artifacts/research/retained-indicator-policy-replay-20261015-v1/attribution-receipt.json
-Source creators/fits/predictions/olddebits frozen. New representative basket
-controls prepared separately without fitting/GPU, not old holdout reopening.
-TCN SYN throughput complete: increasedCPU/chunking not proven faster. Future
-predeclare sparse TRAIN diagnostics while INNER everyepoch; no old-source edit.
-D:/thericher-v2/model-artifacts/infra/tcn-throughput-20261015-v1/final-readback.json
-Canonical loop/redeployment
-completed numerically: CPU1fit14keys9cost cells, Parent independent replay;
-historical executable keys0. Late metadata closure600s breach retained, not a
-full-within-cap or alpha/Paper claim. New source integration
-after reboot:45focused/224changed-path pass, independent budget review passed.
-Fresh clean8 authority PASSED16235/22skip,372.22s/source1334/abf2b287...;
-v2 superseded-source passing suite is NOT authority. Imagea142eea3... matches
-runtime183e1eaf...; bootstrap44865727... DEPLOYED14:10UTC. SAME exact task
-definition remains Ready Oct15 14:50UTC/23:50KST, recheckedOct15KST;
-pythonw Action unchanged, only IMAGE pin changed.5SYN pass,
-network-none source/inert check, zeroAPI/credentials/private writes. No manual
-task run or scheduled fill inferred.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r3/after-readback.json
-Prior canonical Paper
-runtime goal is complete under literal cycle/installation/recovery/next-due
-criteria; new unattended current-window cycle ACTUAL completeOct14 14:50:35UTC,
-no target delta/no new order/fill. Fresh1token/12marketGET/14account-quoteGET;
-offline pointer/cycle/whole-book replay matched targets,16terminal/0unknown,
-original tenth intact. Fees/settlement/net remain unobserved. Recovery is closed
-with actual SPY native SELL/full fill/owned-flat at19:04:21UTC Oct13, one
-sell POST; original six-owner shared initial tenth remains, TLT/GLD held.
-Fees/settled cash/net remain not_observed. Never read/route KIS_LIVE_*.
-Later portfolio current253 cycle completed19:50:27UTC with one actual BUY/full
-fill/targets reconciled; independent offline exact chain passed. Current book:
-six owners/16terminal intents/zero unknown-pending/three held instruments.
-D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/readback-result.json
-Parent owns broker/Git, roles own disjoint source packages; do not duplicate
-a current owner, reset an exact request or rerun an expired private intent.
+Task: thericher-kis-paper-daily-spy-session.
+Ready/enabled, next Oct15 14:50 UTC. Exact XML/argv/identity/bank unchanged.
+Image sha256:3ccb2250abcc7b11c6ab5f7f048a38b145962755935bace495efc0ac985f3ce7.
+Frozen driver/472-public-file repository and image470-file map isolate it
+from mutable development SRC. No secrets were copied into the snapshot.
+A/execution/current-paper-frozen-deployment-20261015-v1/after.json
 
-Exact actual evidence and independent network-none replay:
-D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
-D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/readback-result.json
-First no-intent retained: RO emergency mount prevented native lock creation.
-Actual retained flags were clear. R2 uses original existing RW emergency volume
-for store locks, changes no flags/basis and keeps decision06f5e9fe.../same session.
-Never infer successful submit from task exit, installer, preview or missing file.
+Quiet Action remains Pythonw -B; every child uses CREATE_NO_WINDOW.
+A/execution/current-paper-shared-loop-20261014-v1/quiet_dispatch.py
+Driver e5867a8a/quiet6d51b09d; original TaskXML f35811a0 unchanged.
+freeze.ps1 already consumed. Do not edit frozen source/driver or rerun creators.
+Rollback before-quiet_dispatch.py is retained in the frozen-deployment root.
 
-Next eligible portfolio: current253 original control/252-return covariance,
-fresh post-exit strict book/account/quotes, native preview then exact cycle.
-That prototype opportunity is now complete and the US session has closed.
-Next dispatch must use new current input or the exact pending recovery path,
-not repeat the expired Oct13 actor. Canonical V3 Data/pure control/persisted
-session/one-memory-token Docker driver is now verified and deployed. SAME
-thericher-kis-paper-daily-spy-session Action changed, original non-Action XML
-0654fe10... unchanged, private rollback installation/original-task.xml retained.
-Next Oct15 14:50UTC/23:50KST; do not manually invoke that task to infer success.
-Quiet Action uses .venv/Scripts/pythonw.exe and source-pinned quiet_dispatch.py,
-all children CREATE_NO_WINDOW. Source/image changes require owner integration,
-not reuse of a stale image or private reset. Current bootstrap44865727...;
-hostd2b0e27c...; imagea142eea3...; runtime source map183e1eaf....
-Reboot rollback: reboot-recovery/deployment-r3/before-quiet_dispatch.py;
-same task XML task-before.xml and old image retained, no source-reset authority.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
-Current launch pointer:
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/scheduled-launch/current.json
-Validate pointer -> exact immutable launch SHA -> exact host dispatch SHA;
-launch/exit/installation is not a submit/fill. Strict native private-state replay
-still owns actual cycle/intent/fill/position assertions. Oct14 natural result:
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
-Hash/time/source binding assumes honest host, not cryptographic OS/broker origin;
-Task Operational logging disabled.8readerSYN/Ruff and strict network-none RO
-book/pointer/cycle checks pass, no private mutation. Off-window manual
-canonical visit21:28 no_intent/current_input_unavailable,1auth12market GET,
-0account GET/order/cancel, container absent. No unattended/current-window claim.
-Older source adapter remains version-bound history:
-D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/PORTFOLIO-API.txt
-No oldOct9 relaunch or baseline adoption. Repeatable reusable Data/dispatch
-source is next, not another one-shot manual rewrite. Expired current data may
-prevent a new intent, never inquiry/recovery of its persisted unknown request.
+### New model,22:40 KST
 
-Data current253 throughOct12 available at actualOct13 capture/publication;
-nominal provider-date UTC-midnight is not NY close or decision-time evidence.
-Archived replay API never rechecks today's calendar:
-D:/thericher-v2/model-artifacts/data/current-paper-etf-input-refresh-20261014-v1/archive_reader.py
-Source_observed/nonPIT/rawMODP0/action-unverified/not_provider_finality persists.
-G107 capture-r3 same future Actions, next Oct14 21:50UTC Ready; no manual launch.
-D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3/deployment/835d74554a404f1382a4572b3ebbe716/fresh-readback.json
-First natural R3 index1/Oct13 held_close ACTUAL captured13 endpoints. Exact
-launch b653e3dc.../4d133f78... passed existing read_first_capture.py, separate
-link/clock review; originalOct12 incomplete, PIT/finality unobserved.
-D:/thericher-v2/model-artifacts/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3/first-owned-reattachment-20261014.json
-NAS21:40 did collect:6acceptedpages/revisions,Oct13 appendedall6/56rows each;
-90overlap changes defer ONLYlegacy consumer. Existing revision-as-of reader
-is available; do not erase old rows/flags or call this a provider quota failure.
-D:/thericher-v2/model-artifacts/data/nas-forward-overlap-recovery-20261014-v1/overlap-evidence.json
+Task: thericher-kis-paper-current-nas-model-20261015.
+Ready/enabled, first Oct15 13:40 UTC. Installation is NOT submit/fill/closure.
+Image sha256:ce219a8dd26c056563df916f184d17ae5942c55fcd57f502175c4c6fc90c160f.
+A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
+A/execution/current-nas-owned-model-paper-deployment-20261015-v1/deployment.json
 
-Observer restored enabled/Ready/original Actions after exact Data/Paper
-appointments; current image5b22345a..., bridge source6440871d... gate60/wait<=60.
-Actual17:56 UUID/hash-bound completion retained. Guard is state-only atomic
-directory plus legacy OS locks, never stale-TTL reclaim. Data default300
-unchanged; old writers not universally joined. Worker waits do not idle Parent.
-Operational logging disabled: assumed-honest marker/time, not OS-origin proof.
-Five-slot observer wrapper was tested/deployed then RETIRED on source evidence:
-original session classifier already avoids postclose API. Original Action
-60551f0b... restoredReady; no trigger/newtask/Data change. Possible21:48 skip
-is NOT observer evidence. Do not re-install the unnecessary finite wrapper.
-D:/thericher-v2/model-artifacts/execution/kis-paper-snapshot-observer-runtime-recovery-v1/finite-data-slots-v1/retirement.json
+Host c6e4c034/worker9e1c0473, exact474-file manifest130d1c33,
+launcher4892baa8/configa13fa7d9. Fixed targets/input/policy source bound.
+Same native private/runtime/emergency volumes and original shared tenth;
+no new bank or foreign inventory adoption.
 
-## Current Verification
+Finite trigger dates: Oct15/16/19/20/21/22/23 UTC.
+Each date13:40..14:36 and15:05..19:41 UTC, four-minute interval.
+Existing nightly gap plus active-owner/due admission;8-minute OS limit,
+one280-second native visit,1auth/1combined-submit/1cancel/128calls maximum.
+No nested retry scheduler. Interactive user must remain logged in; computer/
+Docker must be available. A missed trigger is not a completed opportunity.
 
-Current:224changed-path/45helpers, full16235pass22skip35warnings,8workers,
-16257collected,372.22s/helperexit0/cleanchild/source1334/abf2b287...; Ruff and
-three sample-env Compose passed after full run. Superseded v2 changed during
-review, not reused. No source changes while tonight's image is pinned.
-D:/thericher-v2/model-artifacts/verification/research-runner-recovery-20261014-v3/authority.json
+New entry uses ONLY the fixed Oct15 session. Later visits recover retained
+identities without reselection/expiry renewal. Earliest owned exit Oct21 regular
+OPEN, then later owned exit/recovery. Research target fifth-session CLOSE is
+not an execution-parity claim. Keep original request timestamps/TTL/unknowns.
 
-CanonicalCPU terminal handoff/independent saved-output checks (not new fit):
-D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/HANDOFF.md
-D:/thericher-v2/model-artifacts/research/canonical-five-session-cpu-smoke-20261014-v2/parent-readback.json
-Old creators freeze/run/verify must not be replayed; final metadata deadline
-failure preserved. New indicator campaign is source/contract preparation only,
-same existing runtime; research-only API bans never bind separate Paper owner.
+Pure target/score creators and schedule.py --install have ALREADY run.
+Do not rerun them or manually invoke the Task/host to inspect results.
+Inert source imports/tests are distinct from --execute runtime effects.
 
-Prior changed-path198 passed. Version-bound clean8 authority16190pass22skip,
-16212collected,366.84s/helperexit0/source1330/0201dd2489ed...:
-D:/thericher-v2/model-artifacts/verification/current-daily-paper-loop-20261014-v1/authority.json
-Ruff/three sample Compose pass; runtime image0d8cf969... source-qualified.
-Independent review-r2 no remaining P1/P2 after three launch/cleanup repairs;
-Claude supported-with-limits, quiet bootstrap5SYN and actual off-window run.
-Actual canonical Data21:24 source/raw reader passed,253x4+2 baseline through
-Oct12. CurrentUSdate remains excluded even after close: not Oct14eligible input.
-Owned next session must refresh; provider finality remains not_observed.
-Initial v1 concurrency failure retained/unreproduced, not fixed by assertion
-relaxation;100 isolated reproductions passed. V2 is a separate fresh full pass.
-MD/external-only commits may reattach only exact unchanged source authority;
-new tracked runtime/tests/Compose require new full authority. External native
-workers/source/input replay need focused independent tests; no blanket retest
-of unchanged Python merely to consume time. Weekly serial lastOct12.
+### Other preserved owners
 
-Credential-free commands:
+Accounting83 r6: thericher-kis-paper-five-387ee5f6c7c6-accounting,
+next Oct15 20:25 UTC /Oct16 05:25 KST. Runtime remains unknown.
+A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
+
+Goal83 exit Oct17 04:50/recovery05:00 KST. Goal97 entry Oct19 22:30/recovery22:40,
+exit Oct24 04:50/recovery05:00 KST. Original113 archive/image/basis/claims
+retained. Do not replay oldindex2 or equate cohort no_owned_intent with globalflat.
+Old113/current3ccb/newce219 generic multi-stock reader compatibility passed,
+NOT the whole old overlay or live broker runtime.
+G10721:50 UTC and NAS-forward21:40 UTC retain their Data-owned schedules.
+
+## Inspect Without Side Effects
+
+Source-safe Task facts only; never output Action argv containing secret values,
+raw broker bodies, account/order identifiers, private prices or amounts.
+The known Action paths/configs here contain only public source identities.
+
 ```powershell
-uv run --no-env-file --extra dev pytest -q <changed-test-paths> --maxfail=1 --durations=15
-& .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot -PytestArgs @('--maxfail=1', '--durations=15', '--junitxml=D:/thericher-v2/model-artifacts/verification/<fresh-owned-run>/pytest.xml')
-uv run --no-env-file --extra dev ruff check .
-docker compose --env-file .env.example config --quiet
-docker compose --env-file .env.example --profile research config --quiet
-docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.accounting.yml config --quiet
+Set-Location C:/Users/Public/Documents/thericher-v2
+$PSModuleAutoLoadingPreference = 'None'
+Import-Module ScheduledTasks
+Import-Module Microsoft.PowerShell.Utility
+foreach ($name in @('thericher-kis-paper-daily-spy-session','thericher-kis-paper-current-nas-model-20261015')) {
+    $task = Get-ScheduledTask -TaskName $name
+    $info = $task | Get-ScheduledTaskInfo
+    [pscustomobject]@{
+        task = $name
+        state = [string]$task.State
+        enabled = $task.Settings.Enabled
+        next_due_utc = $info.NextRunTime.ToUniversalTime().ToString('o')
+        last_utc = $info.LastRunTime.ToUniversalTime().ToString('o')
+        last_result = $info.LastTaskResult
+    } | ConvertTo-Json -Compress
+}
 ```
 
-Never reuse/overwrite exclusive artifact creators or bypass denied cleanup.
-Prior245/41 task audit/9 quiet actions/one exhausted D1 disabled retained,
-two Docker/uv exclusions unchanged. HiddenTask=False is not launcher-window
-behavior. Korean-first private Docker UI redesign deferred; no public port or
-outside-access tunnel in current work.
+New model launch pointer:
+A/execution/current-nas-owned-model-paper-deployment-20261015-v1/launch/current.json.
+Bind pointer hash -> immutable launch -> exact runtime receipt hash/source/image/
+clock -> strict native cycle/intent/fill/book. No latest-file scans/task-exit
+fill inference. Active owner remains exclusive; missing outcome is unknown.
+Native offline private readers use network-none, exact pinned image/source and
+read-only private mounts. Never execute observe(), a strategy worker, collector
+or broker method merely to read evidence.
 
-## Retained Owned Opportunity Facts
+The old nightly reboot-recovery/read_owned_dispatch.py has STALE driver/image/
+time constants. Do not alter its historical source or use it as current proof;
+a current pinned reader must bind drivere586/image3ccb before relying on tonight.
+Historical pure read_private_cycle.py checks generic native state without API;
+schema compatibility alone is not schedule causality.
 
-Owned opportunities remain:
-- Goal97 successor20261019: entryOct19 22:30KST/recovery22:40; fifthEXITOct24
-  04:50/recovery05:00KST. Three finite tasks, first four HOLD; no actual fill yet.
-- Goal83 cohort387ee5f6... job80012e77...: Oct12 22:30KST entry/recovery22:40;
-  fifthEXIT Oct17 04:50/recovery05:00, days1-4 HOLD.
-- Original b860 day-Paper Oct12 22:30..22:40/Oct13 04:50..05:00KST unchanged.
-- Accounting original job50748886...: five Oct12..16 20:25..35UTC windows,
-  firstOct13 05:25KST; oneattempt/slot/two daily pages.
-- Dataab65 42-peer endpoints Oct12/19 21:40UTC unchanged; retained cursor0/
-  accepted0/fail0/remaining42/ETAunknown, not current fresh acquisition proof.
+Scheduler Operational logging disabled. Exact marker/time/hash chain under an
+assumed-honest host is NOT cryptographic OS-scheduler-origin proof. Fees/settled
+cash/net PnL remain not_observed unless exact independent evidence proves them.
 
-Preserve original shared10%basis, all losses/reservations, unknown other custody
-and privatevolume thericher-v2-paper-canary-private-acct-20261007-v1.
-New successor segments cadence only; full-book budget replay cannot be sliced.
-Persist seed/history before effects; missing new input never prevents exact
-retained recovery. Never read/route KIS_LIVE_* or reset an unknown submission.
-Actual read/response/archive clocks differ from economic close. Future input/
-inference/fill/owned-flat/fees/finality/settlement/tax/net unknown, never zero.
-Scheduler Operational logging disabled: assumed-honest host marker/time
-provenance, not cryptographic OS-origin proof.
-Reference http://127.0.0.1:8787 not freshly checked.
-GPU usable/free; no environment/permission hold or utilization-only appointment.
-Claude recovery93b296b3.../next-directionc3f733db... supported-with-limits;
-agreement grants neither execution proof nor authority.
+One Codex app heartbeat named 오늘 모의투자 실행 결과 확인, id automation,
+runs once Oct16 00:05 KST after both owned opportunities. No recurring report,
+task replay, substitute order or follow-up chain. It inspects exact evidence,
+not raw private output, and notifies only on material result/failure/operator
+decision. It does not replace the Windows workers or prove they ran.
 
-## Historical Retrieval
+## Verification
 
-Earlier superseded commands/evidence remain in pushed Git15fe389:
-git show 15fe389:RUNBOOK.md
-Use current owned source/identity/time facts above; never dispatch an old command
-solely because it appears in history. External artifacts/raw data remain local D:.
+Fresh exact source authority:
+A/verification/current-nas-owned-cycle-20261015-v1/authority.json
+925 changed-path serial pass; fresh clean8 full16,488pass/22skip/351.816sec,
+16,510collected/helperexit0; source1,342/digest4a1e461984894e82caa21601bcb0673dfab7cd85bb5924a8dd916bd24c71bc46.
+Ruff/default/research/accounting sample-env Compose passed.
+External deployment12SYN/native COM14triggers/actual installation readback passed.
+Claude categorical supported-with-limits is advisory, not runtime proof.
+
+Credential-free commands from the absolute workdir:
+```powershell
+uv run --no-env-file --extra dev pytest -q <changed-test-paths> --maxfail=1 --durations=15
+& C:/Users/Public/Documents/thericher-v2/scripts/run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot -PytestArgs @('--maxfail=1','--durations=15','--junitxml=D:/thericher-v2/model-artifacts/verification/<fresh-owned-run>/pytest.xml')
+uv run --no-env-file --extra dev ruff check .
+docker compose --env-file C:/Users/Public/Documents/thericher-v2/.env.example config --quiet
+docker compose --env-file C:/Users/Public/Documents/thericher-v2/.env.example --profile research config --quiet
+docker compose --env-file C:/Users/Public/Documents/thericher-v2/.env.example -f C:/Users/Public/Documents/thericher-v2/docker-compose.yml -f C:/Users/Public/Documents/thericher-v2/docker-compose.accounting.yml config --quiet
+```
+
+Changed-path serial scratch: a freshly checked nonexistent SHORT non-reparse
+C:/ts/<unique> child. Existing long-path QQQ persistence failures were retained,
+not hidden by relaxed tests. Never reuse a pytest --basetemp that auto-deletes
+unknown contents. Full helper's Global mutex/leases/checked C:/trpy cleanup
+remain unchanged; no failed/partial authority reuse or cleanup-denial bypass.
+MD/external-only work can reuse authority ONLY if tracked production/test/script/
+dependency/config digest is exact. External code needs its own native checks.
+
+## Research / Recovery Knowledge
+
+Creators/fits/readers with exclusive outputs are frozen after use. Inspect exact
+saved receipts, not a second invocation. Data raw under M; models/checkpoints/
+research artifacts under A; Docker /app/model_artifacts. Keep D:15 percent free.
+No implicit .env load in research/verification.
+
+Latest independent results:
+A/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
+A/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json
+
+Absolute-utility originalcreator failed,3CPUfits retained; linked math-only
+publication27newcells45controls,0refits,95.1834active/1,645.4028end within180/1,800.
+Only derived mean-log scalar tolerance1e-14; exact othermetrics/NAV/exposure and
+economic criterion unchanged. No qualified alpha/untouched replication/Paper
+adoption. Old ABI/publication failures and clocks stay immutable.
+GPU/CUDA is usable, no permission/runtime hold; no active training allocation.
+
+Token mixed-OS flock/byte locks alone did not coordinate. Current token writers
+need atomic directory exclusion plus same-OS legacy locks; no age-based reclaim
+or timestamp reset. Existing historical writers are not universally upgraded.
+Scoped snapshot60-second issuance floor does not change Data's frozen300 guard.
+
+Last actual marks: realizedgross positive, unrealized/totalmarkedgross negative;
+no net-profit claim. Old task definitions/rollback and all private custody stay.
+Korean-first private Docker monitor remains deferred; reference127.0.0.1:8787
+was not freshly checked. No public service/tunnel or new paid dependency.
+
+History: git show 3dbca52:RUNBOOK.md. Historical commands are retrieval only,
+never a reason to replay a creator or consumed scheduled opportunity.

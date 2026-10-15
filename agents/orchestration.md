@@ -1,65 +1,59 @@
 # Orchestration Stateboard (총괄 조정)
 
 Current 2026-10-15 KST. ONE objective: current-nas-owned-model-paper-cycle-v1.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data. AGENTS.md owns policy.
-This is current allocation, not a history/backlog. History: Git81890b4 and the
-exact external receipts below. No operator decision currently identified.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. AGENTS.md owns authority.
+No operator decision currently identified. Source-only readiness is not a fill.
 
 ## Ready / Owned / Due
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |81890b4 pushed pure model targets/matching image. Next current-stock coordinator/runtime source is owned/unverified, not deployment. Prior r6 runtime follow-up stays unfinished/owned, not a company wait. |
-| Verification | Parent |Source1336/65a58a7c:649serial+fresh clean8 full16283pass22skip354.577s/helperexit0; Ruff/three sample-env Compose pass. A/verification/current-nas-proposer-20261015-v1/authority.json. Short C:/ts scratch resolves length-sensitive existing QQQ test persistence; no risk/assertion changes. |
-| Daily Paper | Existing daily-spy-session |Oct15 23:50KST/14:50UTC Ready; image3ccb/470source4d0481cd now frozen472public-source deployment. Driver e586/quiet6d51 DEPLOYED23:25UTC; exacttaskXML/argv/basis unchanged.8driver+5quiet/native import-image-inert PASS,0credentials/API/secretcopy. Mutable development SRC cannot invalidate this baseline guard. |
-| Future Paper repair | Existing owners/Parent |Seven r5 quietActions installed. Actual20:25 accounting data failed source_changed at captured unmapped default; exactcohort no_owned_intent is not globalflat. r6 accounting83-only Action installed20:56; other6/nonAction XML/basis/claims unchanged. Runtime UNKNOWN until Oct15 20:25UTC; oldindex2 not replayed. |
-| Data | Existing collectors |G10721:50UTC/NAS-forward621:40UTC ownership unchanged. Fresh-session owners continue; no manual Task Scheduler invocation or cache-owner competition. |
-| Data current panel | McClintock |ACTUAL504ready61/8missing/30744bars;101388readbackPASS. Past-only feature55checks/25pins pass,503defined12/243supported/181outside128;15.8394active0numericFITreads. Missing stays missing,0payoff/fit/GPU/API. |
-| Engine inference | Closed/Parent |ACTUAL243x5scores, independent r2 PASS2Ridge/fiveunscale/2560ranks/clock-source-missing bindings. NumPybool readerfailure/debit retained. No NN rerun/qualified performance; Data9a9d/Engine505 frozen. |
-| Engine composition | Godel |GRU/LSTM/Transformer18fits/54cells independently CLOSED0of18joint/noAlpha. NEW fixed absolute-utility CPU family failed native_raw20_exact BEFOREANYFIT,0attempts/0fits;13.0559active324.3013end/source unchanged/reaped. Exact ABI linked repair only, old0retry failure/debits immutable; not Paper hold. |
-| GPU | Steward/Parent |SixTCN/18recurrent fits and five-model eval all closed, actors absent/leases released. r2cuDNNenabled measured, b499disable0CUDA superseded beforedispatch. No active allocation; next research needs concrete data/target/utility hypothesis, not dummy utilization. |
-| Runtime / Infra | Maxwell |Authoring disjoint quiet current-stock host/worker/tests with exact-input loader, token reuse and actual-native coordinator SYN. No new-model actual order/task deployment yet. |
-| Stock target consumer | Aristotle |Pure targets COMPLETE; now authoring recovery-first current-stock coordinator/native tests. Original bank/unknowns/foreign owners unchanged. Offline exactselected10/currentbook preflight:0registered-stock collisions,6owners16terminal0unknown/unclosed; not fresh broker funding/quote permission. |
-| Adjustment source | Data closed |ACTUAL4issuer-anchored MODP0/1 pairs8GET1POST/800rawrows/488window observations. Independent4538PASS/42.0950active232.6259end;all different_other_pattern, no factors/PIT/finality/TR/old-cache qualification. |
-| Cash/PnL | Execution closed sidecars |Sixowners16terminal12positivefills,3realized/3no-realized0pending. Fresh marks verify threeheld quantities/0otherholdings. Realizedgross positive but unrealized/totalmarkedgross negative; fees/settledcash/net remain unknown. No adoption/budget expansion. |
+| Integration/Git | Parent | New native model cycle/source/image integrated and finite task INSTALLED. Company runtime outcome remains unfinished. Parent owns shared docs/Git; no concurrent Git worker. |
+| Verification | Parent closed |925 changed-path serial; fresh clean8 full16488pass22skip351.816s/helperexit0, source1342/4a1e4619; Ruff/three sample-env Compose pass. Source frozen. External12SYN/nativeCOM14triggers and installation readback passed. |
+| Nightly Paper | Existing daily-spy-session |Ready/enabled Oct15 23:50KST/14:50UTC. Immutable472-public-file deployment/image3ccb470map; drivere586/quiet6d51. Exact TaskXML/identity/original bank unchanged. Not a new fill. |
+| NAS model Paper | New finite Task |Ready/enabled Oct15 22:40KST/13:40UTC; imagece219/474map/manifest130d/configa13fa7d9.14triggers across7dates,4-minute native visits,1auth/1submit/1cancel/128calls/280seconds. No manual strategy invocation. EntryONLYOct15, owned exit fromOct21OPEN, exact pending recovery before new input. |
+| Future accounting | Existing83 owner |r6 accounting-only Action installed; nextOct15 20:25UTC, runtimeUNKNOWN. Oldindex2/claims/basis/other6Actions retained; no replay or assumed success. |
+| Data | Existing collectors / MD closed |504ready61/8missing/30744bars/101388checks. Past-only503defined/243supported. MODP4pairs closed, no factors/PIT/finality claim. G10721:50/NAS21:40UTC retained. Old/current/new generic budget-reader12SYN compatibility passed, not whole old overlay. McClintock board updated/agent closed. |
+| Engine | Closed |18new GRU/LSTM/Transformer CUDAfits54cells independently closed. New3CPU absolute-utility fits27cells45controls linked math publication complete0refits; utility hypothesis fails all3stage checks. Original creator failure preserved. No qualified alpha/adoption; boards updated/agent closed. |
+| GPU | Steward closed |CUDA works, named training actors/leases closed. No allocation or permission/environment hold. Next campaign requires a concrete ready hypothesis, not utilization-only work. |
+| Execution coordinator | Closed |V3 source/native39 tests; own runtime contract complete. Original tenth/foreign owners/unknowns preserved; terminal-partial SELL fix leaves cash reservations conservative. Execution board updated/agent closed; no source edits. |
+| Runtime readback | Maxwell running bounded sidecar |New external strict model launch->dispatch->native reader/SYN; no repo source edits, broker/credentials/Task invocation. Old nightly reader pins stale: new current version needed, never rewrite historical reader. |
+| Independent review | Raman invoked |Parent quiet/schedule source check noP1/P2. Now bounded public-source-only old Goal97 ownership review before its Oct19 entry; no private/API/schedule changes or speculative hold on today's paths. Claude deployment supported-with-limits. |
 
-## Bottleneck And Improvement
+## Bottleneck / One Reversible Improvement
 
-Throughput Review: r6 runtime is due with its existing owner tomorrow; it is
-not a foreground or company permission wait. Current inference/18fit readbacks
-are complete. Pure target/native planning and matching Docker readiness are now
-complete. Parent protects frozen nightly deployment; next ready path is owned model-stock recovery-
-first coordinator and quiet runtime, not another source/profit permission gate.
-One finite absolute-utility/fee-hurdle CPU research hypothesis can prepare in
-parallel; no GPU dummy training. Existing nightly23:50 stays separately ready.
-The research's concrete pre-fit raw-token ABI failure is assigned a bounded
-linked repair, not another architecture/permission wait or altered old result.
+Throughput Review: today's model and nightly owners are installed and due in the
+US session. No unknown request needs a new manual broker action now. The company
+outcome cannot be honestly claimed from source/installation; actual side effects
+and their reconciliation need the natural owned opportunity.
 
-Reversible improvements already measured: test the actual execute callback,
-not only imports; keep native SYN and full-fit restoration inside experiment
-budgets; a separately frozen cuDNN research campaign avoids measured strict
-dilated fallback without altering old results or broker controls. Validate the
-reader's real publication path and Windows venv process ancestry; native base
-binary retains the same packages/PID invariant. Docker absence must use exact
-typed actor/label facts, not case-sensitive diagnostic text. No new
-report/gate platform, additional approval or dummy GPU utilization target.
+Ready alternatives:
+1. Complete exact offline result reading and native synthetic binding now.
+2. Close absolute-utility interpretation from saved outputs, without new fits.
+3. Keep existing fresh-session Data collectors running; no duplicate collection.
+
+Execute1/2 in parallel with parent integration;3 already has an owner. Claude's
+scoped deployment challenge supported-with-limits; no new approval or foreground
+sleep. If all prepared work closes before the session, hand off next_due to the
+owned Task rather than create dummy work or mark company completion.
+
+Measured reversible improvement: isolate the baseline from mutable development
+SRC using an immutable public-source snapshot. Preserve selective Paper-loader
+redirection to the original private file; never copy secrets. Compact current
+stateboards replace stale running projections; history remains Git/external.
 
 ## Exact Evidence
 
-- A/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r3/after-readback.json
-- A/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r4/after.json
+- A/verification/current-nas-owned-cycle-20261015-v1/authority.json
+- A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
+- A/execution/current-nas-owned-model-paper-deployment-20261015-v1/prepared.json
+- A/execution/current-nas-owned-model-paper-deployment-20261015-v1/claude.json
 - A/execution/current-paper-frozen-deployment-20261015-v1/after.json
 - A/execution/current-nas-stock-custody-preflight-20261015-v1/parent-readback.json
-- A/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
-- A/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
-- A/execution/future-owned-accounting-quiet-recovery-20261015-v1/parent-installation/after.json
 - A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
-- A/data/current-nas512-fresh61-preparation-20261015-v1/actual-readback.json
-- A/research/native-cudnn-tcn-convergence-development-20261015-v1/host-study.json
-- A/research/current-nas512-frozen-expert-score-panel-20261015-v1/engine-ready.json
-- A/research/current-nas512-frozen-expert-score-launch-recovery-20261015-v1/cleanup-recovered.json
-- A/research/relative-ranking-fixed-and-tree-fusion-development-20261015-v1
+- A/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json
+- A/research/native-recurrent-attention-relative-ranking-development-20261015-v1/independent-parent.json
 
-Current-listing/non-PIT/actions/units/provider-finality limitations constrain
-research claims, not independent Paper permission. Missing receipts remain
-unknown. Fees/settlement/net PnL are not zero. Never KIS_LIVE_* or public UI.
+Keep current-listing/non-PIT/actions/units/finality limits scoped. Missing
+evidence is unknown; fees/settled cash/net PnL unobserved, not zero.
+No KIS_LIVE_* or public UI. No company completion from a small-package commit.

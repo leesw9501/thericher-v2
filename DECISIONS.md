@@ -10330,3 +10330,29 @@ The current nightly deployment retains image3ccb/470runtime files,472public
 snapshot files, drivere586/quiet6d51, same TaskXML and23:50KST opportunity.
 Claude supported-with-limits and independent Review found no P1/P2 issue.
 D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
+
+## 2026-10-15 - Frozen Model Proposals Use Native Owned Paper Recovery
+
+The current five-expert NAS rank policy supplies untrusted desired targets to
+the existing stock plan/reserve/execute/reconcile path, not a second broker-risk
+engine. Its ten .005-original-basis proposals fit inside the ONE shared initial
+tenth; losses/reservations/buying power/foreign ownership remain authoritative.
+Freeze identities before effects and recover retained requests before new data.
+No substitute selection, request-expiry renewal, foreign inventory adoption or
+cash release from an expired/unresolved job. Native terminal partial fills can
+permit owned-only SELL while their conservative BUY reservation remains.
+
+Use one finite quiet Task with bounded single visits, exclusive native locks,
+and admission deferral around the separately owned23:50 baseline. The snapshot
+permits new entry only in its bound Oct15 session. Earliest owned exit is Oct21
+regular OPEN, not the research fifth-session CLOSE label. This operational
+choice is explicitly not replay parity or profitability promotion. Later slots
+recover the same owned positions/requests rather than extend the entry signal.
+
+Default entry points stay inert; actual runtime receipts must prove submit,
+exact fills and owned reconciliation separately. Full source tests and task
+installation cannot close the company runtime outcome. Claude's concise
+deployment challenge supported-with-limits, advisory only; original authority
+already covers private no-cost Paper schedules/orders inside the shared bank.
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-deployment-20261015-v1/claude.json
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json

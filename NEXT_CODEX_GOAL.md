@@ -12,7 +12,28 @@ Never KIS_LIVE_*, real money, public serving, paid commitments or secret output.
 Standing private Paper credentials/reads/orders/recovery/schedules are approved.
 Profit qualification is not a prerequisite for this provisional operational loop.
 
-## Required Work
+## Current Deployment / Remaining Work
+
+Implementation and finite deployment are READY, not a runtime completion:
+D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
+
+Task thericher-kis-paper-current-nas-model-20261015 enabled/Ready, first natural
+Oct15 22:40KST/13:40UTC. Frozen imagece219a8d/474-file manifest130d1c33,
+hostc6e4c034/configa13fa7d9; actual ten-target loader passed network-none.
+Finite Oct15/16/19/20/21/22/23 UTC windows13:40..14:36 and15:05..19:41,
+four-minute visits. Existing23:50 owner unchanged; active/due owner deferral.
+One280-second visit/oneauth/onecombinedsubmit/onecancel/128calls; OS8minutes.
+New entry ONLY Oct15; later exact-request recovery and owned exit from Oct21
+regular OPEN. This clock is operational learning, not fifth-CLOSE replay parity.
+No manual Task/strategy invocation or order has been performed for deployment.
+
+Remaining: inspect exact current launch->immutable runtime->native book/intent/
+fill linkage at natural opportunities; repair first-cause technical failures
+without substitute identities/budget reset. Missing result stays unknown.
+All source/risk changes require fresh exact authority; unchanged source does
+not need repeated full suites for a documentation or readback update.
+
+## Implemented Contract (Do Not Redispatch Creators)
 
 1. Add the smallest separately owned current-stock coordinator using the existing
    stock plan/reserve/execute/reconcile/exit/recovery APIs. Reuse the verified
@@ -64,9 +85,12 @@ D:/thericher-v2/model-artifacts/execution/current-nas-model-target-path-readines
 Current listing/non-PIT/action/unit/finality limits constrain research claims,
 not independent Paper authority. New18 recurrent fits are NOT replacement experts.
 
-Fresh source1336/65a58a7c authority:649serial,16283pass22skip clean8 full354.577s,
-Ruff/default+research+accounting sample-env Compose pass.
-D:/thericher-v2/model-artifacts/verification/current-nas-proposer-20261015-v1/authority.json
+Fresh final source1342/4a1e461984894e82caa21601bcb0673dfab7cd85bb5924a8dd916bd24c71bc46
+authority:925serial,16488pass22skip clean8 full351.816s/helperexit0,
+Ruff/default+research+accounting sample-env Compose pass. External12SYN/native
+COM14trigger parsing/actual installation readback passed; Claude advisory
+supported-with-limits. Installation/test success is not broker success.
+D:/thericher-v2/model-artifacts/verification/current-nas-owned-cycle-20261015-v1/authority.json
 
 Existing nightlyOct15 23:50KST/14:50UTC Ready: CPU image3ccb2250,
 quiet6d51b09d/pinned drivere5867a8a,470runtime sources/4d0481cd in an immutable
@@ -74,7 +98,8 @@ quiet6d51b09d/pinned drivere5867a8a,470runtime sources/4d0481cd in an immutable
 the approved original private file only on execution. Mutable development SRC
 cannot invalidate this baseline. Exact TaskXML/argv/identity/bank unchanged.
 8driver+5quiet/native import-image-inert checks PASS, independent noP1/P2.
-This deploys existing strategy runtime, NOT the new model-target strategy.
+This is the separate existing strategy runtime; new model deployment above
+shares its ORIGINAL bank, not its mutable runtime or policy ownership.
 D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
 
 ## Parallel Work / Preserved Due
@@ -83,10 +108,13 @@ Parent owns direction/shared docs/Git/integration; Execution owns assigned
 coordinator/host/tests; independent Review checks frozen source/actual evidence.
 Data owns market inputs, Engine owns policy outputs, native Execution owns risk.
 
-Research may prepare the ONE fixed absolute quoted-return/fee-hurdle CPU hypothesis
-rather than another architecture grid; freeze sources/caps and native solver smoke
-before dispatch. This does not block Paper and is not a qualified model selection.
-D:/thericher-v2/model-artifacts/research/next-utility-hypothesis-20261015-v1/ready.json
+The fixed absolute quoted-return/fee-hurdle CPU hypothesis is CLOSED with3fits,
+27complete cells/45controls via a linked read-only math publication,0refits.
+Original creator's derived-log bit-equality failure remains;1e-14 derived-only
+tolerance does not change exact NAV/exposure or economic criteria.95.1834active/
+1645.4028elapsed within180/1800; utility hypothesis fails all three stage checks.
+No qualified model selection/Paper adoption.
+D:/thericher-v2/model-artifacts/research/daily5-absolute-utility-linked-math-recovery-20261015-v1/linked-parent.json
 
 Data MODP four pairs and18-fit NN independent studies are CLOSED; preserve
 limitations/results/debits and do not redispatch creators. No dummy GPU work.
