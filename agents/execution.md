@@ -1,253 +1,90 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-## Current Projection (2026-10-15 KST)
+Current 2026-10-15 KST. Company: current-nas-owned-model-paper-cycle-v1.
+A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
+RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
+No active Execution subagent or broker worker is inferred from this MD.
 
-Execution CPU exit-clock package COMPLETE, agent closed. Parent froze and ran
-same fixed-five equal-ordinal Top10 final-only935score rows/4entries, policy
-sealed before new marks/economics. Same quantities/cost5/10/20side ->6cells;
-both OPEN/CLOSE positive, OPEN lower at all three costs.38.4008active including
-32PREPcarry/6.4026elapsed within180/1800.0fits/forwards/GPU/API/broker or changes
-to source/schedules/bank. PREP23SYN/Ruff and935/935 mark coverage retained.
-Independent34pins/40heldOPEN marks/6native Fraction summaries noP1/P2, no replay
-redispatch. Four reused current-listing/non-PIT/raw-action/unit-limited DEV
-groups; common close-sampled NAV only, no final intraday path/auction/actual
-later-entry-and-exit fill parity. Descriptive, no winner/model promotion.
-D:/thericher-v2/model-artifacts/execution/model-paper-exit-clock-replay-20261015-v1/categorical.json
-D:/thericher-v2/model-artifacts/execution/model-paper-exit-clock-replay-20261015-v1/independent-review/result.json
+## Ready / Owned / Due
 
-Current company direction current-nas-owned-model-paper-cycle-v1. Previous pure
-target package delivered/Parent commit81890b4. Coordinator V3 source FROZEN:
-source77318c25/testbdff2c74,39coordinator+48proposer=87PASS15.20s/Ruff PASS.
-Parent legacy stock_plan._pending fix b011e4e8 is frozen; terminal-partial owned
-SELL boundary resolved, not the historical0200 blocker. Original0200/V2 source,
-readiness and native-boundary evidence remain immutable tested predecessors.
-Exact native journal before effects, one pending leg/visit, recovery before Data;
-retain original pending identity/TTL past expiry, reject foreign same-stock owners.
-Fifth official session OPEN is earliest owned exit horizon; later official regular
-sessions may exit remaining OWNED quantities. Operational, NOT research CLOSE parity.
-Expired unattempted materialized intents close natively; never-reserved retirement
-requires locked absence proof, never unknown/real reservation release or rebinding.
-Optional expected_input_ref/expected_policy_ref are identity hints, NOT permission.
-Matching completed hints skip expired loaders ONLY after native whole-book replay
-and policy-owned flat/terminal checks; retained-source flat, NOT fresh broker proof.
-Different hints validate new inputs normally; pending recovery ignores future hints.
-Parent reports Raman final source review: original3+hints+4pair findings resolved,
-64targeted PASS; runtime160tests reported. Parent froze1342source4a1e4619;
-925serial/fresh full8 16488PASS22skip/Ruff/threeCompose PASS (Parent).
-Parent ACTUAL finite model-task installation00:30:08UTC Oct15: Ready/enabled,
-thericher-kis-paper-current-nas-model-20261015; next due Oct15 13:40UTC/22:40KST.
-14finite triggers, Oct15/16/19/20/21/22/23 twice-window/PT4M; imagece219,
-frozen474/manifest130d, deploymentrefa13fa7d9. Receipt actual_worker_invoked=False;
-no active new-model strategy/broker invocation reported. Installation is NOT a
-submit, fill or terminal closure; runtime outcome remains unobserved, not zero.
-Parent owns deployed config/tasks/runtime/Git/actual orders; Maxwell readback
-sidecar. Original daily23:50 source-isolated3ccb untouched/protected; new cycle
-is NOT its replacement. Native risk may reduce/reject; unknown requests retain
-identity/reservations beyond TTL or finite-task end, never inventory adoption.
-Parent final readback CLOSED:73focused/Ruff/noP1P2. Current pinned network-none/
-RO-volume parse verifies6owners16intents/private bytes stable; model pointer
-not recorded/countsnull, not zero. Original remaining cap positive_below_desired;
-native risk may reduce/reject, no forced ETF liquidation or new capital.
-D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
-Profitability is not an execution gate. Runtime/shared source/tests remain FROZEN;
-only assigned external invented SYN ran, no new model/broker/runtime invocation.
-Producer9fe47f72/test0fd689ae/consumer3c9858e3 remain frozen; PREP1/2 retained.
-ACTUAL243x5 ->10private proposals, ordinal/native receipts PASS;7external SYN/lint.
-.005 each/.05 ORIGINAL-basis desired gross, NOT cash; confidence0 uncalibrated,
-native Risk independent. Data20:47:49.826785/input21:31:19.063233UTC Oct14;
-cleanup22:06:59 is completion-observed bound; consumer byte availability is NOT
-original score publication. No mtime inference. Target readback pointer verified
-present65d2d29b; outcome98d58064. Worker actual broker/API/credentials/orders/GPU0.
-Protected original nightly deployment Ready:472public/470image, driver e5867a8a,
-quiet6d51b09d/image3ccb2250abcc7b11c6ab5f7f048a38b145962755935bace495efc0ac985f3ce7.
-Task XML unchanged/Ready Oct15 14:50UTC23:50KST;8driver+5quiet/fresh-import-image-inert
-PASS (Parent). Original Paper.env loader redirect, no .env copy. No fill/adoption claim.
-Prior r6 runtime remains explicitly unfinished/superseded as company focus only.
-D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-cycle-20261015-v1/ready-v3.json
-D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-cycle-20261015-v1/ready-v2.json
-D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-cycle-20261015-v1/tested-predecessor-0200
-D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
-D:/thericher-v2/model-artifacts/execution/current-nas-frozen-target-preparation-20261015-v1/readback.json
-D:/thericher-v2/model-artifacts/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
-D:/thericher-v2/model-artifacts/execution/current-paper-frozen-deployment-20261015-v1/after.json
+| Owner | Current evidence | Next action |
+| --- | --- | --- |
+| Existing nightly | thericher-kis-paper-daily-spy-session Ready/enabled, quiet Pythonw, immutable image3ccb2250/public472/image470, drivere586/quiet6d51. Original XML/identity/bank unchanged. | Natural Oct15 23:50KST/14:50UTC; exact scoped receipt/native readback, no manual replay. |
+| Current NAS model | thericher-kis-paper-current-nas-model-20261015 Ready/enabled, imagece219a8d/474sources/manifest130d/configa13fa7d9. Native finite14trigger schedule installed, NOT runtime closure. | First Oct15 22:40KST/13:40UTC. Entry ONLY Oct15; later exact recovery/owned exit fromOct21 OPEN. |
+| Future accounting83 | r6 accounting-only repair installed, other six Actions and oldindex2/claims retained. Runtime unknown, not replayed. | Oct15 20:25UTC/Oct16 05:25KST. Goal83 exitOct17 04:50/05:00KST. |
+| Goal97 owner | Separately owned original plan/history/source retained. Empty-registration runtime unproved; no established cross-policy adoption bug. | EntryOct19 22:30/22:40KST; exitOct24 04:50/05:00KST. Do not invoke/replace/adopt. |
+| CPU clock sidecar | COMPLETE6cells, independent noP1/P2, agent closed. | Consumed creator, retrieval only. |
 
-Gross accounting package COMPLETE:
-D:/thericher-v2/model-artifacts/execution/owned-paper-profit-attribution-20261015-v1/readback.json
-Exact native whole-scope6owners16terminal intents/12positivefills5sells,
-3gross-realized owners/3no-realized-fill owners/0incomplete-pending. Gross
-aggregate sign positive;2positive/1negative realized owners; baselineSPY flat/
-positive. Three flat owners need no mark;3held owners mark_missing. No current
-broker equity/fee/settlement/net claim. Network-none/privateRO/no credentials/
-sideeffects/writes; originaltenth, own history and losses retained. Independent
-Fraction owner cash/basis identity and stable bytes+absences PASS.14mark SYN+
-6snapshot SYN/Ruff; Claude supported-with-limits. Earlier false active-owner
-classification fixed only in reader: released lock files may persist, not an
-active writer; missing-state seed requires absent lock, no lock deletion.
-Fresh owner/book-bound observation COMPLETE16:42UTC:1token11GET0order/cancel,
-3brokerheld quantities match/0otherholdings/openorders. Realizedgross positive,
-unrealized/totalmarkedgross negative;fees/settledcash/net unknown.3normalized
-market observations D:/market_data, no rawbodies/account values retained.
-Network-none exact normalizedquote/hash/originalbook replay PASS,10SYN/Ruff/
-Claude supported-with-limits,childabsent. No adoption/reset/capital change.
-D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/runs/388f34a428e24d3aa4db2af64669776e/outcome.json
-D:/thericher-v2/model-artifacts/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
-No new broker/schedule work needed for current independent basket diagnostic;
-same nightly14:50UTCOct15/23:50KST Ready, source/image frozen. Fee/settlement
-official source capability completed revision2077773a.../62source checks, no
-actual provider/private access. Native gross remains valid; current-balance
-cash/unsettled labels do not establish settledcash. Other fee-related samples
-have unknown VTS support, not proved impossible or zero. Never invent TRIDs.
-D:/thericher-v2/model-artifacts/strategy-research/kis-paper-fee-settlement-capability-20261015-v1/capability.json
-Parent documentedVTS current-balance probe ACTUAL provider_success17:45:30UTC:
-1token1GET0orders, complete9structuredrows/output1=3,output2=5,output3=1/oneUSD.
-Numeric cash/withdrawable/unsettled field shapes, not settledcash/fees/net.
-Exactoriginal account/book/tenth validated/privateRO/stable bytes+absences,
-actorabsent.12pure+11fake-wire SYN/Ruff/Claude supported-with-limits; production
-allowlist unchanged, one named readonly boundary/final exact request checks.
-No credentials/rawvalues/IDs/body in output/artifacts. No new token/schedule/
-order/budget policy; same nightly Paper ready23:50. Current research studying
-relative-risk target/20-60 inputs is independent and not a qualified adoption.
-D:/thericher-v2/model-artifacts/execution/kis-paper-current-balance-capability-20261015-v1/runs/7b83a32a8ee942ddb6e3635b4d9d0a7a/outcome.json
-Preview-container-v1 source is FROZEN after Parent's actual preview; no edits
-to source/helper/image/old contexts or Parent's canonical-control extraction.
-No sidecar broker call, task/observer mutation, private write or Git operation.
-Canonical module/test handed off FROZEN:19focused pass, native pending restart/
-after-journal crash/final caller-clock preserved. Parent added bounded one-token
-Docker worker/closed host launcher, full16190pass22skip source1330/0201dd....
-Same daily-spy-session now quiet source-pinned canonical portfolio Action,
-non-Action XML unchanged; next Oct14 14:50UTC/23:50KST. Manual off-window21:28
-canonical no_intent:1auth12market GET/0account-order-cancel, actor absent.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/installation/readback.json
-Unattended current-window ACTUAL completeOct14 14:50:35UTC, no target delta:
-1token/12marketGET/14account-quoteGET,0submit/cancel/newfills. Exact immutable
-launch+dispatch hash/time/source linked; strict network-none privateRO parsers
-verify pointer/cycle/initialbasis/target match.6owners16terminal/0unclosed/0unknown,
-3retainedpositive instruments/no reserved buy; no fresh net-PnL claim. Next
-Oct15 14:50UTC/23:50KST owned task, no manual invocation or substitute request.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/owned-opportunity-20261014.json
-Assumed-honest host/disabled Operational log, not cryptographic OS/broker origin.
-Post-reboot source imagea142eea3.../469files183e1eaf... network-none checked;
-fresh full16235pass22skip/224focused/source1334abf2b287... passed. Bootstrap
-44865727... IMAGE pin DEPLOYED14:10UTC,5SYN pass. Same exact task XML Ready
-14:50UTC/23:50KST; zeroAPI/credentials/private writes. No actual scheduled fill
-or fresh inventory asserted. Rollback before-quiet_dispatch.py retained.
-D:/thericher-v2/model-artifacts/execution/current-paper-shared-loop-20261014-v1/reboot-recovery/deployment-r3/after-readback.json
+## Current Model Contract
 
-ACTUAL Parent SPY r2 EXIT19:04:21UTC: order_complete/
-exact_order_and_position_reconciled,1token/23GET/1sell/0cancel;
-baseline_owned_flatTrue, exact last request closedTrue, reserved buyFalse,
-exact actor absent. Same original decision06f5e9fe/session, NOT forced signal.
-D:/thericher-v2/model-artifacts/execution/current-paper-spy-baseline-20261014-v1/actual-r2-20261013T190421697478Z.json
-Execution sourceba15af4d.../launcher62a0a5... (Parent reported).
-Parent independent offline decision -> intent -> accepted acknowledgement ->
-full exact linked fill -> terminal -> baseline flat VERIFIED: post-exit book
-6owners/15terminal intents/0unknown/0pending;2held instruments TLT/GLD.
-Source/private unchanged, network0. No adoption, reset or basis expansion;
-original shared initial10%, entry costs/losses and custody retained.
-Fees/settled cash/dividends/net PnL remain unmeasured, not zero.
+243 common supported rows x5 frozen Ridge raw20/Ridge indicator/MLP20/TCN20/
+TCN60 scores ->10 fixed equal-ordinal private targets. No new18 recurrent model
+substitution. Desired .005 each/.05 aggregate of ORIGINAL basis is a proposal,
+not available cash/new bank. Native shared initial tenth, entry costs, losses,
+reservations and actual buying power remain authoritative. No refill/substitute
+selection, forced ETF liquidation or adoption of another policy's stock.
 
-Earlier18:56 SPY attempt no_intent/pause_sells_active, all request counts0.
-Parent confirmed RO mount fault: stored pause flagsFalse but Store read
-failed closed because sibling a+b lock needs RW. R2 existing emergency volume
-RW allowed native locks, NO flag changes. Observer restoredReady.
-Source-pinned6 SYN/Ruff pass independently reproduce RO failure/RW unchanged
-JSON. Pure portfolio preview needs no Store lock; native execution does.
+V3 persists policy/intent identity before effects, resumes exact pending work
+BEFORE loading scores, retains identity/TTL and unknown reservations after
+expiry, rejects foreign same-stock ownership. One pending leg per visit.
+Terminal partial fills permit native owned-only SELL; partial-BUY conservative
+cash reservations are not released. Never-reserved retirement requires locked
+positive absence/exact binding, never age-based reclaim or unknown-state reset.
+Completed-hint skip still requires full native plan/history/owned-flat checks.
 
-Current253 original recipe selected; current21 stays UNSELECTED8-SYN source,
-no actual performance. Data exact recipe5ccc2ee6.../worker d07b4f65... supplies
-all4 aligned253 completedD1 nominal dates throughOct12; original252 population
-covariance/capped-thirds/shrink/risk recipe, no new strategy selector.
-Current control da043282.../input0f9fa87c...; selected published availability
-Oct13 17:45:16.433236UTC, targetOct12 20UTC, currentOct13 valid until20UTC.
-Observed/non-PIT/rawMODP0/corporate-actions unverified/not provider finality.
-Data read_context BEFORE core/config; nominal UTC-midnight is not NY-close.
-Host adapter48 SYN/Ruff and exact offline source ABI pass; no broker/private
-reads/writes or SPY reevaluation. Original253 baseline protection unchanged.
-D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/runtime-source-validation-r2.json
+One visit280seconds/oneauth/onecombinedsubmit/onecancel/128calls; eight-minute
+OS limit. Finite Oct15/16/19/20/21/22/23 UTC windows13:40..14:36 and15:05..19:41,
+four-minute cadence; defer active/imminent nightly owner. No manual task or
+strategy invocation performed to prepare deployment. Same private volumes/bank,
+no .env copy or live access. Earliest fifth-OPEN exit differs from research
+fifth-CLOSE and actual entry is later: execution learning, not replay parity.
 
-ACTUAL Parent native preview19:40:04UTC: preview_feasible,1token/14GET/
-0orderPOST/0cancel,15historical intents/0pending/1proposed buy leg;
-source_input_unchanged AND private_bytes_unchangedTrue, exact container absent.
-D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/preview-container-v1/actual-20261013T194004334762Z.json
-Pinned5b/native source edc28abf...; readerdfe9c970.../launcherd7c5e49d....
-Strict RO scope/_read_unlocked/pure shared budget; private volumeRO, no Store
-locks, reserve/order/cancel/observe()/book writes. Source23 SYN/Ruff and offline
-stdin parity passed before this ACTUAL connected preview. No portfolio fill
-or cycle completion is implied by preview/proposed leg count. Observer Ready.
+## Last Observed Evidence
 
-ACTUAL Parent native cycle COMPLETE19:50:27UTC:2visits, first pending/
-exact_buy_advanced, second complete/no_target_delta;1token/40GET/1BUY/
-0SELL/0cancel. Original basis and cycle initial preserved, owned targets
-matchTrue, baseline_owned_flatTrue, source unchangedTrue, exact actor absent.
-D:/thericher-v2/model-artifacts/execution/current-paper-owner-control-v1/current253/native-cycle-v1/actual-20261013T195027798126Z.json
-Workeradc0c259... (Parent reported); observer restoredReady. Current portfolio
-runtime works; Parent independent network-none exact chain PASSED:6owners,
-16terminal intents/0pending-unknown/3held instruments, baseline owner flat.
-Earlier6-owner/15-terminal book facts above remain their time-scoped history, not a fresh count.
-Baseline flat owner stays retained history, never adopted into portfolio custody.
-Native completion/target match is not measured fee/settlement/net PnL.
+Oct13 baseline accepted SPY SELL/portfolio BUY exactly filled and reconciled.
+Oct14 natural23:50 cycle completed with no target delta/new order/fill. Offline
+book/readback: sixowners/16terminal intents, zero unknown/unclosed, three held
+instruments; no selected-stock registration collision. Model pointer absent,
+countsnull, not zero. Remaining original cap positive_below_desired. These are
+retained/local facts, NOT fresh broker funding/quotes/eligibility observations.
 
-Next Parent action: retain installed canonical shared-budget portfolio Action
-and its owned Oct14 14:50UTC validation; ONE coherent portfolio priority without
-competing baseline entries. Sidecar has NOT invoked any cycle/broker actor; no source/Git changes.
-Existing advance_kis_paper_portfolio_cycle advances at most one exact leg/call,
-default inert. SAME frozen control/input/session/original basis/owner/binding
-contract retained from fresh post-exit custody; no old-context rebind.
-Native unknown/duplicate/recovery/baseline/aggregate/quote/emergency guards stay;
-retain original pending contract and exact intent on resume, never substitute
-refreshed binding/source or force a target resize. OldOct9 contexts unchanged,
-current21 unselected,45e93 not dispatched. Operator decisions: NONE.
+Last fresh owned valuation: three holdings/no foreign/open orders; realized
+GROSS positive, unrealized/total marked GROSS negative. Fees/settled cash/net
+PnL unobserved. No claim of a new model submit/fill/owned-flat runtime yet.
+Missing/preview/task exit/install/source tests cannot prove a fill.
 
-## Other Owned Future Paper
+## Closed CPU Clock Study
 
-Update21:00UTC Oct14:7quietActionsr5 actually installed/nonAction identical;
-accounting's first20:25 dispatch linked e063.../bff8957c... recorded data
-slot_unknown/source_changed, not success. Nativeoffline exactcohort status
-no_owned_intent/registry_has_no_exact_owned_request, activeRW0; not global
-inventory/PnL zero. Source-only reproducer found captured execute.data_call
-still callingunmapped native runner beforeclient. NEWr6 routebinding13tests/
-cold+warm455source/Claude passed; accounting83ONLY Action installed20:56UTC.
-Other6definitions/basis/claims preserved. NextOct15 20:25UTC; actualr6 closure
-pending, no expiredindex2 replay/newintent or mark inferred frominstallation.
-D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/firstcause-r2.json
-D:/thericher-v2/model-artifacts/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
+Final-only935score rows/4groups; fixed-five Top10 sealed before new marks/
+economics, same quantities/cost5/10/20 ->6cells. OPEN and CLOSE positive; OPEN
+lower at all three costs.38.4008active incl32PREPcarry/6.4026elapsed within
+180/1800;0fits/forwards/GPU/API/broker.23SYN/Ruff and935/935 mark coverage;
+independent34pins/40held marks/6native Fraction summaries noP1/P2, no redispatch.
+Four reused DEV groups/non-PIT/actions/units/current listing; common close NAV,
+no final intraday/auction/actual later-entry fill parity/model promotion.
 
-2026-10-15KST static reattachment: goal83/97 frozen archives/image113f9644...
-match and do not require the current checkout for their order lifecycle.
-Goal97 actually installed delivery-r2; old delivery-r1 references below are
-historical, not the installed Action. Source-safe audit only, not fills/state:
-D:/thericher-v2/model-artifacts/execution/future-owned-paper-runtime-readiness-20261015-v1/readback-r2.json
-Goal83 ACCOUNTING preflight still checks four changedcheckout source pins even
-though its exact455-file archive exists. Strict archive/import mapping and
-seven verified future quiet Actions are PREP, not installed/runtime success:
-D:/thericher-v2/model-artifacts/execution/future-owned-accounting-quiet-recovery-20261015-v1
-Original identities/job/map/triggers/basis/unknown recovery preserved; no manual
-task/order invocation. Parent owns this repair; independent daily23:50a142
-remains source-exact/Ready. Fresh compatibility144serial/16235pass22skip,
-clean8/368.019s/Ruff/threeCompose; external native/installation checks still needed.
+## Recovery / Exact Pointers
 
-Goal97 owner:
-D:/thericher-v2/model-artifacts/execution/kis-five-session-history-aware-paper-delivery-v1/delivery-r1
-Exact job374ce6ae...; tasks successor-20261019-{enter,close,recover} plus accounting.
-Entry Oct19 22:30KST/recovery22:40; first four HOLD, fifth EXIT Oct24
-04:50/recovery05:00KST; recover all five dates and fifth20:00UTC.
-Retained exact exchange pointer:
-/private/canary/.five-session-runtime/delivery20261019/retained-exchange.json
-Read only through its strict native parser, not raw intent/order values.
-Source-safe installation facts: delivery-r1/parent/installed-tasks-after.json.
-Accounting owner jobb9f898f6.../planc3cf449a..., Oct19..23 20:25..35UTC.
-Source installation proves no future submit/fill/current inventory/fees/net.
+Read-only parsers only: never invoke recovery-capable observe() to inspect.
+Current r2 readers73focused/Ruff/noP1/P2; source-pinned network-none RO-volume
+preflight preserved all private bytes. Use exact current launch/session/intent/
+fill/owned-state linkage; not latest-file scans, timestamps or task exits.
+TaskScheduler Operational logging disabled: host marker/time/hash provenance,
+not cryptographic proof of OS scheduler origin. Keep unknowns unknown.
 
-Goal83 owner:
-D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1
-Job80012e77.../plan507ffbb6.../cohort387ee5f6..., fixed AAOI/NAS.
-Fifth EXIT Oct17 04:50KST/recovery05:00, prior days HOLD.
-Entry/recovery runtime result is not reattached here; old Ready/held/unknown
-claims are not current facts. Exact original intent/book/basis wins on recovery.
-One actor per mutable owner; no manual task launch/substitute identity.
+- A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
+- A/execution/current-nas-owned-model-paper-deployment-20261015-v1/after-installation.json
+- A/execution/current-paper-frozen-deployment-20261015-v1/after.json
+- A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
+- A/execution/current-nas-owned-model-paper-cycle-20261015-v1/ready-v3.json
+- A/execution/current-nas-owned-model-paper-runtime-20261015-v1/ready-r3.json
+- A/execution/current-nas-frozen-target-preparation-20261015-v1/outcome.json
+- A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
+- A/execution/owned-paper-marked-equity-20261015-v1/independent-readback.json
+- A/execution/model-paper-exit-clock-replay-20261015-v1/independent-review/result.json
+- A/verification/current-nas-owned-cycle-20261015-v1/authority.json
 
-## Historical Retrieval
-
-Earlier closed/frozen Execution contracts and bindings remain in pushed Git:
-git show 15fe389:agents/execution.md
-All immutable external/private evidence remains local D:, not deleted/pushed.
+Historical working-memory snapshot: Git62b406e:agents/execution.md (its own
+current byte snapshot unchanged from b889e19). Raw evidence/old failures and
+unfinished superseded owners remain at their exact external paths/Git, not
+deleted or declared complete by this compaction. No new approval or risk rule.

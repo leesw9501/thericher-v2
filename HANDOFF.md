@@ -138,11 +138,22 @@ New parallel continuation (no change to tonight's deployed policy):
 - Strategy consumed: fixed trend/reversal kernel and payoff-mass-weighted BCE
   entry mask,11SYN/Ruff. GPU PREP now compares Huber net-location/weighted BCE/
   net q.25 with the SAME112-input MLP and original basket/weights. Nine fits
-  planned, no new market GPU fit yet. First native CPU SYN failed before Adam
+  completed after linked runtime repair:191epochs/4,574updates, selected1/2,
+  all patience20 stopped, NOT max256/time cutoff or convergence proof.
+  CPU/CUDA native SYN and intake passed, actual9CUDAfits/72campaigncells plus
+  45retained controls minus18overlap=99unique/0unknown. All9head-stage all-cost
+  checks/primaryBCE false; independent350pins/9CPUcheckpoint forwards, keys/
+  purge/scalers/constants/masks/99stored-path checks noP1/P2. New exact Fraction
+  paths were NOT persisted: rounded-path consistency, not exact regeneration.
+  Combined active117.7593 including review; original failed debit retained.
+  Worker conservative
+  highwater96.4060active/host522.5074elapsed within1500/3600; cleaned lease/
+  container/child, source unchanged. First native CPU SYN had failed before Adam
   construction on a lazy PyTorch tempfile probe denied outside owned output.
   Zero market fits/GPU;12.5289active, cleanup closed. Linked owned-temp-only
-  repair retains original1500active/3600elapsed appointment/debits/science,
-  not a cap refund or model reranking. Claude runtime advice supported-with-limits.
+  repair retained original appointment/debits/science, not a cap refund or
+  model reranking. Claude runtime advice supported-with-limits.
+  A/research/cost-aware-distribution-head-runtime-repair-20261015-v1/host-replay.json
   BCE is positive-payoff mass share, NOT win probability or expected-return
   ranking. No reranking/refill or extra horizon grid. Claude supported-with-limits.
   A/review/parallel-engine-target-reset-20261015-v1/weighted-mask-claude.json
@@ -153,12 +164,28 @@ New parallel continuation (no change to tonight's deployed policy):
   raw as-quoted/non-PIT/actions/availability limits remain. No provider splice,
   new acquisition or original eligibility-flag rewrite.
   A/data/spy-qqq-long-history-development-20261015-v1/readback.json
-  Fixed H1trend/reversal CPU rule/matched-baseline preparation now proceeds
-  independently, not another GPU architecture/window grid.
+  Fixed H1trend/reversal CPU preparation is closed/consumed below, not another
+  GPU architecture/window grid.
+- H1 long-history actual CPU study now COMPLETE48cells/1,363two-ETF baskets,
+  0fits/API/GPU,7.1445active including4.5662SYNcarry/2.5788elapsed within120/1200.
+  Overall net positive at5/10bps, negative at20; only two middle-regime cost
+  comparisons survive, global primary fails. Independent23pins/48vectorized
+  whole-path cashflow audits/four failclosed affordability cases noP1/P2;
+  approximate combined12.6active including review, not exact rational parity.
+  A/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
+  Research-only float64 wrapper reuses unchanged pinned native replay code
+  in isolated numeric globals; no production/Paper/risk or framework change.
+  48short native Fraction parity cells/2missing cases and4full6,876session
+  invented cells pass; original modules unchanged, affordability ambiguity
+  fails closed. Numeric comparison margins fixed before economics. Exact-rational
+  long-summary growth measured, not assumed; new research paths are explicitly
+  approximate, not exact Fraction/broker net PnL or continuous buy-and-hold.
+  A/research/long-history-float-replay-preparation-20261015-v1/checks.json
 
-GPU/CUDA works. Resource probe found no named training allocation/lease; current
-Engine PREP is not a running market fit. No environment/permission hold or dummy
-training. Old failures, clocks, selection-data reuse and partial results stay immutable.
+GPU/CUDA works and actual new9fit allocation is CLOSED. Next Engine PREP shifts
+to longer SPY/QQQ history/feature-regime comparisons; it is not a running fit.
+No environment/permission hold or dummy training. Old failures, clocks,
+selection-data reuse and partial results stay immutable.
 
 Four issuer-anchored MODP0/1 probes:8 GET/one token/800 rows,4,538 independent
 checks; all different_other_pattern, no proved adjustment factors/PIT/finality.

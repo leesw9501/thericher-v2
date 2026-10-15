@@ -194,10 +194,28 @@ Its dataset.private.npz uses history_ohlcv[n,61,5], exact calendar/asset keys,
 entry_open[n] and future_open_close[n,5,2] (OPEN,CLOSE). Future-action flags are
 diagnostic-only, never causal inputs/row filters. No labels/scalers/PIT/TR or
 Paper-input promotion. New Engine consumers freeze their own splits/targets.
-The new9fit cost-aware MLP family first failed CPU SYN at PyTorch lazy tempfile
-initialization before optimizer construction. Original failed source/output
-stays frozen; linked owned-temp-only repair retains original clocks/debits and
-science. No repeat of that consumed host.py synthetic-cpu creator.
+The new9fit cost-aware MLP family is now CLOSED through actual CPU/CUDA SYN,
+intake,9CUDAfits and99unique-cell replay (independent readback pending):
+D:/thericher-v2/model-artifacts/research/cost-aware-distribution-head-runtime-repair-20261015-v1/host-replay.json
+All5 phase creators are consumed, never rerun. First CPU SYN's lazy PyTorch
+tempfile fault remains immutable; linked owned-temp-only repair retained the
+original clocks/debits/science.9fits stopped by INNERpatience20 at21/22epochs,
+not a max256 cap; primary/all9joint checks false, no automatic Paper adoption.
+Independent350pins/9CPUforwards/99stored-path checks noP1/P2; new exact Fraction
+paths were not retained, so do not claim independent exact rational regeneration.
+
+Long-history research: the frozen H1CPU48cell creator is also consumed:
+D:/thericher-v2/model-artifacts/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
+Separate research float wrapper reuses pinned native function code with isolated
+numeric globals, NEVER patches production/Paper/risk.48short native1e-12 parity/
+2missing/4fullinvented passes; affordability ambiguity failclosed. Floats and
+predeclared comparison margins are not exact Fraction or actual broker PnL.
+D:/thericher-v2/model-artifacts/research/long-history-float-replay-preparation-20261015-v1/checks.json
+Actual H1 result independently passed23source pins/48vectorized whole-path
+cashflow audits and4failclosed affordability cases, noP1/P2. Its0fit/0API/
+0GPU recipe failed the global primary condition; partial regime survivors
+cannot be relabeled a qualified selected model or Paper-input adoption.
+D:/thericher-v2/model-artifacts/research/spy-qqq-long-history-h1-development-20261015-v1/independent-review/result.json
 
 Creators/fits/readers with exclusive outputs are frozen after use. Inspect exact
 saved receipts, not a second invocation. Data raw under M; models/checkpoints/

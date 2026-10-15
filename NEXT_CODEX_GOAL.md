@@ -128,14 +128,24 @@ New parallel package: CPU fixed-five Top10 fifth-OPEN/CLOSE descriptive replay
 closed6cells at5/10/20bps,0fits/forwards/API; independent34pins/6native summaries
 noP1/P2, no redispatch.
 A/execution/model-paper-exit-clock-replay-20261015-v1/categorical.json
-Engine prepares one112-input MLP loss/mask family (Huber net-location,
-payoff-mass-weighted BCE, net q.25),9fits/finite caps to be frozen before market
-dispatch. All masks preserve original basket weights, no ranking/refill.
-First CPU native SYN stopped at PyTorch lazy tempfile initialization before
-Adam construction,0marketfits/GPU; exact temp-root repair retains original
-1500active/3600elapsed appointment/debits and frozen science, not a new budget.
+Engine loss/mask family COMPLETE after linked owned-temp runtime repair:
+9CUDAfits/191epochs/4,574updates; same112input MLP Huber net-location,
+payoff-mass BCE/q.25 masks preserve original basket weights, no ranking/refill.
+72campaign/45retained-18overlap=99unique cells/0unknown; all9head-stage joint
+checks/primaryBCE false. Independent350pins/9CPUforwards/99stored-path noP1/P2;
+new exact Fraction paths not persisted, rounded consistency only. Combined
+117.7593active including review. Conservative96.4060workeractive/
+522.5074elapsed within original1500/3600; failed first CPU SYN/debits unchanged,
+source/container/lease cleaned. No256epoch/time cutoff, no profit/adoption claim.
+A/research/cost-aware-distribution-head-runtime-repair-20261015-v1/host-replay.json
 Data long-history input COMPLETE13,622rows/6,811dates,34.88MB onD,95,357readback
-checks. Strategy prepares a separate zero-fit H1rule/matched-baseline CPU study.
+checks. Separate zero-fit H1long-history CPU48cells COMPLETE: overall5/10bps
+positive,20negative/global primaryfalse, no tuning.7.1445active/2.5788elapsed;
+independent23pins/48cashflow-oracle/four affordability cases noP1/P2, combined
+approximately12.6active inclreview. Research-only float64 native-code wrapper passes
+48short exact-native parity/2missing/4fullinvented tests, no production change.
+A/research/spy-qqq-long-history-h1-development-20261015-v1/categorical.json
+Engine prepares source-separated longer-history trainable feature ablation.
 No new API, provider splice or PIT/adjustment claim. These packages do not replace this
 company outcome or change tonight's fixed model/nightly schedule and bank.
 
