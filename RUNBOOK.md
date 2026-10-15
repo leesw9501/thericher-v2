@@ -57,6 +57,36 @@ Pure target/score creators and schedule.py --install have ALREADY run.
 Do not rerun them or manually invoke the Task/host to inspect results.
 Inert source imports/tests are distinct from --execute runtime effects.
 
+### Remaining quiet Data/observer Actions
+
+Seven future project-owned legacy console Actions migrated to the existing
+trusted base pythonw -I -B plus pinned scripts/run_owned_task_quiet.py copy.
+Root A/infra/remaining-owned-task-quiet-20261015-v1. The wrapper preserves original
+absolute executable, argument string and cwd; CREATE_NO_WINDOW/SW_HIDE/DEVNULL,
+same worker exit. It does NOT change broker policy, locks or recovery.
+metadata-audit.json confirms ALL non-Action XML and original argv/cwd unchanged;
+each task folder retains before.xml for quiescent exact rollback. No trigger,
+principal, settings, budget or private data changed. Existing22:40/23:50 Paper
+order Actions were already quiet and were not modified.
+
+Covered: snapshot-observer, daily-spy-head, intraday-head, daily-nas-forward,
+daily-pair-forward, prospective-pair-ab65b62bdda00246-exit and
+shadow512-20261019-delivery (all existing thericher- names).
+Native PowerShell/cmd/uv grandchildren preserved edge argv/cwd/nonzero exits,
+zero visible windows sampled. Original synthetic harness13>12process-cap
+failure remains; linked-r1 completed remaining cases, no production-code fix
+or cap refund. Samples may miss sub10ms/alternate-desktop flashes. Natural
+observer launch check is separately owned, not broker-success proof.
+
+Do NOT manually execute the wrapper to inspect a task: it invokes the original
+worker. Use task facts and categorical task-folder launches/*.json instead.
+The13:08 observer became Running between metadata precheck and readback;
+that run's old/new Action selection is unknown, no worker stopped/replayed.
+Next natural launch is needed to establish the new path's runtime evidence.
+Legacy install_kis_paper_schedules.ps1 still describes old console Actions;
+do not blindly overwrite migrated definitions with it. Future owned installers
+should use this tested quiet path rather than Hidden metadata alone.
+
 ### Other preserved owners
 
 Accounting83 r6: thericher-kis-paper-five-387ee5f6c7c6-accounting,

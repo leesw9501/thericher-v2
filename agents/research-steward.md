@@ -10,11 +10,11 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |Core20sixCUDA completed, leases/children cleaned. Raman now owns NEW longNAS same-session invariant family preparation; actual allocation/fits require native runtime receipt, no environment/permission hold.|
-| New depth bounds |GRU20/60,LSTM60,Transformer60x3fold +3CPUHGB,max15fits/120000updates/7200active/18000end,0marketretry. One lease, measured headroom, family18GiBVRAM/20GiBRAM caps, not global rules.|
-| CPU research |Godel frozen NAS diagnostic CLOSED30cells0fits; now adjusted-core20 HGB/rule preparation,max9CPUfits/900active7200end. Aristotle independent Core20 reader,0fits/GPU.|
+| GPU |LongNAS actual12CUDA+3CPU CLOSED/cleanup complete. Raman owns next adjusted20 indicator15 MSE-vs-RankNet preparation/<=6CUDAfits, native SYN before market. No environment/permission hold.|
+| Next depth |One scalar MLP/two objectives/three chronological folds, no hidden window/seed grid. Freeze finite actual caps, train/INNER curves/early stop/restore, one lease and measured useful batches/headroom.|
+| CPU research |Godel HGB/rule pre-fit calendar/runtime repair,0market fits so far,max9fits/900active7200originalend. Core20 separate72cashflow diagnostic CLOSED, nativeP2 unresolved.|
 | Data |McClintock adjusted20ready12000bars/10800windows; separately bounded older adjusted backfill/overlap-anchor basis. No GPU.|
-| Strategy |Kant pure causal indicator/rule SYN for adjusted20 consumer,0market/model/GPU. Earlier cached400pair algebra independently checked.|
+| Strategy |Kant feature kernels/RankNet objective READY, now independent longNAS mechanics reader. Descartes current FirstRate20 sample/MTF CLOSED, now native quiet-launch test.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
 Last measured hardware:RTX4090/24564MiB/driver610.88; RAM63.8GiB/36.6GiBfree.
@@ -24,7 +24,7 @@ Prepared role/MD is not evidence of a live numerical worker.
 
 ## Custody To Preserve
 
-- Latest continuation58 fitted VERSIONS(36CUDA/22CPU), not58architectures.
+- Latest continuation73 fitted VERSIONS(48CUDA/25CPU), not73architectures.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent
@@ -43,9 +43,16 @@ Prepared role/MD is not evidence of a live numerical worker.
 - Chronos failed-forward unknown0..5 charged;8knownsuccessful/13aggregateUPPER,
   not13actual. Existing exact weights/data/trials remain in registry/linked roots.
 - Core20 new9fit study87.479active/234.069end/688updates/72cells CLOSED within
-  1800/7200; all INNERpatience20, not convergence. Primaryfailed, independent
-  reader pending. Its20/50/100bps/side costs stay unchanged. NEW longNAS cost
+  1800/7200; all INNERpatience20, not convergence. Primaryfailed. Independent
+  reader P2:f3GRU CPU/CUDA parity mismatch,7checkpoints passed;f3TF untested.
+  Actual old command already D6/Torch2.7; earlier2.13 attribution corrected.
+  Independent zero-model72cashflows/196968values/144Fraction checks PASSED,
+  44.533newactive. Old51.364closure/tolerance/P2 unchanged, no runtime-cause proof.
+  Its20/50/100bps/side costs stay unchanged. NEW longNAS cost
   5/10/20 grid is a separate predeclared campaign, not old result repair.
+- LongNAS15fits/108cells(75complete/33unknown) CLOSED, primaryGRU60false.
+  1024.012authoractive/1272.601end within7200/18000, zero-refit publication repair
+  retains original failed write. Independent review separate; no dummy rerun.
 
 A/research/nas-long-history-utility-experts-development-20261015-v1/independent-review/completion.json
 A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json

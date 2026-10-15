@@ -13,8 +13,25 @@ Core20 same-session unit-invariant study CLOSED:3CPUHGB+6CUDA GRU/Transformer,
 beats own samegross3/3folds but cash/HGB only1/3, primaryfalse. Cost20/50/100
 grid:Transformer growthpositive3/9,GRUflat9/9,HGBflat6/9negative3/9. Costs are
 proxies, not measured broker fees. Native SYN/restore/fullJSON/72author oracles
-passed; Aristotle independent reader OWNS its child, verdict pending.
+passed. Independent reader found P2:f3GRU CPU/CUDA exceeds frozen parity
+tolerance; cause unresolved. CORRECTION: retained command already used exact
+D6/Torch2.7, not evidenced2.13; no version-cause claim. Seven checkpoints passed
+12380EVAL/8700INNERrows; f3Transformer untested. Separate zero-model continuation
+PASSED72cells/196968cashflow values/144Fraction checks/nine score-policy bindings.
+44.533newactive, old51.364closure/failure/tolerance unchanged. Native P2 remains
+separate/unresolved; no repeat or company/Paper/other-campaign hold.
 A/research/liquid-core-unit-invariant-open-close-development-20261015-v1/owner-handoff.json
+A/research/liquid-core-unit-invariant-open-close-development-20261015-v1/independent-review/continuation-r1/closure.json
+
+LongNAS same-session CLOSED3CPUHGB+12CUDA GRU20/60,LSTM60,Transformer60 across
+three expanding historical folds.108cells:75complete/33unknown, not zero-filled.
+GRU20/60 positive3/9,flat3/9,negative3/9; LSTM0positive, Transformer2positive/
+4negative/3unknown. PrimaryGRU60 fails2/3folds.1024.012authoractive/1272.601end
+within7200/18000; original publication failure retained, zero-refit repair,
+children/container/GPU lease clean. Independent Kant review owns separate scope.
+Same-bar scaling avoids mechanical cross-session splits but still assumes
+coherent within-bar units/conditional fractional fills; no Alpha/Paper change.
+A/research/nas-long-unit-invariant-open-close-development-20261015-v1/owner-handoff.json
 
 Raman's NAS utility study ACTUAL3Ridge+6CUDA fits/90cells/0unknown:
 143neural epochs/5506updates, all six INNERpatience stops, not convergence.
@@ -56,14 +73,19 @@ Current frozen Paper C targets/source/identities/bank remain unchanged.
 ## Breadth / Depth Queues
 
 Short breadth OWNED:Godel adjusted-core20 raw/indicator/joint HGBx3fold plus
-fixed rule/fusion preparation. Kant pure causal feature/rule SYN. Native mode1
-input ready12000bars/10800past61windows; Data checks adjusted cross-page anchor
-basis during older backfill. No assumed TR/PIT, no wait for ALL backfill.
-Long depth OWNED:Raman separate longNAS same-session invariant family, max3CPU+
-12CUDA fits/3long folds/GRU20vs60,LSTM60,Transformer60.7200active/18000end,
-max256epochs/INNERpatience20/LR/bestrestore/120000updates,0marketretry. Costs
-5/10/20bpsPERLEG(primary10), not oldCore20criterion changes. Actual fits remain
-UNOBSERVED until runtime evidence; a prepared MD/contract is not GPU activity.
+fixed rules/OR. Initial pre-fit sklearn/calendar ABI faults produced ZERO market
+fits/labels. Exact adapter tested; parent dispatched linked pre-fit mechanical
+repair with old failures/debits intact, not an operator approval or hold.
+Explicit conditional continuous-source support may replace sparse PAGE_LOCAL
+before numerical dispatch, not silently change an already tested result.
+Native mode1 ready12000bars/10800windows; older cross-page anchors checked by
+Data. No assumed TR/PIT, no wait for ALL backfill.
+Next CUDA OWNED:Raman adjusted20 indicator15 MLP, paired MSE/weighted RankNet
+x3chronological folds, <=6fits. Kant's pure objective/selection kernels READY,
+native Torch optimizer/SYN/contract still required; actual new fits unobserved.
+Ranking cannot learn a cash hurdle: same fixed gross/top5 vs samegross uniform/
+MSE, no score-sign timing. Costs/split/purge/scaler frozen before fits; no hold
+for research profitability. LongNAS now closed, do not rerun its creator.
 No outcome-tuned exposure, blind seed grids or old clock/holdout refunds.
 One GPU allocation, measured desktop headroom; old VRAM/time limits not global.
 Earlier epochs/seed/no-rerun limits protect their OWN immutable results only.
@@ -71,7 +93,8 @@ Earlier epochs/seed/no-rerun limits protect their OWN immutable results only.
 ## Completed Studies / Consumer Limits
 
 Five earlier families39fit versions(24CUDA/15CPU), plus ONE retained meta gate
-and9fit NAS plus9fitCore20 ->58fitted versions(36CUDA/22CPU), NOT58architectures.
+and9fit NAS plus9fitCore20 plus15longNAS ->73fitted versions(48CUDA/25CPU),
+NOT73architectures. New HGB/ranking actual fits remain unobserved.
 SYN fits/reader forwards/foundation inference are not extra fitted models.
 
 | Study | Exact current result |

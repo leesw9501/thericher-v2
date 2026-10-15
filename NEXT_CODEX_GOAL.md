@@ -2,133 +2,106 @@
 
 ## One Company Outcome
 
-current-nas-owned-model-paper-cycle-v1: actual repeatable, recoverable owned
-KIS Paper stock cycle from frozen-five current NAS targets on the existing
-ONE original shared initial virtual-cash tenth.
+current-nas-owned-model-paper-cycle-v1: repeatable, recoverable owned KIS Paper
+stock cycle from frozen-five current NAS targets on ONE existing original
+shared initial virtual-cash tenth. Actual runtime closure remains unfinished.
 
-Workdir C:/Users/Public/Documents/thericher-v2. Read HANDOFF.md/AGENTS.md/
+Workdir C:/Users/Public/Documents/thericher-v2. Follow HANDOFF.md, AGENTS.md,
 RUNBOOK.md and active stateboards. A=D:/thericher-v2/model-artifacts;
-market bytes D:/market_data. Never KIS_LIVE_*, real money/public exposure/
-paid commitments/secrets. Standing private Paper authority is delegated.
-Research qualification is NOT a Paper permission gate.
+M=D:/market_data. Never KIS_LIVE_*, real money, paid/public work or secret output.
+Private Paper authority is delegated; research qualification is NOT permission.
 
-## Already Implemented And Installed
+## Owned Deployment, No Manual Replay
 
-Do NOT redispatch immutable creators or manually invoke owned Tasks.
-New thericher-kis-paper-current-nas-model-20261015: imagece219a8d,
-474frozen files/manifest130d1c33/hostc6e4/configa13fa7d9; native target loader,
-source/image/quiet launch/14trigger readback passed. First Oct15 22:40KST/
-13:40UTC. Finite7dates Oct15/16/19/20/21/22/23, two UTC windows13:40..14:36
-and15:05..19:41, every4minutes. One280-second visit/1auth/1combinedsubmit/
-1cancel/128calls; OS8minutes. Defers active/imminent nightly owner.
+- Model Task thericher-kis-paper-current-nas-model-20261015, imagece219a8d,
+  474frozen files/manifest130d1c33/hostc6e4/configa13fa7d9. First natural
+  Oct15 22:40KST/13:40UTC. Four-minute cadence on finite Oct15/16/19/20/21/22/23
+  UTC13:40..14:36 and15:05..19:41; fourteen triggers. Visit280seconds/oneauth/
+  onecombinedsubmit/onecancel/128calls/OS8minutes. Defers active/imminent nightly.
+- Entry ONLY Oct15 from exact bound snapshot; later exact-request recovery/
+  owned exit fromOct21 regular OPEN. No substitute selection, expiry renewal,
+  foreign-inventory adoption, profit refill or bank reset. Desired10*.005=.05
+  ORIGINAL-basis proposal may be reduced/rejected by shared bank/buying power/
+  losses/reservations. Fifth-OPEN/later entry is not research fifth-CLOSE parity.
+- Existing daily-spy-session Oct15 23:50KST/14:50UTC: image3ccb2250,472public
+  snapshot/470runtime sources/4d0481cd,drivere586/quiet6d51. Original XML/identity/
+  bank retained. Both images present; no secrets copied.
+
 A/execution/current-nas-owned-model-paper-deployment-20261015-v1/installed.json
-
-New entry ONLY Oct15 from exact bound snapshot; later visits exact-request
-recovery/owned exit from Oct21 regular OPEN. No substitute selection/expired
-request renewal/foreign inventory adoption. First OPEN exit/later entry is
-operational learning, not research fifth-CLOSE parity. Desired ten*.005=.05
-ORIGINAL-basis exposure may be reduced/rejected by original bank/buying power/
-losses/reservations. No profit refill, reset or forced other-owner liquidation.
-
-Existing daily-spy-session Oct15 23:50KST/14:50UTC is Ready/enabled, unchanged
-XML/identity/bank. Image3ccb2250/frozen472public-file snapshot/470runtime map
-4d0481cd, drivere586/quiet6d51. Both exact images present; no secrets copied.
 A/execution/current-paper-frozen-deployment-20261015-v1/after.json
-
-Native V3 coordinator/r3host, pending-before-input recovery and exact owned-flat
-closure were verified. Offline r2readers73focused/noP1P2; network-none/RO
-native preflight sixowners/16terminal/zero unknown-unclosed/threeholdings,
-model pointer absent->countsNULL. Remaining original cap positive_below_desired;
-not a fresh broker-funding/quote/account observation.
 A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
 
-## Remaining Company Work
+## Completion Evidence
 
-1. At natural owned opportunities, validate exact current launch/time/source->
-   immutable dispatch->native cycle/intent/fill/owned inventory linkage through
-   strict offline readers. No task-exit/preview/latest-file inference or observe().
-2. Distinguish no-intent, technical failure, submit attempt, accepted submit,
-   exact fill, pending recovery, owned holdings and terminal reconciliation.
-   Fees/settlement/net PnL unknown until independently evidenced.
-3. Repair positively identified reversible technical faults under named exact
-   identity/source/owned scope; retain unknown requests/reservations and old
-   failures. Do not repeat broken schedules, reset bank or invent substitutes.
-4. Complete only with actual cycle evidence/appropriate runtime closure or
-   positively classified scoped failure/recovery, NOT install/research success.
-   Keep unfinished cycle stages and old future owners explicit.
+At natural owned opportunities use current r2 offline readers, NOT observe(),
+task-exit/latest-file/timestamp/preview inference. Validate exact launch/time/
+source -> immutable dispatch -> native cycle/intent/fill/owned state. Distinguish
+no-intent, technical fault, attempted/accepted submit, exact fill, pending recovery,
+holdings and terminal reconciliation. Fees/settlement/net PnL remain unknown
+without evidence. Preserve unknown identities/reservations; repair exact
+reversible faults, never substitute requests. Complete only with actual runtime
+closure or positively classified scoped failure/recovery, not install/research/
+package commit/session time.
 
-Scheduler Operational logging disabled: host marker/time/hash evidence is
-not cryptographic proof of OS scheduler origin. Existing COUNT1 app follow-up
-Oct16 00:05KST after both opportunities, no recurring follow-up chain.
-Accounting83 r6 nextOct15 20:25UTC; oldindex2/claims/basis/otherActions remain
-owned/unknown, not replayed. Exact future duties in HANDOFF/RUNBOOK.
+Offline preflight sixowners/16terminal/zero unknown-unclosed/threeholdings;
+model pointer absent -> countsNULL, not zero. Not fresh broker funds/quotes.
+Operational logging disabled: assumed-honest host marker/time/hash is not
+cryptographic OS-scheduler-origin proof. Existing COUNT1 app follow-up Oct16
+00:05KST, no follow-up chain. Accounting83 r6 nextOct15 20:25UTC; oldindex2/
+claims/basis/113archive/otherActions retained. Future83/97 duties in HANDOFF.
 
-## Parallel Ready Work, Not A Company Hold
+## Ready Parallel Packages
 
-Parent owns integration/Git, one owner per write set and one GPU allocation.
-Current delegates:
-- Data/McClintock: long canonical CLOSED1,170,008bars/1,133,899past61entries,
-  498assets/535holiday quarantines/5836duplicates/5,870,421checks. Original local
-  Oct14merge CLOSED B:504July28revisions quarantined/0currentextension, not proof
-  of incompatible units. NEW revised-as-of versioned snapshot CLOSED:
-  1,197,728bars/1,161,353windows/27,720new/504currentpast61; native linked readback
-  passed, original failure/debits/oldB unchanged. Latest whole fresh61block
-  source preference is NOT finality/PIT/economic-unit qualification.
-  A/data/nas-retained-long-current-versioned-20261015-v1
-- Data fixed liquid-core20:20ready61/47417bars/46097windows, current-listing/
-  non-PIT/action/unit/finality limits. First76GET/1POST/1retry CLOSED, complete
-  ready input usable without more acquisition. Exact-cursor resume-r1 carries
-  ALL original600active/1800end/200GET/10retry caps, one separately named extra
-  guarded tokenPOST(maxaggregate2), measured rate-limit cooldown/2second pace.
-  Never reset expired clocks/debits;no duplicate fresh pages. No account/order/
-  positions/scheduler/live/paid/public calls. Yield Paper owners/stop13:25UTC.
-  RawonlyM/no secrets/imputation/new recurring worker. This is not old8GET scope.
-  A/data/liquid-core-market-readiness-20261015-v1
-- Engine/Raman: actual3Ridge+6CUDA/90cells done;49total fit versions across
-  latest continuation including one retained meta gate. GRUquote-growth wins9/9
-  but DDworse9/9, primaryfalse; independent826pins/90cells noP1P2 within scope.
-  Alphabetical AAL..CTRN sample, NOT representative US/Nasdaq/economicprofit.
-  Large raw-close jumps explain61/30/89percent positivegross byfold; two flags
-  match issuer-confirmed reverse splits. Never filter future windows or call
-  proxy growth money. Existing primaryGRU/allcontrols frozen22347568;
-  Godel owns Aug-Oct separate30cell0fit diagnostic, ABI8a52d79b; not automatically
-  untouched/PIT/prospective/economicprofit,0newfits/tuning allowed.
-  A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json
-- Engine/Raman next preparation: liquid-core20 same-session OPEN->CLOSE, past within-
-  bar dimensionless OHLC inputs; target avoids mechanical between-session
-  split gains. Separate frozen finite campaign/native SYN before any new fit.
-  A/research/liquid-core-unit-invariant-open-close-preparation-20261015-v1
-- Strategy/Kant: TimesFM2.5actual2cold/11forecasts/12cells CLOSED/independently
-  checked;0fits/all3costgrowthnegative. Now cached MODP0/1 source interpretation,
-  0KIS/model/GPU calls. No defaultTimesFM3/NC adoption or blind new model search.
-  Independent400pairs/12SYN checked; all rounded-scale compatible, NOT action-
-  factor/TR proof. Separate Data ASBPknownsplit0->1->0 threeGET proof assigned,
-  no second CELH probe, no monetary claim or change to current Paper.
-  A/data/kis-adjustment-cached-interpretation-20261015-v1
+Parent owns shared docs/Git/dispatch, one owner per mutable set and one GPU lease.
+Do not redispatch closed creators; exact evidence/limits live in role boards.
 
-Five earlier families CLOSED39 fitted versions(24CUDA/15CPU), plus one meta
-gate and nine new NAS versions ->49(30CUDA/19CPU). Chronos2/TimesFM2.5 inference
-0fits. DAG36cells independently checked/0of6joint. No qualified Alpha. No joint
-incremental performance pass; positive cases and all-cash minute masks retained,
-not a ban on composition/Paper. Completed creators MUST NOT be rerun.
+- Parent: flashing CMD repair deployed to seven future project-owned Actions,
+  pinned pythonw/CREATE_NO_WINDOW; argv/cwd and all non-Action XML preserved.
+  No manual task invocation. Native linked checks and fresh helper verification
+  passed; natural observer window/runtime observation independently owned.
+- Data/McClintock: adjusted20 initial600 histories CLOSED120GET/12000bars/
+  10800windows. Older overlap-anchor backfill to2007 or exact scoped source
+  limit CLOSED PARTIAL62938bars/61018windows/516GET, exact2064OHLCanchors.
+  Cursor atomic-replace PermissionError, not sourcefloor;19unfinished, AMD exact
+  limit only. Linked technical recovery dispatched with original1000GET/
+  2700active/5400end debits/counters; hard yield13:25UTC before Paper.
+  No raw0/1 blend/TR/PIT claim. Current versioned NAS
+  CLOSED1,197,728bars/1,161,353windows; original strictB preserved. New FirstRate
+  fixed20 sample CLOSED77998RTH1m/MTF, actualSep28..Oct9; explicit missing/
+  partial buckets, no imputation or Paper-input substitution.
+- Engine/Godel: adjusted20 raw240/indicator15/joint255 HGB x3folds/max9CPUfits
+  plus fixed quiettrend60/RSI-Bollinger20/OR. Initial runtime/calendar ABI
+  faults had ZERO market labels/fits. Linked bounded pre-fit mechanical repair
+  dispatched; old failures/debits intact. Explicit new pre-fit conditional
+  continuous-source support may replace sparse PAGE_LOCAL, not silently mutate
+  a tested result. No wait for all backfill/operator permission.
+- Engine/Raman: longNAS actual3CPU+12CUDA CLOSED/108cells,75complete/33unknown,
+  primaryGRU60false, no creator rerun. Next adjusted20 indicator15 scalarMLP
+  MSE-vs-weightedRankNet x3folds/<=6CUDAfits. Same gross/top5 vs uniform/MSE;
+  rank scores cannot supply a cash hurdle. Native SYN/finite chronological
+  contract/INNER restore first, no dummy GPU occupancy.
+- Strategy/Kant: feature/RankNet kernels READY; now independent longNAS
+  zero-fit mechanics reader. Core20 independent72cashflows passed, separate
+  f3GRU CPU/CUDA parityP2 unresolved. Actual old command was Torch2.7, not
+  evidenced2.13; no version-cause claim or company/Paper hold.
+- Invoked Infra/Descartes: FirstRate sample CLOSED, now native quiet-launch
+  natural observer window/runtime observation; no actual Task/API invocation.
+- Invoked Strategy/Dirac: executable causal1m30/120 and completed5m/10m/1h/3h
+  feature preparation from actual FirstRate20 sample, no labels/fits/GPU.
 
-KIS depth probe CLOSED/exhausted8GET/1POST/67checks: four2010anchors support
-100rows2009 each, four2000anchors empty. Not global floor/all512 continuity.
-A/data/kis-paper-deep-history-scope-probe-20261015-v1/admission-r2/readback.json
-Proposed AAPL2009cursor not started because retained49pages may cover it.
-New local Data package has0API; this does not revoke independent Paper authority.
+Latest closed fit versions73=48CUDA+25CPU, not architectures. New CPU/ranking
+fits unobserved until native evidence. Foundation/reader/SYN are not fits.
+No qualified Alpha. Source/cost/current-listing/PIT limits constrain claims,
+not independent exploratory work or approved Paper permission.
 
-## Verification And Continuation
+## Verify And Continue
 
-Tracked source1342/digest4a1e461984894e82caa21601bcb0673dfab7cd85bb5924a8dd916bd24c71bc46:
-925serial; clean8 full16488pass22skip/351.816s/helper0; Ruff/three sample-env
-Compose pass. Unchanged-source MD/external work may reuse exact authority,
-but external code needs own native/independent checks. Follow AGENTS.md when
-tracked code/runtime/shared controls change; never claim repo tests validate
-external workers.
+Fresh helper authority1344source/289f23c8:4focused serial, clean8 full16492pass/
+22skip/407.299seconds/helper0, Ruff/three sample-env Compose PASS.
+A/infra/remaining-owned-task-quiet-20261015-v1/authority.json.
+Reuse only if exact source-map equality; external/native workers need own checks.
 
-After actual company completion, verify owned changes, commit/push, replace
-this file with exactly ONE material next company outcome, refresh current
-stateboards and continue the human's active long request. A package commit,
-session cooldown or due time does not end the company objective or another
-ready lane. No operator decision currently identified.
+Integrate evidence, verify, commit/push owned packages. Replace this file with
+ONE next material company outcome only AFTER actual current company completion.
+Continue the active human request while delegated work is ready. No foreground
+quota/session sleep, invented approval hold or premature company completion.

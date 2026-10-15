@@ -1,95 +1,111 @@
 # Data Stateboard (시장데이터 담당)
 
 Current: 2026-10-15 KST. Company goal: current-nas-owned-model-paper-cycle-v1.
-SPY/QQQ long-history materialization CLOSED, one actual run and successful readback.
+Current Data: adjusted long-history CLOSED PARTIAL;Core600frozen;FirstRate currentMTFready.
 Parent owns training science/integration/Git; Execution owns Paper runtime.
-No acquisition, credentials, API, GPU, fitting, labels, FIT scalers or model selection.
+No account/live/Scheduler/fits/GPU/labels/returns; old inputs/claims/debits immutable.
 Market bytes: D:/market_data (M); artifacts: D:/thericher-v2/model-artifacts (A).
 
-## Consumable SPY/QQQ Dataset
+## Adjusted Long Closed Partial
 
-Consumer: Engine's next source-separated regime/entry-head development, not NAS
-ranking, current nine-fit input replacement, KIS parity or Paper promotion.
-Root: A/data/spy-qqq-long-history-development-20261015-v1.
-Old readiness CLOSED: A/data/engine-history-extension-readiness-20261015-v1.
-r1/r2 local socket.gethostname audit-bootstrap failures retained; r3 passed9SYN.
-Old cumulative2.4590009active carried, not refunded; old elapsed remains unknown.
+A/data/liquid-core-adjusted-long-history-20261015-v1/completion.json currentclosure;
+manifest7eeba17f.../engine-inputae2b763c.../independent-basisb37973ee....
+Actual516GET/1POST/0retry;515olderpages+EXACT120mode1seedpages,0freshhead repeats/raw0blend.
+62938canonical bars/61018past61windows/20ready61;2014-03-04..2026-10-14 overall.
+50938addedbars;12native-invalid older rows remain12gaps;515exactduplicates/0revision/conflict.
+1010nativeSYN/Ruff/371929nativechecks+248artifactchecks/3722098keycells+4234basischecksPASS.
+All516shared-page anchors/2064OHLCfields EXACT;0incompatible/unknown/microqueries.
+Only OVERLAPnominal continuity,not global older adjustment/PIT/TR/formula qualification.
+12:45UTC technicalstop:PermissionError at worker.py:136 os.replace(actual/cursor.json).
+Captured4sourceframes;errno/winerror/actualcompetingopener UNKNOWN,notprovider/actorproof.
+Failure/source/claim/temp/debits preserved;0unknownrequest,ownerreleased,11actorchecks0.
+19cursors UNFINISHED,not source-limited/floor-reached;AMD alone exactno-progress2015-01-02.
+Target2007-08-20 not reached. Durable per-keybounds/reasons:intake-outcome.json;ETAunknown.
+1079.6867chargedactive/1119.5879readbackend within2700/5400;54.59MBmeteredreads;
+28.69MBproducerIO/152.91MBpeak/1CPUthread/D40.02%free;all newreadbackdebitscarried.
+No redispatch:one-client attemptclosed/onePOSTconsumed;linkedtechnicalrecovery mustbind
+remainingrequests/tokenauthority/debits explicitly,notresetclock/retryclosedcreator.
+No currentDataworker/ownedcooldown;next_due null,not a company/Paper permissionhold.
+NativeCSV only NEW M/us_equities/kis_paper_private/liquid-core-adjusted-long-history-20261015-v1.
+EngineABI:20orderedslots,N61018past61keys->60tokens/latest12;futurepresence DIAGONLY.
+Existing600closure/Paper/sourceflags immutable;newpartialinput usableforseparate research.
 
-Frozen contract:120active/600elapsed seconds,1materialization/0retry,64MiB maximum.
-Actual final14.6558343active/33.4480104elapsed, including PREP/failures/I-O/readback
-and cleanup reserves; within caps. Old/new elapsed clocks are not a family sum.
-18native SYN/Ruff PASS; fresh-process scalar/key/calendar readback95357checks PASS.
-Readback indexing independent; native parser/validator shared, not independent parsing.
-13 source pins and13 numeric NPZ keys/bit hashes verified; allow_pickle=False.
+## Adjusted Core600 Ready
 
-dataset.private.npz:34877182bytes,13622rows; entry date ascending then SPY/QQQ.
-history_ohlcv float64[13622,61,5], channels open/high/low/close/volume.
-Separate entry_open[13622] and future_open_close[13622,5,2]; no returns computed.
-6876common NYSE-calendar sessions1999-03-10..2026-07-10;6811entry dates
-1999-06-07..2026-07-06; final fifth CLOSE2026-07-10. Exact ordinal/asset/calendar
-keys and definedness included; zero missing sessions/duplicate keys/imputation/splice.
-Positive finite OHLC geometry/nonnegative volume checked. Context-only leaf and
-future-price/volume/action mutation SYN establish past61 isolation, not historical PIT.
-Future marks/action diagnostics are separate, never context inputs or row filters.
-No tokens/indicators/latest12 derived here; Engine owns subsequent feature work.
+A/data/liquid-core-adjusted-daily-20261015-v1/completion.json is current closure;
+manifest97271426.../engine-input5d965587.../independent70293821....
+Actual120GET/1POST/0retry;oneclient,all20newest pagesFIRST,then5older rounds completed.
+Exactly600sessions each/12000bars,2024-05-23..2026-10-14;20ready61/10800past61windows.
+0rejects/gaps/conflicts/sourcefailures/cooldowns;owner released/unknownrequest false.
+287nativeSYN/Ruff/68461native readback+242independent/658800keycells PASS.
+272.8373chargedactive/306.8227readbackend,381.2564metadataend within900/3600;
+Exact same20master routes/order NAS9/NYS9/AMS2;MODP1/GUBN0/BYMD20261014,0plannedpagesleft.
+Closed immutable;oldercursors NOTscheduled,all originals/C/Paper unchanged.
+Raw/native rows only NEW M/us_equities/kis_paper_private/liquid-core-adjusted-daily-20261015-v1.
+Next consumer: separately frozen adjusted-price5session Engine campaign; no TR/PIT/Paper
+qualification or frozen input changes. Actual optionalidentityecho absent:query-bound.
+Observed source-generation/capture/persistedavailability,NOT original publication/PIT.
 
-Exact source: M/us_equities/fixed_etf_full_history/canonical/tiingo_standard_eod/
-snapshot=2026-07-18-tiingo-eod-full-history-r1 (SPY/QQQ only, no IWM numeric input).
-manifest.json SHA256 7d16513ec3acdd746ae3f2402ba7e8e09d3d43f7c8e033cdd2feea0bd639a99c
-ohlcv_1d.csv.gz SHA256 9ee21b6d955320b3855955b2072749e239b4b15e382dfbb6521e18f6f41a0016
-raw/SPY.json SHA256 695494dd12f3c8b9a1e2946ba1de8f594c69026185a5e25a6bbfce8503d569e4
-raw/QQQ.json SHA256 c6a47126e2565a6a3bfaebe2c56ec5b4d6432119aa6d217368de489490d95c4d
-Source retrieved2026-07-18T14:29:04.184884Z; source_as_of2026-07-10,>=7day lag.
-Manifest private_internal_use/operator_authorized_private_use retained, no publication.
-Original development_evidence_only=true and campaign/Paper/PIT/ranking/sealed-holdout
-eligibility=false preserved verbatim. Nominal causal development only, not untouched,
-total return, live-causal eligibility or independent performance evidence. Historical
-availability remains unknown for every row; action/finality/source-unit limits persist.
+## Revised-As-Of NAS Ready
 
-contract.json SHA256 612b070e86449c7377cdc0a90c366b6cebd3bf36a890bd2aa6742a07bbc0d693
-dataset.private.npz SHA256 8ffc907d8058764bfdbdd4c135932189e0d3c35409dd6b9f12bb48c91a1f15d6
-dataset-manifest.json SHA256 b80293129f665d6f1a80740aeff100a53852627b9acccf0494fb80394cb483f0
-readback.json SHA256 144fe6b19448e40fadd6f5dcc3f815b962ce5c152fd703d542fd13e29070f724
-Native bindings/calendar/array roles and full pins are in contract.json/manifest.
-Claude advisory: go_with_conditions_nominal_causal_non_PIT_materialization_only;
-exact source-only session pointer retained in claude-challenge.json. No private values.
+A/data/nas-retained-long-current-versioned-20261015-v1/handoff.jsonf8dd09ec...;
+manifest5973f602.../engine-input8a52d79b.../linked-readbackbe506c4b....
+1,197,728bars/1,161,353past61windows,2007-08-20..2026-10-14;512past-support assets,
+504Oct15entry ready;8freshmissing remain old-only,2414known gaps preserved.
+27720newrows/2520exact overlaps/504July28source restatements;sourcecapture-only rule,
+entire same-native fresh61block wins;0quarantine/price adjustment/labels/fits/API.
+NEW M/us_equities/kis_paper_private/nas-retained-long-current-versioned-20261015-v1.
+13,182,736native checks PASS;93.4036charged active/324.2705end within300/1800;
+Firstpartial reader failure/debit preserved;linked exactzero-revision predicate fix,
+nativepositive/negativeSYN+full typed/hash checks PASS,0rematerialize;oneunusedimportlint.
+Old strict B remains CLOSED B:202.7471active/844.8054end and all outputs unchanged;
+A/data/nas-retained-long-current-20261015-v1. New scope is not a B waiver.
+Unit/finality/PIT UNKNOWN,old wire not archived; not qualification requirements or holds.
+Original535quarantine/C/Paper untouched. AlphabeticalNAS AAL..CTRN,not representativeUS.
+ProviderDATElabels != publication;calendaropen/close separate,neverBar.end_ts.
+Futurepresence diagnosticONLY,neverfilter/feature;sourcecapture not historicalavailability.
 
-Already executed ONCE from external root, no implicit env; NOT a redispatch request:
-`& "C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe" -I -S -B "D:/thericher-v2/model-artifacts/data/spy-qqq-long-history-development-20261015-v1/dataset.py" materialize`
-prepare/readback also completed. All source/contracts/receipts/arrays now frozen.
+## Core Raw0 And Split Witness Closed
 
-## Closed Inputs And Evidence
+A/data/liquid-core-market-readiness-20261015-v1/resume-r1/handoff.jsonb9285ba6...;
+manifest23605a8e.../engine-input9ab39597.../independentc7ad6cd6....
+Aggregate134GET/2POST/1retry;58GET+1POST child,0fresh repeats,20ready61,
+53113bars/51553windows;314059native+246independent checks/3144733keycells PASS.
+260.1994all-carryactive/1369.6349elapsed withinORIGINAL600/1800;all oldclocks unchanged.
+Second EGW00201/HTTP5xx rate limit at2.0000..2.0132s delegate gaps;not dailyquota or
+historyfloor. Next_due11:47:46UTC is now historical,NOT restart authority;all owners freed.
+A/data/kis-known-split-mode-stability-20261015-v1/result.jsonffdd7e90...;
+independentfbecb562...:3GET/1POST/0retry,100commondates2025-12-19..2026-05-14.
+Mode0repeat exact;100multiplicative/halfquote compatible,bothknown-eventrelationssupported.
+14SYN/Ruff/346independent PASS;21.1076active/112.9800end,275443reads within60/600/500KiB.
+Official intended mode1 adjusted supported,not full formula/TR/PIT/finality/settlement;
+no optional symbol/venue echo,identity query-bound. CELH alternate NOT run.
 
-NAS512 capture: 504ready61/8missing,30744bars,512GET/1POST, no imputation or rerun.
-PASS101388: A/data/current-nas512-fresh61-preparation-20261015-v1/actual-readback.json.
-Feature Data9a9d226f.../arrays576b2870...:503defined12/243supported/181outside128;
-A/research/current-nas512-frozen-expert-score-panel-20261015-v1/data-ready.json.
-Parent-owned metadata/consumer recovery frozen; no new score/performance claim.
-Adjustment four-pair probe:8GET/1POST/800rows,4538independent checks; all4 patterns
-not proven factors/PIT/TR. A/data/kis-daily-adjustment-source-capability-20261015-v1/
-independent-readback.json. MODP0 not reflected/MODP1 reflected, no volume/finality proof.
-Native ABI r3 first153-row witness: short21/full61/kernel exact; retained bit mismatch
-but1e-14 allclose; old linked exception unknown.23.2459221active/284.9237294elapsed frozen.
-A/research/absolute-utility-native-abi-witness-20261015-v1/r3/supervisor.json.
-Old113 reader2/10-stock SYN:12native cases PASS; budget readers match3ccb/ce219;
-identity/_pending contrasts remain, not actual-book/deployment parity. Evidence:
-A/infra/old-paper-reader-multistock-compatibility-20261015-v1/compatibility.json.
-All older source/data/model roots remain immutable; history in Git/external artifacts.
+## Other Frozen Inputs
+
+Descartes currentMTF: A/data/firstrate-current-sample-mtf-20261015-v1/input-manifest.json
++completion.json; M/us_equities/firstrate_current_sample_20261015_v1;fixed20/no substitutions.
+1m77998/5m15598/10m7798/1h1198/3h398;separateD1rows200.
+Actual ZIP2026-09-28..10-09 vs advertised09-21..10-02 mismatch PRESERVED.
+JNJ/UNH eachmissing1minute;affectedbuckets notimputed;400sessionpartialbuckets.
+20ZIP/4metadata/2.33MB/0retry;123.21active/919elapsed;2independent/514950scalarchecks.
+Consumer:separatefixed20MTFresearch;0KIS/cachecompetition/downloadrerun here.
+Godel current600input eligibility unchanged;doesnotwaitfor unfinishedlonghistory.
+
+Original NAS1,170,008bars/fresh504/8,intraday195056bars/315772keys immutable.
+SPYQQQdaily NPZ8ffc907d.../actionNPZ9d966e2f...target-sideONLY,neverfeature/filter.
+Older receipts/debits/failures/limits remain exact external roots/Git.
 
 ## Existing Owned Due
 
 These are documented owned calendar windows, NOT fresh Scheduler/actor/Ready facts.
-Next Parent/Execution model task: 2026-10-15 13:40UTC /22:40KST; runtime unobserved here.
-Existing baseline nightly: 2026-10-15 14:50UTC /23:50KST, existing frozen task.
-Accounting83 owner: 2026-10-15 20:25UTC /2026-10-16 05:25KST; runtime outcome unknown here.
-Next Data NAS-forward6 window: 2026-10-15 21:40UTC /2026-10-16 06:40KST.
-Next Data G107 R3 window: 2026-10-15 21:50..21:55UTC /2026-10-16 06:50..06:55KST.
+Execution model Oct15 13:40UTC/22:40KST;baseline14:50UTC/23:50KST,priority unchanged.
+Accounting83 Oct15 20:25UTC/Oct16 05:25KST;runtime unknown here.
+Data NAS-forward6 Oct15 21:40UTC/Oct16 06:40KST.
+Data G107 R3 Oct15 21:50..55UTC/Oct16 06:50..55KST.
 G107 owner: A/data/kis-peer-relative-momentum-prospective-preparation-v1/capture-r3.
 ab65 owned exit: 2026-10-19 21:40UTC /2026-10-20 06:40KST;
 A/data/kis-stock-prospective-pair-owned-endpoints-v1.
-Existing tasks/observer retain ownership; no competing collector or manual replay.
-Source finality/actions/units/current-listing/PIT and NAS revision limits remain
-claim boundaries, not global Data/model/Paper holds. Missing input stays missing.
-Next Data action: hand completed SPY/QQQ NPZ to Parent/Engine; no materialization rerun.
-Existing task workers own due/cooldown; no new Data acquisition needed for this input.
-Stop after this board refresh; Parent handles integration/Git.
+LongDataworker closed/ownerreleased;owned tasks/observer unchanged,no manual replay.
+Existing600/versionedNAS remain usable independently,not held for fullbackfill.
+Quality constrains claims,not Paper authority. Parent integrates/Git.

@@ -5,6 +5,13 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+Latest quiet-ops repair: seven legacy Data/readonly observer Actions migrated
+to pinned9fe9750c pythonw/no-console wrapper. Original argv/cwd and ALL other
+XML preserved; this board's22:40/23:50 order Actions unchanged. NativePS/cmd/uv
+window/exit checks linked PASS; natural observer check separately owned.
+No manual task/API/order invocation for this repair; no broker-success claim.
+A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
+
 ## Ready / Owned / Due
 
 | Owner | Current evidence | Next action |

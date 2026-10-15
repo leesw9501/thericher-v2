@@ -77,9 +77,9 @@ A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-insta
 
 ## Research And Data Continuation
 
-Latest continuation contains58 fitted VERSIONS:36CUDA+22CPU, not58architectures.
+Latest continuation contains73 fitted VERSIONS:48CUDA+25CPU, not73architectures.
 Five families below contain39; one retained meta gate and nine NAS versions
-make49; nine newCore20versions make58. Foundation inference/reader/SYN are not fits.
+make49; nineCore20 plus15longNAS make73. Foundation/reader/SYN are not fits.
 No qualified Alpha/Paper adoption.
 Individual growth-positive cases are not incremental performance qualification.
 
@@ -117,9 +117,10 @@ A/research/chronos2-etf-mask-cuda-repair-20261015-v1/independent-review/result.j
 | TimesFM2.5 |CLOSED2cold/2SYN+9market forecasts/12cells/0fits. All3cost growthnegative. Independent653pins/680q50/6800quantiles/12cells; cash/intermediate fees inferred. ExactApache2weights predate all34baskets, no default3/NC.|
 | NAS utility experts |CLOSED3Ridge+6CUDA/143epochs5506updates/90cells. GRUquote growth wins9/9 but DDworse9/9; primaryfalse. Independent826pins/90cells/71490NAV-exposure pairs, noP1P2 within checked scope.|
 | Frozen later diagnostic |Primary finalGRU/allcontrols frozen22347568 before suffix reads; Godel owns separate30cell/0fit later-date diagnostic, revised-as-of/seen-custody-unknown/raw-unit claims only.|
-| Liquid-core input |20/20past61ready,47417bars/46097windows. Bounded76GET/1POST intake completed; separately linked continuation/versioned NAS merge owned by Data.|
+| Liquid-core raw0 |Latest closed resume53113bars/51553windows/20ready61,aggregate134GET/2POST/1retry; original76GET and older studies unchanged. Mode1 separate, not blended.|
 | Current ready work |Cached MODP0/1 interpretation independently checked400pairs/12SYN,rounded multiplication compatible all400,not action-factor proof. Raman prepares unit-invariant same-session CPU/GPU campaign; native SYN first.|
-| Core20same-session |CLOSED3CPUHGB+6CUDA GRU/Transformer,688updates/72cells/0unknown,87.479active234.069end. AllINNERpatience20/not convergence. Primaryfalse; independentAristotle reader active.|
+| Core20same-session |CLOSED3CPUHGB+6CUDA/72cells,primaryfalse. Independent72cashflows/196968values/144Fraction checks PASS. Separate f3GRU CPU/CUDA parityP2 unresolved; actual old CPU command alreadyTorch2.7, not2.13.|
+| LongNAS same-session |CLOSED3CPUHGB+12CUDA GRU20/60,LSTM60,Transformer60.108cells/75complete/33unknown; primaryGRU60fails2/3folds.1024.012active/1272.601end, zero-refit publication repair preserves original failure. Independent Kant review underway.|
 
 A/research/spy-qqq-fixed-and-tree-decision-dag-preparation-20261015-v1
 A/data/nas-retained-long-canonical-20261015-v1
@@ -160,18 +161,39 @@ Native mode1 adjusted-core20 CLOSED120GET/1POST/0retry/12000bars/10800windows,
 not a second numeric canonical parse or full unit/TR proof. Separate3GETASBP
 0->1->0 experiment had stable original quotes/all100exactscalecompatible/two
 known event scale relations supported; optional provider echo absent/query-bound.
-Data now owns bounded older adjusted backfill with per-page overlap anchor
-continuity, not source-mode equality alone. Source limits scoped, no Paper hold.
+Older adjusted backfill CLOSED PARTIAL62938bars/61018windows/20ready61,
+2014-03-04..2026-10-14,516GET/1POST/515acceptedolderpages. All2064sharedOHLC
+anchors exact.12native-invalid rows stay gaps. PermissionError replacing cursor,
+not providerfloor/quota; errno/competing opener unknown.19cursors unfinished,
+AMD only exactno-progress2015-01-02.1079.687chargedactive/1119.588end, oldclosure
+immutable. Parent dispatched linked exact-cursor technical recovery with old
+caps/counters/debits, at most one extra guardedPOST, hardyield13:25UTC.
+Use available input now; no full-history/Paper permission hold.
 A/data/liquid-core-adjusted-daily-20261015-v1/handoff.json
 A/data/kis-known-split-mode-stability-20261015-v1/independent-readback.json
+A/data/liquid-core-adjusted-long-history-20261015-v1/completion.json
 
-Raman next longNAS same-session invariant family:max3CPU+12CUDA/7200active/
-18000end,GRU20vs60/LSTM60/Transformer60, one GPU allocation, native SYN first.
-Godel next CPU adjusted20 raw/indicator/joint HGB/rules/fixedfusion; Kant pure
-RSI/Bollinger/momentum/vol/relative-breadth kernels. No learned fusion from
-in-sample predictions or extra fit per feature window. Actual fits unobserved.
+Raman next adjusted20 indicator15 scalarMLP MSE-vs-weightedRankNet, <=6CUDAfits,
+same gross/top5 selection, chronological purge/INNER/restore/native SYN first.
+Rank scores cannot supply a cash hurdle. Godel CPU raw/indicator/joint HGB/
+quiettrend60/RSI-Bollinger20/fixedOR: initial runtime/calendar ABI faults had
+ZERO market fits/labels, linked mechanical pre-fit repair dispatched with old
+debits intact. No operator approval hold or waiting for all older history.
+Kant feature/ranking kernels READY; no learned fusion from in-sample outputs.
+Actual next HGB/ranking fits unobserved until native evidence.
 A/research/liquid-core-unit-invariant-open-close-development-20261015-v1/owner-handoff.json
+A/research/liquid-core-unit-invariant-open-close-development-20261015-v1/independent-review/continuation-r1/closure.json
+A/research/nas-long-unit-invariant-open-close-development-20261015-v1/owner-handoff.json
+A/strategy-research/liquid-core-relative-ranking-objective-preparation-20261015-v1/READY.md
 A/research/nas-long-frozen-later-diagnostic-20261015-v1/readback.json
+
+New official no-auth FirstRate fixed20 sample CLOSED: actual ZIPSep28..Oct9,
+not advertisedSep21..Oct2.77998RTH1m/15598five/7798ten/1198hour/398three-hour,
+200separateD1rows. JNJ/UNH each one missing minute; affected buckets skipped,
+400session-end partials explicit.20ZIP/4metadata/0retry/2.33MBdownload,
+123.211chargedactive/919elapsed; two independent514950scalar checks. Private
+engineering only/provider adjustment claim, not PIT/TR/Alpha or Paper input.
+A/data/firstrate-current-sample-mtf-20261015-v1/input-manifest.json
 
 Data reusable inputs:13,622long-ETF rows/6,811dates; target-only action sidecar;
 retained1m195,056regular bars/315,772past-window keys,251sessions2022..2023.
@@ -189,12 +211,21 @@ A/data/nas-retained-long-history-readiness-20261015-v1/readiness.json
 
 ## Verification And Next Action
 
-Exact production/test/script/dependency/config source1342/digest
-4a1e461984894e82caa21601bcb0673dfab7cd85bb5924a8dd916bd24c71bc46.
-925serial; fresh clean8 full16488passed22skipped/16510collected/351.816s/helper0.
+Quiet-launch helper/tests: source1344/digest
+289f23c8a1ff92b5c1d44a020f5f9f42ffd9505de89bf6737ee7bca3ce63d394.
+4focused serial; fresh clean8 full16492passed22skipped/16514collected/407.299s/helper0.
 Ruff/default/research/accounting sample-env Compose pass. MD/external-only work
 may reuse only with exact source-map equality; external workers need OWN checks.
-A/verification/current-nas-owned-cycle-20261015-v1/authority.json
+A/infra/remaining-owned-task-quiet-20261015-v1/authority.json
+
+Latest human CMD complaint: seven remaining future console Actions migrated
+through pinned9fe9750c pythonw/CREATE_NO_WINDOW. Exact non-Action XML/argv/cwd
+audit passed; original rollback retained,22:40/23:50 Paper Actions untouched.
+Native nestedPS/cmd/uv argv/exit/window checks linked PASS; old harnesscap failure
+preserved. Natural observer runtime check separate, not a whole-desktop/window
+guarantee.13:08 owner start raced metadata update; no interruption/manual run.
+A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
+A/infra/remaining-owned-task-quiet-20261015-v1/independent-native/result-r1.json
 
 Parent integrates actual independent research evidence, preserves unfinished
 owners and continues ready packages. At natural Paper opportunity, read exact
