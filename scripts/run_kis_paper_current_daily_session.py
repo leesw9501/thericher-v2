@@ -12,6 +12,11 @@ from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
+from thericher_v2.execution.kis_paper_current_daily_session import (
+    _CYCLE_REASONS,
+    _CYCLE_UNAVAILABLE_REASONS,
+    _PORTFOLIO_BUDGET_REASONS,
+)
 from thericher_v2.execution.kis_readonly import load_kis_paper_config
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,14 +71,9 @@ STATUS_REASONS = {
         "canary_access_token_invalid",
         "canary_token_request_not_due",
         "canary_request_budget_exhausted",
-        "cycle_checkpoint_conflict",
-        "cycle_custody_mismatch",
-        "portfolio_pending_identity",
-        "cycle_checkpoint_invalid",
-        "cycle_book_missing",
-        "cycle_book_changed",
-        "cycle_terminal_unproven",
-        "cycle_target_unreached",
+        *_CYCLE_REASONS.values(),
+        *_CYCLE_UNAVAILABLE_REASONS.values(),
+        *_PORTFOLIO_BUDGET_REASONS.values(),
     },
 }
 SAFE_REASONS = frozenset().union(*STATUS_REASONS.values(), {"execution_not_requested"})

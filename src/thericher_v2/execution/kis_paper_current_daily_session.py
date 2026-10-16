@@ -18,6 +18,7 @@ from . import kis_paper_budget_strategy as budget
 from . import kis_paper_canary as canary
 from . import kis_paper_portfolio_cycle as cycle
 from . import kis_paper_portfolio_execute as execution
+from .kis_paper_portfolio_budget import KisPaperPortfolioBudgetError
 from .kis_paper_session import is_us_equity_regular_session_window
 from .kis_readonly import KIS_PAPER_BASE_URL, KisPaperConfig, KisPaperReadOnlyError
 
@@ -45,30 +46,184 @@ _CANARY_REASONS = {
     "token_request_not_due": "canary_token_request_not_due",
     "request_budget_exhausted": "canary_request_budget_exhausted",
 }
-_CYCLE_REASONS = {
-    "cycle_custody_mismatch": "cycle_custody_mismatch",
-    "portfolio_pending_identity": "portfolio_pending_identity",
-    "cycle_checkpoint_conflict": "cycle_checkpoint_conflict",
-    "cycle_checkpoint_invalid": "cycle_checkpoint_invalid",
-    "cycle_book_missing": "cycle_book_missing",
-    "cycle_book_changed": "cycle_book_changed",
-    "cycle_terminal_unproven": "cycle_terminal_unproven",
-    "cycle_target_unreached": "cycle_target_unreached",
+# Native recovery literals are public categories, never exception text or values.
+_CYCLE_REASONS = {code: code for code in (
+    "account_binding_mismatch",
+    "another_cycle_unresolved",
+    "artifact_root_invalid",
+    "budget_binding_invalid",
+    "budget_binding_missing",
+    "budget_duplicate_key",
+    "budget_exceeded",
+    "budget_intent_mismatch",
+    "budget_owner_scope_invalid",
+    "budget_state_invalid",
+    "budget_state_not_current",
+    "buying_power_changed",
+    "buying_power_unavailable",
+    "closed_order_evidence_missing",
+    "closure_contradiction",
+    "current_fill_unavailable",
+    "cycle_binding_mismatch",
+    "cycle_binding_missing",
+    "cycle_book_changed",
+    "cycle_book_missing",
+    "cycle_buy_unavailable",
+    "cycle_checkpoint_conflict",
+    "cycle_checkpoint_invalid",
+    "cycle_contract_conflict",
+    "cycle_control_invalid",
+    "cycle_custody_mismatch",
+    "cycle_execute_invalid",
+    "cycle_reads_factory_invalid",
+    "cycle_reads_or_target_unavailable",
+    "cycle_reference_invalid",
+    "cycle_session_invalid",
+    "cycle_target_unreached",
+    "cycle_terminal_incomplete",
+    "cycle_terminal_unproven",
+    "decision_evidence_mismatch",
+    "emergency_stop_new_orders",
+    "entry_fill_unavailable",
+    "exit_cancellation_unconfirmed",
+    "exit_not_submitted_expired",
+    "fill_limit_contradiction",
+    "foreign_or_conflicting_open_order",
+    "funds_currency_mismatch",
+    "leg_binding_mismatch",
+    "leg_outcome_unresolved",
+    "leg_state_missing",
+    "legacy_custody_mismatch",
+    "live_mode_unavailable",
+    "orderability_binding_mismatch",
+    "orphan_budget_conflict",
+    "orphan_intent_requires_reconciliation",
+    "other_owned_intent_pending",
+    "outside_regular_session",
+    "pause_buys_active",
+    "pause_sells_active",
+    "portfolio_binding_invalid",
+    "portfolio_binding_mismatch",
+    "portfolio_client_invalid",
+    "portfolio_custody_mismatch",
+    "portfolio_execute_invalid",
+    "portfolio_existing_basis_required",
+    "portfolio_instrument_invalid",
+    "portfolio_intent_mismatch",
+    "portfolio_limits_invalid",
+    "portfolio_materialized_state_missing",
+    "portfolio_owned_quantity_exceeded",
+    "portfolio_owner_mismatch",
+    "portfolio_parent_binding_mismatch",
+    "portfolio_pending_identity",
+    "portfolio_plan_invalid",
+    "portfolio_proof_invalid",
+    "portfolio_proof_scope_invalid",
+    "portfolio_reductions_invalid",
+    "portfolio_reference_invalid",
+    "portfolio_request_conflict",
+    "portfolio_request_invalid",
+    "portfolio_reservation_readback_mismatch",
+    "portfolio_root_mismatch",
+    "portfolio_root_pin_invalid",
+    "portfolio_side_mismatch",
+    "portfolio_state_scope_invalid",
+    "portfolio_state_unbound",
+    "portfolio_terminal_unproven",
+    "portfolio_validity_invalid",
+    "position_contradiction",
+    "pre_submit_ownership_changed",
+    "private_root_invalid",
+    "qqq_entry_history_not_rejected",
+    "qqq_owner_binding_mismatch",
+    "snapshot_unavailable",
+    "spy_reduction_quantity_mismatch",
+    "stock_binding_invalid",
+    "stock_instrument_invalid",
+    "stock_plan_invalid",
+    "stock_projection_scope_invalid",
+    "stock_state_duplicate",
+    "stock_state_unbound",
+    "successor_binding_mismatch",
+    "successor_state_unbound",
+    "unowned_sell",
+    "unowned_sell_fill",
+    "unsubmitted_price_changed",
+)}
+_CYCLE_UNAVAILABLE_REASONS = {
+    "baseline_reduction_required": "baseline_reduction_required",
+    "buying_power_insufficient": "buying_power_insufficient",
+    "rounded_risk_exceeds_cap": "rounded_risk_exceeds_cap",
+    "target_quantization_changed": "target_quantization_changed",
 }
+_PORTFOLIO_BUDGET_REASONS = {code: "portfolio_budget_" + code for code in (
+    "account_binding_invalid",
+    "account_binding_mismatch",
+    "aggregate_budget_exceeded",
+    "aggregate_gross_cash_exceeded",
+    "allocation_not_initial_tenth",
+    "basis_binding_mismatch",
+    "basis_invalid",
+    "basis_reference_invalid",
+    "basis_time_invalid",
+    "broker_order_alias",
+    "broker_order_date_missing",
+    "buy_fill_limit_conflict",
+    "cancel_proof_invalid",
+    "cancel_proof_mismatch",
+    "cancel_proof_scope_mismatch",
+    "cancel_proofs_invalid",
+    "duplicate_fill_identity",
+    "duplicate_intent_identity",
+    "duplicate_owner",
+    "duplicate_state_reference",
+    "fill_fact_invalid",
+    "fill_identity_invalid",
+    "fill_invalid",
+    "instrument_invalid",
+    "intent_binding_mismatch",
+    "intent_invalid",
+    "intent_reference_invalid",
+    "numeric_field_invalid",
+    "owner_binding_invalid",
+    "owner_binding_mismatch",
+    "owner_instrument_mismatch",
+    "owner_order_invalid",
+    "owner_proof_scope_mismatch",
+    "owner_proofs_invalid",
+    "owner_reference_invalid",
+    "owners_not_frozen",
+    "referenced_state_missing",
+    "rejected_state_conflict",
+    "schema_invalid",
+    "state_fact_invalid",
+    "state_invalid",
+    "state_reference_invalid",
+    "state_references_not_frozen",
+    "state_scope_mismatch",
+    "state_time_invalid",
+    "states_invalid",
+    "stock_binding_invalid",
+    "timestamp_invalid",
+    "unowned_sell",
+    "unsubmitted_state_conflict",
+)}
 
 
 def _failure_reason(error):
-    # Only typed local codes or one exact cycle literal may cross this boundary.
+    # Only typed local codes or one exact native recovery literal may cross.
     try:
         if isinstance(error, KisPaperReadOnlyError):
             code, reasons = error.code, _READONLY_REASONS
         elif isinstance(error, canary.KisPaperCanaryError):
             code, reasons = error.code, _CANARY_REASONS
-        elif isinstance(error, cycle._RecoveryRequired):
+        elif isinstance(error, (cycle._RecoveryRequired, KisPaperPortfolioBudgetError)):
             args = error.args
             if type(args) is not tuple or len(args) != 1:
                 return None
-            code, reasons = args[0], _CYCLE_REASONS
+            code = args[0]
+            reasons = (_CYCLE_REASONS if isinstance(error, cycle._RecoveryRequired)
+                       else _PORTFOLIO_BUDGET_REASONS)
         else:
             return None
         return reasons.get(code) if type(code) is str else None
@@ -568,9 +723,14 @@ def run_kis_paper_current_daily_session(
             if result.status == "terminal_incomplete":
                 _incomplete_archive(root, pointer, record, paths, account, clock, create=True)
                 return CurrentDailySessionOutcome("no_intent", "terminal_cycle_incomplete")
+            if result.status == "unavailable":
+                reason = (_CYCLE_UNAVAILABLE_REASONS.get(result.reason)
+                          if type(result.reason) is str else None)
+                return CurrentDailySessionOutcome(
+                    "unavailable", reason or "native_recovery_required",
+                )
             return CurrentDailySessionOutcome(result.status, {
                 "pending": "exact_cycle_advanced", "complete": "exact_cycle_complete",
-                "unavailable": "native_recovery_required",
             }[result.status])
     except Exception as error:
         reason = _failure_reason(error)

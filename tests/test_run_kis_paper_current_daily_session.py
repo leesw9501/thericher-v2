@@ -249,6 +249,8 @@ def test_host_failure_reasons_exactly_match_native_allowlisted_mappings():
         daily._READONLY_REASONS.values(),
         daily._CANARY_REASONS.values(),
         daily._CYCLE_REASONS.values(),
+        daily._CYCLE_UNAVAILABLE_REASONS.values(),
+        daily._PORTFOLIO_BUDGET_REASONS.values(),
     )
     assert w.STATUS_REASONS["unavailable"] == native | {
         "native_recovery_required", "retained_context_recovery_required",
@@ -308,7 +310,8 @@ def test_malformed_daily_status_reason_rejected(location, field, malformed):
 
 @pytest.mark.parametrize("reason", sorted(
     set().union(daily._READONLY_REASONS.values(), daily._CANARY_REASONS.values(),
-                daily._CYCLE_REASONS.values())
+                daily._CYCLE_REASONS.values(), daily._CYCLE_UNAVAILABLE_REASONS.values(),
+                daily._PORTFOLIO_BUDGET_REASONS.values())
 ))
 def test_typed_diagnostic_routes_through_unchanged_worker_and_host(reason, monkeypatch):
     from test_kis_paper_current_daily_session_worker import w as worker

@@ -641,6 +641,15 @@ def advance_kis_paper_portfolio_cycle(
             return KisPaperPortfolioCycleOutcome(
                 "unavailable", "target_quantization_changed", "buy", cycle_ref=record["ref"]
             )
+        if preview.status != "preview_feasible":
+            if preview.reason == "buying_power_insufficient":
+                return KisPaperPortfolioCycleOutcome(
+                    "unavailable", "buying_power_insufficient", "buy", cycle_ref=record["ref"]
+                )
+            if preview.reason == "rounded_risk_exceeds_cap":
+                return KisPaperPortfolioCycleOutcome(
+                    "unavailable", "rounded_risk_exceeds_cap", "buy", cycle_ref=record["ref"]
+                )
         _check(preview.status == "preview_feasible", "cycle_buy_unavailable")
         result = build_kis_paper_portfolio_plan(
             binding=binding,

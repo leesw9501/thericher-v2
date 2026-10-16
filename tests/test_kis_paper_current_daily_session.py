@@ -36,6 +36,7 @@ TYPED_FAILURES = [
         (daily.KisPaperReadOnlyError, daily._READONLY_REASONS),
         (daily.canary.KisPaperCanaryError, daily._CANARY_REASONS),
         (daily.cycle._RecoveryRequired, daily._CYCLE_REASONS),
+        (daily.KisPaperPortfolioBudgetError, daily._PORTFOLIO_BUDGET_REASONS),
     )
     for code, reason in reasons.items()
 ]
@@ -592,3 +593,159 @@ def test_typed_pending_recovery_failure_preserves_journal_before_data_or_alterna
     assert record(session) == frozen
     assert len(args["client"].wire) == before_wire
     assert args["client"].submits == before_submits
+
+
+def _literal_call_codes(path, positions):
+    codes = set()
+    for node in ast.walk(ast.parse(path.read_text())):
+        if not isinstance(node, ast.Call) or not isinstance(node.func, ast.Name):
+            continue
+        position = positions.get(node.func.id)
+        if position is not None and len(node.args) > position:
+            value = node.args[position]
+            if isinstance(value, ast.Constant) and type(value.value) is str:
+                codes.add(value.value)
+    return codes
+
+
+def test_finite_native_recovery_inventory_matches_existing_source_literals():
+    root = Path(daily.__file__).parent
+    codes = set().union(*(
+        _literal_call_codes(root / (name + ".py"), {"_check": 1, "_RecoveryRequired": 0})
+        for name in (
+            "kis_paper_portfolio_cycle", "kis_paper_portfolio_execute",
+            "kis_paper_portfolio_plan", "kis_paper_budget_strategy", "kis_paper_spy_fill_cycle",
+        )
+    ))
+    assert daily._CYCLE_REASONS == {code: code for code in codes}
+    codes = _literal_call_codes(root / "kis_paper_portfolio_budget.py", {
+        "_check": 1, "_text": 2, "KisPaperPortfolioBudgetError": 0,
+    })
+    assert daily._PORTFOLIO_BUDGET_REASONS == {
+        code: "portfolio_budget_" + code for code in codes
+    }
+    tree = ast.parse((root / "kis_paper_portfolio_cycle.py").read_text())
+    unavailable = {
+        node.args[1].value for node in ast.walk(tree)
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+        and node.func.id == "KisPaperPortfolioCycleOutcome" and len(node.args) >= 2
+        and isinstance(node.args[0], ast.Constant) and node.args[0].value == "unavailable"
+        and isinstance(node.args[1], ast.Constant) and type(node.args[1].value) is str
+    }
+    assert daily._CYCLE_UNAVAILABLE_REASONS == {code: code for code in unavailable}
+
+
+@pytest.mark.parametrize("error_type", [daily.cycle._RecoveryRequired,
+                                       daily.KisPaperPortfolioBudgetError])
+def test_native_recovery_unknown_and_hostile_codes_are_not_diagnostics(error_type):
+    class HostileString(str):
+        def __hash__(self):
+            raise AssertionError("untrusted_string_subclass_must_not_be_hashed")
+
+    for value in ("not_a_native_code", [], {}, None, HostileString("cycle_buy_unavailable")):
+        assert daily._failure_reason(opaque_error(error_type, value)) is None
+    error = opaque_error(error_type, "cycle_buy_unavailable")
+    error.args = ("cycle_buy_unavailable", PRIVATE_ERROR)
+    assert daily._failure_reason(error) is None
+    assert daily._failure_reason(opaque_error(ValueError, "cycle_buy_unavailable")) is None
+
+
+@pytest.mark.parametrize("reason,expected", [
+    ("baseline_reduction_required", "baseline_reduction_required"),
+    ("target_quantization_changed", "target_quantization_changed"),
+    ("unknown_native_reason", "native_recovery_required"),
+    ([], "native_recovery_required"),
+    (None, "native_recovery_required"),
+])
+def test_unavailable_native_outcome_retains_only_finite_reason(
+    session, monkeypatch, reason, expected
+):
+    args = session[0]
+    monkeypatch.setattr(daily.cycle, "advance_kis_paper_portfolio_cycle", lambda **kwargs:
+        daily.cycle.KisPaperPortfolioCycleOutcome("unavailable", reason, "buy"))
+    result = daily.run_kis_paper_current_daily_session(**args)
+    assert (result.status, result.reason) == ("unavailable", expected)
+    assert not args["client"].wire
+
+
+@pytest.mark.parametrize("change,expected", [
+    ("orderability", "buying_power_insufficient"),
+    ("risk", "rounded_risk_exceeds_cap"),
+    ("quantization", "target_quantization_changed"),
+])
+def test_real_native_post_full_sell_diagnostic_keeps_exact_context_and_no_buy(
+    session, monkeypatch, change, expected
+):
+    args = mixed_control(session)
+    if change == "risk":
+        control = args["data_loader"]()
+        covariance = {
+            symbol: {other: Decimal(".01") if symbol == other else Decimal(0)
+                     for other in daily.cycle.SYMBOLS}
+            for symbol in daily.cycle.SYMBOLS
+        }
+        args["data_loader"] = lambda: replace(control, covariance_by_symbol=covariance)
+    assert daily.run_kis_paper_current_daily_session(**args).status == "pending"
+    frozen = copy.deepcopy(record(session))
+    journal = next(args["state_root"].glob(".portfolio_cycles/*/cycle.json"))
+    original = journal.read_bytes()
+    before = daily.budget._load_binding(args["state_root"])
+    sell_intent = args["client"].submits[0]
+    factory = args["reads_factory"]
+
+    def fresh_reads():
+        reads = factory()
+        if change == "orderability":
+            rows = tuple(replace(row, orderable=replace(row.orderable, orderable_funds=Decimal(0)))
+                         for row in reads.instruments)
+        elif change == "quantization":
+            rows = tuple(replace(
+                row,
+                quote=replace(row.quote, last=Decimal(200), best_bid=Decimal("199.99"),
+                              best_ask=Decimal(200)),
+                buy_limit=Decimal(200),
+                orderable=replace(row.orderable, reference_price=Decimal(200)),
+            ) for row in reads.instruments)
+        else:
+            return reads
+        return replace(reads, instruments=rows)
+
+    previews = []
+    preview = daily.cycle.project_kis_paper_portfolio_preview
+
+    def real_preview(**kwargs):
+        result = preview(**kwargs)
+        previews.append(result)
+        return result
+
+    monkeypatch.setattr(daily.cycle, "project_kis_paper_portfolio_preview", real_preview)
+    args["reads_factory"], args["data_loader"] = fresh_reads, fail
+    result = daily.run_kis_paper_current_daily_session(**args)
+    assert (result.status, result.reason) == ("unavailable", expected)
+    assert len(previews) == 1
+    targets = tuple(Decimal(daily.budget._read_json(journal)["targets"][s])
+                    for s in daily.cycle.SYMBOLS)
+    if change == "quantization":
+        assert previews[0].target_quantities != targets
+    else:
+        assert previews[0].target_quantities == targets
+        assert previews[0].reason == {
+            "risk": "rounded_risk_exceeds_cap", "orderability": "buying_power_insufficient",
+        }[change]
+    book = daily.budget._load_binding(args["state_root"])
+    assert book["basis_ref"] == before["basis_ref"]
+    assert all(book["terminal_evidence"][run] == payload
+               for run, payload in before["terminal_evidence"].items())
+    state = daily.canary.KisPaperCanaryStateStore(
+        args["state_root"] / (sell_intent.run_id + ".json")
+    ).read()
+    assert state.intent == sell_intent and daily.budget._terminal(state)
+    assert state.cumulative_fill.quantity == sell_intent.quantity
+    assert sell_intent.run_id in book["terminal_evidence"]
+    assert daily.cycle._project(args["state_root"], book, args["clock"]())[-1].reserved_buys == 0
+    assert args["client"].submits == [sell_intent] and len(args["client"].wire) == 1
+    assert journal.read_bytes() == original and not journal.with_name("buy.json").exists()
+    assert record(session)["context"] == frozen["context"]
+    assert record(session)["cycle_ref"] == frozen["cycle_ref"]
+    assert record(session)["completed"] is False
+    assert PRIVATE_ERROR not in json.dumps(result.safe_payload())
