@@ -157,6 +157,7 @@ def run(config):
             repository_root=APP,
             token_interval_seconds=60,
             access_token=token,
+            requested_symbols=("SPY", "TLT", "GLD"),
         )
         if collection.status != "complete":
             raise ValueError("current_daily_data_unavailable")

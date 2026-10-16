@@ -179,6 +179,88 @@ def test_complete_native_input_and_early_spy_two(intake) -> None:
         assert "synthetic-token" not in text and '"open"' not in text and '"clos"' not in text
 
 
+@pytest.mark.parametrize("options", [{}, {"requested_symbols": None},
+                                      {"requested_symbols": tuple(data.ETF_VENUES)}])
+def test_default_symbol_scope_and_result_schema_stay_four(intake, options):
+    _, opener, _ = intake
+    result = collect(intake, **options)
+    assert result.status == "complete" and result.daily_gets == 12
+    assert result.requested_symbols == tuple(data.ETF_VENUES)
+    assert list(dict.fromkeys(q["SYMB"] for method, q, _ in opener.calls if method == "GET")) == [
+        "SPY", "QQQ", "TLT", "GLD",
+    ]
+    assert "requested_symbols" not in result.safe_payload()
+
+
+def test_required_three_scope_omits_short_qqq_without_weakening_tails(intake):
+    _, opener, kwargs = intake
+    opener.short_symbol = "QQQ"
+    symbols = ("SPY", "TLT", "GLD")
+    result = collect(intake, requested_symbols=symbols)
+    assert (result.status, result.reason, result.token_posts, result.daily_gets) == (
+        "complete", None, 1, 9,
+    )
+    assert result.requested_symbols == symbols
+    assert result.safe_payload()["requested_symbols"] == list(symbols)
+    assert {q["SYMB"] for method, q, _ in opener.calls if method == "GET"} == set(symbols)
+    assert all(gap >= 1.25 - 1e-9 for gap in result.http_start_gaps_seconds)
+    refs = [ref for ref in result.receipts if ref[0].parent.name != "SPY-baseline2"]
+    assert [load_ref(ref, kwargs).receipt.symbol for ref in refs] == list(symbols)
+    assert all(load_ref(ref, kwargs).receipt.complete_253 for ref in refs)
+
+
+@pytest.mark.parametrize("symbol", ["SPY", "TLT", "GLD"])
+def test_subset_missing_required_tail_stays_incomplete(intake, symbol):
+    _, opener, kwargs = intake
+    opener.short_symbol = symbol
+    result = collect(intake, requested_symbols=("SPY", "TLT", "GLD"))
+    assert result.status == "incomplete" and result.reason == "completed_sessions_missing"
+    ref = next(ref for ref in result.receipts if ref[0].parent.name == symbol)
+    with pytest.raises(data.DailyContextError, match="completed_sessions_missing"):
+        load_ref(ref, kwargs)
+
+
+@pytest.mark.parametrize("symbols", [("GLD",), ("TLT", "SPY"), tuple(data.ETF_VENUES)])
+def test_explicit_scope_preserves_requested_order_and_page_bounds(intake, symbols):
+    _, opener, _ = intake
+    result = collect(intake, requested_symbols=symbols)
+    assert result.status == "complete" and result.daily_gets == 3 * len(symbols)
+    assert result.requested_symbols == symbols
+    actual = list(dict.fromkeys(q["SYMB"] for method, q, _ in opener.calls if method == "GET"))
+    assert actual == list(symbols)
+
+
+class _SymbolSubclass(str):
+    pass
+
+
+@pytest.mark.parametrize("symbols", [(), [], ["SPY"], "SPY", {"SPY"}, {"SPY": "AMS"},
+    ("SPY", "SPY"), ("SPY", "QQQ", "TLT", "GLD", "SPY"), ("spy",), (" SPY",),
+    ("SPY ",), ("IWM",), (True,), (None,), ([],), (_SymbolSubclass("SPY"),)])
+def test_invalid_symbol_scope_rejected_before_files_or_client(intake, symbols, monkeypatch):
+    _, opener, kwargs = intake
+
+    def denied(*args, **kwargs):
+        pytest.fail("invalid_scope_must_not_reach_files_or_client")
+
+    monkeypatch.setattr(data, "_external", denied)
+    monkeypatch.setattr(data.native, "KisPaperMarketDataClient", denied)
+    with pytest.raises(data.DailyContextError, match="invalid_contract"):
+        collect(intake, requested_symbols=symbols)
+    assert not opener.calls and not kwargs["cache_root"].exists()
+
+
+@pytest.mark.parametrize("fault,reason", [("conflict", "daily_duplicate_conflict"),
+                                         ("stuck", "cursor_not_advancing"),
+                                         ("rate_limit", "rate_limited")])
+def test_subset_preserves_native_first_faults(intake, fault, reason):
+    _, opener, _ = intake
+    setattr(opener, fault, True)
+    result = collect(intake, requested_symbols=("SPY", "TLT", "GLD"))
+    assert result.status == "incomplete" and result.reason == reason
+    assert result.daily_gets <= 2 and result.token_posts == 1
+
+
 def test_archive_replay_ignores_today_and_auth(intake, monkeypatch: pytest.MonkeyPatch) -> None:
     clock, opener, kwargs = intake
     result = collect(intake)

@@ -111,6 +111,7 @@ def test_owned_same_token_is_borrowed_for_market_and_portfolio(monkeypatch):
     def collect(cfg, **kwargs):
         assert kwargs["access_token"] == "synthetic-bearer"
         assert kwargs["token_interval_seconds"] == 60
+        assert kwargs["requested_symbols"] == ("SPY", "TLT", "GLD")
         return SimpleNamespace(
             status="complete", receipts=(), daily_gets=12, reason=None, next_due_utc=None
         )
@@ -132,6 +133,49 @@ def test_owned_same_token_is_borrowed_for_market_and_portfolio(monkeypatch):
     value = w.run(w.parse_packet(json.dumps(packet()).encode()))
     assert value["calls"]["token_posts"] == 1 and value["market_daily_gets"] == 12
     assert "synthetic-bearer" not in json.dumps(value)
+
+
+@pytest.mark.parametrize("status", ["complete", "incomplete"])
+def test_worker_loads_only_required_receipts_and_keeps_collection_failure(monkeypatch, status):
+    from thericher_v2.execution import kis_paper_current_daily_session as session
+
+    transport = SimpleNamespace(
+        calls=dict(token_posts=0, get_requests=0, buy_posts=0, sell_posts=0, cancel_posts=0)
+    )
+    monkeypatch.setattr(w, "OwnedTransport", lambda **kwargs: transport)
+    monkeypatch.setattr(canary.KisPaperCanaryClient, "_issue_access_token", lambda _: "synthetic")
+    symbols = ("SPY", "TLT", "GLD")
+
+    def collect(cfg, **kwargs):
+        assert kwargs["requested_symbols"] == symbols
+        return SimpleNamespace(status=status,
+            receipts=tuple((Path("/synthetic") / s / "receipt.json", "synthetic") for s in symbols),
+            daily_gets=9, reason=None if status == "complete" else "completed_sessions_missing",
+            next_due_utc=None)
+
+    monkeypatch.setattr(w, "collect_daily_contexts", collect)
+    seen = []
+
+    def read(path, pin, **kwargs):
+        assert status == "complete" and kwargs["required_count"] == 253
+        seen.append(path.parent.name)
+        return path.parent.name
+
+    monkeypatch.setattr(w, "read_daily_context", read)
+
+    def native(**kwargs):
+        if status == "incomplete":
+            with pytest.raises(ValueError, match="current_daily_data_unavailable"):
+                kwargs["data_loader"]()
+        else:
+            assert kwargs["data_loader"]() == dict(zip(symbols, symbols, strict=True))
+        return session.CurrentDailySessionOutcome("no_intent", "current_input_unavailable")
+
+    monkeypatch.setattr(session, "run_kis_paper_current_daily_session", native)
+    value = w.run(w.parse_packet(json.dumps(packet()).encode()))
+    assert seen == (list(symbols) if status == "complete" else [])
+    expected_reason = None if status == "complete" else "completed_sessions_missing"
+    assert value["collection_reason"] == expected_reason
 
 
 @pytest.mark.parametrize("completion_visit", [8, 12, None])

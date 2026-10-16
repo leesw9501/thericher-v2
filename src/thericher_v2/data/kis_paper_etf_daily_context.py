@@ -330,9 +330,10 @@ class DailyCollectionResult:
     daily_gets: int
     next_due_utc: datetime | None
     http_start_gaps_seconds: tuple[float, ...]
+    requested_symbols: tuple[str, ...] = tuple(ETF_VENUES)
 
     def safe_payload(self) -> dict[str, object]:
-        return dict(
+        result = dict(
             status=self.status,
             reason=self.reason,
             token_posts=self.token_posts,
@@ -342,6 +343,9 @@ class DailyCollectionResult:
             http_start_gaps_seconds=list(self.http_start_gaps_seconds),
             pacing_basis="final_opener_delegate_boundary_not_socket_wire_measurement",
         )
+        if self.requested_symbols != tuple(ETF_VENUES):
+            result["requested_symbols"] = list(self.requested_symbols)
+        return result
 
 
 class _PacedOpener:
@@ -474,6 +478,7 @@ def collect_daily_contexts(
     repository_root: Path = REPOSITORY_ROOT,
     token_interval_seconds: int = 300,
     access_token: str | None = None,
+    requested_symbols: tuple[str, ...] | None = None,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     monotonic: Callable[[], float] = time.monotonic,
     sleeper: Callable[[float], None] = time.sleep,
@@ -490,8 +495,19 @@ def collect_daily_contexts(
     An explicit in-memory Paper ``access_token`` may be borrowed from the owned
     Execution actor. The caller attests its Paper host/app identity and lifetime.
     It is never loaded, returned or persisted here; rejection never refreshes it.
+
+    A nonempty unique tuple may restrict the fixed ETF scope. Completion means
+    all requested tails, never permission to ignore a required-tail failure.
+    None retains the original four-symbol order and public result schema.
     """
     _require(type(config) is native.KisPaperMarketDataConfig)
+    symbols = tuple(ETF_VENUES) if requested_symbols is None else requested_symbols
+    _require(
+        type(symbols) is tuple
+        and 0 < len(symbols) <= len(ETF_VENUES)
+        and all(type(symbol) is str and symbol in ETF_VENUES for symbol in symbols)
+    )
+    _require(len(set(symbols)) == len(symbols))
     _require(type(token_interval_seconds) is int and token_interval_seconds in {60, 300})
     _require(
         access_token is None
@@ -578,7 +594,8 @@ def collect_daily_contexts(
                 # caller value seeds its existing in-memory token; no refresh path.
                 client._access_token = access_token
             client.ensure_authenticated()
-            for symbol, exchange in ETF_VENUES.items():
+            for symbol in symbols:
+                exchange = ETF_VENUES[symbol]
                 rows: dict[str, native.KisPaperDailyRawRow] = {}
                 duplicates = 0
                 cursor = captured.astimezone(_NY).strftime("%Y%m%d")
@@ -682,7 +699,7 @@ def collect_daily_contexts(
                 next_due = max(due) if due else None
             except (ValueError, OSError):
                 pass
-    status = "complete" if full_count == 4 and reason is None else "incomplete"
+    status = "complete" if full_count == len(symbols) and reason is None else "incomplete"
     return DailyCollectionResult(
         status,
         reason or ("completed_sessions_missing" if status == "incomplete" else None),
@@ -693,6 +710,7 @@ def collect_daily_contexts(
         tuple(b - a for a, b in zip(opener.starts, opener.starts[1:], strict=False))
         if opener
         else (),
+        requested_symbols=symbols,
     )
 
 
