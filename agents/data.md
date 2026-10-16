@@ -2,6 +2,19 @@
 
 ## Current Oct17 Reboot Continuation
 
+LATEST04:17KST: old2000/2010/2020anchors6GET nativeempty; newrecent8GET found
+480rows atOct1/Oct8 forQQQ/SPY, Jan6/Sep1empty. No globalfloor/date inferred.
+Oct8 fullcohort witness18newGET/2160newrows+240cached:2380commonmask rows,
+zero jointOHLCVmatches toFirstRate, no chosen correction/oldABI promotion.
+Independent source comparison preserved; volume/open discrepancies are native
+training-input considerations, not a company permission hold.
+NewXLK capture9GET1POST/694unique mode1rows/611required sessions, native repeat/
+pageoverlap stable; frozen fixedsplit2/pre1/post test FAILED, basis unknown.
+Kuhn NEW offline split-continuity diagnostic, no rescale/regrade/extraAPI.
+Schrodinger next missingOct6-9 full20source plus reusedOct12-15 for8session
+nativePriceRidge;600normalGET+2retry/oneclient/named60scope/2400active7200end.
+One collector only, immutable382source package; old scopes/counters unchanged.
+
 Actual AAPL/NAS minute head+older timestamp probe COMPLETE240unique rows,
 Oct16 08:54..12:53ET/204RTH36preopen;735native/hash/calendar checks. Aggregate
 3GET2POST includes old120head, not360unique. Headerblank was unknown, second
@@ -19,14 +32,28 @@ Native SYN/focusedserial and sourcefreeze before wire; ParentownsfullQA/Git.
 Onecollector/cachegate, existing2second/token controls andactualdue ownership;
 no hardcoded past due or routine Parent-reply approval gate. RawD/modelsA,
 15percentstoragefloor. No account/order/live/Scheduler/public work.
-Actual17:46UTC cursor:288GET/1POST/0retry,287completedpages/all20heads,
-collectorPIDalive/ownerunreleased. An in-flight GET is not an accepted page;
-do not multiply page count by120 or claim all300windows without readback.
+FINAL:360GET/1POST/0retry,43200native rows/35840RTH labels,20assets each390
+labels on Oct12-15. CurrentOct16 partial231..233 labels, not complete-session
+input.166890native/hash/calendar checks; finalcharge2806.26/3600, no owner/
+pendingrequest/next_due remains. Unit/bar-end/PIT unqualified; source-bound
+engineering assumptions require a separately named study, not oldABI promotion.
+Study token60floor deviated from newData300 default; actual1POST and deviation
+retained, no retroactive authorization. Subsequent newData uses300.
+Poincare found two recovery P2s (lease-loser stalewrites/prematurependingclear)
+and an external reader import-binding gap, NOT observed currentdata corruption.
+Curie owns scoped codefix/focused tests after frozen capture ended; Parent
+freshfullQA required before its next production reuse. Old snapshot/results stay.
+Schrodinger now NEW QQQ/SPY minute-history anchor probe, three fixed dates
+each2000/2010/2020,<=8GETincl2retry/1POST/default300,900active2400end. RawM,
+no account/order/Task work; empty/ignoredkey does not prove globalhistoryfloor.
 Code5fba5cd PUSHED:190Parentserial/683Dataserial4platformskip, freshclean8
 18088pass22skip/18110collected/helper0/Ruff3sample-envCompose; source1353/250b6e74.
 Source compatibility does not qualify history horizon, units or bar finality.
 A/data/current20-stock-minute-capability-20261017-v1/recovery-r3/final-readback.json
 A/data/current20-stock-intraday-foundation-20261017-v1/assignment.json
+A/data/current20-stock-intraday-foundation-20261017-v1/engine-input.json
+A/data/current20-stock-intraday-foundation-20261017-v1/token-policy-deviation.json
+A/data/current20-stock-intraday-foundation-20261017-v1/independent-code-review/result.json
 
 Fresh20 COMPLETE6000strict adjusted daily bars/300each/latestOct15/20ready252,
 60GET/2POST aggregate. No completed page replay or old89723study/Paper swap.

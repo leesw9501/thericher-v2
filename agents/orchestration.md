@@ -1,69 +1,86 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current2026-10-17 02:49KST. ONE objective:
-current-nas-owned-model-paper-cycle-v1; unfinished owned exit/reconciliation.
-Parent owns shared policy/docs/Git/integration. A=D:/thericher-v2/model-artifacts.
-Standing private Paper authority unchanged; never live/paid/public behavior.
+Current: 2026-10-17 KST, after recovery code382638d verification.
+Latest04:17KST: peer9GPU/6LGBMCPU/3Chronos2fine-tunes all COMPLETE, no current
+training inferred from prior queue rows. NativeKIS3Ridge PREP READY, source8
+sessions being acquired. Poincare reusable capture-session implementation next;
+parent owns shared documents/Git. Earlier queue descriptions below are a
+dispatch snapshot, not instructions to repeat completed work.
+ONE company outcome: current-nas-owned-model-paper-cycle-v1.
+Parent owns direction, shared documents, integration and Git. A is
+D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk.
 
 ## Ready / Owned / Due
 
-| Owner | Actual current status | Next action |
+| Owner | Evidenced State | Next Action |
 | --- | --- | --- |
-| Parent | Collector5fba5cd pushed,1353/250b freshQA. Nightly actualcycle complete/oneownedrealizedGROSSpositive, not net/modelalpha. | Integrate research/data. Model hold contraction secondpostenablefailure exactlyrolledback; no further identical retry. |
-| Research/Kuhn | OOFtree1CPUfit/6cells and zero-fit sizing9cells complete, candidateprimariesfalse. | ONE informative next-hypothesis synthesis, not newfit yet. |
-| Engine/Lovelace | NEW depthGRU/TCN/patchTransformer allocated; actualGPU44percent/2280MiB at17:47UTC. | Complete/resume exact checkpoints within9fits12attempts/512maxINNER40/3600active10800end; retain failures. |
-| Review/Curie | Chronos newindependent63comparisons PASS, oldpartials unchanged. | Independent sizing9cells, then read-only bounded postenable-guard classification. |
-| Data/Schrodinger |45462dailybars complete. Current20minute actual288GET/1POST/287pages/20freshheads at17:46UTC, collector alive. | Continue owned602GET capture/readback, preserve rawD/derivedA and originalcaps. |
-| Validation/Poincare | OOFtree independent PASS1native restore/5922rows/6cells, nofit/GPU; primaryfalse preserved. | Read-only changedcollector code review, no capture/Repo edits. |
-| Model Paper | Existing finite Task/image87697f8e enabled; post-reboot source-bound hold receipt. Eight retained exact FULLfills, not fresh custody. | Existing slots recover same requests; owned exit fromOct21 USOPEN. |
-| Nightly Paper | Actual30433095 00:52KST complete/exact_cycle_complete:1auth14GET/zero neworders; nativecomplete/1ack FULLSELL/all28terminal/noreservedBUY. | Existing normal nextMon23:50KST only; no further technical continuation or basis reset. |
-| Accounting83 | Exact Oct16 05:33KST r6 receipt:Oct15mark/readback_complete/cohort no_owned_intent. | Existing exitOct17 04:50/05:00KST and accounting05:25; oldindex2 unknown. |
-| Goal97 | Original separate owner/history/basis retained. | EntryOct19 22:30/22:40KST, exitOct24 04:50/05:00; no adoption/replay. |
+| Parent | Recovery382638d pushed; fresh202serial/18100full22skip/helperEXIT0. Nightly exact cycle complete, one owned realized GROSS positive; not net/model alpha. | Integrate new research/data without foreground session waits. |
+| Engine/Lovelace | Depth9CUDAfits/292epochs closed, one budget-invalid. Masked transfer33conditionalcells/profile12SYNsteps closed, zero new fits. | NEW peer-context ranking9intendedGPUfits; freeze/nativeSYN before market. No running-GPU claim from preparation. |
+| Engine/Kuhn | Clock-gap explanation rejected; tree cutoff tie prior demonstrated, old results unchanged. | NEW isolated LightGBM rank/regression6intendedCPUfits; actual counts await its ledger. |
+| Data/Schrodinger | Daily45462bars and minute43200native/35840RTH complete/released. Six old QQQ/SPY anchors native-empty, not a global floor. | NEW2026 recent-horizon bracket8GET+2retry/oneclient; named60-second calibration and immutable imports. |
+| Validation/Curie | Recovery source/native checks closed; independent six-module Data readback PASS. | Independently check masked transfer33conditionalcells with its explicit new ABI/clock assumptions. |
+| Review/Poincare | Recovery20checks/14old-code negatives PASS; depth9CPUrestores/30knowncells PASS. | Extend safe Task metadata audit beyond project-name prefix; no mutations or invocations. |
+| Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
+| Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
+| Accounting83 | Retained Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. | Existing Oct17 04:50/05:00KST exit and05:25 accounting; oldindex2 unknown. |
+| Goal97 | Original distinct owner/history/basis preserved. | EntryOct19 22:30/22:40KST, exitOct24 04:50/05:00; no adoption/replay. |
+
+Prepared roles are not permanent LLMs or proof of active workers. Before a new
+dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
 
-Reboot is an interruption, not campaign completion. Completed fits/checkpoints,
-charged attempts and original deadlines persist. Current bottleneck is an actual
-Paper recovery fault now closed by actual same-identity reconciliation, not
-approval/data completeness/profitability. Original exception UNKNOWN; successful
-later recovery does not establish a code cause. No further technical trigger.
-Company outcome still needs the eight model positions' owned exit fromOct21;
-no foreground session wait. Data capture/depthGPU/CPU independent reviews and
-next-hypothesis synthesis run independently. Original5minute validity stays.
+The company outcome awaits model-owned exit/reconciliation from Oct21, not
+human approval or research profitability. Other lanes remain ready. The
+nightly technical context closed through actual exact-identity reconciliation;
+the earlier exception is UNKNOWN, not retrospectively explained by success.
+Paper request TTL remains five minutes; token lifetime/issuance is independent.
 
-Throughput review: process reuse alone was not dominant; freshCIM/Scheduler
-queries remained94percent. COM prototype failed NextRun null-count11vs0, no
-adoption. One-line WQL-only comparison matched9SYN/2realpairs but variable2..20
-percentwarm latency benefit; commonmissingfieldgap retained, no adoption.
-Known cooldown+launch+cleanup must fit owned budgets: repeated zero-wire small
-caps closed before token/admission; directbase+900capR3 succeeded2GET/1POST.
-Never reset timing/debits or exclude unknown actors. Blank header is unknown,
-not history exhaustion. Newcollector uses actual owned due facts, not permanent
-approval holds. Role dispatch within frozen caps does not wait for Parent's
-routine reply; no foreground sleep or dummy GPU training.
+Reversible improvement: freeze the actually executed Data namespace before
+parallel production edits. Pinning an unchanged query module did not isolate
+its imported foundation helper. Parent acknowledges that dispatch conflict:
+anchor-r1 closed zero-wire on source drift, not provider failure. R2 used six
+immutable module origins and succeeded6GET/1POST; old debits were not refunded.
 
-Reversible improvement attempted: suppress five pre-exit zeroAPI repetition
-windows while preserving every exit/recovery window. FirstXMLordering bug
-fixed in source; actual retry passesXML but postenableguard fails, exactrollback
-proven. Do NOT consume this research session with repeated Scheduler attempts.
-Further capability work needs preserved originalerror/CIM evidence and its own
-bounded scope, not an assumption that disabledXML equals nativeNextRun behavior.
+A second measured bottleneck: the four-minute observer repeatedly moves the
+300-second fresh-token due time forward. Official KIS README documents1/min
+issuance. A separately named60-second calibration succeeded without pausing
+the observer/resetting marks/refreshing valid clients. Global300 default and
+frozen contracts remain unchanged; earlier out-of-scope60 use remains a
+recorded deviation, not retroactively authorized.
 
-## Evidence / Recovery
+Conditional hold-schedule contraction was tried twice. First XML child-order
+failure was repaired in source; retry passed XML but a post-enable guard failed,
+and the catch masked its exact cause. Both restored exact originals. Preserve
+every exit/recovery slot; no repeated install without new first-cause evidence.
 
-- A/execution/tonight-current-paper-readiness-20261016-v1/result.json
-- A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/restart-interruption.json
-- A/strategy-research/listwise-risk-allocation-preparation-20261016-v1
-- A/data/liquid-core-fresh-research-input-20261016-v1/assignment.json
-- A/execution/accounting83-owned-outcome-20261016-v1/result.json
-- A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1
-- A/execution/nightly-terminal-incomplete-deployment-20261016-v1
+Project console audit:42tasks,18future actions allpythonw;12console-enabled
+tasks have no next run and expired bounds, preserved as recovery-unknown.
+No observed human-window cause or unsupported quiet-launch patch is claimed.
+The broader metadata-only inventory may identify missed verified owners.
 
-Current committed5fba5cd source authority1353/250b6e74:190Parentserial plus
-Data683/4platformskip, clean8full18088pass22skip/18110collected/402.989sec/
-helper0/Ruff3sample-envCompose. Docs/external work reuses only unchanged exact
-source/control digests; fresh external checks do not substitute repo tests.
-Prior detailed projections remain in Gitae5e5f7 and immutable artifacts.
-Closedfamilies beforedepth155fit versions(92CUDA+63CPU), not architectures;
-publicforecasts notfits/currentdepth count awaitsledger. No qualified alpha. Fees/settledcash/net
-broker PnL unknown. No operator decision currently identified.
+Dispatch independent code review during focused feedback when feasible, so
+recovery fixes can join one full QA batch. Do not turn that improvement into a
+new human approval or an unrelated lane hold.
+
+## Evidence / Verification
+
+- A/verification/stock-intraday-recovery-20261017-v1/authority.json
+- A/data/current20-stock-intraday-foundation-20261017-v1/engine-input.json
+- A/data/current20-stock-intraday-foundation-20261017-v1/independent-data-review/completion.json
+- A/data/current20-stock-intraday-foundation-20261017-v1/independent-code-review-recovery-r1/result.json
+- A/data/spy-qqq-minute-history-anchor-probe-20261017-v1/recovery-r2/handoff.json
+- A/research/fixed50-causal-sequence-depth-development-20261017-v1/independent-review/result.json
+- A/research/current20-masked-intraday-transfer-development-20261017-v1/owner-handoff.json
+- A/execution/current-daily-gross-attribution-20261017-v1/fresh-current-r1/current-result.json
+
+Current source1353/354f4348:202serial, clean8 full18100pass22skip/18122collected,
+370.325seconds/helperEXIT0; Ruff and three sample-env Compose checks PASS.
+Docs/external work reuses only exact unchanged source/control digests. New
+external code needs its own tests; repo tests do not validate it.
+
+Closed fitted versions164=101CUDA+63CPU, including one budget-invalid checkpoint,
+not164architectures/qualified fits or current activity. New intended fits are
+not counted. No qualified alpha; broker fees/settledcash/net remain unknown.
+No operator-only decision is currently required. Detailed history stays in Git
+and immutable source roots, not duplicated as a second backlog.

@@ -8,13 +8,22 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 ## Ready / Allocated
 
+LATEST04:17KST: peer9CUDAfits/382epochs and LightGBM6CPUfits COMPLETE; independent
+checks pass. Chronos2 native domain-adaptation3CUDAfits/800steps COMPLETE,
+3selectedsafetensors/oldforecastsunchanged, lease released. No GPU numerical
+worker remains from these families. Total182versions=113CUDA+69CPU including
+one old invalid checkpoint. The queue below is historical allocation context,
+NOT authority to repeat completed jobs. NativeKIS CPU3fit implementation is
+ready but not source-bound; new data and source-information hypotheses precede
+more training. One GPU allocation/no dummy work remains policy.
+
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |TimesFM2.5/Chronos2 each126CUDAmarketbatches6048rows+1SYN COMPLETE/0fits, leases released; no dummy work. Intraday9CUDA188epochs preserved.|
-| Next depth |Lovelace owns NEW fixed50 GRU/TCN/patchTransformer family9fits12attempts/512maxINNER40/3600active10800end, nativeCUDAcheckpoint SYN first. ActualGPU44percent/2280MiB at17:47UTC; not a completed-fit count. Retained interrupted phases/checkpoints/debits never reset.|
-| CPU research |New trade-and-close45cells CLOSED42conditionalcomplete/3unknown; independent45/68496NAVpoint check PASS/0fits/GPU, CPU2RAM4 verified/released. Prior27/18/full-OPEN metric and6vs4RAMfinding unchanged; producer6GiB verified.|
-| Data |Schrodinger current20 minute collector active,602GETcap/oneauth. Daily fixed50 closed45462bars, not a source swap into existing studies. No GPU.|
-| Strategy |LongNAS independent687pins/108cells PASSED,0restored model calls. Dirac completed MTFcausal feature adapter/420cache arrays/0fits. Descartes quiet tests/actual receipt CLOSED, startup visibility unknown.|
+| GPU |Depth9CUDAfits/292epochs CLOSED; onebudgetinvalid,8usable. Profile12syntheticsteps CLOSED/no marketfits. Both leases released. TimesFM/Chronos forecasts immutable.|
+| Next GPU |Lovelace NEW fixed50 peer-context ranking family: independentMLP/DeepSets/crossassetattention,9intendedfits12attempts,512maxINNER40/1800active7200end. Preparation is not runningGPU proof; oneexclusiveallocation/nativeSYNfirst.|
+| CPU research |Kuhn NEW isolated LightGBM LambdaRank/L2 comparison6intendedfits7attempts/600active3600end; no shareddependency/runtime replacement. Actual fits await its ledger. Maskedtransfer33conditionalcells COMPLETE0fits, source/ABI assumptions retained.|
+| Data |Current20minute COMPLETE43200native/35840RTH/20x4full390, released. Schrodinger NEW QQQ/SPY recenthorizon bracket, noGPU; oldanchors6empty not globalhistoryfloor.|
+| Validation |Poincare frozen collector recoverypatch independentreview; Parent202serial/freshclean8fullQA running. No productionwrite owner active.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
 Last measured hardware:RTX4090/24564MiB/driver610.88; RAM63.8GiB/36.6GiBfree.
@@ -35,9 +44,10 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
 
 ## Custody To Preserve
 
-- Closed families before current depth:155 fitted VERSIONS(92CUDA/63CPU),
-  including ONE new OOF tree, not155architectures. Do not add intended/in-flight
-  depth fits before its exact completed ledger is available.
+- Closed fitted VERSIONS164(101CUDA/63CPU), including ONE budget-invalid depth
+  TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
+  This is not164architectures, all qualified fits or currentGPU activity. New
+  peer/ranker intentions are not counted before actual completed ledgers.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent

@@ -67,15 +67,21 @@ that exhausted installer root. Preserve exit/recovery windows and do not
 manually invoke a Task. Diagnostic evidence/rollback:
 A/infra/model-pre-exit-hold-schedule-review-20261017-v1/retry-r1.
 
-Current20-stock-intraday-foundation collector belongs to Schrodinger:
+Current20-stock-intraday-foundation collector CLOSED; never restart completed capture:
 A/data/current20-stock-intraday-foundation-20261017-v1/assignment.json.
 One reused client/602GET including2technical retries, fresh20heads then RTH
 timestamp backfill, rawdata under M. Do not launch a second collector or rerun
 its creator. Inspect cursor only as counts/status/next_due; do not dump retained
 query dictionaries/raw rows. Unit/bar-end/model-transfer eligibility is a
 separate measured claim, not granted by successful HTTP or code tests.
-Code5fba5cd fresh compatibility:190serial/18088fullpass22skip/clean8helper0,
-Ruff/default-research-accounting Compose using .env.example. Source1353/250b6e74.
+Original5fba5cd has its own frozen190serial/18088fullpass22skip authority.
+Current recovery382638d PUSHED: source1353/354f4348,202Parentserial/18100fullpass/
+22skip/18122collected/370.325sec/clean8helperEXIT0/Ruff3sample-envCompose.
+Independent20patchedchecks+14old-code negatives PASS. Next collectors need
+their OWN frozen source/native checks; source tests are not deployment.
+Oldexternalreadback.py imports mutableSRC despite archive hashes: do NOT rerun
+it after source changes. Use already sealed independent-data-review frozen
+six-module results/recipes, preserving old outputs. No implicit .env loads.
 
 ### Previous Nightly Recovery (4fd7, Historical)
 

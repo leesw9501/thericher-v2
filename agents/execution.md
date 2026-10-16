@@ -28,6 +28,13 @@ global/portfolio/net PnL; fees/settlement unknown. Old historical-hash attempt
 remains CLOSEDunknown. Current result:
 A/execution/current-daily-gross-attribution-20261017-v1/fresh-current-r1/current-result.json
 
+Fee/settlement source-capability review closed: official pinned KIS matrix does
+not mark Paper support for per-fillfee/transaction-history/settlement endpoints;
+supported fillhistory is gross, accountaggregates not owned settlement proof.
+No new KIScall recommended/performed, not a measured endpoint rejection or
+zero-fee claim. Source evidence:
+A/execution/current-paper-fee-settlement-capability-20261017-v1/CAPABILITY.md
+
 Model hold-schedule contraction was NOT adopted. First attempt failed XML child
 ordering and restored exact original. Corrected retry-r1 actual17:46UTC passed
 all three XML/proof stages but failed a later guard; original exception was

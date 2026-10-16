@@ -7,6 +7,22 @@ Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
 ## Current Oct17 Parallel Continuation
 
+LATEST04:17KST supersedes earlier allocated/queued projections below.
+Peer-context9CUDAfits/382epochs/3788updates COMPLETE; independent9CPUrestores/
+35532scores/378weights/27newcells+45controls PASS, maxNAV3.55e-15. One full-rank
+change but zero Top5 allocation changes; no bitexactCUDAparity. Primary0fold.
+LightGBM4.6.0 isolated6CPUfits/18cells COMPLETE, independent6Boosterrestores/
+11844bitexactEVALscores/4482NAV PASS, primaryfalse/false/true/familyfalse.
+Chronos2 firstnative financial fine-tuning3CUDAfits/800steps/18knowncells
+COMPLETE, selected50/100/50 by INNERpatience4, no marketretry or oldforecast
+rerun. Source forecast/payoff/corpus limits remain; independent review next.
+Closedversions182=113CUDA+69CPU including1oldbudgetinvalid, not architectures.
+No repeated completed fits; extra epochs are not assumed to create signal.
+NativeKIS price-onlyRidge30/120/300 PREP READY/0marketfit/0sourcebound; Data
+collects fixed8sessions, conditional native-label/unit assumptions, no oldABI
+dependency. XLK loading-interaction proposal needs NEWsource continuity study;
+unknown Cboe AI-use rights exclude that source only. No forced GPU workload.
+
 Fixed50 residual3Ridge/3HGB/3MLP COMPLETE9CPUfits/9attempts/72knowncells,
 66.356active/2240.829end. Independent45462source/15886feature-targetrows/
 9native restores/17766scores/72cells/17928NAV/432metrics PASS/max3.11e-15,
@@ -26,13 +42,16 @@ Neither independent reader repeated forecasts or proves nativeforecast parity.
 Trusted checkpoints precede targets; corpus unknown/CLOSEforecast vsOPENpayoff
 mismatch/current-listing/PIT/nonTR limitations remain. No Paper adoption.
 
-Allocated DEPTH: Lovelace NEW fixed50 causal GRU/TCN/patchTransformer3configs x3folds,
-9intended/12attempts,512max/INNER40/LR/bestrestore,3600active/10800end; exact
-completed-epoch checkpoints for reboot, one measured GPU allocation. Actual
-17:47UTC GPU44percent/2280MiB observed; not proof of convergence/completion.
-Two interrupted native phases/retained checkpoints and debits remain in its
-technical-repair lineage. No duplicate completed fits; Parent awaits final
-counts rather than inferring them from GPU utilization or intended configs.
+DEPTH COMPLETE9CUDAfits/11attempts/2technicalretries/292completeepochs/
+3866updates,942.234ownedactive/1941.464end within3600/10800; GPUlease released.
+One f1TCN303.313sec exceeded frozen300fitcap: numeric checkpoint retained but
+six dependent TCN/fusion economics excluded/UNKNOWN; eight usable fits. No
+duplicate completed fits or retrospective budget relaxation. Thirty knownnew
+cells/6unknown/45controls, primaryPATCH0fold/familyfalse. INNER beats constant
+only1/9, not convergence. RetainedTCNprogress~29sec/epoch vsGRU/PATCH~.4sec;
+checkpointspanproxy~.25sec is not a CUDA profiler. Poincare independent queued.
+Lovelace may run separate <=12step synthetic native timing probe to guide NEW
+campaign batching, not refit completed data/models or force utilization.
 
 OOF shallow tree COMPLETE1CPUfit/3948f1-f2rows/6positive-growthf3cells; learned
 two splits use ONLY RidgeRank+pastSPYregime, not demonstrated multi-expert fusion.

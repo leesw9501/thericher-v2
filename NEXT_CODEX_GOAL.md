@@ -62,57 +62,57 @@ delegated authority; never substitute an unknown request or expand capital.
 
 ## Ready Parallel Work
 
-- Engine recovered original3Ridge without duplicate fits and completed6CUDA/
-  164epochs/6341updates. Ninefit/90known-cell family primary false. Preserve all
-  old clocks/results; independent9CPUrestore/90cells passed. NEW zero-fit fixed
-  mean/median fusion36cells independently passed/noDDbenefit, old90unchanged.
-- Data fresh20 COMPLETE:6000strict bars/300each/latestOct15/20ready252/zero gaps;
-  total60GET/2POST, no repeated newest pages. Old89723training/current Paper
-  inputs unchanged. This is a NEXT source, not a silent fit/Paper substitution.
-- Exact f3 current20 runtime scoring COMPLETE60expert scores/4weight vectors/
-  zero fits or broker intents. Availability AFTEROPEN, no historical/prospective
-  performance or Paper adoption. Fixed20 intraday family COMPLETE12fits:
-  3CPU/9CUDA LSTM-GRU-TCN,188completeepochs,99knowncells/zero unknown;
-  primaryfalse allfolds. Independent5040features/12restores/2400EVALscores/
-  99cells/17127NAVpoints PASS/zero changedTop5/zero fits or GPU.
-- Fixed50source45462bars/min737max993/50ready252 after400newGET plus60reused;
-  13knowninvalid gaps retained. OriginalplanCOMPLETE, no automatic expansion.
-  r1overrun54.250sec retained; r2within452.101/600 and r3within313.250/600.
-- Strategy metadata26pins/46checks/three consumed attempts reconciled without
-  rerun; original canonical READY retained, versioned reconciled pointer used.
-- Fixed50 residual family COMPLETE9CPUfits/72knowncells; independent9restores/
-  17766scores/17928NAV/432metrics pass. Primaryfalse/false/true/familyfalse;
-  f2/f3HGB constant, not learned skill. No old fit repeated.
-- TimesFM2.5 and Chronos2 frozen direct/Ridgeblend each COMPLETE6048CUDArows/
-  126marketbatches/0fits/retries/18newcells+45controls, primary1of3/familyfalse.
-  TimesFM and newChronos independent retained-array checks PASS. Chronos old
-  partial/foreignexpectedpattern reader failure stays immutable; no native
-  forecast-parity claim. Import failures do not count as market retries.
-  Neither is current Paper adoption or independent alpha.
-- Engine may run NEW finite sequence-depth family3fixed GRU/TCN/patchTransformer
-  configs x3folds<=9fits/12attempts,512maxepochs/INNER40/bestrestore;3600active/
-  10800end, oneGPUlease/checkpoints. ActualGPUactive17:47UTC. Completed fits
-  never repeated after native interruption; all original failures/debits stay.
-  CPU shallowOOFfusion COMPLETE1fit/6cells/primaryfalse; learned RidgeRank+
-  regime, not demonstrated multi-expert fusion. Zero-fit sizing9cells complete,
-  bothprimaryfalse; fixedhalf descriptive control is not fresh selection.
-  Independent checks and ONE informative next-hypothesis synthesis parallel.
-- Actual AAPL stock-minute2pagewitness:240unique rows (204RTH/36preopen),735
-  checks; aggregate3GET2POST includes originalhead. Headerblank not exhaustion;
-  further horizon/units/bar-end/PIT unqualified. New opt-in explicit20target
-  historical-timestamp interface/collector is authorized:<=602GET incl2retries,
-  oneauth reusedclient,3600active/14400end, marketsD/artifactsA, freshheads before
-  RTHbackfill/durablecursors. ExistingETF/IWM defaults remain unchanged. Focused
-  tests/frozen source before capture. Actual17:46UTC288GET/1POST/287pages/
-  all20heads/PIDalive, not complete-window qualification. Source5fba5cd pushed
-  with freshfullQA. Stopexactno-progress cursor/acceptedfailure, no floods.
-- Conditional model hold-window contraction NOT adopted: firstchildorder
-  failure and corrected retry-r1 post-enable guard failure each restored exact
-  original4min schedule. Second original exception masked by catch; do not
-  assert its actual historicalCIM value or retryidentically. All original exit/
-  recovery triggers preserved. No manualTask invocation/new opportunity.
-- Parent integrates/deploys/commits; no foreground session/quota sleep. A local
-  source/quality/review failure does not block another ready delegated lane.
+LATEST04:17KST overrides earlier dispatch projections in this section:
+peer9CUDA/6LightGBMCPU/3Chronos2nativefine-tunes COMPLETE; never rerun them.
+Peer and LightGBM independent checks passed; Chronos2 retained-output review
+next. All familyprimaryfalse, not all policies losing or a Paper prohibition.
+Current ready packages: missingOct6-9/reusedOct12-15 native8session source,
+then price-only Ridge30/120/3003fit consumer; XLK conditional source-continuity
+diagnostic; reusable privateData capture-session library (not a new platform).
+Cboe AI-use rights unresolved means exclude source, not buy or stop company.
+Closed fitversions182 inclone oldinvalid, not182architectures or activejobs.
+
+- Engine/Lovelace: NEW peer-context ranking family, three fixed independent
+  MLP/DeepSets/crossassetattention configs x3folds, <=9fits/12attempts,
+  512maxepochs/INNER40,1800active/7200end. Same fixed50 source,14past features,
+  chronological mature21day targets, fair cutoffties, native learnability/
+  permutation/checkpoint SYN before market. OneGPUallocation; preparation is
+  not proof of running training. Old completed fits are never repeated.
+- Engine/Kuhn: NEW objective-aligned LightGBM LambdaRank/L2 comparison on same
+  features/source/splits, <=6fits/7attempts,1024maxrounds/INNER50,600active/
+  3600end, CPU4/RAM8/GPU0. Only official compatible no-cost research-isolated
+  dependency; no shared runtime replacement. Freeze then run autonomously.
+- Data/Schrodinger: NEW QQQ/SPY recent minutehorizon bracket Jan6/Sep1/Oct1/
+  Oct8,2026;8normalGET+2exactretry/oneauth,600active/1800end. Use attested
+  immutable6module namespace and explicit source-based60 token calibration,
+  shared atomicgate/2second GETpace/owned preemption. This does NOT change
+  global300 default, old contracts or earlier recorded60 policy deviation.
+  Six2000/2010/2020anchors were nativeempty; no globalhistoryfloor inferred.
+- Validation/Curie: independent frozen masked intraday transfer33conditional
+  cells/264weights/1632CPUmodelrows; no fit/GPU/API or oldABI promotion.
+  Volumeablation and assumed label-as-start/completeness/consistentpriceunits
+  remain explicit adaptive-study assumptions, not source qualification.
+- Current20minute source COMPLETE360GET/1POST/0retry/43200native rows/
+  35840RTH; all20 have390labels eachOct12-15, currentOct16partial excluded.
+  Independent source consistency PASS; unit/bar-end/PIT still unqualified.
+  Frozen daily50 source45462bars/13knowninvalid gaps unchanged. No silent
+  source swap into existing models or Paper.
+- DEPTH COMPLETE9CUDAfits/292epochs/3866updates, one budget-invalid TCN;
+  eight usable fits,30knowncells/6UNKNOWN/45controls. Independent PASS,
+  PATCHprimary0fold/familyfalse. CPU residual/OOFtree/foundation/fusion/sizing
+  studies closed; evidence in HANDOFF, not a fresh replication/alpha claim.
+  Cutoff-tie ablation proves lexical portfolio prior materially affects the
+  shallowtree result; no oldregrade, winnerselection or forced Paper switch.
+- Collector recovery382638d fixes owner-loser state overwrite and premature
+  pending clear, preserves exact failed-attempt debits, restores default300.
+  No restart of completed capture. Next consumers use their own frozen source;
+  do not hash archives while executing mutable repository modules.
+- Model hold-window contraction NOT adopted; both attempts rolled back exactly.
+  Original4min cadence/all exit windows remain. No identical retry or manual
+  Task invocation.42Taskaudit found18future actions allpythonw, not an observed
+  human-window cause; consumed/unknown recovery tasks were preserved.
+- Parent integrates/commits; ready independent lanes continue during worker
+  cooldowns. No foreground market/quota sleep or routine approval hold.
 
 ## Evidence And Verification
 
@@ -122,24 +122,13 @@ A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-ha
 A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/completion.json
 A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/SAFE_READY.reconciled.json
 
-Previous827d source retains1346/7a184596 authority503serial/16991full22skip.
-Latest committed research helperf50770b source1348/73aef779:46serial, clean8full
-17016pass22skip/17038collected/371.76sec/helper0/Ruff/three sample-env Compose.
-A/verification/training-checkpoint-recovery-20261016-v1/authority.json.
-Typed diagnostics d0ff5f8 pushed with exact1348/c7d511a9 authority:1384serial,
-18052fullpass22skip/18074collected/417.928sec/clean8helper0/Ruff/three Compose.
-Newrelease30433095 installed with ONE15:52UTC/00:52KST technicalcontinuation;
-all original triggers preserved,15:42neverinstalled. Actualexactcyclecomplete
-confirmed by public source chain and strict native-v2 reader, no new order.
-Code5995171/c4bd04f/f50770b/d0ff5f8 pushed. External code needs own focused/native checks; docs/external
-work may reuse full authority only with exact source/control digests unchanged.
-Company outcome still unfinished. Integrate material packages, verify/commit/
-push and CONTINUE the active human request while delegated work is ready.
-Replace with ONE next company outcome only after actual current closure.
-
-Latest verified/pushed stockprobe d1a0ed2:1349/5b73cb0e,175Parentserial plus
-Data668/4platformskip, clean8full18073pass22skip/18095collected/368.916sec/helper0/
-Ruff/default-research-accounting sample-env Compose. NEW genericcollector
-5fba5cd PUSHED:1353/250b6e74 source,190Parentserial/683Dataserial4platformskip,
-freshclean8full18088pass22skip/18110collected/402.989sec/helper0/Ruff3Compose.
-A/verification/stock-intraday-foundation-20261017-v1/authority.json.
+Current code382638d PUSHED:1353sources/354f4348,202Parentserial/freshclean8
+full18100pass22skip/18122collected/370.325sec/helperEXIT0; Ruff and default/
+research/accounting Compose using .env.example PASS. Independent patch20checks
+and14old-code negatives PASS. No Paper image or deployed strategy change.
+A/verification/stock-intraday-recovery-20261017-v1/authority.json.
+Older authorities/caps/results remain in Git and immutable roots. External
+code requires its own focused/native checks; source-only tests do not prove
+deployment/fill/profit. Docs reuse only exact unchanged source/control digests.
+Continue ready delegated work. Replace this file with ONE next company outcome
+only after actual owned model exit/reconciliation, not a package commit/due time.

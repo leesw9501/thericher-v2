@@ -8,6 +8,17 @@ History remains in Parent Git27dface and immutable external roots.
 
 ## Current Consumers
 
+Latest Oct17: chosen incremental-info proposal is lagged XLK-relative rotation
+times stock-specific past XLK loading; a shared macro column alone cannot alter
+linear cross-sectional ranks. Exact request611sessions2024-04-09..2026-09-15,
+official issuer2:1 split2025-12-05. NEW private KIS source under existing
+authority, not reused unknown oldcache. Captured611sessions exist; frozen
+exactsplitratio witness failed, new offline continuity diagnostic only, no
+rescale/oldregrade/source-wide hold. Cboe AI licensing applicability unclear:
+exclude VIX, no paid commitment or unsupported rights assumption.
+A/strategy-research/fixed50-incremental-market-context-20261017-v1/data-request-r1/request.json
+Current source review below is historical consumed context, not a new queue.
+
 Curie NEW listwise-ranking/causal-risk allocation kernels are ready for the
 interrupted Engine family after metadata-only reconciliation. Original46
 checks/three synthetic attempts remain consumed; zero new numerical attempt,
