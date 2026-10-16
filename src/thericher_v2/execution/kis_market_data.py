@@ -61,7 +61,9 @@ KisPaperMinuteRequestIntent = Literal[
     "iwm_temporal_reach_probe_head",
     "iwm_temporal_reach_probe_continuation",
 ]
-KisPaperMinuteRoute = Literal["standard", "iwm_temporal_reach_probe", "stock_capability_probe"]
+KisPaperMinuteRoute = Literal[
+    "standard", "iwm_temporal_reach_probe", "stock_capability_probe", "historical_timestamp"
+]
 # Daily history has a deliberately separate contract from the minute probe.
 # QQQ/NAS was observed by the v1 private cache. NYS and AMS remain available
 # for empirical ETF venue checks; the active backfill mapping records only a
@@ -275,6 +277,7 @@ class KisMarketDataRequest:
         hash=False,
     )
     stock_minute_query: KisPaperStockMinuteQuery | None = field(default=None, repr=False)
+    historical_minute_query: KisPaperHistoricalMinuteQuery | None = field(default=None, repr=False)
 
     def __post_init__(self) -> None:
         if self.daily_symbol_exchanges is not None:
@@ -527,6 +530,41 @@ class KisPaperStockMinuteQuery(KisPaperMinuteQuery):
 
 
 @dataclass(frozen=True)
+class KisPaperHistoricalMinuteQuery(KisPaperMinuteQuery):
+    """Opt-in fixed US target map; KEYB is an explicit lookup, not a header promise."""
+
+    approved_symbol_exchanges: Mapping[str, frozenset[str]] = field(default_factory=dict)
+    minute_interval: int = 1
+
+    def __post_init__(self) -> None:
+        scope = _freeze_daily_symbol_exchanges(self.approved_symbol_exchanges)
+        object.__setattr__(self, "approved_symbol_exchanges", scope)
+        if (
+            type(self.minute_interval) is not int or self.minute_interval != 1
+            or self.exchange not in scope.get(self.symbol, ())
+            or any(
+                venue not in {"NAS", "NYS", "AMS"}
+                for venues in scope.values() for venue in venues
+            )
+            or self.request_intent != "standard"
+            or type(self.include_previous_day) is not bool
+        ):
+            raise ValueError("historical minute scope is invalid")
+        if self.continuation_key is None:
+            if self.continuation_next is not None or self.include_previous_day:
+                raise ValueError("historical minute head is invalid")
+        else:
+            if (
+                not isinstance(self.continuation_key, str)
+                or len(self.continuation_key) != 14
+                or self.continuation_next != "1"
+                or not self.include_previous_day
+            ):
+                raise ValueError("historical minute timestamp lookup is invalid")
+            datetime.strptime(self.continuation_key, "%Y%m%d%H%M%S")
+
+
+@dataclass(frozen=True)
 class KisPaperDailyQuery:
     """Typed raw daily-query shape for the private historical cache lane."""
 
@@ -770,7 +808,10 @@ class KisPaperMinutePage:
             and isinstance(self.query, KisPaperStockMinuteQuery)
             and self.query.continuation_key is None
         )
-        if not self.bars and not empty_stock_head:
+        empty_historical_lookup = not self.bars and isinstance(
+            self.query, KisPaperHistoricalMinuteQuery
+        )
+        if not self.bars and not (empty_stock_head or empty_historical_lookup):
             raise KisPaperMarketDataError("minute_response_empty")
         if len(self.bars) > KIS_PAPER_MINUTE_MAX_ROWS:
             raise KisPaperMarketDataError(
@@ -794,7 +835,7 @@ class KisPaperMinutePage:
             )
         if (
             (self.next_cursor == "1") != (signal == "recognized_continuation")
-            and not (empty_stock_head and self.next_cursor is None)
+            and not ((empty_stock_head or empty_historical_lookup) and self.next_cursor is None)
         ) or (
             signal == "recognized_terminal" and self.next_cursor is not None
         ):
@@ -817,17 +858,26 @@ class KisPaperMarketDataClient:
         max_minute_page_attempts: int = KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS,
         max_daily_page_attempts: int = KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS,
         minute_route: KisPaperMinuteRoute = "standard",
+        minute_symbol_exchanges: Mapping[str, frozenset[str]] | None = None,
     ) -> None:
         if type(max_minute_page_attempts) is not int or max_minute_page_attempts < 1:
             raise ValueError("max_minute_page_attempts must be a positive integer")
         if type(max_daily_page_attempts) is not int or max_daily_page_attempts < 1:
             raise ValueError("max_daily_page_attempts must be a positive integer")
-        if minute_route not in {"standard", "iwm_temporal_reach_probe", "stock_capability_probe"}:
+        if minute_route not in {
+            "standard", "iwm_temporal_reach_probe", "stock_capability_probe", "historical_timestamp"
+        }:
             raise ValueError("minute route is not supported")
         if minute_route == "iwm_temporal_reach_probe" and max_minute_page_attempts != 2:
             raise ValueError("IWM temporal-reach probe requires exactly two minute attempts")
         if minute_route == "stock_capability_probe" and max_minute_page_attempts != 2:
             raise ValueError("stock capability requires exactly two minute attempts")
+        if (minute_route == "historical_timestamp") != (minute_symbol_exchanges is not None):
+            raise ValueError("historical minute route requires an explicit target map")
+        self._minute_symbol_exchanges = (
+            _freeze_daily_symbol_exchanges(minute_symbol_exchanges)
+            if minute_symbol_exchanges is not None else None
+        )
         self._config = config
         self._transport = transport
         self._max_minute_page_attempts = max_minute_page_attempts
@@ -863,7 +913,18 @@ class KisPaperMarketDataClient:
     ) -> KisPaperMinutePage:
         if self._minute_page_attempts >= self._max_minute_page_attempts:
             raise KisPaperMarketDataError("minute_page_limit_exceeded")
-        if self._minute_route == "stock_capability_probe":
+        if self._minute_route == "historical_timestamp":
+            if not isinstance(query, KisPaperHistoricalMinuteQuery) or (
+                query.approved_symbol_exchanges != self._minute_symbol_exchanges
+            ):
+                raise KisPaperMarketDataError("historical_minute_scope_mismatch")
+            if query.continuation_key is not None and query.continuation_key >= datetime.now(
+                ZoneInfo("America/New_York")
+            ).strftime("%Y%m%d%H%M%S"):
+                raise KisPaperMarketDataError("historical_minute_past_timestamp_required")
+        elif isinstance(query, KisPaperHistoricalMinuteQuery):
+            raise KisPaperMarketDataError("historical_minute_route_required")
+        elif self._minute_route == "stock_capability_probe":
             if not isinstance(query, KisPaperStockMinuteQuery):
                 raise KisPaperMarketDataError("stock_minute_typed_query_required")
             if self._minute_page_attempts == 0:
@@ -896,6 +957,9 @@ class KisPaperMarketDataClient:
             method="GET",
             url=f"{self._config.base_url}{KIS_PAPER_MINUTE_PATH}",
             stock_minute_query=query if isinstance(query, KisPaperStockMinuteQuery) else None,
+            historical_minute_query=(
+                query if isinstance(query, KisPaperHistoricalMinuteQuery) else None
+            ),
             headers={
                 "authorization": f"Bearer {access_token}",
                 "appkey": self._config.app_key,
@@ -949,7 +1013,9 @@ class KisPaperMarketDataClient:
             continuation_signal = "blank_or_absent"
         else:
             continuation_signal = "unrecognized_nonblank"
-        if not rows and isinstance(query, KisPaperStockMinuteQuery):
+        if not rows and isinstance(
+            query, (KisPaperStockMinuteQuery, KisPaperHistoricalMinuteQuery)
+        ):
             next_cursor = None
         page = KisPaperMinutePage(
             query=query,
@@ -958,6 +1024,8 @@ class KisPaperMarketDataClient:
             more=str(output1.get("more", "")).strip(),
             continuation_signal=continuation_signal,
         )
+        if self._minute_route == "historical_timestamp":
+            _validate_historical_minute_page(page)
         if self._minute_route == "stock_capability_probe":
             stamps = [row.exchange_date + row.exchange_time for row in page.bars]
             korea_stamps = [row.korea_date + row.korea_time for row in page.bars]
@@ -1472,6 +1540,11 @@ def _validate_request(
     daily_adjustment_modes: frozenset[str] = KIS_PAPER_DAILY_DEFAULT_ADJUSTMENT_MODES,
 ) -> None:
     parsed = urllib.parse.urlparse(request.url)
+    if request.historical_minute_query is not None and (
+        request.method != "GET" or parsed.path != KIS_PAPER_MINUTE_PATH
+        or request.stock_minute_query is not None
+    ):
+        raise KisPaperMarketDataError("request_not_allowlisted")
     if request.stock_minute_query is not None and (
         request.method != "GET" or parsed.path != KIS_PAPER_MINUTE_PATH
     ):
@@ -1529,6 +1602,16 @@ def derive_kis_paper_minute_continuation_key(page: KisPaperMinutePage) -> str:
 def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
     query = request.query
     stock = request.stock_minute_query
+    historical = request.historical_minute_query
+    if historical is not None and (
+        not isinstance(historical, KisPaperHistoricalMinuteQuery)
+        or query.get("SYMB") != historical.symbol
+        or query.get("EXCD") != historical.exchange
+        or query.get("KEYB") != (historical.continuation_key or "")
+        or query.get("NEXT") != (historical.continuation_next or "")
+        or query.get("PINC") != ("1" if historical.include_previous_day else "0")
+    ):
+        return False
     if stock is not None and (
         not isinstance(stock, KisPaperStockMinuteQuery)
         or query.get("SYMB") != stock.symbol
@@ -1544,7 +1627,7 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
         or request.headers.get("custtype") != "P"
         or query.get("AUTH") != ""
         or (
-            stock is None
+            stock is None and historical is None
             and query.get("EXCD")
             not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(str(query.get("SYMB")), frozenset())
         )
@@ -1586,6 +1669,25 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
 
 def _is_minute_current_head_only_target(*, symbol: str, exchange: str) -> bool:
     return (symbol, exchange) in KIS_PAPER_MINUTE_CURRENT_HEAD_ONLY_TARGETS
+
+
+def _validate_historical_minute_page(page: KisPaperMinutePage) -> None:
+    stamps = [row.exchange_date + row.exchange_time for row in page.bars]
+    korea = [row.korea_date + row.korea_time for row in page.bars]
+    if (
+        len(stamps) != len(set(stamps)) or len(korea) != len(set(korea))
+        or (page.query.continuation_key is None and stamps and len({s[:8] for s in stamps}) != 1)
+        or not any(stamps == sorted(stamps, reverse=r) and korea == sorted(korea, reverse=r)
+                   for r in (False, True))
+        or (stamps and page.query.continuation_key is not None
+            and max(stamps) > page.query.continuation_key)
+    ):
+        raise KisPaperMarketDataError("historical_minute_continuity_invalid")
+    for local, korean in zip(stamps, korea, strict=True):
+        x = datetime.strptime(local, "%Y%m%d%H%M%S").replace(tzinfo=ZoneInfo("America/New_York"))
+        k = datetime.strptime(korean, "%Y%m%d%H%M%S").replace(tzinfo=ZoneInfo("Asia/Seoul"))
+        if x.timestamp() != k.timestamp():
+            raise KisPaperMarketDataError("historical_minute_clock_mismatch")
 
 
 def _is_approved_daily_request(
