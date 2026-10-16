@@ -5,6 +5,8 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import stat
+import uuid
 from collections.abc import Callable, Mapping, Sequence
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -84,6 +86,60 @@ def prior_regular_key(key: str, sessions: Sequence[Mapping[str, str]]) -> str:
     raise ValueError("calendar_bound_reached")
 
 
+class FoundationOwner:
+    """Exclusive custody for this collector's ledger and immutable page namespace."""
+
+    def __init__(self, market_root: Path) -> None:
+        self.path = Path(market_root) / "owner.lock.d"
+        self.identity: tuple[int, int] | None = None
+        self.document = dict(pid=os.getpid(), nonce=uuid.uuid4().hex, version=VERSION)
+        self.published = False
+
+    def require_held(self) -> None:
+        current = self.path.stat(follow_symlinks=False)
+        if (
+            self.identity != (current.st_dev, current.st_ino)
+            or not stat.S_ISDIR(current.st_mode)
+            or getattr(current, "st_file_attributes", 0)
+            & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+        ):
+            raise ValueError("foundation_lease_identity_changed")
+        if self.published:
+            marker = self.path / "owner.json"
+            info = marker.stat(follow_symlinks=False)
+            if (
+                not stat.S_ISREG(info.st_mode)
+                or getattr(info, "st_file_attributes", 0)
+                & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+                or json.loads(marker.read_bytes()) != self.document
+            ):
+                raise ValueError("foundation_lease_owner_changed")
+
+    def __enter__(self) -> FoundationOwner:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.path.mkdir()
+        current = self.path.stat(follow_symlinks=False)
+        self.identity = (current.st_dev, current.st_ino)
+        try:
+            atomic_json(self.path / "owner.json", self.document)
+            self.published = True
+        except BaseException:
+            self.__exit__(None, None, None)
+            raise
+        return self
+
+    def __exit__(self, *_exc: object) -> None:
+        self.require_held()
+        for name in ("owner.json", "owner.json.pending"):
+            path = self.path / name
+            if path.exists():
+                if path.is_symlink() or not path.is_file():
+                    raise ValueError("foundation_lease_file_changed")
+                path.unlink()
+        self.path.rmdir()
+        self.identity = None
+
+
 class FoundationLedger:
     def __init__(
         self,
@@ -92,6 +148,7 @@ class FoundationLedger:
         market_root: Path,
         targets: Sequence[tuple[str, str]],
         sessions: Sequence[Mapping[str, str]],
+        owner: FoundationOwner,
         normal_cap: int = 600,
         retry_cap: int = 2,
     ) -> None:
@@ -100,6 +157,10 @@ class FoundationLedger:
         if not 1 <= normal_cap <= 600 or not 0 <= retry_cap <= 2:
             raise ValueError("foundation request caps are invalid")
         self.artifact_root, self.market_root = Path(artifact_root), Path(market_root)
+        if owner.path.parent != self.market_root:
+            raise ValueError("foundation_owner_scope_mismatch")
+        owner.require_held()
+        self.owner = owner
         self.targets, self.sessions = tuple(targets), list(sessions)
         self.scope = {s: frozenset({v}) for s, v in targets}
         self.normal_cap, self.retry_cap = normal_cap, retry_cap
@@ -142,6 +203,7 @@ class FoundationLedger:
             self.save()
 
     def save(self) -> None:
+        self.owner.require_held()
         atomic_json(self.artifact_root / "cursor.json", self.state)
 
     def query(self, symbol: str, key: str | None = None) -> KisPaperHistoricalMinuteQuery:
@@ -157,7 +219,14 @@ class FoundationLedger:
     def begin_wire(
         self, method: str, *, query: KisPaperHistoricalMinuteQuery | None, retry: bool = False
     ) -> None:
+        self.owner.require_held()
+        persisted = json.loads((self.artifact_root / "cursor.json").read_bytes())
+        if self.state["pending"] is not None or persisted["pending"] is not None:
+            raise ValueError("foundation_pending_unknown")
+        failed = None
         if method == "POST":
+            if retry or query is not None:
+                raise ValueError("foundation_wire_scope")
             if self.state["POST"] >= 1:
                 raise ValueError("foundation_auth_cap")
         elif method == "GET" and query is not None:
@@ -166,6 +235,16 @@ class FoundationLedger:
             if retry:
                 if self.state["retry"] >= self.retry_cap:
                     raise ValueError("foundation_retry_cap")
+                failed = next(reversed(self.state.get("failed_attempts", [])), None)
+                if (
+                    failed is None
+                    or failed["query"] != query_document(query)
+                    or failed["GET"] != self.state["GET"]
+                    or failed["reason"] != "transport_failure"
+                    or failed.get("retry_started")
+                    or next(reversed(persisted.get("failed_attempts", [])), None) != failed
+                ):
+                    raise ValueError("foundation_exact_failed_attempt_required")
                 self.state["retry"] += 1
             else:
                 if self.state["normal_GET"] >= self.normal_cap:
@@ -174,14 +253,35 @@ class FoundationLedger:
         else:
             raise ValueError("foundation_wire_scope")
         self.state[method] += 1
-        self.state["pending"] = dict(method=method, query=query_document(query) if query else None)
+        if failed is not None:
+            failed["retry_started"] = self.state["GET"]
+        self.state["pending"] = dict(
+            method=method,
+            query=query_document(query) if query else None,
+            attempt=self.state[method],
+        )
         self.save()
 
-    def wire_finished(self) -> None:
+    def authentication_completed(self) -> None:
+        if self.state["pending"] is None or self.state["pending"]["method"] != "POST":
+            raise ValueError("foundation_pending_POST_required")
+        self.state["authenticated_POST"] = self.state["POST"]
         self.state["pending"] = None
         self.save()
 
+    def _require_pending_GET(self, query: KisPaperHistoricalMinuteQuery) -> None:
+        pending = self.state["pending"]
+        if (
+            pending is None
+            or pending["method"] != "GET"
+            or pending["query"] != query_document(query)
+        ):
+            raise ValueError("foundation_pending_exact_GET_required")
+
     def retain_raw(self, body: bytes) -> dict[str, str]:
+        pending = self.state["pending"]
+        if pending is None or pending["method"] != "GET":
+            raise ValueError("foundation_pending_GET_required")
         if len(body) > 262144:
             raise ValueError("foundation_response_size")
         path = self.market_root / "responses" / f"page-{self.state['GET']:06d}.body"
@@ -201,6 +301,7 @@ class FoundationLedger:
         *,
         calibration: bool = False,
     ) -> None:
+        self._require_pending_GET(query)
         if page.query != query:
             raise ValueError("foundation_page_query_mismatch")
         _validate_historical_minute_page(page)
@@ -250,23 +351,37 @@ class FoundationLedger:
                 if stamps
                 else "exact_cursor_empty",
             )
+        self.state["pending"] = None
         self.save()
 
     def reject(
-        self, query: KisPaperHistoricalMinuteQuery, reason: str, raw: Mapping[str, str] | None
+        self,
+        query: KisPaperHistoricalMinuteQuery,
+        reason: str,
+        raw: Mapping[str, str] | None,
+        *,
+        retryable: bool = False,
     ) -> None:
-        self.state["pages"].append(
-            dict(
-                query=query_document(query),
-                raw=raw,
-                accepted=False,
-                reason=reason,
-                capture_utc=datetime.now(UTC).isoformat(),
+        if self.state["pending"] is not None or retryable:
+            self._require_pending_GET(query)
+        outcome = dict(
+            query=query_document(query),
+            raw=raw,
+            accepted=False,
+            reason=reason,
+            capture_utc=datetime.now(UTC).isoformat(),
+            GET=self.state["GET"],
+        )
+        if retryable:
+            if reason != "transport_failure":
+                raise ValueError("foundation_technical_retry_only")
+            self.state.setdefault("failed_attempts", []).append(outcome)
+        else:
+            self.state["pages"].append(outcome)
+            self.state["cursors"][query.symbol].update(
+                status="exact_cursor_failed", failed_key=query.continuation_key
             )
-        )
-        self.state["cursors"][query.symbol].update(
-            status="exact_cursor_failed", failed_key=query.continuation_key
-        )
+        self.state["pending"] = None
         self.save()
 
 
@@ -303,13 +418,14 @@ def run_foundation(
                 return bool(page.bars)
             except KisPaperMarketDataError as error:
                 reason = str(error)
-                if (
+                retryable = (
                     reason == "transport_failure"
                     and attempt == 0
                     and ledger.state["retry"] < ledger.retry_cap
-                ):
+                )
+                ledger.reject(query, reason, raw_failure(), retryable=retryable)
+                if retryable:
                     continue
-                ledger.reject(query, reason, raw_failure())
                 return False
         return False
 

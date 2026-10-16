@@ -19,6 +19,7 @@ from thericher_v2.execution import kis_market_data as m  # noqa: E402
 from thericher_v2.execution import kis_market_data_rate_gate as gates  # noqa: E402
 from thericher_v2.execution.kis_stock_intraday_foundation import (  # noqa: E402
     FoundationLedger,
+    FoundationOwner,
     atomic_json,
     file_ref,
     observed_coverage,
@@ -26,22 +27,10 @@ from thericher_v2.execution.kis_stock_intraday_foundation import (  # noqa: E402
 )
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--contract", type=Path, required=True)
-    args = parser.parse_args()
-    artifact = args.contract.resolve().parent
-    contract = json.loads(args.contract.read_bytes())
+def _collect_owned(
+    artifact: Path, contract: dict, ready: dict, market: Path, owner: FoundationOwner
+) -> None:
     start = datetime.fromisoformat(contract["appointment_utc"].replace("Z", "+00:00"))
-    ready = json.loads((artifact / "patch-ready.json").read_bytes())
-    for path, digest in ready["source_pins"].items():
-        if file_ref(Path(path))["sha256"] != digest:
-            raise ValueError("foundation_frozen_source_changed")
-    if Path(sys.executable) != Path(sys._base_executable):
-        raise ValueError("foundation_direct_base_interpreter_required")
-    market = Path(contract["capture_root"]).resolve()
-    if not market.is_relative_to(Path("D:/market_data").resolve()):
-        raise ValueError("foundation_market_root_invalid")
     control = Path("D:/market_data/us_equities/kis_paper_private/collection-control-v1")
     probe = Path(ready["owner_probe"])
     routes = json.loads((artifact / "source-routes.json").read_bytes())["ordered_targets"]
@@ -51,6 +40,7 @@ def main() -> None:
         market_root=market,
         targets=[tuple(t) for t in routes],
         sessions=sessions,
+        owner=owner,
     )
     if ledger.state["POST"]:
         raise ValueError("foundation_prior_auth_debit_requires_new_explicit_recovery_allowance")
@@ -72,8 +62,6 @@ def main() -> None:
         )
         if key in os.environ
     }
-    lease = market / "owner.lock.d"
-    identity = None
     client = None
     request_query = None
     wire_retry = False
@@ -159,7 +147,7 @@ def main() -> None:
                 self.claimed_mark = self.snapshot().last_token_request_started_at_utc
             return claimed
 
-    token = Token(control_root=control, minimum_request_interval_seconds=60)
+    token = Token(control_root=control, minimum_request_interval_seconds=300)
     rate = gates.KisPaperMarketDataRateGate(
         control_root=control, minimum_request_interval_seconds=2, sleeper=pause
     )
@@ -214,10 +202,7 @@ def main() -> None:
                 None if last_tick is None else tick - last_tick
             )
             last_tick = tick
-            try:
-                return self.opener.open(request, timeout=min(timeout, 5))
-            finally:
-                ledger.wire_finished()
+            return self.opener.open(request, timeout=min(timeout, 5))
 
     class Transport(m.UrllibKisPaperMarketDataTransport):
         def request(self, request):
@@ -246,10 +231,7 @@ def main() -> None:
     try:
         check()
         wait_clear()
-        market.mkdir(parents=True, exist_ok=True)
-        lease.mkdir()
-        identity = lease.stat(follow_symlinks=False)
-        atomic_json(lease / "owner.json", dict(pid=os.getpid(), version=ledger.state["version"]))
+        owner.require_held()
         ledger.state.update(pid=os.getpid(), status="running", owner_released=False)
         ledger.save()
         config = m.load_kis_paper_market_data_config(
@@ -273,6 +255,7 @@ def main() -> None:
                 continue
             try:
                 client.ensure_authenticated()
+                ledger.authentication_completed()
                 break
             except m.KisPaperMarketDataError as error:
                 if str(error) != "token_request_not_due" or ledger.state["POST"]:
@@ -299,12 +282,7 @@ def main() -> None:
     finally:
         if client is not None:
             client._access_token = None
-        if identity is not None:
-            current = lease.stat(follow_symlinks=False)
-            if (identity.st_dev, identity.st_ino) != (current.st_dev, current.st_ino):
-                raise ValueError("foundation_lease_identity_changed")
-            (lease / "owner.json").unlink()
-            lease.rmdir()
+        owner.require_held()
         ledger.state.update(
             owner_released=True,
             next_due=None,
@@ -326,6 +304,7 @@ def main() -> None:
                 availability="actual capture only; bar-end/units/PIT unknown",
                 consumer=contract["consumer"],
                 no_old_source_fit_Paper_change=True,
+                failed_attempts=ledger.state.get("failed_attempts", []),
             ),
         )
         atomic_json(
@@ -356,6 +335,26 @@ def main() -> None:
                 }
             )
         )
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--contract", type=Path, required=True)
+    args = parser.parse_args()
+    artifact = args.contract.resolve().parent
+    contract = json.loads(args.contract.read_bytes())
+    ready = json.loads((artifact / "patch-ready.json").read_bytes())
+    for path, digest in ready["source_pins"].items():
+        if file_ref(Path(path))["sha256"] != digest:
+            raise ValueError("foundation_frozen_source_changed")
+    if Path(sys.executable) != Path(sys._base_executable):
+        raise ValueError("foundation_direct_base_interpreter_required")
+    market = Path(contract["capture_root"]).resolve()
+    if not market.is_relative_to(Path("D:/market_data").resolve()):
+        raise ValueError("foundation_market_root_invalid")
+    # Nothing may construct/write a ledger or probe owner facts before exclusion.
+    with FoundationOwner(market) as owner:
+        _collect_owned(artifact, contract, ready, market, owner)
 
 
 if __name__ == "__main__":
