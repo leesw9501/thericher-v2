@@ -21,7 +21,23 @@ hardcoded471 and is not used for this image. No observe()/advance() as reader.
 A/execution/nightly-typed-recovery-deployment-20261017-v1/parent-installed.json
 A/execution/nightly-typed-recovery-deployment-20261017-v1/native-reader-v2/ready.json
 
-Prior runtime evidence below is retained, not the current installed release.
+Current retained-cycle attribution16:25UTC: exact oneFULLSELL/oneowned entry
+and complete native average-cost prefix => realized GROSS positive. Network0/
+privatewrites0/59files+2absences unchanged. Not historical snapshot, model alpha,
+global/portfolio/net PnL; fees/settlement unknown. Old historical-hash attempt
+remains CLOSEDunknown. Current result:
+A/execution/current-daily-gross-attribution-20261017-v1/fresh-current-r1/current-result.json
+
+Model hold-schedule contraction was NOT adopted. First attempt failed XML child
+ordering and restored exact original. Corrected retry-r1 actual17:46UTC passed
+all three XML/proof stages but failed a later guard; original exception was
+masked by installer catch, precise post-enable firstcause UNKNOWN. Exact
+original rollback verified, enabled/Ready next17:49UTC. Existing4min cadence
+and ALL original exit windows remain. No manualTask invocation/order/bank reset.
+Do not repeat the same install or infer historical CIM values from current XML.
+A/infra/model-pre-exit-hold-schedule-review-20261017-v1/retry-r1
+
+Prior runtime evidence below is historical, not current installed status/owners.
 
 LATEST actual Oct16 23:50KST827d run: public source/time binding validates
 unavailable/retained_context_recovery_required,1auth/39ExecutionGET/1SELLstart/

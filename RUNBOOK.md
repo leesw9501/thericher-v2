@@ -51,6 +51,32 @@ authority1348/c7d511a9;13mockedinstaller scenarios pass, not runtime proof.
 Do not rerun freeze/build/configure/install creators. Before/after/rollback
 definitions and exact installation recipe stay in the current root.
 
+Current retained gross attribution is separately sealed at
+A/execution/current-daily-gross-attribution-20261017-v1/fresh-current-r1/current-result.json:
+one exact owned sale has positive realized GROSS. Fees/settlement/net unknown;
+not global/model alpha or a historical private snapshot. Do not rerun a creator
+over its existing result or call observe() to inspect it.
+
+### Model Hold Schedule And Data Collector
+
+SAME current-nas-model Task remains on its ORIGINAL4min finite schedule.
+Two conditional hold-window contraction attempts both rolled back exactly;
+retry-r1 passed all XML/proof checks but failed a post-enable guard at17:46UTC.
+No contraction is installed and no further identical retry is authorized by
+that exhausted installer root. Preserve exit/recovery windows and do not
+manually invoke a Task. Diagnostic evidence/rollback:
+A/infra/model-pre-exit-hold-schedule-review-20261017-v1/retry-r1.
+
+Current20-stock-intraday-foundation collector belongs to Schrodinger:
+A/data/current20-stock-intraday-foundation-20261017-v1/assignment.json.
+One reused client/602GET including2technical retries, fresh20heads then RTH
+timestamp backfill, rawdata under M. Do not launch a second collector or rerun
+its creator. Inspect cursor only as counts/status/next_due; do not dump retained
+query dictionaries/raw rows. Unit/bar-end/model-transfer eligibility is a
+separate measured claim, not granted by successful HTTP or code tests.
+Code5fba5cd fresh compatibility:190serial/18088fullpass22skip/clean8helper0,
+Ruff/default-research-accounting Compose using .env.example. Source1353/250b6e74.
+
 ### Previous Nightly Recovery (4fd7, Historical)
 
 Task: thericher-kis-paper-daily-spy-session.

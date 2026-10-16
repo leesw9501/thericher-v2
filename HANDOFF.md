@@ -47,12 +47,18 @@ price output, expiry renewal, unknown-request replacement or bank reset.
   context is closed, not the model-owned exit or net profit. Original14:50
   cause UNKNOWN; later success does not prove a diagnostic code fixed it.
   Preserve the original active context/targets/basis, never substitute an intent.
+- CURRENT retained-cycle attribution16:25UTC: original ONE FULLSELL matches one
+  owned entry fill/complete native average-cost prefix; realized GROSS positive.
+  Network0/privatewrites0/59files+2absences unchanged. Not a historical snapshot
+  or OS-origin claim, not global/model/net PnL. Fees/settlement unobserved.
+  Initial stricter historical-hash contract remains CLOSEDunknown, not regraded.
 
 A/execution/nightly-required-tail-scope-deployment-20261016-v1/parent-installed.json
 A/execution/nightly-required-tail-scope-deployment-20261016-v1/native-reader/parent-native-outcomes.json
 A/execution/nightly-post-sell-pure-diagnosis-20261016-v1/result-r2.json
 A/execution/nightly-typed-recovery-deployment-20261017-v1
 A/execution/nightly-typed-recovery-deployment-20261017-v1/native-reader-v2/parent-native-outcomes.json
+A/execution/current-daily-gross-attribution-20261017-v1/fresh-current-r1/current-result.json
 
 ## Other Owned Execution To Preserve
 
@@ -108,6 +114,46 @@ A/execution/current-nas-fresh-valuation-diagnostic-runtime-20261016-v1
   D hardlink commit/incomplete refusal exercised. Old7epochs14steps comparator
   failure plus new8/16=15/30synthetic,0market fits; containers/lease released.
   Not universalCUDA/TCN/mid-batch proof. Old campaigns do not silently adopt it.
+- Fixed50 residual experts COMPLETE9CPUfits/9attempts/0retries:3Ridge solves,
+  3HGB70totaliterations,3MLP64epochs/890updates.72knowncells/zero unknown,
+  primaryfalse/false/true, familyfalse; f2/f3HGB constant iteration-zero, f3pass
+  not learned ranking skill. Independent45462source/15886features-targets/
+  9native restores/17766EVALscores/72cells/17928NAV/432metrics PASS, no Top5
+  changes/max3.11e-15.66.356active/2240.829end within1800/7200; CPUappropriate.
+  Total154fit versions=92CUDA+62CPU, not architectures. No old fit repeated.
+- TimesFM2.5 frozen direct/Ridgeblend COMPLETE:126CUDAmarketbatches/6048rows,
+  one SYN/127native forwards,0fits/retries;18newcells+45immutablecontrols.
+  Primary1/3/familyfalse, independent retained-array check PASS.63.799active/777.234end,
+  peakreserved1.16GiB/lease+container released. Trusted weight predates targets;
+  unknown corpus/Closeforecast versus OPEN-entry payoff mismatch retained.
+  Chronos2 also COMPLETE6048rows/126marketbatches+1SYN,0fits/marketretry,
+  primarytrue/false/false/familyfalse. Two pre-native import/phase failures
+  retained. New independent-review-r2 PASS63comparisons/6048contexts/126pins/
+  maxNAVerror3.00e-15; old partial reader/debits unchanged. No native forecast
+  parity, Paper adoption or independent-alpha claim for either public model.
+- AAPL stock-minute capability ACTUALLY observed: new opt-in route preserves
+  all legacy ETF/IWM behavior. R3used2GET1POST/0retry ->240unique rows,
+  Oct16 08:54..12:53ET (204RTH+36preopen),735native/hash/calendar checks pass.
+  Blank header was UNKNOWN, not exhaustion; second page N still older data.
+  Aggregate3GET2POST includes originalhead, not360unique rows. Oldzero-wire
+  due/wrapper/clock failures/debits retained; direct base execution succeeded.
+  New full20cohort opt-in timestamp collector active17:46UTC:288GET/1POST,
+  287completedpages/20freshheads/0retry/PIDalive.602GETcap/oneclient/3600active/
+  14400end, freshheads then RTHbackfill. No completed-window/bar-end/unit/PIT
+  qualification inferred from request count. Other learning/Paper continues.
+- OOF shallow tree COMPLETE1CPUfit/6positive-growthcells; growth beats mean4/
+  Ridge but worseDD than uniform47, primaryfalse. Tree uses RidgeRank+regime
+  only, not demonstrated learned multi-expert combination. Independent PASS:
+  one native restore/5922rows/12float32threshold SYN,3948OOFlabels/123bindings/
+  4482NAVvalues, max2.89e-15; no fits/baseforwards/GPU/retries.
+  Subsequent zero-fit sizing9cells complete, both candidateprimaryfalse;
+  fixedhalf control descriptively improves growth/DD versus uniform on reused
+  f3, not fresh alpha. Independent sizing reader active. Closedfitcount155=
+  92CUDA+63CPU before currently running depth; not architecture count.
+- Lovelace actual allocated fixed50 sequence-depth GRU/TCN/patchTransformer
+  family; up to9fits/12attempts/512maxepochs/INNER40,3600active/10800end.
+  GPU44percent/2280MiB observed17:47UTC. Interrupted native phases/checkpoints/
+  debits retained, no duplicate completed fit. Final counts await own ledger.
 
 A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-handoff.json
 A/research/liquid-core-fixed-rank-fusion-development-20261016-v1/independent-review/result.json
@@ -116,13 +162,21 @@ A/data/fixed50-adjusted-breadth-20261016-v1/recovery-r1/CLOSED-budget-overrun.js
 A/data/fixed50-adjusted-breadth-20261016-v1/recovery-r3/completion.json
 A/research/training-checkpoint-recovery-20261016-v1/technical-recovery-r2/result.json
 A/research/stock-intraday-crosssection-development-20261016-v1/owner-handoff-final.json
+A/research/fixed50-residual-experts-development-20261017-v1/independent-review/result.json
+A/research/fixed50-timesfm25-frozen-fusion-development-20261017-v1/owner-handoff.json
+A/data/current20-stock-minute-capability-20261017-v1/recovery-r3/final-readback.json
 
 ## Ownership / Verification
 
-Parent owns shared docs/Git/actual integration and the five committed diagnostic
-files. Kuhn owns native-v2 reader sealing, not installed-runtime changes.
-Lovelace prepares next fixed50 research; Schrodinger owns probe-process efficiency.
-Poincare owns new independent intraday review; old scoped CUDA check completed.
+Parent owns shared docs/Git/actual integration. Lovelace owns depthGPU,
+Schrodinger current20minute capture, Poincare OOFtree independent, Curie sizing
+independent then bounded scheduling diagnosis, Kuhn next-hypothesis synthesis.
+Conditional five-window model hold contraction NOT adopted. First attempt
+XMLchildorder failure retained; corrected retry-r1 actual17:46UTC passes all
+three XML/proof stages then fails a post-enable guard. Catch masked original
+exception, precise firstcause UNKNOWN. Exact original rollback verified;
+model enabled/Ready/next17:49UTC, ALL original windows/cadence retained.
+No identical retry; inspect original evidence without another Task mutation.
 MDs are durable memory,
 not proof of running workers. Recheck actual processes/leases after interruption.
 
@@ -133,8 +187,16 @@ its separate1346/7a184596/503serial/16991full authority. New diagnostics require
 fresh1348/c7d511a9 authority:1384serial/18052fullpass22skip/18074collected/
 417.928sec/clean8helper0/Ruff/three sample-env Compose PASS. Compatibility is
 not deployment or fill proof. d0ff5f8 typed diagnostics pushed.
+Latest stock-query code d1a0ed2 PUSHED:1349/5b73cb0e authority175Parent serial,
+Data668serial4platformskip; fresh clean8full18073pass22skip/18095collected/
+368.916sec/helper0/Ruff/three sample-env Compose. No actual Paper image change.
+NEW collector5fba5cd PUSHED:1353/250b6e74,190Parentserial and683Data serial/
+4platformskip, freshclean8full18088pass22skip/18110collected/402.989sec/helper0,
+Ruff/default-research-accounting sample-env Compose PASS. No Paper image swap.
+A/verification/stock-intraday-foundation-20261017-v1/authority.json
 A/verification/training-checkpoint-recovery-20261016-v1/authority.json
 A/verification/nightly-typed-recovery-20261017-v1
+A/verification/stock-minute-probe-20261017-v1/authority.json
 
 One unrelated untracked literal %SystemDrive%/ Windows-cache directory appeared
 during work. Attribution unproven; nothing deleted/read/committed. Do not turn

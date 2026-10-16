@@ -1,6 +1,6 @@
 # Research Steward Stateboard
 
-Current2026-10-16KST/Oct15UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-17KST/Oct16UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/custody.
 Steward owns exclusive GPU/trial-family custody, NOT model choice, broker risk,
 human approval or a permanent daemon. Parent dispatches/integrates/Git.
@@ -10,10 +10,10 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |Intraday family COMPLETE3CPU+9CUDA/188completeepochs,13attempts including1technical retry. Lease/containers released; peakreserved228589568bytes. Listwise6CUDA164epochs preserved, no duplicate fits.|
-| Next depth |Intraday99cells under independent CPU-only review; fixedfusion36 and F3current20 inference closed. Engine prepares next finite hypothesis, Strategy examines two source-grounded alternatives. No Paper switch.|
+| GPU |TimesFM2.5/Chronos2 each126CUDAmarketbatches6048rows+1SYN COMPLETE/0fits, leases released; no dummy work. Intraday9CUDA188epochs preserved.|
+| Next depth |Lovelace owns NEW fixed50 GRU/TCN/patchTransformer family9fits12attempts/512maxINNER40/3600active10800end, nativeCUDAcheckpoint SYN first. ActualGPU44percent/2280MiB at17:47UTC; not a completed-fit count. Retained interrupted phases/checkpoints/debits never reset.|
 | CPU research |New trade-and-close45cells CLOSED42conditionalcomplete/3unknown; independent45/68496NAVpoint check PASS/0fits/GPU, CPU2RAM4 verified/released. Prior27/18/full-OPEN metric and6vs4RAMfinding unchanged; producer6GiB verified.|
-| Data |Adjusted20 recovery CLOSED89723bars/87743windows, collectors released13:23:29UTC before Paper. SECmap403closed1GET/0retry/no dataset. No GPU.|
+| Data |Schrodinger current20 minute collector active,602GETcap/oneauth. Daily fixed50 closed45462bars, not a source swap into existing studies. No GPU.|
 | Strategy |LongNAS independent687pins/108cells PASSED,0restored model calls. Dirac completed MTFcausal feature adapter/420cache arrays/0fits. Descartes quiet tests/actual receipt CLOSED, startup visibility unknown.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
@@ -35,7 +35,9 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
 
 ## Custody To Preserve
 
-- Latest continuation145 fitted VERSIONS(92CUDA/53CPU), not145architectures.
+- Closed families before current depth:155 fitted VERSIONS(92CUDA/63CPU),
+  including ONE new OOF tree, not155architectures. Do not add intended/in-flight
+  depth fits before its exact completed ledger is available.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent

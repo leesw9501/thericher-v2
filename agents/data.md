@@ -2,6 +2,32 @@
 
 ## Current Oct17 Reboot Continuation
 
+Actual AAPL/NAS minute head+older timestamp probe COMPLETE240unique rows,
+Oct16 08:54..12:53ET/204RTH36preopen;735native/hash/calendar checks. Aggregate
+3GET2POST includes old120head, not360unique. Headerblank was unknown, second
+pageN does not establish any global history floor. Model300/20cohort transfer
+still not ready; provider unit/bar-end/PIT not qualified. No research/Paper hold.
+Zero-wire prior due/wrapper/too-small-clock failures remain immutable; direct
+base invocation and budget covering known300second token wait succeeded.
+
+Schrodinger owns NEW current20-stock-intraday-foundation: explicit official20
+target map, historicaltimestamp query profile+finitecollector. LegacyETF/IWM
+standard routes unchanged; AAPL-only2pageprobe cap is study-local. Max602GET
+incl2exactretries/oneauthreusedclient,3600active/14400end, freshheads beforeRTH
+history, durableper-target cursors/no-progress stop, observedcapture provenance.
+Native SYN/focusedserial and sourcefreeze before wire; ParentownsfullQA/Git.
+Onecollector/cachegate, existing2second/token controls andactualdue ownership;
+no hardcoded past due or routine Parent-reply approval gate. RawD/modelsA,
+15percentstoragefloor. No account/order/live/Scheduler/public work.
+Actual17:46UTC cursor:288GET/1POST/0retry,287completedpages/all20heads,
+collectorPIDalive/ownerunreleased. An in-flight GET is not an accepted page;
+do not multiply page count by120 or claim all300windows without readback.
+Code5fba5cd PUSHED:190Parentserial/683Dataserial4platformskip, freshclean8
+18088pass22skip/18110collected/helper0/Ruff3sample-envCompose; source1353/250b6e74.
+Source compatibility does not qualify history horizon, units or bar finality.
+A/data/current20-stock-minute-capability-20261017-v1/recovery-r3/final-readback.json
+A/data/current20-stock-intraday-foundation-20261017-v1/assignment.json
+
 Fresh20 COMPLETE6000strict adjusted daily bars/300each/latestOct15/20ready252,
 60GET/2POST aggregate. No completed page replay or old89723study/Paper swap.
 Fixed50COMPLETE:45462strictbars/min737max993/50ready252,400newGET plus60reused.

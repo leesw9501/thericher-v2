@@ -1,9 +1,68 @@
 # Engine Research Stateboard
 
-Current2026-10-16KST/Oct15UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-17KST/Oct16UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts; AGENTS owns authority. Parent owns integration/
 Git, Execution owns broker risk. MD is memory, not an active worker.
 Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
+
+## Current Oct17 Parallel Continuation
+
+Fixed50 residual3Ridge/3HGB/3MLP COMPLETE9CPUfits/9attempts/72knowncells,
+66.356active/2240.829end. Independent45462source/15886feature-targetrows/
+9native restores/17766scores/72cells/17928NAV/432metrics PASS/max3.11e-15,
+zeroTop5changes. Primaryfalse/false/true/familyfalse; f2/f3HGB iteration-zero
+constant means f3pass is not learned ranking. FourOPEN/CLOSEtransaction marks
+checked, intrabar paths unobserved. Closed families before depth:155fitted
+versions=92CUDA+63CPU including ONE new OOF tree; not155architectures.
+
+TimesFM2.5 and Chronos2 each COMPLETE126CUDAmarketbatches/6048rows plus1SYN,
+0fits/marketretry,18newcells+45unchangedcontrols,primary1of3/familyfalse.
+TimesFM retained-array independent18/4482NAV check PASS/zero scores-rank-weight
+drift, no nativeforecast-parity claim. Chronos2 independent-review-r2 COMPLETE:
+63comparisons/6048contexts/126batchpins, maxNAVerror3.00e-15; primarytrue/false/
+false/familyfalse derived from its OWN criterion. Old partial reader failed a
+foreign expected-pattern guard; partial/debits unchanged, not producer failure.
+Neither independent reader repeated forecasts or proves nativeforecast parity.
+Trusted checkpoints precede targets; corpus unknown/CLOSEforecast vsOPENpayoff
+mismatch/current-listing/PIT/nonTR limitations remain. No Paper adoption.
+
+Allocated DEPTH: Lovelace NEW fixed50 causal GRU/TCN/patchTransformer3configs x3folds,
+9intended/12attempts,512max/INNER40/LR/bestrestore,3600active/10800end; exact
+completed-epoch checkpoints for reboot, one measured GPU allocation. Actual
+17:47UTC GPU44percent/2280MiB observed; not proof of convergence/completion.
+Two interrupted native phases/retained checkpoints and debits remain in its
+technical-repair lineage. No duplicate completed fits; Parent awaits final
+counts rather than inferring them from GPU utilization or intended configs.
+
+OOF shallow tree COMPLETE1CPUfit/3948f1-f2rows/6positive-growthf3cells; learned
+two splits use ONLY RidgeRank+pastSPYregime, not demonstrated multi-expert fusion.
+Growth beats fixedmean4/Ridge but DD worse than uniform47; primaryfalse.
+Independent PASS: nativeJSONrestore5922rows+12float32boundary probes,
+3948OOFlabels/123bindings/4482NAVvalues/max2.89e-15,0fits/forwards/GPU/retries.
+HGB ties correctly0.5, no lexical fake signal.
+Zero-fit sizing COMPLETE9positive-growthcells; inversevol worsens concentration/
+DD, regime blend equals originaltree on all42dates, both primaryfalse. Fixed
+half blend lowers growth/DD/turnover and beats uniform in this reused f3 control;
+descriptive, not newly selected alpha. Independent sizing reader active.
+Kuhn next synthesizes ONE mechanistically informative candidate/rejection,
+not another outcome-driven parameter grid. No fits/GPU in that package.
+
+Current20 frozen intraday transfer contract READY/14checkpoint-scaler pins;
+input remains awaited (cohort300context/units/bar-end/availability contract).
+Actual AAPL240minute rows alone are not complete20input. Data now captures the
+full20cohort within602GET cap; actual counts/window/unit/bar-end/availability
+must be read from its sealed output before transfer. No completed intraday fit
+is rerun; this input-local limitation does not block other research or Paper.
+
+A/research/fixed50-residual-experts-development-20261017-v1/independent-review/result.json
+A/research/fixed50-timesfm25-frozen-fusion-development-20261017-v1/independent-review/result.json
+A/research/fixed50-chronos2-frozen-forecast-development-20261017-v1/independent-review-r2/completion.json
+A/research/fixed50-oof-shallow-fusion-development-20261017-v1/owner-handoff.json
+A/research/fixed50-frozen-gate-risk-sizing-development-20261017-v1/owner-handoff.json
+A/research/fixed50-causal-sequence-depth-development-20261017-v1/contract-final.json
+A/research/current20-intraday-frozen-transfer-20261017-v1/contract.json
+
+Closed context below is evidence history, not current queued/running work.
 
 ## Reboot Recovery / New Consumer (Oct16 KST)
 

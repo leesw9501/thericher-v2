@@ -80,6 +80,37 @@ delegated authority; never substitute an unknown request or expand capital.
   r1overrun54.250sec retained; r2within452.101/600 and r3within313.250/600.
 - Strategy metadata26pins/46checks/three consumed attempts reconciled without
   rerun; original canonical READY retained, versioned reconciled pointer used.
+- Fixed50 residual family COMPLETE9CPUfits/72knowncells; independent9restores/
+  17766scores/17928NAV/432metrics pass. Primaryfalse/false/true/familyfalse;
+  f2/f3HGB constant, not learned skill. No old fit repeated.
+- TimesFM2.5 and Chronos2 frozen direct/Ridgeblend each COMPLETE6048CUDArows/
+  126marketbatches/0fits/retries/18newcells+45controls, primary1of3/familyfalse.
+  TimesFM and newChronos independent retained-array checks PASS. Chronos old
+  partial/foreignexpectedpattern reader failure stays immutable; no native
+  forecast-parity claim. Import failures do not count as market retries.
+  Neither is current Paper adoption or independent alpha.
+- Engine may run NEW finite sequence-depth family3fixed GRU/TCN/patchTransformer
+  configs x3folds<=9fits/12attempts,512maxepochs/INNER40/bestrestore;3600active/
+  10800end, oneGPUlease/checkpoints. ActualGPUactive17:47UTC. Completed fits
+  never repeated after native interruption; all original failures/debits stay.
+  CPU shallowOOFfusion COMPLETE1fit/6cells/primaryfalse; learned RidgeRank+
+  regime, not demonstrated multi-expert fusion. Zero-fit sizing9cells complete,
+  bothprimaryfalse; fixedhalf descriptive control is not fresh selection.
+  Independent checks and ONE informative next-hypothesis synthesis parallel.
+- Actual AAPL stock-minute2pagewitness:240unique rows (204RTH/36preopen),735
+  checks; aggregate3GET2POST includes originalhead. Headerblank not exhaustion;
+  further horizon/units/bar-end/PIT unqualified. New opt-in explicit20target
+  historical-timestamp interface/collector is authorized:<=602GET incl2retries,
+  oneauth reusedclient,3600active/14400end, marketsD/artifactsA, freshheads before
+  RTHbackfill/durablecursors. ExistingETF/IWM defaults remain unchanged. Focused
+  tests/frozen source before capture. Actual17:46UTC288GET/1POST/287pages/
+  all20heads/PIDalive, not complete-window qualification. Source5fba5cd pushed
+  with freshfullQA. Stopexactno-progress cursor/acceptedfailure, no floods.
+- Conditional model hold-window contraction NOT adopted: firstchildorder
+  failure and corrected retry-r1 post-enable guard failure each restored exact
+  original4min schedule. Second original exception masked by catch; do not
+  assert its actual historicalCIM value or retryidentically. All original exit/
+  recovery triggers preserved. No manualTask invocation/new opportunity.
 - Parent integrates/deploys/commits; no foreground session/quota sleep. A local
   source/quality/review failure does not block another ready delegated lane.
 
@@ -105,3 +136,10 @@ work may reuse full authority only with exact source/control digests unchanged.
 Company outcome still unfinished. Integrate material packages, verify/commit/
 push and CONTINUE the active human request while delegated work is ready.
 Replace with ONE next company outcome only after actual current closure.
+
+Latest verified/pushed stockprobe d1a0ed2:1349/5b73cb0e,175Parentserial plus
+Data668/4platformskip, clean8full18073pass22skip/18095collected/368.916sec/helper0/
+Ruff/default-research-accounting sample-env Compose. NEW genericcollector
+5fba5cd PUSHED:1353/250b6e74 source,190Parentserial/683Dataserial4platformskip,
+freshclean8full18088pass22skip/18110collected/402.989sec/helper0/Ruff3Compose.
+A/verification/stock-intraday-foundation-20261017-v1/authority.json.
