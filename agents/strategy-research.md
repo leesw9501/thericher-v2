@@ -8,6 +8,22 @@ History remains in Parent Git27dface and immutable external roots.
 
 ## Current Consumers
 
+Curie NEW listwise-ranking/causal-risk allocation kernels are ready for the
+interrupted Engine family after metadata-only reconciliation. Original46
+checks/three synthetic attempts remain consumed; zero new numerical attempt,
+fit, market read or GPU dispatch. Only sealer formatting changed, checked by
+location-independent AST equality and archived source hashes. Contract/kernel/
+test/runner and original result hashes unchanged. Engine owns final experiment
+and interpretation, not automatic Paper adoption.
+A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/metadata-reconciliation.json
+A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/SAFE_READY.reconciled.json
+Original canonical READY is restored byte-exact;26 reconciled pins match.
+Engine restart source review resolved finite FIT/INNER-label and historical
+pin alias issues without new fits/SYN or old-contract edits. It is source-only,
+not optimizer/RNG mid-fit restoration or runtime/performance qualification.
+Curie completed/released; no owned worker/lease remains.
+A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/engine-restart-source-review.json
+
 Dirac pure252day/21session kernel CLOSED28SYN/226realinput smokes/81440eligible
 keys,22.74active. Allraw/12x21patch/indicator/joint views share causal past-only
 eligibility; futureprefixinvariance checked. Godel consumed it for actual9fits,

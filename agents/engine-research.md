@@ -5,7 +5,43 @@ A=D:/thericher-v2/model-artifacts; AGENTS owns authority. Parent owns integratio
 Git, Execution owns broker risk. MD is memory, not an active worker.
 Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
-## Current Material Result
+## Reboot Recovery / New Consumer (Oct16 KST)
+
+Lovelace resumes the NEW liquid-core-listwise-risk-allocation family on the
+existing89723 strict adjusted bars, not a replacement of the current Paper
+policy or an old-study regrade. Three completed Ridge folds/checkpoint hashes
+verified and NOT repeated. Six original GRU/TCN CUDA fits now COMPLETE:
+164epochs/6341updates/13202forwards, nine total market attempts/zero technical
+retries. All use INNERpatience20/best restore, not proof of convergence.
+323.077ownedactive/1581.489end within original7200/18000 caps; lease released.
+Producer90cells/36090NAVpoints known/zero unknown; familyprimaryfalse against
+aligned risky baseline, not a cash-zero-DD gate. Independent CPU9restores/
+arithmetic90cells/180450curve values passed, maxerror1.78e-15; full scoped
+review noP1P2, zero changedTop5. The proportional growth/turnover deltas are
+legitimate fixed-buy-notional algebra, not reused metrics/missing entry costs.
+All three primary tests remainfalse. No alpha/Paper switch.
+Next zero-fit frozen mean/median rank fusion is a NEW finite36cell experiment,
+not old-result repair, best-expert search or prerequisite singlesprofit.
+A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-handoff.json
+A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/independent-review
+
+Fresh NEXT source6000bars/300x20/latestOct15/20ready252 is separate from the
+completed89723bar training source. It may support newly frozen current-score
+shadow inference with actual observed availability after USOPEN; never backdate
+to OPEN or substitute current Paper targets/input. No forward result inferred.
+A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/engine-input.json
+
+Interruption field1792157728.0207944 was an epoch accidentally treated as a
+duration: missing GPU-plan started_epoch plus PowerShell null subtraction.
+Exact last-boundary/pause lineage gives136.32070289962576 conservative owned
+seconds. Original malformed receipt is immutable; separate correction is not
+a trial refund or ceiling extension. Stopped container was never started and
+had no market attempt/logs. Strategy style-only sealer is AST-equivalent;
+metadata reconciled, original46 checks/three attempts preserved without rerun.
+A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/resume-r1/interruption-derived-correction.json
+A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/metadata-reconciliation.json
+
+## Previous Material Results
 
 Adjusted20 daily indicator/rule study CLOSED9CPUHGB/194iterations/126cells,
 zero unknown. Raw/indicator/joint x3folds; fixed trend/reversion/OR also replayed.

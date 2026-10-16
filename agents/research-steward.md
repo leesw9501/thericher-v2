@@ -10,8 +10,8 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |OOFfusion CLOSED2CUDA+4CPU/69epochs/283updates/90cells; native GPU2.834sec, lease clean. No ready numerical GPU owner, no environment/permission hold or dummy load.|
-| Next depth |Fixed SPY monthly gate CLOSED66cells/0primary; rejectadoption. No new GPUfit ready. Avoid dummyepochs; pipeline causal-target/risk hypotheses rather than more blind architectures.|
+| GPU |Listwise recovery CLOSED:3retainedCPU+6newCUDA/164epochs/6341updates, zero repeated Ridge/technical retry. Lease released; peakreserved522190848bytes, tiny panel not a need for dummy GPUload.|
+| Next depth |New zero-fit fixed-rank fusion preparation/36cells, CPU not GPU. Current20 fresh300x20 data ready for separately frozen shadow inference; no Paper switch.|
 | CPU research |New trade-and-close45cells CLOSED42conditionalcomplete/3unknown; independent45/68496NAVpoint check PASS/0fits/GPU, CPU2RAM4 verified/released. Prior27/18/full-OPEN metric and6vs4RAMfinding unchanged; producer6GiB verified.|
 | Data |Adjusted20 recovery CLOSED89723bars/87743windows, collectors released13:23:29UTC before Paper. SECmap403closed1GET/0retry/no dataset. No GPU.|
 | Strategy |LongNAS independent687pins/108cells PASSED,0restored model calls. Dirac completed MTFcausal feature adapter/420cache arrays/0fits. Descartes quiet tests/actual receipt CLOSED, startup visibility unknown.|

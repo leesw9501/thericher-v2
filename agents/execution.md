@@ -5,6 +5,18 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+Post-reboot: source-bound model reader validates hold/await_declared_exit/zeroAPI,
+not fresh inventory. SAME nightly Task now image827d8e91/473public471runtime,
+explicit SPY/TLT/GLD tails; defaultcollector stillfour. Required253sessions/
+freshness/source/identity/basis/terminal rules unchanged. Action-only installed
+Oct16 23:06KST with exact disabled/enabled XML readback; next23:50KST, no manual
+Task invocation or newtrigger. Actual input/order/fill remains unknown until
+natural runtime. Native corrected reader and public reader use NEW root below,
+not prior4fd7 release. Fresh503serial/16991full22skip/helper0/Ruff3Compose;
+independent release noP1P2 and13installer mocks PASS. Old frozen evidence retained.
+A/execution/nightly-required-tail-scope-deployment-20261016-v1/parent-installed.json
+A/execution/tonight-current-paper-readiness-20261016-v1/result.json
+
 LATEST15:57:57 strict native read verifies8acknowledged FULLfills/eightowned model
 instruments/zero unknown and no pending request.15:57bound dispatch holds/
 await_declared_exit/zeroAPI.15:05missing target0 was no_intent, no substitute.
@@ -103,9 +115,9 @@ A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
 
 | Owner | Current evidence | Next action |
 | --- | --- | --- |
-| Existing nightly | Same Task/new4fd7fdd2;17:38 exact recovery2FULLSELLs/thirdexpired/all27terminal. Original14:50cause unknown. | Next normalOct16 14:50UTC; incomplete target state preserved. |
+| Existing nightly | Same Task/new827d8e91 Action-only installed23:06KST, original triggers preserved; old4fd7 terminal recovery evidence retained. | Next23:50KST; required three fresh tails/native new-day rollforward, actual result unknown. |
 | Current NAS model | Same quiet finite Task/image87697f8e/474sources/manifest13cfe08b/config6e5fcc16. EightFULLfills/zero unknown retained. | Hold/exact recovery at existing4minute slots; owned exit fromOct21OPEN, no substitute. |
-| Future accounting83 | r6 accounting-only repair installed, other six Actions and oldindex2/claims retained. Runtime unknown, not replayed. | Oct15 20:25UTC/Oct16 05:25KST. Goal83 exitOct17 04:50/05:00KST. |
+| Future accounting83 | r6 exact Oct16 05:33KST receipt:Oct15mark/readback_complete/cohort no_owned_intent; no global-flat claim. Other sixActions/oldindex2unknown retained. | Next accountingOct17 05:25KST; Goal83 exit04:50/05:00KST. |
 | Goal97 owner | Separately owned original plan/history/source retained. Empty-registration runtime unproved; no established cross-policy adoption bug. | EntryOct19 22:30/22:40KST; exitOct24 04:50/05:00KST. Do not invoke/replace/adopt. |
 | CPU clock sidecar | COMPLETE6cells, independent noP1/P2, agent closed. | Consumed creator, retrieval only. |
 

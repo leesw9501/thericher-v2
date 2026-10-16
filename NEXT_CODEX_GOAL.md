@@ -3,161 +3,83 @@
 ## One Company Outcome
 
 current-nas-owned-model-paper-cycle-v1: repeatable, recoverable owned KIS Paper
-stock cycle from frozen-five current NAS targets on ONE existing original
-shared initial virtual-cash tenth. Actual runtime closure remains unfinished.
+stock entry/hold/exit/reconciliation from frozen-five NAS targets using ONE
+existing original shared initial virtual-cash tenth. Actual owned exit remains
+unfinished. Reboot recovery, source fixes and package commits are NOT company
+completion. This refresh retains the same objective, not a premature next goal.
 
-LATEST:15:57:57UTC strict native read verifies EIGHT acknowledged FULLfills/eight
-owned model instruments/zero unknown outcomes and no pending request. Latest
-bound model dispatch holds/await_declared_exit, zero API calls.15:05 recovered
-target0 missing quote as no_intent. Keep ORIGINAL identities/exact recovery
-and Oct21 owned exit. Company outcome unfinished, not a commit/install milestone.
-First13:40UTC natural visit failed BEFORE submit, validated1token/7GET/
-0BUY/0SELL/0cancel/0nativelegs. Scoped actual readonly probes reproduced target0
-all-zero quote date/time. No invented timestamp or freshness bypass. Recovery
-skips only a brand-new unreserved BUY target with that exact missing quote;
-pending recovery/SELL stay mandatory and the next ORIGINAL target is unchanged.
-Same Task redeployed/re-enabled14:37:42UTC, actual15:05/15:09 evidence below.
-Image87697f8e, source474/manifest13cfe08b/host2fb90e20/config6e5fcc16.
-Fresh870serial/16595fullpass22skip/helper0/Ruff/three sampleCompose PASS.
-No reset/substitution/manual invocation.14:50nightly failed retained-context
-processing/zeroorderPOST, first cause unknown; pointer-only context retained.
-Readonly14:56 first open-orders request succeeded, not original-response replay.
-New pre-intent refresh proves both old/new request scopes absent under native
-locks, retaining original input/expiry/basis and any existing stage recovery.
-Installed SAME nightly Task/imagefc9b1c2b/473files, ONE Oct15 16:30UTC natural
-recovery trigger and original daily14:50UTC. Actual16:30 bound run advanced two
-SELLs: corrected strict reader proves2accepted/1retainedFULL/thirdpreviewseed.
-Old dba reader missed SELL embedded in cycle.json and its zero current counts
-are invalid as outcome proof. Do not renew third seed expiry or reset capital.
-Native terminal-incomplete/reconciliation fix and bounded12visit worker are
-INSTALLED as4fd7 on SAME Task, ONE17:38UTC natural technical continuation;
-normal14:50 and consumed16:30 triggers preserved.507serial/16941fullpasses22skip/
-helper0/Ruff/three Compose,135external+2profile checks. No runtime success inferred.
-Actual17:38 validated no_intent/terminal_cycle_incomplete,1token6GETzeroorders;
-corrected native reader proves both acceptedSELLs FULL, third unattempted expired,
-all27global intents terminal/zero unclosed/no buy reservation. This closes the
-technical recovery, NOT target success or the model's unfinished Oct21 exit.
-A/execution/nightly-terminal-incomplete-deployment-20261016-v1/parent-installed.json
-A/execution/nightly-terminal-incomplete-deployment-20261016-v1/validated-after.json
-A/execution/nightly-terminal-incomplete-deployment-20261016-v1/native-reader/parent-native-outcomes.json
-A/execution/nightly-preintent-native-outcome-diagnosis-20261016-v1/parent-native-outcomes.json
-A/execution/nightly-preintent-refresh-deployment-20261016-v1/prepared.json
-A/execution/nightly-retained-context-firstcause-20261015-v1/bounded-model-read.json
-A/execution/current-nas-first-visit-firstcause-20261015-v1
-A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
-A/execution/current-nas-first-visit-firstcause-20261015-v1/recovered-second-visit-native.json
+Workdir C:/Users/Public/Documents/thericher-v2. Run scripts/start_next_codex_task.ps1,
+then follow HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards. Parent owns
+shared policy/integration/Git. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Never KIS_LIVE_*, real money, paid/public behavior or secret/private-value output.
+Standing private Paper authority is delegated, not dependent on research alpha.
 
-Workdir C:/Users/Public/Documents/thericher-v2. Follow HANDOFF.md, AGENTS.md,
-RUNBOOK.md and active stateboards. A=D:/thericher-v2/model-artifacts;
-M=D:/market_data. Never KIS_LIVE_*, real money, paid/public work or secret output.
-Private Paper authority is delegated; research qualification is NOT permission.
+## Actual Current Runtime (Oct16 KST)
 
-## Owned Deployment, No Manual Replay
-
-- Model Task thericher-kis-paper-current-nas-model-20261015, image87697f8e,
-  474frozen files/manifest13cfe08b/host2fb90e20/config6e5fcc16. Recovery natural
-  Oct16 00:05KST/Oct15 15:05UTC. Four-minute cadence on finite Oct15/16/19/20/21/22/23
-  UTC13:40..14:36 and15:05..19:41; fourteen triggers. Visit280seconds/oneauth/
-  onecombinedsubmit/onecancel/128calls/OS8minutes. Defers active/imminent nightly.
-- Entry ONLY Oct15 from exact bound snapshot; later exact-request recovery/
-  owned exit fromOct21 regular OPEN. No substitute selection, expiry renewal,
-  foreign-inventory adoption, profit refill or bank reset. Desired10*.005=.05
-  ORIGINAL-basis proposal may be reduced/rejected by shared bank/buying power/
-  losses/reservations. Fifth-OPEN/later entry is not research fifth-CLOSE parity.
-- Existing daily-spy-session: NEW image4fd7fdd2/473public snapshot/471runtime,
-  driver64dba792/launcher136c2c62/configa467c8e2. Same identity/bank/normal
- 14:50UTC plus consumed16:30 and ONE17:38 technical continuation. Oldroots retained.
-
-A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/installed-r1.json
-A/execution/current-paper-frozen-deployment-20261015-v1/after.json
-A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json
+- Model: SAME finite Task thericher-kis-paper-current-nas-model-20261015,
+  image87697f8e/474publicfiles. Retained exact evidence:8acknowledged FULLfills/
+  eight owned instruments/zero unknown; post-reboot public read validates hold/
+  await_declared_exit/zeroAPI, NOT fresh broker custody or net PnL. Entry ONLY
+  Oct15 bound input. Later visits recover exact requests or owned exit from
+  Oct21 US regular OPEN; original targets/identities/expiry/bank stay unchanged.
+- Nightly: SAME thericher-kis-paper-daily-spy-session now image827d8e91,
+  473public/471runtime files; Action-only installed Oct16 23:06KST. ALL original
+  triggers/principal/settings/Command/cwd retained; next23:50KST. Required
+  SPY/TLT/GLD only, still253completed sessions each; default collector stillfour.
+  No manual Task invocation/new trigger/private write. New runtime result is
+  UNKNOWN. Prior4fd7 closed two FULLSELLs/third never-attempted expired/all27
+  terminal, target incomplete NOT successful rebalance. No expiry renewal/reset.
+- Accounting83 r6 exact Oct16 05:33KST receipt validates Oct15mark/
+  readback_complete/cohort no_owned_intent, not globalflat/current model custody.
+  Oldindex2 unknown/113archive/otherActions preserved. Existing Goal83 exit
+  Oct17 04:50/05:00KST/accounting05:25; Goal97 entryOct19 22:30/22:40 and exit
+  Oct24 04:50/05:00. Do not replay/replace/adopt another owner.
 
 ## Completion Evidence
 
-At natural owned opportunities use the87697 recovery-root public reader for
-model; NEW nightly-terminal-incomplete-deployment-20261016-v1/read_owned_dispatch.py
-for changed nightly, never oldr2. Native model reader f7990232 is unchanged.
-Never use observe(),
-task-exit/latest-file/timestamp/preview inference. Validate exact launch/time/
-source -> immutable dispatch -> native cycle/intent/fill/owned state. Distinguish
-no-intent, technical fault, attempted/accepted submit, exact fill, pending recovery,
-holdings and terminal reconciliation. Fees/settlement/net PnL remain unknown
-without evidence. Preserve unknown identities/reservations; repair exact
-reversible faults, never substitute requests. Complete only with actual runtime
-closure or positively classified scoped failure/recovery, not install/research/
-package commit/session time.
+At existing natural opportunities use exact current launch/time/source/image
+reader -> immutable dispatch -> native cycle/intent/fill/owned-state linkage.
+Current model public reader belongs to current-nas-zero-quote-recovery-
+deployment-20261015-v1; nightly reader belongs to NEW nightly-required-tail-
+scope-deployment-20261016-v1. Never old-release readers or observe(). Private
+offline readers require proven named-owner quiescence, network-none/RO mounts.
+Distinguish no-intent, attempted/accepted submit, exact fill, pending recovery,
+owned inventory and terminal reconciliation. Task exit/install/preview is not
+a fill; missing is unknown. Fees/settledcash/netPnL stay unknown without proof.
+Operational logging disabled: assumed-honest host hash/time provenance is NOT
+cryptographic OS-scheduler-origin proof. Repair exact reversible faults within
+delegated authority; never substitute an unknown request or expand capital.
 
-Offline preflight sixowners/16terminal/zero unknown-unclosed/threeholdings;
-model pointer absent -> countsNULL, not zero. Not fresh broker funds/quotes.
-Operational logging disabled: assumed-honest host marker/time/hash is not
-cryptographic OS-scheduler-origin proof. Completed Oct16 00:05KST app follow-up
-archived/deleted, no follow-up chain. Accounting83 r6 nextOct15 20:25UTC; oldindex2/
-claims/basis/113archive/otherActions retained. Future83/97 duties in HANDOFF.
+## Ready Parallel Work
 
-## Ready Parallel Packages
+- Engine recovered original3Ridge without duplicate fits and completed6CUDA/
+  164epochs/6341updates. Ninefit/90known-cell family primary false. Preserve all
+  old clocks/results; temporary independent CPU restore/arithmetic review and
+  NEW zero-fit fixed mean/median rank fusion continue in disjoint roots.
+- Data fresh20 COMPLETE:6000strict bars/300each/latestOct15/20ready252/zero gaps;
+  total60GET/2POST, no repeated newest pages. Old89723training/current Paper
+  inputs unchanged. This is a NEXT source, not a silent fit/Paper substitution.
+- NEXT current20 shadow scoring may freeze exact f3 checkpoints/feature/scaler
+  and this whole fresh source BEFORE forwards. Actual availability was after
+  USOPEN; do not backdate it or interpret it as an OPEN fill/performance result.
+- Strategy metadata26pins/46checks/three consumed attempts reconciled without
+  rerun; original canonical READY retained, versioned reconciled pointer used.
+- Parent integrates/deploys/commits; no foreground session/quota sleep. A local
+  source/quality/review failure does not block another ready delegated lane.
 
-Parent owns shared docs/Git/dispatch, one owner per mutable set and one GPU lease.
-Do not redispatch closed creators; exact evidence/limits live in role boards.
+## Evidence And Verification
 
-- Parent: flashing CMD repair deployed to seven future project-owned Actions,
-  pinned pythonw/CREATE_NO_WINDOW; argv/cwd and all non-Action XML preserved.
-  No manual task invocation. Native linked checks and fresh helper verification
-  passed; natural observer window/runtime observation independently owned.
-- Data closed/released: adjusted20 recovery89723bars/87743windows, aggregate
-  792GET/2POST/3168exactOHLCanchors, stopped13:23:29UTC before Paper. QQQ2007floor/
-  four exact source limits/15unfinished; original62938input unchanged. SECmap
-  403closed1GET/0retry/no fundamentals dataset, no global/operator hold.
-  No raw0/1 blend/TR/PIT claim. Current versioned NAS
-  CLOSED1,197,728bars/1,161,353windows; original strictB preserved. New FirstRate
-  fixed20 sample CLOSED77998RTH1m/MTF, actualSep28..Oct9; explicit missing/
-  partial buckets, no imputation or Paper-input substitution.
-- Engine/Godel: OOFfusion six meta fits CLOSED,90cells/familyfalse/zero new base
-  fits. Monthly-regime66cells/0primary CLOSED/independentPASS; rejectfixedgate.
-  NEW trade-and-close sampling45cells42conditionalcomplete/3unknown CLOSED;
-  old27/18 study/full-OPEN DD unchanged. Missing actualtradeOPEN not imputed,
-  affected primary unqualified; no Paper switch.
-- Validation/Raman: meta6CPUrestore/90cells42750curves PASS, zeroTop5change.
-  Independent new45cell trade-and-close/68496NAVpoints PASS/noP1P2 in scope;
-  reader CPU2RAM4 verified/released, conditional limits unchanged.
-- Validation/Kant: paired MSE/RankNet sixEVAL/54cells PASS/released.
-  Core20 independent72cashflows passed, separate
-  f3GRU CPU/CUDA parityP2 unresolved. Actual old command was Torch2.7, not
-  evidenced2.13; no version-cause claim or company/Paper hold.
-- Invoked Execution/Hubble: native recovery deployed/runtimeclosed. Three actual
-  startup windows total11514samples/zero new consoles, same-desktop20ms limits.
-  Diagnostic readonlyvaluation completed18:09:18UTC/8owners8marks/indicative
-  GROSSnegative/quantitymatch, fees/settled/netUNKNOWN; originalr1unknowncause
-  preserved. Both owners restored/exactcontainerabsent; no more visit queued.
-  Future quiet-installer regression repaired in source/tests,35focusedPASS;
-  fresh full16960PASS22skip/367.376sec/helper0/Ruff3Compose, no currentTask reinstall.
-- Strategy/Dirac: pure SMA10 monthly gate READY1052rows/55baskets41ON14OFF/
-  0UNKNOWN,23SYN+55scalar checks. Separate monthly momentum45cells remains
-  27complete18unknown. Data recapture8unchangedinvalid/0repair CLOSED,
-  5unattemptedunknown; no repeated doomed queries or old input/Paper switch.
+A/execution/nightly-required-tail-scope-deployment-20261016-v1/parent-installed.json
+A/execution/accounting83-owned-outcome-20261016-v1/result.json
+A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-handoff.json
+A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/completion.json
+A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/SAFE_READY.reconciled.json
 
-Latest closed fit versions124=77CUDA+47CPU, not architectures: new9HGB/sixpaired-
-loss/ninelongadjusted experts all completed. Longadjusted3CPU+6CUDA/132epochs/
-3552updates/72cells/0unknown,0primary; independent72cells/26952curves checked,
-Transformer parityP2 remains scoped/zero changed masks. Intraday12
-fits/245epochs/5780updates/90cells completed; nine252day versions added. Not an
-environment/permission hold. NEW six OOF meta fits/90cells completed; independent
-six CPU restores/42750curves passed, Ridgeprimary1/2/familyfalse. Completed
-monthly-regime66cells rejected; newtrade-close45cells42/3 independently checked.
-No blind base-refit grid. Existing
-positive growth is not independent alpha.
-Foundation/reader/SYN are not fits. Exact role boards own detailed current facts.
-No qualified Alpha. Source/cost/current-listing/PIT limits constrain claims,
-not independent exploratory work or approved Paper permission.
-
-## Verify And Continue
-
-Fresh repo helper authority1346source/e05812dd:35changed-path serial, clean8 full
-16960pass/22skip/16982collected/367.376sec/helper0, Ruff/three sample-env Compose
-PASS. A/verification/quiet-schedule-installer-20261016-v1/authority.json.
-Installed native4fd7 recovery retains its prior0b60aab2/507serial/16941full authority.
-Reuse only if exact source-map equality; external/native workers need own checks.
-
-Integrate evidence, verify, commit/push owned packages. Replace this file with
-ONE next material company outcome only AFTER actual current company completion.
-Continue the active human request while delegated work is ready. No foreground
-quota/session sleep, invented approval hold or premature company completion.
+Fresh exact repo QA1346/7a184596:503serial, clean8 full16991pass22skip/
+17013collected/435.45sec/helper0/Ruff/three sample-env Compose PASS.
+A/verification/nightly-required-tail-scope-20261016-v1/authority.json.
+Code5995171 pushed. External code needs own focused/native checks; docs/external
+work may reuse full authority only with exact source/control digests unchanged.
+Company outcome still unfinished. Integrate material packages, verify/commit/
+push and CONTINUE the active human request while delegated work is ready.
+Replace with ONE next company outcome only after actual current closure.

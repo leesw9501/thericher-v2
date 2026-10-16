@@ -1,10 +1,42 @@
 # Data Stateboard (시장데이터 담당)
 
 Current: 2026-10-16 KST/Oct15UTC. Company goal: current-nas-owned-model-paper-cycle-v1.
-Current Data: exact-gap recapture CLOSED partial/no repair; existing inputs frozen.
+Current Data: fresh20 collection COMPLETE via exact remaining-cursor recovery; old inputs frozen.
 Parent owns training science/integration/Git; Execution owns Paper runtime.
 No account/live/Scheduler/fits/GPU/labels/returns; old inputs/claims/debits immutable.
 Market bytes: D:/market_data (M); artifacts: D:/thericher-v2/model-artifacts (A).
+
+## Reboot / Ready Consumer
+
+Fresh20 now COMPLETE:6000strict bars/300each20routes/latestOct15/no gaps/
+20ready252. Parent31GET/1POST partial closed with1802.654 conservativewall debit,
+2.654over1800 duringcloseout retained, no refund. Explicit recovery-r1 used29GET/
+1POST/zero retry, no repeat of completed newest pages; total60GET/2POST.
+Child330.902conservative seconds within600; cleanup14:06:18UTC, lease released/
+no unknown request.90native resumeSYN,18188native and162lineage checks passed.
+NEXT input only; old89723fit source/Paper schedules/targets unchanged. Adjusted
+formula/TR/units/PIT/providerfinality limitations remain, not global holds.
+A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/completion.json
+A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/engine-input.json
+
+Original restart allocation was fresh20 collection in a NEW exact namespace;
+no capture/API/collector/lease had started before restart. Consumer: next current20
+score/research input, not a mid-fit replacement of the Engine's frozen89723bars.
+Native first3pages/symbol <=60GET plus2predeclared exact technical retries,
+one authenticated client, existing measured pacing/atomic token exclusion;
+Paper owners take precedence. Three pages need not produce300 completed bars;
+at least252past-only eligibility must be measured. Missing/unfinished sessions
+are excluded, never imputed. No collector remains running after closure above.
+A/data/liquid-core-fresh-research-input-20261016-v1/assignment.json
+
+Closed forward-delivery diagnosis: NAS accepted6pages/102overlap revisions;
+pair2pages/34revision conflicts. API transport worked, old merge consumers
+remain deferred. NAS exact whole fresh pages can support a separately versioned
+view; pair cache did not retain a coherent incoming revised page. No silent
+mixture, old quarantine relaxation or source-wide quota claim.13Oct15 G107
+held_close endpoints validated; Oct12 remains incomplete. Inspection has41
+native/hash checks but19retained Ruff line-length errors, not full RuffPASS.
+A/data/current-forward-delivery-recovery-20261016-v1/result.json
 
 ## Exact Required Marks Closed
 

@@ -1,6 +1,6 @@
 # Runbook
 
-## Current Owned Runtime (2026-10-16 KST /Oct15 UTC)
+## Current Owned Runtime (2026-10-16 KST)
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -8,7 +8,31 @@ ONE company objective: current-nas-owned-model-paper-cycle-v1.
 AGENTS.md owns authority/risk; HANDOFF.md owns current evidence.
 KIS Paper work is delegated. Never read/route KIS_LIVE_*.
 
-### Existing nightly,23:50 KST
+### Existing Nightly,23:50 KST
+
+CURRENT Task thericher-kis-paper-daily-spy-session uses image
+sha256:827d8e91ec4c3d8b5ed94ab88e07c633d4345d1e196cded1d80db3550b3a79c6.
+Current root A/execution/nightly-required-tail-scope-deployment-20261016-v1.
+Parent Action-only installation23:06KST verified original enabled state,
+all triggers/principal/settings/Command/cwd and next23:50KST. No manual Task
+invocation, extra continuation, private-state write or capital reset. Current
+model87697 Task unchanged. Driver63b47a9e/launcher3b2c3a3c/configb7244238;
+473public/471runtime files. Required SPY/TLT/GLD only, still253 completed sessions
+each; general collector four-symbol default unchanged. Missing required data
+remains unavailable. Old4fd7/native terminal recovery below is historical.
+
+After the natural opportunity, use NEW current reader, never an old release:
+```powershell
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/nightly-required-tail-scope-deployment-20261016-v1/read_owned_dispatch.py --read --profile nightly --not-before '2026-10-16T14:50:00+00:00'
+```
+Parent-only private offline read requires proven named-owner quiescence:
+NEWROOT/NATIVE_PARENT_COMMANDS.ps1 -Read -OwnersQuiescent, network-none/RO.
+No observe()/strategy invocation. Corrected reader80f89e2b/nativepinsf6ea505b.
+Current parent-installed.json proves deployment, not actual input/order/fill.
+Do not rerun freeze/build/configure/install creators. Before/after/rollback
+definitions and exact installation recipe stay in the current root.
+
+### Previous Nightly Recovery (4fd7, Historical)
 
 Task: thericher-kis-paper-daily-spy-session.
 Same Task enabled; ONE Oct15 17:38UTC technical continuation installed plus
@@ -185,7 +209,12 @@ A/infra/nightly-terminal-window-attribution-20261016-v1/result.json
 ### Other preserved owners
 
 Accounting83 r6: thericher-kis-paper-five-387ee5f6c7c6-accounting,
-next Oct15 20:25 UTC /Oct16 05:25 KST. Runtime remains unknown.
+actual Oct16 05:33KST exact r6 receipt reattached: Oct15 economic mark observed,
+offline readback_complete/cohort no_owned_intent;2daily attempts/1token. Not
+global flat/current model custody or net PnL. Next Oct17 05:25KST. Oldindex2
+remains unknown and is never replayed. Offline reattachment reader is inert
+unless --read; existing result is complete, do not recreate it to refresh time.
+A/execution/accounting83-owned-outcome-20261016-v1/result.json
 A/execution/future-accounting-data-source-firstcause-r6-20261015-v1/parent-installation/after.json
 
 Goal83 exit Oct17 04:50/recovery05:00 KST. Goal97 entry Oct19 22:30/recovery22:40,
@@ -282,6 +311,13 @@ Windows Paper Tasks were not deleted or replayed by that cleanup.
 ## Verification
 
 Current repo exact source authority:
+A/verification/nightly-required-tail-scope-20261016-v1/authority.json
+503changed-path serial pass; clean8 full16991pass22skip/17013collected/
+435.45sec/helperexit0,1346sources/7a184596edb3dbe190e6eff0afb449c96625dafd811aea6c7051a639b0afc5d4.
+Ruff/default/research/accounting sample-env Compose PASS. New827d deployed;
+source commit5995171 pushed, runtime unknown until natural23:50KST.
+
+Previous quiet-installer authority (frozen historical source only):
 A/verification/quiet-schedule-installer-20261016-v1/authority.json
 35changed-path serial pass; clean8 full16960pass22skip/16982collected/
 367.376sec/helperexit0,1346sources/e05812ddd7964a095e058dae341ef844c8097d7820228bccf34efe5d124c9cda.

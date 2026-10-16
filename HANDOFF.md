@@ -1,6 +1,56 @@
 # TheRicher v2 Handoff
 
-## Current Reality (2026-10-16 KST / Oct15 UTC)
+## Reboot Recovered (2026-10-16 23:06 KST)
+
+Operator requested restart/resume. Boot observed at22:38:50KST. Git ae5e5f7
+was clean. Four role agents reattached. Engine retained three completed Ridge
+checkpoints without refitting and COMPLETED remaining six CUDA fits:164epochs/
+6341updates/90knowncells. Original time/attempt caps retained; actual lease
+released. Epoch-versus-duration receipt error corrected by exact lineage in a
+separate artifact, original bytes/debits unchanged. Strategy26reconciled pins/
+46checks/three consumed SYN attempts preserved; no repeat numerical attempt.
+Independent9CPUrestores/90cells/180450curve values passed, noP1P2 within scope,
+zero changedTop5. Proportional growth/turnover is legitimate fixed-notional
+algebra; every noncash basket pays entry/exit costs. All primary tests false.
+No alpha or new Paper adoption. New zero-fit fixed-rank fusion is separately
+frozen adaptive development, not rewriting the failed primary result.
+
+Source-safe Scheduler/model receipt after reboot validates hold/
+await_declared_exit, zero API calls and cleanup absence. This is not fresh
+inventory or proof of a new fill. Both existing model/nightly Tasks enabled;
+normal nightly remains Oct16 23:50KST. No manual Task invocation.
+Required-tail repair IS DEPLOYED on SAME nightly Task: image827d8e91,
+473public/471runtime sources; Action-only XML before/disabled/after-disabled/
+after-enabled checks passed at23:06KST, original triggers/principal/settings/
+Command/cwd/model Task/private volumes/shared initial tenth unchanged.
+Only SPY/TLT/GLD requested by this consumer; general default four-symbol scope
+and required253session/source/freshness/fault checks unchanged. Runtime input/
+order/fill outcome remains UNKNOWN until the natural23:50 opportunity.
+Source commit5995171 pushed. Fresh503serial/16991fullpass22skip/17013collected/
+435.45sec/clean8 helper0, Ruff/three sample-env Compose PASS,1346/7a184596.
+Independent source/release review noP1P2; installer13mocked checks passed.
+A/execution/nightly-required-tail-scope-deployment-20261016-v1/parent-installed.json
+A/verification/nightly-required-tail-scope-20261016-v1/authority.json
+
+Fresh20 separate input COMPLETE:6000strictbars/300each/latestOct15/20ready252/
+zero gaps. Original31GET/1POST partial closed with1802.654wall debit/2.654overcap
+preserved. Explicit remaining-cursor recovery29GET/1POST/0retry, no duplicate
+newest pages; aggregate60GET/2POST. Child330.902sec within600, lease released/
+no unknown request. Old89723training input/current Paper targets untouched.
+A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/completion.json
+
+Accounting83 r6 actual Oct16 05:33KST receipt is now independently reattached:
+exact Oct15 economic-session mark observed,2daily attempts/1token,
+offline readback_complete/no_owned_intent for THAT cohort only. Not global
+flat, current-model custody, measured fees, settlement or net PnL. Oldindex2
+remains unknown. Source/time/hash binding assumes an honest host, not
+cryptographic OS-scheduler-origin proof.
+A/execution/accounting83-owned-outcome-20261016-v1/result.json
+A/execution/tonight-current-paper-readiness-20261016-v1/result.json
+A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/restart-interruption.json
+A/data/liquid-core-fresh-research-input-20261016-v1/assignment.json
+
+## Current Reality (retained Oct15 UTC execution)
 
 ONE company objective: current-nas-owned-model-paper-cycle-v1.
 LATEST13:40UTC model visit failed before submit: exact reader validates1token/
@@ -49,8 +99,8 @@ Workdir C:/Users/Public/Documents/thericher-v2. AGENTS.md owns authority.
 | Owner | Frozen deployment | Next natural opportunity |
 | --- | --- | --- |
 | NAS model | Same finite quiet Task/image87697f8e,474files/manifest13cfe08b,host2fb90e20/config6e5fcc16 | Eight exact retained FULLfills/zero unknown; hold until owned exit, no manual replay |
-| Existing daily baseline | Same Task/new4fd7fdd2 image,473files;17:38 exact recovery closed2FULLSELLs/thirdexpired,27globalterminal | Next normal Oct16 14:50UTC; incomplete targets preserved, no replay/reset |
-| Future accounting83 | r6 accounting-only repair installed, actual result unknown | Oct16 05:25KST/Oct15 20:25UTC |
+| Existing daily baseline | Same Task/new827d8e91 image,473files, Action-only install verified; old4fd7 recovery closed2FULLSELLs/thirdexpired | Next Oct16 23:50KST; new runtime/input unknown, original identities/bank unchanged |
+| Future accounting83 | r6 exact Oct16 05:33KST receipt validated: mark observed/readback_complete/cohort no_owned_intent | Next Oct17 05:25KST; oldindex2 unknown, no global-flat claim |
 
 Both model/daily Tasks were enabled/Ready at Parent's latest source-safe read.
 Both exact image IDs are present in Docker29.3.1. No task manually invoked.
