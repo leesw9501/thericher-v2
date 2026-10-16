@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current2026-10-16 23:06KST. ONE objective:
+Current2026-10-17 00:54KST. ONE objective:
 current-nas-owned-model-paper-cycle-v1; unfinished owned exit/reconciliation.
 Parent owns shared policy/docs/Git/integration. A=D:/thericher-v2/model-artifacts.
 Standing private Paper authority unchanged; never live/paid/public behavior.
@@ -9,28 +9,33 @@ Standing private Paper authority unchanged; never live/paid/public behavior.
 
 | Owner | Actual current status | Next action |
 | --- | --- | --- |
-| Parent | Required-tail code5995171 pushed;827d action-only nightly installation verified23:06KST. | Integrate live stateboards and independent research results; natural23:50KST outcome not yet observed. |
-| Execution/Kuhn |COMPLETE/released: default-four/required-three source, frozen release and13installer mocks pass. | Existing23:50KST sameTask, no manual invocation; strict new release reader afterward. |
-| Engine/Lovelace |COMPLETE original3CPU+6CUDA/164epochs/6341updates/90knowncells; no repeated Ridge, lease released. | NEW frozen zero-fit fixed-rank fusion36cells; independently reviewed math, no Paper substitution. |
-| Strategy/Curie |COMPLETE/released:26 reconciled pins, original canonical READY restored,46 checks/three attempts unchanged. | Engine received versioned READY and scoped source review; no repeat fit/SYN. |
-| Data/Schrodinger |COMPLETE6000strict bars/300x20/latestOct15/20ready252,60GET2POSTaggregate; exact remaining cursors, lease clean. | Exact NEXT source/availability ABI for current20 shadow scoring; old89723study/Paper unchanged. |
+| Parent | Typedd0ff5f8 pushed;30433095 installed and actual00:52KST exactcyclecomplete/nativeverified. | Commit source-safe evidence, continue independent ready research;15:42neverinstalled. |
+| Execution/Kuhn |13installer/9recipe/42native mocks PASS; actual native-v2 complete/exactbinding/28terminal. | Close bounded recovery; original14:50causeUNKNOWN, no repeated technical trigger. |
+| Engine/Lovelace | Intraday12fits(3CPU9CUDA)/188completeepochs/99knowncells finished; lease/containers released. | Prepare NEW fixed50 residual-expert contract/native SYN; no market fits before frozen contract/challenge. |
+| Strategy/Curie | Two official-source fixed50 hypotheses assigned in separate external write set. | Executable proposal/rejection, not more architecture-grid models. |
+| Data/Schrodinger | Original400newGETplan COMPLETE45462bars/50assets/min737max993/13known gaps; owner released. | Handoff exact R3manifest/ABI, no automatic further acquisition or page replay. |
+| Validation/Poincare | COMPLETE5040features/12restores/2400EVALscores/99cells/17127NAVpoints PASS; zero changedTop5. | Released, no refit/GPU; all original primaryfalse/claim limits preserved. |
 | Model Paper | Existing finite Task/image87697f8e enabled; post-reboot source-bound hold receipt. Eight retained exact FULLfills, not fresh custody. | Existing slots recover same requests; owned exit fromOct21 USOPEN. |
-| Nightly Paper | SameTask/image827d enabled, next23:50KST, action-only XML verified. Previous4fd7 cycle incomplete:2FULLSELLs/thirdexpired. | New-day required tails and exact closed-state rollforward; no expiry/bank/target reset. |
+| Nightly Paper | Actual30433095 00:52KST complete/exact_cycle_complete:1auth14GET/zero neworders; nativecomplete/1ack FULLSELL/all28terminal/noreservedBUY. | Existing normal nextMon23:50KST only; no further technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 05:33KST r6 receipt:Oct15mark/readback_complete/cohort no_owned_intent. | Existing exitOct17 04:50/05:00KST and accounting05:25; oldindex2 unknown. |
 | Goal97 | Original separate owner/history/basis retained. | EntryOct19 22:30/22:40KST, exitOct24 04:50/05:00; no adoption/replay. |
 
 ## Throughput Review
 
-Reboot is an interruption, not a completed campaign. Preserve completed fits,
-checkpoints, charged attempts and original deadlines; classify each process
-from actual state. Current bottleneck is input coupling/readiness for the
-nightly consumer, not human approval or model profitability. Repair only the
-required-symbol boundary while Data/Strategy/Engine continue disjoint work.
-One reversible improvement: avoid collecting/qualifying unused QQQ for the
-three-asset operational baseline, without weakening any required-tail checks.
-Original ready GPU campaign actually finished; peakreserved522MB. Next fixed
-fusion is CPU work, not a GPU/runtime permission hold or dummy-load excuse.
-No foreground session/quota wait or company-wide evidence/permission hold.
+Reboot is an interruption, not campaign completion. Completed fits/checkpoints,
+charged attempts and original deadlines persist. Current bottleneck is an actual
+Paper recovery fault now closed by actual same-identity reconciliation, not
+approval/data completeness/profitability. Original exception UNKNOWN; successful
+later recovery does not establish a code cause. No further technical trigger.
+Company outcome still needs the eight model positions' owned exit fromOct21;
+no foreground session wait. Engine/Strategy preparation and Data process-cost
+improvement are ready independent paths. Original5minute validity stays fixed.
+
+One reversible improvement: measured first10GET HTTP total0.539sec versus13fresh
+owner probes37.455sec. Reuse probe PROCESS, never stale facts/guards, in future
+tested collector; current pacing/token checks unchanged. Data r2's premature
+tentative cutoff was orchestration overhead, not a KIS quota. Follow actual
+installed due times. No foreground wait or dummy training for GPU utilization.
 
 ## Evidence / Recovery
 
@@ -42,9 +47,9 @@ No foreground session/quota wait or company-wide evidence/permission hold.
 - A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1
 - A/execution/nightly-terminal-incomplete-deployment-20261016-v1
 
-Current full repo authority1346/7a184596:503serial, clean8 full16991pass/
-22skip/17013collected/435.45sec/helper0/Ruff/three sample-env Compose. New tracked
+Current full repo authority1348/c7d511a9:1384serial, clean8 full18052pass/
+22skip/18074collected/417.928sec/helper0/Ruff/three sample-env Compose. New tracked
 source changes require fresh authority, not reuse against changed code.
 Prior detailed projections remain in Gitae5e5f7 and immutable artifacts.
-Historical124+new9=133fit versions(83CUDA+50CPU), not architectures. No qualified alpha. Fees/settledcash/net
+Historical133+new12=145fit versions(92CUDA+53CPU), not architectures. No qualified alpha. Fees/settledcash/net
 broker PnL unknown. No operator decision currently identified.

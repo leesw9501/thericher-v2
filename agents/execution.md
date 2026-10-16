@@ -1,9 +1,38 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current 2026-10-16 KST /Oct15UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current 2026-10-17 KST /Oct16UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
+
+CURRENT installed30433095 SAME nightly Task:00:46KST guarded install, exact
+disabled/enabled XML verified, ALL original triggers plus ONE00:52KST technical
+continuation. Original expiry/context/basis/risk/identities unchanged. No manual
+invocation/private write. Code d0ff5f8,1384serial/18052fullpass22skip/helper0/
+Ruff3Compose. ACTUAL00:52KST complete/exact_cycle_complete:1auth14GET/zero new
+orders/cancels. Native-v2 exactpointer/cycle/contract verifies complete, retained
+1ack FULLSELL/all28terminal/zero unclosed/noreservedBUY/privatebytesunchanged.
+Not model-owned exit/fresh inventory/net PnL. Original14:50causeUNKNOWN; later
+success does not prove a diagnostic code fixed its cause. Old15:42tentative never
+installed. New public reader is nightly-typed-recovery-deployment-20261017-v1;
+native-reader-v2 separately sealed for472runtimefiles, network-none/privateRO
+and proven named-owner quiescence only. Original configured native reader
+hardcoded471 and is not used for this image. No observe()/advance() as reader.
+A/execution/nightly-typed-recovery-deployment-20261017-v1/parent-installed.json
+A/execution/nightly-typed-recovery-deployment-20261017-v1/native-reader-v2/ready.json
+
+Prior runtime evidence below is retained, not the current installed release.
+
+LATEST actual Oct16 23:50KST827d run: public source/time binding validates
+unavailable/retained_context_recovery_required,1auth/39ExecutionGET/1SELLstart/
+0BUY. Corrected nativeRO result proves1acknowledgedFULLSELL, cycleactive,
+28globalterminal/zero unclosed/no BUYreservation. Fullrebalance remains
+unfinished; no newintent/input/expiry/bank reset. Originalexceptionunknown.
+Offline r2 purepointer/projection/prefix/SELL/BUYterms pass, privateunchanged.
+R1ROlock-denial was a diagnostic limit, not cause. Kuhn owns scoped typed-
+diagnostic/nativeSYN work; Parent integration/recovery, no blindtaskreplay.
+A/execution/nightly-post-sell-pure-diagnosis-20261016-v1/result-r2.json
+A/execution/nightly-required-tail-scope-deployment-20261016-v1/native-reader/parent-native-outcomes.json
 
 Post-reboot: source-bound model reader validates hold/await_declared_exit/zeroAPI,
 not fresh inventory. SAME nightly Task now image827d8e91/473public471runtime,

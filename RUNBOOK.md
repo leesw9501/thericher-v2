@@ -1,6 +1,6 @@
 # Runbook
 
-## Current Owned Runtime (2026-10-16 KST)
+## Current Owned Runtime (2026-10-17 KST)
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -11,24 +11,43 @@ KIS Paper work is delegated. Never read/route KIS_LIVE_*.
 ### Existing Nightly,23:50 KST
 
 CURRENT Task thericher-kis-paper-daily-spy-session uses image
-sha256:827d8e91ec4c3d8b5ed94ab88e07c633d4345d1e196cded1d80db3550b3a79c6.
-Current root A/execution/nightly-required-tail-scope-deployment-20261016-v1.
-Parent Action-only installation23:06KST verified original enabled state,
-all triggers/principal/settings/Command/cwd and next23:50KST. No manual Task
-invocation, extra continuation, private-state write or capital reset. Current
-model87697 Task unchanged. Driver63b47a9e/launcher3b2c3a3c/configb7244238;
-473public/471runtime files. Required SPY/TLT/GLD only, still253 completed sessions
+sha256:30433095cfa311e61b69435f21f5524149389bee2fef84f4d14b797818bd4b20.
+Current root A/execution/nightly-typed-recovery-deployment-20261017-v1.
+Parent installation00:46KST verified original enabled state, all existing
+triggers/principal/settings/Command/cwd plus ONE technical00:52KST continuation.
+No manual Task invocation/private-state write/capital reset. Current model87697
+Task unchanged. Driver89a438de/launcherc2692715/config03f21763;
+474public/472runtime files. Required SPY/TLT/GLD only, still253 completed sessions
 each; general collector four-symbol default unchanged. Missing required data
-remains unavailable. Old4fd7/native terminal recovery below is historical.
+remains unavailable. Original14:50UTC827d outcome had1SELLstart/0BUY and
+retained_context_recovery_required; strict old native reader proves1acknowledged
+FULLSELL/all28terminal/noreservedBUY, whole rebalance unfinished. Original
+exception UNKNOWN; pure-state checks pass, not a cause proof. New finite native
+diagnostics preserve risk/quantity/identity/TTL; expired context is not renewed.
+Old827d/4fd7 release commands are historical, not current readers.
 
 After the natural opportunity, use NEW current reader, never an old release:
 ```powershell
-uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/nightly-required-tail-scope-deployment-20261016-v1/read_owned_dispatch.py --read --profile nightly --not-before '2026-10-16T14:50:00+00:00'
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/nightly-typed-recovery-deployment-20261017-v1/read_owned_dispatch.py --read --profile nightly --not-before '2026-10-16T15:52:00+00:00'
 ```
 Parent-only private offline read requires proven named-owner quiescence:
-NEWROOT/NATIVE_PARENT_COMMANDS.ps1 -Read -OwnersQuiescent, network-none/RO.
-No observe()/strategy invocation. Corrected reader80f89e2b/nativepinsf6ea505b.
+Use separately sealed native-v2 recipe only after source pins/owner quiescence
+are checked, network-none/privateRO. No observe()/strategy invocation or old
+reader against the new image. v2seal.json binds recipe/pins;42native SYN and
+9recipe mocks pass, public-image proof exit0. Then use the absolute recipe:
+```powershell
+& D:/thericher-v2/model-artifacts/execution/nightly-typed-recovery-deployment-20261017-v1/native-reader-v2/PARENT_READ.ps1 -Read -OwnersQuiescent
+```
+The switch attests an actual fresh owner/container check, not a bypass. This
+reader proves retained native linkage only, not new broker custody or PnL.
 Current parent-installed.json proves deployment, not actual input/order/fill.
+Actual15:52UTC public result complete/exact_cycle_complete:1auth14GET, zero new
+orders/cancels. Quiescent strict native-v2 confirms complete exactcycle,
+original1ack FULLSELL/all28terminal/zero unclosed/noreservedBUY/privateunchanged.
+Do not invoke another continuation; original cause UNKNOWN. Model-owned exit
+and fees/settledcash/net PnL remain unfinished/unknown respectively.
+Fresh1384serial/18052fullpass22skip/clean8helper0/Ruff/three sample-env Compose;
+authority1348/c7d511a9;13mockedinstaller scenarios pass, not runtime proof.
 Do not rerun freeze/build/configure/install creators. Before/after/rollback
 definitions and exact installation recipe stay in the current root.
 

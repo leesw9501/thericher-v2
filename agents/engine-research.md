@@ -20,16 +20,42 @@ arithmetic90cells/180450curve values passed, maxerror1.78e-15; full scoped
 review noP1P2, zero changedTop5. The proportional growth/turnover deltas are
 legitimate fixed-buy-notional algebra, not reused metrics/missing entry costs.
 All three primary tests remainfalse. No alpha/Paper switch.
-Next zero-fit frozen mean/median rank fusion is a NEW finite36cell experiment,
-not old-result repair, best-expert search or prerequisite singlesprofit.
+NEW zero-fit frozen mean/median rank fusion COMPLETE36knowncells/14436NAVpoints,
+zero fits/forwards/GPU. Independent36/72180curve values pass/max1.11e-15;
+1052commonkeys/55baskets/lexicalties/weights verified, old90controls byte-identical.
+All four policies growthpositive6/9 but betterDD0/9; all descriptive primary
+screens false, not proven fusion benefit or best-expert search.
+A/research/liquid-core-fixed-rank-fusion-development-20261016-v1/independent-review/result.json
 A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-handoff.json
 A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/independent-review
 
 Fresh NEXT source6000bars/300x20/latestOct15/20ready252 is separate from the
 completed89723bar training source. It may support newly frozen current-score
-shadow inference with actual observed availability after USOPEN; never backdate
-to OPEN or substitute current Paper targets/input. No forward result inferred.
+shadow inference with actual observed availability after USOPEN. Actual F3
+runtime diagnostic COMPLETE20assets/60expert scores/3canonical current batches/
+2fusion vectors/4targetweight vectors, zero missing eligibility/fits/economic
+replay/broker intents. GeneratedOct16 23:34KST aftersourceavailable14:06UTC.
+No historicalOPEN/prospective-performance claim or currentPaper substitution.
+Actual CPU+CUDA paths/cleanup/lease release attested by producer; no newfit.
+A/research/liquid-core-current20-f3-forward-20261016-v1/owner-handoff.json
 A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/engine-input.json
+
+Fixed20 FirstRate intraday cross-sectional family COMPLETE12fits/13attempts,
+including1technical retry:3CPU Ridge/9CUDA LSTM-GRU-TCN, explicit30/120/300
+windows.188complete epochs/3577..3604optimizer updates; interrupted epoch work
+bounded, not claimed zero or complete. Native9checkpoint restores;99known
+cost-aware cells/zero unknown, primaryfalse all3folds.511.170ownedactive/
+2639.609end within1800/7200, lease/containers released. Independent Poincare
+review PASS in scope:5040features/12native restores/2400EVALscores,99cells/
+17127NAVpoints/max8.89e-16, zero changedTop5.843elapsed/zero fits or GPU;
+all primaryfalse preserved. DD covers CLOSE/transaction clocks, not full
+OPEN/intrabar paths. Ten-day fixed-universe reused development,
+not independent performance/architecture attribution/alpha/Paper adoption.
+No imputed3h context/missing minutes. New checkpoint helper separately passed
+scoped native CUDA GRU continuation, not universal TCN/mid-batch recovery.
+A/research/stock-intraday-crosssection-development-20261016-v1/owner-handoff-final.json
+A/research/stock-intraday-crosssection-development-20261016-v1/independent-review/result.json
+Completed versions total145=92CUDA+53CPU, not145architectures or SYN/forwards.
 
 Interruption field1792157728.0207944 was an epoch accidentally treated as a
 duration: missing GPU-plan started_epoch plus PowerShell null subtraction.

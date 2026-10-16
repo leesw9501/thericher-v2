@@ -10,8 +10,8 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |Listwise recovery CLOSED:3retainedCPU+6newCUDA/164epochs/6341updates, zero repeated Ridge/technical retry. Lease released; peakreserved522190848bytes, tiny panel not a need for dummy GPUload.|
-| Next depth |New zero-fit fixed-rank fusion preparation/36cells, CPU not GPU. Current20 fresh300x20 data ready for separately frozen shadow inference; no Paper switch.|
+| GPU |Intraday family COMPLETE3CPU+9CUDA/188completeepochs,13attempts including1technical retry. Lease/containers released; peakreserved228589568bytes. Listwise6CUDA164epochs preserved, no duplicate fits.|
+| Next depth |Intraday99cells under independent CPU-only review; fixedfusion36 and F3current20 inference closed. Engine prepares next finite hypothesis, Strategy examines two source-grounded alternatives. No Paper switch.|
 | CPU research |New trade-and-close45cells CLOSED42conditionalcomplete/3unknown; independent45/68496NAVpoint check PASS/0fits/GPU, CPU2RAM4 verified/released. Prior27/18/full-OPEN metric and6vs4RAMfinding unchanged; producer6GiB verified.|
 | Data |Adjusted20 recovery CLOSED89723bars/87743windows, collectors released13:23:29UTC before Paper. SECmap403closed1GET/0retry/no dataset. No GPU.|
 | Strategy |LongNAS independent687pins/108cells PASSED,0restored model calls. Dirac completed MTFcausal feature adapter/420cache arrays/0fits. Descartes quiet tests/actual receipt CLOSED, startup visibility unknown.|
@@ -22,9 +22,20 @@ Observations, not future guarantees. Measure before allocation, preserve desktop
 headroom, ONE named GPU lease. No dummy work or inherited global VRAM/time cap.
 Prepared role/MD is not evidence of a live numerical worker.
 
+New training checkpoint helper sourcef50770b: CPU dropout/AdamW/ReduceLROnPlateau/
+NumPy+Torch RNG continuation bit-exact;25newtests/46impactedserial pass. Fresh
+clean8full17016pass22skip/17038collected/371.76sec/helper0/Ruff3Compose passes,
+1348sources/73aef779. No old campaign automatically adopts this helper.
+Poincare independent Torch2.7CUDA GRU/dropout retry PASSED exact continuation
+of loss/model/AdamW/scheduler/CPU-CUDA-NumPy RNG, D hardlink commit and incomplete
+refusal. Original OrderedDict-comparator failure retained. Old7epochs14steps+
+new8/16=15/30synthetic total, zero market fits; containers gone/lease released.
+Not universalTCN/CUDA/mid-batch proof. Intraday first market fits require their
+own native full-kernel SYN/frozen contract, no company-wide approval wait.
+
 ## Custody To Preserve
 
-- Latest continuation124 fitted VERSIONS(77CUDA/47CPU), not124architectures.
+- Latest continuation145 fitted VERSIONS(92CUDA/53CPU), not145architectures.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent

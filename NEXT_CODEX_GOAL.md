@@ -14,7 +14,7 @@ shared policy/integration/Git. A=D:/thericher-v2/model-artifacts; M=D:/market_da
 Never KIS_LIVE_*, real money, paid/public behavior or secret/private-value output.
 Standing private Paper authority is delegated, not dependent on research alpha.
 
-## Actual Current Runtime (Oct16 KST)
+## Actual Current Runtime (Oct17 KST)
 
 - Model: SAME finite Task thericher-kis-paper-current-nas-model-20261015,
   image87697f8e/474publicfiles. Retained exact evidence:8acknowledged FULLfills/
@@ -22,12 +22,22 @@ Standing private Paper authority is delegated, not dependent on research alpha.
   await_declared_exit/zeroAPI, NOT fresh broker custody or net PnL. Entry ONLY
   Oct15 bound input. Later visits recover exact requests or owned exit from
   Oct21 US regular OPEN; original targets/identities/expiry/bank stay unchanged.
-- Nightly: SAME thericher-kis-paper-daily-spy-session now image827d8e91,
-  473public/471runtime files; Action-only installed Oct16 23:06KST. ALL original
-  triggers/principal/settings/Command/cwd retained; next23:50KST. Required
+- Nightly: SAME thericher-kis-paper-daily-spy-session now image30433095,
+  474public/472runtime files; installed Oct17 00:46KST. ALL original
+  triggers/principal/settings/Command/cwd retained. Required
   SPY/TLT/GLD only, still253completed sessions each; default collector stillfour.
-  No manual Task invocation/new trigger/private write. New runtime result is
-  UNKNOWN. Prior4fd7 closed two FULLSELLs/third never-attempted expired/all27
+  NaturalOct16 23:50KST run:1auth/39ExecutionGET/1SELLstart/0BUY then
+  unavailable/retained_context_recovery_required. Strict native read proves
+  ONE acknowledged FULLSELL, activecycle/all28globalterminal/zero unclosed/
+  no BUYreservation. Whole rebalance unfinished, original exception unknown.
+  Offline pure-state r2 checks pass, privatebytesunchanged. Execution owns
+  bounded typed-diagnostic/nativeSYN repair. Parent installed ONE exact owned
+  technical continuation Oct17 00:52KST after verification, no substitute
+  request/manual Task invocation. No newdata/targets/expiry/bank reset.
+  Actual00:52KST complete/exact_cycle_complete,1auth14GET/zero neworders/cancels.
+  Strict native-v2 proves complete exactcycle/original1ack FULLSELL/all28terminal/
+  zero unclosed/noreservedBUY. OriginalcauseUNKNOWN; not model-owned exit/PnL.
+  Prior4fd7 closed two FULLSELLs/third never-attempted expired/all27
   terminal, target incomplete NOT successful rebalance. No expiry renewal/reset.
 - Accounting83 r6 exact Oct16 05:33KST receipt validates Oct15mark/
   readback_complete/cohort no_owned_intent, not globalflat/current model custody.
@@ -40,8 +50,8 @@ Standing private Paper authority is delegated, not dependent on research alpha.
 At existing natural opportunities use exact current launch/time/source/image
 reader -> immutable dispatch -> native cycle/intent/fill/owned-state linkage.
 Current model public reader belongs to current-nas-zero-quote-recovery-
-deployment-20261015-v1; nightly reader belongs to NEW nightly-required-tail-
-scope-deployment-20261016-v1. Never old-release readers or observe(). Private
+deployment-20261015-v1; nightly reader belongs to NEW nightly-typed-recovery-
+deployment-20261017-v1. Never old-release readers or observe(). Private
 offline readers require proven named-owner quiescence, network-none/RO mounts.
 Distinguish no-intent, attempted/accepted submit, exact fill, pending recovery,
 owned inventory and terminal reconciliation. Task exit/install/preview is not
@@ -54,14 +64,20 @@ delegated authority; never substitute an unknown request or expand capital.
 
 - Engine recovered original3Ridge without duplicate fits and completed6CUDA/
   164epochs/6341updates. Ninefit/90known-cell family primary false. Preserve all
-  old clocks/results; temporary independent CPU restore/arithmetic review and
-  NEW zero-fit fixed mean/median rank fusion continue in disjoint roots.
+  old clocks/results; independent9CPUrestore/90cells passed. NEW zero-fit fixed
+  mean/median fusion36cells independently passed/noDDbenefit, old90unchanged.
 - Data fresh20 COMPLETE:6000strict bars/300each/latestOct15/20ready252/zero gaps;
   total60GET/2POST, no repeated newest pages. Old89723training/current Paper
   inputs unchanged. This is a NEXT source, not a silent fit/Paper substitution.
-- NEXT current20 shadow scoring may freeze exact f3 checkpoints/feature/scaler
-  and this whole fresh source BEFORE forwards. Actual availability was after
-  USOPEN; do not backdate it or interpret it as an OPEN fill/performance result.
+- Exact f3 current20 runtime scoring COMPLETE60expert scores/4weight vectors/
+  zero fits or broker intents. Availability AFTEROPEN, no historical/prospective
+  performance or Paper adoption. Fixed20 intraday family COMPLETE12fits:
+  3CPU/9CUDA LSTM-GRU-TCN,188completeepochs,99knowncells/zero unknown;
+  primaryfalse allfolds. Independent5040features/12restores/2400EVALscores/
+  99cells/17127NAVpoints PASS/zero changedTop5/zero fits or GPU.
+- Fixed50source45462bars/min737max993/50ready252 after400newGET plus60reused;
+  13knowninvalid gaps retained. OriginalplanCOMPLETE, no automatic expansion.
+  r1overrun54.250sec retained; r2within452.101/600 and r3within313.250/600.
 - Strategy metadata26pins/46checks/three consumed attempts reconciled without
   rerun; original canonical READY retained, versioned reconciled pointer used.
 - Parent integrates/deploys/commits; no foreground session/quota sleep. A local
@@ -69,16 +85,22 @@ delegated authority; never substitute an unknown request or expand capital.
 
 ## Evidence And Verification
 
-A/execution/nightly-required-tail-scope-deployment-20261016-v1/parent-installed.json
+A/execution/nightly-typed-recovery-deployment-20261017-v1/parent-installed.json
 A/execution/accounting83-owned-outcome-20261016-v1/result.json
 A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-handoff.json
 A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/completion.json
 A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/SAFE_READY.reconciled.json
 
-Fresh exact repo QA1346/7a184596:503serial, clean8 full16991pass22skip/
-17013collected/435.45sec/helper0/Ruff/three sample-env Compose PASS.
-A/verification/nightly-required-tail-scope-20261016-v1/authority.json.
-Code5995171 pushed. External code needs own focused/native checks; docs/external
+Previous827d source retains1346/7a184596 authority503serial/16991full22skip.
+Latest committed research helperf50770b source1348/73aef779:46serial, clean8full
+17016pass22skip/17038collected/371.76sec/helper0/Ruff/three sample-env Compose.
+A/verification/training-checkpoint-recovery-20261016-v1/authority.json.
+Typed diagnostics d0ff5f8 pushed with exact1348/c7d511a9 authority:1384serial,
+18052fullpass22skip/18074collected/417.928sec/clean8helper0/Ruff/three Compose.
+Newrelease30433095 installed with ONE15:52UTC/00:52KST technicalcontinuation;
+all original triggers preserved,15:42neverinstalled. Actualexactcyclecomplete
+confirmed by public source chain and strict native-v2 reader, no new order.
+Code5995171/c4bd04f/f50770b/d0ff5f8 pushed. External code needs own focused/native checks; docs/external
 work may reuse full authority only with exact source/control digests unchanged.
 Company outcome still unfinished. Integrate material packages, verify/commit/
 push and CONTINUE the active human request while delegated work is ready.

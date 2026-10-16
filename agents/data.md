@@ -1,5 +1,24 @@
 # Data Stateboard (시장데이터 담당)
 
+## Current Oct17 Reboot Continuation
+
+Fresh20 COMPLETE6000strict adjusted daily bars/300each/latestOct15/20ready252,
+60GET/2POST aggregate. No completed page replay or old89723study/Paper swap.
+Fixed50COMPLETE:45462strictbars/min737max993/50ready252,400newGET plus60reused.
+13native-invalid gaps retained. Original400newGET plan closed in recovery-r3,
+owner released; no automatic larger download campaign. R3charged313.250/600,
+180SYN/184352hashchecks PASS; exact460GET/6POST source-acquisition aggregate.
+r1 final closeout1254.250/1200 overrun retained in CLOSED-budget-overrun.json;
+r2within452.101/600, no refund. r2earlytentative cutoff was orchestration timing,
+not KIS daily quota. Follow actual Paper next_due/active ownership, not obsolete
+tentative15:30/15:42 times. Actualtechnical15:52UTC installed byParent15:46UTC.
+Measured first10GET total0.539sec versus13freshowner probes37.455sec:
+next improvement may reuse the probe PROCESS, never stale facts/guards.
+A/data/fixed50-adjusted-breadth-20261016-v1/recovery-r3/completion.json
+A/data/fixed50-adjusted-breadth-20261016-v1/recovery-r1/timing-first10.json
+
+Older source details below remain immutable evidence, not current live owners.
+
 Current: 2026-10-16 KST/Oct15UTC. Company goal: current-nas-owned-model-paper-cycle-v1.
 Current Data: fresh20 collection COMPLETE via exact remaining-cursor recovery; old inputs frozen.
 Parent owns training science/integration/Git; Execution owns Paper runtime.
@@ -7,6 +26,19 @@ No account/live/Scheduler/fits/GPU/labels/returns; old inputs/claims/debits immu
 Market bytes: D:/market_data (M); artifacts: D:/thericher-v2/model-artifacts (A).
 
 ## Reboot / Ready Consumer
+
+NEW fixed50 breadth source CLOSED at explicit limit, not API quota/floor:
+182newGET/1POST/0retry plus60reused whole pages/6000rows ->24048strict bars,
+50ready252/min397max498per slot/zero known gaps. All20original+30predeclared
+sector representatives use retained officialOct9 route reference, not refreshed
+Oct16/PIT/liquidity screen.1181.168conservative owned upper within1200,
+848.745actualworkerwall; cleanup14:35:44UTC, no collector/unknownrequest remains.
+97429native/hash+152overlap anchors checked,550SYN. Frozen worker has oneE501
+retained, not all-source RuffPASS.218planned olderGET remain; ETAunknown, no
+automatic restart. Explicit recovery-r1 preparation may resume only those
+cursors after23:50Paper is quiescent and not before14:55UTC; separate budget,
+old caps/debits/source snapshots unchanged. No currentfit/Paper substitution.
+A/data/fixed50-adjusted-breadth-20261016-v1/completion.json
 
 Fresh20 now COMPLETE:6000strict bars/300each20routes/latestOct15/no gaps/
 20ready252. Parent31GET/1POST partial closed with1802.654 conservativewall debit,
