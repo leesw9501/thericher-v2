@@ -97,6 +97,7 @@ def test_short_tail_receipt_is_source_safe_and_replayable(
         retrieved_at_utc=datetime(2026, 8, 2, tzinfo=UTC),
         artifact_root=root,
         repo_root=repo,
+        disk_usage=_available_storage,
     )
 
     assert result.status == "input_unavailable"
@@ -167,6 +168,7 @@ def test_calendar_upper_bound_fails_before_a_panel_rebuild(tmp_path: Path) -> No
         database_build_metadata_sha256="sha256:" + "b" * 64,
         retrieved_at_utc=datetime(2026, 8, 2, tzinfo=UTC),
         artifact_root=root,
+        disk_usage=_available_storage,
     )
 
     assert result.status == "input_unavailable"
@@ -195,6 +197,7 @@ def test_tail_can_only_be_ready_after_calendar_and_common_session_minimum(tmp_pa
         database_build_metadata_sha256="sha256:" + "c" * 64,
         retrieved_at_utc=datetime(2026, 12, 2, tzinfo=UTC),
         artifact_root=root,
+        disk_usage=_available_storage,
     )
 
     assert result.status == "ready"
@@ -212,6 +215,34 @@ def test_active_root_requires_one_timestamp_matching_candidate(tmp_path: Path) -
     ) == active.resolve()
     with pytest.raises(NorgateTrialTailReadinessError, match="unresolved"):
         resolve_active_norgate_us_database_root(source_update, candidates=(active, active))
+
+
+@pytest.mark.parametrize("free", [14, 15])
+def test_tail_storage_floor_uses_injected_measurement(tmp_path: Path, free: int) -> None:
+    observation = NorgateTailReferenceObservation(
+        package_version="fixture",
+        source_update_at_utc=datetime(2026, 8, 1, tzinfo=UTC),
+        requested_start=date(2026, 6, 23),
+        requested_end=date(2026, 7, 1),
+        sessions_by_symbol={symbol: () for symbol in ("SPY", "QQQ", "IWM")},
+    )
+    root = tmp_path / "artifacts"
+    arguments = dict(
+        destination=root / "tail-floor",
+        observation=observation,
+        active_database_root=tmp_path,
+        database_build_metadata_sha256="sha256:" + "e" * 64,
+        retrieved_at_utc=datetime(2026, 8, 2, tzinfo=UTC),
+        artifact_root=root,
+        disk_usage=lambda _root: SimpleNamespace(total=100, free=free),
+    )
+    if free < 15:
+        with pytest.raises(NorgateTrialTailReadinessError, match="storage is unavailable"):
+            build_norgate_trial_tail_readiness_receipt(**arguments)
+        assert not (root / "tail-floor").exists()
+    else:
+        result = build_norgate_trial_tail_readiness_receipt(**arguments)
+        assert result.status == "input_unavailable"
 
 
 def test_receipt_rejects_git_workspace_destination(tmp_path: Path) -> None:
@@ -239,6 +270,10 @@ def test_receipt_rejects_git_workspace_destination(tmp_path: Path) -> None:
 
 def _sessions(start: date, count: int) -> list[date]:
     return [start + timedelta(days=index) for index in range(count)]
+
+
+def _available_storage(_root: str | Path) -> SimpleNamespace:
+    return SimpleNamespace(total=100, free=50)
 
 
 def _database_root(root: Path, timestamp: datetime) -> Path:

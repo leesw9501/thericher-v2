@@ -2,7 +2,14 @@
 
 ## Current Oct17 Reboot Continuation
 
-LATEST04:17KST: old2000/2010/2020anchors6GET nativeempty; newrecent8GET found
+LATEST after16:39KST reboot: Ptolemy owns separate fixed20 daily accumulation
+source/SYN recovery, no API or installation yet. Parent capture-session source
+1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose.
+New finite visits must preserve accepted day/query refs, cumulative day caps
+and unknown pending; one POST per finite visit is not one unlimited day counter.
+A/data/current20-minute-accumulation-worker-20261017-v1/reboot-recovery-20261017-v1
+
+Closed sources: old2000/2010/2020anchors6GET nativeempty; newrecent8GET found
 480rows atOct1/Oct8 forQQQ/SPY, Jan6/Sep1empty. No globalfloor/date inferred.
 Oct8 fullcohort witness18newGET/2160newrows+240cached:2380commonmask rows,
 zero jointOHLCVmatches toFirstRate, no chosen correction/oldABI promotion.
@@ -10,10 +17,29 @@ Independent source comparison preserved; volume/open discrepancies are native
 training-input considerations, not a company permission hold.
 NewXLK capture9GET1POST/694unique mode1rows/611required sessions, native repeat/
 pageoverlap stable; frozen fixedsplit2/pre1/post test FAILED, basis unknown.
-Kuhn NEW offline split-continuity diagnostic, no rescale/regrade/extraAPI.
-Schrodinger next missingOct6-9 full20source plus reusedOct12-15 for8session
-nativePriceRidge;600normalGET+2retry/oneclient/named60scope/2400active7200end.
-One collector only, immutable382source package; old scopes/counters unchanged.
+Offline diagnostic found no mode1 large/splitlike jump across610links; mode0
+shows official splitlike boundary, formula/TR/PIT remain unknown. NEW conditional
+Engine3fit study complete/rejected, not a regrade of old exact-factor failure.
+Eight-session capture CLOSED_PARTIAL:300GET/1POST/0retry plus380cachedpages,
+62395/62400RTH labels,155/160fullasset-sessions/15fullsymbols,0conflicts.
+Five omissions allOct7 12:42 in AMD/AMZN/META/QQQ/TSLA, inside retained page
+windows, not a history floor.2260.462inclusiveactive/2400, owner/PID released.
+Original fullsource consumer NOT ready; no imputation/source qualification.
+Exact-five-gap repair CLOSED10GET/1POST/0retry,1200matchingoverlaprows/
+0conflicts/0repairs,525.449active/600. No more identical queries. Old partial
+manifest stays immutable. NEW Engine missing-aware contract uses original
+62395source/past-only300mask, no imputation/source swap/fullgrid promotion.
+A/data/current20-kis-native-eight-session-input-20261017-v1/handoff.json
+A/data/current20-kis-native-eight-session-input-20261017-v1/gap-witnesses.json
+A/data/current20-native-five-gap-source-repair-20261017-v1/handoff.json
+PREP separate06:50KST Tue-Sat fixed20 completed-session accumulation. Do not
+widen immutable old2ETF06:20Task/schema. Reusable mixed capture source is
+verified, not deployed; reviewed frozen capsule before any worker wire call.
+No source-only PREP proves an active collector or downloaded session.
+
+## Closed Capture Context
+
+The following captures/repairs are completed history, not queued instructions.
 
 Actual AAPL/NAS minute head+older timestamp probe COMPLETE240unique rows,
 Oct16 08:54..12:53ET/204RTH36preopen;735native/hash/calendar checks. Aggregate
@@ -38,7 +64,8 @@ input.166890native/hash/calendar checks; finalcharge2806.26/3600, no owner/
 pendingrequest/next_due remains. Unit/bar-end/PIT unqualified; source-bound
 engineering assumptions require a separately named study, not oldABI promotion.
 Study token60floor deviated from newData300 default; actual1POST and deviation
-retained, no retroactive authorization. Subsequent newData uses300.
+retained, no retroactive authorization. NewData defaults300 unless a separately
+named source-based60 calibration applies, as in the current eight-session job.
 Poincare found two recovery P2s (lease-loser stalewrites/prematurependingclear)
 and an external reader import-binding gap, NOT observed currentdata corruption.
 Curie owns scoped codefix/focused tests after frozen capture ended; Parent

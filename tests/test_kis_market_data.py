@@ -1693,3 +1693,257 @@ def _row(exchange_time: str) -> dict[str, str]:
         "last": "101",
         "evol": "1000",
     }
+
+
+def _mixed_scopes():
+    return {"AAPL": frozenset({"NAS"})}, {"XLK": frozenset({"AMS"})}
+
+
+def _mixed_daily_request(mode="1", *, symbol="XLK"):
+    _, scope = _mixed_scopes()
+    return KisMarketDataRequest(
+        method="GET",
+        url=KIS_PAPER_MARKET_DATA_BASE_URL + KIS_PAPER_DAILY_PATH,
+        headers=dict(
+            authorization="Bearer SYN",
+            appkey="SYN-key",
+            appsecret="SYN-secret",
+            tr_id=KIS_PAPER_DAILY_TR_ID,
+            tr_cont="",
+            accept="application/json",
+        ),
+        query=dict(AUTH="", EXCD="AMS", SYMB=symbol, GUBN="0", BYMD="20260717", MODP=mode),
+        daily_symbol_exchanges=scope,
+        daily_adjustment_modes=frozenset({"0", "1"}),
+    )
+
+
+def _mixed_minute_request(*, standard=False, extra_scope=False):
+    scope, _ = _mixed_scopes()
+    if extra_scope:
+        scope = dict(scope, MSFT=frozenset({"NAS"}))
+    typed = kis_market_data.KisPaperHistoricalMinuteQuery(
+        exchange="NAS", symbol="AAPL", approved_symbol_exchanges=scope
+    )
+    return KisMarketDataRequest(
+        method="GET",
+        url=KIS_PAPER_MARKET_DATA_BASE_URL + KIS_PAPER_MINUTE_PATH,
+        headers=dict(
+            authorization="Bearer SYN",
+            appkey="SYN-key",
+            appsecret="SYN-secret",
+            tr_id=KIS_PAPER_MINUTE_TR_ID,
+            custtype="P",
+            tr_cont="",
+        ),
+        query=dict(
+            AUTH="",
+            EXCD="NAS",
+            SYMB="AAPL",
+            NMIN="1",
+            PINC="0",
+            NREC="120",
+            FILL="",
+            KEYB="",
+            NEXT="",
+        ),
+        historical_minute_query=None if standard else typed,
+    )
+
+
+class _MixedOpener:
+    def __init__(self, responses=()):
+        self.responses = list(responses)
+        self.calls = []
+
+    def open(self, request, timeout):
+        self.calls.append((request.get_method(), urllib.parse.urlsplit(request.full_url).path))
+        native = self.responses.pop(0)
+
+        class Response:
+            status = native.status_code
+            headers = native.headers
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                pass
+
+            def read(self):
+                return native.body
+
+        return Response()
+
+
+def test_explicit_mixed_native_historical_and_MODP1_use_one_real_client_token(monkeypatch):
+    minute_scope, daily_scope = _mixed_scopes()
+    opener = _MixedOpener(
+        [
+            _token(),
+            KisMarketDataResponse.from_payload(dict(rt_cd="0", output1={}, output2=[])),
+            _daily_page("20260717", "20260716", continuation=""),
+        ]
+    )
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_: opener)
+    transport = kis_market_data.UrllibKisPaperMixedDataTransport(
+        minute_symbol_exchanges=minute_scope,
+        daily_symbol_exchanges=daily_scope,
+        daily_adjustment_modes=frozenset({"0", "1"}),
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig("SYN-key", "SYN-secret"),
+        transport=transport,
+        minute_route="historical_timestamp",
+        minute_symbol_exchanges=minute_scope,
+        allow_mixed_data=True,
+        mixed_daily_symbol_exchanges=daily_scope,
+    )
+    client.fetch_minute_page(
+        kis_market_data.KisPaperHistoricalMinuteQuery(
+            symbol="AAPL", exchange="NAS", approved_symbol_exchanges=minute_scope
+        )
+    )
+    page = client.fetch_daily_raw_page(
+        kis_market_data.KisPaperDailyAdjustmentProbeQuery(
+            symbol="XLK",
+            exchange="AMS",
+            by_date="20260717",
+            adjustment_mode="1",
+            approved_symbol_exchanges=daily_scope,
+        )
+    )
+    assert len(page.rows) == 2
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == client.call_counts.daily_page_attempts == 1
+    assert opener.calls == [
+        ("POST", KIS_PAPER_TOKEN_PATH),
+        ("GET", KIS_PAPER_MINUTE_PATH),
+        ("GET", KIS_PAPER_DAILY_PATH),
+    ]
+    assert client._minute_route == "historical_timestamp"
+
+
+@pytest.mark.parametrize("mode", ["0", "1"])
+def test_legacy_historical_client_still_refuses_daily_without_opt_in(mode):
+    minute_scope, daily_scope = _mixed_scopes()
+    transport = _RecordingTransport([])
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig("SYN-key", "SYN-secret"),
+        transport=transport,
+        minute_route="historical_timestamp",
+        minute_symbol_exchanges=minute_scope,
+    )
+    q = kis_market_data.KisPaperDailyAdjustmentProbeQuery(
+        "XLK", "20260717", mode, "AMS", daily_scope
+    )
+    with pytest.raises(KisPaperMarketDataError, match="minute_route_disallows_daily_page"):
+        client.fetch_daily_raw_page(q)
+    assert not transport.requests
+
+
+def test_ordinary_transport_still_refuses_MODP1_before_opener(monkeypatch):
+    opener = _MixedOpener()
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_: opener)
+    with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+        UrllibKisPaperMarketDataTransport().request(_mixed_daily_request())
+    assert not opener.calls
+
+
+def test_old_daily_only_adjustment_transport_still_refuses_minute(monkeypatch):
+    opener = _MixedOpener()
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_: opener)
+    transport = kis_market_data.UrllibKisPaperDailyAdjustmentProbeTransport(
+        daily_symbol_exchanges=_mixed_scopes()[1]
+    )
+    with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+        transport.request(_mixed_minute_request())
+    assert not opener.calls
+
+
+@pytest.mark.parametrize(
+    "case",
+    [
+        "standard_minute",
+        "minute_scope",
+        "daily_symbol",
+        "daily_scope",
+        "mode",
+        "quote",
+        "account",
+        "order",
+        "live",
+    ],
+)
+def test_explicit_mixed_transport_negative_scope_routes_precede_opener(monkeypatch, case):
+    opener = _MixedOpener()
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_: opener)
+    minute_scope, daily_scope = _mixed_scopes()
+    transport = kis_market_data.UrllibKisPaperMixedDataTransport(
+        minute_symbol_exchanges=minute_scope,
+        daily_symbol_exchanges=daily_scope,
+        daily_adjustment_modes=frozenset({"0"}),
+    )
+    request = _mixed_daily_request(mode="0")
+    if case == "standard_minute":
+        request = _mixed_minute_request(standard=True)
+    elif case == "minute_scope":
+        request = _mixed_minute_request(extra_scope=True)
+    elif case == "daily_symbol":
+        request = _mixed_daily_request(mode="0", symbol="SPY")
+    elif case == "daily_scope":
+        request = replace(request, daily_symbol_exchanges=dict(daily_scope, SPY=frozenset({"AMS"})))
+    elif case == "mode":
+        request = _mixed_daily_request(mode="1")
+    elif case == "live":
+        request = replace(request, url=request.url.replace("openapivts", "openapi"))
+    else:
+        path = dict(
+            quote="/uapi/overseas-price/v1/quotations/price",
+            account="/uapi/overseas-stock/v1/trading/inquire-balance",
+            order="/uapi/overseas-stock/v1/trading/order",
+        )[case]
+        request = replace(request, url=KIS_PAPER_MARKET_DATA_BASE_URL + path)
+    with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+        transport.request(request)
+    assert not opener.calls
+
+
+@pytest.mark.parametrize(
+    "route,flag,scope",
+    [
+        ("standard", True, {"XLK": frozenset({"AMS"})}),
+        ("historical_timestamp", True, None),
+        ("historical_timestamp", False, {"XLK": frozenset({"AMS"})}),
+        ("historical_timestamp", 1, {"XLK": frozenset({"AMS"})}),
+    ],
+)
+def test_mixed_client_requires_explicit_boolean_and_historical_daily_scope(route, flag, scope):
+    with pytest.raises(ValueError, match="mixed data"):
+        KisPaperMarketDataClient(
+            config=KisPaperMarketDataConfig("SYN-key", "SYN-secret"),
+            transport=_RecordingTransport([]),
+            minute_route=route,
+            minute_symbol_exchanges=_mixed_scopes()[0] if route == "historical_timestamp" else None,
+            allow_mixed_data=flag,
+            mixed_daily_symbol_exchanges=scope,
+        )
+
+
+def test_opted_mixed_client_rejects_different_daily_map_before_auth():
+    minute_scope, daily_scope = _mixed_scopes()
+    transport = _RecordingTransport([])
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig("SYN-key", "SYN-secret"),
+        transport=transport,
+        minute_route="historical_timestamp",
+        minute_symbol_exchanges=minute_scope,
+        allow_mixed_data=True,
+        mixed_daily_symbol_exchanges=daily_scope,
+    )
+    query = kis_market_data.KisPaperDailyAdjustmentProbeQuery(
+        "XLK", "20260717", "1", "AMS", dict(daily_scope, SPY=frozenset({"AMS"}))
+    )
+    with pytest.raises(KisPaperMarketDataError, match="mixed_daily_scope_mismatch"):
+        client.fetch_daily_raw_page(query)
+    assert not transport.requests

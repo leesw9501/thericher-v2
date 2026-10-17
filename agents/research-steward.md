@@ -8,22 +8,28 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 ## Ready / Allocated
 
-LATEST04:17KST: peer9CUDAfits/382epochs and LightGBM6CPUfits COMPLETE; independent
+LATEST16:53KST after reboot: native3Ridge also COMPLETE, never repeat. Cumulative
+ledger188=113CUDA+75CPU incloldinvalid; new audit checks latest24fitversions/
+72pins, not an independent full ancestral recount. Meitner owns one NEW native
+Chronos2 implementation/SYN package. No actual GPU allocation is inferred from
+preparation; source/key-mask/control binding, exact native300/61/loss-mask/
+restore SYN and fresh measured lease admission come first.
+
+Peer9CUDAfits/382epochs and LightGBM6CPUfits COMPLETE; independent
 checks pass. Chronos2 native domain-adaptation3CUDAfits/800steps COMPLETE,
 3selectedsafetensors/oldforecastsunchanged, lease released. No GPU numerical
-worker remains from these families. Total182versions=113CUDA+69CPU including
-one old invalid checkpoint. The queue below is historical allocation context,
-NOT authority to repeat completed jobs. NativeKIS CPU3fit implementation is
-ready but not source-bound; new data and source-information hypotheses precede
-more training. One GPU allocation/no dummy work remains policy.
+worker remains from these families. XLK conditional3CPUfits COMPLETE, rejected
+by fixed criterion; original pre-fit failure/debit retained. Native3CPU also
+closed under its separate missing-aware contract, not oldfullsource promotion.
+One GPU allocation/no dummy work remains policy.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |Depth9CUDAfits/292epochs CLOSED; onebudgetinvalid,8usable. Profile12syntheticsteps CLOSED/no marketfits. Both leases released. TimesFM/Chronos forecasts immutable.|
-| Next GPU |Lovelace NEW fixed50 peer-context ranking family: independentMLP/DeepSets/crossassetattention,9intendedfits12attempts,512maxINNER40/1800active7200end. Preparation is not runningGPU proof; oneexclusiveallocation/nativeSYNfirst.|
-| CPU research |Kuhn NEW isolated LightGBM LambdaRank/L2 comparison6intendedfits7attempts/600active3600end; no shareddependency/runtime replacement. Actual fits await its ledger. Maskedtransfer33conditionalcells COMPLETE0fits, source/ABI assumptions retained.|
-| Data |Current20minute COMPLETE43200native/35840RTH/20x4full390, released. Schrodinger NEW QQQ/SPY recenthorizon bracket, noGPU; oldanchors6empty not globalhistoryfloor.|
-| Validation |Poincare frozen collector recoverypatch independentreview; Parent202serial/freshclean8fullQA running. No productionwrite owner active.|
+| GPU |No current allocation or numerical worker. Peer9CUDA and Chronos2 fine-tune3CUDA CLOSED/released; old forecasts/checkpoints immutable.|
+| Next GPU |Meitner source-bound native Chronos2 300/61 SYN first;<=50SYNsteps/8forecastbatches,0marketfits. One lease after actual admission, not dummy load.|
+| CPU research |Native3fits closed. Covariance implementations unready, no market run. Existing numerical results/caps immutable.|
+| Data |Ptolemy recovering separate fixed20 post-close accumulation source work;0API/install in recovery. Eight-session capture/5gap repair both closed.|
+| Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
 Last measured hardware:RTX4090/24564MiB/driver610.88; RAM63.8GiB/36.6GiBfree.
@@ -44,10 +50,10 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
 
 ## Custody To Preserve
 
-- Closed fitted VERSIONS164(101CUDA/63CPU), including ONE budget-invalid depth
+- Closed fitted VERSIONS188(113CUDA/75CPU), including ONE budget-invalid depth
   TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
-  This is not164architectures, all qualified fits or currentGPU activity. New
-  peer/ranker intentions are not counted before actual completed ledgers.
+  This is not188architectures, all qualified fits or currentGPU activity. New
+  intended Chronos2 market fit is not counted before actual completion.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent

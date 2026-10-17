@@ -63,35 +63,84 @@ A/execution/current-daily-gross-attribution-20261017-v1/fresh-current-r1/current
 ## Other Owned Execution To Preserve
 
 Accounting83 r6 exact Oct16 05:33KST receipt:Oct15economic mark observed,
-readback_complete/cohort no_owned_intent;2daily attempts/1token. NOT globalflat
-or current-model custody. Oldindex2 unknown/113archive/claims/otherActions retained.
-Goal83 exitOct17 04:50/05:00KST/accounting05:25. Goal97 entryOct19 22:30/22:40,
+readback_complete/cohort no_owned_intent;2daily attempts/1token. New bounded
+exact-archive reader confirms this;10original+5negative checks PASS. Old CLI
+recurses through module-global argparse replacement: never rerun it. This is
+not proof of the interrupted PID/reboot cause. Oldindex2 UNKNOWN remains.
+Goal83 initial close/recovery are no_intent/entry_window_elapsed, NOT globalflat
+or current-model custody; consumed slots have no future due. Model next due
+Oct19 22:40KST/nightly23:50KST. Goal97 entryOct19 22:30/22:40,
 exitOct24 04:50/05:00. Do not replay/replace/adopt these owners.
 Last model-only readonly valuation Oct16 03:09KST:8marks/globalquantitymatch,
 indicative GROSS negative, sequential/non-atomic. Realized/net profit unknown;
 not a new valuation. Original diagnostic r1 unknown cause/counts retained.
 A/execution/accounting83-owned-outcome-20261016-v1/result.json
+A/execution/reboot-execution-recovery-20261017-v1/result.json
 A/execution/future-accounting-data-source-firstcause-r6-20261015-v1
 A/execution/current-nas-fresh-valuation-diagnostic-runtime-20261016-v1
 
 ## Research / Data Ready
 
-LATEST Oct17 04:17KST: peer-context9CUDAfits/382epochs/3788updates and LightGBM
+LATEST Oct17 16:50KST after actual07:39:51UTC Windows reboot. Previous LLM
+agents are gone; new Data/Engine/Execution recovery agents inspect durable
+artifacts, not repeat completed fits. Parent owns tracked changes/Git. Existing
+loopback web container restarted,127.0.0.1:8787/health HTTP200; no broker call or
+new strategy deployment. Capture-session integration verification now PASS.
+
+Peer-context9CUDAfits/382epochs/3788updates and LightGBM
 6CPUfits/18cells COMPLETE, independently checked; no new training inferred
 from older queue text below. Peer primary0fold; rankerfalse/false/true, both
 familyfalse. Chronos2 native financial fine-tuning COMPLETE3CUDAfits/800steps,
 126newforecastbatches/6048rows/18cells/primary0fold; old zero-shot forecasts
 unchanged, selected safe checkpoints50/100/50 by INNER, no market retries.
-Cumulative182 fittedversions=113CUDA+69CPU including1budgetinvalid oldTCN,
-not182architectures or qualified alpha. Do NOT repeat these completed fits.
-NativeKIS price-only Ridge30/120/300 implementation READY, no market fits;
-awaits NEW8session source. Data owns missingOct6-9 plus reusedOct12-15.
+Chronos retained-output/source custody independent PASS:800steps/16INNER/
+6048forecasts/18cells, no native forecast parity; checkpoint release precedes
+EVAL, not every FIT/INNER target, and corpus limits remain.
+NEW nativeXLK interaction COMPLETE3CPUfits/18knowncells, primary0fold/growth
+versus raw14 lower/equal/lower. Pre-fit empty-calendar-tail compatibility fault
+fixed exactly; original25.461s debit retained, cumulative50.94active/240.
+NEW missing-aware nativeKIS Ridge30/120/300 COMPLETE3CPUfits/3attempts/0retry,
+384FIT/204INNER/204EVALrows,18knowncells; fixed120/10bps primaryfalse on all
+three comparisons.14SYN checks/native checkpoint restore PASS.24.390active/
+493.571end within300/1800; no GPU/API/Paper change or old completed fit rerun.
+Cumulative188 fittedversions=113CUDA+75CPU including1budgetinvalid oldTCN,
+not188architectures or qualified alpha. Do NOT repeat these completed fits.
+Old full-grid nativeKIS preparation remains unbound; the NEW missing-aware
+study preserves the same dates/kernel/splits/criterion with past-only masks.
+Eight-session source CLOSED_PARTIAL300GET/1POST/0retry+380cachedpages:
+62395/62400RTH labels/155fullasset-sessions/0conflicts, owner released.
+Five Oct7 12:42 omissions AMD/AMZN/META/QQQ/TSLA mean old fullsource minimum
+unmet. Exact-five-gap repair CLOSED10GET/1POST/0retry,1200matchingoverlaprows/
+0conflicts/0repairs; no more identical queries. Oldpartialmanifest unchanged.
+New missing-aware study uses ORIGINAL62395source, not repair/source swap or
+imputation. Only2EVALsession clusters, assumed clock/unit/PIT limits remain.
+Data daily20minute accumulation implementation was interrupted during PREP;
+recovery checks files/ownership before any new API or schedule installation.
 Current KIS/FirstRate overlap confirms discrepancies, NOT oldABI readiness.
-XLK611-session newKIS capture exists but oldfixedsplit witness failed; NEW
-offline continuity diagnostic may inform a separately named conditional study.
+XLK611-session native mode1 continuity diagnostic found no large splitlike
+jump; this supported only the NEW conditional study above. Old exact-factor
+split witness remains failed, unknown formula/TR/PIT unchanged. Strategy now
+prepares covariance-aware sizing with zero market fits/replay, not a model grid.
 Cboe AI-use rights unresolved: excluded, not a paid commitment/company hold.
-Infra/Poincare prepares small reusable data-capture session to remove bespoke
-driver duplication; no migration of currently running/frozen workers.
+Capture-session independent review found malformed-JSON escaped-secret P2;
+minimal repair refuses uninspectable bodies, keeps pending/debits, and fixed
+test-owned hardlink cleanup. Parent unchanged12negative checks PASS.
+R1 full passed18216/22skip but helper
+cleanup refused test hardlinks, so NOT authority. R2 failed a host-disk-dependent
+Norgate unit test, also NOT authority. Parent injected deterministic positive
+unit storage measurements and14/15boundary coverage, production guard unchanged.
+Fresh345serial/18235fullPASS22skip/18257collected, clean8 helperEXIT0,
+407.555JUnit seconds. Source1355/50c535b3, fresh Ruff/three sample-env Compose
+PASS. Exact source/control/JUnit checker accepted this r3 authority after reboot.
+Old failed/unclean roots/authorities remain unmodified, no cleanup bypass.
+Goal83 source-safe receipt intake is recovered offline; never infer outcome
+from Task exit or old unbounded reader. The earlier zero-new-receipt
+discovery was a UTC/local PowerShell filter error, not a proven launcher fault.
+A/research/current20-kis-missing-aware-price-window-development-20261017-v1/FROZEN.json
+A/data/current20-native-five-gap-source-repair-20261017-v1/handoff.json
+A/verification/data-capture-session-20261017-v1/retry-r3
+A/research/fixed50-native-xlk-interaction-development-20261017-v1/owner-handoff.json
+A/research/fixed50-chronos2-domain-adaptation-development-20261017-v1/independent-review/FROZEN.json
 
 - Reboot preserved3Ridge checkpoints, zero duplicate fits. Six remaining CUDA
   GRU/TCN fits completed164epochs/6341updates/13202forwards; original9attempts/

@@ -41,8 +41,11 @@ Standing private Paper authority is delegated, not dependent on research alpha.
   terminal, target incomplete NOT successful rebalance. No expiry renewal/reset.
 - Accounting83 r6 exact Oct16 05:33KST receipt validates Oct15mark/
   readback_complete/cohort no_owned_intent, not globalflat/current model custody.
-  Oldindex2 unknown/113archive/otherActions preserved. Existing Goal83 exit
-  Oct17 04:50/05:00KST/accounting05:25; Goal97 entryOct19 22:30/22:40 and exit
+  Bounded exact-archive recovery reconfirms index4,15checks PASS; obsolete
+  recursive CLI must not run. Oldindex2 unknown/113archive/otherActions preserved.
+  Initial Goal83 close/recovery no_intent/entry_window_elapsed; consumed Tasks
+  have no future due. Model nextOct19 22:40KST/nightly23:50KST. Goal97 entryOct19
+  22:30/22:40 and exit
   Oct24 04:50/05:00. Do not replay/replace/adopt another owner.
 
 ## Completion Evidence
@@ -62,36 +65,42 @@ delegated authority; never substitute an unknown request or expand capital.
 
 ## Ready Parallel Work
 
-LATEST04:17KST overrides earlier dispatch projections in this section:
-peer9CUDA/6LightGBMCPU/3Chronos2nativefine-tunes COMPLETE; never rerun them.
-Peer and LightGBM independent checks passed; Chronos2 retained-output review
-next. All familyprimaryfalse, not all policies losing or a Paper prohibition.
-Current ready packages: missingOct6-9/reusedOct12-15 native8session source,
-then price-only Ridge30/120/3003fit consumer; XLK conditional source-continuity
-diagnostic; reusable privateData capture-session library (not a new platform).
-Cboe AI-use rights unresolved means exclude source, not buy or stop company.
-Closed fitversions182 inclone oldinvalid, not182architectures or activejobs.
+LATEST16:51KST after actual07:39:51UTC reboot. Previous agent sessions ended;
+Data/Engine/Execution recovery agents inspect retained work in parallel, Parent
+owns tracked edits/Git. Completed training NEVER restarts from an old queue.
+Native missing-aware Ridge30/120/300 also COMPLETE3CPUfits/18knowncells,
+384FIT/204INNER/204EVAL; fixed120/10bps primaryfalse, not a Paper prohibition.
 
-- Engine/Lovelace: NEW peer-context ranking family, three fixed independent
-  MLP/DeepSets/crossassetattention configs x3folds, <=9fits/12attempts,
-  512maxepochs/INNER40,1800active/7200end. Same fixed50 source,14past features,
-  chronological mature21day targets, fair cutoffties, native learnability/
-  permutation/checkpoint SYN before market. OneGPUallocation; preparation is
-  not proof of running training. Old completed fits are never repeated.
-- Engine/Kuhn: NEW objective-aligned LightGBM LambdaRank/L2 comparison on same
-  features/source/splits, <=6fits/7attempts,1024maxrounds/INNER50,600active/
-  3600end, CPU4/RAM8/GPU0. Only official compatible no-cost research-isolated
-  dependency; no shared runtime replacement. Freeze then run autonomously.
-- Data/Schrodinger: NEW QQQ/SPY recent minutehorizon bracket Jan6/Sep1/Oct1/
-  Oct8,2026;8normalGET+2exactretry/oneauth,600active/1800end. Use attested
-  immutable6module namespace and explicit source-based60 token calibration,
-  shared atomicgate/2second GETpace/owned preemption. This does NOT change
-  global300 default, old contracts or earlier recorded60 policy deviation.
-  Six2000/2010/2020anchors were nativeempty; no globalhistoryfloor inferred.
-- Validation/Curie: independent frozen masked intraday transfer33conditional
-  cells/264weights/1632CPUmodelrows; no fit/GPU/API or oldABI promotion.
-  Volumeablation and assumed label-as-start/completeness/consistentpriceunits
-  remain explicit adaptive-study assumptions, not source qualification.
+Peer9CUDA/6LightGBMCPU/3Chronos2nativefine-tunes COMPLETE;
+independent checks passed, including Chronos retained-output/source custody,
+not native forecast parity. NEW conditionalXLK3CPUfits also complete/rejected.
+Never rerun completed fits. All familyprimaryfalse, not all policies losing
+or a Paper prohibition. Current ready packages: integrate verified capture-
+session code; finish fixed20 daily accumulation source work; integrate bounded
+Goal83 outcome recovery; prepare one informative native Chronos2 experiment, without
+repeating completed daily fine-tunes. These do not replace the unfinished goal.
+Cboe AI-use rights unresolved means exclude source, not buy or stop company.
+Closed fitversions188 inclone oldinvalid, not188architectures or activejobs.
+
+- Data: native8source62395RTH and exact5gap repair10GET/1POST/0repairs CLOSED;
+  no more same-gap queries. Recover ONE separate fixed20 post-close accumulation
+  worker from interrupted PREP. Do not widen immutable old twoETF schema/Task.
+  No wire/install until scoped source/owner/calendar checks and Parent deployment.
+- Engine: verify completed188fit custody and recover native Chronos2 PREP.
+  Source62395 is valid only under its separately named missing-aware contract;
+  old fullgrid consumer remains unmet. No source swap, imputation, adaptive
+  sensitivity winner selection or reopened old clocks. No GPU work merely for
+  utilization. Covariance solver failures remain closed/unready; source-only
+  certificate diagnosis is not a market-performance pass.
+- Execution: bounded exact Oct16/index4 Goal83 public outcome recovered with
+  15checks. Receipt discovery uses aware UTC, not PowerShell local-cast ticks.
+  Never rerun obsolete recursive argparse CLI. New reader retains exact pins/
+  time/source/claim binding, bounded CPU/memory/wall and no runtime invocation.
+- Parent: capture-session malformed-JSON inspection P2 and hardlink fixture
+  fixed, unchanged12independent negatives PASS. Deterministic Norgate storage
+  tests preserve real15percent guard.345serial PASS; fresh clean8 source1355/
+  50c535b3 PASS18235full22skip/18257collected/407.555JUnitsec/helperEXIT0;
+  Ruff/three sample-env Compose PASS. R1/R2 failures NOT reusable authority.
 - Current20minute source COMPLETE360GET/1POST/0retry/43200native rows/
   35840RTH; all20 have390labels eachOct12-15, currentOct16partial excluded.
   Independent source consistency PASS; unit/bar-end/PIT still unqualified.
@@ -122,11 +131,11 @@ A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-ha
 A/data/liquid-core-fresh-research-input-20261016-v1/recovery-r1/completion.json
 A/strategy-research/listwise-risk-allocation-preparation-20261016-v1/SAFE_READY.reconciled.json
 
-Current code382638d PUSHED:1353sources/354f4348,202Parentserial/freshclean8
-full18100pass22skip/18122collected/370.325sec/helperEXIT0; Ruff and default/
-research/accounting Compose using .env.example PASS. Independent patch20checks
-and14old-code negatives PASS. No Paper image or deployed strategy change.
-A/verification/stock-intraday-recovery-20261017-v1/authority.json.
+Current capture-session source1355/50c535b3:345Parentserial/freshclean8
+full18235pass22skip/18257collected/407.555JUnitsec/helperEXIT0; Ruff and default/
+research/accounting Compose using .env.example PASS. Unchanged12independent
+negatives PASS. No Paper image or deployed strategy change.
+A/verification/data-capture-session-20261017-v1/retry-r3/authority.json.
 Older authorities/caps/results remain in Git and immutable roots. External
 code requires its own focused/native checks; source-only tests do not prove
 deployment/fill/profit. Docs reuse only exact unchanged source/control digests.

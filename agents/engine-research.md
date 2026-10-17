@@ -7,7 +7,22 @@ Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
 ## Current Oct17 Parallel Continuation
 
-LATEST04:17KST supersedes earlier allocated/queued projections below.
+LATEST16:53KST after reboot: new Engine/Meitner audited72pins/115checks,
+latest24completed fitversions preserved,0fits/restores/forecasts/GPU compute.
+Ancestral188 is the cumulative ledger, not independently recounted by that audit.
+Native missing-aware3Ridge COMPLETE/3attempts/0retry/384FIT204INNER204EVAL/
+18knowncells; primary120/10bps fails all3comparisons,24.390ownedactive.
+Oldfullgrid source requirement remains unmet; no imputation/source swap.
+Additive erratum clarifies a stale PREP sentence in its immutable FROZEN;
+does not change numerical results. Parent appointed NEW source-bound Chronos2
+300context/61horizon implementation/nativeSYN only, no market fit yet. Exact
+source/key-mask/control binding and native best-restore/loss-mask tests precede
+a separate one-fit numerical contract. NewSYN is not repeated daily training.
+A/research/reboot-engine-recovery-20261017-v1/FROZEN.json
+A/research/current20-kis-missing-aware-price-window-development-20261017-v1/FROZEN.json
+A/research/native-kis-chronos2-intraday-implementation-20261017-v1
+
+Closed results below are not instructions to repeat fits.
 Peer-context9CUDAfits/382epochs/3788updates COMPLETE; independent9CPUrestores/
 35532scores/378weights/27newcells+45controls PASS, maxNAV3.55e-15. One full-rank
 change but zero Top5 allocation changes; no bitexactCUDAparity. Primary0fold.
@@ -15,13 +30,23 @@ LightGBM4.6.0 isolated6CPUfits/18cells COMPLETE, independent6Boosterrestores/
 11844bitexactEVALscores/4482NAV PASS, primaryfalse/false/true/familyfalse.
 Chronos2 firstnative financial fine-tuning3CUDAfits/800steps/18knowncells
 COMPLETE, selected50/100/50 by INNERpatience4, no marketretry or oldforecast
-rerun. Source forecast/payoff/corpus limits remain; independent review next.
-Closedversions182=113CUDA+69CPU including1oldbudgetinvalid, not architectures.
+rerun. Independent retained-output/source check PASS:800steps/16INNER/
+6048forecasts/18cells; not native forecast parity. Release precedes EVAL, not
+every FIT/INNER target; pretraining corpus limits remain.
+Closedversions188=113CUDA+75CPU including1oldbudgetinvalid, not architectures.
 No repeated completed fits; extra epochs are not assumed to create signal.
-NativeKIS price-onlyRidge30/120/300 PREP READY/0marketfit/0sourcebound; Data
-collects fixed8sessions, conditional native-label/unit assumptions, no oldABI
-dependency. XLK loading-interaction proposal needs NEWsource continuity study;
-unknown Cboe AI-use rights exclude that source only. No forced GPU workload.
+NativeKIS price-onlyRidge30/120/300 closed as above; conditional native-label/
+unit assumptions, no oldABI dependency. XLK continuity diagnostic found no mode1 splitlike jump; NEW
+conditional loading-interaction3CPUfits COMPLETE/18knowncells/primary0fold.
+Growth versus raw14 lower/equal/lower; this feature is rejected under its fixed
+criterion, not all sector information. Exact empty-Oct16 geometry pre-fit
+repair retained original25.461s debit; cumulative50.94/240active, no marketretry.
+Old exact-factor witness remains failed. Covariance-aware sizing source SYN
+and one solver alternative closed unready; certificate diagnosis has no sealed
+completion. Zero market fits/replay, not a market-hypothesis rejection. Unknown
+Cboe AI-use rights exclude that source only. No forced GPU workload.
+A/research/fixed50-native-xlk-interaction-development-20261017-v1/owner-handoff.json
+A/research/fixed50-chronos2-domain-adaptation-development-20261017-v1/independent-review/FROZEN.json
 
 Fixed50 residual3Ridge/3HGB/3MLP COMPLETE9CPUfits/9attempts/72knowncells,
 66.356active/2240.829end. Independent45462source/15886feature-targetrows/
@@ -49,9 +74,10 @@ six dependent TCN/fusion economics excluded/UNKNOWN; eight usable fits. No
 duplicate completed fits or retrospective budget relaxation. Thirty knownnew
 cells/6unknown/45controls, primaryPATCH0fold/familyfalse. INNER beats constant
 only1/9, not convergence. RetainedTCNprogress~29sec/epoch vsGRU/PATCH~.4sec;
-checkpointspanproxy~.25sec is not a CUDA profiler. Poincare independent queued.
-Lovelace may run separate <=12step synthetic native timing probe to guide NEW
-campaign batching, not refit completed data/models or force utilization.
+checkpointspanproxy~.25sec is not a CUDA profiler. Independent292checkpoint/
+9CPUrestore/35532score check PASS, no Top5 changes. Separate12synthetic-step
+profile closed: forward dominated, smallerbatch no measured per-row benefit;
+not a market-speed/convergence claim or completed-study refit.
 
 OOF shallow tree COMPLETE1CPUfit/3948f1-f2rows/6positive-growthf3cells; learned
 two splits use ONLY RidgeRank+pastSPYregime, not demonstrated multi-expert fusion.
@@ -62,16 +88,14 @@ HGB ties correctly0.5, no lexical fake signal.
 Zero-fit sizing COMPLETE9positive-growthcells; inversevol worsens concentration/
 DD, regime blend equals originaltree on all42dates, both primaryfalse. Fixed
 half blend lowers growth/DD/turnover and beats uniform in this reused f3 control;
-descriptive, not newly selected alpha. Independent sizing reader active.
-Kuhn next synthesizes ONE mechanistically informative candidate/rejection,
-not another outcome-driven parameter grid. No fits/GPU in that package.
+descriptive, not newly selected alpha. Independent sizing readback PASS.
 
-Current20 frozen intraday transfer contract READY/14checkpoint-scaler pins;
-input remains awaited (cohort300context/units/bar-end/availability contract).
-Actual AAPL240minute rows alone are not complete20input. Data now captures the
-full20cohort within602GET cap; actual counts/window/unit/bar-end/availability
-must be read from its sealed output before transfer. No completed intraday fit
-is rerun; this input-local limitation does not block other research or Paper.
+Current20 masked intraday transfer COMPLETE4CPUbatches/1632rows/264weights/
+33knownconditionalcells, zero fits. Independent4CPUrestores/408keys/11385NAV
+check PASS; own primaryfalse/true/true/familyfalse. NEW volume-ablated ABI and
+assumed labelSTART/completeness/consistent price units, not oldABI promotion.
+Only4 dependent dates, not408 independent outcomes. Native8session price-only
+study is a different input/contract and is not a rerun of these fitted models.
 
 A/research/fixed50-residual-experts-development-20261017-v1/independent-review/result.json
 A/research/fixed50-timesfm25-frozen-fusion-development-20261017-v1/independent-review/result.json

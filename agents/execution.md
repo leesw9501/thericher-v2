@@ -5,6 +5,18 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+Oct17 reboot recovery: Planck's bounded public intake verifies original Goal83
+close/recovery no_intent/entry_window_elapsed and Oct16/index4 accounting
+mark_observed/readback_complete/cohort no_owned_intent,2dailyattempts/1token.
+10original+5negative tests PASS with2CPU/4GiB/wall supervision/reaping. Old CLI
+has reproduced argparse recursion; new exact sealed-archive alias reader keeps
+all other pins/time/provenance/claim checks. Never rerun the old CLI. No runtime
+deployment or cause attribution to the interrupted PID/reboot. Model/Next due
+Oct19 22:40KST, nightly23:50KST; old Goal83slots consumed/no futuredue. Historical
+model8FULL links remain, not postboot broker custody. ExitfromOct21OPEN unchanged.
+A/execution/reboot-execution-recovery-20261017-v1/HANDOFF.txt
+A/execution/reboot-execution-recovery-20261017-v1/result.json
+
 CURRENT installed30433095 SAME nightly Task:00:46KST guarded install, exact
 disabled/enabled XML verified, ALL original triggers plus ONE00:52KST technical
 continuation. Original expiry/context/basis/risk/identities unchanged. No manual
@@ -169,7 +181,7 @@ A/infra/remaining-owned-task-quiet-20261015-v1/metadata-audit.json
 | --- | --- | --- |
 | Existing nightly | Same Task/new827d8e91 Action-only installed23:06KST, original triggers preserved; old4fd7 terminal recovery evidence retained. | Next23:50KST; required three fresh tails/native new-day rollforward, actual result unknown. |
 | Current NAS model | Same quiet finite Task/image87697f8e/474sources/manifest13cfe08b/config6e5fcc16. EightFULLfills/zero unknown retained. | Hold/exact recovery at existing4minute slots; owned exit fromOct21OPEN, no substitute. |
-| Future accounting83 | r6 exact Oct16 05:33KST receipt:Oct15mark/readback_complete/cohort no_owned_intent; no global-flat claim. Other sixActions/oldindex2unknown retained. | Next accountingOct17 05:25KST; Goal83 exit04:50/05:00KST. |
+| Accounting83 | Bounded exact r6 Oct16/index4:Oct15mark/readback_complete/cohort no_owned_intent,2daily attempts/1token;15checks PASS. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due. Oldindex2unknown retained; no globalflat/model custody claim or replay. |
 | Goal97 owner | Separately owned original plan/history/source retained. Empty-registration runtime unproved; no established cross-policy adoption bug. | EntryOct19 22:30/22:40KST; exitOct24 04:50/05:00KST. Do not invoke/replace/adopt. |
 | CPU clock sidecar | COMPLETE6cells, independent noP1/P2, agent closed. | Consumed creator, retrieval only. |
 

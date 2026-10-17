@@ -8,6 +8,19 @@ ONE company objective: current-nas-owned-model-paper-cycle-v1.
 AGENTS.md owns authority/risk; HANDOFF.md owns current evidence.
 KIS Paper work is delegated. Never read/route KIS_LIVE_*.
 
+Reboot Oct17 16:39KST/07:39:51UTC: old LLM sessions are gone. Check actual
+process/lease/source identities, not old PIDs or stale stateboard projections.
+Completed native missing-aware Ridge3fits and prior CUDA jobs are immutable;
+do not rerun numerical creators. Source/test edits survived but were not yet
+committed at reboot. Parent fresh verification below now passes for integration.
+
+Existing monitor restored without build/config/strategy changes; loopback only:
+```powershell
+docker start thericher-v2-web-1
+```
+Verified host binding127.0.0.1:8787 and healthHTTP200. URLhttp://127.0.0.1:8787.
+Do not expose it publicly or treat a healthy monitor as fresh account custody.
+
 ### Existing Nightly,23:50 KST
 
 CURRENT Task thericher-kis-paper-daily-spy-session uses image
@@ -82,6 +95,52 @@ their OWN frozen source/native checks; source tests are not deployment.
 Oldexternalreadback.py imports mutableSRC despite archive hashes: do NOT rerun
 it after source changes. Use already sealed independent-data-review frozen
 six-module results/recipes, preserving old outputs. No implicit .env loads.
+
+### New Private Data Capture (Verified Source, Not Deployed)
+
+KisPaperDataCaptureSession is the finite current20/XLK data-only consumer,
+not a scheduler or agent platform. Freeze typed minute/daily queries, modes,
+roots and aggregate caps; one lazy authenticated client serves both endpoints.
+Explicit opt-in mixed data transport preserves all old default routes. MODP0/1
+are request representations, not a universal adjustment/total-return guarantee.
+Use caller-owned fresh readiness immediately before wire AFTER pacing. A
+deferred result owns next_due; pending unknown is not automatically replayed.
+Default token floor300, only separately named source-based60 scopes opt in.
+No token timestamp reset, implicit.env load, live/account/order/quote route.
+
+Malformed/Unicode JSON secret inspection failure now refuses body persistence
+and preserves pending/debits. Fixed test hardlink aliases are removed by their
+own fixture, not by weakening safe cleanup. Original independent P2/failed
+checks remain in A/infra/reusable-paper-data-capture-session-20261017-v1.
+Parent reran unchanged12negative checks successfully against7a44ebb1 module.
+New Norgate unit measurements are injected; production15percent guard unchanged.
+Fresh345serial/18235fullPASS22skip/18257collected/407.555JUnitsec/helperEXIT0,
+source1355/50c535b3; Ruff/default,research,accounting sample-env Compose PASS:
+A/verification/data-capture-session-20261017-v1/retry-r3.
+R1 full18216passed but helpercleanupEXIT1 and R2 partial disk-floor failure are
+NOT passing authority; never delete/bypass old denied trees to reuse a result.
+
+Daily fixed20 accumulation is still interrupted source PREP, not installed:
+A/data/current20-minute-accumulation-worker-20261017-v1.
+One proposed separate06:50KST Tue-Sat completed-session worker avoids widening
+the immutable existing twoETF06:20Task/schema. No source-only plan proves a
+running collector or downloaded day. Parent reviews/freeze/deploys separately;
+current model and nightly strategies stay on their existing frozen releases.
+
+### Bounded Public Execution Recovery
+
+Current offline recovery A/execution/reboot-execution-recovery-20261017-v1:
+result.json confirms exact Oct16/index4 mark_observed/readback_complete/
+cohort no_owned_intent,2daily attempts/1token. Initial Goal83 close/recovery
+are no_intent/entry_window_elapsed, not current-model/global flatness. Oldindex2
+UNKNOWN remains. Model nextOct19 22:40KST/nightly23:50KST by07:52UTC metadata.
+Never run accounting83-owned-outcome-20261017-v1/read_result.py: its CLI
+monkeypatch recurses through argparse. New exact_archive_reader changes one
+sealed archive alias expression, not provenance/pins/claim/time checks.
+10original+5negative tests PASS, supervised2CPU/4GiB with timeout/reaping.
+No Task/credential/broker/private/native CLI invocation. Read HANDOFF.txt and
+the separately sealed bounded usage before any new read; do not run its creator.
+This diagnoses narrow reader bugs, not the interrupted PID or reboot cause.
 
 ### Previous Nightly Recovery (4fd7, Historical)
 

@@ -452,6 +452,71 @@ class UrllibKisPaperDailyAdjustmentProbeTransport(UrllibKisPaperMarketDataTransp
         )
 
 
+class UrllibKisPaperMixedDataTransport(UrllibKisPaperMarketDataTransport):
+    """Opt-in historical-minute and opaque daily-mode scope for capture sessions.
+
+    The ordinary and old daily-only adjustment transports are unchanged. This
+    transport admits only its explicit maps/modes, then uses the native direct
+    Paper URL, request-shape, redirect, token and pacing checks.
+    """
+
+    def __init__(
+        self,
+        *,
+        minute_symbol_exchanges: Mapping[str, frozenset[str]] | None,
+        daily_symbol_exchanges: Mapping[str, frozenset[str]] | None,
+        daily_adjustment_modes: frozenset[str] = KIS_PAPER_DAILY_DEFAULT_ADJUSTMENT_MODES,
+        timeout_seconds: float = 15.0,
+        request_gate: KisPaperMarketDataRateGate | None = None,
+        token_start_gate: KisPaperMarketDataTokenStartGate | None = None,
+    ) -> None:
+        if minute_symbol_exchanges is None and daily_symbol_exchanges is None:
+            raise ValueError("mixed data requires an explicit scope")
+        super().__init__(
+            timeout_seconds=timeout_seconds,
+            request_gate=request_gate,
+            token_start_gate=token_start_gate,
+        )
+        self._mixed_minute_scope = (
+            _freeze_daily_symbol_exchanges(minute_symbol_exchanges)
+            if minute_symbol_exchanges is not None
+            else None
+        )
+        self._mixed_daily_scope = (
+            _freeze_daily_symbol_exchanges(daily_symbol_exchanges)
+            if daily_symbol_exchanges is not None
+            else None
+        )
+        self._mixed_daily_modes = _freeze_daily_adjustment_modes(daily_adjustment_modes)
+
+    def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        if request.method == "GET":
+            path = urllib.parse.urlsplit(request.url).path
+            if path == KIS_PAPER_MINUTE_PATH:
+                query = request.historical_minute_query
+                allowed = (
+                    self._mixed_minute_scope is not None
+                    and type(query) is KisPaperHistoricalMinuteQuery
+                    and query.approved_symbol_exchanges == self._mixed_minute_scope
+                    and request.daily_adjustment_modes is None
+                )
+            elif path == KIS_PAPER_DAILY_PATH:
+                allowed = (
+                    self._mixed_daily_scope is not None
+                    and request.daily_symbol_exchanges == self._mixed_daily_scope
+                    and request.query.get("MODP") in self._mixed_daily_modes
+                )
+            else:
+                allowed = False
+            if not allowed:
+                raise KisPaperMarketDataError("request_not_allowlisted")
+        return self._request_with_daily_symbol_exchanges(
+            request,
+            daily_symbol_exchanges=self._mixed_daily_scope or {},
+            daily_adjustment_modes=self._mixed_daily_modes,
+        )
+
+
 @dataclass(frozen=True)
 class KisPaperMinuteQuery:
     exchange: str
@@ -603,8 +668,9 @@ class KisPaperDailyQuery:
 class KisPaperDailyAdjustmentProbeQuery:
     """Opaque two-mode query used only by the isolated adjustment probe.
 
-    ``0`` and ``1`` are request values, not asserted provider semantics.  The
-    dedicated daily-only transport is the only route that can issue this type.
+    ``0`` and ``1`` are request values, not asserted provider semantics. The
+    dedicated daily-only transport and explicitly scoped mixed capture
+    transport can issue this type; ordinary transport still rejects it.
     """
 
     symbol: str
@@ -859,13 +925,18 @@ class KisPaperMarketDataClient:
         max_daily_page_attempts: int = KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS,
         minute_route: KisPaperMinuteRoute = "standard",
         minute_symbol_exchanges: Mapping[str, frozenset[str]] | None = None,
+        allow_mixed_data: bool = False,
+        mixed_daily_symbol_exchanges: Mapping[str, frozenset[str]] | None = None,
     ) -> None:
         if type(max_minute_page_attempts) is not int or max_minute_page_attempts < 1:
             raise ValueError("max_minute_page_attempts must be a positive integer")
         if type(max_daily_page_attempts) is not int or max_daily_page_attempts < 1:
             raise ValueError("max_daily_page_attempts must be a positive integer")
         if minute_route not in {
-            "standard", "iwm_temporal_reach_probe", "stock_capability_probe", "historical_timestamp"
+            "standard",
+            "iwm_temporal_reach_probe",
+            "stock_capability_probe",
+            "historical_timestamp",
         }:
             raise ValueError("minute route is not supported")
         if minute_route == "iwm_temporal_reach_probe" and max_minute_page_attempts != 2:
@@ -874,9 +945,24 @@ class KisPaperMarketDataClient:
             raise ValueError("stock capability requires exactly two minute attempts")
         if (minute_route == "historical_timestamp") != (minute_symbol_exchanges is not None):
             raise ValueError("historical minute route requires an explicit target map")
+        if (
+            type(allow_mixed_data) is not bool
+            or (
+                allow_mixed_data
+                and (minute_route != "historical_timestamp" or mixed_daily_symbol_exchanges is None)
+            )
+            or (not allow_mixed_data and mixed_daily_symbol_exchanges is not None)
+        ):
+            raise ValueError("mixed data requires explicit historical and daily scopes")
+        self._mixed_daily_scope = (
+            _freeze_daily_symbol_exchanges(mixed_daily_symbol_exchanges)
+            if allow_mixed_data
+            else None
+        )
         self._minute_symbol_exchanges = (
             _freeze_daily_symbol_exchanges(minute_symbol_exchanges)
-            if minute_symbol_exchanges is not None else None
+            if minute_symbol_exchanges is not None
+            else None
         )
         self._config = config
         self._transport = transport
@@ -1102,7 +1188,12 @@ class KisPaperMarketDataClient:
         """Return typed OHLCV rows only for a bounded private-cache collector."""
 
         if self._minute_route != "standard":
-            raise KisPaperMarketDataError("minute_route_disallows_daily_page")
+            if self._mixed_daily_scope is None:
+                raise KisPaperMarketDataError("minute_route_disallows_daily_page")
+            if type(query) not in (KisPaperDailyQuery, KisPaperDailyAdjustmentProbeQuery) or (
+                query.approved_symbol_exchanges != self._mixed_daily_scope
+            ):
+                raise KisPaperMarketDataError("mixed_daily_scope_mismatch")
         if self._daily_page_attempts >= self._max_daily_page_attempts:
             raise KisPaperMarketDataError("daily_page_limit_exceeded")
         access_token = self._issue_access_token()
