@@ -15,10 +15,10 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | --- | --- | --- |
 | Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
 | Validation/Planck | Friday independentPASS359pins/204scores/18cells/max2.22e-16; wrapper31casefixPASS. | Quiet-runtime source/mock review; no Task/API/credential authority. |
-| Data/Ptolemy | Oct16 COMPLETE7800/20x390/80GET1POST0retry/0gaps, ownerreleased, correctchronologicalR1manifest32a178d2. | NEW longdaily20 adapter/nativechecks thenactual1220+10GET1POST/7200active14400end, no anotherapproval hold. |
-| Engine/Meitner | Friday204rows/18cells/bothprimariesPASS independentlychecked, GPUreleased; old2dayDDfail remains. | CanonicalBar rule/HGB14/raw-plus14MLP nativeSYN/worker prep600active7200end/CPU2RAM6GPU0, no marketfit. |
+| Data/Ptolemy | Longdaily actual09:36UTCstart/10:06progress500GET1POST0retry/pendingfalse/2079..2081rows-name. Oct16full7800 immutable. | Same1220+10GET1POST/7200active14400end owner, terminal/partial evidence not progress inference. |
+| Engine/Meitner | CanonicalBar PREP20cases/HGB1+CPUMLP1SYN/58.86active600,0marketfit. FridayindependentPASS, old2dayDDfailunchanged. | NativeCUDA preflight300active3600end/12updates32forwards/oneGPUallocation; concreteadapter beforelease, no oldfitrerun. |
 | Strategy/Harvey | Jointgate independentlychecked/rejected; canonicalBar cross-regime proposal sealed,0fits/marketdecode. | Dates/eligibility unknown until Data. No oldEVAL grid or invented paging ABI. |
-| Infra/Herschel | NEW quietfixed20 postclose runtime source/SYN assignment; noTask installed. | ExactR1consumer/loader/owner identity/provenpythonw no-console/mockScheduler tests and Parentrecipe. |
+| Infra/Herschel | Ownerrepair8native+3independentPASS. NewquietTask registeredDISABLED: realserviceomitsdefaultTriggerEnabledtrue, originalstrictguardrefusedbeforeEnable. | Minimaltypeddefaultnormalization/exactdisableddefinition recovery; Parentonlyenable/readback. OldTasks/runtime/sourcepins unchanged, no blindreRegister. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -28,6 +28,15 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+10:10UTC review: Data actualworker, Engine CUDAadapter, Infra exactpartialinstall
+recovery run disjoint; independent source readback waits only its terminal.
+Company exit stillOct21, no human approval hold. Reversible improvements:
+per-stock past eligibility preserves16 valid stocks when one is missing; no
+all17 global history gate. Engineering source/queue elapsed is not CPU/GPU
+worker spend. Original931/900Infra overrun remains, new minimalintegration
+does not regrade it. Reuse unchanged consumer/fullrepo evidence and test only
+changed identity/default semantics, rather than another18k or20case rerun.
 
 The company outcome awaits model-owned exit/reconciliation from Oct21, not
 human approval or research profitability. Other lanes remain ready. The

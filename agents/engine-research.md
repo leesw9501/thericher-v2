@@ -60,8 +60,13 @@ NewONECPUfit integrated: ledger190=114CUDA+76CPU incloldinvalid; old188/189
 snapshots unchanged. Longdaily source2007..2026 nowData implementation stage;
 cross-regime canonicalBar proposal sealed: rule/HGB14/raw-plus14MLP, three
 historical folds only after actual coverage. Meitner owns new source/nativeSYN
-preparation600active7200end/CPU2RAM6GPU0; no market decoding/fits/forward or
-old-source reranking. Source fixtures exclude transport paging and map by keys.
+PREP complete20cases/oneHGB+oneCPUMLPSYN/58.86active600; zero market
+decoding/fits/forward. Parent adopted per-stock379/SPY/>=5 same cohort before
+intake, no all17 gate; future selected missing marks remainUNKNOWN.
+New nativeCUDA checkpoint preflight300active3600end/oneallocation/12updates/
+32forwards. Exact existingd6b43213/2.7CUDA adapter before lease; CPU2.13 evidence
+is not CUDAparity. AllSYN is separate from190marketfits. Source fixtures exclude
+transport paging and map by keys; no old-source reranking.
 A/research/native-kis-next-session-frozen-evaluation-development-20261017-v1/independent-review/FROZEN-ACTUAL.json
 A/research/current20-long-daily-cross-regime-preparation-20261017-v1
 

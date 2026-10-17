@@ -156,8 +156,23 @@ Six explicit safe Ridge arrays reproduce linear algebra; native FT/base weights
 were denied, so no native forecast/restore parity claim. All original primaries
 remain unchanged; ONE retrospective day is not independent alpha.
 No old failure regrade, prospective/PIT/untouched/alpha/Paper promotion claim.
-Data next implements bounded20-symbol daily2007..2026 source acquisition;
-Infra prepares quiet06:50KST runtime/source+SYN only, not installed yet.
+Data longdaily20 ACTUALLY RUNNING since09:36UTC. Latest10:06UTC
+progress500GET1POST0retry/pendingfalse,2079..2081canonical rows/name,
+11invalid source rows flagged. Progress is not a terminal/full-history claim.
+Root current20-daily-long-history-capture-20261017-v1; no cold restart/duplicate.
+Quiet fixed20 Task thericher-kis-paper-current20-postclose-20261017 is registered
+DISABLED after one Parent attempt: service omitted default Trigger/Enabled=true,
+strict XML guard refused before Enable. Typed trigger remainstrue/firstdue
+Oct20 06:50KST. No runtime collection inferred. Recovery owns only this exact
+new definition, not old Tasks/consumer roots; never blindly reinstall/overwrite.
+Owner-identity repair8native+3independent PASS, original931/900Infra NOTREADY
+unchanged. Integration/installer-default-enabled-recovery-r1 is the next scope.
+Longdaily canonicalBar PREP complete20cases/oneHGB+oneCPUMLP SYN,58.86active/
+600; zero marketdecode/fits/forward. Parent froze per-stock379/SPY/>=5 common
+keys before intake, not an all17 history gate. New CUDA preflight has one
+300active3600end/12update32forward allocation; source adapter before lease,
+no repeated completed market fit. Exact image d6b43213 exists; CPU2.13 is not
+proof of CUDA2.7 checkpoint/curve equality.
 Current KIS/FirstRate overlap confirms discrepancies, NOT oldABI readiness.
 XLK611-session native mode1 continuity diagnostic found no large splitlike
 jump; this supported only the NEW conditional study above. Old exact-factor

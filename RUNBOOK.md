@@ -134,9 +134,14 @@ Originalsource/failedindependentcase preserved; do not rerun consumed tests.
 One finite session/day100normalGET+2retry/1POST; no visit-index/cold-reauth
 framework, preserve accepted refs/unknown day and old failures. No API/install
 before actual native wrapper QA/deployment. Test scratch C, real data M.
-One proposed separate06:50KST Tue-Sat completed-session worker avoids widening
-the immutable existing twoETF06:20Task/schema. No source-only plan proves a
-running collector or downloaded day. Parent reviews/freeze/deploys separately;
+New separate06:50KST Tue-Sat Task is registeredDISABLED, not enabled/deployed:
+thericher-kis-paper-current20-postclose-20261017. Parent oneattempt stopped on
+service-default CalendarTrigger/Enabled=true omission; CIM typedtrue, firstdue
+Oct20 06:50KST. Do NOT rerun Install/reRegister or old finalize. Exact current
+recovery/evidence A/infra/current20-postclose-runtime-integration-20261017-v1;
+Parent alone enables verifiedknownnewdefinition after minimalSYN/readback.
+No immutable existing twoETF06:20Task/schema widening. No source-only plan proves
+a running collector or downloaded day. Original931/900NOTREADY preserved;
 current model and nightly strategies stay on their existing frozen releases.
 
 Offhours Oct16 acquisition COMPLETE at
@@ -148,7 +153,9 @@ rerun capture/creators. Parent44f09249 sourceadmission distinguishes canonical
 Oct16 fromrawdatebuffer9..16/fixedDataanchors; old0HTTP conflict/PREPdebits stay.
 New longdaily20 source implementation/acquisition has its own frozen scopes:
 A/data/current20-daily-long-history-capture-20261017-v1.1220normal+10retry/
-1POST/7200active14400end, onecollector; this is NOT an expired06:50job/fakeclock
+1POST/7200active14400end, oneactualcollector since09:36UTC; no coldrestart.
+Progress10:06UTC500GET1POST0retry/pendingfalse is NOT terminal coverage.
+This is NOT an expired06:50job/fakeclock
 or oldsource append. Data paging is not an Engine model-ABI approval decision.
 
 ### Completed Native Chronos2 Adaptation

@@ -28,14 +28,23 @@ SHA32a178d2, originalunorderedindex/rawsource preserved. Firstwire696/1200,
 oldPREP1364.131376 kept/additive2060.131376/3000. Parent44f09249 addendum BEFORE
 HTTP separatescanonicalOct16 andrawdatebuffer9..16/fixedanchors; no modelchange.
 No expired06:50job/fakeclock/oldsource adoption/PIT or finality promotion.
-Ptolemy now owns current20-daily-long-history-capture-20261017-v1 implementation
-and boundedactualcapture:20verifieddailyroutes/61anchors/1220normal+10retry/
+Ptolemy owns current20-daily-long-history-capture-20261017-v1 ACTUALrunning
+since09:36UTC:10:06progress500GET1POST0retry/pendingfalse/11invalid flags,
+2079..2081canonical rows/name. Progress not terminal/full-history evidence.
+20verifieddailyroutes/61anchors/1220normal+10retry/
 1POST,7200active14400end, firstfreshheads then olderrounds. Newcoherentepoch,
 no oldseed/append; rawFAILEDpage remainsFAILED while separate strict-valid-subset
 may retain usable rows/invalidflags. Existing canonicalBar CSV, sourcecoverage/
 basis/IPO gaps honest, no imputation. Source-limited closesonlyexactcursor.
 No API authority inferred fromplan; native adapter/owner/loader/sourcechecks
-beforefirstHTTP, thendelegatedactualrun without anotherParent/human gate.
+passedbeforefirstHTTP; one liveclient/ownedworker, no cold duplicate.
+Quietfixed20Task is registeredDISABLED after service-default Trigger/Enabled
+XML omission refused beforeEnable; typedTriggerTRUE/firstdueOct20 06:50KST.
+Ownerrepair8native+3independentPASS; original931/900NOTREADY unchanged.
+Parent installer recovery onlynewexactTask; old2ETF/runtime roots unchanged.
+A/infra/current20-postclose-runtime-integration-20261017-v1/parent-install-1
+Harvey independent source inspector PREP8SYN/30active240, no actualread yet;
+one immutable source-bound read only after terminal/release, no livefile polling.
 A/data/current20-daily-long-history-preparation-20261017-v1/HANDOFF.md
 A/data/current20-daily-long-history-capture-20261017-v1
 

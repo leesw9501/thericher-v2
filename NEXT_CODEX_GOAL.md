@@ -72,8 +72,9 @@ policy/integration/Git; disjoint roles continue without routine permission waits
 - Data/Ptolemy: Oct16 full source CLOSED7800RTH/20x390/80GET1POST0retry/0gaps or
   conflicts. Use engine-input-manifest-r1.json SHA32a178d2; unordered original
   coordinate manifest is retained but not the Engine input. Source is retrospective,
-  not PIT/finality/oldABI promotion. New bounded longdaily20 adapter/native checks
-  then actual acquisition2007..2026:1220normal+10retry/1POST/7200active14400end.
+  not PIT/finality/oldABI promotion. New longdaily20 actual running since09:36UTC:
+ 10:06progress500GET1POST0retry/pendingfalse; not terminal history coverage.
+  Finite acquisition2007..2026:1220normal+10retry/1POST/7200active14400end.
   RawFAILED pages stay failed; a separate strict-valid-subset may retain valid
   rows/invalid flags. Existing canonicalBar CSV, no imputation/oldsource append.
 - Engine/Meitner: nativeChronos2 FT125updates/selected25 independently checked,
@@ -88,15 +89,20 @@ policy/integration/Git; disjoint roles continue without routine permission waits
   deviation retained. Attention unused/fullmass everydate. Ledger190=114CUDA+
   76CPU incloldinvalid, not190architectures. No rerun/oldregrade/newbasefit.
   CanonicalBar cross-regime rule/HGB14/raw-plus14MLP protocol PREP complete;
-  Engine now prepares pure canonical/native SYN/worker, not another old EVAL grid.
+  Engine canonical/native SYN/worker READY20cases/HGB1+CPUMLP1SYN, no marketfit.
+  Per-stock379/SPY/>=5 cohort clarification Parentfrozen before actual intake.
+  New CUDA checkpoint preflight300active3600end/oneallocation, not market fit
+  or proof from CPU2.13; exact2.7CUDA backend must pass before future training.
   Actual historical coverage must precede final numerical contract.
 - Validation/Planck: Friday sourceR1/cost/clock/criteria independently verified,
   no native modelcalls/restore/GPU. Next quiet-runtime source/mock review only;
   no Task/broker/credentials or authorization role.
-- Infra/Herschel: quiet06:50KST Tue-Sat runtime SOURCE/SYN only. Use cold-debit
-  revision1112e9f2/31nativePASS and original custody roots; not unpatched3a735a34.
-  No actualTask install until Parent verified source/loader/exactowner/hidden
-  launcher/mockScheduler checks. Do not modify old2ETF00:29/02:28/04:24/06:20.
+- Infra/Herschel: new quiet06:50KST Tue-Sat Task registeredDISABLED only. One
+  Parent attempt refused service-default Trigger/Enabled omission beforeEnable;
+  recover exact knownnewdefinition, never blindreRegister. Ownerrepair8native+
+  3independent PASS, old931/900NOTREADY retained. Use1112e9f2/31nativePASS and
+  original custody roots; no old2ETF00:29/02:28/04:24/06:20 changes. No actual
+  runtime/capture claim until owned opportunity and exact result.
 - Parent: source1355/50c535b3 verification below; integrate/commit/push material
   evidence. Original multi-visit WIP/failedQA/oldclocks stay closed. Native8source
   62395/fiveOct7gaps and10GET0repair remain unchanged, no more identical probes.
