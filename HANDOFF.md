@@ -156,23 +156,44 @@ Six explicit safe Ridge arrays reproduce linear algebra; native FT/base weights
 were denied, so no native forecast/restore parity claim. All original primaries
 remain unchanged; ONE retrospective day is not independent alpha.
 No old failure regrade, prospective/PIT/untouched/alpha/Paper promotion claim.
-Data longdaily20 ACTUALLY RUNNING since09:36UTC. Latest10:06UTC
-progress500GET1POST0retry/pendingfalse,2079..2081canonical rows/name,
-11invalid source rows flagged. Progress is not a terminal/full-history claim.
-Root current20-daily-long-history-capture-20261017-v1; no cold restart/duplicate.
-Quiet fixed20 Task thericher-kis-paper-current20-postclose-20261017 is registered
-DISABLED after one Parent attempt: service omitted default Trigger/Enabled=true,
-strict XML guard refused before Enable. Typed trigger remainstrue/firstdue
-Oct20 06:50KST. No runtime collection inferred. Recovery owns only this exact
-new definition, not old Tasks/consumer roots; never blindly reinstall/overwrite.
-Owner-identity repair8native+3independent PASS, original931/900Infra NOTREADY
-unchanged. Integration/installer-default-enabled-recovery-r1 is the next scope.
+Data longdaily20 CLOSED90819validdailybars/20routes/1110GET1POST0retry,
+pendingfalse/processended/leasesreleased. Most begin2007Aug; AMD2015/GOOGL2014/
+META2012/TSLA2010/V2008. All exactcursors underfilled, not global earliest/IPO.
+Independent corePASS1110pages/109747raw/90819exactcanonical/3374hashes,
+no rescale; raw13invalid/13rejectedpages stay. Producer13withinobservedgaps
+is not independently date-partitioned, not an extra research/Paper hold.
+Sourceb7fd03a8 at current20-daily-long-history-capture-20261017-v1. No rerun.
+Additional23older-windowprobes CLOSED23GET1POST0retry/zero native rows;
+only exactwindows empty, no global floor. Stop identical historical probes.
+Quiet fixed20 Task thericher-kis-paper-current20-postclose-20261017 now ENABLED/
+Ready, firstdueOct20 06:50KST. Parent R3 exact readback verifies only Enabled
+changed, all247transition definitions stable; no manual invocation/capture.
+Absolute pythonw/-I/-B, Tue-Sat, IgnoreNew/PT35M; old2ETF/strategies unchanged.
+Current action now points to inactive-readiness-repair/runtime. Parent11:19UTC
+retargetEXIT0/newXMLde0d30d7/onlyActionchanged/247othersstable/samefirstdue.
+It fixes nonactive/unreported-future14 being treated as active; active actors,
+malformed/stale facts, due-near/source/token/cache guards remain.10native+
+3independent PASS. No actual collection/OS-origin claim from configuration.
+A/infra/current20-postclose-inactive-readiness-repair-20261017-v1/parent-retarget-1/retargeted.json
+Evidence: integration/installer-os-drift-scoped-recovery-r3/parent-enable-1/
+recovered.json. Earlier registration rejected omitted defaults; R2 typed
+semantics then stopped for ONE nonproject OS RefreshCache change. R3 preserves
+old247baseline/exact drift and compares fresh full247before/after, no OS edit.
+Ownerrepair8native+3independent and focused installer/R3 independent checks PASS;
+original931/900Infra NOTREADY unchanged. Never rerun any install creator.
 Longdaily canonicalBar PREP complete20cases/oneHGB+oneCPUMLP SYN,58.86active/
 600; zero marketdecode/fits/forward. Parent froze per-stock379/SPY/>=5 common
-keys before intake, not an all17 history gate. New CUDA preflight has one
-300active3600end/12update32forward allocation; source adapter before lease,
-no repeated completed market fit. Exact image d6b43213 exists; CPU2.13 is not
-proof of CUDA2.7 checkpoint/curve equality.
+keys before intake, not an all17 history gate. Native CUDA diagnostic repair
+COMPLETE9updates31forwards/6saves2restores, exact full RNG/AdamW/scheduler/
+continuation curves/best predictions;20.07active240/418.54end1800. Container/
+lease released, peakreserved92MiB. Oldfailed1update3forwards/0checkpoint stays:
+diagnostic hashing rejected legitimate scheduler infinity, not GPU failure.
+No market fits/retries/old regrade. Next actual six-fit worker SOURCE prep;
+source/geometry/caps still need exact longdaily terminal binding. Source-only
+calendar view5230sessions/0..5229 preserves all UTC times from pinnedData map,
+not Gregorian-date ordinals or compressed eligible rows. Parent-source-admission
+in current20-long-daily-cross-regime-input-20261017-v1 admits conditionalV1 only.
+A/research/current20-long-daily-cuda-diagnostics-repair-20261017-v1/VERIFIED.json
 Current KIS/FirstRate overlap confirms discrepancies, NOT oldABI readiness.
 XLK611-session native mode1 continuity diagnostic found no large splitlike
 jump; this supported only the NEW conditional study above. Old exact-factor

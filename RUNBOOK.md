@@ -134,12 +134,15 @@ Originalsource/failedindependentcase preserved; do not rerun consumed tests.
 One finite session/day100normalGET+2retry/1POST; no visit-index/cold-reauth
 framework, preserve accepted refs/unknown day and old failures. No API/install
 before actual native wrapper QA/deployment. Test scratch C, real data M.
-New separate06:50KST Tue-Sat Task is registeredDISABLED, not enabled/deployed:
-thericher-kis-paper-current20-postclose-20261017. Parent oneattempt stopped on
-service-default CalendarTrigger/Enabled=true omission; CIM typedtrue, firstdue
-Oct20 06:50KST. Do NOT rerun Install/reRegister or old finalize. Exact current
-recovery/evidence A/infra/current20-postclose-runtime-integration-20261017-v1;
-Parent alone enables verifiedknownnewdefinition after minimalSYN/readback.
+New separate06:50KST Tue-Sat Task now ENABLED/Ready:
+thericher-kis-paper-current20-postclose-20261017, firstdueOct20 06:50KST.
+Exact R3 currentXML/textdigests/key and247transition checksPASS, no invocation.
+Do NOT rerun Install/Recover/reRegister/finalize creators. Current evidence:
+A/infra/current20-postclose-runtime-integration-20261017-v1/installer-os-drift-scoped-recovery-r3/parent-enable-1/recovered.json.
+R3 receipt uses UTF8 logical XML text SHA, stored XML files are UTF16: read text
+before digest comparison, never confuse bytefile SHA with logical text SHA.
+Original omitted-default and OS-onlyRefreshCache drift failures preserved;
+old247baseline remains, new full247snapshot compares actualEnable transition.
 No immutable existing twoETF06:20Task/schema widening. No source-only plan proves
 a running collector or downloaded day. Original931/900NOTREADY preserved;
 current model and nightly strategies stay on their existing frozen releases.
@@ -154,9 +157,21 @@ Oct16 fromrawdatebuffer9..16/fixedDataanchors; old0HTTP conflict/PREPdebits stay
 New longdaily20 source implementation/acquisition has its own frozen scopes:
 A/data/current20-daily-long-history-capture-20261017-v1.1220normal+10retry/
 1POST/7200active14400end, oneactualcollector since09:36UTC; no coldrestart.
-Progress10:06UTC500GET1POST0retry/pendingfalse is NOT terminal coverage.
+Now CLOSED90819valid/1110GET1POST0retry/leasesreleased. Source-manifestb7fd03a8
+and independent-review/RETAINED_HANDOFF.json corePASS90819exact/3374hashes.
+Only variable observedranges, not fullJan2007/PIT/globalfloor. Additional
+current20-daily-older-window-probe-20261017-v1 TERMINAL-SEAL is23emptyqueries,
+not a reason for repeated historical probes or sourceV1changes.
 This is NOT an expired06:50job/fakeclock
 or oldsource append. Data paging is not an Engine model-ABI approval decision.
+
+Current newTask action/runtime (supersedes R3 action, not its history):
+A/infra/current20-postclose-inactive-readiness-repair-20261017-v1/runtime.
+parent-retarget-1/retargeted.json: actualEXIT0/SetActiononly/newlogicalXMLde0d30d7,
+samefirstTue06:50KST, no manualinvoke. Nonactive/unreported-future count14 is
+validated/factual but not active-owner evidence; actualactive/due/stale/source/
+token/cache controls stay.10focused+3independentPASS, not firstcaptureproof.
+Do not rerun retarget/install creators. Rollback only exact receipt/definition.
 
 ### Completed Native Chronos2 Adaptation
 

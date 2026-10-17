@@ -14,11 +14,11 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
 | Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
-| Validation/Planck | Friday independentPASS359pins/204scores/18cells/max2.22e-16; wrapper31casefixPASS. | Quiet-runtime source/mock review; no Task/API/credential authority. |
-| Data/Ptolemy | Longdaily actual09:36UTCstart/10:06progress500GET1POST0retry/pendingfalse/2079..2081rows-name. Oct16full7800 immutable. | Same1220+10GET1POST/7200active14400end owner, terminal/partial evidence not progress inference. |
-| Engine/Meitner | CanonicalBar PREP20cases/HGB1+CPUMLP1SYN/58.86active600,0marketfit. FridayindependentPASS, old2dayDDfailunchanged. | NativeCUDA preflight300active3600end/12updates32forwards/oneGPUallocation; concreteadapter beforelease, no oldfitrerun. |
+| Validation/Planck | Quiet-runtime/installer/R3 material independentPASS, originaldebits preserved. FridayindependentPASS. | No Task/API/credential authority; no routine oldQA rerun. |
+| Data/Ptolemy | Longdaily CLOSED90819valid/1110GET1POST0retry/leasesreleased. Independent90819exactraw/3374hash corePASS. Older23windows allEMPTY. | No identicalolderprobes/sourceV1merge. Calendar5230metadata projection ready; support exactEngine input bindings. |
+| Engine/Meitner | CorrectedCUDA proof9updates31forwards/6saves2restores exact; lease released, old1/3failedSYN preserved.0marketfit. | Actual6fit marketworker SOURCE prep300owned3600endCPU2RAM6GPU0; terminal/binding/caps then numerical dispatch. |
 | Strategy/Harvey | Jointgate independentlychecked/rejected; canonicalBar cross-regime proposal sealed,0fits/marketdecode. | Dates/eligibility unknown until Data. No oldEVAL grid or invented paging ABI. |
-| Infra/Herschel | Ownerrepair8native+3independentPASS. NewquietTask registeredDISABLED: realserviceomitsdefaultTriggerEnabledtrue, originalstrictguardrefusedbeforeEnable. | Minimaltypeddefaultnormalization/exactdisableddefinition recovery; Parentonlyenable/readback. OldTasks/runtime/sourcepins unchanged, no blindreRegister. |
+| Infra/Herschel | QuietTask currentaction retargeted to inactive-readiness-repair/runtime, ParentEXIT0/ReadyEnabled/firstOct20 06:50unchanged/247stable.10native+3indepPASS. | Released; no manualinvoke/captureclaim. Nonactive14 is notactual conflict; allrealactive/due/source/token/cache guards stay. Olddebits unchanged. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -28,6 +28,15 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+11:20UTC: Data90k and nativeCUDAproof complete, Engine actualsix-fit worker
+SOURCE preparation remains owned, Strategy prepares exactlytwo next hypotheses,
+Parent binds source/calendar/caps. No marketNUM yet, not a GPU permission hold.
+Reversible correction: measured nonactive/unreported-future14 must not become
+an active-owner conflict. Source-only/independent cases plus actual action-only
+retarget now deployed; no real actor/source/token/cache/pacing rule removed.
+Independent Data corePASS suffices for scoped historical research; its unchecked
+gap partition is a factual limitation, not another whole-company gate.
 
 10:10UTC review: Data actualworker, Engine CUDAadapter, Infra exactpartialinstall
 recovery run disjoint; independent source readback waits only its terminal.

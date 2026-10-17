@@ -63,12 +63,18 @@ historical folds only after actual coverage. Meitner owns new source/nativeSYN
 PREP complete20cases/oneHGB+oneCPUMLPSYN/58.86active600; zero market
 decoding/fits/forward. Parent adopted per-stock379/SPY/>=5 same cohort before
 intake, no all17 gate; future selected missing marks remainUNKNOWN.
-New nativeCUDA checkpoint preflight300active3600end/oneallocation/12updates/
-32forwards. Exact existingd6b43213/2.7CUDA adapter before lease; CPU2.13 evidence
-is not CUDAparity. AllSYN is separate from190marketfits. Source fixtures exclude
+New nativeCUDA corrected diagnostic proof COMPLETE9updates31forwards/6saves/
+2restores, fullRNG/AdamW/scheduler/curves/continuation/best predictions exact.
+20.07active240/418.54elapsed1800, peakreserved92MiB/containerlease released.
+Old1update3forwards/0checkpoints failed because diagnostic JSON hash rejected
+legitimate scheduler infinity; preserved UNREADY, not GPU/backend failure.
+AllSYN is separate from190marketfits. New six-fit actual marketworker SOURCE
+prep300owned3600endCPU2RAM6GPU0; no marketdecode/fit until terminal binding.
+Source fixtures exclude
 transport paging and map by keys; no old-source reranking.
 A/research/native-kis-next-session-frozen-evaluation-development-20261017-v1/independent-review/FROZEN-ACTUAL.json
 A/research/current20-long-daily-cross-regime-preparation-20261017-v1
+A/research/current20-long-daily-cuda-diagnostics-repair-20261017-v1/VERIFIED.json
 
 Closed results below are not instructions to repeat fits.
 Peer-context9CUDAfits/382epochs/3788updates COMPLETE; independent9CPUrestores/

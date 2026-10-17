@@ -34,7 +34,7 @@ One GPU allocation/no dummy work remains policy.
 | Resource | Actual owner / scope |
 | --- | --- |
 | GPU |No current allocation or numerical worker. Peer9CUDA and Chronos2 fine-tune3CUDA CLOSED/released; old forecasts/checkpoints immutable.|
-| Next GPU |Longdaily nativeCUDA checkpoint preflight appointed300active3600end/12updates32forwards/oneallocation. Concrete2.7CUDA device adapter and fresh resource probe before lease. No marketdata or dummy training.|
+| Next GPU |Corrected2.7CUDA proof COMPLETE9updates31forwards/6saves2restores/exactcontinuationbest.20.07active240, peakreserved92MiB, lease/container released. Old1/3failed diagnostic retained. Actualsix-fit worker/source binding next, no market fits yet.|
 | CPU research |Longsource PREP20canonicalcases/HGB1+CPUMLP1SYN/58.86active600, zero marketfit. Per-stock>=5/SPY clarity frozen; no all17 global history gate.|
 | Data |Oct16full7800 acquired80GET1POST/0gaps; longdaily20 adapter/actual7200active14400end assignment, onecollector. Quietdaily runtime source/SYN byInfra, no installation yet.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
