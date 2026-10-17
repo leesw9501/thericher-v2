@@ -251,15 +251,32 @@ These positive normalized replay returns are conditional historical development,
 not broker PnL/alpha/Paper promotion. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json;
 upperactive966.11/9000,end1075.33/21600. FourGPUleases released/no worker.
 GPU including SYN4218updates/8774forwards/72saves/5restores; peak388.1MiB
-allocated/408MiB reserved. Currentledger196=117CUDA+79CPU incloneoldinvalid.
+allocated/408MiB reserved. Closed-familyledger197=117CUDA+80CPU incloneoldinvalid
+and newONEgate below; not architectures/alpha.
 Independent retained review PASS626pins/65407feature rows/24192scores/
 45cells/49005NAV, maxerror6.66e-16; fees/turnover/purges/scalers match. Native
 models not restored/called; original economicFAIL remains. Exactreview:
 A/research/current20-long-daily-cross-regime-development-20261017-v1/independent-retained-review/REVIEW-SEAL.json.
-Harvey executes separately frozen fixedrankblend+ONEdepth2gate on prior OOS,
-f1/f2TRAIN/f3adaptiveDEV/36cells. Meitner prepares GRU252x5+14 SOURCE worker;
-Herschel prepares epoch-reservation/crash checks and quiescent I/O measurement.
-No GRU numerical allocation yet; completed six fits are never repeated.
+Harvey's fixedrankblend+ONEdepth2gate COMPLETE36KNOWNcells/1CPUfit/88combined
+owned900/1963.849end3600, no basefit/forward. Gate10bpsgrowth3.831percent/
+DD1.238 versus fixedmean3growth3.653/DD1.996 and uniform2.084/1.049:
+originalprimaryFAILonDD. HGB rank+SPYregime used, momentum/MLP unused. All252
+dates fullmass; full/matched controls byte-identical. RepairednativeSYN2fits/
+17checks+15bitexactbaseline checks PASS, originalfailedfloat32SYN/45debit
+preserved. SEALED-ACTUAL0eecc7c2; independent retainedPASS68pins/36cells/
+15bitexactbaselines/maxNAV6.66e-16, originaleconomicFAIL unchanged/no native
+prediction parity. IndependentREVIEW-SEALdf94a149 under its exact result root:
+A/research/current20-long-daily-fixed-rank-fusion-development-20261017-v1/threshold-repair-r1/HANDOFF-ACTUAL.json.
+Meitner NEW actualGRU252x5+14 started12:28:10UTC/sourceFROZEN05a33a1e/
+protocol464ef1eb. NativeCUDA proofPASS8updates24forwards/4saves7restores/
+3constructions inclrestorebranches/strictnextupdate/nativeCOMMITTED; f1market
+fit COMPLETE18epochs/selected6/1332updates/2946forwards/301.410native seconds;
+f2running. This1completed fit is additional to closed-familyledger197; integrate
+the final family only from its seal, no rerun. OneGPUowner/7200owned14400end/
+1800fit/CPU2RAM4/GPU4GiB, sourceprep25.852owned/2164.648end separate. Reuses
+exactMain1274 FIT-scaledinputs/scalers, ATenCUDA/noCuDNN. New source review
+is independent/noGPU, not an approval hold. Completed fits never repeated.
+A/research/current20-long-daily-gru-development-20261017-v1/campaign-binding.json.
 Latent forced-stop/auto-rm cleanup P2 did not trigger, fix only in NEW worker.
 I/O measurement COMPLETEoneprobe:64fsync D2.56148s vsone .0200147s,
 C.0583126/.0017748s. Synthetic host I/O only, actual training speedup unknown.

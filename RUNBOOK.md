@@ -185,6 +185,24 @@ dispatcher/completedfit/checkpoint creators again. Planck independently checks
 retained45cells; no refit/forecast/native parity inferred. New rankfusion/gate
 and GRU preparations own separate exact contracts/roots, never reuse old clocks.
 
+Fixedrankfusion current closed result:
+A/research/current20-long-daily-fixed-rank-fusion-development-20261017-v1/threshold-repair-r1.
+SEALED-ACTUAL0eecc7c2/HANDOFF-ACTUAL.json:1CPUfit/36KNOWNcells/primaryDDFAIL,
+no basefit/forward. NativeSYN's original weak-promotion threshold failure stays
+closed; explicitPythonfloat sourcefix independently reproduced6cases, repaired
+native17checks/15bitexactbaseline checks PASS. Combined88active900, original
+deadline retained. Do not invoke dispatch/fitcreators again; independent retained
+reader only. GRU new source/native/market worker owns a separate exact binding;
+do not infer completion from preparation. Current actualGRU starts12:28:10UTC:
+A/research/current20-long-daily-gru-development-20261017-v1/campaign-binding.json,
+preparedsourceFROZEN05a33a1e/protocol464ef1eb. NativeSYN PASS, f1COMPLETE18epochs/
+selected6, f2running. No completedfit restart. Fusionindependent retainedPASS
+68pins/36cells, originaleconomicFAIL unchanged; no nativeparity claim.
+Do not invoke dispatch.py/launch.py again or change source/backend/caps while
+owned. Exact worker.lock/children/lease govern ownership; fit1800/cumulative7200/
+end14400 and completedepoch reservations persist. Future recovery is exact
+identity under same deadlines/counters, never coldrepeat/age-reclaim/newclock.
+
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1:
 READY.json/owner-handoff.json are immutable COMPLETE1CUDAfit/125updates,
 selected25/earlystop4/24forecastcalls408rows. Do NOT rerun freeze/host/GPU/

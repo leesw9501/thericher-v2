@@ -98,11 +98,19 @@ policy/integration/Git; disjoint roles continue without routine permission waits
   same root current20-long-daily-cross-regime-development-20261017-v1.
   HGB10bpsgrowth5.505/4.803/3.926percent exceeds rule/uniform3/3, but DD worse
   than uniform3/3, originalprimaryFAIL. MLP21epochs each/selected1, not proof
-  of convergence. Fourleasesreleased/currentledger196=117CUDA+79CPU incloldinvalid.
-  Never repeat completed fits. New fixedrankblend+ONEdepth2gate executes on
-  f1/f2OOS TRAIN/f3adaptiveDEV only,36cells/900owned3600end/CPU2RAM4/GPU0.
-  Meitner prepares new GRU252x5+14 SOURCE worker, no numerical allocation yet;
-  Herschel prepares conservative epoch-reservation/crash tests/I/O measurement.
+  of convergence. Fourleasesreleased. New fixedrankblend+ONEdepth2gate
+  COMPLETE1CPUfit/36KNOWNcells on f1/f2OOS TRAIN/f3adaptiveDEV, primaryDDFAIL.
+  Gate10bpsgrowth3.831percent/DD1.238, blend3.653/1.996, uniform2.084/1.049.
+  HGB rank/regime only, not three-wayfusion. RepairednativeSYN preserves old
+  failure45debit/combined88active900; independentPASS68pins/36cells/15bitexact
+  baselines/maxNAV6.66e-16. Closed-familyledger197=117CUDA+80CPU incloldinvalid.
+  Meitner actualGRU252x5+14 started12:28:10UTC/source05a33a1e/nativeSYN PASS
+  8updates24forwards4saves7restores/strictnextupdate. F1market COMPLETE18epochs/
+  selected6/301.410native seconds; f2running. Oneadditionalcompletedfit beyond
+  closedledger197, finalfamily awaitsseal; never repeat completedfits.
+  Within7200owned14400end/1800fit/CPU2RAM4/GPU4GiB, no extraParentapproval wait.
+  Source/noGPUreview parallel, exactMain1274 FIT-scaledsource/scalers reused.
+  EpochI/O R1helperfc6d integrated, no broker persistence change/completedfitrepeat.
 - Validation/Planck: independent retained longdaily PASS626pins/45cells/
   49005NAV/max6.66e-16, costs/purges/scalers match. No native modelcalls/
   restore/GPU/parity claim; original economicFAIL unchanged. Exact baseline

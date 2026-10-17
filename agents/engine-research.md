@@ -19,7 +19,8 @@ positive conditional growth. MLPgrowth3.414/3.386/4.278, DD0.615/3.654/1.804.
 Four leases released/no worker. GPU including SYN4218updates/8774forwards/
 72saves/5restores; peak388.1MiB allocated/408MiB reserved. Upperactive966.11/
 9000,end1075.33/21600. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json; no rerun.
-Currentledger196=117CUDA+79CPU incloneoldinvalid, not architectures/alpha.
+Closed-familyledger197=117CUDA+80CPU incloneoldinvalid and newONEgate below,
+not architectures/alpha.
 Independent retained PASS626pins/65407features/24192scores/45cells/49005NAV,
 maxerror6.66e-16, costs/turnover/purges/scalers match; no native model calls or
 restore/parity claim. Original primaryFAIL unchanged. Evidence:
@@ -27,12 +28,33 @@ A/research/current20-long-daily-cross-regime-development-20261017-v1/independent
 Historical adaptiveDEV/currentlisting/nonPIT/MODP1/units/TR/finality limits
 remain; normalized replay is not broker PnL or Paper promotion.
 
-Ready parallel: Harvey executes the predeclared fixedrankblend+ONEdepth2gate,
-f1/f2 chronological OOS TRAIN/f3adaptiveDEV,36cells/900owned3600end/CPU2RAM4.
-No base refit/forecast, no f3 tuning or individual-profitability prerequisite.
-Meitner prepares NEW GRU252x5+14/3fold SOURCE worker; Herschel prepares
-conservative epoch reservation/crash tests and quiescent I/O measurement.
-No GRU market allocation yet. SourceReview's latent forced-stop/auto-rm P2
+Fixedrankblend+ONEdepth2gate COMPLETE1CPUfit/36KNOWNcells on chronological
+f1/f2OOS TRAIN/f3adaptiveDEV. Gate10bpsgrowth3.831percent/DD1.238 versus
+fixedmean3growth3.653/DD1.996, uniformgrowth2.084/DD1.049: originalprimaryFAIL
+on DD. HGB rank+SPY regime used; momentum/MLP unused, not three-wayfusion.
+All252dates fullmass, full/matched controls byte-identical. NativeSYN caught
+float32 weak-promotion routing fault before marketfit; exact scalar fix in
+threshold-repair-r1 preserves oldfailure45debit. Repaired2SYN/17checks and
+15bitexactbaseline checks PASS, combined88/900owned/1963.849end3600. No base
+fit/forward/regrade. SEALED-ACTUAL0eecc7c2, independent retainedPASS68pins/
+36cells/15bitexactbaselines/maxNAV6.66e-16, originalFAIL unchanged/no native
+parity; independentREVIEW-SEALdf94a149 in the result root below.
+A/research/current20-long-daily-fixed-rank-fusion-development-20261017-v1/threshold-repair-r1/HANDOFF-ACTUAL.json.
+
+Meitner's NEW GRU252x5+14 actual campaign started12:28:10UTC, sourceFROZEN05a33a1e/
+protocol464ef1eb. Real nativeSYN PASS8updates24forwards/4saves7restores/
+3constructions including restore branches,3completeepochs/strictnextupdate/
+nativeCOMMITTED proof;7.290native seconds, peakreserved278MiB. F1 market
+fit COMPLETE18epochs/selected6/1332updates/2946forwards/301.410native seconds,
+f2running. Onecompleted GRU fit is additional to the197closed-family ledger;
+finalfamily integration awaits seal. Reuses exact Main
+FIT-scaled1274/source/keys/scalers; factory41,153parameters, ATenCUDA/noCuDNN.
+Numerical caps7200owned14400end/1800fit/CPU2RAM4/GPU4GiB; oneGPUowner,
+3marketattempts0retry, sourceprep25.852owned/2164.648end remains separate.
+NativeSYN max2attempts/one namedtechnicalretry inside480s/24updates160forwards,
+no scientific/outcome changes. Source review runs without GPU/array access.
+A/research/current20-long-daily-gru-development-20261017-v1/campaign-binding.json.
+SourceReview's latent forced-stop/auto-rm P2
 did not trigger; fix in NEW worker, never hotpatch/regrade the closed family.
 One actual synthetic hostI/O probe: D64fsync2.56148s vsone .0200147s,
 C.0583126/.0017748s. Not measured training speedup. New helper's independent
