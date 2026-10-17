@@ -110,11 +110,19 @@ policy/integration/Git; disjoint roles continue without routine permission waits
   originalprimaryFAIL3/3. FROZENbc13144b/2300.84owned7200/healthycleanup/GPUfree;
   independent retainedPASS1000pins/ALL48COMMITTEDbindings/63cells/no actualC3
   drift,45oldcontrols unchanged, no nativeparity/alpha claim.
-  NextONEpreOPENOct19equalrank4shadow SOURCE/nativeCPU/inference work,0fits/
-  broker/schedules/positionchange. Policy chosenbeforeGRUf3outcomes. Existing
-  Oct16source, Dataappend-onlycalendar/HerschelminimalCPUABI/Meitnercaller.
-  Never trainingresumeonCPU/expertfallback/backdating/newmodelgrid. Required
-  source/runtime/key/checkpoint/clock checks are scoped, not companyapproval.
+  ONEpreOPENOct19equalrank4shadow SEALED13:28:52UTC Oct17/17keys8policies/
+  bundlef9cbd3ee, original1attempt/1forward perlearnedexpert+rule,0fits/GPU/
+  broker/schedules/Paperadoption. CPU2.7nativeSYN4checks3forwards/restores PASS,
+  notgeneralCUDAparity. Lateaudit and int32metadata-check recovery preserved;
+  no reforecasts/bundleoverwrite. Independent retainedPASS124pins/17rows/
+  4ranks8weights/firstpublicationtime underassumedhonesthost, c7a76993.
+  Future21session outcomes/24cell replay remain UNKNOWN.
+  No re-score/trainingresume/expertfallback/backdating/newmodelgrid. Existing
+  companygoalownedexit remains unfinished, not a source/approval hold.
+  Data/Infra now prepare finiteD1marksworker and NEWquietTask Tue-Sat07:30KST
+  Oct20-Nov17/21visits forshadowmeasurement/freshD1input. No actualTask/API now,
+  nativeSYN/contract/isolation/rollback evidence precede Parentinstallation.
+  Originalminute/model/nightly schedules remain, no extraPapercapital/orders.
 - Validation/Planck: independent retained longdaily PASS626pins/45cells/
   49005NAV/max6.66e-16, costs/purges/scalers match. No native modelcalls/
   restore/GPU/parity claim; original economicFAIL unchanged. Exact baseline

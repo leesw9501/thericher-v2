@@ -213,6 +213,22 @@ contiguousprefix/curve preflight; reject orphan/duplicate/corrupt/ambiguous
 commits. A minimal caller-side validator is in preparation; no actual recovery
 authorized by pure tests alone. Normal activefit unaffected/no observed incident.
 
+Current ONE next-open shadow (not a broker strategy deployment):
+A/research/current20-next-open-shadow-20261017-v1/HANDOFF-ACTUAL.json.
+Bundlef9cbd3ee firstsealed2026-10-17T13:28:52.404571Z,17keys8policies; exact
+binding343a8038/predictions4028adde/weights97c7f0f0. Originalmarketattempt1/
+3learnedforwards+rule,0fits/GPU/orders. NativeD6CPU SYN4checks PASS, no general
+CUDAparity. Originallate-output audit failure and first int64row-key metadata
+failure retained; R1fixed checker to originalint32ABI and firstpublishedbundle
+with exclusivecreate. No archiveoverwrite/re-score/newforecast in recovery.
+Do NOT invoke run_actual/check_and_seal/metadata-recovery creators again.
+Use categorical/count/hash retained-reader projection only. Current independent
+receipt/key/rank/weight/clock review PASS124pins/17rows/4ranks/8weights/
+firstR1publicationtime underassumedhonesthost, REVIEW-SEALc7a76993. Future21session marks and24cell
+replay UNKNOWN; no foreground wait/new schedule/Paper substitution. D1-only
+input stays separate from minute data; inference modelstate loading is NOT the
+trainingcontinuation path affected by C3.
+
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1:
 READY.json/owner-handoff.json are immutable COMPLETE1CUDAfit/125updates,
 selected25/earlystop4/24forecastcalls408rows. Do NOT rerun freeze/host/GPU/

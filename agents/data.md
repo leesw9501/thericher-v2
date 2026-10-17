@@ -17,11 +17,25 @@ Offline Oct16directD1-vs-RTH1m comparison COMPLETE20routes/7800labels:
 exact/tolerant matches open9/high10/low16/close3/volume0 of20, jointOHLC1.
 No rescale/repair/sourcechanges; basis/session/timestamp/auction/volume semantics
 remain unresolved, not proof directD1 is invalid or all endpoints share basis.
-Futureboundarydiagnostic compares atmostONEendlabel alternative if retained
-16:00witness exists; no offsetgrid/newHTTP/datarewrite. Do not merge D1/minute
-features or relabel currentBars from this comparison. DirectD1-only research/
+Boundarydiagnostic CLOSEDunknown: all20retain09:30-15:59only, no16:00witness,
+so END-label/closing-auction alternative unavailable. Strict80minute pages+
+20dailyheads match all7800labels/20D1canonicalrows,340hashes unchanged;
+not an observed parser transformation fault. NDAY not emitted, adjustment/
+volume equivalence not disclosed by those raw rows. ONEfutureSPY16:00probe
+is only proposed/notrun; no newconsumer justifies repeating probes now.
+No offsetgrid/newHTTP/datarewrite. Never alias/substitute/rescale one source as
+the other or add minute inputs to the frozen D1-only shadow. A NEW explicit
+campaign may use separately identified/as-of-labeled normalized channels;
+source equality is not a global prerequisite for exploratory MTF research.
+Do not relabel currentBars from this comparison. DirectD1-only research/
 shadow/Paper authority continues with its own factual limits.
 A/data/current20-oct16-d1-minute-consistency-20261017-v1/RESULTS.json.
+A/data/current20-oct16-timeframe-boundary-diagnostic-20261017-v1/RESULTS.json.
+Official-source clarification retains NOT_DISCLOSED: exact MODP1 formula,
+minuteSTART/END/auction inclusion and volumeunits/increment/cumulative scope.
+NMIN/NEXT/PINC/KEYB documented; NDAY absent from reviewed map is not proof an
+existing request was ignored. No field remap or globalbad-D1 conclusion.
+A/strategy-research/kis-d1-minute-semantics-20261017-v1/FINDINGS.md.
 Oct19calendar READY: exact5230oldprefix plusordinal5230/planned13:30-20:00UTC,
 not observedactualopen. MANIFEST333fd436/calendarSHAe4f503f8; onlynewmetadata,
 oldsourceunchanged. ConcreteconsumerONEpreOPENshadow fixed4expertpolicy.
@@ -30,8 +44,15 @@ PostcloseD1feed integration SOURCE4pureREADY: separatefiniteD1 option20GET+
 2retry/1POST because quietcfc2757 minuteclient is closed/not safelyshareable.
 No runtime/Task/capture change or new schedule; nextshadowneeds nonewHTTP.
 A/data/current20-postclose-d1-feed-integration-preparation-20261017-v1/READY.json.
+Ptolemy NOW implements finitefutureD1markworker/source+nativeSYN at
+A/data/current20-shadow-d1-marks-worker-20261017-v1,600owned5400end/CPU2RAM4.
+0actualAPI/env/Task/modelcalls inthispackage. Consumersealed17-keyshadow and
+freshD1features; pervisit20normalGET+2retry/1POSTmax/600wall/oneclient, exact
+completedcachedDay0HTTP/oldunknownstatesnotreset. Source/basis/missing limitations
+remain. Infra prepares NEWfinitequietTask07:30KST Oct20-Nov17; no installation
+yet/no existing1m/Paper schedulechange. Privateauthorityalreadydelegated.
 
-LATEST after16:39KST reboot: multi-visit recovery CLOSED_NOT_READY, empty
+Earlier closed16:39KST reboot recovery: multi-visit CLOSED_NOT_READY, empty
 dependency freeze/native-suite timeouts110/40sec/inclusive929.47>240active.
 No API/credentials/install. Preserve old WIP/caps/failures, not authority.
 NEW single-visit source/SYN READY16byte-matchedfiles/23nativePASS19.441worker

@@ -281,12 +281,25 @@ C3drift. Arrays hash-only, no nativeparity. REVIEW-SEAL18e50014 in actualroot.
 Main1274/scalers/source
 unchanged, ATenCUDA/noCuDNN. Completed fits never repeated.
 A/research/current20-long-daily-gru-development-20261017-v1/HANDOFF-ACTUAL.json.
-Next consumer: ONE Oct19preOPENequalrank4shadow, policy frozen beforeGRUf3
-economics; no fits/broker/schedules/positionchange. Meitner prepares caller,
-Herschel inference-only safeD6CPU loader, Data append-only expectedOct19calendar.
-Uses Oct16history379past; never backdate runtime as Fridayforecast or substitute
-an expert. Actualprediction/output unobserved until exactone-shot is sealed.
+ONEOct19preOPENequalrank4shadow now SEALED13:28:52UTC Oct17/17keys/8policies;
+policy frozen beforeGRUf3economics, Oct16directD1history379past. Bundlef9cbd3ee,
+predictions4028adde/weights97c7f0f0/binding343a8038. Oneoriginalmarketattempt/
+oneforward eachHGB/MLP/GRU+ruleeval,0fits/updates/GPU/broker/schedules/Paperadoption.
+CPU2.7nativeSYN4checks3forwards3restores PASS, notgeneralCUDAparity. Lateown-output
+hashaudit failure and firstmetadata-check int64-vs-frozenint32 failure preserved;
+R1firstpublishedbundle, no overwritten earlierbundle/HANDOFF or newforecasts.
+12.77owned180/253.52end900, independent retainedPASS124pins/17rows/4ranks/
+8weights/firstpublicationR1beforeOPEN under assumedhonesthosttimestamps,
+REVIEW-SEALc7a76993. Futuremarks UNKNOWN, no profit/actualfill/Fridaybackdate.
+A/research/current20-next-open-shadow-20261017-v1/HANDOFF-ACTUAL.json.
 A/strategy-research/current20-long-daily-next-open-shadow-preparation-20261017-v1/READY.json.
+Readyworknow: Data finiteD1markworker/nativeSYN at current20-shadow-d1-marks-
+worker-20261017-v1; Infra exactquietfiniteTask preparation at current20-shadow-
+d1-marks-task-20261017-v1. ProposedNEW Tue-Sat07:30KST Oct20-Nov17/21visits,
+20normalGET+2retry/1POSTmax pervisit/600wall, copiedpaperonlyData dependencies,
+0account/order/modelcalls. Notinstalled/invoked yet. Original06:50minute/
+model/nightly Tasks/10percentbank stay unchanged. This supports actualshadow
+measurement/freshD1features, not a newreport/gate or companycompletion.
 DataOct19calendar READY333fd436/actualcalendare4f503f8,5230oldrecords unchanged
 plusONEexpectedOct19ordinal5230. NativeD1-vs1mOct16 consistency is NOT proven:
 open9/high10/low16/close3/volume0 matches of20,jointOHLC1. Source unchanged;
@@ -294,6 +307,10 @@ timing/session/auction/basis unknown. Shadow uses exactdirectD1 only, never
 1m-derived substitute/rescale/MTFmerge; research/Paper authority is not held.
 A/data/current20-oct16-d1-minute-consistency-20261017-v1/RESULTS.json.
 A/data/current20-next-open-calendar-20261017-v1/MANIFEST.json.
+Boundarydiagnostic CLOSEDunknown: all20rawminute ranges09:30-15:59/no16:00,
+no END/auction comparison possible. Raw-to-canonical7800labels+20D1 exact/
+340hashes unchanged; no observed parser transformation. Do not repeat identical
+probes or promote cross-timeframebasis. A proposedSPY16:00probe was NOT run.
 GRU source review C3: a drifted COMMITTED record ticket could be classified as
 absent before validation on RESUME; not an observed current-fit incident.
 Matching normal-path verification remained; completed run is not regraded.
@@ -303,6 +320,7 @@ owner quiescence, rejecting drift/orphans/duplicates/ambiguity. No age reclaim,
 reset, completedepochrepeat or capextension. Minimal caller-side preflight is
 SOURCE6pureREADY282f1f52, not deployed/native recovery authority; see independent-source-review/
 REVIEW.md under currentGRUroot. Other research/Paper is not held.
+C3 applies to trainingcontinuation, not strictselected-state inference loading.
 OldMain forced-stop/auto-rm P2 fixed in newGRU source/mocks; actualnormal cleanup passed.
 I/O measurement COMPLETEoneprobe:64fsync D2.56148s vsone .0200147s,
 C.0583126/.0017748s. Synthetic host I/O only, actual training speedup unknown.

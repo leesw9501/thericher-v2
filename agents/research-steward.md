@@ -8,7 +8,7 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 ## Ready / Allocated
 
-LATEST16:53KST after reboot: native3Ridge also COMPLETE, never repeat. Cumulative
+Earlier closed16:53KST reboot state: native3Ridge COMPLETE, never repeat. Old
 ledger188=113CUDA+75CPU incloldinvalid; new audit checks latest24fitversions/
 72pins, not an independent full ancestral recount. Meitner owns one NEW native
 Chronos2 implementation/SYN package completed25optimizersteps/4forecastbatches,
@@ -34,11 +34,18 @@ One GPU allocation/no dummy work remains policy.
 | Resource | Actual owner / scope |
 | --- | --- |
 | GPU |GRU3fits COMPLETE18/13/13epochs/selected6/1/1,63KNOWNcells/originalprimaryFAIL3/3. FROZENbc13144b/healthycleanup/allleasesreleased; no GPU numericalworker.|
-| Next GPU |No ready frozen training allocation. Nextshadow is trustedD6CPU inference-only on retainedf3 models,0fits; no dummy utilization or completedfitrepeat.|
+| Next GPU |No ready frozen training allocation. ONEshadow17keys8policies completed in trustedD6CPU,0fits/GPU; no dummy utilization or completedfitrepeat.|
 | CPU research |NewONEdepth2gate COMPLETE36cells/primaryDDFAIL, independent retainedPASS68pins/15bitexactbaselines. No base refit/forecast.|
 | Data |Longdaily90819valid/1110GET1POST0retry independently raw-matched. Older23queriesEMPTY, no repeated probes. QuietTask enabled firstOct20 06:50KST; D1feed typed source/SYN ready, not runtime capture.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
+
+Shadowbundlef9cbd3ee firstpublished13:28:52UTC Oct17, predictions4028adde/
+weights97c7f0f0,1marketattempt/3learnedforwards+rule. Firstlateaudit/metadata
+sealing failures retained; publicationrecovery0newforecasts/12.77owned180.
+CPUoperationalflavor/nativeSYN4PASS, no generalCUDAparity/trainingresume,
+Paperadoption or futureperformance. Independent retainedPASS124pins/17rows/
+4ranks/8weights/firstpublicationtime (assumedhonesthost), REVIEW-SEALc7a76993.
 
 Last measured hardware:RTX4090/24564MiB/driver610.88; RAM63.8GiB/36.6GiBfree.
 Observations, not future guarantees. Measure before allocation, preserve desktop

@@ -57,14 +57,22 @@ Exact source/keys/MainFIT-scaled1274/scalers unchanged,41,153parameters,
 ATenCUDA/noCuDNN. Cleanup healthy/leasesreleased/no numericalworker remains.
 A/research/current20-long-daily-gru-development-20261017-v1/HANDOFF-ACTUAL.json.
 
-Next ready consumer, not another fit/grid: ONE Oct19 preOPEN shadow forecast,
-equalrank4(rule,HGB14,MLP,GRUf3)+7fixedcontrols, chosen before GRUf3 outcomes.
-Meitner prepares minimal inference caller; Herschel inference-only trustedD6CPU
-safe modelstate loader; Data append-only expected Oct19calendar. Existing Oct16
-past source, no newHTTP needed. Never trainingresume API onCPU or silentexpert
-fallback; actual one-shot needs exactsource/checkpoint/runtime/key/clock binding
-and no-fit native checks.0broker/schedules/portfoliochange,24later cells only
-when actual21session outcomes exist. No current prediction/output inferred.
+ONE Oct19preOPEN shadow SEALED13:28:52UTC Oct17,17keys/8policies,
+equalrank4(rule,HGB14,MLP,GRUf3)+7fixedcontrols chosen beforeGRUf3 outcomes.
+Bundlef9cbd3ee/predictions4028adde/weights97c7f0f0/binding343a8038. ExactlyONE
+marketattempt/1forward eachlearnedexpert+ruleeval,0fits/updates/GPU/API/orders.
+NativeCPU2.7SYN4checks/3forwards3restores PASS; CPUoperationalflavor, notgeneral
+CUDAparity. Oct16directD1 source379past/expectedOct19calendar, no futuremarks.
+Originalworker outputhash audit failed AFTER validarchives were written;
+firstmetadata recovery's wrongint64row-key check failed beforepublication;
+R1uses frozenint32ABI and firstpublishedbundle exclusively. No previousbundle
+orHANDOFF version/overwrite, no newforecasts. Originalfailures/debits retained.
+Actualowned12.77/180,elapsed253.52/900; source16.99/180,end851.53/1800 separate.
+Independent retainedPASS124pins/17rows/4ranks/8weights/originalfirstpublication
+R1beforeOPEN underassumedhonesthosttime. REVIEW-SEALc7a76993, not a Paper switch.
+0broker/schedules/portfoliochange; future24cells/21session outcomes UNKNOWN,
+no foreground wait/re-score. Create new output only for a new declared decision.
+A/research/current20-next-open-shadow-20261017-v1/HANDOFF-ACTUAL.json.
 A/strategy-research/current20-long-daily-next-open-shadow-preparation-20261017-v1/READY.json.
 DataOct19calendar READY333fd436/e4f503f8, old5230prefix unchanged. Same-day
 D1-vs1mclose only3/20 andvolume0/20 match; no cross-timeframebasis claim.
@@ -77,6 +85,8 @@ No automaticcoldresume until full committedprefix/record/array/identity/ticket
 and verifiedcurve preflight under quiescence. Separate minimal SOURCEpreflight
 READY6purecases/source282f1f52 byHerschel, not a deployed recoverywrapper;
 original caps/debits/partial unknowns stay. Not a global hold.
+This C3 qualification concerns training continuation, not strict inference-only
+loading of a hash-bound selected model state. Shadow never restoresoptimizer/RNG.
 OldMain forced-stop/auto-rm P2 is fixed in GRU source/mocks; actualnormal cleanup
 passed. No old failure/debit regrade.
 One actual synthetic hostI/O probe: D64fsync2.56148s vsone .0200147s,
@@ -85,7 +95,7 @@ C.0583126/.0017748s. Not measured training speedup. New helper's independent
 oldunrepairedhelper notadopted. SeparateR1 adds predecessor check/helperfc6d4b05,
 14/14purePASS and newGRUnative proof. Original8purechecks/evidence immutable.
 
-LATEST16:53KST after reboot: new Engine/Meitner audited72pins/115checks,
+Earlier closed16:53KST recovery: new Engine/Meitner audited72pins/115checks,
 latest24completed fitversions preserved,0fits/restores/forecasts/GPU compute.
 Ancestral188 is the cumulative ledger, not independently recounted by that audit.
 Native missing-aware3Ridge COMPLETE/3attempts/0retry/384FIT204INNER204EVAL/

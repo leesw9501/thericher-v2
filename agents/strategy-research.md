@@ -45,6 +45,20 @@ and inference-only safeD6CPU ABI, not trainingresume/device-check relaxation.
 Existing history declares379support on20routes, actualpayload stillvalidated.
 Onefuture24cell/21session replay only when actualmarks exist; not a new gate.
 A/strategy-research/current20-long-daily-next-open-shadow-preparation-20261017-v1/READY.json.
+Engineactual consumer now SEALED13:28:52UTC Oct17/17keys8policies,
+bundlef9cbd3ee. Oneoriginalforecast/no fits/GPU/orders; metadata recovery
+preserved failures/no re-score. FutureperformanceUNKNOWN, notPaperadoption.
+A/research/current20-next-open-shadow-20261017-v1/HANDOFF-ACTUAL.json.
+
+KIS official-source semantics review CLOSED4queries/6officialdocuments:
+MODP described as adjustment flag, precise mode1 formula/units notdisclosed.
+MinuteNMIN/NEXT/PINC/KEYB documented, NDAY absent from reviewed request map,
+not evidence an oldrequest was ignored. START/END/auction inclusion and volume
+increment/cumulative/units remain NOT_DISCLOSED. Preserve separateprovenance,
+no inferred factor/time-shift/globalbad-D1 finding. This is not a global MTF
+research ban: a new explicit campaign may use distinct normalized/as-of channels;
+the current fixedshadow remains directD1only.0private/API/model effects.
+A/strategy-research/kis-d1-minute-semantics-20261017-v1/FINDINGS.md.
 
 Prior longdaily rule/HGB/MLP6fits/45cells independently checked, primaryHGB
 growthwins3/3/DDfails3/3. Earlier jointgate42cells independently checked/FAIL,

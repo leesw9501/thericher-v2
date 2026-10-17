@@ -14,11 +14,11 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
 | Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
-| Validation/Planck | GRU retainedPASS1000pins/48COMMITTEDbindings/63cells,45oldcontrolsunchanged; REVIEW-SEAL18e50014. | Released; no nativeparity/restore/alpha claim, oldC3coldresumecaution stays. |
-| Data/Ptolemy | Oct19calendar READY333fd436/e4f503f8; D1-vs1mclose3/20,volume0/20, sourceunchanged. | Bounded offlineboundary/session diagnostic, notdatarewrite/MTFpromotion/newHTTP. ShadowdirectD1only continues. |
-| Engine/Meitner | GRU3fits COMPLETE18/13/13epochs/selected6/1/1,63KNOWNcells/primaryFAIL3folds, healthycleanup. | ONE preOPENOct19equalrank4shadow source/nativeCPU/forward after exacttypedprereqs, no newfits. |
+| Validation/Planck | ONEshadow independentPASS124pins/17rows/4ranks/8weights, conditionalhonesthosttime; REVIEW-SEALc7a76993. | Released; futuremarksUNKNOWN, no modelre-score/nativeparity/alphaclaim. |
+| Data/Ptolemy | D1-vs1msemanticsunknown/oldsourceunchanged; nextOPENshadowcorrectD1only. | Build finitefutureD1marksworker/source+nativeSYN under current20-shadow-d1-marks-worker-20261017-v1,0actualAPI/credentials now. |
+| Engine/Meitner | ONEshadow17keys8policies/1originalforecast independentlychecked, no fits/GPU/orders. | Released; future21session outcomes unknown, no re-score/Paperswitch. |
 | Strategy/Harvey | Fixedrankgate36cells independentlychecked/FAIL; next-open equalrank4 contract frozen BEFOREGRUf3outcomes,4purePASS/0modelcalls. | Released; no performance-selected weights/expertfallback/newhistoricalgrid. |
-| Infra/Herschel | C3caller preflight6pureREADY, notdeployed. Inference-only D6CPU loader SOURCE4pureREADY770d465a. | Released; Meitner owns exactselectedGRU binding/nativeproof/actualcaller, no inferred forecast/parity. |
+| Infra/Herschel | NativeCPUshadowproof consumed safely; no currentGPUjob. NewDataTaskClaude REVISE namedisolation/contract/rollback/secret-path concerns. | Prepare exactquietfiniteD1Task source/mocks for Tue-Sat07:30KST Oct20-Nov17; notinstalled/invoked, oldminute/Paper schedules unchanged. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -28,6 +28,17 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+13:50UTC: all10newlongdaily expert/meta marketfits and ONEcurrent17-key shadow
+are closed; shadow independentPASS124pins. Future24cells need actual21session
+prices, not more modelcalls. Ready alternative executed: Data finiteD1 mark
+worker and Infra quiet boundedTask preparation in parallel, concreteconsumer
+shadowmeasurement/freshD1features. NewTasktarget07:30 after old06:50/PT35M,
+but realowner/token/cache probes still required; marginalone not isolation.
+21expectedvisits thenexpired, no standingLLM/reportdaemon or newbrokerorders.
+Source/nativeSYN/rollback readiness precede Parentinstall, no operatorhold.
+Company outcome still waits original model-owned exit fromOct21; neither a
+package commit nor absence of futureprices is companycompletion.
 
 13:15UTC: three actualGRU fits complete, no GPU owner. Independent retained
 review runs while typed calendar/CPU modelstate ABI/caller are prepared for ONE
