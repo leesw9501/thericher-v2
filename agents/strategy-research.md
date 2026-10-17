@@ -1,6 +1,6 @@
 # Strategy Research Stateboard
 
-Current 2026-10-16 KST/Oct15UTC. AGENTS owns authority. Parent owns company goal,
+Current 2026-10-17 KST/UTC. AGENTS owns authority. Parent owns company goal,
 final science/integration/Git; Steward owns ONE GPU allocation. Strategy
 owns source hypotheses/assigned kernels and explicitly delegated experiments,
 not broker risk or Paper adoption. A=D:/thericher-v2/model-artifacts.
@@ -8,37 +8,49 @@ History remains in Parent Git27dface and immutable external roots.
 
 ## Current Consumers
 
-Oct17 reboot continuation: metadata proposal COMPLETE0fits/0arraydecode;
-its240active cap overrun remains, not numerical evidence or refunded spend.
-Architecture-selected Ridge+peer-attention+LambdaRank can use mature f1/f2 OOS
-exports, not selected-checkpoint INNER predictions. Parent appointed Harvey as
-disjoint CPU Engine executor under NEW900active3600end/2CPU4GiB/GPU0 contract:
-fixedmean3 plus one depth2/minleaf94/seed303 payoff gate, f1/f2TRAIN/f3adaptiveDEV,
-42cost-policy cells/onefitattempt0retry/no newbasefit/forward/forecast. Exact
-source/key/price/OOS lineage and native SYN first, otherwise stop unsupported.
-No individual-profitability prerequisite/Paper gate or seen-EVAL winner choice.
-ActualjointgateCOMPLETE1CPUfit/42knowncells, independent OOS/keys/42cell/
-10458NAVpoint PASS/max5.11e-15; originalprimaryFAIL. Gate loses to fixedmean3/
-all3singles but raw_rule comparisonsTRUE. Extra uniformgrowthpredicateTRUE/
-nonbinding retained asdeviation. Peerinputunused/all42datesfullmass, no claim
-of material learned three-way/exposure benefit. Meta contributesONEnewfit;
-Parentledger190, old188snapshot immutable. No more sameEVALhypergrid.
-CanonicalBar cross-regime contract sealed under
-A/data/current20-daily-long-history-preparation-20261017-v1/engine-consumer-contract-r1:
-explicit routekey mapping/native14 projection, rule/HGB14/raw-plus14MLP proposal.
-Actual dates/eligibility unknown; no market decode/fit/permission in PREP.
-Meitner owns new nativeSYN/worker preparation; Data owns paging/canonical source.
-A/strategy-research/fixed50-joint-expert-composition-preparation-20261017-v1
-A/research/fixed50-joint-expert-gate-development-20261017-v1
-NEW longdailyData SOURCE-PREP COMPLETE12pureSYN/20verifiedroutes/61anchors/
-0wire. Ptolemy now actualadapter/capture owner; not anotherstrategyAPIworker.
-Harvey owns compactcanonicalBar cross-regime consumer contract prep0fits,
-Data owns paging; actualcoverage/dates must be known before numerical dispatch.
-A/data/current20-daily-long-history-preparation-20261017-v1
-Old XLK interaction is COMPLETE3CPUfits/primary0fold/rejected; Cboe excluded.
-Covariance source/one solver alternative remain closed UNREADY,0marketfits;
-old certificate-diagnosis source lacks completion, never infer a numerical pass.
-Older proposals below are historical consumed context, not active agents.
+Harvey completed/released. Exactly two hypotheses were frozen before reading
+the current longdaily outcomes; no model/threshold search follows f3 results:
+A/strategy-research/current20-long-daily-next-hypotheses-20261017-v1/READY.json.
+Shared source90819conditional canonical daily rows/20routes/current-listing,
+nonPIT/MODP1/units/TR/finality limits. Past-only per-stock379/SPY/>=5eligible
+cohort, raw21session payoff,3purged expanding folds. Data owns paging; Engine
+owns final numerical contracts. No independent-profitability admission gate.
+
+1. Fixed equal mean of momentum/HGB14/MLP ranks +ONEdepth2/minleaf126/seed303
+   gate on mature f1/f2OOS TRAIN/f3adaptiveDEV. COMPLETE1CPUfit/36KNOWNcells,
+   zero basefit/forward. Gate10bpsgrowth3.831percent/DD1.238 versus fixedmean3
+   3.653/1.996 and uniform2.084/1.049; originalprimaryFAILonDD. Learned HGB
+   rank+SPYregime only, rule/MLP unused; fixedblend alone combinesall3. All252
+   dates fullmass/full-matched controls identical. Independent retainedPASS
+   68pins/36cells/15bitexactbaselines/maxNAV6.66e-16, no nativeparity/alpha.
+   NativeSYN caught float32 scalar weakpromotion beforemarketfit; exactfix
+   preserves originalfailedSYN45debit. Repaired2SYN/17checks PASS, combined
+   88active900/originaldeadline unchanged. No completedfitrepeat.
+   A/research/current20-long-daily-fixed-rank-fusion-development-20261017-v1/threshold-repair-r1/HANDOFF-ACTUAL.json.
+2. GRU252x5+14 temporal expert: sourcefactory READY, Meitner actualcampaign
+   started12:28UTC after exactMain input/scaler reuse and newnativeCUDAproof.
+   All3 COMPLETE18/13/13epochs/selected6/1/1,63KNOWNcells/primaryFAIL3/3,
+   independent retainedPASS1000pins/48COMMITTEDbindings/63cells.
+   Not newStrategy ownership,
+   a profitability claim or automaticPaper switch. Actual resources/counters/
+   current source-recovery limitation live in Engine/Steward stateboards.
+   A/research/current20-long-daily-gru-development-20261017-v1/campaign-binding.json.
+
+Next source contract READY4purechecks/26pins: ONEOct19preOPEN equalrank4 of
+exactrule/HGB14/MLP/GRUf3 plus7fixedcontrols, chosen beforeGRUf3 outcomes.
+Oct16context/Oct19planned13:30UTC OPEN, actual source/runtime/seal beforeOPEN
+and separate from logicalpriorCLOSE. No fits/orders/schedule/Paperpolicychange.
+Data needs append-only nextcalendar metadata; Engine needs terminalselectedGRU
+and inference-only safeD6CPU ABI, not trainingresume/device-check relaxation.
+Existing history declares379support on20routes, actualpayload stillvalidated.
+Onefuture24cell/21session replay only when actualmarks exist; not a new gate.
+A/strategy-research/current20-long-daily-next-open-shadow-preparation-20261017-v1/READY.json.
+
+Prior longdaily rule/HGB/MLP6fits/45cells independently checked, primaryHGB
+growthwins3/3/DDfails3/3. Earlier jointgate42cells independently checked/FAIL,
+peerattention unused; oldmetadata240cap overrun/debits remain closed. OldXLK
+3CPUfits rejected, covariance solver/source unready, Cboe unclear-rights source
+excluded. These are consumed history, not active queues or global holds.
 
 Latest Oct17: chosen incremental-info proposal is lagged XLK-relative rotation
 times stock-specific past XLK loading; a shared macro column alone cannot alter

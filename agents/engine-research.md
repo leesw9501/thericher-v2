@@ -19,7 +19,7 @@ positive conditional growth. MLPgrowth3.414/3.386/4.278, DD0.615/3.654/1.804.
 Four leases released/no worker. GPU including SYN4218updates/8774forwards/
 72saves/5restores; peak388.1MiB allocated/408MiB reserved. Upperactive966.11/
 9000,end1075.33/21600. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json; no rerun.
-Closed-familyledger197=117CUDA+80CPU incloneoldinvalid and newONEgate below,
+Closed-familyledger200=120CUDA+80CPU incloneoldinvalid and newONEgate below,
 not architectures/alpha.
 Independent retained PASS626pins/65407features/24192scores/45cells/49005NAV,
 maxerror6.66e-16, costs/turnover/purges/scalers match; no native model calls or
@@ -41,26 +41,49 @@ fit/forward/regrade. SEALED-ACTUAL0eecc7c2, independent retainedPASS68pins/
 parity; independentREVIEW-SEALdf94a149 in the result root below.
 A/research/current20-long-daily-fixed-rank-fusion-development-20261017-v1/threshold-repair-r1/HANDOFF-ACTUAL.json.
 
-Meitner's NEW GRU252x5+14 actual campaign started12:28:10UTC, sourceFROZEN05a33a1e/
-protocol464ef1eb. Real nativeSYN PASS8updates24forwards/4saves7restores/
-3constructions including restore branches,3completeepochs/strictnextupdate/
-nativeCOMMITTED proof;7.290native seconds, peakreserved278MiB. F1 market
-fit COMPLETE18epochs/selected6/1332updates/2946forwards/301.410native seconds,
-f2running. Onecompleted GRU fit is additional to the197closed-family ledger;
-finalfamily integration awaits seal. Reuses exact Main
-FIT-scaled1274/source/keys/scalers; factory41,153parameters, ATenCUDA/noCuDNN.
-Numerical caps7200owned14400end/1800fit/CPU2RAM4/GPU4GiB; oneGPUowner,
-3marketattempts0retry, sourceprep25.852owned/2164.648end remains separate.
-NativeSYN max2attempts/one namedtechnicalretry inside480s/24updates160forwards,
-no scientific/outcome changes. Source review runs without GPU/array access.
-A/research/current20-long-daily-gru-development-20261017-v1/campaign-binding.json.
-SourceReview's latent forced-stop/auto-rm P2
-did not trigger; fix in NEW worker, never hotpatch/regrade the closed family.
+GRU252x5+14 COMPLETE3CUDAfits/18-13-13epochs/selected6-1-1 by INNERpatience12,
+0wallstops/retries/continuations; no convergence claim. FROZEN-ACTUALbc13144b,
+63KNOWNcells=18new+45retained. Original10bpsprimaryFAIL3/3: GRU growth2.69/
+5.14/3.58percent, DD0.48/4.23/2.64. f1growth comparisons fail, f2DDfails,
+f3bothfail. No cost/model reranking or Paper switch. Independent retainedPASS
+1000pins/ALL48COMMITTEDbindings/63cells,45oldcontrols unchanged; no actual C3
+drift/continuation/wallstop. Arrays hash-only, no runtimeparity/native restore
+claim. IndependentREVIEW-SEAL18e50014 in the actual result root below.
+Source05a33a1e/protocol464ef1eb; native SYN8updates24forwards4saves7restores
+PASS,0retry. Totalincluding SYN10752updates/22308forwards/48saves54restores,
+peakallocated590.35MiB/reserved596MiB. Nativefit301.410/737.897/1237.382seconds;
+numericalowned2300.84/7200, SOURCE-to-seal75.98minutes not CPU spend.
+Exact source/keys/MainFIT-scaled1274/scalers unchanged,41,153parameters,
+ATenCUDA/noCuDNN. Cleanup healthy/leasesreleased/no numericalworker remains.
+A/research/current20-long-daily-gru-development-20261017-v1/HANDOFF-ACTUAL.json.
+
+Next ready consumer, not another fit/grid: ONE Oct19 preOPEN shadow forecast,
+equalrank4(rule,HGB14,MLP,GRUf3)+7fixedcontrols, chosen before GRUf3 outcomes.
+Meitner prepares minimal inference caller; Herschel inference-only trustedD6CPU
+safe modelstate loader; Data append-only expected Oct19calendar. Existing Oct16
+past source, no newHTTP needed. Never trainingresume API onCPU or silentexpert
+fallback; actual one-shot needs exactsource/checkpoint/runtime/key/clock binding
+and no-fit native checks.0broker/schedules/portfoliochange,24later cells only
+when actual21session outcomes exist. No current prediction/output inferred.
+A/strategy-research/current20-long-daily-next-open-shadow-preparation-20261017-v1/READY.json.
+DataOct19calendar READY333fd436/e4f503f8, old5230prefix unchanged. Same-day
+D1-vs1mclose only3/20 andvolume0/20 match; no cross-timeframebasis claim.
+Use EXACTdirectD1 trainingbasis for shadow, no substitute/merge/rescale. This
+limits consumers/claims, not unrelated Paper/research authority.
+Independent SOURCE review found C3: drifted COMMITTED ticket may be treated as
+absent before validation on RESUME. No actual corruption/continuation observed;
+matching normalpath was unchanged; the original completedrun is not regraded.
+No automaticcoldresume until full committedprefix/record/array/identity/ticket
+and verifiedcurve preflight under quiescence. Separate minimal SOURCEpreflight
+READY6purecases/source282f1f52 byHerschel, not a deployed recoverywrapper;
+original caps/debits/partial unknowns stay. Not a global hold.
+OldMain forced-stop/auto-rm P2 is fixed in GRU source/mocks; actualnormal cleanup
+passed. No old failure/debit regrade.
 One actual synthetic hostI/O probe: D64fsync2.56148s vsone .0200147s,
 C.0583126/.0017748s. Not measured training speedup. New helper's independent
 6cases found a replay-only no-predecessor continuation P2; charges retained,
-no native adoption. Separate repair-r1 adds only predecessor check/helperfc6d4b05,
-14/14PASSoneattempt. Original8purechecks/evidence immutable.
+oldunrepairedhelper notadopted. SeparateR1 adds predecessor check/helperfc6d4b05,
+14/14purePASS and newGRUnative proof. Original8purechecks/evidence immutable.
 
 LATEST16:53KST after reboot: new Engine/Meitner audited72pins/115checks,
 latest24completed fitversions preserved,0fits/restores/forecasts/GPU compute.

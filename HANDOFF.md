@@ -251,7 +251,7 @@ These positive normalized replay returns are conditional historical development,
 not broker PnL/alpha/Paper promotion. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json;
 upperactive966.11/9000,end1075.33/21600. FourGPUleases released/no worker.
 GPU including SYN4218updates/8774forwards/72saves/5restores; peak388.1MiB
-allocated/408MiB reserved. Closed-familyledger197=117CUDA+80CPU incloneoldinvalid
+allocated/408MiB reserved. Closed-familyledger200=120CUDA+80CPU incloneoldinvalid
 and newONEgate below; not architectures/alpha.
 Independent retained review PASS626pins/65407feature rows/24192scores/
 45cells/49005NAV, maxerror6.66e-16; fees/turnover/purges/scalers match. Native
@@ -269,21 +269,47 @@ prediction parity. IndependentREVIEW-SEALdf94a149 under its exact result root:
 A/research/current20-long-daily-fixed-rank-fusion-development-20261017-v1/threshold-repair-r1/HANDOFF-ACTUAL.json.
 Meitner NEW actualGRU252x5+14 started12:28:10UTC/sourceFROZEN05a33a1e/
 protocol464ef1eb. NativeCUDA proofPASS8updates24forwards/4saves7restores/
-3constructions inclrestorebranches/strictnextupdate/nativeCOMMITTED; f1market
-fit COMPLETE18epochs/selected6/1332updates/2946forwards/301.410native seconds;
-f2running. This1completed fit is additional to closed-familyledger197; integrate
-the final family only from its seal, no rerun. OneGPUowner/7200owned14400end/
-1800fit/CPU2RAM4/GPU4GiB, sourceprep25.852owned/2164.648end separate. Reuses
-exactMain1274 FIT-scaledinputs/scalers, ATenCUDA/noCuDNN. New source review
-is independent/noGPU, not an approval hold. Completed fits never repeated.
-A/research/current20-long-daily-gru-development-20261017-v1/campaign-binding.json.
-Latent forced-stop/auto-rm cleanup P2 did not trigger, fix only in NEW worker.
+3constructions inclrestorebranches/strictnextupdate/nativeCOMMITTED. All3fits
+COMPLETE18/13/13epochs/selected6/1/1 by INNERpatience12;0wallstop/retry/continuation,
+no convergence proof.63KNOWNcells=18new+45old, original10bpsprimaryFAIL3/3.
+GRU10bpsgrowth2.69/5.14/3.58percent/DD0.48/4.23/2.64, not broker PnL. Nativefit
+301.410/737.897/1237.382seconds;2300.84owned7200, SOURCE-to-seal75.98minutes
+not CPU time. FROZEN-ACTUALbc13144b/healthycleanup/allleasesreleased, no GPUjob.
+TotalinclSYN10752updates/22308forwards/48saves54restores; independent retained
+PASS1000pins/ALL48COMMITTEDbindings/63cells,45oldcontrols unchanged/no actual
+C3drift. Arrays hash-only, no nativeparity. REVIEW-SEAL18e50014 in actualroot.
+Main1274/scalers/source
+unchanged, ATenCUDA/noCuDNN. Completed fits never repeated.
+A/research/current20-long-daily-gru-development-20261017-v1/HANDOFF-ACTUAL.json.
+Next consumer: ONE Oct19preOPENequalrank4shadow, policy frozen beforeGRUf3
+economics; no fits/broker/schedules/positionchange. Meitner prepares caller,
+Herschel inference-only safeD6CPU loader, Data append-only expectedOct19calendar.
+Uses Oct16history379past; never backdate runtime as Fridayforecast or substitute
+an expert. Actualprediction/output unobserved until exactone-shot is sealed.
+A/strategy-research/current20-long-daily-next-open-shadow-preparation-20261017-v1/READY.json.
+DataOct19calendar READY333fd436/actualcalendare4f503f8,5230oldrecords unchanged
+plusONEexpectedOct19ordinal5230. NativeD1-vs1mOct16 consistency is NOT proven:
+open9/high10/low16/close3/volume0 matches of20,jointOHLC1. Source unchanged;
+timing/session/auction/basis unknown. Shadow uses exactdirectD1 only, never
+1m-derived substitute/rescale/MTFmerge; research/Paper authority is not held.
+A/data/current20-oct16-d1-minute-consistency-20261017-v1/RESULTS.json.
+A/data/current20-next-open-calendar-20261017-v1/MANIFEST.json.
+GRU source review C3: a drifted COMMITTED record ticket could be classified as
+absent before validation on RESUME; not an observed current-fit incident.
+Matching normal-path verification remained; completed run is not regraded.
+Do NOT auto-resume after another interruption: first validate ALL committed
+record/manifest/array/identity/ticket bindings and contiguous curves under exact
+owner quiescence, rejecting drift/orphans/duplicates/ambiguity. No age reclaim,
+reset, completedepochrepeat or capextension. Minimal caller-side preflight is
+SOURCE6pureREADY282f1f52, not deployed/native recovery authority; see independent-source-review/
+REVIEW.md under currentGRUroot. Other research/Paper is not held.
+OldMain forced-stop/auto-rm P2 fixed in newGRU source/mocks; actualnormal cleanup passed.
 I/O measurement COMPLETEoneprobe:64fsync D2.56148s vsone .0200147s,
 C.0583126/.0017748s. Synthetic host I/O only, actual training speedup unknown.
 Epochhelper8purecases pass; independent6freshcases found continuation replay
-could admit history without a verified predecessor. Charges intact, no native
-adoption. Separate repair-r1 adds only the verified-predecessor check;
-14/14purecases PASSoneattempt/helperfc6d4b05. Original helper/evidence unchanged.
+could admit history without a verified predecessor. Charges intact, oldhelper
+not adopted. SeparateR1adds verified-predecessor check/14purePASS/fc6d4b05 and
+newGRUnative proof. Original helper/evidence unchanged.
 A/research/epoch-intent-io-preparation-20261017-v1/READY.json.
 
 Current capture code da5f425: source1355/50c535b3,345serial PASS, clean8 full

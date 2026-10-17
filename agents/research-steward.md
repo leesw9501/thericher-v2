@@ -33,8 +33,8 @@ One GPU allocation/no dummy work remains policy.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |Meitner GRUf1 COMPLETE18epochs/selected6/1332updates/2946forwards/301.410native seconds, f2running. Source05a33a1e/protocol464ef1eb/oneexclusivelease/7200owned14400end/1800fit/VRAM4GiB+desktop4headroom.|
-| Next GPU |Finish original3folds/max128/INNERpat12/batch128/seed303 without completedfitrepeat. ATenCUDA/noCuDNN source review may identifyfuture performance work, never hotpatch/increase activefitcaps.|
+| GPU |GRU3fits COMPLETE18/13/13epochs/selected6/1/1,63KNOWNcells/originalprimaryFAIL3/3. FROZENbc13144b/healthycleanup/allleasesreleased; no GPU numericalworker.|
+| Next GPU |No ready frozen training allocation. Nextshadow is trustedD6CPU inference-only on retainedf3 models,0fits; no dummy utilization or completedfitrepeat.|
 | CPU research |NewONEdepth2gate COMPLETE36cells/primaryDDFAIL, independent retainedPASS68pins/15bitexactbaselines. No base refit/forecast.|
 | Data |Longdaily90819valid/1110GET1POST0retry independently raw-matched. Older23queriesEMPTY, no repeated probes. QuietTask enabled firstOct20 06:50KST; D1feed typed source/SYN ready, not runtime capture.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
@@ -58,15 +58,16 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
 
 ## Custody To Preserve
 
-- Closed fitted VERSIONS197(117CUDA/80CPU), including ONE budget-invalid depth
+- Closed fitted VERSIONS200(120CUDA/80CPU), including ONE budget-invalid depth
   TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
-  This is not197architectures, all qualified fits or currentGPU activity.
+  This is not200architectures, all qualified fits or currentGPU activity.
   Latest6fit longdaily family COMPLETE45KNOWNcells/primaryDDFAIL; native SYN is
   excluded from market count. Independent retained review PASS626pins/45cells,
   no native parity/alpha claim; original economicFAIL unchanged.
   NewONEgate complete/36cells/independentPASS68pins, primaryDDFAIL;
-  currentGRUf1is1additional completed fit in unfinished family, never repeat it.
-  future GRU intended fits are not counted before actual completion.
+  GRU3actualfits complete/63cells/primaryFAIL, retained independentPASS1000pins/
+  48COMMITTEDbindings; no observedC3drift, no runtimeparity claim;
+  native proof8updates24forwards does not add marketfits. No futurefits queued.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent

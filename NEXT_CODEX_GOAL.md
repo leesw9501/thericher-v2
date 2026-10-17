@@ -103,14 +103,18 @@ policy/integration/Git; disjoint roles continue without routine permission waits
   Gate10bpsgrowth3.831percent/DD1.238, blend3.653/1.996, uniform2.084/1.049.
   HGB rank/regime only, not three-wayfusion. RepairednativeSYN preserves old
   failure45debit/combined88active900; independentPASS68pins/36cells/15bitexact
-  baselines/maxNAV6.66e-16. Closed-familyledger197=117CUDA+80CPU incloldinvalid.
+  baselines/maxNAV6.66e-16. Closed-familyledger200=120CUDA+80CPU incloldinvalid.
   Meitner actualGRU252x5+14 started12:28:10UTC/source05a33a1e/nativeSYN PASS
-  8updates24forwards4saves7restores/strictnextupdate. F1market COMPLETE18epochs/
-  selected6/301.410native seconds; f2running. Oneadditionalcompletedfit beyond
-  closedledger197, finalfamily awaitsseal; never repeat completedfits.
-  Within7200owned14400end/1800fit/CPU2RAM4/GPU4GiB, no extraParentapproval wait.
-  Source/noGPUreview parallel, exactMain1274 FIT-scaledsource/scalers reused.
-  EpochI/O R1helperfc6d integrated, no broker persistence change/completedfitrepeat.
+  8updates24forwards4saves7restores/strictnextupdate. All3marketfits COMPLETE
+  18/13/13epochs/selected6/1/1,0wallstop/retry/continuation,63KNOWNcells/
+  originalprimaryFAIL3/3. FROZENbc13144b/2300.84owned7200/healthycleanup/GPUfree;
+  independent retainedPASS1000pins/ALL48COMMITTEDbindings/63cells/no actualC3
+  drift,45oldcontrols unchanged, no nativeparity/alpha claim.
+  NextONEpreOPENOct19equalrank4shadow SOURCE/nativeCPU/inference work,0fits/
+  broker/schedules/positionchange. Policy chosenbeforeGRUf3outcomes. Existing
+  Oct16source, Dataappend-onlycalendar/HerschelminimalCPUABI/Meitnercaller.
+  Never trainingresumeonCPU/expertfallback/backdating/newmodelgrid. Required
+  source/runtime/key/checkpoint/clock checks are scoped, not companyapproval.
 - Validation/Planck: independent retained longdaily PASS626pins/45cells/
   49005NAV/max6.66e-16, costs/purges/scalers match. No native modelcalls/
   restore/GPU/parity claim; original economicFAIL unchanged. Exact baseline

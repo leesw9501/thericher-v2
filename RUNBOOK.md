@@ -196,12 +196,22 @@ reader only. GRU new source/native/market worker owns a separate exact binding;
 do not infer completion from preparation. Current actualGRU starts12:28:10UTC:
 A/research/current20-long-daily-gru-development-20261017-v1/campaign-binding.json,
 preparedsourceFROZEN05a33a1e/protocol464ef1eb. NativeSYN PASS, f1COMPLETE18epochs/
-selected6, f2running. No completedfit restart. Fusionindependent retainedPASS
+selected6, f2/f3COMPLETE13epochs/selected1/1. All3fits/63KNOWNcells complete,
+FROZEN-ACTUALbc13144b/HANDOFF-ACTUAL/healthycleanup. No completedfit restart.
+Independent retainedREVIEW-SEAL18e50014 checks1000pins/ALL48COMMITTEDbindings/
+63cells/unchanged45oldcontrols; no actualC3drift/continuation or runtimeparityclaim.
+Fusionindependent retainedPASS
 68pins/36cells, originaleconomicFAIL unchanged; no nativeparity claim.
 Do not invoke dispatch.py/launch.py again or change source/backend/caps while
 owned. Exact worker.lock/children/lease govern ownership; fit1800/cumulative7200/
 end14400 and completedepoch reservations persist. Future recovery is exact
 identity under same deadlines/counters, never coldrepeat/age-reclaim/newclock.
+SOURCE C3 qualification: do NOT invoke GRU --resume just because a marker exists.
+The frozen verifier can miss a ticket-drifted COMMITTED record before hashing.
+Require owner quiescence and independent ALLcandidate fullhash/identity/ticket/
+contiguousprefix/curve preflight; reject orphan/duplicate/corrupt/ambiguous
+commits. A minimal caller-side validator is in preparation; no actual recovery
+authorized by pure tests alone. Normal activefit unaffected/no observed incident.
 
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1:
 READY.json/owner-handoff.json are immutable COMPLETE1CUDAfit/125updates,

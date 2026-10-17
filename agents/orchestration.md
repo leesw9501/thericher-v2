@@ -2,7 +2,7 @@
 
 Current: Oct17 after07:39:51UTC actual reboot. Capture code pushed da5f425.
 Old agents are gone, new role agents own scoped recovery. NativeKIS3Ridge also
-COMPLETE; newnativeFT/jointgate/longdaily6fits/newONEgate complete, versions197.
+COMPLETE; newnativeFT/jointgate/longdaily6fits/newgate/GRU3fits complete,200versions.
 Capture-session integration
 verified fresh clean8; no old failed/partial/unclean authority reuse.
 ONE company outcome: current-nas-owned-model-paper-cycle-v1.
@@ -14,11 +14,11 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
 | Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
-| Validation/Planck | Base retainedPASS626pins/45cells; newgate retainedPASS68pins/36cells/15bitexactbaselines, economicFAIL unchanged. | Released; no native model/parity or independent-alpha claim. |
-| Data/Ptolemy | Longdaily CLOSED90819valid/1110GET1POST0retry/leasesreleased. Independent90819exactraw/3374hash corePASS. Older23windows allEMPTY. | No identicalolderprobes/sourceV1merge. Calendar5230metadata projection ready; support exactEngine input bindings. |
-| Engine/Meitner | GRUf1 COMPLETE18epochs/selected6/301.410native seconds, f2running. Newfamily1actualcompleted fit beyond closedledger197. | Same3fold/max128/pat12/b128/seed303/1800fitwall; no completedfitduplicate/hotpatch/capextension. |
-| Strategy/Harvey | Fixedrankblend+ONEdepth2gate COMPLETE36KNOWNcells/primaryDDFAIL, independentPASS68pins. | Released; no basefit or forward, no weight/threshold tuning. |
-| Infra/Herschel | EpochR1helper14purePASS now integrated in nativeGRUproof. HostI/O probe is not training speedproof. | Independent frozenGRU SOURCE/counter/cleanup review, CPU/noGPU/noarraydecode; no activeworker changes. |
+| Validation/Planck | GRU retainedPASS1000pins/48COMMITTEDbindings/63cells,45oldcontrolsunchanged; REVIEW-SEAL18e50014. | Released; no nativeparity/restore/alpha claim, oldC3coldresumecaution stays. |
+| Data/Ptolemy | Oct19calendar READY333fd436/e4f503f8; D1-vs1mclose3/20,volume0/20, sourceunchanged. | Bounded offlineboundary/session diagnostic, notdatarewrite/MTFpromotion/newHTTP. ShadowdirectD1only continues. |
+| Engine/Meitner | GRU3fits COMPLETE18/13/13epochs/selected6/1/1,63KNOWNcells/primaryFAIL3folds, healthycleanup. | ONE preOPENOct19equalrank4shadow source/nativeCPU/forward after exacttypedprereqs, no newfits. |
+| Strategy/Harvey | Fixedrankgate36cells independentlychecked/FAIL; next-open equalrank4 contract frozen BEFOREGRUf3outcomes,4purePASS/0modelcalls. | Released; no performance-selected weights/expertfallback/newhistoricalgrid. |
+| Infra/Herschel | C3caller preflight6pureREADY, notdeployed. Inference-only D6CPU loader SOURCE4pureREADY770d465a. | Released; Meitner owns exactselectedGRU binding/nativeproof/actualcaller, no inferred forecast/parity. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -28,6 +28,13 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+13:15UTC: three actualGRU fits complete, no GPU owner. Independent retained
+review runs while typed calendar/CPU modelstate ABI/caller are prepared for ONE
+nextOPEN shadow. Reuse retained f3 checkpoints, no fresh training merely for
+utilization. Sourcepreparation time and numerical2300.84seconds are separated.
+Scientific policy equalrank4 was frozen before GRUf3 economics, no seen-outcome
+grid. No new schedules/broker positions; company objective still ownedOct21exit.
 
 12:24UTC: base retained review done; repaired gate actual computation has
 finished, owner seals results. GRU source is still owned/being prepared, not a
@@ -140,8 +147,8 @@ not passing authority; denied roots untouched. Docs/external work reuses
 only exact unchanged source/control digests. External code needs its own tests;
 repository tests do not validate it.
 
-Closed fitted versions197=117CUDA+80CPU, including one budget-invalid checkpoint,
-not197architectures/qualified fits or current activity. New intended fits are
+Closed fitted versions200=120CUDA+80CPU, including one budget-invalid checkpoint,
+not200architectures/qualified fits or current activity. New intended fits are
 not counted. No qualified alpha; broker fees/settledcash/net remain unknown.
 No operator-only decision is currently required. Detailed history stays in Git
 and immutable source roots, not duplicated as a second backlog.

@@ -2,6 +2,35 @@
 
 ## Current Oct17 Reboot Continuation
 
+Current useful consumers: longdaily source90819 supports actual rule/HGB/MLP,
+fixedrankfusion/gate and GRU development; source limits are not unrelated Paper
+permission gates. Canonical raw-to-source checks below remain unchanged.
+DirectD1 model feed source/SYN READY6cases (one native-exception repair charged),
+typed DIRECT-MODP1 append/context/basis rules; no actual mixedTask integration
+or new capture. Preserve existing13flags/oldrows/provenance; requiredmissing or
+basisdrift stays scoped unavailable, no fabricated model input.
+A/data/current20-native-d1-model-feed-preparation-20261017-v1/READY.json.
+Ptolemy's temporary epochhelper independent6case review reproduced replay-only
+P2; separate R1minimalrepair14purePASS. That source review never called a broker,
+decoded market data or adopted native training. No active Data collector now.
+Offline Oct16directD1-vs-RTH1m comparison COMPLETE20routes/7800labels:
+exact/tolerant matches open9/high10/low16/close3/volume0 of20, jointOHLC1.
+No rescale/repair/sourcechanges; basis/session/timestamp/auction/volume semantics
+remain unresolved, not proof directD1 is invalid or all endpoints share basis.
+Futureboundarydiagnostic compares atmostONEendlabel alternative if retained
+16:00witness exists; no offsetgrid/newHTTP/datarewrite. Do not merge D1/minute
+features or relabel currentBars from this comparison. DirectD1-only research/
+shadow/Paper authority continues with its own factual limits.
+A/data/current20-oct16-d1-minute-consistency-20261017-v1/RESULTS.json.
+Oct19calendar READY: exact5230oldprefix plusordinal5230/planned13:30-20:00UTC,
+not observedactualopen. MANIFEST333fd436/calendarSHAe4f503f8; onlynewmetadata,
+oldsourceunchanged. ConcreteconsumerONEpreOPENshadow fixed4expertpolicy.
+A/data/current20-next-open-calendar-20261017-v1/MANIFEST.json.
+PostcloseD1feed integration SOURCE4pureREADY: separatefiniteD1 option20GET+
+2retry/1POST because quietcfc2757 minuteclient is closed/not safelyshareable.
+No runtime/Task/capture change or new schedule; nextshadowneeds nonewHTTP.
+A/data/current20-postclose-d1-feed-integration-preparation-20261017-v1/READY.json.
+
 LATEST after16:39KST reboot: multi-visit recovery CLOSED_NOT_READY, empty
 dependency freeze/native-suite timeouts110/40sec/inclusive929.47>240active.
 No API/credentials/install. Preserve old WIP/caps/failures, not authority.
