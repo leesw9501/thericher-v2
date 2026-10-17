@@ -1,12 +1,30 @@
 # Research Steward Stateboard
 
-Current2026-10-17KST/UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-18KST. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/custody.
 Steward owns exclusive GPU/trial-family custody, NOT model choice, broker risk,
 human approval or a permanent daemon. Parent dispatches/integrates/Git.
 Results live in agents/engine-research.md; this board owns queue and custody.
 
 ## Ready / Allocated
+
+Oct18 quantileMLP COMPLETE3CUDAfits/0retry/72KNOWNcells/bothprimaryFAIL,
+22/21/21epochs/selected2/1/1; independentPASS440pins/68COMMITTED/72cells.
+GPUlease released,160.04owned7200, no claim of sustainedoccupancy/convergence.
+New seed robustness COMPLETE6CUDAfits/9initialforecasts/108KNOWNcells;
+378.03active3600/1805.28elapsed14400, all leases released. Original failed SYN
+and sole SYN retry retained;0marketretry. Actual seal bef8b465. Frozen strong
+learned-increment condition NOT_ESTABLISHED; independent CPU retainedPASS
+1296producerpins/569upstream/108cells/45exactcontrols,0modelcalls. Current
+ledger209=129CUDA+80CPU was the seed-study snapshot. TemporalTransformer now
+COMPLETE3CUDAfits,14/13/15epochs/selected2/1/3,359.99active3600/903.12elapsed10800;
+all leases released. IndependentPASS63cells/411pins/46checkpoints/54exactcontrols,
+primaryFAIL3/3, no Paper switch. Current ledger212=132CUDA+80CPU incloldinvalid,
+not architectures/qualified models. Next-source inference prep COMPLETE9checks/
+GPU0/source-SYN only, not future forecasts. Next named owner Meitner prepares
+NEW SPY-relative-target3MLP+3HGB under1800active7200elapsed/6starts0marketretry;
+label/maturity/scaler/native proof and caps precede any market fit. Intended six
+are NOT counted and appointment is not GPU activity. No completed fit repeats.
 
 Earlier closed16:53KST reboot state: native3Ridge COMPLETE, never repeat. Old
 ledger188=113CUDA+75CPU incloldinvalid; new audit checks latest24fitversions/
@@ -33,8 +51,8 @@ One GPU allocation/no dummy work remains policy.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |GRU3fits COMPLETE18/13/13epochs/selected6/1/1,63KNOWNcells/originalprimaryFAIL3/3. FROZENbc13144b/healthycleanup/allleasesreleased; no GPU numericalworker.|
-| Next GPU |No ready frozen training allocation. ONEshadow17keys8policies completed in trustedD6CPU,0fits/GPU; no dummy utilization or completedfitrepeat.|
+| GPU |Transformer3fits COMPLETE14/13/15epochs/selected2/1/3,63KNOWNcells/originalprimaryFAIL3/3. FROZEN97b9eae1/healthycleanup/allleasesreleased; independentPASS.|
+| Next GPU |Meitner SPY-relative-target source/native proof preparation, new1800active7200elapsed. No market/GPU activity inferred; no dummy utilization or completedfitrepeat.|
 | CPU research |NewONEdepth2gate COMPLETE36cells/primaryDDFAIL, independent retainedPASS68pins/15bitexactbaselines. No base refit/forecast.|
 | Data |Longdaily90819valid/1110GET1POST0retry independently raw-matched. Older23queriesEMPTY, no repeated probes. QuietTask enabled firstOct20 06:50KST; D1feed typed source/SYN ready, not runtime capture.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|

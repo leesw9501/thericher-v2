@@ -2,6 +2,17 @@
 
 ## Current Oct17 Reboot Continuation
 
+Oct18 Ptolemy completed metadata/source/key/venue/calendar binding for NEW
+current20-equalrank4-paper-20261018-v1 using exactf9shadow output and same
+90819directD1 source, no newHTTP/forecast/sourcechanges. ProposedentryUSOct19
+Oct20 00:10KST/latestcompletedOct16; exitUSNov17 spans21scheduledsource days,
+20fullyheldRTH pluspartialentry/exit. Own A/data/current20-paper-input-binding-20261018-v1 only;
+oldshadow remainsmeasurement-only, newPapercontract separate. READY2290e74b
+binding/6puregroups/50.63active300, zeroAPI/model/weightvaluereads. Future06:50/
+07:30 collectors unchanged. Parent accepted exactcalendar20fullyheld fact.
+Ptolemy now invokedInfra on distinctnewhost/worker/scripts tests; no newData
+collector. Not actual Paperinput/submit evidence yet.
+
 Current useful consumers: longdaily source90819 supports actual rule/HGB/MLP,
 fixedrankfusion/gate and GRU development; source limits are not unrelated Paper
 permission gates. Canonical raw-to-source checks below remain unchanged.

@@ -1,9 +1,40 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current 2026-10-17 KST /UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current 2026-10-18 KST. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
+
+CURRENT Oct18: Parent integrated the distinct native profile and JSON-only
+host/worker/ownerprobe. Historical author432/routing8probes plus final host34/
+358serial/full18296PASS22skip/clean8helper0/Ruff3Compose;1360source8bc287b6.
+Task thericher-kis-paper-current20-equalrank4-20261018 is actually Ready/Enabled,
+31finite UTC starts/IgnoreNew/PT5M, image378f2034/480source/sourceca19a499/
+input473a759d/semanticbb77d43f/contractf66/launchbindinge98bfda3. Parent declared exact
+f9 equalrank4 as provisionaloperational candidate, not certifiedalpha or old
+shadow promotion. Newfive*.005originalbasis<=.025 inside SAMEshared .10 bank,
+entryUSOct19only/proposedOct20 00:10KST/ownedexitUSNov17, Data/calendar READY2290e74b.
+21scheduledsource sessions mean20fullyheldRTH pluspartialentry/exit, not OPEN
+parity. Native no_intent accepted; no foreignownership/backups/
+reweight/unknownrequestsubstitution. ExistingNAS8exitOct21/nightly/Goal97 remain.
+OldNAS10target/14day/pointer semantics require a separate explicit profile;
+no fakeNASschema/globalmonkeypatch/duplicatebroker-risk engine.
+First actual dueOct19 15:10UTC=Oct20 00:10KST; no new broker calls/submit/fill.
+One DISABLED registration then exact unused NULL/NULL idle-default recovery,
+one Enable/zero re-register/manual invoke, all249other definitions unchanged.
+Ownknown rollback was durable before enable; raw XML differs only Enabled.
+PARENT-CONTRACT.json holds exact source/identity/limits. Evidence:
+A/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/parent-deployed.json.
+A/infra/current20-ensemble-paper-schedule-20261018-v1/final-binding-r3/parent-idle-null-activation-1/installed.json.
+Assumed-honest-host provenance, not cryptographic OS origin; Operational logging
+disabled. Ptolemy now prepares a strict offline new-profile outcome reader,
+invented inputs only, not current private/broker observation or a Paper gate.
+Exact one offline eligibility read now verifies selected5/foreignregistered
+overlap0/unregisteredeligible5/remainingcappositive/BUYreservationsabsent.
+Private bytes/membership unchanged/network0/writes0, strict native472source
+under named-owner quiescence; NOT fresh broker eligibility or profitability.
+A/execution/current20-ensemble-paper-preparation-20261018-v1/eligibility-readback/HANDOFF.json.
+No venue extension, reranking, substitute target or ownership transfer is needed.
 
 Oct17 reboot recovery: Planck's bounded public intake verifies original Goal83
 close/recovery no_intent/entry_window_elapsed and Oct16/index4 accounting

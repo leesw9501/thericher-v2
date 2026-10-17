@@ -1,15 +1,41 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current: Oct17 after07:39:51UTC actual reboot. Capture code pushed da5f425.
-Old agents are gone, new role agents own scoped recovery. NativeKIS3Ridge also
-COMPLETE; newnativeFT/jointgate/longdaily6fits/newgate/GRU3fits complete,200versions.
-Capture-session integration
-verified fresh clean8; no old failed/partial/unclean authority reuse.
+Current: Oct18KST provisional ensemble Paper integration and parallel research.
+Prior capture code pushed da5f425; current HEADec0eb1d. Capture-session
+integration verified fresh clean8; its authority is HISTORICAL after the new
+tracked Execution edits. No failed/partial/unclean authority reuse.
 ONE company outcome: current-nas-owned-model-paper-cycle-v1.
 Parent owns direction, shared documents, integration and Git. A is
 D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk.
 
 ## Ready / Owned / Due
+
+Oct18 current update supersedes the historical Oct17 table below. Parent owns
+integration/Git; the provisional fixed equalrank4 Task is actually Enabled/Ready,
+31finite starts/firstOct20 00:10KST, image378f2034/sourceca19a499/input473a759d/
+semanticbb77d43f/contractf66/launchbindinge98bfda3. One DISABLED register then
+exact unused nativeNULL idle recovery/one Enable, no re-register or invocation;
+all249other definitions unchanged. No new submit/fill/PnL or company closure.
+A/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/parent-deployed.json.
+Final1360source8bc287b6/358serial/18296full22skip/clean8helper0/Ruff3Compose PASS.
+Author native432/routing8, host34/two independent P2 reversal cases, Data6,
+Task12+3+final3, measured absence5 and nativeNULL8 checks have distinct scopes;
+only final repo full is authority, not old failed/partial runs. P2 fix preserves
+the absolute deadline and GET/POST scopes. Earlier transient legacy SYN failure
+remains unexplained but did not reproduce in isolated/full serial diagnostic,
+fresh358serial/full18318collection; no invented root cause.
+
+Quantile3fits independentlyPASS72cells/bothprimaryFAIL. Seed6fits independently
+PASS108cells/45oldcontrols, strongconditionNOT_ESTABLISHED. Transformer3fits
+independentlyPASS63cells/411pins/46checkpoints/54controls, primaryFAIL3/3. All
+leases released; cumulative212=132CUDA+80CPU incloldinvalid, not architectures.
+Ptolemy now prepares a strict new-profile outcome reader, SOURCE/SYN only/no
+actual private read. Meitner next SPY-relative-target6fit source/native prep,
+not numeric/GPU proof or intended fits counted. Herschel reviews narrow native
+absence/NULL recovery under its original finite budget. Other roles released.
+One writer per set, one GPU allocation, no completed fit/shadow repeats.
+
+### Historical Oct17 Ownership Snapshot
 
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
@@ -28,6 +54,50 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+Oct18 01:55KST: Paper Task is actually Ready, not just source tests. Native
+named absence and unused idleNULL facts were measured, not permission holds:
+preserve exact one disabled registration then enable once, no overwrite, all
+249other XML definitions unchanged. FullQA ran once after the two tracked
+compatibility/P2 repairs; outside-suite Scheduler deltas have5+8focused checks/
+real read-only metadata and scoped independent review, not repeated18k.
+Transformer3GPUfits finished meanwhile and independent63cell reviewPASS; next
+target hypothesis and strict future result reader are disjoint ready packages.
+No foreground wait through Monday and no dummy GPU work.
+
+Oct18 01:15KST: suspected foreign-registration blocker was tested, not assumed.
+One exact network-none/privateRO native read finds0overlap/5eligible/positive
+retainedcap/noBUYreservation, checked privatebytes/membershipunchanged. Reject
+unneeded NYS extension/reranking/custody migration; existing f66 contract stays.
+Fresh broker eligibility still belongs to natural owned execution. Parent staged
+the six owned code/test paths for source inventory; no commit/deployment yet.
+
+Oct18 01:10KST: seed6fits already complete while host/Task preparation proceeded;
+GPU released, no numerical repeat. Critical path is concrete host/probe cold
+bootstrap and finite deployment, not research pass or another model search.
+Parent reviews actual physical pythonw/input/calendar path, not merely inert
+exit; parallel independent seed review and Task mocks do not block it. Keep
+new owner admission at startup and fresh after pacing before POST only under
+Claude KEEP post-admission-r1; native GET allowlists/risk/locks/rate unchanged,
+Data and old NAS caller scopes unchanged. Reversible simplification is to reuse
+native routing432tests+8independentprobes rather than reimplement bank/risk.
+
+Oct18 00:40KST: current newPaper criticalpath is adapter/host integration, not
+modelprofitability. Data metadata ready and quantileGPUexperiment completed/
+independently checked while Papercode progressed. Reversible simplification:
+actual frozenTop5 are allNAS, so unneeded sharedNYSEinstrument extension was
+removed, not universefiltered/reselected. Parent retracted arbitrary15:35Z
+signalTTL; original Oct19close expiry remains, nativeorderTTL separate.
+Ready work: Ptolemyhost/worker, Plancknativeprofile/tests, Meitnerfutureinput
+inferenceprep, Harveynewseed/initdiagnostic. No foregroundsessionwait.
+
+Oct18 00:20KST: Paper candidate path and new Engine hypothesis are dispatched
+in parallel rather than waiting for Monday's market. Existing NAS wrapper's
+10targets/14day/pointer defaults are a concrete integration mismatch, not a
+new safety permission. Minimal explicit newprofile keeps old semantics/snapshot
+and native budget/recovery; do not duplicate targets or a broker-risk engine.
+Alternative work executed now: source/calendar binding, native adapter and GPU
+quantile preparation. Keep current ownedexit outstanding and old source caps.
 
 14:55UTC: final DataTask is enabled after exact disabled-identity recovery of a
 measured optional native idle-field omission, not a new provider/permission gate.

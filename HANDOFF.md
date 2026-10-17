@@ -12,8 +12,81 @@ Private Paper work is delegated on ONE original shared initial virtual-cash
 tenth. Never KIS_LIVE_*, real money, paid/public work, secret/account/order/raw
 price output, expiry renewal, unknown-request replacement or bank reset.
 
-## Current Execution (2026-10-17 KST)
+## Active Oct18 Direction
 
+Operator requested promising existing models/ensembles be connected to actual
+Paper while independent Engine research/GPU work continues. New provisional
+candidate: exact predeclared equalrank4(rule/HGB/MLP/GRU) from f9cbd3ee, not a
+seen-performance champion. Existing shadow remains measurement-only; NEW Paper
+consumer has its own identity/contract, no retroactive order/PnL claim.
+Parent contract: A/execution/current20-ensemble-paper-preparation-20261018-v1/
+PARENT-CONTRACT.json. Entry ONLY USOct19, proposedOct20 00:10KST; five desired
+targets each<=.005 ORIGINALbasis,<=.025 together inside SAME shared .10 bank.
+Owned exit proposedUSNov17;21scheduled source sessions mean20fullyheld RTH
+sessions pluspartialentry/exit because actual fills are intraday, not OPENparity.
+No reweight/backups/foreign custody/stale entry; native no_intent is valid.
+Old NAS8 entries/Oct21exit, nightly, Goal97 and all requests/basis remain.
+
+Source native profile/proposal FROZEN/432focusedPASS; independent native
+routing review8fakebrokerprobes/noP1/P2. Data/calendar binding READY2290e74b/
+6puregroups. Ptolemy owns actual newhost/worker/ownerprobe source and tests;
+Herschel owns finite31trigger quietTask preparation, not installation. Parent
+owns input creation/frozen release/build/inert proof/install/integration/Git.
+NEW candidate Task is actually Enabled/Ready; first owned opportunity
+Oct20 00:10KST (Oct19 15:10UTC). No new candidate submit or fill observed yet.
+Parallel quantile COMPLETE3CUDAfits/72KNOWNcells/bothprimaryFAIL, independent
+retainedPASS440pins. Seed robustness COMPLETE6CUDAfits/9initialforecasts/
+108KNOWNcells/45exactcontrols;8/9singles and3/3ensemble growth improve over
+matchedinitialization, higherensembleDD2/3, strongconditionNOT_ESTABLISHED.
+Actual seed seal bef8b465; independent CPU PASS1296producerpins/569upstream/
+133COMMITTED/108cells/45exactcontrols/max1.38e-14, no model/native rerun. All training leases
+released. Transformer then completed3CUDAfits/63KNOWNcells; independentPASS
+411pins/46checkpoints/54exactcontrols/17931checks/max8.88e-16. Original primary
+FAILall3folds, no current Paper switch. Ledger212=132CUDA+80CPU incloldinvalid,
+not architectures/alpha. New SPY-relative-target6fit campaign is SOURCE prep,
+not yet counted; current model outputs are never refit/reforecast for it.
+Next-source inference prep COMPLETE9checks/GPU0, SOURCE/SYN only; no fresh
+market forecast or old f9 repeat. Source artifacts/caps do not expand Paper.
+One strict offline native eligibility check finds selected5/foreignregistered
+overlap0/eligible5/retainedcappositive/noBUYreservation; privatebytes/membership
+unchanged/network0/writes0. No need for venue/rerank/custody changes. This is
+retained-book eligibility, not a fresh broker snapshot or a fill.
+Parent actual input created ONCE: manifest473a759d/semanticbb77d43f/payload
+0436d5ee/contractf66ee5fc. Final deployment sourceca19a499/image378f2034,
+versioned launchbindinge98bfda3, actual physical pythonw/input/console0 and
+480source+JSON/noModel/network-none public image proof PASS. Original image353
+and bindinga7 are superseded before installation, not runtime evidence.
+Legacy reason-code mismatch fixed minimally; independent silent-GET15s P2
+fixed with bounded polling to original deadline/two virtual tests. Newhost34/
+changedpath358serial/full18296PASS22skip/clean8helper0/Ruff3Compose PASS.
+Fresh1360source digest8bc287b6, authority in A/verification/current20-ensemble-
+paper-20261018-v1/recovery-r3/authority.json. Original transient legacy SYN
+failure remains unexplained, not reproduced by isolated, full serial diagnostic,
+fresh358serial or full18318collection; no invented cause or failed authority reuse.
+Actual Task registration was DISABLED once, then unused native idle duration
+NULL/NULL plus omitted XML/RunOnlyIfIdle=false was calibrated in one AST
+assignment; exact original definition recovered and enabled once, no re-register.
+All249other Task definitions unchanged. First natural invocation/fills unknown.
+A/infra/current20-ensemble-paper-schedule-20261018-v1/final-binding-r3/parent-idle-null-activation-1/installed.json.
+A/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/parent-deployed.json.
+Operational logging remains disabled; source/hash/time evidence assumes an
+honest host, not cryptographic proof of OS-scheduler origin. Physical pythonw
+console0 and hidden children are checked; actual scheduled execution is future.
+Ptolemy prepares a strict new-profile outcome reader with invented inputs only;
+it is not another Paper permission gate or current private/account observation.
+Claude REVISE, categorical evidence at A/review/current20-ensemble-paper-and-
+quantile-20261018-v1/claude.json. Address named isolation/asof/risk concerns;
+review is not a new human approval or a prohibition on future measured PaperPnL.
+ONE company objective remains unfinished NASownedexit/reconciliation.
+
+## Current Execution (2026-10-18 KST)
+
+- New ensemble: thericher-kis-paper-current20-equalrank4-20261018, image378f2034,
+  480publicsourcefiles,31finite UTC starts/IgnoreNew/PT5M. Exact sourceca19a499/
+  input473a759d/semanticbb77d43f/contractf66/launchbindinge98bfda3; native shared
+  bank and other owners unchanged. Entry ONLY USOct19 until20:00UTC, first
+  visit15:10UTC; owned exit NOT before USNov17 15:10UTC, grace throughNov20.
+  All no-intent remains valid; no backup/reweight/stale entry/foreign adoption.
 - Model: SAME finite thericher-kis-paper-current-nas-model-20261015, image87697f8e,
   474publicfiles. Eight retained acknowledged FULLfills/zero unknown at last
   strict native read. Post-reboot bound hold/await_declared_exit uses zero API.

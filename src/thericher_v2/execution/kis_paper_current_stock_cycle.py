@@ -13,6 +13,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass, fields, replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
+from enum import Enum
 from fractions import Fraction
 from pathlib import Path
 
@@ -23,6 +24,14 @@ from thericher_v2.models.current_nas_frozen_rank_target import (
     FEATURE_SCHEMA_ID,
     FrozenScoreMetadata,
     PreparedTarget,
+)
+from thericher_v2.research.current20_paper_candidate import (
+    ENTRY_NOT_BEFORE,
+    EXIT_NOT_BEFORE,
+    Current20PaperCalendar,
+    Current20PaperMetadata,
+    Current20PaperTarget,
+    validate_current20_targets,
 )
 from thericher_v2.research.decision_receipt import (
     DecisionReceiptReferences,
@@ -60,6 +69,14 @@ from .kis_readonly import (
 )
 
 POINTER = ".current-nas-stock-cycle.json"
+CURRENT20_POINTER = ".current20-equalrank4-paper-20261018-v1.json"
+
+
+class StockCycleProfile(Enum):
+    LEGACY_NAS = "legacy_nas"
+    CURRENT20_EQUALRANK4 = "current20-equalrank4-paper-20261018-v1"
+
+
 _STATUSES = frozenset(
     {"inert", "hold", "no_intent", "pending", "advanced", "complete", "unavailable"}
 )
@@ -119,6 +136,9 @@ _TYPES = {
     cls.__name__: cls
     for cls in (
         PreparedTarget,
+        Current20PaperTarget,
+        Current20PaperMetadata,
+        Current20PaperCalendar,
         TargetExposureProposal,
         ResearchDecisionReceipt,
         FrozenScoreMetadata,
@@ -154,11 +174,12 @@ def _pin(value):
 
 @dataclass(frozen=True, slots=True, repr=False)
 class CurrentStockCycleInput:
-    targets: tuple[PreparedTarget, ...]
+    targets: tuple[PreparedTarget, ...] | tuple[Current20PaperTarget, ...]
     entry_session: SessionWindow
     exit_session: SessionWindow
     input_ref: str
     policy_ref: str
+    profile: StockCycleProfile = StockCycleProfile.LEGACY_NAS
 
 
 @dataclass(frozen=True, slots=True, repr=False)
@@ -299,8 +320,9 @@ def _owned_registry(record, binding):
         _check(expected <= {p["request_id"] for p in entry["plans"]}, "cycle_owner_missing")
 
 
-def _validate_input(value, at):
+def _validate_input(value, at, profile=StockCycleProfile.LEGACY_NAS):
     _check(type(value) is CurrentStockCycleInput, "cycle_input_invalid")
+    _check(value.profile is profile, "cycle_input_invalid")
     _pin(value.input_ref)
     _pin(value.policy_ref)
     _check(
@@ -308,6 +330,13 @@ def _validate_input(value, at):
         "cycle_session_invalid",
     )
     opened, closed = value.entry_session.open_ts, value.entry_session.close_ts
+    if profile is StockCycleProfile.CURRENT20_EQUALRANK4:
+        _check(ENTRY_NOT_BEFORE <= at < closed, "cycle_session_invalid")
+        try:
+            validate_current20_targets(value, at)
+        except (ValueError, TypeError, AttributeError, KeyError):
+            raise _CycleFault("cycle_target_invalid") from None
+        return value
     _check(
         opened <= at < closed
         and closed < value.exit_session.open_ts
@@ -437,7 +466,7 @@ def _retired_absent(root, record):
                 raise _CycleFault("cycle_retired_request_restored") from None
 
 
-def _retire_never_reserved(root, record, clock):
+def _retire_never_reserved(root, record, clock, pointer=None):
     """Retire only the journal, never a canonical reservation or order state."""
     pending = record["pending"]
     args = _unpack(pending["arguments"])
@@ -474,7 +503,7 @@ def _retire_never_reserved(root, record, clock):
             if pending["side"] == "buy":
                 record["active"]["entries_done"].append(symbol)
             record["pending"] = None
-            _save(root / POINTER, record)
+            _save(pointer if pointer is not None else root / POINTER, record)
             return True
 
 
@@ -513,14 +542,14 @@ def _completed_flat(root, record, at):
         )
 
 
-def _recover(record, root, paths, client_factory, clock):
+def _recover(record, root, paths, client_factory, clock, pointer=None):
     pending = record["pending"]
     args = _unpack(pending["arguments"])
     binding = _book(root, record["account_ref"], record["basis_ref"])
     _owned_registry(record, binding)
     plans = binding.get("stocks", {}).get(pending["symbol"], {}).get("plans", [])
     if not any(p["request_id"] == args["request_id"] for p in plans):
-        if _retire_never_reserved(root, record, clock):
+        if _retire_never_reserved(root, record, clock, pointer):
             return CurrentStockCycleOutcome("no_intent", "cycle_never_reserved_retired", 1)
         reserve = (
             entries.reserve_kis_paper_stock_plan
@@ -534,7 +563,7 @@ def _recover(record, root, paths, client_factory, clock):
         binding = _book(root, record["account_ref"], record["basis_ref"])
     proof, seed = _proof(root, binding, pending)
     pending["reservation_confirmed"] = True
-    _save(root / POINTER, record)
+    _save(pointer if pointer is not None else root / POINTER, record)
     _, states, state, projection = execution._scope(root, proof, require_utc(clock()))
     session = _unpack(pending["session"])
     directive = plan_stock_session_recovery(
@@ -678,6 +707,7 @@ def run_kis_paper_current_stock_cycle(
     client_factory: Callable | None = None,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     execute: bool = False,
+    profile: StockCycleProfile = StockCycleProfile.LEGACY_NAS,
 ) -> CurrentStockCycleOutcome:
     """One pending leg/visit; exact retained recovery precedes target_loader.
 
@@ -693,6 +723,11 @@ def run_kis_paper_current_stock_cycle(
     leg_count = 0
     try:
         _check(type(execute) is bool and callable(clock), "cycle_configuration_invalid")
+        _check(type(profile) is StockCycleProfile, "cycle_input_invalid")
+        current20 = profile is StockCycleProfile.CURRENT20_EQUALRANK4
+        if current20:
+            _pin(expected_input_ref)
+            _pin(expected_policy_ref)
         root = Path(state_root)
         paths = dict(
             state_root=root,
@@ -716,8 +751,8 @@ def run_kis_paper_current_stock_cycle(
             paths["emergency_state_path"],
             paths["execution_control_path"],
         )
-        pointer = root / POINTER
-        lock = root / ".current_nas_stock_worker"
+        pointer = root / (CURRENT20_POINTER if current20 else POINTER)
+        lock = root / (".current20_equalrank4_worker" if current20 else ".current_nas_stock_worker")
         for path in (pointer, lock.with_name("." + lock.name + ".lock")):
             _unlinked(path)
         with canary.exclusive_kis_paper_canary_state_lock(lock):
@@ -726,6 +761,11 @@ def run_kis_paper_current_stock_cycle(
             binding = _book(root, expected_account_ref)
             if record is not None:
                 _check(
+                    record.get("profile") == profile.value
+                    if current20 else "profile" not in record,
+                    "cycle_checkpoint_invalid",
+                )
+                _check(
                     record["ref"]
                     == "sha256:" + budget._digest({k: v for k, v in record.items() if k != "ref"})
                     and record["paths"] == packed_paths
@@ -733,11 +773,25 @@ def run_kis_paper_current_stock_cycle(
                     and record["basis_ref"] == binding["basis_ref"],
                     "cycle_checkpoint_invalid",
                 )
+                if current20:
+                    _check(
+                        record["policy_ref"] == expected_policy_ref
+                        and record.get("input_ref") == expected_input_ref
+                        and (record["active"] is None
+                             or record["active"]["input_ref"] == expected_input_ref)
+                        and (record["pending"] is None
+                             or _unpack(record["pending"]["arguments"])["input_ref"]
+                             == expected_input_ref),
+                        "cycle_input_binding_mismatch",
+                    )
                 _owned_registry(record, binding)
                 _retired_absent(root, record)
                 if record["pending"] is not None:
                     leg_count = 1
-                    result = _recover(record, root, paths, client_factory, clock)
+                    result = (
+                        _recover(record, root, paths, client_factory, clock, pointer)
+                        if current20 else _recover(record, root, paths, client_factory, clock)
+                    )
                     _save(pointer, record)
                     return result
             at = require_utc(clock())
@@ -768,7 +822,7 @@ def run_kis_paper_current_stock_cycle(
                     _check(value.policy_ref == record["policy_ref"], "cycle_policy_changed")
                     _completed_flat(root, record, at)
                     return CurrentStockCycleOutcome("complete", "already_completed")
-                value = _validate_input(value, at)
+                value = _validate_input(value, at, profile)
                 if record is None:
                     record = dict(
                         version=1,
@@ -781,12 +835,14 @@ def run_kis_paper_current_stock_cycle(
                         completed=[],
                         pending=None,
                     )
+                    if current20:
+                        record.update(profile=profile.value, input_ref=value.input_ref)
                 _check(record["policy_ref"] == value.policy_ref, "cycle_policy_changed")
                 if value.input_ref in record["completed"]:
                     _completed_flat(root, record, at)
                     return CurrentStockCycleOutcome("complete", "already_completed")
                 _check(
-                    all(
+                    current20 or all(
                         t.proposal.symbol not in binding.get("stocks", {})
                         or t.proposal.symbol in record["owners"]
                         for t in value.targets
@@ -807,7 +863,8 @@ def run_kis_paper_current_stock_cycle(
             entry_session, exit_session = (
                 _unpack(active[k]) for k in ("entry_session", "exit_session")
             )
-            side = "sell" if at >= exit_session.open_ts else "buy"
+            exit_eligible = EXIT_NOT_BEFORE if current20 else exit_session.open_ts
+            side = "sell" if at >= exit_eligible else "buy"
             session = _current_exit_session(at, exit_session) if side == "sell" else entry_session
             if side == "buy" and at >= entry_session.close_ts:
                 return CurrentStockCycleOutcome("hold", "await_declared_exit")
@@ -845,6 +902,15 @@ def run_kis_paper_current_stock_cycle(
             instrument = KisPaperStockInstrument(
                 target.proposal.symbol, target.receipt.instrument_binding_ref
             )
+            if side == "buy" and current20 and (
+                (instrument.symbol in binding.get("stocks", {})
+                 and instrument.symbol not in record["owners"])
+                or projection.remaining_cap <= 0 or projection.remaining_gross_cash <= 0
+            ):
+                # Exclude, never adopt, replace, reweight or create a new bank.
+                active["entries_done"].append(instrument.symbol)
+                _save(pointer, record)
+                return CurrentStockCycleOutcome("no_intent", "native_risk_no_intent")
             _check(
                 instrument.symbol not in binding.get("stocks", {})
                 or instrument.symbol in record["owners"],
@@ -894,7 +960,7 @@ def run_kis_paper_current_stock_cycle(
                 expected_basis_ref=binding["basis_ref"],
                 expected_owner_refs=_refs(binding),
                 expected_binding_ref="sha256:" + budget._digest(binding),
-                request_id="nas-"
+                request_id=("current20-" if current20 else "nas-")
                 + budget._digest(
                     [
                         record["policy_ref"],
@@ -946,7 +1012,10 @@ def run_kis_paper_current_stock_cycle(
                 active["exit_attempts"] += 1
             _save(pointer, record)
             leg_count = 1
-            outcome = _recover(record, root, paths, client_factory, clock)
+            outcome = (
+                _recover(record, root, paths, client_factory, clock, pointer)
+                if current20 else _recover(record, root, paths, client_factory, clock)
+            )
             _save(pointer, record)
             return outcome
     except _CycleFault as error:

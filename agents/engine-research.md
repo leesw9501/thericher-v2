@@ -1,11 +1,73 @@
 # Engine Research Stateboard
 
-Current2026-10-17KST/UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-18KST. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts; AGENTS owns authority. Parent owns integration/
 Git, Execution owns broker risk. MD is memory, not an active worker.
 Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
-## Current Oct17 Parallel Continuation
+## Current Oct18 Parallel Continuation
+
+Oct18 current20-long-daily-quantile-mlp-development-20261018-v1 COMPLETE3CUDAfits,
+0retry/22-21-21epochs/selected2-1-1,72KNOWNcells=18new+54retained. Hypothesis:
+ordered q10/q50/q90 return distributions on same1274raw+14 inputs can expose
+downside information absent from mean-return ranks. Same90819source/purged
+folds/payoff/costs, seed303/onearchitecture, two fixed policies median and
+median/width. Freeze exact loss/scaling/fit/eval/retry ceilings,7200active/
+21600end/max256epochs/INNERstop20/LR/bestrestore before numeric dispatch.
+Bothfixedpolicies primaryFAIL. Nominal80percent intervalcoverage79.11/64.96/
+74.56percent, not calibrated confidence/Sharpe.160.04owned7200/694.16end21600,
+totalinclSYN4227updates/8792forwards/68saves5restores/408MiBpeakreserved,
+allleasesreleased. Independent retainedPASS440pins/68COMMITTED/72cells/
+18newreplays/54controlsunchanged/maxNAV6.66e-16, noTorch/rawscan/nativeparity.
+HANDOFFe3a14db5/independentSEALa5a4ad61. Old200/f9 unchanged; total203fitted
+versions123CUDA+80CPU incloldinvalid, not architecturecount or alpha.
+Challenger does not switch provisional Papercandidate.
+
+NEXT-SOURCE frozenexpert inference prep COMPLETE, SOURCE/SYN ONLY at
+A/research/current20-next-source-frozen-policy-preparation-20261018-v1.
+Nine checks/GPU0; HANDOFF4a2542be/FROZEN-SOURCE5939514b. Same checkpoints,
+scalers and kernels, typed source strictly after Oct16, no old f9 repeat or new
+market forwards/fits. Existing finite D1 capture ABI suffices. Consumer is a
+fresh separately declared Paper proposal, not deployment or a new report.
+
+Seed robustness COMPLETE6newCUDAfits/0marketretry/9initialforecasts/108KNOWN
+cells/45bitexactcontrols/569upstreamhashesunchanged. Seeds404/505 selected
+epochs1/1/2/1/4/4 using chronological INNERpatience20; old303 never refit or
+forwarded. At10bps trained singles beat matched initialization8/9 and fixed
+trained3seed ensemble beats initial ensemble3/3, but higherDD2/3. Frozen strong
+learned-increment condition NOT_ESTABLISHED, not a winner search/alpha/Paper
+switch. Original first SYN failure and sole exact technical retry retained.
+378.03/3600 active,1805.28/14400 elapsed; all GPU leases released. Ledger now
+209=129CUDA+80CPU incloldinvalid, fitted versions not architectures. Evidence:
+A/research/current20-mlp-seed-robustness-development-20261018-v1/ACTUAL-HANDOFF.json.
+Actual seal bef8b465. Independent retained CPU PASS1296producerpins/569upstream/
+133COMMITTEDepochs/108cells/45bitexactcontrols/7560datepairs; max1.38e-14,
+18.89/600active,0Torch/modelcalls. Constructor proof bound by receipts/hashes,
+not native reexecution or forecast parity. REVIEW-SEAL.json in that root's
+independent-review; old forecasts and current Paper unchanged.
+
+Temporal Transformer COMPLETE3CUDAfits/0retry/63KNOWNcells=9new+54retained,
+epochs14/13/15, selected2/1/3 by INNERpatience12; train loss fell while INNER
+worsened, not convergence. Full252x5+14/d32/two4-head layers/mean readout,
+existing Torch2.7 CUDA/native full-state SYN PASS8updates25forwards/4saves/
+2restores. At10bps growth2.650/4.526/3.475percent, DD0.534/3.936/2.044percent;
+frozen primaryFAIL3/3. Whole recipe/single seed, not architecture causality.
+359.99active3600/903.12elapsed10800, total11368updates23519forwards46saves/
+5restores, all leases released. Independent retainedPASS17931checks/411pins/
+46checkpoints/63cells/54exactcontrols/maxNAV8.88e-16, no model calls/native
+parity. A/research/current20-long-daily-transformer-development-20261018-v1/
+HANDOFF-ACTUAL.json; FROZEN-ACTUAL97b9eae1/independentREVIEW-SEALdc6678a8.
+Current total212=132CUDA+80CPU incloldinvalid, not architecture count/alpha.
+No automatic replacement of frozen equalrank4 Paper.
+
+NEW Meitner appointed SPY-relative-target development at
+A/research/current20-spy-relative-target-development-20261018-v1. Same Main
+features/keys, stock21return minus same-interval SPY return in labels ONLY;
+new FIT-only label scale, no future feature/input. Finite3MLP+3HGB/6starts/
+0marketretry,1800active7200elapsed inclsource/SYN/replay; exact caps/native
+proof/label-availability checks precede market work. Three fixed new policies
+plus matched MeanBlend control,81declaredcells, no old fit/forward or Paper
+switch. Appointment is not numeric/GPU proof; add only actual completed fits.
 
 COMPLETE longdaily cross-regime campaign, started11:27:29UTC:
 A/research/current20-long-daily-cross-regime-development-20261017-v1,

@@ -10430,3 +10430,34 @@ Consumer: restore the existing nightly Paper context after new model entries.
 Claude supported-with-limits; deployment still requires material source QA and
 an exact owned natural opportunity. Original14:50 first cause remains unknown.
 D:/thericher-v2/model-artifacts/review/daily-preintent-refresh-20261016-v1/claude.json
+
+## 2026-10-18 - Provisional Ensemble Paper Runs Beside New Research
+
+The operator requested an existing promising model/ensemble be connected to
+actual Paper while independent Engine research/GPU training continue. Reuse
+the already-fixed current20 equalrank4 policy as a provisional operational
+candidate, not a seen-performance champion or certified profitable model.
+Historical failed criteria and the original shadow's measurement-only meaning
+remain unchanged. A NEW explicitly bound Paper consumer may use that exact
+frozen output under the existing private authority; no automatic promotion.
+
+Keep one original shared initial .10 budget. Five desired .005-basis targets
+are at most .025 within it, not additional capital or a spending target. Native
+ownership, reservations/losses, buying power, fresh quotes, orderability and
+exact unknown-request recovery remain decisive; all-reject is valid. Never
+backfill missing targets, adopt another owner, rename a stale signal or force
+entry. Existing NAS requests/declared exit/nightly/Goal97 remain untouched.
+
+An explicit separate native profile/pointer/holding bound must preserve legacy
+defaults; do not fake NAS schema, monkeypatch global validators or duplicate
+broker risk. Execution consumes only typed untrusted proposals, not model or
+public-code runtime. New source requires focused legacy/new-route checks,
+independent routing review, full compatibility QA and exact pinned quiet
+deployment. Installation is not a submit/fill or company closure.
+
+QuantileMLP research is a separate finite source-bound challenger, not a reason
+to delay Paper or switch its frozen policy from seen outcomes. Actual later
+owned Paper PnL may be measured with its source/fee/settlement limitations;
+provisional status is not a blanket ban on measuring it or an alpha claim.
+Claude REVISE is advisory; address its scoped identity/asof/envelope risks.
+D:/thericher-v2/model-artifacts/review/current20-ensemble-paper-and-quantile-20261018-v1/claude.json

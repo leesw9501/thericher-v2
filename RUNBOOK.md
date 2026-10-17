@@ -1,12 +1,56 @@
 # Runbook
 
-## Current Owned Runtime (2026-10-17 KST)
+## Current Owned Runtime (2026-10-18 KST)
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE company objective: current-nas-owned-model-paper-cycle-v1.
 AGENTS.md owns authority/risk; HANDOFF.md owns current evidence.
 KIS Paper work is delegated. Never read/route KIS_LIVE_*.
+
+### New Fixed Equalrank4 Paper
+
+Actual Task thericher-kis-paper-current20-equalrank4-20261018 is Enabled/Ready,
+31finite UTC starts/IgnoreNew/PT5M/physical pythonw. First due2026-10-19
+15:10UTC=2026-10-20 00:10KST. No manual invocation, submit, fill or new PnL
+observed yet. Five desired .005-original-basis targets, maximum .025 inside
+the SAME original shared .10 allocation; native risk may reduce/reject all.
+Existing NAS/nightly/Goal97/Data definitions and shared bank remain unchanged.
+
+Current image378f2034/sourceca19a499 (480files), actual once-only input473a759d/
+semanticbb77d43f/contractf66/publiclaunchbindinge98bfda3. Frozen runtime:
+D:/thericher-v2/model-artifacts/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/frozen-repository.
+Exact deployment/read-only facts:
+D:/thericher-v2/model-artifacts/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/parent-deployed.json.
+Installed receipt/known rollback identity:
+D:/thericher-v2/model-artifacts/infra/current20-ensemble-paper-schedule-20261018-v1/final-binding-r3/parent-idle-null-activation-1/installed.json.
+
+Read-only scheduling metadata, not execution/fill proof:
+```powershell
+Get-ScheduledTask -TaskName 'thericher-kis-paper-current20-equalrank4-20261018' -TaskPath '\' | Select-Object TaskName, State
+Get-ScheduledTaskInfo -TaskName 'thericher-kis-paper-current20-equalrank4-20261018' -TaskPath '\' | Select-Object NextRunTime, LastRunTime, LastTaskResult
+```
+One DISABLED Register was retained after native unused IdleDuration/WaitTimeout
+returned NULL/NULL rather than empty strings. Exact raw XML/ABSENT/all249other
+definitions/source pins were rechecked; only the omitted-XML/Idlefalse case was
+calibrated, rollback identity flushed BEFORE one Enable, no re-register. Do not
+rerun install/recovery/input-preparation creators or use olda7/353 releases.
+Source absence5SYN+actualRO, NULL8SYN+actualRO have separate external proof;
+repository1360/8bc287b6 fresh358serial/18296full22skip/clean8helper0/Ruff3Compose.
+
+Entry ONLY USOct19 through20:00UTC; broker order TTL is separate. Owned exit NOT
+before USNov17 15:10UTC, finite recovery throughNov20. Pending exact requests
+precede any new input; no replacement/reranking/foreign custody or new bank.
+Twenty fully held RTH sessions plus partial entry/exit, not research OPEN parity.
+Operational logging disabled: assumed-honest-host hash/time provenance is not
+cryptographic proof of OS scheduler origin. Ptolemy's new-profile outcome reader
+is SOURCE/SYN preparation only; use no recovery-capable observe() as a reader.
+
+Parallel CUDA research closed12newfits this continuation: quantile3/seed6/
+Transformer3, all checkpoints outside Git on D:. Transformer3 independent63cell
+review passes but frozen economic primary fails3/3, no automatic Paper switch.
+New SPY-relative-target preparation remains a separate finite research package,
+not completed training or permission to modify this frozen Paper candidate.
 
 Reboot Oct17 16:39KST/07:39:51UTC: old LLM sessions are gone. Check actual
 process/lease/source identities, not old PIDs or stale stateboard projections.

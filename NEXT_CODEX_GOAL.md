@@ -14,8 +14,16 @@ shared policy/integration/Git. A=D:/thericher-v2/model-artifacts; M=D:/market_da
 Never KIS_LIVE_*, real money, paid/public behavior or secret/private-value output.
 Standing private Paper authority is delegated, not dependent on research alpha.
 
-## Actual Current Runtime (Oct17 KST)
+## Actual Current Runtime (Oct18 KST)
 
+- New provisional ensemble: thericher-kis-paper-current20-equalrank4-20261018
+  is actually Enabled/Ready/31finite starts/PT5M. Image378f2034/sourceca19a499/
+  input473a759d/semanticbb77d43f/contractf66/launchbindinge98bfda3. First due
+  Oct19 15:10UTC=Oct20 00:10KST; not yet invoked, no new submit/fill. One exact
+  disabled registration plus calibrated unused nativeNULL idle recovery/one
+  Enable, no re-register; all249other definitions unchanged. Original shared
+  budget/old owners/unknown recovery remain. Deployment receipt:
+  A/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/parent-deployed.json.
 - Model: SAME finite Task thericher-kis-paper-current-nas-model-20261015,
   image87697f8e/474publicfiles. Retained exact evidence:8acknowledged FULLfills/
   eight owned instruments/zero unknown; post-reboot public read validates hold/
@@ -64,6 +72,36 @@ cryptographic OS-scheduler-origin proof. Repair exact reversible faults within
 delegated authority; never substitute an unknown request or expand capital.
 
 ## Ready Parallel Work
+
+ACTIVE Oct18 operator direction: connect a small existing candidate shortlist
+to actual native KIS Paper while independent GPU/CPU research continues.
+Use NEW provisional current20-equalrank4-paper-20261018-v1, exact fixed f9cbd3ee
+policy equalrank4, not a performance-picked champion. Old shadow/results stay
+immutable/measurement-only. Separate typed profile/pointer and no fakeNAS10
+schema or global validator relaxation. Parent contract under
+A/execution/current20-ensemble-paper-preparation-20261018-v1/PARENT-CONTRACT.json.
+Native extension/proposals and JSON-only host/worker are integrated: author432/
+routing8/host34/final358serial/18296full22skip/clean8helper0/Ruff3Compose PASS,
+1360source8bc287b6. Data/calendar READY2290e74b. New desired
+five*.005originalbasis MAX inside SAMEshared .10 bank, no replacement/reweight
+or foreigninventory. PlannedentryOct20 00:10KST ONLYUSOct19; oldNASexit untouched.
+Native risk/no_intent accepted. Quiet pinned deployment is now actually Ready;
+installation is still not a fill. Parent owns shared docs/Git.
+Quantile3CUDAfits COMPLETE/72KNOWNcells/bothprimaryFAIL, retained independent
+PASS440pins. Seed robustness6CUDAfits COMPLETE/108KNOWNcells/9initialforecasts/
+45exactcontrols; frozen strongconditionNOT_ESTABLISHED, independent retained
+CPU PASS1296producerpins/569upstream/108cells/45exactcontrols. Ledger209=129CUDA+
+80CPU was the seed-study snapshot. TemporalTransformer3CUDAfits COMPLETE/
+63cells/primaryFAIL3/3; independentPASS411pins/46checkpoints/54exactcontrols.
+Current212=132CUDA+80CPU incloldinvalid, all training leases released.
+Meitner next SPY-relative-target6fit source/native prep under new1800active/
+7200elapsed, no old fit/forward or Paper switch; intended fits not counted.
+Ptolemy prepares a strict new-profile outcome reader with invented inputs only;
+not a new Paper gate or current broker/private observation.
+Next-source frozenexpert inference prep COMPLETE9checks/GPU0,
+SOURCE/SYN only, not a fresh forecast. Do not repeat completed fits or oldshadow
+forecasts. New research results cannot change this frozen Paper policy.
+This parallel extension does NOT complete/replace the current company goal.
 
 Oct17 reboot recovery is integrated; completed fits are never restarted from a
 stale queue. Company model exit is still unfinished. Parent owns shared

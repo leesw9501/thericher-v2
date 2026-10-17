@@ -8,6 +8,19 @@ History remains in Parent Git27dface and immutable external roots.
 
 ## Current Consumers
 
+Oct18 Harvey completed review of a small operational shortlist, not another model
+grid. Parent candidate is exactpredeclared f9 equalrank4; HGBsingle/uniform are
+controls, no seenf3 champion/Paperalpha claim. Bound provisionalPaperconsumer
+has separate identity/asof/sharedbank/ownedexit; oldshadow unchanged. Parallel
+NEW quantileMLP hypothesis gets primary-source falsification and atmostone
+minimal improvement, not another approval/report chain. Engine owns code/
+targets/fits; Parent owns actual Paper contract. A/strategy-research/
+current20-operational-shortlist-20261018-v1: REVISEclaims/ACCEPTbounded scope,
+75active240. Correlatedexperts are not independentconfirmation; width is not
+Sharpe/confidence; bind newconsumercontract hash through intent/reconciliation.
+No newStrategyqueue. Harvey now temporarily executes Engine seedrobustness
+under EngineResearch hypotheses/caps; this is not another durable role.
+
 Harvey completed/released. Exactly two hypotheses were frozen before reading
 the current longdaily outcomes; no model/threshold search follows f3 results:
 A/strategy-research/current20-long-daily-next-hypotheses-20261017-v1/READY.json.
