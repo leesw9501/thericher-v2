@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current: Oct17 after07:39:51UTC actual reboot. Last pushed76e4d6a.
+Current: Oct17 after07:39:51UTC actual reboot. Capture code pushed da5f425.
 Old agents are gone, new role agents own scoped recovery. NativeKIS3Ridge also
 COMPLETE; closedversions188, not active training. Capture-session integration
 verified fresh clean8; no old failed/partial/unclean authority reuse.
@@ -15,8 +15,9 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | Parent | Capture P2 fixed;12independentnegative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Loopback web restored/health200. | Integrate and commit/push source1355/50c535b3. Old failed attempts not authority. |
 | Execution/Planck | Exact Goal83 initial no_intent/entry_window_elapsed; Oct16index4 mark/readback_complete/cohort no_owned_intent.15checks PASS. Old recursive CLI retired. | Short challenge/bounded usage handoff; no broker/Task/service invocation. Interrupted PID/reboot cause unknown. |
 | Strategy | Original covariance implementation and one solver alternative closed UNREADY on frozen KKT; no market experiment. | Engine recovery reviews source-only certificate diagnosis, not repeated solver tuning or old regrade. |
-| Data/Ptolemy | Eight-session source62395RTH; exact5gap repair10GET/0repairs closed. Accumulation worker interrupted during source PREP, not installed. | Recover one separate fixed20 daily worker from existing files; no wire/install until Parent reviewed deployment. |
+| Data/Ptolemy | Multi-visit recovery CLOSED_NOT_READY: empty freeze/timeouts110/40sec/929.47inclusive>240active;0API/install. Old data immutable. | NEW single-visit source/SYN with bounded firstcause trace/C NVMe scratch; no day-index/cold-reauth platform, no wire/install. |
 | Engine/Meitner | 72pins/115checks preserve latest24fitversions; total188ledger incloldinvalid, not a full ancestral recount. | NEW native Chronos2 300/61 source+SYN <=50steps/8batches/0marketfits, one measured GPU lease when ready; no completed fit rerun. |
+| Strategy/Harvey | NEW fixed50 distinct-expert composition metadata intake, no EVAL arrays/fits. | Establish aligned source/rowkeys/payoff and chronological OOS INNER availability; one executable blend/shallow-gate proposal or precise rejection. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -39,6 +40,10 @@ and integration. Reversible improvement: positive synthetic Norgate tests
 now inject storage measurements, while explicit14/15boundary tests preserve
 the production15percent floor. Do not relax real storage policy to pass tests.
 Completed native Ridge fits and failed exact5gap queries are never repeated.
+Multi-visit Data PREP was not ready and exceeded its declared budget; no deploy
+or authority reuse. Reversible simplification: one finite daily capture rather
+than a second visit-index/re-auth framework. Diagnose the actual timeout with a
+bounded trace; D I/O is only a hypothesis, never asserted without evidence.
 
 Current reversible improvement: the frozen collector probes ownership both
 outside the call and at the wire. New capture utility retains ONE fresh caller

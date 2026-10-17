@@ -120,8 +120,14 @@ A/verification/data-capture-session-20261017-v1/retry-r3.
 R1 full18216passed but helpercleanupEXIT1 and R2 partial disk-floor failure are
 NOT passing authority; never delete/bypass old denied trees to reuse a result.
 
-Daily fixed20 accumulation is still interrupted source PREP, not installed:
+Daily fixed20 multi-visit accumulation recovery is CLOSED_NOT_READY, not installed:
 A/data/current20-minute-accumulation-worker-20261017-v1.
+Its reboot-recovery-20261017-v1 has empty dependency freeze, native QA timeouts
+110/40sec and inclusive929.47>240active, no deploy authority. New single-visit
+source/SYN package: A/data/current20-single-visit-accumulation-20261017-v1.
+One finite session/day100normalGET+2retry/1POST; no visit-index/cold-reauth
+framework, preserve accepted refs/unknown day and old failures. No API/install
+before actual native wrapper QA/deployment. Test scratch C, real data M.
 One proposed separate06:50KST Tue-Sat completed-session worker avoids widening
 the immutable existing twoETF06:20Task/schema. No source-only plan proves a
 running collector or downloaded day. Parent reviews/freeze/deploys separately;
@@ -139,7 +145,9 @@ monkeypatch recurses through argparse. New exact_archive_reader changes one
 sealed archive alias expression, not provenance/pins/claim/time checks.
 10original+5negative tests PASS, supervised2CPU/4GiB with timeout/reaping.
 No Task/credential/broker/private/native CLI invocation. Read HANDOFF.txt and
-the separately sealed bounded usage before any new read; do not run its creator.
+claude/USAGE.txt: its exact command is already consumed, do not rerun it or its
+creator. Claude supported_with_limits/no_new_kill_identified, source-only:
+A/execution/reboot-execution-recovery-20261017-v1/claude/review.json.
 This diagnoses narrow reader bugs, not the interrupted PID or reboot cause.
 
 ### Previous Nightly Recovery (4fd7, Historical)

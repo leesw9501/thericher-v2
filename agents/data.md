@@ -2,12 +2,18 @@
 
 ## Current Oct17 Reboot Continuation
 
-LATEST after16:39KST reboot: Ptolemy owns separate fixed20 daily accumulation
-source/SYN recovery, no API or installation yet. Parent capture-session source
+LATEST after16:39KST reboot: multi-visit recovery CLOSED_NOT_READY, empty
+dependency freeze/native-suite timeouts110/40sec/inclusive929.47>240active.
+No API/credentials/install. Preserve old WIP/caps/failures, not authority.
+Ptolemy now owns NEW single-visit source/SYN simplification with timeout
+first-cause trace,1200active7200end, <=24newcases and2bounded20secdiagnostics.
+ONE finite session/day100normalGET+2retry/1POST, no day-index/cold-reauth
+framework; accepted refs/unknown stay, next day independent. Native SYN scratch
+isolated C NVMe; market data stays D. Parent capture-session source
 1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose.
-New finite visits must preserve accepted day/query refs, cumulative day caps
-and unknown pending; one POST per finite visit is not one unlimited day counter.
+No old failed/unknown day is erased or reopened. Complete day means zeroHTTP.
 A/data/current20-minute-accumulation-worker-20261017-v1/reboot-recovery-20261017-v1
+A/data/current20-single-visit-accumulation-20261017-v1
 
 Closed sources: old2000/2010/2020anchors6GET nativeempty; newrecent8GET found
 480rows atOct1/Oct8 forQQQ/SPY, Jan6/Sep1empty. No globalfloor/date inferred.

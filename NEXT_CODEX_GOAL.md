@@ -83,8 +83,10 @@ Cboe AI-use rights unresolved means exclude source, not buy or stop company.
 Closed fitversions188 inclone oldinvalid, not188architectures or activejobs.
 
 - Data: native8source62395RTH and exact5gap repair10GET/1POST/0repairs CLOSED;
-  no more same-gap queries. Recover ONE separate fixed20 post-close accumulation
-  worker from interrupted PREP. Do not widen immutable old twoETF schema/Task.
+  no more same-gap queries. Multi-visit worker PREP closed NOT_READY/emptyfreeze/
+  timeout/budget-invalid, never deploy. NEW single-visit source/SYN simplification
+  diagnoses timeout first and removes day-index/cold-reauth framework. One finite
+  daily100normalGET+2retry/1POST; preserve partial/unknown day. Do not widen old2ETF.
   No wire/install until scoped source/owner/calendar checks and Parent deployment.
 - Engine: verify completed188fit custody and recover native Chronos2 PREP.
   Source62395 is valid only under its separately named missing-aware contract;
@@ -92,6 +94,9 @@ Closed fitversions188 inclone oldinvalid, not188architectures or activejobs.
   sensitivity winner selection or reopened old clocks. No GPU work merely for
   utilization. Covariance solver failures remain closed/unready; source-only
   certificate diagnosis is not a market-performance pass.
+- Strategy: NEW fixed50 multi-expert composition metadata intake only; freeze
+  compatible keys/payoff/source and chronological OOS INNER availability before
+  any learned fusion. No fit/EVAL array decode or seen-outcome winner selection.
 - Execution: bounded exact Oct16/index4 Goal83 public outcome recovered with
   15checks. Receipt discovery uses aware UTC, not PowerShell local-cast ticks.
   Never rerun obsolete recursive argparse CLI. New reader retains exact pins/

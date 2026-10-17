@@ -114,8 +114,13 @@ unmet. Exact-five-gap repair CLOSED10GET/1POST/0retry,1200matchingoverlaprows/
 0conflicts/0repairs; no more identical queries. Oldpartialmanifest unchanged.
 New missing-aware study uses ORIGINAL62395source, not repair/source swap or
 imputation. Only2EVALsession clusters, assumed clock/unit/PIT limits remain.
-Data daily20minute accumulation implementation was interrupted during PREP;
-recovery checks files/ownership before any new API or schedule installation.
+Data multi-visit accumulation recovery CLOSED_NOT_READY: empty dependency
+freeze and native-suite timeouts110/40seconds, inclusive929.47 exceeds its240
+active cap. No deployment/API/credentials; never reuse its WIP as authority.
+New separately bounded single-visit source/SYN package removes the day-index/
+cold-reauth framework, preserves old failures/debits and diagnoses timeout first.
+One finite day scope100normalGET+2retry/1POST; partial/unknown day stays scoped,
+not auto-reset/replayed. Test scratch moves to isolated C NVMe, real data stays M.
 Current KIS/FirstRate overlap confirms discrepancies, NOT oldABI readiness.
 XLK611-session native mode1 continuity diagnostic found no large splitlike
 jump; this supported only the NEW conditional study above. Old exact-factor
@@ -139,6 +144,8 @@ discovery was a UTC/local PowerShell filter error, not a proven launcher fault.
 A/research/current20-kis-missing-aware-price-window-development-20261017-v1/FROZEN.json
 A/data/current20-native-five-gap-source-repair-20261017-v1/handoff.json
 A/verification/data-capture-session-20261017-v1/retry-r3
+A/data/current20-minute-accumulation-worker-20261017-v1/reboot-recovery-20261017-v1/SEALED-HANDOFF.json
+A/data/current20-single-visit-accumulation-20261017-v1
 A/research/fixed50-native-xlk-interaction-development-20261017-v1/owner-handoff.json
 A/research/fixed50-chronos2-domain-adaptation-development-20261017-v1/independent-review/FROZEN.json
 

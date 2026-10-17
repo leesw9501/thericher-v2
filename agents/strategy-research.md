@@ -8,6 +8,18 @@ History remains in Parent Git27dface and immutable external roots.
 
 ## Current Consumers
 
+Oct17 reboot continuation: Harvey owns NEW fixed50 multi-expert composition
+metadata/source preparation,240active1800end/0fits/0EVAL-array decode. Consumer:
+one fixed-blend plus shallow chronological OOS gate experiment, ONLY if source,
+rowkeys, payoff/cost and OOS INNER/OOF availability actually align. Select2-4
+distinct mechanisms by architecture, never seen EVAL ranking. Otherwise give
+the exact minimal prerequisite/rejection, not a reading-list queue or Paper gate.
+A/strategy-research/fixed50-joint-expert-composition-preparation-20261017-v1
+Old XLK interaction is COMPLETE3CPUfits/primary0fold/rejected; Cboe excluded.
+Covariance source/one solver alternative remain closed UNREADY,0marketfits;
+old certificate-diagnosis source lacks completion, never infer a numerical pass.
+Older proposals below are historical consumed context, not active agents.
+
 Latest Oct17: chosen incremental-info proposal is lagged XLK-relative rotation
 times stock-specific past XLK loading; a shared macro column alone cannot alter
 linear cross-sectional ranks. Exact request611sessions2024-04-09..2026-09-15,

@@ -28,7 +28,7 @@ One GPU allocation/no dummy work remains policy.
 | GPU |No current allocation or numerical worker. Peer9CUDA and Chronos2 fine-tune3CUDA CLOSED/released; old forecasts/checkpoints immutable.|
 | Next GPU |Meitner source-bound native Chronos2 300/61 SYN first;<=50SYNsteps/8forecastbatches,0marketfits. One lease after actual admission, not dummy load.|
 | CPU research |Native3fits closed. Covariance implementations unready, no market run. Existing numerical results/caps immutable.|
-| Data |Ptolemy recovering separate fixed20 post-close accumulation source work;0API/install in recovery. Eight-session capture/5gap repair both closed.|
+| Data |Old multi-visit recovery closed NOT_READY/budget-invalid; Ptolemy NEW single-visit source/SYN+bounded timeout diagnosis,0API/install. Old data unchanged.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
