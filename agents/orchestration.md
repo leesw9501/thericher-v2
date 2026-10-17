@@ -14,11 +14,11 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
 | Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
-| Validation/Planck | Separate retained longdaily numerical/source/45cell review running, CPU2RAM4/600active5400end. | No native fit/forward/GPU/API; reuse exact raw-core hashes, independently reconstruct economics. |
+| Validation/Planck | Independent retainedPASS626pins/45cells/49005NAV/max6.66e-16; original economicFAIL unchanged. | Released; no native model/restore/parity claim. Ready future frozen-input review, not permanent approval. |
 | Data/Ptolemy | Longdaily CLOSED90819valid/1110GET1POST0retry/leasesreleased. Independent90819exactraw/3374hash corePASS. Older23windows allEMPTY. | No identicalolderprobes/sourceV1merge. Calendar5230metadata projection ready; support exactEngine input bindings. |
 | Engine/Meitner | Longdaily COMPLETE6fits/45KNOWNcells/primaryDDFAIL,4leasesreleased. FROZEN-ACTUAL4b93d828. | SOURCE prepare GRU252x5+14 worker under NEW clock, no numerical allocation yet; preserve old6fits/debits. |
 | Strategy/Harvey | Two future hypotheses frozen before current results. | Execute fixedrankblend+ONEdepth2gate, f1/f2 OOS TRAIN/f3adaptiveDEV/36cells; no basefit or forward. |
-| Infra/Herschel | QuietTask action-only repair deployed/ReadyEnabled/firstOct20 06:50,247stable,10native+3independentPASS. | Source/SYN epoch-reservation/crash helper + one quiescent I/O benchmark for NEW GRU worker. No current-family mutation. |
+| Infra/Herschel | One synthetic hostI/O probe D64fsync2.561s vsone .020s, C.058/.0018; actualtraining speedupunknown. | ReplayP2 separate repair-r1 COMPLETE14/14purePASS/helperfc6d4b05; ready NEW GRU integration, no native adoption/current-family mutation. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -39,10 +39,12 @@ an active-owner conflict. Source-only/independent cases plus actual action-only
 retarget now deployed; no real actor/source/token/cache/pacing rule removed.
 Independent Data corePASS suffices for scoped historical research; its unchecked
 gap partition is a factual limitation, not another whole-company gate.
-Future-throughput issue, NOT current hotpatch: per-forward/optimizer fsync in
-research worker costs1290intentwrites in f1/98.168native seconds. ExactI/O cost
-not yet isolated; profile after activejob, then consider conservative per-epoch
-upper reservation/COMMITTED counters before a NEW family, not changing this one.
+Throughput measurement, NOT closed-study hotpatch: per-forward/optimizer fsync
+made1290intentwrites in f1/98.168native seconds. One quiescent synthetic host
+probe D64fsync2.56148s vsone .0200147s, not f1 I/O attribution or measured
+training speedup. Conservative epoch reservation/COMMITTED counters are prepared
+for NEW worker only. Independent no-predecessor replayP2 minimally repaired in
+R1/14purePASS; no current model invalidity, broker persistence change or global hold.
 
 10:10UTC review: Data actualworker, Engine CUDAadapter, Infra exactpartialinstall
 recovery run disjoint; independent source readback waits only its terminal.

@@ -35,7 +35,7 @@ One GPU allocation/no dummy work remains policy.
 | --- | --- |
 | GPU |Longdaily6fits COMPLETE/4leasesreleased/no worker; FROZEN-ACTUAL4b93d828. No completedfit rerun.|
 | Next GPU |Meitner SOURCE-prepares GRU252x5+14,3futurefits/max128/INNERpat12/batch128/seed303. New CUDA native/checkpoint SYN and exact binding before allocation. Herschel prepares conservative epoch I/O and cleanup repair; no market job yet.|
-| CPU research |Harvey ONEdepth2gate+fixedrankblend on retained OOS; Planck independently checks closed45cells/source. Disjoint roots, no base refit/forecast.|
+| CPU research |Harvey ONEdepth2gate+fixedrankblend on retained OOS. Planck retainedPASS626pins/45cells/49005NAV; no base refit/forecast.|
 | Data |Longdaily90819valid/1110GET1POST0retry independently raw-matched. Older23queriesEMPTY, no repeated probes. QuietTask enabled firstOct20 06:50KST; D1feed typed source/SYN ready, not runtime capture.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
@@ -62,7 +62,8 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
   TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
   This is not196architectures, all qualified fits or currentGPU activity.
   Latest6fit longdaily family COMPLETE45KNOWNcells/primaryDDFAIL; native SYN is
-  excluded from market count. Independent retained review running separately.
+  excluded from market count. Independent retained review PASS626pins/45cells,
+  no native parity/alpha claim; original economicFAIL unchanged.
   Future gate/GRU intended fits are not counted before actual completion.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.

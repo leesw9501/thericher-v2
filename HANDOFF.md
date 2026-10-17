@@ -252,12 +252,22 @@ not broker PnL/alpha/Paper promotion. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json;
 upperactive966.11/9000,end1075.33/21600. FourGPUleases released/no worker.
 GPU including SYN4218updates/8774forwards/72saves/5restores; peak388.1MiB
 allocated/408MiB reserved. Currentledger196=117CUDA+79CPU incloneoldinvalid.
-Planck independently reviews retained source/45cells, no refit/forecast.
+Independent retained review PASS626pins/65407feature rows/24192scores/
+45cells/49005NAV, maxerror6.66e-16; fees/turnover/purges/scalers match. Native
+models not restored/called; original economicFAIL remains. Exactreview:
+A/research/current20-long-daily-cross-regime-development-20261017-v1/independent-retained-review/REVIEW-SEAL.json.
 Harvey executes separately frozen fixedrankblend+ONEdepth2gate on prior OOS,
 f1/f2TRAIN/f3adaptiveDEV/36cells. Meitner prepares GRU252x5+14 SOURCE worker;
 Herschel prepares epoch-reservation/crash checks and quiescent I/O measurement.
 No GRU numerical allocation yet; completed six fits are never repeated.
 Latent forced-stop/auto-rm cleanup P2 did not trigger, fix only in NEW worker.
+I/O measurement COMPLETEoneprobe:64fsync D2.56148s vsone .0200147s,
+C.0583126/.0017748s. Synthetic host I/O only, actual training speedup unknown.
+Epochhelper8purecases pass; independent6freshcases found continuation replay
+could admit history without a verified predecessor. Charges intact, no native
+adoption. Separate repair-r1 adds only the verified-predecessor check;
+14/14purecases PASSoneattempt/helperfc6d4b05. Original helper/evidence unchanged.
+A/research/epoch-intent-io-preparation-20261017-v1/READY.json.
 
 Current capture code da5f425: source1355/50c535b3,345serial PASS, clean8 full
 18235pass22skip/18257collected/407.555JUnitsec/helperEXIT0; Ruff and three

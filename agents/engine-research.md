@@ -20,7 +20,10 @@ Four leases released/no worker. GPU including SYN4218updates/8774forwards/
 72saves/5restores; peak388.1MiB allocated/408MiB reserved. Upperactive966.11/
 9000,end1075.33/21600. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json; no rerun.
 Currentledger196=117CUDA+79CPU incloneoldinvalid, not architectures/alpha.
-Planck owns separate retained CPU/source/45cell validation, no native models.
+Independent retained PASS626pins/65407features/24192scores/45cells/49005NAV,
+maxerror6.66e-16, costs/turnover/purges/scalers match; no native model calls or
+restore/parity claim. Original primaryFAIL unchanged. Evidence:
+A/research/current20-long-daily-cross-regime-development-20261017-v1/independent-retained-review/REVIEW-SEAL.json.
 Historical adaptiveDEV/currentlisting/nonPIT/MODP1/units/TR/finality limits
 remain; normalized replay is not broker PnL or Paper promotion.
 
@@ -31,6 +34,11 @@ Meitner prepares NEW GRU252x5+14/3fold SOURCE worker; Herschel prepares
 conservative epoch reservation/crash tests and quiescent I/O measurement.
 No GRU market allocation yet. SourceReview's latent forced-stop/auto-rm P2
 did not trigger; fix in NEW worker, never hotpatch/regrade the closed family.
+One actual synthetic hostI/O probe: D64fsync2.56148s vsone .0200147s,
+C.0583126/.0017748s. Not measured training speedup. New helper's independent
+6cases found a replay-only no-predecessor continuation P2; charges retained,
+no native adoption. Separate repair-r1 adds only predecessor check/helperfc6d4b05,
+14/14PASSoneattempt. Original8purechecks/evidence immutable.
 
 LATEST16:53KST after reboot: new Engine/Meitner audited72pins/115checks,
 latest24completed fitversions preserved,0fits/restores/forecasts/GPU compute.

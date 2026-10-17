@@ -103,9 +103,10 @@ policy/integration/Git; disjoint roles continue without routine permission waits
   f1/f2OOS TRAIN/f3adaptiveDEV only,36cells/900owned3600end/CPU2RAM4/GPU0.
   Meitner prepares new GRU252x5+14 SOURCE worker, no numerical allocation yet;
   Herschel prepares conservative epoch-reservation/crash tests/I/O measurement.
-- Validation/Planck: independent retained longdaily source/45cell CPU review,
-  no native modelcalls/restore/GPU. Exact baseline hashes reused, no oldrefit,
-  Task/broker/credentials or authorization role.
+- Validation/Planck: independent retained longdaily PASS626pins/45cells/
+  49005NAV/max6.66e-16, costs/purges/scalers match. No native modelcalls/
+  restore/GPU/parity claim; original economicFAIL unchanged. Exact baseline
+  hashes reused, no oldrefit, Task/broker/credentials or authorization role.
 - Infra COMPLETE: new quiet06:50KST Tue-Sat Task ENABLED/Ready, firstOct20.
   ExactR3 currentXML/hash readback and247transition unchanged; no invocation.
   Earlier default-omission/ONE OS-only drift failures preserved, old931/900
