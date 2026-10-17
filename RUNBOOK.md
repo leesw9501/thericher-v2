@@ -229,6 +229,29 @@ replay UNKNOWN; no foreground wait/new schedule/Paper substitution. D1-only
 input stays separate from minute data; inference modelstate loading is NOT the
 trainingcontinuation path affected by C3.
 
+Finite futureD1marks Task thericher-kis-paper-current20-shadow-d1-marks-20261020
+is ENABLED/Ready, firstOct20 07:30KST, Tue-Sat throughNov17/21expectedvisits.
+Installedreceipt445164fe at A/infra/current20-shadow-d1-marks-task-20261017-v1/
+harness-repair-r1/final-r1-binding/idle-default-recovery-r1/activation-1/installed.json.
+Actualreadback: physical3.14.3 pythonw/isolatedR1cwd/IgnoreNew/PT15M,
+enabledXMLc1eb1ac6/registeredkeyf05f8a8d, all248otherdefinitions unchanged.
+Do NOT rerun creation/activation/--run or manually invoke to check readiness.
+Future collection success remains UNKNOWN; no newPaperorders/capital/strategy.
+
+Originalregistration stayed DISABLED on idle_defaults: native emptyDuration/
+WaitTimeout and exactXMLomission, RunOnlyIfIdlefalse. Parent additive recovery
+accepts only that measuredschemaomission;11focused+6independentpure PASS,
+allother material/source/oldinventory/disabledbyte checks retained, ONEenable.
+Originalfailedregistration/firstsource-pathfailure/ClaudeREVISE stay retained;
+no sourcepatch/newregistration/delete or oldTask edit. If containment is needed,
+use exact ACTIVATE.ps1 -Mode Rollback and saved activation-1/rollback-identity.json
+only after namedowner quiescence, not the old profile's unverified receipt.
+
+Corrected Data source: A/data/current20-shadow-d1-marks-worker-20261017-v1/
+entry-binding-repair-r1/READY.json SHAee4274ce/entry208d4d3d. Old61dworkerflow
+proof is not launchauthority. Reuse sixentryproofs/unchangedworker12/Infra16core/
+independent2/final4binding; no repeat of completed capture/training/proofs.
+
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1:
 READY.json/owner-handoff.json are immutable COMPLETE1CUDAfit/125updates,
 selected25/earlystop4/24forecastcalls408rows. Do NOT rerun freeze/host/GPU/

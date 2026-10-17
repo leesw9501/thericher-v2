@@ -13,12 +13,12 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
-| Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
+| Parent | Source1355/50c535b3 authority matches;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. FiniteD1 Task enabled/receipt445164fe/all248othersunchanged. | Integrate/commit/push current facts; actual company-owned exit still unfinished. |
 | Validation/Planck | ONEshadow independentPASS124pins/17rows/4ranks/8weights, conditionalhonesthosttime; REVIEW-SEALc7a76993. | Released; futuremarksUNKNOWN, no modelre-score/nativeparity/alphaclaim. |
-| Data/Ptolemy | D1-vs1msemanticsunknown/oldsourceunchanged; nextOPENshadowcorrectD1only. | Build finitefutureD1marksworker/source+nativeSYN under current20-shadow-d1-marks-worker-20261017-v1,0actualAPI/credentials now. |
+| Data/Ptolemy | Corrected R1 READYee4274ce/entry208d4d3d,6focusedgroups incl REALquietentry PASS; finiteD1 Task enabled,0actualcapture. Original61d not deployable. | LLM released; first ownedvisitOct20 07:30KST, futuremarksUNKNOWN. |
 | Engine/Meitner | ONEshadow17keys8policies/1originalforecast independentlychecked, no fits/GPU/orders. | Released; future21session outcomes unknown, no re-score/Paperswitch. |
 | Strategy/Harvey | Fixedrankgate36cells independentlychecked/FAIL; next-open equalrank4 contract frozen BEFOREGRUf3outcomes,4purePASS/0modelcalls. | Released; no performance-selected weights/expertfallback/newhistoricalgrid. |
-| Infra/Herschel | NativeCPUshadowproof consumed safely; no currentGPUjob. NewDataTaskClaude REVISE namedisolation/contract/rollback/secret-path concerns. | Prepare exactquietfiniteD1Task source/mocks for Tue-Sat07:30KST Oct20-Nov17; notinstalled/invoked, oldminute/Paper schedules unchanged. |
+| Infra/Herschel | Core16+independent2+final4binding PASS. Parent actualidleomission recovery11focused+6independentpure PASS/ONEenable/248othersunchanged. | Released; originalfailure/source/debits preserved. NewTask Ready, no invocation/capture proof. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -28,6 +28,21 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+14:55UTC: final DataTask is enabled after exact disabled-identity recovery of a
+measured optional native idle-field omission, not a new provider/permission gate.
+No fullproof/training/capture rerun, no otherTask edit. All dispatched roles now
+closed/released; one frozen shadow awaits actual futuremarks and Paper owns its
+existing future entry/hold/exit slots. GPUfree because scheduled research fits
+finished, not a permission/runtime fault. Do not foreground-wait through market
+closure or invent another historical grid solely for utilization. Next material
+work follows new input or an actual exact-owner failure; company goal stays open.
+
+14:49UTC: only final quietTask binding/deployment is active; other completed
+roles are released. ActualDocker has web only, RTX4090 no training owner; closed
+GRU/shadow must not be repeated for utilization. Reuse16core+6Data+2independent
+proofs, finish one exact transaction instead of expanding tests/reporting.
+Future21session marks/Oct21ownedexit remain due, not an operator approval hold.
 
 13:50UTC: all10newlongdaily expert/meta marketfits and ONEcurrent17-key shadow
 are closed; shadow independentPASS124pins. Future24cells need actual21session

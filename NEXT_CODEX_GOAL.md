@@ -119,10 +119,17 @@ policy/integration/Git; disjoint roles continue without routine permission waits
   Future21session outcomes/24cell replay remain UNKNOWN.
   No re-score/trainingresume/expertfallback/backdating/newmodelgrid. Existing
   companygoalownedexit remains unfinished, not a source/approval hold.
-  Data/Infra now prepare finiteD1marksworker and NEWquietTask Tue-Sat07:30KST
-  Oct20-Nov17/21visits forshadowmeasurement/freshD1input. No actualTask/API now,
-  nativeSYN/contract/isolation/rollback evidence precede Parentinstallation.
-  Originalminute/model/nightly schedules remain, no extraPapercapital/orders.
+  FiniteD1marks Task thericher-kis-paper-current20-shadow-d1-marks-20261020 now
+  ENABLED/Ready, firstOct20 07:30KST, Tue-Sat throughNov17/21visits. DataR1
+  READYee4274ce/entry208d4d3d,6focusedgroups incl REALquietentry; Infra16core/
+  independent2/final4binding PASS. Original61d is NOT entrydeployment authority.
+  Firstregistration stopped disabled on omitted idledefaults; additive narrow
+  Parentrecovery11focused+6independentpure PASS/actualdisabledidentity check,
+  ONEenable/248otherTasks unchanged. Receipt445164fe/enabledXMLc1eb1ac6 at
+  A/infra/current20-shadow-d1-marks-task-20261017-v1/harness-repair-r1/
+  final-r1-binding/idle-default-recovery-r1/activation-1/installed.json.
+  No manual invocation/KIS/neworders. Installation is not capturedmarks; future
+  21sessions remain UNKNOWN. Originalminute/model/nightly/10percentbank stay.
 - Validation/Planck: independent retained longdaily PASS626pins/45cells/
   49005NAV/max6.66e-16, costs/purges/scalers match. No native modelcalls/
   restore/GPU/parity claim; original economicFAIL unchanged. Exact baseline

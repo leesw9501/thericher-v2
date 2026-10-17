@@ -293,13 +293,29 @@ R1firstpublishedbundle, no overwritten earlierbundle/HANDOFF or newforecasts.
 REVIEW-SEALc7a76993. Futuremarks UNKNOWN, no profit/actualfill/Fridaybackdate.
 A/research/current20-next-open-shadow-20261017-v1/HANDOFF-ACTUAL.json.
 A/strategy-research/current20-long-daily-next-open-shadow-preparation-20261017-v1/READY.json.
-Readyworknow: Data finiteD1markworker/nativeSYN at current20-shadow-d1-marks-
-worker-20261017-v1; Infra exactquietfiniteTask preparation at current20-shadow-
-d1-marks-task-20261017-v1. ProposedNEW Tue-Sat07:30KST Oct20-Nov17/21visits,
-20normalGET+2retry/1POSTmax pervisit/600wall, copiedpaperonlyData dependencies,
-0account/order/modelcalls. Notinstalled/invoked yet. Original06:50minute/
-model/nightly Tasks/10percentbank stay unchanged. This supports actualshadow
-measurement/freshD1features, not a newreport/gate or companycompletion.
+ACTUAL finiteD1marks Task thericher-kis-paper-current20-shadow-d1-marks-20261020
+ENABLED/Ready14:55:36UTC Oct17; firstOct20 07:30KST, Tue-Sat throughNov17/
+21expectedvisits. Physicalexisting3.14.3 pythonw/-I/-B/IgnoreNew/PT15M,
+R1entry208d4d3d/sourceREADYee4274ce, original day/M/token custody unchanged.
+20normalGET+2retry/1POSTmax/600wall pervisit, noaccount/order/modelcalls.
+All248otherTaskdefinitions unchanged. No manual invocation/API; installation
+is NOT captured marks or OS-origin proof. Original06:50minute/model/nightly
+Tasks/shared10percentbank remain. ConsumerONE17-keyshadow/freshD1features;
+future21sessions/24cells still UNKNOWN, not companycompletion.
+Original61d workerflow12native/4independentgroups was not entrydeployment
+authority: Taskname/oldentry/PYTHONW binding corrected additively. DataR1 six
+focusedgroups incl REALquietentry PASS;334.425/600 carries312.40. Infra16core,
+independent2mockgroups and final4bindinggroups PASS; no old failure regrade.
+Actual firstregistration stopped DISABLED on omitted nativeIdleDuration/
+WaitTimeout, no enable. Additive Parent idle-default recovery admits only exact
+schemaomission with RunOnlyIfIdlefalse;11focused+6independentpure PASS and
+actual disabled-byte/source/originalinventory checks before ONEenable. Claude
+REVISE concerns bounded by exact enabled-onlykey/rollback/firstdue checks;
+source-only earlypathfailure retained. Originalsources/receipts stay immutable.
+Installedreceipt445164fe/enabledXMLc1eb1ac6/registeredkeyf05f8a8d.
+A/infra/current20-shadow-d1-marks-task-20261017-v1/harness-repair-r1/final-r1-binding/idle-default-recovery-r1/activation-1/installed.json.
+Do not rerun installer/activation/--run or add an aliasTask. Recovery uses only
+the exact saved rollbackidentity; actual collection success awaits owned visits.
 DataOct19calendar READY333fd436/actualcalendare4f503f8,5230oldrecords unchanged
 plusONEexpectedOct19ordinal5230. NativeD1-vs1mOct16 consistency is NOT proven:
 open9/high10/low16/close3/volume0 matches of20,jointOHLC1. Source unchanged;

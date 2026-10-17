@@ -44,13 +44,29 @@ PostcloseD1feed integration SOURCE4pureREADY: separatefiniteD1 option20GET+
 2retry/1POST because quietcfc2757 minuteclient is closed/not safelyshareable.
 No runtime/Task/capture change or new schedule; nextshadowneeds nonewHTTP.
 A/data/current20-postclose-d1-feed-integration-preparation-20261017-v1/READY.json.
-Ptolemy NOW implements finitefutureD1markworker/source+nativeSYN at
+FinitefutureD1markworker/source+nativeSYN COMPLETE at
 A/data/current20-shadow-d1-marks-worker-20261017-v1,600owned5400end/CPU2RAM4.
+Original61d132ef READY means worker-flow12nativeSYN PASS, not deployable entry:
+Infra found launchTaskName17vs20 and oldminute ENTRY hashed beforeoverride.
+Parent found additional oldvenv PYTHONWconstant mismatch withnativebase launch.
+0actualAPI/Task effects; do NOT install original61dbundle. Additive
+entry-binding-repair-r1 READYee4274ce,6focusedgroups PASS/oneattempt including
+REALpythonwentry identity/bootstrap/console0 beforecredentials. Exactentry
+208d4d3d/nativephysical3.14.3/TaskName20, oldsource/failures/dayM custody retained.
+Cumulative334.425/600 includes old312.40; no cap/debit reset. Ptolemy released.
+Original12cases/independent4groups are scopedflow evidence, not entry admission.
 0actualAPI/env/Task/modelcalls inthispackage. Consumersealed17-keyshadow and
 freshD1features; pervisit20normalGET+2retry/1POSTmax/600wall/oneclient, exact
 completedcachedDay0HTTP/oldunknownstatesnotreset. Source/basis/missing limitations
-remain. Infra prepares NEWfinitequietTask07:30KST Oct20-Nov17; no installation
-yet/no existing1m/Paper schedulechange. Privateauthorityalreadydelegated.
+remain. ACTUAL NEWquietTask thericher-kis-paper-current20-shadow-d1-marks-20261020
+ENABLED/Ready/firstOct20 07:30KST throughNov17,21expectedvisits. Parentreceipt
+445164fe/enabledXMLc1eb1ac6; all248otherTasks unchanged/0manualinvocations/API.
+Originaldisabled-registration idle-default mismatch fixed narrowly,11focused+
+6independentpure PASS; no source rewrite/newregistration/oldTaskchange.
+Evidence A/infra/current20-shadow-d1-marks-task-20261017-v1/harness-repair-r1/
+final-r1-binding/idle-default-recovery-r1/activation-1/installed.json.
+No collection yet; retain future UNKNOWN and oldpartial/pending states. Data
+LLM released, worker due-owned; privateauthorityalreadydelegated.
 
 Earlier closed16:39KST reboot recovery: multi-visit CLOSED_NOT_READY, empty
 dependency freeze/native-suite timeouts110/40sec/inclusive929.47>240active.
