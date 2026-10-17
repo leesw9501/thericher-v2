@@ -8,7 +8,11 @@ No API/credentials/install. Preserve old WIP/caps/failures, not authority.
 NEW single-visit source/SYN READY16byte-matchedfiles/23nativePASS19.441worker
 seconds, conservative929.846inclusive/1200, no API/install. Two diagnostics
 observed native stateIO/fsync and C1.7ms/D30.1ms median in smallpairedprobe;
-old whole-suite timeoutcause staysUNKNOWN. Independent native negatives pending.
+old whole-suite timeoutcause staysUNKNOWN. Independent8negatives found oneP2:
+impossible coldGET1/retry2 accepted as readback, not a wire-budget bypass.
+Parent cold-debit-repair-r1 rejects retry>GET,31nativePASS (old23+unchanged8),
+23.441worker seconds/Ruffconsumer+runnerPASS. Old source/seals preserved,
+original custody roots retained; futureTask must use this revision, not3a735a34.
 ONE finite session/day100normalGET+2retry/1POST, no day-index/cold-reauth
 framework; accepted refs/unknown stay, next day independent. Native SYN scratch
 isolated C NVMe; market data stays D. Parent capture-session source
@@ -16,12 +20,24 @@ isolated C NVMe; market data stays D. Parent capture-session source
 No old failed/unknown day is erased or reopened. Complete day means zeroHTTP.
 A/data/current20-minute-accumulation-worker-20261017-v1/reboot-recovery-20261017-v1
 A/data/current20-single-visit-accumulation-20261017-v1
-Ptolemy next owns separate offhoursOct16completedRTH capture PREP:
+OffhoursOct16completedRTH capture COMPLETE:
 A/data/current20-native-oct16-completed-session-20261017-v1.
-100normalGET+2exactretry/1POST/oneclient,1800active7200end. No wire until exact
-later-day frozen-model evaluation protocol/Claude are retained. No expired
-06:50job invocation/fakeclock or oldsource adoption; new actual capturetime.
-Expected7800RTH or honestpartial, no imputation/PIT/finality promotion.
+80GET1POST0retry,7800RTH/20x390/9600native/1800matchingoverlaps/zero gaps or
+conflicts; pendingfalse/ownersreleased. Use chronologicalengine-input-manifest-r1
+SHA32a178d2, originalunorderedindex/rawsource preserved. Firstwire696/1200,
+oldPREP1364.131376 kept/additive2060.131376/3000. Parent44f09249 addendum BEFORE
+HTTP separatescanonicalOct16 andrawdatebuffer9..16/fixedanchors; no modelchange.
+No expired06:50job/fakeclock/oldsource adoption/PIT or finality promotion.
+Ptolemy now owns current20-daily-long-history-capture-20261017-v1 implementation
+and boundedactualcapture:20verifieddailyroutes/61anchors/1220normal+10retry/
+1POST,7200active14400end, firstfreshheads then olderrounds. Newcoherentepoch,
+no oldseed/append; rawFAILEDpage remainsFAILED while separate strict-valid-subset
+may retain usable rows/invalidflags. Existing canonicalBar CSV, sourcecoverage/
+basis/IPO gaps honest, no imputation. Source-limited closesonlyexactcursor.
+No API authority inferred fromplan; native adapter/owner/loader/sourcechecks
+beforefirstHTTP, thendelegatedactualrun without anotherParent/human gate.
+A/data/current20-daily-long-history-preparation-20261017-v1/HANDOFF.md
+A/data/current20-daily-long-history-capture-20261017-v1
 
 Closed sources: old2000/2010/2020anchors6GET nativeempty; newrecent8GET found
 480rows atOct1/Oct8 forQQQ/SPY, Jan6/Sep1empty. No globalfloor/date inferred.

@@ -110,10 +110,14 @@ mask/causal tasks/408scores/all18cells PASS, maxNAV error2.22e-16; no native
 prediction parity/tensor-restore claim. Endpointerror improves versus base;
 growth beats base/Ridge120/uniform, but original10bps DD<=uniform FAILS.
 Original primary remains failed, no Paper adoption/alpha claim.141.271active/
-1200,505.927end/3600; containers/lease released. Next fixedhalf same-gross
-diversification uses0fits/forwards; growth algebra is not new prediction evidence.
-Cumulative189 fittedversions=114CUDA+75CPU including1budgetinvalid oldTCN,
-not189architectures or qualified alpha. Do NOT repeat these completed fits.
+1200,505.927end/3600; containers/lease released. Fixedhalf same-gross
+diversification COMPLETE0fits/forwards/6knowncells; DDprimary alsoFAILS.
+Growth algebra is not new prediction evidence; no weight search/Paper switch.
+Cumulative190 fittedversions=114CUDA+76CPU including1budgetinvalid oldTCN,
+not190architectures or qualified alpha. Jointgate'sONECPUfit independently
+checked:42cells/10458NAVpoints/max5.11e-15, original primaryFAIL; gate loses to
+fixedmean3/all3singles, not raw_rule. s+3 key mapping proven, extra uniformgrowth
+predicate TRUE/nonbinding/deviation retained. Do NOT repeat completed fits.
 Old full-grid nativeKIS preparation remains unbound; the NEW missing-aware
 study preserves the same dates/kernel/splits/criterion with past-only masks.
 Eight-session source CLOSED_PARTIAL300GET/1POST/0retry+380cachedpages:
@@ -127,23 +131,40 @@ Data multi-visit accumulation recovery CLOSED_NOT_READY: empty dependency
 freeze and native-suite timeouts110/40seconds, inclusive929.47 exceeds its240
 active cap. No deployment/API/credentials; never reuse its WIP as authority.
 New single-visit source/SYN package READY:16byte-matched dependency files,
-23nativecases PASS/19.441worker seconds, no actual API/install. Old timeout
+23nativecases PASS/19.441worker seconds, no actual API/install. Independent8
+found impossible coldGET1/retry2 readback P2, not a wire-budget bypass. Parent
+separate cold-debit-repair-r1 rejects retry>GET;31nativePASS including unchanged
+8negatives/23.441worker seconds. Original source/seals unchanged, same day
+custody roots explicitly retained; no runtime installation. Old timeout
 whole cause UNKNOWN; small new trace observes stateIO/fsync and paired probe
 C1.7ms/D30.1ms median, supports C scratch rather than a claimed full diagnosis.
 It removes the day-index/cold-reauth framework and preserves old failures/debits.
 One finite day scope100normalGET+2retry/1POST; partial/unknown day stays scoped,
 not auto-reset/replayed. Test scratch moves to isolated C NVMe, real data stays M.
-Next Data package PREP is separately named offhours Oct16 completed-session
-capture, not invocation/time-reset of expired06:50job. No wire until exact
-later-day evaluation protocol is frozen. Friday is a retrospective diagnostic,
-not prospective/PIT or proven untouched source. Strategy separately implements
-one3-expert fixedblend/depth2 gate using mature f1/f2 OOS and f3 adaptiveDEV;
-no newbasefits/forecasts, no individual-profitability prerequisite.
+Oct16 offhours capture COMPLETE:7800RTH/20x390,9600native/1800matchingoverlaps,
+80GET1POST0retry/zero gaps/conflicts/pending/owners released. Use ONLY corrected
+chronological engine-input-manifest-r1.json SHA32a178d2; original unordered
+coordinate manifest/raw source preserved. Firstwire696/1200, oldPREP1364.131376
+kept, additive2060.131376/3000. No expired06:50job invocation/fakeclock. Parent
+prewire44f09249 addendum separates canonicalOct16 from native-response9..16
+and leaves paging toData; no model/criterion change. Old0HTTP conflict retained.
+Frozen-model Friday evaluation COMPLETE204marketforecasts/12calls+2toyloadcalls/
+26forwards/6Ridgecalls/0fits/18knowncells, bothprimariesPASS; small+0.279bp
+normalized researchgrowth, not broker PnL. Independent retainedCPU PASS:
+359pins/7800canonical/204scores/18cells, max2.22e-16, 30.923active/360.
+Six explicit safe Ridge arrays reproduce linear algebra; native FT/base weights
+were denied, so no native forecast/restore parity claim. All original primaries
+remain unchanged; ONE retrospective day is not independent alpha.
+No old failure regrade, prospective/PIT/untouched/alpha/Paper promotion claim.
+Data next implements bounded20-symbol daily2007..2026 source acquisition;
+Infra prepares quiet06:50KST runtime/source+SYN only, not installed yet.
 Current KIS/FirstRate overlap confirms discrepancies, NOT oldABI readiness.
 XLK611-session native mode1 continuity diagnostic found no large splitlike
 jump; this supported only the NEW conditional study above. Old exact-factor
-split witness remains failed, unknown formula/TR/PIT unchanged. Strategy now
-prepares covariance-aware sizing with zero market fits/replay, not a model grid.
+split witness remains failed, unknown formula/TR/PIT unchanged. Covariance
+source/solver failures stay closed/unready. Strategy's canonicalBar cross-regime
+proposal is source-only: rule/HGB14/raw-plus14MLP, dates/eligibility unknown
+until actual Data. Engine prepares native SYN/worker, no new market fits yet.
 Cboe AI-use rights unresolved: excluded, not a paid commitment/company hold.
 Capture-session independent review found malformed-JSON escaped-secret P2;
 minimal repair refuses uninspectable bodies, keeps pending/debits, and fixed
@@ -166,172 +187,41 @@ A/data/current20-minute-accumulation-worker-20261017-v1/reboot-recovery-20261017
 A/data/current20-single-visit-accumulation-20261017-v1
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1/independent-review/RESULT-actual-r1.json
 A/research/native-kis-fixed-half-diversification-development-20261017-v1
+A/research/native-kis-next-session-frozen-evaluation-development-20261017-v1/independent-review/FROZEN-ACTUAL.json
+A/data/current20-daily-long-history-preparation-20261017-v1/engine-consumer-contract-r1/contract.json
 A/strategy-research/fixed50-joint-expert-composition-preparation-20261017-v1/HANDOFF.md
 A/research/fixed50-native-xlk-interaction-development-20261017-v1/owner-handoff.json
 A/research/fixed50-chronos2-domain-adaptation-development-20261017-v1/independent-review/FROZEN.json
 
-- Reboot preserved3Ridge checkpoints, zero duplicate fits. Six remaining CUDA
-  GRU/TCN fits completed164epochs/6341updates/13202forwards; original9attempts/
-  zero technical retries,323.077ownedactive/1581.489end within7200/18000.
-  Independent9CPUrestores/90cells/180450values pass/zero changedTop5. Primary
-  false, not all policies losing. Total133fitted versions=83CUDA+50CPU, not
-  architectures. Old clocks/holdouts/results remain immutable.
-- Fixed mean/median rank fusion COMPLETE36cells/0fits/0forwards, independent
-  36/72180values pass. Each policy growthpositive6/9 but betterDD0/9; reject
-  claimed fusion benefit. Fixed-notional delta growth/turnover proportionality
-  is legitimate both-leg-cost algebra, not a reused-metric bug.
-- Current20 F3 runtime diagnostic:6000fresh bars/300each/latestOct15 ->60expert
-  scores/3batches/4targetweight vectors,0fits/economic replay/broker intents.
-  Actual availability after OPEN, no historical/prospective-performance claim
-  or current Paper adoption.
-- Fixed50 source:182GET+168childGET and reused6000rows ->40623strict bars,
-  min737/max894,50ready252. IWM20230605 native-invalid row remains a known gap.
-  Child final verifier recovery exceeded1200 by54.250sec: initial completion
-  is NOT final authority; CLOSED-budget-overrun supersedes classification,
-  actual independent checks/source data preserved. No refund/automatic restart.
-  Recovery-r2 added20GET/1POST within452.101ownedactive/600cap. R3completedlast30
-  within313.250/600; entire400newGETplan done.45462bars/min737max993/50ready252,
-  13knowninvalid gaps retained, source460GET6POST includingreusedfresh20.
-  An early tentative Paper cutoff reduced r2
-  throughput; orchestration timing, not a KIS daily quota. No source/fit swap.
-- Fixed20 FirstRate intraday30/120/300window family COMPLETE12fits:
-  3CPU Ridge/9CUDA LSTM-GRU-TCN,13attempts including1technical retry.
-  188complete epochs/3577..3604updates (interrupted epoch upper bound retained),
-  99known cells/zero unknown/allfold primaryfalse.511.170active/2639.609end
-  within1800/7200; lease/containers released. Independent5040features/12native
-  restores/2400EVALscores/99cells/17127NAVpoints PASS/max8.89e-16/zero changed
-  Top5/no fits or GPU.843elapsed, no actionableP1P2 in scope. Reused ten-day
-  fixed universe is development, not alpha; DD excludes full OPEN/intrabar.
-  Missing source minutes/unsupported context not imputed; no Paper adoption.
-- New research checkpoint modulef50770b: CPU bit-exact continuation and scoped
-  Torch2.7CUDA GRU/dropout exact model/AdamW/scheduler/CPU-CUDA-NumPy RNG pass.
-  D hardlink commit/incomplete refusal exercised. Old7epochs14steps comparator
-  failure plus new8/16=15/30synthetic,0market fits; containers/lease released.
-  Not universalCUDA/TCN/mid-batch proof. Old campaigns do not silently adopt it.
-- Fixed50 residual experts COMPLETE9CPUfits/9attempts/0retries:3Ridge solves,
-  3HGB70totaliterations,3MLP64epochs/890updates.72knowncells/zero unknown,
-  primaryfalse/false/true, familyfalse; f2/f3HGB constant iteration-zero, f3pass
-  not learned ranking skill. Independent45462source/15886features-targets/
-  9native restores/17766EVALscores/72cells/17928NAV/432metrics PASS, no Top5
-  changes/max3.11e-15.66.356active/2240.829end within1800/7200; CPUappropriate.
-  Total154fit versions=92CUDA+62CPU, not architectures. No old fit repeated.
-- TimesFM2.5 frozen direct/Ridgeblend COMPLETE:126CUDAmarketbatches/6048rows,
-  one SYN/127native forwards,0fits/retries;18newcells+45immutablecontrols.
-  Primary1/3/familyfalse, independent retained-array check PASS.63.799active/777.234end,
-  peakreserved1.16GiB/lease+container released. Trusted weight predates targets;
-  unknown corpus/Closeforecast versus OPEN-entry payoff mismatch retained.
-  Chronos2 also COMPLETE6048rows/126marketbatches+1SYN,0fits/marketretry,
-  primarytrue/false/false/familyfalse. Two pre-native import/phase failures
-  retained. New independent-review-r2 PASS63comparisons/6048contexts/126pins/
-  maxNAVerror3.00e-15; old partial reader/debits unchanged. No native forecast
-  parity, Paper adoption or independent-alpha claim for either public model.
-- AAPL stock-minute capability ACTUALLY observed: new opt-in route preserves
-  all legacy ETF/IWM behavior. R3used2GET1POST/0retry ->240unique rows,
-  Oct16 08:54..12:53ET (204RTH+36preopen),735native/hash/calendar checks pass.
-  Blank header was UNKNOWN, not exhaustion; second page N still older data.
-  Aggregate3GET2POST includes originalhead, not360unique rows. Oldzero-wire
-  due/wrapper/clock failures/debits retained; direct base execution succeeded.
-  Full20cohort capture COMPLETE360GET/1POST/0retry:43200native rows/35840RTH,
-  all20 have390labels for eachOct12-15; Oct16partial231..233 not fullsession.
-  Independent frozen6module reader PASS360pages/408prefixcontexts, no mutable
-  SRCexecution;166890producerchecks. Finalcharge2806.26/3600, ownerreleased/
-  no pending/next_due. Unit/bar-end/PIT unqualified, no oldABI promotion.
-  Original60tokenfloor was a scoped-policy deviation, retained. Subsequent
-  source-based60calibration does NOT retroactively authorize that deviation.
-- OOF shallow tree COMPLETE1CPUfit/6positive-growthcells; growth beats mean4/
-  Ridge but worseDD than uniform47, primaryfalse. Tree uses RidgeRank+regime
-  only, not demonstrated learned multi-expert combination. Independent PASS:
-  one native restore/5922rows/12float32threshold SYN,3948OOFlabels/123bindings/
-  4482NAVvalues, max2.89e-15; no fits/baseforwards/GPU/retries.
-  Subsequent zero-fit sizing9cells complete, both candidateprimaryfalse;
-  fixedhalf control descriptively improves growth/DD versus uniform on reused
-  f3, not fresh alpha. Independent sizing9+6references PASS/max4.44e-16.
-  Fixedhalf is a fully invested tree/uniform blend, not halfcash.
-- DEPTH COMPLETE9CUDAfits/11attempts/2technicalretries/292completeepochs/
-  3866updates,942.234ownedactive/1941.464end. One f1TCN303.313>300 fitcap:
-  retained checkpoint but6dependent economics excluded/UNKNOWN,8usable fits.
-  Independent292checkpointpins/9CPUrestores/35532scores/30knowncells+45controls/
-  18675NAVvalues PASS, max3.22e-15/no changedTop5. PATCHprimary0fold/familyfalse.
-  Completedversions164=101CUDA+63CPU including that1budgetinvalid, not164
-  architectures. No completed fit repeated. Source/prospective limits retained.
-- Adaptive masked intraday transfer COMPLETE4CPUbatches/1632modelrows/
-  264weightvectors/33conditionalcells/0fits. New volumeablation and assumed
-  label-as-start/completeness/consistentpriceunits, NOT equivalentoldABI/PIT/
-  alpha/Paperadoption. NativeSYN/11385NAVchecks; independent review pending.
-  SyntheticTCNprofile12steps/15forwards closed0marketfits; forwarddominant,
-  smallerbatch no measuredper-rowimprovement; not market-convergence proof.
-- Clock/rank audit rejected proposed foundation entrygap explanation under
-  frozencriterion. Tree cutoff-tie ablation:2above+45tied names on42/42dates,
-  equalcutoff changesgrowth/DD materially; oldlexicalresult not learned
-  within-leaf skill. No oldregrade/winnerselection. New peer-context ranking
-  GPU9fit and objective-aligned LightGBM CPU6fit families assigned, not counted
-  as completed fits until their own evidence closes.
-- QQQ/SPY six2000/2010/2020anchors each nativeempty,6GET1POST0retry/52checks,
-  no earliest/globalfloor conclusion. Original300floor starved by4minobserver;
-  source-based60r2 succeeded with6module source isolation, default300 unchanged.
-  Original0wire838sec/r1source-drift296sec debits retained. Newrecent bracket
-  Jan/Sep/Oct1/Oct8 assigned separately; no automatic acquisition expansion.
-
-A/research/liquid-core-listwise-risk-allocation-development-20261016-v1/owner-handoff.json
-A/research/liquid-core-fixed-rank-fusion-development-20261016-v1/independent-review/result.json
-A/research/liquid-core-current20-f3-forward-20261016-v1/owner-handoff.json
-A/data/fixed50-adjusted-breadth-20261016-v1/recovery-r1/CLOSED-budget-overrun.json
-A/data/fixed50-adjusted-breadth-20261016-v1/recovery-r3/completion.json
-A/research/training-checkpoint-recovery-20261016-v1/technical-recovery-r2/result.json
-A/research/stock-intraday-crosssection-development-20261016-v1/owner-handoff-final.json
-A/research/fixed50-residual-experts-development-20261017-v1/independent-review/result.json
-A/research/fixed50-timesfm25-frozen-fusion-development-20261017-v1/owner-handoff.json
-A/data/current20-stock-minute-capability-20261017-v1/recovery-r3/final-readback.json
+Earlier completed families and their exact clocks, failures, checkpoints and
+source limitations remain recoverable in Git5041a58:HANDOFF.md and the linked
+role/artifact histories. They are NOT current agents, queued fits or fresh
+verification authority. Never rerun completed creators from a historical queue.
 
 ## Ownership / Verification
 
-Parent owns shared docs/Git/actual integration. Lovelace owns NEWpeer-context
-rankingGPU, Kuhn objective-alignedtreeCPU; Schrodinger recent minutehorizon.
-Curie recoveryfix completed; Parent freshfullQA1353/354f4348/18122collected:
-18100pass22skip/370.325sec/helperEXIT0,202serial/Ruff/three Compose PASS.
-Poincare independent20checks/14old-code negatives PASS. Code382638d PUSHED;
-not a restarted collector or Paper deployment. Curie maskedtransfer independent,
-Poincare safe globalTaskmetadata audit; one owner per mutable writeset.
-Conditional five-window model hold contraction NOT adopted. First attempt
-XMLchildorder failure retained; corrected retry-r1 actual17:46UTC passes all
-three XML/proof stages then fails a post-enable guard. Catch masked original
-exception, precise firstcause UNKNOWN. Exact original rollback verified;
-model enabled/Ready/next17:49UTC, ALL original windows/cadence retained.
-No identical retry; inspect original evidence without another Task mutation.
-Consoleaudit42tasks:18future actions allpythonw,12consoleenabled withoutnext/
-expiredbounds preservedunknown recovery. No supported windowcause or newTask
-patch. Fees/settlement source review finds no documented supported Paper
-per-fillfee/settlement endpoint; no API attempted/no zero-fee inference.
-MDs are durable memory,
-not proof of running workers. Recheck actual processes/leases after interruption.
+Parent owns shared docs/Git/integration. Current role work is described above;
+Lovelace/Kuhn/Schrodinger/Curie/Poincare projections in older revisions are
+retired, not current owners. Recheck actual processes/leases after interruption.
 
-Committed/pushed:5995171 required tails; c4bd04f recovery docs; f50770b checkpoint.
-Closed helper QA1348/73aef779:46serial/17016fullpass22skip/17038collected/
-371.76sec/clean8helper0/Ruff/three sample-env Compose. Installed827d retains
-its separate1346/7a184596/503serial/16991full authority. New diagnostics require
-fresh1348/c7d511a9 authority:1384serial/18052fullpass22skip/18074collected/
-417.928sec/clean8helper0/Ruff/three sample-env Compose PASS. Compatibility is
-not deployment or fill proof. d0ff5f8 typed diagnostics pushed.
-Latest stock-query code d1a0ed2 PUSHED:1349/5b73cb0e authority175Parent serial,
-Data668serial4platformskip; fresh clean8full18073pass22skip/18095collected/
-368.916sec/helper0/Ruff/three sample-env Compose. No actual Paper image change.
-NEW collector5fba5cd PUSHED:1353/250b6e74,190Parentserial and683Data serial/
-4platformskip, freshclean8full18088pass22skip/18110collected/402.989sec/helper0,
-Ruff/default-research-accounting sample-env Compose PASS. No Paper image swap.
-A/verification/stock-intraday-foundation-20261017-v1/authority.json
-Subsequent recovery382638d has its OWN fresh source1353/354f4348/202serial/
-18100full22skip/370.325sec/helperEXIT0/Ruff3Compose PASS. Old250b not reused
-against changed code. No actual deployment/capture restart is claimed.
-A/verification/stock-intraday-recovery-20261017-v1/authority.json
-A/verification/training-checkpoint-recovery-20261016-v1/authority.json
-A/verification/nightly-typed-recovery-20261017-v1
-A/verification/stock-minute-probe-20261017-v1/authority.json
+Current capture code da5f425: source1355/50c535b3,345serial PASS, clean8 full
+18235pass22skip/18257collected/407.555JUnitsec/helperEXIT0; Ruff and three
+sample-env Compose PASS. Docs-only changes reuse this only after exact
+production/test/script/dependency/config and AGENTS/DECISIONS hash revalidation.
+A/verification/data-capture-session-20261017-v1/retry-r3/authority.json.
+External code/outputs require their own focused/native/independent checks.
+Compatibility tests do not prove deployment, fills or profit. Old failed/
+partial/unclean test authorities and denied roots remain untouched.
 
-One unrelated untracked literal %SystemDrive%/ Windows-cache directory appeared
-during work. Attribution unproven; nothing deleted/read/committed. Do not turn
-uncertain authorship into a global hold or stage generated cache files.
-Scheduler Operational logging is disabled: hash/time/host markers are
-assumed-honest provenance, not cryptographic proof of OS-scheduler origin.
-No qualified alpha; current-listing/PIT/adjustment/finality limitations constrain
-claims, not independent private research/Paper authority. Detailed closed
-history remains in Gitc4bd04f and immutable artifacts, not repeated here.
+Project console audit42tasks found18future actions allpythonw;12consoleenabled
+tasks have no next due/expired bounds and remain recovery-unknown. No observed
+human-window cause or universal quiet fix claimed. Current model/nightly task
+actions are pythonw; newly scheduled work must also use a proven hidden path.
+
+Unrelated untracked literal %SystemDrive%/ Windows-cache directory remains
+unmodified/unread/unstaged; authorship is unknown, not a global hold.
+Scheduler Operational logging disabled: host/hash/time receipts are assumed-
+honest provenance, not cryptographic proof of OS-scheduler origin.
+No qualified alpha or net broker PnL; source/selection limitations constrain
+claims, not private Data/Research/Paper authority. Continue ready delegated
+work; replace the company goal only after actual owned exit/reconciliation.

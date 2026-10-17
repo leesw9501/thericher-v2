@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current 2026-10-17 KST /Oct16UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current 2026-10-17 KST /UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.

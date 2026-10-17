@@ -127,6 +127,10 @@ Its reboot-recovery-20261017-v1 has empty dependency freeze, native QA timeouts
 source/SYN package: A/data/current20-single-visit-accumulation-20261017-v1,
 now READY16byte-matchedfiles/23nativePASS19.441worker seconds. Read exact
 SEALED-HANDOFF.json/API.json/PARENT-INTEGRATION.md; no deployment CLI exists.
+Originalconsumer3a735a34 has coldGET1/retry2 readbackP2 (not wire bypass).
+Use cold-debit-repair-r1/READY.json/INTEGRATION.md for futureTask: consumer
+1112e9f2,31nativePASS/23.441worker seconds, same original day custody roots.
+Originalsource/failedindependentcase preserved; do not rerun consumed tests.
 One finite session/day100normalGET+2retry/1POST; no visit-index/cold-reauth
 framework, preserve accepted refs/unknown day and old failures. No API/install
 before actual native wrapper QA/deployment. Test scratch C, real data M.
@@ -135,11 +139,17 @@ the immutable existing twoETF06:20Task/schema. No source-only plan proves a
 running collector or downloaded day. Parent reviews/freeze/deploys separately;
 current model and nightly strategies stay on their existing frozen releases.
 
-Separately named offhours Oct16completed-session acquisition is PREP only:
-A/data/current20-native-oct16-completed-session-20261017-v1. It is NOT an
-expired06:50job invocation or fakeclock. Wire requires its frozen loader/owner/
-query scope and exact later-day model-evaluation protocol before acquisition.
-Never rerun source creators or adopt/reset old namespace state to collect.
+Offhours Oct16 acquisition COMPLETE at
+A/data/current20-native-oct16-completed-session-20261017-v1/WIRE-HANDOFF.json:
+80GET1POST0retry/7800RTH20x390/9600native1800matchingoverlaps/zero gaps,
+pendingfalse/ownersreleased. Use ONLY chronologicalengine-input-manifest-r1
+SHA32a178d2; original unordered coordinate manifest/rawsource preserved. Do NOT
+rerun capture/creators. Parent44f09249 sourceadmission distinguishes canonical
+Oct16 fromrawdatebuffer9..16/fixedDataanchors; old0HTTP conflict/PREPdebits stay.
+New longdaily20 source implementation/acquisition has its own frozen scopes:
+A/data/current20-daily-long-history-capture-20261017-v1.1220normal+10retry/
+1POST/7200active14400end, onecollector; this is NOT an expired06:50job/fakeclock
+or oldsource append. Data paging is not an Engine model-ABI approval decision.
 
 ### Completed Native Chronos2 Adaptation
 
@@ -152,8 +162,13 @@ source/masks/causal tasks/408scores/18cells, maxNAV error2.22e-16. No native
 prediction-parity/tensor-restore claim. Endpoint/growth improve but original
 economic DDprimary FAILS; never regrade it or auto-adopt as Paper input.
 Safe weights remain D:, no trained/checkpoint/model bytes belong in Git.
-New fixedhalf samegross risk study has0fits/forwards; later Oct16 check is
-retrospective, not prospective/PIT/proven untouched data or independent alpha.
+Fixedhalf6knowncells/0fits DDprimary alsoFAILS. Friday frozen evaluation at
+A/research/native-kis-next-session-frozen-evaluation-development-20261017-v1:
+204marketrows/12calls+2toyloadcalls/26forwards/6Ridgecalls/0fits/18knowncells,
+bothprimariesPASS, independentretainedCPU PASS359pins/204scores/18cells/
+max2.22e-16. FROZEN-ACTUAL.json under independent-review binds exact intake.
+No native prediction parity or alpha claim. No creators/rerun/oldfailure
+regrade. It is retrospective, not prospective/PIT/untouched or independent alpha.
 
 ### Bounded Public Execution Recovery
 

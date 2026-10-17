@@ -1,6 +1,6 @@
 # Research Steward Stateboard
 
-Current2026-10-17KST/Oct16UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-17KST/UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/custody.
 Steward owns exclusive GPU/trial-family custody, NOT model choice, broker risk,
 human approval or a permanent daemon. Parent dispatches/integrates/Git.
@@ -17,8 +17,11 @@ and exact technical retry retained, both containers/leases released. Parent
 appointed separate oneFT/max400steps/1200active3600end, now COMPLETE125updates/
 selected25/24forecasts408rows, independent retainedCPU PASS. One actualfit adds
 to ledger189=114CUDA+75CPU incloldinvalid; SYN is not counted. GPUlease released.
-EndpointPASS/economicDDFAIL, no Paper adoption. New fixedhalf risk study is0fit/
-GPU0; Oct16later-session protocol PREP is0GPU/no acquisition yet.
+EndpointPASS/economicDDFAIL, no Paper adoption. Fixedhalf0fit risk study also
+DDFAIL. Newjointgate1CPUfit independentlychecked42cells/originalprimaryFAIL;
+ledger190=114CUDA+76CPU incloldinvalid. Fridaylater-day204forecasts/18cells
+complete/bothprimariesPASS,0fits, GPUreleased; independentretainedCPU PASS,
+359pins/204scores/18cells/max2.22e-16. Retrospective one-day result, not alpha.
 
 Peer9CUDAfits/382epochs and LightGBM6CPUfits COMPLETE; independent
 checks pass. Chronos2 native domain-adaptation3CUDAfits/800steps COMPLETE,
@@ -31,9 +34,9 @@ One GPU allocation/no dummy work remains policy.
 | Resource | Actual owner / scope |
 | --- | --- |
 | GPU |No current allocation or numerical worker. Peer9CUDA and Chronos2 fine-tune3CUDA CLOSED/released; old forecasts/checkpoints immutable.|
-| Next GPU |No ready frozen allocation. Meitner prepares later-dayOct16 frozen-model evaluation protocol before Datawire; later forecast-only allocation after actual source/contract readiness, not dummy load.|
-| CPU research |Native3fits closed. Covariance implementations unready, no market run. Existing numerical results/caps immutable.|
-| Data |Single-visit sourceREADY16pins/23nativePASS; no install. Separate Oct16 offhours capture PREP, no wire until later-day protocol frozen. Old failedmultivisit unchanged.|
+| Next GPU |Friday12market+2SYNcalls complete,26forwards/0fits/lease released. No dummy training. Longdaily source collection/preparation now, newcross-regime campaign onlyafteractualdata/contract readiness.|
+| CPU research |Jointgate1meta fit independentlychecked/rejected. FridayindependentreadbackPASS. Meitner longsource canonicalBar nativeSYN/worker prep600active7200end/CPU2RAM6GPU0, no marketfit.|
+| Data |Oct16full7800 acquired80GET1POST/0gaps; longdaily20 adapter/actual7200active14400end assignment, onecollector. Quietdaily runtime source/SYN byInfra, no installation yet.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
@@ -55,9 +58,9 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
 
 ## Custody To Preserve
 
-- Closed fitted VERSIONS189(114CUDA/75CPU), including ONE budget-invalid depth
+- Closed fitted VERSIONS190(114CUDA/76CPU), including ONE budget-invalid depth
   TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
-  This is not189architectures, all qualified fits or currentGPU activity. New
+  This is not190architectures, all qualified fits or currentGPU activity. New
   native Chronos2 ONEfit is complete/independently checked, other intended fits
   are not counted before actual completion.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection

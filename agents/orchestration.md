@@ -2,7 +2,7 @@
 
 Current: Oct17 after07:39:51UTC actual reboot. Capture code pushed da5f425.
 Old agents are gone, new role agents own scoped recovery. NativeKIS3Ridge also
-COMPLETE; newnativeFT also complete, closedversions189, not active training.
+COMPLETE; newnativeFT/jointgate complete, closedversions190, not active training.
 Capture-session integration
 verified fresh clean8; no old failed/partial/unclean authority reuse.
 ONE company outcome: current-nas-owned-model-paper-cycle-v1.
@@ -13,12 +13,12 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
-| Parent | Capture P2 fixed;12independentnegative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Loopback web restored/health200. | Integrate and commit/push source1355/50c535b3. Old failed attempts not authority. |
-| Validation/Planck | Goal83 recovery/Claude supported_with_limits closed; nativeFT independent source/408scores/18cells PASS/max2.22e-16. | Independent8negative native single-visit wrapper check; no API/Task/credential/GPU. |
-| Strategy | Original covariance implementation and one solver alternative closed UNREADY on frozen KKT; no market experiment. | Engine recovery reviews source-only certificate diagnosis, not repeated solver tuning or old regrade. |
-| Data/Ptolemy | Single-visit SOURCE_READY16files/23nativePASS19.44s,0API/install; oldmulti-visit invalid preserved. | PREP separate offhoursOct16fullsession, wire only after frozenlater-day protocol. No expiredjob/fakeclock; native102GET1POSTcap. |
-| Engine/Meitner | Chronos2 FT125updates/selected25/408forecasts independentlyPASS; growth better/DD failsoriginalprimary, GPUreleased. | 0fit fixedhalf risk-composition; then freeze Oct16retrospective nextday protocol before Datawire, no Paper/alpha promotion. |
-| Strategy/Harvey | Concrete3-expert proposal from retained OOS; metadata overcap preserved, not numerical evidence. | NEW CPU Engine executor: fixedmean3 plus one depth2 gate/f1f2OOF/f3DEV/42cells, no newbasefits/forwards. |
+| Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
+| Validation/Planck | Friday independentPASS359pins/204scores/18cells/max2.22e-16; wrapper31casefixPASS. | Quiet-runtime source/mock review; no Task/API/credential authority. |
+| Data/Ptolemy | Oct16 COMPLETE7800/20x390/80GET1POST0retry/0gaps, ownerreleased, correctchronologicalR1manifest32a178d2. | NEW longdaily20 adapter/nativechecks thenactual1220+10GET1POST/7200active14400end, no anotherapproval hold. |
+| Engine/Meitner | Friday204rows/18cells/bothprimariesPASS independentlychecked, GPUreleased; old2dayDDfail remains. | CanonicalBar rule/HGB14/raw-plus14MLP nativeSYN/worker prep600active7200end/CPU2RAM6GPU0, no marketfit. |
+| Strategy/Harvey | Jointgate independentlychecked/rejected; canonicalBar cross-regime proposal sealed,0fits/marketdecode. | Dates/eligibility unknown until Data. No oldEVAL grid or invented paging ABI. |
+| Infra/Herschel | NEW quietfixed20 postclose runtime source/SYN assignment; noTask installed. | ExactR1consumer/loader/owner identity/provenpythonw no-console/mockScheduler tests and Parentrecipe. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -41,6 +41,15 @@ and integration. Reversible improvement: positive synthetic Norgate tests
 now inject storage measurements, while explicit14/15boundary tests preserve
 the production15percent floor. Do not relax real storage policy to pass tests.
 Completed native Ridge fits and failed exact5gap queries are never repeated.
+Current improvement: prepare the next-day forecast driver during source
+acquisition, not afterwards; hold no GPU while source is unavailable. Reuse
+three retained OOS experts rather than refit them. A read-only cold-debit P2
+has its own31case repair, not a hold on fresh independent Data acquisition.
+Prewire Data/Engine ABI mismatch was Parent integration debt, not KIS/approval:
+canonical input date is not a native page date-buffer and Engine does not own
+Data's paging algorithm.44f09249 addendum repaired only that boundary before
+HTTP. Next cross-regime source uses existing canonicalBar CSV instead of
+inventing another panel format; preserve actual symbol-key mapping.
 Multi-visit Data PREP was not ready and exceeded its declared budget; no deploy
 or authority reuse. Reversible simplification: one finite daily capture rather
 than a second visit-index/re-auth framework. Diagnose the actual timeout with a
@@ -99,8 +108,8 @@ not passing authority; denied roots untouched. Docs/external work reuses
 only exact unchanged source/control digests. External code needs its own tests;
 repository tests do not validate it.
 
-Closed fitted versions188=113CUDA+75CPU, including one budget-invalid checkpoint,
-not188architectures/qualified fits or current activity. New intended fits are
+Closed fitted versions190=114CUDA+76CPU, including one budget-invalid checkpoint,
+not190architectures/qualified fits or current activity. New intended fits are
 not counted. No qualified alpha; broker fees/settledcash/net remain unknown.
 No operator-only decision is currently required. Detailed history stays in Git
 and immutable source roots, not duplicated as a second backlog.

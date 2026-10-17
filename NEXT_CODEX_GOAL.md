@@ -65,77 +65,51 @@ delegated authority; never substitute an unknown request or expand capital.
 
 ## Ready Parallel Work
 
-LATEST16:51KST after actual07:39:51UTC reboot. Previous agent sessions ended;
-Data/Engine/Execution recovery agents inspect retained work in parallel, Parent
-owns tracked edits/Git. Completed training NEVER restarts from an old queue.
-Native missing-aware Ridge30/120/300 also COMPLETE3CPUfits/18knowncells,
-384FIT/204INNER/204EVAL; fixed120/10bps primaryfalse, not a Paper prohibition.
+Oct17 reboot recovery is integrated; completed fits are never restarted from a
+stale queue. Company model exit is still unfinished. Parent owns shared
+policy/integration/Git; disjoint roles continue without routine permission waits.
 
-Peer9CUDA/6LightGBMCPU/3Chronos2nativefine-tunes COMPLETE;
-independent checks passed, including Chronos retained-output/source custody,
-not native forecast parity. NEW conditionalXLK3CPUfits also complete/rejected.
-Never rerun completed fits. All familyprimaryfalse, not all policies losing
-or a Paper prohibition. Current ready packages: integrate verified capture-
-session code; finish fixed20 daily accumulation source work; integrate bounded
-Goal83 outcome recovery; prepare one informative native Chronos2 experiment, without
-repeating completed daily fine-tunes. These do not replace the unfinished goal.
-Cboe AI-use rights unresolved means exclude source, not buy or stop company.
-Closed fitversions189 inclone oldinvalid, not189architectures or activejobs.
-NEW nativeChronos2 FT125updates/selected25/408forecasts, independent retained
-CPU/source/18cells PASS; endpoint improves/growth beats controls but DD fails
-original primary. GPUreleased, no Paper adoption/nativeforecastparity claim.
+- Data/Ptolemy: Oct16 full source CLOSED7800RTH/20x390/80GET1POST0retry/0gaps or
+  conflicts. Use engine-input-manifest-r1.json SHA32a178d2; unordered original
+  coordinate manifest is retained but not the Engine input. Source is retrospective,
+  not PIT/finality/oldABI promotion. New bounded longdaily20 adapter/native checks
+  then actual acquisition2007..2026:1220normal+10retry/1POST/7200active14400end.
+  RawFAILED pages stay failed; a separate strict-valid-subset may retain valid
+  rows/invalid flags. Existing canonicalBar CSV, no imputation/oldsource append.
+- Engine/Meitner: nativeChronos2 FT125updates/selected25 independently checked,
+  original2day economicDDprimaryFAIL. Fixedhalf6cells alsoDDFAIL/0fits; do not
+  change weights to rescue. Friday frozen-model evaluation COMPLETE204rows/
+  12marketcalls+2toyloadcalls/0fits/18knowncells/bothprimariesPASS, independent
+  retainedCPU PASS359pins/204scores/18cells/max2.22e-16. Small retrospective result, not alpha,
+  prospective/untouched data, native prediction parity or Paper promotion.
+- Strategy/Harvey: jointgate ONECPUfit/42cells independently checked; original
+  primaryFAIL versus fixedmean3/all3singles; raw_rule comparisonsTRUE. Explicit
+  localstock s+3 mapping verified, extra uniform-growth predicateTRUE/nonbinding
+  deviation retained. Attention unused/fullmass everydate. Ledger190=114CUDA+
+  76CPU incloldinvalid, not190architectures. No rerun/oldregrade/newbasefit.
+  CanonicalBar cross-regime rule/HGB14/raw-plus14MLP protocol PREP complete;
+  Engine now prepares pure canonical/native SYN/worker, not another old EVAL grid.
+  Actual historical coverage must precede final numerical contract.
+- Validation/Planck: Friday sourceR1/cost/clock/criteria independently verified,
+  no native modelcalls/restore/GPU. Next quiet-runtime source/mock review only;
+  no Task/broker/credentials or authorization role.
+- Infra/Herschel: quiet06:50KST Tue-Sat runtime SOURCE/SYN only. Use cold-debit
+  revision1112e9f2/31nativePASS and original custody roots; not unpatched3a735a34.
+  No actualTask install until Parent verified source/loader/exactowner/hidden
+  launcher/mockScheduler checks. Do not modify old2ETF00:29/02:28/04:24/06:20.
+- Parent: source1355/50c535b3 verification below; integrate/commit/push material
+  evidence. Original multi-visit WIP/failedQA/oldclocks stay closed. Native8source
+  62395/fiveOct7gaps and10GET0repair remain unchanged, no more identical probes.
+  Cboe unclearrights excluded; covariance source/solver failures stay unready,
+  not global holds. No GPU dummywork or foreground market/quota sleep.
+- Execution: same owned model/nightly/Goal97 opportunities above. Goal83 bounded
+  public reader recovery15checks/Claude supported_with_limits complete; never
+  rerun obsolete recursive argparse CLI or consumed actual-intake commands.
 
-- Data: native8source62395RTH and exact5gap repair10GET/1POST/0repairs CLOSED;
-  no more same-gap queries. Multi-visit worker PREP closed NOT_READY/emptyfreeze/
-  timeout/budget-invalid, never deploy. NEW single-visit source/SYN READY16files/
-  23nativePASS19.44s removes day-index/cold-reauth framework. One finite
-  daily100normalGET+2retry/1POST; preserve partial/unknown day. Do not widen old2ETF.
-  No wire/install until scoped source/owner/calendar checks and Parent deployment.
-- Data next: separately frozen offhoursOct16completed-session capture, not expired
-  postclose-job invocation/fakeclock. Wire only after frozen later-day protocol;
-  preserve oldsource/models. Expected7800RTH or honestpartial, noPIT promotion.
-- Engine: preserve completed189fit custody. Native Chronos2 study complete above;
-  fixedhalf samegross risk-composition0fits, then Oct16retrospective evaluation
-  protocol before Datawire. Not prospective/untouched/independent alpha.
-  Source62395 is valid only under its separately named missing-aware contract;
-  old fullgrid consumer remains unmet. No source swap, imputation, adaptive
-  sensitivity winner selection or reopened old clocks. No GPU work merely for
-  utilization. Covariance solver failures remain closed/unready; source-only
-  certificate diagnosis is not a market-performance pass.
-- Strategy/CPU Engine executor: one fixed50 Ridge/peer-attention/LambdaRank gate
-  study; frozen f1/f2 mature OOS metaTRAIN/f3adaptiveDEV, fixedmean3/depth2/42cells,
-  no newbasefits/forwards or seen-outcome winner selection. Oldmetadata overcap
-  unchanged; new numerical contract900active3600end with nativeSYN/admission.
-- Execution: bounded exact Oct16/index4 Goal83 public outcome recovered with
-  15checks. Receipt discovery uses aware UTC, not PowerShell local-cast ticks.
-  Never rerun obsolete recursive argparse CLI. New reader retains exact pins/
-  time/source/claim binding, bounded CPU/memory/wall and no runtime invocation.
-- Parent: capture-session malformed-JSON inspection P2 and hardlink fixture
-  fixed, unchanged12independent negatives PASS. Deterministic Norgate storage
-  tests preserve real15percent guard.345serial PASS; fresh clean8 source1355/
-  50c535b3 PASS18235full22skip/18257collected/407.555JUnitsec/helperEXIT0;
-  Ruff/three sample-env Compose PASS. R1/R2 failures NOT reusable authority.
-- Current20minute source COMPLETE360GET/1POST/0retry/43200native rows/
-  35840RTH; all20 have390labels eachOct12-15, currentOct16partial excluded.
-  Independent source consistency PASS; unit/bar-end/PIT still unqualified.
-  Frozen daily50 source45462bars/13knowninvalid gaps unchanged. No silent
-  source swap into existing models or Paper.
-- DEPTH COMPLETE9CUDAfits/292epochs/3866updates, one budget-invalid TCN;
-  eight usable fits,30knowncells/6UNKNOWN/45controls. Independent PASS,
-  PATCHprimary0fold/familyfalse. CPU residual/OOFtree/foundation/fusion/sizing
-  studies closed; evidence in HANDOFF, not a fresh replication/alpha claim.
-  Cutoff-tie ablation proves lexical portfolio prior materially affects the
-  shallowtree result; no oldregrade, winnerselection or forced Paper switch.
-- Collector recovery382638d fixes owner-loser state overwrite and premature
-  pending clear, preserves exact failed-attempt debits, restores default300.
-  No restart of completed capture. Next consumers use their own frozen source;
-  do not hash archives while executing mutable repository modules.
-- Model hold-window contraction NOT adopted; both attempts rolled back exactly.
-  Original4min cadence/all exit windows remain. No identical retry or manual
-  Task invocation.42Taskaudit found18future actions allpythonw, not an observed
-  human-window cause; consumed/unknown recovery tasks were preserved.
-- Parent integrates/commits; ready independent lanes continue during worker
-  cooldowns. No foreground market/quota sleep or routine approval hold.
+Data owns acquisition paging; Engine owns canonical model fields/availability,
+not request cursor implementation. Prewire44f09249 addendum separates canonical
+Oct16 input and native-response9..16 buffer without changing the frozen model
+or criterion. Do not repeat that interface mismatch as a company permission hold.
 
 ## Evidence And Verification
 

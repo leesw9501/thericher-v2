@@ -1,6 +1,6 @@
 # Engine Research Stateboard
 
-Current2026-10-17KST/Oct16UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current2026-10-17KST/UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts; AGENTS owns authority. Parent owns integration/
 Git, Execution owns broker risk. MD is memory, not an active worker.
 Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
@@ -38,12 +38,32 @@ A/research/native-kis-chronos2-intraday-implementation-20261017-v1
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1/independent-review/RESULT-actual-r1.json
 
-Ready parallel: fixedhalf FT/uniform versus matchedRidge/uniform diversification,
-0fits/forwards/6newcells; samegross pathwiseDD, algebraic growth not new signal.
-Next-session Oct16 protocol PREP before any newsource acquisition: retrospective
-later-day check of frozenFT/base/Ridge, never prospective/untouched/PIT proof.
-Harvey implements one fixed50 Ridge/peer-attention/LambdaRank composition,
-f1/f2 mature OOS metaTRAIN/f3 adaptiveDEV, one depth2 tree/no newbasefits.
+Fixedhalf FT/uniform versus matchedRidge/uniform diversification COMPLETE:
+0fits/forwards/6knowncells/primaryDDFAIL. Samegross pathwiseDD, algebraic growth
+not new signal; no alternate weight search or old regrade.
+Next-session Oct16 protocol READY0e3fa46c/sourceABIc2a62385 before acquisition;
+later-day retrospective, never prospective/untouched/PIT proof. Data COMPLETE
+7800RTH/20x390/0gaps, chronologicalR1 manifest32a178d2; oldunordered index
+preserved. Sourceadmission44f09249 separates canonicalday/rawpagebounds.
+Friday forecaststudy COMPLETE12marketcalls/204rows+2toyloadcalls/26forwards/
+6Ridgecalls/0fit0retry/18knowncells/337authorchecks; bothprimariesPASS,
+small+0.279bp normalizedgrowth, not broker PnL.71.83active/600, GPUreleased;
+independent retainedCPU PASS359pins/7800canonical/204scores/18cells/max2.22e-16,
+30.923active/360. Explicit safe Ridge arrays only, no nativeFT/base restore or
+prediction parity. No oldfailure regrade/Paper adoption.
+Harvey jointgate COMPLETE1CPUfit/2SYN/42knowncells, primaryFAIL; gate loses to
+fixedmean3/all3singles, attention unused and every f3date fullmass. Independent
+CPU OOS/source/42cells/10458NAV PASS/max5.11e-15. Localstockkey s+3 mapping
+verified; originalprimaryFAIL, raw_rule comparisonsTRUE. Extra uniformgrowth
+predicateTRUE/nonbinding retained asdeviation, not retrospectively selected.
+NewONECPUfit integrated: ledger190=114CUDA+76CPU incloldinvalid; old188/189
+snapshots unchanged. Longdaily source2007..2026 nowData implementation stage;
+cross-regime canonicalBar proposal sealed: rule/HGB14/raw-plus14MLP, three
+historical folds only after actual coverage. Meitner owns new source/nativeSYN
+preparation600active7200end/CPU2RAM6GPU0; no market decoding/fits/forward or
+old-source reranking. Source fixtures exclude transport paging and map by keys.
+A/research/native-kis-next-session-frozen-evaluation-development-20261017-v1/independent-review/FROZEN-ACTUAL.json
+A/research/current20-long-daily-cross-regime-preparation-20261017-v1
 
 Closed results below are not instructions to repeat fits.
 Peer-context9CUDAfits/382epochs/3788updates COMPLETE; independent9CPUrestores/
@@ -56,7 +76,8 @@ COMPLETE, selected50/100/50 by INNERpatience4, no marketretry or oldforecast
 rerun. Independent retained-output/source check PASS:800steps/16INNER/
 6048forecasts/18cells; not native forecast parity. Release precedes EVAL, not
 every FIT/INNER target; pretraining corpus limits remain.
-Closedversions188=113CUDA+75CPU including1oldbudgetinvalid, not architectures.
+Historical snapshot188=113CUDA+75CPU including1oldbudgetinvalid, not architectures;
+current integrated ledger190 above supersedes its current-state projection.
 No repeated completed fits; extra epochs are not assumed to create signal.
 NativeKIS price-onlyRidge30/120/300 closed as above; conditional native-label/
 unit assumptions, no oldABI dependency. XLK continuity diagnostic found no mode1 splitlike jump; NEW

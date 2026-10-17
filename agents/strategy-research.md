@@ -17,8 +17,24 @@ fixedmean3 plus one depth2/minleaf94/seed303 payoff gate, f1/f2TRAIN/f3adaptiveD
 42cost-policy cells/onefitattempt0retry/no newbasefit/forward/forecast. Exact
 source/key/price/OOS lineage and native SYN first, otherwise stop unsupported.
 No individual-profitability prerequisite/Paper gate or seen-EVAL winner choice.
+ActualjointgateCOMPLETE1CPUfit/42knowncells, independent OOS/keys/42cell/
+10458NAVpoint PASS/max5.11e-15; originalprimaryFAIL. Gate loses to fixedmean3/
+all3singles but raw_rule comparisonsTRUE. Extra uniformgrowthpredicateTRUE/
+nonbinding retained asdeviation. Peerinputunused/all42datesfullmass, no claim
+of material learned three-way/exposure benefit. Meta contributesONEnewfit;
+Parentledger190, old188snapshot immutable. No more sameEVALhypergrid.
+CanonicalBar cross-regime contract sealed under
+A/data/current20-daily-long-history-preparation-20261017-v1/engine-consumer-contract-r1:
+explicit routekey mapping/native14 projection, rule/HGB14/raw-plus14MLP proposal.
+Actual dates/eligibility unknown; no market decode/fit/permission in PREP.
+Meitner owns new nativeSYN/worker preparation; Data owns paging/canonical source.
 A/strategy-research/fixed50-joint-expert-composition-preparation-20261017-v1
 A/research/fixed50-joint-expert-gate-development-20261017-v1
+NEW longdailyData SOURCE-PREP COMPLETE12pureSYN/20verifiedroutes/61anchors/
+0wire. Ptolemy now actualadapter/capture owner; not anotherstrategyAPIworker.
+Harvey owns compactcanonicalBar cross-regime consumer contract prep0fits,
+Data owns paging; actualcoverage/dates must be known before numerical dispatch.
+A/data/current20-daily-long-history-preparation-20261017-v1
 Old XLK interaction is COMPLETE3CPUfits/primary0fold/rejected; Cboe excluded.
 Covariance source/one solver alternative remain closed UNREADY,0marketfits;
 old certificate-diagnosis source lacks completion, never infer a numerical pass.
