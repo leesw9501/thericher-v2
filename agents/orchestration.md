@@ -2,7 +2,7 @@
 
 Current: Oct17 after07:39:51UTC actual reboot. Capture code pushed da5f425.
 Old agents are gone, new role agents own scoped recovery. NativeKIS3Ridge also
-COMPLETE; newnativeFT/jointgate complete, closedversions190, not active training.
+COMPLETE; newnativeFT/jointgate/longdaily6fits complete, closedversions196.
 Capture-session integration
 verified fresh clean8; no old failed/partial/unclean authority reuse.
 ONE company outcome: current-nas-owned-model-paper-cycle-v1.
@@ -14,11 +14,11 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
 | Parent | Source1355/50c535b3 pushed da5f425;12negative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Web health200. | Integrate current docs/runtime evidence, exact authority revalidation. Old failed attempts not authority. |
-| Validation/Planck | Quiet-runtime/installer/R3 material independentPASS, originaldebits preserved. FridayindependentPASS. | No Task/API/credential authority; no routine oldQA rerun. |
+| Validation/Planck | Separate retained longdaily numerical/source/45cell review running, CPU2RAM4/600active5400end. | No native fit/forward/GPU/API; reuse exact raw-core hashes, independently reconstruct economics. |
 | Data/Ptolemy | Longdaily CLOSED90819valid/1110GET1POST0retry/leasesreleased. Independent90819exactraw/3374hash corePASS. Older23windows allEMPTY. | No identicalolderprobes/sourceV1merge. Calendar5230metadata projection ready; support exactEngine input bindings. |
-| Engine/Meitner | CorrectedCUDA proof9updates31forwards/6saves2restores exact; lease released, old1/3failedSYN preserved.0marketfit. | Actual6fit marketworker SOURCE prep300owned3600endCPU2RAM6GPU0; terminal/binding/caps then numerical dispatch. |
-| Strategy/Harvey | Jointgate independentlychecked/rejected; canonicalBar cross-regime proposal sealed,0fits/marketdecode. | Dates/eligibility unknown until Data. No oldEVAL grid or invented paging ABI. |
-| Infra/Herschel | QuietTask currentaction retargeted to inactive-readiness-repair/runtime, ParentEXIT0/ReadyEnabled/firstOct20 06:50unchanged/247stable.10native+3indepPASS. | Released; no manualinvoke/captureclaim. Nonactive14 is notactual conflict; allrealactive/due/source/token/cache guards stay. Olddebits unchanged. |
+| Engine/Meitner | Longdaily COMPLETE6fits/45KNOWNcells/primaryDDFAIL,4leasesreleased. FROZEN-ACTUAL4b93d828. | SOURCE prepare GRU252x5+14 worker under NEW clock, no numerical allocation yet; preserve old6fits/debits. |
+| Strategy/Harvey | Two future hypotheses frozen before current results. | Execute fixedrankblend+ONEdepth2gate, f1/f2 OOS TRAIN/f3adaptiveDEV/36cells; no basefit or forward. |
+| Infra/Herschel | QuietTask action-only repair deployed/ReadyEnabled/firstOct20 06:50,247stable,10native+3independentPASS. | Source/SYN epoch-reservation/crash helper + one quiescent I/O benchmark for NEW GRU worker. No current-family mutation. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |
@@ -29,14 +29,20 @@ dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
 
-11:20UTC: Data90k and nativeCUDAproof complete, Engine actualsix-fit worker
-SOURCE preparation remains owned, Strategy prepares exactlytwo next hypotheses,
-Parent binds source/calendar/caps. No marketNUM yet, not a GPU permission hold.
+Latest: six-fit family closed/45KNOWN cells, no active GPU lease. HGBgrowth
+beats both controls3/3 but DD fails3/3; not zero profit or qualified alpha.
+Parent dispatched retained review, fixedrankfusion/gate and new GRU SOURCE
+preparation in parallel; no duplicatefits. DirectD1feed/GRUfactory source/SYN
+ready, not deployment or GPU work. Company exit stillOct21, no approval hold.
 Reversible correction: measured nonactive/unreported-future14 must not become
 an active-owner conflict. Source-only/independent cases plus actual action-only
 retarget now deployed; no real actor/source/token/cache/pacing rule removed.
 Independent Data corePASS suffices for scoped historical research; its unchecked
 gap partition is a factual limitation, not another whole-company gate.
+Future-throughput issue, NOT current hotpatch: per-forward/optimizer fsync in
+research worker costs1290intentwrites in f1/98.168native seconds. ExactI/O cost
+not yet isolated; profile after activejob, then consider conservative per-epoch
+upper reservation/COMMITTED counters before a NEW family, not changing this one.
 
 10:10UTC review: Data actualworker, Engine CUDAadapter, Infra exactpartialinstall
 recovery run disjoint; independent source readback waits only its terminal.
@@ -73,12 +79,10 @@ or authority reuse. Reversible simplification: one finite daily capture rather
 than a second visit-index/re-auth framework. Diagnose the actual timeout with a
 bounded trace; D I/O is only a hypothesis, never asserted without evidence.
 
-Current reversible improvement: the frozen collector probes ownership both
-outside the call and at the wire. New capture utility retains ONE fresh caller
-probe immediately before delegate AFTER pacing. Do not hot-patch/restart the
-active immutable collector merely to optimize it. No GPU campaign is currently
-running; completed fitting is not repeated for utilization. Ready native input
-has a concrete CPU consumer before another numerical family is dispatched.
+The capture utility retains ONE fresh caller probe immediately before delegate
+AFTER pacing. Closed immutable collectors and fits are never restarted merely
+to optimize them. New training uses meaningful source-bound hypotheses, not
+dummy utilization. Queue/preparation time is not claimed as GPU compute.
 
 Earlier improvement retained: freeze the actually executed Data namespace before
 parallel production edits. Pinning an unchanged query module did not isolate
@@ -126,8 +130,8 @@ not passing authority; denied roots untouched. Docs/external work reuses
 only exact unchanged source/control digests. External code needs its own tests;
 repository tests do not validate it.
 
-Closed fitted versions190=114CUDA+76CPU, including one budget-invalid checkpoint,
-not190architectures/qualified fits or current activity. New intended fits are
+Closed fitted versions196=117CUDA+79CPU, including one budget-invalid checkpoint,
+not196architectures/qualified fits or current activity. New intended fits are
 not counted. No qualified alpha; broker fees/settledcash/net remain unknown.
 No operator-only decision is currently required. Detailed history stays in Git
 and immutable source roots, not duplicated as a second backlog.

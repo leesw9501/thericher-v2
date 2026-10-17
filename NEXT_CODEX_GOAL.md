@@ -87,18 +87,25 @@ policy/integration/Git; disjoint roles continue without routine permission waits
 - Strategy/Harvey: jointgate ONECPUfit/42cells independently checked; original
   primaryFAIL versus fixedmean3/all3singles; raw_rule comparisonsTRUE. Explicit
   localstock s+3 mapping verified, extra uniform-growth predicateTRUE/nonbinding
-  deviation retained. Attention unused/fullmass everydate. Ledger190=114CUDA+
+  deviation retained. Attention unused/fullmass everydate. Earlierledger190=114CUDA+
   76CPU incloldinvalid, not190architectures. No rerun/oldregrade/newbasefit.
   CanonicalBar cross-regime rule/HGB14/raw-plus14MLP protocol PREP complete;
   Engine canonical/native SYN/worker READY20cases/HGB1+CPUMLP1SYN, no marketfit.
   Per-stock379/SPY/>=5 cohort clarification Parentfrozen before actual intake.
   Corrected2.7CUDA checkpoint proof PASS9updates31forwards/6saves2restores;
-  oldfailed1update3forward unchanged. GPU released, no market fits. New actual
-  six-fit worker SOURCE prep only; terminal/source/geometry/caps before dispatch.
-  Actual historical coverage must precede final numerical contract.
-- Validation/Planck: Friday sourceR1/cost/clock/criteria independently verified,
-  no native modelcalls/restore/GPU. Next quiet-runtime source/mock review only;
-  no Task/broker/credentials or authorization role.
+  oldfailed1update3forward unchanged. Subsequent actual longdaily6fit family
+  COMPLETE3CUDA+3CPU/45KNOWNcells/0retry0continuation. FROZEN-ACTUAL4b93d828,
+  same root current20-long-daily-cross-regime-development-20261017-v1.
+  HGB10bpsgrowth5.505/4.803/3.926percent exceeds rule/uniform3/3, but DD worse
+  than uniform3/3, originalprimaryFAIL. MLP21epochs each/selected1, not proof
+  of convergence. Fourleasesreleased/currentledger196=117CUDA+79CPU incloldinvalid.
+  Never repeat completed fits. New fixedrankblend+ONEdepth2gate executes on
+  f1/f2OOS TRAIN/f3adaptiveDEV only,36cells/900owned3600end/CPU2RAM4/GPU0.
+  Meitner prepares new GRU252x5+14 SOURCE worker, no numerical allocation yet;
+  Herschel prepares conservative epoch-reservation/crash tests/I/O measurement.
+- Validation/Planck: independent retained longdaily source/45cell CPU review,
+  no native modelcalls/restore/GPU. Exact baseline hashes reused, no oldrefit,
+  Task/broker/credentials or authorization role.
 - Infra COMPLETE: new quiet06:50KST Tue-Sat Task ENABLED/Ready, firstOct20.
   ExactR3 currentXML/hash readback and247transition unchanged; no invocation.
   Earlier default-omission/ONE OS-only drift failures preserved, old931/900

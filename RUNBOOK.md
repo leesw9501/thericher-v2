@@ -175,6 +175,16 @@ Do not rerun retarget/install creators. Rollback only exact receipt/definition.
 
 ### Completed Native Chronos2 Adaptation
 
+COMPLETED longdaily research (separate from closed Chronos history):
+A/research/current20-long-daily-cross-regime-development-20261017-v1,
+campaign-binding5759de85/start11:27:29UTC/sourcef067/protocol28b3. FROZEN-ACTUAL
+4b93d828/HANDOFF-ACTUAL.json:6fits/45KNOWNcells/0retry0continuation/fourleases
+released. MLP21epochs each/selected1,HGBselected4/7/25. HGB growth beats both
+controls3/3 but DD fails3/3, not zero growth or broker PnL. Do NOT invoke the
+dispatcher/completedfit/checkpoint creators again. Planck independently checks
+retained45cells; no refit/forecast/native parity inferred. New rankfusion/gate
+and GRU preparations own separate exact contracts/roots, never reuse old clocks.
+
 A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1:
 READY.json/owner-handoff.json are immutable COMPLETE1CUDAfit/125updates,
 selected25/earlystop4/24forecastcalls408rows. Do NOT rerun freeze/host/GPU/

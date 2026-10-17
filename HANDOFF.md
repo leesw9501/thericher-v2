@@ -113,8 +113,8 @@ Original primary remains failed, no Paper adoption/alpha claim.141.271active/
 1200,505.927end/3600; containers/lease released. Fixedhalf same-gross
 diversification COMPLETE0fits/forwards/6knowncells; DDprimary alsoFAILS.
 Growth algebra is not new prediction evidence; no weight search/Paper switch.
-Cumulative190 fittedversions=114CUDA+76CPU including1budgetinvalid oldTCN,
-not190architectures or qualified alpha. Jointgate'sONECPUfit independently
+Before the new six-fit family, cumulative190=114CUDA+76CPU including1oldinvalid
+TCN; current count196 below. Neither is an architecture/alpha count. Jointgate'sONECPUfit independently
 checked:42cells/10458NAVpoints/max5.11e-15, original primaryFAIL; gate loses to
 fixedmean3/all3singles, not raw_rule. s+3 key mapping proven, extra uniformgrowth
 predicate TRUE/nonbinding/deviation retained. Do NOT repeat completed fits.
@@ -188,8 +188,8 @@ COMPLETE9updates31forwards/6saves2restores, exact full RNG/AdamW/scheduler/
 continuation curves/best predictions;20.07active240/418.54end1800. Container/
 lease released, peakreserved92MiB. Oldfailed1update3forwards/0checkpoint stays:
 diagnostic hashing rejected legitimate scheduler infinity, not GPU failure.
-No market fits/retries/old regrade. Next actual six-fit worker SOURCE prep;
-source/geometry/caps still need exact longdaily terminal binding. Source-only
+No market fits/retries/old regrade in that native proof. The subsequent six-fit
+market campaign is now complete as recorded below. Source-only
 calendar view5230sessions/0..5229 preserves all UTC times from pinnedData map,
 not Gregorian-date ordinals or compressed eligible rows. Parent-source-admission
 in current20-long-daily-cross-regime-input-20261017-v1 admits conditionalV1 only.
@@ -199,8 +199,8 @@ XLK611-session native mode1 continuity diagnostic found no large splitlike
 jump; this supported only the NEW conditional study above. Old exact-factor
 split witness remains failed, unknown formula/TR/PIT unchanged. Covariance
 source/solver failures stay closed/unready. Strategy's canonicalBar cross-regime
-proposal is source-only: rule/HGB14/raw-plus14MLP, dates/eligibility unknown
-until actual Data. Engine prepares native SYN/worker, no new market fits yet.
+proposal was rule/HGB14/raw-plus14MLP; actual source/geometry and six fits are
+now frozen below. Its earlier source-only state is not a current queue.
 Cboe AI-use rights unresolved: excluded, not a paid commitment/company hold.
 Capture-session independent review found malformed-JSON escaped-secret P2;
 minimal repair refuses uninspectable bodies, keeps pending/debits, and fixed
@@ -239,6 +239,25 @@ verification authority. Never rerun completed creators from a historical queue.
 Parent owns shared docs/Git/integration. Current role work is described above;
 Lovelace/Kuhn/Schrodinger/Curie/Poincare projections in older revisions are
 retired, not current owners. Recheck actual processes/leases after interruption.
+
+COMPLETE longdaily numerical campaign:
+A/research/current20-long-daily-cross-regime-development-20261017-v1.
+Parent binding5759de85/start11:27:29UTC, sourcef067/protocol28b3/sourceDataV1b7fd;
+6marketfits/6attempts/0retry/0continuation/45KNOWNcells. MLP21epochs each/
+selected1; HGB24/27/45iterations/selected4/7/25, all INNERpatience20, not
+convergence. HGB10bps growth5.505/4.803/3.926percent, uniform3.435/2.044/2.084;
+HGB DD0.733/3.487/2.404 versus uniform0.542/3.434/1.049. PrimaryFAIL3/3 on DD.
+These positive normalized replay returns are conditional historical development,
+not broker PnL/alpha/Paper promotion. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json;
+upperactive966.11/9000,end1075.33/21600. FourGPUleases released/no worker.
+GPU including SYN4218updates/8774forwards/72saves/5restores; peak388.1MiB
+allocated/408MiB reserved. Currentledger196=117CUDA+79CPU incloneoldinvalid.
+Planck independently reviews retained source/45cells, no refit/forecast.
+Harvey executes separately frozen fixedrankblend+ONEdepth2gate on prior OOS,
+f1/f2TRAIN/f3adaptiveDEV/36cells. Meitner prepares GRU252x5+14 SOURCE worker;
+Herschel prepares epoch-reservation/crash checks and quiescent I/O measurement.
+No GRU numerical allocation yet; completed six fits are never repeated.
+Latent forced-stop/auto-rm cleanup P2 did not trigger, fix only in NEW worker.
 
 Current capture code da5f425: source1355/50c535b3,345serial PASS, clean8 full
 18235pass22skip/18257collected/407.555JUnitsec/helperEXIT0; Ruff and three

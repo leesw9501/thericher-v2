@@ -7,6 +7,31 @@ Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
 ## Current Oct17 Parallel Continuation
 
+COMPLETE longdaily cross-regime campaign, started11:27:29UTC:
+A/research/current20-long-daily-cross-regime-development-20261017-v1,
+binding5759de85/sourcePREPf067/protocol28b3/DataV1b7fd. NativeCPU+GPU SYN PASS,
+3CUDA MLP+3CPU HGB/6attempts/0retry/0continuation/45KNOWN cells. MLP21epochs
+each/selected1; HGB24/27/45iterations/selected4/7/25, all INNERpatience20.
+Training loss fell while MLP INNER worsened; not convergence. At10bps HGB
+growth5.505/4.803/3.926percent versus uniform3.435/2.044/2.084; DD0.733/3.487/
+2.404 versus0.542/3.434/1.049percent. PrimaryFAIL in allfolds on DD, despite
+positive conditional growth. MLPgrowth3.414/3.386/4.278, DD0.615/3.654/1.804.
+Four leases released/no worker. GPU including SYN4218updates/8774forwards/
+72saves/5restores; peak388.1MiB allocated/408MiB reserved. Upperactive966.11/
+9000,end1075.33/21600. FROZEN-ACTUAL4b93d828/HANDOFF-ACTUAL.json; no rerun.
+Currentledger196=117CUDA+79CPU incloneoldinvalid, not architectures/alpha.
+Planck owns separate retained CPU/source/45cell validation, no native models.
+Historical adaptiveDEV/currentlisting/nonPIT/MODP1/units/TR/finality limits
+remain; normalized replay is not broker PnL or Paper promotion.
+
+Ready parallel: Harvey executes the predeclared fixedrankblend+ONEdepth2gate,
+f1/f2 chronological OOS TRAIN/f3adaptiveDEV,36cells/900owned3600end/CPU2RAM4.
+No base refit/forecast, no f3 tuning or individual-profitability prerequisite.
+Meitner prepares NEW GRU252x5+14/3fold SOURCE worker; Herschel prepares
+conservative epoch reservation/crash tests and quiescent I/O measurement.
+No GRU market allocation yet. SourceReview's latent forced-stop/auto-rm P2
+did not trigger; fix in NEW worker, never hotpatch/regrade the closed family.
+
 LATEST16:53KST after reboot: new Engine/Meitner audited72pins/115checks,
 latest24completed fitversions preserved,0fits/restores/forecasts/GPU compute.
 Ancestral188 is the cumulative ledger, not independently recounted by that audit.

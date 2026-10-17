@@ -33,10 +33,10 @@ One GPU allocation/no dummy work remains policy.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |No current allocation or numerical worker. Peer9CUDA and Chronos2 fine-tune3CUDA CLOSED/released; old forecasts/checkpoints immutable.|
-| Next GPU |Corrected2.7CUDA proof COMPLETE9updates31forwards/6saves2restores/exactcontinuationbest.20.07active240, peakreserved92MiB, lease/container released. Old1/3failed diagnostic retained. Actualsix-fit worker/source binding next, no market fits yet.|
-| CPU research |Longsource PREP20canonicalcases/HGB1+CPUMLP1SYN/58.86active600, zero marketfit. Per-stock>=5/SPY clarity frozen; no all17 global history gate.|
-| Data |Oct16full7800 acquired80GET1POST/0gaps; longdaily20 adapter/actual7200active14400end assignment, onecollector. Quietdaily runtime source/SYN byInfra, no installation yet.|
+| GPU |Longdaily6fits COMPLETE/4leasesreleased/no worker; FROZEN-ACTUAL4b93d828. No completedfit rerun.|
+| Next GPU |Meitner SOURCE-prepares GRU252x5+14,3futurefits/max128/INNERpat12/batch128/seed303. New CUDA native/checkpoint SYN and exact binding before allocation. Herschel prepares conservative epoch I/O and cleanup repair; no market job yet.|
+| CPU research |Harvey ONEdepth2gate+fixedrankblend on retained OOS; Planck independently checks closed45cells/source. Disjoint roots, no base refit/forecast.|
+| Data |Longdaily90819valid/1110GET1POST0retry independently raw-matched. Older23queriesEMPTY, no repeated probes. QuietTask enabled firstOct20 06:50KST; D1feed typed source/SYN ready, not runtime capture.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
@@ -58,11 +58,12 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
 
 ## Custody To Preserve
 
-- Closed fitted VERSIONS190(114CUDA/76CPU), including ONE budget-invalid depth
+- Closed fitted VERSIONS196(117CUDA/79CPU), including ONE budget-invalid depth
   TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
-  This is not190architectures, all qualified fits or currentGPU activity. New
-  native Chronos2 ONEfit is complete/independently checked, other intended fits
-  are not counted before actual completion.
+  This is not196architectures, all qualified fits or currentGPU activity.
+  Latest6fit longdaily family COMPLETE45KNOWNcells/primaryDDFAIL; native SYN is
+  excluded from market count. Independent retained review running separately.
+  Future gate/GRU intended fits are not counted before actual completion.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent
