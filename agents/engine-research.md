@@ -16,11 +16,34 @@ Oldfullgrid source requirement remains unmet; no imputation/source swap.
 Additive erratum clarifies a stale PREP sentence in its immutable FROZEN;
 does not change numerical results. Parent appointed NEW source-bound Chronos2
 300context/61horizon implementation/nativeSYN only, no market fit yet. Exact
-source/key-mask/control binding and native best-restore/loss-mask tests precede
-a separate one-fit numerical contract. NewSYN is not repeated daily training.
+source/key-mask/control binding and native best-restore/loss-mask tests PASS:
+25SYNoptimizersteps/4forecastbatches,42forwardattempts41complete,3.04GiB peak
+reservedVRAM; one pre-fit technical failure retained, exactretry passed.
+Both containers/leases released.75retainedchecks, Parent sealed-file hashes
+match. No market fit in PREP. Parent appointed NEW one-FT native study under
+proposedcontractad211f6b/sourcebindinge78d4ec5: max400steps/1attempt/0fitretry,
+INNER25/patience4/bestrestore, same384/204/204,1200active3600end/600fitwall.
+24newEVALcalls+1exacttechnicalretry,6newcells+12controls; original trustedbase,
+never SYNweights. NEW market study now COMPLETE/independently checked:
+125updates/patience4/selected25,24forecasts/408rows/6newcells12controls.
+Source/commonmask/causal tasks and retained replay PASS/max2.22e-16, no native
+prediction parity. Endpointerror primaryPASS, growth>base/Ridge120/uniform but
+DD<=uniformFAIL; economic primary remainsFAIL.141.271active/1200, containers/
+lease released. Ledger189=114CUDA+75CPU incloldinvalid. Claude REVISE scope:
+8dependentdays/2EVALclusters, reusedDEV/corpus/units/finality and forecast versus
+futureOPEN limits; not alpha/Paperinput. NewSYN is not repeated daily training.
 A/research/reboot-engine-recovery-20261017-v1/FROZEN.json
 A/research/current20-kis-missing-aware-price-window-development-20261017-v1/FROZEN.json
 A/research/native-kis-chronos2-intraday-implementation-20261017-v1
+A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1
+A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1/independent-review/RESULT-actual-r1.json
+
+Ready parallel: fixedhalf FT/uniform versus matchedRidge/uniform diversification,
+0fits/forwards/6newcells; samegross pathwiseDD, algebraic growth not new signal.
+Next-session Oct16 protocol PREP before any newsource acquisition: retrospective
+later-day check of frozenFT/base/Ridge, never prospective/untouched/PIT proof.
+Harvey implements one fixed50 Ridge/peer-attention/LambdaRank composition,
+f1/f2 mature OOS metaTRAIN/f3 adaptiveDEV, one depth2 tree/no newbasefits.
 
 Closed results below are not instructions to repeat fits.
 Peer-context9CUDAfits/382epochs/3788updates COMPLETE; independent9CPUrestores/

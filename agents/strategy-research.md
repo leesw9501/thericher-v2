@@ -8,13 +8,17 @@ History remains in Parent Git27dface and immutable external roots.
 
 ## Current Consumers
 
-Oct17 reboot continuation: Harvey owns NEW fixed50 multi-expert composition
-metadata/source preparation,240active1800end/0fits/0EVAL-array decode. Consumer:
-one fixed-blend plus shallow chronological OOS gate experiment, ONLY if source,
-rowkeys, payoff/cost and OOS INNER/OOF availability actually align. Select2-4
-distinct mechanisms by architecture, never seen EVAL ranking. Otherwise give
-the exact minimal prerequisite/rejection, not a reading-list queue or Paper gate.
+Oct17 reboot continuation: metadata proposal COMPLETE0fits/0arraydecode;
+its240active cap overrun remains, not numerical evidence or refunded spend.
+Architecture-selected Ridge+peer-attention+LambdaRank can use mature f1/f2 OOS
+exports, not selected-checkpoint INNER predictions. Parent appointed Harvey as
+disjoint CPU Engine executor under NEW900active3600end/2CPU4GiB/GPU0 contract:
+fixedmean3 plus one depth2/minleaf94/seed303 payoff gate, f1/f2TRAIN/f3adaptiveDEV,
+42cost-policy cells/onefitattempt0retry/no newbasefit/forward/forecast. Exact
+source/key/price/OOS lineage and native SYN first, otherwise stop unsupported.
+No individual-profitability prerequisite/Paper gate or seen-EVAL winner choice.
 A/strategy-research/fixed50-joint-expert-composition-preparation-20261017-v1
+A/research/fixed50-joint-expert-gate-development-20261017-v1
 Old XLK interaction is COMPLETE3CPUfits/primary0fold/rejected; Cboe excluded.
 Covariance source/one solver alternative remain closed UNREADY,0marketfits;
 old certificate-diagnosis source lacks completion, never infer a numerical pass.

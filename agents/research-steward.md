@@ -11,9 +11,14 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 LATEST16:53KST after reboot: native3Ridge also COMPLETE, never repeat. Cumulative
 ledger188=113CUDA+75CPU incloldinvalid; new audit checks latest24fitversions/
 72pins, not an independent full ancestral recount. Meitner owns one NEW native
-Chronos2 implementation/SYN package. No actual GPU allocation is inferred from
-preparation; source/key-mask/control binding, exact native300/61/loss-mask/
-restore SYN and fresh measured lease admission come first.
+Chronos2 implementation/SYN package completed25optimizersteps/4forecastbatches,
+3.04GiB peakreserved, native300/61/loss-mask/bestrestore PASS; pre-fit failure
+and exact technical retry retained, both containers/leases released. Parent
+appointed separate oneFT/max400steps/1200active3600end, now COMPLETE125updates/
+selected25/24forecasts408rows, independent retainedCPU PASS. One actualfit adds
+to ledger189=114CUDA+75CPU incloldinvalid; SYN is not counted. GPUlease released.
+EndpointPASS/economicDDFAIL, no Paper adoption. New fixedhalf risk study is0fit/
+GPU0; Oct16later-session protocol PREP is0GPU/no acquisition yet.
 
 Peer9CUDAfits/382epochs and LightGBM6CPUfits COMPLETE; independent
 checks pass. Chronos2 native domain-adaptation3CUDAfits/800steps COMPLETE,
@@ -26,9 +31,9 @@ One GPU allocation/no dummy work remains policy.
 | Resource | Actual owner / scope |
 | --- | --- |
 | GPU |No current allocation or numerical worker. Peer9CUDA and Chronos2 fine-tune3CUDA CLOSED/released; old forecasts/checkpoints immutable.|
-| Next GPU |Meitner source-bound native Chronos2 300/61 SYN first;<=50SYNsteps/8forecastbatches,0marketfits. One lease after actual admission, not dummy load.|
+| Next GPU |No ready frozen allocation. Meitner prepares later-dayOct16 frozen-model evaluation protocol before Datawire; later forecast-only allocation after actual source/contract readiness, not dummy load.|
 | CPU research |Native3fits closed. Covariance implementations unready, no market run. Existing numerical results/caps immutable.|
-| Data |Old multi-visit recovery closed NOT_READY/budget-invalid; Ptolemy NEW single-visit source/SYN+bounded timeout diagnosis,0API/install. Old data unchanged.|
+| Data |Single-visit sourceREADY16pins/23nativePASS; no install. Separate Oct16 offhours capture PREP, no wire until later-day protocol frozen. Old failedmultivisit unchanged.|
 | Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
 | Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
@@ -50,10 +55,11 @@ own native full-kernel SYN/frozen contract, no company-wide approval wait.
 
 ## Custody To Preserve
 
-- Closed fitted VERSIONS188(113CUDA/75CPU), including ONE budget-invalid depth
+- Closed fitted VERSIONS189(114CUDA/75CPU), including ONE budget-invalid depth
   TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
-  This is not188architectures, all qualified fits or currentGPU activity. New
-  intended Chronos2 market fit is not counted before actual completion.
+  This is not189architectures, all qualified fits or currentGPU activity. New
+  native Chronos2 ONEfit is complete/independently checked, other intended fits
+  are not counted before actual completion.
   Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
   reuse and each original closed active/end debit remain immutable.
 - NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent

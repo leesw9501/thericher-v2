@@ -2,7 +2,8 @@
 
 Current: Oct17 after07:39:51UTC actual reboot. Capture code pushed da5f425.
 Old agents are gone, new role agents own scoped recovery. NativeKIS3Ridge also
-COMPLETE; closedversions188, not active training. Capture-session integration
+COMPLETE; newnativeFT also complete, closedversions189, not active training.
+Capture-session integration
 verified fresh clean8; no old failed/partial/unclean authority reuse.
 ONE company outcome: current-nas-owned-model-paper-cycle-v1.
 Parent owns direction, shared documents, integration and Git. A is
@@ -13,11 +14,11 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 | Owner | Evidenced State | Next Action |
 | --- | --- | --- |
 | Parent | Capture P2 fixed;12independentnegative/345serial/18235full22skip/clean8helper0/Ruff3Compose PASS. Loopback web restored/health200. | Integrate and commit/push source1355/50c535b3. Old failed attempts not authority. |
-| Execution/Planck | Exact Goal83 initial no_intent/entry_window_elapsed; Oct16index4 mark/readback_complete/cohort no_owned_intent.15checks PASS. Old recursive CLI retired. | Short challenge/bounded usage handoff; no broker/Task/service invocation. Interrupted PID/reboot cause unknown. |
+| Validation/Planck | Goal83 recovery/Claude supported_with_limits closed; nativeFT independent source/408scores/18cells PASS/max2.22e-16. | Independent8negative native single-visit wrapper check; no API/Task/credential/GPU. |
 | Strategy | Original covariance implementation and one solver alternative closed UNREADY on frozen KKT; no market experiment. | Engine recovery reviews source-only certificate diagnosis, not repeated solver tuning or old regrade. |
-| Data/Ptolemy | Multi-visit recovery CLOSED_NOT_READY: empty freeze/timeouts110/40sec/929.47inclusive>240active;0API/install. Old data immutable. | NEW single-visit source/SYN with bounded firstcause trace/C NVMe scratch; no day-index/cold-reauth platform, no wire/install. |
-| Engine/Meitner | 72pins/115checks preserve latest24fitversions; total188ledger incloldinvalid, not a full ancestral recount. | NEW native Chronos2 300/61 source+SYN <=50steps/8batches/0marketfits, one measured GPU lease when ready; no completed fit rerun. |
-| Strategy/Harvey | NEW fixed50 distinct-expert composition metadata intake, no EVAL arrays/fits. | Establish aligned source/rowkeys/payoff and chronological OOS INNER availability; one executable blend/shallow-gate proposal or precise rejection. |
+| Data/Ptolemy | Single-visit SOURCE_READY16files/23nativePASS19.44s,0API/install; oldmulti-visit invalid preserved. | PREP separate offhoursOct16fullsession, wire only after frozenlater-day protocol. No expiredjob/fakeclock; native102GET1POSTcap. |
+| Engine/Meitner | Chronos2 FT125updates/selected25/408forecasts independentlyPASS; growth better/DD failsoriginalprimary, GPUreleased. | 0fit fixedhalf risk-composition; then freeze Oct16retrospective nextday protocol before Datawire, no Paper/alpha promotion. |
+| Strategy/Harvey | Concrete3-expert proposal from retained OOS; metadata overcap preserved, not numerical evidence. | NEW CPU Engine executor: fixedmean3 plus one depth2 gate/f1f2OOF/f3DEV/42cells, no newbasefits/forwards. |
 | Model Paper | Same Task/image87697f8e, eight retained FULLfill links. Bound hold is zeroAPI, not fresh custody. | Original four-minute slots; owned exit from Oct21 USOPEN. No identical schedule-contraction retry. |
 | Nightly Paper | Image30433095 natural00:52KST complete/exact_cycle_complete; retained1FULLSELL/all28terminal/noreservedBUY. | Existing Monday23:50KST opportunity; no new technical continuation or basis reset. |
 | Accounting83 | Exact Oct16 r6 readback_complete/cohort no_owned_intent, not globalflat. Initial close/recovery no_intent/entry_window_elapsed. | Consumed slots/no future due, no replay. Oldindex2 unknown remains. |

@@ -124,7 +124,9 @@ Daily fixed20 multi-visit accumulation recovery is CLOSED_NOT_READY, not install
 A/data/current20-minute-accumulation-worker-20261017-v1.
 Its reboot-recovery-20261017-v1 has empty dependency freeze, native QA timeouts
 110/40sec and inclusive929.47>240active, no deploy authority. New single-visit
-source/SYN package: A/data/current20-single-visit-accumulation-20261017-v1.
+source/SYN package: A/data/current20-single-visit-accumulation-20261017-v1,
+now READY16byte-matchedfiles/23nativePASS19.441worker seconds. Read exact
+SEALED-HANDOFF.json/API.json/PARENT-INTEGRATION.md; no deployment CLI exists.
 One finite session/day100normalGET+2retry/1POST; no visit-index/cold-reauth
 framework, preserve accepted refs/unknown day and old failures. No API/install
 before actual native wrapper QA/deployment. Test scratch C, real data M.
@@ -132,6 +134,26 @@ One proposed separate06:50KST Tue-Sat completed-session worker avoids widening
 the immutable existing twoETF06:20Task/schema. No source-only plan proves a
 running collector or downloaded day. Parent reviews/freeze/deploys separately;
 current model and nightly strategies stay on their existing frozen releases.
+
+Separately named offhours Oct16completed-session acquisition is PREP only:
+A/data/current20-native-oct16-completed-session-20261017-v1. It is NOT an
+expired06:50job invocation or fakeclock. Wire requires its frozen loader/owner/
+query scope and exact later-day model-evaluation protocol before acquisition.
+Never rerun source creators or adopt/reset old namespace state to collect.
+
+### Completed Native Chronos2 Adaptation
+
+A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1:
+READY.json/owner-handoff.json are immutable COMPLETE1CUDAfit/125updates,
+selected25/earlystop4/24forecastcalls408rows. Do NOT rerun freeze/host/GPU/
+intake/close creators or old completed fits. GPUlease released. Independent
+retainedCPU result at independent-review/RESULT-actual-r1.json verifies exact
+source/masks/causal tasks/408scores/18cells, maxNAV error2.22e-16. No native
+prediction-parity/tensor-restore claim. Endpoint/growth improve but original
+economic DDprimary FAILS; never regrade it or auto-adopt as Paper input.
+Safe weights remain D:, no trained/checkpoint/model bytes belong in Git.
+New fixedhalf samegross risk study has0fits/forwards; later Oct16 check is
+retrospective, not prospective/PIT/proven untouched data or independent alpha.
 
 ### Bounded Public Execution Recovery
 

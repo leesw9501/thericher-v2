@@ -81,7 +81,7 @@ A/execution/current-nas-fresh-valuation-diagnostic-runtime-20261016-v1
 
 ## Research / Data Ready
 
-LATEST Oct17 16:50KST after actual07:39:51UTC Windows reboot. Previous LLM
+LATEST Oct17 after actual07:39:51UTC Windows reboot. Previous LLM
 agents are gone; new Data/Engine/Execution recovery agents inspect durable
 artifacts, not repeat completed fits. Parent owns tracked changes/Git. Existing
 loopback web container restarted,127.0.0.1:8787/health HTTP200; no broker call or
@@ -103,8 +103,17 @@ NEW missing-aware nativeKIS Ridge30/120/300 COMPLETE3CPUfits/3attempts/0retry,
 384FIT/204INNER/204EVALrows,18knowncells; fixed120/10bps primaryfalse on all
 three comparisons.14SYN checks/native checkpoint restore PASS.24.390active/
 493.571end within300/1800; no GPU/API/Paper change or old completed fit rerun.
-Cumulative188 fittedversions=113CUDA+75CPU including1budgetinvalid oldTCN,
-not188architectures or qualified alpha. Do NOT repeat these completed fits.
+NEW native Chronos2 300/61 adaptation COMPLETE1CUDAfit/125updates, earlystop
+patience4/selected25 restored exactly;24forecastcalls/408rows/0retry,6newcells
+and12retainedcontrols known. Independent retainedCPU recomputes source/common
+mask/causal tasks/408scores/all18cells PASS, maxNAV error2.22e-16; no native
+prediction parity/tensor-restore claim. Endpointerror improves versus base;
+growth beats base/Ridge120/uniform, but original10bps DD<=uniform FAILS.
+Original primary remains failed, no Paper adoption/alpha claim.141.271active/
+1200,505.927end/3600; containers/lease released. Next fixedhalf same-gross
+diversification uses0fits/forwards; growth algebra is not new prediction evidence.
+Cumulative189 fittedversions=114CUDA+75CPU including1budgetinvalid oldTCN,
+not189architectures or qualified alpha. Do NOT repeat these completed fits.
 Old full-grid nativeKIS preparation remains unbound; the NEW missing-aware
 study preserves the same dates/kernel/splits/criterion with past-only masks.
 Eight-session source CLOSED_PARTIAL300GET/1POST/0retry+380cachedpages:
@@ -117,10 +126,19 @@ imputation. Only2EVALsession clusters, assumed clock/unit/PIT limits remain.
 Data multi-visit accumulation recovery CLOSED_NOT_READY: empty dependency
 freeze and native-suite timeouts110/40seconds, inclusive929.47 exceeds its240
 active cap. No deployment/API/credentials; never reuse its WIP as authority.
-New separately bounded single-visit source/SYN package removes the day-index/
-cold-reauth framework, preserves old failures/debits and diagnoses timeout first.
+New single-visit source/SYN package READY:16byte-matched dependency files,
+23nativecases PASS/19.441worker seconds, no actual API/install. Old timeout
+whole cause UNKNOWN; small new trace observes stateIO/fsync and paired probe
+C1.7ms/D30.1ms median, supports C scratch rather than a claimed full diagnosis.
+It removes the day-index/cold-reauth framework and preserves old failures/debits.
 One finite day scope100normalGET+2retry/1POST; partial/unknown day stays scoped,
 not auto-reset/replayed. Test scratch moves to isolated C NVMe, real data stays M.
+Next Data package PREP is separately named offhours Oct16 completed-session
+capture, not invocation/time-reset of expired06:50job. No wire until exact
+later-day evaluation protocol is frozen. Friday is a retrospective diagnostic,
+not prospective/PIT or proven untouched source. Strategy separately implements
+one3-expert fixedblend/depth2 gate using mature f1/f2 OOS and f3 adaptiveDEV;
+no newbasefits/forecasts, no individual-profitability prerequisite.
 Current KIS/FirstRate overlap confirms discrepancies, NOT oldABI readiness.
 XLK611-session native mode1 continuity diagnostic found no large splitlike
 jump; this supported only the NEW conditional study above. Old exact-factor
@@ -146,6 +164,9 @@ A/data/current20-native-five-gap-source-repair-20261017-v1/handoff.json
 A/verification/data-capture-session-20261017-v1/retry-r3
 A/data/current20-minute-accumulation-worker-20261017-v1/reboot-recovery-20261017-v1/SEALED-HANDOFF.json
 A/data/current20-single-visit-accumulation-20261017-v1
+A/research/native-kis-chronos2-intraday-adaptation-development-20261017-v1/independent-review/RESULT-actual-r1.json
+A/research/native-kis-fixed-half-diversification-development-20261017-v1
+A/strategy-research/fixed50-joint-expert-composition-preparation-20261017-v1/HANDOFF.md
 A/research/fixed50-native-xlk-interaction-development-20261017-v1/owner-handoff.json
 A/research/fixed50-chronos2-domain-adaptation-development-20261017-v1/independent-review/FROZEN.json
 

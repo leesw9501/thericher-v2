@@ -80,23 +80,32 @@ session code; finish fixed20 daily accumulation source work; integrate bounded
 Goal83 outcome recovery; prepare one informative native Chronos2 experiment, without
 repeating completed daily fine-tunes. These do not replace the unfinished goal.
 Cboe AI-use rights unresolved means exclude source, not buy or stop company.
-Closed fitversions188 inclone oldinvalid, not188architectures or activejobs.
+Closed fitversions189 inclone oldinvalid, not189architectures or activejobs.
+NEW nativeChronos2 FT125updates/selected25/408forecasts, independent retained
+CPU/source/18cells PASS; endpoint improves/growth beats controls but DD fails
+original primary. GPUreleased, no Paper adoption/nativeforecastparity claim.
 
 - Data: native8source62395RTH and exact5gap repair10GET/1POST/0repairs CLOSED;
   no more same-gap queries. Multi-visit worker PREP closed NOT_READY/emptyfreeze/
-  timeout/budget-invalid, never deploy. NEW single-visit source/SYN simplification
-  diagnoses timeout first and removes day-index/cold-reauth framework. One finite
+  timeout/budget-invalid, never deploy. NEW single-visit source/SYN READY16files/
+  23nativePASS19.44s removes day-index/cold-reauth framework. One finite
   daily100normalGET+2retry/1POST; preserve partial/unknown day. Do not widen old2ETF.
   No wire/install until scoped source/owner/calendar checks and Parent deployment.
-- Engine: verify completed188fit custody and recover native Chronos2 PREP.
+- Data next: separately frozen offhoursOct16completed-session capture, not expired
+  postclose-job invocation/fakeclock. Wire only after frozen later-day protocol;
+  preserve oldsource/models. Expected7800RTH or honestpartial, noPIT promotion.
+- Engine: preserve completed189fit custody. Native Chronos2 study complete above;
+  fixedhalf samegross risk-composition0fits, then Oct16retrospective evaluation
+  protocol before Datawire. Not prospective/untouched/independent alpha.
   Source62395 is valid only under its separately named missing-aware contract;
   old fullgrid consumer remains unmet. No source swap, imputation, adaptive
   sensitivity winner selection or reopened old clocks. No GPU work merely for
   utilization. Covariance solver failures remain closed/unready; source-only
   certificate diagnosis is not a market-performance pass.
-- Strategy: NEW fixed50 multi-expert composition metadata intake only; freeze
-  compatible keys/payoff/source and chronological OOS INNER availability before
-  any learned fusion. No fit/EVAL array decode or seen-outcome winner selection.
+- Strategy/CPU Engine executor: one fixed50 Ridge/peer-attention/LambdaRank gate
+  study; frozen f1/f2 mature OOS metaTRAIN/f3adaptiveDEV, fixedmean3/depth2/42cells,
+  no newbasefits/forwards or seen-outcome winner selection. Oldmetadata overcap
+  unchanged; new numerical contract900active3600end with nativeSYN/admission.
 - Execution: bounded exact Oct16/index4 Goal83 public outcome recovered with
   15checks. Receipt discovery uses aware UTC, not PowerShell local-cast ticks.
   Never rerun obsolete recursive argparse CLI. New reader retains exact pins/

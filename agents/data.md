@@ -5,8 +5,10 @@
 LATEST after16:39KST reboot: multi-visit recovery CLOSED_NOT_READY, empty
 dependency freeze/native-suite timeouts110/40sec/inclusive929.47>240active.
 No API/credentials/install. Preserve old WIP/caps/failures, not authority.
-Ptolemy now owns NEW single-visit source/SYN simplification with timeout
-first-cause trace,1200active7200end, <=24newcases and2bounded20secdiagnostics.
+NEW single-visit source/SYN READY16byte-matchedfiles/23nativePASS19.441worker
+seconds, conservative929.846inclusive/1200, no API/install. Two diagnostics
+observed native stateIO/fsync and C1.7ms/D30.1ms median in smallpairedprobe;
+old whole-suite timeoutcause staysUNKNOWN. Independent native negatives pending.
 ONE finite session/day100normalGET+2retry/1POST, no day-index/cold-reauth
 framework; accepted refs/unknown stay, next day independent. Native SYN scratch
 isolated C NVMe; market data stays D. Parent capture-session source
@@ -14,6 +16,12 @@ isolated C NVMe; market data stays D. Parent capture-session source
 No old failed/unknown day is erased or reopened. Complete day means zeroHTTP.
 A/data/current20-minute-accumulation-worker-20261017-v1/reboot-recovery-20261017-v1
 A/data/current20-single-visit-accumulation-20261017-v1
+Ptolemy next owns separate offhoursOct16completedRTH capture PREP:
+A/data/current20-native-oct16-completed-session-20261017-v1.
+100normalGET+2exactretry/1POST/oneclient,1800active7200end. No wire until exact
+later-day frozen-model evaluation protocol/Claude are retained. No expired
+06:50job invocation/fakeclock or oldsource adoption; new actual capturetime.
+Expected7800RTH or honestpartial, no imputation/PIT/finality promotion.
 
 Closed sources: old2000/2010/2020anchors6GET nativeempty; newrecent8GET found
 480rows atOct1/Oct8 forQQQ/SPY, Jan6/Sep1empty. No globalfloor/date inferred.
