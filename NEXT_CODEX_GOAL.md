@@ -93,11 +93,16 @@ PASS440pins. Seed robustness6CUDAfits COMPLETE/108KNOWNcells/9initialforecasts/
 CPU PASS1296producerpins/569upstream/108cells/45exactcontrols. Ledger209=129CUDA+
 80CPU was the seed-study snapshot. TemporalTransformer3CUDAfits COMPLETE/
 63cells/primaryFAIL3/3; independentPASS411pins/46checkpoints/54exactcontrols.
-Current212=132CUDA+80CPU incloldinvalid, all training leases released.
-Meitner next SPY-relative-target6fit source/native prep under new1800active/
-7200elapsed, no old fit/forward or Paper switch; intended fits not counted.
-Ptolemy prepares a strict new-profile outcome reader with invented inputs only;
-not a new Paper gate or current broker/private observation.
+Transformer snapshot212=132CUDA+80CPU. SPY-relative-target then COMPLETE6fits
+(3CUDA+3CPU)/81KNOWNcells/all3policyprimariesFAIL; independentPASS542pins/
+45exactcontrols/max6.66e-16. Current218=135CUDA+83CPU incloldinvalid, all leases
+released, no old fit/forward or Paper switch. No ready frozen training campaign.
+Strict new-profile outcome reader SOURCE/SYN READY6groups/invented inputs only;
+independent public-only Linux3.12 image378 smoke/review PASS480source/five-target
+JSON/modelimports0. Private-phase Linux/actual private result NOT tested; no
+Paper gate. Use its exact future selected-run/quiescence/RO recipe, never infer
+new fills from cumulative history. Independent seal:
+A/execution/current20-ensemble-paper-outcome-reader-20261018-v1/independent-review/REVIEW-SEAL.json.
 Next-source frozenexpert inference prep COMPLETE9checks/GPU0,
 SOURCE/SYN only, not a fresh forecast. Do not repeat completed fits or oldshadow
 forecasts. New research results cannot change this frozen Paper policy.

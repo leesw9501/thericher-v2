@@ -43,14 +43,24 @@ before USNov17 15:10UTC, finite recovery throughNov20. Pending exact requests
 precede any new input; no replacement/reranking/foreign custody or new bank.
 Twenty fully held RTH sessions plus partial entry/exit, not research OPEN parity.
 Operational logging disabled: assumed-honest-host hash/time provenance is not
-cryptographic proof of OS scheduler origin. Ptolemy's new-profile outcome reader
-is SOURCE/SYN preparation only; use no recovery-capable observe() as a reader.
+cryptographic proof of OS scheduler origin. New-profile outcome reader has
+SOURCE/SYN plus public-only Linux compatibility proof, not actual private
+runtime evidence; use no recovery-capable observe() as a reader.
 
-Parallel CUDA research closed12newfits this continuation: quantile3/seed6/
-Transformer3, all checkpoints outside Git on D:. Transformer3 independent63cell
-review passes but frozen economic primary fails3/3, no automatic Paper switch.
-New SPY-relative-target preparation remains a separate finite research package,
-not completed training or permission to modify this frozen Paper candidate.
+Parallel research closed18newfits this continuation: quantile3/seed6/
+Transformer3/SPYrelative6,15CUDA+3CPU. All checkpoints outside Git on D:.
+Independent retained63cell Transformer and81cell relative-target reviews pass,
+but their frozen all-fold economic primaries fail. No automatic Paper switch
+or old refit/forecast. Cumulative218fitversions is not architecture/alpha count.
+Outcome reader SOURCE/SYN READY6groups at
+D:/thericher-v2/model-artifacts/execution/current20-ensemble-paper-outcome-reader-20261018-v1/READY.json.
+RECIPE.json there defines exact future-run/RO/quiescence command requirements;
+it is not an actual read or a command to invoke a broker/strategy/Task now.
+Independent ONE public-only Linux3.12 image378 smoke/review PASS480source/
+five-targetJSON/modelimports0. Private-phase Linux classification was NOT run;
+historical cumulative fills are not new-fill deltas, fees/settlement/netPnL
+remain unknown. Last integrated code12540a9 pushed. Independent evidence:
+D:/thericher-v2/model-artifacts/execution/current20-ensemble-paper-outcome-reader-20261018-v1/independent-review/REVIEW-SEAL.json.
 
 Reboot Oct17 16:39KST/07:39:51UTC: old LLM sessions are gone. Check actual
 process/lease/source identities, not old PIDs or stale stateboard projections.

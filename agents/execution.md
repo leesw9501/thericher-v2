@@ -13,7 +13,7 @@ Task thericher-kis-paper-current20-equalrank4-20261018 is actually Ready/Enabled
 input473a759d/semanticbb77d43f/contractf66/launchbindinge98bfda3. Parent declared exact
 f9 equalrank4 as provisionaloperational candidate, not certifiedalpha or old
 shadow promotion. Newfive*.005originalbasis<=.025 inside SAMEshared .10 bank,
-entryUSOct19only/proposedOct20 00:10KST/ownedexitUSNov17, Data/calendar READY2290e74b.
+entryUSOct19only/firstdueOct20 00:10KST/ownedexitUSNov17, Data/calendar READY2290e74b.
 21scheduledsource sessions mean20fullyheldRTH pluspartialentry/exit, not OPEN
 parity. Native no_intent accepted; no foreignownership/backups/
 reweight/unknownrequestsubstitution. ExistingNAS8exitOct21/nightly/Goal97 remain.
@@ -27,8 +27,15 @@ PARENT-CONTRACT.json holds exact source/identity/limits. Evidence:
 A/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/parent-deployed.json.
 A/infra/current20-ensemble-paper-schedule-20261018-v1/final-binding-r3/parent-idle-null-activation-1/installed.json.
 Assumed-honest-host provenance, not cryptographic OS origin; Operational logging
-disabled. Ptolemy now prepares a strict offline new-profile outcome reader,
-invented inputs only, not current private/broker observation or a Paper gate.
+disabled. Strict offline new-profile outcome reader COMPLETE6invented-input
+groups; independent public-only Linux3.12 smokePASS480nativepins/five-targetJSON/
+zero modelimports. Private-phase Linux classification/actual private runtime
+were NOT tested. Future exact selected-run request plus fresh quiescence and
+original private volume RO are still required; no current result/Paper gate.
+Cumulative historical fills are not a selected-run new-fill delta; fees/settled
+cash/netPnL stay unknown. Evidence/recipe:
+A/execution/current20-ensemble-paper-outcome-reader-20261018-v1/independent-review/REVIEW-SEAL.json.
+A/execution/current20-ensemble-paper-outcome-reader-20261018-v1/RECIPE.json.
 Exact one offline eligibility read now verifies selected5/foreignregistered
 overlap0/unregisteredeligible5/remainingcappositive/BUYreservationsabsent.
 Private bytes/membership unchanged/network0/writes0, strict native472source

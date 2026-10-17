@@ -20,11 +20,13 @@ ledger209=129CUDA+80CPU was the seed-study snapshot. TemporalTransformer now
 COMPLETE3CUDAfits,14/13/15epochs/selected2/1/3,359.99active3600/903.12elapsed10800;
 all leases released. IndependentPASS63cells/411pins/46checkpoints/54exactcontrols,
 primaryFAIL3/3, no Paper switch. Current ledger212=132CUDA+80CPU incloldinvalid,
-not architectures/qualified models. Next-source inference prep COMPLETE9checks/
-GPU0/source-SYN only, not future forecasts. Next named owner Meitner prepares
-NEW SPY-relative-target3MLP+3HGB under1800active7200elapsed/6starts0marketretry;
-label/maturity/scaler/native proof and caps precede any market fit. Intended six
-are NOT counted and appointment is not GPU activity. No completed fit repeats.
+not architectures/qualified models. SPY-relative-target then COMPLETE6fits
+(3CUDA+3CPU)/0retry/81KNOWNcells/all3policiesprimaryFAIL; independentPASS542pins/
+81cells/45exactcontrols/max6.66e-16. Active259.38/1800/end561.36/7200, allleases
+released. Current ledger218=135CUDA+83CPU incloldinvalid; no fitted version is
+repeated or automatically adopted by Paper. Next-source inference prep9checks/
+GPU0/source-SYN only remains ready for genuinely new input; no ready frozen GPU
+campaign remains. Do not manufacture activity or claim current utilization.
 
 Earlier closed16:53KST reboot state: native3Ridge COMPLETE, never repeat. Old
 ledger188=113CUDA+75CPU incloldinvalid; new audit checks latest24fitversions/
@@ -51,12 +53,12 @@ One GPU allocation/no dummy work remains policy.
 
 | Resource | Actual owner / scope |
 | --- | --- |
-| GPU |Transformer3fits COMPLETE14/13/15epochs/selected2/1/3,63KNOWNcells/originalprimaryFAIL3/3. FROZEN97b9eae1/healthycleanup/allleasesreleased; independentPASS.|
-| Next GPU |Meitner SPY-relative-target source/native proof preparation, new1800active7200elapsed. No market/GPU activity inferred; no dummy utilization or completedfitrepeat.|
+| GPU |None allocated. Transformer3 and subsequent SPY-relative3CUDAfits COMPLETE/independentPASS; original economic primaries unchanged/allleasesreleased.|
+| Next GPU |None currently allocated. SPY-relative-target3CUDA+3CPU complete/independentPASS; allleasesreleased, future fresh-input work does not authorize old refits.|
 | CPU research |NewONEdepth2gate COMPLETE36cells/primaryDDFAIL, independent retainedPASS68pins/15bitexactbaselines. No base refit/forecast.|
 | Data |Longdaily90819valid/1110GET1POST0retry independently raw-matched. Older23queriesEMPTY, no repeated probes. QuietTask enabled firstOct20 06:50KST; D1feed typed source/SYN ready, not runtime capture.|
-| Review |Parent source1355/50c535b3 verified345serial/18235full22skip/clean8helper0/Ruff3Compose. Capture P2 independently reproduced/fixed; no denied cleanup bypass.|
-| Paper precedence |22:40/23:50KST owned deployments unchanged. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
+| Review |Parent current1360/8bc287b6 fresh358serial/18296full22skip/clean8helper0/Ruff3Compose. New external reader public-only Linux proofPASS; no private result or denied cleanup bypass.|
+| Paper precedence |Existing22:40/23:50KST deployments unchanged; new fixedensemble firstOct20 00:10KST Ready. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
 
 Shadowbundlef9cbd3ee firstpublished13:28:52UTC Oct17, predictions4028adde/
 weights97c7f0f0,1marketattempt/3learnedforwards+rule. Firstlateaudit/metadata

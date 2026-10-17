@@ -60,14 +60,25 @@ HANDOFF-ACTUAL.json; FROZEN-ACTUAL97b9eae1/independentREVIEW-SEALdc6678a8.
 Current total212=132CUDA+80CPU incloldinvalid, not architecture count/alpha.
 No automatic replacement of frozen equalrank4 Paper.
 
-NEW Meitner appointed SPY-relative-target development at
-A/research/current20-spy-relative-target-development-20261018-v1. Same Main
-features/keys, stock21return minus same-interval SPY return in labels ONLY;
-new FIT-only label scale, no future feature/input. Finite3MLP+3HGB/6starts/
-0marketretry,1800active7200elapsed inclsource/SYN/replay; exact caps/native
-proof/label-availability checks precede market work. Three fixed new policies
-plus matched MeanBlend control,81declaredcells, no old fit/forward or Paper
-switch. Appointment is not numeric/GPU proof; add only actual completed fits.
+SPY-relative-target COMPLETE6fits/6starts/0retry (3CUDA MLP+3CPU HGB),81KNOWN
+cells=27new policies+9new MeanBlend control+45bitexactretained. Same Main
+features/scales/keys, stock21return minus same-interval SPY return in labels
+ONLY; new FIT-only label scale, no future feature. Same-date label ranking is
+mathematically unchanged; no isolated causality/hedge PnL/alpha claim.
+MLP21/21/22epochs/selected1/1/2; HGB20/26/41iterations/selected0/6/21.
+All three fixed policy all-fold primariesFAIL; matched passes onlyMLPf3 and
+blendf2, not a winner or Paper switch. ClaudeREVISE addressed maturity/scaler/
+selection-data/multiplicity limits. 259.38active1800/561.36elapsed7200; all
+leases released, no old model fit/forward. SYN included4322updates8983neural
+forwards68saves5restores; four HGB native fits include ONE invented SYN.
+Independent retainedPASS22219checks/542pins/81cells/45exactcontrols/68checkpoint
+commits/maxNAV6.66e-16, CPU2RAM4/GPU0/oneattempt/noretry. Source FROZENe1237ec2,
+independentREVIEW-SEAL3a4a55d1 in
+A/research/current20-spy-relative-target-development-20261018-v1.
+Current cumulative218=135CUDA+83CPU incloldinvalid, fitted versions not model
+architectures or qualified alpha. No ready frozen numerical campaign remains;
+do not repeat completed fits for occupancy. Paper and fresh capture continue
+through their already-owned schedules; future outcomes remain unobserved.
 
 COMPLETE longdaily cross-regime campaign, started11:27:29UTC:
 A/research/current20-long-daily-cross-regime-development-20261017-v1,

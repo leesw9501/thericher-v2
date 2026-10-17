@@ -1,8 +1,8 @@
 # Orchestration Stateboard (총괄 조정)
 
 Current: Oct18KST provisional ensemble Paper integration and parallel research.
-Prior capture code pushed da5f425; current HEADec0eb1d. Capture-session
-integration verified fresh clean8; its authority is HISTORICAL after the new
+Last integrated code pushed12540a9. Current1360source8bc287b6 has fresh clean8
+authority below; prior capture authority is historical, not reused for new
 tracked Execution edits. No failed/partial/unclean authority reuse.
 ONE company outcome: current-nas-owned-model-paper-cycle-v1.
 Parent owns direction, shared documents, integration and Git. A is
@@ -28,11 +28,16 @@ fresh358serial/full18318collection; no invented root cause.
 Quantile3fits independentlyPASS72cells/bothprimaryFAIL. Seed6fits independently
 PASS108cells/45oldcontrols, strongconditionNOT_ESTABLISHED. Transformer3fits
 independentlyPASS63cells/411pins/46checkpoints/54controls, primaryFAIL3/3. All
-leases released; cumulative212=132CUDA+80CPU incloldinvalid, not architectures.
-Ptolemy now prepares a strict new-profile outcome reader, SOURCE/SYN only/no
-actual private read. Meitner next SPY-relative-target6fit source/native prep,
-not numeric/GPU proof or intended fits counted. Herschel reviews narrow native
-absence/NULL recovery under its original finite budget. Other roles released.
+leases released. SPY-relative-target6fits COMPLETE3CUDA+3CPU/81KNOWNcells,
+independentPASS542pins/45exactcontrols; all3policyprimariesFAIL/no Paper switch.
+Cumulative218=135CUDA+83CPU incloldinvalid, not architectures. This continuation
+completed18newfitversions=15CUDA+3CPU; no ready frozen training campaign remains.
+Strict new-profile outcome reader COMPLETE6SOURCE/SYN groups; independent
+public-only Linux3.12 image378 proofPASS480source/five-targetJSON/modelimports0.
+No private-phase Linux/runtime read or actual new Paper result was established.
+A/execution/current20-ensemble-paper-outcome-reader-20261018-v1/independent-review/REVIEW-SEAL.json.
+Native absence5/NULL8 focused recovery reviews also complete; all package
+LLMs/resources released after final integration, not permanent workers.
 One writer per set, one GPU allocation, no completed fit/shadow repeats.
 
 ### Historical Oct17 Ownership Snapshot
@@ -54,6 +59,15 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+Oct18 02:30KST: actual newPaper Task Ready/firstOct20 00:10KST; all18newfits
+and their independent retained reviews finished. Reader6groups plus ONE scoped
+public-only Linux smoke complete without broker/private/model effects. Current
+ready training queue is empty, not a CUDA/permission fault. Reversible improvement:
+retain exact selected-run reader/recipe for the first natural result instead of
+repeating fits, private scans or full18k tests for external-only/document edits.
+Next-owned events remain new entry, freshD1 capture and oldNAS exit; no invented
+company closure, foreground sleep or new recurring report/LLM daemon.
 
 Oct18 01:55KST: Paper Task is actually Ready, not just source tests. Native
 named absence and unused idleNULL facts were measured, not permission holds:

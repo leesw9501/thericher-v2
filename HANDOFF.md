@@ -20,18 +20,18 @@ candidate: exact predeclared equalrank4(rule/HGB/MLP/GRU) from f9cbd3ee, not a
 seen-performance champion. Existing shadow remains measurement-only; NEW Paper
 consumer has its own identity/contract, no retroactive order/PnL claim.
 Parent contract: A/execution/current20-ensemble-paper-preparation-20261018-v1/
-PARENT-CONTRACT.json. Entry ONLY USOct19, proposedOct20 00:10KST; five desired
+PARENT-CONTRACT.json. Entry ONLY USOct19, firstdueOct20 00:10KST; five desired
 targets each<=.005 ORIGINALbasis,<=.025 together inside SAME shared .10 bank.
-Owned exit proposedUSNov17;21scheduled source sessions mean20fullyheld RTH
+Owned exit NOT beforeUSNov17;21scheduled source sessions mean20fullyheld RTH
 sessions pluspartialentry/exit because actual fills are intraday, not OPENparity.
 No reweight/backups/foreign custody/stale entry; native no_intent is valid.
 Old NAS8 entries/Oct21exit, nightly, Goal97 and all requests/basis remain.
 
 Source native profile/proposal FROZEN/432focusedPASS; independent native
 routing review8fakebrokerprobes/noP1/P2. Data/calendar binding READY2290e74b/
-6puregroups. Ptolemy owns actual newhost/worker/ownerprobe source and tests;
-Herschel owns finite31trigger quietTask preparation, not installation. Parent
-owns input creation/frozen release/build/inert proof/install/integration/Git.
+6puregroups. Ptolemy completed newhost/worker/ownerprobe source/tests; Herschel
+completed finite31trigger quietTask source/SYN preparation. Parent completed
+input creation/frozen release/build/inert proof/install/integration/Git.
 NEW candidate Task is actually Enabled/Ready; first owned opportunity
 Oct20 00:10KST (Oct19 15:10UTC). No new candidate submit or fill observed yet.
 Parallel quantile COMPLETE3CUDAfits/72KNOWNcells/bothprimaryFAIL, independent
@@ -43,8 +43,12 @@ Actual seed seal bef8b465; independent CPU PASS1296producerpins/569upstream/
 released. Transformer then completed3CUDAfits/63KNOWNcells; independentPASS
 411pins/46checkpoints/54exactcontrols/17931checks/max8.88e-16. Original primary
 FAILall3folds, no current Paper switch. Ledger212=132CUDA+80CPU incloldinvalid,
-not architectures/alpha. New SPY-relative-target6fit campaign is SOURCE prep,
-not yet counted; current model outputs are never refit/reforecast for it.
+was the Transformer snapshot, not architecture count/alpha. SPY-relative-target
+then COMPLETE6fits (3CUDA+3CPU)/81KNOWNcells/0retry; independentPASS542pins/
+22219checks/45exactcontrols/max6.66e-16. All three fixed policy all-fold
+primariesFAIL, no winner/Paper switch. Current cumulative218=135CUDA+83CPU
+incloldinvalid. All leases released, no old refits/forwards. New training this
+continuation:15CUDA+3CPU, not18different architectures or alpha certificates.
 Next-source inference prep COMPLETE9checks/GPU0, SOURCE/SYN only; no fresh
 market forecast or old f9 repeat. Source artifacts/caps do not expand Paper.
 One strict offline native eligibility check finds selected5/foreignregistered
@@ -72,8 +76,19 @@ A/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/parent-d
 Operational logging remains disabled; source/hash/time evidence assumes an
 honest host, not cryptographic proof of OS-scheduler origin. Physical pythonw
 console0 and hidden children are checked; actual scheduled execution is future.
-Ptolemy prepares a strict new-profile outcome reader with invented inputs only;
-it is not another Paper permission gate or current private/account observation.
+Strict new-profile outcome reader SOURCE/SYN READY6groups/noeffects. Independent
+public-only Linux3.12 image378 smoke/review PASS480source/five-targetJSON/no
+modelimports, one attempt/no retry. Private-phase Linux classification/actual
+private result were NOT tested. No Paper permission gate; exact future run and
+fresh named-owner quiescence remain necessary for a private RO projection.
+Historical cumulative fills are not a new-fill delta; fees/settlement/netPnL
+remain unknown. Independent seal77cfdc22, no package worker/GPU lease remains.
+Last integrated code12540a9 is pushed. Reader roots:
+A/execution/current20-ensemble-paper-outcome-reader-20261018-v1/READY.json.
+A/execution/current20-ensemble-paper-outcome-reader-20261018-v1/independent-review/REVIEW-SEAL.json.
+Additional pre-first-natural-effect Claude challenge was review_unavailable/
+AssertionError (categorical parser), not agreement or an authentication hold:
+A/review/current20-paper-final-deployment-20261018-v1/claude.json.
 Claude REVISE, categorical evidence at A/review/current20-ensemble-paper-and-
 quantile-20261018-v1/claude.json. Address named isolation/asof/risk concerns;
 review is not a new human approval or a prohibition on future measured PaperPnL.
