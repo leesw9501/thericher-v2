@@ -143,21 +143,36 @@ Data actuallyinstalled separatefinite21NEW8marks(firstOct20 08:00KST), old20
 feed immutable. Reader18cases/8groups+actual6packetreadbackPASS;21missingdays
 mean24riskyUNKNOWN/3analyticcashKNOWN, notzeroaccountprofit.
 Do not select arms fromFAIL/PASS/FAIL, rerun fits or presentonefuturewindowasalpha.
-Strategy TimesFM2.5 SOURCEfeasiblefdf4d0cb, raw8x379binding4bfde5bf READY.
-Currentcpu-forecast-r1 runnerprep/conditionaloneCPUbatch/oneinternalforward,
-no fit/GPU/oldpoints/download/runtimechange; actualpointnotyetverified.
+TimesFM2.5 ACTUAL oneCPUbatch/oneRootforward/onecoldload complete,8x21 point,
+zero fits/GPU/retries/oldpoints. FirstfinalwriteOct18 17:22:20.564931UTC,
+seal bfe2316a at current25-new8-foundation-future-benchmark-20261019-v1/
+cpu-forecast-r1/actual-map-index-r1/HANDOFF-ACTUAL.json. Source-bound executed
+5maskedpads+379observations/q50 checks; Parent publication-r2 independently
+checks nativecounts/sourcechain/all8scores+weights without reforecasting.
+Raw8x3794bfde5bf/trusteddated2025Oct1Apache2checkpoint/existingD6, no runtime
+change/download. Unknownpretraining/context scope and CLOSE-vs-OPEN remain.
+Actualfuture27cells24riskyUNKNOWN+3analyticcashKNOWN until21ownedmarks arrive.
+Old2/2sourcefailures0models unchanged; separate map-indexrepair reproduced
+present Docker formatter defect, not unavailable GPU or proven historical cause.
 
-Next GPU hypotheses SOURCE, no new training yet:
+Temporal appointment CLOSED before market, no trained new architecture:
 A/research/current25-temporal-expert-composition-development-20261019-v1.
-ExactlyTCNcausaldilatedRF>=252 andpatch-tokenTransformer2newexperts;
-ONEfixedmean-percentile-rank blend withretainedfull25GRUuniform. SameD1raw252x5+
-14/scalers/reference/splits/seed808/costs,108cells(27new81controls), fixed3NEW8
-comparisonsvsGRUuniform. Ownvariant/capacityconfound, notfaithfulPatchTSTclaim.
-900perfit/max128/INNERpat20/LR/bestrestore proposed; native25optimizer/fullstate
-SYN and final3600active10800end/2starts0marketretry beforelaterGPUallocation.
-Meitnerpurefusion/futureprep separatecurrent25-temporal-composition-future-
-preparation-20261019-v1: predeclare2new8points+fixedblend, noGRUreforward.
-Herschelindependent108reader prep, no model/native/economiccalls. One GPU only.
+TCN RF255/20673params and patch-tokenTransformer19041params+fixedrankblend
+SOURCE f7b487fd/c45d93a4, not actual108cells. Original SYN45s/SYN10 proof
+failed its time guard. Linked SYN10->5 change was not authorized equivalence:
+TCN2/2failed, PATCH passed changedSYN5 only,57SYNforwards/21updates/0marketfits.
+SYN-TAIL-DISPOSITION.json preserves original stacks/closed tuples; missing
+epoch3 reference is not proof of stochastic nondeterminism. No old caller,
+silent retry/cap refund/frozen guard reduction or completed proof replay.
+Parent's new separate Infrastructure SOURCE-only calibration:
+A/infra/current25-temporal-native-calibration-20261019-v1. Restore original
+SYN10/market60/factory/fixture/loss/fullstate/3epoch criteria, new180s children/
+1attempt each/zero retry/480owned900end inclusive SOURCE. No market authority
+or old qualification; Parent needs READY then exact dispatch, independent
+source audit and measured timing before freezing a different market campaign.
+Meitner purefusion/future3arm kernel a70578b8/14checks remains reusable source;
+Herschel108-reader19checks remains SOURCE only, never actual108 authority.
+One GPU only; ledger243 unchanged. Existing Paper work is independent.
 
 Native-throughput SYN ONLY PASS:44forwards16updates4exact fresh-object restores,
 peakallocated1.39GiB, outer57.03owned120. Pack32 eval41.50->3.07ms and proof

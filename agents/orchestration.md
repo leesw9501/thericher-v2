@@ -10,13 +10,13 @@ an append-only current board. MD/agent identity is not a running worker.
 
 | Owner | Actual State / Write Set | Next Action |
 | --- | --- | --- |
-| Engine/Chandrasekhar |243ancestral fits closed; new TCN+patchTransformer/fixed3rank composition SOURCE only.|Finalbounded2fit/nativeproof contract; no newtraininginferredyet.|
-| Engine/Meitner |NEW8sixpoints actualv2all48+16weights/hashchainPASS, originalv1failed0modelcalls kept;family2/2closed.|Purefusion/future3policy SOURCE disjointfromproducer; noGRU/old6pointreforward.|
-| Validation/Herschel |Full25 actualPASS150480checks/81NAV/42controls,sealdd885a57; NEW8reader18cases/8groups/current6publicationPASS.|Blind108cellretainedreader SOURCE prep; no actualnewmodels/weights/economics.|
+| Engine/Chandrasekhar |Temporal appointment CLOSED:57SYNforwards21updates/0marketfits, originalSYN10 not qualified by linkedSYN5.|No old retry/fit/cap refund. Ledger243 unchanged; all leases released.|
+| Infra/Meitner |Separate restored-control temporal calibration SOURCE preparation; purefusion14checks complete.|OriginalSYN10/market60/3epochs, new180s proofs/0retry, Parent dispatch required; no market authority.|
+| Validation/Herschel |Full25 actualPASS150480checks/81NAV/42controls;108-reader SOURCE19checks only.|Disjoint calibration source/actual audit when READY; no native/economic rerun.|
 | Data |43379rows/535142checks,493GET6POST;9exactcursors closed, no globalfloor. NEWfinite21NEW8marks ACTUALLYReadyEnabled/firstOct20 08.|Naturalownedcaptures only; no API/manualinvocationyet, old20feeds unchanged.|
 | Infra/Parent |SDKactual-GET spacing repair132focused/322serial/full18314PASS;twoDataActions actually retargeted/Enabled/Ready.|Firstcaptures dueOct20, originaltimes/custody unchanged; no manual invocation.|
 | Strategy/Harvey |Allocation36 new cells independently PASS as calculation, economic primary FAILbothselectors; Throughput memo complete.|Released. No extra policy/replay/winner search.|
-| Strategy/Planck |Five+four+three old17points sealed; TimesFM2.5 SOURCEfeasible/raw8x379READY4bfde5bf.|CPUrunnerprep/conditional1batch1forward, noGPU/runtimeupgrade; actualpointunverified.|
+| Strategy/Planck |TimesFM2.5 ACTUAL oneCPUbatch8x21/oneRootforward, sealbfe2316a; Parent8scores/8weights/source/nativecount readbackPASS.|Released. No fit/GPU/reforecast; future21outcomesUNKNOWN.|
 | Research Steward |All prior training leases released; no training inferred from SOURCE queue.|One exclusive GPU allocation for first runnable frozen campaign, desktop headroom.|
 | NAS Paper |Eight exact retained FULL entries; existing image87697f8e.|Owned exit not before Oct21 US OPEN; preserve exact requests/basis.|
 | New ensemble Paper |Actually Ready/Enabled image378f2034; firstOct19 15:10UTC.|Original entry-onlyOct19 window; no new submit/fill yet.|
@@ -31,11 +31,12 @@ Data/model files stay D:, external CPU research/validation disjoint from collect
 
 ## Throughput Review
 
-Latest handoff review: actual15 CUDA fits, allocation and transfer already
-complete while older boards still projected SOURCE/queued work. Reversible
-improvement: replace stale current projections with terminal facts and next
-consumer, retain history in Git/external roots rather than copying each retry.
-No new agent platform, approval/report framework or full18k rerun for documents.
+Latest review: completed forecasts and source helpers must not stay projected
+as queued; temporal native time limits were too short, not missing GPU authority.
+Reversible improvement: restore the original guard/3epoch criteria and measure
+native startup/steady/checkpoint/cleanup in a separate explicit Infra scope
+before a new market contract. Original failed attempts stay closed. No 18k
+rerun for documents, cap laundering, new approval platform or dummy training.
 
 Concrete local blockers were real ABI mistakes, whole-PC GPU admission and
 HTTP instrumentation, not missing operator approval:
@@ -70,18 +71,38 @@ code uses its own focused/native checks. No failed/unclean authority reuse.
 Frozenbrokerimages/paper bank unchanged. Two actualDataAction-only retargets
 SDK53bb68ee; no captureddata or globalpacing claim. Company-owned exit unfinished.
 
-Latest Throughput Review: ready=NEW8prospective6pair source+minimalfiniteD1feed;
-owned=Meitnerpurefusion/Chandrasekhar2archSOURCE/Herschel108reader/PlanckCPUbench;
-due=existingMondayPaper, no company permissionhold. Reversible improvement:
+Previous review resolved Windows->Linux relative checkpoint paths:
 validate Windows->Linux serialized relative checkpoint paths before a native
 intake. Firstfailure0forwards/0completedrestores was notzero work; preserve
 415.775s closedphase and linkedunconsumed8forwards, never rerun3completefits.
-Nextpriority futuremeasurement ofALLfixedpairs, not outcome-selected pastgrid.
+Priority futuremeasurement ofALLfixedpairs, not outcome-selected pastgrid.
 SixNEW8points nowsealed/independentlyread, Datafinite21Taskinstalled035861cf.
 Familyv1import0modelcalls staysUNAVAILABLE; informedv2sourcefixedone dependency
 withrealinertimport proof, 2/2attemptsclosed/56.973totalCPU-GPUworker upper incl
 allsourcework, not41.923numeric-onlysubtotal. Claudeunavailable !=agreement.
-One new orthogonal2expert+fixedblend family, notunboundedseeds/windows; source
-and testwholetransitiveimport closure before GPU work. Executiondue unchanged.
+Orthogonal2expert+fixedblend family closed before market: original45sSYN
+guard failed, linkedSYN10to5 is not unchanged qualification. TCN2/2failed,
+PATCHchangedsourceonly;57actualSYNforwards21updates, no108actualcells.
+SYN-TAIL-DISPOSITION.json under current25-temporal-expert-composition-
+development-20261019-v1. Meitner new InfraSOURCE calibration only; no market
+authority until exactREADY/Parentdispatch/newmeasured contract. Executiondue
+unchanged, no company permissionhold. Purefusion/108reader SOURCE reusable.
+
+Latest dispatch improvement: future SOURCE-only compile/path/CLI/inert-import
+packages use explicit measured worker/end/effect budgets rather than arbitrary
+one/two-attempt stops for ordinary code repair. Numerical SYN/fit/forecast/
+evaluation caps remain predeclared; existing CLOSED source contracts also stay
+closed, never silently reopened. Record source errors and actual work; do not
+confuse a failed metadata formatter with unavailable Docker/GPU infrastructure.
+Parent localD6probe PASS0.074s. Current exact original Docker formatter fails
+on absent Config.Volumes; safe map-index formatter passes on same local engine.
+A/infra/research-docker-availability-20261019-v1/TEMPLATE-RESULT.json.
+This reproduces a present defect, not the lost original stderr/historical cause.
+TimesFM old2/2SourceNOTREADY/zero models preserved; map-indexsource repair
+passed and actualoneCPUbatch8x21/oneRootforward publishedOct18 17:22:20.564931UTC.
+Seal bfe2316a; Parentpublication-r2 verifiescounts/sourcechain/8scores+8weights,
+no native rerun. Source assertions5maskedpads/379observed/q50 executed; exact
+trusted2025Oct1Apache2checkpoint, unknownpretraining/CLOSE-vs-OPEN limitations.
+Future27cells24riskyUNKNOWN/3analyticcashKNOWN; no claim of account profit.
 No current operator decision. FutureNASexit is an exact lifecycle dependency,
 not a reason to stop independent research. Completedfits/forecasts never repeat.

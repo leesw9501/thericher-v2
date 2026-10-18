@@ -46,12 +46,24 @@ Parent48+16weights/hashchainPASS/SEALED0d1512a9,lease released. V1missingimport
 before0modelcalls remainsUNAVAILABLE/21.434debit; informednewsourceversion
 doesn'tregradeit. Family2/2nativeattemptsclosed, all-in56.973 inclsource15.050,
 not oldhandoff41.923numerical-only subtotal. No furtherold6familycalls.
-Strategy TimesFM2.5 NEW8 CPUbenchmark raw8x379READY4bfde5bf, conditional1CPU
-batch/oneforward120owned600end, no GPU needed/reserved/download/runtimechange.
-Nexttraining queue SOURCEonly TCN+patchTransformer2fits +fixedblendwithretained
-GRUuniform,108cells; Rootcurrent25-temporal-expert-composition-development-
-20261019-v1. ProposedONEGPU8/free12/desktop4/CPU2RAM6/2starts0marketretry,
-nativeoptimizer/checkpointproof first. PreparedMD is not actualrunningGPU.
+TimesFM2.5 NEW8CPUbenchmark ACTUAL onebatch/oneRootforward/onecoldload,
+zero fits/GPU/retries, finalwriteOct18 17:22:20.564931UTC/sealbfe2316a.
+Native21.683owned120/end234.60of600,2.2GiB RSS; actor reaped/no GPU lease.
+Parent independentpublication-r2 checks counts/sourcechain/8scores+weights;
+forecast never repeat. Existingcheckpoint/runtime, no download. Futureunknown.
+
+Temporal appointment current25-temporal-expert-composition-development-
+20261019-v1 CLOSED before0marketstarts/0economiccells. Original SYN45s time
+guard failed; linkedSYN10->5 is a source/control deviation, not original
+qualification. TCN2/2failed/PATCHlinkedSYN5only,57actualSYNforwards21updates,
+reservedupper62/22. SYN-TAIL-DISPOSITION.json, all actors/leases released;
+ledger243 remains. Do not launch old caller or regrade/refund its clocks.
+New separate Infra SOURCE calibration current25-temporal-native-calibration-
+20261019-v1 assignedMeitner, originalSYN10/market60/3epoch/fullstate criteria,
+new180s children1attempt per type/0retry/480owned900end inclSOURCE. No GPU
+allocated until Parent exactREADY review/dispatch; no market fit authority.
+Use measured startup/steady/checkpoint/cleanup for a different future market
+budget, not weakened controls or a claim that the old appointment passed.
 
 ## Closed Custody
 

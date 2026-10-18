@@ -159,9 +159,18 @@ Datafirst08:00KSTOct20capturesUSOct19, lastNov17capturesUSNov16; notNov17USexit.
 Old20feeds unchanged. OfflineconsumerA/research/current25-new8-future-measurement-
 reader-20261019-v1/ABI.md; actual6publicationPASS,21missingdays=>24riskyUNKNOWN/
 3analyticcashKNOWN, notaccountprofit. Parentexplicitpacket/dayrefs, no latestscan.
-TimesFM2.5 raw8x379READY4bfde5bf/CPUrunnerprep; no nativepointverifiedyet.
-NextGPU SOURCE temporal-expert-composition-development-20261019-v1 exactly2
-TCN/PatchTransformerfits+fixed3rankblend proposed/108cells, notrunningtraining.
+TimesFM2.5 ACTUAL oneCPUbatch/oneRootforward/8x21point/0fits-GPU-retries;
+current25-new8-foundation-future-benchmark-20261019-v1/cpu-forecast-r1/
+actual-map-index-r1/HANDOFF-ACTUAL.json, sealbfe2316a. FinalwriteOct18
+17:22:20.564931UTC; Parent independentpublication-r2 verifiescounts/source/
+all8scores+weights. Forecast never repeat; future21outcomes UNKNOWN.
+Temporal-expert-composition-development-20261019-v1 CLOSED at nativeproof,
+57SYNforwards21updates/0marketfits/0economics. SYN-TAIL-DISPOSITION.json:
+originalSYN10 not qualified by changedSYN5, TCN2/2failed/PATCHlinkedonly.
+Do not run old launch/caller/recovery. Separate InfraSOURCE calibration
+current25-temporal-native-calibration-20261019-v1 restoresoriginalcriteria
+withnew180sproofs/0retry, no market authority. Parent must inspect READY and
+new source bindings before numerical dispatch. Ledger243 unchanged.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

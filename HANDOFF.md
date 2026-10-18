@@ -12,7 +12,7 @@ original shared initial virtual-cash tenth. Never KIS_LIVE_*, real money,
 paid/public work, secret/private-value output, foreign inventory adoption,
 unknown-request replacement or bank reset.
 
-Current memory refreshed Oct19KST after intermediate commita390716. Replaced stale
+Current memory refreshed Oct19KST after integration commitdc618da. Replaced stale
 queue projections; detailed history remains in Git and immutable external roots.
 An MD/installed Task is not proof of an active worker, submit or fill.
 
@@ -227,21 +227,50 @@ Next priority is FUTURE measurement, not more reused-data parameter search:
   Parentpublication-r1 real6packetPASS,21missingfuture days ->24riskyUNKNOWN/
   3analyticcashKNOWN, not broker PnL. No latestscan/oldv1fallback.
 New8 future one-window evidence is not independent robust alpha or a Papergate.
-Strategy TimesFM2.5 SOURCEfdf4d0cb/8purechecks/43pins; raw-context-r1 READY,
-3032exactrawcloses8x379 SHA4bfde5bf/8checks/132unchangedsourcepins. CPUrunner
-preparation/conditional1batch1forward120owned600end, actualforecastnotverified.
-ExistingApache2datedcheckpoint2025Oct1/existingD6, no download/runtimechange.
-Mask5structuralpads/379observations/OPENpayoff-vsCLOSEscore/pretrainlimits explicit.
+TimesFM2.5 NEW8 future benchmark ACTUAL complete, never repeat its forecast:
+A/research/current25-new8-foundation-future-benchmark-20261019-v1/
+cpu-forecast-r1/actual-map-index-r1/HANDOFF-ACTUAL.json, sealbfe2316a.
+ONE CPUbatch/onecoldload/oneRootforward,8rows/21steps, zero fits/GPU/retries.
+FinalwriteOct18 17:22:20.564931UTC, beforeOct19OPEN; conservativeouterclose
+17:22:29UTC. Source-bound executed assertions:8x384=5maskedstructuralpads+
+379observations, point==q50;232statekeys/zero missing-unexpected. Raw8x379
+SHA4bfde5bf, exact trusted Google checkpoint1d952420/weightSHA2f776efe,
+Apache2/published2025Oct1, existingD6/no download/runtimechange. Unknown
+pretraining/context coverage and CLOSEscore vs OPENpayoff remain limitations.
+Parent independentpublication-r2 verifies nativecounts/sourcechain/8scores/
+8weights from retained bytes, no native rerun. Result8e9a7384 under
+A/research/current25-new8-future-measurement-reader-20261019-v1/.
+21missingfuturemarks mean24riskyUNKNOWN/3analyticcashKNOWN, not account PnL.
+Original2/2SOURCE attempts NOTREADY/0models stay closed; present Docker map-key
+formatter defect reproduced and separately repaired, not a historical-cause
+claim from missing stderr. Native21.683owned/120,234.60elapsed/600,2.2GiB RSS;
+CPU inference needs no reserved GPU. Old source/debits remain immutable.
 
-NextGPUdepth SOURCE assigned, no training yet:
+Temporal GPU appointment CLOSED, zero market training/economic cells:
 A/research/current25-temporal-expert-composition-development-20261019-v1.
-Exactly2proposedexperts causalTCN(RF>=252) andpatch-tokenTransformer, plusONE
-fixedmean-percentile-rank blend withretainedfull25GRUuniform, notlearnedgate.
-SameR4data/scalers/reference/splits/costs/seed808/D1raw252x5+14;27new+81retained
-cells=108, fixed3new8comparisonsvsGRUuniform. No individprofit prerequisite.
-Native25optimizer/fullstateproof beforelater2fits/0marketretry, INNERpat20/LR/
-bestrestore/max128/oneGPU8desktop4; sourcepreparation isn'trunningGPU.
-ClaudeREVISEcapacityconfound/fusionunpowered/reusedDEV/budgetfragile scoped.
+TCN(RF255/20673params) and patch-tokenTransformer(12patch/21tokens/19041params)
+plus fixed3mean-percentile-rank blend were SOURCE ready;108cells remained a
+plan, not actual results. Original45s SYN proof exhausted its time reservation
+at forward-hook10s guard. Linked executor changed SYN10to5; this is NOT an
+unchanged qualification. TCN2/2 attempts failed, PATCH linkedSYN5 passed only
+its changed source.57actualSYNforwards/21updates, ZEROmarketstarts, all actors/
+leases released; market-fit ledger stays243. SYN-TAIL-DISPOSITION.json records
+exact stacks/counters/deviation. No established RNG nondeterminism; the second
+TCN attempt lacked a third completed epoch/reference. Original source and
+closed clocks are not reopened, regraded or refunded.
+Purefusion a70578b8/14checks and independent108-reader SOURCE19checks remain
+available, not actual108-cell authority or permission to use untrained models.
+Parent commissioned separate infrastructure SOURCE-only calibration under
+A/infra/current25-temporal-native-calibration-20261019-v1: originalSYN10 and
+market60 guards/fixture/factories/criteria, explicit new180s proof budgets,
+one attempt per type/zero retry/480owned900end including SOURCE. It cannot
+run market fits or qualify the failed appointment. Parent numerical dispatch
+and measured timings are still needed before any new market contract.
+Claude REVISE cap-circumvention/budget-scope/no-old-study-reuse:
+A/review/temporal-native-proof-calibration-20261019-v1/claude.json.
+No global GPU/Paper permission hold; this is one concrete native-proof fault.
+
+Earlier GRU throughput evidence (not qualification of the temporal study):
 Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,
 peakallocated1.39GiB/57.03owned120; scope synthetic only, not market-speed or
 training-trajectory parity. ExistingD6 PyTorch2.7, no framework/runtime upgrade.

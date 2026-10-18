@@ -91,13 +91,20 @@ architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;
 one GPU allocation, actual resource ownership, no dummy utilization work.
-Strategy TimesFM2.5 NEW8futurezero-shot: raw8x379contextREADY4bfde5bf; existing
-datedApache2checkpoint/D6, CPUrunnerprep/conditionalonebatchoneforward/0retry,
-actualpointunverified. No newruntime/download/oldcontextreforecast.
-NextGPU SOURCE current25-temporal-expert-composition-development-20261019-v1:
-TCN+patchTransformer exactly2newfits proposed andONEfixed3rankblendwithretained
-GRUuniform; sameinputdata/seed808/chronologicalINNER/costs,108cells(27new81old).
-Source is nottraining; nativecheckpoint/optimizerproof/finalcapsbeforefits.
+TimesFM2.5 NEW8futurezero-shot ACTUAL oneCPUbatch8x21/oneRootforward/0fits/GPU/
+retries. Raw4bfde5bf/trusted2025Oct1Apache2checkpoint/D6; finalwriteOct18
+17:22:20.564931UTC/sealbfe2316a. Parent publication-r2 independently verifies
+nativecounts/sourcechain/8scores/8weights, no reforecast. FutureoutcomesUNKNOWN.
+Temporal2expert appointment current25-temporal-expert-composition-development-
+20261019-v1 CLOSED before0marketfits/0economics: SYN45s guard failed, linked
+SYN10to5 change does not qualify original source.57SYNforwards/21updates,
+TCN2/2failed/PATCHchangedsourceonly; ledger243 unchanged. No old cap refund,
+retry, caller or108actual-result claim. Parent commissions separate Infra
+SOURCE calibration current25-temporal-native-calibration-20261019-v1 with
+originalSYN10/market60/3epoch/fullstate criteria, new180sproofs/1attempt each/
+0retry/480owned900end inclSOURCE. ExactREADY/Parentdispatch/measuredtimings
+must precede a DIFFERENT market contract; this scope has no fit authority.
+Purefusion14checks and blind108-reader19checks are reusable SOURCE only.
 
 ## Completion And Continuation
 

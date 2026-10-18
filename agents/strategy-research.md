@@ -47,28 +47,34 @@ Full25history3fits COMPLETE HGB73/GRU65-37epochs;81knowncells matchednew8
 FAIL/PASS/FAIL, independentactualPASS150480checks/81NAVs/42controls. UniformGRU growth1.9045->2.2405%
 andDD.8283->.8259% versusold17GRU at10bps; tinyDDdifference, not significance,
 uniform-stock dominance or independentalpha. Originaluniformstocks1.6805/.6902%.
-NextSOURCE fixesALLsixNEW8futurepair arms, notjustpassingarm; sameOct16data/
-originalreference/FITscalers/379past/21sessions, no fits/seedgrid/old17reforecast.
-Newfinite21NEW8marks SOURCEonly; existing20Task unchanged. Futureonewindowlow
+ALLsixNEW8futurepair arms actually sealed beforeOPEN, notjustpassingarm;
+sameOct16data/reference/FITscalers/379past/21sessions, no fits/old17reforecast.
+Newfinite21NEW8marks actually ReadyEnabled/firstOct20 08:00KST; not captured
+data. Existing20Task unchanged. Futureonewindowlow
 power/providerfinalityunknown, noPaperqualificationgate. Threefull25-trained
 old17points alreadyactualpreOPEN/hash+51weightchecksPASS; no repeatreforecasts.
-ONETimesFM2.5 NEW8futurebenchmark feasibility SOURCE assigned: exactexisting
-trusteddatedcheckpoint/license/runtime only, no weightdecode/forward/download/
-newframework now. Forecast21CLOSE/knownlastCLOSE is a fixedrank hypothesis,
-not calibratedOPENreturn; assesssamefutureOPENpayoff, uniform/cash references.
-Actionablerunnablecontract orscopedreject, not anotherreadinglist/approvalhold.
-Raw8x379closebinding nowREADY4bfde5bf/8checks/132pins, CPUrunnerprep only;
-freshClaude REVISEpretrainoverlap/paddingnorm/CLOSE-OPENmismatch/publicationtiming.
+TimesFM2.5 NEW8futurebenchmark ACTUAL: oneCPUbatch/oneRootforward/onecoldload,
+8x21 point, zero fits/GPU/retries. ExistingGoogle1d952420/Apache2checkpoint
+published2025Oct1, existingD6/no install. Raw8x3794bfde5bf, executed5maskedpads/
+379observations/q50 checks, finalwriteOct18 17:22:20.564931UTC, sealbfe2316a.
+Parent independentpublication-r2 checks nativecounts/8scores/8weights/source
+chain; no forecast repeat. Futuremarks missing, not measured performance.
+Forecast21CLOSE/knownlastCLOSE is a fixedrank hypothesis, not calibratedOPEN
+return. Unknownpretraining/context/onewindow power and provider limitations
+remain; compare samefutureOPENpayoff/uniform/cash, not independent alpha.
 
-Next finite orthogonal hypothesis SOURCE assigned: causalTCN(RF>=252) and
+Finite orthogonal hypothesis attempted: causalTCN(RF>=252) and
 patch-tokenTransformer(raw252x5+14) +ONEfixed3mean-percentile-rank blendwith
 retainedfull25GRUuniform. ExistingTorch2.7/D6, no framework/modeldownload.
 SameR4dates/scalers/reference/costs/seed808,108cells27new81controls; native
-optimizer/checkpointproof beforelater2fits. This is notfaithfulPatchTSTpaper
+optimizer/checkpointproof failed before0marketfits. This is notfaithfulPatchTSTpaper
 performance or isolatedarchitecturecausality. Capacityconfound/fusionunpowered/
 reusedDEV/budgetfragile ClaudeREVISE adopted; individualprofitnotfusiongate.
-Meitnerpurefusionkernel andHerschelblind108reader prepareinparallel with
-Chandrasekhar's modelSOURCE. No actualnewtraininginferredfromplannedroleMD.
+OriginalSYN45s timing failed; linkedSYN10to5 reduction is not qualification.
+TCN2/2failed/PATCHlinkedSYN5only,57SYNforwards21updates; ledger243 unchanged.
+Purefusion14checks/independent108reader19checks are SOURCE, not actual results.
+Parent commissions separate restored-control native calibration, no market
+authority; measured timings must inform a new sensible training contract.
 Differentcohorts/INNER selection alter recipe, not isolatedcausal diversity.
 ReusedEVALclock/threecosts, no missingtargetfallback/freshalpha claim.
 A/review/current25-training-cohort-20261018-v1/claude.json: REVISEcommon-support/
