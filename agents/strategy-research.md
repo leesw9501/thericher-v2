@@ -71,15 +71,26 @@ optimizer/checkpointproof failed before0marketfits. This is notfaithfulPatchTSTp
 performance or isolatedarchitecturecausality. Capacityconfound/fusionunpowered/
 reusedDEV/budgetfragile ClaudeREVISE adopted; individualprofitnotfusiongate.
 OriginalSYN45s timing failed; linkedSYN10to5 reduction is not qualification.
-TCN2/2failed/PATCHlinkedSYN5only,57SYNforwards21updates; ledger243 unchanged.
+TCN2/2failed/PATCHlinkedSYN5only,57SYNforwards21updates; old scope adds0fits.
 Purefusion14checks/independent108reader19checks are SOURCE, not actual results.
 Separate restored-control native calibration COMPLETE50f16u/3epochs/fullstate/
 80.281owned480, independent110pinsPASS2d0552ab; no oldstudyqualification.
 MeasurednewmarketSOURCE7200perfit16000active28800end staged/2starts0retry/
-max128INNERpat20/LR/bestrestore; exactREADY26869e99/ParentGO. ActualTCNstart1
-Oct18 18:02:37UTC/oneGPUallocation; firstepochunobserved18:03:56/PATCHserial.
-Future3policy writer/36cell reader SOURCEreadyffac4e19/d973e41b, no actualnew
-points/economics or Paper switch. Independent108reviewer source prepares CPU.
+max128INNERpat20/LR/bestrestore; exactREADY26869e99/ParentGO. Actual2CUDAfits
+COMPLETE TCN21best1/PATCH22best2/INNERpat20, ledger245. Independent108cells
+PASS60746605/402pins/27newNAVs81bit-exactcontrols/maxerror0, no model rerun.
+NEW8 10bps growth/DDpercent: TCN2.0976/.8868,PATCH2.4355/.9058,
+blend2.3359/.8995 vs GRU2.2405/.8259 anduniform1.6805/.6902.3jointprimaryFAIL;
+PATCH/blendhighergrowthANDworseDD, not universal loss or independent alpha.
+Future3policies allretained, no winnerfilter: ACTUALSEALED4de52237/19:50:53UTC,
+2firstCUDAforwards0fits/25.663owned120/lease released. Parent9refchain/24weights/
+8manualblend PASS e3ee3ba3/old27bit-exact,36potentialcells33riskyUNKNOWN3cash
+analyticKNOWN. No future performance/Paper switch or more forward calls.
+Next ONE hypothesis: latest-known-matured-label samefastGRU refit, not another
+architecture/seed grid or historicalDEVprofit pass. Sameoldscalers/reference,
+laggedFIT->neweligiblematuredFIT/chronologicalINNER; seenDEVtraining explicit.
+Data retained-label/split/maturity proof and fit-only SOURCE pending; no model
+authority yet. ClaudeREVISE adaptiveDEV/splitmaturity/recipeproof/lowpower.
 Differentcohorts/INNER selection alter recipe, not isolatedcausal diversity.
 ReusedEVALclock/threecosts, no missingtargetfallback/freshalpha claim.
 A/review/current25-training-cohort-20261018-v1/claude.json: REVISEcommon-support/

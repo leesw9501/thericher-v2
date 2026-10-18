@@ -86,7 +86,7 @@ reviewPASS346checks/18bit-exactNAVs. ActualfastGRUs39/23epochs/INNERpat20/bestre
 threefull25fits(2CUDA1CPU)/81knowncells independentPASSdd885a57;
 threefull25-trained original17futurepoints preOPEN16:02:06.855826UTC,
 Parenthash/all51weightsPASS/zero fit/oldpointredo. One native-throughput SYNprobe.
-Current ancestral243=156CUDA+87CPU incloneoldinvalid, not
+Current ancestral245=158CUDA+87CPU incloneoldinvalid, not
 architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;
@@ -98,7 +98,7 @@ nativecounts/sourcechain/8scores/8weights, no reforecast. FutureoutcomesUNKNOWN.
 Temporal2expert appointment current25-temporal-expert-composition-development-
 20261019-v1 CLOSED before0marketfits/0economics: SYN45s guard failed, linked
 SYN10to5 change does not qualify original source.57SYNforwards/21updates,
-TCN2/2failed/PATCHchangedsourceonly; ledger243 unchanged. No old cap refund,
+TCN2/2failed/PATCHchangedsourceonly; zero market fits from old scope. No old cap refund,
 retry, caller or108actual-result claim. Parent commissions separate Infra
 calibration current25-temporal-native-calibration-20261019-v1 COMPLETE with
 originalSYN10/market60/3epoch/fullstate criteria,1attempt each/0retry/50f16u/
@@ -107,11 +107,30 @@ PASS/ACTUAL-READBACK2d0552ab, no oldCqualification. New calibrated-market
 SOURCE current25-temporal-experts-calibrated-development-20261019-v1:
 2marketstarts0retry,7200perfit16000active28800end fromSOURCE17:42:22UTC,
 max128/pat20/LR/bestrestore/originaldata-guards-criteria. FinalREADY26869e99/
-source27workersd2f6783f/ParentcheckPASS/GO; actualTCNmarketstart1 Oct18
-18:02:37UTC/GPUallocation18:02:39/free22070MiB, firstcompletedepochunobserved
-at18:03:56. PATCH serial next, ledger243closed plusoneactiveattempt. Parallel
-future3policy writer/36cell reader SOURCEreadyffac4e19/d973e41b; actualnewpoints/
-economics absent. Independent108source rebind prepares without models.
+source27workersd2f6783f/ParentcheckPASS/GO; ACTUAL2CUDAfits COMPLETE TCN21best1/
+PATCH22best2/INNERpat20/11038forwards5418updates43saves2restores/0SYNretryresume.
+Bothactorsreaped/leasesreleased,5847.47owned16000/7001.23elapsed28800.
+Actualeba59d01/model-only066bb1d8; independent108cells60746605/402pins/
+27NAVs81bit-exactcontrols/maxerror0, all3new8jointprimariesFAIL. Ledger245.
+Parallelfuture3policies ACTUALSEALED4de52237/Oct18 19:50:53.454028UTC,
+2newCUDAforwards/0fits/0GRUoroldpointcalls/25.663owned120/actorlease released.
+Parent24weights/8manualblend/9refchain PASS e3ee3ba3, originalold27bit-exact;
+derived source-pin/canonical-Ref reader admission only, no new model calls.
+36potentialcells33riskyUNKNOWN3analyticcashKNOWN, all21marks missing. No
+Paper candidate switch or independent-alpha claim.
+
+Nextreadyresearch: ONE latest-known-matured-label samefastGRU refit, no new
+architecture or historicalDEVprofit search. Engine feasibilityd1a7d465/206checks
+under current25-latest-matured-gru-refit-20261019-v1; proposedFIToldfi/vi/
+leadingei<=5062, INNER5084..5209/new21purge/old42gaps/samepastscalers-reference.
+SeenDEV becomesFIT/INNER, not fresh validation. OriginalNEW8EVALlabels masked
+NaN intentionally; Data raw-input audit failed PRIVATE NumPy-header API before
+zero array decodes, NOT proof of unavailable market bars. Preserve30.107debit/
+old1attempt0retry. Separate derived-label-view-r1 Data phase may use public
+header API and exactretainedpanel kernel+normalizer: prove knownNEW8labels
+bit-exact FIRST, materialize only supported selected maskedlabels, no imputation
+or oldarray mutation. SOURCE/rowkey/calendar/maturity evidence before any new
+fit. One fit-only caller/finite contract still needed; no native GO yet.
 Purefusion14checks and blind108-reader19checks are reusable SOURCE only.
 
 ## Completion And Continuation

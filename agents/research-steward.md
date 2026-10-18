@@ -18,7 +18,7 @@ Current25 actual4fits CLOSED(2CPUHGB2CUDAGRU)/72knowncells, input19555 frozen,
 technical-r3 actualresults/cleanup/replay-recovery. GRUs2epochs/selected1/safe
 wallheuristicstop, not convergence. Two priorfailedSYN attempts andone separate
 correctedPASS remain, aggregatecounts/debits distinct, nooldstudyrefund.
-Current243=156CUDA87CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
+Current245=158CUDA87CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
 
 Fixed-recency COMPLETE: native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5 under
 current20-fixed-recency-cudnn-development-20261018-v1.3fits/18knowncells,
@@ -57,7 +57,7 @@ Temporal appointment current25-temporal-expert-composition-development-
 guard failed; linkedSYN10->5 is a source/control deviation, not original
 qualification. TCN2/2failed/PATCHlinkedSYN5only,57actualSYNforwards21updates,
 reservedupper62/22. SYN-TAIL-DISPOSITION.json, all actors/leases released;
-ledger243 remains. Do not launch old caller or regrade/refund its clocks.
+No market fits from failed C. Do not launch old caller or regrade/refund its clocks.
 Separate Infra calibration current25-temporal-native-calibration-20261019-v1
 COMPLETE oneGPUadmission/2serialchildren/50forwards16updates8saves4restores/
 6constructs,originalSYN10/market60/3epochs/fullstate criteria.80.281owned480/
@@ -68,18 +68,26 @@ Next market SOURCE staged current25-temporal-experts-calibrated-development-
 20261019-v1; Parentselected7200perfit16000active28800end from17:42:22UTC,
 2marketstarts0retry/max128/pat20/LR/bestrestore, same original criteria/data.
 ExactREADY26869e99/source27workersd2f6783f/protocol476e9a96 ParentcheckPASS/GO.
-ActualTCNmarketstart1 Oct18 18:02:37UTC/GPUallocation18:02:39/free22070MiB;
-nativeprocess/42percentGPU spot18:03:56, first completed epoch unobserved then.
-ONE allocated GPU/TCN, PATCH waits serially; not completed models/convergence.
-Ledger243closed plus one running attempt. Future3policy writer/36cell reader
-SOURCEstagedffac4e19/d973e41b, zero actualpoint calls/leases. CPU independent
-108retained source rebind prepares separately, no conflicting GPU allocation.
+ACTUAL2fitscomplete TCN21best1/PATCH22best2/INNERpat20;11038forwards5418updates/
+43saves2restores,zeroSYNretryresume. Nativeworker5702.94/66.62s;5847.47owned16000/
+7001.23elapsed28800/bothactorsreaped/leasesreleased. Ledger245closed.
+Actualeba59d01/model-only066bb1d8/independent60746605(27NAV81controls402pins),
+all3jointprimaryFAIL, no convergence/independent-alpha/Paper claim.
+Future3policy writer/36cell reader SOURCEstagedffac4e19/d973e41b;
+pointACTUALSEALED4de52237/19:50:53UTC/2firstCUDAforwards0fits/25.663owned120/
+actorabsentlease released. Parent9refchain/24weights8manualblend PASS e3ee3ba3;
+33riskyfuturecellsUNKNOWN3analyticcashKNOWN/all21marks missing. No repeats.
+Next samefastGRU latest-matured refit is SOURCE/Data audit only, no GPU allocated:
+onefitproposal/samepastscalers-reference/seed808/no historicalprofitgrid. Raw
+input audit failed private NumPyheader API before0decodes,30.107closeddebit;
+separate deterministic retained-label view needed, never impute NaNs or mutate
+oldsource. Exact input/nativeproof/finalcontract before future GPU admission.
 
 ## Closed Custody
 
-Ancestral market-fitted versions243=156CUDA+87CPU, including ONE old invalid
-depth-TCN checkpoint. Latest25versions=6ranking9ablation4cohort3recency3full25(21CUDA4CPU),
-not25 architectures/qualified models. SYN, foundation inference, reader calls
+Ancestral market-fitted versions245=158CUDA+87CPU, including ONE old invalid
+depth-TCN checkpoint. Latest27versions=6ranking9ablation4cohort3recency3full25+2temporal(23CUDA4CPU),
+not27 architectures/qualified models. SYN, foundation inference, reader calls
 and zero-fit allocations/shadows do not count as training.
 
 | Family | Closed Evidence |

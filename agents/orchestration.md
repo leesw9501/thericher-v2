@@ -10,15 +10,15 @@ an append-only current board. MD/agent identity is not a running worker.
 
 | Owner | Actual State / Write Set | Next Action |
 | --- | --- | --- |
-| Engine/Chandrasekhar |Temporal appointment CLOSED:57SYNforwards21updates/0marketfits, originalSYN10 not qualified by linkedSYN5.|No old retry/fit/cap refund. Ledger243 unchanged; all leases released.|
-| Engine/Chandrasekhar new scope |READY26869e99/ParentGO; actualTCNmarketstartOct18 18:02:37UTC/GPUallocation18:02:39.|Sole GPU owner, PATCH serial next. No completed epoch/performance observed at18:03:56.|
-| Infra/Meitner |Calibration PASS50f16u/3epochs/fullstate; future3policy writer SOURCEstagedffac4e19/8groups15inertimports.|Released until exact trainedstates/ParentGO, no actualnewforecast.|
-| Validation/Herschel |Calibration110pinsPASS2d0552ab; future36adapter READYd973e41b/old27bit-exact/8groups.|CPU new108retained reader rebind in disjoint subtree, no models/economics.|
+| Engine/Chandrasekhar |Old temporal appointment CLOSED57SYNforwards21updates/0marketfits, originalSYN10 not qualified by SYN5.|Never regrade/refund/retry old scope.|
+| Engine/Chandrasekhar new scope |2CUDAfits COMPLETE/108independentPASS60746605/3jointprimaryFAIL. Nextlatest-maturedGRU SOURCEfeasibled1a7d465 only.|Needs exactData label materialization/fit-only caller, no native GO.|
+| Infra/Meitner |3futurepoints ACTUALSEALED4de52237/19:50:53UTC/2CUDAforwards/0fit/actor+lease released.|Released. Parent24weights/8blend/9refchain PASS e3ee3ba3, no repeat.|
+| Data audit/Herschel |Raw input audit incomplete/NumPyprivate-header defect/0decodes30.107debit; actual108review60746605 remainsPASS.|Separate deterministic derived-label-view-r1: publicparser, actualsplit/maturity, known-labelbitexact before any fill; no model/API.|
 | Data |43379rows/535142checks,493GET6POST;9exactcursors closed, no globalfloor. NEWfinite21NEW8marks ACTUALLYReadyEnabled/firstOct20 08.|Naturalownedcaptures only; no API/manualinvocationyet, old20feeds unchanged.|
 | Infra/Parent |SDKactual-GET spacing repair132focused/322serial/full18314PASS;twoDataActions actually retargeted/Enabled/Ready.|Firstcaptures dueOct20, originaltimes/custody unchanged; no manual invocation.|
 | Strategy/Harvey |Allocation36 new cells independently PASS as calculation, economic primary FAILbothselectors; Throughput memo complete.|Released. No extra policy/replay/winner search.|
 | Strategy/Planck |TimesFM2.5 ACTUAL oneCPUbatch8x21/oneRootforward, sealbfe2316a; Parent8scores/8weights/source/nativecount readbackPASS.|Released. No fit/GPU/reforecast; future21outcomesUNKNOWN.|
-| Research Steward |Prior leases released; ONE new actualTCN allocation, free22070MiB at admission.|Keep exclusive ownership/desktop headroom; PATCH serial, no dummy utilization.|
+| Research Steward |Both training and futurepoint actors/leases released, ledger245.|Latest-matured refit not allocated until exactData/source/native proof contract; no dummytraining.|
 | NAS Paper |Eight exact retained FULL entries; existing image87697f8e.|Owned exit not before Oct21 US OPEN; preserve exact requests/basis.|
 | New ensemble Paper |Actually Ready/Enabled image378f2034; firstOct19 15:10UTC.|Original entry-onlyOct19 window; no new submit/fill yet.|
 | Nightly/Goal97/Data |Existing finite/owned opportunities unchanged.|NightlyOct19 23:50KST; Goal97Oct19entry/Oct24exit; DataOct20 06:50/07:30KST.|
@@ -32,12 +32,16 @@ Data/model files stay D:, external CPU research/validation disjoint from collect
 
 ## Throughput Review
 
-Latest review: completed forecasts and source helpers must not stay projected
-as queued; temporal native time limits were too short, not missing GPU authority.
-Reversible improvement: restore the original guard/3epoch criteria and measure
-native startup/steady/checkpoint/cleanup in a separate explicit Infra scope
-before a new market contract. Original failed attempts stay closed. No 18k
-rerun for documents, cap laundering, new approval platform or dummy training.
+Latest review: temporal2fits/108independentcells and3futurepoints complete,
+not SOURCE/queued. Ready=one latest-matured GRU refit feasibility, owned=Data
+rowkey/y/maturity audit+EngineSOURCE, due=original Paper windows. Improvement:
+test whether existing model training windows are unnecessarily old before
+adding architectures; no historical profit grid. Original EVAL label masking
+needs explicit retained-bar materialization, not forced training over NaNs.
+Publication SOURCE metadata/Windows Ref transport mismatches do not require
+model reruns: verify unchanged code, exact final source pin and same hash/
+canonical file while preserving closed original readers/results. No 18k
+rerun for docs, refunded clocks, new approval platform or dummy training.
 
 Concrete local blockers were real ABI mistakes, whole-PC GPU admission and
 HTTP instrumentation, not missing operator approval:
@@ -59,8 +63,8 @@ purge/scaler/reference lock, consistent payoff/costs, reused-data claims.
 
 ## Integration Evidence
 
-Research ledger243=156CUDA+87CPU fitted versions including one oldinvalid,
-not243architectures or independent alpha.6ranking+9ablation+4cohort+3recency+3full25 fits complete,
+Research ledger245=158CUDA+87CPU fitted versions including one oldinvalid,
+not245architectures or independent alpha.6ranking+9ablation+4cohort+3recency+3full25+2temporal fits complete,
 all training leases released. Allocation primary0/3bothselectors; transfer
 growthup/DDworse; no Paper switch. Five+four+three shadow arms preOPEN/21futureoutcomesUNKNOWN.
 Exact result paths and seal hashes: HANDOFF.md and role boards.
@@ -87,10 +91,12 @@ PATCHchangedsourceonly;57actualSYNforwards21updates, no108actualcells.
 SYN-TAIL-DISPOSITION.json under current25-temporal-expert-composition-
 development-20261019-v1. Separate Infra actualcalibration nowPASS50f16u/
 80.281owned480/678.654elapsed900atcleanup, independent110pins2d0552ab.
-Originalcontrols restored, not failedCqualification. NewmarketactualTCNstart1
-18:02:37UTC/7200perfit16000active28800end originalSOURCE17:42:22UTC. SoleGPU;
-no completed epoch observed18:03:56. Futurepointwriter/36reader SOURCEready,
-new108reviewer source prepares in parallel. Executiondue unchanged; no company
+Originalcontrols restored, not failedCqualification. Newmarket2fits COMPLETE,
+TCN21best1/PATCH22best2/INNERpat20;5847.47owned16000/7001.23elapsed28800,
+11038forwards5418updates43saves2restores, leasesreleased. Independent108cells
+60746605/402pins/27NAV81controls PASS,3frozenjointprimaries FAIL. Futurepoint
+finalSOURCEcf0f4c62/ParentGO forALL3fixedarms, no performance filtering or fits.
+Existing36reader SOURCEreadyd973e41b. Executiondue unchanged; no company
 permissionhold. Purefusion/108reader SOURCE reusable.
 
 Latest dispatch improvement: future SOURCE-only compile/path/CLI/inert-import

@@ -113,7 +113,7 @@ manual future-Task replay. Preserve exact owned next_due.
 
 ## Current Research / Data
 
-25new versions complete:6ranking+9ablation+4cohort+3recency+3full25(21CUDA4CPU).243ancestral
+27new versions complete:6ranking+9ablation+4cohort+3recency+3full25+2temporal(23CUDA4CPU).245ancestral
 versions=156CUDA+87CPU incloneoldinvalid, not architectures/alpha. Training
 leases released. Allocation81cells independentPASS/economicFAIL;new8transfer
 21cells primaryFAIL/independentretainedPASS185pins.5+4+3futurechallenger actualforecasts
@@ -173,10 +173,26 @@ current25-temporal-native-calibration-20261019-v1 COMPLETE PASSoriginalcriteria/
 lease released. Independent110pinsACTUAL-READBACK2d0552ab, no oldCqualification.
 New marketSOURCE current25-temporal-experts-calibrated-development-20261019-v1
 2fits/7200each/16000active28800end fromSOURCE17:42:22UTC. Parent exactcheck
-READY26869e99/source27workersd2f6783f/GO dispatched; actualTCNmarketstart1
-Oct18 18:02:37UTC/GPUallocation18:02:39/free22070MiB. Firstepochunobserved
-at18:03:56, PATCH serial next. Do not run a second caller or reclaim its lease.
-Ledger243closed plusoneactiveattempt, not completed-model/profitability proof.
+READY26869e99/source27workersd2f6783f/GO; ACTUAL2CUDAfits COMPLETE TCN21best1/
+PATCH22best2/INNERpat20/11038forwards5418updates43saves2restores/0SYNretryresume.
+Bothactorsreaped/leasesreleased,5847.47owned16000/7001.23elapsed28800.
+Model-only066bb1d8/fullactualeba59d01/independent60746605:108knowncells/
+27independentNAVs81bit-exactcontrols402pins/maxerror0,3jointprimaryFAIL.
+Ledger245closed, not independent alpha/Paper profitability. Never rerun caller.
+Future3pointACTUALSEALED4de52237/Oct18 19:50:53.454028UTC,2firstCUDAforwards/
+0fit/exact8context/selectedepoch1-2/retainedGRUscore/25.663owned120/lease released.
+PUBLICATION-REFS.json under current25-calibrated-temporal-future-points-
+20261019-v1/actual. Parent current25-temporal-future-parent-readback-20261019-v1/
+check.py verifies16unchangedmodules, finalREADY92ac andcanonical same-file/hash
+Ref admission via exactly2ASTchanges; originalreader unchanged/old27bit-exact.
+CHECK/result e3ee3ba3/24weights8manualblend,36cells33riskyUNKNOWN3analyticcash.
+Do not repeat the completed model/forecast. This readback is not a future
+mark collector or account PnL, and no later day refs are discovered implicitly.
+Latest-matured GRU proposal SOURCE/Data audit only: rawlabelaudit incomplete
+NumPy private-header AttributeError/0decoded/30.107debit; old audit is CLOSED,
+not retried. Separate owned derived-label-view-r1 requires publicheader parsing,
+exactretainedtargetkernel+normalizer/knownNEW8bitexact/maturity+split proof before
+any future fit. No new native/model/Paper authority from a feasibility file.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

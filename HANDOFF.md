@@ -12,7 +12,7 @@ original shared initial virtual-cash tenth. Never KIS_LIVE_*, real money,
 paid/public work, secret/private-value output, foreign inventory adoption,
 unknown-request replacement or bank reset.
 
-Current memory refreshed Oct19KST after integration commitdc618da. Replaced stale
+Current memory refreshed Oct19KST after integration commitc97c197. Replaced stale
 queue projections; detailed history remains in Git and immutable external roots.
 An MD/installed Task is not proof of an active worker, submit or fill.
 
@@ -63,8 +63,8 @@ honest host, NOT cryptographic OS scheduler-origin proof.
 
 ## Research Completed This Continuation
 
-Oct18 21:05KST continuation added25 fitted versions(21CUDA+4CPU), NOT25
-architectures. Ancestral ledger243=156CUDA+87CPU, including one old invalid; SYN/
+Oct18 21:05KST continuation added27 fitted versions(23CUDA+4CPU), NOT27
+architectures. Ancestral ledger245=158CUDA+87CPU, including one old invalid; SYN/
 foundation inference/reader calls do not add fits. All completed training
 allocations released. No automatic Paper candidate switch.
 
@@ -77,6 +77,11 @@ allocations released. No automatic Paper candidate switch.
 | OLD17 vs NEW25 training |4 fits(2CPUHGB+2CUDAGRU)/72 known cells; new8 matched HGB/GRU comparisons PASS, mean2 FAIL. Two GRUs stopped after2epochs/selected1 by frozen wall heuristic, NOT convergence. Independent retained PASS507pins/72NAVs/12bit-exact controls, seala55dc25d.|
 | Fixed1260-session recency |1CPUHGB+2CUDAfast-GRU fits/18known cells including9controls. Both primaries FAIL(growth up/DD worse); independent retained PASS346checks/18bit-exactNAVs/9controls. GRUuniform39epochs/best19, recency23/best3, INNERpat20/bestrestore, not convergence.|
 | Complete-history FULL25 |3newfits(1CPUHGB2CUDAfastGRU) complete: HGB73/best53, GRUuniform65/best45, recency37/best17, INNERpat20.81known cells: new8 HGB FAIL/uniformGRU PASS/recencyGRU FAIL; independent PASS150480checks/81bit-exactNAVs/42controls.|
+
+Additional calibrated temporal2CUDAfits COMPLETE: TCN21epochs/best1,
+patchTransformer22/best2, both INNERpat20;108knowncells/27new81controls
+independently reproduced/402pins/maxNAVerror0. All3new8 growth-and-DD
+primaries FAIL against fixed GRU. Exact result and limitations below.
 
 Research roots, each under A/research/:
 current20-pairwise-ranking-objective-development-20261018-v1/
@@ -254,7 +259,7 @@ plan, not actual results. Original45s SYN proof exhausted its time reservation
 at forward-hook10s guard. Linked executor changed SYN10to5; this is NOT an
 unchanged qualification. TCN2/2 attempts failed, PATCH linkedSYN5 passed only
 its changed source.57actualSYNforwards/21updates, ZEROmarketstarts, all actors/
-leases released; market-fit ledger stays243. SYN-TAIL-DISPOSITION.json records
+leases released; this failed appointment adds zero market fits. SYN-TAIL-DISPOSITION.json records
 exact stacks/counters/deviation. No established RNG nondeterminism; the second
 TCN attempt lacked a third completed epoch/reference. Original source and
 closed clocks are not reopened, regraded or refunded.
@@ -278,22 +283,53 @@ A/research/current25-temporal-experts-calibrated-development-20261019-v1:
 same frozen data/models/splits/criteria,2starts/0retry/max128/INNERpat20/LR/
 bestrestore,7200s each/16000owned inclSOURCE/28800end from17:42:22UTC.
 Final READY26869e99/source27workersd2f6783f/protocol476e9a96/caller2ec81f89/
-template09afbc13 independently hash-checked by Parent; exact numerical GO
-dispatched. ACTUAL TCNmarket attempt1 startedOct18 18:02:37UTC, canonicalGPU
-allocation18:02:39UTC/free22070MiB; nativeprocess/42percentGPU spot observation
-at18:03:56UTC. First completed epoch/checkpoint not yet observed then, so not
-a completed fit or performance claim. PATCH follows serially under same caps.
-Actual root holds original input-plan/INTAKE-COMPLETE/NATIVE-READY/market.npz;
-no duplicate SYN or old fit. Closed market-fit ledger243 plus one running
-attempt, not244 completed models. No Paper candidate switch.
-Future3policy writer SOURCE stagedffac4e19/8puregroups/15CPUinertimports,
-23.319owned; additive36-cell reader READYd973e41b/8SYN groups/old27bit-exact/
-missing3packet9UNKNOWN,73.249owned. Both have zero actual new points/models/
-market marks. Exact trained checkpoints and Parent binding required later.
-Independent108 retained reader SOURCE rebind prepares in disjoint subtree.
+template09afbc13 independently hash-checked by Parent. ACTUAL2fits COMPLETE:
+TCN21epochs/best1, PATCH22/best2, both INNERpat20/fullstatebestrestore;
+TCNworker5702.94s/PATCH66.62s, not equal training-cost/architecture-causal proof.
+11038forwards5418updates43saves2restores, zero newSYN/retry/resume.5847.47owned/
+16000,7001.23elapsed/28800, both GPU actors reaped/canonical leases released.
+actual/FROZEN-MODELS.json SHA066bb1d8 is selected-state-only authority;
+actual/FROZEN-ACTUAL.json SHAeba59d01/257producerpins is actual108cell tuple.
+Independent27newNAVreplays/81bit-exactcontrols/402pins/maxNAVerror0:
+independent-retained-review/ACTUAL-REVIEW-SEAL.json SHA6074660577a8a124a726f13565ca60f92e9c203303d196eb369bce9e3bcea06b.
+NEW8 at10bps modeled costs, growth/DD percent: TCN2.0976/.8868,
+PATCH2.4355/.9058, fixed3rankblend2.3359/.8995, GRU2.2405/.8259,
+uniformstocks1.6805/.6902. All3frozen joint primariesFAIL; PATCH/blend have
+higher growth AND worse DD, not proof of universal loss or dominance.
+Reused development data/current listings/nonPIT/source limits remain; no
+independent alpha/convergence/Paper promotion. Ledger245=158CUDA87CPU.
+Future3policies ACTUAL sealed4de52237, firstfinalwriteOct18
+19:50:53.454028UTC,2intakes2construct2CUDAforwards/0fits-SYN-RNG-oldcalls,
+25.663owned120; actorabsent/lease released. Exactnine-refcatalog and
+HANDOFF-ACTUAL.json under current25-calibrated-temporal-future-points-
+20261019-v1/actual. RetainedGRU reused as stored scores, never reforwarded.
+Parent actual24weights/8manualblend-score/publication-chain check PASS,
+A/research/current25-temporal-future-parent-readback-20261019-v1/CHECK.json,
+result e3ee3ba3. Original36-reader source remains unchanged: staged6f08 source
+metadata differed from final92ac while all16modules were byte-identical;
+same-file/same-hash Windows slash refs also differed as JSON. Exact derived
+AST admission changes only finalSOURCEpin and canonical same-file Ref
+comparison, rejects changed source/hash/path, keeps all original math/time/
+native-count checks and old27bit-exact. No forecast/fit rerun. All21marks
+stillmissing =>33riskyUNKNOWN/3analyticcashKNOWN, not account zero profit.
+Independent actual review used38.203/300s, no model/weight/native execution.
 Claude REVISE cap-circumvention/budget-scope/no-old-study-reuse:
 A/review/temporal-native-proof-calibration-20261019-v1/claude.json.
 No global GPU/Paper permission hold; the concrete timing fault is resolved.
+
+Next research priority is ONE latest-known-matured-label fastGRU refit, not
+more architecture/seed search. Current weights FIT<=4789/INNER<=4936; proposal
+uses available oldFIT/INNER/leadingDEV entry<=5062 forFIT, INNER5084..5209,
+purge5063..5083/old42gaps retained/samepastscalers-reference/seed808. This
+reuses seen DEV as training/INNER, never fresh replication or a past profit
+pass. SOURCE feasibilityd1a7d465 says intentional NEW8 EVALyNaNs need exact
+retained-bar label materialization, not mask-only refitting or imputation.
+Data finite rowkey/maturity audit and Engine fit-only SOURCE prepare in
+disjoint roots current25-latest-matured-refit-input-audit-20261019-v1(Data)
+and current25-latest-matured-gru-refit-20261019-v1(Research). No new fit/GPU
+authority yet. ClaudeREVISE adaptiveDEV/splitmaturity/recipeproof/lowpower;
+A/review/current25-latest-matured-refit-20261019-v1/claude.json. Provider
+finality/PIT/TR remain unobserved, not a company-wide permission hold.
 
 Earlier GRU throughput evidence (not qualification of the temporal study):
 Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,

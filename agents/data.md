@@ -5,6 +5,31 @@ Data owns source capability/acquisition/canonical storage/time availability;
 Execution owns account/order endpoints. Parent owns integration/shareddocs/Git.
 Private KIS Paper marketdata is delegated, no KIS_LIVE_*/secret/raw-value output.
 
+## Latest Matured-Label Input Audit
+
+Finite read-only candidate-input audit active under
+A/data/current25-latest-matured-refit-input-audit-20261019-v1, not a collector.
+Consumer ONE samefastGRU deployment-refit proposal, no new architecture/grid.
+Exact current25-temporal-experts-calibrated-development-20261019-v1/actual/
+market.npz SHA682a445d; row_keys/fi/vi/ei/y only, no features/model/native/API.
+ProposedFIT unionoldfi/vi/leadingei entry<=5062; INNER5084..5209/new21datepurge
+5063..5083/older42splitgaps preserved. Sourcecalendar/targete..e+20/knownbar
+availability and finite labels need evidence. Original NEW8 EVALy intentionally
+NaN; preserve raw-view failure/counts, not impute or regrade. A separate owned
+retained-bar label view may be needed before any training. Maturity is not
+provider-finality/PIT/TR; those limitations stay unknown without a global hold.
+All original sources/collectors/feeds/cursors unchanged, no new KIS calls.
+Raw audit CLOSED INCOMPLETE_FIRST_CAUSE: private NumPy2.5header API missing,
+0arrays decoded/30.107owned180/459.447elapsed900, old1attempt0retry retained.
+This is a parser defect, NOT observed label counts or raw-bar unavailability.
+Separate owned derived-label-view-r1 phase300worker1800end authorized: public
+NPY header parser first, then actual split/maturity audit and exact samepanel
+targetkernel+normalizer. Regenerate knownNEW8fi/vi labels bit-exact FIRST;
+only then materialize supported candidateFIT/INNER maskedlabels into a new
+y/index view referencing immutable x/scalers/rowkeys. No imputation/future
+label/scaler update/oldartifact mutation/model/Paper calls; unsupported data
+or known-label mismatch stops this exact candidate, not company authority.
+
 ## Current Nine-Route Breadth Source
 
 Consumer: broader-universe training/ranking/allocation research, not an automatic
@@ -28,7 +53,7 @@ timing-recovery-r4/ENGINE-INPUT.json (manifest43aad063/readback2c096dd5).
 boundary:8routes2007-08-20,SPY2007-08-21, lastOct16. Not exhaustive Jan2007 or
 global historyfloor. Nineinvalidgaps/1432missingtarget sessions retained;
 no imputation, old cursors re-probe or source substitution into a frozen study.
-Frozen current25 training consumer remains EXACTolder19555:
+Historical four-fit current25 cohort consumer remains EXACTolder19555:
 A/data/current20-universe-breadth-daily-capture-20261018-v1/
 strict-valid-subset-r1/ENGINE-INPUT.json;
 source extracted-manifest b95f3763, readback637d8cab.
@@ -44,9 +69,11 @@ made POSTdata invalid; partial effects UNKNOWN, failedpending/startmark and
 separately bound recovery do not refund old work. All current actors/leases
 released; no active collector inferred from old commands in immutable roots.
 
-Engine's COMPLETEDcurrent25 training binds exact19555, never newerhistory
-silently swapped. TransferCOMPLETE uses FIRST8414 unchanged. New43k is useful
-for a separately frozen next consumer, not automatic source replacement.
+Historical cohort4fits bind exact19555, transfer FIRST8414 unchanged. Separate
+full-history3fits and calibratedtemporal2fits completed on exact43379; no
+silent old source swap. New latest-matured proposal reuses this exact source,
+not a collector or fresh independent data. Two temporalfits/108cells independently
+PASS60746605, strongprimariesFAIL; Paper authority/feeds unchanged.
 
 R3pressure diagnosis: exacttwofresh+one retainedr2 body codesEGW00201; mapping
 exactnativecode/HTTP429, not genericnonzero. ActualHTTPstatus/STARTintervals

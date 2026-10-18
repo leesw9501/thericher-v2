@@ -8,9 +8,9 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
-Ancestral243=156CUDA+87CPU market-fitted VERSIONS, including one old invalid
-depth-TCN result; not243 architectures/qualified models. Oct18 21:05KST
-continuation added25 versions(21CUDA4CPU), no completed old fit replay.
+Ancestral245=158CUDA+87CPU market-fitted VERSIONS, including one old invalid
+depth-TCN result; not245 architectures/qualified models. Oct18 21:05KST
+continuation added27 versions(23CUDA4CPU), no completed old fit replay.
 All completed training leases released.
 
 | Hypothesis | Frozen Result / Validation |
@@ -176,21 +176,42 @@ Next market SOURCE staged current25-temporal-experts-calibrated-development-
 20261019-v1; same raw/scalers/splits/seed808/factories/fusion,2starts0retry,
 max128/pat20/LR/bestrestore/7200each16000owned28800end fromSOURCE17:42:22UTC.
 FinalREADY26869e99/source27workersd2f6783f/protocol476e9a96/caller2ec81f89/
-template09afbc13 ParenthashcheckPASS/GO dispatched. ActualTCNmarketstart1
-Oct18 18:02:37UTC/GPUallocation18:02:39/free22070MiB, nativeprocess/42percent
-GPU spot18:03:56. No completed epoch/checkpoint observed then, not a completed
-fit/performance result. PATCH follows serially; original2starts0retry caps.
-Ledger243closed plus one running attempt, not244completed. TCNsynthetic train/
+template09afbc13 ParenthashcheckPASS/GO. ACTUAL2fits COMPLETE TCN21best1/
+PATCH22best2/INNERpat20; worker5702.94s/66.62s, different cost/capacity confounds.
+11038forwards5418updates43saves2restores/0SYNretryresume;5847.47owned16000/
+7001.23elapsed28800, both actors/leases released. Model-only066bb1d8,
+actualeba59d01/257pins. Independent27NAVs/81bit-exactcontrols/402pins/maxerror0,
+ACTUAL-REVIEW-SEAL60746605, actual38.203owned300/no model execution.
+NEW8 10bps growth/DD percent: TCN2.0976/.8868,PATCH2.4355/.9058,
+blend2.3359/.8995 vs GRU2.2405/.8259 anduniform1.6805/.6902. All3jointprimary
+FAIL; PATCH/blendgrowthhigher/DDworse, not universal unprofitability.
+Ledger245closed, no convergence/independent-alpha/Paper claim. TCNsynthetic train/
 predictp90 1.447/1.043s, PATCH .01888/.00603s are not actual market epochs.
 New pointwriter current25-calibrated-temporal-future-points-20261019-v1 and
 additivefuturemeasurement reader SOURCEstagedffac4e19/d973e41b,8groups each/
-15writerCPUinertimports/old27cellsbit-exact.3fixednewpolicies extend27to36
-futurecostcells, no actualnewpoints/oldpointreforward/newcapture/Paper switch.
-Independent108retained reader rebind prepares in newstudy's assigned subtree,
-no model/native calls or economics until actualtuple frozen.
+15writerCPUinertimports. Actual3points SEALED4de52237/19:50:53.454028UTC,
+2CUDAforwards2intakes/0fit-SYN-RNG-oldcalls/25.663owned120/lease released.
+Parentactual24weights/8manualblend/9refchain PASS e3ee3ba3 under
+current25-temporal-future-parent-readback-20261019-v1. Final92ac source-ready
+has identical16code modules to staged6f08; derivedAST admits exact finalpin
+and canonical same-file/same-hash Ref, originalreader unchanged/allold27bit-
+exact. All21marks missing=>33riskyUNKNOWN3cashanalyticKNOWN, noPaper switch.
+Independent108retained reader actualPASS above; no repeated model/EVAL forecasts.
 Meitner purefusion/future3arm kernel a70578b8/14checks remains reusable source;
 Herschel108-reader19checks remains SOURCE only, never actual108 authority.
-One GPU only; ledger243 unchanged. Existing Paper work is independent.
+One GPU only; old failed C adds no fit. Existing Paper work is independent.
+
+Next ONE hypothesis: latest-known-matured-label refit of same fastGRUuniform,
+same fixed pastscalers/reference/seed808, no new pastDEV economic replay.
+ProposedFIT unionoldfi/vi/leadingei entry<=5062; INNER5084..5209/new21date
+purge5063..5083/old42splitgaps retained. SeenDEV becomes FIT/INNER, adaptive
+development/deployment preparation, not fresh validation/alpha. EngineSOURCE
+current25-latest-matured-gru-refit-20261019-v1 feasibilityd1a7d465/206checks56pins
+finds intentionalNEW8EVALyNaNs: exact retained-bar label view required before
+training, never mutate old inputs or impute targets. Data bounded rowkey/y/
+calendar/maturity audit active in separateData root; no new native/model fit
+or source finality claim. Claude REVISE adaptiveDEV/splitmaturity/recipeproof/
+lowpower adopted. Fit-only caller/new contract still required if Data supports.
 
 Native-throughput SYN ONLY PASS:44forwards16updates4exact fresh-object restores,
 peakallocated1.39GiB, outer57.03owned120. Pack32 eval41.50->3.07ms and proof
