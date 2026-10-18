@@ -260,15 +260,40 @@ TCN attempt lacked a third completed epoch/reference. Original source and
 closed clocks are not reopened, regraded or refunded.
 Purefusion a70578b8/14checks and independent108-reader SOURCE19checks remain
 available, not actual108-cell authority or permission to use untrained models.
-Parent commissioned separate infrastructure SOURCE-only calibration under
-A/infra/current25-temporal-native-calibration-20261019-v1: originalSYN10 and
-market60 guards/fixture/factories/criteria, explicit new180s proof budgets,
-one attempt per type/zero retry/480owned900end including SOURCE. It cannot
-run market fits or qualify the failed appointment. Parent numerical dispatch
-and measured timings are still needed before any new market contract.
+Separate infrastructure calibration COMPLETE under
+A/infra/current25-temporal-native-calibration-20261019-v1/HANDOFF.json:
+originalSYN10/market60/fixture/factories/equalities,3epochs and exact fullstate/
+next-update/dropout-RNG/best-restoration checks PASS for both types. One native
+attempt each/zero retry, aggregate50forwards16updates8saves4restores6constructs;
+80.281owned/480 incl SOURCE/host/finalIO,678.654elapsed/900 at cleanup. Both
+actors absent/canonical lease released. R1 source-only caller repair admits
+each180s child+30s cleanup against unchanged original ceilings, not requiring
+both worst-case children upfront; no clocks/guards/equality changes. Original
+caller was not invoked. Independent110metadata/source pins PASS, no weights/
+native rerun: A/infra/current25-temporal-native-calibration-independent-20261019-v1/
+ACTUAL-READBACK.json SHA2d0552ab. Old failed C is NOT requalified/refunded.
+Measured TCN SYN train/predict p90 1.447/1.043s, PATCH .01888/.00603s;
+not observed market epoch throughput. Parent new market SOURCE contract under
+A/research/current25-temporal-experts-calibrated-development-20261019-v1:
+same frozen data/models/splits/criteria,2starts/0retry/max128/INNERpat20/LR/
+bestrestore,7200s each/16000owned inclSOURCE/28800end from17:42:22UTC.
+Final READY26869e99/source27workersd2f6783f/protocol476e9a96/caller2ec81f89/
+template09afbc13 independently hash-checked by Parent; exact numerical GO
+dispatched. ACTUAL TCNmarket attempt1 startedOct18 18:02:37UTC, canonicalGPU
+allocation18:02:39UTC/free22070MiB; nativeprocess/42percentGPU spot observation
+at18:03:56UTC. First completed epoch/checkpoint not yet observed then, so not
+a completed fit or performance claim. PATCH follows serially under same caps.
+Actual root holds original input-plan/INTAKE-COMPLETE/NATIVE-READY/market.npz;
+no duplicate SYN or old fit. Closed market-fit ledger243 plus one running
+attempt, not244 completed models. No Paper candidate switch.
+Future3policy writer SOURCE stagedffac4e19/8puregroups/15CPUinertimports,
+23.319owned; additive36-cell reader READYd973e41b/8SYN groups/old27bit-exact/
+missing3packet9UNKNOWN,73.249owned. Both have zero actual new points/models/
+market marks. Exact trained checkpoints and Parent binding required later.
+Independent108 retained reader SOURCE rebind prepares in disjoint subtree.
 Claude REVISE cap-circumvention/budget-scope/no-old-study-reuse:
 A/review/temporal-native-proof-calibration-20261019-v1/claude.json.
-No global GPU/Paper permission hold; this is one concrete native-proof fault.
+No global GPU/Paper permission hold; the concrete timing fault is resolved.
 
 Earlier GRU throughput evidence (not qualification of the temporal study):
 Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,

@@ -58,12 +58,22 @@ guard failed; linkedSYN10->5 is a source/control deviation, not original
 qualification. TCN2/2failed/PATCHlinkedSYN5only,57actualSYNforwards21updates,
 reservedupper62/22. SYN-TAIL-DISPOSITION.json, all actors/leases released;
 ledger243 remains. Do not launch old caller or regrade/refund its clocks.
-New separate Infra SOURCE calibration current25-temporal-native-calibration-
-20261019-v1 assignedMeitner, originalSYN10/market60/3epoch/fullstate criteria,
-new180s children1attempt per type/0retry/480owned900end inclSOURCE. No GPU
-allocated until Parent exactREADY review/dispatch; no market fit authority.
-Use measured startup/steady/checkpoint/cleanup for a different future market
-budget, not weakened controls or a claim that the old appointment passed.
+Separate Infra calibration current25-temporal-native-calibration-20261019-v1
+COMPLETE oneGPUadmission/2serialchildren/50forwards16updates8saves4restores/
+6constructs,originalSYN10/market60/3epochs/fullstate criteria.80.281owned480/
+678.654elapsed900atcleanup; actorabsent/canonicallease released. Independent
+110metadata/sourcepinsPASS/ACTUAL-READBACK2d0552ab/no native rerun. Old failed
+C is not requalified/refunded. R1 per-child admission preserved both ceilings.
+Next market SOURCE staged current25-temporal-experts-calibrated-development-
+20261019-v1; Parentselected7200perfit16000active28800end from17:42:22UTC,
+2marketstarts0retry/max128/pat20/LR/bestrestore, same original criteria/data.
+ExactREADY26869e99/source27workersd2f6783f/protocol476e9a96 ParentcheckPASS/GO.
+ActualTCNmarketstart1 Oct18 18:02:37UTC/GPUallocation18:02:39/free22070MiB;
+nativeprocess/42percentGPU spot18:03:56, first completed epoch unobserved then.
+ONE allocated GPU/TCN, PATCH waits serially; not completed models/convergence.
+Ledger243closed plus one running attempt. Future3policy writer/36cell reader
+SOURCEstagedffac4e19/d973e41b, zero actualpoint calls/leases. CPU independent
+108retained source rebind prepares separately, no conflicting GPU allocation.
 
 ## Closed Custody
 

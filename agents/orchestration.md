@@ -11,13 +11,14 @@ an append-only current board. MD/agent identity is not a running worker.
 | Owner | Actual State / Write Set | Next Action |
 | --- | --- | --- |
 | Engine/Chandrasekhar |Temporal appointment CLOSED:57SYNforwards21updates/0marketfits, originalSYN10 not qualified by linkedSYN5.|No old retry/fit/cap refund. Ledger243 unchanged; all leases released.|
-| Infra/Meitner |Separate restored-control temporal calibration SOURCE preparation; purefusion14checks complete.|OriginalSYN10/market60/3epochs, new180s proofs/0retry, Parent dispatch required; no market authority.|
-| Validation/Herschel |Full25 actualPASS150480checks/81NAV/42controls;108-reader SOURCE19checks only.|Disjoint calibration source/actual audit when READY; no native/economic rerun.|
+| Engine/Chandrasekhar new scope |READY26869e99/ParentGO; actualTCNmarketstartOct18 18:02:37UTC/GPUallocation18:02:39.|Sole GPU owner, PATCH serial next. No completed epoch/performance observed at18:03:56.|
+| Infra/Meitner |Calibration PASS50f16u/3epochs/fullstate; future3policy writer SOURCEstagedffac4e19/8groups15inertimports.|Released until exact trainedstates/ParentGO, no actualnewforecast.|
+| Validation/Herschel |Calibration110pinsPASS2d0552ab; future36adapter READYd973e41b/old27bit-exact/8groups.|CPU new108retained reader rebind in disjoint subtree, no models/economics.|
 | Data |43379rows/535142checks,493GET6POST;9exactcursors closed, no globalfloor. NEWfinite21NEW8marks ACTUALLYReadyEnabled/firstOct20 08.|Naturalownedcaptures only; no API/manualinvocationyet, old20feeds unchanged.|
 | Infra/Parent |SDKactual-GET spacing repair132focused/322serial/full18314PASS;twoDataActions actually retargeted/Enabled/Ready.|Firstcaptures dueOct20, originaltimes/custody unchanged; no manual invocation.|
 | Strategy/Harvey |Allocation36 new cells independently PASS as calculation, economic primary FAILbothselectors; Throughput memo complete.|Released. No extra policy/replay/winner search.|
 | Strategy/Planck |TimesFM2.5 ACTUAL oneCPUbatch8x21/oneRootforward, sealbfe2316a; Parent8scores/8weights/source/nativecount readbackPASS.|Released. No fit/GPU/reforecast; future21outcomesUNKNOWN.|
-| Research Steward |All prior training leases released; no training inferred from SOURCE queue.|One exclusive GPU allocation for first runnable frozen campaign, desktop headroom.|
+| Research Steward |Prior leases released; ONE new actualTCN allocation, free22070MiB at admission.|Keep exclusive ownership/desktop headroom; PATCH serial, no dummy utilization.|
 | NAS Paper |Eight exact retained FULL entries; existing image87697f8e.|Owned exit not before Oct21 US OPEN; preserve exact requests/basis.|
 | New ensemble Paper |Actually Ready/Enabled image378f2034; firstOct19 15:10UTC.|Original entry-onlyOct19 window; no new submit/fill yet.|
 | Nightly/Goal97/Data |Existing finite/owned opportunities unchanged.|NightlyOct19 23:50KST; Goal97Oct19entry/Oct24exit; DataOct20 06:50/07:30KST.|
@@ -84,9 +85,13 @@ Orthogonal2expert+fixedblend family closed before market: original45sSYN
 guard failed, linkedSYN10to5 is not unchanged qualification. TCN2/2failed,
 PATCHchangedsourceonly;57actualSYNforwards21updates, no108actualcells.
 SYN-TAIL-DISPOSITION.json under current25-temporal-expert-composition-
-development-20261019-v1. Meitner new InfraSOURCE calibration only; no market
-authority until exactREADY/Parentdispatch/newmeasured contract. Executiondue
-unchanged, no company permissionhold. Purefusion/108reader SOURCE reusable.
+development-20261019-v1. Separate Infra actualcalibration nowPASS50f16u/
+80.281owned480/678.654elapsed900atcleanup, independent110pins2d0552ab.
+Originalcontrols restored, not failedCqualification. NewmarketactualTCNstart1
+18:02:37UTC/7200perfit16000active28800end originalSOURCE17:42:22UTC. SoleGPU;
+no completed epoch observed18:03:56. Futurepointwriter/36reader SOURCEready,
+new108reviewer source prepares in parallel. Executiondue unchanged; no company
+permissionhold. Purefusion/108reader SOURCE reusable.
 
 Latest dispatch improvement: future SOURCE-only compile/path/CLI/inert-import
 packages use explicit measured worker/end/effect budgets rather than arbitrary

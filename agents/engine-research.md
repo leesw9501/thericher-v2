@@ -164,12 +164,30 @@ TCN2/2failed, PATCH passed changedSYN5 only,57SYNforwards/21updates/0marketfits.
 SYN-TAIL-DISPOSITION.json preserves original stacks/closed tuples; missing
 epoch3 reference is not proof of stochastic nondeterminism. No old caller,
 silent retry/cap refund/frozen guard reduction or completed proof replay.
-Parent's new separate Infrastructure SOURCE-only calibration:
-A/infra/current25-temporal-native-calibration-20261019-v1. Restore original
-SYN10/market60/factory/fixture/loss/fullstate/3epoch criteria, new180s children/
-1attempt each/zero retry/480owned900end inclusive SOURCE. No market authority
-or old qualification; Parent needs READY then exact dispatch, independent
-source audit and measured timing before freezing a different market campaign.
+Separate Infrastructure calibration COMPLETE:
+A/infra/current25-temporal-native-calibration-20261019-v1/HANDOFF.json.
+OriginalSYN10/market60/factory/fixture/loss/fullstate/3epoch criteria PASS;
+oneattempt each/zero retry/50forwards16updates8saves4restores/80.281owned480,
+678.654elapsed900 atcleanup/actorsabsent/lease released. Independent110pins/
+checkpoint metadata PASS ACTUAL-READBACK2d0552ab, no native/weight rerun.
+R1 per-child admission changed source scheduling, NOT original ceilings or
+guards; original caller not invoked, closed C never requalified/refunded.
+Next market SOURCE staged current25-temporal-experts-calibrated-development-
+20261019-v1; same raw/scalers/splits/seed808/factories/fusion,2starts0retry,
+max128/pat20/LR/bestrestore/7200each16000owned28800end fromSOURCE17:42:22UTC.
+FinalREADY26869e99/source27workersd2f6783f/protocol476e9a96/caller2ec81f89/
+template09afbc13 ParenthashcheckPASS/GO dispatched. ActualTCNmarketstart1
+Oct18 18:02:37UTC/GPUallocation18:02:39/free22070MiB, nativeprocess/42percent
+GPU spot18:03:56. No completed epoch/checkpoint observed then, not a completed
+fit/performance result. PATCH follows serially; original2starts0retry caps.
+Ledger243closed plus one running attempt, not244completed. TCNsynthetic train/
+predictp90 1.447/1.043s, PATCH .01888/.00603s are not actual market epochs.
+New pointwriter current25-calibrated-temporal-future-points-20261019-v1 and
+additivefuturemeasurement reader SOURCEstagedffac4e19/d973e41b,8groups each/
+15writerCPUinertimports/old27cellsbit-exact.3fixednewpolicies extend27to36
+futurecostcells, no actualnewpoints/oldpointreforward/newcapture/Paper switch.
+Independent108retained reader rebind prepares in newstudy's assigned subtree,
+no model/native calls or economics until actualtuple frozen.
 Meitner purefusion/future3arm kernel a70578b8/14checks remains reusable source;
 Herschel108-reader19checks remains SOURCE only, never actual108 authority.
 One GPU only; ledger243 unchanged. Existing Paper work is independent.

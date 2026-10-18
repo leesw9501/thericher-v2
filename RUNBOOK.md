@@ -167,10 +167,16 @@ all8scores+weights. Forecast never repeat; future21outcomes UNKNOWN.
 Temporal-expert-composition-development-20261019-v1 CLOSED at nativeproof,
 57SYNforwards21updates/0marketfits/0economics. SYN-TAIL-DISPOSITION.json:
 originalSYN10 not qualified by changedSYN5, TCN2/2failed/PATCHlinkedonly.
-Do not run old launch/caller/recovery. Separate InfraSOURCE calibration
-current25-temporal-native-calibration-20261019-v1 restoresoriginalcriteria
-withnew180sproofs/0retry, no market authority. Parent must inspect READY and
-new source bindings before numerical dispatch. Ledger243 unchanged.
+Do not run old launch/caller/recovery. Separate Infra calibration
+current25-temporal-native-calibration-20261019-v1 COMPLETE PASSoriginalcriteria/
+3epoch/fullstate,50forwards16updates/80.281owned480/678.654elapsed900atcleanup,
+lease released. Independent110pinsACTUAL-READBACK2d0552ab, no oldCqualification.
+New marketSOURCE current25-temporal-experts-calibrated-development-20261019-v1
+2fits/7200each/16000active28800end fromSOURCE17:42:22UTC. Parent exactcheck
+READY26869e99/source27workersd2f6783f/GO dispatched; actualTCNmarketstart1
+Oct18 18:02:37UTC/GPUallocation18:02:39/free22070MiB. Firstepochunobserved
+at18:03:56, PATCH serial next. Do not run a second caller or reclaim its lease.
+Ledger243closed plusoneactiveattempt, not completed-model/profitability proof.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

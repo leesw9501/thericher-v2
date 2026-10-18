@@ -73,8 +73,13 @@ reusedDEV/budgetfragile ClaudeREVISE adopted; individualprofitnotfusiongate.
 OriginalSYN45s timing failed; linkedSYN10to5 reduction is not qualification.
 TCN2/2failed/PATCHlinkedSYN5only,57SYNforwards21updates; ledger243 unchanged.
 Purefusion14checks/independent108reader19checks are SOURCE, not actual results.
-Parent commissions separate restored-control native calibration, no market
-authority; measured timings must inform a new sensible training contract.
+Separate restored-control native calibration COMPLETE50f16u/3epochs/fullstate/
+80.281owned480, independent110pinsPASS2d0552ab; no oldstudyqualification.
+MeasurednewmarketSOURCE7200perfit16000active28800end staged/2starts0retry/
+max128INNERpat20/LR/bestrestore; exactREADY26869e99/ParentGO. ActualTCNstart1
+Oct18 18:02:37UTC/oneGPUallocation; firstepochunobserved18:03:56/PATCHserial.
+Future3policy writer/36cell reader SOURCEreadyffac4e19/d973e41b, no actualnew
+points/economics or Paper switch. Independent108reviewer source prepares CPU.
 Differentcohorts/INNER selection alter recipe, not isolatedcausal diversity.
 ReusedEVALclock/threecosts, no missingtargetfallback/freshalpha claim.
 A/review/current25-training-cohort-20261018-v1/claude.json: REVISEcommon-support/

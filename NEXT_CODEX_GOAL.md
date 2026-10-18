@@ -100,10 +100,18 @@ Temporal2expert appointment current25-temporal-expert-composition-development-
 SYN10to5 change does not qualify original source.57SYNforwards/21updates,
 TCN2/2failed/PATCHchangedsourceonly; ledger243 unchanged. No old cap refund,
 retry, caller or108actual-result claim. Parent commissions separate Infra
-SOURCE calibration current25-temporal-native-calibration-20261019-v1 with
-originalSYN10/market60/3epoch/fullstate criteria, new180sproofs/1attempt each/
-0retry/480owned900end inclSOURCE. ExactREADY/Parentdispatch/measuredtimings
-must precede a DIFFERENT market contract; this scope has no fit authority.
+calibration current25-temporal-native-calibration-20261019-v1 COMPLETE with
+originalSYN10/market60/3epoch/fullstate criteria,1attempt each/0retry/50f16u/
+80.281owned480/678.654elapsed900atcleanup/leases released. Independent110pins
+PASS/ACTUAL-READBACK2d0552ab, no oldCqualification. New calibrated-market
+SOURCE current25-temporal-experts-calibrated-development-20261019-v1:
+2marketstarts0retry,7200perfit16000active28800end fromSOURCE17:42:22UTC,
+max128/pat20/LR/bestrestore/originaldata-guards-criteria. FinalREADY26869e99/
+source27workersd2f6783f/ParentcheckPASS/GO; actualTCNmarketstart1 Oct18
+18:02:37UTC/GPUallocation18:02:39/free22070MiB, firstcompletedepochunobserved
+at18:03:56. PATCH serial next, ledger243closed plusoneactiveattempt. Parallel
+future3policy writer/36cell reader SOURCEreadyffac4e19/d973e41b; actualnewpoints/
+economics absent. Independent108source rebind prepares without models.
 Purefusion14checks and blind108-reader19checks are reusable SOURCE only.
 
 ## Completion And Continuation
