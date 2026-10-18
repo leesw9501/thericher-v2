@@ -2,6 +2,18 @@
 
 ## Current Oct17 Reboot Continuation
 
+NEW Oct18 21:25KST: Chandrasekhar owns source preparation then finite market-
+only acquisition at A/data/current20-universe-breadth-daily-capture-20261018-v1,
+raw/canonical bytes only in its matching NEW M/us_equities/kis_paper_private/
+subtree. Fixed8newnames COST/LLY/CAT/MS/CVX/NEE/VZ/ADBE plusSPY control,
+official current venue metadata required, no performance-selected replacement.
+Consumer broader-universe ranking/allocation development, not PIT/alpha or
+automatic Paperinput. Existing Main90819/f9/Paper contexts remain immutable.
+Source<=600active3600end/API0 untilfocused/pinned scope READY; delegated next
+capture<=720GETattempts/1200active3600end/2007Jan..Oct16/oneclient/gates/
+documentedpace. No account/order/live endpoints, newTasks or globalhold; no
+collection is inferred from this assignment. No credential/rawbody output.
+
 Oct18 Ptolemy completed metadata/source/key/venue/calendar binding for NEW
 current20-equalrank4-paper-20261018-v1 using exactf9shadow output and same
 90819directD1 source, no newHTTP/forecast/sourcechanges. ProposedentryUSOct19

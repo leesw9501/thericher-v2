@@ -2,6 +2,19 @@
 
 ## Current Owned Runtime (2026-10-18 KST)
 
+Late Oct18 research continuation is external-only, no new broker/Task action.
+Ranking/MSE606 COMPLETE6CUDAfits/63KNOWNcells/primaryFAIL3/3, independentPASS
+793pins/137commits/18replays/45exactcontrols, no winner/Paperswitch. Current
+224=141CUDA+83CPU incloldinvalid, not architectures. Queued9fit707 input ablation
+has local scaler-field/desktopGPU-admission repairs before any native/model
+start; do NOT rerun old creators/closed attempts. Allocation exact firstcause/
+linkedtechnical-r2 and Parent freshreadguard6proof are in the roots named by
+HANDOFF/stateboards. Data9route breadth source and final fixed5shadowconsumer
+are separately owned; source readiness is not capture or inference. Existing
+Paper bank/identities/schedules stay unchanged. Full code authority below may
+be reused only after exactsource/control digests still match; new external
+packages require their own native/focused evidence, not another18k for docs.
+
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE company objective: current-nas-owned-model-paper-cycle-v1.

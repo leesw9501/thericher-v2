@@ -10,6 +10,40 @@ D:/thericher-v2/model-artifacts. AGENTS.md owns authority and deterministic risk
 
 ## Ready / Owned / Due
 
+Oct18 21:05KST resumed operator long request: first natural ensemble opportunity
+is still Oct20 00:10KST; safe Scheduler read says all three current model/new
+ensemble/nightly owners Ready, no new ensemble run. LastTaskResult/legacy
+never-run timestamp is not execution evidence. No manual invocation/broker call.
+Meitner owns NEW pairwise-ranking-objective SOURCE preparation (same1274MLP,
+pairedMSE/Rank six proposedCUDAfits/seed606), Harvey owns NEW fixed-risk-
+allocation SOURCE preparation (same selections/gross, past63vol/cap35percent).
+Distinct external write roots below research/, no shared/repo/Git writes;
+no numerical fit/replay counted yet. Parent owns scientific freeze/Claude/
+integration. Actual Docker has web only, GPU4090~1.5GiBdesktop/5percent, D~39.6%
+free. One numerical GPU allocation remains required, not an authorization hold.
+Advisory Claude REVISE names preregistration/maturity-purge/fairness/claims;
+address in exact protocols before numerical dispatch, no new Paper gate.
+A/review/current20-ranking-and-allocation-20261018-v1/claude.json.
+
+12:20UTC update: ranking SOURCE3f56a725/protocolb32dcc49 frozen, numerical
+appointment3600active10800end/6starts0marketretry; actual nativeSYN PASS paired
+initialization/dateorder/bestrestore/nextupdate/zero-gradient handling. Native
+CUDA fits now COMPLETE6/63KNOWNcells/primaryFAIL3/3/FROZEN70e5b499, all7leases
+released;224=141CUDA+83CPU incloldinvalid. Herschel independentretained review
+running/noGPU. Ptolemy input-ablation PREP6puregroups PASS,
+one retained hostname-harness retry, frozen6134ce0c/protocol43cee1b5/kernel1939;
+now implements disjoint nine-fit707 worker, GPUonlyafter runnable/nativeproof
+and measuredexclusiveownership; ranking campaign is terminal/clean. Harvey
+allocation firstattempt failed before economicreplay on own-output-hash read
+allowlist; originalfailure preserved, narrowlycorrected technical-r1 study
+authorized/cumulativeold+new caps preserved, no outcome/parameterchange. Planck prepares
+one future five-challenger shadow consumer from fixed pre-economics Parent
+planc6b72615, no modelcalls/newData/Tasks/Paperswitch. Shadow source-root below
+research/current20-five-challenger-prospective-preparation-20261018-v1;
+reuses existing future21D1marks, never another collector or a historical winner.
+Chandrasekhar source-prepares finite9route dailyhistory breadth (8newnames+SPY),
+no currentMain/Paperinput changes; scoped owned source/gates precede capture.
+
 Oct18 current update supersedes the historical Oct17 table below. Parent owns
 integration/Git; the provisional fixed equalrank4 Task is actually Enabled/Ready,
 31finite starts/firstOct20 00:10KST, image378f2034/sourceca19a499/input473a759d/
@@ -59,6 +93,34 @@ Prepared roles are not permanent LLMs or proof of active workers. Before a new
 dispatch check actual PID/lease/container and one owner per mutable write set.
 
 ## Throughput Review
+
+Oct18 21:40KST: six new CUDA fits and independent63cell review finished while
+the next9fit source was built. Actual bottlenecks are local preflight/API
+mismatches, not a Paper approval or closed market. Allocation's oldown-output
+hash whitelist defect has an unchanged narrow fix; Parent freshnative Windows
+6case probePASS using normal-user Junction (not privileged file symlink),
+linked technical-r2 will perform first actualreplay within original cumulative
+bounds. Ablation intake scalerfield names corrected with no modelstarts;
+then pre-GPU owner admission misread WDDM desktop/N/A as competingtraining.
+Parent resolved System/dwm/TabTip read-only and officialNVIDIA WDDM limitation;
+only new owned-worker admission calibrated, not exclusive entirePC or bypassed
+nativeSYN/headroom. Newcaller SOURCE may inspect exact hashed array schemas
+before numerical dispatch; do not invent a zero-array-read rule for every
+future prep. All old zero-decode/failed contracts/debits remain unchanged.
+Reversible improvement: evidence-backed local guards/real ABI before compute,
+not more frozen gate layers/another full18k rerun. AdvisoryREVISE scoped:
+A/review/research-preflight-owner-calibration-20261018-v1/claude.json.
+Independentranking PASS793pins/137commits/18replays/45exactcontrols/66dateorders,
+no native/modelcalls; sealcc657600. GPU released, active nextpreflight repair.
+
+Oct18 21:05KST: owned Paper paths Ready and markets closed, not a company idle
+permission hold. Next ready research changes the training OBJECTIVE and
+ALLOCATION, not another architecture/seed grid. Reversible improvement is
+reuse exact Main features/scalers/retained forecasts and quiet pinned workers,
+paired dates/gross/costs, rather than reacquiring raw data or repeating18k tests
+for new external code. Freeze finite fits/policies first; external native tests
+and independent retained checks validate those artifacts. Company owned exit
+and original10percent bank remain unchanged.
 
 Oct18 02:30KST: actual newPaper Task Ready/firstOct20 00:10KST; all18newfits
 and their independent retained reviews finished. Reader6groups plus ONE scoped

@@ -8,6 +8,18 @@ History remains in Parent Git27dface and immutable external roots.
 
 ## Current Consumers
 
+NEW Oct18 21:05KST: Harvey owns SOURCE/kernel preparation for fixed risk
+allocation at A/research/current20-fixed-risk-allocation-development-20261018-v1.
+RetainedHGB14 and fixed4expertranks only if exactallfoldalignment; no newfit/
+forward/thresholdsearch. Compare SAMEtop5/samegross equalweight vs capped
+inverse trailing63session volatility, cap35percent/fullyinvested; no covariance
+optimizer/riskparityclaim. Missing risk marks pairedrowunavailable, not silently
+fewer stocks/cashfallback. Freeze pairedmasks/policies/costs/killtests before
+economic replay; futureperturbation must not change earlier weights. Source
+prep600active3600end/CPU2RAM4/GPU0; no numerical result yet. Parent/Engine own
+final numerical freeze; frozen Paper/oldcriteria unchanged. ClaudeREVISE:
+A/review/current20-ranking-and-allocation-20261018-v1/claude.json.
+
 Oct18 Harvey completed review of a small operational shortlist, not another model
 grid. Parent candidate is exactpredeclared f9 equalrank4; HGBsingle/uniform are
 controls, no seenf3 champion/Paperalpha claim. Bound provisionalPaperconsumer

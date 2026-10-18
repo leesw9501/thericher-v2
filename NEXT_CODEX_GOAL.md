@@ -73,6 +73,22 @@ delegated authority; never substitute an unknown request or expand capital.
 
 ## Ready Parallel Work
 
+Oct18 resumed request continues research while natural Paper results are future.
+Paired ranking/MSE606 COMPLETE6CUDAfits/63KNOWNcells/primaryFAIL, all7leases
+released/FROZEN70e5b499; independent retained review running, no Paper switch.
+Current ancestral count224=141CUDA+83CPU incloldinvalid, not architectures.
+Ptolemy implements queued raw/indicator/combined707 nine-fit worker from
+SOURCE-PURE6134ce0c; no numerical result inferred from preparation. Harvey
+past63vol allocation first attempt stopped on own-output-hash read allowlist,
+0native replay/0economiccells; original failure/0retry immutable, named corrected
+study technical-r1 authorized under linked bounds, no outcome/parameter change.
+Planck prepares ONE predeclared5challenger future shadow using existingOct19/
+21session marks, no winner/reforecast/collector/Task. Chandrasekhar prepares
+finite9route market-only daily source (COST/LLY/CAT/MS/CVX/NEE/VZ/ADBE plusSPY)
+for broader-universe research under existing private authority; no actual
+capture inferred yet. Old Main/f9/Paper/bank immutable; tasks Ready, no manual
+invocation/newcapital/Paperpolicychange. Company ownedexit stays open.
+
 ACTIVE Oct18 operator direction: connect a small existing candidate shortlist
 to actual native KIS Paper while independent GPU/CPU research continues.
 Use NEW provisional current20-equalrank4-paper-20261018-v1, exact fixed f9cbd3ee

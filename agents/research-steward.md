@@ -8,6 +8,21 @@ Results live in agents/engine-research.md; this board owns queue and custody.
 
 ## Ready / Allocated
 
+Oct18 continuation: Meitner pairedranking/MSE COMPLETE6CUDAfits/6starts0retry,
+63KNOWNcells/primaryFAIL3/3/FROZEN70e5b499. Numerical353.91active3600/346.73end
+10800, sourceclock separate; all7GPUleases released, actualDockerwebonly after
+cleanup. Current224=141CUDA+83CPU incloldinvalid, no qualified-alpha count.
+Independentretained CPUreview running. ExistingD6 image/no runtime replacement.
+Harvey allocation firstattempt stopped before anyreplay/economiccell on owned
+archive hash-read allowlist. Original0retry/failure preserved; corrected
+technical-r1 is separate linked study under new300active900end AND cumulative
+old+new<=original600/original1800absoluteend, no source/outcome/parameter change.
+Ptolemy prepares next finite raw-only/indicator-only/combined input-ablation
+protocol/kernel behind the ranking campaign, SOURCE CPU only/no training.
+Three masks on same1274architecture/FITscalers, proposed9fits/seed707; no
+architectural/seedgrid, publicweights or Paperchange. Allocate only after ready
+contract/nativeproof and current canonical lease release, not concurrentGPU.
+
 Oct18 quantileMLP COMPLETE3CUDAfits/0retry/72KNOWNcells/bothprimaryFAIL,
 22/21/21epochs/selected2/1/1; independentPASS440pins/68COMMITTED/72cells.
 GPUlease released,160.04owned7200, no claim of sustainedoccupancy/convergence.

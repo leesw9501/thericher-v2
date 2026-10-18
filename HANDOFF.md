@@ -14,6 +14,29 @@ price output, expiry renewal, unknown-request replacement or bank reset.
 
 ## Active Oct18 Direction
 
+Late Oct18 resumed request continues research during future Paper opportunity.
+New paired ranking/MSE606 COMPLETE6CUDAfits/63KNOWNcells/primaryFAIL3/3,
+all7leases released, FROZEN70e5b499 under A/research/current20-pairwise-ranking-
+objective-development-20261018-v1. Current ancestral224=141CUDA+83CPU inclone
+oldinvalid; not architectures/alpha. Independentretained PASS793pins/137commits/
+63cells/18replays/45unchangedcontrols, sealcc657600/no modelcalls.
+Queued: Ptolemy actual9fit707 raw/indicator/combined worker from pure-source
+6134ce0c, not yet GPU proof: scalerfield admission repaired, WDDM desktop/N/A
+owner classification now calibrated to actual ownedGPUworkers+headroom, not
+entire-PC idleness. No model fit occurred in these stopped stages. Harvey allocation firstattempt failed locally on
+own numeric-output hash-read whitelist before0economiccells; originalfailure
+immutable; technical-r1 fixture failed Windowsfile-symlink privilege and stopped
+beforemarket. Parent freshnormal-userJunction/readguard6proofPASS; technical-r2
+authorized under cumulative/originaldeadline bounds, no scientific change.
+Planck source-prepares one fixed5arm future shadow named before their economics,
+same oldOct19OPEN target/existing21D1marks, no f9reforecast/newTask/Paper switch.
+SOURCE6purecases complete/e20df89d; final actualconsumer assembly underway,
+inference still unobserved. Claude preflightadvisoryREVISE is scoped, not global
+hold; A/review/research-preflight-owner-calibration-20261018-v1/claude.json.
+Data/Chandrasekhar prepares finite9route dailyhistory breadth (8newnames+SPY)
+for broader research, no current20/oldMain merge or acquisition assumed yet.
+Parent owns shared documents/Git. Current Paper identities/bank/schedules stay.
+
 Operator requested promising existing models/ensembles be connected to actual
 Paper while independent Engine research/GPU work continues. New provisional
 candidate: exact predeclared equalrank4(rule/HGB/MLP/GRU) from f9cbd3ee, not a

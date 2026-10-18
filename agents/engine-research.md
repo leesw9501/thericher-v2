@@ -7,6 +7,47 @@ Research qualification is not a Paper permission gate. Never KIS_LIVE_*.
 
 ## Current Oct18 Parallel Continuation
 
+NEW Oct18 21:05KST operator continuation: Meitner owns SOURCE preparation at
+A/research/current20-pairwise-ranking-objective-development-20261018-v1.
+Mechanism is same1274MLP with per-date pairwise logistic ranking vs matched
+newMSE, pairedseed606/datebatches/initialization, six proposedGPUfits across
+same3purgedfolds. Max160epochs/INNERpat20/fixedLR/bestrestore, no architecture
+grid/oldfitreplay. Proposednumerical3600active10800end/6starts/0marketretry,
+native objective/date/tie/maturity/checkpoint tests before actualfits. SOURCE
+prep is not numerical proof; cumulative218 unchanged until actual completion.
+Harvey prepares independent retained-score allocation CPU study (past63vol,
+top5 fixed, capped35percent/samegross), no new forecasts/automaticPaper switch.
+ClaudeREVISE preregistration/leakage/pairedfairness/claims is scoped advice:
+A/review/current20-ranking-and-allocation-20261018-v1/claude.json.
+
+Ranking SOURCE3f56a725/protocolb32dcc49 and exact numerical appointment froze
+before nativeSYN/market work. COMPLETE6CUDAfits/6starts0retry/63KNOWNcells,
+45Maincontrols unchanged. MSEepochs23/22/21 selected3/2/1; Rank21/21/21
+selected1/1/1; INNERpat20, not convergence. At10bps growth/DD percent:
+MSE3.383/.520,3.386/3.983,4.225/1.673; Rank3.632/.637,2.856/4.195,2.805/1.489.
+Frozen matched-growth/DD primaryFAIL3/3, no winner/Paper switch. NativeSYN PASS
+both losses/pairedinit/dateorder/nextupdate/bestrestore/zero-gradient handling;
+66common-epoch date orders equal, no observed score ties. Including SYN19077
+updates39266forwards137saves10restores. Numerical353.91active3600/346.73end10800,
+sourceclock separate; all7GPUleases released. FROZEN70e5b499/HANDOFF-ACTUAL.json
+in current20-pairwise-ranking-objective-development-20261018-v1. Current224=
+141CUDA+83CPU incloldinvalid; independent retained PASS793pins/137commits/
+18replays/45exactcontrols/66commondateorders; sealcc657600/no modelcalls.
+Ptolemy input-ablation SOURCE/PURE READY6groups (original hostname-harness
+failure/soleexactretry retained), now authors separate actual9fit707worker;
+no numerical/GPU proof from the pure prep. Numerical delegated only after
+runnable sourcefreeze/nativeproof, original3600/10800/9starts/0marketretry.
+Planck readies one five-arm
+future-shadow consumer named BEFORE these economics, same originalOct19OPEN/
+21session target and existing D1marks, no newforecast yet/f9overwrite/Paperswitch.
+Its SOURCE6purecases complete/e20df89d, now assembles final actualconsumer in
+new current20-five-challenger-shadow-20261018-v1; no inference yet. Ninefit
+worker hit scaler archive field-name admission error before0modelstarts,
+then WDDM desktop process/N/A owner guard before0nativeSYN. Local repair
+preserves oldversions/clocks/9starts/nativecaps; unknown OSusage is not global
+projectGPUownership. Future prepared scopes may inspect exact hashed input
+schemas before fitting, not a blanket zero-market-derived-array rule.
+
 Oct18 current20-long-daily-quantile-mlp-development-20261018-v1 COMPLETE3CUDAfits,
 0retry/22-21-21epochs/selected2-1-1,72KNOWNcells=18new+54retained. Hypothesis:
 ordered q10/q50/q90 return distributions on same1274raw+14 inputs can expose
