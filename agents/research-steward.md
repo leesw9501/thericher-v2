@@ -18,7 +18,7 @@ Current25 actual4fits CLOSED(2CPUHGB2CUDAGRU)/72knowncells, input19555 frozen,
 technical-r3 actualresults/cleanup/replay-recovery. GRUs2epochs/selected1/safe
 wallheuristicstop, not convergence. Two priorfailedSYN attempts andone separate
 correctedPASS remain, aggregatecounts/debits distinct, nooldstudyrefund.
-Current245=158CUDA87CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
+Current246=159CUDA87CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
 
 Fixed-recency COMPLETE: native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5 under
 current20-fixed-recency-cudnn-development-20261018-v1.3fits/18knowncells,
@@ -77,17 +77,25 @@ Future3policy writer/36cell reader SOURCEstagedffac4e19/d973e41b;
 pointACTUALSEALED4de52237/19:50:53UTC/2firstCUDAforwards0fits/25.663owned120/
 actorabsentlease released. Parent9refchain/24weights8manualblend PASS e3ee3ba3;
 33riskyfuturecellsUNKNOWN3analyticcashKNOWN/all21marks missing. No repeats.
-Next samefastGRU latest-matured refit is SOURCE/Data audit only, no GPU allocated:
-onefitproposal/samepastscalers-reference/seed808/no historicalprofitgrid. Raw
-input audit failed private NumPyheader API before0decodes,30.107closeddebit;
-separate deterministic retained-label view needed, never impute NaNs or mutate
-oldsource. Exact input/nativeproof/finalcontract before future GPU admission.
+Latest-matured samefastGRU refit COMPLETE:25epochsbest5/INNERpat20,
+6752forwards3325updates25saves1restore/2logical4physical/native97.42s/
+peakreserved7.71GiB. Oneactorreaped/lease released, model-only11189fad/
+actualdcdae6f4/Parent141actual16sourcepinsPASS.208.650active3000/1376.148end7200;
+oldRAW30.107stillseparate/initiative238.757. No SYN/oldproof rerun/historyEVAL.
+Latestpoint1CUDA/1intake1logical2physical/nativeEXIT0 completed, but original
+publicationUNAVAILABLE/outerEXIT1 dueoutput-binding variable shadow;24.671debit
+unchanged/actorlease released/NO native retry. Zero-model metadata recovery
+COMPLETE viewe7ed7dc9/receipt220957bc/prooff8b0cd40/newwrite20:34:30.097135UTC.
+Typed39consumer actualseal a2316b5d/result9e18f8bc PASS, no model/GPU/weights
+or economic calls. Original UNAVAILABLE/native0outer1 remains; reconstructed
+view only. All21marks missing/36riskyUNKNOWN3analyticcashKNOWN; no new training
+allocation, old forecast repeat, convergence/alpha claim or dummy utilization.
 
 ## Closed Custody
 
-Ancestral market-fitted versions245=158CUDA+87CPU, including ONE old invalid
-depth-TCN checkpoint. Latest27versions=6ranking9ablation4cohort3recency3full25+2temporal(23CUDA4CPU),
-not27 architectures/qualified models. SYN, foundation inference, reader calls
+Ancestral market-fitted versions246=159CUDA+87CPU, including ONE old invalid
+depth-TCN checkpoint. Latest28versions=6ranking9ablation4cohort3recency3full25+2temporal+1latest(24CUDA4CPU),
+not28 architectures/qualified models. SYN, foundation inference, reader calls
 and zero-fit allocations/shadows do not count as training.
 
 | Family | Closed Evidence |

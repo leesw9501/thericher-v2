@@ -38,6 +38,14 @@ launch-level-witness/HANDOFF-ACTUAL.json.
 
 ## Next Priority
 
+Meitner owns source-only learned-fusion feasibility under
+A/research/current25-learned-fusion-feasibility-20261019-v1. Audit actual
+fit/INNER/selection cutoff for retained expert predictions and previous OOF/
+shallow-gate work before proposing ONE chronological shallow CPU policy trial.
+Exact compatible keys/targets/costs and mature purged splits are required;
+all past EVAL reused means development only. No numerical dispatch yet, no
+extra architecture grid, broker authority, or individual-profit fusion gate.
+
 Training-universe breadth fourfits COMPLETE/72cells/independentPASSa55dc25d.
 Partial19555 augmentation improved new8 HGB/GRU comparisons, mean2failed;
 twoGRUs only2epochs bywallheuristic, not convergence. Fixedrecency3fit study
@@ -86,11 +94,19 @@ Future3policies allretained, no winnerfilter: ACTUALSEALED4de52237/19:50:53UTC,
 2firstCUDAforwards0fits/25.663owned120/lease released. Parent9refchain/24weights/
 8manualblend PASS e3ee3ba3/old27bit-exact,36potentialcells33riskyUNKNOWN3cash
 analyticKNOWN. No future performance/Paper switch or more forward calls.
-Next ONE hypothesis: latest-known-matured-label samefastGRU refit, not another
-architecture/seed grid or historicalDEVprofit pass. Sameoldscalers/reference,
-laggedFIT->neweligiblematuredFIT/chronologicalINNER; seenDEVtraining explicit.
-Data retained-label/split/maturity proof and fit-only SOURCE pending; no model
-authority yet. ClaudeREVISE adaptiveDEV/splitmaturity/recipeproof/lowpower.
+Latest-matured samefastGRU refit COMPLETE25epochs/best5/INNERpat20; no historical
+EVALforecast/profit pass. Sameoldscalers/reference/seed808, FIT92599/4232dates/
+INNER3150/126, seenDEVtraining explicit. Data29587knownlabelsbitexact1848
+supportedmaskfills, no imputation/oldinputchange. Model-only11189fad/actual
+dcdae6f4/Parent141actual16sourcepinsPASS, ledger246, actorlease released.
+One latestfutureforecast actuallycomputed/nativeEXIT0/8scores, original outer
+EXIT1/UNAVAILABLE dueoutput-binding variable shadow, no numeric retry. Only
+zero-model binding recovery COMPLETE viewe7ed7dc9/receipt220957bc and typed39
+recoveryconsumer actualPASS/seala2316b5d/result9e18f8bc, base36bitexact. All21
+futuremarks missing/36riskyUNKNOWN3analyticcashKNOWN. Originalstrictconsumer/
+UNAVAILABLE/native0outer1/clocks unchanged; reconstructed retained-native view
+only, no numerical rerun or alpha/Paper promotion. ClaudeKEEP recoveryisolation/provenance/
+cutoff/labelintegrity; refitREVISE adaptiveDEV/maturity/recipe/lowpower retained.
 Differentcohorts/INNER selection alter recipe, not isolatedcausal diversity.
 ReusedEVALclock/threecosts, no missingtargetfallback/freshalpha claim.
 A/review/current25-training-cohort-20261018-v1/claude.json: REVISEcommon-support/

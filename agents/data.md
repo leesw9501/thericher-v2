@@ -7,28 +7,23 @@ Private KIS Paper marketdata is delegated, no KIS_LIVE_*/secret/raw-value output
 
 ## Latest Matured-Label Input Audit
 
-Finite read-only candidate-input audit active under
-A/data/current25-latest-matured-refit-input-audit-20261019-v1, not a collector.
-Consumer ONE samefastGRU deployment-refit proposal, no new architecture/grid.
-Exact current25-temporal-experts-calibrated-development-20261019-v1/actual/
-market.npz SHA682a445d; row_keys/fi/vi/ei/y only, no features/model/native/API.
-ProposedFIT unionoldfi/vi/leadingei entry<=5062; INNER5084..5209/new21datepurge
-5063..5083/older42splitgaps preserved. Sourcecalendar/targete..e+20/knownbar
-availability and finite labels need evidence. Original NEW8 EVALy intentionally
-NaN; preserve raw-view failure/counts, not impute or regrade. A separate owned
-retained-bar label view may be needed before any training. Maturity is not
-provider-finality/PIT/TR; those limitations stay unknown without a global hold.
-All original sources/collectors/feeds/cursors unchanged, no new KIS calls.
-Raw audit CLOSED INCOMPLETE_FIRST_CAUSE: private NumPy2.5header API missing,
-0arrays decoded/30.107owned180/459.447elapsed900, old1attempt0retry retained.
-This is a parser defect, NOT observed label counts or raw-bar unavailability.
-Separate owned derived-label-view-r1 phase300worker1800end authorized: public
-NPY header parser first, then actual split/maturity audit and exact samepanel
-targetkernel+normalizer. Regenerate knownNEW8fi/vi labels bit-exact FIRST;
-only then materialize supported candidateFIT/INNER maskedlabels into a new
-y/index view referencing immutable x/scalers/rowkeys. No imputation/future
-label/scaler update/oldartifact mutation/model/Paper calls; unsupported data
-or known-label mismatch stops this exact candidate, not company authority.
+COMPLETE: A/data/current25-latest-matured-refit-input-audit-20261019-v1/
+derived-label-view-r1/LABEL-VIEW-MANIFEST.json SHA1a528b4e,
+label-index-view.npz SHA1b5c1dff/SEAL7a406a91. Known29587NEW8labels regenerated
+bit-exact from exact retained panel/targetkernel/oldnormalizer, then1848supported
+selected NaNs materialized(840FIT1008INNER), oldknownY/unselectedNaNbits unchanged.
+FIT92599rows4232dates/INNER3150rows126dates,21dateFIT-INNERpurge/old42gaps,
+20skippedentrydates afterINNER: lasttarget5229CLOSE beforefuture5230OPEN.
+Sameold x1274/rowkeys/scalers/reference read-only, no1GB feature copy. Data
+worker62.753/300s; no model/native/API calls or historicalperformance reads.
+Raw audit still CLOSED INCOMPLETE_FIRST_CAUSE/privateNumPyheader missing,
+0decoded/30.107debit/1attempt0retry. New public-header/derived phase is separate,
+not a raw-result regrade or imputation. Provider finality/PIT/TR unknown.
+Consumer ONE latestGRU refit actually completed25epochs/best5/INNERpat20,
+model-only11189fad/actualdcdae6f4, no historicalEVAL replay. Futurepoint actually
+computed once but originalpublication UNAVAILABLE duebindingmetadata variable
+shadow; onlyzero-model recovery pending, no model re-execution. Existingdata
+feeds/cursors/collectors/Paperauthority unchanged, no new KIS calls.
 
 ## Current Nine-Route Breadth Source
 

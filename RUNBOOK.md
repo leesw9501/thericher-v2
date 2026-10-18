@@ -113,7 +113,7 @@ manual future-Task replay. Preserve exact owned next_due.
 
 ## Current Research / Data
 
-27new versions complete:6ranking+9ablation+4cohort+3recency+3full25+2temporal(23CUDA4CPU).245ancestral
+28new versions complete:6ranking+9ablation+4cohort+3recency+3full25+2temporal+1latest(24CUDA4CPU).246ancestral
 versions=156CUDA+87CPU incloneoldinvalid, not architectures/alpha. Training
 leases released. Allocation81cells independentPASS/economicFAIL;new8transfer
 21cells primaryFAIL/independentretainedPASS185pins.5+4+3futurechallenger actualforecasts
@@ -188,11 +188,31 @@ Ref admission via exactly2ASTchanges; originalreader unchanged/old27bit-exact.
 CHECK/result e3ee3ba3/24weights8manualblend,36cells33riskyUNKNOWN3analyticcash.
 Do not repeat the completed model/forecast. This readback is not a future
 mark collector or account PnL, and no later day refs are discovered implicitly.
-Latest-matured GRU proposal SOURCE/Data audit only: rawlabelaudit incomplete
-NumPy private-header AttributeError/0decoded/30.107debit; old audit is CLOSED,
-not retried. Separate owned derived-label-view-r1 requires publicheader parsing,
-exactretainedtargetkernel+normalizer/knownNEW8bitexact/maturity+split proof before
-any future fit. No new native/model/Paper authority from a feasibility file.
+Latest-matured GRU COMPLETE25epochs/best5/INNERpat20/model-only11189fad/
+actualdcdae6f4/Parent141actual16sourcepinsPASS, no oldEVALforecast/replay.
+Data derived-label-view-r1 manifest1a528b4e/view1b5c1dff:29587knownlabelsbitexact,
+1848supportedfills/FIT92599rows4232dates/INNER3150rows126dates/purge21/final20.
+RawprivateNumPyheader failure0decodes30.107debit unchanged; derivedphase62.753
+usespublicAPI/oldinputs unchanged. Fit208.650active3000/1376.148elapsed7200,
+oldRAWseparate/initiative238.757, native97.42s/peak7.71GiB/actorlease released.
+Latestpointroot current25-latest-matured-gru-future-point-20261019-v1/actual:
+HANDOFF-ACTUAL/SEALED-ACTUAL record nativeEXIT0/1CUDA/8scores but originalouter
+EXIT1/UNAVAILABLE, outputbinding `pin` shadow bug. Originalpacket/commit/source
+and1attempt0retry/24.671debit remain, never execute again. Onlybinding-recovery-r1
+ZERO-model binding-recovery-r1 viewe7ed7dc9/receipt220957bc/prooff8b0cd40
+COMPLETE atOct18 20:34:30.097135UTC. Reconstructed view ONLY, original strict
+nine-chain still rejects original failure; no fake EXIT0/nativecommit/inference.
+Typed39consumer exact ACTUAL-R1-SEALa2316b5d/result9e18f8bc under
+A/research/current25-latest-matured-gru-future-measurement-20261019-v1/
+recovery-source-r1; base36bitexact/36riskyUNKNOWN3analyticcashKNOWN. Parent9
+sealfile/refhash readbackPASS; all21marks missing, no account PnL. Use explicit
+recovery view+receipt refs and later owned day refs, never a latest-file scan.
+
+Pre-session account readiness SOURCE: A/execution/pre-session-readiness-
+20261019-v1/PLAN.json SHA8c43bc87. Existing native account-only snapshot,
+not observe/preview/recovery. No turnkey combined CLI; bounded tiny caller
+must pass native fence/private comparison and fresh ownership checks first.
+No credentials/private snapshot/wire result yet; no manual Task invocation.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

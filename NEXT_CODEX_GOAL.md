@@ -86,7 +86,7 @@ reviewPASS346checks/18bit-exactNAVs. ActualfastGRUs39/23epochs/INNERpat20/bestre
 threefull25fits(2CUDA1CPU)/81knowncells independentPASSdd885a57;
 threefull25-trained original17futurepoints preOPEN16:02:06.855826UTC,
 Parenthash/all51weightsPASS/zero fit/oldpointredo. One native-throughput SYNprobe.
-Current ancestral245=158CUDA+87CPU incloneoldinvalid, not
+Current ancestral246=159CUDA+87CPU incloneoldinvalid, not
 architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;
@@ -119,18 +119,31 @@ derived source-pin/canonical-Ref reader admission only, no new model calls.
 36potentialcells33riskyUNKNOWN3analyticcashKNOWN, all21marks missing. No
 Paper candidate switch or independent-alpha claim.
 
-Nextreadyresearch: ONE latest-known-matured-label samefastGRU refit, no new
-architecture or historicalDEVprofit search. Engine feasibilityd1a7d465/206checks
-under current25-latest-matured-gru-refit-20261019-v1; proposedFIToldfi/vi/
-leadingei<=5062, INNER5084..5209/new21purge/old42gaps/samepastscalers-reference.
-SeenDEV becomesFIT/INNER, not fresh validation. OriginalNEW8EVALlabels masked
-NaN intentionally; Data raw-input audit failed PRIVATE NumPy-header API before
-zero array decodes, NOT proof of unavailable market bars. Preserve30.107debit/
-old1attempt0retry. Separate derived-label-view-r1 Data phase may use public
-header API and exactretainedpanel kernel+normalizer: prove knownNEW8labels
-bit-exact FIRST, materialize only supported selected maskedlabels, no imputation
-or oldarray mutation. SOURCE/rowkey/calendar/maturity evidence before any new
-fit. One fit-only caller/finite contract still needed; no native GO yet.
+Latest-matured samefastGRU refit COMPLETE under corresponding researchroot:
+25epochs/best5/INNERpat20/6752forwards3325updates25saves1restore/0SYNretryEVAL.
+Native97.42s/peak7.71GiB/actorlease released,208.650active3000/1376.148end7200.
+Model-only11189fad/fullactualdcdae6f4; Parent141actual16source/selectedcheckpoint
+hashes/cleanup PASS, no model rerun or historicalprofitability claim. Data
+derivedmanifest1a528b4e/view1b5c1dff:29587knownlabelsbitexact/1848supportedfills,
+92599FIT4232dates3150INNER126dates/purge21/old42gaps/finalboundary20.
+OldRAWNumPyfailure0decodes30.107debit unchanged; newData62.753separate, no impute.
+SeenDEV nowFIT/INNER, sameoldscalers/reference/seed808, not fresh validation.
+Latestpointactually1CUDA/1intake1logical2physical/nativeEXIT0/8scores. Original
+publicationUNAVAILABLE/outerEXIT1 because source-loop overwrote binding `pin`
+withlastmodulehash in outputmetadata. Original1attempt0retry/24.671debit and
+rawpacket/commit/source remain untouched; NEVER rerun completed forecast.
+Zero-model binding-recovery-r1/source-proof/view COMPLETE e7ed7dc9/220957bc,
+newviewwriteOct18 20:34:30.097135UTC, originalfailure preserved. Typed39reader
+recovery-source-r1/ACTUAL-R1-SEALa2316b5d/result9e18f8bc independently admits
+reconstructed retained-native view ONLY; originalstrictconsumer unchanged,
+base36bitexact/39cells36riskyUNKNOWN3analyticcashKNOWN/all21marks missing.
+Parent9sealfile/refhashchecksPASS/zero model rerun; no fabricatedoldEXIT0/
+nativecommit/successfulnine-chain, alpha or Paper authority. ClaudeKEEPadvisory.
+Execution separately prepares current NAS account/custody readiness under
+pre-session-readiness-20261019-v1: existing account-only native snapshot and
+strict private parsers, <=4GET/<=1guardedauthPOST finite visit after source/
+owner checks. SOURCE only so far; no fresh broker custody/submit/fill claim.
+No Task invocation, budget reset, unknown-request replacement or order effect.
 Purefusion14checks and blind108-reader19checks are reusable SOURCE only.
 
 ## Completion And Continuation

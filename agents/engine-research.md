@@ -8,9 +8,9 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
-Ancestral245=158CUDA+87CPU market-fitted VERSIONS, including one old invalid
-depth-TCN result; not245 architectures/qualified models. Oct18 21:05KST
-continuation added27 versions(23CUDA4CPU), no completed old fit replay.
+Ancestral246=159CUDA+87CPU market-fitted VERSIONS, including one old invalid
+depth-TCN result; not246 architectures/qualified models. Oct18 21:05KST
+continuation added28 versions(24CUDA4CPU), no completed old fit replay.
 All completed training leases released.
 
 | Hypothesis | Frozen Result / Validation |
@@ -68,6 +68,16 @@ Reused dates/currentlistings/revised-asof source remain adaptive DEV, not fresh
 independent cross-time replication or broker PnL.
 
 ## Breadth / Depth Queue
+
+Next SOURCE audit: A/research/current25-learned-fusion-feasibility-20261019-v1,
+Strategy/Meitner owns exact cutoff/row-key/availability/cost compatibility of
+retained HGB/GRU/TCN/PatchTF predictions. Prepare ONE shallow CPU learned-gate
+protocol only if meta-training predictions are genuinely out-of-fit and their
+targets mature before each later split. Keep chronological purges/baselines,
+all reused EVAL as adaptive DEV, not independent replication. Prior OOF/gate
+studies must be checked first. Zero model/numerical/economic calls assigned;
+incompatible predictions produce a concrete rejection, not a broad retrain grid.
+One GPU lease is free after completed work; no ready qualified GPU fit inferred.
 
 Current25 four-fit actuals CLOSED under
 A/research/current25-training-cohort-development-20261018-v1/technical-r3.
@@ -201,17 +211,34 @@ Meitner purefusion/future3arm kernel a70578b8/14checks remains reusable source;
 Herschel108-reader19checks remains SOURCE only, never actual108 authority.
 One GPU only; old failed C adds no fit. Existing Paper work is independent.
 
-Next ONE hypothesis: latest-known-matured-label refit of same fastGRUuniform,
-same fixed pastscalers/reference/seed808, no new pastDEV economic replay.
-ProposedFIT unionoldfi/vi/leadingei entry<=5062; INNER5084..5209/new21date
-purge5063..5083/old42splitgaps retained. SeenDEV becomes FIT/INNER, adaptive
-development/deployment preparation, not fresh validation/alpha. EngineSOURCE
-current25-latest-matured-gru-refit-20261019-v1 feasibilityd1a7d465/206checks56pins
-finds intentionalNEW8EVALyNaNs: exact retained-bar label view required before
-training, never mutate old inputs or impute targets. Data bounded rowkey/y/
-calendar/maturity audit active in separateData root; no new native/model fit
-or source finality claim. Claude REVISE adaptiveDEV/splitmaturity/recipeproof/
-lowpower adopted. Fit-only caller/new contract still required if Data supports.
+Latest-matured samefastGRUuniform refit COMPLETE, samepastscalers/reference/
+seed808, no historicalDEVforecast/economics. FIT92599rows4232dates(entry<=5062),
+INNER3150/126(5084..5209),purge21/old42gaps/finalboundary20. SeenDEV becomes
+FIT/INNER: adaptive deployment development, NOT independent validation/alpha.
+Data1a528b4e/view1b5c1dff regenerated29587knownNEW8labelsbitexact, calculated
+1848supportedmaskedlabels(840FIT1008INNER), no oldinput mutation/imputation.
+Original0decodeprivateNumPyfailure30.107 closed; newderivedphase62.753separate.
+Researchcurrent25-latest-matured-gru-refit-20261019-v1 SOURCE8ca84f7e/
+16workersa7a3a29c/protocol4977cc72/24checks; priorreal25f8update nativeproof
+reused via7unchangedfunctions, no SYN/rerun. ACTUAL25epochsbest5/INNERpat20,
+6752forwards3325updates25saves1restore/2logical4physical/97.42s nativeworker,
+peakreserved7.71GiB/actorlease released.208.650active3000/1376.148elapsed7200;
+oldRAW30.107separate/initiative238.757. Model-only11189fad/fullactualdcdae6f4,
+Parent141actual16source/selectedcheckpoint+cleanup readbackPASS. No profit claim.
+Latestfirstforecast 1CUDA/1intake1logical2physical/nativeEXIT0/8scores exists,
+but originalpublicationUNAVAILABLE/outerEXIT1: `pin` argument shadowed bycode
+loop, wrong binding hash in output only. No numerical retry;24.671debit and
+all originalartifacts retained. Separate zero-model binding-recovery-r1 view
+e7ed7dc9/receipt220957bc/prooff8b0cd40 COMPLETE, newwrite20:34:30.097135UTC.
+Typed39recovery consumer ACTUAL PASS: recovery-source-r1/ACTUAL-R1-SEAL.json
+SHAa2316b5d/result9e18f8bc under current25-latest-matured-gru-future-measurement-
+20261019-v1. Base36bitexact;39cells36riskyUNKNOWN3analyticcashKNOWN,21marks
+missing. Parent9sealfile/refhash checksPASS, originalpublicationUNAVAILABLE/
+native0outer1 unchanged; no models/weights/GPU/API/economics rerun. Ordinary
+single-model catalog ABI continuation retained. Reconstructed native view is
+not original nine-chain/crypto OS proof/alpha/Paper promotion. Any mismatch
+remains UNKNOWN. ClaudeKEEP recoveryisolation/
+provenancelimit/cutoff/labelintegrity; originalrefitREVISE limits preserved.
 
 Native-throughput SYN ONLY PASS:44forwards16updates4exact fresh-object restores,
 peakallocated1.39GiB, outer57.03owned120. Pack32 eval41.50->3.07ms and proof

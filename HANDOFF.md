@@ -12,7 +12,7 @@ original shared initial virtual-cash tenth. Never KIS_LIVE_*, real money,
 paid/public work, secret/private-value output, foreign inventory adoption,
 unknown-request replacement or bank reset.
 
-Current memory refreshed Oct19KST after integration commitc97c197. Replaced stale
+Current memory refreshed Oct19KST. Replaced stale
 queue projections; detailed history remains in Git and immutable external roots.
 An MD/installed Task is not proof of an active worker, submit or fill.
 
@@ -63,8 +63,8 @@ honest host, NOT cryptographic OS scheduler-origin proof.
 
 ## Research Completed This Continuation
 
-Oct18 21:05KST continuation added27 fitted versions(23CUDA+4CPU), NOT27
-architectures. Ancestral ledger245=158CUDA+87CPU, including one old invalid; SYN/
+Oct18 21:05KST continuation added28 fitted versions(24CUDA+4CPU), NOT28
+architectures. Ancestral ledger246=159CUDA+87CPU, including one old invalid; SYN/
 foundation inference/reader calls do not add fits. All completed training
 allocations released. No automatic Paper candidate switch.
 
@@ -317,19 +317,55 @@ Claude REVISE cap-circumvention/budget-scope/no-old-study-reuse:
 A/review/temporal-native-proof-calibration-20261019-v1/claude.json.
 No global GPU/Paper permission hold; the concrete timing fault is resolved.
 
-Next research priority is ONE latest-known-matured-label fastGRU refit, not
-more architecture/seed search. Current weights FIT<=4789/INNER<=4936; proposal
-uses available oldFIT/INNER/leadingDEV entry<=5062 forFIT, INNER5084..5209,
-purge5063..5083/old42gaps retained/samepastscalers-reference/seed808. This
-reuses seen DEV as training/INNER, never fresh replication or a past profit
-pass. SOURCE feasibilityd1a7d465 says intentional NEW8 EVALyNaNs need exact
-retained-bar label materialization, not mask-only refitting or imputation.
-Data finite rowkey/maturity audit and Engine fit-only SOURCE prepare in
-disjoint roots current25-latest-matured-refit-input-audit-20261019-v1(Data)
-and current25-latest-matured-gru-refit-20261019-v1(Research). No new fit/GPU
-authority yet. ClaudeREVISE adaptiveDEV/splitmaturity/recipeproof/lowpower;
-A/review/current25-latest-matured-refit-20261019-v1/claude.json. Provider
-finality/PIT/TR remain unobserved, not a company-wide permission hold.
+Latest-matured fastGRU refit COMPLETE under current25-latest-matured-gru-refit-
+20261019-v1:25epochs/best5/INNERpat20,6752forwards3325updates25saves1restore,
+2logical4physical,97.42s nativeworker/peakreserved7.71GiB, actorlease released.
+208.650active3000/1376.148elapsed7200; old RAW30.107separate, initiative238.757.
+Model-only11189fad/actualdcdae6f4; Parent141actual+16sourcepins/selected commit/
+archive/cleanup PASS without models. Zero historical EVAL forecasts/economics.
+InputData derived-label-view-r1 under current25-latest-matured-refit-input-audit-
+20261019-v1: manifest1a528b4e/view1b5c1dff/seal7a406a91;29587knownNEW8labels
+regeneratedbit-exact,1848supportedmaskfills(840FIT1008INNER), oldinputs unchanged.
+FIT92599/4232dates(entry<=5062), INNER3150/126(5084..5209),purge21/old42gaps,
+finalboundary20; target5229CLOSE beforefuture5230OPEN. Sameoldscalers/reference/
+seed808. SeenDEV nowFIT/INNER: adaptive development, NOT historical profit
+validation/independent alpha. Provider finality/PIT/TR stillunknown. Raw private-
+header API failure0decodes30.107s stays closed; new public-API Dataphase62.753s.
+Prior real native proof reused through7unchangedfunctions, no SYN/oldfit replay.
+Latestfuturepoint calculated1CUDA/1intake1logical2physical/nativeEXIT0/8scores,
+but originalouterEXIT1/UNAVAILABLE: source code-loop shadows input `pin` and
+writes state_digest modulehash instead of verified actual launch-binding hash.
+Originalpacket/commit/source/24.671debit/1attempt0retry remain immutable;
+do NOT rerun model or fake original EXIT0/nine-ref publication. Exact evidence:
+current25-latest-matured-gru-future-point-20261019-v1/actual/HANDOFF-ACTUAL.json.
+Separate binding-recovery-r1 ZERO-model view/source proof COMPLETE:
+BINDING_VIEW.json SHAe7ed7dc9/RECEIPT220957bc/PROOFf8b0cd40, actual view
+write/readbackOct18 20:34:30.097135UTC. Original failure remains UNAVAILABLE;
+this is a reconstructed retained-native view, NOT a successful original
+nine-ref publication, new native execution or cryptographic OS-origin proof.
+Typed recovery consumer ACTUAL PASS under
+A/research/current25-latest-matured-gru-future-measurement-20261019-v1/
+recovery-source-r1/ACTUAL-R1-SEAL.json SHAa2316b5d/result9e18f8bc.
+Original strict consumer remains unchanged. One ordinary single-model catalog
+ABI continuation is recorded, not a numerical retry. All original36 cells
+bit-exact;39cells=36riskyUNKNOWN/3analyticcashKNOWN/all21futuremarks missing.
+New consumer11.390owned120/183.871elapsed900; Parent9sealfile/recovery refs
+hash readback PASS, zero model/weight/GPU/API/economic calls. Any mismatch
+remains UNKNOWN; no reconstructed old EXIT0 or model rerun.
+ClaudeKEEP readerisolation/provenancelimit/cutoff/labelintegrity under
+A/review/latest-gru-retained-point-binding-recovery-20261019-v1/claude.json;
+latest-refitREVISE adaptiveDEV/maturity/recipe/lowpower under correspondingreview.
+No Paper candidate/order/schedule change or new operator approval needed.
+
+Execution pre-session readiness SOURCE preparation is separately owned by
+Chandrasekhar under A/execution/pre-session-readiness-20261019-v1. It joins
+existing strict native book parsing to stock_exit_account_snapshot only;
+proposed ONE finite visit <=4 account/order GETs and <=1 guarded authPOST,
+no submit/quote/funds/history/recovery or private state writes. Plan8c43bc87/
+17 blocked-wire fence checks are SOURCE only, not fresh custody. Parent must
+verify native-validator/comparison and actual named-owner admission before
+wire; no human approval or global research hold. Existing .10 basis/reserves,
+unknown identities, Tasks and pending requests remain unchanged.
 
 Earlier GRU throughput evidence (not qualification of the temporal study):
 Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,
