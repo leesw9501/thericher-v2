@@ -14,19 +14,27 @@ PyTorch2.7.0+cu128/Python3.12; RTX4090. Measure current free resources at
 allocation, preserve desktop headroom, one named canonical GPU lease.
 WDDM desktop N/A memory is not a competing project training process.
 
-Next frozen-candidate preparation: current25-training-cohort-preparation-20261018-v1,
-OLD17/NEW25 HGB14+GRU f3,seed808, proposed2CPU+2CUDA fits. Preparation assigned;
-not numerical authority/execution. Same common-support dates/scalers/reference
-cohort, new terminal strict-valid-subset19555 input. Source600active5400end,
-GPU0/models0/replay0. Proposed numerical3600active10800end/4 starts/0 marketretry,
-native solver/optimizer/checkpoint tests before fits; freeze actual protocol first.
-Data recovery and CPU retained validation do not own this GPU lease.
+Current25 actual4fits CLOSED(2CPUHGB2CUDAGRU)/72knowncells, input19555 frozen,
+technical-r3 actualresults/cleanup/replay-recovery. GRUs2epochs/selected1/safe
+wallheuristicstop, not convergence. Two priorfailedSYN attempts andone separate
+correctedPASS remain, aggregatecounts/debits distinct, nooldstudyrefund.
+Current237=152CUDA85CPU. Retained-only72cellreview assigned/noGPU.
+
+Next SOURCE: current20-fixed-recency-cudnn-development-20261018-v1,
+fixed1260-FIT-session lossweight old17/f3/seed808. Unstarted2fit proposal
+superseded; NEW3fits proposed1HGBrecency+2FAST-GRU uniform/recency, same new
+nativeflavor/pack32 requires own uniformcontrol, not old2epochATen.
+Source900active3600elapsed/GPU0; finalnumericcontract/nativeweightedproof before
+3starts0retry/3600active10800elapsed/HGB300sec/GRU900each. OneGPUallocator
+<=min8GiB,measuredfree-4GiBdesktop, actualcurrentheadroom not historicalsnapshot.
+Nativebench allocated1.39GiB/reserved3.86GiB plusmarket tensors motivates NEW
+8GiBcap, not an inherited universal limit. Data/CPUreview use disjoint resources.
 
 ## Closed Custody
 
-Ancestral market-fitted versions233=150CUDA+83CPU, including ONE old invalid
-depth-TCN checkpoint.15 new CUDA versions here =6paired ranking+9input ablation;
-not15 architectures/qualified models. SYN, foundation inference, reader calls
+Ancestral market-fitted versions237=152CUDA+85CPU, including ONE old invalid
+depth-TCN checkpoint. Latest19versions=6ranking9ablation4cohort(17CUDA2CPU),
+not19 architectures/qualified models. SYN, foundation inference, reader calls
 and zero-fit allocations/shadows do not count as training.
 
 | Family | Closed Evidence |
@@ -36,6 +44,8 @@ and zero-fit allocations/shadows do not count as training.
 | Allocation |0fits/forwards/GPU,81 cells, bothselectorsFAIL; independentlinked-r2 PASScd13e848.|
 | Transfernew8 |0fits/1GPUallocation/16 neural batches,21knowncells,primaryFAIL;171.51active1200/oneattempt/lease released.|
 | Five future arms |0fits/GPU/optimizer/oldforwards;5new CPU-native forwards, firstpacket13:11:40UTC; future outcomes UNKNOWN.|
+| Cohort808 |4fits/72knowncells, twoGRUepochsselected1/safeheuristicstop, cleanupreleased; oldnative/replayfailures preserved, retainedreview assigned.|
+| Native-throughput |0marketfits,1GPUallocation/44forwards16SYNupdates4exactrestores,57.03owned120; allresourcesreleased, no market-speed/parity claim.|
 
 Producer/reader/source clocks and old failures/overruns are immutable. Ranking
 native137 commits and ablation218 commits/checkpoint restores are distinct

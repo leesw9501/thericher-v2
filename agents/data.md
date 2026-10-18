@@ -17,8 +17,14 @@ master; current listings/non-PIT/opaqueMODP1/nominaloverlap/finality limits rema
 | Original |8414rows/100GET1POST0retry;2invalid pages/gapsCAT-CVX2023-06-05.|
 | continuation-r1 |19051TOTAL rows(includes8414),135newGET1POST0retry;6more native-invalid2021-05-05 gaps.|
 | strict-valid-subset-r1 |19555TOTAL=19051unchanged+504individually valid rows from8failedpages;200670lineage checksPASS. Dynamic wire0newGET/1POSTattempt, local timing-wrapper TypeError/pendingauth.|
+| timing-recovery-r2 |27070TOTAL=19555unchanged+7515olderrows;77newGET1POST0retry, typednativepressurestop; actualSYNpublicationquarantined, no input/cursorcontamination.|
+| timing-recovery-r3 |35750TOTAL=27070unchanged+8680olderrows;94newGET1POST/boundedretryunitsclosed;443778lineagechecksPASS, all9actualoutputs outsideSYN.|
 
-Current consumer:
+Current research capture consumer:
+A/data/current20-universe-breadth-daily-capture-20261018-v1/
+timing-recovery-r3/ENGINE-INPUT.json (manifestd0aa5148/readbackb5e87ca7).
+406aggregateGET/5POSTattempts; three repeated-date cursorsclosed, sixNYS open.
+Frozen current25 training consumer remains EXACTolder19555:
 A/data/current20-universe-breadth-daily-capture-20261018-v1/
 strict-valid-subset-r1/ENGINE-INPUT.json;
 source extracted-manifest b95f3763, readback637d8cab.
@@ -47,8 +53,23 @@ No retained235query/23closedprobe replay, no oldpending/startmark reset.
 NewPOST allowance distinct, aggregate4attempts not a refunded failedattempt.
 TIMING-REPAIR-READY.json and HANDOFF.json in strict-valid-subset-r1.
 
-Engine's NEW25 sourcepreparation binds exact19555 version, never newerhistory
-silently swapped. TransferalreadyCOMPLETE uses FIRST8414 version, unchanged.
+Engine's COMPLETEDcurrent25 training binds exact19555, never newerhistory
+silently swapped. TransferCOMPLETE uses FIRST8414 unchanged. New35k is useful
+for a separately frozen next consumer, not automatic source replacement.
+
+R3pressure diagnosis: exacttwofresh+one retainedr2 body codesEGW00201; mapping
+exactnativecode/HTTP429, not genericnonzero. ActualHTTPstatus/STARTintervals
+not retained; persistence-completion proxy min.413/p503.077/p956.207s is NOT
+HTTPstart. Realnative SYN reproduced reservation-before-ownerprobe allowing
+0.5s actualinvocationgap despite3sreservations; post-probe floor restored3s.
+No dailyquota/globalfloor claim. R3clientclosed/quiescent/allprefix/gaps exact.
+pressure-diagnosis-r1/DIAGNOSIS.json and CLOSEOUT.json preserve exactevidence.
+NEWtiming-recovery-r4 delegated fresh source180active600elapsed, finiteactual
+160GETattempts(incl2boundedtypedretries)/1POST/600active1800end. ONLYremaining
+6NYSoldercursors, local3s floor AFTERownerprobe/everyretry with realinvocation
+START timestamps and freshness/due checks. No successfulqueryreplay, oldpending/
+token-startreset, globalpacingchange or deployedTask edit. No actualcapture
+is inferred from this assignment. Worker owns guard/cooldownnext_due.
 
 ## Existing Useful Sources
 

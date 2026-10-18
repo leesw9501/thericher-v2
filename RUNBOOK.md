@@ -112,8 +112,8 @@ manual future-Task replay. Preserve exact owned next_due.
 
 ## Current Research / Data
 
-15 new CUDA fits complete:6ranking606+9raw/indicatorablation707.233ancestral
-versions=150CUDA+83CPU incloneoldinvalid, not architectures/alpha. Training
+19new versions complete:6ranking+9ablation+4cohort(17CUDA2CPU).237ancestral
+versions=152CUDA+85CPU incloneoldinvalid, not architectures/alpha. Training
 leases released. Allocation81cells independentPASS/economicFAIL;new8transfer
 21cells primaryFAIL/independentretainedPASS185pins.5futurechallenger actualCPUforecasts
 complete preOct19OPEN;21future outcomesUNKNOWN, no oldreforecast/Paperswitch.
@@ -125,9 +125,20 @@ strict-valid-subset-r1/ENGINE-INPUT.json.
 Failed dynamictiming wrapper produced0GET/1pendingPOST; three native SYN
 support fixed wrapper, NOT actual recovery.1560/1500active overrun retained.
 Do not rerun originalcapture/creator or reset timing/pending state.
-Newcohort SOURCE preparation:
-A/research/current25-training-cohort-preparation-20261018-v1.
-ProposedOLD17vsNEW25 HGB/GRU4fits; not actualtraining yet.
+Current25 fourfit/72cell actuals:
+A/research/current25-training-cohort-development-20261018-v1/technical-r3.
+Oldfailed0market root is not actual4fit result; no duplicate fit/forecast.
+NativeSYN failures and explicit25rank mathrepair preserved; retainedreview
+assigned using exactexistingresults/cleanup/source/FORECAST-WEIGHT-SEAL/
+REPLAY-RECOVERY-COMPLETE/economic-result tuple, not another required envelope.
+Nextfixed-recency-cudnn SOURCE:
+A/research/current20-fixed-recency-cudnn-development-20261018-v1.
+NEW3fit plan(1HGBrecency+pairedFAST-GRU uniform/recency) supersedes unstarted
+2fit proposal before numericaldispatch. Sameold17input/reference/scalers/
+INNER/costs; newflavor/batch needs own uniformcontrol, not old2epochATen.
+Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
+A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
+Synthetictimings/memory only, not market-speed/alpha/trajectory parity.
 Before numericaldispatch exact input/split/scaler/commondate/contract binding,
 real native solver/optimizer/checkpoint SYN, exclusive lease/headroom. No dummy
 GPUuse/oldfitrestart or metadata-only zero-array-read blanket.

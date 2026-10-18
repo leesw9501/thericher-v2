@@ -37,29 +37,32 @@ deterministic risk, exact identity, current broker buying power and shared bank.
 
 ## Ready Parallel Packages
 
-1. Engine: common-support OLD17 vs NEW25 HGB14+GRU training-cohort study,
-   SOURCE preparation at A/research/current25-training-cohort-preparation-20261018-v1.
-   Bind exact terminal19,555-row strict-valid-subset manifest, original f3
-   scalers/reference cohort/purged splits. Proposed4 fits(2CPU+2CUDA), seed808,
-   chronological INNER early stopping/best restore. Freeze finite source/
-   numerical clocks/fit caps/native diagnostics before fits. No hidden source
-   substitution or claim of fresh independent evaluation on reused dates.
+1. Engine: NEWfixed-recency-cudnn SOURCE preparation, fixed1260-session FIT
+   loss mass before current EVAL results. Exactly3 proposedfits:1HGBrecency
+   with compatible completed HGBcontrol,2paired newFAST-GRU uniform/recency
+   with SAME newbackend/pack32/seed808. Old17/f3 rows/scalers/reference/purge/
+   INNERunweighted/costs unchanged. 9new+9retainedcells. Nativeflavor probe
+   PASS is synthetic only; new numericalbinding/weightednativeproof required.
+   A/research/current20-fixed-recency-cudnn-development-20261018-v1.
+   Do not use old2epochATen as a causal control for a different recipe.
 2. Transfer retained validation COMPLETE:185pins/2016feature rows/21 replay
    cells/7policies independently PASS, primaryFAIL(growth up/DD worse than
    uniform). Preserve; do not rerun forecasts, tune or switch Paper.
-3. Data: recover exact urllib timing-wrapper/auth-attempt first cause then
-   continue useful older nine-route history in a separately named finite job
-   if quiescent ownership/token guards permit.235 market GET/3 POST attempts
-   already charged; pending auth/1560-over1500 cap remain recorded.
-   No quota/history-floor inference from a local exception or exhausted plan.
+3. Data:35750strictrows/443778checks;406GET5POSTattempts alreadycharged.
+   NativeEGW00201 pressure: reservation-before-ownerchecks permits short send
+   gaps, reproduced in SYN; not dailyquota/globalhistoryfloor. NEWtiming-
+   recovery-r4 delegated remaining6NYS older cursors, post-probe invocation
+   floor3s/timestamps,160GET1POST/600active1800end/nativeguards. Oldunknownauth/
+  1560-over1500 debit and allprefix/gaps preserved. No inputswap into models.
 4. Execution: preserve existing owners/readiness. After a natural owned run,
    use exact scoped public receipt plus strict native RO parser after quiescence.
    Distinguish no intent/attempt/accepted/fill/custody/terminal/net PnL.
    New public-only reader tests do not prove a private result.
 
-Already COMPLETE:6 paired-ranking and9 input-ablation CUDA fits;0-fit allocation;
-five additional pre-OPEN challenger forecasts. All training leases released.
-Current ancestral233=150CUDA+83CPU fitted versions inclone oldinvalid, not
+Already COMPLETE:6ranking+9ablation CUDA and4cohortfits(2CUDA2CPU)/72cells;
+0-fit allocation/transfer, five additional preOPENforecasts, one native-throughput
+SYN probe. Independent current25 72cell retainedreview assigned; no new models.
+Current ancestral237=152CUDA+85CPU fitted versions inclone oldinvalid, not
 architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;

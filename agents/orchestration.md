@@ -10,11 +10,11 @@ an append-only current board. MD/agent identity is not a running worker.
 
 | Owner | Actual State / Write Set | Next Action |
 | --- | --- | --- |
-| Engine/Meitner |15 new CUDA fits complete; new SOURCE-only current25-training-cohort-preparation-20261018-v1 assigned.|Freeze common-support4-fit HGB/GRU protocol against final19555 source; native proof then measured GPU allocation, not a model grid.|
-| Validation/Herschel |Ranking/ablation/transfer independentPASS closed; transfer185pins/2016features/21NAVs, seal8cdfa029.|Released, no modelcalls/GPU.|
-| Data/Chandrasekhar |19555 useful rows; auth TypeError/pending,1560/1500charged. Firstcause/nativeurllib3SYN proven; namedcaller/leases absent.|NEW timing-recovery-r2 delegated fresh nativegate admission then480GET/1POST/1800active3600end, oldpending/debits unchanged.|
+| Engine/Meitner |19new fits(17CUDA2CPU) complete including4 OLD17/NEW25 fits/72cells; leases released.|NEWfixed-recency-cudnn SOURCE:1HGBrecency+2paired FAST-GRU uniform/recency, no numerical fits yet.|
+| Validation/Herschel |Ranking/ablation/transfer independentPASS closed. Current25 four-fit/72cell retained-only review assigned.|Freeze actual existing tuple, not wait for another envelope; no modelcalls/GPU.|
+| Data/Chandrasekhar |35750rows/443778checks,406GET5POST; pressure firstcause reservation-before-ownercheck reproduced.|NEWtiming-recovery-r4 remaining6routes,160GET1POST/600active1800end, post-probe3s invocation floor; no global limit/Task change.|
 | Strategy/Harvey |Allocation36 new cells independently PASS as calculation, economic primary FAILbothselectors; Throughput memo complete.|Released. No extra policy/replay/winner search.|
-| Planck |Five actual pre-OPEN challenger forecasts complete; actual EXIT0 witness and Parent hash/rank/fullmass readback PASS.|Released. Existing future21D1 marks UNKNOWN, no reforecast/new schedule.|
+| Planck |Five preOPEN shadows done; NEWnativeSYN throughput PASS44forwards16updates4exactrestores/57.03owned120, lease released.|Released. CuDNN flavor source ready for NEWresearch only, no market/parity/Paper claim.|
 | Research Steward |All prior training leases released; no training inferred from SOURCE queue.|One exclusive GPU allocation for first runnable frozen campaign, desktop headroom.|
 | NAS Paper |Eight exact retained FULL entries; existing image87697f8e.|Owned exit not before Oct21 US OPEN; preserve exact requests/basis.|
 | New ensemble Paper |Actually Ready/Enabled image378f2034; firstOct19 15:10UTC.|Original entry-onlyOct19 window; no new submit/fill yet.|
@@ -53,8 +53,8 @@ purge/scaler/reference lock, consistent payoff/costs, reused-data claims.
 
 ## Integration Evidence
 
-Research ledger233=150CUDA+83CPU fitted versions including one oldinvalid,
-not233architectures or independent alpha.6ranking+9ablation actualfits complete,
+Research ledger237=152CUDA+85CPU fitted versions including one oldinvalid,
+not237architectures or independent alpha.6ranking+9ablation+4cohort fits complete,
 all training leases released. Allocation primary0/3bothselectors; transfer
 growthup/DDworse; no Paper switch. Five shadow arms preOPEN/21futureoutcomesUNKNOWN.
 Exact result paths and seal hashes: HANDOFF.md and role boards.
@@ -64,3 +64,11 @@ clean8helper0/Ruff3Compose PASS. Docs/external-only reuse requires exact
 production/test/script/dependency/config AND control digest readback; external
 code uses its own focused/native checks. No failed/unclean authority reuse.
 Runtime deployment/paper bank unchanged. Company-owned exit remains unfinished.
+
+Latest handoff Throughput Review: ready=3-fit recency source/72cell retained
+validation/Data post-probe pacing repair; owned=disjoint Meitner/Herschel/
+Chandrasekhar roots; due=existingMondayPaper, no foreground session wait.
+Reversible improvement: native CuDNN fullstate proof+measuredbatch32 throughput
+before NEWtraining planning, rather than inheriting first-warmup peak heuristic
+that stopped oldGRUs2epochs219s within900s. Oldresults/caps/backend stay unchanged.
+Baseline pairing must follow new recipe, not reuse oldATen as a causal control.

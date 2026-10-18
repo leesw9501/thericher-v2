@@ -60,8 +60,8 @@ honest host, NOT cryptographic OS scheduler-origin proof.
 
 ## Research Completed This Continuation
 
-Actual additional training:15 CUDA fitted versions, NOT15 architectures.
-Ancestral ledger233=150CUDA+83CPU, including one old invalid study; SYN/
+Oct18 21:05KST continuation added19 fitted versions(17CUDA+2CPU), NOT19
+architectures. Ancestral ledger237=152CUDA+85CPU, including one old invalid; SYN/
 foundation inference/reader calls do not add fits. All completed training
 allocations released. No automatic Paper candidate switch.
 
@@ -71,6 +71,7 @@ allocations released. No automatic Paper candidate switch.
 | Raw-only/indicator-only/combined707 |9 CUDA fits/72 known cells; f1 primary PASS, f2/f3 FAIL, overall FAIL. Independent retained reader-r1 PASS1495 pins/27 new NAVs/45 exact controls/218 commits.|
 | Fixed inverse-vol allocation |0 fits/forwards;36 new+45 control cells. HGB and fixed4-rank selectors primary FAIL0/3 each. Independent linked-review-r2 PASS1512 risk rows/36 NAVs/45 controls/9 bit-exact HGB controls.|
 | Eight new-symbol transfer |0 fits,16 actual neural batches+one HGB call;2016 feature rows/21 known cells. Fixed4-rank growth2.407% vs uniform1.680%, DD.853% vs.690% at10bps: frozen primary FAIL. Independent retained PASS185 pins/4284 old-context rows/21 NAVs, seal8cdfa029.|
+| OLD17 vs NEW25 training |4 fits(2CPUHGB+2CUDAGRU)/72 known cells; new8 matched HGB/GRU comparisons PASS, mean2 FAIL. Two GRUs stopped after2epochs/selected1 by frozen wall heuristic, NOT convergence. Independent retained review assigned.|
 
 Research roots, each under A/research/:
 current20-pairwise-ranking-objective-development-20261018-v1/
@@ -80,6 +81,14 @@ current20-input-ablation-development-20261018-v1/admission-repair-r2/
 current20-fixed-risk-allocation-development-20261018-v1/technical-r2/
 (SEAL938d0109, linked-review-r2 sealcd13e848);
 current20-new-symbol-transfer-development-20261018-v1/HANDOFF.json.
+Current25 training actuals: A/research/current25-training-cohort-development-20261018-v1/
+technical-r3, four result/scores files, campaign-cleanup-r2.json,
+REPLAY-RECOVERY-COMPLETE.json/economic-result.json. First numerical attempt was
+UNREADY before marketfits; two old native SYN failures remain closed. One
+separate corrected SYN passed8updates/25forwards/fullstate restore before all4
+fits. Replay's copied17-key bound failed before economics; new explicit25-key
+math adapter preserves old17/Paper semantics and produces first72 cells with
+zero model/forecast reruns. No family/independent-alpha/Paper-pass conclusion.
 
 The transfer uses the exact first8414-row source, original f3 EVAL252 dates,
 old FIT scalers and original17 reference-cohort columns. New symbols do NOT
@@ -108,36 +117,36 @@ collector, champion selection, backdating or Paper switch.
 
 ## Data And Next Ready Work
 
-Data delivered19,555 strict-valid bars for COST/LLY/CAT/MS/CVX/NEE/VZ/ADBE
-plus SPY:19,051 old rows unchanged+504 individually valid rows from eight
-failed pages. Eight invalid gaps and whole-page FAILED grades preserved.
-200,670 lineage checks PASS; raw bytes remain only M.
-A/data/current20-universe-breadth-daily-capture-20261018-v1/
-strict-valid-subset-r1/ENGINE-INPUT.json is the NEW frozen consumer source;
-not a silent update to first-source transfer, Main90819 or Paper17.
-Older history remains partial. Aggregate235 market GET/3 POST attempts.
-The last timing wrapper passed timeout as urllib data: TypeError, zero new
-market GET, one pending auth attempt. Actual wire completion UNKNOWN; fixed
-wrapper has3 native SYN checks, not actual recovery. Last new job charged1560
-against1500 active cap; overrun retained, not refunded. Diagnosis confirms
-named caller/children/capture leases/token directory absent, token-start mark
-unchanged; native legacy/global gate admission still required. NEW
-timing-recovery-r2 is delegated after fresh native preflight:480GETattempts/
-onePOST/1800active3600end; oldpending/debits unchanged.
+Data now delivered35,750 strict-valid daily bars for the fixed8newnames+SPY;
+443,778 lineage checks PASS,19,555/27,070 prefixes/availability/gaps unchanged.
+A/data/current20-universe-breadth-daily-capture-20261018-v1/timing-recovery-r3/
+ENGINE-INPUT.json.406aggregateGET/5POSTattempts; r3 ended94GET/1POST with bounded
+typed retry units consumed. Three repeated-date cursors closed, six NYS older
+cursors open; NOT a daily-quota/globalfloor claim. Raw bytes only M.
+The current training binds EXACT19555 version, transfer EXACT8414; never silently
+substitute35k into a frozen model/Main90819/Paper17. Original unknown auth POST
+and1560/1500 overrun remain. Actual recovery added7515 then8680rows.
+Pacing firstcause reproduced: reservation BEFORE slow ownerchecks permits
+0.5s synthetic send gap despite3s reservations. Post-probe floor restores3s in
+SYN; actual START intervals were not retained, persistence proxy is not START.
+New timing-recovery-r4 delegated160GET/1POST/600active1800end for remaining6
+routes, post-probe actual invocation floor/timestamps, native guards unchanged.
+No new deployedTask/globalrate change or API success inferred from SOURCE.
 
-Next Engine priority: current25-training-cohort-preparation-20261018-v1,
-common-support OLD17 vs NEW25 HGB14+GRU f3, proposed4 fits(2CPU+2CUDA), seed808.
-Source-only preparation is assigned; final contract/native proof/resource check
-precede fits. Same original scaler/reference cohort/splits/costs; no outcome
-selection or source swap. Actual fitting is NOT inferred from preparation.
-Transfer independent review is complete; Data recovery can run alongside that
-preparation/training. Parent delegated4-fit numerical continuation after frozen
-SOURCE/native proof; preparation alone is NOT a running fit. Coverage proves
-same4001 original loss dates/OLD17 rows in both arms, optional new8286 FIT rows
-and1008 INNER rows. This is heterogeneous augmentation plus cohort-specific
-INNER selection, not balanced25-history or isolated causal diversity.
-Claude categorical REVISE is scoped advisory, not an approval hold:
-A/review/current25-training-cohort-20261018-v1/claude.json.
+Next Engine priority: A/research/current20-fixed-recency-cudnn-development-20261018-v1,
+SOURCE preparation assigned. Supersedes UNSTARTED2fit proposal before numerical
+dispatch: fixed1260-session FIT-date mass, old17/f3/seed808/scalers/reference/
+INNERunweighted. Exactly1HGBrecency plus2paired FAST-GRU uniform/recency fits;
+new backend/batch recipe needs its OWN uniform control, not old2epoch ATen.
+9new cost cells+9retained HGB/uniform/cash controls, no grid/new ensemble.
+Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,
+peakallocated1.39GiB/57.03owned120; scope synthetic only, not market-speed or
+training-trajectory parity. ExistingD6 PyTorch2.7, no framework/runtime upgrade.
+A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
+Old SOURCE-clock failure remains, separately bound actual probe passed.
+All numerical3-fit caps/native proofs must be frozen before market fitting.
+Claude REVISE scoped baseline/weight-normalization/backend-RNG/timing-sync/lease:
+A/review/current20-recency-and-native-throughput-20261018-v1/claude.json.
 
 ## Verification And Recovery
 

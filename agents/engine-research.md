@@ -8,9 +8,10 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
-Ancestral233=150CUDA+83CPU market-fitted VERSIONS, including one old invalid
-depth-TCN result; not233 architectures/qualified models.15 new CUDA fits in this
-continuation, no completed old fit replay. All training leases released.
+Ancestral237=152CUDA+85CPU market-fitted VERSIONS, including one old invalid
+depth-TCN result; not237 architectures/qualified models. Oct18 21:05KST
+continuation added19 versions(17CUDA2CPU), no completed old fit replay.
+All completed training leases released.
 
 | Hypothesis | Frozen Result / Validation |
 | --- | --- |
@@ -19,6 +20,7 @@ continuation, no completed old fit replay. All training leases released.
 | Fixed inverse63vol allocation |0fits/forwards,81cells(36new/45controls), HGB/fixed4rank primary0/3each. Independent linked-r2 PASS1512riskrows/6futureperturbations/36NAVs/9exactHGBcontrols.|
 | New8-symbol fixed transfer |0fits/16neuralbatches/1HGBcall,2016feature rows/21knowncells/0unknown, primaryFAIL on DD; independent retained PASS185pins/4284oldcontextrows/21NAVs, seal8cdfa029.|
 | Five future challengers |0fits/GPU/optimizer,5actualCPUforwards/5safe-state intakes, packet preOPEN; future21-session economics UNKNOWN.|
+| OLD17vsNEW25 seed808 |4fits(2CPUHGB2CUDAGRU)/72knowncells, new8 matched HGB/GRU PASS, mean2 FAIL; independent retained review assigned. GRUs2epochs/selected1/safeheuristicstop, not convergence.|
 
 Ranking main10bps growth/DD percent, MSE vs Rank byfold:
 3.383/.520 vs3.632/.637;3.386/3.983 vs2.856/4.195;
@@ -64,30 +66,48 @@ independent cross-time replication or broker PnL.
 
 ## Breadth / Depth Queue
 
-First ready priority is training-cohort breadth, not another architecture grid.
-SOURCE: A/research/current25-training-cohort-preparation-20261018-v1.
-Meitner assigned common-support OLD17vsNEW25 HGB14+GRU,f3only/seed808,
-proposed4marketfits(2CPU+2CUDA). Freeze one exact terminal19555row manifest
-(strict-valid-subset-r1), originalMainf3 FITscalers/referencecohort/splitranges,
-commonpastvaliddates/maturelabels/purge BEFOREfits. No later source swap.
-GRU max128epochs/INNERpat20/LR/bestrestore, native diagnostic/checkpoint SYN first;
-HGB native solver/diagnostic API and iteration/time caps predeclared.
-Source600active5400elapsed/CPU2RAM6/GPU0/models0/replay0; proposednumerical
-3600active10800elapsed/4starts/0marketretry. Parent numerical continuation is
-delegated after finalfrozenSOURCE/nativeproof, not proof of running training.
-Both arms keep same4001 original nonemptylossdates and OLD17 observations;
-NEW25 adds8286 optionalFIT/1008INNERrows, no balanced-history intersection.
-OwncohortINNER selection means training-plus-selection recipe comparison.
-Same chronological date orders/date-equal losses. Different cohort sizes/
-gradientnoise are recipe differences, not isolated causal diversity.
-Evaluate fixed model/blend/uniform/cash against ALL25/old17/new8 on SAME252EVAL
-dates/payoff/gross/5-10-20bps costs; missingrequiredoutcome=>UNKNOWN.
-Source readiness is NOT numerical execution or a profitability claim.
-Claude scoped REVISE: A/review/current25-training-cohort-20261018-v1/claude.json.
+Current25 four-fit actuals CLOSED under
+A/research/current25-training-cohort-development-20261018-v1/technical-r3.
+EXACT19555 source, same4001 original OLD17 lossdates/rows in both arms;
+8286optionalNEW25 FIT/1008INNER rows. Heterogeneous augmentation+owncohortINNER
+selection, not balanced25-history/isolated causal diversity. Same252EVAL dates/
+6300keys/3universes/3costs/8policies. Original17scalers/reference/purges fixed.
+Two oldnative SYN failures remained closed; separate corrected SYN8updates/
+25forwards/fullstatePASS before4marketfits. Rank17 adapter rejected25 before
+economics; new explicitrank25 purecompatibility repair produced first72cells,
+zero refit/forecast. Native4result/scores/cleanup/protocol+FORECAST-WEIGHT-SEAL/
+REPLAY-RECOVERY-COMPLETE/economic-result form actual immutable input tuple;
+Herschel independently validates it, no extra envelope is a prerequisite.
+No model/Paper selection or fresh-alpha conclusion.
 
-Breadth transfer retained-only independent review COMPLETE, no new modelcalls.
-Depth: only frozen runnablecohort campaign gets nextGPU; no dummy
-utilization or repeated closed fits while waiting for future Paper/D1marks.
+Next depth SOURCE assigned:
+A/research/current20-fixed-recency-cudnn-development-20261018-v1.
+Unstarted2fit proposal explicitly superseded, oldSOURCE/debits retained. Fixed
+half-life1260 officialFITsessions BEFOREcurrentcohortEVAL, old17/f3/seed808,
+same rows/scalers/reference/maturity/INNERunweighted. NEW3fits exactly:
+HGB_RECENCY(reuse compatible completed HGBcontrol), FAST_GRU_UNIFORM and
+FAST_GRU_RECENCY using SAME separately named cuDNNstack/explicitdropout flavor,
+pack32/41153parameters. New uniform baseline required: old2epochATen is not a
+causal control for a different backend/dropout/batch recipe.
+9new cells+9retained HGB/uniform/cash cells, 5/10/20bps, no blend/grid/Paperswitch.
+Source900active3600elapsed/CPU2RAM6/GPU0; proposednumeric3600active10800elapsed,
+3marketstarts/0retry/max128/INNERpat20/LR/bestrestore,HGB300sec/GRU900each,
+oneGPU allocator<=min8GiB,measuredfree-4GiBdesktop. Final binding/nativeweighted
+HGB+GRU-loss/optimizer/restore proofs before fitting; SOURCE is not training.
+ProbabilityHGB fw must not be multiplied byN twice; GRU4001/K globaldate mass,
+not perbatch renormalization/oversampling. Fixedweightpurekernel8PASS,
+34db0db9 under A/strategy-research/current20-fixed-recency-weight-preparation-20261018-v1.
+
+Native-throughput SYN ONLY PASS:44forwards16updates4exact fresh-object restores,
+peakallocated1.39GiB, outer57.03owned120. Pack32 eval41.50->3.07ms and proof
+update157-184->14-16ms, not actualmarket throughput/trajectory equivalence.
+A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
+Old SOURCE-clock fail unchanged; separately bound actual probe passed.
+Use measured work/absolute cleanup bounds in futuretraining; do not inherit
+2*warmuppeak batch projection that stopped oldGRUs after219s/2epochs of900.
+Claude REVISE baseline/weight-normalization/backend-RNG/timing/lease:
+A/review/current20-recency-and-native-throughput-20261018-v1/claude.json.
+No dummy utilization/oldfit repeat while futurePaper/D1 evidence is pending.
 
 ## Future Shadow And Existing Paper
 
