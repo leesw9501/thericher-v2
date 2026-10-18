@@ -12,6 +12,11 @@ CurrentDataSDK repair53bb68ee freshly132focused/322serial/full18314PASS22skip/
 clean8helper0/Ruff3Compose,1360sourcef81653d8. It does not change these frozen
 broker images/order routes. Both futureDataActions actually retargeted only,
 originaltimes/custody preserved; seeData/HANDOFF. No manual invocation/fill.
+AdditionalNEW8measurementTask current25-new8-d1-marks-20261020 nowactually
+ReadyEnabled/21finite/firstOct20 08:00KST/quietphysicalpythonw/noDemandStart;
+receipt035861cf underData preparationroot. No API/manualinvocation/capture.
+This Data-only measurement and6new8futurepointsv2 do NOTchangebrokerimages,
+bank/positions/requests/nextPaperwindows or require modelprofitability approval.
 Task thericher-kis-paper-current20-equalrank4-20261018 is actually Ready/Enabled,
 31finite UTC starts/IgnoreNew/PT5M, image378f2034/480source/sourceca19a499/
 input473a759d/semanticbb77d43f/contractf66/launchbindinge98bfda3. Parent declared exact

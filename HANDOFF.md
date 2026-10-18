@@ -203,17 +203,45 @@ Next priority is FUTURE measurement, not more reused-data parameter search:
   full25/old17GRUrecency. Include ALL pairs despite currentFAIL/PASS/FAIL.
   A/research/current25-new8-prospective-pairs-20261019-v1 SOURCE READY15f8c082,
   10feature/6state-lineage checks, original17f9featuresbit-exact. Numerical
-  authority180owned900end/6intakes2CPU4CUDA/zero fits on8NEWinputs only;
-  actual publication not yet verified. No old17point replay.
-- Data SOURCE only: A/data/current25-new8-prospective-d1-marks-preparation-20261019-v1;
-  separate finite21 NEW8+SPY measurement feed proposed08:00KST, same exact
-  original target-session calendar, after old06:50/07:30Tasks. Not installed,
-  no API/schedule/capture inferred. Original20name feeds stay unchanged.
+  originalv1UNAVAILABLE90d0ced6: missingcontract import before0intakes/0forwards,
+ 21.434s preserved. Informedsourceversion adds exacttrusted dependency plus
+  inertCPUimport proof; old36files/result unchanged, NOToldstudyregraded.
+  ACTUALv2 sixintakes2CPU4CUDA/zero fits, finalwriteOct18 16:39:19.458487UTC;
+  actual-source-repair-r1/SEALED-ACTUAL.json SHA0d1512a9. Parentoffline reader
+  independently verified exactpublication/48model+16referenceweights, no forwards.
+  Family2/2processattempts/zero furtherauthority; all-inold21.434+SOURCE15.050+
+  corrected20.489=56.973/180s. Immutablehandoff numerical-only41.923s subtotal
+  is corrected by accounting-addendum-r1/ACCOUNTING-ADDENDUM.json, no backdate.
+  Claude review_unavailable(ValueError), NOTagreement; independent governance
+  review advisory/Parentstandingauthority. FutureoutcomesUNKNOWN, no old17replay.
+- Data ACTUALLY INSTALLED: A/data/current25-new8-prospective-d1-marks-preparation-20261019-v1;
+  thericher-kis-paper-current25-new8-d1-marks-20261020 ReadyEnabled/21finite
+  triggers/PT15M/IgnoreNew/quietphysicalpythonw/noDemandStart. FirstOct20
+  08:00KST capturesUSOct19, lastNov17capturesUSNov16; exactsame21targets,
+  distinct9-routecontract0bb10838/family5391e029/newMnamespace. Source36e52109/
+  16groups+quietprobe, hash-onlycontroller952770c9/3groups; Parentfresh5checks,
+  ONEdisabledregistration/oneEnable/allotherdefinitions unchanged. Receipt
+  parent-install-1/installed.json SHA035861cf. Zero API/manual invocation/capture.
+  Existing06:50/07:30/20namefeeds unchanged. Offline consumer18cases/8groups:
+  A/research/current25-new8-future-measurement-reader-20261019-v1/ABI.md.
+  Parentpublication-r1 real6packetPASS,21missingfuture days ->24riskyUNKNOWN/
+  3analyticcashKNOWN, not broker PnL. No latestscan/oldv1fallback.
 New8 future one-window evidence is not independent robust alpha or a Papergate.
-Strategy SOURCE feasibility only: current25-new8-foundation-future-benchmark-
-20261019-v1, ONEexisting trustedTimesFM2.5 zero-shot candidate, no weightdecode/
-runtime upgrade/download/nativecall now. Reuse datedofficial checkpoint/license
-or scopedrejection, not a human/globalhold. No unbounded model grid.
+Strategy TimesFM2.5 SOURCEfdf4d0cb/8purechecks/43pins; raw-context-r1 READY,
+3032exactrawcloses8x379 SHA4bfde5bf/8checks/132unchangedsourcepins. CPUrunner
+preparation/conditional1batch1forward120owned600end, actualforecastnotverified.
+ExistingApache2datedcheckpoint2025Oct1/existingD6, no download/runtimechange.
+Mask5structuralpads/379observations/OPENpayoff-vsCLOSEscore/pretrainlimits explicit.
+
+NextGPUdepth SOURCE assigned, no training yet:
+A/research/current25-temporal-expert-composition-development-20261019-v1.
+Exactly2proposedexperts causalTCN(RF>=252) andpatch-tokenTransformer, plusONE
+fixedmean-percentile-rank blend withretainedfull25GRUuniform, notlearnedgate.
+SameR4data/scalers/reference/splits/costs/seed808/D1raw252x5+14;27new+81retained
+cells=108, fixed3new8comparisonsvsGRUuniform. No individprofit prerequisite.
+Native25optimizer/fullstateproof beforelater2fits/0marketretry, INNERpat20/LR/
+bestrestore/max128/oneGPU8desktop4; sourcepreparation isn'trunningGPU.
+ClaudeREVISEcapacityconfound/fusionunpowered/reusedDEV/budgetfragile scoped.
 Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,
 peakallocated1.39GiB/57.03owned120; scope synthetic only, not market-speed or
 training-trajectory parity. ExistingD6 PyTorch2.7, no framework/runtime upgrade.

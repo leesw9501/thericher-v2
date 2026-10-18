@@ -131,14 +131,33 @@ Next future queue (no new fits/architecture/grid):
    full25HGB/partial25HGB, full25GRUuniform/old17uniform, full25GRUrecency/
    old17recency. Same379past/original17-SPYreference/FITscalers/21session clock;
    prove original17feature parity, then8NEWcontextrows only. Proposed2CPU4CUDA
-   firstpointcalls/zero old17oroldEVAL reforward. Numerical180owned900end/
-   ONEGPU4desktop4/CPU2RAM4/1attempt0retry delegated; publication not yet verified.
+   firstpointcalls/zero old17oroldEVAL reforward. V1 source import failed before
+   0modelcalls/21.434s, staysUNAVAILABLE90d0ced6. Informed source-repair-r1
+   adds exactdependency+inertCPUimport proof, old36files unchanged. Actualv2
+   6intakes2CPU4CUDA/zero fits, firstfinalwriteOct18 16:39:19.458487UTC,
+   SEALED0d1512a9. Parentindependentoffline reader verifiesall48+16weights and
+   exactpreOPENhash/EXIT0chain. Family2/2attempts closed; all-in56.973/180s
+   includesSOURCE15.050+old21.434+new20.489, additiveaccountingcorrection retained.
    Existingfour+five+three packets fixed.
-Data prepares separatefinite21NEW8marks (sourceonly), old20feed immutable.
+Data actuallyinstalled separatefinite21NEW8marks(firstOct20 08:00KST), old20
+feed immutable. Reader18cases/8groups+actual6packetreadbackPASS;21missingdays
+mean24riskyUNKNOWN/3analyticcashKNOWN, notzeroaccountprofit.
 Do not select arms fromFAIL/PASS/FAIL, rerun fits or presentonefuturewindowasalpha.
-Strategy feasibility SOURCE: ONEexisting trusted datedTimesFM2.5 NEW8zero-shot
-futurebaseline, current25-new8-foundation-future-benchmark-20261019-v1. No native/
-checkpointdecode/download/runtimechange now; runnableexistingrecipe orscopedreject.
+Strategy TimesFM2.5 SOURCEfeasiblefdf4d0cb, raw8x379binding4bfde5bf READY.
+Currentcpu-forecast-r1 runnerprep/conditionaloneCPUbatch/oneinternalforward,
+no fit/GPU/oldpoints/download/runtimechange; actualpointnotyetverified.
+
+Next GPU hypotheses SOURCE, no new training yet:
+A/research/current25-temporal-expert-composition-development-20261019-v1.
+ExactlyTCNcausaldilatedRF>=252 andpatch-tokenTransformer2newexperts;
+ONEfixedmean-percentile-rank blend withretainedfull25GRUuniform. SameD1raw252x5+
+14/scalers/reference/splits/seed808/costs,108cells(27new81controls), fixed3NEW8
+comparisonsvsGRUuniform. Ownvariant/capacityconfound, notfaithfulPatchTSTclaim.
+900perfit/max128/INNERpat20/LR/bestrestore proposed; native25optimizer/fullstate
+SYN and final3600active10800end/2starts0marketretry beforelaterGPUallocation.
+Meitnerpurefusion/futureprep separatecurrent25-temporal-composition-future-
+preparation-20261019-v1: predeclare2new8points+fixedblend, noGRUreforward.
+Herschelindependent108reader prep, no model/native/economiccalls. One GPU only.
 
 Native-throughput SYN ONLY PASS:44forwards16updates4exact fresh-object restores,
 peakallocated1.39GiB, outer57.03owned120. Pack32 eval41.50->3.07ms and proof

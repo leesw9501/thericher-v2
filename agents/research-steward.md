@@ -41,9 +41,17 @@ Complete current20-full25-trained-future-shadow-20261019-v1 actual-forecast-r1:
 Oct18 16:02:06.855826UTC, Parenthash/51weightsPASS/seal05f6849c;lease released.
 Next new8prospective sixpairarms SOURCE15f8c082/protocold9376e92; numerical
 180actualowned900end/ONEGPU4/freefloor8/desktop4/CPU2RAM4/1attempt0retry,
-6intakes2CPU4CUDA/zero fits/oldpoints delegated, actualpublication not verifiedyet.
-Strategy ONEexistingTimesFM2.5 NEW8futurebenchmark feasibility SOURCEonly/noGPU;
-no runtimeupgrade/download or utilization burn, readyexistingrecipe orreject.
+6intakes2CPU4CUDA/zero fits/oldpoints actualv2firstwrite16:39:19.458487UTC,
+Parent48+16weights/hashchainPASS/SEALED0d1512a9,lease released. V1missingimport
+before0modelcalls remainsUNAVAILABLE/21.434debit; informednewsourceversion
+doesn'tregradeit. Family2/2nativeattemptsclosed, all-in56.973 inclsource15.050,
+not oldhandoff41.923numerical-only subtotal. No furtherold6familycalls.
+Strategy TimesFM2.5 NEW8 CPUbenchmark raw8x379READY4bfde5bf, conditional1CPU
+batch/oneforward120owned600end, no GPU needed/reserved/download/runtimechange.
+Nexttraining queue SOURCEonly TCN+patchTransformer2fits +fixedblendwithretained
+GRUuniform,108cells; Rootcurrent25-temporal-expert-composition-development-
+20261019-v1. ProposedONEGPU8/free12/desktop4/CPU2RAM6/2starts0marketretry,
+nativeoptimizer/checkpointproof first. PreparedMD is not actualrunningGPU.
 
 ## Closed Custody
 

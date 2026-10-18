@@ -18,6 +18,7 @@ Do not rerun completed creators/installers/numerical fits just to refresh time.
 | Goal97 |Distinctowner,entryOct19 22:30/22:40KST,exitOct24 04:50/05:00KST.|
 | Current20RTH1m |Quiet06:50KST Tue-Sat,firstOct20;notobservedcapture.|
 | D1marks |thericher-kis-paper-current20-shadow-d1-marks-20261020,07:30KST firstOct20,21finitevisits throughNov17;futureoutcomesUNKNOWN.|
+| NEW8D1 |thericher-kis-paper-current25-new8-d1-marks-20261020,ReadyEnabled/21finite/PT15M/IgnoreNew/noDemandStart;firstOct20 08:00KST,lastNov17.|
 
 All original bank/identities/request reservations/ownership remain. Newensemble
 five desired .005-original-basis targets/<=.025 together inside SAME original
@@ -145,8 +146,22 @@ independentPASS150480checks/81bit-exactNAVs/42controls/791pins, sealdd885a57.
 Actual/FROZEN-ACTUAL5facb63a/680pins, model-only
 catalogca0ad8bb. Preserveoriginal415.775controlpathfailure; linkedunconsumed8
 new8forwards/81firstreplays, no refit/old17reforward. Nextnew8prospectivepairs
-SOURCE fixesALLsixarms/zero fits; separateNEW8finite21marks SOURCEonly at
-A/data/current25-new8-prospective-d1-marks-preparation-20261019-v1, notinstalled.
+fixedALLsixarms/zero fits, ACTUALv2firstwriteOct18 16:39:19.458487UTC/0d1512a9,
+Parent48+16weights/hashchainPASS. V1sourceimportfailure0models/21.434s remains
+UNAVAILABLE90d0ced6; informednewversionfamily2/2attempts closed. All-inworker
+56.973/180 includesSOURCE15.050; accounting-addendum-r1 correctsnumsubtotal.
+SeparateNEW8finite21marks ACTUALLYinstalled at
+A/data/current25-new8-prospective-d1-marks-preparation-20261019-v1/
+parent-install-1/installed.json SHA035861cf. Currentcontract0bb10838/family5391e029/
+SOURCE36e52109/16groups, parenthash-onlycontroller952770c9/3groups, oneRegister
+disabled/oneEnable/0invoke/allothers unchanged. Neverrerunparentinstaller.
+Datafirst08:00KSTOct20capturesUSOct19, lastNov17capturesUSNov16; notNov17USexit.
+Old20feeds unchanged. OfflineconsumerA/research/current25-new8-future-measurement-
+reader-20261019-v1/ABI.md; actual6publicationPASS,21missingdays=>24riskyUNKNOWN/
+3analyticcashKNOWN, notaccountprofit. Parentexplicitpacket/dayrefs, no latestscan.
+TimesFM2.5 raw8x379READY4bfde5bf/CPUrunnerprep; no nativepointverifiedyet.
+NextGPU SOURCE temporal-expert-composition-development-20261019-v1 exactly2
+TCN/PatchTransformerfits+fixed3rankblend proposed/108cells, notrunningtraining.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

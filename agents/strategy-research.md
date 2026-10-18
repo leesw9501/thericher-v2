@@ -57,6 +57,18 @@ trusteddatedcheckpoint/license/runtime only, no weightdecode/forward/download/
 newframework now. Forecast21CLOSE/knownlastCLOSE is a fixedrank hypothesis,
 not calibratedOPENreturn; assesssamefutureOPENpayoff, uniform/cash references.
 Actionablerunnablecontract orscopedreject, not anotherreadinglist/approvalhold.
+Raw8x379closebinding nowREADY4bfde5bf/8checks/132pins, CPUrunnerprep only;
+freshClaude REVISEpretrainoverlap/paddingnorm/CLOSE-OPENmismatch/publicationtiming.
+
+Next finite orthogonal hypothesis SOURCE assigned: causalTCN(RF>=252) and
+patch-tokenTransformer(raw252x5+14) +ONEfixed3mean-percentile-rank blendwith
+retainedfull25GRUuniform. ExistingTorch2.7/D6, no framework/modeldownload.
+SameR4dates/scalers/reference/costs/seed808,108cells27new81controls; native
+optimizer/checkpointproof beforelater2fits. This is notfaithfulPatchTSTpaper
+performance or isolatedarchitecturecausality. Capacityconfound/fusionunpowered/
+reusedDEV/budgetfragile ClaudeREVISE adopted; individualprofitnotfusiongate.
+Meitnerpurefusionkernel andHerschelblind108reader prepareinparallel with
+Chandrasekhar's modelSOURCE. No actualnewtraininginferredfromplannedroleMD.
 Differentcohorts/INNER selection alter recipe, not isolatedcausal diversity.
 ReusedEVALclock/threecosts, no missingtargetfallback/freshalpha claim.
 A/review/current25-training-cohort-20261018-v1/claude.json: REVISEcommon-support/

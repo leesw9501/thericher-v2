@@ -113,10 +113,32 @@ data-dispatch-spacing-runtime-freeze-20261018-v1/d1/runtime/entry-binding-repair
 samephysicalpythonw/originalfae79e85visitcontract/21triggers/campaigncustody.
 Original208d4d3d/ee4274ce registration remains historical rollback, not currentAction.
 20normalGET+2retry/1POST pervisit,600wall/oneclient; completedcache=>zeroHTTP.
-Actual captures/future21outcomes UNKNOWN. Supports originalshadow+fixed5+fixed4
+Actual captures/future21outcomes UNKNOWN. Supports originalshadow+fixed5+fixed4+fixed3
 additionalarms without anothercollector. Old pending/day/source states never reset.
 Nightly30433095 audit NOT_AFFECTED: independently measured/source actual1.25s
 floor AFTER rechecks. A/data/nightly-market-data-dispatch-audit-20261018-v1/AUDIT.json.
+
+NEW8 separate prospective feed ACTUALLY INSTALLED, not just SOURCE:
+thericher-kis-paper-current25-new8-d1-marks-20261020 Ready/Enabled/21finite
+TimeTriggers/PT15M/IgnoreNew/physicalquietpythonw/noDemandStart. FirstOct20
+08:00KST capturesUSOct19, lastNov17capturesUSNov16; old20feeds unchanged.
+A/data/current25-new8-prospective-d1-marks-preparation-20261019-v1/
+parent-install-1/installed.json SHA035861cfae18e7ce4998aa35934b8b3e4eb3c26dd81ead60b0105bd7f10314d8.
+SOURCE36e52109/closure07bde4f1/16groupsPASS+actualquietConsole0; derived
+hash-onlycontroller952770c9/3groupsPASS, otherTaskdefinitions unchanged.
+One disabledregistration/oneEnable/zero manualinvocations/API. No actualmark.
+Nine routes fixedCOST/LLY/CAT/MS/CVX/NEE/VZ/ADBE+SPY, newcontract0bb10838/
+family5391e029. SameEXACT21targetdates asoldfae79e85, distinctlogicalscope/M
+namespace;9normalGET+2typedtransportretry/1POST/600wall/2sactualGETfloor.
+Originaltoken/cachecontrols/pendingstates preserved, no data/scaler alias.
+Consumer is ALLthree fixedfutureNEW8pairs plusoptionalTimesFM, notqualified
+dataset/PIT/finality/TR/alpha/Papergate. No new standingdaemon/report chain.
+
+Offline measurement reader SOURCE18cases/8groupsPASS:
+A/research/current25-new8-future-measurement-reader-20261019-v1/ABI.md,
+reader30827088/READY410ea0de. Parent exact6pointv2publication binding PASS48
+model+16referenceweights, current21missingdays ->24riskyUNKNOWN/3analyticcash
+KNOWN (not accountprofit). Explicitday/packetrefs only, no latestscan/v1fallback.
 
 ## Closed / Recovery Knowledge
 

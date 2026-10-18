@@ -50,7 +50,10 @@ deterministic risk, exact identity, current broker buying power and shared bank.
    NEXTSOURCE current25-new8-prospective-pairs-20261019-v1: fixedALLsixarms
    beforefutureoutcomes(full/partialHGB,full/old17GRUuniform,full/old17recency).
    Sameoriginalreference/FITscalers/379past/21sessions;2CPU4CUDApointcalls
-   delegated180owned900end/zero fits/old17oroldEVALforwards. No performancefilter/grid.
+   originalv1failedimport0modelcalls/21.434debit preserved; informedsourcev2
+   ACTUAL6intakes/2CPU4CUDA/zero fits/old17oroldEVALforwards, publication
+   16:39:19.458487UTC/Parent48+16weightsPASS. Family2/2attempts/no furthercall
+   authority, all-in56.973/180charged incl SOURCE. No performancefilter/grid.
 2. Transfer retained validation COMPLETE:185pins/2016feature rows/21 replay
    cells/7policies independently PASS, primaryFAIL(growth up/DD worse than
    uniform). Preserve; do not rerun forecasts, tune or switch Paper.
@@ -63,7 +66,14 @@ deterministic risk, exact identity, current broker buying power and shared bank.
    No more identicalolderprobes or swap into oldfrozen19555/Main90819/Paper17.
    NEXTSOURCE current25-new8-prospective-d1-marks-preparation-20261019-v1:
    separatefinite21 NEW8+SPYmeasurement feed, proposed08:00KST with exactsame
-   target-session calendar, old20Task unchanged. SOURCEonly, notinstalled/API.
+   target-session calendar, old20Task unchanged. SOURCE36e52109/16groups and
+   hash-onlycontroller952770c9/3groupsPASS. Parent owns ONEnewliteralTask
+   thericher-kis-paper-current25-new8-d1-marks-20261020 disabledregistration/
+   exactreadback/oneEnable ACTUALLY COMPLETE after freshpins/quiescence;
+   firstOct20 08:00KST/21finitevisits/physicalquietpythonw/PT15M/IgnoreNew,
+   ReadyEnabled/noDemandStart/receipt035861cf. Zero invocation/API/capture or
+   expansion of existingfeeds. Offline reader18cases/8groups/actualpublication
+   PASS, all21future daysmissing ->riskyUNKNOWN/cashanalytic0 only.
 4. Execution: preserve existing owners/readiness. After a natural owned run,
    use exact scoped public receipt plus strict native RO parser after quiescence.
    Distinguish no intent/attempt/accepted/fill/custody/terminal/net PnL.
@@ -81,8 +91,13 @@ architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;
 one GPU allocation, actual resource ownership, no dummy utilization work.
-Strategy SOURCE feasibility ONEexistingtrustedTimesFM2.5 NEW8futurezero-shot
-benchmark; no newruntime/download/forward now, runnableexistingrecipe orreject.
+Strategy TimesFM2.5 NEW8futurezero-shot: raw8x379contextREADY4bfde5bf; existing
+datedApache2checkpoint/D6, CPUrunnerprep/conditionalonebatchoneforward/0retry,
+actualpointunverified. No newruntime/download/oldcontextreforecast.
+NextGPU SOURCE current25-temporal-expert-composition-development-20261019-v1:
+TCN+patchTransformer exactly2newfits proposed andONEfixed3rankblendwithretained
+GRUuniform; sameinputdata/seed808/chronologicalINNER/costs,108cells(27new81old).
+Source is nottraining; nativecheckpoint/optimizerproof/finalcapsbeforefits.
 
 ## Completion And Continuation
 

@@ -10,20 +10,22 @@ an append-only current board. MD/agent identity is not a running worker.
 
 | Owner | Actual State / Write Set | Next Action |
 | --- | --- | --- |
-| Engine/Meitner |25newfits(21CUDA4CPU) complete;latestfull25HGB73/GRU65-37epochs/81knowncells,matchednew8primaryFAIL/PASS/FAIL.|NEW8prospective6fixedpairarms SOURCE; no newfits/old17point reforward.|
-| Validation/Chandrasekhar |Full25 actualPASS150480checks/81bit-exactNAVs/42controls,sealdd885a57; old455SYNchecks separate.|Released; no modelimports/GPU/reforwards, alloldfailedcontrol/debits preserved.|
-| Data/Herschel |43379rows/535142checks,493GET6POST;9exactcursors closed at repeated-date boundary, no globalfloor.|NEWfinite21NEW8marks SOURCE proposed08:00KST, noTask/APIyet; original20feeds unchanged.|
+| Engine/Chandrasekhar |243ancestral fits closed; new TCN+patchTransformer/fixed3rank composition SOURCE only.|Finalbounded2fit/nativeproof contract; no newtraininginferredyet.|
+| Engine/Meitner |NEW8sixpoints actualv2all48+16weights/hashchainPASS, originalv1failed0modelcalls kept;family2/2closed.|Purefusion/future3policy SOURCE disjointfromproducer; noGRU/old6pointreforward.|
+| Validation/Herschel |Full25 actualPASS150480checks/81NAV/42controls,sealdd885a57; NEW8reader18cases/8groups/current6publicationPASS.|Blind108cellretainedreader SOURCE prep; no actualnewmodels/weights/economics.|
+| Data |43379rows/535142checks,493GET6POST;9exactcursors closed, no globalfloor. NEWfinite21NEW8marks ACTUALLYReadyEnabled/firstOct20 08.|Naturalownedcaptures only; no API/manualinvocationyet, old20feeds unchanged.|
 | Infra/Parent |SDKactual-GET spacing repair132focused/322serial/full18314PASS;twoDataActions actually retargeted/Enabled/Ready.|Firstcaptures dueOct20, originaltimes/custody unchanged; no manual invocation.|
 | Strategy/Harvey |Allocation36 new cells independently PASS as calculation, economic primary FAILbothselectors; Throughput memo complete.|Released. No extra policy/replay/winner search.|
-| Strategy/Planck |Five+four+three preOPENshadow arms actual complete/hashandweights independentlyPASS; latest3intakes1CPU2CUDA/51weights/final16:02:06.855826UTC.|ONEexistingTimesFM2.5 NEW8futurebenchmark feasibility SOURCEonly, no runtimeupgrade/nativecall now.|
+| Strategy/Planck |Five+four+three old17points sealed; TimesFM2.5 SOURCEfeasible/raw8x379READY4bfde5bf.|CPUrunnerprep/conditional1batch1forward, noGPU/runtimeupgrade; actualpointunverified.|
 | Research Steward |All prior training leases released; no training inferred from SOURCE queue.|One exclusive GPU allocation for first runnable frozen campaign, desktop headroom.|
 | NAS Paper |Eight exact retained FULL entries; existing image87697f8e.|Owned exit not before Oct21 US OPEN; preserve exact requests/basis.|
 | New ensemble Paper |Actually Ready/Enabled image378f2034; firstOct19 15:10UTC.|Original entry-onlyOct19 window; no new submit/fill yet.|
 | Nightly/Goal97/Data |Existing finite/owned opportunities unchanged.|NightlyOct19 23:50KST; Goal97Oct19entry/Oct24exit; DataOct20 06:50/07:30KST.|
 
 No parent foreground wait, manual Task invocation, broker call or public UI
-work in this research continuation. Parent changed ONLY twoDataActions;
-original triggers/otherdefinitions preserved. Closed-role LLMs are released.
+work in this research continuation. Parent retargetedtwoexistingDataActions
+and addedONEfiniteNEW8DataTask08:00KST; originaltriggers/otherdefinitions
+preserved, no manual invocation/API. Closed-role LLMs are released/reassigned.
 One mutable owner per external root, Parent-only shared docs/Git.
 Data/model files stay D:, external CPU research/validation disjoint from collector.
 
@@ -69,11 +71,17 @@ Frozenbrokerimages/paper bank unchanged. Two actualDataAction-only retargets
 SDK53bb68ee; no captureddata or globalpacing claim. Company-owned exit unfinished.
 
 Latest Throughput Review: ready=NEW8prospective6pair source+minimalfiniteD1feed;
-owned=Meitner6NEW8pointdispatch/HerschelDataSOURCE/Planckfoundationfeasibility;
+owned=Meitnerpurefusion/Chandrasekhar2archSOURCE/Herschel108reader/PlanckCPUbench;
 due=existingMondayPaper, no company permissionhold. Reversible improvement:
 validate Windows->Linux serialized relative checkpoint paths before a native
 intake. Firstfailure0forwards/0completedrestores was notzero work; preserve
 415.775s closedphase and linkedunconsumed8forwards, never rerun3completefits.
 Nextpriority futuremeasurement ofALLfixedpairs, not outcome-selected pastgrid.
+SixNEW8points nowsealed/independentlyread, Datafinite21Taskinstalled035861cf.
+Familyv1import0modelcalls staysUNAVAILABLE; informedv2sourcefixedone dependency
+withrealinertimport proof, 2/2attemptsclosed/56.973totalCPU-GPUworker upper incl
+allsourcework, not41.923numeric-onlysubtotal. Claudeunavailable !=agreement.
+One new orthogonal2expert+fixedblend family, notunboundedseeds/windows; source
+and testwholetransitiveimport closure before GPU work. Executiondue unchanged.
 No current operator decision. FutureNASexit is an exact lifecycle dependency,
 not a reason to stop independent research. Completedfits/forecasts never repeat.
