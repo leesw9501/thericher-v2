@@ -1,168 +1,59 @@
 # Research Steward Stateboard
 
-Current2026-10-18KST. Company: current-nas-owned-model-paper-cycle-v1.
-A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/custody.
-Steward owns exclusive GPU/trial-family custody, NOT model choice, broker risk,
-human approval or a permanent daemon. Parent dispatches/integrates/Git.
-Results live in agents/engine-research.md; this board owns queue and custody.
+Current Oct18KST. A=D:/thericher-v2/model-artifacts.
+ONE company objective: current-nas-owned-model-paper-cycle-v1.
+Steward owns exclusive GPU allocation/trial custody, not model choice,
+broker risk, human approval or a permanent daemon. Parent owns integration/Git.
 
 ## Ready / Allocated
 
-Oct18 continuation: Meitner pairedranking/MSE COMPLETE6CUDAfits/6starts0retry,
-63KNOWNcells/primaryFAIL3/3/FROZEN70e5b499. Numerical353.91active3600/346.73end
-10800, sourceclock separate; all7GPUleases released, actualDockerwebonly after
-cleanup. Current224=141CUDA+83CPU incloldinvalid, no qualified-alpha count.
-Independentretained CPUreview running. ExistingD6 image/no runtime replacement.
-Harvey allocation firstattempt stopped before anyreplay/economiccell on owned
-archive hash-read allowlist. Original0retry/failure preserved; corrected
-technical-r1 is separate linked study under new300active900end AND cumulative
-old+new<=original600/original1800absoluteend, no source/outcome/parameter change.
-Ptolemy prepares next finite raw-only/indicator-only/combined input-ablation
-protocol/kernel behind the ranking campaign, SOURCE CPU only/no training.
-Three masks on same1274architecture/FITscalers, proposed9fits/seed707; no
-architectural/seedgrid, publicweights or Paperchange. Allocate only after ready
-contract/nativeproof and current canonical lease release, not concurrentGPU.
+All completed training/transfer allocations released. SOURCE preparation and a
+retained reader are not proof of running CUDA. Last measured trusted runtime:
+D6 sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
+PyTorch2.7.0+cu128/Python3.12; RTX4090. Measure current free resources at
+allocation, preserve desktop headroom, one named canonical GPU lease.
+WDDM desktop N/A memory is not a competing project training process.
 
-Oct18 quantileMLP COMPLETE3CUDAfits/0retry/72KNOWNcells/bothprimaryFAIL,
-22/21/21epochs/selected2/1/1; independentPASS440pins/68COMMITTED/72cells.
-GPUlease released,160.04owned7200, no claim of sustainedoccupancy/convergence.
-New seed robustness COMPLETE6CUDAfits/9initialforecasts/108KNOWNcells;
-378.03active3600/1805.28elapsed14400, all leases released. Original failed SYN
-and sole SYN retry retained;0marketretry. Actual seal bef8b465. Frozen strong
-learned-increment condition NOT_ESTABLISHED; independent CPU retainedPASS
-1296producerpins/569upstream/108cells/45exactcontrols,0modelcalls. Current
-ledger209=129CUDA+80CPU was the seed-study snapshot. TemporalTransformer now
-COMPLETE3CUDAfits,14/13/15epochs/selected2/1/3,359.99active3600/903.12elapsed10800;
-all leases released. IndependentPASS63cells/411pins/46checkpoints/54exactcontrols,
-primaryFAIL3/3, no Paper switch. Current ledger212=132CUDA+80CPU incloldinvalid,
-not architectures/qualified models. SPY-relative-target then COMPLETE6fits
-(3CUDA+3CPU)/0retry/81KNOWNcells/all3policiesprimaryFAIL; independentPASS542pins/
-81cells/45exactcontrols/max6.66e-16. Active259.38/1800/end561.36/7200, allleases
-released. Current ledger218=135CUDA+83CPU incloldinvalid; no fitted version is
-repeated or automatically adopted by Paper. Next-source inference prep9checks/
-GPU0/source-SYN only remains ready for genuinely new input; no ready frozen GPU
-campaign remains. Do not manufacture activity or claim current utilization.
+Next frozen-candidate preparation: current25-training-cohort-preparation-20261018-v1,
+OLD17/NEW25 HGB14+GRU f3,seed808, proposed2CPU+2CUDA fits. Preparation assigned;
+not numerical authority/execution. Same common-support dates/scalers/reference
+cohort, new terminal strict-valid-subset19555 input. Source600active5400end,
+GPU0/models0/replay0. Proposed numerical3600active10800end/4 starts/0 marketretry,
+native solver/optimizer/checkpoint tests before fits; freeze actual protocol first.
+Data recovery and CPU retained validation do not own this GPU lease.
 
-Earlier closed16:53KST reboot state: native3Ridge COMPLETE, never repeat. Old
-ledger188=113CUDA+75CPU incloldinvalid; new audit checks latest24fitversions/
-72pins, not an independent full ancestral recount. Meitner owns one NEW native
-Chronos2 implementation/SYN package completed25optimizersteps/4forecastbatches,
-3.04GiB peakreserved, native300/61/loss-mask/bestrestore PASS; pre-fit failure
-and exact technical retry retained, both containers/leases released. Parent
-appointed separate oneFT/max400steps/1200active3600end, now COMPLETE125updates/
-selected25/24forecasts408rows, independent retainedCPU PASS. One actualfit adds
-to ledger189=114CUDA+75CPU incloldinvalid; SYN is not counted. GPUlease released.
-EndpointPASS/economicDDFAIL, no Paper adoption. Fixedhalf0fit risk study also
-DDFAIL. Newjointgate1CPUfit independentlychecked42cells/originalprimaryFAIL;
-ledger190=114CUDA+76CPU incloldinvalid. Fridaylater-day204forecasts/18cells
-complete/bothprimariesPASS,0fits, GPUreleased; independentretainedCPU PASS,
-359pins/204scores/18cells/max2.22e-16. Retrospective one-day result, not alpha.
+## Closed Custody
 
-Peer9CUDAfits/382epochs and LightGBM6CPUfits COMPLETE; independent
-checks pass. Chronos2 native domain-adaptation3CUDAfits/800steps COMPLETE,
-3selectedsafetensors/oldforecastsunchanged, lease released. No GPU numerical
-worker remains from these families. XLK conditional3CPUfits COMPLETE, rejected
-by fixed criterion; original pre-fit failure/debit retained. Native3CPU also
-closed under its separate missing-aware contract, not oldfullsource promotion.
-One GPU allocation/no dummy work remains policy.
+Ancestral market-fitted versions233=150CUDA+83CPU, including ONE old invalid
+depth-TCN checkpoint.15 new CUDA versions here =6paired ranking+9input ablation;
+not15 architectures/qualified models. SYN, foundation inference, reader calls
+and zero-fit allocations/shadows do not count as training.
 
-| Resource | Actual owner / scope |
+| Family | Closed Evidence |
 | --- | --- |
-| GPU |None allocated. Transformer3 and subsequent SPY-relative3CUDAfits COMPLETE/independentPASS; original economic primaries unchanged/allleasesreleased.|
-| Next GPU |None currently allocated. SPY-relative-target3CUDA+3CPU complete/independentPASS; allleasesreleased, future fresh-input work does not authorize old refits.|
-| CPU research |NewONEdepth2gate COMPLETE36cells/primaryDDFAIL, independent retainedPASS68pins/15bitexactbaselines. No base refit/forecast.|
-| Data |Longdaily90819valid/1110GET1POST0retry independently raw-matched. Older23queriesEMPTY, no repeated probes. QuietTask enabled firstOct20 06:50KST; D1feed typed source/SYN ready, not runtime capture.|
-| Review |Parent current1360/8bc287b6 fresh358serial/18296full22skip/clean8helper0/Ruff3Compose. New external reader public-only Linux proofPASS; no private result or denied cleanup bypass.|
-| Paper precedence |Existing22:40/23:50KST deployments unchanged; new fixedensemble firstOct20 00:10KST Ready. Reliability preempts research at safe checkpoint; never compete for account/cache/GPU state.|
+| Ranking606 |6fits/63 knowncells/primaryFAIL3/3,353.91active3600, all7leasesreleased; independentPASScc657600.|
+| Ablation707 |9fits/72 knowncells/overallFAIL,535.775active3600/712.88elapsed10800, all11leasesreleased; independentreader-r1 PASS5b1a3785.|
+| Allocation |0fits/forwards/GPU,81 cells, bothselectorsFAIL; independentlinked-r2 PASScd13e848.|
+| Transfernew8 |0fits/1GPUallocation/16 neural batches,21knowncells,primaryFAIL;171.51active1200/oneattempt/lease released.|
+| Five future arms |0fits/GPU/optimizer/oldforwards;5new CPU-native forwards, firstpacket13:11:40UTC; future outcomes UNKNOWN.|
 
-Shadowbundlef9cbd3ee firstpublished13:28:52UTC Oct17, predictions4028adde/
-weights97c7f0f0,1marketattempt/3learnedforwards+rule. Firstlateaudit/metadata
-sealing failures retained; publicationrecovery0newforecasts/12.77owned180.
-CPUoperationalflavor/nativeSYN4PASS, no generalCUDAparity/trainingresume,
-Paperadoption or futureperformance. Independent retainedPASS124pins/17rows/
-4ranks/8weights/firstpublicationtime (assumedhonesthost), REVIEW-SEALc7a76993.
+Producer/reader/source clocks and old failures/overruns are immutable. Ranking
+native137 commits and ablation218 commits/checkpoint restores are distinct
+proofs, not extra trials. Ablation native SYN identity and host mathematics
+were separately verified; no cross-host/native parity claim.
+Five-shadow old228.005/300 failure and late bookkeeping overrun remain; actual
+R3 numerical completion/readback does not refund or regrade those debits.
+Data failed dynamic job charged1560/1500; not successful runtime/budget authority.
 
-Last measured hardware:RTX4090/24564MiB/driver610.88; RAM63.8GiB/36.6GiBfree.
-Observations, not future guarantees. Measure before allocation, preserve desktop
-headroom, ONE named GPU lease. No dummy work or inherited global VRAM/time cap.
-Prepared role/MD is not evidence of a live numerical worker.
+Earlier custody (seed,Transformer,SPYrelative,Chronos,TCN,LightGBM,OOF,TimesFM)
+remains exact in Engine board/Git1ce5f45 and immutable family roots. Never
+repeat completed fits, rerank seen data as untouched, reopen failed caps or
+change a frozen original criterion. New sensible budgets protect new campaigns,
+not artificial universal VRAM/epoch/time ceilings.
 
-New training checkpoint helper sourcef50770b: CPU dropout/AdamW/ReduceLROnPlateau/
-NumPy+Torch RNG continuation bit-exact;25newtests/46impactedserial pass. Fresh
-clean8full17016pass22skip/17038collected/371.76sec/helper0/Ruff3Compose passes,
-1348sources/73aef779. No old campaign automatically adopts this helper.
-Poincare independent Torch2.7CUDA GRU/dropout retry PASSED exact continuation
-of loss/model/AdamW/scheduler/CPU-CUDA-NumPy RNG, D hardlink commit and incomplete
-refusal. Original OrderedDict-comparator failure retained. Old7epochs14steps+
-new8/16=15/30synthetic total, zero market fits; containers gone/lease released.
-Not universalTCN/CUDA/mid-batch proof. Intraday first market fits require their
-own native full-kernel SYN/frozen contract, no company-wide approval wait.
+## Recovery
 
-## Custody To Preserve
-
-- Closed fitted VERSIONS200(120CUDA/80CPU), including ONE budget-invalid depth
-  TCN checkpoint. Eight ofnew9depthfits are usable inits frozenperformanceclaim.
-  This is not200architectures, all qualified fits or currentGPU activity.
-  Latest6fit longdaily family COMPLETE45KNOWNcells/primaryDDFAIL; native SYN is
-  excluded from market count. Independent retained review PASS626pins/45cells,
-  no native parity/alpha claim; original economicFAIL unchanged.
-  NewONEgate complete/36cells/independentPASS68pins, primaryDDFAIL;
-  GRU3actualfits complete/63cells/primaryFAIL, retained independentPASS1000pins/
-  48COMMITTEDbindings; no observedC3drift, no runtimeparity claim;
-  native proof8updates24forwards does not add marketfits. No futurefits queued.
-  Foundation/reader/SYN calls are not extra fits. Source/seed/trial/selection
-  reuse and each original closed active/end debit remain immutable.
-- NAS nine-fit study196.19authoractive/1472.11end within3600/10800; independent
-  57.925active/1345.295end. Prespecified GRU primary failed. Raw-jump diagnostic
-  flags61/30/89percent positivegross byfold; two dates match official reverse
-  splits. No outcome filtering, corrected-profit claim or holdout refund.
-- TimesFM2.5 two coldloads/twoSYN/ninemarket forecasts/12cells/0fits CLOSED.
-  Owner110.64995active/3142.4678end within300/3600 from original PREP appointment;
-  reader37.451active separately observed, combined148.101active. Original PREP
-  and elapsed closures unchanged. Exact trusted Apache2weight release precedes
-  all targets; corpus undisclosed. NoTimesFM3/NC default.
-- DAG one retained meta fit then zero-refit publication CLOSED. Original failed
-  21.7055active/1571end/expired1800 unchanged. Late publication9.2435active/90.8454
-  end has separate120/1200clock; independent111pins/144curves CLOSED. Never
-  claim later observation finished within original expired training clock.
-- Chronos failed-forward unknown0..5 charged;8knownsuccessful/13aggregateUPPER,
-  not13actual. Existing exact weights/data/trials remain in registry/linked roots.
-- Core20 new9fit study87.479active/234.069end/688updates/72cells CLOSED within
-  1800/7200; all INNERpatience20, not convergence. Primaryfailed. Independent
-  reader P2:f3GRU CPU/CUDA parity mismatch,7checkpoints passed;f3TF untested.
-  Actual old command already D6/Torch2.7; earlier2.13 attribution corrected.
-  Independent zero-model72cashflows/196968values/144Fraction checks PASSED,
-  44.533newactive. Old51.364closure/tolerance/P2 unchanged, no runtime-cause proof.
-  Its20/50/100bps/side costs stay unchanged. NEW longNAS cost
-  5/10/20 grid is a separate predeclared campaign, not old result repair.
-- LongNAS15fits/108cells(75complete/33unknown) CLOSED, primaryGRU60false.
-  1024.012authoractive/1272.601end within7200/18000, zero-refit publication repair
-  retains original failed write. Independent review separate; no dummy rerun.
-- Paired RankNet6CUDA/174epochs/294updates/54cells CLOSED,99.328aggregateactive/
-  729.381end; actual native train/restore2.543sec, not99secGPUspend. Cached tensors
- 185..255KB; low occupancy is normal for this panel. No forced extra epochs.
-- Parent synthetic residency profile never ran; unsafe unexecuted lease-cleanup
-  entry retired to inert stub, exact original source retained against old contract.
-  Meaningful longer-source training has priority, not a synthetic utilization load.
-- Long adjusted20 ninefits/72cells/0unknown CLOSED96.614aggregateactive/76.637end;
-  exactold62938input,132epochs/3552updates/5160forwards. Newer89723input is a
-  separate next consumer, never a silent mid-campaign substitution. No primary pass.
-
-A/research/nas-long-history-utility-experts-development-20261015-v1/independent-review/completion.json
-A/research/nas-long-utility-frozen-candidate-20261015-v1/candidate.json
-A/research/timesfm25-etf-mask-development-20261015-v1/admission-r2/independent-review/closure.json
-A/research/spy-qqq-decision-dag-checkpoint-publication-20261015-v1/independent-review/readback.json
-
-## Recovery Knowledge
-
-Exact dependency metadata is not market data by .json suffix. Freeze source
-roots/public metadata hashes and maintain private/credential/network/write denial.
-Native SYN must serialize FULL checkpoint metadata including NumPy integer fields.
-Reuse retained checkpoints for publication recovery, never exhausted extra fits.
-Existing direct-base interpreter plus explicit trusted venv paths resolves the
-Windows redirector self-match/child issue without blanket actor exclusions or
-framework replacement. Unknown competitors remain protected.
-
-Prior detailed state:Gitbd62272/40ffc4f/62b406e/27dface and immutable external
-roots. Owner closure is not independent review, deployment or profitable cash.
-Parent integrates actual evidence; no operator decision currently identified.
+Execution reliability preempts at a safe checkpoint. Safe checkpoints/weights
+remain D:, not Git; use trusted runtime/serialization only. Actual native SYN
+must exercise optimizer/diagnostics/best restore and exact input ABI. A prepared
+role MD or available GPU is not a reason to perform dummy training.
