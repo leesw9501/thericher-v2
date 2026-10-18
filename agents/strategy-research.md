@@ -1,6 +1,6 @@
 # Strategy Research Stateboard
 
-Current Oct18KST. A=D:/thericher-v2/model-artifacts.
+Current Oct19KST. A=D:/thericher-v2/model-artifacts.
 Strategy owns source hypotheses/assigned pure mechanisms, not broker risk,
 scientific approval or Paper adoption. Parent/Engine own final protocol/targets/
 splits/costs/interpreting fits; Steward owns one GPU allocation.
@@ -38,15 +38,21 @@ launch-level-witness/HANDOFF-ACTUAL.json.
 
 ## Next Priority
 
-Training-universe breadth before more architecture/seed/indicator combinations:
-common-support OLD17vsNEW25 HGB14+GRU f3, fixedseed808,2CPU+2CUDA proposedfits.
-Bind one exact terminal19555row manifest, original f3 scaler/reference cohort,
-past-valid dates/mature labels/purge and equal-date loss. Different cohort sizes
-alter gradients/optimizer statistics: training-recipe comparison, not isolated
-causal diversity. Same original EVALclock/threecosts; no missingtarget fallback.
-Engine assigned SOURCE preparation; no fits inferred from this proposal.
+Training-universe breadth fourfits COMPLETE/72cells/independentPASSa55dc25d.
+Partial19555 augmentation improved new8 HGB/GRU comparisons, mean2failed;
+twoGRUs only2epochs bywallheuristic, not convergence. Fixedrecency3fit study
+then completed using fasternewnativeflavor:39/23GRUepochs/INNERpat20, both
+primariesfailed onDD. No model/Paper selection. Oldtarget/split/criteria remain.
+Next SOURCE full25history using separately frozenFINAL43379source, HGB+paired
+fastGRUuniform/recency, sameoriginal17rows/scalers/reference/4001dates.
+Retainedcontrols/old17predictions reused; no anotherarchitecture/seedgrid.
+Differentcohorts/INNER selection alter recipe, not isolatedcausal diversity.
+ReusedEVALclock/threecosts, no missingtargetfallback/freshalpha claim.
 A/review/current25-training-cohort-20261018-v1/claude.json: REVISEcommon-support/
 INNER-purge/scaler-reference/costs/reused-DEVclaims, advisory not permission.
+Fixed1260-session recency loss is a project hypothesis, NOT implementation or
+performance validation of DoubleAdapt. Official source reviewed:
+https://arxiv.org/abs/2306.09862 and QlibMIT; no publiccode/runtime install.
 
 ## Source Knowledge And Closed Work
 

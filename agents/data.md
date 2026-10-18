@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-Current Oct18KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Current Oct19KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Data owns source capability/acquisition/canonical storage/time availability;
 Execution owns account/order endpoints. Parent owns integration/shareddocs/Git.
 Private KIS Paper marketdata is delegated, no KIS_LIVE_*/secret/raw-value output.
@@ -19,42 +19,33 @@ master; current listings/non-PIT/opaqueMODP1/nominaloverlap/finality limits rema
 | strict-valid-subset-r1 |19555TOTAL=19051unchanged+504individually valid rows from8failedpages;200670lineage checksPASS. Dynamic wire0newGET/1POSTattempt, local timing-wrapper TypeError/pendingauth.|
 | timing-recovery-r2 |27070TOTAL=19555unchanged+7515olderrows;77newGET1POST0retry, typednativepressurestop; actualSYNpublicationquarantined, no input/cursorcontamination.|
 | timing-recovery-r3 |35750TOTAL=27070unchanged+8680olderrows;94newGET1POST/boundedretryunitsclosed;443778lineagechecksPASS, all9actualoutputs outsideSYN.|
+| timing-recovery-r4 FINAL |43379TOTAL=35750unchanged+7629olderrows;87newGET1POST/zero new native or transport errors;535142lineagechecksPASS.|
 
 Current research capture consumer:
 A/data/current20-universe-breadth-daily-capture-20261018-v1/
-timing-recovery-r3/ENGINE-INPUT.json (manifestd0aa5148/readbackb5e87ca7).
-406aggregateGET/5POSTattempts; three repeated-date cursorsclosed, sixNYS open.
+timing-recovery-r4/ENGINE-INPUT.json (manifest43aad063/readback2c096dd5).
+493aggregateGET/6POSTattempts. All9 exact cursors closed at repeated-date
+boundary:8routes2007-08-20,SPY2007-08-21, lastOct16. Not exhaustive Jan2007 or
+global historyfloor. Nineinvalidgaps/1432missingtarget sessions retained;
+no imputation, old cursors re-probe or source substitution into a frozen study.
 Frozen current25 training consumer remains EXACTolder19555:
 A/data/current20-universe-breadth-daily-capture-20261018-v1/
 strict-valid-subset-r1/ENGINE-INPUT.json;
 source extracted-manifest b95f3763, readback637d8cab.
 Raw/canonical bytes only matching M/us_equities/kis_paper_private/ subtrees.
-Counts COST3735,ADBE/SPY3651each,other6~1420each; support starts COST2011-12-08,
-ADBE/SPY2012-04-11,other6 2021-02-22, throughOct16 with8explicitinvalidgaps.
 Failed wholepage grades unchanged; separate strict-valid-subset uses SAME row
 validator/no price repair/imputation. Newly extracted availability is actual
 CPUextraction, not historical publication/backdated HTTP observation.
 
-Aggregate235marketGET/3authPOSTattempts; no API daily-limit/history-floor claim.
-Original100GET cap was notexhausted: readiness stop; historicalactor notretained.
-Continuation ended because its frozen300querykeyprefix exhausted after terminal
-route skips, actual135GET, not an API ceiling. All9 oldercursors remain partial.
-Dynamic source targeted while-open cursors/actual GET/timebudget, not wasteful
-precomputed fixedprefix. Last wrapper called OpenerDirector.open(request,timeout)
-positionally, replacing POSTdata -> TypeError; partial wire effects UNKNOWN.
-Fixed keyword-safe wrapper3native real-urllib SYN PASS; actual failedpending
-remains. Last job1560charged against1500active cap, old972.39 unchanged.
-No actual market recovery/deployment inferred. Owner/children reaped/leasesreleased.
-Credential-free diagnosis COMPLETE, namedcaller/children/captureleases/token
-directory absent, startmark13:29:02.635176UTC unchanged; legacy/globalgate
-admission still needed. NEW timing-recovery-r2 delegated fresh realnative
-preflight180active600end then480GETattempts/1POST/1800active3600end.
-No retained235query/23closedprobe replay, no oldpending/startmark reset.
-NewPOST allowance distinct, aggregate4attempts not a refunded failedattempt.
-TIMING-REPAIR-READY.json and HANDOFF.json in strict-valid-subset-r1.
+Historical first235GET/3POST/old100GET and fixed300query-prefix stops were not
+daily quotas. Failed OpenerDirector.open(request,timeout) positional wrapper
+made POSTdata invalid; partial effects UNKNOWN, failedpending/startmark and
+1560/1500 overrun remain unchanged. Later keyword-safe native proofs and
+separately bound recovery do not refund old work. All current actors/leases
+released; no active collector inferred from old commands in immutable roots.
 
 Engine's COMPLETEDcurrent25 training binds exact19555, never newerhistory
-silently swapped. TransferCOMPLETE uses FIRST8414 unchanged. New35k is useful
+silently swapped. TransferCOMPLETE uses FIRST8414 unchanged. New43k is useful
 for a separately frozen next consumer, not automatic source replacement.
 
 R3pressure diagnosis: exacttwofresh+one retainedr2 body codesEGW00201; mapping
@@ -64,12 +55,11 @@ HTTPstart. Realnative SYN reproduced reservation-before-ownerprobe allowing
 0.5s actualinvocationgap despite3sreservations; post-probe floor restored3s.
 No dailyquota/globalfloor claim. R3clientclosed/quiescent/allprefix/gaps exact.
 pressure-diagnosis-r1/DIAGNOSIS.json and CLOSEOUT.json preserve exactevidence.
-NEWtiming-recovery-r4 delegated fresh source180active600elapsed, finiteactual
-160GETattempts(incl2boundedtypedretries)/1POST/600active1800end. ONLYremaining
-6NYSoldercursors, local3s floor AFTERownerprobe/everyretry with realinvocation
-START timestamps and freshness/due checks. No successfulqueryreplay, oldpending/
-token-startreset, globalpacingchange or deployedTask edit. No actualcapture
-is inferred from this assignment. Worker owns guard/cooldownnext_due.
+R4 COMPLETE within160GET/1POST/600active1800end; one authorized positively
+failed request reattempt, no successful-query replay. Actual HTTP invocation
+START gaps min3.069/p503.093/p955.614s/readinessmaxage9.410s. No global quota
+calibration; post-owner local3s floor solved this worker's measured compression.
+Next consumer is separately frozen full25-history research, not old19555 study.
 
 ## Existing Useful Sources
 
@@ -106,21 +96,27 @@ A/strategy-research/kis-d1-minute-semantics-20261017-v1/FINDINGS.md.
 
 ## Owned Future Collection
 
-Quiet current20 completed-RTH1m Task firstOct20 06:50KST Tue-Sat; source31native
-tests/typedcolddebitrepair/inactive-notactive readiness fixed and actually
-retargeted. No manual invocation/capture claim. Original2ETFTasks unchanged.
-A/infra/current20-postclose-runtime-integration-20261017-v1/
-installer-os-drift-scoped-recovery-r3/parent-enable-1/recovered.json.
+Quiet current20 completed-RTH1m Task firstOct20 06:50KST Tue-Sat. Both it and
+D1marks below actually retargeted to captureSDK53bb68ee onOct18 15:29UTC;
+native Action-only/readback ReadyEnabled, allotherdefinitions unchanged per
+transaction. Original2ETF/nightlyTasks unchanged. No manual invocation/capture.
+A/infra/data-dispatch-spacing-runtime-freeze-20261018-v1/
+parent-rth-retarget-1/retargeted.json SHAafc4717a;
+parent-d1-retarget-1/retargeted.json SHA04ea3e46.
+READY9743b9c4/90payloadfiles/12allowedchanges, original consumer/custody/logical
+contracts/cache/token gates preserved. Source-author603/600 failure unchanged;
+Parent132/322/full18314freshPASS. Real quietprobes Console0, not OS-origin proof.
 
 Finite21 D1marks Task thericher-kis-paper-current20-shadow-d1-marks-20261020
-Enabled/Ready, firstOct20 07:30KST throughNov17. Corrected entry208d4d3d/
-READYee4274ce/physicalpythonw; old61d flowproof is not entrydeployment.
-Installed445164fe/enabledXMLc1eb1ac6, all248otherTasks unchanged.
-A/infra/current20-shadow-d1-marks-task-20261017-v1/harness-repair-r1/
-final-r1-binding/idle-default-recovery-r1/activation-1/installed.json.
+Enabled/Ready, firstOct20 07:30KST throughNov17. Current entry10051977 in
+data-dispatch-spacing-runtime-freeze-20261018-v1/d1/runtime/entry-binding-repair-r1;
+samephysicalpythonw/originalfae79e85visitcontract/21triggers/campaigncustody.
+Original208d4d3d/ee4274ce registration remains historical rollback, not currentAction.
 20normalGET+2retry/1POST pervisit,600wall/oneclient; completedcache=>zeroHTTP.
-Actual captures/future21outcomes UNKNOWN. Supports originalshadow+fixed5additional
-arms without anothercollector. Old pending/day/source states never reset.
+Actual captures/future21outcomes UNKNOWN. Supports originalshadow+fixed5+fixed4
+additionalarms without anothercollector. Old pending/day/source states never reset.
+Nightly30433095 audit NOT_AFFECTED: independently measured/source actual1.25s
+floor AFTER rechecks. A/data/nightly-market-data-dispatch-audit-20261018-v1/AUDIT.json.
 
 ## Closed / Recovery Knowledge
 

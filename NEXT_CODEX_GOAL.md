@@ -29,6 +29,9 @@ real money, paid/public commitments, secrets/private amounts in output.
   Fees/settled cash/net PnL unobserved; original failure cause UNKNOWN.
 - Goal97 retains its separate Oct19 entry/Oct24 exit opportunities. Data quiet
   RTH1m06:50KST and21 D1 marks07:30KST firstdueOct20; actual capture UNKNOWN.
+  BOTH existing DataActions now retargeted/Ready/Enabled to SDK53bb68ee actual
+  GET-spacing repair. Times/custody/logicalcontracts/cache unchanged; nightly
+  independentactualfloor NOT_AFFECTED. No manual invocation/newTask/schedule.
   Do not rerun installers/consumed creators or manually replay future Tasks.
 
 Exact runtime/readback pointers are in HANDOFF and RUNBOOK. Scheduler exit,
@@ -37,32 +40,34 @@ deterministic risk, exact identity, current broker buying power and shared bank.
 
 ## Ready Parallel Packages
 
-1. Engine: NEWfixed-recency-cudnn SOURCE preparation, fixed1260-session FIT
-   loss mass before current EVAL results. Exactly3 proposedfits:1HGBrecency
-   with compatible completed HGBcontrol,2paired newFAST-GRU uniform/recency
-   with SAME newbackend/pack32/seed808. Old17/f3 rows/scalers/reference/purge/
-   INNERunweighted/costs unchanged. 9new+9retainedcells. Nativeflavor probe
-   PASS is synthetic only; new numericalbinding/weightednativeproof required.
-   A/research/current20-fixed-recency-cudnn-development-20261018-v1.
-   Do not use old2epochATen as a causal control for a different recipe.
+1. Engine: NEWfull25-complete-history SOURCE preparation. FINAL43379Data,
+   sameoriginal17lossrows/FITscalers/reference/4001dates, oldernew8lossrows only.
+   Atmost3 newfits:full25HGBuniform+pairedfastGRUuniform/recency, fixedseed808.
+   Reuse retainedold17/partial25HGB andold17GRUscores, not refit. Onlynew8GRU
+   controlforwards later atmost8batches512, no old17reforward.9policies/81cells,
+   no grid/newensemble/Paperswitch. Finalcontract/native25shape/float64API
+   proof before numericaldispatch. SOURCE is not running GPU.
+   A/research/current25-complete-history-fast-experts-development-20261019-v1.
 2. Transfer retained validation COMPLETE:185pins/2016feature rows/21 replay
    cells/7policies independently PASS, primaryFAIL(growth up/DD worse than
    uniform). Preserve; do not rerun forecasts, tune or switch Paper.
-3. Data:35750strictrows/443778checks;406GET5POSTattempts alreadycharged.
-   NativeEGW00201 pressure: reservation-before-ownerchecks permits short send
-   gaps, reproduced in SYN; not dailyquota/globalhistoryfloor. NEWtiming-
-   recovery-r4 delegated remaining6NYS older cursors, post-probe invocation
-   floor3s/timestamps,160GET1POST/600active1800end/nativeguards. Oldunknownauth/
-  1560-over1500 debit and allprefix/gaps preserved. No inputswap into models.
+3. Data COMPLETE:43379strictrows/535142checks;493GET6POSTalreadycharged.
+   All9exactcursors closed at repeateddate2007Augboundaries, not globalfloor.
+   R4actualpost-probe3s invocation min3.069/p503.093/p955.614/zero newerrors;
+   source-limited applies ONLYexactcursors. Nineinvalidgaps/1432missingtarget
+   sessions retained. Oldunknownauth/1560-over1500debit/prefix preserved.
+   FINALtiming-recovery-r4/ENGINE-INPUT.json consumer43aad063/readback2c096dd5.
+   No more identicalolderprobes or swap into oldfrozen19555/Main90819/Paper17.
 4. Execution: preserve existing owners/readiness. After a natural owned run,
    use exact scoped public receipt plus strict native RO parser after quiescence.
    Distinguish no intent/attempt/accepted/fill/custody/terminal/net PnL.
    New public-only reader tests do not prove a private result.
 
-Already COMPLETE:6ranking+9ablation CUDA and4cohortfits(2CUDA2CPU)/72cells;
-0-fit allocation/transfer, five additional preOPENforecasts, one native-throughput
-SYN probe. Independent current25 72cell retainedreview assigned; no new models.
-Current ancestral237=152CUDA+85CPU fitted versions inclone oldinvalid, not
+Already COMPLETE:6ranking+9ablation CUDA,4cohortfits(2CUDA2CPU)/72cells with
+independentPASSa55dc25d,3recencyfits(2CUDA1CPU)/18cells bothprimaryFAIL/retained
+reviewPASS346checks/18bit-exactNAVs. ActualfastGRUs39/23epochs/INNERpat20/bestrestore, notconvergence.
+0-fit allocation/transfer, five+fouradditional preOPENforecasts/hashweightsPASS,
+one native-throughput SYNprobe. Current ancestral240=154CUDA+86CPU incloneoldinvalid, not
 architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;

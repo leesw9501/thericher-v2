@@ -1018,6 +1018,198 @@ def test_canonical_date_roundtrip_rejects_space_padded_components(first, last):
         minute(first=first, last=last)
 
 
+@pytest.mark.parametrize("interval", [2, 3.5])
+@pytest.mark.parametrize("retry", [False, True])
+def test_actual_GET_spacing_after_delayed_then_cached_owner_including_failed_GET(
+    rig, interval, retry
+):
+    starts, probes = [], []
+
+    def ready():
+        probes.append(rig.clock.tick)
+        if len(probes) == 2:
+            rig.clock.advance(1.5)
+        return c.CaptureReadiness(True)
+
+    rig.opener.before_open = lambda request: starts.append((request.get_method(), rig.clock.tick))
+    rig.opener.responses = [
+        token(),
+        OSError("SYN GET") if retry else minute_body(),
+        minute_body() if retry else daily_body(),
+    ]
+    with rig.session(
+        owner_ready=ready, limits=c.CaptureLimits(5, 2, 120, request_interval_seconds=interval)
+    ) as session:
+        session.capture(minute())
+        result = session.capture(minute(), retry=True) if retry else session.capture(daily())
+        assert result.status == "ACCEPTED"
+        assert session.progress["GET"] == 2 and session.progress["POST"] == 1
+        assert session.progress["retry"] == int(retry)
+        assert session.progress["pending"] is None
+        assert session.progress["owned_wall_seconds"] >= starts[-1][1]
+    assert starts == [("POST", 0), ("GET", interval + 1.5), ("GET", 2 * interval + 1.5)]
+    assert len(probes) == 4  # Revalidate after the additional local wait.
+
+
+def test_actual_GET_start_is_after_slow_pending_commit_and_committed_once(rig, monkeypatch):
+    starts, pending = [], []
+    rig.opener.responses = [token(), minute_body(), daily_body()]
+    rig.opener.before_open = lambda request: starts.append((request.get_method(), rig.clock.tick))
+    with rig.session() as session:
+        commit = session._commit
+
+        def slow(value):
+            commit(value)
+            if value["pending"] is not None:
+                pending.append((value["pending"]["method"], value["pending"]["ordinal"]))
+                if pending[-1] == ("GET", 1):
+                    rig.clock.advance(3)
+
+        monkeypatch.setattr(session, "_commit", slow)
+        session.capture(minute())
+        session.capture(daily())
+    assert starts == [("POST", 0), ("GET", 5), ("GET", 7)]
+    assert pending == [("POST", 1), ("GET", 1), ("GET", 2)]
+
+
+@pytest.mark.parametrize("failure", ["owner", "state", "deadline", "stalled"])
+def test_added_GET_wait_rechecks_owner_state_wall_and_clock_without_second_effect(rig, failure):
+    rig.opener.responses = [token(), minute_body()]
+    probes = []
+
+    def ready():
+        probes.append(rig.clock.tick)
+        if len(probes) == 2:
+            rig.clock.advance(1.5)
+        if len(probes) == 4 and failure == "state":
+            document = state(rig)
+            document["pending"] = dict(method="GET", ordinal=99, query_key="SYN")
+            c.atomic_json(rig.artifact / "capture-state.json", document)
+        return c.CaptureReadiness(not (len(probes) == 4 and failure == "owner"))
+
+    limits = c.CaptureLimits(5, 2, 5 if failure == "deadline" else 120)
+    with rig.session(owner_ready=ready, limits=limits) as session:
+        session.capture(minute())
+        if failure == "stalled":
+            rig.clock.advance(0.5)  # Native reservation is due; stall only the added floor.
+            session._sleep = lambda _: None
+        if failure == "owner":
+            assert session.capture(daily()).status == "DEFERRED"
+        else:
+            reason = {
+                "state": "pending_or_state_changed",
+                "deadline": "wall_cap",
+                "stalled": "pause_incomplete",
+            }[failure]
+            with pytest.raises(c.KisPaperCaptureError, match=reason):
+                session.capture(daily())
+        assert session.progress["GET"] == 1 and session.progress["POST"] == 1
+        assert session.progress["pending"] is None
+        if failure == "state":
+            assert state(rig)["pending"]["ordinal"] == 99
+    assert len(rig.opener.calls) == 2
+
+
+def test_unknown_pending_prevents_added_wait_and_any_state_rewrite(rig):
+    rig.opener.responses = [token(), minute_body()]
+    with rig.session() as session:
+        session.capture(minute())
+        document = state(rig)
+        document["pending"] = dict(method="GET", ordinal=99, query_key="SYN")
+        c.atomic_json(rig.artifact / "capture-state.json", document)
+        before = (rig.artifact / "capture-state.json").read_bytes()
+        sleeps = list(rig.clock.sleeps)
+        with pytest.raises(c.KisPaperCaptureError, match="pending_or_state_changed"):
+            session._begin("GET")
+        assert rig.clock.sleeps == sleeps
+        assert (rig.artifact / "capture-state.json").read_bytes() == before
+    assert len(rig.opener.calls) == 2
+
+
+@pytest.mark.parametrize("bad", [-1, float("nan"), float("inf"), 1.0])
+def test_GET_clock_negative_nonfinite_or_regressed_blocks_before_pending(rig, monkeypatch, bad):
+    rig.opener.responses = [token(), minute_body()]
+    with rig.session() as session:
+        session.capture(minute())
+        before = (rig.artifact / "capture-state.json").read_bytes()
+        monkeypatch.setattr(session, "_monotonic", lambda: bad)
+        with pytest.raises(c.KisPaperCaptureError, match="dispatch_clock_invalid"):
+            session._begin("GET")
+        assert (rig.artifact / "capture-state.json").read_bytes() == before
+        assert session.progress["GET"] == 1 and session.progress["pending"] is None
+    assert len(rig.opener.calls) == 2
+
+
+def test_POST_does_not_read_or_change_GET_dispatch_clock(rig, monkeypatch):
+    rig.opener.responses = [token()]
+    with rig.session() as session:
+        monkeypatch.setattr(session, "_GET_dispatch_clock", lambda: pytest.fail("GET-only clock"))
+        session._client_once().ensure_authenticated()
+        assert session.progress["POST"] == 1 and session.progress["GET"] == 0
+        assert session._last_actual_GET_dispatch is None
+        assert not rig.clock.sleeps
+
+
+def test_GET_clock_regression_after_pending_commit_keeps_unknown_and_no_delegate(rig, monkeypatch):
+    rig.opener.responses = [token()]
+    with rig.session((minute(),)) as session:
+        commit = session._commit
+
+        def regress_after_pending(value):
+            commit(value)
+            if value["pending"] is not None and value["pending"]["method"] == "GET":
+                rig.clock.tick -= 1
+
+        monkeypatch.setattr(session, "_commit", regress_after_pending)
+        with pytest.raises(c.KisPaperCaptureError, match="dispatch_clock_invalid"):
+            session.capture(minute())
+        assert session.progress["GET"] == 1
+        assert session.progress["pending"]["method"] == "GET"
+        frozen = (rig.artifact / "capture-state.json").read_bytes()
+        with pytest.raises(c.KisPaperCaptureError, match="pending_unknown"):
+            session.capture(minute(), retry=True)
+        assert (rig.artifact / "capture-state.json").read_bytes() == frozen
+    assert [v[0] for v in rig.opener.calls] == ["POST"]
+
+
+@pytest.mark.parametrize("failure", ["lost_owner", "reparse"])
+def test_early_GET_checkpoint_checks_lease_and_path_before_state_read(rig, monkeypatch, failure):
+    with rig.session() as session:
+        path = rig.artifact / "capture-state.json"
+        before = path.read_bytes()
+        read_bytes, lstat = Path.read_bytes, Path.lstat
+        with monkeypatch.context() as patch:
+
+            def guarded_read(target):
+                if target == path:
+                    pytest.fail("state read before custody/path validation")
+                return read_bytes(target)
+
+            patch.setattr(Path, "read_bytes", guarded_read)
+            if failure == "lost_owner":
+
+                def lost():
+                    raise c.KisPaperCaptureError("SYN lost owner")
+
+                patch.setattr(session._owners[0], "require_held", lost)
+            else:
+
+                def reparse(target):
+                    value = lstat(target)
+                    if target == rig.artifact:
+                        return SimpleNamespace(
+                            st_mode=value.st_mode, st_file_attributes=0x400, st_nlink=1
+                        )
+                    return value
+
+                patch.setattr(Path, "lstat", reparse)
+            with pytest.raises(c.KisPaperCaptureError, match="owner_lost|reparse"):
+                session._begin("GET")
+        assert path.read_bytes() == before
+        assert session.progress["GET"] == session.progress["POST"] == 0
+    assert not rig.opener.calls and not rig.clock.sleeps
+
+
 @pytest.mark.parametrize("kind", ["minute", "daily0", "daily1"])
 @pytest.mark.parametrize(
     "body_kind",

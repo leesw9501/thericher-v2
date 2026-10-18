@@ -311,6 +311,8 @@ class KisPaperDataCaptureSession:
         self._busy = False
         self._started = 0.0
         self._carried_wall = 0.0
+        self._last_actual_GET_dispatch: float | None = None
+        self._GET_clock_seen: float | None = None
 
     def __enter__(self) -> KisPaperDataCaptureSession:
         if self._stack is not None or self._owners:
@@ -462,13 +464,58 @@ class KisPaperDataCaptureSession:
         except OSError:
             raise KisPaperCaptureError("capture_immutable_storage_failure") from None
 
-    def _begin(self, method: str) -> None:
-        # The only full caller probe: after all pacing, immediately before wire.
-        self._ready()
-        self._check()
+    def _idle_checkpoint(self) -> None:
+        self._held()
         persisted = json.loads((self.artifact_root / "capture-state.json").read_bytes())
         if persisted != self._state or self._state["pending"] is not None:
             raise KisPaperCaptureError("capture_pending_or_state_changed")
+
+    def _GET_dispatch_clock(self) -> float:
+        now = self._monotonic()
+        if (
+            isinstance(now, bool)
+            or not isinstance(now, (int, float))
+            or not math.isfinite(now)
+            or now < 0
+            or (self._GET_clock_seen is not None and now < self._GET_clock_seen)
+        ):
+            raise KisPaperCaptureError("capture_GET_dispatch_clock_invalid")
+        self._GET_clock_seen = now
+        return now
+
+    def _mark_GET_dispatch(self) -> None:
+        now = self._GET_dispatch_clock()
+        if (
+            self._last_actual_GET_dispatch is not None
+            and now - self._last_actual_GET_dispatch < self.limits.request_interval_seconds
+        ):
+            raise KisPaperCaptureError("capture_GET_dispatch_pause_incomplete")
+        self._last_actual_GET_dispatch = now
+
+    def _begin(self, method: str) -> None:
+        if method == "GET":
+            self._idle_checkpoint()
+            self._GET_dispatch_clock()
+        self._ready()
+        self._check()
+        self._idle_checkpoint()
+        if method == "GET":
+            now = self._GET_dispatch_clock()
+            if self._last_actual_GET_dispatch is not None:
+                delay = self.limits.request_interval_seconds - (
+                    now - self._last_actual_GET_dispatch
+                )
+                if delay > 0:
+                    # Reservation can precede a slow owner probe or durable commit.
+                    self._pause(delay)
+                    self._ready()
+                    self._check()
+                    self._idle_checkpoint()
+                    if (
+                        self._GET_dispatch_clock() - self._last_actual_GET_dispatch
+                        < self.limits.request_interval_seconds
+                    ):
+                        raise KisPaperCaptureError("capture_GET_dispatch_pause_incomplete")
         state = copy.deepcopy(self._state)
         if method == "POST":
             if self._token.snapshot().last_token_request_started_at_utc != self._token.claimed_mark:
@@ -609,6 +656,8 @@ class KisPaperDataCaptureSession:
                 session._begin(request.get_method())
                 remaining = session.limits.wall_seconds - session._check()
                 try:
+                    if request.get_method() == "GET":
+                        session._mark_GET_dispatch()
                     response = delegate.open(request, timeout=min(timeout, remaining))
                 except HTTPError as error:
                     response = error

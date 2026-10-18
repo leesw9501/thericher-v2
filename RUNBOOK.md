@@ -112,16 +112,19 @@ manual future-Task replay. Preserve exact owned next_due.
 
 ## Current Research / Data
 
-19new versions complete:6ranking+9ablation+4cohort(17CUDA2CPU).237ancestral
-versions=152CUDA+85CPU incloneoldinvalid, not architectures/alpha. Training
+22new versions complete:6ranking+9ablation+4cohort+3recency(19CUDA3CPU).240ancestral
+versions=154CUDA+86CPU incloneoldinvalid, not architectures/alpha. Training
 leases released. Allocation81cells independentPASS/economicFAIL;new8transfer
-21cells primaryFAIL/independentretainedPASS185pins.5futurechallenger actualCPUforecasts
+21cells primaryFAIL/independentretainedPASS185pins.5+4futurechallenger actualforecasts
 complete preOct19OPEN;21future outcomesUNKNOWN, no oldreforecast/Paperswitch.
 Exact numerical roots/seals/failures/caps: HANDOFF/Engine/Steward boards.
 
-NEWsource19555rows/8invalidgaps:
+FINALsource43379rows/9invalidgaps/1432missingsessions:
 A/data/current20-universe-breadth-daily-capture-20261018-v1/
-strict-valid-subset-r1/ENGINE-INPUT.json.
+timing-recovery-r4/ENGINE-INPUT.json,manifest43aad063/readback2c096dd5.
+535142lineagechecksPASS,493GET6POSTattempts;all9exactcursorsclosed repeateddate
+2007Augboundaries, notglobalfloor. No more identicalolderprobes. Oldstudy binds
+strict-valid-subset19555,transfer8414; no silent data substitution.
 Failed dynamictiming wrapper produced0GET/1pendingPOST; three native SYN
 support fixed wrapper, NOT actual recovery.1560/1500active overrun retained.
 Do not rerun originalcapture/creator or reset timing/pending state.
@@ -129,19 +132,34 @@ Current25 fourfit/72cell actuals:
 A/research/current25-training-cohort-development-20261018-v1/technical-r3.
 Oldfailed0market root is not actual4fit result; no duplicate fit/forecast.
 NativeSYN failures and explicit25rank mathrepair preserved; retainedreview
-assigned using exactexistingresults/cleanup/source/FORECAST-WEIGHT-SEAL/
-REPLAY-RECOVERY-COMPLETE/economic-result tuple, not another required envelope.
-Nextfixed-recency-cudnn SOURCE:
+PASS507pins/72NAVs/12bit-exactcontrols,independentseal a55dc25d.
+Fixed-recency COMPLETE:
 A/research/current20-fixed-recency-cudnn-development-20261018-v1.
-NEW3fit plan(1HGBrecency+pairedFAST-GRU uniform/recency) supersedes unstarted
-2fit proposal before numericaldispatch. Sameold17input/reference/scalers/
-INNER/costs; newflavor/batch needs own uniformcontrol, not old2epochATen.
+native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5,3fits/18cells/bothprimaryFAIL
+growthup/DDworse. NewGRUuniform39/best19,recency23/best3,actual110.13/67.54s;
+INNERpat20/LR/bestrestore, not convergence/isolatedbackendcausality.
+Next SOURCE current25-complete-history-fast-experts-development-20261019-v1:
+FINAL43379source/old17rows-scalers-reference-4001dates exact, atmost3full25fits
+HGB+pairedfastGRUuniform/recency. Reuse completedcontrols/old17scores; no grid.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.
 Before numericaldispatch exact input/split/scaler/commondate/contract binding,
 real native solver/optimizer/checkpoint SYN, exclusive lease/headroom. No dummy
 GPUuse/oldfitrestart or metadata-only zero-array-read blanket.
+
+Actual DataAction repair Oct18 15:29UTC:
+A/infra/data-dispatch-spacing-runtime-freeze-20261018-v1/
+parent-rth-retarget-1/retargeted.json SHAafc4717a;
+parent-d1-retarget-1/retargeted.json SHA04ea3e46.
+BothEnabledReady,firstOct20 06:50/07:30KST unchanged. OnlyAction paths changed;
+SDK53bb68ee/READY9743b9c4/90payloadfiles12allowedchanges, originalfae79e85D1
+contract/custody/cache/token gates/21triggers remain. BEFORE XML and known-ours
+rollback saved BEFOREDisable; otherdefinitions exact eachtransaction. No task
+invocation/newTask/schedule/globalpacing claim. Never rerun adoption/transaction.
+Exact rollback proposal/restoration-disabled instructions:
+A/infra/data-dispatch-spacing-runtime-freeze-20261018-v1/PARENT-RECIPE.md.
+Nightly image30433095 independently NOT_AFFECTED, not retargeted.
 
 Trusted GPU research image:
 sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
@@ -154,9 +172,10 @@ only; credential-free tools use uv --no-env-file/.env.example, no implicitdotenv
 ## Verification
 
 CURRENT full authority:
-A/verification/current20-ensemble-paper-20261018-v1/recovery-r3/authority.json.
-1360files/digest8bc287b6348ca84fac54063ae74696a28cb7693fabab32b2e680b5ded2a5f9b5.
-358changed-pathserial,clean8 full18296PASS22skip/18318collected/helper0;
+A/verification/deployed-data-pacing-recovery-20261018-v1/authority.json.
+1360files/digestf81653d809b0bbb175479cf4e136a09dd88b37c71ac0085e62860718f9e74389.
+132focused/322changed-pathserial,clean8 full18314PASS22skip/18336collected/helper0
+in386.86s;
 Ruff/default/research/accounting sample-envCompose PASS.
 This supersedes old verification summaries, not deployed historical images.
 AGENTS/DECISIONS control hashes also must match for reuse. Docs/external-only

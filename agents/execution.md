@@ -1,13 +1,17 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current 2026-10-18 KST. Company: current-nas-owned-model-paper-cycle-v1.
+Current 2026-10-19 KST. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
 CURRENT Oct18: Parent integrated the distinct native profile and JSON-only
 host/worker/ownerprobe. Historical author432/routing8probes plus final host34/
-358serial/full18296PASS22skip/clean8helper0/Ruff3Compose;1360source8bc287b6.
+358serial/full18296PASS22skip/clean8helper0/Ruff3Compose;historicalsource8bc287b6.
+CurrentDataSDK repair53bb68ee freshly132focused/322serial/full18314PASS22skip/
+clean8helper0/Ruff3Compose,1360sourcef81653d8. It does not change these frozen
+broker images/order routes. Both futureDataActions actually retargeted only,
+originaltimes/custody preserved; seeData/HANDOFF. No manual invocation/fill.
 Task thericher-kis-paper-current20-equalrank4-20261018 is actually Ready/Enabled,
 31finite UTC starts/IgnoreNew/PT5M, image378f2034/480source/sourceca19a499/
 input473a759d/semanticbb77d43f/contractf66/launchbindinge98bfda3. Parent declared exact

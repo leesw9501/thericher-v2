@@ -1,6 +1,6 @@
 # Engine Research Stateboard
 
-Current Oct18KST. A=D:/thericher-v2/model-artifacts.
+Current Oct19KST. A=D:/thericher-v2/model-artifacts.
 Company: current-nas-owned-model-paper-cycle-v1, still unfinished owned exit.
 Engine owns experiments/targets/features/splits/costs/fits/replay/ensembles.
 Execution owns deterministic broker risk. Parent owns shared integration/Git.
@@ -8,9 +8,9 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
-Ancestral237=152CUDA+85CPU market-fitted VERSIONS, including one old invalid
-depth-TCN result; not237 architectures/qualified models. Oct18 21:05KST
-continuation added19 versions(17CUDA2CPU), no completed old fit replay.
+Ancestral240=154CUDA+86CPU market-fitted VERSIONS, including one old invalid
+depth-TCN result; not240 architectures/qualified models. Oct18 21:05KST
+continuation added22 versions(19CUDA3CPU), no completed old fit replay.
 All completed training leases released.
 
 | Hypothesis | Frozen Result / Validation |
@@ -20,7 +20,9 @@ All completed training leases released.
 | Fixed inverse63vol allocation |0fits/forwards,81cells(36new/45controls), HGB/fixed4rank primary0/3each. Independent linked-r2 PASS1512riskrows/6futureperturbations/36NAVs/9exactHGBcontrols.|
 | New8-symbol fixed transfer |0fits/16neuralbatches/1HGBcall,2016feature rows/21knowncells/0unknown, primaryFAIL on DD; independent retained PASS185pins/4284oldcontextrows/21NAVs, seal8cdfa029.|
 | Five future challengers |0fits/GPU/optimizer,5actualCPUforwards/5safe-state intakes, packet preOPEN; future21-session economics UNKNOWN.|
-| OLD17vsNEW25 seed808 |4fits(2CPUHGB2CUDAGRU)/72knowncells, new8 matched HGB/GRU PASS, mean2 FAIL; independent retained review assigned. GRUs2epochs/selected1/safeheuristicstop, not convergence.|
+| OLD17vsNEW25 seed808 |4fits(2CPUHGB2CUDAGRU)/72knowncells, new8 matched HGB/GRU PASS, mean2 FAIL; independent retained PASS507pins/72NAVs/12bit-exact controls. GRUs2epochs/selected1/safeheuristicstop, not convergence.|
+| Fixed1260-session recency |3fits(1CPUHGB2CUDAfastGRU)/18knowncells/9retained controls. BothprimariesFAIL(growthup/DDworse); independentPASS346checks/18bit-exactNAVs/9controls. Newuniform39epochs/best19,recency23/best3, INNERpat20/bestrestore.|
+| Four recency future arms |0fits/2CUDAforwards2CPUcalls/4intakes, actualpreOPENpacket/Parenthashand68weightchecksPASS, futureoutcomesUNKNOWN.|
 
 Ranking main10bps growth/DD percent, MSE vs Rank byfold:
 3.383/.520 vs3.632/.637;3.386/3.983 vs2.856/4.195;
@@ -77,26 +79,42 @@ Two oldnative SYN failures remained closed; separate corrected SYN8updates/
 economics; new explicitrank25 purecompatibility repair produced first72cells,
 zero refit/forecast. Native4result/scores/cleanup/protocol+FORECAST-WEIGHT-SEAL/
 REPLAY-RECOVERY-COMPLETE/economic-result form actual immutable input tuple;
-Herschel independently validates it, no extra envelope is a prerequisite.
+Independent retained review PASS507pins/72NAVs/78408NAVvalues/12bit-exact
+controls/maxerror6.66e-16; no new forwards/model imports. Exactseal:
+technical-r3/independent-retained-review/REVIEW-SEAL.json,
+a55dc25d1f0e615b4a73565daa5bf8367d4265e2d98467a0b5f5fe5bbe030419.
 No model/Paper selection or fresh-alpha conclusion.
 
-Next depth SOURCE assigned:
+Fixed-recency COMPLETE:
 A/research/current20-fixed-recency-cudnn-development-20261018-v1.
-Unstarted2fit proposal explicitly superseded, oldSOURCE/debits retained. Fixed
-half-life1260 officialFITsessions BEFOREcurrentcohortEVAL, old17/f3/seed808,
-same rows/scalers/reference/maturity/INNERunweighted. NEW3fits exactly:
-HGB_RECENCY(reuse compatible completed HGBcontrol), FAST_GRU_UNIFORM and
-FAST_GRU_RECENCY using SAME separately named cuDNNstack/explicitdropout flavor,
-pack32/41153parameters. New uniform baseline required: old2epochATen is not a
-causal control for a different backend/dropout/batch recipe.
-9new cells+9retained HGB/uniform/cash cells, 5/10/20bps, no blend/grid/Paperswitch.
-Source900active3600elapsed/CPU2RAM6/GPU0; proposednumeric3600active10800elapsed,
-3marketstarts/0retry/max128/INNERpat20/LR/bestrestore,HGB300sec/GRU900each,
-oneGPU allocator<=min8GiB,measuredfree-4GiBdesktop. Final binding/nativeweighted
-HGB+GRU-loss/optimizer/restore proofs before fitting; SOURCE is not training.
-ProbabilityHGB fw must not be multiplied byN twice; GRU4001/K globaldate mass,
-not perbatch renormalization/oversampling. Fixedweightpurekernel8PASS,
-34db0db9 under A/strategy-research/current20-fixed-recency-weight-preparation-20261018-v1.
+native-dtype-recovery-r2/FROZEN-ACTUAL.json SHA8975efb5. Fixed1260session FIT
+mass chosen before economics, old17/f3/seed808/sameFITscalers/reference/purge/
+unweightedINNER. HGB77iterations/best57; same new41153param cuDNNstack/explicit
+dropout/pack32 GRUs uniform39epochs/best19 andrecency23/best3. Max128/pat20/LR/
+bestrestore, no convergence claim. ActualGRUepochs2.5-3s and workers110.13/67.54s,
+not isolated backend causal speed/parity because batch/dropout recipe changed.
+At10bps growth/DD percent: HGBcontrol3.844/2.455, HGBrecency3.857/2.697,
+fastGRUuniform2.106/1.983, fastGRUrecency4.062/2.392, uniformstocks2.084/1.049.
+Both frozen primaryFAIL on DD; no winner or Paper switch. ProbabilityHGB mass
+not multiplied byN twice; GRU4001/K globaldate loss, no perbatch normalization.
+Oldfloat32SYN/nativefloat64 prefix-API failure0marketfits retained with own
+closed debit; corrected input dtype proof separately bound before3marketfits.
+Market15894forwards/7812updates +SYN50/16 distinct. Four allocations released.
+Independent retained346checks/489unchangedpins/18bit-exactNAVs/9controls,
+independent-retained-review/CLOSEOUT.json, resultcdde8fb3, zero native/model calls.
+
+Next depth SOURCE assigned:
+A/research/current25-complete-history-fast-experts-development-20261019-v1.
+ExactFINAL43379 source, sameoriginal17lossrows/FITscalers/reference/4001dates,
+new8 older valid lossrows only; no intersection/drop/imputation. Maximum3fits:
+HGB_FULL25_UNIFORM, FAST_GRU_FULL25_UNIFORM, FAST_GRU_FULL25_RECENCY, seed808.
+Old17/partial25HGB controls reused; old17fastGRUscores reused. At most8new
+batches512 on new8only for those2GRUcontrols, not old17forecast/refit.
+Fixed9policies/3universes/3costs=81cells; no newblend/window/seed. Proposed
+3600active10800end/3marketstarts0retry/HGB300GRU900/CPU2RAM6/oneGPU8desktop4.
+Source work only; final25shape/float64 native proofs/checkpoint/chronological
+INNER and finite technical SYN retries declared before numericaldispatch.
+ReusedDEV/currentlisting/nonPIT/MODP1 remain; no independentalpha/Paperclaim.
 
 Native-throughput SYN ONLY PASS:44forwards16updates4exact fresh-object restores,
 peakallocated1.39GiB, outer57.03owned120. Pack32 eval41.50->3.07ms and proof
@@ -122,6 +140,16 @@ A/research/current20-five-challenger-shadow-20261018-v1/typed-ref-continuation-r
 launch-level-witness/HANDOFF-ACTUAL.json, seale263b9eb.
 Old launch/typed-Ref failures/latebookkeepingoverrun remain, not clockrefunds.
 Existing21D1marks only; future outcomes UNKNOWN, no newcollector/Task/Paperswitch.
+
+Fouradditional fixed recency arms actual Oct18 15:10:06..07UTC inference,
+finalwrite15:10:08.647539UTC before sameOPEN. HGB808OLD17control/HGB_RECENCY/
+FAST_GRU_UNIFORM/FAST_GRU_RECENCY;2CUDAforwards2CPUcalls, zero fits/oldf9calls.
+Parent verified hashes/publication/all68tie-fairfullmass weights. ActualEXIT0,
+15:10:09UTC conservative closure bound, not exactfractionalexit/OSattestation.
+A/research/current20-four-recency-future-shadow-20261019-v1/HANDOFF-ACTUAL.json,
+seal2dafd1bf32cb1ad140a4e1732ed910eac26133685faaa434252012c396d0069c.
+Both extra packets use sameexisting21D1 feed, actual Action repair preserves
+originalfae79e85logicalcontract/custody; no repeatforecasts/newcollectors.
 
 Operational fixed4rankPaper already deployed separately; no model passed
 independent-alpha promotion. Its source/input/budget/ownedexit and oldNAS8
