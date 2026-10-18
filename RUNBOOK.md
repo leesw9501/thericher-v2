@@ -112,10 +112,10 @@ manual future-Task replay. Preserve exact owned next_due.
 
 ## Current Research / Data
 
-22new versions complete:6ranking+9ablation+4cohort+3recency(19CUDA3CPU).240ancestral
-versions=154CUDA+86CPU incloneoldinvalid, not architectures/alpha. Training
+25new versions complete:6ranking+9ablation+4cohort+3recency+3full25(21CUDA4CPU).243ancestral
+versions=156CUDA+87CPU incloneoldinvalid, not architectures/alpha. Training
 leases released. Allocation81cells independentPASS/economicFAIL;new8transfer
-21cells primaryFAIL/independentretainedPASS185pins.5+4futurechallenger actualforecasts
+21cells primaryFAIL/independentretainedPASS185pins.5+4+3futurechallenger actualforecasts
 complete preOct19OPEN;21future outcomesUNKNOWN, no oldreforecast/Paperswitch.
 Exact numerical roots/seals/failures/caps: HANDOFF/Engine/Steward boards.
 
@@ -138,9 +138,15 @@ A/research/current20-fixed-recency-cudnn-development-20261018-v1.
 native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5,3fits/18cells/bothprimaryFAIL
 growthup/DDworse. NewGRUuniform39/best19,recency23/best3,actual110.13/67.54s;
 INNERpat20/LR/bestrestore, not convergence/isolatedbackendcausality.
-Next SOURCE current25-complete-history-fast-experts-development-20261019-v1:
-FINAL43379source/old17rows-scalers-reference-4001dates exact, atmost3full25fits
-HGB+pairedfastGRUuniform/recency. Reuse completedcontrols/old17scores; no grid.
+Complete current25-complete-history-fast-experts-development-20261019-v1:
+FINAL43379source/old17rows-scalers-reference-4001dates exact;3fits HGB73best53/
+GRU65best45/37best17, INNERpat20;81knowncells new8matchedFAIL/PASS/FAIL,
+independentPASS150480checks/81bit-exactNAVs/42controls/791pins, sealdd885a57.
+Actual/FROZEN-ACTUAL5facb63a/680pins, model-only
+catalogca0ad8bb. Preserveoriginal415.775controlpathfailure; linkedunconsumed8
+new8forwards/81firstreplays, no refit/old17reforward. Nextnew8prospectivepairs
+SOURCE fixesALLsixarms/zero fits; separateNEW8finite21marks SOURCEonly at
+A/data/current25-new8-prospective-d1-marks-preparation-20261019-v1, notinstalled.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

@@ -63,8 +63,8 @@ honest host, NOT cryptographic OS scheduler-origin proof.
 
 ## Research Completed This Continuation
 
-Oct18 21:05KST continuation added22 fitted versions(19CUDA+3CPU), NOT22
-architectures. Ancestral ledger240=154CUDA+86CPU, including one old invalid; SYN/
+Oct18 21:05KST continuation added25 fitted versions(21CUDA+4CPU), NOT25
+architectures. Ancestral ledger243=156CUDA+87CPU, including one old invalid; SYN/
 foundation inference/reader calls do not add fits. All completed training
 allocations released. No automatic Paper candidate switch.
 
@@ -76,6 +76,7 @@ allocations released. No automatic Paper candidate switch.
 | Eight new-symbol transfer |0 fits,16 actual neural batches+one HGB call;2016 feature rows/21 known cells. Fixed4-rank growth2.407% vs uniform1.680%, DD.853% vs.690% at10bps: frozen primary FAIL. Independent retained PASS185 pins/4284 old-context rows/21 NAVs, seal8cdfa029.|
 | OLD17 vs NEW25 training |4 fits(2CPUHGB+2CUDAGRU)/72 known cells; new8 matched HGB/GRU comparisons PASS, mean2 FAIL. Two GRUs stopped after2epochs/selected1 by frozen wall heuristic, NOT convergence. Independent retained PASS507pins/72NAVs/12bit-exact controls, seala55dc25d.|
 | Fixed1260-session recency |1CPUHGB+2CUDAfast-GRU fits/18known cells including9controls. Both primaries FAIL(growth up/DD worse); independent retained PASS346checks/18bit-exactNAVs/9controls. GRUuniform39epochs/best19, recency23/best3, INNERpat20/bestrestore, not convergence.|
+| Complete-history FULL25 |3newfits(1CPUHGB2CUDAfastGRU) complete: HGB73/best53, GRUuniform65/best45, recency37/best17, INNERpat20.81known cells: new8 HGB FAIL/uniformGRU PASS/recencyGRU FAIL; independent PASS150480checks/81bit-exactNAVs/42controls.|
 
 Research roots, each under A/research/:
 current20-pairwise-ranking-objective-development-20261018-v1/
@@ -170,14 +171,49 @@ D1fae79e85/cursors/namespace/cache preserved. Quiet probes Console0 are not
 actual scheduler-origin/capture proof. Original source-author603/600 closure
 stays failed; Parent fresh132/322/full authority independently passed.
 
-Next Engine priority SOURCE assigned:
+Complete-history actuals:
 A/research/current25-complete-history-fast-experts-development-20261019-v1.
 Exact43379 source, original17 rows/FITscalers/reference/4001dates unchanged;
 new8 older history adds loss rows, no common-intersection/date dropping.
-At most3 newfits: full25HGBuniform, full25fastGRUuniform/recency, fixedseed808.
-Retained old/partial-cohort controls reused, not refit; old17 scores reused.
-Proposed9policies/81cells, no seed/window/ensemble grid or Paper switch.
-Only SOURCE work so far; final contract/native25-shape proof before numerics.
+SOURCE READY9d714965/protocol3384bf81/frozen31workers72ad1151, eightchecksPASS;
+86824FIT/3150INNER/6300EVAL rows. Actual3fits above complete with seed808.
+Native25 proofs passed before fits. Control intake then failed before any
+forward/state decode because a Windows separator reached Linux checkpoint path;
+original415.775s UNREADY/5releasedallocations retained. Separately pinned path-
+only continuation used unconsumed8new8controlforwards, no refit/old17reforward.
+actual/FROZEN-MODELS.json SHAca0ad8bb is model-only authority, NOT economicPASS.
+First81economic cells independently PASS150480checks/791immutablepins/81bit-
+exactNAVs/42bit-exactcontrols; SOURCE455synthetic checks are separate.
+actual/FROZEN-ACTUAL.json SHA5facb63a/680files.
+independent-retained-review/ACTUAL-REVIEW-SEAL.json
+SHA dd885a5755cb2b9360e3ea0716e5274c0c04c2fd211950c77a8b0e3f19f1e9a0.
+UniformGRU new8 at10bps: growth1.9045->2.2405%, DD.8283->.8259% versusoldGRU;
+tinyDDdifference is not significance or dominance overuniformstocks1.6805/.6902%.
+No HGB/GRU control refit, old17 scores reused; no grid or Paper switch.
+
+Next priority is FUTURE measurement, not more reused-data parameter search:
+- original17 three full25-trained shadows SOURCE c774d1c3/9purechecks;
+  A/research/current20-full25-trained-future-shadow-20261019-v1.
+  ACTUAL3intakes/1CPU2CUDA/zero fits, finalwriteOct18 16:02:06.855826UTC;
+  Parenthash/publication/all51weightsPASS. actual-forecast-r1/HANDOFF-ACTUAL.json,
+  seal05f6849ccfded43d1ef663e9069517da93da91c403783021b4e7677de58b2a35.
+  ActualouterEXIT0;16:02:08UTC conservativeclosurebound, notfractionalexit/OSproof.
+  Worker+IOreserve13.36s/end620.19s;nonworkerqueue notCPU/GPUspend. Lease released.
+- NEW8 allthree fixed pairs: full25/partial25HGB, full25/old17GRUuniform and
+  full25/old17GRUrecency. Include ALL pairs despite currentFAIL/PASS/FAIL.
+  A/research/current25-new8-prospective-pairs-20261019-v1 SOURCE READY15f8c082,
+  10feature/6state-lineage checks, original17f9featuresbit-exact. Numerical
+  authority180owned900end/6intakes2CPU4CUDA/zero fits on8NEWinputs only;
+  actual publication not yet verified. No old17point replay.
+- Data SOURCE only: A/data/current25-new8-prospective-d1-marks-preparation-20261019-v1;
+  separate finite21 NEW8+SPY measurement feed proposed08:00KST, same exact
+  original target-session calendar, after old06:50/07:30Tasks. Not installed,
+  no API/schedule/capture inferred. Original20name feeds stay unchanged.
+New8 future one-window evidence is not independent robust alpha or a Papergate.
+Strategy SOURCE feasibility only: current25-new8-foundation-future-benchmark-
+20261019-v1, ONEexisting trustedTimesFM2.5 zero-shot candidate, no weightdecode/
+runtime upgrade/download/nativecall now. Reuse datedofficial checkpoint/license
+or scopedrejection, not a human/globalhold. No unbounded model grid.
 Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,
 peakallocated1.39GiB/57.03owned120; scope synthetic only, not market-speed or
 training-trajectory parity. ExistingD6 PyTorch2.7, no framework/runtime upgrade.

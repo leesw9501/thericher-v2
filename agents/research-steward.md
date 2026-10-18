@@ -18,7 +18,7 @@ Current25 actual4fits CLOSED(2CPUHGB2CUDAGRU)/72knowncells, input19555 frozen,
 technical-r3 actualresults/cleanup/replay-recovery. GRUs2epochs/selected1/safe
 wallheuristicstop, not convergence. Two priorfailedSYN attempts andone separate
 correctedPASS remain, aggregatecounts/debits distinct, nooldstudyrefund.
-Current240=154CUDA86CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
+Current243=156CUDA87CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
 
 Fixed-recency COMPLETE: native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5 under
 current20-fixed-recency-cudnn-development-20261018-v1.3fits/18knowncells,
@@ -27,20 +27,29 @@ All4allocationsreleased; bothprimaryFAILgrowthup/DDworse; retainedreviewPASS346c
 SYNfloat32/nativefloat64 prefix failure0marketfits retains olddebit; separate
 dtype-only proof/recovery does not reset old cap or repeat completed fit.
 
-Next SOURCE current25-complete-history-fast-experts-development-20261019-v1:
+Complete current25-complete-history-fast-experts-development-20261019-v1:
 FINAL43379data/old17rows-scalers-reference-4001dates exact,3proposedfits HGB+
 fastGRUuniform/recency full25, seed808. Retainedcontrols/old17scores reused,
-not refit. Source900ownedworker5400elapsed/CPU2RAM6/GPU0; finalcontract/native
-25shape proofs before numerics. Proposed3600active10800end/3starts0retry/
-HGB300GRU900,oneGPU8GiB/freefloor12/desktop4; finite SYNtechnicalretry allowance
-frozen before dispatch. Currentheadroom measured at allocation, not oldsnapshot.
-No GPU reserved by source/readers; prepare CPU in parallel with Paperfuture.
+not refit. Actual3fitscomplete,HGB73best53/GRU65best45/37best17, INNERpat20,
+no convergence claim.81cells3primaryFAIL/PASS/FAIL, independentPASS150480checks/
+81bit-exactNAVs/42controls, ACTUAL-REVIEW-SEAL dd885a57.
+Original415.775s/5releasedallocations controlpathfailure remainsUNREADY;
+linkedunconsumedcontrolphase no refits. Model-onlycatalogca0ad8bb, not econPASS.
+
+Complete current20-full25-trained-future-shadow-20261019-v1 actual-forecast-r1:
+3intakes/1CPUHGB2CUDAforward/zero fits, sourcec774d1c3 unchanged. Finalwrite
+Oct18 16:02:06.855826UTC, Parenthash/51weightsPASS/seal05f6849c;lease released.
+Next new8prospective sixpairarms SOURCE15f8c082/protocold9376e92; numerical
+180actualowned900end/ONEGPU4/freefloor8/desktop4/CPU2RAM4/1attempt0retry,
+6intakes2CPU4CUDA/zero fits/oldpoints delegated, actualpublication not verifiedyet.
+Strategy ONEexistingTimesFM2.5 NEW8futurebenchmark feasibility SOURCEonly/noGPU;
+no runtimeupgrade/download or utilization burn, readyexistingrecipe orreject.
 
 ## Closed Custody
 
-Ancestral market-fitted versions240=154CUDA+86CPU, including ONE old invalid
-depth-TCN checkpoint. Latest22versions=6ranking9ablation4cohort3recency(19CUDA3CPU),
-not22 architectures/qualified models. SYN, foundation inference, reader calls
+Ancestral market-fitted versions243=156CUDA+87CPU, including ONE old invalid
+depth-TCN checkpoint. Latest25versions=6ranking9ablation4cohort3recency3full25(21CUDA4CPU),
+not25 architectures/qualified models. SYN, foundation inference, reader calls
 and zero-fit allocations/shadows do not count as training.
 
 | Family | Closed Evidence |

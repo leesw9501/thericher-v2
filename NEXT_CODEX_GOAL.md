@@ -40,14 +40,17 @@ deterministic risk, exact identity, current broker buying power and shared bank.
 
 ## Ready Parallel Packages
 
-1. Engine: NEWfull25-complete-history SOURCE preparation. FINAL43379Data,
-   sameoriginal17lossrows/FITscalers/reference/4001dates, oldernew8lossrows only.
-   Atmost3 newfits:full25HGBuniform+pairedfastGRUuniform/recency, fixedseed808.
-   Reuse retainedold17/partial25HGB andold17GRUscores, not refit. Onlynew8GRU
-   controlforwards later atmost8batches512, no old17reforward.9policies/81cells,
-   no grid/newensemble/Paperswitch. Finalcontract/native25shape/float64API
-   proof before numericaldispatch. SOURCE is not running GPU.
-   A/research/current25-complete-history-fast-experts-development-20261019-v1.
+1. Engine: full25-complete-history3fits COMPLETE/81knowncells. HGB73/best53,
+   fastGRUuniform65/best45,recency37/best17, INNERpat20; new8matched3primary
+   comparisonsFAIL/PASS/FAIL, independentPASS150480checks/81NAVs/42controls.
+   New uniform
+   GRUimproves matchedoldGRU, not dominance overuniformstocks/independentalpha.
+   Actual/FROZEN-ACTUAL5facb63a/680pins andmodel-onlyca0ad8bb. Preserveclosed
+   controlpathfailure415.775s; linkedunconsumed8forwards, nofit/old17rerun.
+   NEXTSOURCE current25-new8-prospective-pairs-20261019-v1: fixedALLsixarms
+   beforefutureoutcomes(full/partialHGB,full/old17GRUuniform,full/old17recency).
+   Sameoriginalreference/FITscalers/379past/21sessions;2CPU4CUDApointcalls
+   delegated180owned900end/zero fits/old17oroldEVALforwards. No performancefilter/grid.
 2. Transfer retained validation COMPLETE:185pins/2016feature rows/21 replay
    cells/7policies independently PASS, primaryFAIL(growth up/DD worse than
    uniform). Preserve; do not rerun forecasts, tune or switch Paper.
@@ -58,6 +61,9 @@ deterministic risk, exact identity, current broker buying power and shared bank.
    sessions retained. Oldunknownauth/1560-over1500debit/prefix preserved.
    FINALtiming-recovery-r4/ENGINE-INPUT.json consumer43aad063/readback2c096dd5.
    No more identicalolderprobes or swap into oldfrozen19555/Main90819/Paper17.
+   NEXTSOURCE current25-new8-prospective-d1-marks-preparation-20261019-v1:
+   separatefinite21 NEW8+SPYmeasurement feed, proposed08:00KST with exactsame
+   target-session calendar, old20Task unchanged. SOURCEonly, notinstalled/API.
 4. Execution: preserve existing owners/readiness. After a natural owned run,
    use exact scoped public receipt plus strict native RO parser after quiescence.
    Distinguish no intent/attempt/accepted/fill/custody/terminal/net PnL.
@@ -67,11 +73,16 @@ Already COMPLETE:6ranking+9ablation CUDA,4cohortfits(2CUDA2CPU)/72cells with
 independentPASSa55dc25d,3recencyfits(2CUDA1CPU)/18cells bothprimaryFAIL/retained
 reviewPASS346checks/18bit-exactNAVs. ActualfastGRUs39/23epochs/INNERpat20/bestrestore, notconvergence.
 0-fit allocation/transfer, five+fouradditional preOPENforecasts/hashweightsPASS,
-one native-throughput SYNprobe. Current ancestral240=154CUDA+86CPU incloneoldinvalid, not
+threefull25fits(2CUDA1CPU)/81knowncells independentPASSdd885a57;
+threefull25-trained original17futurepoints preOPEN16:02:06.855826UTC,
+Parenthash/all51weightsPASS/zero fit/oldpointredo. One native-throughput SYNprobe.
+Current ancestral243=156CUDA+87CPU incloneoldinvalid, not
 architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;
 one GPU allocation, actual resource ownership, no dummy utilization work.
+Strategy SOURCE feasibility ONEexistingtrustedTimesFM2.5 NEW8futurezero-shot
+benchmark; no newruntime/download/forward now, runnableexistingrecipe orreject.
 
 ## Completion And Continuation
 

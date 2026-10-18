@@ -43,9 +43,20 @@ Partial19555 augmentation improved new8 HGB/GRU comparisons, mean2failed;
 twoGRUs only2epochs bywallheuristic, not convergence. Fixedrecency3fit study
 then completed using fasternewnativeflavor:39/23GRUepochs/INNERpat20, both
 primariesfailed onDD. No model/Paper selection. Oldtarget/split/criteria remain.
-Next SOURCE full25history using separately frozenFINAL43379source, HGB+paired
-fastGRUuniform/recency, sameoriginal17rows/scalers/reference/4001dates.
-Retainedcontrols/old17predictions reused; no anotherarchitecture/seedgrid.
+Full25history3fits COMPLETE HGB73/GRU65-37epochs;81knowncells matchednew8
+FAIL/PASS/FAIL, independentactualPASS150480checks/81NAVs/42controls. UniformGRU growth1.9045->2.2405%
+andDD.8283->.8259% versusold17GRU at10bps; tinyDDdifference, not significance,
+uniform-stock dominance or independentalpha. Originaluniformstocks1.6805/.6902%.
+NextSOURCE fixesALLsixNEW8futurepair arms, notjustpassingarm; sameOct16data/
+originalreference/FITscalers/379past/21sessions, no fits/seedgrid/old17reforecast.
+Newfinite21NEW8marks SOURCEonly; existing20Task unchanged. Futureonewindowlow
+power/providerfinalityunknown, noPaperqualificationgate. Threefull25-trained
+old17points alreadyactualpreOPEN/hash+51weightchecksPASS; no repeatreforecasts.
+ONETimesFM2.5 NEW8futurebenchmark feasibility SOURCE assigned: exactexisting
+trusteddatedcheckpoint/license/runtime only, no weightdecode/forward/download/
+newframework now. Forecast21CLOSE/knownlastCLOSE is a fixedrank hypothesis,
+not calibratedOPENreturn; assesssamefutureOPENpayoff, uniform/cash references.
+Actionablerunnablecontract orscopedreject, not anotherreadinglist/approvalhold.
 Differentcohorts/INNER selection alter recipe, not isolatedcausal diversity.
 ReusedEVALclock/threecosts, no missingtargetfallback/freshalpha claim.
 A/review/current25-training-cohort-20261018-v1/claude.json: REVISEcommon-support/

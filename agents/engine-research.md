@@ -8,9 +8,9 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
-Ancestral240=154CUDA+86CPU market-fitted VERSIONS, including one old invalid
-depth-TCN result; not240 architectures/qualified models. Oct18 21:05KST
-continuation added22 versions(19CUDA3CPU), no completed old fit replay.
+Ancestral243=156CUDA+87CPU market-fitted VERSIONS, including one old invalid
+depth-TCN result; not243 architectures/qualified models. Oct18 21:05KST
+continuation added25 versions(21CUDA4CPU), no completed old fit replay.
 All completed training leases released.
 
 | Hypothesis | Frozen Result / Validation |
@@ -23,6 +23,7 @@ All completed training leases released.
 | OLD17vsNEW25 seed808 |4fits(2CPUHGB2CUDAGRU)/72knowncells, new8 matched HGB/GRU PASS, mean2 FAIL; independent retained PASS507pins/72NAVs/12bit-exact controls. GRUs2epochs/selected1/safeheuristicstop, not convergence.|
 | Fixed1260-session recency |3fits(1CPUHGB2CUDAfastGRU)/18knowncells/9retained controls. BothprimariesFAIL(growthup/DDworse); independentPASS346checks/18bit-exactNAVs/9controls. Newuniform39epochs/best19,recency23/best3, INNERpat20/bestrestore.|
 | Four recency future arms |0fits/2CUDAforwards2CPUcalls/4intakes, actualpreOPENpacket/Parenthashand68weightchecksPASS, futureoutcomesUNKNOWN.|
+| Complete-history full25 |3fitscomplete: HGB73/best53, fastGRUuniform65/best45/recency37/best17, INNERpat20.81knowncells:new8pairFAIL/PASS/FAIL; independentPASS150480checks/81bit-exactNAVs/42controls.|
 
 Ranking main10bps growth/DD percent, MSE vs Rank byfold:
 3.383/.520 vs3.632/.637;3.386/3.983 vs2.856/4.195;
@@ -103,18 +104,41 @@ Market15894forwards/7812updates +SYN50/16 distinct. Four allocations released.
 Independent retained346checks/489unchangedpins/18bit-exactNAVs/9controls,
 independent-retained-review/CLOSEOUT.json, resultcdde8fb3, zero native/model calls.
 
-Next depth SOURCE assigned:
+Complete-history depth actuals:
 A/research/current25-complete-history-fast-experts-development-20261019-v1.
 ExactFINAL43379 source, sameoriginal17lossrows/FITscalers/reference/4001dates,
 new8 older valid lossrows only; no intersection/drop/imputation. Maximum3fits:
 HGB_FULL25_UNIFORM, FAST_GRU_FULL25_UNIFORM, FAST_GRU_FULL25_RECENCY, seed808.
 Old17/partial25HGB controls reused; old17fastGRUscores reused. At most8new
 batches512 on new8only for those2GRUcontrols, not old17forecast/refit.
-Fixed9policies/3universes/3costs=81cells; no newblend/window/seed. Proposed
-3600active10800end/3marketstarts0retry/HGB300GRU900/CPU2RAM6/oneGPU8desktop4.
-Source work only; final25shape/float64 native proofs/checkpoint/chronological
-INNER and finite technical SYN retries declared before numericaldispatch.
+Fixed9policies/3universes/3costs=81cells; no newblend/window/seed. Nativeproofs
+passed and3marketfits complete. SOURCE9d714965/protocol3384bf81/frozen72ad1151;
+86824FIT/3150INNER/6300EVAL. Originalcontrol child failed beforestate/forward:
+Windows checkpoint separator reached Linux,0forwards/0completedrestores but
+1logicalmodel/2physicalconstructs/6.93s work. Original415.775charge/5released
+allocations/UNREADY retained. Linkedpath-only continuation consumed remaining
+8new8forwards, no3fitrepeat. Model-only actual/FROZEN-MODELS ca0ad8bb, not a
+scientific closure.81knowncells nowexist/3primarynew8 comparisonsFAIL/PASS/FAIL,
+independent actualreviewPASS150480checks/791pins/81bit-exactNAVs/42controls;
+SOURCE455checks/81SYNcells separate. ACTUAL-REVIEW-SEAL dd885a57.
 ReusedDEV/currentlisting/nonPIT/MODP1 remain; no independentalpha/Paperclaim.
+
+Next future queue (no new fits/architecture/grid):
+1. Three full25-trained original17 shadows ACTUAL1CPU2CUDA/3intakes/zero fits,
+   finalwriteOct18 16:02:06.855826UTC, Parenthash/all51weightsPASS,seal05f6849c.
+   Sourcec774 unchanged/additive model-onlycatalog adapter preserved; no oldpoints.
+2. SOURCE READY15f8c082 new8prospectivepairs-20261019-v1 fixedALLsix beforefutureoutcomes:
+   full25HGB/partial25HGB, full25GRUuniform/old17uniform, full25GRUrecency/
+   old17recency. Same379past/original17-SPYreference/FITscalers/21session clock;
+   prove original17feature parity, then8NEWcontextrows only. Proposed2CPU4CUDA
+   firstpointcalls/zero old17oroldEVAL reforward. Numerical180owned900end/
+   ONEGPU4desktop4/CPU2RAM4/1attempt0retry delegated; publication not yet verified.
+   Existingfour+five+three packets fixed.
+Data prepares separatefinite21NEW8marks (sourceonly), old20feed immutable.
+Do not select arms fromFAIL/PASS/FAIL, rerun fits or presentonefuturewindowasalpha.
+Strategy feasibility SOURCE: ONEexisting trusted datedTimesFM2.5 NEW8zero-shot
+futurebaseline, current25-new8-foundation-future-benchmark-20261019-v1. No native/
+checkpointdecode/download/runtimechange now; runnableexistingrecipe orscopedreject.
 
 Native-throughput SYN ONLY PASS:44forwards16updates4exact fresh-object restores,
 peakallocated1.39GiB, outer57.03owned120. Pack32 eval41.50->3.07ms and proof
