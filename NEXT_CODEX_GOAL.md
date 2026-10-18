@@ -86,7 +86,7 @@ reviewPASS346checks/18bit-exactNAVs. ActualfastGRUs39/23epochs/INNERpat20/bestre
 threefull25fits(2CUDA1CPU)/81knowncells independentPASSdd885a57;
 threefull25-trained original17futurepoints preOPEN16:02:06.855826UTC,
 Parenthash/all51weightsPASS/zero fit/oldpointredo. One native-throughput SYNprobe.
-Current ancestral246=159CUDA+87CPU incloneoldinvalid, not
+Current ancestral247=159CUDA+88CPU incloneoldinvalid, not
 architectures/alpha. Future21-session shadow outcomes UNKNOWN; existing D1
 marks only, no more reforecast or new collector. See Engine/Data boards.
 Keep short hypothesis breadth and deeper cohort-training queues explicit;
@@ -139,11 +139,28 @@ reconstructed retained-native view ONLY; originalstrictconsumer unchanged,
 base36bitexact/39cells36riskyUNKNOWN3analyticcashKNOWN/all21marks missing.
 Parent9sealfile/refhashchecksPASS/zero model rerun; no fabricatedoldEXIT0/
 nativecommit/successfulnine-chain, alpha or Paper authority. ClaudeKEEPadvisory.
-Execution separately prepares current NAS account/custody readiness under
-pre-session-readiness-20261019-v1: existing account-only native snapshot and
-strict private parsers, <=4GET/<=1guardedauthPOST finite visit after source/
-owner checks. SOURCE only so far; no fresh broker custody/submit/fill claim.
+Execution pre-session-readiness original owner-probe failure was reproduced/
+host-only corrected with11checks and unchanged3native shims. Separatevisit
+then stopped native_private_schema_unavailable before credentials/wire:
+0GET0auth0orders/privatewrites, privateunchanged/actorreaped. Offline diagnosis
+proved our RO helper used a locking reader, not a schema/broker fault.
+Separate pure-readonly r2 ACTUAL PASSed729785:4GET1auth0orders, NAS8exactmatch/
+11registeredbrokerpositions/0openorders-pending-shortfall/privateunchanged/
+actorreaped. Notorder-timeeligibility/netPnL.
 No Task invocation, budget reset, unknown-request replacement or order effect.
+New ONE date-level stump fit COMPLETE f8d0f9d5/24knowncells/primaryFAIL: all63
+lateDEV route fixedblend, no incremental gain. 38.915active300/oneSYN/zero
+base-model-GPU-API calls; independentPASS35877467/141pins/24cells/7992NAVvalues.
+Both nonpositive leaves make router a fixedblend alias, no distinct forecast.
+Static temporal all25 future ACTUAL COMPLETE19e39d78/packetd65cb5e9:
+2FIRSToriginal17CUDAforwards/2intakes/0fits-retries-oldpointrepeats,
+45owned180/actorlease released. Parent30files/100scores/175weights PASS
+5ca9c129, firstpacketOct18 21:25:53.974168UTC beforecutoff. Rawkeyed25 merge
+before ranks, fivepolicies+uniform/cash; router alias only. Pure21cell
+all25 consumer COMPLETE60f79d30/binding9bfbfd10/resultc141fa84,7fixturegroups/
+61refs/Parent exactresultPASS.21cells18riskyUNKNOWN3analyticcashKNOWN,42exact
+daymarkers absent; existingold20/new9feeds only. All packages/actors/leases
+closed, no new fit/schedule/Paperswitch/collector; companyownedexit UNFINISHED.
 Purefusion14checks and blind108-reader19checks are reusable SOURCE only.
 
 ## Completion And Continuation

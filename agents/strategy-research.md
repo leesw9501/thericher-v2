@@ -38,13 +38,20 @@ launch-level-witness/HANDOFF-ACTUAL.json.
 
 ## Next Priority
 
-Meitner owns source-only learned-fusion feasibility under
-A/research/current25-learned-fusion-feasibility-20261019-v1. Audit actual
-fit/INNER/selection cutoff for retained expert predictions and previous OOF/
-shallow-gate work before proposing ONE chronological shallow CPU policy trial.
-Exact compatible keys/targets/costs and mature purged splits are required;
-all past EVAL reused means development only. No numerical dispatch yet, no
-extra architecture grid, broker authority, or individual-profit fusion gate.
+Learned-fusion feasibility COMPLETE; resulting date-level CPU stump study
+current25-date-disagreement-router-development-20261019-v1 COMPLETEf8d0f9d5.
+Onefit/24known/primaryFAIL; all63lateDEV route fixed3blend, no incremental gain.
+Independent retained PASS35877467/141pins/24cells/7992NAVvalues; both leaves
+nonpositive, so future router is a fixedblend alias, no distinct forecast.
+No threshold/search or Paper switch.
+Static4 selected before meta decisions, newestGRU excluded; single-block
+logical OOS not multi-fold OOF/PIT/alpha. Raw payoff advantage fit omits cost;
+actual replay costs/marked exposure/lowpower remain explicit. All past EVAL
+reused, not fresh replication. All25temporal future completion ACTUAL
+19e39d78/packetd65cb5e9 adds ONLY2firstoriginal17forward batches,0fits-repeats;
+Parent100scores175weightsPASS5ca9c129. Full25consumer COMPLETE60f79d30/
+7groups/61refs,18riskyUNKNOWN3cashKNOWN; all42futuremarkers absent. Same
+old20/new9D1feeds, no new collector/architecture/grid/Paper switch.
 
 Training-universe breadth fourfits COMPLETE/72cells/independentPASSa55dc25d.
 Partial19555 augmentation improved new8 HGB/GRU comparisons, mean2failed;

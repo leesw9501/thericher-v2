@@ -64,7 +64,7 @@ honest host, NOT cryptographic OS scheduler-origin proof.
 ## Research Completed This Continuation
 
 Oct18 21:05KST continuation added28 fitted versions(24CUDA+4CPU), NOT28
-architectures. Ancestral ledger246=159CUDA+87CPU, including one old invalid; SYN/
+architectures. Ancestral ledger247=159CUDA+88CPU, including one old invalid; SYN/
 foundation inference/reader calls do not add fits. All completed training
 allocations released. No automatic Paper candidate switch.
 
@@ -357,15 +357,68 @@ A/review/latest-gru-retained-point-binding-recovery-20261019-v1/claude.json;
 latest-refitREVISE adaptiveDEV/maturity/recipe/lowpower under correspondingreview.
 No Paper candidate/order/schedule change or new operator approval needed.
 
-Execution pre-session readiness SOURCE preparation is separately owned by
-Chandrasekhar under A/execution/pre-session-readiness-20261019-v1. It joins
-existing strict native book parsing to stock_exit_account_snapshot only;
-proposed ONE finite visit <=4 account/order GETs and <=1 guarded authPOST,
-no submit/quote/funds/history/recovery or private state writes. Plan8c43bc87/
-17 blocked-wire fence checks are SOURCE only, not fresh custody. Parent must
-verify native-validator/comparison and actual named-owner admission before
-wire; no human approval or global research hold. Existing .10 basis/reserves,
-unknown identities, Tasks and pending requests remain unchanged.
+Execution pre-session readiness: A/execution/pre-session-readiness-20261019-v1,
+28 native blocked-wire tests PASS/CALLER6b363df4. Original finite visit CLOSED
+owner_probe_unavailable before credentials/actor,0.675s, result0287d3ea.
+First cause reproduced: Utility import order/CimCmdlets, file-invocation policy,
+missing PATHEXT. Host-only probe-recovery-r1/READYb973fb01/11checks PASS uses
+Utility-first, exact pinned public probe inline and explicit PATHEXT. No OS
+policy or native risk/transport changes;3snapshot shims byte-identical.
+Separate visit CLOSED native_private_schema_unavailable before credentials/
+wire:0GET0auth0orders/privatewrites,2.733s/actorhostreaped/privateunchanged;
+result134d85ca/cleanupc447ea17. Offline diagnosis proved canonical budget/
+account/basis/input/policy/PATHS valid; own load_view called locking
+cycle._projection on the RO mount. Reader defect, not book corruption/expiry.
+Separate native-readonly-recovery-r2 uses proven pure native state/projection
+functions, no private RW or production upgrade. ACTUAL Oct18 21:26:08UTC visit
+PASS:4GET/1guardedauth/0retry/orders/privatewrites, NAS8 exact quantitymatch,
+11brokerpositions allregistered/0overlap-unattributed-missing-shortfall,
+0openorders/pending/unknownnative phases.28native order-terminal proofs do NOT
+mean model-owned-flat/exit complete. Original basis/reserves/private bytes
+unchanged, no foreign adoption;8.871owned120/reaped/59source-proofpins unchanged.
+Resulted729785/cleanup2bbf7737 under r2/actual. Sequential snapshot is NOT
+order-time eligibility/cash/fees/settlement/netPnL. Prior failures/clocks stay
+immutable; no Task/image/schedule/budget change or further visit authorized.
+
+Learned date-router CPU study COMPLETE under
+A/research/current25-date-disagreement-router-development-20261019-v1,
+FROZEN-ACTUAL.json SHA f8d0f9d5a867f7ed4f1c8b52e70178407bcdcd531cdb10865ac816f26c19f99e.
+ONE stump fit/one SYN,2native/3safe-rule predicts,24known/0unknown cells,
+38.915active300/345.118elapsed1800/reaped/0base-model-GPU-API calls. Static4
+states selected before all meta decisions; latest-matured GRU excluded.
+105FIT/purge21/42INNER/purge21/63lateDEV, one disagreement feature; structural
+split exists but lateDEV all63route to fixed3blend. 10bps growth1.3202%/
+DD.4670%, exactly same as fixedblend; frozen improvement primaryFAIL. No
+threshold refit, independent alpha, dynamic-routing gain or Paper switch.
+Independent retained PASS35877467:141pins/24cells/7992NAVvalues/maxerror4.44e-16,
+23.010owned180/208.682elapsed900/zero model calls. Both tree leaves nonpositive
+(lateDEV59/4), so all future inputs also choose fixedblend; no distinct router
+candidate/inference. Mean/max marked exposure7.512%/10.484%, not risk matching.
+ClaudeREVISE
+lowpower/raw-cost-omission/exposure/trial-caps accepted under
+A/review/current25-date-router-20261019-v1/format-repair-r1/claude.json.
+Prior format failure remains review_unavailable, not agreement.
+Static temporal all25 future ACTUAL COMPLETE under
+A/research/current25-static-temporal-future-completion-20261019-v1/
+native-admission-r1/SEALED-ACTUAL.json SHA19e39d78/packetd65cb5e9.
+Exactly2FIRSToriginal17 CUDAforwards/2intakes2constructs/34rows/0fits-retries-
+oldpointrepeats. RetainedNEW8/HGB/GRU scores reused, keyed union BEFORE full25
+ranks; five static policies+uniform25/cash, router only static3 alias.
+Native21:25:52..53UTC/firstpacket21:25:53.974168/postchildfinalwrite21:25:54.131102,
+actualoutertoolEXIT0/upper21:26:10/readback21:27:13, all before future cutoff.
+45owned180/oldsource90unchanged/actorlease released/peakreserved37.75MB.
+Parent independent30sealedfile/100rawscores/175weights/refchain PASS:
+native-admission-r1/parent-readback/CHECK.json SHA5ca9c129, zero model calls.
+Honest-host provenance, not cryptographic OS attestation. Future outcomes
+UNKNOWN. Pure all25 future measurement consumer COMPLETE:
+A/research/current25-static-full-universe-future-measurement-20261019-v1/
+READY.json SHA60f79d30/actualbinding9bfbfd10/resultc141fa84,7fixturegroups/
+61references/58.415owned180/362.792elapsed1200. Parent fresh exact result
+reproduction PASS;21cells=18riskyUNKNOWN3analyticcashKNOWN,42exact day markers
+absent. Reuse old20/new9 D1 feeds/contracts separately, same21targetcalendar;
+no new collector/model/order/schedule. One analytical .1/21 cohort, not actual
+broker capital/PnL. Required held missingmark UNKNOWN; unheld masked beforeNaN.
+All role LLMs/native workers/GPUleases released after completion, not a daemon.
 
 Earlier GRU throughput evidence (not qualification of the temporal study):
 Native throughput probe PASS44forwards/16updates/4exact fresh-object restores,

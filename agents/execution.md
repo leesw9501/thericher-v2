@@ -5,6 +5,22 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+Fresh pre-session custody visit COMPLETE atOct18 21:26UTC:
+A/execution/pre-session-readiness-20261019-v1/native-readonly-recovery-r2/
+actual/RESULT.json SHAed729785/cleanup2bbf7737/launch7b5bbb60.
+4GET/1guardedauth/0retry/order/privatewrite; NAS8 quantities exactmatch,
+11brokerpositions allregistered, no NASshortfall/unattributed/overlap,
+0openorders/pending/unknownrecoveryphases.28native request-terminal proofs
+do NOT mean model-owned-flat/exit complete. Original shared basis/reserves/
+privatebytes unchanged, no foreign adoption;8.871owned120/actorhostreaped/
+59source-proofpins unchanged. Sequential snapshot NOT order-time eligibility,
+current cash/fees/settlement/netPnL. Existing owned Tasks/images/bank unchanged.
+Prior visits stay CLOSED: hostprobe failure then reader-only locking read on
+RO mount. Canonical schema/identity validated; r2 uses proven pure native state
+functions, no privateRW/production schema upgrade or broker-expiry inference.
+Finite visit consumed; do not rerun its write-once caller or query for status.
+Use strict offline result projection; no active Execution subagent remains.
+
 CURRENT Oct18: Parent integrated the distinct native profile and JSON-only
 host/worker/ownerprobe. Historical author432/routing8probes plus final host34/
 358serial/full18296PASS22skip/clean8helper0/Ruff3Compose;historicalsource8bc287b6.

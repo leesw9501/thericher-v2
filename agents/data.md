@@ -22,8 +22,20 @@ not a raw-result regrade or imputation. Provider finality/PIT/TR unknown.
 Consumer ONE latestGRU refit actually completed25epochs/best5/INNERpat20,
 model-only11189fad/actualdcdae6f4, no historicalEVAL replay. Futurepoint actually
 computed once but originalpublication UNAVAILABLE duebindingmetadata variable
-shadow; onlyzero-model recovery pending, no model re-execution. Existingdata
+shadow; zero-model recovery COMPLETEe7ed7dc9/220957bc and typedconsumerPASS
+a2316b5d/base36bitexact/36riskyUNKNOWN3analyticcashKNOWN. Originalfailed
+publication unchanged, no model re-execution. Existingdata
 feeds/cursors/collectors/Paperauthority unchanged, no new KIS calls.
+
+Research nowalso has exactfull25 static futurepacketd65cb5e9/seal19e39d78:
+ONLYmissing17TCN/PatchTF points actuallyadded, all oldHGB/GRU/NEW8reused;
+Parent100rawscores/175weights/refhashPASS5ca9c129. Pure all25measurement
+COMPLETE60f79d30/binding9bfbfd10/resultc141fa84,7fixturegroups/61refs and
+Parent exactresultPASS:21cells18riskyUNKNOWN3cashKNOWN,42exactmarkers absent.
+Uses existing old20+new9 finiteownedD1feeds;
+no new capture/source bytes/collector or Dataqualification/Papergate. Required
+held missingmark staysUNKNOWN, unheld missing masked, no intersection shrink.
+All future21marks stillmissing, no current dataset-growth claim.
 
 ## Current Nine-Route Breadth Source
 

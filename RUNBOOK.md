@@ -113,7 +113,7 @@ manual future-Task replay. Preserve exact owned next_due.
 
 ## Current Research / Data
 
-28new versions complete:6ranking+9ablation+4cohort+3recency+3full25+2temporal+1latest(24CUDA4CPU).246ancestral
+29new versions complete:6ranking+9ablation+4cohort+3recency+3full25+2temporal+1latest+1stump(24CUDA5CPU).247ancestral
 versions=156CUDA+87CPU incloneoldinvalid, not architectures/alpha. Training
 leases released. Allocation81cells independentPASS/economicFAIL;new8transfer
 21cells primaryFAIL/independentretainedPASS185pins.5+4+3futurechallenger actualforecasts
@@ -208,11 +208,33 @@ recovery-source-r1; base36bitexact/36riskyUNKNOWN3analyticcashKNOWN. Parent9
 sealfile/refhash readbackPASS; all21marks missing, no account PnL. Use explicit
 recovery view+receipt refs and later owned day refs, never a latest-file scan.
 
-Pre-session account readiness SOURCE: A/execution/pre-session-readiness-
-20261019-v1/PLAN.json SHA8c43bc87. Existing native account-only snapshot,
-not observe/preview/recovery. No turnkey combined CLI; bounded tiny caller
-must pass native fence/private comparison and fresh ownership checks first.
-No credentials/private snapshot/wire result yet; no manual Task invocation.
+Pre-session account readiness COMPLETE: A/execution/pre-session-readiness-
+20261019-v1/native-readonly-recovery-r2/actual/RESULT.json ed729785/
+CLEANUP.json2bbf7737/LAUNCH-EXIT.json7b5bbb60.4GET1auth0orders,8NAS exact
+quantitymatch/11registeredpositions/0openorders-pending-shortfall; sharedbank/
+privatebytes unchanged, no adoption/Task/image/schedule change.8.871owned120,
+actorhostreaped. Notorder-timeeligibility/cash/fees/settlement/netPnL.
+Caller consumed, DO NOT rerun. Originalhostprobe failure and RO-locking-reader
+failure remain closed; pure-state r2 fixes ONLY reader, not broker/schema.
+
+Latest CPU date-router: current25-date-disagreement-router-development-
+20261019-v1/FROZEN-ACTUALf8d0f9d5, independent-review/REVIEW-SEAL35877467.
+Onefit/oneSYN/24known; both leaves nonpositive ->same fixedblend/primaryFAIL.
+No new forecast/threshold tuning for that router. Full25 static futurepoints
+native-admission-r1/SEALED-ACTUAL19e39d78 under current25-static-temporal-future-
+completion-20261019-v1, packetd65cb5e9/ParentCHECK5ca9c129. TwoFIRST17CUDA
+forwards/0fits-oldrepeats/actorlease released; no numerical caller rerun.
+Parent30files/100scores/175weightsPASS, futureoutcomesUNKNOWN. Pure all25
+consumer COMPLETE current25-static-full-universe-future-measurement-20261019-v1:
+READY60f79d30/ACTUAL-BINDING9bfbfd10/ACTUAL-RESULTc141fa84,7groups/61refs,
+Parent exactresultPASS.21cells18riskyUNKNOWN3analyticcashKNOWN/42markers absent.
+Existing old20/new9feeds only; no new collector/schedule/Paper promotion.
+Follow its ABI.md: future input uses exact immutable day refs/contract slots,
+not latest-file discovery. Keep current null binding immutable; create a new
+owned explicit binding/output when later exact markers exist. Credential-free:
+`uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/research/current25-static-full-universe-future-measurement-20261019-v1/consumer.py --binding <absolute-new-binding> --sha256 <exact-binding-sha256> --output <new-owned-output>`.
+One analytical .1/21 cohort, not broker budget/PnL; unknown finality/PIT/TR
+remain limitations, not new global qualification/Paper gates.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

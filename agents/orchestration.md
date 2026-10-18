@@ -12,38 +12,52 @@ an append-only current board. MD/agent identity is not a running worker.
 | --- | --- | --- |
 | Engine/Chandrasekhar |Old temporal appointment CLOSED57SYNforwards21updates/0marketfits, originalSYN10 not qualified by SYN5.|Never regrade/refund/retry old scope.|
 | Engine/Chandrasekhar |2temporal+1latestCUDAfits COMPLETE, latest25best5/INNERpat20/actorlease released; ledger246.|Released. Latestmodel-only11189fad/actualdcdae6f4, no pastEVAL replay.|
-| Strategy/Meitner |Latestzero-model recovery COMPLETE. Learned-fusion-feasibility root SOURCE audit newly assigned.|Check actual expert training cutoffs/aligned out-of-fit predictions; one shallow CPU-gate protocol or rejection, no fit/forecast/economics yet.|
-| Review/Herschel |Typed39recovery actualPASS/a2316b5d/result9e18f8bc/base36bitexact;36riskyUNKNOWN3cashKNOWN.|Released. Originalnine-chain strict; reconstructed view only, all21marks missing.|
-| Execution/Chandrasekhar |Pre-session-readiness root SOURCEplan8c43bc87;17fake-wire fence checks, zero private/credential/API reads.|Prepare native-validator/categorical comparison caller, Parent exact RO GO after review; no order/recovery/Task invocation.|
+| Strategy/Meitner |Date-disagreement stump COMPLETE1CPUfit/24knowncells/f8d0f9d5/primaryFAIL,all63routeblend.|Released. Both leaves nonpositive: future fixedblend alias, no threshold/refit/search.|
+| Review/Herschel |24cellreviewPASS35877467 and full25consumerREADY60f79d30/7groups61refs/Parent exactresultPASS.|Released. Future21cells18riskyUNKNOWN3cashKNOWN/42markers absent; original39recovery unchanged.|
+| Execution/Chandrasekhar |PureROr2 ACTUALPASSed729785:4GET1auth0orders,NAS8exactmatch/11registeredpositions/0openorders-pending-shortfall/privateunchanged.|Released. Original failures closed, reader-only fix, no schema/production/budget change; snapshot not order-timeeligibility/netPnL.|
 | Data |43379rows/535142checks,493GET6POST;9exactcursors closed, no globalfloor. NEWfinite21NEW8marks ACTUALLYReadyEnabled/firstOct20 08.|Naturalownedcaptures only; no API/manualinvocationyet, old20feeds unchanged.|
 | Infra/Parent |SDKactual-GET spacing repair132focused/322serial/full18314PASS;twoDataActions actually retargeted/Enabled/Ready.|Firstcaptures dueOct20, originaltimes/custody unchanged; no manual invocation.|
 | Strategy/Harvey |Allocation36 new cells independently PASS as calculation, economic primary FAILbothselectors; Throughput memo complete.|Released. No extra policy/replay/winner search.|
-| Strategy/Planck |TimesFM2.5 ACTUAL oneCPUbatch8x21/oneRootforward, sealbfe2316a; Parent8scores/8weights/source/nativecount readbackPASS.|Released. No fit/GPU/reforecast; future21outcomesUNKNOWN.|
-| Research Steward |All3training and pointactors/leases released, ledger246; zero-model recovery COMPLETE.|No further GPU/model call or dummytraining; future outcomes unknown.|
+| Engine/Planck |Static-temporal all25future ACTUALSEALED19e39d78/packetd65cb5e9,2FIRST17CUDAforwards/0fits-oldrepeats; Parent100scores175weightsPASS.|Released. Pureconsumer bound; original old8/HGB/GRU forecasts unchanged, no next nativecall.|
+| Research Steward |All training/inference actors andGPUleases released, ledger247=159CUDA88CPU.|No unconsumed frozen fit now ready; future marks unknown, no dummytraining.|
 | NAS Paper |Eight exact retained FULL entries; existing image87697f8e.|Owned exit not before Oct21 US OPEN; preserve exact requests/basis.|
 | New ensemble Paper |Actually Ready/Enabled image378f2034; firstOct19 15:10UTC.|Original entry-onlyOct19 window; no new submit/fill yet.|
 | Nightly/Goal97/Data |Existing finite/owned opportunities unchanged.|NightlyOct19 23:50KST; Goal97Oct19entry/Oct24exit; DataOct20 06:50/07:30KST.|
 
-No parent foreground wait, manual Task invocation, broker call or public UI
-work in this research continuation. Parent retargetedtwoexistingDataActions
+No foreground market wait/manual Task invocation/order/public UI work. The
+separate ROcustody visit used4GET1auth only. Parent retargetedtwoexistingDataActions
 and addedONEfiniteNEW8DataTask08:00KST; originaltriggers/otherdefinitions
-preserved, no manual invocation/API. Closed-role LLMs are released/reassigned.
+preserved, no manual invocation/marketcapture inferred. All role LLMs released.
 One mutable owner per external root, Parent-only shared docs/Git.
 Data/model files stay D:, external CPU research/validation disjoint from collector.
 
 ## Throughput Review
 
-Latest review:2temporal+1latestfits and zero-model forecast recovery complete,
-allGPUactorsreleased. Ready/owned=Chandrasekhar pre-session read-only custody
-caller SOURCE and Meitner learned-fusion cutoff/OOF audit, due=originalPaperwindows.
-Improvement: reuse truly out-of-fit retained expert predictions for a bounded
-chronological policy experiment instead of commissioning another fit grid.
-First verify actual account/
-owned quantity and pending consistency before tonight without launching a
-strategy or resetting the shared bank. Separate immutable input-binding names
-from code-module loop hashes and regression-test emitted metadata; no model
-rerun to repair a metadata-only bug. Reader39recovery PASS/base36bitexact,
-original publication UNAVAILABLE; future risky outcomes remain UNKNOWN.
+Latest review21:36UTC: CPUstump/review/full25future/consumer/ROcustody COMPLETE;
+no new routing gain or follow-on threshold grid. No role/native worker/GPU
+allocation still running. Due=existing Paper/Data opportunities, not permission.
+Improvement: avoid locking StateStore.read/_projection inside an offline RO
+consumer; canonicalbook itself validates, so do not call it schema corruption
+or a broker fault. Purestate functions already exist in the strict native reader.
+No company permissionhold/Task replay/bank reset. Reused oldNEW8/HGB/GRU
+forecasts and obtained only two genuinely missing points, never all25reforwards.
+Reader39recovery PASS/base36bitexact, original publication UNAVAILABLE;
+future risky outcomes remain UNKNOWN. No new human approval needed.
+
+Exact company dependency: original owned NAS exit cannot precede USOct21OPEN.
+Parallel alternatives executed: latest-matured/orthogonal training; one shallow
+router falsification; missing25future inputs+pure consumer; actual custody
+readiness/reader repair. All complete, not deferred approval requests. Current
+6namedTasks freshly ReadyEnabled: NASOct19 13:40UTC(hold),nightly14:50,
+equalrankentry15:10; Data21:50/22:30/23:00UTC. State/exitcode !=fill.
+Next consumer evidence requires their actual owned receipts/42futuremarkers;
+keep exact next_due and company unfinished, no foreground sleep/dummy fits.
+Claude KEEP with unverified_task_state/hidden_ready_repair/unconsumed_research_
+package/timing_boundary_drift concerns; fresh Scheduler/strict RO/closed trial
+facts above address scope, not a grant to assume runtime outcomes. Evidence:
+A/review/company-runtime-dependency-20261019-v1/claude.json SHAb9a7fe7d.
+Resume any genuine new ready repair/finite hypothesis immediately; do not create
+a company permissionhold or claim a persistent training daemon.
 Latest-matured labels are now derived/proven, not forced training over NaNs.
 Publication SOURCE metadata/Windows Ref transport mismatches do not require
 model reruns: verify unchanged code, exact final source pin and same hash/
@@ -70,8 +84,8 @@ purge/scaler/reference lock, consistent payoff/costs, reused-data claims.
 
 ## Integration Evidence
 
-Research ledger246=159CUDA+87CPU fitted versions including one oldinvalid,
-not246architectures or independent alpha.6ranking+9ablation+4cohort+3recency+3full25+2temporal+1latest fits complete,
+Research ledger247=159CUDA+88CPU fitted versions including one oldinvalid,
+not247architectures or independent alpha.6ranking+9ablation+4cohort+3recency+3full25+2temporal+1latest+1stump fits complete,
 all training leases released. Allocation primary0/3bothselectors; transfer
 growthup/DDworse; no Paper switch. Five+four+three shadow arms preOPEN/21futureoutcomesUNKNOWN.
 Exact result paths and seal hashes: HANDOFF.md and role boards.

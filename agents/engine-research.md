@@ -8,9 +8,9 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
-Ancestral246=159CUDA+87CPU market-fitted VERSIONS, including one old invalid
-depth-TCN result; not246 architectures/qualified models. Oct18 21:05KST
-continuation added28 versions(24CUDA4CPU), no completed old fit replay.
+Ancestral247=159CUDA+88CPU market-fitted VERSIONS, including one old invalid
+depth-TCN result; not247 architectures/qualified models. Oct18 21:05KST
+continuation added29 versions(24CUDA5CPU), no completed old fit replay.
 All completed training leases released.
 
 | Hypothesis | Frozen Result / Validation |
@@ -69,15 +69,33 @@ independent cross-time replication or broker PnL.
 
 ## Breadth / Depth Queue
 
-Next SOURCE audit: A/research/current25-learned-fusion-feasibility-20261019-v1,
-Strategy/Meitner owns exact cutoff/row-key/availability/cost compatibility of
-retained HGB/GRU/TCN/PatchTF predictions. Prepare ONE shallow CPU learned-gate
-protocol only if meta-training predictions are genuinely out-of-fit and their
-targets mature before each later split. Keep chronological purges/baselines,
-all reused EVAL as adaptive DEV, not independent replication. Prior OOF/gate
-studies must be checked first. Zero model/numerical/economic calls assigned;
-incompatible predictions produce a concrete rejection, not a broad retrain grid.
-One GPU lease is free after completed work; no ready qualified GPU fit inferred.
+Date-router COMPLETE: A/research/current25-date-disagreement-router-development-
+20261019-v1/FROZEN-ACTUAL.json f8d0f9d5. Static4 HGB53/GRU45/TCN1/PATCH2
+selection targets end4956 before first meta decision4957; latest-matured GRU
+excluded. 105FIT/purge21/42INNER/purge21/63lateDEV; one date-disagreement stump,
+one marketfit/one SYN/2native3rule predicts/24knowncells/0base-GPU-API calls.
+38.915active300/345.118elapsed1800/reaped. Structural tree splits but all63
+lateDEV choose fixed3blend:10bps growth1.3202%/DD.4670%, identicalblend,
+primaryFAIL/no new routing gain. Independent retained PASS35877467/141pins/
+24cells/7992NAVvalues/maxerror4.44e-16. Both leaves nonpositive(lateDEV59/4),
+so every future input routes fixedblend; no distinct learned-policy inference.
+One static single-block OOS, NOT multiple-fold OOF/PIT/independent alpha.
+ClaudeREVISE lowpower/rawadvantage-not-costfit/marked-exposure/trial-caps
+accepted under A/review/current25-date-router-20261019-v1/format-repair-r1.
+No regrade/threshold/search/Paper switch. Completed fits never repeat.
+Static all25 future COMPLETE current25-static-temporal-future-completion-
+20261019-v1/native-admission-r1/SEALED-ACTUAL19e39d78/packetd65cb5e9.
+TwoFIRSToriginal17CUDAforwards/2intakes2constructs/34newrows,0fits/retries/
+oldNEW8-HGB-GRUrepeats.45owned180/oldsource90unchanged/actorlease released.
+FirstpacketOct18 21:25:53.974168UTC beforecutoff; Parent30file/100rawscore/
+175independentweight/refchain check5ca9c129 PASS, zero models. Rawkeyed25
+union BEFORE rank/Top5; fivefixedpolicies+uniform/cash, router only alias.
+Pure consumer current25-static-full-universe-future-measurement-20261019-v1
+READY60f79d30/actualbinding9bfbfd10/resultc141fa84 COMPLETE7fixturegroups/
+61refs/Parent exactresultPASS. Oneanalytical .1/21 cohort,21cells18riskyUNKNOWN/
+3cashKNOWN/42exactdaymarkers absent. Existing old20/new9D1feeds only, no new
+collector/model/order/schedule or Paper/alpha promotion. All role workers and
+GPUleases released; no new unconsumed frozen numerical campaign now ready.
 
 Current25 four-fit actuals CLOSED under
 A/research/current25-training-cohort-development-20261018-v1/technical-r3.

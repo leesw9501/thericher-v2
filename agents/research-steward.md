@@ -18,7 +18,7 @@ Current25 actual4fits CLOSED(2CPUHGB2CUDAGRU)/72knowncells, input19555 frozen,
 technical-r3 actualresults/cleanup/replay-recovery. GRUs2epochs/selected1/safe
 wallheuristicstop, not convergence. Two priorfailedSYN attempts andone separate
 correctedPASS remain, aggregatecounts/debits distinct, nooldstudyrefund.
-Current246=159CUDA87CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
+Current247=159CUDA88CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
 
 Fixed-recency COMPLETE: native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5 under
 current20-fixed-recency-cudnn-development-20261018-v1.3fits/18knowncells,
@@ -93,10 +93,21 @@ allocation, old forecast repeat, convergence/alpha claim or dummy utilization.
 
 ## Closed Custody
 
-Ancestral market-fitted versions246=159CUDA+87CPU, including ONE old invalid
-depth-TCN checkpoint. Latest28versions=6ranking9ablation4cohort3recency3full25+2temporal+1latest(24CUDA4CPU),
-not28 architectures/qualified models. SYN, foundation inference, reader calls
+Ancestral market-fitted versions247=159CUDA+88CPU, including ONE old invalid
+depth-TCN checkpoint. Latest29versions=6ranking9ablation4cohort3recency3full25+2temporal+1latest+1stump(24CUDA5CPU),
+not29 architectures/qualified models. SYN, foundation inference, reader calls
 and zero-fit allocations/shadows do not count as training.
+
+Date-disagreement stump CPU marketfit1/SYNfit1 COMPLETEf8d0f9d5, zero base/GPU
+calls,38.915active300/actorreaped.24knowncells/primaryFAIL/noPaper switch,
+independent retained PASS35877467/24cells141pins/zero models. Both leaves
+nonpositive ->fixedblend alias, no separate router call. Missingoriginal17
+TCN/PatchTF ACTUAL2firstCUDAforwards/2intakes2constructs/34rows COMPLETE;
+seal19e39d78/packetd65cb5e9/Parent100scores175weightsPASS5ca9c129.
+45owned180/oldsource90unchanged, onelease/actorreaped/released,peakreserved
+37.75MB. Zero fits/retries/old8-HGB-GRUrepeats. Full25consumer COMPLETE
+60f79d30/7fixturegroups/21cells18riskyUNKNOWN3analyticcashKNOWN; no new model
+calls. All allocations released, future marks missing, no dummy training.
 
 | Family | Closed Evidence |
 | --- | --- |
