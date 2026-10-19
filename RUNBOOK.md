@@ -2,6 +2,17 @@
 
 ## Current Owned Runtime
 
+CURRENT recovery update: installed18:00UTC opportunity actually failed
+module_bootstrap, TECHNICAL_FAILURE_STRICT_OUTCOME_UNKNOWN; nofill/inventory
+claim. Exactnatural result:
+D:/thericher-v2/model-artifacts/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/natural-1800-readback-r1/RESULT.json.
+Gauss owns bootstrap-recovery-r1/coldPS514casePASS/newguard4a468c0a source,
+conditional18:30/end18:35/cutoff18:20 sameidentity opportunity, NOTinstalled
+until actualreadback. Preserveall32triggers/bank/nativeintentIDs/fullACL/
+otherTaskdefinitions/rollback. No manualTaskRun or automaticretimechain.
+TTM2CUDAheads COMPLETE1352dba9/ABIf5be2c34; futureconsumerSOURCE only,
+no re-fit. Current exact owners/claims: HANDOFF and activeboards.
+
 Workdir: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Follow AGENTS.md/HANDOFF.md/currentstateboards. ONE company outcome

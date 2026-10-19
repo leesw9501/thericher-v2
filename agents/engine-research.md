@@ -7,7 +7,7 @@ A source seal/assignment is not an active CUDA trainer or a Paper promotion.
 
 ## Current Results
 
-Latest completed ledger295=185CUDA110CPU fitted versions, including one old
+Latest completed ledger297=187CUDA110CPU fitted versions, including one old
 invalid; not architectures or profitable-model count. Closed fits/forecasts,
 failures, clocks and debits are immutable. Do not repeat them for metadata.
 
@@ -61,50 +61,66 @@ codec hashes match. Old original52 market dispatch remains superseded0fits.
 Data final ready84b36d4a/source680c9d14/CONTROL-PARITY exact480578values.
 Claude full-sector REVISE adopted: DEV reuse/opaque-PIT/capacity/budget risks.
 
-TTM frozen source/input READY; parent numericalGO17:50:47UTC after full52
-actual lease release, assignment not running-GPU evidence:
-A/research/current-ttm-return-head-development-20261020-v1.
-SOURCE-SEAL b4d72d82 / INPUT-READY fb607b1d / SOURCE-CLOSED.
-8345TRAIN rows353dates,1675INNER rows67dates,512positive observed closes,
-20..25stocks;513close/512return mistake avoided: raw control511logreturns.
-5130240context scalars/10020labels/36boundary+19sourcechecks PASS.
-Kepler source73.091active upper/1041.592elapsed, no fullcheckpoint/GPU/fits.
-Boole owns exact frozen handoff and one canonicalGPUallocation; no second owner.
-Combined new campaign900active5400elapsed from17:27UTC INCLUDING73.091,
-twoheads(seed1601),0retry/extraction<=300/head<=180/nativeproof<=120.
+TTM COMPLETE1352dba9 at18:03:43UTC, MODEL_ONLY_QUALIFIED_COMPLETE:
+A/research/current-ttm-return-head-development-20261020-v1/COMPLETE.json.
+MODEL-ABI f5be2c34 binds safeheads/scalers/targetinverse/checkpoint/curves.
+Twoactual CUDAheads: TTM192->1,23epochs/best11; RAW511->1,19epochs/best7.
+Max128/INNERpat12/LR/bestcheckpointrestore, no arbitrary16epoch ceiling.
+Full trustedcheckpoint CUDA/frozenencoder/optimizer/safecheckpoint-nextupdate
+nativeproof PASS beforebothfits. Exactly1encoderload/81encoderforwards/
+2marketstarts/966marketupdates/42marketepochs/2bestrestores. Including SYN:
+972updates/44saves/6restores;0DEV/futureforecasts/economiccells.
+TRAIN8345rows353dates, INNER1675rows67dates; sourceb4d72d82/inputfb607b1d.
+TTM INNER_MSE.919622 vs RAW1.052427 are selection diagnostics, NOT unseen
+performance/alpha;193vs512headcapacity/dailytransfer/corpuscoverage confounds.
+Parent readonly17checks exacthead/scaler/curve/ABIhashes/epochcounts/
+bestepoch/INNERmin/12stale PASS,0fit/forecast. TTMcurves23/RAW19actualrecords.
+
+Cumulative174.936activeupper/2203.161elapsed includes source73.091,
+failedadmission75.778cumulative, independent20/sourceproofs/cleanup/
+qualification, no debitrefund. Worker21.583s/extraction.920s; perheadwalltime
+NOT_RECORDED, do not infer from mtime. All actors removed/lease released.
+Original900active5400elapsed/from17:27 remained, market2/0retry.
+
+Firstprelaunch ValueError WindowsTerminal WDDM taxonomy refusal retained;
+oldouterUNKNOWN/CLOSED immutable, linkedadmission-local-r1/READBACK source/
+branch/noallocation/nochild proof establishes zero native effects there.
+New local verifiedterminalpath/publisher/observedOSidentity calibration plus
+negativefixtures preserved Python/unknown-owner blocks/no kills/reclaims.
+One actual GPUallocation, no repeated completed study or unused-cap training.
 Exact retained Granite image71fe84b0/checkpoint30f8d9be/revisionf04bebdd,
-Apache2, granite-tsfm0.3.1/Torch2.7cu128. Frozen TTM patchmean192->linear1
-versus511rawreturns->linear1; no full foundation fine-tuning/public code in
-Execution. TRAIN20250203..20260630, INNER20260708..20261009, purged labels.
-FIT-only equaldate/stock feature/target transforms; native fullcheckpoint CUDA/
-freeze/optimizer/safecheckpoint/nextupdate proof REQUIRED before two marketfits.
-Oct20 future input UNKNOWN until actual Oct19close/asof is available; no stale
-Oct16 padding or silent cohort roll. Unknown pretraining coverage/native
-minute-hourly to daily transfer limits claims. Review REVISE/lowpower/capacity/
-frequency-transfer adopted; independent source review is separately bounded.
+Apache2/granite-tsfm0.3.1/Torch2.7cu128. Frozenencoder, NOT fullfoundation
+fine-tuning/publiccode in Execution. FIT-only transforms, purged chronological
+TRAIN20250203..20260630/INNER20260708..20261009, same512observedcloses/
+raw511returns. Researchonly/noPaper modelchange.
 
-### TTM Prelaunch Recovery
+## Current Ready Packages
 
-First fit-actual/CLOSED preserved75.778activeupper/0GPUallocationattempts/
-quiescent/lease released. ErrorValueError at preallocation admission:
-WDDM WindowsTerminal classifiedunknown by oldtaxonomy, not a measuredtrainer.
-Old closure nativecountsUNKNOWN is immutable; a separately linked exact
-source/branch/noALLOCATIONINTENT/noownedcontainer proof must establish that
-attempt never reached Docker/nativework. No failedmarketfit or numerical
-output may be hidden under prelaunch repair.
+Boole: A/research/current-oof-shallow-routing-development-20261020-v1.
+ONE CPU DecisionTreeRegressor depth1/minleaf10dates/seed1701, no grid.
+Route oldRidge vs oldfixedrank4 proposals; datefeature Spearmanagreement
+ofsameinput-onlyeligible stocks/tiesaverage/constantunsupported.
+Meta1+2 40dates1000rows fits threshold/leaf sign using exact original anchored
+10bp netpayoffdifference; no targets/futuremembership in input. Verify source
+horizon/cost/units beforefit, do not guess5vs21. Original chronologicalOOF
+baseoutputs only, no oldfit/forward. Terminal3 26dates650rows alreadyseen by
+priorstudies=>adaptiveDEV, not freshreplication/alpha. Freeze spec before any
+newTerminaldecode. Onegate x3costcells, compatibleoldRidge/fixed4/uniform/
+cashcells byte-reused; samegross/mass/marks. Primary10bp growthup/DDnotworse
+vsstaticRidge, othercostsdiagnostic. Source+realnativeSYN/NPZfloat32codec/
+ties/temporalfixtures beforeconditional1marketfit. 400active1800elapsed/
+1start0retry/CPU2RAM4/noGPU/broker/Task. ClaudeREVISE seenoutcomes/
+routingnotfusion/lowpower/payoffcostunverified adopted; incompatibility closes
+onlythispackage, not forcedcomparability/newfallbackgrid.
 
-Parent17:58 authorizes NEW localprelaunch version, same original900active/
-5400elapsed from17:27 including75.778 and allnewproofs, same2heads/seed/
-data/split/target/optimizer/caps. Exact native terminalpath/Microsoftpublisher/
-name correspondence plus forgedpath/renamedPython/conflictingidentity/missing
-proof negatives, no unconditionalbasename exemption/kill/reclaim.
-Only after zero-effect/identity/negativechecks pass may remaining one actual
-GPUallocation begin fullnativeproof and two fits, no further permissionround.
-Old source/no-retryclosure/debits unchanged;0marketretry/noevaluationreopen.
-Unknown effects/new nativefailure closes that scope, not independentPaper.
-Claude current-ttm-wddm-terminal-calibration REVISE zero-effectevidence/
-frozencontractscope/processidentityproof/budgetaccounting adopted.
-
+Kepler SOURCE only: A/research/current-ttm-return-head-future-preparation-20261020-v1.
+Consume exactMODEL-ABI; prepare original prospectiveOct20 common25stock
+512closes endingOct19/asof before13:25UTC/no staleOct16padding/cohortroll.
+Use retainedhistory + alreadyowned old20/new8D1captures, no newAPI/collector.
+Original5policies TTM/raw/fixedinteger-rank2/uniform/cash x3cost=15cells,
+same .1/21mass, e+4CLOSEtarget. Futureprice/heldmissing UNKNOWN, notimputed.
+400active1800elapsed/CPU2RAM4/0GPU/modelcalls/refits/Task; source/fixtures and
+exactmissingdependencies before any proposed futureinference deployment.
 ## Closed Evidence / Recovery
 
 - OOF base12 f0ca0556/sourcee036f526,6CPU6CUDA/6600scores/493.651numerical.

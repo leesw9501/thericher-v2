@@ -10,10 +10,10 @@ AGENTS authority private no-cost Data/Research/Paper delegated, never live.
 
 | Owner | Actual State | Next Action |
 | --- | --- | --- |
-| Engine/Boole | Full52 COMPLETE3fits2CPU1CUDA/113checks/39cells/all3primaryFAIL; ledger295=185CUDA110CPU. TTM firstcaller stopped preallocation WindowsTerminal taxonomy,75.778debit retained. | New identity-proven prelaunchversion under SAME900active5400elapsed/2starts/0marketretry; exact no-effects proof/nativeCUDAproof before frozenTTM/raw2heads. |
-| Infra/Kepler | TTM sourceb4d72d82/inputfb607b1d READY,8345TRAIN/1675INNER,73.091active prep. Independentfae75280 noactionableP1/20activeupper/0modelcalls. | Agentclosed; native fullcheckpointproof remains Boole's responsibility, no duplication. |
+| Engine/Boole | TTM COMPLETE1352dba9/155checks/23best11+19best7CUDA/174.936active/allactorsleaseclosed; ledger297=187CUDA110CPU. | NewONECPU OOF shallowrouting study,400active1800elapsed/1start0retry/0GPU, exactsource compatibility before numerical fit. |
+| Infra/Kepler | Exact frozen TTMMODEL-ABIf5be2c34/heads/scalers/curves, parent17readonlychecksPASS/no newmodelcalls. | Future-consumer SOURCE/fixtures, originalOct20 cohort/actualOct19close512context/asof;0API/GPU/Task/refit. |
 | Data/Validation Boyle | R3 acquisitioncomplete/allcollectorsabsent. Optional full52 checker INCOMPLETE own-schema error/43preliminaryasserts/136.68over120debit retained. | Agentclosed; no scientificbug established, no independent pass or extra fit/forecast. |
-| Execution/Gauss | R3 ACTUAL17:47:33 installed32/old31/fullACL/250otherTasks preserved. Cutoff17:51:18 Ready,nextdue18:00. | Bounded natural18:00 RO readback120active900elapsed/hardend18:08, no Task/API/manualRun; exact source/opportunity/intent/fill linkage. |
+| Execution/Gauss | Natural18:00 technicalfailure/module_bootstrap, exactguard+nativecoldJoin-Path42reproducer, effectsUNKNOWN/27.31active0readbackAPI. | Measuredbootstrapfix/nativecoldtests, conditionalONE18:30/end18:35/cutoff18:20, same32oldtriggers/fullACL/bank/nativeidentity; no manualRun/retimechain. |
 | Strategy/Confucius | Tilt2variant6newcell reuse COMPLETE40active/0GPU, both pairedDDFAIL. | Agentclosed; no lambda grid/new platform. |
 | Parent | Hostrepair168f79d pushed; full18370PASS22skip/cleanhelper0, image566 locallysourceproved. | Integrate material results, source/control equality/externalchecks, commit/push docs; no companyclosure. |
 
@@ -23,8 +23,8 @@ Finite Data dueOct20 06:50/07:30/08:00KST; workers own next_due.
 
 ## Throughput Review
 
-Review17:54UTC:
-ready=full52numerical, TTMfrozen preparation/nativeproof next, exactPaper
+Review18:12UTC:
+ready=OOFsingleCPUrouter, TTMfutureconsumer source, exactPaperbootstrap
 measuredtechnicalrecovery, parentintegration. Owned=above; no current lane
 waiting for operator. All ready work has disjoint write sets/resources.
 Original NAS outcome dependency cannot be accelerated by fabricated closure;

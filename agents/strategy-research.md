@@ -18,7 +18,7 @@ Completed new-information experiments:
 - Diversified tilt sourcebd18d8ee: .75uniform+.25oldTop5 at samegross,
   two variants improve growth but worsen DD vs uniform. No lambda grid.
 - DeepSets/context54cell and pairwise-rank meta studies closedFAIL; no repeated
-  seed/lambda search. Ledger295 fitted versions185CUDA110CPU, not architectures.
+  seed/lambda search. Ledger297 fitted versions187CUDA110CPU, not architectures.
 
 Full-sector increment COMPLETE17:48:04,3NEW52 fits2CPU1CUDA/113checks/
 39cells/all3primaryFAIL,87.299activeupper/allactorsleaseclosed. It consumes
@@ -29,20 +29,26 @@ Same support/target/splits/scalers/masks/cost/gross/payoffs;52->28 mapping
 Claude REVISE DEVreuse/opaquePIT/capacity/budgetrisk adopted.
 A/research/current-full-sector-context-development-20261020-v1.
 
-Frozen TTM return-head source/input READY b4d72d82/fb607b1d:
+TTM COMPLETE1352dba9/MODEL-ABIf5be2c34/155checks/2CUDAheads:
 A/research/current-ttm-return-head-development-20261020-v1.
 TTM192embedding linear head versus raw511return linear head, identical512close
 history/support/TRAIN/INNER/budget and future cohort, no public model in broker
 runtime. Fixed checkpoint release precedes targets, but pretraining corpus
 coverage unknown and native minute/hourly to daily transfer remain limitations.
 8345TRAIN/1675INNER rows; source36+19checks and73.091activeupper complete.
-First numericalcaller stopped preallocation on unknown WindowsTerminal WDDM
-classification, not a model result;75.778debit/oldnativecountsUNKNOWN retained.
-Parent authorized scoped identity-proven newprelaunch version under unchanged
-overall900active5400elapsed/twofit caps; native fullweightsCUDAproof stillneeded.
+Firstprelaunchfailure75.778/oldUNKNOWN retained, newidentity-proven calibration
+pluszeroeffects qualification enabled ONE actualallocation/SAMEcaps.
+TTM23epochs/best11/INNER_MSE.919622 vsRAW19/best7/1.052427, selection
+diagnostic notfutureperformance. ActualfullweightsCUDA/freeze/checkpointproof
+PASS;174.936activeupper/allactorsleaseclosed,0future/DEVforecasts/economics.
 FutureOct20 source/asof UNKNOWN, no stale padding or cohort roll.
 This is frozen-backbone representation/return-head development, NOT full model
 fine-tuning, independent alpha, ensemble/Paper promotion or a runtime migration.
+NextKeplerfutureconsumerSOURCE usesoriginalOct20 actualOct19close cohort,
+no stalepadding/API/Task/modelcalls. Boole newCPUdepth1 router chooses oldRidge
+or oldfixedrank4 from OOF rankagreement,40Metadates/26reusedTerminaldates,
+400active1800elapsed/onefit. Routing not learnedweightfusion; noindepalpha
+or oldbaseforecast repeats. Exactsourcehorizon/costcompatibility beforefit.
 
 ## Source Knowledge / Closed Work
 

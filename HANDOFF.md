@@ -18,17 +18,19 @@ owners retain their standing authority. No model profitability permission gate.
 ## Actual Owners Oct20 KST
 
 Parent owns shared docs/integration/Git; code checkpoint168f79d pushed.
-Boole completed full-sector3 NEWfits and owns TTM numericalGO17:50:47UTC.
-Kepler TTM independent source reviewfae75280 found noactionableP1/20activeupper,
-agentclosed. Boyle acquisition COMPLETE; optional frozen-result check INCOMPLETE
+Boole completed full-sector3 and TTM2 NEWfits, now owns one-CPU-stump OOF
+proposal-routing study. Kepler owns futureTTMconsumer SOURCE/fixtures from
+exactfrozen heads,0GPU/modelcalls/Task. His earlier independentfae75280 review
+found noactionableP1/20activeupper. Boyle acquisition COMPLETE; optional check INCOMPLETE
 own-schema error/43preliminaryasserts/136.68over120debit, agentclosed. No
-scientificbug established or independent pass. Gauss installed recovery17:47:33,
-nextdue18:00UTC, natural outcome not yet known. Confucius package/agentclosed.
+scientificbug established or independent pass. Gauss natural18:00 result is
+technicalfailure/module_bootstrap, strict effectsUNKNOWN; owns measured coldPS5
+bootstrapfix/proof and conditional18:30recovery. Confucius package/agentclosed.
 An MD/source seal is not a running worker. All completed GPU leases released.
-TTM firstcaller stopped before allocation on WindowsTerminal WDDM taxonomy;
-old75.778debit/nativecountsUNKNOWN retained. New identity-proven prelaunch
-recovery under SAME900active5400elapsed/2fit caps is in engine-research.md,
-not a model failure, numericalretry or permission hold.
+TTM recovered via identity-proven prelaunchversion within SAMEcaps, COMPLETE
+1352dba9/MODEL-ABIf5be2c34:23/best11TTM and19/best7RAW CUDAheads,
+155checks/174.936activeupper/actorsremoved/lease released. Old75.778failure/
+outerUNKNOWN preserved, linkedzero-native-effectproof; no repeatedfit.
 
 - NAS image87697f8e: eight retained FULL entries, exit>=Oct21 US OPEN.
 - Nightly image30433095: natural Oct19 23:50KST failed open-orders read before
@@ -109,6 +111,19 @@ NEW single main install r3 ACTUAL17:47:33UTC before17:50cutoff, nextdue18:00/
 32triggers/old31/principal/settings/fullACL/allotherTaskdefinitions preserved.
 CUTOFF-READBACK17:51:18 VERIFIED_INSTALLED_32_READY. No further Taskmutation;
 Gauss reads natural exact bound outcome, not manualRun or a fillclaim.
+Natural18:00 readback RESULT under
+A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/
+natural-1800-readback-r1 is TECHNICAL_FAILURE_STRICT_OUTCOME_UNKNOWN.
+Exactguard receipt module_bootstrap; freshnativecoldPS5 reproduces Join-Path
+line42 unavailable before explicitManagementimport.27.31/120active/cleanup,
+0readbackAPI/Taskmutations; strictprivateprojection notentered, effects/fills/
+inventory remainUNKNOWN. Newbootstrap-recovery-r1 SOURCE tests.NETPath.Combine,
+allpreimportdependencies/noautoload/nativecoldpositive-negative diagnostics.
+Parent conditionalONE18:30/end18:35/cutoff18:20 onlyAFTER provenfix/pins/
+quiescence/freshstrictnativeanalysis/atomicrollback/fullACL/all32preservation.
+No retimechain/manualRun/substituteintent; not installed from this plan.
+Claude current-paper-bootstrap-recovery REVISE actualenvironment/unknown
+outcome/retimechain/rollbackpin concerns adopted, independentresearchcontinues.
 Measured fix and retained first-failure diagnostics preserve31oldtriggers/Task/
 principal/settings/fullACL/input/bank/nativeintentIDs; no manual invoke/new
 capital/substitute intent or automatic missed-slot chain. Installation is not
@@ -126,7 +141,7 @@ contracts remain unchanged. Token deferral is not provider rejection.
 
 ## Next Useful Research
 
-Current fitted-version ledger295=185CUDA110CPU incl one old invalid, not
+Current fitted-version ledger297=187CUDA110CPU incl one old invalid, not
 architectures/profitable models. All completed fits/forecasts remain immutable.
 Closed relative3/refresh6/tilts are in Engine board. NEW full-sector3 COMPLETE
 17:48:04UTC/source5b6c614b:2CPU1CUDA/113checks/4650scores/39cells/
