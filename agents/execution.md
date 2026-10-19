@@ -7,19 +7,34 @@ No active Execution subagent or broker worker is inferred from this MD.
 
 ## Current Technical Recovery
 
-LATEST natural18:00 RESULT: TECHNICAL_FAILURE_STRICT_OUTCOME_UNKNOWN,
-exact guardmodule_bootstrap/nativecoldPS5 Join-Path42 beforeManagementimport.
-Readback27.31active/0API/0Taskmutations/cleanup, strictprivateprojectionnotentered;
-effects/fills/inventory UNKNOWN, notTaskexit20=zero. Originalfirstf9unknownstays.
-Gauss owns bootstrap-recovery-r1: measuredtwoPath.Combine expressions/import
-dependencyorder only. ColdnativePS5NoProfile/NonInteractive/autoloadNone
-QUALIFICATION PASS14cases/API0/Task0, newguard4a468c0a; installer/reader
-testsPASS. ParentconditionalONE18:30/end18:35/cutoff18:20 onlyif exactpins/
-quiescence/freshstrictnativeanalysis/all32triggers/fullACL/otherTaskbackup/
-atomicrollbackPASS. No actualnewinstallation fromSOURCE_ONLY receipt.
-No retimechain/manualRun/substituteintent; ClaudeREVISE actualenvironment/
-unknownrequest/brokercustody/chainrisk/rollbackpins adopted. Priorstates below
-are historical; current status requires exactnew immutable result.
+Actual F9 bootstrap-r1 installed18:16:05UTC/33triggers/original32/fullACL/
+249otherdefinitions preserved. Image566e02d8/sourceffece26d/guard4a468c0a.
+Exact natural18:30 public result1auth22GET/0order-cancel POST starts,
+leg1/native_recovery_required. Counts are delegate starts, not wire/fill proof.
+Original first00:10 missingresult UNKNOWN. No blind replay/slot/reset.
+
+A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/
+bootstrap-recovery-r1/prewire-reproducer-r1/local-intent-forensics-r1/RESULT.json:
+LOCAL_INTENT_TYPEVALID_NOT_RECONCILED, native phase submission_started.
+Exact selectedsource/job/intent/plan/session and99files12dirs closure pass.
+Pure native request/field/deadline/quote checks reach final denied opener under
+explicit SYNcontext. API/credentials/originalwrites0/networknone/cleanup.
+Historical exception not reproduced or reconstructed; reservation remains.
+
+Scoped offline20s profile measured successful nonempty SYN1.414s parse lifecycle/
+timeoutcleanup.267s. Frozen180global guard unchanged. Completed projection
+p012/p014 stays failed; separate local-intent view does not waive full proof.
+Independent review7bac70ef: marker saved BEFORE clientcall, owner/binding/
+deadline callbacks BEFORE POSTcounter. MarkerTRUE/POST0 legitimate, no counter
+coverage bypass found. Historical readyBOOL/roundtrip absent/unrecoverable.
+Gauss source-only100active600elapsed safe type/trusted-line diagnostic and
+exact-identity read-only recovery design, not a brokerworker/scheduled replay.
+
+NAS8 original exit>=Oct21OPEN remains unfinished, separate F9/nightly/Goal97.
+F9 entryONLYOct19until20:00UTC (now consumed), exit>=Nov17. Expiry does NOT
+release unknown reservation. No substitute intent/bank expansion/adoption.
+
+## Historical Recovery Evidence (Not Current Readiness)
 
 Gauss owns A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1.
 Natural nightly23:50 returned readonly_open_orders_rejected:1auth1GET/

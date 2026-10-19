@@ -1,54 +1,45 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-Current Oct20 KST. A=D:/thericher-v2/model-artifacts.
-Own official-source hypotheses/pure mechanisms, not broker risk, model
-selection authority or Paper adoption. Engine owns target/splits/cost/fitting;
-Steward owns one GPU allocation; parent owns integration/shared docs/Git.
-Company current-nas-owned-model-paper-cycle-v1 remains unfinished.
+Current Oct20KST. A=D:/thericher-v2/model-artifacts.
+Own official-source hypotheses/pure mechanisms, not broker risk or model
+selection authority. Engine owns targets/splits/cost/fitting; Steward oneGPU;
+Parent integration/Git. NAS company outcome remains unfinished.
 
 ## Current Consumers
 
-Completed new-information experiments:
-- Existing4 market/sector context14vs28 a497b4cd: sixfits, onlyHGB paired
-  growth/DD diagnostic passes, growth uplift2.311bp; not a qualified winner.
-- Relative-return label43539e47: threefits, relativeRidge improves oldnegative
-  rawRidge but uniform still bettergrowth/DD; no label grid.
-- Causal-refresh f15141c4: sixfits, HGB/MLP paired primary bothFAIL,
-  procedure changes scalers/TRAIN/INNER together, not pure recency evidence.
-- Diversified tilt sourcebd18d8ee: .75uniform+.25oldTop5 at samegross,
-  two variants improve growth but worsen DD vs uniform. No lambda grid.
-- DeepSets/context54cell and pairwise-rank meta studies closedFAIL; no repeated
-  seed/lambda search. Ledger297 fitted versions187CUDA110CPU, not architectures.
+Ledger301 fittedversions190CUDA111CPU, not architectures/profitablemodels.
+Existing4/relative/refresh/full52/tilt/DeepSets/pairwise/OOFrouter grids closed.
+OOFstump6850ce41 alwaysfixed4/no routinggain. No repeated seeds/lambda search.
 
-Full-sector increment COMPLETE17:48:04,3NEW52 fits2CPU1CUDA/113checks/
-39cells/all3primaryFAIL,87.299activeupper/allactorsleaseclosed. It consumes
-Data actual12routes/176historicalqueries plus4fresh comparisons and reuses
-ALL6old14/28 models/forecasts and27cells byte-exact.
-Same support/target/splits/scalers/masks/cost/gross/payoffs;52->28 mapping
-0..24+40..42. Extra sector information, not a repeat baseline or PIT claim.
-Claude REVISE DEVreuse/opaquePIT/capacity/budgetrisk adopted.
-A/research/current-full-sector-context-development-20261020-v1.
+TTM frozenencoder heads1352dba9: TTM INNER_MSE.919622382 vs raw1.052426698.
+Matched adaptation64442426 continuedhead.919622385 vs lastblock.916023822,
+BUT analytic TRAINmean.878046813 better than both. Close adaptation grid,
+do not sell pairedgain as useful alpha. Source/model/native proof exact in
+engineboard. Original Oct20 future five-policy point remains unchanged.
 
-TTM COMPLETE1352dba9/MODEL-ABIf5be2c34/155checks/2CUDAheads:
-A/research/current-ttm-return-head-development-20261020-v1.
-TTM192embedding linear head versus raw511return linear head, identical512close
-history/support/TRAIN/INNER/budget and future cohort, no public model in broker
-runtime. Fixed checkpoint release precedes targets, but pretraining corpus
-coverage unknown and native minute/hourly to daily transfer remain limitations.
-8345TRAIN/1675INNER rows; source36+19checks and73.091activeupper complete.
-Firstprelaunchfailure75.778/oldUNKNOWN retained, newidentity-proven calibration
-pluszeroeffects qualification enabled ONE actualallocation/SAMEcaps.
-TTM23epochs/best11/INNER_MSE.919622 vsRAW19/best7/1.052427, selection
-diagnostic notfutureperformance. ActualfullweightsCUDA/freeze/checkpointproof
-PASS;174.936activeupper/allactorsleaseclosed,0future/DEVforecasts/economics.
-FutureOct20 source/asof UNKNOWN, no stale padding or cohort roll.
-This is frozen-backbone representation/return-head development, NOT full model
-fine-tuning, independent alpha, ensemble/Paper promotion or a runtime migration.
-NextKeplerfutureconsumerSOURCE usesoriginalOct20 actualOct19close cohort,
-no stalepadding/API/Task/modelcalls. Boole newCPUdepth1 router chooses oldRidge
-or oldfixedrank4 from OOF rankagreement,40Metadates/26reusedTerminaldates,
-400active1800elapsed/onefit. Routing not learnedweightfusion; noindepalpha
-or oldbaseforecast repeats. Exactsourcehorizon/costcompatibility beforefit.
+RiskGRU0098057a/ABI1980cfaf: 48epochs/best36, INNER QLIKE
+mean-5.212878258/EWMA-5.389013741/GRU-5.433648356. Promising adaptive proxy-loss
+diagnostic, not profit. Target is observable5OC^2+4internalON^2, not latent
+variance/highfrequencyRV/HAR; conditional unbiasedness assumption unproved.
+No inverse-risk override to F9: fivecaps exactly equal basketgross.
+
+NEW complementary TCN risk expert/Confucius:
+A/research/current-sparse-path-risk-tcn-development-20261020-v1.
+One causal residual width16 Conv1d/k3/dilations1,2,4,8/two perblock/dropout.1,
+same data/affines/target/directQLIKE/date weighting as GRU. One bounded fit
+after true native proof, optional fixed .5/.5 RAWvariance fusion only using
+retained compatible GRU predictions. No learnedweight/in-sample gate or repeat
+old forecasts. If no advantage close risk architecture grid; reused INNER
+remains adaptive. Future GRU/TTM points and Paper policies not modified.
+Official https://arxiv.org/abs/1803.01271 supports a general convolutional
+sequence hypothesis, NOT financial performance. Native installed PyTorch only,
+no downloaded code/new dependency. Claude REVISE/no categories, not agreement.
+
+New sector risk domain input50c29b98: all12ETF on21input-only dates/252rows,
+not full57 due earlier HIGH/LOW absence. New assets share marketperiod/factors
+with stock fit, so any later diagnostic is NOT untouched temporal replication.
+Data source preparation only; source claims must become bounded experiment
+or concrete rejection, not reading backlog.
 
 ## Source Knowledge / Closed Work
 

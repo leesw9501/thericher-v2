@@ -4,55 +4,59 @@
 
 current-nas-owned-model-paper-cycle-v1: complete a recoverable owned KIS Paper
 entry/hold/exit/reconciliation loop within ONE original shared virtual-cash tenth.
-Eight retained exact FULL entries are known; owned exit>=Oct21 US regular OPEN.
-UNFINISHED: research, installation, task exit, another owner's sell or a commit
-cannot close this outcome. Completion needs exact owned request/fill linkage,
-current owned inventory and terminal reconciliation, no unresolved exact-request
-risk, and explicit fees/settlement/net-PnL knowledge or limitation.
+Eight retained exact FULL entries known; owned exit>=Oct21 US regular OPEN.
+UNFINISHED: research/installation/Task exit/another owner's sell/commit cannot
+close this outcome. Need exact owned request/fill/currentinventory/terminal
+reconciliation, no unknown exact-request risk, explicit fees/settlement/net-PnL
+knowledge or limitation.
 
 Workdir C:/Users/Public/Documents/thericher-v2. Run scripts/start_next_codex_task.ps1;
-read HANDOFF.md/AGENTS.md/RUNBOOK.md and active role boards. Parent integrates/Git.
-Private no-cost Data/Research/Paper is delegated, never KIS_LIVE_*/real money.
-Preserve original bank/entry costs/realizedlosses/pendingreservations/identities;
-no foreign adoption, unknown-intent substitution, secrets or public exposure.
+read HANDOFF.md/AGENTS.md/RUNBOOK.md and active roleboards. Parent integrates/Git.
+Private no-cost Data/Research/Paper delegated, never KIS_LIVE_*/real money.
+Preserve original bank/costs/losses/reservations/identities; no foreign adoption,
+unknown-intent substitute, secret output or public exposure.
 
 ## Current Work
 
-1. Execution/Gauss: natural18:00UTC technical failure at guard module_bootstrap.
-   Exact stage/source/time and coldPS5 reproducer identify Join-Path before
-   explicit Management import. Effects/fills remain UNKNOWN, not Taskexit=zero.
-   Own measured .NETPath.Combine bootstrapfix/coldpositive-negative tests and
-   conditional ONE18:30/end18:35/cutoff18:20 same-identity recovery, preserving
-   all32triggers/Task/principal/settings/fullACL/otherdefinitions and rollback.
-   No manualRun/automaticretime/substituteintent. Actual installation and runtime
-   need exact evidence; native fresh account/quote/orderability/reconciliation
-   remain mandatory. Original NAS/Goal97/nightly/f9 owners remain distinct.
-2. Engine/Boole: ONE CPU depth1 OOF proposal router between retainedRidge and
-   fixedrank4,40Meta dates/26reusedTerminal dates,1rankagreement feature,
-   exact original payoff/cost/gross,400active1800elapsed/1start0retry.
-   Freeze/nativeSYN/source/ABI compatibility before conditionalnumericalGO;
-   reuse oldmodels/forecasts/cells, no forcedcomparison or independentalpha claim.
-3. Infra/Kepler: future-consumer SOURCE/fixtures for frozen TTM+RAWheads.
-   Actual TTM1352dba9/ABIf5be2c34 complete155checks/23best11+19best7CUDA/
-   174.936activeupper/allactorsleaseclosed. No re-fit. Original Oct20 cohort
-   requires512actual closes endingOct19/asof before13:25UTC; no stale padding.
-   Consume already-owned D1captures, not newAPI/collector/Task in sourceprep.
-   Futurefivepolicies x3cost/same .1/21mass, no forecasts until exactinputready.
-4. Data full12sector source complete176queries/12x2087closes/480578parity;
-   allcollectorsclosed. Existing finite feeds next06:50/07:30/08:00KST, workers
-   own next_due. Missing held/future inputs UNKNOWN, not cash/imputation/hold.
+1. Execution/Gauss: F9 exact18:30 guard4a/image566 visit1auth22GET/0order POST
+   starts/native_recovery_required.33finite triggers actually installed.
+   Local selected pending-intent type/source/plan/readset pass; native pre-wire
+   checks reach denied opener under explicit SYNcontext. Historical cause and
+   reconciliation UNKNOWN. Source-only safe exception type/trusted-line recorder
+   and exact-identity read-only recovery design; no blind replay/slot/markerreset.
+   Original NAS8 exit>=Oct21OPEN, distinct from F9/nightly/Goal97.
+2. Engine/Confucius: NEW complementary risk TCN, one bounded CUDA fit + fixed
+   equal GRU/TCN raw-variance blend if retained old GRU vectors compatible.
+   Same63x3channels/9segment observable target/TRAIN-INNER keys/affines/QLIKE,
+   native causal/checkpoint proof first; seed2001/max128/pat12/bestrestore.
+   1200active3600elapsed/1fit1allocation0retry. Source is not actual GPU work.
+   Reused INNER adaptive diagnostic, no future/Paper changes. Close grid if
+   no advantage; no seeds/windows/weights chase or repeated old forecasts.
+3. Infra/Kepler: original TTM point ACTUALLY installedOct20 08:30KST. Risk Task
+   created/enabled then contained Disabled after one foreign XML drift;
+   read-only first-difference diagnosis, no automatic retry/retime. Measurement
+   Boole source/native prep ready, NOT installed: bind qualified risk producer
+   or explicit missing-risk state, not future point/capture hashes.
+   Natural old20/new9 Oct19 captures required; missing->input_unavailable,
+   0GPU/no stalepadding/date roll. Future Oct20..26/cutoffOct20 13:25UTC.
+4. Data/Boyle: full12sector acquisition176queries complete. Risk domain inputs
+   READY50c29b98/all12on21datesAug27..Sep25/252rows, not all57dates because
+   four funds lack earlier HIGH/LOW. Separate input/label masks/no reconstruction/
+   API/modelcalls. No domain numerical dispatch yet. Finite feeds06:50/07:30/
+   08:00KST own next_due. Actual source audit shows observer ends BEFORE D1
+   feeds; no evidence to lower auth guard.
 
-Completed ledger297=187CUDA110CPU fittedversions incl one oldinvalid, not
-architectures/profitablemodels. Full52/relative/refresh/tilt grids closed without
-qualifiedwinner. Source/readiness/INNERloss are not performance or deployment.
-Current exact pins, owners, caps, failures and evidence: HANDOFF/roleboards.
+Closed ledger301=190CUDA111CPU fitted versions incl one oldinvalid, not
+architectures/profitablemodels. Matched TTM adaptation improves old head but
+loses analytic mean; close grid. Risk GRU48epochs/best36 improves mean/EWMA
+INNER proxy loss, not money. OOF router alwaysfixed4/no gain. Never repeat
+completed fits/forecasts for metadata. Exact pins/owners/caps/claims in HANDOFF.
 
 ## Verification And Continuation
 
 Fresh focused/native/independent checks for changed external work. Docs/external-
-only reuse full authority78a4054f ONLY with exact production/control equality;
+only reuse full authority78a4054f ONLY exact production/control equality;
 tracked/shared-control/material recovery changes follow AGENTS verification.
 Integrate material evidence, verify, commit/push; replace this file with ONE next
-company outcome only after actual NAS closure, then continue active long request.
-Lane-local blocks never stop ready independent work. Ask genuine operator-
-authority decisions only, not routine private implementation/scheduling choices.
+company outcome ONLY after actual NAS closure, continue the active long request.
+Lane-local blocks do not stop ready work. Ask genuine operator decisions only.

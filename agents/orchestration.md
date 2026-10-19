@@ -1,65 +1,77 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current Oct20KST; A=D:/thericher-v2/model-artifacts, M=D:/market_data.
-ONE unfinished outcome current-nas-owned-model-paper-cycle-v1:
-eight exact retained FULL entries, owned exit>=Oct21 US regular OPEN.
-Parent owns shared docs/integration/Git, not every lane implementation.
-AGENTS authority private no-cost Data/Research/Paper delegated, never live.
+Current Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+ONE unfinished current-nas-owned-model-paper-cycle-v1: eight retained exact
+FULL entries, owned exit>=Oct21USOPEN. Parent owns direction/shared integration/
+Git, not all implementation. Private no-cost Data/Research/Paper delegated.
 
 ## Ready / Owned / Due
 
 | Owner | Actual State | Next Action |
 | --- | --- | --- |
-| Engine/Boole | TTM COMPLETE1352dba9/155checks/23best11+19best7CUDA/174.936active/allactorsleaseclosed; ledger297=187CUDA110CPU. | NewONECPU OOF shallowrouting study,400active1800elapsed/1start0retry/0GPU, exactsource compatibility before numerical fit. |
-| Infra/Kepler | Exact frozen TTMMODEL-ABIf5be2c34/heads/scalers/curves, parent17readonlychecksPASS/no newmodelcalls. | Future-consumer SOURCE/fixtures, originalOct20 cohort/actualOct19close512context/asof;0API/GPU/Task/refit. |
-| Data/Validation Boyle | R3 acquisitioncomplete/allcollectorsabsent. Optional full52 checker INCOMPLETE own-schema error/43preliminaryasserts/136.68over120debit retained. | Agentclosed; no scientificbug established, no independent pass or extra fit/forecast. |
-| Execution/Gauss | Natural18:00 technicalfailure/module_bootstrap, exactguard+nativecoldJoin-Path42reproducer, effectsUNKNOWN/27.31active0readbackAPI. | Measuredbootstrapfix/nativecoldtests, conditionalONE18:30/end18:35/cutoff18:20, same32oldtriggers/fullACL/bank/nativeidentity; no manualRun/retimechain. |
-| Strategy/Confucius | Tilt2variant6newcell reuse COMPLETE40active/0GPU, both pairedDDFAIL. | Agentclosed; no lambda grid/new platform. |
-| Parent | Hostrepair168f79d pushed; full18370PASS22skip/cleanhelper0, image566 locallysourceproved. | Integrate material results, source/control equality/externalchecks, commit/push docs; no companyclosure. |
+| Engine/Confucius | NewriskTCN source ready, first prelaunch ModuleNotFoundError BEFORE GPUallocation;38.501debit retained, actor/lease closed. | Correct exact isolated sibling import under SAME1200active3600elapsed/1fit0retry, source/native proof then one conditionalCUDAfit. No allocation/fit yet. |
+| Infra/Kepler | TTM installeded6f2b24. Risk created/enabled then containedDisabled149b0267, one foreignWindows XML drift/TTM+ACL unchanged. | Confined exactdisabledTask recovery100active600elapsed: noRegister/Run/retime, fresh all-current-others equality around oneEnable; oldfailure UNKNOWN unchanged. |
+| Measurement/Boole | SOURCEb0a449e7/runtimePREPb1d82784 tested;0realTask/modelcalls. | Bind qualified risk producer or explicit missing-risk state, oneCPUOct27 08:45KST measurement. No futurehash prerequisite. |
+| Data/Boyle | CONSUMER50c29b98 all12ETF/21input-onlydates252rows READY, full57FALSE/noAPI. | Source/native newdomain frozenGRU/optionalTCN diagnostic300active1800elapsed/oneCPUvisit0retry, exactcohort beforelabels/noGPU orrefits. |
+| Execution/Gauss | Type-valid localsubmission_started/prewirefence reached, historicalcause UNKNOWN/320debit. | NEW exact-request READ-ONLY reconciliation wrapper300active1200elapsed/1auth12GET0retry, source/native effectfences then actualread ifquiescent; no privatecyclewrite/order/Task. |
+| Parent | 301closedfits190CUDA111CPU, not architectures/profitablemodels. Lastpushed99fbf6f. | Integrate evidence/nativechecks/source-control equality/Ruff3Compose/commitpush; no NAS companyclosure. |
 
-NAS original exit>=Oct21OPEN remains future; f9entryONLYOct19until20UTC,
-exit>=Nov17. Preserve samebank/nativeidentity/unknowneffects across recovery.
-Finite Data dueOct20 06:50/07:30/08:00KST; workers own next_due.
+Original NAS exit>=Oct21OPEN cannot be advanced by research. F9 entryONLYOct19
+until20:00UTC consumed; expiry never releases unknown reservation, exit>=Nov17.
+Same original bank/nativeidentity/ownedinventory across all recovery.
+Finite Data06:50/07:30/08:00KST. TTMpoint08:30KST installed, risk08:45KST
+currentlyDisabled, measurementOct27 proposed/notinstalled. Workers own next_due.
 
 ## Throughput Review
 
-Review18:12UTC:
-ready=OOFsingleCPUrouter, TTMfutureconsumer source, exactPaperbootstrap
-measuredtechnicalrecovery, parentintegration. Owned=above; no current lane
-waiting for operator. All ready work has disjoint write sets/resources.
-Original NAS outcome dependency cannot be accelerated by fabricated closure;
-alternatives actually dispatched: threefitinformationincrement, frozen
-foundationrepresentation heads, exactidentityPaperfault repair.
+Review20:10UTC: ready=TCN isolated-import source correction, exact-request RO
+reconciliation, sector-domain consumer, confined riskTask recovery and parent
+integration. All disjoint mutable write sets, no operator wait. One canonical
+GPU lease only; sourceprep holds none. Measured4090 at2percent/2230MiB is
+not training; currentTCNfailed beforeallocation. Completed earlier fits actually
+ran briefly and closed, no dummy GPU utilization or finished-fit duplication.
 
-Reversible improvements applied:
-- Accepted-cursor Data continuation finished, no repeated fullhistoryprobe.
-- Directphysicalpythonw removes measuredself-parent falseactor without guard
-  weakening; Node reads public safeJSON metadata without benign shell actors
-  spuriously preempting Data. Private brokerstate still uses strict parsers.
-- NativeScheduler timestamps compare UTCinstant, not equivalent Z/+09 text.
-  Inertdisabled probe proves specific defect; actual failedpostcheck retained
-  before any further rollback. No blind new opportunity chain.
-- Compact current role boards replace stale "next" projections; immutable
-  history remains Git/D. No new ledger/report/gate.
+Original outcome dependency: retained owned NAS hold untilOct21 OPEN, then
+exact exit/fill/currentinventory/terminal reconciliation, explicit PnL limits.
+Delegated alternatives actually moving: different risk-target architecture and
+fixedfusion, newasset domain diagnostic, existing futurepoint consumers, exact
+Paper technical fault/request-specific evidence. No company-wide receipt hold.
 
-nvidia17:46UTC2%/2230MiB shows no sustained training then, not proof that
-GPUcampaignnever ran. Actual trainer/lease/counts must come from workers.
-No dummy utilization or duplication of completed models/forecasts.
-Current OOF/rank/context/sector/relative/refresh/tilt studies remain adaptive
-on reused data; no qualified independent winner or deployedmodel change.
+Reversible improvements:
+- One accepted-cursor Data continuation finished12routes/176queries, no repeated
+  broad history probes. Sector-domain input checks actual OHLC, not assumes it.
+- Direct physicalpythonw removes measured self-parent falseactor; Node reads
+  public metadata without spawning harmless shellmatches. Private brokerstate
+  remains strict exact native parsing, never Node/raw inspection.
+- Native Scheduler equivalent-time comparisons use UTCinstants; COM nested
+  trailing-folder repair uses actual coldproof, not guessed permissions.
+- Local pending-intent extractor is phase-aware, not blocked by a completed-run
+  p012/p014 proof. Full completed proof remains unchanged; local view is not
+  broker reconciliation. Measured scoped20s offline quiet profile, not arbitrary
+  global180 exemption or actual-owner bypass.
+- Foreign Windows RefreshCache XML changed during install, exactold diff not
+  retained. Do not brute-force SHA or mutate WindowsTask. New exactownedTask
+  recovery gets its own fresh all-current readback; no old PASS fabrication.
+- TTM futurepoint early23:30UTC after22:30/23:00 naturalfeeds, samecohort/
+  cutoff. Observer ends22:23, so do not lower authfloor based on imagined
+  competing issuance atcapturetime.
+- TCN prelaunch isolated sibling-import failure retains zero allocation
+  boundary/clock; fix exact local import rather than repeat a failed model fit.
+
+Claude current-risk-point-install-recovery and sector-domain reviews are
+review_unavailable/JSONDecodeError, not agreement/globalholds. Parent authority
+and named safety/claim gates remain; no invented advice. TCN review REVISE with
+empty categories, not approval; predeclared native/compatibility/claim kills apply.
+All reused INNER/seen outcomes remain adaptive, no independentalpha/Paperpass.
 
 ## Verification / Recovery
 
 A/verification/paper-host-publication-recovery-20261020-v1/authority.json:
-1362files digest78a4054f,1514serialPASS/18370fullPASS22skip/8workers/
-388.21s/cleanhelper0/Ruff/default-research-accountingCompose/native4PASS.
-Reuse only exact public production/control digest equality. External D code/
-outputs need own focused/independent/native checks, not repeated repo pytest.
-Exact image566e02d8 source480filesffece26d, inert networknone proof/cleanup,
-not deployment. Source-only plans/tests/Taskinstallation are not brokerfills.
-Keep original failures/debits/clocks/unknown effects; no %SystemDrive% staging.
-
-At material runtime result integrate exact bound evidence, not latest scans,
-Taskexit or missing files. NAS company outcome stays UNFINISHED until owned
-exit/fill/currentinventory/terminal reconciliation and explicit PnLlimits.
-Continue active long request while ready delegated work exists.
+1362files78a4054f/1514serialPASS/18370fullPASS22skip/8workers388.21s/cleanhelper0,
+Ruff/default-research-accountingCompose/native4PASS. Freshreadonly source/
+control equality confirmed, no trackedproduction change; changedDcode requires
+its own source/native/focused evidence, not repeated18ksuite.
+Image566e02d8/source480filesffece26d source-onlyproof not deployment/fill.
+Keep prior failures/debits/unknowneffects; never stage/remove %SystemDrive%/.
+At material results integrate exact evidence, verify/commitpush. No unfinished
+company outcome marked complete simply to end the active long request.

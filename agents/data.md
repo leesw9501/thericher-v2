@@ -5,7 +5,27 @@ Data owns source capability/acquisition/canonical storage/time availability;
 Execution owns account/order endpoints. Parent owns integration/shareddocs/Git.
 Private KIS Paper marketdata is delegated, no KIS_LIVE_*/secret/raw-value output.
 
-## Current Sector Input
+## Current Domain Consumer / Feed Facts
+
+A/data/current-risk-sector-domain-input-20261020-v1/CONSUMER.json50c29b98.
+READY all12sectorfunds on21datesAug27..Sep25/252input-only rows. Full57date
+coverage FALSE: four funds lack earlier retained HIGH/LOW, no reconstruction
+from closes. x_raw57x12x63x3/y_raw57x12 in M, separate input and label masks.
+Retrospective target support684of684 does not select input cohort.
+13synthetic102744scalar checks/105.88active308.81elapsed,0model/GPU/API.
+Source680c9d14/rawretention/parity refs preserved, no new fetch. Consumer is
+a frozen risk-model domain diagnostic, not temporal independence/alpha.
+Boyle now source-only contract prep under A/research/current-risk-sector-domain-
+diagnostic-20261020-v1; numerical model calls not authorized by source readiness.
+
+Feed source audit3460+3403checks PASS. Exact read-only Scheduler facts19:13:51Z:
+old20D1 next22:30UTC/new9D1 next23:00UTC; observer issuance ends22:23 before
+both. No established300s auth starvation during capture windows; no guard change.
+A/data/current-oct19-d1-feed-readiness-audit-20261020-v1/scheduler-readback-r1/
+RESULT-r1.json13beefae. Actual future captures UNKNOWN until immutable chains.
+Finite RTH1m06:50KST/old20D107:30/new9D108:00, workers own next_due.
+
+## Completed Sector Input
 
 A/data/current-sector-market-context-input-20261020-v1/cursor-continuation-r3.
 READY-FINAL.json SHA84b36d4a5b67290fbbcf9c27a52df9b9c3f17e82ba018e04c978dfbf3f759ccf.

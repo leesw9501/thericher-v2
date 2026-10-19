@@ -2,88 +2,115 @@
 
 ## Current Owned Runtime
 
-CURRENT recovery update: installed18:00UTC opportunity actually failed
-module_bootstrap, TECHNICAL_FAILURE_STRICT_OUTCOME_UNKNOWN; nofill/inventory
-claim. Exactnatural result:
-D:/thericher-v2/model-artifacts/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/natural-1800-readback-r1/RESULT.json.
-Gauss owns bootstrap-recovery-r1/coldPS514casePASS/newguard4a468c0a source,
-conditional18:30/end18:35/cutoff18:20 sameidentity opportunity, NOTinstalled
-until actualreadback. Preserveall32triggers/bank/nativeintentIDs/fullACL/
-otherTaskdefinitions/rollback. No manualTaskRun or automaticretimechain.
-TTM2CUDAheads COMPLETE1352dba9/ABIf5be2c34; futureconsumerSOURCE only,
-no re-fit. Current exact owners/claims: HANDOFF and activeboards.
-
-Workdir: C:/Users/Public/Documents/thericher-v2.
+Current Oct20KST. Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Follow AGENTS.md/HANDOFF.md/currentstateboards. ONE company outcome
-current-nas-owned-model-paper-cycle-v1 remains unfinished owned exit.
-Private Paper work is delegated, never KIS_LIVE_*/real money/paid/public work.
-Do not print credentials/account/order IDs/raw bodies/prices/private amounts.
-Do not rerun completed creators/installers/numerical fits just to refresh time.
+AGENTS owns authority; HANDOFF/roleboards current evidence. Company
+current-nas-owned-model-paper-cycle-v1 remains UNFINISHED. Private Paper
+delegated, never KIS_LIVE_*/real money/paid/public. No secret/account/order IDs,
+raw bodies/prices/private amounts in outputs. Do not rerun completed creators,
+installers, model fits or forecasts to refresh metadata.
 
-| Owner | Current Runtime / Next Opportunity |
+| Owner | Current Runtime / Next Due |
 | --- | --- |
-| NASmodel |Samefinite thericher-kis-paper-current-nas-model-20261015,image87697f8e;8retainedFULLfills, ownedexit>=Oct21USOPEN.|
-| Newfixedensemble |thericher-kis-paper-current20-equalrank4-20261018,Ready/Enabled,newimage566e02d8/sourceffece26d/guard468899ae,31oldslots+ONE18:00UTCrecovery/PT5M;installed17:47:33UTC.|
-| Nightly |thericher-kis-paper-daily-spy-session,image30433095,23:50KST;exactOct17 00:52recoverycomplete/all28terminal.|
-| Goal97 |Distinctowner,entryOct19 22:30/22:40KST,exitOct24 04:50/05:00KST.|
-| Current20RTH1m |Quiet06:50KST Tue-Sat,firstOct20;notobservedcapture.|
-| D1marks |thericher-kis-paper-current20-shadow-d1-marks-20261020,07:30KST firstOct20,21finitevisits throughNov17;futureoutcomesUNKNOWN.|
-| NEW8D1 |thericher-kis-paper-current25-new8-d1-marks-20261020,ReadyEnabled/21finite/PT15M/IgnoreNew/noDemandStart;firstOct20 08:00KST,lastNov17.|
+| NAS | thericher-kis-paper-current-nas-model-20261015/image87697f8e,8retainedFULL, exit>=Oct21USOPEN. |
+| F9 | thericher-kis-paper-current20-equalrank4-20261018/image566e02d8/sourceffece26d/guard4a468c0a,33finite triggers;18:30 leg1 native_recovery_required. |
+| Nightly | thericher-kis-paper-daily-spy-session/image30433095,23:50KST; separate owned inventory. |
+| Goal97 | Distinct owner, exitOct24 04:50/05:00KST. |
+| RTH1m | Quiet06:50KST Tue-Sat, firstOct20; actual new capture UNKNOWN. |
+| Old20D1 | thericher-kis-paper-current20-shadow-d1-marks-20261020,07:30KST/21finitevisits throughNov17. |
+| New9D1 | thericher-kis-paper-current25-new8-d1-marks-20261020,08:00KST/21finite/PT15M/IgnoreNew/noDemandStart. |
+| TTMpoint | thericher-research-ttm-return-head-point-20261020, INSTALLED ONEOct20 08:30KST/23:30UTC/end23:40/PT10M/noDemandStart. |
+| Riskpoint | thericher-research-sparse-risk-point-20261020, created then contained Disabled; exact Task name verified from RuntimeJob, not a qualified producer yet. |
+| Measurement | Source/native prep ready, proposed Oct27 08:45KST, NOT installed. |
 
-All original bank/identities/request reservations/ownership remain. Newensemble
-five desired .005-original-basis targets/<=.025 together inside SAME original
-shared .10 envelope. Entry ONLY USOct19 until20:00UTC, no later re-entry/
-backups/rerank/foreign adoption. Exit not beforeNov17 15:10UTC/recoveryNov20.
-Twenty fully held RTH sessions+partialentry/exit, NOT research OPENparity.
-First f9run has owner context but missing result: invocation preparation known,
-submit/fill UNKNOWN, not zero. Model output is an untrusted proposal;
-native fresh brokerfacts/risk/reconciliation still required before each effect.
+All bank/costs/losses/pending reservations/native identities preserved. F9 five
+desired<=.005originalbasis each/<=.025together inside shared original .10;
+entry ONLY USOct19 until20:00UTC now consumed, exit>=Nov17 15:10UTC/recovery
+Nov20. Expired entry does not release unreconciled reservation; no new slot,
+substitute intent, foreign adoption, reranking or budget reset.
 
-Current Oct20 technical recovery, NOT a routine rerun command:
-A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/RESULT.json.
-Original StageA closed; provider UNKNOWN/no delivered credential packet.
-16.16s end-cap overrun was inert public fixture only, not hidden HTTP authority.
-Distinct open-orders-continuation-r1-visit2 now actually COMPLETE at16:04UTC:
-CURRENT_GET_ACCEPTED/HTTP200/VTTS3018R/1auth1GET0orderPOSTs/ownedcleanup.
-Do not invoke it again. Original rejected-GET cause not established; this is
-not fresh portfolio custody/newfill/PnL or exact unknown-request reconciliation.
-Any separately proposed continuation is unnecessary after this successful read;
-never rerun old write-once callers or turn zero-HTTP deferral into provider error.
-Natural nightlyOct19 23:50 made1tokenPOST/1GET/0order-cancelPOSTs then
-readonly_open_orders_rejected; original upstream code not retained. Its new
-cycle absent at local snapshot is preintent-unmaterialized, not global zero
-inventory. Strict old reader failure stays historical. Fees/netPnL unknown.
+### Current Execution Evidence
 
-Prefix-result/PATHEXT source repair freshly verified, NOT deployed by editing
-the host file. Keep exact runtime/input/image/reader pins and owned identities;
-require paired tested release and quiescent rollback-preserving Task retarget.
-Native public OS proof: A/verification/paper-host-publication-recovery-20261020-v1/
-native-environment.json,4PASS/missing-empty-blank-inherited PATHEXT,0API/Task.
-Same verification root/authority.json:1362source78a4054f,1514changed-path serial/
-18370fullPASS22skip/8workers388.21s/cleanhelper0/Ruff3Compose. Exact source and
-AGENTS/DECISIONS digests required; this does not validate other external code.
-Quoted PS5 Docker label template fails while JSONprojection works; separate
-new-probe packaging bug, not historical f9seq0 cause. No manual Task invocation,
-substitute request, bank reset or relaxed risk to force entry.
+D:/thericher-v2/model-artifacts/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/bootstrap-recovery-r1/natural-1830-readback-r1/RESULT.json
 
-IMPORTANT actualScheduler16:22UTC f9last15:22code20/nextOct20 15:10/31triggers:
-all4originaltoday slots consumed; retargetalone will not enter before20UTC.
-The17:00/17:15 installation attempts failedverification and rolledback before
-their slots; actual17:20:45UTC retained31/Ready/originalfullACL/definition.
-Inert disabled publicTaskprobe reproduced Z->equivalent+09:00 lexicaltime
-postcheckfailure; UTC-instant comparer passes native snapshots/11negatives.
-NEW technical-install-recovery-r3 ACTUAL17:47:33UTC beforecutoff17:50:
-ready-visit-04/INSTALL-RESULT.json INSTALLED_READY_NOT_INVOKED,32triggers/
-old31/principal/settings/fullACL/allotherTaskdefinitions preserved. Current
-CUTOFF-READBACK17:51:18 VERIFIED_INSTALLED_32_READY,nextdue18:00UTC/end18:05.
-No furthermutation/manualinvoke. Exact pairedreader/source/image/input/bank/
-nativeintentIDs remain mandatory; a verifiedinstall is not a submit or fill.
-Never manually replay a consumed Task or replace an unknown intent; no recurring
-expansion or automatic missed-slot chain. New scoped review/evidence in HANDOFF.
+Actual18:30 exact image/source/guard/job/opportunity/time bound:1auth22GET,
+0buy-sell-cancel POST starts, native_recovery_required/leg1. Counts are delegate
+starts, not socket-wire/accepted order/fill proof. Bootstrap repair installed
+18:16:05 with33triggers/fullACL/249others preserved; old18:00 bootstrap failure
+and original missing00:10 result remain immutable/UNKNOWN.
 
-Existing web monitor remains loopback http://127.0.0.1:8787.
-No public exposure/UIredesign in this package; health is not fresh custody.
+Exact phase-aware local-intent reader result:
+D:/thericher-v2/model-artifacts/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/bootstrap-recovery-r1/prewire-reproducer-r1/local-intent-forensics-r1/RESULT.json
+
+Type-valid submission_started; selected intent/source/job/plan/session and
+99files12dirs consistent. Pure native pre-wire checks reach denied opener in
+explicit SYN context; API/credential/privatewrites0. NOT broker reconciliation/
+historical cause/terminal/currentinventory. Pending reservation held.
+Completed projection p012/p014 remains failed, not bypassed by local view.
+Submission marker before client call plus callbacks before POSTcounter can
+legitimately yield markerTRUE/POST0; actual seq2 readiness/timing not retained.
+
+Gauss owns NEW exact-request READ-ONLY wrapper preparation/execution:
+bootstrap-recovery-r1/exact-request-readonly-reconcile-r1.
+Only native inquire-nccs/VTTS3018R and inquire-ccnl/VTTS3035R on exact persisted
+submission date/intent.300active1200elapsed/1guardedauth12GET0retry/no orders/
+cancel/balance/quote/privatecyclewrites/observe/_recover. Scoped Paper loader,
+virtual host/no redirects/final order-path fence. Query candidate/absence is
+not accepted order/fill/terminal or reservation-release proof. Source/native
+tests and actual quiescence first; as-of state remains readonly.
+
+### Current Research Evidence
+
+Ledger301=190CUDA111CPU fittedversions, not architectures/profitable models.
+TTM heads1352dba9/ABIf5be2c34 complete; paired adaptation64442426/ABIc397cf1c
+complete but BOTH worse than analytic TRAINmean, grid closed. RiskGRU0098057a/
+ABI1980cfaf48epochs/best36 improves mean/EWMA INNER QLIKE, not profit.
+Confucius complementary causal TCN one-fit source/native prep1200active/
+3600elapsed; conditional numerical GO is not proof of actual GPU training.
+Exact results in engineboard/HANDOFF. No old fit/forecast repeats.
+
+TTM Task immutable installation:
+D:/thericher-v2/model-artifacts/research/current-ttm-return-head-future-runtime-20261020-v1/installation/INSTALLED.json
+ed6f2b24, FINAL-CLOSED0ffdea81.1register1enable0manualRun/all251other XML+
+owner-group-DACL unchanged. Exact512closes endingOct19/old20+new9 source/job/
+session/index0 immutablecapture chain/full25mask/min20 required. Missing=>
+input_unavailable/0GPU/no stale padding/date roll. One120active600elapsed/
+allocation0retry/cutoffOct20 13:25UTC; no refit/API/credentials/broker.
+Original15policy/costcells/.1/21mass/Oct20OPEN->Oct26CLOSE unchanged.
+
+Risk failed installation/containment:
+D:/thericher-v2/model-artifacts/research/current-sparse-risk-future-point-20261020-v1/runtime-install-r1/NATIVE-INSTALL-FAILED-CLOSED.json
+149b0267/jobd2fff7ab/source38ae035b. One Windows component RefreshCache XML
+changed during installation; TTM/fullACL unchanged. Historical exact diff/
+causal actor UNKNOWN, never fabricate a match from a SHA. New scoped exact
+disabled-Task recovery under review: no Register/Run/retime, fresh all-current
+other-definition/fullACL equality around one Enable, contain on new drift.
+No qualified risk producer until its separate actual readback.
+
+Data sector input50c29b98/all12on21dates252rows ready, full57FALSE because
+earlier H/L missing, separate masks/no reconstruction. Domain diagnostic source
+only/no modelcalls yet. Feed audit13beefae: observer ends22:23UTC before22:30/
+23:00D1; no established300s auth starvation in capture windows, no guard change.
+
+### Verification
+
+D:/thericher-v2/model-artifacts/verification/paper-host-publication-recovery-20261020-v1/authority.json
+1362files78a4054f/1514changed-path SERIAL PASS/18370fullPASS22skip/8workers/
+388.21s/cleanhelper0/Ruff/default-research-accountingCompose/native4PASS.
+Exact production/control digests required to reuse docs/external-only authority;
+external changed code needs its own native/focused proofs. Tracked/material
+recovery changes use AGENTS full verification. Image566/source480filesffece26d
+source-only proof is not deployment/fill evidence. Never stage %SystemDrive%/.
+
+Monitor http://127.0.0.1:8787 remains loopback, no public/UI redesign. Task
+Operational log disabled; retained marker/hash/time evidence is assumed-honest
+host provenance, not cryptographic OS scheduler-origin proof.
+
+## Frozen Runtime Binding History
+
+The following sections retain historical commands/pins. They are not current
+Paper recovery permission or current-image evidence; use current exact scoped
+readers above and never invoke a consumed creator/installer/worker.
 
 ## Exact Runtime Bindings
 
