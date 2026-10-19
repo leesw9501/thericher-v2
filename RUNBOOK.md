@@ -22,7 +22,7 @@ installers, model fits or forecasts to refresh metadata.
 | TTMpoint | thericher-research-ttm-return-head-point-20261020, INSTALLED ONEOct20 08:30KST/23:30UTC/end23:40/PT10M/noDemandStart. |
 | Riskpoint | thericher-research-sparse-risk-point-20261020, ACTUALReady40aa3257/jobd2fff7ab/source38ae035b, ONEOct20 08:45KST/23:45UTC..23:55/PT10M/noDemandStart. |
 | Measurement | thericher-research-oct20-model-point-measurement-20261027, INSTALLEDcd9726cf/runtimedc888212/deployment65a1304f, ONEOct27 08:45KST/Oct26 23:45UTC..23:55. |
-| Newpaired-model loop | Source preparation only, proposedONEtask/TWOtriggers POINT Oct20 00:15UTC/EVAL Oct26 23:55UTC; NOTinstalled, no trained producer yet. |
+| Newpaired-model loop | Constant attentionproducer proposal RETIRED BEFOREinstall; source65fixtures/review fixes reusable, no newTask/exportqualification. |
 
 All bank/costs/losses/pending reservations/native identities preserved. F9 five
 desired<=.005originalbasis each/<=.025together inside shared original .10;
@@ -76,7 +76,7 @@ use reader source/image/job/time binding before relying on any new visit.
 
 ### Current Research Evidence
 
-Ledger302=191CUDA111CPU fittedversions, not architectures/profitable models.
+Ledger304=193CUDA111CPU fittedversions, not architectures/profitable models.
 TTM heads1352dba9/ABIf5be2c34 complete; paired adaptation64442426/ABIc397cf1c
 complete but BOTH worse than analytic TRAINmean, grid closed. RiskGRU0098057a/
 ABI1980cfaf48epochs/best36 improves mean/EWMA INNER QLIKE, not profit.
@@ -86,8 +86,12 @@ allworseEWMA.15costcellsdd850443/independent09023890:uniformbetter/all
 nominal-price policies negative withassumedfees, not TR/actualPapernetPnL.
 PairedGRU return+auxrisk protocol closedUNKNOWN duringSYNcheckpointidentity,
 1CUDAallocation/0observedmarketstarts, no automaticretry/oldcaprefund.
-NEW distinctattention pairedcampaign source/nativeCPU preparation; no trained
-producer/GPUfit inferred. See engineboard forcaps/nativeproof andfutureloop.
+Attention ACTUALCOMPLETEed9a0e73/ABI0fc32053/CPU-CUDAproof:2CUDAfits/both20
+epochs/best0/11.419+11.863seconds, scientificFAIL/TRAINmean.15cellsfinancial
+PASS isequality/uniform underfrozennon-strictcriterion, not learnedalpha or
+actualPaperPnL. Actor/leaseclosed/151.796active849.103elapsed. Constantnew
+futureproposalretired BEFOREinstall; no newexportcalls. NEWno-fit taskalignment
+audit250active2400elapsed/retainedscorepackets only, no GPU/oldmodel replays.
 Exact results in engineboard/HANDOFF. No old fit/forecast repeats.
 
 TTM Task immutable installation:

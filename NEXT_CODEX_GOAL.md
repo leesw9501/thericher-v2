@@ -30,7 +30,7 @@ intent substitute, secret output, paid/public/unclear-rights commitment.
    install is not diagnosticobserved/fill/reservationrelease. Neverreuseold18:30-only reader
    ortrigger-addinginstaller. NAS876 originalpath passedcoldsourceaudit,
    noforcedupgrade. Continue originalNASexit/reconciliation objective.
-2. Engine: ledger302=191CUDA111CPU; TCN40epochs/best32/722s wallstop/oneCUDA
+2. Engine: ledger304=193CUDA111CPU; TCN40epochs/best32/722s wallstop/oneCUDA
    fit completeb6fffd68/ABI64acca78, not convergence. INNERdiagpassesGRU/EWMA,
    but sectorDOMAIN GRU/TCN/fixedblend ALLloseEWMA. Close proxytraining grid,
    no seeds/windows/refits. Financial15cell replaydd850443+independent09023890:
@@ -58,6 +58,16 @@ intent substitute, secret output, paid/public/unclear-rights commitment.
    2starts0retry/oneGPU. True CPUcheckpoint+nextupdate/RNG/dropoutproof then
    sourcefreeze/parentGO beforeCUDA, CUDAproofbeforemarket. ClaudeREVISE
    killlogic/RNG/singleseed/reuseddata reflected; no oldGRUretry/caprefund.
+   Attention now COMPLETEed9a0e73/ABI0fc32053:2actualCUDAfits, both20epochs/
+   best0/11.419+11.863seconds, identicalTRAINmean.MSE.863587687156851.
+   ScientificFAIL/financialPASS is exactequalityvsA+uniform, nolearnedgain.
+   All15cells/336source344model22finalchecks/2145NAVoracle/151.796active/
+   cleanup. Closeauxrisk-attentiongrid; constantfutureproducerproposal RETIRED
+   BEFOREinstall/no qualified-exportcalls. Oldfutureworkersunchanged.
+   NEWno-fit current-return-task-alignment-audit250active2400elapsed:
+   retainednonconstantpackets/commondate-vs-stockordering/matchedretainedcost
+   results only, no oldforecasts/replay/rerank/DEV-future reopening/newfits.
+   Returnone distincttask proposal or concrete rejection.
    Boole separately prepares source-only250active3600elapsed ONEquietTask/
    TWO finite triggers POINT Oct20 00:15UTC/EVAL Oct26 23:55UTC; notinstalled,
    finalnewmodelABI/nativeCPUproof first,15cells/.02initialNAV separateoldTTM.
@@ -85,6 +95,11 @@ intent substitute, secret output, paid/public/unclear-rights commitment.
    exactoldclose/geometry/lineage proof/newMchild, no oldABI/result regrade.
    Source-only five252session strategybasisflags audit; no extra GET/impute.
    FreshRTH21:50 priority, existingfeed workers ownnext_due.
+   Pure57ABI nowREADY1f7ea148/16c18682,684rows/129276feature+684targetchecks.
+   NEWsplit-mode calibration30b2996f closedafterfirstXLK1GET1auth/12OTHER,
+   fourroutesunattempted/basisUNKNOWN/nobridge. No moreGET/retry; zero-API
+   firstcauseaudit100active1200elapsed distinguishes ourreaderfault vsprovider
+   behavior. Purefixedsplit bridge prepares252consumer, not qualification.
 4. Prospective consumers ACTUALLYinstalled: TTM Oct20 08:30KST, risk08:45KST,
    CPUmeasurementOct27 08:45KST. Exactold20/new9 Oct19 immutablecapture/asof/
    512TTMor64riskinput/support masks beforeforecast, missingUNKNOWN/0GPU,

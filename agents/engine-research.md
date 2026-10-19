@@ -3,7 +3,7 @@
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED; NAS8
 owned exit>=Oct21USOPEN. Parent integrates/Git; Execution owns broker risk.
-Completed ledger302=191CUDA111CPU fittedversions incl one oldinvalid, NOT
+Completed ledger304=193CUDA111CPU fittedversions incl one oldinvalid, NOT
 architectures/profitablemodels. Completedactors/leasesclosed; source/GO is
 not actualGPUtraining. Never repeat closed fits/forecasts for metadata.
 
@@ -153,13 +153,29 @@ parentGO/GPU, CUDAproofbeforemarket. ClaudeREVISE namedkilllogic/RNG/lowpower/
 reuseddata: exactB_MSE beatsA ANDmean, exactB10growth>=A ANDuniform AND
 DD<=A ANDuniform; all15reported, no reselection or independentclaim.
 
-Boole prepares current-return-risk-future-loop-20261020-v1 source-only250active/
+Attention ACTUALCOMPLETEed9a0e73/ABI0fc32053:CPUdaa54b92 beforeCUDAcb72da78,
+2marketfits/920marketupdates+8CUDA-SYN/46saves8restores/leaseclosed. Both
+20epochs/best0/MSE.863587687156851=TRAINmean,11.419+11.863fitseconds; same
+MODEL893b2a69/INNER44285864. ScientificFAIL; financialPASS under frozen >=/<=
+is equalityvsA+uniform, growthdiff0/DDdiff0, not utility/alpha/PaperPnL.
+336source344model22final/15cells/2145NAV135metrics/maxgap0;151.796active/
+849.103elapsed. No convergenceclaim/gridextension/oldresult regrade.
+NEW current-return-task-alignment-audit250active2400elapsed/0models-GPU-API:
+retainednonconstant packets only, commondate component vswithin-dateordering,
+exactmatchedretainedcostmetrics. No oldforecast/controlreplays, cross-target
+pooling/DEV/future reopening. Recommendone newtask or reject it, no newfityet.
+
+Boole prepared current-return-risk-future-loop-20261020-v1 source-only250active/
 3600elapsed: ONEproposedquietTask/TWOtriggers POINT Oct20 00:15UTC and
 EVAL Oct26 23:55UTC. Noactualinstall untilnewABIs/nativeCPUproof. RawLOGscores
 A/B/fixed.5blend/uniform/cash x3cost15cells/.02initialNAV ONEOct20OPEN->
 Oct26CLOSE cohort; no Jensen/simple-return claim, not oldTTM.1/21 comparison.
 Strictsame25inputmask/Oct19immutablecapturechain/63x3/64OHLC/missingUNKNOWN,
-no oldmodel reforecast/currentPaper/oldfuturepolicy change.
+no oldmodel reforecast/currentPaper/oldfuturepolicy change. Constantattention
+producerfutureproposal nowRETIREDUNINSTALLED; reusable source-r2 repairs
+coldconsumer import+weights/availability reader invariants perindependent
+9b40cb49/43checks. CPUadapter2847ed2b/28AST-codecfixtures,0Torch/modelcalls;
+no selectedtrainedexportqualification or newTask. OldTTM/Riskpoints unchanged.
 
 Risk futurepoint ACTUALLY Ready40aa3257/handoff3384e57c:
 A/research/current-sparse-risk-future-point-20261020-v1/runtime-install-r1.

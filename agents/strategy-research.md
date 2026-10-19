@@ -7,7 +7,7 @@ Parent integration/Git. NAS company outcome remains unfinished.
 
 ## Current Consumers
 
-Ledger302 fittedversions191CUDA111CPU, not architectures/profitablemodels.
+Ledger304 fittedversions193CUDA111CPU, not architectures/profitablemodels.
 Existing4/relative/refresh/full52/tilt/DeepSets/pairwise/OOFrouter grids closed.
 OOFstump6850ce41 alwaysfixed4/no routinggain. No repeated seeds/lambda search.
 
@@ -59,6 +59,13 @@ originalprotocolclosedUNKNOWN/no automaticretry. NEW distinct causalattention
 32/2layers/4heads/seed2201 pairedexperiment source+CPUproof beforeGPU, not a
 renamedGRU. ClaudeREVISE killlogic/RNG/singleseed/reuseddata implemented in
 predeclaredrules. Actualcounts/limits engineboard.
+Attention ACTUALCOMPLETEed9a0e73:both20epochs/best0/TRAINmean; scientificFAIL,
+financialnon-strictPASS onlyequality/uniform, not learnedgain. Closeauxriskgrid.
+Engine no-fit commondate-vs-stockordering audit now usesretainednonconstant
+packets before proposingdifferenttarget/task; no oldforecast/replay/rerank.
+57date12fundABI16c18682 READY. MODP1firstXLK1GET gives12OTHER/basisUNKNOWN,
+nobridge/fourfundsunattempted; purefixed-split adapter source notqualification.
+Constantattentionfutureproposal retiredbeforeinstall; oldfutureworkers unchanged.
 GeneralMTL primary https://www.cs.cornell.edu/~caruana/mlj97.pdf motivates
 sharedrepresentation, notfinanceperformance. No oldfuture/Paperpolicychange.
 

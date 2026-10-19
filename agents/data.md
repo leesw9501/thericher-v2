@@ -39,6 +39,17 @@ Consumer underrepresented sector research, not model/Paperqualification.
 Source-only audit of five252session strategy split/basisflags uses retained
 metadata; unsupportedreturns UNKNOWN, no extraGET or silentoutcome filtering.
 
+57ABI COMPLETE1f7ea148/CONSUMER16c18682 ACTUALREADY:684input-onlyrows/all12
+57dates/684supportedtargets;129276feature/684target/6040native-string/1510
+lineagechecks/51.820active376.262elapsed/0API-model-GPU. Original50c29b unchanged.
+Officialfixedfive2:1Dec5splitfacts parentverified/localsourcefetchfailed/no
+payloadhash. BoundedMODP1probe CLOSED30b2996f/RESULTdbe446e7:XLKfirst1GET/
+1auth/0retry/100rows/12OTHER, fourfundsunattempted/basisMIXED_OR_UNKNOWN/
+nobridge/35.083active398.624elapsed.53SYN12native27readback+12scalarchecks.
+NEW zero-API current-sector-split-basis-firstcause100active1200elapsed checks
+exactretainedsessions/fields/mapping/precision vsprovider behavior, no newGET.
+This252consumerlimitation does not invalidate57recentinput orPaperauthority.
+
 Feed source audit3460+3403checks PASS. Exact read-only Scheduler facts19:13:51Z:
 old20D1 next22:30UTC/new9D1 next23:00UTC; observer issuance ends22:23 before
 both. No established300s auth starvation during capture windows; no guard change.

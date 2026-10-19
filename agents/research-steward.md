@@ -6,7 +6,7 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Ready / Allocated
 
-Closed ledger302=191CUDA111CPU fittedversions incl one oldinvalid, not
+Closed ledger304=193CUDA111CPU fittedversions incl one oldinvalid, not
 architectures/qualifiedwinners. TTM1352dba9 twoCUDAheads, adaptation64442426
 twoCUDAfits, riskGRU0098057a oneCUDAfit and riskTCNb6fffd68 ONECUDAfit all
 COMPLETE/actorsleaseclosed. Native optimizer/RNG/checkpoint proof before fits.
@@ -38,6 +38,13 @@ observed0marketstarts andsteps, outerUNKNOWN/charges preserved. No retry.
 NEW attentionpairedmodel SOURCE/nativeCPUproof1500active7200elapsed/hard
 23:05UTC/2starts0retry/oneGPU, beforeparentGO/actualCUDA. Distinct causal
 Transformer32/2layers/4heads/seed2201, not renamedGRU. Canonicalleasefree now.
+Attention nowCLOSEDed9a0e73/2actualCUDAmarketfits/11.419+11.863seconds/
+both20epochs-best0,151.796active849.103elapsed/actorleaseclosed. ActualCPU
+nativeproof precededoneGPU/CUDAproof;920market+8CUDA-SYNupdates. Counts304
+exclude originalfailedGRUconservative reservation as actualfits. Scientific
+FAIL/financialexactequality, no usefulness or convergenceclaim. Constantnew
+futurepointproposal retireduninstalled,0exportqualificationforwards. Newready
+Engine task-alignment audit is CPU/no-fit, not unallocatedGPUtraining.
 New paired futureloop source preparation CPU-only, NOT installed/modelready.
 
 Cost-aware15cell allocation+independentDecimaloracle complete/adverse price-

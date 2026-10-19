@@ -25,11 +25,11 @@ Research restrictions stay package-local. Model artifacts A, marketbytes M.
 | Parent | Integration/Git; diagnostic commitc288dfc pushed/freshQA970c0730. Image49933 action-only deployment verified21:08:55UTC. |
 | Kepler/Infra | F9 release complete; independent source-only review of new multitask native-preflight failure. No further Task changes assigned. |
 | Boyle/Data | OHLC acquisition closed: SPY/XLK2087each, XLF/XLE1282each. NEW pure combined12fund57date research-input derivation, no API. |
-| Confucius/Engine | Original pairedGRU closedUNKNOWN/prefitfailure. NEW distinct causalattention pairedreturn/auxrisk source+CPU nativeproof before parentGPU GO. |
-| Boole/Engine | NEW coupled future point/evaluation source preparation for the paired models; ONE proposed Task/TWO finite triggers, not installed. |
+| Confucius/Engine | Attention2CUDAfits COMPLETEed9a0e73/both20epochs/best0/no learnedreturngain. NEW no-fit task-alignment audit of retained nonconstant packets. |
+| Boole/Engine | Pure fixedsplit bridge/sourcefutureloop repair after independent findings. Constant attention-producer futureproposal retired BEFORE installation. |
 | Gauss/Execution | Closed. Exact-request RO complete; later clone SOURCE/SYN failed/no API. Regular-worker diagnostic supersedes that attempted path, historical cause stillUNKNOWN. |
 
-No permanent LLM per role. Closed ledger302=191CUDA111CPU fitted versions incl
+No permanent LLM per role. Closed ledger304=193CUDA111CPU fitted versions incl
 one oldinvalid, not architectures/profitablemodels. No activeGPU trainer.
 Actual TCN sample39percent/2880MiB duringfit, not sustained utilization/peak.
 Do not duplicate completed fits/forecasts or create dummy GPU load.
@@ -198,24 +198,29 @@ schemafixtures/placeholdernotSHA256; finalactive74.672. No automaticretry/refund
 Source/GO is not successful GPU training. Old ledger remains302 until exact
 new fit evidence. Claude review_unavailable/TimeoutExpired45s, not agreement.
 
-NEW distinct causalattention comparison current-return-risk-attention-development-
-20261020-v1 SOURCE/CPUpreparation:2layerTransformerEncoder32/4heads/FF64/
-dropout.1/fixedsinusoidal63positions/causalmask/lasttoken/seed2201. Samepaired
-mainreturn vs main+1.0auxrisk/data/splits/15financialcells, NEW1500active7200
-elapsed/hard23:05UTC/2starts0retry/oneGPU; oldGRUprotocol/caps/debits closed.
-Native CPU realoptimizer/checkpoint/RNG/dropoutmatching proof BEFORE GPU,
-CUDAproofbeforemarket. ParentGO follows sourcefreeze/CPUproof, no marketfit
-claim now. Claude review/current-return-risk-attention-20261020-v1/claude.json
-REVISE: killrule/RNGdropout/lowpower/reuseddata. ExactPASSlogic clarified:
-B_MSE betterA ANDmean; B10bpgrowth>=A ANDuniform,DD<=A ANDuniform. Allcells
-reported; single-seed/adaptive, not independence. No new runtime/download.
+Attention current-return-risk-attention-development-20261020-v1 ACTUALCOMPLETE
+ed9a0e73/MODEL-ABI0fc32053:2layerTransformer32/heads4/FF64/dropout.1/causal/
+63sinpos/seed2201, paired mainreturn vs main+1.0auxrisk. Same data/purges/
+fit-onlyaffines/matchedinitialweights/dropoutstreams/RETURN_MSE checkpoint.
+Exactimage CPUproofdaa54b92 precededoneGPU/CUDAproofcb72da78. A20epochs/
+best0/11.419fitseconds, B20/best0/11.863seconds; bothMSE.863587687156851=
+TRAINmean, identicalMODEL893b2a69/INNER44285864.928steps(920market+8CUDA-SYN),
+46saves8restores/cleanup/151.796active849.103elapsed.336source344model22final
+checks; all15cells/2145NAV135metricoracle/maxgap0. ScientificFAIL. Financial
+PASS under frozen non-strict inequalities is EXACTEQUALITYvsA/uniform (growth
+and DDdifference0), not learned advantage; no regrade. Earlystop/best0 is not
+convergence/independentalpha/PaperPnL. Close auxrisk/attention grid.
+Claude REVISE killlogic/RNG/lowpower/reuseddata addressed before freeze.
 
-Boole prepares A/research/current-return-risk-future-loop-20261020-v1:
-source-only250active3600elapsed, ONE proposed quietTask/TWO finite TimeTriggers
-POINT Oct20 00:15..00:25UTC and EVAL Oct26 23:55..Oct27 00:05UTC. NOTinstalled;
-finalmodel ABI/nativeCPUproof required first. FutureA/B/rawlogblend/uniform/
-cash15cells/.02initialNAV/Oct20OPEN->Oct26CLOSE separate fromoldTTM.1/21.
-No model/risk/oldfutureworker changes or extra collector/standing daemon.
+NEW current-return-task-alignment-audit-20261020-v1/250active2400elapsed/
+0models-GPU-API: retainednonconstant packets, commondate vsstockordering,
+matchedretainedcostresults only. No oldforecasts/controls/replays, mismatched
+targetpooling/DEV-future reopening. Recommendone distincttask or reject it.
+Constant attention futurepoint proposal RETIREDUNINSTALLED. Reusablefutureloop
+source19e221bd/65fixtures retained; independent9b40cb49 foundcoldconsumer
+import/missingweight-availability invariants, bounded source-r2 repair only.
+CPUadapter2847ed2b/28AST-codecfixtures1ea28af7, zeroTorch/model/weightreads.
+No native-trainedexport qualification/newTask; oldTTM/Risk/measurement unchanged.
 
 ## Data / Prospective Workers
 
@@ -236,10 +241,18 @@ oldpageFAIL/badrowUNKNOWN unchanged. Newdisjointolderpages accepted, then
 bothnext20210827pagesgeometry-invalid=>STOPexactcursor,16unattemptedqueries,
 not provider-global exhaustion.83.424active460.410elapsed/cleanupreadback
 1ef1dd85. No account/order/quote/live/model/Task actions.
-NEW pure current-sector-57date-input derivation200active1800elapsed/0API:
-combine accepted12fundOHLC/past64 masks on57dates BEFORElabels; separate
-Marrays/newABI, original50c29b/21dates/full57FALSE unchanged. Five price-
-basis flags from252session strategy need scoped qualification, not imputation.
+New57date input ACTUALREADY1f7ea148/CONSUMER16c18682: all12x57=684 input-only
+rows/684supportedtargets/x57x12x63x3.129276feature/684target/6040native-string/
+1510lineagechecks,51.820active376.262elapsed/0API-model-GPU. Original50c29b/
+21dates/full57FALSE unchanged. Computational nominal-source readiness only.
+Official five2:1ETFsplitfacts effective20251205 parentverified fromStateStreet;
+localpayloadfetchfailed/no sourcehash. MODP1 calibration CLOSED30b2996f/
+RESULTdbe446e7:exactXLKfirst1GET1auth0retry/100rows/12event-fieldcomparisons
+OTHER, fourroutesunattempted/nobridge.35.083active398.624elapsed/53SYN12native
+27readback+12scalarchecks. SourcebasisMIXED_OR_UNKNOWN, not provider-global
+failure. NEW zero-API firstcauseaudit100active1200elapsed/pinnedretainedrefs
+distinguishes readerfault vs realmodebehavior. No moreGET. Purefixedsplit
+bridge source does not apply/qualifyit;252consumer remains scopedUNKNOWN.
 Acquisition does not qualify models/Paper/independentperformance.
 
 Allocation marks086c62b9/CONSUMERc074bdcb:25sessionsAug27..Oct1,300bars/

@@ -9,12 +9,12 @@ Git, not all implementation. Private no-cost Data/Research/Paper delegated.
 
 | Owner | Actual State | Next Action |
 | --- | --- | --- |
-| Engine/Confucius | OriginalpairedGRU closedUNKNOWN/74.672active/prefitidentityfailure/leaseclosed,0retry. | NEW distinct causalattention pairedreturn/auxrisk source+CPUproof; sourcefreeze/parentGO before oneGPU, no renamedGRUretry. |
+| Engine/Confucius | Attention2actualCUDAfits COMPLETEed9a0e73/both20epochs-best0/TRAINmean/nolearnedgain/leaseclosed. | NEWno-fit250active2400elapsed task-alignment audit, retainednonconstantpackets/matchedcostresults; no models/GPU/API. |
 | Infra/Kepler | ActualF9 image49933 deployment5302b963/readback8594e934/closed7d90ff59,33triggers/ACL/253others preserved,0Run/API/privatebook. | Disjoint source-only multitask native-preflight review100active1200elapsed; no models/GPU/marketrows/API. |
-| Measurement/Boole | OldTTM/risk/measurement all ACTUALLY installed.15cell sectorallocation closed/independent09023890. | NEW source-only pairedmodel futureloop250active3600elapsed, ONE proposedTask/TWOfinitepoints; no install before finalnewABI/nativeproof. |
-| Data/Boyle | Actual58+10GET closed/SPY-XLK2087each/XLF-XLE1282each; repeatedinvalid closes exactoldercursors, not globalhistoryexhaustion. | NEW pure12fund57dateinput derivation200active1800elapsed/0API; input-only masks/oldcloseparity and five strategybasisflags. |
+| Measurement/Boole | OldTTM/risk/measurement installed; newconstantattentionfutureproposal retiredUNINSTALLED. | Purefixedsplitbridge + reusablefutureloop coldimport/weights-availability sourcefix, no models/API/newTasks. |
+| Data/Boyle | 57date12fundABI16c18682READY; MODP1XLKfirst1GET12OTHER/basisUNKNOWN/closed30b2996f. | NEWzero-API firstcauseaudit100active1200elapsed/retainedrefsonly, no modehops/repeatedGET. |
 | Execution/Gauss | Closed exactRO1auth2GET/noopenexacttuple/historyabsent; unknownrequest/reservationheld. Clone source/SYNfailed/noAPI, not retried. | Existing F9 nextOct20 15:10UTC/new typeddiagnostic path; no substitute/order-window expansion or unknown-request release. |
-| Parent | 302closedfits191CUDA111CPU, not architectures/profitablemodels. Lastpushedc288dfc/source970 QA. | Integrate materially changed evidence/docs; source-control equality/Ruff3Compose/commitpush. NAS outcome UNFINISHED. |
+| Parent | 304closedfits193CUDA111CPU, not architectures/profitablemodels; source970 QA/c288dfc. | Integrate materially changed evidence/docs/source-control equality/Ruff3Compose/Git. NAS outcome UNFINISHED. |
 
 Original NAS exit>=Oct21OPEN cannot be advanced by research. F9 entryONLYOct19
 until20:00UTC consumed; expiry never releases unknown reservation, exit>=Nov17.
