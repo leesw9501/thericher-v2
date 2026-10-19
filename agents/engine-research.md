@@ -13,10 +13,14 @@ marketfit, exact92599FIT/3150INNER, zero historicalEVAL; actor removed.
 A/research/current25-latest-matured-hgb-refit-20261019-v1, safe modela2a7acad.
 First new25 future tree call raw units COMPLETE912e24e8, no old forecasts.
 Independent HGB check PASS c743c275:24fixtures42checks3150INNER scalar replay,
-maxMSEerror4.44e-16, no new fit/futurepoint. Current ledger248=159CUDA89CPU including
-one old invalid; older247 below is the closed ancestral subtotal.
-Boole prepares one supervised21/63/252 multiscale GRU source, NOT yet a fit.
-Bernoulli's common-unit rank kernel24 synthetic checks PASS; no economics.
+maxMSEerror4.44e-16, no new fit/futurepoint.
+FOUR Oct19 fits COMPLETE:2CPU2CUDA, ledger251=161CUDA90CPU including one old
+invalid. Earlier248/247 are ancestral subtotals, not current allocations.
+Multiscale GRU21: one11373parameter model, supervised21/63/252 branches,
+22epochs/best2, native63.397s/owner77.847s. Five-session HGB76/best56 and
+MLP22/best2/native573.890s, pair604.671s. Max128/INNERpat20/LR/bestrestore,
+not convergence. All actors/leases closed, no active market trainer.
+Exact fit/data/selected-state/point refs: HANDOFF.md. No completed fit repeat.
 
 Semantic repair, not new alpha: original17 static HGB/GRU future scores were
 FIT-standardized; NEW8 scores raw. Old static-full25 joint ranking19e39d78
@@ -27,19 +31,36 @@ Derived packet3ea48eea, A/research/current25-common-unit-future-repair-
 20261019-v1, converts34 original17 scalars before rank; no model rerun.
 Independent check PASS60516dd6:34converted66unchanged175weights28fixtures,
 three affected policies; old immutable bytes/failures/debits stay unchanged.
-New13policy consumer a088c9cd/16tests +rank24tests, parent-bound r2 COMMIT
-1cd9b478/36riskyUNKNOWN3analyticcash/0observed days; GPU input still missing.
-One new five-session HGB/MLP SOURCE pair is being prepared, not fitted; same
-existing feed first5days offers earlier Oct23 feedback, fixed .1/21 cohort,
-no .1/5 leverage or matched-horizon dominance over old21day results.
+New13policy consumer a088c9cd/16tests +rank24tests: actual all13 inputs bound,
+parent-bound-multiscale-r1 COMMIT3e6aa3f1/36riskyUNKNOWN3analyticcash/0days.
+Multiscale first25point: oneCUDAroot/threebranches/one declared FULL-state
+restore including optimizer/RNG,0updates,100scalar conversions ParentPASS
+b9993c8b. Do not describe it as a model-only/no-RNG restore.
+Five-session HGB/MLP first25pair packet ea8ae442 COMPLETE, oneCPUtree/oneCUDA
+forward/0fits. New pure5policy consumer8tests, COMMIT1ec10aa7/12riskyUNKNOWN
+3analyticcash/0days. Existing first5D1daysOct19..23, fixed .1/21 cohort,
+not .1/5 or matched-horizon dominance over old21day results.
 
 Do not copy a whole-PC-empty nvidia compute-apps gate into new callers:
 actual WDDM query lists normal desktop apps and protected System/dwm/TabTip/
 Taskmgr contexts. Use canonical project ownership, actual named trainers,
 GPU-container evidence and fresh freeVRAM/allocator/desktop headroom; record
 desktop observations, never claim whole-PC exclusivity. New multiscale first
-admission failed before0allocations/0native/0fits,3.254s preserved; a separately
-scoped admission-only recovery is being prepared. Native SYN still required.
+admission failed before0allocations/0native/0fits,3.254s preserved; separately
+scoped admission-only recovery75f8e43d COMPLETE. Same native worker/model/data/
+seed/caps; real SYN/optimizer/best-state restore and market fit passed.
+
+Next-campaign throughput: native D6 D-bind fsync p50/p95=50.16/55.00ms,
+not measured actual training-time share. Research-only reserved counter r1
+25f87ce7:22tests PASS, actual CPU-only D6 proof9000guards/0hot-path IO/3syncs,
+explicit owned /out D-bind and RO source verified. Not adopted by old models
+or broker journals. Infra loss-only CUDA diagnostic is a separate synthetic
+package, not training. Its first admission failed NVML before0allocations/
+0loss calls. Separate runtime-health c239ec35 COMPLETE: sparse child fails,
+only ProgramW6432 addition passes, sparse control fails; actual D6 CUDA
+arithmetic/8loss-backward cases PASS/allerrors0,0models/6.407owned/lease closed.
+NEXT callers use explicit safe allowlist; do not retry old96call packet or
+claim throughput/training equivalence from this small health check.
 
 Ancestral247=159CUDA+88CPU market-fitted VERSIONS, including one old invalid
 depth-TCN result; not247 architectures/qualified models. Oct18 21:05KST

@@ -45,10 +45,17 @@ failed disagreement stump. One GRU family carries75% rank weight, HGB25%,
 not four independent experts. Source A/research/current25-residual-ensemble-
 feasibility-20261019-v1/rank_blend.py SHA26ffec54; no models/economics.
 Pure13policy/3cost future consumer a088c9cd/16tests COMPLETE under
-current25-current-research-future-measurement-20261019-v1. Actual parent r2
-bound correctedstatic+latestHGB; GPU absent/UNKNOWN, no guessed native ABI.
+current25-current-research-future-measurement-20261019-v1. Current parent
+multiscale binding3e6aa3f1 includes ALL13 policies, actual first25 GPU point
+qualified b9993c8b;39cells36riskyUNKNOWN3analyticcash/0observed days.
 Separate prefix MTM prevents waiting for day21 to describe available marks,
 without pretending incomplete windows are final returns or forcing exits.
+Five-session HGB/MLP target study COMPLETE, two fits/first25pair ea8ae442;
+pure5policy kernel8tests and actual consumer1ec10aa7/15cells/0observed days.
+Same analytical .1/21 cohort, first5 existing D1daysOct19..23, not .1/5 or a
+21-vs5 horizon growth winner. Multiscale/five-day are predeclared hypotheses,
+not a new parameter grid or Paper model switch. Current251 fitted versions
+include161CUDA90CPU/one old invalid, not251 distinct architectures.
 
 Critical retained-data repair: old d65cb5e9 full25 rankings combined original17
 FIT-standardized HGB/GRU and NEW8 raw. Checkpoint/hash equality missed units.

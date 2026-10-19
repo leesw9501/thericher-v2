@@ -33,10 +33,19 @@ are superseded, not input-data/cursor/f9 Paper faults. Derived common-unit
 3ea48eea, independent60516dd6 proves34 conversions66 unchanged175weights,
 zero models/market rows. New pure consumer a088c9cd/16tests reuses existing
 two D1feeds and permits honest contiguous-prefix MTM; final outcomes UNKNOWN.
-Parent-bound static/latest-HGB r2 COMMIT1cd9b478,39cells36UNKNOWN3analyticcash.
+Parent-bound all13 policies incl multiscale COMMIT3e6aa3f1,
+39cells36UNKNOWN3analyticcash/0days; old r2 is historical subset binding.
 Latest CPU HGB independently validated c743c275/3150INNER42checks24fixtures.
-Parfit separately prepares five-session target overlay for faster Oct23 model
-feedback; original21 labels/masks/source and scheduled collectors unchanged.
+Five-session target overlay COMPLETE, no new market acquisition:
+A/data/current25-five-session-target-overlay-20261019-v1/data-binding.json
+SHA646c0fbd, overlay29237dac. Target CLOSE[e+4]/OPEN[e]-1, FIT-only equal-date
+normalization.92579FIT3150INNER/4232-126dates,20 unavailable FIT exit endpoints
+excluded only by availability;95729supported targets exact/22fixtures.
+FIT targetmax5066<INNER5084; INNER targetmax5213<future5230.
+Original21 masks/scalers/gaps/source/collectors unchanged. Actual HGB5+MLP5
+fits and first25pair forecasts COMPLETE, no source/target fallback. Five fixed
+policies COMMIT1ec10aa7/12riskyUNKNOWN3analyticcash,0days. First5 existing D1
+sessionsOct19..23, same .1/21 analytical cohort, not extra broker capital.
 
 Historical hash/arithmetic facts, NOT joint score-unit proof:
 Research had exactfull25 static futurepacketd65cb5e9/seal19e39d78:

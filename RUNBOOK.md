@@ -237,8 +237,10 @@ Old packets/source/failures remain immutable, never rerun their native callers.
 Current pure comparison SOURCE:
 A/research/current25-current-research-future-measurement-20261019-v1/consumer.py
 SHAa088c9cd,16tests plus unit-explicit rank kernel24tests PASS. Parent-bound
-static/HGB actual r2 COMMIT1cd9b478:39 cells36riskyUNKNOWN3analyticcashKNOWN,
-zero observed days; GPU packet still explicitly missing, not a branch alias.
+multiscale binding parent-bound-multiscale-r1/COMMIT.json SHA3e6aa3f1:
+ALL13 inputs bound,39cells36riskyUNKNOWN3analyticcashKNOWN/zero observed days.
+Multiscale first25point actual, Parent100scalar conversions PASSb9993c8b;
+oneCUDAroot/threebranches/one declared fullstate optimizer/RNG restore/0updates.
 First parent adapter treated Python source as JSON; failedr1/source/debit retained.
 No model rerun. Parent r2 is consumed, DO NOT rerun its write-once main.
 Future API is consumer.measure_owned_feeds(portfolio,binding,strict_reader):
@@ -250,6 +252,53 @@ complete; no invented zeros, annualization or model-selection authority.
 Existing old20/new9feeds only; no new collector/schedule/Paper promotion.
 One analytical .1/21 cohort, not broker budget/PnL; unknown finality/PIT/TR
 remain limitations, not new global qualification/Paper gates.
+
+Five-session input/first25/measurement COMPLETE, not SOURCE or running:
+A/data/current25-five-session-target-overlay-20261019-v1/data-binding.json
+646c0fbd/target29237dac,92579FIT3150INNER/20unavailableFITexits excluded.
+Target CLOSE[e+4]/OPEN[e]-1; new5day FITnormalizer, never old21targetscalars.
+A/research/current25-five-session-hgb-mlp-development-20261019-v1/actual/SUCCESS.json:
+HGB76/best56, MLP22/best2/native573.890s, pair604.671s/all actors released.
+A/research/current25-five-session-hgb-mlp-future-points-20261019-v1/
+actual/PREDICTIONS-WEIGHTS.json ea8ae442; oneCPUtree/oneCUDAforward/0fit,
+actual host/holder EXIT0 beforeOct19cutoff; no reforecast.
+A/research/current25-five-session-future-measurement-20261019-v1/COMMIT.json
+1ec10aa7,5fixed policies/15cells12riskyUNKNOWN3analyticcash/0observed sessions.
+kernel.py/test_kernel.py8tests; bind_actual.py is write-once and CONSUMED.
+Read existing explicit FEED-BINDING.json, later write a NEW exact binding/output
+using existing old20/new9 first5marksOct19..23; never latest-scan or rerun point.
+Same .1/21 analytical cohort, not .1/5 leverage or broker budget. Prefix MTM is
+not final five-day profit; no cross-horizon growth-winner claim.
+
+Current ledger251=161CUDA90CPU fitted versions incl oneoldinvalid. Newfour:
+latestHGB21, multiscaleGRU21, HGB5, MLP5; ALL CLOSED, no active trainer.
+Models/selected weights/native timings are in HANDOFF.md. No completed native
+caller/SYN/fit/forecast is a convenient GPU warmup or health test.
+
+NEXT-campaign throughput sources, not old-fit/runtime deployment:
+- A/infra/research-training-throughput-diagnosis-20261019-v1/native-probe-1/
+  NATIVE-RESULT.json: D6 D-bind fsync p50/p95=50.16/55.00ms,12samples. Not an
+  actual training-time-share measurement or end-to-end speedup.
+- A/infra/research-reserved-counter-buffer-20261019-v1/reserved_counter.py
+  SHA25f87ce7:22fixtures PASS and native-control-result-r1.json CPU-only D6
+  proof9000guards/0hot-path IO/3syncs/actor removed. Explicit caller-owned D:
+  anchor or verified Docker /out D-bind, ROsource; missing/invalid terminal
+  charges frozen maximum. Pass exact expected identity/caps/checkpoint count
+  to offline inspect. Preserve r0snapshot/sourcefixture failure. Never use for
+  broker journals or patch closed training. consumer_recipe.md owns API.
+- A/infra/gpu-date-loss-vectorization-20261019-v1/actual/CLOSED.json: first
+  diagnostic stopped beforecreate/0reserved/0loss calls, NVML Unknown Error,
+  2.342s. Original immutable failure, not a model failure or proof of persistent
+  CUDA outage. Scoped diagnosis is separate; do not rerun original write-once
+  dispatch or widen parity tolerances. Separate scoped runtime health COMPLETE:
+  A/infra/cuda-runtime-health-20261019-v1/LAUNCH-WITNESS.json, sourcec239ec35.
+  HOST-ENVIRONMENT.json proves exact sparse child FAIL / only ProgramW6432
+  addition PASS / sparse control FAIL. Explicit safe allowlist includes
+  ProgramW6432=C:/Program Files; never copy ambient credentials/environment.
+  Actual pinned D6 CUDA arithmetic+8loss/backward cases PASS/allerrors0,
+  worker1.356s/ownedupper6.407s/nativeEXIT0/actorlease released. ZERO model/
+  optimizer/market fits; small health fixtures do not qualify old96timings,
+  end-to-end speedup or model trajectory equivalence. Callers consumed.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:
 A/infra/gru-native-throughput-preparation-20261018-v1/native-probe-1/HANDOFF.json.
 Synthetictimings/memory only, not market-speed/alpha/trajectory parity.

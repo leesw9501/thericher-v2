@@ -18,7 +18,8 @@ Current25 actual4fits CLOSED(2CPUHGB2CUDAGRU)/72knowncells, input19555 frozen,
 technical-r3 actualresults/cleanup/replay-recovery. GRUs2epochs/selected1/safe
 wallheuristicstop, not convergence. Two priorfailedSYN attempts andone separate
 correctedPASS remain, aggregatecounts/debits distinct, nooldstudyrefund.
-Current247=159CUDA88CPU. Retained-only72cellreview PASS507pins/seala55dc25d/noGPU.
+Ancestral247=159CUDA88CPU, superseded by251 below. Retained-only72cellreview
+PASS507pins/seala55dc25d/noGPU.
 
 Fixed-recency COMPLETE: native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5 under
 current20-fixed-recency-cudnn-development-20261018-v1.3fits/18knowncells,
@@ -93,11 +94,23 @@ allocation, old forecast repeat, convergence/alpha claim or dummy utilization.
 
 ## New Oct19 Appointment
 
-Latest-matured CPU HGB COMPLETE38/best18/one marketfit (one SYN not marketfit),
-zero EVAL, actor removed: current ledger248=159CUDA89CPU. Independentcheck active.
-One new multiscale21/63/252-GRU SOURCE assigned to Boole; one marketfit only
-after frozen source/native proof/Parent GO, no prior completed fit reuse.
-Existing4090 freshly available, lease absent; no running trainer inferred.
+FOUR new fits COMPLETE: latestHGB21 38/best18; multiscaleGRU21 22/best2;
+HGB5 76/best56; MLP5 22/best2. Current ledger251=161CUDA90CPU incl oldinvalid;
+248/247/245 above are closed ancestral totals, not current allocations.
+GRU native63.397s/owner77.847s; MLP573.890s/pair604.671s, actors/lease released.
+No historical EVAL; real native optimizer/SYN/bestrestore, independent HGB21
+c743c275 and HGB5 f2622578 PASS. Exact pointers HANDOFF.md.
+ALL first25 forecasts complete preOct19cutoff: multiscale oneCUDAroot/three
+branches/one declared fullstate incl optimizer/RNG,0updates; five-day oneCPU
+tree/oneCUDAforward,0fits/RNGrestore. No repeated forecasts/training.
+No active model/point/diagnostic GPU allocation now. Original96call diagnostic
+failed NVML before0native/0loss/0allocation,2.342s. Separate runtime health
+c239ec35 PASS: missing safe ProgramW6432 isolated by fail/pass/fail comparison,
+D6 CUDA arithmetic+8loss/backward cases PASS/0models/owned6.407s/lease released.
+This is health/parity on small fixtures, not old96benchmark/market speedup.
+No whole-PC-idle gate, driver/runtime replacement or global training hold.
+Counter r1 source25f87ce7/native CPU D6 PASS22tests/9000guards/0hotIO/3syncs,
+for NEXT campaign only, no old fit modification or broker journal use.
 All old caps/debits remain immutable. Current mean-branch supervised MSE and
 same causal latest labels are the declared new question, not utilization work.
 Common-unit future-packet repair uses zero model calls/GPU: mixed units in the
