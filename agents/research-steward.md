@@ -1,214 +1,60 @@
-# Research Steward Stateboard
+# Research Steward Stateboard (연구 자원 담당)
 
-Current Oct20KST. A=D:/thericher-v2/model-artifacts.
-ONE company objective: current-nas-owned-model-paper-cycle-v1.
-Steward owns exclusive GPU allocation/trial custody, not model choice,
-broker risk, human approval or a permanent daemon. Parent owns integration/Git.
+Current Oct20 KST. A=D:/thericher-v2/model-artifacts.
+Company current-nas-owned-model-paper-cycle-v1 remains unfinished.
+Steward owns exclusive GPU allocation and immutable trial custody, not model
+choice, broker risk, human approval or a permanent daemon. Parent integrates.
 
 ## Ready / Allocated
 
-Current ledger277=178CUDA99CPU incl one old invalid. Six context/control fits
-and pairwise-rank CPU fit actually COMPLETE; all actors/GPU allocations closed.
-Current source for next sector14vs52 Ridge/HGB/MLP sixfits4CPU2CUDA is not
-running training: source/native proof and actual Data input binding required.
-Seed1401/6000active14400elapsed includes preparation, CPU180/GPU1200 perfit,
-max160/INNERpat20/bestrestore, one canonical GPU lease/measured headroom.
-Before numerical effects the resource allocation was calibrated to at most two
-lifetime allocations (proof then market), one active at a time; no idle lease
-while Data pending, no fit/time-cap increase or old debit refund. Actual native
-qualification and market completion still need worker evidence, not this MD.
-No dummy GPU work or old fitting/forecast repetition to repair publications.
-Data accepted-cursor continuation and Execution technical recovery are separate
-owners; no global model approval wait. Context54 economic primaryFAIL3of3
-and pairwise-rank primaryFAIL close those grids, not every new hypothesis.
-Current exact package roots/refs: HANDOFF/orchestration; subtotals below historical.
+Completed ledger295=185CUDA110CPU fitted versions incl one old invalid,
+not architectures or qualified winners. Relative3, refresh6, existing4six,
+DeepSets6 and all earlier studies are closed; no completed fit is repeated.
+Their real source/SYN/failure/IO/cleanup debits remain charged; queue/review/
+LLM elapsed is separate from active CPU/GPU worker time.
 
-Renewed request: new5day fastGRU COMPLETE33epochs/best13/native83.285s,
-oneactualSYN/onefit/oneFIRST25point, all actors/lease released. Parent Ridge14
-onefit COMPLETE/independent158checks PASS. That step closed at253; current
-ancestral270=172CUDA98CPU after four native1m/12newOOF/oneCPUmeta. Prior subtotals
-ancestral. Newcounterr1/safe childenv apply only to new source, not old studies.
-Legacyouter claimsfuture0 despiteactualPOINT1; metadataqualificationba3064a9
-73checks preserves originals, no duplicate fit/point permitted.
-Native1m RAW30/120 and FIT-only-scale30/120 all4fits COMPLETE/released;
-13epochs/best1 each. Seals191e063f/5ccf3141. Costs dominate the one reused
-DEVday; Kepler CPU-only retained net-edge COMPLETEdee191bb, no new fits.
-Data41775 examples/c72f1a08 and exact390x20 replay marks are ready; tiny8day
-data/provisionalminute-label assumptions limit claims, not GPUauthority.
-Boole NEW3fold/4family OOF base campaign COMPLETEf0ca0556:
-12fits6CPU6CUDA, seed1201,10800active/21600elapsed, GPUfit1500/CPUfit300,
-0retry; actual491.431phaseupper/all16actors removed/oneGPUlease released.
-12rawpackets6600scores/0OOFtargetreads. DataREADY067b39ab; labels separate,
-fold-local FIT targetnormalizers, inputscaler5b5f3f before every INNER/OOF.
-Convex meta COMPLETE6893608b/oneCPUfit/27cells/oldfailurepreserved,
-268.071cumulativeactiveupper inclreadback/original122.304, no base repeats.
-Weights503c54aa hosthash before terminal3/7047NAVoracle/independent111checks.
-Confucius CLOSED pairwise-rank meta9ffa42d7, oneCPUfit/3newcells/27controlsreused,
-600active3600end/oneSYN/onefit, noGPU. ReusedDEV/adaptive, not independent alpha.
-CLOSED contextual-vs-no-context6CUDAfit actualccdb03e8, seed1301/same3folds,
-9000active18000end/perfit1200/max160/INNERpat20/0retry/onecanonicallease.
-Measured headroom required at actual start; SOURCE is not current GPU activity.
-Two context GPU SYN API failures21.512debit/2allocations released/0markets;
-linked CPU fixture then scheduler-epoch mismatch. Source-test debug is bounded
-and all failures/debits remain; strict optimizer/state/RNG criteria unchanged.
-Reserved SYN stages/fits are not actual CUDA allocations or completed fits.
+Full-sector NEW3fits COMPLETE17:48:04UTC,2CPU1CUDA/source5b6c614b/
+113checks/39cells/all3primaryFAIL/old6models27cells byte-reused.
+Family87.299activeupper/1266.509elapsed; all actors quiescent/lease released,
+MLP21/best1/14.721sCUDA. Independent frozen result check separately owned.
+One prior native52 proof reused under exact compatibility,0newSYN/modelcall
+qualification, zero-model bounded replayrepair preserves failed result/debits.
 
-All completed training/transfer allocations released. SOURCE preparation and a
-retained reader are not proof of running CUDA. Last measured trusted runtime:
-D6 sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
-PyTorch2.7.0+cu128/Python3.12; RTX4090. Measure current free resources at
-allocation, preserve desktop headroom, one named canonical GPU lease.
-WDDM desktop N/A memory is not a competing project training process.
+CURRENT ready frozen TTM source/input, Boole numericalGO17:50:47UTC after
+observed full52 lease release, not an actual GPU-running claim:
+A/research/current-ttm-return-head-development-20261020-v1.
+Source b4d72d82/inputfb607b1d,8345FIT/1675INNER rows,
+source73.091active upper already consumed. No fullcheckpoint load/GPU/fit yet.
+One TTM allocation and full native CUDA optimizer/checkpoint/freeze proof
+before two linear heads. Independent fae75280 review found no actionable
+sourcebug/P1;20activeupper separately charged, no duplicated model calls.
+Overall900active5400elapsed from17:27 includes preparation, not a fresh clock;
+extraction<=300/eachhead<=180/SYN<=120,seed1601,0retry,max128/INNERpat12.
+Retained trusted image71fe84b0/weights30f8d9be; no new runtime dependency.
 
-Current25 actual4fits CLOSED(2CPUHGB2CUDAGRU)/72knowncells, input19555 frozen,
-technical-r3 actualresults/cleanup/replay-recovery. GRUs2epochs/selected1/safe
-wallheuristicstop, not convergence. Two priorfailedSYN attempts andone separate
-correctedPASS remain, aggregatecounts/debits distinct, nooldstudyrefund.
-Ancestral247=159CUDA88CPU, superseded by251 below. Retained-only72cellreview
-PASS507pins/seala55dc25d/noGPU.
+Canonical lease: A/engine-research-agent/locks/gpu.lock.
+Measure actual free VRAM/utilization and preserve desktop/runtime headroom.
+GPU idle during bounded input/native qualification is not a permission hold;
+no dummy training to maximize utilization. Execution reliability may preempt
+at a safe checkpoint. Close/release actual actors before handing ownership on.
 
-Fixed-recency COMPLETE: native-dtype-recovery-r2/FROZEN-ACTUAL8975efb5 under
-current20-fixed-recency-cudnn-development-20261018-v1.3fits/18knowncells,
-HGB77/best57, fastGRUuniform39/best19 andrecency23/best3, not convergence.
-All4allocationsreleased; bothprimaryFAILgrowthup/DDworse; retainedreviewPASS346checks.
-SYNfloat32/nativefloat64 prefix failure0marketfits retains olddebit; separate
-dtype-only proof/recovery does not reset old cap or repeat completed fit.
+TTM firstcaller CLOSED75.778activeupper/0allocationattempts, prelaunch
+WindowsTerminal taxonomy refusal. OldUNKNOWNnativecounts/closure unchanged;
+new source-branch/nochild proof required before attributing zero native effects.
+Scoped identity-verified local taxonomy correction plus negativefixtures may
+use remaining oneactualallocation/SAME2starts0marketretry within original
+900/5400 including failed/source/newproof debits. No arbitrarybasename
+exemption, desktopkills or lease reclaim. Exact recovery in Engineboard.
 
-Complete current25-complete-history-fast-experts-development-20261019-v1:
-FINAL43379data/old17rows-scalers-reference-4001dates exact,3proposedfits HGB+
-fastGRUuniform/recency full25, seed808. Retainedcontrols/old17scores reused,
-not refit. Actual3fitscomplete,HGB73best53/GRU65best45/37best17, INNERpat20,
-no convergence claim.81cells3primaryFAIL/PASS/FAIL, independentPASS150480checks/
-81bit-exactNAVs/42controls, ACTUAL-REVIEW-SEAL dd885a57.
-Original415.775s/5releasedallocations controlpathfailure remainsUNREADY;
-linkedunconsumedcontrolphase no refits. Model-onlycatalogca0ad8bb, not econPASS.
+## Closed Custody / Recovery
 
-Complete current20-full25-trained-future-shadow-20261019-v1 actual-forecast-r1:
-3intakes/1CPUHGB2CUDAforward/zero fits, sourcec774d1c3 unchanged. Finalwrite
-Oct18 16:02:06.855826UTC, Parenthash/51weightsPASS/seal05f6849c;lease released.
-Next new8prospective sixpairarms SOURCE15f8c082/protocold9376e92; numerical
-180actualowned900end/ONEGPU4/freefloor8/desktop4/CPU2RAM4/1attempt0retry,
-6intakes2CPU4CUDA/zero fits/oldpoints actualv2firstwrite16:39:19.458487UTC,
-Parent48+16weights/hashchainPASS/SEALED0d1512a9,lease released. V1missingimport
-before0modelcalls remainsUNAVAILABLE/21.434debit; informednewsourceversion
-doesn'tregradeit. Family2/2nativeattemptsclosed, all-in56.973 inclsource15.050,
-not oldhandoff41.923numerical-only subtotal. No furtherold6familycalls.
-TimesFM2.5 NEW8CPUbenchmark ACTUAL onebatch/oneRootforward/onecoldload,
-zero fits/GPU/retries, finalwriteOct18 17:22:20.564931UTC/sealbfe2316a.
-Native21.683owned120/end234.60of600,2.2GiB RSS; actor reaped/no GPU lease.
-Parent independentpublication-r2 checks counts/sourcechain/8scores+weights;
-forecast never repeat. Existingcheckpoint/runtime, no download. Futureunknown.
-
-Temporal appointment current25-temporal-expert-composition-development-
-20261019-v1 CLOSED before0marketstarts/0economiccells. Original SYN45s time
-guard failed; linkedSYN10->5 is a source/control deviation, not original
-qualification. TCN2/2failed/PATCHlinkedSYN5only,57actualSYNforwards21updates,
-reservedupper62/22. SYN-TAIL-DISPOSITION.json, all actors/leases released;
-No market fits from failed C. Do not launch old caller or regrade/refund its clocks.
-Separate Infra calibration current25-temporal-native-calibration-20261019-v1
-COMPLETE oneGPUadmission/2serialchildren/50forwards16updates8saves4restores/
-6constructs,originalSYN10/market60/3epochs/fullstate criteria.80.281owned480/
-678.654elapsed900atcleanup; actorabsent/canonicallease released. Independent
-110metadata/sourcepinsPASS/ACTUAL-READBACK2d0552ab/no native rerun. Old failed
-C is not requalified/refunded. R1 per-child admission preserved both ceilings.
-Next market SOURCE staged current25-temporal-experts-calibrated-development-
-20261019-v1; Parentselected7200perfit16000active28800end from17:42:22UTC,
-2marketstarts0retry/max128/pat20/LR/bestrestore, same original criteria/data.
-ExactREADY26869e99/source27workersd2f6783f/protocol476e9a96 ParentcheckPASS/GO.
-ACTUAL2fitscomplete TCN21best1/PATCH22best2/INNERpat20;11038forwards5418updates/
-43saves2restores,zeroSYNretryresume. Nativeworker5702.94/66.62s;5847.47owned16000/
-7001.23elapsed28800/bothactorsreaped/leasesreleased. Ledger245closed.
-Actualeba59d01/model-only066bb1d8/independent60746605(27NAV81controls402pins),
-all3jointprimaryFAIL, no convergence/independent-alpha/Paper claim.
-Future3policy writer/36cell reader SOURCEstagedffac4e19/d973e41b;
-pointACTUALSEALED4de52237/19:50:53UTC/2firstCUDAforwards0fits/25.663owned120/
-actorabsentlease released. Parent9refchain/24weights8manualblend PASS e3ee3ba3;
-33riskyfuturecellsUNKNOWN3analyticcashKNOWN/all21marks missing. No repeats.
-Latest-matured samefastGRU refit COMPLETE:25epochsbest5/INNERpat20,
-6752forwards3325updates25saves1restore/2logical4physical/native97.42s/
-peakreserved7.71GiB. Oneactorreaped/lease released, model-only11189fad/
-actualdcdae6f4/Parent141actual16sourcepinsPASS.208.650active3000/1376.148end7200;
-oldRAW30.107stillseparate/initiative238.757. No SYN/oldproof rerun/historyEVAL.
-Latestpoint1CUDA/1intake1logical2physical/nativeEXIT0 completed, but original
-publicationUNAVAILABLE/outerEXIT1 dueoutput-binding variable shadow;24.671debit
-unchanged/actorlease released/NO native retry. Zero-model metadata recovery
-COMPLETE viewe7ed7dc9/receipt220957bc/prooff8b0cd40/newwrite20:34:30.097135UTC.
-Typed39consumer actualseal a2316b5d/result9e18f8bc PASS, no model/GPU/weights
-or economic calls. Original UNAVAILABLE/native0outer1 remains; reconstructed
-view only. All21marks missing/36riskyUNKNOWN3analyticcashKNOWN; no new training
-allocation, old forecast repeat, convergence/alpha claim or dummy utilization.
-
-## New Oct19 Appointment
-
-FOUR new fits COMPLETE: latestHGB21 38/best18; multiscaleGRU21 22/best2;
-HGB5 76/best56; MLP5 22/best2. Current ledger251=161CUDA90CPU incl oldinvalid;
-248/247/245 above are closed ancestral totals, not current allocations.
-GRU native63.397s/owner77.847s; MLP573.890s/pair604.671s, actors/lease released.
-No historical EVAL; real native optimizer/SYN/bestrestore, independent HGB21
-c743c275 and HGB5 f2622578 PASS. Exact pointers HANDOFF.md.
-ALL first25 forecasts complete preOct19cutoff: multiscale oneCUDAroot/three
-branches/one declared fullstate incl optimizer/RNG,0updates; five-day oneCPU
-tree/oneCUDAforward,0fits/RNGrestore. No repeated forecasts/training.
-No active model/point/diagnostic GPU allocation now. Original96call diagnostic
-failed NVML before0native/0loss/0allocation,2.342s. Separate runtime health
-c239ec35 PASS: missing safe ProgramW6432 isolated by fail/pass/fail comparison,
-D6 CUDA arithmetic+8loss/backward cases PASS/0models/owned6.407s/lease released.
-This is health/parity on small fixtures, not old96benchmark/market speedup.
-No whole-PC-idle gate, driver/runtime replacement or global training hold.
-Counter r1 source25f87ce7/native CPU D6 PASS22tests/9000guards/0hotIO/3syncs,
-for NEXT campaign only, no old fit modification or broker journal use.
-All old caps/debits remain immutable. Current mean-branch supervised MSE and
-same causal latest labels are the declared new question, not utilization work.
-Common-unit future-packet repair uses zero model calls/GPU: mixed units in the
-old25 jointranking are superseded, original native points unchanged.
-
-## Closed Custody
-
-Ancestral market-fitted versions247=159CUDA+88CPU, including ONE old invalid
-depth-TCN checkpoint. Latest29versions=6ranking9ablation4cohort3recency3full25+2temporal+1latest+1stump(24CUDA5CPU),
-not29 architectures/qualified models. SYN, foundation inference, reader calls
-and zero-fit allocations/shadows do not count as training.
-
-Date-disagreement stump CPU marketfit1/SYNfit1 COMPLETEf8d0f9d5, zero base/GPU
-calls,38.915active300/actorreaped.24knowncells/primaryFAIL/noPaper switch,
-independent retained PASS35877467/24cells141pins/zero models. Both leaves
-nonpositive ->fixedblend alias, no separate router call. Missingoriginal17
-TCN/PatchTF ACTUAL2firstCUDAforwards/2intakes2constructs/34rows COMPLETE;
-seal19e39d78/packetd65cb5e9/Parent100scores175weightsPASS5ca9c129.
-45owned180/oldsource90unchanged, onelease/actorreaped/released,peakreserved
-37.75MB. Zero fits/retries/old8-HGB-GRUrepeats. Full25consumer COMPLETE
-60f79d30/7fixturegroups/21cells18riskyUNKNOWN3analyticcashKNOWN; no new model
-calls. All allocations released, future marks missing, no dummy training.
-
-| Family | Closed Evidence |
-| --- | --- |
-| Ranking606 |6fits/63 knowncells/primaryFAIL3/3,353.91active3600, all7leasesreleased; independentPASScc657600.|
-| Ablation707 |9fits/72 knowncells/overallFAIL,535.775active3600/712.88elapsed10800, all11leasesreleased; independentreader-r1 PASS5b1a3785.|
-| Allocation |0fits/forwards/GPU,81 cells, bothselectorsFAIL; independentlinked-r2 PASScd13e848.|
-| Transfernew8 |0fits/1GPUallocation/16 neural batches,21knowncells,primaryFAIL;171.51active1200/oneattempt/lease released.|
-| Five future arms |0fits/GPU/optimizer/oldforwards;5new CPU-native forwards, firstpacket13:11:40UTC; future outcomes UNKNOWN.|
-| Cohort808 |4fits/72knowncells, twoGRUepochsselected1/safeheuristicstop, cleanupreleased; oldnative/replayfailures preserved, independentPASSa55dc25d.|
-| Recency808 |3fits/18knowncells,2CUDAworkers110.13/67.54s,actualepochs2.5-3s,notisolatedbackendcausality;4allocationsreleased,independentPASS346checks/18bit-exactNAVs.|
-| Fourrecencyfuture |0fits/2CUDAforwards2CPUcalls/4intakes,all68weights independentlyrecomputed/preOPENhashchainPASS;leaseclosed,futureoutcomesUNKNOWN.|
-| Native-throughput |0marketfits,1GPUallocation/44forwards16SYNupdates4exactrestores,57.03owned120; allresourcesreleased, no market-speed/parity claim.|
-
-Producer/reader/source clocks and old failures/overruns are immutable. Ranking
-native137 commits and ablation218 commits/checkpoint restores are distinct
-proofs, not extra trials. Ablation native SYN identity and host mathematics
-were separately verified; no cross-host/native parity claim.
-Five-shadow old228.005/300 failure and late bookkeeping overrun remain; actual
-R3 numerical completion/readback does not refund or regrade those debits.
-Data failed dynamic job charged1560/1500; not successful runtime/budget authority.
-
-Earlier custody (seed,Transformer,SPYrelative,Chronos,TCN,LightGBM,OOF,TimesFM)
-remains exact in Engine board/Git1ce5f45 and immutable family roots. Never
-repeat completed fits, rerank seen data as untouched, reopen failed caps or
-change a frozen original criterion. New sensible budgets protect new campaigns,
-not artificial universal VRAM/epoch/time ceilings.
-
-## Recovery
-
-Execution reliability preempts at a safe checkpoint. Safe checkpoints/weights
-remain D:, not Git; use trusted runtime/serialization only. Actual native SYN
-must exercise optimizer/diagnostics/best restore and exact input ABI. A prepared
-role MD or available GPU is not a reason to perform dummy training.
+Exact completed campaign/result refs and claims are in engine-research.md and
+HANDOFF.md; trial ledger is existing custody, not a new report platform.
+Source-ready, prospective-data ready, model fit and deployed Paper are separate.
+Old epochs/seed/VRAM/time/no-rerun rules protect their immutable study only,
+not a universal ban on new data/targets/convergence/regularization campaigns.
+New finite axes/budgets and strongest kill tests are frozen before dispatch.
+Incomplete source fields defer that package only; Data/Execution/CPU prep move.
+Never refund old debits or reopen holdouts under a metadata-repair label.
+Recover after interruption from exact ownership/checkpoint/result linkage,
+not latest-artifact discovery or utilization graphs.

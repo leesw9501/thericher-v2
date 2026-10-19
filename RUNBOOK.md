@@ -13,7 +13,7 @@ Do not rerun completed creators/installers/numerical fits just to refresh time.
 | Owner | Current Runtime / Next Opportunity |
 | --- | --- |
 | NASmodel |Samefinite thericher-kis-paper-current-nas-model-20261015,image87697f8e;8retainedFULLfills, ownedexit>=Oct21USOPEN.|
-| Newfixedensemble |thericher-kis-paper-current20-equalrank4-20261018,Ready/Enabled,image378f2034,31finitestarts/PT5M;firstOct19 15:10UTC=Oct20 00:10KST.|
+| Newfixedensemble |thericher-kis-paper-current20-equalrank4-20261018,Ready/Enabled,newimage566e02d8/sourceffece26d/guard468899ae,31oldslots+ONE18:00UTCrecovery/PT5M;installed17:47:33UTC.|
 | Nightly |thericher-kis-paper-daily-spy-session,image30433095,23:50KST;exactOct17 00:52recoverycomplete/all28terminal.|
 | Goal97 |Distinctowner,entryOct19 22:30/22:40KST,exitOct24 04:50/05:00KST.|
 | Current20RTH1m |Quiet06:50KST Tue-Sat,firstOct20;notobservedcapture.|
@@ -54,14 +54,30 @@ Same verification root/authority.json:1362source78a4054f,1514changed-path serial
 AGENTS/DECISIONS digests required; this does not validate other external code.
 Quoted PS5 Docker label template fails while JSONprojection works; separate
 new-probe packaging bug, not historical f9seq0 cause. No manual Task invocation,
-substitute request, bank reset, schedule expansion or relaxed risk to force entry.
+substitute request, bank reset or relaxed risk to force entry.
+
+IMPORTANT actualScheduler16:22UTC f9last15:22code20/nextOct20 15:10/31triggers:
+all4originaltoday slots consumed; retargetalone will not enter before20UTC.
+The17:00/17:15 installation attempts failedverification and rolledback before
+their slots; actual17:20:45UTC retained31/Ready/originalfullACL/definition.
+Inert disabled publicTaskprobe reproduced Z->equivalent+09:00 lexicaltime
+postcheckfailure; UTC-instant comparer passes native snapshots/11negatives.
+NEW technical-install-recovery-r3 ACTUAL17:47:33UTC beforecutoff17:50:
+ready-visit-04/INSTALL-RESULT.json INSTALLED_READY_NOT_INVOKED,32triggers/
+old31/principal/settings/fullACL/allotherTaskdefinitions preserved. Current
+CUTOFF-READBACK17:51:18 VERIFIED_INSTALLED_32_READY,nextdue18:00UTC/end18:05.
+No furthermutation/manualinvoke. Exact pairedreader/source/image/input/bank/
+nativeintentIDs remain mandatory; a verifiedinstall is not a submit or fill.
+Never manually replay a consumed Task or replace an unknown intent; no recurring
+expansion or automatic missed-slot chain. New scoped review/evidence in HANDOFF.
 
 Existing web monitor remains loopback http://127.0.0.1:8787.
 No public exposure/UIredesign in this package; health is not fresh custody.
 
 ## Exact Runtime Bindings
 
-Newensemble frozen repository/image/input:
+Newensemble ORIGINAL frozen repository/image/input (historical baseline,
+NOT current paired18:00image; currentr3exactpins/readers above):
 A/execution/current20-ensemble-paper-deployment-20261018-v1/recovery-r1/
 parent-deployed.json.
 Image sha256:378f203475a794b089d44348f683e1073da92ac4180c1f3968ddcd89e6e9cc8a.

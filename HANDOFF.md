@@ -17,12 +17,18 @@ owners retain their standing authority. No model profitability permission gate.
 
 ## Actual Owners Oct20 KST
 
-Parent owns shared docs/integration/Git; prior checkpoint3ac55fa pushed.
-Boole owns next matched sector-feature campaign; Boyle owns its accepted-cursor
-Data continuation. Gauss owns Paper technical recovery/new paired deployment.
-Kepler's two-script host repair is frozen for Parent QA; separately checking
-possible false-positive offline actors. Confucius independently reviews the
-frozen next research source. An MD/source seal is not a running worker.
+Parent owns shared docs/integration/Git; code checkpoint168f79d pushed.
+Boole completed full-sector3 NEWfits and owns TTM numericalGO17:50:47UTC.
+Kepler TTM independent source reviewfae75280 found noactionableP1/20activeupper,
+agentclosed. Boyle acquisition COMPLETE; optional frozen-result check INCOMPLETE
+own-schema error/43preliminaryasserts/136.68over120debit, agentclosed. No
+scientificbug established or independent pass. Gauss installed recovery17:47:33,
+nextdue18:00UTC, natural outcome not yet known. Confucius package/agentclosed.
+An MD/source seal is not a running worker. All completed GPU leases released.
+TTM firstcaller stopped before allocation on WindowsTerminal WDDM taxonomy;
+old75.778debit/nativecountsUNKNOWN retained. New identity-proven prelaunch
+recovery under SAME900active5400elapsed/2fit caps is in engine-research.md,
+not a model failure, numericalretry or permission hold.
 
 - NAS image87697f8e: eight retained FULL entries, exit>=Oct21 US OPEN.
 - Nightly image30433095: natural Oct19 23:50KST failed open-orders read before
@@ -82,9 +88,35 @@ scripts/run_kis_paper_etf_daily_context.py supplies public PATHEXT fallback only
 missing/empty/blank, preserving nonempty inherited values/secret exclusion.
 Two new test files, no risk/order/model/diagnostic-schema changes.
 SOURCE ONLY until paired source/image/reader/owner-probe rollout, exact
-quiescence and rollback. No manual Task replay, new trigger or substitute order.
+quiescence and rollback. No manual Task replay or substitute order.
 New local image566e02d85c4291bbc11999511629734b8b1d8be5cbddb2f0f2ca22ffc080addb
 built; build alone is not deployment.
+
+Actual Scheduler16:22UTC: f9Ready/lastOct19 15:22code20/nextOct20 15:10UTC,
+31triggers. ALL four original today's slots are consumed; next visit is after
+entry expiry. Retarget alone cannot produce another eligible entry opportunity.
+Two bounded17:00/17:15 installation attempts failed verification and rolled
+back BEFORE their slots. Actual17:20:45UTC:31original triggers/Ready/last15:22
+result20/original definition hash/actual full ACL preserved; no new recovery
+currently installed. Historical r2 inner predicate was lost, not invented.
+One inert disabled public Task probe (1create/1update/1exactdelete/0Run,
+verified cleanup/otherTaskhashes/ACL) reproduces native Z->equivalent+09:00
+normalization rejected by lexical finite_recovery_shape. UTC-instant-only
+fixf0b28e9c passes captured-native comparer/11negative tests, not risk weakening.
+A/infra/current-scheduler-normalization-probe-20261020-v1/FINAL.json.
+NEW single main install r3 ACTUAL17:47:33UTC before17:50cutoff, nextdue18:00/
+18:05end. ready-visit-04/INSTALL-RESULT.json INSTALLED_READY_NOT_INVOKED,
+32triggers/old31/principal/settings/fullACL/allotherTaskdefinitions preserved.
+CUTOFF-READBACK17:51:18 VERIFIED_INSTALLED_32_READY. No further Taskmutation;
+Gauss reads natural exact bound outcome, not manualRun or a fillclaim.
+Measured fix and retained first-failure diagnostics preserve31oldtriggers/Task/
+principal/settings/fullACL/input/bank/nativeintentIDs; no manual invoke/new
+capital/substitute intent or automatic missed-slot chain. Installation is not
+runtimeclosure. Native reconciliation/fresh account/quote/orderability/sizing
+still mandatory before effects. Installer0HTTP never proves0scheduled effects.
+Claude current-fixedrank-one-recovery-opportunity-20261020-v1 REVISE: exact
+unknown-effect proof, single-use/idempotency, atomic Task mutation/rollback,
+unretained old rootcause. Adopted; no new human authority required by AGENTS.
 
 Scoped new read-only/Data callers use60s token issuance floor on SAME atomic
 timing/legacy locks, valid-token reuse, no reset/reclaim/TTL change. Measured
@@ -94,11 +126,29 @@ contracts remain unchanged. Token deferral is not provider rejection.
 
 ## Next Useful Research
 
-Current fitted-version ledger277=178CUDA99CPU incl one old invalid, not
+Current fitted-version ledger295=185CUDA110CPU incl one old invalid, not
 architectures/profitable models. All completed fits/forecasts remain immutable.
-Last context6 GPU allocation is closed; next source is not running training.
+Closed relative3/refresh6/tilts are in Engine board. NEW full-sector3 COMPLETE
+17:48:04UTC/source5b6c614b:2CPU1CUDA/113checks/4650scores/39cells/
+all3primaryFAIL. Old6models/forecasts27cells byte-exact,0oldforwards. HGB26/
+best6,MLP21/best1/14.721sCUDA;87.299activeupper1266.509elapsed/allactors/
+lease released. Boundedzero-modelreplayrepair retained failure, no rerunfits.
+Data R3 final84b36d4a/source680c9d14 is actuallyREADY:176/176queries,
+12routes x2087closes, same34327keys/875242314dates,480578context parity.
+R3 44acceptedGET (40history+4fresh),1auth/0retry/389.81active/701.51elapsed;
+all collectors absent. Historical availability/finality/PIT remain unknown.
+TTM source b4d72d82/inputfb607b1d READY:8345TRAIN/353dates and1675INNER/
+67dates,36+19checks/5130240contextscalars/10020labels. Source73.091active
+already consumed; parent numericalGO17:50:47 after actual52lease release.
+Independentfae75280 review found noactionableP1/20activeupper. Two heads use identical
+512closes (raw511returns), frozen TTM192embedding, exact image71fe84b0 and
+checkpoint30f8d9be. Overall900active5400elapsed from17:27 includes source;
+native fullcheckpoint CUDA/freeze/optimizer/checkpoint proof before fits, after
+full-sector releases lease. Oct20 future input UNKNOWN, no stale padding.
+Current engine-research/research-steward boards supersede the historical
+appointments below; their old results/clocks/failures stay unchanged.
 
-NEXT A/research/current-sector-market-context-development-20261020-v1:
+UNSTARTED52 source A/research/current-sector-market-context-development-20261020-v1:
 Ridge/HGB/MLP x14vs52,6NEWfits4CPU2CUDA,seed1401,6000active14400elapsed
 from original15:30:38UTC including preparation; maximum160/INNERpat20/LR/
 bestrestore, CPU180/GPU1200 perfit, no market retry. New RAW14 rebuild and
@@ -117,6 +167,84 @@ and CUDA optimizer/checkpoint/next-update proof still required, not fake fixture
 One active canonical GPU lease; pre-effect resource calibration allows at most
 two lifetime allocations (proof then market), same finite fit/time caps. Release
 idle allocation rather than hold GPU waiting Data; no dummy utilization.
+Corrected sealecf2bff9/independentchild-r1 readback30checks PASS/all25IDs/
+20stockfloor/8realCounterroundtrips. Native4CPU+2CUDA tiny fits actually PASS,
+20CUDAupdates/6saves/4fullrestores/bothnextupdates exact, proof allocation
+released. Failed3.013s retained, cumulative83.586owned upper/6000; market0.
+
+NEW priority A/research/current-existing4-sector-context-development-20261020-v1:
+use actually-ready SPY/XLK/XLF/XLE14context+RAW14 for matched14vs28 sixfits,
+same seed1401/splits/target/purges/maxepochs/INNER/costs/gross/27cells and
+original6000active14400elapsed from15:30:38, old83.586never refunded.
+This explicitly supersedes unstarted52 MARKET dispatch, not a52 pass; no52
+fits additionally under the same cap. Freeze actual common input support
+before labels, TRAIN-only rawscaler, same masks in botharms. One remaining
+GPU allocation may proveNEW28native API then marketfit, never repeat closed
+14/52 proofs for metadata. Data backfill proceeds independently; no all12gate.
+Claude current-existing4-sector-context-20261020-v1 KEEP with adaptiveDEV/
+scaler-support/no52claim/multiplicity limitations adopted. Assigned, not yet
+evidence of a markettrainer from source alone. Actual existing4 study now
+COMPLETEa497b4cd/source48bd933a:6fits4CPU2CUDA/0retry,6packets9300scores,
+228checks,2728forwards1176updates42saves2fullrestores. HGB44/best24 and
+37/best17; MLP21/best1 both, not160cap exhaustion. Family213.527activeupper
+includes old83.586/failures/source/SYN/IO, lifetime allocations2/2 closed.
+All actors removed/lease released; no currently running trainer from that study.
+27cell replay/independentNAVgap8.88e-16, pairedFAIL/PASS/FAIL. At10bpPERLEG:
+HGB28growth1.268825%/DD3.181003% vsHGB14 1.245712%/3.360350%; growth uplift
+only2.311bp over this reused study. Uniform.688409%/1.731266%, rank3enriched
+.285230%/3.731886%. No qualified winner/Paper switch/independent alpha.
+Old idle-anchor cash_capped_entries diagnostic26 means actualactivecaps0;
+original bytes/NAV/economics unchanged, qualification records correction.
+
+NEXT A/research/current-relative-target-development-20261020-v1 assigned:
+3NEWrelative28 fits2CPU1CUDA, same seed1401/inputs/loss-support/datekeys as
+closed raw28 controls. Reuse ALL3 raw28 models/forecasts and15old control
+cells byte-exact;12newcells/27total. Label=center each TRAIN/INNER date's
+existing supported raw5 labels, NEVER a live input/feature/selection signal.
+TRAIN-only affine, unchanged input membership; no DEV labels in trainer or
+outcome-tuned checkpoint. New1200active3600end/oneGPUallocation/zero market
+retry; old213.527 never refunded. Pure support/partition/future-date checks
+plus real nativeSYN before3marketfits. Research-only, no broker/runtime change.
+Claude current-relative-target-campaign-20261020-v1 KEEP: label-support,
+DEVselection, small-universe and score-unit caveats adopted. Source papers
+are motivation, not proof of daily25-stock alpha. Actually COMPLETE43539e47:
+3fits2CPU1CUDA/0retry/114checks/88.230active/allocreleased.12newcells15old
+controls byte-reused/NAVgap4.44e-16;10bp primariesPASS/FAIL/FAIL, all three
+still weaker than uniform in growth/risk combination. MLP21/best1/HGB46/best26.
+
+Causal refresh COMPLETEf15141c4/source9fda52f9 under
+A/research/current-causal-refresh-development-20261020-v1:6fits3CPU3CUDA/
+148checks/3100scores/3051updates79saves3restores/153.878active/allleases closed.
+Origins2025Jan8/Oct8/2026Jul8 each63pastINNERdates, official5entrypurge/FIT-only
+scalers/maturity PASS. HGBepochs/best37/17,128/127,38/18; MLP22/2,34/14,23/3.
+October HGB reaches cap, not convergence proof.21cells12old byte-reused9new,
+NAVgap5.55e-16, both primariesFAIL.10bp refreshHGBgrowth-.294327%/DD3.117819%,
+refreshMLP.880997%/3.448781%; uniform.688409%/1.731266%. No qualified winner.
+
+CPU diversified tilt COMPLETE under
+A/research/current-diversified-tilt-development-20261020-v1/COMPLETE.json:
+exact .75uniform+.25oldHGB14/28 stockweights/SAMEtotalgross,6newcells9old
+bytecontrols/5286DecimalNAVs maxgap2.442e-15/40active/0modelsGPU. Both10bp
+versusuniform primariesFAIL:tiltsgrowth.827734%/.833513%, DD2.097898%/2.053213%.
+No fittedlambda/nextgrid or exposure-reduction-as-alpha claim.
+
+NEXT full-sector SOURCE A/research/current-full-sector-context-development-
+20261020-v1 uses actualfull12 Data below; no market GO yet. If verified same
+input/key/scaler support, reuse old6 raw14/28 models/forecasts and27cells,
+fit only3NEW52 experts plusrank3_52/12newcells; no oldbaseline refits.
+NEXT TTM head SOURCE/input preparation under
+A/research/current-ttm-return-head-development-20261020-v1, exclusive Kepler.
+Frozen trusted TTM-R1 encoder plus new Linear192 return head vs Raw511 log
+returns from SAME512past closes/head511, not512returns needing513closes.
+TRAIN2025Feb3..2026Jun30/INNER2026Jul8..Oct9/postreported2025Jan30checkpoint,
+no futureOPENfeatures/target-based input universe. Existing exactGraniteimage,
+manualstrictsafetensors/no downloads/newruntime. Actual512support still to
+derive; native full-weight CUDA/optimizer/checkpoint proof required before fit.
+900active5400end inclsource/oneGPUallocation/twoNEWheads/0retry when GO;
+no backbonefine-tuning/oldforecast repeats. Daily frequency transfer/capacity/
+small-universe/lowpower caveats. FutureOct20 point needs actualOct19 close
+input before preOPEN, no stalepadding or inferred availability. No Paper adoption.
+Existing4 source refs below.
 
 Data A/data/current-sector-market-context-input-20261020-v1:
 original CLOSED27GET/2wirePOST/0retry,4conservative client reservations,

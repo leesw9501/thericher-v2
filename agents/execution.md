@@ -7,47 +7,61 @@ No active Execution subagent or broker worker is inferred from this MD.
 
 ## Current Technical Recovery
 
-Original natural readback is CLOSED. Nightly23:50 returned
-readonly_open_orders_rejected:1tokenPOST/1GET/0order-cancelPOSTs. Safe upstream
-category was not forwarded by current outcome ABI; provider cause UNKNOWN.
-Strict private reader fails cycle-file invariant: current daily pointer exists,
-new cycle/buy/sell materialization absent, not zero global positions/effects.
-F9first00:10 has exact owner context but missing required result.json: UNKNOWN,
-not no-intent/submit/fill. Later exact owner host/container absent. Synthetic
-prefix admission false/exception reproduces missing publication, NOT the actual
-lost guard cause. Original shared bank/targets/requests/unknowns unchanged.
+Gauss owns A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1.
+Natural nightly23:50 returned readonly_open_orders_rejected:1auth1GET/
+0order-cancelPOST. New actual open-orders-continuation-r1-visit2/RESULT.json
+at16:04:11.961199UTC is CURRENT_GET_ACCEPTED HTTP200 VTTS3018R,
+1auth1GET0orderPOST/allownedcontainercleanup. Do not rerun consumed probe.
+Historical rejected cause not retained; new success does not prove fills,
+fresh custody or netPnL. Original StageA16.16s inert-proof end overrun retained.
 
-Gauss owns A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1:
-one bounded virtual open-orders GET with scoped Paper loader/secretstdin,
-explicit shared60s issuance floor/same atomic marks+locks/valid-token reuse,
-no old timing reset or substitute order. Prior finite probe failures/debits
-remain immutable. A zero-HTTP deferral is not the prior provider rejection.
-Official one-minute issuance plus measured240s competing cadence explains
-300s new-probe starvation; old default/frozen contracts remain unchanged.
+F9first00:10 exact owner context has missingresult, effects UNKNOWN.
+Strict local derived view proves preintent-unmaterialized/uninitialized at
+snapshot, NOT globalzero/broker custody. Advance lock unchanged. Native
+unknown-request reconciliation/fresh account/quote/orderability/risk checks
+remain mandatory; never substitute an intent, erase a reservation or use
+recovery-capable observe() as an offline reader.
 
-NEW actual scoped provider result already COMPLETE at16:04:11.961199UTC:
-open-orders-continuation-r1-visit2/RESULT.json CURRENT_GET_ACCEPTED,
-HTTP200/VTTS3018R/oneauthoneGET/zeroorderPOSTs/ownedcontainerabsent.
-Do NOT repeat that consumed probe. Old rejection causality not established,
-not a newfill/account-custody/PnL proof or permission to erase unknown requests.
-Original StageA closed with16.16s inert-proof end overrun, no delivered credential
-packet/HTTP there; keep old cap failure/unknowns unchanged.
+Tracked narrow repair168f79d source78a4054f: prefix failures persist existing
+safe unavailable envelope, PATHEXT fallback only missing/blank. Full18370PASS/
+22skip/1514serial/native4/Ruff3Compose/8worker cleanhelper0, no ABI/risk change.
+Newimage566e02d8/sourceffece26d; build/QA is NOT runtime deployment.
+JSONlabel projection fixes measured nativePS5 quoted-Go-templateerror64
+at sequence>0, not historical firstseq0 cause. Originalguardff223ccf unchanged;
+new468899ae retains16closeddiagnosticstages/2positive8negative checks/
+all52noncontainerstatements. No raw error/private outputs or guard exemption.
 
-Parent public native proofs isolate PATHEXT missing ->PS5exit0/empty stdout,
-and quoted Go-template label index ->PS5error64; JSON label projection works.
-A/infra/current-host-docker-endpoint-probe-20261020-v1/OS-KEY-RESULT.json and
-TEMPLATE-RESULT.json. The label branch is sequence>0, NOT historical f9seq0
-cause. New packaging preserves exact image/CID/name/label and unknown actors.
+All4todayf9slots consumed; actual16:22UTC Ready/last15:22code20/
+nextOct20 15:10UTC/31triggers. Installattempts17:00/17:15 failedverification
+and rolledback before slots. Actual17:20:45 retained31/Ready/originalfullACL/
+definition. Historicalr2innerpredicate unretained UNKNOWN.
+One inert disabled publicTask nativeprobe reproduced Z->equivalent+09:00
+normalization rejected by lexical finite_recovery_shape. CorrectedUTC-instant
+comparer passed capturednative snapshots/11negativecases;0TaskRun/cleanup/
+otherTaskhashesACL preserved. No more blind equivalent-time registrations.
+A/infra/current-scheduler-normalization-probe-20261020-v1/FINAL.json.
 
-Kepler narrow tracked host prefix-result publication/public PATHEXT fallback
-repair COMPLETE135focused. Parent1514serial/full18370PASS22skip/clean8helper0/
-Ruff3Compose/native4PASS,1362source78a4054f; NOT yet runtime deployment. Keep existing
-failure ABI/unknown effects, strict admission/risk/identity/cleanup. Fresh full
-AGENTS QA and paired release/source/image/reader/rollback before Task retarget;
-no manual replay, new schedule, bank reset or fabricated fill. Larger readonly
-diagnostic-forwarding proposal remains NOTapplied, strict compatibility issue.
-Review A/review/current-paper-host-publication-repair-20261020-v1/claude.json:
-REVISE/no retained concern categories, not agreement or authority grant.
+NEW technical-install-recovery-r3 ACTUAL17:47:32UTC registration,
+17:47:33 verified before17:50cutoff:32triggers/original31/fullACL/
+principal/settings/250otherTaskdefinitions preserved. Exact image566e02d8/
+guard468899ae/sourceffece26d verified. Cutoff17:51:18 Ready,nextdue18:00/
+end18:05. Allmutation closed, no manualRun; RESULT.json +ready-visit-04/
+INSTALL-RESULT.json are exact evidence. Preserve31oldtriggers/Task/source/
+input/bank/model/nativeintentIDs. Keep first actual postcheck predicate before
+rollback, and rollback even if diagnosticwrite fails. Fresh strict nativeRO
+<120s/localquiescence first; native fresh effect guards still apply.
+Fresh17:47:29 nativeacceptance is local uninitialized originalscope only,
+not brokercustody/historicalzero. Natural18:00readback bounded120active/
+900elapsed/hardend18:08 owns exact preparedreader329cfaee, noAPI/Taskmutation.
+Missing caller or failed verification is not success/fill. No automatic missedslot
+chain or capital expansion. Installer0HTTP does not prove0scheduled effects.
+Review current-fixedrank-one-recovery-opportunity REVISE unknownproof/
+singleuse/atomicity/rootcause limits adopted, not a humanapproval wait.
+
+Scoped new readonly/Data auth callers use60s issuance floor on same atomic
+marks/legacylocks/valid-tokenreuse; measured240s competing cadence starves
+300s freshcaller. Old frozen/default300contracts/timing marks remain unchanged.
+Token wait belongs to worker, not parent foreground sleep.
 
 ## Closed Natural Readback
 

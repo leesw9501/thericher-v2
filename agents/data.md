@@ -7,30 +7,42 @@ Private KIS Paper marketdata is delegated, no KIS_LIVE_*/secret/raw-value output
 
 ## Current Sector Input
 
-Consumer: NEXT six matched Ridge/HGB/MLP14vs52 fits, not Paper input promotion.
-A/data/current-sector-market-context-input-20261020-v1/PACKAGE-MANIFEST.json
-SHAe171d5c62327e0ecd051c5fb009dad5172088280bcc363a5fa89cce7ae2c9ce7.
-Original finite collection CLOSED INCOMPLETE12:27GET/2wirePOST/0retry,
-4conservative client reservations consumed,243.558active/2088.585elapsed;
-all four collector PIDs absent. Preserve accepted pages/cursors/failures/debits.
-Full52 ready=false;149queries remain unattempted, not source-limited history.
-38syntheticchecks/10922scalarreadbacks; market files8298598bytes under
-M/us_equities/kis_paper_private/sector-context-daily-20261020-v1.
+A/data/current-sector-market-context-input-20261020-v1/cursor-continuation-r3.
+READY-FINAL.json SHA84b36d4a5b67290fbbcf9c27a52df9b9c3f17e82ba018e04c978dfbf3f759ccf.
+Sourcecontract680c9d1481d7698533c64d8febdb2cfd17587a17cdddb005697347859257d667.
+Actually COMPLETE,176/176historicalqueries/0remaining,12routes x2087closes,
+no requested-session holes; all collectors absent. CONSUMER-INPUT.json and
+CONTROL-PARITY.json bind full52 input to old6model/forecast controls.
+Same34327keys/875TRAIN242INNER314DEV dates/raw14bytes/TRAINscalersupport.
+480578context comparisons PASS for52->28 mapping0..24+40..42, not first28.
+15SYN/176page/25027relative/16696sourcerow/356lineagehash checks PASS,
+no target/performance/model reads. Consumer Boole's NEW3full52 fits, not
+originalsuperseded6fit52dispatch, Paper promotion or a historicalPIT claim.
 
-Existing4 SPY/XLK/XLF/XLE alternative is ready34327keys,875TRAIN/242INNER/
-314DEV dates with>=20stocks. It is a separately named14vs28 alternative,
-NOT an original52 pass; no frozen criteria relaxed or model fitted by Data.
-Historical provider availability/PIT/finality remainNOT_OBSERVED. Known
-unsupported split windows unavailable on BOTH arms, no filling/stitching.
+FinalR3 44acceptedGET (40history+4fresh),1POST1client0retry,
+389.81/400active701.51/1500elapsed,7094912newprivateMbytes.
+FreshSPY/XLK/XLF/XLE BYMD20261016 are isolated100x4OPEN-CLOSE400rows,
+744overlapfieldchecks0disagreements; no historyrewrite/backdatedavailability.
+Prior original27GET2POST/0retry/4conservative reservations/
+243.558active2088.585elapsed, r1=52GET2POST/675.70active2494.82elapsed,
+r2=57GET2POST/185.38active1235.43elapsed all closed/debits unchanged.
+No standingcollector/extra routes/acceptedpage refetch from this package.
 
-NEW bounded accepted-cursor continuation assigned Oct19 16:06UTC:210GET,
-2total clients/auth,900active3600elapsed, same source/pacing/shared60token
-locks/marks, no old debit refund or accepted-page refetch. Execution owners
-preempt. Actual public baseline callback must pass before dispatch; failure is
-local capability error, not busy ownership. PATHEXT-alone PS5 fault measured;
-new public_environment.py preserves inherited nonempty PATHEXT/falls back
-only missing/blank,4fixtures. No API call is inferred from that helper test.
-Parent owns shared docs/Git; active worker and next_due require current evidence.
+Raw history under M/us_equities/kis_paper_private/sector-context-daily-20261020-v1;
+exact child input refs in consumer/manifest, no market bytes in Git.
+HistoricalMODP0basis opaque; availability/finality/PIT NOT_OBSERVED,
+unsupported split-relative windows UNKNOWN. Readiness constrains claims,
+not independent research/Paper authority. Existing4 matched14vs28 result
+a497b4cd remains immutable and reusable, not retroactively a52pass.
+
+Measured local callback first causes:
+PATHEXT omission ->nativePS5exit0/empty stdout; DEVNULL open denied by audit
+before child ->explicit empty PIPE; virtualenv parent self-matches strict
+actor guard ->direct physicalpythonw. Predicates not weakened; earlier
+unretained actor attribution remains UNKNOWN. Keep native capability evidence
+under current-host-docker-endpoint-probe and this package's immutable attempts.
+TTM512-context input derivation is separate frozen Infra/Engine preparation;
+Data history acquisition is now closed. Future finite feeds retain ownership.
 
 ## Latest Matured-Label Input Audit
 
