@@ -7,6 +7,36 @@ Private KIS Paper marketdata is delegated, no KIS_LIVE_*/secret/raw-value output
 
 ## Latest Matured-Label Input Audit
 
+New consumer input COMPLETE, no acquisition: A/data/current20-native-intraday-
+window-input-20261019-v1/INPUT-MANIFEST.json SHA0bc11851/windowsc72f1a08.
+Existing62395 native1m labels/20routes8sessions ->same41775 supervised30/120
+price-only windows,31175FIT/5300INNER/5300adaptiveDEV.40synthetic/20,136,175
+scalar/62395lineage/1387sourcehash checks. Native labelSTART+60 remains a NEW
+study assumption, no Paper/source qualification/volume or USD unit proof.
+AVAILABILITY-AUDIT01846e0f/inputmasks3a212192 separates41800 input-only
+eligible rows from41775 target-supported;25targetsUNKNOWN, not stock exclusions.
+Oct15DEVfull20grid verified. No imputation, per-arm masks or original input edits.
+COMPLETE: disjoint existingDEV OPEN/CLOSE replay marks under
+A/data/current20-native-intraday-replay-marks-20261019-v1; pricearraybytes go
+M/us_equities/kis_paper_private/native_intraday_research_marks/20261019-v1.
+READY0bd60b20/marksacec4ff2,390x20/7800present,12tests/5300targets/
+15600scalar checks. No network/credentials/GPU/model/collector/schedule.
+
+OOF consumer input COMPLETE, A/data/current25-five-session-oof-input-20261019-v1:
+READY067b39ab/MANIFEST2fb08ce4/BASE4b98e692/META4d5bce5c/TERMINALa0e6d33f.
+61input+7replay tests,93129 payoff scalar checks, no feature copies/acquisition.
+Three FIT/INNER/OOF rows86804/650/475,89154/675/525,91679/775/650.
+Inputscaler5b5f3f FIT789..4789 precedes all localINNER/OOF; targetnormalizers
+are localFIT-only. Base workers get only FIT/INNER labels, never OOF targets.
+Meta1+2 labels1000rows/40dates remain separate from terminal3 650rows/26dates.
+REPLAY-MARKS561f895f binds66x5x25=8250 present daily OPEN/CLOSE marks under
+M/us_equities/kis_paper_private/daily_oof_research_marks/20261019-v1;
+separate meta/terminal price custody. Weights freeze before terminal decoding.
+Actual7.497s worker/711.722elapsed includes failed preflight, one derivation,
+0retry. First preflight failure remains recorded, not erased/refunded.
+OOF source data remain adaptive/current-listing/non-PIT/finality-unknown;
+these facts constrain claims, not unrelated Paper authority. Data role released.
+
 COMPLETE: A/data/current25-latest-matured-refit-input-audit-20261019-v1/
 derived-label-view-r1/LABEL-VIEW-MANIFEST.json SHA1a528b4e,
 label-index-view.npz SHA1b5c1dff/SEAL7a406a91. Known29587NEW8labels regenerated

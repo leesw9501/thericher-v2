@@ -1,96 +1,102 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current Oct19KST, integrated evidence through13:05UTC. A=D:/thericher-v2/model-artifacts.
+Current Oct19 23:20KST; A=D:/thericher-v2/model-artifacts, M=D:/market_data.
 ONE unfinished company outcome: current-nas-owned-model-paper-cycle-v1.
-Eight exact retained FULL entries; owned exit cannot precede Oct21 US OPEN.
-A package commit/model fit/installed Task does not close the company outcome.
-Parent owns direction/shared docs/Git. AGENTS owns authority/risk; never live.
+Eight retained exact FULL entries; owned exit>=Oct21 US regular OPEN.
+Research completion is not company/Paper completion. Parent owns shared docs/Git.
+AGENTS owns authority: private no-cost Data/Research/Paper delegated, never live.
 
 ## Ready / Owned / Due
 
 | Owner | Actual State | Next Action |
 | --- | --- | --- |
-| Engine/Boole | Multiscale21/63/252 GRU COMPLETE22epochs/best2, native market63.397s, owner77.847s; actor/lease released. FIRST25 four-arm point COMPLETE8.524s, Parent100scalar checks PASSb9993c8b. | No fit/forecast repeat. |
-| Parent/CPU | Latest21-target HGB COMPLETE38/best18, independent3150INNER/42checks/24fixtures PASSc743c275; first25 point912e24e8. | Retained future comparison only. |
-| Engine/Kepler | Five-session HGB76/best56 and MLP22/best2 COMPLETE; MLP573.890s, pair604.671s. First25 pair COMPLETEea8ae442/native0/holder released. | No fit/forecast repeat. |
-| Data/Parfit | 5day labels92579FIT3150INNER, all4232/126dates;20 unsupported FIT endpoints explicitly excluded.95729targets scalar-verified/22fixtures. | Reuse existing D1 feed first5days; no new collector/API. |
-| Validation/Hegel/Plato | HGB5 independent3150INNER/33checks/27fixtures PASSf2622578; unit correction34scalars/66unchanged/175weights/28fixtures PASS60516dd6. | Released; no tuning/profitability permission. |
-| Strategy/Bernoulli | Common-unit rank kernel24tests; fixed13policy/prefix consumer16tests, all13 inputs bound3e6aa3f1. | Existing exact owned marks, no model calls. |
-| Infra/Ramanujan | D-bind fsync50.16ms/p9555.00ms. Old96call diagnostic failed NVML before0loss/0allocations; separate env comparison isolated missing ProgramW6432. New D6 CUDA8loss/backward health PASS/0models,6.407owned/actorlease released. | COMPLETE/release; do not claim old96benchmark or training speedup. |
-| Infra/Halley | Counter r1 SHA25f87ce7/22fixtures PASS; actual CPU D6 proof9000guards/0hotIO/3syncs,0.268s worker/1.721s owner/exact cleanup. | COMPLETE/released; NEXT-campaign only, not old fits/Execution. |
-| Parent | All13 21day policies bound; five5day policies bound1ec10aa7, zero model reruns; external70tests PASS/source-control equality/Ruff/3Compose PASS. | Commit/push integration; natural owned Paper/Data outcomes remain due. |
+| Engine/Boole | NEW3fold/4family OOF base-expert SOURCE preparation; exact DataREADY delivered,12newfit budget6CPU6CUDA,seed1201,128max/INNERpat20/LR/bestrestore. No actual12fit start yet evidenced. | Freeze source/native proofs, CPU/GPU fit once per slot with no retry; one GPU lease. |
+| Meta/Confucius | Convex SOURCE40tests and one native CPU SYN complete; disjoint integration assigned1200active/7200elapsed, no actual meta fit yet. | Conditional GO after12 exact base packets, one60s-watchdog fit on OOF1+2; frozen weights before terminal3. |
+| Data/Boyle | OOF input and daily replay marks COMPLETE067b39ab/561f895f,61+7tests; BASE/META/TERMINAL physically distinct. | Released; no feature copy/acquisition or Paper dependency gate. |
+| Engine/Kepler | Native1m RAW30/120 and FIT-scale30/120 all4fits COMPLETE/released. New CPU-only net-edge feasibility assigned,0newfit/forward. | Cost-floor counts only; no more minute GPU grid on seen DEV. |
+| Strategy/Russell | Post-scaler OOF recipe COMPLETE30tests66checks, no models. Original inputscalerFIT789..4789 precedes all local INNER/OOF. | Released; utility consumed by Data/Engine. |
+| Execution/Gauss | Exact22:40KST NAS publicread COMPLETE,55tests16checks, hold/await_declared_exit/1visit/0legs/0API/cleanupattested. | Released; no newfill/privatecustody/PnL proof. |
+| Parent | Same5day Ridge+GRU COMPLETE, all9 fixed policies bound8dfc8679; old125weights/15cells unchanged,0futuremarks. | Integrate/verify/commit/push checkpoint while OOF preparation proceeds. |
 
-All FOUR new fits complete:2CPU2CUDA, ledger251=161CUDA90CPU including one old
-invalid version. Not251 architectures/qualified models. No active market trainer.
-A running role LLM, source package or GPU diagnostic is not model training.
-All invoked research/validation/Infra LLM roles released after completed output;
-CUDA health also has44offlinechecks and Parent exact-pin/closure readback PASS.
-Data43,379bars/535,142checks/493GET6POST remain unchanged;9 exact cursors
-closed, not a global history limit. Research added derived labels, not new bars.
-
-Fresh six named Task facts: Ready/Enabled, not fills. NAS22:40KST(hold),
-nightly23:50KST, fixed4-rank firstOct20 00:10KST; existing Data firstOct20
-06:50/07:30/08:00KST. Goal97 remains its separate owner; no schedule changes.
-No manual Task, KIS, order, collector, public UI or credential access this work.
-Original shared .10 basis/reservations/owned inventory/Paper images unchanged.
+Last actual CUDA allocations: new5dayGRU33epochs/best13/native83.285s;
+native1m RAW pair13/best1 each/native19.347s including SYN/intake/DEV;
+FIT-scale pair13/best1 each CLOSED5ccf3141/82.412activeupper3600.
+Canonical GPU lease absent at23:03KST. Source/LLM is not running CUDA.
+Current fitted-version ledger257=166CUDA91CPU incl one old invalid, not
+architectures/qualified models. The queued12 fits/meta are NOT counted yet.
 
 ## Throughput Review
 
-Ready=integrated evidence and next-campaign throughput reuse; all Infra packages
-COMPLETE, no market trainer or GPU diagnostic currently running.
-Owned=natural Paper/Data jobs above; all fit/point/probe actors released.
-One reversible improvement: replace per-effect research disk sync with a durable
-stage-upper reservation, RAM cap guards and bounded checkpoint/terminal writes.
-Incomplete work keeps FULL reserved debit; no retry/reset or weaker broker journal.
-Actual IO microprobe found50ms D6 D-bind fsync latency; do not multiply it by
-calls and claim a measured actual training-time share. No phase instrumentation.
-Vectorized equal-date loss has8small CUDA gradient-health cases, not the planned
-96call timing benchmark. No training speedup/trajectory claim. New NVIDIA child
-queries need explicit safe ProgramW6432; do not inherit ambient secrets/env.
-Do not refill the GPU with duplicate fits or treat utilization as the product.
+Ready=OOF Data already materialized, disjoint base-model source, convex source/
+native solver SYN, CPU net-edge analysis and Git integration. Owned=above;
+due=existing nightly23:50KST/f9firstOct20 00:10KST, nextmorning Data06:50/07:30/08:00.
+NAS future visits remain hold until declared exit; no foreground session wait.
+One reversible improvement: use post-scaler OOF blocks rather than rebuilding
+1GB features, plus separate base/meta/terminal labels and FIT-only target scalers.
+No global approval/qualification hold. All counters/hot IO/source-time faults
+remain scope-local; new workers use verified RAM counters/ProgramW6432 allowlist.
+Real worker time is not LLM/source-review/queue elapsed time. Completed fits/
+forecasts never rerun just to occupy GPU or repair metadata.
 
-The first multiscale admission's3.254s/0allocations/0native remains failed:
-WDDM desktop apps were wrongly treated as competing trainers. Admission-only
-recovery75f8e43d keeps worker/model/data/caps unchanged; actual fit and safe
-checkpoint proof passed. Use named ownership/free headroom, not whole-PC idle.
-Role/model source reviews happened before numerical GO; internal source GO
-is not human permission. Worker clocks are not LLM/review/queue time.
+## Current Findings
 
-## Scientific Inputs And Evidence
+- Ridge14 alpha10 oneCPUfit/realSYN/first25point COMPLETE6.001s; model89dd9059,
+  independent098a220c PASS158checks29fixtures/92579FIT residual2.214e-14/
+  INNER3150 and25forecasts exact. No new fit/solve in integrity check.
+- Five-session GRU252+static14 oneCUDAfit33/best13, first25point8ad16783
+  pre13:25UTC. Legacyouter future0 falsely describes nativePOINT1; originals
+  retained, metadata-only ba3064a9/73checks qualifies existing point. No repeat.
+- Fixed9policy source92c7139d/63tests; Parent8dfc8679/5adapter tests;
+  27cells24riskyUNKNOWN3analyticcash. Formula13:12:28UTC/nativeprecutoffpoints;
+  derived weight artifact later, NOT original pre-session deployment.
+- Native1m RAWpair at5bps PERLEG net-.537319% vsuniform-.529024%;
+  scale pair net-.521045%/gross+.008958%/fees.530003%. Costs dominate.
+  Both pairs samegross.1/5staggeredsleeves, exact old12controls,6492newNAV
+  oracle checks <=4.44e-16. One seen DEVday/provisionalSTART, not alpha.
+- Input-only41800 keys vs41775 supported targets,25UNKNOWN, fixed6/1/1
+  sessions; no future-availability asset selection. DEV full20 grid proved.
+  Data40tests/20,136,175scalars/62395lineage/1387sourcehash checks.
+- Intraday marks390x20/7800present,12tests/5300targets/15600scalars; exact
+  privateM source supports marked replay, not data/Paper qualification.
 
-Old full25 packetd65cb5e9 merged original17 standardized HGB/GRU with NEW8 raw.
-Its joint HGB/GRU/static3 ranks are superseded despite passing hashes/arithmetic.
-Within-subset/native forecasts/TCN/PATCH/f9 Paper stay unchanged. Common-unit
-derived3ea48eea/independent60516dd6 converts only34scalars; zero model calls.
-Claude REVISE unit lineage/affine proof/rank counterexample/time provenance;
-unavailable first format attempt remains unavailable, not agreement.
+Exact source/result refs: HANDOFF, role boards, RUNBOOK and immutable D roots.
+Old mixed-unit full25 packetd65cb5e9 remains superseded by3ea48eea/
+independent60516dd6; within-subset/native/TCN/PATCH/f9 Paper unchanged.
 
-Current13policy comparison:
-A/research/current25-current-research-future-measurement-20261019-v1/
-parent-bound-multiscale-r1/COMMIT.json SHA3e6aa3f1.
-39cells36riskyUNKNOWN3analyticcash,0observed days. Prefix MTM is separate,
-not final profit/model selection. All8 earlier policy weights bit-exact.
-First5day comparison:
-A/research/current25-five-session-future-measurement-20261019-v1/COMMIT.json
-SHA1ec10aa7;15cells12riskyUNKNOWN3analyticcash,0observed sessions.
-Same .1/21 analytical cohort, NOT .1/5; no21-vs5 growth-winner claim.
-First5day feedback requires actual Oct19..23 marks;21day horizon endsNov16.
-Both use existing old20/new9 finite feeds; finality/PIT/TR remain unknown,
-not a Paper permission gate. No already-completed forecast is rerun.
+## OOF Contract
 
-Exact model/Data/point/source pointers: HANDOFF, Engine/Data boards, RUNBOOK.
-Pure new5day kernel8tests; real native optimizer/best-restoration proofs and
-independent retained checks validate external work, not repeated repo tests.
+Same5day payoff, fourfamilies HGB14/MLPraw1274/GRU252plus14/Ridge14.
+Exact folds FIT/INNER/OOFrows86804/650/475,89154/675/525,91679/775/650.
+Frozen inputscaler5b5f3f subset ofeverylocalFIT, before everylocalINNER/OOF;
+fold-local raw5 FIT targetnormalizers, calendar holes/purges preserved.
+Meta train1+2=40dates/1000rows; terminaladaptiveDEV3=26dates650rows.
+No global-INNER selected expert outputs/in-sample stacking/heldout tuning.
+One nonnegative sum1/nointercept SLSQP blend, fixed raw/rank mean controls;
+exact rawunit/key alignment, finite solver/KKT/constraint checks/failureUNKNOWN.
+Samegross/cost/cash accounting; no lower-risk-only alpha or independent claim.
+Claude90acd3b8, minute/timing and OOF challenge concern categories are in exact
+A/review/current25-five-session-oof-convex-20261019-v1/claude.json and
+A/review/current20-intraday-fit-scale-20261019-v1/claude.json; advisory, not approval.
 
-## Verification And Recovery
+## Paper And Recovery
 
-Unchanged1360 source/control authority f81653d8:18314PASS22skip/clean8/helper0,
-322changed-path serial/132focused. Fresh digest equality,Ruff/default/research/
-accounting sample-env Compose passed. Docs/external-only reuse only; never use
-this authority to claim new external code passed the repo suite.
-Prior checkpointff6c1e5 pushed. Pre-existing untracked %SystemDrive%/ untouched.
-All completed studies/failed clocks remain immutable; parent adapter r1's Python
-source-as-JSON failure is retained, corrected r2 uses no repeated model calls.
-Resume: preflight, recheck exact owners/receipts; do not relaunch completed fits,
-point creators/installers or infer a fill from a Task exit/readiness timestamp.
-Missing future marks remain unknown, not zero PnL. No current operator decision.
+Existing shared .10 initial basis/reservations/losses/owned inventory unchanged.
+No new broker/credential/collector/Task/image/schedule/public UI calls or changes
+by research. Natural22:40NAS job hold/await_declared_exit made0API calls;
+this does NOT refresh the Oct19 06:26KST broker-custody snapshot or prove fills.
+Correct current publicreader20df9e23 is in zero-quote deployment; oldr2 pins
+ce219, causing Parent bound_path_invalid. RUNBOOK corrected; oldreader unchanged.
+Privatephase not certified by public-only audit; no observe() used as reader.
+F9 image378f2034 first00:10 remains provisional, <=.025 inside SAME .10 bank.
+Company objective remains unfinished until actual owned exit/reconciliation.
+
+## Verification
+
+Tracked1360 production/control authority f81653d8 remains last full:
+18314PASS22skip/clean8/helper0,322serial/132focused. Docs/external-only may
+reuse ONLY after fresh exact source/control equality. External new native/
+focused/oracle checks are separate, not validated by repeating repo tests.
+Prior checkpoint67b327a pushed; new integration pending. Pre-existing untracked
+%SystemDrive%/ untouched. Market/model storage and15percentfree floor unchanged.
+Resume by exact owners/receipts: SOURCE is not running, missing is UNKNOWN,
+closed studies immutable; do not mark company complete to end a package.

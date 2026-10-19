@@ -35,6 +35,32 @@ paid/public commitments, secrets/private identifiers/amounts in outputs.
 
 ## Ready Parallel Work
 
+- Latest continuation COMPLETE: two new fits Ridge14 CPU/fastGRU5 CUDA,
+  that step253; current257=166CUDA91CPU after four native1m fits. First25 points
+  pre13:25UTC,9fixed5day policies now
+  bound8dfc8679/old125weights15cells unchanged,24riskyUNKNOWN3analyticcash.
+  No model/Paper switch or reforecast; misleading GRUouter future0 is corrected
+  only in zero-model qualificationba3064a9, original bytes immutable.
+- Native1m30vs120 GRU32 comparison COMPLETE, fixed2newfits/
+  seed1101/INNERpat12/bestrestore/5minute target, no source or volume-unit proof.
+  Data0bc11851/c72f1a08 READY41775examples with6FIT/1INNER/1adaptiveDEV sessions.
+  Separate41800 inputeligible keys keep25targetUNKNOWN, never future-based
+  candidate exclusions. Exact existingDEVmarks COMPLETE0bd60b20; no new
+  provider calls/collector/schedules. Modelworker SOURCE is not GPU start.
+  Five staggered sleeves for overlapping5minute targets, samegrossuniform/
+  cash controls and PERLEG costs, no full-capital-per-label compounding,
+  borrowedcash, outcome-tunedepochs/ensembles or independent-alpha claim.
+  Actualseal191e063f/2fits13epochsbest1/one12cellreplay; both -1.067315%
+  vsuniform-1.059025% at10bpsPERLEG, no alpha pass. Then two NEW FIT-only
+  input-scale fits COMPLETE5ccf3141, old12controls unchanged. At5bps scaled
+  net-.521045%/gross+.008958%/fees.530003%; no further seen-DEV GPU grid.
+  CPU-only retained net-edge counts are ready parallel work, not a new replay.
+  Data3post-scaler OOF folds READY067b39ab/REPLAY561f895f,61+7tests.
+  Engine12newbasefits6CPU6CUDA have conditional GO on exact inputs/source/
+  native proof; meta SOURCE40tests/nativeSYN passed. One CPU convex fit on
+  OOF1+2 follows full raw-unit base outputs; freeze weights before terminal3.
+  No original globally-INNER-selected outputs as OOF and no holdout reopening.
+  Existing Paper owners and sharedbank remain completely unchanged.
 - FOUR new fits COMPLETE,2CPU2CUDA; ledger251versions, not architectures.
   HGB21 38/best18; multiscaleGRU21 22/best2; HGB5 76/best56; MLP5 22/best2.
   No completed old fits or first forecasts may be rerun. Exact pointers,
@@ -56,7 +82,8 @@ paid/public commitments, secrets/private identifiers/amounts in outputs.
   Exact sparse-child ProgramW6432 omission isolated/corrected in new caller.
   Reuse for NEXT frozen campaign only, no old model refit/dummy GPU utilization/
   broker-journal change. One canonical GPU allocation/measured headroom/actual
-  worker clocks; old failed clocks/results immutable. No current trainer.
+  worker clocks; old failed clocks/results immutable. Actual source/worker
+  ownership is recorded in orchestration.md, not inferred from this preparation.
 - New sensible hypotheses may proceed under frozen finite contracts, never an
   unbounded reused-data parameter search or a human approval wait for routine
   source/runtime faults. Source failures/quotas belong to their named worker;

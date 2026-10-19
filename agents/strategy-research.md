@@ -38,6 +38,39 @@ launch-level-witness/HANDOFF-ACTUAL.json.
 
 ## Next Priority
 
+New same5day diversity COMPLETE: Ridge14 CPU and raw252GRU32 temporal expert,
+not changes to old21day studies. Fixed9policy source92c7139d/63tests, old125
+weights/15cells bit-exact. Actual Parentbinding8dfc8679 has all9 inputs,
+24riskyUNKNOWN3analyticcash/0future sessions. Formula freeze13:12:28UTC and
+native points pre13:25, derived weight artifact later, not pre-session runtime.
+No learnedfusion/in-sample gate, new fit, alpha or Paper-switch claim.
+The new Ridge alpha10/cholesky/sample_weight API was checked against official
+scikit-learn1.9.1 docs and native weighted-solver/SYN residual evidence:
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html
+The linear-vs-complex forecasting paper supports keeping simple baselines,
+NOT project stock profitability or equivalence to our Ridge14:
+https://arxiv.org/abs/2205.13504
+No DLinear code/weights/dependency adopted. Existing9policy kernel, not a new
+learned gate/platform, is the concrete consumed result of this source review.
+
+Post-scaler chronological OOF feasibility COMPLETE30tests/66checks, source
+A/research/current25-five-session-oof-fusion-feasibility-20261019-v1.
+Fixed scalerFIT789..4789 precedes all3folds; no1GB feature rebuild needed.
+Four newly fitted experts per fold feed one convex raw-return blend, never
+old global-INNER-selected/in-sample predictions. Meta1+2=40dates1000rows;
+terminal3=26dates650rows remains adaptive DEV, not independent replication.
+Convex SOURCE03deca53/40tests and real SciPy1.18.1 nativeSYN passed; exact
+source and solver tolerances frozen before actual OOF use. Separate CPU
+integration assigned, one fit/0retry/weights before terminal decoding.
+SLSQP official API: https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html
+The stacking leakage warning supports OOF custody, not a project alpha claim:
+https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html
+
+Native1m30/120 RAW and FIT-scale pairs all failed cost-aware DEV economics.
+At5bps scale gross+.008958% vs fees.530003%, net-.521045%; no GPU parameter
+grid on that one seen day. Retained net-edge feasibility may reject unconditional
+Top5, but cash/no-intent is not profitable alpha. Paper policy unchanged.
+
 Renewed Oct19 work: common-unit, branch-resolved fixed-rank kernel COMPLETE
 24synthetic checks; same averaging primitive, NOT algorithm novelty. Distinct
 question is 21/63/252 jointly supervised heads plus latest HGB, not another

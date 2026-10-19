@@ -46,8 +46,97 @@ No manual Task invocation. Exact receipts/state parsers, not task exits or
 missing files, establish outcomes. Never call recovery observe() as a reader.
 Scheduler Operational logging disabled: honest-host marker/hash/time provenance,
 not cryptographic OS-scheduler origin.
+Fresh exact Oct19 22:40KST publicread: hold/await_declared_exit,1visit/0API/0legs,
+cleanupattested; no newfill/custody/PnL. A/execution/current-nas-runtime-readback-
+audit-20261019-v1/RESULT.json,55synthetic16independent checks. RUNBOOK stale
+r2 public-reader pointer fixed to current zero-quote reader20df9e23; original
+failed bound_path_invalid is a profile mismatch, not a new broker failure.
 
-## Four New Fits Complete
+## Latest Research Continuation
+
+Oct19 continuation added TWO more fitted versions, not repeats: Ridge14 CPU
+and five-session fast GRU32 CUDA. Current ledger253=162CUDA91CPU incl one old
+invalid version; earlier251 below is the prior closed subtotal.
+
+Ridge14 fixedalpha10/weighted cholesky: one real SYN/onefit/first25point,
+6.001s owner/4.910s worker, safe model89dd9059/point050fff99. Independent
+098a220c PASS158checks29fixtures, FIT92579 residual2.214e-14/INNER3150 MSE
+and25forecasts exact,0newfits/solves; numerical integrity only.
+A/research/current25-five-session-ridge-baseline-20261019-v1 and
+current25-five-session-ridge-independent-check-20261019-v1/RESULT.json.
+
+GRU32 raw252x5+same14, seed1001, same NEW5 target/support/normalizer:
+33epochs/best13/INNERpat20, native83.285s/8918forwards4389updates33saves1restore.
+One realSYN and one model-only FIRST25 point (no optimizer/RNG intake).
+Native point8ad16783 published by13:21:18.752864UTC, commit observed by
+13:21:19.401919UTC. All actors/lease released; no profit/convergence claim.
+A/research/current25-five-session-fast-gru-development-20261019-v1.
+Important: inherited outer marker falsely says MODEL_ONLY/future0 despite
+actual POINT1. Preserve original bytes. Zero-model metadata qualification
+publication-metadata-r1/QUALIFIED-ACTUAL.json ba3064a9/73checks records the
+existing point, not a new forward; qualified view published13:24:40UTC.
+Never rerun training/point merely to correct that outer marker.
+
+Same5day diverse comparison source92c7139d/63tests and Parent binding8dfc8679:
+A/research/current25-five-session-diverse-ensemble-parent-bind-20261019-v1/
+COMMIT.json. Nine fixed policies (old5 + GRU/linear/rankblend3/rankblend4),
+old125weights/15controlcells bit-exact.27cells24riskyUNKNOWN3analyticcash,
+0observed sessions. Formula frozen13:12:28UTC, native points pre13:25cutoff;
+this later derived weight artifact is NOT original pre-session deployment.
+No learned gate, new model call, Paper switch, extra capital or5vs21 winner.
+
+Next intraday study now COMPLETE: same1m30/120 lookbacks/GRU32/seed1101,2newfits,
+13epochs/best1 each,19.347s combined native includingSYN/intake/fixedDEV passes.
+Actual GPUstart13:39:44/cleanup13:40:05UTC, no active allocation from that study.
+Current ledger255=164CUDA91CPU; earlier253/251 are closed ancestral totals.
+Same
+5minute target/keys, no volume or overnight windows. Data READY41775 supported
+examples=31175FIT(first6sessions)/5300INNER(Oct14)/5300adaptiveDEV(Oct15).
+Separate41800 input-only horizon eligible rows retain25 targetUNKNOWN, not
+future-based asset exclusions. DEVfull20grid checked.40synthetic/20,136,175
+scalar/62,395lineage/1387sourcehash checks;17.756s worker/one derivation.
+A/data/current20-native-intraday-window-input-20261019-v1/INPUT-MANIFEST.json
+0bc11851, tensorsc72f1a08/55.6MB; AVAILABILITY-AUDIT01846e0f/masks3a212192.
+MinuteSTART+60/finality/units/PIT remain provisional/unknown; no qualification.
+Data replaymarks COMPLETE7,800 labels/390x20OPEN-CLOSE,12synthetic/5300target/
+15600scalar checks,1.720s worker. Manifest a2657243/marks acec4ff2 underM,
+A/data/current20-native-intraday-replay-marks-20261019-v1/READY.json0bd60b20.
+One fixed12cell cost replay DONE, all6492NAVs independenterror<=4.44e-16.
+At10bps PERLEG, GRU30/120 netgrowth -1.067315% vsuniform -1.059025%; turnover
+dominates, no alpha pass or claimthatallmodelsunprofitable.5staggeredsleeves/
+sharedanalyticalgross.1, no fullcapital-per-label/borrowedcash. Actualseal
+A/research/current20-native-intraday-window-gru-20261019-v1/ACTUAL-SEALED.json
+191e063f/81.916activeupper7200. Keep oldfits/DEVoutputs unchanged.
+FIT-only4channel scale ablation COMPLETE5ccf3141:2NEWfits13epochs/best1,
+sameeverythingelse/seed1101/retained12controls,82.412activeupper3600/closedGPU.
+At5bpsPERLEG gross+.008958%/fees.530003%/net-.521045% vsuniform-.529024%.
+Costs still dominate; seen-DEV follow-on, not old regrade or independent alpha.
+Current ledger257=166CUDA91CPU incl oneoldinvalid. Kepler now performs only
+CPU net-edge/cost-floor feasibility, no further minute model/DEV calls.
+
+OOF Data READY067b39ab: BASE4b98e692/META4d5bce5c/TERMINALa0e6d33f,
+manifest2fb08ce4/sharedindexcb063973, no featurecopies/acquisition.
+Exact folds FIT/INNER/OOF 86804/650/475,89154/675/525,91679/775/650.
+OriginalinputscalerFIT789..4789 precedes every localINNER/OOF; fold-local
+five-day target means/SD, raw93129payoffs independently checked.61input+
+7replaytests PASS,7.497s work inclfailedpreflight/oneindexedderivation.
+A/data/current25-five-session-oof-input-20261019-v1.
+Base FIT/INNER labels, meta1+2 labels1000rows/40dates and terminal3 labels
+650rows/26dates are physically separate. Baseworkers never decode oldY21/
+OOFtargets; metaweights freeze before terminal payload is read.
+Dailyreplaymarks66x5x25/all8250present storedonlyM; replaymanifest561f895f.
+Boole prepares12basefits SOURCE, not actualtraining yet: fourfamilies HGB14/
+MLPraw1274/GRU252plus14/Ridge14 x3folds,seed1201/128max/INNERpat20/LR/restore.
+Finalfinite12starts0retry/10800active21600end delegated insideexistingauthority.
+Meta convexkernel SOURCE/40tests/one realnative CPU SYN PASSED, noOOFfit yet:
+A/research/current25-five-session-oof-convex-fusion-20261019-v1/READY.json.
+One nonnegative sum1/nointercept SLSQP fit on OOF1+2rawpreds ONLY; common
+trainingtargetvariance normalization/KKT constraints, nofamilyrescale/grid.
+Freezeweights before terminal3rawtargets;9matchedterminalpolicies,notindependent
+alpha. Old9fixedfuturecomparison/Paper unchanged.
+No new collector, provider call, private Paper allocation or schedule.
+
+## Prior Four Fits Complete
 
 Renewed Oct19 request added FOUR fitted versions,2CPU2CUDA, no completed old
 training replay. Ledger251=161CUDA90CPU includes one old invalid version;
@@ -138,9 +227,11 @@ consumer is not scientific authority. RUNBOOK separates current APIs and
 consumed write-once callers. Honest-host publication bounds are not exact
 selection times or cryptographic attestation.
 
-## Current Independent Improvement
+## Completed Independent Infra Improvement
 
-All market fitting/point actors are closed. Infra owns only isolated synthetic
+At this earlier Infra checkpoint market fitting/point actors were closed.
+Current OOF worker ownership is above and in orchestration.md. Infra owned
+only isolated synthetic
 throughput work: D6 WindowsD journal fsync samplep50/p9550.16/55.00ms, not an
 actual training-time-share measurement. GPU loss-only vectorization96-call
 diagnostic first admission FAILED before0allocations/0loss calls: NVML Unknown
@@ -154,7 +245,8 @@ actor/canonical lease released. A/infra/cuda-runtime-health-20261019-v1/
 LAUNCH-WITNESS.json, sourcec239ec35. This small health check does NOT qualify
 the old96call throughput benchmark or prove training speed/trajectory parity.
 Offline44checks/Parent source-pin/result/terminal/clock/cleanup readback PASS;
-Infra role released. No current GPU diagnostic or market training worker.
+Infra role released. No remaining GPU diagnostic from this package;
+this historical closure does not assert that later market workers are absent.
 A/infra/research-training-throughput-diagnosis-20261019-v1 and
 A/infra/gpu-date-loss-vectorization-20261019-v1.
 

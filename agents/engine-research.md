@@ -8,6 +8,54 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
+New Oct19 package: same5day target/supported92579FIT3150INNER,
+no new historicalEVAL. Parent fixed Ridge14 alpha10/weighted cholesky COMPLETE
+onefit/one realSYN/first25point beforecutoff,6.001s owner/4.910s worker,
+safe model89dd9059. Independent integrity PASS098a220c/158checks29fixtures,
+FITnormal residual2.214e-14/3150INNER/25points exact,0newfits/solves, not alpha.
+A/research/current25-five-session-ridge-baseline-20261019-v1/actual.
+Boole raw252GRU32+static14 COMPLETE33epochs/best13/native83.285s, oneSYN,
+oneFIRST25point8ad16783/pre13:25/modelb7b4825c. Actor/lease released.
+Misleading legacyouter future0 retained, metadata-only qualificationba3064a9
+73checks proves existingPOINT1; NEVER rerun to repair outer metadata.
+Nietzsche fixedrankblend3/4 source92c7139d/63tests COMPLETE. Parent actual
+9policy binding8dfc8679 preserves125oldweights/15cells;24riskyUNKNOWN3cash,
+0futuremarks. Formula13:12:28UTC/points pre13:25, later derived weights not
+pre-session deployment. Same .1/21 analyticalcohort, no silentreweight/Paper.
+Current257=166CUDA91CPU includes twoRAWminute/twoFIT-scale fits below;
+253/251 are prior subtotals, not architectures/qualified profitable models.
+
+Native1m Kepler COMPLETE: GRU32 lookback30vs120, matchedseed1101/2fits,
+same41775 target-supported examples/5minute target. Data0bc11851/tensors
+c72f1a08 actualREADY, input-only41800 includes25targetUNKNOWN; no future
+availability inranking. Data40synthetic/1387sourcehash checks, fixed6/1/1
+session FIT/INNER/adaptiveDEV, not untouched independent evidence. No volume,
+overnight or unproven bar timing claim. Data DEVprice-mark sidecar complete
+7800slots; onefixed12cellreplay. Five staggered analyticalsleeves/cost PERLEG,
+samegrossuniformreference, no overlapping-full-capital compounding/borrowedcash.
+Review A/review/current20-intraday-window-campaign-20261019-v1/claude.json
+REVISE timing/lowpower/unknown-target/sequence checks, advisory not authority.
+RAW13epochs/best1 each, native19.347s inclSYN/intake/DEV, actualseal191e063f.
+At10bpsPERLEG -1.067315% vsuniform-1.059025%; costsdominate, not an alpha pass.
+NewFIT-only4channel scale pair COMPLETE5ccf3141/13epochsbest1/old12controls
+unchanged; at5bps gross+.008958% net-.521045%/fees.530003% vsuniform-.529024%.
+No moreGPUgrid/oldfit/DEVforward; CPU net-edge feasibility separately owned.
+
+Next Boole12basefits SOURCE, DataOOFready067b39ab/BASE4b98e692,
+Meta4d5bce5c/Terminala0e6d33f separate.3foldcounts86804/650/475,
+89154/675/525,91679/775/650; scalerFIT789..4789 precedes everylocalINNER,
+fold-localFITtargetnormalizers. FourfamiliesHGB14/MLPraw1274/GRU252plus14/
+Ridge14,seed1201/128max/INNERpat20/LR/restore,12newstarts6CPU6CUDA/0retry,
+10800active21600end. OnecanonicalGPU allocation afterclosedminute studies.
+No actual12fit start inferred yet. MetaSOURCE/nativeSYN COMPLETE40tests,
+oneconvex4weight/sum1/nointercept fit to OOF1+2 ONLY1000rows/40dates,
+freezeweights before terminal3targets650rows/26dates.9matched terminalpolicies,
+fixedraw/rankmean/uniform/cash, costs PERLEG/gross/cash conventions frozen.
+Sourceutility30tests66checks/Data61+7tests/93129rawpayoff checks support
+this contract, not independent alpha/Paper promotion. Reviewexactpointer
+A/review/current25-five-session-oof-convex-20261019-v1/claude.json REVISE
+rawmeta-scale/fold3claims/accounting/solverfailure checks. Parent ownsintegration.
+
 Renewed Oct19 dispatch: latest-matured HGB COMPLETE38/best18, one SYN+one CPU
 marketfit, exact92599FIT/3150INNER, zero historicalEVAL; actor removed.
 A/research/current25-latest-matured-hgb-refit-20261019-v1, safe modela2a7acad.

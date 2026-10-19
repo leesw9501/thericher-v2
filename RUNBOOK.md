@@ -59,12 +59,21 @@ newfill deltas; missing receipt/exitcode/timestamp is UNKNOWN, not success.
 
 NAS public launch:
 A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/launch/current.json.
-NAS strict offline source:
-A/execution/current-nas-owned-model-paper-readback-20261015-v1/r2/ready-parent.json.
-Uses image87697f8e and read_native_model.py, not daily private parser. Bind exact
-launch/receipt/input/image/source/time before current cycle/intent/fill/book.
-Its73focusedcases reject journal-only/missing state/falseflat. Retained custody
-does not imply a fresh broker balance or net PnL.
+CURRENT NAS public reader (image87697f8e):
+A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/read_owned_dispatch.py
+SHA20df9e23e4660e6dda55cb65f12c41bc86de8e8dabcbc35338ca19b377040666.
+Historical r2/read_owned_dispatch.py pins OLDce219 deployment/launch and rejects
+the current scope as bound_path_invalid; never widen it or repeat that command.
+The r2 private reader is likewise not certified by a public-only audit for a
+new image/private phase. Require exact current profile/source before private
+cycle/intent/fill/book inspection; no recovery observe() as an offline reader.
+Current public-only exact22:40KST run is already read/consumed:
+A/execution/current-nas-runtime-readback-audit-20261019-v1/RESULT.json and
+RUNBOOK-COMMAND.txt.55synthetic+16independent checks; hold/await_declared_exit,
+onevisit/zeroAPI/zerolegs/cleanupattested. Not fresh custody, submit/fill or PnL.
+The existing owned current pointer may identify a NEW run; freeze that exact
+launch/hash/time/source before a finite fresh read, never infer from a latest
+file/task exit. No new human approval for routine standing-scope RO work.
 
 Nightly installed/final exact recovery:
 A/execution/nightly-typed-recovery-deployment-20261017-v1/parent-installed.json.
@@ -328,6 +337,32 @@ Keep D:15percentfree/warnprojected20percent. Credentials via scopedPaperloader
 only; credential-free tools use uv --no-env-file/.env.example, no implicitdotenv.
 
 ## Verification
+
+Current Oct19 research additions (all generated outputs/code on D:, no tracked
+production changes): Ridge14+GRU5first25, fixed9policy comparison, and native1m
+30/120 matchedGRUs complete. Native1m model/replay source and actualseal:
+A/research/current20-native-intraday-window-gru-20261019-v1/ACTUAL-SEALED.json
+191e063f;2CUDAfits/13epochs/best1 each/oneSYN/12fixedcells. Samegross.1 in
+5staggeredsleeves, costs PERLEG5/10/20; at10bps GRUs -1.067315% vsuniform
+-1.059025%, not an alpha pass. One adaptiveDEVday/provisionalminuteSTART only.
+All6492NAVs independently matched <=4.44e-16; no model/DEV repeat in validation.
+Parent9policy5day COMMIT8dfc8679 undercurrent25-five-session-diverse-ensemble-
+parent-bind-20261019-v1 is analytical from frozenformulas/nativeprecutoffpoints,
+NOT pre-session deployment; current27cells24riskyUNKNOWN3analyticcash.
+Its bind.py is consumed; puretest_bind.py5tests, ensemble31tests plusold32.
+Current model count257=166CUDA91CPU incl oneoldinvalid, not architectures.
+NEW FIT-only channel-scale pair COMPLETE5ccf3141/13epochsbest1 each, old12
+controls bit-exact. At5bps scaled net-.521045%/gross+.008958%/fees.530003%;
+cost failure, no further seen-DEV GPU grid. CPU-only net-edge count follow-on
+does not authorize another model/DEV forward or economic replay.
+OOF3fold DataREADY067b39ab/REPLAY561f895f,61+7tests/93129payoffchecks;
+12basefits have conditional numerical GO, not evidence of12 completed fits.
+Convex SOURCE03deca53/40tests/native-SYN5683f6d7 is ready; separate integration
+current25-five-session-oof-fusion-integration-20261019-v1 owns one actualCPUfit
+only after12 strict base packets. Weights freeze/readback before terminal3.
+Post-input-scaler folds never reuse global-INNER-selected predictions as OOF.
+Exact current running/ready source is in active boards, not these historical
+consumed command receipts. Repo QA below covers unchanged tracked source only.
 
 CURRENT full authority:
 A/verification/deployed-data-pacing-recovery-20261018-v1/authority.json.

@@ -5,6 +5,18 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+Fresh Oct19 22:40KST exact PUBLIC-only read COMPLETE:
+A/execution/current-nas-runtime-readback-audit-20261019-v1/RESULT.json.
+hold/await_declared_exit,1visit/0legs/0GET-POST-cancel/cleanupattested;
+no newfill/inventory/account/PnL proof.55synthetic16independent checks.
+Correct existing publicreader is zero-quote deployment/read_owned_dispatch.py
+SHA20df9e23, image87697f8e. Oldr2 MODEL pinsce219 and oldlaunchroot; Parent
+bound_path_invalid attempt is a staleprofilefault, not broker/Task failure.
+Oldsourceunchanged, RUNBOOK corrected; r2 privatephase notcertified bythisaudit.
+No API/credentials/Docker/Taskinvocation/order/privatewrite in audit. Original
+sharedbank/eightretainedfills/exit>=Oct21 unchanged. Actualaccountreadiness
+below remains Oct19 06:26KST historical, not refreshed by this hold outcome.
+
 Fresh pre-session custody visit COMPLETE atOct18 21:26UTC:
 A/execution/pre-session-readiness-20261019-v1/native-readonly-recovery-r2/
 actual/RESULT.json SHAed729785/cleanup2bbf7737/launch7b5bbb60.
