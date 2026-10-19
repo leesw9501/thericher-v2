@@ -27,7 +27,19 @@ a2316b5d/base36bitexact/36riskyUNKNOWN3analyticcashKNOWN. Originalfailed
 publication unchanged, no model re-execution. Existingdata
 feeds/cursors/collectors/Paperauthority unchanged, no new KIS calls.
 
-Research nowalso has exactfull25 static futurepacketd65cb5e9/seal19e39d78:
+Scientific correction Oct19: old full25 packetd65cb5e9 mixed original17
+standardized HGB/GRU with NEW8 raw scores. Its joint HGB/GRU/static3 rankings
+are superseded, not input-data/cursor/f9 Paper faults. Derived common-unit
+3ea48eea, independent60516dd6 proves34 conversions66 unchanged175weights,
+zero models/market rows. New pure consumer a088c9cd/16tests reuses existing
+two D1feeds and permits honest contiguous-prefix MTM; final outcomes UNKNOWN.
+Parent-bound static/latest-HGB r2 COMMIT1cd9b478,39cells36UNKNOWN3analyticcash.
+Latest CPU HGB independently validated c743c275/3150INNER42checks24fixtures.
+Parfit separately prepares five-session target overlay for faster Oct23 model
+feedback; original21 labels/masks/source and scheduled collectors unchanged.
+
+Historical hash/arithmetic facts, NOT joint score-unit proof:
+Research had exactfull25 static futurepacketd65cb5e9/seal19e39d78:
 ONLYmissing17TCN/PatchTF points actuallyadded, all oldHGB/GRU/NEW8reused;
 Parent100rawscores/175weights/refhashPASS5ca9c129. Pure all25measurement
 COMPLETE60f79d30/binding9bfbfd10/resultc141fa84,7fixturegroups/61refs and

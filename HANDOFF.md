@@ -63,6 +63,30 @@ honest host, NOT cryptographic OS scheduler-origin proof.
 
 ## Research Completed This Continuation
 
+Oct19 renewed research request: latest-matured CPU HGB fit COMPLETE38iterations/
+selected18, one real SYN/one marketfit/zero historicalEVAL; actor removed.
+A/research/current25-latest-matured-hgb-refit-20261019-v1,
+modela2a7acad/result is fit-only, not measured alpha. First new25 future
+safe-tree call COMPLETE912e24e8 beforecutoff, raw return units; no old calls.
+Independent HGB check running. One multiscale21/63/252-GRU source is being
+prepared by Boole; no GPU/native fit is inferred from that source package.
+Bernoulli owns a unit-explicit fixed-rank kernel/consumer; Parent owns Git.
+
+IMPORTANT scientific correction: the prior static full25 joint packet19e39d78
+merged original17 HGB/GRU FIT-standardized scores with NEW8 raw-return scores.
+Checkpoint/scaler identity and hash/weight checks did NOT prove output units.
+Its joint HGB/GRU/static3 rankings are scientifically superseded, not rewritten
+or repaired by rerunning models. Original17-only/NEW8-only results, TCN/PATCH,
+training checkpoints, f9 Paper deployment and all broker paths are unaffected.
+Zero-model derived common-unit packet3ea48eea converts only34 original17
+scalars using the exact positive originalFIT affine map, preserves all other
+scores and recomputes full25 ranks. A/research/current25-common-unit-future-
+repair-20261019-v1/COMMIT.json; independent validation is running. Do NOT use
+the old full25 consumer as scientific unit authority. Future outcomes remain
+UNKNOWN. Claude advisory REVISE/unit_lineage/affine_parameter_proof/rank_
+distortion_test/timestamp_provenance, review-format-r1/claude.json; initial
+JSONDecodeError review_unavailable remains unchanged. No Paper switch.
+
 Oct18 21:05KST continuation added28 fitted versions(24CUDA+4CPU), NOT28
 architectures. Ancestral ledger247=159CUDA+88CPU, including one old invalid; SYN/
 foundation inference/reader calls do not add fits. All completed training

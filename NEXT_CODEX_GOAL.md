@@ -40,6 +40,17 @@ deterministic risk, exact identity, current broker buying power and shared bank.
 
 ## Ready Parallel Packages
 
+Oct19 renewed request supplements these CLOSED ancestral packages: latest-
+matured HGB actual38iterations/best18/one CPUfit, no historicalEVAL; new25
+futurepoint912e24e8, independent check active. One21/63/252-GRU source and
+unit-explicit rank/measurement consumer are assigned in parallel, not yet GPU
+training. Parent current boards distinguish SOURCE from actual workers.
+Scientific repair REQUIRED for future joint25 comparisons: original17 static
+HGB/GRU scores standardized vs NEW8 raw. Old19e39d78 joint HGB/GRU/static3
+rankings superseded, not regraded; zero-model common-unit packet3ea48eea has
+independent review active. Original native predictions and all Paper inputs
+remain unchanged. This is a package repair, not company completion/permission.
+
 1. Engine: full25-complete-history3fits COMPLETE/81knowncells. HGB73/best53,
    fastGRUuniform65/best45,recency37/best17, INNERpat20; new8matched3primary
    comparisonsFAIL/PASS/FAIL, independentPASS150480checks/81NAVs/42controls.

@@ -224,15 +224,30 @@ No new forecast/threshold tuning for that router. Full25 static futurepoints
 native-admission-r1/SEALED-ACTUAL19e39d78 under current25-static-temporal-future-
 completion-20261019-v1, packetd65cb5e9/ParentCHECK5ca9c129. TwoFIRST17CUDA
 forwards/0fits-oldrepeats/actorlease released; no numerical caller rerun.
-Parent30files/100scores/175weightsPASS, futureoutcomesUNKNOWN. Pure all25
-consumer COMPLETE current25-static-full-universe-future-measurement-20261019-v1:
-READY60f79d30/ACTUAL-BINDING9bfbfd10/ACTUAL-RESULTc141fa84,7groups/61refs,
-Parent exactresultPASS.21cells18riskyUNKNOWN3analyticcashKNOWN/42markers absent.
+Parent30files/100scores/175weights arithmetic/hash PASS is historical, NOT
+score-unit authority. Scientific repair Oct19: original17 HGB/GRU scores were
+standardized but NEW8 raw. Old d65cb5e9 joint HGB/GRU/static3 rankings and old
+full25 publication/weights consumer are SUPERSEDED; do not use its old CLI for
+future performance. Within-subset/TCN/PATCH/f9 Paper are unaffected.
+Zero-model common-unit derived packet3ea48eea and COMMIT583e9b8b under
+A/research/current25-common-unit-future-repair-20261019-v1; independent check
+60516dd6 proves34 conversions/66 unchanged scores/175 weights/28 fixtures.
+Old packets/source/failures remain immutable, never rerun their native callers.
+
+Current pure comparison SOURCE:
+A/research/current25-current-research-future-measurement-20261019-v1/consumer.py
+SHAa088c9cd,16tests plus unit-explicit rank kernel24tests PASS. Parent-bound
+static/HGB actual r2 COMMIT1cd9b478:39 cells36riskyUNKNOWN3analyticcashKNOWN,
+zero observed days; GPU packet still explicitly missing, not a branch alias.
+First parent adapter treated Python source as JSON; failedr1/source/debit retained.
+No model rerun. Parent r2 is consumed, DO NOT rerun its write-once main.
+Future API is consumer.measure_owned_feeds(portfolio,binding,strict_reader):
+explicit old20/new9 contract/day refs, not latest-file discovery. Preserve
+current null binding; write a new exact binding/output for later markers.
+Separate asof_mark_to_market reports only the contiguous observed held-mark
+prefix, no exit fee/liquidation before day21. Final21 stays UNKNOWN until
+complete; no invented zeros, annualization or model-selection authority.
 Existing old20/new9feeds only; no new collector/schedule/Paper promotion.
-Follow its ABI.md: future input uses exact immutable day refs/contract slots,
-not latest-file discovery. Keep current null binding immutable; create a new
-owned explicit binding/output when later exact markers exist. Credential-free:
-`uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/research/current25-static-full-universe-future-measurement-20261019-v1/consumer.py --binding <absolute-new-binding> --sha256 <exact-binding-sha256> --output <new-owned-output>`.
 One analytical .1/21 cohort, not broker budget/PnL; unknown finality/PIT/TR
 remain limitations, not new global qualification/Paper gates.
 Native-throughput SYN PASS/oneallocationreleased/4exactfullstate restores:

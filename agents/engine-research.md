@@ -8,6 +8,39 @@ Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
 
+Renewed Oct19 dispatch: latest-matured HGB COMPLETE38/best18, one SYN+one CPU
+marketfit, exact92599FIT/3150INNER, zero historicalEVAL; actor removed.
+A/research/current25-latest-matured-hgb-refit-20261019-v1, safe modela2a7acad.
+First new25 future tree call raw units COMPLETE912e24e8, no old forecasts.
+Independent HGB check PASS c743c275:24fixtures42checks3150INNER scalar replay,
+maxMSEerror4.44e-16, no new fit/futurepoint. Current ledger248=159CUDA89CPU including
+one old invalid; older247 below is the closed ancestral subtotal.
+Boole prepares one supervised21/63/252 multiscale GRU source, NOT yet a fit.
+Bernoulli's common-unit rank kernel24 synthetic checks PASS; no economics.
+
+Semantic repair, not new alpha: original17 static HGB/GRU future scores were
+FIT-standardized; NEW8 scores raw. Old static-full25 joint ranking19e39d78
+is scientifically superseded despite its passing hashes/arithmetic checks.
+Same model/scaler does not establish output-unit equality. Only cross-subset
+HGB/GRU/static3 are affected, not within-subset studies/TCN/PATCH/f9 Paper.
+Derived packet3ea48eea, A/research/current25-common-unit-future-repair-
+20261019-v1, converts34 original17 scalars before rank; no model rerun.
+Independent check PASS60516dd6:34converted66unchanged175weights28fixtures,
+three affected policies; old immutable bytes/failures/debits stay unchanged.
+New13policy consumer a088c9cd/16tests +rank24tests, parent-bound r2 COMMIT
+1cd9b478/36riskyUNKNOWN3analyticcash/0observed days; GPU input still missing.
+One new five-session HGB/MLP SOURCE pair is being prepared, not fitted; same
+existing feed first5days offers earlier Oct23 feedback, fixed .1/21 cohort,
+no .1/5 leverage or matched-horizon dominance over old21day results.
+
+Do not copy a whole-PC-empty nvidia compute-apps gate into new callers:
+actual WDDM query lists normal desktop apps and protected System/dwm/TabTip/
+Taskmgr contexts. Use canonical project ownership, actual named trainers,
+GPU-container evidence and fresh freeVRAM/allocator/desktop headroom; record
+desktop observations, never claim whole-PC exclusivity. New multiscale first
+admission failed before0allocations/0native/0fits,3.254s preserved; a separately
+scoped admission-only recovery is being prepared. Native SYN still required.
+
 Ancestral247=159CUDA+88CPU market-fitted VERSIONS, including one old invalid
 depth-TCN result; not247 architectures/qualified models. Oct18 21:05KST
 continuation added29 versions(24CUDA5CPU), no completed old fit replay.

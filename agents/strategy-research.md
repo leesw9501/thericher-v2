@@ -38,6 +38,25 @@ launch-level-witness/HANDOFF-ACTUAL.json.
 
 ## Next Priority
 
+Renewed Oct19 work: common-unit, branch-resolved fixed-rank kernel COMPLETE
+24synthetic checks; same averaging primitive, NOT algorithm novelty. Distinct
+question is 21/63/252 jointly supervised heads plus latest HGB, not another
+failed disagreement stump. One GRU family carries75% rank weight, HGB25%,
+not four independent experts. Source A/research/current25-residual-ensemble-
+feasibility-20261019-v1/rank_blend.py SHA26ffec54; no models/economics.
+Pure13policy/3cost future consumer a088c9cd/16tests COMPLETE under
+current25-current-research-future-measurement-20261019-v1. Actual parent r2
+bound correctedstatic+latestHGB; GPU absent/UNKNOWN, no guessed native ABI.
+Separate prefix MTM prevents waiting for day21 to describe available marks,
+without pretending incomplete windows are final returns or forcing exits.
+
+Critical retained-data repair: old d65cb5e9 full25 rankings combined original17
+FIT-standardized HGB/GRU and NEW8 raw. Checkpoint/hash equality missed units.
+Old jointHGB/GRU/static3 scientifically superseded; common-unit3ea48eea and
+independent60516dd6 PASS34conversions66unchanged175weights/zero models.
+All within-subset/native predictions and f9 Paper unchanged. Existing old
+consumer completion below is historical arithmetic, not valid joint units.
+
 Learned-fusion feasibility COMPLETE; resulting date-level CPU stump study
 current25-date-disagreement-router-development-20261019-v1 COMPLETEf8d0f9d5.
 Onefit/24known/primaryFAIL; all63lateDEV route fixed3blend, no incremental gain.

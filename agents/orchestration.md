@@ -8,6 +8,18 @@ an append-only current board. MD/agent identity is not a running worker.
 
 ## Ready / Owned / Due
 
+Renewed Oct19 request, fresh Throughput Review12:08UTC: ready=new latest-data
+tree control/multiscale-window hypothesis/common-unit scientific repair;
+owned=Parent CPU HGB+unit repair, Boole GPU SOURCE, Bernoulli pure rank/consumer,
+Hegel independent HGB check, Plato independent unit correction check.
+Actual GPU check4090/free21815MiB, canonical lease absent, only web container;
+this is availability, NOT running training. HGB actual COMPLETE38/best18,
+actorremoved; source-only GPU is not counted. Data/Paper existing due unchanged.
+Reversible improvement: verify producer score UNITS before merging cohorts;
+hash/state/scaler equality alone missed a real17/8-unit mismatch. Parent derived
+packet3ea48eea/zero models; old full25 HGB/GRU/static3 ranking superseded.
+No Paper/bank/runtime/source authority changes, no foreground session wait.
+
 | Owner | Actual State / Write Set | Next Action |
 | --- | --- | --- |
 | Engine/Chandrasekhar |Old temporal appointment CLOSED57SYNforwards21updates/0marketfits, originalSYN10 not qualified by SYN5.|Never regrade/refund/retry old scope.|
