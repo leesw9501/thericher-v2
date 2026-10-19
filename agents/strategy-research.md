@@ -1,101 +1,80 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
-Own official-source hypotheses/pure mechanisms, not broker risk or model
-selection authority. Engine owns targets/splits/cost/fitting; Steward oneGPU;
-Parent integration/Git. NAS company outcome remains unfinished.
+Own official-source hypotheses/pure mechanisms; Engine owns final targets,
+splits/costs/fitting. No broker/risk/credential authority. Parent integrates/Git.
+Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
-## Current Consumers
+## Ready / Owned
 
-Ledger304 fittedversions193CUDA111CPU, not architectures/profitablemodels.
-Existing4/relative/refresh/full52/tilt/DeepSets/pairwise/OOFrouter grids closed.
-OOFstump6850ce41 alwaysfixed4/no routinggain. No repeated seeds/lambda search.
+Boole: ONE actionable-target source/native preparation:
+A/research/current-actionable-target-preparation-20261020-v1.
+180cumulative active/1800elapsed, CPU2RAM3, <=2tiny synthetic fits,
+0marketfits/forecasts/GPU/API/credentials/Task/repo writes.
+Inspect <=12 exact old target contracts/results for duplication, then produce
+one distinct executable hypothesis or concrete rejection, not a reading list.
+Candidate axes may include cost-threshold direction/probability or conditional
+payoff, not another raw MSE/rank/seed/window grid. Specify label timing/purge/
+chronological INNER/controls/costs/strongest kill and retained score packet.
+A source proposal does not grant the market fit; Parent freezes next campaign.
 
-TTM frozenencoder heads1352dba9: TTM INNER_MSE.919622382 vs raw1.052426698.
-Matched adaptation64442426 continuedhead.919622385 vs lastblock.916023822,
-BUT analytic TRAINmean.878046813 better than both. Close adaptation grid,
-do not sell pairedgain as useful alpha. Source/model/native proof exact in
-engineboard. Original Oct20 future five-policy point remains unchanged.
+## What Current Evidence Rejects
 
-RiskGRU0098057a/ABI1980cfaf: 48epochs/best36, INNER QLIKE
-mean-5.212878258/EWMA-5.389013741/GRU-5.433648356. Promising adaptive proxy-loss
-diagnostic, not profit. Target is observable5OC^2+4internalON^2, not latent
-variance/highfrequencyRV/HAR; conditional unbiasedness assumption unproved.
-No inverse-risk override to F9: fivecaps exactly equal basketgross.
+Ledger306 fitted versions, not architectures/winners. GRU/TCN risk proxy
+improves reused stock INNER QLIKE, but12ETF domain learned/blend lose EWMA;
+uniform beats learned financial allocation. Do not extend that grid.
+TTM heads/adaptation lose analytic TRAINmean; attention return/aux-risk and
+HGB absolute-vs-midrank tasks select constants. Null diagnosisb1ca988d found
+no checked selector/unit/key/export fault, not general market unpredictability.
+Do not reopen old models/holdouts or fabricate OOF from TRAIN scores.
 
-COMPLETE complementary TCN risk expert/Confucius:
-A/research/current-sparse-path-risk-tcn-development-20261020-v1.
-One causal width16/k3/dilations1,2,4,8/dropout.1, same data/affines/target;
-40epochs/best32/722.198fit seconds wallstop, NOTconverged. INNERdiagnostic
-PASS vsGRU/EWMA, but12ETFdomain GRU/TCN/rawvarianceblend ALLworseEWMA.
-Stockblend omitted for absentoldGRUvector; newdomainblend cachedcompatible.
-15cell allocationdd850443 independent09023890: alllearned slightlybetterEWMA
-but uniformbetter/allnominal-price policies lose atassumedcosts, not TR/Paper
-netPnL. Close proxy-risk architecture/weightgrid, no forecastreplays orseeds.
-Official https://arxiv.org/abs/1803.01271 supports a general convolutional
-sequence hypothesis, NOT financial performance. Native installed PyTorch only,
-no downloaded code/new dependency. Claude REVISE/no categories, not agreement.
+ETF weekly reversal/opposite/fixed.5blend/uniform/cash study72102ffb:
+12funds57dates/15cost cells/28SYN/Decimal gap4.44e-16, primary FAIL.
+At10bp eachside growth reversal-.0703%, blend-.2837%, uniform-.4351%.
+Blend reduces drawdown but adds no growth over reversal. Price-only adaptive
+research, not alpha/actual Paper PnL; no horizon/weight/Topk grid.
 
-New sector risk domain input50c29b98: all12ETF on21input-only dates/252rows,
-not full57 due earlier HIGH/LOW absence. New assets share marketperiod/factors
-with stock fit, so any later diagnostic is NOT untouched temporal replication.
-Original50c29b frozen; NEWactualOHLC SPY/XLK2087/XLF-XLE1282 now permits
-pure57dateABI preparation, not regradeold21datecohort/results.
+## Prepared Mechanisms / Concrete Limits
 
-ONE preparedrule: A/research/current-sector-regime-strategy-preparation-
-20261020-v1/PROPOSAL.json/SOURCE-READY.json,16SYN/110.125active. Positive
-252session nominalprice momentum using priorclose->nextsessionCLOSEfills,
-all12routes/alwayslong+same-datecash-scaleduniform controls. No MA/grid/
-economic pass. Five flagged split/basistransitions need scoped retained-data
-classification; rawprice changes are not proof of economic returns/alpha.
-Primary https://w4.stern.nyu.edu/facdir/lpederse/papers/TimeSeriesMomentum.pdf
-motivates a mechanism, not profitability of this sector adaptation.
+- 252session momentum: current-sector-regime-strategy-preparation-20261020-v1,
+  PROPOSAL/SOURCE-READY,16SYN/110.125active. Prior-close-only positive nominal
+  momentum/next-session fills, same-date scaled-uniform control. Five split
+  transitions need source basis; calibration/firstcause leave UNKNOWN/no
+  bridge. Source-only, no economic pass or global Data hold.
+- ETF provisional Paper adapter: current-sector-reversal-paper-readiness-
+  20261020-v1/SOURCE-READY.json11d6e285,24fixtures. Needs fresh all12 six
+  CLOSEs and compatible custody. Venue audit7fd6d19d:SPY/GLD AMEX,TLT NASD;
+  shared-loader proof1d5cd9a7: NAS876/F9499/nightly304 reject AMEX entries
+  globally. No eight-file rollout/new bank/foreign adoption.
+- SEC feature feasibility: current-sec-fundamental-feature-feasibility-
+  20261020-v1/SOURCE-READY.json50eb59b1,37SYN. ONE accession-verified YoY
+  quarterly operating-margin-change signal/63session target; preserve unit,
+  quarter/amendment/as-of distinctions. Not earnings announcement/SUE/PEAD.
+  New three-company pilot stopped at first403/1GET/0retry/0accepted docs.
+  No remaining worker/proxy/header rotation; contact-format cause unproved.
+- Constant attention futureloop retired BEFORE installation. Reusable source
+  r205f8bbbe/78fixtures and pureadapter2847ed2b/28fixtures are not qualified
+  exports or a new Task. Existing TTM/risk prospective workers unchanged.
 
-NEW return-only vs return+auxrisk sharedrepresentation test is a distinct
-stock main-target hypothesis, not furtherriskgridtuning. Two matchedGRU32/
-mainRETURN_MSE checkpoint/epochs+LR, fixedrawlogreturnblend/15costcells;
-source/nativefirstallocation failedSYNidentitybeforeobservedmarketstarts,
-originalprotocolclosedUNKNOWN/no automaticretry. NEW distinct causalattention
-32/2layers/4heads/seed2201 pairedexperiment source+CPUproof beforeGPU, not a
-renamedGRU. ClaudeREVISE killlogic/RNG/singleseed/reuseddata implemented in
-predeclaredrules. Actualcounts/limits engineboard.
-Attention ACTUALCOMPLETEed9a0e73:both20epochs/best0/TRAINmean; scientificFAIL,
-financialnon-strictPASS onlyequality/uniform, not learnedgain. Closeauxriskgrid.
-Engine no-fit commondate-vs-stockordering audit now usesretainednonconstant
-packets before proposingdifferenttarget/task; no oldforecast/replay/rerank.
-57date12fundABI16c18682 READY. MODP1firstXLK1GET gives12OTHER/basisUNKNOWN,
-nobridge/fourfundsunattempted; purefixed-split adapter source notqualification.
-Constantattentionfutureproposal retiredbeforeinstall; oldfutureworkers unchanged.
-GeneralMTL primary https://www.cs.cornell.edu/~caruana/mlj97.pdf motivates
-sharedrepresentation, notfinanceperformance. No oldfuture/Paperpolicychange.
+## Sources / Durable Knowledge
 
-## Source Knowledge / Closed Work
+Source claims motivate hypotheses, not project profitability:
+- https://www.nber.org/papers/w2533 (weekly stock reversal mechanism).
+- https://w4.stern.nyu.edu/facdir/lpederse/papers/TimeSeriesMomentum.pdf
+- https://www.cs.cornell.edu/~caruana/mlj97.pdf (shared representation).
+- https://arxiv.org/abs/1706.03762 (attention).
+- https://arxiv.org/abs/1803.01271 (causal convolutions).
+- https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+- https://www.sec.gov/about/developer-resources
 
-Sector feasibility PROPOSAL:
-A/research/current-sector-market-context-feasibility-20261020-v1.
-Original source80d6f177 independent72checks found eight-stock minimum and
-counter-identity defects; repairedecf2bff9 independently30checksPASS. Original
-52market0fits superseded by useful ready4, not a52pass. Old debits preserved.
+Official public SEC APIs need no key; current403 is observed access failure,
+not evidence the proposed feature exists locally or email format caused it.
+Current facts are not automatically historical point-in-time values.
+Exact trusted Granite TTM revisionf04bebdd/weights30f8d9be/Apache2/image71fe
+already used. Chronos/TimesFM/other public-model studies also exist; do not
+propose them as never tried. Major runtime replacement still needs operator.
 
-Official sources support hypotheses, not project profitability/replication:
-- https://www.nber.org/papers/w25398
-- https://www.tandfonline.com/doi/full/10.1080/0015198X.2024.2388024
-  Abstract supports relative-return modeling; full403 not bypassed.
-- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4282614
-  Rolling-vs-static abstract motivated a distinct procedure; no data/code reused.
-- https://huggingface.co/ibm-granite/granite-timeseries-ttm-r1
-- https://www.ibm.com/granite/docs/fine-tune/time-series
-- https://github.com/google-research/timesfm/blob/master/timesfm-forecasting/examples/finetuning/README.md
-
-Foundation feasibilitye7ab4fdd/27fixtures/tinyCPUgradient proves only that tiny
-source API, not full pretrained CUDA. Exact trusted Granite revisionf04bebdd/
-weights30f8d9be/image71fe84b0 Apache2; existing runtime no installs/downloads.
-TimesFM2.5 retained alternative not compatible with official newLoRA dependency
-stack as-is; no major runtime switch adopted. Original evidence/debits stay D.
-
-Do not turn source reading into a backlog/report system. A proposal gets an
-executable bounded experiment or a concrete rejection. Underrepresented
-mechanisms/OOF learned fusion are allowed; no profitability prerequisite for
-exploratory composition, no in-sample expert predictions for learned gates.
-Do not keep a permanent LLM per indicator. Invoke new strategy capacity only
-for a concrete ready consumer; completed review agents may close.
+Keep a small executable ready set; no permanent agent per indicator or
+reading-list/report platform. Completed mechanisms/history stay Git and
+immutable artifacts. Scientific failure does not ban a separate Paper
+engineering baseline or exploratory fusion under a new honest contract.

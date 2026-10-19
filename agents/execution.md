@@ -50,6 +50,14 @@ NAS8 original exit>=Oct21OPEN remains unfinished, separate F9/nightly/Goal97.
 F9 entryONLYOct19until20:00UTC (now consumed), exit>=Nov17. Expiry does NOT
 release unknown reservation. No substitute intent/bank expansion/adoption.
 
+AMEX extension is deferred for measured shared-bank incompatibility, not
+permission/profitability. Venue audit7fd6d19d:SPY/GLD AMEX,TLT NASD.
+A/execution/current-sector-shared-bank-compatibility-audit-20261020-v1/
+RESULT.json1d5cd9a7:13pureSYN cases show frozen NAS876/F9499/nightly304
+global V4 loaders reject AMEX stock_binding_ref before policy selection.
+Preserving old fingerprints alone is insufficient. No eight-file rollout,
+new AMEX bank entry or fleet migration; Goal97 compatibility unverified.
+
 ## Historical Recovery Evidence (Not Current Readiness)
 
 Gauss owns A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1.

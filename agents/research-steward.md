@@ -1,63 +1,53 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
-Own exclusive GPU/trial custody, not model choice, broker risk or human approval.
+Own GPU allocation/trial custody, not model choice, Paper risk or approval.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
-## Ready / Allocated
+## Allocated / Ready
 
-Closed ledger304=193CUDA111CPU fittedversions incl one oldinvalid, not
-architectures/qualifiedwinners. TTM1352dba9 twoCUDAheads, adaptation64442426
-twoCUDAfits, riskGRU0098057a oneCUDAfit and riskTCNb6fffd68 ONECUDAfit all
-COMPLETE/actorsleaseclosed. Native optimizer/RNG/checkpoint proof before fits.
+Ledger306=193CUDA113CPU completed market-fitted versions, not architectures
+or profitable models. Failed original paired-GRU conservative reservations
+are not reported as actual fits. Canonical lease:
+A/engine-research-agent/locks/gpu.lock. No active GPU trainer.
 
-TCN40epochs/best32/time-stop722.198fit seconds, NOT convergence. Final791.781
-active includes38.501failedprelaunch import debit/zeroallocation qualification,
-same1200active3600elapsed/oneallocation. 924updates/43saves4restores. Actual
-GPU sample39percent2880MiB duringfit, not sustained utilization or peak. No
-further risk-only grid assigned after adverseETF-domain result; no dummy reruns.
-285own+328independent checks/no model re-execution. StockINNERblend omitted
-because oldGRUvector absent; newdomain blend reused cachedGRU output.
+Attentioned9a0e73 completed2actualCUDA fits/20epochs/best0 each,
+11.419+11.863fit seconds/920market+8CUDA-SYN updates; actor/lease closed.
+151.796active849.103elapsed is not all GPU spend. Restored constants,
+scientific FAIL/financial exact equality, no further grid/convergence claim.
+HGB8e44c937 completed2CPU fits/20iterations/prefix0 each; strict FAIL.
+121.469 cumulative active includes51.343 prep debit. CPU was appropriate,
+not an environment or permission hold. Null diagnosisb1ca988d had0model calls.
 
-Canonical lease A/engine-research-agent/locks/gpu.lock. No activeGPU trainer.
-FutureTTM point installedOct19 23:30UTC, Risk point23:45UTC ACTUALLYReady
-40aa3257/3384e57c. Each one separate120active600elapsed forecast allocation/
-0retry, no fits; missinginput=>0GPU. Same original models/policies/cohort,
-not newTCN promotion. MeasurementOct26 23:45UTC installedCPU-only/noGPU.
+TCNb6fffd68 oneCUDA fit40epochs/best32/time-stop722.198s, NOT convergence.
+Actual sampled39percent/2880MiB was during fit, not sustained usage/peak.
+GRU/TCN risk domain/allocation failed against useful simple controls; close
+that grid. TTM heads/adaptation also complete, selected heads worse than mean.
 
-NEW paired mainRETURN-only vs mainRETURN+auxrisk GRU32 source ready under
-A/research/current-return-risk-multitask-development-20261020-v1.1500active/
-7200elapsed/hard23:05UTC/2starts0retry/oneGPU/source300/market1000/economic100/
-cleanup100; max256/pat20/LR+bestcheckpoint byINNERRETURN_MSE only. Original
-21:02UTC clock/debits fixed. FirstCUDA allocation SYN-A identitycheck failed
-before observed market/optimizer starts; CLOSED2250c2e0/69.547active977.352
-elapsed/actorquiescent/leaseclosed, fullcountsUNKNOWN. No blind retry/allocation
-refund. Independent source-boundary review before any new native dispatch.
-OriginalpairedGRU subsequentlyclosedUNKNOWN/74.672active,7schemafixtures/
-observed0marketstarts andsteps, outerUNKNOWN/charges preserved. No retry.
-NEW attentionpairedmodel SOURCE/nativeCPUproof1500active7200elapsed/hard
-23:05UTC/2starts0retry/oneGPU, beforeparentGO/actualCUDA. Distinct causal
-Transformer32/2layers/4heads/seed2201, not renamedGRU. Canonicalleasefree now.
-Attention nowCLOSEDed9a0e73/2actualCUDAmarketfits/11.419+11.863seconds/
-both20epochs-best0,151.796active849.103elapsed/actorleaseclosed. ActualCPU
-nativeproof precededoneGPU/CUDAproof;920market+8CUDA-SYNupdates. Counts304
-exclude originalfailedGRUconservative reservation as actualfits. Scientific
-FAIL/financialexactequality, no usefulness or convergenceclaim. Constantnew
-futurepointproposal retireduninstalled,0exportqualificationforwards. Newready
-Engine task-alignment audit is CPU/no-fit, not unallocatedGPUtraining.
-New paired futureloop source preparation CPU-only, NOT installed/modelready.
+Next Strategy package is SOURCE/native SYN only:
+A/research/current-actionable-target-preparation-20261020-v1.
+180active1800elapsed/CPU2RAM3/<=2tinySYNfits/0marketfits-forecasts-GPU-API.
+A genuinely distinct target/full numerical contract is required before new
+allocation; do not refund/relabel old clocks or reopen seen holdouts.
 
-Cost-aware15cell allocation+independentDecimaloracle complete/adverse price-
-only results, not actualPapernetPnL. New pure57dateData input and source
-preflight review proceed in parallel. No GPU permission/environment hold. Measure real
-owners/VRAM/headroom before any new allocation; no idle lease waiting feeds.
-Paper reliability preempts at a safecheckpoint.
+## Existing Owned Future Jobs
+
+TTM point Oct19 23:30UTC=Oct20 08:30KST; risk point23:45UTC=08:45KST.
+Each forecast has120active600elapsed/1allocation0retry, no fitting.
+Exact Oct19 old20/new9 immutable capture/input/mask proof first; absent input
+=>0GPU/UNKNOWN. Do not idle-hold lease waiting for feeds or stale-pad.
+Original policies/cohort unchanged by newer research.
+Measurement Oct26 23:45UTC is CPU-only/no NN/API/GPU.
+
+Measure actual owners/free VRAM/headroom before new allocation. Keep one
+training allocation; future owned jobs and Execution reliability preempt at
+safe checkpoint. Permission/environment are available; no dummy training.
 
 ## Custody / Recovery
 
-Existing immutable D/existing registry retain source/SYN/failure/I/O/cleanup
-debits. Queue/LLM/review elapsed separate from GPU spend; no cap refund.
-Unstarted proposals may be explicitly superseded before effects, not old failures
-regraded or restarted under a new label. Source/readiness/INNERloss are not
-independent alpha/deployment. No dummy utilization or GPU approval wait.
-After interruption recheck exact owner/checkpoint/outcome/lease before resume.
+Use existing registry/immutable D evidence. Preserve failed source/native/
+allocation/market/I/O/cleanup debits; distinguish cumulative active worker
+time, end-to-end elapsed and review/queue time. No refunds or completed
+fit/forecast reruns for metadata. Native real optimizer/checkpoint/RNG API
+proof precedes market dispatch; synthetic fixtures alone are insufficient.
+A source proposal or GO is not an actually running GPU worker.
