@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current Oct19 23:20KST; A=D:/thericher-v2/model-artifacts, M=D:/market_data.
+Current Oct20KST; A=D:/thericher-v2/model-artifacts, M=D:/market_data.
 ONE unfinished company outcome: current-nas-owned-model-paper-cycle-v1.
 Eight retained exact FULL entries; owned exit>=Oct21 US regular OPEN.
 Research completion is not company/Paper completion. Parent owns shared docs/Git.
@@ -10,37 +10,52 @@ AGENTS owns authority: private no-cost Data/Research/Paper delegated, never live
 
 | Owner | Actual State | Next Action |
 | --- | --- | --- |
-| Engine/Boole | Base12 COMPLETE. NEW context native SYN failed2API bindings; linked CPU fixture failed scheduler-epoch binding,0market fits/allallocations released. | Bounded source-test debug, no guard relaxation/old regrade; final nativeproof then six unused market slots only if PASS. |
-| Meta/Confucius | Raw-MSE convex integration COMPLETE6893608b,1CPUfit/27cells/7047NAVoracle, old failure preserved. | NEW pairwise-rank fusion source/onefit/3newcells,27oldcontrols reused; adaptiveDEV only. |
-| Data/Boyle | OOF input and daily replay marks COMPLETE067b39ab/561f895f,61+7tests; BASE/META/TERMINAL physically distinct. | Released; no feature copy/acquisition or Paper dependency gate. |
-| Engine/Kepler | Four1m fits/net-edge COMPLETE, no more minute fits. | Disjoint54cell context/control comparison SOURCE, conditional on six frozen OOF packets; no model/GPU calls. |
-| Review/Boyle | BASEaudit PASSf778e663 plus key-order recovery PASSd22efb96/111checks, no targets/prices/models/solver. | Released from completed audits; not an authority gate. |
-| Execution/Gauss readback | Finite RO natural nightly23:50/f9first00:10 result package assigned; no Task/API invocation/new schedule. | Own due-aware wait while research proceeds; exact parsers/outcome bindings, hardstop00:40KST. |
+| Engine/Boole | Context6 COMPLETEccdb03e8,748.959familyactiveinclfailures/allleases released. Coefficientaudit82493ac9 COMPLETE19tests. | NEWsector14vs52 sixfit SOURCE, no numeric start until actual Data/native proofs. |
+| Strategy/Confucius | Pairwise rank meta COMPLETE9ffa42d7 primaryFAIL; sector proposal ready, not data/model/Paper success. | Exact52feature/common-support proposal delivered to Data/Engine. |
+| Data/Boyle | Original sector collection CLOSED27GET/2POST,149queries unattempted; full52notready. Existing4 alternative ready, not52pass. | NEW bounded accepted-cursor continuation210GET/2clients/900active3600end; callback/PATHEXT repair, preserve old debits. |
+| Infra/Kepler | Context54 COMPLETEf0b6aa46/primaryFAIL3of3/11934NAVoracle. | Narrow tracked prefix-result/publicPATHEXT fix +tests, Parent QA/newrelease next; no deployment claim. |
+| Execution/Gauss | OldnightlyGETrejected; NEW16:04UTC scopedopenordersGETaccepted200/1auth1GET0orders. F9missingresultUNKNOWN. | Paired new host/guard/image/reader release +exact native recovery, no repeat successful probe/blindorders. |
 | Strategy/Russell | Post-scaler OOF recipe COMPLETE30tests66checks, no models. Original inputscalerFIT789..4789 precedes all local INNER/OOF. | Released; utility consumed by Data/Engine. |
 | Execution/Gauss | Exact22:40KST NAS publicread COMPLETE,55tests16checks, hold/await_declared_exit/1visit/0legs/0API/cleanupattested. | Released; no newfill/privatecustody/PnL proof. |
-| Parent | Same5day Ridge+GRU COMPLETE, all9 fixed policies bound8dfc8679; old125weights/15cells unchanged,0futuremarks. | Integrate/verify/commit/push checkpoint while OOF preparation proceeds. |
+| Parent | Same5day/OOF/context/rank completed, sector sources/Data and Paper diagnosis actually owned separately. | Integrate current facts, fresh required QA after narrow code fix, paired runtime recovery; no company closure. |
 
 Last actual CUDA allocations: new5dayGRU33epochs/best13/native83.285s;
 native1m RAW pair13/best1 each/native19.347s including SYN/intake/DEV;
 FIT-scale pair13/best1 each CLOSED5ccf3141/82.412activeupper3600.
 Base12 last allocation also closed at23:19KST;493.651numericalinclqualification,
-42.191source separate. Source/LLM is not running CUDA; context6 not yet claimed.
-Current fitted-version ledger270=172CUDA98CPU incl one old invalid, not
-architectures/qualified models. Actual12base fits counted; new context6 and
-new pairwise CPU fit are NOT counted yet. Failed context SYNs are not market fits.
+42.191source separate. Source/LLM is not running CUDA; context6 now COMPLETE.
+Current fitted-version ledger277=178CUDA99CPU incl one old invalid, not
+architectures/qualified models. Context6 and pairwiseCPU1 now actually counted;
+failed SYNs are not market fits. Newsector6 not started/counted. No active GPU
+fit inferred: first improve inputs rather than repeat failed context seed grids.
 
 ## Throughput Review
 
-Ready=OOF base outputs complete, disjoint convex integration, independent
-integrity review, next contextual GPU source and Git integration. Owned=above;
-due=existing nightly23:50KST/f9firstOct20 00:10KST, nextmorning Data06:50/07:30/08:00.
+Ready=actual Paper technical diagnosis, bounded sector Data/source, matched
+next-campaign source and Git integration. Owned=above;
+due=existing f9entry window through20:00UTC, nextmorning Data06:50/07:30/08:00.
 NAS future visits remain hold until declared exit; no foreground session wait.
-One reversible improvement: use post-scaler OOF blocks rather than rebuilding
-1GB features, plus separate base/meta/terminal labels and FIT-only target scalers.
+One reversible improvement: public PATHEXT fallback only when missing/blank;
+native ablation proves PS5exit0/empty stdout otherwise. Persist prefix failures
+instead of losing result.json, preserve unknown effects. Scoped new-probe60s
+token issuance floor on same
+state, because measured240s issuer cadence starves300s callers. Preserve old
+contracts/marks; no generic rate-limit bypass. Reuse CPU-proven vectorized loss
+and correct checkpoint identity/local counters only in NEXT frozen campaign.
 No global approval/qualification hold. All counters/hot IO/source-time faults
 remain scope-local; new workers use verified RAM counters/ProgramW6432 allowlist.
 Real worker time is not LLM/source-review/queue elapsed time. Completed fits/
 forecasts never rerun just to occupy GPU or repair metadata.
+
+New concrete source review found two premarket P1s in sector80d6f177: eight
+extension-only stocks cannot meet20minimum; counteridentity key unsupported.
+Confucius72checks, Boole fixes in new seal/native proof without relaxing criteria.
+Data continuation callback now public-schemaPASS after changing denied DEVNULL
+file-open to empty PIPE, not ownership bypass. Broad actor matches may include
+offline research/QA; Kepler measures exact safe identity classification, no
+unchecked directory exemption or frozen-guard change. FullQA COMPLETE18370PASS
+22skip/388.21s/cleanhelperexit0; fresh1362source78a4054f authority independently
+checks collection/control/JUnit/native proof. Runtime activation remains separate.
 
 ## Current Findings
 
@@ -100,8 +115,8 @@ Tracked1360 production/control authority f81653d8 remains last full:
 18314PASS22skip/clean8/helper0,322serial/132focused. Docs/external-only may
 reuse ONLY after fresh exact source/control equality. External new native/
 focused/oracle checks are separate, not validated by repeating repo tests.
-Checkpoint613f589 pushed after exactdigest/Ruff/threeCompose PASS;
-new12fit/net-edge integration pending. Pre-existing untracked
+Checkpoint3ac55fa pushed after exactdigest/Ruff/threeCompose PASS;
+context6/rankmeta/Paperfault/newsector integration pending. Pre-existing untracked
 %SystemDrive%/ untouched. Market/model storage and15percentfree floor unchanged.
 Resume by exact owners/receipts: SOURCE is not running, missing is UNKNOWN,
 closed studies immutable; do not mark company complete to end a package.

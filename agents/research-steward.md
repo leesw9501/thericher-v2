@@ -1,16 +1,32 @@
 # Research Steward Stateboard
 
-Current Oct19KST. A=D:/thericher-v2/model-artifacts.
+Current Oct20KST. A=D:/thericher-v2/model-artifacts.
 ONE company objective: current-nas-owned-model-paper-cycle-v1.
 Steward owns exclusive GPU allocation/trial custody, not model choice,
 broker risk, human approval or a permanent daemon. Parent owns integration/Git.
 
 ## Ready / Allocated
 
+Current ledger277=178CUDA99CPU incl one old invalid. Six context/control fits
+and pairwise-rank CPU fit actually COMPLETE; all actors/GPU allocations closed.
+Current source for next sector14vs52 Ridge/HGB/MLP sixfits4CPU2CUDA is not
+running training: source/native proof and actual Data input binding required.
+Seed1401/6000active14400elapsed includes preparation, CPU180/GPU1200 perfit,
+max160/INNERpat20/bestrestore, one canonical GPU lease/measured headroom.
+Before numerical effects the resource allocation was calibrated to at most two
+lifetime allocations (proof then market), one active at a time; no idle lease
+while Data pending, no fit/time-cap increase or old debit refund. Actual native
+qualification and market completion still need worker evidence, not this MD.
+No dummy GPU work or old fitting/forecast repetition to repair publications.
+Data accepted-cursor continuation and Execution technical recovery are separate
+owners; no global model approval wait. Context54 economic primaryFAIL3of3
+and pairwise-rank primaryFAIL close those grids, not every new hypothesis.
+Current exact package roots/refs: HANDOFF/orchestration; subtotals below historical.
+
 Renewed request: new5day fastGRU COMPLETE33epochs/best13/native83.285s,
 oneactualSYN/onefit/oneFIRST25point, all actors/lease released. Parent Ridge14
 onefit COMPLETE/independent158checks PASS. That step closed at253; current
-270=172CUDA98CPU after four native1m/12newOOF/oneCPUmeta. Prior subtotals
+ancestral270=172CUDA98CPU after four native1m/12newOOF/oneCPUmeta. Prior subtotals
 ancestral. Newcounterr1/safe childenv apply only to new source, not old studies.
 Legacyouter claimsfuture0 despiteactualPOINT1; metadataqualificationba3064a9
 73checks preserves originals, no duplicate fit/point permitted.
@@ -27,9 +43,9 @@ fold-local FIT targetnormalizers, inputscaler5b5f3f before every INNER/OOF.
 Convex meta COMPLETE6893608b/oneCPUfit/27cells/oldfailurepreserved,
 268.071cumulativeactiveupper inclreadback/original122.304, no base repeats.
 Weights503c54aa hosthash before terminal3/7047NAVoracle/independent111checks.
-Confucius NEW pairwise-rank meta SOURCE, oneCPUfit/3newcells/27controlsreused,
+Confucius CLOSED pairwise-rank meta9ffa42d7, oneCPUfit/3newcells/27controlsreused,
 600active3600end/oneSYN/onefit, noGPU. ReusedDEV/adaptive, not independent alpha.
-NEXT contextual-vs-no-context6CUDAfit SOURCE assigned, seed1301/same3folds,
+CLOSED contextual-vs-no-context6CUDAfit actualccdb03e8, seed1301/same3folds,
 9000active18000end/perfit1200/max160/INNERpat20/0retry/onecanonicallease.
 Measured headroom required at actual start; SOURCE is not current GPU activity.
 Two context GPU SYN API failures21.512debit/2allocations released/0markets;

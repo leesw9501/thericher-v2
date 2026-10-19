@@ -1,12 +1,46 @@
 # Engine Research Stateboard
 
-Current Oct19KST. A=D:/thericher-v2/model-artifacts.
+Current Oct20KST. A=D:/thericher-v2/model-artifacts.
 Company: current-nas-owned-model-paper-cycle-v1, still unfinished owned exit.
 Engine owns experiments/targets/features/splits/costs/fits/replay/ensembles.
 Execution owns deterministic broker risk. Parent owns shared integration/Git.
 Research success is not Paper permission; MD/queued protocol is not a worker.
 
 ## Current Results
+
+Latest ledger277=178CUDA99CPU incl one old invalid, not architectures or
+profitable-model count. All context6 fits and rank-meta1 below are COMPLETE.
+No repeated fits/forecasts for metadata, no currently inferred GPU training.
+
+Context/control6 actualccdb03e8/source1e76b80b COMPLETE,169epochs/21744updates/
+43675forwards/3300OOFscores. Context epochs/best21/1,24/4,36/16;
+control41/21,24/4,23/3. All748.959activeupper includes failed API/SYN/fixture
+attempts/readback, all actors/leases released. Comparisonf0b6aa46/f747cd4d
+54cells/17tests/11934NAVoracle/594metrics PASS arithmetic; economic primary
+FAIL3of3. Fold3 contextgrowth2.944815%/DD1.098685% versus control
+3.675678%/.746521%. No additional context seed grid.
+
+Pairwise-rank meta9ffa42d7 COMPLETE oneCPUfit/21tests/783DecimalNAVs,
+3newcells/27oldcontrols bit-reused.10bp growth2.074921%/DD.648291% versus
+fixedrank2.859093%/.643800%, primaryFAIL. Forty dates/12000 dependent pairs,
+not independent IID evidence. No new lambda grid or old base forecasts.
+
+NEXT current-sector-market-context-development-20261020-v1: six matched
+Ridge/HGB/MLP14vs52 fits,4CPU2CUDA,seed1401/6000active14400elapsed/max160/
+INNERpat20/bestrestore. NEW RAW14 rebuild/FIT2019..2023 scalers, context e-2
+all11sector ETFs, stock-varying beta interactions, same common input-only
+support/split limitations for both arms. Data original closed incomplete;
+separate accepted-cursor continuation proceeds. Source/native proof is not
+a market trainer. No numeric dispatch until exact actual input/native proof.
+Historical availability/finality/PIT unknown limits claims, not authority.
+
+Ridge coefficient audit82493ac9/19fixtures/3safeNPZ PASS,12/14 same signs
+across nested folds, descriptive conditional coefficients only. Common
+additive market factors cannot change within-date stock ordering. Loss proof
+b133f329 is CPU-only: next CUDA/native checkpoint proof still required.
+Exact roots/refs and recovery ownership: HANDOFF and orchestration.md.
+
+## Closed Evidence
 
 New Oct19 package: same5day target/supported92579FIT3150INNER,
 no new historicalEVAL. Parent fixed Ridge14 alpha10/weighted cholesky COMPLETE
@@ -22,7 +56,7 @@ Nietzsche fixedrankblend3/4 source92c7139d/63tests COMPLETE. Parent actual
 9policy binding8dfc8679 preserves125oldweights/15cells;24riskyUNKNOWN3cash,
 0futuremarks. Formula13:12:28UTC/points pre13:25, later derived weights not
 pre-session deployment. Same .1/21 analyticalcohort, no silentreweight/Paper.
-Current270=172CUDA98CPU includes twelve new OOF fits and one meta fit below;257/255/253/251
+Ancestral270=172CUDA98CPU includes twelve new OOF fits and one meta fit below;257/255/253/251
 are ancestral subtotals, not architectures/qualified profitable models.
 
 Native1m Kepler COMPLETE: GRU32 lookback30vs120, matchedseed1101/2fits,
@@ -71,19 +105,19 @@ Lower absolute MSE is not better growth/risk. NEW onefit pairwise-rank simplex
 source uses SAME OOF1+2/40dates/12000dependentpairs, fixed.01shrinkage;3newcells/
 27controls byte-reused/600active3600end. Full protocol/review/root in HANDOFF.
 
-Next GPU source owned by Boole: current25-cross-sectional-context-development-
+Closed GPU source owned by Boole: current25-cross-sectional-context-development-
 20261019-v1. DeepSets-style masked same-date context vs matched no-context14
 features, two variants x3samefolds/6newfits/seed1301/max160/INNERpat20/LR/restore.
 Context uses input-only membership, not label support; no cross-date pooling.
 9000active18000end/perfit1200/0retry/oneGPUlease.54fixedcells/6policies,
 primary all3fold growthup/DDnotworse vs matched at10bps; othercellsdiagnostic.
-No current training claim from SOURCE; existing four-expert meta/Paper unchanged.
+Actual completion is recorded above; existing four-expert meta/Paper unchanged.
 Claude22b17865 scoped limitations and original-source links are in HANDOFF.
 Context originalSYN/identity-r1 failed checkpoint identity/step-count bindings;
 counter-r2 CPU fixture failed scheduler epoch, all before0market fits. Old
 failures/counters/debits unchanged; source-test debug fixes APIs, not criteria.
 All-source/native/failure time stays in original9000active/+18000elapsed.
-Kepler54cell source is independent ready work, not proof of new trained models.
+Kepler54cell comparison is now complete above; failed original bytes stay intact.
 
 Renewed Oct19 dispatch: latest-matured HGB COMPLETE38/best18, one SYN+one CPU
 marketfit, exact92599FIT/3150INNER, zero historicalEVAL; actor removed.

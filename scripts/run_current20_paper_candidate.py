@@ -675,125 +675,137 @@ def run(
     )
     folder = ARTIFACT / RUNTIME_RELATIVE / "runs" / identity
     folder.mkdir(parents=True, exist_ok=False)
-    context = dict(
-        kind="current20-paper-owner-context-v1",
-        task_name=TASK,
-        identity=identity,
-        host=own,
-        image=image,
-        label=LABEL,
-        container_name=PREFIX + identity,
-        source_manifest_ref=source_manifest_ref,
-        input_manifest_ref=input_manifest_ref,
-        arguments=subprocess.list2cmdline(
-            launch_argv(
-                image=image,
-                source_manifest=source_manifest,
-                source_manifest_ref=source_manifest_ref,
-                input_manifest=input_manifest,
-                input_manifest_ref=input_manifest_ref,
-                owner_probe=owner_probe,
-                owner_probe_ref=owner_probe_ref,
-            )[1:]
-        ),
-        working_directory=str(ROOT),
-    )
-
-    container_id = None
-
-    def admission(sequence):
-        nonlocal container_id
-        if monotonic() + 12 >= deadline:
-            return False
-        if sequence and container_id is None:
-            container_id = _container_identity(PREFIX + identity, identity, image, environment)
-        return owner_admission(
-            probe=owner_probe,
-            probe_ref=owner_probe_ref,
-            context=dict(context, sequence=sequence, container_id=container_id),
-            folder=folder,
-            environment=environment,
-            clock=clock,
-        )
-
-    # Public source probe is network-none and has no private/data mounts.
-    probe_name = PREFIX + "source-" + identity
-    code = (
-        "import json,hashlib;from pathlib import Path;files=" + repr(tuple(before)) + ";"
-        "paths={p.relative_to('/app').as_posix() for p in Path('/app/src').rglob('*.py')};"
-        "paths.update(n for n in files if not n.startswith('src/'));"
-        "print(json.dumps({n:hashlib.sha256((Path('/app')/n).read_bytes()).hexdigest()"
-        " for n in paths}))"
-    )
+    result, cleanup_failed, packet = _failure(), False, None
     try:
-        probe = _docker(
-            [
-                "docker",
-                "run",
-                "--rm",
-                "--name",
-                probe_name,
-                "--label",
-                LABEL + "=" + identity,
-                "--pull",
-                "never",
-                "--network",
-                "none",
-                "--read-only",
-                "--log-driver",
-                "none",
-                "--entrypoint",
-                "python",
-                image,
-                "-B",
-                "-c",
-                code,
-            ],
-            env=environment,
-            capture_output=True,
-            timeout=15,
+        context = dict(
+            kind="current20-paper-owner-context-v1",
+            task_name=TASK,
+            identity=identity,
+            host=own,
+            image=image,
+            label=LABEL,
+            container_name=PREFIX + identity,
+            source_manifest_ref=source_manifest_ref,
+            input_manifest_ref=input_manifest_ref,
+            arguments=subprocess.list2cmdline(
+                launch_argv(
+                    image=image,
+                    source_manifest=source_manifest,
+                    source_manifest_ref=source_manifest_ref,
+                    input_manifest=input_manifest,
+                    input_manifest_ref=input_manifest_ref,
+                    owner_probe=owner_probe,
+                    owner_probe_ref=owner_probe_ref,
+                )[1:]
+            ),
+            working_directory=str(ROOT),
         )
-    finally:
-        if not native.cleanup(probe_name, identity, environment):
+
+        container_id = None
+
+        def admission(sequence):
+            nonlocal container_id
+            if monotonic() + 12 >= deadline:
+                return False
+            if sequence and container_id is None:
+                container_id = _container_identity(PREFIX + identity, identity, image, environment)
+            return owner_admission(
+                probe=owner_probe,
+                probe_ref=owner_probe_ref,
+                context=dict(context, sequence=sequence, container_id=container_id),
+                folder=folder,
+                environment=environment,
+                clock=clock,
+            )
+
+        # Public source probe is network-none and has no private/data mounts.
+        probe_name = PREFIX + "source-" + identity
+        code = (
+            "import json,hashlib;from pathlib import Path;files=" + repr(tuple(before)) + ";"
+            "paths={p.relative_to('/app').as_posix() for p in Path('/app/src').rglob('*.py')};"
+            "paths.update(n for n in files if not n.startswith('src/'));"
+            "print(json.dumps({n:hashlib.sha256((Path('/app')/n).read_bytes()).hexdigest()"
+            " for n in paths}))"
+        )
+        try:
+            probe = _docker(
+                [
+                    "docker",
+                    "run",
+                    "--rm",
+                    "--name",
+                    probe_name,
+                    "--label",
+                    LABEL + "=" + identity,
+                    "--pull",
+                    "never",
+                    "--network",
+                    "none",
+                    "--read-only",
+                    "--log-driver",
+                    "none",
+                    "--entrypoint",
+                    "python",
+                    image,
+                    "-B",
+                    "-c",
+                    code,
+                ],
+                env=environment,
+                capture_output=True,
+                timeout=15,
+            )
+        finally:
+            cleanup_failed = True
+            cleanup_failed = not native.cleanup(probe_name, identity, environment)
+        if cleanup_failed:
             raise ValueError("source_probe_cleanup_unresolved")
-    if probe.returncode or len(probe.stdout) > 1024 * 1024 or _json(probe.stdout) != before:
-        raise ValueError("worker_image_source_mismatch")
-    if not admission(0):
-        return _failure("owner_admission_unavailable")
-    for volume in native.VOLUMES:
-        _docker(
-            ["docker", "volume", "inspect", volume],
-            env=environment,
-            check=True,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            timeout=5,
+        if probe.returncode or len(probe.stdout) > 1024 * 1024 or _json(probe.stdout) != before:
+            raise ValueError("worker_image_source_mismatch")
+        if not admission(0):
+            result = _failure("owner_admission_unavailable")
+            return result
+        for volume in native.VOLUMES:
+            _docker(
+                ["docker", "volume", "inspect", volume],
+                env=environment,
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=5,
+            )
+        # Every source/input/probe/image/owner check above precedes this scoped loader.
+        config = native.load_paper_config()
+        packet = _encode(
+            dict(
+                KIS_PAPER_APP_KEY=config.app_key,
+                KIS_PAPER_APP_SECRET=config.app_secret,
+                KIS_PAPER_ACCOUNT_NO=config.account_number,
+                KIS_PAPER_ACCOUNT_PRODUCT_CODE=config.account_product_code,
+                THERICHER_MODE="kis_paper",
+            )
         )
-    # Every source/input/probe/image/owner check above precedes this scoped loader.
-    config = native.load_paper_config()
-    packet = _encode(
-        dict(
-            KIS_PAPER_APP_KEY=config.app_key,
-            KIS_PAPER_APP_SECRET=config.app_secret,
-            KIS_PAPER_ACCOUNT_NO=config.account_number,
-            KIS_PAPER_ACCOUNT_PRODUCT_CODE=config.account_product_code,
-            THERICHER_MODE="kis_paper",
-        )
-    )
-    try:
-        result = _exchange(
-            args, packet, admission, environment=environment, monotonic=monotonic, deadline=deadline
-        )
-        if source_map() != before:
-            raise ValueError("host_source_changed")
+        try:
+            result = _exchange(
+                args, packet, admission, environment=environment,
+                monotonic=monotonic, deadline=deadline,
+            )
+            if source_map() != before:
+                raise ValueError("host_source_changed")
+        finally:
+            packet = None
+            cleanup_failed = True
+            cleanup_failed = not native.cleanup(PREFIX + identity, identity, environment)
     except Exception:
         result = _failure()
+    except BaseException:
+        result = _failure()
+        raise
     finally:
-        del packet
-        absent = native.cleanup(PREFIX + identity, identity, environment)
-    if not absent:
-        result = _failure("worker_cleanup_unresolved")
-    _new(folder / "result.json", _encode(result))
+        packet = None
+        if cleanup_failed:
+            result = _failure("worker_cleanup_unresolved")
+        _new(folder / "result.json", _encode(result))
     return result
 
 

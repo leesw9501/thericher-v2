@@ -25,8 +25,36 @@ five desired .005-original-basis targets/<=.025 together inside SAME original
 shared .10 envelope. Entry ONLY USOct19 until20:00UTC, no later re-entry/
 backups/rerank/foreign adoption. Exit not beforeNov17 15:10UTC/recoveryNov20.
 Twenty fully held RTH sessions+partialentry/exit, NOT research OPENparity.
-No newensemble invocation/submit/fill yet. Model output is an untrusted proposal;
+First f9run has owner context but missing result: invocation preparation known,
+submit/fill UNKNOWN, not zero. Model output is an untrusted proposal;
 native fresh brokerfacts/risk/reconciliation still required before each effect.
+
+Current Oct20 technical recovery, NOT a routine rerun command:
+A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1/RESULT.json.
+Original StageA closed; provider UNKNOWN/no delivered credential packet.
+16.16s end-cap overrun was inert public fixture only, not hidden HTTP authority.
+Distinct open-orders-continuation-r1-visit2 now actually COMPLETE at16:04UTC:
+CURRENT_GET_ACCEPTED/HTTP200/VTTS3018R/1auth1GET0orderPOSTs/ownedcleanup.
+Do not invoke it again. Original rejected-GET cause not established; this is
+not fresh portfolio custody/newfill/PnL or exact unknown-request reconciliation.
+Any separately proposed continuation is unnecessary after this successful read;
+never rerun old write-once callers or turn zero-HTTP deferral into provider error.
+Natural nightlyOct19 23:50 made1tokenPOST/1GET/0order-cancelPOSTs then
+readonly_open_orders_rejected; original upstream code not retained. Its new
+cycle absent at local snapshot is preintent-unmaterialized, not global zero
+inventory. Strict old reader failure stays historical. Fees/netPnL unknown.
+
+Prefix-result/PATHEXT source repair freshly verified, NOT deployed by editing
+the host file. Keep exact runtime/input/image/reader pins and owned identities;
+require paired tested release and quiescent rollback-preserving Task retarget.
+Native public OS proof: A/verification/paper-host-publication-recovery-20261020-v1/
+native-environment.json,4PASS/missing-empty-blank-inherited PATHEXT,0API/Task.
+Same verification root/authority.json:1362source78a4054f,1514changed-path serial/
+18370fullPASS22skip/8workers388.21s/cleanhelper0/Ruff3Compose. Exact source and
+AGENTS/DECISIONS digests required; this does not validate other external code.
+Quoted PS5 Docker label template fails while JSONprojection works; separate
+new-probe packaging bug, not historical f9seq0 cause. No manual Task invocation,
+substitute request, bank reset, schedule expansion or relaxed risk to force entry.
 
 Existing web monitor remains loopback http://127.0.0.1:8787.
 No public exposure/UIredesign in this package; health is not fresh custody.

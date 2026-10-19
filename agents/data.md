@@ -1,9 +1,36 @@
 # Data Stateboard (시장데이터 담당)
 
-Current Oct19KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Current Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Data owns source capability/acquisition/canonical storage/time availability;
 Execution owns account/order endpoints. Parent owns integration/shareddocs/Git.
 Private KIS Paper marketdata is delegated, no KIS_LIVE_*/secret/raw-value output.
+
+## Current Sector Input
+
+Consumer: NEXT six matched Ridge/HGB/MLP14vs52 fits, not Paper input promotion.
+A/data/current-sector-market-context-input-20261020-v1/PACKAGE-MANIFEST.json
+SHAe171d5c62327e0ecd051c5fb009dad5172088280bcc363a5fa89cce7ae2c9ce7.
+Original finite collection CLOSED INCOMPLETE12:27GET/2wirePOST/0retry,
+4conservative client reservations consumed,243.558active/2088.585elapsed;
+all four collector PIDs absent. Preserve accepted pages/cursors/failures/debits.
+Full52 ready=false;149queries remain unattempted, not source-limited history.
+38syntheticchecks/10922scalarreadbacks; market files8298598bytes under
+M/us_equities/kis_paper_private/sector-context-daily-20261020-v1.
+
+Existing4 SPY/XLK/XLF/XLE alternative is ready34327keys,875TRAIN/242INNER/
+314DEV dates with>=20stocks. It is a separately named14vs28 alternative,
+NOT an original52 pass; no frozen criteria relaxed or model fitted by Data.
+Historical provider availability/PIT/finality remainNOT_OBSERVED. Known
+unsupported split windows unavailable on BOTH arms, no filling/stitching.
+
+NEW bounded accepted-cursor continuation assigned Oct19 16:06UTC:210GET,
+2total clients/auth,900active3600elapsed, same source/pacing/shared60token
+locks/marks, no old debit refund or accepted-page refetch. Execution owners
+preempt. Actual public baseline callback must pass before dispatch; failure is
+local capability error, not busy ownership. PATHEXT-alone PS5 fault measured;
+new public_environment.py preserves inherited nonempty PATHEXT/falls back
+only missing/blank,4fixtures. No API call is inferred from that helper test.
+Parent owns shared docs/Git; active worker and next_due require current evidence.
 
 ## Latest Matured-Label Input Audit
 

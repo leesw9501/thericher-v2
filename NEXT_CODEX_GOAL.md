@@ -36,7 +36,7 @@ paid/public commitments, secrets/private identifiers/amounts in outputs.
 ## Ready Parallel Work
 
 - Latest continuation COMPLETE: two new fits Ridge14 CPU/fastGRU5 CUDA,
-  that step253; current270=172CUDA98CPU after four native1m/12OOF/oneCPUmeta. First25 points
+  that step253; current277=178CUDA99CPU after completed context6 and rank-meta1. First25 points
   pre13:25UTC,9fixed5day policies now
   bound8dfc8679/old125weights15cells unchanged,24riskyUNKNOWN3analyticcash.
   No model/Paper switch or reforecast; misleading GRUouter future0 is corrected
@@ -62,22 +62,43 @@ paid/public commitments, secrets/private identifiers/amounts in outputs.
   7047NAVoracle/independent111checks. Weights froze before terminal3; first
   failed key-order attempt retained, correct bijection/inverse no base refits.
   At10bpsPERLEG convexgrowth+1.830915%/DD.558212%, fixedrank+2.859093%/.643800%;
-  adaptiveDEV only, no independent alpha/Paper switch. New onefit pairwise
-  rank-fusion SOURCE on same OOF1+2/40dates;3newcells/27oldcontrols reused,
-  600active3600end, no base/GPU refits. Protocol/review in HANDOFF.
+  adaptiveDEV only, no independent alpha/Paper switch. Pairwise-rank fusion
+  COMPLETE9ffa42d7: oneCPUfit/3newcells/27oldcontrols bit-reused,21tests/
+  783DecimalNAVs.10bp growth2.074921%/DD.648291% versus fixedrank
+  2.859093%/.643800%; primaryFAIL. No follow-on lambda grid/base/GPU refits.
   No original globally-INNER-selected outputs as OOF and no holdout reopening.
   Existing Paper owners and sharedbank remain completely unchanged.
-- NEW disjoint GPU hypothesis SOURCE: same-date inter-stock masked context
+- CLOSED disjoint GPU hypothesis: same-date inter-stock masked context
   versus matched no-context14feature model,6newfits x3existing chronological
   folds. Input-only membership independent of future labels, native optimizer/
   restore/permutation/mask/time checks before market.9000active18000end/
   perfit1200/0retry/max160/INNERpat20, onecanonicallease.54frozen cost cells,
   all3fold growthup/DDnotworse at10bps vs matched primary, not independent alpha.
-  Review and exact root are in HANDOFF; source preparation is not GPU activity.
+  Actualccdb03e8/6fits/169epochs/21744updates, all leases released.54cell
+  comparisonf0b6aa46/17tests/11934NAVoracle: primaryFAIL3of3, no new seed grid.
   Original twoGPU SYN attempts failed API identity/step-count bindings; linked
   CPU fixture failed scheduler epoch. All before0market fits, failures/debits
   immutable. Bounded source-test debug then strict fullstate nativeproof,
-  no relaxed criteria/old regrade/market retries.54cell source prepares in parallel.
+  no relaxed criteria/old regrade/market retries. All failure debits remain.
+- NEW ready direction: matched14-vs52 sector/market context, Ridge/HGB/MLP
+  sixfits4CPU2CUDA, seed1401/max160/chronological INNER/bestrestore,
+  6000active14400elapsed including preparation. All11 sector ETFs used for
+  each stock; no GICS/membership dependency. Own features e-1, context e-2,
+  input-only common support, known unsupported split windows unavailable in
+  BOTH arms. Rebuild RAW14 and FIT-only scalers for TRAIN2019..2023; no old
+  2025 scaler leakage. Historical availability/PIT/finality remain unknown;
+  retrospective adaptive claims only, not a company permission hold.
+  Data original27GET/2POST closed incomplete; preserve accepted prefix and
+  separately bounded continuation for149 unattempted queries. Existing4
+  alternative is not an original52 pass. Model dispatch awaits actual inputs
+  and native optimizer/checkpoint proof, not operator approval. Exact roots
+  and current ownership are in HANDOFF/stateboards.
+- Execution actual faults take priority: nightly23:50 open-orders GET
+  rejected before orders; upstream category not retained. F9first00:10 has
+  owner context but no required result, hence UNKNOWN. Diagnose exact native
+  state/owned identities, not blind replay. Prefix-result publication and
+  measured PS5 PATHEXT fallback repairs require fresh full QA and paired
+  source/image/reader deployment; source edits are not runtime success.
 - FOUR new fits COMPLETE,2CPU2CUDA; ledger251versions, not architectures.
   HGB21 38/best18; multiscaleGRU21 22/best2; HGB5 76/best56; MLP5 22/best2.
   No completed old fits or first forecasts may be rerun. Exact pointers,

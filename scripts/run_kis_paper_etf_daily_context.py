@@ -54,7 +54,12 @@ OS_KEYS = frozenset(
 
 
 def os_environment() -> dict[str, str]:
-    return {key: os.environ[key] for key in os.environ if key.upper() in OS_KEYS}
+    environment = {key: os.environ[key] for key in os.environ if key.upper() in OS_KEYS}
+    pathext = next((key for key in environment if key.upper() == "PATHEXT"), "PATHEXT")
+    # Whitespace-only is empty; preserve every other inherited value unchanged.
+    if not environment.get(pathext, "").strip():
+        environment[pathext] = ".COM;.EXE;.BAT;.CMD"
+    return environment
 
 
 def source_map() -> dict[str, str]:
