@@ -9,27 +9,29 @@ Git, not all implementation. Private no-cost Data/Research/Paper delegated.
 
 | Owner | Actual State | Next Action |
 | --- | --- | --- |
-| Engine/Confucius | NewriskTCN source ready, first prelaunch ModuleNotFoundError BEFORE GPUallocation;38.501debit retained, actor/lease closed. | Correct exact isolated sibling import under SAME1200active3600elapsed/1fit0retry, source/native proof then one conditionalCUDAfit. No allocation/fit yet. |
-| Infra/Kepler | TTM installeded6f2b24. Risk created/enabled then containedDisabled149b0267, one foreignWindows XML drift/TTM+ACL unchanged. | Confined exactdisabledTask recovery100active600elapsed: noRegister/Run/retime, fresh all-current-others equality around oneEnable; oldfailure UNKNOWN unchanged. |
-| Measurement/Boole | SOURCEb0a449e7/runtimePREPb1d82784 tested;0realTask/modelcalls. | Bind qualified risk producer or explicit missing-risk state, oneCPUOct27 08:45KST measurement. No futurehash prerequisite. |
-| Data/Boyle | CONSUMER50c29b98 all12ETF/21input-onlydates252rows READY, full57FALSE/noAPI. | Source/native newdomain frozenGRU/optionalTCN diagnostic300active1800elapsed/oneCPUvisit0retry, exactcohort beforelabels/noGPU orrefits. |
-| Execution/Gauss | Type-valid localsubmission_started/prewirefence reached, historicalcause UNKNOWN/320debit. | NEW exact-request READ-ONLY reconciliation wrapper300active1200elapsed/1auth12GET0retry, source/native effectfences then actualread ifquiescent; no privatecyclewrite/order/Task. |
-| Parent | 301closedfits190CUDA111CPU, not architectures/profitablemodels. Lastpushed99fbf6f. | Integrate evidence/nativechecks/source-control equality/Ruff3Compose/commitpush; no NAS companyclosure. |
+| Engine/Confucius | OriginalpairedGRU closedUNKNOWN/74.672active/prefitidentityfailure/leaseclosed,0retry. | NEW distinct causalattention pairedreturn/auxrisk source+CPUproof; sourcefreeze/parentGO before oneGPU, no renamedGRUretry. |
+| Infra/Kepler | ActualF9 image49933 deployment5302b963/readback8594e934/closed7d90ff59,33triggers/ACL/253others preserved,0Run/API/privatebook. | Disjoint source-only multitask native-preflight review100active1200elapsed; no models/GPU/marketrows/API. |
+| Measurement/Boole | OldTTM/risk/measurement all ACTUALLY installed.15cell sectorallocation closed/independent09023890. | NEW source-only pairedmodel futureloop250active3600elapsed, ONE proposedTask/TWOfinitepoints; no install before finalnewABI/nativeproof. |
+| Data/Boyle | Actual58+10GET closed/SPY-XLK2087each/XLF-XLE1282each; repeatedinvalid closes exactoldercursors, not globalhistoryexhaustion. | NEW pure12fund57dateinput derivation200active1800elapsed/0API; input-only masks/oldcloseparity and five strategybasisflags. |
+| Execution/Gauss | Closed exactRO1auth2GET/noopenexacttuple/historyabsent; unknownrequest/reservationheld. Clone source/SYNfailed/noAPI, not retried. | Existing F9 nextOct20 15:10UTC/new typeddiagnostic path; no substitute/order-window expansion or unknown-request release. |
+| Parent | 302closedfits191CUDA111CPU, not architectures/profitablemodels. Lastpushedc288dfc/source970 QA. | Integrate materially changed evidence/docs; source-control equality/Ruff3Compose/commitpush. NAS outcome UNFINISHED. |
 
 Original NAS exit>=Oct21OPEN cannot be advanced by research. F9 entryONLYOct19
 until20:00UTC consumed; expiry never releases unknown reservation, exit>=Nov17.
 Same original bank/nativeidentity/ownedinventory across all recovery.
 Finite Data06:50/07:30/08:00KST. TTMpoint08:30KST installed, risk08:45KST
-currentlyDisabled, measurementOct27 proposed/notinstalled. Workers own next_due.
+Ready40aa3257, CPUmeasurementOct27 08:45KST installedcd9726cf. These are not
+forecast/input/outcome evidence. Workers own next_due.
 
 ## Throughput Review
 
-Review20:10UTC: ready=TCN isolated-import source correction, exact-request RO
-reconciliation, sector-domain consumer, confined riskTask recovery and parent
-integration. All disjoint mutable write sets, no operator wait. One canonical
-GPU lease only; sourceprep holds none. Measured4090 at2percent/2230MiB is
-not training; currentTCNfailed beforeallocation. Completed earlier fits actually
-ran briefly and closed, no dummy GPU utilization or finished-fit duplication.
+Review21:22UTC: ready=pairedreturn-risk native-failure diagnosis, independent
+source contract review, combined57dateinput ABI, future point/evaluation source
+prep and parent integration. Four disjoint writes, one canonicalGPUlease only.
+No operator wait/foregroundsleep. NewGPUpreflight failed, not markettraining;
+oldTCN fit722.198s completed/leaseclosed. Preserve oldcounts/debits/UNKNOWN.
+RiskETF domain and all15assumed-cost price-only allocations adverse/uniform
+better: close riskweight grid, test mainRETURN+auxiliary representation instead.
 
 Original outcome dependency: retained owned NAS hold untilOct21 OPEN, then
 exact exit/fill/currentinventory/terminal reconciliation, explicit PnL limits.
@@ -57,6 +59,15 @@ Reversible improvements:
   competing issuance atcapturetime.
 - TCN prelaunch isolated sibling-import failure retains zero allocation
   boundary/clock; fix exact local import rather than repeat a failed model fit.
+- Safe first-failure telemetry uses existing typedstdoutIPC/create-new owned
+  runfolder, not more RWmounts or a parallel report system. Native actualimage
+  proof preceded33-to-33 action-only deployment; actualerror/fill remainsUNKNOWN.
+- Native synthetic checkpoints must use real hash-shaped identity and tested
+  solver/checkpoint API BEFORE market input/fit. Independent preflight review
+  searches the next predictable failure too, rather than serial GPU retries.
+- Data pages fail one exact cursor, not the whole history: explicit new row-
+  qualified derivation preserved oldFAIL, disjointolderqueries yielded useful
+  1282rows/fund before secondinvalid. Now consume57readydates without moreGET.
 
 Claude current-risk-point-install-recovery and sector-domain reviews are
 review_unavailable/JSONDecodeError, not agreement/globalholds. Parent authority
@@ -66,12 +77,13 @@ All reused INNER/seen outcomes remain adaptive, no independentalpha/Paperpass.
 
 ## Verification / Recovery
 
-A/verification/paper-host-publication-recovery-20261020-v1/authority.json:
-1362files78a4054f/1514serialPASS/18370fullPASS22skip/8workers388.21s/cleanhelper0,
-Ruff/default-research-accountingCompose/native4PASS. Freshreadonly source/
-control equality confirmed, no trackedproduction change; changedDcode requires
-its own source/native/focused evidence, not repeated18ksuite.
-Image566e02d8/source480filesffece26d source-onlyproof not deployment/fill.
+A/verification/paper-first-failure-diagnostic-20261020-v1/authority.json:
+1363files970c0730/1588serialPASS/18430fullPASS22skip/8workers388.60s/helper0/
+verifiedcurrent-childcleanup/Ruff/default-research-accountingCompose PASS.
+Separate optionalserialscratch preserved after tool-policycleanup rejection;
+no bypass/allCcleanclaim. Docs/external-only reuse requires exactsource/control
+equality; changedDcode ownnative/focusedproof, not repeated18ksuite.
+Image49933/source480files5ecfccef ACTUALLYdeployed, not diagnostic/fill proof.
 Keep prior failures/debits/unknowneffects; never stage/remove %SystemDrive%/.
 At material results integrate exact evidence, verify/commitpush. No unfinished
 company outcome marked complete simply to end the active long request.

@@ -3,7 +3,7 @@
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED; NAS8
 owned exit>=Oct21USOPEN. Parent integrates/Git; Execution owns broker risk.
-Completed ledger301=190CUDA111CPU fittedversions incl one oldinvalid, NOT
+Completed ledger302=191CUDA111CPU fittedversions incl one oldinvalid, NOT
 architectures/profitablemodels. Completedactors/leasesclosed; source/GO is
 not actualGPUtraining. Never repeat closed fits/forecasts for metadata.
 
@@ -62,57 +62,129 @@ no learnedroutinggain.10bp growth/DD2.8591%/.6438% vsRidge4.4495%/.8414%,
 primaryFAIL.40Metadates/26alreadyseenTerminal dates/lowpoweradaptive,
 notfreshreplication/weightfusion. No oldfits/forecasts/controlreplay/grid.
 
+## Complementary Risk Model / Domain
+
+TCN COMPLETEb6fffd68/MODEL-ABI64acca78:
+A/research/current-sparse-path-risk-tcn-development-20261020-v1.
+Causal width16/k3/dilations1,2,4,8/two Conv1d perblock/dropout.1/seed2001,
+5729parameters/same63x3data/affines/9segmenttarget/directQLIKE.
+ONE actualCUDAfit40epochs/best32/completed_epoch_wall_stop722.198seconds;
+not convergence. INNER TCN-5.437595772 vsGRU-5.433648356/EWMA-5.389013741/
+TRAINmean-5.212878258, frozen primary diagnosticPASS, not independent skill.
+Native CUDA causal/dropout/gradient/checkpoint-nextupdate proof before market;
+924optimizersteps(920market+4SYN),43saves4restores/oneallocation/cleanup.
+First isolated sibling-import ModuleNotFoundError BEFOREallocation retained
+38.501debit; pinned importlib correction/zeroeffect qualification SAMEcaps.
+Nativeclosure781.609includesfailure/final791.781active,1200active3600elapsed.
+285ownreadback + independent328checks97ae5995/0discrepancies/0modelcalls.
+Stock INNER blend OMITTED: compatible oldGRUvector absent; never reforecast
+to fill metadata. Oldoriginalsource/error/unknowncounts remain immutable.
+
+New-asset DOMAIN originalCOMPLETE38d5b4ce +TCN-completion-r1:
+A/research/current-risk-sector-domain-diagnostic-20261020-v1.
+All12ETF on21input-onlydatesAug27..Sep25/252rows; not full57 due earlierH/L
+absence. No original25stock overlap, but reusedmarketperiod/commonfactors.
+QLIKE EWMA-6.722147285 /GRU-6.653238285 /TCN-6.666156833 /
+fixed.5GRU+.5TCN RAWvarianceblend-6.660201473 /TRAINmean-5.869060457.
+Every learned policy WORSE than EWMA; original GRU primaryFAIL unchanged.
+No alpha/profit/calibrated-latentvariance/Paper claim. Close this proxy-domain
+training branch, no seeds/windows/refit/threshold tuning.
+OneGRUCPUforward +oneTCNCPUforward on NEWrows, no oldstockforecasts/models
+rerun. Separate TCN completion reuses cachedGRU/EWMA/mean bytes exactly,
+oneCPU SYN proof,252blend/5scalar checks;22.221active/0GPU0fits.
+OriginalGRUvisit167.910source+numerics includespre-nativefailure; preserved.
+
 ## Current Consumers / Owners
 
-Confucius NEW riskTCN/source-native preparation:
-A/research/current-sparse-path-risk-tcn-development-20261020-v1.
-One causal residualConv1d width16/k3/dilations1,2,4,8/two perblock/dropout.1,
-seed2001/same63x3data/affines/raw9segmentQLIKE/max128/pat12/bestrestore.
-1200active3600elapsed inclsource-native300/market750/cleanup150,
-1fit1allocation0retry. Source/prelaunch ModuleNotFoundError beforeGPU0allocation
-retained38.501debit, actor/leaseclosed. Exact isolated sibling-import correction
-under SAME remaining caps, not a marketretry/budgetrefund; native causal/
-dropout/gradient/checkpoint proof still before actualfit. No trainingclaim yet.
-Compatible retained GRU INNERvector reused or omitfusion, no oldreforecast.
-Fixed .5/.5 RAWvarianceblend/no weightsearch; diagnostic onreusedINNER only.
-Claude REVISE/no categories, notagreement. No DEV/future/Paper changes.
-Boyle domain source input50c29b98 all12sectorETF on21dates252rows, full57FALSE
-due earlierH/L absence; input-onlymask precedeslabels. Frozenmodel CPUconsumer
-preparation300active1800elapsed/1start0retry, no numericalresult yet. Newassets
-sharestocktrainingmarketperiod/factors, not independent temporal replication.
+Boole COMPLETE no-fit cost-aware allocation consumer:
+A/research/current-risk-sector-allocation-development-20261020-v1.
+300active2400elapsed/source-native150/economic100/cleanup50,0models/GPU/API.
+Frozen domain riskvectors ONLY; uniform vs capped inverse-SQRTvariance EWMA/
+GRU/TCN/fixedvarianceblend, all12 names/.20cap/fullcohort investment, no
+optimizer/ranking/weight tuning. Initial researchNAV1/fixedgross.10 splitfive
+.02-initialNAV sleeves,21dailyOPEN entries/fifthsessionCLOSE/fixedshares.
+Same exact25-sessionpayoffs/costs5/10/20bps EACHside,15cells. Report growth/
+DD/turnover/markedgross separately; primary learnedvsEWMA growth>= andDD<=
+at10bps, all3results includingFAIL. Othercosts descriptive/no winner rerank.
+OldproxyFAIL staysFAIL evenif allocation helps; different financial consumer,
+not another loss-tuning grid or broker10percent-bank compliance.
+COMPLETEdd850443/RESULT3843b5ff/94checks/44.844active788.587elapsed,
+ONE15cellpass/0models-fits-GPU-API. At10bp growth/DD percent:
+uniform-.4475/.4704, EWMA-.4712/.4932, GRU-.4542/.4765, TCN-.4546/.4767,
+blend-.4545/.4766. All3 pairedinequalities PASSvsEWMA BUT uniformbetter/all
+nominal-price policies lose with assumedcosts, not totalreturn/actualPaperPnL.
+Independent09023890 verifies15cells/765NAV+765exposure/1008weights/maxgap
+1.11e-16. Close weight/proxy grid; oldproxyFAIL staysFAIL.
+Data marksREADY086c62b9/CONSUMERc074bdcb:25sessionsAug27..Oct1/300bars/
+600exactDecimalO-C known/0missing, all252keys unchanged. Missing=>UNKNOWN
+comparison, no filtering/fill/fetch. Boyle independentDecimal review only.
+Claude review_unavailable/TimeoutExpired, not agreement/globalhold.
 
-Kepler RiskSOURCE147274a2/PREP53a9a78c:
-A/research/current-sparse-risk-future-point-20261020-v1.
-28Python22PS5fixtures/exactimageCPU SYNtrainedexportintake-forward/frozen/
-eval/positiveproxyoutput PASS,0CUDA/futureforecasts.102.215activeupper.
-Runtime install FAILED qualification/containedDisabled149b0267,
-64.196active582.663elapsed/1register1enable1disable0manualRun; oneforeign
-WindowsRefreshCache XMLdrift, TTM/ACL unchanged. Exacthistoricaldiff/causal
-actor UNKNOWN, no qualifiedinstalledproducer. Jobd2fff7ab/source38ae035b.
-Newconfinedrecovery100active600elapsed only exactTaskEnable/Disable,
-noRegister/Run/retime; freshall-currentothers/ACL equality before/after,
-containonnewdrift. Oldfailure/debitsunchanged. OriginalONE23:45UTC/
-end23:55/PT10M/hiddenpythonw/IgnoreNew/noDemandStart/noautoretry.
-NewMprivatecontext us_equities/kis_paper_private/sparse-risk-future-context-20261020-v1.
-Expectedold20/new9 Oct19captures/sourcejob/index0 beforeonefutureGPUpoint
-120active600elapsed/1allocation0retry/cutoffOct2013:25. Bindactualimmutable
-commit/context/asof at runtime, notlatestscan; missing=>input_unavailable.
-Threefixedpositivevariancevectors GRU/EWMA/TRAINmean, SAME63inputmask,
-originalOct20..26target, no sizing/fee/PnL/latentvariance/alpha claims.
-Do not modify originalTTMTask/policies/counters orreloadoptimizer/RNG.
+## New Return / Auxiliary Risk Campaign
 
-Boole measurementSOURCEb0a449e7:
-A/research/current-oct20-model-point-measurement-20261027-v1.
-35newchecks/315existingDecimalNAVproofreuse,36.068sourceactive/0modelcalls.
-Newruntime150active900elapsed, conditionalONECPUOct2623:45UTC/
-Oct2708:45KST after fifthtarget naturalcaptures, no recurring/auto-retry.
-AwaitexactRiskruntimehandoff beforeproducer-bindingfreeze/installation.
-Strictcommittedpoints/nativecounts/timestamp-before-entry/cleanup/source/
-model/inputmask andtargetcapturechains; no partialpoint/latestscan.
-ExactdatesOct20,21,22,23,26(plan1..5), TTMonly15frozenpolicy/costcells,
-Riskonly3observableproxyQLIKE comparisons. Missinginputs UNKNOWN, no
-targetfilter/renormalization/newranking, no model/GPU/API/credential work.
-Separatetargets/masks/claims, no cross-targetensemble oractualKISnetPnL.
+Confucius owns A/research/current-return-risk-multitask-development-20261020-v1.
+Hypothesis: shared auxiliaryrisk representation improves MAIN5sessionstock
+logreturn decisions, not moreproxy-risk tuning. Two matched GRU32/layer1/
+seed2101/same63x3/8345TRAIN1675INNER/fit-onlyaffines/purges/datepacks/init.
+A RETURN_MSE only (riskhead frozen/excludedoptimizer); B sameMSE+1.0QLIKE.
+Epoch0..max256/pat20/minDelta1e-6/LRplateau/checkpoint by INNERRETURN_MSE
+only. Preserve constantTRAINmean reference; no futureeconomic epochselection.
+1500active7200elapsed/hard23:05UTC, source300/market1000(500each)/economic100/
+cleanup100,2starts0retry/oneGPU. AllA/B/fixedrawlogreturnblend/uniform/cash x
+5/10/20bpEACHside15cells, same67dates25stocks/top5/five.02initialNAVcohorts.
+Primary B RETURN_MSE betterA+mean; financial B10bp growth>= andDD<= A+uniform.
+Allresults evenifMSEFAIL, adaptive reusedINNER/not independentperformance.
+FirstCUDA SYN-A failed exact_contract_source_batch_identity_required before
+observed optimizer/marketstarts. Failure0cba5811/CLOSED2250c2e0; leaseclosed,
+69.547active977.352elapsed charged, actualfullcountsUNKNOWN. Independent
+sourceboundary review A/review/current-return-risk-native-preflight-20261020-v1;
+no automatic retry/refund. Source/GO not successfultraining, ledger302 unchanged.
+Claude unavailable/Timeout45s, not agreement/globalhold. No oldmodel reruns.
+
+OriginalpairedGRU now CLOSEDUNKNOWN/FIRST-CAUSE:7schemasyntheticfixtures,
+placeholderbatch ID not SHA256; observed0marketstarts/optimizersteps, outer
+aggregateUNKNOWN and conservativecharges preserved/final74.672active. No retry.
+NEW current-return-risk-attention-development-20261020-v1 SOURCE/CPUproof:
+2layerTransformerEncoder32/heads4/FF64/dropout.1/fixedsinpos63/causalmask/
+lasttoken/seed2201. Distinct adaptiveattention hypothesis, notGRUretry. Same
+main/auxdata+15costcells, NEW1500active7200elapsed/hard23:05/2starts0retry/
+oneGPU. NativeCPUoptimizer/checkpointnextupdate/RNGdropoutmatching before
+parentGO/GPU, CUDAproofbeforemarket. ClaudeREVISE namedkilllogic/RNG/lowpower/
+reuseddata: exactB_MSE beatsA ANDmean, exactB10growth>=A ANDuniform AND
+DD<=A ANDuniform; all15reported, no reselection or independentclaim.
+
+Boole prepares current-return-risk-future-loop-20261020-v1 source-only250active/
+3600elapsed: ONEproposedquietTask/TWOtriggers POINT Oct20 00:15UTC and
+EVAL Oct26 23:55UTC. Noactualinstall untilnewABIs/nativeCPUproof. RawLOGscores
+A/B/fixed.5blend/uniform/cash x3cost15cells/.02initialNAV ONEOct20OPEN->
+Oct26CLOSE cohort; no Jensen/simple-return claim, not oldTTM.1/21 comparison.
+Strictsame25inputmask/Oct19immutablecapturechain/63x3/64OHLC/missingUNKNOWN,
+no oldmodel reforecast/currentPaper/oldfuturepolicy change.
+
+Risk futurepoint ACTUALLY Ready40aa3257/handoff3384e57c:
+A/research/current-sparse-risk-future-point-20261020-v1/runtime-install-r1.
+Jobd2fff7ab/source38ae035b/SOURCE147274a2; exactexistingTaskoneEnable,
+0RegisterRunRetime/all252currentothers+ownmaterial/fullACL unchanged,
+33fixtures45.050active311.318elapsed. OldforeignWindowsXMLdrift failedinstall
+149b0267/debits/exacthistoricaldeltaUNKNOWN retained, not regraded.
+ONEOct19 23:45UTC..23:55 (=Oct20 08:45KST),PT10M/IgnoreNew/noDemandStart.
+Strictold20/new9 Oct19source/job/session/index0 immutable capturechain before
+onefutureGPUpoint120active600elapsed/1allocation0retry/cutoffOct20 13:25UTC.
+Missing=>input_unavailable/0GPU/no date roll. GRU/EWMA/TRAINmean rawpositive
+proxyvectors only, frozenoriginalOct20..26target; newTCN/domainresults never
+change these policies. No sizing/fees/PnL/API/credentials/broker.
+
+Measurement ACTUALLY INSTALLEDcd9726cf:
+A/research/current-oct20-model-point-measurement-20261027-v1/runtime-install-r2.
+Runtimedc888212/deployment65a1304f/PRODUCERS6fc0bc7e, exactTTM+Riskbound.
+ONECPUOct26 23:45UTC..23:55 (=Oct27 08:45KST),1Register1Enable0Run,
+all253currentothers+ownmaterial/fullACL unchanged, no measurements now.
+35.664active453.006elapsed includesnative omitted-XML-default failedreadback
+17.833debit; old36.068source/27.594prep unchanged. SOURCEb0a449e7/
+35newchecks315Decimalproof reuse/nativePS5/quiet/rollback proof.
+TargetdatesOct20/21/22/23/26(plan1..5); TTM15frozen policy/costcells and
+risk3proxy-loss comparisons separate. Missingpoints/marks UNKNOWN, no cohort
+filter/renormalization/forecast rerun/NN/API/GPU or actualKISnetPnL.
 
 OriginalTTMpoint INSTALLEDed6f2b24/closed0ffdea81:
 A/research/current-ttm-return-head-future-runtime-20261020-v1.

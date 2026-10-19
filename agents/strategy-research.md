@@ -7,7 +7,7 @@ Parent integration/Git. NAS company outcome remains unfinished.
 
 ## Current Consumers
 
-Ledger301 fittedversions190CUDA111CPU, not architectures/profitablemodels.
+Ledger302 fittedversions191CUDA111CPU, not architectures/profitablemodels.
 Existing4/relative/refresh/full52/tilt/DeepSets/pairwise/OOFrouter grids closed.
 OOFstump6850ce41 alwaysfixed4/no routinggain. No repeated seeds/lambda search.
 
@@ -23,14 +23,15 @@ diagnostic, not profit. Target is observable5OC^2+4internalON^2, not latent
 variance/highfrequencyRV/HAR; conditional unbiasedness assumption unproved.
 No inverse-risk override to F9: fivecaps exactly equal basketgross.
 
-NEW complementary TCN risk expert/Confucius:
+COMPLETE complementary TCN risk expert/Confucius:
 A/research/current-sparse-path-risk-tcn-development-20261020-v1.
-One causal residual width16 Conv1d/k3/dilations1,2,4,8/two perblock/dropout.1,
-same data/affines/target/directQLIKE/date weighting as GRU. One bounded fit
-after true native proof, optional fixed .5/.5 RAWvariance fusion only using
-retained compatible GRU predictions. No learnedweight/in-sample gate or repeat
-old forecasts. If no advantage close risk architecture grid; reused INNER
-remains adaptive. Future GRU/TTM points and Paper policies not modified.
+One causal width16/k3/dilations1,2,4,8/dropout.1, same data/affines/target;
+40epochs/best32/722.198fit seconds wallstop, NOTconverged. INNERdiagnostic
+PASS vsGRU/EWMA, but12ETFdomain GRU/TCN/rawvarianceblend ALLworseEWMA.
+Stockblend omitted for absentoldGRUvector; newdomainblend cachedcompatible.
+15cell allocationdd850443 independent09023890: alllearned slightlybetterEWMA
+but uniformbetter/allnominal-price policies lose atassumedcosts, not TR/Paper
+netPnL. Close proxy-risk architecture/weightgrid, no forecastreplays orseeds.
 Official https://arxiv.org/abs/1803.01271 supports a general convolutional
 sequence hypothesis, NOT financial performance. Native installed PyTorch only,
 no downloaded code/new dependency. Claude REVISE/no categories, not agreement.
@@ -38,8 +39,28 @@ no downloaded code/new dependency. Claude REVISE/no categories, not agreement.
 New sector risk domain input50c29b98: all12ETF on21input-only dates/252rows,
 not full57 due earlier HIGH/LOW absence. New assets share marketperiod/factors
 with stock fit, so any later diagnostic is NOT untouched temporal replication.
-Data source preparation only; source claims must become bounded experiment
-or concrete rejection, not reading backlog.
+Original50c29b frozen; NEWactualOHLC SPY/XLK2087/XLF-XLE1282 now permits
+pure57dateABI preparation, not regradeold21datecohort/results.
+
+ONE preparedrule: A/research/current-sector-regime-strategy-preparation-
+20261020-v1/PROPOSAL.json/SOURCE-READY.json,16SYN/110.125active. Positive
+252session nominalprice momentum using priorclose->nextsessionCLOSEfills,
+all12routes/alwayslong+same-datecash-scaleduniform controls. No MA/grid/
+economic pass. Five flagged split/basistransitions need scoped retained-data
+classification; rawprice changes are not proof of economic returns/alpha.
+Primary https://w4.stern.nyu.edu/facdir/lpederse/papers/TimeSeriesMomentum.pdf
+motivates a mechanism, not profitability of this sector adaptation.
+
+NEW return-only vs return+auxrisk sharedrepresentation test is a distinct
+stock main-target hypothesis, not furtherriskgridtuning. Two matchedGRU32/
+mainRETURN_MSE checkpoint/epochs+LR, fixedrawlogreturnblend/15costcells;
+source/nativefirstallocation failedSYNidentitybeforeobservedmarketstarts,
+originalprotocolclosedUNKNOWN/no automaticretry. NEW distinct causalattention
+32/2layers/4heads/seed2201 pairedexperiment source+CPUproof beforeGPU, not a
+renamedGRU. ClaudeREVISE killlogic/RNG/singleseed/reuseddata implemented in
+predeclaredrules. Actualcounts/limits engineboard.
+GeneralMTL primary https://www.cs.cornell.edu/~caruana/mlj97.pdf motivates
+sharedrepresentation, notfinanceperformance. No oldfuture/Paperpolicychange.
 
 ## Source Knowledge / Closed Work
 

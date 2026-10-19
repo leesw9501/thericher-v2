@@ -6,28 +6,45 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Ready / Allocated
 
-Closed ledger301=190CUDA111CPU fittedversions incl one oldinvalid, not
-architectures/qualifiedwinners. TTM1352dba9 twoCUDAheads, matchedadaptation
-64442426 twoCUDAfits and riskGRU0098057a oneCUDAfit all COMPLETE/actorsleaseclosed.
-Native CUDA/optimizer/RNG/checkpoint-nextupdate proof precedes real fits.
-TTMworker21.583s/riskGRUfit19.142s, no per-arm mtime estimates. Exact scientific
-results/curves/debits in Engine board, no old fit/forecast repeats for metadata.
+Closed ledger302=191CUDA111CPU fittedversions incl one oldinvalid, not
+architectures/qualifiedwinners. TTM1352dba9 twoCUDAheads, adaptation64442426
+twoCUDAfits, riskGRU0098057a oneCUDAfit and riskTCNb6fffd68 ONECUDAfit all
+COMPLETE/actorsleaseclosed. Native optimizer/RNG/checkpoint proof before fits.
 
-NEW Confucius riskTCN source/native preparation:
-A/research/current-sparse-path-risk-tcn-development-20261020-v1.
-OneCUDAfit/oneallocation0retry,1200active3600elapsed including300source-native/
-750market150cleanup,seed2001/max128/pat12/bestrestore. Conditional numerical
-GO only exact compatible data/native proof/resource gates; dispatch not training.
-Existing riskGRU predictions reused byte-exact or omit fixedblend, no reforecast.
-No DEV/future/economics/broker changes or seed/window/weight grid.
+TCN40epochs/best32/time-stop722.198fit seconds, NOT convergence. Final791.781
+active includes38.501failedprelaunch import debit/zeroallocation qualification,
+same1200active3600elapsed/oneallocation. 924updates/43saves4restores. Actual
+GPU sample39percent2880MiB duringfit, not sustained utilization or peak. No
+further risk-only grid assigned after adverseETF-domain result; no dummy reruns.
+285own+328independent checks/no model re-execution. StockINNERblend omitted
+because oldGRUvector absent; newdomain blend reused cachedGRU output.
 
-Canonical lease A/engine-research-agent/locks/gpu.lock. Measure actual owners,
-VRAM/headroom before new allocation; source-only work holds no idle lease.
-TTM futurepoint installed Oct19 23:30UTC; riskpoint23:45UTC currently Disabled
-pending exact-Task recovery. Each future point has one separate bounded
-forecast allocation, not a fit; input unavailable=>0GPU. Do not overlap them
-or change original policies. Measurement/Data prep CPU-only; Paper reliability
-preempts at safe checkpoint.
+Canonical lease A/engine-research-agent/locks/gpu.lock. No activeGPU trainer.
+FutureTTM point installedOct19 23:30UTC, Risk point23:45UTC ACTUALLYReady
+40aa3257/3384e57c. Each one separate120active600elapsed forecast allocation/
+0retry, no fits; missinginput=>0GPU. Same original models/policies/cohort,
+not newTCN promotion. MeasurementOct26 23:45UTC installedCPU-only/noGPU.
+
+NEW paired mainRETURN-only vs mainRETURN+auxrisk GRU32 source ready under
+A/research/current-return-risk-multitask-development-20261020-v1.1500active/
+7200elapsed/hard23:05UTC/2starts0retry/oneGPU/source300/market1000/economic100/
+cleanup100; max256/pat20/LR+bestcheckpoint byINNERRETURN_MSE only. Original
+21:02UTC clock/debits fixed. FirstCUDA allocation SYN-A identitycheck failed
+before observed market/optimizer starts; CLOSED2250c2e0/69.547active977.352
+elapsed/actorquiescent/leaseclosed, fullcountsUNKNOWN. No blind retry/allocation
+refund. Independent source-boundary review before any new native dispatch.
+OriginalpairedGRU subsequentlyclosedUNKNOWN/74.672active,7schemafixtures/
+observed0marketstarts andsteps, outerUNKNOWN/charges preserved. No retry.
+NEW attentionpairedmodel SOURCE/nativeCPUproof1500active7200elapsed/hard
+23:05UTC/2starts0retry/oneGPU, beforeparentGO/actualCUDA. Distinct causal
+Transformer32/2layers/4heads/seed2201, not renamedGRU. Canonicalleasefree now.
+New paired futureloop source preparation CPU-only, NOT installed/modelready.
+
+Cost-aware15cell allocation+independentDecimaloracle complete/adverse price-
+only results, not actualPapernetPnL. New pure57dateData input and source
+preflight review proceed in parallel. No GPU permission/environment hold. Measure real
+owners/VRAM/headroom before any new allocation; no idle lease waiting feeds.
+Paper reliability preempts at a safecheckpoint.
 
 ## Custody / Recovery
 

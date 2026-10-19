@@ -12,16 +12,17 @@ installers, model fits or forecasts to refresh metadata.
 
 | Owner | Current Runtime / Next Due |
 | --- | --- |
-| NAS | thericher-kis-paper-current-nas-model-20261015/image87697f8e,8retainedFULL, exit>=Oct21USOPEN. |
-| F9 | thericher-kis-paper-current20-equalrank4-20261018/image566e02d8/sourceffece26d/guard4a468c0a,33finite triggers;18:30 leg1 native_recovery_required. |
+| NAS | thericher-kis-paper-current-nas-model-20261015/image87697f8e,8retainedFULL, exit>=Oct21USOPEN; firstscheduled13:40UTC=22:40KST. |
+| F9 | thericher-kis-paper-current20-equalrank4-20261018/image49933b02/source5ecfccef/manifest5f53ec50/guard4a468c0a,33finite triggers; nextOct20 15:10UTC. Historical18:30 leg1 native_recovery_required/unknown reservation held. |
 | Nightly | thericher-kis-paper-daily-spy-session/image30433095,23:50KST; separate owned inventory. |
 | Goal97 | Distinct owner, exitOct24 04:50/05:00KST. |
 | RTH1m | Quiet06:50KST Tue-Sat, firstOct20; actual new capture UNKNOWN. |
 | Old20D1 | thericher-kis-paper-current20-shadow-d1-marks-20261020,07:30KST/21finitevisits throughNov17. |
 | New9D1 | thericher-kis-paper-current25-new8-d1-marks-20261020,08:00KST/21finite/PT15M/IgnoreNew/noDemandStart. |
 | TTMpoint | thericher-research-ttm-return-head-point-20261020, INSTALLED ONEOct20 08:30KST/23:30UTC/end23:40/PT10M/noDemandStart. |
-| Riskpoint | thericher-research-sparse-risk-point-20261020, created then contained Disabled; exact Task name verified from RuntimeJob, not a qualified producer yet. |
-| Measurement | Source/native prep ready, proposed Oct27 08:45KST, NOT installed. |
+| Riskpoint | thericher-research-sparse-risk-point-20261020, ACTUALReady40aa3257/jobd2fff7ab/source38ae035b, ONEOct20 08:45KST/23:45UTC..23:55/PT10M/noDemandStart. |
+| Measurement | thericher-research-oct20-model-point-measurement-20261027, INSTALLEDcd9726cf/runtimedc888212/deployment65a1304f, ONEOct27 08:45KST/Oct26 23:45UTC..23:55. |
+| Newpaired-model loop | Source preparation only, proposedONEtask/TWOtriggers POINT Oct20 00:15UTC/EVAL Oct26 23:55UTC; NOTinstalled, no trained producer yet. |
 
 All bank/costs/losses/pending reservations/native identities preserved. F9 five
 desired<=.005originalbasis each/<=.025together inside shared original .10;
@@ -50,23 +51,43 @@ Completed projection p012/p014 remains failed, not bypassed by local view.
 Submission marker before client call plus callbacks before POSTcounter can
 legitimately yield markerTRUE/POST0; actual seq2 readiness/timing not retained.
 
-Gauss owns NEW exact-request READ-ONLY wrapper preparation/execution:
+Exact-request READ-ONLY visit COMPLETE20:10:20UTC:
 bootstrap-recovery-r1/exact-request-readonly-reconcile-r1.
-Only native inquire-nccs/VTTS3018R and inquire-ccnl/VTTS3035R on exact persisted
-submission date/intent.300active1200elapsed/1guardedauth12GET0retry/no orders/
-cancel/balance/quote/privatecyclewrites/observe/_recover. Scoped Paper loader,
-virtual host/no redirects/final order-path fence. Query candidate/absence is
-not accepted order/fill/terminal or reservation-release proof. Source/native
-tests and actual quiescence first; as-of state remains readonly.
+Actual1auth2GET/0orders/stable99files12dirs/cleanup118.403active400.755elapsed.
+Native inquire-nccs/VTTS3018R completeopenpagination/noexacttuple and
+inquire-ccnl/VTTS3035R historyabsent on persistedsubmissiondate are NOT
+accepted/fill/terminal/zeroeffects/reservation-release proof. No replay.
+Laterclone source/SYNfailed/0API/originalwrites; closed withoutretry.
+
+Safe-first-failure release (current, consumed installer; DO NOT reinstall):
+D:/thericher-v2/model-artifacts/execution/current20-first-failure-release-preparation-20261020-v1/release-r1/INSTALL-RESULT.json
+5302b963 at21:08:55UTC/ReadyEnabled, independent activation-r1/READBACK.json
+8594e934 and ACTIVATION-CLOSED.json7d90ff59. Oneaction-onlyupdateRPC/all33
+triggers/fullACL/nonaction/253others preserved/0Run/API/privatebookactions.
+Native image480source/inertstdio4group proof324dfb71. Newdiagnostic uses
+existing stdoutIPC and create-new exactrunfolder first-failure.json; closed
+error+trusted publicmoduleline only, no message/trace/locals/private values.
+Strict resultABI/order/risk/reservations unchanged. MissingdiagnosticUNKNOWN,
+installationnot diagnosticobserved/fill/currentcustody. Original18:30 is old566.
+Current readonly reader release-r1/public_reader.py (fdeb271c) and prepared
+binding release-r1/PREPARED.json01e9f9a7; do not rerun updater/consumed18:30
+reader or infer a new result from latestfile/Taskexit. Freeze exactrun and
+use reader source/image/job/time binding before relying on any new visit.
 
 ### Current Research Evidence
 
-Ledger301=190CUDA111CPU fittedversions, not architectures/profitable models.
+Ledger302=191CUDA111CPU fittedversions, not architectures/profitable models.
 TTM heads1352dba9/ABIf5be2c34 complete; paired adaptation64442426/ABIc397cf1c
 complete but BOTH worse than analytic TRAINmean, grid closed. RiskGRU0098057a/
 ABI1980cfaf48epochs/best36 improves mean/EWMA INNER QLIKE, not profit.
-Confucius complementary causal TCN one-fit source/native prep1200active/
-3600elapsed; conditional numerical GO is not proof of actual GPU training.
+TCNb6fffd68/ABI64acca78 COMPLETE40epochs/best32/722.198fitseconds/time-stop,
+not convergence. INNERQLIKE advantage, but12ETFdomain GRU/TCN/fixedblend
+allworseEWMA.15costcellsdd850443/independent09023890:uniformbetter/all
+nominal-price policies negative withassumedfees, not TR/actualPapernetPnL.
+PairedGRU return+auxrisk protocol closedUNKNOWN duringSYNcheckpointidentity,
+1CUDAallocation/0observedmarketstarts, no automaticretry/oldcaprefund.
+NEW distinctattention pairedcampaign source/nativeCPU preparation; no trained
+producer/GPUfit inferred. See engineboard forcaps/nativeproof andfutureloop.
 Exact results in engineboard/HANDOFF. No old fit/forecast repeats.
 
 TTM Task immutable installation:
@@ -78,29 +99,50 @@ input_unavailable/0GPU/no stale padding/date roll. One120active600elapsed/
 allocation0retry/cutoffOct20 13:25UTC; no refit/API/credentials/broker.
 Original15policy/costcells/.1/21mass/Oct20OPEN->Oct26CLOSE unchanged.
 
-Risk failed installation/containment:
+Risk historical failed installation/containment:
 D:/thericher-v2/model-artifacts/research/current-sparse-risk-future-point-20261020-v1/runtime-install-r1/NATIVE-INSTALL-FAILED-CLOSED.json
 149b0267/jobd2fff7ab/source38ae035b. One Windows component RefreshCache XML
 changed during installation; TTM/fullACL unchanged. Historical exact diff/
 causal actor UNKNOWN, never fabricate a match from a SHA. New scoped exact
 disabled-Task recovery under review: no Register/Run/retime, fresh all-current
 other-definition/fullACL equality around one Enable, contain on new drift.
-No qualified risk producer until its separate actual readback.
+Separate actual recovery now40aa3257/handoff3384e57c:ONEEnable/0Register/
+Run/retime/all252others+ownmaterial/ACL unchanged.33fixtures/45.050active/
+311.318elapsed. Originalfailure/debit/exactforeignXMLdeltaUNKNOWN preserved.
+No need run installer again; runtime outcome remainsunknown untilownedvisit.
+Strict offline reader (metadata only): physicalPython -I -B
+D:/thericher-v2/model-artifacts/research/current-sparse-risk-future-point-20261020-v1/runtime-install-r1/reader.py
+--runtime-job-sha d2fff7ab6c02476db9b4e711f1ffe970ea806ba989bac6872b0f73f94479969c
+Do not invoke worker/Task/observe asreader. Requires exactimmutablechain.
+
+Measurement installation:
+D:/thericher-v2/model-artifacts/research/current-oct20-model-point-measurement-20261027-v1/runtime-install-r2/installation/INSTALLED.json
+cd9726cf/PRODUCERS6fc0bc7e,1Register1Enable0Run/all253others preserved,
+35.664active453.006elapsed inclnativefailure17.833 retained. CPUonly120active/
+600elapsed/0model-GPU-API; exactdatesOct20/21/22/23/26 indices1..5, TTM15
+cells andrisk3comparisons separately. Missingpoints/marksUNKNOWN/no rerun.
+Readonly physicalPython -I -B runtime-install-r2/read_outcome.py; notworker.
 
 Data sector input50c29b98/all12on21dates252rows ready, full57FALSE because
-earlier H/L missing, separate masks/no reconstruction. Domain diagnostic source
-only/no modelcalls yet. Feed audit13beefae: observer ends22:23UTC before22:30/
+earlier H/L missing, separate masks/no reconstruction. That originaldiagnostic
+COMPLETE/adverse, unchanged. Actual OHLCenrichment58+10GET/SPY-XLK2087each/
+XLF-XLE1282each; latteroldercursorsSTOPatsecondgeometryinvalid, notprovider
+historyexhaustion. Newpure57dateABI preparation/0API, old50c29b unchanged.
+Feed audit13beefae: observer ends22:23UTC before22:30/
 23:00D1; no established300s auth starvation in capture windows, no guard change.
 
 ### Verification
 
-D:/thericher-v2/model-artifacts/verification/paper-host-publication-recovery-20261020-v1/authority.json
-1362files78a4054f/1514changed-path SERIAL PASS/18370fullPASS22skip/8workers/
-388.21s/cleanhelper0/Ruff/default-research-accountingCompose/native4PASS.
+D:/thericher-v2/model-artifacts/verification/paper-first-failure-diagnostic-20261020-v1/authority.json
+1363files970c0730/1588changed-path SERIALPASS40.95s/18430fullPASS22skip/
+8workers388.60s/helper0/verifiedcurrent-childcleanup/Ruff/three.env.example
+ComposePASS. AGENTS072d44eb/DECISIONS89b13c15. Separateoptionalserialscratch
+C:/trpy/serial-first-failure-20261020-v1 preserved aftertool-policycleanup
+rejection BEFOREexecution; do notbypass/claimallCscratchclean.
 Exact production/control digests required to reuse docs/external-only authority;
 external changed code needs its own native/focused proofs. Tracked/material
-recovery changes use AGENTS full verification. Image566/source480filesffece26d
-source-only proof is not deployment/fill evidence. Never stage %SystemDrive%/.
+recovery changes use AGENTS full verification. Currentimage49933/source5ec
+deployment isnot fill/effectivecurrentcustody proof. Never stage %SystemDrive%/.
 
 Monitor http://127.0.0.1:8787 remains loopback, no public/UI redesign. Task
 Operational log disabled; retained marker/hash/time evidence is assumed-honest

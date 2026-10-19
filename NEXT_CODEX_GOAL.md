@@ -2,61 +2,109 @@
 
 ## One Company Outcome
 
-current-nas-owned-model-paper-cycle-v1: complete a recoverable owned KIS Paper
-entry/hold/exit/reconciliation loop within ONE original shared virtual-cash tenth.
-Eight retained exact FULL entries known; owned exit>=Oct21 US regular OPEN.
-UNFINISHED: research/installation/Task exit/another owner's sell/commit cannot
-close this outcome. Need exact owned request/fill/currentinventory/terminal
-reconciliation, no unknown exact-request risk, explicit fees/settlement/net-PnL
-knowledge or limitation.
+current-nas-owned-model-paper-cycle-v1: complete recoverable owned KIS Paper
+entry/hold/exit/reconciliation within ONE original shared virtual-cash tenth.
+Eight previously verified retained FULLentries; ownedexit>=Oct21USOPEN, first
+scheduledexit Oct21 13:40UTC (=22:40KST). UNFINISHED: research/source/Taskexit/
+another owner's sale/installation/commit cannot close it. Need exact owned
+request/fill/currentinventory/terminal reconciliation/no unknown exact-request
+risk, explicit fees/settlement/net-PnL evidence or limitation.
 
 Workdir C:/Users/Public/Documents/thericher-v2. Run scripts/start_next_codex_task.ps1;
-read HANDOFF.md/AGENTS.md/RUNBOOK.md and active roleboards. Parent integrates/Git.
-Private no-cost Data/Research/Paper delegated, never KIS_LIVE_*/real money.
-Preserve original bank/costs/losses/reservations/identities; no foreign adoption,
-unknown-intent substitute, secret output or public exposure.
+read HANDOFF.md/AGENTS.md/RUNBOOK.md and activeboards. Parent integrates/Git.
+Private no-cost Data/Research/KIS Paper delegated; never KIS_LIVE_*/real money.
+Preserve bank/costs/losses/reservations/identities; no foreignadoption, unknown-
+intent substitute, secret output, paid/public/unclear-rights commitment.
 
-## Current Work
+## Current Packages
 
-1. Execution/Gauss: F9 exact18:30 guard4a/image566 visit1auth22GET/0order POST
-   starts/native_recovery_required.33finite triggers actually installed.
-   Local selected pending-intent type/source/plan/readset pass; native pre-wire
-   checks reach denied opener under explicit SYNcontext. Historical cause and
-   reconciliation UNKNOWN. Source-only safe exception type/trusted-line recorder
-   and exact-identity read-only recovery design; no blind replay/slot/markerreset.
-   Original NAS8 exit>=Oct21OPEN, distinct from F9/nightly/Goal97.
-2. Engine/Confucius: NEW complementary risk TCN, one bounded CUDA fit + fixed
-   equal GRU/TCN raw-variance blend if retained old GRU vectors compatible.
-   Same63x3channels/9segment observable target/TRAIN-INNER keys/affines/QLIKE,
-   native causal/checkpoint proof first; seed2001/max128/pat12/bestrestore.
-   1200active3600elapsed/1fit1allocation0retry. Source is not actual GPU work.
-   Reused INNER adaptive diagnostic, no future/Paper changes. Close grid if
-   no advantage; no seeds/windows/weights chase or repeated old forecasts.
-3. Infra/Kepler: original TTM point ACTUALLY installedOct20 08:30KST. Risk Task
-   created/enabled then contained Disabled after one foreign XML drift;
-   read-only first-difference diagnosis, no automatic retry/retime. Measurement
-   Boole source/native prep ready, NOT installed: bind qualified risk producer
-   or explicit missing-risk state, not future point/capture hashes.
-   Natural old20/new9 Oct19 captures required; missing->input_unavailable,
-   0GPU/no stalepadding/date roll. Future Oct20..26/cutoffOct20 13:25UTC.
-4. Data/Boyle: full12sector acquisition176queries complete. Risk domain inputs
-   READY50c29b98/all12on21datesAug27..Sep25/252rows, not all57dates because
-   four funds lack earlier HIGH/LOW. Separate input/label masks/no reconstruction/
-   API/modelcalls. No domain numerical dispatch yet. Finite feeds06:50/07:30/
-   08:00KST own next_due. Actual source audit shows observer ends BEFORE D1
-   feeds; no evidence to lower auth guard.
+1. Execution/Infra: F9 now image49933/source5ec/manifest5f/guard4a/33triggers.
+   Exact18:30 native_recovery_required; actualexact-request RO1auth2GET/
+   noopen tuple/historyabsent is not accepted/fill/terminal/zeroeffects proof.
+   Reservationheld. Laterclone source/SYN failed/noAPI, no furthercloneattempt.
+   NEW safe native-first-failure source c288dfc PUSHED/freshQA970pass.
+   ExistingstdoutIPC/closederror+trustedmoduleline only, resultABI/risk/
+   orders unchanged. Actual21:08:55UTC action-only deployment5302b963/
+   independent8594e934/closed7d90ff59:ReadyEnabled/33triggers/fullACL/nonaction/
+   253others unchanged,1update0Run/API/privatebookactions. NextOct20 15:10UTC;
+   install is not diagnosticobserved/fill/reservationrelease. Neverreuseold18:30-only reader
+   ortrigger-addinginstaller. NAS876 originalpath passedcoldsourceaudit,
+   noforcedupgrade. Continue originalNASexit/reconciliation objective.
+2. Engine: ledger302=191CUDA111CPU; TCN40epochs/best32/722s wallstop/oneCUDA
+   fit completeb6fffd68/ABI64acca78, not convergence. INNERdiagpassesGRU/EWMA,
+   but sectorDOMAIN GRU/TCN/fixedblend ALLloseEWMA. Close proxytraining grid,
+   no seeds/windows/refits. Financial15cell replaydd850443+independent09023890:
+   all3 paired inequalities PASSvsEWMA10bp but uniform better, all nominal-
+   price policies lose with assumed costs; not actualPaperPnL/TR/alpha.
+   Reusevectors ratherthanrepeat models. Strategy prepares ONE252session
+   price-momentum timingexpert,16SYN tests/no economicpass; fiveflagged
+   split/basis transitions need scopedDataresolution, not companyhold.
+   NEW paired return-risk multitask campaign1500active7200elapsed/hardstop
+   23:05UTC: two matchedNEW GRU32/seed2101 fits, main5sessionlogreturnMSE
+   alone vs sameMSE+1.0aux9segmentQLIKE. Same keys/features/init/fit-only
+   affines/purges; max256/pat20/LR+checkpoint byINNERRETURN_MSE only.
+   Source/native300/market1000(500each)/economic100/cleanup100,2starts0retry/
+   oneGPU; nativeoptimizer/gradient/RNG/checkpoint proof beforemarket. ALL
+   A/B/fixedrawreturnblend/uniform/cash x3fees15cells evenifMSEfails, same
+   stockrows/gross/payoffs. ReusedINNER/adaptive, not oldriskgridretune or
+   independentalpha. No oldfitreruns/currentPaper/frozenfuturepolicy change.
+   FirstCUDA SYN-A identitycheck failed before observed market/optimizer
+   starts; oldcharge69.547/oneallocation/leaseclosed, no automaticretry/refund.
+   Kepler independently reviews source/count boundary before any continuation.
+   Originalprotocol CLOSEDUNKNOWN/sourceFIRST-CAUSE/74.672active; no second
+   dispatch. NEW DISTINCT causalattention pairedexperimentSOURCE/CPUproof:
+   TransformerEncoder2layer32/4heads/FF64/dropout.1/63sinpos/seed2201, same
+   data/targets/splits/15costcells, NEW1500active7200elapsed/hard23:05UTC/
+   2starts0retry/oneGPU. True CPUcheckpoint+nextupdate/RNG/dropoutproof then
+   sourcefreeze/parentGO beforeCUDA, CUDAproofbeforemarket. ClaudeREVISE
+   killlogic/RNG/singleseed/reuseddata reflected; no oldGRUretry/caprefund.
+   Boole separately prepares source-only250active3600elapsed ONEquietTask/
+   TWO finite triggers POINT Oct20 00:15UTC/EVAL Oct26 23:55UTC; notinstalled,
+   finalnewmodelABI/nativeCPUproof first,15cells/.02initialNAV separateoldTTM.
+3. Data: full12 close history176queries/12x2087 complete; riskdomainall12only
+   21dates252rows/full57FALSE. Rawold4bodyprobe publicationfault retained;
+   notproven providerincapability. NEW current-existing4-sector-ohlc-enrichment-
+   20261020-v1 uses standing KIS_PAPER MARKETREADS only, SPY/XLK/XLF/XLE,
+   oneclient/1auth/100GETmax0retry/1.25spacing/600active3600elapsed including
+   source150/request350/cleanup100. Firstolderpageperfund testsOHLC; continue
+   eachVALIDdurablecursor over SAMEexisting2087close-keyrange independently.
+   Unsupportedfield/basismismatch/error closes exactcursor, not otherreadyfunds
+   orcompanyauthority. SeparateMraw/canonical scope; no oldcloseoverwrite/
+   account/orders/live/secret-body-rowoutput/new standingworker. Source/native
+   proof+actualcache/accountgateownership beforecalls, workers ownnext_due.
+   First acquisition actual58GET1auth/56accepted:SPY/XLK2087keys complete,
+   XLF/XLE787recentkeys each/oldergeometry-invalidpage retained. Recentpast64
+   support57dates/all4 now; full-historycomplete FALSE. NEW older-continuation
+   200active1800elapsed/hardstop21:40UTC, XLF/XLEonly1auth28GETmax0retry:
+   COMPLETEa8c9ef06/RESULTa4c496fd:10GET1auth8accepted0retry, XLF/XLE1282each
+   /805missingeach.99validrows peroldrejectedpage derived NEWABI/badrowUNKNOWN,
+   then disjointolderpagesaccepted; repeatedgeometryinvalid20210827 closes
+   bothcursors/STOP/16queriesunattempted.83.424active460.410elapsed; nohistory-
+   exhaustionclaim ormodechange. NEW purecombined12fund57dateinput ABI
+   200active1800elapsed/0API-GPU-model:input-onlypast64 masks BEFORElabels,
+   exactoldclose/geometry/lineage proof/newMchild, no oldABI/result regrade.
+   Source-only five252session strategybasisflags audit; no extra GET/impute.
+   FreshRTH21:50 priority, existingfeed workers ownnext_due.
+4. Prospective consumers ACTUALLYinstalled: TTM Oct20 08:30KST, risk08:45KST,
+   CPUmeasurementOct27 08:45KST. Exactold20/new9 Oct19 immutablecapture/asof/
+   512TTMor64riskinput/support masks beforeforecast, missingUNKNOWN/0GPU,
+   no stalepadding/date roll/automaticretry. OriginalOct20..26cohort/policies
+   unchanged bynewTCN/domainresults. Datafinitefeeds06:50/07:30/08:00KST.
+   Observerends22:23UTC BEFORE D1feeds22:30/23:00: no speculativeauthfloor
+   reduction. No activeGPUtrainer now; do not create dummy load.
 
-Closed ledger301=190CUDA111CPU fitted versions incl one oldinvalid, not
-architectures/profitablemodels. Matched TTM adaptation improves old head but
-loses analytic mean; close grid. Risk GRU48epochs/best36 improves mean/EWMA
-INNER proxy loss, not money. OOF router alwaysfixed4/no gain. Never repeat
-completed fits/forecasts for metadata. Exact pins/owners/caps/claims in HANDOFF.
+## Verification / Continue
 
-## Verification And Continuation
+Fresh authority A=D:/thericher-v2/model-artifacts/verification/paper-first-failure-
+diagnostic-20261020-v1/authority.json:1363files970c0730,1588SERIALPASS/
+18430fullPASS22skip/8workers388.60s/helperexit0/currentchildcleanup/Ruff/
+default-research-accountingCompose .env.example PASS. Separateoptionalserial
+scratch preserved aftertool-policycleanup rejection; no bypass/allCcleanclaim.
+Source/control equality required to reuse docs/external-only evidence; external
+changes needownnative/focusedproof, not repeated18ksuite. Materialnewcode/
+control/recovery followsAGENTS. MarketbytesM, model/artifactsA;15%Dfreefloor.
 
-Fresh focused/native/independent checks for changed external work. Docs/external-
-only reuse full authority78a4054f ONLY exact production/control equality;
-tracked/shared-control/material recovery changes follow AGENTS verification.
-Integrate material evidence, verify, commit/push; replace this file with ONE next
-company outcome ONLY after actual NAS closure, continue the active long request.
-Lane-local blocks do not stop ready work. Ask genuine operator decisions only.
+Integrate materialevidence, verify/commitpush. Replace this file with ONE next
+companyoutcome ONLY afteractualNASclosure, then continue active longrequest.
+Scope-local failure/data wait doesnotstopreadywork. Ask genuine operator
+decisions only, not routineprivatechoices/Git/resourceallocation.

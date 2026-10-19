@@ -15,8 +15,29 @@ Retrospective target support684of684 does not select input cohort.
 13synthetic102744scalar checks/105.88active308.81elapsed,0model/GPU/API.
 Source680c9d14/rawretention/parity refs preserved, no new fetch. Consumer is
 a frozen risk-model domain diagnostic, not temporal independence/alpha.
-Boyle now source-only contract prep under A/research/current-risk-sector-domain-
-diagnostic-20261020-v1; numerical model calls not authorized by source readiness.
+Original domain diagnostic and15cell assumed-cost allocation COMPLETE, old
+inputABI stays21dates/full57FALSE. New acquisition permits NEW57date ABI,
+not rewriting prior cohorts/results. Performance interpretation engineboard.
+
+Actual existing4 OHLC enrichment/due-resume-r3 closed58GET1auth56accepted/
+0retry:SPY/XLK2087each complete, XLF/XLE787each/rejectedoldergeometrypage.
+5600oldclose/896overlapfieldchecks0mismatch. All4 recent64bar support on57
+requestedJul8..Sep25inputdates; wholehistorycompleteFALSE.
+NEW older-continuation COMPLETEa8c9ef06/RESULTa4c496fd/readback1ef1dd85:
+10GET1auth8accepted0retry, XLF/XLE1282each/805missingeach. Originaltwo100row
+rejectedpages eachcontained1invalidrow; NEW99validrowmask with nativegeometry/
+oldcloseparity, invalidUNKNOWN/oldpageFAIL unchanged. Disjointolderpages
+accepted then both20210827pagesinvalid=>exactcursorSTOP/16queriesunattempted,
+no globalproviderhistory exhaustion/modechange/retry.83.424active460.410elapsed.
+Oldsource/caches/helpers unchanged; noaccount/order/quote/live/models/Tasks.
+
+Current NEW pure A/data/current-sector-57date-input-20261020-v1 package:
+200active1800elapsed/CPU2RAM3/0API-GPU-model-credentials-Task. Exact12fund
+acceptedOHLC/newMchild/57dates/past64INPUTmask BEFORElabels, nativeSYN/
+oldcloseparity/lineage hashreadback. No fill/targetmembership/oldABI regrade.
+Consumer underrepresented sector research, not model/Paperqualification.
+Source-only audit of five252session strategy split/basisflags uses retained
+metadata; unsupportedreturns UNKNOWN, no extraGET or silentoutcome filtering.
 
 Feed source audit3460+3403checks PASS. Exact read-only Scheduler facts19:13:51Z:
 old20D1 next22:30UTC/new9D1 next23:00UTC; observer issuance ends22:23 before

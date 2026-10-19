@@ -7,9 +7,19 @@ No active Execution subagent or broker worker is inferred from this MD.
 
 ## Current Technical Recovery
 
-Actual F9 bootstrap-r1 installed18:16:05UTC/33triggers/original32/fullACL/
-249otherdefinitions preserved. Image566e02d8/sourceffece26d/guard4a468c0a.
-Exact natural18:30 public result1auth22GET/0order-cancel POST starts,
+CURRENT F9 image49933b02/source5ecfccef/manifest5f53ec50/guard4a468c0a.
+Safe-first-failure action-only release ACTUAL21:08:55UTC:INSTALL5302b963/
+independentREADBACK8594e934/CLOSED7d90ff59/ReadyEnabled/all33triggers/fullACL/
+nonactionfields/253otherdefinitions preserved. OneupdateRPC/0rollback-retry-
+Run/API/credentials/privatebookactions. Next originalOct20 15:10UTC, no newslot.
+Native image480source/inert4group proof324dfb71 preceded deployment; c288dfc
+source970 fresh1588serial/18430full22skip/8worker/helper0/Ruff3ComposePASS.
+Existing stdoutIPC/create-new exactrunfolder/closederror+trustedmoduleline,
+strict resultABI/risk/reservation unchanged. Missingdiagnostic UNKNOWN, not
+noerror; installationnot actualerror/submit/fill/custody evidence. NAS876 stays.
+
+Historical F9 bootstrap-r1 installed18:16:05UTC/33triggers/original32/fullACL/
+249others preserved, image566/sourceffe. Exact natural18:30 result1auth22GET/0order-cancel POST starts,
 leg1/native_recovery_required. Counts are delegate starts, not wire/fill proof.
 Original first00:10 missingresult UNKNOWN. No blind replay/slot/reset.
 
@@ -27,8 +37,14 @@ p012/p014 stays failed; separate local-intent view does not waive full proof.
 Independent review7bac70ef: marker saved BEFORE clientcall, owner/binding/
 deadline callbacks BEFORE POSTcounter. MarkerTRUE/POST0 legitimate, no counter
 coverage bypass found. Historical readyBOOL/roundtrip absent/unrecoverable.
-Gauss source-only100active600elapsed safe type/trusted-line diagnostic and
-exact-identity read-only recovery design, not a brokerworker/scheduled replay.
+Actual exactrequest RO20:10:20UTC RESULT under bootstrap-recovery-r1/
+exact-request-readonly-reconcile-r1:1auth2GET0orders/stable99files12dirs/
+cleanup118.403active400.755elapsed. Completeopenpagination/noexacttuple/
+historyabsent (persistedsubmissiondate) does NOT prove accepted/fill/terminal/
+zeroeffects. Reservationheld. No privatecyclewrite/observe-as-reader.
+Laterclone source/SYNfailed NameError/151.900active/0API/originalwrites and
+closed withoutretry. Current regular-worker diagnostic supersedes that design;
+historical firstcause stillUNKNOWN, no rerun/reset to hide it.
 
 NAS8 original exit>=Oct21OPEN remains unfinished, separate F9/nightly/Goal97.
 F9 entryONLYOct19until20:00UTC (now consumed), exit>=Nov17. Expiry does NOT
