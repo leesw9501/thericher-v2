@@ -23,12 +23,12 @@ Market bytes M; model/research artifacts A. Research limits stay package-local.
 
 | Owner | Actual State / Next |
 | --- | --- |
-| Parent | Integration/Git and RTH guard draft. Core source c288dfc, last pushed docs 766851d. No current GPU training. |
-| Kepler / Infra | RTH paired-source/native proof and explicitly bounded same-session timing continuation. SOURCE ONLY; no Task update authorized yet. |
-| Boyle / Data | Read actual old20 D1 owned outcome. No manual collector/Task/API. RTH and fresh-sector failures stay scoped. |
+| Parent | Integration/Git and RTH guard draft. Core source c288dfc; docs baab060 pushed. No current GPU training. |
+| Kepler / Infra | Guard-only paired-source/native proof and action-only retarget preparation for next ORIGINAL RTH slot. No Task update grant yet. |
+| Boyle / Data | Old20 D1 exact outcome validated215efd55; new9 natural outcome reader next. No manual collector/Task/API. |
 | Confucius / Engine | Null-selection diagnosis complete; no new fit assigned. More of this OHLC/task grid is closed. |
-| Boole / Strategy | New actionable-target SOURCE/native preparation180active1800elapsed; no market fit/forecast/GPU/API. |
-| Pascal / Temporary Data Public | SEC pilot closed at first403, no remaining worker/requests. |
+| Boole / Strategy, invoked Engine | Ternary-target source795f0a89 ready; CPU logistic+HGB development authorized600cumulativeactive1800elapsed/2fits0retry, starts not yet attested. |
+| Pascal / Temporary Engine | SEC pilot closed; new independent GRU64 ternary SOURCE/native CPU prep only, no GPU grant. |
 | Gauss / Execution | Closed; never resume the earlier blocked clone approach. |
 
 Original finite feeds: RTH1m 06:50KST, old20 D1 07:30, new8+SPY D1 08:00.
@@ -62,14 +62,22 @@ f43ac769; old source and all other Tasks remain unchanged. Candidate initially
 used -cin; parent restored old case semantics with -in. Reproof/final pins are
 required before activation. All copied maps must bind actual new executed paths.
 
-Original plan_for is eligible only 21:50..22:20UTC; its readiness deadline was
-22:18. A late trigger alone does NOT recover it. Parent granted source preparation
-for ONE explicit Oct19 timing continuation at real 23:10..23:25UTC, cleanup before
-23:30, after actual D1 quiescence. Preserve the original daily branch, session,
-cursor/cache/day paths, token60, pacing, 100 normal/102 total GET,2 exact retries,
-1POST/client and original upper budgets. No fake now, namespace/counter reset,
-old-marker overwrite or manual Run. A real Task update needs separate parent
-grant after final source/native/window/ownership proof; none issued yet.
+Original plan_for is eligible only21:50..22:20UTC/readiness deadline22:18.
+Late trigger alone is invalid. Source1253d17f/22leaf26full-guard cases adopts
+parent guard exactly; the proposed late continuation would additionally need
+typed plan/capture/deadline/state changes. SUPERSEDED BEFORE effects: do not
+build that complexity for one missing1mday. Prepare guard-only action retarget
+for the NEXT ORIGINAL daily opportunity, unchanged triggers/PT35M/principal/
+ACL/query/session/cursor/cache/caps/token/pacing. No fake now/reset/manual Run.
+Actual Task update still needs parent review/grant; none issued yet.
+
+Old20 D1 completed22:31:54UTC:20GET1auth0retry/20components ready/20new target
+rows/0late/379session context/0missing required dates. Existing strict chain
+PASS; metadata-only reader215efd55 under
+A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1.
+Audit26.91active270.42elapsed/0API/0decoded market rows. Old20 dependency is
+ready, not whole-point512-context/new9/finality proof. Engine audits intake
+composition source-only while Boyle prepares exact new9 natural outcome read.
 
 Old20/new9 D1 source spellings already match. Preflight57cb192b/618fb981 and
 controlled native d31b9e4d do NOT establish a production fault: no D1 changes.
@@ -110,7 +118,8 @@ Goal97 compatibility is unverified. Preserve current NASDAQ execution paths.
 ## Research / Data Results
 
 Ledger306=193CUDA113CPU fitted versions, not architectures/profitable models.
-No GPU environment/approval hold; no ready new GPU campaign or dummy load.
+No GPU environment/approval hold or dummy load. New ternary GRU source/native
+proposal is not yet a ready GPU campaign; no training starts inferred from GO.
 
 - TTM heads1352dba9 and adaptation64442426 completed; both selected heads worse
   than their analytic TRAINmean. Risk GRU0098057a/TCNb6fffd68 improved reused

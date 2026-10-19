@@ -7,12 +7,14 @@ Never KIS_LIVE_*/secrets/raw market rows/private amounts in output.
 
 ## Ready / Owned / Due
 
-Boyle reads exact old20 D1 first natural22:30UTC outcome under
-A/data/current-old20-d1-first-owned-outcome-20261020-v1:
-90active1500elapsed/CPU2RAM2/0API-credentials-TaskRun-models. If active,
-return UNKNOWN without partial private reads/waiting. If quiescent, use exact
-pointer or bounded <=16 direct children with identity-first binding and strict
-existing terminal/capture reader. No latest/mtime/exit inference.
+Old20 D1 exact outcome validated215efd55 under
+A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1:
+completed22:31:54UTC/20GET1auth0retry/20components+20targetrows ready/0late/
+379session context/0missing required dates; audit26.91active270.42elapsed/
+0API/0decoded market rows. Not whole-point512/new9/finality proof.
+Boyle new9 natural23:00 outcome package90active2400elapsed/CPU2RAM2/0API-
+credentials-TaskRun-models. Exact pointer or <=16directchildren identity-first
+strict existing chain only; Running/missing=>UNKNOWN/no partial/raw/latest read.
 
 Old20 D1 Task thericher-kis-paper-current20-shadow-d1-marks-20261020:
 07:30KST/21 finite sessions. New9 Task
@@ -43,11 +45,12 @@ A/infra/current-rth-executable-spelling-recovery-20261020-v1.
 Parent owns draft/owner_guard.ps1: two exact spelling comparisons only, old
 case semantics/arguments/cwd/PID/creation/sourcehash/other-owner checks kept.
 No old runtime edits or active collector bypass.
-Original plan_for only21:50..22:20/readiness deadline22:18UTC. SOURCE grant
-covers one real Oct19 continuation23:10..23:25UTC, cleanup before23:30,
-after exact D1 quiescence. Preserve session/cursor/cache/day/100normalGET/
-102total incl2retries/1POST-client/token60/pacing/other-day branch and debits.
-No actual Task update grant yet, fake clock/reset/manual Run/new standing feed.
+Original plan_for only21:50..22:20/readiness deadline22:18UTC. Late-trigger
+continuation would need extra typed plan/capture/deadline code; source1253d17f
+records that limitation. Superseded before effects. Kepler prepares guard-only
+action retarget for NEXT ORIGINAL daily slot, all triggers/PT35M/ACL/caps/
+session/cursor/cache/token/pacing unchanged. No Task update grant yet, fake
+clock/reset/manual Run/new standing feed. Original failures/debits preserved.
 
 Fresh sector reversal input package:
 A/data/current-sector-reversal-fresh-input-20261020-v1/RESULT.json d49ae687

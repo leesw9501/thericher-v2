@@ -83,14 +83,16 @@ not emitted=>UNKNOWN. Guard executable slash spelling and redirector-command
 fault proven, not provider quota.
 A/infra/current-rth-executable-spelling-recovery-20261020-v1:
 parent draft/native paired runtime in preparation, no Task update grant yet.
-Original eligible21:50..22:20/readiness22:18UTC. Late trigger alone invalid.
-Source grant:ONE explicit real Oct19 23:10..23:25 continuation/cleanup<23:30,
-same session/cache/cursors/caps/token/pacing/other-day branch, actual D1
-quiescence first. Never fake now/reset state/manual Run.
+Original eligible21:50..22:20/readiness22:18UTC. Late trigger alone invalid;
+continuation proposal superseded before effects to avoid new plan/capture/
+deadline machinery. Guard-only action retarget prepares NEXT ORIGINAL slot,
+all triggers/PT35M/ACL/cache/caps/token unchanged. No fake now/reset/manual Run.
 Old20/new9 preflight57cb192b/618fb981 does not prove a D1 fault; no changes.
-Boyle exact old20 outcome package:
-A/data/current-old20-d1-first-owned-outcome-20261020-v1.
-Running/missing/partial outcome stays UNKNOWN, no raw read or latest scan.
+Old20 actual completed22:31:54UTC/20GET1auth/20components+20targetrows ready:
+A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1/
+RESULT.json215efd55; strict source/job/session/index0 chain passes.379session
+context is not by itself TTM512/new9/finality proof. New9 natural23:00 is a
+separate owner/reader; Running/missing stays UNKNOWN, no raw/latest reads.
 
 ### Prospective Research
 

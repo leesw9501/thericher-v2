@@ -31,14 +31,15 @@ pending reservations and exact identities; no foreign adoption/substitute.
    Exact first natural run20261019T215000.928444Z returned DEFERRED_NO_SESSION
    before capture-context; actual API counters/day UNKNOWN. New source fork
    under A/infra/current-rth-executable-spelling-recovery-20261020-v1 changes
-   only the two executable comparisons plus a separately proved real-time
-   timing continuation. Old plan accepts21:50..22:20UTC, so a late trigger
-   alone is invalid. Kepler prepares SOURCE/NATIVE evidence for ONE Oct19
-   23:10..23:25UTC continuation/cleanup before23:30, unchanged session/cache/
-   cursors/caps/token controls/other-day branch. Actual Task update has NOT
-   been granted. No fake clock/reset/manual Run/active-owner competition.
-   Boyle reads exact old20 D1 natural22:30 outcome; new9 natural23:00 remains
-   independently owned. Missing outcome is UNKNOWN; no partial/raw reads.
+   only the two executable comparisons and necessary source-path bindings.
+   Old plan accepts21:50..22:20UTC; late trigger alone is invalid. Proposed
+   late continuation SUPERSEDED BEFORE effects: avoid extra plan/capture/
+   deadline machinery for one missing1mday. Prepare guard-only action retarget
+   for NEXT ORIGINAL slot, all triggers/PT35M/ACL/caps/token/cache unchanged.
+   Actual Task update has NOT been granted. No fake clock/reset/manual Run.
+   Old20 D1 completed22:31:54UTC/20GET1auth/20components+20targetrows ready,
+   strict chain215efd55. Boyle prepares exact new9 natural23:00 outcome;
+   Engine separately audits512-context composition. Missing stays UNKNOWN.
 3. Engine: ledger306=193CUDA113CPU fitted versions, not architectures or
    profitable models. Attention2CUDA fits and HGB2CPU fits both selected
    constant checkpoints; scientific FAIL, no learned increment. HGB strict
@@ -47,10 +48,13 @@ pending reservations and exact identities; no foreign adoption/substitute.
    fault; close that OHLC/task family, not all research.
    Weekly ETF reversal/blend15cell study primary FAIL: blend adds no growth
    over reversal; nominal-price assumed-cost results, not actual Paper PnL.
-   Strategy prepares ONE distinct actionable-target proposal/native synthetic
-   proof, bounded180active1800elapsed/CPU2RAM3/0market fits-forecasts-GPU-API.
-   No new numerical campaign until a genuinely different frozen contract;
-   no dummy utilization, closed-fit/forecast repetition or old cap refund.
+   Distinct ternary cost-band SOURCE795f0a89/30checks ready; parent authorized
+   NEW logistic+HGB development600cumulativeactive1800elapsed incl25.520prep/
+   2CPUfits0retry/perfit120/18fixedcost-policy cells. Strict proper-score gain
+   vsFITpriors/ordinal notexpectedprofit/adaptive reusedINNER, not promotion.
+   Independent GRU64 same3class SOURCE/native CPU proposal frozen before
+   CPU outcomes, no GPU GO yet; proposed1fit/startby23:10/cleanup23:25UTC
+   before installed points. No dummy load, closed rerun or refunded clocks.
 4. Installed prospective consumers: TTM Oct20 08:30KST, risk08:45KST,
    CPU measurement Oct27 08:45KST. Exact old20/new9 Oct19 immutable capture
    chain/512 TTM or64 risk inputs/masks required. Missing=>UNKNOWN/0GPU;

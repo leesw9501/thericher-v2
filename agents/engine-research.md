@@ -12,11 +12,35 @@ No actual trainer running. Absolute-return/aux-risk attention and paired
 absolute-vs-midrank HGB both selected constant checkpoints; no more fit in
 that input/task family. Diagnosis found no checked sign/unit/key/selector/
 constant-export bug, not proof of market unpredictability or no rank signal.
-Strategy is preparing ONE genuinely distinct actionable-target experiment,
-A/research/current-actionable-target-preparation-20261020-v1:
-180active1800elapsed/CPU2RAM3/<=2tinySYNfits/0marketfits-forecasts-GPU-API.
-Need finite target, chronological split/purge/cost/control/kill/score ABI
-and native solver proof before a new numerical dispatch.
+Actionable-target SOURCE795f0a89/PROTOCOLe0ea9d00/30checks/2tiny native fits
+is ready: fixed3class rawLOG5 cost bands, h=log((1+.001)/(1-.001)),10bp
+EACH side. Eleven old contracts checked; plain binary/quantile repeats rejected.
+NEW development authorized under
+A/research/current-actionable-target-development-20261020-v1:
+600cumulativeactive1800elapsed including25.520source debit/CPU2RAM3/2market
+fits0retry/perfit120. Logistic C1 + HGB classifier depth3/max128/pat20,
+chronological INNER/native selectedprefix0 allowed, no classweight/grid.
+Strict logloss AND Brier improvement over FIT class priors; ordinal p_gain-
+p_loss is NOT expected profit. Both models/own exposure-matched uniform/full
+uniform/cash x3costs=18fixed cells, selected/final diagnostic packets once.
+Market starts not yet attested; ledger stays306. Claude REVISE named proper-
+score baseline/ordinal-vs-payoff/pass-kill/adaptive INNER, restrictions kept.
+Review: A/review/current-actionable-target-campaign-20261020-v1/claude.json.
+
+Independent GRU64/seed2501/one-layer3class candidate frozen BEFORE CPU
+outcomes, in A/research/current-costband-gru-preparation-20261020-v1.
+SOURCE/native CPU only180active1800elapsed/0market-GPU-API. Proposed one
+laterGPUfit max128/pat20/logloss/LR+bestrestore includingconstant0; finite
+900cumulativeactive2400elapsed incl preparation/startby23:10/cleanup23:25UTC
+before installed23:30 point. Needs native CPU proof/source review/parent GO
+then CUDA proof; no actual GPU grant or training claimed yet.
+
+Confucius intake audit8834e9a COMPLETE/970checks/18fixtures/64.078active:
+TTM512 composes pinned retained history+newcapture,379 is required-context
+setting not literal tail truncation. No proven deterministic source block;
+actual numeric prefix/offset/eligible count still requires owned intake/new9.
+No worker change. New independent cost-band/gating pure-kernel review is
+120active1800elapsed/0model-market-API-GPU, not a new performance evaluation.
 
 Retain already computed selected TRAIN/INNER scores in new producers.
 TRAIN in-sample scores are NOT OOF inputs for learned fusion. Old missing

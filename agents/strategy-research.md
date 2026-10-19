@@ -7,16 +7,16 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Ready / Owned
 
-Boole: ONE actionable-target source/native preparation:
-A/research/current-actionable-target-preparation-20261020-v1.
-180cumulative active/1800elapsed, CPU2RAM3, <=2tiny synthetic fits,
-0marketfits/forecasts/GPU/API/credentials/Task/repo writes.
-Inspect <=12 exact old target contracts/results for duplication, then produce
-one distinct executable hypothesis or concrete rejection, not a reading list.
-Candidate axes may include cost-threshold direction/probability or conditional
-payoff, not another raw MSE/rank/seed/window grid. Specify label timing/purge/
-chronological INNER/controls/costs/strongest kill and retained score packet.
-A source proposal does not grant the market fit; Parent freezes next campaign.
+Boole completed actionable-target SOURCE795f0a89/PROTOCOLe0ea9d00:
+11prior-contract duplicate check/30SYN/2tiny native sklearn1.9.0 fits,
+25.520active362.360elapsed/0market-GPU-API. Binary gates/quantiles rejected
+as repeats; chosen3class fixed cost-band payoff distribution/natural logloss.
+Parent authorized development under current-actionable-target-development-
+20261020-v1:600cumulativeactive1800elapsed inclprep/CPU2RAM3/2marketfits0retry/
+perfit120/logistic+HGB. Exact fixed splits/priors/selectedconstant allowed;
+strict logloss+Brier/18fixed policy-cost cells/ordinal NOTexpectedprofit.
+Market starts not yet attested; no GPU/Paper/repo changes. Engine board owns
+full contract. Claude REVISE concerns kept as contract limits, not approval hold.
 
 ## What Current Evidence Rejects
 

@@ -24,11 +24,18 @@ Actual sampled39percent/2880MiB was during fit, not sustained usage/peak.
 GRU/TCN risk domain/allocation failed against useful simple controls; close
 that grid. TTM heads/adaptation also complete, selected heads worse than mean.
 
-Next Strategy package is SOURCE/native SYN only:
-A/research/current-actionable-target-preparation-20261020-v1.
-180active1800elapsed/CPU2RAM3/<=2tinySYNfits/0marketfits-forecasts-GPU-API.
-A genuinely distinct target/full numerical contract is required before new
-allocation; do not refund/relabel old clocks or reopen seen holdouts.
+Actionable-target preparation795f0a89/30checks/2native tinyfits is complete.
+NEW CPU development authorized600cumulativeactive1800elapsed incl25.520prep/
+2marketfits0retry/perfit120/CPU2RAM3; actual starts not yet attested, count306.
+Natural ternary cost-band logloss target, not old MSE/binary/quantile repeat.
+
+Pascal owns independent GRU64/seed2501 same new3class target SOURCE/native
+CPU preparation180active1800elapsed/0market-GPU-API, frozen BEFORE CPU
+outcomes. Future proposed1CUDAfit900cumulativeactive2400elapsed inclprep,
+max128/pat20/LR/checkpoint by INNER logloss only/startby23:10/optimizerstop
+23:22/cleanup23:25UTC before installed points. No GPU grant yet; exact native
+CPU checkpoint-nextupdate/RNG/source proof precedes parent GO/CUDA proof.
+Do not refund/relabel old clocks, tune after CPU results or reopen holdouts.
 
 ## Existing Owned Future Jobs
 

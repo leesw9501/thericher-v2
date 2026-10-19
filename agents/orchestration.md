@@ -11,11 +11,11 @@ proof of running agents/workers. AGENTS owns authority and Paper invariants.
 | Owner | Actual State | Next |
 | --- | --- | --- |
 | Parent | Integration/Git; RTH guard draft only. Core c288dfc, last pushed766851d. | Integrate measured outcomes; review native timing/pins before any RTH activation grant. |
-| Infra/Kepler | RTH source/native paired-runtime recovery; no Task mutation grant. | Narrow executable spellings plus explicit Oct19 continuation23:10..23:25UTC, cleanup<23:30; unchanged original cap/debits. |
-| Data/Boyle | Exact old20 D1 natural22:30 outcome projection. | Hash/source/session/job/index0 chain only; no manual invocation/partial/raw read. |
-| Strategy/Boole | SEC feasibility complete; new actionable-target SOURCE/SYN package180active1800elapsed. | ONE distinct target, bounded duplicate check/native solver proof; no market fit/forecast/GPU/API. |
-| Engine/Confucius | HGB8e44c937 two fits complete; null-selection diagnosisb1ca988d complete. | Closed task family; no unassigned fit or repeated old forecasts. |
-| Temporary Data/Pascal | SEC pilot first403,1GET/0accepted, closed. | No more requests/proxies/identity rotation. |
+| Infra/Kepler | Guard-only RTH paired-runtime/action-only retarget preparation, no mutation grant. | NEXT ORIGINAL slot; all triggers/PT35M/ACL/cache/caps/token unchanged. Late continuation superseded before effects. |
+| Data/Boyle | Old20 D1 complete215efd55/20GET1auth/20components+20targetrows ready. | Prepare exact new9 natural23:00 outcome reader, no partial/raw read or invocation. |
+| Strategy/Boole, invoked Engine | Ternary cost-band SOURCE795f0a89/30checks ready; CPU development authorized600active1800elapsed/2fits0retry. | Freeze source/native protocol before market; no actual fit count inferred from GO. |
+| Engine/Confucius | Intake8834e9a complete/970checks: TTM512 composes retained history+capture; no deterministic source block. | Independent cost-band/gating policy-kernel SYN review, no numerical market/model calls. |
+| Pascal, invoked Engine | SEC pilot closed403; distinct GRU64 same3class SOURCE/native CPU preparation only. | Candidate frozen before CPU outcomes; no GPU GO yet, preserve23:30/23:45 forecast ownership. |
 | Execution | F9 diagnostic image49933 deployed, nextOct20 15:10UTC; NAS original exitOct21. | Exact request reconciliation only; held reservation is not released by expiry/no-open. |
 
 No GPU trainer now. Ledger306=193CUDA113CPU fitted versions, not winners.
@@ -36,9 +36,12 @@ UNKNOWN. Execute forward slash vs canonical backslash mismatched exact guard,
 and native redirector has the corresponding fault. Same actual file/arguments
 does not mean old lexical check passed. Candidate source/mock/native evidence
 exists; old daily window21:50..22:20 cannot accept a late trigger alone.
-Only source preparation for a real23:10..23:25 continuation is granted so far.
-Keep session/cache/cursor/budget/token/source maps/other-day branch and active
-D1 exclusion. No fake clock, manual Run, quota reset or new standing worker.
+Late continuation source proposal1253d17f needs additional plan/capture/
+deadline machinery; superseded before effects. Reversible improvement: repair
+only the two comparisons/actual source bindings for NEXT ORIGINAL daily slot,
+not add that machinery for one missing1mday. No Task mutation grant yet.
+Old20 natural D1 succeeded; new9/intake evidence still independent. Preserve
+active D1 exclusion, session/cache/cursor/caps/token/ACL/triggers, no reset/Run.
 
 Reversible improvement: eliminate stale running projections and consolidate
 current state; history stays Git/immutable evidence. Reuse existing
