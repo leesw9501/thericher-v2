@@ -54,9 +54,19 @@ failed bound_path_invalid is a profile mismatch, not a new broker failure.
 
 ## Latest Research Continuation
 
-Oct19 continuation added TWO more fitted versions, not repeats: Ridge14 CPU
-and five-session fast GRU32 CUDA. Current ledger253=162CUDA91CPU incl one old
-invalid version; earlier251 below is the prior closed subtotal.
+Latest ledger270=172CUDA98CPU incl one old invalid version; not architectures
+or profitable models. New12 OOF base fits completed at23:19KST, no OOF target
+reads/replay. A/research/current25-five-session-oof-base-experts-20261019-v1/
+actual/QUALIFIED-BASE-OOF.json SHAf0ca0556, sourcee036f526. SixCPU/sixCUDA,
+6600raw scores/12packets/four native SYN proofs,491.431activephase upper.
+All16actors removed/oneGPUlease released. Fold1..3 iterations/best:
+HGB28/8,20/0,20/0; Ridge1/1each; MLP27/7,21/1,21/1; GRU25/5,33/13,27/7.
+OOF target-free output integrity review and one CPU meta integration proceed
+separately; no extra model forecasts/fits to repair metadata.
+
+Earlier continuation added TWO fitted versions, not repeats: Ridge14 CPU
+and five-session fast GRU32 CUDA. That step closed at253=162CUDA91CPU;
+earlier251 below is its prior closed subtotal.
 
 Ridge14 fixedalpha10/weighted cholesky: one real SYN/onefit/first25point,
 6.001s owner/4.910s worker, safe model89dd9059/point050fff99. Independent
@@ -111,8 +121,13 @@ FIT-only4channel scale ablation COMPLETE5ccf3141:2NEWfits13epochs/best1,
 sameeverythingelse/seed1101/retained12controls,82.412activeupper3600/closedGPU.
 At5bpsPERLEG gross+.008958%/fees.530003%/net-.521045% vsuniform-.529024%.
 Costs still dominate; seen-DEV follow-on, not old regrade or independent alpha.
-Current ledger257=166CUDA91CPU incl oneoldinvalid. Kepler now performs only
-CPU net-edge/cost-floor feasibility, no further minute model/DEV calls.
+That step closed at257=166CUDA91CPU incl oneoldinvalid. CPU net-edge feasibility
+now COMPLETEdee191bb: bothmodels0/5300 positive edges at5/10/20bpsPERLEG,
+0/265 candidate minutes. Maximum expected gross~1.067bps versus approximate
+10/20/40bps roundtrip floors. Reject unconditional minuteTop5 for these cost
+scenarios, NOT proof against all minute models or profitable cash.5tests and
+Parent6retained arithmeticchecks PASS,7.339activeupper60,0newmodel/replaycalls.
+A/research/current20-intraday-net-edge-feasibility-20261019-v1. Kepler released.
 
 OOF Data READY067b39ab: BASE4b98e692/META4d5bce5c/TERMINALa0e6d33f,
 manifest2fb08ce4/sharedindexcb063973, no featurecopies/acquisition.
@@ -125,9 +140,9 @@ Base FIT/INNER labels, meta1+2 labels1000rows/40dates and terminal3 labels
 650rows/26dates are physically separate. Baseworkers never decode oldY21/
 OOFtargets; metaweights freeze before terminal payload is read.
 Dailyreplaymarks66x5x25/all8250present storedonlyM; replaymanifest561f895f.
-Boole prepares12basefits SOURCE, not actualtraining yet: fourfamilies HGB14/
+Boole completed12basefits: fourfamilies HGB14/
 MLPraw1274/GRU252plus14/Ridge14 x3folds,seed1201/128max/INNERpat20/LR/restore.
-Finalfinite12starts0retry/10800active21600end delegated insideexistingauthority.
+Finite12starts0retry/10800active21600end, actual closure facts above.
 Meta convexkernel SOURCE/40tests/one realnative CPU SYN PASSED, noOOFfit yet:
 A/research/current25-five-session-oof-convex-fusion-20261019-v1/READY.json.
 One nonnegative sum1/nointercept SLSQP fit on OOF1+2rawpreds ONLY; common
@@ -135,6 +150,71 @@ trainingtargetvariance normalization/KKT constraints, nofamilyrescale/grid.
 Freezeweights before terminal3rawtargets;9matchedterminalpolicies,notindependent
 alpha. Old9fixedfuturecomparison/Paper unchanged.
 No new collector, provider call, private Paper allocation or schedule.
+
+Independent base audit PASSf778e663/29fixtures475checks285evidencefiles,
+all6600rawaffines exact;493.651numericalinclqualification/42.191source separate.
+No model/economic/terminal reads; cleanup from retained receipts, not fresh Docker.
+A/research/current25-five-session-oof-independent-audit-20261019-v1/RESULT.json.
+First meta integration UNKNOWN_NO_RETRY: unique but noncanonical source key
+order rejected by checked_keys before solver/weights/terminal decoding. Original
+122.304active upper/debits and failed files remain. New ordering-binding-recovery-r1
+uses one full bijection/inverse for all columns/labels plus date-stock price-axis
+alignment, never row intersections/drops. Original family1200active/end16:16UTC,
+one future native solve/27cells, both technical attempts counted. No base reruns.
+Parent1000synthetic rank matrices found93 floating-mean boundary tie errors;
+new recovery uses exact integer doubled-rank ordering, same equal-rank formula.
+Claude KEEP A/review/current25-oof-key-order-recovery-20261019-v1/claude.json,
+mapping/outcome-bias/budget/adaptive limits retained. Not a company-wide hold.
+
+Linked meta recovery COMPLETE6893608b/one actual native fit/27terminalcells,
+A/research/current25-five-session-oof-fusion-integration-20261019-v1/
+ordering-binding-recovery-r1/READY.json. Weights503c54aa =0HGB/28.8784%MLP/
+71.1216%GRU/0Ridge; native12iterations/KKT1.735e-18. Hosthash14:35:25.353101UTC
+precedes separate terminal intake14:35:26.730967UTC.18recoverytests/7047Decimal
+NAVs error<=2.002e-15; independentd22efb96 PASS111source/key/rank/custodychecks,
+1650keys/no labels/prices/model/solver calls. Both actors removed, cumulative
+268.071activeupper inclreadback/priorfailure, originaldeadline unchanged.
+At10bpsPERLEG adaptive terminal growth/DD: convex+1.830915%/.558212%,
+fixedrank+2.859093%/.643800%, uniform+1.391199%/.388376%, Ridge+4.449509%/.841446%.
+Positive historical economics are NOT independent alpha or realized Paper PnL;
+lower MSE does not establish better trading growth/risk. Old failure/weights/
+control bytes remain unchanged, no Paper switch.
+
+NEW CPU pairwise-rank fusion SOURCE assigned: one simplex rank-logistic fit
+on existing OOF1+2/40dates, centered integer doubled-rank features, fixed.01
+uniform-prior penalty.12000pairs are NOT independent samples. One nativeSYN/
+onefit/3new costcells,27oldcontrols byte-reused,600active3600end. Primary at
+10bps growthup/DDnotworse vsfixedrank; adaptiveDEV only, no reranking/alpha.
+A/research/current25-five-session-pairwise-rank-fusion-20261019-v1.
+Claude REVISE reuse/scale/ties/pseudoreplication limits are adopted at
+A/review/current25-pairwise-rank-fusion-20261019-v1/claude.json.
+
+Next independent GPU hypothesis SOURCE assigned, not yet a training claim:
+A/research/current25-cross-sectional-context-development-20261019-v1.
+Masked same-date DeepSets-style context vs matched no-context14feature model,
+two variants x3existing folds/six NEW fits/seed1301/max160/INNERpat20.
+Input-only contextmembership independent of label availability, target-free
+base trainers, no cross-date pooling/normalization.9000active18000elapsed,
+1200perfit/0retry/oneGPUlease. Six frozen policies/54cells; all3folds growthup/
+DDnotworse vs matched at10bps is predeclared primary, not independent alpha.
+Claude22b17865 REVISEsingle-seed/mask/multiplicity/incomplete handling, adopted
+as scoped claim/tests/failure limits, not a global approval hold.
+A/review/current25-cross-sectional-context-20261019-v1/claude.json.
+Official inspiration only, no copied code/weights/dependency/runtime change:
+https://arxiv.org/abs/1703.06114 and https://doi.org/10.1609/aaai.v38i8.28681.
+Original/context identity-r1 SYN failed before any market fits: wrong checkpoint
+identity field then global-versus-per-optimizer step count. Both immutable,
+21.512s numericaldebit/2GPUallocations released. Counter-r2 CPU fixture then
+failed scheduler epoch binding, not a market/model failure. Bounded source-test
+debug fixes API bindings without relaxing full restore/next-update checks;
+six markets remain unstarted. Actual counts differ from reserved SYN stages.
+Keep all debits inside original9000active/original14:33:59.780031UTC+18000end.
+Comparison54cell source prepares independently, source is NOT running CUDA.
+
+Fresh23:38KST Task facts only: NAS Ready/Enabled(last23:32/next00:05), nightly
+Ready/Enabled(next23:50), fixed4 Ready/Enabled(first00:10/no prior run).
+Gauss owns finite readback of those two natural opportunities, no Task/API
+invocation/new schedule. Source-safe categorical results only; missing is UNKNOWN.
 
 ## Prior Four Fits Complete
 

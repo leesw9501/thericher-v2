@@ -10,22 +10,32 @@ broker risk, human approval or a permanent daemon. Parent owns integration/Git.
 Renewed request: new5day fastGRU COMPLETE33epochs/best13/native83.285s,
 oneactualSYN/onefit/oneFIRST25point, all actors/lease released. Parent Ridge14
 onefit COMPLETE/independent158checks PASS. That step closed at253; current
-257=166CUDA91CPU after four native1m fits. Prior251/253/255 are ancestral,
+270=172CUDA98CPU after four native1m/12newOOF/oneCPUmeta. Prior subtotals
 ancestral. Newcounterr1/safe childenv apply only to new source, not old studies.
 Legacyouter claimsfuture0 despiteactualPOINT1; metadataqualificationba3064a9
 73checks preserves originals, no duplicate fit/point permitted.
 Native1m RAW30/120 and FIT-only-scale30/120 all4fits COMPLETE/released;
 13epochs/best1 each. Seals191e063f/5ccf3141. Costs dominate the one reused
-DEVday; Kepler now owns CPU-only retained net-edge feasibility, no new fits.
+DEVday; Kepler CPU-only retained net-edge COMPLETEdee191bb, no new fits.
 Data41775 examples/c72f1a08 and exact390x20 replay marks are ready; tiny8day
 data/provisionalminute-label assumptions limit claims, not GPUauthority.
-Boole owns NEW3fold/4family OOF base source and conditional numerical GO:
+Boole NEW3fold/4family OOF base campaign COMPLETEf0ca0556:
 12fits6CPU6CUDA, seed1201,10800active/21600elapsed, GPUfit1500/CPUfit300,
-0retry. DataREADY067b39ab; base/meta/terminal labels physically separate,
+0retry; actual491.431phaseupper/all16actors removed/oneGPUlease released.
+12rawpackets6600scores/0OOFtargetreads. DataREADY067b39ab; labels separate,
 fold-local FIT targetnormalizers, inputscaler5b5f3f before every INNER/OOF.
-Confucius owns CPU-only convex fusion integration; SOURCE40tests/nativeSYN
-passed, no actual OOF meta fit yet. Exact base packets precede one meta fit;
-weights freeze/readback precedes terminal3 targets. No second GPU allocation.
+Convex meta COMPLETE6893608b/oneCPUfit/27cells/oldfailurepreserved,
+268.071cumulativeactiveupper inclreadback/original122.304, no base repeats.
+Weights503c54aa hosthash before terminal3/7047NAVoracle/independent111checks.
+Confucius NEW pairwise-rank meta SOURCE, oneCPUfit/3newcells/27controlsreused,
+600active3600end/oneSYN/onefit, noGPU. ReusedDEV/adaptive, not independent alpha.
+NEXT contextual-vs-no-context6CUDAfit SOURCE assigned, seed1301/same3folds,
+9000active18000end/perfit1200/max160/INNERpat20/0retry/onecanonicallease.
+Measured headroom required at actual start; SOURCE is not current GPU activity.
+Two context GPU SYN API failures21.512debit/2allocations released/0markets;
+linked CPU fixture then scheduler-epoch mismatch. Source-test debug is bounded
+and all failures/debits remain; strict optimizer/state/RNG criteria unchanged.
+Reserved SYN stages/fits are not actual CUDA allocations or completed fits.
 
 All completed training/transfer allocations released. SOURCE preparation and a
 retained reader are not proof of running CUDA. Last measured trusted runtime:

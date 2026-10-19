@@ -10,10 +10,12 @@ AGENTS owns authority: private no-cost Data/Research/Paper delegated, never live
 
 | Owner | Actual State | Next Action |
 | --- | --- | --- |
-| Engine/Boole | NEW3fold/4family OOF base-expert SOURCE preparation; exact DataREADY delivered,12newfit budget6CPU6CUDA,seed1201,128max/INNERpat20/LR/bestrestore. No actual12fit start yet evidenced. | Freeze source/native proofs, CPU/GPU fit once per slot with no retry; one GPU lease. |
-| Meta/Confucius | Convex SOURCE40tests and one native CPU SYN complete; disjoint integration assigned1200active/7200elapsed, no actual meta fit yet. | Conditional GO after12 exact base packets, one60s-watchdog fit on OOF1+2; frozen weights before terminal3. |
+| Engine/Boole | Base12 COMPLETE. NEW context native SYN failed2API bindings; linked CPU fixture failed scheduler-epoch binding,0market fits/allallocations released. | Bounded source-test debug, no guard relaxation/old regrade; final nativeproof then six unused market slots only if PASS. |
+| Meta/Confucius | Raw-MSE convex integration COMPLETE6893608b,1CPUfit/27cells/7047NAVoracle, old failure preserved. | NEW pairwise-rank fusion source/onefit/3newcells,27oldcontrols reused; adaptiveDEV only. |
 | Data/Boyle | OOF input and daily replay marks COMPLETE067b39ab/561f895f,61+7tests; BASE/META/TERMINAL physically distinct. | Released; no feature copy/acquisition or Paper dependency gate. |
-| Engine/Kepler | Native1m RAW30/120 and FIT-scale30/120 all4fits COMPLETE/released. New CPU-only net-edge feasibility assigned,0newfit/forward. | Cost-floor counts only; no more minute GPU grid on seen DEV. |
+| Engine/Kepler | Four1m fits/net-edge COMPLETE, no more minute fits. | Disjoint54cell context/control comparison SOURCE, conditional on six frozen OOF packets; no model/GPU calls. |
+| Review/Boyle | BASEaudit PASSf778e663 plus key-order recovery PASSd22efb96/111checks, no targets/prices/models/solver. | Released from completed audits; not an authority gate. |
+| Execution/Gauss readback | Finite RO natural nightly23:50/f9first00:10 result package assigned; no Task/API invocation/new schedule. | Own due-aware wait while research proceeds; exact parsers/outcome bindings, hardstop00:40KST. |
 | Strategy/Russell | Post-scaler OOF recipe COMPLETE30tests66checks, no models. Original inputscalerFIT789..4789 precedes all local INNER/OOF. | Released; utility consumed by Data/Engine. |
 | Execution/Gauss | Exact22:40KST NAS publicread COMPLETE,55tests16checks, hold/await_declared_exit/1visit/0legs/0API/cleanupattested. | Released; no newfill/privatecustody/PnL proof. |
 | Parent | Same5day Ridge+GRU COMPLETE, all9 fixed policies bound8dfc8679; old125weights/15cells unchanged,0futuremarks. | Integrate/verify/commit/push checkpoint while OOF preparation proceeds. |
@@ -21,14 +23,16 @@ AGENTS owns authority: private no-cost Data/Research/Paper delegated, never live
 Last actual CUDA allocations: new5dayGRU33epochs/best13/native83.285s;
 native1m RAW pair13/best1 each/native19.347s including SYN/intake/DEV;
 FIT-scale pair13/best1 each CLOSED5ccf3141/82.412activeupper3600.
-Canonical GPU lease absent at23:03KST. Source/LLM is not running CUDA.
-Current fitted-version ledger257=166CUDA91CPU incl one old invalid, not
-architectures/qualified models. The queued12 fits/meta are NOT counted yet.
+Base12 last allocation also closed at23:19KST;493.651numericalinclqualification,
+42.191source separate. Source/LLM is not running CUDA; context6 not yet claimed.
+Current fitted-version ledger270=172CUDA98CPU incl one old invalid, not
+architectures/qualified models. Actual12base fits counted; new context6 and
+new pairwise CPU fit are NOT counted yet. Failed context SYNs are not market fits.
 
 ## Throughput Review
 
-Ready=OOF Data already materialized, disjoint base-model source, convex source/
-native solver SYN, CPU net-edge analysis and Git integration. Owned=above;
+Ready=OOF base outputs complete, disjoint convex integration, independent
+integrity review, next contextual GPU source and Git integration. Owned=above;
 due=existing nightly23:50KST/f9firstOct20 00:10KST, nextmorning Data06:50/07:30/08:00.
 NAS future visits remain hold until declared exit; no foreground session wait.
 One reversible improvement: use post-scaler OOF blocks rather than rebuilding
@@ -96,7 +100,8 @@ Tracked1360 production/control authority f81653d8 remains last full:
 18314PASS22skip/clean8/helper0,322serial/132focused. Docs/external-only may
 reuse ONLY after fresh exact source/control equality. External new native/
 focused/oracle checks are separate, not validated by repeating repo tests.
-Prior checkpoint67b327a pushed; new integration pending. Pre-existing untracked
+Checkpoint613f589 pushed after exactdigest/Ruff/threeCompose PASS;
+new12fit/net-edge integration pending. Pre-existing untracked
 %SystemDrive%/ untouched. Market/model storage and15percentfree floor unchanged.
 Resume by exact owners/receipts: SOURCE is not running, missing is UNKNOWN,
 closed studies immutable; do not mark company complete to end a package.

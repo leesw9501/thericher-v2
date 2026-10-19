@@ -62,6 +62,14 @@ terminal3=26dates650rows remains adaptive DEV, not independent replication.
 Convex SOURCE03deca53/40tests and real SciPy1.18.1 nativeSYN passed; exact
 source and solver tolerances frozen before actual OOF use. Separate CPU
 integration assigned, one fit/0retry/weights before terminal decoding.
+Actual raw-MSE meta COMPLETE6893608b/27cells/7047NAVoracle/111independentchecks;
+10bpsPERLEG convexgrowth1.830915%/DD.558212% vsfixedrank2.859093%/.643800%.
+Ridge4.449509%/.841446%, uniform1.391199%/.388376%, all adaptive development.
+Not qualified selection/independent alpha/Paper change; MSE reduction is not
+portfolio growth. NEW pairwise rank-loss simplex uses40OOFtrainingdates,
+fixed centered integer-rank inputs/.01uniform-prior shrinkage, oneCPUfit;
+12000pairs not independentN.3newcells/27oldcontrols byte-reused, primary10bp
+growthup/DDnotworse versusfixedrank. No rank-output-as-expected-return claim.
 SLSQP official API: https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html
 The stacking leakage warning supports OOF custody, not a project alpha claim:
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html

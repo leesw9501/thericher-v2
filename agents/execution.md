@@ -5,6 +5,15 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+Finite new Gauss RO readback assigned, NOT a broker worker/new schedule:
+A/execution/current-nightly-and-fixedrank-readback-20261019-v1.
+Observe existing natural nightlyOct19 23:50/f9firstOct20 00:10 opportunities
+only after owner quiescence via strict bound readers. Hardstop00:40KST or both
+terminal known; due-aware wait belongs to this subtask while research continues.
+Fresh23:38KST Scheduler facts: NASReadyEnabled last23:32/next00:05,
+nightlyReadyEnabled next23:50, f9ReadyEnabled first00:10/notrunyet. Not fills.
+No API/credentials/manualTask/new schedule/privatewrite/order calls by readback.
+
 Fresh Oct19 22:40KST exact PUBLIC-only read COMPLETE:
 A/execution/current-nas-runtime-readback-audit-20261019-v1/RESULT.json.
 hold/await_declared_exit,1visit/0legs/0GET-POST-cancel/cleanupattested;
@@ -31,7 +40,8 @@ Prior visits stay CLOSED: hostprobe failure then reader-only locking read on
 RO mount. Canonical schema/identity validated; r2 uses proven pure native state
 functions, no privateRW/production schema upgrade or broker-expiry inference.
 Finite visit consumed; do not rerun its write-once caller or query for status.
-Use strict offline result projection; no active Execution subagent remains.
+Use strict offline result projection; that pre-session readiness owner closed.
+The newly assigned finite natural-opportunity readback above is distinct.
 
 CURRENT Oct18: Parent integrated the distinct native profile and JSON-only
 host/worker/ownerprobe. Historical author432/routing8probes plus final host34/

@@ -22,8 +22,8 @@ Nietzsche fixedrankblend3/4 source92c7139d/63tests COMPLETE. Parent actual
 9policy binding8dfc8679 preserves125oldweights/15cells;24riskyUNKNOWN3cash,
 0futuremarks. Formula13:12:28UTC/points pre13:25, later derived weights not
 pre-session deployment. Same .1/21 analyticalcohort, no silentreweight/Paper.
-Current257=166CUDA91CPU includes twoRAWminute/twoFIT-scale fits below;
-253/251 are prior subtotals, not architectures/qualified profitable models.
+Current270=172CUDA98CPU includes twelve new OOF fits and one meta fit below;257/255/253/251
+are ancestral subtotals, not architectures/qualified profitable models.
 
 Native1m Kepler COMPLETE: GRU32 lookback30vs120, matchedseed1101/2fits,
 same41775 target-supported examples/5minute target. Data0bc11851/tensors
@@ -39,15 +39,21 @@ RAW13epochs/best1 each, native19.347s inclSYN/intake/DEV, actualseal191e063f.
 At10bpsPERLEG -1.067315% vsuniform-1.059025%; costsdominate, not an alpha pass.
 NewFIT-only4channel scale pair COMPLETE5ccf3141/13epochsbest1/old12controls
 unchanged; at5bps gross+.008958% net-.521045%/fees.530003% vsuniform-.529024%.
-No moreGPUgrid/oldfit/DEVforward; CPU net-edge feasibility separately owned.
+CPU net-edge feasibility COMPLETEdee191bb/5tests/6Parentchecks: bothmodels
+0/5300 positive edges at each cost floor,0/265minutes, maximum gross~1.067bps
+vsapproximate10/20/40bps roundtrip. No-intent/cash alias, not profitable alpha.
+No moreGPUgrid/oldfit/DEVforward or economic replay on that one seen day.
 
-Next Boole12basefits SOURCE, DataOOFready067b39ab/BASE4b98e692,
+Boole12basefits COMPLETEf0ca0556, DataOOFready067b39ab/BASE4b98e692,
 Meta4d5bce5c/Terminala0e6d33f separate.3foldcounts86804/650/475,
 89154/675/525,91679/775/650; scalerFIT789..4789 precedes everylocalINNER,
 fold-localFITtargetnormalizers. FourfamiliesHGB14/MLPraw1274/GRU252plus14/
 Ridge14,seed1201/128max/INNERpat20/LR/restore,12newstarts6CPU6CUDA/0retry,
 10800active21600end. OnecanonicalGPU allocation afterclosedminute studies.
-No actual12fit start inferred yet. MetaSOURCE/nativeSYN COMPLETE40tests,
+Actual491.431activephase upper/6600rawscores/0OOFtargetreads, all16actors
+removed/oneGPUlease released. HGB28/8,20/0,20/0; Ridge1/1each;
+MLP27/7,21/1,21/1; GRU25/5,33/13,27/7. No fits or forecasts repeated.
+MetaSOURCE/nativeSYN COMPLETE40tests, separate integration source now assigned,
 oneconvex4weight/sum1/nointercept fit to OOF1+2 ONLY1000rows/40dates,
 freezeweights before terminal3targets650rows/26dates.9matched terminalpolicies,
 fixedraw/rankmean/uniform/cash, costs PERLEG/gross/cash conventions frozen.
@@ -55,6 +61,29 @@ Sourceutility30tests66checks/Data61+7tests/93129rawpayoff checks support
 this contract, not independent alpha/Paper promotion. Reviewexactpointer
 A/review/current25-five-session-oof-convex-20261019-v1/claude.json REVISE
 rawmeta-scale/fold3claims/accounting/solverfailure checks. Parent ownsintegration.
+Actual linked meta COMPLETE6893608b/weights503c54aa, MLP28.8784%/GRU71.1216%,
+one nativefit/27cells/18tests/7047NAVoracle error<=2.002e-15. Independent
+d22efb96 PASS111key/source/rank/custodychecks. Original key-order failure/debit
+retained, one correct full bijection/inverse, exact integer-rank boundary ties.
+At10bpsPERLEG convex growth+1.830915%/DD.558212%, fixedrank+2.859093%/.643800%,
+uniform+1.391199%/.388376%, Ridge+4.449509%/.841446%; adaptive DEV, not alpha.
+Lower absolute MSE is not better growth/risk. NEW onefit pairwise-rank simplex
+source uses SAME OOF1+2/40dates/12000dependentpairs, fixed.01shrinkage;3newcells/
+27controls byte-reused/600active3600end. Full protocol/review/root in HANDOFF.
+
+Next GPU source owned by Boole: current25-cross-sectional-context-development-
+20261019-v1. DeepSets-style masked same-date context vs matched no-context14
+features, two variants x3samefolds/6newfits/seed1301/max160/INNERpat20/LR/restore.
+Context uses input-only membership, not label support; no cross-date pooling.
+9000active18000end/perfit1200/0retry/oneGPUlease.54fixedcells/6policies,
+primary all3fold growthup/DDnotworse vs matched at10bps; othercellsdiagnostic.
+No current training claim from SOURCE; existing four-expert meta/Paper unchanged.
+Claude22b17865 scoped limitations and original-source links are in HANDOFF.
+Context originalSYN/identity-r1 failed checkpoint identity/step-count bindings;
+counter-r2 CPU fixture failed scheduler epoch, all before0market fits. Old
+failures/counters/debits unchanged; source-test debug fixes APIs, not criteria.
+All-source/native/failure time stays in original9000active/+18000elapsed.
+Kepler54cell source is independent ready work, not proof of new trained models.
 
 Renewed Oct19 dispatch: latest-matured HGB COMPLETE38/best18, one SYN+one CPU
 marketfit, exact92599FIT/3150INNER, zero historicalEVAL; actor removed.

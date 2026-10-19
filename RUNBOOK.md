@@ -350,17 +350,33 @@ Parent9policy5day COMMIT8dfc8679 undercurrent25-five-session-diverse-ensemble-
 parent-bind-20261019-v1 is analytical from frozenformulas/nativeprecutoffpoints,
 NOT pre-session deployment; current27cells24riskyUNKNOWN3analyticcash.
 Its bind.py is consumed; puretest_bind.py5tests, ensemble31tests plusold32.
-Current model count257=166CUDA91CPU incl oneoldinvalid, not architectures.
+Current model count270=172CUDA98CPU incl oneoldinvalid, not architectures.
 NEW FIT-only channel-scale pair COMPLETE5ccf3141/13epochsbest1 each, old12
 controls bit-exact. At5bps scaled net-.521045%/gross+.008958%/fees.530003%;
 cost failure, no further seen-DEV GPU grid. CPU-only net-edge count follow-on
 does not authorize another model/DEV forward or economic replay.
 OOF3fold DataREADY067b39ab/REPLAY561f895f,61+7tests/93129payoffchecks;
-12basefits have conditional numerical GO, not evidence of12 completed fits.
+12basefits COMPLETEf0ca0556/sourcee036f526/6600rawscores/491.431activephase,
+all16actors removed/oneGPUlease released. Native counters/OOF output ABI at
+current25-five-session-oof-base-experts-20261019-v1; write-once callers consumed.
 Convex SOURCE03deca53/40tests/native-SYN5683f6d7 is ready; separate integration
 current25-five-session-oof-fusion-integration-20261019-v1 owns one actualCPUfit
-only after12 strict base packets. Weights freeze/readback before terminal3.
+after12 strict base packets: ordering-binding-recovery-r1 COMPLETE6893608b,
+weights503c54aa/27terminalcells/7047NAVoracle/111independentchecks. Original
+pre-solver key-order failure unchanged; new full bijection/inverse/integerranks.
+Hostweight hash14:35:25.353101UTC before terminalintake14:35:26.730967UTC.
+Both actors removed,268.071activeupper inclreadback/olddebit, no model rerun.
 Post-input-scaler folds never reuse global-INNER-selected predictions as OOF.
+Retained net-edge dee191bb proves bothscaledminute models0positiveedges at
+5/10/20bpsPERLEG;5tests+6Parentchecks, no model/replay rerun. This rejects
+unconditional Top5 under those cost assumptions, not all minute hypotheses.
+Next6CUDA contextual-vs-control source is a separate NEW campaign, not an old
+fit retry or a change to current four-expert meta/Paper. Current owners in boards.
+Context original/linked SYN API checks currently UNREADY before0marketfits,
+not a GPU permission problem. Bounded source-test debug preserves all failed
+attempts/debits and strict state/RNG checks; no original-study regrade.
+New CPU pairwise-rank fusion uses retained OOF outputs, onefit/3newcells,
+27oldcontrolbytes reused; separate source/root/contract from raw-MSE study.
 Exact current running/ready source is in active boards, not these historical
 consumed command receipts. Repo QA below covers unchanged tracked source only.
 
