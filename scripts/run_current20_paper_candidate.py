@@ -519,7 +519,16 @@ def _failure(reason="worker_recovery_required"):
     )
 
 
-def _exchange(args, packet, admission, *, environment, monotonic=time.monotonic, deadline=None):
+def _exchange(
+    args,
+    packet,
+    admission,
+    *,
+    environment,
+    monotonic=time.monotonic,
+    deadline=None,
+    first_failure_sink=None,
+):
     """One outstanding, bounded metadata request on existing process stdio."""
     process = subprocess.Popen(
         args,
@@ -547,6 +556,7 @@ def _exchange(args, packet, admission, *, environment, monotonic=time.monotonic,
     thread = threading.Thread(target=reader, daemon=True)
     thread.start()
     deadline, sequence = monotonic() + 145 if deadline is None else deadline, 0
+    diagnostic_seen = False
     try:
         process.stdin.write(packet + b"\n")
         process.stdin.flush()
@@ -563,6 +573,24 @@ def _exchange(args, packet, admission, *, environment, monotonic=time.monotonic,
             if not line or len(line) > 32768 or not line.endswith(b"\n"):
                 raise ValueError("worker_frame_invalid")
             value = _json(line)
+            if type(value) is not dict:
+                raise ValueError("worker_frame_invalid")
+            if value.get("kind") == "current-stock-first-failure-v1":
+                if diagnostic_seen or len(line) > 2048:
+                    raise ValueError("worker_frame_invalid")
+                bootstrap()
+                from thericher_v2.execution.kis_paper_current_stock_cycle import (
+                    safe_current_stock_first_failure,
+                )
+
+                diagnostic = safe_current_stock_first_failure(value)
+                diagnostic_seen = True
+                if first_failure_sink is not None:
+                    try:
+                        first_failure_sink(diagnostic)
+                    except Exception:
+                        pass
+                continue
             if value.get("kind") == "current20-owner-request-v1":
                 if set(value) != {"kind", "sequence"} or type(value["sequence"]) is not int:
                     raise ValueError("worker_frame_invalid")
@@ -787,8 +815,16 @@ def run(
         )
         try:
             result = _exchange(
-                args, packet, admission, environment=environment,
-                monotonic=monotonic, deadline=deadline,
+                args,
+                packet,
+                admission,
+                environment=environment,
+                monotonic=monotonic,
+                deadline=deadline,
+                first_failure_sink=lambda value: _new(
+                    folder / "first-failure.json",
+                    _encode(value),
+                ),
             )
             if source_map() != before:
                 raise ValueError("host_source_changed")

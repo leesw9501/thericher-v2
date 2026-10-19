@@ -619,7 +619,35 @@ def native_paths():
     )
 
 
-def run(config, *, execute=False, clock=lambda: datetime.now(UTC)):
+def first_failure_file_sink(output_child):
+    """Caller must bind this exact existing child to its owned wake/output mount.
+
+    Confinement is not ownership proof. Never create directories or replace records.
+    """
+
+    def write(value):
+        from thericher_v2.execution import kis_paper_current_stock_cycle as cycle
+
+        value = cycle.safe_current_stock_first_failure(value)
+        child = Path(output_child)
+        _unlinked(child)
+        root = (ARTIFACT / "execution").resolve()
+        child = child.resolve(strict=True)
+        _require(
+            child.is_dir()
+            and child.is_relative_to(root)
+            and len(child.relative_to(root).parts) >= 2,
+            "first_failure_output_invalid",
+        )
+        path = child / "first-failure.json"
+        _unlinked(path)
+        with path.open("x", encoding="ascii") as stream:
+            stream.write(json.dumps(value, sort_keys=True, allow_nan=False) + "\n")
+
+    return write
+
+
+def run(config, *, execute=False, clock=lambda: datetime.now(UTC), first_failure_sink=None):
     if not execute:
         return dict(status="inert", credential_reads=0, broker_calls=0)
     from thericher_v2.execution.kis_paper_current_stock_cycle import (
@@ -645,6 +673,11 @@ def run(config, *, execute=False, clock=lambda: datetime.now(UTC)):
                 client_factory=client_factory(config, limits),
                 clock=clock,
                 execute=True,
+                **(
+                    {"first_failure_sink": first_failure_sink}
+                    if first_failure_sink is not None
+                    else {}
+                ),
             ).safe_payload()
         )
     except Exception:
@@ -673,12 +706,21 @@ def run(config, *, execute=False, clock=lambda: datetime.now(UTC)):
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--first-failure-output-child", type=Path)
     args = parser.parse_args(argv)
     if not args.execute:
         print('{"status":"inert","credential_reads":0,"broker_calls":0}')
         return 0
     try:
-        result = run(parse_packet(sys.stdin.buffer.read(8193)), execute=True)
+        result = run(
+            parse_packet(sys.stdin.buffer.read(8193)),
+            execute=True,
+            **(
+                {"first_failure_sink": first_failure_file_sink(args.first_failure_output_child)}
+                if args.first_failure_output_child is not None
+                else {}
+            ),
+        )
     except Exception:
         result = dict(
             status="unavailable",

@@ -164,6 +164,26 @@ def _safe_outcome(outcome):
     return value
 
 
+def first_failure_stdio_sink(output):
+    """One metadata frame on the existing owned duplex channel, not a result field."""
+    emitted = False
+
+    def emit(value):
+        nonlocal emitted
+        if emitted:
+            return
+        from thericher_v2.execution.kis_paper_current_stock_cycle import (
+            safe_current_stock_first_failure,
+        )
+
+        value = safe_current_stock_first_failure(value)
+        emitted = True
+        output.write(json.dumps(value, sort_keys=True, allow_nan=False) + "\n")
+        output.flush()
+
+    return emit
+
+
 def run(
     config=None,
     *,
@@ -177,6 +197,7 @@ def run(
     monotonic=time.monotonic,
     sleeper=time.sleep,
     started=None,
+    first_failure_sink=None,
 ):
     if not execute:
         return dict(status="inert", credential_reads=0, broker_calls=0)
@@ -225,6 +246,9 @@ def run(
             client_factory=native.client_factory(config, limits),
             clock=clock,
             execute=True,
+            **(
+                {"first_failure_sink": first_failure_sink} if first_failure_sink is not None else {}
+            ),
         )
         outcomes = [_safe_outcome(result) for result in results]
         if not 1 <= len(outcomes) <= 6:
@@ -291,6 +315,7 @@ def main(argv=None):
             source_manifest_ref=args.source_manifest_ref,
             owner_ready=OwnerAdmission(sys.stdin.buffer, sys.stdout),
             started=ENTRY_STARTED,
+            first_failure_sink=first_failure_stdio_sink(sys.stdout),
         )
     except Exception:
         if entered:

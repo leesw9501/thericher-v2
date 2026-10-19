@@ -8,6 +8,7 @@ Late actual entry is an operational baseline, not research OPEN parity.
 
 from __future__ import annotations
 
+import sys
 from collections.abc import Callable
 from contextlib import contextmanager
 from dataclasses import dataclass, fields, replace
@@ -16,6 +17,7 @@ from decimal import Decimal
 from enum import Enum
 from fractions import Fraction
 from pathlib import Path
+from types import CodeType, FunctionType, ModuleType
 
 from thericher_v2.contracts import TargetExposureProposal, require_utc
 from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN, us_equity_2026_session
@@ -41,6 +43,7 @@ from thericher_v2.research.decision_receipt import (
 
 from . import kis_paper_budget_strategy as budget
 from . import kis_paper_canary as canary
+from . import kis_paper_stock_canary as stock_canary
 from . import kis_paper_stock_execute as execution
 from . import kis_paper_stock_exit_plan as exits
 from . import kis_paper_stock_plan as entries
@@ -708,6 +711,7 @@ def run_kis_paper_current_stock_cycle(
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     execute: bool = False,
     profile: StockCycleProfile = StockCycleProfile.LEGACY_NAS,
+    first_failure_sink: Callable[[dict], None] | None = None,
 ) -> CurrentStockCycleOutcome:
     """One pending leg/visit; exact retained recovery precedes target_loader.
 
@@ -1026,5 +1030,162 @@ def run_kis_paper_current_stock_cycle(
             _READONLY_REASONS.get(error.code, "cycle_readonly_snapshot_unavailable"),
             leg_count,
         )
-    except Exception:
+    except Exception as error:
+        if first_failure_sink is not None:
+            try:
+                first_failure_sink(_first_failure_diagnostic(error))
+            except Exception:
+                pass
         return CurrentStockCycleOutcome("unavailable", "native_recovery_required", leg_count)
+
+
+_FIRST_FAILURE_ERRORS = (
+    (TypeError, "type_error"),
+    (ValueError, "value_error"),
+    (KeyError, "key_error"),
+    (IndexError, "index_error"),
+    (AttributeError, "attribute_error"),
+    (RuntimeError, "runtime_error"),
+    (OSError, "os_error"),
+    (FileNotFoundError, "file_not_found"),
+    (PermissionError, "permission_error"),
+    (TimeoutError, "timeout_error"),
+    (ZeroDivisionError, "zero_division"),
+    (AssertionError, "assertion_error"),
+)
+_FIRST_FAILURE_CATEGORIES = frozenset({"unknown", *(v for _, v in _FIRST_FAILURE_ERRORS)})
+_FIRST_FAILURE_MODULES = frozenset(
+    {
+        __name__,
+        *(module.__name__ for module in (budget, canary, execution, exits, entries, stock_canary)),
+        "scripts.run_kis_paper_current_stock_cycle_worker",
+        "scripts.run_current20_paper_candidate_worker",
+    }
+)
+
+
+def safe_current_stock_first_failure(value):
+    """Closed side-channel metadata only; never part of the native outcome ABI."""
+    if not (
+        type(value) is dict
+        and set(value) in ({"kind", "error_category"}, {"kind", "error_category", "frame"})
+        and value["kind"] == "current-stock-first-failure-v1"
+        and type(value["error_category"]) is str
+        and value["error_category"] in _FIRST_FAILURE_CATEGORIES
+    ):
+        raise ValueError("first_failure_invalid")
+    result = dict(kind="current-stock-first-failure-v1", error_category=value["error_category"])
+    if "frame" in value:
+        frame = value["frame"]
+        if not (
+            type(frame) is dict
+            and set(frame) == {"module", "line"}
+            and type(frame["module"]) is str
+            and frame["module"] in _FIRST_FAILURE_MODULES
+            and type(frame["line"]) is int
+            and 1 <= frame["line"] <= 1_000_000
+        ):
+            raise ValueError("first_failure_invalid")
+        result["frame"] = dict(module=frame["module"], line=frame["line"])
+    return result
+
+
+def _first_failure_diagnostic(error):
+    """Category plus deepest trusted source location available, not arbitrary throw sites."""
+    result = dict(
+        kind="current-stock-first-failure-v1",
+        error_category=next(
+            (category for cls, category in _FIRST_FAILURE_ERRORS if type(error) is cls),
+            "unknown",
+        ),
+    )
+    # Use original traceback objects, never formatting, source text or exception attributes.
+    codes, namespaces = _first_failure_sources()
+    trace = BaseException.__traceback__.__get__(error)
+    frame = None
+    for _ in range(32):
+        if trace is None:
+            if frame is not None:
+                result["frame"] = frame
+            break
+        module = codes.get(trace.tb_frame.f_code)
+        if module is not None and trace.tb_frame.f_globals is namespaces[module]:
+            line = trace.tb_lineno
+            if type(line) is int and 1 <= line <= 1_000_000:
+                frame = dict(module=module, line=line)
+        trace = trace.tb_next
+    return result
+
+
+def _first_failure_sources():
+    codes, namespaces = {}, {}
+    sources = [(__name__, globals(), __file__, None)] + [
+        (module.__name__, vars(module), module.__file__, None)
+        for module in (budget, canary, execution, exits, entries, stock_canary)
+    ]
+    # Fixed aliases only, including the normal script entry point; never scan modules.
+    for stem, aliases in (
+        (
+            "run_kis_paper_current_stock_cycle_worker",
+            (
+                "__main__",
+                "current20_native_stock_worker_helpers",
+                "scripts.run_kis_paper_current_stock_cycle_worker",
+            ),
+        ),
+        (
+            "run_current20_paper_candidate_worker",
+            ("__main__", "scripts.run_current20_paper_candidate_worker"),
+        ),
+    ):
+        expected = Path(__file__).resolve().parents[3] / "scripts" / (stem + ".py")
+        for alias in aliases:
+            module = sys.modules.get(alias)
+            if type(module) is not ModuleType:
+                continue
+            namespace = vars(module)
+            filename = namespace.get("__file__")
+            if type(filename) is str and Path(filename).resolve() == expected:
+                # Match code against this fixed public script, not a supplied filename.
+                try:
+                    with expected.open("rb") as stream:
+                        source = stream.read(131073)
+                    if len(source) > 131072:
+                        continue
+                    pending = [compile(source, filename, "exec", dont_inherit=True)]
+                    allowed = set()
+                    while pending:
+                        code = pending.pop()
+                        allowed.add(code)
+                        pending.extend(c for c in code.co_consts if type(c) is CodeType)
+                except (OSError, SyntaxError, ValueError):
+                    continue
+                sources.append(("scripts." + stem, namespace, filename, allowed))
+                break
+
+    def add(code, name):
+        codes[code] = name
+        for constant in code.co_consts:
+            if type(constant) is CodeType:
+                add(constant, name)
+
+    for name, namespace, filename, allowed in sources:
+        namespaces[name] = namespace
+        values = list(namespace.values())
+        for value in tuple(values):
+            if type(value) is type:
+                # Inspect raw dictionaries, never invoke class/property descriptors.
+                for member in vars(value).values():
+                    if type(member) in (staticmethod, classmethod):
+                        values.append(member.__func__)
+                    elif type(member) is FunctionType:
+                        values.append(member)
+        for value in values:
+            if (
+                type(value) is FunctionType
+                and value.__globals__ is namespace
+                and value.__code__.co_filename == filename
+                and (allowed is None or value.__code__ in allowed)
+            ):
+                add(value.__code__, name)
+    return codes, namespaces
