@@ -6,7 +6,7 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Allocated / Ready
 
-Ledger306=193CUDA113CPU completed market-fitted versions, not architectures
+Ledger309=194CUDA115CPU completed market-fitted versions, not architectures
 or profitable models. Failed original paired-GRU conservative reservations
 are not reported as actual fits. Canonical lease:
 A/engine-research-agent/locks/gpu.lock. No active GPU trainer.
@@ -26,16 +26,17 @@ that grid. TTM heads/adaptation also complete, selected heads worse than mean.
 
 Actionable-target preparation795f0a89/30checks/2native tinyfits is complete.
 NEW CPU development authorized600cumulativeactive1800elapsed incl25.520prep/
-2marketfits0retry/perfit120/CPU2RAM3; actual starts not yet attested, count306.
+2CPUmarketfits0retry COMPLETE98a0b714/18cells/190checks; both primaries FAIL.
 Natural ternary cost-band logloss target, not old MSE/binary/quantile repeat.
 
-Pascal owns independent GRU64/seed2501 same new3class target SOURCE/native
-CPU preparation180active1800elapsed/0market-GPU-API, frozen BEFORE CPU
-outcomes. Future proposed1CUDAfit900cumulativeactive2400elapsed inclprep,
-max128/pat20/LR/checkpoint by INNER logloss only/startby23:10/optimizerstop
-23:22/cleanup23:25UTC before installed points. No GPU grant yet; exact native
-CPU checkpoint-nextupdate/RNG/source proof precedes parent GO/CUDA proof.
-Do not refund/relabel old clocks, tune after CPU results or reopen holdouts.
+GRU64/seed2501 candidate frozen BEFORE CPU outcomes actuallyfit once onCUDA:
+SOURCE606da1cf/nativeCPU2960fd3b58checks thenCUDAproof/RESULT45be9df0/
+independentd1b269e781checks.28epochs/best8/12.149s,647CUDAupdates incl3SYN,
+oneallocation0retry,55.446cumulativeactive662.175elapsed incl23.013prep.
+StrictFAIL(logloss improves/Brierworsens);selected/finalweights retained.
+Canonicallease/container released23:05:27, safely before23:30/23:45 points.
+No activeGPUtrainer now; new fixedfusion is CPU0fit, long-history Data audit
+not yet a readytraining campaign. Do not tune after results/refund old clocks.
 
 ## Existing Owned Future Jobs
 

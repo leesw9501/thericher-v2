@@ -3,8 +3,8 @@
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 Engine owns targets/splits/costs/fitting/interpretation, not broker risk.
-Parent integrates/Git; Steward owns one GPU allocation. Ledger306 fitted
-versions=193CUDA113CPU, not architectures/profitable models.
+Parent integrates/Git; Steward owns one GPU allocation. Ledger309 fitted
+versions=194CUDA115CPU, not architectures/profitable models.
 
 ## Current Conclusion / Next
 
@@ -23,17 +23,36 @@ chronological INNER/native selectedprefix0 allowed, no classweight/grid.
 Strict logloss AND Brier improvement over FIT class priors; ordinal p_gain-
 p_loss is NOT expected profit. Both models/own exposure-matched uniform/full
 uniform/cash x3costs=18fixed cells, selected/final diagnostic packets once.
-Market starts not yet attested; ledger stays306. Claude REVISE named proper-
+Actual COMPLETE98a0b714/ABIe2751d34/190checks:2CPUfits/18cells,
+logistic71iterations/1.253s logloss.892459/Brier.575164; HGB20rounds/6.565s/
+prefix0. FITprior.853822/.545200; both scientific/financial FAIL. HGB10bp
+growth+.1376percent exactlyuniform, not learnedgain.58.076active673.712elapsed
+inclprep/failures/0retry/actorclosed. Claude REVISE named proper-
 score baseline/ordinal-vs-payoff/pass-kill/adaptive INNER, restrictions kept.
 Review: A/review/current-actionable-target-campaign-20261020-v1/claude.json.
 
 Independent GRU64/seed2501/one-layer3class candidate frozen BEFORE CPU
 outcomes, in A/research/current-costband-gru-preparation-20261020-v1.
-SOURCE/native CPU only180active1800elapsed/0market-GPU-API. Proposed one
-laterGPUfit max128/pat20/logloss/LR+bestrestore includingconstant0; finite
-900cumulativeactive2400elapsed incl preparation/startby23:10/cleanup23:25UTC
-before installed23:30 point. Needs native CPU proof/source review/parent GO
-then CUDA proof; no actual GPU grant or training claimed yet.
+NativeCPU58checks/CUDAcheckpoint-RNG-NEXTUPDATE proof then actual1CUDAfit
+23:05:14UTC/28epochs/best8/12.149s; RESULT45be9df0/independentd1b269e7/
+81checks/lease released23:05:27. Logloss.851328 improves overprior.853822
+but Brier.545660 worsens vs.545200 =>strict scientific FAIL.647CUDAupdates
+(644market+3SYN),1allocation0retry/55.446cumulativeactive662.175elapsed,
+originalclock/precharge preserved. Selected/final packets/weights/curves
+retained;12economiccells UNKNOWN/unexecuted, not a profitability result.
+
+Boole next no-fit fixed-third selected LOGIT/HGB/GRU probability fusion:
+A/research/current-costband-fixed-fusion-development-20261020-v1,
+240active1800elapsed/0models-GPU-API/30fixed cells=old18 byte-reused+12new.
+No expert/weight/hurdle selection, final-score rescue, in-sample TRAIN fusion
+fit or independent alpha claim. Strict blend growth>all3singles+uniform+ownEM,
+DD<=uniform+ownEM; all outcomes reported. Frozen-kernel reproofce59d5f4 PASS/
+25fixtures/47.438active; old23377212 saw pre-freeze count2, actual74f74ed7
+has4. No old economics/model is rerun merely to refresh that stale review.
+Long-history Data source071457f1 proposes1883TRAINdates2019..Jun2026 versus
+prototype353, actual coverage UNKNOWN. New derivation has300active2400elapsed/
+CPU2RAM4/0API-models; retain exact1675INNER/raw overlap/purges/missing masks.
+This is not yet a new fit grant or fresh evaluation/independent evidence.
 
 Confucius intake audit8834e9a COMPLETE/970checks/18fixtures/64.078active:
 TTM512 composes pinned retained history+newcapture,379 is required-context

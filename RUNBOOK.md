@@ -87,12 +87,18 @@ Original eligible21:50..22:20/readiness22:18UTC. Late trigger alone invalid;
 continuation proposal superseded before effects to avoid new plan/capture/
 deadline machinery. Guard-only action retarget prepares NEXT ORIGINAL slot,
 all triggers/PT35M/ACL/cache/caps/token unchanged. No fake now/reset/manual Run.
+OLD action-only/PREPARED.json1253235b and task_update.ps1 -Mode Install are
+NOT qualified: parent found missing post-RPC rollback. Source closed175.674/
+0mutations, REPAIR9507a3d/CLOSED6d51efdd. New SOURCE-only transactional repair
+A/infra/current-rth-transactional-retarget-20261020-v1, no deployment grant.
 Old20/new9 preflight57cb192b/618fb981 does not prove a D1 fault; no changes.
 Old20 actual completed22:31:54UTC/20GET1auth/20components+20targetrows ready:
 A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1/
 RESULT.json215efd55; strict source/job/session/index0 chain passes.379session
 context is not by itself TTM512/new9/finality proof. New9 natural23:00 is a
-separate owner/reader; Running/missing stays UNKNOWN, no raw/latest reads.
+separate owner/reader. It now completed23:00:43UTC/9GET1auth/9ready, exact
+23:02:42 Ready+54hash read/CLOSEOUT8ba05657. Neither feed proves complete
+TTM/risk numeric intake or finality. Running/missing staysUNKNOWN.
 
 ### Prospective Research
 

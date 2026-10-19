@@ -12,9 +12,18 @@ A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1:
 completed22:31:54UTC/20GET1auth0retry/20components+20targetrows ready/0late/
 379session context/0missing required dates; audit26.91active270.42elapsed/
 0API/0decoded market rows. Not whole-point512/new9/finality proof.
-Boyle new9 natural23:00 outcome package90active2400elapsed/CPU2RAM2/0API-
-credentials-TaskRun-models. Exact pointer or <=16directchildren identity-first
-strict existing chain only; Running/missing=>UNKNOWN/no partial/raw/latest read.
+New9 exact CLOSEOUT8ba05657:completed23:00:43UTC/9GET1auth0retry/9ready/
+9newrows/0late. Actual23:02:42 Scheduler Ready +54hash strict chain checks,
+0decodedrows/API;47.37active1032.36elapsed. No further feed read assigned.
+TTM512 source audit8834e9a/970checks/18fixtures confirms retained-history+
+newcapture composition; actualnumeric prefix/offset/masks still owned intake.
+Long-history SOURCE071457f1/14refs26checks:1883candidateTRAIN dates2019Jan2..
+Jun30 2026, physicaltargetJul7<INNERJul8. Actualcoverage UNKNOWN; cannot just
+extend inheritedeligibility oruselegacy21session arithmeticlabels.
+Boyle now actual long-input derivation300active2400elapsed/CPU2RAM4/500MiB
+newMbytes/0API-models-GPU. Input-only>=20support/masks BEFORE labelvalue,
+separate endpointavailabilitymask/UNKNOWNcounts; sameLOG5/raw63x3 overlap
+before newTRAIN-onlyaffines. INNERexact1675/no shrink, no modelGOyet.
 
 Old20 D1 Task thericher-kis-paper-current20-shadow-d1-marks-20261020:
 07:30KST/21 finite sessions. New9 Task
@@ -51,6 +60,9 @@ records that limitation. Superseded before effects. Kepler prepares guard-only
 action retarget for NEXT ORIGINAL daily slot, all triggers/PT35M/ACL/caps/
 session/cursor/cache/token/pacing unchanged. No Task update grant yet, fake
 clock/reset/manual Run/new standing feed. Original failures/debits preserved.
+PREPARED1253235b failed parent rollback review, neverinvokeInstall. Old source
+closed175.674active/0mutations; new transactional-retarget source240active/
+1800elapsed implements rollback/readback, olddebits kept separately.
 
 Fresh sector reversal input package:
 A/data/current-sector-reversal-fresh-input-20261020-v1/RESULT.json d49ae687

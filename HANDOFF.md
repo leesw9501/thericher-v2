@@ -23,12 +23,12 @@ Market bytes M; model/research artifacts A. Research limits stay package-local.
 
 | Owner | Actual State / Next |
 | --- | --- |
-| Parent | Integration/Git and RTH guard draft. Core source c288dfc; docs baab060 pushed. No current GPU training. |
-| Kepler / Infra | Guard-only paired-source/native proof and action-only retarget preparation for next ORIGINAL RTH slot. No Task update grant yet. |
-| Boyle / Data | Old20 D1 exact outcome validated215efd55; new9 natural outcome reader next. No manual collector/Task/API. |
+| Parent | Integration/Git and RTH guard draft. Core c288dfc; docs ae753bc pushed. No current GPU training. |
+| Kepler / Infra | Guard-only retarget preparation stopped for missing rollback. New transactional updater implementation240active1800elapsed; no mutation grant. |
+| Boyle / Data | Both natural D1 outcomes validated: old20215efd55/new98ba05657; no active collector inferred. |
 | Confucius / Engine | Null-selection diagnosis complete; no new fit assigned. More of this OHLC/task grid is closed. |
-| Boole / Strategy, invoked Engine | Ternary-target source795f0a89 ready; CPU logistic+HGB development authorized600cumulativeactive1800elapsed/2fits0retry, starts not yet attested. |
-| Pascal / Temporary Engine | SEC pilot closed; new independent GRU64 ternary SOURCE/native CPU prep only, no GPU grant. |
+| Boole / Strategy, invoked Engine | CPU3class COMPLETE98a0b714/2fits/18cells. New fixed-third selected-probability fusion240active1800elapsed/0models, frozen-kernel proof before replay. |
+| Pascal / Temporary Engine | ActualCUDA GRU complete45be9df0/1fit/28epochs/best8/12.149s, lease released23:05:27. Strict scientific FAIL,12economic cells unexecuted. |
 | Gauss / Execution | Closed; never resume the earlier blocked clone approach. |
 
 Original finite feeds: RTH1m 06:50KST, old20 D1 07:30, new8+SPY D1 08:00.
@@ -71,6 +71,15 @@ for the NEXT ORIGINAL daily opportunity, unchanged triggers/PT35M/principal/
 ACL/query/session/cursor/cache/caps/token/pacing. No fake now/reset/manual Run.
 Actual Task update still needs parent review/grant; none issued yet.
 
+Action preparation1253235b/closure698abcdd is NOT install-qualified: Parent
+found missing rollback around post-RPC read/check/publication failures.
+Source phase closed175.674active2188.189elapsed/zero mutations. Never invoke
+that Install. Repair proposal9507a3d/closure6d51efdd stays immutable.
+New A/infra/current-rth-transactional-retarget-20261020-v1 implements a tested
+once-only transaction/explicit full-SDDL rollback/normalized readback under
+240active1800elapsed, prior debit reported separately. No reset/regrade of
+old caps, Task update/manual Run/new trigger or collector granted.
+
 Old20 D1 completed22:31:54UTC:20GET1auth0retry/20components ready/20new target
 rows/0late/379session context/0missing required dates. Existing strict chain
 PASS; metadata-only reader215efd55 under
@@ -78,6 +87,14 @@ A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1.
 Audit26.91active270.42elapsed/0API/0decoded market rows. Old20 dependency is
 ready, not whole-point512-context/new9/finality proof. Engine audits intake
 composition source-only while Boyle prepares exact new9 natural outcome read.
+
+New9 actual completed23:00:43UTC:9GET1auth0retry/9components+9newrows ready/
+0late. One Scheduler snapshot23:02:42 Ready and54hash strict-chain checks,
+0decoded rows/API. CLOSEOUT8ba05657 under
+A/data/current-new9-d1-first-owned-outcome-20261020-v1;47.37active1032.36elapsed.
+Engine source intake8834e9a/970checks/18fixtures confirms TTM512 composes
+pinned history+capture;379 is not a truncation. No deterministic source block,
+but actual numeric prefix/offset/eligible masks still checked by owned intake.
 
 Old20/new9 D1 source spellings already match. Preflight57cb192b/618fb981 and
 controlled native d31b9e4d do NOT establish a production fault: no D1 changes.
@@ -117,9 +134,32 @@ Goal97 compatibility is unverified. Preserve current NASDAQ execution paths.
 
 ## Research / Data Results
 
-Ledger306=193CUDA113CPU fitted versions, not architectures/profitable models.
-No GPU environment/approval hold or dummy load. New ternary GRU source/native
-proposal is not yet a ready GPU campaign; no training starts inferred from GO.
+Ledger309=194CUDA115CPU fitted versions, not architectures/profitable models.
+No GPU environment/approval hold or dummy load. New ternary GRU actually ran
+23:05:14..23:05:26UTC; host closure/81checks/lease released23:05:27. A later
+idle2-5percent observation is not evidence that this completed fit did not run.
+
+New ternary target: CPU COMPLETE98a0b714/ABIe2751d34/190checks/18cells,
+logistic71iterations/1.253s INNERlogloss.892459/Brier.575164 vsFITprior
+.853822/.545200; HGB20rounds/6.565s/prefix0 exactlyprior. Both scientific
+and financial FAIL. HGB10bp growth+.1376percent exactlyuniform, not alpha.
+58.076cumulativeactive673.712elapsed incl failures/prep; no retries.
+GPU GRU RESULT45be9df0/independentd1b269e7:28epochs/best8/12.149s,
+logloss improves to.851328 but Brier worsens to.545660 =>strictFAIL.647CUDA
+updates=644market+3SYN,1allocation0retry/55.446cumulativeactive662.175elapsed.
+Selected/final scores/weights/curves retained; final nonselected diagnostic-only.
+No economic pass/Paper promotion: its12cells UNKNOWN/unexecuted.
+
+Next fixed-third fusion is exploratory on reused INNER, no fit/forward or
+learned gate. CPU18cells byte-reuse plus12new GRU/blend/exposurematched cells,
+strict growth over all3singles+uniform+ownEM/DDcontrol; no threshold/weightgrid.
+Independent review23377212 saw pre-freeze count2 replay adapter; actual frozen
+kernel74f74ed7 has4shape edits/30SYN beforemarket. Independent reproofce59d5f4
+PASS/25cumulative fixtures/47.438active/dependencies stable/no market replay;
+old finding stays pre-freeze, not a current block. Long-history source audit
+071457f1/26checks finds1883candidate2019..Jun2026TRAINdates; actual coverage
+unknown. NEW Data derivation300active2400elapsed/CPU2RAM4/500MiB/M-only,
+raw overlap/purge/target-availability masks and exact1675INNER before model GO.
 
 - TTM heads1352dba9 and adaptation64442426 completed; both selected heads worse
   than their analytic TRAINmean. Risk GRU0098057a/TCNb6fffd68 improved reused

@@ -15,12 +15,16 @@ Parent authorized development under current-actionable-target-development-
 20261020-v1:600cumulativeactive1800elapsed inclprep/CPU2RAM3/2marketfits0retry/
 perfit120/logistic+HGB. Exact fixed splits/priors/selectedconstant allowed;
 strict logloss+Brier/18fixed policy-cost cells/ordinal NOTexpectedprofit.
-Market starts not yet attested; no GPU/Paper/repo changes. Engine board owns
-full contract. Claude REVISE concerns kept as contract limits, not approval hold.
+Actual COMPLETE98a0b714/190checks/18cells:both proper-score/financial primaries
+FAIL. GRU independent candidate also actuallycompleted1CUDAfit/best8,
+RESULT45be9df0/loglossimproved/Brierworse/strictFAIL. Engine owns full facts.
+Next fixed-third selected probability fusion0fit/30fixed cells/old18reuse is
+exploratory adaptive, not new alpha or profitable-model requirement for Paper.
+Claude REVISE concerns remain contract limits, not an approval hold.
 
 ## What Current Evidence Rejects
 
-Ledger306 fitted versions, not architectures/winners. GRU/TCN risk proxy
+Ledger309 fitted versions, not architectures/winners. GRU/TCN risk proxy
 improves reused stock INNER QLIKE, but12ETF domain learned/blend lose EWMA;
 uniform beats learned financial allocation. Do not extend that grid.
 TTM heads/adaptation lose analytic TRAINmean; attention return/aux-risk and

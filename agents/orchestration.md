@@ -11,14 +11,14 @@ proof of running agents/workers. AGENTS owns authority and Paper invariants.
 | Owner | Actual State | Next |
 | --- | --- | --- |
 | Parent | Integration/Git; RTH guard draft only. Core c288dfc, last pushed766851d. | Integrate measured outcomes; review native timing/pins before any RTH activation grant. |
-| Infra/Kepler | Guard-only RTH paired-runtime/action-only retarget preparation, no mutation grant. | NEXT ORIGINAL slot; all triggers/PT35M/ACL/cache/caps/token unchanged. Late continuation superseded before effects. |
-| Data/Boyle | Old20 D1 complete215efd55/20GET1auth/20components+20targetrows ready. | Prepare exact new9 natural23:00 outcome reader, no partial/raw read or invocation. |
-| Strategy/Boole, invoked Engine | Ternary cost-band SOURCE795f0a89/30checks ready; CPU development authorized600active1800elapsed/2fits0retry. | Freeze source/native protocol before market; no actual fit count inferred from GO. |
-| Engine/Confucius | Intake8834e9a complete/970checks: TTM512 composes retained history+capture; no deterministic source block. | Independent cost-band/gating policy-kernel SYN review, no numerical market/model calls. |
-| Pascal, invoked Engine | SEC pilot closed403; distinct GRU64 same3class SOURCE/native CPU preparation only. | Candidate frozen before CPU outcomes; no GPU GO yet, preserve23:30/23:45 forecast ownership. |
+| Infra/Kepler | Old retarget source CLOSED175.674active/0mutations; PREPARED1253235b lacks rollback, neverInstall. | NEW transactional updater/mockproof240active1800elapsed for NEXT ORIGINAL slot, no effect grant. |
+| Data/Boyle | BothD1 ready215efd55/8ba05657; long-history SOURCE071457f1/1883candidate dates, coverage unknown. | Actual long-input derivation300active2400elapsed/0API-models, exact1675INNER/overlap/purge required. |
+| Strategy/Boole, invoked Engine | CPU98a0b714 complete2fits/18cells/190checks, primaries FAIL. | Fixed-third selectedprobabilityfusion240active1800elapsed/0models/30cells, frozen-kernel independentproof first. |
+| Engine/Confucius | Intake8834e9a/970checks; kernel reproofce59d5f4 PASS25fixtures/47.438active. | Old23377212 pre-freeze finding preserved, no current block/old market rerun. |
+| Pascal, invoked Engine | GRU CUDA45be9df0 complete1fit28epochs/best8/12.149s/strictFAIL; lease released23:05:27. | No new trainer; selected/final weights retained, preserve23:30/23:45 forecast ownership. |
 | Execution | F9 diagnostic image49933 deployed, nextOct20 15:10UTC; NAS original exitOct21. | Exact request reconciliation only; held reservation is not released by expiry/no-open. |
 
-No GPU trainer now. Ledger306=193CUDA113CPU fitted versions, not winners.
+No GPU trainer now. Ledger309=194CUDA115CPU fitted versions, not winners.
 Installed TTM point23:30UTC/risk23:45UTC; no new allocation before exact
 eligible captures. CPU measurementOct26 23:45UTC. Natural feeds RTH21:50,
 old20 D122:30/new9 D123:00UTC. Owners manage due times, not foreground sleeps.
@@ -40,7 +40,10 @@ Late continuation source proposal1253d17f needs additional plan/capture/
 deadline machinery; superseded before effects. Reversible improvement: repair
 only the two comparisons/actual source bindings for NEXT ORIGINAL daily slot,
 not add that machinery for one missing1mday. No Task mutation grant yet.
-Old20 natural D1 succeeded; new9/intake evidence still independent. Preserve
+Both natural D1 feeds succeeded, not proof of complete numeric intake/finality.
+Do not defer a cheap owned status read to an arbitrary23:11 checkpoint:
+actual23:02:42 Ready read validated23:00:43 new9 completion. An MD/due-time
+is not an active worker. Preserve
 active D1 exclusion, session/cache/cursor/caps/token/ACL/triggers, no reset/Run.
 
 Reversible improvement: eliminate stale running projections and consolidate

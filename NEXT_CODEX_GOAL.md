@@ -36,11 +36,15 @@ pending reservations and exact identities; no foreign adoption/substitute.
    late continuation SUPERSEDED BEFORE effects: avoid extra plan/capture/
    deadline machinery for one missing1mday. Prepare guard-only action retarget
    for NEXT ORIGINAL slot, all triggers/PT35M/ACL/caps/token/cache unchanged.
-   Actual Task update has NOT been granted. No fake clock/reset/manual Run.
+   Action-only PREPARED1253235b is NOT install-qualified: rollback omitted
+   post-RPC failures. Never invoke it. Source closed175.674active/0mutations;
+   NEW transactional-retarget implementation240active1800elapsed, prior
+   debits separate/unchanged. No actual update grant/fakeclock/reset/Run.
    Old20 D1 completed22:31:54UTC/20GET1auth/20components+20targetrows ready,
    strict chain215efd55. Boyle prepares exact new9 natural23:00 outcome;
-   Engine separately audits512-context composition. Missing stays UNKNOWN.
-3. Engine: ledger306=193CUDA113CPU fitted versions, not architectures or
+   New9 completed23:00:43UTC/9GET1auth/9ready/CLOSEOUT8ba05657. Intake audit
+   8834e9a confirms512history+capture composition, not actual numeric readiness.
+3. Engine: ledger309=194CUDA115CPU fitted versions, not architectures or
    profitable models. Attention2CUDA fits and HGB2CPU fits both selected
    constant checkpoints; scientific FAIL, no learned increment. HGB strict
    financial FAIL; attention non-strict financial PASS was exact equality.
@@ -50,11 +54,14 @@ pending reservations and exact identities; no foreign adoption/substitute.
    over reversal; nominal-price assumed-cost results, not actual Paper PnL.
    Distinct ternary cost-band SOURCE795f0a89/30checks ready; parent authorized
    NEW logistic+HGB development600cumulativeactive1800elapsed incl25.520prep/
-   2CPUfits0retry/perfit120/18fixedcost-policy cells. Strict proper-score gain
-   vsFITpriors/ordinal notexpectedprofit/adaptive reusedINNER, not promotion.
-   Independent GRU64 same3class SOURCE/native CPU proposal frozen before
-   CPU outcomes, no GPU GO yet; proposed1fit/startby23:10/cleanup23:25UTC
-   before installed points. No dummy load, closed rerun or refunded clocks.
+   2CPUfits0retry COMPLETE98a0b714/18cells/190checks; both scientific and
+   financial FAIL. GRU actual1CUDAfit45be9df0/28epochs/best8/12.149s,
+   loglossimproved/Brierworse=>strictFAIL/12economiccells unexecuted.
+   Canonicallease released23:05:27. NEWfixed-third selectedprobabilityfusion
+   240active1800elapsed/0models/30fixed cells (old18reuse+12new), exact
+   frozen-kernel reproof before economic pass; no expert/weight tuning or
+   independent alpha/Paperpromotion. Data audits long-history readiness,
+   not another rawparameter grid. No dummy load/rerun/refunded clocks.
 4. Installed prospective consumers: TTM Oct20 08:30KST, risk08:45KST,
    CPU measurement Oct27 08:45KST. Exact old20/new9 Oct19 immutable capture
    chain/512 TTM or64 risk inputs/masks required. Missing=>UNKNOWN/0GPU;
