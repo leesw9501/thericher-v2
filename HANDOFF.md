@@ -21,10 +21,10 @@ No genuine operator decision currently required.
 | Owner | Current Package |
 | --- | --- |
 | Parent | Shared MD/integration/Git; preserve unfinished Paper outcome. |
-| Pascal / Engine | Continuous raw-return ranking CLOSED887257b7: two CUDA fits, 40 epochs/1240 updates each, selected epoch0; no active training from that package. |
-| Boole / Engine | Prospective held-exit shadow source/native and one hidden four-trigger task, current-halfpool-held-exit-shadow-campaign-20261021-v1. No broker authority in this package. |
-| Kepler / Data | Bounded three-issuer SEC public-data pilot. Fresh Oct20 stock input c70569b2 and join companion8010abe1 complete. |
-| Confucius / Strategy | Fundamentals feasibility a6bafab5 complete; temporal Transformer duplicate audit rejects repeating already trained models. |
+| Pascal / Engine | New matched chronological OOF gate source/contract/native feasibility; no market fits yet. Continuous ranking887257b7 and metadata auditb59bb4cf closed. |
+| Boole / Engine | Shadow task d33490c9 ACTUALLY installed. Owns pure four-parameter gate kernel/SYN in the new campaign's gate-kernel-r1 child only. |
+| Kepler / Data | Matched three-fold Data source/native/derivation under current-halfpool-chronological-gate-input-20261021-v1. SEC pilot d00ff3b1 closed403. |
+| Confucius / Strategy | Orthogonal audit e1dd8b1e found HALF-specific OOF support missing; fixed gate proposal0df07166, not another architecture sweep. |
 | Archimedes / Infra | Five-policy groupcb1c1d9a committed21:15:43UTC. Prepares minimal augmentation of the existing Oct27 measurement task; no new model/trigger. |
 | Bacon / Review | Named challenges delivered; advisory not operatorauthority. |
 | Steward | Continuous training joined/lease released20:49:02UTC. Any point-inference recovery needs fresh exclusive admission; inference is not training. |
@@ -159,14 +159,41 @@ cause still unproved. Shared25-route cohort, not five independent samples.
 Archimedes prepares same-target extension of existing Oct27 measurement,
 no new trigger or retrospective selection; future actual outcomes unknown.
 
-Boole owns current-halfpool-held-exit-shadow-campaign-20261021-v1:
-one proposed hidden task at Oct22/23/24/27 01:00UTC, ages0..3 after
+Shadow ACTUALLY installed under current-halfpool-held-exit-shadow-campaign-20261021-v1:
+FINAL.jsond33490c9, installation9bd052d1; one hidden pythonw task
+thericher-hgb-sector-held-exit-shadow-20261021 at Oct22/23/24/27 01:00UTC, ages0..3 after
 Oct21/22/23/26 closes. Freeze HALF entry inputs/cohort before targets;
 market entryOPEN Oct21, decisions before NEXTOPEN13:25UTC cutoff.
 Terminal horizon is Oct27 fifth CLOSE, not Oct27OPEN. Installation is not
 an observed decision, fill or measurement; no broker/current Paper changes.
-Claude requested explicit terminal outcome/capture binding; no extra trigger
-or automatic future-result claim. Registration/actual decisions still pending.
+One registration/enable,0Run;52native31runtime18Scheduler=101checks,
+258 other Task XML/ACL hashes unchanged. Parent independently confirmed
+ReadyEnabled/fourtriggers/hidden/pythonw/noDemandStart/nextOct22 01:00UTC
+and seven exact metadata refs. One CPU restore/two SYN forwards/0market
+forecasts-API-GPU,105.325/420active upper/all joined. Claude's terminal and
+exclusive per-lot boundary adopted; future entry/decisions/exit marks unknown.
+
+Next research is NEW matched-cohort chronological OOF fusion, not a cached
+gate fit or repetition of closed models. Strategy CHOICEe1dd8b1e found old
+Window21/LSTM1675 keys incompatible with HALF1650; classic raw/risk ranking
+has predecessors, not proof every exact application is duplicate.
+New four-parameter sigmoid proposal0df07166 has epoch0 exactly new matched
+HALF. Parent selected Data-measured2024/2025/2026H1 folds, preceding63-date
+INNER and physical five-session purges. Earlier folds meta-FIT/last meta-INNER;
+final experts/affines selected before July8 PRED OPEN, never in-sample/final
+predictions substituted for OOF. Old HALF740ae38d remains context only.
+Data readiness3df769df/12headers/0payloads proves source feasibility, not
+new values:2019-01-02 earliest/46550 pre-final keys,21 transition dates masked.
+New fold-local ALLTRAIN-input affines shared across experts;100 old artificial
+purge-only labels need explicit pinned-source regeneration, not imputation.
+Pascal source appointment90active/1800elapsed; Kepler new Data240active/
+7200elapsed; Boole pure gate kernel120active/1800elapsed. Numerical market
+fits await exact Data/native/finite contract, not operator approval.
+Claude REVISE_NAMED_COMPONENT at A/review/current-halfpool-chronological-gate-development-20261021-v1/CLAUDE-RESPONSE.txt:
+bind exact dates/provenance/meta-FIT-only affines/matched masks/thresholds.
+No actual new training claimed. Optimization auditb59bb4cf confirms old
+TRAIN loss fell while no trained INNER beat epoch0; nonzero exported LoRA
+delta metadata, not independently verified weights or a causal defect.
 
 Kepler closed bounded SEC three-issuer pilot under
 A/data/current-sec-companyfacts-three-issuer-pilot-20261021-v1:

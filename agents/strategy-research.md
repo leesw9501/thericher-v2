@@ -46,6 +46,18 @@ no neural-model sweep justified by nine retrospective sessions. Current
 five-policy pointcb1c1d9a actually committed before Oct21OPEN; Boole's held
 exit shadow and existing Oct27 measurement consumer are the next tests,
 not proof of independent alpha, profitable Paper or permission changes.
+
+New audit CHOICEe1dd8b1e at current-next-orthogonal-engine-mechanism-20261021-v1:
+19metadata pins/0arrays; raw/risk ranking has actual predecessors, but HALF
+specific OOF application is not established as duplicate. Prior Window21/LSTM
+OOF has1675keys versus HALF1650, so cached fusion is unavailable.
+gate-proposal-r1/PROPOSAL.json0df07166 freezes ONE four-parameter sigmoid
+from expert score/entropy and date-level disagreement. Epoch0 equals NEW
+matched HALF; earlierOOF meta-FIT/lastmeta-INNER with physicalpurges.
+Strict growth gain/no-worseDD vs matchedHALF, no grid/in-sample substitution/
+individual-profit prerequisite. Data3df769df supports new2024/2025/2026H1
+fold preparation, not existing trained/gated packets. Pascal contract/native,
+Boole pure kernel, Kepler newData active; no numerical outcome claimed.
 CPU held-exit d7c7383b operationaldevelopmentPASS,5earlylots only; shadow
 producer/Dataadapter source/native ready, noactualfuturecohort/Paperchange.
 LoRA8328e0c5 completed20epochs/620updates/best0/science+financeFAIL, notqueued.

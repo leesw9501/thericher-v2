@@ -32,10 +32,19 @@ rank48326e76 INNER-onlyfixedterminal20/0optimizer-PRED-econ/oldFAILunchanged.
 Do not duplicate completed market fits or encoding.
 
 Fixedfusionf60ed3d8 complete6new15cached/0models-GPU/bothFAIL.
-Boole prospective held-exit shadow is CPU/source/native/future slots only;
+Held-exit shadowd33490c9 is ACTUALLY installed, CPU/future slots only;
 Archimedes existing Oct27 measurement augmentation is no fits/GPU.
 Data SEC pilot first403 stopped; future actual OPEN/CLOSE still unknown.
 Fresh admission/headroom/lease before any genuine ready new GPU job.
+
+Next candidate preparation: current-halfpool-chronological-gate-development-20261021-v1.
+Pascal contract/expert native, Boole disjoint pure gate kernel; Kepler actual
+matched Data preparation. At most three chronological expert OOF folds plus
+one final pair/one fixed four-parameter gate proposed, NOT a frozen allocation
+or actual fit claim yet. Source90active1800elapsed/Data240/7200/kernel120/1800
+are separate preparation caps, not a global training ceiling. Exact complete
+numerical count/time/epoch/checkpoint/stop budgets must freeze before dispatch.
+No old fits/debits refunded or merely relaunched to fill GPU usage.
 
 ## Resources And Custody
 

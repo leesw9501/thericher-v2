@@ -36,13 +36,26 @@ GPU attempts,18.462new GPU-inclusive seconds; all joined/lease released.
 Old39991c35 failure/debit unchanged; qualified backend flags restored,
 historical predicate/cause remains unproved. Target/PnL still unobserved.
 
-Boole now owns prospective held-exit shadow source/native/one hidden task
-under current-halfpool-held-exit-shadow-campaign-20261021-v1. Exact b060d4fa
-HALF cohort only, ages0..3 Oct22/23/24/27 01:00UTC; terminal Oct27CLOSE.
-No actual future decisions, fills or current Paper changes inferred.
+Prospective held-exit shadow FINALd33490c9 actually installed one hidden
+pythonw four-trigger task,101checks/1register1enable0Run/258others unchanged.
+Exact b060d4fa HALF cohort, ages0..3 Oct22/23/24/27 01:00UTC; terminalOct27CLOSE.
+Parent freshCOM and7metadatarefs PASS. Future decisions/fills/PnL UNKNOWN.
 Archimedes prepares extension of existing Oct27 measurement consumer,
-not new triggers or numerical model selection. No new trainable campaign
-is ready merely because GPU is free; do not rerun completed studies.
+not new triggers or numerical model selection.
+
+NEW preparation: current-halfpool-chronological-gate-development-20261021-v1.
+Pascal owns source/native/finite numerical plan; Boole owns gate-kernel-r1
+pure four-parameter sigmoid only. Kepler new matched Data root under A/data.
+Data readiness3df769df: measured OOF2024/2025/2026H1,63-date INNER,
+physicalpurges/21transition-masked dates/46550pre-finalkeys. New labels/
+affines/fits required; Window21 cached1675keys cannot replace HALF1650.
+Proposal0df07166: earlierOOF meta-FIT/last meta-INNER, epoch0newmatchedHALF,
+same final experts/controls/costs/gross. Old740 is not sole attributionbaseline.
+Claude exactchronology/meta-FITaffine/matchedmask fixes precede numerical
+dispatch. Preparation90active1800elapsed; Data240/7200; kernel120/1800.
+No new market fit/GPU allocation yet. Reused final66dates stay adaptive.
+Old optimization auditb59bb4cf: TRAIN improved, no trained INNER beat0;
+exported nonzero delta metadata not independently verified weights/defect.
 
 CPU exitd7c7383b CLOSED1HGBfit60iterations/best40/5early325terminal/
 6new9cached/455.118upper,10bp growth/DD +1.09535/.29248 vsHALF+1.04894/.29259

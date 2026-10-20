@@ -50,13 +50,32 @@ first403/1GET0accepted/0retry/27checks/all joined. No automatic retry,
 mailbox requirement inference or bypass; no usable fundamental panel.
 
 Current source/native owners, not commands to rerun:
-Boole held-exit shadow at
+Held-exit shadow ACTUALLY installed, not a command to rerun:
 D:/thericher-v2/model-artifacts/research/current-halfpool-held-exit-shadow-campaign-20261021-v1,
-four proposed hidden slots Oct22/23/24/27 01:00UTC; terminalOct27CLOSE.
+FINALd33490c9/installation9bd052d1, hidden pythonw slots Oct22/23/24/27
+01:00UTC; terminalOct27CLOSE.1register1enable0Run/101checks/258otherTasks
+unchanged,105.325upper/all joined. Parent freshCOM ReadyEnabled/fourtriggers/
+hidden/noDemandStart/pythonw and seven metadata refs passed. Future actual
+entry OPEN/decisions/exit observations remain UNKNOWN.
 Archimedes measurement extension at
 D:/thericher-v2/model-artifacts/research/current-five-policy-oct27-measurement-extension-20261021-v1,
 same existing Oct27 task, no new triggers/fits/GPU. Registration and future
 observations must be proven separately; source readiness is not deployment.
+
+New matched chronological OOF campaign (PREPARATION, no market fit yet):
+D:/thericher-v2/model-artifacts/research/current-halfpool-chronological-gate-development-20261021-v1.
+Pascal host/expert contract; Boole gate-kernel-r1 only. Data Kepler at
+D:/thericher-v2/model-artifacts/data/current-halfpool-chronological-gate-input-20261021-v1,
+readiness3df769df/source-feasible, new values not inferred. Three OOF blocks
+2024/2025/2026H1 with preceding63-date INNER and exact physicalpurges,
+foldlocalALLTRAINaffines, earliermetaFIT/lastmetaINNER. One fixed fourparameter
+gate proposal0df07166; epoch0 exactly newmatchedHALF. No in-sample/final
+prediction substitution, old740 regrade or unbounded refit grid.
+Named Claude response at
+D:/thericher-v2/model-artifacts/review/current-halfpool-chronological-gate-development-20261021-v1/CLAUDE-RESPONSE.txt
+requires concrete chronology/affine/mask/provenance fixes before marketcalls,
+not human approval. Actual finite fit/compute/epoch caps are pending contract;
+do not launch an invented training command or report GPU training from this MD.
 
 Completednewresults (not commands):
 CPUexitREADBACKd7c7383b/60iterationsbest40/5early325terminal/455.118upper,

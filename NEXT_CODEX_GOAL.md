@@ -53,11 +53,12 @@ substitute unknownrequests or new/profit-expanded bank.
    optimalstopping/Paperpromotion. Future shadowproducera1cb2c6f/214.856upper
    source/nativeonly:1restore2SYNforwards/33native13readback/0actualforecast.
    Datae6ece7ce raw23featureadapter50SYN/54.397upper, noactualinputs.
-   Boole owns prospective shadow source/native/one hidden four-trigger Task
-   at A/research/current-halfpool-held-exit-shadow-campaign-20261021-v1:
+   Prospective shadow d33490c9 ACTUALLY installed at
+   A/research/current-halfpool-held-exit-shadow-campaign-20261021-v1:
    Oct22/23/24/27 01:00UTC, ages0..3. Exact frozen HALF cohort, Oct21 market
    OPEN, next-OPEN decision deadline13:25UTC; fifth terminal CLOSE Oct27.
-   Future decisions/measurement remain unknown; no privatefill substitution,
+   1register1enable0Run/101checks/258otherTasks unchanged, parent fresh
+   ReadyEnabled/fourtriggers/hiddenpythonw confirmed. Future decisions remain unknown; no privatefill substitution,
    current Paper changes, extra trigger chain or installation-as-fill claim.
 
 5. Data existing RTH21:50/old20D122:30/new9D123:00UTC visits unchanged.
@@ -78,6 +79,17 @@ substitute unknownrequests or new/profit-expanded bank.
    inferred and no usable fundamental panel yet. No bypass/header rotation.
    Nine-session fixed intraday rule pair cd1b4cc0 completed, both FAIL;
    no model-fit justification or company-wide data/approval hold follows.
+
+6. Parallel new research: ONE matched-cohort chronological OOF sigmoid gate,
+   A/research/current-halfpool-chronological-gate-development-20261021-v1.
+   Pascal source/contract/native; Boole disjoint gate-kernel-r1 pure SYN;
+   Kepler Data current-halfpool-chronological-gate-input-20261021-v1.
+   Readiness3df769df and proposal0df07166: OOF2024/2025/2026H1 with63-date
+   INNER/physicalpurges/shared ALLTRAIN-input affines. Meta-FIT firsttwo/
+   meta-INNER last; epoch0 equals NEW matched HALF, old740 only context.
+   No in-sample/final-pred substitute or PRED-driven checkpoint/weight choice.
+   New market fits not yet ready/running; exact Data/native/finite caps and
+   named Claude chronology fixes precede dispatch, no human GO ceremony.
 
 ## Verify And Continue
 

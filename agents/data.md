@@ -35,6 +35,22 @@ Intraday CONSUMER71bd28b4 under current-intraday-reversal-continuation-input-202
 before separate OPEN/CLOSE outcome decoding. Consumed once bycd1b4cc0,
 no assumption of historical decision-time availability/native fills.
 
+## New Matched OOF Input
+
+Kepler owns current-halfpool-chronological-gate-input-20261021-v1 under A/data
+and matching M,240active/7200elapsed. Prior metadata readiness RESULT3df769df
+at current-halfpool-chronological-gate-readiness-20261021-v1:12archiveheaders/
+0payloads, earliest2019-01-02/46550pre-finalkeys. Measured OOF2024/2025/
+2026H1 with preceding63-date INNER and exact physical five-session purges.
+New fold-local ALLTRAIN-input affines shared stockR21 across HGB/sectorLSTM;
+old252 support/21ETF-transition-masked dates remain. No forced25 historical
+members, label-selected masks, FP32 inverse or future/full-FIT affine reuse.
+Regenerate100 artificial old purge-only labels from exact pinned sources,
+not imputation. Separate lazy fold TRAIN/INNER and OOF input-only mounts;
+meta targets only after six OOF expert seals, final outcomes remain separate.
+Source/native then one frozen derivation delegated, no parent approval file.
+Actual new Data values/model fits not inferred from readiness/header proof.
+
 ## Current Ready / Future Boundary
 
 Held-exit raw-state adapter e6ece7ce at
@@ -47,8 +63,8 @@ FrozenentryR21 needs22closes endingOct20 forOct21entry; c70569b2 now supplies
 them for the separately bound new point, not old frozen profiles. EntryOPEN MUST exact publishedmarket
 field, neverprivatefill. LaterCLOSE publication permits delayedafterclose
 decisions BEFORENEXTOPEN, never backdatedCLOSE. Nativecapturechain/cohort/
-futureOPEN-CLOSE still UNKNOWN. Boole prepares one four-slot shadow worker
-against frozen HALFb060d4fa; installation/future decisions not yet proven.
+futureOPEN-CLOSE still UNKNOWN. Shadowd33490c9 actually installed one four-slot
+worker against frozen HALFb060d4fa; future decisions still not observed.
 No current Paper policy change or fabricated future inputs.
 Data remainsraw; Engine restores exactFITtargetinverse before rawzeroHOLD.
 EarlierData129e95ba and broader28915bd7 complete, do not rederive/refit.

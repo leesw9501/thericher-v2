@@ -9,10 +9,10 @@ fees/settledcash/actualnetPnL unknown. Parent shared MD/integration/Git.
 
 | Owner | Actual Work |
 | --- | --- |
-| Pascal / Engine | Continuous raw-return ranking887257b7 CLOSED;40epochs/1240updates each, selected0, no active training from that package. |
-| Boole / Engine | Held-exit prospective shadow source/native and one hidden four-trigger Task; no broker/current Paper changes. |
-| Kepler / Data | SEC pilot d00ff3b1 closed first403:1GET0accepted/0retry/27checks. Fresh Oct20 c70569b2 + join8010abe1 complete. |
-| Confucius / Strategy | Fundamental-feature feasibility a6bafab5 delivered; already-trained Transformer duplicate rejected. |
+| Pascal / Engine | Matched OOF gate source/contract/native; old ranking887257b7 and optimization auditb59bb4cf CLOSED. No new market training yet. |
+| Boole / Engine | Shadowd33490c9 actually installed; disjoint pure four-parameter gate-kernel-r1/SYN preparation. |
+| Kepler / Data | Matched3fold Data source/native/derivation,240active7200elapsed; readiness3df769df measured supported dates, not actual new values. |
+| Confucius / Strategy | CHOICEe1dd8b1e/one fixed gate0df07166; cached Window211675keys are not HALF1650 OOF support. |
 | Archimedes / Infra | Five-policy cb1c1d9a committed21:15:43UTC/readbackb33bac01; existing Oct27 measurement source/native extension. |
 | Bacon / Review | Named scoped challenges delivered; advice not authority/factual errors corrected against source. |
 | Parent | Integrate actualclosures/currentmemory/Git, preserve independentPaper identities/bank. |
@@ -52,6 +52,16 @@ No inferred identity approval or company hold. Temporary Volta Data projection
 role completed and closed; its durable evidence remains in Data/Engine boards.
 Next concrete consumer is the existing Oct27 measurement task, not another
 training loop or standing worker. Claude challenges this named interpretation.
+
+21:33 ready-path addition: matched HALF-specific OOF gate is an application
+gap, not cached-ready and not a need to invent another architecture. Dispatch
+three disjoint source sets: Kepler Data, Pascal expert/host/finite campaign,
+Boole pure kernel child. OOF2024/2025/2026H1,63-date INNER/physicalpurges,
+shared ALLTRAIN-input affines; earliermetaFIT/lastmetaINNER, no final/in-sample
+substitute. Numerical fits only after actual Data/native/contract readiness;
+Claude named chronology fixes are concrete dependencies, not operator holds.
+Shadowtask ACTUALLY installed1register1enable0Run/101checks, parentfreshCOM
+ReadyEnabled/hiddenpythonw/fourtriggers confirmed; actual decisions unknown.
 
 ## Material Results / Concrete Consumers
 
