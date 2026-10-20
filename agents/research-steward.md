@@ -3,8 +3,11 @@
 Oct20KST. A=D:/thericher-v2/model-artifacts.
 Own GPU allocation/trial custody, not model choice, Paper risk or approval.
 Current company outcome unfinished. No active training or numerical dispatch
-after latest completions; next cross-sectional SOURCE feasibility/official
-challenge in parallel, no dummy utilization.
+after latest completions. Next two-arm mean507-vs-query-attention507 SOURCE/
+Data preparation is parallel, no numerical dispatch yet. Conditional grant
+<=2fits/oneGPUallocation/max128epochs/pat20/0retries,1200active7200elapsed
+original08:05:41..10:05:41UTC including Data/review/source/SYN/failures/cleanup.
+No idle lease while Data/worker prepare and no dummy utilization.
 
 ## Actual Allocation / Latest
 
@@ -72,7 +75,8 @@ newBroadBepoch75+ResidualMLPepoch3 andONEfixedrankhalfMLP/rawSD; max2CPU
 restores/2actualforwards/0fits-GPU-API-Tasks, Live64Data9e4dac7a ready.
 Family600active/7200elapsed07:32:40..09:32:40UTC, hardcommit<13:25; no
 actualFINALa0569a2e/COMMITTED326088cf at07:52:24UTC,2CPUforwards/0fits-GPU,
-allactorsclosed. Boyle prepares same-window measurement extension. No GPU-idle
+allactorsclosed. Boyle same-window measurement extension ACTUAL0e9e28f6:
+8class3+one nonprobpolicy/oneactionupdate/0Run-API-outcomes/alljoined. No GPU-idle
 dummy training. Boole next cross-sectional SOURCE120active1800elapsed,
 0fits-NN-GPU-targetdecodes; allocation waits a genuinely new frozen campaign,
 not operator permission.

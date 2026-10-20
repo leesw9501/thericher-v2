@@ -31,15 +31,24 @@ Do not duplicate old fits or infer active training from preparation.
    2forwards25rows each,0fits-GPU-API-targetdecodes;146source51readbackchecks,
    allactors/containerclosed. Rankpolicy has no proper-score interpretation.
 4. Original6actualpoints e1fc1ada/2b168e66 and futureOct20/21/22/23/26 targets
-   remain untouched/unknown. Boyle prepares SAMEOct27window extension only
-   from actualpoints/current6backup; no newworker/trigger/reportchain. Company8NAS
+   remain untouched/unknown. SAMEOct27window extension ACTUAL0e9e28f6:
+   8class3+one explicitnonprobpolicy/oneactionupdate/fullACL/window preserved,
+   freshreadbackf0221fe3/0Run-API-outcomes. No newworker/trigger/reportchain. Company8NAS
    lifecycle still UNFINISHED; forecast/commit/source is not an exact fill.
-5. Boole next SOURCE feasibility: simultaneous cross-sectional interaction
-   versus independent pooled per-stock models; reject duplication and test
-   aligned panel/targets/availability before one finite numerical campaign.
-   Confucius independently challenges primary sources/novelty/strongestkill.
-   SOURCE cap120active1800elapsed/0fits-NN-GPU-targetmarkdecodes; no numerical
-   dispatch yet. No architecture grid, same-data rescue or idle-GPU filler.
+5. Boole owns current-cross-stock-peer-attention-preparation-20261020-v1:
+   TWO new matched same507-peer experts, nonlinear mean versus query-dependent
+   attention. Plain DeepSets already studied Oct19/54cells; do not duplicate.
+   DATA-REQUESTa3543f1c freezes full43480TRAIN/1575INNER/1650PRED throughOct8;
+   canonical21returns/oldAAD affine, label-independent peer membership/UTC joins.
+   Kepler derives under current-cross-stock-peer-panel-input-20261020-v1;
+   no copied peer tensors per query, no labels in Data or peer trainingmounts.
+   Parent conditional numerical grant: <=2fits/oneGPUallocation/0retries,
+   max128epochs/pat20, total1200active7200elapsed from08:05:41UTC/deadline10:05:41.
+   Includes all source/Data/review/SYN/failures/I-O/cleanup; Data20.145 and
+   Claude24.498upper already owned. Native optimizer/restore/mask/future tests
+   and exact frozen Data/source required first; no actual newGPUdispatch yet.
+   No live507 peers evidenced (old source endsOct14/Jul28), so no same-day
+   forecast/Paper claim. Existing futurepoints/Paper proceed independently.
 
 ## Recent Contracts
 

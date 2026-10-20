@@ -7,6 +7,18 @@ Never KIS_LIVE_*/secrets/raw market rows/private amounts in output.
 
 ## Ready / Owned / Due
 
+Kepler actual preparation (no new derivation yet):
+A/data/current-cross-stock-peer-panel-input-20261020-v1, arrays under matching
+M/us_equities/kis_paper_private root. Engine DATA-REQUESTa3543f1c freezes
+full43480TRAIN/1575INNER/1650PRED, canonical21returns under literalAAD affine;
+507peers reuse existing role arrays with ragged UTC/date/route join, no
+per-query copies/peer labels/target-dependent membership. Newsubcap120active/
+1200elapsed/oneactual0retry, inside Engine1200/7200 deadline10:05:41UTC.
+Metadata feasibilityc8d985d0:1945physicaldates align;20.145upper/0arraysdecoded.
+Do not silently substitute immediately reusable short6670FIT or join raw
+ordinal/slot namespaces. Live507 not ready from retainedOct14/Jul28 sources;
+historical research remains feasible, existing25Paper input unaffected.
+
 Live64Consumer9e4dac7a under
 A/data/current-broad-residual-live64-input-20261020-v1/CONSUMER.json:
 25x64FP64/1600known0unknown/exactOct19index0/sourceavailableOct19
@@ -17,8 +29,11 @@ models-forward-GPU-API-Task. ExistingE53 imports frozen, no mutableMD gates.
 Consumer:newBroadB+ResidualMLP prospectivepair/onefixedrankhalfpolicy;
 readiness alone is NOT a forecast. Consumer now ACTUAL FINALa0569a2e/
 ABI07c6ea7f/COMMITTED326088cf at07:52:24UTC:2CPUforwards/onefixedrankpolicy.
-Boyle owns same-window8class3+rank measurement adoption/preparation; existing
-six-model actionff8d67bb unchanged until exact currentbackup/newGO.
+Boyle same-window8class3+rank action ACTUAL0e9e28f6/adoption-r2,
+SOURCEa76c7f3c/GO06496e2b/currentbackup2803f890/freshreadbackf0221fe3.
+1update0rollback-Run-API/26newCLI+prior77proofs/fullACL/window preserved.
+Oldsavedarg-shadow failureeed4edac0RPC retained; finalfamily286.703upper.
+Installed is not measuredperformance; originalOct27window120/600 unchanged.
 
 Broader Window21 actualREADY under
 A/data/current-nas-breadth-window21-input-20261020-v1/CONSUMER.json8b6da917:

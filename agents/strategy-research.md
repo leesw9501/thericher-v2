@@ -113,6 +113,20 @@ Claude REVISE concerns remain contract limits, not an approval hold.
 
 ## What Current Evidence Rejects
 
+Plain mean-context DeepSets is NOT new: current25-cross-sectional-context-
+development-20261019-v1/model.py already combines own32 and same-date mean32
+through a nonlinear head (14feature/MSE,54economic cells). A generic shared
+mean can already change relative ranks through that head. Next novelty is
+query-dependent peer selection, preferably existing507 peers for25queries;
+do not relabel the old mechanism or compare incompatible old controls.
+Deep Sets https://arxiv.org/abs/1703.06114 and Set Transformer
+https://proceedings.mlr.press/v97/lee19d/lee19d.pdf motivate equivariant set
+interactions, not financial usefulness. Own PyTorch implementation/no borrowed
+weights/code; reference Set Transformer implementation MIT. Claude advisory
+A/review/current-cross-stock-peer-attention-20261020-v1/ADVISORY.jsondfc10bb0
+REVISE: matched same-peer mean control/capacity and current-vintage confounds.
+Stock-order permutation proves invariance, NOT information destruction.
+
 Ledger313 fitted versions, not architectures/winners. GRU/TCN risk proxy
 improves reused stock INNER QLIKE, but12ETF domain learned/blend lose EWMA;
 uniform beats learned financial allocation. Do not extend that grid.

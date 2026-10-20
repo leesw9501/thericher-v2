@@ -59,6 +59,16 @@ Exactclosure: source-r4/activation-r1/source-fix-r1/RESULT.json underthatroot.
 Do not rerun consumed old installers or claim all-PC stability/guaranteed
 rollback. Preserve exacttargetsource/owner/ACL/freshcompare/readback checks.
 
+CURRENT measurement action is eight class3 models +one explicit nonprobability
+rank policy, not six. Exact actual result:
+D:/thericher-v2/model-artifacts/data/current-broad-residual-point-measurement-extension-20261020-v1/adoption-r2/RESULT.json
+SHA0e9e28f6/SOURCEa76c7f3c/GO06496e2b/PREPARED2803f890/readbackf0221fe3.
+Oneupdate/0rollback-Run-newtrigger-API, fresh fullACL/principal/settings/window
+PASS; sameOct26 23:45..23:55UTC/worker120active600elapsed. New26CLIchecks+
+prior77proofs reused; oldargument-shadow failureeed4edac0RPC stayshistory.
+Worker/forecast bytes unchanged, allprocessesjoined. Do not rerun installers
+or infer performance from successful installation.
+
 | Owner | Actual Deployment / Due |
 | --- | --- |
 | NAS |thericher-kis-paper-current-nas-model-20261015/image87697f8e;8 retained FULL; exit>=Oct21USOPEN, first13:40UTC=22:40KST. |

@@ -12,8 +12,8 @@ required; no private amount/fees/netPnL inferred. AGENTS owns authority.
 | Parent | Verified code integration1370d106 committed/pushede53c290; current integration/docs. |
 | Archimedes / Execution | Actual9b1d0e84 TWO_READY_ENABLED/freshCOMPASS; futureprepare13:10/execute14:00Oct21UTC. No Run/API/fill. |
 | Kepler / Data | Live64Data9e4dac7a ready1600known/25x64;31upper/0models-API-Tasks. BroadData8b6 complete, no rederivation. |
-| Boyle / Data | Actualpair adoption/native/current6backup for SAME-window8class3+rank extension; no secondTaskupdateyet. |
-| Boole / Engine | Broad8198cdbe CLOSED; paira0569a2e COMMITTED07:52UTC. Cross-sectional SOURCE feasibility active,0newfit/GPU. |
+| Boyle / Data | Extension ACTUAL0e9e28f6:8class3+rank/oneactionupdate/freshfullACL+windowPASS/allclosed/0Run-API-outcomes. Oldeed4edac0RPC preserved. |
+| Boole / Engine | Broad/pair closed. Two-arm mean507-vs-attention507 worker/native preparation; conditionalfiniteGPUgrant, no actualdispatchyet. |
 | Pascal / Infra | Fleetbank nativeSYN compat e6e0250f PASS56+172pins; threeimage-native oldreadsnew PASS, finalhostreverse UNKNOWN. |
 | Confucius / Strategy | Official-source cross-sectional novelty/kill challenge; read-only, imagequalificationclosed. |
 
@@ -36,6 +36,20 @@ interaction hypothesis and Confucius falsifies novelty from primarysources.
 Improvement: fresh COMobjects after Enabled setter avoid cacheddefinition
 falsefailure; no image/model/testsuite rerun for that metadata fault.
 Next fit must add a mechanism, not retune failedsame-data epochs/weights.
+
+Review08:24UTC: duplicate plainmeanDeepSets rejected from actualOct19code;
+new query-dependent peer mechanism selected. Kepler full43480canonicalquery/
+ragged507join Data preparation runs alongside Boole worker/native SYN.
+DATA-REQUESTa3543f1c; family1200active7200elapsed original08:05:41..10:05:41UTC,
+<=2fits/oneGPUallocation/max128pat20/0retries. Claude dfc10bb0 REVISE requires
+matched mean control/known capacity+reuse limits; stock permutation is not
+information-destroying null. No GPUdispatch yet, no live507 readiness claimed.
+Measurement Installer dot-source clobbered saved Prepared/GO vars:0RPC,
+ORIGINAL verifiedeed4edac. Minimal uniquely-named argument repair/native actual
+CLI regression, not model/image reforecast or broad all-PC inventory.
+Recovery nowACTUAL0e9e28f6/26newCLIchecks+prior77, oneactionupdate/fresh
+independentreadbackf0221fe3/fullACL+window unchanged/alljoined. No measurement
+or broker invocation. This closes only measurement installation, not company.
 
 Review06:36UTC: all actual researchfits CLOSED, GPU idle by readiness rather
 than permission. Boole owns broader-data expert SOURCE; Kepler metadata/ABI

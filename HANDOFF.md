@@ -24,7 +24,7 @@ No current operator decision or company-wide permission hold.
 | Parent / Orchestrator | Integrates/Git. Code/profile/lease integration e53c290 committed/pushed with exact fresh authority. |
 | Archimedes / Execution | TWO_READY_ENABLED9b1d0e84; new prepare/execute tasks enabled with fresh COM semantic PASS. Installation only, no Run/API/fill. |
 | Kepler / Data | Repaired extractor actual qualification COMPLETE1ca604c3/25x22FP64; futureentry21 needs actual20close captures. No broker/model calls. |
-| Boyle / Data | Six-model measurement ACTUALff8d67bb; read-only adoption/preparation for SAME-window8class3+one rank policy, no second update yet. |
+| Boyle / Data | Eight-model+rank measurement action ACTUAL0e9e28f6; fresh independent readback/fullACL/window PASS, no Run or measured outcomes. |
 | Boole / Engine | Broad8198cdbe CLOSED; new pair FINALa0569a2e COMMITTED07:52:24UTC. Next cross-sectional interaction SOURCE feasibility, no new GPU dispatch yet. |
 | Pascal / Infra | Fleetbank source/image compatibility CLOSED; no active private/API work. |
 | Confucius / Strategy | Invoked official-source cross-sectional interaction challenge; no code/data/runtime mutation. IMAGEb96a8ef8 qualification remains closed. |
@@ -97,8 +97,9 @@ actualOct19index0/sourceavailable23:00:43.571426UTC/asofOct20 07:40:10UTC,
 16SYN387checks/42919bytes/31Dataupper/oneactual0retry/0model-API.
 Prospectivefamily600active/7200elapsed from07:32:40UTC(deadline09:32:40),
 hardforecastcommit<13:25UTC<open13:30. TargetOct20/21/22/23/26 unknown.
-Boyle adopts actualpoints and prepares sameoriginalOct27window extension
-6->8class3+oneexplicitrank policy; no Taskupdate until exact currentbackup/GO.
+Boyle actual sameoriginalOct27window extension0e9e28f6:8class3+oneexplicitrank
+policy,1actionupdate/0rollback-Run-newtrigger-API. Native26CLI+prior77proofs,
+sourcea76c7f3c/GO06496e2b/currentbackup2803f890/freshreadbackf0221fe3.
 No newworker/trigger,
 fake rankprobability/proper-score, oldforecast rewrite or actualKISPnL claim.
 
@@ -222,6 +223,14 @@ source60320764 andGO33afcbc4 unchanged. Unknownbystander cause/count remains
 UNKNOWN_AT_LEAST_1_OF_253, not attributed/benign/all-PC preservation claim.
 OneoriginalOct26 23:45..23:55UTC/120active600elapsed worker authoritative;
 oldsource/failure/activation debits separate. Installed is not measuredoutcome.
+CURRENT action supersedes six-model action with8class3+one rank policy:
+A/data/current-broad-residual-point-measurement-extension-20261020-v1/
+adoption-r2/RESULT.json0e9e28f6. SOURCEa76c7f3c/GO06496e2b,
+freshcurrent6backup2803f890/action/fullACL/principal/settings/window PASS.
+1update0rollback/Run/API, nextsameOct26 23:45UTC,120/600 unchanged/alljoined.
+Minimal CLI saved-variable shadow repair/native26checks; worker/forecast bytes
+unchanged. Old failedInstalleed4edac0RPC/ORIGINAL proof remains immutable;
+finalfamily286.703activeupper, no debit refund. No performance measured.
 
 ## Fresh Verification
 

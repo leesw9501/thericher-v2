@@ -42,7 +42,12 @@ adoption, unknown-request substitute, profit-expanded envelope or second bank.
    not oldASTnamespacefaultedderivation. Future21
    needs actual20close source chain. No stale fallback, FP32 inverse, imputed
    missing rows or fabricated availability/finality. Parent owns policy/capital.
-3. Six-model measurement update ACTUALff8d67bb/READBACK0e97d07c:
+3. Current8class3+one nonprobabilityrank measurement ACTUAL0e9e28f6:
+   A/data/current-broad-residual-point-measurement-extension-20261020-v1/
+   adoption-r2/RESULT.json;SOURCEa76c7f3c/GO06496e2b/currentbackup2803f890.
+   Oneactionupdate/0rollback-Run-newtrigger-API, native26CLI+prior77proofs,
+   freshreadbackf0221fe3/fullACL/settings/originalOct27window PASS.
+   Six-model previous update ACTUALff8d67bb/READBACK0e97d07c remains history:
    oneactionupdate/0rollback/Run/API/newtrigger, originalfullACL/settings/
    Oct27window andquietpythonw preserved. r4SOURCE60320764/53nativechecks
    keeps exacttarget fence/freshcompare/owner/rollback; unrelated autonomous
@@ -78,10 +83,14 @@ adoption, unknown-request substitute, profit-expanded envelope or second bank.
    7200elapsed07:32:40..09:32:40UTC;hardcommit<13:25 today, no datefallback.
    Newactualpackets only may extend SAMEoriginalOct27measurementwindow,
    original6points unchanged/no newworker-trigger or rankproper-scorefiction.
-   Boyle prepares actual8class3+rank adoption/native/current6backup before
-   oneexact action-only update; no newwindow/worker/reportchain.
-   Boole nextcross-sectional interaction SOURCE feasibility; Confucius
-   official-source novelty/kill challenge in parallel. No newnumericalGOyet.
+   Boyle actual8class3+rank action installed0e9e28f6; no newwindow/reportchain.
+   Boole next query-dependent507-peer attention vs nonlinearmean TWO-arm
+   campaign; oldplainDeepSets duplicate rejected/Claude dfc10bb0 REVISE scoped.
+   DATA-REQUESTa3543f1c full43480/1575/1650canonicalquery +ragged507join;
+   Kepler Data andBoole nativeworker prepare inparallel. Conditionalnumerical
+   grant<=2fits/oneGPUallocation/max128pat20/0retry,1200active7200elapsed
+   original08:05:41..10:05:41UTC inclallprep/failure/Data/review; no actual
+   newGPUdispatchyet or live507peer readiness claim. No extraParentGOqueue.
    Pascal fleetcompatibility SYN proof is closed, not actualprivate custody.
 5. Preserve actualpoints e1fc1ada and PRICE/MACRO2b168e66. Future outcomes
    Oct20/21/22/23/26 unknown; original Oct27 worker action nowupdated. CFTC406
