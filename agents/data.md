@@ -7,6 +7,43 @@ Never KIS_LIVE_*/secrets/raw market rows/private amounts in output.
 
 ## Ready / Owned / Due
 
+Live64Consumer9e4dac7a under
+A/data/current-broad-residual-live64-input-20261020-v1/CONSUMER.json:
+25x64FP64/1600known0unknown/exactOct19index0/sourceavailableOct19
+23:00:43.571426UTC/asofOct20 07:40:10UTC;futureOct20/21/22/23/26.
+INPUTM/.../current-broad-residual-live64-input-20261020-v1/INPUT.json0d677995,
+42919bytes/16SYN387actualchecks/oneactual0retry/31Dataupper/0transforms-
+models-forward-GPU-API-Task. ExistingE53 imports frozen, no mutableMD gates.
+Consumer:newBroadB+ResidualMLP prospectivepair/onefixedrankhalfpolicy;
+readiness is NOT a forecast. No actualnewCOMMITTED points yet.
+
+Broader Window21 actualREADY under
+A/data/current-nas-breadth-window21-input-20261020-v1/CONSUMER.json8b6da917:
+654834FIT/1816dates/654794known,30990INNER/63dates/30985known,
+32992PRED/66dates/targetsseparatelysealed; current251650rows/old1675tail+
+AADaffinebitparityPASS. FP32Nx21x1, int8class/-1unknown; learnercastONLY
+supportedlabels toint64. Exact507/purges/input-onlymembership preserved,
+114507988bytes/19SYN2362169checks/oneactual0retry/48Dataupper.
+0models-forward-GPU-API-Tasks; no PREDvalues/distributions published.
+31.716Engine+37.008feasibility oldcharges separate/knowncarry116.724.
+FirstEngineCUDAnativeproof failedbeforeoptimizer/market; DataREADY unchanged.
+
+Residual/regime Consumer under A/data/current-residual-regime-expert-input-20261020-v1/
+CONSUMER.jsonc7603cda:43480TRAIN/1575INNER/1675PRED FP64sixfeatures/4.115MB,
+34unknowninputs retained,whole-date loss43380(4dates100rows excluded).
+49nativeSYN217930checks/46730analyticalcalibrations/0labelvalues/models/GPU/
+API. Prefitbaskets differ1152TRAIN41INNER, not duplicate rawSD reversal.
+Data34activeupper inclreadback; Engine2fit/24cell result1372c432 CLOSEDFAIL.
+
+Breadth feasibility SOURCE1d33d76e under
+A/data/current-nas-breadth-research-feasibility-20261020-v1:
+8metadatarefs/25.005activeupper/0arrays-targets-models-API-Tasks.507NAS
+excluding current25/fixed50 overlap,~1.176Mrows;22/64context metadata470..499
+atOct14, exactcountsUNKNOWN. All512 in prior declaredconsumer; no untouched
+claim. Existinghistory can support adaptive research, not currentOct20input.
+BindfrozenWindow21 ABI/source before derivation, no futureflags/61index as
+22context eligibility or new fullrecursive scan.
+
 Full194 portfolio input READY under
 A/data/current-portfolio-objective-full-context-input-20261020-v1/CONSUMER.json
 8efcf1536d66a622ef934292644140393cd66ba534c051e87547307931fe5675:

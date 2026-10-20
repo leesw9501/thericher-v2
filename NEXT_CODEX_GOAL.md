@@ -28,6 +28,13 @@ adoption, unknown-request substitute, profit-expanded envelope or second bank.
    Planned entryOct21 14:00UTC/exitOct27>=19:45 operationalproxy, not replay
    parity or independently profitable selection. Do not add profitability or
    unrelated all-bank-flat permission gates; real foreign/unknown custody wins.
+   CPUqualificationa0d04cc1 actualone25rowforward complete. CurrentR4SOURCE
+   f3711b38 fixes frozen importbinding;R2timeout280<330<360<480/R3entry6
+   15:00UTC andsixOct28recovery slots. IMAGEb96a8ef8 actualnativequalified
+   fc8309c4/734source/Python3.12.15/lockedpackages/Torchabsent/3bank2codec.
+   ParentGOd221b0f3 authorizes publicclosure thenTWOnewtask registrations;
+   actualinstallation notyetproven, nevermanualRun or existingtask changes.
+   FutureDataREADY belongs to runtimeprepare, not registration prerequisite.
 2. Kepler actual canonical25x22 input qualified1ca604c3/CLOSEDc6a236ff:
    550known/0unknown/FP64/actualOct19index0/nativeproducer sentinelonly.
    Use repairedextractor48319dc8 under current-window21-repaired-extractor-qualification-20261020-v1,
@@ -48,7 +55,27 @@ adoption, unknown-request substitute, profit-expanded envelope or second bank.
    recent reversal, NOT financial causation. No dummy GPU utilization or
    duplicate training. Next research needs a concrete new hypothesis/inputs,
    finite contract and genuine kill test, not another same-data grid.
-   Boole owns residual/regime expert SOURCE preparation; no market GOyet.
+   Residual/regime actualFINAL1372c432:Logistic23iterations/MLP15epochs,
+   selected3/24cells/science+financialFAIL. Fixedrankhalf descriptive10bp
+   growth+1.0379percent/DD.4792, notprimarypass/alpha or actualPaperPnL.
+   Allactors+leaseclosed/no rerun. Boole nextNASbreadth expert SOURCE uses
+   Data1d33d76e/507names/~1.176Mrows; exact22context eligibility notyetknown,
+   previouslydeclaredpool=>adaptive, notuntouched. No newnumericalGOyet.
+   BroadPROPOSAL08b422f5 now selected; actualData8b6da917654834FIT/30990INNER/
+   32992PRED/current251650. One17347paramfit/max128pat20 planned. FirstCUDA
+   SYNfailedbeforeoptimizer/market/d2b86a5b,1allocation3forwards retained.
+   New premarket-repair-r1 fixes LSTMtrainmode beforegradientforwards; no
+   completedfit repeat. Additionalallocation capped1/marketfitsALLattempts<=1,
+   aggregate5400active/originalSOURCEorigin+14400elapsed, old264.338retained.
+   Actualrepair8198cdbe COMPLETE1fit95epochs/selected75/10830updates,
+   15cells249checks/455.724aggregateupper/allclosed.10bp Bgrowth.5652percent/
+   DD.3808 vsA.8162/.4937:pairedprimaryFAIL, broadproperUNKNOWN40missing.
+   NextnewB+ResidualMLP twoCPUfuturepoints and ONEfixedrankhalfMLP/rawSD
+   (nonprobability) are source/native preparation; no futurepoint yet.
+   Live64Data9e4dac7a25x64/1600known/actualOct19index0 ready. Family600active/
+   7200elapsed07:32:40..09:32:40UTC;hardcommit<13:25 today, no datefallback.
+   Newactualpackets only may extend SAMEoriginalOct27measurementwindow,
+   original6points unchanged/no newworker-trigger or rankproper-scorefiction.
    Pascal independently checks newprofile/frozenfleet sharedbank compatibility
    with SYN only before deployment, not actualprivate custody or all-flat gate.
 5. Preserve actualpoints e1fc1ada and PRICE/MACRO2b168e66. Future outcomes

@@ -7,15 +7,20 @@ campaign evidenced after the latest completions; no dummy utilization.
 
 ## Actual Allocation / Latest
 
-Canonical A/engine-research-agent/locks/gpu.lock. Last host physicaljoin0/
-actorquiescent/lease released05:20:33UTC:
-current-window21-oof-gated-fusion-preparation-20261020-v1/runtime-source/actual.
-4CUDAfits epochs/selected21/1,46/26,51/31,33/13;14279market+3SYNupdates.
-GPU128.427s, CPU gate/readout48.648s;187.255dispatch/330.345familyupper.
-One4paramCPUgate256epochs/best253 atceiling, not convergence.
-30cells18new12byte-reuse/science+financialFAIL, no retry/longer-run rescue.
-Old4LSTM probability caches reused with0oldmodel calls. SourceCode30e89257/
-Data bdf4795b/GO7e74f99a consumed; no repeated job.
+Canonical A/engine-research-agent/locks/gpu.lock. Latest broadB actor
+premarket-repair-r1/actual under current-nas-breadth-expert-preparation-
+20261020-v1 physically joined/quiescent, ownedlease released/8198cdbe.
+One95epochmarketfit/selected75/pat20/10830market+4SYNupdates/123.386s.
+Two lifetimeallocations include first failedCUDAproof with0optimizer/market;
+old264.338upper preserved, finalaggregate455.724upper.15cells249checks/
+pairedprimaryFAIL, broadproperUNKNOWN40missing, no trainingextension.
+No currently evidenced running training; newprospectivepair is CPU-only.
+
+Earlier Window21 OOF:4CUDAfits21/46/51/33epochs,14279market+3SYNupdates,
+GPU128.427s/CPUgate48.648s/187.255dispatch/330.345upper, allclosed94f2b5c6.
+Gate256epochs/selected253 hitceiling notconvergence; science+financialFAIL.
+Old4LSTM caches reused0oldcalls, no repeats. Source30e89257/Data bdf4795b/
+GO7e74f99a consumed. Closed results/clocks/debits unchanged.
 
 Earlier matched MSE/logwealth:2CUDAfits17/18epochs/selected5/6,p12,
 1890marketupdates3968forwards;16SYNupdates separate. GPU22.983s/CPU1.724/
@@ -51,7 +56,21 @@ ready engineering work, not GPU jobs. Cached futurepoints e1fc1ada/2b168e66
 awaitOct20/21/22/23/26 outcomes; failed TCN/Tree points not adopted.
 OriginalOct27 measurement action update ACTUALff8d67bb/1update0Run/newtrigger,
 sixactualpoints/originalwindow retained; installednot measurement evidence.
-Boole newresidual/regime expert SOURCE preparation, not yetnumericallyready.
+Boole newresidual/regime expert PROPOSAL8fac6ea8/SOURCE6024ab8d:
+twofits Logistic/803paramMLP64max/pat12/seed3301; KeplerData+nativekernel
+and Boolelearning/runtime completeFINAL1372c432:2marketfits/MLP15epochs/
+selected3/825market+4SYNupdates/oneallocation/24cells/primaryFAIL. Alljoined/
+lease released,121.491familyactiveupper; no duplicate completedfit.
+Campaign1200active7200elapsed/origin05:50:56/deadline07:50:56UTC includes
+closedsource36.162upper and newData120subcap. OneCPU/oneCUDA predictivefit,
+no thirdstart/completedrefit; allclocks/debitsclosed unchanged.
+Broad8198cdbe COMPLETE95epochs/selected75/15cells/249checks/455.724aggregate
+upper; oldd2b86a5b failedSYN0market/264.338 remainsclosed,2lifetimeallocations
+explicit. No active training inferred. Fresh futurepair isCPU-only:
+newBroadBepoch75+ResidualMLPepoch3 andONEfixedrankhalfMLP/rawSD; max2CPU
+restores/2actualforwards/0fits-GPU-API-Tasks, Live64Data9e4dac7a ready.
+Family600active/7200elapsed07:32:40..09:32:40UTC, hardcommit<13:25; no
+newforecast completion evidence yet. No GPU-idle dummy training.
 No permit hold from a failed model or missing publication metadata.
 Allocate GPU only to a new justified finite frozen campaign, not idle leases
 for feeds/quotas/LLM work. Execution reliability preempts at safe checkpoint.

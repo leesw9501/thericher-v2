@@ -8,22 +8,59 @@ GPU actors closed; no active training inferred. Do not duplicate old fits.
 
 ## Current Priority
 
-1. Put a useful provisional model proposal through existing Paper risk, not
-   another same-data architecture grid. Window21 simplest representative has
-   adapter715d075b/37nativeCPUchecks/review66c89b58/67checks, no marketforward/
-   GPU or CPU-GPUparity claim. Native code profile FROZEN/86tests/31review
-   checks and fresh1370d106 full authority. Deployment source only so far.
-2. Boole mechanism diagnostic complete: original Window21 approximates recent
-   reversal, not full21-lag dependence. Use this to propose a genuinely new
-   useful hypothesis; no regrade or profitable rule claimed from feature
-   correlations. A new campaign needs ready inputs/finite caps/kill, not GPU
-   utilization. Boole owns newresidual/regime expert SOURCE/contract; no
-   current numerical GO after closed failed families. Subtracting the same
-   daily cross-sectional mean preserves raw reversal ranks analytically;
-   any genuinely new expert must pass that invariance kill before fits.
-3. Data/Execution prepare actual22-close entry input and six-model future
-   observation. Original point target sessionsOct20/21/22/23/26 unknown.
-   CFTC406weekly has no historical publication times; research-only not PIT.
+1. Provisional Paper A: native profile e53c290/1370d106 verified; actualCPU
+   proposal a0d04cc1 and IMAGEb96a8ef8/fc8309c4 qualified. R4sourcef3711b38
+   fixes frozen imports; amendedGO8a77579b registration underway, not yet
+   evidenced installed. Same original shared tenth/native custody, no profit
+   prerequisite or full-universe/replay-parity claim.
+2. All recent fits CLOSED; no duplicate training. Residual1372c432 twofits/
+   24cells and broad8198cdbe one95epochfit/15cells did not pass frozen
+   primaries. Lower risk or descriptive higher growth is not independent alpha.
+   Shortlist candidates may still enter correctly scoped provisional Paper.
+3. Current SOURCE/conditional CPU dispatch:
+   A/research/current-broad-residual-prospective-pair-preparation-20261020-v1.
+   BroadBepoch75 + ResidualMLPepoch3, ONE existing fixedrankhalfMLP/rawSD
+   nonprobability composition. Max2model-onlyrestores/2actualCPUforwards,
+   0fits/GPU/broker/API/credentials/Tasks. No oldAengineeringpoint adoption.
+   Live64Data9e4dac7a/INPUT0d677995 ready25x64FP64/1600known/actualOct19index0;
+   literal oldAAD forB21; frozen6featurekernel/scaler forMLP, no FP32 inverse.
+   Family600active7200elapsed from07:32:40UTC/deadline09:32:40, hardforecast
+   commit<13:25 beforeofficial13:30. No currentnewpoint completion evidence yet.
+   Seal all25 class3 probability rows and explicit NONprobabilityrankpolicy
+   before any future outcomes. Rankpolicy has no proper-score interpretation.
+4. Original6actualpoints e1fc1ada/2b168e66 and futureOct20/21/22/23/26 targets
+   remain untouched/unknown. Boyle prepares SAMEOct27window extension only
+   after newpoints commit; no newworker/trigger/reportchain. Company8NAS
+   lifecycle still UNFINISHED; forecast/commit/source is not an exact fill.
+
+## Recent Contracts
+
+Residual/regime: older42 stock-specific LOO beta/intercept -> subsequent21
+common/residual shocks, sixfeatures/ownSD/peer-vol. Subtracting a common mean
+alone preserves unscaled reversal ranks; actualprefit nonredundancy passed
+1152TRAIN41INNERdates. Data c7603cda43480/1575/1675;34unknowncontext retained,
+whole-date loss43380. Logistic23iterations and803paramMLP15epochs/selected3/
+825market+4SYNupdates, no epoch/seed/weight rescue. One fixedrankblend only.
+
+Broad507 PROPOSAL08b422f5/Data8b6da917:654834FIT/654794known/1816dates,
+30990INNER/30985known/63dates,32992PRED/66dates/sealedtargets; current251650
+old1675tail/AADparityPASS. 114.508MB/19SYN2.362Mchecks/48Dataupper.
+FIT2019Jan2..Mar24 2026; INNERMar31..Jun30; PREDJul8..Oct8, physicalpurges.
+Literal oldAAD scalar/common252 normalization; no newbroad or futurestats.
+Seed2801/same17347paramLSTM/max128pat20; oldA reference cannot gate B.
+Different rows/years/prior/domain confound an isolated causal breadth effect.
+All512 previously declared; excluded names are NOT untouched.
+
+FirstCUDAproof d2b86a5b UNAVAILABLE:1allocation3SYNforwards0optimizer/
+marketfit/PRED/economics,264.338upper, oldsource/result unchanged.
+New premarket-repair-r1 corrected train mode BEFORE gradient forwards.
+Actual8198cdbe/ABI d6a26450:1fit95epochs/selected75/pat20,10830market+
+4SYNupdates/123.386s/249checks,15cells/Decimalgap4.44e-16.
+10bp EACHleg growth/DD percentNAV:A.8162/.4937,B.5652/.3808,
+uniform.1129/.3261; pairedprimaryFAIL. BroadproperUNKNOWN40missingtargets.
+455.724aggregateactiveupper/2lifetimeallocations/allactors+leaseclosed.
+No completedfit repeat, convergence claim, covered-only success or oldregrade.
+Originalaggregate5400active/14400elapsed fromSOURCEorigin never reset.
 
 ## Latest Completed
 

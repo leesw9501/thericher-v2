@@ -55,9 +55,31 @@ Supports recent-reversal representation, financial causation UNKNOWN.
 
 Boole now owns SOURCE/contract under A/research/current-residual-regime-expert-preparation-20261020-v1:
 check prior studies/primary sources and choose one concrete residual/regime
-hypothesis with cheap rule/linear controls before a new DL campaign. No
-marketnumerical dispatch yet; finite180active3600elapsed preparation.
+hypothesis with cheap rule/linear controls before a new DL campaign.
+SOURCEproposal8fac6ea8/READY6024ab8d complete36.162activeupper; selected
+older42 stock-specific leave-one-out beta/intercept applied to following21
+common/residual shocks +ownSD/peer-vol regime. Same-sixfeature Logistic and
+803paramMLP/max64/pat12 plus raw/rawSD/residualSD rules/ONE fixedrankblend.
+Not new sector/news/PIT data; simple mean subtraction rank identity is an
+explicit prefitkill. Kepler Data/Boole native runtime preparation parallel,
+Subsequently COMPLETE1372c432/2fits/24cells/science+financialFAIL. MLP15epochs/
+selected3/Logistic23iterations/oneGPU,121.491familyupper/allclosed. Fixedrank
+half10bp+1.0379percent/DD.4792 vsraw+.5738/.4774 anduniform+.1376/.3261.
+Descriptive promisingcomposition, not frozenprimarypass/alpha/PaperPnL.
+Shared1200active7200elapsed ceiling
+origin05:50:56/deadline07:50:56UTC, no seed/architecture/weight search.
 All historical comparisons are adaptive reused data, not actual KIS PnL.
+
+Broadertraining hypothesis08b422f5 now COMPLETE8198cdbe/ABI d6a26450:
+one17,347paramLSTM95epochs/selected75/pat20/10830market+4SYNupdates;
+15cells249checks/455.724aggregateupper/allclosed. Samearchitecture but
+different stock/year/prior domain, not isolatedcausalbreadth or untouched.
+10bp growth/DD percentNAV:A.8162/.4937,B.5652/.3808,uniform.1129/.3261,
+pairedprimaryFAIL. BroadproperUNKNOWN40missing, no covered-only success.
+Newprospectivepair SOURCE consumesBepoch75/ResidualMLPepoch3 plusONEfixed
+rankhalfMLP/rawSD NONprobabilitypolicy, not another same-outcome tuninggrid.
+Live64Data9e4dac7a ready, futuretargetOct20/21/22/23/26 unknown; no actual
+newpointcompletion evidence yet and no rankproper-score/profitclaim.
 
 ## Earlier Mechanisms
 
@@ -138,6 +160,9 @@ Raw/indicator positive assumed-cost replay is not actual KISPnL/all-riskpass.
 
 Source claims motivate hypotheses, not project profitability:
 - https://www.nber.org/papers/w2533 (weekly stock reversal mechanism).
+- https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr513.pdf
+- https://www.nber.org/papers/w30917 (volatility/liquidity-conditioned reversals).
+- https://www.nber.org/papers/w35840 (Oct2026 asymmetric residual reversal).
 - https://w4.stern.nyu.edu/facdir/lpederse/papers/TimeSeriesMomentum.pdf
 - https://www.cs.cornell.edu/~caruana/mlj97.pdf (shared representation).
 - https://arxiv.org/abs/1706.03762 (attention).

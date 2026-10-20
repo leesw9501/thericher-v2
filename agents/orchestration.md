@@ -10,12 +10,13 @@ required; no private amount/fees/netPnL inferred. AGENTS owns authority.
 | Owner | State / Next |
 | --- | --- |
 | Parent | Verified code integration1370d106 committed/pushede53c290; current integration/docs. |
-| Archimedes / Execution | Fourprod/fourtest NAS-model slice FROZEN/86PASS; new deployment SOURCE package for onecohortOct21entry, not activated. |
-| Kepler / Data | New repairedextractor qualification, oldASTHEADERfault7fb80b1a closed; futureentry21 needs20captures. |
+| Archimedes / Execution | R4publicimagePASS; prepareDISABLED/executeABSENT7b7e7db0. NewsemanticCOMdefault recovery source, no enables/Run. |
+| Kepler / Data | Live64Data9e4dac7a ready1600known/25x64;31upper/0models-API-Tasks. BroadData8b6 complete, no rederivation. |
 | Boyle / Data | Six-model measurement updateff8d67bb/readback0e97d07c ACTUAL; allclosed/originalOct27window. |
-| Boole / Engine | Oldfits/gate/mechanism CLOSED. Newresidual/regime expert SOURCE, no active training yet. |
-| Pascal / Infra | Newmodelprofile/frozenfleet sharedbank SYN compatibility; no actualprivateAPI/Task/GPU. |
-| Confucius / Review | Independent lock17/profile31 checks PASS, not independent financial validation. |
+| Boole / Engine | Broad8198cdbe1fit95epochs/selected75 CLOSED; newB+ResidualMLP prospectivepairCPU SOURCE/conditionaldispatch, no pointyet. |
+| Pascal / Infra | Fleetbank nativeSYN compat e6e0250f PASS56+172pins; threeimage-native oldreadsnew PASS, finalhostreverse UNKNOWN. |
+| Confucius / Infra | IMAGEb96a8ef8/fc8309c4 nativequalified734source/Python3.12.15/10packages/Torchabsent/3bank2codec; allclosed/not a deployment. |
+| Boyle / Data | Existing6-pointOct27worker actualff8d67bb unchanged;8class3+rankpolicy extension SOURCE waitsnewCOMMITTED forecasts, notLive64 readiness. |
 
 All last CUDA actors physically quiescent/lease released.
 A/engine-research-agent/locks/gpu.lock is the single allocation authority.
@@ -28,6 +29,18 @@ held, not released by expiry/absence; no clone/substitute/foreign adoption.
 New model proposals never allocate a second shared tenth.
 
 ## Throughput Review
+
+Review06:36UTC: all actual researchfits CLOSED, GPU idle by readiness rather
+than permission. Boole owns broader-data expert SOURCE; Kepler metadata/ABI
+ready, not numerical work. Archimedes futurecohort source revision; Confucius
+offline build recovery. Current8owned NAS closure still dueOct21, not complete.
+Image failures are concrete caller/plugin/context/frontend dependencies, not
+KIS or research permission: directorycontext probe passed, remote Dockerfile
+frontend DNS failed; cached/nativefrontend recovery avoids daemon/WSL reset.
+Improvement: conditional delegated Research GO once frozen Data/native/source
+match removes another parent roundtrip; actual2fits/24cells closed1372c432.
+Keep one GPU allocation, deterministic Paper risk and exact owned reservations.
+No broad all-PC freeze, arbitrary modelgrid or fullrepo rerun for each MD.
 
 Review after05:30UTC:15-file changed-path serial and ONE full8worker suite
 completed while new4CUDAfits+CPUgate ran on disjoint D artifacts. No repeated
