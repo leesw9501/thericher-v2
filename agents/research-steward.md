@@ -7,11 +7,14 @@ Ledger313=195CUDA118CPU completed fitted versions, not architectures/winners.
 
 ## Actual Resources / Completed
 
-Canonical lease A/engine-research-agent/locks/gpu.lock. Four NEW chronological
-LSTM fits actually complete02:00:17UTC, one allocation/actorquiescent/lease
-released; independent packet/counter checks pending. No current trainer after
-this closure. One sample44percent/3030MiB is not peak/average. Prior single
-LSTM/point closures stay unchanged. No permission hold or dummy training.
+Canonical lease A/engine-research-agent/locks/gpu.lock. ACTUAL owner Parent
+exec92557 under current-costband-tcn-convergence-development-20261020-v1/
+runtime-source/attempts/attempt-1, startedabout03:04UTC. Source15999a9c/native
+CPU41/runtime42/intake37, actual3CUDA-SYNupdates/MARKET-ATTEMPTED; latest
+durable7epochs770updates1568forwards, not completed or converged. One sample
+40percent/2942MiB is not sustained/peak. No competing GPU or source edits.
+Four prior LSTM fits complete02:00:17UTC/5dc6b6e4/269checks. No permission hold
+or dummy training. Old results and model fit counts stay separate.
 
 LSTM163089e4/da3cd449:1CUDAfit24epochs/best4/2736marketupdates/22.427s market
 stage inclI/O/eval; SYN3updates separate.144.662cumulativeactive1897.447elapsed.
@@ -43,9 +46,10 @@ source. Pascal:one native weightedTree SYN/codec plus META source.
 GPU-GOd554829b consumed. CLOSED reports2211.612familyactiveupper including
 2100other-group reservations, NOT2211.612 GPU spend: this GPU group owned
 111.612s. Do not double-charge the reserved CPU/META amounts as measured time.
-CPU RAW/VOLUME first commands failed/quiescent; exact first-cause/zero-effect
-review before a permitted same-identity pre-first-effect correction. CPUgroups
-use disjoint cores/write roots. Source readiness is not running training.
+CPU RAW/VOLUME CLOSED9ac8f748/a7b25b0d/no attempt2: RAW analytic effect1;
+VOLUME actualzero but failed full-start charge leaves3not4. Original17candidate
+and proposed two-expert META UNAVAILABLE. Retain four valid LSTM fits; no
+counter reset/refund or old study regrade. Source is not running training.
 All new sources/native/failures/I/O/cleanup join the family once.
 
 Price-volume physical-close featureDataee8ddff1 ready; raw-sum cancellation
@@ -55,6 +59,20 @@ NativeTree SYN must exercise real weighted-node/FP32-route/NPZ/Dirichlet APIs,
 not fake numerical fixtures. Missing fields defer only that package.
 
 ## Custody / Due
+
+Old shortTCN2701 CLOSED exit126/no selectedP;1061.402upper includes preserved
+full450error charge. Minimum5epochs550updates1120forwards only; total unknown.
+NEW long2702 uses6000active9000elapsed origin02:37UTC, one marketfit start,
+up to5400TRAIN+240finalization+30cleanup. Initialcarry200 conservative, not
+GPUspend. Known zero-market preflight technical recovery only; no bad-score
+retry or old limit reset. Softstop/checkpoint rollback actually CPU-proven.
+
+SYN throughput9updates12forwards:400/1024/2048 samples roughly804/825/826
+examples/s; predeclared10percent tie chooses16dates/max400, not VRAM filling.
+TTM SYNprobe2returns/frozenstateequal and NEW1dayactual21forwards/onecache/
+oneconvergedCPUhead complete, RAWnonconvUNKNOWN. All those GPU actors closed.
+CPU-only learned OOF Tree COMPLETE/4estimators incl3analytic/30cells FAIL;
+no GPU allocation. Next window21/63/252 source prep can continue in parallel.
 
 Old TTM consumedINPUT_UNAVAILABLE0GPU; Risk terminalmissing means historical
 counts/cleanupUNKNOWN, not an active current owner. Do not manually rerun.

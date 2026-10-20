@@ -7,6 +7,27 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Ready / Owned
 
+Current Boole package: primary-paper profit-objective review under
+A/research/current-portfolio-objective-strategy-review-20261020-v1.
+Direct utility/portfolio versus prediction-only training must become ONE
+finite test or concrete rejection, with matched data/costs and no new
+framework/report platform. Papers' futures/monthly/universe claims do not
+establish project US-stock5session performance. No market/GPU work here.
+
+NEW one-day TTM192 head actually converged354iterations but scienceFAIL;
+RAW5121000nonconvergenceUNKNOWN,12known/6UNKNOWN economics. No head/grid
+rescue. New learned OOF LSTM/prior/volume Tree COMPLETE/8214fae2 and
+scientific+financialFAIL. Its four-way point is source22checks/14.799debit,
+not actual forecast yet; all four arms published regardless scores if valid.
+Old actual forecaste1fc1ada remains retained and future outcomes unobserved.
+
+New information acquired: Treasury CC0 1950dates, lagged-context Data0cfe0841
+ready for Kepler matched price/macro HGBs; current-vintage/notPIT. Archimedes
+prepares21/63/252 close-window LSTMs, not just more architecture names.
+Long TCN2702 actually runs under Parent92557; source/native proofs !=training.
+
+## Earlier Mechanisms
+
 Boole completed actionable-target SOURCE795f0a89/PROTOCOLe0ea9d00:
 11prior-contract duplicate check/30SYN/2tiny native sklearn1.9.0 fits,
 25.520active362.360elapsed/0market-GPU-API. Binary gates/quantiles rejected

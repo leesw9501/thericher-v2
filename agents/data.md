@@ -7,6 +7,29 @@ Never KIS_LIVE_*/secrets/raw market rows/private amounts in output.
 
 ## Ready / Owned / Due
 
+NEW official Treasury CC0 rates READY8fdbbf88 under
+A/data/current-public-treasury-curve-acquisition-20261020-v1/source-recovery-r1:
+8annualHTTP200/0redirect-retry,1950dates2019-01-02..2026-10-19,3M+10Yknown,
+85unreported weekdays unfilled/unclassified,2.75MB/17readonlyMfiles,
+49checks11SYN/60activeupper. Current-vintage/revisable, not historicalPIT/
+release availability. FRED rights/Board failed handoff remain scopedSTOP,
+0seriesGETs there, no old response-length/completeness inference.
+
+Actual lagged context join READY0cfe0841/187checks11SYN/5580scalar error0:
+A/data/current-costband-rate-context-input-20261020-v1/CONSUMER.json.
+42905eligibleTRAINinputs/42871known+34UNKNOWN;575rows23dates lack older
+rates. INNER1575/PRED1675/point25 unchanged. Common INPUT mask precedes
+target masks; same price baseline/macro keys and FINAL price affines.
+Macro TRAIN-only input normalizer;2official-session lag/21session change/
+source age retained. Lag2 is an assumption, not historical release/PIT proof
+or Execution promotion. GeneratedM macro-context.npz9f28ea0a/540439bytes.
+
+Window family metadata/inputs b78e712c ready in M/current-close-window-
+costband-20261020-v1, same512-close cohort/one252TRAIN affine. Original8345
+members retained as6670FIT/1575internal/100purged;Outer1675 unchanged.
+Source derivation/nativeCPU only; no marketNN or GPU allocated yet.
+Source point17a03669 remains target-freeFINAL affine, not old global0929.
+
 Old20 D1 exact outcome validated215efd55 under
 A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1:
 completed22:31:54UTC/20GET1auth0retry/20components+20targetrows ready/0late/
@@ -63,8 +86,13 @@ TRAIN45155x64/INNER1675x64/POINT25x64,2998720finite nonnegative elements,
 40.12MB inM;41.76active190.78elapsed/0targets-models-API. Units/split/PIT/
 finality unqualified, no feature/modelGO. Boole derives exactly2features only
 after Pascal physical-close-direction repair; rawOC+ON sign noise is rejected.
-Boyle owns NEW25-stock prospectiveindicatorinput matching07f00f02/0929c516,
-no labels/models/API. Source/Data readiness is not an observed forecast.
+Prospectiveindicatorfd223cd1 and physical-close volumefeatureee8ddff1 are
+ready; new four-model point9d68b3f3 actually retained,0outcomes. OOFData
+ee953ebf ready4folds/separateMETA_FIT/405checks/0Outerlabeldecode. Foundation
+ABIfeasibilityf6ac54c4/63checks binds old8345/1675FP64Nx512x1 and SIMPLE5
+y_raw; log1p conversion needs actual numerical intake parity, no regression
+affine inversion. Point measurement sourceb9ea49ac/45checks6SYN binds exact
+Oct20/21/22/23/26visits; no future outcomes or original Oct27 task adoption.
 
 Task thericher-kis-paper-current20-postclose-20261017:
 natural21:50UTC=06:50KST. Original immutable runtime:

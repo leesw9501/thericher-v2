@@ -145,6 +145,34 @@ UNINSTALLED; no new model export qualification calls.
 
 ## Source-Safe Operations
 
+ACTUAL current GPU owner: Parent exec92557, startedabout03:04UTC,
+A/research/current-costband-tcn-convergence-development-20261020-v1/
+runtime-source/attempts/attempt-1. Source15999a9c/GO inside family is CONSUMED.
+Do not dispatch again, compete for gpu.lock or edit frozen runtime/trainer.
+Source/native/current epoch evidence is not completion; read exact CLOSED,
+selected FINAL-PRED/COMMITTED/FIT, stop/curve/counter facts and cleanup first.
+Seed2702/pack16/max256pat25,5400TRAIN+240finalization/6000active9000elapsed
+origin02:37UTC. Softstop/rollback CPU-proven; timed output !=convergence.
+Previous2701short exit126/450s remains UNKNOWN/incomplete, no point/retry.
+
+Actual new learned OOF Tree root current-oof-lstm-prior-tree-development-
+20261020-v1:COMPLETE/independent8214fae2/6250checks/oneTree+3analytic,
+30cells/science+financialFAIL. Old STACK17 still unavailable. Do not invoke
+its consumed PARENT-GO or re-fit to change metrics. New four-way prospective
+point source under current-oof-lstm-prior-tree-point-20261020-v1/source is
+NOT yet dispatched; one LSTM restore/forward only after current GPU closes,
+typed cleanup+commit before13:25UTC, all four arms regardless scores.
+
+One-day foundation binding-r1/actual COMPLETE UNKNOWN_PARTIAL:
+21GPUforwards/cachec4dcbde0/oneconvergedTTMFAIL/RAWnonconvUNKNOWN,
+12known6UNKNOWN/18cells. Its GO is consumed. Old five-day source staysclosed.
+Independent caller conversion/endpoint binding bridge pure-API gaps;
+never rerun fits to repair those already-bridged component limitations.
+
+Window SOURCE09968753/READY5135e677/Consumerb78e712c is source/nativeCPU
+only, three contexts21/63/252. MacroData0cfe0841 is actual common-cohort join,
+not a market model or PIT guarantee. Kepler's matched HGB source is not GO.
+
 Latest new model roots (not commands to rerun):
 A/research/current-costband-indicator-hgb-development-20261020-v1:
 COMPLETE08b45bec/ABI1ae9892b,2CPUfits/24cells,sciencePASSboth/financialFAIL.
@@ -169,9 +197,16 @@ A/research/current-costband-chronological-stacking-development-20261020-v1.
 GPU-GOd554829b is consumed; gpu-source-preparation/attempts/attempt-1/
 CLOSED.json reports FOUR_FOLD_GPU_COMPLETE02:00:17UTC/4actualfits/leaseclosed.
 Do not dispatch it again. CPU-RAW and CPU-VOLUME first commands failed;
-Kepler owns exact first-cause/positive-zero review under frozen pre-first-effect
-policy. No automatic rerun. META runtime source preparation is not a fit.
-Separate foundation-classifier source/Data preparation has no numerical GO.
+Firstcause9ac8f748: counting wrapper loses native class .fit. RAW executed
+one analytic reference; VOLUME actualeffects0 but nonrefundable charge leaves
+only3not4starts/a7b25b0d. Both CLOSED/no attempt2. Original/proposed META
+unavailable; do not run old launchers or reset counts. Four LSTM fits remain
+valid/independent5dc6b6e4/269checks. NEW TCN model/runtime/evaluation source
+under current-costband-tcn-classification-development-20261020-v1 has no GO
+yet. Separate foundation-classifier source/Data also has no numerical GO.
+Future NEW4-model point measurement sourceb9ea49ac is offline-only under
+A/data/current-long-costband-point-measurement-preparation-20261020-v1;
+45checks/6SYN, no future marks/values read. Original Oct27 task unchanged.
 
 Inspect only verified owned Task names/status/times, not Action arguments/
 private fields. Import Scheduler explicitly; never invoke a Task to inspect it.

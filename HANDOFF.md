@@ -22,73 +22,50 @@ Research restrictions stay package-local. No current operator approval hold.
 
 | Owner | Current Package |
 | --- | --- |
-| Parent | Shared integration/Git. Core c288dfc; last pushed e190ef0. |
-| Kepler / Engine | Chronological RAW/VOLUME first commands failed; exact first-cause/zero-effect review in progress, no automatic rerun. |
-| Confucius / Engine | Four chronological LSTM fits completed; independent packet/counter verification. |
-| Boyle / Data | OOFDataee953ebf ready; exact old512-close foundation-classifier input feasibility. |
-| Pascal / Engine | WeightedTree native SYN ready; final executable META/evaluation caller preparation. |
-| Boole / Strategy | Foundation cache feasibility1eedd47f closed; new matched TTM192/RAW511 classifier source preparation. |
+| Parent | Shared integration/Git. Core c288dfc; last pushed71fcea8. |
+| Kepler / Engine | One-day economics review/caller bridges verified; optional sync47CPUchecks, NOT adopted/no CUDA parity yet. |
+| Confucius / Engine | New long TCN runtime ready15999a9c; Parent ACTUAL trainer92557 owns GPU. |
+| Boyle / Data | Treasury CC0 1950dates acquired8fdbbf88; lagged context0cfe0841 ready, notPIT. |
+| Pascal / Engine | Graceful long trainerc7d92949/41CPUchecks ready; old truncated-TCN point unavailable, no substitution. |
+| Boole / Strategy | One-day foundation UNKNOWN_PARTIAL/one converged TTM FAIL; four-way OOF Tree point source. |
+| Archimedes / temporary Engine | Learned OOF Tree COMPLETE/independent8214fae2; next common-cohort21/63/252 close-window source/input prep. |
 | Execution | Original NAS/F9/nightly owners and budget unchanged; next F9 original visit Oct20 15:10UTC. |
 
 Four NEW chronological LSTM fits actually completed02:00:17UTC, CLOSED in
 current-costband-chronological-stacking-development-20261020-v1/
 gpu-source-preparation/attempts/attempt-1. Actor quiescent/canonical lease
-released, actual_market_fits4, workerexit0; independent packet checks pending.
-No current trainer after this closure. One sample44percent/3030MiB is not
-peak/average. Previous single LSTM and point closures remain unchanged.
+released, actual_market_fits4, workerexit0; independent5dc6b6e4 PASS269checks.
+Epochs21/45/22/28, selected1/25/2/8,10685market updates/22264forwards.
+These four fits are complete, not the current trainer. NEW long TCN2702
+ACTUALLY started about03:04UTC under
+A/research/current-costband-tcn-convergence-development-20261020-v1/
+runtime-source/attempts/attempt-1. Parent exec92557 is its sole numerical owner;
+NATIVE-PASS/MARKET-ATTEMPTED and durable progress exist. Latest read:7complete
+epochs/770updates/1568forwards/8saves including epoch0, not final totals or
+convergence. One current sample40percent/2942MiB, not sustained/peak usage.
+Do not dispatch again, change frozen sources or compete for its canonical lease.
 GPU permission/environment available. Models are small; do not manufacture
 GPU load. Actual sampled LSTM34percent/3183MiB is one sample, not peak/average.
-Ledger313=195CUDA118CPU completed fitted versions, not architectures/winners.
+Prior ledger313 plus NEW4CUDA LSTM,1CPU TTM head and1CPU Tree completed;
+analytic references separately reported. Truncated TCN/RAW nonconvergence
+are not additional completed models. This is not a count of architectures/winners.
 MD assignments are memory, not proof that an LLM/container is running.
 
 ## Latest Research
 
-All below are adaptive development on reused INNER, not independent alpha.
-Long Data e495de90:45155inputTRAIN/45121known+34UNKNOWN/1819dates;
-exact1675INNER/67dates. Raw/log5 overlap and physical purge pass. New affines/
-480 extra within-old-date TRAINrows mean not pure history-only causality.
+All current comparisons are adaptive reused data, not independent alpha.
+Long e495de90 has45121knownTRAIN+34UNKNOWN/exact1675Outer; fold-local
+ee953ebf adds proper internal selection/OOF boundaries. Never substitute the
+old global-scaled inputs for FINAL-fold inputs; affine hashes differ.
 
-- Long raw HGB ee1d22e3:49rounds/best29/44.969fit seconds. Logloss.8526298/
-  Brier.5468570; strict scientific FAIL. First economics later consumed by
-  indicator study:10bp EACHleg growth+.4032percent/DD.4041 versus uniform
-  +.1376/DD.3261. Positive assumed-cost replay, not actual KIS net PnL or
-  all-risk pass. No old model is refit/reforecast.
-- Indicator study COMPLETE08b45bec, ABI1ae9892b:2CPUfits, IND_ONLY3 features
-  36rounds/best16/16.489s; RAW_PLUS192 33/best13/30.217s. Logloss/Brier
-  IND.8520643/.5452252, PLUS.8525169/.5460530; both beat raw and FITprior.
-  Independent5fe6f063 confirms scientific PASS with151packet+48metadata
-  assertions.24econ cells=18new+6byte reuse; both financial primaries FAIL.
-  IND10bp growth+.2973percent/DD.4336; PLUS-.1997/DD.6609. Qualification
-  declares1782checks but lists1783 due clock() side effect; retain the
-  independent correction, never rerun fits or edit closed artifacts.
-- Genuine LSTM64/seed2601 RESULT163089e4:actual1CUDAfit,24epochs/best4,
-  2736market updates/5711forwards/22.427s market stage including I/O/evaluation.
-  Logloss.8516049/Brier.5455716 versus own prior.8546780/.5461508 =>scientific
-  PASS, not financial evidence. Selected e05bf371 and final diagnostics kept.
-  CLOSEDda3cd449:actor quiescent/lease released/144.662cumulativeactive/
-  1897.447elapsed from00:15; SYN3updates separately charged. Independent
-  qualification83df8f19 PASS139checks, no model calls to refresh metadata.
-- Fixed-quarter RAW/IND/PLUS/LSTM fusion PROTOCOL22cfac9f frozen00:34:16
-  before Parent read new outcomes (not before all fits existed). Source
-  414c6d21/48pure checks/30.128source+dispatchreview carry. GO original00:47:01,
-  240TOTALactive1800elapsed/0fits-forwards-GPU/36cells=24byte reuse+12new,
-  0retry. NowCOMPLETE9c73447f/1289checks, science+financialFAIL:LL.8516433/
-  Brier.5456299;10bp growth+.29865percent/DD.39861. No subset/weight/grid/
-  final-packet rescue. Not learned fusion/OOF; close this composition.
-
-Exact new roots:
-A/research/current-costband-indicator-hgb-development-20261020-v1
-A/research/current-costband-long-lstm-development-20261020-v1/runtime-preparation/attempts/premarket-1
-A/research/current-long-costband-fixed-fusion-20261020-v1
-
-Old long-GRU attempt620a2f1b remains CLOSED_NO_RETRY:obsolete binding KeyError
-before CUDA/input/model, no actual fit; full conservative charges retained.
-CPU-only intake repairb18d6392 qualified, not an old retry. LSTM is a different
-cell/seed/new campaign. Two predispatch LSTM defects (callable shadow/mount
-duplication) were fixed before effects and native-proved, not GPU retries.
-Short-GRU45be9df0 and short-fusionc7756fce remain failed/closed. Older TTM,
-risk/TCN, attention, ranking, foundation-model and rule history stays Git/A;
-do not claim only MLP/GRU were tried or reopen closed studies.
+Earlier exact results remain in agents/engine-research.md/Git/immutable A:
+rawHGB ee1d22e3 scientificFAIL; indicator08b45bec scientificPASSboth/
+financialFAILboth; LSTM163089e4/83df8f19 scientificPASSvsownprior;
+fixedquarter9c73447f/1289checks science+financialFAIL. No mixture/epoch rescue.
+The indicator check-count correction5fe6f063 remains external, not a refit.
+LongGRU620a2f1b, fullvolumeHGBb4b739fd and short GRU/fusion failures stay
+closed with original charges. Older TTM, riskTCN, attention, ranking, public
+models/rules remain historical evidence, not candidates to rerun for metadata.
 
 ## Useful New Inputs
 
@@ -127,21 +104,79 @@ current-costband-chronological-stacking-development-20261020-v1 freezes
 01:04:00origin/3600active10800elapsed/17estimators(13solvers4analytic),
 threeOOFblocks2024/25/26H1+FINALinternal63dateINNER before Outer. Numerical
 preparation completed; GPU-GOd554829b consumed by four actual fits.
-CPU RAW/VOLUME first commands returned UNAVAILABLE_NO_AUTORETRY, quiescent;
-Kepler owns exact first cause and positive-zero checks before any second
-command under the prospectively frozen pre-first-effect policy. OOFmeta
+CPU RAW/VOLUME first commands returned UNAVAILABLE_NO_AUTORETRY, quiescent.
+Firstcause9ac8f748: plain counting constructor loses native class .fit
+capability attribute, before actual HGB constructors/fits. RAW did execute
+one analytic prior, so second command prohibited. VOLUME actual effects zero,
+but one nonrefundable error charge leaves only3 of4 allowed starts; fourfold
+retry would exceed eleven caps. CLOSEa7b25b0d/no second launch or fit. Original
+three-expert candidate and proposed two-expert branch remain UNAVAILABLE;
+do not amend old limits or claim a completed learned ensemble. OOFmeta
 15625keys/625dates;fold-local raw TRAIN-input affines,
 no OOF/Outer labels in baseworkers. Finalanalytic reference uses META_FIT
 OOFlabels, not baseFinalTRAIN. Claude REVISE reference/maturity/accounting/
 adaptiveutility scope retained. New U=G-.5DD/riskallowance applies ONLY here,
 not regrading old FAILs or changing deterministic Paper risk.
 
-Foundation feasibility1eedd47f found no retained per-row TTM embedding cache;
-scalers/heads cannot reconstruct one. New extraction is required, not a
-zero-forward cache read. New source/Data preparation compares fixed trusted
-TTM192 with matched RAW511 on the original post-checkpoint8345/1675 cohort.
-No new foundation forwards/fits yet; unknown pretraining/reused INNER limits
-this to isolated adaptive representation research, not qualified alpha/Paper.
+## Latest Completed / Running
+
+- Original TCN2701 short run CLOSED02:36:49UTC/exit126 at450s hard timer;
+  aggregate completion UNKNOWN/no selectedP. Independent86checks confirms
+  lower bounds5epochs/550updates/1120forwards/five intact checkpoints, not
+  total work. Charges1061.402upper retained. No attempt2 or claimed convergence.
+  Its prospective intent is UNAVAILABLE, not a substitute point.
+- NEW long TCN2702 is running, not that old attempt restarted: same tested
+  backbone/fresh seed, max256epochs/pat25, up to5400TRAINseconds plus240
+  selection reserve;6000TOTALactive9000elapsed origin02:37UTC. ModelCPU41,
+  runtime42 and reused37intake checks passed. Soft stop/partial rollback and
+  safe checkpoint NEXTUPDATE were actually exercised. Timed outputs still
+  do not establish convergence. Frozen native algorithm; optional sync not used.
+- Synthetic native throughput cdc34b1f/e100c9ce:9updates12forwards/0market,
+  all ownership closed. Batch400/1024/2048 about804/825/826 examples/s;
+  predeclared10percent tie rule keeps16dates/max400 rows. Larger memory use
+  was not materially faster. Do not infer precise full-epoch/peak throughput.
+- Five-day foundation extraction ecf9e78b stays CLOSED_UNAVAILABLE:one
+  trusted encoder/intake/two warmup attempts/0market forwards/fits; exact
+  failed predicate unretained/UNKNOWN. Separate SYN probe completed2returns,
+  frozen state unchanged, FP32 same-prefix gap1.66893e-6; not historical
+  first-cause proof or tolerance PASS. Do not reopen that old study.
+- NEW same-day OPEN-to-CLOSE foundation producer ACTUALLY completed under
+  A/research/current-one-session-costband-foundation-preparation-20261020-v1/
+  binding-r1/actual.21GPUforwards/cachec4dcbde0 and1allocation closed. TTM192
+  logistic converged354iterations/10.390s but scientificFAIL:LL1.037741/
+  Brier.631262 versus prior1.009428/.614978. RAW512 reached1000 and emitted
+  ConvergenceWarning:UNKNOWN/no retry. Two starts are NOT two completed
+  candidates.12known/6UNKNOWN of18cells;112.202cumulativeactive upper.
+  Decimal caller conversion and pinned same-session timestamp/canonical
+  endpoints bridge pure-API review gaps; retain those component limitations.
+- NEW learned OOF LSTM+dated asset-prior+volume Tree COMPLETE, independent
+  8214fae2/6250checks/Decimalgap8.88e-16:oneTree+3analyticfits/4LSTM+prior1
+  reused/oneOuter read/30completecells. Science andfinancialFAIL. At10bp
+  EACHside Treegrowth+.01265percent/DD.82419 versus LSTM+.08076/.48007 and
+  uniform+.13764/.32607. Positive assumed-cost growth is not superiority/
+  alpha/actual KIS PnL. Do not extend its depth/weight grid or repair original
+  STACK17. Exact root A/research/current-oof-lstm-prior-tree-development-20261020-v1.
+
+NEW four-way OOF Tree point is INTENT/source only, not a forecast yet:
+A/research/current-oof-lstm-prior-tree-point-20261020-v1.
+All LSTM/prior/half/Tree arms forecast regardless of scores if exact inputs/
+selected-model seals exist; wait belongs to its GPU owner, not a global hold.
+FINAL-affine point17a03669/77checks ready02:23:17UTC before13:25cutoff;
+never replace it with old global-scaled0929 inputs. Earlier four-model
+forecaste1fc1ada remains the ACTUAL retained point; future outcomes unknown.
+
+Next finite window experiment: common original512-close cohort, close-return
+only21/63/252daily inputs, same TRAIN-input252 affine/internal63date split/
+seed2801. Source/input preparation only; no new GPU allocation or market fit.
+Existing source/debits/claims stay immutable; no independent alpha or Paper
+promotion is inferred from reused data, native tests, metadata or a forecast.
+
+Treasury actual8HTTP200/0retry/1950dates2019..Oct19/CC0/49checks11SYN;
+85unreported weekdays not filled. Lagged context0cfe0841 ready42905input/
+42871knownTRAIN+34UNKNOWN;575input rows23dates unavailable from earlier
+history. INNER1575/PRED1675/point25 unchanged,187checks11SYN5580scalars/0gap.
+Current-vintage and lag2 assumptions, not PIT/release proof/Execution input.
+Kepler prepares matched RAW189/RAW+Macro192 HGBs on the same common cohort.
 
 ## Data Runtime / Consumed Points
 

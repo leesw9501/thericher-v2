@@ -6,7 +6,48 @@ Engine owns hypotheses/targets/splits/costs/models/interpretation, not broker
 risk. Parent integrates/Git; one canonical GPU allocation. Ledger313 fitted
 versions=195CUDA118CPU before the NEW four chronological LSTM fits; not
 architectures/winners. Four fits actually complete02:00:17UTC/lease released,
-independent packet checks pending. Closed models are not rerun for metadata.
+independent5dc6b6e4 PASS269checks. Add one completed CPU TTM classification
+head and one completed learned Tree; references counted separately. Closed
+models are not rerun for metadata; old truncated2701 is not completed.
+
+## Running / Latest
+
+Parent ACTUAL GPU owner92557:
+A/research/current-costband-tcn-convergence-development-20261020-v1/
+runtime-source/attempts/attempt-1. Seed2702/pack16, max256epochs/pat25,
+5400TRAINseconds plus240selected-export reserve,6000active9000elapsed from
+02:37UTC. NativeCPU41/runtime42/reused37intake and actualGPU3update proof pass;
+MARKET-ATTEMPTED exists. Latest durable read7epochs/770updates/1568forwards,
+not final totals/convergence. Do not dispatch again or alter pinned sources.
+Optional synchronization optimization47CPUchecks is NOT adopted/CUDA-unproved.
+
+Previous2701 short TCN hit frozen450s hard timer/exit126, CLOSED02:36:49.
+Independent86checks: minimum5epochs550updates1120forwards/fivecheckpointseals;
+aggregate/completion UNKNOWN/no selectedP. Retain1061.402upper/old limits.
+No attempt2, old point unavailable, no substitute or claimed convergence.
+
+NEW learned OOF LSTM+asset-prior+volume Tree completed CPU-side:
+A/research/current-oof-lstm-prior-tree-development-20261020-v1/actual.
+OneTree+3analytic fits; old prior1 and4LSTM reused, allP sealed beforeoneOuter
+read,30cells complete/independent8214fae2/6250checks/Decimalgap8.88e-16.
+Scientific/financialFAIL:TreeLL.858056/Brier.550594 vsLSTM.852040/.546528;
+10bpEACHside growth+.01265percent/DD.82419 versus LSTM+.08076/.48007,
+uniform+.13764/.32607. Do not extend its depth/weight grid. New prospective
+all-four intent is pre-Parent-result-read/source ONLY, not a forecast yet.
+
+NEW one-session TTM192/RAW512 classification actually extracted21GPUbatches
+and safe cachec4dcbde0; one allocation closed. TTM LR354iterations converged,
+scienceFAIL LL1.037741/Brier.631262 vsprior1.009428/.614978. RAW512 at1000
+ConvergenceWarning=>UNKNOWN/no retry;12known/6UNKNOWN of18same-daycells.
+Root A/research/current-one-session-costband-foundation-preparation-20261020-v1/
+binding-r1/actual; frozenstatef8932e1b,112.202activeupper inclsource/review.
+This is not two completed heads or a restart of old five-day extraction.
+
+Next finite window family underArchimedes:21/63/252close-return daily inputs,
+common original512-close cohort/oneTRAIN252affine/newinternal63datepurge/
+seed2801. Source/input/nativeCPU only, no extra GPU/marketfit yet. Three
+explicit windows are one finite family, not hidden timeframe/seed multipliers.
+All current comparisons remain adaptive/reused data, not independent alpha.
 
 ## Current Results
 
@@ -19,7 +60,7 @@ TRAINrows/newaffines mean not pure history-only causal comparison.
 | --- | --- |
 | Long raw HGB ee1d22e3 |49rounds/best29/44.969s; logloss.8526298/Brier.5468570 =>strictscientificFAIL. First economics later in08b45bec,10bp EACHleg growth+.4032percent/DD.4041 vs uniform+.1376/DD.3261. Positive assumed-cost replay, not all-riskpass/actualPnL. |
 | Indicator HGB08b45bec / ABI1ae9892b |IND3:36rounds/best16/16.489s,LL.8520643/Brier.5452252. RAWPLUS192:33/best13/30.217s,.8525169/.5460530. Both scientificPASS vsraw+prior, independently5fe6f063. Both financialFAIL.24cells=18new6reuse; IND growth+.2973/DD.4336,PLUS-.1997/.6609 at10bp. |
-| Genuine LSTM163089e4 / CLOSEDda3cd449 |1actualCUDAfit/24epochs/best4/patience20,2736marketupdates/5711forwards/22.427s marketstage inclI/O+eval. LL.8516049/Brier.5455716 vs prior.8546780/.5461508 =>sciencePASS, economicsunexecuted. Selectede05bf371/finalee12ccdc retained. Actor/lease released;144.662active1897.447elapsed from00:15. |
+| Genuine LSTM163089e4 / CLOSEDda3cd449 |1actualCUDAfit/24epochs/best4/patience20,2736marketupdates/5711forwards/22.427s marketstage inclI/O+eval. LL.8516049/Brier.5455716 vs prior.8546780/.5461508 =>sciencePASS, first economics in closedfusion9c73447f. Selectede05bf371/finalee12ccdc retained. Actor/lease released;144.662active1897.447elapsed from00:15. |
 | Old long-GRU620a2f1b |Closed preCUDA/intake/model KeyError on obsolete binding;1allocationattempt/0actualfit/full conservative charges retained. NO retry/refund or renamed continuation. CPUintake repairb18d6392 not a fitgrant. |
 | Short costbandCPU98a0b714/GRU45be9df0/fusionc7756fce |Allclosed; GRU28epochs/best8/12.149s improvesLL butBrierworse. Fixedthird30cellsFAIL, no mixturegrid. |
 
@@ -32,45 +73,28 @@ SampleLSTM34percent/3183MiB is one actual sample, not sustained GPU usage.
 ## Ready Queues
 
 Short breadth:
-- Kepler: fixed-quarter RAW/IND/PLUS/LSTM22cfac9f, source414c6d21, numerical
-  COMPLETE9c73447f/1289checks/0modelcalls/36cells. Science andfinancialFAIL,
-  LL.8516433/Brier.5456299;10bp growth+.29865percent/DD.39861. No subset/
-  weight/threshold/grid/final rescue or rerun.
-- Pascal/Boole: genuine price-volume HGB191 feature/source/data preparation.
-  Volumef816cbd8 supports all45155/1675/25 x64. Original sign(OC+ON)
-  falsified on physically flat closes; raw-sum diagnostic is REJECTED as
-  financial flow. Repaired second feature uses exact canonical close-direction
-  timesvolume. No market-chosen epsilon/FP32roundtrip.71nativeHGBchecks/one
-  SYNfit validnumericproof; repairedDataee8ddff1 ready. Full-dataHGB191
-  b4b739fd failed preconstructor/fit on grantfilename,0actualfits/newcells,
-  172.775961active preserved/no secondlaunch. Explicitbinding206c390a is
-  for genuinelyNEW callers, not renamed retry.
-- NEW selected4-model25-stock point ACTUALLY retained01:15:25UTC/e1fc1ada,
-  CLOSEDab4329ea/COMMITTED9d68b3f3,39offlinechecks/4calls/1LSTMrestore/
-  1allocation/0fits/0outcomes/actor+leaseclosed. No broker/newschedule orold
-  point resurrection. Oct20/21/22/23/26 outcomes remain unobserved.
+- Kepler: matched RAW189 versus RAW+Macro192 HGB source/native preparation.
+  Boyle owns the lag2 Treasury-context join/common input-only cohort.
+  Current-vintage/revised data, not historical release/PIT proof; both models
+  must use identical keys/internal selection/payoff. No market fits yet.
+- Boole: four-way OOF Tree point source22checks, one future LSTM restore/
+  forward then prior/half/tree. Forecast ALL arms regardless scores, not a
+  selected winner. Actual GPU dispatch waits for named owner92557 to close;
+  no new schedule or substitution for unavailable old TCN point.
+- Strategy primary-paper review: next profit-aligned objective must become a
+  finite experiment or concrete rejection, not a reading list/head grid.
 
 Longer depth:
-- Long-history LSTM completed; safe selected/final checkpoints and curves kept.
-- NEW chronological stacking Source11e5ceee/contract83a599ab/Parentintegration:
-  Dataee953ebf READY4folds/separateMETA_FIT15625keys/141.85MB/405checks/
-  0Outerlabeldecode.3OOFblocks2024/25/26H1+FINALinternal63dateINNER;
-  fold-localTRAIN-inputaffines, no fakeOOF/cachedOuter-selectedexperts.
-  Frozen17estimators=12base+Tree+4analytic,3600TOTALactive10800elapsed
-  origin01:04:00. FINALassetprior usesMETA_FITpool, notbaseFINALTRAIN.
-  KeplerCPU/ConfuciusGPU4LSTM/PascalnativeTree69+11checks/META source.
-  ActualGPU-GOd554829b consumed/4fits complete02:00:17UTC. CPUgroups first
-  commands failed/quiescent; exact firstcause/positive-zero review before
-  any permitted pre-first-effect correction. META executable preparation
-  continues independently. NewU=G-.5DD
-  is adaptiveonly, not oldFAILregrade/deterministicPaper-risk change.
-- Public-model studies already include TTM/Chronos/TimesFM. An exact trusted
-  checkpoint/new isolated hypothesis may be considered, not arbitrary repeat
-  or pretending public models have not been tried.
-- NEW foundation feasibility1eedd47f: no saved TTM per-row embeddings;
-  new extraction needed. Boole/Boyle prepare matched fixed TTM192/RAW511
-  classifiers on original post-checkpoint8345/1675 keys, not e495 history.
-  Source/Data only so far; isolated adaptive representation claims only.
+- Actual long TCN2702 is running as detailed above. Use exact terminal/selected
+  packet/cleanup, not source or epoch markers, before dependent evaluation.
+- Archimedes: one finite21/63/252 close-return-window LSTM family, same common
+  512-close cohort/one TRAIN252 affine/seed2801/internal63date purge. Input/
+  nativeCPU/source only; three explicit windows, no unbounded grid/extra GPU.
+- Optional batched validation-sync source47CPUchecks is not adopted. CUDA
+  parity/timing are still required in a separately owned future probe.
+- Prior standalone LSTM/indicator/fixedquarter/OOFTree/TTM studies stay closed.
+  Do not refit or reforecast to refresh counts, rescue bad scores or relabel
+  reused data as untouched. Public TTM/Chronos/TimesFM were already considered.
 
 ## Boundaries / Consumers
 
