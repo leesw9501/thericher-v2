@@ -56,6 +56,16 @@ Cold preflight57cb192b/618fb981/native d31b9e4d found no D1 production fault.
 
 ## Actual RTH Fault / Recovery
 
+Latest volume support Consumerf816cbd8 under
+A/data/current-long-costband-volume-input-20261020-v1 is READY:
+TRAIN45155x64/INNER1675x64/POINT25x64,2998720finite nonnegative elements,
+0missing/zeros/allzero.114919canonical/25prefix/25offset/22readback/9SYN,
+40.12MB inM;41.76active190.78elapsed/0targets-models-API. Units/split/PIT/
+finality unqualified, no feature/modelGO. Boole derives exactly2features only
+after Pascal physical-close-direction repair; rawOC+ON sign noise is rejected.
+Boyle owns NEW25-stock prospectiveindicatorinput matching07f00f02/0929c516,
+no labels/models/API. Source/Data readiness is not an observed forecast.
+
 Task thericher-kis-paper-current20-postclose-20261017:
 natural21:50UTC=06:50KST. Original immutable runtime:
 A/infra/data-dispatch-spacing-runtime-freeze-20261018-v1/rth/runtime.

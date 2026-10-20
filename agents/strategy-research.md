@@ -21,16 +21,18 @@ RESULT45be9df0/loglossimproved/Brierworse/strictFAIL. Engine owns full facts.
 Fixed-third fusionc7756fce completed30cells/0fit/primaryFAIL; no mixturegrid.
 LongHGB ee1d22e3 nonconstant/best29 but strictBrierFAIL. LongGRU620a2f1b
 technicalfailure preCUDA/input/model, CLOSEDno retry/performanceUNKNOWN.
-NEW next hypotheses: genuineLSTM64 on45121longTRAIN and3fixedindicator HGB
-ablation (indicator-only/raw-plus vs cachedraw). Source/native only until own
-finite contracts/qualified intake and GO; no renamedGRU continuation or new
-information claim from deterministic raw transforms. Independent NEW stock-
-only prospective dependency review assignedBoole; legacySPY policies unchanged.
+GenuineLSTM64 and two indicator HGB fits completed; source-only projections
+are superseded by Engine results. New chronological stacking completed four
+CUDA LSTM fits02:00:17UTC; CPU firstcause/META preparation remain separate.
+Boole feasibility1eedd47f found no saved per-row TTM embedding cache. Next
+isolated hypothesis compares fixedTTM192 and matchedRAW511 classifiers on
+original post-checkpoint8345/1675 keys. Boole/Boyle own source/Data preparation,
+no new foundation forwards/fits yet. Legacy SPY points remain closed.
 Claude REVISE concerns remain contract limits, not an approval hold.
 
 ## What Current Evidence Rejects
 
-Ledger310 fitted versions, not architectures/winners. GRU/TCN risk proxy
+Ledger313 fitted versions, not architectures/winners. GRU/TCN risk proxy
 improves reused stock INNER QLIKE, but12ETF domain learned/blend lose EWMA;
 uniform beats learned financial allocation. Do not extend that grid.
 TTM heads/adaptation lose analytic TRAINmean; attention return/aux-risk and
@@ -45,6 +47,17 @@ Blend reduces drawdown but adds no growth over reversal. Price-only adaptive
 research, not alpha/actual Paper PnL; no horizon/weight/Topk grid.
 
 ## Prepared Mechanisms / Concrete Limits
+
+Latest08b45bec indicator ablation completed2CPUfits/sciencePASSboth confirmed
+5fe6f063, financialFAILboth. GenuineLSTM163089e4 completed1CUDAfit24epochs/
+best4/sciencePASSvsprior. Fixedquarter9c73447f completed0fit36cells/science
+andfinancialFAIL, not learned fusion/independentalpha.
+VolumeDataf816cbd8 ready:all45155TRAIN/1675INNER/25point x64,0missing/zero.
+Newprice-volume two-feature source had a decisive SYNfalsification:OC+ON
+cancellation can imply +/-1flow on physically flat closes. Reject raw-sum
+diagnostic as financialflow; newkernel uses exactcanonicalclose directions,
+no market-selected epsilon. NativeHGB19171checks/oneSYNfit is not marketGO.
+Raw/indicator positive assumed-cost replay is not actual KISPnL/all-riskpass.
 
 - 252session momentum: current-sector-regime-strategy-preparation-20261020-v1,
   PROPOSAL/SOURCE-READY,16SYN/110.125active. Prior-close-only positive nominal

@@ -2,101 +2,91 @@
 
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
-Engine owns targets/splits/costs/fitting/interpretation, not broker risk.
-Parent integrates/Git; Steward owns one GPU allocation. Ledger310 fitted
-versions=194CUDA116CPU, not architectures/profitable models.
+Engine owns hypotheses/targets/splits/costs/models/interpretation, not broker
+risk. Parent integrates/Git; one canonical GPU allocation. Ledger313 fitted
+versions=195CUDA118CPU before the NEW four chronological LSTM fits; not
+architectures/winners. Four fits actually complete02:00:17UTC/lease released,
+independent packet checks pending. Closed models are not rerun for metadata.
 
-## Current Conclusion / Next
+## Current Results
 
-No actual trainer running. Absolute-return/aux-risk attention and paired
-absolute-vs-midrank HGB both selected constant checkpoints; no more fit in
-that input/task family. Diagnosis found no checked sign/unit/key/selector/
-constant-export bug, not proof of market unpredictability or no rank signal.
-Actionable-target SOURCE795f0a89/PROTOCOLe0ea9d00/30checks/2tiny native fits
-is ready: fixed3class rawLOG5 cost bands, h=log((1+.001)/(1-.001)),10bp
-EACH side. Eleven old contracts checked; plain binary/quantile repeats rejected.
-NEW development authorized under
-A/research/current-actionable-target-development-20261020-v1:
-600cumulativeactive1800elapsed including25.520source debit/CPU2RAM3/2market
-fits0retry/perfit120. Logistic C1 + HGB classifier depth3/max128/pat20,
-chronological INNER/native selectedprefix0 allowed, no classweight/grid.
-Strict logloss AND Brier improvement over FIT class priors; ordinal p_gain-
-p_loss is NOT expected profit. Both models/own exposure-matched uniform/full
-uniform/cash x3costs=18fixed cells, selected/final diagnostic packets once.
-Actual COMPLETE98a0b714/ABIe2751d34/190checks:2CPUfits/18cells,
-logistic71iterations/1.253s logloss.892459/Brier.575164; HGB20rounds/6.565s/
-prefix0. FITprior.853822/.545200; both scientific/financial FAIL. HGB10bp
-growth+.1376percent exactlyuniform, not learnedgain.58.076active673.712elapsed
-inclprep/failures/0retry/actorclosed. Claude REVISE named proper-
-score baseline/ordinal-vs-payoff/pass-kill/adaptive INNER, restrictions kept.
-Review: A/review/current-actionable-target-campaign-20261020-v1/claude.json.
+All are adaptive reused INNER, not independent alpha. Datae495:45155input
+TRAIN/45121known+34UNKNOWN/1819dates; exact1675INNER/67dates. Physical purge,
+raw/log5 overlap and TRAIN-input-only affines verified.480additional old-date
+TRAINrows/newaffines mean not pure history-only causal comparison.
 
-Independent GRU64/seed2501/one-layer3class candidate frozen BEFORE CPU
-outcomes, in A/research/current-costband-gru-preparation-20261020-v1.
-NativeCPU58checks/CUDAcheckpoint-RNG-NEXTUPDATE proof then actual1CUDAfit
-23:05:14UTC/28epochs/best8/12.149s; RESULT45be9df0/independentd1b269e7/
-81checks/lease released23:05:27. Logloss.851328 improves overprior.853822
-but Brier.545660 worsens vs.545200 =>strict scientific FAIL.647CUDAupdates
-(644market+3SYN),1allocation0retry/55.446cumulativeactive662.175elapsed,
-originalclock/precharge preserved. Selected/final packets/weights/curves
-retained;12economiccells UNKNOWN/unexecuted, not a profitability result.
+| Candidate | Actual Result |
+| --- | --- |
+| Long raw HGB ee1d22e3 |49rounds/best29/44.969s; logloss.8526298/Brier.5468570 =>strictscientificFAIL. First economics later in08b45bec,10bp EACHleg growth+.4032percent/DD.4041 vs uniform+.1376/DD.3261. Positive assumed-cost replay, not all-riskpass/actualPnL. |
+| Indicator HGB08b45bec / ABI1ae9892b |IND3:36rounds/best16/16.489s,LL.8520643/Brier.5452252. RAWPLUS192:33/best13/30.217s,.8525169/.5460530. Both scientificPASS vsraw+prior, independently5fe6f063. Both financialFAIL.24cells=18new6reuse; IND growth+.2973/DD.4336,PLUS-.1997/.6609 at10bp. |
+| Genuine LSTM163089e4 / CLOSEDda3cd449 |1actualCUDAfit/24epochs/best4/patience20,2736marketupdates/5711forwards/22.427s marketstage inclI/O+eval. LL.8516049/Brier.5455716 vs prior.8546780/.5461508 =>sciencePASS, economicsunexecuted. Selectede05bf371/finalee12ccdc retained. Actor/lease released;144.662active1897.447elapsed from00:15. |
+| Old long-GRU620a2f1b |Closed preCUDA/intake/model KeyError on obsolete binding;1allocationattempt/0actualfit/full conservative charges retained. NO retry/refund or renamed continuation. CPUintake repairb18d6392 not a fitgrant. |
+| Short costbandCPU98a0b714/GRU45be9df0/fusionc7756fce |Allclosed; GRU28epochs/best8/12.149s improvesLL butBrierworse. Fixedthird30cellsFAIL, no mixturegrid. |
 
-Boole next no-fit fixed-third selected LOGIT/HGB/GRU probability fusion:
-A/research/current-costband-fixed-fusion-development-20261020-v1,
-240active1800elapsed/0models-GPU-API/30fixed cells=old18 byte-reused+12new.
-No expert/weight/hurdle selection, final-score rescue, in-sample TRAIN fusion
-fit or independent alpha claim. Strict blend growth>all3singles+uniform+ownEM,
-DD<=uniform+ownEM; all outcomes reported. Frozen-kernel reproofce59d5f4 PASS/
-25fixtures/47.438active; old23377212 saw pre-freeze count2, actual74f74ed7
-has4. No old economics/model is rerun merely to refresh that stale review.
-Fusion nowCOMPLETEc7756fce/30cells/1327checks:blend10bp growth-.2641percent,
-GRU-.0827,uniform+.1376; primaryFAIL. Close mixture grid, not all research.
-Long Data e495de90 READY45155inputTRAIN/45121known+34UNKNOWN/1819dates,
-exact1675INNER. Raw/log5 overlap/purge pass;480additional within-old-date
-TRAINrows and new affines mean not pure history-only causal comparison.
+Indicator qualification has1782declared/1783listed checks from a clock()
+serialization side effect; independent5fe6f063 establishes the correction and
+151packet+48metadata assertions. Original artifacts remain unchanged.
+No reforecast/refit is needed. Early stop is not global convergence proof.
+SampleLSTM34percent/3183MiB is one actual sample, not sustained GPU usage.
 
-Long-HGB actualee1d22e3/70c85b2e:49rounds/best29/44.969fitseconds,
-logloss.8526298/Brier.5468570, strictFAIL. CPU phase1284e43f closed, no rerun.
-Long-GRU dispatch620a2f1b CLOSED00:10:23UTC KeyError beforeCUDA/input/model;
-actual numerical counts observed0, aggregate UNKNOWN/conservative full error
-caps retained.395.866cumulativeactive3383.947elapsed, actor/lease quiescent.
-0retry/oneallocation consumed: no renamed GRU retry/refund. Firstcause old
-point_owner_gate_passed vs actual current_resource_gate_passed binding.
-Exact-imageCPU intake repairb18d6392 PASS45121/1675+19SYN/25.690active,
-0model/CUDA; no original artifacts modified or numerical continuation granted.
+## Ready Queues
 
-Ready NEW source/native packages, no numeric GO yet:
-- Pascal: current-costband-long-lstm-preparation-20261020-v1; genuineLSTM64/
-  seed2601/max128/pat20/1marketfit,1800totalactive7200elapsed including all
-  source/runtime/failures/cleanup. Confucius owns disjoint runtime-preparation.
-  Qualified FULLhostbinding->sealedintake inexactimage CPU-only precedesCUDA.
-  Only NEW protocol may predeclare separately charged premarket technical
-  attempts; never refund old family or retry after market/UNKNOWN failure.
-- Kepler: current-costband-indicator-hgb-preparation-20261020-v1; exact2new
-  HGBfits indicator-only3/raw-plus192 versus cached longraw189, same masks/
-  dates/weights/classlabels;900totalactive3600elapsed/0retry/perfit240.
-  Real native split/predictor/export SYN beforeGO. Three deterministic raw
-  transforms are inductive biases, not new information or independent evidence.
-Indicator Consumer07f00f02 and NEW prospectivestock Consumer0929c516 ready.
-Prospective25/25x63x3 uses NEW e495affines/stock-only dependencies; oldTTM/Risk
-SPY conflicts and population rules unchanged. No prospective outcome decoded.
+Short breadth:
+- Kepler: fixed-quarter RAW/IND/PLUS/LSTM22cfac9f, source414c6d21, numerical
+  COMPLETE9c73447f/1289checks/0modelcalls/36cells. Science andfinancialFAIL,
+  LL.8516433/Brier.5456299;10bp growth+.29865percent/DD.39861. No subset/
+  weight/threshold/grid/final rescue or rerun.
+- Pascal/Boole: genuine price-volume HGB191 feature/source/data preparation.
+  Volumef816cbd8 supports all45155/1675/25 x64. Original sign(OC+ON)
+  falsified on physically flat closes; raw-sum diagnostic is REJECTED as
+  financial flow. Repaired second feature uses exact canonical close-direction
+  timesvolume. No market-chosen epsilon/FP32roundtrip.71nativeHGBchecks/one
+  SYNfit validnumericproof; repairedDataee8ddff1 ready. Full-dataHGB191
+  b4b739fd failed preconstructor/fit on grantfilename,0actualfits/newcells,
+  172.775961active preserved/no secondlaunch. Explicitbinding206c390a is
+  for genuinelyNEW callers, not renamed retry.
+- NEW selected4-model25-stock point ACTUALLY retained01:15:25UTC/e1fc1ada,
+  CLOSEDab4329ea/COMMITTED9d68b3f3,39offlinechecks/4calls/1LSTMrestore/
+  1allocation/0fits/0outcomes/actor+leaseclosed. No broker/newschedule orold
+  point resurrection. Oct20/21/22/23/26 outcomes remain unobserved.
 
-Confucius intake audit8834e9a COMPLETE/970checks/18fixtures/64.078active:
-TTM512 composes pinned retained history+newcapture,379 is required-context
-setting not literal tail truncation. No proven deterministic source block;
-actual numeric prefix/offset/eligible count still requires owned intake/new9.
-No old worker change. Actual TTM00669c6b INPUT_UNAVAILABLE:3be66f90 shows
-duplicateSPY close/volume conflict BEFOREprefix/512eligibility; eligiblecount
-UNKNOWN, not379truncation. Dependency756b9df5 rejects oldSPY NaN/drop shortcut.
-Risk terminal missing/counts/pastcleanupUNKNOWN; source9fb68f74 proves Windows
-lexicalPath publication defect but historical first exception unobserved.
-Neither point is rerun; new stock-only consumer is a distinct matched contract.
+Longer depth:
+- Long-history LSTM completed; safe selected/final checkpoints and curves kept.
+- NEW chronological stacking Source11e5ceee/contract83a599ab/Parentintegration:
+  Dataee953ebf READY4folds/separateMETA_FIT15625keys/141.85MB/405checks/
+  0Outerlabeldecode.3OOFblocks2024/25/26H1+FINALinternal63dateINNER;
+  fold-localTRAIN-inputaffines, no fakeOOF/cachedOuter-selectedexperts.
+  Frozen17estimators=12base+Tree+4analytic,3600TOTALactive10800elapsed
+  origin01:04:00. FINALassetprior usesMETA_FITpool, notbaseFINALTRAIN.
+  KeplerCPU/ConfuciusGPU4LSTM/PascalnativeTree69+11checks/META source.
+  ActualGPU-GOd554829b consumed/4fits complete02:00:17UTC. CPUgroups first
+  commands failed/quiescent; exact firstcause/positive-zero review before
+  any permitted pre-first-effect correction. META executable preparation
+  continues independently. NewU=G-.5DD
+  is adaptiveonly, not oldFAILregrade/deterministicPaper-risk change.
+- Public-model studies already include TTM/Chronos/TimesFM. An exact trusted
+  checkpoint/new isolated hypothesis may be considered, not arbitrary repeat
+  or pretending public models have not been tried.
+- NEW foundation feasibility1eedd47f: no saved TTM per-row embeddings;
+  new extraction needed. Boole/Boyle prepare matched fixed TTM192/RAW511
+  classifiers on original post-checkpoint8345/1675 keys, not e495 history.
+  Source/Data only so far; isolated adaptive representation claims only.
 
-Retain already computed selected TRAIN/INNER scores in new producers.
-TRAIN in-sample scores are NOT OOF inputs for learned fusion. Old missing
-packets stay missing; never reforecast closed models for metadata.
-Reused INNER is adaptive development, not independent replication/alpha.
-GPU utilization/epoch counts/source readiness are not product outcomes.
+## Boundaries / Consumers
+
+Current ordinary-equity risk is assessed against aligned risky/same-gross
+controls, not zero drawdown versus cash. Do not regrade frozen failures.
+Scientific/proxy improvements are not actual profit; a research failure is
+not a permission hold on provisional Paper. Deterministic broker risk unchanged.
+Learned fusion requires chronological OOF; these fixed blends are not learned
+OOF. Retained in-sample TRAIN packets must never masquerade as OOF.
+
+NEW stock-only0929c516/independent03fac4ba matches NEW e495 training.
+Old TTM consumedINPUT_UNAVAILABLE3be66f90:duplicateSPY source conflict BEFORE
+512eligibility, not379truncation. Old upstreamSPY dependency756b9df5 forbids
+NaN/drop. Risk terminalmissing/counts/pastcleanupUNKNOWN; source9fb68f74
+proves lexicalPath defect but historical first exception unobserved.
+Do not reopen their models/points/caps. Future outcomes remain unknown.
 
 ## Material Completed Results
 

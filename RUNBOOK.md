@@ -145,6 +145,34 @@ UNINSTALLED; no new model export qualification calls.
 
 ## Source-Safe Operations
 
+Latest new model roots (not commands to rerun):
+A/research/current-costband-indicator-hgb-development-20261020-v1:
+COMPLETE08b45bec/ABI1ae9892b,2CPUfits/24cells,sciencePASSboth/financialFAIL.
+Independentreview5fe6f063 notes1782declared/1783listed qualification checks;
+closed artifacts unchanged. No numerical rerun for serialization metadata.
+A/research/current-costband-long-lstm-development-20261020-v1/
+runtime-preparation/attempts/premarket-1:
+actual/RESULT.json163089e4/CLOSED.jsonda3cd449,1CUDAfit24epochs/best4,
+actorquiescent/lease released00:46:37UTC. PARENT-GO22aa54e7 is CONSUMED;
+never rerun dispatch.py for metadata. Selectedpackete05bf371 retained.
+A/research/current-long-costband-fixed-fusion-20261020-v1:
+PROTOCOL22cfac9f/source414c6d21/numericalGO00:47:01,0models/forwards/GPU,
+36cells=24byte reuse+12new/0retry. COMPLETE9c73447f/science+financialFAIL;
+never rerun for metadata. NEWprospectivepoint actually retained01:15:25UTC:
+A/research/current-long-costband-prospective-point-20261020-v1/
+source-preparation/host-runtime/point-once/COMMITTED.json9d68b3f3,
+forecaste1fc1ada/CLOSEDab4329ea/4calls0fits0outcomes/actor+leaseclosed.
+OriginalOct27measurement has not automatically adopted these new models.
+
+Chronological stacking:
+A/research/current-costband-chronological-stacking-development-20261020-v1.
+GPU-GOd554829b is consumed; gpu-source-preparation/attempts/attempt-1/
+CLOSED.json reports FOUR_FOLD_GPU_COMPLETE02:00:17UTC/4actualfits/leaseclosed.
+Do not dispatch it again. CPU-RAW and CPU-VOLUME first commands failed;
+Kepler owns exact first-cause/positive-zero review under frozen pre-first-effect
+policy. No automatic rerun. META runtime source preparation is not a fit.
+Separate foundation-classifier source/Data preparation has no numerical GO.
+
 Inspect only verified owned Task names/status/times, not Action arguments/
 private fields. Import Scheduler explicitly; never invoke a Task to inspect it.
 Existing private readers require exact current image/source/profile, network

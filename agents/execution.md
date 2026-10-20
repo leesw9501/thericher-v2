@@ -60,6 +60,16 @@ new AMEX bank entry or fleet migration; Goal97 compatibility unverified.
 
 ## Historical Recovery Evidence (Not Current Readiness)
 
+New scoped implication proof4f610ea5/native1160b147 establishes noorder-opener
+only in old18:30 lifetime underexactpinned honest-host source. Not globalzero
+or allpending ancestry. Corrected reader repaired-r2/FINAL71c8da30 under
+A/execution/current-f9-pending-lifetime-binding-20261020-v1 actually parsed
+strictprivateRO:pending/seed/canonical bindingmatch, creation/submitmarker
+timestamps18:30, but durableorigin/priorcoverageUNKNOWN.1sourceimport+1RO
+container removed/0API/credentials/privatewrites/Taskmutation.38.284newactive
+plus48.094priorfailedimportdebits. Preserve missing00:10UNKNOWN/reservation
+held; no release/replay/reset/newentry or unchanged reader repetition.
+
 Gauss owns A/execution/current-nightly-fixedrank-technical-recovery-20261020-v1.
 Natural nightly23:50 returned readonly_open_orders_rejected:1auth1GET/
 0order-cancelPOST. New actual open-orders-continuation-r1-visit2/RESULT.json
