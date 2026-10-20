@@ -15,7 +15,10 @@ INPUTM/.../current-broad-residual-live64-input-20261020-v1/INPUT.json0d677995,
 42919bytes/16SYN387actualchecks/oneactual0retry/31Dataupper/0transforms-
 models-forward-GPU-API-Task. ExistingE53 imports frozen, no mutableMD gates.
 Consumer:newBroadB+ResidualMLP prospectivepair/onefixedrankhalfpolicy;
-readiness is NOT a forecast. No actualnewCOMMITTED points yet.
+readiness alone is NOT a forecast. Consumer now ACTUAL FINALa0569a2e/
+ABI07c6ea7f/COMMITTED326088cf at07:52:24UTC:2CPUforwards/onefixedrankpolicy.
+Boyle owns same-window8class3+rank measurement adoption/preparation; existing
+six-model actionff8d67bb unchanged until exact currentbackup/newGO.
 
 Broader Window21 actualREADY under
 A/data/current-nas-breadth-window21-input-20261020-v1/CONSUMER.json8b6da917:

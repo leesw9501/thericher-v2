@@ -4,20 +4,21 @@ Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 Own hypotheses/data targets/splits/costs/models, not broker risk/capital.
 All historical outputs below are adaptive reused data, not independent alpha.
-GPU actors closed; no active training inferred. Do not duplicate old fits.
+GPU actors closed; next cross-sectional interaction feasibility is SOURCE-only.
+Do not duplicate old fits or infer active training from preparation.
 
 ## Current Priority
 
 1. Provisional Paper A: native profile e53c290/1370d106 verified; actualCPU
    proposal a0d04cc1 and IMAGEb96a8ef8/fc8309c4 qualified. R4sourcef3711b38
-   fixes frozen imports; amendedGO8a77579b registration underway, not yet
-   evidenced installed. Same original shared tenth/native custody, no profit
+   fixes frozen imports; actual9b1d0e84 TWO_READY_ENABLED/freshCOMPASS,
+   prepareOct21 13:10UTC/execute14:00UTC. Same shared tenth/native custody, no profit
    prerequisite or full-universe/replay-parity claim.
 2. All recent fits CLOSED; no duplicate training. Residual1372c432 twofits/
    24cells and broad8198cdbe one95epochfit/15cells did not pass frozen
    primaries. Lower risk or descriptive higher growth is not independent alpha.
    Shortlist candidates may still enter correctly scoped provisional Paper.
-3. Current SOURCE/conditional CPU dispatch:
+3. Completed prospective pair:
    A/research/current-broad-residual-prospective-pair-preparation-20261020-v1.
    BroadBepoch75 + ResidualMLPepoch3, ONE existing fixedrankhalfMLP/rawSD
    nonprobability composition. Max2model-onlyrestores/2actualCPUforwards,
@@ -25,13 +26,20 @@ GPU actors closed; no active training inferred. Do not duplicate old fits.
    Live64Data9e4dac7a/INPUT0d677995 ready25x64FP64/1600known/actualOct19index0;
    literal oldAAD forB21; frozen6featurekernel/scaler forMLP, no FP32 inverse.
    Family600active7200elapsed from07:32:40UTC/deadline09:32:40, hardforecast
-   commit<13:25 beforeofficial13:30. No currentnewpoint completion evidence yet.
-   Seal all25 class3 probability rows and explicit NONprobabilityrankpolicy
-   before any future outcomes. Rankpolicy has no proper-score interpretation.
+   commit<13:25 beforeofficial13:30. FINALa0569a2e/ABI07c6ea7f/
+   OUTCOMEf61c9dec/COMMITTED326088cf at07:52:24.828544UTC:2CPUrestores/
+   2forwards25rows each,0fits-GPU-API-targetdecodes;146source51readbackchecks,
+   allactors/containerclosed. Rankpolicy has no proper-score interpretation.
 4. Original6actualpoints e1fc1ada/2b168e66 and futureOct20/21/22/23/26 targets
    remain untouched/unknown. Boyle prepares SAMEOct27window extension only
-   after newpoints commit; no newworker/trigger/reportchain. Company8NAS
+   from actualpoints/current6backup; no newworker/trigger/reportchain. Company8NAS
    lifecycle still UNFINISHED; forecast/commit/source is not an exact fill.
+5. Boole next SOURCE feasibility: simultaneous cross-sectional interaction
+   versus independent pooled per-stock models; reject duplication and test
+   aligned panel/targets/availability before one finite numerical campaign.
+   Confucius independently challenges primary sources/novelty/strongestkill.
+   SOURCE cap120active1800elapsed/0fits-NN-GPU-targetmarkdecodes; no numerical
+   dispatch yet. No architecture grid, same-data rescue or idle-GPU filler.
 
 ## Recent Contracts
 

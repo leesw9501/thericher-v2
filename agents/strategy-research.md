@@ -36,7 +36,8 @@ Window3LSTM fits COMPLETE/02cffb45/30cells/audit49f94193:
 proper-scoreFAIL all/singlesfinancialscreenPASS/thirdFAIL because identical
 baskets.10bp growth+.73515percent/DD.49368 vsuniform+.13764/.32607;
 higher DD/adaptive reuse explicit, no window/ensemble or independent alpha.
-Archimedes prepares simple Window21 CPU proposal adapter, not deployment.
+Window21 CPU proposal adapter/profile now installed9b1d0e84 for futureOct21;
+both newtasks ReadyEnabled/freshCOMPASS, not execution/fill evidence.
 
 Macro2CPUfits best84/1; historical OuterABI failed/no economic result.
 BOTH prospective25-row points ACTUALLY committed04:21:22UTC/2b168e66,2CPU
@@ -76,10 +77,13 @@ one17,347paramLSTM95epochs/selected75/pat20/10830market+4SYNupdates;
 different stock/year/prior domain, not isolatedcausalbreadth or untouched.
 10bp growth/DD percentNAV:A.8162/.4937,B.5652/.3808,uniform.1129/.3261,
 pairedprimaryFAIL. BroadproperUNKNOWN40missing, no covered-only success.
-Newprospectivepair SOURCE consumesBepoch75/ResidualMLPepoch3 plusONEfixed
+Newprospectivepair ACTUAL consumesBepoch75/ResidualMLPepoch3 plusONEfixed
 rankhalfMLP/rawSD NONprobabilitypolicy, not another same-outcome tuninggrid.
-Live64Data9e4dac7a ready, futuretargetOct20/21/22/23/26 unknown; no actual
-newpointcompletion evidence yet and no rankproper-score/profitclaim.
+Live64Data9e4dac7a;FINALa0569a2e/ABI07c6ea7f/COMMITTED326088cf at07:52:24UTC,
+2CPUforwards/0fits-GPU-outcomes. FuturetargetOct20/21/22/23/26 unknown;
+no rankproper-score/profitclaim. Confucius invoked for primary-source novelty/
+kill challenge of cross-sectional set interaction; Boole sourcefeasibility
+in parallel, not another price-only architecturegrid or numericaldispatchyet.
 
 ## Earlier Mechanisms
 

@@ -10,13 +10,12 @@ required; no private amount/fees/netPnL inferred. AGENTS owns authority.
 | Owner | State / Next |
 | --- | --- |
 | Parent | Verified code integration1370d106 committed/pushede53c290; current integration/docs. |
-| Archimedes / Execution | R4publicimagePASS; prepareDISABLED/executeABSENT7b7e7db0. NewsemanticCOMdefault recovery source, no enables/Run. |
+| Archimedes / Execution | Actual9b1d0e84 TWO_READY_ENABLED/freshCOMPASS; futureprepare13:10/execute14:00Oct21UTC. No Run/API/fill. |
 | Kepler / Data | Live64Data9e4dac7a ready1600known/25x64;31upper/0models-API-Tasks. BroadData8b6 complete, no rederivation. |
-| Boyle / Data | Six-model measurement updateff8d67bb/readback0e97d07c ACTUAL; allclosed/originalOct27window. |
-| Boole / Engine | Broad8198cdbe1fit95epochs/selected75 CLOSED; newB+ResidualMLP prospectivepairCPU SOURCE/conditionaldispatch, no pointyet. |
+| Boyle / Data | Actualpair adoption/native/current6backup for SAME-window8class3+rank extension; no secondTaskupdateyet. |
+| Boole / Engine | Broad8198cdbe CLOSED; paira0569a2e COMMITTED07:52UTC. Cross-sectional SOURCE feasibility active,0newfit/GPU. |
 | Pascal / Infra | Fleetbank nativeSYN compat e6e0250f PASS56+172pins; threeimage-native oldreadsnew PASS, finalhostreverse UNKNOWN. |
-| Confucius / Infra | IMAGEb96a8ef8/fc8309c4 nativequalified734source/Python3.12.15/10packages/Torchabsent/3bank2codec; allclosed/not a deployment. |
-| Boyle / Data | Existing6-pointOct27worker actualff8d67bb unchanged;8class3+rankpolicy extension SOURCE waitsnewCOMMITTED forecasts, notLive64 readiness. |
+| Confucius / Strategy | Official-source cross-sectional novelty/kill challenge; read-only, imagequalificationclosed. |
 
 All last CUDA actors physically quiescent/lease released.
 A/engine-research-agent/locks/gpu.lock is the single allocation authority.
@@ -29,6 +28,14 @@ held, not released by expiry/absence; no clone/substitute/foreign adoption.
 New model proposals never allocate a second shared tenth.
 
 ## Throughput Review
+
+Review08:06UTC: all GPUfits finished/leasefree; newpair actually committed,
+newPaper twoTasks ReadyEnabled, not execution/fill. No company permissionblock.
+Boyle prepares same-window measurement while Boole checks a distinct panel
+interaction hypothesis and Confucius falsifies novelty from primarysources.
+Improvement: fresh COMobjects after Enabled setter avoid cacheddefinition
+falsefailure; no image/model/testsuite rerun for that metadata fault.
+Next fit must add a mechanism, not retune failedsame-data epochs/weights.
 
 Review06:36UTC: all actual researchfits CLOSED, GPU idle by readiness rather
 than permission. Boole owns broader-data expert SOURCE; Kepler metadata/ABI

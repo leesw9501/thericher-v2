@@ -12,12 +12,19 @@ Do not rerun consumed creators/installers/fits/forecasts for metadata.
 
 ### Current Integration / Verification
 
-Generic MODEL_PROPOSAL_NAS and canonical GPU-lease ownership fixes are SOURCE
-verified, not deployed. New futurecohort preparation:
+Generic MODEL_PROPOSAL_NAS verified and installed for the futurecohort:
 D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1.
 HostCPU proposal->same native shared bank,25rows/NASonly/NYS+unusedslotscash;
 plannedentryOct21 14:00UTC/exitOct27>=19:45 operationalproxy. Oldimages/tasks
-unchanged; no new bank, substituteintent, deployment/fill/replayparity claim.
+unchanged; no new bank, substituteintent, fill/replayparity claim.
+Bothnewtasks ReadyEnabled/freshCOMsemanticPASS asof08:03UTC, exactRESULT:
+D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1/source-r4/registration-r3/enable-execute-r1/RESULT.json
+SHA9b1d0e84; runtimeGO8a77579b/sourcef3711b38/imageb96a8ef8.
+thericher-kis-paper-window21-provisional-prepare-20261021-r2 next13:10UTC;
+thericher-kis-paper-window21-provisional-execute-20261021-r2 next14:00UTC.
+Finaloneexecute-enable/allchildrenjoined; total2creates2enables/0Run-API-update-
+delete. Consumed installers must not rerun. FutureData required at prepare,
+not registration. No actual execution/fill inferred from installation.
 Privatevolume mounts /app/private; frozen pending proposals reuse exactbytes.
 Qualified Data extractor:
 D:/thericher-v2/model-artifacts/data/current-window21-repaired-extractor-qualification-20261020-v1/extractor.py

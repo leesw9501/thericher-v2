@@ -22,12 +22,12 @@ No current operator decision or company-wide permission hold.
 | Owner | Actual State |
 | --- | --- |
 | Parent / Orchestrator | Integrates/Git. Code/profile/lease integration e53c290 committed/pushed with exact fresh authority. |
-| Archimedes / Execution | Publicimageclosure passed. Prepare task createdDISABLED/executeABSENT7b7e7db0; semantic-default recovery source, no enables/Run. |
+| Archimedes / Execution | TWO_READY_ENABLED9b1d0e84; new prepare/execute tasks enabled with fresh COM semantic PASS. Installation only, no Run/API/fill. |
 | Kepler / Data | Repaired extractor actual qualification COMPLETE1ca604c3/25x22FP64; futureentry21 needs actual20close captures. No broker/model calls. |
-| Boyle / Data | Six-model measurement action-only update ACTUALff8d67bb; originalOct27 window preserved, all processes closed. |
-| Boole / Engine | Broadfit COMPLETE8198cdbe/95epochs/selected75; new B+ResidualMLP prospective2CPUforward SOURCE/preparation, no futurepoint yet. |
+| Boyle / Data | Six-model measurement ACTUALff8d67bb; read-only adoption/preparation for SAME-window8class3+one rank policy, no second update yet. |
+| Boole / Engine | Broad8198cdbe CLOSED; new pair FINALa0569a2e COMMITTED07:52:24UTC. Next cross-sectional interaction SOURCE feasibility, no new GPU dispatch yet. |
 | Pascal / Infra | Fleetbank source/image compatibility CLOSED; no active private/API work. |
-| Confucius / Infra | IMAGEb96a8ef8 native-qualifiedfc8309c4;734source/Python3.12.15/lockedpackages/Torchabsent/3bank+2codec cases PASS, not a deployment. |
+| Confucius / Strategy | Invoked official-source cross-sectional interaction challenge; no code/data/runtime mutation. IMAGEb96a8ef8 qualification remains closed. |
 
 All last GPU actors physically joined/quiescent; canonical lease released:
 A/engine-research-agent/locks/gpu.lock. Do not duplicate completed learning.
@@ -84,18 +84,22 @@ Broadproper-scoreUNKNOWN40missingtargets, allpredictions retained.
 455.724aggregateactiveupper/twolifetimeallocations/allactors+leaseclosed;
 lateoverfit afterselection, not convergence or independentperformance.
 
-Nextactive prospectiveshortlist root
+Completed prospectiveshortlist root
 A/research/current-broad-residual-prospective-pair-preparation-20261020-v1:
 newBroadBepoch75+ResidualMLPepoch3 twoCPUforwards plus ONEpredeclaredfixedrank
-halfMLP/rawSD nonprobabilitycomposition. SOURCE/native+conditionaldispatch,
-0newforecasts evidenced yet; no refit/oldAengineeringpoint adoption.
+halfMLP/rawSD nonprobabilitycomposition. FINALa0569a2e/ABI07c6ea7f/
+OUTCOMEf61c9dec/COMMITTED326088cf at07:52:24.828544UTC before officialopen.
+Two CPU restores/forwards25rows each,0fits-GPU-API-Tasks/targetdecodes;
+146sourcefixtures51readback checks, actors/container closed. No refit or
+oldAengineeringpoint adoption. Proper scores do NOT apply to rank policy.
 Live64 Consumer9e4dac7a/INPUT0d677995 actual25x64FP64/1600known0unknown,
 actualOct19index0/sourceavailable23:00:43.571426UTC/asofOct20 07:40:10UTC,
 16SYN387checks/42919bytes/31Dataupper/oneactual0retry/0model-API.
 Prospectivefamily600active/7200elapsed from07:32:40UTC(deadline09:32:40),
 hardforecastcommit<13:25UTC<open13:30. TargetOct20/21/22/23/26 unknown.
-Boyle prepares sameoriginalOct27window extension6->8class3+oneexplicitrank
-policy, SOURCEonly untilnewpointssealed+ParentGO. No newworker/trigger,
+Boyle adopts actualpoints and prepares sameoriginalOct27window extension
+6->8class3+oneexplicitrank policy; no Taskupdate until exact currentbackup/GO.
+No newworker/trigger,
 fake rankprobability/proper-score, oldforecast rewrite or actualKISPnL claim.
 
 ## Actual Future Points / Data
@@ -133,7 +137,7 @@ Archimedes has one separately bounded actualCPUproposal qualification, not
 anotheradoptedfuturepoint orPaperorder. No oldfailure regrade.
 FutureentryOct21 needs actual20close owned captures, not a stale fallback.
 
-## Verified Code / Not Deployed
+## Verified Code / Installed Future Opportunity
 
 New ModelPaperInput/Metadata/Target/Row and MODEL_PROPOSAL_NAS profile bridge
 host CPU sealed proposal into unchanged deterministic NAS sizing/bank/recovery.
@@ -141,10 +145,11 @@ All25rows survive; NYS weight/unused positive slots stay cash, no replacement/
 renormalization. Nativezeroeligible=no_intent; exact pending recovery precedes
 loader; distinct policy pointer; legacy/current20 fingerprints/defaults intact.
 Source86tests + independent31checks. CPU/GPU parity UNKNOWN.
-No full-universe replay parity, new bank/tenth, order-image Torch or deployment.
+No full-universe replay parity, new bank/tenth or order-image Torch.
 New source package A/execution/current-window21-provisional-nas-deployment-
 20261021-v1 prepares one futurecohort (entryOct21 14:00UTC,exitOct27>=19:45),
-not an installed opportunity. Old NAS8/source/image/tasks never replaced.
+now installed for the future opportunity, not a runtime result or fill.
+Old NAS8/source/image/tasks never replaced.
 Actual Oct20 CPU engineering qualification a0d04cc1/c3964f81:oneconstruction/
 restore/25rowforward/0fits-GPU-API-credentials-private-Tasks,64activeupper/
 334.220elapsed/closed06:06:53UTC. Not a seventh adopted measurement or order.
@@ -168,17 +173,19 @@ sameDEPLOYEDPython3.12.15/10lockedpackages,734sourcee53/d106/TorchABSENT.
 native-qualification-r5/IMAGE-ATTESTATION.jsonfc8309c4:3nativebank+2strictcodec
 cases PASS/oneCPUcontainer/alljoined. Prior /tmpfixture maskfailure preserved;
 no rebuild to fixfixture. No Docker/WSL reset/prune/oldservice/image edits.
-Parent exact R4 activationGOd221b0f3 now authorizes onepublicimageclosure then
-two exact NEW tasks disabled-first/readback/enable;0manualRun/API/model/private.
-Initialactivationde0edf30 stopped0creates/enable afterpublicimagePASS;
-ownedR4ACL protected/backedup/sharedPython unchanged. Registrar's native
-exception-type wrapper corrected/14SYN+nativeROabsence. AmendedGO8a77579b
-thencreated prepareDISABLED; executeABSENT,0enable/delete/Run, RESULT7b7e7db0/
-20activeupper. Native XML omitsLeastPrivilege andfalseStartWhenAvailable;
-current registrar-r3 compares actualCOMproperty defaults to in-memory expected
-definition. Source/model/image/slots unchanged; preserveexactpartial task,
-createonlymissingexecute/enableboth only afternewParentrecoveryapproval.
-No action reset/foreign adoption/manualRun or claimed activation/fill.
+Actual finalinstallation08:03:07UTC:
+A/execution/current-window21-provisional-nas-deployment-20261021-v1/
+source-r4/registration-r3/enable-execute-r1/RESULT.json9b1d0e84.
+Both new -r2 prepare/execute tasks ReadyEnabled/nonrunning, fresh independent
+COM semantic PASS. RuntimeGO8a77579b/sourcef371/imageb96 unchanged.
+Prepare nextOct21 13:10UTC; execute next14:00UTC. Across retained attempts:
+2creates/2enables/0updates-delete-Run-API/model/private calls. Final phase
+oneexecute-enable/10activeupper126.559elapsed/allchildrenjoined.
+Retained de0edf30/7b7e7db0/b7059989 failures/partialownership/debits unchanged:
+nativeXML default omission and cachedsetterobject were verification faults,
+not permission or source/image faults. Fresh GetTask objects prove enabled.
+Do not rerun any installer or reset actions/identities. Installation is not
+an execution/fill/PnL claim.
 FutureDataREADY required at13:10prepare,
 NOT before registering its futuretask. Source/routinecommit not companyclosure.
 

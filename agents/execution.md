@@ -5,14 +5,21 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
-## New Model Proposal Integration (Not Deployed)
+## New Model Proposal Future Deployment
 
 Archimedes owns A/execution/current-window21-provisional-nas-deployment-20261021-v1
-SOURCE preparation for onecohort USOct21 14:00UTC entry/exitOct27>=19:45UTC.
+Installed futurecohort USOct21 14:00UTC entry/exitOct27>=19:45UTC.
 Generic ModelPaperInput/Metadata/Row/Target and MODEL_PROPOSAL_NAS code is
 verified86focused/31independentchecks plus1720serialPASS2skip/full18537PASS
 24skip/8workers/helper0/clean/Ruff3sample-envCompose,1370sourcesd10698dc.
-No new image, installedTask, modelproposal or broker effects proven yet.
+Actual IMAGEb96a8ef8/fc8309c4/734source/Python3.12.15/lockedpackages/Torchabsent.
+R4SOURCEf3711b38/runtimeGO8a77579b, finalinstallation:
+A/execution/current-window21-provisional-nas-deployment-20261021-v1/
+source-r4/registration-r3/enable-execute-r1/RESULT.json9b1d0e84.
+Both new -r2 tasks ReadyEnabled/nonrunning/freshindependentCOMsemanticPASS.
+PrepareOct21 13:10UTC/execute14:00UTC; total2creates2enables/0Run-API-update-
+delete. Finaloneexecute-enable10activeupper126.559elapsed/allchildrenjoined.
+Installers consumed; do not rerun. Installation is not runtime/fill/PnL.
 
 HostCPU producer retains all25rows; NAS eligible only, NYS/unusedpositive
 slots stay cash without replacement/renormalization. Callerceiling scales
@@ -29,8 +36,8 @@ FP64CLOSEs/25x22/Oct19index0, producerloading sentinelonly/0modelcalls.
 Use NEWroot current-window21-repaired-extractor-qualification-20261020-v1
 /cohorts/20261021 forfutureentry; requires actualOct20index1captures.
 Cold unavailable is not futureinput. OldOct20ASTfault7fb80b1a staysclosed;
-no fabricated/stale/futureinput fallback. Parent handles
-new committed-source image/activation only after exact source/native evidence.
+no fabricated/stale/futureinput fallback. Runtimeprepare enforces futureData
+readiness before inference; its absence never implies a prepared proposal.
 OldNAS8/F9/nightly/Goal97 state/tasks/images unchanged. Real aggregate bank/
 foreigninventory/unknownreservation checks apply, not profitability/all-flat gates.
 
