@@ -37,8 +37,9 @@ no assumption of historical decision-time availability/native fills.
 
 ## New Matched OOF Input
 
-Kepler owns current-halfpool-chronological-gate-input-20261021-v1 under A/data
-and matching M,240active/7200elapsed. Prior metadata readiness RESULT3df769df
+Kepler completed current-halfpool-chronological-gate-input-20261021-v1 under A/data
+and matching M: CONSUMER4063320f,19native13readback/40newupper+20readiness
+once=60aggregate/all joined, agent closed. Prior metadata readiness RESULT3df769df
 at current-halfpool-chronological-gate-readiness-20261021-v1:12archiveheaders/
 0payloads, earliest2019-01-02/46550pre-finalkeys. Measured OOF2024/2025/
 2026H1 with preceding63-date INNER and exact physical five-session purges.
@@ -49,7 +50,11 @@ Regenerate100 artificial old purge-only labels from exact pinned sources,
 not imputation. Separate lazy fold TRAIN/INNER and OOF input-only mounts;
 meta targets only after six OOF expert seals, final outcomes remain separate.
 Source/native then one frozen derivation delegated, no parent approval file.
-Actual new Data values/model fits not inferred from readiness/header proof.
+Actual TRAIN input/known rows29775/29675,36075/35975,42025/41925,
+FINAL44975/44875; OOF6300/5850/2950/final1650byte-reused. INNER1575known
+each; FINALINNER2026-03-31..06-30. MetaFIT12150/INNER2950allknown.
+100 labels actually regenerated; input boundary rows remain in affines.
+PRED payloads unopened. Actual derived Data does not prove Engine fits.
 
 ## Current Ready / Future Boundary
 

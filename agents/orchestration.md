@@ -9,11 +9,11 @@ fees/settledcash/actualnetPnL unknown. Parent shared MD/integration/Git.
 
 | Owner | Actual Work |
 | --- | --- |
-| Pascal / Engine | Matched OOF gate source/contract/native; old ranking887257b7 and optimization auditb59bb4cf CLOSED. No new market training yet. |
-| Boole / Engine | Shadowd33490c9 actually installed; disjoint pure four-parameter gate-kernel-r1/SYN preparation. |
-| Kepler / Data | Matched3fold Data source/native/derivation,240active7200elapsed; readiness3df769df measured supported dates, not actual new values. |
+| Pascal / Engine | Matched OOF caller/native then finite end-to-end fitting. CONTRACT-R1, Data4063320f/kernel74d4c3d5 ready; no actual fit claim until worker evidence. |
+| Boole / Engine | Shadowd33490c9 installed; kernel92a92c47/55checks/5SYNupdates/40upper complete, agent closed. |
+| Kepler / Data | Matched Data4063320f actually derived/32checks/60aggregateupper/PREDunopened, agent closed. |
 | Confucius / Strategy | CHOICEe1dd8b1e/one fixed gate0df07166; cached Window211675keys are not HALF1650 OOF support. |
-| Archimedes / Infra | Five-policy cb1c1d9a committed21:15:43UTC/readbackb33bac01; existing Oct27 measurement source/native extension. |
+| Archimedes / Infra | Existing Oct27 task extension22db8f33 actually installed/30cells/one marks intake/decision-only shadow/210upper; agent closed. |
 | Bacon / Review | Named scoped challenges delivered; advice not authority/factual errors corrected against source. |
 | Parent | Integrate actualclosures/currentmemory/Git, preserve independentPaper identities/bank. |
 
@@ -62,6 +62,15 @@ substitute. Numerical fits only after actual Data/native/contract readiness;
 Claude named chronology fixes are concrete dependencies, not operator holds.
 Shadowtask ACTUALLY installed1register1enable0Run/101checks, parentfreshCOM
 ReadyEnabled/hiddenpythonw/fourtriggers confirmed; actual decisions unknown.
+
+21:44 before-long-job review: Data4063320f and pure gate74d4c3d5 are now
+actual-ready, not awaiting permissions. One active Engine mutable write set
+owns caller/native/fits; other role packages closed, not LLM daemons.
+Budget7200aggregate/21600elapsed/oneGPU4200/8expert+1gate/one readout.
+One reversible improvement: declare a bounded same-fixture native technical
+recovery BEFORE effects, rather than rename a campaign after a reporting/API
+fault. Preserve R1; R2 only if its actual pre-effect freeze is proven, no
+market retry/extra allocation/outcome rescue. No stalled Data or operator hold.
 
 ## Material Results / Concrete Consumers
 

@@ -57,16 +57,22 @@ FINALd33490c9/installation9bd052d1, hidden pythonw slots Oct22/23/24/27
 unchanged,105.325upper/all joined. Parent freshCOM ReadyEnabled/fourtriggers/
 hidden/noDemandStart/pythonw and seven metadata refs passed. Future actual
 entry OPEN/decisions/exit observations remain UNKNOWN.
-Archimedes measurement extension at
+Existing measurement extension ACTUALLY installed at
 D:/thericher-v2/model-artifacts/research/current-five-policy-oct27-measurement-extension-20261021-v1,
-same existing Oct27 task, no new triggers/fits/GPU. Registration and future
-observations must be proven separately; source readiness is not deployment.
+linked-shadow-r1/RESULT22db8f33/source5881ba86, same existing Oct27 task,
+two aggregate action-only updates/0Run/newtriggers. Group82+linked53checks,
+30cells/one marks intake unchanged/210upper/all joined. Parent freshCOM
+ReadyEnabled/one trigger/hiddenpythonw/noDemandStart/nextOct27 23:55UTC.
+Decision-only shadow, no exitprice/fill/terminal/PnL/performance proof.
 
 New matched chronological OOF campaign (PREPARATION, no market fit yet):
 D:/thericher-v2/model-artifacts/research/current-halfpool-chronological-gate-development-20261021-v1.
-Pascal host/expert contract; Boole gate-kernel-r1 only. Data Kepler at
+Pascal host/expert native then actual finite campaign. Pure gate-kernel-r1
+complete92a92c47/readback74d4c3d5,55checks/5SYNupdates/40upper, HOSTCPU2.13.
+Data ACTUALLY ready at
 D:/thericher-v2/model-artifacts/data/current-halfpool-chronological-gate-input-20261021-v1,
-readiness3df769df/source-feasible, new values not inferred. Three OOF blocks
+CONSUMER4063320f/19native13readback/60aggregateupper/PREDpayloadsunopened.
+Three OOF blocks
 2024/2025/2026H1 with preceding63-date INNER and exact physicalpurges,
 foldlocalALLTRAINaffines, earliermetaFIT/lastmetaINNER. One fixed fourparameter
 gate proposal0df07166; epoch0 exactly newmatchedHALF. No in-sample/final
@@ -74,8 +80,10 @@ prediction substitution, old740 regrade or unbounded refit grid.
 Named Claude response at
 D:/thericher-v2/model-artifacts/review/current-halfpool-chronological-gate-development-20261021-v1/CLAUDE-RESPONSE.txt
 requires concrete chronology/affine/mask/provenance fixes before marketcalls,
-not human approval. Actual finite fit/compute/epoch caps are pending contract;
-do not launch an invented training command or report GPU training from this MD.
+not human approval. CONTRACT-R1/NUMERICALappointment caps8expert+1gate/
+7200aggregateactive/21600elapsed/oneGPU4200inclusive/onePRED12new6cached,
+originaldeadlineOct21 03:27:28UTC. Actual caller/native qualification precedes
+fits; never report training merely from this MD or rerun a consumed host.
 
 Completednewresults (not commands):
 CPUexitREADBACKd7c7383b/60iterationsbest40/5early325terminal/455.118upper,

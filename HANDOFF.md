@@ -21,11 +21,11 @@ No genuine operator decision currently required.
 | Owner | Current Package |
 | --- | --- |
 | Parent | Shared MD/integration/Git; preserve unfinished Paper outcome. |
-| Pascal / Engine | New matched chronological OOF gate source/contract/native feasibility; no market fits yet. Continuous ranking887257b7 and metadata auditb59bb4cf closed. |
-| Boole / Engine | Shadow task d33490c9 ACTUALLY installed. Owns pure four-parameter gate kernel/SYN in the new campaign's gate-kernel-r1 child only. |
-| Kepler / Data | Matched three-fold Data source/native/derivation under current-halfpool-chronological-gate-input-20261021-v1. SEC pilot d00ff3b1 closed403. |
+| Pascal / Engine | Matched OOF gate end-to-end caller/native then finite fitting; Data4063320f and gate74d4c3d5 ready. No actual new market fit/GPU claim until worker evidence. |
+| Boole / Engine | Kernel92a92c47/55checks/5SYNupdates complete,40upper; agent closed. Shadowd33490c9 remains installed. |
+| Kepler / Data | Matched Data4063320f ACTUALLY derived/32checks/60aggregateupper; agent closed. SEC pilot d00ff3b1 remains scoped403. |
 | Confucius / Strategy | Orthogonal audit e1dd8b1e found HALF-specific OOF support missing; fixed gate proposal0df07166, not another architecture sweep. |
-| Archimedes / Infra | Five-policy groupcb1c1d9a committed21:15:43UTC. Prepares minimal augmentation of the existing Oct27 measurement task; no new model/trigger. |
+| Archimedes / Infra | Existing Oct27 task extension22db8f33 ACTUALLY installed/30cells/one marks intake, decision-only shadow. Complete/agent closed. |
 | Bacon / Review | Named challenges delivered; advisory not operatorauthority. |
 | Steward | Continuous training joined/lease released20:49:02UTC. Any point-inference recovery needs fresh exclusive admission; inference is not training. |
 
@@ -194,6 +194,35 @@ bind exact dates/provenance/meta-FIT-only affines/matched masks/thresholds.
 No actual new training claimed. Optimization auditb59bb4cf confirms old
 TRAIN loss fell while no trained INNER beat epoch0; nonzero exported LoRA
 delta metadata, not independently verified weights or a causal defect.
+
+Actual new Data CONSUMER4063320f at
+A/data/current-halfpool-chronological-gate-input-20261021-v1:
+TRAIN input/known29775/29675,36075/35975,42025/41925,44975/44875;
+OOF6300/5850/2950/final1650byte-reused. INNER1575known each;
+FINALINNER2026-03-31..06-30; metaFIT12150/INNER2950allknown.
+100 labels regenerated, boundary inputs retained for affine.19native13readback,
+40new+20readiness=60aggregateupper/all joined/PRED payloads unopened.
+Gate kernel92a92c47/READBACK74d4c3d5:55checks/3SYNtraining+2nextupdate
+proof updates,40upper/all joined, epoch0HALF bitwise; native HOSTCPU2.13
+only, not D6Torch2.7 qualification. Preserve counter/reporting failures.
+Parent independently verified12 exact new Data/kernel/measurement metadata refs.
+
+Engine CONTRACT-R1/NUMERICAL-APPOINTMENT freeze max8expert+1gate fits,
+7200aggregateactive/21600elapsed, originalorigin21:27:28UTC/deadlineOct21
+03:27:28UTC, oneGPU4200inclusive/one finalreadout/12new6exactcachedcells.
+Carry actual source90/Data60/kernel40/review once, not preparation ceilings.
+New gate CPU uses qualified runtime; no market retry. A bounded native-only
+technical-recovery revision may apply ONLY if actually frozen before any
+new native effects; never infer its adoption from parent suggestion.
+
+Existing Oct27 measurement extension ACTUALLY installed:
+A/research/current-five-policy-oct27-measurement-extension-20261021-v1/linked-shadow-r1/RESULT.json
+22db8f33/source5881ba86. Group-only revision80165514/82checks retained;
+linked decision-only adds53checks, two aggregate same-task action updates/
+0Run/0newtriggers.30futurecells/one marks intake unchanged,210/240upper/
+1395elapsed/all joined. Parent freshCOM ReadyEnabled/one trigger/hidden
+pythonw/noDemandStart/nextOct27 23:55UTC. Exact four-slot shadow chain may
+be UNKNOWN independently; no exit price/fill/terminal/PnL/performance claim.
 
 Kepler closed bounded SEC three-issuer pilot under
 A/data/current-sec-companyfacts-three-issuer-pilot-20261021-v1:

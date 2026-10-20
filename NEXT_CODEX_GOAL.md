@@ -45,7 +45,10 @@ substitute unknownrequests or new/profit-expanded bank.
    old constructor failure39991c35 unchanged; aggregate198/360upper,
    18.462new GPUseconds/all joined/lease free. No refit/repeated HALF/new
    target. Fresh c70569b2/8010abe1 inputs bound before Oct21OPEN.
-   Archimedes prepares existing Oct27 measurement extension, no new trigger.
+   Existing Oct27 measurement extension22db8f33 ACTUALLY installed:
+   linked-shadow-r1 under current-five-policy-oct27-measurement-extension-20261021-v1,
+   source5881ba86/30cells/one marks intake/0Run/newtriggers. Shadow decisions
+   only, no exit-price/fill/PnL/performance qualification inferred.
 
 4. CPU held-exit d7c7383b COMPLETE60iterations/selected40/5early325terminal/
    6new9cached/455.118upper.10bp growth/DD +1.09535/.29248 vsHALF+1.04894/
@@ -82,14 +85,18 @@ substitute unknownrequests or new/profit-expanded bank.
 
 6. Parallel new research: ONE matched-cohort chronological OOF sigmoid gate,
    A/research/current-halfpool-chronological-gate-development-20261021-v1.
-   Pascal source/contract/native; Boole disjoint gate-kernel-r1 pure SYN;
-   Kepler Data current-halfpool-chronological-gate-input-20261021-v1.
+   Pascal actual caller/native then end-to-end fitting. Boole kernel92a92c47/
+   readback74d4c3d5 complete55checks/5SYNupdates; Data4063320f ACTUALLY
+   ready at current-halfpool-chronological-gate-input-20261021-v1.
    Readiness3df769df and proposal0df07166: OOF2024/2025/2026H1 with63-date
    INNER/physicalpurges/shared ALLTRAIN-input affines. Meta-FIT firsttwo/
    meta-INNER last; epoch0 equals NEW matched HALF, old740 only context.
    No in-sample/final-pred substitute or PRED-driven checkpoint/weight choice.
-   New market fits not yet ready/running; exact Data/native/finite caps and
-   named Claude chronology fixes precede dispatch, no human GO ceremony.
+   CONTRACT-R1/NUMERICALappointment: max8expert+1gate/oneGPU4200inclusive/
+   7200aggregateactive/21600elapsed/originaldeadlineOct21 03:27:28UTC/
+   onePRED12new6exactcachedcells, actual preparation debits once. Actual
+   caller optimizer/checkpoint/pace and fresh admission still precede market
+   fits; Data/header/source alone is not training. No human GO ceremony.
 
 ## Verify And Continue
 

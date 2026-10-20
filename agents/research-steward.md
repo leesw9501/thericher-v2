@@ -33,17 +33,19 @@ Do not duplicate completed market fits or encoding.
 
 Fixedfusionf60ed3d8 complete6new15cached/0models-GPU/bothFAIL.
 Held-exit shadowd33490c9 is ACTUALLY installed, CPU/future slots only;
-Archimedes existing Oct27 measurement augmentation is no fits/GPU.
+Oct27 measurement extension22db8f33 is actually installed, no fits/GPU.
 Data SEC pilot first403 stopped; future actual OPEN/CLOSE still unknown.
 Fresh admission/headroom/lease before any genuine ready new GPU job.
 
 Next candidate preparation: current-halfpool-chronological-gate-development-20261021-v1.
-Pascal contract/expert native, Boole disjoint pure gate kernel; Kepler actual
-matched Data preparation. At most three chronological expert OOF folds plus
-one final pair/one fixed four-parameter gate proposed, NOT a frozen allocation
-or actual fit claim yet. Source90active1800elapsed/Data240/7200/kernel120/1800
-are separate preparation caps, not a global training ceiling. Exact complete
-numerical count/time/epoch/checkpoint/stop budgets must freeze before dispatch.
+Pascal caller/expert native; Boole kernel74d4c3d5 complete55checks/5SYNupdates/
+40upper, Data4063320f complete32checks/60aggregateupper. Other agents closed.
+CONTRACT-R1/NUMERICALappointment freezes max8expert+1gate/7200active/
+21600elapsed/oneGPU4200inclusive/onePRED12new6cachedcells. Originalorigin
+21:27:28UTC/deadlineOct21 03:27:28UTC; actual carry source90/Data60/kernel40/
+review once, not ceilings. No allocation/market fit inferred from source.
+R2 bounded native recovery valid only if actually frozen before native effects;
+no extra GPU allocation/market retry/cap reset from a parent's suggestion.
 No old fits/debits refunded or merely relaunched to fill GPU usage.
 
 ## Resources And Custody

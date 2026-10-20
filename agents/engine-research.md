@@ -40,12 +40,16 @@ Prospective held-exit shadow FINALd33490c9 actually installed one hidden
 pythonw four-trigger task,101checks/1register1enable0Run/258others unchanged.
 Exact b060d4fa HALF cohort, ages0..3 Oct22/23/24/27 01:00UTC; terminalOct27CLOSE.
 Parent freshCOM and7metadatarefs PASS. Future decisions/fills/PnL UNKNOWN.
-Archimedes prepares extension of existing Oct27 measurement consumer,
-not new triggers or numerical model selection.
+Existing Oct27 consumer extension22db8f33 actually installed, same task/
+30cells/one marks intake; linked decision-only shadow, not new triggers,
+exit performance/PnL qualification or numerical model selection.
 
 NEW preparation: current-halfpool-chronological-gate-development-20261021-v1.
-Pascal owns source/native/finite numerical plan; Boole owns gate-kernel-r1
-pure four-parameter sigmoid only. Kepler new matched Data root under A/data.
+Pascal owns caller/native then end-to-end finite fitting. Boole gate-kernel-r1
+completed92a92c47/READBACK74d4c3d5:55checks/3SYNfit+2nextupdateproofupdates,
+40upper, HOSTCPU2.13 only/epoch0HALF bitwise. Data CONSUMER4063320f ready
+under A/data/current-halfpool-chronological-gate-input-20261021-v1,
+19native13readback/60aggregateupper/PREDpayloadsunopened/all joined.
 Data readiness3df769df: measured OOF2024/2025/2026H1,63-date INNER,
 physicalpurges/21transition-masked dates/46550pre-finalkeys. New labels/
 affines/fits required; Window21 cached1675keys cannot replace HALF1650.
@@ -53,7 +57,10 @@ Proposal0df07166: earlierOOF meta-FIT/last meta-INNER, epoch0newmatchedHALF,
 same final experts/controls/costs/gross. Old740 is not sole attributionbaseline.
 Claude exactchronology/meta-FITaffine/matchedmask fixes precede numerical
 dispatch. Preparation90active1800elapsed; Data240/7200; kernel120/1800.
-No new market fit/GPU allocation yet. Reused final66dates stay adaptive.
+CONTRACT-R1/NUMERICALappointment: max8expert+1gate/7200active21600elapsed/
+oneGPU4200inclusive/onePRED12new6exactcachedcells, originaldeadlineOct21
+03:27:28UTC. No actual market fit/GPU allocation inferred from these files.
+Caller optimizer/checkpoint/pace remains before market; reused66dates adaptive.
 Old optimization auditb59bb4cf: TRAIN improved, no trained INNER beat0;
 exported nonzero delta metadata not independently verified weights/defect.
 
