@@ -84,9 +84,31 @@ D:/thericher-v2/model-artifacts/execution/current-nas-exit-accounting-readiness-
 SHA4da7d033/474sourcepins100synthetictestsPASS/RuffPASS/0private-operational
 effects. Exact final BUY/SELL gross supports closed-flat attributablegross;
 measured fees/settlement absent. The existing native accounting kernel is
-reusable; a minimal scoped offline caller is being prepared, not ready to
-invoke until native proof/strict scope bindings pass. No fresh quotes needed
-for fully closed-flat gross. Assumed-cost net is ESTIMATE, not measured net.
+reusable; caller-r1 is now READY:RESULT5f0d6f83/caller9fd7a2f2,
+27tests/Ruff/realSYNCLI/independentDecimalPASS/alljoined,60newupper separate
+old60prep. CLI.json in that root is the frozen future invocation template;
+requires exact sealed model input plus immutable offline private snapshot.
+No ACTUAL private invocation or profit read yet. Exact original8scope only,
+missing/partial UNKNOWN, no otherowner/globalallflat gate. No fresh quotes
+needed for closed-flat gross. Assumed-cost net is ESTIMATE, not measured net.
+
+HGB source/native output pair is READY, not deployed:
+D:/thericher-v2/model-artifacts/research/current-hgb-absolute-paper-producer-20261020-v1/full-output-r2/PRODUCER-ABI.json
+SHA04924306/SOURCEc4b50c82/READY2ca3dfc2. Trustedcaller<=.10,
+full25sidecar+DTO persist/readback together;fullmassfairTop5regardlesssign.
+Execution fullmass-r2/b646849a; no NYSreplacement/renormalization/newbank.
+Actual B96 retainedSYN wire proofc7fd04fc/2cases/734pins/26.438upper,
+1create-start-remove/networknone/no private-API-Task-model effects at
+D:/thericher-v2/model-artifacts/infra/current-hgb-model-paper-image-compatibility-20261020-v1/RESULT.json.
+These consumed SYN proofs are not marketforecast/loaderactivation/order/fill.
+No new HGBopportunity; Window21installed tasks/policy unchanged.
+
+Current research preparation (not a command to rerun closed fits):
+D:/thericher-v2/model-artifacts/research/current-long-context-feature-development-20261020-v1.
+Matched HGB/LSTM short versus short+yearsummary,4fits/2CPU2CUDA proposed;
+actual Data/native before fitting, origin12:19:44UTC/end16:19:44UTC/
+3600aggregateactive/oneGPUallocation/0retry. All closed HGB/peer/multiera
+outputs remain immutable; field-proxy study125ea46c is not nativecashPnL.
 
 | Owner | Actual Deployment / Due |
 | --- | --- |

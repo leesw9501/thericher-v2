@@ -6,87 +6,86 @@ current-nas-owned-model-paper-cycle-v1 remains UNFINISHED: close exact owned
 KIS Paper entry/hold/exit/reconciliation inside ONE original shared initial
 virtual-cash tenth. Eight retained FULL entries; exit>=Oct21 US OPEN, first
 owned slot Oct21 13:40UTC=22:40KST. Need exact request/fill/current inventory/
-terminal linkage. Fees, settlement and actual net PnL remain unknown unless
-proven. Research, installation, Task exit or a package commit is not closure.
+terminal linkage. Fees/settlement/actual net PnL unknown unless proven.
+A research package, installation or commit is not company completion.
 
-Workdir C:/Users/Public/Documents/thericher-v2. Follow HANDOFF.md, AGENTS.md,
-RUNBOOK.md and active role boards. Parent owns integration/Git. Private free
-Data/Research/KIS Paper work is delegated within owned paths. Never read or
-route KIS_LIVE_*, enable real money/public exposure, spend money or expose
-secrets/account/order/raw broker/raw market/private amounts. Preserve original
-basis/costs/losses/reservations/identities, not another tenth or substitute.
+Workdir C:/Users/Public/Documents/thericher-v2. Read HANDOFF.md, AGENTS.md,
+RUNBOOK.md and active stateboards. Parent owns shared MD/integration/Git.
+Private no-cost Data/Research/KIS Paper work is delegated within owned paths.
+Never KIS_LIVE_*/real money/paid/public/unclear-rights commitments or secret/
+account/order/raw broker/raw market/private amount output. No new shared tenth,
+foreign inventory, substitute identity or profit-expanded budget.
 
-## Current Packages
+## Ready / Owned / Due
 
-1. Execution: Window21 provisional MODEL_PROPOSAL_NAS future opportunity
-   INSTALLED9b1d0e84, both -r2 tasks ReadyEnabled/fresh semantic COM PASS.
-   Runtime SOURCEf3711b38/GO8a77579b/imageb96a8ef8. PrepareOct21 13:10UTC;
-   first execute14:00UTC, declared exitOct27>=19:45. All25 rows retained,
-   NAS only, NYS/unused slots stay cash without replacement/renormalization.
-   Original NAS/F9/nightly/Goal97 identities/state/tasks remain distinct.
-   No manual Run/consumed installer replay or unknown-reservation release.
-   ActualOct20 close input must exist at runtime prepare; no stale fallback.
-   Installation is not execution/fill/replay-equivalence/profit evidence.
+1. Execution: preserve original NAS8/F9/nightly/Goal97 identities/state/tasks.
+   Bounded exact-result inspection of EXISTING Oct20 nightly14:50UTC andF9
+   15:10UTC runs in parallel; no manual Run/new schedule/API/order.
+   Missing/active/unbound evidence is unknown, no reservation release.
+   NAS exit accounting caller5f0d6f83 READY27tests+SYNCLI, no actual profit
+   invocation. Fees/settlement unknown; assumed-cost net is only estimate.
 
-2. Research: current25 mean/attention5a4eec9c and broader-query pair08fdd333
-   COMPLETE, two CUDA fits each. Current25 attention beats matched mean's
-   descriptive growth but fails proper scores; broad-query attention loses
-   matched mean. Fixed rank-third fusion2c75844c also fails its frozen risk
-   test. Keep old trials, costs and failures; no completed fit/forward repeats.
-   All actual GPU actors joined/lease released. Choose the next useful
-   information/objective change, not an architecture/epoch/weight rescue grid.
-   Selected next proposal870928a7 compares SAME HGB/21features on absolute
-   cost3 versus relative-tail3 labels, not generic ranking/new information.
-   Boole runtime/native and Bacon label-only Data run in parallel; two CPU
-   fits/15cells/2400aggregateactive7200elapsed including46.117prep and
-   Claude17.327review, max128pat20/perfit600/0GPU. Conditional dispatch only
-   after exact Data/native/source/owner checks, no another permission queue.
-   Claude2fcf86e4 REVISE scopes label-recipe/population/reuse/dependence;
-   2e-12 numeric tolerance is NOT significance or economic effect size.
+2. Window21 provisional MODEL_PROPOSAL_NAS future opportunity installed
+   9b1d0e84, both-r2tasks ReadyEnabled/freshCOM;SOURCEf3711b38/GO8a77579b/
+   imageb96a8ef8. PrepareOct21 13:10UTC/entry14:00UTC/exitOct27>=19:45.
+   ActualOct20 closes required, no stale fallback. All25rows/NASonly/
+   NYS+unusedpositive slotscash/no renorm. No consumed installer replay.
+   Installation is not execution/fill/PnL/full-universe replay parity.
 
-3. Data: Oct19 live507 COMPLETE, repair-r4 CONSUMER eb69c563/CLOSED6969c765/
-   terminal2006f601. All507 accounted:498eligible/9known-insufficient,
-   no pending/unattempted/unknown routes. FP64[507,22],9 histories masked,
-   not imputed. Total507GET/5authPOST/0retry,2128.629aggregate active upper
-   including all failed attempts, original2400cap. Final available max
-   Oct20 10:26:06.655378176UTC; exact wire times/finality/PIT/CA unqualified.
-   Claims released/all actors closed. Do not reacquire accepted pages or
-   reopen old pending files. Shared service charged once, not per forecast.
+3. Next research: current-long-context-feature-development-20261020-v1.
+   Proposal current-long-context-feature-hypothesis-20261020-v1/fd71dfa3:
+   matched HGB and LSTM SHORT versus SHORT_PLUS_LONG,4fits/2CPU2CUDA.
+   R21 plus two old year-scale momentum/volatility summaries; same topology/
+   common keys/FIT-only affines/purged target/INNER-selected bestcheckpoint.
+   This is narrow direct-feature ablation on five-session classes, not a new
+   factor or independent alpha. Exact duplicates kill rather than rename it.
+   Kepler Data existing-cache R21/L2 derivation; Boole source/native; Pascal
+   Claude challenge in parallel. Actual Data/native/received review addressed
+   before fitting, not another operator approval queue.
+   Family origin12:19:44UTC/deadline16:19:44UTC/3600aggregateactive/
+   14400elapsed, prior Strategy90 included once;max4marketstarts/0retry/
+   oneGPUallocation/18cells once. PRED targets stay separate until all4
+   selected prediction seals. Preparation is not actual training.
+   Explicit unqualified provider-field/current-listing/nonPIT/CA limitations.
 
-4. Prospective forecasts: four NEW actual CPU forecasts committed before
-   open, no new fits/GPU/targets/API. Broad pair d8b66977 committed10:32:37UTC;
-   current25 pair4c65fa99 committed10:36:19UTC, plus predeclared fixed
-   rank-third using exact old ResidualMLP/RAWSD point components, no extra NN.
-   All25 queries,498eligible peers/9masked. Rank policies are NONprobability,
-   proper-score N/A. Old eight class3 forecasts and rank-half unchanged.
-   Future target sessionsOct20/21/22/23/26 remain unknown, not profitability.
+4. Closed research: HGB139071c2(twoCPUfits/15cells/236.933upper), current
+   peer5a4eec9c(2CUDAfits), broadpeer08fdd333(2CUDAfits), rankthird2c75844c
+   all preserve frozen FAILs/debits. No completed fit/forward repeats.
+   RAWSD field multiera125ea46c completed36cells/all3eras primaryFAIL/
+   330.479upper/alljoined; price proxy only, not actual cash PnL.
+   Old canonical-Bar097 input unavailable stays unavailable. All18raw rows
+   existed with invalid OHLC geometry; new field-level consumer f44c3ef3
+   retains flags without inventing HIGH/LOW or validBar truth.
 
-5. Measurement: ACTUAL installed12class3+two nonprobability rank policies,
-   RESULTdf6d798c/deploymentd405201f/sourcee45c65b0, Oct20 10:58:53UTC.
-   Root A/data/current-peer-points-measurement-extension-20261020-v1.
-   One action update/0rollback-Run-newtrigger-API-model-measurement;
-   46checks/fresh independent COM ACL/nonaction/window PASS/alljoined.
-   Same Oct26 23:45..23:55UTC/Oct27 08:45KST/120active600elapsedworker.
-   Strict reader independently returns FUTURE_MEASUREMENT_NOT_OBSERVED,
-   not performance. Legacy fixed-quarter diagnostic remains auxiliary.
+5. HGB operational adapter ready, NOT deployed/forecast/trade:
+   A/research/current-hgb-absolute-paper-producer-20261020-v1/full-output-r2,
+   READY2ca3dfc2/SOURCEc4b50c82,58nativechecks/2SYNforwards/full25sidecar.
+   Execution fullmass-r2/b646849a:fairTop5 REGARDLESS score sign,
+   trusted constant caller<=.10,NYSunspent/no renorm. Actual B96 wire SYN
+   compatibility c7fd04fc/734sourcepins/2cases/1container removed.
+   No new HGB opportunity; existing Window21 positive policy unchanged.
+
+6. Data/measurement complete: live507 eb69c563/498eligible9masked/
+   0pending-unknown/2128.629upper. Four new pre-open points d8b66977/
+   4c65fa99 committed,0fits-targets-API. Same future measurement
+   df6d798c/deploymentd405201f ACTUAL12class3+2nonprobability policies,
+   Oct26 23:45..23:55UTC; strict reader returns NOT_OBSERVED.
+   New HGB/long-context points not adopted. Intraday timestamp-only support
+   7e8d1206:180queries/175common/9dependentdates; no new GPU grid justified.
+   No same-day afternoon score relabeled pre-open.
 
 ## Verify / Continue
 
-A=D:/thericher-v2/model-artifacts; M=D:/market_data. Keep market bytes in M,
-models/generated research in A, Docker /app/model_artifacts. Preserve15percent
-D free and preexisting %SystemDrive%/. Credential-free tools use
-uv --no-env-file and .env.example.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. Keep15percentDfree;
+preserve preexisting %SystemDrive%/. Credential-free uv --no-env-file and
+.env.example. Read exact current evidence, not active mutable capture-state.
 
-Reusable full authority:
-D:/thericher-v2/model-artifacts/verification/model-profile-gpu-lease-20261020-v1/authority.json.
-1370production/test/script/config digest d10698dc;1720serialPASS2skip/
-18537fullPASS24skip/8workers/helper0+verifiedcleanup/Ruff/threeComposePASS.
-Fresh1370source+2control equality and1559 Data/point direct-reference hashes
-PASS in the Oct20 integration check. Docs/external reuse needs fresh external/
-native checks; repo tests cannot validate external code. Tracked/material
-recovery changes follow AGENTS verification.
+Reusable authority A/verification/model-profile-gpu-lease-20261020-v1/authority.json:
+1370sourced10698dc/1720serialPASS2skip/18537fullPASS24skip/8workers/helper0/
+verifiedcleanup/Ruff/threeComposePASS. Docs/external reuse needs fresh exact
+source/control equality plus native/external checks, not repeated repo tests
+for D code. Tracked/material recovery changes follow AGENTS verification.
 
-Integrate material results, verify/commit/push owned changes and continue ready
-work. A lane-local block or future session is not company completion. Replace
-this file with ONE next company outcome only after actual owned lifecycle
-closure, not to end a turn.
+Verify/commit/push material owned results and continue ready work.
+Keep lane-local blocks scoped; replace this file with ONE next company
+outcome only after the actual owned lifecycle closes, never to end a turn.

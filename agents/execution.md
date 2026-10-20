@@ -5,6 +5,42 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+## Current Parallel Inspection / Adapter Readiness
+
+Archimedes owns only NEW current-oct20-natural-paper-outcome-20261020-v1
+under A/execution:bounded exact existing nightly14:50UTC/F9 15:10UTC outcome
+inspection, hardend16:00UTC/max180active. No manual Run/new schedule/API/
+credential/order/privatewrites; no host polling/sleep process while due.
+Read fresh immutable exact dispatch and strict RO categorical linkage only
+after owner quiescence. Unknown reservation/ancestry stays held.
+
+HGB hostCPU producer full-output-r2 READY2ca3dfc2/SOURCEc4b50c82 at
+A/research/current-hgb-absolute-paper-producer-20261020-v1:
+58nativechecks/2SYNforwards/1model-onlyrestore,full25 probability/score/weight/
+input-binding sidecar+DTO persist/readback before immutableCOMMITTED.
+Trusted CALLER ceiling0<..<=.10 beforeintake, selectedABS prefix61/modelc836f792.
+Execution fullmass-r2/CONSUMERb646849a at
+A/execution/current-hgb-absolute-model-paper-reuse-20261020-v1:
+fullmassfairTop5 REGARDLESSscore-sign,NYSunspent/no renorm/nativebank unchanged.
+OldR1d080 genericproof copied Windowpositivegate prose; producer was ALREADY
+fullmass, no wronggate deployment. R1/debits unchanged, newcorrection separate.
+
+Actual B96 wire SYN compatibility c7fd04fc at
+A/infra/current-hgb-model-paper-image-compatibility-20261020-v1/RESULT.json:
+2packets canonicalcodec+typedvalidation/wrongpolicy-tamper rejects/Python3.12.15/
+734pins/Torch+sklearnabsent.1containercreate-start-remove/26.438upper/alljoined.
+NO actual HGBmarketpoint/loaderactivation/Task/API/private/order/fill/PnL.
+Existing Window21positivepolicy/tasks unchanged; no HGBopportunity installed.
+
+NAS gross caller-r1 READY5f0d6f83/caller9fd7a2f2 under
+A/execution/current-nas-exit-accounting-readiness-20261020-v1:
+27tests/Ruff/actualSYNCLI/independentDecimalPASS; nativekernel4da7d033/
+474pins100checks.60prep+60callerupper. Exact original8owner/input/policy/
+request/fill scope/cumulative finaltotals once; missing/partial UNKNOWN.
+Otherowners' incomplete accounting is not a globalallflatgate. No actual
+private invocation/profitread yet; measuredfees/settlement absent, netestimate
+not measurednet. Original8exit>=Oct21OPEN still unfinished.
+
 ## New Model Proposal Future Deployment
 
 Archimedes owns A/execution/current-window21-provisional-nas-deployment-20261021-v1

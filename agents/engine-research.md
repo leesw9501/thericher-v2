@@ -1,92 +1,84 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
 Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
-Parent integrates/Git; Engine owns models/targets/splits, never broker risk.
-Historical comparisons are adaptive/reused, not independent alpha/Paper PnL.
+Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
+Engine owns hypotheses/models/splits, never deterministic broker risk.
+Historical reused comparisons are adaptive development, not independent alpha.
 
 ## Current Priority
 
-- Paper baseline: MODEL_PROPOSAL_NAS future tasks INSTALLED9b1d0e84,
-  prepareOct21 13:10UTC/execute14:00UTC. Same original shared tenth/custody.
-  Old NAS eight retained FULL entries exit>=Oct21 13:40UTC. No profitability
-  permission gate; technical faults and unknown reservations remain real.
+Boole owns NEW current-long-context-feature-development-20261020-v1 under
+A/research. Source/native preparation, NOT actual training yet.
+Proposal current-long-context-feature-hypothesis-20261020-v1/fd71dfa3:
+4matched fits HGB_SHORT/HGB_SHORT_PLUS_LONG/LSTM_SHORT/LSTM_SHORT_PLUS_LONG.
+Direct oldyear-scale skip21momentum+rv251 to recent21return encoder, same
+23columns/66head/fullinit/RNG geometry. Not newfactor/window/architecturegrid.
+Exact prior duplicate rejects proposal, no renamed rescue.
 
-- Latest learning CLOSED: peer mean/attention5a4eec9c/ABI9fdff9e2 under
-  A/research/current-cross-stock-peer-attention-preparation-20261020-v1/
-  runtime-source/backend-math-r1. TwoCUDAfits21epochs/selected1/4620updates/
-  142checks/12cells; financialdiagnosticPASS/properFAIL, lateroverfit.
-  At10bp growth/DD percentINITIALNAV:ATTN .7577/.8980,mean .4788/.8989,
-  uniform .1129/.3261. Not convergence/independent alpha/Paper promotion.
-  Four lifetimeallocations/52SYNupdates/470.251upper, alljoined/leasefree.
-  Oldc333/e014 failures/debits immutable. Diagnosis ede2797e: identical
-  restored BEFORE/RNG, defaultSDPA AFTERfloat drift, MATHcontrol bitexact;
-  corrected jointnative23b65955 PASS, no tolerance/criterion relaxation.
+Kepler derives A/data/current-long-context-feature-input-20261020-v1,
+existing-cache only. FIT2017..22/INNER2023..Jun2026/PRED fixed66datesx25.
+Common252close-supported inputcohort; FIT-only sharedaffines, purge physical
+fifthCLOSEtarget, input versus supervised weights separate. PRED input has
+no targets; all4selected PREDseals before later target/mark evaluation.
+Provider-field/currentlisting/nonPIT/CA limits, no validBar/nativecash claim.
 
-- Bacon: NEW broader labelled507-query two-arm campaign
-  current-broad-query-peer-attention-20261020-v1. FIT654834/654794supported,
-  explicit route-selfmask/input-only membership, current25 INNER/PRED and
-  cached oldattention baseline. Different data/query geometry, not oldfit
-  repeat. First attempt8e899b7f counteridentity missingstage:oneallocation/
-  zero fits-updates-predictions/debit598.825. ActualcounterCPU regression
-  before correctednative; source24checks NOT CUDA pass. Linked recovery
-  preserves SAME4000active14400elapsed/fromacceptance inclallcosts, one
-  preferredallocation+one predeclared SYN-onlyretry before anymarketstart,
-  <=3lifetimeallocations/2marketfitsALLattempts/0marketretry/max128pat20.
-  Now COMPLETE08fdd333/ABId8c2901b asof09:32:56UTC:twoCUDAfits mean32epochs/
-  selected12,attention23/selected3/1595updates3369forwards/34SYNupdates/
-  15cells479checks/primaryFAIL.10bp percentINITIALNAV mean.5264/DD.5650,
-  attention.1158/.6616; bothpropermetrics beatbroadFITprior butattention
-  losesmean.874.069aggregate incl598.825/2allocations/SYNretryunused,
-  alljoined/leasefree. Broad prospective pair now ACTUALd8b66977 below;
-  no remaining fit or forecast work in that closed campaign.
+Family origin12:19:44UTC/end16:19:44UTC/3600aggregateactive/14400elapsed;
+prior Strategy90 plus review18.036 chargedonce.4marketstarts/2CPU2CUDA/
+0retry/oneGPUallocation/18cells. CPU/GPU native solver/optimizer/checkpoint/
+RNG-nextupdate before actual fits. Max128/pat20/curves/LR/bestrestore,
+no finaloutcome epoch selection. Timed run is not convergence proof.
 
-- New prospective forecasts ACTUAL, no repeats:
-  A/research/current-mean-attention-prospective-point-preparation-20261020-v1/
-  source-import-r1/readback-r1/FINAL.json4c65fa99/OUTCOME61788238/
-  COMMITTED1ee09a3c at10:36:19UTC. TwoCPUrestores/forwards selected1/1,
-  plus predeclared rankthird(ATTN,ResidualMLP,RAWSD) using exact old07:52
-  components/no extraNN;90checks/143.793pointactiveupper/allactorsclosed.
-  A/research/current-broad-query-peer-prospective-point-20261020-v1/
-  data-availability-r1/FINAL.jsond8b66977/OUTCOME82b1869b/COMMITTED04900f14
-  at10:32:37UTC;twoCPUrestores/forwards selected12/3,78checks/253.756upper,
-  allactorsclosed. Both25queries/498eligible9maskedpeers/0fits-GPU-targets-
-  API. Rankpolicy NONprobability/proper-score N/A; outcomes still unknown.
-  Shared Data2128.629 is one separate dependency, not duplicate point spend.
-  No exactwire/providerfinality/PIT/CA or profitability promotion claimed.
+Claude edb6dccd REVISE at
+A/review/current-long-context-feature-development-20261020-v1/ADVISORY.json.
+Adopt common-long-supported-cohort estimand/fixed1650PREDkeys, separateOPEN
+target/mark QA/sharedinit/scalers/masks. Its head64vs66 premise is WRONG:
+both arms already66, HGBboth23. No extra shuffledcontrol/fits or clockreset.
+Incremental-feature usefulness under fixed learner/cohort is not universal
+causal long-context proof; numerical tolerance not significance.
+Ready Data/native/review addressed before autonomously fitting, not parent
+approvalqueue. CanonicalGPUlease/actualheadroom required.
 
-- Boole selected next target-recipe comparison:
-  A/research/current-broad-ranking-candidate-preparation-20261020-v1.
-  Source870928a7/31checks/46.117upper: SAMEHGB21features ABS_COST3 versus
-  per-date REL_TAIL3, notnewrankingmethod/newinformation. GenericmidrankMSE/
-  pairwiseranking repeats explicitly rejected from12nearest actualcontracts.
-  Runtime/native byBoole and label-onlyData byBacon inparallel, no fit yet.
-  Freeze numeric origin/end atacceptance,2400aggregateactive7200elapsed incl
-  prep46.117/review17.327/Data/native/IO/failure/cleanup;2marketstarts0retry
-  aftermarket/max128pat20/perfit600/15cells/0GPU. RealSYNsolver/checkpoint/
-  explicitchronologicalvalidation before market; no PREDlabels in trainer.
-  Claude2fcf86e4 REVISE scope/dependence/labelrecipe adopted. Numeric2e-12
-  is NOTeconomic-effect/significance threshold; parent rejects newbootstrap
-  qualification because repeatedadaptivePREDreuse is not repaired by it.
-  Keep frozen diagnostics/criteria/no rerank, no broadnoalpha claim fromFAIL.
-  Conditional delegatedGO after exactsource/Data/native/owner checks, not
-  another parent/operator queue. No new prospective cohort/Task bydefault.
+Paper runs independently: Window21future tasks9b1d0e84 installed, prepare
+Oct21 13:10UTC/entry14:00UTC. OriginalNAS8exit>=13:40UTC. No modelprofit gate.
+Actual future14primary point outcomes remainunknown, not evaltraining inputs.
 
-- Fixedfusion COMPLETE2c75844c/CACHEABI5455aefe under
-  current-peer-residual-fixed-fusion-20261020-v1:15cells/3cachedintakes/
-  0NN-GPU-retries/2093SYNassertions/148readback/2115DecimalNAVchecks,
-  117.365activeupper/alljoined.10bp percentNAV rankthird1.1310/DD.8474,
-  frozenhalf1.1287/.4792,ATTN.7577/.8980;primaryFAIL risk. No weightrescue.
-  This66date consumer does not regrade old67datehalf. Future predeclared
-  rankthird remains measurement regardless historicalFAIL.
+## Latest Closed / Do Not Repeat
 
-- Data dependency COMPLETE: A/data/current-nas507-peer-live-close-20261020-v1/
-  repair-r4/CONSUMER.json eb69c563/CLOSED6969c765/terminal2006f601.
-  All507terminal/498eligible9known-insufficientmasked/0unknown-unattempted-
-  pending. FP64[507,22]/507GET5POST0retry/2128.629aggregateupper/allclosed.
-  Maxpersistedavailability10:26:06.655378176UTC, exactwire/finalityunknown.
-  R3storagefailure after446accepted was pre-wire, not APIlimit; oldpending/
-  debits preserved. R4reused446andcaptured61only. No input wait remains.
+| Root Under A/research | Actual Result |
+| --- | --- |
+| current-broad-ranking-candidate-preparation-20261020-v1/runtime-source/readback-r1 |139071c2/d23a5b7e:2CPUHGBfits ABS81rounds/best61 vsREL36/best16,117rounds351trees/15cells547checks/236.933upper/alljoined. Both frozenFAILs/nonconstant/properpriorsbeaten/lateroverfit.10bp growth/DD percentNAV ABS+.8238/.3730,REL+.6214/.2570,raw+.6465/.4774,uniform+.1129/.3261. |
+| current-cross-stock-peer-attention-preparation-20261020-v1/runtime-source/backend-math-r1 |5a4eec9c/9fdff9e2:2CUDAfits21epochs/selected1/4620updates/12cells142checks/470.251upper/alljoined. ATTN+.7577/DD.8980 vsMEAN+.4788/.8989 percentNAV, financialdiagnosticPASS/properFAIL. DefaultSDPA restore drift corrected scoped MATH23b65955, oldfailuredebits retained. |
+| current-broad-query-peer-attention-20261020-v1/corrected-native-r1 |08fdd333/d8c2901b:2CUDAfits32/23epochs selected12/3/1595updates/15cells479checks/874.069upperincl598.825firstcounterfault. MEAN+.5264/DD.5650 vsATTN+.1158/.6616 percentNAV, primaryFAIL/alljoined. |
+| current-peer-residual-fixed-fusion-20261020-v1 |2c75844c/5455aefe:15cells/0NN-GPU/117.365upper. Rankthird1.1310/DD.8474 vsmatchedhalf1.1287/.4792 percentNAV, FAIL/higherDD; old67datehalf not regraded. |
+| current-rawsd-provider-field-multiera-20261020-v1/actual-r1 |125ea46c:36cells/onepass/0fits-GPU-retries. RAWSDprimaryFAIL all3eras.10bp growth percentNAV RAWSD/MOM/uniform 3.2495/3.5176/2.9280,1.1649/7.1227/1.7462,2.3133/7.7262/4.6957.330.479upper/alljoined; UNQUALIFIED field-price proxy, not nativecashPnL. |
+
+HGB labels468e407f:640294supervisedFIT/1776dates from654834inputs;
+40incomplete dates exclude14540rows equally/INNER1575allknown,3782checks/
+65.253upper. OldAAD6670current25FITwindows endsMar24, not broadFITscaler.
+No further fitting/forecasts inside that CLOSED targetrecipe family.
+
+RawSD oldfullBar097 staysunavailable. Firstcause18rawPRESENT/OHLCinvalid/
+0GET; newfieldQAba0d7a46 and Dataf44c3ef3 preserve everyflag/no invented
+HIGH/LOW. Protocole1ecde5f/worker52f3f418/native9a467c35 frozen before actual.
+No qualifiedperformance/PIT/CA/TR/independence or measuredCPU/RAMcap proof.
+
+## Operational / Intraday Readiness
+
+HGB source/native producer at
+A/research/current-hgb-absolute-paper-producer-20261020-v1/full-output-r2:
+READY2ca3dfc2/SOURCEc4b50c82/58nativechecks/1restore2SYNforwards.
+Full25probability-score-weight-binding sidecar+DTO committed/readback together.
+Trustedcaller<=.10/fullmassfairTop5regardlesssign/NYSunspent/no renorm;
+Execution fullmassb646849a. ActualB96 wireSYNc7fd04fc passes2packets,
+734sourcepins/Torch+sklearnabsent/1containerremoved.
+No actual newmarketpoint/loaderactivation/order/fill; Window21unchanged.
+Producer alreadyfullmass; oldR1consumerpositivegate prose was corrected,
+not a wronggate deployment. Claude94db7616 scopes retained.
+
+Intraday7e8d1206:180queries/175common across180/360physicalRTHminute
+contexts/1-5-10-60-180m;5Oct7gaps/9dependent reused dates. Supportalone
+doesn'tjustifynewGPUstudy, no imputation/timeframe-as-IID. Afternoon
+execution needs a distinct causalentryprofile, not relabeleddaily pre-open.
 
 ## Frozen Research Context
 

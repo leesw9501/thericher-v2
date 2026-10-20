@@ -1,113 +1,86 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
 Oct20KST. A=D:/thericher-v2/model-artifacts.
-Own official-source hypotheses/pure mechanisms; Engine owns targets/splits/
-costs/fitting. No broker/risk/credentials. Parent shared MD/Git. Company
-current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
+Own concrete mechanisms/source interpretation; Engine owns target/split/
+fitting/evaluation. No broker/credentials/risk authority. Parent shared MD/Git.
 
-## Ready / Owned
+## Current Ready Proposal
 
-Confucius completed interpretation of matched XLK MODP0/1 evidence under
-A/data/current-xlk-contemporaneous-mode-basis-probe-20261020-v1/RESULT.json.
-Sameclient/BYMD20251208/GUBN0,2GET1POST0retry; perdateOHLC scaling compatible,
-pre/post Dec5,2025 split factors differ. A global all-date constant scale is
-not required by ordinary split adjustment. Preserve old observations; do not
-infer PIT/TR/allCA/heldshare-transform qualification or require another probe
-without an actual consumer need. Advisory target
-A/review/current-xlk-basis-interpretation-20261020-v1; no further API assigned.
-Advisory0968970d CORRECT_INTERPRETATION_NOT_A_PROVIDER_FAILURE,
-15upper/no numericrecomputations. GlobalfactorFalse only refutes global
-constant conversion; OTHER is not literally SAME/HALF/DOUBLE, not corruption.
-Continue explicitly versioned features/replay; no generic probe/gate.
+A/research/current-long-context-feature-hypothesis-20261020-v1/PROPOSAL.json
+fd71dfa3: four fits, matched HGB and LSTM SHORT versus SHORT_PLUS_LONG.
+Consumer: test whether explicit stockyear momentum/volatility summaries help
+the five-session cost-classification loop beyond21recent returns.
+Same23columns/NNhead topology; SHORT zeroes two already valid context slots.
+Use exact old daily28 indices:skip component230changes, NOT the separate
+C[e-22]/C[e-253]231change momentum control. All252closes consumed byrv251.
 
-Boole: selected broad relative-tail3 versus absolute-cost3 SAMEHGB target
-recipe, source870928a7/31checks. Generic ranking/midrankMSE repeats rejected;
-not new information/architecture. Runtime/native plus Bacon label-onlyData
-parallel;2CPUfits/15cells/2400active7200elapsed/noGPU, conditionaldispatch
-after exactData/native/source/owner checks. Source request
-A/research/current-broad-ranking-candidate-preparation-20261020-v1;
-no numerical dispatch/model choice from Strategy or approval queue.
-Claude2fcf86e4 REVISE label/population/effectiveN/killpower boundaries,
-17.327upper; keep descriptive comparisons,2e-12 not statistical significance.
-RepeatedadaptivePREDreuse cannot be repaired by bootstrap-as-promotion gate.
+13sourcepins checked,90conservativesourceupper/0payload-model-GPU calls.
+Prior14feature/multieraHGBMLP/21-63-252LSTM/OOFgate studies explicitly
+acknowledged. Narrow task-aligned directon/off ablation is not factor novelty.
+Exact duplicate kills proposal; do not rename a window/seed to evade it.
+Engine current-long-context-feature-development-20261020-v1 and Data
+current-long-context-feature-input-20261020-v1 are preparing actual contracts.
+No numerical/Paper authority is conferred by this source proposal.
 
-Confucius now chooses ONE source-only multi-regime/longer-horizon track under
-A/research/current-multiregime-research-choice-20261020-v1. Existing data,
-concrete exact coverage/consumer/novelty and strongestkill, not another
-same66date architecture grid. No new actual labels/fits/GPU/API assigned yet.
+Strongest kills: duplicate/inputfuture/scalerleak/cohortmismatch;
+no strict matched proper/economic improvement closes this hypothesis.
+Both outcomes reported independently. Reused2017..2026data/currentlistings/
+provider-field/PIT/CA limitations stay explicit, no independent alpha claim.
+No more models merely to fill GPU.
 
-## Latest Mechanism Results
+## Latest Evidence Informing Direction
 
-- Query-dependent peer representation, not generic DeepSets:
-  A/research/current-cross-stock-peer-attention-preparation-20261020-v1/
-  runtime-source/backend-math-r1/FINAL-r2.json5a4eec9c/9fdff9e2.
-  Matched21return encoder/mean507/attention507,2CUDAfits21epochs selected1.
-  10bp growth/DD percentNAV ATTN+.7577/.8980,mean+.4788/.8989,
-  uniform+.1129/.3261. FinancialdiagnosticPASS/properFAIL/lateroverfit.
-  Plainmean-context already existedOct19; do not propose it as new.
+- NEW RAWSD field-multiera125ea46c:36cells/onepass/0fits-GPU.
+  All3eras primaryFAIL.10bp growth percentNAV RAWSD/MOM/uniform:
+  2017..19 3.2495/3.5176/2.9280;2020..22 1.1649/7.1227/1.7462;
+  2023..Jun2026 2.3133/7.7262/4.6957.
+  Explicit UNQUALIFIED provider-field proxy, not actual cash PnL.
+  Source e1ecde5f/native9a467c35/Dataf44c3ef3,330.479upper/alljoined.
+  Old full-Bar097 unavailable is unchanged. All18raw rows existed but
+  invalidOHLC; retain flags, no invented HIGH/LOW/markettruth certificate.
 
-- Broader labelled-query attention test:
-  A/research/current-broad-query-peer-attention-20261020-v1/corrected-native-r1/
-  FINAL.json08fdd333/ABId8c2901b. Same arms/new507FITquery geometry,
-  654834inputs654794supported/current25INNER-PRED;2CUDAfits32/23epochs
-  selected12/3. Both beat broadFITprior butATTNlosesmatchedMEAN,primaryFAIL.
-  10bp growth/DD mean+.5264/.5650,ATTN+.1158/.6616percentNAV. No grid rescue.
+- HGB targetrecipe139071c2:twoCPUfits absoluteclass3 versus relative-tail3.
+  Both frozenFAIL, proper priors beaten.10bp growth/DD percentNAV
+  ABS+.8238/.3730,REL+.6214/.2570. Not pure objective causality/newinformation.
+  Absolute operational producer ready fulloutput2ca3dfc2/fullmassb646849a/
+  B96SYNc7fd04fc, NOT deployed/marketpoint/fill/alpha.
 
-- Fixed rank-third(ATTN,ResidualMLP,RAWSD), not learned gate:
-  A/research/current-peer-residual-fixed-fusion-20261020-v1/COMPLETE.json
-  2c75844c/CACHEABI5455aefe.15cells/0NN-fits-GPU,rankthird10bp+1.1310/
-  DD.8474 vsfrozenhalf+1.1287/.4792percentNAV. PrimaryFAIL/tinygainhigherDD.
-  Claude ab7e1455 REVISE scope/source/mask/tie/exposure/multiplicity applied;
-  exact A/review/current-peer-residual-fixed-fusion-20261020-v1/ADVISORY.json.
-  New66date consumer does not regrade old67datehalf failure/pass criteria.
+- Current25 peer5a4eec9c:2CUDAfits,ATTN descriptivefinancialgain versusmean
+  butproperFAIL. Broaderquery08fdd333:2CUDAfits,attentionlosesmean.
+  Rankthird2c75844c tinygrowthgain/higherDD thanhalf ->FAIL, no weightgrid.
+  Old Window21/63/252 baskets identical/properFAIL, OOFgate94f2b5c6FAIL;
+  one cannot call a repeated architecture a new information experiment.
 
-Four new point forecasts ACTUALd8b66977/4c65fa99 at10:32:37/10:36:19UTC;
-2CPUforwards each/0fits-GPU-targets-API,all25queries/498eligible9maskedpeers.
-Predeclared fixedthird retained regardless historicalFAIL/noextraNN, not
-probability/proper-score. All actual actors closed; futureOct20/21/22/23/26
-outcomes unknown. Kepler extends SAME Oct27 measurement, no new worker.
+- Intraday input-only7e8d1206:180queries/175common across180/360RTHminutes,
+  nine dependent reused dates, not175IID. No GPU study justified NOW by
+  support alone; no public/paid data requirement or globalPaper hold.
 
-## Earlier Findings / Concrete Ready Alternatives
+## Reusable Direction / Rejected Duplication
 
-Closed reused-data results, not alpha/actual KIS PnL:
-- Window21/63/252 select identical baskets:properFAIL/no window-blend novelty.
-  Same source can still provisionally exercise approved Paper; future model
-  tasks actually INSTALLED9b1d0e84, not a fill or full replay-equivalence claim.
-- MatchedMSE/directlogwealth2CUDAfits:utility growthup/DDworse ->primaryFAIL.
-  FourOOFWindowfits+CPUgate94f2b5c6 alsoFAIL. Recentreversal mechanism9f39fe7b
-  supported by433checks/95.4percentSYNgradient sensitivity latest5, not causal
-  profit. Do not re-tune epochs/thresholds on final outcomes.
-- Residual/regime1372c432 sixfeatures:Logistic+MLP2fits/24cellsprimaryFAIL,
-  fixedrankhalf descriptivepromise; future07:52a0569a2e retained.
-- BroadLSTM8198cdbe95epochs/selected75 pairedFAIL, missing40properUNKNOWN.
-- Indicator08b45bec sciencePASS/financeFAIL; volume physicaldirection fixed
-  OC+ON cancellation SYNfault. Foundation TTM/Chronos/TimesFM already studied;
-  Granite TTM exactrevisionf04bebdd/weights30f8d9be/Apache2/image71fe. No
-  claim never tried, unknownpretraining is not independent performance.
-- ETF57date weeklyreversal/fixedhalf72102ffb15cellsFAIL; standalone reversal
-  less negative thanuniform at10bp, blendnotgrowthimprovement. No weightgrid.
+Existing indicators, volume, ML/DL/publicmodels and ensemble studies already
+exist; never report GRU-only or foundation-model-untried.
+BroadLSTM8198cdbe95epochs/selected75;ResidualMLP1372c432+Logistic;
+indicator08b45bec sciencePASS/financeFAIL. TTM/Chronos/TimesFM researched;
+trusted TTM exactrevisionf04bebdd/weights30f8d9be/Apache2/image71fe.
+Unknown/overlapping pretraining scope is not independent performance.
 
-Useful prepared alternatives, not another reading list or company gate:
-- Sector252momentum: A/research/current-sector-regime-strategy-preparation-20261020-v1.
-  Prior-close-only sign/next-session fill/samegross scaleduniform; source-only
-  16SYN. Interpret split-basis evidence narrowly before a NEW scoped study;
-  nominal prices are not automatically totalreturn/heldshare economics.
-- SectorPaper A/research/current-sector-reversal-paper-readiness-20261020-v1:
-  24fixtures/source11d6e285, fresh12x6close need/custody. Venue7fd6d19d and
-  shared-loader1d5cd9a7 show old NAS876/F9499/nightly304 reject AMEX entries
-  globally. No eight-file fleet rollout/newbank/foreignadoption for this.
-- SECYoYquarterly operating-margin-change50eb59b1/37SYN,63sessiontarget,
-  NOTSUE/PEAD. Three-companypilot stopped first403/1GET0retry0docs; no proxy/
-  headerrotation or repeated samefailed acquisition. Contact cause unproved.
-- Treasury already used/currentvintage/lag2notpublicationproof. CFTC406weekly
-  ALLhistoricalpublicationtimesUNKNOWN, notPIT/Execution. Neither implies a
-  missing-value imputation or model feature approval.
+Sector252momentum preparation remains a concrete source alternative, not
+new generic momentum/monthlygate. XLK matchedMODP0/1 evidence2GET1POST:
+perdateOHLC scale compatible, pre/postsplit factorsdiffer. Advisory0968970d
+corrects a mistaken globalfactor requirement; no newprobe/PIT/TR/allCAproof.
+AMEX rollout blocked by measured oldglobal-loader shared-bank incompatibility
+1d5cd9a7, not profitabilitypermission. No fleetmigration/newbank merelyforETF.
 
-## Sources / Durable Knowledge
+SECYoY operatingmarginchange50eb59b1 pilot first403/1GET/0docs; no header/
+proxyrotation or repeatedfailedcapture. CFTC406weekly publicationtimesALL
+unknown/currentvintage; Treasury lag2 is not publicationproof. No silent
+feature imputation or report/list detached from an executable consumer.
 
-Primary sources motivate mechanisms, not project performance:
-- Deep Sets https://arxiv.org/abs/1703.06114
-- Set Transformer https://proceedings.mlr.press/v97/lee19d/lee19d.pdf
+## Primary Source Pointers
+
+Sources motivate mechanisms, not checked project returns:
+- https://arxiv.org/abs/1703.06114
+- https://proceedings.mlr.press/v97/lee19d/lee19d.pdf
 - https://www.nber.org/papers/w2533
 - https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr513.pdf
 - https://www.nber.org/papers/w30917
@@ -115,14 +88,8 @@ Primary sources motivate mechanisms, not project performance:
 - https://w4.stern.nyu.edu/facdir/lpederse/papers/TimeSeriesMomentum.pdf
 - https://www.cs.cornell.edu/~caruana/mlj97.pdf
 - https://www.sec.gov/search-filings/edgar-application-programming-interfaces
-- https://www.sec.gov/about/developer-resources
-- https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/dailyprice/dailyprice.py
-- https://github.com/koreainvestment/open-trading-api/blob/main/backtester/kis_backtest/providers/kis/data.py
+- https://github.com/koreainvestment/open-trading-api
 
-Stock-order permutation tests invariance, not information destruction. Plain
-meancontext nonlinearhead can change relative ranks; actual Oct19model.py
-already did so. Attention is query-dependent peer weighting, not proof of
-useful new information. OwnPyTorch implementation/no borrowedweights/code;
-reference SetTransformer MIT. Known rights/version/source recorded per study.
-Keep a small executable ready set; completed history stays Git/immutable A,
-not permanent agents per indicator or a reporting/approval platform.
+Group permutation checks equivariance, not destruction of information.
+Meancontext nonlinearhead can change ranks; queryattention is not guaranteed
+useful newinformation. Keep small executable readyset, history in Git/A.

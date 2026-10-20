@@ -1,116 +1,109 @@
 # Data Stateboard (시장데이터 담당)
 
 Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own market-data capability/acquisition/storage/availability; Execution owns
-account/orders. Parent shared docs/Git. AGENTS owns authority. Never expose
-secrets/rawmarket/account/order/privateamounts or route KIS_LIVE_*.
+Own market data/storage/availability; Execution owns account/orders.
+Parent shared MD/Git. Never KIS_LIVE_* or secret/rawmarket/private output.
 
-## Ready / Owned / Due
+## Current Owner / Next Action
 
-Kepler completed live507 and same-window measurement extension. ACTUAL root
-A/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
-df6d798c/DEPLOYMENTd405201f/SOURCEe45c65b0 at10:58:53UTC.12class3+two
-nonprobabilityrank policies/14primary outputs, legacyfixedquarterauxseparate.
-Oneactionupdate/0rollback-Run-newtrigger-API-model-measurement/46checks,
-freshindependentCOM ACL/nonaction/window PASS/0instances/allchildrenjoined.
-54.566aggregateupperof240, old8+1artifact0e9e28f6/debits unchanged.
-SameOct26 23:45..23:55UTC/Oct27 08:45KST,120active600elapsedworker.
-Parent strictreader with exactd405201f and7directrefsPASS independently returns
-FUTURE_MEASUREMENT_NOT_OBSERVED/performanceUNKNOWN. No actual targets read.
+Kepler owns NEW existing-cache derivation:
+A/data/current-long-context-feature-input-20261020-v1.
+Consumer: Engine matched HGB/LSTM SHORT versus SHORT_PLUS_LONG classification.
+Proposal A/research/current-long-context-feature-hypothesis-20261020-v1/
+PROPOSAL.json fd71dfa3; full family origin12:19:44UTC/end16:19:44UTC/
+3600aggregateactive, Data<=120active/1800elapsed/oneactual0retry.
+No model/API/credential/Task/shared MD work. Current state PREPARATION,
+not a finished input or actual training.
 
-Bacon invoked label-only Data for new HGB target-recipe study870928a7:
-A/data/current-broad-relative-tail3-input-20261020-v1, matchingMroot.
-Reuse existing x tensors/no copies, derive absolutecost3/relative-tail3 on
-exact common date/key/UTC supports; whole incomplete target dates excluded
-from BOTH supervised losses, all inputrows retained.120active900elapsed/
-oneactual0retry/<=40MiB/0PREDraw-models-GPU-API-Scheduler. This is inside
-parent2400active7200elapsed campaign, not a second standalone budget.
-Readiness pending, do not infer Data from source-only request metadata.
+Exact fixed25/official ordinals/physical UTC; R21 consumes22closes,
+L2 all252priorcloses. FIT2017..22/INNER2023..Jun2026/PRED66datesx25.
+Input-only common membership, separate known-target weights, FIT-only affines;
+purge e+4CLOSE strictly before nextroleOPEN. PRED input packet has no targets;
+separate later evaluation packet never trainer mounted.
+Reuse exact QA-bound provider fields, retain observed/fullBar/invalidOHLC
+flags. Positive field is not a valid Bar/PIT/TR/markettruth certificate.
+No imputation, source stitching or silently shortened cohort.
 
-## Completed Live507
+## Completed Field-Level Multiera Input
 
-A/data/current-nas507-peer-live-close-20261020-v1/repair-r4:
-CONSUMER eb69c563d9b337ef2b2eaf4de1e6424a44d634d54e950ac5f505c3beae77aedc;
-CLOSED6969c765/terminal-r1/RECEIPT2006f601.
-M/us_equities/kis_paper_private/current-nas507-peer-live-close-20261020-v1/repair-r4/CLOSE22.npz
-SHA5f86d90e, FP64[507,22]. All507routes terminal/accounted:498eligible,
-9known-insufficient/198required closes missing, explicitly masked/no imputation;
-0unknown/unattempted/pending. All507 native receipt hashes checked.
-ClosedOct20 10:26:06.873759UTC/maxpersistedavailability10:26:06.655378176UTC.
-Exact final wire-opener timestamps NOT retained; no providerfinality/PIT/TR/CA
-coverage claim.507GET5authPOST0retry/2128.628567aggregateactiveupper of2400,
-original08:32:40..10:32:40UTC. No active acquisition or remaining routes.
+A/data/current-rawsd-provider-field-multiera-input-20261020-v1/CONSUMER.json
+f44c3ef36ba4519d0c3af510cb1e69af96a8caded51554033bb799289119c6f6.
+Input NPZ03ebd393/2633x25;marks78770834/2385x25OPEN/CLOSE on M.
+All required observed fields;18invalidOHLC flags retained, no validBar repair.
+16nativechecks/oneactual0retry/27.921upper/alljoined.
 
-Actual consumers now committed:
-- Broadquery pair A/research/current-broad-query-peer-prospective-point-20261020-v1/data-availability-r1/FINAL.json
-  d8b66977,10:32:37UTC/78checks/2CPUforwards/0fits-GPU-targetdecodes-API.
-- Current25 pair+predeclaredrankthird A/research/current-mean-attention-prospective-point-preparation-20261020-v1/source-import-r1/readback-r1/FINAL.json
-  4c65fa99,10:36:19UTC/90checks/2CPUforwards/0fits-GPU-targetdecodes-API.
-Shared acquisition charged once, not duplicated in point active spend.
+Original A/data/current-rawsd-multiera-input-20261020-v1/CONSUMER.json
+0972716d remains full-Bar unavailable:685/750,687/752,806/871supported dates.
+Three underlying gaps, not195independent gaps/nohistory:
+MSFT20170703,12NYS20210505,5NYS20230605.
+Raw firstcause A/data/current25-three-date-gap-firstcause-20261020-v1/
+RESULT.json f3a5873c found all18rows PRESENT, rejected OHLC geometry.
+0GET/POST/48.535upper inclreview; newvintageparity unknown.
 
-## Scoped Recovery Knowledge
+NEW QA A/data/current25-provider-close-field-feasibility-20261020-v1/
+RESULT.json ba0d7a46:18positive observed CLOSE/72neighborrows288paritychecks,
+13native/28.473upper/alljoined/0API. Flags preserved, no invented HIGH/LOW.
+Claude e8132fcf/d9b69be3 REVISE adopted as scope labels, no globalhold.
+New RAWSD research125ea46c completed36field-proxy cells; not canonical-Bar
+promotion/nativecash/PIT. Do not rederive or regrade old097.
 
-First wrapper expected sha256: while native FileRef uses barehex. Acceptedpage
-already valid22closes; first73.016debit/allunknownfailedmask retained, not
-providerhistory absence. Repair reused cache, no accepted-page reGET.
-R1/R2closed on unknownextraactor; R2 terminal193GET3POST/188eligible5missing,
-314unattempted. CmdHash26413aae identityUNKNOWN, not benign/attributed.
-R3boundedworker no-wire readiness rechecks retained strictfreshowner/token/
-native2secondfloor.446accepted/438eligible8missing61unattempted then
-capture_state_storage_failure BEFORE next delegate.open after failed_begin.
-Old9MBcommitted and254thproposedpending files preserved; exact OS errno or
-write/fsync/replace stage NOT retained. Shared-read/delete inspection overlapped,
-causal attribution UNKNOWN. Never hash/read ACTIVE capture-state/pending;
-use safe stdout and CLOSED receipts. Do not call unknownfinancialstate released.
-R4new61route state reused446receipts:61GET1POST/181.920hostwall,mean2.982s/new
-accepted route,0FSerrors/retry/ownerwaits. Success is not oldfault's causal proof.
-No active-source hotpatch, old pending reset, pacing relaxation or APIlimit claim.
-Known offline research is not a cache/account owner; unknown actors failclosed
-only that dispatch. Worker cooldown/next_due never freezes parent/other lanes.
+## Completed Intraday Support
 
-Matched XLK basis probe completed, no acquisition queued:
-A/data/current-xlk-contemporaneous-mode-basis-probe-20261020-v1/RESULT.json,
-terminal-r1/VERIFIED-CLOSED.json. XLK/AMS/GUBN0/BYMD20251208/MODP0vs1,
-sameclient2GET1POST0retry/48.083aggregateupper/allactors+claimsclosed;
-13native30independentchecks. PerdateOHLC scale compatible, pre/post factors
-differ around Dec5 split. A GLOBAL all-date factor is NOT required for normal
-split adjustment; Strategy interprets exact evidence before consumer use.
-No PIT/TR/allCA/heldshare-transform qualification or old dataset mutation.
+A/data/current20-intraday-elapsed-context-support-20261020-v1/CONSUMER.json
+7e8d12068d867eff6aba80e54d2a58e69359cc8592cb159470cf8fa55710602c.
+180route-session queries retained,175common/5Oct7gaps.180/360physical
+RTHminute contexts at1/5/10/60/180m;48SYN+6566readbackchecks/90upper.
+START+60s assumed, actual capture availability separate; no stale/partial
+buckets. Nine dependent reused sessions are not175IID outcomes.
+No GPU study justified by support alone. Same-day15:30ET cannot be relabeled
+daily pre-open. No implementation/API/Task/numeric prices/targets/models.
 
-## Reusable Inputs / Consumers
+## Completed Live / Measurement
 
-| Exact Evidence Under A/data | Useful Scope / Limitation |
+Live507 A/data/current-nas507-peer-live-close-20261020-v1/repair-r4:
+CONSUMER eb69c563/CLOSED6969c765/terminal2006f601.
+M/us_equities/kis_paper_private/current-nas507-peer-live-close-20261020-v1/repair-r4/CLOSE22.npz,
+5f86d90e/FP64[507,22].498eligible9known-insufficientmasked,
+0pending-unknown-unattempted;507GET5authPOST0retry/2128.629aggregateupper.
+Closed10:26:06.873759UTC/maxavailable10:26:06.655378176; exactwire/PIT/CA/
+finality unqualified. R4reused446accepted+61new, no reGET accepted pages.
+Old R3storagefault stage/errno not retained; success is not cause proof.
+Do not inspect/hash active mutable capture-state/pending files.
+
+Actual point pairs d8b66977/4c65fa99 use shared Data once,0newfits-targets-API.
+Measurement ACTUAL A/data/current-peer-points-measurement-extension-20261020-v1/
+RESULT.json df6d798c/deploymentd405201f/sourcee45c65b0:
+12class3+2NONprobability rank policies/14primary, legacyquarteraux separate.
+46checks/freshCOM/oneactionupdate0Run-newtrigger-API-model-measurement/
+54.566upper/alljoined. SameOct26 23:45..23:55UTC/120active600elapsedworker.
+Parent strict reader returns FUTURE_MEASUREMENT_NOT_OBSERVED. No HGB/
+newlongcontext point adopted. Old updates/backups/debits unchanged.
+
+## Reusable Inputs / Source Limits
+
+| Exact Root Under A/data | Scope |
 | --- | --- |
-| current-cross-stock-peer-panel-input-20261020-v1/CONSUMER.json |6de633ee:43480TRAIN/1752dates/634373peerrows;1575INNER/63dates/30990;1650PRED/66dates/32992. Ragged exactUTC/date/route join,21returnAADaffine/nopeerlabels,57SYN217097checks/36.905newupper. Learning completed, no rederive. |
-| current-nas-breadth-window21-input-20261020-v1/CONSUMER.json |8b6da917:654834FIT/1816dates/654794known;30990INNER/63/30985known;32992PRED/66,targetsseparatesealed.114.508MB/19SYN2.362Mchecks/48Dataupper. All512 previously declared/notuntouched. BroadLSTM andmeanattention completed. |
-| current-broad-residual-live64-input-20261020-v1/CONSUMER.json |9e4dac7a/INPUT0d677995:25x64FP64/1600known/exactOct19index0/sourceavailableOct19 23:00:43.571426UTC/asofOct20 07:40:10UTC;16SYN387checks/31upper. Used07:52actualB+MLPpointa0569a2e,notfuturelabels. |
-| current-window21-repaired-extractor-qualification-20261020-v1/CONSUMER.json |1ca604c3/CLOSEDc6a236ff/qualifiedextractor48319dc8:25x22FP64/550known/34checks/28.967upper/oneactual0retry. Producerloadsentinelonly. FutureOct21cohort needs actualOct20index1captures; no stale fallback. OldHEADERfailure7fb80b1a immutable. |
-| current-residual-regime-expert-input-20261020-v1/CONSUMER.json |c7603cda:43480TRAIN/1575INNER/1675PREDsixfeatures/34unknown/49SYN217930checks/34upper. RawSD/residualSD/Logistic/MLP/fixedhalf already tested1372c432. |
-| current-portfolio-objective-full-context-input-20261020-v1/CONSUMER.json |8efcf153:42905TRAINcontext/34unknown,4whole-date100row exclusions ->42805supervised,1575INNER/1675PRED/25POINT;202checks/23.77upper. MatchedMSE/logwealth completed, no repeat. |
-| current-public-cftc-nasdaq-positioning-acquisition-20261020-v1/history-continuation-r1 |f7bbee56:406weeklyJan2019..Oct13,2026 net/OIknown/0holes,1metadata2GET0retry/61.758upper. ALLpublicationtimesUNKNOWN/currentvintage, notPIT/Execution. Broad-discovery STOP remains. |
-| current20-daily-long-history-capture-20261017-v1 |90819strictdaily/20routes/1110GET/most2007Aug,13invalidgaps.1110page3374hash90819rowproof; currentlisting/nonPIT/finalityunknown. |
-| current20-universe-breadth-daily-capture-20261018-v1/timing-recovery-r4/ENGINE-INPUT.json |43379daily/9routes/most2007Aug..Oct16,9invalidgaps1432missingtargets;493GET6POSTattempts. Exactcursorsclosed repeateddate boundary, notglobalhistoryfloor. |
-| nas-retained-long-current-versioned-20261015-v1/handoff.json |1197728bars/currentlistings AAL..CTRN,512past504fresh8oldonly2414gaps;alphabetical/notrepresentative/PIT. |
-| current-sector-market-context-input-20261020-v1/cursor-continuation-r3/READY-FINAL.json |84b36d4a:12fundsx2087closes/176queries/480578paritychecks. No remainingcollector, notCA/TR/PITproof. |
-| current20-kis-native-eight-session-input-20261017-v1/handoff.json |62395/62400native1m/20routes8sessions/5Oct7gaps. Missingawarestudiesalreadyconsumed;no repeatedrepair. |
+| current-broad-relative-tail3-input-20261020-v1/CONSUMER-r2.json |468e407f/3782checks:640294supervisedFIT/1776dates from654834inputs,40incomplete dates exclude14540rows equally;INNER1575/63known.65.253upper/0featurecopies. OldAAD6670current25FITwindows, not broad-FITestimate. |
+| current-cross-stock-peer-panel-input-20261020-v1/CONSUMER.json |6de633ee:43480TRAIN/1752dates/634373peerrows;1575INNER/1650PRED. Exactdate/route/self-excluded peer joins, nopeerlabels. |
+| current-nas-breadth-window21-input-20261020-v1/CONSUMER.json |8b6da917:654834FIT/654794known;30990INNER/30985known;32992PRED, separatetargets. Already used by LSTM/mean/attention; no rederive. |
+| current-broad-residual-live64-input-20261020-v1/CONSUMER.json |9e4dac7a:25x64FP64/1600known/Oct19. Used actual07:52futurepoint, no futurelabels. |
+| current-window21-repaired-extractor-qualification-20261020-v1/CONSUMER.json |1ca604c3/extractor48319dc8:25x22/550known/34checks. Oct21 future cohort needs ACTUALOct20index1captures, no stale fallback. |
+| current20-daily-long-history-capture-20261017-v1 |90819strictdaily/20routes/1110GET/most2007Aug/13invalidgaps; currentlisting/nonPIT/finalityunknown. |
+| current20-universe-breadth-daily-capture-20261018-v1/timing-recovery-r4/ENGINE-INPUT.json |43379daily/9routes/9invalidgaps;493GET6POSTattempts. Cursor source-limited, not globalhistoryfloor. |
+| nas-retained-long-current-versioned-20261015-v1/handoff.json |1197728bars/512routes/504fresh8oldonly/2414gaps; alphabetical currentlistings, not representative/PIT. |
+| current-sector-market-context-input-20261020-v1/cursor-continuation-r3/READY-FINAL.json |84b36d4a/12fundsx2087closes; XLK perdate splitbasis interpretation0968970d, no globalconstantfactor requirement/PIT/TRproof. |
+| current-public-cftc-nasdaq-positioning-acquisition-20261020-v1/history-continuation-r1 |f7bbee56/406weekly/0holes; ALLpublicationtimesUNKNOWN, currentvintage/notPIT. |
 
-Other closed long/OOF/volume/indicator/Treasury affines and immutable consumer
-contracts stay Engine board/Git/A. Do not invert FP32 to reconstruct canonical
-FP64, cross raw ordinals/route namespaces, change masks after labels or mutate
-frozen sources. Missing required inputs stay missing, not imputed profit.
+Other closed input/affine contracts remain Git/immutable A. No FP32 inversion
+to reconstruct canonicalFP64, target-driven membership or raw ordinal mixing.
 
 ## Owned Runtime / Verification
 
-RTH guard-only action retarget2c253392/independentb20ddd5e under
-A/infra/current-rth-executable-spelling-recovery-20261020-v1/release-r1/runtime.
-35pinsfd126c18/guard2d746983; next ORIGINALOct20 21:50UTC. Exact executable
-slash spelling repaired, same arguments/cwd/identity ownership/cursor/token/
-pacing/triggers/PT35M/ACL,0Run-API. Olddeferred outcome not capture success.
-Old20D1 next22:30UTC/new9D1 23:00; validated prior215efd55/8ba05657 exactchains
-not whole-historyfinality. No manual TaskRun merely to inspect evidence.
+RTH guard-only retarget2c253392/independentb20ddd5e, nextORIGINAL21:50UTC;
+old20D122:30/new9D123:00.0Run/API. Installation not actualOct19capture.
+Prior exact feed215efd55/8ba05657 is not all-historyfinality.
 
-1370sourcesd106/AGENTS072d44eb/DECISIONS89b13c15 equal in this Oct20 integration;
-1559Data/pointdirectrefsPASS. Fullauthority1720serialPASS2skip/18537fullPASS
-24skip/8workers/helper0clean/Ruff3sampleCompose; externalnativechecksseparate.
-15percentDfree/preserverawsourcecursors/secretsprivate. Company unfinished;
-no data-quality limitation becomes an unrelated Paper/research permissionhold.
+Authority model-profile-gpu-lease-20261020-v1:1370sourcesd10698dc/
+1720serialPASS2skip/18537fullPASS24skip/8workers/cleanhelper0/Ruff3Compose.
+Docs/external reuse needs exact source/control equality and native checks.
+15percentDfree. Scoped limitations never suspend independent Paper authority.
