@@ -7,21 +7,42 @@ Historical reused comparisons are adaptive development, not independent alpha.
 
 ## Current Owners / Results
 
-Pascal actualGPU ordinalranking under
-A/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1:
-original19:34:40..22:34:40UTC/3600active/GPU1inclusive2700/2FIRSTfits/
-max128pat20/onePRED6new6cached, all-date ordinalpairloss, scalar1280vsLoRA42240.
-Initial3CPU SYNupdates/0market failedJSONmetadata; pre-effectrepair frozen
-old3+newCPU3+CUDA6=12, not later15branch/oldzero-effectsretry. Exactoldstate
-custody/freshgradientguard required; specificrecoveryreview late honestly
-retained, originalordinalreview waspre-freeze. Currentactualworker outcomes
-pending; no secondallocation/refit/cap-clock-reset/approval-file ceremony.
+Pascal completed both ranking campaigns; no active training from them:
 
-Boole CPU fixedpairedrankfusion240active5400elapsed under
-A/research/current-halfpool-ordinal-rank-fusion-development-20261021-v1:
-cdd558f9/87f18555/65sourceupper420SYN,6newmax15bytecached/oneoutcomeintake,
-actual BOTHordinalselectedseals/closedABI pending. Constant-arm exactHALF
-aliases needproof/0replay; eachpool descriptive, no aggregate either-wins.
+- Ordinal READBACK935de050 at A/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1:
+  scalar11epochs/341updates and LoRA21/651, selected1 each; science/finance
+  FAIL,67checks, joined/lease released20:12:13UTC. Preserve original failed
+  CPU346.190upper, cumulative12 SYN updates and late recovery-review timing.
+- Continuous raw-return READBACK887257b7 at A/research/current-continuous-payoff-ranking-development-20261021-v1:
+  both40epochs/1240updates, selected0, science/finance FAIL. Twelve SYN
+  updates/one GPU attempt/347.223GPU-inclusive seconds/46checks/all joined/
+  lease released20:49:02UTC. Exact known masks allow negative/zero returns;
+  no invented tie epsilon or class-sentinel mask. Resident6.069GiB cache,
+  actual20:46 sample80percentGPU/10360MiB; not continuous utilization proof.
+- Fixed rank-fusion readbackf60ed3d8 at current-halfpool-ordinal-rank-fusion-development-20261021-v1/published-input-r1:
+  both FAIL,10bp growth/DD+.5785/.2253 and+.5974/.2284percentNAV vs
+  HALF+1.04894/.29259. Six new/15cached cells/64checks/0newmodels-GPU.
+- Intraday readbackcd1b4cc0 at current-intraday-reversal-continuation-development-20261021-v1/native-fixture-continuation-r1:
+  fixed REV60/CONT60 both FAIL over nine sessions. Twelve cells/one held
+  intake/85checks/0fits-GPU. Assumed retrospective availability, not fills.
+
+Five-policy prospective group ACTUALLY COMMITTED Oct20 21:15:43UTC:
+A/research/current-halfpool-ordinal-prospective-point-20261021-v1/backend-config-recovery-r1/GROUP-COMMITTED.json
+cb1c1d9a; independent READBACKb33bac01. HALF componentb060d4fa unchanged.
+Same Oct21OPEN->Oct27fifthCLOSE target, one shared25-route cohort, not five
+independent samples. Recovery1core/2selected restores/1SYN+1actual encoding/
+2forwards each, no refit/repeated HALF. Aggregate198/360upper, two combined
+GPU attempts,18.462new GPU-inclusive seconds; all joined/lease released.
+Old39991c35 failure/debit unchanged; qualified backend flags restored,
+historical predicate/cause remains unproved. Target/PnL still unobserved.
+
+Boole now owns prospective held-exit shadow source/native/one hidden task
+under current-halfpool-held-exit-shadow-campaign-20261021-v1. Exact b060d4fa
+HALF cohort only, ages0..3 Oct22/23/24/27 01:00UTC; terminal Oct27CLOSE.
+No actual future decisions, fills or current Paper changes inferred.
+Archimedes prepares extension of existing Oct27 measurement consumer,
+not new triggers or numerical model selection. No new trainable campaign
+is ready merely because GPU is free; do not rerun completed studies.
 
 CPU exitd7c7383b CLOSED1HGBfit60iterations/best40/5early325terminal/
 6new9cached/455.118upper,10bp growth/DD +1.09535/.29248 vsHALF+1.04894/.29259

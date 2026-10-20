@@ -4,6 +4,37 @@ Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own market data/storage/availability; Execution owns account/orders.
 Parent shared MD/Git. Never KIS_LIVE_* or secret/rawmarket/private output.
 
+## Current Acquisition / Consumer
+
+Fresh Oct20 stock input ACTUALLY acquired before existing scheduled visits:
+A/data/current-oct20-early-postclose-input-20261021-v1/vintage-r2/CONSUMER.json
+c70569b2 and join-binding-r1/COMPANION.json8010abe1. All25 routes22/512
+closes,98 canonical overlaps each; cumulative25GET2POST/0retry. Last observed
+20:39:07.659552UTC. First pilot's1/99 old-live conflict retained; coherent
+new vintage is not old Task/profile qualification or corporate-action proof.
+Source hashes/keys/flags/capture clock bind actual point groupcb1c1d9a.
+Observation is not provider first-publication/finality/PIT. ETFs7bdfc250
+remain separate MODP0AMS throughOct19; no stock/ETF field splice.
+
+SEC public three-issuer pilot CLOSED_SCOPED_UNAVAILABLE:
+A/data/current-sec-companyfacts-three-issuer-pilot-20261021-v1/RESULT.json
+d00ff3b1: first official ticker-map GET returned403,0accepted/0retries,
+remaining6unattempted. Truthful application-only User-Agent; no fake identity,
+header rotation/proxy/bypass. Cause/remedy UNKNOWN, not an inferred mailbox/
+signup requirement. Twenty-seven native checks/20upper/279.625elapsed,
+client closed/child joined; old pilot unchanged. No usable fundamental
+panel/issuer-concept coverage claimed. This source block is not global.
+
+Volta temporary projection complete, no standing worker inferred:
+continuous label CONSUMERfccf18d2/READBACKb5c6a341 at
+A/data/current-continuous-payoff-label-projection-20261021-v1:
+FIT50275/50270known, INNER24580/24575known. Negative and zero raw returns
+are valid; within-class order is distinct from coarse ordinal labels.
+Intraday CONSUMER71bd28b4 under current-intraday-reversal-continuation-input-20261021-v1:
+180identities/nine dates/175eligible,5masked gaps; input policies sealed
+before separate OPEN/CLOSE outcome decoding. Consumed once bycd1b4cc0,
+no assumption of historical decision-time availability/native fills.
+
 ## Current Ready / Future Boundary
 
 Held-exit raw-state adapter e6ece7ce at
@@ -12,11 +43,13 @@ freeze_context -> freeze_market_open -> state_packet -> save_packet,
 rawFP64[25,23]/masks/typedUNKNOWN/provenance;50SYNchecks+4NPZroundtrips,
 54.397upper including22.009feasibilityonce/alljoined/0actualpayload-API-model.
 Shadowproducera1cb2c6f consumed sourceABI only, not an authenticatedfuturefeed.
-FrozenentryR21 needs22closes endingOct20 forOct21entry; last inspected two
-pointers bindOct19, not assumedfresh. EntryOPEN MUST exact publishedmarket
+FrozenentryR21 needs22closes endingOct20 forOct21entry; c70569b2 now supplies
+them for the separately bound new point, not old frozen profiles. EntryOPEN MUST exact publishedmarket
 field, neverprivatefill. LaterCLOSE publication permits delayedafterclose
 decisions BEFORENEXTOPEN, never backdatedCLOSE. Nativecapturechain/cohort/
-futureOPEN-CLOSE still UNKNOWN; no worker/cohort/currentPaperpolicy activated.
+futureOPEN-CLOSE still UNKNOWN. Boole prepares one four-slot shadow worker
+against frozen HALFb060d4fa; installation/future decisions not yet proven.
+No current Paper policy change or fabricated future inputs.
 Data remainsraw; Engine restores exactFITtargetinverse before rawzeroHOLD.
 EarlierData129e95ba and broader28915bd7 complete, do not rederive/refit.
 

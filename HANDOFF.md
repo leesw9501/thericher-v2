@@ -21,13 +21,13 @@ No genuine operator decision currently required.
 | Owner | Current Package |
 | --- | --- |
 | Parent | Shared MD/integration/Git; preserve unfinished Paper outcome. |
-| Pascal / Engine | Ordinal ranking actualGPU study; exact root current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1 under A/research. |
-| Boole / Engine | CPU fixed paired rank-fusion source/native consumer; actual input pending ordinal selectedseals/closure. |
-| Kepler / Data | Held-exit future23feature adapter e6ece7ce complete; no active collector from that package. |
-| Confucius / Strategy | Fixed fusion cdd558f9/kernel87f18555 complete65upper/420SYNchecks; no actualpayloads. |
-| Archimedes / Infra | ExactOct27measurement bfdf2bc2 actuallyinstalled; no active owner there. |
+| Pascal / Engine | Continuous raw-return ranking CLOSED887257b7: two CUDA fits, 40 epochs/1240 updates each, selected epoch0; no active training from that package. |
+| Boole / Engine | Prospective held-exit shadow source/native and one hidden four-trigger task, current-halfpool-held-exit-shadow-campaign-20261021-v1. No broker authority in this package. |
+| Kepler / Data | Bounded three-issuer SEC public-data pilot. Fresh Oct20 stock input c70569b2 and join companion8010abe1 complete. |
+| Confucius / Strategy | Fundamentals feasibility a6bafab5 complete; temporal Transformer duplicate audit rejects repeating already trained models. |
+| Archimedes / Infra | Five-policy groupcb1c1d9a committed21:15:43UTC. Prepares minimal augmentation of the existing Oct27 measurement task; no new model/trigger. |
 | Bacon / Review | Named challenges delivered; advisory not operatorauthority. |
-| Steward | OrdinalGPU owner exclusive; priorLoRA joined/lease released19:33:53. No idle/training inference from MD alone. |
+| Steward | Continuous training joined/lease released20:49:02UTC. Any point-inference recovery needs fresh exclusive admission; inference is not training. |
 
 ## Paper Runtime And Recovery
 
@@ -113,35 +113,69 @@ no refit/reforecast/sourcehotpatch/oldfailedhost regrade.
 
 ## Current Research And Readiness
 
-Pascal ordinal root current-timesfm-ordinal-ranking-development-20261021-v1/
-premarket-abi-repair-r1: originalorigin19:34:40UTC/deadline22:34:40,
-3600active10800elapsed/oneGPU2700inclusive/2FIRSTfitsmax128pat20/
-onePRED6new6cached. Newscalarhead1280 vsrank4+head42240, date-local allpairs/
-classtiesconstantlog2-zero gradient/all originaldates/equaldate objective.
-Four chronological dates/update, completeone-date forward/backward avoids
-unnecessary cross-microbatch coupling; independentfullgraph gradient/native
-checkpoint/RNG-nextupdate guards required, no tolerance/target/seedchanges.
+Completed, immutable readbacks under A/research:
 
-FirstCPUscope closed346.190upper:3SYNupdates/0GPU-market-PRED, np.float32
-64eps JSONserialization failed BEFORE gradient acceptance. Exact cast fixes
-metadata only; old source/failure/debits retained. Actual repair branch was
-frozen19:50:53 BEFORE newcalls: reuse old CPUFROZENfullstate/exactnextupdate
-with exactcustody and freshgradient-only0updates, plusnewCPU3+CUDA6,
-cumulative12=old3+new9. Do NOT switch after effects to later suggested15,
-resetcaps/refit/regrade oldfailure or infer gradient acceptance.
-Specific newrecovery Claude challenge arrived AFTER native/firstmarket
-19:52:43; timing deviation honestly retained in AUTHORITY-TIMING-ADDENDUM.
-Originalordinalchallenge was pre-freeze. No claim of pre-call recoveryreview.
-Current market worker actually launched; completion/results still pending.
+- current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1/
+  READBACK.json935de050: scalar11epochs/341updates and LoRA21/651, both
+  selected1; science/finance FAIL, 67readback checks, all joined/lease free
+  20:12:13UTC. Retain original346.190 failed-CPU debit, cumulative12 SYN
+  updates and late specific-recovery-review timing; no retroactive regrade.
+- current-halfpool-ordinal-rank-fusion-development-20261021-v1/published-input-r1/
+  READBACK.jsonf60ed3d8: two fixed half-rank pools both financial FAIL.
+  At10bp growth/DD +.5785/.2253 and +.5974/.2284percentNAV versus
+  HALF+1.04894/.29259. Six new/15cached cells,64checks, no new models/GPU.
+  Lower drawdown with lower growth is not dominance or timing alpha.
+- current-continuous-payoff-ranking-development-20261021-v1/READBACK.json887257b7:
+  two actual CUDA fits40epochs/1240updates EACH, selected0, both science/
+  finance FAIL. Twelve SYN updates/one allocation/one six-cell readout/
+  46checks; all joined/lease free20:49:02UTC. Resident FIT/INNER cache
+  6.069GiB; actual20:46 sample80percentGPU/10360MiB. Do not claim continuous
+  utilization, convergence, or a causal speedup across different objectives.
+- current-intraday-reversal-continuation-development-20261021-v1/
+  native-fixture-continuation-r1/READBACK.jsoncd1b4cc0: fixed REV60/CONT60,
+  nine sessions,14:02OPEN ->15:32CLOSE, both financial FAIL. At10bp
+  growth/DD -.171811/.197389 and -.077563/.128954 versus uniform
+  -.115614/.128864percentNAV. Twelve cells/one held-price intake/85checks,
+  no model fits/GPU. Retrospective availability assumptions, not actual fills.
 
-Boole fixed fusion root current-halfpool-ordinal-rank-fusion-development-20261021-v1:
-240active5400elapsed from new frozenorigin; source/nativeconsumer can proceed,
-actual input pending BOTHordinalselectedseals/exactclosed ABI. Proposalcdd558f9/
-kernel87f18555,65sourceupper/420SYNchecks, fixedpairedHALFmidrank+newrank
-integer sums/no fittedgate/weightsearch.6newmax/15uniquecachedcontrols;
-constantarmHALFalias requires exactweight+lineageproof/0redundantreplay.
-One target/markintake after score/policyseals. Eachpool descriptive separately,
-no aggregate either-wins/significance/alpha/Paperchange.
+Fresh Oct20 input is ACTUALLY available, not waiting for scheduled visits:
+A/data/current-oct20-early-postclose-input-20261021-v1/vintage-r2/CONSUMER.json
+c70569b2 and join-binding-r1/COMPANION.json8010abe1. All25 routes have
+22/512 close histories,98 canonical overlaps each. Cumulative25GET2POST,
+0retries; final observation20:39:07.659552UTC. Original1/99 live-vintage
+conflict remains retained; coherent new vintage is not old Task qualification.
+Observation time is not publication/finality/PIT/action verification.
+
+Completed prospective point package under
+A/research/current-halfpool-ordinal-prospective-point-20261021-v1:
+HALF CPU componentb060d4fa committed21:01:21UTC, unchanged. Actual group
+backend-config-recovery-r1/GROUP-COMMITTED.jsoncb1c1d9a committed21:15:43UTC,
+independent READBACKb33bac01. One core/two selected restores,1SYN+1actual
+encoding/2forwards each, no repeated HALF/refit/new target. Recovery18.462
+GPU-inclusive seconds, aggregate198/360upper/two combined attempts, all
+joined/removed/lease free. Original39991c35/core1/129upper failure preserved;
+qualified MATH flags including cudnn_sdpFalse restored, historical predicate/
+cause still unproved. Shared25-route cohort, not five independent samples.
+Archimedes prepares same-target extension of existing Oct27 measurement,
+no new trigger or retrospective selection; future actual outcomes unknown.
+
+Boole owns current-halfpool-held-exit-shadow-campaign-20261021-v1:
+one proposed hidden task at Oct22/23/24/27 01:00UTC, ages0..3 after
+Oct21/22/23/26 closes. Freeze HALF entry inputs/cohort before targets;
+market entryOPEN Oct21, decisions before NEXTOPEN13:25UTC cutoff.
+Terminal horizon is Oct27 fifth CLOSE, not Oct27OPEN. Installation is not
+an observed decision, fill or measurement; no broker/current Paper changes.
+Claude requested explicit terminal outcome/capture binding; no extra trigger
+or automatic future-result claim. Registration/actual decisions still pending.
+
+Kepler closed bounded SEC three-issuer pilot under
+A/data/current-sec-companyfacts-three-issuer-pilot-20261021-v1:
+RESULT.jsond00ff3b1: first official ticker-map request403,1GET0accepted/
+0retries/6unattempted,27nativechecks/20upper/279.625elapsed, client closed/
+child joined. Truthful application-only User-Agent, no identity invention/
+headerrotation/bypass. Cause/remedy UNKNOWN, not an inferred mandatory
+email/authentication requirement. Public fundamentals feasibilitya6bafab5
+is source-only; no usable as-of fundamental panel/model fit yet.
 
 Future exit shadow producer current-held-exit-shadow-producer-20261021-v1:
 FINALa1cb2c6f/SOURCE2883863b/ABI2760251c,1safeCPUrestore2SYNforwards/

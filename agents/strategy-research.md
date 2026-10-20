@@ -15,13 +15,37 @@ model/GPU/APIcalls. Integer doubledmidranks preserve exactboundaryties.
 HALF+.5newarm fixedpairedpools,6newmax15uniquebytecachedcontrols;
 constantarmexactHALFalias requiresproof/0redundantreplay. No fittedgate/
 weightsearch/aggregate either-wins/independentalpha/Paperpromotion.
-Boole CPUconsumerprepares; actual newordinalselectedseals/closedABI pending.
+Boole consumer COMPLETE: published-input-r1/READBACK.jsonf60ed3d8 under
+current-halfpool-ordinal-rank-fusion-development-20261021-v1. Both fixed
+pools FAIL;6new15cached/64checks/0newmodels-GPU. No weight-search rescue.
 
-Ordinalproposalf92b48e2 now actualGPUstudy ownedPascal, same-dateallpairs
-coarsecostclasses, tiesconstantlog2-zero grad/alloriginaldates; scalar1280vs
-LoRA42240. CurrentGPUTRIAL not a probability model or new information proof.
-InitialCPUmetadatafailure3SYN/0market retained, pre-effectrepaircumulative12
-and specificlate-review timing retained. No aftereffectsfresh15 branch/capreset.
+Ordinalproposalf92b48e2 completed935de050:11/21epochs, selected1 each,
+science/financeFAIL. Raw-return successor887257b7 completed40epochs/
+1240updates EACH, selected0,science/financeFAIL,all joined20:49UTC.
+Negative/zero raw returns remain valid; fine within-class order is distinct
+from coarse class ordering, not a new architecture. No completed-fit repeat.
+InitialCPUmetadatafailure3SYN/0market retained, cumulative12 SYN and specific
+late-review timing retained; no after-effect cap/criterion regrading.
+
+Temporal Transformer audit e8cd90ea under
+A/research/current-temporal-transformer-hypothesis-20261021-v1/CHOICE.json
+found already executed252x5+14 three fits14/13/15epochs and causal63x3
+two20epoch fits. Reject the premise that this architecture remains untried.
+
+Public fundamentals feasibility under
+A/research/current-public-fundamental-feature-feasibility-20261021-v1/PROPOSAL.json
+a6bafab5 proposes matched CPU price versus price+fundamental HGB, not another
+price-only DL name. Requires original accession/context/unit/as-of/revision
+handling. Kepler SEC pilotd00ff3b1 stopped first official403/1GET0accepted/
+0retry; cause/remedy unknown. A sample contact email is not mandatory
+approval, and denial is not authority to evade access controls. No usable
+fundamental panel or numerical campaign is ready from this source yet.
+
+Nine-session fixed intraday reversal/continuation cd1b4cc0 both financialFAIL;
+no neural-model sweep justified by nine retrospective sessions. Current
+five-policy pointcb1c1d9a actually committed before Oct21OPEN; Boole's held
+exit shadow and existing Oct27 measurement consumer are the next tests,
+not proof of independent alpha, profitable Paper or permission changes.
 CPU held-exit d7c7383b operationaldevelopmentPASS,5earlylots only; shadow
 producer/Dataadapter source/native ready, noactualfuturecohort/Paperchange.
 LoRA8328e0c5 completed20epochs/620updates/best0/science+financeFAIL, notqueued.

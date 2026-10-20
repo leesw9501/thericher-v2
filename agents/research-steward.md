@@ -6,19 +6,23 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Current Allocation
 
-Pascal owns ONE actual ordinalGPUallocation under
-A/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1.
-Original19:34:40..22:34:40UTC/3600active10800elapsed/GPU2700inclusive/
-2FIRSTmarketfitsmax128pat20/onePRED6new6cached. Current results pending.
-19:57measurementGPU13percent/3214MiB; not proof of bottleneck. Infra bounded
-read-only observation for NEXTloader improvement, never changes this worker.
+No active market-training allocation from the latest completed campaigns.
+Ordinal935de050 closed20:12:13UTC:11/21epochs,selected1,science/financeFAIL,
+67checks/all joined/lease released. Old346.190failedCPU debit/cumulative12
+SYN/late specific-recovery-review timing remain unchanged.
+Continuous raw-return887257b7 closed20:49:02UTC:40epochs/1240updates each,
+selected0,science/financeFAIL,12SYN/oneattempt/347.223GPU-inclusive seconds/
+46checks. Resident FIT/INNER6.069GiB; sample20:46 GPU80percent/10360MiB,
+sample21:16 AFTER training2percent/1576MiB. Neither proves continuous usage
+or an idle-environment/permission fault. No dummy load/completed fit repeat.
 
-FirstCPU metadataJSON failure had3SYNupdates/0GPU-market,346.190upper.
-Pre-effect19:50:53 branch uses exactoldFROZENCPUstate/nextupdateproof plus
-freshgradientguard0updates/newCPU3/CUDA6, cumulative12=old3+new9.
-No late switch to15/zero-effect lie/refund/oldscope rerun. Specificrecovery
-Claude arrivedafterfirstmarket19:52:43, timinghonestlyrecorded, originalordinal
-challenge pre-freeze. Currentfrozenbranch/criteria/data/seed/caps remain.
+Five-policy point inference recovery READBACKb33bac01 at
+A/research/current-halfpool-ordinal-prospective-point-20261021-v1/backend-config-recovery-r1:
+actual groupcb1c1d9a committed21:15:43UTC. New18.462GPU-inclusive seconds,
+two combined attempts/198of360active upper, all joined/removed/lease free.
+One core/two selected restores,1SYN+1actual encode,2forwards each; no fits/
+repeated HALF. Original failed constructor/debit preserved, MATH flags
+restored; old internal predicate remains unretained, not a proved cause.
 
 Latest prior actualGPU LoRA8328e0c5/224bbb48/cf810d6b CLOSED19:33:53:
 1fit20epochs620market4SYNupdates/best0/3new12cached/FAIL/3403.562upper.
@@ -27,11 +31,11 @@ BroaderTF0a7f5137 closed2fits20epochs620updatesEACH/best0/2478.498upper;
 rank48326e76 INNER-onlyfixedterminal20/0optimizer-PRED-econ/oldFAILunchanged.
 Do not duplicate completed market fits or encoding.
 
-Boole fixedfusion CPU240active5400elapsed,6newmax15bytecached/noGPU, actual
-ordinal selectedseals/closedABI pending. Native shadowproducera1cb2c6f
-complete214.856upper/0actualforecast, futureDatae6ece7ce notactualinput.
-No other GPU owner from Data/Strategy/Infra/Review or old completedfamily.
-No dummy load/usage target; freshadmission/headroom/lease before any nextjob.
+Fixedfusionf60ed3d8 complete6new15cached/0models-GPU/bothFAIL.
+Boole prospective held-exit shadow is CPU/source/native/future slots only;
+Archimedes existing Oct27 measurement augmentation is no fits/GPU.
+Data SEC pilot first403 stopped; future actual OPEN/CLOSE still unknown.
+Fresh admission/headroom/lease before any genuine ready new GPU job.
 
 ## Resources And Custody
 

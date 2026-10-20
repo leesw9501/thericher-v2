@@ -31,30 +31,21 @@ substitute unknownrequests or new/profit-expanded bank.
    startmarker/noack/expiredTTL/reservationheld; origind6ced0a2 notno-send.
    No substitute/release/adoption or recoveryobserve() as offline reader.
 
-2. Pascal owns actualGPU ordinalranking at
-   A/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1.
-   Original19:34:40..22:34:40UTC/3600active10800elapsed/oneGPU2700/
-   2FIRSTfitsmax128pat20/onePRED6new6cached. Scalarhead1280 vsLoRA42240,
-   date-localallpairs/tieszero-gradient/alloriginaldates, sameD6/2f776efe/
-   Data28915bd7/retainedcaches/no reencoding or old completedfit repeat.
-   FirstCPU failed metadataJSON after3SYNupdates/0GPU-market-PRED,
-   346.190upper unchanged. Pre-effect19:50:53 repair branch freezesold3+
-   newCPU3+CUDA6=12cumulative, exactoldstatecustody/freshgradientguard.
-   Do NOT switch aftereffects to later suggested15/resetclock/caps or infer
-   oldacceptance. SpecificrecoveryClaude arrivedlate; retain timingdeviation,
-   not a false pre-callreview. Originalordinalchallenge was pre-freeze.
-   ActualGPUmarketworker launched; outcomes/closure pending. No parent
-   SOURCE_READY approval-file ceremony or another allocation.
+2. Completed GPU research must not rerun: ordinal935de050 selected epoch1
+   after11/21 epochs; continuous raw-return887257b7 selected epoch0 after
+   40epochs/1240updates EACH. Both science/finance FAIL, all joined/lease
+   free20:12/20:49UTC. Fixed rank-fusion f60ed3d8 also FAIL,6new15cached
+   cells/0models-GPU. Keep old failures/debits/late-review timing unchanged.
+   These are adaptive development, not independent alpha or Paper permission.
 
-3. Boole owns CPU fixedpairedfusion at
-   A/research/current-halfpool-ordinal-rank-fusion-development-20261021-v1,
-   240active5400elapsed from frozenorigin. Source/kernelcdd558f9/87f18555
-   ready65upper/420SYNchecks. TWO fixed HALFmidrank+newordinalrank pools,
-   6newmax/15uniquebytecachedcontrols/oneoutcomeintake/0models-GPU-API-Task.
-   Wait only its exact BOTHselectedseals/closedABI dependency, not latestfile/
-   fallback/parentapproval; source/native work continues. ConstantarmHALF
-   alias requires exactweights+lineageproof and0redundantreplay. Reporteach
-   pooldescriptively, no aggregate either-wins/alpha or Paperchange.
+3. Five-policy prospective point is ACTUALLY COMMITTED at
+   A/research/current-halfpool-ordinal-prospective-point-20261021-v1:
+   HALFb060d4fa unchanged; backend-config-recovery-r1/GROUP-COMMITTED.json
+   cb1c1d9a at21:15:43UTC, readbackb33bac01. Qualified MATH flags restored,
+   old constructor failure39991c35 unchanged; aggregate198/360upper,
+   18.462new GPUseconds/all joined/lease free. No refit/repeated HALF/new
+   target. Fresh c70569b2/8010abe1 inputs bound before Oct21OPEN.
+   Archimedes prepares existing Oct27 measurement extension, no new trigger.
 
 4. CPU held-exit d7c7383b COMPLETE60iterations/selected40/5early325terminal/
    6new9cached/455.118upper.10bp growth/DD +1.09535/.29248 vsHALF+1.04894/
@@ -62,11 +53,19 @@ substitute unknownrequests or new/profit-expanded bank.
    optimalstopping/Paperpromotion. Future shadowproducera1cb2c6f/214.856upper
    source/nativeonly:1restore2SYNforwards/33native13readback/0actualforecast.
    Datae6ece7ce raw23featureadapter50SYN/54.397upper, noactualinputs.
-   Authenticatedfuturecapture/frozenHALFcohort/marketentryOPEN/CLOSE still
-   required; no privatefill substitution/backdating/currentPaperexit change.
+   Boole owns prospective shadow source/native/one hidden four-trigger Task
+   at A/research/current-halfpool-held-exit-shadow-campaign-20261021-v1:
+   Oct22/23/24/27 01:00UTC, ages0..3. Exact frozen HALF cohort, Oct21 market
+   OPEN, next-OPEN decision deadline13:25UTC; fifth terminal CLOSE Oct27.
+   Future decisions/measurement remain unknown; no privatefill substitution,
+   current Paper changes, extra trigger chain or installation-as-fill claim.
 
 5. Data existing RTH21:50/old20D122:30/new9D123:00UTC visits unchanged.
    Snapshot88bca32e exitsbeforetokensoutsideRTH; no quietcoordinator.
+   Earlier bounded collection already obtained all25 Oct20 closes:
+   A/data/current-oct20-early-postclose-input-20261021-v1/vintage-r2/
+   CONSUMER.jsonc70569b2 + join-binding-r1/COMPANION.json8010abe1,
+   25GET2POST/0retry. New coherent vintage, not old profile qualification.
    Halfpool forecastonly Task28e887fc nextOct21 00:15UTC=09:15KST/
    cutoff13:25/targetOct27CLOSE; no actualpointyet/no stalefallback.
    Necessary one-shot thericher-hgb-sector-oct21-point-measurement-20261027
@@ -74,6 +73,11 @@ substitute unknownrequests or new/profit-expanded bank.
    Oct28 00:05UTC/1create1enable0Run/ReadyEnabled/noDemandStart/180upper.
    ParentfreshCOMconfirmed. Originalpoint/Oct26tasks untouched. Not actual
    measurement. OldOct26ffcf64a0 remainsNOT_OBSERVED/differenttargetdate.
+   SEC three-issuer pilot d00ff3b1 stopped first403:1GET0accepted/0retries,
+   27nativechecks/all joined. Cause/remedy unknown; no mandatory email/auth
+   inferred and no usable fundamental panel yet. No bypass/header rotation.
+   Nine-session fixed intraday rule pair cd1b4cc0 completed, both FAIL;
+   no model-fit justification or company-wide data/approval hold follows.
 
 ## Verify And Continue
 

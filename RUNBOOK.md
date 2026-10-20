@@ -22,18 +22,41 @@ require exact source/control equality and fresh external proof.
 
 ### Current Research Owners
 
-Pascal actual ordinalGPU at
-D:/thericher-v2/model-artifacts/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1,
-original22:34:40UTC/3600active/GPU1/2FIRSTfits/onePRED6new6cached.
-Sourcefrozenold3+newCPU3+CUDA6=12SYN; no late15switch/restart/refit.
-ExactoldFROZENCPUstatecustody/freshgradientguard, late specificrecoveryreview
-timing retained; no invented pre-callreview. Parent MUST NOT rerun host.
+Pascal ranking campaigns are CLOSED, no active training from them:
+ordinal READBACK935de050 at
+D:/thericher-v2/model-artifacts/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1/READBACK.json,
+11/21epochs/selected1/bothFAIL/all joined20:12:13UTC;
+continuous READBACK887257b7 at
+D:/thericher-v2/model-artifacts/research/current-continuous-payoff-ranking-development-20261021-v1/READBACK.json,
+40epochs/1240updates EACH/selected0/bothFAIL/all joined20:49:02UTC.
+Never rerun consumed hosts for metadata or idle GPU utilization.
+Fixed fusionf60ed3d8 and intraday paircd1b4cc0 COMPLETE/bothFAIL;
+exact readback paths in HANDOFF, no new model/order claims.
 
-Boole CPUfixedfusion at
-D:/thericher-v2/model-artifacts/research/current-halfpool-ordinal-rank-fusion-development-20261021-v1,
-240active5400elapsed/6newmax15bytecached, actualselectedseals/ABI pending.
-Purekernelcdd558f9/87f18555/420SYN/65upper; constantHALFalias requiresproof
-and0redundantreplay. Actual newordinalinputs are not inferred from source.
+Five-policy point ACTUALLY committed21:15:43UTC before Oct21OPEN:
+D:/thericher-v2/model-artifacts/research/current-halfpool-ordinal-prospective-point-20261021-v1/backend-config-recovery-r1/GROUP-COMMITTED.json
+cb1c1d9a/READBACKb33bac01. HALFb060d4fa unchanged; two combined GPU
+attempts/198upper/18.462new GPUseconds/all joined/lease free. Old39991c35
+failure preserved, MATH backend configuration restored; no refit/repeated
+HALF. Do not execute any consumed point host again. Future target unknown.
+
+Fresh input exact metadata only, no rerun of consumed collectors:
+D:/thericher-v2/model-artifacts/data/current-oct20-early-postclose-input-20261021-v1/vintage-r2/CONSUMER.json
+c70569b2 plus join-binding-r1/COMPANION.json8010abe1. All25Oct20close
+histories, cumulative25GET2POST/0retry; new coherent vintage not old Task
+qualification. SEC pilot RESULTd00ff3b1 at
+D:/thericher-v2/model-artifacts/data/current-sec-companyfacts-three-issuer-pilot-20261021-v1/RESULT.json
+first403/1GET0accepted/0retry/27checks/all joined. No automatic retry,
+mailbox requirement inference or bypass; no usable fundamental panel.
+
+Current source/native owners, not commands to rerun:
+Boole held-exit shadow at
+D:/thericher-v2/model-artifacts/research/current-halfpool-held-exit-shadow-campaign-20261021-v1,
+four proposed hidden slots Oct22/23/24/27 01:00UTC; terminalOct27CLOSE.
+Archimedes measurement extension at
+D:/thericher-v2/model-artifacts/research/current-five-policy-oct27-measurement-extension-20261021-v1,
+same existing Oct27 task, no new triggers/fits/GPU. Registration and future
+observations must be proven separately; source readiness is not deployment.
 
 Completednewresults (not commands):
 CPUexitREADBACKd7c7383b/60iterationsbest40/5early325terminal/455.118upper,

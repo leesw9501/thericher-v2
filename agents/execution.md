@@ -5,6 +5,12 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+Research21:15UTC pointcb1c1d9a is forecast-only, not a Paper order/owned
+position or new budget. Boole's proposed four-slot held-exit shadow uses
+market OPEN/CLOSE only, not private fills; it MUST NOT alter original8NAS,
+Window21, F9 identities/holds/exits. Existing live Paper schedules/authority
+remain unchanged. Group/measurement/shadow installation is not a fill.
+
 ## Current Runtime Fault / Recovery
 
 Actual Oct20 nightly14:50UTC: unavailable/retained_context_recovery_required,
