@@ -6,6 +6,36 @@ Parent shared MD/Git. Never KIS_LIVE_* or secret/rawmarket/private output.
 
 ## Current Owner / Next Action
 
+Kepler NEW current-sector-path-classification-input-20261020-v1:
+derive13channel21returntensor existing61bfstock/raw and84b36d4a12ETFarchive.
+Stockcutoffe-1, ETFcutoffe-2; input-onlycommonFIT2019..22/INNER2023..Jun2026/
+PREDall1650. PreserveDec5,2025UNKNOWNtransitionflags/whole-dateunavailable;
+no factorimpute/MODP1splice/globalconstantbasisgate. PerchannelFIT-input
+affines acrosslags, noPREDstats/missingrequiredinputfill. Exactlabels/UTC/
+purge/source/basisflags separate; PREDoutcomes after2modelseals only.
+120Dataactive1800elapsed inside14:40..16:40UTC/Engine3000aggregate.
+FullrealNPZ/masks/lagmutation/scaler/native13shape beforeoneactualderivation;
+actualnewcohortcounts unknownfornow.0models-GPU-API-Task/newacquisition.
+
+Kepler CLOSED current-path-payoff-ranking-input-20261020-v1:
+existing61bfinputs/sourcevintages only, all5OPEN/CLOSEpath flags freeze
+before derivedR/Dmagnitudes; complete-date supervisedmask forbotharms,
+alloriginalinputmembers/flags retained. OrderedD independentpairwiseoracle,
+flatfees/one-sale/scaleinvariant/mixedNPZpublication native first. Common
+FIT-Rtargetaffine; separatePREDprojection onlyafter2newregressorscoreseals.
+120Dataactive1800elapsed within Enginefamily14:11:20..16:11:20UTC/
+1200aggregateactive. Data source/native parallel toEngine/Review,0API/GPU.
+ActualCONSUMER8092ff18 READY37650supervisedFIT/37750retained(100purge-only)/
+1506dates,INNER21875/875dates.24native+91headers/32upper/alljoined,
+88Dataactive remains for exactlaterPRED stage, no clockrefund/imputation.
+Reviewa7bd0098 REVISE scope relayed: completegroups, flagsbeforemagnitudes,
+sameunits/fixedriskpreference, reuseddata; no extra DataAPI/approvalgate.
+ParentexactPREDCLI onceafter2regressorscoreseals completed14:36:18UTC:
+PRED-CONSUMER17942fd6, actualDataGatePASS/1newtargetprojection/0retry/
+markrewrite-model-econ/alljoined. DataFINAL33.224upper (32+1.224), old
+e1f13markbytesreusedunchanged. Engine9e64e1d readoutcomplete, no publisher
+or model repetition. Parentindependent32Decimalpath/date-maskweightsPASS.
+
 Kepler completed TimesFM postcheckpoint input:
 A/data/current-timesfm-path-input-20261020-v1/CONSUMER.json dd00a6e9.
 3050FIT/122dates,1450INNER/58dates,1650PRED/66dates; everydecision/target

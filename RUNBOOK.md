@@ -139,12 +139,35 @@ Boundclarification6e258503: frozen scientificcriterion uses INNERscreen,
 PASS unchanged; PREDdoesnotconfirm pairedimprovement. Do not mixsplitclaims.
 Neither consumed creator is a command to rerun.
 
-Current TimesFM preparation:
+CLOSED TimesFM study, not a command to rerun:
 D:/thericher-v2/model-artifacts/research/current-timesfm-path-augmentation-20261020-v1.
 Data dd00a6e9/3050FIT1450INNER1650PRED target-free512closes; retainedApache2
 datedcheckpoint2f776efe/D6image. Source/native then conditionaloneGPUextract
 and2CPUheads,0backboneupdates. Deadline15:24:13UTC/extractclosebefore14:45.
-Source readiness/weights presence are not proof of actualGPU activity.
+ActualoneGPU6150rows/132forwards/strict232restore/20.615nestedseconds,
+alljoinedleasefree14:29UTC. ExactGUIqualification5f2ff5a7/native43344ff7
+passedfreshbefore+owned admission; missingoldcomponentidentity not inferred.
+Guest/out->Windowsdescriptor firstHEADSfailed0fit; newexactbridge6d7a4471
+reusedall3featurebytes/CPUproof, then2CPUheads/onePRED/18logicalcells
+(12replays+6aliases) COMPLETE. Finalread-only pointer:
+D:/thericher-v2/model-artifacts/research/current-timesfm-path-augmentation-20261020-v1/heads-only-continuation-r1/FINAL.json
+SHA60b661db/science+financeFAIL/712.626upper/alljoined. No repeatedGPU,
+numericalretry/tuning/Paperactivation. PREDproper betterRAW butworseTRAINprior.
+
+Path-payoff study nowCLOSED:
+D:/thericher-v2/model-artifacts/research/current-path-payoff-ranking-development-20261020-v1/module-binding-r1/FINAL.json
+SHA9e64e1d/ABI15f67e3d:2CPUfits65/best45 and50/best30/6new6cachedcells/
+225.519upper/alljoined. PREDscreenPASS NOTINNER/independentalpha;
+financialFAIL. ParentDataCLI onceafter2seals17942fd6/Data33.224, oldmarkbytes
+unchanged. Do not rerun publisher/fit/readout for metadata.
+
+Current ready/preparing research: sectorpathclassification4976fa59,
+D:/thericher-v2/model-artifacts/research/current-sector-path-classification-development-20261020-v1.
+14:40..16:40UTC/3000active/2LSTMfitsoneGPU6newcells0retry. ActualData13channel/
+commonkeys/affines/natives beforemarket; trainingnotinferredfromsource.
+Independent cachedrankfusion at
+D:/thericher-v2/model-artifacts/research/current-payoff-rank-fusion-20261020-v1:
+14:50..15:50UTC/360active/6newcells/0fits-GPU, exactunit/rank/cachelineage.
 
 | Owner | Actual Deployment / Due |
 | --- | --- |

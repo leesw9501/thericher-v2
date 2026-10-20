@@ -16,15 +16,26 @@ Fixed .5HGB/LSTM SHORT/PLUS blend CLOSED98c1e094/CACHE42dd405a:
 FAIL. No weightselection/constantsdrop. Tickeridentity2CPUfits/15cells CLOSED
 8fdf38b2/0d42571e/99.597upper, financialFAIL/INNERscreenPASS only.
 Boundclarification6e258503 preserves PREDnonconfirmation, no regrade.
-Pascal nowTimesFMpathaugmentation source/native thenconditionalGPUextract;
+Pascal TimesFMpathaugmentation is nowCLOSED60b661db/712.626upper:
 Data dd00a6e9 READY3050FIT1450INNER1650PRED/target-free512closes,
 retainedApache2datedcheckpoint2f776efe/D6image. RAW511+ZERO15 versusRAW511+
-5stepquantile15features/2CPUheads/0backboneupdates, no actualGPUclaimyet.
+5stepquantile15features/2CPUheads/0backboneupdates. ActualoneGPUextract6150
+rows/132forwards/20.615nestedseconds/alljoinedleasefree14:29, no duplication.
+OnePRED/18logical(12replays6aliases), scientific+financialFAIL; no rescuegrid.
 Postcheckpointtargets not exhaustivepretraining/contextpurity. Claude c93df53a
 review_unavailable, not agreement/globalhold; nativecol5median sourcechecked.
-Confucius NEW current-next-payoff-choice-20261020-v1:one boundedclosest-
-duplicate/source/input choice,75active900elapsed/0numericaltrials/GPU.
-Consumer nextEnginecampaign; concrete rejection beats a readinglist/grid.
+Pathpayoffproposal1202890a hasfinishedactual9e64e1d:2CPUfits/6new6cached/
+225.519upper/PREDscreenPASS-financialFAIL. Source75notnewnumericalalpha.
+Current sectorpathproposal4976fa59/16sourcepins/60upper is NEW ordered21ETF
+paths inmatched13channelLSTM, not genericsectoraugmentation(RAW14/52already
+testedall12). PRICE/MACROusedTreasury, nothiddenETFinputs. Sameend-e-2ETF
+clock/knowntransitionUNKNOWNflags; realnewtensor/affines/commonkeysrequired.
+EnginePascal/DataKepler/shortClaudechallenge parallel,14:40..16:40UTC/
+3000active/2marketfitsoneGPU6newcells0retry. Sourceproposalnotactualtraining.
+NewBoolecachedPROD-vs-SUM midrankfusion HGBdirection/R-Dutility:
+6newcells/0fits-GPU/360active14:50..15:50UTC, shortClaudechallenge.
+Differentunitsnotrawaveraged, constantsretained/rankproperN/A, exact12cached
+controlslineage/PREDreuseclaim required. Individualprofitnotfusionpermission.
 
 VIX sourcelead c4b2a551 rejected currentdispatch: exactretainedsnapshot
 endsJun17 beforefixedPRED, intendedautomatedreuse rights unclear under

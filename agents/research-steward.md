@@ -7,8 +7,14 @@ Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 ## Current Allocation
 
 Canonical lease A/engine-research-agent/locks/gpu.lock.
-Latest actual CUDA actors all joined/lease released13:08UTC. No current GPU
-training; do not rerun completed work. Completed four-arm family:
+Latest actual TimesFMactor joined/lease released14:29UTC. OneGPUallocation/
+6150rows132forwards/strict232restore/0backboneupdates,20.615nestedworkerwall;
+this is featureextraction, NOT fine-tuning/optimizertraining. Readback38128fb9/
+featureseal759ebd7a/615.847aggregateupper. No current GPUtraining.
+Headsfailed BEFOREfits on guest/out->Windowsdescriptor namespace; heads-only
+bridge recovery COMPLETE60b661db:2CPUfits/oneeval18logicalcells/712.626upper/
+science+financeFAIL.0unusedGPU, no repeatallocation/proof/modeltuning.
+Do not rerun completed work. Completed four-arm family:
 A/research/current-long-context-feature-development-20261020-v1.
 Proposalfd71dfa3:2CPUHGB+2CUDALSTM, directyear-scale features on/off.
 HGB48/best28 and31/best11; LSTM31/best11 and22/best2,5035marketupdates,
@@ -22,7 +28,7 @@ Fixedblend6cells separate0GPU/fits; no completedfit/epoch/seed rescue.
 Ticker-conditioning has CLOSED2CPUfits/15cells/99.597upper/0GPU; do not
 reruncompleted work. FinancialFAIL/INNERscreenPASS/PREDnonconfirmation,
 boundreportingclarification6e258503, no regrade/numericalretry.
-Currentqueue PascalTimesFMpathaugmentation, not yetverifiedGPUactivity:
+ClosedTimesFMsource/preallocationhistory, not a currentGPUqueue:
 Data dd00a6e9 target-free512close inputs3050FIT1450INNER1650PRED ready;
 retainedD6image/weights2f776efe/config/wheel match6a52ef3c. Native actual
 ROsource/import binding, solver/checkpoint and fresh signedShell/lease/
@@ -30,7 +36,27 @@ headroom proof BEFOREoneGPUextract; no backboneupdates.1500active7200elapsed
 origin13:24:13/end15:24:13UTC;source110/Data30/review18.040/Infra45once.
 FinishGPUcleanupbefore14:45UTC/Paper14:50. Missingimagelabel isn't a runtime
 failure; prove actualsource natively. Claude review_unavailable not a hold.
-No dummyload, multipleallocation or readiness-only GPUclaim.
+NativeCPUsolver+checkpointproof PASS; firstactualhostclosed14:05:30 before
+lease/0GPUallocation,342.591upper. Ownersclearfalse/headroomPASS; exact
+decisiveidentity missingfromsafeprojection. Freshd37006ab3GUIunknowns,
+0trainers-host-GPUcontainers/22207MiBfree. ExactGUI5f2ff5a7/native43344ff7
+now32kills+freshresourcePASS/0allocation, individualShell/CodeGPUrenderer/
+CalculatorStoretuple, not genericallowlist/Calculatorpayloadtrust/zeroGPU.
+Newcarry536.646 includesallold353.437+parent120+Calc35+review28.208once.
+Pascalunused-effects continuation preservesoriginaloneGPU/2heads/evalcaps;
+actualfreshbefore+ownedlease checks passed inthatcompletedGPUallocation.
+No dummyload, blindretry/multipleallocation or readiness-only GPUclaim.
+Independent path-payoff9e64e1d CLOSED2CPUfits/6new6cachedcells/225.519upper,
+0GPU/PREDscreenPASS-financeFAIL. No refits. Current PascalGPUqueue:
+current-sector-path-classification-development-20261020-v1/4976fa59.
+Actualnew13channel/common-mask/scalerData+CPU/CUDAnativeproof before2fits/
+oneGPU/6newcells/0retry.14:40..16:40UTC/3000active7200elapsed inclsource60/
+review30/Data120/Engine180/2fit900each/eval120/cleanup120. Max128/pat20/LR/
+bestINNER/sameinit-RNG, oldcapsnotglobalmax. UsefreshGUIqualification5f2f/
+canonicallease/headroom, notoldnativecapture. CPU-onlyPaper mayparallel
+inside2CPU/4GiB/8GiBGPU/free12GiB/desktop4GiB limits; actualExecution
+reliabilitypreempts atsafecheckpoint, no automatic sessiondelay.
+Boolecachedrankfusion6cells14:50..15:50UTC/360active0GPU is independent.
 
 InitialactualblockedbeforeGPU0alloc onunclassifiedowner; freshRO identifies
 exactMicrosoftWindowsShellExperienceHost, not knowntrainer/resourcecontention.

@@ -10,13 +10,13 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 | Owner | Current Package |
 | --- | --- |
 | Parent | Integrate closed4fits+6blend+2tickerfits/HGBpoint13+2; unchanged source authority/Git. Boundclarification separates INNERscreen from PRED. |
-| Boole / Engine | Ticker8fdf38b2 CLOSED2CPUfits/15cells/financialFAIL; INNERscreenPASS/PREDnonconfirmation verified6e258503. |
-| Kepler / Data | TimesFM dd00a6e9 READY3050FIT1450INNER1650PRED/512target-free; separatePREDprojection waits only bothnewheadseals. |
-| Pascal / invoked Engine | TimesFMpathaugmentation source/native; conditionaloneGPUextract+2CPUheads,0backboneupdates. |
+| Boole / Engine | Pathpayoff9e64e1d CLOSED2fits/6new6cached/225.519upper; newcachedPROD-vs-SUM rankfusion6cells source/native. |
+| Kepler / Data | Sectorpath13channel/common-mask/scaler derivation; oldpathPRED17942fd6 COMPLETE/Data33.224. |
+| Pascal / invoked Engine | TimesFM60b661db CLOSED/712.626upper; NEW sectorpath2LSTM source/native beforeconditionalGPU. |
 | Archimedes / Execution | Exact existing natural nightly14:50UTC/F9 15:10UTC result inspection; no manual Run/API/orders/schedule. |
 | Bacon / invoked Infra | TimesFM6a52ef3c exactimage/weights/config/wheelPASS/3ROqueries45upper; missinglabel isn't nativefailure. No models. |
-| Confucius / Strategy | Fixedblend98c1e094 CLOSED; TimesFMreviewunavailable c93df53a. Newbounded nextpayoff duplicate/source choice only. |
-| Steward | LastverifiedCUDA2fits closed13:08UTC. TimesFMprep isn't actualGPUevidence; canonicallease/freshheadroom required. |
+| Confucius / Strategy | Sectorproposal4976fa59 complete; scopedsector/rankfusionClaudechallenges only. |
+| Steward | ActualTimesFMoneGPU closed14:29/alljoined-leasereleased/0backboneupdates; nextreadysectorchoice only, no newallocation. |
 
 Existing due nightly14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
 NASexitOct21 13:40UTC; Window21 prep13:10/entry14:00. Goal97distinct.
@@ -37,6 +37,44 @@ TimesFMpostcheckpoint512Data nowready; source/native preparation stillnot
 actualGPUevidence. Allocate usefulreadiness, not utilizationload.
 Reversible improvement: report the exactsplit beside eachdecisionflag and
 check namedpredicates; sourcehash/readback alone can't prove semantics.
+
+14:11UTC readyCPUdispatch: new orderedpathpayoffR-D vsendpointR regression,
+not anotherparametergrid. Engine/Data/Reviewdisjoint,1200active7200elapsed/
+end16:11:20UTC/2marketfits6newcells0GPU-retry. Actualpathsupportnativefirst,
+PREDaftertwofrozenseals. TimesFMfirsthostfailedresourceguardbeforeGPU;
+headroomPASS/leaseabsent, exactowneridentitynotretained inoldprojection.
+Repairthatlocalclassification, do not stop CPUresearch or inventpermissionneed.
+
+14:24UTC GPUrepairready: exact3GUIqualification5f2ff5a7/native43344ff7,
+32SYNkillchecks/fresh2captures+stableidentities ownersclearPASS. Original
+unknowncount3 limit was source-scope, not a measuredtrainer/memoryconflict.
+CalculatorStorepackage corroboration is assumedhonesthost roleidentity,
+not executabletrust/catalogmembership. Otherowners/headroom/lease retained.
+No model/GPUcall yet; unused-effects continuation uses originalcaps/clocks/
+CPUproof and536.646aggregatecarry. Reversibleimprovement: retain decisive
+componentcounts/names before failingadmission, not only ownersclearfalse.
+ParallelpathDataREADY8092/ClaudeREVISEa7bd0098/source-nativeEngine continues.
+
+14:32UTC actualGPUclosure: TimesFM38128fb9 oneallocation6150rows/132forwards/
+20.615nestedseconds, alljoinedleasefree14:29. Thisis pretrainedfeatureextract,
+not backbonelearning. SubsequentHEADS0fit faultis guest/out hostdescriptor;
+all3hashesmatch. Reuse sealedfeatures, fix exactmetadata namespace inNEW
+heads-only caller, no GPU/CPUnativeproof repetition or numericalretry.
+Reversibleimprovement: native-test the REAL container-output->Windows-head
+descriptorhandoff before marketeffects, not only solver/weightproofs.
+
+14:40UTC completion/newdispatch: TimesFM60b661db heads2fit/onePRED/
+18logical(12replays6aliases)/science+financeFAIL/712.626upper/alljoined.
+Pathpayoff9e64e1d2CPUfits/6new6cached/PREDscreenPASS-financeFAIL/225.519upper.
+No tuning/rescue/newtrialdisguised asretry. Sectorinformation4976fa59 is
+orderedETFpaths, NOT genericsectorfeaturesalreadytested. Engine/Data/Review
+parallel14:40..16:40UTC/3000active/2fitsoneGPU6newcells0retry; actualtensor
+readiness first. GPUmodeljobs may parallel CPU-onlyPaper withmeasuredcaps,
+not an automatic market-sessionwait; actualExecutioncontentionpreempts.
+14:50UTC newCPUcachedfusion: HGB_SHORTdirection andR-Dutility perdate
+midrankPROD versusSUM,6newcells/0fits-GPU/360active3600elapsed/end15:50.
+Unitsnotrawaveraged, rankpropermetricsN/A; reusedPRED notalpha.12controls
+byte-reuseonlyexactlineage, nativefullNPZ/ABI/counterproofbeforereadout.
 
 Parent resolved the blocking resource identity: exact signedWindowsShell
 qualifieredd2ddc1/native6aec9a2c, freshpath/hash/MSCatalog/package/PIDcreation/

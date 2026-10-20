@@ -7,11 +7,74 @@ Historical reused comparisons are adaptive development, not independent alpha.
 
 ## Next Ready Work
 
+Pascal NEW current-sector-path-classification-development-20261020-v1.
+Proposal4976fa59: oldgenericsector52alreadytested; newordered21return paths
+all12ETFs versusSHORTzeros validatedscaledchannels, same13input/LSTM64/
+head66->32->3/aux2zerosBOTH. Stockend e-1/ETFend e-2; actualnewData/natives
+mustprove commonFIT2019..22/INNER2023..Jun2026/PREDall1650 keys/affines/
+transitionUNKNOWNflags/physicalpurges, no impute/newsource/MODP1splice.
+Appointment14:40UTC/end16:40/3000active7200elapsed/2fitsoneGPU6newcells0retry;
+source60/Review30/Data120/Engine180/2fits900each/eval120/cleanup120once.
+Max128pat20/AdamW.001/LR/bestINNERCE/sameinitRNG/CPU-CUDA13channelproof
+beforemarket. CPU-onlyPaper may runinparallel undermeasuredheadroom,
+actualExecutionreliabilitypreempts atsafecheckpoint. No actualnewGPUclaimed.
+
+Boole CLOSED current-path-payoff-ranking-development-20261020-v1:
+matched2CPUHGBregressors endpointnetR vsR-D orderedwithinhold OPEN/CLOSE
+peakloss per originalnotional. Strategy current-next-payoff-choice-20261020-v1
+proposal; sameR21/25slots/fullmassTop5/fifthCLOSE/exposure, no cashveto or
+lambda/architecturegrid. D is not portfolioDD or another replayfee.
+DataKepler derivescomplete-date FIT/INNERpaths, commonFIT-Rtargetaffine;
+PREDoutcomes separateuntilbothscoreseals. Nativeactualcounter/2regressorSYN/
+prefix0/safeNPZ/nativeparity/independentpathoracle before2marketstarts.
+Max128/pat20/ownINNERMSE bestprefix;6newcells/oneevaluation/0GPU-retry-API-Task.
+Reuse6uniform/cash controls only exactkernel-key-mark-cost-gross lineage.
+Appointment14:11:20UTC/end16:11:20UTC/1200active7200elapsed;
+Strategy75/Review30/Data120/native120/2fit180each/eval120/cleanup60once.
+Source/Review/Data parallel. ActualData8092ff18 READY37650FIT/21875INNER/
+100purge-onlyinputrows,24native+91headers/32upper;PREDunread.
+Claudea7bd0098 REVISE/18.627upper scopes adopted: boundedclosestprior,
+completegroups/availabilityfirst, reused6cells, fixedR-Dsameunits not
+portfolioDDidentity. No addedfit/threshold or numericalapprovalqueue.
+FINAL9e64e1d/ABI15f67e3d/handoffb6992be4 atmodule-binding-r1:2SYN+2CPUfits
+R65/best45,R-D50/best30/onePREDreadout/6new+6exactcachedcells/
+225.519upper/alljoined/0GPU. PREDscreenPASS ownMSE2.005461vs2.062107,
+concordance.529975vs.509621; financialFAIL.10bp growth/DDpercentNAV
+R+.6250/.7913,R-D-.0587/.6383,uniform+.1129/.3261. Lateroverfit/not
+convergence. ParentDataCLI onceafter2seals17942fd6/DataFINAL33.224/
+oldmarksunchanged. No source/fit/readout rescue or independentclaim.
+
 Pascal owns current-timesfm-path-augmentation-20261020-v1:
 retainedApache2TimesFM2.5checkpoint2f776efe/publicOct2025/D6runtime.
 RAW511+ZERO15 vsRAW511+5stepq10/q50/q90features,2CPUlogisticheads.
 Data dd00a6e9 READY3050FIT1450INNER1650PRED/target-free512closeGPUmount;
 separatePREDoutcomes deferred until both headseals. No backbonefine-tune.
+NativeCPU COMPLETE verifies real526weightedsolver/codec+checkpointforecast.
+Firstactualhostclosed14:05:30 guardfailure beforelease/0GPU,342.591upper;
+ownersclearfalse/headroomPASS but originalsafeprojection lostdecisiveidentity.
+Freshfirstcause d37006ab found3desktopidentities/0trainers-host-GPUcontainers/
+22207MiBfree; oldsingleunknownqualifiercan'tqualify3set. NEW parentexactGUI
+source5f2ff5a7/native43344ff7 underA/infra/current-timesfm-exact-desktop-
+qualification-20261020-v1:32kills+freshidentity/resource ownersclearPASS,
+0models-GPU; Shellsigned/CodeexactGPUrenderer/CalculatorinstalledStoretuple.
+Not cryptoCalculatorpayloadtrust/zeroGPUclaim; allotherguards retained.
+Review8a6d6046 unavailable, parentnativeadoptionindependent. Carry536.646
+includesold353.437+parent120+Calc35+review28.208; newunused-effects
+continuation preservesCPUproof/1GPU2heads1eval18cells/originalclock, no
+blindrerun/permissionhold. ACTUALreadback38128fb9:GPU14:28:38..14:28:59UTC/
+20.615nestedworkerwall/6150real6240paddedrows/132nativeforwards/1allocation/
+strict232restore,0backboneupdates. OriginalSYNparityPASS/features759ebd7a/
+allactorsjoined-leasereleased14:29. Aggregate615.847includesallfailures.
+Headsfailed BEFOREconstructors/fits/prior/forwards atheads.py92: guest/out
+descriptors notWindows mapped, all3actualhostbytes/hashescorrect. New
+heads-only allowlistedhostdescriptor+nativecallerbridge then2UNUSEDfits/
+onePRED18logicalcells insideSAME1500/end15:24:13. No GPU/CPUproofreruns,
+no alterednumerics/refund. NOW CLOSEDheads-onlyFINAL60b661db:
+2CPUheads207/310LBFGSiterations/finalonly/convergedsolver, onePRED/
+18logicalcells=12replays+6aliases/712.626upper/alljoined. CE/Brier RAW
+2.92994/.91476,AUG2.62533/.87371,prior.85543/.54516; scienceFAIL.
+10bp growth/DDpercentNAV RAW+.02045/.57480,AUG+.15903/.65418,
+uniform+.11286/.32607; financeFAIL. No rerun/tuning/newGPU/Paperactivation.
 1500aggregateactive7200elapsedorigin13:24:13/end15:24:13UTC,
 Strategy110/Data30/review18.040/Infra45once. ConditionaloneGPUextract,
 mustclosebefore14:45/Paper14:50; nativeprep isn't actualGPUproof.

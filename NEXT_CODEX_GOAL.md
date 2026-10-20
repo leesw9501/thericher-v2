@@ -110,7 +110,7 @@ foreign inventory, substitute identity or profit-expanded budget.
    No duplicatefits or Parentapprovalhold.
    VIX source rejected exactcachedsupport/unclearreuse, no globalhold.
 
-8. NEW TimesFM2.5path augmentation current-timesfm-path-augmentation-20261020-v1:
+8. CLOSED TimesFM2.5path augmentation current-timesfm-path-augmentation-20261020-v1:
    choicef4827dfe,retainedApache2checkpoint2f776efe/publicOct2025/D6runtime.
    PostcheckpointFITOct2025..Mar2026/INNERApr..Jun/PRED66Jul..Oct8,
    RAW511+ZERO15 versusRAW511+5stepq10/q50/q90features/2CPUlogisticheads.
@@ -122,8 +122,54 @@ foreign inventory, substitute identity or profit-expanded budget.
    Infra6a52ef3c exactlocalimage/weights/config/wheelPASS/45upper; no
    runtime-source label, Engine binds actualROsource/import provenance.
    Claude c93df53a review_unavailable/bodydecodefailure/18.040upper, not
-   agreement/globalhold. These+Strategy110 countonce in1500. Nativeprep
-   isn't actualGPUproof. Finish extraction before14:45UTC/Paper14:50,noforce.
+   agreement/globalhold. These+Strategy110 countonce in1500. ExactGUIrepair
+   SOURCE5f2ff5a7/native43344ff7/32checks+freshcapturePASS, originalfailures
+   preserved. ActualGPU38128fb9 atunused-effects-continuation-r1:
+   14:28:38..14:28:59UTC/6150rows/132forwards/1allocation/0backboneupdates/
+   alljoined-leasereleased14:29.615.847aggregateupper. Headsfailedguest/out
+   descriptorbindingBEFOREallfits/prior/forward;3hosthashesmatch. Newheads-only
+   bridge/nativecaller proof then2UNUSEDCPUheads+oneeval18logicalcells under
+   SAME1500/end15:24:13/unchangednumericalsource. No repeatGPU/CPUnativeproof.
+   NOWheads-onlyFINAL60b661db complete2CPUfits/onePRED/18logicalcells
+   (12replays+6aliases)/712.626upper/alljoined. Scientific+financialFAIL,
+   no tuning/rerun/Paperpromotion. Source/native transportfaults preserved.
+
+9. CLOSED path-payoff ranking: Engine current-path-payoff-ranking-
+   development-20261020-v1, Data current-path-payoff-ranking-input-20261020-v1.
+   Strategy current-next-payoff-choice-20261020-v1/PROPOSAL.json: matched
+   2CPUHGBregressors endpointnetR vsR-D orderedassetpathloss; sameR21/
+   completeall25/fullmassTop5/fifthCLOSE/exposure. D is not portfolioDD or
+   extra fee. Nativeactualsolver/codec/targetoracle before2marketstarts;
+   complete-date FIT/INNERpathcoverage must be measured, no imputation.
+   Two scoreseals beforePRED evaluation;6newcells once/byte-reusedcontrols
+   only afterexactlineage/0GPU-retry-API-Task. Appointment14:11:20UTC/
+   end16:11:20/1200active7200elapsed includesStrategy75/Review30/Data120/
+   native120/2fit180each/eval120/cleanup60. Threeowners disjoint/parallel,
+   not waiting for TimesFMadmission or Paper. No independent-alpha claim.
+   ActualData8092ff18 READY37650FIT/21875INNER/100purge-onlyinputrows/
+   24native+91headers/32upper/PREDunread. ClaudeREVISEa7bd0098/18.627upper
+   scopes adopted, no extra fit/threshold/gate. Parent32Decimalpathoracle+
+   complete-date mask/weights PASS0marketdata/models.
+   FINAL9e64e1d/ABI15f67e3d:2CPUfits R65/best45,R-D50/best30,
+   6new+6cachedcells/onePREDreadout/225.519upper/alljoined. PREDscreenPASS
+   (notINNER/independentalpha), financialFAIL. PREDData17942fd6published
+   onceafter2seals/oldmarksunchanged/DataFINAL33.224, no furtherDataCLI/model.
+
+10. NEW sectorpathclassification: Engine current-sector-path-classification-
+    development-20261020-v1/Data current-sector-path-classification-input-20261020-v1.
+    Proposal4976fa59/16sourcepins/60sourceupper: fullordered21return paths
+    of12ETFs versusdeclaredscaledzeros, matched13channelLSTM64/head66;
+    stockend e-1/ETFend e-2. OldRAW14/52alreadysectoraugmented, narrow
+    retainedpathinformationtest notnewgenericfactor. Actualnewtensor/common
+    masks/FITaffines/native13channelproof required, no sourceacquisition.
+    KeepknownDec2025UNKNOWNtransitionflags/whole-dateunavailable,noimpute/
+    MODP1splice. FIT2019..22/INNER2023..Jun2026/PREDall1650; samephysical
+    target/purges/PREDcustody/reuseddevelopmentlimits. Appointment14:40UTC/
+    end16:40UTC/3000active7200elapsed;source60/Review30/Data120/Engine180/
+    2fits900each/eval120/cleanup120. Max128pat20/LR/bestINNER/sameinit-RNG,
+    2marketstarts/oneGPU/6newcells/0retry. ParallelCPU-onlyPaper allowed
+    withinactualresource/headroom/lease isolation, not a sessionhold;
+    actual Execution contention preempts atsafecheckpoint.
 
 ## Verify / Continue
 
