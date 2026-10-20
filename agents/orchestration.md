@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 UNFINISHED:8retained FULL
 entries, exit>=Oct21 US OPEN/first13:40UTC. Exact owned closure required;
 fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
@@ -9,14 +9,14 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 
 | Owner | Current Package |
 | --- | --- |
-| Parent | Integrate closed4fits+6blend+2tickerfits/HGBpoint13+2; unchanged source authority/Git. Boundclarification separates INNERscreen from PRED. |
-| Boole / Engine | Pathpayoff9e64e1d CLOSED2fits/6new6cached/225.519upper; newcachedPROD-vs-SUM rankfusion6cells source/native. |
-| Kepler / Data | Sectorpath13channel/common-mask/scaler derivation; oldpathPRED17942fd6 COMPLETE/Data33.224. |
-| Pascal / invoked Engine | TimesFM60b661db CLOSED/712.626upper; NEW sectorpath2LSTM source/native beforeconditionalGPU. |
-| Archimedes / Execution | Exact existing natural nightly14:50UTC/F9 15:10UTC result inspection; no manual Run/API/orders/schedule. |
-| Bacon / invoked Infra | TimesFM6a52ef3c exactimage/weights/config/wheelPASS/3ROqueries45upper; missinglabel isn't nativefailure. No models. |
-| Confucius / Strategy | Sectorproposal4976fa59 complete; scopedsector/rankfusionClaudechallenges only. |
-| Steward | ActualTimesFMoneGPU closed14:29/alljoined-leasereleased/0backboneupdates; nextreadysectorchoice only, no newallocation. |
+| Parent | Explicit maintenance integration/verification/Git; actual effect not yet performed. |
+| Boole / Engine | HGB/sector halfpool740ae38d CLOSED, properFAIL/financialPASS; no new fits. |
+| Kepler / Data | Sector tensor de3aebaa READY; publisher must not rerun. |
+| Pascal / invoked Engine | Sector9d883b98 CLOSED2CUDAfits/6new6cached/542.045upper/alljoined-leasereleased. |
+| Archimedes / Execution | Prepare exact two-phase offline maintenance caller; no private effect/Task/API. |
+| Bacon / invoked Infra | Maintenance15LinuxSYN/472pins PASS; exact actors absent8adca194. |
+| Confucius / Strategy | One nonduplicate next executable GPU hypothesis, not a model-name grid. |
+| Steward | No running GPU training; new allocation only after a useful frozen candidate is ready. |
 
 Existing due nightly14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
 NASexitOct21 13:40UTC; Window21 prep13:10/entry14:00. Goal97distinct.
@@ -24,6 +24,18 @@ Unknown reservations stay held. Natural-result worker uses toolclock only,
 no host polling/sleep process that would itself trip project guards.
 
 ## Throughput Review
+
+15:57UTC: sector fits and cached pool CLOSED; no session/permission wait.
+Paper critical fault is expired never-started nightly pointer, not profitability.
+Parent source/helper tests complete; Execution prepares exact offline effect,
+Strategy selects next useful hypothesis independently. HGB/sector pool has
+descriptive financialPASS but properFAIL on reused data, not alpha promotion.
+One reversible improvement: test actual Docker mount JSON and transport clock
+before private effects; optional bind-mount Name and stderr prose caused caller
+failures, not model failures. Preserve their debits, don't repeat numerical work.
+Latest source authority5c229e4a:1371/d2447255/332serialPASS1skip/
+18568fullPASS25skip/8workers/cleanhelper/Ruff/three sampleCompose.
+Earlier review entries below are historical, not current ready assignments.
 
 14:00UTC integrationreview: all4directlong-context fits+18cells CLOSED, not waiting
 for a session. Two CPUfits retained across a preallocation repair, two actual

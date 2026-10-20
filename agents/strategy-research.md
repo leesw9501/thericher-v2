@@ -1,10 +1,26 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-Oct20KST. A=D:/thericher-v2/model-artifacts.
+Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts.
 Own concrete mechanisms/source interpretation; Engine owns target/split/
 fitting/evaluation. No broker/credentials/risk authority. Parent shared MD/Git.
 
-## Current Ready Proposal
+## Current Selection / Evidence
+
+Select ONE nonduplicate executable GPU hypothesis at
+A/research/current-next-ready-hypothesis-20261021-v1. Existing TCN/GRU/
+foundation/indicator/window work must be checked before a new model-name grid.
+Prefer a distinct information/target/composition mechanism with actual ready
+data, strongest kill and at most two future fits. No training/lease claimed yet.
+Sector path study9d883b98 CLOSED2CUDAfits: INNERscreenPASS,
+PREDnotconfirmed/financialFAIL. Generic sector information was not new.
+New cached HGB/sector halfpool740ae38d has properFAIL/descriptive financialPASS:
+10bp growth/DD +1.0489/.2926 percent initialNAV, versus HGB+.9546/.3675.
+Different FIT cohorts/reused66dates mean exploratory heterogeneous fusion,
+not independent alpha or automatic Paper activation. ClaudeKEEPbb56dbcd
+scopes adopted;22native60readback/3new12cached/46.223upper/0models-GPU.
+PROD/SUM rankfusion9332076d CLOSEDfinancialFAIL; no weight-rescue search.
+
+## Frozen Completed Proposals
 
 Current fd71dfa3 has FINISHED: Engine FINALa7db7164/ABI0f99c0f9,
 4fits(2CPU2CUDA)/18cells/637.844upper/alljoined. Longfeatures improveLSTM

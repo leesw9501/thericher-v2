@@ -1,11 +1,37 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current 2026-10-20 KST. Company: current-nas-owned-model-paper-cycle-v1.
+Current 2026-10-21 KST / Oct20UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
-## Current Parallel Inspection / Adapter Readiness
+## Current Runtime Fault / Recovery
+
+Actual Oct20 nightly14:50UTC: unavailable/retained_context_recovery_required,
+0token/GET/order starts. F9 15:10UTC: pending/exact_request_retained,
+1token/19GET/0order POST starts. Natural result86ebc7da under
+A/execution/current-oct20-natural-paper-outcome-20261020-v1/RESULT.json.
+Exact F9 categorical readbacke47e5b40 under
+A/execution/current-f9-exact-retained-state-readback-20261020-v1/RESULT.json:
+one pending leg/0current submit acknowledgements or positive linked fills in
+selected scope; NOT broker-flat/zero ancestry. Preserve identity/reservation.
+Next existing nightly/F9 Oct21 14:50/15:10UTC, NASexit13:40UTC unchanged.
+
+Corrected offline nightly reader CPU120 aligns native limit; original40limit
+failed before private reads, not proof of actual14:50 failure cause.
+RO snapshot a43305d7 under current-nightly-preintent-snapshot-20261020-v1/
+private/NIGHTLY-PRIVATE-PROJECTION.json finds valid expired unused pointer,
+no cycle/old matching plans/seeds/journals, foreign pending reservation present.
+Explicit retire_expired_unstarted_daily_context sourcea5bc9bc9 archives only
+that exact unused pointer under native worker/advance/shared locks; ordinary
+run/unknown-request recovery unchanged.332serialPASS1skip/18568fullPASS25skip;
+Linux15SYN472pins/12helpercalls PASS3fa42019, actors absent8adca194.
+Actual private maintenance NOT executed. Archimedes prepares two-phase exact
+private GO/capture/effect caller only under
+A/execution/current-nightly-expired-unstarted-maintenance-20261021-v1.
+Never release F9 reservation or replay substitute intent to fix this context.
+
+## Frozen Inspection / Adapter Readiness
 
 Archimedes owns only NEW current-oct20-natural-paper-outcome-20261020-v1
 under A/execution:bounded exact existing nightly14:50UTC/F9 15:10UTC outcome

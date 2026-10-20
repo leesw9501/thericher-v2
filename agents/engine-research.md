@@ -1,11 +1,38 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 Engine owns hypotheses/models/splits, never deterministic broker risk.
 Historical reused comparisons are adaptive development, not independent alpha.
 
-## Next Ready Work
+## Current Results / Next
+
+Sector study CLOSED A/research/current-sector-path-classification-repair-20261020-v1/
+readout-only-r1/FINAL.json9d883b98. SHORT31epochs/best11, ETF26/best6;
+two actual CUDA fits, original technical allocation attempt preserved.
+INNERscreenPASS only, PREDnotconfirmed/financialFAIL;6new+6cachedcells,
+542.045aggregateupper/all actors joined/canonical lease released.
+ETF10bp growth/DD percent initialNAV +.5093/.4626 versus uniform+.1129/.3261.
+Data de3aebaa: FIT25200input/25100supervised, INNER21350, PRED1650;
+21 whole INNER dates excluded for named transition unknowns, not imputed.
+
+Cached HGB/sector half probability pool CLOSED740ae38d at
+A/research/current-sector-hgb-fixed-pool-20261021-v1/FINAL.json:
+properFAIL, descriptive financialPASS.10bp growth/DD percent initialNAV
++1.0489/.2926 versus HGB+.9546/.3675, sector+.5093/.4626,
+uniform+.1129/.3261. Three new/12byte-cachedcells/one readout/0models-GPU/
+46.223upper/alljoined;22native+60readback checks. Different FIT cohorts,
+lagged ETF input and reused66dates make this adaptive heterogeneous fusion,
+not capacity-neutral/independent alpha. Parent84e07e4c saved checks PASS.
+No outcome-driven weight search, prior failures remain unchanged.
+
+Cached PROD/SUM rank fusion9332076d CLOSEDfinancialFAIL:
+10bp PROD+.2901/DD.5472, SUM+.3044/.5535 percentNAV;
+6new12cached/39.626upper/0modelcalls. Proper metrics not applicable to ranks.
+Strategy now selects one nonduplicate next GPU hypothesis under
+current-next-ready-hypothesis-20261021-v1; no new training running yet.
+
+## Frozen Completed Package History
 
 Pascal NEW current-sector-path-classification-development-20261020-v1.
 Proposal4976fa59: oldgenericsector52alreadytested; newordered21return paths

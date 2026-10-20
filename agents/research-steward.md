@@ -1,10 +1,25 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-Oct20KST. A=D:/thericher-v2/model-artifacts.
+Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts.
 Own exclusive GPU/trial custody, not model choice/approval/broker risk.
 Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 
 ## Current Allocation
+
+No current GPU training. Latest sector family CLOSED9d883b98 at
+A/research/current-sector-path-classification-repair-20261020-v1/readout-only-r1.
+Actual SHORT31epochs/best11/1953updates, ETF26/best6/1638updates;
+two actual model fits, all actors joined/canonical lease released.
+542.045aggregateupper includes old0-fit allocation and informed transport
+repair; two total technical allocation attempts, no debit refunded.
+New readout import repair made0model/GPU calls,6new6cachedcells once.
+HGB/sector halfpool740ae38d CLOSED3new12cached/46.223upper/0model-GPU;
+properFAIL/descriptive financialPASS, not independent performance.
+Strategy is selecting one useful next campaign; don't repeat completed fits
+or launch dummy GPU load. Fresh measured ownership/headroom precedes allocation.
+Current patch authority5c229e4a:1371/d2447255/332serialPASS1skip/
+18568fullPASS25skip/8workers/cleanhelper/Ruff/three sampleCompose.
+The older TimesFM/sector preparation entries below are frozen history only.
 
 Canonical lease A/engine-research-agent/locks/gpu.lock.
 Latest actual TimesFMactor joined/lease released14:29UTC. OneGPUallocation/

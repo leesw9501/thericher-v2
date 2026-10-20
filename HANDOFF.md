@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Workdir C:/Users/Public/Documents/thericher-v2; Oct20KST.
+Workdir C:/Users/Public/Documents/thericher-v2; Oct21KST / Oct20UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED:
 eight retained exact FULL NAS entries; exit>=Oct21 US OPEN, first existing
@@ -19,14 +19,52 @@ account/order/raw broker/raw market/private amount output. No operator decision.
 
 | Owner | State / Next |
 | --- | --- |
-| Parent | Integration/Git. Production e53c290 unchanged. |
-| Boole / Engine | Pathpayoff9e64e1d CLOSED2CPUfits/6new+6cachedcells/PREDscreenPASS-financialFAIL/225.519upper. |
-| Kepler / Data | Newsectorpath13channel/common-mask/FIT-affine derivation; oldpathPRED17942fd6 complete/Data33.224upper. |
-| Pascal / invoked Engine | TimesFM60b661db CLOSED; newsector-path matched2LSTM source/native/conditionalGPU. |
-| Archimedes / Execution | B96 HGB SYN compatibility COMPLETE; bounded exact-result inspection of EXISTING nightly14:50UTC/F9 15:10UTC opportunities. No manual Run/API/orders. |
-| Bacon / invoked Infra | TimesFM6a52ef3c localimage/weights/config/wheel PASS, source-label absent; native import/source binding still Engine responsibility.3ROqueries/45upper/0models. |
-| Confucius / Strategy | Sectorpathproposal4976fa59/16sourcepins complete60upper; shortsectorClaudechallenge only. |
-| Steward | Latest verified TimesFM allocation joined/lease released14:29UTC; oneallocation/0backboneupdates, no current GPUtraining. |
+| Parent | Integrate/test explicit expired-unstarted maintenance; review before any private effect. |
+| Boole / Engine | HGB/sector half pool CLOSED740ae38d: properFAIL, descriptive financialPASS; no model calls. |
+| Kepler / Data | Sector tensor de3aebaa READY, 37upper; no collector/model running inferred. |
+| Pascal / invoked Engine | Sector study CLOSED9d883b98: two CUDA fits31/26epochs, best11/6; all joined/lease free. |
+| Archimedes / Execution | Prepare two-phase exact offline maintenance caller only; no actual private mutation yet. |
+| Bacon / invoked Infra | Linux maintenance15SYN/472pins PASS; cleanup8adca194 verifies all actors absent. |
+| Confucius / Strategy | Select one nonduplicate next GPU hypothesis; no training yet. |
+| Steward | No current GPU training. Completed fits must not be repeated for utilization. |
+
+## Latest Integration
+
+Sector final A/research/current-sector-path-classification-repair-20261020-v1/
+readout-only-r1/FINAL.json9d883b98: INNERscreenPASS, PREDnotconfirmed,
+financialFAIL; two actual fits/6new+6cachedcells/542.045aggregateupper.
+ETF10bp growth/DD percent initialNAV +.5093/.4626, uniform+.1129/.3261.
+Original missing-mount/import failures and all debits remain immutable.
+
+HGB/sector fixed half pool A/research/current-sector-hgb-fixed-pool-20261021-v1/
+FINAL.json740ae38d: properFAIL, descriptive financialPASS. At10bp/leg,
+growth/DD percent initialNAV +1.0489/.2926 versus HGB+.9546/.3675,
+sector+.5093/.4626 and uniform+.1129/.3261. Three new/12cachedcells,
+one readout/0model calls/46.223upper/all joined. Heterogeneous FIT cohorts,
+66 reused dates and adaptive selection: not independent alpha or Paper promotion.
+Parent saved-artifact checks84e07e4c; no model/replay repeated.
+PROD/SUM rank fusion9332076d CLOSEDfinancialFAIL; no rescue weighting grid.
+
+Oct20 actual nightly14:50UTC: unavailable/retained_context_recovery_required,
+0token/GET/order starts. F9 15:10UTC: pending/exact_request_retained,
+1token/19GET/0order POST starts. Exact F9 readback e47e5b40 retains one
+pending leg; no new submit acknowledgement/positive linked fill in inspected
+scope. This is not broker-flat or zero prior effects. Reservation stays held.
+Evidence A/execution/current-oct20-natural-paper-outcome-20261020-v1/RESULT.json
+86ebc7da and current-f9-exact-retained-state-readback-20261020-v1/RESULT.json.
+
+Nightly offline reader had CPU hardlimit40 versus native120, a separate
+diagnostic fault, not proof of the original14:50 cause. Corrected RO snapshot
+current-nightly-preintent-snapshot-20261020-v1/private/
+NIGHTLY-PRIVATE-PROJECTION.json a43305d7 finds an expired valid pointer with
+no cycle/old matching plans/seeds/journals; foreign pending reservation exists.
+New explicit retire_expired_unstarted_daily_context archives only that exact
+unused pointer, never automatic worker rollover or foreign reservation release.
+332serialPASS1skip/18568fullPASS25skip/8workers; Linux15SYN/472pins PASS,
+cleanup8adca194. Actual maintenance/deployment NOT performed yet.
+Current source1371/d2447255, authority5c229e4a under
+A/verification/expired-unstarted-maintenance-20261021-v1/authority.json.
+Older family descriptions below are frozen history, not current dispatch.
 
 ## Latest Completed Research
 

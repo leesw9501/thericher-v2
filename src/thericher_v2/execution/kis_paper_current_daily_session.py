@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 from collections.abc import Callable
 from dataclasses import dataclass, replace
 from datetime import UTC, datetime
@@ -381,6 +382,110 @@ def _preintent_request_runs(context):
                 identity.extend([side, "portfolio-" + symbol.lower()])
             runs.add("bp-" + budget._digest(identity))
     return requests, runs
+
+
+def retire_expired_unstarted_daily_context(
+    *, paths: dict[str, str], expected_account_ref: str, expected_basis_ref: str,
+    expected_binding_ref: str, expected_record_ref: str, expected_pointer_sha256: str,
+    clock: Callable[[], datetime] = lambda: datetime.now(UTC), execute: bool = False,
+) -> bool:
+    """Explicit offline maintenance, never an automatic daily-session rollover.
+
+    The exact expired namespace must have no native effects. Other owners'
+    reservations remain untouched. The original pointer is archived byte-for-byte;
+    ordinary trading and unknown-request recovery retain their existing paths.
+    """
+    if execute is False:
+        return False
+    _check(type(execute) is bool and callable(clock))
+    keys = {
+        "state_root", "repository_root", "artifact_root", "runtime_projection_path",
+        "paper_account_snapshot_path", "emergency_state_path", "execution_control_path",
+    }
+    _check(type(paths) is dict and set(paths) == keys
+           and all(type(value) is str for value in paths.values()))
+    _check(all(type(value) is str and len(value) == 64
+               and set(value) <= set("0123456789abcdef")
+               for value in (expected_account_ref, expected_pointer_sha256)))
+    _check(all(type(value) is str and budget._SHA.fullmatch(value) for value in (
+        expected_basis_ref, expected_binding_ref, expected_record_ref,
+    )))
+    for value in paths.values():
+        execution._unlinked(Path(value))
+    root = Path(paths["state_root"]).resolve()
+    budget._validate_paths(
+        root, Path(paths["repository_root"]), Path(paths["artifact_root"]),
+        *map(Path, (paths[key] for key in (
+            "runtime_projection_path", "paper_account_snapshot_path",
+            "emergency_state_path", "execution_control_path",
+        ))),
+    )
+    pointer = root / POINTER
+    archive = root / ".daily_unstarted_archive" / (expected_record_ref[7:] + ".json")
+    lock = root / ".current_daily_portfolio_worker"
+    for item in (pointer, archive, lock.with_name("." + lock.name + ".lock")):
+        execution._unlinked(item)
+    with canary.exclusive_kis_paper_canary_state_lock(lock):
+        record = budget._read_json(pointer)
+        if record is None:
+            record = budget._read_json(archive)
+        if record is None:
+            return False
+        _validate(record, paths, expected_account_ref)
+        raw = (pointer if pointer.exists() else archive).read_bytes()
+        _check(hashlib.sha256(raw).hexdigest() == expected_pointer_sha256)
+        context = record["context"]
+        _check(record["ref"] == expected_record_ref
+               and context["expected_basis_ref"] == expected_basis_ref)
+        if (record["completed"] or record["cycle_ref"] is not None
+                or require_utc(clock()) < datetime.fromisoformat(context["valid_until"])):
+            return False
+        directory = root / ".portfolio_cycles" / budget._digest([
+            expected_account_ref, expected_basis_ref, context["native"]["session_id"],
+        ])
+        for item in (directory, directory / ".advance", directory / "..advance.lock"):
+            execution._unlinked(item)
+        with canary.exclusive_kis_paper_canary_state_lock(directory / ".advance"):
+            with cycle._shared(root):
+                current = budget._read_json(pointer)
+                _check(current is None or current == record)
+                _check(all(path.name == "..advance.lock" for path in directory.iterdir()))
+                binding = budget._load_binding(root, expected_account_ref)
+                _check(binding is not None and binding["version"] in {3, 4}
+                       and binding["legacy_spy"] is None
+                       and binding["basis_ref"] == expected_basis_ref
+                       and "sha256:" + budget._digest(binding) == expected_binding_ref)
+                requests, runs = _preintent_request_runs(context)
+                plans = list(binding["portfolio"]["plans"])
+                if binding["version"] == 4:
+                    plans.extend(p for stock in binding["stocks"].values() for p in stock["plans"])
+                _check(not any(plan["request_id"] in requests for plan in plans))
+                states, _, _, _ = cycle._project(root, binding, require_utc(clock()))
+                _check(not runs.intersection(states)
+                       and not runs.intersection(budget._seed_states(binding)))
+                for run in runs:
+                    journal = root / (run + ".json")
+                    for item in (journal, journal.with_name("." + journal.name + ".lock")):
+                        execution._unlinked(item)
+                        _check(not item.exists())
+                original = archive.read_bytes() if current is None else pointer.read_bytes()
+                _check(hashlib.sha256(original).hexdigest() == expected_pointer_sha256)
+                if archive.exists():
+                    _check(archive.read_bytes() == original)
+                _check(budget._load_binding(root, expected_account_ref) == binding
+                       and budget._read_json(pointer) == current
+                       and require_utc(clock()) >= datetime.fromisoformat(context["valid_until"]))
+                if current is not None:
+                    archive.parent.mkdir(parents=True, exist_ok=True)
+                    execution._unlinked(archive)
+                    if archive.exists():
+                        pointer.unlink()
+                    else:
+                        pointer.rename(archive)
+                _check(not pointer.exists() and archive.read_bytes() == original
+                       and budget._read_json(archive) == record
+                       and budget._load_binding(root, expected_account_ref) == binding)
+                return True
 
 
 def _refresh_preintent_context(record, *, root, pointer, paths, account, clock):

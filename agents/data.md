@@ -1,10 +1,24 @@
 # Data Stateboard (시장데이터 담당)
 
-Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own market data/storage/availability; Execution owns account/orders.
 Parent shared MD/Git. Never KIS_LIVE_* or secret/rawmarket/private output.
 
-## Current Owner / Next Action
+## Current Input / Consumer
+
+Sector derivation COMPLETE, do not republish/retrain:
+A/data/current-sector-path-classification-input-20261020-v1/CONSUMER.json
+de3aebaa/SourceReady23e0ad48. FP32[N,21,13], stockend e-1/ETFend e-2,
+perchannel FIT-input-only affine across lags. FIT25200inputs/25100supervised,
+INNER21350/854dates/PRED1650all66dates. Named Dec5,2025 transition unknowns
+exclude21 whole INNER dates; no imputation/MODP1splice/source acquisition.
+26native+79headerchecks/37upper/alljoined/0models-GPU-API-Task.
+Consumed by Engine9d883b98 and cached HGB/sector pool740ae38d; outcomes are
+reused adaptive evidence, not PIT/CA/finality/independent performance.
+Source allocation still has83unusedseconds under120, not a new derivation order.
+No current Data collector/publisher is inferred from this board.
+
+## Frozen Completed Package History
 
 Kepler NEW current-sector-path-classification-input-20261020-v1:
 derive13channel21returntensor existing61bfstock/raw and84b36d4a12ETFarchive.

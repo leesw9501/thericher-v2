@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Workdir C:/Users/Public/Documents/thericher-v2; current Oct20KST.
+Workdir C:/Users/Public/Documents/thericher-v2; current Oct21KST / Oct20UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 AGENTS.md owns authority; HANDOFF/role boards own current evidence.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
@@ -11,6 +11,32 @@ No secret/account/order IDs, raw bodies/prices/private amounts in output.
 Do not rerun consumed creators/installers/fits/forecasts for metadata.
 
 ### Current Integration / Verification
+
+Current tracked maintenance compatibility authority is now
+D:/thericher-v2/model-artifacts/verification/expired-unstarted-maintenance-20261021-v1/authority.json
+SHA5c229e4a/source1371d2447255;332serialPASS1skip/18568fullPASS25skip/
+18593collected/8workers/helper0/verified current-child cleanup/Ruff/
+default-research-accounting sample-envComposePASS. Controls unchanged.
+No repeat full suite merely for current MD/external-only integration;
+require exact source/control equality and fresh external proof.
+
+Explicit retire_expired_unstarted_daily_context sourcea5bc9bc9 is offline
+maintenance only, NOT normal run/automatic rollover/deployment evidence.
+Linux native proof15cases/472pins at
+D:/thericher-v2/model-artifacts/infra/current-expired-unstarted-maintenance-native-20261021-v1/mount-metadata-caller-r1/appointment-r1/NATIVE.json
+SHA3fa42019; separate successful exact-name cleanup8adca194 under
+that family's cleanup-observation-r1/CLEANUP-CLOSED.json. Preserve failed
+caller/appointment/cleanup-prose records and280prior+15observation upper.
+No actual private effect yet. Prepared caller belongs to
+D:/thericher-v2/model-artifacts/execution/current-nightly-expired-unstarted-maintenance-20261021-v1.
+Do not execute until exact fresh private GO/byte hash and owner quiescence
+are checked; no account/order values in public output or external GO.
+Foreign F9 pending reservation remains unchanged; do not replay old workers.
+
+Latest research halfpool740ae38d is descriptive financialPASS/properFAIL,
+not independent alpha or broker deployment. Sector9d883b98 trained31/26epochs,
+best11/6, all actors joined/lease released. No current GPU training.
+Older verification/family entries below are frozen history.
 
 Generic MODEL_PROPOSAL_NAS verified and installed for the futurecohort:
 D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1.

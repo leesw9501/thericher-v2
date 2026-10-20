@@ -18,6 +18,25 @@ foreign inventory, substitute identity or profit-expanded budget.
 
 ## Ready / Owned / Due
 
+Current dispatch Oct21KST/Oct20UTC supersedes frozen package narratives below:
+- Parent integrates explicit expired-unstarted nightly maintenance, not an
+  automatic worker rollover. Sourcea5bc9bc9,332serialPASS1skip/
+  18568fullPASS25skip/8workers, authority5c229e4a/1371d2447255.
+  Linux15SYN472pins PASS3fa42019, exact actors absent8adca194.
+  Actual maintenance NOT executed; Execution prepares exact two-phase private
+  GO/capture/effect caller. Preserve F9's unrelated pending reservation.
+- Actual nightlyOct20 unavailable/retained_context_recovery_required,
+  F9pending/exact_request_retained;86ebc7da/e47e5b40. No new linked fill.
+  Existing next nightly/F9 Oct21 14:50/15:10UTC; NASexit13:40UTC unchanged.
+- Sector study9d883b98 CLOSED2CUDAfits31/26epochs/best11/6,
+  INNERscreenPASS/PREDnotconfirmed/financialFAIL/542.045upper/alljoined.
+  Data de3aebaa READY, no model/publisher retry.
+- HGB/sector halfpool740ae38d CLOSEDproperFAIL/descriptive financialPASS:
+  10bp growth/DD +1.0489/.2926 percent initialNAV,3new12cachedcells/
+  46.223upper/0models-GPU. Reused adaptive heterogeneous evidence only.
+  Strategy selects one next nonduplicate GPU hypothesis; no new training yet.
+- Cached PROD/SUM rankfusion9332076d CLOSEDfinancialFAIL; no rescue grid.
+
 1. Execution: preserve original NAS8/F9/nightly/Goal97 identities/state/tasks.
    Bounded exact-result inspection of EXISTING Oct20 nightly14:50UTC andF9
    15:10UTC runs in parallel; no manual Run/new schedule/API/order.
