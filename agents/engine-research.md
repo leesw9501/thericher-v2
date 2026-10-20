@@ -7,18 +7,26 @@ risk. Parent integrates/Git; one canonical GPU allocation. Ledger313 fitted
 versions=195CUDA118CPU before the NEW four chronological LSTM fits; not
 architectures/winners. Four fits actually complete02:00:17UTC/lease released,
 independent5dc6b6e4 PASS269checks. Add one completed CPU TTM classification
-head and one completed learned Tree; references counted separately. Closed
+head, one completed learned Tree and long TCN2702; references counted separately. Closed
 models are not rerun for metadata; old truncated2701 is not completed.
 
 ## Running / Latest
 
-Parent ACTUAL GPU owner92557:
+Long TCN2702 COMPLETE, not current GPU owner:
 A/research/current-costband-tcn-convergence-development-20261020-v1/
 runtime-source/attempts/attempt-1. Seed2702/pack16, max256epochs/pat25,
 5400TRAINseconds plus240selected-export reserve,6000active9000elapsed from
 02:37UTC. NativeCPU41/runtime42/reused37intake and actualGPU3update proof pass;
-MARKET-ATTEMPTED exists. Latest durable read7epochs/770updates/1568forwards,
-not final totals/convergence. Do not dispatch again or alter pinned sources.
+CLOSED40af954a03:44:43UTC:onefit/worker0/actor+lease closed.27epochs,
+selected2/INNER_PATIENCE/stale25,2970updates6281forwards/zero discarded updates.
+Independent123checks PASS; early stop is not global convergence. Do not refit.
+CPU consumer GOa03dfbf4 executed once:ValueError after1analytic prior,
+0economic cells/0NN-GPU; Outer completion UNKNOWN. Closure5d4ae56e retains
+45failed-stage charge/cumulative2763.743upper. Confucius diagnoses exact
+predicate without fresh Outer decode/refit/replay. Firstcause7348633e: Data
+ref {path,sha256,bytes} rejected by exact two-key loader BEFORE Outer np.load;
+23actual-metadata checks pass. Prior/policies retained. New no-fit readout
+proposal is source/review only, not numerical retry or a performance result.
 Optional synchronization optimization47CPUchecks is NOT adopted/CUDA-unproved.
 
 Previous2701 short TCN hit frozen450s hard timer/exit126, CLOSED02:36:49.
@@ -33,7 +41,9 @@ read,30cells complete/independent8214fae2/6250checks/Decimalgap8.88e-16.
 Scientific/financialFAIL:TreeLL.858056/Brier.550594 vsLSTM.852040/.546528;
 10bpEACHside growth+.01265percent/DD.82419 versus LSTM+.08076/.48007,
 uniform+.13764/.32607. Do not extend its depth/weight grid. New prospective
-all-four intent is pre-Parent-result-read/source ONLY, not a forecast yet.
+all-four intent was pre-Parent-result-read. Actual point dispatch failed GO
+byte-hash binding/firstcause88f0d8d2;31.422upper retained/actor+lease closed,
+native counts UNKNOWN/no committed forecast. No old0retry point replay.
 
 NEW one-session TTM192/RAW512 classification actually extracted21GPUbatches
 and safe cachec4dcbde0; one allocation closed. TTM LR354iterations converged,
@@ -43,10 +53,14 @@ Root A/research/current-one-session-costband-foundation-preparation-20261020-v1/
 binding-r1/actual; frozenstatef8932e1b,112.202activeupper inclsource/review.
 This is not two completed heads or a restart of old five-day extraction.
 
-Next finite window family underArchimedes:21/63/252close-return daily inputs,
+Current finite window family underArchimedes:21/63/252close-return daily inputs,
 common original512-close cohort/oneTRAIN252affine/newinternal63datepurge/
-seed2801. Source/input/nativeCPU only, no extra GPU/marketfit yet. Three
-explicit windows are one finite family, not hidden timeframe/seed multipliers.
+seed2801. Source09968753/READY5135e677/Data b78e712c; GO79acef40 delegates
+sequential three cases then one evaluation. W21 actual PRE-NATIVE/epochs exist,
+not completed family.3600active14400elapsed/origin03:20:08/100uppercarry,
+900percase incl720soft120finalization/128epochs/pat20/no same-case retry.
+Cleanup required before next case; missing not zero/no2of3 fixed blend.
+Three explicit windows are one finite family, not hidden multipliers.
 All current comparisons remain adaptive/reused data, not independent alpha.
 
 ## Current Results
@@ -73,23 +87,25 @@ SampleLSTM34percent/3183MiB is one actual sample, not sustained GPU usage.
 ## Ready Queues
 
 Short breadth:
-- Kepler: matched RAW189 versus RAW+Macro192 HGB source/native preparation.
-  Boyle owns the lag2 Treasury-context join/common input-only cohort.
+- Kepler: matched RAW189 versus RAW+Macro192 HGB source861925b3 ready;
+  actual ParentGObe9d1071 launch04:11:14UTC, two fits/one Outer/18cells/0GPU.
+  Claude REVISE retained current-vintage/Outer reuse/single-seed/exposure limits. Boyle's lag2
+  Treasury-context Data0cfe0841 common input-only cohort is ready.
   Current-vintage/revised data, not historical release/PIT proof; both models
   must use identical keys/internal selection/payoff. No market fits yet.
-- Boole: four-way OOF Tree point source22checks, one future LSTM restore/
-  forward then prior/half/tree. Forecast ALL arms regardless scores, not a
-  selected winner. Actual GPU dispatch waits for named owner92557 to close;
-  no new schedule or substitution for unavailable old TCN point.
-- Strategy primary-paper review: next profit-aligned objective must become a
-  finite experiment or concrete rejection, not a reading list/head grid.
+- Boole: primary-paper proposalfc524f0c becomes one matched MSE/direct-net-
+  portfolio-utility two-fit pilot source/native proof; no market GO. Same
+  full context/34unknown and declared data exclusions, no head/grid rescue.
+- Pascal: NEW selected long-TCN prospective source/native CPU, no point GO;
+  Boyle independently checks exact point affine/layout compatibility. Test
+  actual checkpoint and GO-byte API, not merely mocked binding fixtures.
 
 Longer depth:
-- Actual long TCN2702 is running as detailed above. Use exact terminal/selected
-  packet/cleanup, not source or epoch markers, before dependent evaluation.
+- Long TCN2702 finished as above; evaluation technical failure is scoped, not
+  another fit or a claim of profitability. Preserve selected checkpoint.
 - Archimedes: one finite21/63/252 close-return-window LSTM family, same common
-  512-close cohort/one TRAIN252 affine/seed2801/internal63date purge. Input/
-  nativeCPU/source only; three explicit windows, no unbounded grid/extra GPU.
+  512-close cohort/one TRAIN252 affine/seed2801/internal63date purge. Named
+  executor owns exact GPU sequence; no unbounded grid/duplicate dispatch.
 - Optional batched validation-sync source47CPUchecks is not adopted. CUDA
   parity/timing are still required in a separately owned future probe.
 - Prior standalone LSTM/indicator/fixedquarter/OOFTree/TTM studies stay closed.

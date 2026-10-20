@@ -7,24 +7,31 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Ready / Owned
 
-Current Boole package: primary-paper profit-objective review under
+Primary-paper proposalfc524f0c complete under
 A/research/current-portfolio-objective-strategy-review-20261020-v1.
-Direct utility/portfolio versus prediction-only training must become ONE
-finite test or concrete rejection, with matched data/costs and no new
-framework/report platform. Papers' futures/monthly/universe claims do not
-establish project US-stock5session performance. No market/GPU work here.
+Boole now prepares ONE matched MSE/direct-net-portfolio-utility pilot under
+A/research/current-portfolio-objective-matched-pilot-preparation-20261020-v1.
+Source/native CPU only,240active1800elapsed/0market-GPU; same architecture/
+cohort/budget/costs, train+chronological inner curves, no new framework.
+Keep full context/34unknown members and identical declared date exclusions.
+Strongest kill: utility must improve growth without worse drawdown versus
+matched MSE AND uniform. Independent5session cohorts pay both legs even when
+weights repeat. Papers' futures/monthly claims are not project alpha.
 
 NEW one-day TTM192 head actually converged354iterations but scienceFAIL;
 RAW5121000nonconvergenceUNKNOWN,12known/6UNKNOWN economics. No head/grid
 rescue. New learned OOF LSTM/prior/volume Tree COMPLETE/8214fae2 and
-scientific+financialFAIL. Its four-way point is source22checks/14.799debit,
-not actual forecast yet; all four arms published regardless scores if valid.
+scientific+financialFAIL. Its four-way point first dispatch failed GO byte
+hash/88f0d8d2,31.422upper retained/actor+lease closed/native counts UNKNOWN.
+No committed forecast/old0retry replay; use actual native/caller integration
+tests in NEW source rather than repeat the broken schedule/dispatcher.
 Old actual forecaste1fc1ada remains retained and future outcomes unobserved.
 
 New information acquired: Treasury CC0 1950dates, lagged-context Data0cfe0841
 ready for Kepler matched price/macro HGBs; current-vintage/notPIT. Archimedes
-prepares21/63/252 close-window LSTMs, not just more architecture names.
-Long TCN2702 actually runs under Parent92557; source/native proofs !=training.
+owns delegated21/63/252 close-window LSTMs/GO79acef40/W21 epoch artifacts.
+Long TCN2702 completed27epochs/selected2/onefit/actor+lease closed. Its CPU
+evaluation failed ValueError/0cells, not a scientific result or a research hold.
 
 ## Earlier Mechanisms
 

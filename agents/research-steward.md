@@ -1,87 +1,66 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
-Own exclusive GPU allocation/trial custody, not model choice or Paper risk.
-Company current-nas-owned-model-paper-cycle-v1 is UNFINISHED.
-Ledger313=195CUDA118CPU completed fitted versions, not architectures/winners.
+Own exclusive GPU/trial custody, not model choice, Paper risk or approvals.
+Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
+Ledger313=195CUDA118CPU predates new fits; not architectures/winners.
 
-## Actual Resources / Completed
+## Current Allocation
 
-Canonical lease A/engine-research-agent/locks/gpu.lock. ACTUAL owner Parent
-exec92557 under current-costband-tcn-convergence-development-20261020-v1/
-runtime-source/attempts/attempt-1, startedabout03:04UTC. Source15999a9c/native
-CPU41/runtime42/intake37, actual3CUDA-SYNupdates/MARKET-ATTEMPTED; latest
-durable7epochs770updates1568forwards, not completed or converged. One sample
-40percent/2942MiB is not sustained/peak. No competing GPU or source edits.
-Four prior LSTM fits complete02:00:17UTC/5dc6b6e4/269checks. No permission hold
-or dummy training. Old results and model fit counts stay separate.
+Canonical lease A/engine-research-agent/locks/gpu.lock.
+Archimedes owns sequential close-window21->63->252 then single evaluation:
+A/research/current-close-window-costband-development-20261020-v1.
+GO79acef40, Source09968753/READY5135e677/Data b78e712c.
+W21 actual PRE-NATIVE and durable epochs exist, not family completion.
+One3600active14400elapsed family, origin03:20:08UTC/deadline07:20:08.
+Carry100upper includes source55.700846/review14.407815/prelaunch I/O.
+Three fits/allocations at most, each900host/840worker/720soft+120finalization,
+128epochs/pat20. No same-case retry. Exact quiescence/lease closure before next
+case; failure charged at least900, not zero. One evaluation after all terminals;
+missing predictions cannot form a2of3 blend. Executor owns watchdog/debits.
 
-LSTM163089e4/da3cd449:1CUDAfit24epochs/best4/2736marketupdates/22.427s market
-stage inclI/O/eval; SYN3updates separate.144.662cumulativeactive1897.447elapsed.
-One sampled34percent/3183MiB is not average/peak/fullVRAM requirement.
-Selected/final checkpoints retained; independent83df8f19 confirms139checks.
-Indicator HGB08b45bec:2CPUfits/independent5fe6f063/sciencePASS/financialFAIL.
-Fixed-quarter9c73447f:0fits/forwards/GPU/36cells, science+financialFAIL.
-NEWpoint ab4329ea/COMMITTED9d68b3f3:e1fc1ada forecast,4calls(3CPU+1CUDA)/
-1restore/1allocation/0fits;25stocks beforeOct20cutoff, outcomes unobserved.
-Offline39checks; supplemental accounting88.731s includes78.637closed worker
-upper, not another fit/allocation. No point reforecast for metadata.
+## Latest Completed / Failed
 
-Old longGRU620a2f1b remains CLOSEDpreCUDAKeyError/1allocationattempt/0actualfit,
-full conservative charges retained; no retry/refund. New full-data volumeHGB
-b4b739fd also closed before constructor/fit from inherited grant filename:
-0actualfits/newcells,172.775961active retained, no second launch. Firstcause
-helper206c390a/c9836b5b is source-only, not a numerical continuation.
+Long TCN2702 runtime-source/attempts/attempt-1 under
+current-costband-tcn-convergence-development-20261020-v1 is COMPLETE:
+CLOSED40af954a/03:44:43UTC/worker0/onefit/actor+lease closed.
+INNER_PATIENCE:27epochs, selected2/stale25;2970updates6281forwards/zero discarded.
+Independent123checks PASS, no global convergence claim.
+Training-family2673.743upper, not pure GPU time.
+CPU evaluation GOa03dfbf4 executed once and failed ValueError:1analytic effect,
+0economic cells/0NN-GPU, Outer reservation not proof of completed decode.
+Closure5d4ae56e; full45failed-stage charge retained, cumulative2763.743upper.
+Confucius diagnoses first-cause without numerical replay. Model unchanged.
 
-## Ready / Queued
+Four chronological LSTM fits complete02:00:17UTC/5dc6b6e4/269checks,
+epochs21/45/22/28, selected1/25/2/8;10685updates22264forwards.
+Group111.612actualupper; CLOSED2211.612 includes2100other-group reservations,
+not2211.612 GPU spend. Original STACK17/RAW/VOLUME remain closed unavailable;
+one analytic RAW effect/failed VOLUME full charge retained, no counter reset.
+New OOF Tree completed1CPUfit+3analytic references/30cells/independent8214fae2,
+scientific+financialFAIL; no depth/weight rescue.
 
-NEW chronological stacking GPU four fits complete; CPU/META not complete:
-A/research/current-costband-chronological-stacking-development-20261020-v1/
-PARENT-INTEGRATION.json. Family origin01:04:00UTC, frozen3600TOTALactive/
-10800elapsed,17estimators=13solvers(4CUDA9CPU)+4analytic references.
-Exactly3OOFblocks+FINAL internal-chronological selection, not old failed
-full-data fit under a new name. No Outer checkpoint/global affine use.
-Boyle:fold-local Data. Kepler:CPU raw/volume source. Confucius:oneGPU4LSTM
-source. Pascal:one native weightedTree SYN/codec plus META source.
-GPU-GOd554829b consumed. CLOSED reports2211.612familyactiveupper including
-2100other-group reservations, NOT2211.612 GPU spend: this GPU group owned
-111.612s. Do not double-charge the reserved CPU/META amounts as measured time.
-CPU RAW/VOLUME CLOSED9ac8f748/a7b25b0d/no attempt2: RAW analytic effect1;
-VOLUME actualzero but failed full-start charge leaves3not4. Original17candidate
-and proposed two-expert META UNAVAILABLE. Retain four valid LSTM fits; no
-counter reset/refund or old study regrade. Source is not running training.
-All new sources/native/failures/I/O/cleanup join the family once.
+One-day foundation:21GPUforwards/onecache/oneconvergedCPU TTM headFAIL;
+RAW1000nonconvergence UNKNOWN. Actor/lease closed, not two completed heads.
+Old shortTCN2701 incomplete/exit126/no selectedP/1061.402upper remains unchanged.
+Old longGRU/fullvolumeHGB/preflight/five-dayTTM failures remain closed.
+Optional sync optimization47CPUchecks is not adopted/CUDA-unproved.
 
-Price-volume physical-close featureDataee8ddff1 ready; raw-sum cancellation
-candidate rejected before market fitting. Use exact canonical comparisons.
-The old HGB191 width/codec proof can be reused; do not refit to fix metadata.
-NativeTree SYN must exercise real weighted-node/FP32-route/NPZ/Dirichlet APIs,
-not fake numerical fixtures. Missing fields defer only that package.
+## Prospective / Ready
 
-## Custody / Due
+ACTUAL old four-model point e1fc1ada/COMMITTED9d68b3f3/CLOSEDab4329ea:
+25stocks/4calls(3CPU1CUDA)/1restore1allocation/0fits0outcomes at01:15:25UTC.
+New four-way OOF Tree point failed exact GO byte binding;31.421695upper retained,
+actor+lease closed/native counts UNKNOWN/no commit. Do not rerun old0retry point.
+Pascal prepares NEW long-TCN-only point source/nativeCPU; Boyle checks exact
+affine compatibility. No numerical grant/allocation/forecast yet.
 
-Old shortTCN2701 CLOSED exit126/no selectedP;1061.402upper includes preserved
-full450error charge. Minimum5epochs550updates1120forwards only; total unknown.
-NEW long2702 uses6000active9000elapsed origin02:37UTC, one marketfit start,
-up to5400TRAIN+240finalization+30cleanup. Initialcarry200 conservative, not
-GPUspend. Known zero-market preflight technical recovery only; no bad-score
-retry or old limit reset. Softstop/checkpoint rollback actually CPU-proven.
+Kepler Macro-HGB source861925b3/Data0cfe0841 prepares exact2CPUfit GO.
+Boole prepares matched MSE/direct-portfolio-utility source/native pilot,
+no numerical campaign yet. Sources are not fits or active GPU allocations.
 
-SYN throughput9updates12forwards:400/1024/2048 samples roughly804/825/826
-examples/s; predeclared10percent tie chooses16dates/max400, not VRAM filling.
-TTM SYNprobe2returns/frozenstateequal and NEW1dayactual21forwards/onecache/
-oneconvergedCPUhead complete, RAWnonconvUNKNOWN. All those GPU actors closed.
-CPU-only learned OOF Tree COMPLETE/4estimators incl3analytic/30cells FAIL;
-no GPU allocation. Next window21/63/252 source prep can continue in parallel.
-
-Old TTM consumedINPUT_UNAVAILABLE0GPU; Risk terminalmissing means historical
-counts/cleanupUNKNOWN, not an active current owner. Do not manually rerun.
-Original CPU measurementOct26 23:45UTC has not automatically adopted new
-points. New outcome needs exact existing D1 capturesOct20/21/22/23/26;
-future results remain unknown and any new measurement requires a scoped plan.
-
-Preserve every closed source/attempt/debit and original clocks. Actual counts
-are distinct from full error reservations and wall/review/queue time. Do not
-refund closed caps, imply convergence from a time stop, or infer a worker from
-an MD/GO. Execution reliability preempts at a safe checkpoint; no idle lease
-for feeds or quota waits. Other ready lanes continue.
+Future sessionsOct20/21/22/23/26 unknown. Original Oct27 measurement has not
+automatically adopted new points. No new schedule or substitute intent.
+Preserve old clocks/caps/debits; active-worker time differs from queue/elapsed.
+Execution reliability may preempt at safe checkpoint. Never hold GPU for feed
+cooldowns, manufacture utilization, or infer activity from an MD/GO alone.

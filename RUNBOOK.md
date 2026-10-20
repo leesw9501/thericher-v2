@@ -145,23 +145,29 @@ UNINSTALLED; no new model export qualification calls.
 
 ## Source-Safe Operations
 
-ACTUAL current GPU owner: Parent exec92557, startedabout03:04UTC,
+CONSUMED completed long TCN worker: Parent exec92557,
 A/research/current-costband-tcn-convergence-development-20261020-v1/
 runtime-source/attempts/attempt-1. Source15999a9c/GO inside family is CONSUMED.
 Do not dispatch again, compete for gpu.lock or edit frozen runtime/trainer.
-Source/native/current epoch evidence is not completion; read exact CLOSED,
-selected FINAL-PRED/COMMITTED/FIT, stop/curve/counter facts and cleanup first.
+CLOSED40af954a confirms03:44:43UTC/worker0/onefit/actor+lease closed;
+27epochs/selected2/INNER_PATIENCE/2970updates6281forwards/123audit checks.
 Seed2702/pack16/max256pat25,5400TRAIN+240finalization/6000active9000elapsed
 origin02:37UTC. Softstop/rollback CPU-proven; timed output !=convergence.
 Previous2701short exit126/450s remains UNKNOWN/incomplete, no point/retry.
+Consumer-source/PARENT-EVALUATION-GO.json a03dfbf4 is CONSUMED:one CPU
+execution failed ValueError after1analytic reference/0economic cells/0NN-GPU.
+evaluation-actual/EVALUATION-CLOSURE-READBACK.json5d4ae56e retains45error
+charge/cumulative2763.743upper; Outer completion UNKNOWN. First-cause source
+diagnosis only, not permission to replay its frozen0retry command.
 
 Actual new learned OOF Tree root current-oof-lstm-prior-tree-development-
 20261020-v1:COMPLETE/independent8214fae2/6250checks/oneTree+3analytic,
 30cells/science+financialFAIL. Old STACK17 still unavailable. Do not invoke
 its consumed PARENT-GO or re-fit to change metrics. New four-way prospective
 point source under current-oof-lstm-prior-tree-point-20261020-v1/source is
-NOT yet dispatched; one LSTM restore/forward only after current GPU closes,
-typed cleanup+commit before13:25UTC, all four arms regardless scores.
+CLOSED_UNAVAILABLE:dispatcher reserialized mounted GO but passed original
+hash/88f0d8d2.31.422upper retained, actor+lease closed/native counts UNKNOWN,
+no commit or old0retry replay. New TCN-only point source is not a forecast GO.
 
 One-day foundation binding-r1/actual COMPLETE UNKNOWN_PARTIAL:
 21GPUforwards/cachec4dcbde0/oneconvergedTTMFAIL/RAWnonconvUNKNOWN,
@@ -169,9 +175,16 @@ One-day foundation binding-r1/actual COMPLETE UNKNOWN_PARTIAL:
 Independent caller conversion/endpoint binding bridge pure-API gaps;
 never rerun fits to repair those already-bridged component limitations.
 
-Window SOURCE09968753/READY5135e677/Consumerb78e712c is source/nativeCPU
-only, three contexts21/63/252. MacroData0cfe0841 is actual common-cohort join,
-not a market model or PIT guarantee. Kepler's matched HGB source is not GO.
+Window SOURCE09968753/READY5135e677/Consumerb78e712c has delegated Parent
+GO79acef40 under current-close-window-costband-development-20261020-v1.
+Archimedes exclusively owns sequential21->63->252 then one evaluation; W21
+actual PRE-NATIVE/epochs exist. Do not launch a second owner.3600active/
+14400elapsed from03:20:08UTC,100upper carry/900percase/128epochs/pat20.
+Exact cleanup before next case; missing not zero/no partial blend/no retries.
+MacroData0cfe0841 is actual common-cohort join, not PIT guarantee. Kepler
+source861925b3 has GObe9d1071 actual launch04:11:14UTC/two CPU fits+one evaluation.
+Boole direct-utility pilot and
+Pascal TCN-only point are source/native preparation, not numerical commands.
 
 Latest new model roots (not commands to rerun):
 A/research/current-costband-indicator-hgb-development-20261020-v1:
@@ -201,9 +214,9 @@ Firstcause9ac8f748: counting wrapper loses native class .fit. RAW executed
 one analytic reference; VOLUME actualeffects0 but nonrefundable charge leaves
 only3not4starts/a7b25b0d. Both CLOSED/no attempt2. Original/proposed META
 unavailable; do not run old launchers or reset counts. Four LSTM fits remain
-valid/independent5dc6b6e4/269checks. NEW TCN model/runtime/evaluation source
-under current-costband-tcn-classification-development-20261020-v1 has no GO
-yet. Separate foundation-classifier source/Data also has no numerical GO.
+valid/independent5dc6b6e4/269checks. Old short TCN classification and five-day
+foundation sources/attempts are closed, not unconsumed next commands. New
+long TCN and one-day foundation actual results are separately recorded above.
 Future NEW4-model point measurement sourceb9ea49ac is offline-only under
 A/data/current-long-costband-point-measurement-preparation-20261020-v1;
 45checks/6SYN, no future marks/values read. Original Oct27 task unchanged.

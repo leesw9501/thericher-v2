@@ -22,13 +22,13 @@ Research restrictions stay package-local. No current operator approval hold.
 
 | Owner | Current Package |
 | --- | --- |
-| Parent | Shared integration/Git. Core c288dfc; last pushed71fcea8. |
-| Kepler / Engine | One-day economics review/caller bridges verified; optional sync47CPUchecks, NOT adopted/no CUDA parity yet. |
-| Confucius / Engine | New long TCN runtime ready15999a9c; Parent ACTUAL trainer92557 owns GPU. |
+| Parent | Shared integration/Git. Core c288dfc; prior integration915a0cd. Named numerical execution delegated, not all parent-run. |
+| Kepler / Engine | Macro-HGB GO be9d1071 actual launch04:11:14UTC; two CPU fits/one evaluation, no point authority. |
+| Confucius / Engine | Long TCN complete/independent123checks; delegated one CPU evaluation GOa03dfbf4. |
 | Boyle / Data | Treasury CC0 1950dates acquired8fdbbf88; lagged context0cfe0841 ready, notPIT. |
-| Pascal / Engine | Graceful long trainerc7d92949/41CPUchecks ready; old truncated-TCN point unavailable, no substitution. |
-| Boole / Strategy | One-day foundation UNKNOWN_PARTIAL/one converged TTM FAIL; four-way OOF Tree point source. |
-| Archimedes / temporary Engine | Learned OOF Tree COMPLETE/independent8214fae2; next common-cohort21/63/252 close-window source/input prep. |
+| Pascal / Engine | New long-TCN-only prospective source/native CPU preparation; no numerical point GO. |
+| Boole / Strategy | Matched prediction-MSE/direct-portfolio-utility pilot source/native preparation. |
+| Archimedes / temporary Engine | Delegated close-window21->63->252 GPU sequence then one evaluation, GO79acef40. Actual starts need runtime evidence. |
 | Execution | Original NAS/F9/nightly owners and budget unchanged; next F9 original visit Oct20 15:10UTC. |
 
 Four NEW chronological LSTM fits actually completed02:00:17UTC, CLOSED in
@@ -36,19 +36,23 @@ current-costband-chronological-stacking-development-20261020-v1/
 gpu-source-preparation/attempts/attempt-1. Actor quiescent/canonical lease
 released, actual_market_fits4, workerexit0; independent5dc6b6e4 PASS269checks.
 Epochs21/45/22/28, selected1/25/2/8,10685market updates/22264forwards.
-These four fits are complete, not the current trainer. NEW long TCN2702
-ACTUALLY started about03:04UTC under
+These four fits are complete. NEW long TCN2702 completed03:44:43UTC under
 A/research/current-costband-tcn-convergence-development-20261020-v1/
-runtime-source/attempts/attempt-1. Parent exec92557 is its sole numerical owner;
-NATIVE-PASS/MARKET-ATTEMPTED and durable progress exist. Latest read:7complete
-epochs/770updates/1568forwards/8saves including epoch0, not final totals or
-convergence. One current sample40percent/2942MiB, not sustained/peak usage.
-Do not dispatch again, change frozen sources or compete for its canonical lease.
+runtime-source/attempts/attempt-1. CLOSED40af954a confirms worker0, one fit,
+actor quiescent/canonical lease released. INNER_PATIENCE stopped27epochs,
+selected2/stale25;2970updates6281forwards/zero discarded updates. Independent
+123checks PASS; early stop is not global convergence. Do not dispatch again.
+Confucius owns exact CPU-only retained-prediction evaluation, not a refit.
 GPU permission/environment available. Models are small; do not manufacture
 GPU load. Actual sampled LSTM34percent/3183MiB is one sample, not peak/average.
 Prior ledger313 plus NEW4CUDA LSTM,1CPU TTM head and1CPU Tree completed;
 analytic references separately reported. Truncated TCN/RAW nonconvergence
 are not additional completed models. This is not a count of architectures/winners.
+Long2702 adds one completed TCN fit. Its CPU readout failed before Outer
+np.load: Data ref has {path,sha256,bytes}, strict consumer required two keys.
+Firstcause7348633e/23actual-metadata checks; prior/policies already sealed.
+Original consumer remains failed/45charge/no rerun. New no-fit retained-packet
+readout proposal awaits categorical review/source proof, not numerical GO.
 MD assignments are memory, not proof that an LLM/container is running.
 
 ## Latest Research
@@ -125,12 +129,13 @@ not regrading old FAILs or changing deterministic Paper risk.
   lower bounds5epochs/550updates/1120forwards/five intact checkpoints, not
   total work. Charges1061.402upper retained. No attempt2 or claimed convergence.
   Its prospective intent is UNAVAILABLE, not a substitute point.
-- NEW long TCN2702 is running, not that old attempt restarted: same tested
+- NEW long TCN2702 is COMPLETE, not that old attempt restarted: same tested
   backbone/fresh seed, max256epochs/pat25, up to5400TRAINseconds plus240
   selection reserve;6000TOTALactive9000elapsed origin02:37UTC. ModelCPU41,
   runtime42 and reused37intake checks passed. Soft stop/partial rollback and
   safe checkpoint NEXTUPDATE were actually exercised. Timed outputs still
-  do not establish convergence. Frozen native algorithm; optional sync not used.
+  do not establish convergence. Actual27epochs/selected2/2970updates6281forwards;
+  actor/lease closed, independent123checks. Optional sync unused.
 - Synthetic native throughput cdc34b1f/e100c9ce:9updates12forwards/0market,
   all ownership closed. Batch400/1024/2048 about804/825/826 examples/s;
   predeclared10percent tie rule keeps16dates/max400 rows. Larger memory use
@@ -157,17 +162,24 @@ not regrading old FAILs or changing deterministic Paper risk.
   alpha/actual KIS PnL. Do not extend its depth/weight grid or repair original
   STACK17. Exact root A/research/current-oof-lstm-prior-tree-development-20261020-v1.
 
-NEW four-way OOF Tree point is INTENT/source only, not a forecast yet:
+NEW four-way OOF Tree point is CLOSED_UNAVAILABLE, not a forecast:
 A/research/current-oof-lstm-prior-tree-point-20261020-v1.
-All LSTM/prior/half/Tree arms forecast regardless of scores if exact inputs/
-selected-model seals exist; wait belongs to its GPU owner, not a global hold.
+Its first and only dispatch failed exact GO byte-hash binding: dispatcher
+reserialized mounted GO but passed the original hash. Firstcause88f0d8d2;
+31.421695active upper retained, worker counts/commit UNKNOWN, actor/lease closed.
+No old retry, overwrite or published-point claim.
 FINAL-affine point17a03669/77checks ready02:23:17UTC before13:25cutoff;
 never replace it with old global-scaled0929 inputs. Earlier four-model
 forecaste1fc1ada remains the ACTUAL retained point; future outcomes unknown.
 
 Next finite window experiment: common original512-close cohort, close-return
 only21/63/252daily inputs, same TRAIN-input252 affine/internal63date split/
-seed2801. Source/input preparation only; no new GPU allocation or market fit.
+seed2801. Source09968753/READY5135e677/Data b78e712c; ParentGO79acef40 delegates
+Archimedes the sequential cases then one evaluation.100upper carry includes
+source55.7/review14.41/prelaunch I/O;3600active14400elapsed origin03:20:08.
+Claude REVISE retained: adaptive Outer reuse, shared-affine contrast and fixed
+blend multiplicity disclosed; missing case not zero/no partial blend/no retry.
+GO is not actual training evidence. See role board for runtime.
 Existing source/debits/claims stay immutable; no independent alpha or Paper
 promotion is inferred from reused data, native tests, metadata or a forecast.
 
@@ -177,6 +189,10 @@ Treasury actual8HTTP200/0retry/1950dates2019..Oct19/CC0/49checks11SYN;
 history. INNER1575/PRED1675/point25 unchanged,187checks11SYN5580scalars/0gap.
 Current-vintage and lag2 assumptions, not PIT/release proof/Execution input.
 Kepler prepares matched RAW189/RAW+Macro192 HGBs on the same common cohort.
+Ready861925b3; ParentGO be9d1071 actual launch04:11:14UTC, CPU only.
+Boole prepares one matched MSE/direct-net-utility pilot from reviewfc524f0c.
+Pascal prepares new long-TCN inference source; Boyle verifies exact point
+affine compatibility. These are not forecasts, market fits or new schedules.
 
 ## Data Runtime / Consumed Points
 

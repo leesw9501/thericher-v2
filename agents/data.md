@@ -27,8 +27,12 @@ or Execution promotion. GeneratedM macro-context.npz9f28ea0a/540439bytes.
 Window family metadata/inputs b78e712c ready in M/current-close-window-
 costband-20261020-v1, same512-close cohort/one252TRAIN affine. Original8345
 members retained as6670FIT/1575internal/100purged;Outer1675 unchanged.
-Source derivation/nativeCPU only; no marketNN or GPU allocated yet.
+Data derivation complete; Archimedes now owns numerical Window family
+GO79acef40/W21 epoch artifacts. Data role itself does not fit models.
 Source point17a03669 remains target-freeFINAL affine, not old global0929.
+Boyle checks exact selected-long-TCN input-affine/layout compatibility under
+A/data/current-long-tcn-point-input-compatibility-20261020-v1. Prefer a proven
+existing point ref over redundant derivation; no new calls/targets/forecasts.
 
 Old20 D1 exact outcome validated215efd55 under
 A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1:
