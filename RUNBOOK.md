@@ -59,15 +59,34 @@ Exactclosure: source-r4/activation-r1/source-fix-r1/RESULT.json underthatroot.
 Do not rerun consumed old installers or claim all-PC stability/guaranteed
 rollback. Preserve exacttargetsource/owner/ACL/freshcompare/readback checks.
 
-CURRENT measurement action is eight class3 models +one explicit nonprobability
-rank policy, not six. Exact actual result:
-D:/thericher-v2/model-artifacts/data/current-broad-residual-point-measurement-extension-20261020-v1/adoption-r2/RESULT.json
-SHA0e9e28f6/SOURCEa76c7f3c/GO06496e2b/PREPARED2803f890/readbackf0221fe3.
-Oneupdate/0rollback-Run-newtrigger-API, fresh fullACL/principal/settings/window
-PASS; sameOct26 23:45..23:55UTC/worker120active600elapsed. New26CLIchecks+
-prior77proofs reused; oldargument-shadow failureeed4edac0RPC stayshistory.
-Worker/forecast bytes unchanged, allprocessesjoined. Do not rerun installers
-or infer performance from successful installation.
+CURRENT measurement action is twelve class3 models +two explicit
+NONprobability rank policies/14primaryoutputs; legacyfixedquarter diagnostic
+stays auxiliary. Exact actual result:
+D:/thericher-v2/model-artifacts/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
+SHAdf6d798c/SOURCEe45c65b0/DEPLOYMENTd405201f/READBACKd70ff5ee.
+Oneactionupdate/0rollback-Run-newtrigger-API-model-measurement,46checks,
+fresh fullACL/nonaction/window COM PASS/0instances/allchildrenjoined;
+sameOct26 23:45..23:55UTC/worker120active600elapsed.54.566aggregateupper.
+Oldsix/eightmodel updates, failures/backups/debits preserved; never rerun
+consumed installers. Installation is NOT future outcome/performance.
+Read-only current projection (no model/target/Task/API invocation):
+
+```powershell
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/data/current-peer-points-measurement-extension-20261020-v1/read_outcome.py --deployment-sha d405201fa879db8215a309ed10121c0a00607831ca3fbbd70042cec9e61f2a01
+```
+
+Parent independently verified FUTURE_MEASUREMENT_NOT_OBSERVED and7direct
+resultrefs. No failed/uncommitted points or fake rankproper-score adopted.
+New14 count is probabilities/policies, NOT14 model calls or14 brokers.
+
+NAS exit-accounting preparation:
+D:/thericher-v2/model-artifacts/execution/current-nas-exit-accounting-readiness-20261020-v1/CONSUMER.json
+SHA4da7d033/474sourcepins100synthetictestsPASS/RuffPASS/0private-operational
+effects. Exact final BUY/SELL gross supports closed-flat attributablegross;
+measured fees/settlement absent. The existing native accounting kernel is
+reusable; a minimal scoped offline caller is being prepared, not ready to
+invoke until native proof/strict scope bindings pass. No fresh quotes needed
+for fully closed-flat gross. Assumed-cost net is ESTIMATE, not measured net.
 
 | Owner | Actual Deployment / Due |
 | --- | --- |
@@ -267,7 +286,9 @@ never rerun for metadata. NEWprospectivepoint actually retained01:15:25UTC:
 A/research/current-long-costband-prospective-point-20261020-v1/
 source-preparation/host-runtime/point-once/COMMITTED.json9d68b3f3,
 forecaste1fc1ada/CLOSEDab4329ea/4calls0fits0outcomes/actor+leaseclosed.
-OriginalOct27measurement has not automatically adopted these new models.
+The older six/eight-model adoption history below is frozen. CURRENT twelve
+class3/two-rank action and strict reader above supersede it; future performance
+remains unknown. Do not invoke the original worker to inspect a schedule.
 
 Chronological stacking:
 A/research/current-costband-chronological-stacking-development-20261020-v1.

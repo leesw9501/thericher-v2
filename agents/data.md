@@ -7,16 +7,25 @@ secrets/rawmarket/account/order/privateamounts or route KIS_LIVE_*.
 
 ## Ready / Owned / Due
 
-Kepler completed live507, claims released. Current package extends SAME
-Oct27 measurement8class3+rankhalf to12class3+two rank policies using actual
-committed points d8b66977/4c65fa99. Parent owns MD/Git; Data owns NEW external
-extension source/adoption and literal target action-only mutation. No new
-trigger/worker/window or Run/measurement now. Fresh CURRENT8+1 definition/ACL
-backup before update; exact readers/native checks/owner compare/conditional
-rollback/fresh COM readback. Do not reuse old6model backup as current.
-Current installed until proven otherwise:0e9e28f6/adoption-r2 under
-A/data/current-broad-residual-point-measurement-extension-20261020-v1.
+Kepler completed live507 and same-window measurement extension. ACTUAL root
+A/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
+df6d798c/DEPLOYMENTd405201f/SOURCEe45c65b0 at10:58:53UTC.12class3+two
+nonprobabilityrank policies/14primary outputs, legacyfixedquarterauxseparate.
+Oneactionupdate/0rollback-Run-newtrigger-API-model-measurement/46checks,
+freshindependentCOM ACL/nonaction/window PASS/0instances/allchildrenjoined.
+54.566aggregateupperof240, old8+1artifact0e9e28f6/debits unchanged.
 SameOct26 23:45..23:55UTC/Oct27 08:45KST,120active600elapsedworker.
+Parent strictreader with exactd405201f and7directrefsPASS independently returns
+FUTURE_MEASUREMENT_NOT_OBSERVED/performanceUNKNOWN. No actual targets read.
+
+Bacon invoked label-only Data for new HGB target-recipe study870928a7:
+A/data/current-broad-relative-tail3-input-20261020-v1, matchingMroot.
+Reuse existing x tensors/no copies, derive absolutecost3/relative-tail3 on
+exact common date/key/UTC supports; whole incomplete target dates excluded
+from BOTH supervised losses, all inputrows retained.120active900elapsed/
+oneactual0retry/<=40MiB/0PREDraw-models-GPU-API-Scheduler. This is inside
+parent2400active7200elapsed campaign, not a second standalone budget.
+Readiness pending, do not infer Data from source-only request metadata.
 
 ## Completed Live507
 

@@ -35,8 +35,14 @@ basis/costs/losses/reservations/identities, not another tenth or substitute.
    test. Keep old trials, costs and failures; no completed fit/forward repeats.
    All actual GPU actors joined/lease released. Choose the next useful
    information/objective change, not an architecture/epoch/weight rescue grid.
-   Boole owns source-only broad-ranking novelty/proposal preparation; no
-   numerical dispatch until exact data/native/budget contract is ready.
+   Selected next proposal870928a7 compares SAME HGB/21features on absolute
+   cost3 versus relative-tail3 labels, not generic ranking/new information.
+   Boole runtime/native and Bacon label-only Data run in parallel; two CPU
+   fits/15cells/2400aggregateactive7200elapsed including46.117prep and
+   Claude17.327review, max128pat20/perfit600/0GPU. Conditional dispatch only
+   after exact Data/native/source/owner checks, no another permission queue.
+   Claude2fcf86e4 REVISE scopes label-recipe/population/reuse/dependence;
+   2e-12 numeric tolerance is NOT significance or economic effect size.
 
 3. Data: Oct19 live507 COMPLETE, repair-r4 CONSUMER eb69c563/CLOSED6969c765/
    terminal2006f601. All507 accounted:498eligible/9known-insufficient,
@@ -55,13 +61,14 @@ basis/costs/losses/reservations/identities, not another tenth or substitute.
    proper-score N/A. Old eight class3 forecasts and rank-half unchanged.
    Future target sessionsOct20/21/22/23/26 remain unknown, not profitability.
 
-5. Measurement: current installed consumer still8class3+one rank policy,
-   0e9e28f6/adoption-r2; same Oct26 23:45..23:55UTC/Oct27 08:45KST window,
-   worker120active600elapsed. Kepler owns a bounded extension to12class3+
-   two rank policies from ACTUAL committed points only. Fresh CURRENT-task
-   backup/source/native/strict readers before one action-only update; preserve
-   fullACL/principal/settings/window, no Run/new trigger/measurement now.
-   Pending extension is not deployed until independent fresh readback PASS.
+5. Measurement: ACTUAL installed12class3+two nonprobability rank policies,
+   RESULTdf6d798c/deploymentd405201f/sourcee45c65b0, Oct20 10:58:53UTC.
+   Root A/data/current-peer-points-measurement-extension-20261020-v1.
+   One action update/0rollback-Run-newtrigger-API-model-measurement;
+   46checks/fresh independent COM ACL/nonaction/window PASS/alljoined.
+   Same Oct26 23:45..23:55UTC/Oct27 08:45KST/120active600elapsedworker.
+   Strict reader independently returns FUTURE_MEASUREMENT_NOT_OBSERVED,
+   not performance. Legacy fixed-quarter diagnostic remains auxiliary.
 
 ## Verify / Continue
 

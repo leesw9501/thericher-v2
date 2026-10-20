@@ -7,7 +7,7 @@ current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Ready / Owned
 
-Confucius: bounded interpretation of matched XLK MODP0/1 evidence under
+Confucius completed interpretation of matched XLK MODP0/1 evidence under
 A/data/current-xlk-contemporaneous-mode-basis-probe-20261020-v1/RESULT.json.
 Sameclient/BYMD20251208/GUBN0,2GET1POST0retry; perdateOHLC scaling compatible,
 pre/post Dec5,2025 split factors differ. A global all-date constant scale is
@@ -15,12 +15,26 @@ not required by ordinary split adjustment. Preserve old observations; do not
 infer PIT/TR/allCA/heldshare-transform qualification or require another probe
 without an actual consumer need. Advisory target
 A/review/current-xlk-basis-interpretation-20261020-v1; no further API assigned.
+Advisory0968970d CORRECT_INTERPRETATION_NOT_A_PROVIDER_FAILURE,
+15upper/no numericrecomputations. GlobalfactorFalse only refutes global
+constant conversion; OTHER is not literally SAME/HALF/DOUBLE, not corruption.
+Continue explicitly versioned features/replay; no generic probe/gate.
 
-Boole: source-only broad-ranking candidate preparation, novelty versus actual
-existing indicator/ranking/portfolio studies. Prefer useful information or
-objective change over more architecture/epoch/weight grids. Source request
+Boole: selected broad relative-tail3 versus absolute-cost3 SAMEHGB target
+recipe, source870928a7/31checks. Generic ranking/midrankMSE repeats rejected;
+not new information/architecture. Runtime/native plus Bacon label-onlyData
+parallel;2CPUfits/15cells/2400active7200elapsed/noGPU, conditionaldispatch
+after exactData/native/source/owner checks. Source request
 A/research/current-broad-ranking-candidate-preparation-20261020-v1;
 no numerical dispatch/model choice from Strategy or approval queue.
+Claude2fcf86e4 REVISE label/population/effectiveN/killpower boundaries,
+17.327upper; keep descriptive comparisons,2e-12 not statistical significance.
+RepeatedadaptivePREDreuse cannot be repaired by bootstrap-as-promotion gate.
+
+Confucius now chooses ONE source-only multi-regime/longer-horizon track under
+A/research/current-multiregime-research-choice-20261020-v1. Existing data,
+concrete exact coverage/consumer/novelty and strongestkill, not another
+same66date architecture grid. No new actual labels/fits/GPU/API assigned yet.
 
 ## Latest Mechanism Results
 

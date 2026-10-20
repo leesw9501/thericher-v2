@@ -55,15 +55,22 @@ Historical comparisons are adaptive/reused, not independent alpha/Paper PnL.
   Shared Data2128.629 is one separate dependency, not duplicate point spend.
   No exactwire/providerfinality/PIT/CA or profitability promotion claimed.
 
-- Boole next source-only preparation:
+- Boole selected next target-recipe comparison:
   A/research/current-broad-ranking-candidate-preparation-20261020-v1.
-  Check actual earlier ranking/indicator/portfolio objectives for duplication;
-  choose ONE useful information/objective change, not another architecture/
-  epoch/weight grid. Proposed broad cross-sectional ranking plus nonlinear
-  tabular/indicator matched control is conditional on novelty and actual data
-  compatibility. No actual new arrays/labels/weights/fit/GPU/API in preparation.
-  Freeze exact target/purge/INNER selection/cost/samegross risk/trial/time/
-  convergence/strongestkill before any later numerical dispatch.
+  Source870928a7/31checks/46.117upper: SAMEHGB21features ABS_COST3 versus
+  per-date REL_TAIL3, notnewrankingmethod/newinformation. GenericmidrankMSE/
+  pairwiseranking repeats explicitly rejected from12nearest actualcontracts.
+  Runtime/native byBoole and label-onlyData byBacon inparallel, no fit yet.
+  Freeze numeric origin/end atacceptance,2400aggregateactive7200elapsed incl
+  prep46.117/review17.327/Data/native/IO/failure/cleanup;2marketstarts0retry
+  aftermarket/max128pat20/perfit600/15cells/0GPU. RealSYNsolver/checkpoint/
+  explicitchronologicalvalidation before market; no PREDlabels in trainer.
+  Claude2fcf86e4 REVISE scope/dependence/labelrecipe adopted. Numeric2e-12
+  is NOTeconomic-effect/significance threshold; parent rejects newbootstrap
+  qualification because repeatedadaptivePREDreuse is not repaired by it.
+  Keep frozen diagnostics/criteria/no rerank, no broadnoalpha claim fromFAIL.
+  Conditional delegatedGO after exactsource/Data/native/owner checks, not
+  another parent/operator queue. No new prospective cohort/Task bydefault.
 
 - Fixedfusion COMPLETE2c75844c/CACHEABI5455aefe under
   current-peer-residual-fixed-fusion-20261020-v1:15cells/3cachedintakes/
@@ -88,10 +95,12 @@ upper, primaryFAIL/descriptive fixedhalf promise. BroadLSTM8198cdbe:95epochs
 selected75/10830updates/455.724upper, pairedprimaryFAIL/properUNKNOWN40missing.
 Their07:52future pair ACTUALa0569a2e/ABI07c6ea7f/COMMITTED326088cf,2CPUforwards/
 0fits-GPU-outcomes. Oldfour points e1fc1ada andPRICE/MACRO2b168e66 preserved.
-Eightclass3+one rank policy measurement installed0e9e28f6, sameOct27 window.
-Kepler owns a bounded SAME-task12class3+two rank extension from ACTUAL points,
-not installed until fresh independent readback. TargetOct20/21/22/23/26 still
-unknown. No failed/uncommitted point adoption or new measurement worker.
+SameOct27 measurement ACTUAL12class3+two rank policies/14primary,
+A/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
+df6d798c/deploymentd405201f/sourcee45c65b0/46checks/freshindependentCOMPASS.
+Oneactionupdate/0Run-newtrigger-API-model-measurement/ACL/windowunchanged.
+Parent strictreader: FUTURE_MEASUREMENT_NOT_OBSERVED; targetOct20/21/22/23/26
+unknown. Legacyfixedquarterauxdiagnostic separate; no fake rankproper-score.
 More detailed closed contracts/source/splits/debits stay immutable A and Git,
 not reconstructed as independent data or reopened selection results.
 

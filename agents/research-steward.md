@@ -9,8 +9,12 @@ Company current-nas-owned-model-paper-cycle-v1 UNFINISHED. An MD is not a worker
 Canonical lease A/engine-research-agent/locks/gpu.lock. Latest actual CUDA
 actors joined/containers absent/exact owned lease released. Four new CPU
 forecast calls also finished; no actual new GPU training currently dispatched.
-Boole source-only broad-ranking novelty/proposal is the next candidate, not a
-ready allocation. Do not duplicate completed learning/forwards or create load
+Boole HGB target-recipe comparison870928a7 is CPU-only, no GPU allocation.
+Two same-estimator fits/15cells/2400aggregateactive7200elapsed/max128pat20/
+perfit600; source46.117/review17.327/Data/native/failures/IO/cleanup included
+once. Runtime/native and label-onlyData parallel, actualfitnotyetstarted.
+Source/actual Data/solver readiness, not another parentapproval queue.
+Do not duplicate completed learning/forwards or create load
 for utilization. Allocate genuinely ready campaigns without operator queue.
 
 ## Completed Custody
@@ -42,8 +46,10 @@ point spend or free. CONSUMER eb69c563/CLOSED6969c765/terminal2006f601 under
 A/data/current-nas507-peer-live-close-20261020-v1/repair-r4. Maxpersisted
 availability10:26:06.655378176UTC; exactwire/finality/PIT/CA unqualified.
 Old committed e1fc1ada/2b168e66/a0569a2e unchanged. Future targets unknown.
-Currentmeasurement8class3+rankhalf0e9e28f6; Kepler owns same-window12+2
-extension, not yet deployment. No rank probability/proper-score fiction.
+Measurement ACTUAL12class3+two rankpoliciesdf6d798c/deploymentd405201f,
+46checks/freshindependentCOM PASS/oneactionupdate0Run-newtrigger-API-model-
+measurement. Parent exactreader/7refchecks returns futureNOTOBSERVED.
+SameOct27window, no new worker/rank probability/proper-score fiction.
 
 ## Frozen Compatibility
 

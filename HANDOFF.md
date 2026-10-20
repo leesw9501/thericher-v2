@@ -22,10 +22,11 @@ decision. Package-local research restrictions do not suspend Execution.
 | --- | --- |
 | Parent / Orchestrator | Integration/Git/current projections. Production e53c290 and verification unchanged. |
 | Execution | Window21 new prepare/execute tasks INSTALLED9b1d0e84/fresh semantic COM PASS; future opportunity only. Old NAS/F9/nightly/Goal97 remain separate. |
-| Kepler / Data | Live507 CLOSED/READY eb69c563. Now extends SAME Oct27 measurement from8class3+1rank to12class3+2rank; not yet installed. |
-| Boole / Engine | Current25 pair + fixed-third point ACTUAL4c65fa99. Now source-only broad-ranking novelty/proposal; no new fit dispatched. |
-| Bacon / Engine | Broad-query pair ACTUAL d8b66977; completed training/point actors joined. No active learning. |
-| Confucius / Strategy | Fixed-third study CLOSED2c75844c; bounded interpretation of matched XLK adjustment evidence, no more API. |
+| Kepler / Data | Live507 CLOSED eb69c563; same-window12class3+2rank ACTUALdf6d798c/deploymentd405201f/fresh independent COM PASS, no Run/measurement. |
+| Boole / Engine | Current25 point ACTUAL4c65fa99. Now runtime/native for two matched HGB target recipes870928a7; conditional fit only after exact Data/native/source checks. |
+| Bacon / invoked Data | Broad-query point ACTUALd8b66977; now label-only relative-tail3 sidecars for HGB, disjoint from Kepler. |
+| Confucius / Strategy | XLK0968970d interpretation complete/no provider failure. Next source-only multi-regime research choice, not another66date architecture grid. |
+| Execution sidecar | Source/synthetic NAS exit-accounting readiness; no broker/private/Task mutation. |
 | Research Steward | Last CUDA allocations all closed; canonical lease A/engine-research-agent/locks/gpu.lock released. No dummy utilization or duplicate learning. |
 
 ## Latest Research
@@ -68,13 +69,31 @@ point workers. Shared acquisition2128.629 is a separate single dependency,
 not duplicated per point. Captured/persisted availability is known, exact final
 wire opener times/provider finality/PIT/corporate-action coverage are not.
 
-Current measurement installation still8class3+one rank policy0e9e28f6:
-A/data/current-broad-residual-point-measurement-extension-20261020-v1/adoption-r2/RESULT.json.
-Kepler owns an action-only12class3+2rank extension from these ACTUAL points;
-fresh CURRENT-task/ACL backup, native reader checks and fresh COM readback
-required. No new trigger/worker/window/Run/actual measurement now. Same
-thericher-research-oct20-model-point-measurement-20261027, Oct26
-23:45..23:55UTC/Oct27 08:45KST, worker120active600elapsed. Pending is not deployed.
+Current measurement ACTUAL installed12class3+two nonprobability rank policies:
+A/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
+df6d798c/DEPLOYMENTd405201f/SOURCEe45c65b0. One action update/0rollback-Run-
+newtrigger-API-model-measurement,46checks/fresh independent COM PASS,
+ACL/nonaction/window unchanged/allchildrenjoined/54.566aggregateupper.
+Same thericher-research-oct20-model-point-measurement-20261027, Oct26
+23:45..23:55UTC/Oct27 08:45KST, worker120active600elapsed. Parent strictreader
+and7directref hashes PASS: FUTURE_MEASUREMENT_NOT_OBSERVED/performanceUNKNOWN.
+Legacy fixed-quarter probability diagnostic remains separate auxiliary.
+Old8+1installation0e9e28f6/backups/debits unchanged, do not rerun installers.
+
+Next CPU study source870928a7:
+A/research/current-broad-ranking-candidate-preparation-20261020-v1.
+Two identical HGBs on SAME21features compare absolutecost3 versus relative
+tail3 labels; not generic ranking/LambdaRank/new information. Source31checks/
+46.117upper. New2400aggregateactive7200elapsed includes prep/review/Data/
+native/IO/failure/cleanup, max2marketstarts/max128pat20/perfit600/15cells/
+0GPU. Boole runtime/native and Bacon label-only Data work in parallel.
+Claude A/review/current-broad-relative-tail3-20261020-v1/ADVISORY.json
+2fcf86e4 REVISE:labeldefinition/populationtransfer/effectiveN/killpower,
+17.327upper. Adapted interpretation: recipe notpurelosscausality,66overlapping
+dates not1650independent.2e-12 comparison tolerance is not significance.
+Parent declines bootstrap-as-promotion machinery: adaptive final-data reuse
+is not repaired by resampling. Keep descriptive diagnostics/frozen criteria;
+failure of this screen is not proof of noalpha universally. No actual fit yet.
 
 ## Data Ready / Recovery Knowledge
 

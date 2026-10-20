@@ -11,10 +11,11 @@ fees/settledcash/netPnL unknown. AGENTS owns authority, Parent shared MD/Git.
 | --- | --- |
 | Parent | Integrate current facts/verify/Git; production e53c290 unchanged. |
 | Execution | Window21 actual9b1d0e84 TWO_READY_ENABLED/fresh COM PASS; prepOct21 13:10UTC/execute14:00. ExistingNAS/F9/nightly/Goal97 remain separate. No manual Run. |
-| Kepler / Data | Live507 CLOSED eb69c563/498eligible9masked. Now same-window Oct27 measurement extension8+1 to12+2, fresh CURRENT backup/action-only/native readback. Not deployed yet. |
-| Boole / Engine | Current25 pair+rankthird ACTUAL4c65fa99; now source-only broad-ranking novelty/proposal, no new marketfit/GPU dispatch. |
-| Bacon / Engine | Broad-query pair ACTUALd8b66977; all training/point actors closed. |
-| Confucius / Strategy | Fixedfusion CLOSED2c75844c/primaryFAIL. Reviews XLK time-varying basis interpretation, no APIs/target access. |
+| Kepler / Data | Live507 CLOSED eb69c563; measurement12class3+2rank ACTUALdf6d798c/deploymentd405201f/46checks/freshCOMPASS/0Run. No worker active. |
+| Boole / Engine | Selected HGB ABS_COST3/REL_TAIL3 source870928a7; runtime/native before conditional2CPUfits. No fit yet/0GPU. |
+| Bacon / invoked Data | Label-only sidecars from existing features/exact common masks for HGB; disjoint from Kepler, no PREDlabels/models/API. |
+| Confucius / Strategy | XLK0968970d interpretation complete. Now one source-only multi-regime choice; no numerical dispatch. |
+| Archimedes / Execution | NAS gross kernel reusable4da7d033/100SYNchecks. Minimal exact offline caller-r1 native preparation, no private/operational invocation. |
 | Steward | Last four CUDA fits closed/leasefree. Allocate next genuinely ready finite campaign, not duplicate utilization. |
 
 Due: nightlyOct20 14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
@@ -24,13 +25,19 @@ or second shared tenth. A future due time is not company completion.
 
 ## Throughput Review
 
-Review10:45UTC: no foreground quota/session wait. Four new learned experts
+Review after10:58UTC: no foreground quota/session wait. Four new learned experts
 have ACTUAL pre-open points; live507 acquisition is COMPLETE, no residual
-all-data wait. Measurements extend SAME existing future consumer, not a new
-worker/report chain. Parent replaces stale current projections instead of
+all-data wait. Measurements ACTUALLY extend SAME existing consumer to12class3+
+two rankpolicies, not a new worker/report chain. Parent replaces stale projections instead of
 appending diary entries. GPU idle now because actual learning is finished,
 not permission/environment. Next source proposal changes objective/information
 only if novelty survives existing-study check; no more same-data weight grids.
+Source870928a7 rejected generic ranking repeats and selects sameHGB relative
+tail3 versus absolutecost3,2CPUfits/15cells/2400active7200elapsed. Data-labels,
+native runtime and Claude challenge run in parallel. Claude2fcf86e4 REVISE
+defines descriptive/adaptive limits, not permission or a bootstrap platform.
+Execution prepares attributablegross at tomorrow's exit by connecting an
+existing kernel, not waiting for research profitability.
 
 Reversible improvement: share one qualified507 snapshot/cost across both point
 producers; independently verify native reference hashes without refitting or
@@ -69,9 +76,10 @@ each/0fits-GPU-targets-API; fixedthird no additional NN. Old8+rankhalf intact.
 No measured future outcomes/independent alpha or KIS PnL claimed.
 
 Company critical path is the owned Oct21 exit/reconciliation, not research
-profitability. Parallel ready alternatives: same-window measurement adoption;
-one novel broad-ranking source/native preparation; concrete basis interpretation
-without another gate. If no useful new campaign is ready, do not manufacture
+profitability. Measurement adoption and basis interpretation now COMPLETE.
+Ready alternatives: HGB target-recipe numeric preparation; minimal
+exit-accounting caller; source-only multi-year/regime study choice.
+If no useful new campaign is ready, do not manufacture
 GPU load, permission hold or another small-cohort architecture search.
 
 ## Verification / Git
