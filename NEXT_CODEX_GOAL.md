@@ -63,10 +63,21 @@ inventory, substitute unknown requests or a new/profit-expanded budget.
    TimesFM finalblock7e85148b CLOSED17:22UTC/427.163upper/oneactualGPU/
    12SYNupdates/0market fits-PRED-cells/alljoined/leasefree. CPU3/CUDA100
    latent parity failed, numeric magnitude/component unretained. No old retry.
-   New SYN-only backend qualification under A/infra/current-timesfm-latent-
-   backend-qualification-20261021-v1 measures matched shapes/error summaries;
-   no market/optimizer calls. Source-only next foundation hypothesis and
-   ex-ante sizing proposal proceed independently, not a GPU utilization grid.
+   Backend qualification5a257099/ad2c58c8 COMPLETE: matchedcrossbackend
+   prefixFAIL/finalembeddingPASS/withinbackendshapePASS,1GPU4forwards/
+   0optimizer-market/alljoined/leasefree. No proved oldcause/kernelbug.
+   ExplicitCUDA-local successor A/research/current-timesfm-cuda-local-adaptation-20261021-v1
+   COMPLETEce9de4e5:2CUDAfits8epochs/248updatesEACH/best0,6SYNupdates/
+   6new6cached/1499.930upper/alljoined/leasefree17:47:59UTC. Scientific+
+   financialFAIL, no refit/rescue or CPU deployment equivalence claim.
+   Inverse21variance sizing3c484f19 CLOSEDfinancialFAIL/3new9cached/
+   0models-GPU; original HALF weights unchanged. Data separately checks
+   existing-cache512 support, no labels/acquisition/permission hold.507 stocks
+   have1.176M totalretainedrows but exactcontiguous512 support stillneeds
+   census. Broader21 old8198cdbe alreadytrained95epochs/best75; custody
+   90ecb7aa prevented duplicatefit. Do not trust stale root READY over nested
+   runtime FINAL/ABI. Short fixed SPY21 entry-veto source feasibility and
+   broader512 foundation source preparation are disjoint, no current GPU claim.
 
 5. Data prospective readiness1c6f9d74: stocks throughOct19; Oct20 not closed
    at inventory. Existing22:30/23:00UTC source-plan visits remain unchanged.

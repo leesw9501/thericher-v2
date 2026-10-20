@@ -6,11 +6,16 @@ fitting/evaluation. No broker/credentials/risk authority. Parent shared MD/Git.
 
 ## Current Selection / Evidence
 
-Ready source package: A/research/current-exante-sizing-hypothesis-20261021-v1,
-ONE genuine allocation mechanism on fixed HalfPool Top5/samegross.10 versus
-equalTop5, not another model-name grid.60source upper/0model-GPU-data calls;
-check nearest existing contracts/lag availability without peeking at returns.
-May deliver a concrete duplicate/data rejection rather than a renamed trial.
+Inverse21variance application CLOSEDfinancialFAIL at
+A/research/current-halfpool-invvar-sizing-20261021-v1/FINAL.json3c484f19.
+Same HALF Top5/support/gross, actual entries matched;10bp growth/DD
++.6693/.3126 versus HALF+1.0489/.2926percentNAV.3new9cached/0models-GPU/
+146.276upper. Pure kernelbac64d73/ABI264a4aab remains source, no operational
+weight change or parameter rescue. Existing inversevariance precedents are
+not new mechanisms. Proposal60/kernel15 upper carried once.
+New foundation CUDA-local engineering successor is not a claimed new
+scientific hypothesis; oldfailure/debits remain unchanged. Backend drift
+alone does not prove a kernel defect or justify a cosmetic new task.
 
 TCN proposal completed via measuredCPU route d16a455a:2fits/67datePRED
 properPASS-financialFAIL. PriorGPU6c11d3e4 failed only frozen pace before

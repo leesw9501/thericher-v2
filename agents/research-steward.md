@@ -15,12 +15,18 @@ All children joined/containers removed/canonical lease released.
 CPU3 versus CUDA100 first3 latent parity failed before market; numeric
 component/magnitude unretained. Not a model/performance result.
 
-Archimedes owns NEW SYN-only diagnosis:
+Archimedes SYN-only diagnosis COMPLETE:
 A/infra/current-timesfm-latent-backend-qualification-20261021-v1.
-600active1800elapsed/oneGPU/2core restores/12native forward equivalents,
-0optimizer/market/PRED/API. Matched CPU/GPU3/100 and within-backend shapes;
-persist errors/input hashes before predicates. Actual allocation is unknown
-until worker evidence; fresh source/owner/headroom/lease checks remain required.
+RESULT5a257099/readbackad2c58c8, oneGPU/2restores/4forwards/0optimizer-
+market-PRED/138.37upper/alljoined/leasefree. Matched crossbackend prefix
+FAIL; finalembedding and withinbackend shapes PASS. No old cause/kernel-bug
+proof. New explicit CUDA-local successor owned by Pascal:
+A/research/current-timesfm-cuda-local-adaptation-20261021-v1,
+17:40:06..20:40:06UTC/6000active10800elapsed/2fit identities/GPU3600inclusive.
+Carry1147.163 conservativeupper once (427.163old+90source+600probe+30review),
+not GPU spend or refunded oldcap. At most2newallocations/12CUDA SYNupdates/
+one pre-market technical retry, no completedfit/outcome rescue. Actual market
+training still requires worker evidence, fresh ownership/headroom/lease.
 
 Pascal's distinct-task source phase CLOSED90upper/0model calls:
 A/research/current-foundation-next-hypothesis-20261021-v1/SOURCE-CLOSED.json
@@ -31,8 +37,20 @@ A causally identified defect and demonstrated repair may inform an explicitly
 linked freshly budgeted successor; old failure/debits/caps remain closed, never
 refunded. Matching shape alone does not prove cause or authorize market calls.
 
-Independent CPU work: Boole's future-point measurement readiness followed by
-fixed HALF inverse21variance sizing; Strategy owns only its pure kernel/ABI.
+CUDA-local successor is now COMPLETE: READBACKce9de4e5/1499.930upper,
+2marketfits8epochs/248updatesEACH/selected0/6SYNupdates/6new6cached,
+scientific+financialFAIL; alljoined/leasefree17:47:59UTC. Actual lastblock
+parameters9,839,603, nonzero gradients and exact CUDA nextupdate proved.
+No convergence or selected-learning claim: INNER chose prior-only epoch0.
+Next broader512 SOURCE_ONLY preparation waits for actual Data support and
+role-isolated binding; no current GPU training/allocation inferred.
+Broad21 old8198cdbe already completed95epochs/best75/10830updates;
+new custody90ecb7aa rejected duplicated dispatch with0GPU calls. A stale
+root READY is not current custody; follow nested actual FINAL/ABI first.
+
+Independent CPU sizing CLOSED3c484f19/146.276upper/3new9cached/0models-GPU,
+financialFAIL. Measurement readinesscc75238b27checks/0actualpoint/NOTinstalled.
+Data checks existing broader-training metadata only; no active collector.
 No completed fit is queued again. No dummy load for GPU utilization.
 
 ## Resources And Custody

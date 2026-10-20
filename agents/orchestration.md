@@ -10,13 +10,13 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 | Owner | Current Package |
 | --- | --- |
 | Parent | Point Task installed28e887fc; integrate technical faults and exact current memory, not replace unfinished Paper goal. |
-| Boole / Engine | Oct21 point measurement-readiness90source, then fixed HALF inverse21variance sizing360active. No broker/GPU. |
-| Kepler / Data | ETF12/264known7bdfc250 and supervised bindingd7d7cc2b COMPLETE; no active collector. |
-| Pascal / Engine | Foundation and fusion closed technicalUNKNOWN; distinct-task source92aa9f6e CLOSED90upper. Same-task continuation requires justified repair, no current training. |
-| Archimedes / Infra | New TimesFM SYN-only backend/batch diagnosis600active1800elapsed/oneGPU/0market-optimizer calls. |
-| Bacon / Review | Foundation-recovery SOUND_WITH_NAMED_LIMITS and sizing REVISE_NAMED_COMPONENT complete; no numerical work. |
-| Confucius / Strategy | HALF inverse21variance pure allocation.py/ABI only60source; no payload/model calls. |
-| Steward | Last actual GPU proof lease released17:22; new allocation needs fresh resource/ownership evidence. |
+| Boole / Engine | Custody90ecb7aa prevented duplicate8198fit; short entry-veto source feasibility next. |
+| Kepler / Data | Cache-only broader512 input-support census, no labels/collector. Metadata1cddb4d complete. |
+| Pascal / Engine | CUDA-local2fits COMPLETEce9de4e5/FAIL; broader512 source-only preparation. |
+| Archimedes / Infra | Backend diagnosis5a257099 COMPLETE,1GPU4forwards/0optimizer-market/alljoined/leasefree. |
+| Bacon / Review | CUDA-local SOUND_WITH_NAMED_LIMITS exacte07fd5ab, no numerical work. |
+| Confucius / Strategy | Fixed SPY21 new-entry gate source-only, no threshold/window grid. |
+| Steward | Actual CUDA-local lease released17:47:59; no current GPU training. |
 
 Existing owned due: RTH21:50UTC/old20D122:30/new9D123:00;
 halfpool pointOct21 00:15UTC=09:15KST; NASexit13:40UTC;
@@ -30,8 +30,9 @@ Task/installation/preview is not a fill or actual forecast. No operator decision
 route. Foundation proof used RTX4090 but stopped0marketfits on CPU3/CUDA100
 latent parity; error magnitude/component missing. New bounded SYN diagnosis
 records these before predicates. Do not force a cosmetic new scientific task
-after an engineering fault; keep old closure/debits and demand actual repair
-evidence before an explicitly linked new numerical allocation.
+after an engineering fault; keep old closure/debits. The explicitly new
+CUDA-local contract requires its own semantic proof, not an invented kernel
+bug or cross-device equivalence inferred from consistency tests.
 
 Third cached fusion consumed one target intake but0economic cells from a
 calendar-mask/prediction-index fault, not a model result. Real NPZ-axis SYN
@@ -43,6 +44,22 @@ Reversible improvement: remove stale active-looking instructions from these
 boards. Old clocks, numerical results and recovery lessons stay in Git through
 a827ba8 and immutable A; current memory names actual owners/ready/due only.
 Neither report volume nor GPU utilization is an engine outcome.
+
+17:45UTC integration: inversevariance sizing genuinely evaluated and lost both
+growth/DD tests with exactly matched entry notionals; keep HALF, no tuning
+rescue. Backend qualification isolates crossdevice-prefix discrepancy, not
+batch-only cause or a kernel bug. Official PyTorch2.7 permits device differences.
+Freeze NEW CUDA-local proof/fit contract before calls, not retroactively pass
+the old study or mix CPU/GPU representations. Future point measurement ready,
+not installed/observed; Data checks existing broader training support separately.
+
+17:54UTC: actual CUDA-local2fits/496marketupdates completed, best0both/
+science+financeFAIL; no epoch rescue. Broader21 rootREADY misleadingly looked
+unused, but Boole followed actual nested8198FINAL/ABI and prevented duplicate
+95epochfit. Reversible improvement: keep the exact completed path in current
+memory and verify custody before any readiness-based numerical dispatch.
+Broader512 input-support census is genuinely different and continues alongside
+fixed entry-veto source work, no GPU utilization filler.
 
 ## Current Integration Evidence
 

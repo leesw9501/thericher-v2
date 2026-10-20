@@ -51,7 +51,15 @@ actualGPU12SYNupdates/0marketfits-PRED-cells, latent CPU3/CUDA100 parity
 failure, cause magnitude unretained/alljoined/leasefree17:22UTC. Read only
 D:/thericher-v2/model-artifacts/research/current-timesfm-finalblock-adaptation-20261021-v1/CLOSED-READBACK.json.
 Do not rerun consumed family. New synthetic-only backend qualification has
-no optimizer/market/PRED calls. Third fusiona2365b02 technicalUNKNOWN/0cells,
+now CLOSED5a257099/ad2c58c8:1GPU4forwards/0optimizer-market-PRED/alljoined/
+leasefree. Crossdevice prefixFAIL/finalembedding and withinbackendshapePASS,
+no proved oldcause/kernelbug. NEW CUDA-local successor under
+D:/thericher-v2/model-artifacts/research/current-timesfm-cuda-local-adaptation-20261021-v1
+completed17:47:59UTC/READBACKce9de4e5:2CUDAfits8epochs/248updatesEACH,
+best0/6SYNupdates/6new6cached/1499.930upper/alljoined/leasefree,
+scientific+financialFAIL. No CPU representation/deployment equivalence claim
+or forced epoch rescue. Next broader512 scope is source/Data preparation only.
+Third fusiona2365b02 technicalUNKNOWN/0cells,
 calendar-mask index fault; not model/financialFAIL or authorization to retry.
 ETF consumer7bdfc250 under
 D:/thericher-v2/model-artifacts/data/current-hgb-sector-etf-remaining8-20261021-v1
@@ -65,6 +73,13 @@ thericher-hgb-sector-prospective-point-20261021, nextOct21 00:15UTC=09:15KST,
 end00:25/targetOct27CLOSE. Exact deployment-r1/INSTALL-CLOSED.json28e887fc,
 28mock2unregisteredCOM/freshCOMPASS/1create1enable/0Run. No actual point.
 Never rerun installer/template jobs; require future source-bound inputs.
+Measurement readinesscc75238b/27checks at
+D:/thericher-v2/model-artifacts/research/current-hgb-sector-oct21-point-measurement-readiness-20261021-v1/SOURCE-READY.json
+is NOT installed; targetOct27CLOSE/proposedOct27 23:55UTC. Its safe
+consumer.py --source-check reads no actual point/market/Task and passed
+independently. Missing point is NOT_OBSERVED, not zero/cash PnL.
+Sizing study current-halfpool-invvar-sizing-20261021-v1/FINAL.json3c484f19
+CLOSEDfinancialFAIL/3new9cached/0models-GPU, keep old HALF weights.
 
 Generic MODEL_PROPOSAL_NAS verified and installed for the futurecohort:
 D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1.

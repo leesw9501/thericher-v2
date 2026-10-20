@@ -58,10 +58,33 @@ actual RTX4090 allocation17:21:56..17:22:08UTC/12CPU+CUDA SYNupdates,
 0market fits/PRED/cells/427.163upper/alljoined/leasefree. Strict232restore
 and CPU native PASS, but CPU3 versus CUDA100 first3 latent parity failed;
 component/error magnitude unretained, no proved cause or model result.
-Old result/debit unchanged. Archimedes owns new SYN-only backend qualification,
-600active1800elapsed/oneGPU/0optimizer-market-PRED calls; no old tolerance
-relaxation. Pascal prepares one genuinely distinct source-supported next
-hypothesis, Confucius one ex-ante sizing proposal; preparation is not training.
+Old result/debit unchanged. Backend qualification COMPLETE5a257099/ad2c58c8:
+oneGPU/2restores/4forwards/0optimizer-market-PRED/138.37upper/alljoined/
+leasefree. CPU/GPU prefix fails even matched shapes; finalembedding and
+withinbackend3v100 pass. No proved oldcause/kernelbug or batch-only cause.
+New explicitCUDA-local successor under current-timesfm-cuda-local-adaptation-20261021-v1:
+17:40:06..20:40:06UTC/6000active/2fits/GPU3600inclusive/onePRED6new6cached,
+same original task/data/seed. No cosmetic different-hypothesis requirement;
+oldfailure preserved,1147.163conservativecarryonce/notGPUspend. One frozen
+pre-market path/mount/serialization retry; no fit/outcome rescue. All encoder/
+training/PRED CUDA-local, fullnative/causality/normalization/checkpoint proof;
+CPU crossbackend comparisons diagnostic-only, no CPU deployment claim.
+Claude SOUND_WITH_NAMED_LIMITS exacte07fd5ab under A/review/current-timesfm-cuda-local-adaptation-20261021-v1.
+Actual successor completed2CUDAfits8epochs/248updatesEACH, selected0both,
+6SYNupdates/6150encoderrows/6new6cachedcells/1499.930upper/alljoined/
+leasefree17:47:59UTC. READBACKce9de4e5 under that root verifies source/counters.
+TRAINloss improves while INNER worsens; patience8, not convergence.
+Scientific+financialFAIL. No forced longer epochs/refits. Selected constant
+priors cannot add rank information through a fixed affine probability blend.
+Next: source-only broader512 adaptation, Data support census prerequisite,
+not a global permission wait. Same architecture/current25 evaluation, no
+new lr/seed grid. Short source-only SPY21 entry-veto feasibility independent.
+
+Broader21 is ALREADY COMPLETE8198cdbe:95epochs/best75/10830updates/15cells,
+financialFAIL/properUNKNOWN40missing. Exact A/research/current-nas-breadth-expert-preparation-20261020-v1/runtime-source/premarket-repair-r1/actual/FINAL.json.
+Root READY predates that runtime; new custody90ecb7aa15checks prevented a
+duplicate0fit-GPU. Always follow linked actual FINAL/ABI, not stale parent
+READY. Existing broad21 counts654834/30990 do not imply an untrained candidate.
 Claude3bb72321 PROCEED_WITH_NAMED_LIMITS/30upper: unequalcapacity/calibration
 confound representation attribution; no extra fits/controls/criteria added.
 No public code in Execution; old0backbone-update failures remain immutable.
@@ -77,6 +100,16 @@ under deployment-r1/INSTALL-CLOSED.json, one hidden Pythonw opportunityOct21
 00:15..00:25UTC=09:15KST afterstockcapture, targetOct27CLOSE.0Run/0actual
 point; never rerun consumed installer. StockMODP1 base-prefix lineage
 matches25training sources; ETFMODP0 stays separate and unqualified CA/PIT.
+
+Inverse21variance sizing CLOSED3c484f19 at
+A/research/current-halfpool-invvar-sizing-20261021-v1/FINAL.json:
+10bp growth/DD +.6693/.3126 versus HALF+1.0489/.2926percentNAV;
+both incremental growth/DD predicates FAIL. Exact entry notional matched,
+no exposure rescale; same support/gross, no model change.1variancepass1650rows/
+3new9byte-cachedcells/52SYN39readback/146.276upper/0models-GPU/alljoined.
+Keep old HALF weights, no variance-exponent/window rescue. Proper N/A.
+Oct21 point measurement readinesscc75238b COMPLETE27checks,0point-model-
+market-Task calls, proposedOct27 23:55UTC/NOT installed; do not use Oct26 target.
 
 ## Frozen Completed Package History
 
