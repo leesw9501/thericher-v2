@@ -76,14 +76,32 @@ inventory, substitute unknown requests or a new/profit-expanded budget.
    all507CSVrefs/0unprocessed/min404peers. Actual Data28915bd7 COMPLETE:
    50275input50270known FIT/24580input24575known INNER,95.268upper/alljoined/
    oneFITprior. Current25PREDrefs byte-reused/noPREDoutcomes/broadPREDfloats.
-   No acquisition/permission hold. Broader21 old8198cdbe trained95epochs/best75; custody
-   90ecb7aa prevented duplicatefit. Do not trust stale root READY over nested
-   runtime FINAL/ABI. Broader512 actual appointment18:12:20..00:12:20UTC/
-   10800active/GPU7200inclusive/2fits/max128pat20; source/native/freshlease
-   before actual GPU claim. Short entry-vetof0844a74 complete: matchedgate
-   screenPASS but lowergrowth/lowerDDvHALF, not a mandatory policy gate.
-   Same-gross regime-to-reversal switch source next; LoRA rank4 SOURCE-only
-   feasibility independent, no second GPU allocation or new framework.
+   No acquisition/permission hold. Broader21 old8198cdbe trained95epochs/best75;
+   custody90ecb7aa prevented duplicatefit; follow nested FINAL/ABI, not rootREADY.
+   Broader512 COMPLETE0a7f5137:2CUDAfits20epochs/620updatesEACH/selected0,
+   6SYNupdates/6new6cached/2478.498upper/alljoined/leasefree18:32:52UTC,
+   scientific+financialFAIL. Separate INNER-only rank diagnostic48326e76:
+   fixed trainedepoch20, concordance.518587/.508380 vsconstant.5, properboth
+   worse; descriptive only/noPRED-regrade/0optimizer/alljoined19:00:35UTC.
+   Short entry-vetof0844a74 is lowergrowth/lowerDD, not a mandatory gate.
+   Same-gross expert switch37825bd3 CLOSEDfinancialFAIL/6new9cached/
+   139.349upper. Keep HALFdefault; no weight/grid rescue.
+   Boole owns rank4 LoRA SAMEcandidate transport repair under
+   A/research/current-timesfm-lora-adaptation-20261021-v1/premarket-directory-transport-r1.
+   Prior aa7e468a created0containers/models; oversized105233UTF16 argv,
+   historical error code unknown. Three exact RO cache-directory mounts,
+   perfile hashes/writer-closed generation/import-ABI proof, then oneGPUfit
+   inside ORIGINAL22:38:22.841962UTC/7878.498271aggregatecaps; no clock reset.
+   Pascal owns CPU close-only held-exit model under
+   A/research/current-close-only-held-exit-development-20261021-v1:
+   oneHGB256/pat20,23statefeatures/NEXT-OPENexit/fixedHALFentry and5day
+   sleeve/locked cash. Data129e95ba READY151000FIT/87500INNERstates,
+   150600/87500known/40.858active/10native12readback/alljoined.
+   End-to-end source/native/train/replay delegated within1800active7200elapsed
+   from original origin, no parent SOURCE_READY ceremony. Lower exposure
+   alone notalpha; missingrequiredstate UNKNOWN. No GPU/broker/network there.
+   Data field audit ada1665a:18OHLC inconsistencies already raw-source,
+   72neighbors matchCSV/0API; upstreamcauseUNKNOWN, no fabricatedHIGH/LOW.
 
 5. Data prospective readiness1c6f9d74: stocks throughOct19; Oct20 not closed
    at inventory. Existing22:30/23:00UTC source-plan visits remain unchanged.

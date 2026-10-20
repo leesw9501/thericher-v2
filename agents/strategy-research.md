@@ -22,11 +22,24 @@ SPY21 entry-veto COMPLETEf0844a74/47ON19OFF0UNKNOWN/6new9cached/
 gatedUniform+.0173/.2425, originalHALF+1.0489/.2926percentNAV.
 Matched selector screenPASS, but lowergrowth/lowerDD versus original is
 not dominance/timingalpha/default change or a new operating permission gate.
-Next SINGLE source hypothesis current-halfpool-regime-reversal-switch-hypothesis-20261021-v1:
-same frozen47/19 schedule chooses HALF whenON and rawlast1-reversal whenOFF,
-FULLsamegross/notcash, held exits unchanged; no subgroup-return peeking or
-threshold/window tuning. Source-feasibility/duplicate check before execution.
-LoRA source capability checked separately by invoked Infra, not another GPU owner.
+Same-gross switch COMPLETE37825bd3 at
+A/research/current-halfpool-regime-reversal-switch-20261021-v1/pre-outcome-correction-r1/FINAL.json:
+47/19 schedule HALF/RAWlast1,10bp growth/DD+.7487/.3690 vsHALF+1.0489/.2926
+percentNAV; both frozen tests FAIL.6new9cached/139.349upper/alljoined,
+0models-GPU-API. Onepre-outcome fixture correction retained; no defaultchange.
+
+New held-exit proposal3c1b879d READY under
+A/research/current-close-only-held-exit-hypothesis-20261021-v1/PROPOSAL.json.
+Seven old exit contracts cannot restore a compatible HALF/fixedCLOSEe+4/
+R21state model; no forced fakeadapter. New close-only HGBregressor uses
+entryR21+age0..3+log(CLOSE/entryOPEN), predicts remaining fixedexitreturn,
+only NEXTOPEN exits, original fixedHALF entries/5daysleeves/no freedcashreuse.
+Myopic policy not Bellman/optimalstopping. Data129e95ba actually ready;
+Pascal owns end-to-end CPU fit/replay. Claude exposureattribution limitation
+adopted: growth/DD development comparator does not prove timingalpha;
+cheap alwaysfirstexit control may be frozen beforeoutcome within oldcaps.
+No new trialgrid/approvalgate or operationalriskchange. LoRA separate owner
+Boole repairs transport before one actualGPUcandidate, not a competing role.
 
 TCN proposal completed via measuredCPU route d16a455a:2fits/67datePRED
 properPASS-financialFAIL. PriorGPU6c11d3e4 failed only frozen pace before

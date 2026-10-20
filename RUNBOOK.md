@@ -41,7 +41,8 @@ Foreign F9 pending reservation remains unchanged; next ordinary result unknown.
 
 Latest research halfpool740ae38d is descriptive financialPASS/properFAIL,
 not independent alpha or broker deployment. Sector9d883b98 trained31/26epochs,
-best11/6, all actors joined/lease released. No current GPU training.
+best11/6, all actors joined/lease released. At19:22UTC no research container;
+LoRA transport preparation is not current GPU training.
 Older verification/family entries below are frozen history.
 
 TCN CPUd16a455a completed2fits21/34epochs/selected1/14/6050updates,
@@ -61,9 +62,34 @@ scientific+financialFAIL. No CPU representation/deployment equivalence claim
 or forced epoch rescue. Broader512 Data28915bd7 now READY50275input50270known
 FIT/24580input24575knownINNER/95.268upper/oneprior/6ROtrainerfiles,
 no PREDoutcome reads. Exact current-broader512-training-input-20261021-v1
-CONSUMER.json under A/data. New actual broader512 appointment18:12:20..
-00:12:20UTC/10800active/GPU7200inclusive/max128pat20; source/native and fresh
-lease before any market training claim, no second GPU owner.
+CONSUMER.json under A/data. Broader512 COMPLETE0a7f5137 at
+D:/thericher-v2/model-artifacts/research/current-timesfm-broader512-adaptation-20261021-v1/READBACK.json:
+2CUDAfits20epochs/620updatesEACH/selected0/6SYNupdates/6new6cached/
+2478.498upper/alljoined/leasefree18:32:52UTC/scientific+financialFAIL.
+INNER-only fixedterminal20 rank diagnostic48326e76 at
+D:/thericher-v2/model-artifacts/research/current-timesfm-ranking-diagnostic-preparation-20261021-v1/runtime-r1/READBACK.json:
+concordance.518587/.508380vsconstant.5/bothproperworse/0optimizer-PRED-econ,
+alljoined/leasefree19:00:35UTC. Descriptive only, no oldFAIL regrade/refit.
+Same-gross switch37825bd3 under its pre-outcome-correction-r1/FINAL.json
+financialFAIL/6new9cached/139.349upper; no HALF default change.
+
+Current numerical OWNERS, not commands for the parent to rerun:
+D:/thericher-v2/model-artifacts/research/current-timesfm-lora-adaptation-20261021-v1/premarket-directory-transport-r1
+Boole repairs105233UTF16 Windows transport using3EXACT RO cache dirs,
+perfile hashes/writer-closed prepost generation/pinned native coldimport ABI.
+Old aa7e468a CLOSED0containers-models/2850.177upper; historical error code
+unknown, separateWin206 reproduction. Same oneGPUcandidate/data/seed/caps/
+original22:38:22.841962UTC deadline/7878.498271totalactive, not old scope retry.
+Do not invoke consumed root/parent-grant/premarket-import wrappers.
+D:/thericher-v2/model-artifacts/research/current-close-only-held-exit-development-20261021-v1
+Pascal CPU owner source/native/train/replay/readback within1800active/
+7200elapsed originalorigin/oneHGBmax256pat20. Data129e95ba at
+D:/thericher-v2/model-artifacts/data/current-close-only-held-exit-input-20261021-v1/CONSUMER.json:
+151000FIT/87500INNERstate inputs,150600/87500known/40.858active/alljoined.
+NEXTOPEN exits/oldHALFentries/5daysleeve/lockedcash, not sameCLOSE/Paper
+controlchange/timingalpha. No extra parent SOURCE_READY approval ceremony.
+Fieldauditada1665a confirms18badOHLC already raw-source/72neighborsmatchCSV;
+upstreamcauseUNKNOWN/0API, close-only proxy scope preserved/noHILO invention.
 Third fusiona2365b02 technicalUNKNOWN/0cells,
 calendar-mask index fault; not model/financialFAIL or authorization to retry.
 ETF consumer7bdfc250 under

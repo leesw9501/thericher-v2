@@ -20,13 +20,14 @@ No operator decision is currently required.
 
 | Owner | Current Work |
 | --- | --- |
-| Parent | Integrate actual CUDA training and reject duplicate completed breadth fit; keep Paper goal unfinished. |
-| Archimedes / invoked Infra | Backend diagnosis5a257099 COMPLETE/alljoined/leasefree; no current GPU owner from this package. |
-| Boole / Engine | Entry-vetof0844a74 complete; prepare same-gross regime-to-reversal switch after source feasibility. |
-| Kepler / Data | Broader512 input/labels28915bd7 COMPLETE,0PREDoutcomes/API,95.268upper/alljoined. |
-| Confucius / Strategy | Fixed same-gross expert-switch source feasibility, no threshold search/data outcomes. |
-| Bacon / invoked Review | CUDA-local challenge SOUND_WITH_NAMED_LIMITS, no numerical work. |
-| Steward / Pascal | CUDA-local study completed2fits; broader512 actual appointment18:12..00:12UTC, source/native before allocation. |
+| Parent | Integrate closed results and keep actual Paper lifecycle unfinished; no operator decision. |
+| Boole / Engine | TimesFM LoRA transport-only repair, then same frozen single GPU candidate inside original deadline/caps. Prior attempt created0containers/models. |
+| Pascal / Engine | CPU close-only held-exit model, native variable-exit replay and independent readback; source/native/train/evaluate delegated end-to-end. |
+| Kepler / Data | Held-exit input129e95ba COMPLETE,151000FIT/87500INNER states,40.858active/alljoined; no PRED/API. |
+| Confucius / Strategy | Held-exit proposal3c1b879d READY; no active numerical worker. |
+| Archimedes / invoked Infra | LoRA pure kernel83fe0292/ABI4019c93e READY; no numerical work or GPU owner. |
+| Bacon / invoked Review | LoRA transport custody challenge delivered; narrow writer-closed generation/import-ABI limits, not an authority hold. |
+| Steward | Last actual GPU diagnostic closed19:00:35UTC;19:22UTC no research container/2percentGPU. LoRA preparation is NOT actual training. |
 
 An MD is memory, not proof that a worker is running. New numerical dispatch
 needs the campaign's real source/native/input/resource checks. No dummy GPU
@@ -168,9 +169,8 @@ not convergence. Scientific+financialFAIL; do not force more epochs or refit.
 Actual backbone learning occurred; selected prior-only forecasts do not add
 cross-stock ranking information to a fixed affine probability blend.
 
-Next source-only family current-timesfm-broader512-adaptation-20261021-v1
-needs actual broader512 support/role-isolated Data first. No current GPU
-training. Data metadata1cddb4d finds1.176M retained rows across507 stocks,
+Broader512 family current-timesfm-broader512-adaptation-20261021-v1 is
+COMPLETE, not queued again. Data metadata1cddb4d finds1.176M retained rows across507 stocks,
 436with>=512TOTAL bars; that is not contiguous512 training support.
 Cache-only input census8e14ece8 COMPLETE:50275FIT/122dates,24580INNER/58,
 27839PRED/66,min404peers/date,507CSVrefs checkedonce/0unprocessed/50upper
@@ -181,13 +181,19 @@ current25PRED1650 references reused, no broaderPREDlabel/float derivation.
 New Data COMPLETE28915bd7:50275input/50270known FIT,24580input/24575known
 INNER,8native12readbackchecks/oneprior/0recomputations/95.268079aggregate
 includingold50once/alljoined. Six exact RO trainer files, no PREDoutcome reads.
-Broader512 actual appointment18:12:20..00:12:20UTC/10800aggregateactive/
-GPU7200inclusive,2fitids/max128pat20/4datepack-micro512/onePRED6new6cached.
-Native nonzero-gradient accumulation/normalizer/causality/fullstate proof,
-fresh ownership/headroom/lease and exact Data/source freeze before fitting.
-Source/native preparation is not market training. Archimedes separately
-checks rank4 LoRA source feasibility for a later capacity-regularized candidate;
-0model/GPU calls or material kernel implementation authorized there.
+Actual broader512 READBACK0a7f5137: TWO CUDA market fits, each20epochs/
+620updates/selected0, six SYNupdates/6new6cachedcells/2478.498upper.
+All joined/lease released18:32:52UTC. Both scientific+financialFAIL;
+train improvement/INNER overfit, patience20 not convergence. Selected priors
+equal uniform; final-trained epoch20 exports retained, no refitting/rescue.
+Separate INNER-only ordinal diagnostic READBACK48326e76 under
+A/research/current-timesfm-ranking-diagnostic-preparation-20261021-v1/runtime-r1:
+fixed terminal20 models, oneGPU/2restores/6classifierforwards/0optimizer/
+encoder/PRED/replay. Equal58date concordance FROZEN.518587/LASTBLOCK.508380
+versus constant.5; both proper scores worse than FITprior. Weak descriptive
+ordinal association only, not calibration causation/profitability/independent
+performance. Closed19:00:35/alljoined/leasefree/2726.241aggregateupper;
+old selected0 failures unchanged, no PRED reopening or checkpoint selection.
 Broader21 is NOT unexecuted: old8198cdbe actually trained95epochs/best75/
 10830updates/15cells/financialFAIL, properUNKNOWN40missing targets.
 Exact path A/research/current-nas-breadth-expert-preparation-20261020-v1/runtime-source/premarket-repair-r1/actual/FINAL.json.
@@ -209,9 +215,48 @@ A/research/current-halfpool-market-entry-gate-20261021-v1/FINAL.json:
 matched gatedUniform+.0173/.2425, ungatedHALF+1.0489/.2926.
 Matched selector screen PASS; ungated comparison is lower growth/lower DD,
 NOT dominance/timing alpha or a new Paper/development restriction. Keep
-existing operational defaults. Short next source study routes OFF to raw
-last1-reversal instead of cash, full same gross/oldholding exits unchanged;
-no subgroup-return selection, threshold grid or new brokerage authority.
+existing operational defaults. Same-gross OFF-to-rawlast1 switch CLOSED at
+A/research/current-halfpool-regime-reversal-switch-20261021-v1/pre-outcome-correction-r1/FINAL.json,
+37825bd3:10bp growth/DD +.7487/.3690 versus HALF+1.0489/.2926percentNAV;
+both frozen tests FAIL.6new9cached/139.349upper/alljoined/0models-GPU.
+One pre-outcome fixture correction retained; no default change/rescue.
+
+## Current Parallel Research
+
+Boole owns A/research/current-timesfm-lora-adaptation-20261021-v1/
+premarket-directory-transport-r1. Rank4 adapters only nativeblock19 plus head,
+44803trainable parameters; same seed/data/split/one fit/max128pat20.
+Prior premarket-import-binding-r1/FINAL.jsonaa7e468a CLOSEDtechnical
+UNAVAILABLE:2hostattempts/0containers-CUDA-SYN-market-PRED-cells,
+2850.177combinedupper. Reconstructed105233UTF16 command exceeds Windows
+transport; separate reproducer206, historical error code unretained.
+New transport-only continuation preserves old failure,7878.498271totalactive
+and original22:38:22.841962UTC deadline; no old retry reset/refund.
+Three EXACT RO FIT/INNER/target-freePRED cache directories replace459
+individual shard mounts; per-shard hash/scope guards remain. Writer-closed
+generation pre/post checks and pinned native cold-import ABI before actual
+single GPU candidate; no parent approval-file ceremony. Source is not training.
+
+Pascal owns A/research/current-close-only-held-exit-development-20261021-v1:
+one CPU HGB regressor, max256/pat20/INNER-MSEbest including mean reference.
+Entry R21raw+age0..3+log(CLOSE/entryOPEN), target remaining fixed-exit return.
+HOLD or NEXT-OPEN exit only; original HALF entries/5day sleeves, locked cash
+not reentered. No same-CLOSE fill/Bellman/optimal-stopping/alpha claim.
+Data CONSUMER129e95ba at A/data/current-close-only-held-exit-input-20261021-v1:
+FIT37750episodes/151000states150600known400purged; INNER21875/87500allknown.
+10native12readback/40.858active/alljoined, fourROfiles/noPREDoutcomes.
+Source/native/train/replay/readback delegated within1800active/7200elapsed
+from ORIGINAL accepted origin, CPU2/RAM4GiB/noGPU/network/broker. A cheap
+first-eligible-exit comparator may be frozen before outcome within same caps;
+lower exposure/growth-DD alone cannot establish timing alpha. Missing required
+states/marks remain UNKNOWN; retained provider/CA flags are not invented away.
+
+Data first-cause field audit ada1665a under
+A/data/current-kis-ohlcv-field-fidelity-audit-20261021-v1/RESULT.json:
+all18 badOHLC samples already inconsistent in retained raw source,72neighbors
+match canonical bytes/fields. No mapping/scaling bug found; upstream adjustment
+cause UNKNOWN.20.420active/0API/data edits/alljoined. Close-only proxy research
+can continue with limits; no fabricated HIGH/LOW or valid-Bar promotion.
 
 ## Data / Future Evidence
 

@@ -47,9 +47,28 @@ CONSUMER28915bd7/FINAL-READBACK12checks:50275input/50270known FIT,
 PRED1650 input refs byte-reused; no broaderPREDfloat/label derivation or
 outcome reads. Six exact RO trainer files; one prior/0recomputations.
 Physical FIT exits beforeApr8/INNER beforeJul8, exact class recipe.
-Consumer: Pascal CUDA-local broader512 training, actual parent appointment
-18:12:20..00:12:20UTC/10800active. Data readiness is not actual GPU training,
-PIT/CA qualification or an acquisition/approval gate. No active collector.
+Consumer broader512 now COMPLETE0a7f5137/2CUDAfits20epochs620updatesEACH,
+selected0/scientific+financialFAIL/alljoined18:32:52UTC; no repeatderivation.
+Readiness is not PIT/CA qualification or an acquisition/approval gate.
+
+Current close-only held-exit consumer COMPLETE129e95ba at
+A/data/current-close-only-held-exit-input-20261021-v1/CONSUMER.json:
+FIT37750episodes/151000states150600known400physicallypurged;
+INNER21875episodes/87500statesallknown. FP64[N,23]:entryR21raw21+age0..3+
+log(currentCLOSE/entryOPEN); target remaining fixed-exit return from NEXTOPEN.
+Four RO trainerfiles separate features from target/mask/hierarchicalweights.
+Allfeaturestatesretained/episode-dependent, not87500independentepisodes.
+10native12readback/40.858active/alljoined/noPREDpayload-model-API.
+Consumer Pascal CPU exit model/native causal variable-exit replay, noGPU.
+Inherited contextQA counters describe old252close context, not a newR21gate.
+
+Retained-raw field audit ada1665a COMPLETE at
+A/data/current-kis-ohlcv-field-fidelity-audit-20261021-v1/RESULT.json:
+18oldbadOHLCrows already inconsistent BEFOREcanonicalCSV,72neighborrows
+match exact providerOHLCV. No parser/scalingbug found; upstream adjustment
+cause UNKNOWN.20.420active/0API-dataedits/alljoined. Do not fabricateHIGH/LOW,
+claim validBar/PIT or block separate observed-close proxy research.
+No active collector from these packages; owned source visits unchanged.
 
 ## Frozen Completed Package History
 

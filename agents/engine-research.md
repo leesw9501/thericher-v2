@@ -76,13 +76,44 @@ leasefree17:47:59UTC. READBACKce9de4e5 under that root verifies source/counters.
 TRAINloss improves while INNER worsens; patience8, not convergence.
 Scientific+financialFAIL. No forced longer epochs/refits. Selected constant
 priors cannot add rank information through a fixed affine probability blend.
-Next broader512 Data28915bd7 now READY50275input/50270known FIT and
-24580input/24575known INNER/oneprior/current25PREDrefs reused. Actual parent
-appointment18:12:20..00:12:20UTC/10800active/GPU7200inclusive/2fitids,
-max128pat20/INNERbest/4datepack-micro512/full-gradient native proof. Data
-and source readiness are not actual GPU training; fresh allocation required.
-Same architecture/current25 evaluation, no lr/seed grid. Prepare LoRA source
-feasibility independently so a useful successor need not wait for long fitting.
+Broader512 completed READBACK0a7f5137 under
+A/research/current-timesfm-broader512-adaptation-20261021-v1:
+TWO actual CUDAfits20epochs/620updatesEACH/selected0,6SYNupdates,
+6new6cachedcells/2478.498upper/alljoined/leasefree18:32:52UTC.
+Scientific+financialFAIL, no completedfit repeat. Selected priors equaluniform;
+terminalepoch20 exports retained, patience20 not convergence. Data28915bd7
+is complete50275input/50270knownFIT and24580/24575INNER/oneprior.
+Separate INNER-only fixedterminal20 diagnostic48326e76 under
+A/research/current-timesfm-ranking-diagnostic-preparation-20261021-v1/runtime-r1:
+58dates/1450rows, equaldate concordance FROZEN.518587/LASTBLOCK.508380
+vsconstant.5, both proper scores worse than FITprior. OneGPU2restores/
+6classifierforwards/0optimizer-encoder-PRED-replay;2726.241aggregateupper,
+alljoined/leasefree19:00:35UTC. Descriptive ordinal association only, not
+calibration causation/profitability/representation proof; oldFAIL unchanged.
+
+Boole now owns TimesFM rank4 LoRA candidate,44803trainable parameters,
+same data/seed/split/onefit/max128pat20 at
+A/research/current-timesfm-lora-adaptation-20261021-v1/premarket-directory-transport-r1.
+Old aa7e468a CLOSEDtechnicalUNAVAILABLE/2hostattempts/0containers-CUDA-
+models-PRED-cells,2850.177upper.105233UTF16 Windows command too long;
+separateWin206 reproducer, historicalcodeunretained. New transport-only
+continuation retains original22:38:22.841962UTC/7878.498271totalactive;
+three EXACT RO cache dirs/perfile hashes/writer-closed prepost generation
+and native coldimport/ABI proof, then sameGPUcandidate. Not an approval wait
+or permission to reset old costs/perform completedfit/outcome rescue.
+
+Pascal owns CPU close-only held-exit study at
+A/research/current-close-only-held-exit-development-20261021-v1.
+OneHGBregressor max256/pat20/INNER-MSEbest including initialmean,23features
+entryR21raw+age+log(CLOSE/entryOPEN). HOLD or NEXT-OPENexit, fixedHALF
+entries/5day sleeves/locked releasedcash, not sameCLOSE or optimalstopping.
+Data129e95ba READY151000FIT/150600known and87500INNER/allknown;
+40.858active/10native12readback/alljoined/noPRED. End-to-end source/native/
+train/replay/readback within1800active7200elapsed from originalacceptedorigin,
+CPU2/RAM4GiB/noGPU-network-broker. No SOURCE_READY parent ceremony.
+Strongest kill: missing required state/path or no development growth/DD
+improvement over HALF. First-eligible-exit comparator optional beforeoutcome
+inside same caps; exposure reduction alone never proves timingalpha.
 
 Broader21 is ALREADY COMPLETE8198cdbe:95epochs/best75/10830updates/15cells,
 financialFAIL/properUNKNOWN40missing. Exact A/research/current-nas-breadth-expert-preparation-20261020-v1/runtime-source/premarket-repair-r1/actual/FINAL.json.
