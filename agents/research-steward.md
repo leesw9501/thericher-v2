@@ -1,90 +1,62 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts.
-Own exclusive GPU/trial custody, not model choice/approval/broker risk.
+Own exclusive GPU/trial custody, not model choice/approval/broker authority.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Current Allocation
 
-No active market-training allocation from the latest completed campaigns.
-Ordinal935de050 closed20:12:13UTC:11/21epochs,selected1,science/financeFAIL,
-67checks/all joined/lease released. Old346.190failedCPU debit/cumulative12
-SYN/late specific-recovery-review timing remain unchanged.
-Continuous raw-return887257b7 closed20:49:02UTC:40epochs/1240updates each,
-selected0,science/financeFAIL,12SYN/oneattempt/347.223GPU-inclusive seconds/
-46checks. Resident FIT/INNER6.069GiB; sample20:46 GPU80percent/10360MiB,
-sample21:16 AFTER training2percent/1576MiB. Neither proves continuous usage
-or an idle-environment/permission fault. No dummy load/completed fit repeat.
+No active GPU allocation from the completed OOF family. All nine first-fit
+identities consumed; final c04d7aeb financial FAIL/all actors joined/lease free.
+OOF LSTM27/20/37epochs/7710GPUupdates; FINAL CPU LSTM20epochs/2260updates
+and gate40epochs complete. No seven-fit redo or new allocation in that family.
+Actual22:18 sample33percent/2798MiB is historical, not current training.
+Cumulative1074.359636upper; original failures/caps/debits remain immutable.
 
-Five-policy point inference recovery READBACKb33bac01 at
-A/research/current-halfpool-ordinal-prospective-point-20261021-v1/backend-config-recovery-r1:
-actual groupcb1c1d9a committed21:15:43UTC. New18.462GPU-inclusive seconds,
-two combined attempts/198of360active upper, all joined/removed/lease free.
-One core/two selected restores,1SYN+1actual encode,2forwards each; no fits/
-repeated HALF. Original failed constructor/debit preserved, MATH flags
-restored; old internal predicate remains unretained, not a proved cause.
+Current NEW input ablation uses two CPU HGBClassifier arms, no GPU needed:
+A/research/current-price-fundamental20-ablation-development-20261021-v1.
+Pascal source/native, Kepler as-of panel, Confucius pure matching kernel.
+Real source support/native solver proof precedes numerical dispatch; CPU
+work does not claim a running GPU job. A later genuine DL campaign needs an
+informed hypothesis and its own frozen adequate budget, not model-name churn.
 
-Latest prior actualGPU LoRA8328e0c5/224bbb48/cf810d6b CLOSED19:33:53:
-1fit20epochs620market4SYNupdates/best0/3new12cached/FAIL/3403.562upper.
-Allownactorsjoined/lease released; not an assertion of globalidle now.
-BroaderTF0a7f5137 closed2fits20epochs620updatesEACH/best0/2478.498upper;
-rank48326e76 INNER-onlyfixedterminal20/0optimizer-PRED-econ/oldFAILunchanged.
-Do not duplicate completed market fits or encoding.
+Short breadth queue: fund20 paired input test now.
+Long depth queue: genuinely ready trainable mechanism after useful inputs,
+native convergence/checkpoint/pace evidence; no idle-load/dummy training.
 
-Fixedfusionf60ed3d8 complete6new15cached/0models-GPU/bothFAIL.
-Held-exit shadowd33490c9 is ACTUALLY installed, CPU/future slots only;
-Oct27 measurement extension22db8f33 is actually installed, no fits/GPU.
-Data SEC pilot first403 stopped; future actual OPEN/CLOSE still unknown.
-Fresh admission/headroom/lease before any genuine ready new GPU job.
-
-Next candidate preparation: current-halfpool-chronological-gate-development-20261021-v1.
-Pascal caller/expert native; Boole kernel74d4c3d5 complete55checks/5SYNupdates/
-40upper, Data4063320f complete32checks/60aggregateupper. Other agents closed.
-CONTRACT-R1/NUMERICALappointment freezes max8expert+1gate/7200active/
-21600elapsed/oneGPU4200inclusive/onePRED12new6cachedcells. Originalorigin
-21:27:28UTC/deadlineOct21 03:27:28UTC; actual carry source90/Data60/kernel40/
-review once, not ceilings. No allocation/market fit inferred from source.
-R2 bounded native recovery valid only if actually frozen before native effects;
-no extra GPU allocation/market retry/cap reset from a parent's suggestion.
-No old fits/debits refunded or merely relaunched to fill GPU usage.
-
-## Resources And Custody
+## Resource Custody
 
 Canonical lease A/engine-research-agent/locks/gpu.lock.
-Use fresh actual ownership/headroom checks immediately before allocation.
-Execution reliability preempts at safe checkpoint. Preserve desktop4GiB
-headroom; historical VRAM/time caps are study-local, not global restrictions.
-Never reclaim interrupted leases by age. Safe checkpoints stay D:.
-Worker active upper debits include failures/I/O/cleanup, not exact kernel time.
-Old results/debits remain immutable; no refund by new name/technical retry.
+Fresh actual ownership/headroom immediately before allocation; one GPU
+training owner. Do not age-reclaim interrupted ownership. Execution reliability
+preempts at a safe checkpoint. Safe weights/checkpoints A, never Git.
+Historical VRAM/time ceilings are study-local, not global GPU restrictions.
+Measure current free resources and desktop/runtime headroom, not old samples.
 
-Last storage observation17:31UTC D39.3percent/C26.4percent free, not future
-headroom. Keep15percentDfree/warn projected20; data M/artifacts A/tests C.
-No broad-data/PRED acquisition needed for current owned GPU candidate.
+Active upper debits include synthetic work/failure/I/O/recovery/cleanup.
+LLM/review/queue elapsed is not CPU/GPU kernel spend. Preserve every closed
+clock/debit, no reset/refund by scope name. Market trials and holdout access
+require exact accounting, not many extra approval artifacts.
 
-## Closed / Do Not Repeat
+D storage: preserve15percent free/warn projected20. Test scratch C NVMe;
+data M/artifacts A. Old17:31 storage observation is not current headroom.
 
-| Evidence Under A/research | Actual Scope |
-| --- | --- |
-| current-timesfm-broader512-adaptation-20261021-v1/READBACK.json0a7f5137 |2CUDAmarketfits20epochs/620updatesEACH/best0/FAIL/alljoined.|
-| current-timesfm-cuda-local-adaptation-20261021-v1/READBACK.jsonce9de4e5 |2CUDAmarketfits8epochs/248updatesEACH/best0/FAIL/1499.930upper.|
-| current-timesfm-finalblock-adaptation-20261021-v1/CLOSED-READBACK.json7e85148b |12CPU+CUDA SYNupdates/0marketfits/427.163upper/crossbackendparityfailure.|
-| current-causal-indicator-path-tcn-cpu-20261021-v1/FINAL.jsond16a455a |2CPUfits21/34epochs/6050updates/properPASS-financialFAIL/643.617upper.|
-| current-causal-indicator-path-tcn-20261021-v1/FINAL.json6c11d3e4 |1GPU/12SYNupdates/0marketfits/372.763upper, CPUmeasured25xfaster.|
-| current-nas-breadth-expert-preparation-20261020-v1/runtime-source/premarket-repair-r1/actual/FINAL.json8198cdbe |95epochs/best75/10830updates/455.724upper; stale rootREADY not new fit.|
-| current-sector-path-classification-repair-20261020-v1/readout-only-r1/FINAL.json9d883b98 |2CUDAfits31/26epochs/542.045upper/financialFAIL.|
-| current-sector-hgb-fixed-pool-20261021-v1/FINAL.json740ae38d |3new12cached/0models-GPU/46.223upper, descriptive financialPASS.|
-| current-halfpool-regime-reversal-switch-20261021-v1/pre-outcome-correction-r1/FINAL.json37825bd3 |6new9cached/139.349upper/0models-GPU/financialFAIL.|
+## Completed GPU Work / No Repeat
 
-Earlier public-model/MLP/GRU/LSTM/TCN/attention/OOF histories remain Git/A
-and Engine board. Follow exact nested actual FINAL/ABI before new dispatch.
+- Continuous TimesFM887257b7:2fits40epochs/1240updates each/best0/FAIL,
+ 347.223GPUinclusive/alljoined20:49UTC. Sample20:46 80percent/10360MiB,
+  resident FIT/INNER6.069GiB; not continuous utilization proof.
+- Ordinal935de050:11/21epochs/best1/FAIL/alljoined20:12.
+- Broader0a7f5137:2fits20epochs/620updates each/best0/FAIL.
+- LoRA8328e0c5:20epochs/620market4SYNupdates/best0/FAIL.
+- BroadLSTM8198cdbe:95epochs/best75/10830updates.
+- TCNd16a455a used CPU after actual native CPU25xGPU measurement; not a
+  CUDA/permission fault. Twofits21/34epochs/6050updates/properPASS-financeFAIL.
+- Prospective five-policy pointcb1c1d9a committed21:15:43UTC;18.462newGPU
+  inclusive/198upper/alljoined. No refit/repeatedHALF. Future outcomes unknown.
+- Installed shadowd33490c9/consumer22db8f33 are future CPU consumers, not GPU
+  training or a reason to keep an idle training container alive.
 
-## Verification / Recovery
-
-Current authority A/verification/expired-unstarted-maintenance-20261021-v1/authority.json
-5c229e4a:1371sources/d2447255,332serialPASS1skip/18568fullPASS25skip/
-8workers/cleanhelper/Ruff/default-research-accounting sampleComposePASS.
-Docs/external reuse needs exact production/control equality plus fresh native
-proof; repo tests cannot certify arbitrary D: code. Preserve %SystemDrive%/.
-An MD is memory, not proof of a worker/GPU. No approval-file ceremony for
-routine owner-bound runtime config after textual delegated scope.
+Exact contracts, immutable results and old failures stay Git264a2b0/A.
+Current tracked authority5c229e4a reusable only with exactsource/control equality
+and fresh external evidence. Closed studies never become reusable fit permits.
