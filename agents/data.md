@@ -18,12 +18,32 @@ New9 exact CLOSEOUT8ba05657:completed23:00:43UTC/9GET1auth0retry/9ready/
 TTM512 source audit8834e9a/970checks/18fixtures confirms retained-history+
 newcapture composition; actualnumeric prefix/offset/masks still owned intake.
 Long-history SOURCE071457f1/14refs26checks:1883candidateTRAIN dates2019Jan2..
-Jun30 2026, physicaltargetJul7<INNERJul8. Actualcoverage UNKNOWN; cannot just
-extend inheritedeligibility oruselegacy21session arithmeticlabels.
-Boyle now actual long-input derivation300active2400elapsed/CPU2RAM4/500MiB
-newMbytes/0API-models-GPU. Input-only>=20support/masks BEFORE labelvalue,
-separate endpointavailabilitymask/UNKNOWNcounts; sameLOG5/raw63x3 overlap
-before newTRAIN-onlyaffines. INNERexact1675/no shrink, no modelGOyet.
+Jun30 2026, physicaltargetJul7<INNERJul8. Recomputed eligibility, never legacy
+21session arithmeticlabels or an inherited-mask date extension.
+Actual long-input READY e495de90/RESULTc1274027:45155inputrows/1819dates,
+45121known TRAINtargets/34UNKNOWN/64candidate dates fail input-only min20.
+Exact1675INNER/67dates allknown; raw63x3/log5 overlap/purge pass;480extra
+TRAINrows eveninsideolddate range retained, not pure history-only ablation.
+15SYN517512native1903800scalar38arraychecks/110183592bytes,49.08newactive+
+35.03source=84.11/0API-models. Input membership sealed before labelvalues,
+newFIT-input-only affines unchanged; supervisedweights recomputed on knownrows.
+Engine CPUphase completed separately; no repeating this derivation.
+
+TTM firstcause3be66f90:duplicateSPY close/volume conflict atcontext.py:109,
+before512prefix/eligibility. Actual point273fc04f/00669c6b INPUT_UNAVAILABLE,
+0forwards/allocations. Dependency audit756b9df5/21SYN/12refs proves upstream
+SPY calibration/population affects old TTM/Risk despite stock-only leaf tensors.
+No NaN/drop/averaging/source-policy rewrite in frozen consumers or reforecast.
+
+NEW long-costband prospective stock-only Consumer0929c516, under
+A/data/current-long-costband-prospective-stock-input-20261020-v1:
+25/25stocks,64sessionsJul21..Oct19/raw+scaled25x63x3/exacte495TRAINaffines.
+ReadyOct20 00:09:53UTC before13:25cutoff;7SYN/7875prefix/25offset/16readback
+checks,125710bytes/45.67active167.77elapsed/0API-models-targetsdecoded.
+Matches NEW e495 stock-only training, not legacySPY dependency bypass. No
+forecast/Paper promotion; CA/PIT/finality and conflictingSPY remain unresolved.
+Indicator Consumer07f00f02 ready:3fixedtransforms/140490scalars checked,
+8850870rawscalars bitexact/34unknownlabels retained/1874814bytes. No models.
 
 Old20 D1 Task thericher-kis-paper-current20-shadow-d1-marks-20261020:
 07:30KST/21 finite sessions. New9 Task
@@ -58,11 +78,14 @@ Original plan_for only21:50..22:20/readiness deadline22:18UTC. Late-trigger
 continuation would need extra typed plan/capture/deadline code; source1253d17f
 records that limitation. Superseded before effects. Kepler prepares guard-only
 action retarget for NEXT ORIGINAL daily slot, all triggers/PT35M/ACL/caps/
-session/cursor/cache/token/pacing unchanged. No Task update grant yet, fake
+session/cursor/cache/token/pacing unchanged. Preparation permitted no fake
 clock/reset/manual Run/new standing feed. Original failures/debits preserved.
-PREPARED1253235b failed parent rollback review, neverinvokeInstall. Old source
-closed175.674active/0mutations; new transactional-retarget source240active/
-1800elapsed implements rollback/readback, olddebits kept separately.
+PREPARED1253235b failed rollback review, neverinvokeInstall. Old source stays
+closed175.674active/0mutations. NEW transactional r1 deployed23:20:09UTC
+RESULT2c253392/independentb20ddd5e:1update0rollback/Run/newtrigger/API, only
+arguments+CWD/fullACL/principal/oneoriginaltrigger/PT35M/253others preserved.
+CURRENT payload executable-spelling-recovery-20261020-v1/release-r1/runtime,
+35pinsfd126c18/guard2d746983. Next ORIGINALOct20 21:50UTC; not capture proof.
 
 Fresh sector reversal input package:
 A/data/current-sector-reversal-fresh-input-20261020-v1/RESULT.json d49ae687

@@ -18,13 +18,19 @@ strict logloss+Brier/18fixed policy-cost cells/ordinal NOTexpectedprofit.
 Actual COMPLETE98a0b714/190checks/18cells:both proper-score/financial primaries
 FAIL. GRU independent candidate also actuallycompleted1CUDAfit/best8,
 RESULT45be9df0/loglossimproved/Brierworse/strictFAIL. Engine owns full facts.
-Next fixed-third selected probability fusion0fit/30fixed cells/old18reuse is
-exploratory adaptive, not new alpha or profitable-model requirement for Paper.
+Fixed-third fusionc7756fce completed30cells/0fit/primaryFAIL; no mixturegrid.
+LongHGB ee1d22e3 nonconstant/best29 but strictBrierFAIL. LongGRU620a2f1b
+technicalfailure preCUDA/input/model, CLOSEDno retry/performanceUNKNOWN.
+NEW next hypotheses: genuineLSTM64 on45121longTRAIN and3fixedindicator HGB
+ablation (indicator-only/raw-plus vs cachedraw). Source/native only until own
+finite contracts/qualified intake and GO; no renamedGRU continuation or new
+information claim from deterministic raw transforms. Independent NEW stock-
+only prospective dependency review assignedBoole; legacySPY policies unchanged.
 Claude REVISE concerns remain contract limits, not an approval hold.
 
 ## What Current Evidence Rejects
 
-Ledger309 fitted versions, not architectures/winners. GRU/TCN risk proxy
+Ledger310 fitted versions, not architectures/winners. GRU/TCN risk proxy
 improves reused stock INNER QLIKE, but12ETF domain learned/blend lose EWMA;
 uniform beats learned financial allocation. Do not extend that grid.
 TTM heads/adaptation lose analytic TRAINmean; attention return/aux-risk and

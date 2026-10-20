@@ -38,13 +38,15 @@ pending reservations and exact identities; no foreign adoption/substitute.
    for NEXT ORIGINAL slot, all triggers/PT35M/ACL/caps/token/cache unchanged.
    Action-only PREPARED1253235b is NOT install-qualified: rollback omitted
    post-RPC failures. Never invoke it. Source closed175.674active/0mutations;
-   NEW transactional-retarget implementation240active1800elapsed, prior
-   debits separate/unchanged. No actual update grant/fakeclock/reset/Run.
+   That old preparation stays closed. NEW transactional r1 now ACTUALLY
+   deployed23:20:09UTC/2c253392, independentb20ddd5e PASS:1update0rollback/
+   0Run/newtriggers, onlyargs+CWD/all253others/fullACL/oneoriginaltrigger/
+   PT35M unchanged. Next ORIGINALOct20 21:50UTC, no capture claim or rerun.
    Old20 D1 completed22:31:54UTC/20GET1auth/20components+20targetrows ready,
    strict chain215efd55. Boyle prepares exact new9 natural23:00 outcome;
    New9 completed23:00:43UTC/9GET1auth/9ready/CLOSEOUT8ba05657. Intake audit
    8834e9a confirms512history+capture composition, not actual numeric readiness.
-3. Engine: ledger309=194CUDA115CPU fitted versions, not architectures or
+3. Engine: ledger310=194CUDA116CPU fitted versions, not architectures or
    profitable models. Attention2CUDA fits and HGB2CPU fits both selected
    constant checkpoints; scientific FAIL, no learned increment. HGB strict
    financial FAIL; attention non-strict financial PASS was exact equality.
@@ -60,13 +62,30 @@ pending reservations and exact identities; no foreign adoption/substitute.
    Canonicallease released23:05:27. NEWfixed-third selectedprobabilityfusion
    240active1800elapsed/0models/30fixed cells (old18reuse+12new), exact
    frozen-kernel reproof before economic pass; no expert/weight tuning or
-   independent alpha/Paperpromotion. Data audits long-history readiness,
-   not another rawparameter grid. No dummy load/rerun/refunded clocks.
+   independent alpha/Paperpromotion. Fusion nowCOMPLETEc7756fce/30cells/
+   1327checks/FAIL; stop mixturegrid. Long-history Data e495de90 READY:
+   45121known TRAIN/1819dates+34UNKNOWN retained, exact1675INNER. NEW2fit
+   family1800active7200elapsed original23:14; actualCPUHGB ee1d22e3 complete
+   49rounds/best29/44.969s/nonconstant but Brierworse=>strictFAIL.
+   NeverrepeatCPU. LongGPU dispatch620a2f1b failed BEFORE CUDA/model/input
+   on obsolete binding field: CLOSED_NO_RETRY, conservative charges retained,
+   no actual fit/ledger increment. Exact-image CPU intake fixb18d6392 qualified
+   separately, not a retry grant. NEW genuine LSTM64 source/native and2HGB
+   indicator-only/raw-plus source/native packages proceed in parallel, no
+   numerical GO yet. Indicator input07f00f02 and NEW stock-only prospective
+   input0929c516 ready25/25; old model contracts/outcomes remain unchanged.
 4. Installed prospective consumers: TTM Oct20 08:30KST, risk08:45KST,
    CPU measurement Oct27 08:45KST. Exact old20/new9 Oct19 immutable capture
    chain/512 TTM or64 risk inputs/masks required. Missing=>UNKNOWN/0GPU;
    no stale Oct16 padding/date roll/retry. Original cohorts/policies unchanged.
-   No current GPU trainer or environment/permission hold.
+   TTM actual273fc04f/OUTCOME00669c6b closed23:30:09 INPUT_UNAVAILABLE,
+   0forwards/points/GPU/leasequiescent. Reader's earlier nulltimestamp errors
+   fixed/tested separately; no point failure inferred from them. Data assigned
+   firstcause3be66f90:duplicate SPY close/volume conflict before512eligibility.
+   Audit756b9df5 rejects dropping SPY from old projector/population semantics.
+   Risk terminal missing/taskexit1=>counts/pastcleanup UNKNOWN; source
+   9fb68f74 proves Windows lexicalPath defect, not historical first exception.
+   Neither original point is rerun. No GPU environment/approval hold.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 New12-ETF57-date input16c18682 is ready; original21-date ABI unchanged.

@@ -3,8 +3,8 @@
 Current Oct20KST. A=D:/thericher-v2/model-artifacts.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 Engine owns targets/splits/costs/fitting/interpretation, not broker risk.
-Parent integrates/Git; Steward owns one GPU allocation. Ledger309 fitted
-versions=194CUDA115CPU, not architectures/profitable models.
+Parent integrates/Git; Steward owns one GPU allocation. Ledger310 fitted
+versions=194CUDA116CPU, not architectures/profitable models.
 
 ## Current Conclusion / Next
 
@@ -49,17 +49,48 @@ fit or independent alpha claim. Strict blend growth>all3singles+uniform+ownEM,
 DD<=uniform+ownEM; all outcomes reported. Frozen-kernel reproofce59d5f4 PASS/
 25fixtures/47.438active; old23377212 saw pre-freeze count2, actual74f74ed7
 has4. No old economics/model is rerun merely to refresh that stale review.
-Long-history Data source071457f1 proposes1883TRAINdates2019..Jun2026 versus
-prototype353, actual coverage UNKNOWN. New derivation has300active2400elapsed/
-CPU2RAM4/0API-models; retain exact1675INNER/raw overlap/purges/missing masks.
-This is not yet a new fit grant or fresh evaluation/independent evidence.
+Fusion nowCOMPLETEc7756fce/30cells/1327checks:blend10bp growth-.2641percent,
+GRU-.0827,uniform+.1376; primaryFAIL. Close mixture grid, not all research.
+Long Data e495de90 READY45155inputTRAIN/45121known+34UNKNOWN/1819dates,
+exact1675INNER. Raw/log5 overlap/purge pass;480additional within-old-date
+TRAINrows and new affines mean not pure history-only causal comparison.
+
+Long-HGB actualee1d22e3/70c85b2e:49rounds/best29/44.969fitseconds,
+logloss.8526298/Brier.5468570, strictFAIL. CPU phase1284e43f closed, no rerun.
+Long-GRU dispatch620a2f1b CLOSED00:10:23UTC KeyError beforeCUDA/input/model;
+actual numerical counts observed0, aggregate UNKNOWN/conservative full error
+caps retained.395.866cumulativeactive3383.947elapsed, actor/lease quiescent.
+0retry/oneallocation consumed: no renamed GRU retry/refund. Firstcause old
+point_owner_gate_passed vs actual current_resource_gate_passed binding.
+Exact-imageCPU intake repairb18d6392 PASS45121/1675+19SYN/25.690active,
+0model/CUDA; no original artifacts modified or numerical continuation granted.
+
+Ready NEW source/native packages, no numeric GO yet:
+- Pascal: current-costband-long-lstm-preparation-20261020-v1; genuineLSTM64/
+  seed2601/max128/pat20/1marketfit,1800totalactive7200elapsed including all
+  source/runtime/failures/cleanup. Confucius owns disjoint runtime-preparation.
+  Qualified FULLhostbinding->sealedintake inexactimage CPU-only precedesCUDA.
+  Only NEW protocol may predeclare separately charged premarket technical
+  attempts; never refund old family or retry after market/UNKNOWN failure.
+- Kepler: current-costband-indicator-hgb-preparation-20261020-v1; exact2new
+  HGBfits indicator-only3/raw-plus192 versus cached longraw189, same masks/
+  dates/weights/classlabels;900totalactive3600elapsed/0retry/perfit240.
+  Real native split/predictor/export SYN beforeGO. Three deterministic raw
+  transforms are inductive biases, not new information or independent evidence.
+Indicator Consumer07f00f02 and NEW prospectivestock Consumer0929c516 ready.
+Prospective25/25x63x3 uses NEW e495affines/stock-only dependencies; oldTTM/Risk
+SPY conflicts and population rules unchanged. No prospective outcome decoded.
 
 Confucius intake audit8834e9a COMPLETE/970checks/18fixtures/64.078active:
 TTM512 composes pinned retained history+newcapture,379 is required-context
 setting not literal tail truncation. No proven deterministic source block;
 actual numeric prefix/offset/eligible count still requires owned intake/new9.
-No worker change. New independent cost-band/gating pure-kernel review is
-120active1800elapsed/0model-market-API-GPU, not a new performance evaluation.
+No old worker change. Actual TTM00669c6b INPUT_UNAVAILABLE:3be66f90 shows
+duplicateSPY close/volume conflict BEFOREprefix/512eligibility; eligiblecount
+UNKNOWN, not379truncation. Dependency756b9df5 rejects oldSPY NaN/drop shortcut.
+Risk terminal missing/counts/pastcleanupUNKNOWN; source9fb68f74 proves Windows
+lexicalPath publication defect but historical first exception unobserved.
+Neither point is rerun; new stock-only consumer is a distinct matched contract.
 
 Retain already computed selected TRAIN/INNER scores in new producers.
 TRAIN in-sample scores are NOT OOF inputs for learned fusion. Old missing

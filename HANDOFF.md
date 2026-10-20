@@ -23,12 +23,12 @@ Market bytes M; model/research artifacts A. Research limits stay package-local.
 
 | Owner | Actual State / Next |
 | --- | --- |
-| Parent | Integration/Git and RTH guard draft. Core c288dfc; docs ae753bc pushed. No current GPU training. |
-| Kepler / Infra | Guard-only retarget preparation stopped for missing rollback. New transactional updater implementation240active1800elapsed; no mutation grant. |
-| Boyle / Data | Both natural D1 outcomes validated: old20215efd55/new98ba05657; no active collector inferred. |
-| Confucius / Engine | Null-selection diagnosis complete; no new fit assigned. More of this OHLC/task grid is closed. |
-| Boole / Strategy, invoked Engine | CPU3class COMPLETE98a0b714/2fits/18cells. New fixed-third selected-probability fusion240active1800elapsed/0models, frozen-kernel proof before replay. |
-| Pascal / Temporary Engine | ActualCUDA GRU complete45be9df0/1fit/28epochs/best8/12.149s, lease released23:05:27. Strict scientific FAIL,12economic cells unexecuted. |
+| Parent | Integration/Git. Core c288dfc; last pushed58118a3. No current GPU trainer. |
+| Kepler / invoked Engine | NEW indicator-only/raw-plus HGB source/native preparation; no market GO. RTH deployment complete. |
+| Boyle / Data | Long-history45121 knownTRAIN/e495de90 and indicator07f00f02 ready; NEW stock-only prospective input0929c516 ready25/25. |
+| Confucius / Engine | Old long-GRU failure CLOSED/no retry; full CPU intake repair qualifiedb18d6392. NEW LSTM runtime preparation only. |
+| Boole / Strategy | TTM/Risk first causes diagnosed; independently checks NEW stock-only prospective dependency boundary. |
+| Pascal / invoked Engine | NEW genuine LSTM64 source/native preparation, not a renamed long-GRU retry. |
 | Gauss / Execution | Closed; never resume the earlier blocked clone approach. |
 
 Original finite feeds: RTH1m 06:50KST, old20 D1 07:30, new8+SPY D1 08:00.
@@ -69,7 +69,7 @@ typed plan/capture/deadline/state changes. SUPERSEDED BEFORE effects: do not
 build that complexity for one missing1mday. Prepare guard-only action retarget
 for the NEXT ORIGINAL daily opportunity, unchanged triggers/PT35M/principal/
 ACL/query/session/cursor/cache/caps/token/pacing. No fake now/reset/manual Run.
-Actual Task update still needs parent review/grant; none issued yet.
+This preparation was superseded by the actual deployment below.
 
 Action preparation1253235b/closure698abcdd is NOT install-qualified: Parent
 found missing rollback around post-RPC read/check/publication failures.
@@ -79,6 +79,17 @@ New A/infra/current-rth-transactional-retarget-20261020-v1 implements a tested
 once-only transaction/explicit full-SDDL rollback/normalized readback under
 240active1800elapsed, prior debit reported separately. No reset/regrade of
 old caps, Task update/manual Run/new trigger or collector granted.
+
+ACTUAL deployment supersedes the no-effect preparation status above:
+r1 SOURCE3a00d71e/PREPARED3c38b7c8/updaterbb00b7f7/44mockcases.
+Parent activation23:20:09UTC RESULT2c253392 under activation-r1:1update,
+0rollback/0Run/newtriggers/API/credentials;19.015newactive. Independent native
+readback23:24:28UTC b20ddd5e/11.602active:only arguments/CWD changed, fullACL/
+principal/settings/oneoriginaltrigger/PT35M/all253others match, ReadyEnabled.
+CURRENT payload: executable-spelling-recovery-20261020-v1/release-r1/runtime,
+35pin mapfd126c18/guard2d746983. Next ORIGINAL Oct20 21:50UTC=Oct21 06:50KST.
+Installation is NOT a capture. Old runtime/failed run remain historical;
+do not rerun consumed updater or manually invoke collector/Task as a reader.
 
 Old20 D1 completed22:31:54UTC:20GET1auth0retry/20components ready/20new target
 rows/0late/379session context/0missing required dates. Existing strict chain
@@ -134,7 +145,7 @@ Goal97 compatibility is unverified. Preserve current NASDAQ execution paths.
 
 ## Research / Data Results
 
-Ledger309=194CUDA115CPU fitted versions, not architectures/profitable models.
+Ledger310=194CUDA116CPU fitted versions, not architectures/profitable models.
 No GPU environment/approval hold or dummy load. New ternary GRU actually ran
 23:05:14..23:05:26UTC; host closure/81checks/lease released23:05:27. A later
 idle2-5percent observation is not evidence that this completed fit did not run.
@@ -150,16 +161,63 @@ updates=644market+3SYN,1allocation0retry/55.446cumulativeactive662.175elapsed.
 Selected/final scores/weights/curves retained; final nonselected diagnostic-only.
 No economic pass/Paper promotion: its12cells UNKNOWN/unexecuted.
 
-Next fixed-third fusion is exploratory on reused INNER, no fit/forward or
+The fixed-third fusion is exploratory on reused INNER, no fit/forward or
 learned gate. CPU18cells byte-reuse plus12new GRU/blend/exposurematched cells,
 strict growth over all3singles+uniform+ownEM/DDcontrol; no threshold/weightgrid.
+Now COMPLETEc7756fce:30knowncells/18byte-reused12new/1327checks,20.62active/
+299.97elapsed/Decimalgap<=4.44e-16,0modelcalls. At10bp growth/DD percent:
+blend-.2641/1.0580,GRU-.0827/.7920,uniform+.1376/.3261. PrimaryFAIL;
+blend proper scores also worse than prior. Close this composition, no grid.
+Original GRU12unexecuted record stays immutable; new consumer supplied economics.
 Independent review23377212 saw pre-freeze count2 replay adapter; actual frozen
 kernel74f74ed7 has4shape edits/30SYN beforemarket. Independent reproofce59d5f4
 PASS/25cumulative fixtures/47.438active/dependencies stable/no market replay;
 old finding stays pre-freeze, not a current block. Long-history source audit
-071457f1/26checks finds1883candidate2019..Jun2026TRAINdates; actual coverage
-unknown. NEW Data derivation300active2400elapsed/CPU2RAM4/500MiB/M-only,
-raw overlap/purge/target-availability masks and exact1675INNER before model GO.
+071457f1/26checks proposed1883candidate2019..Jun2026TRAINdates.
+Data NOW READY e495de90/RESULTc1274027:45155inputTRAINrows/1819dates/
+45121known targets+34UNKNOWN;64candidate dates fail input-only min20support.
+Exact1675INNER/67dates allknown; purge/old raw-log5 overlap pass,480additional
+TRAINrows inside olddate range retained.15SYN/517512native/1903800scalar/
+38readbacks/110183592bytes;49.08newactive+35.03source=84.11/0API-models.
+
+Long-model SOURCEb7aa35a9/native9abeb627; PARENT-GRANT under
+A/research/current-costband-long-history-development-20261020-v1:
+2starts0retry (1CPUHGB/1GPUGRU),1800cumulativeactive7200elapsed ORIGINAL
+23:14UTC incl conservative180sourceprecharge(actual34.708), CPU240/GPU900/
+cleanup120. CPU-HGB RESULTee1d22e3/qualification70c85b2e:49rounds/best29/
+44.969fit seconds/nonconstant; INNERlogloss.8526298 improves, Brier.5468570
+worsens versus prior and shortHGB =>strictFAIL. CPU phase closed1284e43f;
+never repeat it. Long-GRU actual dispatch-r2 CLOSED620a2f1b at00:10:23UTC:
+1allocation attempt, KeyError BEFORE CUDA/input/model/fit. Actual numerical
+counts observed0 in FAILURE1bf83c5b; aggregate UNKNOWN/conservative full error
+charges retained.395.866cumulativeactive/3383.947elapsed, actor quiescent and
+canonicallease released. No retry, refund or renamed GRU continuation.
+Firstcause: gpu_intake.py requested obsolete point_owner_gate_passed while
+new binding supplied current_resource_gate_passed. CPU-only exact-image full
+load qualifiedb18d6392:45121/1675,19SYN,25.690active,0models/CUDA; old source/
+outcome unchanged. NEW genuine LSTM64 and2 indicator HGB arms are source-only
+until their own fixed contracts/native proofs/parent GO, not old-family retry.
+ReusedINNER/changed eligibility/affines is adaptive development, not alpha or
+a pure history-only test. Current lease helper6887bb9d/gpu.lock stays canonical.
+
+Indicator Data Consumer07f00f02 adds3 fixed transforms:21session momentum,
+21session populationvol,20session Bollingerwidth; no new information. Raw
+parity8850870scalars and140490indicators checked;34unknown labels retained.
+NEW prospective stock-only Consumer0929c516:25/25x63x3,64sessionsJul21..Oct19,
+exact NEW e495 affines, readinessOct20 00:09:53UTC before13:25cutoff. Source
+proof/7875prefix checks/25offset proofs/16readbacks;0models/API. This NEW
+consumer does not use legacy SPY population/projectors, does not repair old
+TTM/Risk or qualify a dataset/Paper input. Limits CA/PIT/finality unchanged.
+
+Installed TTM actual273fc04f/OUTCOME00669c6b:INPUT_UNAVAILABLE23:30:09UTC,
+0forwards/points/GPU. Firstcause3be66f90 is conflicting old20/new9 SPY close/
+volume atcontext.py:109, BEFORE prefix/512 eligibility. Both feeds succeeded;
+eligiblecount UNKNOWN, not379 insufficiency. Dependency audit756b9df5 proves
+old TTM/Risk upstream SPY population/calibration dependency; never NaN/drop
+SPY in those frozen consumers. Risk has no terminal: Ready/taskexit1 is not
+an outcome; native counts/past cleanup UNKNOWN. Source firstcause9fb68f74
+proves Windows lexicalPath mismatch atentry.py:19 before publication,57native
+checks. Actual historical first exception unobserved; no original worker rerun.
 
 - TTM heads1352dba9 and adaptation64442426 completed; both selected heads worse
   than their analytic TRAINmean. Risk GRU0098057a/TCNb6fffd68 improved reused

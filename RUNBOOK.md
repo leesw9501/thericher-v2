@@ -16,7 +16,7 @@ Do not rerun consumed creators/installers/fits/forecasts for metadata.
 | F9 |thericher-kis-paper-current20-equalrank4-20261018/image49933b02/source5ecfccef/manifest5f53ec50/guard4a468c0a;33finite triggers, nextOct20 15:10UTC. |
 | Nightly |thericher-kis-paper-daily-spy-session/image30433095/23:50KST; distinct owned inventory. |
 | Goal97 |Distinct owner, exitOct24 04:50/05:00KST. |
-| RTH1m |thericher-kis-paper-current20-postclose-20261017/06:50KST Tue-Sat; first natural run deferred, recovery source-only below. |
+| RTH1m |thericher-kis-paper-current20-postclose-20261017/06:50KST Tue-Sat; guard-only retarget ACTUAL2c253392, nextOct21KST. |
 | Old20D1 |thericher-kis-paper-current20-shadow-d1-marks-20261020/07:30KST/21finite visits throughNov17. |
 | New9D1 |thericher-kis-paper-current25-new8-d1-marks-20261020/08:00KST/21finite/PT15M/IgnoreNew/noDemandStart. |
 | TTMpoint |thericher-research-ttm-return-head-point-20261020; installed ONE Oct20 08:30KST (Oct19 23:30UTC), end23:40. |
@@ -82,7 +82,7 @@ A/data/current-rth-first-owned-outcome-resolution-20261020-v1/RESULT.json
 not emitted=>UNKNOWN. Guard executable slash spelling and redirector-command
 fault proven, not provider quota.
 A/infra/current-rth-executable-spelling-recovery-20261020-v1:
-parent draft/native paired runtime in preparation, no Task update grant yet.
+historical parent draft/native paired runtime, superseded by deployment below.
 Original eligible21:50..22:20/readiness22:18UTC. Late trigger alone invalid;
 continuation proposal superseded before effects to avoid new plan/capture/
 deadline machinery. Guard-only action retarget prepares NEXT ORIGINAL slot,
@@ -90,7 +90,14 @@ all triggers/PT35M/ACL/cache/caps/token unchanged. No fake now/reset/manual Run.
 OLD action-only/PREPARED.json1253235b and task_update.ps1 -Mode Install are
 NOT qualified: parent found missing post-RPC rollback. Source closed175.674/
 0mutations, REPAIR9507a3d/CLOSED6d51efdd. New SOURCE-only transactional repair
-A/infra/current-rth-transactional-retarget-20261020-v1, no deployment grant.
+A/infra/current-rth-transactional-retarget-20261020-v1/r1 now supersedes it:
+SOURCE3a00d71e/PREPARED3c38b7c8/updaterbb00b7f7/44mock cases, actual parent
+activation-r1/RESULT.json2c25339223:20:09UTC/1update0rollback. Independent
+activation-r1/independent-r1/RESULT.jsonb20ddd5e23:24:28UTC:ReadyEnabled,
+onlyarguments+CWD/fullACL/principal/settings/oneoriginaltrigger/PT35M/253others
+preserved. Next ORIGINALOct20 21:50UTC=Oct21 06:50KST. CURRENT payload is
+executable-spelling-recovery-20261020-v1/release-r1/runtime. No TaskRun/capture/
+API/newtrigger. Both updaters are consumed; do not rerun Install.
 Old20/new9 preflight57cb192b/618fb981 does not prove a D1 fault; no changes.
 Old20 actual completed22:31:54UTC/20GET1auth/20components+20targetrows ready:
 A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1/
@@ -116,6 +123,19 @@ Exact Oct19 old20/new9 source/job/session/index0 immutable capture chain,
 512TTM or64risk inputs/min20mask before forecast. Missing=>UNKNOWN/0GPU;
 no stale-padding/date roll/reforecast.120active600elapsed/1allocation0retry
 each, not fitting. Original models/policies unchanged by new results.
+Actual TTM INPUT_UNAVAILABLE273fc04f/00669c6b; pure intake3be66f90 reproduces
+duplicateSPY source conflict BEFORE512eligibility. OldSPY dependency756b9df5
+means no NaN/drop workaround or frozen point rerun. Risk required terminal
+missing: historical numerical counts/cleanup UNKNOWN, not0; source9fb68f74
+proves lexical WindowsPath defect before publication, actual first exception
+unobserved. Neither consumed Task is manually run to repair missing evidence.
+
+NEW longcostband Data Consumer0929c516 is a separately versioned stock-only
+25x63x3 input atOct20 00:09:53UTC, exacte495 affines; no oldSPY projectors.
+Indicator input07f00f02 is ready. New consumers do not qualify old points.
+LongHGB actualee1d22e3 complete; longGPU620a2f1b CLOSEDpreCUDAKeyError/
+no retry/all charges retained. Qualified intake repairb18d6392 is CPU-only,
+not a numerical continuation. Do not invoke consumed gpu-dispatch-r2 again.
 Measurement:
 D:/thericher-v2/model-artifacts/research/current-oct20-model-point-measurement-20261027-v1/runtime-install-r2/read_outcome.py
 is read-only with physical Python -I -B, not the worker. Exact Oct20/21/22/

@@ -6,7 +6,7 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Allocated / Ready
 
-Ledger309=194CUDA115CPU completed market-fitted versions, not architectures
+Ledger310=194CUDA116CPU completed market-fitted versions, not architectures
 or profitable models. Failed original paired-GRU conservative reservations
 are not reported as actual fits. Canonical lease:
 A/engine-research-agent/locks/gpu.lock. No active GPU trainer.
@@ -35,8 +35,22 @@ independentd1b269e781checks.28epochs/best8/12.149s,647CUDAupdates incl3SYN,
 oneallocation0retry,55.446cumulativeactive662.175elapsed incl23.013prep.
 StrictFAIL(logloss improves/Brierworsens);selected/finalweights retained.
 Canonicallease/container released23:05:27, safely before23:30/23:45 points.
-No activeGPUtrainer now; new fixedfusion is CPU0fit, long-history Data audit
-not yet a readytraining campaign. Do not tune after results/refund old clocks.
+No activeGPUtrainer now. Fusionc7756fce complete0fit/30cells/FAIL, no weightgrid.
+Long-datae495 ready45121knownTRAIN/exact1675INNER; indicator07f00f02 and
+NEWprospective0929c516 ready. LongHGB ee1d22e3 actual1CPUfit49rounds/best29/
+44.969s strictFAIL, no repeat. LongGRU GPUdispatch620a2f1b failed beforeCUDA/
+intake/model on obsolete binding key,1allocation consumed/0retry/CLOSED.
+Actual numerical counters observed0; conservative full error charges/aggregate
+UNKNOWN retained, never actual ledger increment. Canonicallease/actor released.
+CPU-only exact-imagefullintake repairb18d6392 qualified, not an old-fit retry.
+
+NEW genuineLSTM64 source Pascal/runtime Confucius, no GPU GO yet. One future
+marketfit/1800TOTALactive7200elapsed includes both sources/failures/cleanup;
+any technical preflight allowance must be frozen in NEW protocol with separate
+immutable stage counters/positive0market calls/no postmarket retry. Oldfamily
+caps/clocks stay closed. Kepler2CPU indicatorHGB arms prepare independently;
+no CPU worker takes GPU allocation. Measure CURRENT owners/headroom, not use
+missing pastRisk terminal as a permanent resource hold or false cleanup proof.
 
 ## Existing Owned Future Jobs
 
@@ -45,6 +59,9 @@ Each forecast has120active600elapsed/1allocation0retry, no fitting.
 Exact Oct19 old20/new9 immutable capture/input/mask proof first; absent input
 =>0GPU/UNKNOWN. Do not idle-hold lease waiting for feeds or stale-pad.
 Original policies/cohort unchanged by newer research.
+Both consumed opportunities have ended. TTM actualINPUT_UNAVAILABLE0GPU;
+Risk missing terminal means historical counts/cleanupUNKNOWN, not0. Current
+quiescence can be separately measured without asserting historical cleanup.
 Measurement Oct26 23:45UTC is CPU-only/no NN/API/GPU.
 
 Measure actual owners/free VRAM/headroom before new allocation. Keep one
