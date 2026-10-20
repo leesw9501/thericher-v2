@@ -9,12 +9,12 @@ required; no private amount/fees/netPnL inferred. AGENTS owns authority.
 
 | Owner | State / Next |
 | --- | --- |
-| Parent | Verified code integration1370d106, Git/docs; prior push0ab6f52. |
+| Parent | Verified code integration1370d106 committed/pushede53c290; current integration/docs. |
 | Archimedes / Execution | Fourprod/fourtest NAS-model slice FROZEN/86PASS; new deployment SOURCE package for onecohortOct21entry, not activated. |
-| Kepler / Data | OOF input bdf4795b complete; canonical22-close Paper input and reusable future-entry source, no credentials/broker. |
-| Boyle / Data | Six-model measurement r4 diagnosis/target-only fence repair; r3 activation0updates/ORIGINAL verified on foreign inventory drift. |
-| Boole / Engine | All last fits/gate and reversal mechanism diagnostic CLOSED. No active training currently evidenced. |
-| Pascal / Infra | GPU-lock code/focused/Cross-OS proof CLOSED; no idle allocation or daemon. |
+| Kepler / Data | New repairedextractor qualification, oldASTHEADERfault7fb80b1a closed; futureentry21 needs20captures. |
+| Boyle / Data | Six-model measurement updateff8d67bb/readback0e97d07c ACTUAL; allclosed/originalOct27window. |
+| Boole / Engine | Oldfits/gate/mechanism CLOSED. Newresidual/regime expert SOURCE, no active training yet. |
+| Pascal / Infra | Newmodelprofile/frozenfleet sharedbank SYN compatibility; no actualprivateAPI/Task/GPU. |
 | Confucius / Review | Independent lock17/profile31 checks PASS, not independent financial validation. |
 
 All last CUDA actors physically quiescent/lease released.
@@ -50,7 +50,9 @@ Measurement r3 refused all-PC definition drift before touching its target.
 Exact target/ACL unchanged and0updates: investigate bystander classification,
 not another global hold or blind snapshot relaxation. A verified one-target
 updater need not own autonomous unrelated Tasks; target fencing/readback/
-rollback/quietness remain necessary. r4 not installed yet.
+rollback/quietness remain necessary. r4 nowACTUALff8d67bb/oneupdate0Run/
+newtrigger/API/freshreadback0e97d07c, originalACL/window/quietpythonw retained.
+Residualbystander cause/countUNKNOWN, target-scoped safety not whole-PC proof.
 
 ## Research / Evidence
 
@@ -62,7 +64,8 @@ seed/feature rescue. Mechanism433checks supports recent reversal, NOT causal
 profit. Keep finite budgets, prioritize deployable loop/new information.
 
 ACTUAL points:e1fc1ada and2b168e66PRICE/MACRO, targetsOct20/21/22/23/26 UNKNOWN.
-Failed TCN/Tree points never adopted. Existing Oct27 task unchanged so far.
+Failed TCN/Tree points never adopted. Existing Oct27 action updated, no
+measurement invoked or future outcomes observed.
 CFTC406weekly/current-vintage/publicationALLUNKNOWN; no fabricated asof/PIT.
 Old NAS/F9/native deployments remain unchanged; no new submit/fill claim.
 

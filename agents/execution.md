@@ -24,9 +24,12 @@ exit reuse identical proposal, not reforecast. Existing privatevolume mounts
 /app/private, never /app/private/canary. CPU/GPU parity and fulluniverse replay
 equivalence UNKNOWN; declared operational exit proxy is not historical replay.
 
-Data extractor-r1 SOURCE144ada05 requires actualOct20capture index1 forOct21.
-Cold input_unavailable/nooutput is not readyinput. CurrentOct20 derivation
-STOP/closed/unretried; no fabricated/stale/futureinput fallback. Parent handles
+Data repairedextractor48319dc8/Consumer1ca604c3 actually qualified550known
+FP64CLOSEs/25x22/Oct19index0, producerloading sentinelonly/0modelcalls.
+Use NEWroot current-window21-repaired-extractor-qualification-20261020-v1
+/cohorts/20261021 forfutureentry; requires actualOct20index1captures.
+Cold unavailable is not futureinput. OldOct20ASTfault7fb80b1a staysclosed;
+no fabricated/stale/futureinput fallback. Parent handles
 new committed-source image/activation only after exact source/native evidence.
 OldNAS8/F9/nightly/Goal97 state/tasks/images unchanged. Real aggregate bank/
 foreigninventory/unknownreservation checks apply, not profitability/all-flat gates.

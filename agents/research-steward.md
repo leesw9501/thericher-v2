@@ -49,7 +49,9 @@ cleanhelper0/Ruff3Compose. Code/test proof not actual runtime deployment.
 Execution provisionalNASdeployment source and Data22-close extraction are
 ready engineering work, not GPU jobs. Cached futurepoints e1fc1ada/2b168e66
 awaitOct20/21/22/23/26 outcomes; failed TCN/Tree points not adopted.
-OriginalOct27 measurement updater has0mutations so far, r4source correction.
+OriginalOct27 measurement action update ACTUALff8d67bb/1update0Run/newtrigger,
+sixactualpoints/originalwindow retained; installednot measurement evidence.
+Boole newresidual/regime expert SOURCE preparation, not yetnumericallyready.
 No permit hold from a failed model or missing publication metadata.
 Allocate GPU only to a new justified finite frozen campaign, not idle leases
 for feeds/quotas/LLM work. Execution reliability preempts at safe checkpoint.

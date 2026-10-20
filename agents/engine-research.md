@@ -17,7 +17,10 @@ GPU actors closed; no active training inferred. Do not duplicate old fits.
    reversal, not full21-lag dependence. Use this to propose a genuinely new
    useful hypothesis; no regrade or profitable rule claimed from feature
    correlations. A new campaign needs ready inputs/finite caps/kill, not GPU
-   utilization. No current numerical queue ready after closed failed families.
+   utilization. Boole owns newresidual/regime expert SOURCE/contract; no
+   current numerical GO after closed failed families. Subtracting the same
+   daily cross-sectional mean preserves raw reversal ranks analytically;
+   any genuinely new expert must pass that invariance kill before fits.
 3. Data/Execution prepare actual22-close entry input and six-model future
    observation. Original point target sessionsOct20/21/22/23/26 unknown.
    CFTC406weekly has no historical publication times; research-only not PIT.
@@ -53,7 +56,8 @@ Meta gate uses genuine OOF,558FIT/63INNER/4purged dates, not in-sample experts.
 
 ACTUAL oldfour-model e1fc1ada/9d68b3f3 at01:15:25UTC and PRICE/MACRO2b168e66/
 066c7113 at04:21:22UTC (25each/2CPUforwards0fits-outcomes) retained. Future
-Oct20/21/22/23/26 unknown. Original Oct27 task not yet updated.
+Oct20/21/22/23/26 unknown. Original Oct27 task actionupdatedff8d67bb/0Run,
+samewindow/caps; no measured outcome yet.
 Failed Tree point31.422upper/native countsUNKNOWN and TCNpoint91.352upper/
 prelease duplicatehost/noGPU/no forecast stay closed. Old shortTCN2701
 hard450timeout/1061.402upper/STACK17/RAW/VOLUME/longGRU failures preserved.

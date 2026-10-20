@@ -28,18 +28,19 @@ adoption, unknown-request substitute, profit-expanded envelope or second bank.
    Planned entryOct21 14:00UTC/exitOct27>=19:45 operationalproxy, not replay
    parity or independently profitable selection. Do not add profitability or
    unrelated all-bank-flat permission gates; real foreign/unknown custody wins.
-2. Kepler prepares actual canonical25x22 input and reusable exact-capture
-   entry-date extractor. Currententry20 must use observed19close; future21
+2. Kepler actual canonical25x22 input qualified1ca604c3/CLOSEDc6a236ff:
+   550known/0unknown/FP64/actualOct19index0/nativeproducer sentinelonly.
+   Use repairedextractor48319dc8 under current-window21-repaired-extractor-qualification-20261020-v1,
+   not oldASTnamespacefaultedderivation. Future21
    needs actual20close source chain. No stale fallback, FP32 inverse, imputed
    missing rows or fabricated availability/finality. Parent owns policy/capital.
-3. Boyle source-r4 diagnoses non-target Task definition drift that stopped
-   approved source-r3 measurement activation BEFOREmutation (0update/Run,
-   ORIGINAL/fullACLverified). Six-model source plan/prepared backups remain
-   immutable. If target/owner unchanged, replace global frozen-foreign-PC gate
-   with exact target RPC fence/fresh compare and categorical bystander drift.
-   Native/rollback/quiet proofs and Parent GO before another activation.
-   One originalOct27 window/trigger/120active600elapsed preserved; no TaskRun/
-   recurring report/followup chain or failedpoint adoption.
+3. Six-model measurement update ACTUALff8d67bb/READBACK0e97d07c:
+   oneactionupdate/0rollback/Run/API/newtrigger, originalfullACL/settings/
+   Oct27window andquietpythonw preserved. r4SOURCE60320764/53nativechecks
+   keeps exacttarget fence/freshcompare/owner/rollback; unrelated autonomous
+   Taskdrift no longer freezeswholePC. Its cause/count remain UNKNOWN.
+   Closedinstaller must notrerun. Awaitactualoriginalwindow result only;
+   no recurring report/followup chain or failedpoint adoption.
 4. Completed research is CLOSED:3originalwindowfits/6-armblend,2matched
    MSE-vs-utilityCUDAfits,4newWindowOOFfits+oneCPUgate. Learned gates/ensembles
    did not satisfy primaries; no epoch/seed/depth/weight rescue. Actual values
@@ -47,8 +48,11 @@ adoption, unknown-request substitute, profit-expanded envelope or second bank.
    recent reversal, NOT financial causation. No dummy GPU utilization or
    duplicate training. Next research needs a concrete new hypothesis/inputs,
    finite contract and genuine kill test, not another same-data grid.
+   Boole owns residual/regime expert SOURCE preparation; no market GOyet.
+   Pascal independently checks newprofile/frozenfleet sharedbank compatibility
+   with SYN only before deployment, not actualprivate custody or all-flat gate.
 5. Preserve actualpoints e1fc1ada and PRICE/MACRO2b168e66. Future outcomes
-   Oct20/21/22/23/26 unknown; original Oct27 worker not yet updated. CFTC406
+   Oct20/21/22/23/26 unknown; original Oct27 worker action nowupdated. CFTC406
    weekly observations are current-vintage/ALLpublicationtimesUNKNOWN, not
    PIT or Execution input qualification. Data limits constrain only consumers.
 6. Existing owners stay exclusive: NAS8 above; F9 originalOct20 15:10UTC,

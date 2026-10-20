@@ -21,12 +21,12 @@ No current operator decision or company-wide permission hold.
 
 | Owner | Actual State |
 | --- | --- |
-| Parent / Orchestrator | Integrates/Git. Prior push0ab6f52; new10code+8MD integration verified, commit pending. |
+| Parent / Orchestrator | Integrates/Git. Code/profile/lease integration e53c290 committed/pushed with exact fresh authority. |
 | Archimedes / Execution | Generic provisional NAS model profile code complete; new deployment SOURCE package, no activation yet. |
-| Kepler / Data | OOFData complete; actual22-close Paper input/reusable entry-date extractor preparation, no broker/model calls. |
-| Boyle / Data | Six-model Oct27 measurement source-r3 activation stopped0updates on non-target definition drift; source-r4 diagnosis/repair only. |
-| Boole / Engine | Four Window21 OOF/FINAL fits + one gate complete/FAIL; mechanism diagnostic complete. No training currently evidenced. |
-| Pascal / Infra | Shared GPU-lock ownership fix/native Windows+Linux probe complete; no canonical-lease touch from probe. |
+| Kepler / Data | Repaired extractor actual qualification COMPLETE1ca604c3/25x22FP64; futureentry21 needs actual20close captures. No broker/model calls. |
+| Boyle / Data | Six-model measurement action-only update ACTUALff8d67bb; originalOct27 window preserved, all processes closed. |
+| Boole / Engine | Oldfits/gate/mechanism CLOSED; new residual/regime expert SOURCE/contract preparation, no numerical GO yet. |
+| Pascal / Infra | New model-profile/frozenfleet bank compatibility SYN audit; no actual private state/API/Task/GPU. |
 | Confucius / Review | Independent GPU-lock17checks and model-profile31checks PASS; no permanent daemon or performance promotion. |
 
 All last GPU actors physically joined/quiescent; canonical lease released:
@@ -76,8 +76,18 @@ acquisition-20261020-v1/history-continuation-r1:406weekly2019Jan8..2026Oct13,
 406net/OI known/0zero denominators/interior holes; publication timesALLUNKNOWN.
 1metadata+2dataGETs/0retry/61.758upper; broad-discovery STOP preserved.
 No invented publication timestamps or Execution qualification.
-Paper22-close input throughOct19 forentryOct20 is being prepared separately;
-futureentryOct21 needs actual20close owned captures, not a stale fallback.
+First Paper22-close builder failed missingHEADER in AST-extracted namespace,
+beforeprice loop/7fb80b1a, not established missing-data/ABI fault. Oldderivation
+closed/unretried. Repairedextractor144ada05 SOURCEed7e0943 fullyloads pinned
+readers. New actualqualification A/data/current-window21-repaired-extractor-
+qualification-20261020-v1/CONSUMER.json1ca604c3/CLOSEDc6a236ff COMPLETE:
+550known/0unknown, canonical25x22FP64/exactOct19index0/34checks/oneactual
+derivation0retry/28.967activeupper. Producerload inference-sentinelonly,
+0models/NN/API/credentials/Tasks. Newextractor48319dc8 changes onlytwo roots,
+samefunctionAST5904f1a4. Inputmanifeste4d25e1f/numeric770c3ea4 inM.
+Archimedes has one separately bounded actualCPUproposal qualification, not
+anotheradoptedfuturepoint orPaperorder. No oldfailure regrade.
+FutureentryOct21 needs actual20close owned captures, not a stale fallback.
 
 ## Verified Code / Not Deployed
 
@@ -110,14 +120,21 @@ Nightly30423:50KST/Goal97 distinct. RTH guard-only retarget2c253392/b20ddd5e
 actual, nextOct20 21:50UTC; old20D1 22:30/new9D1 23:00. First20/9 chains
 validated215efd55/8ba05657; not whole-history finality/capture proof.
 
-Original Oct27 measurement Task remains unchanged so far. Six-model immutable
+Original Oct27 measurement Task now has the six-model action-only update.
+Six-model immutable
 plan c64d576b/source-r3PREPARED ec26b9e6 has quiet pythonw/backup/ACL proof,
 but activation414c37b7 stopped pre_foreign_inventory/foreign_inventory_definition:
 0update/rollback/Run; ORIGINAL/fullACL independently reattached, allprocessesjoined.
-Source-r4 reviews exact non-target drift and fixes unnecessary whole-PC freezing
-only if target/ownership unchanged. No blind relaxation or TaskRun. The one
-originalOct26 23:45..23:55UTC/120active600elapsed window remains authoritative;
-source/failure/activation debits separate, never refunded. No new report chain.
+Source-r4SOURCE60320764/53nativechecks/GO33afcbc4 replaces all-PC stability
+with literal-target fence/freshcompare/owner/ACL/source/conditionalrollback.
+ACTUAL activation-r1/source-fix-r1/RESULT.jsonff8d67bb:1update0rollback/Run/
+newtrigger/API, originalfullACL/principal/settings/window/quietpythonw verified
+by freshreadback0e97d07c.39.124activeupper/195.004elapsed/allchildrenjoined.
+Unsealedlauncher's path-separator spelling fixed before anyGO/Install; sealed
+source60320764 andGO33afcbc4 unchanged. Unknownbystander cause/count remains
+UNKNOWN_AT_LEAST_1_OF_253, not attributed/benign/all-PC preservation claim.
+OneoriginalOct26 23:45..23:55UTC/120active600elapsed worker authoritative;
+oldsource/failure/activation debits separate. Installed is not measuredoutcome.
 
 ## Fresh Verification
 

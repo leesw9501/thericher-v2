@@ -19,9 +19,12 @@ HostCPU proposal->same native shared bank,25rows/NASonly/NYS+unusedslotscash;
 plannedentryOct21 14:00UTC/exitOct27>=19:45 operationalproxy. Oldimages/tasks
 unchanged; no new bank, substituteintent, deployment/fill/replayparity claim.
 Privatevolume mounts /app/private; frozen pending proposals reuse exactbytes.
-Data extractor absolute source:
-D:/thericher-v2/model-artifacts/data/current-window21-paper-input-20261020-v1/extractor-r1/SOURCE-READY.json.
-Requires actualOct20captures/index1 forOct21; currentOct20STOP staysclosed,
+Qualified Data extractor:
+D:/thericher-v2/model-artifacts/data/current-window21-repaired-extractor-qualification-20261020-v1/extractor.py
+SHA48319dc8db81ce76cae072e4b2a36ca03380a04a819bdcd3c3ea8fdec6452630.
+Consumer1ca604c3/CLOSEDc6a236ff actual25x22FP64/550known/34checks/
+producerloading sentinelonly. PriorASTHEADERfailure7fb80b1a staysclosed.
+Oct21 invocation NEWroot/cohorts/20261021 needs actualOct20index1 captures;
 nativecold unavailable/nooutput is not a prepared futureinput.
 
 Fresh verification authority:
@@ -42,8 +45,10 @@ Six-model measurement update source-r4:
 D:/thericher-v2/model-artifacts/data/current-long-costband-point-measurement-adoption-plan-20261020-v1/source-r4/HANDOFF.json.
 r3activation414c37b7 stopped0updates/ORIGINAL+ACLverified on unattributed
 non-targetdefinitiondrift. r4SOURCE60320764/53checks targetonlyRPCfence,
-ParentGO33afcbc4 authorized oneupdate/onerollback/0Run/newtrigger. Actual
-activation outcome pending; sameoriginalOct26 23:45..23:55UTC window/payload.
+ParentGO33afcbc4 consumed: ACTUALff8d67bb/oneupdate0rollback/Run/newtrigger/
+API, independentREADBACK0e97d07c/quietpythonw/fullACL/principal/settings.
+SameoriginalOct26 23:45..23:55UTC window/payload, allchildrenjoined.
+Exactclosure: source-r4/activation-r1/source-fix-r1/RESULT.json underthatroot.
 Do not rerun consumed old installers or claim all-PC stability/guaranteed
 rollback. Preserve exacttargetsource/owner/ACL/freshcompare/readback checks.
 

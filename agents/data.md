@@ -32,6 +32,16 @@ Oct20 capture planindex1 forOct21. Nativecold input_unavailable/nooutput;
 SYNproducer loading reaches only inference sentinel. No actual futurecapture,
 availability/model inference/Task operation or stale-input fallback proven.
 
+Separate actual qualification COMPLETE (not oldfailure regrade):
+A/data/current-window21-repaired-extractor-qualification-20261020-v1/
+CONSUMER.json1ca604c3/CLOSEDc6a236ff;25x22FP64/550known0unknown/34checks/
+oneactualderivation0retry/28.967activeupper. ActualOct19index0 strictchains,
+producerloading sentinelonly/0models-NN-network-credentials-broker-Task.
+Qualifiedextractor48319dc8 changesonlytwooutputrootconstants, sameAST5904f1a4.
+ManifestM/us_equities/kis_paper_private/current-window21-repaired-extractor-qualification-20261020-v1/cohorts/20261020/INPUT.json
+e4d25e1f/numeric770c3ea4. FutureOct21 uses NEWroots/cohorts/20261021 and
+actualOct20index1 captures; currentinput success is not future readiness.
+
 Official Treasury CC0 original source8fdbbf88:8annualHTTP200/0retry,
 1950dates2019-01-02..2026-10-19/3M+10Y/85unreported weekdays unfilled,
 2.75MB/17readonlyMfiles/49checks11SYN/60upper. Current-vintage/notPIT.
@@ -55,7 +65,10 @@ fullACL verified unchanged: unexplained non-target definition drift.
 r4SOURCE60320764/53checks replaces all-PC stability with literal-target
 fresh comparisons/owner/source/ACL checks/oneupdate-onerollback caps.
 Historical drift count/class UNKNOWN_AT_LEAST_1_OF_253, not benign/attributed.
-Parent authorized exact r4GO33afcbc4 activation; actual result pending.
+ACTUALr4activationff8d67bb/readback0e97d07c:1update0rollback/Run/newtrigger/
+API. OriginalACL/principal/settings/window/quietpythonw verified,39.124active
+upper/195.004elapsed/allchildrenjoined. Sealedsource60320764/GO33afcbc4
+unchanged; pre-effect unsealedlauncher slashspelling fault preservedseparately.
 Same six-model payload/Oct26 23:45..23:55UTC/120active600elapsed window;
 no futurelabels/captures/API/newtrigger/TaskRun. Preserve snapshots/debits.
 
