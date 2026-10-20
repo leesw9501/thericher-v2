@@ -4,248 +4,131 @@
 
 Workdir C:/Users/Public/Documents/thericher-v2; Oct20KST.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-AGENTS.md owns authority. Company current-nas-owned-model-paper-cycle-v1 is
-UNFINISHED: eight previously verified retained exact FULL NAS entries.
-Exit >=Oct21USOPEN; first existing slot Oct21 13:40UTC=22:40KST. Need exact
-owned request/fill/current-inventory/terminal reconciliation. Fees, settled
-cash and actual net PnL remain unobserved unless separately established.
-Research, source, a Task exit or another owner's sale cannot close this goal.
+Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED:
+eight previously verified retained exact FULL NAS entries. Exit>=Oct21USOPEN;
+first existing slot Oct21 13:40UTC=22:40KST. Need exact request/fill/current
+owned inventory/terminal reconciliation; fees/settled cash/netPnL unknown
+unless separately proven. A source/test/research/package commit is not closure.
 
-Private free Data/Research/KIS Paper is delegated. Preserve ONE original
-shared initial virtual-cash tenth, entry costs/losses/reservations/identities.
-No foreign adoption, substitute unknown request or profit-expanded envelope.
-Never KIS_LIVE_*/real money, paid/public/unclear-rights commitments or secret/
+Private free Data/Research/KIS Paper delegated by AGENTS. Preserve ONE original
+shared initial virtual-cash tenth/costs/losses/reservations/identities.
+No foreign adoption, unknown-request substitute or profit-expanded envelope.
+Never KIS_LIVE_*/real-money, paid/public/unclear-rights commitments or secret/
 account/order/raw broker/raw market/private amount output. Data M/models A.
-Research restrictions stay package-local. No current operator approval hold.
+No current operator decision or company-wide permission hold.
 
-## Owners / Ready / Due
+## Actual Owners / Next Work
 
-| Owner | Current Package |
+| Owner | Actual State |
 | --- | --- |
-| Parent | Shared integration/Git. Core c288dfc; prior integration915a0cd. Named numerical execution delegated, not all parent-run. |
-| Kepler / Engine | Macro-HGB GO be9d1071 actual launch04:11:14UTC; two CPU fits/one evaluation, no point authority. |
-| Confucius / Engine | Long TCN complete/independent123checks; delegated one CPU evaluation GOa03dfbf4. |
-| Boyle / Data | Treasury CC0 1950dates acquired8fdbbf88; lagged context0cfe0841 ready, notPIT. |
-| Pascal / Engine | New long-TCN-only prospective source/native CPU preparation; no numerical point GO. |
-| Boole / Strategy | Matched prediction-MSE/direct-portfolio-utility pilot source/native preparation. |
-| Archimedes / temporary Engine | Delegated close-window21->63->252 GPU sequence then one evaluation, GO79acef40. Actual starts need runtime evidence. |
-| Execution | Original NAS/F9/nightly owners and budget unchanged; next F9 original visit Oct20 15:10UTC. |
+| Parent / Orchestrator | Integrates/Git. Prior push0ab6f52; new10code+8MD integration verified, commit pending. |
+| Archimedes / Execution | Generic provisional NAS model profile code complete; new deployment SOURCE package, no activation yet. |
+| Kepler / Data | OOFData complete; actual22-close Paper input/reusable entry-date extractor preparation, no broker/model calls. |
+| Boyle / Data | Six-model Oct27 measurement source-r3 activation stopped0updates on non-target definition drift; source-r4 diagnosis/repair only. |
+| Boole / Engine | Four Window21 OOF/FINAL fits + one gate complete/FAIL; mechanism diagnostic complete. No training currently evidenced. |
+| Pascal / Infra | Shared GPU-lock ownership fix/native Windows+Linux probe complete; no canonical-lease touch from probe. |
+| Confucius / Review | Independent GPU-lock17checks and model-profile31checks PASS; no permanent daemon or performance promotion. |
 
-Four NEW chronological LSTM fits actually completed02:00:17UTC, CLOSED in
-current-costband-chronological-stacking-development-20261020-v1/
-gpu-source-preparation/attempts/attempt-1. Actor quiescent/canonical lease
-released, actual_market_fits4, workerexit0; independent5dc6b6e4 PASS269checks.
-Epochs21/45/22/28, selected1/25/2/8,10685market updates/22264forwards.
-These four fits are complete. NEW long TCN2702 completed03:44:43UTC under
-A/research/current-costband-tcn-convergence-development-20261020-v1/
-runtime-source/attempts/attempt-1. CLOSED40af954a confirms worker0, one fit,
-actor quiescent/canonical lease released. INNER_PATIENCE stopped27epochs,
-selected2/stale25;2970updates6281forwards/zero discarded updates. Independent
-123checks PASS; early stop is not global convergence. Do not dispatch again.
-Confucius owns exact CPU-only retained-prediction evaluation, not a refit.
-GPU permission/environment available. Models are small; do not manufacture
-GPU load. Actual sampled LSTM34percent/3183MiB is one sample, not peak/average.
-Prior ledger313 plus NEW4CUDA LSTM,1CPU TTM head and1CPU Tree completed;
-analytic references separately reported. Truncated TCN/RAW nonconvergence
-are not additional completed models. This is not a count of architectures/winners.
-Long2702 adds one completed TCN fit. Its CPU readout failed before Outer
-np.load: Data ref has {path,sha256,bytes}, strict consumer required two keys.
-Firstcause7348633e/23actual-metadata checks; prior/policies already sealed.
-Original consumer remains failed/45charge/no rerun. New no-fit retained-packet
-readout proposal awaits categorical review/source proof, not numerical GO.
-MD assignments are memory, not proof that an LLM/container is running.
+All last GPU actors physically joined/quiescent; canonical lease released:
+A/engine-research-agent/locks/gpu.lock. Do not duplicate completed learning.
 
-## Latest Research
+## Research Results
 
-All current comparisons are adaptive reused data, not independent alpha.
-Long e495de90 has45121knownTRAIN+34UNKNOWN/exact1675Outer; fold-local
-ee953ebf adds proper internal selection/OOF boundaries. Never substitute the
-old global-scaled inputs for FINAL-fold inputs; affine hashes differ.
+All historical comparisons are adaptive/reused, not independent alpha or
+actual KIS PnL. Frozen failures/debits unchanged; no epoch/seed/weight rescue.
 
-Earlier exact results remain in agents/engine-research.md/Git/immutable A:
-rawHGB ee1d22e3 scientificFAIL; indicator08b45bec scientificPASSboth/
-financialFAILboth; LSTM163089e4/83df8f19 scientificPASSvsownprior;
-fixedquarter9c73447f/1289checks science+financialFAIL. No mixture/epoch rescue.
-The indicator check-count correction5fe6f063 remains external, not a refit.
-LongGRU620a2f1b, fullvolumeHGBb4b739fd and short GRU/fusion failures stay
-closed with original charges. Older TTM, riskTCN, attention, ranking, public
-models/rules remain historical evidence, not candidates to rerun for metadata.
+| Study Under A/research | Actual Result |
+| --- | --- |
+| current-costband-tcn-convergence-development-20261020-v1 | COMPLETE40af954a/1CUDAfit27epochs/selected2/pat25,2970updates6281forwards/123audit checks. Old CPU consumer failed extra.bytes ref BEFORE Outer np.load/7348633e,1analytic/0cells/45charge retained. |
+| current-close-window-costband-development-20261020-v1 | COMPLETE02cffb45/3CUDAfits21/63/252,21epochs each/selected1,1134updates2667forwards.30cells/audit49f94193/16138checks. Singles frozen financialscreenPASS, proper-scoreFAIL; thirdFAIL (same baskets).10bp EACHleg growth+.73515percent/DD.49368 vsuniform+.13764/.32607, higherDD explicit. |
+| current-costband-rate-context-hgb-development-20261020-v1 | 2CPUfits RAW104rounds/best84 vsMacro20/best1. Historical Outer int8/int64 failure/1intake/0cells stays UNKNOWN. BOTH prospective points ACTUAL below. |
+| current-cross-family-fixed-ensemble-preparation-20261020-v1 | COMPLETE9987cf19/readbackb15c71ec:0fits-NN-GPU,oneOuter/oneMarks/7scores/48cells/114.757upper. MEAN6 primaryFAIL.10bp growth/DD TCN+.2540/.8788,PRICE+.2508/.5645,Macro+.1139/.7874,Windows+.7352/.4937,MEAN6+.4681/.4902,uniform+.1376/.3261 (percentNAV). Does not regrade old failed consumers. |
+| current-portfolio-objective-matched-pilot-preparation-20261020-v1/runtime-source/actual | Technical COMPLETE04:34:35UTC/2CUDAfits MSE17epochs/best5 and logwealth18/best6/pat12.1890marketupdates,3968forwards; SYN16updates separate.12cells primaryFAIL:10bp MSE+.1403percent/DD.3235,utility+.2170/.4924,uniform+.1376/.3261. Overfit after selection; GPU22.983s/CPU1.724/dispatch33.851/family236.126upper. QUALIFIED_COMPLETE label is technical ONLY. |
+| current-window21-oof-gated-fusion-preparation-20261020-v1/runtime-source/actual | FINAL94f2b5c6:4NEW CUDAfits epochs/selected21/1,46/26,51/31,33/13;14279market+3SYNupdates. One4parameterCPUgate256epochs/best253/MAXnotconvergence.30cells=18new12byte-reused/87checks/science+financialFAIL.10bp gate-.0208percent/DD.4923,half+.3668/.5813,uniform+.1376/.3261.187.255dispatch/330.345upper; allclosed. |
+| current-window21-mechanism-diagnostic-20261020-v1 | FINAL9f39fe7b/433checks:cached score-rank median correlation last1-.818/mean5-.740/mean21-.379;95.4percent SYNgradient sensitivity latest5lags, latestnegative.1CPUrestore9SYNforwards3gradientpasses/0optimizer-fits-GPU. Recent-reversal mechanism supported, financial causation UNKNOWN. |
 
-## Useful New Inputs
+No window advantage: all original window models select identical65baskets/
+67dates, no cutoff ties, equal nominal entry mass. Do not fill VRAM as a goal.
+Older four chronological LSTMs remain valid/5dc6b6e4/269checks; Tree8214fae2
+science+financialFAIL; one-day TTM one converged headFAIL/RAWnonconvUNKNOWN.
+Old shortTCN2701/STACK17/RAW/VOLUME/longGRU/fullvolumeHGB/five-dayTTM failures
+stay closed. History/counters/weights in immutable A and Git, not a new total.
 
-- Indicator Consumer07f00f02:21session momentum/populationvol,20session
-  Bollingerwidth, deterministic raw transforms, not new information.
-- NEW stock-only prospective Consumer0929c516:25x63x3,64sessionsJul21..Oct19,
-  exacte495affines, actual readyOct20 00:09:53UTC before13:25cutoff.
-  Independent03fac4ba confirms NEW stock-only dependency boundary; no old
-  SPY projector/population bypass. No targets or forecasts in this input.
-- Volume Consumerf816cbd8:TRAIN45155x64/INNER1675x64/POINT25x64;2,998,720
-  finite nonnegative elements,0missing/zeros/allzero windows.114919canonical
-  row/25prefix/25offset/22readback/9SYN checks;40.12MB in M. Units/split/PIT/
-  finality unqualified. New information versus price-only input, not alpha.
-- Price-volume source originally used sign(OC+ON). SYN falsification found
-  3472/4097 physically flat closes yield tiny nonzero sums and balance up to
-  +/-1. Reject that artifact as a financial feature. Old diagnostic592ffb1b
-  stays closed. Revised kernel uses exact canonical close-direction, no
-  market-chosen epsilon or FP32 inverse affine. Data must bind repaired ABI
-  before any features. Repaired03ac0b50/7d4070c5 uses canonical comparisons;
-  Dataee8ddff1 ready Nx2/Decimalsignmismatch0/34unknown preserved. Attempted
-  full-dataHGB191 CLOSEDb4b739fd preconstructor/fit on inherited PARENT-GRANT
-  filename:0actualfits/newcells,172.775961active retained, no second launch.
-  Firstcause206c390a/c9836b5b fixes explicit GO-reference caller for NEW work,
-  not a renamed retry of that closed full-data study.
+## Actual Future Points / Data
 
-NEW actual4-model point ab4329ea/COMMITTED9d68b3f3 retained01:15:25UTC:
-25stocks,4calls(3CPUHGB+1CUDALSTM)/1restore/1allocation/0fits/0outcomes.
-Forecaste1fc1ada, actorquiescent/lease released.391-checkindicatorDatafd223cd1
-andstock0929 bind prefixes29/16/13/4/fixedquarter. Offline39checks corroborate.
-OutcomesOct20/21/22/23/26 remain unobserved; originalOct27worker does not
-automatically measure this new point. No new schedule or broker request.
+Old four-model e1fc1ada/COMMITTED9d68b3f3 at01:15:25UTC:
+25stocks4calls(3CPU1CUDA)/0fits-outcomes/actor+lease closed.
+PRICE/MACRO pair COMMITTED2b168e66/CLOSED066c7113 at04:21:22UTC:
+25rows each/2restores2CPUforwards/0fits-outcomes,215.328upper/original deadline.
+Target sessionsOct20/21/22/23/26 unknown. No forecasts from failed Tree or
+TCN point attempts. Tree31.422upper and TCN91.352upper preserved. TCN duplicate
+Docker --host caller reproduced/cd348667/24checks; historical first guard
+unretained. No old-point retry or missing-evidence-as-zero.
 
-Next genuinely NEW learned composition: chronological stacking source11e5ceee/
-contract83a599ab/foldmanifest2aef8c4c. ParentPARENT-INTEGRATION.json under
-current-costband-chronological-stacking-development-20261020-v1 freezes
-01:04:00origin/3600active10800elapsed/17estimators(13solvers4analytic),
-threeOOFblocks2024/25/26H1+FINALinternal63dateINNER before Outer. Numerical
-preparation completed; GPU-GOd554829b consumed by four actual fits.
-CPU RAW/VOLUME first commands returned UNAVAILABLE_NO_AUTORETRY, quiescent.
-Firstcause9ac8f748: plain counting constructor loses native class .fit
-capability attribute, before actual HGB constructors/fits. RAW did execute
-one analytic prior, so second command prohibited. VOLUME actual effects zero,
-but one nonrefundable error charge leaves only3 of4 allowed starts; fourfold
-retry would exceed eleven caps. CLOSEa7b25b0d/no second launch or fit. Original
-three-expert candidate and proposed two-expert branch remain UNAVAILABLE;
-do not amend old limits or claim a completed learned ensemble. OOFmeta
-15625keys/625dates;fold-local raw TRAIN-input affines,
-no OOF/Outer labels in baseworkers. Finalanalytic reference uses META_FIT
-OOFlabels, not baseFinalTRAIN. Claude REVISE reference/maturity/accounting/
-adaptiveutility scope retained. New U=G-.5DD/riskallowance applies ONLY here,
-not regrading old FAILs or changing deterministic Paper risk.
+Data8efcf153 full194 ready202checks:42905TRAINcontext/34unknown retained,
+4whole-date100row loss exclusions both arms ->42805supervised.
+OOFWindow Data bdf4795b ready162checks/3.55Mscalar checks/18.29MB:
+TRAINinputs27755/34055/40305/43480,INNER1575each,PRED6300/6250/3075/1675,
+canonical22CLOSE->21returns, per-fold input-only affine/34unknown each.
+Treasury8fdbbf88/1950dates/current-vintage/lag2context0cfe0841, not PIT.
+CFTC209742 Consumer under A/data/current-public-cftc-nasdaq-positioning-
+acquisition-20261020-v1/history-continuation-r1:406weekly2019Jan8..2026Oct13,
+406net/OI known/0zero denominators/interior holes; publication timesALLUNKNOWN.
+1metadata+2dataGETs/0retry/61.758upper; broad-discovery STOP preserved.
+No invented publication timestamps or Execution qualification.
+Paper22-close input throughOct19 forentryOct20 is being prepared separately;
+futureentryOct21 needs actual20close owned captures, not a stale fallback.
 
-## Latest Completed / Running
+## Verified Code / Not Deployed
 
-- Original TCN2701 short run CLOSED02:36:49UTC/exit126 at450s hard timer;
-  aggregate completion UNKNOWN/no selectedP. Independent86checks confirms
-  lower bounds5epochs/550updates/1120forwards/five intact checkpoints, not
-  total work. Charges1061.402upper retained. No attempt2 or claimed convergence.
-  Its prospective intent is UNAVAILABLE, not a substitute point.
-- NEW long TCN2702 is COMPLETE, not that old attempt restarted: same tested
-  backbone/fresh seed, max256epochs/pat25, up to5400TRAINseconds plus240
-  selection reserve;6000TOTALactive9000elapsed origin02:37UTC. ModelCPU41,
-  runtime42 and reused37intake checks passed. Soft stop/partial rollback and
-  safe checkpoint NEXTUPDATE were actually exercised. Timed outputs still
-  do not establish convergence. Actual27epochs/selected2/2970updates6281forwards;
-  actor/lease closed, independent123checks. Optional sync unused.
-- Synthetic native throughput cdc34b1f/e100c9ce:9updates12forwards/0market,
-  all ownership closed. Batch400/1024/2048 about804/825/826 examples/s;
-  predeclared10percent tie rule keeps16dates/max400 rows. Larger memory use
-  was not materially faster. Do not infer precise full-epoch/peak throughput.
-- Five-day foundation extraction ecf9e78b stays CLOSED_UNAVAILABLE:one
-  trusted encoder/intake/two warmup attempts/0market forwards/fits; exact
-  failed predicate unretained/UNKNOWN. Separate SYN probe completed2returns,
-  frozen state unchanged, FP32 same-prefix gap1.66893e-6; not historical
-  first-cause proof or tolerance PASS. Do not reopen that old study.
-- NEW same-day OPEN-to-CLOSE foundation producer ACTUALLY completed under
-  A/research/current-one-session-costband-foundation-preparation-20261020-v1/
-  binding-r1/actual.21GPUforwards/cachec4dcbde0 and1allocation closed. TTM192
-  logistic converged354iterations/10.390s but scientificFAIL:LL1.037741/
-  Brier.631262 versus prior1.009428/.614978. RAW512 reached1000 and emitted
-  ConvergenceWarning:UNKNOWN/no retry. Two starts are NOT two completed
-  candidates.12known/6UNKNOWN of18cells;112.202cumulativeactive upper.
-  Decimal caller conversion and pinned same-session timestamp/canonical
-  endpoints bridge pure-API review gaps; retain those component limitations.
-- NEW learned OOF LSTM+dated asset-prior+volume Tree COMPLETE, independent
-  8214fae2/6250checks/Decimalgap8.88e-16:oneTree+3analyticfits/4LSTM+prior1
-  reused/oneOuter read/30completecells. Science andfinancialFAIL. At10bp
-  EACHside Treegrowth+.01265percent/DD.82419 versus LSTM+.08076/.48007 and
-  uniform+.13764/.32607. Positive assumed-cost growth is not superiority/
-  alpha/actual KIS PnL. Do not extend its depth/weight grid or repair original
-  STACK17. Exact root A/research/current-oof-lstm-prior-tree-development-20261020-v1.
+New ModelPaperInput/Metadata/Target/Row and MODEL_PROPOSAL_NAS profile bridge
+host CPU sealed proposal into unchanged deterministic NAS sizing/bank/recovery.
+All25rows survive; NYS weight/unused positive slots stay cash, no replacement/
+renormalization. Nativezeroeligible=no_intent; exact pending recovery precedes
+loader; distinct policy pointer; legacy/current20 fingerprints/defaults intact.
+Source86tests + independent31checks. CPU/GPU parity UNKNOWN.
+No full-universe replay parity, new bank/tenth, order-image Torch or deployment.
+New source package A/execution/current-window21-provisional-nas-deployment-
+20261021-v1 prepares one futurecohort (entryOct21 14:00UTC,exitOct27>=19:45),
+not an installed opportunity. Old NAS8/source/image/tasks never replaced.
 
-NEW four-way OOF Tree point is CLOSED_UNAVAILABLE, not a forecast:
-A/research/current-oof-lstm-prior-tree-point-20261020-v1.
-Its first and only dispatch failed exact GO byte-hash binding: dispatcher
-reserialized mounted GO but passed the original hash. Firstcause88f0d8d2;
-31.421695active upper retained, worker counts/commit UNKNOWN, actor/lease closed.
-No old retry, overwrite or published-point claim.
-FINAL-affine point17a03669/77checks ready02:23:17UTC before13:25cutoff;
-never replace it with old global-scaled0929 inputs. Earlier four-model
-forecaste1fc1ada remains the ACTUAL retained point; future outcomes unknown.
+GpuFileLock core578f9471 now checks native identity+token/payload, unsuccessful/
+double exits preserve another owner; mismatch raises/preservesunknown.
+46focusedPASS2privilege-symlinkskips,17independentchecks; cross-OS FINALfbe78415
+Windowswinner/Linuxloser and reverse + LinuxD-bind identity/reopen PASS.
+Isolated oneCPUcontainer/alljoined, no actualcanonical lease. Full-package
+Linux import/POSIX-all-platforms/malicious-host atomicCAS NOT claimed.
+Frozen old helper6887bb9d unchanged; future dispatchers must bind corrected
+logic or success-only owner acquisition plus exact-owned release checks.
 
-Next finite window experiment: common original512-close cohort, close-return
-only21/63/252daily inputs, same TRAIN-input252 affine/internal63date split/
-seed2801. Source09968753/READY5135e677/Data b78e712c; ParentGO79acef40 delegates
-Archimedes the sequential cases then one evaluation.100upper carry includes
-source55.7/review14.41/prelaunch I/O;3600active14400elapsed origin03:20:08.
-Claude REVISE retained: adaptive Outer reuse, shared-affine contrast and fixed
-blend multiplicity disclosed; missing case not zero/no partial blend/no retry.
-GO is not actual training evidence. See role board for runtime.
-Existing source/debits/claims stay immutable; no independent alpha or Paper
-promotion is inferred from reused data, native tests, metadata or a forecast.
+## Existing Runtime / Measurement
 
-Treasury actual8HTTP200/0retry/1950dates2019..Oct19/CC0/49checks11SYN;
-85unreported weekdays not filled. Lagged context0cfe0841 ready42905input/
-42871knownTRAIN+34UNKNOWN;575input rows23dates unavailable from earlier
-history. INNER1575/PRED1675/point25 unchanged,187checks11SYN5580scalars/0gap.
-Current-vintage and lag2 assumptions, not PIT/release proof/Execution input.
-Kepler prepares matched RAW189/RAW+Macro192 HGBs on the same common cohort.
-Ready861925b3; ParentGO be9d1071 actual launch04:11:14UTC, CPU only.
-Boole prepares one matched MSE/direct-net-utility pilot from reviewfc524f0c.
-Pascal prepares new long-TCN inference source; Boyle verifies exact point
-affine compatibility. These are not forecasts, market fits or new schedules.
+NAS876/d2d4b108 original8 retained entries/exitOct21 13:40UTC.
+F9image49933/source5ecfccef next originalOct20 15:10UTC; originalentry consumed,
+exit>=Nov17. Unknown ancestry/reservation held. No clone/reset/substitute.
+Nightly30423:50KST/Goal97 distinct. RTH guard-only retarget2c253392/b20ddd5e
+actual, nextOct20 21:50UTC; old20D1 22:30/new9D1 23:00. First20/9 chains
+validated215efd55/8ba05657; not whole-history finality/capture proof.
 
-## Data Runtime / Consumed Points
+Original Oct27 measurement Task remains unchanged so far. Six-model immutable
+plan c64d576b/source-r3PREPARED ec26b9e6 has quiet pythonw/backup/ACL proof,
+but activation414c37b7 stopped pre_foreign_inventory/foreign_inventory_definition:
+0update/rollback/Run; ORIGINAL/fullACL independently reattached, allprocessesjoined.
+Source-r4 reviews exact non-target drift and fixes unnecessary whole-PC freezing
+only if target/ownership unchanged. No blind relaxation or TaskRun. The one
+originalOct26 23:45..23:55UTC/120active600elapsed window remains authoritative;
+source/failure/activation debits separate, never refunded. No new report chain.
 
-RTH1m Task thericher-kis-paper-current20-postclose-20261017 now uses
-A/infra/current-rth-executable-spelling-recovery-20261020-v1/release-r1/runtime.
-Actual guard-only retarget2c25339223:20:09UTC/independentb20ddd5e PASS:
-1update0rollback/0Run/API/newtriggers;onlyargs+CWD/fullACL/oneoriginaltrigger/
-PT35M/all253others preserved. Next ORIGINALOct20 21:50UTC=Oct21 06:50KST.
-Not capture proof. Old firstrun DEFERRED_NO_SESSION409fa414 had lexical
-executable spelling fault; counters/day un-emitted UNKNOWN. Never rerun
-consumed old rollback-deficient or new successful updaters.
+## Fresh Verification
 
-Old20D1 completed22:31:54UTC215efd55/20GET1auth/20ready; new9 completed
-23:00:43UTC8ba05657/9GET1auth/9ready. Both source/job/session/index0 chains
-validated. TTM actual00669c6b INPUT_UNAVAILABLE0GPU:duplicateSPY close/volume
-conflict before512eligibility (firstcause3be66f90). Old upstream SPY
-calibration/population dependency756b9df5 forbids NaN/drop in frozen TTM/Risk.
-Risk terminal missing/taskexit1=>counts/pastcleanup UNKNOWN; source9fb68f74
-proves Windows lexicalPath publication defect, historical first exception
-unobserved. No original point rerun. Measurement remains original Oct27
-08:45KST, not automatic coverage for NEW model points.
-Fresh-session feeds keep their owned next_due; no foreground session wait.
-
-## Paper Recovery
-
-NAS image87697f8e/original schedule unchanged. F9 image49933b02/source5ecfccef/
-manifest5f53ec50/guard4a468c0a actually deployed21:08:55UTC; safe diagnostics
-installed, not an observed fill. Original F9 entry window consumed, exit>=Nov17.
-Historical old56618:30 run reported0orderPOST starts; scope-proof4f610ea5/
-native1160b147 establishes no order-opener in THAT lifetime under pinned
-honest-host source. It does not bind all lifetimes of current pending identity.
-Original first00:10 outcome missing; exact read-only no-open/history-absent
-does not release reservation. No clone/replay/substitute/reset.
-F9 custody readers failed before private parsing on overbroad source-filename/
-bytecode guard:ac2e1312/repaired7704120e,48.09active linked,0private reads/API.
-Both closed; ancestry UNKNOWN/reservation held. Corrected exact-source reader
-repaired-r2/FINAL71c8da30 actually completed strictprivateRO:1import+1read
-container removed,0API/credentials/privatewrites. Pending/seed/canonicalmatch
-and18:30timestamps established, origin/all-prior-lifetimes still UNKNOWN.
-38.284newactive plus48.094old; no repeated reader or release/reset.
-AMEX shared-bank rollout deferred: frozen NAS/F9/nightly global V4 loaders
-reject AMEX before selection; preserve functioning NASDAQ paths.
-
-## Verification / Continue
-
-Authority A/verification/paper-first-failure-diagnostic-20261020-v1/authority.json:
-1363sources970c0730/controls unchanged;1588serial PASS,18430full PASS22skip/
-8workers388.60s/helper0/verified current-child cleanup/Ruff/3sample-envCompose
-PASS. Docs/external-only reuse needs exact digests and fresh external native/
-focused checks. D source/results are not validated by repeating repo suite.
-Optional serial scratch cleanup was tool-policy denied before effects; leave
-it, no bypass/all-C-clean claim. Never stage/remove preexisting %SystemDrive%/.
-
-Continue actual ready delegated work. Commit/push verified integration.
-Replace NEXT company objective only after real NAS cycle closure, not a
-package commit/due time. Genuine operator decisions only.
+A/verification/model-profile-gpu-lease-20261020-v1/authority.json:
+1370sources d10698dca5d9486d65645f4a814136d8892b35f8f68fd4e31e50158a0706b88e.
+1720changed-path serialPASS2skip/51.439s;18537fullPASS24skip/18561collected/
+8workers/helper0 verified current-child cleanup/381.981s. Ruff and default/
+research/accounting Compose using .env.example PASS. Two new skips are Windows
+symlink privilege cases; nativejunction PASS.35existing sklearn FutureWarnings.
+AGENTS072d44eb/DECISIONS89b13c15 unchanged. Old970c0730 certifies oldsource only.
+Docs/external reuse requires exact new production/control equality plus fresh
+external/native checks. Source/test success is not deployment or a broker fill.
+Keep preexisting %SystemDrive%/ and denied optional scratch untouched.
+Continue ready delegated packages; do not close the company goal to end a turn.

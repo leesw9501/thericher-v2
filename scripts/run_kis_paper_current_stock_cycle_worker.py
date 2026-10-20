@@ -647,13 +647,40 @@ def first_failure_file_sink(output_child):
     return write
 
 
-def run(config, *, execute=False, clock=lambda: datetime.now(UTC), first_failure_sink=None):
+def run(
+    config,
+    *,
+    execute=False,
+    clock=lambda: datetime.now(UTC),
+    first_failure_sink=None,
+    profile=None,
+    target_loader=None,
+    expected_input_ref=None,
+    expected_policy_ref=None,
+):
     if not execute:
         return dict(status="inert", credential_reads=0, broker_calls=0)
     from thericher_v2.execution.kis_paper_current_stock_cycle import (
+        StockCycleProfile,
         run_kis_paper_current_stock_cycle,
     )
 
+    injected = {}
+    if profile is not None:
+        if (
+            profile is not StockCycleProfile.MODEL_PROPOSAL_NAS
+            or not callable(target_loader)
+            or any(
+                type(ref) is not str or re.fullmatch(r"sha256:[0-9a-f]{64}", ref) is None
+                for ref in (expected_input_ref, expected_policy_ref)
+            )
+        ):
+            raise ValueError("model_profile_injection_invalid")
+        injected["profile"] = profile
+    elif any(
+        value is not None for value in (target_loader, expected_input_ref, expected_policy_ref)
+    ):
+        raise ValueError("model_profile_injection_invalid")
     limits = RequestBudget(control_root=CONTROL, clock=clock)
     paths = native_paths()
     try:
@@ -663,9 +690,13 @@ def run(config, *, execute=False, clock=lambda: datetime.now(UTC), first_failure
                 expected_account_ref=budget._digest(
                     [config.base_url, config.account_number, config.account_product_code]
                 ),
-                expected_input_ref="sha256:" + PRIVATE_PINS["targets.private.json"],
-                expected_policy_ref="sha256:" + POLICY_PIN,
-                target_loader=lambda: load_targets(
+                expected_input_ref=expected_input_ref
+                if injected
+                else "sha256:" + PRIVATE_PINS["targets.private.json"],
+                expected_policy_ref=expected_policy_ref if injected else "sha256:" + POLICY_PIN,
+                target_loader=target_loader
+                if injected
+                else lambda: load_targets(
                     artifact_root=paths["artifact_root"],
                     repository_root=paths["repository_root"],
                     clock=clock,
@@ -673,6 +704,7 @@ def run(config, *, execute=False, clock=lambda: datetime.now(UTC), first_failure
                 client_factory=client_factory(config, limits),
                 clock=clock,
                 execute=True,
+                **injected,
                 **(
                     {"first_failure_sink": first_failure_sink}
                     if first_failure_sink is not None

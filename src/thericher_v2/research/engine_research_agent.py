@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import re
+import stat
 import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -164,6 +165,10 @@ class GpuLockHeldError(RuntimeError):
     """Raised when another Engine Research Agent invocation holds the GPU lock."""
 
 
+class GpuLockOwnershipError(RuntimeError):
+    """Cleanup could not establish ownership; foreign or unknown state is preserved."""
+
+
 class JobIdReuseError(ValueError):
     """Raised when a queued job would overwrite immutable run evidence."""
 
@@ -188,35 +193,153 @@ class JobIdReuseError(ValueError):
 
 
 class GpuFileLock:
+    """Exclusive file ownership on a cooperating host, not an adversarial-host lock."""
+
     def __init__(self, lock_path: Path) -> None:
-        self.lock_path = lock_path
+        self.lock_path = lock_path.absolute()
         self._fd: int | None = None
+        self._identity: tuple[int, int] | None = None
+        self._payload: bytes | None = None
 
     def __enter__(self) -> GpuFileLock:
+        if self._fd is not None:
+            raise RuntimeError("this GPU lock instance is already entered")
+        self._check_parents()
         self.lock_path.parent.mkdir(parents=True, exist_ok=True)
-        flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
-        try:
-            self._fd = os.open(str(self.lock_path), flags)
-        except FileExistsError as exc:
-            raise GpuLockHeldError(f"GPU lock already exists: {self.lock_path}") from exc
+        self._check_parents()
         payload = {
             "schema_version": SCHEMA_VERSION,
             "agent": AGENT_NAME,
             "pid": os.getpid(),
             "created_at": datetime.now(UTC).isoformat(),
             "manual_recovery": "remove this file only after verifying no research job is running",
+            "owner_token": os.urandom(16).hex(),
         }
-        os.write(self._fd, json.dumps(payload, sort_keys=True).encode("utf-8"))
+        encoded = json.dumps(payload, sort_keys=True).encode("utf-8")
+        flags = os.O_CREAT | os.O_EXCL | os.O_RDWR | getattr(os, "O_BINARY", 0)
+        flags |= getattr(os, "O_NOFOLLOW", 0)
+        try:
+            fd = os.open(str(self.lock_path), flags)
+        except FileExistsError as exc:
+            raise GpuLockHeldError(f"GPU lock already exists: {self.lock_path}") from exc
+        try:
+            info = os.fstat(fd)
+            if (
+                not info.st_dev
+                or not info.st_ino
+                or not self._same_file(info, (info.st_dev, info.st_ino))
+            ):
+                raise OSError("GPU lock regular-file identity unavailable")
+        except BaseException:
+            os.close(fd)
+            raise
+        self._fd, self._identity, self._payload = fd, (info.st_dev, info.st_ino), encoded
+        try:
+            offset = 0
+            while offset < len(encoded):
+                written = os.write(fd, encoded[offset:])
+                if not 0 < written <= len(encoded) - offset:
+                    raise OSError("GPU lock payload write incomplete")
+                offset += written
+            os.fsync(fd)
+            if not self._path_is_owned(fd, self._identity, encoded):
+                raise OSError("GPU lock ownership changed during acquisition")
+        except BaseException:
+            self._release(partial=True)
+            raise
         return self
 
     def __exit__(self, *_exc: object) -> None:
-        if self._fd is not None:
-            os.close(self._fd)
-            self._fd = None
+        self._release()
+
+    @staticmethod
+    def _same_file(info: os.stat_result, identity: tuple[int, int]) -> bool:
+        return (
+            stat.S_ISREG(info.st_mode)
+            and not getattr(info, "st_file_attributes", 0) & 0x400
+            and (info.st_dev, info.st_ino) == identity
+        )
+
+    def _check_parents(self) -> None:
+        for parent in self.lock_path.parents:
+            try:
+                info = parent.lstat()
+            except FileNotFoundError:
+                continue
+            if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+                raise ValueError("GPU lock parent must not be a link or reparse point")
+
+    def _path_is_owned(
+        self, fd: int, identity: tuple[int, int], payload: bytes, *, partial: bool = False
+    ) -> bool:
         try:
+            self._check_parents()
+            if not self._same_file(os.fstat(fd), identity) or not self._same_file(
+                self.lock_path.lstat(), identity
+            ):
+                return False
+            os.lseek(fd, 0, os.SEEK_SET)
+            content = b""
+            while len(content) <= len(payload):
+                chunk = os.read(fd, len(payload) + 1 - len(content))
+                if not chunk:
+                    break
+                content += chunk
+            # An interrupted own write can leave only a prefix of the intended payload.
+            return payload.startswith(content) if partial else content == payload
+        except (OSError, ValueError):
+            return False
+
+    def _release(self, *, partial: bool = False) -> None:
+        fd, identity, payload = self._fd, self._identity, self._payload
+        self._fd = self._identity = self._payload = None
+        if fd is None or identity is None or payload is None:
+            return
+        try:
+            if not self._same_file(os.fstat(fd), identity):
+                # A reused descriptor belongs to someone else; do not close it.
+                raise GpuLockOwnershipError("GPU lock descriptor ownership changed")
+        except OSError:
+            raise GpuLockOwnershipError("GPU lock descriptor ownership unavailable") from None
+        try:
+            owned = self._path_is_owned(fd, identity, payload, partial=partial)
+        finally:
+            try:
+                os.close(fd)
+            except OSError:
+                raise GpuLockOwnershipError("GPU lock descriptor cleanup failed") from None
+        if not owned:
+            raise GpuLockOwnershipError("GPU lock path ownership changed; path preserved")
+        # Windows requires close-before-unlink. Reopen and revalidate identity AND
+        # payload after closing; the final check/unlink race assumes cooperating peers.
+        flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+        flags |= getattr(os, "O_NONBLOCK", 0)
+        try:
+            self._check_parents()
+            if not self._same_file(self.lock_path.lstat(), identity):
+                raise GpuLockOwnershipError("GPU lock path ownership changed; path preserved")
+            check_fd = os.open(str(self.lock_path), flags)
+        except (OSError, ValueError):
+            raise GpuLockOwnershipError(
+                "GPU lock path ownership unavailable; path preserved"
+            ) from None
+        try:
+            owned = self._path_is_owned(check_fd, identity, payload, partial=partial)
+        finally:
+            try:
+                os.close(check_fd)
+            except OSError:
+                raise GpuLockOwnershipError(
+                    "GPU lock verification descriptor cleanup failed"
+                ) from None
+        if not owned:
+            raise GpuLockOwnershipError("GPU lock payload ownership changed; path preserved")
+        try:
+            if not self._same_file(self.lock_path.lstat(), identity):
+                raise GpuLockOwnershipError("GPU lock path ownership changed; path preserved")
             self.lock_path.unlink()
-        except FileNotFoundError:
-            pass
+        except OSError:
+            raise GpuLockOwnershipError("GPU lock path cleanup failed; state preserved") from None
 
 
 def resolve_agent_root(artifact_root: Path | None = None) -> Path:

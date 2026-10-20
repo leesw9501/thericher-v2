@@ -40,6 +40,13 @@ from thericher_v2.research.decision_receipt import (
     ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
 )
+from thericher_v2.research.model_paper_proposal import (
+    MODEL_PAPER_PROFILE,
+    ModelPaperInput,
+    ModelPaperMetadata,
+    ModelPaperRow,
+    ModelPaperTarget,
+)
 
 from . import kis_paper_budget_strategy as budget
 from . import kis_paper_canary as canary
@@ -78,6 +85,7 @@ CURRENT20_POINTER = ".current20-equalrank4-paper-20261018-v1.json"
 class StockCycleProfile(Enum):
     LEGACY_NAS = "legacy_nas"
     CURRENT20_EQUALRANK4 = "current20-equalrank4-paper-20261018-v1"
+    MODEL_PROPOSAL_NAS = MODEL_PAPER_PROFILE
 
 
 _STATUSES = frozenset(
@@ -142,6 +150,10 @@ _TYPES = {
         Current20PaperTarget,
         Current20PaperMetadata,
         Current20PaperCalendar,
+        ModelPaperInput,
+        ModelPaperMetadata,
+        ModelPaperRow,
+        ModelPaperTarget,
         TargetExposureProposal,
         ResearchDecisionReceipt,
         FrozenScoreMetadata,
@@ -324,6 +336,8 @@ def _owned_registry(record, binding):
 
 
 def _validate_input(value, at, profile=StockCycleProfile.LEGACY_NAS):
+    if profile is StockCycleProfile.MODEL_PROPOSAL_NAS:
+        return _validate_model_input(value, at)
     _check(type(value) is CurrentStockCycleInput, "cycle_input_invalid")
     _check(value.profile is profile, "cycle_input_invalid")
     _pin(value.input_ref)
@@ -396,6 +410,90 @@ def _validate_input(value, at, profile=StockCycleProfile.LEGACY_NAS):
         )
         KisPaperStockInstrument(p.symbol, receipt.instrument_binding_ref)
     return value
+
+
+def model_paper_pointer(policy_ref):
+    _pin(policy_ref)
+    return ".model-paper-nas-" + policy_ref[7:] + ".json"
+
+
+def _validate_model_input(value, at):
+    """Native typed admission; model research validation belongs in its loader."""
+    _check(
+        type(value) is ModelPaperInput and value.profile == MODEL_PAPER_PROFILE,
+        "cycle_input_invalid",
+    )
+    _pin(value.input_ref)
+    _pin(value.policy_ref)
+    _check(type(value.metadata) is ModelPaperMetadata, "cycle_input_invalid")
+    _check(
+        type(value.entry_session) is SessionWindow and type(value.exit_session) is SessionWindow,
+        "cycle_session_invalid",
+    )
+    opened, closed = value.entry_session.open_ts, value.entry_session.close_ts
+    _check(
+        opened <= at < closed < value.exit_session.open_ts
+        and value.exit_session.close_ts <= opened + timedelta(days=14),
+        "cycle_session_invalid",
+    )
+    _check(type(value.targets) is tuple, "cycle_target_invalid")
+    symbols, slots = set(), set()
+    for target in value.targets:
+        _check(type(target) is ModelPaperTarget, "cycle_target_invalid")
+        p, receipt = target.proposal, target.receipt
+        _check(
+            type(p) is TargetExposureProposal and type(receipt) is ResearchDecisionReceipt,
+            "cycle_target_invalid",
+        )
+        _check(p.symbol not in symbols and target.slot not in slots, "cycle_target_duplicate")
+        symbols.add(p.symbol)
+        slots.add(target.slot)
+        _check(
+            target.route == p.symbol + "/NAS"
+            and p.market == "US"
+            and p.action == "enter"
+            and p.input_status == "ready"
+            and p.confidence == 0
+            and p.decided_at <= at < p.valid_until <= closed
+            and p.feature_window_end < opened,
+            "cycle_target_invalid",
+        )
+        references = DecisionReceiptReferences(
+            receipt.campaign_ref,
+            receipt.model_ref,
+            receipt.input_manifest_ref,
+            receipt.proposal_ref,
+        )
+        _check(
+            receipt_from_target_exposure_proposal(p, references=references) == receipt,
+            "cycle_receipt_invalid",
+        )
+        KisPaperStockInstrument(p.symbol, receipt.instrument_binding_ref)
+    return value
+
+
+def _model_record_input(record, expected_input_ref, expected_policy_ref):
+    """Reject cross-profile state before recovery or a fresh loader callback."""
+    _check(record.get("owner_key") == expected_policy_ref, "cycle_checkpoint_invalid")
+    if record["active"] is not None:
+        value = _unpack(record["active"]["model_input"])
+        _check(
+            type(value) is ModelPaperInput
+            and value.policy_ref == expected_policy_ref
+            and value.input_ref == expected_input_ref == record["active"]["input_ref"]
+            and record["active"]["targets"] == _pack(value.targets)
+            and record["active"]["entry_session"] == _pack(value.entry_session)
+            and record["active"]["exit_session"] == _pack(value.exit_session),
+            "cycle_input_binding_mismatch",
+        )
+    if record["pending"] is not None:
+        args = _unpack(record["pending"]["arguments"])
+        _check(
+            record["active"] is not None
+            and args["input_ref"] == expected_input_ref
+            and args["request_id"].startswith("model-"),
+            "cycle_input_binding_mismatch",
+        )
 
 
 def _proof(root, binding, pending):
@@ -706,7 +804,7 @@ def run_kis_paper_current_stock_cycle(
     expected_account_ref: str,
     expected_input_ref: str | None = None,
     expected_policy_ref: str | None = None,
-    target_loader: Callable[[], CurrentStockCycleInput] | None = None,
+    target_loader: Callable[[], CurrentStockCycleInput | ModelPaperInput] | None = None,
     client_factory: Callable | None = None,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     execute: bool = False,
@@ -729,7 +827,9 @@ def run_kis_paper_current_stock_cycle(
         _check(type(execute) is bool and callable(clock), "cycle_configuration_invalid")
         _check(type(profile) is StockCycleProfile, "cycle_input_invalid")
         current20 = profile is StockCycleProfile.CURRENT20_EQUALRANK4
-        if current20:
+        model_profile = profile is StockCycleProfile.MODEL_PROPOSAL_NAS
+        scoped = current20 or model_profile
+        if scoped:
             _pin(expected_input_ref)
             _pin(expected_policy_ref)
         root = Path(state_root)
@@ -755,8 +855,20 @@ def run_kis_paper_current_stock_cycle(
             paths["emergency_state_path"],
             paths["execution_control_path"],
         )
-        pointer = root / (CURRENT20_POINTER if current20 else POINTER)
-        lock = root / (".current20_equalrank4_worker" if current20 else ".current_nas_stock_worker")
+        pointer = root / (
+            model_paper_pointer(expected_policy_ref)
+            if model_profile
+            else CURRENT20_POINTER
+            if current20
+            else POINTER
+        )
+        lock = root / (
+            ".model_paper_nas_" + expected_policy_ref[7:]
+            if model_profile
+            else ".current20_equalrank4_worker"
+            if current20
+            else ".current_nas_stock_worker"
+        )
         for path in (pointer, lock.with_name("." + lock.name + ".lock")):
             _unlinked(path)
         with canary.exclusive_kis_paper_canary_state_lock(lock):
@@ -765,8 +877,7 @@ def run_kis_paper_current_stock_cycle(
             binding = _book(root, expected_account_ref)
             if record is not None:
                 _check(
-                    record.get("profile") == profile.value
-                    if current20 else "profile" not in record,
+                    record.get("profile") == profile.value if scoped else "profile" not in record,
                     "cycle_checkpoint_invalid",
                 )
                 _check(
@@ -777,15 +888,24 @@ def run_kis_paper_current_stock_cycle(
                     and record["basis_ref"] == binding["basis_ref"],
                     "cycle_checkpoint_invalid",
                 )
+                if model_profile:
+                    _check(
+                        record["policy_ref"] == expected_policy_ref, "cycle_input_binding_mismatch"
+                    )
+                    _model_record_input(record, expected_input_ref, expected_policy_ref)
                 if current20:
                     _check(
                         record["policy_ref"] == expected_policy_ref
                         and record.get("input_ref") == expected_input_ref
-                        and (record["active"] is None
-                             or record["active"]["input_ref"] == expected_input_ref)
-                        and (record["pending"] is None
-                             or _unpack(record["pending"]["arguments"])["input_ref"]
-                             == expected_input_ref),
+                        and (
+                            record["active"] is None
+                            or record["active"]["input_ref"] == expected_input_ref
+                        )
+                        and (
+                            record["pending"] is None
+                            or _unpack(record["pending"]["arguments"])["input_ref"]
+                            == expected_input_ref
+                        ),
                         "cycle_input_binding_mismatch",
                     )
                 _owned_registry(record, binding)
@@ -794,7 +914,8 @@ def run_kis_paper_current_stock_cycle(
                     leg_count = 1
                     result = (
                         _recover(record, root, paths, client_factory, clock, pointer)
-                        if current20 else _recover(record, root, paths, client_factory, clock)
+                        if scoped
+                        else _recover(record, root, paths, client_factory, clock)
                     )
                     _save(pointer, record)
                     return result
@@ -811,9 +932,14 @@ def run_kis_paper_current_stock_cycle(
                     _completed_flat(root, record, at)
                     return CurrentStockCycleOutcome("complete", "already_completed")
             if record is None or record["active"] is None:
+                if model_profile and record is not None:
+                    _completed_flat(root, record, at)
                 _check(callable(target_loader), "cycle_target_unavailable")
                 value = target_loader()
-                _check(type(value) is CurrentStockCycleInput, "cycle_input_invalid")
+                _check(
+                    type(value) is (ModelPaperInput if model_profile else CurrentStockCycleInput),
+                    "cycle_input_invalid",
+                )
                 _check(
                     expected_input_ref is None
                     or (
@@ -827,6 +953,8 @@ def run_kis_paper_current_stock_cycle(
                     _completed_flat(root, record, at)
                     return CurrentStockCycleOutcome("complete", "already_completed")
                 value = _validate_input(value, at, profile)
+                if model_profile and not value.targets:
+                    return CurrentStockCycleOutcome("no_intent", "native_risk_no_intent")
                 if record is None:
                     record = dict(
                         version=1,
@@ -841,12 +969,15 @@ def run_kis_paper_current_stock_cycle(
                     )
                     if current20:
                         record.update(profile=profile.value, input_ref=value.input_ref)
+                    if model_profile:
+                        record.update(profile=profile.value, owner_key=value.policy_ref)
                 _check(record["policy_ref"] == value.policy_ref, "cycle_policy_changed")
                 if value.input_ref in record["completed"]:
                     _completed_flat(root, record, at)
                     return CurrentStockCycleOutcome("complete", "already_completed")
                 _check(
-                    current20 or all(
+                    scoped
+                    or all(
                         t.proposal.symbol not in binding.get("stocks", {})
                         or t.proposal.symbol in record["owners"]
                         for t in value.targets
@@ -861,6 +992,8 @@ def run_kis_paper_current_stock_cycle(
                     entries_done=[],
                     exit_attempts=0,
                 )
+                if model_profile:
+                    record["active"]["model_input"] = _pack(value)
                 _save(pointer, record)
             active = record["active"]
             targets = _unpack(active["targets"])
@@ -868,6 +1001,8 @@ def run_kis_paper_current_stock_cycle(
                 _unpack(active[k]) for k in ("entry_session", "exit_session")
             )
             exit_eligible = EXIT_NOT_BEFORE if current20 else exit_session.open_ts
+            if model_profile:
+                exit_eligible = _unpack(active["model_input"]).metadata.exit_not_before
             side = "sell" if at >= exit_eligible else "buy"
             session = _current_exit_session(at, exit_session) if side == "sell" else entry_session
             if side == "buy" and at >= entry_session.close_ts:
@@ -906,10 +1041,17 @@ def run_kis_paper_current_stock_cycle(
             instrument = KisPaperStockInstrument(
                 target.proposal.symbol, target.receipt.instrument_binding_ref
             )
-            if side == "buy" and current20 and (
-                (instrument.symbol in binding.get("stocks", {})
-                 and instrument.symbol not in record["owners"])
-                or projection.remaining_cap <= 0 or projection.remaining_gross_cash <= 0
+            if (
+                side == "buy"
+                and scoped
+                and (
+                    (
+                        instrument.symbol in binding.get("stocks", {})
+                        and instrument.symbol not in record["owners"]
+                    )
+                    or projection.remaining_cap <= 0
+                    or projection.remaining_gross_cash <= 0
+                )
             ):
                 # Exclude, never adopt, replace, reweight or create a new bank.
                 active["entries_done"].append(instrument.symbol)
@@ -964,7 +1106,7 @@ def run_kis_paper_current_stock_cycle(
                 expected_basis_ref=binding["basis_ref"],
                 expected_owner_refs=_refs(binding),
                 expected_binding_ref="sha256:" + budget._digest(binding),
-                request_id=("current20-" if current20 else "nas-")
+                request_id=("model-" if model_profile else "current20-" if current20 else "nas-")
                 + budget._digest(
                     [
                         record["policy_ref"],
@@ -1018,7 +1160,8 @@ def run_kis_paper_current_stock_cycle(
             leg_count = 1
             outcome = (
                 _recover(record, root, paths, client_factory, clock, pointer)
-                if current20 else _recover(record, root, paths, client_factory, clock)
+                if scoped
+                else _recover(record, root, paths, client_factory, clock)
             )
             _save(pointer, record)
             return outcome

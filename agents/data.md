@@ -7,32 +7,65 @@ Never KIS_LIVE_*/secrets/raw market rows/private amounts in output.
 
 ## Ready / Owned / Due
 
-NEW official Treasury CC0 rates READY8fdbbf88 under
-A/data/current-public-treasury-curve-acquisition-20261020-v1/source-recovery-r1:
-8annualHTTP200/0redirect-retry,1950dates2019-01-02..2026-10-19,3M+10Yknown,
-85unreported weekdays unfilled/unclassified,2.75MB/17readonlyMfiles,
-49checks11SYN/60activeupper. Current-vintage/revisable, not historicalPIT/
-release availability. FRED rights/Board failed handoff remain scopedSTOP,
-0seriesGETs there, no old response-length/completeness inference.
+Full194 portfolio input READY under
+A/data/current-portfolio-objective-full-context-input-20261020-v1/CONSUMER.json
+8efcf1536d66a622ef934292644140393cd66ba534c051e87547307931fe5675:
+42905TRAIN context rows/34unknown retained, identical4whole-date100row loss
+exclusions yield42805supervised, INNER1575/PRED1675/POINT25.
+202checks/one derivation0retry/23.77activeupper, canonical FP64 indexed joins,
+exact FINAL price affines/no inverse FP32/known-only context reconstruction.
+Inputs target-free where required; labels separately mounted,0Outer decodes.
+Consumer: matched MSE/direct-log-wealth pilot COMPLETE, twoCUDAfits/12cells/
+primaryFAIL (growth up, DD worse). Do not derive inputs or fit again.
 
-Actual lagged context join READY0cfe0841/187checks11SYN/5580scalar error0:
-A/data/current-costband-rate-context-input-20261020-v1/CONSUMER.json.
-42905eligibleTRAINinputs/42871known+34UNKNOWN;575rows23dates lack older
-rates. INNER1575/PRED1675/point25 unchanged. Common INPUT mask precedes
-target masks; same price baseline/macro keys and FINAL price affines.
-Macro TRAIN-only input normalizer;2official-session lag/21session change/
-source age retained. Lag2 is an assumption, not historical release/PIT proof
-or Execution promotion. GeneratedM macro-context.npz9f28ea0a/540439bytes.
+WindowOOF Consumerbdf4795b ready162checks/3.55Mscalar checks/18.29MB:
+TRAIN27755/34055/40305/43480,INNER1575each,PRED6300/6250/3075/1675,
+canonical22CLOSE->21returns/per-fold input-only affines/34unknown each.
+Its fourNEWfits+oneCPUgate also CLOSED94f2b5c6/science+financialFAIL.
 
-Window family metadata/inputs b78e712c ready in M/current-close-window-
-costband-20261020-v1, same512-close cohort/one252TRAIN affine. Original8345
-members retained as6670FIT/1575internal/100purged;Outer1675 unchanged.
-Data derivation complete; Archimedes now owns numerical Window family
-GO79acef40/W21 epoch artifacts. Data role itself does not fit models.
-Source point17a03669 remains target-freeFINAL affine, not old global0929.
-Boyle checks exact selected-long-TCN input-affine/layout compatibility under
-A/data/current-long-tcn-point-input-compatibility-20261020-v1. Prefer a proven
-existing point ref over redundant derivation; no new calls/targets/forecasts.
+Paper input root A/data/current-window21-paper-input-20261020-v1:
+Oct20 actual derivation STOP/closed/unretried, not a ready model input.
+Reusable extractor-r1 SOURCE-READY: extractor.py144ada05b4f05246f3f72dee0b04de9f4e83de086755c9d20d33001532650bf3,
+functionAST5904f1a4;61.331cumulativeactiveupper/1556.824elapsed.
+extract_input(entry_date,output_root,market_output_root) requires actual
+Oct20 capture planindex1 forOct21. Nativecold input_unavailable/nooutput;
+SYNproducer loading reaches only inference sentinel. No actual futurecapture,
+availability/model inference/Task operation or stale-input fallback proven.
+
+Official Treasury CC0 original source8fdbbf88:8annualHTTP200/0retry,
+1950dates2019-01-02..2026-10-19/3M+10Y/85unreported weekdays unfilled,
+2.75MB/17readonlyMfiles/49checks11SYN/60upper. Current-vintage/notPIT.
+Lagged context0cfe0841/187checks/5580scalars0gap:
+42905eligibleinputs42871known34unknown/23input-only unavailable dates575rows,
+INNER1575/PRED1675/POINT25. Lag2/lag23/staleness assumptions, not historical
+publication proof. Macro archive9f28ea0a. FRED rights/Board handoff scopedSTOP.
+
+WindowData b78e712c source/common512-close cohort/one252TRAINaffine retained;
+Archimedes numerical3fit family COMPLETE02cffb45/audit49f94193, no Data rerun.
+LongTCN compatibility root current-long-tcn-point-input-compatibility-20261020-v1:
+READY existingFINAL17a03669 exact affines/layout, old0929 global affine incompatible;
+no redundant derivation. Its separate point dispatcher failed, not a Data fault.
+
+The exact futuremeasurement plan c64d576b covers ACTUAL forecasts:
+oldfour-model e1fc1ada/9d68b3f3 plus pairedPRICE/MACRO COMMITTED2b168e66/
+CLOSED066c7113 at04:21:22UTC. Target sessionsOct20/21/22/23/26 unknown.
+No TCN/Tree failedpoint adoption. Existing Oct27 Task does not automatically
+consume new points. r3 activation414c37b7 made0updates/0Run, originaltarget/
+fullACL verified unchanged: unexplained non-target definition drift.
+r4SOURCE60320764/53checks replaces all-PC stability with literal-target
+fresh comparisons/owner/source/ACL checks/oneupdate-onerollback caps.
+Historical drift count/class UNKNOWN_AT_LEAST_1_OF_253, not benign/attributed.
+Parent authorized exact r4GO33afcbc4 activation; actual result pending.
+Same six-model payload/Oct26 23:45..23:55UTC/120active600elapsed window;
+no futurelabels/captures/API/newtrigger/TaskRun. Preserve snapshots/debits.
+
+CFTC NasdaqMini209742 history continuation COMPLETE under
+A/data/current-public-cftc-nasdaq-positioning-acquisition-20261020-v1/history-continuation-r1:
+Consumerf7bbee56/CLOSEDa7fead1c/canonical27507143;406weekly2019Jan8..2026Oct13,
+406net/OI known/0zero denominators/interior holes.1metadata+2dataGETs/
+0retry/61.758cumulativeactiveupper. Broad-discovery STOP remains closed.
+ALL406 historical publicationtimesUNKNOWN/current-vintage, not PIT or
+Execution input. No invented Friday/Tue availability or further acquisition.
 
 Old20 D1 exact outcome validated215efd55 under
 A/data/current-old20-d1-first-owned-outcome-20261020-v1/metadata-outcome-r1:

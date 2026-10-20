@@ -10,6 +10,43 @@ Private free Data/Research/Paper delegated, never KIS_LIVE_*/real money.
 No secret/account/order IDs, raw bodies/prices/private amounts in output.
 Do not rerun consumed creators/installers/fits/forecasts for metadata.
 
+### Current Integration / Verification
+
+Generic MODEL_PROPOSAL_NAS and canonical GPU-lease ownership fixes are SOURCE
+verified, not deployed. New futurecohort preparation:
+D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1.
+HostCPU proposal->same native shared bank,25rows/NASonly/NYS+unusedslotscash;
+plannedentryOct21 14:00UTC/exitOct27>=19:45 operationalproxy. Oldimages/tasks
+unchanged; no new bank, substituteintent, deployment/fill/replayparity claim.
+Privatevolume mounts /app/private; frozen pending proposals reuse exactbytes.
+Data extractor absolute source:
+D:/thericher-v2/model-artifacts/data/current-window21-paper-input-20261020-v1/extractor-r1/SOURCE-READY.json.
+Requires actualOct20captures/index1 forOct21; currentOct20STOP staysclosed,
+nativecold unavailable/nooutput is not a prepared futureinput.
+
+Fresh verification authority:
+D:/thericher-v2/model-artifacts/verification/model-profile-gpu-lease-20261020-v1/authority.json.
+1370source digestd10698dca5d9486d65645f4a814136d8892b35f8f68fd4e31e50158a0706b88e,
+1720changed-path serialPASS2skip/18537fullPASS24skip/18561collected/8workers/
+helper0/verifiedcleanup/Ruff/default-research-accounting sample-envComposePASS.
+AGENTS072d44eb/DECISIONS89b13c15 unchanged; docs/external-only reuse requires
+exactproduction/control equality and fresh external/native focusedchecks.
+No repeat fullsuite merely for MD updates. No source-only runtime inference.
+
+Latest CUDA campaigns CLOSED:3originalwindow,2matchedMSE-utility,4newOOFWindow
+fits+oneCPUgate. Recent-reversal mechanism supported/433checks, not causal
+profit. Allactors joined/canonicallease released; no completedfit duplicate.
+Six-armfixedblend/learnedgate/utility primariesFAIL, no outcome-driven rescue.
+
+Six-model measurement update source-r4:
+D:/thericher-v2/model-artifacts/data/current-long-costband-point-measurement-adoption-plan-20261020-v1/source-r4/HANDOFF.json.
+r3activation414c37b7 stopped0updates/ORIGINAL+ACLverified on unattributed
+non-targetdefinitiondrift. r4SOURCE60320764/53checks targetonlyRPCfence,
+ParentGO33afcbc4 authorized oneupdate/onerollback/0Run/newtrigger. Actual
+activation outcome pending; sameoriginalOct26 23:45..23:55UTC window/payload.
+Do not rerun consumed old installers or claim all-PC stability/guaranteed
+rollback. Preserve exacttargetsource/owner/ACL/freshcompare/readback checks.
+
 | Owner | Actual Deployment / Due |
 | --- | --- |
 | NAS |thericher-kis-paper-current-nas-model-20261015/image87697f8e;8 retained FULL; exit>=Oct21USOPEN, first13:40UTC=22:40KST. |
@@ -145,46 +182,51 @@ UNINSTALLED; no new model export qualification calls.
 
 ## Source-Safe Operations
 
-CONSUMED completed long TCN worker: Parent exec92557,
-A/research/current-costband-tcn-convergence-development-20261020-v1/
-runtime-source/attempts/attempt-1. Source15999a9c/GO inside family is CONSUMED.
-Do not dispatch again, compete for gpu.lock or edit frozen runtime/trainer.
-CLOSED40af954a confirms03:44:43UTC/worker0/onefit/actor+lease closed;
-27epochs/selected2/INNER_PATIENCE/2970updates6281forwards/123audit checks.
-Seed2702/pack16/max256pat25,5400TRAIN+240finalization/6000active9000elapsed
-origin02:37UTC. Softstop/rollback CPU-proven; timed output !=convergence.
-Previous2701short exit126/450s remains UNKNOWN/incomplete, no point/retry.
-Consumer-source/PARENT-EVALUATION-GO.json a03dfbf4 is CONSUMED:one CPU
-execution failed ValueError after1analytic reference/0economic cells/0NN-GPU.
-evaluation-actual/EVALUATION-CLOSURE-READBACK.json5d4ae56e retains45error
-charge/cumulative2763.743upper; Outer completion UNKNOWN. First-cause source
-diagnosis only, not permission to replay its frozen0retry command.
+Completed numerical launchers/GOs below are CONSUMED, not commands to rerun.
+Parent delegates exact new numerical GO/path/hash to a named executor; an MD
+does not prove an active worker. Canonical GPU lease:
+D:/thericher-v2/model-artifacts/engine-research-agent/locks/gpu.lock.
 
-Actual new learned OOF Tree root current-oof-lstm-prior-tree-development-
-20261020-v1:COMPLETE/independent8214fae2/6250checks/oneTree+3analytic,
-30cells/science+financialFAIL. Old STACK17 still unavailable. Do not invoke
-its consumed PARENT-GO or re-fit to change metrics. New four-way prospective
-point source under current-oof-lstm-prior-tree-point-20261020-v1/source is
-CLOSED_UNAVAILABLE:dispatcher reserialized mounted GO but passed original
-hash/88f0d8d2.31.422upper retained, actor+lease closed/native counts UNKNOWN,
-no commit or old0retry replay. New TCN-only point source is not a forecast GO.
+LongTCN runtime-source/attempts/attempt-1 under
+A/research/current-costband-tcn-convergence-development-20261020-v1:
+CLOSED40af954a/27epochs/selected2/2970updates6281forwards/actor+lease closed.
+Consumer GOa03dfbf4 failed extra.bytes ref BEFORE Outer np.load/
+firstcause7348633e;1analytic/0cells/45charge retained. Do not replay.
+New TCN point9cc5ec98 also CLOSED/no forecast/pre-lease ValueError; duplicate
+--host fullcaller reproduced in firstcause-r1/24checks/cd348667, not proof
+of the unretained historical first-fired guard. No oldpoint retry.
 
-One-day foundation binding-r1/actual COMPLETE UNKNOWN_PARTIAL:
-21GPUforwards/cachec4dcbde0/oneconvergedTTMFAIL/RAWnonconvUNKNOWN,
-12known6UNKNOWN/18cells. Its GO is consumed. Old five-day source staysclosed.
-Independent caller conversion/endpoint binding bridge pure-API gaps;
-never rerun fits to repair those already-bridged component limitations.
+Window root A/research/current-close-window-costband-development-20261020-v1:
+GO79acef40 CONSUMED, EXECUTOR-CLOSED02cffb45/3fits3allocations/21epochs each/
+selected1/allactors+leases closed.30cells/audit49f94193/16138checks.
+Do not launch its host/evaluate.py again. Singles financialscreenPASS but
+proper-scoreFAIL; third ties/no ensemble or longer-window advantage.
 
-Window SOURCE09968753/READY5135e677/Consumerb78e712c has delegated Parent
-GO79acef40 under current-close-window-costband-development-20261020-v1.
-Archimedes exclusively owns sequential21->63->252 then one evaluation; W21
-actual PRE-NATIVE/epochs exist. Do not launch a second owner.3600active/
-14400elapsed from03:20:08UTC,100upper carry/900percase/128epochs/pat20.
-Exact cleanup before next case; missing not zero/no partial blend/no retries.
-MacroData0cfe0841 is actual common-cohort join, not PIT guarantee. Kepler
-source861925b3 has GObe9d1071 actual launch04:11:14UTC/two CPU fits+one evaluation.
-Boole direct-utility pilot and
-Pascal TCN-only point are source/native preparation, not numerical commands.
+Macro root A/research/current-costband-rate-context-hgb-development-20261020-v1:
+GO be9d1071 CONSUMED/2CPUfits/best84 and1; historical Outer ABI int8/int64
+failed/1intake/0cells. Paired point-source-r1/PARENT-GO311eb86b CONSUMED:
+actual-v1/COMMITTED2b168e66 at04:21:22UTC/PRICE+MACRO25rows each/2CPUforwards/
+0fits-outcomes; CLOSED066c7113. No reforecast or old evaluation rerun.
+
+OOF Tree root current-oof-lstm-prior-tree-development-20261020-v1 COMPLETE/
+science+financialFAIL. Its point oldsource first dispatch failed GO reserialization
+hash/88f0d8d2/31.422upper/native counts UNKNOWN/no forecast/actor+lease closed.
+One-day foundation binding-r1/actual UNKNOWN_PARTIAL:21GPUforwards/one
+convergedTTM headFAIL/RAWnonconvUNKNOWN. Oldfive-day/shortTCN/STACK17 failures
+are closed. Do not invoke consumed installers/fits/forecasts for metadata.
+
+NEW runtime SOURCE preparation (NOT numerical commands):
+A/research/current-portfolio-objective-matched-pilot-preparation-20261020-v1:
+Boole57nativeCPUchecks/f7a20936 and full194Data8efcf153/202checks ready,
+end-to-end host/Data/native integration pending. Two matched MSE/log-wealth
+fits require exact Parent GO and fresh actual CUDA optimizer/checkpoint
+proof; no current market dispatch inferred. All prior/source/failure costs
+stay inside proposed1200active5400elapsed from04:05:57UTC.
+Confucius NEW six-arm fixed cached-P ensemble is source/metadata/review only.
+Archimedes simple Window21 CPU proposal adapter is source/native only, not
+capital/sizing/order/deployment. Boyle futuremeasurement plan does not alter
+the originalOct27 Task. Never adopt uncommitted/late/failed points.
+Do not compete with a named owner or bypass unknown inventory/budget.
 
 Latest new model roots (not commands to rerun):
 A/research/current-costband-indicator-hgb-development-20261020-v1:

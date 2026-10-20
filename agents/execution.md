@@ -5,6 +5,32 @@ A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
 
+## New Model Proposal Integration (Not Deployed)
+
+Archimedes owns A/execution/current-window21-provisional-nas-deployment-20261021-v1
+SOURCE preparation for onecohort USOct21 14:00UTC entry/exitOct27>=19:45UTC.
+Generic ModelPaperInput/Metadata/Row/Target and MODEL_PROPOSAL_NAS code is
+verified86focused/31independentchecks plus1720serialPASS2skip/full18537PASS
+24skip/8workers/helper0/clean/Ruff3sample-envCompose,1370sourcesd10698dc.
+No new image, installedTask, modelproposal or broker effects proven yet.
+
+HostCPU producer retains all25rows; NAS eligible only, NYS/unusedpositive
+slots stay cash without replacement/renormalization. Callerceiling scales
+positive_slots/5 BEFORE venue skips; never a new tenth. Distinct policy pointer,
+same existing bank/native custody; pending recovery precedes fresh input.
+Nativezeroeligible=no_intent; legacy fingerprints/default paths unchanged.
+Public input/adapter/checkpoint refs freeze before private effects; restart/
+exit reuse identical proposal, not reforecast. Existing privatevolume mounts
+/app/private, never /app/private/canary. CPU/GPU parity and fulluniverse replay
+equivalence UNKNOWN; declared operational exit proxy is not historical replay.
+
+Data extractor-r1 SOURCE144ada05 requires actualOct20capture index1 forOct21.
+Cold input_unavailable/nooutput is not readyinput. CurrentOct20 derivation
+STOP/closed/unretried; no fabricated/stale/futureinput fallback. Parent handles
+new committed-source image/activation only after exact source/native evidence.
+OldNAS8/F9/nightly/Goal97 state/tasks/images unchanged. Real aggregate bank/
+foreigninventory/unknownreservation checks apply, not profitability/all-flat gates.
+
 ## Current Technical Recovery
 
 CURRENT F9 image49933b02/source5ecfccef/manifest5f53ec50/guard4a468c0a.

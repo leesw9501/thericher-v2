@@ -7,31 +7,57 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Ready / Owned
 
-Primary-paper proposalfc524f0c complete under
-A/research/current-portfolio-objective-strategy-review-20261020-v1.
-Boole now prepares ONE matched MSE/direct-net-portfolio-utility pilot under
-A/research/current-portfolio-objective-matched-pilot-preparation-20261020-v1.
-Source/native CPU only,240active1800elapsed/0market-GPU; same architecture/
-cohort/budget/costs, train+chronological inner curves, no new framework.
-Keep full context/34unknown members and identical declared date exclusions.
-Strongest kill: utility must improve growth without worse drawdown versus
-matched MSE AND uniform. Independent5session cohorts pay both legs even when
-weights repeat. Papers' futures/monthly claims are not project alpha.
+Boole primary-paper proposalfc524f0c became matched MSE/direct-net-log-wealth
+sourcef7a20936/57nativeCPUchecks/7313parameters/seed3101. Claude REVISE adopted
+monotone committed-cohort log wealth BEFORE market work; both arms share
+init/mapping/INNER utility selection/earlystop, epoch0 uniform explicit.
+Kernel39.260upper plus oldproposal50.191 retained. Runtime COMPLETE under
+A/research/current-portfolio-objective-matched-pilot-preparation-20261020-v1/runtime-source/actual:
+twoCUDAfits MSE17epochs/best5 vslogwealth18/best6/pat12,1890marketupdates.
+12cells primaryFAIL:10bp growth/DD MSE+.1403/.3235,utility+.2170/.4924,
+uniform+.1376/.3261 (percentNAV). Growth improvement failed risk criterion;
+overfit afterselection.236.126familyactiveupper/allactors+lease closed.
+QUALIFIED_COMPLETE label is technical completion only, not model promotion.
+Full194Data8efcf153/202checks ready:42905context/34unknown retained,
+same4dates100rows excluded BOTHlosses,42805supervised. No known-only substitute.
+Two-fit proposal1200active5400elapsed includes all source/native/review/failure/
+Data costs. Strongest kill: B growth must beat BOTH matched MSE and uniform
+with no worse DD. Fixed five-session cohorts pay both legs, no false temporal
+turnover netting; common proportional fees are constant allocation gradients.
 
-NEW one-day TTM192 head actually converged354iterations but scienceFAIL;
-RAW5121000nonconvergenceUNKNOWN,12known/6UNKNOWN economics. No head/grid
-rescue. New learned OOF LSTM/prior/volume Tree COMPLETE/8214fae2 and
-scientific+financialFAIL. Its four-way point first dispatch failed GO byte
-hash/88f0d8d2,31.422upper retained/actor+lease closed/native counts UNKNOWN.
-No committed forecast/old0retry replay; use actual native/caller integration
-tests in NEW source rather than repeat the broken schedule/dispatcher.
-Old actual forecaste1fc1ada remains retained and future outcomes unobserved.
+Kepler invoked Strategy review under
+A/research/current-next-information-hypothesis-review-20261020-v1:
+max3concrete free/noauth/KIS-compatible new-information hypotheses from primary
+sources, novelty against existing studies, exact input/rights/kill. No data
+acquisition/model/Outer/GPU or reading-list platform. Treasury already used;
+do not propose another architecture/price-only rescue grid by default.
 
-New information acquired: Treasury CC0 1950dates, lagged-context Data0cfe0841
-ready for Kepler matched price/macro HGBs; current-vintage/notPIT. Archimedes
-owns delegated21/63/252 close-window LSTMs/GO79acef40/W21 epoch artifacts.
-Long TCN2702 completed27epochs/selected2/onefit/actor+lease closed. Its CPU
-evaluation failed ValueError/0cells, not a scientific result or a research hold.
+Window3LSTM fits COMPLETE/02cffb45/30cells/audit49f94193:
+proper-scoreFAIL all/singlesfinancialscreenPASS/thirdFAIL because identical
+baskets.10bp growth+.73515percent/DD.49368 vsuniform+.13764/.32607;
+higher DD/adaptive reuse explicit, no window/ensemble or independent alpha.
+Archimedes prepares simple Window21 CPU proposal adapter, not deployment.
+
+Macro2CPUfits best84/1; historical OuterABI failed/no economic result.
+BOTH prospective25-row points ACTUALLY committed04:21:22UTC/2b168e66,2CPU
+forwards0fits-outcomes. Earlier four-model e1fc1ada also retained.
+FutureOct20/21/22/23/26 unknown. FailedTCN/Tree points remain closed/notforecasts.
+Fixedsix-arm study COMPLETE9987cf19/b15c71ec:0fits-NN-GPU/48cells/primaryFAIL.
+MEAN6+.4681percent/DD.4902 at10bp does not dominate Window+.7352/.4937
+or allsinglemodels. No mixtureweight grid or oldfailedconsumer regrade.
+
+NewWindow21 fourchronologicalCUDAfits+oneCPUgate also COMPLETE94f2b5c6:
+epochs21/46/51/33,30cells/science+financialFAIL; learnedgate-.0208percent/
+DD.4923 vsuniform+.1376/.3261. OldfourLSTM caches reused, not refit.
+Mechanism diagnostic9f39fe7b/433checks:score-rank median correlation last1
+-.818/mean5-.740/mean21-.379;95.4percent SYNgradient sensitivity latest5.
+Supports recent-reversal representation, financial causation UNKNOWN.
+
+Boole now owns SOURCE/contract under A/research/current-residual-regime-expert-preparation-20261020-v1:
+check prior studies/primary sources and choose one concrete residual/regime
+hypothesis with cheap rule/linear controls before a new DL campaign. No
+marketnumerical dispatch yet; finite180active3600elapsed preparation.
+All historical comparisons are adaptive reused data, not actual KIS PnL.
 
 ## Earlier Mechanisms
 
@@ -52,10 +78,11 @@ technicalfailure preCUDA/input/model, CLOSEDno retry/performanceUNKNOWN.
 GenuineLSTM64 and two indicator HGB fits completed; source-only projections
 are superseded by Engine results. New chronological stacking completed four
 CUDA LSTM fits02:00:17UTC; CPU firstcause/META preparation remain separate.
-Boole feasibility1eedd47f found no saved per-row TTM embedding cache. Next
-isolated hypothesis compares fixedTTM192 and matchedRAW511 classifiers on
-original post-checkpoint8345/1675 keys. Boole/Boyle own source/Data preparation,
-no new foundation forwards/fits yet. Legacy SPY points remain closed.
+Boole feasibility1eedd47f found no saved per-row TTM embedding cache. The
+subsequent one-day TTM study actually used21CUDAforwards and completed one
+convergedTTM192headFAIL;RAW512MAX1000nonconvergedUNKNOWN.12known/6unknown
+of18cells, not two converged heads or independentperformance. Allclosed;
+no new foundation forwards/fits merely to rescue it. LegacySPY points closed.
 Claude REVISE concerns remain contract limits, not an approval hold.
 
 ## What Current Evidence Rejects
