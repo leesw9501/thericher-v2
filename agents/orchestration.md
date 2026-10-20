@@ -10,13 +10,13 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 | Owner | Current Package |
 | --- | --- |
 | Parent | Actual archive7fe5dac2 integration/Git; company NAS closure still due. |
-| Boole / Engine | HGB/sector producer2e61d138 READY32native2cold-import, no market point. |
-| Kepler / Data | Explicit60-second bounded token-start calibration for12ETF refresh; prior0GET defers retained. |
-| Pascal / invoked Engine | New paired indicator-path TCN source/native;1675target-free PRED, no actual training inferred. |
-| Archimedes / Execution | Offline maintenance complete, no broker/Task/new opportunity. |
-| Bacon / invoked Infra | F9 reader480pins29native READY; fresh exact onceRO diagnosis after maintenance. |
-| Confucius / Strategy | Proposald406c280 adopted; scopedClaude1b659f1bREVISE/native conditions relayed. |
-| Steward | Latest sector allocation released; new TCN allocation requires fresh actual resource proof. |
+| Boole / Engine | Point8c7133fc SOURCE_READY22checks/0models, future stock input required. |
+| Kepler / Data | ETF12/264known7bdfc250 COMPLETE; new supervised TimesFM labelbinding. |
+| Pascal / invoked Engine | Cached THIRD fusion, then paired TimesFM finalblock learner/native worker. |
+| Archimedes / invoked Infra | Future single point installer source; observer quiet-window workaround rejected by actual RTH guard. |
+| Bacon / invoked Review | FoundationClaude3bb72321 complete; F9RO2f07a757/origin auditd6ced0a2 closed. |
+| Confucius / Strategy | Official native TimesFM kernel/ABI only; no numerical calls. |
+| Steward | TCN proof lease released16:28; next45minute GPU study needs actual source/resource qualification. |
 
 Existing due nightly14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
 NASexitOct21 13:40UTC; Window21 prep13:10/entry14:00. Goal97distinct.
@@ -24,6 +24,16 @@ Unknown reservations stay held. Natural-result worker uses toolclock only,
 no host polling/sleep process that would itself trip project guards.
 
 ## Throughput Review
+
+17:00UTC: two actual TCN CPU fits completed in~87fitseconds after measured
+GPU route was~25xslower. Keep both closed clocks; don't inflate GPU usage.
+All12ETF inputs264known nowready, no remaining API collector. ExactF9 RO
+proves unknown attempted state, not expiry release. Ready work: fixedthird
+cached fusion, futurepoint install, supervised foundation kernel/data/learner.
+Actual snapshot RTH guard reverses conditional night starvation hypothesis;
+NO quiet coordinator or observer edits. Reversible improvement: trace the
+real upstream eligibility branch before changing schedules from cadence alone.
+Existing stock300 consumers remain compatible; actual later data unknown.
 
 16:25UTC: actual unused-context archive completed without broker effects,
 same-GO recovery7fe5dac2 preserves F9 reservation. TCN feature derivation done;

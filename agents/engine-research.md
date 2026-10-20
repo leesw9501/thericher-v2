@@ -41,12 +41,36 @@ ClaudeREVISE1b659f1b/18.406upper: prefix/last-state parity, exact ALLTRAIN
 input scaler membership, matched init/RNG and frozen pace conditions relayed.
 Source/native preparation alone is not an actual GPU training claim.
 
+TCN GPU precursor now CLOSED6c11d3e4 UNAVAILABLE0marketfits/oneallocation/
+12CPU+CUDA SYNupdates/372.763upper;20epochs2036.9s>600. CPU warm updates
+.015/.011s versus CUDA .40s motivated NEW CPU route, no old cap regrade.
+current-causal-indicator-path-tcn-cpu-20261021-v1/FINAL.jsond16a455a COMPLETE:
+2fits21/34epochs,best1/14,6050updates/~87nestedfitseconds,67datePREDproperPASS,
+financialFAIL.10bp PATH+.3854/DD.3474 versus uniform+.1376/.3261 percentNAV;
+6new6cached/643.617upper includes old372.763once,0newSYN/GPU/alljoined.
+Cached fixedthird HGB/sector/PATH3 now freezes common66 INPUTkeys beforelabels;
+not an old67 regrade, hidden intersection or weight search.
+
+NEW current-timesfm-finalblock-adaptation-20261021-v1/8ff10207:
+16:55:41..19:55:41UTC/3600active10800elapsed/oneGPU2700inclusive/
+2fits/onePRED6new6cached/0retry. Samefreshhead versushead+ONLYnativeblock19,
+strict official2f776efe checkpoint and differentiable nativeforward, never
+forecast/decode. Kernel/Data/learner/native gradient/fullstate/memory proof
+beforemarket;64max/pat8/INNERCEbest/fixedLRs. No actual training claim yet.
+Claude3bb72321 PROCEED_WITH_NAMED_LIMITS/30upper: unequalcapacity/calibration
+confound representation attribution; no extra fits/controls/criteria added.
+No public code in Execution; old0backbone-update failures remain immutable.
+
 HGB28/sectorLSTM6 prospective producer2e61d138/ABI8e8ff87c READYSYN at
 A/research/current-hgb-sector-prospective-producer-20261021-v1:
 32native2coldimports/2restores2SYNCPUforwards/22.460upper/alljoined.
 Exact25stocks throughOct20/12ETFthroughOct19/sourceclock/affine/class masks
 required; no fresh market forecast/deployment yet. This HGBprefix28 belongs
 to a7db matched family, NOT the separate operational HGB61point406ec7c1.
+Point8c7133fc/source3af7acd8 READY22checks/0models, plannedOct21
+00:15..00:25UTC afterOct20stockcapture, targetOct27CLOSE. Installer being
+prepared, no Task registration/actual forecast. StockMODP1 base-prefix lineage
+matches25training sources; ETFMODP0 stays separate and unqualified CA/PIT.
 
 ## Frozen Completed Package History
 

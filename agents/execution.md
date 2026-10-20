@@ -41,6 +41,17 @@ F9 category readerbc0f59d3/ABIe6af0cba READY480pins/29native real constructor
 checks; parent-owned fresh RO dispatch after quiescence, no observe/recovery.
 Never release F9 reservation or replay substitute intent to fix this context.
 
+Actual categorical F9 RO2f07a757/host-r2 at16:30UTC:480pins/29Linuxchecks/
+60files unchanged/oneRO4.83s/alljoined. outcome_unknown/reconciliation_unresolved,
+startmarker present but no submitted-time/brokerref/ack, TTLexpired/no terminal
+proof. Reservation confirmed. Not unattempted/flat/zero ancestry.
+Origin auditd6ced0a2: marker precedes final prePOSTguards, but no proven
+first-intent/host-wake link and ordinary recovery may overwrite native evidence.
+Later0POST cannot prove original non-send. Keep held/unknown, no newKIS call.
+Actual snapshot source88bca32e exits before token bridge outsideRTH, so
+22:30/23:00stock and13:10prepare need no observer pause/coordinator. None
+built/installed; future data quiescence remains unknown. Calendar10/mockguard3.
+
 ## Frozen Inspection / Adapter Readiness
 
 Archimedes owns only NEW current-oct20-natural-paper-outcome-20261020-v1

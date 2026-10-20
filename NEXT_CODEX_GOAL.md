@@ -33,8 +33,9 @@ inventory, substitute unknown requests or a new/profit-expanded budget.
    F9 15:10UTC; Goal97 distinct. Actual Oct20 nightly86ebc7da unavailable/
    retained_context_recovery_required/0newAPI-order starts; F9pending/
    exact_request_retained. Exact F9readbacke47e5b40 keeps one pending leg.
-   Missing lifetime/phase/TTL/proof categories are being added to a strict
-   source-only reader, not inferred flat/zero ancestry/reservation release.
+   Actual RO2f07a757: outcome_unknown/start marker/no ack or brokerref,
+   expiredTTL/no terminal proof; not unattempted or flat, reservation held.
+   Origind6ced0a2 does not prove first submit cause. No substitute/release.
    Do not replay consumed opportunities or invoke observe() as a reader.
    NAS accounting caller5f0d6f83 ready; actual accounting still unobserved.
 
@@ -53,21 +54,27 @@ inventory, substitute unknown requests or a new/profit-expanded budget.
    Preserve as adaptive heterogeneous evidence, not independent alpha.
    Exact prospective CPU producer2e61d138 READY32native2cold-import,
    2SYNrestores/2SYNforwards only; no market point until causal inputs exist.
-   NEW matched indicator-path TCN proposald406c280 under
-   A/research/current-causal-indicator-path-tcn-20261021-v1:
-   latest3 versus identical raw41x3/latest3 head plus causal21-state paths;
-   original67dateFINAL, not66dateHGB.2fits/oneGPU1800s/onePRED6cells/0retry,
-   2700active/16:11:38..18:11:38UTC;native real pace before market.
-   Preparation is not GPU training. Don't duplicate completed fits/dummy load.
+   TCN GPU precursor6c11d3e4 CLOSED0marketfits/oneallocation/SYNproofPASS,
+   pace2036.9s>600. NEW faster CPU route d16a455a CLOSED2fits21/34epochs,
+   best1/14/6050updates/PREDproperPASS-financialFAIL/6new6cached/
+   643.617upper, original67date cohort. Don't repeat completed fits.
+   Cached THIRD fusion freezes common66 INPUTkeys before labels; no hidden
+   cohort intersection/weight search. NEW TimesFM final-block adaptation
+   8ff10207 at A/research/current-timesfm-finalblock-adaptation-20261021-v1:
+   samehead frozenbackbone versushead+nativeblock19/postcheckpoint512input,
+   3600active/16:55:41..19:55:41UTC/oneGPU2700/2fits/onePRED6cells/0retry.
+   Kernel/Data/learner/review preparation is not actual GPU training.
 
 5. Data prospective readiness1c6f9d74: stocks throughOct19; Oct20 not closed
    at inventory. Existing22:30/23:00UTC source-plan visits remain unchanged.
-   Kepler prepares separate12ETF MODP0/AMS dailyGET refresh BYMD20261019,
-   all22closes required, no MODP1/imputation/stale fallback. Prior refresh
-   made0GETs and remains so. Two pre-client300-second guard defers also
-   made0GET/POST; new scoped60-second calibration uses existing native API
-   and one/minute evidence, not global policy/reset.1POST<=12GET/0retry,
-   exact owner/cursor/storage required; no provider quota claim from defer.
+   ETF refresh COMPLETE7bdfc250:12x22/264knownSep18..Oct19/MODP0AMS,
+   4reused+8new;12GET2POST0retry. Initial0GETdefers remain unchanged.
+   Actual snapshot source88bca32e exits before token bridge outsideRTH,
+   so NO quiet coordinator/observer changes needed or installed. Preserve
+   frozen stock300 contracts/owned visits; future success unknown.
+   Point8c7133fc/3af7acd8 SOURCE_READY22checks/0models. Prepare one hidden
+   Oct21 00:15..00:25UTC point afterOct20capture, targetOct27CLOSE notOct26;
+   installer pending, no Task registration/actual forecast yet.
    Source-only readiness is not an actual capture or future forecast.
 
 6. Existing Oct26 23:45..23:55UTC measurementffcf64a0/deployment5c237b85

@@ -18,14 +18,18 @@ reused adaptive evidence, not PIT/CA/finality/independent performance.
 Source allocation still has83unusedseconds under120, not a new derivation order.
 Prospective readiness1c6f9d74:25stocks throughOct19; existing22:30/23:00UTC
 source visits unchanged forOct20close.12ETFs oldthroughOct7/fresh4Oct16.
-New refresh current-hgb-sector-etf-live-refresh-20261021-v1 originally
-deferred twice BEFOREclient0GET/POST/12unattempted;73.358upper unchanged.
-Shared next_due advanced4minutes, not provider quota evidence. New explicit
-60-second singleclient calibration uses native existing60/300 API and official
-one/minute source, no global300 default reset or old contract rewrite.
-Bound1POST/12fixedMODP0/AMS BYMD20261019GET/0retry/storage/ownership gates;
-actual22close support still unknown until receipt. No model/Paper input
-imputation or stock reacquisition; collector activity needs actual evidence.
+Refresh COMPLETE A/data/current-hgb-sector-etf-remaining8-20261021-v1/
+CONSUMER.json7bdfc250:12x22/264knownSep18..Oct19/MODP0AMS,4reused+8new,
+total12GET2POST0retry. Token60calib8d9a74ed/155upper+remaining8/167upper
+closed/all owners released; original73.3580GET/POSTdefers unchanged.
+No global300 default or token timestamp reset. Snapshot88bca32e exits BEFORE
+token bridge outsideRTH;22:30/23:00stock300 contracts unchanged, NO quiet
+observer coordinator/pause needed. Future source success remains unobserved.
+Point8c7133fc/source3af7acd8 verifies all25 stockMODP1 training/live base
+prefix hashes; ETFMODP0 stays separate, no stock field splice. No actual point.
+Current Data work: new current-timesfm-finalblock-training-binding-20261021-v1
+supervised FIT/INNER binding fromdd00 target-free inputs, PRED labels separate;
+old extraction-only contract/0backboneupdate results unchanged, no acquisition.
 
 ## Frozen Completed Package History
 

@@ -6,7 +6,20 @@ Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 
 ## Current Allocation
 
-No current GPU training. Latest sector family CLOSED9d883b98 at
+No current GPU training. Latest actual GPU allocation was TCN native proof,
+CLOSED6c11d3e4/12SYNupdates/0marketfits/372.763upper, lease released16:28UTC.
+GPU pace2036.9s/20epochs exceeded frozen600; CPU measured~25x faster for this
+1644parameter model. NEW CPU route d16a455a completed2fits21/34epochs,
+6050updates/6new6cached/643.617upper incloldcarryonce, noGPU/newSYN.
+That original GPU stop is not a bad-model or global GPU/environment ban.
+NEW TimesFM finalblock family8ff10207,16:55:41..19:55:41UTC/3600active/
+10800elapsed, oneGPU2700lease-inclusive/2fits/onePRED6new6cached/0retry.
+Components source60/kernel150/Data90/Engine240/review30/GPU2700/eval120/
+cleanup60=3450<=3600; native memory/gradient/fullstate/source proof beforefit.
+Old8GiBcap is not global: measure free VRAM, retain4GiBdesktop, allocator
+<=16GiB only if measured headroom supports it. CPU4/RAM16GiB likewise measured.
+No allocation or training inferred from source/kernel/label preparation.
+Earlier sector family CLOSED9d883b98 at
 A/research/current-sector-path-classification-repair-20261020-v1/readout-only-r1.
 Actual SHORT31epochs/best11/1953updates, ETF26/best6/1638updates;
 two actual model fits, all actors joined/canonical lease released.
@@ -15,7 +28,7 @@ repair; two total technical allocation attempts, no debit refunded.
 New readout import repair made0model/GPU calls,6new6cachedcells once.
 HGB/sector halfpool740ae38d CLOSED3new12cached/46.223upper/0model-GPU;
 properFAIL/descriptive financialPASS, not independent performance.
-New indicator-path TCN appointment16:11:38..18:11:38UTC/2700active7200elapsed
+Frozen indicator-path TCN appointment16:11:38..18:11:38UTC/2700active7200elapsed
 at A/research/current-causal-indicator-path-tcn-20261021-v1. Max2futurefits/
 oneGPU1800leaseinclusive/6newcells/0retry;128max/pat20/LR/bestINNER.
 20epochs/arm projected within600soft required before market, otherwise0fits.

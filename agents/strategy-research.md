@@ -6,6 +6,19 @@ fitting/evaluation. No broker/credentials/risk authority. Parent shared MD/Git.
 
 ## Current Selection / Evidence
 
+TCN proposal completed via measuredCPU route d16a455a:2fits/67datePRED
+properPASS-financialFAIL. PriorGPU6c11d3e4 failed only frozen pace before
+market; no model failure/refund. Fixedthird HGB/sector/TCN exploratory pool
+binds input-only common66keys before labels, no silent old-cohort regrade.
+NEW source-supported foundation proposal8ff10207: native TimesFM2.5
+frozenhead versus identicalhead+ONLYnativeblock19, official dated2f776efe.
+Confucius owns pure model_kernel.py+KERNEL-ABI under
+A/research/current-timesfm-finalblock-adaptation-20261021-v1, no numerical
+proof/model calls in this source package. Pascal owns learner/native; Kepler
+owns new supervised binding. Claude3bb72321 PROCEED_WITH_NAMED_LIMITS:
+unequalcapacity/calibration confound mechanism attribution; no extra controls.
+Historical TCN proposal details below are closed, not current GPU dispatch.
+
 Selected d406c280 at A/research/current-next-ready-hypothesis-20261021-v1:
 paired latest-state versus causal indicator-path injection in one width8 TCN.
 Existing TCN contracts use latest-state head conditioning, not this trajectory

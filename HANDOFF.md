@@ -20,13 +20,13 @@ No operator decision is currently required.
 
 | Owner | Current Work |
 | --- | --- |
-| Parent | Integrate actual nightly archive7fe5dac2/Git and independent research. |
-| Archimedes / Execution | Exact offline maintenance CLOSED; no new broker opportunity or strategy invocation. |
-| Boole / Engine | Prospective producer2e61d138 READY32native2cold-import; only2SYNCPUforwards/2restores, no market forecast yet. |
-| Kepler / Data | New bounded explicit60-second token-start calibration for12ETF refresh; prior0GET/POST defers preserved. |
-| Confucius / Strategy | TCN indicator-path proposal d406c280 adopted; ClaudeREVISE1b659f1b scopes relayed. |
-| Bacon / invoked Infra | Strict F9 category readerbc0f59d3 READY29native; prepare/onceRO dispatch after maintenance quiescence. |
-| Steward / Pascal | TCN source/native preparation; no new GPU training inferred from assignment. |
+| Parent | Integrate closed TCN/ETF/F9 evidence and upcoming point installation. |
+| Archimedes / invoked Infra | Prepare one hidden future halfpool point installer; no actual Task registration yet. Quiet-window coordinator rejected as unnecessary. |
+| Boole / Engine | Point8c7133fc SOURCE_READY22checks/0models; awaiting postclose stock input. |
+| Kepler / Data | ETF12 complete264known; prepare supervised TimesFM FIT/INNER binding, no new acquisition. |
+| Confucius / Strategy | Official TimesFM last-block kernel/ABI only, no model calls. |
+| Bacon / invoked Review | Foundation challenge; F9 exact RO2f07a757 and origin auditd6ced0a2 closed. |
+| Steward / Pascal | Cached HGB/sector/TCN fusion, then new one-GPU TimesFM adaptation. Preparation is not training. |
 
 An MD is memory, not proof that a worker is running. New numerical dispatch
 needs the campaign's real source/native/input/resource checks. No dummy GPU
@@ -40,11 +40,14 @@ A/execution/current-oct20-natural-paper-outcome-20261020-v1/RESULT.json
 0token/GET/order starts. F9 15:10UTC pending/exact_request_retained:
 1token/19GET/0order POST starts. Next existing nightly/F9 Oct21 14:50/15:10UTC.
 
-A/execution/current-f9-exact-retained-state-readback-20261020-v1/RESULT.json
-e47e5b40: one pending leg;0current submit acknowledgements/positive linked
-fills in inspected scope. This is NOT broker-flat or zero prior effects.
-Reservation stays held. Source firstcause0950f49a identifies missing phase/
-reason/lifetime markers/TTL/proof categories; no technical cause proven yet.
+A/execution/current-f9-pending-categorical-diagnosis-20261021-v1/host-r2/FINAL.json
+2f07a757: actual RO16:30UTC/480pins/29Linuxchecks/60files unchanged.
+One outcome_unknown/reconciliation_unresolved leg: durable start marker,
+no submitted-time/brokerref/ack; TTL expired, terminal proof absent,
+reservation confirmed. Not unattempted/flat/zero prior effects; do not
+resubmit/release from expiry. Source origin auditd6ced0a2 cannot prove a
+first-intent/host-wake link; ordinary recovery may replace native evidence.
+Later0POST is not original cause. All actors joined, no recovery/API invoked.
 
 Nightly RO diagnostic a43305d7:
 A/execution/current-nightly-preintent-snapshot-20261020-v1/private/NIGHTLY-PRIVATE-PROJECTION.json.
@@ -90,6 +93,14 @@ ActualOct20 closes required, no stale fallback. All25rows/NASonly/
 NYS+unusedpositive slotscash/no renorm. Installation is not execution/fill/
 PnL/full-universe replay parity. Never rerun consumed installers.
 
+Actual snapshot source88bca32e exits BEFORE token/credential bridge outside
+US regular hours, including22:30/23:00UTC and13:10prepare. Keep observer
+tasks unchanged; NO disable/restore coordinator built or installed. Earlier
+300-vs240 starvation is conditional on actual token issuance, not every
+Scheduler tick.21:50 postclose task has35minute bound; future quiescence/
+data success unknown. Stability observer stays disabled. This source fact
+reverses the proposed quiet-window workaround.
+
 NAS accounting caller5f0d6f83/caller9fd7a2f2 READY27tests+SYNCLI:
 A/execution/current-nas-exit-accounting-readiness-20261020-v1/caller-r1.
 Exact original8 scopes/cumulative fills once; no actual private profit read
@@ -102,6 +113,7 @@ current-listing/nonPIT/provider-field/CA/finality-limited, not independent alpha
 
 | Evidence Under A/research | Actual Result |
 | --- | --- |
+| current-causal-indicator-path-tcn-cpu-20261021-v1/FINAL.jsond16a455a | Two CPU fits21/34epochs, selected1/14,6050updates/about87nestedfitseconds. PREDproperPASS/financialFAIL: PATH10bp growth/DD +.3854/.3474 percent initialNAV; uniform+.1376/.3261.6new6cachedcells/643.617upper includes old372.763once. Original67dates; no GPU allocation/new SYN updates. |
 | current-sector-hgb-fixed-pool-20261021-v1/FINAL.json740ae38d | Fixed half HGB/sector pool: properFAIL, descriptive financialPASS.3new12cachedcells/one readout/0models-GPU/46.223upper/alljoined.10bp growth/DD percent initialNAV +1.0489/.2926 vsHGB+.9546/.3675, sector+.5093/.4626, uniform+.1129/.3261. Heterogeneous FIT cohorts,66reuseddates; no weight search/Paper promotion. Parent saved-check84e07e4c. |
 | current-sector-path-classification-repair-20261020-v1/readout-only-r1/FINAL.json9d883b98 | Two actual CUDA fits SHORT31epochs/best11/1953updates, ETF26/best6/1638updates. INNERscreenPASS/PREDnotconfirmed/financialFAIL,6new6cachedcells/542.045upper/alljoined/leasefree. Original0-fit allocation and import failures retained,2technical allocations total. |
 | current-payoff-rank-fusion-20261020-v1/FINAL.json9332076d | PROD/SUM midranks6new12cached/39.626upper/0models; financialFAIL, rank proper metricsN/A. |
@@ -112,16 +124,20 @@ current-listing/nonPIT/provider-field/CA/finality-limited, not independent alpha
 Earlier peer/MLP/GRU/TCN/OOF/foundation/RAWSD history stays in role boards,
 Git and immutable A. Old failures, claims and debits never regraded/refunded.
 
-New active family A/research/current-causal-indicator-path-tcn-20261021-v1:
-proposal d406c280, appointment16:11:38..18:11:38UTC/2700active7200elapsed.
-Matched width8 TCN LATEST3 versus identical TCN plus causal21-state paths of
-momentum21/rv21/Bollinger20. Raw41x3 and latest3 head identical; path channels
-are declared intervention zeros in control, not imputed observations.
-Original67-date FINAL cohort, NOT66-date HGB/e1f13;2future fits/oneGPU<=1800s/
-onePRED6newcells/0retry. Max128/pat20/LR/bestINNER; native pace must support
-20epochs/arm in600soft seconds, otherwise0market fits. Actual feature sidecar
-derived once/90upper,43480TRAINinput/43446supervised/1575INNER/1675PRED,
-FIT-only affines4bc3b438. No market fit/GPU claim from preparation alone.
+TCN GPU precursor6c11d3e4 CLOSEDUNAVAILABLE0market fits/oneallocation/
+12CPU+CUDA SYNupdates, fullstate/RNG/prefixPASS;20epochs2036.9s>600.
+CPU warm updates .015/.011s versus CUDA .40s, so NEW CPU route above used
+the retained derivative43480TRAINinput/43446supervised/1575INNER/1675PRED.
+No old criterion, source or debit regraded. Cached third fusion now explicitly
+binds common66 INPUTkeys before labels, not a hidden67/66 intersection.
+
+New family A/research/current-timesfm-finalblock-adaptation-20261021-v1:
+proposal8ff10207,16:55:41..19:55:41UTC/3600active10800elapsed. Matched frozen
+TimesFM2.5 head versushead+ONLYnativeblock19; official2f776efe checkpoint,
+differentiable nativeforward, never forecast/decode. Strict gradients/fullstate/
+memory proof before2fits; max64/pat8/INNERbest, oneGPU2700inclusive/
+onePRED6new6cached/0retry. Source-derived params3843/9839603 unmeasured
+until native. Kernel/Data/trainer/review disjoint; no actual training claim yet.
 
 ## Data / Future Evidence
 
@@ -136,12 +152,20 @@ A/data/current-hgb-sector-prospective-input-readiness-20261021-v1/RESULT.json.
 Stocks published throughOct19; Oct20 not closed at inventory. Existing owned
 22:30/23:00UTC source-plan visits unchanged.12ETFs retained throughOct7,
 fresh4 onlyOct16; prior refresh0GETs. New12GET MODP0/AMS BYMD20261019
-refresh is a separate package, not a completed capture/forecast yet.
-Two closed client prechecks deferred0GET/POST as shared next_due moved with
-observer cadence; old73.358upper unchanged. New explicit60 single-client
-calibration uses existing SDK's60/300 parameter and official one/minute source,
-not a global default rewrite or token timestamp reset. Max1POST/12GET/0retry;
-actual acceptance remains unknown until its exact receipt. Stock due unchanged.
+refresh COMPLETE A/data/current-hgb-sector-etf-remaining8-20261021-v1/
+CONSUMER.json7bdfc250:12x22/264knownSep18..Oct19,4accepted reused+8new;
+total12GET2POST0retry,155+167upper with prior debits retained. Initial
+pre-client300guard defers0GET/POST unchanged. Explicit60 native SDK/official
+one-minute source is not a global default or timestamp reset. Future stock
+visits22:30/23:00UTC remain owned; no acquisition fallback.
+
+Point source8c7133fc/3af7acd8 READY22checks/0models:
+A/research/current-hgb-sector-prospective-point-20261021-v1. All25 stockMODP1
+training CSV/availability hashes match live-feed base prefixes; future overlap/
+terminal checks still required. ETFMODP0 stays separate, no field splice.
+Proposed one point Oct21 00:15..00:25UTC/cutoff13:25, fifth-CLOSE targetOct27.
+Installer preparation is not registration/forecast. Oct26 measurement cannot
+measure this later target.
 Exact sector affineeadf4084; no MODP1 substitution/imputation/backdating.
 
 Live507 eb69c563/498eligible9masked/507GET5POST/2128.629upper complete.
