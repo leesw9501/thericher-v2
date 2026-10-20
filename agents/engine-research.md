@@ -76,9 +76,13 @@ leasefree17:47:59UTC. READBACKce9de4e5 under that root verifies source/counters.
 TRAINloss improves while INNER worsens; patience8, not convergence.
 Scientific+financialFAIL. No forced longer epochs/refits. Selected constant
 priors cannot add rank information through a fixed affine probability blend.
-Next: source-only broader512 adaptation, Data support census prerequisite,
-not a global permission wait. Same architecture/current25 evaluation, no
-new lr/seed grid. Short source-only SPY21 entry-veto feasibility independent.
+Next broader512 Data28915bd7 now READY50275input/50270known FIT and
+24580input/24575known INNER/oneprior/current25PREDrefs reused. Actual parent
+appointment18:12:20..00:12:20UTC/10800active/GPU7200inclusive/2fitids,
+max128pat20/INNERbest/4datepack-micro512/full-gradient native proof. Data
+and source readiness are not actual GPU training; fresh allocation required.
+Same architecture/current25 evaluation, no lr/seed grid. Prepare LoRA source
+feasibility independently so a useful successor need not wait for long fitting.
 
 Broader21 is ALREADY COMPLETE8198cdbe:95epochs/best75/10830updates/15cells,
 financialFAIL/properUNKNOWN40missing. Exact A/research/current-nas-breadth-expert-preparation-20261020-v1/runtime-source/premarket-repair-r1/actual/FINAL.json.
@@ -110,6 +114,14 @@ no exposure rescale; same support/gross, no model change.1variancepass1650rows/
 Keep old HALF weights, no variance-exponent/window rescue. Proper N/A.
 Oct21 point measurement readinesscc75238b COMPLETE27checks,0point-model-
 market-Task calls, proposedOct27 23:55UTC/NOT installed; do not use Oct26 target.
+
+Market entry-veto CLOSEDf0844a74/47ON19OFF0UNKNOWN/6new9cached/
+40SYN47readback/136.395upper/alljoined/0models-GPU-labels-API.
+10bp growth/DD percentNAV gatedHALF+.5055/.2133 versus gatedUniform
++.0173/.2425 (matched screenPASS); ungatedHALF+1.0489/.2926.
+Lower growth/lower DD is NOT dominance/timing alpha or mandatory broker gate.
+Keep old default. Next source hypothesis: same frozen schedule routes OFF to
+RAWlast1reversal, not cash, full samegross; no threshold/outcome-subgroup search.
 
 ## Frozen Completed Package History
 

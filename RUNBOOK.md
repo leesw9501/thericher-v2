@@ -58,7 +58,12 @@ D:/thericher-v2/model-artifacts/research/current-timesfm-cuda-local-adaptation-2
 completed17:47:59UTC/READBACKce9de4e5:2CUDAfits8epochs/248updatesEACH,
 best0/6SYNupdates/6new6cached/1499.930upper/alljoined/leasefree,
 scientific+financialFAIL. No CPU representation/deployment equivalence claim
-or forced epoch rescue. Next broader512 scope is source/Data preparation only.
+or forced epoch rescue. Broader512 Data28915bd7 now READY50275input50270known
+FIT/24580input24575knownINNER/95.268upper/oneprior/6ROtrainerfiles,
+no PREDoutcome reads. Exact current-broader512-training-input-20261021-v1
+CONSUMER.json under A/data. New actual broader512 appointment18:12:20..
+00:12:20UTC/10800active/GPU7200inclusive/max128pat20; source/native and fresh
+lease before any market training claim, no second GPU owner.
 Third fusiona2365b02 technicalUNKNOWN/0cells,
 calendar-mask index fault; not model/financialFAIL or authorization to retry.
 ETF consumer7bdfc250 under

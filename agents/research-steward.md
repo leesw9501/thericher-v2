@@ -42,15 +42,22 @@ CUDA-local successor is now COMPLETE: READBACKce9de4e5/1499.930upper,
 scientific+financialFAIL; alljoined/leasefree17:47:59UTC. Actual lastblock
 parameters9,839,603, nonzero gradients and exact CUDA nextupdate proved.
 No convergence or selected-learning claim: INNER chose prior-only epoch0.
-Next broader512 SOURCE_ONLY preparation waits for actual Data support and
-role-isolated binding; no current GPU training/allocation inferred.
+Broader512 Data28915bd7 now READY50275input/50270knownFIT and24580input/
+24575knownINNER,95.268079aggregate including old50once; no PREDoutcomes.
+Actual appointment18:12:20..00:12:20UTC/10800active/GPU7200inclusive,
+2fitids/max128pat20/4datepack-micro512/onePRED6new6cached. Source/native
+gradient-accumulation/causality/fullstate and fresh admission/lease required;
+preparation is not training. Concurrent LoRA rank4 SOURCE feasibility only,
+0model/GPU calls, no competing allocation. Preserve desktop4GiB headroom.
 Broad21 old8198cdbe already completed95epochs/best75/10830updates;
 new custody90ecb7aa rejected duplicated dispatch with0GPU calls. A stale
 root READY is not current custody; follow nested actual FINAL/ABI first.
 
 Independent CPU sizing CLOSED3c484f19/146.276upper/3new9cached/0models-GPU,
-financialFAIL. Measurement readinesscc75238b27checks/0actualpoint/NOTinstalled.
-Data checks existing broader-training metadata only; no active collector.
+financialFAIL. Entry-vetof0844a74 CLOSED6new9cached/136.395upper/0models-GPU:
+matched screenPASS but lower growth/lower DD versus defaultHALF, not dominance.
+Short next expert-switch source work disjoint. Measurement readinesscc75238b
+27checks/0actualpoint/NOTinstalled. No active Data collector.
 No completed fit is queued again. No dummy load for GPU utilization.
 
 ## Resources And Custody

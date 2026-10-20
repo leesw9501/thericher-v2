@@ -10,12 +10,12 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 | Owner | Current Package |
 | --- | --- |
 | Parent | Point Task installed28e887fc; integrate technical faults and exact current memory, not replace unfinished Paper goal. |
-| Boole / Engine | Custody90ecb7aa prevented duplicate8198fit; short entry-veto source feasibility next. |
-| Kepler / Data | Cache-only broader512 input-support census, no labels/collector. Metadata1cddb4d complete. |
-| Pascal / Engine | CUDA-local2fits COMPLETEce9de4e5/FAIL; broader512 source-only preparation. |
-| Archimedes / Infra | Backend diagnosis5a257099 COMPLETE,1GPU4forwards/0optimizer-market/alljoined/leasefree. |
-| Bacon / Review | CUDA-local SOUND_WITH_NAMED_LIMITS exacte07fd5ab, no numerical work. |
-| Confucius / Strategy | Fixed SPY21 new-entry gate source-only, no threshold/window grid. |
+| Boole / Engine | Entry-vetof0844a74 complete; same-gross regime/reversal switch source feasibility next. |
+| Kepler / Data | Broader512 input/labels28915bd7 COMPLETE/95.268upper/alljoined; no PREDoutcomes or collector. |
+| Pascal / Engine | Broader512 actual appointment18:12..00:12UTC/10800active, source/native before allocation. |
+| Archimedes / Infra | LoRA rank4 source feasibility only,0models-GPU; backend diagnosis closed. |
+| Bacon / Review | Broader512/entry-signal challenges complete, named limits adopted; no numerical work. |
+| Confucius / Strategy | Same-gross expert-switch source feasibility, no threshold/window grid. |
 | Steward | Actual CUDA-local lease released17:47:59; no current GPU training. |
 
 Existing owned due: RTH21:50UTC/old20D122:30/new9D123:00;
@@ -60,6 +60,15 @@ unused, but Boole followed actual nested8198FINAL/ABI and prevented duplicate
 memory and verify custody before any readiness-based numerical dispatch.
 Broader512 input-support census is genuinely different and continues alongside
 fixed entry-veto source work, no GPU utilization filler.
+
+18:12UTC dispatch review: broader512 Data28915bd7 READY50,275FIT/24,580INNER
+with5unknownlabels each/input membership retained/oneprior/6ROtrainerfiles.
+Pascal one7200-inclusive GPU allocation planned, fresh admission/native proof
+still required. No competing GPU owner or foreground session wait. CPU next
+switch study disjoint; prepare a rank4 adapter source while long fitting runs
+to avoid waiting until completion to design the next useful candidate.
+Entry-vetof0844a74 reduces growth and DD versus HALF; matched selectorPASS
+does not justify a new broker/development gate or an automatic default change.
 
 ## Current Integration Evidence
 

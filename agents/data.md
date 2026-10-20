@@ -27,11 +27,35 @@ token bridge outsideRTH;22:30/23:00stock300 contracts unchanged, NO quiet
 observer coordinator/pause needed. Future source success remains unobserved.
 Point8c7133fc/source3af7acd8 verifies all25 stockMODP1 training/live base
 prefix hashes; ETFMODP0 stays separate, no stock field splice. No actual point.
-Current Data work: new current-timesfm-finalblock-training-binding-20261021-v1
-supervised FIT/INNER binding fromdd00 target-free inputs, PRED labels separate;
-old extraction-only contract/0backboneupdate results unchanged, no acquisition.
+Current25 supervised bindingd7d7cc2b COMPLETE, consumed by actual CUDA-local
+2fit studyce9de4e5; no new narrow derivation or acquisition needed.
+Broader metadata audit1cddb4d verified seven manifests: old broad21 candidate
+already completed8198cdbe95epochs, not an unused654834-row fit opportunity.
+Broad512 INPUT census COMPLETE8e14ece8 at
+A/data/current-broader512-input-support-20261021-v1/CONSUMER.json:
+507canonicalCSV refs checked once;50275FIT/122dates,24580INNER/58,
+27839PRED/66, minimum404supported peers/date/0unprocessed. Positive observed
+contiguous512CLOSE input masks/keys ONLY, no labels/floats/models/API.
+50aggregateupper includes prior20metadata once; alljoined, no qualification
+of PIT/actions/native units/historical publication or independent performance.
+Exact broader512 rawFP64 inputs+TRAIN/INNER-only labels/known-loss masks/
+date weights/one FITprior now COMPLETE under
+A/data/current-broader512-training-input-20261021-v1 and corresponding M root.
+CONSUMER28915bd7/FINAL-READBACK12checks:50275input/50270known FIT,
+24580input/24575known INNER, all feature keys retained/8nativechecks.
+45.268079newupper+50censusonce=95.268079aggregate/alljoined. Current25
+PRED1650 input refs byte-reused; no broaderPREDfloat/label derivation or
+outcome reads. Six exact RO trainer files; one prior/0recomputations.
+Physical FIT exits beforeApr8/INNER beforeJul8, exact class recipe.
+Consumer: Pascal CUDA-local broader512 training, actual parent appointment
+18:12:20..00:12:20UTC/10800active. Data readiness is not actual GPU training,
+PIT/CA qualification or an acquisition/approval gate. No active collector.
 
 ## Frozen Completed Package History
+
+Historical source requests below are NOT current dispatches. Their old
+unknown/preparation wording and unused caps never override the completed
+consumer facts above; exact actual results stay linked in Git/A.
 
 Kepler NEW current-sector-path-classification-input-20261020-v1:
 derive13channel21returntensor existing61bfstock/raw and84b36d4a12ETFarchive.

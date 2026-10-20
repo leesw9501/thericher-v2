@@ -72,12 +72,18 @@ inventory, substitute unknown requests or a new/profit-expanded budget.
    financialFAIL, no refit/rescue or CPU deployment equivalence claim.
    Inverse21variance sizing3c484f19 CLOSEDfinancialFAIL/3new9cached/
    0models-GPU; original HALF weights unchanged. Data separately checks
-   existing-cache512 support, no labels/acquisition/permission hold.507 stocks
-   have1.176M totalretainedrows but exactcontiguous512 support stillneeds
-   census. Broader21 old8198cdbe alreadytrained95epochs/best75; custody
+   existing-cache512 input census8e14ece8 COMPLETE:50275FIT/24580INNER,
+   all507CSVrefs/0unprocessed/min404peers. Actual Data28915bd7 COMPLETE:
+   50275input50270known FIT/24580input24575known INNER,95.268upper/alljoined/
+   oneFITprior. Current25PREDrefs byte-reused/noPREDoutcomes/broadPREDfloats.
+   No acquisition/permission hold. Broader21 old8198cdbe trained95epochs/best75; custody
    90ecb7aa prevented duplicatefit. Do not trust stale root READY over nested
-   runtime FINAL/ABI. Short fixed SPY21 entry-veto source feasibility and
-   broader512 foundation source preparation are disjoint, no current GPU claim.
+   runtime FINAL/ABI. Broader512 actual appointment18:12:20..00:12:20UTC/
+   10800active/GPU7200inclusive/2fits/max128pat20; source/native/freshlease
+   before actual GPU claim. Short entry-vetof0844a74 complete: matchedgate
+   screenPASS but lowergrowth/lowerDDvHALF, not a mandatory policy gate.
+   Same-gross regime-to-reversal switch source next; LoRA rank4 SOURCE-only
+   feasibility independent, no second GPU allocation or new framework.
 
 5. Data prospective readiness1c6f9d74: stocks throughOct19; Oct20 not closed
    at inventory. Existing22:30/23:00UTC source-plan visits remain unchanged.

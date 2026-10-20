@@ -22,11 +22,11 @@ No operator decision is currently required.
 | --- | --- |
 | Parent | Integrate actual CUDA training and reject duplicate completed breadth fit; keep Paper goal unfinished. |
 | Archimedes / invoked Infra | Backend diagnosis5a257099 COMPLETE/alljoined/leasefree; no current GPU owner from this package. |
-| Boole / Engine | Point8c7133fc SOURCE_READY22checks/0models; awaiting postclose stock input. |
-| Kepler / Data | Cache-only broader512 input-support census, no labels/API. Existing broad21 training already completed8198cdbe. |
-| Confucius / Strategy | Fixed SPY21 entry-veto source feasibility only, no threshold search/data outcomes. |
+| Boole / Engine | Entry-vetof0844a74 complete; prepare same-gross regime-to-reversal switch after source feasibility. |
+| Kepler / Data | Broader512 input/labels28915bd7 COMPLETE,0PREDoutcomes/API,95.268upper/alljoined. |
+| Confucius / Strategy | Fixed same-gross expert-switch source feasibility, no threshold search/data outcomes. |
 | Bacon / invoked Review | CUDA-local challenge SOUND_WITH_NAMED_LIMITS, no numerical work. |
-| Steward / Pascal | CUDA-local study completed2fits; broader512 source preparation only, no current training. |
+| Steward / Pascal | CUDA-local study completed2fits; broader512 actual appointment18:12..00:12UTC, source/native before allocation. |
 
 An MD is memory, not proof that a worker is running. New numerical dispatch
 needs the campaign's real source/native/input/resource checks. No dummy GPU
@@ -172,7 +172,22 @@ Next source-only family current-timesfm-broader512-adaptation-20261021-v1
 needs actual broader512 support/role-isolated Data first. No current GPU
 training. Data metadata1cddb4d finds1.176M retained rows across507 stocks,
 436with>=512TOTAL bars; that is not contiguous512 training support.
-Cache-only input census now owns that exact question, no acquisition/targets.
+Cache-only input census8e14ece8 COMPLETE:50275FIT/122dates,24580INNER/58,
+27839PRED/66,min404peers/date,507CSVrefs checkedonce/0unprocessed/50upper
+inclold20once. Masks/keys only, no labels/512floats/model/API. Actual Data now
+derives sameFIT/INNER FP64 inputs/known-loss masks/weights/FITprior under
+A/data/current-broader512-training-input-20261021-v1;180newactive+50oldonce,
+current25PRED1650 references reused, no broaderPREDlabel/float derivation.
+New Data COMPLETE28915bd7:50275input/50270known FIT,24580input/24575known
+INNER,8native12readbackchecks/oneprior/0recomputations/95.268079aggregate
+includingold50once/alljoined. Six exact RO trainer files, no PREDoutcome reads.
+Broader512 actual appointment18:12:20..00:12:20UTC/10800aggregateactive/
+GPU7200inclusive,2fitids/max128pat20/4datepack-micro512/onePRED6new6cached.
+Native nonzero-gradient accumulation/normalizer/causality/fullstate proof,
+fresh ownership/headroom/lease and exact Data/source freeze before fitting.
+Source/native preparation is not market training. Archimedes separately
+checks rank4 LoRA source feasibility for a later capacity-regularized candidate;
+0model/GPU calls or material kernel implementation authorized there.
 Broader21 is NOT unexecuted: old8198cdbe actually trained95epochs/best75/
 10830updates/15cells/financialFAIL, properUNKNOWN40missing targets.
 Exact path A/research/current-nas-breadth-expert-preparation-20261020-v1/runtime-source/premarket-repair-r1/actual/FINAL.json.
@@ -186,6 +201,17 @@ financialFAIL,10bp growth/DD +.6693/.3126 versus HALF+1.0489/.2926percentNAV.
 Entry notionals match exactly; no exposure rescale, no growth/DD gain.
 1variancepass1650rows/3new9byte-cachedcells/52SYN39readback/146.276upper,
 0models-GPU-API/alljoined. Keep existing HALF, no parameter rescue.
+
+SPY21 entry-veto study CLOSEDf0844a74 at
+A/research/current-halfpool-market-entry-gate-20261021-v1/FINAL.json:
+47ON19OFF0UNKNOWN,6new9cached/40SYN47readback/136.395upper/alljoined,
+0labels-models-GPU-API.10bp growth/DD percentNAV gatedHALF+.5055/.2133,
+matched gatedUniform+.0173/.2425, ungatedHALF+1.0489/.2926.
+Matched selector screen PASS; ungated comparison is lower growth/lower DD,
+NOT dominance/timing alpha or a new Paper/development restriction. Keep
+existing operational defaults. Short next source study routes OFF to raw
+last1-reversal instead of cash, full same gross/oldholding exits unchanged;
+no subgroup-return selection, threshold grid or new brokerage authority.
 
 ## Data / Future Evidence
 

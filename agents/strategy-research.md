@@ -17,6 +17,17 @@ New foundation CUDA-local engineering successor is not a claimed new
 scientific hypothesis; oldfailure/debits remain unchanged. Backend drift
 alone does not prove a kernel defect or justify a cosmetic new task.
 
+SPY21 entry-veto COMPLETEf0844a74/47ON19OFF0UNKNOWN/6new9cached/
+136.395upper/0labels-models-GPU-API.10bp growth/DD gatedHALF+.5055/.2133,
+gatedUniform+.0173/.2425, originalHALF+1.0489/.2926percentNAV.
+Matched selector screenPASS, but lowergrowth/lowerDD versus original is
+not dominance/timingalpha/default change or a new operating permission gate.
+Next SINGLE source hypothesis current-halfpool-regime-reversal-switch-hypothesis-20261021-v1:
+same frozen47/19 schedule chooses HALF whenON and rawlast1-reversal whenOFF,
+FULLsamegross/notcash, held exits unchanged; no subgroup-return peeking or
+threshold/window tuning. Source-feasibility/duplicate check before execution.
+LoRA source capability checked separately by invoked Infra, not another GPU owner.
+
 TCN proposal completed via measuredCPU route d16a455a:2fits/67datePRED
 properPASS-financialFAIL. PriorGPU6c11d3e4 failed only frozen pace before
 market; no model failure/refund. Fixedthird HGB/sector/TCN exploratory pool
