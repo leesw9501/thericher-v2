@@ -26,9 +26,19 @@ Explicit retire_expired_unstarted_daily_context sourcea5bc9bc9 archives only
 that exact unused pointer under native worker/advance/shared locks; ordinary
 run/unknown-request recovery unchanged.332serialPASS1skip/18568fullPASS25skip;
 Linux15SYN472pins/12helpercalls PASS3fa42019, actors absent8adca194.
-Actual private maintenance NOT executed. Archimedes prepares two-phase exact
-private GO/capture/effect caller only under
-A/execution/current-nightly-expired-unstarted-maintenance-20261021-v1.
+ACTUAL private maintenance CLOSED16:20:55UTC:
+A/execution/current-nightly-expired-unstarted-maintenance-20261021-v1/ACTUAL-CLOSED.json
+7fe5dac2/final7e57f284/sourceed4ae42c. Exact unused pointer archived with
+original GO/bytes; book/all foreign canary bodies/plans/reservations unchanged.
+0API/orders/credentials/Task mutations; all6containers removed/joined.
+Scope-diagnostic0links99canary2sibling; snapshot narrowed to canary and
+never reads sibling bodies. FirstRW stopped at native missing artifact-mount
+before locks/archive; same original persisted GO then validated with correct
+4mounts/RO filesystem preflight before successful explicit archive.
+Old failures/debits retained. AdditionalClaude94747dd6 unavailable, not agreement.
+Normal nightly source/image/tasks unchanged; next actual result unknown.
+F9 category readerbc0f59d3/ABIe6af0cba READY480pins/29native real constructor
+checks; parent-owned fresh RO dispatch after quiescence, no observe/recovery.
 Never release F9 reservation or replay substitute intent to fix this context.
 
 ## Frozen Inspection / Adapter Readiness

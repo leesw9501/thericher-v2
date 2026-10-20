@@ -6,11 +6,17 @@ fitting/evaluation. No broker/credentials/risk authority. Parent shared MD/Git.
 
 ## Current Selection / Evidence
 
-Select ONE nonduplicate executable GPU hypothesis at
-A/research/current-next-ready-hypothesis-20261021-v1. Existing TCN/GRU/
-foundation/indicator/window work must be checked before a new model-name grid.
-Prefer a distinct information/target/composition mechanism with actual ready
-data, strongest kill and at most two future fits. No training/lease claimed yet.
+Selected d406c280 at A/research/current-next-ready-hypothesis-20261021-v1:
+paired latest-state versus causal indicator-path injection in one width8 TCN.
+Existing TCN contracts use latest-state head conditioning, not this trajectory
+ablation;11source hashes/60upper. Same raw41x3/latest3 head, fixed21states
+of mom21/rv21/Boll20. Original67dateFINAL not66HGB; no new information claim.
+Pascal accepted current-causal-indicator-path-tcn-20261021-v1, source/native
+before2fits/oneGPU1800/6newcells/0retry. Strongest kill: no incremental proper
+AND risky-baseline financial improvement, or native pace insufficient for
+20epochs/arm600soft =>0marketfits. No outcome-driven geometry rescue.
+Claude1b659f1bREVISE/18.406upper scopes relayed: prefixes/latest parity,
+ALLTRAINinput FIT-only affines, init/RNG and frozen real pace proof.
 Sector path study9d883b98 CLOSED2CUDAfits: INNERscreenPASS,
 PREDnotconfirmed/financialFAIL. Generic sector information was not new.
 New cached HGB/sector halfpool740ae38d has properFAIL/descriptive financialPASS:

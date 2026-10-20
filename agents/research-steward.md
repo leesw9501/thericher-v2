@@ -15,8 +15,16 @@ repair; two total technical allocation attempts, no debit refunded.
 New readout import repair made0model/GPU calls,6new6cachedcells once.
 HGB/sector halfpool740ae38d CLOSED3new12cached/46.223upper/0model-GPU;
 properFAIL/descriptive financialPASS, not independent performance.
-Strategy is selecting one useful next campaign; don't repeat completed fits
-or launch dummy GPU load. Fresh measured ownership/headroom precedes allocation.
+New indicator-path TCN appointment16:11:38..18:11:38UTC/2700active7200elapsed
+at A/research/current-causal-indicator-path-tcn-20261021-v1. Max2futurefits/
+oneGPU1800leaseinclusive/6newcells/0retry;128max/pat20/LR/bestINNER.
+20epochs/arm projected within600soft required before market, otherwise0fits.
+Source proposal60/review18.406/Data90 included once. Original67dateFINAL,
+no66datecontrol splice. Feature sidecar ready, native optimizer/counter/pace
+and fresh ownership/headroom still precede allocation. No actual GPU claim yet.
+Halfpool prospective producer2e61d138 adds2SYNCPUrestores/2forwards,
+0market/GPU/fit; not double-counted as oldpool model calls.
+Don't repeat completed fits or launch dummy GPU load.
 Current patch authority5c229e4a:1371/d2447255/332serialPASS1skip/
 18568fullPASS25skip/8workers/cleanhelper/Ruff/three sampleCompose.
 The older TimesFM/sector preparation entries below are frozen history only.

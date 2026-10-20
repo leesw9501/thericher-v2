@@ -29,8 +29,24 @@ No outcome-driven weight search, prior failures remain unchanged.
 Cached PROD/SUM rank fusion9332076d CLOSEDfinancialFAIL:
 10bp PROD+.2901/DD.5472, SUM+.3044/.5535 percentNAV;
 6new12cached/39.626upper/0modelcalls. Proper metrics not applicable to ranks.
-Strategy now selects one nonduplicate next GPU hypothesis under
-current-next-ready-hypothesis-20261021-v1; no new training running yet.
+New proposal d406c280 ADOPTED at
+A/research/current-causal-indicator-path-tcn-20261021-v1:
+matched width8 TCN latest3 versus identicalraw41x3/latest3head plus causal
+21state paths(mom21/rv21/Boll20). Original67dateFINAL, not66dateHGB;
+43480TRAINinputs43446supervised/1575INNER/1675PRED derivedonce90upper.
+Max2fits/oneGPU1800inclusive/onePRED6newcells/0retry,2700active7200elapsed,
+16:11:38..18:11:38UTC.128max/pat20/LR/bestINNER; realnative pace must
+support20epochs/arm in600soft seconds, no geometry rescue if unavailable.
+ClaudeREVISE1b659f1b/18.406upper: prefix/last-state parity, exact ALLTRAIN
+input scaler membership, matched init/RNG and frozen pace conditions relayed.
+Source/native preparation alone is not an actual GPU training claim.
+
+HGB28/sectorLSTM6 prospective producer2e61d138/ABI8e8ff87c READYSYN at
+A/research/current-hgb-sector-prospective-producer-20261021-v1:
+32native2coldimports/2restores2SYNCPUforwards/22.460upper/alljoined.
+Exact25stocks throughOct20/12ETFthroughOct19/sourceclock/affine/class masks
+required; no fresh market forecast/deployment yet. This HGBprefix28 belongs
+to a7db matched family, NOT the separate operational HGB61point406ec7c1.
 
 ## Frozen Completed Package History
 

@@ -9,14 +9,14 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 
 | Owner | Current Package |
 | --- | --- |
-| Parent | Explicit maintenance integration/verification/Git; actual effect not yet performed. |
-| Boole / Engine | HGB/sector halfpool740ae38d CLOSED, properFAIL/financialPASS; no new fits. |
-| Kepler / Data | Sector tensor de3aebaa READY; publisher must not rerun. |
-| Pascal / invoked Engine | Sector9d883b98 CLOSED2CUDAfits/6new6cached/542.045upper/alljoined-leasereleased. |
-| Archimedes / Execution | Prepare exact two-phase offline maintenance caller; no private effect/Task/API. |
-| Bacon / invoked Infra | Maintenance15LinuxSYN/472pins PASS; exact actors absent8adca194. |
-| Confucius / Strategy | One nonduplicate next executable GPU hypothesis, not a model-name grid. |
-| Steward | No running GPU training; new allocation only after a useful frozen candidate is ready. |
+| Parent | Actual archive7fe5dac2 integration/Git; company NAS closure still due. |
+| Boole / Engine | HGB/sector producer2e61d138 READY32native2cold-import, no market point. |
+| Kepler / Data | Explicit60-second bounded token-start calibration for12ETF refresh; prior0GET defers retained. |
+| Pascal / invoked Engine | New paired indicator-path TCN source/native;1675target-free PRED, no actual training inferred. |
+| Archimedes / Execution | Offline maintenance complete, no broker/Task/new opportunity. |
+| Bacon / invoked Infra | F9 reader480pins29native READY; fresh exact onceRO diagnosis after maintenance. |
+| Confucius / Strategy | Proposald406c280 adopted; scopedClaude1b659f1bREVISE/native conditions relayed. |
+| Steward | Latest sector allocation released; new TCN allocation requires fresh actual resource proof. |
 
 Existing due nightly14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
 NASexitOct21 13:40UTC; Window21 prep13:10/entry14:00. Goal97distinct.
@@ -24,6 +24,17 @@ Unknown reservations stay held. Natural-result worker uses toolclock only,
 no host polling/sleep process that would itself trip project guards.
 
 ## Throughput Review
+
+16:25UTC: actual unused-context archive completed without broker effects,
+same-GO recovery7fe5dac2 preserves F9 reservation. TCN feature derivation done;
+real optimizer/pace proof precedes GPU fitting. Prospective halfpool producer
+ready, stock input awaits owned postclose; Data instead repairs a named
+300-second guard starvation possibility using existing60 API/official one/minute
+and bounded12routes, not repeated identical defers. No foreground session wait.
+Reversible improvement: native filesystem/mount contract in RO BEFORE private
+GO write; source schema tests alone missed missing artifact mount. Restrict
+body snapshots to canonical canary scope, not sibling private-volume data.
+Original caller/defer failures remain immutable; no genuine operator decision.
 
 15:57UTC: sector fits and cached pool CLOSED; no session/permission wait.
 Paper critical fault is expired never-started nightly pointer, not profitability.

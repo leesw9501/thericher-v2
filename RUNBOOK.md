@@ -27,11 +27,17 @@ D:/thericher-v2/model-artifacts/infra/current-expired-unstarted-maintenance-nati
 SHA3fa42019; separate successful exact-name cleanup8adca194 under
 that family's cleanup-observation-r1/CLEANUP-CLOSED.json. Preserve failed
 caller/appointment/cleanup-prose records and280prior+15observation upper.
-No actual private effect yet. Prepared caller belongs to
-D:/thericher-v2/model-artifacts/execution/current-nightly-expired-unstarted-maintenance-20261021-v1.
-Do not execute until exact fresh private GO/byte hash and owner quiescence
-are checked; no account/order values in public output or external GO.
-Foreign F9 pending reservation remains unchanged; do not replay old workers.
+Actual archive completed16:20:55UTC; read categorical closure only:
+D:/thericher-v2/model-artifacts/execution/current-nightly-expired-unstarted-maintenance-20261021-v1/ACTUAL-CLOSED.json
+SHA7fe5dac2/final7e57f284/sourceed4ae42c. Original GO preserved, archive
+byte exact, book/all foreign canary bodies/plans/reservations unchanged,
+0API/orders/credentials/Task mutations; all6dispatch containers removed.
+Consumed capture/execute/close creators MUST NOT rerun. Source/helper already
+tested; no normal-worker image/task redeployment was required or inferred.
+Initial volume-sibling scope and missing artifact-mount failures remain;
+final4mounts include RO /app/model_artifacts and native RO preflight before
+effect. Only canonical canary bodies hashed, never sibling bodies.
+Foreign F9 pending reservation remains unchanged; next ordinary result unknown.
 
 Latest research halfpool740ae38d is descriptive financialPASS/properFAIL,
 not independent alpha or broker deployment. Sector9d883b98 trained31/26epochs,
@@ -60,7 +66,7 @@ producerloading sentinelonly. PriorASTHEADERfailure7fb80b1a staysclosed.
 Oct21 invocation NEWroot/cohorts/20261021 needs actualOct20index1 captures;
 nativecold unavailable/nooutput is not a prepared futureinput.
 
-Fresh verification authority:
+Frozen prior verification authority (superseded by5c229e4a above):
 D:/thericher-v2/model-artifacts/verification/model-profile-gpu-lease-20261020-v1/authority.json.
 1370source digestd10698dca5d9486d65645f4a814136d8892b35f8f68fd4e31e50158a0706b88e,
 1720changed-path serialPASS2skip/18537fullPASS24skip/18561collected/8workers/
@@ -428,7 +434,7 @@ Monitor http://127.0.0.1:8787 remains private loopback; UI redesign deferred.
 
 ## Verification / Recovery
 
-Current exact authority:
+Frozen diagnostic authority (superseded by5c229e4a above):
 D:/thericher-v2/model-artifacts/verification/paper-first-failure-diagnostic-20261020-v1/authority.json
 1363files970c07301202e22cbbf3e887cec7cd9f91825d7e4b936b36fda16ba91b78d856;
 1588changed-path serial PASS40.95s/18430full PASS22skip/8workers388.60s/
