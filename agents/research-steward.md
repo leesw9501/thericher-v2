@@ -2,81 +2,74 @@
 
 Oct20KST. A=D:/thericher-v2/model-artifacts.
 Own exclusive GPU/trial custody, not model choice, broker risk or approval.
-Current company outcome unfinished. An MD is not proof a worker is running.
+Company current-nas-owned-model-paper-cycle-v1 UNFINISHED. An MD is not a worker.
 
 ## Current Allocation
 
-Canonical lease: A/engine-research-agent/locks/gpu.lock.
-Latest actual GPU workers closed and released their exact owned lease.
-Current ready packages are CPU prospective producers and Data acquisition,
-not GPU training. Do not rerun completed fits or train for utilization.
+Canonical lease A/engine-research-agent/locks/gpu.lock. Latest actual CUDA
+actors joined/containers absent/exact owned lease released. Four new CPU
+forecast calls also finished; no actual new GPU training currently dispatched.
+Boole source-only broad-ranking novelty/proposal is the next candidate, not a
+ready allocation. Do not duplicate completed learning/forwards or create load
+for utilization. Allocate genuinely ready campaigns without operator queue.
 
-- Bacon broad-query pair COMPLETE08fdd333/d8c2901b, asof09:32:56UTC.
-  TwoCUDAfits:mean32epochs/selected12,attention23/selected3,1595marketupdates/
-  3369marketforwards/34SYNupdates/15cells/479independentchecks. PrimaryFAIL;
-  both beat broadFITprior proper scores, attention loses matchedmean.
-  GPU-worker process wall31.315s is nested, NOT CUDA-kernel time or additive
-  to874.069aggregateupper. Old598.825 counter-stage failure remains charged.
-  Two lifetimeallocations; predeclared SYNretry unused; allchildrenjoined/
-  exactcontainerabsent/leasefree. No new training queued from these results.
+## Completed Custody
 
-- Boole current25-query pair COMPLETE5a4eec9c/9fdff9e2.
-  TwoCUDAfits21epochs each/selected1/4620marketupdates/12cells/142checks.
-  FinancialdiagnosticPASS versusmatchedmean/properFAIL/lateoverfit.
-  GPU-worker process wall42.925s nested/470.251aggregateupper, four lifetime
-  allocations including premarket failures/diagnosis,52SYNupdates; allclosed.
-  Diagnosticede2797e proves exact BEFORE/RNG and defaultSDPA AFTERfloat drift;
-  MATHcontrol/correctedjointnative23b65955 bitexactPASS. No test tolerance or
-  financial criterion relaxed. Oldc333/e014 sources/results/debits unchanged.
+| Campaign Under A/research | Actual Fits / Custody |
+| --- | --- |
+| current-cross-stock-peer-attention-preparation-20261020-v1/runtime-source/backend-math-r1 |FINAL-r2 5a4eec9c/ABI-r2 9fdff9e2:2CUDAfits21epochs/selected1/4620updates/12cells142checks. FinancialdiagnosticPASS vsmean/properFAIL/lateroverfit.4lifetimeallocations/52SYNupdates/470.251aggregateupper/alljoined+leasefree. GPUworker42.925snested,notkernel/additive. |
+| current-broad-query-peer-attention-20261020-v1/corrected-native-r1 |FINAL08fdd333/ABId8c2901b:2CUDAfits32/23epochs selected12/3;1595updates3369forwards/34SYNupdates/15cells479checks/primaryFAIL.874.069aggregateupper retains598.825firstcounterfault;2lifetimeallocations/SYNretryunused/alljoined+leasefree. GPUworker31.315snested. |
+| current-peer-residual-fixed-fusion-20261020-v1 |2c75844c/5455aefe:15cells/3cachedintakes/0NN-fits-GPU-retries/117.365upper/alljoined. PrimaryFAIL, no weightrescue. |
 
-## Next Owned Work
+Old native/diagnostic sources/results/debits immutable: c333paceguard/e014
+state mismatch/ede2797e precise MATH control; corrected23b65955 exactjoint
+native proof. Broader first8e899b7f missingcounterstage caused1allocation/
+0marketfits, charge598.825 kept inside final874.069, never refunded.
 
-Boole point current-mean-attention-prospective-point-preparation-20261020-v1:
-SourceR3 seal8f8abc26,70source+30assignedIOupper,0actualpoint effects.
-TwoCPUrestores/forwards and one arithmetic NONprobabilityrankthird only;
-600active/originaldeadline11:09:50UTC/hardcommit13:25UTC.
+## Actual Prospective Points
 
-Bacon point current-broad-query-peer-prospective-point-20261020-v1:
-Sourceaafc3329/binder99264ef7/ABI900e6821,120source+<=30ownIOupper,
-0actualpoint effects. TwoCPUrestores/forwards selectedmean12/attention3;
-600active/original09:39:38..11:39:38UTC/hardcommit13:25UTC.
+- Broad pair A/research/current-broad-query-peer-prospective-point-20261020-v1/data-availability-r1/FINAL.json
+  d8b66977/OUTCOME82b1869b/COMMITTED04900f14,10:32:37UTC.2CPUrestores/
+  forwards selected12/3,78checks/253.756pointactiveupper/allactorsclosed.
+- Current25 pair A/research/current-mean-attention-prospective-point-preparation-20261020-v1/source-import-r1/readback-r1/FINAL.json
+  4c65fa99/OUTCOME61788238/COMMITTED1ee09a3c,10:36:19UTC.2CPUrestores/
+  forwards selected1/1 pluspredeclaredNONprob rankthird/noextraNN;90checks/
+  143.793pointactiveupper/allactorsclosed.
 
-Both await the exact qualified live507 Consumer/CLOSED/debit references:
-all507 routes terminal/accounted with valid input-only masks>=20 eligible,
-NOT507 eligible. No partial/pending/APIunknown treated as knownmissing.
-Shared Data service costs are recorded once as dependencies, not duplicated
-as point spend or claimed free. No another operator/Parent permission queue.
-Old committed forecasts remain unchanged. No fits/GPU/broker calls in points.
+All25queries/498eligible9knowninsufficientmaskedpeers/0fits-GPU-targetdecodes-
+API. Shared Data acquisition2128.629/2400 recorded ONCE as dependency, not
+point spend or free. CONSUMER eb69c563/CLOSED6969c765/terminal2006f601 under
+A/data/current-nas507-peer-live-close-20261020-v1/repair-r4. Maxpersisted
+availability10:26:06.655378176UTC; exactwire/finality/PIT/CA unqualified.
+Old committed e1fc1ada/2b168e66/a0569a2e unchanged. Future targets unknown.
+Currentmeasurement8class3+rankhalf0e9e28f6; Kepler owns same-window12+2
+extension, not yet deployment. No rank probability/proper-score fiction.
 
-## Frozen Custody / Compatibility
+## Frozen Compatibility
 
-Earlier broadLSTM8198cdbe:95epochs/selected75/10830updates,455.724upper;
-residual1372c432:MLP15epochs/selected3 plusLogistic,121.491upper.
-Their actual07:52pointa0569a2e and earlier e1fc1ada/2b168e66 preserved;
-eightclass3+one rankpolicy measurement installed0e9e28f6/sameOct27window.
-Other closed models/OOF/TTM/rule studies and exact counts stay Engine board,
-Git and immutable A. Ledger313 is stale versions, not a new architecture total.
+Earlier broadLSTM8198cdbe:95epochs/selected75/10830updates/455.724upper;
+residual1372c432:MLP15epochs/selected3+Logistic/121.491upper. Other window/
+OOF/GRU/HGB/TCN/TTM/Chronos/TimesFM/rule studies stay Engine/Git/immutable A.
+Ledger313 predates recent fits, not a fresh architecture/trial total.
 No old clock/debit refunds, hidden trial multipliers or independent alpha claim.
 
 GpuFileLock578f9471:46focusedPASS2symlinkprivilegeskip/17independentchecks,
-nativejunctionPASS; crossOSfbe78415 Windows/Linux winner-loser/reopen/identity
-proof. Failed/unacquired/double exits preserve other owners; never reclaim by
-age. Frozen D helper6887bb9d unchanged; future dispatch uses corrected core
-or successful acquisition plus exact-owned release. Not malicious-host CAS.
+nativejunctionPASS/crossOSfbe78415 winner-loser/reopen/identity. Failed,
+unacquired or double exits preserve other owners; never reclaim by age.
+Frozen D helper6887bb9d unchanged; future workers bind corrected core or
+successful acquisition plus exact-owned release. Not malicious-host atomicCAS.
+
+Before allocation exercise REAL counter stage/local-step/event and checkpoint/
+optimizer native API on small synthetic input; fake fixtures cannot establish
+caller compatibility. Native timings before guards; maxepochs and walltime
+are alternative ceilings, not requirement all128 finish. Train/chronological
+INNER curves, earlystop/LR/regularization/bestrestore predeclared. No final
+outcome selection or blanket fixedepoch limit. Scope MATH proof to actual
+runtime; no universal determinism claim. Keep desktop/runtime headroom;
+Execution reliability preempts at safe checkpoint.
 
 Authority1370d106/1720serialPASS2skip/18537fullPASS24skip/8workers/cleanhelper0/
-Ruff3sample-envCompose; fresh1370source+2control equality verified09:52UTC.
-New external code uses its own focused/native proofs, not repeated repo suites.
-
-## Caller Compatibility
-
-Before allocating GPU, exercise the REAL counter identity/event and checkpoint
-API on CPU, including required stage and local-step fields; a fake numerical
-fixture cannot prove caller compatibility. This prevents another zero-fit
-allocation failure; it is not a human approval or a global hold.
-Record native timings before resource guards; maxepochs and walltime are
-alternative ceilings, not a requirement all maximum epochs finish. Preserve
-convergence/overfit uncertainty. Prefer tested MATH attention where this
-runtime's scoped native proof needs it, not an assumed universal cure.
-Allocate the first genuinely ready finite campaign; keep desktop/runtime
-headroom and preempt for Execution reliability at a safe checkpoint.
+Ruff3sample-envCompose; fresh1370source+2control equality and1559
+Data/pointdirectrefsPASS. External code needs fresh native evidence, not
+another repo suite. No current operator approval is needed for ready private
+research or an existing approved Paper opportunity.

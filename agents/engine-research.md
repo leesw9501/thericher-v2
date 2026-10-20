@@ -38,21 +38,32 @@ Historical comparisons are adaptive/reused, not independent alpha/Paper PnL.
   15cells479checks/primaryFAIL.10bp percentINITIALNAV mean.5264/DD.5650,
   attention.1158/.6616; bothpropermetrics beatbroadFITprior butattention
   losesmean.874.069aggregate incl598.825/2allocations/SYNretryunused,
-  alljoined/leasefree. NextBroadPointSourceaafc3329/binder99264ef7/ABI900e6821,
-  <=2CPUforwards/0effects/600active/deadline11:39:38/hardcommit13:25.
+  alljoined/leasefree. Broad prospective pair now ACTUALd8b66977 below;
+  no remaining fit or forecast work in that closed campaign.
 
-- Boole: CPU prospective source under
-  current-mean-attention-prospective-point-preparation-20261020-v1.
-  Sourceb9da2b7d/54fixtures/30upper/0modelintakes; amendment beforeeffects
-  binds actual new qualified live507 Consumer, not old failedrepair-r1.
-  ALL507 routes terminal/accounted, NOT507 eligible: masked missing history
-  is allowed by native input ABI; unattempted/pending/APIunknown is not
-  knownmissing. Preserve all25 queries/static507 axis/no imputation.
-  <=2CPUmodel-onlyrestores/2forwards/oneCPUcontainer/0retry-fits-GPU-KIS,
-  family600active/deadline11:09:50UTC/hardcommit<13:25 beforeOct20 OPEN.
-  Add ONE predeclared arithmetic rankthird(ATTN,ResidualMLP,RAWSD) using
-  exact old07:52point components, no extra NN. All point outputs class3
-  except rankpolicy NONprobability/proper-score N/A. No actualpoint yet.
+- New prospective forecasts ACTUAL, no repeats:
+  A/research/current-mean-attention-prospective-point-preparation-20261020-v1/
+  source-import-r1/readback-r1/FINAL.json4c65fa99/OUTCOME61788238/
+  COMMITTED1ee09a3c at10:36:19UTC. TwoCPUrestores/forwards selected1/1,
+  plus predeclared rankthird(ATTN,ResidualMLP,RAWSD) using exact old07:52
+  components/no extraNN;90checks/143.793pointactiveupper/allactorsclosed.
+  A/research/current-broad-query-peer-prospective-point-20261020-v1/
+  data-availability-r1/FINAL.jsond8b66977/OUTCOME82b1869b/COMMITTED04900f14
+  at10:32:37UTC;twoCPUrestores/forwards selected12/3,78checks/253.756upper,
+  allactorsclosed. Both25queries/498eligible9maskedpeers/0fits-GPU-targets-
+  API. Rankpolicy NONprobability/proper-score N/A; outcomes still unknown.
+  Shared Data2128.629 is one separate dependency, not duplicate point spend.
+  No exactwire/providerfinality/PIT/CA or profitability promotion claimed.
+
+- Boole next source-only preparation:
+  A/research/current-broad-ranking-candidate-preparation-20261020-v1.
+  Check actual earlier ranking/indicator/portfolio objectives for duplication;
+  choose ONE useful information/objective change, not another architecture/
+  epoch/weight grid. Proposed broad cross-sectional ranking plus nonlinear
+  tabular/indicator matched control is conditional on novelty and actual data
+  compatibility. No actual new arrays/labels/weights/fit/GPU/API in preparation.
+  Freeze exact target/purge/INNER selection/cost/samegross risk/trial/time/
+  convergence/strongestkill before any later numerical dispatch.
 
 - Fixedfusion COMPLETE2c75844c/CACHEABI5455aefe under
   current-peer-residual-fixed-fusion-20261020-v1:15cells/3cachedintakes/
@@ -62,12 +73,13 @@ Historical comparisons are adaptive/reused, not independent alpha/Paper PnL.
   This66date consumer does not regrade old67datehalf. Future predeclared
   rankthird remains measurement regardless historicalFAIL.
 
-- Data dependency: R2closed193GET3POST/188eligible5knownmissing, unknownactor
-  retained. R3 bounded no-wire readiness rechecks keepstrictfreshowner checks;
-  exact09:59progress300GET4POST0retry/294eligible, not fullinput yet. No
-  accepted-page reGET; aggregate2400/end10:32:40/600GETtotal. Historicalpanel6de633ee remains
-  valid, not blocked. Live-data gap constrains only the new prospective
-  point, not broader historical training, Paper or other prepared work.
+- Data dependency COMPLETE: A/data/current-nas507-peer-live-close-20261020-v1/
+  repair-r4/CONSUMER.json eb69c563/CLOSED6969c765/terminal2006f601.
+  All507terminal/498eligible9known-insufficientmasked/0unknown-unattempted-
+  pending. FP64[507,22]/507GET5POST0retry/2128.629aggregateupper/allclosed.
+  Maxpersistedavailability10:26:06.655378176UTC, exactwire/finalityunknown.
+  R3storagefailure after446accepted was pre-wire, not APIlimit; oldpending/
+  debits preserved. R4reused446andcaptured61only. No input wait remains.
 
 ## Frozen Research Context
 
@@ -76,8 +88,10 @@ upper, primaryFAIL/descriptive fixedhalf promise. BroadLSTM8198cdbe:95epochs
 selected75/10830updates/455.724upper, pairedprimaryFAIL/properUNKNOWN40missing.
 Their07:52future pair ACTUALa0569a2e/ABI07c6ea7f/COMMITTED326088cf,2CPUforwards/
 0fits-GPU-outcomes. Oldfour points e1fc1ada andPRICE/MACRO2b168e66 preserved.
-Eightclass3+one rank policy measurement installed0e9e28f6, sameOct27 window;
-targetOct20/21/22/23/26 still unknown. No failed/uncommitted point adoption.
+Eightclass3+one rank policy measurement installed0e9e28f6, sameOct27 window.
+Kepler owns a bounded SAME-task12class3+two rank extension from ACTUAL points,
+not installed until fresh independent readback. TargetOct20/21/22/23/26 still
+unknown. No failed/uncommitted point adoption or new measurement worker.
 More detailed closed contracts/source/splits/debits stay immutable A and Git,
 not reconstructed as independent data or reopened selection results.
 
