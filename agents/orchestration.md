@@ -9,14 +9,14 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 
 | Owner | Current Package |
 | --- | --- |
-| Parent | Actual archive7fe5dac2 integration/Git; company NAS closure still due. |
-| Boole / Engine | Point8c7133fc SOURCE_READY22checks/0models, future stock input required. |
-| Kepler / Data | ETF12/264known7bdfc250 COMPLETE; new supervised TimesFM labelbinding. |
-| Pascal / invoked Engine | Cached THIRD fusion, then paired TimesFM finalblock learner/native worker. |
-| Archimedes / invoked Infra | Future single point installer source; observer quiet-window workaround rejected by actual RTH guard. |
-| Bacon / invoked Review | FoundationClaude3bb72321 complete; F9RO2f07a757/origin auditd6ced0a2 closed. |
-| Confucius / Strategy | Official native TimesFM kernel/ABI only; no numerical calls. |
-| Steward | TCN proof lease released16:28; next45minute GPU study needs actual source/resource qualification. |
+| Parent | Point Task actually installed28e887fc; integrate closed technical faults, Paper goal still due. |
+| Boole / Engine | Point source closed, future stock input required; no actual forecast. |
+| Kepler / Data | ETF12/264known7bdfc250 and supervised bindingd7d7cc2b READY. |
+| Pascal / invoked Engine | Fusiona2365b02/foundation7e85148b closed technicalUNKNOWN; one source-only next hypothesis. |
+| Archimedes / invoked Infra | New TimesFM SYN-only backend/batch diagnosis, no market fits; old point installer consumed. |
+| Bacon / invoked Review | Challenge minimal foundation native-recovery direction; F9 audits closed. |
+| Confucius / Strategy | One ex-ante sizing hypothesis,0model-GPU/return peeking. |
+| Steward | Last TimesFM GPU proof lease released17:22; next qualification requires fresh resources. |
 
 Existing due nightly14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
 NASexitOct21 13:40UTC; Window21 prep13:10/entry14:00. Goal97distinct.
@@ -24,6 +24,18 @@ Unknown reservations stay held. Natural-result worker uses toolclock only,
 no host polling/sleep process that would itself trip project guards.
 
 ## Throughput Review
+
+17:25UTC: first foundation native comparison stopped0marketfits; one actual
+GPU allocation/12SYNupdates, not market training. CPU3/CUDA100 shapes differ,
+error component/magnitude missing. New bounded SYN-only diagnosis persists
+those facts before guards; old failure/debit is not reopened. Third cached
+fusion consumed one readout but0cells from calendar-mask/prediction-index bug,
+not evidence against the models. Test actual NPZ axes before future evaluation.
+Independent sizing source research and a distinct foundation hypothesis are
+ready, no session/permission hold. Reversible improvement: choose and predeclare
+one bounded technical retry in NEW campaigns rather than defaulting every
+recoverable interface fault to a dead end. No old cap relaxation or hidden rerun.
+Point forecast-only Task actually installed28e887fc/next00:15UTC; no actual point.
 
 17:00UTC: two actual TCN CPU fits completed in~87fitseconds after measured
 GPU route was~25xslower. Keep both closed clocks; don't inflate GPU usage.

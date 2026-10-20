@@ -6,16 +6,27 @@ fitting/evaluation. No broker/credentials/risk authority. Parent shared MD/Git.
 
 ## Current Selection / Evidence
 
+Ready source package: A/research/current-exante-sizing-hypothesis-20261021-v1,
+ONE genuine allocation mechanism on fixed HalfPool Top5/samegross.10 versus
+equalTop5, not another model-name grid.60source upper/0model-GPU-data calls;
+check nearest existing contracts/lag availability without peeking at returns.
+May deliver a concrete duplicate/data rejection rather than a renamed trial.
+
 TCN proposal completed via measuredCPU route d16a455a:2fits/67datePRED
 properPASS-financialFAIL. PriorGPU6c11d3e4 failed only frozen pace before
 market; no model failure/refund. Fixedthird HGB/sector/TCN exploratory pool
-binds input-only common66keys before labels, no silent old-cohort regrade.
-NEW source-supported foundation proposal8ff10207: native TimesFM2.5
+binds input-only common66keys before labels; now CLOSEDa2365b02 technical
+UNKNOWN from calendar/prediction index mismatch/0cells, no modelFAIL/retry.
+Source-supported foundation proposal8ff10207: native TimesFM2.5
 frozenhead versus identicalhead+ONLYnativeblock19, official dated2f776efe.
 Confucius owns pure model_kernel.py+KERNEL-ABI under
 A/research/current-timesfm-finalblock-adaptation-20261021-v1, no numerical
 proof/model calls in this source package. Pascal owns learner/native; Kepler
-owns new supervised binding. Claude3bb72321 PROCEED_WITH_NAMED_LIMITS:
+owns supervised bindingd7d7cc2b READY. Actual family CLOSED7e85148b:
+12CPU+CUDA SYNupdates/0marketfits, CPU3/CUDA100 latent parity failure,
+unknown numeric magnitude/cause; alljoined/leasefree17:22UTC. New SYN-only
+backend diagnosis is not a retry/regrade; distinct next hypothesis pending.
+Claude3bb72321 PROCEED_WITH_NAMED_LIMITS:
 unequalcapacity/calibration confound mechanism attribution; no extra controls.
 Historical TCN proposal details below are closed, not current GPU dispatch.
 

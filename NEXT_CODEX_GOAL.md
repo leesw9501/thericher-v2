@@ -58,12 +58,15 @@ inventory, substitute unknown requests or a new/profit-expanded budget.
    pace2036.9s>600. NEW faster CPU route d16a455a CLOSED2fits21/34epochs,
    best1/14/6050updates/PREDproperPASS-financialFAIL/6new6cached/
    643.617upper, original67date cohort. Don't repeat completed fits.
-   Cached THIRD fusion freezes common66 INPUTkeys before labels; no hidden
-   cohort intersection/weight search. NEW TimesFM final-block adaptation
-   8ff10207 at A/research/current-timesfm-finalblock-adaptation-20261021-v1:
-   samehead frozenbackbone versushead+nativeblock19/postcheckpoint512input,
-   3600active/16:55:41..19:55:41UTC/oneGPU2700/2fits/onePRED6cells/0retry.
-   Kernel/Data/learner/review preparation is not actual GPU training.
+   Cached THIRD fusiona2365b02 CLOSEDtechnicalUNKNOWN/onePRED/0cells:
+   calendar-mask versus prediction-row index fault, not financial/modelFAIL.
+   TimesFM finalblock7e85148b CLOSED17:22UTC/427.163upper/oneactualGPU/
+   12SYNupdates/0market fits-PRED-cells/alljoined/leasefree. CPU3/CUDA100
+   latent parity failed, numeric magnitude/component unretained. No old retry.
+   New SYN-only backend qualification under A/infra/current-timesfm-latent-
+   backend-qualification-20261021-v1 measures matched shapes/error summaries;
+   no market/optimizer calls. Source-only next foundation hypothesis and
+   ex-ante sizing proposal proceed independently, not a GPU utilization grid.
 
 5. Data prospective readiness1c6f9d74: stocks throughOct19; Oct20 not closed
    at inventory. Existing22:30/23:00UTC source-plan visits remain unchanged.
@@ -72,9 +75,11 @@ inventory, substitute unknown requests or a new/profit-expanded budget.
    Actual snapshot source88bca32e exits before token bridge outsideRTH,
    so NO quiet coordinator/observer changes needed or installed. Preserve
    frozen stock300 contracts/owned visits; future success unknown.
-   Point8c7133fc/3af7acd8 SOURCE_READY22checks/0models. Prepare one hidden
-   Oct21 00:15..00:25UTC point afterOct20capture, targetOct27CLOSE notOct26;
-   installer pending, no Task registration/actual forecast yet.
+   Point8c7133fc/3af7acd8 READY22checks; ONE hidden Pythonw forecast Task
+   thericher-hgb-sector-prospective-point-20261021 ACTUALLY installed28e887fc
+   under its deployment-r1/INSTALL-CLOSED.json. NextOct21 00:15UTC=09:15KST,
+   end00:25/cutoff13:25/targetOct27CLOSE notOct26; no actual forecast yet.
+   Exact future inputs required, no stale fallback/order/API. Never rerun installer.
    Source-only readiness is not an actual capture or future forecast.
 
 6. Existing Oct26 23:45..23:55UTC measurementffcf64a0/deployment5c237b85

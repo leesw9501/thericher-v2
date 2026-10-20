@@ -20,13 +20,13 @@ No operator decision is currently required.
 
 | Owner | Current Work |
 | --- | --- |
-| Parent | Integrate closed TCN/ETF/F9 evidence and upcoming point installation. |
-| Archimedes / invoked Infra | Prepare one hidden future halfpool point installer; no actual Task registration yet. Quiet-window coordinator rejected as unnecessary. |
+| Parent | Point Task installed28e887fc; integrate technical UNKNOWNs without changing the unfinished Paper goal. |
+| Archimedes / invoked Infra | New synthetic-only TimesFM backend/batch-shape diagnosis; no market fits. Quiet coordinator rejected. |
 | Boole / Engine | Point8c7133fc SOURCE_READY22checks/0models; awaiting postclose stock input. |
-| Kepler / Data | ETF12 complete264known; prepare supervised TimesFM FIT/INNER binding, no new acquisition. |
-| Confucius / Strategy | Official TimesFM last-block kernel/ABI only, no model calls. |
-| Bacon / invoked Review | Foundation challenge; F9 exact RO2f07a757 and origin auditd6ced0a2 closed. |
-| Steward / Pascal | Cached HGB/sector/TCN fusion, then new one-GPU TimesFM adaptation. Preparation is not training. |
+| Kepler / Data | ETF12 complete264known; TimesFM supervised bindingd7d7cc2b READY, no new acquisition. |
+| Confucius / Strategy | One source-only ex-ante sizing hypothesis; no model calls or return peeking. |
+| Bacon / invoked Review | Challenge foundation native-recovery direction; F9 RO/origin audits closed. |
+| Steward / Pascal | Fusion and first foundation study closed technical UNKNOWN; source-only next hypothesis, no current training. |
 
 An MD is memory, not proof that a worker is running. New numerical dispatch
 needs the campaign's real source/native/input/resource checks. No dummy GPU
@@ -128,16 +128,24 @@ TCN GPU precursor6c11d3e4 CLOSEDUNAVAILABLE0market fits/oneallocation/
 12CPU+CUDA SYNupdates, fullstate/RNG/prefixPASS;20epochs2036.9s>600.
 CPU warm updates .015/.011s versus CUDA .40s, so NEW CPU route above used
 the retained derivative43480TRAINinput/43446supervised/1575INNER/1675PRED.
-No old criterion, source or debit regraded. Cached third fusion now explicitly
-binds common66 INPUTkeys before labels, not a hidden67/66 intersection.
+No old criterion, source or debit regraded. Cached third fusion CLOSED
+A/research/current-hgb-sector-path3-fixed-fusion-20261021-v1/FINAL.json
+a2365b02: technical UNKNOWN, one PRED intake/0economic cells/211.500upper.
+Calendar mask71x25 was indexed with1650-row prediction indices; source
+reproducer confirms the fault. Not model/financial FAIL; no frozen-family retry.
 
-New family A/research/current-timesfm-finalblock-adaptation-20261021-v1:
-proposal8ff10207,16:55:41..19:55:41UTC/3600active10800elapsed. Matched frozen
-TimesFM2.5 head versushead+ONLYnativeblock19; official2f776efe checkpoint,
-differentiable nativeforward, never forecast/decode. Strict gradients/fullstate/
-memory proof before2fits; max64/pat8/INNERbest, oneGPU2700inclusive/
-onePRED6new6cached/0retry. Source-derived params3843/9839603 unmeasured
-until native. Kernel/Data/trainer/review disjoint; no actual training claim yet.
+TimesFM finalblock study CLOSED17:22:08UTC:
+A/research/current-timesfm-finalblock-adaptation-20261021-v1/CLOSED-READBACK.json
+7e85148b. Actual RTX4090 allocation/strict232restore/12CPU+CUDA SYNupdates,
+0market fits/0PRED/0economic cells/427.163upper; alljoined/lease released.
+CPU3 versus CUDA100 first3 latent parity failed before market. Component/error
+magnitude was not retained; backend versus source cause UNKNOWN. CPU native
+passed, not a market model result. Old no-retry result/debits remain unchanged.
+New A/infra/current-timesfm-latent-backend-qualification-20261021-v1 is
+SYN-only matched-shape/batch diagnosis,600active1800elapsed/oneGPU/0optimizer
+or market calls. Capture numeric diagnostics before guards, not lower old
+tolerances or call source preparation training. New hypothesis preparation
+and independent sizing research continue; no company-wide hold.
 
 ## Data / Future Evidence
 
@@ -163,9 +171,14 @@ Point source8c7133fc/3af7acd8 READY22checks/0models:
 A/research/current-hgb-sector-prospective-point-20261021-v1. All25 stockMODP1
 training CSV/availability hashes match live-feed base prefixes; future overlap/
 terminal checks still required. ETFMODP0 stays separate, no field splice.
-Proposed one point Oct21 00:15..00:25UTC/cutoff13:25, fifth-CLOSE targetOct27.
-Installer preparation is not registration/forecast. Oct26 measurement cannot
-measure this later target.
+One hidden forecast-only Task ACTUALLY installed17:18UTC:
+thericher-hgb-sector-prospective-point-20261021, nextOct21 00:15UTC=09:15KST,
+end00:25/cutoff13:25/fifth-CLOSE targetOct27. Exact receipt
+A/research/current-hgb-sector-prospective-point-20261021-v1/deployment-r1/INSTALL-CLOSED.json
+28e887fc:1create1enable/0Run,28mock+2unregisteredCOM checks/freshCOMPASS,
+Pythonw/noDemandStart/IgnoreNew/no retry. Installation is not an actual point;
+missing source input stays UNAVAILABLE. Do not rerun consumed installers.
+Oct26 measurement cannot measure this later target.
 Exact sector affineeadf4084; no MODP1 substitution/imputation/backdating.
 
 Live507 eb69c563/498eligible9masked/507GET5POST/2128.629upper complete.

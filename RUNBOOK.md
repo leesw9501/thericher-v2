@@ -46,8 +46,13 @@ Older verification/family entries below are frozen history.
 
 TCN CPUd16a455a completed2fits21/34epochs/selected1/14/6050updates,
 67datePREDproperPASS-financialFAIL. GPUprecursor6c11d3e4 is0marketfits,
-nativeproofPASS but pace2036.9s>600. New foundation8ff10207 is source/native
-preparation only, no actual training claim until its owned worker evidence.
+nativeproofPASS but pace2036.9s>600. Foundation finalblock CLOSED7e85148b:
+actualGPU12SYNupdates/0marketfits-PRED-cells, latent CPU3/CUDA100 parity
+failure, cause magnitude unretained/alljoined/leasefree17:22UTC. Read only
+D:/thericher-v2/model-artifacts/research/current-timesfm-finalblock-adaptation-20261021-v1/CLOSED-READBACK.json.
+Do not rerun consumed family. New synthetic-only backend qualification has
+no optimizer/market/PRED calls. Third fusiona2365b02 technicalUNKNOWN/0cells,
+calendar-mask index fault; not model/financialFAIL or authorization to retry.
 ETF consumer7bdfc250 under
 D:/thericher-v2/model-artifacts/data/current-hgb-sector-etf-remaining8-20261021-v1
 is12x22/264known,12GET2POST0retry across two actual scopes. Snapshot RTH
@@ -55,8 +60,11 @@ guard88bca32e exits before tokens outside regular hours: no observer disable/
 restore coordinator built or installed. Stock300 visits22:30/23:00 unchanged.
 Future halfpool point8c7133fc/source3af7acd8 at
 D:/thericher-v2/model-artifacts/research/current-hgb-sector-prospective-point-20261021-v1
-is SOURCE_READY22checks/0models. Proposed single00:15..00:25UTC opportunity,
-targetOct27CLOSE. Installer pending; do not run template jobs or infer a point.
+has SOURCE_READY22checks; one hidden Pythonw Task ACTUALLY installed:
+thericher-hgb-sector-prospective-point-20261021, nextOct21 00:15UTC=09:15KST,
+end00:25/targetOct27CLOSE. Exact deployment-r1/INSTALL-CLOSED.json28e887fc,
+28mock2unregisteredCOM/freshCOMPASS/1create1enable/0Run. No actual point.
+Never rerun installer/template jobs; require future source-bound inputs.
 
 Generic MODEL_PROPOSAL_NAS verified and installed for the futurecohort:
 D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1.

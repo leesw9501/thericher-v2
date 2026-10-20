@@ -6,13 +6,22 @@ Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 
 ## Current Allocation
 
-No current GPU training. Latest actual GPU allocation was TCN native proof,
+No current GPU training asof17:25UTC. Latest actual allocation is TimesFM
+finalblock17:21:56..17:22:08UTC, CLOSED-READBACK7e85148b under
+A/research/current-timesfm-finalblock-adaptation-20261021-v1:
+12CPU+CUDA SYNupdates/0market fits-PRED-cells/427.163upper/alljoined/leasefree.
+CPU3/CUDA100 latent parity failed before market; exact error unretained,
+not a scientific/model failure. Preserve closed no-retry family and debits.
+New Infra SYN-only matched-shape/backend qualification600active1800elapsed/
+oneGPU/0optimizer-market; fresh ownership/headroom/lease required. Source-only
+next hypothesis/sizing proceed in parallel, not duplicate completed training.
+Prior TCN native proof,
 CLOSED6c11d3e4/12SYNupdates/0marketfits/372.763upper, lease released16:28UTC.
 GPU pace2036.9s/20epochs exceeded frozen600; CPU measured~25x faster for this
 1644parameter model. NEW CPU route d16a455a completed2fits21/34epochs,
 6050updates/6new6cached/643.617upper incloldcarryonce, noGPU/newSYN.
 That original GPU stop is not a bad-model or global GPU/environment ban.
-NEW TimesFM finalblock family8ff10207,16:55:41..19:55:41UTC/3600active/
+Closed TimesFM finalblock family8ff10207,16:55:41..19:55:41UTC/3600active/
 10800elapsed, oneGPU2700lease-inclusive/2fits/onePRED6new6cached/0retry.
 Components source60/kernel150/Data90/Engine240/review30/GPU2700/eval120/
 cleanup60=3450<=3600; native memory/gradient/fullstate/source proof beforefit.

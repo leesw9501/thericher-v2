@@ -48,15 +48,20 @@ current-causal-indicator-path-tcn-cpu-20261021-v1/FINAL.jsond16a455a COMPLETE:
 2fits21/34epochs,best1/14,6050updates/~87nestedfitseconds,67datePREDproperPASS,
 financialFAIL.10bp PATH+.3854/DD.3474 versus uniform+.1376/.3261 percentNAV;
 6new6cached/643.617upper includes old372.763once,0newSYN/GPU/alljoined.
-Cached fixedthird HGB/sector/PATH3 now freezes common66 INPUTkeys beforelabels;
-not an old67 regrade, hidden intersection or weight search.
+Cached fixedthird HGB/sector/PATH3 CLOSEDa2365b02: technicalUNKNOWN,
+onePREDintake/0economic cells/211.500upper. Actual calendar mask71x25 was
+indexed with1650-row prediction indices; source reproducer retained.
+Not a financial/modelFAIL, no retry/regrade under its consumed frozen contract.
 
-NEW current-timesfm-finalblock-adaptation-20261021-v1/8ff10207:
-16:55:41..19:55:41UTC/3600active10800elapsed/oneGPU2700inclusive/
-2fits/onePRED6new6cached/0retry. Samefreshhead versushead+ONLYnativeblock19,
-strict official2f776efe checkpoint and differentiable nativeforward, never
-forecast/decode. Kernel/Data/learner/native gradient/fullstate/memory proof
-beforemarket;64max/pat8/INNERCEbest/fixedLRs. No actual training claim yet.
+TimesFM finalblock study CLOSED7e85148b under its CLOSED-READBACK.json:
+actual RTX4090 allocation17:21:56..17:22:08UTC/12CPU+CUDA SYNupdates,
+0market fits/PRED/cells/427.163upper/alljoined/leasefree. Strict232restore
+and CPU native PASS, but CPU3 versus CUDA100 first3 latent parity failed;
+component/error magnitude unretained, no proved cause or model result.
+Old result/debit unchanged. Archimedes owns new SYN-only backend qualification,
+600active1800elapsed/oneGPU/0optimizer-market-PRED calls; no old tolerance
+relaxation. Pascal prepares one genuinely distinct source-supported next
+hypothesis, Confucius one ex-ante sizing proposal; preparation is not training.
 Claude3bb72321 PROCEED_WITH_NAMED_LIMITS/30upper: unequalcapacity/calibration
 confound representation attribution; no extra fits/controls/criteria added.
 No public code in Execution; old0backbone-update failures remain immutable.
@@ -67,9 +72,10 @@ A/research/current-hgb-sector-prospective-producer-20261021-v1:
 Exact25stocks throughOct20/12ETFthroughOct19/sourceclock/affine/class masks
 required; no fresh market forecast/deployment yet. This HGBprefix28 belongs
 to a7db matched family, NOT the separate operational HGB61point406ec7c1.
-Point8c7133fc/source3af7acd8 READY22checks/0models, plannedOct21
-00:15..00:25UTC afterOct20stockcapture, targetOct27CLOSE. Installer being
-prepared, no Task registration/actual forecast. StockMODP1 base-prefix lineage
+Point8c7133fc/source3af7acd8 READY22checks; Task ACTUALLY installed28e887fc
+under deployment-r1/INSTALL-CLOSED.json, one hidden Pythonw opportunityOct21
+00:15..00:25UTC=09:15KST afterstockcapture, targetOct27CLOSE.0Run/0actual
+point; never rerun consumed installer. StockMODP1 base-prefix lineage
 matches25training sources; ETFMODP0 stays separate and unqualified CA/PIT.
 
 ## Frozen Completed Package History
