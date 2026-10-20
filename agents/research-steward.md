@@ -6,31 +6,32 @@ Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
 ## Current Allocation
 
-19:22UTC: RTX4090 2percent/1577of24564MiB, only web container running.
-No market training inferred. Boole owns current LoRA transport recovery:
-A/research/current-timesfm-lora-adaptation-20261021-v1/premarket-directory-transport-r1.
-Rank4 nativeblock19+head/44803parameters/onefit/max128pat20/same data-seed.
-Original22:38:22.841962UTC deadline/7878.498271totalactive retained; old
-aa7e468a technicalfailure2850.177combined once/0containers-CUDA-models.
-New source<=180/review30/parentIO10 plus actual runtime inside remaining
-cap; old280/240 carry never added twice. Three EXACT RO cache dirs,
-perfile hashes/writer-closed prepost generation/native coldimport+ABI, then
-same singleGPUcandidate. Source readiness is NOT actual GPU allocation.
+Pascal owns ONE actual ordinalGPUallocation under
+A/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1.
+Original19:34:40..22:34:40UTC/3600active10800elapsed/GPU2700inclusive/
+2FIRSTmarketfitsmax128pat20/onePRED6new6cached. Current results pending.
+19:57measurementGPU13percent/3214MiB; not proof of bottleneck. Infra bounded
+read-only observation for NEXTloader improvement, never changes this worker.
 
-Last actual GPU allocation was INNER-only rank diagnostic, closed19:00:35:
-A/research/current-timesfm-ranking-diagnostic-preparation-20261021-v1/runtime-r1/READBACK.json
-48326e76, GPU20.099seconds/oneallocation/2trainedrestores/6classifierforwards,
-0encoder-optimizer-PRED-econ, alljoined/leasefree/2726.241aggregateupper.
-Earlier broader512 READBACK0a7f5137 CLOSED18:32:52:2CUDAfits20epochs/
-620updatesEACH/selected0/6SYNupdates/6new6cached/2478.498upper.
-GPUlease474.38seconds, alljoined/removed. Science+financeFAIL, no repeatfits.
-Weak INNER ordinal association in fixed terminal20 does not regrade oldFAIL.
+FirstCPU metadataJSON failure had3SYNupdates/0GPU-market,346.190upper.
+Pre-effect19:50:53 branch uses exactoldFROZENCPUstate/nextupdateproof plus
+freshgradientguard0updates/newCPU3/CUDA6, cumulative12=old3+new9.
+No late switch to15/zero-effect lie/refund/oldscope rerun. Specificrecovery
+Claude arrivedafterfirstmarket19:52:43, timinghonestlyrecorded, originalordinal
+challenge pre-freeze. Currentfrozenbranch/criteria/data/seed/caps remain.
 
-Pascal independent CPU close-only held-exit candidate:1800active7200elapsed
-from originalacceptedorigin/oneHGB256pat20/CPU2/RAM4GiB/noGPU-network.
-Data129e95ba ready151000FIT/87500INNERstates/40.858active/alljoined.
-One owner per mutable write set; no dummy training to raise utilization.
-Kepler/Confucius/Archimedes delivered inputs/proposal/kernel, no second GPU owner.
+Latest prior actualGPU LoRA8328e0c5/224bbb48/cf810d6b CLOSED19:33:53:
+1fit20epochs620market4SYNupdates/best0/3new12cached/FAIL/3403.562upper.
+Allownactorsjoined/lease released; not an assertion of globalidle now.
+BroaderTF0a7f5137 closed2fits20epochs620updatesEACH/best0/2478.498upper;
+rank48326e76 INNER-onlyfixedterminal20/0optimizer-PRED-econ/oldFAILunchanged.
+Do not duplicate completed market fits or encoding.
+
+Boole fixedfusion CPU240active5400elapsed,6newmax15bytecached/noGPU, actual
+ordinal selectedseals/closedABI pending. Native shadowproducera1cb2c6f
+complete214.856upper/0actualforecast, futureDatae6ece7ce notactualinput.
+No other GPU owner from Data/Strategy/Infra/Review or old completedfamily.
+No dummy load/usage target; freshadmission/headroom/lease before any nextjob.
 
 ## Resources And Custody
 

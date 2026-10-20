@@ -1,83 +1,87 @@
 # Orchestration Stateboard (총괄 조정)
 
 Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Company current-nas-owned-model-paper-cycle-v1 UNFINISHED:8retained FULL
-entries, exit>=Oct21 US OPEN/first13:40UTC. Need exact owned lifecycle closure;
-fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
+Company current-nas-owned-model-paper-cycle-v1 UNFINISHED:8retainedFULL NAS,
+exit>=Oct21OPEN/first13:40UTC. Need exact owned lifecycle closure;
+fees/settledcash/actualnetPnL unknown. Parent shared MD/integration/Git.
 
 ## Ready / Owned / Due
 
-| Owner | Current Package |
+| Owner | Actual Work |
 | --- | --- |
-| Parent | Integrate closed research and exact ownership; no operator decision. |
-| Boole / Engine | LoRA same-candidate transport repair then oneGPUfit; original22:38:22.841962UTC/7878.498271totalactive retained. |
-| Pascal / Engine | CPU close-only held-exit HGB/native variable-exit replay, end-to-end1800active7200elapsed from originalacceptedorigin. |
-| Kepler / Data | Held-exit129e95ba complete151000FIT/87500INNERstates/40.858active/alljoined; no current collector. |
-| Confucius / Strategy | Held-exit proposal3c1b879d delivered; no active numerical worker. |
-| Archimedes / Infra | Pure LoRA kernel83fe0292/ABI4019c93e delivered,0model calls. |
-| Bacon / Review | Transport writer-closed-generation/import-ABI challenge delivered; advisory not approval. |
-| Steward | Last GPU diagnostic closed19:00:35UTC. At19:22 no research container/2percentGPU; transport preparation is not training. |
+| Pascal / Engine | Ordinalranking GPUworker at current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1, original22:34:40UTC deadline/3600active/GPU1. |
+| Boole / Engine | Fixedpairedrankfusion CPUconsumer source/native; exact BOTHordinalclosed selectedseals/ABI pending,240active5400elapsed frozenorigin. |
+| Kepler / Data | Future23featureadaptere6ece7ce complete50SYN/54.397upper/noactualinputs; no activecollector from package. |
+| Confucius / Strategy | Fusioncdd558f9/kernel87f18555 delivered65upper/420SYNchecks/0retainedpayloadcalls. |
+| Archimedes / Infra | Measurementbfdf2bc2 actuallyinstalled; bounded read-only ordinalthroughput observation, no currentworker changes/GPUallocation. |
+| Bacon / Review | Named scoped challenges delivered; advice not authority/factual errors corrected against source. |
+| Parent | Integrate actualclosures/currentmemory/Git, preserve independentPaper identities/bank. |
 
-Existing owned due: RTH21:50UTC/old20D122:30/new9D123:00;
-halfpool pointOct21 00:15UTC=09:15KST; NASexit13:40UTC;
-Window21 prep13:10/entry14:00; nightly14:50/F915:10. Goal97 distinct.
-No substitute unknown requests/new bank/foreign inventory.
-Task/installation/preview is not a fill or actual forecast.
+Due: RTH21:50/old20D122:30/new9D123:00UTC; halfpoolpointOct21 00:15;
+Window21prep13:10/entry14:00; originalNASexit13:40; nightly14:50/F915:10.
+Goal97distinct. No substitute unknownrequests/foreigninventory/newbudget.
+Task/installation/preview notfill. No genuine operator decision.
 
 ## Throughput Review
 
-19:22UTC: closed broader512 actually trained2models20epochs/620updates
-EACH, selected0/FAIL; follow READBACK0a7f5137, not old source appointment.
-Separate rank diagnostic48326e76 found weak INNER ordinal association only;
-0optimizer/PRED/econ, oldFAIL unchanged. CPU same-gross switch37825bd3
-lost both growth/DD tests; keep existing HALF, not a tuning rescue.
+19:50UTC ready/owned/due review: GPUdelay came from native report
+serialization, not data/permission. Initial3CPU SYNupdates must remain3,
+not0;0market fits then. Old346.190upper/failure retained. Explicit repair
+branch frozen19:50:53 keepsold3+newCPU3+CUDA6=12. Parentlater15preference
+arrivedaftereffects; do NOT retrofit/rerun/changebranch. Freshgradientguard/
+exactoldstatecustody required, never acceptance from truncatedJSON.
+Specificrecoverychallenge arrivedlate, honestly documented; originalordinal
+challenge waspre-freeze. No false pre-callreview/oldresult regrade.
 
-Current GPU delay is a technical transport fault, NOT missing data/permission.
-Old LoRA aa7e468a created0containers/models: reconstructed105233UTF16 argv,
-separateWin206 reproduction, originalcodeunretained. Replace459shardmounts
-with3EXACT RO cache directories while retaining perfile hashes/role scopes.
-Writer-closed pre/post generation and native coldimport/ABI proof, then actual
-same candidate inside original caps. Do not abandon a zero-fit technical
-failure or force a cosmetic scientific successor. Old failure/costs retained.
+One reversible improvement: qualify actual-shaped guest-to-host output
+projection BEFORE a market fit, rather than repeating LoRA's Windows /out
+referencefault. Exacthash/size/scope/source guards remain. Whole-date forwards
+avoid needless cross-microbatch two-pass complexity; independentfullgraph
+gradient proof still needed. Routine owner-bound hashes/config do not need
+another parentGO ceremony. No new framework/reportplatform/dummy GPUload.
 
-Reversible improvement: delegate routine frozen-binary hashes/config binding
-and end-to-end numerical execution to named owner under parent textual scope.
-No extra SOURCE_READY/parent-GO paperwork pause; actual semantic/native proof
-and resource admission remain. Independent CPU exit model proceeds while
-GPU transport is repaired. Idle roles need not invent reports/dummy load.
+Actual19:57GPU13percent/3214MiB, not proof of kernelbottleneck. Infra may
+observe boundedstats/source only for NEXTpipeline improvement, never change
+currentfrozen math/order/steps. CPU fusionpreparation/shadowinput prep continue
+independently; only ready closed packets authorize actual downstream readout.
 
-## Concrete Consumers / Current Evidence
+## Material Results / Concrete Consumers
 
-- HALF740ae38d remains default development reference:10bp growth/DD
-  +1.0489/.2926percentNAV, descriptive reused heterogeneous evidence only.
-  Switch37825bd3 +.7487/.3690 FAIL; entryveto lowergrowth/lowerDD notalpha.
-- BroaderTF0a7f5137 CLOSED2478.498upper/alljoined18:32:52. Rank48326e76
-  CLOSED2726.241aggregate/alljoined19:00:35. No duplicate fits/PRED reopen.
-- New CPU exit Data129e95ba:37750FIT/21875INNERepisodes,23features,
-  nextOPEN action/old5day sleeve/no freedcashreentry; alljoined/0PRED-API.
-  Lower exposure alone is not timingalpha; missing required states UNKNOWN.
-- Fieldauditada1665a finds18inconsistentOHLC already raw-source/72neighbors
-  matchCSV; upstreamcauseUNKNOWN/0API, no HIGH/LOW invention/globalhold.
-- Nightly unused-pointer archive7fe5dac2 ACTUAL16:20:55UTC/final7e57f284/
-  sourceed4ae42c: original GO/bytes/bank/foreign canary state preserved,
-  0API/order/Task effects,6actorsremoved. Next natural nightly still unknown.
-- F9RO2f07a757: outcome_unknown/startmarker/noack-brokerref/expiredTTL/
-  reservationheld. Origind6ced0a2 cannot prove original-no-send.
-- Forecast-only Task thericher-hgb-sector-prospective-point-20261021
-  ACTUALLY installed28e887fc,0Run; targetOct27CLOSE. No actual point yet.
-  Later measurement readinesscc75238b NOTinstalled; oldOct26 cannotserveit.
-- Window21 deployment9b1d0e84/sourcef3711b38/imageb96a8ef8 installed;
-  actualOct20closes/full25/NASonly/no renorm, notfill.
-- SnapshotRTHguard88bca32e exits before tokens outsideRTH; no quietwindow
-  coordinator installed/needed. Existing stock300source visits unchanged.
+- HALF740ae38d remains reference:10bp growth/DD+1.04894/.29259percentNAV,
+  descriptive reusedheterogeneous evidence only. Samegrossswitch37825bd3FAIL.
+- CPU learnedexitd7c7383b:60iterations/best40/5early325terminal/6new9cached/
+  455.118upper/alljoined,10bp+1.09535/.29248. OperationaldevelopmentPASS,
+  tinyDDgain/fivechangedlots/unmatchedexposure nottimingalpha/Paperpromotion.
+- Shadowproducera1cb2c6f/SOURCE2883863b/ABI2760251c source/nativeonly,
+  214.856upper/1restore2SYNforwards/33native13readback/alljoined.
+  Datae6ece7ce50SYN/54.397upper; actualfuture23feature inputs UNKNOWN.
+  No cohort/worker/orders/current8NAS/Window21/F9changes.
+- LoRA8328e0c5/224bbb48/cf810d6b COMPLETE1CUDAfit20epochs620market4SYN
+  updates/selected0/3new12cached/3403.562upper/alljoined19:33:53.
+  Selecteduniformscience+financeFAIL, no refit. Originalfailedhost and
+  pretargetpath-only readoutrecovery bothretained,1actualoutcomeintake.
+- BroaderTF0a7f5137 COMPLETE2CUDAfits20epochs620updatesEACH/selected0/
+  FAIL/2478.498upper/alljoined18:32:52. Rank48326e76 INNER-onlyweakordinal
+  association/0optimizer-PRED-econ, no oldregrade/checkpointselection.
+- Nightlyunused-pointerarchive7fe5dac2 actual16:20:55/0API-order-Task,
+  originalGO/bank/foreignstate preserved. Nextordinaryoutcomeunknown.
+  F9RO2f07a757 unknown/startmarker/noack/expiredTTL/reservationheld;
+  origind6ced0a2 notno-send. No repeatbrokenrecovery/substitute/release.
+- Futurepoint28e887fc actualinstalled/targetOct27, noactualforecastyet.
+  One hiddenmeasurementbfdf2bc2 ACTUALLY installedOct27 23:55..00:05UTC,
+  1create1enable0Run/ReadyEnabled/noDemandStart/180upper/alljoined,
+  parentfreshCOMverified. Oldpoint/Oct26tasks untouched; notmeasurementyet.
+- SnapshotRTHguard88bca32e exitsbeforetokensoutsideRTH, no quietcoordinator.
+  Window21deployment9b1d0e84/sourcef3711b38/imageb96a8ef8 installed,
+  actualOct20closes/full25/NASonly/no renorm; notfill.
 
-## Verification / Recovery
+## Verification / Recoverability
 
 Authority A/verification/expired-unstarted-maintenance-20261021-v1/authority.json
-5c229e4a:1371/d2447255,332serialPASS1skip/18568fullPASS25skip/8workers/
-cleanhelper/Ruff/three sampleCompose. Fresh exact source/control equality and
-21closedartifact hash/effect-boundary checks passed at current integration.
-No repeat18k suite solely for MD/external-only work; external code needs its
-own native checks. Preserve preexisting %SystemDrive%/.
-Old clocks/results/failures stay Git/A; boards are current memory, not diaries.
-Continue ready delegated work; a due time is not company completion.
+5c229e4a/1371d2447255:332serialPASS1skip/18568fullPASS25skip/8workers/
+cleanhelper/Ruff/three sampleCompose. Exactsource/control equality plus fresh
+closedartifact/native checks required for MD/externalreuse, not another18k run
+to certify arbitraryD: code. Current parent21closedrefs+30Data+5exitref checks
+passed with no extra model/eval calls. Preserve %SystemDrive%/.
+Currentmemory replaces stale active-looking work; older exact contracts,
+results/debits/custody remain Git28fc1a1/immutableA. A due time notcompletion.

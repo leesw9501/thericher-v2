@@ -20,6 +20,48 @@ default-research-accounting sample-envComposePASS. Controls unchanged.
 No repeat full suite merely for current MD/external-only integration;
 require exact source/control equality and fresh external proof.
 
+### Current Research Owners
+
+Pascal actual ordinalGPU at
+D:/thericher-v2/model-artifacts/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1,
+original22:34:40UTC/3600active/GPU1/2FIRSTfits/onePRED6new6cached.
+Sourcefrozenold3+newCPU3+CUDA6=12SYN; no late15switch/restart/refit.
+ExactoldFROZENCPUstatecustody/freshgradientguard, late specificrecoveryreview
+timing retained; no invented pre-callreview. Parent MUST NOT rerun host.
+
+Boole CPUfixedfusion at
+D:/thericher-v2/model-artifacts/research/current-halfpool-ordinal-rank-fusion-development-20261021-v1,
+240active5400elapsed/6newmax15bytecached, actualselectedseals/ABI pending.
+Purekernelcdd558f9/87f18555/420SYN/65upper; constantHALFalias requiresproof
+and0redundantreplay. Actual newordinalinputs are not inferred from source.
+
+Completednewresults (not commands):
+CPUexitREADBACKd7c7383b/60iterationsbest40/5early325terminal/455.118upper,
+operationaldevelopmentPASS10bp+1.09535/DD.29248percentNAV vsHALF+1.04894/.29259.
+LoRAFINAL8328e0c5/MODEL-ABI224bbb48/readbackcf810d6b under its
+premarket-directory-transport-r1/readout-hostpath-recovery-r1:
+1CUDAfit20epochs620market4SYN/best0/3new12cached/FAIL/3403.562upper/alljoined.
+Oldfailedhost/readoutguestpathrecovery preserved; no completedmodelrerun.
+ShadowproducerFINALa1cb2c6f/SOURCE2883863b/ABI2760251c at
+D:/thericher-v2/model-artifacts/research/current-held-exit-shadow-producer-20261021-v1:
+1restore2SYNforwards/33native13readback/214.856upper/noactualforecast.
+DataSOURCE-READYe6ece7ce at
+D:/thericher-v2/model-artifacts/data/current-held-exit-causal-state-producer-20261021-v1:
+50SYN/54.397upper/raw23features, futureauthenticatedchains/cohort/OPEN-CLOSE
+UNKNOWN; no privatefill substitution/backdating/existingPaperexitchange.
+
+Measurement ACTUALLY installedbfdf2bc2 at
+D:/thericher-v2/model-artifacts/research/current-hgb-sector-oct21-point-measurement-readiness-20261021-v1/runtime-install-r1/RESULT.json.
+Task thericher-hgb-sector-oct21-point-measurement-20261027, nextOct27
+23:55..Oct28 00:05UTC=08:55..09:05KST,1create1enable/0Run-otherTaskmutations/
+ReadyEnabled/oneTrigger/noDemandStart/180upper/alljoined. ParentfreshCOM
+confirmed; oldpoint/Oct26tasks untouched. FuturemeasurementNOT_OBSERVED.
+No newrecurringchain; necessaryconsumer for already-installedpointOct27target.
+
+### Retained Compatibility / Historical Callers
+
+Older source/next wording BELOW is frozen history, not an instruction to
+rerun consumed callers or proof of current owners/deployment.
 Explicit retire_expired_unstarted_daily_context sourcea5bc9bc9 is offline
 maintenance only, NOT normal run/automatic rollover/deployment evidence.
 Linux native proof15cases/472pins at

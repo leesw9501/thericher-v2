@@ -4,7 +4,26 @@ Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own market data/storage/availability; Execution owns account/orders.
 Parent shared MD/Git. Never KIS_LIVE_* or secret/rawmarket/private output.
 
-## Current Input / Consumer
+## Current Ready / Future Boundary
+
+Held-exit raw-state adapter e6ece7ce at
+A/data/current-held-exit-causal-state-producer-20261021-v1/SOURCE-READY.json:
+freeze_context -> freeze_market_open -> state_packet -> save_packet,
+rawFP64[25,23]/masks/typedUNKNOWN/provenance;50SYNchecks+4NPZroundtrips,
+54.397upper including22.009feasibilityonce/alljoined/0actualpayload-API-model.
+Shadowproducera1cb2c6f consumed sourceABI only, not an authenticatedfuturefeed.
+FrozenentryR21 needs22closes endingOct20 forOct21entry; last inspected two
+pointers bindOct19, not assumedfresh. EntryOPEN MUST exact publishedmarket
+field, neverprivatefill. LaterCLOSE publication permits delayedafterclose
+decisions BEFORENEXTOPEN, never backdatedCLOSE. Nativecapturechain/cohort/
+futureOPEN-CLOSE still UNKNOWN; no worker/cohort/currentPaperpolicy activated.
+Data remainsraw; Engine restores exactFITtargetinverse before rawzeroHOLD.
+EarlierData129e95ba and broader28915bd7 complete, do not rederive/refit.
+
+## Earlier Input / Consumer Context
+
+Old ready/next prose below is retained history, not a dispatch overriding
+current owners and exact completed consumers in HANDOFF.
 
 Sector derivation COMPLETE, do not republish/retrain:
 A/data/current-sector-path-classification-input-20261020-v1/CONSUMER.json

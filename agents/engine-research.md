@@ -5,7 +5,40 @@ Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 Engine owns hypotheses/models/splits, never deterministic broker risk.
 Historical reused comparisons are adaptive development, not independent alpha.
 
-## Current Results / Next
+## Current Owners / Results
+
+Pascal actualGPU ordinalranking under
+A/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1:
+original19:34:40..22:34:40UTC/3600active/GPU1inclusive2700/2FIRSTfits/
+max128pat20/onePRED6new6cached, all-date ordinalpairloss, scalar1280vsLoRA42240.
+Initial3CPU SYNupdates/0market failedJSONmetadata; pre-effectrepair frozen
+old3+newCPU3+CUDA6=12, not later15branch/oldzero-effectsretry. Exactoldstate
+custody/freshgradientguard required; specificrecoveryreview late honestly
+retained, originalordinalreview waspre-freeze. Currentactualworker outcomes
+pending; no secondallocation/refit/cap-clock-reset/approval-file ceremony.
+
+Boole CPU fixedpairedrankfusion240active5400elapsed under
+A/research/current-halfpool-ordinal-rank-fusion-development-20261021-v1:
+cdd558f9/87f18555/65sourceupper420SYN,6newmax15bytecached/oneoutcomeintake,
+actual BOTHordinalselectedseals/closedABI pending. Constant-arm exactHALF
+aliases needproof/0replay; eachpool descriptive, no aggregate either-wins.
+
+CPU exitd7c7383b CLOSED1HGBfit60iterations/best40/5early325terminal/
+6new9cached/455.118upper,10bp growth/DD +1.09535/.29248 vsHALF+1.04894/.29259
+percentNAV. OperationalPASS only, nottimingalpha/optimalstopping/Paperpromotion.
+Shadowproducera1cb2c6f/SOURCE2883863b/ABI2760251c nativeonly214.856upper:
+1safeCPUrestore2SYNforwards/33native13readback/0actualforecast-GPU-API-Task.
+Datae6ece7ce future23features50SYN/54.397upper; realfutureinput/cohort/
+nativechainauthority UNKNOWN. No current8NAS/Window21/F9 exitpolicychange.
+LoRA8328e0c5/224bbb48/cf810d6b CLOSED20epochs620market4SYN/selected0/
+3new12cached/science+financeFAIL/3403.562upper/alljoined19:33:53.
+No completedfit duplicated; oldfailedhost/path-onlyreadoutrepair preserved.
+
+## Earlier Retained Context
+
+Old preparation/next wording BELOW is frozen history, not current dispatch.
+Actual owners/closedpackets above and HANDOFF supersede it. Old results/
+source/debits remain immutable; never revive a consumed caller from prose.
 
 Sector study CLOSED A/research/current-sector-path-classification-repair-20261020-v1/
 readout-only-r1/FINAL.json9d883b98. SHORT31epochs/best11, ETF26/best6;

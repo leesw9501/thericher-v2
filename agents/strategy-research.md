@@ -4,7 +4,32 @@ Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts.
 Own concrete mechanisms/source interpretation; Engine owns target/split/
 fitting/evaluation. No broker/credentials/risk authority. Parent shared MD/Git.
 
-## Current Selection / Evidence
+## Current Ready / Frozen Proposals
+
+Fixedpaired rankfusion proposal cdd558f9 at
+A/research/current-halfpool-ordinal-rank-fusion-hypothesis-20261021-v1/PROPOSAL.json
+frozen BEFORE newordinaloutcomes. Kernel-r1/rank_fusion.py87f18555
+fuse/doubled_midrank/fair_top5,420nativeSYNchecks incl111enumeratedtie
+completions/36permutations/19negatives.65upper=old40+new25once/0retainedpayload/
+model/GPU/APIcalls. Integer doubledmidranks preserve exactboundaryties.
+HALF+.5newarm fixedpairedpools,6newmax15uniquebytecachedcontrols;
+constantarmexactHALFalias requiresproof/0redundantreplay. No fittedgate/
+weightsearch/aggregate either-wins/independentalpha/Paperpromotion.
+Boole CPUconsumerprepares; actual newordinalselectedseals/closedABI pending.
+
+Ordinalproposalf92b48e2 now actualGPUstudy ownedPascal, same-dateallpairs
+coarsecostclasses, tiesconstantlog2-zero grad/alloriginaldates; scalar1280vs
+LoRA42240. CurrentGPUTRIAL not a probability model or new information proof.
+InitialCPUmetadatafailure3SYN/0market retained, pre-effectrepaircumulative12
+and specificlate-review timing retained. No aftereffectsfresh15 branch/capreset.
+CPU held-exit d7c7383b operationaldevelopmentPASS,5earlylots only; shadow
+producer/Dataadapter source/native ready, noactualfuturecohort/Paperchange.
+LoRA8328e0c5 completed20epochs/620updates/best0/science+financeFAIL, notqueued.
+
+## Earlier Retained Proposals
+
+Old preparation/next wording below is historical, not current dispatch.
+Current actual consumers/owners above and HANDOFF supersede it.
 
 Inverse21variance application CLOSEDfinancialFAIL at
 A/research/current-halfpool-invvar-sizing-20261021-v1/FINAL.json3c484f19.
