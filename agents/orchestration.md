@@ -11,11 +11,12 @@ required; no private amount/fees/netPnL inferred. AGENTS owns authority.
 | --- | --- |
 | Parent | Verified code integration1370d106 committed/pushede53c290; current integration/docs. |
 | Archimedes / Execution | Actual9b1d0e84 TWO_READY_ENABLED/freshCOMPASS; futureprepare13:10/execute14:00Oct21UTC. No Run/API/fill. |
-| Kepler / Data | Live64Data9e4dac7a ready1600known/25x64;31upper/0models-API-Tasks. BroadData8b6 complete, no rederivation. |
+| Kepler / Data | R2closed193GET/188eligible/unknownactor. R3 exact09:59progress300GET4POST0retry/294eligible, no terminal/fullinput claim. |
 | Boyle / Data | Extension ACTUAL0e9e28f6:8class3+rank/oneactionupdate/freshfullACL+windowPASS/allclosed/0Run-API-outcomes. Oldeed4edac0RPC preserved. |
-| Boole / Engine | Broad/pair closed. Two-arm mean507-vs-attention507 worker/native preparation; conditionalfiniteGPUgrant, no actualdispatchyet. |
+| Boole / Engine | Peer5a4eec9c COMPLETE2CUDAfits21epochs/selected1; prospective2CPUpoint source waits actualfresh507. |
 | Pascal / Infra | Fleetbank nativeSYN compat e6e0250f PASS56+172pins; threeimage-native oldreadsnew PASS, finalhostreverse UNKNOWN. |
-| Confucius / Strategy | Official-source cross-sectional novelty/kill challenge; read-only, imagequalificationclosed. |
+| Confucius / Engine | ONEfixedrankthird CPU study,15cells/noNN-GPU; prior source/native financialkernel37checks ready. |
+| Bacon / Engine | Broad08fdd333 COMPLETE2CUDAfits32/23epochs selected12/3,primaryFAIL/allclosed; nextCPUpointSourceaafc3329/900e6821 ready0effects. |
 
 All last CUDA actors physically quiescent/lease released.
 A/engine-research-agent/locks/gpu.lock is the single allocation authority.
@@ -50,6 +51,49 @@ CLI regression, not model/image reforecast or broad all-PC inventory.
 Recovery nowACTUAL0e9e28f6/26newCLIchecks+prior77, oneactionupdate/fresh
 independentreadbackf0221fe3/fullACL+window unchanged/alljoined. No measurement
 or broker invocation. This closes only measurement installation, not company.
+
+Review08:46UTC: peerattention firstnative scope CLOSEDc333dab3/0marketfits:
+worst128 pace<=280s guard failed, numericprojection not retained. Not GPU/
+permission failure. Keepold170upper/1allocation/8SYNupdates immutable. New
+explicit resourcecontract same2arms/data/seed/128pat20, aggregate3000active
+includingold170/readoutsource/originalend10:05:41. Perfit1000/epochstop950;
+record actual warmedtimings beforechecks, maxepochs/time alternative ceilings,
+not guarantee128 or global research permission. Confucius readout-source
+split fromBooleworker/native coding avoids serial LLM source bottleneck.
+Kepler independent507asofcapture readiness runs separately/newroot; no change
+to frozenhistoricalinput or currentPaper scopes. No actualmarketfit yet.
+
+Review09:23UTC: actualpeerfits COMPLETE5a4eec9c/2CUDAfits21epochs/selected1,
+42.925GPUactor seconds nested, financialdiagnosticPASS/properFAIL; alljoined.
+MATH diagnosed/scoped bitexactfix, not relaxed numericcriterion. Next ready
+information test is broaderlabelled-query coverage, not bigger epochs/models.
+DataRUNNING50 message lagged actualCLOSED09:12UTC139GET136eligible. Unknown
+extraactor1 remainsunknown, not attributedbenign or inferredbusy/success.
+Measured3.215s/route actual2s nativefloor; fullremaining368~1183s+overhead.
+New continuation needs fresh NAMEDData/cachewriter vs provenofflineResearch
+classification, not whole-project Python idle; unknownwriters stillconflict.
+Read-onlyDocker ownerinventory is inspection, not service invocation. Keep
+rate/custody/claims; no activehotpatch, acceptedpages reGET or sourcefreezes
+across unrelatedlanes. PascalClaude challenge/KeplerSYN inparallel; newData
+aggregate2400active inclallolddebits/original10:32:40end/600GETtotal unchanged.
+
+Fixedfusion2c75844c COMPLETE15cells/0NN-GPU:rankthird tinygrowthgain but
+DD.8474 vsfrozenhalf.4792percentNAV =>primaryFAIL. No weightgrid/rescue;
+futurepredeclaredrankpoint stillretained iftechnicalinputsready.
+Bacon firstnativeclosed8e899b7f/counter missingstage/1allocation0fits;
+598.825debit retained/source24checks notnativepass. Newcorrectedactualcounter
+CPUregression then conditionaloneallocation+one SYN-onlyretry ifpremarketbug,
+2marketstartsALLattempts/0completedrefits/SAME4000active/endclock inclallcosts.
+
+Now broadquery COMPLETE08fdd333/d8c2901b asof09:32:56UTC:2CUDAfits1595updates/
+3369forwards/15cells479checks/primaryFAIL/alljoined+leasefree. Total874.069
+upper retains598.825, actualGPUworker wall31.315nested, no moreNNgrid.
+Next ready work is four CPUforecasts+predeclaredrankpolicy afterlive507
+completion. BooleSourceR3 8f8abc26 andBaconSourceaafc3329/900e6821 ready0NN;
+pointownIO30each, sharedDataacquisitiondebited once, exactrefs notrevisiongate.
+R3Data callback boundedpre-wirewait15x2s/max120s keepsunknownFAILclosed until
+freshPASS, no wireeffect onbusy. Source09:59 actual300GET/294eligible/4POST0retry;
+all507terminal required, notall507eligible. No mysterytime/cap/approvalwait.
 
 Review06:36UTC: all actual researchfits CLOSED, GPU idle by readiness rather
 than permission. Boole owns broader-data expert SOURCE; Kepler metadata/ABI

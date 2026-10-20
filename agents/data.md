@@ -7,7 +7,7 @@ Never KIS_LIVE_*/secrets/raw market rows/private amounts in output.
 
 ## Ready / Owned / Due
 
-Kepler actual preparation (no new derivation yet):
+Kepler completed historical peer-panel derivation:
 A/data/current-cross-stock-peer-panel-input-20261020-v1, arrays under matching
 M/us_equities/kis_paper_private root. Engine DATA-REQUESTa3543f1c freezes
 full43480TRAIN/1575INNER/1650PRED, canonical21returns under literalAAD affine;
@@ -18,6 +18,33 @@ Metadata feasibilityc8d985d0:1945physicaldates align;20.145upper/0arraysdecoded.
 Do not silently substitute immediately reusable short6670FIT or join raw
 ordinal/slot namespaces. Live507 not ready from retainedOct14/Jul28 sources;
 historical research remains feasible, existing25Paper input unaffected.
+ACTUAL CONSUMER6de633ee/CLOSED018c27f1 at08:30:12UTC:43480queries1752dates/
+634373peerrows;1575/63/30990;1650/66/32992. No missingrequireddates,
+PRED exactFP32parity;57SYN217097checks/oneactual0retry/0labels-model-GPU-API.
+New36.905upper; Data20.145+Claude24.498+newData=81.548 (add Engine separately).
+Next independent prospective consumer current-nas507-peer-live-close-20261020-v1:
+source/owned-path readiness for actualOct19 past22CLOSEs, not yet acquired.
+Separate root/clock from frozenhistoricalfit, never mutate mountedfit sources.
+Conditional delegated existingKISPaperData path/oneclient/<=600totalGET,
+507initial+boundedrecoverable2perroute withincap/1200active7200elapsed,
+no account/order/Tasks/labels; unknownowner or source takes boundedprobe first.
+Firstactual freshconsumer stopped at wrapperhashcodec, NOT data absence:
+1GET1authPOST/0retries/nativeacceptedpagehashmatches; wrapper incorrectly
+expected sha256: prefix while nativeFileRef is barehex. Firstfailedallunknown
+mask is not missinghistory. failure-r1/QUALIFICATION.jsonb9fbc430/73.016upper,
+ownersreleased; oldsource/result unchanged. New repair-r1 conditionalcontinuation
+one-linecodec+newroot only, sixSYN+retainedpage reparse first/0GET for accepted
+route, <=600GET ALLattempts/1200aggregate incl73.016/original10:32:40deadline.
+One new client/owner allocation, validtokenreuse/freshclaims before remaining
+506routes; no Task/API flood, no frozenhistorical input modifications.
+LaterR2closed193GET3POST0retry/188eligible5knownmissing/314unknown,
+pendingnull/unknownactorCmdHash26413aae identitynotattributed. Aggregate855.341
+olddebitcharged/claimsreleased. NewR3 boundedno-wire readiness rechecks keep
+strictfreshclassifier/native2sfloor/token/custody checks. Current knownsnapshot
+09:59UTC300GET4POST0retry/294eligible, notqualifiedfull507. Aggregate2400
+inclallolddebits/end10:32:40 unchanged/600GETtotal. Waits belongworker, not
+parent; no activehotpatch or HTTPrequest whilebusy. All507routesaccounted and
+inputonlymask>=20 eligible isconsumer condition, notall507validhistories.
 
 Live64Consumer9e4dac7a under
 A/data/current-broad-residual-live64-input-20261020-v1/CONSUMER.json:

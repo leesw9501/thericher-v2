@@ -2,82 +2,84 @@
 
 Oct20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
-Own hypotheses/data targets/splits/costs/models, not broker risk/capital.
-All historical outputs below are adaptive reused data, not independent alpha.
-GPU actors closed; next cross-sectional interaction feasibility is SOURCE-only.
-Do not duplicate old fits or infer active training from preparation.
+Parent integrates/Git; Engine owns models/targets/splits, never broker risk.
+Historical comparisons are adaptive/reused, not independent alpha/Paper PnL.
 
 ## Current Priority
 
-1. Provisional Paper A: native profile e53c290/1370d106 verified; actualCPU
-   proposal a0d04cc1 and IMAGEb96a8ef8/fc8309c4 qualified. R4sourcef3711b38
-   fixes frozen imports; actual9b1d0e84 TWO_READY_ENABLED/freshCOMPASS,
-   prepareOct21 13:10UTC/execute14:00UTC. Same shared tenth/native custody, no profit
-   prerequisite or full-universe/replay-parity claim.
-2. All recent fits CLOSED; no duplicate training. Residual1372c432 twofits/
-   24cells and broad8198cdbe one95epochfit/15cells did not pass frozen
-   primaries. Lower risk or descriptive higher growth is not independent alpha.
-   Shortlist candidates may still enter correctly scoped provisional Paper.
-3. Completed prospective pair:
-   A/research/current-broad-residual-prospective-pair-preparation-20261020-v1.
-   BroadBepoch75 + ResidualMLPepoch3, ONE existing fixedrankhalfMLP/rawSD
-   nonprobability composition. Max2model-onlyrestores/2actualCPUforwards,
-   0fits/GPU/broker/API/credentials/Tasks. No oldAengineeringpoint adoption.
-   Live64Data9e4dac7a/INPUT0d677995 ready25x64FP64/1600known/actualOct19index0;
-   literal oldAAD forB21; frozen6featurekernel/scaler forMLP, no FP32 inverse.
-   Family600active7200elapsed from07:32:40UTC/deadline09:32:40, hardforecast
-   commit<13:25 beforeofficial13:30. FINALa0569a2e/ABI07c6ea7f/
-   OUTCOMEf61c9dec/COMMITTED326088cf at07:52:24.828544UTC:2CPUrestores/
-   2forwards25rows each,0fits-GPU-API-targetdecodes;146source51readbackchecks,
-   allactors/containerclosed. Rankpolicy has no proper-score interpretation.
-4. Original6actualpoints e1fc1ada/2b168e66 and futureOct20/21/22/23/26 targets
-   remain untouched/unknown. SAMEOct27window extension ACTUAL0e9e28f6:
-   8class3+one explicitnonprobpolicy/oneactionupdate/fullACL/window preserved,
-   freshreadbackf0221fe3/0Run-API-outcomes. No newworker/trigger/reportchain. Company8NAS
-   lifecycle still UNFINISHED; forecast/commit/source is not an exact fill.
-5. Boole owns current-cross-stock-peer-attention-preparation-20261020-v1:
-   TWO new matched same507-peer experts, nonlinear mean versus query-dependent
-   attention. Plain DeepSets already studied Oct19/54cells; do not duplicate.
-   DATA-REQUESTa3543f1c freezes full43480TRAIN/1575INNER/1650PRED throughOct8;
-   canonical21returns/oldAAD affine, label-independent peer membership/UTC joins.
-   Kepler derives under current-cross-stock-peer-panel-input-20261020-v1;
-   no copied peer tensors per query, no labels in Data or peer trainingmounts.
-   Parent conditional numerical grant: <=2fits/oneGPUallocation/0retries,
-   max128epochs/pat20, total1200active7200elapsed from08:05:41UTC/deadline10:05:41.
-   Includes all source/Data/review/SYN/failures/I-O/cleanup; Data20.145 and
-   Claude24.498upper already owned. Native optimizer/restore/mask/future tests
-   and exact frozen Data/source required first; no actual newGPUdispatch yet.
-   No live507 peers evidenced (old source endsOct14/Jul28), so no same-day
-   forecast/Paper claim. Existing futurepoints/Paper proceed independently.
+- Paper baseline: MODEL_PROPOSAL_NAS future tasks INSTALLED9b1d0e84,
+  prepareOct21 13:10UTC/execute14:00UTC. Same original shared tenth/custody.
+  Old NAS eight retained FULL entries exit>=Oct21 13:40UTC. No profitability
+  permission gate; technical faults and unknown reservations remain real.
 
-## Recent Contracts
+- Latest learning CLOSED: peer mean/attention5a4eec9c/ABI9fdff9e2 under
+  A/research/current-cross-stock-peer-attention-preparation-20261020-v1/
+  runtime-source/backend-math-r1. TwoCUDAfits21epochs/selected1/4620updates/
+  142checks/12cells; financialdiagnosticPASS/properFAIL, lateroverfit.
+  At10bp growth/DD percentINITIALNAV:ATTN .7577/.8980,mean .4788/.8989,
+  uniform .1129/.3261. Not convergence/independent alpha/Paper promotion.
+  Four lifetimeallocations/52SYNupdates/470.251upper, alljoined/leasefree.
+  Oldc333/e014 failures/debits immutable. Diagnosis ede2797e: identical
+  restored BEFORE/RNG, defaultSDPA AFTERfloat drift, MATHcontrol bitexact;
+  corrected jointnative23b65955 PASS, no tolerance/criterion relaxation.
 
-Residual/regime: older42 stock-specific LOO beta/intercept -> subsequent21
-common/residual shocks, sixfeatures/ownSD/peer-vol. Subtracting a common mean
-alone preserves unscaled reversal ranks; actualprefit nonredundancy passed
-1152TRAIN41INNERdates. Data c7603cda43480/1575/1675;34unknowncontext retained,
-whole-date loss43380. Logistic23iterations and803paramMLP15epochs/selected3/
-825market+4SYNupdates, no epoch/seed/weight rescue. One fixedrankblend only.
+- Bacon: NEW broader labelled507-query two-arm campaign
+  current-broad-query-peer-attention-20261020-v1. FIT654834/654794supported,
+  explicit route-selfmask/input-only membership, current25 INNER/PRED and
+  cached oldattention baseline. Different data/query geometry, not oldfit
+  repeat. First attempt8e899b7f counteridentity missingstage:oneallocation/
+  zero fits-updates-predictions/debit598.825. ActualcounterCPU regression
+  before correctednative; source24checks NOT CUDA pass. Linked recovery
+  preserves SAME4000active14400elapsed/fromacceptance inclallcosts, one
+  preferredallocation+one predeclared SYN-onlyretry before anymarketstart,
+  <=3lifetimeallocations/2marketfitsALLattempts/0marketretry/max128pat20.
+  Now COMPLETE08fdd333/ABId8c2901b asof09:32:56UTC:twoCUDAfits mean32epochs/
+  selected12,attention23/selected3/1595updates3369forwards/34SYNupdates/
+  15cells479checks/primaryFAIL.10bp percentINITIALNAV mean.5264/DD.5650,
+  attention.1158/.6616; bothpropermetrics beatbroadFITprior butattention
+  losesmean.874.069aggregate incl598.825/2allocations/SYNretryunused,
+  alljoined/leasefree. NextBroadPointSourceaafc3329/binder99264ef7/ABI900e6821,
+  <=2CPUforwards/0effects/600active/deadline11:39:38/hardcommit13:25.
 
-Broad507 PROPOSAL08b422f5/Data8b6da917:654834FIT/654794known/1816dates,
-30990INNER/30985known/63dates,32992PRED/66dates/sealedtargets; current251650
-old1675tail/AADparityPASS. 114.508MB/19SYN2.362Mchecks/48Dataupper.
-FIT2019Jan2..Mar24 2026; INNERMar31..Jun30; PREDJul8..Oct8, physicalpurges.
-Literal oldAAD scalar/common252 normalization; no newbroad or futurestats.
-Seed2801/same17347paramLSTM/max128pat20; oldA reference cannot gate B.
-Different rows/years/prior/domain confound an isolated causal breadth effect.
-All512 previously declared; excluded names are NOT untouched.
+- Boole: CPU prospective source under
+  current-mean-attention-prospective-point-preparation-20261020-v1.
+  Sourceb9da2b7d/54fixtures/30upper/0modelintakes; amendment beforeeffects
+  binds actual new qualified live507 Consumer, not old failedrepair-r1.
+  ALL507 routes terminal/accounted, NOT507 eligible: masked missing history
+  is allowed by native input ABI; unattempted/pending/APIunknown is not
+  knownmissing. Preserve all25 queries/static507 axis/no imputation.
+  <=2CPUmodel-onlyrestores/2forwards/oneCPUcontainer/0retry-fits-GPU-KIS,
+  family600active/deadline11:09:50UTC/hardcommit<13:25 beforeOct20 OPEN.
+  Add ONE predeclared arithmetic rankthird(ATTN,ResidualMLP,RAWSD) using
+  exact old07:52point components, no extra NN. All point outputs class3
+  except rankpolicy NONprobability/proper-score N/A. No actualpoint yet.
 
-FirstCUDAproof d2b86a5b UNAVAILABLE:1allocation3SYNforwards0optimizer/
-marketfit/PRED/economics,264.338upper, oldsource/result unchanged.
-New premarket-repair-r1 corrected train mode BEFORE gradient forwards.
-Actual8198cdbe/ABI d6a26450:1fit95epochs/selected75/pat20,10830market+
-4SYNupdates/123.386s/249checks,15cells/Decimalgap4.44e-16.
-10bp EACHleg growth/DD percentNAV:A.8162/.4937,B.5652/.3808,
-uniform.1129/.3261; pairedprimaryFAIL. BroadproperUNKNOWN40missingtargets.
-455.724aggregateactiveupper/2lifetimeallocations/allactors+leaseclosed.
-No completedfit repeat, convergence claim, covered-only success or oldregrade.
-Originalaggregate5400active/14400elapsed fromSOURCEorigin never reset.
+- Fixedfusion COMPLETE2c75844c/CACHEABI5455aefe under
+  current-peer-residual-fixed-fusion-20261020-v1:15cells/3cachedintakes/
+  0NN-GPU-retries/2093SYNassertions/148readback/2115DecimalNAVchecks,
+  117.365activeupper/alljoined.10bp percentNAV rankthird1.1310/DD.8474,
+  frozenhalf1.1287/.4792,ATTN.7577/.8980;primaryFAIL risk. No weightrescue.
+  This66date consumer does not regrade old67datehalf. Future predeclared
+  rankthird remains measurement regardless historicalFAIL.
+
+- Data dependency: R2closed193GET3POST/188eligible5knownmissing, unknownactor
+  retained. R3 bounded no-wire readiness rechecks keepstrictfreshowner checks;
+  exact09:59progress300GET4POST0retry/294eligible, not fullinput yet. No
+  accepted-page reGET; aggregate2400/end10:32:40/600GETtotal. Historicalpanel6de633ee remains
+  valid, not blocked. Live-data gap constrains only the new prospective
+  point, not broader historical training, Paper or other prepared work.
+
+## Frozen Research Context
+
+Residual1372c432: Logistic23iterations/MLP15epochs selected3;6features,121.491
+upper, primaryFAIL/descriptive fixedhalf promise. BroadLSTM8198cdbe:95epochs
+selected75/10830updates/455.724upper, pairedprimaryFAIL/properUNKNOWN40missing.
+Their07:52future pair ACTUALa0569a2e/ABI07c6ea7f/COMMITTED326088cf,2CPUforwards/
+0fits-GPU-outcomes. Oldfour points e1fc1ada andPRICE/MACRO2b168e66 preserved.
+Eightclass3+one rank policy measurement installed0e9e28f6, sameOct27 window;
+targetOct20/21/22/23/26 still unknown. No failed/uncommitted point adoption.
+More detailed closed contracts/source/splits/debits stay immutable A and Git,
+not reconstructed as independent data or reopened selection results.
 
 ## Latest Completed
 

@@ -23,13 +23,14 @@ No current operator decision or company-wide permission hold.
 | --- | --- |
 | Parent / Orchestrator | Integrates/Git. Code/profile/lease integration e53c290 committed/pushed with exact fresh authority. |
 | Archimedes / Execution | TWO_READY_ENABLED9b1d0e84; new prepare/execute tasks enabled with fresh COM semantic PASS. Installation only, no Run/API/fill. |
-| Kepler / Data | Repaired extractor actual qualification COMPLETE1ca604c3/25x22FP64; futureentry21 needs actual20close captures. No broker/model calls. |
+| Kepler / Data | R2closed193GET/188eligible/5knownmissing/unknownactor; R3bounded no-wire readiness wait active. Exact09:59progress300GET/294eligible/4POST0retry, notfullinput yet. |
 | Boyle / Data | Eight-model+rank measurement action ACTUAL0e9e28f6; fresh independent readback/fullACL/window PASS, no Run or measured outcomes. |
-| Boole / Engine | Broad8198cdbe CLOSED; new pair FINALa0569a2e COMMITTED07:52:24UTC. Next cross-sectional interaction SOURCE feasibility, no new GPU dispatch yet. |
-| Pascal / Infra | Fleetbank source/image compatibility CLOSED; no active private/API work. |
-| Confucius / Strategy | Invoked official-source cross-sectional interaction challenge; no code/data/runtime mutation. IMAGEb96a8ef8 qualification remains closed. |
+| Boole / Engine | Peer5a4eec9c CLOSED; pointSourceR3 8f8abc26 ready70source+30ownIO/0NN, deadline11:09:50UTC, waitsfull507. |
+| Bacon / Engine | Broadquery08fdd333/d8c2901b COMPLETE2CUDAfits32/23epochs selected12/3,primaryFAIL/allclosed. ProspectiveSourceaafc3329/900e6821 ready0NN, deadline11:39:38UTC. |
+| Pascal / Review | Scoped Data-owner classification Claude challenge and source-only measured-throughput review. No API/owner mutation. |
+| Confucius / Strategy | Fixedfusion2c75844c CLOSED15cells/primaryFAIL/0NN. Now source-only MODP/basis audit, no KIS or data mutation. |
 
-All last GPU actors physically joined/quiescent; canonical lease released:
+Latest completed GPU actors joined/quiescent; lease released in5a4eec9c:
 A/engine-research-agent/locks/gpu.lock. Do not duplicate completed learning.
 
 ## Research Results
@@ -39,6 +40,8 @@ actual KIS PnL. Frozen failures/debits unchanged; no epoch/seed/weight rescue.
 
 | Study Under A/research | Actual Result |
 | --- | --- |
+| current-broad-query-peer-attention-20261020-v1/corrected-native-r1 | FINAL08fdd333/ABId8c2901b:2CUDAfits MEAN32epochs/selected12,ATTENTION23/selected3;1595marketupdates3369forwards/34SYNupdates/15cells479readback. PrimaryFAIL, both beat broadFITprior butattentionlosesmean proper metrics.10bp percentINITIALNAV mean+.5264/DD.5650,attention+.1158/.6616,oldcachedattention+.7577/.8980.874.069upper inclold598.825/2lifetimeallocations/SYNretryunused/alljoined+leasefree; GPUprocess31.315s nestednotkernel time. |
+| current-cross-stock-peer-attention-preparation-20261020-v1/runtime-source/backend-math-r1 | FINAL-r2 5a4eec9c/ABI-r2 9fdff9e2:2CUDAfits21epochs each/selected1/4620marketupdates/142checks/12cells.10bp growth/DD percentINITIALNAV ATTENTION+.7577/.8980,MEAN+.4788/.8989,uniform+.1129/.3261. FinancialdiagnosticPASS versusmatchedmean, proper-scoreFAIL; overfitlater/no convergence/alpha/Paperpromotion.20differentbaskets/66dates. Lifetime4allocations/52SYNupdates/final470.251upper/alljoined+leasefree. Oldc333pacefailure/e014statefailure/debits unchanged. |
 | current-costband-tcn-convergence-development-20261020-v1 | COMPLETE40af954a/1CUDAfit27epochs/selected2/pat25,2970updates6281forwards/123audit checks. Old CPU consumer failed extra.bytes ref BEFORE Outer np.load/7348633e,1analytic/0cells/45charge retained. |
 | current-close-window-costband-development-20261020-v1 | COMPLETE02cffb45/3CUDAfits21/63/252,21epochs each/selected1,1134updates2667forwards.30cells/audit49f94193/16138checks. Singles frozen financialscreenPASS, proper-scoreFAIL; thirdFAIL (same baskets).10bp EACHleg growth+.73515percent/DD.49368 vsuniform+.13764/.32607, higherDD explicit. |
 | current-costband-rate-context-hgb-development-20261020-v1 | 2CPUfits RAW104rounds/best84 vsMacro20/best1. Historical Outer int8/int64 failure/1intake/0cells stays UNKNOWN. BOTH prospective points ACTUAL below. |
@@ -54,6 +57,18 @@ Older four chronological LSTMs remain valid/5dc6b6e4/269checks; Tree8214fae2
 science+financialFAIL; one-day TTM one converged headFAIL/RAWnonconvUNKNOWN.
 Old shortTCN2701/STACK17/RAW/VOLUME/longGRU/fullvolumeHGB/five-dayTTM failures
 stay closed. History/counters/weights in immutable A and Git, not a new total.
+
+Peer-state diagnosis ede2797e: exact identical restored BEFORE states/RNG;
+defaultSDPA AFTERfloat drift with discrete/RNG equal, MATH control bitexact.
+Newcorrected fulljointnative23b65955 passesbitexact; no numerical tolerance or
+financialcriterion relaxed. Selectedweights restored/checked, exportedwithout
+anotherNNcall. R2 ABI only fixesmetadata sourcepointer, weights/results same.
+Broader labelled-query comparison nowCOMPLETE08fdd333:654834FITinputs/
+654794supported/explicitroute-selfmask/current25INNER-PRED, notoldfitrepeat.
+First8e899b7f omittedcounterstage before native0fits; correctedrealcounterAPI
+andnative proof passed. Debit874.069 retains598.825oldfailure, two actualfits
+alreadycompleted/no repeats. Selectedmean12/attention3 futureCPUproducer
+SOURCEready900e6821/0actualeffects, pendingexactqualifiedlive507dataset.
 
 Next source queue: A/data/current-nas-breadth-research-feasibility-20261020-v1/
 SOURCE-READY.json1d33d76e.507NAS names outside current25/fixed50 overlap,
