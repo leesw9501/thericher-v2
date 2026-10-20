@@ -9,79 +9,89 @@ fees/settledcash/netPnL unknown. Parent shared MD/integration/Git.
 
 | Owner | Current Package |
 | --- | --- |
-| Parent | Integrate completed HGB/multiera/wire proofs; verify unchanged source authority/Git. |
-| Boole / Engine | New4arm directlong-context family; source/native then conditional2CPU2CUDA fits, no duplicate old fits. |
-| Kepler / Data | New existing-cache R21/L2/FIT-affine/role-isolated input consumer. |
-| Pascal / invoked Review | Short Claude challenge on the actual four-fit proposal. |
-| Archimedes / Execution | Exact existing natural nightly14:50UTC/F9 15:10UTC outcome inspection; no manual Run/API/orders/schedule. |
-| Bacon / invoked Data | Intraday support7e8d1206 COMPLETE180queries/175common; currently no learning job. |
-| Confucius / Strategy | Proposalfd71dfa3 COMPLETE; narrow on/off information ablation, not factor novelty. |
-| Steward | Prior CUDA actors joined/leasefree. One new allocation only after actual readiness. |
+| Parent | Integrate closed4fits+6blend+2tickerfits/HGBpoint13+2; unchanged source authority/Git. Boundclarification separates INNERscreen from PRED. |
+| Boole / Engine | Ticker8fdf38b2 CLOSED2CPUfits/15cells/financialFAIL; INNERscreenPASS/PREDnonconfirmation verified6e258503. |
+| Kepler / Data | TimesFM dd00a6e9 READY3050FIT1450INNER1650PRED/512target-free; separatePREDprojection waits only bothnewheadseals. |
+| Pascal / invoked Engine | TimesFMpathaugmentation source/native; conditionaloneGPUextract+2CPUheads,0backboneupdates. |
+| Archimedes / Execution | Exact existing natural nightly14:50UTC/F9 15:10UTC result inspection; no manual Run/API/orders/schedule. |
+| Bacon / invoked Infra | TimesFM6a52ef3c exactimage/weights/config/wheelPASS/3ROqueries45upper; missinglabel isn't nativefailure. No models. |
+| Confucius / Strategy | Fixedblend98c1e094 CLOSED; TimesFMreviewunavailable c93df53a. Newbounded nextpayoff duplicate/source choice only. |
+| Steward | LastverifiedCUDA2fits closed13:08UTC. TimesFMprep isn't actualGPUevidence; canonicallease/freshheadroom required. |
 
-Engine family root A/research/current-long-context-feature-development-20261020-v1;
-Data A/data/current-long-context-feature-input-20261020-v1.
-Origin12:19:44UTC/end16:19:44UTC/3600aggregateactive/max4marketstarts/
-oneGPUallocation/0retry/18cells. Prior Strategy90 included once.
-Source/native preparation is not actual GPU training.
-
-Due existing nightly14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
+Existing due nightly14:50UTC/F9 15:10; RTH21:50/old20D122:30/new9D123:00.
 NASexitOct21 13:40UTC; Window21 prep13:10/entry14:00. Goal97distinct.
-Unknown reservations stay held. Natural-outcome agent waits only via tool
-clock, no host polling/sleep process that would itself trip project guards.
+Unknown reservations stay held. Natural-result worker uses toolclock only,
+no host polling/sleep process that would itself trip project guards.
 
 ## Throughput Review
 
-12:38UTC resume/dispatch: no foreground session wait. HGB two CPU fits and
-36 multiera cells COMPLETE, no repeat for GPU utilization. Latest actual CUDA
-fits all finished; idle is not a permission/environment limit.
-Next useful experiment changes direct accessible information: matched short21
-versus short+oldyear-scale summaries, same target/learner/cohort within pair.
-Data, native Engine and falsification review are disjoint and active.
+14:00UTC integrationreview: all4directlong-context fits+18cells CLOSED, not waiting
+for a session. Two CPUfits retained across a preallocation repair, two actual
+CUDAfits31/22epochs best11/2/5035updates finished in about20nestedfitseconds.
+IdleGPU now is completed work, not an unhandled permission/environment hold.
+Tickeridentity test completed2CPUfits/15cells/99.597upper/financialFAIL.
+Parentcross-split scientificflag concern was wrong: exactfrozencriterion is
+INNERscreenPASS, boundclarification6e258503 confirms. PREDnonconfirmation
+and financialFAIL unchanged; no model/economicpass/flagchange.
+TimesFMpostcheckpoint512Data nowready; source/native preparation stillnot
+actualGPUevidence. Allocate usefulreadiness, not utilizationload.
+Reversible improvement: report the exactsplit beside eachdecisionflag and
+check namedpredicates; sourcehash/readback alone can't prove semantics.
 
-HGB producer and actual B96 SYN wire proof complete; no new deployment/fill.
-Window21 future opportunity already installed, not replaced with another
-unproven candidate. Exact original NAS accounting readiness is complete.
-Today's natural execution receipts can be checked independently of research.
+Parent resolved the blocking resource identity: exact signedWindowsShell
+qualifieredd2ddc1/native6aec9a2c, freshpath/hash/MSCatalog/package/PIDcreation/
+reparse BEFORE+AFTER, allotherunknowns/owners/lease/headroom retained.
+Actual GPUcontinuation passed BEFORE+OWNED and closed. Historical unknown
+identity wasn't retained, do not assert retroactivecause. PS5Restricted -File
+failed; pinnedinline transport succeeded, no policychange. Bothsource/debits
+kept; externalE501/I001 stylewarnings aren't claimedfullRuffPASS.
 
-Reversible improvement: replace stale RUNNING/future projections with exact
-closed results and source links. Read closed immutable receipts, not mutable
-capture-state. New consumer fixes must be native-tested before market dispatch;
-old failures/debits remain. New source-only preparation never proves GPU use.
+Data postprojectionNPZUnicode readback failure wasn't inputabsence.
+Newpublicationrecovery e1f13db4 reusesoldtargetbytescb780de2, reconstructs
+unpersisted70x25marks once,17nativechecks/0unknown/DataFINAL83.569.
+Originalprojection1+newmarkreconstruction1/0identicalretry, no rowdrop.
+Reversible improvement: test full actualNPZpublication API including Unicode
+classaxis, not just feature/CSV fixtures; reuse sealedmodels during I/Orepair.
 
-## Evidence / Limits
+## Completed Evidence / Next Consumers
 
-- HGB139071c2:2CPUfits/15cells/547checks, both frozenFAILs; adaptive absolute
-  candidate has working source/SYN output path, no alpha/Paperprofit claim.
-- HGB fulloutput2ca3dfc2/fullmassb646849a/B96c7fd04fc READY; trustedcaller<=.10,
-  fullmassfairTop5 includingnegative scores,NYSunspent/no renorm.
-  R1copiedpositivegate was consumer prose; producer was already fullmass.
-- RAWSD125ea46c:36newunqualified field-proxy cells, all3eras primaryFAIL;
-  330.479upper/alljoined.18invalidOHLC flags retained. OldBar097unavailable
-  is unchanged, not another globaldata/Paper approval hold.
-- Intraday7e8d1206:180retainedqueries/175common across180/360RTHminutes;
-  nine dependent reused dates do not justify a new grid. Daily pre-open
-  interface cannot silently accept afternoon scores.
-- Future14primary outputs df6d798c/d405201f remain unobserved; no HGB/new
-  long-context market point added. Same measurement task/window, no newworker.
+- Long-context FINALa7db7164/ABI0f99c0f9/handofff9901a72:4fits/18cells/1PRED/
+  637.844aggregateupper/alljoined. ProperHGBFAIL/LSTMPASS/globalFAIL;
+  financialbothFAIL.10bp growth/DDpercentNAV HGB_SHORT+.9546/.3675,
+  HGB_PLUS+.2887/.4859,LSTM_SHORT-.3404/.9377,LSTM_PLUS+.1531/.5889.
+  Parent24artifacthashes/cachedflaglogicPASS0newreplays-modelcalls.
+- HGBpoint406ec7c1/6d7b8260 committed12:58:36before13:30OPEN,25class3rows/
+  1restore1forward/0fits-GPU-API-Task/120.987upper. StrictreaderPASS.
+  Measurementextension ffcf64a0/5c237b85 ACTUALsameOct27task/window/alloldpoints,
+  13class3+2rank/87checks/121.514upper; NOTfutureperformance.
+- HGBproducer2ca3dfc2/fullmassb646849a/B96c7fd04fc ready, noPaperopportunity.
+  ExistingWindow21positivepolicy/tasks unchanged.
+- RAWSD125ea46c:36unqualifiedfieldproxycells/all3eras primaryFAIL/
+  330.479upper/alljoined,18invalidOHLCflagsretained. OldBar097unavailable
+  unchanged, not companyhold.
+- VIXc4b2a551: exactcache endsJun17/intendedreuse rights unclear; no newdata/
+  mirror workaround. Existing-lawful-data/ticker/foundation alternatives active.
+- Currentfuture15primary ffcf64a0/5c237b85 remainunobserved. Old14historykept.
+  Intraday7e8d1206:
+  180queries/175common/9dependentdates, no utilization-driven GPUgrid.
+  Afternoon input isn't relabeled daily pre-open.
 
-Company critical path is actual Oct21 owned exit/reconciliation, not model
-profitability. Ready independent learning is dispatched, not waiting for it.
-If new campaign input/native is unavailable, close that scope and select
-a concrete alternative; never rerun a closed fit under a fresh label.
+Company critical path is Oct21 exact owned exit/reconciliation, not model
+profitability. Material package completion does not close or replace that goal.
+Parent chooses/dispatches next usefulwork; an MD isn't a permanent LLMdaemon.
 
 ## Verification / Recovery Knowledge
 
 Authority A/verification/model-profile-gpu-lease-20261020-v1/authority.json:
-1370sourcesd10698dc/1720serialPASS2skip/18537fullPASS24skip/8workers/helper0/
-clean/Ruff3sampleCompose. Docs/external reuse requires exact source/control
-equality and fresh external/native proof. Preserve %SystemDrive%/.
-Current integration:1370source+2control equality/9newexacthashes/2HGBstrict
-SYNcommitreads/0modelcalls/Ruff3Compose/diffcheck allPASS. No new full suite
-required by these documentation/external-only changes.
+1370sourcesd10698dc/1720serialPASS2skip/18537fullPASS24skip/8workers/clean/
+Ruff3sampleCompose. Docs/external reuse requires exact source/control equality
+plus fresh external/native proof. Preserve %SystemDrive%/.
+Fresh integration1370source+2control/prior9refs+2HGBstrictSYN/8newclosedrefs/
+tickerINNERpredicatechecks/currentmeasurementreader/Ruff3ComposePASS.
 
-Fresh semantic COM reads avoid cached Enabled/XML-default false failures.
-PowerShell dot-source can overwrite case-insensitive caller variables.
-Native FileRef barehex differs from sha256:-prefixed source seals.
-No read/hash of active mutable state on Windows; old R3storagefault stage
-unknown, R4success is not causality. Real counter/checkpoint/native proof
-before training, scoped MATH SDPA restart proof not universal determinism.
+Fresh semanticCOM avoids cachedEnabled/XML-default false failures.
+PowerShell dot-source variables are case-insensitive.
+NativeFileRef barehex differs from sha256:-prefixed seals.
+Never hash active mutable capture-state; later success doesn't prove oldcause.
+Real solver/optimizer/counter/checkpoint API before training; scoped MATH SDPA
+proof isn't universal determinism. Native dtype-aware codec checks save retries.

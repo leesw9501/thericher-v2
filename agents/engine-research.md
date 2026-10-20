@@ -5,10 +5,59 @@ Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 Engine owns hypotheses/models/splits, never deterministic broker risk.
 Historical reused comparisons are adaptive development, not independent alpha.
 
-## Current Priority
+## Next Ready Work
+
+Pascal owns current-timesfm-path-augmentation-20261020-v1:
+retainedApache2TimesFM2.5checkpoint2f776efe/publicOct2025/D6runtime.
+RAW511+ZERO15 vsRAW511+5stepq10/q50/q90features,2CPUlogisticheads.
+Data dd00a6e9 READY3050FIT1450INNER1650PRED/target-free512closeGPUmount;
+separatePREDoutcomes deferred until both headseals. No backbonefine-tune.
+1500aggregateactive7200elapsedorigin13:24:13/end15:24:13UTC,
+Strategy110/Data30/review18.040/Infra45once. ConditionaloneGPUextract,
+mustclosebefore14:45/Paper14:50; nativeprep isn't actualGPUproof.
+Infra6a52ef3c exactlocalimage/weights/config/wheelPASS/source-labelabsent;
+bind actualROsource/import provenance, no build/download/runtime replacement.
+Claude c93df53a review_unavailable/bodydecodefailure, not agreement/hold.
+Parent independently verified exactofficialApache2card/nativecol5median.
+Postcheckpointtargets reduce contamination, not exhaustivecorpus/context
+purity or independentperformance. Fixedtwoheads/18cells/0retry, no grid.
+
+CLOSED current-ticker-conditioned-costband-development-20261020-v1:
+sameR21+25numericonehot IDs versus constantID matched46-column HGBs.
+FixedFITper-ticker Laplace1prior tests staticstockselection versus dynamic
+identityconditioning. Closestduplicate/shortClaude/actualwidth46solver+
+safecheckpoint proof BEFORE2conditionalCPUfits/15cells/900aggregateactive/
+3600elapsed/0retry-GPU-API-Task. SameData61bf/eval e1f13d, old23widthHGB
+not aliased as newmatchedcontrol. Science/economics independent, adaptive
+seenPRED/currentlisting/nonPIT fieldlimits. No oldpass regrade/newweightgrid.
+FINAL8fdf38b2/ABI0d42571e post-native-fixture-r1:2marketfits/2SYNfits/
+2priors/15cells/99.597upper/alljoined,0GPU. GLOBAL48/best28,CONDITIONED50/
+best30; lateroverfit. FinancialFAIL;10bp growth/DDpercentNAV+.6390/.4067
+versusGLOBAL+.9546/.3675. Scientificcriterion is INNERscreenPASS only;
+boundclarification6e258503 verifies allfourimprovements beyond1e-6. PRED
+doesnotconfirm pairedimprovement. Parent's cross-split concern was wrong,
+not a flagbug/regrade. Threehosts/two pre-effect fixes/debits preserved.
+
+FixedHGB/LSTMhalfblend CLOSED98c1e094/CACHE42dd405a:6newcells+18byte-reused
+controls/74checks/114.837upper/alljoined/0fits-forwards-GPU. Proper+financial
+FAIL;SHORT+.6100/DD.3447,PLUS_LONG+.2749/.6160 percentNAV10bp. No rescuegrid.
+Confucius nowbounded nextpayoff source/duplicate choice only,0numericaltrials.
+VIX c4b2a551 currentdispatch rejected; no datasetacquisition/model rights
+workaround or companyhold. Kepler checks existinglive252/253 context reuse.
+
+## Latest Closed Family
 
 Boole owns NEW current-long-context-feature-development-20261020-v1 under
-A/research. Source/native preparation, NOT actual training yet.
+A/research. ALL4actualfits COMPLETE; no further fits/forwards in this family.
+HGB48/best28 and31/best11; CUDA LSTM31/best11 and22/best2/5035updates.
+Oneallocation/allactorsjoined/leasefree13:08:02UTC; original2CPUfits retained.
+ActualALL4seal6e87d0c5 at preallocation-continuation-r1/actual,48custodychecks.
+FINAL a7db7164/ABI0f99c0f9/handofff9901a72 CLOSED:18cells/1PREDreadout/
+637.844aggregateupper/alljoined,0marketretry-postfitmodelcalls.
+ScienceHGBFAIL/LSTMPASS/globalFAIL, financialbothFAIL/oraclemax4.44e-16.
+10bp growth/DD percentNAV HGB_SHORT+.9546/.3675,HGB_PLUS+.2887/.4859,
+LSTM_SHORT-.3404/.9377,LSTM_PLUS+.1531/.5889,uniform+.1129/.3261.
+Parent24artifacthashes/cachedflagchecksPASS0newreplay-modelcalls.
 Proposal current-long-context-feature-hypothesis-20261020-v1/fd71dfa3:
 4matched fits HGB_SHORT/HGB_SHORT_PLUS_LONG/LSTM_SHORT/LSTM_SHORT_PLUS_LONG.
 Direct oldyear-scale skip21momentum+rv251 to recent21return encoder, same
@@ -35,12 +84,26 @@ target/mark QA/sharedinit/scalers/masks. Its head64vs66 premise is WRONG:
 both arms already66, HGBboth23. No extra shuffledcontrol/fits or clockreset.
 Incremental-feature usefulness under fixed learner/cohort is not universal
 causal long-context proof; numerical tolerance not significance.
-Ready Data/native/review addressed before autonomously fitting, not parent
-approvalqueue. CanonicalGPUlease/actualheadroom required.
+Initial preallocation owner guard failed BEFOREGPU0allocation; new exactsigned
+WindowsShell qualifieredd2ddc1/native6aec9a2c preservesallotherunknown/
+owner/lease/headroom checks. Actualcontinuation admitted and finishedGPU2,
+not just a source-onlyfix. Olda596d757failure/debits unchanged; no historical
+unknownidentity reconstruction. Same numericalsources/data/seed/split/caps.
+Modelsclosed576.506aggregateupper beforelaterData publication/cleanupcharges;
+twoGPUfitprocesswalls total19.987s nested, not kernel/additionalspend.
+
+Data pred-eval-r1 FAILED09b6a8d9 aftertargetbytescb780de2 written,marks not
+persisted. NativeUnicode equal_nanTrue readbackfault confirmed; no missing
+inputclaim. Publication recovery COMPLETEe1f13db4:1650targets/70x25marks/allknown/
+17nativechecks/19.862newupper/DataFINAL83.569. Oldtargetbytes/failure intact,
+one missingmarkreconstruction not oldCLI replay. Newactual18cellconsumer
+73ae000c complete; coldimportfailure repaired/tested beforeonePREDreadout,
+not a numericalretry. Readout/metrics remainunqualifiedfield-price proxies.
+No originalCLI/model/economicretry or rowdrop; oldfailure/debits unchanged.
 
 Paper runs independently: Window21future tasks9b1d0e84 installed, prepare
 Oct21 13:10UTC/entry14:00UTC. OriginalNAS8exit>=13:40UTC. No modelprofit gate.
-Actual future14primary point outcomes remainunknown, not evaltraining inputs.
+Actual future15primary point outcomes remainunknown, not evaltraining inputs.
 
 ## Latest Closed / Do Not Repeat
 
@@ -71,7 +134,10 @@ Full25probability-score-weight-binding sidecar+DTO committed/readback together.
 Trustedcaller<=.10/fullmassfairTop5regardlesssign/NYSunspent/no renorm;
 Execution fullmassb646849a. ActualB96 wireSYNc7fd04fc passes2packets,
 734sourcepins/Torch+sklearnabsent/1containerremoved.
-No actual newmarketpoint/loaderactivation/order/fill; Window21unchanged.
+ActualHGBABS61point406ec7c1/COMMITTED6d7b8260 at12:58:36beforeOPEN,
+1restore/1forward/25rows/0fits-GPU-API-Task; persistentreaderPASS0newcalls.
+No loaderactivation/order/fill; Window21unchanged. Same-taskmeasurement
+13class3+2rank ACTUALffcf64a0/deployment5c237b85/87checks/121.514upper.
 Producer alreadyfullmass; oldR1consumerpositivegate prose was corrected,
 not a wronggate deployment. Claude94db7616 scopes retained.
 
@@ -87,9 +153,9 @@ upper, primaryFAIL/descriptive fixedhalf promise. BroadLSTM8198cdbe:95epochs
 selected75/10830updates/455.724upper, pairedprimaryFAIL/properUNKNOWN40missing.
 Their07:52future pair ACTUALa0569a2e/ABI07c6ea7f/COMMITTED326088cf,2CPUforwards/
 0fits-GPU-outcomes. Oldfour points e1fc1ada andPRICE/MACRO2b168e66 preserved.
-SameOct27 measurement ACTUAL12class3+two rank policies/14primary,
-A/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
-df6d798c/deploymentd405201f/sourcee45c65b0/46checks/freshindependentCOMPASS.
+SameOct27 measurement ACTUAL13class3+two rank policies/15primary,
+A/data/current-hgb-point-measurement-extension-20261020-v1/RESULT.json
+ffcf64a0/deployment5c237b85/source7caf158f/87checks/freshindependentCOMPASS.
 Oneactionupdate/0Run-newtrigger-API-model-measurement/ACL/windowunchanged.
 Parent strictreader: FUTURE_MEASUREMENT_NOT_OBSERVED; targetOct20/21/22/23/26
 unknown. Legacyfixedquarterauxdiagnostic separate; no fake rankproper-score.

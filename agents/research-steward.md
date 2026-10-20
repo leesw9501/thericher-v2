@@ -7,12 +7,43 @@ Company current-nas-owned-model-paper-cycle-v1 UNFINISHED.
 ## Current Allocation
 
 Canonical lease A/engine-research-agent/locks/gpu.lock.
-Prior actual CUDA actors all joined/lease released. No actual GPU training is
-inferred from a dispatch/MD. Current NEW four-arm preparation:
+Latest actual CUDA actors all joined/lease released13:08UTC. No current GPU
+training; do not rerun completed work. Completed four-arm family:
 A/research/current-long-context-feature-development-20261020-v1.
 Proposalfd71dfa3:2CPUHGB+2CUDALSTM, directyear-scale features on/off.
-Kepler Data and Boole source/native plus Pascal review run in parallel.
-Allocate only after real native/data/resource readiness, no parent approvalqueue.
+HGB48/best28 and31/best11; LSTM31/best11 and22/best2,5035marketupdates,
+GPUfits11.776+8.211seconds nestedprocesswall, not kerneltime/extraaggregate.
+ALL4seal6e87d0c5 under preallocation-continuation-r1/actual;48custodychecks
+PASS. FINALa7db7164/ABI0f99c0f9 nowCLOSED18cells/1PREDreadout/
+637.844aggregateupper; scienceHGBFAIL/LSTMPASS/financebothFAIL.
+Original2CPUfits retained,0refits; allfailure/debits kept. DataUnicode
+publicationrecoverye1f13db4 reusesoldtargetbytes,17nativechecks/Data83.569.
+Fixedblend6cells separate0GPU/fits; no completedfit/epoch/seed rescue.
+Ticker-conditioning has CLOSED2CPUfits/15cells/99.597upper/0GPU; do not
+reruncompleted work. FinancialFAIL/INNERscreenPASS/PREDnonconfirmation,
+boundreportingclarification6e258503, no regrade/numericalretry.
+Currentqueue PascalTimesFMpathaugmentation, not yetverifiedGPUactivity:
+Data dd00a6e9 target-free512close inputs3050FIT1450INNER1650PRED ready;
+retainedD6image/weights2f776efe/config/wheel match6a52ef3c. Native actual
+ROsource/import binding, solver/checkpoint and fresh signedShell/lease/
+headroom proof BEFOREoneGPUextract; no backboneupdates.1500active7200elapsed
+origin13:24:13/end15:24:13UTC;source110/Data30/review18.040/Infra45once.
+FinishGPUcleanupbefore14:45UTC/Paper14:50. Missingimagelabel isn't a runtime
+failure; prove actualsource natively. Claude review_unavailable not a hold.
+No dummyload, multipleallocation or readiness-only GPUclaim.
+
+InitialactualblockedbeforeGPU0alloc onunclassifiedowner; freshRO identifies
+exactMicrosoftWindowsShellExperienceHost, not knowntrainer/resourcecontention.
+New qualification sourceedd2ddc1/native6aec9a2c requiresstablePIDcreation/
+canonicalimagehash/ValidMSCatalogsignature/package/reparsefreshBEFORE/AFTER.
+Otherunknown/trainers/GPUcontainers/scopedhost/lease/headroom stillblock.
+ActualcontinuationBEFORE+OWNED resourceproof passes and GPUallocation closes.
+No generic signedprocessallowlist/zeroGPUactivity/historicalidentityproof.
+Source-r1 -File failed under measuredPS5Restricted; r2 pinnedinline source,
+no executionpolicychange. Parentfirstcause60/review17.368/qualifier180once,
+both failurebytes/debits retained; externalE501/I001stylewarnings unmodified.
+Future reuse must bind exactsource and FRESHidentity/owner/headroom/lease,
+never treat the old native snapshot as current allocation authority.
 
 Family origin12:19:44UTC/end16:19:44UTC/3600aggregateactive/14400elapsed,
 prior Strategy90 included once;4marketstarts/0retry/oneGPUallocation/
@@ -39,11 +70,13 @@ unchanged. Completed CPUforward calls/2HGBSYNforwards are not GPUlearning.
 
 Actual pre-open points d8b66977/4c65fa99,2CPUrestores-forwards each/0fits-
 GPU-targets-API.25queries/498eligible9masked peers, sharedData2128.629once.
-Same measurement df6d798c/d405201f ACTUAL12class3+2NONprobability policies;
-futureOct20/21/22/23/26outcomes unknown. No HGB/newcontext points adopted.
+Same measurement ffcf64a0/5c237b85 ACTUAL13class3+2NONprobability policies;
+futureOct20/21/22/23/26outcomes unknown. HGB61point406ec7c1 adopted,
+NOnewlongcontext point. Previousdf6d798c/debits retained as historical.
 
 HGBproducer fulloutput2ca3dfc2/fullmassb646849a/B96c7fd04fc is source/SYN
-engineering readiness, not activation/marketpoint/selectionpass/order.
+engineering readiness, not Paperactivation/selectionpass/order. Separate
+HGBactualpoint406ec7c1 at12:58:36UTC/1CPUrestore-forward/25rows now exists.
 Window21 existing future tasks installed, no models loaded into broker image.
 
 ## Durable Recovery / History

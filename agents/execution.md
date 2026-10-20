@@ -29,7 +29,11 @@ Actual B96 wire SYN compatibility c7fd04fc at
 A/infra/current-hgb-model-paper-image-compatibility-20261020-v1/RESULT.json:
 2packets canonicalcodec+typedvalidation/wrongpolicy-tamper rejects/Python3.12.15/
 734pins/Torch+sklearnabsent.1containercreate-start-remove/26.438upper/alljoined.
-NO actual HGBmarketpoint/loaderactivation/Task/API/private/order/fill/PnL.
+ThisSYNproof has no model/Task/API/private/order/fill/PnL effects. Separate
+HGB61researchpoint406ec7c1/COMMITTED6d7b8260 actual12:58:36UTC beforeOPEN,
+25rows/1CPUrestore-forward/0fits-GPU. Measurementextensionffcf64a0/5c237b85
+ACTUALsameOct27window/13class3+2rank, futureoutcomes unknown.
+No HGBPaperloaderactivation/order/fill/PnL.
 Existing Window21positivepolicy/tasks unchanged; no HGBopportunity installed.
 
 NAS gross caller-r1 READY5f0d6f83/caller9fd7a2f2 under

@@ -6,14 +6,48 @@ Parent shared MD/Git. Never KIS_LIVE_* or secret/rawmarket/private output.
 
 ## Current Owner / Next Action
 
-Kepler owns NEW existing-cache derivation:
+Kepler completed TimesFM postcheckpoint input:
+A/data/current-timesfm-path-input-20261020-v1/CONSUMER.json dd00a6e9.
+3050FIT/122dates,1450INNER/58dates,1650PRED/66dates; everydecision/target
+afterOct2025checkpointrelease.20native+56headerchecks/30upper/alljoined.
+GPU512close packets contain keys/observed/weights/clocks, NOlabels/rawtargets.
+RAW511affine FIT-only; PRED evaluation source/template prepared, actual
+outcomes/marks deferred until both new headPREDseals. No newAPI/GPU/models.
+Consumer Pascal current-timesfm-path-augmentation-20261020-v1.
+
+Completed existing-cache derivation:
 A/data/current-long-context-feature-input-20261020-v1.
 Consumer: Engine matched HGB/LSTM SHORT versus SHORT_PLUS_LONG classification.
 Proposal A/research/current-long-context-feature-hypothesis-20261020-v1/
 PROPOSAL.json fd71dfa3; full family origin12:19:44UTC/end16:19:44UTC/
 3600aggregateactive, Data<=120active/1800elapsed/oneactual0retry.
-No model/API/credential/Task/shared MD work. Current state PREPARATION,
-not a finished input or actual training.
+No model/API/credential/Task/shared MD work. ACTUAL CONSUMER61bfae89:
+FIT37750inputs/37650supervised/100purge-only retained;INNER21875allknown;
+PRED1650target-free/0unsupported/18flagsretained.23SYN+NPZreadbackPASS/
+35.209Dataupper/alljoined. Parent8directrefs+7independentfeaturecasesPASS,
+0marketpayloaddecodes in that parent inputcheck. ALL4selectedseal6e87d0c5
+laterverified, thenPRED projectionranonce. Target19,152bytes/cb780de2 written;
+save readback failed on Unicodeclassaxis np.array_equal(equal_nan=True),
+marks unpersisted, NOT inputabsence. OldFAILEDconsumer09b6a8d9 retained,
+nativeSYN reproducerline129, no originalCLI retry.
+
+CompletedNEW pred-publication-recovery-r1/e1f13db4: dtype-awareNPZpublicationSYN first,
+reuseoldtargetbytes/hash unchanged, reconstruct onlymissing70x25OPEN/CLOSE
+marks fromexactsamecanonicalrefs after4seals, verifyrawLOG5/class consistency.
+45newactive<=56.293remaining Data120; prior63.707debit/family3600/
+end16:19:44unchanged. Countoldprojection1+newmarkreconstruction1, no false
+single-originalderivation claim/targetretune/model/economicretry. Missing/
+mismatchedinput=>UNKNOWN, no rowdrop/fieldswitch/imputation.
+ActualREADY1650targets/70x25OPEN-CLOSE/0unknown/17nativechecks,
+19.862newupper/DataFINAL83.569/alljoined. Engine18cellreadouta7db7164
+complete; oldfailedconsumer09b6 andtargetbytescb780de2 remainunchanged.
+
+Live252 completed current-long-context-live-feature-readiness-20261020-v1/
+CONSUMER.json cb7eb27a:25x252FP64/6300known/14nativechecks/45upper/alljoined.
+Existing canonicalCSVprefixes/R21L2affinebe427c41, no newpricecapture/FP32
+inversion. Assembled13:32:00UTC AFTER13:30OPEN, inputreadinessnotforecast/
+backdating. Sourcecorrection: olde1fc point used64OHLCsessions/63x3features,
+NOT a252LSTM; separate21/63/252research does not change that originalpoint.
 
 Exact fixed25/official ordinals/physical UTC; R21 consumes22closes,
 L2 all252priorcloses. FIT2017..22/INNER2023..Jun2026/PRED66datesx25.
@@ -71,13 +105,14 @@ Old R3storagefault stage/errno not retained; success is not cause proof.
 Do not inspect/hash active mutable capture-state/pending files.
 
 Actual point pairs d8b66977/4c65fa99 use shared Data once,0newfits-targets-API.
-Measurement ACTUAL A/data/current-peer-points-measurement-extension-20261020-v1/
-RESULT.json df6d798c/deploymentd405201f/sourcee45c65b0:
-12class3+2NONprobability rank policies/14primary, legacyquarteraux separate.
-46checks/freshCOM/oneactionupdate0Run-newtrigger-API-model-measurement/
-54.566upper/alljoined. SameOct26 23:45..23:55UTC/120active600elapsedworker.
-Parent strict reader returns FUTURE_MEASUREMENT_NOT_OBSERVED. No HGB/
-newlongcontext point adopted. Old updates/backups/debits unchanged.
+Measurement ACTUAL A/data/current-hgb-point-measurement-extension-20261020-v1/
+RESULT.json ffcf64a0/deployment5c237b85/source7caf158f:
+13class3+2NONprobability rank policies/15primary, legacyquarteraux separate.
+87checks/freshCOM/oneactionupdate0Run-newtrigger-API-model-measurement/
+121.514upper/alljoined. SameOct26 23:45..23:55UTC/120active600elapsedworker.
+Parent strict reader returns FUTURE_MEASUREMENT_NOT_OBSERVED. ActualHGB61
+point406ec7c1 adopted, NOnewlongcontext point. Prior12+2df6d798c historical;
+old updates/backups/debits unchanged. No Paperactivation/performanceclaim.
 
 ## Reusable Inputs / Source Limits
 

@@ -20,13 +20,13 @@ account/order/raw broker/raw market/private amount output. No operator decision.
 | Owner | State / Next |
 | --- | --- |
 | Parent | Integration/Git. Production e53c290 unchanged. |
-| Boole / Engine | NEW four-arm long-context feature family; source/native preparation, NOT yet actual fits. |
-| Kepler / Data | Existing-cache R21+L2 input derivation for that family; separate trainer/evaluation roles. |
-| Pascal / invoked Review | Short Claude challenge for the new input ablation. |
+| Boole / Engine | Ticker-conditioned2CPUfits/15cells CLOSED8fdf38b2; boundclarification6e258503 confirms INNERscreenPASS/PREDnonconfirmation/financialFAIL. |
+| Kepler / Data | TimesFM512input dd00a6e9 READY3050FIT/1450INNER/1650PRED; separate PRED outcomes remain deferred until both new head seals. |
+| Pascal / invoked Engine | TimesFMpath augmentation source/native; conditionaloneGPUextraction+2CPUheads, no backbonefine-tuning. |
 | Archimedes / Execution | B96 HGB SYN compatibility COMPLETE; bounded exact-result inspection of EXISTING nightly14:50UTC/F9 15:10UTC opportunities. No manual Run/API/orders. |
-| Bacon / invoked Data | Intraday elapsed-context support CLOSED; no active model/GPU job. |
-| Confucius / Strategy | Long-context proposal fd71dfa3 COMPLETE; source preparation only. |
-| Steward | Prior CUDA allocations all joined/lease free. New allocation must use canonical A/engine-research-agent/locks/gpu.lock; source dispatch is not training. |
+| Bacon / invoked Infra | TimesFM6a52ef3c localimage/weights/config/wheel PASS, source-label absent; native import/source binding still Engine responsibility.3ROqueries/45upper/0models. |
+| Confucius / Strategy | Blend98c1e094 CLOSED; TimesFMreview unavailable c93df53a, not agreement/hold. New bounded next-payoff duplicate/source choice only. |
+| Steward | Latest verified allocation closed13:08UTC; TimesFM native prep is NOT yet proof of GPU activity. Never duplicate completed fits. |
 
 ## Latest Completed Research
 
@@ -60,7 +60,7 @@ Affine aad2fc0f belongs to6670oldcurrent25FITwindows throughMar24, not a new
 broad-FIT scaler. Data65.253upper once. Claude2fcf86e4 REVISE: recipe,
 population transfer and effectiveN;2e-12 is numerical, not significance.
 
-## Next Research Family
+## Latest Closed Family / Next
 
 A/research/current-long-context-feature-hypothesis-20261020-v1/PROPOSAL.json
 fd71dfa3: matched HGB and LSTM SHORT versus SHORT_PLUS_LONG, four future fits.
@@ -81,7 +81,105 @@ Origin12:19:44UTC/deadline16:19:44UTC;3600aggregateactive/14400elapsed;
 prior Strategy90 included once, max4marketstarts/2CPU2CUDA/0retry/18cells/
 oneGPUallocation. Real native solver/optimizer/checkpoint/RNG proof before
 market. Max128/pat20/LR/bestrestore, not a fixed16epoch policy.
-Preparation is not actual training. Other lanes retain standing authority.
+ActualALL4models COMPLETE: HGB48/best28 and31/best11; CUDA LSTM31/best11
+and22/best2,5035marketupdates/oneallocation, sameinitialstate0e2ee138.
+Two fit process walls11.776+8.211s are nested, not kernel/additivefamilytime.
+All4seals6e87d0c5 at preallocation-continuation-r1/actual/
+ALL-PROBABILITIES-SEALED.json; allactors joined/lease released13:08:02UTC.
+OriginalCPU2 retained, not rerun. FINAL a7db7164/MODEL-ABI0f99c0f9/
+handofff9901a72 now CLOSED4fits/18cells/onePREDreadout/637.844aggregateupper.
+ScientificHGBFAIL/LSTMPASS/globalFAIL; financialbothFAIL, oraclemax4.44e-16.
+10bp growth/DD percentINITIALNAV: HGB_SHORT+.9546/.3675,
+HGB_PLUS_LONG+.2887/.4859,LSTM_SHORT-.3404/.9377,
+LSTM_PLUS_LONG+.1531/.5889,uniform+.1129/.3261.
+LaterLSTMoverfit andpatience stops, not convergenceproof. Seen PRED diagnostics
+are not independentperformance/Paperprofit. Parent24artifactlinks/cached
+financialflaglogicPASS/0newreplays-modelcalls. No completed family reruns.
+ActualData61bfae89:FIT37750inputs/37650supervised(100purge-onlyretained),
+INNER21875supervised/PRED1650target-free,0unsupported/18flagsretained;
+23SYN+NPZreadbacks/35.209Dataupper/alljoined. PRED values were deferred
+until all4seals; the subsequent readout/recovery is closed below.
+Parent8directrefs+7independentfeaturecasesPASS/0marketpayloaddecodes.
+Claude edb6dccd REVISE corrected its unsupported64vs66head premise; both
+arms already66/23columns. Keep commonlong-supported cohort, fixed1650keys,
+separateOPENfield QA and timed-convergence limits. No extra shuffled fits.
+
+Separate new fixedblend root current-long-context-fixed-blend-20261020-v1:
+freeze .5HGB+.5LSTM for SHORT and PLUS_LONG before seeing4fitoutputs.
+6newcells once/0fits-forwards-GPU; sourcefamily18cells/caps unchanged.
+Validconstant/prior packets retained; invalid/missing =>UNKNOWN, no rowdrop.
+Claude70c07902 KEEP/16.472upper inside separate360cap. FINAL98c1e094/
+CACHE-ABI42dd405a CLOSED6new+18byte-reusedcontrols/74readbackchecks/
+114.837upper/alljoined. Proper+financialFAIL.10bp growth/DDpercentNAV:
+SHORTblend+.6100/.3447,PLUS_LONGblend+.2749/.6160. No weights/winner tuning.
+
+HGB pre-open point current-hgb-absolute-prospective-point-20261020-v1:
+FINAL406ec7c1/ABIf1178f13/COMMITTED6d7b8260 actual12:58:36UTC before13:30OPEN;
+1restore/1marketforward/1commit/0retry-fits-GPU-API-Task/25retainedclass3rows.
+120.987upper/alljoined; strictpersistentreader independentlyPASS0newmodelcalls.
+Reuse actualData1ca604c3/inpute4d25e1f. Not Paperactivated/knownprofitable;
+same-window measurement extension now ACTUAL below, not Paper activation.
+
+Completed technical recovery: Data pred-eval-r1 originalFAILED09b6a8d9,
+targets19,152bytes/cb780de2 retained, marks unpersisted. Unicodeclassaxis
+np.array_equal(equal_nan=True) fault reproduced inSYN atsave line129, not
+sourceinputabsence. New pred-publication-recovery-r1 preservesoldtargetbytes/
+4seals/flags, dtype-aware publicationSYN beforeone missingmark reconstruction;
+45newactive<=56.293remainingoriginalData120/family3600/end16:19:44.
+Newconsumer e1f13db4 READY:1650targetkeys/70x25OPEN-CLOSE/0unknown fields,
+17nativechecks; oldtargetbytes unchanged, exacttarget-markconsistency.
+19.862newupper/DataFINAL83.569of120; previousprojection1+newmarkreconstruction1,
+0identicalretry/models, alljoined. Old09b6failure preserved, no validBar/PIT/
+TR/markettruth claim. Readout cold-import failure also retained; repaired entry
+tested BEFORE one actualPREDreadout, no numericalevaluation retry.
+
+GPU preallocation recovered using exact signed Windows Shell identity:
+A/infra/current-long-context-shell-qualification-20261020-v1/source-r2,
+SOURCEedd2ddc1/native6aec9a2c/26SYNkills+actualidentity/resourceproof.
+Fresh path/hash/MSCatalogsignature/package/PIDcreation/reparse checks BEFORE/
+AFTER, all otherunknowns/owners/lease/headroom checks retained. Actual
+continuation BEFORE+OWNED admission passed, not just source readiness.
+Earlier blockedadmission a596d757 retained; historicalunknown identity not
+retained, freshShellclassification is NOT retroactivecause proof.
+Measured nativePS5Restricted rejects -File; pinnedinline transport succeeds,
+no executionpolicy change. Debits firstcause60+Claude17.368+qualifier180once
+(100failedsource+80fixed). Full external lint has14style-only E501/I001;
+functional-lintPASS, native+actualCUDAproofPASS, frozen source not restyled.
+
+Ticker-conditioned shared HGB has CLOSED, not a blind modelgrid:
+current-ticker-conditioned-costband-development-20261020-v1. SameR21 plus
+25numericonehot slots versus constantID control in matched46-column HGBs;
+fixedFITper-ticker Laplace1prior controls staticstockselection. Final8fdf38b2/
+ABI0d42571e under post-native-fixture-r1:2marketfits/2SYNfits/2priors/
+15cells/0GPU/99.597aggregateupper/alljoined. GLOBAL48/best28,CONDITIONED50/
+best30; lateroverfit.10bp growth/DDpercentNAV CONDITIONED+.6390/.4067,
+GLOBAL+.9546/.3675,tickerprior+.2413/.7000. FinancialFAIL. Frozen scientific
+criterion is INNERscreenPASS, NOT PREDimprovement. Boundclarification6e258503
+at scientific-readback-r1/CORRECTION.json confirms allfour INNERCE/Brier
+improvements exceed1e-6; PREDdoesnotconfirm pairedimprovement. Parent's
+initialcross-split flag concern was wrong, not an implementationbug/regrade.
+Threehostinvocations/two pre-effect fixes/debits preserved,0marketretry.
+SameknownData/seenPRED/fieldlimits; no selectionpass/independence claim.
+Foundation choice f4827dfe selected retained Apache2TimesFM2.5 weights2f776efe,
+publicOct1/2,2025. NEW current-timesfm-path-augmentation-20261020-v1:
+RAW511+ZERO15 versusRAW511+5stepq10/50/90path15features/2CPUlogisticheads.
+FITOct6,2025..Mar31,2026/INNERApr8..Jun30/PREDJul8..Oct8; everytarget
+postcheckpoint. Exactdatedcheckpoint reduces targetcontamination, not corpus/
+context purity/independence. D6retainedruntime/no download/build/install.
+OneGPUextraction/0backboneupdates;1500active7200elapsedorigin13:24:13UTC/
+end15:24:13,source110/Data30/review18.040/Infra45includedonce.
+Data dd00a6e9 at A/data/current-timesfm-path-input-20261020-v1/CONSUMER.json:
+3050FIT/122dates,1450INNER/58dates,1650PRED/66dates;20native+56headerchecks,
+target-free512close GPU packets. NewFIT-onlyRAWaffine, target/marksource
+prepared separately but actualPREDprojection deferred until both headseals.
+Infra6a52ef3c localD6/weights/config/wheel hashPASS/Dfree39.28%; missing
+source-label is not model/API failure. Bind ROsource/import provenance natively.
+Claudeattempt exit0/bodyJSONdecodefailed:review_unavailable c93df53a,
+no retry/rawstdout retention/agreement/globalhold. Parent officialcard/API
+review confirms pinnedApache2 and native median-column5. Native preparation
+is not actualGPU/markethead evidence. Extraction mustclosebefore14:45/Paper14:50.
+VIX source c4b2a551 rejected currentdispatch: cachedhistory endsJun17 and
+intendedreuse rights unclear; no acquisition/mirror workaround/globalhold.
 
 ## HGB Operational Adapter (NOT Deployed)
 
@@ -123,12 +221,20 @@ BroadLSTM+ResidualMLP/fixedhalf a0569a2e07:52, broadMEAN/ATTN d8b66977
 Newfour calls CPU-only/0fits-targets-API; shared Data charged once.
 All future Oct20/21/22/23/26 outcomes unknown.
 
-Same measurement ACTUAL12class3+two NONprobability rank policies,14primary:
-A/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
-df6d798c/deploymentd405201f/sourcee45c65b0;46checks/freshCOM/oneactionupdate/
-0Run-newtrigger-API-model-measurement. Oct26 23:45..23:55UTC.
-Strict reader returns FUTURE_MEASUREMENT_NOT_OBSERVED, not performance.
-No HGB/newlong-context points adopted. Legacyfixedquarter remains auxiliary.
+Same measurement NOW ACTUAL13class3+two NONprobability rank policies,15primary:
+A/data/current-hgb-point-measurement-extension-20261020-v1/RESULT.json
+ffcf64a0/deployment5c237b85/source7caf158f;87checks/freshCOM/oneactionupdate/
+0rollback-Run-newtrigger-API-model-measurement/121.514upper/alljoined.
+Oct26 23:45..23:55UTC unchanged; fullACL/nonactionfields preserved.
+Strict reader independently returns FUTURE_MEASUREMENT_NOT_OBSERVED.
+HGB61point adopted; NO newlong-context marketpoint. Legacyquarteraux unchanged.
+Prior14df6d798c/backups/debits are historical, not currentreader authority.
+
+Live252input cb7eb27a at A/data/current-long-context-live-feature-readiness-20261020-v1:
+25stocksx252FP64/6300known/R21+L2newTRAINaffine/14nativechecks/45upper/alljoined.
+Assembled13:32:00UTC AFTER13:30OPEN, readinessonly/no forecast/backdating.
+Olde1fc point used64OHLCsessions/63x3features, NOT a252LSTM. Reusedlonger
+canonicalCSVprefixes withoutreacquisition/FP32inversion; originalpointsunchanged.
 
 Intraday support7e8d1206 at A/data/current20-intraday-elapsed-context-support-20261020-v1:
 180retained route-session queries/175common across180/360physicalRTHminute
@@ -171,8 +277,10 @@ A/verification/model-profile-gpu-lease-20261020-v1/authority.json:
 AGENTS072d44eb/DECISIONS89b13c15 unchanged. Docs/external-only reuse requires
 fresh exact source/control equality and external/native checks; repo tests
 cannot certify D code. Tracked/material recovery changes require AGENTS full.
-Fresh integration:1370source+2control equality PASS,9exact new artifact/source
-hashes PASS; both retained HGB SYN pairs pass actual strict committed reader
-without a model call. Fresh Ruff/three sample-envCompose/diffcheck PASS.
+Fresh integration:1370source+2control equality PASS; prior9refs/2HGBstrictSYN
+reads plus8newclosedrefs and tickerINNERpredicate checks PASS/0newmodel-replay.
+Currentmeasurementreader returnsNOT_OBSERVED/13class3+2rank/0targetreads.
+Fresh Ruff/three sample-envCompose/diffcheck PASS. Tickerreportclarification
+6e258503 costs5.004newupper separate from closed99.597, no flagchange.
 Preserve preexisting %SystemDrive%/. Never duplicate completed fits/forecasts.
 Continue ready work; only actual lifecycle closure replaces the company goal.

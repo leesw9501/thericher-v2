@@ -59,25 +59,25 @@ Exactclosure: source-r4/activation-r1/source-fix-r1/RESULT.json underthatroot.
 Do not rerun consumed old installers or claim all-PC stability/guaranteed
 rollback. Preserve exacttargetsource/owner/ACL/freshcompare/readback checks.
 
-CURRENT measurement action is twelve class3 models +two explicit
-NONprobability rank policies/14primaryoutputs; legacyfixedquarter diagnostic
+CURRENT measurement action is thirteen class3 models +two explicit
+NONprobability rank policies/15primaryoutputs; legacyfixedquarter diagnostic
 stays auxiliary. Exact actual result:
-D:/thericher-v2/model-artifacts/data/current-peer-points-measurement-extension-20261020-v1/RESULT.json
-SHAdf6d798c/SOURCEe45c65b0/DEPLOYMENTd405201f/READBACKd70ff5ee.
-Oneactionupdate/0rollback-Run-newtrigger-API-model-measurement,46checks,
+D:/thericher-v2/model-artifacts/data/current-hgb-point-measurement-extension-20261020-v1/RESULT.json
+SHAffcf64a0/SOURCE7caf158f/DEPLOYMENT5c237b85/READBACK3affe23b.
+Oneactionupdate/0rollback-Run-newtrigger-API-model-measurement,87checks,
 fresh fullACL/nonaction/window COM PASS/0instances/allchildrenjoined;
-sameOct26 23:45..23:55UTC/worker120active600elapsed.54.566aggregateupper.
-Oldsix/eightmodel updates, failures/backups/debits preserved; never rerun
+sameOct26 23:45..23:55UTC/worker120active600elapsed.121.514aggregateupper.
+Oldsix/eight/twelve-model updates, failures/backups/debits preserved; never rerun
 consumed installers. Installation is NOT future outcome/performance.
 Read-only current projection (no model/target/Task/API invocation):
 
 ```powershell
-uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/data/current-peer-points-measurement-extension-20261020-v1/read_outcome.py --deployment-sha d405201fa879db8215a309ed10121c0a00607831ca3fbbd70042cec9e61f2a01
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/data/current-hgb-point-measurement-extension-20261020-v1/read_outcome.py --deployment-sha 5c237b857f515a6876ae0efefc3f9cde2746dc4ca99942b9bff722b250ab17cb
 ```
 
 Parent independently verified FUTURE_MEASUREMENT_NOT_OBSERVED and7direct
 resultrefs. No failed/uncommitted points or fake rankproper-score adopted.
-New14 count is probabilities/policies, NOT14 model calls or14 brokers.
+New15 count is probabilities/policies, NOT15 model calls or15 brokers.
 
 NAS exit-accounting preparation:
 D:/thericher-v2/model-artifacts/execution/current-nas-exit-accounting-readiness-20261020-v1/CONSUMER.json
@@ -105,10 +105,46 @@ No new HGBopportunity; Window21installed tasks/policy unchanged.
 
 Current research preparation (not a command to rerun closed fits):
 D:/thericher-v2/model-artifacts/research/current-long-context-feature-development-20261020-v1.
-Matched HGB/LSTM short versus short+yearsummary,4fits/2CPU2CUDA proposed;
-actual Data/native before fitting, origin12:19:44UTC/end16:19:44UTC/
-3600aggregateactive/oneGPUallocation/0retry. All closed HGB/peer/multiera
-outputs remain immutable; field-proxy study125ea46c is not nativecashPnL.
+Matched HGB/LSTM short versus short+yearsummary ALL4fits COMPLETE:
+HGB48/best28 and31/best11; CUDALSTM31/best11 and22/best2/5035updates,
+oneallocation/alljoined+leasefree13:08UTC. Do NOTrerun closedlearning.
+ALL4seal6e87d0c5 at preallocation-continuation-r1/actual; source21b5cea3.
+ExactsignedWindowsShell admission sourceedd2ddc1/native6aec9a2c passed
+current BEFORE+OWNED checks; no genericunknownbypass or historicalcauseproof.
+Postsealreadout18cells COMPLETE: FINALa7db7164/ABI0f99c0f9/handofff9901a72,
+scientificHGBFAIL/LSTMPASS/globalFAIL/financialbothFAIL/637.844aggregateupper.
+UnicodeNPZ publicationfault reproduced/recovered e1f13db4:oldtargetbytes
+cb780de2 unchanged/new70x25marks/17nativechecks/DataFINAL83.569; oldfailure
+09b6a8d9 intact. Coldimport entry repair occurred BEFOREonePREDreadout;
+no numericretry or oldcreator command reuse. Fixedblend6cells separate.
+Origin12:19:44UTC/end16:19:44UTC/3600aggregateactive unchanged.
+All closed outputs remain immutable; field-proxy study125ea46c is not cashPnL.
+
+HGBABS61 newprospectivepoint ACTUAL406ec7c1/COMMITTED6d7b8260 at12:58:36UTC
+beforeofficial13:30OPEN,25rows/1restore1forward/0fits-GPU-API-Task/alljoined.
+Consumed point creator is not a command to rerun. Strictreader only:
+
+```powershell
+uv run --no-env-file --extra dev python -I -B D:/thericher-v2/model-artifacts/research/current-hgb-absolute-prospective-point-20261020-v1/read_point.py --final-sha256 406ec7c17e653dd8d4f02866ee07b5945cf9ae9aed12b1d1a9dc59540587a315
+```
+
+ParentreaderPASS0newmodelcalls. Measurementextension13class3+2rank is
+ACTUALffcf64a0/5c237b85 asabove, not futureperformance or a Paperactivation.
+No HGBPaperopportunity/newbank/order implied by thispoint.
+
+Latest closed fixedblend98c1e094/42dd405a:6new+18reusedcells/0fits-GPU/
+114.837upper, science+financialFAIL. Tickerstudy post-native-fixture-r1/
+FINAL8fdf38b2/ABI0d42571e:2CPUmarketfits/15cells/99.597upper/financialFAIL.
+Boundclarification6e258503: frozen scientificcriterion uses INNERscreen,
+PASS unchanged; PREDdoesnotconfirm pairedimprovement. Do not mixsplitclaims.
+Neither consumed creator is a command to rerun.
+
+Current TimesFM preparation:
+D:/thericher-v2/model-artifacts/research/current-timesfm-path-augmentation-20261020-v1.
+Data dd00a6e9/3050FIT1450INNER1650PRED target-free512closes; retainedApache2
+datedcheckpoint2f776efe/D6image. Source/native then conditionaloneGPUextract
+and2CPUheads,0backboneupdates. Deadline15:24:13UTC/extractclosebefore14:45.
+Source readiness/weights presence are not proof of actualGPU activity.
 
 | Owner | Actual Deployment / Due |
 | --- | --- |
@@ -308,7 +344,7 @@ never rerun for metadata. NEWprospectivepoint actually retained01:15:25UTC:
 A/research/current-long-costband-prospective-point-20261020-v1/
 source-preparation/host-runtime/point-once/COMMITTED.json9d68b3f3,
 forecaste1fc1ada/CLOSEDab4329ea/4calls0fits0outcomes/actor+leaseclosed.
-The older six/eight-model adoption history below is frozen. CURRENT twelve
+The older six/eight-model adoption history below is frozen. CURRENT thirteen
 class3/two-rank action and strict reader above supersede it; future performance
 remains unknown. Do not invoke the original worker to inspect a schedule.
 
