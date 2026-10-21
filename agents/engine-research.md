@@ -8,9 +8,42 @@ of research pass/failure. Parent alone owns shared MD/Git.
 ## Current Owner / Next Action
 
 Hubble: Patch512 and fixed Patch/recurrent probability-halfpool COMPLETE.
-Next current-fundamental20-learning-diagnosis-20261021-v1 uses retained
-FIT/INNER curves only to motivate ONE orthogonal trainable/decision hypothesis.
-No PRED outcome decode, model retry or weight search in this diagnosis.
+Diagnosis current-fundamental20-learning-diagnosis-20261021-v1 COMPLETE:
+DIAGNOSTICS5ee80f6b/FINAL150.696211upper/26puremaskchecks/0PRED-model-GPU.
+Nonzero backbone gradients and later INNER deterioration reject a simple
+short-epoch/zero-gradient explanation. RNN/RankNet/Patch INNER issuer-FE
+score R2 .893755/.968129/.595766 is descriptive, not label causality.
+Completed current-fundamental20-explicit-id-ablation-20261021-v1 used ONE
+samefactory/seed3901 model with FUND[:,21:46]zero after original QA/affines,
+retaining dimensions/price/age/proxy/ratios/keys/splits/targets. Parent's
+4001proposal assumption corrected BEFORE numerical effects, no seed grid.
+Max128/pat20/sameLR/bestcheckpoint0/onefit/oneactualreadout/3new9cachedcells.
+1200TOTALactive carries closeddiagnosis150.696211once,3600elapsed, at most
+one pre-optimizer technicalretry, none afterupdates. Actual native factory/
+identity+transformhash/checkpoint/DTO/reportwriter before any market fit.
+Joint screen: INNER issuer-FE R2<=.7150038294136176 (20percent drop) AND
+10bp growth>cachedRNN+uniform/no-worseDD vsboth. Cash/samegross/turnover
+reported; properCE/Brier diagnostic. Claude9e154a5e SOUND_WITH_NAMED_LIMITS.
+Still no implicit-ID elimination/causal/independent-alpha/Paper claim.
+ActualRESULTdee22eff/FINAL COMPLETE:1CPUfit58epochs/best38/4524updates/
+33.568780marketseconds/241.714533upper/alljoined/leasefree/1actualintake.
+NativeCPU4+CUDA4updates; GPUepoch.9832 vsCPU1.0209s insufficient10percent
+routingmargin, soCPU selected, notenvironment/authority block.
+Matched3901initial8tensors BITIDENTICAL7d6fb2fe. INNERissuerFE R2.165545
+mechanisticPASS, but10bp growth/DDpercentNAV+.706135/.270296 vsRNN
++1.015525/.213627 financialFAIL/overallFAIL/3new9cached. Curves1b7b5f97/
+weights0db8b34c retained. No fit/seed/weight/epoch rescue; recipe CLOSED.
+
+CurrentHubble SOURCE-only:
+current-broad25-optional-fundamental20-hypothesis-20261021-v1.
+Expand fixedprice-available25 universe instead complete-case8/9 restriction,
+requiredmarketdata unchanged; strictquartercontext OPTIONAL byNEWcontract,
+nativeNaN+observedmask not neutral missing-value imputation oroldinputrelaxation.
+Matched price+availability/age-control arm versusactual-known-ratio arm,
+same rows/payoff/costs/noissuerID. Missingness may encodecollection/issuer;
+increment must beatexactsameavailability controls, no future-completeness
+membership. One2fitCPUbaseline proposed beforeadditionalDL, no fit yet.
+Primary nativeNaN HGB1.7.2 docs checked, no newframework/library.
 Halfpool root current-fundamental20-patch-recurrent-halfpool-20261021-v1:
 readout-r1/FINAL actual02:20:37UTC/RESULTbacc9f16/VERIFY89f8a30f,
 EXACT recurrent allocation alias/0new12cached/1outcomeintake/0models-GPU/

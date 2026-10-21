@@ -23,10 +23,11 @@ Fresh D observation:1.56TB free of4TB, not a permanent capacity promise.
 | Owner | Ready / Running Work |
 | --- | --- |
 | Parent | Integration, actual caller/source review, shared MD/Git and next dispatch. |
-| Hubble / Engine | Patch512/halfpool COMPLETE; retained FIT/INNER learning diagnosis for one informed next hypothesis, no new PRED/model calls. |
-| Kepler / Data | Composite future marks plus final Nov17 capture source/native preparation, no new API/Task effects now. |
+| Hubble / Engine | ID-mask58epoch study COMPLETE; broader fixed25 optional-fundamental proposal/source, no new fit inferred. |
+| Kepler / Data | Final Nov17 Task created disabled/unqualified; exact native ACL restore/enable-only recovery, no Run/API. |
+| Noether / Data | Existing SEC historical cursor schema recovery, disjoint new root; no current input/PIT qualification or old downloads repeated. |
 | Boole / Engine | Nov17 measurement host prepared; needs composite Data/final source binding before useful installation. |
-| Wegener / Execution | R5 deployment closed; tracked20-session compatibility complete/full suite passed, new profile NOT deployed. |
+| Wegener / Execution | Saved FUND20 wire+new CPUimage qualified; strict offline private compatibility preflight only, not deployed. |
 | Closed Roles | Strategy43checks/Data512join39checks, RankNet/Chronos/pool trials and temporary Validation complete; MDs are not active LLM proof. |
 
 ## Actual Paper Runtime
@@ -101,7 +102,32 @@ compliance/refund claim. Actual readout-r1/FINAL at02:20:37UTC COMPLETE:
 RESULTbacc9f16/VERIFY89f8a30f, allocation EXACT recurrent alias/0new12cached/
 1outcomeintake/0models-GPU/141.125862upper/alljoined/financialFAIL.
 It adds no diversification; no blend weight/orientation rescue. Next study
-is retained FIT/INNER learning-curve diagnosis, not another seen-outcome grid.
+comes from completed FIT/INNER diagnosis5ee80f6b/FINAL150.696211upper/
+26puremaskchecks/noPRED-model-GPU. Real backbone gradients exist; longer
+training is not a supported simple fix. INNER issuer-FE score projection
+RNN.893755/RankNet.968129/Patch.595766 is descriptive, not label causality.
+New current-fundamental20-explicit-id-ablation-20261021-v1 zeros only
+standardized FUND50[:,21:46], same dimensions/factory/actualincumbentseed3901,
+retains price/age/proxy/ratios. Originalproposal4001 was parent factual
+mistake, superseded BEFORE numerical effects, not a second seed trial.
+One newfit/max128pat20/oneactualreadout/3new9cachedcells;1200activeTOTAL
+including closeddiagnosis150.696211once,3600elapsed; no retry afteroptimizer.
+INNER same issuer-FE projection must fall20percent versus cachedRNN AND
+frozen10bp growth better/RNN-uniform DD no worse. Proper scores diagnostic.
+Claude9e154a5e SOUND_WITH_NAMED_LIMITS: not implicit-ID removal/causal proof.
+Actual FINAL at that root/RESULTdee22eff COMPLETE:1CPUfit58epochs/best38/
+4524updates/33.568780marketworker seconds/241.714533totalupper/alljoined/
+leasefree. NativeCPU4+CUDA4updates; measuredCPU1.0209s/CUDA.9832s per epoch
+selectedCPU under frozen10percentmargin, not a GPU permission problem.
+Initial8tensors BITIDENTICAL to cached3901 epoch0 (7d6fb2fe), maskonlyaxis.
+INNERissuerFE R2 .165545 passesmechanistic .715004 threshold.10bp replay
+growth/DDpercentNAV+.706135/.270296 vsRNN+1.015525/.213627, financeFAIL/
+overallFAIL/3new9cached/1actualintake. Fullcurves1b7b5f97/weights0db8b34c.
+No retries/seed/weight rescue or independent-alpha/Paper claim. Recipeclosed.
+Next broader fixed25 optionalcontext SOURCE proposal: market inputs required,
+strict accounting only whenknown, matched availability/age controls vsactual
+ratios, no ID/neutral imputation/future-completeness membership. CPUbaseline
+before moreDL; no market fit or new Data qualification inferred yet.
 
 Parent pre-effect corrections: consume normalized sequence DIRECTLY, no
 second log/inversion; standardized filing-age can be negative. Same actual
@@ -168,9 +194,26 @@ not mutation of old cursors/source, fake future hashes or shorter target.
 Final source35527f9e/ABI986df7dd under
 current-fundamental20-final-session-capture-20261117-v1 is source-only:
 Nov17 23:20UTC/full25/25normal27maxGET/1POST/600active900elapsed.
-No actual collector or measurement installation yet. Pre-install review
-must account for Scheduler-inserted XML SD only with exact native ACL and
-confirm atomic token exclusion. Old feed plans/cursors/receipts unchanged.
+Data install-r1/r2 failed PRE-EFFECT callers; r3 actually created ONE newTask
+disabled. Native flag2 added exactly ownerREAD0x00120089,4vs3intendedACE/
+no other259Taskchanges; never infer an enabled collector from creation.
+Bounded exact-own SetSecurityDescriptor(original3ACE,16) plus directEnabled
+recovery preparing, Claude b487de3b SOUND_WITH_NAMED_LIMITS/60upperonce.
+Fresh exact ACL/XML/source/due/readback before and after enable; noRegister
+again or blindACLadoption. SourceSD63checks and pinned atomic token directory+
+legacylock/pacing49d810ec qualified. No collector Run/API/measurement yet.
+Old feed plans/cursors/receipts unchanged.
+
+SEC cursor recovery READBACK at
+A/data/current-sec-historical-submissions-cursor-recovery-20261021-v1:
+CVXretained/2nonquarterexceptions/3neworiginal10Qheaders/14of18metadata
+issuercoverage;20SYN+native+independentreadback/old11GET+new1GET.
+NEE4exceptions exceeded old2cap; oldSTOP immutable. Separately frozen
+quarterly-header continuation CONSUMER3d64d4f6/VERIFY PASS reusesNEE and
+adds2GET/0failure-retry/6original10Qheaders;16of18metadataissuers/226linked
+contexts11issuers/combined14GET.86JPM-MSbankfilesdeferred as not useful for
+current exactquarterrecipe, NOTprovennonquarter/sourceexhaustion. No current
+matrix/asof/PIT qualification. Descriptor discrepancy cause UNKNOWN.
 
 Paper20 tracked implementation and44new compatibility cases are complete:
 model-proposal-nas-20session-2026-v1 explicitly validates canonical20sessions,
@@ -180,6 +223,14 @@ old/default reader rejects new profile. Same generic native execution/bank/
 request identity/risk, pending-before-loader and foreign custody preserved.
 This is compatibility, NOT new deployment/actual private qualification or
 replay-fill parity. Current R5/model/Tasks/requests are NOT swapped.
+Actual saved point-to-native wire READY at
+A/execution/current-fundamental20-committed-point-paper-wire-20261021-v1/WIRE-CONSUMER.json
+c3acfa90/source4c11205f/bindingfdc595fc/input5d792094/24checks/1derivation/
+8known+25mask17unknown/4NASproposals/NYS cash/no renorm/one.005cohort.
+Oldb96image measured lacks20module. Newonebuild imagef31e781d/source988c14a8/
+native8938cb9d/11.690154upper/Python3.12.15/Torchabsent/networknonepublic
+probe/cleanup. Separate strictRO private compatibility preflight preparing,
+no actual account/funds/quotes/Task/order/deployment inferred.
 Earlier five-policy cb1c1d9a/HALFb060d4fa targets Oct21OPEN->Oct27fifthCLOSE.
 Shadow d33490c9 installedOct22/23/24/27 01UTC;Oct27measurement22db8f33
 installed23:55..00:05UTC/30futurecells/oneintake. Not exit prices/fills/PnL.
@@ -195,7 +246,7 @@ cleanhelper/Ruff/default-research-accounting sample-envCompose PASS.
 Docs/external reuse needs fresh exact equality plus independent native checks;
 18k repo reruns cannot validate arbitrary external code. Tracked/control/
 material changes follow AGENTS verification, not stale authority.
-Latest pushed ba7893b. History/source/custody/failures stay Git/immutable A.
+Latest pushed84f7a7b. History/source/custody/failures stay Git/immutable A.
 Parent stages explicit owned files, preserves unrelated %SystemDrive%/.
 After interruption recheck actors/lease/receipt identity; never age-reclaim,
 refund closed debits or rerun completed fits. Continue ready lanes; unfinished

@@ -13,7 +13,14 @@ allactorsjoined/canonical lease RELEASED/currentGPUowners0.
 This is actual completed training, not a runningGPU claim.
 Fixed Patch/recurrent halfpool COMPLETE/EXACT recurrent alias/0new12cached/
 1outcomeintake/141.125862upper/alljoined/0fit-forward-GPU. No diversification.
-Next retained FIT/INNER learning diagnosis needs no GPU or PRED outcomes.
+Retained FIT/INNER diagnosis COMPLETE0GPU-model-PRED. Explicit-ID-mask
+campaign COMPLETE1CPUfit58epochs/best38/4524updates/33.568780marketseconds/
+241.714533upper/alljoined/leasefree/3new9cached/1actualoutcomeintake.
+NativeCPU4+CUDA4updates only; measuredCUDA.9832 vsCPU1.0209epochseconds
+does not meet frozen10percent routingmargin, so no marketGPUallocation.
+Matched3901initial8tensors exact; mechanismPASS/financeFAIL/recipeclosed.
+Current broader25optionalcontext SOURCE-only, first2fitCPUbaseline proposed,
+no useful GPU job ready from this proposal yet. No authority/environment ban.
 No dummy job to keep utilization high.
 Any NEW trainable campaign needs useful frozen hypothesis/Data/native proof,
 fresh ownership/headroom and its own counters, not old trial reuse.

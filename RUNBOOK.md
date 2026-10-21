@@ -87,13 +87,20 @@ not cryptographic OS scheduler origin. Exit/missing/preview/install not fill.
 
 Recurrent20 7efaa9e0, Chronos20 914fa4f9, RankNet e9f5bbb6/54445662,
 Patch512 FINAL54867822/RESULTddc4eee3, fixedrankfusion12e05488,
-halfpoolbacc9f16 and OOFc04d7aeb are COMPLETE, not running/relaunch commands.
+halfpoolbacc9f16, ID-maskdee22eff and OOFc04d7aeb are COMPLETE,
+not running/relaunch commands.
 Halfpool EXACTrecurrentalias/0new12cached, no additional diversification.
 Selected weights/curves stay A. See Engine/Steward for bounds/results.
 One actual GPU lease:
 D:/thericher-v2/model-artifacts/engine-research-agent/locks/gpu.lock.
 Patch44.017GPUworker seconds/alljoined/leasefree is completed training,
-not active utilization. Retained FIT/INNER diagnosis needs no GPU/PREDreadout.
+not active utilization. Diagnosis5ee80f6b and ID-mask1CPUfit58epochs/best38/
+4524updates/33.568780marketseconds/241.714533upper are complete; nativeGPU4
+updates only, CPU chosen by near-tie projection. MechanismPASS/financeFAIL.
+No more small-universe seed/mask/weight rescue. Broaderfixed25optionalcontext
+source prepares matched availability-control versusactualratio CPUbaseline,
+not new DL/numerical work yet. Never reinterpret NaN as neutral/economically
+known or relax old required-input contracts; new schema is optional-context.
 
 Actual FUND20 input216cec35:
 D:/thericher-v2/model-artifacts/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json
@@ -107,13 +114,22 @@ Old20/new9 exact6+2cover; oldplans ENDNov16.
 FinalNov17producer source35527f9e/ABI986df7dd:
 D:/thericher-v2/model-artifacts/data/current-fundamental20-final-session-capture-20261117-v1
 Source-only/23:20UTC/25normal27maxGET/1POST/600active900elapsed.
-Native Scheduler SD/ACL and atomic token qualification before installation.
-Future measurement host source-only; no capture/result/futurehash inferred.
+SD/atomic-token/pacing qualified. Actual finalproducer1newTaskcreateddisabled/
+unqualified dueknown auto-addedownerREADACE; exactSetSD16/directEnabled
+recovery preparing. Originalcreate capconsumed/noRegisteragain/manualRun.
+Futuremeasurement host separately recovering pre-createCOMXMLencoding only;
+no capture/result/futurehash inferred or fabricated.
 
 Twenty-session ModelPaper tracked source is verified but NOT deployed:
 model-proposal-nas-20session-2026-v1, canonical20sessions/DST/holidays/
 earlyclose/finalCLOSEminus15minute operational proxy. Oldv1/default14day/
 codecs/sharedbank/risk unchanged; old/defaultreader rejects newprofile.
+Actual savedpointwire c3acfa90/source4c11205f/input5d792094/bindingfdc595fc
+at D:/thericher-v2/model-artifacts/execution/current-fundamental20-committed-point-paper-wire-20261021-v1
+has8known25mask17unknown/4NASproposals/one.005cohort/24checks/1derivation.
+NewCPUimagef31e781d/native8938cb9d/onebuild11.690154upper/3.12.15/Torchabsent/
+networknonepublicprobe/cleanup. Strictofflineprivatepreflight is owned next,
+not fresh accountfunds/quotes/orderability or runtime deployment evidence.
 Do not swap currentR5/rebind unknown request/infer replay-fill parity.
 Five-policypointcb1c1d9a/shadowd33490c9/Oct27measurement22db8f33 are separate
 fifth-CLOSE consumers, actually installed not filled/measured. Originalpoint

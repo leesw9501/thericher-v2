@@ -10,10 +10,11 @@ No genuine operator decision currently required. Parent alone shared MD/Git.
 
 | Owner | Actual Work / Next Consumer |
 | --- | --- |
-| Hubble / Engine | Patch512/halfpool completed; retained FIT/INNER learning diagnosis, no new PRED/model calls. |
-| Kepler / Data | Composite6+2/finalNov17 capture source-ready; qualify native SD/ACL and atomic token locking before installation. |
+| Hubble / Engine | ID-mask58epoch study complete; broader25optionalcontext SOURCE proposal, no new fit. |
+| Kepler / Data | FinalNov17Task createddisabled/unqualified; exact-native ACL recovery+enable-only, noRun/API. |
+| Noether / Data | Disjoint SEC historical header continuation, reuseNEE retained body/new finite published cursors, no currentmatrix/PITclaim. |
 | Boole / Engine | Actual prospective point0996dabb complete; future measurement source needs final producer/composite binding, no future marks. |
-| Wegener / Execution | R5 actual deployment complete; tracked20-session input compatibility/full suite complete, new profile not deployed. |
+| Wegener / Execution | Exact saved FUND20 point-to-newPaperprofile wire; optional one CPUimage build, no deploy/API/private/Task effects. |
 | Parent | Integrate actual readouts, source/caller review, shared current memory and verified Git. |
 | Closed Roles | Strategy/Data512/RankNet/Chronos/temporary Validation complete; no daemon or activity inferred from MDs. |
 
@@ -26,7 +27,18 @@ one-shot/no replacement chain. Installation is not runtime or a fill.
 
 ## Throughput Review
 
-02:22UTC continuation: new Patch512 fit and RankNet readout are COMPLETE,
+02:58UTC review: research and Execution remain disjoint while Data recovers
+one disabled future-only Task. No GPU training actor remains after completed
+studies; newer ID-mask58epoch fit ranCPU on measurednear-tie, not a GPU ban.
+Ready: native20wire+newimage strictprivateRO preflight, broader25optionalcontext
+source, existing SEC cursors filtered for concrete useful quartercontexts.
+Due: tonight originalNASexit/Window21/nightly/F9, not a foreground sleep.
+Reversible improvement: resolve actual native principal account to exactSID
+and use documented create18/SetSD16 semantics BEFORE a Task mutation; mocked
+XML-only fixtures did not model automatic principalACE or COMname spelling.
+Keep exactACL/unknownXML safeguards, not arbitrary string-equality falseholds.
+
+Earlier continuation: new Patch512 fit and RankNet readout are COMPLETE,
 not running jobs. Actual PatchCUDA21epochs/1638updates/44.017worker seconds;
 all actors joined/lease free. Stored-output CPU halfpool is the useful next
 test, not dummy GPU occupation or a blind architecture/seed/window grid.
@@ -38,6 +50,16 @@ RESULTbacc9f16/VERIFY89f8a30f/EXACTrecurrentalias/0new12cached/1intake/
 141.125862upper/alljoined/0model-GPU/financialFAIL. No blend rescue.
 Next retained FIT/INNER curve diagnosis informs ONE orthogonal hypothesis,
 not another seen-outcome weight/model grid. No GPU task ready from the alias.
+Actual diagnosis5ee80f6b now COMPLETE: realbackbonegradients/bestearlyINNER,
+highstaticissuer score projection, not label causality/zero-gradient defect.
+New explicit-ID-mask recurrent hypothesis zerosONLYstandardized25IDcolumns,
+sameactualincumbentseed3901/factory and retained contexts. Parent4001seed
+assumption corrected BEFORE effects, not extra seedtrial. Onefit/max128pat20/
+1200TOTALactive incl151diagnosisonce/3600elapsed; GPUonlyafterrealnativeproof.
+Actual1CPUfit58epochs/best38/4524updates/33.568780marketseconds/241.714533upper/
+alljoined/leasefree. MechR2.165545PASS butgrowth+.706135/DD.270296percentNAV
+financeFAIL versuscachedRNN. No retry orseedgrid; stopsmall-universe recipe.
+New broader25optionalcontext source tackles coverage ratherthan longerfit.
 
 Reversible improvement: actual source/ABI/caller before effects. Parent caught
 Data Task XML lacking Scheduler-inserted SD normalization before registration;
@@ -65,8 +87,9 @@ changes on identical1374sources/controls. Repo tests do not certify D code.
   FUND policy aliases recurrent exactly, not extra diversification.
 - FUND20point0996dabb actually committed01:01:46UTC BEFOREOPEN,8members/
   25axis17unknown/0fits-GPU. ONEcohort toNov17CLOSE, not20samples/Paper.
-- FinalNov17source35527f9e/ABI986df7dd and composite68b8bd1a source-only;
-  no actual Task/capture/measurement. Future hashes resolve on publication.
+- FinalNov17source35527f9e/ABI986df7dd/composite68b8bd1a:oneTask actually
+  createddisabled/unqualified, exactACL SetSD16recovery preparing; noRun/API/
+  capture/measurement. Future hashes resolve on publication.
 - New20session2026 ModelPaper profile is tracked compatibility, not current
   R5/model/Tasks changed. Original14day default/bank/risk/codecs remain.
 

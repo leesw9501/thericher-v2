@@ -98,6 +98,18 @@ A/execution/current-fundamental20-paper-adapter-preparation-20261021-v1.
 Any future activation needs actual scoped fresh native custody/input/quote/
 orderability facts, no adoption/release of unknown requests. Researchpoint
 0996dabb is not an order and cannot supersede the original8NAS or Window21.
+Saved actualwire WIRE-CONSUMER c3acfa90 at
+A/execution/current-fundamental20-committed-point-paper-wire-20261021-v1:
+SOURCE4c11205f/bindingfdc595fc/input5d792094/24checks/1derivation/8known+
+25mask17unknown/4NASproposals/one.005cohort. Originalinference clocks and
+actualadaptercreation separate; no numeric rows for unknowns.
+NewCPUimagef31e781d/source988c14a8/native8938cb9d/1build11.690154upper/
+Python3.12.15/Torchabsent/publicnetworknoneROprobe/cleanup. Oldb96measured
+lacksnewmodule. Botholdimage/R5unchanged, no deployment/order.
+Wegener owns one new strictnetworknoneROprivate compatibility preflight,
+categoricalonly/newexactunstarted/foreign-targetconflicts/reservationsheld/
+privatebytesunchanged. It is not fresh broker funding/quote evidence or
+permission to adopt currently held foreign targets before original exits.
 
 ## Other Frozen Consumers / Quiet Operations
 

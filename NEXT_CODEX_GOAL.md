@@ -45,9 +45,17 @@ substitute unknown requests or a reset/profit-expanded shared bank.
    original02:27:10UTCdeadline/one readout-r1. ActualRESULTbacc9f16/
    VERIFY89f8a30f COMPLETE:EXACTrecurrentalias/0new12cached/1intake/
    141.125862upper/alljoined/financialFAIL/0model-GPU. No diversification.
-   Preserve oldclosedFINAL/no refund or old-cap-compliance claim. Next
-   retained FIT/INNER learning diagnosis identifies ONE informed orthogonal
-   hypothesis, no further PRED outcome decode or blind blend/model grid.
+   Preserve oldclosedFINAL/no refund or old-cap-compliance claim. Diagnosis
+   5ee80f6b completed0PRED/model/GPU; explicit-ID-mask study also COMPLETE:
+   RESULTdee22eff/1CPUfit58epochs/best38/4524updates/alljoined/leasefree/
+   241.714533upper/3new9cached/1actualintake. Matched3901initialstate exact;
+   nativeGPU4updates only, CPU selected from actualnear-tie projections.
+   MechanisticR2.165545PASS but10bp growth/DDpercentNAV+.706135/.270296
+   financialFAIL. No retrain/seed/weight rescue. Current source-only broader
+   fixed25optionalquartercontext proposal compares prices+availability/age
+   controls with actualknownratios, sameuniverse/costs/targets/noID, no neutral
+   imputation/future-completeness membership or oldrequiredinput relaxation.
+   First2fitCPUbaseline before additionalDL, no new fit inferred yet.
    RankNet21CPUepochs/1638updates completed financialFAIL e9f5bbb6/
    54445662. OriginalHUBER0update missingidentity/pairUNAVAILABLE retained.
    Recurrent20/Chronos/fixedrankfusion/OOF completed, not ready reruns.
@@ -60,8 +68,12 @@ substitute unknown requests or a reset/profit-expanded shared bank.
    6+2old20/new9cover/session/source/basis/hash, UNKNOWN before replay on
    missing inputs. Oldfeedplans ENDNov16. New finalNov17source35527f9e/
    ABI986df7dd source-only, full25/25normal27maxGET/1POST/600active900elapsed/
-   23:20UTC. Qualify nativeSchedulerSD+exactACL and atomic token locking
-   before actual installation, bind composite/measurement host to producer.
+   23:20UTC. SD63checks/atomic token+legacylocks/pacing49d810ec qualified.
+   Actual1newTaskcreateddisabled/unqualified: flag2addedknownownerREADACE.
+   Exact-own SetSecurityDescriptor(original3ACE,16) +directEnabled recovery
+   preparing; freshpre/postACL/XML/SID/source/allotherTaskequality/noRun.
+   No additionalRegister/unknownACLadoption. Bindmeasurement after actual
+   qualifiedproducerreadback. No capture or measurement inferred from create.
    No fabricated futurehash/oldcursor mutation/shorter target. This future
    dependency never holds independent research or existing Paper schedules.
 
@@ -72,6 +84,11 @@ substitute unknown requests or a reset/profit-expanded shared bank.
    old/defaultreader rejects newprofile. NOT deployed/currentR5swap/neworder.
    A future proposal must use actual scoped custody/fresh broker facts and
    exact source/image/identity, never adopt inventory or reset unknowns.
+   Savedpointwire c3acfa90/4c11205f/input5d792094/bindingfdc595fc ACTUALLY
+   READY8known25mask17unknown/4NASproposals/one.005cohort/24checks.
+   NewCPUimagef31e781d/native8938cb9d/onebuild+onepublicnetworknoneprobe/
+   cleanup qualifieswire, NOT deployment. Strictofflineprivatepreflight is
+   next/currentowned, no API/Task/order/strategy effects.
 
 ## Verify / Continue
 
