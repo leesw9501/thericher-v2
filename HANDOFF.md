@@ -21,11 +21,11 @@ Docker /app/model_artifacts, >=15percent D free. Last D about39percent free.
 | Owner | Actual State / Next Consumer |
 | --- | --- |
 | Parent | Integrate evidence/source, current shared memory/Git; company outcome remains open. |
-| Hubble / Data | Close-chart Phase1 input9b45a6a9 COMPLETE; PRED deferred until primary OUTER pass, original Data deadline11:56:39UTC. |
-| Einstein / Engine | Cross-asset2CPUfits COMPLETEfe37689e/INNERFAIL/best0both/PRED0, executor closed. |
-| Wegener / Engine | Close-chart fitter prep plus conditional actual2fit grant7200TOTALactive18000elapsed; actualnative beforemarket, not proof running. |
-| Boole / Engine | Fixed4seed COMPLETE28873ce9/6CPUfits/OUTERPASS-PREDFAIL/MIXED, executor closed/no rerun. |
-| Noether / Strategy | Close-chart r2 failed JSON scheduler infinity after2SYNupdates; now dailyETF trend source600active5400elapsed, no marketfit. |
+| Hubble / Data | Wire qualified2dfc3d9f; primary materializer1200active now binds terminal0067/81ad6523. No primary numeric evidence yet. |
+| Einstein / Data | Historical100 MODP1 PARTIAL_CLOSED5d6cafff/alljoined; source-only future-due guard repair600, no newAPI/token/Task. |
+| Wegener / Engine | Joint fitter READY a6948053/ABI7cb8e949/18SYN+8bindingchecks; actualnative then Data-bound firstfits authorized d74f2d25, no actual allocation inferred. |
+| Boole / Execution | COMPLETE/closed TCNwire c417b67f/42native+45independentchecks; no deployment/API/privatewrites/Tasks. |
+| Noether / Strategy | Joint Source READY adac78ea/PROPOSALbbc949be/equivalencef82ece16 at source/joint-ensemble-r1; closed2458.459274SOURCEupper, no marketfits. |
 | Closed | Kepler finalNov17 producer installed/parentRO verified; Banach512join and earlier Validation complete. MD is not an active LLM/worker. |
 
 One GPU training allocation at A/engine-research-agent/locks/gpu.lock.
@@ -37,6 +37,59 @@ selected initialstate, not still running. OOF4CUDAfits also COMPLETE,
 90.604708GPUworkerwall seconds/12679updates. Intraday2marketfits completed
 on CPU; CUDA SYN only. Next richer-input source is not a running trainer.
 Measure cold setup separately from warmed actual-loop pace; no dummytraining.
+
+## New100 Wave / Recovery
+
+Purpose: broader63dailyOHLCV TCN/GRU/Transformer fixed-mean ensemble versus
+same-information Ridge/rank5, not another25stock seedgrid. Source current-kis512-ohlcv-rank5-proposal-20261021-v1
+(parent512/selected100), adapter current-kis512-ohlcv-rank5-input-20261021-v1,
+fitter current-kis-modp1-ohlcv-rank5-development-20261021-v1. No numerical/GPU
+GO yet. Static100 beforeprices bySHA256(thericher-kis-modp1-rank5-20261021-v1:
++symbol), first100 fromfrozen512; no liquidity/performance/support filtering.
+CurrentNASDAQ alphabet-derived bias/nonPIT remains, no MODP0/fixed47 splice.
+
+Collector A/data/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1,
+market M/us_equities/research_inputs/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1.
+Terminal12:28:10UTC FINAL5d6cafff/manifest0067 81ad6523: chargedGET1712/
+actual1711/1701pages162069rows/58CLOSED1PARTIAL33PENDING8UNAVAILABLE,
+137469admissibleCLOSEDrows/POST2/alljoined/5043.407856upper. No activecollector.
+TOTAL4000GET includes22oldcharged/21actual,12000active21600elapsed,
+hardAPIcurfew12:55UTC before Paperprep13:10. Oldef8a5d87 paused1918rows due
+overstrong wire-gap instrumentation, notproviderquota. Explicit nondispatch
+resolution for oldpreopener22/no refund/no completedpage repeat. Oneadditional
+POST/two total+2clientgenerations samequerybasis/asof20261020/universe, not
+atomicvendor snapshot/PIT. Native1.25gate retained; shortresidualwirewait
+compensatesIOjitter, no doublefullsleep. No account/order/live/Task/rawoutput.
+Terminal stop was inherited anonymousfutureTaskdue35.8s guard despiteREADY/
+zeroactualcompetingactors, not quota/Paperowner. Exact firstcause recorded;
+source-only600repair+Claude challenge assigned, no freshAPI/token/Task effect.
+Keep all100axes/unknowns and oldpartial/debits; Data materializes exact58CLOSED
+snapshot now rather than waiting for a complete100 acquisition.
+
+Nativefields xymd/open/high/low/clos/tvol have NOcomplete_observed. Do not
+fakeTrue or make providerfinality a research-permission gate. NewSource
+revision separates officialNYcalendar interval_elapsed from complete_observed
+FALSE/providerfinality/historicalarrival NOT_OBSERVED. Requirednumeric fields
+stayobserved/finite/domainvalid, no missingrow/field fill/crop. Review08bb8313
+SOUND_WITH_NAMED_LIMITS at A/review/current-kis-rank5-elapsed-interval-20261021-v1/RESPONSE.txt.
+UTCinstant comparisons afteractualNYcalendar conversion are correct. Oldstrict
+Source176b1364 immutable; r2 e8de902d/Request17df371d/13checks READY,
+Source cumulative1913.686452upper retained. Joint source preparation adds
+<=1200active/sourceTOTAL3500; joint fitter <=1200NEW/cumulative2400.
+Datawire600 separatefromconsumedprep900. LATER
+experiment access conditional onINNERpass, notindependent all-history Data
+acquisition. Four first fits only: Ridge plus TCN/GRU/Transformer, fixed raw
+score mean of three DL experts; no learned weights, missing expert stays UNKNOWN.
+Seven policies/21cells per domain, at most42; only primary ensemble INNER proper
+AND economic conjunction unlocks LATER. Review46e3472c SOUND_WITH_NAMED_LIMITS
+at A/review/current-kis-rank5-joint-ensemble-20261021-v1/RESPONSE.txt. Actual
+parent NUMERICAL-AUTHORITY-20261021.json d74f2d25 at fitter root frozen12:26:59UTC:
+48000TOTALactive/57600elapsed from11:03:45, oldcloseddebits once. Native1800
+may proceed after exactbinding/prepPASS; market4firstfits after actualnativePASS
+and exactDataABI, no further operator GO. Data materialization1200/max2passes,
+NN7200each/Ridge900/0postupdate retry. Wholecomponent clocks/counters remain
+bounded; earlier45000proposal not consumed numerical authority. Actual training
+not yet evidenced; preparation/authority are not GPU allocation.
 
 ## Actual Paper Runtime
 
@@ -222,8 +275,17 @@ exceeded author cap278.995662s before nativeattempt0; no pretendPASS/refund.
 Isolation-r2 failed strictJSON schedulerinfinity after2SYNupdates; actual
 firstcause at native-isolation-r2/out/FAILURE.json, not an architecturefail.
 111.307601upper/alljoined/sourceimmutable. Wegener actualfitter owns typed
-sentinel/nonresume correction and realCPU/CUDA qualification BEFOREmarket;
-conditional7200TOTALactive18000elapsed includes oldfailures/Data/prep/review.
+sentinel/nonresume correction succeeded. Actualfitter packet-path keyword
+collision failed CPU SYN, then one predeclared additive repair; oldfaults/debits
+preserved, no marketretry. Chart COMPLETE at
+A/research/current-broad25-close-chart-rank20-development-20261021-v1/native-recovery-r1/CONSUMER.json
+edfb190614e2ba40c6357b78da9ee02778dd68ee696f1ad4dd7da4a6f2e9251f.
+CNN CUDA17/best1/2329updates19.482439fitter seconds; MLP CPU16/best0/
+2192updates4.246898s.58artifactchecks/active-runtimeRuffPASS/oneOUTER15cells/
+proper-financeFAIL/PREDnumeric0/alljoined/leasefree/2386.202425upper.
+10bp growth/DDpercentNAV: CNN2.278940/2.841403, MLP3.853081/2.340051,
+HALF3.706092/2.537443, uniform4.813713/1.920805. Not an alpha winner.
+GPU32.966571leasewall/20.764674wholeworker, not kernel/utilization measure.
 DataPhase1 A/data/current-broad25-close-chart-rank20-input-20261021-v1/CONSUMER.json
 9b45a6a9:1094TRAIN/126checkpoint/610OUTER/45750knownrows/13SYN/5NPZ1.26MB,
 312.015349upper/alljoined. PREDnumeric/render0, OUTER/PREDlabels not opened
@@ -233,9 +295,50 @@ A/review/current-broad25-close-chart-rank20-20261021-v1/RESPONSE.txt:
 rawSHA88de806887b8ca340fdeea5887b3f98205583adb0609697ea40ffe22e5097a0b;
 overlapping checkpoint/OUTER, small25/currentlisting/nonPIT/CA/reuse limits;
 design review not actual leak attestation. Strict growth equality is FAIL;
-no rounded tie rescue or universal CNN claim. Markettraining not yet evidenced.
-Noether independently owns current-etf-causal-trend-allocation-proposal-20261021-v1,
-600active5400elapsed/existingdailyETF headers/onepast-onlykernel, no numericalGO.
+no rounded tie rescue or universal CNN claim. No completedfit reruns.
+Noether ETFsource revision-r1 e3d15141/kerneld3be23e2/20SYN COMPLETE,
+past-window split-normalized253CLOSE/252trend63RMS/monthlynextOPEN.
+Data c0dec858 COMPLETE onecanonicalTiingoCSVpass/6876commonsessions/
+167DEV71INNER66LATERdates/allknown/420.181459upper/0Engineperformance.
+Research dividendreceivable/exdateCLOSEcollection is an ASSUMPTION, not
+actualsettlement/PIT/Paperpromotion. ActualETF family3600active14400elapsed
+inclSource821.118524/Data600/prep600/review60/native200/readout600/cleanup200;
+ActualETF COMPLETEb9f08a39/FINAL94b3e04a/15native+15Decimalcells/68headers/
+30cells2intakes/INNERFAIL/LATER0/alljoined/1951.834054upper. INNER10bp growth/
+DDpercent: PRIMARY32.799/22.346 vsmatched34.896/22.211, VOL_ONLY52.858/
+22.346/EQUAL2146.821/30.804. No lookback/criterion rescue. Review4ef69944
+REVISE misread compressedprimaryDD text; exactcontract already PRIMARY_DD,
+split-endpoint SYN resolves valid concern; advisory is not actual proof.
+
+TCNpoint COMPLETE6fc3cc26 at current-indicator-tcn-provisional-point-20261021-v1/calendar-repair-r1/actual/POINT.json:
+existingIND_ONLY TCN exactsafeweights/FITaffines/current252closes, native
+IND_ONLYcacheparity thenONE25rowCPUforward beforeOct21OPEN13:30 orVOID.
+Fixed .5Top5TCN+.5uniform25 ACTIONblend; no fit/GPU/outcomes/API/Tasks.
+Post-selection on seen highergrowth diagnostic, not oldRAW_PLUSpass/alpha.
+One.005ORIGINALinitialbasis cohort, not newbank/.005ofalreadytenth.
+Possible laterPaperwire must preserve exactbank/unknownrequests/owned-only
+inventory/minlot-unusedcash/no renorm. Pointalone notdeployment/fill.
+Published10:52:23UTC/25known/onecurrentCPUforward/2cachedforwards-restores/
+57checks/757.010467upper/alljoined. Actualaxis10NAS15NYS: NASmass.30=.20
+uniform+.10TCN oneTop5 NAS member; NYS.70 unused. Parent's earlier inference
+ofzeroNASmodelmass was WRONG and corrected by exactaxis. Purewirec417b67f/
+FINALeb8c8b89 passed42native+45independentchecks/631.260upper/0API-private-
+Task-model effects. Loaderbinding/lifecycle/owner/minlot/funds and Nov17
+FUND20exit-window conflict remain; no newTask installed.
+Claude6d9cee21 SOUNDlimits: provepost-affine rawzero convention and Oct20
+priorCLOSE. ExactlinkedPaperfills ARE Paperexecutionevidence, notlive/netPnL;
+reviewer's literal contrarysentence is not adopted.
+
+Breadth inventory A/data/current-daily-equity-breadth-readiness-20261021-v1/PLAN.json
+062576cc: KIS512/1,197,728retainedrows/currentNASalphabetbias, not100qualified
+liquidstocks; existing47stock adjustedpanel too. No download needed for
+preflight. Einstein calibration current-kis-daily-adjustment-calibration-20261021-v1
+<=900TOTALactive5400elapsed/prep600, existingevidence/officialsource first,
+COMPLETE7e42e726:4historicalVTS GET/1POST/400rows/200matchedpairs/791.146088upper,
+both datedsplitbreaksremoved. Olddifferent-anchor AAPL study staysunresolved;
+no globalCA/dividendTR/volume-adjustment/finality/PIT claim.
+No account/order/live/Task/newworker/secret-rawoutput; marketbytes M only.
+Purpose vendor split-discontinuity behavior, not TR/PIT/finality assertion.
 Parent independent integration check:11exact public refs across fixedseed
 completion/Data source+VERIFY+5marketpackets;0PREDnumeric/0modelcalls.
 Fresh tracked1374source/control equality5802dd71/Ruff/three sample-envCompose/

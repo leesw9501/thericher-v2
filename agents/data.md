@@ -6,6 +6,55 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
+Einstein owns current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1:
+FINAL5d6cafff/12:28:10UTC1712chargedGET1711actual/1701pages162069rows/
+58CLOSED1PARTIAL33PENDING8UNAVAILABLE/POST2/alljoined. Fixed100 SHA256 before prices from512,
+sameNAS/MODP1/asof20261020/oldest20070820, no MODP0/fixed47 splice. <=4000GET
+including22oldcharged/21actual,12000active21600elapsed/hard12:55APIcurfew.
+Oldpreopener22 proven nondispatch; new client generation2 keeps olddebits,
+exactcursor and native1.25gate/residualIOcompensation, no completedpage refetch.
+Sourcea5a32af1; exactfinalmanifest recovery-r1/manifests/0067.json81ad6523 under
+M/us_equities/research_inputs path.137469 admissible CLOSED rows/5043.407856upper.
+Not full100 history/CA/PIT/finality qualification. Partial retains100axes/masks/
+cursors, no replacement or curfew extension. No active collector: anonymous
+futureTaskdue35.8s guard exited despite READY/zero actual owners, not quota.
+PRIORITY-GUARD-FIRST-CAUSE.json records proof; source-only600 repair/Claude
+challenge separate, no newAPI/token/Task effect or oldclock extension.
+
+Hubble owns current-kis512-ohlcv-rank5-input-20261021-v1/actual-wire-qualification-r1:
+FINAL WIRE_QUALIFIED_NO_MARKET_NUMERIC_GO, Source34970e11/ABI2dfc3d9f/
+SYN3bf1cb39. Metadata-only joint handoffb574ac99/cumulative540.177250upper600;
+oldprep880.063479 remains, zero primary numeric decode. Actual6fields
+xymd/open/high/low/clos/tvol; complete_observedFALSE/finalityNOT_OBSERVED,
+officialNYcalendar interval_elapsed is separate, missing numeric never filled.
+R2 Sourcee8de902d/Request17df371d and pending joint4model inputs are equivalent
+except primary LATER release now fixedmean3DL. Primary numeric<=2023 only;
+conditional secondLATER pass requires exact ensemble INNER conjunctionPASS.
+Independent all-history acquisition is allowed. Actual materialization grant
+and exact immutable index admission remain pending; no model/GPU/API here.
+
+Current monthlyETF Data COMPLETE:
+A/data/current-etf-monthly-trend-input-20261021-v1/CONSUMER.json c0dec858
+(fullSHA in FINAL). Onecoherent retainedTiingo rawCSVpass/21862source rows/
+15294selectedpairrows/6876commonsessions/167DEV71INNER66LATER origins,
+253priorCLOSE/split masks; all input andheldintervals known. Source0d425170/
+VERIFYa0339f9c/420.181459upper/alljoined/0Engineforecast-PnL-model-GPU-API.
+3input+3isolatedcustody packets/258026bytes M. Inputseal beforeOPEN/dividend
+decode; conditionalLATER Enginephase0 until exactINNERpass. ExdateCLOSE
+dividend collection researchproxy, not observedpayment/settlement/PIT.
+
+BreadthPLAN062576cc at current-daily-equity-breadth-readiness-20261021-v1
+COMPLETE210.028039upper/0marketnumeric/network. KIS512retained1,197,728rows,
+482zerogapassets/30gapped; currentNASalphabetAAL..CTRN bias, not100qualified
+liquidUSstocks. Fixed50adjusted has47stocks, useful not100. Yahoo1300retained
+but reuse-rights/actualsupport not newly established; Norgate trialretention
+unknown, no payloadopen. No acquisition needed for KIS historicalpreflight.
+Calibration current-kis-daily-adjustment-calibration-20261021-v1 COMPLETE:
+CONSUMER7e42e726/RESULTaf000ea0/791.146088upper900/4GET1POST/400rows/
+200paired dates, two dated AAPL2020/NVDA2024 split breaks removed in MODE1
+view. Not global CA/dividendTR/PIT/finality; old unresolved anchor preserved.
+Canonical4files M, alljoined; no repeat capability calls or account/order/Tasks.
+
 Close-chart Phase1 COMPLETE for the actual next MLP/CNN trainer:
 A/data/current-broad25-close-chart-rank20-input-20261021-v1/CONSUMER.json
 9b45a6a90158011d8e53f28d63e40a5300b10572f2f03e3e84e586de6813098f.
@@ -14,9 +63,10 @@ typedmasks/orderedkeys/clocks; TRAIN/checkpoint tie-fairranklabels ONLY.
 13DataSYN/header/causality/maturity/invertibility/DTO/hashchecksPASS.
 OneFIT+oneINNERpass/5NPZ1,259,974bytes/312.015349activeupper600/
 388.508elapsed7200/alljoined. No persisted images/OUTER-PREDoutcomeopens.
-PREDnumeric/render0 deferred until exactprimaryOUTER properANDfinancePASS;
-remaining287.984651active/originaldeadline11:56:39UTC. Do not rematerialize
-completed phase. DATA_KERNEL_QUALIFIED_MODEL_NATIVE_PENDING, not model GO.
+PREDnumeric/render0 CLOSED after actualchartprimaryOUTERFAIL a6bedbe3;
+no phase2dispatch/deadlinewait. Do not rematerialize completedphase. Original
+DATA_KERNEL_QUALIFIED_MODEL_NATIVE_PENDING is retained historicalclassification;
+actualfitter later qualified andcompleted edfb1906, not a remaining Datablock.
 
 Cross-asset set20 input COMPLETE:
 A/data/current-broad25-cross-asset-set20-input-20261021-v1/CONSUMER.json

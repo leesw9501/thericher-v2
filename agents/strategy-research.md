@@ -8,19 +8,32 @@ Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 ## Current Mechanisms / Consumers
 
 Current distinct mechanisms:
+- New10063OHLCV/rank5 joint panel at current-kis512-ohlcv-rank5-proposal-20261021-v1:
+  Ridge/TCN/GRU/Transformer firstfits, primary fixed1/3 rawscore mean3DL.
+  Existing r2 elapsed-wire Sourcee8de902d/Request17df371d/13checks ready;
+  joint Source COMPLETEadac78ea/PROPOSALbbc949be/equivalencef82ece16 at
+  source/joint-ensemble-r1,38checks/2458.459274cumulativeSOURCEupper.
+  No marketfit/GPU yet. Same100/features/roles/costs, literal mean/no learned
+  weights/missingexpert fallback;7policies21cells/domain/max42. Review46e3472c
+  SOUNDlimits: Jensen shrinkage is not new information/alpha; zero reference
+  and economic conjunction remain. Official calendar maturity <=Oct20 is not
+  a request for future marks afterOct20; providerfinality remains unobserved.
 - Close-chart Source07ad5079/kernelbaabbcdf/modelc193b08c/22SYN21headers,
   prior63Close q64 vs invertibleimage/MLP-CNN rank20. Owncode/no public
   weights, Jiang/Kelly/Xiu DOI10.1111/jofi.13268 motivates, not reproduction
   oralpha. Its competitiveimage-scaled1D is counterevidence. Nativeisolated
-  r2 failed strictJSON schedulerinfinity after2SYNupdates; actualfitter owns
-  boundedrepair/CPU-CUDA proof, no repeated standalone Sourceproof.
-- Noether owns current-etf-causal-trend-allocation-proposal-20261021-v1:
-  existingdaily SPY/QQQ longhistory headers/manifests plus ONEfixed past-only
-  trend/volatility allocation kernel with realSYN.600active5400elapsed,
-  no marketnumeric/outcomes/fit/GPU/API/Task/sharedMD/Git. This is a durable
-  dailyETF researchalternative, not a new indicator/threshold grid. Engine
-  owns finaltarget/split/costs/actualcampaign; actualdataavailability still
-  to verify, not assumed from old2007daily or1m-history narratives.
+  r2 failed strictJSON schedulerinfinity after2SYNupdates, retained. Actual
+  fitter laterqualifiedCPU/CUDA andcompleted edfb1906/CNN17GPU+MLP16CPU,
+  proper-financeFAIL/PRED0, no further standaloneproof/rescue.
+- ETFsource revision-r1 COMPLETEe3d15141/kernel d3be23e2/20SYN at
+  current-etf-causal-trend-allocation-proposal-20261021-v1/revision-r1.
+  One fixed253pastCLOSE split-normalized252trend/63RMS/monthlynextOPEN.
+  Split/dividendreceivable/exdateCLOSEcollection RESEARCHproxy, not observed
+  settlement/TR/PIT/Paperpromotion. Data c0dec858 actualcoherentTiingoCSV
+  supports167DEV71INNER66LATERorigins/allknown/0performance, no acquisition.
+  Engineactual-r1 COMPLETEb9f08a39/1951.834054upper/30cells/INNERFAIL/LATER0.
+  Strongestkill PRIMARYINNERgrowth>matchedgross ANDVOL_ONLY/PRIMARYDD<=1.25
+  EQUAL2. OnlyexactconjunctionunlocksLATER. No source reading-list backlog.
 
 Einstein completed close-only trend/reversion expert source:
 A/research/current-broad25-close-only-expert-proposal-20261021-v1.

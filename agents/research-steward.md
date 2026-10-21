@@ -21,17 +21,23 @@ No extension/retry/baselineforecast to occupy GPU.
 
 | Owner | Next Resource / Consumer |
 | --- | --- |
-| Einstein / Engine | Cross-asset2CPUfits COMPLETE/best0both/1120updates, nativeGPU only/executor closed. |
-| Hubble / Data | Close-chart Phase1 COMPLETE9b45a6a9/312.015349upper/noGPU; PRED conditionalexactOUTERpass. |
-| Wegener / Engine | Close-chart actualfitter/conditional2fits7200TOTALactive18000elapsed; actualnative beforemarket, no observedGPUclaim yet. |
-| Boole / Engine | Fixed4seed COMPLETE28873ce9/6CPUfits/3605updates/687.150129upper/alljoined/OUTERPASS-PREDFAIL, closed. |
-| Noether / Strategy | Close-chart r2JSON-infinity fault closed111.307601upper; ETFsource600active5400elapsed/CPU-SYN only. |
+| Einstein / Data | Collector PARTIAL_CLOSED5d6cafff/alljoined; source-only future-due guard repair600, no newAPI/token/GPU/Task. |
+| Hubble / Data | New100 actual-wire/SYN qualified34970e11/2dfc3d9f; metadata b574ac99, no primary numeric materialization yet. |
+| Wegener / Engine | Joint fitter READY a6948053/ABI7cb8e949/18SYN+8bindingchecks; parent d74f2d25 permits actualnative then Data-bound firstfits, not an idle GPU reservation. |
+| Boole / Execution | TCN purewire COMPLETEc417b67f/42+45checks/631.260upper, closed, no deployment. |
+| Noether / Strategy | Joint Source READY adac78ea/2458.459274upper, now independent due-guard Claude challenge120; no marketmodels/GPU. |
 
 Allocate FIRST ready frozen qualified campaign. Completed OOF/intraday cannot
 reserve or repeat work against a new ready campaign. Fresh exact PID/start/
 source/headroom before each allocation,
 oneGPUowner. No age-reclaim or permission wait for ordinary technical faults.
 Canonical A/engine-research-agent/locks/gpu.lock.
+Next concrete training is three NEW first-fit sequence experts, not reruns of
+completed chart/fixedseed/Chronos/ETF studies. All3 actual CPU/CUDA optimizer/
+checkpoint/gradient/pace checks precede market fits under one allocation;
+measure warmed wholeloop separately from coldsetup. Max128/pat20/bestcheckpoint
+incl0, finite shared caps/3NN counters, no dummy utilization. Current Source/
+input/prep readiness is not evidence of an active trainer or a numerical grant.
 RTX4090 total24564MiB/used1578MiB at06:44 query, not permanent headroom.
 Keep desktop/runtime headroom; source d5101955 signed-desktop classification
 is scoped, not a blanket process exemption. Execution preempts safely.
@@ -77,6 +83,14 @@ ChartSource43.714upper/oldnative1constructor0updatesfailed; isolation-r1
 author+closure278.995662 exceeded180cap before anynativeattempt. Preserve
 deviation/no refund; r2 proof and Engineprep new600s each, no marketretry.
 Data independent phase1 READY/45750knownrows, PREDnumeric/render0.
+Chart COMPLETEedfb1906/58artifactchecks/active-runtimeRuffPASS/alljoined:
+actualCNN CUDA17/best1/2329updates19.482439fitter seconds, MLP CPU16/best0/
+2192updates4.246898s. Total4521updates10032forwards/1OUTER15cells/
+proper-financeFAIL/PRED0;phase2closed, notwaiting on Datadeadline.
+OneGPUlease32.966571wall/20.764674wholemarketworker/3.092126nativeworker,
+notkernel/utilization measurement. Selectedsafetensors/curves retained D.
+2386.202425totalupper inclallpriorfaults/one packet-keyword technicalrepair,
+no marketretry/refund. No GPUallocation now for CPUpoint/monthlyETF/Data.
 Conditionalchartactualgrant7200TOTALactive18000elapsed, no secondparentwait
 after actualfitter/native/Dataqualified. Includes all oldsource/failednative
 debits once;2marketfits1500s each/native600/oneGPUlease/cleanup400. Actual

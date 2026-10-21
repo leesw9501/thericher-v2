@@ -14,6 +14,19 @@ Standing private free Data/Research/KIS Paper delegated; never KIS_LIVE_*,
 real money, secret/account/order/raw-market/private output.
 Consumed installers/forecasts/fits/maintenance are NOT metadata readers.
 
+Current new100 research: collector recovery-r1 FINAL5d6cafff/alljoined,
+M/us_equities/research_inputs/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1/manifests/0067.json
+81ad6523.58CLOSED/137469admissible rows, all100axes/unknowns retained.
+No active collector; anonymousfuture-due guard repair is source-only, no API.
+Joint Source at A/research/current-kis512-ohlcv-rank5-proposal-20261021-v1/source/joint-ensemble-r1/
+CONSUMERadac78ea/PROPOSALbbc949be/equivalencef82ece16. Fitterroot
+A/research/current-kis-modp1-ohlcv-rank5-development-20261021-v1/
+NUMERICAL-AUTHORITY-20261021.json d74f2d25 freezes48000allownedactive/
+57600elapsed; native CPU/CUDA+Ridge may proceed after binding/prepPASS,
+4firstfits after actualnativePASS/DataABI. It is authority, not proof of running
+GPU or completed fits. Data materializer owns primary<=2023 and conditional
+LATER second pass; Source/model inputs unchanged, primaryfixedmean3DL.
+
 ## Verification
 
 Current actual tracked authority:
@@ -159,10 +172,15 @@ HGB1CPUfit12trees/best0. Artifact-only alias seal correction recovered saved
 predictions; both clocksNO_TRADABLE_OPPORTUNITY, no refit/threshold rescue.
 Cross-asset set20 fe37689e COMPLETE2CPUfits/best0both/INNERFAIL/PRED0.
 Fixed4seed ensemble28873ce9 COMPLETE6NEWCPUfits/OUTERPASS-PREDFAIL/MIXED.
+Close-chart edfb1906 COMPLETE at
+D:/thericher-v2/model-artifacts/research/current-broad25-close-chart-rank20-development-20261021-v1/native-recovery-r1/CONSUMER.json:
+CNN17CUDA/2329updates19.482439fitter seconds plusMLP16CPU/2192updates,
+proper-financeFAIL/PRED0/alljoined/GPUreleased/58checks/active-runtimeRuff.
 Never invoke consumed fit/materializer/native scripts as inspection.
-Next close-chart Source/Data/native repair and fitter preparation are scoped
-in Engine/Data/Steward; not yet market/GPU GO. Existing Paper schedules stay
-independent. Parent has exact4ref/118check fixedseed readback proof.
+CurrentTCNprovisionalpoint/monthlyETF readout/broaderData calibration are
+scoped in Engine/Data/Steward/NEXT. Existing Paper schedules stay independent.
+Parent has exact4ref/118check fixedseed readback proof. No Source/fitter/
+materializer/calibrator rerun merely to inspect immutable outcomes.
 Never reinterpret NaN as neutral/economically
 known or relax old required-input contracts; new schema is optional-context.
 

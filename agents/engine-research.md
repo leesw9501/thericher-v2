@@ -5,7 +5,47 @@ Own targets/features/splits/fitting/replay, not broker risk or human approval.
 Company NAS lifecycle UNFINISHED; Paper authority independent of research pass.
 Parent shared MD/Git. MD is not proof of running model/GPU.
 
-## Current / Next Research
+## Current Queue
+
+Wegener owns current-kis-modp1-ohlcv-rank5-development-20261021-v1/
+joint-preparation-r1; Noether owns its source at
+current-kis512-ohlcv-rank5-proposal-20261021-v1. New fixed100/prior63OHLCV/
+five-session cross-sectional rank: Ridge1, TCN1, GRU1, Transformer1, primary
+literal1/3 rawscore mean of three DL experts. No learned fusion/winner choice/
+missingexpert fallback. Same features/affine/masks/splits/cohorts/costs;7policies/
+21cells per domain/max42. Max128epochs/pat20/LR schedule/best checkpoint incl0,
+all curves; no outcome-selected seed/epoch rescue. Only primary ensemble
+INNER proper AND economic conjunction unlocks conditional LATER. This is
+adaptive current-vintage development, not independent alpha/PIT/TR evidence.
+
+R2 clock/wire Sourcee8de902d/Request17df371d READY/13checks; providerfinality
+NOT_OBSERVED/complete_observedFALSE distinct from officialNYcalendar interval
+elapsed. Joint Source READY adac78ea/PROPOSALbbc949be/equivalencef82ece16 at
+source/joint-ensemble-r1,38checks/2458.459274cumulativeSOURCEupper;
+fitter joint prep<=1200NEW/cumulative2400. Data Hubble actual-wire qualification
+34970e11/ABI2dfc3d9f/SYN3bf1cb39; metadata-only handoff b574ac99, cumulative
+wire540.177250/600, oldprep880.063479 unchanged. No primary numeric decode.
+Collector terminal5d6cafff/manifest81ad6523 at12:28:10UTC:58CLOSED/137469
+admissible rows,1PARTIAL33PENDING8UNAVAILABLE/all100axes retained,162069total
+canonical rows. Alljoined/5043.407856upper, no active collector. Future-due
+guard caused early stop, not actual owner/quota; source-only repair separate.
+Parentauthority NUMERICAL-AUTHORITY-20261021.json d74f2d25 frozen12:26:59UTC:
+48000TOTALactive/57600elapsed, closeddebitsonce. Native1800 afterbinding/prepPASS;
+4firstfits afteractualnativePASS/exactDataABI, no furtheroperatorGO. Data1200/
+max2passes/3NN7200each/Ridge900/0postupdate-marketretry. No new100 GPU training
+currently evidenced; authority/preparation are not actual allocation.
+
+Completed, no repeat: TCNpoint6fc3cc26 published10:52:23UTC beforeOPEN,
+57checks/onecurrentCPUforward/0fit-GPU; adaptive IND_ONLY halfTop5+halfuniform,
+one.005originalbasis. Purewirec417b67f/42+45checks, not deployment. Actual
+10NAS/15NYS: NAS.30=.20uniform+.10TCN, NYS.70cash/no renorm; minlot/funds/
+lifecycle and Nov17FUND20 conflict unknown. Review6d9cee21 SOUNDlimits.
+MonthlyETF b9f08a39 COMPLETE/1951.834054upper/30cells/15native+15oracle/
+INNERFAIL/LATER0. Chart edfb1906 COMPLETE/CNN17CUDA+MLP16CPU/proper-financeFAIL/
+PRED0/GPUreleased. MODP calibration7e42e726 COMPLETE/two dated split witnesses,
+not global CA or a running training allocation.
+
+## Retained Study History
 
 Hubble: broad25 HGB and missing-context recurrent pair/readouts COMPLETE.
 Recurrent root current-broad25-missing-context-recurrent20-development-20261021-v1:
@@ -331,7 +371,7 @@ parallelCPUprocesses allowed/cumulativeactivewallSUM. PREDonlynewensemble
 OUTERpass; missingbasePRED mayreceive separatelycountedNEWfrozenmodelCPU
 inference underthiscontract, oldPRED0unchanged. No GPUreservation/dummyload.
 
-Next distinct mechanism, conditionalactualgrant (not proof running):
+Closed distinct mechanism, COMPLETE (not running):
 A/research/current-broad25-close-chart-rank20-proposal-20261021-v1,
 fixedlast63priorClose lineimage vs samepathMLP, boundedwithin-date future
 LOG20 ranktarget; ownnativeCNN/no publicweights/newdata dependency.
@@ -363,8 +403,22 @@ cleanup400 once. Beforemarket actualCPU/CUDA batch200/SGD/grad/curves/safe
 selectedcold-output proof; no unproved optimizerresume claim. One technical
 native recovery<=240 inside native600/countercaps, exactsameSYN/source/model/
 seed; no post-update marketretry. Market35072updates74714forwards/max30cells/
-oneOUTER+conditionalonePRED, no bestarm/seed/costrescue. ReleaseGPU beforeCPU
-readout. Modeloutput can't change Paper deterministicrisk or authority.
+oneOUTER+conditionalonePRED, no bestarm/seed/costrescue. Actualterminal:
+A/research/current-broad25-close-chart-rank20-development-20261021-v1/native-recovery-r1/CONSUMER.json
+edfb1906/58artifactchecks/active-runtimeRuffPASS/2386.202425upper/alljoined/
+GPUreleased. Oldpacket-path keywordcollision failedCPU SYN, one predeclared
+additive repair preserved alloldfaults/counters/debits, no marketretry.
+CNN CUDA17epochs/best1/2329updates/19.482439fitter seconds; MLP CPU16/best0/
+2192updates/4.246898s. Total4521updates10032forwards/1OUTER15cells/
+proper-financeFAIL/PREDnumeric-render-forecast0; Data phase2 CLOSED.
+RankMSE CNN.09031045337/MLP.09029777665/zero.09027777778.
+10bp growth/DDpercentNAV CNN2.278940/2.841403, MLP3.853081/2.340051,
+HALF3.706092/2.537443, uniform4.813713/1.920805. SelectedMLPinitialization,
+CNNlearnedbest1 not economicadvantage. Lease32.966571seconds/wholeGPUworker
+20.764674/native3.092126, not measured GPUkernel/utilization. Activeworker
+Ruff passed; immutable inactive publisher/lint faults retained, not globally
+cleanA code claim. No criterion relaxation/PREDrescue/Paperpromotion.
+Modeloutput can't change Paper deterministicrisk or authority.
 PrivatePaper authority remains independent of all research screens.
 
 ## Broad25 Data / Completed Baseline
