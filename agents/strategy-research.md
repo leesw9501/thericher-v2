@@ -1,18 +1,36 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts.
+Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts.
 Own concrete mechanisms/source interpretation; Engine owns final models/
 targets/splits/costs/fitting. No broker/credentials/deterministic-risk authority.
 Parent owns shared MD/Git. Proposals need executable consumers, not reading lists.
 
 ## Current Proposal And Owner
 
-Confucius owns source/SYN asof-kernel-r1:
+Confucius completed source/SYN asof-kernel-r1 (60bbea7c/44tests):
 A/research/current-price-fundamental-ablation-hypothesis-20261021-v1.
 PROPOSAL-r2.json is the authoritative20-session source recipe; original
 5-session draft98342f84 is preserved and superseded BEFORE numerical effects.
-Pascal owns new price-fundamental20 caller; Kepler owns actual Data panel.
-No numerical outcome is known and no human GO ceremony is required.
+Pascal fund20 trial COMPLETE2844e515/b3136546; Kepler actual Data c3e29a80/
+evaluation525d20eb completed. Formal properPASS/financeFAIL; FUND selected
+prior0 and equals uniform, so not incremental learned accounting information.
+10bp growth/DDpercentNAV FUND+.687260/.224125 vs BASE+.719049/.337096.
+No refit/regrade or independent-alpha/Paper qualification claim.
+
+New recurrent20 proposal37f0eee6 at
+A/research/current-fundamental20-recurrent-expert-hypothesis-20261021-v1/PROPOSAL.json
+was frozen BEFORE HGB outputs. Same raw21 plus late29context/LSTM64/head32,
+two exact input arms, max128/pat20/LRschedule/selected checkpoint including0.
+Boole consumer current-fundamental20-recurrent-expert-development-20261021-v1:
+actual numerical7efaa9e0 complete2CUDAfits26epochs/best6each/4056updates,
+incremental proper+financePASS; FITprior proper still beats BOTH models.
+10bp growth/DDpercentNAV FUND+1.015525/.213627 vsBASE+.867644/.321372,
+uniform+.687260/.224125. Adaptive reused development, not independent alpha.
+Fixed cross-class pool SOURCE-READYedec1f28/62SYNchecks froze before those
+results; Pascal consumer-r1 computes only two .5HGB+.5recurrent arms,
+normalization/aliases explicit, no fit/GPU/learned gate/weight search.
+Measured CPU/CUDA routing, no framework/model-name grid/in-sample learned
+fusion. Source clock60once/closure28a1ba9a; Strategy LLM closed.
 
 Hypothesis: persistent accounting state improves one-month stock ordering
 beyond R21 prices, issuer ID and filing-age/proxy controls. Add exactly net
@@ -26,8 +44,8 @@ sessions, prior CLOSE cutoff; never backfill a later filing/restatement.
 Current-vintage corrections/original-document context/PIT remain unqualified.
 
 Actual SEC current25dbf616be has24 source pairs/18 four-concept issuers;
-historical metadata is partial, NOT a complete as-of panel. Freeze common
-input-only membership before targets. Need>=5eligible/date for common Top5.
+historical metadata is partial, but actual panel above is derived and bound.
+Common input-only membership sealed before targets; all51PREDdates have>=8.
 Unsupported geometry is explicit UNKNOWN, not ad hoc Top1/date cropping.
 Two CPU HGBClassifier arms/50columns/newLOG20/20sleeves/12newcells proposed.
 Pure kernel proves future filings, comparative/YTD/context mismatch,

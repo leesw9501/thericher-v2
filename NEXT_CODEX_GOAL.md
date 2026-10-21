@@ -29,6 +29,13 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
    7fe5dac2 actually closed; do not rerun consumed maintenance. F9 remains
    outcome_unknown/no original no-send proof/reservation held. No substitute,
    release, adoption or recovery-capable observe() as an offline reader.
+   Natural Oct20 chains2113ede9 closed but all25 Window21 stocks fail old
+   basis guard. Retained-data first-cause proves29last-shared rows revised,
+   not a parameter failure. New head22 input/r5 route/probe preparation is
+   delegated; old guard/receipts unchanged, no hidden c705 substitution.
+   Scoped native-identity proof758d35e3 now proves own unstarted scope while
+   foreign history stays unqualified/preserved. Actual same-Task retarget
+   preparing; no existing decision/intent/reservation may be rebound.
 
 2. Data / Strategy / Engine: prepare ONE price-versus-price-plus-fundamentals
    20-session ablation, not another grid of model names.
@@ -39,8 +46,18 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
    owns pure as-of kernel/native fixtures; Pascal owns the new 50-column
    HGB/replay20 caller and native proof. Parent obtains concise Claude
    falsification challenge. Source work runs in parallel, no human GO ceremony.
-   Numerical dispatch follows actual common input support and native caller,
-   with finite declared costs/counts. No hidden Top1/date/issuer/horizon rescue.
+   Actual panelc3e29a80 READY:FIT11091/INNER6017/PRED425/51dates>=8members.
+   HGB20 completed27b417c4/properPASS-financeFAIL/prior-only FUNDuniform alias.
+   Recurrent20 completed7efaa9e0:twoCUDAfits26epochs/best6/4056updates/
+   GPUactor29.194seconds/alljoined. Incremental proper+finance PASS, but
+   FITprior still has better proper scores than both; reused development,
+   not independent alpha or actual Paper PnL. No fit redo or epoch rescue.
+   Fixed .5HGB+.5recurrent pool pair f65ca8e8 complete/PASS, but FUND exact
+   recurrent allocation alias/no extra diversification,3new9cachedcells,
+   no model/GPU calls. Source edec1f28 preceded recurrent outcomes.
+   Boole/Kepler next Chronos2 O/C512/h20 peer-group source/input preparation,
+   existing trusted checkpoint/image; do not silently widen old256/trio API.
+   All captures-after-historical-origins remain retrospective proxy.
 
 3. OOF learned gate is COMPLETE, not a running job or another retry:
    A/research/current-halfpool-chronological-gate-development-20261021-v1/prefix-completion-r1/readout-schema-continuation-r1/READBACK.json

@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Engine owns models/targets/splits/replay, never deterministic broker risk.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 All reused/current-listing/current-vintage comparisons are development,
@@ -12,8 +12,41 @@ Pascal owns NEW source/native preparation:
 A/research/current-price-fundamental20-ablation-development-20261021-v1.
 Strategy proposal:
 A/research/current-price-fundamental-ablation-hypothesis-20261021-v1/PROPOSAL-r2.json.
-Data current25 SECdbf616be complete; historical metadata/as-of panel are pending.
-Confucius owns pure as-of kernel; Parent owns concise Claude challenge.
+Data current25 SECdbf616be/historical45a34547/as-of panelc3e29a80 complete.
+Kernel60bbea7c/44tests and concise Claude challenge completed.
+
+Actual HGB20 readout b3136546 COMPLETE23:50:53UTC after two fits and sealed
+policies20658e47. Data525d20eb supplies425known targets/70marks after seal.
+Proper PASS/financial FAIL/overallFAIL: FUND selected constant prior0 and
+aliases uniform, not learned financial information.10bp growth/DDpercentNAV
+FUND+.687260/.224125 vs BASE+.719049/.337096. No model/readout rerun.
+Actual fits5.811worker seconds, readout.711; full closure/carry in exact
+host-readout-r1/actual-binding-r1 artifacts. Reused current-vintage development.
+
+Boole NEW paired recurrent20 preparation:
+A/research/current-fundamental20-recurrent-expert-development-20261021-v1.
+Proposal37f0eee6 fixed before HGB outputs: same50columns,21x1rawprice and29
+late-context inputs/LSTM64/head32/two arms/128max/pat20/LRschedule/restore0.
+CPU native fc35370c:6SYNupdates/4saves-restores/0market-GPU/95upper.
+CUDA initially unqualified because exact Windows Shell/Calculator were
+unclassified, not headroom/API/permission failure. New desktop-owner-qualification-r1
+verifies actual exact signed Shell and Store Calculator package before/after,
+preserves all other owners/lease/headroom checks; only remaining6SYNupdates,
+no CPU repeat/cap refund. Claude SOUND_WITH_NAMED_LIMITS0c787048.
+Calculator EXE is NotSigned, Store linkage is not EXE/security/zeroGPU proof.
+Recurrent numerical-r1/READBACK7efaa9e0 is now ACTUALLY COMPLETE:
+2CUDAfits26epochs/best6each/4056marketupdates/GPUactor29.194s/alljoined/
+leasefree/396.488753upper. Frozen incremental proper+finance screensPASS.
+10bp growth/DDpercentNAV FUND+1.015525/.213627 vs BASE+.867644/.321372,
+uniform+.687260/.224125. FITprior proper scores beat BOTH; not independent
+alpha/replication or actual Paper PnL. No more fits/checkpoint changes.
+Pascal fixed-pool consumer-r1 (edec1f28/62SYNchecks before these outcomes)
+uses two fixed .5HGB+.5recurrent arms/one readout/aliases, no new models/GPU.
+Next source work current-chronos2-oc20-peer-development-20261021-v1:
+existing trusted Chronos2 checkpoint95a9710/D6; new O/C512/h20/same-origin
+peer versus isolated-stock pair, not the old Tiingo128/h1/trio study.
+Kepler source-bound features/QA first; source/native proof before any market
+forecast, no silent old256-wrapper widening/public-code Execution route.
 
 First source/native READBACK6eeb08f7 COMPLETE:64checks/two SYN fits16rounds/
 41.205889upper/0market-GPU-API/alljoined; EngineABI380f47fe/DataRequest7802bec2.
@@ -40,8 +73,8 @@ One information ablation, not an architecture grid:
   checkpoint/curve restoration and20-session accounting. Exercise actual
   feature-only DTO for EVERY role before fits; persist curves/state BEFORE
   prediction callbacks; pinned imports and one decoded outcome DTO.
-  Source plan<=90active1800elapsed; numerical1800active10800elapsed is a
-  proposed adequate ceiling, not yet a market appointment or approval hold.
+  Actual HGB appointment1800active10800elapsed/2fits0retry/one readout was
+  frozen23:40:04UTC; it is consumed, not another market appointment.
 - Proper and financial screens independent; both required for overall PASS.
   Unsupported scope=>UNKNOWN; valid failure closes this recipe, no
   outcome-driven ratio/window/issuer/horizon rescue.

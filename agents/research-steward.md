@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts.
+Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts.
 Own exclusive GPU/trial custody, not model choice/approval/broker authority.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 
@@ -13,12 +13,29 @@ and gate40epochs complete. No seven-fit redo or new allocation in that family.
 Actual22:18 sample33percent/2798MiB is historical, not current training.
 Cumulative1074.359636upper; original failures/caps/debits remain immutable.
 
-Current NEW input ablation uses two CPU HGBClassifier arms, no GPU needed:
+Current CPU input ablation completed two HGBClassifier arms, no GPU needed:
 A/research/current-price-fundamental20-ablation-development-20261021-v1.
-Pascal source/native, Kepler as-of panel, Confucius pure matching kernel.
-Real source support/native solver proof precedes numerical dispatch; CPU
-work does not claim a running GPU job. A later genuine DL campaign needs an
-informed hypothesis and its own frozen adequate budget, not model-name churn.
+Actual panelc3e29a80/evaluation525d20eb ready; readoutb3136546 properPASS/
+financeFAIL/FUNDprior0uniform alias. No refit or information-alpha claim.
+Boole new paired recurrent20 source37f0eee6 was frozen before HGB outputs;
+source/native runtime4be5cdb9/CPUproof fc35370c6updates/95upper/0GPU-market.
+First CUDA admission refused unclassified ShellExperienceHost/CalculatorApp,
+not memory/permission/model failure. New exact desktop classification child
+checks signed Shell path/hash/PID/start plus Calculator Store package/link;
+Calculator EXE remains NotSigned. Keep headroom/unknown trainer/lease guards.
+Claude0c787048 SOUND_WITH_NAMED_LIMITS, no security/zeroGPU attestation.
+Remaining native caps6updates/4saves4restores/82forwards, no CPU repeat;
+newchild120active inside oldprep240/95oldcarry. No idle lease. One SYN-only
+allocation may release; later one actual training allocation separately
+counted before numerical freeze, at most2 physical not2 simultaneous owners.
+Actual numerical-r1/READBACK7efaa9e0 now COMPLETE:2CUDAfits26epochs/best6
+each/4056marketupdates/GPUactor29.194seconds/396.488753upper/alljoined/
+canonical lease released. Two physical allocations=oneSYN+oneMarket, no proof
+repeat. Frozen incremental screens PASS, FITprior still better on proper
+scores; no independent performance/Paper qualification. Post-close NVML2percent/
+1576MiB sample is AFTER training, not during utilization or a failure to run.
+Next Chronos2 paired O/C20 peer source/Data prep only; actual allocation must
+have its own frozen counts/resource proof. No repeated recurrent training.
 
 Short breadth queue: fund20 paired input test now.
 Long depth queue: genuinely ready trainable mechanism after useful inputs,

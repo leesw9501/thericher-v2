@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 UNFINISHED:8retainedFULL NAS,
 existing exitOct21>=13:40UTC. Exact owned lifecycle closure still required;
 fees/settled cash/actual net PnL UNKNOWN. Parent shared MD/integration/Git.
@@ -9,12 +9,13 @@ fees/settled cash/actual net PnL UNKNOWN. Parent shared MD/integration/Git.
 
 | Owner | Actual Work |
 | --- | --- |
-| Pascal / Engine | NEWfund20 source/native6eeb08f7/64checks passed; cold actual-role host/readout prep, no market fits yet. |
-| Kepler / Data | SECdbf616be/historical45a34547 complete-partial; actual as-of panel derivation/no new GET, not model readiness. |
-| Confucius / Strategy | PROPOSAL-r2 fixed20day hypothesis; pure asof-kernel-r1/SYN, no real fitting. |
-| Bacon / Review | As-of challenge complete/SCOPE-NOTE53fbf90b; unsupported target objection reversed, advisory only. |
-| Boole / Engine | Gate kernel/consumer complete, closed. |
-| Archimedes / Infra | New read-only natural Oct20 source closure check; no API/TaskRun/source substitution. Oct27 extension22db8f33 already installed. |
+| Pascal / Engine | Fixed pool closedf65ca8e8/PASS/3new9cached; FUND exact recurrent allocation alias, no models/GPU or extra diversification. |
+| Kepler / Data | Panel/evaluationc3e29a80/525d20eb closed; new Chronos2 O/C512 input-only QA/derivation, no GET/model calls. |
+| Confucius / Strategy | Fixed-pool sourceedec1f28/62SYNchecks before recurrent results, ready; no numerical effects. |
+| Bacon / Review | As-of/vintage/desktop challenges complete; advisory only. |
+| Boole / Engine | Recurrent20 complete7efaa9e0/2CUDAfits26epochs/4056updates/29.194s/alljoined; new Chronos2 source/native preparation. |
+| Archimedes / Infra | Natural head22 READY25x22/29SYN+actualwire; oldbasisFAIL unchanged, no API/TaskRun. |
+| Wegener / Execution | R5native8f1c212a/27checks +scoped own-identity exclusion758d35e3; fresh same-Task action retarget preparation, no actual update claimed yet. |
 | Parent | Current memory/integration/Git, exact production equality and external checks. |
 | Steward | Prior GPU actors joined/lease free; no current GPU training inferred. |
 
@@ -29,6 +30,25 @@ No genuine operator decision currently required.
 
 Latest: OOF final evaluation is valid development financial FAIL, not an
 unfinished training task. Preserve all9fits/7710GPUupdates and close it.
+Current review00:20UTC: actualfund20 fits/readout complete, Fundprior0 aliases
+uniform. No repeated training to force nonconstant output. New recurrent20
+pair fixed before that result; actual Data support >=8members all51dates.
+Paper dependency fault is measured last-shared-row revision, not permission:
+new explicit current-vintage input qualified25x22, r5 deployment pending
+private unstarted-identity proof/native transactional tests. Original8NASexit
+unchanged. Fresh1720serial/18568full compatibility passed, no foreground hold.
+Reversible improvement: exact Windows desktop-role classification prevents
+Shell/Calculator from falsely blocking CUDA while all trainer/lease/headroom
+checks remain. Recurrent20 now actually trained26epochs perarm/4056CUDA
+updates/29.194s, alljoined/leasefree. FUND incremental screensPASS but prior
+proper scores still best; no independent performance/Paper PnL claim.
+Next small fixed pool was frozen before those outcomes. Chronos2 next uses
+genuinely different O/C512/h20/current8-9stock grouping vs old128/h1/ETFtrio,
+not untried-model or new-runtime hype. Ready Data/source run in parallel.
+R5privateUNKNOWN is a named read-only guard, not evidence of a broker failure
+or Window21 request conflict; native global budget replay and bytes preservation
+already passed before the orphan/legacy-registry membership check. Diagnose
+exact scope before changed reader/source, retain every foreign reservation.
 One materially new information hypothesis uses free SEC facts; accepted
 source available, Data/context matching and Engine/native callers proceed
 in parallel. CPU HGB is appropriate; no dummy GPU use/model-name grid.
@@ -59,11 +79,14 @@ destroying an otherwise expensive fit, without regrading/retraining old studies.
 
 ## Verification / Recoverability
 
-Authority A/verification/expired-unstarted-maintenance-20261021-v1/authority.json
-5c229e4a/1371d2447255:332serialPASS1skip/18568fullPASS25skip/8workers/
+Current authority A/verification/window21-natural-vintage-20261021-v1/authority.json
+c0230ff6/1371d2447255:1720serialPASS2skip/18568fullPASS25skip/8workers/
 cleanhelper/Ruff/three sample Compose PASS. Docs/external reuse needs fresh
 exact source/control equality and focused native/external proof; an18k repo
 rerun does not certify arbitrary D code.
 Preserve %SystemDrive%/. Actual owners/resources rechecked after interruption;
 do not infer activity from MDs or reclaim leases by age.
-Historical completed/failed packages/caps stay Git264a2b0/immutable A.
+Historical completed/failed packages/caps stay Git785697a/immutable A.
+Full366.41s; no external r5/private custody/deployment/fill qualification
+inferred from the repository suite. Scoped custody proof separately758d35e3
+retains old global UNKNOWN/foreign attribution/reservations unchanged.

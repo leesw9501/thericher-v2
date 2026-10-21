@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Workdir C:/Users/Public/Documents/thericher-v2. Oct21KST / Oct20UTC.
+Workdir C:/Users/Public/Documents/thericher-v2. Oct21KST / Oct21UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Follow AGENTS.md/HANDOFF.md/current stateboards. Company
 current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
@@ -17,10 +17,10 @@ current goal before resuming an interrupted worker. A stateboard is memory,
 not proof of running LLM/GPU. Do not age-reclaim ownership or repeat fits.
 
 Current tracked authority:
-D:/thericher-v2/model-artifacts/verification/expired-unstarted-maintenance-20261021-v1/authority.json
-SHA5c229e4a/source1371d2447255:332serialPASS1skip/18568fullPASS25skip/
-18593collected/8workers/clean helper/Ruff/default-research-accounting Compose
-with .env.example PASS.
+D:/thericher-v2/model-artifacts/verification/window21-natural-vintage-20261021-v1/authority.json
+SHAc0230ff6/source1371d2447255:1720serialPASS2skip/18568fullPASS25skip/
+18593collected/8workers366.41s/clean helper/Ruff/default-research-accounting
+overlay Compose with .env.example PASS. Prior5c229e4a stays immutable.
 Docs/external-only changes may reuse it ONLY after fresh exact production/
 control equality and independent external/native checks. Repo tests cannot
 certify arbitrary D code. Tracked code/control/material Execution recovery
@@ -74,10 +74,10 @@ Task exit/missing receipt/preview/installation is not an accepted submit/fill.
 
 ## Current Data / Research Owners
 
-Kepler historical SEC metadata:
+Kepler historical SEC metadata closure45a34547:
 D:/thericher-v2/model-artifacts/data/current-sec-current25-historical-submissions-20261021-v1.
-Initial partial11GET/10schema-accepted/ValueError; preserve exact result,
-diagnose before recovery. Current25 source consumerdbf616be completed:
+Partial11GET/10schema-accepted, accepted coverage was sufficient for the
+completed as-of panel; no repeat GET/derivation. Current25dbf616be completed:
 D:/thericher-v2/model-artifacts/data/current-sec-current25-companyfacts-submissions-20261021-v1/CONSUMER.json
 24pairs/18four-concept issuers, not as-of panel/PIT. Prior WWW403 scoped,
 not blanket DataHost failure/signup requirement. No proxy/header bypass.
@@ -87,12 +87,41 @@ D:/thericher-v2/model-artifacts/research/current-price-fundamental-ablation-hypo
 Authoritative PROPOSAL-r2.json fixes20-session target; original5daydraft not
 a numerical candidate. Pascal new width50HGB/replay20 source/native:
 D:/thericher-v2/model-artifacts/research/current-price-fundamental20-ablation-development-20261021-v1.
-No market command inferred from source. Need actual common input support,
-exact as-of/version joins, native real solver and20-session accounting before
-two finite CPU fits. No GPU needed for HGB; no completed training rerun.
+Actual panel c3e29a80 at
+D:/thericher-v2/model-artifacts/data/current-price-fundamental20-asof-input-20261021-v1/CONSUMER.json
+and pred-eval-r1/CONSUMER.json525d20eb are closed;51dates425PREDkeys,
+minimum8eligible/date. HGB complete FINAL-READBACK2844e515 at
+host-readout-r1/actual-binding-r1/FINAL-READBACK.json under that Engine root.
+Two CPU fits/one readout/9unique12logicalcells/properPASS-financeFAIL;
+FUNDprior0uniform alias is not learned-information/alpha evidence.
+DO NOT rerun consumed cold/train/readout launchers. No GPU needed for HGB.
 Claude advisory:
 D:/thericher-v2/model-artifacts/review/current-price-fundamental20-asof-20261021-v1.
 Use frozen symmetric +/-h labels, not advisory's unsupported asymmetric edit.
+
+New paired recurrent20 source (not a command to relaunch completed proof):
+D:/thericher-v2/model-artifacts/research/current-fundamental20-recurrent-expert-development-20261021-v1.
+CPU fc35370c6SYNupdates; desktop-owner-qualification-r1/READBACK.jsond5101955
+adds6CUDAupdates/44classificationfixtures, total12SYN/alljoined/leasefree.
+Projected CUDAepoch4.614s/CPU5.462s, not convergence/market-performance proof.
+Exact stable signed Shell/Store Calculator identities are classified with
+all other owner/source/lease/headroom checks intact; Calculator EXE NotSigned.
+One SYN-only allocation completed; a future single market allocation must
+be separately counted/frozen, not held idle or inferred from this MD.
+Boole prepares actual finite two-arm numerical contract/real-role intake;
+no existing native proof or market fit may be blindly relaunched.
+
+New natural Window21 input READY:
+D:/thericher-v2/model-artifacts/data/current-window21-natural-head22-input-20261021-v1/CONSUMER.json
+source1b3df899/extractor138035df/READY4fb68aac/input5817e3ab/vintage7d8f4fe2.
+All25x22FP64/550known/29SYN+actual native wire accepted before inference,
+0API-model-Task changes. OldD1profile stillFAIL. Explicit provisional current
+capture-vintage, not finality/PIT/CA/oldprofile qualification or c705 patch.
+Execution candidate source-r5 under existing Window21 deployment root:
+SOURCE8f1c212a/15Python+12mockSchedulerPASS, actualDataABI PASS.
+Image/native compatibility and private exact-identity absence preflight precede
+any existing Task action retarget; deployment not yet evidenced. Private
+reader must stay network-none/RO/-I-B/strictparsers, never recovery observe().
 
 OOF gate CLOSED, DO NOT invoke original/successor/prefix model drivers:
 D:/thericher-v2/model-artifacts/research/current-halfpool-chronological-gate-development-20261021-v1/prefix-completion-r1/readout-schema-continuation-r1/READBACK.json

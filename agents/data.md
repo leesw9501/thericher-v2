@@ -1,14 +1,21 @@
 # Data Stateboard (시장데이터 담당)
 
-Oct21KST / Oct20UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/availability, not account/orders. Parent owns shared MD/Git.
 No secrets/raw market/private output or KIS_LIVE_*.
 
 ## Current Owner And Consumer
 
-Kepler owns historical SEC submissions metadata and the next actual as-of
-panel for the price/fundamental20 ablation. No as-of matrix/model readiness
-is inferred from accepted documents.
+Kepler completed actual price/fundamental20 panel c3e29a80 and separately
+gated evaluation525d20eb. Source acquisition alone is not panel readiness.
+Panel A/data/current-price-fundamental20-asof-input-20261021-v1/CONSUMER.json:
+FIT11091input/10901known/1258dates,INNER6017/5882/625dates,
+PRED425/51dates/minimum8members. Same input-only BASE/FUND keys/affines,
+physical20-session purges, no balanced future-completeness membership filter.
+Evaluation pred-eval-r1/CONSUMER.json525d20eb:425known targets/70markdates/
+25axis, one original mark decode after20658e47policy/model seals, full DTO
+saved BEFORE semantic checks. DataFINAL52.426845upper/allwriters joined.
+Engine resultb3136546 properPASS/financialFAIL; no rederivation/refit.
 
 - Current25 source COMPLETE:
   A/data/current-sec-current25-companyfacts-submissions-20261021-v1/CONSUMER.json
@@ -25,8 +32,8 @@ is inferred from accepted documents.
   original result/costs. CONSUMER45a34547:13of18histories complete,
   223strict contexts10issuers/37activeupper/alljoined. CVX descriptor has
   two later non10-Q rows; retained-byte QA, not a reason to refetch.
-  Kepler now derives current-price-fundamental20-asof-input-20261021-v1
-  from accepted sources/Strategy kernel, <=300active3600elapsed/no new GET.
+  Actual panel/evaluation above used accepted sources/Strategy kernel,
+  <=300active3600elapsed/no new GET; historical cursor is not a global hold.
   No global API/approval hold.
 - Strategy source:
   A/research/current-price-fundamental-ablation-hypothesis-20261021-v1/PROPOSAL-r2.json.

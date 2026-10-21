@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-21 KST / Oct20 UTC. Workdir C:/Users/Public/Documents/thericher-v2.
+2026-10-21 KST / Oct21 UTC. Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
 Eight retained exact FULL NAS entries need owned exit/fill/inventory/terminal
@@ -22,12 +22,13 @@ Market bytes M; models/research A; Docker default /app/model_artifacts.
 | Owner | Current State |
 | --- | --- |
 | Parent | Shared MD/integration/Git; current Paper outcome stays unfinished. |
-| Pascal / Engine | NEW fund20 width50 HGB/replay20 source/native passed64checks; prepares cold actual-role host/readout. Old OOF c04d7aeb closed, no repeats. |
-| Kepler / Data | Current25 SECdbf616be complete/historical45a34547 partial; derives new actual as-of panel from accepted sources, no new GET. |
-| Confucius / Strategy | Fixed20-session proposal7794c656; pure asof-kernel-r1/native fixtures, source-only. |
-| Boole / Engine | Gate kernel/consumer complete; closed. No permanent LLM inferred. |
-| Archimedes / Infra | Oct27 measurement extension complete; closed. |
-| Bacon / Review | One as-of Claude challenge complete; target objection reversed by exact symmetric source, not operator authority. |
+| Pascal / Engine | HGB20 closed27b417c4; fixed pool completef65ca8e8/PASS but FUND exact recurrent allocation alias, no new diversification. |
+| Kepler / Data | As-of panelc3e29a80 +separate525d20eb evaluation complete/425known targets/70marks, no new GET. |
+| Confucius / Strategy | Fixed-pool source edec1f28/62SYNchecks ready, frozen before recurrent outcomes. |
+| Boole / Engine | Recurrent20 COMPLETE7efaa9e0/26epochs each/4056CUDAupdates/29.194s. New Chronos2 O/C20 peer source preparation, no repeat fits. |
+| Archimedes / Infra | New natural-head22 input READY/all25x22/29SYN+actualwire accepted;0API-model-Task changes. |
+| Wegener / Execution | R5source8f1c212a/native27PASS; scoped unstarted proof758d35e3 valid under native retention; actual same-Task action retarget preparing, not yet deployed. |
+| Bacon / Review | As-of and Window21-vintage advisory complete; not operator authority. |
 | Steward | No active GPU training from completed OOF family; use fresh admission for genuinely ready new campaigns. |
 
 ## Paper Runtime And Existing Due
@@ -173,8 +174,22 @@ scheduled-profile qualification. ETFs7bdfc250 remain separate MODP0AMS/e-2.
 
 Data operations31e3f4ce at21:53:55UTC found RTH Running/outcome unknown,
 old20/new9 exact Oct19 chains valid and Window21f3711b38 pins matched.
-Oct20 scheduled results require new exact bound evidence; no latest-file scan,
-task-exit inference or new-vintage substitution.
+Later A/data/current-oct20-postclose-natural-closure-20261021-v1/CONSUMER.json
+2113ede9 validates Oct20index1 chains/29GET2POST0retry/no pending, but all29
+components unavailable and Window21oldextractor0of25eligible. RTH native
+terminal COMPLETE, row coverage not independently decoded.
+A/data/current-oct20-d1-basis-firstcause-20261021-v1/CONSUMER.json reproduces
+native OHLC parity failure:2842shared rows unchanged/29lastsharedOct19 rows
+revised beyond precision, MODP1sameall; provider cause/finality UNKNOWN.
+Earlier c705 input differs Oct20CLOSE on25of550 cells, not equivalent.
+All exact raw heads retained/all25 have22sessions. New explicit operational
+CURRENT_NATURAL_D1_HEAD22_AS_OBSERVED_MODP1_V1 input is preparing, no API,
+old guard/receipt/canonical rewrite, cell patch or research/PIT promotion.
+Wegener r5 route preparation preserves Tasks/opportunity/model/bank/risk.
+Before actual deployment prove NO earlier Window21 decision/intent/reservation;
+do not refresh an existing sealed identity. Claude SOUND_WITH_NAMED_LIMITS:
+A/review/current-window21-current-vintage-recovery-20261021-v1/SCOPE-NOTE.json.
+Rollback contains future routing, never reverses submitted orders.
 
 SEC acquisition is now viable on the documented DataHost, not blocked globally
 by the WWW ticker-map403. Official entity identity was checked before the
@@ -204,10 +219,55 @@ Source/native proposal7794c656 fixes ONE20-session information ablation,
 two CPU HGBClassifier arms/50columns/newLOG20/20sleeves/12newcells.
 Pascal A/research/current-price-fundamental20-ablation-development-20261021-v1/
 READBACK.json6eeb08f7:64SYNchecks/two nativefits16rounds/Decimalgap4.44e-16,
-41.205889newupper/0market-GPU-API/all joined. Actual roleDTO/host/readout and
-common input-only >=5members across51PREDdates still need actual proof.
-Suggested aggregate1800active/10800elapsed is not numerical dispatch yet.
-No hidden Top1/issuer/date/horizon fallback or approval wait.
+41.205889newupper. Host/native3296e80e adds21nontraining checks/no fit repeats.
+Actual Data c3e29a80:FIT11091input/10901known/1258dates,INNER6017/5882/625,
+PRED425/51dates/minimum8members;42.726078newupper/allwritersclosed.
+Two MARKET HGB fits actually COMPLETE23:40:29UTC/5.811worker seconds:
+host-readout-r1/actual-binding-r1/TRAIN-CLOSED.json/selectedf9dcf10f,
+BOTH-PROBABILITY-AND-POLICY-SEALS.json20658e47 before0outcome decodes.
+Kepler separate evaluation525d20eb completed425known targets/70marks,
+then one actual READOUT completed23:50:53UTC/0.711worker seconds:
+host-readout-r1/actual-binding-r1/READOUT/RESULT.jsonb3136546.
+Proper screen PASS, financial FAIL. FUND chose prior0 and its portfolio is
+uniform:10bp growth/DDpercentNAV+.687260/.224125 vs BASE+.719049/.337096.
+This is not learned fundamental-information value, independent alpha or
+actual Paper PnL. No model redo or metric-based rescue.
+Aggregate1800active/10800elapsed frozen before numerical effects; preserve
+actual counters/costs. No hidden Top1/issuer/date/horizon fallback.
+
+New recurrent20 source at A/research/current-fundamental20-recurrent-expert-hypothesis-20261021-v1:
+same Data/20h/LSTM64/late quarter-state pair, fixed before HGB results.
+Boole current-fundamental20-recurrent-expert-development-20261021-v1/
+numerical-r1/READBACK.json7efaa9e030231e6fcffa98dec9507d45ba23708bb193637656f3096f8efd6058:
+ACTUALLY COMPLETE:26epochs/best6/2028updates EACH,4056CUDAupdates,
+GPUactor29.194seconds/all actors joined/lease released/396.488753upper.
+One SYN-only plus one market allocation, no native proof repeats.
+At10bp PER LEG growth/DDpercentNAV FUND+1.015525/.213627,
+BASE+.867644/.321372, uniform+.687260/.224125. Frozen incremental proper
+and financial screens PASS, but analytic FITprior has BETTER PRED proper
+scores than BOTH learned models. Reused51dates/overlapping20-session targets/
+current-vintage provider fields, not independent alpha/replication/actual PnL.
+Do not refit, extend epochs or promote by this result alone; standing
+provisional Paper authority is separate from research screen outcomes.
+
+Fixed cross-class pool SOURCE-READYedec1f28 at
+A/research/current-fundamental20-fixed-crossclass-pool-20261021-v1,
+62SYNchecks/60upper before recurrent results. consumer-r1/READBACK.json
+f65ca8e8011e107d17d6c43fe053ed9504d4eab45d5f873c90a463cc332dc5dc
+COMPLETE:formal pair proper+financePASS/3new9cached12logical cells/
+121.041547upper/alljoined/0model-GPUcalls. POOL_FUND exactly equals
+RECURRENT_FUND allocation bytes; NO extra diversification. POOL_BASE
+10bp growth/DDpercentNAV+.964603/.318740, POOL_FUND+1.015525/.213627.
+Both pool proper scores still worse than FITprior. No learned gate/search,
+new information/independent-alpha/Paper claim or component replays.
+
+Next foundation source work: Chronos2 O/C512->20 isolated-per-stock pair
+versus same-origin peer group, existing trusted95a9710 checkpoint/D6image.
+Old Chronos study was Tiingo128/h1/trio, not untried model. Kepler readiness
+ebddeeac proved timestamp support, then input-only matrix/positive-field QA;
+Boole new current-chronos2-oc20-peer-development-20261021-v1 source only.
+Historical captures AFTER target origins remain retrospective proxy, never
+forge old available_at guard or silently widen the old256/trio wrapper.
 
 Claude challenge A/review/current-price-fundamental20-asof-20261021-v1/
 SCOPE-NOTE.json: advisory target objection reversed by exact frozen +/-h rule;
@@ -225,6 +285,19 @@ Docs/external-only reuse needs fresh EXACT source/control equality and focused
 external/native checks; repo tests do not certify arbitrary A code.
 Parent verified exact1371 source/control equality, Ruff and numerous exact
 metadata refs/freshCOM checks; recheck before final integration.
+Fresh material Window21 authority A/verification/window21-natural-vintage-20261021-v1/authority.json
+c0230ff6:1720focusedserialPASS2skip/18568fullPASS25skip/8workers366.41s/
+cleanhelper/source1371+controls unchanged/Ruff/three sample-env Compose PASS.
+This does not prove external r5/private custody/deployment/submit/fill.
+
+R5 scoped custody proof A/execution/current-window21-provisional-nas-deployment-20261021-v1/source-r5/ownership-scope-r1/CONSUMER.json
+758d35e3:exact Window21 native entry request hashes absent, own registry and
+all prepared roots absent; native write-ahead/retention/no-adoption audited.
+Foreign model attribution stays UNKNOWN/preserved; retained request states
+terminal is NOT inventory-flat/foreign-registry closure/reservation release.
+The old global completeness UNKNOWN is unchanged, not requalified. This
+scoped proof uses native identity, NOT job age or Task timestamps. Actual
+retarget still needs fresh proof/quiescence/XML+ACL and transactional update.
 Tracked/control/material Execution recovery follows AGENTS fresh verification.
 
 Preserve existing %SystemDrive%/. Parent only stages owned explicit files.
