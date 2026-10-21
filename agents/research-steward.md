@@ -14,7 +14,7 @@ or kernel time. Pretrain60/best50+warm22/best2/16624updates; cachedCold reused,
 Raw TCN/GRU/Transformer/Ridge also COMPLETE; no repeated fit.
 HGB/Ridge CPU family completed, CPU chosen intentionally; no GPU need.
 
-Current15:50UTC: ListNet CUDA campaign COMPLETE26epochs/best6/5252updates/
+Current16:20UTC: ListNet CUDA campaign COMPLETE26epochs/best6/5252updates/
 272.381496fitter seconds,219checks/4347.086139totalactiveupper/alljoined/
 GPUreleased. Not currently training. Readout proper/financeFAIL,0LATER.
 A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json.
@@ -28,9 +28,14 @@ mount repair does not repeat a completed fit. Oldfailures/debits stay.
 Current frozen campaign still allows ONE fit; no duplicate parameters/seeds.
 Distinct cross-stock rank-attention/fixed3expert Source COMPLETEb2b50e43 at
 current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1.
-Wegener dispatched to its new developmentroot: bind cached ListNet/HGB,
-freeze new14400active28800elapsed including608.98836Source once, actualCUDA
-native then onefit/18INNERcells/LATER0. No actual fit inferred from dispatch.
+Cross-stock development now COMPLETE07e4245d: actualCUDA25epochs/best5/
+5050updates/313.686713fitter seconds/330checks/FAIL/oneINNER18cells/LATER0/
+alljoined/GPUreleased/2624.153626totalupper. It actually started16:04:34UTC;
+16:07 sample33percent/2363of24564MiB/41C is historical aggregate use, not a cap
+or evidence training is still running. No model/GPU repeat after completion.
+Next onefold calibration Source/Data and numerical preparation is owned by
+Noether/Wegener; actual fit needs its own runtime evidence. Initial OOF family
+closed NOT_READY (54TRAINdates<64), not a global GPU or Paper hold.
 Co-run genuinely ready distinct frozen work with headroom; concurrency
 permission is recorded, simultaneous market trainings are not yet evidenced.
 

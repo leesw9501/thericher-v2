@@ -35,7 +35,12 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    POINT8d762d11/packet a81d677a/ABI2c0edc53, published13:41:23UTC as
    POST_OPEN_PRIOR_SESSION_SIGNAL.100keys/57eligible/6positive. One.005
    ORIGINALinitialbasis cohort inside shared tenth, fresh execution quotes,
-   no renorm/substitution. Planned16:00..16:30UTC is not an installed Task.
+   no renorm/substitution. Actual Task created DISABLED/0Enable-Run;
+   old16:00..16:30UTC entry expired. Cold successor/native ready, but runtime
+   omitted-zero RandomDelay rejection/release projection mismatch remain
+   (bc21c976). Boole current-kis100-hgb-direct-owned-recovery-20261022-v1
+   compares minimal native owned-process reuse with exact semantic Task repair.
+   No blind enable/backdating/substitute unknown or forced signal.
    Keep originalR5/FUND20/nightly/F9 owners and reservations separate.
 
 3. Engine/Strategy: completed raw4model and maskedpretraining campaigns are
@@ -49,9 +54,14 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    proper-financeFAIL/0LATER/alljoined/4347.086139activeupper; no rerun.
    Cross-stock attention/fixed3expert Source COMPLETEb2b50e43 at
    current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1. Wegener
-   owns new developmentroot: bind cachedcontrols, freeze14400active28800elapsed
-   including608.98836Source once, native then onefit/18INNERcells/LATER0.
-   Noether checks cached chronological OOF feasibility for later fusion. Operator
+   development COMPLETE07e4245d/25epochs/best5/5050CUDAupdates/330checks/
+   proper-financeFAIL/0LATER/alljoined/GPUreleased. No rerun.
+   Next onefold calibration Source82410de2/Data supportbaa81cd7 READY:
+   TRAIN<=2016/CHECK2017/OOF2018 with purgedH1/H2meta roles; twoexperts/onebeta.
+   Noether materializes isolated fitlabels/OOFX/heldtargets under frozen
+   producer plan; Wegener binds exact produced hashes before native/fitting.
+   Never require future payload hashes before Data may create those files.
+   Old four-fit OOF_NOT_READY/F1TRAIN54<64 stays, no rescue/regrading. Operator
    GPUpriorityFIRST/personalco-use/concurrentreadyjobs is recorded inAGENTS;
    actualresourceadmission repaired, not another approval hold or extra trial.
 
@@ -60,9 +70,12 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    sourcef4498f5d/worker94e05954/job4bae4675. install-r2 CREATE1/ENABLE0/
    principal-guard failure preserved. install-r3 quietsettings failure then
    verified ownTask rollback/ABSENCE3c88a2e8/0Run-API/alljoined. No fourthblind
-   Scheduler retry; additive direct-launch-r1 prepares one finite hidden
-   goal_owned_process after16:10, new600active1800elapsed prep within13200
-   integrationceiling/closed8075.203913once/future4200worker. No manualTaskRun/
+   Scheduler retry; direct-launch-r1 actualhandoff16:10:03 then token-guard
+   no-auth closure/0newGET-POST, old counts unchanged. Einstein
+   token-floor-recovery-r1 verifies shared timing before prospective scoped
+   calibration under documented one-minute issuance; new600Source/new4200
+   worker/18000integrationceiling carries allolddebits once. No mark reset,
+   age reclaim or actual new auth/acquisition inferred. No manualTaskRun/
    APIbefore16:10. Preserve0067/58CLOSED researchsnapshot;<=2288newGET/
    4000lifetime,1newPOST/3lifetime,4200active7200elapsed/APIcurfew18:00.
    Current Paper owners preempt. Worker owns next_due, not foreground wait.

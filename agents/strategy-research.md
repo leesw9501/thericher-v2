@@ -13,10 +13,18 @@ growth+3.477526percentinitialNAV at10bp/leg trails HGB+5.716282, not alpha.
 Noether distinct temporal+cross-stock attention/fixed3expert Source COMPLETE:
 A/research/current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1/CONSUMER.json,
 SOURCEb2b50e43/PROPOSAL5d6a2a6b/608.98836upper/CPU2SYNupdates.
-Wegener owns its numerical continuation; no current training inferred here.
-Noether now checks cached chronological OOF feasibility for a later shallow
-composition at current-kis100-ensemble-policy-next-source-20261022-v1,
-300active900elapsed/source-only/no new outcome intake or in-sample learnedgate.
+Cross-stock numerical continuation COMPLETE07e4245d/25epochs/best5/
+5050CUDAupdates/330checks/proper-financeFAIL/0LATER/alljoined. Fixed3expert
+growth+3.371670percent at10bp/leg trails HGB+5.716282, not alpha.
+Calibration mechanism Source COMPLETEff9039e9 at
+current-kis100-ensemble-policy-next-source-20261022-v1/source-r2:
+17math+34independentchecks; fixed-spread rank KL can penalize weak ordering.
+Invented vectors, not actual market-skill proof. Parent5nativechecks PASS;
+old failures unchanged. Original Source overrun336.186585 remains charged.
+Four-fit OOF Data NOT_READY/F1TRAIN54<64; no fit or OOF labels opened.
+Noether owns NEW onefold proposal/input readiness: TRAIN<=2016/CHECK2017/
+OOF2018, purged H1/H2 calibration, ONE HGB+ONE ListNet+ONE beta, no financial
+replay or INNER tuning. Not an in-sample learned gate or running GPU job.
 Proposals must become executable kernels/contracts or concrete rejection.
 Adaptive reusedINNER/LATER0, not an independent performance claim.
 

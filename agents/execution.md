@@ -48,13 +48,36 @@ Point8d762d11/packet a81d677a/ABI2c0edc53,published13:41:23UTC/
 POST_OPEN_PRIOR_SESSION_SIGNAL/57eligible6positive100axis.
 Use ONE.005originalinitialbasis cohort inside sharedtenth, actualfreshquote/
 orderability,foreignstockskip/unusedmasscash/no renorm/substitute/newbank.
-Tentative16:00..16:30UTC is NOT actually installed/deployed/filled evidence.
+Original16:00..16:30UTC entry expired without proved execution. Actual
+deployment-r2 Task was created DISABLED/0Enable-Run; not a fill.
 Old research properFAIL is not a Paper permission hold.
 PostOPEN profile is IMPLEMENTED, Source d44ba453/259uniqueserial+7nativeoverlay
 PASS, actualinput8c192808/policycd1d8572/no backdate/defaultABI change.
 Parent current authority760d736c/18659fullPASS25skip/1375sources123a2072/
 Ruff+3ComposePASS. New CPUimage/finitequietdeployment at deployment-r1 is
-preparation, not installation/effect. No oldR5/FUND20wrapper repoint.
+preparation, not a broker effect. No oldR5/FUND20wrapper repoint.
+R2 cold-import successor/native proof completed; custody16:14:56 found no
+HGBpolicy pointer/request, prior reservations preserved. Actual registered
+Task omits zeroRandomDelay, frozen runtime rejects it and release projection
+mismatches. Installer-only finalbc21c976/166upper/0mutations confirmed it is
+insufficient; all263Tasks unchanged. Leave current TaskDISABLED.
+Boole current-kis100-hgb-direct-owned-recovery-20261022-v1 compares a minimal
+existing native owned-process route against semantic Task repair. Oldsource/
+release/window stay immutable; no backdating, blind enable, substitute unknown,
+forced threshold or capital reset. Standing authority permits correctly scoped
+operational recovery, not bypassing risk.
+
+Execution reported Original8 completed_owned_flat at15:50:12 with8linked
+sellFULL/zero positiveowned-pending-unknown. Parent public strictreader also
+reportscomplete/already_completed/0requests, which alone is not fill proof.
+Exact private-projection evidence pointer not yet integrated; do not replace
+that gap with an unbound attestation or actual netPnL claim.
+
+FUND20 separate cold-import SOURCE-R1 60e4a388 READY/notdeployed:
+A/execution/current-fundamental20-paper-cold-import-recovery-20261022-v1/FINAL.json
+ea82dc4b/128native+26independent/718.584upper/alljoined/0API-Task-private.
+Six lintE501 diagnostics retained. Historical entry1-3 effects stay UNKNOWN;
+source proof is not operational recovery or reservation release.
 
 R5 natural14:00 failedunavailable/native_recovery_required/0declaredrequests/
 0nativelegs. Exactfrozenprojectframe375 is BEFORE_WIRE,notopener376;5invented

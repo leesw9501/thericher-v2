@@ -21,9 +21,12 @@ No active collector inferred. Exact finite16:10UTC continuation root:
 A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1.
 install-r3 CLOSED-CONSUMER confirms quietsettingsfailure/verifiedownTaskABSENT/
 0Run-API/alljoined, closed8075.203913once. Do not rerun failed installers.
-Einstein direct-launch-r1 prepares finitehidden goal_owned_process after16:10,
-not a fourthblindTaskretry;600active1800elapsed prep/13200integrationceiling
-includingolddebits+4200futureworker. Actuallaunch not inferred. No manualTaskRun.
+Einstein direct-launch-r1 actuallyhandedoff16:10:03 asfinitehidden
+goal_owned_process, not Scheduler origin. It closedPARTIAL/token-no-auth/
+0newGET-POST; old counts unchanged, not providerquota or new acquisition.
+token-floor-recovery-r1 verifies shared timing for prospective documented
+calibration;600Source/new4200worker/18000integrationceiling carries allold
+debits once. No tokenmark reset/age reclaim or unproved newauth. No manualTaskRun.
 Newmarket continuation-r1 does not
 change old0067researchsnapshot. APIcurfew18:00/4200active7200elapsed/
 <=2288newGET4000lifetime/1newPOST3lifetime. Actual Paper owners preempt.
@@ -41,9 +44,10 @@ GPUreleased, not still training. ListNet campaign also COMPLETE26epochs/best6/
 5252CUDAupdates/272.381496fitter seconds/219checks/FAIL/0LATER/alljoined,
 CONSUMER at current-kis100-cross-sectional-rank-ensemble-development-20261021-v1.
 No cachedcontrol refit/extra trial. Cross-stock Source COMPLETEb2b50e43 at
-current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1; Wegener owns
-newdevelopmentroot cachedbinding/native/new14400active28800elapsedonefit
-continuation. Actual runtime start needs its own evidence, not this dispatch.
+current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1; actualdevelopment
+COMPLETE07e4245d/25epochs/best5/5050CUDAupdates/330checks/FAIL/0LATER/alljoined/
+GPUreleased. Next onefold calibration Source82410de2/Data supportbaa81cd7 READY,
+actual physical fit/OOF packet and native preparation, not current GPU training.
 OperatorGPUpriorityFIRST/personalco-use/concurrentreadytraining is recorded
 inAGENTS/DECISIONS; old desktopapplication-name hold superseded prospectively.
 
@@ -82,12 +86,17 @@ retains actual firstdecision perbasket/session beforeclient/network; pending
 recovery/quote120s/bank/ownedinventory unchanged. Historical denial cause
 UNKNOWN: latest readonly diagnostic failedsnapshotbeforebuilder. Inspect exact
 original8 terminalclosure first; do not retarget a completed owner.
-Boole owns disjoint HGB deployment-r1 CPUimage/quietTask prep; tentative
-16:00..16:30UTC is not installed. Newprofile actualinput8c192808/policycd1d8572
+Boole HGB deployment-r2 created DISABLED Task,0Enable-Run, old16:00..16:30
+entry expired. Cold source qualified; omitted-zero RandomDelay/runtime and
+release-projection mismatch remain. Installer-only proofbc21c976 did not fix
+runtime. current-kis100-hgb-direct-owned-recovery-20261022-v1 compares minimal
+existing native owned-process path versus exact semantic Task repair; no blind
+enable/backdate/substitute or forced signal. Newprofile input8c192808/policycd1d8572
 preserves olddefaultbytes and actual13:41publication/priorOct20CLOSE.
 Data continuation install-r3 failedquietsettingsguard then verifiedexactTask
 absence; FINALa8b2b607/freshabsence3c88a2e8/0Run-API. Directhiddenworker
-preparation is separate, not Schedulerinstallation/success by inference.
+actualhandoff/token-no-auth closure is separate, not Schedulerinstallation/
+successful acquisition by inference. Do not rerun consumed installers.
 
 - Original8NAS: image876/source d2d4b108, exitOct21>=13:40UTC=22:40KST.
 - Window21 R5 SAME original -r2Tasks: prep13:10/entry14:00UTC,

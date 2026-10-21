@@ -7,7 +7,7 @@ Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current Queue
 
-Current15:50UTC. ListNet campaign COMPLETE, not still training:
+Current16:20UTC. ListNet campaign COMPLETE, not still training:
 A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json.
 One CUDA fit26epochs/best6/5252updates/272.381496fitter seconds,219checks,
 oneINNER18cells/LATER0/allactorsjoined/GPUreleased. Proper/finance/overallFAIL.
@@ -25,11 +25,29 @@ Cross-stock Source COMPLETEb2b50e43/PROPOSAL5d6a2a6b at
 A/research/current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1:
 temporal+cross-stock permutation-equivariant rank attention and fixed
 .5HGB/.25cachedListNet/.25newset expert;608.98836Sourceupper/CPU2SYNupdates.
-Wegener owns new developmentroot current-kis100-cross-stock-rank-ensemble-development-20261022-v1,
-reuse actual fitter/features/cachedcontrols, exact bindings before newNUM,
-14400totalactive/28800elapsed including Source once, onefit/18INNERcells/LATER0.
-Actual native/fit start needs runtime evidence, not this dispatch. Noether checks
-chronological OOF feasibility for a later composition, no in-sample learnedgate.
+Cross-stock actual development COMPLETE at
+A/research/current-kis100-cross-stock-rank-ensemble-development-20261022-v1/CONSUMER.json,
+07e4245d: oneCUDAfit25epochs/best5/5050updates/313.686713fitter seconds,
+330checks/oneINNER18cells/0LATER/alljoined/GPUreleased/2624.153626activeupper.
+10bp growth/DDpercentNAV: fixed3expert+3.371670/5.089055, newcross-stock
+-7.077106/14.631561, HGB+5.716282/4.789258; proper-financeFAIL, no rerun.
+Frozen seal.py:63 E501 retained; not an all-external-source lint PASS claim.
+
+Next mechanism: rank confidence calibration, not another architecture.
+A/research/current-kis100-ensemble-policy-next-source-20261022-v1/source-r2/CONSUMER-R1.json
+ff9039e9:17math+34independent checks; parent5nativeNumPychecks/no writes PASS.
+Fixed rank spread can lose to uniform despite weak useful ordering; invented
+vectors do not prove actual model skill. Old/current FAIL criteria unchanged.
+Parent pytest discovery collected0 tests, NOT test authority; numeric checks
+were executed separately. Source cumulative890.794488 includes old overrun.
+Initial four-fit OOF NOT_READY: F1TRAIN54<64, Data320.61905/no fits or labels.
+New onefold Source/input preparation at current-kis100-onefold-rank-calibration-proposal-20261022-v1
+and A/data/current-kis100-onefold-rank-calibration-input-20261022-v1:
+TRAIN<=2016/CHECK2017/OOF2018, purged H1/H2 meta roles, fold-local affines.
+Wegener owns new numerical preparation; ONE HGB/ONE ListNet/ONE beta only
+after exact new Source/Data/native/NUM ready; no final-cache refits/forwards,
+no new financial replay/LATER0. New14400active28800elapsed includes old
+1211.413538 once. Source preparation is not a running GPU training.
 ReusedINNER remains adaptive, not independent replication. Paper runs separately.
 
 New100 raw campaign COMPLETE at

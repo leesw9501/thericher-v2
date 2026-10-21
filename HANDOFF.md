@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-21, 15:50UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
+2026-10-21, 16:35UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED:
 eight retained FULL entry events need exact owned exits, fills, inventory and
@@ -22,11 +22,11 @@ D free last measured38.9percent; preserve15percent/warn20percent.
 | Owner | Actual Work / Next Consumer |
 | --- | --- |
 | Parent | GPU priority/concurrency rules and postOPEN input verified; fresh18659fullPASS25skip/259rolefocusedPASS. Integrate/Git, no company closure inferred. |
-| Boole / Execution | PostOPEN profile implementation259focused+7nativePASS, actualpoint8c192808 bound. New CPU image/finite16:00HGB Task deployment preparation; original8 fresh closure reader. |
-| Noether / Engine-Strategy | Cross-stock Source COMPLETEb2b50e43; now cached chronological OOF feasibility/source-only composition proposal. |
-| Wegener / Engine | ListNet COMPLETE26epochs/best6/5252CUDAupdates/219checks/FAIL/0LATER. Next cross-stock actual fitter/native preparation, cached controls only. |
-| Hubble / invoked Execution diagnostic | R5 frozen375 is BEFORE_WIRE, not opener376;5SYN. Now closed categorical callback-stage recovery Source, no API/Task effects. |
-| Einstein / Data | install-r3 failed quietsettings guard but exact ownTask rollback/absence proven;0Run/API. Prepare finite hidden direct worker after16:10, not another blind Scheduler retry. |
+| Boole / Execution | HGB cold import fixed/native qualified; actual Task created DISABLED, failed native default/projection checks/0Enable-Run. New bounded minimal owned-runtime recovery decision/source. |
+| Noether / Engine-Strategy | Initial OOF NOT_READY/54TRAINdates; new onefold Source READY82410de2/Data support READYbaa81cd7, physical fit/OOF packet preparation. |
+| Wegener / Engine | Cross-stock CUDA COMPLETE25epochs/best5/5050updates/330checks/FAIL/0LATER. New onefold HGB/ListNet/calibration numerical preparation, not a running GPU fit. |
+| Hubble / invoked review/Execution | R5 source READY/not deployed; FUND20 cold-import successor128native+26independent READY/not deployed. Independent onefold chronology review. |
+| Einstein / Data | Actual quiet handoff16:10 then token-guard no-auth closure/0newGET-POST. Scoped measured token-floor recovery source, no fourth Scheduler retry. |
 
 One Steward resource coordinator uses A/engine-research-agent/locks/gpu.lock;
 multiple ready child trainings are approved when measured headroom permits.
@@ -51,6 +51,12 @@ Retained13:52 snapshot verified8 original buy FULL fills and1 exact sell FULL
 fill; its owner changed during inspection, so terminal/current state UNKNOWN.
 Exact14:37 closure-readback-r1 verified4linked sellFULL/4positive owned
 candidates/12terminal/no pending, NOT current fresh broker holdings or closure.
+Execution subsequently reported a15:50:12 native projection with8linked sellFULL,
+completed_owned_flat/zero positive inventory-pending-unknown. Parent pure public
+reader independently reports complete/already_completed/0requests. That public
+dispatch does NOT prove fills; the exact new private-projection evidence pointer
+has not yet been integrated. Keep company closure explicitly unfinished pending
+that binding, not a global hold on independent research or Paper preparation.
 Diagnostic token-due-r1/opportunity-r1 used2GET/1POST; snapshot failed
 stock_exit_snapshot_invalid BEFORE builder. Historical no-intent cause UNKNOWN.
 Do not turn synthetic quote-order counterexample into an actual-cause claim.
@@ -111,12 +117,21 @@ POST_OPEN_PRIOR_SESSION_SIGNAL usingOct20 inputs.100keys/57eligible/6positive.
 One safe restore/current forward,0fits. Old research FAIL stays unchanged.
 Provisional Paper preparation may use ONE.005 original initial-basis cohort
 inside shared tenth, actual fresh execution quote, no foreign adoption/renorm.
-Planned16:00..16:30UTC opportunity is NOT installed/deployed evidence.
+Original16:00..16:30UTC entry opportunity expired without proved execution.
 Explicit model-proposal-nas-post-open-prior-session-v1 is now IMPLEMENTED:
 same18metadatafields/old default serializedIDs unchanged; exact priorofficial
 CLOSE/monotonic actualclocks/canonical5sessions; no backdating/risk change.
 post-open-profile-r1/FINAL.json, Source d44ba453/259serial+7nativeoverlaychecks.
 Actual bound input8c192808/policycd1d8572, not yet actual installed runtime.
+Actual deployment-r2 now has a created DISABLED Task/0Enable-Run and native
+custody ready16:14:56/no newHGBrequest/prior reservations preserved. Cold-I
+import failure was repaired in a successor, not old source. Registration strips
+zero RandomDelay; runtime strict check rejects the omitted default and frozen
+release projection mismatches. Installer-only repair was insufficient:
+deployment-r2/installer-default-readback-r1/FINAL-READBACK.json bc21c976.
+Boole new current-kis100-hgb-direct-owned-recovery-20261022-v1 compares the
+smallest existing native owned-process path with exact semantic Task repair.
+No blind enable/new slot/backdating/substitute unknown request or forced trade.
 
 Masked closure:
 A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json
@@ -139,7 +154,20 @@ PROPOSAL5d6a2a6b/608.98836upper at
 A/research/current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1.
 Wegener next developmentroot: exact cachedbindings/freeze new14400active/
 28800elapsed includingSource once/native then automaticonefit/18INNER/LATER0.
-No actual newfit inferred from dispatch. Noether prepares later OOF feasibility.
+Actual cross-stock COMPLETE07e4245d/25epochs/best5/5050CUDAupdates/
+313.686713fitter seconds/330checks/2624.153626activeupper/alljoined/GPUreleased.
+At10bp/leg fixed3expert growth+3.371670percent/DD5.089055 versus HGB
++5.716282/4.789258; proper-financeFAIL/0LATER. Not still training or alpha.
+Next calibration Sourceff9039e9/17math+34independent+parent5native checks:
+fixed rank spread can penalize weak useful ordering; synthetic diagnosis only.
+Old four-fit OOF NOT_READY/F1TRAIN54<64, no fits or numerical OOF labels.
+NEW onefold Source82410de2/Data supportbaa81cd7: TRAIN306/CHECK247/OOF247,
+purged2018H1meta121/H2meta122; all100 retained/fold-local affines.
+Noether materializes separate fitlabels/OOFinput/heldtargets; producer plan can
+freeze before payload creation, then Engine binds exact hashes before fitting.
+Do not circularly require future payload hashes to authorize their creation.
+Wegener next1CPUHGB/1GPUListNet/1beta preparation; no final-cache refits/
+forwards, new financial replay or LATER. No actual new fit inferred from dispatch.
 Older model families/curves/custody remain in Engine stateboard/Git/immutable A.
 
 ## Data / Recovery
@@ -164,8 +192,14 @@ install-r3 FINALa8b2b607/CLOSED-CONSUMER: quietsettingsfailure then exactownTask
 rollback/ABSENCE3c88a2e8, CREATE1/ENABLE1/DISABLE1/DELETE1/RUN0/API0/alljoined.
 Closeddebits8075.203913 once. Einstein additive direct-launch-r1 prepares
 finite hidden goal_owned_process after16:10, not a fourthblindTaskretry.
-New600active1800elapsed prep/13200integrationceiling includes olddebits once+
-4200futureworker. Actuallaunch pending; guards/GET/POST/windows unchanged.
+New600active1800elapsed prep/13200integrationceiling included olddebits once+
+4200futureworker. Actual direct-launch-r1 handoff16:10:03, goal_owned_process,
+then PARTIAL_CLOSED/FRESH_TOKEN_GUARD_BOUNDED_YIELD_NO_AUTH/0newGET-POST.
+Old58closed/1701pages/162069rows/POST2 unchanged; not quota or new collection.
+Einstein token-floor-recovery-r1 checks actual shared timing before prospective
+scoped60s calibration against documented one-minute issuance. New600Source/
+4200worker/18000integrationceiling carries allolddebits once; no timestamp reset,
+age reclaim or GET/POST/window expansion. No actual auth/progress inferred yet.
 Do not rerun consumed installers or claim task enabled. Fresh Paper
 owners preempt; worker owns due/token gates/no foreground sleep.
 

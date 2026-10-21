@@ -6,7 +6,7 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
-Current asof15:50UTC. No activecollector inferred.
+Current asof16:20UTC. No activecollector inferred from a handoff alone.
 New exact continuation root:
 A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1.
 CONSUMER86479b7a/sourcef4498f5d/worker94e05954/job4bae4675,
@@ -21,8 +21,16 @@ No fourth blind Scheduler retry. Einstein owns additive direct-launch-r1:
 reuse frozen worker/runtimePASS with finite hidden goal_owned_process after
 16:10UTC, honest non-Scheduler provenance/native checks/Claudechallenge.
 New600active1800elapsed preparation/NEW13200integrationceiling includes old
-debits once plus4200futureworker. Actual launch pending; no inferred collector.
-Worker/source/GET/POST/windows unchanged. Do not rerun consumed installers.
+debits once plus4200futureworker. Actual quiet process handoff16:10:03,
+direct-launch-r1/LAUNCHED-CONSUMERa05c5a7e/CURRENT.json; not Scheduler origin.
+Worker then PARTIAL_CLOSED/FRESH_TOKEN_GUARD_BOUNDED_YIELD_NO_AUTH:
+58closed/1701pages/162069rows/POST2 unchanged, not new acquisition or quota.
+Einstein token-floor-recovery-r1 now verifies first cause/shared issue timing
+and prepares prospective scoped correction under official one-minute issuance
+evidence, <=600Source +new4200worker/NEW18000integrationceiling. Old clocks,
+GET/POST charges and consumed claims stay; no age reclaim/timestamp reset.
+No new auth/collection inferred from that preparation. Source/GET/POST/windows
+remain frozen until its actual new native qualification. No installer reruns.
 Prepared pythonw16:10UTC,APIcurfew18:00/workerend18:10,
 4200newactive7200elapsed; old5795.203913once+900Sourceonce, no refunds.
 <=2288newGET/4000lifetime,<=1newPOST/3lifetime, same validtoken/client/gates.
