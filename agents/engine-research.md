@@ -7,8 +7,8 @@ Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current / Next Research
 
-Hubble: broad25 HGB pair and readout COMPLETE; no refit.
-Next SOURCE-only current-broad25-missing-context-recurrent20-development-20261021-v1:
+Hubble: broad25 HGB and missing-context recurrent pair/readouts COMPLETE.
+Recurrent root current-broad25-missing-context-recurrent20-development-20261021-v1:
 same30975FIT/15250INNER/1275PRED input keys, R21 LSTM64/head32,
 four latecontext values plus usablemask/learnedunknown4token.
 Validate rawunknownNaNs, sanitize hidden branch before torch.where; CONTROL
@@ -17,19 +17,59 @@ FIT-only observedcontext affines, no ID or missingrow removal.
 One pairedseed3901/max256/pat30/LR/bestchronologicalINNER including0.
 Native actualoptimizer/fullcheckpoint/RNG/allknown-allmissing-mixed/gradient
 and400row pack+1000eval CPU-CUDA pace proof before numerical dispatch.
-Source120+Claude60=180active/1800elapsed. ActualCPU400row/1000eval/fullstate/
-mask/gradient/finalhandler PASS; initialpre-modelmount125 preserved.
-NumericalGO3600TOTALactive inclclosedsourceonce/14400elapsed,2fits/
-39936updates/one1275PREDintake12cells. ActualCUDAproof+pace/headroom first,
-then automatic market dispatch if guards pass; no market fit inferred yet.
+Actual first-market-continuation-r1/FINAL COMPLETE/RESULT668e200f:
+2CUDAfits38/61epochs/best8/31/7722updates/46.709537GPUworker seconds,
+583.852970activeupper/allactorsjoined/leaseRELEASED/1intake12newcells.
+10bp growth/DDpercentNAV CONTROL+.590106/.332806, FUND+.678932/.562827,
+uniform+.294233/.207221. MaterialityFAIL/financeFAIL, positive growth with
+higher risk is not independent alpha or a frozen-screen winner. Curves
+d44d2ac3/661b0724, safeweights5fd1bec8/fe8a08f1 retained D; no refit/rescue.
+Old numerical-r1 SYN cuDNN backward-in-eval fault CLOSED320.418994,0marketfits.
+Additive harness-only train-mode repair e0b675ca passed; all old debits and
+18charged/11actual native updates carried, no original failed12cap compliance.
+CPU1.572250/CUDA.842133s representative epoch chose GPU, not a resource ban.
 Review A/review/current-broad25-missing-context-recurrent20-20261021-v1,
 responsecea35537 SOUND_WITH_NAMED_LIMITS. One paired draw, no general causal
 ratio effect/absence; matchedmask does not eliminate retrospective leakage.
 
-Einstein: broad25 Chronos forecasts and fixedreadout COMPLETE FAIL.
-No more forwards/fits/weight search. Next close-only expert SOURCE proposal,
-prior project indicator-kernel reuse plus causal/missing/tie SYN tests only,
-not new market feature generation or an outcome-picked ensemble.
+Einstein: Chronos forecasts/readout COMPLETE FAIL; no more modelcalls.
+Close-only source29631c4a/kernel f0b8b7a5/54checks COMPLETE:
+fixed prior252 SMA-seeded EMA20/60/RMSRV21 gate, trend T or -Bollinger20z.
+No grid/RSI extraaxis/OHLC dependency. Data42562873 exactprior252/literalR21
+all31450/15625/1275known;20tests/independentverify/R21parityEXACTzero.
+Current expert-development/preparation-r1 binds actual inputs/CONTROL e33793ea.
+ONE fixed .5+.5 within-date fractional-rank blend ->Top5fair was chosen04:31
+BEFORE newRNNfits/results. CONTROL includes age/proxy/mask, not purelypriceonly.
+Claude2b473a5d SOUND_WITH_NAMED_LIMITS; fixed252 causal seed/prefix checks,
+per-date regime shares and finalweight aliases, not expandingEMA equivalence.
+Actual numerical-r1/FINAL974ce136 COMPLETE:one1275expertpass/oneblend/
+oneEvalintake/6new9exactcached/0model-GPU/54.032837worker seconds/
+395.480924totalupper/allactorsjoined. 10bp growth/DDpercentNAV HALF
++.603040/.255495 vsRNN+.590106/.332806/uniform+.294233/.207221;
+EXPERT+.284563/.286022. HALF improves RNN growth and DD but frozenuniform-DD
+screenFAIL; no regrade, weight rescue or alpha claim.1275known/0unknown,
+REVERSION1252/TREND23, no hidden cash/alias reduction. Safeoutputs retained.
+Next source-only current-broad25-recurrent-close252-prospective-point-20261021-v1
+prepares cachedCONTROLepoch8+fixedexpert forward adapter, no modelcall yet.
+Data owns LOCALONLY currentOct21prior252+raw26optionalcontext; unavailable
+input defers only this new point, not current FUND20 Paper install.
+
+Hubble next SOURCE-only current-broad25-causal-indicator-path-proposal-20261021-v1:
+inspect old TCN0marketfits premarketpace rejection, not financial failure.
+Propose one close-only temporal RAW/IND_ONLY/RAW_PLUS ablation on broader25
+keys; reuse actual kernels, explicit warmup/causality/finitefit family.
+37purechecks/sourcea832daad/proposal32771cf4 COMPLETE. Claudef3ec1ad7
+SOUND_WITH_NAMED_LIMITS; sameINNERcheckpoint/comparison optimism and one seed
+limit learnability interpretation. Warmup is explicit prefix, momentum is
+lag-index C_[max(0,t-21)], NOT rollingmax prices. RAW_PLUS predesignated,
+IND_ONLY not an outcome-selected fallback. Parent numericalGO3600TOTALactive/
+14400elapsed inclproposal92.155389/review60once/source-feature-native/
+3firstfits/max128pat20/29952updates/oneintake15cells. Actualfeature/native/
+400row252x5+1000eval pace and fullstate proof before fit, automatic within
+guards/caps; no native/market training inferred yet.
+Old600second/20epoch pace budget protects THAT closed recipe, not all TCNs.
+Primary TCN source https://arxiv.org/abs/1803.01271 and official MIT
+https://github.com/locuslab/TCN are generic sequence evidence, not stock alpha.
 
 ## Broad25 Data / Completed Baseline
 

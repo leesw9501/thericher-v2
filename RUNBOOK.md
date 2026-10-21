@@ -17,10 +17,10 @@ Consumed installers/forecasts/fits/maintenance are NOT metadata readers.
 ## Verification
 
 Current actual tracked authority:
-D:/thericher-v2/model-artifacts/verification/model-paper20-profile-20261021-v1/authority.json
-82df0f6964980d3b5411fbd6a259c1870d7ad740d4c58102bd1bbf2343a3c20d.
+D:/thericher-v2/model-artifacts/verification/fund20-paper-runtime-20261021-v1/authority.json
+41796a7aedadd8416d10fec3046f3771a2c710419a0069504a3f7ad8e014749e.
 1374sources5802dd71/1764focusedserialPASS2skip/18612fullPASS25skip/
-18637collected/8workers362.95s/cleanhelper/Ruff/three sample-envCompose PASS.
+18637collected/8workers369.10s/cleanhelper/Ruff/three sample-envCompose PASS.
 Docs/external reuse needs fresh exact production/control equality plus actual
 changed-external native checks;18k repo tests cannot qualify arbitrary D code.
 Tracked/control/material Execution changes follow AGENTS fresh requirements:
@@ -100,10 +100,16 @@ updates only, CPU chosen by near-tie projection. MechanismPASS/financeFAIL.
 No more small-universe seed/mask/weight rescue. Broaderfixed25optionalcontext
 Data17c3ea82 andEval9c0bd613 are nowCOMPLETE. Broad25HGB2fits/readoutb3dfa8dc
 proper/financeFAIL; Chronos850newGPU+425cached/readouta8b97bb9 financeFAIL,
-no further modelcalls. Newmissing-context recurrent CPU400row/1000eval
-native proof PASS; numericalGO3600TOTAL/14400elapsed/2fits/39936updates/
-onePREDintake issued, actualCUDA pace/headroom proof then automaticdispatch.
-Close-only expert SOURCE proposal is separate, no market trial yet.
+no further modelcalls. Newmissing-context recurrent first-market-continuation-r1
+COMPLETE2CUDAfits38/61epochs/best8/31/7722updates/46.709537GPUworkerseconds,
+RESULT668e200f/alljoined/leasefree/materiality-financeFAIL; no refit.
+Harness-onlycuDNNtrain-mode repair preservedoldfailure/debits; CPUproofalone
+does not qualifyCUDA. Fixedexpert/half-rankblend974ce136 also COMPLETE:
+6new9exactcached/oneintake/0model-GPU/alljoined, HALFimprovesRNNbutuniform-DD
+criterionFAIL. Alloutputsimmutable, no weightsrescue. CurrentTCN252x5
+RAW/IND_ONLY/RAW_PLUS family source/native preparation is a NEWscope, no
+training inferred. Prospectiveblendpoint LOCAL-only input/source prep is
+separate, no forward/Task/order inferred. See Engine stateboard current refs.
 Never reinterpret NaN as neutral/economically
 known or relax old required-input contracts; new schema is optional-context.
 
@@ -141,8 +147,11 @@ networknonepublicprobe/cleanup. StrictprivateRO5caa4298 nowprovesexact
 unstarted request/bytesunchanged/localcompatibility/unknownreservation1HELD,
 not freshbrokerfunds/quotes/currentinventory. New .005cohort runtime source
 current-fundamental20-paper-cycle-preparation-20261021-v1 had7/10checks;
-focusedpartial/cancel/carry/risk validation follows, not deployed. ExistingR5
-unchanged. Never rerun originalproof/maintenance/callers as metadata readers.
+focusedpartial/cancel/carry/risk validation now10/10PASS. Quietcaller source-r2
+2c5a7584/8mock+12PS+3native cases/12Linuxcontenders qualified.
+Parent actual-install GO04:58 for ONE18trigger dedicatedTask afterfresh scoped
+custody/exclusion/ACL/source checks; no actualdeployment inferred yet.
+ExistingR5 unchanged. Never rerun consumedproof/maintenance/installers as readers.
 Do not swap currentR5/rebind unknown request/infer replay-fill parity.
 Five-policypointcb1c1d9a/shadowd33490c9/Oct27measurement22db8f33 are separate
 fifth-CLOSE consumers, actually installed not filled/measured. Originalpoint

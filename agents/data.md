@@ -6,7 +6,8 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
-Noether: broader25 input/evaluation work COMPLETE, no new GET/derivation needed.
+Noether: broader25 input/evaluation and close252 expert input COMPLETE;
+executor closed, no new GET/derivation needed.
 All25 price support on every date, no future label-completeness membership:
 A/data/current-broad25-price-input-support-20261021-v1/CONSUMER.json4831e9b5.
 FIT31450/1258dates, INNER15625/625dates, PRED1275/51dates/0inputunknown.
@@ -42,6 +43,17 @@ Relative-log lastpriorCLOSE anchor, context e-512..e-1, official timesSECONDS.
 Exact source/provenance/rawselectedcontext/features/model/mode match,
 no source-tail equivalence exception used. Oneactualderivation/69.460864upper.
 No modelcalls/labels/API/GPU/Task/Git. Banach executor closed.
+
+## Close Expert Packet
+
+Close252 expert packet42562873 COMPLETE:
+A/data/current-broad25-close252-trend-reversion-input-20261021-v1/CONSUMER.json.
+Exactinput-onlyFIT31450/INNER15625/PRED1275keys/allknown/0unknown;
+FP64close252/observedmask/officialordinal-timeSECONDS/origin/literalR21.
+R21parityEXACTzero/20native-SYNchecks/independent packet verification/
+1derivation/20.166051activeupper/allactorsjoined. No actualexpertscores,
+labels/marks/forecasts/GET/model/GPU; Engine separately owns scorederivation.
+UnusedOHLCflags retained without filtering; not fullBar/PIT qualification.
 
 ## Future Marks Actually Installed
 

@@ -33,14 +33,16 @@ Package-local research prohibitions do not stop independent Execution.
 
 2. Engine: broad25 HGB2CPUfits/readout COMPLETE proper/financeFAIL,
    Chronos425exactcached+850new GPUforecasts COMPLETE and readout FAIL.
-   Do not repeat completed fits/forwards. Next one missing-aware recurrent
-   CONTROL/FUND pair SOURCE/native proof, same broad25 price support and
-   optional quarterly contexts, no issuerID/missingrow removal/neutralNaNs.
-   Learned unknown branch, matched adapter/availability/age, FIT-onlyaffines,
-   fixed pairedseed/finite maxepochs/chronologicalINNER earlystop/LR/fullstate.
-   Freeze actual numerical caps after native representative CPU-CUDA proof;
-   no training claim from source/MD. Complementary close-only expert proposal
-   may prepare independently, no open model/weight/window search.
+   Missing-aware recurrent pair also COMPLETE:2CUDAfits38/61epochs/best8/31/
+   7722updates/46.709537GPUworker seconds/RESULT668e200f/alljoined. Positive
+   replay growth but higherDD; materiality/financeFAIL, no refit/rescue.
+   Old SYN cuDNN-mode fault/closeddebits preserved, repaired harness not model.
+   Current CPU expert/half-rank blend chosen BEFORE newRNNresults: savedCONTROL
+   plus fixed252close EMA20/60-RV21/Bollinger20 expert, no extra forecasts.
+   Data42562873 exactallkeys/R21parity; source/native/header proof then one
+   expertpass/oneblend/oneEvalintake/15logical6new9cached,900TOTAL/3600elapsed.
+   Next GPU-ready source Hubble temporal RAW/IND_ONLY/RAW_PLUS TCN ablation;
+   no market/GPU dispatch until concrete source/native/budget. No open grids.
 
 3. Data/prospective: broad25 raw26 Data17c3ea82/PRED Eval9c0bd613 and
    Chronos5120131fedf COMPLETE, no repeated derivation needed. SEC useful
@@ -53,8 +55,10 @@ Package-local research prohibitions do not stop independent Execution.
 4. New FUND20 Paper connection: savedwirec3acfa90/input5d792094/
    one.005originalNAVcohort/imagef31e781d and strictprivateRO5caa4298
    qualified exact unstarted local compatibility, not fresh broker facts.
-   New native runtime lifecycle7/10SYN checks; focused partial/cancel/carry/
-   mixedrisk repair before activation. Four280s visits exceed15m worst-case:
+   New native runtime lifecycle10/10SYN checks nowPASS5f914eb8; old7/10fixture
+   failures retained. Hidden duplex caller/ONE18finite-trigger Task preparing,
+   no installation yet. Fresh custody/native sibling-lock/clock proofs before
+   activation; repo full authority41796a7a PASS. Four280s visits>15m worst-case:
    prove exact unknown-request safety/owned nextsession carry, no promise
    of same-close replay parity or frozen-input/target mutation. OldR5 intact.
 

@@ -13,11 +13,16 @@ Company NAS lifecycle UNFINISHED. Parent shared MD/Git.
 - HGB broad25 twoCPUfits20/21rounds/1readout COMPLETE FAIL,0GPU.
 - ID-mask oneCPUfit58/best38/4524updates COMPLETE FAIL. NativeCPU/CUDA
  near-tie did not meet frozen10percent routingmargin, not a GPU prohibition.
-- Next useful broad25missing-context recurrent pair: actualCPU400row/1000eval
- checkpoint/gradient/mask proof PASS. Source180 inclsharedreview60 carriedonce.
- NumericalGO3600TOTALactive/14400elapsed/2fits/39936updates/onePREDintake,
- onecanonicalGPUallocation after realCUDAproof/headroom and >=10percent
- projected epoch benefit; otherwise chooseCPU. No market fit inferred yet.
+- Broad25missing-context recurrent pair COMPLETE:2CUDAfits38/61epochs,
+ best8/31/7722updates/46.709537GPUworker seconds/alljoined/leaseRELEASED.
+ FINAL first-market-continuation-r1/RESULT668e200f/583.852970totalupper/
+ 1readout12cells/materiality-financeFAIL; no refit or continuingGPU claim.
+ NativeCUDA .842133s vsCPU1.572250s projected epoch (~46percent faster).
+ SYN cuDNN eval-backward fault repaired ONLYharness LSTMtrain/head eval;
+ CPU proof does not qualify CUDA. Failed320.418994+repair120.605615+closure10
+ carried once/18charged11actualnativeupdates; no old12cap-compliance claim.
+- Next Hubble close-only temporal indicator TCN ablation SOURCE-only,
+ not actual training. Old TCN600s pace cap is scoped, not global.
 - Chronos fixedreadout COMPLETE FAIL/1intake9cells/0newmodelcalls.
  Close-only expert source and Execution lifecycle repair runCPU independently.
  No dummy GPU occupation or unbounded parameter/window/seed grid.

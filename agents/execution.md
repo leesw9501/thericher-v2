@@ -112,15 +112,28 @@ privatebytesunchanged/sharedtenthvalid/unknownreservation1HELD. Twoforeign
 plans/globalattributionUNKNOWN remain, not foreign adoption or broker proof.
 Wegener nextruntime:
 A/execution/current-fundamental20-paper-cycle-preparation-20261021-v1.
-SOURCEa92aa3bc/174activeupper/7of10nativechecks; partialentry/partialexitcarry/
-isolatedrisk assertions need focused first-cause repair in child package.
+SOURCEa92aa3bc/old174activeupper/7of10nativechecks preserved; additive
+focused-validation-r1/CONSUMER5f914eb8 now10/10PASS/30newactive/no native
+production change. Exact partial/cancel/terminal/carry and risk proved.
 ActualnativeTTL is5minutes; cancelack remainspending untilexactterminal.
 Oldfixture reusedstate acrossriskfaults and omittedtimedelta, not a proven
 productionriskbug. Preservefailedresult, no runtimechecksweakened.
 ProposedentryOct21 15:30..16:10UTC/fourNAS/ONE.005cohort, exactexitNov17
 20:45UTC. Four280s visits>15m worstcase; fastfillSYN notcloseguarantee.
 Proveowned nextsession carry/unknownrequest safety without input mutation.
-NoTask/API/actualprivatewrites/deployment yet; currentR5/8NAS unchanged.
+installation-r1/CONSUMER at04:51 is source-qualified:
+source-r2/SOURCE2c5a7584/8callerSYN+12nativePS+3lock-reservation-clockcases,
+12separateLinuxlockcontenders/all261otherTaskXMLACL unchanged during proof,
+actualinertpythonw NO_CONSOLE/targetabsent. Initial .reason vs .code assertion
+and missing parent mount failures retained; corrected fixture only.
+Claude93851820 REVISE retained; actual allmutatorcensus/commonlock proof
+answers self-only/cash-race counterclaim, not Windows/Linux equivalence.
+Parent ACTUAL-install GO04:58: newbounded child240active/1800elapsed,
+fresh strictROunstarted<=120s/allmutatorTaskquiescence<=20s/currentSID+ACL,
+oneCREATE18disabled+oneEnable after exact native readback,0Run/API/credentials.
+ONE18trigger quietTask/IgnoreNew/NoDemand/NoCatchup/Unifiedtrue/PT8M, no old
+Task changes. Futurequotes/buyingpower/reconciliation still native mandatory.
+Installation pending until actualreceipt, not inferred from this GO.
 
 ## Other Frozen Consumers / Quiet Operations
 
@@ -144,9 +157,9 @@ not whole-PC guarantee. Preserve unattributed windows/unknown recovery state.
 ## Verification / History
 
 Fresh authority:
-A/verification/model-paper20-profile-20261021-v1/authority.json82df0f69.
+A/verification/fund20-paper-runtime-20261021-v1/authority.json41796a7a.
 1374sources5802dd71/1764serialPASS2skip/18612fullPASS25skip/8workers/
-362.95s/cleanhelper/Ruff/three sample-envCompose PASS. No private runtime,
+369.10s/cleanhelper/Ruff/three sample-envCompose PASS. No private runtime,
 externalworker/custody/submit/fill proof inferred from repo tests.
 Docs/external reuse needs fresh exact source/control equality and native proof.
 Historical current snapshot Gitba7893b:agents/execution.md retains exact old

@@ -21,16 +21,17 @@ Docker /app/model_artifacts, >=15percent D free. Last D about39percent free.
 | Owner | Actual State / Next Consumer |
 | --- | --- |
 | Parent | Integrate evidence/source, current shared memory/Git; company outcome remains open. |
-| Hubble / Engine | Broad25 HGB pair/readout COMPLETE FAIL; missing-context recurrent pair SOURCE preparation next. |
-| Einstein / Engine | Broad25 Chronos forecasts/readout COMPLETE FAIL; close-only complementary expert SOURCE next. |
-| Wegener / Execution | FUND20 wire/image/privateRO qualified; exact .005cohort lifecycle proof had7/10 checks, additive focused repair next, NOT deployed. |
+| Hubble / Engine | Broad25 recurrent2CUDAfits/readout COMPLETE; next temporal indicator TCN ablation SOURCE. |
+| Einstein / Engine | Fixed close252expert/half-rank blend SOURCE108checks complete; bounded CPU numerical campaign. |
+| Wegener / Execution | FUND20 lifecycle10/10qualified; quiet oneTask/18triggers caller/native lock-clock proof, NOT deployed. |
 | Boole / Engine | FinalNov17 measurement Task INSTALLEDenabled/parentRO verified; executor closed, no more mutations. |
 | Noether / Data | Inputs/evaluation/SEC useful queue COMPLETE; executor closed, no more acquisition needed. |
 | Closed | Kepler finalNov17 producer installed/parentRO verified; Banach512join and earlier Validation complete. MD is not an active LLM/worker. |
 
 One GPU training allocation at A/engine-research-agent/locks/gpu.lock.
-Completed Patch44.017GPUworker seconds and Chronos19.095allocation seconds
-are NOT current running utilization. New recurrent source is not training yet.
+Completed Patch44.017GPUworker seconds, Chronos19.095allocation seconds and
+newrecurrent46.709537GPUworker seconds are NOT current running utilization.
+No current trainable model remains after two actualfits38/61epochs ended.
 
 ## Actual Paper Runtime
 
@@ -117,22 +118,46 @@ Next source-only close-price trend/reversion expert proposal, no market trial ye
 Marginal median C20-minus-O1 contrast, NOT expected return/probability.
 Corpus scope not_disclosed; post-checkpoint reused-data development, no alpha.
 
-Next recurrent family:
+Completed recurrent family:
 A/research/current-broad25-missing-context-recurrent20-development-20261021-v1.
-SOURCE ONLY, zero market/GPU fits yet. Same broader25 keys, R21 LSTM64/head32,
+Same broader25 keys, R21 LSTM64/head32,
 late4context+mask; sanitize hidden NaNs then torch.where learnedunknown token.
 CONTROL post-affine known-ratio zeros only, same adapter/price/age/mask;
 FIT-only observed affines. One pairedseed3901, max256/pat30/LRschedule/best
 chronological INNER including0, no seed/window grid. Actual full-state/gradient/
 allmissing/mixed/400row pack+1000eval CPU-CUDA pace proof BEFORE numerical GO.
-CPU native actual400row/1000eval/fullstate/gradient/mask/callback proof PASS;
-pre-modelRO mount fault125 preserved/fixed without model/source changes.
-Source120+Claude60=180active/1800elapsed, all debits carried once.
-Parent prospectively granted numerical-r1 3600TOTALactive/14400elapsed,
-2fits/max39936updates/onePREDreadout12logicalcells; actualCUDA proof/pace/
-headroom first, auto-dispatch if guards pass. No after-update fit retry.
+Actual first-market-continuation-r1/FINAL COMPLETE/RESULT668e200f:
+2CUDAfits38/61epochs/best8/31/7722updates/46.709537GPUworker seconds,
+583.852970activeupper/allactorsjoined/leaseRELEASED/oneintake12newcells.
+10bp growth/DDpercentNAV CONTROL+.590106/.332806, FUND+.678932/.562827,
+uniform+.294233/.207221; materialityFAIL/financeFAIL. Positive growth with
+higherDD is not a frozen-screen winner or independent alpha. No refit/rescue.
+Curvesd44d2ac3/661b0724/weights5fd1bec8/fe8a08f1 retained D.
+Old numerical-r1 cuDNN SYN eval-backward fault closed320.418994/0marketfits;
+harness-only LSTMtrain/headeval repair e0b675ca PASS, CPU1.572250/CUDA.842133
+representative epoch. Allolddebits/18charged11actualnativeupdates retained,
+not old failed12cap compliance. Actual market recipe/model remained unchanged.
 Claudecea35537 SOUND_WITH_NAMED_LIMITS: one paired draw, not general causal
 ratio effect/absence; identical mask does not fix retrospective source leakage.
+
+Next CPU composition: source29631c4a/kernel f0b8b7a5/54checks and
+preparation587c0ae2/108checks bind exact Data42562873 close252allkeys/R21zero
+parity/20checks. FixedEMA20/60-RMSRV21 trend or -Bollinger20z expert.
+Parent chose ONE .5+.5 within-date fractional-rank blend with savedCONTROL
+at04:31 BEFORE its fits/results; sourcee33793ea/score29b04e4e/policy2435a00d.
+CONTROL includes availability/age/proxy/mask, not strictlypriceonly.
+Claude2b473a5d SOUND_WITH_NAMED_LIMITS, causal fixed252seed, finalweightalias/
+regime shares. Oneexpertpass/oneblend/0model-GPU/oneEvalintake afterseals,
+Actual974ce136 COMPLETE:6new9exactcached/oneintake/0model-GPU/395.480924upper/
+alljoined.10bp HALF+.603040/DD.255495percentNAV vsRNN+.590106/.332806,
+uniform+.294233/.207221. ImprovesRNN but uniformDD criterionFAIL; no regrade.
+EXPERT+.284563/.286022, REVERSION1252/TREND23/0unknown. No weight/grid rescue.
+Next currentOct21prospectiveblendpoint Data LOCAL-only/source adapter prep,
+no actualnewforward/Task yet; currentFUND20Paperpath remains unchanged.
+Next GPU candidate Hubble current-broad25-causal-indicator-path-proposal-20261021-v1:
+SOURCE-only temporal RAW/IND_ONLY/RAW_PLUS TCN input ablation, no optimizer/
+featurederivation/market/GPU yet. OldTCN0marketfits pace-rejection was scoped,
+not financial failure or global600s cap. Reuse existing kernels, not modelgrid.
 
 ## Frozen FUND20 / Paper Connection
 
@@ -172,8 +197,17 @@ unqualified. Not fresh broker funds/quotes/current inventory/submit proof.
 
 Runtime source prep:
 A/execution/current-fundamental20-paper-cycle-preparation-20261021-v1/CONSUMER.json.
-174activeupper/7of10nativechecks; three partial-entry/carry/risk assertions
-need focused repair. No deployment/API/privatewrites; oldR5 unchanged.
+Original174activeupper/7of10nativechecks preserved; additive focused10/10PASS
+5f914eb8/30newactive proves partialentry exactcancel-terminal/no latebuy,
+partialexit residualownedcarry/mixedrisk. Same runtimea92aa3bc bytes unchanged.
+Current installation-r1 quietcaller7mockchecksPASS/sourceguard/one18triggerTask
+preparation. Actualnative Linux2flock/siblingreservation0effect testsPASS;
+postclose fixture .reason vs.code corrected/3nativecasesPASS, source-r2
+2c5a7584/8mock+12PS/exact261otherTaskXMLACL/quietpythonw qualified.
+ParentactualinstallGO04:58 forone18triggerTask afterfreshROcustody/exclusion/
+nativeACL/semantics,0manualRun/API/credentials. No deployment inferred yet;
+oldR5 unchanged. Review93851820 REVISE counterclaim narrowed by
+actual allmutatorcensus/nativecommonlock proof, not assumed compliance.
 Onependingleg/visit means4x280s exceeds15m worst-case. Fastfill SYN is not
 guaranteed closure; exact pending/cancel/owned nextsession carry must qualify.
 Do not rewrite frozen target or release reservations to force completion.
@@ -206,11 +240,11 @@ No more GET or completed Data derivation without concrete new consumer.
 
 ## Verification / Recovery
 
-A/verification/model-paper20-profile-20261021-v1/authority.json82df0f69:
-1764focusedserialPASS2skip/18612fullPASS25skip/8workers/362.95s/cleanhelper,
+A/verification/fund20-paper-runtime-20261021-v1/authority.json41796a7a:
+1764focusedserialPASS2skip/18612fullPASS25skip/8workers/369.10s/cleanhelper,
 Ruff/default-research-accounting sample-envCompose PASS.
 1374sources5802dd71+controls: docs/external reuse needs fresh exact equality
 and independent changed-external native proof. Repo tests cannot validate D code.
-Latest pushed eec0c08. Explicit staging, preserve unrelated %SystemDrive%/.
+Latest pushed1b85c51. Explicit staging, preserve unrelated %SystemDrive%/.
 After interruption classify actual owners/lease/receipt resume/reconcile/complete;
 no age reclaim, refund or completed-fit restart. Continue ready lanes.

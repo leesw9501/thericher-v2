@@ -1,132 +1,93 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts.
-Own concrete mechanisms/source interpretation; Engine owns final models/
-targets/splits/costs/fitting. No broker/credentials/deterministic-risk authority.
-Parent owns shared MD/Git. Proposals need executable consumers, not reading lists.
+2026-10-21. A=D:/thericher-v2/model-artifacts.
+Own mechanisms/source interpretation/pure kernels; Engine owns targets,
+splits/fitting/costs/selection. No broker or deterministic-risk authority.
+Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 
-## Current Proposal And Owner
+## Current Mechanisms / Consumers
 
-Confucius completed ONE objective-alignment proposal/pure kernel:
-A/research/current-fundamental20-objective-alignment-hypothesis-20261021-v1.
-Use same FUND20 inputs/temporal purges/20-session target; matched scalar
-Huber versus within-date pairwise logistic ranking, not a model-name grid.
-Motivation: classification FUND20 development allocation useful but FITprior
-still wins proper scores. Separate loss alignment from feature/model changes.
-SOURCE-READY8fb724bc/48loss-autograd checks PASS/source90+review60once.
-No market fit/GPU/holdout decode in Strategy; Engine owns actual training.
-Scalar pair's actual checkpoint0 caller failed before0optimizer updates,
-not a financial refutation. Old conservativecaps unchanged. Separately
-accounted firstRankNet now COMPLETE21CPUepochs/1638updates, RESULT54445662/
-readbacke9f5bbb6 financialFAIL. No HUBER retry or paired-success claim.
-Patch512 proposal d80f3902/43SYNchecks has actual Engine consumer54867822:
-oneCUDAfit21epochs/1638updates/higher growth-worse DD/overallFAIL. No refit.
-New fixed Patch/recurrent halfpool source53f53c7c/21SYN/Claude84ad5a4d
-completedbacc9f16 but EXACTrecurrentallocation alias/0new12cachedcells/
-financialFAIL, no diversification. No blend-weight rescue. Engine now uses
-retained FIT/INNER diagnostics to motivate ONE orthogonal next hypothesis,
-not a new model-name grid or extra PRED outcome intake. Strategy role closed.
-Primary mechanism: https://www.microsoft.com/en-us/research/publication/learning-to-rank-using-gradient-descent/
+Einstein completed close-only trend/reversion expert source:
+A/research/current-broad25-close-only-expert-proposal-20261021-v1.
+SOURCEb0fa0cc3/kernel f0b8b7a5/proposal29631c4a/54checks.
+Exact existing Decimal EMA leaf reused, no fullBar/OHLC/volume dependency.
+Fixed prior252 SMA-seeded EMA20/60 gap / RMSRV21sqrt20; absT>=1 trendT,
+otherwise -Bollinger20z. No period/threshold/RSI grid, no new source information.
+Missing/mathundefined remains UNKNOWN, never neutral fill/crop.
+Data42562873 exactall25prior252/literalR21 packet/20checks, Engine108adapter
+checks and fixedhalf-rank recipe chosen04:31 BEFOREnewRNNresults.
+Actual Engine numerical974ce136 COMPLETE:one1275expertpass/oneblend/
+6new9exactcached/1intake/0model-GPU/alljoined. 10bp growth/DDpercentNAV:
+HALF+.603040/.255495 vsRNN+.590106/.332806/uniform+.294233/.207221,
+EXPERT+.284563/.286022. Improves RNN tradeoff, frozenuniform-DDscreenFAIL.
+REVERSION1252/TREND23/0unknown. No weight rescue or independent-alpha claim.
+Claude2b473a5d SOUND_WITH_NAMED_LIMITS; per-date regime shares/finalweight
+aliases and same fixed252 causal seed, not expandingEMA equivalence.
+Next prospectivepoint adapter is source-only, no broker/Task or reforecast.
 
-Confucius completed source/SYN asof-kernel-r1 (60bbea7c/44tests):
-A/research/current-price-fundamental-ablation-hypothesis-20261021-v1.
-PROPOSAL-r2.json is the authoritative20-session source recipe; original
-5-session draft98342f84 is preserved and superseded BEFORE numerical effects.
-Pascal fund20 trial COMPLETE2844e515/b3136546; Kepler actual Data c3e29a80/
-evaluation525d20eb completed. Formal properPASS/financeFAIL; FUND selected
-prior0 and equals uniform, so not incremental learned accounting information.
-10bp growth/DDpercentNAV FUND+.687260/.224125 vs BASE+.719049/.337096.
-No refit/regrade or independent-alpha/Paper qualification claim.
+Hubble completed NEW causal temporal-indicator input proposal:
+A/research/current-broad25-causal-indicator-path-proposal-20261021-v1.
+SOURCEa832daad/proposal32771cf4/37purekernel/headerchecks/92.155389upper.
+Exact same252priorCLOSE information supports fixed252x5:
+relative logprice, one-step logreturn, EMA20/60 gap, population band width,
+lag21 logmomentum. First59tokens use explicitly defined prefix warmup,
+not a future fullSMA seed; momentum C_[max(0,t-21)] is lag index, not maxprice.
+Shared FIT-only affine, intentional standardized-channel ablation:
+RAW/IND_ONLY/RAW_PLUS same5channels/252tokens/initialarrays/capacity;
+RAW_PLUS predesignated candidate, IND_ONLY not a PRED-selected fallback.
+Proposed causal TCN6residualblocks/dilations1..32/kernel3/width8/RF253.
+Reuse local residual/kernel leaves, no remote code/runtime replacement.
+Claudef3ec1ad7 SOUND_WITH_NAMED_LIMITS: sameINNERcheckpoint/arm comparison
+optimism, one seed, prefixwarmup and meanconstant ablations limit interpretation.
+Parent numericalGO3600TOTALactive/14400elapsed including source/review60once,
+one common feature pass/3firstfits/max128pat20/29952updates/oneintake15cells.
+Actual model/feature/native400row252x5+1000eval/fullstate/pace proof before fit;
+no actual new market/GPU training inferred from this proposal/MD.
+Question is inductive bias/learnability, not new predictive information/causality.
 
-New recurrent20 proposal37f0eee6 at
-A/research/current-fundamental20-recurrent-expert-hypothesis-20261021-v1/PROPOSAL.json
-was frozen BEFORE HGB outputs. Same raw21 plus late29context/LSTM64/head32,
-two exact input arms, max128/pat20/LRschedule/selected checkpoint including0.
-Boole consumer current-fundamental20-recurrent-expert-development-20261021-v1:
-actual numerical7efaa9e0 complete2CUDAfits26epochs/best6each/4056updates,
-incremental proper+financePASS; FITprior proper still beats BOTH models.
-10bp growth/DDpercentNAV FUND+1.015525/.213627 vsBASE+.867644/.321372,
-uniform+.687260/.224125. Adaptive reused development, not independent alpha.
-Fixed cross-class pool SOURCE-READYedec1f28/62SYNchecks froze before those
-results; Pascal consumer-r1 computes only two .5HGB+.5recurrent arms,
-normalization/aliases explicit, no fit/GPU/learned gate/weight search.
-Measured CPU/CUDA routing, no framework/model-name grid/in-sample learned
-fusion. Source clock60once/closure28a1ba9a; Strategy LLM closed.
+## Previous Results / Do Not Repeat
 
-Hypothesis: persistent accounting state improves one-month stock ordering
-beyond R21 prices, issuer ID and filing-age/proxy controls. Add exactly net
-margin and liabilities/assets, not a parameter/model/horizon grid.
-Same original10-Q accession/USD/current report quarter; standalone70..110day
-income/revenue same start/end, balance-sheet same end. Positive revenue/assets,
-negative net income/zero liabilities allowed. No YTD subtraction, bank proxy,
-revenue alias stitching, FX/ADR assumption or neutral missing value.
-Accession-specific acceptance or labelled filed-end-date proxy plus two full
-sessions, prior CLOSE cutoff; never backfill a later filing/restatement.
-Current-vintage corrections/original-document context/PIT remain unqualified.
+- Prior indicator HGB08b45bec actual2CPUfits IND_ONLY/RAW_PLUS:
+ properPASS/financeFAIL in old5session geometry, not comparable broad25.
+- Old causalpathTCN GPUa43c086f/FINAL6c11d3e4 stopped BEFOREmarketfits:
+ representative400row pace2036.886s/20epochs >THAT600s budget. GPU was
+ actually slower thanCPU, not B2toy/cold-only attribution. Separate CPU
+ continuation completed2fits/6050updates. Neither outcome may be erased,
+ retried as unconsumed or described as first TCN training.
+- Earlier broadindicator17fits (14CPU/3CUDA) and OOF predictions completed;
+ economic publication roundoff failure is scoped, not untried mechanism.
+- NarrowFUND20 RNN7efaa9e0, Patch51254867822, HGB27b417c4, ID-maskdee22eff,
+ RankNet54445662 and OOFc04d7aeb are CLOSED. Fixed HGB-RNNf65ca8e8 and
+ Patch-RNNbacc9f16 exact allocation aliases are not diversification.
+- Chronos914fa4f9 peerFAIL, rankfusion12e05488FAIL, broad25Chronos
+ a8b97bb9FAIL; known dated checkpoint/corpus limits persist.
+- TimesFM continuous887257b7/ordinal935de050/broader0a7f5137/LoRA8328e0c5,
+ MLP/GRU/LSTM/TCN/attention/volume/momentum/rule histories stay Git/A.
+ A new model name is not new information or an unused trial budget.
 
-Actual SEC current25dbf616be has24 source pairs/18 four-concept issuers;
-historical metadata is partial, but actual panel above is derived and bound.
-Common input-only membership sealed before targets; all51PREDdates have>=8.
-Unsupported geometry is explicit UNKNOWN, not ad hoc Top1/date cropping.
-Two CPU HGBClassifier arms/50columns/newLOG20/20sleeves/12newcells proposed.
-Pure kernel proves future filings, comparative/YTD/context mismatch,
-duplicate/conflicting revisions, denominators, lag and identity on SYN.
-No real model/ratio/label/evaluation work in the kernel package.
+## Source / Interpretation Knowledge
 
-## Closed Mechanisms / Do Not Duplicate
+Current broad25 inputs are currentlisting/currentvintage/nonPIT/providerfield/
+CA/finality-limited. Retrospective quarterly availability masks may encode
+issuer/collection state. Identical masks do not remove value/metadata leakage.
+One seed and51overlapping20session dates are adaptive development, not
+significance, causal proof or independent alpha. Individual profitability is
+not a prerequisite for exploratory fusion; learned gates need purged OOF.
 
-- Matched chronological OOF sigmoid gate c04d7aeb COMPLETE:9firstfits,
-  META_INNER PASS only;10bp growth/DD GATE+.783667/.279046 versus
-  matched HALF+.802196/.278994percentNAV, financial FAIL.
-  Two outcome accesses/one economic batch; old failed scopes immutable.
-- Cached HALF740ae38d is descriptive finance PASS/proper FAIL, unequal
-  expert FIT cohorts, not the matched OOF benchmark/independent alpha.
-- Learned held-exit d7c7383b operational development PASS only:
- 5early325terminal/+1.09535/.29248 vsHALF+1.04894/.29259. Myopic close-only
-  policy, not Bellman/optimal stopping/timing alpha or Paper exit authority.
-- Inversevariance3c484f19, regime/reversal37825bd3, rankfusionf60ed3d8,
-  fixed intraday REV60/CONT60cd1b4cc0 failed. No weight/threshold rescue.
-- TimesFM continuous887257b7/ordinal935de050/broader0a7f5137/LoRA8328e0c5
-  finished, no repeated fits for GPU utilization. Indicators, volume,
-  momentum, ML/DL/TCN/LSTM/attention/foundation inputs have been tested.
-  Do not confuse a new model name with new information.
-- TCNCPUd16a455a properPASS/financeFAIL, native CPU25xGPU.
-  BroadLSTM8198cdbe95epochs/best75. Old short-fit rules are not global caps.
-- Chronos2 O/C512/h20 peer comparison914fa4f9 COMPLETE:4native102market
-  forecasts/0fits/35.72GPUworker seconds; GROUP growth below ISOLATED,
-  financialFAIL. No peer/window rescue. Not an untried foundation model.
-- Fixed FUND-LSTM/isolated-Chronos rank fusion12e05488 financialFAIL:
-  +.850532/.228229percentNAV growth/DD versus FUND+1.015525/.213627.
-  Fixed half ranks/no aliases/3new12cachedcells/0models-GPU, no weight rescue.
-  Original schema-reader fault before values retained, twoattempts/oneintake.
-
-## Source Knowledge / Claims
-
-Official SEC APIs support unauthenticated data.sec.gov CompanyFacts and
-Submissions JSON. Prior WWW ticker-map403 did not settle DataHost capability;
-actual accepted source dbf616be is the project evidence. No proxy/header
-rotation/fake mailbox/signup requirement. Source acceptance is not PIT.
-Bank/revenue aliases and original document parity remain separate questions.
-
-Cboe VIX automated reuse rights remain unclear in the named earlier package;
-no autonomous rights assumption/new paid source. CFTC/Treasury historical
-publication clocks remain limited; lag is not first-publication proof.
-
-Prospective pointcb1c1d9a/installed shadowd33490c9/Oct27 consumer22db8f33
-are future evidence consumers, not current model success/PnL. No extra
-standing role, daemon, per-indicator MD or new report platform.
+Official SEC DataHost dbf616be accepted unauthenticated CompanyFacts/Submissions.
+Old WWW403 is not allSEC unavailable. Metadata is not PIT/value qualification.
+Cboe VIX reuse rights remain unclear in its separate package; no autonomous
+rights assumption, public exposure or paid source. CFTC/Treasury publication
+lag is not proven first availability. No new external dataset needed here.
 
 ## Primary Sources
 
-Mechanism/source references, not checked project profitability:
+Mechanism references, not checked project profitability:
+- https://arxiv.org/abs/1803.01271 (v2Apr19 2018, generic sequence benchmark)
+- https://github.com/locuslab/TCN (official MIT; no download in this campaign)
+- https://www.microsoft.com/en-us/research/publication/learning-to-rank-using-gradient-descent/
 - https://www.sec.gov/search-filings/edgar-application-programming-interfaces
 - https://www.sec.gov/os/accessing-edgar-data
-- https://www.cs.cornell.edu/~caruana/mlj97.pdf
-- https://www.nber.org/papers/w2533
-- https://w4.stern.nyu.edu/facdir/lpederse/papers/TimeSeriesMomentum.pdf
-- https://arxiv.org/abs/1703.06114
-- https://proceedings.mlr.press/v97/lee19d/lee19d.pdf
-- https://github.com/koreainvestment/open-trading-api
 
-Historical proposals/rejections/native fixtures remain Git264a2b0/immutable A;
-a closed proposal is not a ready dispatch or unused numerical budget.
+Deep older proposals, rejected recipes, failures and source evidence remain
+Git1b85c51:agents/strategy-research.md and immutable A. No new report/gate.
