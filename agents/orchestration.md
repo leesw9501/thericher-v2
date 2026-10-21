@@ -10,12 +10,12 @@ fees/settled cash/actual net PnL UNKNOWN. Parent shared MD/integration/Git.
 | Owner | Actual Work |
 | --- | --- |
 | Pascal / Engine | Fixed pool closedf65ca8e8/PASS/3new9cached; FUND exact recurrent allocation alias, no models/GPU or extra diversification. |
-| Kepler / Data | Panel/evaluationc3e29a80/525d20eb closed; new Chronos2 O/C512 input-only QA/derivation, no GET/model calls. |
-| Confucius / Strategy | Fixed-pool sourceedec1f28/62SYNchecks before recurrent results, ready; no numerical effects. |
+| Kepler / Data | Prospective FUND20 input actual READY00:45:59UTC/8known17unknown; future prices/model point unknown. No rerun requested. |
+| Confucius / Strategy | New pure kernels/proposal for same-FUND20 scalar Huber versus within-date RankNet losses; no market fitting. |
 | Bacon / Review | As-of/vintage/desktop challenges complete; advisory only. |
-| Boole / Engine | Recurrent20 complete7efaa9e0/2CUDAfits26epochs/4056updates/29.194s/alljoined; new Chronos2 source/native preparation. |
+| Boole / Engine | Chronos2 complete914fa4f9/102market calls/35.72GPUworker seconds/financialFAIL; actual prospective BASE/FUND epoch6 point next. |
 | Archimedes / Infra | Natural head22 READY25x22/29SYN+actualwire; oldbasisFAIL unchanged, no API/TaskRun. |
-| Wegener / Execution | R5native8f1c212a/27checks +scoped own-identity exclusion758d35e3; fresh same-Task action retarget preparation, no actual update claimed yet. |
+| Wegener / Execution | R5actual r1 skipped0updates on own venv redirector; positive native ancestry/argv fix in new r2, same2Task action update delegated. |
 | Parent | Current memory/integration/Git, exact production equality and external checks. |
 | Steward | Prior GPU actors joined/lease free; no current GPU training inferred. |
 
@@ -30,7 +30,7 @@ No genuine operator decision currently required.
 
 Latest: OOF final evaluation is valid development financial FAIL, not an
 unfinished training task. Preserve all9fits/7710GPUupdates and close it.
-Current review00:20UTC: actualfund20 fits/readout complete, Fundprior0 aliases
+Current review00:58UTC: actualfund20 fits/readout complete, Fundprior0 aliases
 uniform. No repeated training to force nonconstant output. New recurrent20
 pair fixed before that result; actual Data support >=8members all51dates.
 Paper dependency fault is measured last-shared-row revision, not permission:
@@ -42,9 +42,17 @@ Shell/Calculator from falsely blocking CUDA while all trainer/lease/headroom
 checks remain. Recurrent20 now actually trained26epochs perarm/4056CUDA
 updates/29.194s, alljoined/leasefree. FUND incremental screensPASS but prior
 proper scores still best; no independent performance/Paper PnL claim.
-Next small fixed pool was frozen before those outcomes. Chronos2 next uses
-genuinely different O/C512/h20/current8-9stock grouping vs old128/h1/ETFtrio,
-not untried-model or new-runtime hype. Ready Data/source run in parallel.
+Fixed pool now completef65ca8e8 but FUND exact allocation alias. Chronos2
+O/C512/h20 actually closed914fa4f9/4native102market calls/0fits, GROUP failed
+growth versus ISOLATED. Stop this recipe, no automatic peer/window grid.
+Ready follow-on: prospective current FUND20 data8eligible before OPEN,
+selected-epoch6 point/no refits; source for two aligned objectives runs in
+parallel. Reversible improvement: rank stocks directly instead of assuming
+better classification CE necessarily improves Top5 decisions; compare losses
+on unchanged data/splits/costs, keep reused evaluation explicitly adaptive.
+R5 r1 made0updates because its own native venv redirector matched generic
+owner regex. Positive ancestry/executable/argv reproducer found first cause;
+r2 fixes only exact own exclusion and obtains fresh proof before actual update.
 R5privateUNKNOWN is a named read-only guard, not evidence of a broker failure
 or Window21 request conflict; native global budget replay and bytes preservation
 already passed before the orphan/legacy-registry membership check. Diagnose
@@ -76,6 +84,10 @@ destroying an otherwise expensive fit, without regrading/retraining old studies.
   reservation held; origind6ced0a2 cannot prove original no-send.
 - Window21deployment9b1d0e84/sourcef3711b38/imageb96a8ef8 installed;
   actualOct20closes/full25/NASonly/no renorm. Installation is not a fill.
+- Chronos2 914fa4f9:ISOLATED/GROUP10bp growth+.941339/+.735933percentNAV,
+  DD.228407/.208319; peer screenFAIL, allactorsjoined/leasefree.
+- Prospective FUND20 Data READY8eligible/17unknown before Oct21OPEN;
+  future20thCLOSE Nov17 21UTC. Forecast commit and future prices unknown.
 
 ## Verification / Recoverability
 

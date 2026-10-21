@@ -42,11 +42,24 @@ uniform+.687260/.224125. FITprior proper scores beat BOTH; not independent
 alpha/replication or actual Paper PnL. No more fits/checkpoint changes.
 Pascal fixed-pool consumer-r1 (edec1f28/62SYNchecks before these outcomes)
 uses two fixed .5HGB+.5recurrent arms/one readout/aliases, no new models/GPU.
-Next source work current-chronos2-oc20-peer-development-20261021-v1:
-existing trusted Chronos2 checkpoint95a9710/D6; new O/C512/h20/same-origin
-peer versus isolated-stock pair, not the old Tiingo128/h1/trio study.
-Kepler source-bound features/QA first; source/native proof before any market
-forecast, no silent old256-wrapper widening/public-code Execution route.
+Chronos2 O/C512/h20 COMPLETE914fa4f9 at
+A/research/current-chronos2-oc20-peer-development-20261021-v1/FINAL.json.
+4native+102market calls/one restore/0fits/0retry/35.72GPUworker seconds,
+353.738090activeupper/alljoined/leasefree. Actual isolated peer perturbation
+bit-invariant, GROUP effect observed; no cross-origin batch or weight change.
+At10bp growth/DDpercentNAV ISOLATED+.941339/.228407 versus GROUP+.735933/
+.208319; frozen GROUP financialFAIL. No window/peer rescue or new alpha claim.
+Old128/h1/trio/256wrapper unchanged; Data7afc4b93 remains retrospective proxy.
+
+Boole next concrete consumer: selected-epoch6 BASE/FUND prospective point
+using A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json,
+8eligible/FEATURESa0374157, actual data available before Oct21OPEN13:30UTC.
+Target Nov17CLOSE21UTC; one inference per model plus uniform/cash, no fits,
+checkpoint changes/future labels/current Paper model swap. Not committed yet.
+Confucius next source: current-fundamental20-objective-alignment-hypothesis-20261021-v1,
+same FUND20 features/splits/20sleeves, matched scalar Huber versus within-date
+RankNet loss. This tests training-objective alignment, not another model grid.
+Only chronological INNER may choose checkpoints; seen PRED stays adaptive.
 
 First source/native READBACK6eeb08f7 COMPLETE:64checks/two SYN fits16rounds/
 41.205889upper/0market-GPU-API/alljoined; EngineABI380f47fe/DataRequest7802bec2.
@@ -133,7 +146,7 @@ Existing Oct27 consumer22db8f33 installed/30cells/one marks intake/no new
 triggers. Shadow decision linkage is NOT exit marks/fill/netPnL/qualification.
 Do not rerun completed hosts or infer future decisions/outcomes.
 
-Short breadth queue: fund20 input ablation now; no automatic extra grid.
-Depth queue: only an informed new trainable campaign with useful inputs and
-real native optimizer/checkpoint/pace proof; no repeat/idle-GPU dummy job.
+Short breadth queue: actual prospective BASE/FUND point now; no extra grid.
+Depth queue: objective-alignment pair after source/native optimizer/restore
+proof and exact counters, not repeat/idle-GPU dummy training.
 Complete histories/contracts/trial debits stay Git264a2b0/immutable A.

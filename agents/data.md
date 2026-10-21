@@ -6,6 +6,22 @@ No secrets/raw market/private output or KIS_LIVE_*.
 
 ## Current Owner And Consumer
 
+Kepler completed NEW prospective FUND20 input:
+A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json.
+Actually generated00:45:59UTC/8eligible/17explicitunknown, FEATURES a0374157,
+max component availability Oct20 23:49:31UTC before Oct21OPEN13:30UTC.
+Exact frozen FIT affine plus explicit current natural-head22 vintage;
+BASE/FUND50columns/first48same/Base last2zero after scaling. No new GET,
+future marks/labels/model/Paper effects. Target20thCLOSE Nov17 21:00UTC,
+including DST calendar change; prices UNKNOWN. New26.787937activeupper,
+one derivation/alljoined. Boole owns actual frozen point consumer, not Data.
+
+Chronos2 O/C512 input7afc4b93 completed425rows/51dates/8-9members,
+positive finite OPEN/CLOSE/log-relative shared prior-CLOSE anchor. Actual
+captures after historical origins stay retrospective proxy; fullBar validity,
+PIT/CA/finality unknown. Consumer914fa4f9 completed and failed peer-group
+growth comparison; no rederivation or availability backdating.
+
 Kepler completed actual price/fundamental20 panel c3e29a80 and separately
 gated evaluation525d20eb. Source acquisition alone is not panel readiness.
 Panel A/data/current-price-fundamental20-asof-input-20261021-v1/CONSUMER.json:

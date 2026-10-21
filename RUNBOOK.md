@@ -168,5 +168,11 @@ oldOct26ffcf64a0 also separate target. No consumed installer/point rerun.
 Canonical GPU lease:
 D:/thericher-v2/model-artifacts/engine-research-agent/locks/gpu.lock.
 One actual training owner/fresh headroom; do not age-reclaim or infer activity.
+Recurrent20 7efaa9e0 and Chronos2 O/C20 914fa4f9 are COMPLETE/allactorsjoined;
+never re-execute their hosts to restore GPU utilization.
+Prospective FUND20 input at
+D:/thericher-v2/model-artifacts/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json
+is actual input-only READY8eligible before Oct21OPEN, target Nov17CLOSE.
+New point consumer owns its inference; no future labels/current Paper swap.
 Monitor http://127.0.0.1:8787 private loopback; redesign/external access deferred.
 Older consumed commands/contracts/failures remain Git264a2b0/immutable A.

@@ -35,7 +35,9 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
    delegated; old guard/receipts unchanged, no hidden c705 substitution.
    Scoped native-identity proof758d35e3 now proves own unstarted scope while
    foreign history stays unqualified/preserved. Actual same-Task retarget
-   preparing; no existing decision/intent/reservation may be rebound.
+   r1 skipped0updates on own-redirector conflict; r2 native ancestry/argv fix
+   and fresh actual retarget delegated. No existing decision/intent/reservation
+   may be rebound; original Task definitions remain until actual update proof.
 
 2. Data / Strategy / Engine: prepare ONE price-versus-price-plus-fundamentals
    20-session ablation, not another grid of model names.
@@ -55,9 +57,14 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
    Fixed .5HGB+.5recurrent pool pair f65ca8e8 complete/PASS, but FUND exact
    recurrent allocation alias/no extra diversification,3new9cachedcells,
    no model/GPU calls. Source edec1f28 preceded recurrent outcomes.
-   Boole/Kepler next Chronos2 O/C512/h20 peer-group source/input preparation,
-   existing trusted checkpoint/image; do not silently widen old256/trio API.
+   Chronos2 O/C512/h20 comparison914fa4f9 COMPLETE:4native102market calls,
+   35.72GPUworker seconds/0fits/alljoined. At10bp growth/DDpercentNAV GROUP
+   +.735933/.208319 versus ISOLATED+.941339/.228407: financialFAIL, no rescue.
    All captures-after-historical-origins remain retrospective proxy.
+   New FUND20 prospective input READY8members before Oct21OPEN; Boole freezes
+   BASE/FUND epoch6 point without refitting, target Nov17CLOSE, no Paper swap.
+   Confucius prepares same-input Huber versus within-date RankNet losses;
+   exact same target/splits/costs, no model-name or hidden window grid.
 
 3. OOF learned gate is COMPLETE, not a running job or another retry:
    A/research/current-halfpool-chronological-gate-development-20261021-v1/prefix-completion-r1/readout-schema-continuation-r1/READBACK.json
@@ -80,8 +87,8 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
 ## Verify And Continue
 
 Current tracked authority:
-A/verification/expired-unstarted-maintenance-20261021-v1/authority.json
-5c229e4a/1371sourcesd2447255:332serialPASS1skip/18568fullPASS25skip/
+A/verification/window21-natural-vintage-20261021-v1/authority.json
+c0230ff6/1371sourcesd2447255:1720serialPASS2skip/18568fullPASS25skip/
 8workers/clean helper/Ruff/three sample-env Compose PASS.
 Docs/external-only reuse requires fresh exact production/control equality
 and independent external/native checks. Tracked/control/material Execution

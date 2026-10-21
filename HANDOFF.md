@@ -23,11 +23,11 @@ Market bytes M; models/research A; Docker default /app/model_artifacts.
 | --- | --- |
 | Parent | Shared MD/integration/Git; current Paper outcome stays unfinished. |
 | Pascal / Engine | HGB20 closed27b417c4; fixed pool completef65ca8e8/PASS but FUND exact recurrent allocation alias, no new diversification. |
-| Kepler / Data | As-of panelc3e29a80 +separate525d20eb evaluation complete/425known targets/70marks, no new GET. |
-| Confucius / Strategy | Fixed-pool source edec1f28/62SYNchecks ready, frozen before recurrent outcomes. |
-| Boole / Engine | Recurrent20 COMPLETE7efaa9e0/26epochs each/4056CUDAupdates/29.194s. New Chronos2 O/C20 peer source preparation, no repeat fits. |
+| Kepler / Data | Prospective FUND20 input READY8eligible/17unknown before Oct21OPEN, no forecasts/future marks; historical inputs/evaluation closed. |
+| Confucius / Strategy | New same-input Huber versus within-date RankNet objective-alignment source/kernels; no model-name grid. |
+| Boole / Engine | Chronos2 O/C20 COMPLETE914fa4f9/102market calls/35.72GPUworker seconds/financialFAIL; next actual BASE/FUND prospective point, no refits. |
 | Archimedes / Infra | New natural-head22 input READY/all25x22/29SYN+actualwire accepted;0API-model-Task changes. |
-| Wegener / Execution | R5source8f1c212a/native27PASS; scoped unstarted proof758d35e3 valid under native retention; actual same-Task action retarget preparing, not yet deployed. |
+| Wegener / Execution | R5 retarget r1 skipped0updates by own venv redirector false-conflict; controlled native ancestry/argv cause proven; new r2 actual recovery delegated, not deployed yet. |
 | Bacon / Review | As-of and Window21-vintage advisory complete; not operator authority. |
 | Steward | No active GPU training from completed OOF family; use fresh admission for genuinely ready new campaigns. |
 
@@ -261,13 +261,32 @@ RECURRENT_FUND allocation bytes; NO extra diversification. POOL_BASE
 Both pool proper scores still worse than FITprior. No learned gate/search,
 new information/independent-alpha/Paper claim or component replays.
 
-Next foundation source work: Chronos2 O/C512->20 isolated-per-stock pair
-versus same-origin peer group, existing trusted95a9710 checkpoint/D6image.
-Old Chronos study was Tiingo128/h1/trio, not untried model. Kepler readiness
-ebddeeac proved timestamp support, then input-only matrix/positive-field QA;
-Boole new current-chronos2-oc20-peer-development-20261021-v1 source only.
-Historical captures AFTER target origins remain retrospective proxy, never
-forge old available_at guard or silently widen the old256/trio wrapper.
+Chronos2 O/C512->20 comparison ACTUALLY COMPLETE:
+A/research/current-chronos2-oc20-peer-development-20261021-v1/FINAL.json
+914fa4f9/readback167checks, RESULT8bb930ab. One trusted95a9710 restore,
+4native+102market calls/0fits/0retry/35.72GPUworker seconds/44.27allocation,
+353.738090activeupper/alljoined/leasefree. Empirical peer perturbation leaves
+isolated stock bit-identical; frozen weights/buffers unchanged. Data7afc4b93
+is425rows/51dates/8-9members, same prior-session O/C512 log-relative input.
+At10bp PER LEG growth/DDpercentNAV: ISOLATED+.941339/.228407,
+GROUP+.735933/.208319, MOM21+.245368/.369788, uniform+.687260/.224125.
+GROUP growth does not beat ISOLATED: frozen financial screen FAIL, no
+peer/permutation/window rescue. CE/Brier N/A for marginal-median endpoint
+score, not expected return. Claude once timed out/review_unavailable, parent
+scoped counterfactual reviewed before effects; no advisory agreement claim.
+Old128/h1/trio study/source remains unchanged. Captures AFTER historical
+origins remain retrospective/current-vintage proxy, not PIT/finality/alpha.
+
+Next actual future-evidence consumer:
+A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json
+READY00:45:59UTC,8eligible/17unknown, FEATURES a0374157. Source maximum
+availability Oct20 23:49:31UTC precedes generation and Oct21OPEN13:30UTC.
+Target20thCLOSE Nov17 21:00UTC, actual prices UNKNOWN. FIT affine ownership
+is separate from the explicit new natural-head22 price vintage. Boole owns
+one BASE/FUND selected-epoch6 inference plus uniform/cash, no fitting,
+checkpoint changes, future-label access, broker effect or current Paper swap.
+Confucius prepares ONE same-input scalar Huber versus within-date RankNet
+loss comparison; no automatic grid or reopening previous result criteria.
 
 Claude challenge A/review/current-price-fundamental20-asof-20261021-v1/
 SCOPE-NOTE.json: advisory target objection reversed by exact frozen +/-h rule;
@@ -296,8 +315,13 @@ all prepared roots absent; native write-ahead/retention/no-adoption audited.
 Foreign model attribution stays UNKNOWN/preserved; retained request states
 terminal is NOT inventory-flat/foreign-registry closure/reservation release.
 The old global completeness UNKNOWN is unchanged, not requalified. This
-scoped proof uses native identity, NOT job age or Task timestamps. Actual
-retarget still needs fresh proof/quiescence/XML+ACL and transactional update.
+scoped proof uses native identity, NOT job age or Task timestamps.
+Actual action-retarget-20261021-r1/FINAL-HANDOFF.json SKIPPED_NO_TASK_RETARGET:
+0updates/0Install/0Run, original pair and257other XML/ACL unchanged. Fresh
+scope proved unstarted but is now expired. Controlled native reproducer
+positively identifies the immediate own venv redirector; historical PID was
+not recorded, so no retroactive exclusion. R2 fixes ancestry/executable/argv
+including --execute and needs its own fresh scope/quiescence before update.
 Tracked/control/material Execution recovery follows AGENTS fresh verification.
 
 Preserve existing %SystemDrive%/. Parent only stages owned explicit files.

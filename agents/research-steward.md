@@ -34,12 +34,16 @@ canonical lease released. Two physical allocations=oneSYN+oneMarket, no proof
 repeat. Frozen incremental screens PASS, FITprior still better on proper
 scores; no independent performance/Paper qualification. Post-close NVML2percent/
 1576MiB sample is AFTER training, not during utilization or a failure to run.
-Next Chronos2 paired O/C20 peer source/Data prep only; actual allocation must
-have its own frozen counts/resource proof. No repeated recurrent training.
+Chronos2 paired O/C20 COMPLETE914fa4f9:one allocation44.27s/35.72GPUworker
+seconds/4native102market calls/0fits/0retry/alljoined/canonical lease free.
+Financial GROUP growth screenFAIL, no extra peer/window/rescue allocation.
+New prospective BASE/FUND point is inference-only/CPU preferred; next ready
+GPU training candidate is same-input Huber/RankNet objective pair after
+source/native readiness. No repeated recurrent classification training.
 
-Short breadth queue: fund20 paired input test now.
-Long depth queue: genuinely ready trainable mechanism after useful inputs,
-native convergence/checkpoint/pace evidence; no idle-load/dummy training.
+Short breadth queue: prospective point before Oct21OPEN, no training.
+Long depth queue: scalar Huber/within-date RankNet with same FUND20 inputs,
+native optimizer/restore/pace proof; no idle-load/dummy training.
 
 ## Resource Custody
 
