@@ -22,9 +22,25 @@ current-kis100-ensemble-policy-next-source-20261022-v1/source-r2:
 Invented vectors, not actual market-skill proof. Parent5nativechecks PASS;
 old failures unchanged. Original Source overrun336.186585 remains charged.
 Four-fit OOF Data NOT_READY/F1TRAIN54<64; no fit or OOF labels opened.
-Noether owns NEW onefold proposal/input readiness: TRAIN<=2016/CHECK2017/
-OOF2018, purged H1/H2 calibration, ONE HGB+ONE ListNet+ONE beta, no financial
-replay or INNER tuning. Not an in-sample learned gate or running GPU job.
+Onefold actual COMPLETEcdc6270d/29epochs/best9/2233CUDAupdates/189checks13SYN/
+beta.02413625/.126percentKL improvement<1percent/FAIL/0financialreplay-LATER.
+No holdings/profit improvement inferred. New HGB later financial Source
+2720ecf1 cannot establish globally untouched2024-25, so no numerical dispatch.
+
+Noether distinct factor/tabular DL Source COMPLETE3cf2e337 at
+A/research/current-kis100-tabular-ensemble-factor-proposal-20261022-v1:
+official TabM v0.0.3Apache2, same10HGB factors/TabM32 vs singleMLP/cachedHGB,
+fixedmeanheads/two proposed newfits/no besthead/weightgrid/LATER0.
+CPU45assertions/2actualoptimizerupdates perarm/safe selectedcold parity,
+ClaudeSOUND_WITH_NAMED_LIMITS/538.988975upper/alljoined/0market-GPU.
+Noether Datareusebb1e5c94 COMPLETE84.312942seconds/no new materialization.
+Actual development COMPLETE/FINAL9f0db908: concurrent CPU MLP32best8 and CUDA
+TabM34best10/6868CUDAupdates/526.666CUDAfitterseconds. TabM growth+2.3196percent
+at10bp/DD5.1603 trails cachedHGB+5.7163/4.7893; properFAIL/relative financePASS/
+oneINNER15cells/LATER0/alljoined/GPUreleased. No repeat or qualifiedalpha claim.
+Primary sources:
+https://github.com/yandex-research/tabm/tree/v0.0.3
+https://arxiv.org/abs/2410.24210
 Proposals must become executable kernels/contracts or concrete rejection.
 Adaptive reusedINNER/LATER0, not an independent performance claim.
 

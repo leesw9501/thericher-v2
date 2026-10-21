@@ -2,12 +2,13 @@
 
 2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/splits/fitting/replay, not broker risk or human approval.
-Company NAS lifecycle UNFINISHED; Paper authority independent of research pass.
+Prior NAS lifecycle COMPLETE/febc9bff; current HGB operational entry UNFINISHED.
+Paper authority independent of research pass.
 Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current Queue
 
-Current16:20UTC. ListNet campaign COMPLETE, not still training:
+Current17:50UTC. ListNet campaign COMPLETE, not still training:
 A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json.
 One CUDA fit26epochs/best6/5252updates/272.381496fitter seconds,219checks,
 oneINNER18cells/LATER0/allactorsjoined/GPUreleased. Proper/finance/overallFAIL.
@@ -44,10 +45,28 @@ Initial four-fit OOF NOT_READY: F1TRAIN54<64, Data320.61905/no fits or labels.
 New onefold Source/input preparation at current-kis100-onefold-rank-calibration-proposal-20261022-v1
 and A/data/current-kis100-onefold-rank-calibration-input-20261022-v1:
 TRAIN<=2016/CHECK2017/OOF2018, purged H1/H2 meta roles, fold-local affines.
-Wegener owns new numerical preparation; ONE HGB/ONE ListNet/ONE beta only
-after exact new Source/Data/native/NUM ready; no final-cache refits/forwards,
-no new financial replay/LATER0. New14400active28800elapsed includes old
-1211.413538 once. Source preparation is not a running GPU training.
+Actual Data b74bdf09/DTO7d98729b complete; numerical COMPLETEcdc6270d:
+HGBselected33/53; CUDA ListNet29epochs/best9/2233updates/117.114fitter seconds,
+189artifactchecks13SYN/4548.110414totalupper/alljoined/GPUreleased.
+Beta.02413625/INNERKL improvement.126percent below frozen1percent/FAIL;
+oneintake/0financialreplay-LATER/no holdings/profit improvement. Three frozen
+prep-publisher lint findings remain; active paths passed.
+
+HGB later financial Source2720ecf1 froze existing model/criteria but cannot
+claim globally untouched2024-25: old broad25 outcomes overlap. Exact100 MODP1
+custody unresolved; no later model/target intake or fabricated replication.
+Distinct mechanism Source3cf2e337 at
+A/research/current-kis100-tabular-ensemble-factor-proposal-20261022-v1,
+official TabM v0.0.3Apache2/same10factors/TabM32 vsMLP/cachedHGB/CPU45checks.
+Actualdevelopmentroot current-kis100-tabular-ensemble-factor-development-20261022-v1
+is COMPLETE/FINAL9f0db908,2759.201921closedupper/alljoined/GPUreleased.
+Concurrent CPU MLP17:23:59/CUDA TabM17:24:00 actually ran, not two CUDAworkers.
+MLP32epochs/best8/6464updates/415.971fitterseconds; TabM34/best10/6868updates/
+526.666fitterseconds.18uniqueSYN+23independentchecks/4lint findings retained.
+TabM10bp growth+2.3196percent/DD5.1603 versus cachedHGB+5.7163/4.7893:
+properFAIL/relative financePASS/oneINNER15cells/LATER0. Artifact-only DTO repair
+did not refit/reforward/reseal; all old faults/counters retained. Source538.988975
+and Data84.312942 charged once. No newfit or GPUuse inferred after closure.
 ReusedINNER remains adaptive, not independent replication. Paper runs separately.
 
 New100 raw campaign COMPLETE at

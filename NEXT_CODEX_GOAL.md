@@ -2,10 +2,18 @@
 
 ## One Company Outcome
 
-current-nas-owned-model-paper-cycle-v1 remains UNFINISHED: reconcile exact
-owned exits/fills/inventory/terminal closure for the8 retained FULL NAS entry
-events inside ONE original shared virtual-cash tenth. Not a fresh holdings
-count or a research-package completion. Fees/settled cash/net PnL UNKNOWN.
+current-kis100-hgb-operational-paper-entry-v1 remains UNFINISHED: connect the
+existing frozen HGB saved point to a source-bound KIS Paper entry with exact
+intent/accepted-submit/fill/owned-position reconciliation inside ONE original
+shared virtual-cash tenth. Preparation or a no-intent is not a fill; never
+force a signal, replace an unknown request or reset capital.
+
+Previous current-nas-owned-model-paper-cycle-v1 is COMPLETE for retained native
+lifecycle only: projection febc9bff at15:50:12UTC verifies8buyFULL/8sellFULL,
+zero positiveowned/pending/unknown and16terminal; later separate HGB custody
+AttributeError does not erase the completed original8 parse. Exact evidence:
+A/execution/current-kis100-technical-factor-tree-paper-preparation-20261021-v1/deployment-r1/custody-ro-r2/actual/RESULT.json.
+This is not a fresh broker snapshot or fees/settlement/net PnL observation.
 
 ## Resume / Authority
 
@@ -19,16 +27,15 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
 
 ## Ready Work
 
-1. Execution/parent: integrate current original8 closure through exact existing
-   strict offline readers when quiescent. Retained1 linked sell fill is NOT
-   terminal/current flat proof. Actual no-intent cause remains UNKNOWN:
-   later diagnostic snapshot failed stock_exit_snapshot_invalid beforebuilder.
-   Parent stable first exit-decision/session+basket patch passes143focused
-   tests; fresh full18623PASS25skip/clean helper exit0, independent160PASS.
-   Retain all120s freshness/pending-first/
-   budget/inventory guards. Verify and deploy exact patch only if needed;
-   source edits alone are not deployment. Do not replace identity or run a
-   consumed diagnostic/schedule manually.
+1. Execution/parent: integrate the minimal direct-owned successor only after
+   full host/Guard/exchange/container-predicate native wiring and independent
+   proof. Current Source54984aab/HOST5ca459b6 is not operationally qualified:
+   redirector identity now qualified in wiring-r2, but named-process refusal
+   then actor-metadata JSONDecodeError left full wiring unproved. Preserve exact
+   per-wire source/process authority, native bank/session locks, pending-first,
+   quote/account120s freshness and deterministic sizing. Parent runtime GO
+   binds exact qualified successor and fresh verification e3657d0f, not just
+   a source plan. No broker effect before actual readiness; no new human hold.
 
 2. Boole: disjoint HGB operational Paper preparation. Completed savedpoint
    current-kis100-technical-factor-tree-provisional-point-20261021-v1:
@@ -56,12 +63,15 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1. Wegener
    development COMPLETE07e4245d/25epochs/best5/5050CUDAupdates/330checks/
    proper-financeFAIL/0LATER/alljoined/GPUreleased. No rerun.
-   Next onefold calibration Source82410de2/Data supportbaa81cd7 READY:
-   TRAIN<=2016/CHECK2017/OOF2018 with purgedH1/H2meta roles; twoexperts/onebeta.
-   Noether materializes isolated fitlabels/OOFX/heldtargets under frozen
-   producer plan; Wegener binds exact produced hashes before native/fitting.
-   Never require future payload hashes before Data may create those files.
-   Old four-fit OOF_NOT_READY/F1TRAIN54<64 stays, no rescue/regrading. Operator
+   Onefold calibration COMPLETEcdc6270d: HGB33/53stage; CUDA ListNet29epochs/
+   best9/2233updates/117.114s, beta.02413625/INNERKL improvement.126percent
+   below frozen1percent/FAIL/oneintake/0financialreplay-LATER/alljoined.
+   HGB later Source2720ecf1 could not establish globally untouched2024-25;
+   no later numerical opening or oldFAIL regrade. TabM/MLP actual family is
+   COMPLETE9f0db908: CPU MLP32best8/6464updates and concurrent CUDA TabM34best10/
+   6868updates/526.666fitterseconds, properFAIL/relative financePASS/LATER0/
+   alljoined/GPUreleased. It trails cachedHGB; no repeat or alpha claim.
+   Old OOF_NOT_READY failure and debits stay; no duplicate fits. Operator
    GPUpriorityFIRST/personalco-use/concurrentreadyjobs is recorded inAGENTS;
    actualresourceadmission repaired, not another approval hold or extra trial.
 
@@ -72,17 +82,23 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    verified ownTask rollback/ABSENCE3c88a2e8/0Run-API/alljoined. No fourthblind
    Scheduler retry; direct-launch-r1 actualhandoff16:10:03 then token-guard
    no-auth closure/0newGET-POST, old counts unchanged. Einstein
-   token-floor-recovery-r1 verifies shared timing before prospective scoped
-   calibration under documented one-minute issuance; new600Source/new4200
-   worker/18000integrationceiling carries allolddebits once. No mark reset,
-   age reclaim or actual new auth/acquisition inferred. No manualTaskRun/
-   APIbefore16:10. Preserve0067/58CLOSED researchsnapshot;<=2288newGET/
-   4000lifetime,1newPOST/3lifetime,4200active7200elapsed/APIcurfew18:00.
+   token-floor-recovery-r1 actually4GET/1POST/276newrows then inherited
+   CONTRACT.limitations closure fault. Offline506e0b11/f1165855 repairs exact
+   retained metadata:59qualified/8unavailable/33remaining,0duplicates/0API;
+   old0067research unchanged. NEW current-kis-modp1-historical100-continuation-20261022-r2
+   delegates900Source/native thenonequietworker10800active14400elapsed/
+   APIcurfew19:30UTC/cleanup19:40, NEW24000integrationceiling includes allold
+   10309.711287 once. Carry chargedGET exactly/cumulative4000; oneNEWPOST/
+   cumulative4, old3consumed never refunded. Samecursor/source/pacing/60s
+   issuance gate/atomic exclusion, full finalize lifecycle SYN before auth.
+   Actual source d4551848/PID46212/start17:22:02;17:48:44 safe progress records
+   268newGET/1newPOST/26017newbars/62closed/12unavailable/26remaining.
+   No further parent/human approval; do not duplicate this active collector.
    Current Paper owners preempt. Worker owns next_due, not foreground wait.
 
 ## Completion / Continuation
 
-Exact original8 exit/fill/owned-flat/terminal evidence is required for this
+HGB accepted-submit/exact fill/owned-state evidence is required for this
 company outcome; keep fees/settlement/net PnL unknown without exact evidence.
 Tracked/runtime changes require changed-path serial tests, fresh
 scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and default/research/

@@ -6,7 +6,13 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
-Current asof16:20UTC. No activecollector inferred from a handoff alone.
+Current asof17:48:44UTC. Actual acquisition-r2 PID46212/start17:22:02 RUNNING;
+source d4551848/PROGRESS.json under
+A/data/current-kis-modp1-historical100-continuation-20261022-r2.
+268newGET/1newPOST/264acceptedpages/26017newbars;1969totalpages/188362rows/
+62closed/12unavailable/26remaining. Minwire3.983s/mean5.938sperGET including
+guard/IO/ownerwaits;3noHTTPyieldcycles/ETAunknown/finalityNOT_OBSERVED.
+Original0067 unchanged. Worker owns next_due/APIcurfew19:30/cleanup19:40.
 New exact continuation root:
 A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1.
 CONSUMER86479b7a/sourcef4498f5d/worker94e05954/job4bae4675,
@@ -29,8 +35,23 @@ Einstein token-floor-recovery-r1 now verifies first cause/shared issue timing
 and prepares prospective scoped correction under official one-minute issuance
 evidence, <=600Source +new4200worker/NEW18000integrationceiling. Old clocks,
 GET/POST charges and consumed claims stay; no age reclaim/timestamp reset.
-No new auth/collection inferred from that preparation. Source/GET/POST/windows
-remain frozen until its actual new native qualification. No installer reruns.
+Actual token-floor-recovery-r1:4GET/1POST/276rows/minwire4.284s then
+CONTRACT.limitations finalize fault. Old58qualified vs59cursor distinction
+was retained, not silently called complete. Offline repair COMPLETE:
+A/data/current-kis-modp1-historical100-closure-metadata-recovery-20261022-v1/CONSUMER.json
+506e0b11/FINALf1165855: exact4pages/276uniquebars/0duplicates/59qualified/
+8unavailable/33remaining;9native finalize tests+independent verify/0API,
+alljoined/10309.711287cumulativeupper. Old0067/source/manifests untouched.
+NEW current-kis-modp1-historical100-continuation-20261022-r2 owns900Source/
+native thenonequietworker10800active14400elapsed/APIcurfew19:30UTC/
+cleanup19:40/NEW24000integrationceiling includes allolddebits once. Exact
+chargedGET carry/cumulative4000, oneNEWPOST/cumulative4 (old3consumed not
+refunded), same60s/atomic exclusion/pacing/cursor/no oldpagesrefetch. Full
+multi-symbol/finalize/progress/error SYN before automatic owned launch. No
+new acquisition now evidenced above; no further parent/human approval needed.
+Parent disabled completed Original8 Task17:14:06 after exactclosure/source
+checks and XML/ACL backup; no running actor/manualRun or otherTask mutation.
+It remains registered, disabled, not an absent required model task.
 Prepared pythonw16:10UTC,APIcurfew18:00/workerend18:10,
 4200newactive7200elapsed; old5795.203913once+900Sourceonce, no refunds.
 <=2288newGET/4000lifetime,<=1newPOST/3lifetime, same validtoken/client/gates.

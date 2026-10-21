@@ -2,12 +2,15 @@
 
 ## Current Reality
 
-2026-10-21, 16:35UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
+2026-10-21, 17:50UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED:
-eight retained FULL entry events need exact owned exits, fills, inventory and
-terminal reconciliation. They are not a fresh holdings count. Fees, settled
-cash and actual net PnL UNKNOWN. No operator decision is currently required.
+Company current-kis100-hgb-operational-paper-entry-v1 remains UNFINISHED:
+connect the fixed HGB savedpoint to actual linked Paper entry/fill/owned-state
+reconciliation inside the existing shared bank. No operator decision required.
+Previous original8 native lifecycle is COMPLETE asof15:50:12UTC:8buyFULL/
+8sellFULL/16terminal/zero positiveowned-pending-unknown, projectionfebc9bff.
+This is retained native state, not fresh broker holdings. Fees, settled cash
+and measured net PnL remain UNKNOWN.
 
 AGENTS.md owns standing private free Data/Research/KIS Paper authority.
 Preserve ONE original shared virtual-cash tenth, owned costs/losses, pending
@@ -21,12 +24,12 @@ D free last measured38.9percent; preserve15percent/warn20percent.
 
 | Owner | Actual Work / Next Consumer |
 | --- | --- |
-| Parent | GPU priority/concurrency rules and postOPEN input verified; fresh18659fullPASS25skip/259rolefocusedPASS. Integrate/Git, no company closure inferred. |
-| Boole / Execution | HGB cold import fixed/native qualified; actual Task created DISABLED, failed native default/projection checks/0Enable-Run. New bounded minimal owned-runtime recovery decision/source. |
-| Noether / Engine-Strategy | Initial OOF NOT_READY/54TRAINdates; new onefold Source READY82410de2/Data support READYbaa81cd7, physical fit/OOF packet preparation. |
-| Wegener / Engine | Cross-stock CUDA COMPLETE25epochs/best5/5050updates/330checks/FAIL/0LATER. New onefold HGB/ListNet/calibration numerical preparation, not a running GPU fit. |
-| Hubble / invoked review/Execution | R5 source READY/not deployed; FUND20 cold-import successor128native+26independent READY/not deployed. Independent onefold chronology review. |
-| Einstein / Data | Actual quiet handoff16:10 then token-guard no-auth closure/0newGET-POST. Scoped measured token-floor recovery source, no fourth Scheduler retry. |
+| Parent | Original8 closure integrated/oldTask disabled with backup; fresh540serial+18659fullPASS25skip/e3657d0f. HGB runtimeGO only after wiring proof; shared MD/Git. |
+| Boole / Execution | Redirector identity qualified in wiring-r2, full host stopped FOREIGN_NAMED_PROCESS before exchange. Actor-metadata fixture failed JSON parsing; bounded technical successor, no activation. |
+| Noether / Engine-Strategy | TabM Source3cf2e337/Data reusebb1e5c94 COMPLETE; actual family closed9f0db908. No duplicate input materialization or fit. |
+| Wegener / Engine | TabM CUDA34/best10/6868updates and concurrent CPU MLP32/best8/6464updates COMPLETE; properFAIL/relative financePASS/LATER0/alljoined/GPUreleased. |
+| Hubble / invoked review/Execution | Original8 scoped closure review99038031; direct wiring boundary findings656a29d1. Independent successor checks only after exact Source ready. |
+| Einstein / Data | Acquisition-r2 PID46212 RUNNING asof17:48:44:268newGET/1newPOST/26017newbars;62closed/12unavailable/26remaining. Worker owns due/curfew. |
 
 One Steward resource coordinator uses A/engine-research-agent/locks/gpu.lock;
 multiple ready child trainings are approved when measured headroom permits.
@@ -51,12 +54,20 @@ Retained13:52 snapshot verified8 original buy FULL fills and1 exact sell FULL
 fill; its owner changed during inspection, so terminal/current state UNKNOWN.
 Exact14:37 closure-readback-r1 verified4linked sellFULL/4positive owned
 candidates/12terminal/no pending, NOT current fresh broker holdings or closure.
-Execution subsequently reported a15:50:12 native projection with8linked sellFULL,
-completed_owned_flat/zero positive inventory-pending-unknown. Parent pure public
-reader independently reports complete/already_completed/0requests. That public
-dispatch does NOT prove fills; the exact new private-projection evidence pointer
-has not yet been integrated. Keep company closure explicitly unfinished pending
-that binding, not a global hold on independent research or Paper preparation.
+Exact15:50:12 projection now bound and hash checked:
+A/execution/current-kis100-technical-factor-tree-paper-preparation-20261021-v1/deployment-r1/custody-ro-r2/actual/RESULT.json
+febc9bfff2be356370dd14bdf9107dede86a3fafe552d8df168626e13a47ac20.
+8buyFULL/8sellFULL/16terminal/zeroowned-pending-unknown/privatebytesunchanged.
+Its later HGB_EXACT_NEW_POLICY_CUSTODY AttributeError is separately scoped,
+not retroactive invalidation of Original8. Public complete alone does not count
+fills; exact projection supplies cardinality/linkage. Independent review
+current-nas-native-lifecycle-closure-classification-20261022-v1/FINAL.json
+99038031/SOUND_WITH_NAMED_LIMITS confirms narrow closure; review active
+231.2583548/180 overrun remains disclosed, no compliance claim or new probe.
+At17:14:06 parent disabled ONLY completed Original8 Task after exact launcher/
+closure checks/quiescent status. XML/ACL backups and result:
+A/execution/current-nas-completed-task-retirement-20261022-v1/RESULT.json.
+OneDisable/0Run-Delete-broker-privatewrites; other tasks untouched.
 Diagnostic token-due-r1/opportunity-r1 used2GET/1POST; snapshot failed
 stock_exit_snapshot_invalid BEFORE builder. Historical no-intent cause UNKNOWN.
 Do not turn synthetic quote-order counterexample into an actual-cause claim.
@@ -129,9 +140,22 @@ import failure was repaired in a successor, not old source. Registration strips
 zero RandomDelay; runtime strict check rejects the omitted default and frozen
 release projection mismatches. Installer-only repair was insufficient:
 deployment-r2/installer-default-readback-r1/FINAL-READBACK.json bc21c976.
-Boole new current-kis100-hgb-direct-owned-recovery-20261022-v1 compares the
-smallest existing native owned-process path with exact semantic Task repair.
-No blind enable/new slot/backdating/substitute unknown request or forced trade.
+Direct source54984aab/HOST5ca459b6 preserved, not deployed. Actual
+activation-wiring-r1/FINAL599414f5 stopped3times at EXACT_SELF before exchange/
+credentials/broker. Real reproducer proves physical base-exe/hash correct but
+argv0 uses pinned venv redirector; scriptpath slash spelling also differed.
+Activation-wiring-r2 qualified pinned parent-child/argv/source relation, then
+stopped FOREIGN_NAMED_PROCESS before exchange; FINAL07d73568/533of600seconds.
+Historical denied actor was not retained and remains UNKNOWN. Current named
+Data PID46212 is GET-only, not proof of that historical cause or a broker writer.
+actor-classificationmetadata-r1 failed JSONDecodeError before the fixture
+classification; no full wiring PASS, credentials, broker or Task activation.
+Repair exact capability/parent-child coordination, not a blanket Python allow.
+Resource privileged/hostPID/capability negatives and complete host/Guard/
+exchange native fixture still required; no actual activation inferred.
+Prospective operational window16:50..19:30UTC/sameOct27exit, samepoint/bank.
+Fresh runtime compatibility e3657d0f plus exact external proof bind ParentGO.
+No blind enable/backdating/substitute unknown or forced signal.
 
 Masked closure:
 A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json
@@ -163,11 +187,25 @@ fixed rank spread can penalize weak useful ordering; synthetic diagnosis only.
 Old four-fit OOF NOT_READY/F1TRAIN54<64, no fits or numerical OOF labels.
 NEW onefold Source82410de2/Data supportbaa81cd7: TRAIN306/CHECK247/OOF247,
 purged2018H1meta121/H2meta122; all100 retained/fold-local affines.
-Noether materializes separate fitlabels/OOFinput/heldtargets; producer plan can
-freeze before payload creation, then Engine binds exact hashes before fitting.
-Do not circularly require future payload hashes to authorize their creation.
-Wegener next1CPUHGB/1GPUListNet/1beta preparation; no final-cache refits/
-forwards, new financial replay or LATER. No actual new fit inferred from dispatch.
+Actual isolated Data b74bdf09/DTO7d98729b complete; onefold numerical
+COMPLETEcdc6270d/189checks13SYN/4548.110414totalupper/alljoined/GPUreleased.
+HGBselected33/53; CUDA ListNet29epochs/best9/2233updates/117.114fitter seconds.
+Beta.02413625 improves INNER KL.126percent vsuniform, below frozen1percent:
+FAIL/oneintake/0financialreplay-LATER. No holdings/profit improvement claim.
+New HGB later financial Source2720ecf1 found globally untouched2024-25 NOT
+supportable (old broad25 already opened overlapping outcomes). Exact100 custody
+unresolved, no later numerical intake or fabricated independent replication.
+TabM32/factorMLP actual family COMPLETE17:37:16UTC:
+A/research/current-kis100-tabular-ensemble-factor-development-20261022-v1/FINAL.json
+9f0db9084d6e0323bdbcf1f6b166c119fb0462020b216f80a8addad1190e6d47.
+CPU MLP started17:23:59 and CUDA TabM17:24:00: actual concurrent CPU/GPU,
+not multiple independent CUDA trainers. MLP32epochs/best8/6464updates/
+415.971fitterseconds; TabM34/best10/6868updates/526.666fitterseconds.
+TabM10bp growth+2.3196percent/DD5.1603 versus cachedHGB+5.7163/4.7893;
+properFAIL/relative financePASS/oneINNER15cells/LATER0/alljoined/GPUreleased.
+18uniqueSYN+23independent checks,4lint findings retained;2759.201921totalupper
+includesSource/Data/failures/artifact-only repair once. No refit or current
+training inferred after closure. Source3cf2e337/TabMv0.0.3Apache2 unchanged.
 Older model families/curves/custody remain in Engine stateboard/Git/immutable A.
 
 ## Data / Recovery
@@ -176,7 +214,7 @@ Frozen research manifest0067 SHA81ad6523 at:
 M/us_equities/research_inputs/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1/manifests/0067.json.
 58CLOSED/1PARTIAL33PENDING8UNAVAILABLE,162069canonical/137469admissible rows;
 1712chargedGET1711actual/1701pages/2POST/alljoined/5043.407856upper.
-No active collector. Stop was an anonymous future-due guard, NOT provider quota.
+That collector is closed. Stop was a future-due guard, NOT provider quota.
 Same NAS/GUBN0/MODP1/asofOct20/oldest20070820; no raw0/fixed47 splice.
 6native OHLCV fields have no provider complete flag: calendar interval elapsed
 is separate; finality/arrival/PIT/total return NOT_OBSERVED, missing data unknown.
@@ -196,10 +234,19 @@ New600active1800elapsed prep/13200integrationceiling included olddebits once+
 4200futureworker. Actual direct-launch-r1 handoff16:10:03, goal_owned_process,
 then PARTIAL_CLOSED/FRESH_TOKEN_GUARD_BOUNDED_YIELD_NO_AUTH/0newGET-POST.
 Old58closed/1701pages/162069rows/POST2 unchanged; not quota or new collection.
-Einstein token-floor-recovery-r1 checks actual shared timing before prospective
-scoped60s calibration against documented one-minute issuance. New600Source/
-4200worker/18000integrationceiling carries allolddebits once; no timestamp reset,
-age reclaim or GET/POST/window expansion. No actual auth/progress inferred yet.
+Token-floor-recovery-r1 actually4GET/1POST/276rows, minwire4.284s then inherited
+CONTRACT.limitations closure fault. Offline506e0b11/f1165855 recovers exact4
+pages/276unique bars/zero duplicates/59qualified/8unavailable/33remaining;
+9native finalize tests+independent verify/0API/alljoined/10309.711287cumupper.
+NEW current-kis-modp1-historical100-continuation-20261022-r2:900Source/native
+then10800active14400elapsed onequietworker/APIcurfew19:30/cleanup19:40,
+new24000integrationceiling carries allolddebits once. CumulativeGET4000,
+oneNEWPOST/cumulative4 (old3consumed unchanged), native60s/atomic exclusion,
+full lifecycle SYN before auth. Actual PID46212/start17:22:02; source d4551848.
+Safe PROGRESS.json asof17:48:44:268newGET/1newPOST/264acceptedpages/26017newbars,
+1969totalpages/188362canonicalrows/62closed/12unavailable/26remaining.
+Minimum new wire interval3.983s; measured5.938s/GET includes guard/IO/waits.
+Providerfinality NOT_OBSERVED/remainingETAunknown; original0067 unchanged.
 Do not rerun consumed installers or claim task enabled. Fresh Paper
 owners preempt; worker owns due/token gates/no foreground sleep.
 
@@ -212,7 +259,12 @@ support other bounded research; data shortage is not a global authority hold.
 
 ## Verification / Git
 
-Current authority A/verification/post-open-paper-gpu-policy-20261022-v1/attempt-r2/authority.json
+Fresh direct-runtime compatibility:
+A/verification/current-hgb-direct-runtime-20261022-v1/actual/authority.json
+e3657d0f:540serialPASS/18659fullPASS25skip/cleanhelper8workers/Ruff/three
+sample-envCompose/source-controlbefore-after exact. This does NOT qualify
+external direct-host wiring, authorize broker effects or prove fills/PnL.
+Base authority A/verification/post-open-paper-gpu-policy-20261022-v1/attempt-r2/authority.json
 760d736c:18659fullPASS25skip/1375sources123a2072/259rolefocusedserial exact
 hashes+7nativeoverlay/8workers/cleanhelperexit0/Ruff/three sample-envCompose.
 Fresh before/after source+AGENTS/DECISIONS equality/fullJUnit/complete logs.

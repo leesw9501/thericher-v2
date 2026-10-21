@@ -2,7 +2,8 @@
 
 2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own coordinated GPU resources/trial custody, not model choice or human approval.
-Parent shared MD/Git; company NAS lifecycle UNFINISHED.
+Parent shared MD/Git; prior NAS lifecycle COMPLETE/febc9bff;
+current HGB operational entry UNFINISHED.
 
 ## Actual Resources / Ready Queue
 
@@ -33,11 +34,21 @@ Cross-stock development now COMPLETE07e4245d: actualCUDA25epochs/best5/
 alljoined/GPUreleased/2624.153626totalupper. It actually started16:04:34UTC;
 16:07 sample33percent/2363of24564MiB/41C is historical aggregate use, not a cap
 or evidence training is still running. No model/GPU repeat after completion.
-Next onefold calibration Source/Data and numerical preparation is owned by
-Noether/Wegener; actual fit needs its own runtime evidence. Initial OOF family
-closed NOT_READY (54TRAINdates<64), not a global GPU or Paper hold.
-Co-run genuinely ready distinct frozen work with headroom; concurrency
-permission is recorded, simultaneous market trainings are not yet evidenced.
+Onefold calibration also COMPLETEcdc6270d: actualCUDA29epochs/best9/2233updates/
+117.114fitter seconds/189checks13SYN/FAIL/oneintake/0financialreplay-LATER/
+alljoined/GPUreleased/4548.110414totalupper. Not currently training.
+Initial OOF NOT_READY (54TRAINdates<64) remains separate, not a global hold.
+TabM32/factorMLP Source3cf2e337 CPU45checks and Datareusebb1e5c94 COMPLETE.
+Actual family COMPLETE17:37:16UTC/FINAL9f0db908/alljoined/GPUreleased:
+CPU MLP32epochs/best8/6464updates/415.971fitterseconds and CUDA TabM34/best10/
+6868updates/526.666fitterseconds. They started17:23:59/17:24:00 respectively;
+actual simultaneous CPU/GPU work, NOT two independent CUDA trainers.
+2759.201921closedupper includesSource538.988975/Data84.312942 once plus failed
+transport/artifact-only repair/cleanup.18uniqueSYN+23independentchecks/4lint
+findings retained/properFAIL/relative financePASS/oneINNER15cells/LATER0.
+No completed-fit repetition or ongoingGPUclaim after closure. Co-run distinct
+ready frozen work with measured headroom under one existing coordinator;
+concurrent permission is recorded, multiple-CUDA training not yet demonstrated.
 
 Operator2026-10-22KST gives projectGPUpriorityFIRST, allows personal/external
 GPU co-use and concurrent distinct ready trainings. Do not require an app-name

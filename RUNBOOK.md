@@ -7,9 +7,10 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Run scripts/start_next_codex_task.ps1, then current goal/HANDOFF/AGENTS/roles.
 An MD is memory, not a running actor/GPU. Check exact actor/receipt/lease
 identity after interruption; never age-reclaim or repeat completed fits.
-Company current-nas-owned-model-paper-cycle-v1 UNFINISHED. Existing8NAS
-entry events need owned exit/fill/inventory/terminal evidence, not a fresh
-holdings count. Fees/settled cash/actual net PnL UNKNOWN.
+Company current-kis100-hgb-operational-paper-entry-v1 UNFINISHED.
+Prior8NAS native lifecycle COMPLETE/febc9bff asof15:50:12:8buyFULL/8sellFULL/
+16terminal/zeroowned-pending-unknown. Not a fresh broker holdings count.
+Fees/settled cash/measured net PnL UNKNOWN.
 Standing private free Data/Research/KIS Paper delegated; never KIS_LIVE_*,
 real money, secret/account/order/raw-market/private output.
 Consumed installers/forecasts/fits/maintenance are NOT metadata readers.
@@ -53,7 +54,12 @@ inAGENTS/DECISIONS; old desktopapplication-name hold superseded prospectively.
 
 ## Verification
 
-Current actual tracked authority:
+Fresh direct-runtime compatibility authority:
+D:/thericher-v2/model-artifacts/verification/current-hgb-direct-runtime-20261022-v1/actual/authority.json
+e3657d0f6be934a6a1d1b0c3d88365b9d2c72e48a41e0dba1a32dfeced4fd0bd:
+540serialPASS/18659fullPASS25skip/clean8workers/Ruff3sample-envCompose/
+source-controlbefore-afterexact. Does not qualify external wiring or brokerGO.
+Base actual tracked authority:
 D:/thericher-v2/model-artifacts/verification/post-open-paper-gpu-policy-20261022-v1/attempt-r2/authority.json
 760d736cfff63cefd346aeae8014700aca113151b59ff50766fc2589d86ed508.
 1375sources123a2072/259rolefocusedserialPASS matchedtrackedhashes/
@@ -85,7 +91,10 @@ not yet actually deployed in a new image/Task. The former
 retains actual firstdecision perbasket/session beforeclient/network; pending
 recovery/quote120s/bank/ownedinventory unchanged. Historical denial cause
 UNKNOWN: latest readonly diagnostic failedsnapshotbeforebuilder. Inspect exact
-original8 terminalclosure first; do not retarget a completed owner.
+original8 exactclosurefebc9bff/independentreview99038031; never retarget a
+completed owner. Parent disabled its originalTask17:14:06 with XML/ACLbackup:
+D:/thericher-v2/model-artifacts/execution/current-nas-completed-task-retirement-20261022-v1/RESULT.json.
+No Run/Delete/broker/privatewrites. Old HGBTask remains disabled separately.
 Boole HGB deployment-r2 created DISABLED Task,0Enable-Run, old16:00..16:30
 entry expired. Cold source qualified; omitted-zero RandomDelay/runtime and
 release-projection mismatch remain. Installer-only proofbc21c976 did not fix
@@ -93,10 +102,24 @@ runtime. current-kis100-hgb-direct-owned-recovery-20261022-v1 compares minimal
 existing native owned-process path versus exact semantic Task repair; no blind
 enable/backdate/substitute or forced signal. Newprofile input8c192808/policycd1d8572
 preserves olddefaultbytes and actual13:41publication/priorOct20CLOSE.
+Direct native Source54984aab/HOST5ca459b6 remains unqualified: actualhost
+wiring-r1 stopped EXACT_SELF/0exchange-credentials-broker,902/900activeoverrun
+retained. Fix exact pinned base/venv parent-child+argv/source identity, then
+actualhost/native fixture/resource negatives/independentproof/freshcustody.
+No further blind activation or invented broker issue. Parent runtimeGO binds
+exactqualifiedsuccessor+freshcompatibilitye3657d0f before any real effect.
+Wiring-r2 FINAL07d73568 qualified redirector identity then refused a named
+process before exchange. Historical denied identity UNKNOWN; current Data
+PID46212 is GET-only. actor-classificationmetadata-r1 failed JSON parsing,
+not a valid native wiring PASS. Repair exact capability/paired-process checks
+and shared-opener coordination; never blanket-allow unknown broker mutators.
 Data continuation install-r3 failedquietsettingsguard then verifiedexactTask
 absence; FINALa8b2b607/freshabsence3c88a2e8/0Run-API. Directhiddenworker
 actualhandoff/token-no-auth closure is separate, not Schedulerinstallation/
 successful acquisition by inference. Do not rerun consumed installers.
+Actual acquisition-r2 Source d4551848/PID46212 started17:22:02; safe PROGRESS
+at17:48:44 records268newGET/1newPOST/26017newbars/62closed/12unavailable/
+26remaining. APIcurfew19:30/cleanup19:40UTC; worker owns due and finite limits.
 
 - Original8NAS: image876/source d2d4b108, exitOct21>=13:40UTC=22:40KST.
 - Window21 R5 SAME original -r2Tasks: prep13:10/entry14:00UTC,

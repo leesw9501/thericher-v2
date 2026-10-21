@@ -1,16 +1,17 @@
 # Execution Stateboard (모의투자 실행 담당)
 
 Oct21KST/UTC. A=D:/thericher-v2/model-artifacts. Company
-current-nas-owned-model-paper-cycle-v1 UNFINISHED. Parent owns shared MD/Git.
+current-kis100-hgb-operational-paper-entry-v1 UNFINISHED. Parent owns MD/Git.
+Original8 native lifecycle COMPLETE/febc9bff, not fees/netPnL completion.
 AGENTS.md owns standing Paper authority/risk, not model profitability.
 No actor/API/fill inferred from this MD; no KIS_LIVE_* or secret/private output.
 
 ## Current Owned Lifecycle
 
-As of14:37UTC original8 retained FULL NAS entries need exact owned exits/fills/
-inventory/terminal closure. Not a fresh distinct-holdings count. Fees/settled
-cash/netPnL UNKNOWN. Taskthericher-kis-paper-current-nas-model-20261015,
-source d2d4b108/image87697f8e,exitOct21>=13:40UTC; oldnaturalowner continues.
+Original8 retained native lifecycle COMPLETE asof15:50:12UTC/febc9bff, not
+a fresh broker-holdings/fees/settlement/netPnL claim. Its completed Task was
+disabled17:14:06 with XML/ACL backup. New HGB entry remains UNFINISHED;
+no operator permission hold and no actual HGB activation inferred.
 
 Retained13:52 privateRO inspection:
 A/execution/current-nas-owned-exit-opportunity-20261021-v1/CONSUMER.json.
@@ -70,8 +71,35 @@ operational recovery, not bypassing risk.
 Execution reported Original8 completed_owned_flat at15:50:12 with8linked
 sellFULL/zero positiveowned-pending-unknown. Parent public strictreader also
 reportscomplete/already_completed/0requests, which alone is not fill proof.
-Exact private-projection evidence pointer not yet integrated; do not replace
-that gap with an unbound attestation or actual netPnL claim.
+Exact projection nowhash-bound:
+A/execution/current-kis100-technical-factor-tree-paper-preparation-20261021-v1/deployment-r1/custody-ro-r2/actual/RESULT.json
+febc9bff; later HGBcustody AttributeError does not invalidate original8 fields.
+Native scope verifies8buyFULL/8sellFULL/16terminal/zeroowned-pending-unknown/
+privatebytesunchanged asof15:50:12. Independent scopedreview99038031 agrees;
+its231.258/180active overrun retained, not a compliance PASS.
+Parent17:14:06 disabled ONLY completed original8Task after exactlauncher and
+quiescence checks; XML/ACL backup/result at
+A/execution/current-nas-completed-task-retirement-20261022-v1/RESULT.json.
+OneDisable/0Run-Delete-broker-privatewrites; no other task touched.
+
+Newdirect Source54984aab/HOST5ca459b6 notactivated. Actual wiring-r1
+FINAL599414f5:3host.execute attempts stopped EXACT_SELF beforeexchange/
+credentials/broker;902/900active overrun disclosed/alljoined. Reproducer proves
+baseexe/hash correct, argv0 pinnedvenv redirector and sourcepath spelling
+differ; r2 must check the exact pinned parent-child/argv relation rather than
+repeat blind Docker attempts or weaken other guards. Full host/Guard/exchange
+native plus resource security negatives and independent successor proof remain.
+Fresh runtime compatibility e3657d0f:540serial+18659full25skip/Ruff3Compose,
+not evidence external wiring is ready. Parent exactruntimeGO remains unpublished.
+Wiring-r2 FINAL07d73568 qualified exact physical/logical interpreter identity,
+then FOREIGN_NAMED_PROCESS before exchange;533of600seconds/alljoined/0effects.
+Historical denied identity was not retained, remains UNKNOWN. Current live
+DataPID46212 is an exact GET-only source, not proof of historical fault or
+account mutation. Actor-metadata-r1 JSONDecodeError prevented fixture outcome.
+Boole owns concrete bounded classification/native wiring recovery, including
+exact paired research parent/child, Data shared-opener coordination and exact
+self-Task exemption if staged HGB Task is reused action-only. No blanket
+unknown-process allow, blind Docker retry or newly invented human approval.
 
 FUND20 separate cold-import SOURCE-R1 60e4a388 READY/notdeployed:
 A/execution/current-fundamental20-paper-cold-import-recovery-20261022-v1/FINAL.json

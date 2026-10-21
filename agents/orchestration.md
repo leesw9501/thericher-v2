@@ -1,21 +1,22 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-21 16:35UTC (2026-10-22KST). A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Company current-nas-owned-model-paper-cycle-v1 UNFINISHED. Eight retained FULL
-entry events need exact owned exit/fill/inventory/terminal closure; retained
-event counts are not fresh broker holdings. Fees/settlement/netPnL UNKNOWN.
+2026-10-21 17:50UTC (2026-10-22KST). A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Company current-kis100-hgb-operational-paper-entry-v1 UNFINISHED.
+Prior Original8 native lifecycle COMPLETE/febc9bff:8buyFULL/8sellFULL/16terminal/
+zeroowned-pending-unknown asof15:50:12, not fresh broker holdings.
+Fees/settlement/netPnL UNKNOWN. Its later separate HGB custody error is scoped.
 No current operator decision. Parent owns shared policy/goal/integration/Git.
 
 ## Ready / Owned / Due
 
 | Owner | Actual State / Concrete Consumer |
 | --- | --- |
-| Parent | GPUpriority/concurrency and opt-in postOPEN profile:18659fullPASS25skip/259rolefocused; integrate/source/Git, original8 closure not inferred. |
-| Boole / Execution | HGB cold successor/native ready but Task created DISABLED/default-projection mismatch/0Enable-Run. Minimal owned-runtime recovery source/decision. |
-| Noether / Strategy-Data | Onefold Source82410de2/Data supportbaa81cd7 READY; actual physically isolated fit/OOF packet materialization. Old F1TRAIN54<64 failure unchanged. |
-| Wegener / Engine | Cross-stock CUDA COMPLETE25/best5/5050updates/330checks/FAIL/0LATER/GPUreleased. Onefold numerical preparation, no current fit inferred. |
-| Hubble / invoked review/Execution | R5 source ready; FUND20 cold-source128native26independent ready/not deployed. Independent onefold chronology review. |
-| Einstein / Data | Quiet handoff16:10 then token-no-auth closure/0newGET-POST; measured token-floor recovery source, no fourthblindTaskretry. |
+| Parent | Fresh e3657d0f/540serial+18659fullPASS25skip; Original8 exactscope closed/Task disabled17:14 with backup; runtimeGO/integration/Git. |
+| Boole / Execution | R2 identity qualified, FOREIGN_NAMED_PROCESS before exchange; actor metadata fixture JSONDecodeError. Concrete bounded wiring/classification recovery, no activation. |
+| Noether / Strategy-Data | TabM Source3cf2e337/Datareusebb1e5c94 COMPLETE; actual family9f0db908 closed, no duplicate derivation/fit. |
+| Wegener / Engine | Concurrent CPU MLP32best8 and CUDA TabM34best10 COMPLETE;526.666CUDAfitterseconds/6868updates/properFAIL/finance-relativePASS/GPUreleased. |
+| Hubble / invoked review/Execution | Original8 closure99038031; direct boundary findings656a29d1, no wiringPASS. Independent successor only when exact Source ready. |
+| Einstein / Data | Acquisition-r2 PID46212 RUNNING17:48:44:268newGET/1newPOST/26017newbars/62closed/12unavailable/26remaining; worker owns due. |
 
 OriginalR5prep13:10 ACTUALsuccess ded0bdb0/entry14:00 actualunavailable/
 native_recovery_required/0declaredrequests0legs; exactcallbackcauseUNKNOWN.
@@ -27,14 +28,19 @@ F9 original unknown reservation remainsHELD; no expiry release/substitute.
 
 ## Throughput Review
 
-16:35UTC: pretrain/warm, ListNet and new cross-stock are COMPLETE, not still training.
+17:50UTC: pretrain/warm, ListNet, cross-stock, onefold and TabM/MLP COMPLETE,
+not still training. No dummy/repeated jobs for GPU utilization.
 The useful next hypothesis changes objective to stock ranking and composes a
 distinct tree expert, instead of repeating seeds/epochs on a failed MSE family.
 ListNet actualCUDA26epochs/best6/5252updates/272.381496fitter seconds,
 219checks/4347.086139wholeactiveupper/FAIL/0LATER/alljoined/GPUreleased.
 Cross-stock actual25/best5/5050updates/313.686713fitter seconds/330checks/
 2624.153626wholeupper/FAIL/0LATER/alljoined/GPUreleased. Next onefold
-calibration Source/Data support ready; actual fitting not inferred from prep.
+calibration actual29/best9/2233updates/117.114s, beta.02413625/.126percent
+KL gain<1percent/FAIL/189checks13SYN/alljoined/GPUreleased. TabM actual CUDA34/
+best10/6868updates/526.666fitterseconds ran concurrently with CPU MLP32/best8;
+actual CPU/GPU overlap, not simultaneous independent CUDAtrainers. FINAL9f0db908/
+2759.201921upper/alljoined/GPUreleased. No dummy or duplicate completedfit.
 15:27 aggregate33percent/2776MiB/45C was historical, not currentGPUactivity.
 Newoperator2026-10-22KST approval supersedes single-training/app-name holds:
 projectGPUpriorityFIRST even with personal/externalGPU use, concurrent distinct
@@ -46,11 +52,12 @@ A/review/operator-gpu-priority-20261022-v1/claude/RESPONSE.txt.
 Completed cold control remains reused, not refit.
 CPU HGB is deliberately CPU; no dummy GPU workload.
 
-Actual Paper exits have progressed (exact14:37 retained4linked sellFULL/
-4positiveowned/12terminal/nopending), but current closure UNKNOWN. Snapshotfailure
-beforebuilder does not prove earlier denial cause. Parent repairs a synthetic
-moving-decision counterexample without weakening quote freshness; exact source
-verification/deployment and actual result must remain separate.
+Actual original8 Paper lifecycle COMPLETE/febc9bff:8buyFULL/8sellFULL/16terminal/
+zeroowned-pending-unknown in retained native state15:50:12, not fresh broker
+holdings. Fees/settlement/netPnL unknown. New HGB entry wiring still unqualified;
+identity-r2 succeeded, actor-classification fixture failed before exchange.
+Do not repeat unchanged bad fixtures or classify current GET-only Data as an
+account mutator by name. Exact source/capability/shared-opener proof first.
 
 Reversible improvement: remove irrelevant desktopapp permission holds under
 explicitoperatorpriority and use measuredcapacity/actualprojectownership.
@@ -66,9 +73,15 @@ Further reversible improvement: avoid Data/NUM circular dependency. Freeze
 producer plan/source/partitions before creating numeric packs; bind their exact
 hashes before models, not before files can exist. Keep future OOF targets out
 of fit workers. Existing fits/caches/native codecs are reused, not new platforms.
-Paper HGB blocked by actual cold-import/native-default/projection faults, not
-operator permission. Exact original8 flat projection reported; public complete
-receipt alone is not fill proof, its private evidence binding remains pending.
+Paper HGB blocked by actual cold-import/native-default/projection/redirector
+identity faults, not operator permission. Exact original8 projection nowbound
+febc9bff and independently scopedreview99038031; no new private probe needed.
+Parent retired its completed2minTask17:14 after exactsource/closure/quiescence
+and XML/ACL backup, reducing irrelevant due-owner contention. OldHGBTask stays
+disabled; new direct execution retains native bank/session/request/risk guards.
+Data token60s worked, then missing CONTRACT.limitations broke closure; offline
+metadata fix qualified59. Nextworker must exercise full finalize/progress
+lifecycle before auth, not constructor-only checks or another Scheduler retry.
 
 ## Evidence / Recovery
 
@@ -79,7 +92,10 @@ Masked closure852405bb/f1ecfc81:60pretrain/best50+22warm/best2/16624updates,
 proper/financeFAIL, cachedCold reused0newfits/forwards,355.923leaseupper.
 Data frozen0067 81ad6523/58CLOSED137469admissible rows; sourcefinalitynotobserved.
 
-Current authority A/verification/post-open-paper-gpu-policy-20261022-v1/attempt-r2/authority.json:
+Fresh current authority A/verification/current-hgb-direct-runtime-20261022-v1/actual/authority.json:
+e3657d0f/540serial/18659fullPASS25skip/clean8workers/Ruff3Compose/exactsources.
+Compatibility only; external host wiring needs actual native/independent proof.
+Base authority A/verification/post-open-paper-gpu-policy-20261022-v1/attempt-r2/authority.json:
 760d736c/digest123a2072/1375sources,259rolefocusedserial/18659fullPASS25skip/
 cleanhelperexit0/Ruff/3ComposePASS/fullJUnit+logs/source-controlbefore-after.
 Prior independent review160PASS/no findings
