@@ -80,6 +80,12 @@ not proven by later0POST/historyabsence. No substitute/reset/repeated19GET.
 NAS accounting5f0d6f83/caller9fd7a2f2:
 D:/thericher-v2/model-artifacts/execution/current-nas-exit-accounting-readiness-20261020-v1/caller-r1
 27tests/SYN/Decimal, source-ready not actual accounting/netPnL.
+Actual native privateRO preflight COMPLETE3899e01e/ABId1efd7e8:
+D:/thericher-v2/model-artifacts/execution/current-nas-accounting-runtime-preflight-20261021-v1/FINAL.json
+Original8intent-fill-basis linkage verified/retained_active/notclosedflat;
+feesmissing/settlement-netUNKNOWN. OneprivateROcontainer/0API-writes-Tasks/
+50.943393upper/alljoined. Reuse the existing strict caller only after owned
+terminal exits; this is not freshbrokerinventory or measurednetPnL.
 Task Operational logging disabled: marker/hash/time honest-host provenance,
 not cryptographic OS scheduler origin. Exit/missing/preview/install not fill.
 
@@ -116,13 +122,32 @@ Exact source point:
 D:/thericher-v2/model-artifacts/research/current-broad25-recurrent-close252-prospective-point-20261021-v1/actual-r1/admission-r1/COMMITTED.json
 Transport-repair-r1/CLOSEDbc748883 reconciled oldabsence predicate without
 another modelcall; no numericalallowance/Task/broker/futuremarks. See Engine refs.
-Chronos FULL current family:
+Chronos FULL COMPLETE:
 D:/thericher-v2/model-artifacts/research/current-chronos2-oc512-full-adaptation-20261021-v1
-Data8cf1 READY; original native-actual/CLOSED33.167804/0optimizer/0market
-has caller mode-guard fault. New native-continuation-r1 owns explicit bounded
-successor, then conditional first1000step GPUfit. Never run oldhost/native
-as an inspection command. No actualfit inferred from plans; observe exact
-owned status only. Safeweights/curves A, not Git; see Engine/Steward caps.
+first-market-noresume-r1/FINALa52042b2/ABI04e23f51/readback8dbc9fdc:
+actualCUDA200updates/32.754145fitseconds/earlystop4/best0/alljoined/leasefree.
+Selectedoriginalbase; ADAPTEDexactoldISOLATEDweightalias. Pre-outcome dedup
+omitted/protocoldeviation: preserve51physicalforecasts/1intake/3replays,
+0uniqueincrementalcells/no refund. Allnative/fits/forecasts consumed;
+never run oldhost/native as a reader. Safeweights/curves A, not Git.
+OOF4CUDAfits also COMPLETEc9ea459f/RESULT6275a146 at
+D:/thericher-v2/model-artifacts/research/current-broad25-purged-expert-gate20-development-20261021-v1/FINAL.json
+66/30/62/63epochs/12679updates/90.604708GPUworkerwall seconds/
+18INNERreplays/frozenINNERFAIL/PREDoutcomes0/alljoined/leasefree.
+Percentile proposal PARTIAL_SOURCE/PARKED, late109s/29SYNchecks/RuffE731/
+missingheaderproof-source seal. NotSOURCE_READY/financialFAIL; no numericalGO.
+Intraday primary0b8a8053/delay89932212 COMPLETE, no Data rerun.
+D:/thericher-v2/model-artifacts/research/current-intraday-spy-qqq-c120-h60-development-20261021-v1
+FINAL4f8690d8/READOUT655caaa7 COMPLETE2CPUfits60/96epochs/best48/86/
+7488updates/139.654003marketworker seconds/875.654584totalupper/alljoined.
+closure-r1/CONSUMER882f5f3b/VERIFY60e16df6 retained397checks/RuffPASS,
+separate300auditupper =>1175.654584wholeupper, no originalFINAL rewrite.
+Read exact pointers/UTC-aware times; mixed DateTime kind filtering is not
+evidence that an artifact is missing. Parent25SYNchecks8bd7b371 also PASS.
+Proper/financeFAIL; CUDA SYN only4updates, not GPUmarkettraining.
+Coldbiasedroute retained, newfuturepace separates setup/warmedloop, no rerun.
+Next cost-aware price-volume attention/HGB source and compact OHLCVaddon
+are disjoint preparation, not current marketfit. See Engine/Steward actualstate.
 Never reinterpret NaN as neutral/economically
 known or relax old required-input contracts; new schema is optional-context.
 

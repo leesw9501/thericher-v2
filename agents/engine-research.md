@@ -82,74 +82,159 @@ Old600second/20epoch pace budget protects THAT closed recipe, not all TCNs.
 Primary TCN source https://arxiv.org/abs/1803.01271 and official MIT
 https://github.com/locuslab/TCN are generic sequence evidence, not stock alpha.
 
-## Current GPU Depth Campaign
+## Completed Foundation Depth Campaign
 
-Boole owns A/research/current-chronos2-oc512-full-adaptation-20261021-v1.
-Trusted95a9710/image d6b43213/Chronos2.2.2 explicit FULL; PEFT absent means
-LoRA would silently fall back to FULL, so do not invoke it. Base preserved.
-Data A/data/current-chronos2-oc512-adaptation-input-20261021-v1/CONSUMER.json
-8cf1abbb:81FITdates/2025tasks,46INNERdates/1150tasks;2x512context+20future,
-25tasks/date/50variates, physical20session purges. PREDcfede4a5 unchanged.
-One family5400active/14400elapsed inclreadiness100/Data32.680237/review60
-once/source/native/fit/forecast/readout/cleanup. Review0aab7c7 SOUND_WITH_NAMED_LIMITS.
-Native attempt33.167804 closed0optimizer/0market: our on_step_begin guard
-preceded HF training_step model.train after STEP0 validation. Caller-only
-successor authorized, same model/data/loss/seed/selection; all olddebits retained.
-Lifetime native<=12updates/64forwards/4saves/4restores; one extra allocation,
-explicit base2/SYNclone2/selectedlocal1/futuremarketclone1 construction census.
-Public actual optimizer/finitegrad/full50variate train-validation/headroom/
-STEP0+earliestbest-safe coldrestore/target-perturbation proof before market.
-Conditional ONE first FULL fit1000steps/eval50/pat4/LR1e-6/seed4101/1800s;
-no resume/retry after marketupdates, no holdout checkpoint selection. Old256
-was a proposal, not an actual marketfit. No actual fit inferred from this MD.
-Materiality selectednonzero and>=.1percent INNER quantileloss improvement,
-not significance. Once selectedstate frozen, one1275forecast and oneEval
-readout, max3newFT+9cachedcells. If selected0 exactalias, reuse originalbase
-e942 rather than duplicate forecasts. Mediancontrast is not expectedreturn.
-Corpusnot_disclosed/currentlisting-vintage/nonPIT/reused51dates remain;
-not independent alpha or authority to alter deterministic Paper risk.
+A/research/current-chronos2-oc512-full-adaptation-20261021-v1/first-market-noresume-r1/FINAL.json
+a52042b2/ABI04e23f51/independent-readback-r1 RESULT8dbc9fdc.
+ONE actual FULL CUDA fit200steps/32.754145fitseconds/INNERpatience4/best0,
+not a running trainer or 1000 completed steps. Trainloss fell/INNERloss rose;
+materialityFAIL/financeFAIL. Selected model is originalbase, not a new winner.
+51selectedforecasts/1outcomeintake/3physicalreplays/9cached controls consumed.
+Posthoc exactweight comparison found ADAPTED=oldISOLATED on all51dates:
+pre-outcome finalweight dedup was OMITTED. Named protocol deviation,0unique
+incrementalcells, no refunds/relabelled cached execution or newperformance.
+Next executors must seal actual FINALweight aliases before any outcome intake.
 
-Actual latest native result is UNAVAILABLE, not a market result:
-pre-native-cachepath-r1/FINAL at06:15:44 carried670.799499activeupper.
-Host/guest cachepath repair passed COLD;2nd actualGPU allocation completed
-twoSYNoptimizerupdates, then selected safe cold inference failed bit equality
-despite matching tensor-state hash. Numeric gap/cause not retained, UNKNOWN.
-Lifetime2GPU/2SYNfits/2updates/8forwards/3saves/2restores/0market/0PRED,
-allactorsjoined/leasefree. Selected SYNstep0 is originalweightddcda3, not a
-fine-tuned marketmodel. Never rerun consumednative/claimoldparityPASS.
-New diagnostic only: oneextraGPUallocation150active/900elapsed,<=16SYN
-forwards/2constructors/2safe-restores/0fits-updates-saves-market-PRED.
-Compare exactretainedweights/config/SYNinputs, modulemodes/nonpersistent
-buffers/attention/config/backend and quantifiedoutputgap. No tolerance rescue.
-Existing whole5400/09:27:42UTC elapsed deadline/debits retained. First market
-fit remains unstarted and depends on diagnosed readiness, not human approval.
+Trusted Chronos2.2.2/rev95a9710/image d6b43213/Apache2/FULL explicitly;
+PEFT absent, no LoRAfallback/newdependencies. Data8cf1abbb:81FITdates/
+2025tasks,46INNERdates/1150tasks,2x512past+20future with physicalpurges.
+Firstmarket frozen1000max/eval50/pat4/seed4101/LR1e-6/FP32/50variates,
+NORESUME/no retry. Actualselected safe cold parity passed BEFORE PRED.
+Wholeclosed880.651405activeupper/5400; allactorsjoined/leasefree.
+Lifetime4GPUallocations/2SYNfits+2SYNupdates/1marketfit+200updates/
+10constructors/5saves/6restores, oldfailednative caps not declared compliant.
+Native callback-phase/path/parity faults and diagnostic a289c681 stay immutable.
+Qualified EVAL/frozen/inference_mode/MATH and13buffers produced exactSYN
+parity0ULP; historical parity cause UNKNOWN, not retroactively resolved.
+Claude5a4b5b90 REVISE: new NORESUME readiness explicitly accepted only with
+same public-fit API/kwargs binding and actual-selected-weight cold parity.
+No optimizer-resume claim or unsafe state loader. Corpus/currentvintage/
+nonPIT/reused51dates remain adaptive development, not alpha or PaperPnL.
+This recipe is closed; no epoch/seed/forecast rescue to occupy GPU.
 
-## Portfolio Construction / Learned Fusion
+## Portfolio Construction
 
-Hubble allocation SOURCEbd5ad691/kernel8e101aa6/56checks led to completed
 A/research/current-broad25-causal-risk-allocation-proposal-20261021-v1/numerical-r1/FINAL.json
-e071bc01/RESULT3e466255/VERIFY PASS. One51date causal covariance/solvepass,
-1pricepacket/1retainedpolicy/1outcomeintake/6new12cachedcells/0models-GPU/
-354.459212activeupper/alljoined. Candidate .5 savedHALF+.5 cappedLW-minvar25;
-matchedBROAD replaces risk sleeve with uniform25. No newscore/rerank/grid.
+e071bc01/RESULT3e466255/VERIFY PASS:51causal LW-minvar solves,1pricepass/
+1policyread/1outcome/6new12cachedcells/354.459212upper/0models-GPU/alljoined.
+Candidate .5 savedHALF+.5 cappedminvar25; matchedBROAD uses uniform25.
 10bp growth/DDpercentNAV RISK+.530576/.175315, BROAD+.448637/.187780,
-HALF+.603040/.255495, uniform+.294233/.207221. Primary FAIL: growth below
-HALF and DD benefit vsBROAD under10percent. Useful risk-return tradeoff, not
-a regraded winner/independentalpha. Markedgross/cash/fees/turnover retained.
-Claudec3bd47fc SOUND_WITH_NAMED_LIMITS; exactgap2e-7/simplex2e-12 and any
-failedorigin=>wholeUNKNOWN already frozen.70uniquemarks, not1000 independent
-sessions; lowercost can legitimately improve cost-aware growth, not provealpha.
-Next literal-risk prospectivepoint onecurrentData+savedHALF/onesolve only,
-150active/1800elapsed/0models-GPU-outcomes-broker-Tasks, beforeOPEN orUNKNOWN.
-Existing future25marks reusable, no new schedule or model inference.
+HALF+.603040/.255495, uniform+.294233/.207221. Frozen primaryFAIL:
+growth belowHALF and DDgain vsBROAD under10percent. Useful risk-return
+tradeoff, not regraded winner. Markedgross/cash/turnover/fees retained.
+Claudec3bd47fc advisory; exactsolver tolerances and anyfailedorigin=>UNKNOWN
+were frozen.70uniquemarks, not1000 independentsessions/estimatedESS.
 
-Einstein SOURCE-only:
-A/research/current-broad25-purged-expert-gate20-proposal-20261021-v1.
-One shallow learned expert gate using chronological purged OOF predictions,
-never in-sample expert scores.120sourceactive/1800elapsed/no marketvalues/
-fits/forwards/PRED/GPU/Task. Inspect prior closedOOF source lessons without
-reopening results; explicit per-fold target/affine/calibration availability,
-h20purges, compatible costs/keys and reused-data claim. No numericalGO yet.
+Current literal riskpoint COMPLETE:
+A/research/current-broad25-causal-risk-prospective-point-20261021-v1/COMMITTED.json
+7c38f625 published06:26:30UTC<Oct21OPEN13:30. Data ddd00836/savedHALF ead52eb6/
+kernel8e101aa6/25known/1solve-composition-publication/121.267619upper/
+0models-GPU-labels-Eval-broker-Tasks/alljoined. ONE.005researchcohort to
+Nov17CLOSE21UTC. Future measurement manual-reuse pending; no new schedule.
+
+## Completed Purged Expert Gate
+
+A/research/current-broad25-purged-expert-gate20-development-20261021-v1/FINAL.json
+c9ea459f/RESULT6275a146/VERIFY PASS.4CUDA LSTMfits:
+OOF1 66epochs/best36/2706updates; OOF2 30/best0/1530;
+OOF3 62/best32/3844; FINAL63/best33/4599.
+12679updates/90.604708GPUworkerwall seconds, not separately measuredkernel
+time.1GPUallocation/8constructors/4selectedrestores/1tree/18INNERreplays/
+1outerintake/638.778194latestupper/allactorsjoined/leasefree. No new SYN fits.
+Data934d0685/39hashes/95.829790upper, foldlocalaffine/prior/checkpoints/
+targetmaturity/role mounts,3trueOOF scoreseals beforeteacher labels.
+All6finalpolicy matrices+aliases sealed beforeouteroutcomes.
+10bp INNER growth/DDpercentNAV GATE+4.553505/2.114546,
+HALF+3.495870/2.489434, UNIFORM+4.813713/1.920805,
+EXPERT+4.586725/2.114561, RNN+3.157103/2.579933.
+Frozen growth/DDcriteria FAIL. BetterHALFtradeoff is not a uniform-beating
+winner. PRED outcomes0, skipped onfixedINNERfail; no rerun/extraepochs.
+
+OOF leaves186/297 shifted to INNER7RNN/603EXPERT; PREDpresealedexact
+EXPERTalias all51dates. ClaudeRAW6b3dfcc4 REVISE transfer risk realized,
+no normalization retrofitted or oldresult regraded.252trailingpercentile is
+a NEW source hypothesis, not an old-PASS rescue.483teachers/24lengthblocks
+are not483independent observations or an ESS estimate; nonPIT/currentvintage/
+optionalmetadata issuer leakage limits persist.
+
+## Current Ready Queue
+
+Einstein source hypothesis (numerical campaign parked):
+A/research/current-broad25-causal-percentile-gate20-proposal-20261021-v1.
+One causal trailing252-percentile disagreement feature, same depth1/minleaf126
+date stump, reuse4frozenRNNs/trueOOF scores,0newRNNfits.90sourceactive/
+900elapsed/no marketvalues-modelcalls-labels-replays-GPU. Prove all252strict
+prior official origins available without compressed-date/gap imputation.
+Current-fit retrospective calibration scores are NOT historicalOOF forecasts;
+training/selection of that model must mature before actual currentforecast.
+Proposed INNER-only development/no newPREDoutcomes; oldseenINNER adaptive
+boundary explicit. ClaudeRAW3d202601 SOUND_WITH_NAMED_LIMITS at
+A/review/current-broad25-causal-percentile-gate20-20261021-v1/RESPONSE.txt:
+in/out-of-sample reference mix can proxy modelage/calendar, not fit-invariant
+routing. Parent prioritizes distinct price-volume/cost-aware input mechanism
+over another seen-INNER normalizer. No numericalGO/Paper/PRED promotion.
+Source900elapsed deadline07:48:03 was exceeded by SYN07:49:51..52;
+preserve actual late evidence/debit, never mark source cap compliant.
+
+Wegener c120-h60 pairedGRU development COMPLETE:
+SOURCE6b47301f/Consumer6f48c6c9/40CPUchecks/150closedsourceupper,
+GRU16 fine977params vs fine+GRU8 coarse1273params. Same120minutes of
+information, capacitydifference named. No extraindicators/architecturegrid.
+PrimaryData0b8a8053 READY20,940keys:FIT12108/INNER3612(3606known)/
+EVAL5220allknown,22checks/27.710076upper. Delta89932212 READY sameEVALkeys,
+entryo+2/exitbaro+61ends+62/60heldbars/allknown,10.962756upper.
+Oldsource timestamp/adjustment and historicalarrival/finality unknown.
+Nominal halfopencontext[o-120,o) endsato; primaryentrybaro+1 is60second
+nominal gap, not observed historical availability. Claude5fca75e5 REVISE:
+endpoint target alreadyexactOpenentry-to-CLOSEexit; +1barfilldelay sensitivity
+predeclared, no refit. No extra timing/model/cost search after EVAL.
+
+FINAL4f8690d8/READOUT655caaa7 COMPLETE07:49:31:2CPUfits60/96epochs,
+best48/86/7488updates/139.654003marketworker seconds/alljoined/leasefree.
+Candidate reached96cap, not demonstrated convergence.875.654584totalupper/
+3600 includes source150/Data27.710076+10.962756/review60/prep180/native300/
+fits/readout/cleanup; no retry or refund. Actual CUDA SYN4updates only.
+Actual closure-r1/CONSUMER882f5f3b/VERIFY60e16df6:397checks/RuffPASS,
+separate300verificationupper =>1175.654584wholeupper. Parent exact3refs
+rehash PASS. A UTC-vs-local metadata filter caused a false absence; direct
+exactpointer resolves it, no unretained-claim or rerun. Compare UTC-aware
+instants, not mixed DateTime kinds. Allactorsjoined, immutable FINAL unchanged.
+Route projectedCPU390.664/CUDA604.334s, but two-step mean multiplies CUDA
+cold-start cost through the fit: not definitive warmed GPU inferiority.
+NEW campaign will separate cold setup from steady actual-loop pace, not
+repeat these completed CPU fits or change their frozen route after outcomes.
+10bp primary growth/DDpercentINITIALNAV CONTROL-4.514251/4.536966,
+CANDIDATE-4.573778/4.593532/HALF-4.533875/4.554498. Candidate primaryMSE
+1.552220percent worseCONTROL, FIT-mean baseline also better; proper/finance
+FAIL. Delay sensitivity same failure/no reversal, not proof of robust profit.
+All5policies/30main+delaycells/oneEVALintake/1000sessionMSEbootstrap only,
+FINALweightaliases sealed first. Always-invest turnover43.45xinitialNAV/
+fees~4.345percent explain cost burden, not permission to tune old thresholds.
+Parent independent changed-source SYN readback25checks PASS:
+A/verification/current-intraday-paired-gru-closed-readback-20261021-v1/RESULT.json
+8bd7b371,10sourcefiles exact,3SYN accounting replays/0marketpayloadread-
+fit-forward-replay-private-network. Actual0.004352seconds/120cap. No claim
+this rechecks market predictions or reproduces original outcomes.
+Fixed.1/12INITIALNAV inclusivefee/max12sleeves/reserve and unknown handling
+unchanged. Nominal archive/availability/cost/reuseddata limits retained.
+
+Boole owns new SOURCE/pureSYN only:
+A/research/current-intraday-cost-aware-price-volume-attention-proposal-20261021-v1.
+One complementary family: HGB summary baseline and paired small attention
+price-only/price-volume-technical models, same120min information, finite
+schema/capacity (not indicator/architecture grid). FIT-only feature/target
+affines, chronological curves/earlystop/safeweights, rawtarget inverse for
+fixed exact fee hurdle. Optional no-entry when score cannot cover costs;
+same-entry uniform/cash comparisons separate timing/exposure from selection.
+300sourceactive/3600elapsed, no marketvalues/fits/GPUtraining under SOURCE.
+Noether compact OHLCVaddon COMPLETE7b637f27/VERIFY PASS at
+A/data/current-intraday-c120-h60-ohlcv-support-20261021-v1,
+exact20940keys/primarymasks/splits/source limits,0newlabels/network/models.
+16SYN+20940contextchecks/24.287325upper/one2sourcepass/alljoined/0retry.
+Marketpayloads M/source-consumer A; Enginefeature ABI qualification pending.
+Future numericalGO only after exactsource/Data/native/caps and concise
+challenge. One first-ready GPU allocation with warmedpace, no dummywork.
+PrivatePaper authority remains independent of all research screens.
 
 ## Broad25 Data / Completed Baseline
 

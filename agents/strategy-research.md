@@ -62,10 +62,33 @@ Actual numerical-r1/FINALe071bc01/RESULT3e466255 COMPLETE51solves/1intake/
 6new12cachedcells/0models-GPU.10bp RISK+.530576/DD.175315percentNAV vs
 BROAD+.448637/.187780/HALF+.603040/.255495. PrimaryFAIL/no thresholdrescue.
 RISK lowers DD but sacrifices HALFgrowth; matchedBROAD isolates broadening.
-Next literal currentpoint compute is separate prospective research only,
-no model calls/Task/Paper swap. Einstein prepares one purgedOOF shallowgate
-source at current-broad25-purged-expert-gate20-proposal-20261021-v1,
-no numericalfit yet; past-only per-fold affines/targets/selection mandatory.
+Literal currentpoint7c38f625 COMPLETE beforeOPEN, separate prospective
+research/no modelcalls-Task-Paper swap. PurgedOOF shallowgate also COMPLETE:
+FINALc9ea459f/RESULT6275a146/4CUDAfits12679updates/90.604708GPUworkerwall
+seconds. INNERGATE4.553505/DD2.114546percentNAV vsuniform4.813713/1.920805,
+frozenFAIL/PREDoutcomes0. OOF186/297 leaves shifted to INNER7RNN/603EXPERT.
+New SOURCE-only fixed252 strictlyprior empiricalpercentile hypothesis at
+A/research/current-broad25-causal-percentile-gate20-proposal-20261021-v1
+reuses4frozenmodels,0RNNfits. Model-conditioned retrospective calibration
+is not historicalOOF/PIT; currentforecast maturity and fullcalendar support
+must be explicit. No normalization retrofitted into the old closed recipe.
+Independent intraday pairedGRU compares fine120x2 vs fine+coarse24x2 from
+SAME120minutes information, not new data. Data0b8a8053/delay89932212 complete;
+ActualFINAL4f8690d8 COMPLETE2CPUfits60/96epochs/best48/86/7488updates,
+proper-financeFAIL/oneintake30cells/no retry. CUDA nativeonly4updates.
+Percentile source is PARTIAL/PARKED/late109s/RuffE731/headerproof incomplete,
+not sourceREADY/financialFAIL. No further normalizer/refit dispatch.
+
+Boole new SOURCE-only cost-aware price-volume attention/HGB family:
+A/research/current-intraday-cost-aware-price-volume-attention-proposal-20261021-v1.
+Fixed prior120minute technical/volume schema, paired smallattention + HGB
+summary baseline; exact fee hurdle/no forcedentry/same-entry uniform and cash.
+Noether OHLCVData7b637f27 COMPLETE/all20940keys/missingness/limits retained.
+Architecture inspiration only, not exact PatchTST reproduction or stockalpha:
+https://arxiv.org/abs/2211.14730v2 and official https://github.com/yuqinie98/PatchTST.
+No remote code/weights copied. AQR institutional execution-cost research
+https://www.aqr.com/insights/research/working-paper/trading-costs motivates
+net-of-cost comparison, not our retail fee assumptions or profitable signal.
 
 ## Previous Results / Do Not Repeat
 

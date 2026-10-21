@@ -72,6 +72,14 @@ policy/request/fill/cumulativefinal scope once; missing/partial UNKNOWN.
 Other owners' incomplete cost history is not a model-scoped accounting hold,
 while aggregate quantities/budget/reconciliation still must match.
 Source readiness is NOT actual private invocation/netPnL.
+Actual native privateRO accounting preflight COMPLETE:
+A/execution/current-nas-accounting-runtime-preflight-20261021-v1/FINAL.json
+3899e01e/ConsumerABId1efd7e8/readback719716c4. Exact original8 entry-intent/
+positivefill/basis links verified, retained_active/notclosedflat/feesmissing/
+settlement-netUNKNOWN. One offlineROcontainer/50.943393upper/allactorsjoined,
+privatebytes-membershipunchanged/0API-credentials-writes-Tasks. Parent rehashed
+7publicrefs. Existing caller is ready for same8owner terminal exits, not
+freshbroker inventory/finalPnL; no substitute intent or reservation release.
 Oct16 retained RO valuation8modelowners/quantitymatch showed indicative
 GROSS NEGATIVE, sequential/non-atomic, not realized loss/measured net PnL.
 Older historical realized accounting remains its own scope.

@@ -2,91 +2,101 @@
 
 ## One Company Outcome
 
-current-nas-owned-model-paper-cycle-v1 remains UNFINISHED: close exact owned
-KIS Paper entry/hold/exit/reconciliation inside ONE original shared initial
-virtual-cash tenth. Eight retained FULL NAS entry events need current exact
-exit/fill/inventory/terminal evidence. Existing Oct21>=13:40UTC=22:40KST exit
-is after US OPEN. Fees/settled cash/actual net PnL UNKNOWN.
-Research, installation, tests and package commits are not company completion.
+current-nas-owned-model-paper-cycle-v1 remains UNFINISHED: exact owned KIS
+Paper entry/hold/exit/terminal reconciliation inside ONE original shared
+initial virtual-cash tenth. Eight retained FULL entry events are not a fresh
+holdings count. Existing exitOct21>=13:40UTC=22:40KST after US OPEN.
+Fees/settled cash/actual netPnL UNKNOWN. Research/install/tests/packagecommits
+do not complete the company outcome.
 
 ## Resume / Authority
 
 Workdir C:/Users/Public/Documents/thericher-v2.
-Run scripts/start_next_codex_task.ps1; follow HANDOFF.md, AGENTS.md,
-RUNBOOK.md and active stateboards. Parent owns shared memory/integration/Git.
-Private free Data/Research/KIS Paper delegated. Preserve original bank,
-pending identity/reservations and owned-only exits. Never KIS_LIVE_*,
-real money, paid/public/unclear-rights actions, secrets/raw/private output,
-foreign adoption, substitute unknown orders or reset/profit-expanded capital.
-Market D:/market_data; artifacts D:/thericher-v2/model-artifacts.
-Package-local research prohibitions do not stop independent Execution.
+Run scripts/start_next_codex_task.ps1, then HANDOFF.md/AGENTS.md/RUNBOOK.md
+and active role stateboards. Parent owns shared memory/integration/Git.
+Private free Data/Research/KIS Paper delegated through named owned paths.
+Keep originalbank/ownedinventory/entrycosts/losses/pending identities and
+reservations. No foreign adoption/substitute unknownorder/reset/profit-expanded
+capital. Never KIS_LIVE_*, real money, paid/public/unclear-rights work or
+secret/account/order/raw-market/private output. Market D:/market_data,
+artifacts D:/thericher-v2/model-artifacts. Scoped research bans are not global.
 
-## Ready Disjoint Packages
+## Ready Parallel Work
 
-1. Execution: existing8NASexit and Window21R5 sameTaskpair unchanged.
-   Prep13:10/exit13:40/Window21entry14:00/nightly14:50/F915:10UTC.
-   Actual R5deployment3330a61c consumes naturalhead22 input5817e3ab,
-   no model swap. Nightlymaintenance7fe5dac2 consumed; F9unknown reservation
-   held, no substitute/reset/repeated19GET. Strict offline categorical readers
-   after quiescence, never recovery observe() as RO. Existing app one-shot
-   Oct22 00:45KST follows owned outcomes, no replacement chain/foreground wait.
+1. Execution installed, future actual result pending. Original8exit13:40/
+   Window21R5prep13:10-entry14:00/nightly14:50/F915:10UTC unchanged.
+   R5actual3330a61c consumes explicitnaturalhead22 input5817e3ab/vintage7d8f.
+   New FUND20 dedicatedTask ACTUALLY enabledc6026ecf/releasec4f15287/
+   imagef31e/nativeACL3b337353/18finite triggers/first15:30UTC=Oct22 00:30KST.
+   Parent independent nativeCOM passed action/principal/projection/quiet/due.
+   It consumes alreadycommitted point0996dabb/ONE.005cohort, same originalbank.
+   All installers consumed, no manualRun or inferred submit/fill. Strict offline
+   categorical readers after quiescence, never recovery observe() as a reader.
+   F9unknownreservation held; no repeated19GET/substitute/reset. Existing app
+   one-shot Oct22 00:45KST follows owned outcomes, no replacement chain.
 
-2. Engine: broad25 HGB2CPUfits/readout COMPLETE proper/financeFAIL,
-   Chronos425exactcached+850new GPUforecasts COMPLETE and readout FAIL.
-   Missing-aware recurrent pair also COMPLETE:2CUDAfits38/61epochs/best8/31/
-   7722updates/46.709537GPUworker seconds/RESULT668e200f/alljoined. Positive
-   replay growth but higherDD; materiality/financeFAIL, no refit/rescue.
-   Old SYN cuDNN-mode fault/closeddebits preserved, repaired harness not model.
-   Current CPU expert/half-rank blend chosen BEFORE newRNNresults: savedCONTROL
-   plus fixed252close EMA20/60-RV21/Bollinger20 expert, no extra forecasts.
-   Data42562873 exactallkeys/R21parity; source/native/header proof then one
-   expertpass/oneblend/oneEvalintake/15logical6new9cached,900TOTAL/3600elapsed.
-   Fixed blend974ce136 COMPLETE, no more expert/forecasts. TCN threeCPUfits
-   also COMPLETE11076updates/RAW_PLUS proper-financeFAIL; CPU measured10x
-   faster, no modelgrid/rescue. Boole owns Chronos-2 FULL adaptation with
-   Data8cf1 READY, native zero-update callback-phase repair then conditional
-   oneGPUfit1000steps/eval50/pat4/1800s; whole5400active/14400elapsed, old
-   debits retained. Safe native API/geometry/selector proofs before market.
-   No actualmarketfit inferred; see Engine current exact evidence/caps.
-   Latest Chronos2ndGPU native2updates then safe-cold parity failed; gap/cause
-   UNKNOWN,0market/0PRED. New bounded0fit diagnostic owned, not another blind
-   native retry. CPUriskallocation COMPLETE51solves/1intake/primaryFAIL;
-   useful growth/DD tradeoff retained, current prospective allocation point
-   preparing without modelcalls/newTask. OOF shallowgate source parallel only,
-   no numericalfit/extraGPU allocation until frozen readiness and custody.
+2. Engine completed research stays closed. Broad25 HGB/LSTM/fixedblend/TCN/
+   riskallocation results and safeweights/curves A; frozen screens failed,
+   useful growth-risk tradeoffs retained without regrading. Chronos FULL actual
+   CUDAfit200steps/32.754s/patience4/best0 completed880.651405totalupper.
+   Actualselected coldparity passed; ADAPTEDaliasesoldISOLATED. Pre-outcome
+   aliasdedup OMITTED: retain51physicalforecasts/1intake/3physicalreplays,
+   0uniqueincrementalcells/protocoldeviation. No fit/epoch/seed/forecast rescue.
 
-3. Data/prospective: broad25 raw26 Data17c3ea82/PRED Eval9c0bd613 and
-   Chronos5120131fedf COMPLETE, no repeated derivation needed. SEC useful
-   cursor queue closed3d64d4f6; metadata is not PIT/value qualification.
-   FUND20point0996dabb committed beforeOPEN ->Nov17twentiethCLOSE.
-   FinalNov17 DataTask d7854350 and measurement95924e7e ACTUALLY installed
-   enabled for23:20 and23:55UTC, respectively. Future marks/results UNKNOWN.
-   No reforecast/fakehash/shortertarget/manualRun/repeated installers.
-   Broad25 blend prospectivepoint ead52eb6 also COMMITTED05:26:24UTC before
-   OPEN/25known/oneCPUforward/one.005researchcohort->Nov17CLOSE, no brokerTask.
-   Exact transport reconciliation closed, numerical allowance0; no redispatch.
+3. OOF date-stump COMPLETE c9ea459f/RESULT6275a146:4CUDAfits66/30/62/63epochs,
+   12679updates/90.604708GPUworkerwall seconds/1tree/18INNERreplays,
+   frozenINNERFAIL/PREDoutcomes0/alljoined/leasefree. No rerun/extraepochs.
+   Einstein fixed252 causal-percentile source proposal reuses
+   4frozenmodels,0newRNNfits/newPREDoutcomes. Retrospective calibration is
+   not historicalOOF/PIT; no compressed252date history or gap imputation.
+   Numerical parked: Claude3d202601 names modelage-reference transfer limits,
+   source07:48:03deadline exceeded bylateSYN, keep actual evidence/no capPASS.
+   Next distinct input/cost-aware mechanism has priority, no normalizer grid.
 
-4. New FUND20 Paper connection: savedwirec3acfa90/input5d792094/
-   one.005originalNAVcohort/imagef31e781d and strictprivateRO5caa4298
-   qualified exact unstarted local compatibility, not fresh broker facts.
-   New native runtime lifecycle10/10SYN checks nowPASS5f914eb8; old7/10fixture
-   failures retained. Hidden duplex caller/ONE18finite-trigger Task preparing,
-   ACTUALLY installed/enabled06:14:22, native-binding-r1 consumerc6026ecf/
-   releasec4f15287/nativeACL3b337353/18finite triggers/first15:30UTC.
-   Parent independent nativeCOM06:17 passes action/principal/protected3ACE/
-   fullprojection/quietSettings/due. All installers consumed, no repeated
-   CREATE/UPDATE/SetSD/Run. No actual order/fill inferred. Repo41796a7a PASS.
-   Four280s visits>15m worst-case:
-   prove exact unknown-request safety/owned nextsession carry, no promise
-   of same-close replay parity or frozen-input/target mutation. OldR5 intact.
+4. Independent intraday pairedGRU comparison. Inventory8f3ddf6d typed
+   202856bars; retainedFirstRate251RTHsessions2022Sep..2023Sep, SPY97526/
+   QQQ97530/4SPYmissing; separate2026sample notspliced. No acquisition needed.
+   PrimaryData0b8a8053 COMPLETE20940keys, delay89932212 COMPLETE5220keys;
+   TWO FIRST FITS now COMPLETE4f8690d8: CPU60/96epochs/best48/86/7488updates/
+   139.654003marketworker seconds/875.654584totalupper/alljoined/leasefree.
+   CUDA SYN only; oldcold-biased route is not definitive warmedGPUinferiority.
+   Proper/financeFAIL/FITmeanbetter, no afteroutcomes refit/threshold rescue.
+   Fine120/coarse24 sameinformation.
+   Nominal1minutegap/+1bar sensitivity, no provenhistoricalarrival/finality.
+   Fixed.1/12INITIALNAV inclusivefee/max12sleeves/90percentreserve;
+   fundingfailureUNKNOWN/no cross-policy pro-rata/Paperbank change.
+   FINALaliases beforeoneEVAL/max30main+delaycells, no timing/modelgrid.
+
+   Boole next SOURCE-only cost-aware price-volume attention/HGB family,
+   A/research/current-intraday-cost-aware-price-volume-attention-proposal-20261021-v1,
+   300sourceactive/3600elapsed/no marketfit/GPUtraining. Noether compact
+   OHLCVaddon COMPLETE7b637f27 at
+   A/data/current-intraday-c120-h60-ohlcv-support-20261021-v1,
+   same20940keys/masks/splits/rawpayloadM/24.287325upper/16SYN+20940context
+   checks/alljoined/no newlabels. Parent independent25GRUsource/SYNchecks
+   PASS8bd7b371, no newmarketreadout. Enginefeature ABI still to qualify.
+   Fixedcost hurdle/no forcedentry, aligned same-entry uniform/cash, finite
+   feature schema/3firstmodels and warmednativepace before numericalGO.
+
+   Offline accounting3899e01e/ABId1efd7e8 COMPLETE: actualoriginal8linkage
+   verified/retained_active/feesmissing/netUNKNOWN, oneprivateROcontainer/
+   0API-writes-Tasks/alljoined. Reuse strictcaller after actualterminal exits,
+   never recovery observe() as reader or inferred freshbroker inventory.
+
+5. Prospective research points ead52eb6 and7c38f625 published beforeOct21OPEN,
+   one.005cohort each toNov17CLOSE. No modelcalls/reforecast/newTask for them.
+   FinalNov17 Data d7854350 and originalFUND20 measurement95924e7e installed
+   enabled23:20/23:55UTC; futuremarks/results UNKNOWN. No consumedinstaller
+   rerun or invented futurehash. New researchpoint measurement manual pending.
 
 ## Verification / Continue
 
-Authority D:/thericher-v2/model-artifacts/verification/fund20-paper-runtime-20261021-v1/authority.json41796a7a:
-1374sources5802dd71/1764serialPASS2skip/18612fullPASS25skip/clean8workers/
-Ruff/three sample-envCompose PASS. Reuse for docs/external work ONLY with fresh
-exact tracked/control equality plus independent changed-external checks.
-Tracked/control/material Execution changes follow AGENTS fresh verification.
-Preserve unrelated %SystemDrive%/, explicit owned staging/commit/push.
-Continue ready work; replace with ONE next company outcome only after actual
-owned lifecycle closure, not because a package or turn ended.
+Authority D:/thericher-v2/model-artifacts/verification/fund20-paper-runtime-20261021-v1/authority.json
+41796a7a:1374sources5802dd71/1764serialPASS2skip/18612fullPASS25skip/
+clean8workers/Ruff/three sample-envCompose PASS.
+Docs/external reuse ONLY on fresh exact source/control equality plus actual
+changed-external proof; repo tests cannot certify D workers. Tracked/control/
+material changes follow AGENTS verification. Preserve unrelated %SystemDrive%/.
+Verify/commit/push owned integration, continue ready packages without foreground
+session waiting. Replace with ONE next company outcome only after real owned
+lifecycle completion, not merely to end a package or turn.

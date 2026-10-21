@@ -6,6 +6,40 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
+Hubble owns NEW current-broad25-purged-expert-gate20-input-20261021-v1:
+exact SOURCEd58bfabc/DATArequestf9dabe45 foldTRAIN/checkpoint/OOF feature
+and isolatedtarget custody, finalpair and separateINNER610entries/629marks.
+150active/1800elapsed/<256MiB output, rawmarketbytes M, no network/models/
+GPU/Tasks. Actualconsumer934d0685 READY/VERIFY PASS/39outputhashes/
+13feature11labelpackets/132702000bytes/95.829790upper/1derivation/alljoined.
+INNER629mark comparison READY, full625featuredates retained; no PREDoutcome
+payload opened. Hubble executor closed, no repeated materialization.
+No globalaffine/prior/quarter-complete-case filtering. OOFlabels admitted
+only after3predseals; outeroutcomes not mounted to base/gate fit workers.
+
+Noether intraday inventory COMPLETE:
+A/data/current-intraday-spy-qqq-research-readiness-20261021-v1/CONSUMER.json
+8f3ddf6d/VERIFY PASS/10nativechecks/23.676258activeupper.202856typedbars:
+retainedFirstRate2022Sep30..2023Sep29/251RTHsessions/SPY97526/QQQ97530,
+4SPYmissing/0OHLCV-duplicate-offgrid failures; separate2026ten-session
+sample3900each, notspliced. 5m/10m/1h/3h native support with explicit tails.
+Oldarchive timestamp/adjustment unknown, arrival/finality NOT_OBSERVED;
+nominal exploratory support, not KIS/PIT/source promotion. No acquisition needed.
+NEW c120-h60 producer owned: context120past1m, complete5m samehistory,
+every5minRTHorigin/1minute assumed entrylatency/60minute withinRTHhold.
+FIT2022Sep30..2023Apr28/INNERMayJun/EVALJulSep, allofficialsessions incl
+earlyclose/4gaps retained; compactindices/inputmask/futureknownness separate.
+150active/1800elapsed/<128MiB, no newmodel/GPU/API/Task. Actual0b8a8053 READY:
+20940keys/FIT12108known/INNER3612(3606input-lossknown)/EVAL5220known,
+sixINNER SPY inputs unknown from4gaps, endpoints+heldpaths known separately.
+22native/SYN+independent endpointchecks/21619616bytes/27.710076upper/
+1derivation/alljoined. No future-complete-case selection or source splice.
+Delta A/data/current-intraday-c120-h60-delay2-sensitivity-20261021-v1/
+CONSUMER.json89932212 READY: same5220EVALkeys/masks, entryo+2/exitbaro+61
+ends+62/60heldbars/allknown.18SYN+5220independentrowchecks/2560744bytes/
+10.962756upper/alljoined. Noether closed; labels/marks admitted onlyafterall
+compared model/policy seals. No repeated producer/primaryoverwrite/metrics.
+
 Noether: broader25 input/evaluation, currentpoint and Chronos adaptation COMPLETE;
 executor closed, no new GET/derivation needed.
 All25 price support on every date, no future label-completeness membership:
@@ -98,6 +132,18 @@ enabled/nativeACL/source/nextdue; later otherTaskdelta UNKNOWN not attributed
 to this transaction. Future measurement still NOT_OBSERVED.
 
 ## Current Feeds / Useful Acquisition Closed
+
+Intraday OHLCV addon COMPLETE for Boole's next cost-aware attention/HGB source:
+A/data/current-intraday-c120-h60-ohlcv-support-20261021-v1/CONSUMER.json
+7b637f27/VERIFY PASS. Exact20940keys/120priorbars/primarymasks, compact
+namedOHLCV FP64[B,2]/explicitfieldmasks-qualityflags/closed5m refs.
+KnownFIT12108/INNER3606of3612/EVAL5220;4missingSPYminutes/6unknownrows
+retained. AllrawOHLCV byteparity with primary exact.16native/SYN+
+20940independentcontextchecks/oneCSVpasspersource/0retry/24.287325upper/
+430.803939elapsed/11,189,676bytes/alljoined. Rawpayloads M, no labels/marks
+decoded/copied/network/models. Engine final feature ABI not yet qualified.
+Timestamp/adjustment/historyarrival/finality limitations unchanged, no PIT
+or Paperinput promotion. No completedpacket rederivation needed.
 
 Natural-head22 SOURCE1b3df899/extractor138035df/input5817e3ab/
 vintage7d8f4fe2 qualifies25x22/29checks/actualproducerwire for R5.

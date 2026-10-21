@@ -10,11 +10,11 @@ Parent shared MD/Git; no current genuine operator decision.
 
 | Owner | Current Work / Consumer |
 | --- | --- |
-| Hubble / Engine | Risk allocation51solves/readout COMPLETE; one literal current prospective allocation point owned. |
-| Einstein / Engine | Point ead52eb6 COMPLETE/no more forwards; new purged OOF expert-gate SOURCE-only. |
-| Wegener / Execution | FUND20 Task ACTUALLY installedenabled c6026ecf/parentRO PASS, no more mutations. |
-| Boole / Engine | Chronos FULL cold-restore parity diagnosis; latest2SYNupdates/0market, no resource/approval hold. |
-| Noether / Data | Broad25 currentpoint and Chronos512 adaptation8cf1 inputs COMPLETE; executor closed. |
+| Hubble / Data | OOF Data934d0685 COMPLETE/39hashes, executor closed/no more derivation. |
+| Einstein / Engine | OOF4CUDAfits COMPLETE; percentile SOURCEpartial/late, numerical parked/executor closed. |
+| Wegener / Engine | Intraday COMPLETEclosure882f5f3b/397checks/proper-financeFAIL, executor closed. |
+| Boole / Strategy | Actual accounting3899e01e COMPLETE; new cost-aware price-volume attention/HGB SOURCE-only. |
+| Noether / Data | Compact OHLCVaddon7b637f27 COMPLETE/16SYN+20940contextchecks, executor closed. |
 | Closed | Kepler finalNov17 DataTask installedenabled/parentRO verified; Banach512join/earlier Validation complete. |
 | Parent | Review sources/results, dispatch next useful campaign, integrate current facts/Git. |
 
@@ -27,40 +27,34 @@ one-shot/no replacement chain. No foreground session wait.
 
 ## Throughput Review
 
-06:27UTC: Execution installationc6026ecf ACTUALLY enabled/parentRO PASS,
-Wegener closed; nextdue15:30UTC stays workerowned. Riskallocation source+51
-CPUsolves complete, nextcurrentpoint reuses savedHALF, no models. Einstein
-prepares one OOFgate source. Boole native parity failure is local: actual2SYN
-updates/0market, safecheckpoint outputs not identical despite tensorhash.
-New bounded0fit diagnostic must retain numericgap/modes/nonpersistentbuffers
-instead of another blind retry. Four disjoint packages, no GPUdummyload or
-globalgate. Reversible improvement: exact host metadata checks stay host-side;
-container gets only the narrowly bound replay source, no generic pathmapper.
-Retain every closeddebit and failednative result, no oldPASS invented.
+08:00UTC: OOF4CUDAfits/12679updates/90.604708GPUworkerwall seconds COMPLETE,
+INNERFAIL/PRED0. New percentile sourcepartial/late109s/SYN29checks/RuffE731/
+headerproof-source seal missing; no sourceREADY/numericalGO/financialFAIL.
+Parked in favor of distinct price-volume/cost-aware mechanism, not newgate.
+Intraday FINAL4f8690d8 completed2CPUfits60/96epochs/7488updates/139.654003s,
+proper-financeFAIL/alljoined. NativeCUDA4updates only. Oldroute multiplied
+coldstep acrossfit; NEW native pacing separates setup/warmed steady loop,
+not a redo of completed CPUfits or definitive GPUinferiority claim.
+Accounting3899e01e actualprivateRO preflight verifies original8linkage,
+notclosedflat/feesmissing/netUNKNOWN, allactorsjoined/noAPI-writes-Tasks.
+Paper future13:40/15:30 opportunities remain owned, not foreground waiting.
 
-05:55UTC: TCN3CPUfits/readout and fixed blend/current25point COMPLETE;
-Einstein closed/Hubble source-only allocation proposal, no stale numerical dispatch. CPU TCN8.506s vsGPU
-87.239s per epoch is measured routing, not a permission hold. Chronos FULL
-data8cf1 READY; Boole repairs a zero-optimizer native callback-phase fault,
-then may auto-dispatch first1000step GPUfit inside unchanged familycaps.
-Execution independently repairs only its newly created DISABLED Task ACL/
-release binding. Existing8NAS/R5 due remain independent. No foreground wait.
+Reversible improvement: inspect exact terminal artifacts before lengthy new
+planning so a completed short GPU fit is never described as still running.
+Use UTC-aware metadata comparisons; mixed DateTime kinds falsely hid actual
+closure-r1 evidence, resolved by its exact pointer/hash without any rerun.
+Reuse savedmodels/current predictions, prove finalweight aliases BEFORE
+outcome intake, and reuse exact financial caches rather than duplicate work.
+Boole next attention/HGB SOURCE and Noether OHLCVaddon run in disjoint roots;
+no forced trades, new indicatorgrid or oldthreshold rescue. Source/native
+guards are scoped; no second parent approval between qualified
+paired fits, no globalgate/dummyGPUload/newdispatch-report platform.
+Full authority41796a7a reused only on exact1374source/control equality plus
+changed-external native proof; no repeated18k suite for MD-only integration.
 
-Execution new wire uses one native pending leg/visit. Worst4x280s exceeds15m;
-qualify exact partial/cancel/owned nextsession carry instead of promising
-same-close completion or silently shortening the frozen target. Three failing
-SYN assertions repaired10/10, no production-risk change. Separate common-lock
-proof blocked12Linuxprocesses and siblingreservation blockedown effect.
-Post-close categoricalassertion needs exact source diagnosis, not weakened
-guard/newglobalhold. Existing8NAS/R5 unchanged.
-
-Reversible improvement: structured exact local Docker-name listing replaces
-localized/case-sensitive English error matching. The existing committedpoint
-was reconciled, not run again. Native callback checks must follow framework
-phase transitions; fix the early mode guard, not model/loss/data. No new
-dispatch/report platform or global approval. Close completed executors promptly.
-Full authority41796a7a freshly completed for actual Paper runtime integration;
-no repeated18k suite for subsequent MD-only updates on identical1374sources.
+Execution onependingleg/visit still means4x280s can exceed15m; exactpartial/
+cancel/ownednextsessioncarry qualifies, not promised same-close completion.
+Keep all original failure/debits and consumed installers; no oldPASS invented.
 
 ## Evidence
 
