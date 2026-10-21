@@ -106,18 +106,31 @@ actualadaptercreation separate; no numeric rows for unknowns.
 NewCPUimagef31e781d/source988c14a8/native8938cb9d/1build11.690154upper/
 Python3.12.15/Torchabsent/publicnetworknoneROprobe/cleanup. Oldb96measured
 lacksnewmodule. Botholdimage/R5unchanged, no deployment/order.
-Wegener owns one new strictnetworknoneROprivate compatibility preflight,
-categoricalonly/newexactunstarted/foreign-targetconflicts/reservationsheld/
-privatebytesunchanged. It is not fresh broker funding/quote evidence or
-permission to adopt currently held foreign targets before original exits.
+StrictprivateRO5caa4298 COMPLETE via additive-reader-r1 underwire root:
+PROVEN_UNSTARTED_SCOPED_LOCAL_COMPATIBILITY/exactpointer-lock-requestsABSENT,
+privatebytesunchanged/sharedtenthvalid/unknownreservation1HELD. Twoforeign
+plans/globalattributionUNKNOWN remain, not foreign adoption or broker proof.
+Wegener nextruntime:
+A/execution/current-fundamental20-paper-cycle-preparation-20261021-v1.
+SOURCEa92aa3bc/174activeupper/7of10nativechecks; partialentry/partialexitcarry/
+isolatedrisk assertions need focused first-cause repair in child package.
+ActualnativeTTL is5minutes; cancelack remainspending untilexactterminal.
+Oldfixture reusedstate acrossriskfaults and omittedtimedelta, not a proven
+productionriskbug. Preservefailedresult, no runtimechecksweakened.
+ProposedentryOct21 15:30..16:10UTC/fourNAS/ONE.005cohort, exactexitNov17
+20:45UTC. Four280s visits>15m worstcase; fastfillSYN notcloseguarantee.
+Proveowned nextsession carry/unknownrequest safety without input mutation.
+NoTask/API/actualprivatewrites/deployment yet; currentR5/8NAS unchanged.
 
 ## Other Frozen Consumers / Quiet Operations
 
 Five-policypointcb1c1d9a/HALFb060d4fa targetsOct27fifthCLOSE.
 Shadowd33490c9 installedOct22/23/24/27 01UTC; measurement22db8f33 installed
 Oct27 23:55..00:05UTC. Decision/market-marks only, not fills/netPnL.
-FUND20point0996dabb targetsNov17twentiethCLOSE; futureData/measurement
-source-only, NOT deployed. Separate horizons/private custody, no reforecast.
+FUND20point0996dabb targetsNov17twentiethCLOSE; finalDataTaskd7854350 enabled
+Nov17 23:20UTC andmeasurement95924e7e enabled23:55UTC/parentROverified.
+Futuremarks/measurementUNKNOWN; not a broker/runtime/fill claim.
+Separate horizons/private custody, no reforecast.
 HGB61 point6d7b8260/fullmassb646849a/imagewirec7fd04fc are separate retained
 source/research evidence, no HGBPaper loader/opportunity activation.
 

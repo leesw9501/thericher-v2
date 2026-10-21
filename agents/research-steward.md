@@ -1,66 +1,51 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-Oct21KST/UTC. A=D:/thericher-v2/model-artifacts.
-Own exclusive GPU/trial custody, not model choice/approval/broker authority.
-Company NAS lifecycle UNFINISHED; original exit>=13:40UTC.
+2026-10-21. A=D:/thericher-v2/model-artifacts.
+Own one GPU allocation and trial custody, not model choice/human approval.
+Company NAS lifecycle UNFINISHED. Parent shared MD/Git.
 
-## Current Resources / Queue
+## Actual Resource State / Queue
 
-Patch512 actual FINAL at
-A/research/current-fundamental20-patch512-development-20261021-v1/FINAL.json:
-oneCUDAfit21epochs/best1/1638updates/44.017121GPUworker seconds,
-allactorsjoined/canonical lease RELEASED/currentGPUowners0.
-This is actual completed training, not a runningGPU claim.
-Fixed Patch/recurrent halfpool COMPLETE/EXACT recurrent alias/0new12cached/
-1outcomeintake/141.125862upper/alljoined/0fit-forward-GPU. No diversification.
-Retained FIT/INNER diagnosis COMPLETE0GPU-model-PRED. Explicit-ID-mask
-campaign COMPLETE1CPUfit58epochs/best38/4524updates/33.568780marketseconds/
-241.714533upper/alljoined/leasefree/3new9cached/1actualoutcomeintake.
-NativeCPU4+CUDA4updates only; measuredCUDA.9832 vsCPU1.0209epochseconds
-does not meet frozen10percent routingmargin, so no marketGPUallocation.
-Matched3901initial8tensors exact; mechanismPASS/financeFAIL/recipeclosed.
-Current broader25optionalcontext SOURCE-only, first2fitCPUbaseline proposed,
-no useful GPU job ready from this proposal yet. No authority/environment ban.
-No dummy job to keep utilization high.
-Any NEW trainable campaign needs useful frozen hypothesis/Data/native proof,
-fresh ownership/headroom and its own counters, not old trial reuse.
+- Patch512 oneCUDAfit21/best1/1638updates/44.017121GPUworker seconds COMPLETE.
+- Broad25 Chronos850new+425exactcached/51forwardreturns COMPLETE:
+ 19.095469GPUallocation/10.227117worker/3.554894forward seconds/0fits/
+ unchangedweights/allactorsjoined/leaseRELEASED. Do not repeat425oldcalls.
+- HGB broad25 twoCPUfits20/21rounds/1readout COMPLETE FAIL,0GPU.
+- ID-mask oneCPUfit58/best38/4524updates COMPLETE FAIL. NativeCPU/CUDA
+ near-tie did not meet frozen10percent routingmargin, not a GPU prohibition.
+- Next useful broad25missing-context recurrent pair: actualCPU400row/1000eval
+ checkpoint/gradient/mask proof PASS. Source180 inclsharedreview60 carriedonce.
+ NumericalGO3600TOTALactive/14400elapsed/2fits/39936updates/onePREDintake,
+ onecanonicalGPUallocation after realCUDAproof/headroom and >=10percent
+ projected epoch benefit; otherwise chooseCPU. No market fit inferred yet.
+- Chronos fixedreadout COMPLETE FAIL/1intake9cells/0newmodelcalls.
+ Close-only expert source and Execution lifecycle repair runCPU independently.
+ No dummy GPU occupation or unbounded parameter/window/seed grid.
 
 Canonical lease A/engine-research-agent/locks/gpu.lock.
-One active training allocation; do not age-reclaim interrupted ownership.
-Use actual PID/start/path/hash/known desktop role before/after, not broad
-process-name exemption. Shell/Calculator qualification d5101955 is specific:
-signed Shell and Store-linked Calculator, not security/zeroGPU proof.
-Calculator EXE is NotSigned. Preserve other unknown actors/trainer checks.
-Execution reliability preempts at a safe checkpoint; retain desktop headroom.
-Old study8GiB/time caps are not global limits; measure current free resources.
+Check fresh actual ownership/PID/start/path/hash before allocation; no age reclaim.
+Known signed Shell/StoreCalculator classificationd5101955 is scoped, not a
+blanket process exemption. Desktop/runtime headroom measured, old8GiB/time
+caps not global. Execution reliability preempts at a safe checkpoint.
 
-## Actual Recent Work
+## Custody / Evidence
 
-- Patch512 above: scientific+financialFAIL, higher growth but worse DD than
-  incumbent.405027params/native actual128-row packs. Two readers/one actual
-  intake; no model retry. Activeupper530.020341 includes retained failures.
-- Recurrent20 7efaa9e0:2CUDAfits26epochs/best6/4056updates/29.194seconds,
-  oneSYN+oneMarket allocation/alljoined. Frozen incrementalPASS only,
-  FITprior proper still better; no independent performance claim.
-- Chronos2 914fa4f9:oneallocation44.27seconds/35.72GPUworker/4native102market
-  calls/0fits/financialFAIL/alljoined. Never repeat to restore utilization.
-- RankNet actually21epochs/best1/1638CPUupdates/financialFAIL. Representative
-  earlier native projections CPU5.338/CUDA5.561 selectedCPU, not a GPU ban.
-  Original HUBER failedbefore0updates; full old conservative2starts/19968
-  updates debit stays spent plus separately recorded firstRankNet1start.
-  No refund/old unused-cap reuse/failed-HUBER retry.
-- FUND20 prospective0996dabb uses2CPUrestores/forwards/0fits-GPU, actual
-  committed beforeOPEN; future measurement is not GPU training.
+Chronos numerical:
+A/research/current-broad25-chronos20-completion-20261021-v1/numerical-r1/FINAL.json.
+Patch:
+A/research/current-fundamental20-patch512-development-20261021-v1/FINAL.json.
+HGB:
+A/research/current-broad25-optional-fundamental20-development-20261021-v1/FINAL.json.
+Earlier recurrent7efaa9e0/RankNet54445662/ID-maskdee22eff/OOFc04d7aeb/
+fixedaliasesbacc9f16-f65ca8e8/Chronos914fa4f9 stay immutable; no completed-fit retry.
 
-## Custody / Storage
+Active owned wall includes checks/failures/I/O/recovery/cleanup, not queue/
+LLM elapsed calledGPUkernel time. Source/review carry once, no closedclock
+refund. Same actual factory/DTO/batchSHA/checkpoint/PREDcallback nativeproof,
+not synthetic metadata only. Short/timed run is not convergence proof.
 
-Active owned wall includes source checks/native/failure/I/O/recovery/cleanup;
-LLM/queue/review elapsed is not GPU kernel time. Never erase old clocks/caps
-or call a short run converged. Same actual identity/caller must be qualified,
-not a separate synthetic metadata dictionary.
-Safe weights/state A, market bytes M, never Git. Keep15percent D free/warn
-projected20. Latest measured D1.56TB/4TB free, not perpetual headroom.
-Test scratch prefers C NVMe. Fresh Paper20 authority82df0f69 covers1374sources
-5802dd71:1764serialPASS2skip/18612fullPASS25skip/8workers/cleanhelper/Ruff/
-three sample-envCompose PASS. Reuse needs exact source/control equality;
-native external proof stays separately required. Oldc0230ff6 is historical.
+Models A, market M, Docker /app/model_artifacts, never Git. Last D about39percent
+free; keep15percent/warn projected20, not perpetual capacity promise.
+Verification82df0f69 covers1374sources5802/1764serialPASS2skip/18612fullPASS25skip/
+clean8workers/Ruff/three sample-envCompose PASS. Docs/external reuse needs
+fresh exact source/control equality and changed-external independent proof.

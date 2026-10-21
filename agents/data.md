@@ -1,107 +1,98 @@
 # Data Stateboard (시장데이터 담당)
 
-Oct21KST/UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own source/storage/availability, not account/orders. Parent owns shared MD/Git.
-No secret/raw market/private output or KIS_LIVE_*.
+2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own market acquisition/storage/capability/temporal availability, not accounts/
+orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
-## Current Owner / Consumer
+## Current Consumer / Completed Inputs
 
-Kepler: composite per-session old20/new9 future marks for actual FUND20 point
-0996dabb, exactfixed8 route split6+2. Existing feed plans ENDNov16 while
-20thtargetCLOSE isNov17 21UTC. One final Nov17 full25 template/source/native
-implementation authorized as cheaper reuse than a new8-route parser:
-A/data/current-fundamental20-final-session-capture-20261117-v1.
-No current API/credentials/TaskRun/installation, no oldplan/cursor mutation.
-Onefuturepostclose visit/oneclient/boundedGET-token-scope/quietTask proposal;
-use exact existing documented/measured pacing, not a newly invented timer.
-Futurecapture hashes resolve when published, never fabricate them now.
-SOURCE35527f9e/ABI986df7dd/PLAN41acc936/COMPOSITE17aaee04 are source-ready,
-not installed: Nov17 23:20UTC/25normal27maxGET/1POST/600active900elapsed.
-SDoverlay0c14bd4f/63SYNchecks and tokenpacing49d810ec prove pinned atomic
-token directory+legacylocking/existing2sGETfloor. Actual r1/r2 PRE-EFFECT
-failures immutable. r3 createdexactnewTaskdisabled/unqualified: flag2 added
-onecurrentownerREADACE0x00120089,4vs3intended/noother259Taskdelta.
-Original create cap CONSUMED, noRegisteragain. Parent delegated exact-own
-SetSecurityDescriptor(original3ACE,16) once then directEnabled=true once,
-fresh exactACL/XML/source/due/nonrunning before-after/allotherTaskequality.
-Claude b487de3b SOUND_WITH_NAMED_LIMITS/60upperonce; unknown staysdisabled.
-Actual capture/Run/API/qualified futuremeasurement still UNKNOWN/unexecuted.
+Noether: broader25 input/evaluation work COMPLETE, no new GET/derivation needed.
+All25 price support on every date, no future label-completeness membership:
+A/data/current-broad25-price-input-support-20261021-v1/CONSUMER.json4831e9b5.
+FIT31450/1258dates, INNER15625/625dates, PRED1275/51dates/0inputunknown.
+R21=21prior log-CLOSEdiffs; inherited positive observed252CLOSE support.
+OHLCflagcounts FIT3744/INNER540/PRED0 do not enter close-only features;
+not new fullBar/provider-price/PIT qualification.
 
-A/data/current-fundamental20-prospective-measurement-adapter-20261021-v1:
-actual-r1 ABI d045b4a5/entry2e31bb22/18actual-point wire checks are qualified.
-Root fiveJSON publication prototype is superseded, NOT actual compatibility.
-Composite6+2 adapter68b8bd1a retains exact disjoint cover/session/source/basis/hash and
-UNKNOWN before replay for missing/duplicate/wrong required source.
-Native24checks/Decimal50 cover one .005initialNAV20session cohort, not daily
-freshcapital or20samples. All actual futureprices/replays UNKNOWN.
+Optional-proxy26:
+A/data/current-broad25-optional-proxy20-input-20261021-v1/CONSUMER.json17c3ea82.
+SOURCE134b2498/manifestbb062ecc/featuresb34b3410.
+R21/filingage/filedproxy/usablemask/netmargin/liab-assets, noID.
+Knownquartercontext FIT11091/INNER6017/PRED425; unknown20359/9608/850 explicit,
+no dropping/financial-neutral imputation. CONTROL/FUND differ only knownratios.
+FIT30975/INNER15250 supervisedrows after physical20session purges475/375;
+alltraininglabels known. LastFIToutcome beforeINNER, lastINNER beforePRED.
+Acceptance or labelled filed-end+2officialsession proxy is retrospective
+context, NOT PIT. Capture-after-origin/currentlisting/currentvintage/
+providerfields/CA/finality/metadata-value leakage limits remain.
 
-## Completed Actual Inputs / No Redo
+PRED evaluation:
+A/data/current-broad25-optional-proxy20-input-20261021-v1/pred-eval-r1/CONSUMER.json9c0bd613.
+1275keys/51dates/all25/70OPEN-CLOSEmarkdates/20session targets.
+Produced AFTER HGBactualpolicyseal4466b99a; old70marks reused, NOTold425labels
+or intersected completecase panel. Missing heldmark =>UNKNOWN.
+OneData economicderivation plus separately counted Engine readouts, not a
+globally one-physical-access claim. HGB/Chronos both now closed.
 
-- Patch512 join:
-  A/data/current-fundamental20-patch512-input-20261021-v1/CONSUMER.json
-  3601a19602c428f2a53fe80515bc2c988eb1a403814b96d673adc92c94781940.
-  FIT11091/INNER6017/PRED425originalkeys/all512known/0unknown;24native+
-  15independentchecks/one derivation/65upper/alljoined/0label-model-GPU-API.
-  FP32[N5121]=log(FP64 CLOSE)-log(lastpriorCLOSE), e-512..e-1. FP64late29
-  unchangedFUND[:,21:50], frozenR21 parity. Engine must not invert/re-log
-  sequence or require standardized filing-age>=0. Source currentvintage/
-  providerfields/nonPIT/CA/finality limits remain, not validBar proof.
-- Prospective FUND20:
-  A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json
-  216cec35/FEATURESa0374157:actual00:45:59UTC/8eligible17unknown, maxcomponent
-  Oct20 23:49:31UTC BEFORE Oct21OPEN13:30UTC. Same FIT affine, explicit
-  natural-head22 vintage/BASE last2zero AFTERscale.26.787937upper/noGET.
-  Actual Engine point0996dabb committed01:01:46UTC, targetNov17CLOSE21UTC
-  including DST. No rederivation/reforecast; missing members not neutral.
-- Historical FUND20 c3e29a80:
-  FIT11091input/10901known/1258dates;INNER6017/5882/625;PRED425/51dates>=8.
-  Input-only support/affines, physical20sessionpurges/no future-completeness
-  membership. Separate pred-eval-r1/CONSUMER525d20eb:425known/70markdates/
-  25axis after original seals, exact reusable evaluation not fresh holdout.
-- Chronos2 O/C512 7afc4b93:425rows/51dates/8-9members, causalpriorCLOSE
-  anchor/positivefiniteO-C. Consumer914fa4f9 closed peer financialFAIL.
+Chronos512:
+A/data/current-broad25-chronos512-input-20261021-v1/CONSUMER.json0131fedf.
+1275allknown512 O/C/425exactcacheidentities/850new/0changed-unknown;
+23SYN+nativecompletionintake+50independent rawcontext checks.
+Relative-log lastpriorCLOSE anchor, context e-512..e-1, official timesSECONDS.
+Exact source/provenance/rawselectedcontext/features/model/mode match,
+no source-tail equivalence exception used. Oneactualderivation/69.460864upper.
+No modelcalls/labels/API/GPU/Task/Git. Banach executor closed.
 
-## Sources / Current Feeds
+## Future Marks Actually Installed
 
-Natural Oct20 chains2113ede9 accepted29queries but old Window21 basis guard
-fails revised lastshared Oct19 fields;2842rows unchanged/29changed.
-Not request-parameter failure, no silent c705 substitution or oldguard PASS.
-New explicit natural-head22 SOURCE1b3df899/extractor138035df/READY4fb68aac/
-INPUT5817e3ab/vintage7d8f4fe2 proves25x22/29SYN+actual producerwire.
-R5SOURCE8f1c212a ACTUALsameTask actiondeployment3330a61c consumes it.
-Original RTH21:50/old20D122:30/new9D123:00UTC owners unchanged.
-Snapshot88bca32e exits before token bridge outsideRTH. No coordinator.
-Do not infer collector activity, API counts or publication from exit/latest.
+Actual FUND20point0996dabb input216cec35 committed beforeOct21OPEN;
+8known/25axis17unknown/ONE.005initialNAVcohort->Nov17 twentiethCLOSE21UTC.
+Actualwire2e31bb22/ABId045b4a5 and composite68b8bd1a exact6+2old20/new9
+cover/source/session/basis/hash. Oldfeeds endNov16, no cursor mutation.
 
-Noether completed disjoint current-sec-quarterly-header-metadata-continuation-20261021-v1,
-after current-sec-historical-submissions-cursor-recovery-20261021-v1
-READBACK5552cd78:CVXretained/3neworiginal10Qheaders/14of18metadataissuers,
-20SYN/native/independentreadback. Old11GET+new1GET, NEEbodyretained but
-4nonquarterrangeexceptions exceed frozen2cap, oldSTOPunchanged/ADBEunattempted.
-NextstageCONSUMER3d64d4f6/VERIFY PASS:NEEofflineaccepted/2newGETaccepted/
-0retry-failed/6neworiginal10Qheaders/16of18metadataissuers/226linkedcontexts
-11issuers, not currentmatrix/asof/PIT qualification. Combined14GET immutable.
-86bankfilesremain(JPM53/MS33), deferredNOTprovennonquarter: current strict
-four-concept recipe has0candidateJPMdates andonly1usefulMSfile, nowaccepted.
-Finite usefulqueueclosed, no source/ratefailure or globalhistoryexhaustion.
-Hubble prepares broader25optionalcontext source using these metadata facts;
-newinputderivation needs explicit newconsumerABI, not oldrequiredinputrelaxation.
-Descriptor discrepancy cause UNKNOWN; quarantines preserve offsets/rawhashes,
-original/amended10Qcontradictions never accepted or dates rewritten.
+FinalNov17 producer ACTUALLY installed enabled:
+A/data/current-fundamental20-final-session-capture-20261117-v1/acl-recovery-r3/enable-only-r1/INSTALLED-CONSUMER.jsond7854350.
+SOURCE889a8819/PLAN41acc936/ABI986df7dd/nextNov17 23:20..23:35UTC,
+25normal27maxGET/1POST/600active900elapsed.
+Parent fresh NoWriteCOM PASS/nativeACLd64b/259otherssame in owninterval.
+OneCREATE/oneSetSD16/oneEnable CONSUMED, no repeat. Explicit NEWUnifiedtrue,
+resolvedexactSID,3ACEs/order/owner/group/protection unchanged plus sole
+documentedAI0x0400bit; no oldfalse/rawACL equivalence claim.
+Atomicdirectory token lock+legacy locks/existingpacing49d810ec.
+Allfailedsource/closedclocks/historicalOSdeltaUNKNOWN stay A.
+Futurecapturehash UNKNOWN, no actual capture/Run/API now. Kepler closed.
 
-SEC current25dbf616be:43newacceptedGET/6reused/24pairs/18four-concept issuers,
-not asof/PIT qualification. Historical45a34547:11GET/10accepted/13of18
-histories/223contexts10issuers; CVX schema-bound cursor partial, no globalhold.
-Pureasof kernel60bbea7c/44checks enforces exactoriginal10Q/USD/standalone
-samequarter/sameaccession/end plus acceptance-or-labelledproxy2sessionlag.
-No ad hoc YTD/revenue/CIK aliases or missing-neutral repair.
-Old WWW ticker-map403 is not all-SEC unavailability. Raw JSON M, hashes A.
-Earlier c70569b2/8010abe1 coherent manual vintage and ETFs7bdfc250 MODP0AMS
-are separate, never hidden source equivalence. OHLCfidelityada1665a18badrows
-upstream does not make positiveCLOSE-only studies valid fullBar/PIT evidence.
-Deep old cursors/manifests/contracts/debits stay Git/immutable A.
+Measurement separately installed enabled95924e7e:
+A/research/current-fundamental20-prospective-measurement-20261117-v1/installation-r3/registered-defaults-r1/INSTALLED-CONSUMER.json.
+NextNov17 23:55..Nov18 00:05UTC, no manualRun. Parent own-taskRO confirmed
+enabled/nativeACL/source/nextdue; later otherTaskdelta UNKNOWN not attributed
+to this transaction. Future measurement still NOT_OBSERVED.
 
-Storage15percent D free/warn projected20, latestD1.56TB/4TB free.
-Fresh tracked Paper20 authority82df0f69 covers1374sources5802dd71;
-exact equality required for reuse. It does not qualify arbitrary external
-data/worker code; native external/source checks remain separately required.
+## Current Feeds / Useful Acquisition Closed
+
+Natural-head22 SOURCE1b3df899/extractor138035df/input5817e3ab/
+vintage7d8f4fe2 qualifies25x22/29checks/actualproducerwire for R5.
+Oldbasisguard FAIL on revised29shared fields retained; no silent c705alias.
+R5actualsameTaskdeployment3330a61c consumes explicitnewvintage.
+NaturalRTH21:50/old20D122:30/new9D123:00UTC unchanged. Snapshot88bca32e
+exits before token bridge outsideRTH. Exit/latesttimestamp not publication proof.
+
+SEC recovery5552cd78 +continuation3d64d4f6 COMPLETE:
+A/data/current-sec-quarterly-header-metadata-continuation-20261021-v1/CONSUMER.json.
+Combined14GET/16of18metadataissuers/226linkedcontexts11issuers/41210Qheaders.
+NEEretainedbody accepted under NEWfinite nonquarterquarantine; originalSTOP
+andCVXdescriptorunknown preserved. TwoadditionalGET accepted/0retry.
+86JPM-MSbankfiles deferred as not useful for strictcurrentrecipe, NOTsource
+exhaustion/nonquarterproof. Extra2018metadata does not expand2019+knownrows.
+No further GET without useful newconsumer. Metadata is not PIT/value promotion.
+
+## Older Inputs / Recovery
+
+Patch5123601a196 FIT11091/INNER6017/PRED425/all512known/39checks complete;
+sequence relative-log, late29 unchanged. No rederive/relog.
+HistoricalFUND20c3e29a80/PRED525d20eb, oldChronos7afc4b93, prospective216cec35,
+SECdbf616be/45a34547 and pureasof60bbea7c stay separate frozen consumers.
+Old WWW403 is not allSEC unavailable; oldcorruptOHLC is not close-only QA.
+Raw M/evidence A, never Git. D lastabout39percentfree/keep15/warnprojected20.
+No missing-neutral imputation, fabricatedfuturehash, age-lockreclaim or
+completed-derivation replay. Parent integrates MD; source qualification is scoped.

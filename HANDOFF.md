@@ -2,252 +2,215 @@
 
 ## Current Reality
 
-2026-10-21 KST/UTC. Workdir C:/Users/Public/Documents/thericher-v2.
+2026-10-21. Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 is UNFINISHED. Eight retained
-exact FULL NAS entry events need owned exit/fill/inventory/terminal evidence.
-First existing exit Oct21>=13:40UTC=22:40KST, after US OPEN. Fees, settled
-cash and actual net PnL UNKNOWN. Research/install/commits are not closure.
-No genuine operator decision currently required.
+FULL NAS entry events need exact owned exit/fill/inventory/terminal evidence,
+not a fresh count of holdings. Existing exit Oct21>=13:40UTC=22:40KST.
+Fees, settled cash and actual net PnL UNKNOWN. No operator decision required.
 
-AGENTS.md owns delegated private free Data/Research/KIS Paper authority.
-Preserve ONE original shared initial virtual-cash tenth, entry costs/losses,
-pending reservations and exact identities. No foreign adoption/substitute/
-unknown-request reset/profit-expanded bank. Never KIS_LIVE_*, real money,
-paid/public/unclear-rights work or secret/account/order/raw-price output.
-Market bytes M/models A/Docker /app/model_artifacts;15percent D free.
-Fresh D observation:1.56TB free of4TB, not a permanent capacity promise.
+AGENTS.md owns standing delegated private free Data/Research/KIS Paper
+authority. Preserve ONE original shared virtual-cash tenth, entry costs/losses,
+pending reservations and exact identities. No foreign adoption, substitute
+unknown requests, capital reset/profit expansion, KIS_LIVE_*, real money,
+paid/public/unclear-rights work or private/raw output. Market M/models A,
+Docker /app/model_artifacts, >=15percent D free. Last D about39percent free.
 
-## Actual Owners
+## Actual Owners / Next Actions
 
-| Owner | Ready / Running Work |
+| Owner | Actual State / Next Consumer |
 | --- | --- |
-| Parent | Integration, actual caller/source review, shared MD/Git and next dispatch. |
-| Hubble / Engine | ID-mask58epoch study COMPLETE; broader fixed25 optional-fundamental proposal/source, no new fit inferred. |
-| Kepler / Data | Final Nov17 Task created disabled/unqualified; exact native ACL restore/enable-only recovery, no Run/API. |
-| Noether / Data | Existing SEC historical cursor schema recovery, disjoint new root; no current input/PIT qualification or old downloads repeated. |
-| Boole / Engine | Nov17 measurement host prepared; needs composite Data/final source binding before useful installation. |
-| Wegener / Execution | Saved FUND20 wire+new CPUimage qualified; strict offline private compatibility preflight only, not deployed. |
-| Closed Roles | Strategy43checks/Data512join39checks, RankNet/Chronos/pool trials and temporary Validation complete; MDs are not active LLM proof. |
+| Parent | Integrate evidence/source, current shared memory/Git; company outcome remains open. |
+| Hubble / Engine | Broad25 HGB pair/readout COMPLETE FAIL; missing-context recurrent pair SOURCE preparation next. |
+| Einstein / Engine | Broad25 Chronos forecasts/readout COMPLETE FAIL; close-only complementary expert SOURCE next. |
+| Wegener / Execution | FUND20 wire/image/privateRO qualified; exact .005cohort lifecycle proof had7/10 checks, additive focused repair next, NOT deployed. |
+| Boole / Engine | FinalNov17 measurement Task INSTALLEDenabled/parentRO verified; executor closed, no more mutations. |
+| Noether / Data | Inputs/evaluation/SEC useful queue COMPLETE; executor closed, no more acquisition needed. |
+| Closed | Kepler finalNov17 producer installed/parentRO verified; Banach512join and earlier Validation complete. MD is not an active LLM/worker. |
+
+One GPU training allocation at A/engine-research-agent/locks/gpu.lock.
+Completed Patch44.017GPUworker seconds and Chronos19.095allocation seconds
+are NOT current running utilization. New recurrent source is not training yet.
 
 ## Actual Paper Runtime
 
-- Original eight NAS: image876/source d2d4b108, exitOct21>=13:40UTC.
-- Window21 SAME original -r2 Tasks: prepare13:10/entry14:00UTC,
-  exitOct27>=19:45UTC. SOURCE8f1c212a/GOd5bd1aac/imageb96a8ef8.
-  Explicit natural-head22 vintage7d8f4fe2/input5817e3ab/all25rows/NAS-only/
+- Original8NAS image876/source d2d4b108: existing exitOct21>=13:40UTC.
+- Window21 R5 SAME original -r2 Task pair: prepare13:10/entry14:00UTC,
+  exitOct27>=19:45. SOURCE8f1c212a/GOd5bd1aac/imageb96a8ef8.
+  Explicit natural-head22 input5817e3ab/vintage7d8f4fe2/all25/NAS-only,
   NYS and unused mass cash/no renormalization. No model swap.
-- Nightly14:50UTC/image304 and F915:10/image499/source5ecfccef are separate.
-  Goal97 also distinct. Natural RTH21:50/old20D122:30/new9D123:00 unchanged.
-  Snapshot88bca32e exits BEFORE token bridge outside RTH, no coordinator.
-- App automation once Oct22 00:45KST follows existing outcomes, quiet unless
-  material; no TaskRun/substitute orders or replacement follow-up chain.
+- Nightly14:50UTC/image304, F915:10/image499-source5ecfccef, Goal97 distinct.
+  NaturalRTH21:50/old20D122:30/new9D123:00 source owners unchanged.
+- App one-shot Oct22 00:45KST follows existing outcomes, quiet unless material;
+  no manualTaskRun, replacement follow-up chain or substitute orders.
 
-R5 ACTUAL deployment:
+R5 actual action evidence:
 A/execution/current-window21-provisional-nas-deployment-20261021-v1/source-r5/action-retarget-r3/CONSUMER.json
-3330a61c674e2a1f72e3767c5c638269c506994c6e22e8903dcca2ccb6bfc536.
-2UPDATE-only flags20/0Run-newTasks-triggers-API-model-privatewrites;
-25.548393upper/allprobesjoined. Parent fresh COM confirms both actions/due/
-enabled/principal/nativeACL and257other XML/ACL. Both use pythonw.
-Installation is NOT runtime/submit/fill/lifecycle closure.
-R1 own-venv false conflict/R2 mixed pair/rollback UNKNOWN remain immutable.
-R3 normalizes only scheduler-added SD exactly matching original native ACL.
-Old global registry UNKNOWN/foreign attribution/reservations unchanged.
-Scoped native identity proof758d35e3 proves own unstarted request, NOT
-foreign inventory-flat/release/adoption. All installers/probes CONSUMED.
+3330a61c. TwoUPDATEflags20/0Run-newTasks-triggers-API-privatewrites.
+Parent COM confirmed pair/actions/due/principal/ACL/257otherXMLACL.
+Installation is NOT prepared input/submit/fill/closure; oldr1/r2 failures stay A.
+All consumed installers/maintenance/probes must never rerun as readers.
 
-Private volume thericher-v2-paper-canary-private-acct-20261007-v1 mounts
-/app/private, state /app/private/canary. Use strict categorical readers,
-never recovery-capable observe() as offline inspection.
-Nightly maintenance7fe5dac2 ACTUALLY closed:
+Private volume thericher-v2-paper-canary-private-acct-20261007-v1,
+/app/private/canary. Offline readers: exactpins/networknone/RO/categorical,
+never recovery-capable observe(). Current NAS reader20df9e23:
+A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/read_owned_dispatch.py.
+Operational logging disabled; hash/marker/time assumes honest host, not OS proof.
+
+Nightly unused-pointer maintenance7fe5dac2 ACTUALLY closed0API/orders/Tasks:
 A/execution/current-nightly-expired-unstarted-maintenance-20261021-v1/ACTUAL-CLOSED.json.
-Only exact unused pointer archived; bank/foreign plans/reservations unchanged,
-0API-orders-Tasks/all6actorsjoined. Consumed callers never rerun.
-F9 RO2f07a757 under current-f9-pending-categorical-diagnosis-20261021-v1/host-r2:
-outcome_unknown/startmarker/noack-brokerref/expiredTTL/reservation held.
-Origin d6ced0a2 cannot prove original non-send; later0POST is not that proof.
-NAS accounting caller5f0d6f83/9fd7a2f2 is READY27tests at
-current-nas-exit-accounting-readiness-20261020-v1/caller-r1, not actual PnL.
+Bank/foreignplans/reservations preserved, six actors removed, CONSUMED.
+F9 diagnosis2f07a757:
+A/execution/current-f9-pending-categorical-diagnosis-20261021-v1/host-r2/FINAL.json.
+Unknown/startmarker/noack/expiredTTL/reservationHELD; originald6ced0a2
+non-send unproven. Later0POST/historyabsence is not proof; no repeat19GET.
+Accounting5f0d6f83/caller9fd7a2f2 at current-nas-exit-accounting-readiness-20261020-v1/caller-r1:
+27SYN checks ready, not actual fees/netPnL.
 
-## Current Research
+## Current Broad25 Research
 
-Patch512 actual Data READY:
-A/data/current-fundamental20-patch512-input-20261021-v1/CONSUMER.json
-3601a19602c428f2a53fe80515bc2c988eb1a403814b96d673adc92c94781940.
-FIT11091/INNER6017/PRED425 original keys; all512 prior CLOSEs known/0unknown.
-FP32[N,512,1]=log(FP64 CLOSE)-log(lastpriorCLOSE), sessions e-512..e-1;
-late29 unchanged FP64 FUND[:,21:50].24native15independentchecks/one derivation/
-65upper/alljoined/0labels-model-GPU-API. Do not rederive.
-Strategy d80f3902 at current-fundamental20-patch512-hypothesis-20261021-v1:
-43CPUchecks/405027params/0optimizer-market-GPU; Patch16/stride8/63tokens,
-width128/3layers/4heads/FF256/meanpool/late29/seed4101. Patch/attention studies
-already exist; new512/FUND20 application, not an untried architecture claim.
-Actual FINAL54867822 at that Engine root: oneCUDAfit21epochs/best1/
-1638updates/44.017121GPUworker seconds/530.020341activeupper/alljoined/
-canonical lease free. RESULTddc4eee3:10bp PERLEG growth/DDpercentNAV
-PATCH+1.341353/.287486 vsFUND+1.015525/.213627/uniform+.687260/.224125.
-ScientificFAIL against FITprior; financialFAIL on incumbent DD, overallFAIL.
-Weightsaf4234c4/curvesf00fec5d retained. No refit/old-criterion relaxation.
-Two reader attempts/one actual outcome intake; pre-value schema repair is
-not original one-attempt compliance. Native-r1 failure retained.
+Data price audit4831e9b5:
+A/data/current-broad25-price-input-support-20261021-v1/CONSUMER.json.
+All25 on every expected date: FIT31450/INNER15625/PRED1275, input-only membership.
+R21 is prior21 log-CLOSE differences; inherited observed252CLOSE guard, not a
+new fullBar/PIT/price-accuracy qualification. OHLC flags do not enter R21.
 
-Next current-fundamental20-patch-recurrent-halfpool-20261021-v1:
-SOURCE53f53c7c/21SYNchecks/CACHEGEOMETRY740dc9e4. Fixed .5 probabilities
-after one component normalization;3new12cachedcells/0model-GPU. Compare
-pre-existing recurrent incumbent+uniform, report higher-risk Patch tradeoff.
-Original120active ceiling closed BEFORE numerical effects:70.323504source+
-60review=130.323504. Prospective240 TOTAL ceiling carries every old debit,
-same original deadline02:27:10UTC, one unchanged readout-r1; no old-cap
-compliance/refund claim. Actual readout-r1/FINAL at02:20:37UTC COMPLETE:
-RESULTbacc9f16/VERIFY89f8a30f, allocation EXACT recurrent alias/0new12cached/
-1outcomeintake/0models-GPU/141.125862upper/alljoined/financialFAIL.
-It adds no diversification; no blend weight/orientation rescue. Next study
-comes from completed FIT/INNER diagnosis5ee80f6b/FINAL150.696211upper/
-26puremaskchecks/noPRED-model-GPU. Real backbone gradients exist; longer
-training is not a supported simple fix. INNER issuer-FE score projection
-RNN.893755/RankNet.968129/Patch.595766 is descriptive, not label causality.
-New current-fundamental20-explicit-id-ablation-20261021-v1 zeros only
-standardized FUND50[:,21:46], same dimensions/factory/actualincumbentseed3901,
-retains price/age/proxy/ratios. Originalproposal4001 was parent factual
-mistake, superseded BEFORE numerical effects, not a second seed trial.
-One newfit/max128pat20/oneactualreadout/3new9cachedcells;1200activeTOTAL
-including closeddiagnosis150.696211once,3600elapsed; no retry afteroptimizer.
-INNER same issuer-FE projection must fall20percent versus cachedRNN AND
-frozen10bp growth better/RNN-uniform DD no worse. Proper scores diagnostic.
-Claude9e154a5e SOUND_WITH_NAMED_LIMITS: not implicit-ID removal/causal proof.
-Actual FINAL at that root/RESULTdee22eff COMPLETE:1CPUfit58epochs/best38/
-4524updates/33.568780marketworker seconds/241.714533totalupper/alljoined/
-leasefree. NativeCPU4+CUDA4updates; measuredCPU1.0209s/CUDA.9832s per epoch
-selectedCPU under frozen10percentmargin, not a GPU permission problem.
-Initial8tensors BITIDENTICAL to cached3901 epoch0 (7d6fb2fe), maskonlyaxis.
-INNERissuerFE R2 .165545 passesmechanistic .715004 threshold.10bp replay
-growth/DDpercentNAV+.706135/.270296 vsRNN+1.015525/.213627, financeFAIL/
-overallFAIL/3new9cached/1actualintake. Fullcurves1b7b5f97/weights0db8b34c.
-No retries/seed/weight rescue or independent-alpha/Paper claim. Recipeclosed.
-Next broader fixed25 optionalcontext SOURCE proposal: market inputs required,
-strict accounting only whenknown, matched availability/age controls vsactual
-ratios, no ID/neutral imputation/future-completeness membership. CPUbaseline
-before moreDL; no market fit or new Data qualification inferred yet.
+Optional-proxy26 producer17c3ea82:
+A/data/current-broad25-optional-proxy20-input-20261021-v1/CONSUMER.json.
+Price rows retained even with missing quarterly context. Usable context
+FIT11091/INNER6017/PRED425; unknown20359/9608/850 is explicit.
+26columns: R21/filingage/filedproxy/usablemask/netmargin/liab-assets, no ID.
+CONTROL zeroes ONLY known ratios; FUND actual known ratios, same mask/age.
+FIT30975/INNER15250 supervised keys after physical20session purges.
+Acceptance or labelled filed-end+2session lag is retrospective proxy, NOT PIT.
+Current-listing/vintage, capture-after-origin, providerfields/CA/finality
+limitations remain; matched masks do not remove metadata/value leakage.
 
-Parent pre-effect corrections: consume normalized sequence DIRECTLY, no
-second log/inversion; standardized filing-age can be negative. Same actual
-factory/checkpoint identity including actual batch-order SHA in native and
-market, validated BEFORE constructor. Real host imports/role DTO/checkpoint
-callsite exercised before fit; weights/fullcurves/result before PRED callback.
-Native pace uses representative128-row pack. One useful GPU owner/headroom,
-finite active/elapsed/counters and no fit retry freeze before numerical effects.
-Claude current-fundamental20-patch512-20261021-v1/SCOPE-NOTE.json:
-both Patch512/Paper20 SOUND_WITH_NAMED_LIMITS/response32460fa3/one call/
-shared60upper. Its hypothetical history gap is answered by actual0unknown,
-not a new data/approval hold. Same reused51overlapping20session/currentlisting/
-currentvintage/providerfields/nonPIT/CA-finality limits, not independent alpha.
+Separate PRED Eval9c0bd613 after HGB policyseal4466b99a:
+A/data/current-broad25-optional-proxy20-input-20261021-v1/pred-eval-r1/CONSUMER.json.
+1275keys/51dates/25axis/70marks; no old425label intersection/cropping.
+Data1derivation and each Engine1readout are separately counted physical accesses.
 
-## Closed Experiments / No Repeat
+HGB broad25 COMPLETE:
+A/research/current-broad25-optional-fundamental20-development-20261021-v1/FINAL.json.
+RESULTb3dfa8dc/VERIFY9b592e98, actual sklearn1.9.0/native NaN/chronological X_val.
+TwoCPUfits20/21rounds, selected0/1; fullsafe states/curves before PRED.
+One readout/12logical9distinct replaycells/248.067898activeupper/alljoined.
+10bp PERLEG growth/DD percent initialNAV: CONTROL=uniform+.294233/.207221,
+FUND+.443503/.227658. ProperFAIL/financeFAIL/overallFAIL. No refit/rescue.
+Single prefix1 gain is not strong learned accounting evidence.
 
-- HGB20 27b417c4:2CPUfits/properPASS-financeFAIL/FUNDprior0 uniform alias,
-  not learned accounting information.
-- Recurrent20 7efaa9e0:2CUDAfits26epochs/best6/4056updates/29.194GPUworker
-  seconds/alljoined.10bp PERLEG growth/DDpercent initialNAV FUND
-  +1.015525/.213627 vs BASE+.867644/.321372/uniform+.687260/.224125.
-  Incremental screensPASS, analytic FITprior proper scores beat BOTH.
-- Fixed HGB/recurrent pool f65ca8e8:formalPASS but FUND exact recurrent
-  allocation alias/no extra diversification/3new9cached/0models-GPU.
-- Chronos2 O/C512/h20 914fa4f9:trusted95a9710/4native102market calls/0fits/
-  35.72GPUworker seconds/44.27allocation/alljoined. GROUP+.735933/.208319
-  vs ISOLATED+.941339/.228407percentNAV; peer financialFAIL.
-- Fixed FUND/Chronos half-rank fusion12e05488:10bp+.850532/.228229,
-  financialFAIL/3new12cached/0models-GPU/noaliases. Two reader attempts/one
-  actual intake after pre-value nested-ref error, NOT one-attempt compliance.
-  Temporary Validation42hashrefs/15saved NAV metrics/zero discrepancy,
-  0new market intakes/model/replay; closed.
-- RankNet actually21epochs/best1/1638CPUupdates/0newGPU:
-  A/research/current-fundamental20-objective-alignment-development-20261021-v1/first-ranknet-r1/readout-import-continuation-r1/READBACK.json
-  e9f5bbb6e6f8fbec6dfa2717551385f1c14c3dc9dcee016d3523870acbc702e8.
-  RESULT54445662:10bp+.711523/.389083percentNAV/financialFAIL/3new9cached.
-  Original HUBER checkpoint0 failed missing batch SHA/0updates, pair still
-  UNAVAILABLE. Old full conservative2starts/19968updates debit unchanged,
-  plus new first RankNet1start. No refund/reuse. Host import before-value
-  error repaired from sealed scores only;2attempts/1actual intake/
-  562.236472totalupper/alljoined. Never refit/reforecast/re-readout.
-- OOF c04d7aeb COMPLETE/9fits consumed/financialFAIL, not another job.
-  Deep old model/indicator/foundation/prefix-recovery histories stay Git/A.
+Chronos broad25 Data0131fedf:
+A/data/current-broad25-chronos512-input-20261021-v1/CONSUMER.json.
+1275known512 O/C,425exact prior cache identities+850new, no tail-equivalence
+exception. Context e-512..e-1/lastpriorCLOSE anchor;50independent raw checks.
+Numerical COMPLETE:
+A/research/current-broad25-chronos20-completion-20261021-v1/numerical-r1/FINAL.json.
+Trusted95a9710 release2025-10-30 before all2026targets; image d6b43213.
+51pipeline/model returns/850new/425cached/0oldforwards/0fits/unchangedweights,
+19.095469GPUallocation/10.227117worker/3.554894forward seconds/alljoined/leasefree.
+HOST score-policyseal913fdbfd; fixed readout-r1 COMPLETE/a8b97bb9/VERIFYdb9f6171.
+One intake/9cells/75.578542newactiveupper/0newmodelcalls/noHGBpeek.
+10bp growth/DDpercentNAV Chronos-.026481/.406450 vsuniform+.294233/.207221;
+financeFAIL, no forecast/weight rescue. Combined212.954664upper/alljoined.
+Next source-only close-price trend/reversion expert proposal, no market trial yet.
+Marginal median C20-minus-O1 contrast, NOT expected return/probability.
+Corpus scope not_disclosed; post-checkpoint reused-data development, no alpha.
 
-## Frozen Future Evidence
+Next recurrent family:
+A/research/current-broad25-missing-context-recurrent20-development-20261021-v1.
+SOURCE ONLY, zero market/GPU fits yet. Same broader25 keys, R21 LSTM64/head32,
+late4context+mask; sanitize hidden NaNs then torch.where learnedunknown token.
+CONTROL post-affine known-ratio zeros only, same adapter/price/age/mask;
+FIT-only observed affines. One pairedseed3901, max256/pat30/LRschedule/best
+chronological INNER including0, no seed/window grid. Actual full-state/gradient/
+allmissing/mixed/400row pack+1000eval CPU-CUDA pace proof BEFORE numerical GO.
+CPU native actual400row/1000eval/fullstate/gradient/mask/callback proof PASS;
+pre-modelRO mount fault125 preserved/fixed without model/source changes.
+Source120+Claude60=180active/1800elapsed, all debits carried once.
+Parent prospectively granted numerical-r1 3600TOTALactive/14400elapsed,
+2fits/max39936updates/onePREDreadout12logicalcells; actualCUDA proof/pace/
+headroom first, auto-dispatch if guards pass. No after-update fit retry.
+Claudecea35537 SOUND_WITH_NAMED_LIMITS: one paired draw, not general causal
+ratio effect/absence; identical mask does not fix retrospective source leakage.
 
-FUND20 actual point:
-A/research/current-fundamental20-prospective-point-20261021-v1/COMMITTED.json
-0996dabbd08c29cfc01da9e13fa598c6f34c998a0be7d0cb65050169b11860dc.
-Committed01:01:46UTC before Oct21OPEN13:30UTC;2CPU epoch6 restores/forwards/
-8rows each/25axis17unknown/0fits-GPU-futuremarks-API-Tasks.
-Input216cec35 actual00:45:59/max componentOct20 23:49:31UTC. ONE .005initial
-NAV cohort, target20thCLOSE Nov17 21UTC, not20samples or Paper.
-FINAL07208ea1/readback39checks/84.141175upper/alljoined; never reforecast.
+## Frozen FUND20 / Paper Connection
 
-Actual future adapter d045b4a5/2e31bb22 under
-current-fundamental20-prospective-measurement-adapter-20261021-v1/actual-r1
-passes18actual-point wire checks, NOT superseded fiveJSON prototype.
-Host edb79bdb at current-fundamental20-prospective-measurement-20261117-v1
-prepared25SYN/quietpythonw/outside-window checks, NOT installed/measured.
-Eight routes span old20/new9 as6+2: composite adapter68b8bd1a is source-ready.
-Old feed plans ENDNov16; separate final Nov17 source/native preparation,
-not mutation of old cursors/source, fake future hashes or shorter target.
-Final source35527f9e/ABI986df7dd under
-current-fundamental20-final-session-capture-20261117-v1 is source-only:
-Nov17 23:20UTC/full25/25normal27maxGET/1POST/600active900elapsed.
-Data install-r1/r2 failed PRE-EFFECT callers; r3 actually created ONE newTask
-disabled. Native flag2 added exactly ownerREAD0x00120089,4vs3intendedACE/
-no other259Taskchanges; never infer an enabled collector from creation.
-Bounded exact-own SetSecurityDescriptor(original3ACE,16) plus directEnabled
-recovery preparing, Claude b487de3b SOUND_WITH_NAMED_LIMITS/60upperonce.
-Fresh exact ACL/XML/source/due/readback before and after enable; noRegister
-again or blindACLadoption. SourceSD63checks and pinned atomic token directory+
-legacylock/pacing49d810ec qualified. No collector Run/API/measurement yet.
-Old feed plans/cursors/receipts unchanged.
+Actual point0996dabb:
+A/research/current-fundamental20-prospective-point-20261021-v1/COMMITTED.json.
+Committed01:01:46UTC before Oct21OPEN13:30; twoCPUrestores/forwards,
+8known/25axis17unknown, ONE .005initialNAV cohort toNov17 twentiethCLOSE21UTC.
+Input216cec35 at00:45:59/maxcomponentOct20 23:49:31UTC. Never reforecast.
+Actual adapter2e31bb22/ABId045b4a5/composite68b8bd1a preserves exact6+2
+old20/new9 sources. Oldplans endNov16; finalNov17 needed separately.
 
-SEC cursor recovery READBACK at
-A/data/current-sec-historical-submissions-cursor-recovery-20261021-v1:
-CVXretained/2nonquarterexceptions/3neworiginal10Qheaders/14of18metadata
-issuercoverage;20SYN+native+independentreadback/old11GET+new1GET.
-NEE4exceptions exceeded old2cap; oldSTOP immutable. Separately frozen
-quarterly-header continuation CONSUMER3d64d4f6/VERIFY PASS reusesNEE and
-adds2GET/0failure-retry/6original10Qheaders;16of18metadataissuers/226linked
-contexts11issuers/combined14GET.86JPM-MSbankfilesdeferred as not useful for
-current exactquarterrecipe, NOTprovennonquarter/sourceexhaustion. No current
-matrix/asof/PIT qualification. Descriptor discrepancy cause UNKNOWN.
+FinalNov17 Data ACTUALLY installed enabled:
+A/data/current-fundamental20-final-session-capture-20261117-v1/acl-recovery-r3/enable-only-r1/INSTALLED-CONSUMER.json.
+d7854350/source889a8819/plan41acc936/ABI986df7dd/nextNov17 23:20..23:35UTC,
+25normal27maxGET/1POST/600active900elapsed.
+Parent fresh NoWrite COM passed enabled/due/nativeACLd64b/259otherssame.
+OneCREATE/oneSetSD16/oneEnable CONSUMED. NewUnifiedtrue intent/resolvedSID,
+exact3ACE/order/owner/group/protection plus documentedAIbit only; not old
+false/rawACL equivalence. Historical failures/OSdeltaUNKNOWN preserved.
+Futurecapture hash UNKNOWN. Measurement ACTUALLY installed enabled95924e7e:
+A/research/current-fundamental20-prospective-measurement-20261117-v1/installation-r3/registered-defaults-r1/INSTALLED-CONSUMER.json.
+Source dc890686/runtimea3f5fa40/jobaafc51e1/nextNov17 23:55..00:05UTC.
+Parent freshreader4650d609 NoWrite04:16 confirms ownACL/XML/principal/due;
+later otherTaskdelta UNKNOWN/separate, not prior transaction reclassification.
+OneCREATE18/oneEnable CONSUMED,0Run/models/API/futuremarks. Boole closed.
 
-Paper20 tracked implementation and44new compatibility cases are complete:
-model-proposal-nas-20session-2026-v1 explicitly validates canonical20sessions,
-DST/holidays/early-close and finalCLOSE-minus15minute operational exit proxy.
-Old v1/default14-calendar-day behavior and byte codecs remain unchanged;
-old/default reader rejects new profile. Same generic native execution/bank/
-request identity/risk, pending-before-loader and foreign custody preserved.
-This is compatibility, NOT new deployment/actual private qualification or
-replay-fill parity. Current R5/model/Tasks/requests are NOT swapped.
-Actual saved point-to-native wire READY at
-A/execution/current-fundamental20-committed-point-paper-wire-20261021-v1/WIRE-CONSUMER.json
-c3acfa90/source4c11205f/bindingfdc595fc/input5d792094/24checks/1derivation/
-8known+25mask17unknown/4NASproposals/NYS cash/no renorm/one.005cohort.
-Oldb96image measured lacks20module. Newonebuild imagef31e781d/source988c14a8/
-native8938cb9d/11.690154upper/Python3.12.15/Torchabsent/networknonepublic
-probe/cleanup. Separate strictRO private compatibility preflight preparing,
-no actual account/funds/quotes/Task/order/deployment inferred.
-Earlier five-policy cb1c1d9a/HALFb060d4fa targets Oct21OPEN->Oct27fifthCLOSE.
-Shadow d33490c9 installedOct22/23/24/27 01UTC;Oct27measurement22db8f33
-installed23:55..00:05UTC/30futurecells/oneintake. Not exit prices/fills/PnL.
-Original28e887fc/oldOct26ffcf64a0 are separate scopes; no missing/exit-code
-success inference.
+Tracked20session profile verified: model-proposal-nas-20session-2026-v1,
+canonicalcalendar/DST/holidays/earlyclose/CLOSE-minus15minute exit proxy.
+Old14calendar-day default/codecs/sharedbank/risk/pending-first unchanged.
+Actualwire c3acfa90/input5d792094/bindingfdc595fc/24checks:
+A/execution/current-fundamental20-committed-point-paper-wire-20261021-v1/WIRE-CONSUMER.json.
+FourpositiveNAS proposals, onepositiveNYS mass cash/no renorm/ONE.005cohort.
+NewCPUimagef31e781d/Python3.12.15/Torchabsent.
+StrictprivateRO additive-reader5caa4298 proved exact unstarted pointer/requests
+absent/privatebytesunchanged; existingunknownreservation1HELD/foreignplans
+unqualified. Not fresh broker funds/quotes/current inventory/submit proof.
+
+Runtime source prep:
+A/execution/current-fundamental20-paper-cycle-preparation-20261021-v1/CONSUMER.json.
+174activeupper/7of10nativechecks; three partial-entry/carry/risk assertions
+need focused repair. No deployment/API/privatewrites; oldR5 unchanged.
+Onependingleg/visit means4x280s exceeds15m worst-case. Fastfill SYN is not
+guaranteed closure; exact pending/cancel/owned nextsession carry must qualify.
+Do not rewrite frozen target or release reservations to force completion.
+
+Earlier fifth-CLOSE pointcb1c1d9a/HALFb060d4fa, shadowd33490c9 Oct22/23/24/27
+01UTC and measurement22db8f33 Oct27 23:55 are separate installed scopes.
+
+## Closed Results / Do Not Repeat
+
+- RecurrentFUND20 7efaa9e0:2CUDAfits26epochs/best6/4056updates/29.194GPUworker;
+  10bp FUND+1.015525/.213627 vsBASE+.867644/.321372/uniform+.687260/.224125
+  percentNAV. IncrementalPASS, FITprior proper still better.
+- Patch512 FINAL54867822/RESULTddc4eee3:1CUDAfit21/best1/1638updates/
+  44.017worker seconds; +1.341353/.287486, proper/financeFAIL. Safeweights/
+  curves retained, no longer-epoch rescue or convergence claim.
+- HGB20 27b417c4/FUNDprior0 uniformalias; fixedHGB-RNNf65ca8e8 and
+  Patch-RNNbacc9f16 EXACT recurrent allocation aliases, not diversification.
+- Chronos peer914fa4f9 FAIL; fixedrankfusion12e05488 +.850532/.228229 FAIL.
+- RankNet e9f5bbb6/54445662:21CPU/best1/1638updates/financeFAIL;
+  originalHUBER0update identityfault/pairUNAVAILABLE and full debits preserved.
+- ID-mask dee22eff:1CPUfit58/best38/4524updates/.706135/.270296 financeFAIL;
+  mechanistic issuerR2.165545PASS. CPU selected on measured near-tie, notGPU ban.
+- OOFc04d7aeb9fits closed. Deep GRU/MLP/TCN/attention/TimesFM/LoRA/indicator
+  and old source/reader/cap failure histories stay Git/immutable A.
+
+SEC useful continuation3d64d4f6 closed:16of18metadataissuers/226contexts11issuers/
+combined14GET. 86bankfiles deferred as not useful for current recipe, not
+source exhaustion/nonquarter proof. Addedmetadata is not current matrix/PIT.
+No more GET or completed Data derivation without concrete new consumer.
 
 ## Verification / Recovery
 
 A/verification/model-paper20-profile-20261021-v1/authority.json82df0f69:
-1764focusedserialPASS2skip/18612fullPASS25skip/8workers/362.95seconds/
-cleanhelper/Ruff/default-research-accounting sample-envCompose PASS.
-1374production/test/script/dependency sources5802dd71 and controls match.
-Docs/external reuse needs fresh exact equality plus independent native checks;
-18k repo reruns cannot validate arbitrary external code. Tracked/control/
-material changes follow AGENTS verification, not stale authority.
-Latest pushed84f7a7b. History/source/custody/failures stay Git/immutable A.
-Parent stages explicit owned files, preserves unrelated %SystemDrive%/.
-After interruption recheck actors/lease/receipt identity; never age-reclaim,
-refund closed debits or rerun completed fits. Continue ready lanes; unfinished
-company outcome does not become complete just to end a turn.
+1764focusedserialPASS2skip/18612fullPASS25skip/8workers/362.95s/cleanhelper,
+Ruff/default-research-accounting sample-envCompose PASS.
+1374sources5802dd71+controls: docs/external reuse needs fresh exact equality
+and independent changed-external native proof. Repo tests cannot validate D code.
+Latest pushed eec0c08. Explicit staging, preserve unrelated %SystemDrive%/.
+After interruption classify actual owners/lease/receipt resume/reconcile/complete;
+no age reclaim, refund or completed-fit restart. Continue ready lanes.

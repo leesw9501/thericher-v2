@@ -98,8 +98,13 @@ not active utilization. Diagnosis5ee80f6b and ID-mask1CPUfit58epochs/best38/
 4524updates/33.568780marketseconds/241.714533upper are complete; nativeGPU4
 updates only, CPU chosen by near-tie projection. MechanismPASS/financeFAIL.
 No more small-universe seed/mask/weight rescue. Broaderfixed25optionalcontext
-source prepares matched availability-control versusactualratio CPUbaseline,
-not new DL/numerical work yet. Never reinterpret NaN as neutral/economically
+Data17c3ea82 andEval9c0bd613 are nowCOMPLETE. Broad25HGB2fits/readoutb3dfa8dc
+proper/financeFAIL; Chronos850newGPU+425cached/readouta8b97bb9 financeFAIL,
+no further modelcalls. Newmissing-context recurrent CPU400row/1000eval
+native proof PASS; numericalGO3600TOTAL/14400elapsed/2fits/39936updates/
+onePREDintake issued, actualCUDA pace/headroom proof then automaticdispatch.
+Close-only expert SOURCE proposal is separate, no market trial yet.
+Never reinterpret NaN as neutral/economically
 known or relax old required-input contracts; new schema is optional-context.
 
 Actual FUND20 input216cec35:
@@ -113,12 +118,16 @@ D:/thericher-v2/model-artifacts/data/current-fundamental20-prospective-measureme
 Old20/new9 exact6+2cover; oldplans ENDNov16.
 FinalNov17producer source35527f9e/ABI986df7dd:
 D:/thericher-v2/model-artifacts/data/current-fundamental20-final-session-capture-20261117-v1
-Source-only/23:20UTC/25normal27maxGET/1POST/600active900elapsed.
-SD/atomic-token/pacing qualified. Actual finalproducer1newTaskcreateddisabled/
-unqualified dueknown auto-addedownerREADACE; exactSetSD16/directEnabled
-recovery preparing. Originalcreate capconsumed/noRegisteragain/manualRun.
-Futuremeasurement host separately recovering pre-createCOMXMLencoding only;
-no capture/result/futurehash inferred or fabricated.
+Finalproducer ACTUALLY installedenabled d7854350/source889a8819/plan41acc936,
+Nov17 23:20UTC/25normal27maxGET/1POST/600active900elapsed.
+OneCREATE/SetSD16/Enable consumed, exact3ACE+soleAIbit/newUnifiedtrueintent,
+parentNoWriteCOM PASS. No repeated mutation/manualRun.
+Measurement ACTUALLY installedenabled95924e7e/runtimea3f5fa40/jobaafc51e1,
+Nov17 23:55..00:05UTC/oneCREATE18-oneEnable/0Run/API/modelcalls.
+Own-task source-pinned fresh RO reader4650d609/source dc890686 NoWrite passed:
+D:/thericher-v2/model-artifacts/research/current-fundamental20-prospective-measurement-20261117-v1/installation-r3/registered-defaults-r1/reader.ps1.
+LaterotherTaskdeltaUNKNOWN is not priortransaction attribution. Futuremarks/
+resultsUNKNOWN; do not fabricate hashes or invoke consumed installer/launcher.
 
 Twenty-session ModelPaper tracked source is verified but NOT deployed:
 model-proposal-nas-20session-2026-v1, canonical20sessions/DST/holidays/
@@ -128,8 +137,12 @@ Actual savedpointwire c3acfa90/source4c11205f/input5d792094/bindingfdc595fc
 at D:/thericher-v2/model-artifacts/execution/current-fundamental20-committed-point-paper-wire-20261021-v1
 has8known25mask17unknown/4NASproposals/one.005cohort/24checks/1derivation.
 NewCPUimagef31e781d/native8938cb9d/onebuild11.690154upper/3.12.15/Torchabsent/
-networknonepublicprobe/cleanup. Strictofflineprivatepreflight is owned next,
-not fresh accountfunds/quotes/orderability or runtime deployment evidence.
+networknonepublicprobe/cleanup. StrictprivateRO5caa4298 nowprovesexact
+unstarted request/bytesunchanged/localcompatibility/unknownreservation1HELD,
+not freshbrokerfunds/quotes/currentinventory. New .005cohort runtime source
+current-fundamental20-paper-cycle-preparation-20261021-v1 had7/10checks;
+focusedpartial/cancel/carry/risk validation follows, not deployed. ExistingR5
+unchanged. Never rerun originalproof/maintenance/callers as metadata readers.
 Do not swap currentR5/rebind unknown request/infer replay-fill parity.
 Five-policypointcb1c1d9a/shadowd33490c9/Oct27measurement22db8f33 are separate
 fifth-CLOSE consumers, actually installed not filled/measured. Originalpoint

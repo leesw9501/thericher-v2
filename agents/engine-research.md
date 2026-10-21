@@ -1,127 +1,112 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-Oct21KST/UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Engine owns models/targets/splits/replay, not broker risk. Company NAS lifecycle
-UNFINISHED, existing exit>=13:40UTC. Standing Paper authority is independent
-of research pass/failure. Parent alone owns shared MD/Git.
+2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own targets/features/splits/fitting/replay, not broker risk or human approval.
+Company NAS lifecycle UNFINISHED; Paper authority independent of research pass.
+Parent shared MD/Git. MD is not proof of running model/GPU.
 
-## Current Owner / Next Action
+## Current / Next Research
 
-Hubble: Patch512 and fixed Patch/recurrent probability-halfpool COMPLETE.
-Diagnosis current-fundamental20-learning-diagnosis-20261021-v1 COMPLETE:
-DIAGNOSTICS5ee80f6b/FINAL150.696211upper/26puremaskchecks/0PRED-model-GPU.
-Nonzero backbone gradients and later INNER deterioration reject a simple
-short-epoch/zero-gradient explanation. RNN/RankNet/Patch INNER issuer-FE
-score R2 .893755/.968129/.595766 is descriptive, not label causality.
-Completed current-fundamental20-explicit-id-ablation-20261021-v1 used ONE
-samefactory/seed3901 model with FUND[:,21:46]zero after original QA/affines,
-retaining dimensions/price/age/proxy/ratios/keys/splits/targets. Parent's
-4001proposal assumption corrected BEFORE numerical effects, no seed grid.
-Max128/pat20/sameLR/bestcheckpoint0/onefit/oneactualreadout/3new9cachedcells.
-1200TOTALactive carries closeddiagnosis150.696211once,3600elapsed, at most
-one pre-optimizer technicalretry, none afterupdates. Actual native factory/
-identity+transformhash/checkpoint/DTO/reportwriter before any market fit.
-Joint screen: INNER issuer-FE R2<=.7150038294136176 (20percent drop) AND
-10bp growth>cachedRNN+uniform/no-worseDD vsboth. Cash/samegross/turnover
-reported; properCE/Brier diagnostic. Claude9e154a5e SOUND_WITH_NAMED_LIMITS.
-Still no implicit-ID elimination/causal/independent-alpha/Paper claim.
-ActualRESULTdee22eff/FINAL COMPLETE:1CPUfit58epochs/best38/4524updates/
-33.568780marketseconds/241.714533upper/alljoined/leasefree/1actualintake.
-NativeCPU4+CUDA4updates; GPUepoch.9832 vsCPU1.0209s insufficient10percent
-routingmargin, soCPU selected, notenvironment/authority block.
-Matched3901initial8tensors BITIDENTICAL7d6fb2fe. INNERissuerFE R2.165545
-mechanisticPASS, but10bp growth/DDpercentNAV+.706135/.270296 vsRNN
-+1.015525/.213627 financialFAIL/overallFAIL/3new9cached. Curves1b7b5f97/
-weights0db8b34c retained. No fit/seed/weight/epoch rescue; recipe CLOSED.
+Hubble: broad25 HGB pair and readout COMPLETE; no refit.
+Next SOURCE-only current-broad25-missing-context-recurrent20-development-20261021-v1:
+same30975FIT/15250INNER/1275PRED input keys, R21 LSTM64/head32,
+four latecontext values plus usablemask/learnedunknown4token.
+Validate rawunknownNaNs, sanitize hidden branch before torch.where; CONTROL
+post-affine knownratio zeros only, FUND actualratios, same adapter/age/mask.
+FIT-only observedcontext affines, no ID or missingrow removal.
+One pairedseed3901/max256/pat30/LR/bestchronologicalINNER including0.
+Native actualoptimizer/fullcheckpoint/RNG/allknown-allmissing-mixed/gradient
+and400row pack+1000eval CPU-CUDA pace proof before numerical dispatch.
+Source120+Claude60=180active/1800elapsed. ActualCPU400row/1000eval/fullstate/
+mask/gradient/finalhandler PASS; initialpre-modelmount125 preserved.
+NumericalGO3600TOTALactive inclclosedsourceonce/14400elapsed,2fits/
+39936updates/one1275PREDintake12cells. ActualCUDAproof+pace/headroom first,
+then automatic market dispatch if guards pass; no market fit inferred yet.
+Review A/review/current-broad25-missing-context-recurrent20-20261021-v1,
+responsecea35537 SOUND_WITH_NAMED_LIMITS. One paired draw, no general causal
+ratio effect/absence; matchedmask does not eliminate retrospective leakage.
 
-CurrentHubble SOURCE-only:
-current-broad25-optional-fundamental20-hypothesis-20261021-v1.
-Expand fixedprice-available25 universe instead complete-case8/9 restriction,
-requiredmarketdata unchanged; strictquartercontext OPTIONAL byNEWcontract,
-nativeNaN+observedmask not neutral missing-value imputation oroldinputrelaxation.
-Matched price+availability/age-control arm versusactual-known-ratio arm,
-same rows/payoff/costs/noissuerID. Missingness may encodecollection/issuer;
-increment must beatexactsameavailability controls, no future-completeness
-membership. One2fitCPUbaseline proposed beforeadditionalDL, no fit yet.
-Primary nativeNaN HGB1.7.2 docs checked, no newframework/library.
-Halfpool root current-fundamental20-patch-recurrent-halfpool-20261021-v1:
-readout-r1/FINAL actual02:20:37UTC/RESULTbacc9f16/VERIFY89f8a30f,
-EXACT recurrent allocation alias/0new12cached/1outcomeintake/0models-GPU/
-141.125862upper/alljoined/financialFAIL. No additional diversification.
-Prospective240TOTAL carries old130.323504source+review; old120closedFINAL
-unchanged/no refund or old-cap compliance. Normalize each component row once,
-fixedhalf pool/no second normalization; same425keys/class/20session target/
-51dates/70marks/cost/sleeves. Old component policies/cells stay exact caches.
-Pre-existing incumbent FUND20 is the risky baseline: candidate growth better
-than incumbent+uniform, DD no worse, at10bp. Report higher-risk Patch as a
-tradeoff, not demand higher return than every different-risk component.
-This NEW composition is adaptive AFTER component outcomes, not old Patch
-regrading or independent alpha. Parent obtains concise Claude challenge
-while source preparation continues. Exact aliases are not diversification.
+Einstein: broad25 Chronos forecasts and fixedreadout COMPLETE FAIL.
+No more forwards/fits/weight search. Next close-only expert SOURCE proposal,
+prior project indicator-kernel reuse plus causal/missing/tie SYN tests only,
+not new market feature generation or an outcome-picked ensemble.
 
-Boole: FUND20 future measurement host prepared, composite Data/source binding
-still needed before useful one-shot installation. No future marks now.
-Kepler owns composite6+2 and missing finalNov17 source/native preparation.
-Wegener separately implements compatible20session Paper input profile in
-tracked source, no change to current deployed R5/cohorts.
+## Broad25 Data / Completed Baseline
 
-## Latest Actual Training
+Priceaudit4831e9b5 at A/data/current-broad25-price-input-support-20261021-v1:
+all25everydate/FIT31450/INNER15625/PRED1275/input-only membership.
+R21=prior21 logCLOSEdiffs, not fullBar/PIT/price-fidelity qualification.
 
-A/research/current-fundamental20-patch512-development-20261021-v1/FINAL.json
-One CUDA fit/21epochs/best1/1638updates/405027parameters/44.017121GPUworker
-seconds/530.020341activeupper/alljoined/leasefree. RESULTddc4eee3:
-10bp PERLEG growth/DDpercentNAV PATCH+1.341353/.287486 versus FUND
-+1.015525/.213627 anduniform+.687260/.224125.
-ScientificFAIL: CE/Brier beat FUND but not FITprior. FinancialFAIL: growth
-beats incumbent/uniform, DD worse. OverallFAIL, no refit/epoch/criteria rescue.
-Two reader attempts/one actual outcome intake after disclosed pre-value
-schema correction; original single-attempt compliance NOT claimed.
-Selected safe weights af4234c4/fullcurves f00fec5d remain A, never Git.
+Optionalproxy26 Data17c3ea82:
+A/data/current-broad25-optional-proxy20-input-20261021-v1/CONSUMER.json.
+R21, age, filedproxy, usablebit, knownnetmargin/liab-assets/noID.
+Quarter usable FIT11091/INNER6017/PRED425, unknown20359/9608/850 retained.
+30975/15250 known labels after physical20session purge; PREDlabels separate.
+Acceptance-or-labelledfiled+2session proxy and captureafterorigin explicit,
+not PIT. No matchedmask claim of value/metadata leakage elimination.
+Separate PRED Eval9c0bd613/pred-eval-r1:1275keys/51dates/25axis/70marks,
+sealed AFTER actual HGBscores/policies4466b99a. No old425label intersection.
+Each actual producer/Engine access counted separately, not globalonephysicalread.
 
-Data3601a196 at current-fundamental20-patch512-input-20261021-v1:
-FIT11091/INNER6017/PRED425 originalkeys/all512known/0unknown;
-FP32 relative-log prior512 sequence/unchangedlate29/39checks/one derivation.
-Strategyd80f3902/43CPUchecks, architecture patch16stride8/63tokens/width128/
-3layers4headsFF256/meanpool+29/seed4101. Existing old patch/attention fits
-mean this is a new512/FUND20 application, not an untried architecture.
-Parent pre-effect fixes: no second log/inversion, standardized age may be
-negative, same actual checkpoint identity factory/native and market before
-constructor. Native actual128-row packs, host imports/DTO and callback
-durability tested. Claude32460fa3 SOUND_WITH_NAMED_LIMITS.
-All reused current-listing/vintage/provider-field/nonPIT/CA/finality limits
-remain, no independent alpha or real Paper PnL.
+HGB baseline COMPLETE:
+A/research/current-broad25-optional-fundamental20-development-20261021-v1/FINAL.json.
+RESULTb3dfa8dc/VERIFY9b592e98/2CPUfits20-21rounds/selectedprefix0-1/
+1readout/12logical9distinctcells/248.067898activeupper/alljoined.
+Actual sklearn1.9.0/nativeNaN/explicitchronological X_val/safestate/curves.
+10bp PERLEG growth/DDpercentNAV CONTROL=uniform+.294233/.207221;
+FUND+.443503/.227658. ProperFAIL/financeFAIL/overallFAIL. No rescue.
+Tiny properincrement/one boostinground is not robust accounting evidence.
 
-## Existing Evidence / Do Not Repeat
+Chronos Data0131fedf at current-broad25-chronos512-input-20261021-v1:
+1275known512 O/C,425exactsource-feature-context-model-mode cachematches,
+850new/no changedorunknownmatches/50independent rawchecks.
+Engine A/research/current-broad25-chronos20-completion-20261021-v1/numerical-r1/FINAL.json:
+trusted95a9710 release2025-10-30 before every target/51modelreturns/
+850new+425cached/0oldforwards/0fits/unchangedparameterbuffers/alljoined.
+19.095469GPUallocation/10.227117worker/3.554894forward seconds/leasefree.
+Sealed913fdbfd. Fixedreadout-r1/RESULTa8b97bb9/VERIFYdb9f6171 COMPLETE:
+9distinctcells/1intake/0newmodelcalls/75.578542newactiveupper/alljoined.
+10bp growth/DDpercentNAV Chronos-.026481/.406450 vsuniform+.294233/.207221,
+financeFAIL. No CE/probability claim from medianC20-minus-medianO1 contrast.
+Corpus not_disclosed/currentlisting-vintage/nonPIT/CA/finality/reuseddata,
+not independent alpha. No further calls just to occupy GPU.
 
-- Recurrent FUND20 7efaa9e0:2CUDAfits26epochs/best6each/4056updates/
-  29.194GPUworker seconds; FUND incremental screensPASS but FITprior proper
-  beats both.10bp FUND+1.015525/.213627 vsBASE+.867644/.321372percentNAV.
-- HGB20 27b417c4:2CPUfits/FUNDprior0 uniform alias/financialFAIL.
-- Fixed HGB/recurrent f65ca8e8:formalpairPASS but FUND allocation exact
-  recurrent alias/no new diversification/3new9cached/0models-GPU.
-- Chronos2 O/C512/h20 914fa4f9:4native102market calls/0fits/35.72GPUworker
-  seconds, GROUP+.735933/.208319 vs ISOLATED+.941339/.228407; peerFAIL.
-- Fixed FUND/Chronos rankfusion12e05488:financialFAIL+.850532/.228229,
-  3new12cached/0models-GPU/noaliases.2readerattempts/1actualintake.
-- RankNet standalone21epochs/best1/1638CPUupdates, RESULT54445662:
-  +.711523/.389083percentNAV financialFAIL. e9f5bbb6 readback under
-  current-fundamental20-objective-alignment-development-20261021-v1/first-ranknet-r1/readout-import-continuation-r1.
-  Original HUBER checkpoint0 missingbatchSHA/0updates remainsUNAVAILABLE.
-  Full conservative oldcaps plus newfirstfit preserved; no HUBER retry,
-  paired-success claim, refund or further RankNet readout/model calls.
-- OOF c04d7aeb9fits COMPLETE/financialFAIL. Old GRU/MLP/TCN/LSTM/attention/
-  indicator/TimesFM/LoRA/held-exit histories stay Git/immutable A, not ready jobs.
+## Closed Families / No Repeat
 
-## Frozen Prospective Evidence
+- Recurrent20 7efaa9e0:2CUDAfits26epochs/best6/4056updates/29.194GPUworker.
+  10bp FUND growth/DDpercentNAV+1.015525/.213627 vsBASE+.867644/.321372,
+  uniform+.687260/.224125. IncrementalPASS, FITprior proper better.
+- Patch512 FINAL54867822/RESULTddc4eee3:1CUDAfit21/best1/1638updates/
+  44.017worker/405027params/+1.341353/.287486; proper/financeFAIL.
+  Safeweightsaf4234c4/curvesf00fec5d. Two readers/oneintake, no refit.
+- ID-mask dee22eff:1CPUfit58/best38/4524updates/33.568780worker/
+  241.714533activeupper; matched3901initial8tensors exact. IssuerR2.165545
+  mechanismPASS, growth+.706135/DD.270296 financeFAIL. CPU selected on
+  near-tie projection, not GPU ban. No further small-universe mask/seed rescue.
+- HGB20 27b417c4 prior0 uniformalias; HGB-RNNf65ca8e8/Patch-RNNbacc9f16
+  exact recurrent allocation aliases, not diversification.
+- Chronos peer914fa4f9 and fixedrankfusion12e05488 FAIL; rankfusion
+  +.850532/.228229 percentNAV, not a fresh replicate.
+- RankNet e9f5bbb6/54445662:21CPU/best1/1638updates/FAIL;
+  originalHUBER0update missingidentity/pairUNAVAILABLE/debits unchanged.
+- OOFc04d7aeb9fits and earlier GRU/MLP/TCN/attention/indicator/TimesFM/LoRA
+  are histories in Git/A, not ready automatic grids.
 
-FUND20 point0996dabb at current-fundamental20-prospective-point-20261021-v1:
-actually committed01:01:46UTC before Oct21OPEN/twoCPUepoch6forwards/8members/
-25axis17unknown/0fit-GPU. ONE .005initialNAV cohort toNov17CLOSE21UTC,
-not20samples or Paper. No reforecast or future marks;39checks/alljoined.
-Five-policy cb1c1d9a/HALFb060d4fa instead targets Oct27fifthCLOSE; shadow
-d33490c9 andmeasurement22db8f33 installed, future decisions/PnL unknown.
-Do not conflate different horizons or infer runtime from installation.
+## Prospective / Execution Separation
 
-Breadth: fixed halfpool now, not automatic seed/model/window grids.
-Depth: only informed frozen campaign with actual optimizer/checkpoint/pace
-proof and finite counters. GPU use is useful work, not an outcome/idle-load goal.
+FUND20point0996dabb committedOct21 01:01:46UTC BEFOREOPEN; twoCPUforwards,
+8known25axis17unknown/ONE.005cohort->Nov17 twentiethCLOSE21UTC, no reforecast.
+Actualadapter2e31bb22/ABId045b4a5/composite68b8bd1a exact6+2feeds.
+FinalNov17 DataTask d7854350 INSTALLEDenabled/next23:20UTC, not futurecapture.
+Boole measurementTask95924e7e INSTALLEDenabled/nextNov17 23:55UTC,
+parentRO4650d609 PASS; executor closed/futuremarksNOT_OBSERVED.
+Earlier fifth-CLOSE pointcb1c1d9a/shadowd33490c9/Oct27measurement22db8f33
+are separate installed scopes. Measurement is not a broker fill/PnL.
+
+Wegener prepares savedpoint20session native .005cohort Paper runtime on
+imagef31e; no model reforecast/risk change/currentR5swap. Profitability is
+not an execution permission prerequisite. Research never adopts inventory.
+
+Breadth: complementary mechanisms and useful cache reuse, not open grids.
+Depth: frozen finite fit/epoch/time caps, train/INNER curves/LR/earlystop/
+beststate; native proof/actualPREDhandler before market. GPU only useful work.
