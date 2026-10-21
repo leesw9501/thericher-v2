@@ -148,6 +148,21 @@ Proper/financeFAIL; CUDA SYN only4updates, not GPUmarkettraining.
 Coldbiasedroute retained, newfuturepace separates setup/warmedloop, no rerun.
 Next cost-aware price-volume attention/HGB source and compact OHLCVaddon
 are disjoint preparation, not current marketfit. See Engine/Steward actualstate.
+Source is nowCONSUMED/READYb2490d74/SOURCE58e12552/ABIf6378b07:
+D:/thericher-v2/model-artifacts/research/current-intraday-cost-aware-price-volume-attention-proposal-20261021-v1/READY.json
+184pure+30readback/actualCPU2.13SYN, not CUDA2.7qualification. Never rerun
+run_source.ps1/native/prepare/pure as inspection. Exactimmutable refs only.
+Completed numerical root (immutable, no invocation):
+D:/thericher-v2/model-artifacts/research/current-intraday-cost-aware-price-volume-attention-development-20261021-v1
+CONSUMER7a47b766:2CUDAfits34/38epochs/3456updates86.746097fitseconds plus
+HGB1CPUfit12trees/best0. Artifact-only alias seal correction recovered saved
+predictions; both clocksNO_TRADABLE_OPPORTUNITY, no refit/threshold rescue.
+Cross-asset set20 fe37689e COMPLETE2CPUfits/best0both/INNERFAIL/PRED0.
+Fixed4seed ensemble28873ce9 COMPLETE6NEWCPUfits/OUTERPASS-PREDFAIL/MIXED.
+Never invoke consumed fit/materializer/native scripts as inspection.
+Next close-chart Source/Data/native repair and fitter preparation are scoped
+in Engine/Data/Steward; not yet market/GPU GO. Existing Paper schedules stay
+independent. Parent has exact4ref/118check fixedseed readback proof.
 Never reinterpret NaN as neutral/economically
 known or relax old required-input contracts; new schema is optional-context.
 

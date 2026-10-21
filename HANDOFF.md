@@ -21,11 +21,11 @@ Docker /app/model_artifacts, >=15percent D free. Last D about39percent free.
 | Owner | Actual State / Next Consumer |
 | --- | --- |
 | Parent | Integrate evidence/source, current shared memory/Git; company outcome remains open. |
-| Hubble / Data | OOF Data934d0685 COMPLETE/39outputhashes, executor closed; no more derivation. |
-| Einstein / Engine | OOF4CUDAfits COMPLETE; percentile SOURCE closure/late-deadline deviation, numerical parked. |
-| Wegener / Engine | Intraday COMPLETE/closure882f5f3b/397checks, executor closed/no refit. |
-| Boole / Strategy | Accounting3899e01e COMPLETE; next cost-aware price-volume attention/HGB SOURCE-only. |
-| Noether / Data | Primary/delay/OHLCVaddon7b637f27 COMPLETE, executor closed/no rederivation. |
+| Hubble / Data | Close-chart Phase1 input9b45a6a9 COMPLETE; PRED deferred until primary OUTER pass, original Data deadline11:56:39UTC. |
+| Einstein / Engine | Cross-asset2CPUfits COMPLETEfe37689e/INNERFAIL/best0both/PRED0, executor closed. |
+| Wegener / Engine | Close-chart fitter prep plus conditional actual2fit grant7200TOTALactive18000elapsed; actualnative beforemarket, not proof running. |
+| Boole / Engine | Fixed4seed COMPLETE28873ce9/6CPUfits/OUTERPASS-PREDFAIL/MIXED, executor closed/no rerun. |
+| Noether / Strategy | Close-chart r2 failed JSON scheduler infinity after2SYNupdates; now dailyETF trend source600active5400elapsed, no marketfit. |
 | Closed | Kepler finalNov17 producer installed/parentRO verified; Banach512join and earlier Validation complete. MD is not an active LLM/worker. |
 
 One GPU training allocation at A/engine-research-agent/locks/gpu.lock.
@@ -171,12 +171,75 @@ closure882f5f3b/397checks/RuffPASS/alljoined/leasefree. CUDA SYN only4updates. T
 multiplied two-step coldstart time, not definitive warmedCUDAinferiority.
 Primary10bp CONTROLgrowth-4.514251/DD4.536966 vsCANDIDATE-4.573778/4.593532
 percentNAV, proper/financeFAIL/FITmeanbetter/no delayreversal. No rescue.
-Boole next SOURCE-only cost-aware price-volume attention/HGB family at
+Completed cost-aware price-volume attention/HGB family at
 A/research/current-intraday-cost-aware-price-volume-attention-proposal-20261021-v1;
+SourceREADYb2490d74/SOURCE58e12552/ABIf6378b07/184pure+30readbackPASS,
+2SYNupdates/arm/hostTorch2.13CPUonly. Parent14refs rehashed. This is NOT
+actualfutureTorch2.7CUDA/backend/fitter proof. Numerical root
+A/research/current-intraday-cost-aware-price-volume-attention-development-20261021-v1
+CONSUMER7a47b766 COMPLETE:2CUDAfits34/38epochs/best22/26/3456updates/
+86.746097fitter seconds, HGB12trees/best0. Whole1618.430214upper/
+alljoined/leasefree/oneEVAL/48logical26activecells/0modelretry.
+Sparsealias interface fixed artifact-only b924f8b6/9SYN/sealbeforeEVAL,
+originalmodel/source/preds unchanged. Bothclocks NO_TRADABLE_OPPORTUNITY,
+PRICE_VOLUME16entries/4sessions vsminimum26/10, growth-.053631/DD.063755
+percentNAV. Lowerexposure notalpha; no threshold/epoch rescue.
+ReviewRAW311ba371 SOUND_WITH_NAMED_LIMITS: fixedscorehurdle not guaranteed
+netutility/arrival; bothfillclocks requiredrobust, DDonlyownsame-entryuniform,
+cashgrowthreference/nozero-DDgate. No extra ninth FITmean financialpolicy.
 OHLCVaddon COMPLETE7b637f27 atA/data/current-intraday-c120-h60-ohlcv-support-20261021-v1,
 16SYN+20940contextchecks/24.287325upper/alljoined/0labels-model-network,
 exactsame20940keys/masks, marketpayloadM. Parent independent25SYN/source
 checks8bd7b371 PASS for closedGRU, no newmarketreadout. No runningtrainer.
+Next cross-asset selection family:
+A/research/current-broad25-cross-asset-set20-proposal-20261021-v1,
+existing25priorClose252 inputs, no newacquisition. SharedpooledMLP vs
+permutation-equivariant cross-asset attention + one literal fixedblend,
+no stockIDs/positioncodes/sectorlicense/newmarketfit under SOURCE.
+SOURCEd7c63427/FINALaa8a7185/66SYN84headers/RuffPASS/0market-GPU.
+Data7f5cc98f COMPLETE1094/126/610/51dates/all25known/311.829909upper,
+onlyTRAIN/checkpointlabels projected/OUTER-PREDcustody unopened.
+Cross-asset rootcurrent-broad25-cross-asset-set20-development-20261021-v1
+COMPLETEfe37689e/RESULT234886fa/VERIFY818bb2df/113checksRuffPASS:
+2CPUfits16epochs/best0both/1120updates/oneOUTER15cells/INNERFAIL/PRED0,
+1653.572269upper/alljoined/leasefree. SelectedINITIALIZATIONS not learned
+alpha; CONTROLgrowth5.078640/DD2.346690percentNAV not profitable-model proof.
+SET4.224970/2.137740 failsgrowth/properMSE, no HALFrescue or refit.
+Review6669b1cf SOUNDlimits: onepair notcausalattention/relativepassnotprofit.
+Fixed4seed ensemble COMPLETE28873ce9 at
+A/research/current-broad25-set20-fixed-seed-ensemble-development-20261021-v1/COMPLETION.json.
+SixNEW CPU fits4302/3/4;4301cachedonly.3605updates8018forwards/30cells/
+oneOUTER thenonePRED/118readbackchecks/687.150129upper/alljoined.
+OUTERPASS/PREDproper-financeFAIL; bothMIXED, no learnedalpha/Paperpromotion.
+PRED10bp CONTROLgrowth.2847/DD.3289, SET.1132/.4468, uniform.2942/.2072
+percentinitialNAV. Preserve fixedquarterweights/no seedrescue.
+PRECOMMIT0533c0b7 at08:56:55 precedesBASE09:13; review6c605199 SOUNDlimits.
+Parent rehashed4completionrefs. No extra4301fit/replay or oldPRED0regrade.
+
+Next close-chart rank20: Source07ad5079/kernelbaabbcdf/22SYN21headers,
+oldnative1constructor0updates failed; internaltraceUNKNOWN. Isolation-r1
+exceeded author cap278.995662s before nativeattempt0; no pretendPASS/refund.
+Isolation-r2 failed strictJSON schedulerinfinity after2SYNupdates; actual
+firstcause at native-isolation-r2/out/FAILURE.json, not an architecturefail.
+111.307601upper/alljoined/sourceimmutable. Wegener actualfitter owns typed
+sentinel/nonresume correction and realCPU/CUDA qualification BEFOREmarket;
+conditional7200TOTALactive18000elapsed includes oldfailures/Data/prep/review.
+DataPhase1 A/data/current-broad25-close-chart-rank20-input-20261021-v1/CONSUMER.json
+9b45a6a9:1094TRAIN/126checkpoint/610OUTER/45750knownrows/13SYN/5NPZ1.26MB,
+312.015349upper/alljoined. PREDnumeric/render0, OUTER/PREDlabels not opened
+by producer. Model-native pending does not block purepast-price Data work.
+Claude chart challenge SOUND_WITH_NAMED_LIMITS at
+A/review/current-broad25-close-chart-rank20-20261021-v1/RESPONSE.txt:
+rawSHA88de806887b8ca340fdeea5887b3f98205583adb0609697ea40ffe22e5097a0b;
+overlapping checkpoint/OUTER, small25/currentlisting/nonPIT/CA/reuse limits;
+design review not actual leak attestation. Strict growth equality is FAIL;
+no rounded tie rescue or universal CNN claim. Markettraining not yet evidenced.
+Noether independently owns current-etf-causal-trend-allocation-proposal-20261021-v1,
+600active5400elapsed/existingdailyETF headers/onepast-onlykernel, no numericalGO.
+Parent independent integration check:11exact public refs across fixedseed
+completion/Data source+VERIFY+5marketpackets;0PREDnumeric/0modelcalls.
+Fresh tracked1374source/control equality5802dd71/Ruff/three sample-envCompose/
+diffcheckPASS; fullauthority41796a7a reused for docs/external-only integration.
 
 ## Frozen FUND20 / Paper Connection
 

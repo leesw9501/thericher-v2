@@ -10,11 +10,11 @@ Parent shared MD/Git; no current genuine operator decision.
 
 | Owner | Current Work / Consumer |
 | --- | --- |
-| Hubble / Data | OOF Data934d0685 COMPLETE/39hashes, executor closed/no more derivation. |
-| Einstein / Engine | OOF4CUDAfits COMPLETE; percentile SOURCEpartial/late, numerical parked/executor closed. |
-| Wegener / Engine | Intraday COMPLETEclosure882f5f3b/397checks/proper-financeFAIL, executor closed. |
-| Boole / Strategy | Actual accounting3899e01e COMPLETE; new cost-aware price-volume attention/HGB SOURCE-only. |
-| Noether / Data | Compact OHLCVaddon7b637f27 COMPLETE/16SYN+20940contextchecks, executor closed. |
+| Hubble / Data | Close-chart Phase1 COMPLETE9b45a6a9/312.015349upper; conditional PRED only on exactprimaryOUTERpass before11:56:39UTC. |
+| Einstein / Engine | Cross-asset2CPUfits COMPLETEfe37689e/INNERFAIL/best0both/PRED0, executor closed. |
+| Wegener / Engine | Close-chart actualfitter and conditional2fits7200TOTALactive18000elapsed, nativefirst/not proof running. |
+| Boole / Engine | Fixed4seed COMPLETE28873ce9/6CPUfits/OUTERPASS-PREDFAIL/MIXED, executor closed. |
+| Noether / Strategy | r2JSON-infinity fault closed111.307601upper; dailyETF SOURCE600active5400elapsed, no numericGO. |
 | Closed | Kepler finalNov17 DataTask installedenabled/parentRO verified; Banach512join/earlier Validation complete. |
 | Parent | Review sources/results, dispatch next useful campaign, integrate current facts/Git. |
 
@@ -27,7 +27,34 @@ one-shot/no replacement chain. No foreground session wait.
 
 ## Throughput Review
 
-08:00UTC: OOF4CUDAfits/12679updates/90.604708GPUworkerwall seconds COMPLETE,
+10:10UTC review: cost-aware3fits/recoveredreadout COMPLETE7a47b766,actual
+2CUDAfits86.746097s/3456updates,no economicopportunity/no rerun. Dailyset
+COMPLETE2CPUfits/best0both/INNERFAIL/PRED0; selectedrandominitializations,
+notlearnedsignal. Fixed4seed COMPLETE/OUTERPASS-PREDFAIL/MIXED is not
+independentalpha/GPUutilization; newclose-chart/boundedrank source changes
+representation/target ratherthan anotherseed. Paperdue remainsworkerowned.
+Reversible improvement: stop unrealistically tiny authoring caps that expire
+before native launch. Preserve old43.714+278.995662 debits/scopedfailures;
+use600s newrepair+600s fitterprep with disjoint writes. Purepast-price Data
+completed independently of optimizer-instrumentation failure. No market
+retry/criterion relaxation implied. Actual8policy aliasDTO tests
+cash/uniform/unique/duplicate BEFOREreadout; sparsemap is not fullselfmap.
+Artifact-onlyfix recovered savedpreds withoutmodelretry. Newseed counter
+identity key mismatch also scopedpre-model, notglobalhold. KeepCPU where
+sameversionmeasuredfaster, GPUfor usefulqualifiedwork. No sleeps/newhuman
+approval/platform or repeated18k MD-only suite. Actualdone markers checked
+before lengthyplanning so completedshortfits are not calledstillrunning.
+
+10:13 conditionalactualgrant: chart7200TOTALactive18000elapsed includes
+old43.714/278.995662/111.307601 debits, Data600/prep600/review60/native600,
+2fits1500each/readouts1040/cleanup400. Only exactactualnative qualification
+then2firstfits, no secondparenthold. One predeclared technicalnative repair
+inside unchangedcaps; zero post-update marketretry. Source r2 actualfault is
+strictJSON scheduler+inf, no model failure claim. Actualfitter owns codec/
+nonresume semantics. Independent ETFsource expands research mechanism while
+CNN preparation runs; no waiting on Paper or pointlessGPU occupancy.
+
+Prior OOF4CUDAfits/12679updates/90.604708GPUworkerwall seconds COMPLETE,
 INNERFAIL/PRED0. New percentile sourcepartial/late109s/SYN29checks/RuffE731/
 headerproof-source seal missing; no sourceREADY/numericalGO/financialFAIL.
 Parked in favor of distinct price-volume/cost-aware mechanism, not newgate.
@@ -45,7 +72,7 @@ Use UTC-aware metadata comparisons; mixed DateTime kinds falsely hid actual
 closure-r1 evidence, resolved by its exact pointer/hash without any rerun.
 Reuse savedmodels/current predictions, prove finalweight aliases BEFORE
 outcome intake, and reuse exact financial caches rather than duplicate work.
-Boole next attention/HGB SOURCE and Noether OHLCVaddon run in disjoint roots;
+Completed attention/HGB SOURCE and OHLCVaddon remain immutable;
 no forced trades, new indicatorgrid or oldthreshold rescue. Source/native
 guards are scoped; no second parent approval between qualified
 paired fits, no globalgate/dummyGPUload/newdispatch-report platform.

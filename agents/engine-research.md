@@ -218,7 +218,7 @@ this rechecks market predictions or reproduces original outcomes.
 Fixed.1/12INITIALNAV inclusivefee/max12sleeves/reserve and unknown handling
 unchanged. Nominal archive/availability/cost/reuseddata limits retained.
 
-Boole owns new SOURCE/pureSYN only:
+Boole new SOURCE COMPLETE:
 A/research/current-intraday-cost-aware-price-volume-attention-proposal-20261021-v1.
 One complementary family: HGB summary baseline and paired small attention
 price-only/price-volume-technical models, same120min information, finite
@@ -226,14 +226,145 @@ schema/capacity (not indicator/architecture grid). FIT-only feature/target
 affines, chronological curves/earlystop/safeweights, rawtarget inverse for
 fixed exact fee hurdle. Optional no-entry when score cannot cover costs;
 same-entry uniform/cash comparisons separate timing/exposure from selection.
-300sourceactive/3600elapsed, no marketvalues/fits/GPUtraining under SOURCE.
+READYb2490d74/SOURCE58e12552/ABIf6378b07/184pure+30readbackPASS/
+2SYNupdates6forwards eachattentionarm/HGB1tinyfit/allactorsjoined/0market-GPU.
+Source300upper/actualchild16.526208seconds distinct from1682.762420elapsed;
+hostTorch2.13CPU/sklearn1.9 proof NOT actualCUDA2.7fitter/pace qualification.
+Parent14refs rehash PASS, reviewRAW311ba371 SOUND_WITH_NAMED_LIMITS at
+A/review/current-intraday-cost-aware-price-volume-attention-20261021-v1/RESPONSE.txt.
+Nominal label convention remains unproved, uniformly shifting selectedcontext
+and entry is not proof of zero latency. Both predeclaredfillclocks must pass
+growth/risk for robust claim. DDonlyownexact-entryuniform, no cashDDgate;
+26entries10sessions minimum/constantcashNO_TRADABLE_OPPORTUNITY.
 Noether compact OHLCVaddon COMPLETE7b637f27/VERIFY PASS at
 A/data/current-intraday-c120-h60-ohlcv-support-20261021-v1,
 exact20940keys/primarymasks/splits/source limits,0newlabels/network/models.
 16SYN+20940contextchecks/24.287325upper/one2sourcepass/alljoined/0retry.
-Marketpayloads M/source-consumer A; Enginefeature ABI qualification pending.
-Future numericalGO only after exactsource/Data/native/caps and concise
-challenge. One first-ready GPU allocation with warmedpace, no dummywork.
+Marketpayloads M/source-consumer A; actual feature ABI qualification complete.
+Wegener numerical family COMPLETE at
+A/research/current-intraday-cost-aware-price-volume-attention-development-20261021-v1.
+CONSUMER7a47b766:2actualCUDAattentionfits34/38epochs/best22/26/3456updates/
+8164forwards/86.746097marketfitter seconds. OneGPUallocation100.423500s
+native+market wall, not separately measuredkernel/utilization. HGB1CPUfit
+12trees/bestprefix0/1.757268s=FITmean, no new selectedlearnedHGBwinner.
+NativeactualTorch2.7CPU/CUDA7updates perarm/backend/fullsafe parity passed.
+Whole1618.430214upper/5400, oneEVALintake/48logical/26uniqueactivecells/
+0legacy/0modelretry/allactorsjoined/leasefree.22pure+9aliasSYN/Ruff10paths
+PASS; parent rehashed10exactconsumerrefs. Alloutputs/safeweights A.
+FirstcallerNameError beforeGPU and sparsealiasconsumer KeyError preserved.
+Artifact-only delta b924f8b6 normalizes sparsealiases into fullselfmap,
+9SYNchecks then newseal0825a21a BEFORE EVAL. Originalsource/weights/preds
+unchanged; no refit/reforecast/newGPU. READOUT235cae64 complete, no rerun.
+PRIMARY10bp PRICE_VOLUME16entries/4sessions vsfixedminimum26/10,
+PRICE_ONLY3/2, HGB0/0. Bothclocks NO_TRADABLE_OPPORTUNITY/scienceINNERFAIL.
+PRICE_VOLUME growth-.053631/DD.063755percentNAV; ownmatcheduniform
+-.051818/.061967, not alpha from lowerexposure. RawMSE also worsePRICE_ONLY
+andFITmean. Keep thresholds/costs/criteria; no rescue to force trades.
+Readout cohorts2610 denotes SCHEDULEDorigins, not actual entries; use
+presealed entrycoverage. No historicalavailability/independentalpha/PaperPnL.
+
+Einstein cross-asset SOURCE COMPLETE:
+A/research/current-broad25-cross-asset-set20-proposal-20261021-v1.
+ExistingData42562873 all25 priorClose252, fixedpricefactor schema/group25
+tokens/date, no stockIDs/positionalorder/sectorlicense dependency. Shared
+pooledMLP vs permutation-equivariant cross-asset attention plusONE literal
+.5rawscoreblend (0extra fits) predeclared before numericalresults.
+h20 excess-over-same-origin-uniformmeanLOG label for ranking; finalportfolio
+longonly, not loguniformportfolio/marketneutralPnL. SOURCEd7c63427/
+FINALaa8a7185/66SYNchecks/84headers9packets/RuffPASS/actualTorch2.7CPU
+2updates perarm/safe fullstate restore/0CUDA-market/alljoined/300upper.
+ReviewRAW6669b1cf SOUND_WITH_NAMED_LIMITS at
+A/review/current-broad25-cross-asset-set20-20261021-v1/RESPONSE.txt:
+singlepair/checkpoint-optimizer variance notcausalattentionvalue, HALFnot
+SETrescue/negative-belowcashrelativepassnotprofitability. No new gate.
+Hubble Data COMPLETE7f5cc98f at
+A/data/current-broad25-cross-asset-set20-input-20261021-v1/CONSUMER.json:
+1094TRAIN/126checkpoint/610OUTER/51PRED dates/all25known/FP64[D25,8],
+5NPZ3,384,023bytes/311.829909upper/alljoined/0models-GPU-network.
+OnlyTRAIN/checkpointlabels projected; OUTER/PREDfuturecustody unopened.
+Einstein numerical COMPLETE at
+A/research/current-broad25-cross-asset-set20-development-20261021-v1,
+FINALfe37689e/RESULT234886fa/VERIFY818bb2df/113checksRuffPASS:
+2CPUfits16epochs/best0 BOTH/1120updates2490forwards/oneOUTERintake15cells/
+0PREDforecasts-intakes/0retry/allactorsjoined/leasefree. NativeCUDA only;
+marketCPU chosen beforeeffects. Whole1653.572269upper/6000, no capdeviation.
+10bp OUTER growth/DDpercentNAV CONTROL5.078640/2.346690,
+SET4.224970/2.137740, HALF4.866630/2.343360, uniform4.813713/1.920805.
+PrimarySET properMSE/growthFAIL; DDlower alone notalpha. Selectedepoch0
+means untrainedINITIALIZATIONS despite actualoptimizerwork; neither is a
+learned profitablemodel. No HALFrescue/fullFITrefit/extraepochs/PREDopening.
+Seed-aware learner default4301 retained Source154a10da, consumed4301fits
+neverrerun; newseed study binds exactsource/cache/native signatures.
+
+Fixed4seed ensemble COMPLETE, Boole executor closed:
+A/research/current-broad25-set20-fixed-seed-ensemble-proposal-20261021-v1.
+PRECOMMIT0533c0b7 at08:56:55UTC, fixedseeds4301/2/3/4/equal.25 rawscores
+perarchitecture +literal.5betweenarchitectures,33pureSYN/0models-GPU.
+Existing4301 CACHEDONLY/no refit;6NEWfits for4302/3/4, no bestseed
+or weightsearch/no individualprofit prerequisite. Base4301actualfitter,
+seed-aware API/native/Data/cache identities needed; no activeGPU claimed.
+Firstactualwhole12000active21600elapsed includesnewprep360/source180/
+review60/native180/cache300/6fits1500each/inference120/readout900/cleanup180.
+Old11000 was proposalNOTGO.26880updates60000forwards frozen beforevalues.
+Missingseed cannotbe
+dropped/reweighted; ensemble needsall4. New family adaptive, not independent
+replication or old4301/PRED0 regrade. Currentfirstpair neednotpass forstudy.
+Numericalrootcurrent-broad25-set20-fixed-seed-ensemble-development-20261021-v1:
+COMPLETION28873ce9/actualFINAL3c6b7c62/MODEL_ABI3efa2546/readback48b1ae44/
+118checks. SixNEW CPU fits17-18epochs/best1-2/3605updates/8018forwards/
+20constructors14restores/30cells/oneOUTER+onePRED/0retry/GPU0/alljoined.
+Whole687.150129upper12000. Parent rehashed4refs. OUTERPASS then
+PREDproper-financeFAIL, bothMIXED due cached4301best0; no learnedalpha/
+Paperpromotion/seedrescue. PRED10bp growth/DDpercentinitialNAV:
+CONTROL.2847/.3289, SET.1132/.4468, uniform.2942/.2072; bothproperlosses
+worsezero-excessreference. Pre-model counterfault0updates retained;
+additivepre-native-counter-r1 removedextraDTOkeyonly, not numericretry.
+ReviewRAW6c605199 SOUND_WITH_NAMED_LIMITS at
+A/review/current-broad25-fixed-seed-ensemble-20261021-v1/RESPONSE.txt.
+Review post-failure timing premise false: precommit08:56:55 precedesBASE
+fits/OUTER09:13; datareuse stilladaptive/notfresh. Sharedinit meansONLY
+commonphi/norm/head, not entireunequalarchitecturestate. Epoch0/mixed
+ensembles initialization/mixed notlearnedsignal; JensenMSEshrinkage not
+newinformation/diversification. Do NOTaddleave4301out/newweights fromadvice.
+PreserveCPU2.7trainingbackend ofbase forseed-only interpretation; isolated
+parallelCPUprocesses allowed/cumulativeactivewallSUM. PREDonlynewensemble
+OUTERpass; missingbasePRED mayreceive separatelycountedNEWfrozenmodelCPU
+inference underthiscontract, oldPRED0unchanged. No GPUreservation/dummyload.
+
+Next distinct mechanism, conditionalactualgrant (not proof running):
+A/research/current-broad25-close-chart-rank20-proposal-20261021-v1,
+fixedlast63priorClose lineimage vs samepathMLP, boundedwithin-date future
+LOG20 ranktarget; ownnativeCNN/no publicweights/newdata dependency.
+Primary Jiang/Kelly/Xiu JFinance2023 motivates chartshape, notprojectalpha/
+exactreplication; competitiveimage-scaled1D is counterevidence.
+Source07ad5079/kernelbaabbcdf/modelc193b08c/22SYN21headersPASS. Original
+native1constructor0updatesfailed/internaltraceUNKNOWN. Isolation-r1
+278.995662author+closure exceeded180cap before nativeattempt0, preserved
+as deviation. Isolation-r2 actualCPUfailed111.307601upper/alljoined:
+PATH_MLP2SYNupdates then strictJSON scheduler+inf rejection, CNN0; not a
+model architecture failure. OldtraceUNKNOWN remains separate. Wegener owns
+actualfitter typed-sentinel/nonresume fix plus conditional2fit grant at
+A/research/current-broad25-close-chart-rank20-development-20261021-v1.
+Hubble Phase1Data9b45a6a9 COMPLETE/45750knownrows/13SYN/312.015349upper.
+PREDnumeric/render0 until actualprimaryOUTERproperANDfinancePASS.
+Frozen2fits/seed4701/128max-pat16/SGD/plateau, PATH_MLP82689/CNN79905params,
+sameq64information/equal-date centeredrankMSE. CNNprimary/MLPcontrol/
+HALFdiagnostic/samegrossuniform/cash,1/5/10bpPERLEG/primary10.
+ProperCNN<=.99min(zero,MLP);growth>uniform/DD<=1.25uniform. ExacttiesFAIL/
+no HALFrescue. SourceCPUproof not CUDA/runtime deployment.
+Claude SOUND_WITH_NAMED_LIMITS at
+A/review/current-broad25-close-chart-rank20-20261021-v1/RESPONSE.txt.
+Target/representation jointlychange vs older models; currentlisting/nonPIT/
+CA/dependent25asset/overlapping checkpoint andOUTER/reusedoutcomes limits.
+Design review not actual leak proof; selectedepoch not guaranteed stable.
+Actual7200TOTALactive18000elapsed includes43.714Source/278.995662r1/
+111.307601r2/Data600/prep600/review60/native600/2fits1500each/readouts1040/
+cleanup400 once. Beforemarket actualCPU/CUDA batch200/SGD/grad/curves/safe
+selectedcold-output proof; no unproved optimizerresume claim. One technical
+native recovery<=240 inside native600/countercaps, exactsameSYN/source/model/
+seed; no post-update marketretry. Market35072updates74714forwards/max30cells/
+oneOUTER+conditionalonePRED, no bestarm/seed/costrescue. ReleaseGPU beforeCPU
+readout. Modeloutput can't change Paper deterministicrisk or authority.
 PrivatePaper authority remains independent of all research screens.
 
 ## Broad25 Data / Completed Baseline

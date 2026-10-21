@@ -6,6 +6,28 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
+Close-chart Phase1 COMPLETE for the actual next MLP/CNN trainer:
+A/data/current-broad25-close-chart-rank20-input-20261021-v1/CONSUMER.json
+9b45a6a90158011d8e53f28d63e40a5300b10572f2f03e3e84e586de6813098f.
+TRAIN1094/checkpoint126/OUTER610dates,45750knownrows/compactuint8q64,
+typedmasks/orderedkeys/clocks; TRAIN/checkpoint tie-fairranklabels ONLY.
+13DataSYN/header/causality/maturity/invertibility/DTO/hashchecksPASS.
+OneFIT+oneINNERpass/5NPZ1,259,974bytes/312.015349activeupper600/
+388.508elapsed7200/alljoined. No persisted images/OUTER-PREDoutcomeopens.
+PREDnumeric/render0 deferred until exactprimaryOUTER properANDfinancePASS;
+remaining287.984651active/originaldeadline11:56:39UTC. Do not rematerialize
+completed phase. DATA_KERNEL_QUALIFIED_MODEL_NATIVE_PENDING, not model GO.
+
+Cross-asset set20 input COMPLETE:
+A/data/current-broad25-cross-asset-set20-input-20261021-v1/CONSUMER.json
+7f5cc98f/SOURCEd7c63427;1094TRAIN/126checkpoint/610OUTER/51PREDdates,
+all25known/FP64[D25,8]. FiveNPZ3,384,023bytes,311.829909upper incl240prep+
+11.829909materialize+60verify/cleanup;elapsed1021.124/allactorsjoined.
+Oneoriginalfeaturepacketextract/nativeDTO-causality-clocks/freshhashPASS.
+OnlyTRAIN/checkpointlabels projected; OUTER/PREDfuturelabels-marks existing
+custodyunopened. No model/GPU/network/replay/sharedMD/Git. Hubble closed;
+reuse immutable outputs for seedstudies, no completedextract rerun.
+
 Hubble owns NEW current-broad25-purged-expert-gate20-input-20261021-v1:
 exact SOURCEd58bfabc/DATArequestf9dabe45 foldTRAIN/checkpoint/OOF feature
 and isolatedtarget custody, finalpair and separateINNER610entries/629marks.

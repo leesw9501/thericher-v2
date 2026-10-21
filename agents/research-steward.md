@@ -21,11 +21,11 @@ No extension/retry/baselineforecast to occupy GPU.
 
 | Owner | Next Resource / Consumer |
 | --- | --- |
-| Einstein / Engine | OOF COMPLETE4CUDAfits; percentile SOURCEpartial/parked, executor closed/no GPU. |
-| Hubble / Data | Data934d0685 READY/39hashes/95.829790upper, executor closed/no GPU. |
-| Wegener / Engine | Intraday2CPUfits COMPLETE60/96epochs/best48/86; no runningtrainer/refit. |
-| Boole / Strategy | New cost-aware price-volume attention/HGB SOURCE-only; no markettraining/GPU allocation yet. |
-| Noether / Data | OHLCVaddon7b637f27 COMPLETE/24.287325upper, executor closed/no GPU. |
+| Einstein / Engine | Cross-asset2CPUfits COMPLETE/best0both/1120updates, nativeGPU only/executor closed. |
+| Hubble / Data | Close-chart Phase1 COMPLETE9b45a6a9/312.015349upper/noGPU; PRED conditionalexactOUTERpass. |
+| Wegener / Engine | Close-chart actualfitter/conditional2fits7200TOTALactive18000elapsed; actualnative beforemarket, no observedGPUclaim yet. |
+| Boole / Engine | Fixed4seed COMPLETE28873ce9/6CPUfits/3605updates/687.150129upper/alljoined/OUTERPASS-PREDFAIL, closed. |
+| Noether / Strategy | Close-chart r2JSON-infinity fault closed111.307601upper; ETFsource600active5400elapsed/CPU-SYN only. |
 
 Allocate FIRST ready frozen qualified campaign. Completed OOF/intraday cannot
 reserve or repeat work against a new ready campaign. Fresh exact PID/start/
@@ -56,7 +56,32 @@ NativeCPU4/CUDA4SYNupdates; CUDAmarketfits0. Route used two-step mean which
 multiplied coldCUDAsetup cost acrossfit. Retain oldchoice/result/debits;
 NEW native pacing separates fixedsetup from warmed actual train/eval loop.
 Do not call that projection definitive warmedGPUinferiority or repeatfits.
-Next richer-input source is preparation, not a running trainer. No GPUban.
+Cost-aware family7a47b766 COMPLETE:actual2CUDAfits34/38epochs/best22/26/
+3456updates/86.746097fitseconds/100.423500native+marketallocationwall,
+notkernel/utilizationmeasurement. HGB1CPUfit12trees/best0, no newwinner.
+1618.430214wholeupper/5400/oneEVAL48logical26activecells/alljoined/leasefree,
+NO_TRADABLE_OPPORTUNITY/no retry; artifactonlyaliasfix preservedweights.
+Cross-asset FINALfe37689e COMPLETE2CPUfits16epochs/best0both/1120updates/
+2490forwards/oneOUTER15cells/PRED0/alljoined/1653.572269upper. NativeCUDA
+qualificationonly.128max/pat16 stopped on noimprovement, notglobal16cap.
+Selectedinitializations notlearnedalpha. CPU wasmeasuredfasterfor thissmall
+panel, notenvironment/GPUpermission failure. Newseed panel preservesCPU2.7.
+Wave COMPLETE/MIXED:118readbackchecks/8018actualforwards/30cells/no retries;
+4301cached-only/new4302-4/20constructors14restores. No seed/epoch rescue.
+Firstactual12000active21600elapsed/6NEWfits/26880updates60000forwards,
+source180/review60/prep360/native180/cache300/6fits1500each/inference120/
+readout900/cleanup180. Old4301fits/cache/debits retained, no bestseedsearch.
+CPUparallel only isolatedprocesses/disjointoutputs/cumulativewallsummed;
+no dummyGPUload. SeparatechartCNN source mayneedGPU afteractualpaceproof.
+ChartSource43.714upper/oldnative1constructor0updatesfailed; isolation-r1
+author+closure278.995662 exceeded180cap before anynativeattempt. Preserve
+deviation/no refund; r2 proof and Engineprep new600s each, no marketretry.
+Data independent phase1 READY/45750knownrows, PREDnumeric/render0.
+Conditionalchartactualgrant7200TOTALactive18000elapsed, no secondparentwait
+after actualfitter/native/Dataqualified. Includes all oldsource/failednative
+debits once;2marketfits1500s each/native600/oneGPUlease/cleanup400. Actual
+pacedgeometry200images, coldsetup separated from warmedsteadyloop. No silent
+CPU fallback/newmodel to consume time, no overlapping GPUowner or refits.
 OlderGRU/MLP/TCN/TimesFM/LoRA/OOF histories stay immutable Git/A.
 
 Active owned time includes failures/I/O/recovery/cleanup; queue/LLM elapsed

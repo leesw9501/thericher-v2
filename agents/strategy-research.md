@@ -7,6 +7,21 @@ Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 
 ## Current Mechanisms / Consumers
 
+Current distinct mechanisms:
+- Close-chart Source07ad5079/kernelbaabbcdf/modelc193b08c/22SYN21headers,
+  prior63Close q64 vs invertibleimage/MLP-CNN rank20. Owncode/no public
+  weights, Jiang/Kelly/Xiu DOI10.1111/jofi.13268 motivates, not reproduction
+  oralpha. Its competitiveimage-scaled1D is counterevidence. Nativeisolated
+  r2 failed strictJSON schedulerinfinity after2SYNupdates; actualfitter owns
+  boundedrepair/CPU-CUDA proof, no repeated standalone Sourceproof.
+- Noether owns current-etf-causal-trend-allocation-proposal-20261021-v1:
+  existingdaily SPY/QQQ longhistory headers/manifests plus ONEfixed past-only
+  trend/volatility allocation kernel with realSYN.600active5400elapsed,
+  no marketnumeric/outcomes/fit/GPU/API/Task/sharedMD/Git. This is a durable
+  dailyETF researchalternative, not a new indicator/threshold grid. Engine
+  owns finaltarget/split/costs/actualcampaign; actualdataavailability still
+  to verify, not assumed from old2007daily or1m-history narratives.
+
 Einstein completed close-only trend/reversion expert source:
 A/research/current-broad25-close-only-expert-proposal-20261021-v1.
 SOURCEb0fa0cc3/kernel f0b8b7a5/proposal29631c4a/54checks.
