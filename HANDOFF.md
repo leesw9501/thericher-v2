@@ -21,10 +21,10 @@ Docker /app/model_artifacts, >=15percent D free. Last D about39percent free.
 | Owner | Actual State / Next Consumer |
 | --- | --- |
 | Parent | Integrate evidence/source, current shared memory/Git; company outcome remains open. |
-| Hubble / Strategy | TCN threeCPUfits/readout COMPLETE; next one causal risk-allocation SOURCE-only proposal. |
-| Einstein / Engine | Fixed blend and actual Oct21 broad25 prospective point COMPLETE; executor closed, no more forwards. |
-| Wegener / Execution | FUND20 Task created DISABLED; one existing-task protectedACL/release repair owned, no duplicate CREATE. |
-| Boole / Engine | Chronos-2 FULL adaptation native caller-phase repair; conditional firstGPUfit, not running inferred. |
+| Hubble / Engine | Risk allocation51solves/readout COMPLETE; next one literal current prospective allocation point. |
+| Einstein / Engine | Actual Oct21 point COMPLETE/no more forwards; new purged OOF shallow expert-gate SOURCE-only. |
+| Wegener / Execution | FUND20 Task ACTUALLY installed/enabled c6026ecf; parent native RO passed, no more installer mutations. |
+| Boole / Engine | Chronos FULL cold-restore parity diagnosis, no marketfit yet; exact diagnostic caps in Engine stateboard. |
 | Noether / Data | Broad25 currentpoint and Chronos512 adaptation inputs COMPLETE; executor closed. |
 | Closed | Kepler finalNov17 producer installed/parentRO verified; Banach512join and earlier Validation complete. MD is not an active LLM/worker. |
 
@@ -46,6 +46,9 @@ one caller-only successor is authorized, not evidence of actual training.
   NaturalRTH21:50/old20D122:30/new9D123:00 source owners unchanged.
 - App one-shot Oct22 00:45KST follows existing outcomes, quiet unless material;
   no manualTaskRun, replacement follow-up chain or substitute orders.
+- New FUND20 Task ACTUALLY enabled, firstOct21 15:30UTC=Oct22 00:30KST;
+  immutable savedpoint0996dabb, one.005cohort under SAME original bank.
+  c6026ecf/releasec4f15287/imagef31e,18finite triggers, no manualRun.
 
 R5 actual action evidence:
 A/execution/current-window21-provisional-nas-deployment-20261021-v1/source-r5/action-retarget-r3/CONSUMER.json
@@ -142,7 +145,7 @@ not old failed12cap compliance. Actual market recipe/model remained unchanged.
 Claudecea35537 SOUND_WITH_NAMED_LIMITS: one paired draw, not general causal
 ratio effect/absence; identical mask does not fix retrospective source leakage.
 
-Next CPU composition: source29631c4a/kernel f0b8b7a5/54checks and
+Completed CPU composition: source29631c4a/kernel f0b8b7a5/54checks and
 preparation587c0ae2/108checks bind exact Data42562873 close252allkeys/R21zero
 parity/20checks. FixedEMA20/60-RMSRV21 trend or -Bollinger20z expert.
 Parent chose ONE .5+.5 within-date fractional-rank blend with savedCONTROL
@@ -186,9 +189,28 @@ before our premature on_step_begin guard; caller repair only, not model/GPU
 failure. One additional native allocation explicitly authorized with olddebits,
 bounded lifetime12updates/64forwards/4saves/4restores. Exact native optimizer,
 safe step0/best coldrestore and fullgeometry proofs precede one marketfit.
+Continuation-r1 COLD then failed before allocation: readout metadata followed
+Windows host paths inside Linux. Zero extraGPU/market;6.250712seconds carried,
+aggregate612.098754. Narrow host-metadata/guest-replay path repair authorized;
+canonical lease absent06:18, no resource/permission hold. Do not rerun oldhost.
+Latest pre-native-cachepath-r1/FINAL06:15:44 supersedes that resource projection:
+COLD passed,2ndGPU allocation ran2SYNupdates then cold output bit-parity failed
+despite same selectedweights. Gap/cause UNKNOWN, total670.799499/alljoined/
+leasefree/0market-PRED. One new0fit bounded diagnostic compares modes/config/
+nonpersistentbuffers and outputgap; no oldguard relaxation or silentfit retry.
 Conditional firstmarket1000steps/eval50/pat4/LR1e-6/seed4101/1800s, no retry
 after marketupdates. No actual marketfit inferred yet. Unknown corpus/reused
 evaluation/currentvintage limits remain; independent alpha is not claimed.
+
+CPU risk allocation COMPLETE:
+A/research/current-broad25-causal-risk-allocation-proposal-20261021-v1/numerical-r1/FINAL.json
+e071bc01/RESULT3e466255/VERIFY PASS/354.459212upper/51solves/6new12cachedcells/
+1outcome/0models-GPU/alljoined. Literal.5HALF+.5 cappedLW-minvar25 vsmatched
+.5HALF+.5uniform.10bp growth/DDpercentNAV RISK+.530576/.175315,
+BROAD+.448637/.187780/HALF+.603040/.255495. PrimaryFAIL, useful tradeoff
+not a scientificwinner. One current prospective allocation point preparing,
+no newmodel call/Task/broker. Einstein prepares purged OOF shallowgate source,
+no numericalfit yet. See Engine current exact caps and source pointers.
 
 ## Frozen FUND20 / Paper Connection
 
@@ -235,17 +257,21 @@ Current installation-r1 quietcaller7mockchecksPASS/sourceguard/one18triggerTask
 preparation. Actualnative Linux2flock/siblingreservation0effect testsPASS;
 postclose fixture .reason vs.code corrected/3nativecasesPASS, source-r2
 2c5a7584/8mock+12PS/exact261otherTaskXMLACL/quietpythonw qualified.
-Actual-install-r1/FINAL-CONSUMER at05:29:01: oneCREATE18 consumed, task
-thericher-kis-paper-fund20-committed-20261021-v1 remains DISABLED/unqualified.
-Native unprotectedSDDL inherited3extraACEs; Enable0/Run0/API0, no broker effect.
-Old otherTaskdelta UNKNOWN retained, no forced restoration. Current
-actual-install-r1/protected-repair-r1 SOURCEb328c690/SYN7+11/nativeRO pass
-prepares a NEW protected3ACE intent, not acceptance of unknown inheritedACEs.
-One existing-task UPDATE20/releasebinding plus Enable authorized only after
-fresh disabled/nativeACL/XML/source/quiescence checks; no CREATE/Delete/SetSD/
-Run/otherTaskwrite. PostUpdate and postEnable native readback mandatory;
-one exact-own containmentDisable allowed. Reviewdeeec811 SOUND_WITH_NAMED_LIMITS;
-API return is not proof of an atomic update. Actual repair not inferred yet.
+ACTUAL installation COMPLETE06:14:22:
+A/execution/current-fundamental20-paper-cycle-preparation-20261021-v1/installation-r1/actual-install-r1/protected-repair-r1/native-binding-r1/CONSUMER.json
+c6026ecf/releasec4f15287, taskthericher-kis-paper-fund20-committed-20261021-v1
+enabled/18finite triggers/first15:30UTC. One actionUPDATE20+Enable consumed,
+0Run/API/privatewrites; all261otherXMLACL unchanged within own interval.
+Parent fresh06:17 native COM passed exact action/principal/protected3ACE/
+ACL3b337353/full masked projection/quiet settings/nextdue. Resolve omitted
+false defaults through native Settings, not raw missing XML leaves.
+Prior CREATE inherited extraACEs; UPDATE changed action but ignoredSDDL;
+directSetSD16 applied exactrights plus sole nativeAIbit. New release pins
+actual PAI bytes, not broad normalization. Every failed release/cap stays A,
+oldotherTaskdelta UNKNOWN/not restored. No repeated installer/SetSD/UPDATE.
+Reviewdeeec811 and directsetter92885ba5 SOUND_WITH_NAMED_LIMITS.
+Installation is not submit/fill/closure; native quote/bank/reconciliation
+checks remain mandatory at each future effect.
 OldR5 unchanged. Review93851820 REVISE counterclaim narrowed by
 actual allmutatorcensus/nativecommonlock proof, not assumed compliance.
 Onependingleg/visit means4x280s exceeds15m worst-case. Fastfill SYN is not
@@ -285,6 +311,6 @@ A/verification/fund20-paper-runtime-20261021-v1/authority.json41796a7a:
 Ruff/default-research-accounting sample-envCompose PASS.
 1374sources5802dd71+controls: docs/external reuse needs fresh exact equality
 and independent changed-external native proof. Repo tests cannot validate D code.
-Latest pushed e4774cb before this integration. Explicit staging, preserve unrelated %SystemDrive%/.
+Latest pushed6a907a3 before this integration. Explicit staging, preserve unrelated %SystemDrive%/.
 After interruption classify actual owners/lease/receipt resume/reconcile/complete;
 no age reclaim, refund or completed-fit restart. Continue ready lanes.

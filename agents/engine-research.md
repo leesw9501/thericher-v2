@@ -109,6 +109,48 @@ e942 rather than duplicate forecasts. Mediancontrast is not expectedreturn.
 Corpusnot_disclosed/currentlisting-vintage/nonPIT/reused51dates remain;
 not independent alpha or authority to alter deterministic Paper risk.
 
+Actual latest native result is UNAVAILABLE, not a market result:
+pre-native-cachepath-r1/FINAL at06:15:44 carried670.799499activeupper.
+Host/guest cachepath repair passed COLD;2nd actualGPU allocation completed
+twoSYNoptimizerupdates, then selected safe cold inference failed bit equality
+despite matching tensor-state hash. Numeric gap/cause not retained, UNKNOWN.
+Lifetime2GPU/2SYNfits/2updates/8forwards/3saves/2restores/0market/0PRED,
+allactorsjoined/leasefree. Selected SYNstep0 is originalweightddcda3, not a
+fine-tuned marketmodel. Never rerun consumednative/claimoldparityPASS.
+New diagnostic only: oneextraGPUallocation150active/900elapsed,<=16SYN
+forwards/2constructors/2safe-restores/0fits-updates-saves-market-PRED.
+Compare exactretainedweights/config/SYNinputs, modulemodes/nonpersistent
+buffers/attention/config/backend and quantifiedoutputgap. No tolerance rescue.
+Existing whole5400/09:27:42UTC elapsed deadline/debits retained. First market
+fit remains unstarted and depends on diagnosed readiness, not human approval.
+
+## Portfolio Construction / Learned Fusion
+
+Hubble allocation SOURCEbd5ad691/kernel8e101aa6/56checks led to completed
+A/research/current-broad25-causal-risk-allocation-proposal-20261021-v1/numerical-r1/FINAL.json
+e071bc01/RESULT3e466255/VERIFY PASS. One51date causal covariance/solvepass,
+1pricepacket/1retainedpolicy/1outcomeintake/6new12cachedcells/0models-GPU/
+354.459212activeupper/alljoined. Candidate .5 savedHALF+.5 cappedLW-minvar25;
+matchedBROAD replaces risk sleeve with uniform25. No newscore/rerank/grid.
+10bp growth/DDpercentNAV RISK+.530576/.175315, BROAD+.448637/.187780,
+HALF+.603040/.255495, uniform+.294233/.207221. Primary FAIL: growth below
+HALF and DD benefit vsBROAD under10percent. Useful risk-return tradeoff, not
+a regraded winner/independentalpha. Markedgross/cash/fees/turnover retained.
+Claudec3bd47fc SOUND_WITH_NAMED_LIMITS; exactgap2e-7/simplex2e-12 and any
+failedorigin=>wholeUNKNOWN already frozen.70uniquemarks, not1000 independent
+sessions; lowercost can legitimately improve cost-aware growth, not provealpha.
+Next literal-risk prospectivepoint onecurrentData+savedHALF/onesolve only,
+150active/1800elapsed/0models-GPU-outcomes-broker-Tasks, beforeOPEN orUNKNOWN.
+Existing future25marks reusable, no new schedule or model inference.
+
+Einstein SOURCE-only:
+A/research/current-broad25-purged-expert-gate20-proposal-20261021-v1.
+One shallow learned expert gate using chronological purged OOF predictions,
+never in-sample expert scores.120sourceactive/1800elapsed/no marketvalues/
+fits/forwards/PRED/GPU/Task. Inspect prior closedOOF source lessons without
+reopening results; explicit per-fold target/affine/calibration availability,
+h20purges, compatible costs/keys and reused-data claim. No numericalGO yet.
+
 ## Broad25 Data / Completed Baseline
 
 Priceaudit4831e9b5 at A/data/current-broad25-price-input-support-20261021-v1:

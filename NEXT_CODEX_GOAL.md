@@ -48,6 +48,12 @@ Package-local research prohibitions do not stop independent Execution.
    oneGPUfit1000steps/eval50/pat4/1800s; whole5400active/14400elapsed, old
    debits retained. Safe native API/geometry/selector proofs before market.
    No actualmarketfit inferred; see Engine current exact evidence/caps.
+   Latest Chronos2ndGPU native2updates then safe-cold parity failed; gap/cause
+   UNKNOWN,0market/0PRED. New bounded0fit diagnostic owned, not another blind
+   native retry. CPUriskallocation COMPLETE51solves/1intake/primaryFAIL;
+   useful growth/DD tradeoff retained, current prospective allocation point
+   preparing without modelcalls/newTask. OOF shallowgate source parallel only,
+   no numericalfit/extraGPU allocation until frozen readiness and custody.
 
 3. Data/prospective: broad25 raw26 Data17c3ea82/PRED Eval9c0bd613 and
    Chronos5120131fedf COMPLETE, no repeated derivation needed. SEC useful
@@ -65,10 +71,11 @@ Package-local research prohibitions do not stop independent Execution.
    qualified exact unstarted local compatibility, not fresh broker facts.
    New native runtime lifecycle10/10SYN checks nowPASS5f914eb8; old7/10fixture
    failures retained. Hidden duplex caller/ONE18finite-trigger Task preparing,
-   ACTUAL CREATE18 consumed but DISABLED after inheritedACL mismatch. Current
-   protected-repair-r1 may UPDATE20 existingdisabled task/release and Enable
-   only after actual native3protectedACE/fullXML checks; no repeatCREATE/Run/
-   otherTaskwrite. Repair/deployment not inferred. Repoauthority41796a7a PASS.
+   ACTUALLY installed/enabled06:14:22, native-binding-r1 consumerc6026ecf/
+   releasec4f15287/nativeACL3b337353/18finite triggers/first15:30UTC.
+   Parent independent nativeCOM06:17 passes action/principal/protected3ACE/
+   fullprojection/quietSettings/due. All installers consumed, no repeated
+   CREATE/UPDATE/SetSD/Run. No actual order/fill inferred. Repo41796a7a PASS.
    Four280s visits>15m worst-case:
    prove exact unknown-request safety/owned nextsession carry, no promise
    of same-close replay parity or frozen-input/target mutation. OldR5 intact.

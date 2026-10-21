@@ -45,6 +45,18 @@ caps not global. Execution reliability preempts at a safe checkpoint.
 
 ## Custody / Evidence
 
+Latest pre-native-cachepath-r1 COLD passed, actual2ndGPU allocation ran
+2SYNupdates then failed safe-cold output bit equality; gap/cause UNKNOWN.
+Lifetime2GPU/2SYNfits/2updates/8forwards/3saves/2restores/0market-PRED,
+670.799499activeupper/alljoined/leasefree. No implicit extraallocation/retry.
+New authorized diagnostic allocation150active/900elapsed,<=16SYNforwards/
+2constructors/2restores/0fits-updates-saves-market; whole5400/deadline09:27:42
+unchanged. No active trainer inferred until exact FIT-STARTED evidence.
+CPU causal risk allocation COMPLETE51solves/6new12cachedcells/1outcome/
+354.459212upper/0models-GPU/alljoined/primaryFAIL, no oldmodel retry.
+Next onecurrent prospective allocation point is CPU only; OOFgate source
+can prepare independently, no GPU numerical allocation granted yet.
+
 Chronos numerical:
 A/research/current-broad25-chronos20-completion-20261021-v1/numerical-r1/FINAL.json.
 Patch:

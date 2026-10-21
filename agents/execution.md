@@ -85,7 +85,7 @@ marker/hash/time provenance assumes honest host, not proof of OS origin.
 
 ## Twenty-Session Model Adapter
 
-Tracked implementation COMPLETE, NOT deployed/new Paper opportunity:
+Tracked implementation COMPLETE; new FUND20 installed below, not a fill:
 model-proposal-nas-20session-2026-v1 explicitly validates canonical20sessions/
 DST/holidays/earlyclose/finalCLOSEminus15minute operational proxy.
 Old v1/default14-calendar-day/bytecodec and generic execution profile stay
@@ -148,7 +148,20 @@ otherTaskwrites. Effect180active/900elapsed separate from closedsource180,
 review60 and allolddebits. Native protectedACL/fullXML/disabled readback
 beforeEnable, sameACL/enabledprojection/allothers afterEnable. API return
 is not atomicity/deployment evidence. No anotherGO wait inside qualifiedcaps.
-No actual repair inferred until scoped receipt; oldR5/nativebank unchanged.
+Actual final repair COMPLETE06:14:22:
+A/execution/current-fundamental20-paper-cycle-preparation-20261021-v1/installation-r1/actual-install-r1/protected-repair-r1/native-binding-r1/CONSUMER.json
+c6026ecf/releasec4f15287/source2beab41a, ACTUALLY enabled/18triggers/
+firstOct21 15:30UTC=Oct22 00:30KST. Last1UPDATE20+1Enable consumed,
+0Run/API/privatewrites/261otherXMLACL same in own interval/allactorsjoined.
+Parent06:17 nativeCOM independently passes exactnewaction/principal/SID/
+protected3ACE/rawACL3b337353/fullmaskedprojection/quietSettings/nextdue.
+Native false defaults may be omitted in XML; use actual Settings values.
+Root cause sequence: registration inherited3extras; UPDATE applied action
+but ignoredrequestedSDDL; SetSD16 applied intendedrights plus soleAI1024bit.
+Final release binds EXACT measuredPAI bytes, not permissive normalization.
+Previous disabledfaults/oldotherdeltaUNKNOWN/debits preserved; no replay of
+any consumedinstaller/SetSD/UPDATE. OldR5/bank/unknownreservations unchanged.
+No submit/fill/currentinventory/closure proved by installation.
 
 ## Other Frozen Consumers / Quiet Operations
 

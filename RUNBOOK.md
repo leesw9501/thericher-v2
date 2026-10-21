@@ -148,7 +148,7 @@ D:/thericher-v2/model-artifacts/research/current-fundamental20-prospective-measu
 LaterotherTaskdeltaUNKNOWN is not priortransaction attribution. Futuremarks/
 resultsUNKNOWN; do not fabricate hashes or invoke consumed installer/launcher.
 
-Twenty-session ModelPaper tracked source is verified but NOT deployed:
+Twenty-session ModelPaper tracked source is verified and new FUND20 deployed:
 model-proposal-nas-20session-2026-v1, canonical20sessions/DST/holidays/
 earlyclose/finalCLOSEminus15minute operational proxy. Oldv1/default14day/
 codecs/sharedbank/risk unchanged; old/defaultreader rejects newprofile.
@@ -162,13 +162,15 @@ not freshbrokerfunds/quotes/currentinventory. New .005cohort runtime source
 current-fundamental20-paper-cycle-preparation-20261021-v1 had7/10checks;
 focusedpartial/cancel/carry/risk validation now10/10PASS. Quietcaller source-r2
 2c5a7584/8mock+12PS+3native cases/12Linuxcontenders qualified.
-Actual dedicatedTask was CREATED18 but remains DISABLED after native extra
-inheritedACEs. CREATE consumed, Enable0/Run0/API0. Current
+DedicatedTask ACTUALLY installed/enabled06:14:22 after scoped native repairs:
 D:/thericher-v2/model-artifacts/execution/current-fundamental20-paper-cycle-preparation-20261021-v1/installation-r1/actual-install-r1/protected-repair-r1
-owns NEW protected3ACE/release binding, one UPDATE20 existingdisabled task
-then Enable only after native3ACE/fullXML/source readback. No new CREATE/
-Delete/SetSD/Run/otherTaskwrite. Reviewdeeec811; unknown oldotherTaskdelta
-remains unknown, no forcedrestore. Sourceprep/SYN is not actualrepair.
+native-binding-r1/CONSUMERc6026ecf/releasec4f15287/source2beab41a.
+Parent06:17 nativeCOM readback PASS: protected3ACE/ACL3b337353/fullprojection/
+action/principal/quietSettings/18triggers/first15:30UTC. Raw XML may omit
+false defaults; native Settings resolves them. No Run/API/privatewrites;
+not a submit/fill. CREATE/UPDATE/SetSD/Enable caps allconsumed; no rerun.
+Earlier inheritedACL/ignoredUpdateSDDL/soleAIserialization faults and oldother
+TaskdeltaUNKNOWN remain A, no restoration. Newrelease pins measuredPAI bytes.
 ExistingR5 unchanged. Never rerun consumedproof/maintenance/installers as readers.
 Do not swap currentR5/rebind unknown request/infer replay-fill parity.
 Five-policypointcb1c1d9a/shadowd33490c9/Oct27measurement22db8f33 are separate

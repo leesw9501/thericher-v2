@@ -49,7 +49,7 @@ IND_ONLY diagnostic highergrowth is not an outcome-selected scientificwinner.
 Safeweights/curves retained, oldcriteria/results unchanged.
 Question is inductive bias/learnability, not new predictive information/causality.
 
-Next Hubble SOURCE-only package:
+Hubble allocation package:
 A/research/current-broad25-causal-risk-allocation-proposal-20261021-v1.
 ExistingData42562873 prior252 plus frozen RNNCONTROL/expert HALF; no IND_ONLY
 posthoc fallback. Propose ONE causal risk-aware allocation rather than another
@@ -57,6 +57,15 @@ model/seed grid: samegross/turnover/cost/alignedrisky baseline, lower exposure
 is not alpha.120active/1800elapsed source/kernel/SYN only, no marketvalues/
 model/fit/labels/replay/GPU/broker/Task. Concrete consumer and strongestkill,
 official source/nativeAPI proof; no Execution-risk change or new reportplatform.
+SOURCEbd5ad691/kernel8e101aa6/56checks COMPLETE, Claudec3bd47fc advisory.
+Actual numerical-r1/FINALe071bc01/RESULT3e466255 COMPLETE51solves/1intake/
+6new12cachedcells/0models-GPU.10bp RISK+.530576/DD.175315percentNAV vs
+BROAD+.448637/.187780/HALF+.603040/.255495. PrimaryFAIL/no thresholdrescue.
+RISK lowers DD but sacrifices HALFgrowth; matchedBROAD isolates broadening.
+Next literal currentpoint compute is separate prospective research only,
+no model calls/Task/Paper swap. Einstein prepares one purgedOOF shallowgate
+source at current-broad25-purged-expert-gate20-proposal-20261021-v1,
+no numericalfit yet; past-only per-fold affines/targets/selection mandatory.
 
 ## Previous Results / Do Not Repeat
 

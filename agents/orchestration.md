@@ -10,10 +10,10 @@ Parent shared MD/Git; no current genuine operator decision.
 
 | Owner | Current Work / Consumer |
 | --- | --- |
-| Hubble / Strategy | TCN3CPUfits/readout COMPLETE; next causal risk-allocation SOURCE-only, no completed-fit retry. |
-| Einstein / Engine | Fixed blend and prospectivepoint ead52eb6 COMPLETE, executor closed; numericalallowance0. |
-| Wegener / Execution | FUND20 newTask created DISABLED; one protectedACL/release repair owned, no duplicateCREATE. |
-| Boole / Engine | Chronos-2 FULL native caller-phase successor then conditional firstGPUfit; no actualmarketfit inferred. |
+| Hubble / Engine | Risk allocation51solves/readout COMPLETE; one literal current prospective allocation point owned. |
+| Einstein / Engine | Point ead52eb6 COMPLETE/no more forwards; new purged OOF expert-gate SOURCE-only. |
+| Wegener / Execution | FUND20 Task ACTUALLY installedenabled c6026ecf/parentRO PASS, no more mutations. |
+| Boole / Engine | Chronos FULL cold-restore parity diagnosis; latest2SYNupdates/0market, no resource/approval hold. |
 | Noether / Data | Broad25 currentpoint and Chronos512 adaptation8cf1 inputs COMPLETE; executor closed. |
 | Closed | Kepler finalNov17 DataTask installedenabled/parentRO verified; Banach512join/earlier Validation complete. |
 | Parent | Review sources/results, dispatch next useful campaign, integrate current facts/Git. |
@@ -26,6 +26,17 @@ One app heartbeat Oct22 00:45KST after existing outcomes, quiet unless material,
 one-shot/no replacement chain. No foreground session wait.
 
 ## Throughput Review
+
+06:27UTC: Execution installationc6026ecf ACTUALLY enabled/parentRO PASS,
+Wegener closed; nextdue15:30UTC stays workerowned. Riskallocation source+51
+CPUsolves complete, nextcurrentpoint reuses savedHALF, no models. Einstein
+prepares one OOFgate source. Boole native parity failure is local: actual2SYN
+updates/0market, safecheckpoint outputs not identical despite tensorhash.
+New bounded0fit diagnostic must retain numericgap/modes/nonpersistentbuffers
+instead of another blind retry. Four disjoint packages, no GPUdummyload or
+globalgate. Reversible improvement: exact host metadata checks stay host-side;
+container gets only the narrowly bound replay source, no generic pathmapper.
+Retain every closeddebit and failednative result, no oldPASS invented.
 
 05:55UTC: TCN3CPUfits/readout and fixed blend/current25point COMPLETE;
 Einstein closed/Hubble source-only allocation proposal, no stale numerical dispatch. CPU TCN8.506s vsGPU
