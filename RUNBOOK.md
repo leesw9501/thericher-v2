@@ -133,6 +133,23 @@ at17:48:44 records268newGET/1newPOST/26017newbars/62closed/12unavailable/
 - One app heartbeat Oct22 00:45KST after outcomes, quiet unless material,
   one-shot/no new recurring report or follow-up chain.
 
+Oct21 outcome readback18:01UTC: all six R5 slot ATTEMPT/RESULT pairs under
+source-r5/visits are source8f1c212a/GOd5bd1aac/time-bound. Entries2/4/6 each
+declare1buy start; this is NOT accepted-submit/fill proof. First-slot failure
+alone was incomplete. Prepared manifest0505d522/payload84d54bad/policy0d0bbb41.
+Use the CURRENT nightly reader, not the old baseline reader:
+D:/thericher-v2/model-artifacts/execution/nightly-typed-recovery-deployment-20261017-v1/read_owned_dispatch.py
+48a36d74, --read --profile nightly --not-before 2026-10-21T14:50:00+00:00.
+It validates current immutable launch a86eacd0 and host d55ed825:
+D:/thericher-v2/model-artifacts/execution/current-daily-portfolio-dispatch-v1/20261021T145259947898Z.json.
+Public exact_cycle_complete/107GET1token3sell starts is not fill/inventory proof.
+Hubble scoped offline reader package current-oct21-nightly-f9-followup-20261022-v1
+owns remaining strict private linkage; never recovery observe()/manual Task/API.
+That package is CLOSED60ee372a/44checks/496.780620upper/0privateintakes or
+containers. Exact acceptance/fill/current-owned remains UNKNOWN: old strict
+quiescence unmet with DataPID46212 active; pre-start absence/original8 parsers
+do not support R5 post-start scope. No automatic rerun/follow-up chain.
+
 Exact deployed action evidence:
 D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1/source-r5/action-retarget-r3/CONSUMER.json
 3330a61c674e2a1f72e3767c5c638269c506994c6e22e8903dcca2ccb6bfc536.

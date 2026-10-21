@@ -68,6 +68,27 @@ properFAIL/relative financePASS/oneINNER15cells/LATER0. Artifact-only DTO repair
 did not refit/reforward/reseal; all old faults/counters retained. Source538.988975
 and Data84.312942 charged once. No newfit or GPUuse inferred after closure.
 ReusedINNER remains adaptive, not independent replication. Paper runs separately.
+New disjoint Source: Noether
+A/research/current-kis100-cost-aware-direction-proposal-20261022-v1,
+cost-positive binary target and fixed non-renormalized abstention, tree/compact
+neural candidates.600active1800elapsed/real CPU invented solver-codec checks/
+Claude challenge; market arrays/labels/fits/GPU/Data/broker effects forbidden.
+COMPLETEc8f7e013/consumer4376eea7/21real CPUchecks/501.797031upper/alljoined.
+ClaudeSOUND_WITH_NAMED_LIMITS response8320be9c. Parent next development plan:
+A/research/current-kis100-cost-aware-direction-development-20261022-v1/PARENT-CAMPAIGN.json
+origin18:04:36UTC/9000active21600elapsed/Source501.797031once/2firstfits/
+oneINNER18cells/LATER0. Wegener owns actualnative/resource/fit/selectedseals/
+readout; Noether Datareuse400 at current-kis100-cost-aware-direction-input-20261022-v1.
+Bind actual hashes/ABI before market; TRAIN/CHECKonly fitmounts, INNER held
+until allscores/policies sealed. No actual newmarket fit/GPUclaim from dispatch.
+Data READY1bc1ce3e/DTO2bb5a208: TRAIN808dates22694rows/CHECK248dates7201rows,
+bothTRAINclasses/4purgedperrole/allcandidatekeys/10SYN+12readbackchecks/
+126.502285upper/alljoined/0INNERtarget-markopens. Bind these actual immutable
+hashes before market. Neural equaldate loss means average per-date stock loss
+over four chronological dates, not unweighted flattened unequal-size dates.
+P(cost-positive) is not expected net return;
+same-gross risky baseline, costs/turnover/drawdown remain required. New target
+is adaptive reused-data development, not a regrade of old FAIL or Paper gate.
 
 New100 raw campaign COMPLETE at
 A/research/current-kis-modp1-ohlcv-rank5-development-20261021-v1/readout-r1/retained-review-binding-r1/RESULT.json

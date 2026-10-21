@@ -13,6 +13,15 @@ A/data/current-kis-modp1-historical100-continuation-20261022-r2.
 62closed/12unavailable/26remaining. Minwire3.983s/mean5.938sperGET including
 guard/IO/ownerwaits;3noHTTPyieldcycles/ETAunknown/finalityNOT_OBSERVED.
 Original0067 unchanged. Worker owns next_due/APIcurfew19:30/cleanup19:40.
+New independent direction input COMPLETE:
+A/data/current-kis100-cost-aware-direction-input-20261022-v1/CONSUMER.json
+1bc1ce3e/DTO2bb5a208. Sourcec8f7e013 rawLOG5 cost-positive target (no rank
+inversion), originalfactor10/TRAINinput-affine and all100candidatekeys reused.
+TRAIN808superviseddates22694rows/CHECK248dates7201rows/4boundarypurgesperrole/
+bothTRAINclasses.10nativeSYN+12independentlabels-weights-calendarchecks/
+126.502285of400upper/alljoined. INNERtargets-marks unopened/excluded from
+fitmounts; no newfactor/affine/acquisition/model/GPU/API. Wegener exactactual
+development consumer binds immutable packet before two firstfits.
 New exact continuation root:
 A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1.
 CONSUMER86479b7a/sourcef4498f5d/worker94e05954/job4bae4675,

@@ -49,6 +49,10 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    compares minimal native owned-process reuse with exact semantic Task repair.
    No blind enable/backdating/substitute unknown or forced signal.
    Keep originalR5/FUND20/nightly/F9 owners and reservations separate.
+   One-shot Oct21 readback60ee372a validated R5 threebuy starts/nightly
+   threesell starts, NOT acceptance/fills/current-owned. Existing strict private
+   reader coordination/scope deferred; F9 reservation HELD. Do not rerun
+   pre-start absence or Original8 reader as an R5 post-start outcome reader.
 
 3. Engine/Strategy: completed raw4model and maskedpretraining campaigns are
    CLOSED, no reruns. HGB development+5.716282percent initialNAV at10bp/leg
@@ -74,6 +78,17 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    Old OOF_NOT_READY failure and debits stay; no duplicate fits. Operator
    GPUpriorityFIRST/personalco-use/concurrentreadyjobs is recorded inAGENTS;
    actualresourceadmission repaired, not another approval hold or extra trial.
+   New cost-aware direction Source COMPLETEc8f7e013/21nativeCPUchecks/
+   ClaudeSOUNDlimits. Parent PARENT-CAMPAIGN at
+   current-kis100-cost-aware-direction-development-20261022-v1 freezes
+   9000active21600elapsed/Source501.797031once/2firstfits/oneINNER18cells/LATER0.
+   Wegener actualnative-fitter and Noether Datareuse400 dispatched; bind exact
+   TRAIN/CHECK packet/ABI/runtime before fits, INNER held until selectedscores/
+   policies sealed. Fixed classifier/abstention target, not another oldfit or
+   inferred runningGPU. No broker effects from this independent research.
+   Actual Data READY1bc1ce3e/DTO2bb5a208/TRAIN808dates22694rows/CHECK248dates7201rows/
+   126.502285upper/INNERtargets-marks0opens. Engine must bind these hashes
+   before new market fits; no duplicate source/native/oldfit dispatch.
 
 4. Einstein/Data: exact finitequiet16:10UTC continuation installation granted
    for prepared current-kis-modp1-rank5-historical100-continuation-20261021-v1,

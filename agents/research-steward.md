@@ -49,6 +49,13 @@ findings retained/properFAIL/relative financePASS/oneINNER15cells/LATER0.
 No completed-fit repetition or ongoingGPUclaim after closure. Co-run distinct
 ready frozen work with measured headroom under one existing coordinator;
 concurrent permission is recorded, multiple-CUDA training not yet demonstrated.
+Next direction campaign plan is frozen at
+A/research/current-kis100-cost-aware-direction-development-20261022-v1/PARENT-CAMPAIGN.json:
+9000active21600elapsed/Source501.797031once/Data126.502285once/2firstfits/
+oneINNER18cells/LATER0. Sourcec8f7e013 and Data1bc1ce3e/DTO2bb5a208 READY.
+Wegener owns real runtime/native and resource preparation before new fitting.
+Prefer useful CPUHGB+CUDA neural concurrency under actual measured headroom;
+no newmarket/GPU claim from dispatch, duplicatefit or global app-name hold.
 
 Operator2026-10-22KST gives projectGPUpriorityFIRST, allows personal/external
 GPU co-use and concurrent distinct ready trainings. Do not require an app-name

@@ -112,6 +112,29 @@ R5 natural14:00 failedunavailable/native_recovery_required/0declaredrequests/
 cases prove projection, not actualguardcause. Hubble temporaryExecution owns
 current-r5-callback-stage-recovery-20261021-v1 closedcategoricalbreadcrumb
 Source READY7b52895f/native51ac166d/FINAL962.6233497upper/alljoined.
+Oct21 heartbeat follow-up18:01UTC corrected the first-slot-only projection:
+all six retained R5 slot ATTEMPT/RESULTs match source8f1c212a/GOd5bd1aac/time.
+Entry2/4/6 each declare1buy start (three total);2/5/6 native_leg_closed,
+1/3 native_recovery_required,4 cycle_readonly_snapshot_unavailable.
+No accepted-submit/fill/current-owned claim from these public receipts.
+Exact prepared manifest0505d522/payload84d54bad/policy0d0bbb41/25rows bound.
+Nightly Oct21 strict source/hash/time reader validates exact_cycle_complete,
+107GET/1token/3sell starts. Host pointer:
+A/execution/current-daily-portfolio-dispatch-v1/20261021T145259947898Z.json
+d55ed825554f72a56a9ccb2d5104bad1b19156e61f25371d136b28aa9b9dcb19.
+Hubble owns categorical offline-only exact private linkage under
+A/execution/current-oct21-nightly-f9-followup-20261022-v1; actor exclusivity,
+RO/source pins/networknone,0API-creds-orders-Tasks-privatewrites-observe.
+F9 original unknown reservation remains HELD; Oct21 runtime proof pending.
+Do not run consumed diagnostic/probe/strategy to fill these evidence gaps.
+Readback now CLOSED60ee372a at current-oct21-nightly-f9-followup-20261022-v1:
+44checks/496.780620of600upper/alljoined/0containers-privateintakes-API-orders-
+Taskmutations. Existing strict reader quiescence unmet with DataPID46212 active;
+R5 pre-start absence/original8 scope cannot prove R5 post-start custody. Exact
+acceptance/fills/current-owned remain UNKNOWN, not zero. This is a scoped
+reader/coordination limitation, not permission withdrawal or evidence that
+the market-only collector mutates the private book. Parent Task status/time
+reads were permitted/performed; do not misstate a blanket Task-query ban.
 No oldSource/guard/budget/request changes or actualTask/API effect; actual
 callbackcause UNKNOWN until a real stage is retained. Native fixture repair
 and error limits remain in immutable evidence; not an actual operational fix.

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-21, 17:50UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
+2026-10-21, 18:01UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-kis100-hgb-operational-paper-entry-v1 remains UNFINISHED:
 connect the fixed HGB savedpoint to actual linked Paper entry/fill/owned-state
@@ -24,11 +24,11 @@ D free last measured38.9percent; preserve15percent/warn20percent.
 
 | Owner | Actual Work / Next Consumer |
 | --- | --- |
-| Parent | Original8 closure integrated/oldTask disabled with backup; fresh540serial+18659fullPASS25skip/e3657d0f. HGB runtimeGO only after wiring proof; shared MD/Git. |
+| Parent | One-shot Oct21 outcome follow-up: public R5 three buy starts/nightly three sell starts; strict private linkage pending, no API/Task execution in follow-up. Shared MD/Git. |
 | Boole / Execution | Redirector identity qualified in wiring-r2, full host stopped FOREIGN_NAMED_PROCESS before exchange. Actor-metadata fixture failed JSON parsing; bounded technical successor, no activation. |
-| Noether / Engine-Strategy | TabM Source3cf2e337/Data reusebb1e5c94 COMPLETE; actual family closed9f0db908. No duplicate input materialization or fit. |
-| Wegener / Engine | TabM CUDA34/best10/6868updates and concurrent CPU MLP32/best8/6464updates COMPLETE; properFAIL/relative financePASS/LATER0/alljoined/GPUreleased. |
-| Hubble / invoked review/Execution | Original8 scoped closure review99038031; direct wiring boundary findings656a29d1. Independent successor checks only after exact Source ready. |
+| Noether / Engine-Strategy | Direction Sourcec8f7e013 and Data1bc1ce3e COMPLETE; TRAIN/CHECK isolated, INNER targets/marks unopened, no model/GPU/API effects. |
+| Wegener / Engine | New direction actual-family fitter/native preparation with ready Data2bb5a208; no market fit or GPU activity inferred yet. TabM family remains COMPLETE. |
+| Hubble / invoked Execution | Oct21 public readback CLOSED60ee372a/44checks; private linkage deferred,0private intakes/API/containers. No new automatic follow-up. |
 | Einstein / Data | Acquisition-r2 PID46212 RUNNING asof17:48:44:268newGET/1newPOST/26017newbars;62closed/12unavailable/26remaining. Worker owns due/curfew. |
 
 One Steward resource coordinator uses A/engine-research-agent/locks/gpu.lock;
@@ -89,8 +89,27 @@ Private volume thericher-v2-paper-canary-private-acct-20261007-v1,
 never recovery observe() as a reader. Marker/hash/time assumes honest host,
 not cryptographic OS-scheduler provenance; Operational logging is disabled.
 
-Existing UTC opportunities: R5 preparation13:10 ACTUAL success ded0bdb0,
-entry14:00 actual outcome not yet integrated; nightly14:50/F915:10;
+Existing UTC opportunities: R5 preparation13:10 ACTUAL success ded0bdb0.
+Six exact R5 ATTEMPT/RESULT slots now source8f1c212a/GOd5bd1aac/time-bound:
+entry1/3 native_recovery_required/zero starts; entry2/5/6 native_leg_closed;
+entry4 cycle_readonly_snapshot_unavailable. Entries2/4/6 declare ONE buy start
+each (three total), not proven accepted submits or fills. Prepared25-row
+manifest0505d522/payload84d54bad/policy0d0bbb41 bound without raw output.
+Nightly14:50 public strict reader validates exact_cycle_complete/107GET/
+1token/3sell starts, not fill or current inventory proof. Exact immutable host:
+A/execution/current-daily-portfolio-dispatch-v1/20261021T145259947898Z.json
+d55ed825554f72a56a9ccb2d5104bad1b19156e61f25371d136b28aa9b9dcb19.
+Hubble readback CLOSED at
+A/execution/current-oct21-nightly-f9-followup-20261022-v1/FINAL.json
+60ee372a6b0dc7087ef5fb786a7eb3c5497786c4ee231642031333cf1564b379.
+44checks plus parent34exact scoped refs PASS;496.780620of600upper/alljoined/
+0containers-privateintakes-API-orders-Taskmutations. Private linkage DEFERRED:
+existing strict reader quiescence not met while DataPID46212 active; pre-start
+absence and original8 readers are not a supported R5 post-start reader.
+This is a scoped parser/coordination limitation, not an operator approval hold
+or proof the GET-only collector mutates private orders. Parent Task fact reads
+were permitted/performed; no Task, collector, strategy worker or KIS invocation.
+F915:10 current accepted/fill result still UNKNOWN;
 FUND20 ACTUALLY installed c6026ecf/releasec4f15287/imagef31e, first15:30.
 R5 same -r2 tasks/source8f1c212a/imageb96a8ef8, exitOct27>=19:45.
 App one-shot Oct22 00:45KST only; no replacement chain/manual TaskRun.
@@ -156,6 +175,13 @@ exchange native fixture still required; no actual activation inferred.
 Prospective operational window16:50..19:30UTC/sameOct27exit, samepoint/bank.
 Fresh runtime compatibility e3657d0f plus exact external proof bind ParentGO.
 No blind enable/backdating/substitute unknown or forced signal.
+Later actor-transport-recovery-r2 READBACK03ca0fe7 qualified exact research
+redirector pair/eight tamper negatives and recovery-Task exemption/14 negatives.
+Actual denied DataPID46212 identity/source bound; historical r2 cause UNKNOWN.
+466upper+0.31readback/0HTTP-private-Docker-Taskmutations/alljoined. Full host
+activation still deferred: cross-OS shared request-slot exclusion unproven,
+not a GPU permission issue. Do not bypass the actual collector or reuse source
+tests as operational readiness. Its natural curfew is worker-owned.
 
 Masked closure:
 A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json
@@ -207,6 +233,25 @@ properFAIL/relative financePASS/oneINNER15cells/LATER0/alljoined/GPUreleased.
 includesSource/Data/failures/artifact-only repair once. No refit or current
 training inferred after closure. Source3cf2e337/TabMv0.0.3Apache2 unchanged.
 Older model families/curves/custody remain in Engine stateboard/Git/immutable A.
+Independent next Source preparation:
+A/research/current-kis100-cost-aware-direction-proposal-20261022-v1.
+Source COMPLETEc8f7e013/consumer4376eea7:21real native CPU checks, HGB selected
+zero/nonzero-prefix cold parity and NN2updates/safe cold EXACT;501.797031upper/
+alljoined. Claude SOUND_WITH_NAMED_LIMITS, exact response8320be9c at
+current-kis100-cost-aware-direction-proposal-20261022-v1/review/RESPONSE.txt.
+No market labels/fits/GPU/Data effects in that closed Source. Parent NEW finite
+development plan at current-kis100-cost-aware-direction-development-20261022-v1/
+PARENT-CAMPAIGN.json freezes9000active21600elapsed/2firstfits/oneINNER18cells/
+LATER0 with Source debit once. Wegener owns fitter/native then conditional
+CPU HGB+CUDA neural; Noether Datareuse400 at current-kis100-cost-aware-direction-input-20261022-v1.
+Actual input hashes must bind before fits; no actual market/GPU use inferred
+from dispatch. Probability-positive is not expected profit; same-gross risky
+comparison/turnover/drawdown required. Not a Paper gate.
+Data now READY1bc1ce3e/DTO2bb5a208: TRAIN808dates22694rows/CHECK248dates7201rows,
+four boundary dates purged/role, both TRAINclasses, all candidate keys retained.
+10native producer tests+12independent readback checks/126.502285upper/alljoined,
+INNER targets/marks0opens. Parent9Source refs/34readback refs/4pure policy checks
+PASS, tracked/control1375digest123a2072 still exact; no unnecessary full rerun.
 
 ## Data / Recovery
 

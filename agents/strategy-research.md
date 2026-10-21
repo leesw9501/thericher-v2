@@ -7,6 +7,24 @@ Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 
 ## Current Mechanisms / Consumers
 
+Noether current source-only work:
+A/research/current-kis100-cost-aware-direction-proposal-20261022-v1.
+One cost-positive directional/abstention hypothesis, not another MSE model;
+pure kernels + real CPU synthetic optimizer/safe-codec/early-stop checks and
+Claude challenge.600active1800elapsed. No market fitting/label decode/GPU,
+Data/broker/Task effects. Probability-positive rule is heuristic, not expected
+profit; exact roundtrip cost and same-gross risk comparator must be explicit.
+Source COMPLETEc8f7e013/consumer4376eea7:21realCPUchecks/501.797031upper,
+alljoined/selectedzero+nonzeroHGBprefix and neural safe cold parity. Claude
+SOUND_WITH_NAMED_LIMITS response8320be9c. Parent accepted into NEW frozen
+9000active21600elapsed actual-family plan/2fits; Wegener prep/native thenfit,
+Noether Datareuse400. Not numerical/GPU readiness until exact packet/runtime
+bindings, or an Execution approval requirement.
+Data completed1bc1ce3e/DTO2bb5a208/TRAIN808dates22694rows/CHECK248dates7201rows/
+126.502285of400upper/10nativeSYN+12independentchecks; INNERtargets-marks0opens.
+Wegener actual runtime/native/fitter preparation proceeds under frozen plan;
+no actual marketfit/GPU activity inferred from ready Source/Data.
+
 ListNet Source and actual onefit COMPLETE:26epochs/best6/5252CUDAupdates,
 219checks/oneINNER18cells/0LATER/proper-financeFAIL. FixedhalfHGB-rank
 growth+3.477526percentinitialNAV at10bp/leg trails HGB+5.716282, not alpha.
