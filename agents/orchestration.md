@@ -9,13 +9,13 @@ fees/settled cash/actual net PnL UNKNOWN. Parent shared MD/integration/Git.
 
 | Owner | Actual Work |
 | --- | --- |
-| Pascal / Engine | Fixed pool closedf65ca8e8/PASS/3new9cached; FUND exact recurrent allocation alias, no models/GPU or extra diversification. |
-| Kepler / Data | Prospective FUND20 input actual READY00:45:59UTC/8known17unknown; future prices/model point unknown. No rerun requested. |
-| Confucius / Strategy | New pure kernels/proposal for same-FUND20 scalar Huber versus within-date RankNet losses; no market fitting. |
+| Kepler / Data | Prospective input216cec35 complete; future measurement adapter must pass actual0996dabb wire, not fabricated publication fixture. |
+| Confucius / Strategy | Source8fb724bc/48pureloss-autograd checks complete, role closed. |
 | Bacon / Review | As-of/vintage/desktop challenges complete; advisory only. |
-| Boole / Engine | Chronos2 complete914fa4f9/102market calls/35.72GPUworker seconds/financialFAIL; actual prospective BASE/FUND epoch6 point next. |
+| Boole / Engine | Prospective BASE/FUND point0996dabb committed01:01:46UTC/0fits-GPU; preparing Nov17 measurement host. |
+| Pascal / Engine | Scalar pair UNAVAILABLE/1HUBERstart0updates/missingcheckpointidentity, RankNetunstarted. New accounted first-RankNet-only scope, not old cap reuse. |
 | Archimedes / Infra | Natural head22 READY25x22/29SYN+actualwire; oldbasisFAIL unchanged, no API/TaskRun. |
-| Wegener / Execution | R5actual r1 skipped0updates on own venv redirector; positive native ancestry/argv fix in new r2, same2Task action update delegated. |
+| Wegener / Execution | R5r3 deployed3330a61c/2actionupdates0Run; parentCOM257otherXMLACL unchanged. Next20-session Paper adapter source-only feasibility. |
 | Parent | Current memory/integration/Git, exact production equality and external checks. |
 | Steward | Prior GPU actors joined/lease free; no current GPU training inferred. |
 
@@ -50,9 +50,18 @@ selected-epoch6 point/no refits; source for two aligned objectives runs in
 parallel. Reversible improvement: rank stocks directly instead of assuming
 better classification CE necessarily improves Top5 decisions; compare losses
 on unchanged data/splits/costs, keep reused evaluation explicitly adaptive.
-R5 r1 made0updates because its own native venv redirector matched generic
-owner regex. Positive ancestry/executable/argv reproducer found first cause;
-r2 fixes only exact own exclusion and obtains fresh proof before actual update.
+Latest failure/handoff review01:18UTC: R5r3 actually deployed after native
+SD normalization and positive own-redirector classification; parent freshCOM
+confirmed exactpair/257otherXMLACL, no broker effects. Scalar pair stopped
+before0optimizer updates: valid native identity fixture differed from actual
+checkpoint caller. Preserve full conservative oldcaps; do not repeatHUBER or
+refund by inferred inactivity. New RankNet-only first fit is separately
+accounted after positive unstarted proof, not original pair completion.
+Reversible improvement: actual factory-produced identity must pass the codec
+guard before constructing a market model. Existing all-role header/native
+optimizer checks stay useful but cannot stand in for actual caller coverage.
+Parent also caught Data future decoder's synthetic-only publication ABI;
+use exact committed point0996dabb directly, no extra projection platform.
 R5privateUNKNOWN is a named read-only guard, not evidence of a broker failure
 or Window21 request conflict; native global budget replay and bytes preservation
 already passed before the orphan/legacy-registry membership check. Diagnose
@@ -87,7 +96,11 @@ destroying an otherwise expensive fit, without regrading/retraining old studies.
 - Chronos2 914fa4f9:ISOLATED/GROUP10bp growth+.941339/+.735933percentNAV,
   DD.228407/.208319; peer screenFAIL, allactorsjoined/leasefree.
 - Prospective FUND20 Data READY8eligible/17unknown before Oct21OPEN;
-  future20thCLOSE Nov17 21UTC. Forecast commit and future prices unknown.
+  point0996dabb ACTUALLY committed; future20thCLOSE Nov17 21UTC prices unknown.
+- Fixed FUND/Chronos rank fusion12e05488 FAIL/3new12cached cells/0models-GPU;
+  temporary Validation confirmed42hashrefs/15NAV metrics/zero discrepancy.
+- R5r3 actual sameTask actionpair3330a61c installed/2updates0Run, original
+  due13:10/14:00UTC/nativeACL unchanged; installation not fill/lifecycle closure.
 
 ## Verification / Recoverability
 

@@ -51,15 +51,35 @@ At10bp growth/DDpercentNAV ISOLATED+.941339/.228407 versus GROUP+.735933/
 .208319; frozen GROUP financialFAIL. No window/peer rescue or new alpha claim.
 Old128/h1/trio/256wrapper unchanged; Data7afc4b93 remains retrospective proxy.
 
-Boole next concrete consumer: selected-epoch6 BASE/FUND prospective point
+Boole completed selected-epoch6 BASE/FUND prospective point
 using A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json,
 8eligible/FEATURESa0374157, actual data available before Oct21OPEN13:30UTC.
 Target Nov17CLOSE21UTC; one inference per model plus uniform/cash, no fits,
-checkpoint changes/future labels/current Paper model swap. Not committed yet.
-Confucius next source: current-fundamental20-objective-alignment-hypothesis-20261021-v1,
+checkpoint changes/future labels/current Paper model swap. ACTUAL COMMITTED
+0996dabb at01:01:46UTC/84.141175upper/alljoined/39checks. Future Nov17
+measurement host/actual point decoder now preparing; future prices UNKNOWN.
+Confucius source8fb724bc/48loss-autograd tests closed at
+current-fundamental20-objective-alignment-hypothesis-20261021-v1,
 same FUND20 features/splits/20sleeves, matched scalar Huber versus within-date
 RankNet loss. This tests training-objective alignment, not another model grid.
 Only chronological INNER may choose checkpoints; seen PRED stays adaptive.
+Pascal actual native12CPU-CUDA SYNupdates/full state passed; source-only
+epoch projections CPU5.338/CUDA5.561 select CPU. Actual scalar pair then
+closed UNAVAILABLE: HUBER1start/checkpoint0 missing batch_order_sha256,
+0updates/0PRED/0economiccells; RankNet NOT_STARTED. Firstcause8ceb3ae9,
+412.935192upper/alljoined. Native identity differed from actual worker;
+test the SAME caller factory before the next constructor, not another fixture.
+Old error-journal conservatively charges fullcaps; never refund/reuse them.
+New first-RankNet-only scope may consume1 separately recorded start after
+positive unstarted proof; oldcharged2+new1=3, no HUBER retry/paired completion.
+Same data/seed/split/loss/per-arm screens; old classifications not reopened.
+
+Fixed FUND-LSTM/isolated-Chronos rank fusion12e05488 CLOSED financialFAIL:
+A/research/current-fundamental20-chronos-fixed-rank-fusion-20261021-v1/schema-continuation-r1/RESULT.json.
+10bp growth/DDpercentNAV+.850532/.228229 versus FUND+1.015525/.213627,
+ISOLATED+.941339/.228407;3new12cached cells/0models-GPU/no aliases.
+Two reader attempts/one actual outcome intake; exact sealed-policy schema
+continuation is not old one-attempt compliance. No weight/grid rescue.
 
 First source/native READBACK6eeb08f7 COMPLETE:64checks/two SYN fits16rounds/
 41.205889upper/0market-GPU-API/alljoined; EngineABI380f47fe/DataRequest7802bec2.

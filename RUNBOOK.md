@@ -165,6 +165,15 @@ marks/fill/terminal/netPnL/performance qualification.
 Original halfpoolpoint28e887fc Oct21 00:15..00:25UTC is separate;
 oldOct26ffcf64a0 also separate target. No consumed installer/point rerun.
 
+Current Window21 action deployment ACTUAL3330a61c:
+D:/thericher-v2/model-artifacts/execution/current-window21-provisional-nas-deployment-20261021-v1/source-r5/action-retarget-r3/CONSUMER.json.
+SOURCE8f1c212a/GOd5bd1aac/imageb96a8ef8. Same Task names/13:10prepare/
+14:00visitUTC;2actionupdates0Run/newTasks/triggers. Parent freshCOM validates
+both actions/principal/nativeACL and257otherXMLACL unchanged. R1/R2/r3
+installers/probes are consumed; never invoke them to inspect runtime.
+R3 normalized only scheduler-added SD exactly matching original native ACL;
+old failures/rollback UNKNOWN remain immutable. Runtime/fills still unknown.
+
 Canonical GPU lease:
 D:/thericher-v2/model-artifacts/engine-research-agent/locks/gpu.lock.
 One actual training owner/fresh headroom; do not age-reclaim or infer activity.
@@ -172,7 +181,12 @@ Recurrent20 7efaa9e0 and Chronos2 O/C20 914fa4f9 are COMPLETE/allactorsjoined;
 never re-execute their hosts to restore GPU utilization.
 Prospective FUND20 input at
 D:/thericher-v2/model-artifacts/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json
-is actual input-only READY8eligible before Oct21OPEN, target Nov17CLOSE.
-New point consumer owns its inference; no future labels/current Paper swap.
+is actual input READY8eligible before Oct21OPEN, target Nov17CLOSE.
+Point COMMITTED0996dabb at
+D:/thericher-v2/model-artifacts/research/current-fundamental20-prospective-point-20261021-v1/COMMITTED.json
+actually published01:01:46UTC/twoCPUrestores-forwards/0fits-GPU.
+Its future measurement adapter/host are preparing, not installed or measured.
+No future labels/current Paper swap. Native v1 Paper14-calendar-day bound
+does not accept20session hold; a separate compatible adapter is under review.
 Monitor http://127.0.0.1:8787 private loopback; redesign/external access deferred.
 Older consumed commands/contracts/failures remain Git264a2b0/immutable A.

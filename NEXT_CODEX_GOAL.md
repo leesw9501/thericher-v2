@@ -23,7 +23,7 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
 ## Current Parallel Work
 
 1. Execution: preserve original NAS exit and installed Window21 preparation
-   Oct21 13:10UTC/entry14:00/sourcef3711b38/imageb96a8ef8. It requires actual
+   Oct21 13:10UTC/entry14:00/source8f1c212a/GOd5bd1aac/imageb96a8ef8. It requires actual
    Oct20 closes/full25/NAS only/NYS and unused slots cash/no renormalization.
    Nightly14:50/F915:10 are distinct owners. Nightly unused-pointer maintenance
    7fe5dac2 actually closed; do not rerun consumed maintenance. F9 remains
@@ -35,9 +35,10 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
    delegated; old guard/receipts unchanged, no hidden c705 substitution.
    Scoped native-identity proof758d35e3 now proves own unstarted scope while
    foreign history stays unqualified/preserved. Actual same-Task retarget
-   r1 skipped0updates on own-redirector conflict; r2 native ancestry/argv fix
-   and fresh actual retarget delegated. No existing decision/intent/reservation
-   may be rebound; original Task definitions remain until actual update proof.
+   r1 skipped0updates and r2 mixed-state fault preserved; R3 ACTUAL action-only
+   pair deployed/2updates0Run, parent freshCOM validates original triggers/
+   principal/nativeACL and257other XMLACL. No existing decision/intent/
+   reservation rebound; runtime/submit/fill remain unknown before opportunity.
 
 2. Data / Strategy / Engine: prepare ONE price-versus-price-plus-fundamentals
    20-session ablation, not another grid of model names.
@@ -61,10 +62,14 @@ foreign inventory, substitute unknown requests or a new/profit-expanded bank.
    35.72GPUworker seconds/0fits/alljoined. At10bp growth/DDpercentNAV GROUP
    +.735933/.208319 versus ISOLATED+.941339/.228407: financialFAIL, no rescue.
    All captures-after-historical-origins remain retrospective proxy.
-   New FUND20 prospective input READY8members before Oct21OPEN; Boole freezes
-   BASE/FUND epoch6 point without refitting, target Nov17CLOSE, no Paper swap.
-   Confucius prepares same-input Huber versus within-date RankNet losses;
-   exact same target/splits/costs, no model-name or hidden window grid.
+   FUND20 point0996dabb ACTUALLY committed01:01:46UTC before Oct21OPEN,
+   BASE/FUND epoch6/8members/0fits-GPU, target Nov17CLOSE, no Paper swap.
+   Fixed FUND/Chronos50:50rank fusion12e05488 financialFAIL/3new12cachedcells,
+   no weight rescue. Scalar pair native12SYNupdates passed, but actual HUBER
+   checkpoint0 failed missing batch-order identity before0optimizer updates;
+   pair UNAVAILABLE/RankNet unstarted. Preserve full conservative old debits.
+   Engine may fix actual identity factory and freeze a separately accounted
+   FIRST RankNet trial, not retry HUBER/refund old caps/claim paired success.
 
 3. OOF learned gate is COMPLETE, not a running job or another retry:
    A/research/current-halfpool-chronological-gate-development-20261021-v1/prefix-completion-r1/readout-schema-continuation-r1/READBACK.json

@@ -7,13 +7,17 @@ Parent owns shared MD/Git. Proposals need executable consumers, not reading list
 
 ## Current Proposal And Owner
 
-Confucius now owns ONE objective-alignment proposal/pure kernel:
+Confucius completed ONE objective-alignment proposal/pure kernel:
 A/research/current-fundamental20-objective-alignment-hypothesis-20261021-v1.
 Use same FUND20 inputs/temporal purges/20-session target; matched scalar
 Huber versus within-date pairwise logistic ranking, not a model-name grid.
 Motivation: classification FUND20 development allocation useful but FITprior
 still wins proper scores. Separate loss alignment from feature/model changes.
+SOURCE-READY8fb724bc/48loss-autograd checks PASS/source90+review60once.
 No market fit/GPU/holdout decode in Strategy; Engine owns actual training.
+Scalar pair's actual checkpoint0 caller failed before0optimizer updates,
+not a financial refutation. Keep old full conservativecaps; any unstarted
+RankNet first fit is separately accounted, no HUBER retry or paired-success claim.
 Primary mechanism: https://www.microsoft.com/en-us/research/publication/learning-to-rank-using-gradient-descent/
 
 Confucius completed source/SYN asof-kernel-r1 (60bbea7c/44tests):
@@ -83,6 +87,10 @@ No real model/ratio/label/evaluation work in the kernel package.
 - Chronos2 O/C512/h20 peer comparison914fa4f9 COMPLETE:4native102market
   forecasts/0fits/35.72GPUworker seconds; GROUP growth below ISOLATED,
   financialFAIL. No peer/window rescue. Not an untried foundation model.
+- Fixed FUND-LSTM/isolated-Chronos rank fusion12e05488 financialFAIL:
+  +.850532/.228229percentNAV growth/DD versus FUND+1.015525/.213627.
+  Fixed half ranks/no aliases/3new12cachedcells/0models-GPU, no weight rescue.
+  Original schema-reader fault before values retained, twoattempts/oneintake.
 
 ## Source Knowledge / Claims
 

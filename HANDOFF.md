@@ -22,21 +22,22 @@ Market bytes M; models/research A; Docker default /app/model_artifacts.
 | Owner | Current State |
 | --- | --- |
 | Parent | Shared MD/integration/Git; current Paper outcome stays unfinished. |
-| Pascal / Engine | HGB20 closed27b417c4; fixed pool completef65ca8e8/PASS but FUND exact recurrent allocation alias, no new diversification. |
-| Kepler / Data | Prospective FUND20 input READY8eligible/17unknown before Oct21OPEN, no forecasts/future marks; historical inputs/evaluation closed. |
-| Confucius / Strategy | New same-input Huber versus within-date RankNet objective-alignment source/kernels; no model-name grid. |
-| Boole / Engine | Chronos2 O/C20 COMPLETE914fa4f9/102market calls/35.72GPUworker seconds/financialFAIL; next actual BASE/FUND prospective point, no refits. |
+| Kepler / Data | Prospective FUND20 input216cec35 READY; future measurement adapter must decode actual point0996dabb, not synthetic publication ABI. |
+| Confucius / Strategy | Objective-alignment source8fb724bc/48loss-autograd checks closed; Engine owns optimizer/fit. |
+| Boole / Engine | BASE/FUND actual prospective point0996dabb committed01:01:46UTC/0fits-GPU; preparing future Nov17 measurement host. |
+| Pascal / Engine | Scalar pair UNAVAILABLE: HUBER checkpoint0 caller missing batch-order identity/0updates; RankNet unstarted. New first-RankNet-only scope must preserve old full debits. |
 | Archimedes / Infra | New natural-head22 input READY/all25x22/29SYN+actualwire accepted;0API-model-Task changes. |
-| Wegener / Execution | R5 retarget r1 skipped0updates by own venv redirector false-conflict; controlled native ancestry/argv cause proven; new r2 actual recovery delegated, not deployed yet. |
-| Bacon / Review | As-of and Window21-vintage advisory complete; not operator authority. |
-| Steward | No active GPU training from completed OOF family; use fresh admission for genuinely ready new campaigns. |
+| Wegener / Execution | R5r3 actually deployed same2Task actions; parent freshCOM confirms both/nativeACL/257otherTaskXML unchanged.0Run/API. |
+| Bacon / Review | Objective/fusion Claude scopee7474ece completed; named specifications addressed, no authority grant. |
+| Steward | Recurrent/C2 actors joined; newest scalar CPU route measured, no current GPU training inferred. |
 
 ## Paper Runtime And Existing Due
 
 - Original eight NAS: image876/source d2d4b108; exit Oct21>=13:40UTC.
   Exact request/fill/current owned inventory/terminal evidence required.
 - Window21: prepare Oct21 13:10UTC, entry14:00, exitOct27>=19:45.
-  Deployment9b1d0e84/sourcef3711b38/GO8a77579b/imageb96a8ef8.
+  Old deployment9b1d0e84/sourcef3711b38 superseded by actual R5 action pair:
+  source8f1c212a/GOd5bd1aac/imageb96a8ef8, same original Task names/triggers.
   Actual Oct20 closes/full25/NAS-only/NYS and unused slots cash/no renormalize.
   Installation is not submit/fill. Do not substitute another vintage silently.
 - Existing nightly/F9 next Oct21 14:50/15:10UTC; Goal97 is distinct.
@@ -282,11 +283,54 @@ A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json
 READY00:45:59UTC,8eligible/17unknown, FEATURES a0374157. Source maximum
 availability Oct20 23:49:31UTC precedes generation and Oct21OPEN13:30UTC.
 Target20thCLOSE Nov17 21:00UTC, actual prices UNKNOWN. FIT affine ownership
-is separate from the explicit new natural-head22 price vintage. Boole owns
-one BASE/FUND selected-epoch6 inference plus uniform/cash, no fitting,
-checkpoint changes, future-label access, broker effect or current Paper swap.
-Confucius prepares ONE same-input scalar Huber versus within-date RankNet
-loss comparison; no automatic grid or reopening previous result criteria.
+is separate from the explicit new natural-head22 price vintage.
+ACTUAL point A/research/current-fundamental20-prospective-point-20261021-v1/
+COMMITTED.json0996dabbd08c29cfc01da9e13fa598c6f34c998a0be7d0cb65050169b11860dc
+committed01:01:46UTC, two CPU selected-epoch6 restores/forwards/8rows each,
+uniform/cash/25axis17unknown preserved,0fits-GPU-futuremarks-API-Tasks.
+FINAL07208ea1/readback39checks/84.141175upper/alljoined. One .005initialNAV
+cohort counterfactual, not20independent samples or10percent per policy.
+Boole/Kepler prepare exact future measurement; no installed task or future
+outcome claimed yet. Keep actual point wire, not an invented canonical DTO.
+
+Fixed LSTM-FUND / isolated-Chronos 50:50 within-date midrank fusion CLOSED:
+A/research/current-fundamental20-chronos-fixed-rank-fusion-20261021-v1/schema-continuation-r1/RESULT.json
+12e05488a6e6f299f0081b375aa49b772ee97330fcc87568146328f8d0f54030.
+10bp growth/DDpercentNAV +.850532/.228229 versus FUND+1.015525/.213627
+and ISOLATED+.941339/.228407, both frozen financial predicates FAIL.
+3new12cached cells/0fits-forwards-GPU/no aliases. Original reader failed
+on nested Data ref BEFORE np.load; exact pre-outcome policy seal reused by
+additive reader. Two attempts/one actual target-mark intake, NOT original
+one-attempt compliance; failures/costs retained/100.105203upper.
+Claude scope e7474ece SOUND_WITH_NAMED_LIMITS for fixed fusion, not alpha.
+Do not change the weight/orientation/criteria to rescue this result.
+Temporary Validation independently checked42hash refs/score-derived weights/
+15saved NAV growth-DD cells with zero discrepancy;0new market intakes or
+model/replay calls. No independent-performance claim; Validation closed.
+
+Next trainable pair: objective-alignment source8fb724bc/48CPU loss-autograd
+checks, same FUND20 features and rawLOG20; Huber versus within-date RankNet,
+full pairs/tied-date log2-zero gradient/equal-date weights/FIT-only target
+scale. Claude named omissions addressed before effects, no extra approval.
+Actual Engine native12CPU-CUDA SYNupdates/full-state APIs passed; measured
+epoch projections CPU5.338s/CUDA5.561s selected CPU under frozen routing.
+These are native projections, not actual market epoch/convergence results.
+No artificial GPU load. Actual scalar pair READBACK at
+A/research/current-fundamental20-objective-alignment-development-20261021-v1/READBACK.json
+closed UNAVAILABLE: HUBER1start/43forwards/0optimizer updates/checkpoint0
+missing batch_order_sha256; RankNet unstarted/0PRED-outcomes/economic cells.
+Firstcause8ceb3ae9 proves native test built a different valid identity than
+the actual worker. All actors joined/412.935192activeupper. Host error-journal
+root mismatch conservatively charged FULL reserved caps, not unused budget.
+Keep old2starts/19968updates and every old debit immutable. Do NOT retry
+HUBER or refund/reuse old caps. Parent delegates separately accounted FIRST
+actual RankNet-only trial after positive unstarted proof and same corrected
+identity factory/real codec metadata guard; new1start/no retries, total old
+conservative2+new1=3, same recipe/data/seed/split/per-arm criteria. It cannot
+complete the unavailable pair or establish independent performance.
+Current20-session point is forecast-only: native v1 Paper input has a14-day
+calendar bound, so Execution investigates a separately scoped compatible
+20-session adapter; do not weaken v1/change deployed R5 merely to fit it.
 
 Claude challenge A/review/current-price-fundamental20-asof-20261021-v1/
 SCOPE-NOTE.json: advisory target objection reversed by exact frozen +/-h rule;
@@ -321,7 +365,20 @@ Actual action-retarget-20261021-r1/FINAL-HANDOFF.json SKIPPED_NO_TASK_RETARGET:
 scope proved unstarted but is now expired. Controlled native reproducer
 positively identifies the immediate own venv redirector; historical PID was
 not recorded, so no retroactive exclusion. R2 fixes ancestry/executable/argv
-including --execute and needs its own fresh scope/quiescence before update.
+including --execute. R2 then invoked one actual transaction: prepare action
+new, visit action old, BOTH original ACL/257other Task XML+ACL unchanged.
+Exact XML diagnosis shows only scheduler-inserted RegistrationInfo SD on
+prepare beyond desired action; that SD matches native original ACL. Raw
+comparison failed, rollback UNKNOWN preserved. R3 owns exact mixed-state
+completion with positive SD normalization/fresh quiescence/native tests.
+ACTUAL R3 result at source-r5/action-retarget-r3/CONSUMER.json:
+SAME_PAIR_ACTION_ONLY_DEPLOYED_SEMANTIC_NATIVE_ACL_VERIFIED,2UPDATEflags20/
+0Run/newTasks/triggers/API/model/privatewrites/25.548393upper/alljoined.
+Original due13:10prepare/14:00visitUTC, principal/triggers/nativeACL and257
+other XML/ACL unchanged; parent fresh independent COM confirms both actions.
+New explicit natural-head22 vintage routed, old global UNKNOWN/foreign
+custody/reservations unchanged. Old r1/r2/rollback UNKNOWN/costs retained;
+successful installation is NOT runtime, submit, fill or Paper lifecycle closure.
 Tracked/control/material Execution recovery follows AGENTS fresh verification.
 
 Preserve existing %SystemDrive%/. Parent only stages owned explicit files.

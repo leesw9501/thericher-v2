@@ -37,13 +37,18 @@ scores; no independent performance/Paper qualification. Post-close NVML2percent/
 Chronos2 paired O/C20 COMPLETE914fa4f9:one allocation44.27s/35.72GPUworker
 seconds/4native102market calls/0fits/0retry/alljoined/canonical lease free.
 Financial GROUP growth screenFAIL, no extra peer/window/rescue allocation.
-New prospective BASE/FUND point is inference-only/CPU preferred; next ready
-GPU training candidate is same-input Huber/RankNet objective pair after
-source/native readiness. No repeated recurrent classification training.
+Prospective BASE/FUND point0996dabb ACTUALLY committed01:01:46UTC with two
+CPUrestores/forwards/0fits-GPU/alljoined. New scalar native12SYNupdates
+measured CPU5.338/CUDA5.561 projected epoch, choosesCPU; no GPU restriction.
+Scalar pair actually UNAVAILABLE before any optimizer update because worker
+checkpoint identity omitted batch-order SHA. Old full conservativecaps/debits
+remain spent, not refunded by0updates. Any unstarted RankNet first fit needs
+a NEW accounted single-fit scope, not old spare-cap reuse or HUBER retry.
+No active CUDA market-training allocation inferred from plans/native checks.
 
-Short breadth queue: prospective point before Oct21OPEN, no training.
-Long depth queue: scalar Huber/within-date RankNet with same FUND20 inputs,
-native optimizer/restore/pace proof; no idle-load/dummy training.
+Short breadth queue: future point measurement actual-wire compatibility.
+Long depth queue: correctly accounted first RankNet fit after actual caller
+identity proof, same FUND20 inputs; no idle-load/dummy training.
 
 ## Resource Custody
 

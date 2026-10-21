@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current 2026-10-21 KST / Oct20UTC. Company: current-nas-owned-model-paper-cycle-v1.
+Current 2026-10-21 KST / Oct21UTC. Company: current-nas-owned-model-paper-cycle-v1.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns authority/risk; HANDOFF and
 RUNBOOK own current deployment commands. Parent owns integration/Git/dispatch.
 No active Execution subagent or broker worker is inferred from this MD.
@@ -12,6 +12,24 @@ Window21, F9 identities/holds/exits. Existing live Paper schedules/authority
 remain unchanged. Group/measurement/shadow installation is not a fill.
 
 ## Current Runtime Fault / Recovery
+
+Wegener owns current Window21 R5 same-two-Task retarget, original source8f1c212a:
+A/execution/current-window21-provisional-nas-deployment-20261021-v1/source-r5.
+R1 skipped0updates on own venv redirector conflict, positively reproduced by
+native ancestry/executable/argv, not age/name. R2 guard fixed and exact fresh
+private scope proved own unstarted; actual transaction changed prepare action,
+visit remains original. Both native ACL and257other Task XML/ACL unchanged.
+XML-DIAGNOSIS.json: prepare's only non-action delta is scheduler-inserted
+RegistrationInfo SecurityDescriptor matching native original ACL. Raw desired
+comparison failed/rollback UNKNOWN, not an actual account/order fault.
+R3 exact known mixed-state recovery ACTUALLY COMPLETE:
+source-r5/action-retarget-r3/CONSUMER.json status samepair actiononly deployed,
+2UPDATEflags20/0Run-newTasks-triggers-API-privatewrites/allprobechildrenjoined.
+Fresh independent parentCOM confirms both intendedactions, original enabled/
+Ready/due/nativeACL,257otherXMLACL unchanged. Due13:10prepare/14:00visitUTC,
+original8NASexit13:40 unaffected. Runtime/submit/fill still unknown; do not
+rerun any consumed retarget/probe/transaction. R1/R2 faults/costs unchanged.
+New20-session research point0996dabb is forecast-only and not a Paper swap.
 
 Actual Oct20 nightly14:50UTC: unavailable/retained_context_recovery_required,
 0token/GET/order starts. F9 15:10UTC: pending/exact_request_retained,
