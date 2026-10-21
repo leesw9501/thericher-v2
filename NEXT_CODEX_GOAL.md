@@ -41,8 +41,13 @@ Package-local research prohibitions do not stop independent Execution.
    plus fixed252close EMA20/60-RV21/Bollinger20 expert, no extra forecasts.
    Data42562873 exactallkeys/R21parity; source/native/header proof then one
    expertpass/oneblend/oneEvalintake/15logical6new9cached,900TOTAL/3600elapsed.
-   Next GPU-ready source Hubble temporal RAW/IND_ONLY/RAW_PLUS TCN ablation;
-   no market/GPU dispatch until concrete source/native/budget. No open grids.
+   Fixed blend974ce136 COMPLETE, no more expert/forecasts. TCN threeCPUfits
+   also COMPLETE11076updates/RAW_PLUS proper-financeFAIL; CPU measured10x
+   faster, no modelgrid/rescue. Boole owns Chronos-2 FULL adaptation with
+   Data8cf1 READY, native zero-update callback-phase repair then conditional
+   oneGPUfit1000steps/eval50/pat4/1800s; whole5400active/14400elapsed, old
+   debits retained. Safe native API/geometry/selector proofs before market.
+   No actualmarketfit inferred; see Engine current exact evidence/caps.
 
 3. Data/prospective: broad25 raw26 Data17c3ea82/PRED Eval9c0bd613 and
    Chronos5120131fedf COMPLETE, no repeated derivation needed. SEC useful
@@ -51,20 +56,26 @@ Package-local research prohibitions do not stop independent Execution.
    FinalNov17 DataTask d7854350 and measurement95924e7e ACTUALLY installed
    enabled for23:20 and23:55UTC, respectively. Future marks/results UNKNOWN.
    No reforecast/fakehash/shortertarget/manualRun/repeated installers.
+   Broad25 blend prospectivepoint ead52eb6 also COMMITTED05:26:24UTC before
+   OPEN/25known/oneCPUforward/one.005researchcohort->Nov17CLOSE, no brokerTask.
+   Exact transport reconciliation closed, numerical allowance0; no redispatch.
 
 4. New FUND20 Paper connection: savedwirec3acfa90/input5d792094/
    one.005originalNAVcohort/imagef31e781d and strictprivateRO5caa4298
    qualified exact unstarted local compatibility, not fresh broker facts.
    New native runtime lifecycle10/10SYN checks nowPASS5f914eb8; old7/10fixture
    failures retained. Hidden duplex caller/ONE18finite-trigger Task preparing,
-   no installation yet. Fresh custody/native sibling-lock/clock proofs before
-   activation; repo full authority41796a7a PASS. Four280s visits>15m worst-case:
+   ACTUAL CREATE18 consumed but DISABLED after inheritedACL mismatch. Current
+   protected-repair-r1 may UPDATE20 existingdisabled task/release and Enable
+   only after actual native3protectedACE/fullXML checks; no repeatCREATE/Run/
+   otherTaskwrite. Repair/deployment not inferred. Repoauthority41796a7a PASS.
+   Four280s visits>15m worst-case:
    prove exact unknown-request safety/owned nextsession carry, no promise
    of same-close replay parity or frozen-input/target mutation. OldR5 intact.
 
 ## Verification / Continue
 
-Authority D:/thericher-v2/model-artifacts/verification/model-paper20-profile-20261021-v1/authority.json82df:
+Authority D:/thericher-v2/model-artifacts/verification/fund20-paper-runtime-20261021-v1/authority.json41796a7a:
 1374sources5802dd71/1764serialPASS2skip/18612fullPASS25skip/clean8workers/
 Ruff/three sample-envCompose PASS. Reuse for docs/external work ONLY with fresh
 exact tracked/control equality plus independent changed-external checks.

@@ -49,12 +49,16 @@ oneEvalintake/6new9exactcached/0model-GPU/54.032837worker seconds/
 EXPERT+.284563/.286022. HALF improves RNN growth and DD but frozenuniform-DD
 screenFAIL; no regrade, weight rescue or alpha claim.1275known/0unknown,
 REVERSION1252/TREND23, no hidden cash/alias reduction. Safeoutputs retained.
-Next source-only current-broad25-recurrent-close252-prospective-point-20261021-v1
-prepares cachedCONTROLepoch8+fixedexpert forward adapter, no modelcall yet.
-Data owns LOCALONLY currentOct21prior252+raw26optionalcontext; unavailable
-input defers only this new point, not current FUND20 Paper install.
+Actual prospective point COMPLETE:
+A/research/current-broad25-recurrent-close252-prospective-point-20261021-v1/actual-r1/admission-r1/COMMITTED.json
+ead52eb6,05:26:24UTC beforeOct21OPEN. OneCPUrestore/one25rowforward/
+25expert evaluations/onecomposition/publication,0fits/GPU/futuremarks/Tasks.
+Data ddd00836 priceknown25, quarter8usable/17unknown, no requiredmask cropping.
+ONE.005initialNAV researchcohort->Nov17 twentiethCLOSE. Transport-repair-r1
+closedbc748883 reconciles false absence test, no numerical redispatch;
+195.312510totalupper/alljoined/numericalallowance0. No Paper model swap.
 
-Hubble next SOURCE-only current-broad25-causal-indicator-path-proposal-20261021-v1:
+Completed current-broad25-causal-indicator-path-proposal-20261021-v1:
 inspect old TCN0marketfits premarketpace rejection, not financial failure.
 Propose one close-only temporal RAW/IND_ONLY/RAW_PLUS ablation on broader25
 keys; reuse actual kernels, explicit warmup/causality/finitefit family.
@@ -64,12 +68,46 @@ limit learnability interpretation. Warmup is explicit prefix, momentum is
 lag-index C_[max(0,t-21)], NOT rollingmax prices. RAW_PLUS predesignated,
 IND_ONLY not an outcome-selected fallback. Parent numericalGO3600TOTALactive/
 14400elapsed inclproposal92.155389/review60once/source-feature-native/
-3firstfits/max128pat20/29952updates/oneintake15cells. Actualfeature/native/
-400row252x5+1000eval pace and fullstate proof before fit, automatic within
-guards/caps; no native/market training inferred yet.
+3firstfits/max128pat20/29952updates/oneintake15cells. Actual feature/native/
+400row252x5+1000eval pace/fullstate proof passed. CPU8.506s vsCUDA87.239s
+per epoch selected CPU, GPU native11.21s only. Numerical FINAL3e792e3f/
+VERIFYPASS/CLOSED07000450: RAW65/best45, IND_ONLY39/best19, RAW_PLUS38/best18;
+11076updates/1245.231964CPUworker seconds/1583.965832totalupper/alljoined/
+leasefree/1intake15cells. Same initialization; no market retry.
+10bp growth/DDpercentNAV RAW+.665470/.362598, IND_ONLY+1.469965/.418950,
+RAW_PLUS+1.146017/.467862 vsuniform+.294233/.207221. RAW_PLUS proper/finance
+FAIL, IND_ONLY diagnostic not an outcome-selected fallback. Curves/weights
+retained, no regrade or grid. Hubble executor closed.
 Old600second/20epoch pace budget protects THAT closed recipe, not all TCNs.
 Primary TCN source https://arxiv.org/abs/1803.01271 and official MIT
 https://github.com/locuslab/TCN are generic sequence evidence, not stock alpha.
+
+## Current GPU Depth Campaign
+
+Boole owns A/research/current-chronos2-oc512-full-adaptation-20261021-v1.
+Trusted95a9710/image d6b43213/Chronos2.2.2 explicit FULL; PEFT absent means
+LoRA would silently fall back to FULL, so do not invoke it. Base preserved.
+Data A/data/current-chronos2-oc512-adaptation-input-20261021-v1/CONSUMER.json
+8cf1abbb:81FITdates/2025tasks,46INNERdates/1150tasks;2x512context+20future,
+25tasks/date/50variates, physical20session purges. PREDcfede4a5 unchanged.
+One family5400active/14400elapsed inclreadiness100/Data32.680237/review60
+once/source/native/fit/forecast/readout/cleanup. Review0aab7c7 SOUND_WITH_NAMED_LIMITS.
+Native attempt33.167804 closed0optimizer/0market: our on_step_begin guard
+preceded HF training_step model.train after STEP0 validation. Caller-only
+successor authorized, same model/data/loss/seed/selection; all olddebits retained.
+Lifetime native<=12updates/64forwards/4saves/4restores; one extra allocation,
+explicit base2/SYNclone2/selectedlocal1/futuremarketclone1 construction census.
+Public actual optimizer/finitegrad/full50variate train-validation/headroom/
+STEP0+earliestbest-safe coldrestore/target-perturbation proof before market.
+Conditional ONE first FULL fit1000steps/eval50/pat4/LR1e-6/seed4101/1800s;
+no resume/retry after marketupdates, no holdout checkpoint selection. Old256
+was a proposal, not an actual marketfit. No actual fit inferred from this MD.
+Materiality selectednonzero and>=.1percent INNER quantileloss improvement,
+not significance. Once selectedstate frozen, one1275forecast and oneEval
+readout, max3newFT+9cachedcells. If selected0 exactalias, reuse originalbase
+e942 rather than duplicate forecasts. Mediancontrast is not expectedreturn.
+Corpusnot_disclosed/currentlisting-vintage/nonPIT/reused51dates remain;
+not independent alpha or authority to alter deterministic Paper risk.
 
 ## Broad25 Data / Completed Baseline
 

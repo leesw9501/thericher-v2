@@ -10,11 +10,11 @@ Parent shared MD/Git; no current genuine operator decision.
 
 | Owner | Current Work / Consumer |
 | --- | --- |
-| Hubble / Engine | Broad25 recurrent2CUDAfits COMPLETE; next temporalindicator TCN ablation SOURCE. |
-| Einstein / Engine | Expert/half-rankblend108SYN/headerchecks complete; bounded CPU numerical pass. |
-| Wegener / Execution | Lifecycle10/10qualified; hidden18trigger caller/common native lock-clock proof, no deploy yet. |
-| Boole / Engine | FutureNov17 measurement95924e7e INSTALLEDenabled/parentRO verified; executor closed. |
-| Noether / Data | Broad25 inputs/Eval and SEC useful queue COMPLETE; executor closed. |
+| Hubble / Strategy | TCN3CPUfits/readout COMPLETE; next causal risk-allocation SOURCE-only, no completed-fit retry. |
+| Einstein / Engine | Fixed blend and prospectivepoint ead52eb6 COMPLETE, executor closed; numericalallowance0. |
+| Wegener / Execution | FUND20 newTask created DISABLED; one protectedACL/release repair owned, no duplicateCREATE. |
+| Boole / Engine | Chronos-2 FULL native caller-phase successor then conditional firstGPUfit; no actualmarketfit inferred. |
+| Noether / Data | Broad25 currentpoint and Chronos512 adaptation8cf1 inputs COMPLETE; executor closed. |
 | Closed | Kepler finalNov17 DataTask installedenabled/parentRO verified; Banach512join/earlier Validation complete. |
 | Parent | Review sources/results, dispatch next useful campaign, integrate current facts/Git. |
 
@@ -27,14 +27,13 @@ one-shot/no replacement chain. No foreground session wait.
 
 ## Throughput Review
 
-04:45UTC: Broad25 recurrent2actualCUDAfits38/61epochs/7722updates/46.709537
-GPUworker seconds COMPLETE, allactorsjoined/leasefree. NativeGPU .842133s vs
-CPU1.572250s perrepresentativeepoch, not a permission/environment block.
-Next CPU fixedexpert/fusion has sealedCONTROL+Data42562873 and108sourcechecks;
-onefinitepass, no extra forecasts. Nexttrainablework temporalindicator TCN
-ablation source reuses existing kernels, not a blind architecture grid.
-Ready3LLMpackages disjoint; GPUidle between completedwork/sourceprep is not
-evidence of an active trainer. No dummy load or waiting for Paper profits.
+05:55UTC: TCN3CPUfits/readout and fixed blend/current25point COMPLETE;
+Einstein closed/Hubble source-only allocation proposal, no stale numerical dispatch. CPU TCN8.506s vsGPU
+87.239s per epoch is measured routing, not a permission hold. Chronos FULL
+data8cf1 READY; Boole repairs a zero-optimizer native callback-phase fault,
+then may auto-dispatch first1000step GPUfit inside unchanged familycaps.
+Execution independently repairs only its newly created DISABLED Task ACL/
+release binding. Existing8NAS/R5 due remain independent. No foreground wait.
 
 Execution new wire uses one native pending leg/visit. Worst4x280s exceeds15m;
 qualify exact partial/cancel/owned nextsession carry instead of promising
@@ -44,10 +43,11 @@ proof blocked12Linuxprocesses and siblingreservation blockedown effect.
 Post-close categoricalassertion needs exact source diagnosis, not weakened
 guard/newglobalhold. Existing8NAS/R5 unchanged.
 
-Reversible improvement: native CUDA gradient diagnostics need recurrentTRAIN
-reserve even with deterministicheadEVAL. CPU-only proof missed this SYNissue;
-one harness-only repair passed, all old failures/debits retained. Reuse the
-qualified native fitter/readout rather than another general worker framework.
+Reversible improvement: structured exact local Docker-name listing replaces
+localized/case-sensitive English error matching. The existing committedpoint
+was reconciled, not run again. Native callback checks must follow framework
+phase transitions; fix the early mode guard, not model/loss/data. No new
+dispatch/report platform or global approval. Close completed executors promptly.
 Full authority41796a7a freshly completed for actual Paper runtime integration;
 no repeated18k suite for subsequent MD-only updates on identical1374sources.
 

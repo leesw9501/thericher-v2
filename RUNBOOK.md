@@ -107,9 +107,22 @@ Harness-onlycuDNNtrain-mode repair preservedoldfailure/debits; CPUproofalone
 does not qualifyCUDA. Fixedexpert/half-rankblend974ce136 also COMPLETE:
 6new9exactcached/oneintake/0model-GPU/alljoined, HALFimprovesRNNbutuniform-DD
 criterionFAIL. Alloutputsimmutable, no weightsrescue. CurrentTCN252x5
-RAW/IND_ONLY/RAW_PLUS family source/native preparation is a NEWscope, no
-training inferred. Prospectiveblendpoint LOCAL-only input/source prep is
-separate, no forward/Task/order inferred. See Engine stateboard current refs.
+RAW/IND_ONLY/RAW_PLUS family is COMPLETE3CPUfits65/39/38epochs/11076updates,
+FINAL3e792e3f/VERIFY PASS/alljoined/leasefree. CPU8.506s vsCUDA87.239s per
+epoch selectedCPU; no marketGPU or frozen-screen winner. Savedweights/curves
+must not be retrained as unfinished. Broad25 prospective blendpoint COMMITTED
+ead52eb6 at05:26:24UTC beforeOPEN,1CPUrestore/25rowforward/1publication.
+Exact source point:
+D:/thericher-v2/model-artifacts/research/current-broad25-recurrent-close252-prospective-point-20261021-v1/actual-r1/admission-r1/COMMITTED.json
+Transport-repair-r1/CLOSEDbc748883 reconciled oldabsence predicate without
+another modelcall; no numericalallowance/Task/broker/futuremarks. See Engine refs.
+Chronos FULL current family:
+D:/thericher-v2/model-artifacts/research/current-chronos2-oc512-full-adaptation-20261021-v1
+Data8cf1 READY; original native-actual/CLOSED33.167804/0optimizer/0market
+has caller mode-guard fault. New native-continuation-r1 owns explicit bounded
+successor, then conditional first1000step GPUfit. Never run oldhost/native
+as an inspection command. No actualfit inferred from plans; observe exact
+owned status only. Safeweights/curves A, not Git; see Engine/Steward caps.
 Never reinterpret NaN as neutral/economically
 known or relax old required-input contracts; new schema is optional-context.
 
@@ -149,8 +162,13 @@ not freshbrokerfunds/quotes/currentinventory. New .005cohort runtime source
 current-fundamental20-paper-cycle-preparation-20261021-v1 had7/10checks;
 focusedpartial/cancel/carry/risk validation now10/10PASS. Quietcaller source-r2
 2c5a7584/8mock+12PS+3native cases/12Linuxcontenders qualified.
-Parent actual-install GO04:58 for ONE18trigger dedicatedTask afterfresh scoped
-custody/exclusion/ACL/source checks; no actualdeployment inferred yet.
+Actual dedicatedTask was CREATED18 but remains DISABLED after native extra
+inheritedACEs. CREATE consumed, Enable0/Run0/API0. Current
+D:/thericher-v2/model-artifacts/execution/current-fundamental20-paper-cycle-preparation-20261021-v1/installation-r1/actual-install-r1/protected-repair-r1
+owns NEW protected3ACE/release binding, one UPDATE20 existingdisabled task
+then Enable only after native3ACE/fullXML/source readback. No new CREATE/
+Delete/SetSD/Run/otherTaskwrite. Reviewdeeec811; unknown oldotherTaskdelta
+remains unknown, no forcedrestore. Sourceprep/SYN is not actualrepair.
 ExistingR5 unchanged. Never rerun consumedproof/maintenance/installers as readers.
 Do not swap currentR5/rebind unknown request/infer replay-fill parity.
 Five-policypointcb1c1d9a/shadowd33490c9/Oct27measurement22db8f33 are separate

@@ -21,8 +21,18 @@ Company NAS lifecycle UNFINISHED. Parent shared MD/Git.
  SYN cuDNN eval-backward fault repaired ONLYharness LSTMtrain/head eval;
  CPU proof does not qualify CUDA. Failed320.418994+repair120.605615+closure10
  carried once/18charged11actualnativeupdates; no old12cap-compliance claim.
-- Next Hubble close-only temporal indicator TCN ablation SOURCE-only,
- not actual training. Old TCN600s pace cap is scoped, not global.
+- Temporal indicator TCN COMPLETE3CPUfits65/39/38epochs/11076updates,
+ 1245.231964CPUworker seconds/1583.965832totalupper/alljoined/leasefree.
+ Actual projectedCPU8.506s vsCUDA87.239s/epoch selectedCPU; CUDA native11.21s,
+ no marketGPU. RAW_PLUS proper/financeFAIL; diagnosticIND_ONLY no fallback.
+- Boole next Chronos-2 FULL adaptation, data8cf1abbb READY. Native attempt
+ closed33.167804/0optimizer/0market/leasefree after caller-phase modelmode
+ guard fault, not unavailableCUDA. One explicit caller successor allocation
+ authorized, olddebits carried; no active markettrainer inferred.
+ Whole5400active/14400elapsed; lifetime native12updates/64forwards/4saves/
+ 4restores. Conditional onefit1000steps/eval50/pat4/1800s only after native
+ optimizer/checkpoint/50variate geometry/headroom proofs. No LoRA fallback,
+ resume or duplicate baseforecast. See Engine stateboard exact refs.
 - Chronos fixedreadout COMPLETE FAIL/1intake9cells/0newmodelcalls.
  Close-only expert source and Execution lifecycle repair runCPU independently.
  No dummy GPU occupation or unbounded parameter/window/seed grid.
@@ -51,6 +61,6 @@ not synthetic metadata only. Short/timed run is not convergence proof.
 
 Models A, market M, Docker /app/model_artifacts, never Git. Last D about39percent
 free; keep15percent/warn projected20, not perpetual capacity promise.
-Verification82df0f69 covers1374sources5802/1764serialPASS2skip/18612fullPASS25skip/
+Verification41796a7a covers1374sources5802/1764serialPASS2skip/18612fullPASS25skip/
 clean8workers/Ruff/three sample-envCompose PASS. Docs/external reuse needs
 fresh exact source/control equality and changed-external independent proof.

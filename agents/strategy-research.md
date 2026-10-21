@@ -23,7 +23,8 @@ EXPERT+.284563/.286022. Improves RNN tradeoff, frozenuniform-DDscreenFAIL.
 REVERSION1252/TREND23/0unknown. No weight rescue or independent-alpha claim.
 Claude2b473a5d SOUND_WITH_NAMED_LIMITS; per-date regime shares/finalweight
 aliases and same fixed252 causal seed, not expandingEMA equivalence.
-Next prospectivepoint adapter is source-only, no broker/Task or reforecast.
+Prospectivepoint ead52eb6 COMMITTED05:26:24UTC beforeOPEN, one25rowCPUforward
+and fixedexpert pass/onecomposition; no broker/Task/reforecast allowance.
 
 Hubble completed NEW causal temporal-indicator input proposal:
 A/research/current-broad25-causal-indicator-path-proposal-20261021-v1.
@@ -41,9 +42,21 @@ Claudef3ec1ad7 SOUND_WITH_NAMED_LIMITS: sameINNERcheckpoint/arm comparison
 optimism, one seed, prefixwarmup and meanconstant ablations limit interpretation.
 Parent numericalGO3600TOTALactive/14400elapsed including source/review60once,
 one common feature pass/3firstfits/max128pat20/29952updates/oneintake15cells.
-Actual model/feature/native400row252x5+1000eval/fullstate/pace proof before fit;
-no actual new market/GPU training inferred from this proposal/MD.
+Actual model/feature/native400row252x5+1000eval/fullstate/pace proof passed.
+Numerical FINAL3e792e3f/VERIFY PASS:3CPUfits65/39/38epochs/11076updates,
+CPU8.506s vsCUDA87.239s per epoch. RAW_PLUS proper/financeFAIL;
+IND_ONLY diagnostic highergrowth is not an outcome-selected scientificwinner.
+Safeweights/curves retained, oldcriteria/results unchanged.
 Question is inductive bias/learnability, not new predictive information/causality.
+
+Next Hubble SOURCE-only package:
+A/research/current-broad25-causal-risk-allocation-proposal-20261021-v1.
+ExistingData42562873 prior252 plus frozen RNNCONTROL/expert HALF; no IND_ONLY
+posthoc fallback. Propose ONE causal risk-aware allocation rather than another
+model/seed grid: samegross/turnover/cost/alignedrisky baseline, lower exposure
+is not alpha.120active/1800elapsed source/kernel/SYN only, no marketvalues/
+model/fit/labels/replay/GPU/broker/Task. Concrete consumer and strongestkill,
+official source/nativeAPI proof; no Execution-risk change or new reportplatform.
 
 ## Previous Results / Do Not Repeat
 

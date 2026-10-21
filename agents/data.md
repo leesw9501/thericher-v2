@@ -6,7 +6,7 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
-Noether: broader25 input/evaluation and close252 expert input COMPLETE;
+Noether: broader25 input/evaluation, currentpoint and Chronos adaptation COMPLETE;
 executor closed, no new GET/derivation needed.
 All25 price support on every date, no future label-completeness membership:
 A/data/current-broad25-price-input-support-20261021-v1/CONSUMER.json4831e9b5.
@@ -56,6 +56,23 @@ labels/marks/forecasts/GET/model/GPU; Engine separately owns scorederivation.
 UnusedOHLCflags retained without filtering; not fullBar/PIT qualification.
 
 ## Future Marks Actually Installed
+
+Currentpoint LOCAL-only packet:
+A/data/current-broad25-prospective-close252-input-20261021-v1/CONSUMER.json
+ddd00836 COMPLETE05:07:28UTC beforeOPEN;25knownprior252/R21parity0,
+500overlapfields identical, optionalquarter8usable/17NaNfalse, no rowdrop.
+24native/SYN+independentverify/1derivation18.611341activeupper/alljoined.
+Engine point ead52eb6 committed05:26:24, no Task/futuremarks yet.
+
+Chronos FULL adaptation packet:
+A/data/current-chronos2-oc512-adaptation-input-20261021-v1/CONSUMER.json
+8cf1abbb COMPLETE:81FITdates/2025tasks Oct31..Feb27,46INNERdates/1150tasks
+Apr1..Jun5, all25/date/0unknown; inputmembership234b88a1 before targetaccess.
+FP64past[N,2,512]/future[N,2,20], contiguousFP32tasks[N,2,532], samepriorCLOSE
+anchor and physical20session purge. Existing PRED0131/cfede4a5 referenced,
+zero PREDtarget/forecast reads.22native/SYN+independentverify/1derivation/
+32.680237activeupper/47,973,188bytes. No model/GPU/network/Tasks; executor closed.
+Capture-after-origin/currentlisting/nonPIT/CA/finality limits remain.
 
 Actual FUND20point0996dabb input216cec35 committed beforeOct21OPEN;
 8known/25axis17unknown/ONE.005initialNAVcohort->Nov17 twentiethCLOSE21UTC.

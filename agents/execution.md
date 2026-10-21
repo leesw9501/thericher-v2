@@ -133,7 +133,22 @@ fresh strictROunstarted<=120s/allmutatorTaskquiescence<=20s/currentSID+ACL,
 oneCREATE18disabled+oneEnable after exact native readback,0Run/API/credentials.
 ONE18trigger quietTask/IgnoreNew/NoDemand/NoCatchup/Unifiedtrue/PT8M, no old
 Task changes. Futurequotes/buyingpower/reconciliation still native mandatory.
-Installation pending until actualreceipt, not inferred from this GO.
+Actual CREATE18 occurred05:29:01, but nativeSDDL inherited3extraACEs and
+Task remains DISABLED/unqualified; Enable0/Run0/API0. CREATE cap consumed.
+Exacttask thericher-kis-paper-fund20-committed-20261021-v1.
+Actual evidence installation-r1/actual-install-r1/FINAL-CONSUMER.json.
+Protected-repair-r1 SOURCEb328c690 prepares explicit NEW D:P/3ACE intent
+and releasebinding.7model+11nativeSYN+readonly native roundtrip PASS, not
+actual persistedACL qualification. Old sixACE/XML snapshots and otherTask
+deltaUNKNOWN retained; no otherTask restoration or inheritedACE equivalence.
+Review A/review/current-fund20-protected-task-repair-20261021-v1/RESPONSE.txt
+deeec811 SOUND_WITH_NAMED_LIMITS. One UPDATE20 to EXISTING disabled task,
+one Enable and one exactown emergencyDisable max;0CREATE/Delete/SetSD/Run/
+otherTaskwrites. Effect180active/900elapsed separate from closedsource180,
+review60 and allolddebits. Native protectedACL/fullXML/disabled readback
+beforeEnable, sameACL/enabledprojection/allothers afterEnable. API return
+is not atomicity/deployment evidence. No anotherGO wait inside qualifiedcaps.
+No actual repair inferred until scoped receipt; oldR5/nativebank unchanged.
 
 ## Other Frozen Consumers / Quiet Operations
 

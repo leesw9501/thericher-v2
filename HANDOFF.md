@@ -21,17 +21,19 @@ Docker /app/model_artifacts, >=15percent D free. Last D about39percent free.
 | Owner | Actual State / Next Consumer |
 | --- | --- |
 | Parent | Integrate evidence/source, current shared memory/Git; company outcome remains open. |
-| Hubble / Engine | Broad25 recurrent2CUDAfits/readout COMPLETE; next temporal indicator TCN ablation SOURCE. |
-| Einstein / Engine | Fixed close252expert/half-rank blend SOURCE108checks complete; bounded CPU numerical campaign. |
-| Wegener / Execution | FUND20 lifecycle10/10qualified; quiet oneTask/18triggers caller/native lock-clock proof, NOT deployed. |
-| Boole / Engine | FinalNov17 measurement Task INSTALLEDenabled/parentRO verified; executor closed, no more mutations. |
-| Noether / Data | Inputs/evaluation/SEC useful queue COMPLETE; executor closed, no more acquisition needed. |
+| Hubble / Strategy | TCN threeCPUfits/readout COMPLETE; next one causal risk-allocation SOURCE-only proposal. |
+| Einstein / Engine | Fixed blend and actual Oct21 broad25 prospective point COMPLETE; executor closed, no more forwards. |
+| Wegener / Execution | FUND20 Task created DISABLED; one existing-task protectedACL/release repair owned, no duplicate CREATE. |
+| Boole / Engine | Chronos-2 FULL adaptation native caller-phase repair; conditional firstGPUfit, not running inferred. |
+| Noether / Data | Broad25 currentpoint and Chronos512 adaptation inputs COMPLETE; executor closed. |
 | Closed | Kepler finalNov17 producer installed/parentRO verified; Banach512join and earlier Validation complete. MD is not an active LLM/worker. |
 
 One GPU training allocation at A/engine-research-agent/locks/gpu.lock.
 Completed Patch44.017GPUworker seconds, Chronos19.095allocation seconds and
 newrecurrent46.709537GPUworker seconds are NOT current running utilization.
-No current trainable model remains after two actualfits38/61epochs ended.
+TCN market fits ran on CPU after measured8.506s vsCUDA87.239s per epoch.
+Chronos FULL native attempt closed before any optimizer/market update;
+one caller-only successor is authorized, not evidence of actual training.
 
 ## Actual Paper Runtime
 
@@ -114,7 +116,7 @@ HOST score-policyseal913fdbfd; fixed readout-r1 COMPLETE/a8b97bb9/VERIFYdb9f6171
 One intake/9cells/75.578542newactiveupper/0newmodelcalls/noHGBpeek.
 10bp growth/DDpercentNAV Chronos-.026481/.406450 vsuniform+.294233/.207221;
 financeFAIL, no forecast/weight rescue. Combined212.954664upper/alljoined.
-Next source-only close-price trend/reversion expert proposal, no market trial yet.
+The close-price expert/composition and actual prospective point below are complete.
 Marginal median C20-minus-O1 contrast, NOT expected return/probability.
 Corpus scope not_disclosed; post-checkpoint reused-data development, no alpha.
 
@@ -152,12 +154,41 @@ Actual974ce136 COMPLETE:6new9exactcached/oneintake/0model-GPU/395.480924upper/
 alljoined.10bp HALF+.603040/DD.255495percentNAV vsRNN+.590106/.332806,
 uniform+.294233/.207221. ImprovesRNN but uniformDD criterionFAIL; no regrade.
 EXPERT+.284563/.286022, REVERSION1252/TREND23/0unknown. No weight/grid rescue.
-Next currentOct21prospectiveblendpoint Data LOCAL-only/source adapter prep,
-no actualnewforward/Task yet; currentFUND20Paperpath remains unchanged.
-Next GPU candidate Hubble current-broad25-causal-indicator-path-proposal-20261021-v1:
-SOURCE-only temporal RAW/IND_ONLY/RAW_PLUS TCN input ablation, no optimizer/
-featurederivation/market/GPU yet. OldTCN0marketfits pace-rejection was scoped,
-not financial failure or global600s cap. Reuse existing kernels, not modelgrid.
+Current Oct21 blend point COMPLETE:
+A/research/current-broad25-recurrent-close252-prospective-point-20261021-v1/actual-r1/admission-r1/COMMITTED.json
+ead52eb6, published05:26:24UTC beforeOPEN13:30; oneCPUrestore/25rowforward,
+25expert evaluations/onecomposition/publication. Requiredpriceknown25,
+optionalquarter8/unknown17. ONE.005initialNAV researchcohort->Nov17CLOSE.
+Transport-repair-r1 CLOSEDbc748883 reconciled the earlier false absence
+predicate without another modelcall; total195.312510activeupper/alljoined.
+Numerical allowance0. No Task/broker/futuremarks, currentFUND20Paper unchanged.
+
+TCN COMPLETE at
+A/research/current-broad25-causal-indicator-path-proposal-20261021-v1/numerical-r1/FINAL.json
+FINAL3e792e3f/VERIFY PASS/CLOSED07000450. ThreeCPUfits RAW65/best45,
+IND_ONLY39/best19, RAW_PLUS38/best18;11076updates/1245.231964CPUworker seconds.
+Same initialization, causal252x5/FIT-only affine, no architecture/grid rescue.
+CPU pace8.506s vsCUDA87.239s per epoch choseCPU; GPU native11.21s, not a ban.
+10bp growth/DDpercentNAV RAW+.665470/.362598, IND_ONLY+1.469965/.418950,
+RAW_PLUS+1.146017/.467862 vsuniform+.294233/.207221. Predesignated RAW_PLUS
+proper/financeFAIL; diagnostic IND_ONLY is not a posthoc winner. Oneintake/
+15cells/1583.965832totalupper/alljoined/leasefree. Safeweights/curves retained.
+
+Next GPU family:
+A/research/current-chronos2-oc512-full-adaptation-20261021-v1.
+Trusted95a9710/d6b43213/Chronos2.2.2 FULL explicitly; PEFT absent, never
+silently invoke LoRA fallback. Data8cf1abbb:81FITdates/2025tasks,
+46INNERdates/1150tasks,2x512past+20future, physical20session purges.
+Review0aab7c7 SOUND_WITH_NAMED_LIMITS. Whole5400active/14400elapsed includes
+readiness100/Data32.680237/review60/source/native/fitting/cleanup once.
+Native attempt33.167804 closed0optimizer/0market: STEP0 eval left modelEVAL
+before our premature on_step_begin guard; caller repair only, not model/GPU
+failure. One additional native allocation explicitly authorized with olddebits,
+bounded lifetime12updates/64forwards/4saves/4restores. Exact native optimizer,
+safe step0/best coldrestore and fullgeometry proofs precede one marketfit.
+Conditional firstmarket1000steps/eval50/pat4/LR1e-6/seed4101/1800s, no retry
+after marketupdates. No actual marketfit inferred yet. Unknown corpus/reused
+evaluation/currentvintage limits remain; independent alpha is not claimed.
 
 ## Frozen FUND20 / Paper Connection
 
@@ -204,9 +235,18 @@ Current installation-r1 quietcaller7mockchecksPASS/sourceguard/one18triggerTask
 preparation. Actualnative Linux2flock/siblingreservation0effect testsPASS;
 postclose fixture .reason vs.code corrected/3nativecasesPASS, source-r2
 2c5a7584/8mock+12PS/exact261otherTaskXMLACL/quietpythonw qualified.
-ParentactualinstallGO04:58 forone18triggerTask afterfreshROcustody/exclusion/
-nativeACL/semantics,0manualRun/API/credentials. No deployment inferred yet;
-oldR5 unchanged. Review93851820 REVISE counterclaim narrowed by
+Actual-install-r1/FINAL-CONSUMER at05:29:01: oneCREATE18 consumed, task
+thericher-kis-paper-fund20-committed-20261021-v1 remains DISABLED/unqualified.
+Native unprotectedSDDL inherited3extraACEs; Enable0/Run0/API0, no broker effect.
+Old otherTaskdelta UNKNOWN retained, no forced restoration. Current
+actual-install-r1/protected-repair-r1 SOURCEb328c690/SYN7+11/nativeRO pass
+prepares a NEW protected3ACE intent, not acceptance of unknown inheritedACEs.
+One existing-task UPDATE20/releasebinding plus Enable authorized only after
+fresh disabled/nativeACL/XML/source/quiescence checks; no CREATE/Delete/SetSD/
+Run/otherTaskwrite. PostUpdate and postEnable native readback mandatory;
+one exact-own containmentDisable allowed. Reviewdeeec811 SOUND_WITH_NAMED_LIMITS;
+API return is not proof of an atomic update. Actual repair not inferred yet.
+OldR5 unchanged. Review93851820 REVISE counterclaim narrowed by
 actual allmutatorcensus/nativecommonlock proof, not assumed compliance.
 Onependingleg/visit means4x280s exceeds15m worst-case. Fastfill SYN is not
 guaranteed closure; exact pending/cancel/owned nextsession carry must qualify.
@@ -245,6 +285,6 @@ A/verification/fund20-paper-runtime-20261021-v1/authority.json41796a7a:
 Ruff/default-research-accounting sample-envCompose PASS.
 1374sources5802dd71+controls: docs/external reuse needs fresh exact equality
 and independent changed-external native proof. Repo tests cannot validate D code.
-Latest pushed1b85c51. Explicit staging, preserve unrelated %SystemDrive%/.
+Latest pushed e4774cb before this integration. Explicit staging, preserve unrelated %SystemDrive%/.
 After interruption classify actual owners/lease/receipt resume/reconcile/complete;
 no age reclaim, refund or completed-fit restart. Continue ready lanes.
