@@ -1,172 +1,94 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Engine owns models/targets/splits/replay, never deterministic broker risk.
-Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
-All reused/current-listing/current-vintage comparisons are development,
-not independent alpha, qualified PIT evidence or Paper permission.
+Oct21KST/UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Engine owns models/targets/splits/replay, not broker risk. Company NAS lifecycle
+UNFINISHED, existing exit>=13:40UTC. Standing Paper authority is independent
+of research pass/failure. Parent alone owns shared MD/Git.
 
-## Current Ready Work
+## Current Owner / Next Action
 
-Pascal owns NEW source/native preparation:
-A/research/current-price-fundamental20-ablation-development-20261021-v1.
-Strategy proposal:
-A/research/current-price-fundamental-ablation-hypothesis-20261021-v1/PROPOSAL-r2.json.
-Data current25 SECdbf616be/historical45a34547/as-of panelc3e29a80 complete.
-Kernel60bbea7c/44tests and concise Claude challenge completed.
+Hubble: Patch512 and fixed Patch/recurrent probability-halfpool COMPLETE.
+Next current-fundamental20-learning-diagnosis-20261021-v1 uses retained
+FIT/INNER curves only to motivate ONE orthogonal trainable/decision hypothesis.
+No PRED outcome decode, model retry or weight search in this diagnosis.
+Halfpool root current-fundamental20-patch-recurrent-halfpool-20261021-v1:
+readout-r1/FINAL actual02:20:37UTC/RESULTbacc9f16/VERIFY89f8a30f,
+EXACT recurrent allocation alias/0new12cached/1outcomeintake/0models-GPU/
+141.125862upper/alljoined/financialFAIL. No additional diversification.
+Prospective240TOTAL carries old130.323504source+review; old120closedFINAL
+unchanged/no refund or old-cap compliance. Normalize each component row once,
+fixedhalf pool/no second normalization; same425keys/class/20session target/
+51dates/70marks/cost/sleeves. Old component policies/cells stay exact caches.
+Pre-existing incumbent FUND20 is the risky baseline: candidate growth better
+than incumbent+uniform, DD no worse, at10bp. Report higher-risk Patch as a
+tradeoff, not demand higher return than every different-risk component.
+This NEW composition is adaptive AFTER component outcomes, not old Patch
+regrading or independent alpha. Parent obtains concise Claude challenge
+while source preparation continues. Exact aliases are not diversification.
 
-Actual HGB20 readout b3136546 COMPLETE23:50:53UTC after two fits and sealed
-policies20658e47. Data525d20eb supplies425known targets/70marks after seal.
-Proper PASS/financial FAIL/overallFAIL: FUND selected constant prior0 and
-aliases uniform, not learned financial information.10bp growth/DDpercentNAV
-FUND+.687260/.224125 vs BASE+.719049/.337096. No model/readout rerun.
-Actual fits5.811worker seconds, readout.711; full closure/carry in exact
-host-readout-r1/actual-binding-r1 artifacts. Reused current-vintage development.
+Boole: FUND20 future measurement host prepared, composite Data/source binding
+still needed before useful one-shot installation. No future marks now.
+Kepler owns composite6+2 and missing finalNov17 source/native preparation.
+Wegener separately implements compatible20session Paper input profile in
+tracked source, no change to current deployed R5/cohorts.
 
-Boole NEW paired recurrent20 preparation:
-A/research/current-fundamental20-recurrent-expert-development-20261021-v1.
-Proposal37f0eee6 fixed before HGB outputs: same50columns,21x1rawprice and29
-late-context inputs/LSTM64/head32/two arms/128max/pat20/LRschedule/restore0.
-CPU native fc35370c:6SYNupdates/4saves-restores/0market-GPU/95upper.
-CUDA initially unqualified because exact Windows Shell/Calculator were
-unclassified, not headroom/API/permission failure. New desktop-owner-qualification-r1
-verifies actual exact signed Shell and Store Calculator package before/after,
-preserves all other owners/lease/headroom checks; only remaining6SYNupdates,
-no CPU repeat/cap refund. Claude SOUND_WITH_NAMED_LIMITS0c787048.
-Calculator EXE is NotSigned, Store linkage is not EXE/security/zeroGPU proof.
-Recurrent numerical-r1/READBACK7efaa9e0 is now ACTUALLY COMPLETE:
-2CUDAfits26epochs/best6each/4056marketupdates/GPUactor29.194s/alljoined/
-leasefree/396.488753upper. Frozen incremental proper+finance screensPASS.
-10bp growth/DDpercentNAV FUND+1.015525/.213627 vs BASE+.867644/.321372,
-uniform+.687260/.224125. FITprior proper scores beat BOTH; not independent
-alpha/replication or actual Paper PnL. No more fits/checkpoint changes.
-Pascal fixed-pool consumer-r1 (edec1f28/62SYNchecks before these outcomes)
-uses two fixed .5HGB+.5recurrent arms/one readout/aliases, no new models/GPU.
-Chronos2 O/C512/h20 COMPLETE914fa4f9 at
-A/research/current-chronos2-oc20-peer-development-20261021-v1/FINAL.json.
-4native+102market calls/one restore/0fits/0retry/35.72GPUworker seconds,
-353.738090activeupper/alljoined/leasefree. Actual isolated peer perturbation
-bit-invariant, GROUP effect observed; no cross-origin batch or weight change.
-At10bp growth/DDpercentNAV ISOLATED+.941339/.228407 versus GROUP+.735933/
-.208319; frozen GROUP financialFAIL. No window/peer rescue or new alpha claim.
-Old128/h1/trio/256wrapper unchanged; Data7afc4b93 remains retrospective proxy.
+## Latest Actual Training
 
-Boole completed selected-epoch6 BASE/FUND prospective point
-using A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json,
-8eligible/FEATURESa0374157, actual data available before Oct21OPEN13:30UTC.
-Target Nov17CLOSE21UTC; one inference per model plus uniform/cash, no fits,
-checkpoint changes/future labels/current Paper model swap. ACTUAL COMMITTED
-0996dabb at01:01:46UTC/84.141175upper/alljoined/39checks. Future Nov17
-measurement host/actual point decoder now preparing; future prices UNKNOWN.
-Confucius source8fb724bc/48loss-autograd tests closed at
-current-fundamental20-objective-alignment-hypothesis-20261021-v1,
-same FUND20 features/splits/20sleeves, matched scalar Huber versus within-date
-RankNet loss. This tests training-objective alignment, not another model grid.
-Only chronological INNER may choose checkpoints; seen PRED stays adaptive.
-Pascal actual native12CPU-CUDA SYNupdates/full state passed; source-only
-epoch projections CPU5.338/CUDA5.561 select CPU. Actual scalar pair then
-closed UNAVAILABLE: HUBER1start/checkpoint0 missing batch_order_sha256,
-0updates/0PRED/0economiccells; RankNet NOT_STARTED. Firstcause8ceb3ae9,
-412.935192upper/alljoined. Native identity differed from actual worker;
-test the SAME caller factory before the next constructor, not another fixture.
-Old error-journal conservatively charges fullcaps; never refund/reuse them.
-New first-RankNet-only scope may consume1 separately recorded start after
-positive unstarted proof; oldcharged2+new1=3, no HUBER retry/paired completion.
-Same data/seed/split/loss/per-arm screens; old classifications not reopened.
+A/research/current-fundamental20-patch512-development-20261021-v1/FINAL.json
+One CUDA fit/21epochs/best1/1638updates/405027parameters/44.017121GPUworker
+seconds/530.020341activeupper/alljoined/leasefree. RESULTddc4eee3:
+10bp PERLEG growth/DDpercentNAV PATCH+1.341353/.287486 versus FUND
++1.015525/.213627 anduniform+.687260/.224125.
+ScientificFAIL: CE/Brier beat FUND but not FITprior. FinancialFAIL: growth
+beats incumbent/uniform, DD worse. OverallFAIL, no refit/epoch/criteria rescue.
+Two reader attempts/one actual outcome intake after disclosed pre-value
+schema correction; original single-attempt compliance NOT claimed.
+Selected safe weights af4234c4/fullcurves f00fec5d remain A, never Git.
 
-Fixed FUND-LSTM/isolated-Chronos rank fusion12e05488 CLOSED financialFAIL:
-A/research/current-fundamental20-chronos-fixed-rank-fusion-20261021-v1/schema-continuation-r1/RESULT.json.
-10bp growth/DDpercentNAV+.850532/.228229 versus FUND+1.015525/.213627,
-ISOLATED+.941339/.228407;3new12cached cells/0models-GPU/no aliases.
-Two reader attempts/one actual outcome intake; exact sealed-policy schema
-continuation is not old one-attempt compliance. No weight/grid rescue.
+Data3601a196 at current-fundamental20-patch512-input-20261021-v1:
+FIT11091/INNER6017/PRED425 originalkeys/all512known/0unknown;
+FP32 relative-log prior512 sequence/unchangedlate29/39checks/one derivation.
+Strategyd80f3902/43CPUchecks, architecture patch16stride8/63tokens/width128/
+3layers4headsFF256/meanpool+29/seed4101. Existing old patch/attention fits
+mean this is a new512/FUND20 application, not an untried architecture.
+Parent pre-effect fixes: no second log/inversion, standardized age may be
+negative, same actual checkpoint identity factory/native and market before
+constructor. Native actual128-row packs, host imports/DTO and callback
+durability tested. Claude32460fa3 SOUND_WITH_NAMED_LIMITS.
+All reused current-listing/vintage/provider-field/nonPIT/CA/finality limits
+remain, no independent alpha or real Paper PnL.
 
-First source/native READBACK6eeb08f7 COMPLETE:64checks/two SYN fits16rounds/
-41.205889upper/0market-GPU-API/alljoined; EngineABI380f47fe/DataRequest7802bec2.
-Pascal prepares real-role header/DTO/host/readout, not another SYN-fit repeat.
-Claude SCOPE-NOTE53fbf90b at current-price-fundamental20-asof-20261021-v1
-reverses its own target objection against exact frozen +/-h source. Keep
-symmetric thresholds and prior-CLOSE filing age, no advisory target rewrite.
+## Existing Evidence / Do Not Repeat
 
-One information ablation, not an architecture grid:
-- Two new CPU HGBClassifier fits, price+issuerID+filing-age controls in BOTH;
-  BASE adds two zero slots, FUND adds net margin and liabilities/assets.
- 50columns, common input-only support/FIT affines, seed3801/max128/pat20.
-- Exact current-report-quarter original10-Q/USD/context, two-full-session
-  lag before prior CLOSE; no later revision backfill. Current-vintage/proxy
-  limitations remain. No ad hoc bank revenue/alias/YTD/missing-neutral repair.
-- One20-session rawLOG target, not renamed LOG5. FIT2019..2023,
-  INNER2024..Jun2026; physical20-session purges. Bound70-session marks
-  permit51 completed PRED entries Jul8..Sep17, not future exits.
-- Common >=5 eligible members/date/full-mass Top5;20 sleeves .005initialNAV,
-  max.10, fixed shares/no early reinvest/borrow/profit-expanded allocation.
- 12 new cells=four policies x5/10/20bp PER LEG, no old5day cached comparator.
-- Freeze actual finite active/elapsed/counters after real Data/native
-  readiness, before market fitting. Native proves width50, class semantics,
-  checkpoint/curve restoration and20-session accounting. Exercise actual
-  feature-only DTO for EVERY role before fits; persist curves/state BEFORE
-  prediction callbacks; pinned imports and one decoded outcome DTO.
-  Actual HGB appointment1800active10800elapsed/2fits0retry/one readout was
-  frozen23:40:04UTC; it is consumed, not another market appointment.
-- Proper and financial screens independent; both required for overall PASS.
-  Unsupported scope=>UNKNOWN; valid failure closes this recipe, no
-  outcome-driven ratio/window/issuer/horizon rescue.
+- Recurrent FUND20 7efaa9e0:2CUDAfits26epochs/best6each/4056updates/
+  29.194GPUworker seconds; FUND incremental screensPASS but FITprior proper
+  beats both.10bp FUND+1.015525/.213627 vsBASE+.867644/.321372percentNAV.
+- HGB20 27b417c4:2CPUfits/FUNDprior0 uniform alias/financialFAIL.
+- Fixed HGB/recurrent f65ca8e8:formalpairPASS but FUND allocation exact
+  recurrent alias/no new diversification/3new9cached/0models-GPU.
+- Chronos2 O/C512/h20 914fa4f9:4native102market calls/0fits/35.72GPUworker
+  seconds, GROUP+.735933/.208319 vs ISOLATED+.941339/.228407; peerFAIL.
+- Fixed FUND/Chronos rankfusion12e05488:financialFAIL+.850532/.228229,
+  3new12cached/0models-GPU/noaliases.2readerattempts/1actualintake.
+- RankNet standalone21epochs/best1/1638CPUupdates, RESULT54445662:
+  +.711523/.389083percentNAV financialFAIL. e9f5bbb6 readback under
+  current-fundamental20-objective-alignment-development-20261021-v1/first-ranknet-r1/readout-import-continuation-r1.
+  Original HUBER checkpoint0 missingbatchSHA/0updates remainsUNAVAILABLE.
+  Full conservative oldcaps plus newfirstfit preserved; no HUBER retry,
+  paired-success claim, refund or further RankNet readout/model calls.
+- OOF c04d7aeb9fits COMPLETE/financialFAIL. Old GRU/MLP/TCN/LSTM/attention/
+  indicator/TimesFM/LoRA/held-exit histories stay Git/immutable A, not ready jobs.
 
-## Latest Closed OOF Campaign
+## Frozen Prospective Evidence
 
-A/research/current-halfpool-chronological-gate-development-20261021-v1/
-prefix-completion-r1/readout-schema-continuation-r1/READBACK.json
-c04d7aeb44f3d096bc4ad63ab3ab0c7b9af67071add78afbc8fdeaa603edb028.
+FUND20 point0996dabb at current-fundamental20-prospective-point-20261021-v1:
+actually committed01:01:46UTC before Oct21OPEN/twoCPUepoch6forwards/8members/
+25axis17unknown/0fit-GPU. ONE .005initialNAV cohort toNov17CLOSE21UTC,
+not20samples or Paper. No reforecast or future marks;39checks/alljoined.
+Five-policy cb1c1d9a/HALFb060d4fa instead targets Oct27fifthCLOSE; shadow
+d33490c9 andmeasurement22db8f33 installed, future decisions/PnL unknown.
+Do not conflate different horizons or infer runtime from installation.
 
-ALL nine first-fit identities consumed, no rerun:
-- OOF LSTMs27/20/37epochs, selected7/0/17;7710 GPU updates total.
-- OOF HGB20/106/24rounds, selected0/86/4.
-- FINAL HGB safe state retained; its callback lost final curves/API output.
-  Source-order proof cannot reproduce missing argmin diagnostics.
-- FINAL CPU LSTM20epochs/selected0/2260updates; gate40epochs/selected20.
-  CPU-final/GPU-OOF drift named. All actors joined/GPU lease released.
-- META_INNER PASS only; financial FAIL. At10bp PER LEG growth/DD percentNAV:
-  GATE+.783667/.279046; matched HALF+.802196/.278994.
-  HALF aliases new HGB and FINAL LSTM aliases uniform;6new6cached cells.
-- Two physical outcome accesses/one economic batch. Exact same-snapshot
-  class-alias schema repair is NOT original one-intake compliance.
-  No policy/weights/criteria changes or independent-performance claims.
-  Cumulative1074.359636upper; old failures/debits unchanged.
-
-Custody151de7b2/Data4063320f+300fda82/kernel74d4c3d5/consumercebc7682
-preserve prefix/recovery facts. Old cold4f66f077 is closed; public-header/native
-qualification passed34SYN+311actual headers per runtime and real CPU solver/
-full-state next-update proofs. No third cold launch or seven-fit redo.
-
-## Useful Closed Evidence
-
-- HALF740ae38d: cached HGB28+sectorLSTM6 pool,10bp+1.04894/.29259percentNAV;
-  descriptive finance PASS/proper FAIL/different training cohorts, not OOF.
-- Learned held-exit d7c7383b: HGB60rounds/selected40,5early325terminal;
-  +1.09535/.29248 versus HALF+1.04894/.29259. Operational development only,
-  not timing alpha/Bellman/Paper exit change.
-- Continuous TimesFM887257b7: two40epoch/1240update fits, selected0,
-  proper+finance FAIL. Ordinal935de050:11/21epochs,selected1/bothFAIL.
-- Broader TimesFM0a7f5137 and LoRA8328e0c5 finished20epochs/620updates,
-  selected0/FAIL. Raw rank-fusionf60ed3d8/intradaycd1b4cc0 bothFAIL.
-- TCNd16a455a:CPU2fits21/34epochs/6050updates/properPASS-financeFAIL;
-  native measured CPU25xGPU. Broad LSTM8198cdbe:95epochs/best75/10830updates.
-  Indicators, ML, GRU/LSTM/TCN/attention and public-model experiments exist;
-  never describe progress as GRU-only or foundation-model-untried.
-
-## Prospective Consumers
-
-Five-policy groupcb1c1d9a actually committed Oct20 21:15:43UTC,
-HALFb060d4fa unchanged, target Oct21OPEN->Oct27fifthCLOSE.
-A/research/current-halfpool-ordinal-prospective-point-20261021-v1/backend-config-recovery-r1.
-198upper/18.462newGPUinclusive/alljoined. Same25-route cohort, not5samples.
-Held-exit shadowd33490c9 installed Oct22/23/24/27 01:00UTC, ages0..3,
-decision cutoff before nextOPEN13:25UTC; terminal Oct27CLOSE.
-Existing Oct27 consumer22db8f33 installed/30cells/one marks intake/no new
-triggers. Shadow decision linkage is NOT exit marks/fill/netPnL/qualification.
-Do not rerun completed hosts or infer future decisions/outcomes.
-
-Short breadth queue: actual prospective BASE/FUND point now; no extra grid.
-Depth queue: objective-alignment pair after source/native optimizer/restore
-proof and exact counters, not repeat/idle-GPU dummy training.
-Complete histories/contracts/trial debits stay Git264a2b0/immutable A.
+Breadth: fixed halfpool now, not automatic seed/model/window grids.
+Depth: only informed frozen campaign with actual optimizer/checkpoint/pace
+proof and finite counters. GPU use is useful work, not an outcome/idle-load goal.

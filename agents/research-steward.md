@@ -1,88 +1,59 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts.
+Oct21KST/UTC. A=D:/thericher-v2/model-artifacts.
 Own exclusive GPU/trial custody, not model choice/approval/broker authority.
-Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED.
+Company NAS lifecycle UNFINISHED; original exit>=13:40UTC.
 
-## Current Allocation
+## Current Resources / Queue
 
-No active GPU allocation from the completed OOF family. All nine first-fit
-identities consumed; final c04d7aeb financial FAIL/all actors joined/lease free.
-OOF LSTM27/20/37epochs/7710GPUupdates; FINAL CPU LSTM20epochs/2260updates
-and gate40epochs complete. No seven-fit redo or new allocation in that family.
-Actual22:18 sample33percent/2798MiB is historical, not current training.
-Cumulative1074.359636upper; original failures/caps/debits remain immutable.
-
-Current CPU input ablation completed two HGBClassifier arms, no GPU needed:
-A/research/current-price-fundamental20-ablation-development-20261021-v1.
-Actual panelc3e29a80/evaluation525d20eb ready; readoutb3136546 properPASS/
-financeFAIL/FUNDprior0uniform alias. No refit or information-alpha claim.
-Boole new paired recurrent20 source37f0eee6 was frozen before HGB outputs;
-source/native runtime4be5cdb9/CPUproof fc35370c6updates/95upper/0GPU-market.
-First CUDA admission refused unclassified ShellExperienceHost/CalculatorApp,
-not memory/permission/model failure. New exact desktop classification child
-checks signed Shell path/hash/PID/start plus Calculator Store package/link;
-Calculator EXE remains NotSigned. Keep headroom/unknown trainer/lease guards.
-Claude0c787048 SOUND_WITH_NAMED_LIMITS, no security/zeroGPU attestation.
-Remaining native caps6updates/4saves4restores/82forwards, no CPU repeat;
-newchild120active inside oldprep240/95oldcarry. No idle lease. One SYN-only
-allocation may release; later one actual training allocation separately
-counted before numerical freeze, at most2 physical not2 simultaneous owners.
-Actual numerical-r1/READBACK7efaa9e0 now COMPLETE:2CUDAfits26epochs/best6
-each/4056marketupdates/GPUactor29.194seconds/396.488753upper/alljoined/
-canonical lease released. Two physical allocations=oneSYN+oneMarket, no proof
-repeat. Frozen incremental screens PASS, FITprior still better on proper
-scores; no independent performance/Paper qualification. Post-close NVML2percent/
-1576MiB sample is AFTER training, not during utilization or a failure to run.
-Chronos2 paired O/C20 COMPLETE914fa4f9:one allocation44.27s/35.72GPUworker
-seconds/4native102market calls/0fits/0retry/alljoined/canonical lease free.
-Financial GROUP growth screenFAIL, no extra peer/window/rescue allocation.
-Prospective BASE/FUND point0996dabb ACTUALLY committed01:01:46UTC with two
-CPUrestores/forwards/0fits-GPU/alljoined. New scalar native12SYNupdates
-measured CPU5.338/CUDA5.561 projected epoch, choosesCPU; no GPU restriction.
-Scalar pair actually UNAVAILABLE before any optimizer update because worker
-checkpoint identity omitted batch-order SHA. Old full conservativecaps/debits
-remain spent, not refunded by0updates. Any unstarted RankNet first fit needs
-a NEW accounted single-fit scope, not old spare-cap reuse or HUBER retry.
-No active CUDA market-training allocation inferred from plans/native checks.
-
-Short breadth queue: future point measurement actual-wire compatibility.
-Long depth queue: correctly accounted first RankNet fit after actual caller
-identity proof, same FUND20 inputs; no idle-load/dummy training.
-
-## Resource Custody
+Patch512 actual FINAL at
+A/research/current-fundamental20-patch512-development-20261021-v1/FINAL.json:
+oneCUDAfit21epochs/best1/1638updates/44.017121GPUworker seconds,
+allactorsjoined/canonical lease RELEASED/currentGPUowners0.
+This is actual completed training, not a runningGPU claim.
+Fixed Patch/recurrent halfpool COMPLETE/EXACT recurrent alias/0new12cached/
+1outcomeintake/141.125862upper/alljoined/0fit-forward-GPU. No diversification.
+Next retained FIT/INNER learning diagnosis needs no GPU or PRED outcomes.
+No dummy job to keep utilization high.
+Any NEW trainable campaign needs useful frozen hypothesis/Data/native proof,
+fresh ownership/headroom and its own counters, not old trial reuse.
 
 Canonical lease A/engine-research-agent/locks/gpu.lock.
-Fresh actual ownership/headroom immediately before allocation; one GPU
-training owner. Do not age-reclaim interrupted ownership. Execution reliability
-preempts at a safe checkpoint. Safe weights/checkpoints A, never Git.
-Historical VRAM/time ceilings are study-local, not global GPU restrictions.
-Measure current free resources and desktop/runtime headroom, not old samples.
+One active training allocation; do not age-reclaim interrupted ownership.
+Use actual PID/start/path/hash/known desktop role before/after, not broad
+process-name exemption. Shell/Calculator qualification d5101955 is specific:
+signed Shell and Store-linked Calculator, not security/zeroGPU proof.
+Calculator EXE is NotSigned. Preserve other unknown actors/trainer checks.
+Execution reliability preempts at a safe checkpoint; retain desktop headroom.
+Old study8GiB/time caps are not global limits; measure current free resources.
 
-Active upper debits include synthetic work/failure/I/O/recovery/cleanup.
-LLM/review/queue elapsed is not CPU/GPU kernel spend. Preserve every closed
-clock/debit, no reset/refund by scope name. Market trials and holdout access
-require exact accounting, not many extra approval artifacts.
+## Actual Recent Work
 
-D storage: preserve15percent free/warn projected20. Test scratch C NVMe;
-data M/artifacts A. Old17:31 storage observation is not current headroom.
+- Patch512 above: scientific+financialFAIL, higher growth but worse DD than
+  incumbent.405027params/native actual128-row packs. Two readers/one actual
+  intake; no model retry. Activeupper530.020341 includes retained failures.
+- Recurrent20 7efaa9e0:2CUDAfits26epochs/best6/4056updates/29.194seconds,
+  oneSYN+oneMarket allocation/alljoined. Frozen incrementalPASS only,
+  FITprior proper still better; no independent performance claim.
+- Chronos2 914fa4f9:oneallocation44.27seconds/35.72GPUworker/4native102market
+  calls/0fits/financialFAIL/alljoined. Never repeat to restore utilization.
+- RankNet actually21epochs/best1/1638CPUupdates/financialFAIL. Representative
+  earlier native projections CPU5.338/CUDA5.561 selectedCPU, not a GPU ban.
+  Original HUBER failedbefore0updates; full old conservative2starts/19968
+  updates debit stays spent plus separately recorded firstRankNet1start.
+  No refund/old unused-cap reuse/failed-HUBER retry.
+- FUND20 prospective0996dabb uses2CPUrestores/forwards/0fits-GPU, actual
+  committed beforeOPEN; future measurement is not GPU training.
 
-## Completed GPU Work / No Repeat
+## Custody / Storage
 
-- Continuous TimesFM887257b7:2fits40epochs/1240updates each/best0/FAIL,
- 347.223GPUinclusive/alljoined20:49UTC. Sample20:46 80percent/10360MiB,
-  resident FIT/INNER6.069GiB; not continuous utilization proof.
-- Ordinal935de050:11/21epochs/best1/FAIL/alljoined20:12.
-- Broader0a7f5137:2fits20epochs/620updates each/best0/FAIL.
-- LoRA8328e0c5:20epochs/620market4SYNupdates/best0/FAIL.
-- BroadLSTM8198cdbe:95epochs/best75/10830updates.
-- TCNd16a455a used CPU after actual native CPU25xGPU measurement; not a
-  CUDA/permission fault. Twofits21/34epochs/6050updates/properPASS-financeFAIL.
-- Prospective five-policy pointcb1c1d9a committed21:15:43UTC;18.462newGPU
-  inclusive/198upper/alljoined. No refit/repeatedHALF. Future outcomes unknown.
-- Installed shadowd33490c9/consumer22db8f33 are future CPU consumers, not GPU
-  training or a reason to keep an idle training container alive.
-
-Exact contracts, immutable results and old failures stay Git264a2b0/A.
-Current tracked authority5c229e4a reusable only with exactsource/control equality
-and fresh external evidence. Closed studies never become reusable fit permits.
+Active owned wall includes source checks/native/failure/I/O/recovery/cleanup;
+LLM/queue/review elapsed is not GPU kernel time. Never erase old clocks/caps
+or call a short run converged. Same actual identity/caller must be qualified,
+not a separate synthetic metadata dictionary.
+Safe weights/state A, market bytes M, never Git. Keep15percent D free/warn
+projected20. Latest measured D1.56TB/4TB free, not perpetual headroom.
+Test scratch prefers C NVMe. Fresh Paper20 authority82df0f69 covers1374sources
+5802dd71:1764serialPASS2skip/18612fullPASS25skip/8workers/cleanhelper/Ruff/
+three sample-envCompose PASS. Reuse needs exact source/control equality;
+native external proof stays separately required. Oldc0230ff6 is historical.

@@ -1,117 +1,81 @@
 # Orchestration Stateboard (총괄 조정)
 
-Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Company current-nas-owned-model-paper-cycle-v1 UNFINISHED:8retainedFULL NAS,
-existing exitOct21>=13:40UTC. Exact owned lifecycle closure still required;
-fees/settled cash/actual net PnL UNKNOWN. Parent shared MD/integration/Git.
+Oct21KST/UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Company current-nas-owned-model-paper-cycle-v1 UNFINISHED. Eight retained
+exact FULL NAS entry events need owned exit/fill/inventory/terminal evidence.
+Existing exit>=13:40UTC=22:40KST; fees/settled cash/actual net PnL UNKNOWN.
+No genuine operator decision currently required. Parent alone shared MD/Git.
 
 ## Ready / Owned / Due
 
-| Owner | Actual Work |
+| Owner | Actual Work / Next Consumer |
 | --- | --- |
-| Kepler / Data | Prospective input216cec35 complete; future measurement adapter must pass actual0996dabb wire, not fabricated publication fixture. |
-| Confucius / Strategy | Source8fb724bc/48pureloss-autograd checks complete, role closed. |
-| Bacon / Review | As-of/vintage/desktop challenges complete; advisory only. |
-| Boole / Engine | Prospective BASE/FUND point0996dabb committed01:01:46UTC/0fits-GPU; preparing Nov17 measurement host. |
-| Pascal / Engine | Scalar pair UNAVAILABLE/1HUBERstart0updates/missingcheckpointidentity, RankNetunstarted. New accounted first-RankNet-only scope, not old cap reuse. |
-| Archimedes / Infra | Natural head22 READY25x22/29SYN+actualwire; oldbasisFAIL unchanged, no API/TaskRun. |
-| Wegener / Execution | R5r3 deployed3330a61c/2actionupdates0Run; parentCOM257otherXMLACL unchanged. Next20-session Paper adapter source-only feasibility. |
-| Parent | Current memory/integration/Git, exact production equality and external checks. |
-| Steward | Prior GPU actors joined/lease free; no current GPU training inferred. |
+| Hubble / Engine | Patch512/halfpool completed; retained FIT/INNER learning diagnosis, no new PRED/model calls. |
+| Kepler / Data | Composite6+2/finalNov17 capture source-ready; qualify native SD/ACL and atomic token locking before installation. |
+| Boole / Engine | Actual prospective point0996dabb complete; future measurement source needs final producer/composite binding, no future marks. |
+| Wegener / Execution | R5 actual deployment complete; tracked20-session input compatibility/full suite complete, new profile not deployed. |
+| Parent | Integrate actual readouts, source/caller review, shared current memory and verified Git. |
+| Closed Roles | Strategy/Data512/RankNet/Chronos/temporary Validation complete; no daemon or activity inferred from MDs. |
 
-Due: original halfpoolpointOct21 00:15; Window21prep13:10/entry14:00;
-originalNASexit13:40; nightly14:50/F915:10UTC. Goal97 distinct.
-RTH21:50/old20D122:30/new9D123:00UTC natural visits retain named ownership.
-No foreground quota/session waits while another package is ready.
-No substitute unknown request/foreign inventory/new capital envelope.
-No genuine operator decision currently required.
+Due UTC: Window21prepare13:10/originalNASexit13:40/Window21entry14:00/
+nightly14:50/F915:10. NaturalRTH21:50/old20D122:30/new9D123:00.
+Preserve named owners/original shared bank/foreign reservations; no task Run,
+substitute unknown request, forced foreign liquidation or capital reset.
+One app heartbeat follows these results Oct22 00:45KST, quiet unless material,
+one-shot/no replacement chain. Installation is not runtime or a fill.
 
 ## Throughput Review
 
-Latest: OOF final evaluation is valid development financial FAIL, not an
-unfinished training task. Preserve all9fits/7710GPUupdates and close it.
-Current review00:58UTC: actualfund20 fits/readout complete, Fundprior0 aliases
-uniform. No repeated training to force nonconstant output. New recurrent20
-pair fixed before that result; actual Data support >=8members all51dates.
-Paper dependency fault is measured last-shared-row revision, not permission:
-new explicit current-vintage input qualified25x22, r5 deployment pending
-private unstarted-identity proof/native transactional tests. Original8NASexit
-unchanged. Fresh1720serial/18568full compatibility passed, no foreground hold.
-Reversible improvement: exact Windows desktop-role classification prevents
-Shell/Calculator from falsely blocking CUDA while all trainer/lease/headroom
-checks remain. Recurrent20 now actually trained26epochs perarm/4056CUDA
-updates/29.194s, alljoined/leasefree. FUND incremental screensPASS but prior
-proper scores still best; no independent performance/Paper PnL claim.
-Fixed pool now completef65ca8e8 but FUND exact allocation alias. Chronos2
-O/C512/h20 actually closed914fa4f9/4native102market calls/0fits, GROUP failed
-growth versus ISOLATED. Stop this recipe, no automatic peer/window grid.
-Ready follow-on: prospective current FUND20 data8eligible before OPEN,
-selected-epoch6 point/no refits; source for two aligned objectives runs in
-parallel. Reversible improvement: rank stocks directly instead of assuming
-better classification CE necessarily improves Top5 decisions; compare losses
-on unchanged data/splits/costs, keep reused evaluation explicitly adaptive.
-Latest failure/handoff review01:18UTC: R5r3 actually deployed after native
-SD normalization and positive own-redirector classification; parent freshCOM
-confirmed exactpair/257otherXMLACL, no broker effects. Scalar pair stopped
-before0optimizer updates: valid native identity fixture differed from actual
-checkpoint caller. Preserve full conservative oldcaps; do not repeatHUBER or
-refund by inferred inactivity. New RankNet-only first fit is separately
-accounted after positive unstarted proof, not original pair completion.
-Reversible improvement: actual factory-produced identity must pass the codec
-guard before constructing a market model. Existing all-role header/native
-optimizer checks stay useful but cannot stand in for actual caller coverage.
-Parent also caught Data future decoder's synthetic-only publication ABI;
-use exact committed point0996dabb directly, no extra projection platform.
-R5privateUNKNOWN is a named read-only guard, not evidence of a broker failure
-or Window21 request conflict; native global budget replay and bytes preservation
-already passed before the orphan/legacy-registry membership check. Diagnose
-exact scope before changed reader/source, retain every foreign reservation.
-One materially new information hypothesis uses free SEC facts; accepted
-source available, Data/context matching and Engine/native callers proceed
-in parallel. CPU HGB is appropriate; no dummy GPU use/model-name grid.
-Historical metadata stopped at a schema ValueError after11GET/10accepted;
-first-cause repair may continue exact cursor, not relaunch whole acquisition.
+02:22UTC continuation: new Patch512 fit and RankNet readout are COMPLETE,
+not running jobs. Actual PatchCUDA21epochs/1638updates/44.017worker seconds;
+all actors joined/lease free. Stored-output CPU halfpool is the useful next
+test, not dummy GPU occupation or a blind architecture/seed/window grid.
+Original halfpool120active planning ceiling was already exceeded by source+
+Claude130.323504 BEFORE zero numeric effects. Prospective240TOTAL now carries
+all old debits with original02:27:10deadline; one unchanged composition only.
+No old-cap compliance/refund claim. Actualreadout02:20:37 COMPLETE:
+RESULTbacc9f16/VERIFY89f8a30f/EXACTrecurrentalias/0new12cached/1intake/
+141.125862upper/alljoined/0model-GPU/financialFAIL. No blend rescue.
+Next retained FIT/INNER curve diagnosis informs ONE orthogonal hypothesis,
+not another seen-outcome weight/model grid. No GPU task ready from the alias.
 
-Reversible improvement: replace stale override paragraphs with actual
-owner/result/nextconsumer, history in Git/A. For the new caller exercise
-EVERY actual feature-only role DTO before market fits; persist curves/state
-before prediction callback, pin module imports, validate canonical labels
-synthetically, keep one decoded outcome DTO. Avoid technical report failures
-destroying an otherwise expensive fit, without regrading/retraining old studies.
+Reversible improvement: actual source/ABI/caller before effects. Parent caught
+Data Task XML lacking Scheduler-inserted SD normalization before registration;
+native ACL remains authoritative, unknown nodes/tampered SD must still fail.
+New token writer must use atomic directory exclusion, not assume mixed-OS
+legacy locks coordinate. Other ready research continues during that repair.
 
-## Material Outcomes
+Second improvement: current memory replaces stale projections; full histories
+and immutable failed/closed clocks stay Git/A. Actual44Paper20 compatibility
+cases and fresh full authority are done; no repeated18k suite for MD-only
+changes on identical1374sources/controls. Repo tests do not certify D code.
 
-- OOF c04d7aeb COMPLETE: META_INNER PASS only,10bp growth/DD percentNAV
-  GATE+.783667/.279046 vs matched HALF+.802196/.278994, financialFAIL.
-  Two physical accesses/one economic batch, not original one-intake compliance.
-- SECdbf616be:43newacceptedGET/6reused/24pairs/18four-concept issuers,
-  not as-of/PIT qualification. Original WWW403 scoped, not global permission hold.
-- Five-policycb1c1d9a committed21:15:43UTC before OPEN; future target UNKNOWN.
-  Installed shadowd33490c9/linkedOct27consumer22db8f33 not actual decisions/PnL.
-- Nightly unused-pointer archive7fe5dac2 ACTUALLY closed0API/orders/Tasks;
-  nextordinaryresultunknown. F9RO2f07a757 unknown/startmarker/noack/expiredTTL/
-  reservation held; origind6ced0a2 cannot prove original no-send.
-- Window21deployment9b1d0e84/sourcef3711b38/imageb96a8ef8 installed;
-  actualOct20closes/full25/NASonly/no renorm. Installation is not a fill.
-- Chronos2 914fa4f9:ISOLATED/GROUP10bp growth+.941339/+.735933percentNAV,
-  DD.228407/.208319; peer screenFAIL, allactorsjoined/leasefree.
-- Prospective FUND20 Data READY8eligible/17unknown before Oct21OPEN;
-  point0996dabb ACTUALLY committed; future20thCLOSE Nov17 21UTC prices unknown.
-- Fixed FUND/Chronos rank fusion12e05488 FAIL/3new12cached cells/0models-GPU;
-  temporary Validation confirmed42hashrefs/15NAV metrics/zero discrepancy.
-- R5r3 actual sameTask actionpair3330a61c installed/2updates0Run, original
-  due13:10/14:00UTC/nativeACL unchanged; installation not fill/lifecycle closure.
+## Evidence / Claim Boundaries
 
-## Verification / Recoverability
+- R5sameTask actionpair3330a61c actual2updates0Run; parent COM confirms exact
+  due/principal/ACL and257otherXMLACL, no new intent/reservation binding.
+- Nightly maintenance7fe5dac2 closed0API/orders/Tasks. F9RO2f07a757 still
+  unknown/startmarker/noack/expiredTTL/reservation held, origin non-send unproven.
+- Patch512FINAL54867822:10bp growth/DDpercentNAV+1.341353/.287486; higher
+  growth but worse DD than recurrent+1.015525/.213627, frozen screenFAIL.
+- RankNetreadbacke9f5bbb6/RESULT54445662:21CPUepochs/1638updates,
+  +.711523/.389083percentNAV/financialFAIL. OriginalHUBER0update failure and
+  full conservative old debits retained, no pair-success/refit claim.
+- Chronos914fa4f9 peerFAIL/fixedrankfusion12e05488FAIL; fixedHGB/recurrent
+  FUND policy aliases recurrent exactly, not extra diversification.
+- FUND20point0996dabb actually committed01:01:46UTC BEFOREOPEN,8members/
+  25axis17unknown/0fits-GPU. ONEcohort toNov17CLOSE, not20samples/Paper.
+- FinalNov17source35527f9e/ABI986df7dd and composite68b8bd1a source-only;
+  no actual Task/capture/measurement. Future hashes resolve on publication.
+- New20session2026 ModelPaper profile is tracked compatibility, not current
+  R5/model/Tasks changed. Original14day default/bank/risk/codecs remain.
 
-Current authority A/verification/window21-natural-vintage-20261021-v1/authority.json
-c0230ff6/1371d2447255:1720serialPASS2skip/18568fullPASS25skip/8workers/
-cleanhelper/Ruff/three sample Compose PASS. Docs/external reuse needs fresh
-exact source/control equality and focused native/external proof; an18k repo
-rerun does not certify arbitrary D code.
-Preserve %SystemDrive%/. Actual owners/resources rechecked after interruption;
-do not infer activity from MDs or reclaim leases by age.
-Historical completed/failed packages/caps stay Git785697a/immutable A.
-Full366.41s; no external r5/private custody/deployment/fill qualification
-inferred from the repository suite. Scoped custody proof separately758d35e3
-retains old global UNKNOWN/foreign attribution/reservations unchanged.
+## Verification / Recovery
+
+A/verification/model-paper20-profile-20261021-v1/authority.json82df0f69:
+1374sources5802dd71/1764serialPASS2skip/18612fullPASS25skip/8workers/
+362.95s/cleanhelper/Ruff/three sample-envCompose PASS. Reuse needs fresh exact
+source/control equality plus independently checked changed external code.
+Preserve unrelated %SystemDrive%/. Parent explicit staging only.
+After interruption recheck actual actor/lease/receipt identity; no age reclaim,
+refund or rerun of completed fits. Company remains unfinished until evidence.

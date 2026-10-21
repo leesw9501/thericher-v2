@@ -40,6 +40,10 @@ from thericher_v2.research.decision_receipt import (
     ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
 )
+from thericher_v2.research.model_paper_horizon import (
+    MODEL_PAPER_20_SESSION_PROFILE,
+    model_paper_horizon_valid,
+)
 from thericher_v2.research.model_paper_proposal import (
     MODEL_PAPER_PROFILE,
     ModelPaperInput,
@@ -420,7 +424,8 @@ def model_paper_pointer(policy_ref):
 def _validate_model_input(value, at):
     """Native typed admission; model research validation belongs in its loader."""
     _check(
-        type(value) is ModelPaperInput and value.profile == MODEL_PAPER_PROFILE,
+        type(value) is ModelPaperInput
+        and value.profile in {MODEL_PAPER_PROFILE, MODEL_PAPER_20_SESSION_PROFILE},
         "cycle_input_invalid",
     )
     _pin(value.input_ref)
@@ -433,7 +438,13 @@ def _validate_model_input(value, at):
     opened, closed = value.entry_session.open_ts, value.entry_session.close_ts
     _check(
         opened <= at < closed < value.exit_session.open_ts
-        and value.exit_session.close_ts <= opened + timedelta(days=14),
+        and model_paper_horizon_valid(
+            value.entry_session, value.exit_session, profile=value.profile
+        )
+        and (
+            value.profile != MODEL_PAPER_20_SESSION_PROFILE
+            or value.metadata.exit_not_before == value.exit_session.close_ts - timedelta(minutes=15)
+        ),
         "cycle_session_invalid",
     )
     _check(type(value.targets) is tuple, "cycle_target_invalid")

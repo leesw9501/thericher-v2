@@ -21,6 +21,10 @@ from thericher_v2.research.decision_receipt import (
     ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
 )
+from thericher_v2.research.model_paper_horizon import (
+    MODEL_PAPER_20_SESSION_PROFILE,
+    validate_model_paper_horizon,
+)
 
 MODEL_PAPER_PROFILE = "model-proposal-nas-v1"
 MODEL_PAPER_SCHEMA = "model-paper-proposal-input-v1"
@@ -260,16 +264,21 @@ def _targets(metadata, entry_session):
     return tuple(targets)
 
 
-def prepare_model_paper_input(metadata, *, entry_session, exit_session):
-    """Pure model-to-proposal bridge; no bank initialization or quantity sizing."""
+def prepare_model_paper_input(
+    metadata, *, entry_session, exit_session, profile=MODEL_PAPER_PROFILE
+):
+    """Pure bridge; old profile remains the default and no bank is initialized."""
     _need(type(metadata) is ModelPaperMetadata, "model_metadata_invalid")
     metadata.__post_init__()
-    return ModelPaperInput(metadata, _targets(metadata, entry_session), entry_session, exit_session)
+    return ModelPaperInput(
+        metadata, _targets(metadata, entry_session), entry_session, exit_session, profile=profile
+    )
 
 
 def validate_model_paper_input(value):
     _need(
-        type(value) is ModelPaperInput and value.profile == MODEL_PAPER_PROFILE,
+        type(value) is ModelPaperInput
+        and value.profile in {MODEL_PAPER_PROFILE, MODEL_PAPER_20_SESSION_PROFILE},
         "model_profile_invalid",
     )
     _need(
@@ -288,9 +297,14 @@ def validate_model_paper_input(value):
         < first.open_ts
         < first.close_ts
         < last.open_ts
-        < last.close_ts
-        <= first.open_ts + timedelta(days=14),
+        < last.close_ts,
         "model_session_clocks_invalid",
+    )
+    validate_model_paper_horizon(first, last, profile=value.profile)
+    _need(
+        value.profile != MODEL_PAPER_20_SESSION_PROFILE
+        or value.metadata.exit_not_before == last.close_ts - timedelta(minutes=15),
+        "model_20session_exit_proxy_invalid",
     )
     _need(
         type(value.metadata.exit_not_before) is datetime
@@ -311,8 +325,14 @@ def serialize_model_paper_input(value):
     return _canonical(dict(schema=MODEL_PAPER_SCHEMA, **asdict(value)))
 
 
-def load_model_paper_input(payload, *, expected_sha256, expected_policy_ref):
+def load_model_paper_input(
+    payload, *, expected_sha256, expected_policy_ref, expected_profile=MODEL_PAPER_PROFILE
+):
     """Verify source/temporal/target bindings before the native target-loader handoff."""
+    _need(
+        expected_profile in {MODEL_PAPER_PROFILE, MODEL_PAPER_20_SESSION_PROFILE},
+        "model_profile_invalid",
+    )
     _need(
         type(payload) is bytes
         and len(payload) <= 1024 * 1024
@@ -336,7 +356,7 @@ def load_model_paper_input(payload, *, expected_sha256, expected_policy_ref):
             "execution_payoff",
         }
         and document.pop("schema") == MODEL_PAPER_SCHEMA
-        and document["profile"] == MODEL_PAPER_PROFILE,
+        and document["profile"] == expected_profile,
         "model_input_schema_invalid",
     )
     raw = document["metadata"]
@@ -371,6 +391,7 @@ def load_model_paper_input(payload, *, expected_sha256, expected_policy_ref):
         metadata,
         entry_session=session(document["entry_session"]),
         exit_session=session(document["exit_session"]),
+        profile=expected_profile,
     )
     # Re-derive every proposal/receipt rather than trusting executable fields in JSON.
     _need(serialize_model_paper_input(result) == payload, "model_payload_not_canonical_or_derived")

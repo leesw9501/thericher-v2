@@ -1,115 +1,86 @@
 # Data Stateboard (시장데이터 담당)
 
-Oct21KST / Oct21UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Oct21KST/UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/availability, not account/orders. Parent owns shared MD/Git.
-No secrets/raw market/private output or KIS_LIVE_*.
+No secret/raw market/private output or KIS_LIVE_*.
 
-## Current Owner And Consumer
+## Current Owner / Consumer
 
-Kepler completed NEW prospective FUND20 input:
-A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json.
-Actually generated00:45:59UTC/8eligible/17explicitunknown, FEATURES a0374157,
-max component availability Oct20 23:49:31UTC before Oct21OPEN13:30UTC.
-Exact frozen FIT affine plus explicit current natural-head22 vintage;
-BASE/FUND50columns/first48same/Base last2zero after scaling. No new GET,
-future marks/labels/model/Paper effects. Target20thCLOSE Nov17 21:00UTC,
-including DST calendar change; prices UNKNOWN. New26.787937activeupper,
-one derivation/alljoined. Boole owns actual frozen point consumer, not Data.
+Kepler: composite per-session old20/new9 future marks for actual FUND20 point
+0996dabb, exactfixed8 route split6+2. Existing feed plans ENDNov16 while
+20thtargetCLOSE isNov17 21UTC. One final Nov17 full25 template/source/native
+implementation authorized as cheaper reuse than a new8-route parser:
+A/data/current-fundamental20-final-session-capture-20261117-v1.
+No current API/credentials/TaskRun/installation, no oldplan/cursor mutation.
+Onefuturepostclose visit/oneclient/boundedGET-token-scope/quietTask proposal;
+use exact existing documented/measured pacing, not a newly invented timer.
+Futurecapture hashes resolve when published, never fabricate them now.
+SOURCE35527f9e/ABI986df7dd/PLAN41acc936/COMPOSITE17aaee04 are source-ready,
+not installed: Nov17 23:20UTC/25normal27maxGET/1POST/600active900elapsed.
+Parent review found native Scheduler-inserted SD comparison must be handled
+only with exact native ACL; additive source qualification before registration.
+Confirm atomic token directory plus legacy locking on this NEW writer.
+Parent installs only after actual composite consumer/producer binding ready.
 
-Chronos2 O/C512 input7afc4b93 completed425rows/51dates/8-9members,
-positive finite OPEN/CLOSE/log-relative shared prior-CLOSE anchor. Actual
-captures after historical origins stay retrospective proxy; fullBar validity,
-PIT/CA/finality unknown. Consumer914fa4f9 completed and failed peer-group
-growth comparison; no rederivation or availability backdating.
+A/data/current-fundamental20-prospective-measurement-adapter-20261021-v1:
+actual-r1 ABI d045b4a5/entry2e31bb22/18actual-point wire checks are qualified.
+Root fiveJSON publication prototype is superseded, NOT actual compatibility.
+Composite6+2 adapter68b8bd1a retains exact disjoint cover/session/source/basis/hash and
+UNKNOWN before replay for missing/duplicate/wrong required source.
+Native24checks/Decimal50 cover one .005initialNAV20session cohort, not daily
+freshcapital or20samples. All actual futureprices/replays UNKNOWN.
 
-Kepler completed actual price/fundamental20 panel c3e29a80 and separately
-gated evaluation525d20eb. Source acquisition alone is not panel readiness.
-Panel A/data/current-price-fundamental20-asof-input-20261021-v1/CONSUMER.json:
-FIT11091input/10901known/1258dates,INNER6017/5882/625dates,
-PRED425/51dates/minimum8members. Same input-only BASE/FUND keys/affines,
-physical20-session purges, no balanced future-completeness membership filter.
-Evaluation pred-eval-r1/CONSUMER.json525d20eb:425known targets/70markdates/
-25axis, one original mark decode after20658e47policy/model seals, full DTO
-saved BEFORE semantic checks. DataFINAL52.426845upper/allwriters joined.
-Engine resultb3136546 properPASS/financialFAIL; no rederivation/refit.
+## Completed Actual Inputs / No Redo
 
-- Current25 source COMPLETE:
-  A/data/current-sec-current25-companyfacts-submissions-20261021-v1/CONSUMER.json
-  dbf616bed5b5b9c87c3513bbab960170e0f648ec385d405eb0cba97d2fe2288b.
-  43 new accepted GET/6 reused documents/24 complete source pairs;
-  115228371 total bytes,18 four-concept issuers/14 recent matching contexts.
-  AMD/AMZN/DIS/KO/LLY/VZ lack required Liabilities; XOM returned identity
-  mismatch, so no CompanyFacts request or silent CIK substitution.
-  89active upper/379.607elapsed/all clients/children closed.
-- Historical metadata owner:
-  A/data/current-sec-current25-historical-submissions-20261021-v1.
-  Initial result is partial:11GET/10 accepted schema pages, Native ValueError,
-  declared cursor remains. Accepted HTTP is not schema acceptance. Preserve
-  original result/costs. CONSUMER45a34547:13of18histories complete,
-  223strict contexts10issuers/37activeupper/alljoined. CVX descriptor has
-  two later non10-Q rows; retained-byte QA, not a reason to refetch.
-  Actual panel/evaluation above used accepted sources/Strategy kernel,
-  <=300active3600elapsed/no new GET; historical cursor is not a global hold.
-  No global API/approval hold.
-- Strategy source:
-  A/research/current-price-fundamental-ablation-hypothesis-20261021-v1/PROPOSAL-r2.json.
-  Pure asof-kernel-r1 is assigned to Confucius. One20-session hypothesis:
-  exact original10-Q accession/current report-quarter/USD/standalone70..110
-  days, same income/revenue start/end and balance-sheet end. Two-full-session
-  lag after acceptance or explicitly labelled filed-date proxy; prior CLOSE
-  cutoff, no later-filing/revision backfill. Current vintage is NOT PIT.
-- Next consumer: seal common input-only eligibility/50-column BASE/FUND
-  features before separate rawLOG20 labels/marks. Need >=5 eligible members
-  per scored entry for common full-mass Top5; unsupported geometry is UNKNOWN,
-  not a hidden Top1/date-crop/missing-neutral fallback. Labels never select
-  input membership. Data must expose actual source/schema/row-key ABI.
+- Patch512 join:
+  A/data/current-fundamental20-patch512-input-20261021-v1/CONSUMER.json
+  3601a19602c428f2a53fe80515bc2c988eb1a403814b96d673adc92c94781940.
+  FIT11091/INNER6017/PRED425originalkeys/all512known/0unknown;24native+
+  15independentchecks/one derivation/65upper/alljoined/0label-model-GPU-API.
+  FP32[N5121]=log(FP64 CLOSE)-log(lastpriorCLOSE), e-512..e-1. FP64late29
+  unchangedFUND[:,21:50], frozenR21 parity. Engine must not invert/re-log
+  sequence or require standardized filing-age>=0. Source currentvintage/
+  providerfields/nonPIT/CA/finality limits remain, not validBar proof.
+- Prospective FUND20:
+  A/data/current-fundamental20-prospective-input-20261021-v1/CONSUMER.json
+  216cec35/FEATURESa0374157:actual00:45:59UTC/8eligible17unknown, maxcomponent
+  Oct20 23:49:31UTC BEFORE Oct21OPEN13:30UTC. Same FIT affine, explicit
+  natural-head22 vintage/BASE last2zero AFTERscale.26.787937upper/noGET.
+  Actual Engine point0996dabb committed01:01:46UTC, targetNov17CLOSE21UTC
+  including DST. No rederivation/reforecast; missing members not neutral.
+- Historical FUND20 c3e29a80:
+  FIT11091input/10901known/1258dates;INNER6017/5882/625;PRED425/51dates>=8.
+  Input-only support/affines, physical20sessionpurges/no future-completeness
+  membership. Separate pred-eval-r1/CONSUMER525d20eb:425known/70markdates/
+  25axis after original seals, exact reusable evaluation not fresh holdout.
+- Chronos2 O/C512 7afc4b93:425rows/51dates/8-9members, causalpriorCLOSE
+  anchor/positivefiniteO-C. Consumer914fa4f9 closed peer financialFAIL.
 
-Older WWW ticker-map403 is scoped, NOT all-SEC unavailability.
-DataHost AAPL7824f41c and three-issuer e8c16d73 succeeded using official
-no-auth paths and truthful client. No proxy/header rotation/signup invention.
-Raw JSON stays M; source hashes/consumer summaries A; no market bytes Git.
+## Sources / Current Feeds
 
-## Natural Feeds And Current Input
+Natural Oct20 chains2113ede9 accepted29queries but old Window21 basis guard
+fails revised lastshared Oct19 fields;2842rows unchanged/29changed.
+Not request-parameter failure, no silent c705 substitution or oldguard PASS.
+New explicit natural-head22 SOURCE1b3df899/extractor138035df/READY4fb68aac/
+INPUT5817e3ab/vintage7d8f4fe2 proves25x22/29SYN+actual producerwire.
+R5SOURCE8f1c212a ACTUALsameTask actiondeployment3330a61c consumes it.
+Original RTH21:50/old20D122:30/new9D123:00UTC owners unchanged.
+Snapshot88bca32e exits before token bridge outsideRTH. No coordinator.
+Do not infer collector activity, API counts or publication from exit/latest.
 
-- Fresh Oct20 stock input:
-  A/data/current-oct20-early-postclose-input-20261021-v1/vintage-r2/CONSUMER.json
-  c70569b2; join-binding-r1/COMPANION.json8010abe1.
-  All25 routes22/512 closes/98 canonical overlaps each;25GET2POST/0retry,
-  last observed20:39:07.659552UTC. New coherent vintage, not old Task/profile
-  qualification or first-publication/finality/corporate-action/PIT proof.
-- ETFs7bdfc250 stay separate MODP0AMS throughOct19/e-2, no stock-field splice.
-- Natural RTH21:50/old20D122:30/new9D123:00UTC unchanged. Last31e3f4ce
-  inspection at21:53:55UTC: RTH Running/outcome unknown; old20/new9 exact
-  Oct19 chains valid; Window21f3711b38 pins matched. New Oct20 outcomes need
-  exact source/job/session/capture binding after owner quiescence.
-- Snapshot88bca32e exits BEFORE token bridge outside RTH; no coordinator.
-  Existing measured token/pacing contracts remain scoped. Do not infer
-  collector activity, API counters or readiness from task exit/latest cache.
+SEC current25dbf616be:43newacceptedGET/6reused/24pairs/18four-concept issuers,
+not asof/PIT qualification. Historical45a34547:11GET/10accepted/13of18
+histories/223contexts10issuers; CVX schema-bound cursor partial, no globalhold.
+Pureasof kernel60bbea7c/44checks enforces exactoriginal10Q/USD/standalone
+samequarter/sameaccession/end plus acceptance-or-labelledproxy2sessionlag.
+No ad hoc YTD/revenue/CIK aliases or missing-neutral repair.
+Old WWW ticker-map403 is not all-SEC unavailability. Raw JSON M, hashes A.
+Earlier c70569b2/8010abe1 coherent manual vintage and ETFs7bdfc250 MODP0AMS
+are separate, never hidden source equivalence. OHLCfidelityada1665a18badrows
+upstream does not make positiveCLOSE-only studies valid fullBar/PIT evidence.
+Deep old cursors/manifests/contracts/debits stay Git/immutable A.
 
-## Completed Inputs And Consumers
-
-- Matched OOF4063320f at
-  A/data/current-halfpool-chronological-gate-input-20261021-v1/CONSUMER.json:
-  four role-local shared-affine folds, TRAIN input/known29775/29675,
-  36075/35975,42025/41925,FINAL44975/44875. OOF6300/5850/2950,
-  FINAL1650 byte-reused.100 purge-only labels regenerated from pinned sources,
-  not imputed; ALLTRAIN boundary inputs retained in affines.32checks/60upper.
-  FINAL feature companion300fda82:1650rows/66dates/bit parity/28checks/20upper.
-  Consumer OOF c04d7aeb is CLOSED financial FAIL; no input rederivation/refit.
-- Held-exit source adapter e6ece7ce:
-  A/data/current-held-exit-causal-state-producer-20261021-v1/SOURCE-READY.json.
-  rawFP64[25,23], exact capture/cohort/OPEN/CLOSE clocks/UNKNOWN flags,
-  50SYN/4NPZroundtrips/54.397upper; source, not future market evidence.
-  Installed shadow d33490c9 consumes exact HALF cohort. Entry market OPEN
-  is not a private fill; future decisions/marks remain UNKNOWN.
-- Continuous label fccf18d2 and intraday71bd28b4 completed, consumed by
-  887257b7/cd1b4cc0. Negative/zero raw returns valid; nine-session intraday
-  support175/180 is not175 independent samples or a GPU-training obligation.
-- Retained OHLC fidelity ada1665a:18 bad rows already inconsistent upstream,
- 72 neighbours match exact provider OHLCV; no parser/scaling cause found.
-  Never invent HIGH/LOW or claim valid Bar/PIT from close-only studies.
-
-Older source manifests, capability boundaries, failures and completed package
-histories remain Git264a2b0 and immutable A, not stale ready dispatches.
-Storage keeps15percent D free/warn projected20. Current source/control
-authority5c229e4a is reusable only on exact equality plus fresh external checks.
+Storage15percent D free/warn projected20, latestD1.56TB/4TB free.
+Fresh tracked Paper20 authority82df0f69 covers1374sources5802dd71;
+exact equality required for reuse. It does not qualify arbitrary external
+data/worker code; native external/source checks remain separately required.

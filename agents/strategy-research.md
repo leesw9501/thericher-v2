@@ -16,8 +16,16 @@ still wins proper scores. Separate loss alignment from feature/model changes.
 SOURCE-READY8fb724bc/48loss-autograd checks PASS/source90+review60once.
 No market fit/GPU/holdout decode in Strategy; Engine owns actual training.
 Scalar pair's actual checkpoint0 caller failed before0optimizer updates,
-not a financial refutation. Keep old full conservativecaps; any unstarted
-RankNet first fit is separately accounted, no HUBER retry or paired-success claim.
+not a financial refutation. Old conservativecaps unchanged. Separately
+accounted firstRankNet now COMPLETE21CPUepochs/1638updates, RESULT54445662/
+readbacke9f5bbb6 financialFAIL. No HUBER retry or paired-success claim.
+Patch512 proposal d80f3902/43SYNchecks has actual Engine consumer54867822:
+oneCUDAfit21epochs/1638updates/higher growth-worse DD/overallFAIL. No refit.
+New fixed Patch/recurrent halfpool source53f53c7c/21SYN/Claude84ad5a4d
+completedbacc9f16 but EXACTrecurrentallocation alias/0new12cachedcells/
+financialFAIL, no diversification. No blend-weight rescue. Engine now uses
+retained FIT/INNER diagnostics to motivate ONE orthogonal next hypothesis,
+not a new model-name grid or extra PRED outcome intake. Strategy role closed.
 Primary mechanism: https://www.microsoft.com/en-us/research/publication/learning-to-rank-using-gradient-descent/
 
 Confucius completed source/SYN asof-kernel-r1 (60bbea7c/44tests):
