@@ -69,7 +69,8 @@ Codex owns direction, dispatch and integration, not every lane's implementation.
 - Dispatch disjoint ready packages in parallel. One owner per mutable write
   set; parent owns shared policy, goal, integration and Git. Multiple executors
   in a lane require disjoint writes/resources. Keep one active collector per
-  cache/account gate and one GPU training allocation.
+  cache/account gate and one GPU resource coordinator. Ready independent GPU
+  workers may run concurrently under that coordinator and measured headroom.
 - Prioritize actual Paper technical faults/unresolved owned positions; keep
   independent data/research preparation moving during repairs.
 - Workers own cooldowns/next_due. Do not foreground-wait for sessions/quotas
@@ -173,7 +174,7 @@ residual context/corpus limitations. No arbitrary public code in Execution.
 
 ### Research Steward: agents/research-steward.md
 
-Own exclusive GPU allocation and existing trial-family/holdout custody, not
+Own coordinated GPU resources and existing trial-family/holdout custody, not
 model choice or human approval. Allocate the first ready frozen campaign; use
 independent evidence/underrepresented hypothesis then bounded duration on a tie.
 Execution reliability preempts at a safe checkpoint. Old VRAM/time caps are not
@@ -181,6 +182,29 @@ global limits; measure free resources and keep desktop/runtime headroom.
 Missing fields defer only that campaign; other lanes/CPU preparation continue.
 Use existing registry/custody, not a new approval/report platform. No dummy
 training for GPU utilization.
+
+On 2026-10-22 KST the operator explicitly made this project the first GPU
+priority, including while personal apps or other external GPU work are active,
+and approved concurrent useful training. Unrecognized desktop/user GPU use is
+NOT a permission hold or a requirement to close apps. Do not require every
+GPU process to belong to a fixed application-name allowlist. Check actual
+free/projected peak VRAM and runtime headroom, then start ready work; use a
+bounded resource probe when capacity is unknown. Keep measured reserve for
+the desktop/driver, recheck before adding workers and adjust concurrency to
+useful throughput. Never kill user apps or change the driver to reclaim GPU.
+
+One existing Steward resource owner may coordinate multiple child workers
+from distinct ready frozen campaigns. Each retains its own data/split/seed,
+fit/update/evaluation/time caps, checkpoint/output paths and actual PID/start.
+Permission for concurrency does not add trials to an already frozen one-fit
+campaign or justify repeating completed training. Identify a possible duplicate
+owned project worker by exact campaign/PID/start/lease, not merely a Python or
+GUI process name; defer that campaign when its ownership is unresolved, not
+all unrelated ready work. Never age-reclaim a live/unknown owned lease.
+Record co-tenancy and per-worker time/peak VRAM; concurrent timings are not
+isolated benchmarks. On actual OOM, thermal/driver instability or emergency
+Execution need, checkpoint/yield/close safely and preserve failures/debits;
+no silent retry or invented convergence. No new agent/resource platform.
 
 ### Execution: agents/execution.md
 

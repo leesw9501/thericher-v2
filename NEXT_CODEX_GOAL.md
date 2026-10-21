@@ -41,15 +41,23 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
 3. Engine/Strategy: completed raw4model and maskedpretraining campaigns are
    CLOSED, no reruns. HGB development+5.716282percent initialNAV at10bp/leg
    is financePASS/properFAIL, not independent alpha. Masked warm-2.021362
-   underperformed cachedCold;0newCold fits. Noether prepares ONE direct
+   underperformed cachedCold;0newCold fits. Completed Source for ONE direct
    cross-sectional rank-loss Transformer plus fixedhalfHGB/halfRank ensemble
    at current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1.
-   Source/Data/native proof and finite numerical contract precede one newfit;
-   independent research continues during Paper recovery.
+   That Source is COMPLETEa17cec0a/actualnative and cachebindingPASS. ONE
+   ListNet CUDA marketfit STARTED15:23:57 at its developmentroot/
+   market-transport-repair-r1, parent12000active21600elapsed from14:44:44.
+   Noether now prepares distinct cross-stock attention/fixed3expert Source at
+   current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1. Operator
+   GPUpriorityFIRST/personalco-use/concurrentreadyjobs is recorded inAGENTS;
+   actualresourceadmission repaired, not another approval hold or extra trial.
 
 4. Einstein/Data: exact finitequiet16:10UTC continuation installation granted
    for prepared current-kis-modp1-rank5-historical100-continuation-20261021-v1,
-   sourcef4498f5d/worker94e05954/job4bae4675, result pending. No manualRun/
+   sourcef4498f5d/worker94e05954/job4bae4675. install-r2 CREATE1/ENABLE0/
+   principal-guard failure and unresolved rollback, no API/Run. Exact sameSID/
+   ownTask containment+repair under install-r3 granted, no substitute task.
+   Never infer enabled/disabled without actual safe readback. No manualRun/
    APIbefore16:10. Preserve0067/58CLOSED researchsnapshot;<=2288newGET/
    4000lifetime,1newPOST/3lifetime,4200active7200elapsed/APIcurfew18:00.
    Current Paper owners preempt. Worker owns next_due, not foreground wait.

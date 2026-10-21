@@ -15,7 +15,7 @@ Canonical English identifiers remain code/path keys; Korean names are display al
 | 시장데이터 담당 / 데이터 | Data Agent | data.md | Useful acquisition, canonical bars, availability and quality facts. |
 | 전략·지표 연구 담당 / 전략 | Strategy Research Agent | strategy-research.md | Official-source mechanisms, causal features and executable proposals. |
 | 매매 엔진 연구 담당 / 엔진 | Engine Research Agent | engine-research.md | Targets, models, training, replay, OOF fusion and interpretation. |
-| 연구 자원·평가 관리자 / GPU·평가 | Research Steward Agent | research-steward.md | Exclusive GPU allocation and existing trial/holdout custody. |
+| 연구 자원·평가 관리자 / GPU·평가 | Research Steward Agent | research-steward.md | Coordinated GPU resources/concurrent ready jobs and existing trial/holdout custody. |
 | 모의투자 실행 담당 / 실행 | Execution Agent | execution.md | Paper account/orders, deterministic risk, reconciliation and accounting. |
 
 Independent Validation (독립 검증), Infra (기술 환경), Claude/Review (반증 검토)
@@ -27,8 +27,10 @@ joint training. Historical infra.md/review.md stay retired.
 ## Parallel Work And Authority
 
 Disjoint Data, Strategy, Engine and Execution packages run in parallel.
-One owner per mutable write set; one GPU allocation; account/cursor gates remain
-shared. Steward is a resource owner, not a human approval. A package's research-
+One owner per mutable write set; one GPU resource coordinator may co-run ready
+frozen jobs with measured headroom; account/cursor gates remain shared.
+Project GPU priority/concurrency is explicitly approved even during personal
+GPU use. Steward is a resource owner, not a human approval. A package's research-
 only restriction never disables another lane's standing KIS Paper authority.
 Preserve the shared initial virtual-cash 10-percent basis and exact unknown
 request recovery. Paper does not wait for a profitable model.

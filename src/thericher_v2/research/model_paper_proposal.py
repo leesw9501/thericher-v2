@@ -23,6 +23,8 @@ from thericher_v2.research.decision_receipt import (
 )
 from thericher_v2.research.model_paper_horizon import (
     MODEL_PAPER_20_SESSION_PROFILE,
+    MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE,
+    prior_official_session_close,
     validate_model_paper_horizon,
 )
 
@@ -278,7 +280,12 @@ def prepare_model_paper_input(
 def validate_model_paper_input(value):
     _need(
         type(value) is ModelPaperInput
-        and value.profile in {MODEL_PAPER_PROFILE, MODEL_PAPER_20_SESSION_PROFILE},
+        and value.profile
+        in {
+            MODEL_PAPER_PROFILE,
+            MODEL_PAPER_20_SESSION_PROFILE,
+            MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE,
+        },
         "model_profile_invalid",
     )
     _need(
@@ -292,15 +299,30 @@ def validate_model_paper_input(value):
         "model_sessions_invalid",
     )
     first, last = value.entry_session, value.exit_session
-    _need(
-        value.metadata.score_observed_at
-        < first.open_ts
-        < first.close_ts
-        < last.open_ts
-        < last.close_ts,
-        "model_session_clocks_invalid",
-    )
+    if value.profile == MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE:
+        _need(
+            first.open_ts
+            < value.metadata.score_observed_at
+            < first.close_ts
+            < last.open_ts
+            < last.close_ts,
+            "model_session_clocks_invalid",
+        )
+    else:
+        _need(
+            value.metadata.score_observed_at
+            < first.open_ts
+            < first.close_ts
+            < last.open_ts
+            < last.close_ts,
+            "model_session_clocks_invalid",
+        )
     validate_model_paper_horizon(first, last, profile=value.profile)
+    _need(
+        value.profile != MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE
+        or value.metadata.feature_window_end == prior_official_session_close(first),
+        "model_prior_session_close_invalid",
+    )
     _need(
         value.profile != MODEL_PAPER_20_SESSION_PROFILE
         or value.metadata.exit_not_before == last.close_ts - timedelta(minutes=15),
@@ -330,7 +352,12 @@ def load_model_paper_input(
 ):
     """Verify source/temporal/target bindings before the native target-loader handoff."""
     _need(
-        expected_profile in {MODEL_PAPER_PROFILE, MODEL_PAPER_20_SESSION_PROFILE},
+        expected_profile
+        in {
+            MODEL_PAPER_PROFILE,
+            MODEL_PAPER_20_SESSION_PROFILE,
+            MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE,
+        },
         "model_profile_invalid",
     )
     _need(

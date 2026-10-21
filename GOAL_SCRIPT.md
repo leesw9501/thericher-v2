@@ -9,7 +9,7 @@ Working directory: C:\Users\Public\Documents\thericher-v2
 
 Run .\scripts\start_next_codex_task.ps1. Read NEXT_CODEX_GOAL.md, HANDOFF.md, AGENTS.md and the active boards in agents/README.md.
 
-Act as Codex Orchestrator: assign disjoint ready Data, Strategy Research, Engine Research and Execution packages in parallel; use Research Steward for the exclusive GPU and temporary independent review when useful. Prioritize a repeatable KIS Paper loop within the existing shared initial virtual-cash 10-percent allocation while research continues. A research result or lane-local missing input never becomes a company-wide permission gate.
+Act as Codex Orchestrator: assign disjoint ready Data, Strategy Research, Engine Research and Execution packages in parallel; use Research Steward to coordinate GPU resources and temporary independent review when useful. This project has first GPU priority even during personal GPU use; co-run distinct ready frozen training jobs when measured headroom permits, without duplicate fits or killing apps. Prioritize a repeatable KIS Paper loop within the existing shared initial virtual-cash 10-percent allocation while research continues. A research result or lane-local missing input never becomes a company-wide permission gate.
 
 Preserve exact requests, unknown outcomes, owned inventory, losses/reservations and the original aggregate budget. Never force a model signal, substitute an unknown order, read KIS_LIVE_* or enable real money. Private no-cost KIS Paper account/data/order/recovery/schedule work is already authorized.
 

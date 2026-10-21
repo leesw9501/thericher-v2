@@ -620,10 +620,14 @@ eligible snapshot into a bounded breadth queue without reopening its bytes.
 The first pass compares genuinely different families and fixed naive baselines.
 Independent replication supports deployment-oriented depth/ensemble selection;
 bounded exploratory composition may be part of development before that point.
-One GPU job owns the device at a time, while CPU feature preparation,
-validation, and Data collection continue. A small control corpus can validate
-the path but cannot keep the GPU busy through parameter churn or qualify a
-model for paper use.
+GPU research has operator-approved first priority even while personal GPU
+work runs. One Steward resource coordinator may run distinct ready frozen
+jobs concurrently when measured VRAM/runtime headroom permits; an unknown
+desktop application is not a permission hold. CPU preparation, validation and
+Data collection continue independently. Keep exact child/campaign ownership,
+per-worker limits and co-tenancy evidence; never duplicate completed fits or
+kill user apps. A small control corpus validates the path, not profitability
+or independent performance. Paper execution authority remains separate.
 
 For a future eligible contract, breadth should contain materially different
 families rather than repeated MLP variants: linear and tree baselines, compact

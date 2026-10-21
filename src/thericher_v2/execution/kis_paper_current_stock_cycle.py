@@ -42,6 +42,7 @@ from thericher_v2.research.decision_receipt import (
 )
 from thericher_v2.research.model_paper_horizon import (
     MODEL_PAPER_20_SESSION_PROFILE,
+    MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE,
     model_paper_horizon_valid,
 )
 from thericher_v2.research.model_paper_proposal import (
@@ -425,7 +426,12 @@ def _validate_model_input(value, at):
     """Native typed admission; model research validation belongs in its loader."""
     _check(
         type(value) is ModelPaperInput
-        and value.profile in {MODEL_PAPER_PROFILE, MODEL_PAPER_20_SESSION_PROFILE},
+        and value.profile
+        in {
+            MODEL_PAPER_PROFILE,
+            MODEL_PAPER_20_SESSION_PROFILE,
+            MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE,
+        },
         "cycle_input_invalid",
     )
     _pin(value.input_ref)

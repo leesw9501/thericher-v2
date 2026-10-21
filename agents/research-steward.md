@@ -1,7 +1,7 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own exclusive GPU/trial custody, not model choice or human approval.
+Own coordinated GPU resources/trial custody, not model choice or human approval.
 Parent shared MD/Git; company NAS lifecycle UNFINISHED.
 
 ## Actual Resources / Ready Queue
@@ -14,22 +14,43 @@ or kernel time. Pretrain60/best50+warm22/best2/16624updates; cachedCold reused,
 Raw TCN/GRU/Transformer/Ridge also COMPLETE; no repeated fit.
 HGB/Ridge CPU family completed, CPU chosen intentionally; no GPU need.
 
-Next distinct queue is Noether SOURCE-only
-A/research/current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1:
-rank-loss Transformer plus fixed HGB composition, one newfit hypothesis.
-Source/data/native/finite numerical authority must be ready; current source
-preparation is not a running allocation or new requirement for human approval.
-Wegener closes masked evidence and prepares the new fitter ABI; parent urgent
-Paper repair/Boole Execution/Data continuation proceed independently.
+Current15:29UTC: Wegener actual ListNet marketfit STARTED15:23:57 oncuda:0,
+Torch2.7.0+cu128; forward events37244 at15:27:31, not a planned allocation.
+A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/market-transport-repair-r1/out/FIT-STARTED.json.
+Resource admission2c78a663 actually ran4CPU/CUDA SYNupdates, native1100.982447
+upper, then14cachebindingchecks/100600orderedkeys211.591451upper.
+Parent12000active21600elapsed anchor14:44:44/deadline20:44:44,
+Source1014.155471once/prep695.428467/onefit<=128ep25984updates/LATER0.
+Initial missing /kernel.py import was BEFORE model/update; one predeclared
+mount repair does not repeat a completed fit. Oldfailures/debits stay.
+15:27 aggregate sample33percent/2776of24564MiB/45C, not isolatedGPUutilization.
+Current frozen campaign still allows ONE fit; no duplicate parameters/seeds.
+Noether prepares distinct cross-stock rank-attention/fixed3expert SOURCE at
+current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1, no numerical
+grant yet. Co-run only genuinely ready separately bounded work with headroom.
 
-Allocate first ready frozen campaign under one canonical exclusive
-A/engine-research-agent/locks/gpu.lock. Fresh actual PID/start/headroom facts,
+Operator2026-10-22KST gives projectGPUpriorityFIRST, allows personal/external
+GPU co-use and concurrent distinct ready trainings. Do not require an app-name
+allowlist/all GPUusers to be projectowned. Current exactblock: ShellExperienceHost,
+CalculatorApp,WINWORD were unrecognized; headroomPASS/knowntrainers0/GPUcontainers0/
+leaseabsent, no proof another training was running. Old gate failure preserved.
+Wegener owns new explicit admission/source/native qualification; no market
+fit starts inferred from policy or a plan. ClaudeSOUND_WITH_NAMED_LIMITS RAW7c78e806:
+A/review/operator-gpu-priority-20261022-v1/claude/RESPONSE.txt.
+No blanket unleased-Python hold adopted; possible duplicate owned campaign
+requires exactPID/start/source clarification, scoped to that campaign.
+
+Allocate ready frozen campaigns under one resource coordinator and existing
+A/engine-research-agent/locks/gpu.lock; multiple child workers are allowed.
+Fresh actual PID/start/free-and-projected-peakVRAM/headroom facts,
 no age reclaim, completed-training repeats or dummy GPU workload. Execution
 reliability preempts safely. Old duration/VRAM ceilings are campaign-local.
 Completed masked debit4680.0615224upper includesSource950.1130104 and
 prep649.948512 exception once; no refund or overwritten closed clock.
 Upcoming rank campaign will freeze its own attempted-fit/updates/evaluation,
-active-worker and end-to-end ceilings before numerical dispatch.
+active-worker and end-to-end ceilings before numerical dispatch. Record
+co-tenancy/per-workerwall/peakVRAM; noappkill, safecheckpoint/yield on actual
+OOM/thermal/driver trouble, unchanged one-fit trial caps and no hidden retry.
 
 ## Completed Useful Compute / No Repeat
 

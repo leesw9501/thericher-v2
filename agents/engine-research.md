@@ -7,15 +7,23 @@ Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current Queue
 
-Current asof14:37UTC. Completed fits are not current GPU workers.
-Noether owns SOURCE-only
-A/research/current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1:
-direct within-date rank loss, new single Transformer expert and fixed
-halfHGB/halfRank composition, cached HGB/rawTF controls.1200active3600elapsed
-Source cap; official primary sources/causal masks/chronological stopping/native
-optimizer proof/finite one-fit contract before numerical dispatch. No new
-marketfit/GPU grant inferred from a proposal. ReusedINNER is adaptive, LATER0;
-do not call it independent replication. Parent owns Paper repair in parallel.
+Current15:29UTC. Wegener actual ListNet CUDA marketfit STARTED15:23:57,
+forward events progressing15:27:31 at
+A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/market-transport-repair-r1/out/FIT-STARTED.json.
+Sourcea17cec0a/ce8ce782/26pure11native55independentchecks, Sourcefull1014.155471
+once; parentNUM12000active21600elapsed from14:44:44/deadline20:44:44.
+Prep695.428467/14pure; actualsamefitterCPU/CUDA4SYNupdates/nativetime1100.982447,
+14cachebindingchecks211.591451/100600keys/no controlrefits-reforwards.
+Newrankloss temporalTransformer +fixedhalfHGB/halfRank, max128epochs/pat20/
+25984updates/onefit/18INNERcells/LATER0. Initial transport /kernel.py import
+failed BEFOREanymodel/update; predeclared exactmountrepair, no second fit.
+Operator2026-10-22KST explicitly givesfirstGPUpriority/personalco-use and
+concurrentdistinctreadytraining; old desktopapp-name hold removed prospectively.
+Currentrankonefit/trial/selectioncaps unchanged, no repeated models for GPUload.
+Noether next SOURCE-only current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1:
+temporal+cross-stock permutation-equivariant rank attention, fixed
+.5HGB/.25currentListNet/.25newset expert; no numerical/current-outcome intake.
+ReusedINNER remains adaptive, not independent replication. Paper runs separately.
 
 New100 raw campaign COMPLETE at
 A/research/current-kis-modp1-ohlcv-rank5-development-20261021-v1/readout-r1/retained-review-binding-r1/RESULT.json

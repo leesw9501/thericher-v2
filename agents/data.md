@@ -13,6 +13,13 @@ CONSUMER86479b7a/sourcef4498f5d/worker94e05954/job4bae4675,
 18nativeSYN+15Taskmock+6refchecks/ClaudeSOUND_WITH_NAMED_LIMITS.
 Parent granted Einstein ONE finitequiet Task installation after exact current
 source/job/owner/unrelatedXML-ACL/rollback checks. Result pending, no manualRun.
+Current15:29UTC: install-r1 failedSnapshot CommandNotFound/0mutations;
+install-r2 CREATE1 then own_principal_mismatch/rollbackUNRESOLVED,
+0Enable/Run/API. Actualcurrentenabledstate notinferred. New install-r3
+sameSID-onlyidentity/ownTask containment+repair<=600active1800elapsed granted;
+old7475.203913debits once/future4200unconsumed, new projected12275.203913
+inside NEW12600integrationceiling (not oldcapPASS). Worker/source/GET/POST/
+windows unchanged. Do not rerun consumed installers or overwriteunknownTask.
 Prepared pythonw16:10UTC,APIcurfew18:00/workerend18:10,
 4200newactive7200elapsed; old5795.203913once+900Sourceonce, no refunds.
 <=2288newGET/4000lifetime,<=1newPOST/3lifetime, same validtoken/client/gates.

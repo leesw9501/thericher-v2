@@ -34,17 +34,22 @@ Masked pretrain60/best50+warm22/best2 COMPLETE/16624CUDAupdates/FAIL/LATER0;
 A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json.
 GPUreleased, not still training. Next rank-loss Transformer/fixedHGB composition
 Source at current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1;
-new fitter preparation is not numerical authority/runningGPU/deployment.
+That campaign now hasactualparentNUM andCPU/CUDAnative/data bindingPASS;
+ONE ListNet CUDA marketfit STARTED15:23:57UTC at developmentroot/
+market-transport-repair-r1, no cachedcontrol refit/extra trial. New next
+cross-stock Source is preparation, not a running model or numerical grant.
+OperatorGPUpriorityFIRST/personalco-use/concurrentreadytraining is recorded
+inAGENTS/DECISIONS; old desktopapplication-name hold superseded prospectively.
 
 ## Verification
 
 Current actual tracked authority:
-D:/thericher-v2/model-artifacts/verification/current-nas-stable-exit-decision-20261021-v1/authority.json
-b714b92f6dfa187fa22e73402711a63c25adfdb72785d0fe7abfcf850785bda5.
-1374sourcesfb305047/143focusedserialPASS/18623fullPASS25skip35warnings/
-18648collected/8workers386.85s/cleanhelper exit0/Ruff/three sample-envComposePASS.
-Snapshot first captured during fullrun and equalafter; fullJUnit/log not
-separately retained. Exact command/tool evidence is recorded, not invented.
+D:/thericher-v2/model-artifacts/verification/post-open-paper-gpu-policy-20261022-v1/attempt-r2/authority.json
+760d736cfff63cefd346aeae8014700aca113151b59ff50766fc2589d86ed508.
+1375sources123a2072/259rolefocusedserialPASS matchedtrackedhashes/
+18659fullPASS25skip/18684collected/8workers/cleanhelperexit0/Ruff/3ComposePASS.
+Freshbefore/after sources+AGENTS/DECISIONS exact; fullJUnit/logs retained.
+Initial CLIarray argument failure was beforepytest; preserved independently.
 Independent source review160PASS/no findings acf3c03c:
 D:/thericher-v2/model-artifacts/review/current-stable-exit-source-independent-20261021-v1/RESULT.json.
 Docs/external reuse needs fresh exact production/control equality plus actual
@@ -65,12 +70,18 @@ market M/models A. Preserve unrelated %SystemDrive%/; explicit staging only.
 
 ## Current Paper Opportunities
 
-Parent tracked stable-exit-decision fix is verified but NOT deployed. It
+Parent tracked stable-exit-decision and opt-in postOPEN profile are verified,
+not yet actually deployed in a new image/Task. The former
 retains actual firstdecision perbasket/session beforeclient/network; pending
 recovery/quote120s/bank/ownedinventory unchanged. Historical denial cause
 UNKNOWN: latest readonly diagnostic failedsnapshotbeforebuilder. Inspect exact
 original8 terminalclosure first; do not retarget a completed owner.
-Boole owns disjoint HGBPaperprep; tentative16:00..16:30UTC is not installed.
+Boole owns disjoint HGB deployment-r1 CPUimage/quietTask prep; tentative
+16:00..16:30UTC is not installed. Newprofile actualinput8c192808/policycd1d8572
+preserves olddefaultbytes and actual13:41publication/priorOct20CLOSE.
+Data continuation install-r2 createdownTask,principalguardfailed/rollback
+unresolved,0Enable/Run/API; install-r3sameSID-onlycontainmentrepair owns it.
+Never infer currentTaskenabled/disabled from an installation failure.
 
 - Original8NAS: image876/source d2d4b108, exitOct21>=13:40UTC=22:40KST.
 - Window21 R5 SAME original -r2Tasks: prep13:10/entry14:00UTC,

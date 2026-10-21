@@ -10461,3 +10461,31 @@ owned Paper PnL may be measured with its source/fee/settlement limitations;
 provisional status is not a blanket ban on measuring it or an alpha claim.
 Claude REVISE is advisory; address its scoped identity/asof/envelope risks.
 D:/thericher-v2/model-artifacts/review/current20-ensemble-paper-and-quantile-20261018-v1/claude.json
+
+## 2026-10-22 KST - Project GPU Priority And Useful Concurrent Training
+
+The operator explicitly assigns this project first GPU priority, permits its
+work while personal apps or other user GPU workloads run, and permits multiple
+useful model trainings concurrently. This supersedes a blanket single-training
+rule and application-name/unknown-GPU-consumer permission holds. It does not
+authorize killing apps, resetting another owned worker, extra scientific
+trials, changed broker risk or maximizing utilization with dummy/repeated fits.
+
+Consumer: unblock the ready KIS100 ListNet/HGB rank-ensemble native/fitting
+loop, then co-run distinct ready research when measured capacity permits.
+Keep one existing Steward resource coordinator, exact child/campaign/PID/start
+ownership and measured free/projected-peak VRAM with desktop/driver reserve.
+Resample before additional workers; record co-tenancy/per-worker clocks/peak
+memory. Possible duplicate project ownership defers that campaign only.
+External/GUI GPU use alone does not require more human approval. On real OOM,
+thermal/driver trouble or emergency Execution demand, checkpoint/yield safely;
+preserve attempted fits/failures and unchanged frozen counters/criteria.
+
+Claude SOUND_WITH_NAMED_LIMITS, advisory only. Adopt resource reserve,
+co-tenancy, exact project-worker identity and no-app-kill warnings. Do not
+adopt its blanket unleased-Python hold: the operator also authorized co-running
+with personal/external GPU work. Unknown ownership must be scoped to a possible
+duplicate project campaign, not inferred from a process name. Policy/source
+changes are not evidence that training actually started or deployed.
+D:/thericher-v2/model-artifacts/review/operator-gpu-priority-20261022-v1/claude/RESPONSE.txt
+Raw SHA256 7c78e80657c649fb6baed88b32d6acde9e80bd81380045db96ce9179e7792b82.
