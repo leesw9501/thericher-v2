@@ -6,41 +6,30 @@ Parent shared MD/Git; company NAS lifecycle UNFINISHED.
 
 ## Actual Resources / Ready Queue
 
-Chronos FULL first-market-noresume-r1 COMPLETE, Boole closed:
-1CUDAmarketfit200updates/32.754145fitseconds/INNERpatience4/best0.
-No active trainer inferred from old clocks. FINALa52042b2/ABI04e23f51/
-independent-readback8dbc9fdc. Allactorsjoined/canonicalleaseRELEASED.
-Family880.651405activeupper/5400; lifetime4GPUallocations/2SYNfits+
-2SYNupdates/1marketfit+200updates/10constructors/5saves/6restores.
-Old failednative/parity cause UNKNOWN, never regraded as PASS.
-Actualselected safe coldparity passed beforePRED under explicit EVAL/frozen/
-inference_mode/MATH. Physical51forecasts/1outcome/3replays consumed, but
-ADAPTEDexactweightaliasoldISOLATED =>0uniqueincrementalcells. Pre-outcome
-alias dedup OMITTED: protocol deviation, no refund or newmodel winner.
-No extension/retry/baselineforecast to occupy GPU.
+As of14:37UTC masked pretrain/warm is COMPLETE; no active GPU trainer inferred.
+Actual training/inference ended14:08:59, all owned actors joined/lease released.
+Native13.093+market342.83=355.923GPUleaseupper seconds, not sampledutilization
+or kernel time. Pretrain60/best50+warm22/best2/16624updates; cachedCold reused,
+0Cold refits/forwards. Closure852405bb/240checks/oneINNER15cells/FAIL/LATER0.
+Raw TCN/GRU/Transformer/Ridge also COMPLETE; no repeated fit.
+HGB/Ridge CPU family completed, CPU chosen intentionally; no GPU need.
 
-| Owner | Next Resource / Consumer |
-| --- | --- |
-| Einstein / Data | Collector PARTIAL_CLOSED5d6cafff/alljoined; source-only future-due guard repair600, no newAPI/token/GPU/Task. |
-| Hubble / Data | New100 actual-wire/SYN qualified34970e11/2dfc3d9f; metadata b574ac99, no primary numeric materialization yet. |
-| Wegener / Engine | Joint fitter READY a6948053/ABI7cb8e949/18SYN+8bindingchecks; parent d74f2d25 permits actualnative then Data-bound firstfits, not an idle GPU reservation. |
-| Boole / Execution | TCN purewire COMPLETEc417b67f/42+45checks/631.260upper, closed, no deployment. |
-| Noether / Strategy | Joint Source READY adac78ea/2458.459274upper, now independent due-guard Claude challenge120; no marketmodels/GPU. |
+Next distinct queue is Noether SOURCE-only
+A/research/current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1:
+rank-loss Transformer plus fixed HGB composition, one newfit hypothesis.
+Source/data/native/finite numerical authority must be ready; current source
+preparation is not a running allocation or new requirement for human approval.
+Wegener closes masked evidence and prepares the new fitter ABI; parent urgent
+Paper repair/Boole Execution/Data continuation proceed independently.
 
-Allocate FIRST ready frozen qualified campaign. Completed OOF/intraday cannot
-reserve or repeat work against a new ready campaign. Fresh exact PID/start/
-source/headroom before each allocation,
-oneGPUowner. No age-reclaim or permission wait for ordinary technical faults.
-Canonical A/engine-research-agent/locks/gpu.lock.
-Next concrete training is three NEW first-fit sequence experts, not reruns of
-completed chart/fixedseed/Chronos/ETF studies. All3 actual CPU/CUDA optimizer/
-checkpoint/gradient/pace checks precede market fits under one allocation;
-measure warmed wholeloop separately from coldsetup. Max128/pat20/bestcheckpoint
-incl0, finite shared caps/3NN counters, no dummy utilization. Current Source/
-input/prep readiness is not evidence of an active trainer or a numerical grant.
-RTX4090 total24564MiB/used1578MiB at06:44 query, not permanent headroom.
-Keep desktop/runtime headroom; source d5101955 signed-desktop classification
-is scoped, not a blanket process exemption. Execution preempts safely.
+Allocate first ready frozen campaign under one canonical exclusive
+A/engine-research-agent/locks/gpu.lock. Fresh actual PID/start/headroom facts,
+no age reclaim, completed-training repeats or dummy GPU workload. Execution
+reliability preempts safely. Old duration/VRAM ceilings are campaign-local.
+Completed masked debit4680.0615224upper includesSource950.1130104 and
+prep649.948512 exception once; no refund or overwritten closed clock.
+Upcoming rank campaign will freeze its own attempted-fit/updates/evaluation,
+active-worker and end-to-end ceilings before numerical dispatch.
 
 ## Completed Useful Compute / No Repeat
 

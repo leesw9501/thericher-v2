@@ -6,149 +6,62 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
-Einstein owns current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1:
-FINAL5d6cafff/12:28:10UTC1712chargedGET1711actual/1701pages162069rows/
-58CLOSED1PARTIAL33PENDING8UNAVAILABLE/POST2/alljoined. Fixed100 SHA256 before prices from512,
-sameNAS/MODP1/asof20261020/oldest20070820, no MODP0/fixed47 splice. <=4000GET
-including22oldcharged/21actual,12000active21600elapsed/hard12:55APIcurfew.
-Oldpreopener22 proven nondispatch; new client generation2 keeps olddebits,
-exactcursor and native1.25gate/residualIOcompensation, no completedpage refetch.
-Sourcea5a32af1; exactfinalmanifest recovery-r1/manifests/0067.json81ad6523 under
-M/us_equities/research_inputs path.137469 admissible CLOSED rows/5043.407856upper.
-Not full100 history/CA/PIT/finality qualification. Partial retains100axes/masks/
-cursors, no replacement or curfew extension. No active collector: anonymous
-futureTaskdue35.8s guard exited despite READY/zero actual owners, not quota.
-PRIORITY-GUARD-FIRST-CAUSE.json records proof; source-only600 repair/Claude
-challenge separate, no newAPI/token/Task effect or oldclock extension.
+Current asof14:37UTC. No activecollector inferred.
+New exact continuation root:
+A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1.
+CONSUMER86479b7a/sourcef4498f5d/worker94e05954/job4bae4675,
+18nativeSYN+15Taskmock+6refchecks/ClaudeSOUND_WITH_NAMED_LIMITS.
+Parent granted Einstein ONE finitequiet Task installation after exact current
+source/job/owner/unrelatedXML-ACL/rollback checks. Result pending, no manualRun.
+Prepared pythonw16:10UTC,APIcurfew18:00/workerend18:10,
+4200newactive7200elapsed; old5795.203913once+900Sourceonce, no refunds.
+<=2288newGET/4000lifetime,<=1newPOST/3lifetime, same validtoken/client/gates.
+Fresh Paper owners preempt; no account/order/live calls, schedule expansion,
+rawoutput or foreground due wait. Worker participation is partial, not proof
+of a universal account lock. Preserve existing named gates and source limits.
 
-Hubble owns current-kis512-ohlcv-rank5-input-20261021-v1/actual-wire-qualification-r1:
-FINAL WIRE_QUALIFIED_NO_MARKET_NUMERIC_GO, Source34970e11/ABI2dfc3d9f/
-SYN3bf1cb39. Metadata-only joint handoffb574ac99/cumulative540.177250upper600;
-oldprep880.063479 remains, zero primary numeric decode. Actual6fields
-xymd/open/high/low/clos/tvol; complete_observedFALSE/finalityNOT_OBSERVED,
-officialNYcalendar interval_elapsed is separate, missing numeric never filled.
-R2 Sourcee8de902d/Request17df371d and pending joint4model inputs are equivalent
-except primary LATER release now fixedmean3DL. Primary numeric<=2023 only;
-conditional secondLATER pass requires exact ensemble INNER conjunctionPASS.
-Independent all-history acquisition is allowed. Actual materialization grant
-and exact immutable index admission remain pending; no model/GPU/API here.
+Old exact collection is CLOSED:
+A/data/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1,
+FINAL5d6cafff/12:28:10UTC/manifest0067 SHA81ad6523 under
+M/us_equities/research_inputs/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1/manifests/0067.json.
+58CLOSED/1PARTIAL33PENDING8UNAVAILABLE;162069canonical/137469admissible rows,
+1712chargedGET1711actual/1701pages/2POST/alljoined/5043.407856upper.
+Old22charged21actual and preopener nondispatch evidence remain; no refund or
+completed-page refetch. Stop was inherited anonymousfutureTaskdue35.8s guard
+despite READY/zeroactualowners, NOT provider quota. Exact oldTaskidentity is
+unknown, not proven irrelevant. Oldsource-onlyrepair602a8c53/14SYN was not
+installed; future continuation has a separate exact profile/clock/thirdPOST.
 
-Current monthlyETF Data COMPLETE:
-A/data/current-etf-monthly-trend-input-20261021-v1/CONSUMER.json c0dec858
-(fullSHA in FINAL). Onecoherent retainedTiingo rawCSVpass/21862source rows/
-15294selectedpairrows/6876commonsessions/167DEV71INNER66LATER origins,
-253priorCLOSE/split masks; all input andheldintervals known. Source0d425170/
-VERIFYa0339f9c/420.181459upper/alljoined/0Engineforecast-PnL-model-GPU-API.
-3input+3isolatedcustody packets/258026bytes M. Inputseal beforeOPEN/dividend
-decode; conditionalLATER Enginephase0 until exactINNERpass. ExdateCLOSE
-dividend collection researchproxy, not observedpayment/settlement/PIT.
+Fixed100 selected beforeprices by SHA256 from currentNAS alphabet-derived512;
+sameNAS/GUBN0/MODP1/asof20261020/oldest20070820. No currentliquidity/PIT
+membership, raw0/fixed47 splice, complete-universe or globalCA/TR claim.
+Old0067 researchsnapshot stays frozen even after new continuation-r1 acquisition.
+Native xymd/open/high/low/clos/tvol has no complete_observed field:
+calendar interval_elapsed is separate; providerfinality/arrival NOT_OBSERVED.
+Unknown numeric/rows remain unknown, no imputation or future-label crop.
 
-BreadthPLAN062576cc at current-daily-equity-breadth-readiness-20261021-v1
-COMPLETE210.028039upper/0marketnumeric/network. KIS512retained1,197,728rows,
-482zerogapassets/30gapped; currentNASalphabetAAL..CTRN bias, not100qualified
-liquidUSstocks. Fixed50adjusted has47stocks, useful not100. Yahoo1300retained
-but reuse-rights/actualsupport not newly established; Norgate trialretention
-unknown, no payloadopen. No acquisition needed for KIS historicalpreflight.
-Calibration current-kis-daily-adjustment-calibration-20261021-v1 COMPLETE:
-CONSUMER7e42e726/RESULTaf000ea0/791.146088upper900/4GET1POST/400rows/
-200paired dates, two dated AAPL2020/NVDA2024 split breaks removed in MODE1
-view. Not global CA/dividendTR/PIT/finality; old unresolved anchor preserved.
-Canonical4files M, alljoined; no repeat capability calls or account/order/Tasks.
+Raw primary COMPLETE06049fa4/ABIc30d9c97:
+TRAIN812inputdates808lossdates22694rows,CHECK248loss7201,
+INNER1006inputdates1002loss38319rows/all100keys retained.
+One primarymaterialization; directcachedFP32features/targetcustody, no rederived
+63windows each epoch. Prior raw-family primaryFAIL leaves conditionalLATER0.
+Oldconditionalplan3ebff252 and closeddebits remain; close unused, do not release.
 
-Close-chart Phase1 COMPLETE for the actual next MLP/CNN trainer:
-A/data/current-broad25-close-chart-rank20-input-20261021-v1/CONSUMER.json
-9b45a6a90158011d8e53f28d63e40a5300b10572f2f03e3e84e586de6813098f.
-TRAIN1094/checkpoint126/OUTER610dates,45750knownrows/compactuint8q64,
-typedmasks/orderedkeys/clocks; TRAIN/checkpoint tie-fairranklabels ONLY.
-13DataSYN/header/causality/maturity/invertibility/DTO/hashchecksPASS.
-OneFIT+oneINNERpass/5NPZ1,259,974bytes/312.015349activeupper600/
-388.508elapsed7200/alljoined. No persisted images/OUTER-PREDoutcomeopens.
-PREDnumeric/render0 CLOSED after actualchartprimaryOUTERFAIL a6bedbe3;
-no phase2dispatch/deadlinewait. Do not rematerialize completedphase. Original
-DATA_KERNEL_QUALIFIED_MODEL_NATIVE_PENDING is retained historicalclassification;
-actualfitter later qualified andcompleted edfb1906, not a remaining Datablock.
+Factor primary COMPLETE:
+A/data/current-kis100-technical-factor-tree-input-20261021-v1/CONSUMER.json
+ef871ebe/DTO56c606fe,onefactorpass/412.708634upper900/alljoined.
+Exact same100/rawpanel535e36f3/calendar masks; no rawCSVreparse/API.
+Ten fixedcausal factors Source79580be8/kernel a4f090be; no futurelabel/drop
+unknown. HGB primaryproperFAIL also leaves its oldconditionalLATER0.
 
-Cross-asset set20 input COMPLETE:
-A/data/current-broad25-cross-asset-set20-input-20261021-v1/CONSUMER.json
-7f5cc98f/SOURCEd7c63427;1094TRAIN/126checkpoint/610OUTER/51PREDdates,
-all25known/FP64[D25,8]. FiveNPZ3,384,023bytes,311.829909upper incl240prep+
-11.829909materialize+60verify/cleanup;elapsed1021.124/allactorsjoined.
-Oneoriginalfeaturepacketextract/nativeDTO-causality-clocks/freshhashPASS.
-OnlyTRAIN/checkpointlabels projected; OUTER/PREDfuturelabels-marks existing
-custodyunopened. No model/GPU/network/replay/sharedMD/Git. Hubble closed;
-reuse immutable outputs for seedstudies, no completedextract rerun.
-
-Hubble owns NEW current-broad25-purged-expert-gate20-input-20261021-v1:
-exact SOURCEd58bfabc/DATArequestf9dabe45 foldTRAIN/checkpoint/OOF feature
-and isolatedtarget custody, finalpair and separateINNER610entries/629marks.
-150active/1800elapsed/<256MiB output, rawmarketbytes M, no network/models/
-GPU/Tasks. Actualconsumer934d0685 READY/VERIFY PASS/39outputhashes/
-13feature11labelpackets/132702000bytes/95.829790upper/1derivation/alljoined.
-INNER629mark comparison READY, full625featuredates retained; no PREDoutcome
-payload opened. Hubble executor closed, no repeated materialization.
-No globalaffine/prior/quarter-complete-case filtering. OOFlabels admitted
-only after3predseals; outeroutcomes not mounted to base/gate fit workers.
-
-Noether intraday inventory COMPLETE:
-A/data/current-intraday-spy-qqq-research-readiness-20261021-v1/CONSUMER.json
-8f3ddf6d/VERIFY PASS/10nativechecks/23.676258activeupper.202856typedbars:
-retainedFirstRate2022Sep30..2023Sep29/251RTHsessions/SPY97526/QQQ97530,
-4SPYmissing/0OHLCV-duplicate-offgrid failures; separate2026ten-session
-sample3900each, notspliced. 5m/10m/1h/3h native support with explicit tails.
-Oldarchive timestamp/adjustment unknown, arrival/finality NOT_OBSERVED;
-nominal exploratory support, not KIS/PIT/source promotion. No acquisition needed.
-NEW c120-h60 producer owned: context120past1m, complete5m samehistory,
-every5minRTHorigin/1minute assumed entrylatency/60minute withinRTHhold.
-FIT2022Sep30..2023Apr28/INNERMayJun/EVALJulSep, allofficialsessions incl
-earlyclose/4gaps retained; compactindices/inputmask/futureknownness separate.
-150active/1800elapsed/<128MiB, no newmodel/GPU/API/Task. Actual0b8a8053 READY:
-20940keys/FIT12108known/INNER3612(3606input-lossknown)/EVAL5220known,
-sixINNER SPY inputs unknown from4gaps, endpoints+heldpaths known separately.
-22native/SYN+independent endpointchecks/21619616bytes/27.710076upper/
-1derivation/alljoined. No future-complete-case selection or source splice.
-Delta A/data/current-intraday-c120-h60-delay2-sensitivity-20261021-v1/
-CONSUMER.json89932212 READY: same5220EVALkeys/masks, entryo+2/exitbaro+61
-ends+62/60heldbars/allknown.18SYN+5220independentrowchecks/2560744bytes/
-10.962756upper/alljoined. Noether closed; labels/marks admitted onlyafterall
-compared model/policy seals. No repeated producer/primaryoverwrite/metrics.
-
-Noether: broader25 input/evaluation, currentpoint and Chronos adaptation COMPLETE;
-executor closed, no new GET/derivation needed.
-All25 price support on every date, no future label-completeness membership:
-A/data/current-broad25-price-input-support-20261021-v1/CONSUMER.json4831e9b5.
-FIT31450/1258dates, INNER15625/625dates, PRED1275/51dates/0inputunknown.
-R21=21prior log-CLOSEdiffs; inherited positive observed252CLOSE support.
-OHLCflagcounts FIT3744/INNER540/PRED0 do not enter close-only features;
-not new fullBar/provider-price/PIT qualification.
-
-Optional-proxy26:
-A/data/current-broad25-optional-proxy20-input-20261021-v1/CONSUMER.json17c3ea82.
-SOURCE134b2498/manifestbb062ecc/featuresb34b3410.
-R21/filingage/filedproxy/usablemask/netmargin/liab-assets, noID.
-Knownquartercontext FIT11091/INNER6017/PRED425; unknown20359/9608/850 explicit,
-no dropping/financial-neutral imputation. CONTROL/FUND differ only knownratios.
-FIT30975/INNER15250 supervisedrows after physical20session purges475/375;
-alltraininglabels known. LastFIToutcome beforeINNER, lastINNER beforePRED.
-Acceptance or labelled filed-end+2officialsession proxy is retrospective
-context, NOT PIT. Capture-after-origin/currentlisting/currentvintage/
-providerfields/CA/finality/metadata-value leakage limits remain.
-
-PRED evaluation:
-A/data/current-broad25-optional-proxy20-input-20261021-v1/pred-eval-r1/CONSUMER.json9c0bd613.
-1275keys/51dates/all25/70OPEN-CLOSEmarkdates/20session targets.
-Produced AFTER HGBactualpolicyseal4466b99a; old70marks reused, NOTold425labels
-or intersected completecase panel. Missing heldmark =>UNKNOWN.
-OneData economicderivation plus separately counted Engine readouts, not a
-globally one-physical-access claim. HGB/Chronos both now closed.
-
-Chronos512:
-A/data/current-broad25-chronos512-input-20261021-v1/CONSUMER.json0131fedf.
-1275allknown512 O/C/425exactcacheidentities/850new/0changed-unknown;
-23SYN+nativecompletionintake+50independent rawcontext checks.
-Relative-log lastpriorCLOSE anchor, context e-512..e-1, official timesSECONDS.
-Exact source/provenance/rawselectedcontext/features/model/mode match,
-no source-tail equivalence exception used. Oneactualderivation/69.460864upper.
-No modelcalls/labels/API/GPU/Task/Git. Banach executor closed.
+Separate current operational factor input COMPLETE:
+A/data/current-kis100-technical-factor-tree-current-input-20261021-v1/CONSUMER.json
+f677e083/DTO28877304/480.170750upper600/alljoined/onecurrentmaterialization.
+100keys/57known43unknown,exactlast63officialbars throughOct20 fromfrozen0067.
+NoAPI/oldLATERevaluation release. Engine point8d762d11 published13:41:23UTC
+asPOST_OPEN_PRIOR_SESSION_SIGNAL,not prospectiveOPEN/PIT/finality evidence.
+Do not materialize another current snapshot or repeated old input without a
+concrete consumer. New rank-loss family should reuse compatible cached tensors.
 
 ## Close Expert Packet
 

@@ -628,6 +628,41 @@ def _current_exit_session(at, earliest):
     return official.window
 
 
+def _exit_decision_at(record, pointer, session, earliest, eligible, at):
+    """Retain the actual first decision, not a moving quote-freshness boundary."""
+    active = record["active"]
+    saved = active.get("exit_decision")
+    if saved is not None:
+        _check(
+            type(saved) is dict
+            and set(saved) == {"input_ref", "session_open_ts", "decided_at"}
+            and saved["input_ref"] == active["input_ref"],
+            "cycle_checkpoint_invalid",
+        )
+        opened, decided = (_unpack(saved[k]) for k in ("session_open_ts", "decided_at"))
+        _check(
+            type(opened) is datetime and type(decided) is datetime,
+            "cycle_checkpoint_invalid",
+        )
+        previous = _current_exit_session(decided, earliest)
+        _check(
+            previous is not None
+            and previous.open_ts == opened
+            and eligible <= decided <= at
+            and opened <= session.open_ts,
+            "cycle_checkpoint_invalid",
+        )
+        if opened == session.open_ts:
+            return decided
+    active["exit_decision"] = dict(
+        input_ref=active["input_ref"],
+        session_open_ts=_pack(session.open_ts),
+        decided_at=_pack(at),
+    )
+    _save(pointer, record)
+    return at
+
+
 def _completed_flat(root, record, at):
     """Validate retained native ownership, never claim a fresh broker snapshot."""
     with _shared(root):
@@ -1073,15 +1108,17 @@ def run_kis_paper_current_stock_cycle(
                 or instrument.symbol in record["owners"],
                 "cycle_foreign_stock_registration",
             )
-            client = _client(client_factory, instrument, expected_account_ref)
             proposal, receipt = target.proposal, target.receipt
             if side == "sell":
+                decided_at = _exit_decision_at(
+                    record, pointer, session, exit_session, exit_eligible, at
+                )
                 proposal = replace(
                     proposal,
                     proposal_id=proposal.proposal_id + "-exit",
                     action="exit",
                     target_exposure=Decimal(0),
-                    decided_at=at,
+                    decided_at=decided_at,
                     valid_until=session.close_ts,
                 )
                 receipt = receipt_from_target_exposure_proposal(
@@ -1093,6 +1130,7 @@ def run_kis_paper_current_stock_cycle(
                         receipt.proposal_ref,
                     ),
                 )
+            client = _client(client_factory, instrument, expected_account_ref)
             try:
                 reads = (
                     client.stock_preview_snapshot(

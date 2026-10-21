@@ -7,116 +7,36 @@ Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 
 ## Current Mechanisms / Consumers
 
-Current distinct mechanisms:
-- New10063OHLCV/rank5 joint panel at current-kis512-ohlcv-rank5-proposal-20261021-v1:
-  Ridge/TCN/GRU/Transformer firstfits, primary fixed1/3 rawscore mean3DL.
-  Existing r2 elapsed-wire Sourcee8de902d/Request17df371d/13checks ready;
-  joint Source COMPLETEadac78ea/PROPOSALbbc949be/equivalencef82ece16 at
-  source/joint-ensemble-r1,38checks/2458.459274cumulativeSOURCEupper.
-  No marketfit/GPU yet. Same100/features/roles/costs, literal mean/no learned
-  weights/missingexpert fallback;7policies21cells/domain/max42. Review46e3472c
-  SOUNDlimits: Jensen shrinkage is not new information/alpha; zero reference
-  and economic conjunction remain. Official calendar maturity <=Oct20 is not
-  a request for future marks afterOct20; providerfinality remains unobserved.
-- Close-chart Source07ad5079/kernelbaabbcdf/modelc193b08c/22SYN21headers,
-  prior63Close q64 vs invertibleimage/MLP-CNN rank20. Owncode/no public
-  weights, Jiang/Kelly/Xiu DOI10.1111/jofi.13268 motivates, not reproduction
-  oralpha. Its competitiveimage-scaled1D is counterevidence. Nativeisolated
-  r2 failed strictJSON schedulerinfinity after2SYNupdates, retained. Actual
-  fitter laterqualifiedCPU/CUDA andcompleted edfb1906/CNN17GPU+MLP16CPU,
-  proper-financeFAIL/PRED0, no further standaloneproof/rescue.
-- ETFsource revision-r1 COMPLETEe3d15141/kernel d3be23e2/20SYN at
-  current-etf-causal-trend-allocation-proposal-20261021-v1/revision-r1.
-  One fixed253pastCLOSE split-normalized252trend/63RMS/monthlynextOPEN.
-  Split/dividendreceivable/exdateCLOSEcollection RESEARCHproxy, not observed
-  settlement/TR/PIT/Paperpromotion. Data c0dec858 actualcoherentTiingoCSV
-  supports167DEV71INNER66LATERorigins/allknown/0performance, no acquisition.
-  Engineactual-r1 COMPLETEb9f08a39/1951.834054upper/30cells/INNERFAIL/LATER0.
-  Strongestkill PRIMARYINNERgrowth>matchedgross ANDVOL_ONLY/PRIMARYDD<=1.25
-  EQUAL2. OnlyexactconjunctionunlocksLATER. No source reading-list backlog.
+Noether now owns SOURCE-only
+A/research/current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1.
+Question: does direct cross-sectional ranking align stock selection better
+than pointwise return MSE, and does literal halfHGB/halfRank diversify it?
+One suitable fixed rank objective/one new Transformer fit, chronological
+TRAIN/CHECK stopping, cached HGB/rawTF controls, same keys/costs/cohorts,
+official primary-source evidence and concise leakage/selection challenge.
+Source1200active3600elapsed; no marketnumeric/GPU/API/dependency change.
+Proposals must become executable kernels/contracts or concrete rejection.
+Adaptive reusedINNER/LATER0, not an independent performance claim.
 
-Einstein completed close-only trend/reversion expert source:
-A/research/current-broad25-close-only-expert-proposal-20261021-v1.
-SOURCEb0fa0cc3/kernel f0b8b7a5/proposal29631c4a/54checks.
-Exact existing Decimal EMA leaf reused, no fullBar/OHLC/volume dependency.
-Fixed prior252 SMA-seeded EMA20/60 gap / RMSRV21sqrt20; absT>=1 trendT,
-otherwise -Bollinger20z. No period/threshold/RSI grid, no new source information.
-Missing/mathundefined remains UNKNOWN, never neutral fill/crop.
-Data42562873 exactall25prior252/literalR21 packet/20checks, Engine108adapter
-checks and fixedhalf-rank recipe chosen04:31 BEFOREnewRNNresults.
-Actual Engine numerical974ce136 COMPLETE:one1275expertpass/oneblend/
-6new9exactcached/1intake/0model-GPU/alljoined. 10bp growth/DDpercentNAV:
-HALF+.603040/.255495 vsRNN+.590106/.332806/uniform+.294233/.207221,
-EXPERT+.284563/.286022. Improves RNN tradeoff, frozenuniform-DDscreenFAIL.
-REVERSION1252/TREND23/0unknown. No weight rescue or independent-alpha claim.
-Claude2b473a5d SOUND_WITH_NAMED_LIMITS; per-date regime shares/finalweight
-aliases and same fixed252 causal seed, not expandingEMA equivalence.
-Prospectivepoint ead52eb6 COMMITTED05:26:24UTC beforeOPEN, one25rowCPUforward
-and fixedexpert pass/onecomposition; no broker/Task/reforecast allowance.
+Completed distinct mechanisms, not ready-to-rerun workers:
+- Raw63OHLCV TCN/GRU/Transformer+Ridge and fixed1/3mean COMPLETE1e3469b3;
+  overallFAIL, despite lowerloss/DD thanuniform. New100 currentNAS sample.
+- Ten causal factor HGB/Ridge COMPLETE: HGB development+5.716282percent
+  at10bp/leg/DD4.789258, properFAIL/financePASS/overallFAIL. Separate
+  provisional point8d762d11 uses same selected model, no refit. Its old
+ 1percent MSE criterion is not changed; Paper authority remains independent.
+- Masked Transformer pretrain/warm COMPLETE:60/best50 then22/best2,
+  16624CUDAupdates/proper-financeFAIL/0LATER. Native exactequivalence
+  allowed oldCold reuse without another fit/forward.
+  A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json.
+- Old close-chart/ETF/set/fixedseed/Chronos/indicator/OOF families remain
+  immutable in Engine stateboard and original external roots. Do not hide
+  initialization-selected/alias results or rerun them to occupy GPU.
 
-Hubble completed NEW causal temporal-indicator input proposal:
-A/research/current-broad25-causal-indicator-path-proposal-20261021-v1.
-SOURCEa832daad/proposal32771cf4/37purekernel/headerchecks/92.155389upper.
-Exact same252priorCLOSE information supports fixed252x5:
-relative logprice, one-step logreturn, EMA20/60 gap, population band width,
-lag21 logmomentum. First59tokens use explicitly defined prefix warmup,
-not a future fullSMA seed; momentum C_[max(0,t-21)] is lag index, not maxprice.
-Shared FIT-only affine, intentional standardized-channel ablation:
-RAW/IND_ONLY/RAW_PLUS same5channels/252tokens/initialarrays/capacity;
-RAW_PLUS predesignated candidate, IND_ONLY not a PRED-selected fallback.
-Proposed causal TCN6residualblocks/dilations1..32/kernel3/width8/RF253.
-Reuse local residual/kernel leaves, no remote code/runtime replacement.
-Claudef3ec1ad7 SOUND_WITH_NAMED_LIMITS: sameINNERcheckpoint/arm comparison
-optimism, one seed, prefixwarmup and meanconstant ablations limit interpretation.
-Parent numericalGO3600TOTALactive/14400elapsed including source/review60once,
-one common feature pass/3firstfits/max128pat20/29952updates/oneintake15cells.
-Actual model/feature/native400row252x5+1000eval/fullstate/pace proof passed.
-Numerical FINAL3e792e3f/VERIFY PASS:3CPUfits65/39/38epochs/11076updates,
-CPU8.506s vsCUDA87.239s per epoch. RAW_PLUS proper/financeFAIL;
-IND_ONLY diagnostic highergrowth is not an outcome-selected scientificwinner.
-Safeweights/curves retained, oldcriteria/results unchanged.
-Question is inductive bias/learnability, not new predictive information/causality.
-
-Hubble allocation package:
-A/research/current-broad25-causal-risk-allocation-proposal-20261021-v1.
-ExistingData42562873 prior252 plus frozen RNNCONTROL/expert HALF; no IND_ONLY
-posthoc fallback. Propose ONE causal risk-aware allocation rather than another
-model/seed grid: samegross/turnover/cost/alignedrisky baseline, lower exposure
-is not alpha.120active/1800elapsed source/kernel/SYN only, no marketvalues/
-model/fit/labels/replay/GPU/broker/Task. Concrete consumer and strongestkill,
-official source/nativeAPI proof; no Execution-risk change or new reportplatform.
-SOURCEbd5ad691/kernel8e101aa6/56checks COMPLETE, Claudec3bd47fc advisory.
-Actual numerical-r1/FINALe071bc01/RESULT3e466255 COMPLETE51solves/1intake/
-6new12cachedcells/0models-GPU.10bp RISK+.530576/DD.175315percentNAV vs
-BROAD+.448637/.187780/HALF+.603040/.255495. PrimaryFAIL/no thresholdrescue.
-RISK lowers DD but sacrifices HALFgrowth; matchedBROAD isolates broadening.
-Literal currentpoint7c38f625 COMPLETE beforeOPEN, separate prospective
-research/no modelcalls-Task-Paper swap. PurgedOOF shallowgate also COMPLETE:
-FINALc9ea459f/RESULT6275a146/4CUDAfits12679updates/90.604708GPUworkerwall
-seconds. INNERGATE4.553505/DD2.114546percentNAV vsuniform4.813713/1.920805,
-frozenFAIL/PREDoutcomes0. OOF186/297 leaves shifted to INNER7RNN/603EXPERT.
-New SOURCE-only fixed252 strictlyprior empiricalpercentile hypothesis at
-A/research/current-broad25-causal-percentile-gate20-proposal-20261021-v1
-reuses4frozenmodels,0RNNfits. Model-conditioned retrospective calibration
-is not historicalOOF/PIT; currentforecast maturity and fullcalendar support
-must be explicit. No normalization retrofitted into the old closed recipe.
-Independent intraday pairedGRU compares fine120x2 vs fine+coarse24x2 from
-SAME120minutes information, not new data. Data0b8a8053/delay89932212 complete;
-ActualFINAL4f8690d8 COMPLETE2CPUfits60/96epochs/best48/86/7488updates,
-proper-financeFAIL/oneintake30cells/no retry. CUDA nativeonly4updates.
-Percentile source is PARTIAL/PARKED/late109s/RuffE731/headerproof incomplete,
-not sourceREADY/financialFAIL. No further normalizer/refit dispatch.
-
-Boole new SOURCE-only cost-aware price-volume attention/HGB family:
-A/research/current-intraday-cost-aware-price-volume-attention-proposal-20261021-v1.
-Fixed prior120minute technical/volume schema, paired smallattention + HGB
-summary baseline; exact fee hurdle/no forcedentry/same-entry uniform and cash.
-Noether OHLCVData7b637f27 COMPLETE/all20940keys/missingness/limits retained.
-Architecture inspiration only, not exact PatchTST reproduction or stockalpha:
-https://arxiv.org/abs/2211.14730v2 and official https://github.com/yuqinie98/PatchTST.
-No remote code/weights copied. AQR institutional execution-cost research
-https://www.aqr.com/insights/research/working-paper/trading-costs motivates
-net-of-cost comparison, not our retail fee assumptions or profitable signal.
+Use source claims as motivation, not project evidence. Reused/adaptive
+development, currentlisting/nonPIT/CA/finality/corpus/time-availability limits
+remain scoped. No publicweights/code in trustedExecution. Private no-cost
+Paper authority, broker risk and deployment are separate from Source reviews.
 
 ## Previous Results / Do Not Repeat
 

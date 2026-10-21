@@ -7,43 +7,70 @@ Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current Queue
 
-Wegener owns current-kis-modp1-ohlcv-rank5-development-20261021-v1/
-joint-preparation-r1; Noether owns its source at
-current-kis512-ohlcv-rank5-proposal-20261021-v1. New fixed100/prior63OHLCV/
-five-session cross-sectional rank: Ridge1, TCN1, GRU1, Transformer1, primary
-literal1/3 rawscore mean of three DL experts. No learned fusion/winner choice/
-missingexpert fallback. Same features/affine/masks/splits/cohorts/costs;7policies/
-21cells per domain/max42. Max128epochs/pat20/LR schedule/best checkpoint incl0,
-all curves; no outcome-selected seed/epoch rescue. Only primary ensemble
-INNER proper AND economic conjunction unlocks conditional LATER. This is
-adaptive current-vintage development, not independent alpha/PIT/TR evidence.
+Current asof14:37UTC. Completed fits are not current GPU workers.
+Noether owns SOURCE-only
+A/research/current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1:
+direct within-date rank loss, new single Transformer expert and fixed
+halfHGB/halfRank composition, cached HGB/rawTF controls.1200active3600elapsed
+Source cap; official primary sources/causal masks/chronological stopping/native
+optimizer proof/finite one-fit contract before numerical dispatch. No new
+marketfit/GPU grant inferred from a proposal. ReusedINNER is adaptive, LATER0;
+do not call it independent replication. Parent owns Paper repair in parallel.
 
-R2 clock/wire Sourcee8de902d/Request17df371d READY/13checks; providerfinality
-NOT_OBSERVED/complete_observedFALSE distinct from officialNYcalendar interval
-elapsed. Joint Source READY adac78ea/PROPOSALbbc949be/equivalencef82ece16 at
-source/joint-ensemble-r1,38checks/2458.459274cumulativeSOURCEupper;
-fitter joint prep<=1200NEW/cumulative2400. Data Hubble actual-wire qualification
-34970e11/ABI2dfc3d9f/SYN3bf1cb39; metadata-only handoff b574ac99, cumulative
-wire540.177250/600, oldprep880.063479 unchanged. No primary numeric decode.
-Collector terminal5d6cafff/manifest81ad6523 at12:28:10UTC:58CLOSED/137469
-admissible rows,1PARTIAL33PENDING8UNAVAILABLE/all100axes retained,162069total
-canonical rows. Alljoined/5043.407856upper, no active collector. Future-due
-guard caused early stop, not actual owner/quota; source-only repair separate.
-Parentauthority NUMERICAL-AUTHORITY-20261021.json d74f2d25 frozen12:26:59UTC:
-48000TOTALactive/57600elapsed, closeddebitsonce. Native1800 afterbinding/prepPASS;
-4firstfits afteractualnativePASS/exactDataABI, no furtheroperatorGO. Data1200/
-max2passes/3NN7200each/Ridge900/0postupdate-marketretry. No new100 GPU training
-currently evidenced; authority/preparation are not actual allocation.
+New100 raw campaign COMPLETE at
+A/research/current-kis-modp1-ohlcv-rank5-development-20261021-v1/readout-r1/retained-review-binding-r1/RESULT.json
+1e3469b3. Actual TCNCPU22epochs/best2/4444updates/24.372738fitseconds;
+GRUCuda25/best5/5050/28.908991s;TransformerCuda24/best4/4848/56.122692s;
+Ridge1/.180242solver seconds. Alljoined/GPUreleased, no reruns.
+Fixed1/3DL mean at10bp/leg growth-.721215percent/DD5.671994 vsuniform
+-1.139394/7.849834; properFAIL/finance-relativePASS/overallFAIL/LATER0.
+OneINNER21cells. Calendar-only purges precede values, all1006inputkeys remain,
+1002entryallowed. Parent18pure/12bridge/23refs+21NAVcell checks PASS.
+Calendar review actualRAW75238454 vsLF helperdigest ea667827 is bound by
+RAW-IDENTITY.json, not altered review or another reviewer call.
 
-Completed, no repeat: TCNpoint6fc3cc26 published10:52:23UTC beforeOPEN,
-57checks/onecurrentCPUforward/0fit-GPU; adaptive IND_ONLY halfTop5+halfuniform,
-one.005originalbasis. Purewirec417b67f/42+45checks, not deployment. Actual
-10NAS/15NYS: NAS.30=.20uniform+.10TCN, NYS.70cash/no renorm; minlot/funds/
-lifecycle and Nov17FUND20 conflict unknown. Review6d9cee21 SOUNDlimits.
-MonthlyETF b9f08a39 COMPLETE/1951.834054upper/30cells/15native+15oracle/
-INNERFAIL/LATER0. Chart edfb1906 COMPLETE/CNN17CUDA+MLP16CPU/proper-financeFAIL/
-PRED0/GPUreleased. MODP calibration7e42e726 COMPLETE/two dated split witnesses,
-not global CA or a running training allocation.
+Ten-factor CPU HGB/Ridge family COMPLETE:
+A/research/current-kis100-technical-factor-tree-development-20261021-v1.
+Two actual market fits; chronological2019 validation/safe selected-prefix
+regressor codec qualified beforemarket.10bp/leg development HGBgrowth
++5.716282percent/DD4.789258,uniform-1.139394/7.849834,Ridge-1.730532/6.302953.
+FinancePASS/properFAIL/overallFAIL: MSE improvement below frozen1percent.
+No retroactive criterion change, winner rescue or conditionalLATER intake.
+Artifact-only readout transport repair reused exact predictions/models.
+Model32bd081a/affine6b56967c retained; no additional fit is needed for current
+operational inference.
+
+Separate provisional HGB operational point COMPLETE:
+A/research/current-kis100-technical-factor-tree-provisional-point-20261021-v1/POINT.json
+8d762d11/packet a81d677a/ABI2c0edc53;published13:41:23UTC,
+POST_OPEN_PRIOR_SESSION_SIGNAL/lastinputOct20.100keys/57eligible/6positive;
+one safe restore/currentforward/0fits-GPU-API-Tasks. Actualpoint source is not
+prospectiveOPEN parity, deployment, fill, profitability qualification or new
+capital. Paper prep may consume one.005originalinitialbasis cohort inside
+existing tenth; quote/bank/unknownrequest/foreigninventory guards unchanged.
+
+Masked self-supervised Transformer COMPLETE:
+A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json.
+Actual CUDA pretrain60epochs/best50/12180updates/269.915535worker seconds;
+warm22/best2/4444updates/58.829420s.16624updates,355.923GPUleaseupper seconds,
+not utilization/kernel time. Training/inference ended14:08:59/alljoined.
+13native equivalence items passed; old fixedCold reused0newfits/forwards.
+240closure checks/oneINNER15cells/LATER0/properFAIL/financeFAIL.
+Warm10bp growth-2.021362percent/DD10.697302 vsCold+.618327/8.953974,
+uniform-1.139394/7.849834. No new seed/epoch/refit rescue.
+Source950.1130104/prep649.948512/native900/pretrain900/warm80/readout600/
+closure600 =4680.0615224upper. Prep49.948512overrun and incidentalSource
+bytecode write retained; codebytes unchanged, no refunds/retroactive PASS.
+Readback fault preserved; final actual240checks closure852405bb/outcomef1ecfc81.
+
+Data consumers are COMPLETE: raw06049fa4/ABIc30d9c97,
+factor ef871ebe and currentfactor f677e083/DTO28877304.
+Raw TRAIN812inputdates808lossdates22694rows/CHECK248loss7201/
+INNER1002loss38319; all100axes/unknowns remain. No rederivedper-epoch OHLCV.
+Old conditionalLATER plans stay unused after exact primary FAIL.
+Fixed100 currentNAS alphabetic-parent sample/nonPIT/MODP1 price proxy;
+providerfinality/arrival/totalreturn remain unobserved. Engine metrics below
+and archived families are development evidence, NOT actual Paper net PnL.
 
 ## Retained Study History
 

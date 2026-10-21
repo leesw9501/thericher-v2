@@ -17,23 +17,36 @@ Consumed installers/forecasts/fits/maintenance are NOT metadata readers.
 Current new100 research: collector recovery-r1 FINAL5d6cafff/alljoined,
 M/us_equities/research_inputs/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1/manifests/0067.json
 81ad6523.58CLOSED/137469admissible rows, all100axes/unknowns retained.
-No active collector; anonymousfuture-due guard repair is source-only, no API.
+No active collector inferred. Exact finite16:10UTC continuation installation
+granted at A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1;
+installation result pending/no manualRun. Newmarket continuation-r1 does not
+change old0067researchsnapshot. APIcurfew18:00/4200active7200elapsed/
+<=2288newGET4000lifetime/1newPOST3lifetime. Actual Paper owners preempt.
 Joint Source at A/research/current-kis512-ohlcv-rank5-proposal-20261021-v1/source/joint-ensemble-r1/
 CONSUMERadac78ea/PROPOSALbbc949be/equivalencef82ece16. Fitterroot
 A/research/current-kis-modp1-ohlcv-rank5-development-20261021-v1/
 NUMERICAL-AUTHORITY-20261021.json d74f2d25 freezes48000allownedactive/
-57600elapsed; native CPU/CUDA+Ridge may proceed after binding/prepPASS,
-4firstfits after actualnativePASS/DataABI. It is authority, not proof of running
-GPU or completed fits. Data materializer owns primary<=2023 and conditional
-LATER second pass; Source/model inputs unchanged, primaryfixedmean3DL.
+57600elapsed;4firstfits and oneINNERreadout are COMPLETE1e3469b3/overallFAIL/
+LATER0/alljoined. Do not rerun consumed native/fits/readout as a reader.
+HGB CPU family alsoCOMPLETE/properFAIL-financePASS, separate currentpoint
+8d762d11/packet a81d677a published13:41:23UTC aspost-open prior-session signal.
+Masked pretrain60/best50+warm22/best2 COMPLETE/16624CUDAupdates/FAIL/LATER0;
+A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json.
+GPUreleased, not still training. Next rank-loss Transformer/fixedHGB composition
+Source at current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1;
+new fitter preparation is not numerical authority/runningGPU/deployment.
 
 ## Verification
 
 Current actual tracked authority:
-D:/thericher-v2/model-artifacts/verification/fund20-paper-runtime-20261021-v1/authority.json
-41796a7aedadd8416d10fec3046f3771a2c710419a0069504a3f7ad8e014749e.
-1374sources5802dd71/1764focusedserialPASS2skip/18612fullPASS25skip/
-18637collected/8workers369.10s/cleanhelper/Ruff/three sample-envCompose PASS.
+D:/thericher-v2/model-artifacts/verification/current-nas-stable-exit-decision-20261021-v1/authority.json
+b714b92f6dfa187fa22e73402711a63c25adfdb72785d0fe7abfcf850785bda5.
+1374sourcesfb305047/143focusedserialPASS/18623fullPASS25skip35warnings/
+18648collected/8workers386.85s/cleanhelper exit0/Ruff/three sample-envComposePASS.
+Snapshot first captured during fullrun and equalafter; fullJUnit/log not
+separately retained. Exact command/tool evidence is recorded, not invented.
+Independent source review160PASS/no findings acf3c03c:
+D:/thericher-v2/model-artifacts/review/current-stable-exit-source-independent-20261021-v1/RESULT.json.
 Docs/external reuse needs fresh exact production/control equality plus actual
 changed-external native checks;18k repo tests cannot qualify arbitrary D code.
 Tracked/control/material Execution changes follow AGENTS fresh requirements:
@@ -51,6 +64,13 @@ disable module auto-loading and mock every Scheduler endpoint. Test scratch C,
 market M/models A. Preserve unrelated %SystemDrive%/; explicit staging only.
 
 ## Current Paper Opportunities
+
+Parent tracked stable-exit-decision fix is verified but NOT deployed. It
+retains actual firstdecision perbasket/session beforeclient/network; pending
+recovery/quote120s/bank/ownedinventory unchanged. Historical denial cause
+UNKNOWN: latest readonly diagnostic failedsnapshotbeforebuilder. Inspect exact
+original8 terminalclosure first; do not retarget a completed owner.
+Boole owns disjoint HGBPaperprep; tentative16:00..16:30UTC is not installed.
 
 - Original8NAS: image876/source d2d4b108, exitOct21>=13:40UTC=22:40KST.
 - Window21 R5 SAME original -r2Tasks: prep13:10/entry14:00UTC,

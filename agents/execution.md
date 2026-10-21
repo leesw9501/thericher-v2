@@ -7,27 +7,55 @@ No actor/API/fill inferred from this MD; no KIS_LIVE_* or secret/private output.
 
 ## Current Owned Lifecycle
 
-Eight retained exact FULL NAS entry events need current owned exit/fill/
-inventory/terminal reconciliation. Existing exit Oct21>=13:40UTC=22:40KST
-after US OPEN, image876/source d2d4b108. These events are not a fresh count
-of distinct holdings. Fees/settlement/actual net PnL UNKNOWN.
-Original plan/intent/reservation/owned-only exits remain authoritative.
+As of14:37UTC original8 retained FULL NAS entries need exact owned exits/fills/
+inventory/terminal closure. Not a fresh distinct-holdings count. Fees/settled
+cash/netPnL UNKNOWN. Taskthericher-kis-paper-current-nas-model-20261015,
+source d2d4b108/image87697f8e,exitOct21>=13:40UTC; oldnaturalowner continues.
 
-Native contract:243 common rows x5 frozen Ridge raw20/Ridgeindicator/MLP20/
-TCN20/TCN60 ->10 fixed equal-ordinal targets. Desired .005each/.05original
-basis is only a proposal, not extra available capital. Persist identity before
-effects, exact pending recovery BEFORE fresh scores, one pending leg/visit,
-foreign same-stock rejection, no unknown reservation release on expiry.
-Task visit280s/oneauth/onecombinedsubmit/onecancel/128calls/eight-minuteOS,
-existing four-minute slots retain original owner and nightly exclusions.
-Operational fifth-OPEN exit differs from fifth-CLOSE replay and later actual
-entry; execution learning, not replay parity.
+Retained13:52 privateRO inspection:
+A/execution/current-nas-owned-exit-opportunity-20261021-v1/CONSUMER.json.
+8buyFULL and1exact sellFULL,9terminal/unknown0/pendingNone at retained read;
+owner changed before inspection closure, so current endstate UNKNOWN.
+Later14:18 retained5positive owned candidates is not fresh broker inventory.
+No invented zeros, missingreceipt=flat or taskexit=fill.
 
-Public current launch / strict offline reader:
-A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/launch/current.json
-A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/read_owned_dispatch.py
-Reader20df9e23e4660e6dda55cb65f12c41bc86de8e8dabcbc35338ca19b377040666.
-Old reader/source pins stay separate. Never recovery-capable observe() for RO.
+Diagnostic CLOSED:
+A/execution/current-nas-exit-risk-readonly-probe-20261021-v1/token-due-r1/opportunity-r1/CONSUMER.json.
+2GET/1POST/oneclient/0order-privatewrites-observe/stock_exit_snapshot_invalid
+BEFOREbuilder. Historical native_risk_no_intent cause not retained/UNKNOWN.
+Do not repeat the diagnostic as a reader or infer reads_stale from synthetic
+proof. Existing timing gate/floor60 and exact olddebits remain unchanged.
+
+Parent tracked repair IN PROGRESS, not deployed:
+actual first sell-decision UTC persisted perinput/session beforeclient/network,
+reused on planningretry, rollover uses actual new session time; legacy initializes
+NOW,neverbackdate. Future/mismatched/malformed records reject, pending exact
+recovery remainsFIRST. Quote/account120s freshness and allorder/bank/inventory
+guards unchanged.143focusedserial/18623fullPASS25skip/clean helper exit0,
+Ruff+threeComposePASS; independent source review160PASS/no findings acf3c03c.
+ClaudeSOUND_WITH_NAMED_LIMITS:
+A/review/current-paper-stable-exit-decision-20261021-v1/RESPONSE.txt.
+Syntheticcounterexample fixed, actualcause UNKNOWN. Do not retarget completed
+owners; exact image/source/Task deployment evidence is separate from repo tests.
+
+Boole owns strict offline original8 closure inspection and disjoint HGB Paperprep:
+A/execution/current-kis100-technical-factor-tree-paper-preparation-20261021-v1.
+Point8d762d11/packet a81d677a/ABI2c0edc53,published13:41:23UTC/
+POST_OPEN_PRIOR_SESSION_SIGNAL/57eligible6positive100axis.
+Use ONE.005originalinitialbasis cohort inside sharedtenth, actualfreshquote/
+orderability,foreignstockskip/unusedmasscash/no renorm/substitute/newbank.
+Tentative16:00..16:30UTC is NOT actually installed/deployed/filled evidence.
+Old research properFAIL is not a Paper permission hold.
+
+Native original target/bank/request authority unchanged. Ownedonly exits,
+pending recovery beforefreshscores/onependingleg pervisit. Existingworker
+280s/oneauth/onecombinedsubmit/onecancel/128calls/8minuteOS bound.
+Operational fifthOPEN and lateractualentry are not fifthCLOSE replayparity.
+Public strict reader20df9e23:
+A/execution/current-nas-zero-quote-recovery-deployment-20261015-v1/read_owned_dispatch.py.
+PrivateRO requires exactpins/networknone/RO/categorical; never observe().
+Marker/hash/time honest-host provenance,not cryptographic OSscheduler proof;
+Operational logging disabled.
 
 ## Actual Parallel Runtime
 

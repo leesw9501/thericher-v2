@@ -380,9 +380,142 @@ def test_sell_quote_unavailable_never_retires_owned_inventory(h, monkeypatch):
     monkeypatch.setattr(NativeSyntheticStockClient, "stock_exit_snapshot", unavailable)
     result = run(h)
     assert result.status == "unavailable" and result.reason == "cycle_quote_timestamp_unavailable"
-    assert record(h)["active"] == before["active"]
+    saved = record(h)["active"]
+    assert {k: v for k, v in saved.items() if k != "exit_decision"} == before["active"]
+    assert cycle._unpack(saved["exit_decision"]["decided_at"]) == h["now"]
     assert record(h)["owners"] == before["owners"]
     assert len(h["submits"]) == 10
+
+
+def test_exit_retains_actual_decision_before_client_then_reuses_it_on_retry(h, monkeypatch):
+    for _ in range(10):
+        run(h)
+    original = NativeSyntheticStockClient.stock_exit_snapshot
+
+    def lagged_quote(client, **kwargs):
+        reads = original(client, **kwargs)
+        return replace(reads, quote=replace(reads.quote, quoted_at=h["now"] - timedelta(seconds=1)))
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_exit_snapshot", lagged_quote)
+    factory = h["call"]["client_factory"]
+    first = EXIT.open_ts + timedelta(seconds=5)
+    h["now"] = first
+
+    def persisted_factory(instrument):
+        saved = record(h)["active"]["exit_decision"]
+        assert cycle._unpack(saved["decided_at"]) == first
+        assert cycle._unpack(saved["session_open_ts"]) == EXIT.open_ts
+        assert saved["input_ref"] == h["data"].input_ref
+        return factory(instrument)
+
+    assert run(h, client_factory=persisted_factory).status == "no_intent"
+    assert len(h["submits"]) == 10 and record(h)["pending"] is None
+    h["now"] += timedelta(seconds=4)
+    assert run(h, client_factory=persisted_factory).status == "advanced"
+    assert len(h["submits"]) == 11 and h["submits"][-1].side == "sell"
+    assert cycle._unpack(record(h)["active"]["exit_decision"]["decided_at"]) == first
+
+
+@pytest.mark.parametrize(
+    ("quote_seconds", "status", "reason"),
+    [
+        (-121, "unavailable", "cycle_quote_timestamp_stale"),
+        (1, "no_intent", "native_risk_no_intent"),
+    ],
+)
+def test_stable_exit_decision_does_not_accept_stale_or_future_quote(
+    h, monkeypatch, quote_seconds, status, reason
+):
+    for _ in range(10):
+        run(h)
+    h["now"] = EXIT.open_ts + timedelta(seconds=5)
+    original = NativeSyntheticStockClient.stock_exit_snapshot
+
+    def bad_quote(client, **kwargs):
+        reads = original(client, **kwargs)
+        return replace(
+            reads, quote=replace(reads.quote, quoted_at=h["now"] + timedelta(seconds=quote_seconds))
+        )
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "stock_exit_snapshot", bad_quote)
+    assert run(h).safe_payload() == dict(status=status, reason=reason, leg_count=0)
+    h["now"] += timedelta(seconds=200)
+    assert run(h).safe_payload() == dict(status=status, reason=reason, leg_count=0)
+    assert len(h["submits"]) == 10 and record(h)["pending"] is None
+
+
+def test_exit_decision_rollover_records_actual_new_session_time(tmp_path):
+    from datetime import date
+
+    from thericher_v2.data.us_equity_session import us_equity_2026_session
+
+    first = us_equity_2026_session(date(2026, 10, 21)).window
+    later = us_equity_2026_session(date(2026, 10, 22)).window
+    pointer = tmp_path / "cycle.json"
+    value = {"active": {"input_ref": PIN}}
+    eligible = first.open_ts + timedelta(minutes=10)
+    at = eligible + timedelta(minutes=1)
+    assert cycle._exit_decision_at(value, pointer, first, first, eligible, at) == at
+    before = copy.deepcopy(value)
+    assert (
+        cycle._exit_decision_at(
+            value, pointer, first, first, eligible, at + timedelta(seconds=3)
+        )
+        == at
+    )
+    assert value == before
+    next_at = later.open_ts + timedelta(seconds=7)
+    assert cycle._exit_decision_at(value, pointer, later, first, eligible, next_at) == next_at
+    assert cycle._unpack(value["active"]["exit_decision"]["session_open_ts"]) == later.open_ts
+
+
+@pytest.mark.parametrize(
+    "fault", ["input", "future", "before_eligible", "session", "shape", "type"]
+)
+def test_invalid_retained_exit_decision_cannot_be_replaced(tmp_path, fault):
+    pointer = tmp_path / "cycle.json"
+    at = EXIT.open_ts + timedelta(minutes=1)
+    saved = dict(
+        input_ref=PIN, session_open_ts=cycle._pack(EXIT.open_ts), decided_at=cycle._pack(at)
+    )
+    if fault == "input":
+        saved["input_ref"] = "sha256:" + "f" * 64
+    elif fault == "future":
+        saved["decided_at"] = cycle._pack(at + timedelta(seconds=1))
+    elif fault == "before_eligible":
+        saved["decided_at"] = cycle._pack(EXIT.open_ts - timedelta(seconds=1))
+    elif fault == "session":
+        saved["session_open_ts"] = cycle._pack(EXIT.open_ts + timedelta(seconds=1))
+    elif fault == "shape":
+        saved["extra"] = True
+    else:
+        saved["decided_at"] = 1
+    value = {"active": {"input_ref": PIN, "exit_decision": saved}}
+    cycle._save(pointer, value)
+    before = pointer.read_bytes()
+    with pytest.raises(cycle._CycleFault, match="cycle_checkpoint_invalid"):
+        cycle._exit_decision_at(value, pointer, EXIT, EXIT, EXIT.open_ts, at)
+    assert pointer.read_bytes() == before
+
+
+def test_pending_exit_keeps_original_decision_and_exact_arguments(h, monkeypatch):
+    for _ in range(10):
+        run(h)
+    h["now"] = EXIT.open_ts + timedelta(seconds=1)
+    h["unknown"] = True
+    assert run(h).status == "pending"
+    before = record(h)
+    h["now"] += timedelta(days=1)
+
+    def unavailable(*_args, **_kwargs):
+        raise kis_readonly.KisPaperReadOnlyError("auth_rejected")
+
+    monkeypatch.setattr(NativeSyntheticStockClient, "reconcile", unavailable)
+    assert run(h).status == "unavailable"
+    after = record(h)
+    assert after["pending"] == before["pending"]
+    assert after["active"]["exit_decision"] == before["active"]["exit_decision"]
+    assert len(h["submits"]) == 11
 
 
 def test_two_sessions_ten_frozen_entries_then_only_owned_exits(h):
