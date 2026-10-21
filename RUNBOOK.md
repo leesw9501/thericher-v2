@@ -17,9 +17,14 @@ Consumed installers/forecasts/fits/maintenance are NOT metadata readers.
 Current new100 research: collector recovery-r1 FINAL5d6cafff/alljoined,
 M/us_equities/research_inputs/current-kis-modp1-rank5-historical100-20261021-v1/recovery-r1/manifests/0067.json
 81ad6523.58CLOSED/137469admissible rows, all100axes/unknowns retained.
-No active collector inferred. Exact finite16:10UTC continuation installation
-granted at A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1;
-installation result pending/no manualRun. Newmarket continuation-r1 does not
+No active collector inferred. Exact finite16:10UTC continuation root:
+A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1.
+install-r3 CLOSED-CONSUMER confirms quietsettingsfailure/verifiedownTaskABSENT/
+0Run-API/alljoined, closed8075.203913once. Do not rerun failed installers.
+Einstein direct-launch-r1 prepares finitehidden goal_owned_process after16:10,
+not a fourthblindTaskretry;600active1800elapsed prep/13200integrationceiling
+includingolddebits+4200futureworker. Actuallaunch not inferred. No manualTaskRun.
+Newmarket continuation-r1 does not
 change old0067researchsnapshot. APIcurfew18:00/4200active7200elapsed/
 <=2288newGET4000lifetime/1newPOST3lifetime. Actual Paper owners preempt.
 Joint Source at A/research/current-kis512-ohlcv-rank5-proposal-20261021-v1/source/joint-ensemble-r1/
@@ -32,12 +37,13 @@ HGB CPU family alsoCOMPLETE/properFAIL-financePASS, separate currentpoint
 8d762d11/packet a81d677a published13:41:23UTC aspost-open prior-session signal.
 Masked pretrain60/best50+warm22/best2 COMPLETE/16624CUDAupdates/FAIL/LATER0;
 A/research/current-kis100-masked-pretraining-development-20261021-v1/closure-r1/CONSUMER.json.
-GPUreleased, not still training. Next rank-loss Transformer/fixedHGB composition
-Source at current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1;
-That campaign now hasactualparentNUM andCPU/CUDAnative/data bindingPASS;
-ONE ListNet CUDA marketfit STARTED15:23:57UTC at developmentroot/
-market-transport-repair-r1, no cachedcontrol refit/extra trial. New next
-cross-stock Source is preparation, not a running model or numerical grant.
+GPUreleased, not still training. ListNet campaign also COMPLETE26epochs/best6/
+5252CUDAupdates/272.381496fitter seconds/219checks/FAIL/0LATER/alljoined,
+CONSUMER at current-kis100-cross-sectional-rank-ensemble-development-20261021-v1.
+No cachedcontrol refit/extra trial. Cross-stock Source COMPLETEb2b50e43 at
+current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1; Wegener owns
+newdevelopmentroot cachedbinding/native/new14400active28800elapsedonefit
+continuation. Actual runtime start needs its own evidence, not this dispatch.
 OperatorGPUpriorityFIRST/personalco-use/concurrentreadytraining is recorded
 inAGENTS/DECISIONS; old desktopapplication-name hold superseded prospectively.
 
@@ -79,9 +85,9 @@ original8 terminalclosure first; do not retarget a completed owner.
 Boole owns disjoint HGB deployment-r1 CPUimage/quietTask prep; tentative
 16:00..16:30UTC is not installed. Newprofile actualinput8c192808/policycd1d8572
 preserves olddefaultbytes and actual13:41publication/priorOct20CLOSE.
-Data continuation install-r2 createdownTask,principalguardfailed/rollback
-unresolved,0Enable/Run/API; install-r3sameSID-onlycontainmentrepair owns it.
-Never infer currentTaskenabled/disabled from an installation failure.
+Data continuation install-r3 failedquietsettingsguard then verifiedexactTask
+absence; FINALa8b2b607/freshabsence3c88a2e8/0Run-API. Directhiddenworker
+preparation is separate, not Schedulerinstallation/success by inference.
 
 - Original8NAS: image876/source d2d4b108, exitOct21>=13:40UTC=22:40KST.
 - Window21 R5 SAME original -r2Tasks: prep13:10/entry14:00UTC,

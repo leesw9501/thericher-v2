@@ -26,7 +26,7 @@ BEFOREbuilder. Historical native_risk_no_intent cause not retained/UNKNOWN.
 Do not repeat the diagnostic as a reader or infer reads_stale from synthetic
 proof. Existing timing gate/floor60 and exact olddebits remain unchanged.
 
-Parent tracked repair IN PROGRESS, not deployed:
+Parent tracked repair COMMITTED302eb82, not deployed in original8 image:
 actual first sell-decision UTC persisted perinput/session beforeclient/network,
 reused on planningretry, rollover uses actual new session time; legacy initializes
 NOW,neverbackdate. Future/mismatched/malformed records reject, pending exact
@@ -60,7 +60,10 @@ R5 natural14:00 failedunavailable/native_recovery_required/0declaredrequests/
 0nativelegs. Exactfrozenprojectframe375 is BEFORE_WIRE,notopener376;5invented
 cases prove projection, not actualguardcause. Hubble temporaryExecution owns
 current-r5-callback-stage-recovery-20261021-v1 closedcategoricalbreadcrumb
-Sourceprep, no oldSource/guard/budget/request changes or actualTask/API effect.
+Source READY7b52895f/native51ac166d/FINAL962.6233497upper/alljoined.
+No oldSource/guard/budget/request changes or actualTask/API effect; actual
+callbackcause UNKNOWN until a real stage is retained. Native fixture repair
+and error limits remain in immutable evidence; not an actual operational fix.
 
 Native original target/bank/request authority unchanged. Ownedonly exits,
 pending recovery beforefreshscores/onependingleg pervisit. Existingworker

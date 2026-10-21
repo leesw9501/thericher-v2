@@ -7,14 +7,16 @@ Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 
 ## Current Mechanisms / Consumers
 
-Noether now owns SOURCE-only
-A/research/current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1.
-Question: does direct cross-sectional ranking align stock selection better
-than pointwise return MSE, and does literal halfHGB/halfRank diversify it?
-One suitable fixed rank objective/one new Transformer fit, chronological
-TRAIN/CHECK stopping, cached HGB/rawTF controls, same keys/costs/cohorts,
-official primary-source evidence and concise leakage/selection challenge.
-Source1200active3600elapsed; no marketnumeric/GPU/API/dependency change.
+ListNet Source and actual onefit COMPLETE:26epochs/best6/5252CUDAupdates,
+219checks/oneINNER18cells/0LATER/proper-financeFAIL. FixedhalfHGB-rank
+growth+3.477526percentinitialNAV at10bp/leg trails HGB+5.716282, not alpha.
+Noether distinct temporal+cross-stock attention/fixed3expert Source COMPLETE:
+A/research/current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1/CONSUMER.json,
+SOURCEb2b50e43/PROPOSAL5d6a2a6b/608.98836upper/CPU2SYNupdates.
+Wegener owns its numerical continuation; no current training inferred here.
+Noether now checks cached chronological OOF feasibility for a later shallow
+composition at current-kis100-ensemble-policy-next-source-20261022-v1,
+300active900elapsed/source-only/no new outcome intake or in-sample learnedgate.
 Proposals must become executable kernels/contracts or concrete rejection.
 Adaptive reusedINNER/LATER0, not an independent performance claim.
 

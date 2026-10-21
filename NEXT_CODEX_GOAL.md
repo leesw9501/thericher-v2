@@ -45,19 +45,24 @@ Market D:/market_data; generated research D:/thericher-v2/model-artifacts (A).
    cross-sectional rank-loss Transformer plus fixedhalfHGB/halfRank ensemble
    at current-kis100-cross-sectional-rank-ensemble-proposal-20261021-v1.
    That Source is COMPLETEa17cec0a/actualnative and cachebindingPASS. ONE
-   ListNet CUDA marketfit STARTED15:23:57 at its developmentroot/
-   market-transport-repair-r1, parent12000active21600elapsed from14:44:44.
-   Noether now prepares distinct cross-stock attention/fixed3expert Source at
-   current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1. Operator
+   ListNet campaign COMPLETE26epochs/best6/5252CUDAupdates/219checks/
+   proper-financeFAIL/0LATER/alljoined/4347.086139activeupper; no rerun.
+   Cross-stock attention/fixed3expert Source COMPLETEb2b50e43 at
+   current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1. Wegener
+   owns new developmentroot: bind cachedcontrols, freeze14400active28800elapsed
+   including608.98836Source once, native then onefit/18INNERcells/LATER0.
+   Noether checks cached chronological OOF feasibility for later fusion. Operator
    GPUpriorityFIRST/personalco-use/concurrentreadyjobs is recorded inAGENTS;
    actualresourceadmission repaired, not another approval hold or extra trial.
 
 4. Einstein/Data: exact finitequiet16:10UTC continuation installation granted
    for prepared current-kis-modp1-rank5-historical100-continuation-20261021-v1,
    sourcef4498f5d/worker94e05954/job4bae4675. install-r2 CREATE1/ENABLE0/
-   principal-guard failure and unresolved rollback, no API/Run. Exact sameSID/
-   ownTask containment+repair under install-r3 granted, no substitute task.
-   Never infer enabled/disabled without actual safe readback. No manualRun/
+   principal-guard failure preserved. install-r3 quietsettings failure then
+   verified ownTask rollback/ABSENCE3c88a2e8/0Run-API/alljoined. No fourthblind
+   Scheduler retry; additive direct-launch-r1 prepares one finite hidden
+   goal_owned_process after16:10, new600active1800elapsed prep within13200
+   integrationceiling/closed8075.203913once/future4200worker. No manualTaskRun/
    APIbefore16:10. Preserve0067/58CLOSED researchsnapshot;<=2288newGET/
    4000lifetime,1newPOST/3lifetime,4200active7200elapsed/APIcurfew18:00.
    Current Paper owners preempt. Worker owns next_due, not foreground wait.

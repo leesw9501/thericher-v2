@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-21 15:29UTC (2026-10-22KST). A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-21 15:50UTC (2026-10-22KST). A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 UNFINISHED. Eight retained FULL
 entry events need exact owned exit/fill/inventory/terminal closure; retained
 event counts are not fresh broker holdings. Fees/settlement/netPnL UNKNOWN.
@@ -12,10 +12,10 @@ No current operator decision. Parent owns shared policy/goal/integration/Git.
 | --- | --- |
 | Parent | GPUpriority/concurrency and opt-in postOPEN profile:18659fullPASS25skip/259rolefocused; integrate/source/Git, original8 closure not inferred. |
 | Boole / Execution | PostOPEN259focused+7nativePASS; deployment-r1 actualCPUimage/quiet16:00HGBTask preparation; freshoriginal8 strictROreader. |
-| Noether / Strategy-Engine | ListNet Source COMPLETEa17cec0a; now distinctcross-stock attention/fixed3expert Source-only, no GPU/numerical grant. |
-| Wegener / Engine | Actual ListNet CUDA marketfit started15:23:57, forwardeventsprogress15:27:31; fixedHGB/rank blend,0controlrefits. |
+| Noether / Strategy-Engine | Cross-stock Source COMPLETEb2b50e43; now cached chronological OOF feasibility for later composition, source-only. |
+| Wegener / Engine | ListNet COMPLETE26/best6/5252CUDAupdates/219checks/FAIL/0LATER. Next cross-stock fitter/native/newNUM, no controlrefits. |
 | Hubble / invoked Execution diagnostic | R5 before_wire375 localized/5SYN; closedcategorical callbackstage recoverySource in disjoint A root. No API/Task effects. |
-| Einstein / Data | install-r2 CREATE1/principalguardfailed/rollbackunknown/0Enable-Run-API; install-r3 actualownTaskcontainment+sameSID-onlyrepair. |
+| Einstein / Data | install-r3 quietsettingsfail then verified ownTaskABSENT/0Run-API/alljoined. Finite hidden direct-launch-r1 prep after16:10, no fourthblindTaskretry. |
 
 OriginalR5prep13:10 ACTUALsuccess ded0bdb0/entry14:00 actualunavailable/
 native_recovery_required/0declaredrequests0legs; exactcallbackcauseUNKNOWN.
@@ -26,11 +26,14 @@ F9 original unknown reservation remainsHELD; no expiry release/substitute.
 
 ## Throughput Review
 
-15:29UTC: actual GPUpretraining/warm ended14:08:59, not still training.
+15:50UTC: actual GPUpretraining/warm and ListNet are COMPLETE, not still training.
 The useful next hypothesis changes objective to stock ranking and composes a
 distinct tree expert, instead of repeating seeds/epochs on a failed MSE family.
-Current newListNet native/dataPASS and actualCUDAfit15:23:57 underway,
-not stalled on human permission.15:27 aggregate33percent/2776MiB/45C sample.
+ListNet actualCUDA26epochs/best6/5252updates/272.381496fitter seconds,
+219checks/4347.086139wholeactiveupper/FAIL/0LATER/alljoined/GPUreleased.
+Next cross-stock Sourceb2b50e43 READY, Wegener actualfitter/native preparation
+delegated15:48UTC with cachedcontrols, no extra parentGO after frozen proof.
+15:27 aggregate33percent/2776MiB/45C was historical, not currentGPUactivity.
 Newoperator2026-10-22KST approval supersedes single-training/app-name holds:
 projectGPUpriorityFIRST even with personal/externalGPU use, concurrent distinct
 ready jobs permitted under one coordinator/measuredheadroom, not duplicatefits.
@@ -51,7 +54,10 @@ Reversible improvement: remove irrelevant desktopapp permission holds under
 explicitoperatorpriority and use measuredcapacity/actualprojectownership.
 Reusecachedcontrols/features, inspectexactadditivechild before assumingstuck,
 no duplicatefit/readout/API. CoordinateparallelmodelSource/actualGPUfit/
-Paperdeployment/DataTaskrepair. Freshfullverification completed, no marketwait.
+Paperdeployment/Dataworkerpreparation. Freshfullverification completed, no marketwait.
+Data installer repeated technical failures yielded0data: change reversible
+launch mechanism to an existing finite hidden goal-owned process, preserve
+sameworker/cursor/client/gates/caps and honest non-Scheduler provenance.
 
 ## Evidence / Recovery
 
@@ -68,5 +74,5 @@ cleanhelperexit0/Ruff/3ComposePASS/fullJUnit+logs/source-controlbefore-after.
 Prior independent review160PASS/no findings
 acf3c03c. Preserve clean helper
 mutex/lease/exactcount-skip/process/nonreparse cleanup. External source proof
-separate. Prior checkpointb8a9197; Git history owns the integrated repair commit.
+separate. Pushed policy/profile checkpoint302eb82; Git owns later integration.
 Explicit staging/preserve %SystemDrive%/.

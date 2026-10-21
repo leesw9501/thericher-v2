@@ -14,9 +14,10 @@ or kernel time. Pretrain60/best50+warm22/best2/16624updates; cachedCold reused,
 Raw TCN/GRU/Transformer/Ridge also COMPLETE; no repeated fit.
 HGB/Ridge CPU family completed, CPU chosen intentionally; no GPU need.
 
-Current15:29UTC: Wegener actual ListNet marketfit STARTED15:23:57 oncuda:0,
-Torch2.7.0+cu128; forward events37244 at15:27:31, not a planned allocation.
-A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/market-transport-repair-r1/out/FIT-STARTED.json.
+Current15:50UTC: ListNet CUDA campaign COMPLETE26epochs/best6/5252updates/
+272.381496fitter seconds,219checks/4347.086139totalactiveupper/alljoined/
+GPUreleased. Not currently training. Readout proper/financeFAIL,0LATER.
+A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json.
 Resource admission2c78a663 actually ran4CPU/CUDA SYNupdates, native1100.982447
 upper, then14cachebindingchecks/100600orderedkeys211.591451upper.
 Parent12000active21600elapsed anchor14:44:44/deadline20:44:44,
@@ -25,9 +26,13 @@ Initial missing /kernel.py import was BEFORE model/update; one predeclared
 mount repair does not repeat a completed fit. Oldfailures/debits stay.
 15:27 aggregate sample33percent/2776of24564MiB/45C, not isolatedGPUutilization.
 Current frozen campaign still allows ONE fit; no duplicate parameters/seeds.
-Noether prepares distinct cross-stock rank-attention/fixed3expert SOURCE at
-current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1, no numerical
-grant yet. Co-run only genuinely ready separately bounded work with headroom.
+Distinct cross-stock rank-attention/fixed3expert Source COMPLETEb2b50e43 at
+current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1.
+Wegener dispatched to its new developmentroot: bind cached ListNet/HGB,
+freeze new14400active28800elapsed including608.98836Source once, actualCUDA
+native then onefit/18INNERcells/LATER0. No actual fit inferred from dispatch.
+Co-run genuinely ready distinct frozen work with headroom; concurrency
+permission is recorded, simultaneous market trainings are not yet evidenced.
 
 Operator2026-10-22KST gives projectGPUpriorityFIRST, allows personal/external
 GPU co-use and concurrent distinct ready trainings. Do not require an app-name

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-21, 15:29UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
+2026-10-21, 15:50UTC (2026-10-22 KST). Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company current-nas-owned-model-paper-cycle-v1 remains UNFINISHED:
 eight retained FULL entry events need exact owned exits, fills, inventory and
@@ -23,10 +23,10 @@ D free last measured38.9percent; preserve15percent/warn20percent.
 | --- | --- |
 | Parent | GPU priority/concurrency rules and postOPEN input verified; fresh18659fullPASS25skip/259rolefocusedPASS. Integrate/Git, no company closure inferred. |
 | Boole / Execution | PostOPEN profile implementation259focused+7nativePASS, actualpoint8c192808 bound. New CPU image/finite16:00HGB Task deployment preparation; original8 fresh closure reader. |
-| Noether / Engine-Strategy | ListNet Source COMPLETE a17cec0a; now cross-stock rank-attention/fixed3expert Source-only, disjoint next GPU hypothesis. |
-| Wegener / Engine | Actual ListNet CUDA marketfit STARTED15:23:57, forward events progressing15:27:31; one newfit, cached HGB/rawTF reused. |
+| Noether / Engine-Strategy | Cross-stock Source COMPLETEb2b50e43; now cached chronological OOF feasibility/source-only composition proposal. |
+| Wegener / Engine | ListNet COMPLETE26epochs/best6/5252CUDAupdates/219checks/FAIL/0LATER. Next cross-stock actual fitter/native preparation, cached controls only. |
 | Hubble / invoked Execution diagnostic | R5 frozen375 is BEFORE_WIRE, not opener376;5SYN. Now closed categorical callback-stage recovery Source, no API/Task effects. |
-| Einstein / Data | install-r2 created ownTask but failed principal guard/rollback unresolved;0Enable/Run/API. New install-r3 containment/canonicalSID repair granted; actual enabled state must be read, not inferred. |
+| Einstein / Data | install-r3 failed quietsettings guard but exact ownTask rollback/absence proven;0Run/API. Prepare finite hidden direct worker after16:10, not another blind Scheduler retry. |
 
 One Steward resource coordinator uses A/engine-research-agent/locks/gpu.lock;
 multiple ready child trainings are approved when measured headroom permits.
@@ -36,8 +36,9 @@ actual project-worker identity/no duplicate fits/VRAMreserve/no appkill.
 AGENTS/DECISIONS/architecture/README/goal launcher updated. Prospective resource
 admission2c78a663 actually qualified CPU/CUDA/4updates with shared desktop;
 native1100.982447upper, old false-gate/source-root faults retained. Actual
-ListNet FIT-STARTED15:23:57 cuda:0/Torch2.7.0+cu128;15:27 sample33percent/
-2776of24564MiB/45C is aggregate instantaneous usage, not isolated fit utilization.
+ListNet CUDA fit COMPLETE26epochs/best6/5252updates/272.381496fitter seconds,
+alljoined/GPUreleased.15:27 sample33percent/2776of24564MiB/45C was aggregate
+instantaneous usage, not current or isolated fit utilization.
 Masked actual training ended14:08:59UTC; GPU released. Source preparation or
 historical timings are NOT current GPU use. CPU HGB needs no GPU.
 Check actual owners after interruption; no age reclaim or duplicate fits.
@@ -124,16 +125,21 @@ not utilization/kernel time. Exact cached Cold reused;0Cold refits/forwards.
 Preparation649.948512/600 exception and incidental bytecode write retained;
 Source bytes unchanged. No refunds, hidden reruns or old-result regrading.
 
-Current ListNet Source a17cec0a/ce8ce782/26pure11native55independentchecks,
-Source1014.155471fullclosed once; parentNUM12000active21600elapsed anchored
-14:44:44/deadline20:44:44. Prep695.428467/14pure, nativePASS/data binding
-14checks211.591451/100600orderedkeys. Actual marketfit15:23:57 underway at
-A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/market-transport-repair-r1.
+ListNet COMPLETE at
+A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json:
+26epochs/best6/5252CUDAupdates/272.381496fitter seconds/219checks/oneINNER18cells/
+0LATER/proper-financeFAIL/alljoined/4347.086139wholeactiveupper.
+At10bp/leg rankgrowth-14.175611percent/DD19.018786; fixedhalfHGB-rank
++3.477526/4.893562 versus cachedHGB+5.716282/4.789258; mixture trails HGB.
+Readout87fdd3e6/closure5acad0cf; cachedcontrols0refits/reforwards, not alpha.
 Initial market transport missed /kernel.py BEFORE anymodel/update; exact
 predeclared prefit mount repair preserved failure, no second marketfit.
-New Source-only cross-stock attention +fixed .5HGB/.25ListNet/.25set-rank at
-A/research/current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1,
-no actual GPU/numerical grant for that proposal yet.
+Cross-stock attention +fixed .5HGB/.25ListNet/.25set-rank Source COMPLETEb2b50e43/
+PROPOSAL5d6a2a6b/608.98836upper at
+A/research/current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1.
+Wegener next developmentroot: exact cachedbindings/freeze new14400active/
+28800elapsed includingSource once/native then automaticonefit/18INNER/LATER0.
+No actual newfit inferred from dispatch. Noether prepares later OOF feasibility.
 Older model families/curves/custody remain in Engine stateboard/Git/immutable A.
 
 ## Data / Recovery
@@ -153,10 +159,13 @@ A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1/CONSUMER.j
 Finite pythonw16:10UTC, API curfew18:00/workerend18:10,4200active7200elapsed;
 old debits once,<=2288newGET/4000lifetime and<=1newPOST/3lifetime.
 Original0067 research input unchanged, new continuation-r1 market snapshot.
-install-r1 Snapshot CommandNotFound closed0effects; install-r2 CREATE1 then
-own_principal_mismatch/rollbackUNRESOLVED,0Enable/Run/API. New exact install-r3
-containment/sameSID repair<=600active1800elapsed/new12600integrationceiling,
-olddebits7475.203913 once, worker4200unconsumed; guards/GET/POST unchanged.
+install-r1 Snapshot fault/0effects; install-r2 principalfault preserved.
+install-r3 FINALa8b2b607/CLOSED-CONSUMER: quietsettingsfailure then exactownTask
+rollback/ABSENCE3c88a2e8, CREATE1/ENABLE1/DISABLE1/DELETE1/RUN0/API0/alljoined.
+Closeddebits8075.203913 once. Einstein additive direct-launch-r1 prepares
+finite hidden goal_owned_process after16:10, not a fourthblindTaskretry.
+New600active1800elapsed prep/13200integrationceiling includes olddebits once+
+4200futureworker. Actuallaunch pending; guards/GET/POST/windows unchanged.
 Do not rerun consumed installers or claim task enabled. Fresh Paper
 owners preempt; worker owns due/token gates/no foreground sleep.
 
@@ -177,5 +186,5 @@ Initial CLI argument-array failure was beforepytest; oldfailure retained.
 Independent external source review acf3c03c/160tests/no findings/0effects.
 Preserve helper mutex/lease/count/skip/process/nonreparse cleanup; no bypass.
 Repo tests do not validate external A code; retain its independent checks.
-Prior pushed checkpoint74b9950; Git history owns the next integrated policy/profile commit.
+Pushed policy/profile checkpoint302eb82; Git history owns later integration.
 Preserve unrelated %SystemDrive%/. Recheck actual owners and continue ready work.

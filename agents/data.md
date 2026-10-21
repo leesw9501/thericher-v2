@@ -6,20 +6,23 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
-Current asof14:37UTC. No activecollector inferred.
+Current asof15:50UTC. No activecollector inferred.
 New exact continuation root:
 A/data/current-kis-modp1-rank5-historical100-continuation-20261021-v1.
 CONSUMER86479b7a/sourcef4498f5d/worker94e05954/job4bae4675,
 18nativeSYN+15Taskmock+6refchecks/ClaudeSOUND_WITH_NAMED_LIMITS.
 Parent granted Einstein ONE finitequiet Task installation after exact current
 source/job/owner/unrelatedXML-ACL/rollback checks. Result pending, no manualRun.
-Current15:29UTC: install-r1 failedSnapshot CommandNotFound/0mutations;
-install-r2 CREATE1 then own_principal_mismatch/rollbackUNRESOLVED,
-0Enable/Run/API. Actualcurrentenabledstate notinferred. New install-r3
-sameSID-onlyidentity/ownTask containment+repair<=600active1800elapsed granted;
-old7475.203913debits once/future4200unconsumed, new projected12275.203913
-inside NEW12600integrationceiling (not oldcapPASS). Worker/source/GET/POST/
-windows unchanged. Do not rerun consumed installers or overwriteunknownTask.
+install-r1 failedSnapshot/0mutations; install-r2 principalguard failure retained.
+install-r3 CLOSED-CONSUMER confirms exactTask ABSENT after quietsettingsguard
+failure/rollback: CREATE1/ENABLE1/DISABLE1/DELETE1/RUN0/API0/POST0/alljoined.
+FINALa8b2b607/freshabsence3c88a2e8; totalclosed8075.203913, no refund.
+No fourth blind Scheduler retry. Einstein owns additive direct-launch-r1:
+reuse frozen worker/runtimePASS with finite hidden goal_owned_process after
+16:10UTC, honest non-Scheduler provenance/native checks/Claudechallenge.
+New600active1800elapsed preparation/NEW13200integrationceiling includes old
+debits once plus4200futureworker. Actual launch pending; no inferred collector.
+Worker/source/GET/POST/windows unchanged. Do not rerun consumed installers.
 Prepared pythonw16:10UTC,APIcurfew18:00/workerend18:10,
 4200newactive7200elapsed; old5795.203913once+900Sourceonce, no refunds.
 <=2288newGET/4000lifetime,<=1newPOST/3lifetime, same validtoken/client/gates.

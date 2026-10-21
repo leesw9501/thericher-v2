@@ -7,22 +7,29 @@ Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current Queue
 
-Current15:29UTC. Wegener actual ListNet CUDA marketfit STARTED15:23:57,
-forward events progressing15:27:31 at
-A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/market-transport-repair-r1/out/FIT-STARTED.json.
-Sourcea17cec0a/ce8ce782/26pure11native55independentchecks, Sourcefull1014.155471
-once; parentNUM12000active21600elapsed from14:44:44/deadline20:44:44.
-Prep695.428467/14pure; actualsamefitterCPU/CUDA4SYNupdates/nativetime1100.982447,
-14cachebindingchecks211.591451/100600keys/no controlrefits-reforwards.
-Newrankloss temporalTransformer +fixedhalfHGB/halfRank, max128epochs/pat20/
-25984updates/onefit/18INNERcells/LATER0. Initial transport /kernel.py import
-failed BEFOREanymodel/update; predeclared exactmountrepair, no second fit.
+Current15:50UTC. ListNet campaign COMPLETE, not still training:
+A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json.
+One CUDA fit26epochs/best6/5252updates/272.381496fitter seconds,219checks,
+oneINNER18cells/LATER0/allactorsjoined/GPUreleased. Proper/finance/overallFAIL.
+10bp/leg development growth/DDpercentinitialNAV: rank-14.175611/19.018786,
+fixedhalfHGB-rank+3.477526/4.893562, cachedHGB+5.716282/4.789258,
+uniform-1.139394/7.849834. Mixture trails HGB; no qualified alpha claim.
+Readout87fdd3e6/closure5acad0cf,4347.086139totalactiveupper includes
+Source1014.155471/native1100.982447 and all failed transport/cleanup once.
+Cached controls had0refits/reforwards. Missing /kernel.py failed BEFOREmodel;
+predeclared mount repair was not a repeated fit. No rerun of closed campaign.
 Operator2026-10-22KST explicitly givesfirstGPUpriority/personalco-use and
 concurrentdistinctreadytraining; old desktopapp-name hold removed prospectively.
 Currentrankonefit/trial/selectioncaps unchanged, no repeated models for GPUload.
-Noether next SOURCE-only current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1:
-temporal+cross-stock permutation-equivariant rank attention, fixed
-.5HGB/.25currentListNet/.25newset expert; no numerical/current-outcome intake.
+Cross-stock Source COMPLETEb2b50e43/PROPOSAL5d6a2a6b at
+A/research/current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1:
+temporal+cross-stock permutation-equivariant rank attention and fixed
+.5HGB/.25cachedListNet/.25newset expert;608.98836Sourceupper/CPU2SYNupdates.
+Wegener owns new developmentroot current-kis100-cross-stock-rank-ensemble-development-20261022-v1,
+reuse actual fitter/features/cachedcontrols, exact bindings before newNUM,
+14400totalactive/28800elapsed including Source once, onefit/18INNERcells/LATER0.
+Actual native/fit start needs runtime evidence, not this dispatch. Noether checks
+chronological OOF feasibility for a later composition, no in-sample learnedgate.
 ReusedINNER remains adaptive, not independent replication. Paper runs separately.
 
 New100 raw campaign COMPLETE at
