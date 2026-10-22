@@ -46,8 +46,12 @@ only. One token POST/24GET ceiling/1.25s pacing/110s work budget; no orders.
 Never print private values or mark a balance-only result as a full risk snapshot.
 Token/collection controls are separate from the private order book.
 
-Historical Oct22 17:38KST: broker six instruments/all quantities native-matched,
-R5 three matched, zero open orders. Current retained R5 has three accepted/full
+Latest separate read20:02UTC Oct22: broker7/7nativeinstrument quantities matched,
+R5three/0missing-extra-mismatch/0opens,4GET1POST/0orders/nofundsquery/alljoined.
+A/execution/current-paper-balance-openorders-readback-20261023-v1/CONSUMER.json
+16da7a56/result85ca09c0. HGB not separately enumerated; not full account/risk,
+settledcash/equity or F9non-send proof. Older six-instrument read is historical.
+Current retained R5 has three accepted/full
 BUY fills, nightly three accepted/full SELL fills. F9 unknown1/reservationHELD.
 Fees/settlement/netPnL UNKNOWN. Full console's orderable-funds query separately
 returned HTTP500/EGW00201; that failure did not erase complete balance evidence.
@@ -92,13 +96,25 @@ actualworkerproof retained. Initialfailedargument run/quietstdoutverifier fault
 NOT authority; independentsealer validates SAMEcomplete successfulhelper run,
 not cleanupbypass/testrepeat. Older inactive siblings preserved.
 
-Nextmodel source preparation (NOT executable broker commands):
-A/data/current-volume-gru-next-session-input-preparation-20261023-v1;
-A/research/current-volume-gru-serving-contract-20261023-v1;
-A/execution/current-volume-gru-provisional-paper-bridge-20261023-v1.
-Require real nextOct23 input/publishedpoint/native risk/quietownedentry-H20exit;
-one .005ORIGINALbasis cohort inside sharedtenth. No oldOct22point resurrection,
-HGBexitdate inheritance, unknownscore0 or forecast/live/PnL promotion.
+Current actualmodel point, NOT a broker command:
+A/research/current-volume-gru-feature-known67-point-20261023-v1/CONSUMER.json
+61d11d44/POINTb71758c6/nativeINPUTf2a2948b/policy9efb34bf/model8ebcb94f.
+ActualpublicationOct22 20:40:50.861551UTC/1CPUforwardeach67rows/348checks/
+alljoined/0fits-labels-GPU. N67/K7/no signveto/mask5ee8539b. Originalfixed69
+wholepoint UNKNOWN/0forwards:2native5bar activitysum0 makeQundefined. NEW general
+complete-feature PRE-SCOREmask/base69/full10033masked, not prefeature67 or
+economicilliquidity. DataFAMILY376c94cf/70GET1POST70pages6993rows/alljoined.
+Actual67bridgebff318f2/code522e6f48/memberfb335cfd/nativeSYN20PASS.
+Runtime preparation owner Meitner:
+A/execution/current-volume-gru-feature-known67-runtime-preparation-20261023-v1.
+Existing native20image4f4294ed/sharedbank/risk/intent/pending-first recovery,
+900active2400elapsed/max3fixedNO-EFFECTqualification starts. QuietentryOct23
+13:45..14:15UTC and conditional exact-owned exitNov19>=20:45UTC only after
+actualcold/quiet/restart/rollback proof; finalTask never manually started here.
+One .005ORIGINALbasis cohort/samevolume-gru-Oct23slot inside sharedtenth,
+NOT seven guaranteedorders/per-rownewbank. No unsupported/risk survivor renorm,
+F9release/unknownscore0/HGBexitdate inheritance. Actual Risk accept/BUY/fill/
+futureownedflat/fees/PnL UNKNOWN. No expired69template as new entry command.
 
 Modern four-arm campaign began16:54:16UTC/PID3548 and CLOSED technically16:56:
 A/research/current-kis100-market-context-recent-regime-development-20261023-v1,
@@ -120,8 +136,8 @@ fill/currentowned, pendingfalse/unknown0. ENTRY complete/lifecycle active, not
 freshbroker/fees/netPnL. ENTRY-CLOSURE.json binds the exact immutable chain.
 Generic unavailable was not no-effect. Unregistered actor7468 caused role_source_changed admission
 code, not proven Data fault/source mutation. Do not adopt its unknown artifacts.
-F9 staysHELD; original R5 and bank preserved. Current goal repairs the existing
-nightly retained-context path; Oct28 owned-exit readiness is installed, not
+F9 staysHELD; original R5 and bank preserved. Nightly retained-context repair is
+complete, not the current company objective. Oct28 owned-exit readiness is installed, not
 runtime closure or a new BUY.
 Qualified --recover-owned is an
 effect-capable recovery route, NEVER an offline reader. No new BUY/substitution.

@@ -1,118 +1,79 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-23 KST. A=D:/thericher-v2/model-artifacts.
-Own official-source mechanisms/pure kernels, not targets/fitting/broker risk.
-Engine owns numerical interpretation; Parent shared MD/Git. Invoked role,
-not a standing daemon/agent per indicator. AGENTS.md owns policy.
+2026-10-23 05:52KST. A=D:/thericher-v2/model-artifacts.
+Own mechanisms/pure kernels/consumable proposals, not broker risk or model
+selection/evaluation authority. Parent MD/Git; Engine numerical contracts.
+Invoked role, not a daemon/per-indicator MD or another report platform.
 
-## Current Consumer
+## Current Consumed Mechanisms
 
-Chronos2 GPU diagnostic COMPLETE05203e42:
-A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1/RETRO-CONSUMER.json.
-One model load/1SYN+3295markettrios/0fits-updates/oneINNER15cells/LATER0.
-Fixedhalf growth+0.02264%/DD2.20978% failed frozen growth+risk; no rescue.
-19Source+3334artifactchecks/4299.945121of9600upper/alljoined/GPUreleased18:02:20.
-HGB_WITH sealed scores reused/no secondforward. Socrates closed/not a running
-inference claim. Original Source02bfcd3e and strict rejection stay immutable.
-Exact cached checkpoint firstAdded2025-10-30T14:58:57Z precedes all actually
-consumed JulAug2026 INNER targets. No consumed TRAIN/CHECK/selection/LATER;
-unused2015metadata is not a checkpoint ban. Unknown corpus limits remain.
+Volume relative strength PRS3/Q3 Source3be0c1a6 has actualclosed matched HGB family
+be906a96:2fits/selected0-245/properPASS/financeFAIL (half==VOLUME), no fallback.
+Native C*tvol is activityproxy, not verified USDcapacity. Windows5/20/63 use
+4/19/62 adjacentreturns; no denominator epsilon/volumeimputation.
+CurrentOct22 input all69raw/context/factor known but2zero5bar activity sums makeQ
+undefined; oldfixed69dateUNKNOWN. No repeated API or claimstocks are illiquid.
 
-Original strict adapter rejects clipped DTO and raw windows with unknown actual
-arrival/feature-timeCA qualification. Raw Data now complete3295keys/43dates/
-prior63 OPEN-CLOSE-SPYCLOSE, but strict qualified windows0.
-A/data/current-modern-chronos2-prior63-input-20261023-v1/CONSUMER.json.
-Data corrected703.052of600overrun/prep630/oldpartition7575.303>7200 retained.
-New retrospective Source adopted ClaudeREVISE: snapshot representation only,
-not causal/PIT/CAclean/historical tradability/alpha. No imputed arrivals/CA or
-date/key filtering. Old source/debits unchanged; no need to rerun that recipe.
+Parent challenged explicit NEW common feature-complete pre-SCORE admission:
+base69retained/full100axis/derived67/33masked/matchedmask5ee8539b. Same N-dependent
+max(5,ceil(.1N)) rule yieldsK7, NOsignveto. Not prefeature67/old69success/alpha.
+A/review/current-feature-known-point-admission-20261023-v1/review/RESPONSE.txt
+SOUNDlimits; reject mistaken economicilliquidity/rounding/pre-feature claims.
+ActualVolume245/contextGRU12 rawestimand proof32c5d041/42b1dab5 passed58SYN/
+72artifactchecks, no extra.05,/1.001,centering/rank/probability transform.
+Point61d11d44/inputf2a2948b now exists/ONECPUforwardeach/0labelsfitsGPU;
+native67bridge bff318f2/code522e6f48/SYN20. Execution readiness still separate.
 
-Concrete Source3be0c1a6 volume-relative-strength mechanism20NumPychecks:
-A/research/current-kis100-volume-relative-strength-proposal-20261023-v1/CONSUMER.json.
-Native close*volume is activity proxy only; PRS3 and Q3 windows5/20/63, same
-source/index/known/session masks, no epsilon/volume-imputation. Paired PRICE vs
-VOLUME HGB/fixedhalf actual family now COMPLETE_FAILbe906a96: exactCHECK72,
-twoCPUfits/PRICEselected0/VOLUME245/properPASS/financeFAIL/1612checks/alljoined.
-Fixedhalf equalsVOLUME; no strict improvement or winnerfallback. At10bp/leg
-growth/DDpercentinitialNAV+1.92546/1.39856 versus uniform-0.80050/1.29784.
-Adaptive reuseddata, not independentalpha or Paperprofit. Packet remains at
-A/data/current-kis100-volume-relative-strength-input-20261023-v1.
-Actual SourceClaudeREVISE retained; no causal-volume or economic-capacity claim.
+## Joint Allocation / Next Hypothesis
 
-NEW economic jointMoE Source COMPLETEe1c07642/CONTRACT572e487:
-A/research/current-joint-moe-context-proposal-20261023-v1/CONSUMER.json.
-250native+96coldpredicates/4actualCPU-SYNupdates/31.926431actualactive/
-alljoined/0market-oldweights-GPU. Same scratchGRU32FiLM/MLP32/linear branches,
-context9 learnedgate vsfixedthird/commoninitialweights, directfixed-funded
-logutility notMSE. Exactfloat64softmax tau1/entropy1e-4, same saved allocations
-inreplay; noTopK transform or averaginglogitswithHGBpayoffunits.
-Both Claude reviews SOUND_WITH_NAMED_LIMITS; joint end-to-end is one TRAIN
-model, frozen-expert post-fit stacking still needs OOF. No AGENTS/authority
-change/fine-tuning ban/individualbranchprofit prerequisite. Parent ACCEPTED
-separate numerical18000lineageactive43200elapsed, actualnativeCUDA/optimizer/
-safeIO proof first/twofits/oneadaptiveINNER12cells/LATER0. Socrates owns
-current-joint-moe-economic-development-20261023-v1. Source CPU proof is NOT
-actualGPU/marketperformance. V1 nativeGPU SYN passed but a calendar-view hash
-mismatch stopped market BEFORE labels/constructors/updates; a55dc293 closed,
-no numerical performance. ONE explicit canonical/global index bridge V2 now
-delegated under unchangedfamily/caps/science, old launches/debits preserved.
+JointMoE a4a7b041 actual41/56CUDAepochs/selected17/32/66639updates/
+oneadaptiveINNER12cells/LATER0/673checks/alljoined/ownGPUreleased.
+Direct TRAIN netlogutility/contextgate versus jointly trained fixedthird:
+10bp growth/DD%initialresearchNAV learned+.9110/.8422,fixed+.3527/1.4563,
+uniform-.8005/1.2978; frozencriteriaPASS. Only3cohorts/reuseddata, maxissuer
+sleeveweight83.156%, not independentalpha/causalgate/tradability/PaperPnL.
+Do NOT swap newly seenwinner into today's already-frozen Volume/GRU point.
 
-Short-horizon SPY/QQQ path-rule Sourcefabf3b6c/44SYN/33oldmetadatafiles was
-consumed by finite CPU falsification40607bf0 COMPLETE_FAIL:
-A/research/current-intraday-relative-path-rule-development-20261023-v1/CONSUMER.json.
-All208anchors/145inputFIT63adaptiveEVAL/0alias/oneoutcome21cells/0fits-GPU/
-59SYN187artifactchecks/alljoined/261.292of840upper includingSource240once.
-10bp/leg SWITCHgrowth/DDpercentNAV-1.11283/1.14862 versusuniform-1.09978/1.11370;
-bothcriteriaFAIL, no cost/q/threshold/winner rescue or freshholdout claim.
-Finite path-concentration proxy is not calibrated jump/causal reversal proof.
+Prospective shadow Sourcecc8c9aee/26fixture5calendar20pointerchecks/alljoined/
+19.0632upper/no model loads-forwards-labels-GPU:
+A/research/current-joint-moe-prospective-shadow-proposal-20261023-v1/CONSUMER.json.
+Exactlearned17/fixed32/uniform69 futurepre-entry record is proposed. Allocation
+logits/softmax targetweights are NOT rawH20payoffs; today's payoffbridge incompatible.
+Target-weight nativeadmission is a technicalgap, not operator approval/globalhold.
 
-Leibniz now source/SYN verifies savedVolume245/contextGRU12 serving estimands
-and mechanical rawH20netpayoff parity before any currentpoint scores:
-A/research/current-volume-gru-serving-contract-20261023-v1,600active1800elapsed.
-Only compatibleestimands allow fixedhalf, no unknownscorezero/rankrescue.
-Parent Claude SOUND_WITH_NAMED_LIMITS6ada6d4c:
-A/review/current-fixed-volume-gru-provisional-paper-20261023-v1/review/RESPONSE.txt.
-Expiry/reusedkey is NOT grounds to settle unknownreservation; advice not adopted.
-Data nextsessioncalendar/ABI and Executionnativebridge run inparallel.
+TemporaryZeno Source dda805a6/CONTRACTb8f9dcd4/penaltyef8c6fad:
+one warm17/newAdamW-RNG26/+0.005issuerHHI hypothesis, no new model-name sweep.
+49CPUchecks4realSYN/146audit/Source300upper/alljoined, tempagentclosed.
+REVISE1eefc052 retained; cash-logitpremise inapplicable to issuer-only simplex,
+adopt unitmass/normalizedHHI/all-datecap proof. Warm/reset/training/penalty are
+confounded, no causalpenaltybenefit. No proof hardmax/utilityretention guaranteed.
+Socrates owns numerical A/research/current-joint-moe-concentration-penalty-development-20261023-v1,
+actualoneGPUfit20:49:59UTC after native2CUDA9440a50b/preflight34d5579f; no duplicate
+closedmodeltraining. Taggedtensor mechanicalrepair preservedfault/debit/caps.
+Source correction2d100d58 fixes synthetic zero-head gradient assertion/tmpfs,
+not penalty/science; original failedproof/debits retained.
 
-## Completed Mechanisms / Do Not Rescue
+## Completed / No Rescue
 
-- Context/recent-regime Source8b0d0b53 repaired explicit asof/caps/native safe
-  checkpoints and FiLM context-on-hidden interaction;39checks/1131.441939upper,
-  old Source overrun1017.300140 preserved once. Actual four-arm study later
-  FAILED technically with2HGBcomplete/2GRUinterrupted/INNER0, not running.
-- Artifact-only HGB context diagnostic is Engine-owned, no new fit/GRU reuse/
-  fallback winner/old failure regrade. Fixed HGB_NO/HGB_WITH/uniform/cash.
-- Payoff-tail magnitude/Huber-q10 and H20 HGB-GRU/fixedhalf COMPLETE_FAIL.
-  Cost-positive p>.55 HGB gate stayed cash/properPASS-financeFAIL; no threshold
-  rescue. New hypotheses require mechanism/data value, not only a model name.
-- Technical factor HGB, raw TCN/GRU/Transformer/Ridge, ListNet/cross-stock rank,
-  TabM/MLP, masked pretraining, OOF/calibration, rule/momentum/indicators and
-  older Chronos/TimesFM/LoRA/LSTM actually have closed source/numerical history.
-  Failed/alias/initialization-selected results remain Git c80d3d6 and A.
-  A new name does not create unused trials/untouched outcomes.
+Intraday path-rule40607bf0:208anchors/0alias/0fits-GPU/oneadaptiveoutcome21cells/
+59SYN187artifactchecks/alljoined/261.292upper includingSource240once.
+Primary10bp SWITCHgrowth/DD%-1.11283/1.14862 vsuniform-1.09978/1.11370,
+bothcriteriaFAIL. No q/cost/threshold/winner rescue or freshholdout claim.
+Bipower path-concentration is not a calibrated jump/causal reversal proof.
 
-## Interpretation / Sources
+Chronos205203e42:trustedcached2025-10-30checkpoint before usedJulAug2026targets,
+1GPUload3295trios/0fits/15cells/frozen growth+riskFAIL. Priorstrict0qualified
+windows/oldbudgets remain, snapshotcurrentvintage/PIT/CA/arrival/corpus limits.
+Other rule/indicator/momentum/ranking/ML/DL/foundation mechanisms stay Git/A.
+Source claims are not checked project performance; source limitations do not
+prohibit unrelated Paper/research. Fixed fusion may explore unprofitable experts;
+postfit learned stacking still requires purged chronologicalOOF. Joint scratch
+end-to-end branches are one model, not leaked in-sample stacking.
 
-Forecast Open[0]/Close[19] plugin uses predicted future entryOpen, not unseen
-actual entryOpen; it is a point-score, not expected netreturn/payoff quantiles.
-Fixed blends may explore individually unprofitable experts. Learned fusion
-requires purged chronological OOF. Compare compatible keys/costs/payoffs and
-cash/same-gross controls; lower exposure alone is not alpha.
-Currentlisting/nonPIT/currentvintage/CA/finality/arrival/reuse remain scoped.
-General forecasting papers do not prove project equityalpha or broker readiness.
-Research-only qualification never holds independent Paper authority.
-
-Primary motivation:
-- https://huggingface.co/amazon/chronos-2 (Apache2/trusted safetensors).
-- https://github.com/amazon-science/chronos-forecasting
-- https://arxiv.org/abs/2510.15821 (forecasting, not checked trading performance).
-- https://arxiv.org/abs/1709.07871 (FiLM mechanism, not stock-profit evidence).
-- https://arxiv.org/abs/2207.08815 (tabular tree motivation).
-- https://github.com/yandex-research/tabm/tree/v0.0.3
-- https://arxiv.org/abs/2410.24210
-
-SEC www/datahost403 close only exact scopes, no current accepted PITfacts;
-older DataHost success is not current reachability. Cboe reuse-rights uncertainty
-is separate, not a global ban or authority to assume rights. Public code isolated
-from trustedExecution; no credentials/broker/orders/public exposure from this role.
+Primary background remains official:
+https://arxiv.org/abs/1701.06538v1 (MoE mechanism, not stockalpha);
+https://arxiv.org/abs/1709.07871 (FiLM);
+https://github.com/microsoft/qlib/blob/main/qlib/contrib/data/loader.py (factor motivation);
+https://huggingface.co/amazon/chronos-2 (trusted safe checkpoint).
+No public/arbitrary code in Execution, newrights/public/paid/runtime replacement
+need operator; own algebra/installed dependencies need no artificial approval.

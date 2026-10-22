@@ -3,87 +3,112 @@
 ## One Company Outcome
 
 current-volume-gru-provisional-paper-point-v1:
-produce ONE newly dated, mechanically compatible fixed volume-HGB/context-GRU
-point from completed Oct22 KIS daily inputs and prepare its deterministic owned
-Paper entry/exit path for Oct23. Provisional execution-learning, not profitability
-promotion; readiness is not a future fill.
+produce ONE compatible, honestly published Oct23 fixed VolumeHGB245/contextGRU12
+point and prepare its deterministic owned Paper entry/exit. Provisional
+execution-learning, not a profitability promotion or a future fill.
 
-Previous nightly context recovery COMPLETEc8cbd76d: exact original SELL fullfill/
-contextcomplete/pending0/unknown0, separate stable postROe32ed23c;14GET1POST/
-0orders/alljoined. Original nightly Task unchangedReady Oct23 23:50KST.
-Single-use recovery overlay NOT scheduled. No new operator decision needed.
+## Actual Input And Explicit Supersession
 
-## Authority And Owners
+Data acquisition COMPLETEcf802567:70GET1POST/70pages6993rows/alljoined.
+CURRENT-DTO27536bd5 has all69 raw/factor/context known, but only67 volume features.
+Slots44/68 observed native5bar activity sums are zero; Q is undefined, not an
+HTTP/missing-price problem.20/63bar sums valid. IndependentVerifyc9dc7b67 and
+denominator55786b88. No more fetch, epsilon, zeroQ or source-vintage splice.
 
-C:/Users/Public/Documents/thericher-v2; run scripts/start_next_codex_task.ps1,
-then HANDOFF.md/AGENTS.md/RUNBOOK.md/active stateboards. Parent sharedMD/Git.
-Standing private free Data/Research/KIS Paper applies; never KIS_LIVE_*, live,
-paid/public/unclear-rights work or private/raw output. ONE original shared cash
-tenth including F9HELD/existing owners/costs/losses. New proposed cohort .005
-ORIGINALbasis, not another10%. Data D:/market_data; outputs
-D:/thericher-v2/model-artifacts (A), Docker /app/model_artifacts.
+ORIGINAL fixed69 point stays WHOLE_MATCHED_DATE_UNKNOWN/zero marketforwards,
+its preparation explicitly SUPERSEDED, not passed or silently shrunk.
+NEW operational admission: base-prefeature69 unchanged on full100axis, GENERAL
+common raw/factor/context/volume completeness BEFORE score/restore/rank/order.
+Current derived67 share ONE maskhash in both components;33 masked with reasons.
+This is pre-SCORE67, not pre-feature67. Nativezero activity does not establish
+economic illiquidity. Same N-dependent rule max(5,ceil(.1N)) ->K7, no sign veto.
+A/review/current-feature-known-point-admission-20261023-v1/review/RESPONSE.txt
+SOUND_WITH_NAMED_LIMITS; no hidden selection, old result regrade or duplicatecohort.
 
-- Averroes/Data: A/data/current-volume-gru-next-session-input-preparation-20261023-v1.
-  Family2400active7200elapsed includes prior181once; first600 for same NYSE
-  pandas_market_calendars5.4.0 extension/exactprefix/DST/H20 keys and actual pure
-  feature-ABI parity. Mandatory correctionc5748e76 overrides wrong package-name
-  text in old consumere6b2726c. Prepare market-only quiet acquisition after20:10UTC
-  Oct22: fixed69 pre-feature stocks+SPY, fresh wholeMODP1 pages throughOct22,
-  full100axis/31masked, max70logicalGET/oneclient/onePOST/no retries. No expired
-  point/old-current vintage splice/imputation/post-score shrink. Parent checks
-  source/request contract before calls/install; worker owns next_due/token gates.
-- Leibniz/Engine: A/research/current-volume-gru-serving-contract-20261023-v1,
-  <=600active1800elapsed; SOURCE/SYN/cold only before separate one-point release.
-  Fix VolumeHGB245 and warmGRU_WITH12 BEFORE current scores. Mechanically prove
-  actual target/centering/horizon/fee/currency/scale via SAME invented reference
-  vector. Only compatible rawH20netpayoff -> half/half, no rank/probability rescue,
-  fallback winner or unknown-score zero. Required69 scores known;31 outside69
-  staymasked. Safe source/checkpoint/affine/DTO pins; no new marketfit/labels/GPU.
-  Heavy inference stays isolated from trusted broker runtime.
-- Meitner/Execution: A/execution/current-volume-gru-provisional-paper-bridge-20261023-v1,
-  <=600active1800elapsed SOURCE/nativeSYN only; no effects yet. Reuse native
-  point/risk/budget/recovery/quiet-owner paths. Freeze dated publication/entry/
-  actualH20exit/budget BEFORE one-point forward. Unbound input hashes stayUNBOUND.
-  No oldOct28exit inheritance/F9replacement/duplicateHGBentry/foreignadoption.
+## Actual Point / Runtime Consumer
 
-Parent Claude SOUND_WITH_NAMED_LIMITS:
-A/review/current-fixed-volume-gru-provisional-paper-20261023-v1/review/RESPONSE.txt
-6ada6d4c. Adopt mechanicalestimand/cutoff/knownness checks. REJECT expiry/reused-key
-reservationrelease: only positive exact terminal/cancel/fill reconciliation may
-settle; unknown/partial staysheld. Incompatibility needs a separately frozen
-concrete alternative before scores, not silent reinterpretation.
+A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
+- Data/Averroes COMPLETE: FAMILY-CLOSURE376c94cf/14directrefs, no models/API retry.
+  A/data/current-volume-gru-next-session-input-preparation-20261023-v1.
+  Payload7fd5580a/DTO27536bd5, actual70GET1POST70pages6993rows88.021926sec;
+  conservative family843of2400active/3838.9of7200elapsed/alljoined.
+  Calendar pandas_market_calendars5.4.0NYSE/0bfcc405, prior63 Jul27..Oct22;
+  Oct23 entry/H20exit Nov19 21:00UTC. Historical arrival/CA/finality unknown.
+- Engine/Leibniz COMPLETE61d11d44:
+  A/research/current-volume-gru-feature-known67-point-20261023-v1/CONSUMER.json.
+  Exactly1CPUrestore+forward percomponent67rows/0fits-labels-GPU-retries;
+  348checks/alljoined/95.644196of420activeupper. PublicationOct22
+  20:40:50.861551UTC, inputasof20:40:48.466887, beforeOct23OPEN13:30.
+  POINTb71758c6/nativeINPUTf2a2948b/policy9efb34bf/model8ebcb94f;
+  same sharedmask5ee8539b/K7/no signveto. No further pointforward.
+- Execution/Meitner owns actual runtime preparation:
+  A/execution/current-volume-gru-feature-known67-runtime-preparation-20261023-v1.
+  900actualactive2400elapsed/max3fixedNO-EFFECTqualification starts. Existing
+  native20image4f4294ed/profilemodel-proposal-nas-20session-2026-v1/sharedbank/
+  deterministic risk/intent/recovery; new67bridgebff318f2/Source5d2070c8/code522e6f48/
+  memberfb335cfd/actualSYN20PASS. Install quiet owned entry only after realpoint/
+  native/cold/quiet/rollback proof; do not manually start finalTask/order.
+  EntryOct23 13:45..14:15UTC, conditional exact-owned exitNov19>=20:45UTC;
+  targetCLOSE21:00 versus last15min execution proxy is not replay equivalence.
+  Stable volume-gru-Oct23 cohortslot/.005ORIGINALbasis, never duplicateallocation.
+  Seven targetslots are NOT sevenorders: retain considered/no-intent/pending/
+  accepted/owned coverage, no force-spending or post-risk/venue renormalization.
+  Risk acceptance/futurefill UNKNOWN until actual native execution.
 
 ## Independent Research
 
-Socrates joint directutility GRU/MLP/linear learnedgate versus fixedthird actually
-trains on two CUDA children, Source0b7068c6:
-A/research/current-joint-moe-economic-development-20261023-v1.
-Actual metadata/key/mask/cold parity34d5579f before labels/fits; old V1calendar
-faulta55dc293/two failedstarts/debits remain. SAME18000lineageactive43200elapsed/
-two firstlogicalfits/192epochs/earlystop24/oneadaptiveINNER12cells/LATER0.
-Epoch1 committed687updates EACH; recheck actual later resources/progress.
-WarmGRU/Chronos2/volume/short-rule CLOSED, not reruns. Volumebe906a96 properPASS/
-financeFAIL (half==VOLUME). Intraday40607bf0 support208/both frozen growth-riskFAIL/
-oneoutcome21cells/0fits-GPU/alljoined/no rescue. Reused data is not fresh holdout.
+Joint directutility comparison COMPLETEa4a7b041:
+A/research/current-joint-moe-economic-development-20261023-v1/CONSUMER-V2.json.
+Actual41/56epochs/28167+38472updates/selected17/32/patience24; oneadaptiveINNER/
+12cells/LATER0/673checks/alljoined/ownGPUreleased/lineage8499.670274.
+Frozen growth+riskPASS:10bp/leg growth/DD%initialNAV learned+0.9110/0.8422,
+fixed+0.3527/1.4563, uniform-0.8005/1.2978. Only3cohorts/reused data, maximum
+learnedissuer sleeveweight83.156%; not independent alpha/causal gate/PaperPnL.
+DO NOT replace today's already-frozen candidate with this newly seenwinner.
 
-## Completion And Continuation
+Socrates runs ONE concentration-penalty campaign in
+A/research/current-joint-moe-concentration-penalty-development-20261023-v1.
+Warm learned17/newAdamW-RNG26/TRAIN+.005issuerHHI/CHECKunregularized,
+max192epochs131904updates/patience24/onefit/postupdateRetry0. New9000active/
+old8499.670274once/lineage18000 and originalelapsed origins unchanged.
+Native2CUDAproof26checks4updates9440a50b and preflight34d5579f passed;
+market-start20:49:59UTC/1start, actualCUDAcurves/checkpoints now exist.
+Preflight1fault436c9e56 was tagged-safe-tensor decoding before0marketconstructors/
+updates; samecaps correction uses pinned native(modelsubtree), NOT oldoptimizer/
+RNG. Fault27.470561/debits/native1proof retained; no scientifictrial reset.
+Frozen issuermax<=.50 and HHI<=.75old both all43/funded3, plus growth/risk;
+no postfit cap, exposure rescue or seenwinner substitution.
 
-Require actual bound fresh input, compatible frozen point, native consumer/risk
-proof and quiet owned next_due/exit/recovery readiness. A bounded native no-intent
-must bind the ACTUAL persisted point and risk reason. A source/dependency failure
-alone is unfinished or explicitly superseded, never company completion.
-No futurefill/OS-origin/
-freshbroker/fees-settlement-netPnL inference. F9 UNKNOWN/HELD; R5owned3/original
-Oct27; HGBowned1/originalOct28. Independent nightly23:50 is not this model's result.
+Leibniz independently executes ONE CPU prospective shadow from Sourcecc8c9aee:
+A/research/current-joint-moe-prospective-shadow-point-20261023-v1.
+New120active1800elapsed/max2loads2forwards/1record/0labels-fits-GPU-retries,
+same actualData ORIGINAL69 raw/factor/context-known, not derived67volume mask.
+Pin learned17/fixed32/uniform69 beforeOct23entry, full100 exact savedweightbytes.
+Logits/desiredweights are NOT rawnetpayoff scores or orders; no Papercapital/
+schedule or today's frozen candidate replacement. Native target-weight admission
+remains separate technical work. TemporaryZeno closed after Source/SYN only.
+Other closed warm/Chronos/volume/intraday histories remain role boards/Git/A.
 
-Fresh authority54526ef3:
-A/verification/current-nightly-context-recovery-20261023-v1/authority.json.
-1464serial/18659fullPASS25skip/18684total/actual8workers/clean unmodifiedhelper/
-Ruff3Compose/exact1375production-control123a2072. Fullstdout/JUnit/actualworker
-proof retained. Failed initialargument run is NOT authority. Quiet-stdout
-verifier fault corrected by independent checks of the SAME complete helperexit0
-run, not suite repetition/cleanup bypass. Externalcode needs native tests.
+## Authority / Completion
 
-Verify material changes, commit/push, refresh stateboards, replace with ONE next
-company outcome and continue. No foreground session/quota wait while ready work
-exists; lane-local limits are not company permissions or completion.
+Workdir C:/Users/Public/Documents/thericher-v2; run scripts/start_next_codex_task.ps1
+and follow HANDOFF.md/AGENTS.md/RUNBOOK.md/stateboards. Standing private free
+Data/Research/KIS Paper; never KIS_LIVE_*, live, paid/public/unclear-rights work or
+private/raw output. M=D:/market_data; models A/Docker /app/model_artifacts.
+ONE original shared cash tenth including F9HELD/R5/HGB/owned costs/losses.
+New proposed cohort .005 ORIGINALbasis, not another10% or expanded profitbank.
+
+Nightly recovery c8cbd76d COMPLETE; original TaskReady Oct23 23:50KST, overlayNOT
+scheduled. Fresh balance16da7a56 at20:02UTC:7/7native quantities matched/R5three/
+0openorders/4GET1POST/0orders/alljoined; F9 remainsUNKNOWN/HELD, not non-send proof.
+R5 originalOct27 and HGB originalOct28 exit owners untouched; no new HGB entry.
+
+Require actual persisted compatible point/native risk proof and quiet owned
+entry/exit/recovery readiness. No-intent must bind ACTUALpoint/risk reason.
+Dependency failure alone is unfinished/explicitly superseded, never completion.
+Fresh authority54526ef3:1464serial/18659fullPASS25skip/actual8workers/cleanoriginal
+helper/Ruff3Compose/exact1375production-control123a2072; rawfullstdout/JUnit/worker
+proof retained. External source needs its own native evidence. Reuse only when
+exact digests match, no repetitive fullsuite for unchanged docs.
+Verify material changes, commit/push, refresh boards, replace ONE next outcome
+and continue ready work. No foreground session/quota wait or lane-global holds.

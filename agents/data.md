@@ -1,111 +1,64 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-23 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own source/acquisition/canonical/availability, not account orders/model selection.
-Parent owns MD/Git. AGENTS.md owns authority; this MD is not a running worker.
+2026-10-23 05:52KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own source/storage/calendars/features/availability, not account/orders/model
+selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
-## Current Result / Owner
+## Current Actual / Next Consumer
 
-Averroes completed raw feature-only prior63 Chronos2 packet:
-A/data/current-modern-chronos2-prior63-input-20261023-v1/CONSUMER.json
-a45d947bfde2313d7f4cb850d9df32db8a7388a2beb5d0ad428fa1d33f0a873e.
-SOURCEc7d7ad08/DTOd21ec26c/packet e7f30029 underM/research_inputs/same-name.
-Original100axis/43origins/3295eligible keys/all43raw dates complete; causal
-prior63 stockOPEN/CLOSE/SPYCLOSE, official83calendar, masks/keys retained.
-408checks+21closeout checks/alljoined/PID0/one feature materialization/0targets/
-labels-model-GPU-network-private. Conservative closed703.052/600OVERrun stays;
-earlier592.052projection superseded by separate correction, no budget refund.
+Averroes completed current acquisition and feature family:
+A/data/current-volume-gru-next-session-input-preparation-20261023-v1/FAMILY-CLOSURE.json
+376c94cf. Actual collector54380 start20:15:49UTC/alljoined/0active;70GET1POST/
+70wholepages6993rows/cf802567/88.02s, no retry. Raw bytes M only, no rawoutput.
+Prior63 Jul27..Oct22, actualavailability20:17:17.392UTC/inputasof20:20:12.353419.
+NativeMODP1/GUBN0, full100axis/base-prefeature69, no old-current row splice.
+Raw/factor/context69known; Volume67. Slots44/68 observed5bar nativeactivitysum0
+makesQ undefined;20/63all69known. Not API/missingprice/permanentabsence or proof
+of economic illiquidity. ORIGINAL fixed69 consumer staysWHOLE_MATCHED_DATE_UNKNOWN.
 
-Actual arrival-admitted0/CAqualified0/current strict Source windows0.
-Raw completion is NOT live/PIT/CAclean/finality qualification. Data cannot impute
-arrival clocks or clean-CA flags. Source/Engine owns a separately frozen
-retrospective price-proxy claim, not changing this original packet or old rejection.
-Parent proxies native delivery to Socrates/Steward; no fictitious role message.
+Exact consumer bindings:
+- CURRENT.features.npz M/us_equities/research_inputs/same-family/current-features,
+  hash7fd5580a; CURRENT-DTO27536bd5/CURRENT-FEATURE-SOURCEa26326dc.
+- Historical pureABI0b627113, actualindependentverifyc9dc7b67/730predicates,
+  denominator55786b88; currentpredicates1588/finalmetadata14/postseal13.
+- Same NYSE pandas_market_calendars5.4.0 CALENDAR0bfcc405, exact4992retainedprefix,
+  extendedDec31. Oct23global4983/H20exit5002 Nov19CLOSE21:00UTC.
+- R3Ready7313038c/collector6bfc4536/199newSYNchecks+5509reused, no exception text/
+  bodies in output. R2proofs retained. Scoped newclient token60s/default300
+  unchanged; existing actual atomicdirectory+legacylocks, no age-reclaim.
+- Conservative finalfamily843/2400active, elapsed3838.9/7200; old181/source661
+  chargedonce. Allnative/collector/feature/verifier actors joined, no models/labels.
 
-Temporary Infra source-only attribution COMPLETE563c9017 at
-A/execution/current-unregistered-scheduled-actor-attribution-20261023-v1/CONSUMER.json:
-exact9fe9750c matches scripts/run_owned_task_quiet.py/sharedfive projectTasks.
-Strongest source/time candidate thericher-kis-paper-intraday-head last17:28:00UTC,
-actor start+.634422s; parent2992 currently hosts Schedule/Running. Not historical
-OS-origin proof/Data blame. NoTask/API/Docker/private reads or mutations;
-60of180activeupper/221of600elapsed. Parent proxied to Execution's exit-admission
-consumer. Actual job/child source/args/mount capabilities still require binding,
-not blanket admission or disabling Data.
+Parent chose EXPLICIT new pre-SCORE complete-feature consumer after challenge:
+base-prefeature69 retained; GENERAL base & raw & factor & context & volume_known
+gives67/full100axis33masked, identical sharedmask5ee8539b before both forecasts.
+Old69failure is not passed/rewritten. No epsilon or further fetch.
+New bridge bff318f2/522e6f48/memberfb335cfd, point61d11d44/inputf2a2948b already
+published by Engine; Data did not select stocks by scores or produce orders.
+Data now on standby; no collector/LLMworker inferred from this board.
 
-Price-volume packet COMPLETEc0a88302/58743predicatechecks:
-A/data/current-kis100-volume-relative-strength-input-20261023-v1/CONSUMER.json.
-Source3be0c1a6 PRS3/Q3 prior5/20/63/original100axis/no zero-Q/literalduplicate/
-near-alias flag. TRAIN2740feature-calendar dates133899rows/CHECK75-5556/
-INNER43-3295/all3cohorts. TRAINaffine2759inputdates sealed before maturity/targets.
-Engine later measured exactCHECK72dates5333rows, literal63 minimum PASSED;
-twoCPUfits now completebe906a96/properPASSfinanceFAIL/1612checks/alljoined.
-No guessed support or hidden minimum change.
-Actualactive301.376801of1200/alljoined/PID0/onefeaturematerialization/0targets/
-models-GPU-API-private. Knownzero volume allowed only with positive denominator;
-undefined remains unknown, no epsilon/imputation. Data producer finished.
+## Retained Inputs / Closed Cursors
 
-Input feasibility COMPLETEe6b2726c/DELIVERYd68e30e1/563checks/181upper/alljoined/
-0API-label-private-model-effects.69rawcandidates,31unknown=acceptedempty1+
-untypedfailure1+unattempted29, NOT permanent sourceabsence. Expired Oct22 point
-not resurrected; minimalOct21SPY cursor was never called. Mandatory external
-calendar correctionc5748e76: pandas_market_calendars5.4.0NYSE, NOT exchange_calendars.
-Current Averroes: A/data/current-volume-gru-next-session-input-preparation-20261023-v1,
-family2400active7200elapsed includes181once. First600 calendarextension exact
-retainedprefix/DST/holiday/actualnextOct23H20exit and pure actualfeatureABI parity;
-then prepared quiet one-date collector afterOct22 20:10UTC. Freshwhole MODP1
-pages throughOct22/fixed69pre-featurestocks+SPY/full100axis31masked/max70GET/
-oneclient/onePOST/no retries. No old/current source-vintage splice, feature
-imputation or post-score shrink. Parent checks source/finitecontract BEFORE API/
-install; namedworker owns next_due/tokenadmission. No new collection claimed yet.
-Analyze defaultData300sPOSTguard versus4minobserver liveness with official60s
-issuance/actual atomicdir+legacylocks; no oldfrozencontract/globalpacing change,
-foregroundsleep or age-reclaim. Source limitations constrain claims, not Paper.
+Modern context46861c1b/ABIa5027850: TRAIN2747dates134187rows/CHECK75-5558/
+INNER43-3295/threeH20cohorts/19tailpurges/custody575+317checks.
+Volume packc0a88302:58743predicates/301.376801upper/alljoined; exact later
+CHECKjoin72dates5333rows passed63, not original46..75 estimate.
+Fresh oldHGBa76460b4:69known31unknown throughOct21;31=empty1/failure1/
+unattempted29, not permanent source-limited. Expired point never resurrected.
 
-## Other Current Inputs / Closed Scopes
+Historical100 continuation COMPLETE83closed17unavailable/87934newbars/
+0remaining/alljoined: A/data/current-kis-modp1-historical100-continuation-20261022-r2/FINAL.json.
+No completed-cursor rerun. SEC wwwmap/direct-AAPL403 close only their exact scopes,
+not allSEC/no-free-data/globalresearch authority.
 
-Modern stock/SPY context Data:
-A/data/current-kis100-market-context-recent-regime-input-20261022-v1/CONSUMER.json
-46861c1b/SOURCEdfb27094/ABIa5027850.
-TRAIN2747dates134187rows/CHECK75-5558/INNER43-3295/three H20cohorts.
-19calendar boundary purges,29whole CHECK endpoint-unknown dates excluded;
-new TRAIN-input affines before target masks. Exact fitter allowlist excludes
-INNER labels/costs/marks. Data826.145181/1200/alljoined. Custody575checks/
-VERIFY23825ceb plus independent Review317predicates48files PASS_withlimits.
-Actual four-arm study later FAILED technically; do not say it is running.
+## Durable Scope / Recovery
 
-Fresh operating Data:
-A/data/current-kis100-hgb-fresh-operating-input-20261022-v1/DELIVERY.json
-a76460b4:100keys/69known31unknown/prior63throughOct21;71GET1POST/
-70acceptedpages6892rows. First non200 halted, causeUNKNOWN;29unattempted
-NOT source-limited. Consumer complete with limits, not all100 source coverage.
-Selected operating point is Engine/Execution owned, not this raw packet.
-
-Historical100:
-A/data/current-kis-modp1-historical100-continuation-20261022-r2/FINAL.json
-COMPLETE83qualifiedclosed/17explicitunavailable/87934newbars/911pages/
-920actualnewGET/1newPOST/0remaining/alljoined. Original frozen0067/81ad6523
-unchanged. No completed-cursor rerun; fresh-session cursor is separate.
-
-SEC:
-A/data/current-kis100-sec-pit-feasibility-20261023-v1/DELIVERY.json
-667e374c:1www mapGET403/0CIK/111checks/alljoined/310of600upper.
-A/data/current-sec-direct-host-capability-20261023-v1/DELIVERY.json
-a8d2ac2e:1data.sec.gov known-AAPL submissionsGET403/companyfactsUNATTEMPTED/
-51checks/alljoined/70of120upper. Exact refused scopes only, no retry or claim
-allSEC unavailable/contact-email mandatory; no accepted current100 PIT facts.
-Earlier official DataHost access evidence remains history, not current reachability.
-
-## Durable Knowledge / Next Consumer
-
-Fixed100 currentNAS sample, not PIT universe/liquidity membership or cleanCA/TR.
-KIS GUBN0/MODP1 source-limited history cannot prove actual arrival/providerfinality.
-Calendar interval_elapsed differs from complete_observed. Unknown stays unknown.
-Data quality limits claims/consumers, not independent research/Paper authority.
-Scoped RO custody admits source-attested market-only Data; actual private writers/
-unstable files still deny. One actual collector per cache/account gate.
-
-Raw market bytes M; generated models/research A/Docker /app/model_artifacts.
-Keep15percent D free/warn20. No private/raw rows/credentials in logs/Git/Claude.
-Use existing completed feature packets/cursors before acquiring more data.
-Detailed earlier feature/cost/close-expert/observation/source histories remain
-Git c80d3d6 and immutable external consumers, not ready collector commands.
+Static currentNAS/nonPIT/currentvintage/MODP1/CA/TR/arrival/finality limits remain.
+Elapsed session is not providerfinality; current capture is actual availability
+upperbound, not historical arrival. Undefined data is never imputed.
+Limits apply to named consumers, not independent Paper/other valid input branches.
+Source-attest actual marketcache/token writers at dispatch; unknown owner defers
+only its scope. Generic sharedquietlauncher/intraday-head can include SPY Paper,
+not blanket market-only. Reader custody12410a15 scopes actual private writers.
+No KIS_LIVE_* or secrets/private/raw output. Market M/models A;15%free floor.
+Detailed raw evidence/failed attempts/history stay immutableA/Git, not journals.

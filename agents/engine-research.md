@@ -1,122 +1,88 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 04:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own hypotheses/features/targets/splits/training/replay, not deterministic broker
-risk. Parent MD/Git. AGENTS.md owns policy. An MD is not a running worker.
+2026-10-23 05:52KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own model/feature/target/replay interpretation, not broker risk. Parent MD/Git.
+AGENTS.md owns policy; Source/MD/dispatch is not a running fit.
 
-## Current Ready / Owned
+## Actual Point / Execution Consumer
 
-Socrates owns NEW direct-economic joint model:
-A/research/current-joint-moe-economic-development-20261023-v1/PARENT-CAMPAIGN.json.
-Sourcee1c07642/CONTRACT572e487; three scratch branches(GRU32FiLM/MLP32/linear),
-context learnedgate versus identical jointly trained fixedthird expert control.
-No pretrained weights/predictions or post-fit stacking. Logits -> full100softmax
-tau1 -> fixed .10funded researchNAV; TRAINlogutility/entropy1e-4, CHECKunregularized
-utility, SAME saved allocations in1/5/10bp replay. Not MSE, TopK or live sizing.
+Leibniz completed ONE fixed-half VolumeHGB245/contextGRU12 CPU point:
+A/research/current-volume-gru-feature-known67-point-20261023-v1/CONSUMER.json
+61d11d44; DELIVERY binds actualSource d598d098/348ROchecks/allactorsjoined.
+Exactly1restore/forward percomponent/67rows,0fits-labels-updates-GPU-retries.
+Actual inference20:40:48.972..20:40:50.001UTC, inputasof20:40:48.466887,
+publication20:40:50.861551, beforeOct23OPEN13:30UTC. Family95.644196/420upper.
+POINTb71758c6/nativeINPUTf2a2948b/policy9efb34bf/modelmanifest8ebcb94f;
+full100output1933d174/rawcomponentsd769f2f3/sourcepacket32b1a962.
+N67/K7 tie-fair, NO positive-score veto; rawscore estimand verified42b1dab5
+via same reference vectors/actualCPU safe restore/58SYN72artifact checks.
+No extra .05, /1.001, rank/probability or centering transform.
 
-Total18000lineageactive43200elapsed includes3345.419009closedonce; new14100
-partitions(nativ900/twofits5400each/infer600/readout900/verifycleanup900).
-Actual intendedCPU/CUDA model/AdamW/RNG/safeI/O proof before market; up to3fixed
-SYNtechnical attempts/12updates9constructors perdevice inside900. Then twofits/
-192epochs131904updates/CHECK193/earlystop24/seed20261025, oneadaptiveINNER12cells/
-LATER0. Data exactModern46861c1b/ABIa5027850/raw-factor-context/affines/asof/purges;
-verify raw/scaled/clipped semantics, no double scaling. Source CPU250native+
-96coldpredicates/4updates/31.926431active is NOT GPU or market proof.
-V1 actual native CPU/CUDA SYN passed but market workers failed at calendar-view
-binding BEFORE labels/model constructors/updates. a55dc293/3373.443270lineageupper,
-alljoined/leaseReleased; native SYN is not market training. Parent authorized
-ONE mechanical V2 bridge within SAME18000/43200: canonical3205 versus original4992
-calendar views explicitly mapped, globalH20phase/purges/keys/seed/model unchanged.
-Retain old two failed launches; two new starts may perform the original two
-logical fits only after real metadata/mask/cold proof. No refund/old result edit.
-V2-RELEASE-BOUND.json records this, not an ongoing GPU claim. Existing Steward
-allocates measured headroom/singleowner/two disjoint children, no approval platform.
-V2 bridge now ACTUALLY PASSED34d5579f/36checks/cold real role metadata with0label
-decodes; Source0b7068c6/two CUDA children started19:24UTC/coordinator59692.
-Each epoch1committed687updates; at19:49UTC learned28/fixed29 completedepochs
-afterepoch0, both nonterminal. No currentperformance/alpha/completion claim.
+Data raw/context/factor69 butvolume67 due2zero5bar nativeactivity denominators.
+ORIGINAL fixed69point staysUNKNOWN/0forwards/clock-debits preserved.
+NEW GENERAL pre-SCORE complete-feature admission/base69/full100/33masked,
+same mask5ee8539b in both components. This is not prefeature67 or a liquidity
+truth; availabilitybias recorded, no score/outcome-based stock selection.
+New nativebridge bff318f2/Source5d2070c8/code522e6f48/memberfb335cfd/SYN20PASS.
+Risk acceptance UNKNOWN until Execution; no submit/fill/PnL claim.
+Meitner binds quietnative20 entryOct23 13:45..14:15UTC/H20ownedexitNov19>=20:45.
+One proposed .005ORIGINALbasis within sharedtenth, no F9replacement/newcapital.
 
-Price-volume CPU HGB/fixedhalf family COMPLETE_FAIL be906a96:
-A/research/current-kis100-volume-relative-strength-development-20261023-v1.
-Source3be0c1a6/PROPOSALca46de6d, Data c0a88302/58743predicatechecks/301.376801active.
-PRS3/Q3 prior5/20/63, raw close*volume activity proxy, not verified economic USD.
-TRAIN2740dates133899rows/exactCHECK72dates5333rows/INNER43-3295/all3cohorts;
-literalminimum63 passed, not relaxed. Two real CPU HGB fits/256stages each/
-PRICEselected0/VOLUME245/oneINNER15cells/LATER0/1612checks/allactorsjoined.
-ProperPASS/financeFAIL: fixedhalf==VOLUME, PRICE==uniform; no fallback or regrade.
-At10bp/leg growth/DDpercentinitialNAV: VOLUME/fixedhalf+1.92546/1.39856,
-PRICE/uniform-0.80050/1.29784. Lineage2539.775582upper, noGPU/trainingrerun.
-Short-horizon relative-path rule COMPLETE_FAIL40607bf0: all208anchors/noalias,
-zero fits/GPU, oneadaptiveoutcome21cells/59SYN187artifactchecks/alljoined.
-Primary10bp/leg SWITCHgrowth/DDpercentNAV-1.11283/1.14862 versus
-uniform-1.09978/1.11370, both frozencriteriaFAIL/no rescue;261.292of840upper.
-A/research/current-intraday-relative-path-rule-development-20261023-v1/CONSUMER.json.
-Leibniz now owns serving contract A/research/current-volume-gru-serving-contract-20261023-v1,
-<=600active1800elapsed. Actual Volume245/contextGRU12 target/centering/horizon/
-fee/currency/scale via SAMEinventedreferencevector, safe CPUrestore/SYN/cold/DTO.
-No currentmarketforward/newfit/labels/GPU. Fixedhalf rawscores ONLYif estimands
-match; no unknownscorezero/rank/probabilityrescue. Full100axis/fixed69before
-features/31maskedoutside69, whole required-date known. Data nextOct23 input/
-calendar preparation and Meitner deterministic bridge run independently.
+## Completed Joint Model / Next GPU
 
-## Newly Completed / No Repeat
+JointMoE a4a7b041 COMPLETE:
+A/research/current-joint-moe-economic-development-20261023-v1/CONSUMER-V2.json.
+ScratchGRU32-FiLM/raw63x6 +MLP32/factor10/context9 +linear19, jointly trained
+learnedcontextgate versus fixedthird, direct netlogutility/issuer simplex.
+ActualCUDA41/56epochs28167/38472updates/selected17/32/patience24, oneadaptive
+INNER12cells/LATER0/673artifactchecks/alljoined/ownGPUreleased.
+10bp/leg growth/DD%initialresearchNAV learned+0.9110/0.8422,
+fixed+0.3527/1.4563, uniform-0.8005/1.2978; frozen growth+riskPASS.
+Only3cohorts/reused data/selectionoptimism/nonPIT/CA/finality/arrival limits.
+Max learnedissuer sleeveweight83.156%; no independentalpha/causalgate/convergence/
+historicaltradability/Paperprofit. Lineage8499.670274/18000, oldV1fault/debits kept.
+Today's Volume/GRU candidate NOT replaced with this newly seenwinner.
 
-Warm GRUs COMPLETEa38153c4:
-A/research/current-modern-gru-epoch6-newoptimizer-warmstart-development-20261023-v1/CONSUMER.json.
-Actual simultaneousCUDA fits started18:18:56: NO39epochs/selected15/26793updates;
-WITH36/selected12/24732, bothpatience24. Exactepoch6 oldweights, NEWoptimizer/
-RNG/seed20261024, not exactresume/oldretry. Newactual1118.894658/lineage9615.193953/
-592checks/2selectedinferences/oneINNER12cells/LATER0/alljoined/GPUreleased.
-10bp/leg growth/DDpercentinitialresearchNAV: NO+0.58936/2.03362,
-WITH+1.13658/2.26982, uniform-0.80050/1.29784. CHECK fell then rose while TRAIN
-continued improving; do not extend epochs to rescue it. CHECK reused twice/
-selection optimistic; no independentalpha/causalcontext/convergence/PaperPnL.
-Selectedepochspositive, not epoch0 inherited-model/no-improvement cases.
+Next Socrates numerical integration:
+A/research/current-joint-moe-concentration-penalty-development-20261023-v1.
+Source dda805a6/CONTRACTb8f9dcd4/penaltyef8c6fad/49CPUchecks4SYN/146audit.
+ONE new weights-only learned17 warmstart/newAdamW-RNG26, TRAIN+.005issuerHHI,
+CHECKunregularized, max192/patience24/131904updates, no lambda/seed/temp sweep.
+Same.10researchfunding; compare cached learned17/uniform, no oldfit/forward/rerun.
+New<=9000 includesSource300; old8499.670274once/lineage18000. Native600/fit5400/
+infer300/readout600/verifycleanup1800; frozen maxissuer<=.50/HHI<=.75old onall43
+andfunded3, growth>=.90oldpositive/>uniform, DD<=old&uniform.
+Preflight1FAULT436c9e56 preceded0marketconstructors-updates; taggedmodelsubtree
+was incorrectly expected flat. Samecaps native(modelsubtree) repair preserves
+oldfault27.470561debit, no oldoptimizer/RNG conversion/restoration.
+Native2CUDA9440a50b PASS26checks4updates/preflight34d5579f, actualONE marketstart
+20:49:59UTC/worker20:50:00.605UTC. Curve012 proves12epochs8244updates by443.269s;
+not final result/convergence. Exact fit container4f90cf5f/coordinator10716/
+startFILETIME134371757870715113, not a genericPython/GPU-name attribution.
+REVISE1eefc052 retained; free-cash-logit premise rejected by source unitissuer
+simplex proof. No causalpenaltybenefit from warm/reset/extra-training confound.
 
-Chronos2 COMPLETE05203e42:
-A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1/RETRO-CONSUMER.json.
-Actual1GPUload/1SYN+3295markettrios/0fits-updates/oneINNER15cells/LATER0.
-HGB_WITH sealed forecast reuse/no secondforward. Fixedhalf growth+0.02264%/
-DD2.20978%, frozen growth+riskFAIL. 19Source+3334artifactchecks/
-4299.945121of9600closedupper; forecastjoined18:02:19/GPUreleased18:02:20.
-Snapshot-only/REVISE retained; exactcached2025-10-30 checkpoint before consumed
-JulAug2026 targets, corpus/CA/arrival/PIT limitations remain. No rerun.
+Direct-weight shadow Sourcecc8c9aee was completed without currentforwards:
+A/research/current-joint-moe-prospective-shadow-proposal-20261023-v1/CONSUMER.json.
+Leibniz now executes separate ONE CPUrecord in
+A/research/current-joint-moe-prospective-shadow-point-20261023-v1,
+new120active1800elapsed/max2loads2forwards/0fits-labels-GPU-retries; actualData
+ORIGINAL69raw/factor/context-known, not Volume67mask. Exactlearned17/fixed32/
+uniform69 full100weights beforeOct23entry, independentreader/alljoined required.
+Logits/desiredweights are NOT rawH20payoff; existing payoffbridge incompatible.
+No silent score substitution or learned postfit stacking; that still needs OOF.
 
-RetainedHGB context diagnostic COMPLETE133checks/553.889730upper/2forwards/
-0fits/oneINNER12cells/LATER0/alljoined:
-A/research/current-kis100-hgb-context-retained-diagnostic-20261023-v1/FINAL.json.
-10bp growth/DD: NO+1.3993%/1.9943%, WITH+0.3486%/2.9063%, uniform-0.8005%/1.2978%.
-Context did not improve the matched expert; descriptivefixedpair/no promotion.
-Do not swap a previously frozen blend after seeing these outcomes.
+## Closed Families / No Duplicate Work
 
-## Immutable Fault / Other History
-
-Original modern four-arm CLOSED_TECHNICAL_FAULT_NO_RETRY:
-A/research/current-kis100-market-context-recent-regime-development-20261023-v1/FINAL-FAULT-R1.json.
-2HGBcomplete/2GRUinterrupted/old8136.299295debit/old4attempts/postupdateretry0/
-INNER0/proper-financialUNKNOWN preserved. New warm results do not regrade it.
-I/O source repair12groups76checks/330upper reproduced Windows-bind replace
-errno13/Win5, historicalhandleownerUNKNOWN. RAMpermits/immutablepredebits/
-manifest-last safestate adopted and actually proven in new warm CPU/CUDA.
-A/research/current-model-io-reliability-repair-20261023-v1/CONSUMER.json.
-
-Payoff-tail/H20/cost-positive/ListNet/cross-stock/TabM/calibration/masked/raw/
-LSTM/TCN/Transformer/Ridge/rule/indicator/TimesFM/olderChronos families remain
-closed with original trials/failures in Git9ab3e58 and immutableA. No completed
-fits/forwards repeated for GPUload; oldlateroutcomes are never fresh by renaming.
-
-## Research / Execution Boundary
-
-HGB operationalENTRY complete07a82159/oneexactfullfill/currentowned/pendingfalse/
-unknown0, owned-exit Taskready72245037 fororiginalOct28. Not modelprofit proof.
-Original8 actual retained aggregategrossNEGATIVE/fees-settledcash-netPnLUNKNOWN
-(5cabc996), not evidence eachpositionlost or this new model's outcome.
-
-Shared reuseddata means adaptive development, not independent alpha. Report
-growth/DD/turnover separately against aligned risky/samegross and cash opportunity
-cost. Lower exposure alone is not alpha. Whole-key/missing inputs stay explicit,
-no futuremaskimputation or final-outcome epoch choice. Scratch jointly trained
-branches form one model; post-fit learned stacking of target-fitted expert
-predictions still requires purged chronological OOF. Paper permission remains
-independent, model outputs untrusted proposals. Model/data D:, never public
-model code in trustedExecution or weights/marketbytes inGit.
+WarmGRUa38153c4:39/36epochs/selected15/12/51525updates, patience24/592checks/
+oneINNER12cells/alljoined/GPUreleased;10bp growth/DD% NO+.58936/2.03362,
+WITH+1.13658/2.26982, uniform-.80050/1.29784. Newoptimizer fromold6, not exactresume.
+Chronos205203e42:1GPUload3295trios/0fits/15cells, growth+riskFAIL/alljoined.
+Volumebe906a96:2CPUfits256stages/selected0-245/72CHECKdates/1612checks;
+properPASS/financeFAIL (half==VOLUME, PRICE==uniform), no fallback/regrade.
+Intraday40607bf0:208anchors/0fits-GPU/21cells/bothcriteriaFAIL/59SYN187checks/
+alljoined; SWITCHgrowth/DD%-1.11283/1.14862 vsuniform-1.09978/1.11370.
+Oldfour-arm8136.299295fault/2HGBcomplete2GRUinterrupted/INNER0 immutable; safeIO
+repairf8bdf651 actually proven in NEWwarm, no oldfitrepeat.
+Other rule/ML/DL/foundation histories remain Git/immutableA, not automatic reruns.
+No source qualification/profitability/holdout rule becomes global Paper authority.
