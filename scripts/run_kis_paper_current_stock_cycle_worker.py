@@ -668,7 +668,11 @@ def run(
     injected = {}
     if profile is not None:
         if (
-            profile is not StockCycleProfile.MODEL_PROPOSAL_NAS
+            type(profile) is not StockCycleProfile
+            or profile not in {
+                StockCycleProfile.MODEL_PROPOSAL_NAS,
+                StockCycleProfile.MODEL_WEIGHTS_NAS,
+            }
             or not callable(target_loader)
             or any(
                 type(ref) is not str or re.fullmatch(r"sha256:[0-9a-f]{64}", ref) is None
