@@ -1,10 +1,33 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own market acquisition/storage/capability/temporal availability, not accounts/
 orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
+
+Oct23 01:03KST modern canonical stock/SPY Data COMPLETE, not collecting:
+A/data/current-kis100-market-context-recent-regime-input-20261022-v1/CONSUMER.json.
+TRAIN2747supervised dates134187rows/CHECK75dates5558rows/INNER43dates3295rows;
+19boundary purges/TRAIN-CHECK, CHECK29whole-date endpoint-unknown exclusions.
+Fixed100keys/explicit unavailable stocks, new TRAIN-input affines sealed before
+target construction. Held INNER targets separate from fitter allowlist.
+Data826.145181/1200activeupper,1028.209862/2400elapsed/alljoined,0model fits/
+GPU/API/credentials/private-custody/old holdout opens. Independent allowlist/
+clock readback next. Data-ready is not numerical or independent-alpha approval.
+Source70375204 old overrun1017.300140/900 remains charged; new repair Source
+must bind explicit asof and unchanged DTO before Engine's four-arm campaign.
+Currentlisting/nonPIT/currentvintage/MODP/CA/finality/arrival limits remain.
+
+Oct22 23:14KST fresh input COMPLETE,not still collecting:
+A/data/current-kis100-hgb-fresh-operating-input-20261022-v1/DELIVERY.json
+4dbc4761/Consumera76460b4/packet61050d7a.100axis/69known31unknown,
+prior63 throughOct21;71GET1POST/70acceptedpages6892rows/one materialization.
+First non-200 stopped without retry; upstream cause not retained/UNKNOWN,
+29unattempted keys not source-limited. Alljoined/790.245792activeupper1200.
+Old0067/history/affine/model unchanged. Parent point19841d21/seven positive
+slots/one forward/zero fits; Averroes independent stored-output readback active.
+No complete-source/finality/PIT/alpha claim or missing-row imputation.
 
 Oct22 current correction: historical100 continuation is COMPLETE, not running.
 A/data/current-kis-modp1-historical100-continuation-20261022-r2/FINAL.json:

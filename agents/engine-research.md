@@ -1,12 +1,34 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/splits/fitting/replay, not broker risk or human approval.
 Prior NAS lifecycle COMPLETE/febc9bff; current HGB operational entry UNFINISHED.
 Paper authority independent of research pass.
 Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current Queue
+
+Oct23 00:43KST: payoff-tail family COMPLETE_FAIL at
+A/research/current-kis100-payoff-tail-ensemble-development-20261022-v1.
+Netpayoff magnitude CPUHGB plus CUDA two-head Huber/q10,fixedblend/tail penalty,
+128max/pat20/chronological checkpoint/native-safe proof,not .55threshold rescue.
+CPU+CUDA market workers actually ran concurrently/joined14:13:22UTC;18-cell
+adaptive INNER/one intake/LATER0, no ongoing GPU trainer or independent alpha.
+Distinct H20 family COMPLETE_FAIL14:38:06UTC: new factorHGB/rawGRU/fixedhalf,
+two actual fits/oneINNER15cells/two physical archives/LATER0/alljoined.
+A/research/current-kis100-low-turnover-h20-development-20261022-v1/CONSUMER.json.
+Next Source70375204 market-context/recent-regime proposal has28native checks
+but Source upper1017.300140/900 exceeded; retained overrun, not numerical GO.
+Old Source artifact closure done. Modern Data READY/TRAIN2747-CHECK75-INNER43
+dates,826.145181activeupper/alljoined. Socrates owns a separately bounded repair
+Source for explicit asof/closed runner/context interaction; Leibniz owns inert
+four-arm trainer/readout preparation, no new market fits or GPU allocation yet.
+New source/data/runtime caps and hashes required before any new market fit;
+do not rerun old studies, relabel modern reused data as untouched, or claim
+H20 superior to H5 from this unmatched-horizon development comparison.
+Parent fresh operational HGB point19841d21 is one stored selected22 forward/
+zero fits; current Data69known31unknown/seven positive slots,NOT deployment.
+Old research failures,selected weights/costs/custody remain unchanged.
 
 Oct22 current: cost-positive HGB/NN fits were already COMPLETE (HGB32selected12;
 CUDA NN21epochs/best1/4242updates), original post-fit copy fault not a fit failure.

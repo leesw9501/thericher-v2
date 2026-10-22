@@ -1,11 +1,25 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-21. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own coordinated GPU resources/trial custody, not model choice or human approval.
 Parent shared MD/Git; prior NAS lifecycle COMPLETE/febc9bff;
 current HGB operational entry UNFINISHED.
 
 ## Actual Resources / Ready Queue
+
+Oct23 00:43KST new payoff-tail family actual CPU/CUDA workers both completed
+by14:13:22UTC,not an active GPU claim. Root
+A/research/current-kis100-payoff-tail-ensemble-development-20261022-v1:
+GPU-RELEASED.json confirms joined native/HGB/NN/inference actors; NN worker
+52.031063seconds/HGB52.276964 concurrent,not measured isolated GPUkernel time.
+Payoff-tail COMPLETE_FAIL. Distinct H20 CPUHGB/CUDAGRU/fixedhalf also
+COMPLETE_FAIL14:38:06UTC/two actual new fits/oneINNER15cells/LATER0/alljoined.
+Worker wall40.910119s and coordinator43.725935s are not GPU kernel time.
+Modern stock/SPY Data READY/TRAIN2747-CHECK75-INNER43dates/alljoined.
+Repaired Source and four-arm runtime preparation have no allocated GPU trainer;
+Source overrun1017.300140/900 retained and numerical binding not ready.
+Allocate useful new ready work after Data/runtime checks, not completed fits
+or dummy utilization. No external-app permission hold or GPU environment ban.
 
 Oct22 current: selected cost-direction fits finished yesterday; artifact-only
 continuation now COMPLETE3bfbee55/zero fits/optimizerupdates/one NN inference/

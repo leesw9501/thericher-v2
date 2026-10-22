@@ -1,16 +1,56 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-22 17:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 01:03KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns direction, shared MD/integration/Git. No operator decision needed.
 
 ## Company / Current Request
 
 Company current-kis100-hgb-operational-paper-entry-v1 remains UNFINISHED.
 Oct21 point/window expired unactivated; not a success or reusable current signal.
-Current human request to repair Data-versus-reader conflict and confirm actual
-fills/holdings is COMPLETE12410a15, independently of that new-entry objective.
+Previous Data-versus-reader repair is COMPLETE12410a15. Current human request
+continues F9 exact reconciliation, next Paper readiness and parallel new research;
+it is active, not completed by that repair or a package commit.
 
 ## Ready / Owned / Due
+
+Active continuation overrides earlier table projections below:
+- Parent: F9 original-history query COMPLETE0rows/nonterminal/HELD; HGB full
+  hidden-host proof COMPLETE71acabef. R4 actual intent0submit/ack/fill/owned;
+  known-unsubmitted pending terminally expired by visit4. The bounded parent
+  integration is now closed8visits/no HGB submit. Visit6risk_nointent after8GET;
+  missing visit8 outcome is not inferred. Exact post-cap native RO16:02:52
+  confirms0submit/ack/fill/owned/pending/unknown. All4observerpauses RESTORED.
+  Parent owns typed preflight diagnosis, not another blind broker invocation.
+- Data/Averroes: fresh69known point/input complete. Now owns offline modern
+  canonical stock/SPY alignment COMPLETE/TRAIN2747-CHECK75-INNER43dates,
+  826.145181/1200seconds/alljoined. Independent custody/allowlist readback next.
+- Execution/Meitner: nightly scoped readback complete, exception/dated-fill
+  attribution remain unknown. Prepares new HGB owned-only exit Oct28>=19:45UTC;
+  candidate only: two synthetic boundary fixtures failed; NOT qualified/deployed.
+  No broker/Task change; source-attested preflight first-cause repair is next.
+- Engine/Leibniz: payoff-tail and H20 CPU/CUDA fits/readouts COMPLETE_FAIL;
+  oneINNER each/LATER0/alljoined. Now prepares inert modern four-arm adapter,
+  no market fits while Source/Data/runtime bindings are incomplete.
+- Strategy/Socrates: market-context Source70375204/28native checks; overrun
+  1017.300140/900 retained/closed. New repair Source owns explicit asof/caps/
+  retained native state and context interactions; no numerical GO yet.
+  Validation/Jason full compatibility COMPLETEbb78c276, no running test claim.
+
+Throughput improvement: F9 stays locally reserved,not a company permission
+hold. New independent Paper input,model research and tests run concurrently.
+New metadata-only895fd6db entryOct22 14:30..19:30UTC uses the same point packet;
+the old16UTC start was convenience,not an external limit. Actual native
+readiness/writer admission decides launch,not unrelated future due times.
+Existing nightly14:50/F9 15:10 owners remain separate; no foreground wait.
+Actual observed bottlenecks are legacy process admission over development
+shells and uncoordinated observer reads, not a GPU authorization shortage.
+Prior bounded effect windows briefly separated new Windows host tools;
+all holds released/all observer pauses restored. This is NOT a durable
+machine-idle rule. Repair source-attested capability scope and typed preflight
+first-cause retention instead of indefinitely copying host wrappers. Current
+offline source/RO seed passes cannot reconstruct the unretained earlier fault.
+Fresh verification COMPLETEbb78c276/977serial18659fullPASS25skip/8workers/
+Ruff3Compose/exactsourcecontrolunchanged. Jason closed,not a running worker.
 
 | Owner | Actual State / Next Consumer |
 | --- | --- |

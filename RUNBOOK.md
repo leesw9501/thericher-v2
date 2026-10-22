@@ -55,6 +55,38 @@ Direct manual reads are NOT evidence an OS scheduled observer ran.
 
 ## Owned Execution / No Blind Run
 
+Oct22 fresh-HGB finite parent runtime evidence lives at
+A/execution/current-kis100-hgb-fresh-native-preparation-20261022-v1/parent-integration-r4.
+Source07a0016d binds original selected22 point, native policy7ecdb115,
+input9a8c1549, image4f4294ed and ONE .005 original shared-basis cohort.
+Do not run old R2/R3, original disabled Task, an expired point or a generic
+reader observe(). The actual native RESULT and exact private linkage decide
+submit/fill, never HOST-START or coordinator exit. Total8 actual-visit cap
+includes preserved technical/pre-host failures; current entry cap19:30UTC.
+Visit4 closed the exact known-unsubmitted expired intent with0order calls,
+not an accepted or filled entry. F9 unknown stays held independently.
+
+Parent temporary observer priority windows are recorded at
+A/execution/current-hgb-snapshot-priority-window-20261022-v1.
+All four pauses restored, last15:58:03UTC/original XML/ACL unchanged. Exact
+RESTORED-4.json is final current restoration evidence; no pending restore.
+This changes neither order authority nor budget; no schedule expansion.
+
+The eight-visit parent integration is now CLOSED. R6 Source9292d755 and
+POST-CAP-CUSTODY.json verify current native0submit/fill/owned/pending/unknown;
+the known-unsubmitted expired intent remains terminal. No HGB entry success.
+Do not run R4/R5/R6 again. Pre-host first cause is unretained/UNKNOWN; current
+offline source/actual-private-writer/RO-seed probes pass, not retrospective proof.
+New typed technical-recovery bounds must retain all attempts and exact identities.
+The diagnostic import repair has actual pinned-image networknone cold PASS
+and36focused checks; it changes no native sizing/risk/threshold or bank rules.
+
+Fresh full repository authority (production/controls unchanged):
+A/verification/current-f9-hgb-fresh-preparation-20261022-v1/authority.json,
+bb78c276/977serial/18659fullPASS25skip/clean8workers/Ruff3ComposePASS.
+External native fullhost proof71acabef and focused19tests are separate evidence,
+not covered merely by rerunning repository pytest.
+
 - R5 same original -r2 execute Task; source8f1c212a/imageb96a8ef8/
   GOd5bd1aac/input5817e3ab/vintage7d8f4fe2. Six Oct21 entry slots were
   inspected, not just the first failed slot. Entries2/4/6 actually led to the

@@ -1,11 +1,28 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-21. A=D:/thericher-v2/model-artifacts.
+2026-10-23 KST. A=D:/thericher-v2/model-artifacts.
 Own mechanisms/source interpretation/pure kernels; Engine owns targets,
 splits/fitting/costs/selection. No broker or deterministic-risk authority.
 Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 
 ## Current Mechanisms / Consumers
+
+Oct23 01:03KST payoff-tail and H20 mechanisms have actual COMPLETE_FAIL
+readouts, not pending GPU work or reasons to repeat their completed fits.
+Payoff-tail fixed/tail blend loses the predeclared comparison; H20 fixedhalf
+trails matched uniform growth. HGB's descriptive strength is not a retroactive
+winning-candidate promotion from a failed family. Diagnoses only,0new evaluation.
+
+Modern stock/SPY context Source70375204 closed with1017.300140/900 overrun,
+all16original files preserved, MCTX-01/asof and other defects named at
+A/research/current-kis100-market-context-recent-regime-proposal-20261022-v1/closure-r1/CLOSURE.json.
+Socrates owns NEW source-only repair at
+A/research/current-kis100-market-context-recent-regime-repair-20261023-v1:
+explicit maturity/asof before labels, bounded closed runner, retained native
+checkpoint/curves, actual context-on-hidden interaction rather than a shared
+date scalar. No market fits/credentials/broker/GPU. Old Source debit retained.
+Data modern inputs READY; Engine prepares inert paired HGB/GRU context ablation
+and fixed blends. Parent freezes actual numerical release only after bindings.
 
 Oct22 current: cost-positive HGB/NN training and artifact-only readout COMPLETE.
 Consumer3bfbee55: zero newfits/one NN inference/cached HGB reuse/oneINNER18cells/

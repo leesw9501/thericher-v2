@@ -6,7 +6,49 @@ Original8 native lifecycle COMPLETE/febc9bff, not fees/netPnL completion.
 AGENTS.md owns standing Paper authority/risk, not model profitability.
 No actor/API/fill inferred from this MD; no KIS_LIVE_* or secret/private output.
 
-## Verified Current / Oct22 17:50 KST
+## Active Continuation / Oct23 01:03 KST
+
+F9 native14:02UTC unknown1; original pending/account/basis-bound history
+14:05:56..14:06:02 completed1POST1GET/0rows,not non-send/closure proof.
+A/execution/current-f9-original-history-readonly-20261022-v1/
+visit-52c83296587542b2bbd7aa330aa0f322.json. ReservationHELD,no substitute/
+reset/adoption/private writes.156focused tests/ClaudeSOUND_WITH_NAMED_LIMITS.
+Initial pre-network UV redirector admission failure retained; exact source-
+attested parent-child successor ran,no generic process-name permission.
+
+Fresh selected22 HGB point19841d21,Data69known31unknown/seven positive slots,
+metadata-only amended consumer895fd6db entryOct22 14:30..19:30UTC/fifth
+sessionOct28/.005ORIGINALbasis,exact same packet/model,0extra model calls,
+Full native-host qualification COMPLETE71acabef/9cases14checks21IPCframes.
+Parent R4/source07a0016d actual visits remain0submit/ack/fill/owned asof15:35.
+Visit3 admission stopped before submit; exact pending known-unsubmitted intent
+was terminally expired by visit4/native_leg_closed. Original F9/R5/bank preserved.
+Visit6native_risk_no_intent/8GET1tokenPOST/0orders; narrow reason not retained.
+Diagnostic-only successor36tests/ClaudeSOUND preserves existing guarded result;
+R5 cold import fault reproduced and R6 cold native import PASS.
+Visit5/8 missing host/outcome is not causal proof. Eight-visit integration
+closed, not ready to rerun. Source/runtime first-cause recovery remains needed.
+R6 POST-CAP-CUSTODY at16:02:52 verifies HGB0submit/ack/fill/owned/pending/unknown
+and original terminal known-unsubmitted intent; not fresh broker holdings.
+Original .005 cohort/point/identity and all old visit debits remain retained.
+Evidence at
+A/execution/current-kis100-hgb-fresh-native-preparation-20261022-v1.
+Artifact-root and Docker-network first causes reproduced/fixed; no blind repeats.
+All4 bounded observer priority pauses RESTORED, last15:58:03/XML/ACL unchanged.
+No new permanent disable/trigger change. Legacy
+census development-shell conflict is local throughput debt, not account risk.
+Fresh-HGB exit adapter CANDIDATE_ONLY3bf4661b/two synthetic boundary fixture
+failures, NOT qualified or activated. Existing fullhost proof does not cover it.
+Nightly Oct22 exact dispatch e9da2673 retained1SELLstart/35GET/1tokenPOST,
+then retained_context_recovery_required. Scoped RO confirms one native FULL
+in active cycle but exact dated dispatch attribution/exception cause UNKNOWN.
+Do not call this no-signal, blame missing input, repeat blindly or infer fill
+from Task result20. Exact evidence:
+A/execution/nightly-result-20261022-readback-v1/FINAL.json.
+No new human approval needed. Preserve F9,R5three owned/originalOct27exit,
+all shared-bank costs. Nightly14:50/F9 15:10UTC tasks unchanged,not invoked.
+
+## Verified Earlier / Oct22 17:50 KST
 
 Reader repair COMPLETE12410a15 at
 A/execution/private-paper-custody-readback-20261022-v1/FINAL.json.

@@ -30,6 +30,26 @@ Market-only Data or source-attested research is not a private-reader blocker.
 
 ## Ready Packages
 
+Oct22 progress: fresh Dataa76460b4/packet61050d7a has100keys/69known31unknown,
+prior63 throughOct21. New HGB point19841d21 uses original selected22/native42
+once,seven positive slots/zero fits,honest post-open publication. Pre-effect
+metadata-only readiness-window-r1 consumer895fd6db reuses that exact packet,
+entry Oct22 14:30..19:30UTC/fifth sessionOct28. Native host proof qualified;
+R4 actual visits have no HGB submit/fill yet. Exact known-unsubmitted expired
+intent closed on visit4; resume native next leg only inside the same cohort.
+The8-visit integration is now CLOSED, not ready to rerun. Post-cap native RO
+16:02:52UTC proves HGB0submit/ack/fill/owned/unknown/pending, with original
+known-unsubmitted terminal retained. Company entry outcome is still unfinished.
+Preserve all visit debits and require first-cause/source-bound bounded technical
+recovery before another effect; no cap refund or arbitrary repeat.
+Do not wait for the old convenience16UTC start or infer entry from a host exit.
+F9 original-date read returned0rows,not no-send/closure; reservationHELD.
+New payoff-tail and H20 CPU/CUDA families COMPLETE_FAIL, not ready to refit.
+Modern stock/SPY context Source/Data binding is the next independent research
+preparation. Data is READY (TRAIN2747/CHECK75/INNER43 eligible dates); repaired
+Source and inert runtime adapter are being prepared in parallel. No old Source
+overrun refund or numerical dispatch until exact bindings and honest caps freeze.
+
 1. Execution: use the current scoped RO reader for actual state, not old global
    quiescence, pre-start absence or legacy NAS-pointer readers for R5.
    Preserve R5 positions/original exit Oct27>=19:45UTC, shared basis/losses/
@@ -42,7 +62,7 @@ Market-only Data or source-attested research is not a private-reader blocker.
    old0067 stays frozen. New current-session work is a separate scope/cursor.
 3. Execution: qualify the real native host/owned process path against that fresh
    point, current source/image, quote/orderability/account facts and shared bank
-   before effects. Old HGB Task stays disabled until exact runtime readiness;
+   before effects. Old HGB Task stays disabled; finite parent runtime is separate.
    an installer/preview/source test is not deployment or a fill. Keep controls
    against actual private writers and uncertain request outcomes. No blind
    repeats of the expired Oct21 wiring/entry or a substitute unknown order.
