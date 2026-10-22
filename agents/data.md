@@ -44,14 +44,22 @@ Actualactive301.376801of1200/alljoined/PID0/onefeaturematerialization/0targets/
 models-GPU-API-private. Knownzero volume allowed only with positive denominator;
 undefined remains unknown, no epsilon/imputation. Data producer finished.
 
-Current Averroes package:
-A/data/current-volume-gru-paper-input-feasibility-20261023-v1,
-<=600actualactive1800elapsed, metadata-only/no API-private-label-fit-GPU.
-Concrete consumer is ONE next honest provisional Paper point from completed
-volume HGB/warm GRU: exact source/affine/history/asof/full100axis compatibility,
-retained cache throughOct21 and minimal acquisition delta/ownership/cursor.
-Fresh HGB31unknown must distinguish failure/unattempted29 from source limitation.
-No source substitution, missing-symbol imputation or new acquisition dispatch yet.
+Input feasibility COMPLETEe6b2726c/DELIVERYd68e30e1/563checks/181upper/alljoined/
+0API-label-private-model-effects.69rawcandidates,31unknown=acceptedempty1+
+untypedfailure1+unattempted29, NOT permanent sourceabsence. Expired Oct22 point
+not resurrected; minimalOct21SPY cursor was never called. Mandatory external
+calendar correctionc5748e76: pandas_market_calendars5.4.0NYSE, NOT exchange_calendars.
+Current Averroes: A/data/current-volume-gru-next-session-input-preparation-20261023-v1,
+family2400active7200elapsed includes181once. First600 calendarextension exact
+retainedprefix/DST/holiday/actualnextOct23H20exit and pure actualfeatureABI parity;
+then prepared quiet one-date collector afterOct22 20:10UTC. Freshwhole MODP1
+pages throughOct22/fixed69pre-featurestocks+SPY/full100axis31masked/max70GET/
+oneclient/onePOST/no retries. No old/current source-vintage splice, feature
+imputation or post-score shrink. Parent checks source/finitecontract BEFORE API/
+install; namedworker owns next_due/tokenadmission. No new collection claimed yet.
+Analyze defaultData300sPOSTguard versus4minobserver liveness with official60s
+issuance/actual atomicdir+legacylocks; no oldfrozencontract/globalpacing change,
+foregroundsleep or age-reclaim. Source limitations constrain claims, not Paper.
 
 ## Other Current Inputs / Closed Scopes
 

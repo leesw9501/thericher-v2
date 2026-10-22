@@ -56,8 +56,18 @@ actualrolemetadata/key/mask/cold proof before two firstlogicalfits, not rerunnin
 completedtraining. Freshheadroom/singleexistingleaseowner/twoactualdisjoint
 children beforeclaimingtraining.19:21UTC RTX4090 sample2percent/2119of24564MiB/
 37C; not currently training evidence. VolumeCPU COMPLETEbe906a96/twofits/
-properPASSfinanceFAIL/1612checks/alljoined/noGPU. Leibniz now short-horizon
-SPY/QQQ feasibility/no new labels-fit-GPU yet; Data exact Paperinput needs.
+properPASSfinanceFAIL/1612checks/alljoined/noGPU. Short-horizon rule later
+COMPLETE_FAIL40607bf0/oneoutcome21cells/0fits-GPU/alljoined. Leibniz now safe
+CPUserving/estimand/SYN contract; Data nextOct23Paperinput/calendar and
+Executionbridge, not more dummy GPU work.
+
+V2 actualinputbinding34d5579f/36checks PASS before labels; Source0b7068c6,
+coordinator59692 owns lease/twoCUDAchildren from19:24UTC. Eachfirstepoch687
+updates committed. At19:49UTC learned28/fixed29 newepochs committed afterepoch0,
+still nonterminal. Actual training, not oldmodel reruns or synthetic load.
+LastGPU sample19:26UTC84percent/4247MiB/50C, not currentutilization.
+SAME18000lineage/43200elapsed, failedstarts/debits retained; no extra trials
+or finalperformance inference before the bound readout.
 
 ## Resource Policy / Next Allocation
 
@@ -83,9 +93,11 @@ Generated artifacts A/Docker /app/model_artifacts, market M,15percentfree/warn20
 
 ## Verification / Evidence
 
-Fresh compatibility57d5df32:
-A/verification/current-hgb-native-technical-integration-20261023-v1/authority.json.
-580serial/18659fullPASS25skip/8workers/cleanhelper/Ruff3Compose/
-exactproduction-control unchanged; external runtime still needs native evidence.
-Full stdout/JUnit not retained, no invented hash. Old inactive temp siblings
-preserved. Earlier measured resource/native/debit histories remain Git c80d3d6/A.
+Fresh compatibility54526ef3:
+A/verification/current-nightly-context-recovery-20261023-v1/authority.json.
+1464serial/18659fullPASS25skip/actual8workers/cleanoriginalhelper/Ruff3Compose/
+exactproduction-control unchanged. Fullstdout/JUnit/actualworkerproof retained;
+failedargument/quietstdoutverifier faults NOT authority. Independentsealer
+validates SAMEcompletehelperexit0, no repeatedsuite/cleanupbypass. External
+runtime needs native evidence; concurrent timings not isolated benchmarks.
+Earlier histories remain Git/A; oldtemp siblings preserved.

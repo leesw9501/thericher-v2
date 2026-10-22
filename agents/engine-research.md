@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 04:22KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 04:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/splits/training/replay, not deterministic broker
 risk. Parent MD/Git. AGENTS.md owns policy. An MD is not a running worker.
 
@@ -31,6 +31,10 @@ Retain old two failed launches; two new starts may perform the original two
 logical fits only after real metadata/mask/cold proof. No refund/old result edit.
 V2-RELEASE-BOUND.json records this, not an ongoing GPU claim. Existing Steward
 allocates measured headroom/singleowner/two disjoint children, no approval platform.
+V2 bridge now ACTUALLY PASSED34d5579f/36checks/cold real role metadata with0label
+decodes; Source0b7068c6/two CUDA children started19:24UTC/coordinator59692.
+Each epoch1committed687updates; at19:49UTC learned28/fixed29 completedepochs
+afterepoch0, both nonterminal. No currentperformance/alpha/completion claim.
 
 Price-volume CPU HGB/fixedhalf family COMPLETE_FAIL be906a96:
 A/research/current-kis100-volume-relative-strength-development-20261023-v1.
@@ -42,11 +46,18 @@ PRICEselected0/VOLUME245/oneINNER15cells/LATER0/1612checks/allactorsjoined.
 ProperPASS/financeFAIL: fixedhalf==VOLUME, PRICE==uniform; no fallback or regrade.
 At10bp/leg growth/DDpercentinitialNAV: VOLUME/fixedhalf+1.92546/1.39856,
 PRICE/uniform-0.80050/1.29784. Lineage2539.775582upper, noGPU/trainingrerun.
-Leibniz now source-only short-horizon SPY/QQQ feasibility using existing metadata,
-first checking prior intraday studies. No new labels/fits/GPU; concrete distinct
-target/window/cost/split/purge hypothesis or rejection, not a model-name list.
-Averroes separately checks exact retained inputs needed for a next provisional
-volume/warm-GRU Paper point; no source substitution/imputation or numerical GO.
+Short-horizon relative-path rule COMPLETE_FAIL40607bf0: all208anchors/noalias,
+zero fits/GPU, oneadaptiveoutcome21cells/59SYN187artifactchecks/alljoined.
+Primary10bp/leg SWITCHgrowth/DDpercentNAV-1.11283/1.14862 versus
+uniform-1.09978/1.11370, both frozencriteriaFAIL/no rescue;261.292of840upper.
+A/research/current-intraday-relative-path-rule-development-20261023-v1/CONSUMER.json.
+Leibniz now owns serving contract A/research/current-volume-gru-serving-contract-20261023-v1,
+<=600active1800elapsed. Actual Volume245/contextGRU12 target/centering/horizon/
+fee/currency/scale via SAMEinventedreferencevector, safe CPUrestore/SYN/cold/DTO.
+No currentmarketforward/newfit/labels/GPU. Fixedhalf rawscores ONLYif estimands
+match; no unknownscorezero/rank/probabilityrescue. Full100axis/fixed69before
+features/31maskedoutside69, whole required-date known. Data nextOct23 input/
+calendar preparation and Meitner deterministic bridge run independently.
 
 ## Newly Completed / No Repeat
 

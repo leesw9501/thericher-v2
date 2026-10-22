@@ -57,11 +57,23 @@ mismatch stopped market BEFORE labels/constructors/updates; a55dc293 closed,
 no numerical performance. ONE explicit canonical/global index bridge V2 now
 delegated under unchangedfamily/caps/science, old launches/debits preserved.
 
-Leibniz now owns source-only distinct short-horizon SPY/QQQ feasibility:
-A/research/current-short-horizon-spy-qqq-feasibility-20261023-v1.
-<=600active1800elapsed, existing minute/study metadata first, no labels/newfit/
-GPU. Exact available target/window/asof/costs/purge/split or concrete rejection;
-do not repeat old LSTM/TCN/LightGBM/rule studies or create a reading-list gate.
+Short-horizon SPY/QQQ path-rule Sourcefabf3b6c/44SYN/33oldmetadatafiles was
+consumed by finite CPU falsification40607bf0 COMPLETE_FAIL:
+A/research/current-intraday-relative-path-rule-development-20261023-v1/CONSUMER.json.
+All208anchors/145inputFIT63adaptiveEVAL/0alias/oneoutcome21cells/0fits-GPU/
+59SYN187artifactchecks/alljoined/261.292of840upper includingSource240once.
+10bp/leg SWITCHgrowth/DDpercentNAV-1.11283/1.14862 versusuniform-1.09978/1.11370;
+bothcriteriaFAIL, no cost/q/threshold/winner rescue or freshholdout claim.
+Finite path-concentration proxy is not calibrated jump/causal reversal proof.
+
+Leibniz now source/SYN verifies savedVolume245/contextGRU12 serving estimands
+and mechanical rawH20netpayoff parity before any currentpoint scores:
+A/research/current-volume-gru-serving-contract-20261023-v1,600active1800elapsed.
+Only compatibleestimands allow fixedhalf, no unknownscorezero/rankrescue.
+Parent Claude SOUND_WITH_NAMED_LIMITS6ada6d4c:
+A/review/current-fixed-volume-gru-provisional-paper-20261023-v1/review/RESPONSE.txt.
+Expiry/reusedkey is NOT grounds to settle unknownreservation; advice not adopted.
+Data nextsessioncalendar/ABI and Executionnativebridge run inparallel.
 
 ## Completed Mechanisms / Do Not Rescue
 

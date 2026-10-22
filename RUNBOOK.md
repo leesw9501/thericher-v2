@@ -46,7 +46,7 @@ only. One token POST/24GET ceiling/1.25s pacing/110s work budget; no orders.
 Never print private values or mark a balance-only result as a full risk snapshot.
 Token/collection controls are separate from the private order book.
 
-Verified Oct22 17:38KST: broker six instruments/all quantities native-matched,
+Historical Oct22 17:38KST: broker six instruments/all quantities native-matched,
 R5 three matched, zero open orders. Current retained R5 has three accepted/full
 BUY fills, nightly three accepted/full SELL fills. F9 unknown1/reservationHELD.
 Fees/settlement/netPnL UNKNOWN. Full console's orderable-funds query separately
@@ -54,6 +54,17 @@ returned HTTP500/EGW00201; that failure did not erase complete balance evidence.
 Direct manual reads are NOT evidence an OS scheduled observer ran.
 
 ## Owned Execution / No Blind Run
+
+Nightly context recovery COMPLETE, NOT a new HGB entry:
+A/execution/current-nightly-paper-context-recovery-20261023-v1/native-qualification-r1/CONSUMER.json
+c8cbd76d actual contextcomplete and independent stablepostROe32ed23c prove
+pending0/unknown0/portfolioowned3/F9HELD/R5owned3/HGBowned1/bank unchanged.
+14GET1POST0orders/allhostsjoined/native22serial28PASS/420of1200upper/olddebits
+retained. Current cycle_book_changed reproduces two laterHGB additions;
+historicalexception UNKNOWN. Actual no-order release3357b5d3 consumed ONCE.
+It is NOT a reusable reader or scheduled patch; never invoke/duplicate it here.
+Consumer binds actualresult470223dc/strictpostRO, not Taskexit inference.
+Original nightly Task nextOct23 14:50UTC (23:50KST); no manual opportunity.
 
 HGB original-owned exit deployment COMPLETE72245037/Sourcee487db86:
 A/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/task-instance-repair-r1/CONSUMER.json.
@@ -73,12 +84,21 @@ service GetRunningTasks exactPath and nativeidentity support honest-host marker
 provenance only, never cryptographic OS-origin proof.
 
 Current material recovery compatibility:
-A/verification/current-hgb-native-technical-integration-20261023-v1/authority.json
-57d5df326715ec3ef128c867ab46c3250394e093dcb3f1cdf49175693ee6a1d6.
-580serial/18659fullPASS25skip/8workers/unmodified clean helper exit0/Ruff3Compose.
-Counts/exits observed from owned tools56529/55673 and independent18684collection;
-no raw full log/JUnit retained or invented. Current-child cleanup/mutex/process
-checks passed; older inactive siblings preserved, not cleanup failures.
+A/verification/current-nightly-context-recovery-20261023-v1/authority.json
+54526ef38cb54b78f3e7edbaf82d8ca22e0a485f3b65e980dd0e64e75c89073f.
+1464serial/18659fullPASS25skip/18684total/actual8workers/originalhelperexit0+
+cleanup/Ruff3Compose/exact1375production-control123a2072. Fullstdout/JUnit/
+actualworkerproof retained. Initialfailedargument run/quietstdoutverifier fault
+NOT authority; independentsealer validates SAMEcomplete successfulhelper run,
+not cleanupbypass/testrepeat. Older inactive siblings preserved.
+
+Nextmodel source preparation (NOT executable broker commands):
+A/data/current-volume-gru-next-session-input-preparation-20261023-v1;
+A/research/current-volume-gru-serving-contract-20261023-v1;
+A/execution/current-volume-gru-provisional-paper-bridge-20261023-v1.
+Require real nextOct23 input/publishedpoint/native risk/quietownedentry-H20exit;
+one .005ORIGINALbasis cohort inside sharedtenth. No oldOct22point resurrection,
+HGBexitdate inheritance, unknownscore0 or forecast/live/PnL promotion.
 
 Modern four-arm campaign began16:54:16UTC/PID3548 and CLOSED technically16:56:
 A/research/current-kis100-market-context-recent-regime-development-20261023-v1,
@@ -88,7 +108,7 @@ post-update retry0. Do not resume from START/epoch files or refit completed HGB.
 Original NVML/minimal ENV and Linux-Windows descriptor faults have evidence;
 ProgramFiles whitelist and canonical host-basename fixes changed no model/seed.
 
-Meitner's current HGB route is
+Frozen HGB entry evidence (NOT a current executable route):
 A/execution/current-kis100-hgb-native-technical-integration-20261022-r1.
 Native exit30/actual cold mounts/host admission PASS is preparation, not a fill.
 Technical2-visit scope plus prior8 now consumed; no blind entry rerun. Source90
@@ -106,7 +126,7 @@ runtime closure or a new BUY.
 Qualified --recover-owned is an
 effect-capable recovery route, NEVER an offline reader. No new BUY/substitution.
 
-Oct22 fresh-HGB finite parent runtime evidence lives at
+Earlier frozen eight-visit HGB runtime evidence lives at
 A/execution/current-kis100-hgb-fresh-native-preparation-20261022-v1/parent-integration-r4.
 Source07a0016d binds original selected22 point, native policy7ecdb115,
 input9a8c1549, image4f4294ed and ONE .005 original shared-basis cohort.
@@ -123,12 +143,14 @@ All seven pauses restored, last17:36:35UTC/original XML/ACL unchanged. Exact
 RESTORED-7.json is current restoration evidence; no pending restore/role hold.
 This changes neither order authority nor budget; no schedule expansion.
 
-The eight-visit parent integration is now CLOSED. R6 Source9292d755 and
-POST-CAP-CUSTODY.json verify current native0submit/fill/owned/pending/unknown;
-the known-unsubmitted expired intent remains terminal. No HGB entry success.
+The eight-visit parent integration is CLOSED. Its R6 Source9292d755 and
+POST-CAP-CUSTODY.json described native0submit/fill/owned/pending/unknown at
+16:02UTC BEFORE the later R1 accepted fullfill/recovery, not current custody.
+The known-unsubmitted earlier intent remains terminal, not the later filled leg.
 Do not run R4/R5/R6 again. Pre-host first cause is unretained/UNKNOWN; current
 offline source/actual-private-writer/RO-seed probes pass, not retrospective proof.
-New typed technical-recovery bounds must retain all attempts and exact identities.
+Later R1 entry/recovery evidence above supersedes that old no-entry projection;
+all original attempts and exact identities remain retained.
 The diagnostic import repair has actual pinned-image networknone cold PASS
 and36focused checks; it changes no native sizing/risk/threshold or bank rules.
 
@@ -148,8 +170,8 @@ not covered merely by rerunning repository pytest.
   exact retirement/XML/ACL backups are under
   A/execution/current-nas-completed-task-retirement-20261022-v1.
 - HGB priorclose Task remains disabled; its Oct21 point/entry window expired.
-  Old direct-host work is source/partial proof, not readiness for a new entry.
-  Prepare a fresh point and exact native runtime/source/image/bank admission.
+  Later fresh point/R1 entry is already COMPLETE with one fullfill/currentowned.
+  Do not prepare a duplicate entry; the current owner is the original Oct28 exit.
 - F9 exact original unknown request/reservation stays HELD. Fresh empty open
   orders/position absence does not establish original non-send or allow release.
 - Nightly/fund20/measurement tasks keep their separate owners/contracts.
@@ -179,18 +201,18 @@ not covered merely by rerunning repository pytest.
 ## Verification
 
 Current authority:
-D:/thericher-v2/model-artifacts/verification/current-hgb-native-technical-integration-20261023-v1/authority.json
-57d5df32/580serialPASS/18659fullPASS25skip/18684collected/clean8workers.
+D:/thericher-v2/model-artifacts/verification/current-nightly-context-recovery-20261023-v1/authority.json
+54526ef3/1464serialPASS/18659fullPASS25skip/18684collected/actual8workers.
 Fresh exact1375production+control match123a2072 and Ruff/default-research-
-accounting Compose PASS after recovery. Full rawstdout/JUnit not retained;
-counts/exits witnessed in original owned tool sessions, no invented log digest.
+accounting Compose PASS after recovery. Fullstdout/JUnit/in-run worker proof
+retained; independentmetadata correction does not reuse failedhelper authority.
 External reader additionally has17synthetic tests, actual pinned RO native
 reads and the separate fresh Paper balance match. Repo tests alone do not
 validate code outside the suite.
 
 ```powershell
 uv run --no-env-file --extra dev pytest -q <changed paths> --maxfail=1 --durations=15
-.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
+.\scripts\run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot
 uv run --no-env-file --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet
@@ -202,3 +224,8 @@ non-reparse current-child cleanup; no cleanup-denial bypass or partial authority
 SYN Scheduler tests mock all entrypoints and disable module auto-loading.
 Test scratch C: measured NVMe; market/model bytes D:.
 Frozen historical commands/installers/probes are evidence, never rerun as readers.
+When passing remaining pytest flags, bind -Workers explicitly. With pwsh -File,
+pass --junitxml and D:/absolute/path.xml as SEPARATE arguments: measured
+--junitxml=D:/... split at the colon and collected no tests. A quiet -q worker
+count line is not guaranteed; source/argv-bound actual worker facts and complete
+retained counts, not an invented stdout line, establish the count.
