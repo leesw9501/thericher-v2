@@ -192,7 +192,8 @@ def test_whole_share_shared_bank_incumbent_risk_and_source_safe_payload():
     assert result.provisional_risk_nav == D(1040)
     assert result.shared_entry_cost == D(60) and result.proposed_reservation == D(800)
     assert result.rounded_annual_risk < D("0.1")
-    text = json.dumps(result.safe_payload()) + repr(result)
+    text = json.dumps(result.safe_payload())
+    assert type(result).__repr__ is object.__repr__
     assert result.safe_payload()["new_submits"] == 0
     for value in (ACCOUNT, "SYNTHETIC-1", "1040", "800", inputs["binding"]["basis_ref"]):
         assert value not in text
