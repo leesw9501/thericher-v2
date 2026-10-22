@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-23 06:50KST. A=D:/thericher-v2/model-artifacts.
+2026-10-23 08:40KST. A=D:/thericher-v2/model-artifacts.
 Own resource/trial custody, not model choice/approvals. Parent MD/Git.
 Role memory/dispatch/START is not an active GPU process.
 
@@ -36,7 +36,10 @@ H5Source7eb762c3/300upper and Data28d7ed8f ready; nativeb8608018 actual28checks/
 4CUDAupdates/33.166527upper within model-native300. Data11upper within separate
 Data300, no partition refund. Parent released actualH5fit Source479b8923:
 start21:43:01UTC/container8cfd56af/coordinator53960/startFILETIME134371789743266943.
-Curve003 proves3epochs2073updates115.423sec; notfinal/converged. Full95maxepochs/
+Finalc359420f CLOSED19epochs13129updates/selected3/patience16/43forecasts/9cells/
+LATER0/alljoined/GPUreleased/currentPID0;1083.761527lineageof6000.
+Financial/funded-concentration pass but all43max57.6823% fails, frozenjointFAIL.
+No completedfit rerun or convergence/alpha claim. Frozen Full95maxepochs/
 691steps/65952updates/CHECKpatience16/onefit/postupdateRetry0, fit3600 inside
 6000total/source300/native600/infer300/readout600/verify600, origin21:06:42+28800.
 Freshclaim measuredfree22163MiB/4GiBreserve; cache output/loss/gradient/coldnextstep
@@ -49,10 +52,29 @@ No GPUlease conflict or live/public code in Execution.
 Current Execution runtime and actualresearch are independent. TemporaryZeno
 previousSource dda805a6/49CPUchecks4SYN146audit/Source300upper is closed; its new
 H5Source assignment closed after17SYN/Source300, notGPUworker/reopenedoldbudget.
-LiquidETFSource249f58dc prepared2fitproposal only/packetQA-nativeproofpending,
-not anotherrunningGPU campaign. Coordinate useful concurrent distinctready
+LiquidETFSource249f58dc was the original proposal, superseded by explicit
+price-only Source4b33debf and the completed CPU fits below. Coordinate distinctready
 children with measuredheadroom when actuallybound; no duplicateclosedfits.
 Other warm/Chronos/volume/intraday and prior model families remain closed.
+
+LatestactualETF native1+2 closed/alljoined/GPUreleased:68.141upper/600,12SYN
+updates perdevice total; no remainingSYNattempt. OriginalCPUmedian.0290s vs
+CUDA.7113s; exact finite-gradient aggregation.0326/.8261 was NOT faster. Before
+marketfit ParentDeviceBinding chose originalCPU, no moreGPUtuning for utilization.
+Dataacec097d ready23.076110aggregate; twoCPUfitsactuallycomplete HGB43stages/
+TCN18epochs1278updates/selected19-2,21cellsprimaryPASS419.234110lineage/alljoined.
+No GPUlease acquired/0GPUworkers. This is current completed work, not running.
+Carry replay bootstrap failed before any numerical intake; named technical
+successor completed33cells/0fits, both growth/risk FAIL versus simple holding.
+Old69.891debit/combinedcarry81.376of300/original00:07:59UTC retained, alljoined;
+allLineage500.610110. No completed model training repeated or GPU used.
+GPU mechanism Source1c915e3e/candidate06aa7634 COMPLETE. Leibniz now owns actual
+CatBoost native-readiness proof at
+A/research/current-pairwise-tree-native-readiness-20261023-v1:
+max4SYNfits/8trees,600active7200elapsed/market0. Socrates remains resource
+coordinator; current GPU ownership must come from actual PID/start/lease and
+measured reserve, not this dispatch. Pairwise-tree market campaign NOT released.
+No completion rerun, unknowndesktop permission hold or queued work calledactive.
 
 ## Allocation Policy
 
@@ -74,8 +96,10 @@ Data/market-only work and CPU serving do not wait for GPUmodel permission.
 Point/fit checkpoints/outputs A/Docker /app/model_artifacts, market M;15%free floor.
 M=D:/market_data. Safe source/checkpoint/data/runtime pins and actual native optimizer proof before
 marketfits, no secrets/private/network in research workers.
-Current repository authority54526ef3:1464serial/18659fullPASS25skip/actual8workers/
-cleanoriginalhelper/Ruff3Compose/exact1375production-control123a2072.
+Current PRIMARY authority93991da5:546serial/18747fullPASS25skip/actual8workers/
+cleanoriginalhelper/Ruff3Compose/exact1380sources+2controls digestde002fd2.
+Main dfb14ec pushed; allocator-address test false positive fixed test-only.
+Failed14308-pass partial run is not authority; worktree491bf085 is scoped history.
 Fullstdout/JUnit/actualworkerproof retained; failedargument/metadata-verifier
 faults not authority. External model/runtime has its own native evidence.
 Source/MD/GPU samples never prove convergence, independentalpha, deployedorders

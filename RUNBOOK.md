@@ -63,7 +63,7 @@ Current company native-target-weight-paper-consumer-v1 is implementation, not a
 command to start existing tasks. Previous actualpoint61d11d44 +ownedreadiness
 ba57e33d complete at
 A/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/CLOSED.json.
-FinalSourcebb5667d8/release-r3/native20image4f4294ed. Actualnativebodybd39e96b/
+NativeSourcebb5667d8/release-r3/native20image4f4294ed. Actualnativebodybd39e96b/
 d9ad7768 byte-identical; finalcoordinator19tests/phase8/cold/rollback/readback.
 Finalhash NOTfullynativeexecuted, preserve exact proof-transfer limit.
 Entrythericher-kis-paper-volume-gru67-entry-20261023-v1 installedReady/neverrun
@@ -72,8 +72,8 @@ thericher-kis-paper-volume-gru67-owned-exit-20261119-v1 installedReady/neverrun
 Nov19>=20:45UTC (Nov20 05:45KST). One volume-gru-Oct23/.005ORIGINALbasis slot,
 not7orders/fills or another10percent. Source-owned metadata readback only:
 ```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/release-r3/owner.ps1 -Mode Readback -Phase entry -SourceSha256 bb5667d878deb8fa6d4d3a4da04cd31312d2231c55e6abe98e208b03f8296188
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/release-r3/owner.ps1 -Mode Readback -Phase exit -SourceSha256 bb5667d878deb8fa6d4d3a4da04cd31312d2231c55e6abe98e208b03f8296188
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/owner.ps1 -Mode Readback -Owner Volume -Phase entry -DeliverySha256 0cc9b7994a81cd9802c9d0e322cc942fc033b389dd8b319f8ce11c88308907ea
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/owner.ps1 -Mode Readback -Owner Volume -Phase exit -DeliverySha256 0cc9b7994a81cd9802c9d0e322cc942fc033b389dd8b319f8ce11c88308907ea
 ```
 No other mode is a read-only command. NativeCLI/SYN is not actual Taskorigin,
 BrokerRiskaccept/fill/ownedflat/netPnL. Existing59projectXML-ACL unchanged;
@@ -81,12 +81,13 @@ unrelatednonprojectdrift unknown/notreverted. Old3failedqualifications/repair2
 retained, conservative combinedupper600of1500/alljoined/0actualprivateAPI-orders/
 0TaskStartcalls. Do not run consumed qualification or expired oldentry scripts.
 
-CAUTION: finalSource pins primary model_paper_proposal.py/model_paper_horizon.py/
-kis_paper_current_stock_cycle.py/us_equity_session.py. New code stays additive/
-isolated worktree until qualified immutable same-version SDK/source delivery
-protects affected owners. Never edit those primaryfiles and silently break the
-future entry/ownedexit. Preserve original IDs/basis/counters when repinning;
-do not wait untilNov19 to develop or introduce a new framework/approval platform.
+Current delivery is COMPLETE b6ab7f0b/Source0cc9b799, actual rollback/reinstall/
+readback for Volume entry/exit and HGB exit. Immutable476-file same-version SDK
+and1375-source historical authority protect old owners from main changes;
+credential/custody roots, old nativeimage/requests/basis/counters are unchanged.
+Final delivery source transfers exact previously executed native-body bytes,
+not another actual finalhash native run. Historical controls are not current
+policy authority. Do not edit frozen delivery bytes. Main c97cfe6 now merged.
 
 Nightly context recovery COMPLETE, NOT a new HGB entry:
 A/execution/current-nightly-paper-context-recovery-20261023-v1/native-qualification-r1/CONSUMER.json
@@ -108,7 +109,7 @@ Interactive Windows user session required; no awake Codex/human barrier.
 Actual SELL/fill/owned-flat/PnL remain unobserved. No manual future launch.
 Source-bound readback only (capture output categorically, no rawprivate values):
 ```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/task-instance-repair-r1/tasks.ps1 -Mode Readback -SourceSha256 e487db86f6a5f9b9e567037a2e4fab8c4521e95efcf55792a2dfa7385fc070f6
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/owner.ps1 -Mode Readback -Owner HGB -Phase exit -DeliverySha256 0cc9b7994a81cd9802c9d0e322cc942fc033b389dd8b319f8ce11c88308907ea
 ```
 Other modes can mutate/invoke tasks and are NOT read-only commands. Preserve
 originalbasis/F9HELD/R5Oct27/HGBOct28/actualcurrentownership and allunknowns.
@@ -199,7 +200,7 @@ all original attempts and exact identities remain retained.
 The diagnostic import repair has actual pinned-image networknone cold PASS
 and36focused checks; it changes no native sizing/risk/threshold or bank rules.
 
-Fresh full repository authority (production/controls unchanged):
+Historical authority for that exact F9/HGB recovery, not current repository code:
 A/verification/current-f9-hgb-fresh-preparation-20261022-v1/authority.json,
 bb78c276/977serial/18659fullPASS25skip/clean8workers/Ruff3ComposePASS.
 External native fullhost proof71acabef and focused19tests are separate evidence,
@@ -245,12 +246,16 @@ not covered merely by rerunning repository pytest.
 
 ## Verification
 
-Current authority:
-D:/thericher-v2/model-artifacts/verification/current-nightly-context-recovery-20261023-v1/authority.json
-54526ef3/1464serialPASS/18659fullPASS25skip/18684collected/actual8workers.
-Fresh exact1375production+control match123a2072 and Ruff/default-research-
-accounting Compose PASS after recovery. Fullstdout/JUnit/in-run worker proof
-retained; independentmetadata correction does not reuse failedhelper authority.
+Current PRIMARY authority:
+D:/thericher-v2/model-artifacts/verification/current-native-weight-primary-integration-20261023-v1/attempt-r2/AUTHORITY.json
+93991da5/546serialPASS/18747fullPASS25skip/18772collected/actual8workers.
+Fresh exact1380sources+2controls digestde002fd2; originalhelperexit0 and clean
+temp authority, Ruff/default-research-accounting Compose PASS with .env.example.
+Fullstdout/JUnit/in-run worker proof retained,372.57s tests/399.07s helper.
+The first partial run failed a proven allocator-address privacy-test false
+positive (d80f4c99); test-only repairdfb14ec is pushed, no private leak. Partial
+failure is not authority.13 legacy CRLF scripts preserved; no pin normalization.
+Earlier54526ef3 and worktree491bf085 are historical/scoped, not this authority.
 External reader additionally has17synthetic tests, actual pinned RO native
 reads and the separate fresh Paper balance match. Repo tests alone do not
 validate code outside the suite.

@@ -35,8 +35,9 @@ F9HELD, R5three/Oct27, HGBone/Oct28 and nightlyOct23 23:50KST.
 3. Add a small explicit versioned weight DTO/validator/native admission path.
    Do not fabricate scores/ranks, call the payoff scorer, TopK, normalize
    survivors, or import a model/runtime into Execution. Freeze semantics before
-   native tests: one native all-in cohort ceiling versus entry principal/fee
-   reserve, immutable slot ceilings, native risk can only reduce proposals.
+   native tests: one GROSS limit-cost cohort ceiling, immutable slot ceilings,
+   native risk can only reduce proposals. Existing native accounting does not
+   measure fees or settlement; do not invent an all-in guarantee.
 4. Keep ONE small fixed original-basis cohort inside the SAME initial tenth,
    all owned costs/losses/unknown reservations counted once. Fresh native
    identity/quotes/orderability/funds/risk and exact unknown reconciliation
@@ -59,22 +60,58 @@ F9HELD, R5three/Oct27, HGBone/Oct28 and nightlyOct23 23:50KST.
    Distinguish considered/no-intent/pending/submit/ack/fill/current-owned/closed.
    No final Task manual invocation merely to prove deployment.
 
+Code was developed at C:/Users/User/.codex/worktrees/native-target-weight-paper/thericher-v2,
+branch codex/native-target-weight-paper-consumer. Primary main now contains and
+has pushed c97cfe6 after the old-owner immutable SDK delivery was verified.
+Inertinput86c1b30d/01e6ea40/policy11b5657c COMPLETE, full100/known69/69proposals,
+0newNN/fit/order. Known69 actualroutes67e3d813, unknown31UNAVAILABLEzero; no
+fabricated venue. Unit31/adversarial15/native32PASS; original implementation's
+complete verification is below. Worker admission extension is separate.
+Code7f3d6e4/c97cfe6 committed/PUSHED main. Worktreeauthority491bf085:512serial/
+18747fullPASS25skip/actual8/cleanoriginalhelper/Ruff3Compose. Primary retains13
+unchanged CRLF scripts. Primary authority93991da5 now PASS546serial/18747full/
+25skip/actual8/cleanoriginalhelper/Ruff3Compose. First14308-pass partial run
+failed an allocator-address substring test; exact reproducerd80f4c99 and
+test-only repairdfb14ec pushed, not a private-data leak. ActualCoreimagec409e24e
+(4777buildconfigNOTimageId) successor317+290assertions/2processes provesunknown
+restart/heldF9/ownedexit/terminal; no real broker/private/Taskeffects. Old4fRO
+projection deniedattemptedlock, NOT proof;18common sourcebyte transferlimit stays.
+Realnativeworker injection hook still needed two-profileallowlist, nowadded/
+10testsPASS and fresh primary93991da5 above; newactualworkerimage75df0968. Runtime
+qualification/template at A/execution/current-joint17-weight-paper-preparation-20261023-v1,
+proposedownedentryOct23 15:30..16UTC/ownedexitNov19>=20:45UTC not installed yet.
+Actual75df cold successor Source983f9b12 passed66+36 assertions/20OwnerAdmission
+exchanges; Meitner owns source-bound quiet production coordinator qualification.
+OldSDKdelivery COMPLETE b6ab7f0b/Source0cc9b799: Volume entry/exit and HGB exit
+reboundReady to immutable same-version SDK/source; original requests/basis/
+counters/nativeimage unchanged,0Taskstarts/API. Don't declare company complete
+from code/core tests; actual new-worker qualification and owned readiness remain.
+
 Claude SOUND_WITH_NAMED_LIMITS1a5f5755:
 A/review/current-target-weight-paper-admission-20261023-v1/review/RESPONSE.txt.
 Adopt skipped-slot/no-renormalization/pending-restart tests; use correct
-all-in budget/fee arithmetic, not advisory shorthand. No new approval platform.
+native gross-cost/reservation arithmetic, not advisory fee shorthand. Residual
+cash subtracts costs once. No new approval platform.
 
 ## Parallel Research
 
-H5 campaign already released; Socrates owns actual GPU fit and all later
-inference/readout/closure in A/research/current-joint-moe-h5-target-development-20261023-v1.
-ActualSource479b8923/onefitstartOct22 21:43UTC;95maxfull epochs/691updates per epoch/
-65952cap/CHECKpatience16/postupdateRetry0/9newH5cells/LATER0. ExactData28d7ed8f,
-TRAIN2762/CHECK109/INNER43/all9complete; no holdout labels in fit mounts.
-Source300/Data<=300/nativeproof<=300/fit3600/infer300/readout600/verify600 within
-6000active, origin21:06:42UTC+28800 unchanged. No completed-training reruns.
-Independent liquid-ETF Source249f58dc is prepared, not numerical authority;
-packet action-unit/H5 QA and actual native proof first. Roleboards own details.
+H5 campaign CLOSED c359420f in
+A/research/current-joint-moe-h5-target-development-20261023-v1/CONSUMER-H5.json.
+Actual19CUDAepochs/13129updates/selected3/CHECKpatience16; onefit/43forecasts/
+9newH5cells/LATER0. At10bp growth+0.56816%/DD0.45456%initialresearchNAV;
+growth/risk/turnover/funded-concentration pass but all43maxissuer57.6823%>.50,
+so frozen jointFAIL. All workers joined/GPUreleased/lineage1083.761527of6000.
+Adaptive reuseddata, not independent alpha or PaperPnL. Do not rerun/regrade or
+silently replace the sealed H20 candidate above.
+OriginalETFfunded-action-aware recipe NOT_READY6d06ed20. NewPRICE_ONLY Source4b33debf,
+Dataacec097d/all3/4523-501-1381 actuallyproduced twoCPUfits HGB43stages/TCN18epochs/
+1278updates and21cellprimaryPASS,419.234110lineage/alljoined/0GPUworkers. CPU
+chosen beforefits from24xfastertiny-batch measurement; no permissionhold.
+Half+10.5601%price-onlygrowth/DD31.9249%2021-Jul2026 is NOT totalreturn/alpha/
+PaperPnL. New carry/buyhold33cell diagnostic COMPLETE FAIL: resultb36fa093,
+HALFcarry60.0407%/DD31.3331% versus equaltrio buyhold92.5464%/29.8324%; same
+price-only2021-Jul2026/10bp. Both frozen growth/risk fail,0newfits/alljoined.
+Do not deploy this ETF winner or regrade old PASS; no causal fee-isolation claim.
 
 ## Verification / Completion
 
@@ -85,8 +122,9 @@ Keep15percent Dfree/warn20percent. No foreground session/quota waiting.
 Changed code/runtime: focused serial then fresh original
 scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and default/research/
 accounting Compose with .env.example. Exact unchanged primary docs/external-only
-work may reuse authority54526ef3/1375production-control123a2072, plus independent
-changed-external checks. New code cannot reuse that old authority blindly.
+work may reuse PRIMARY authority93991da5/exact1380sources+2controls digestde002fd2,
+plus independent changed-external checks. Old1375/worktree authorities are
+history, not current primary authority.
 
 Complete only with actual typed native-path evidence and owned scoped readiness,
 not a helper/MD/profit claim. Verify/commit/push, refresh stateboards, replace ONE

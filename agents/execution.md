@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-2026-10-23 06:50KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
+2026-10-23 08:45KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
 AGENTS.md owns Paper authority, one original cash-tenth and deterministic risk.
 Never KIS_LIVE_* or private/raw/secret output; modelprofit is not permission.
 
@@ -35,11 +35,46 @@ Original69templates/expiredHGB five-session owner are not new entry commands.
 Next company native-target-weight-paper-consumer-v1: explicittypedweights from
 savedJoint17shadow0120ee31/d8b3d74f tosame nativebank/risk/intent/recovery, NEVER
 payoff/rank/TopK/fakescores/renormalization. ClaudeSOUNDlimits1a5f5755 requires
-unavailable+rounding+pending-restart aggregateceilings tests, correctfee arithmetic.
-Keep currenttask unchanged. Fourprimaryfiles pinned byfinalSource: model_paper_proposal.py,
-model_paper_horizon.py,kis_paper_current_stock_cycle.py,us_equity_session.py.
-Isolate code edits/worktree and qualify immutable same-version SDK binding for
-affectedowners BEFORE merging pinnedchanges; no globalwait untilNov19.
+unavailable+rounding+pending-restart aggregateceilings tests. Preserve existing
+GROSS limit-cost/reservation math, NOT measuredfee/settlement/all-in guarantee.
+Old mutable-primary coupling is repaired by actual immutable SDK delivery
+b6ab7f0b/Source0cc9b799. Volume entry/exit and HGB exit reboundReady with original
+identity/bank/counters/image; rollback/reinstall/readback complete, no Taskstart
+or API. Preserve frozen delivery bytes. R5/nightly XML/ACL unchanged.
+Developmentroot C:/Users/User/.codex/worktrees/native-target-weight-paper/thericher-v2,
+branch codex/native-target-weight-paper-consumer. Native32focusedtests pass incl
+mixedR5/HGB/weight custody/exits, unknownrestart/partialfill and all69finitevisits.
+Parent31unit/independent15adversarial PASS; source/control36c8f812 authority below.
+Primary main now c97cfe6 merged/pushed; new runtime is separately qualified.
+Actual inertinput86c1b30d/01e6ea40/policy11b5657c from exactcachedlearned17weights:
+A/research/current-joint-weight-native-input-20261023-v1/release-r3/CONSUMER.json.
+Full100/known69/69targets/.005gross, unknown31unroutedzero; no newNN/order/alpha.
+4777 isbuildCONFIG; actualnativeimagec409e24e. Independentinputc3f9aef9
+PASS886checks8negatives/17stablefiles. Nativecore successor317+290assertions/
+2actualprocesses proves exactunknownrestart/F9held/ownedexits/terminal; old2failed
+fixturestarts180upper retained+successor160upper/combined340of600/alljoined.
+Old4f RO _states attemptedlocking-store read andwasdenied; no bookchange,
+NOT positiveoldimageprojectionproof.18common sourcebyte transferlimit explicit.
+Code7f3d6e4/c97cfe6 PUSHED main. Worktree491bf085:512serial/18747fullPASS25skip/
+8workers/originalcleanhelper/Ruff3Compose. Primary93991da5 now PASS546serial/
+18747full25skip/actual8/cleanhelper/Ruff3Compose/exact1380+2controls de002fd2.
+Earlier14308-pass partial is not authority; proven allocator-address test
+false positive d80f4c99 fixed test-onlydfb14ec/committedPUSHED, no private leak.
+Foundrealworker raw-only injection: minimal MODEL_WEIGHTS admission+10tests now
+covered by491bf085. Newimage75df0968.
+Nash newruntime/sourceboundworkerABI preparation only, no newTaskinstallation:
+A/execution/current-joint17-weight-paper-preparation-20261023-v1, proposedentry
+Oct23 15:30..16UTC/ownedexitNov19>=20:45UTC, ONEjoint17-Oct23/.005grossinside
+sameinitialtenth. KeepoldVolume/r5/HGB/nightlyowner/counters/requestscope.
+Actual75df cold successor at current-joint17-weight-paper-runtime-repair-20261023-v1
+Source983f9b12 passed66+36assertions/20OwnerAdmissionexchanges, alljoined. Old2
+fixturefaults/debits retained; newproductionowner/controller is separately owned
+by Meitner, not installed or proven by these invented fills.
+SDK phase2 retains all899non-src/476src historicalbytes and original credential/
+custody roots. Final source binds exact executed native-body bytes, not an
+additional finalhash native run; installedReady is not a fill. Meitner now
+audits nightly compatibility with future foreign registrations using invented
+fixtures only, no private/API/task changes.
 
 ExitNov19>=20:45UTC is conditional EXACTcohort owned-only, not inventedfill;
 native last15min exit is execution proxy versus targetCLOSE21:00, not replay.
@@ -98,9 +133,9 @@ Quiescence/sourceunknown withholds only scoped conclusions, not company permissi
 Never adopt foreign inventory or expand bank from profit; positiveexact terminal/
 cancel/fill reconciliation alone settles a request.
 
-Current authority54526ef3:1464serial/18659fullPASS25skip/actual8workers/clean
-unmodifiedhelper/Ruff3Compose/exact1375production-control123a2072. Retainedfull
-stdout/JUnit/actualworkerproof; initialargument/metadata-verifier faults not
-authority, independently verified SAMEcompletehelperexit0, no cleanup bypass.
+Current PRIMARY authority93991da5:546serial/18747fullPASS25skip/actual8workers/
+cleanunmodifiedhelper/Ruff3Compose/exact1380sources+2controls digestde002fd2.
+Retained fullstdout/JUnit/actualworkerproof; old partial runs are not authority.
+Historical54526ef3 is not the current code authority; no cleanup bypass.
 External Source needs actualfocused/native checks; unchangedMD does not need
 another fullsuite. RUNBOOK owns current safecommands, oldproofs stay Git/A.

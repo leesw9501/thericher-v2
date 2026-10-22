@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 06:50KST / Oct22 21:50UTC integration checkpoint.
+2026-10-23 08:45KST / Oct22 23:45UTC integration checkpoint.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent sharedMD/Git.
 No operator decision currently needed; continue active long request.
 
@@ -21,43 +21,53 @@ SavedJoint17 weights0120ee31/d8b3d74f remain weights, never payoff/rank/TopK.
 Claude SOUNDlimits1a5f5755:
 A/review/current-target-weight-paper-admission-20261023-v1/review/RESPONSE.txt.
 Skipped/rounded slot cannot re-spend cash, pending reservation survives restart.
-Use correct all-in fee arithmetic, not the advisory's residual-cash shorthand.
+Use existing GROSS limit-cost/reservation arithmetic, not advisory fee shorthand;
+fees/settlement are unmeasured. Residual cash subtracts costs once.
 
 | Owner | Actual Work / Next Consumer |
 | --- | --- |
-| Parent | Close point/readiness evidence, verify/commit/push, freeze typedweight interface and disjoint code writes. Protect already-owned deployments, not another Source wrapper platform. |
-| Meitner / Execution | Quietdeploymentba57e33d complete/alljoined/0API-private-orders/0TaskStartcalls. Next typed-weight native path and immutable delivery for affected existing owners, without request/basis/counter reset. |
-| Socrates / Engine+Steward | H5 actualGPUfit Source479b8923 started21:43:01UTC/container8cfd56af/coordinator53960/startFILETIME134371789743266943; curve003 proves3epochs2073updates. Max95full epochs/691steps/65952cap/CHECKpatience16/onefit/postupdateRetry0, then43forecasts/9H5cells/LATER0. Not final/converged. |
-| Averroes / Data | H5view28d7ed8f/DTOceaeef36/ABIdd33bdd2 READY, TRAIN2762/CHECK109/INNER43/all9marks/47107checks21refs/11activeupper/alljoined; tiny copied-limitation correction only, no rematerialization. |
-| Leibniz / Strategy | LiquidETF Source249f58dc/0395e27a complete/33SYN/85upper/alljoined. Two futurefitsHGBq.20/TCN/same63x7/H5/fixedhalf/21cells/LATER0 proposed; exact action-unit/H5packetQA/native proof before release. No numerical/GPU yet. |
+| Parent | Main dfb14ec pushed; PRIMARY93991da5 PASS546serial/18747full25skip/actual8/cleanhelper/Ruff3Compose/digestde002fd2. Exact allocator-address test reproducer/fix, no private leak. Integrate owned runtime/MD/Git. |
+| Meitner / Execution | SDKdelivery b6ab7f0b/Source0cc9b799 COMPLETE/three tasks reboundReady. Now invented-fixture nightly foreign-owner compatibility audit; no actual effects. |
+| Socrates / Engine+Steward | ETFcarry diagnostic COMPLETEFAIL: HALF60.0407%/DD31.3331 vs buyhold92.5464/29.8324;33cells/0fits/alljoined/500.610110lineage. No ETF promotion. Coordinates the separate CatBoost SYN GPU owner; no market fit yet. |
+| Averroes / Review | Preview test false positive proved d80f4c99/fixdfb14ec. Now completing exact expected-error catches/daily fresh-vs-retained nightly audit, SYN only; no production guard changes. |
+| Leibniz / Strategy | GPU pairwise-tree Source1c915e3e/candidate06aa7634 complete. Native CatBoost CPU/CUDA API/weights/safeIO/pace proof dispatched, max4SYNfits/8trees, no market fit yet. |
+| Kant / invoked Data | Oldaction-awareNOT_READY6d06ed20 preserved. Newprice-onlyDataacec097d READY4523/501/1381/all3/alljoined/23.076110aggregateData, no fetch. |
+| Nash / invoked Execution | Actual75df cold successor Source983f9b12 PASS66+36assertions/20OwnerAdmissionexchanges/alljoined, final sealing. Oldfixturefaults retained; new production coordinator owned by Meitner, no installation yet. |
 
 TemporaryZeno H5Source7eb762c3/a9e83042/17SYN/Source300upper closed. No permanent
 daemon or training inferred from MD/START alone. Completedpoint/shadow/fits
 not repeated for utilization.
 
-## Actual Block / Reversible Improvement
+## Throughput / Current Dependencies
 
-New code MUST NOT break installedoldSource pins. FinalSourcebb5667d8 names four
-mutable primary-repo modules: model_paper_proposal.py/model_paper_horizon.py/
-kis_paper_current_stock_cycle.py/us_equity_session.py. Their ordinary edits
-would fail old source attestation even when Dockerimage4f remains unchanged.
-This is a measured technical dependency, not a permission or a Nov19 wait.
+The measured mutable-primary pin dependency is repaired: same-version SDK/
+historical source delivery b6ab7f0b/Source0cc9b799 actually rebound Volume entry/
+exit and HGB exit, with rollback/reinstall/readback and original identity/bank/
+counters. Primary c97cfe6 merged/pushed. R5/nightly XML/ACL unchanged; no API/
+Taskstarts. Final source carries exact native-body byte closure, not another
+full finalhash native execution. Old pins remain immutable, not bypassed.
+Development worktree remains:
+C:/Users/User/.codex/worktrees/native-target-weight-paper/thericher-v2,
+branch codex/native-target-weight-paper-consumer; no other worktree adopted.
+Current company closure needs actual75df worker qualification plus one owned
+quiet opportunity. Independent research does not wait for its validation.
+Primary fresh-byte closure now93991da5; first partial failure was proven
+allocator-address test noise and repaired. Preserve13 historical CRLF files.
+ETFactualfits/readout nowcomplete, CPU chosen prospectively from measured24x
+tiny-batch advantage, not GPUpermissionhold. Original and batched finitechecks
+exactwithin-device but GPU speed did NOT improve; source1 simplerpath retained.
+Nextusefulwork is carry/buyhold comparison, not more completed fits. A missing
+isolated import bootstrap consumed its one SYN start before any outcomes;
+explicit repair successor completed33cells with both frozen criteria FAIL,
+keeping original deadline/active budget and old failure. No model-fit repeat.
+Leibniz owns bounded real CatBoost SYN readiness, not numerical market authority.
+Inertpoint86c1b30d/input01e6ea40: full100/69known/69proposals, 0newNN/fit/order.
+Two PREconversion route-shape faults retained, sourceboundknown69routes67e3d813/
+unknown31UNAVAILABLEzero; no score/rank/nativeoldpoint reuse except staticrouting.
 
-Ready alternatives:
-1. Additive explicit modules if native lifecycle can be reused without fake scores.
-2. Isolated managed code worktree while primary code stays frozen, then qualify
-   immutable same-version SDK/source delivery for actual affected owners before merge.
-3. Qualify that exact-byte delivery first, then edit main normally.
-Parent chooses2 for immediate isolation/inventory, not a new framework/service/
-agent platform. Do not silently repin active/unknown owners or adopt another
-worktree. Existing oldfirstrate worktree is unrelated and left alone.
-
-Throughput improvement: prepare one orthogonal ETF path WHILE H5trains, not after.
-H5 TRAIN/CHECK device cache has actual invented output/loss/gradient/next-update
-byte parity, projected460MB/headroom; realtransfer timings not yet established.
-No compilation/runtime swap or extra scientifictrial to fillGPU. At21:50UTC
-sample38percent/3203of24564MiB/41C alongside exact actualH5actor/curve evidence;
-not constantutilization or an isolatedbenchmark.
+Reversible improvement: fix exact source/bootstrap/test faults once before new
+full dispatch; keep independent native Paper, carry replay and useful GPU
+readiness disjoint. No dummy training or another resource/agent platform.
 
 ## Research / Data Evidence
 
@@ -70,6 +80,11 @@ Header privateNumPy API failure beforetargetdecode/model/update retained21.844up
 fixed publicversion1/2 parser, no marketretry. No heldINNER/canonical in fit.
 Forecastall43 BEFOREheldlabels, all9global4903+5*k cohorts, new9cells/LATER0,
 noH20payoff substitution/postfit cap/projection/retune. Adaptive/reuseddata.
+Actual final H5c359420f:19epochs13129updates/20CHECK/selected3/43forecasts/9cells,
+10bp growth+0.56816%/DD0.45456% versus oldcached+0.48724/0.80093 and uniform
+-0.82237/1.21893%initialresearchNAV. All43max57.6823%, funded9max37.6240%/
+HHI0.10027: funded+finance PASS but all-date concentration FAIL, jointFAIL.
+Alljoined/GPUreleased,1083.761527lineageof6000. No rerun/regrade/causalalpha.
 
 Concentrationdf38d8b2 CLOSEDFAIL:24CUDAepochs16488updates/CHECKpatience24 picked
 newepoch0 old17alias. Maxissuer83.156%all43/59.236%funded3/HHIratios100%, fail
@@ -109,10 +124,9 @@ All7observerpausesRESTORED; Reader12410a15 scopes actualprivatewriters/source/
 mounts/stability, not all Data/Research/unrelateddue. Assumed-honest markers,
 not cryptographic OSorigin. No finalTaskmanualrun or currentneworder from setup.
 
-Primarycompatibility54526ef3:1464serial/18659fullPASS25skip/18684total/actual8workers/
-cleanoriginalhelper/Ruff3Compose/exact1375production-control123a2072. Same complete
-successfulhelper independentlysealed; failedargument/quietstdoutverifierfaults
-NOT authority. New code requires fresh changed-path/fullverification; unchanged
+Primarycompatibility93991da5:546serial/18747fullPASS25skip/18772total/actual8workers/
+cleanoriginalhelper/Ruff3Compose/exact1380sources+2controls digestde002fd2. Earlier
+partial failures NOT authority. New code requires fresh changed-path/fullverification; unchanged
 docs reuse only exactdigest+externalnativechecks. Preserve %SystemDrive%/.
 At materialcompletion integrate/verify/commit/push and replaceONE nextgoal.
 Continue ready usefulwork, not foreground session/quota sleeps.

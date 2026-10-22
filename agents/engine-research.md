@@ -77,7 +77,7 @@ learned17/fixed32/uniform69full100binary64weights/320independentROchecks/12refs.
 Logits/desiredweights are NOT rawH20payoff; existing payoffbridge incompatible.
 No silent score substitution or learned postfit stacking; that still needs OOF.
 
-## Active H5 / Next Research
+## Completed H5 / Next Research
 
 TemporaryZeno completed H5Source7eb762c3/a9e83042/17SYN/300upper:
 A/research/current-joint-moe-h5-target-proposal-20261023-v1,
@@ -85,7 +85,12 @@ closed/no modelmarketGPU. Socrates owns actualnumerical:
 A/research/current-joint-moe-h5-target-development-20261023-v1.
 ActualSource479b8923/onefit21:43:00.758UTC/actor21:43:01.669UTC,
 container8cfd56af/coordinator53960/startFILETIME134371789743266943.
-Curve003 proves3epochs2073updates115.423sec, notfinal/converged.
+FinalCONSUMER-H5.json c359420f:19epochs13129updates/20CHECK/selected3/patience16,
+43forecasts/9newcells/LATER0/alljoined/GPUreleased/1083.761527lineageof6000.
+10bp growth/DD%initialresearchNAV H5+0.56816/0.45456, cachedold17+0.48724/0.80093,
+uniform-0.82237/1.21893. All43maxissuer57.6823% fails .50, funded9max37.6240%/
+HHI0.10027 passes. Growth/risk/turnover pass, frozenjointFAIL remains failure.
+No rerun/rescue/causalhorizonbenefit/independentalpha/PaperPnL; currentH20point unchanged.
 ONE warmoriginal17/newAdamW-allRNG27 H5OPEN-e+4CLOSE/sameexperts-affines/
 TRAINutility+.005HHI/CHECKunregularized/patience16/max95full epochs/691steps/
 65952updates/onefit/postupdateRetry0. 6000active includesSource300/native600/fit3600/
@@ -95,18 +100,57 @@ optimizer-allRNG-cache nextupdate exact. Data28d7ed8f/DTOceaeef36/ABIdd33bdd2:
 TRAIN2762/CHECK109/INNER43/all9marks. Parent21refs verified; actualfitmounts
 TRAIN/CHECK only, no INNERlabels/canonical. NumPyprivate-header fault before
 targetdecode/model/update retained21.844upper, publicparser repair, no marketretry.
-One43dateforecast BEFOREheldINNER, newH5readout9cells/LATER0; not yetresult.
+One43dateforecast BEFOREheldINNER; actual newH5readout9cells/LATER0 closed.
 Never inferH5 fromH20payoff or relaxfrozenconcentration/risk/turnover/growth.
 H5intent preceded Parentinspection of penaltyresult, NOT its existence;
 reuseddata/adaptive development, no independentalpha or causalhorizon claim.
 
-LiquidETF nextSource249f58dc/0395e27a READY33SYN/85upper/alljoined, notnumerical:
+Original liquidETF nextSource249f58dc/0395e27a READY33SYN/85upper/alljoined:
 A/research/current-liquid-etf-next-campaign-proposal-20261023-v1/CONSUMER.json.
 SPY/QQQ/IWM H5downside/HGBq.20 versuscausalTCN/same63x7/fixedforecasthalf/
 concentration-alignedcontrols/2futurefits/21cells/LATER0. Existingcoverage through
-Jul10; actual action-unit/H5packetQA and nativeproof first. ClaudeREVISEretained,
+Jul10. Its action-aware branch closed NOT_READY; the explicit price-only
+successor below completed actual numerical work. ClaudeREVISEretained,
 cyclictop1 and1percentNAVmargin prospectivelyadded; oldETF/TCN/q25 audited,
-no first-use/freshholdout claim. Prepare orthogonal readywork whileH5trains.
+no first-use/freshholdout claim. H5 training is closed, not running.
+
+ETFclosed update: original dividend-inclusive recipe NOT_READY6d06ed20 retained,
+not globalhold. NEW split-aware PRICE_ONLY Source4b33debf/74fd27c0/2c406f5b with
+ClaudeSOUNDlimitscd14808b, Dataacec097d:TRAIN4523/CHECK501/INNER1381/all3, flags
+only/no dividends/receivables/historicalarrival unknown. Actual sameinfo CPU
+HGB43stages(selected19)/TCN18epochs1278updates(selected2), patience24/16,
+cachedfixedhalf/21cells/oneadaptiveintake/LATER0, frozenjointPASS. At10bp price-only
+growth/DD% Jan2021-Jul2026 half+10.5601/31.9249,HGB+2.5779/30.5726,
+TCN+9.8312/33.1078,uniform+0.7813/34.4575; no TR/alpha/PaperPnL.
+A/research/current-liquid-etf-price-only-development-20261023-v1/MATERIAL-RESULT.json.
+Alljoined,0GPUworkers/419.234110lineage7200; earliest21:32:05->01:32:05UTC preserved.
+NativeCPU.0290s vsCUDA.7113s; aggregated.0326/.8261 no improvement, beforefit
+DeviceBinding chose originalCPU source1, not implicitfallback or permissionwait.
+
+Next ONE NEW package current-etf-carry-forward-policy-20261023-v1: cachedweights
+179c5ac4/samekeys/0newfits-forwards, native net-rebalance cost/share conservation,
+7carrypoliciesx3costs+4buyholdcontrolsx3=33newcells max/LATER0/300active3600elapsed.
+OldforcedH5 fees53.8140%initialNAV/turnover538.14 may dominate model comparison.
+Freeze/Claude/SYN before newadaptive replay; halfcarry mustbeatcarryuniform and
+static equaltrio by.01initialNAV withDD<=carryuniform at10bp. SingleETFholds are
+descriptive, not post-outcome selection. Old PASS/caps never regraded/reopened.
+Original carry package failed before outcomes due to isolated -I import
+bootstrap;0cells/0intakes/0fits. FIRST-CAUSE97b1fd41/CONSUMER retains69.891upper.
+Explicit successor current-etf-carry-forward-bootstrap-repair-20261023-v1 is
+COMPLETE FAIL, Source ddfd5fef/MATERIAL-RESULTb36fa093. Same cached weights,
+33cells/30native+99independentchecks/0fits/alljoined; combinedcarry81.376of300,
+allLineage500.610110, original00:07:59UTC deadline retained. At10bp price-only
+HALFcarry growth60.0407%/DD31.3331%, uniformcarry91.6445/29.8463, equaltrio
+buyhold92.5464/29.8324, same2021-Jul2026. Both growth and risk criteria fail;
+no alternate policy/winner/refit selected. Old forced21cell PASS stays closed.
+Carry changes overnight exposure/mechanics together; no causal fee-isolation
+or alpha/PaperPnL claim, no refund or retroactive retry entitlement.
+
+Next tree-ranking mechanism Source1c915e3e/candidate06aa7634 is narrowed, not
+numerical GO. Leibniz owns current-pairwise-tree-native-readiness-20261023-v1:
+real CatBoost CPU/CUDA pair-weight/safeJSON/curve/pace SYN proof, max4fits/8trees
+each, no market. Old CatBoost rejection stays immutable; date-local arbitrary
+rank scores are not expected returns or native Paper weight inputs.
 
 ## Closed Families / No Duplicate Work
 

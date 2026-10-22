@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-23 06:50KST. A=D:/thericher-v2/model-artifacts.
+2026-10-23 08:40KST. A=D:/thericher-v2/model-artifacts.
 Own mechanisms/pure kernels/consumable proposals, not broker risk or model
 selection/evaluation authority. Parent MD/Git; Engine numerical contracts.
 Invoked role, not a daemon/per-indicator MD or another report platform.
@@ -37,7 +37,7 @@ Do NOT swap newly seenwinner into today's already-frozen Volume/GRU point.
 Prospective shadow Sourcecc8c9aee/26fixture5calendar20pointerchecks/alljoined/
 19.0632upper/no model loads-forwards-labels-GPU:
 A/research/current-joint-moe-prospective-shadow-proposal-20261023-v1/CONSUMER.json.
-Exactlearned17/fixed32/uniform69 futurepre-entry record is proposed. Allocation
+Exactlearned17/fixed32/uniform69 pre-entry record was subsequently produced. Allocation
 logits/softmax targetweights are NOT rawH20payoffs; today's payoffbridge incompatible.
 Target-weight nativeadmission is a technicalgap, not operator approval/globalhold.
 
@@ -56,9 +56,12 @@ not penalty/science; original failedproof/debits retained.
 
 Shadow0120ee31/d8b3d74f ACTUAL COMPLETE beforeOct23entry:2CPUloads2forwards69rows/
 1record/320independentROchecks/14.304084upper/alljoined/0labels-fits-GPU.
-Still no native targetweight admission/order/payoff DTO or candidate swap.
+Shadow itself grants no order/payoff authority or candidate swap. Separate
+typedweight core now exists7f3d6e4; runtime deployment is independently qualified.
 TemporaryZeno H5Source7eb762c3/a9e83042/17SYN/300upper complete. Data28d7ed8f/
-TRAIN2762CHECK109INNER43/all9marks ready. Socrates ACTUAL H5GPUfit Source479b8923
+TRAIN2762CHECK109INNER43/all9marks ready. Socrates H5GPUfit CLOSEDc359420f,
+19epochs13129updates/selected3/alljoined/GPUreleased; financial/funded risk pass
+but all43max57.6823%>.50 fails, frozenjointFAIL retained. No rerun. Source479b8923
 started21:43UTC, max95full epochs/691steps/65952updates/patience16/onefit,
 sameexperts/warm17/newAdamW-RNG27/H5OPEN-e+4CLOSE, noH20return/mask reuse.
 Adaptive reuseddata; H5intent preceded Parentinspection, NOT penaltyresult existence.
@@ -68,10 +71,36 @@ A/research/current-liquid-etf-next-campaign-proposal-20261023-v1/CONSUMER.json.
 SPY/QQQ/IWM H5downside prediction/HGBquantile.20 versusexistingcausalTCN/
 same63x7/fixedforecasthalf/concentration-alignedcontrols/2futurefits/21cells/LATER0.
 PriorETF/TCN/q25studies audited, nofirst-use/freshholdout claim; existingTiingo
-metadata throughJul10, actualaction-unit/H5packetQA andnativeproof beforefits.
+metadata throughJul10. Original action-aware branch failed the action-unit
+contract; explicit PRICE_ONLY successor below completed fits/native proof.
 ClaudeREVISEretained, cyclictop1control/1percentNAV practicalmargin added BEFORE
 numerical;33SYNchecks/85of200upper/849of1200elapsed/alljoined/0models-market-GPU.
-This orthogonal preparation occurs whileH5runs, not a library/model-name list.
+Original action-aware Data recipe closedNOT_READY6d06ed20. Newprice-only Source
+4b33debf/74fd27c0/2c406f5b/Claudecd14808b andDataacec097d producedactualHGB43stages/
+TCN18epochs1278updates/fixedhalf21cellsprimaryPASS419.234110lineage/alljoined.
+Half+10.5601%price-onlygrowth/DD31.9249%2021-Jul2026, notTR/alpha/PaperPnL.
+ForcedH5fees53.8140%initialNAV motivate NEWcarry-forward/buyholdstudy0fits/33cells,
+not old rescue. Next GPU Source audit is COMPLETE:
+A/research/current-next-gpu-mechanism-audit-20261023-v1/CONSUMER.json,
+Source1c915e3e/candidate06aa7634. One date-local economic-gap-weighted GPU
+CatBoost PairLogitPairwise versus matched RMSE mechanism, not first CatBoost/
+ranking use or qualified alpha. Official Apache2.0 source and advisory
+SOUND_WITH_NAMED_LIMITS2505a7d7 recorded; old GPU RMSE rejection preserved.
+Current bounded native readiness package:
+A/research/current-pairwise-tree-native-readiness-20261023-v1.
+Max4 real SYNfits/8trees each/600active7200elapsed, CPU+CUDA API/pair-weight/
+safe JSON prefix/pace proof before any market fit. Attest old addon4bb201b5,
+coordinate measured GPU headroom with Steward. No market/outcome/credentials/
+private/Execution/task access, no current numerical GO or GPU-utilization goal.
+First native source00618b41 stopped at the optional PairLogit use_weights
+parameter guard before any completed model receipt/GPU call. Exact first cause
+af6e5145 retained, failedCPUattempt UNKNOWN<=8trees/96.422807active once, no
+market. Explicit metric-spelling-only successor
+current-pairwise-tree-native-metric-repair-20261023-v1 is authorized inside the
+same600active/7200elapsed family: one additional CPU repair plus3unstarted slots,
+aggregate5SYNfitcalls/40trees max inclfailed8, no automatic retry. Pair weights/
+model/seed/fixture unchanged; actual weighted-objective/safeIO/pace still unproven
+until repaired native run passes. No unrelated objectweights added to appease API.
 
 ## Completed / No Rescue
 
@@ -80,8 +109,9 @@ https://arxiv.org/abs/1910.12430 explains differentiable convex layers;
 https://github.com/cvxpy/cvxpylayers (official Apache2.0 source/releases) and
 https://github.com/jankrepl/deepdow/blob/master/deepdow/layers/allocate.py
 show a possible explicit maximum-weight constrained allocation mechanism.
-DEFER new solver/runtime adoption now: the fixed HHI numerical test is already
-running and today's Paper consumer is the frozen payoff point, not these weights.
+DEFER solver/runtime adoption: completed HHIrecipefailed; today's already-owned
+Paper consumer is the frozen payoff point. Old solver inspiration is not a
+current dispatch or a prerequisite for the separately qualified weight route.
 If that test cannot meet concentration criteria, a NEW frozen constrained-layer
 campaign is an alternative, not retroactive projection/regrade of old results.
 Need real solver/gradient/latency/feasibility SYN proof and finite compute first;

@@ -51,6 +51,19 @@ published by Engine; Data did not select stocks by scores or produce orders.
 No active collector inferred from this board. Follow current assigned source/
 metadata package only; do not rematerialize complete H5/current acquisition.
 
+Immutable scope correction7b4183d8 at same H5root CONSUMER-SCOPE-CORRECTION.json
+completed without payload changes. H5modelc359420f nowclosed, not running.
+Oldaction-awareETF recipe actuallyclosedNOT_READY6d06ed20 with0marketdecodes/fits:
+currency/share/collision units not proved. New Source4b33debf/74fd27c0/2c406f5b
+uses documented splits and PRICE_ONLY(no dividends) component. Actual packet
+acec097d at A/data/current-liquid-etf-price-only-input-20261023-v1/CONSUMER.json:
+TRAIN4523/CHECK501/INNER1381/all3known/146221native+76hostchecks/alljoined;
+aggregateData23.076110seconds inclold8.788339once. Raw/arrays M only; exact
+TRAINaffine beforelabelmasks, heldINNER physicallyabsent fromfit allowlist.
+No historicalarrival/PIT/totalreturn/qualifiedeconomic claim. Engine twoCPUfits
+and21cellreadoutcomplete; noDatarematerialization to fillGPU or missingpaperwait.
+Unknown action units constrain that old consumer, not company/Paper authority.
+
 ## Retained Inputs / Closed Cursors
 
 Modern context46861c1b/ABIa5027850: TRAIN2747dates134187rows/CHECK75-5558/

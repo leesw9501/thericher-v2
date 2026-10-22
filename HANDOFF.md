@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 06:50KST / Oct22 21:50UTC integration checkpoint.
+2026-10-23 08:45KST / Oct22 23:45UTC integration checkpoint.
 C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents. Parent sharedMD/Git.
@@ -74,37 +74,66 @@ Windows interactive user session/online Docker still required, not awakeCodex.
 
 ## Research / Actual Owners
 
-- Socrates: actual H5 GPU fit in
+- Socrates: actual H5 GPU campaign CLOSED c359420f in
   A/research/current-joint-moe-h5-target-development-20261023-v1.
-  Source479b8923/phase2-v2; one actualmarketfitstart21:43:00.758UTC, actor21:43:01.669/
-  container8cfd56af/coordinator53960/startFILETIME134371789743266943.
-  Curve003 proves3epochs2073updates115.423sec; not final/converged.
-  ONE originallearned17 weights-only/newAdamW-allRNG27/H5OPEN-e+4CLOSE/
-  TRAINutility+.005issuerHHI/CHECKunregularized/patience16/max95full epochs/
-  691steps/65952cap/postupdateRetry0. One43dateforecast BEFORE heldINNER/
-  9newH5costcells/LATER0. Source300/Data<=300/nativeproof<=300/fit3600/infer300/
-  readout600/verifycleanup600 within6000active, origin21:06:42UTC+28800 unchanged.
-  Native1 b8608018/28checks4CUDAupdates/coldnext-step-cache parity PASS. Header
-  privateNumPy API fault BEFOREtargetdecode/model/update repaired with public
-  version1/2header parsers; old21.844upper/failure retained, no marketretry.
-  Prepared TRAIN/CHECK cache proven exact; no INNERlabels/canonical in fit mounts.
+  CONSUMER-H5.json:19epochs13129updates/selected3/patience16/43forecasts/9newcells/
+  LATER0/alljoined/GPUreleased/1083.761527lineageof6000. At10bp growth+0.56816%/
+  DD0.45456%initialresearchNAV vs oldcached+0.48724/0.80093, uniform-0.82237/1.21893.
+  Financial/turnover/funded-concentration pass; all43max57.6823%>.50 fails.
+  FrozenjointFAIL retained, not independent alpha/PaperPnL or candidate replacement.
+  Source479b8923/phase2-v2, one warmoriginal17/newAdamW-RNG27/H5 target with
+  TRAIN+.005HHI/CHECKunregularized. Actual fit body693.977232s/peak564338688bytes;
+  no convergence claim. Nativeb8608018/28checks4CUDAupdates/cold-cache parity,
+  heldINNER absent from fit. Header pretarget fault21.844upper retained; no retry.
 - Data/Averroes: H5view READY28d7ed8f:
   A/data/current-joint-moe-h5-target-view-20261023-v1/CONSUMER.json.
   DTOceaeef36/ABIdd33bdd2/Source737cbfef, TRAIN2762dates135297rows/CHECK1098106
   (4clockpurges/10endpointunknown retained)/INNER43-3295/all9complete5closes.
   47107checks21postsealrefs/alljoined/11activeupper insideData300. This Data
-  DID materialize H5/heldINNER; copied Source-only sentence is erroneous,
-  metadata correction does not alter sealedtargets/authority or block fitting.
-- Leibniz: independent liquidETF next-campaign Source249f58dc/0395e27a:
+  DID materialize H5/heldINNER; copied Source-only sentence corrected in immutable
+  CONSUMER-SCOPE-CORRECTION.json7b4183d8, no payload alteration/rematerialization.
+- Leibniz: original liquidETF next-campaign Source249f58dc/0395e27a:
   A/research/current-liquid-etf-next-campaign-proposal-20261023-v1/CONSUMER.json.
   SPY/QQQ/IWM downsideH5, proposed2fits HGBq.20/causalTCN and fixedforecasthalf/
   alignedcontrols; same63x7/finitecaps/21cells/LATER0. Metadata coverage through
-  Jul10, exact action-unit/H5packet QA/native proof still needed before numerical.
+  Jul10. Original action-aware branch closed NOT_READY; the explicit price-only
+  successor below completed actual fits. Do not repeat the old proposal.
   PriorETF/TCN/q25 audited; nofirst-use/freshholdout claim. ClaudeREVISE retained,
   cyclictop1control/1percentNAVmargin added beforevalues;33SYNchecks/85upper/alljoined.
-- Meitner completed VolumeGRU runtime above. Next Execution owns typed weight
-  native admission, preferably small versioned repo code, not another wrapper
-  chain. Parent first freezes interface/write sets and protects current pins.
+- Original dividend-inclusive ETF recipe closed NOT_READY6d06ed20: dividend
+ currency/share/collision units unproven,0marketdecode/fit; not a Paper hold.
+ NEW price-only Source4b33debf/contract74fd27c0/kernel2c406f5b/Claudecd14808b:
+ split-carried shares/no dividends, explicit biased component proxy, not totalreturn.
+ Dataacec097d READY/alljoined/TRAIN4523-CHECK501-INNER1381/all3/146221native+76host,
+ aggregateData23.076110s inclold8.788339 once. A/data/current-liquid-etf-price-only-input-20261023-v1.
+- Two actual ETF CPU fits and21cell readout COMPLETE:
+ A/research/current-liquid-etf-price-only-development-20261023-v1/MATERIAL-RESULT.json,
+ Source132cee3f. HGB43stages/selected19/patience24;TCN18epochs1278updates/selected2/
+ patience16. Fixedhalf frozenprimary PASS at10bp: price-only growth+10.5601%/
+ DD31.9249% Jan2021-Jul2026, versusHGB+2.5779/30.5726,TCN+9.8312/33.1078,
+ uniform+0.7813/34.4575. Not totalreturn/alpha/PaperPnL. ForcedH5 fees53.8140%
+ initialNAV/turnover538.14 are material. NEW carry/buyhold diagnostic is now
+ COMPLETE FAIL: A/research/current-etf-carry-forward-bootstrap-repair-20261023-v1/
+ CONSUMER.json; Sourceddfd5fef (full exact hash in consumer), resultb36fa093.
+ At10bp HALFcarry price-onlygrowth60.0407%/DD31.3331% versus uniformcarry
+ 91.6445%/29.8463% and equaltrio buyhold92.5464%/29.8324%, same Jan2021-Jul2026.
+ Both frozen growth/risk fail.33cells/30nativechecks/99independentchecks/0fits/
+ alljoined/combinedcarry81.376of300/totalLineage500.610110. No model promotion
+ or alternate winner; old21cell PASS unchanged. Carry changes exposure and
+ mechanics together, so no causal fee-isolation claim. Bootstrap failure and
+ its69.891debit retained; original deadline00:07:59UTC not reset.
+ CPU chosen BEFOREfits: native original medianCPU.0290s/CUDA.7113s, aggregation
+ .0326/.8261 did not improve. Source1 used; no GPU permission hold or fallback.
+ Allworkersjoined/0GPUworkers/lineage419.234110of7200; earliestclock21:32:05UTC
+ ->01:32:05UTC neverreset. No completedfit rerun.
+- Meitner completed immutable SDK delivery b6ab7f0b/Source0cc9b799 and rebound
+  three original tasks. Now auditing nightly foreign-owner compatibility with
+  invented fixtures only; no new API/order/task or private-state effects.
+- Leibniz narrowed the next GPU mechanism to gap-weighted date-local CatBoost
+  pairwise trees versus matched RMSE. Source1c915e3e/candidate06aa7634:
+  A/research/current-next-gpu-mechanism-audit-20261023-v1/CONSUMER.json.
+  Native readiness proof only is dispatched; no new market fits or GPU training
+  inferred. Existing old CatBoost rejection remains closed.
 - TemporaryZeno H5Source7eb762c3/a9e83042/ca103bde/17SYN/Source300upper closed.
   Source consumer and11refs verified. Role memory is not a daemon/GPUprocess.
 
@@ -135,14 +164,58 @@ Jul27..Oct22/H20Nov19CLOSE21UTC. Historical arrival/CA/finality unknown.
 Historical10083closed17unavailable87934newbars/0remaining/alljoined. No closed
 cursor reruns; SEC403 closes only exactscopes. No newpaid/publicdata.
 
-IMPORTANT: deployed finalSourcebb5667d8 depends on four mutable primary-repo
-files model_paper_proposal.py/model_paper_horizon.py/kis_paper_current_stock_cycle.py/
-us_equity_session.py. Do not break them during next implementation. Isolate new
-code/worktree and qualify immutable same-version oldSDK/source delivery BEFORE
-merging affected changes. This is a technicalversion boundary, not permission
-or a company wait until Nov19.
+The mutable-primary dependency of old Volume/HGB owners is repaired by actual
+same-version SDK delivery, not by silently changing their original source pins.
+A/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/CONSUMER.json
+b6ab7f0b/Source0cc9b799:476SDK .py plus1375 historical source+2control pins,
+separate original credential/custody roots; Volume entry/exit and HGB exit
+reboundReady. Final source transfers byte-identical actual native bodies;
+finalhash itself was not an additional native run. Rollback/reinstall/readback
+complete, alljoined,0API/Taskstarts. R5/nightly XML/ACL unchanged. Historical
+controls are evidence, not current authority. Primary c97cfe6 merged/pushed.
+Development branch codex/native-target-weight-paper-consumer remains at
+C:/Users/User/.codex/worktrees/native-target-weight-paper/thericher-v2;
+Parent pureweight DTO/tests, Meitner core/native tests, Averroes adversarialtest.
+Native pilot preserves gross limit-cost/reservation semantics, NOT measured
+all-in fees/settlement. Claude27c0845d SOUNDlimits retained. Do not edit frozen
+delivery source or replace actual owned requests/basis/counters.
+Actual inert weight input COMPLETE86c1b30d:
+A/research/current-joint-weight-native-input-20261023-v1/release-r3/CONSUMER.json,
+input01e6ea40/policy11b5657c/model8b7484a7. Full100/known69/69proposals, exact
+oldlearned17binaryweightsa8e77119/0NN-forward-fit-order/outcome. Two preconversion
+route-schema faults retained; final0.027903s, not runtime deployment or fill.
+Known69routes from acquisition67e3d813; unknown31UNAVAILABLEzero, no inventedvenue.
+Code7f3d6e4/c97cfe6 committed/PUSHED main, not new runtime deployment.
+Worktreeauthority491bf085 at A/verification/current-native-weight-worker-admission-20261023-v1/
+attempt-r1/AUTHORITY.json:512serial/18747fullPASS25skip/actual8workers/clean
+originalhelper/Ruff3Compose/exact1380sources. Primary retains13 legacy CRLF
+scripts, normalized text equal but byte-distinct from worktree. New PRIMARY
+authority93991da5 at A/verification/current-native-weight-primary-integration-20261023-v1/
+attempt-r2/AUTHORITY.json:546serial/18747fullPASS25skip/18772total/actual8/
+originalhelperexit0+clean/Ruff3Compose/exact1380+2controls digestde002fd2.
+Full372.57s/helper399.07s. First14308-pass partial failed a proven allocator-
+address substring test, not private output; d80f4c99 reproducer/test-onlydfb14ec
+fix committed/PUSHED. No normalization of historical script pins.
+Independentinputc3f9aef9:886checks8negatives17sourcefiles unchanged/alljoined.
+Native current-core successor A/execution/current-weight-native-fixture-repair-20261023-v1/
+CONSUMER.json:317+290 assertions/two actual processes, unknown exact request+F9
+held/no resubmit, owned-only old4+typed1 invented SELLs/terminal/restart proven.
+Old2fixture faults180upper retained; successor160upper/combined340of600/alljoined.
+Old4f RO projection attempted locking-store read and was denied; no book changes,
+NOT positive oldimage execution evidence.18common source bytes match; transfer
+limitation retained. Actual current imagec409e24e;4777ef4f was buildCONFIG, not
+addressable image ID. No real broker/private/Task effects from these proofs.
+Found actual worker injection stillraw-only: minimal two-profile allowlist now
+added,10ABItestsPASS and fresh primary authority93991da5 above.
+Actual newworkerimage75df0968 built. Nash owns new runtime qualification/template
+A/execution/current-joint17-weight-paper-preparation-20261023-v1; no newTask
+installed yet. Actual75df cold successor Source983f9b12 passed66+36assertions/
+20OwnerAdmission exchanges, bothhostsjoined/containersabsent. Old twofixture
+faults/debits retained; final consumer sealing and new quiet controller binding
+are separate from this proof. Proposedone entryOct23 15:30..16UTC/ownedexitNov19>=20:45UTC,
+ONEjoint17-Oct23/.005originalbasis; all69targets not69guaranteedorders.
 
-Primary compatibility54526ef3:
+Historical pre-weight primary compatibility54526ef3 (not current authority):
 A/verification/current-nightly-context-recovery-20261023-v1/authority.json.
 1464serialPASS/18659fullPASS25skip/18684total425.26s/actual8workers/cleanoriginal
 helper/Ruff3Compose/exact1375production-control123a2072. Fullstdout/JUnit/in-run
