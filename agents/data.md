@@ -1,10 +1,23 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-23 05:52KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 06:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendars/features/availability, not account/orders/model
 selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
 ## Current Actual / Next Consumer
+
+ExactH5view READY28d7ed8f:
+A/data/current-joint-moe-h5-target-view-20261023-v1/CONSUMER.json.
+DTOceaeef36/ABIdd33bdd2/Source737cbfef. ActualTRAIN2762dates135297rows,
+CHECK1098106 (4clockpurges/10endpointunknown retained), INNER43-3295/all9complete
+five-close cohorts/global4903+5*k. 47107checks21postsealrefs/alljoined/
+11activeupper INSIDEData300/nativenextproof300 unchanged. MarketbytesM.
+This Data DID decode canonicalOHLC/materializeH5/heldINNER; copied Source-only
+sentence in limitations is erroneous, tiny immutable metadata correction only.
+No H20payoff/exit/mask reuse, newfeatures-affines/imputation/API/models/GPU.
+Fit allowlist d7f00e84 excludescanonical/heldINNER; raw-clipped features and
+TRAINaffines exact once. Nativephase1b8608018 passed; Parentreleased Socrates
+actualH5fit21:43UTC/Source479b8923. Data ready is not performance qualification.
 
 Averroes completed current acquisition and feature family:
 A/data/current-volume-gru-next-session-input-preparation-20261023-v1/FAMILY-CLOSURE.json
@@ -35,7 +48,8 @@ gives67/full100axis33masked, identical sharedmask5ee8539b before both forecasts.
 Old69failure is not passed/rewritten. No epsilon or further fetch.
 New bridge bff318f2/522e6f48/memberfb335cfd, point61d11d44/inputf2a2948b already
 published by Engine; Data did not select stocks by scores or produce orders.
-Data now on standby; no collector/LLMworker inferred from this board.
+No active collector inferred from this board. Follow current assigned source/
+metadata package only; do not rematerialize complete H5/current acquisition.
 
 ## Retained Inputs / Closed Cursors
 

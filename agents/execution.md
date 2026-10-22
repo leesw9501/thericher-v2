@@ -1,12 +1,12 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-2026-10-23 05:52KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
+2026-10-23 06:50KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
 AGENTS.md owns Paper authority, one original cash-tenth and deterministic risk.
 Never KIS_LIVE_* or private/raw/secret output; modelprofit is not permission.
 
 ## Current Company / Actual Model Point
 
-current-volume-gru-provisional-paper-point-v1:
+Previous current-volume-gru-provisional-paper-point-v1 COMPLETE for point/readiness:
 actual Engine point61d11d44 is COMPLETE, NOT broker dispatched:
 A/research/current-volume-gru-feature-known67-point-20261023-v1/CONSUMER.json.
 NativeINPUTf2a2948b/policy9efb34bf/POINTb71758c6/model8ebcb94f/dispatchd598d098,
@@ -19,13 +19,27 @@ not economicilliquidity/old69success/score-based rescue.
 Newbridge bff318f2/Source5d2070c8/code522e6f48/memberfb335cfd/SYN20PASS,
 actualnative20 image4f4294ed. Estimands42b1dab5 mechanically verified.
 
-Meitner owns A/execution/current-volume-gru-feature-known67-runtime-preparation-20261023-v1,
-900actualactive2400elapsed/max3fixedNO-EFFECTnative/probe starts. Bind actualpoint
-to existing native20/sharedbank/risk/intent/recovery, quiet owned entryOct23
-13:45..14:15UTC (22:45..23:15KST). One .005 ORIGINALbasis cohort inside original
-tenth; original F9/R5/HGB/ownedlosses/costs included. Installation delegated only
-after realpoint/native/cold/quiet/rollback proof; finalTask never manually started.
+Deployment COMPLETEba57e33d:
+A/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/CLOSED.json.
+FinalSourcebb5667d8/release-r3/native20image4f4294ed; actualnativebodybd39e96b/
+d9ad7768 byte-identical, finalcoordinator19tests/phase8/cold/actualrollback-readback.
+Finalhash NOT fullynativeexecuted, proof-transfer scope explicit. BothownedTasks
+installedReady/neverrun: quietentryOct23 13:45..14:15UTC (22:45..23:15KST),
+conditional exactownedexitNov19>=20:45UTC (Nov20 05:45KST). One .005ORIGINALbasis
+slot volume-gru-Oct23/sharedtenth, no bank/counter reset after effects.
+Old3failedqualificationstarts retained; successor2/600conservativecombinedupper
+of1500/alljoined/0API-private-orders/0TaskStartcalls. Existing59projectXML-ACL
+unchanged; unrelatednonprojectdrift UNKNOWN/notreverted. Installation notfill.
 Original69templates/expiredHGB five-session owner are not new entry commands.
+
+Next company native-target-weight-paper-consumer-v1: explicittypedweights from
+savedJoint17shadow0120ee31/d8b3d74f tosame nativebank/risk/intent/recovery, NEVER
+payoff/rank/TopK/fakescores/renormalization. ClaudeSOUNDlimits1a5f5755 requires
+unavailable+rounding+pending-restart aggregateceilings tests, correctfee arithmetic.
+Keep currenttask unchanged. Fourprimaryfiles pinned byfinalSource: model_paper_proposal.py,
+model_paper_horizon.py,kis_paper_current_stock_cycle.py,us_equity_session.py.
+Isolate code edits/worktree and qualify immutable same-version SDK binding for
+affectedowners BEFORE merging pinnedchanges; no globalwait untilNov19.
 
 ExitNov19>=20:45UTC is conditional EXACTcohort owned-only, not inventedfill;
 native last15min exit is execution proxy versus targetCLOSE21:00, not replay.

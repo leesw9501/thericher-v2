@@ -59,6 +59,35 @@ Direct manual reads are NOT evidence an OS scheduled observer ran.
 
 ## Owned Execution / No Blind Run
 
+Current company native-target-weight-paper-consumer-v1 is implementation, not a
+command to start existing tasks. Previous actualpoint61d11d44 +ownedreadiness
+ba57e33d complete at
+A/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/CLOSED.json.
+FinalSourcebb5667d8/release-r3/native20image4f4294ed. Actualnativebodybd39e96b/
+d9ad7768 byte-identical; finalcoordinator19tests/phase8/cold/rollback/readback.
+Finalhash NOTfullynativeexecuted, preserve exact proof-transfer limit.
+Entrythericher-kis-paper-volume-gru67-entry-20261023-v1 installedReady/neverrun
+Oct23 13:45..14:15UTC (22:45..23:15KST); conditionalexactownedexit
+thericher-kis-paper-volume-gru67-owned-exit-20261119-v1 installedReady/neverrun
+Nov19>=20:45UTC (Nov20 05:45KST). One volume-gru-Oct23/.005ORIGINALbasis slot,
+not7orders/fills or another10percent. Source-owned metadata readback only:
+```powershell
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/release-r3/owner.ps1 -Mode Readback -Phase entry -SourceSha256 bb5667d878deb8fa6d4d3a4da04cd31312d2231c55e6abe98e208b03f8296188
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/release-r3/owner.ps1 -Mode Readback -Phase exit -SourceSha256 bb5667d878deb8fa6d4d3a4da04cd31312d2231c55e6abe98e208b03f8296188
+```
+No other mode is a read-only command. NativeCLI/SYN is not actual Taskorigin,
+BrokerRiskaccept/fill/ownedflat/netPnL. Existing59projectXML-ACL unchanged;
+unrelatednonprojectdrift unknown/notreverted. Old3failedqualifications/repair2
+retained, conservative combinedupper600of1500/alljoined/0actualprivateAPI-orders/
+0TaskStartcalls. Do not run consumed qualification or expired oldentry scripts.
+
+CAUTION: finalSource pins primary model_paper_proposal.py/model_paper_horizon.py/
+kis_paper_current_stock_cycle.py/us_equity_session.py. New code stays additive/
+isolated worktree until qualified immutable same-version SDK/source delivery
+protects affected owners. Never edit those primaryfiles and silently break the
+future entry/ownedexit. Preserve original IDs/basis/counters when repinning;
+do not wait untilNov19 to develop or introduce a new framework/approval platform.
+
 Nightly context recovery COMPLETE, NOT a new HGB entry:
 A/execution/current-nightly-paper-context-recovery-20261023-v1/native-qualification-r1/CONSUMER.json
 c8cbd76d actual contextcomplete and independent stablepostROe32ed23c prove
@@ -105,12 +134,12 @@ wholepoint UNKNOWN/0forwards:2native5bar activitysum0 makeQundefined. NEW genera
 complete-feature PRE-SCOREmask/base69/full10033masked, not prefeature67 or
 economicilliquidity. DataFAMILY376c94cf/70GET1POST70pages6993rows/alljoined.
 Actual67bridgebff318f2/code522e6f48/memberfb335cfd/nativeSYN20PASS.
-Runtime preparation owner Meitner:
+Historical preparation owner Meitner (superseded by installedrelease-r3 above):
 A/execution/current-volume-gru-feature-known67-runtime-preparation-20261023-v1.
-Existing native20image4f4294ed/sharedbank/risk/intent/pending-first recovery,
-900active2400elapsed/max3fixedNO-EFFECTqualification starts. QuietentryOct23
-13:45..14:15UTC and conditional exact-owned exitNov19>=20:45UTC only after
-actualcold/quiet/restart/rollback proof; finalTask never manually started here.
+Original900active2400elapsed/max3fixedNO-EFFECTqualification family FAILED
+d49a6768 with allattempts/debits retained. Successorba57e33d repaired exactsource/
+helperAPP-IPC/exitfixture/parentjoin/lifecycle underseparate600active1800elapsed/
+2starts; no mathematicalmodel/point/intent reset. Use currentSource above.
 One .005ORIGINALbasis cohort/samevolume-gru-Oct23slot inside sharedtenth,
 NOT seven guaranteedorders/per-rownewbank. No unsupported/risk survivor renorm,
 F9release/unknownscore0/HGBexitdate inheritance. Actual Risk accept/BUY/fill/
