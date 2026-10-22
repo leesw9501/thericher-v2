@@ -7,6 +7,15 @@ Parent shared MD/Git. Invoked role, not a standing daemon/per-indicator team.
 
 ## Current Mechanisms / Consumers
 
+Oct22 current: cost-positive HGB/NN training and artifact-only readout COMPLETE.
+Consumer3bfbee55: zero newfits/one NN inference/cached HGB reuse/oneINNER18cells/
+LATER0/alljoined/GPUreleased. ProperPASS but financeFAIL: fixed .55 HGB gate
+stayed cash. Keep old source/thresholds/results immutable. Useful next proposal
+should address expected payoff magnitude/tail risk or a distinct train-only
+mechanism, not silently lower the seen-outcome threshold or repeat architecture.
+No new numerical campaign is implied by this note. Paper permission independent;
+actual R5 three BUY fills and nightly three SELL fills verified12410a15.
+
 Noether current source-only work:
 A/research/current-kis100-cost-aware-direction-proposal-20261022-v1.
 One cost-positive directional/abstention hypothesis, not another MSE model;

@@ -7,6 +7,17 @@ current HGB operational entry UNFINISHED.
 
 ## Actual Resources / Ready Queue
 
+Oct22 current: selected cost-direction fits finished yesterday; artifact-only
+continuation now COMPLETE3bfbee55/zero fits/optimizerupdates/one NN inference/
+18cells/oneINNER/LATER0/alljoined/GPUreleased. Original HGB32selected12 and
+NN21best1/4242updates MUST NOT repeat. Original1610.890397 debit preserved;
+continuation1277.342114 (incl600auditonce), lineage2888.232511. ProperPASS/
+financeFAIL, no retroactive threshold rescue. No active GPU trainer claimed.
+Project GPUfirst/personalco-use/concurrent-use authority remains unchanged.
+Scope the next allocation to a genuinely ready new frozen hypothesis, not
+dummy utilization. Reader repair12410a15 can coexist with source-attested
+nonprivate research/verification actors; don't impose machine-wide idle waits.
+
 As of14:37UTC masked pretrain/warm is COMPLETE; no active GPU trainer inferred.
 Actual training/inference ended14:08:59, all owned actors joined/lease released.
 Native13.093+market342.83=355.923GPUleaseupper seconds, not sampledutilization

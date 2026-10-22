@@ -6,6 +6,20 @@ orders/model selection. Parent shared MD/Git. No raw/private/secret output.
 
 ## Current Consumer / Completed Inputs
 
+Oct22 current correction: historical100 continuation is COMPLETE, not running.
+A/data/current-kis-modp1-historical100-continuation-20261022-r2/FINAL.json:
+83qualifiedclosed/17explicitunavailable/0remaining/87934newbars911newpages/
+920actualGET1POST/allactorsjoined/ownleasesreleased. Original0067 unchanged.
+Native source/currentlisting/nonPIT/finality/arrival/TR limitations stay.
+Terminal family must not be re-run; fresh-session work is a separate consumer.
+Reader repair12410a15 removes unrelated Data-idle requirement only for private
+RO custody readers, not existing broker/network gates. Read-only observation
+must not stop this lane solely by process name.
+
+The earlier asof17:48UTC running projection below is frozen history, superseded
+for current worker state. Direction input1bc1ce3e remains COMPLETE; trained
+HGB/NN readout also finished3bfbee55, no duplicate target materialization.
+
 Current asof17:48:44UTC. Actual acquisition-r2 PID46212/start17:22:02 RUNNING;
 source d4551848/PROGRESS.json under
 A/data/current-kis-modp1-historical100-continuation-20261022-r2.

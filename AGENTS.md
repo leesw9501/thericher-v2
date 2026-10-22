@@ -50,6 +50,17 @@ and measured fees/settlement/net PnL. A task exit/preview/timestamp/installation
 is not a fill. Missing evidence is unknown, not zero profit. Never invoke a
 recovery-capable observe() merely as an offline reader.
 
+Read-only custody readers scope admission to actual private-custody writers,
+not all market-data/research actors or unrelated future due times. Source-attest
+the actual actor and mounts; retain exact account/basis/input/policy/intent/fill
+binding, network-disabled private/source RO access, no recovery/lock creation,
+and before/after membership, file identity/mtime and byte checks. Actual or
+unknown private writers, unstable files or unbound fills withhold conclusions.
+Fresh broker holdings require a separate approved read-only query; missing
+orderable-funds facts do not invalidate a separately complete holdings query
+or qualify it as a full account/risk snapshot. Never release an unknown order
+reservation based on missing holdings/open orders or this reader repair.
+
 Repeated technical failure needs first-cause evidence, reproducer, bounded fix
 and tested recovery, not the same broken schedule repeated. Do not change
 signal thresholds to hide an input failure. A separately named deterministic

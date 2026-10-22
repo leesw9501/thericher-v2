@@ -1,10 +1,39 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Oct21KST/UTC. A=D:/thericher-v2/model-artifacts. Company
+Oct22KST. A=D:/thericher-v2/model-artifacts. Company
 current-kis100-hgb-operational-paper-entry-v1 UNFINISHED. Parent owns MD/Git.
 Original8 native lifecycle COMPLETE/febc9bff, not fees/netPnL completion.
 AGENTS.md owns standing Paper authority/risk, not model profitability.
 No actor/API/fill inferred from this MD; no KIS_LIVE_* or secret/private output.
+
+## Verified Current / Oct22 17:50 KST
+
+Reader repair COMPLETE12410a15 at
+A/execution/private-paper-custody-readback-20261022-v1/FINAL.json.
+Actual current R5:3accepted BUY/3exact full fills/3positive owned/0pending-
+unknown. Entry intents terminal, positions active until original Oct27 exit.
+Nightly:3accepted SELL/3exact full fills; embedded sell stage now read correctly.
+Fresh broker balance17:38KST:6positive instruments/all6quantities native-matched,
+R5subset3matched/0openorders/0extra-missing-mismatched. Owned account matches
+current Paper credentials inside process, no private values emitted.
+F9 original attempt remains unknown1/noack/nofill/HELD reservation; no substitute,
+reset, adoption or absence-based release. Fees/settlement/netPnL UNKNOWN.
+
+Current reader scopes actual private writers, not market-only Data/Research
+or unrelated due times. Exact native pointers/parsers, intent/fill identity,
+networknone/privateRO/source pins/audit and before-after inode/mtime/hash/
+membership checks retained. Read-only inspection succeeded alongside owned
+verification and research actors; old global-idle requirement is superseded
+for THIS reader, not for unrelated broker side-effect controls.
+Separate balance/open-order query succeeded1tokenPOST/4GET/0orders; full
+console's funds endpoint failedHTTP500/EGW00201, not a complete risk snapshot.
+No account/order private-state writes or Task mutations by this repair.
+Fresh authority:360serial/18659fullPASS25skip/clean8workers/Ruff3Compose,
+plus17externalSYN and actual private-RO/freshbroker checks.
+Old HGB Oct21 point/window expired unactivated; keep disabled until a fresh
+honestly timed point and exact native runtime readiness. No operator hold.
+
+## Historical Evidence Below
 
 ## Current Owned Lifecycle
 

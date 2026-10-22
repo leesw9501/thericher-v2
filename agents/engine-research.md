@@ -8,6 +8,25 @@ Parent shared MD/Git. MD is not proof of running model/GPU.
 
 ## Current Queue
 
+Oct22 current: cost-positive HGB/NN fits were already COMPLETE (HGB32selected12;
+CUDA NN21epochs/best1/4242updates), original post-fit copy fault not a fit failure.
+New artifact-only readout COMPLETE3bfbee55 at
+A/research/current-kis100-cost-aware-direction-retained-readout-20261022-v1/CONSUMER.json:
+zero new fits/optimizerupdates, one NN feature pass, cached HGB forecast reused,
+oneINNER18cells/LATER0/95originalfiles unchanged/alljoined/GPUreleased.
+ProperPASS/financeFAIL: HGB fixed probability>.55 gate was entirely cash and
+failed strict growth versus matched-gross baseline. Do not relax old threshold
+or infer that all classifiers are useless. Adaptive development, not alpha or
+Paper PnL. Preserve original1610.890397 debit; continuation1277.342114 includes
+600closedaudit once, lineage2888.232511, old faults/clocks unchanged.
+No active training inferred after closure. Next ready research must freeze a
+genuinely new hypothesis rather than repeat selected weights or replay seen
+outcomes to rescue this failure. Paper remains independent and R5 is active.
+Reader repair/broker state12410a15 confirms real fills/holdings; no Data-wide
+or research-wide pause is required for scoped private-RO observation.
+
+The detailed queue/evidence below retains earlier immutable campaigns.
+
 Current17:50UTC. ListNet campaign COMPLETE, not still training:
 A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json.
 One CUDA fit26epochs/best6/5252updates/272.381496fitter seconds,219checks,
