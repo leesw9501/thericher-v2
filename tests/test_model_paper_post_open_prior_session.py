@@ -260,7 +260,14 @@ def test_native_effect_clock_still_cannot_precede_publication():
 
 def test_old_execution_profile_and_exact_pending_pack_are_unchanged():
     original = value()
-    assert len(cycle.StockCycleProfile) == 3
+    assert {
+        name: cycle.StockCycleProfile[name].value
+        for name in ("LEGACY_NAS", "CURRENT20_EQUALRANK4", "MODEL_PROPOSAL_NAS")
+    } == {
+        "LEGACY_NAS": "legacy_nas",
+        "CURRENT20_EQUALRANK4": "current20-equalrank4-paper-20261018-v1",
+        "MODEL_PROPOSAL_NAS": "model-proposal-nas-v1",
+    }
     assert cycle._unpack(cycle._pack(original)) == original
     assert [t.proposal.target_exposure for t in original.targets] == [D(".001"), D(".0025")]
 

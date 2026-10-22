@@ -2,7 +2,7 @@
 
 No model loading, credentials, client creation, scheduler or replacement basket.
 The private checkpoint retains native dataclasses, not a second order ledger.
-Caller attests immutable target bytes and official entry/fifth-session clocks.
+Caller attests immutable target bytes and declared official entry/exit clocks.
 Late actual entry is an operational baseline, not research OPEN parity.
 """
 
@@ -52,6 +52,13 @@ from thericher_v2.research.model_paper_proposal import (
     ModelPaperRow,
     ModelPaperTarget,
 )
+from thericher_v2.research.model_paper_weights import (
+    MODEL_PAPER_WEIGHTS_PROFILE,
+    ModelPaperWeightRow,
+    ModelPaperWeightsInput,
+    ModelPaperWeightsMetadata,
+    validate_model_paper_weights_input,
+)
 
 from . import kis_paper_budget_strategy as budget
 from . import kis_paper_canary as canary
@@ -91,6 +98,13 @@ class StockCycleProfile(Enum):
     LEGACY_NAS = "legacy_nas"
     CURRENT20_EQUALRANK4 = "current20-equalrank4-paper-20261018-v1"
     MODEL_PROPOSAL_NAS = MODEL_PAPER_PROFILE
+    MODEL_WEIGHTS_NAS = MODEL_PAPER_WEIGHTS_PROFILE
+
+
+_MODEL_INPUT_TYPES = {
+    StockCycleProfile.MODEL_PROPOSAL_NAS: ModelPaperInput,
+    StockCycleProfile.MODEL_WEIGHTS_NAS: ModelPaperWeightsInput,
+}
 
 
 _STATUSES = frozenset(
@@ -159,6 +173,9 @@ _TYPES = {
         ModelPaperMetadata,
         ModelPaperRow,
         ModelPaperTarget,
+        ModelPaperWeightsInput,
+        ModelPaperWeightsMetadata,
+        ModelPaperWeightRow,
         TargetExposureProposal,
         ResearchDecisionReceipt,
         FrozenScoreMetadata,
@@ -341,8 +358,8 @@ def _owned_registry(record, binding):
 
 
 def _validate_input(value, at, profile=StockCycleProfile.LEGACY_NAS):
-    if profile is StockCycleProfile.MODEL_PROPOSAL_NAS:
-        return _validate_model_input(value, at)
+    if profile in _MODEL_INPUT_TYPES:
+        return _validate_model_input(value, at, profile)
     _check(type(value) is CurrentStockCycleInput, "cycle_input_invalid")
     _check(value.profile is profile, "cycle_input_invalid")
     _pin(value.input_ref)
@@ -422,11 +439,25 @@ def model_paper_pointer(policy_ref):
     return ".model-paper-nas-" + policy_ref[7:] + ".json"
 
 
-def _validate_model_input(value, at):
-    """Native typed admission; model research validation belongs in its loader."""
+def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NAS):
+    """Exact typed admission; weights are revalidated, never converted to scores."""
+    weights = profile is StockCycleProfile.MODEL_WEIGHTS_NAS
+    _check(type(value) is _MODEL_INPUT_TYPES[profile], "cycle_input_invalid")
+    if weights:
+        # Frozen dataclasses can still be forged in memory. Rebuild the entire
+        # weight contract before a native journal, reservation or client exists.
+        try:
+            validate_model_paper_weights_input(value)
+        except (ValueError, TypeError, AttributeError, KeyError, ArithmeticError):
+            raise _CycleFault("cycle_input_invalid") from None
+        _check(
+            value.metadata.original_basis_gross_ceiling == Decimal(".005"),
+            "cycle_input_invalid",
+        )
     _check(
-        type(value) is ModelPaperInput
-        and value.profile
+        value.profile == MODEL_PAPER_WEIGHTS_PROFILE
+        if weights
+        else value.profile
         in {
             MODEL_PAPER_PROFILE,
             MODEL_PAPER_20_SESSION_PROFILE,
@@ -436,19 +467,23 @@ def _validate_model_input(value, at):
     )
     _pin(value.input_ref)
     _pin(value.policy_ref)
-    _check(type(value.metadata) is ModelPaperMetadata, "cycle_input_invalid")
+    _check(
+        type(value.metadata) is (ModelPaperWeightsMetadata if weights else ModelPaperMetadata),
+        "cycle_input_invalid",
+    )
     _check(
         type(value.entry_session) is SessionWindow and type(value.exit_session) is SessionWindow,
         "cycle_session_invalid",
     )
     opened, closed = value.entry_session.open_ts, value.entry_session.close_ts
+    horizon_profile = MODEL_PAPER_20_SESSION_PROFILE if weights else value.profile
     _check(
         opened <= at < closed < value.exit_session.open_ts
         and model_paper_horizon_valid(
-            value.entry_session, value.exit_session, profile=value.profile
+            value.entry_session, value.exit_session, profile=horizon_profile
         )
         and (
-            value.profile != MODEL_PAPER_20_SESSION_PROFILE
+            horizon_profile != MODEL_PAPER_20_SESSION_PROFILE
             or value.metadata.exit_not_before == value.exit_session.close_ts - timedelta(minutes=15)
         ),
         "cycle_session_invalid",
@@ -489,13 +524,15 @@ def _validate_model_input(value, at):
     return value
 
 
-def _model_record_input(record, expected_input_ref, expected_policy_ref):
+def _model_record_input(
+    record, expected_input_ref, expected_policy_ref, profile=StockCycleProfile.MODEL_PROPOSAL_NAS
+):
     """Reject cross-profile state before recovery or a fresh loader callback."""
     _check(record.get("owner_key") == expected_policy_ref, "cycle_checkpoint_invalid")
     if record["active"] is not None:
         value = _unpack(record["active"]["model_input"])
         _check(
-            type(value) is ModelPaperInput
+            type(value) is _MODEL_INPUT_TYPES[profile]
             and value.policy_ref == expected_policy_ref
             and value.input_ref == expected_input_ref == record["active"]["input_ref"]
             and record["active"]["targets"] == _pack(value.targets)
@@ -503,6 +540,11 @@ def _model_record_input(record, expected_input_ref, expected_policy_ref):
             and record["active"]["exit_session"] == _pack(value.exit_session),
             "cycle_input_binding_mismatch",
         )
+        if profile is StockCycleProfile.MODEL_WEIGHTS_NAS:
+            _check(
+                value.metadata.original_basis_gross_ceiling == Decimal(".005"),
+                "cycle_input_binding_mismatch",
+            )
     if record["pending"] is not None:
         args = _unpack(record["pending"]["arguments"])
         _check(
@@ -856,7 +898,8 @@ def run_kis_paper_current_stock_cycle(
     expected_account_ref: str,
     expected_input_ref: str | None = None,
     expected_policy_ref: str | None = None,
-    target_loader: Callable[[], CurrentStockCycleInput | ModelPaperInput] | None = None,
+    target_loader: Callable[[], CurrentStockCycleInput | ModelPaperInput | ModelPaperWeightsInput]
+    | None = None,
     client_factory: Callable | None = None,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     execute: bool = False,
@@ -865,8 +908,8 @@ def run_kis_paper_current_stock_cycle(
 ) -> CurrentStockCycleOutcome:
     """One pending leg/visit; exact retained recovery precedes target_loader.
 
-    Operational exit eligibility starts at declared fifth-session OPEN, not
-    research fifth-CLOSE parity. After exact pending recovery, new owned SELLs
+    Operational exits follow the input's declared eligibility, not analytical
+    fill parity. After exact pending recovery, new owned SELLs
     use the current local official 2026 regular session until policy-owned flat.
     No new BUY follows entry close; no pending identity/TTL is renewed.
     Optional paired input/policy identity hints are not permission: they avoid
@@ -879,7 +922,7 @@ def run_kis_paper_current_stock_cycle(
         _check(type(execute) is bool and callable(clock), "cycle_configuration_invalid")
         _check(type(profile) is StockCycleProfile, "cycle_input_invalid")
         current20 = profile is StockCycleProfile.CURRENT20_EQUALRANK4
-        model_profile = profile is StockCycleProfile.MODEL_PROPOSAL_NAS
+        model_profile = profile in _MODEL_INPUT_TYPES
         scoped = current20 or model_profile
         if scoped:
             _pin(expected_input_ref)
@@ -944,7 +987,7 @@ def run_kis_paper_current_stock_cycle(
                     _check(
                         record["policy_ref"] == expected_policy_ref, "cycle_input_binding_mismatch"
                     )
-                    _model_record_input(record, expected_input_ref, expected_policy_ref)
+                    _model_record_input(record, expected_input_ref, expected_policy_ref, profile)
                 if current20:
                     _check(
                         record["policy_ref"] == expected_policy_ref
@@ -989,7 +1032,8 @@ def run_kis_paper_current_stock_cycle(
                 _check(callable(target_loader), "cycle_target_unavailable")
                 value = target_loader()
                 _check(
-                    type(value) is (ModelPaperInput if model_profile else CurrentStockCycleInput),
+                    type(value)
+                    is (_MODEL_INPUT_TYPES[profile] if model_profile else CurrentStockCycleInput),
                     "cycle_input_invalid",
                 )
                 _check(
