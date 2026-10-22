@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-As of 2026-10-23 02:45 KST / Oct22 17:45 UTC.
+As of 2026-10-23 04:00 KST / Oct22 19:00 UTC.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 AGENTS.md owns authority. Parent owns shared MD/integration/Git.
@@ -10,8 +10,11 @@ AGENTS.md owns authority. Parent owns shared MD/integration/Git.
 Company current-kis100-hgb-operational-paper-entry-v1 COMPLETE narrowly:
 one exact accepted/full BUY fill/currentowned, pendingfalse/unknown0. Not lifecycle
 closure, fresh broker holdings or netPnL. NEXT_CODEX_GOAL.md now owns
-current-kis100-hgb-owned-exit-deployment-v1: actual restart-safe quiet deployment
-for ORIGINALOct28>=19:45UTC, not a premature exit/runtime completion claim.
+current-kis100-hgb-owned-exit-deployment-v1 is also COMPLETE72245037: actual
+quiet Task installedReady for ORIGINALOct28>=19:45UTC (Oct29 04:45KST), final
+Task never run now. Not a lifecycle/PnL completion claim. Current ONE outcome is
+current-nightly-paper-context-recovery-v1, restoring the existing nightly path
+after its retained-context failure and preparing next owned23:50KST opportunity.
 Earlier Oct21 point expired unactivated and is not reused. Active human request
 continues F9 reconciliation, next Paper readiness and parallel useful research.
 No operator decision currently needed.
@@ -34,8 +37,18 @@ No operator decision currently needed.
   No substitute, reset, foreign adoption or absence-based release.
   A/execution/current-f9-original-history-readonly-20261022-v1/
   visit-52c83296587542b2bbd7aa330aa0f322.json;156focused checks/Claude scoped SOUND.
+  Additional original-effect reader da006661/19checks found no complete exact
+  original-request trace/dispatch binding/coded rejection. Zero BUY counters
+  are not positive non-send evidence. UNKNOWN/HELD remains, no API/release.
+  A/execution/current-f9-original-effect-evidence-readback-20261023-v1/delivery/CONSUMER.json.
 - Original8: eight BUY/eight SELL exact full fills/owned-flat; completed Task
-  disabled. Fees/settled cash/measured net PnL UNKNOWN.
+  disabled. NEW exact-linked accounting coversall8closed positions:
+  aggregate gross_profit_negative, NOT proofeachindividualpositionlost.
+  A/execution/current-original8-gross-attribution-20261023-v1/delivery/CONSUMER.json
+  5cabc996/14focus/native exactshare-USDconsideration/before-afterprivateunchanged/
+  allreaderjoined/0broker-orders-credentials/ClaudeSOUND_WITH_NAMED_LIMITS.
+  Fees missing in native schema/settled cash/measured net PnL UNKNOWN. Not an
+  independent alpha, tax/CA-adjusted or fresh broker account-performance claim.
 
 Reader repair COMPLETE12410a15:
 A/execution/private-paper-custody-readback-20261022-v1/FINAL.json.
@@ -94,6 +107,28 @@ All seven observer pauses RESTORED, last17:36:35.368UTC/originalXML-ACL unchange
 A/execution/current-hgb-snapshot-priority-window-20261022-v1/RESTORED-7.json.
 All brief role holds released; no remaining Parent observer-disable.
 
+Owned-exit deployment first scope UNQUALIFIED a080c983/Source10f37447:
+A/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/CONSUMER.json.
+Quiet probe native identity PASS but scheduled-owner lineage_unavailable;
+exact failed ancestor/EnginePID unretained, not a broker/CLI failure. Probe
+removed/all263originalTasksXML-ACL unchanged/allactorsjoined/0API-orders.
+8focused/11mockedScheduler/4coldCLI/RO/Ruff PASS;300of1200active charged.
+That failed initial scope remains immutable. NEW task-instance-repair-r1 now
+PASS72245037/Sourcee487db86, actual final Task
+thericher-kis-paper-kis100-hgb-owned-exit-20261028-r1 installedReady/next
+Oct28 19:45UTC, quietPID-start-argv-source/redirector and stable exact-path
+service task-instance proof; actual rollback/reinstall passed. Three new no-effect
+probes removed/alljoined/263originalTaskXML-ACL unchanged/0broker-orders-now.
+600cumulativeconservativeactiveof1200, no refunds. Registered GetInstances empty
+whileRunning remains unexplained; serviceGetRunningTasks exactPath used, engine
+PIDmetadata not ancestor guarantee. Assumed-honest marker/native provenance,
+not cryptographic OS origin/live Codex barrier. Interactive Windows user session
+required. Runtime exit/fill/owned-flat still future evidence, not installation.
+A/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/task-instance-repair-r1/CONSUMER.json.
+Intraday-head source/time candidate includes possible prospective SPY Paper
+cycle: generic quietlauncher is NOT admitted as market-only. Bind exact job/
+flags/child/mount capability before conclusions, don't disable Data blindly.
+
 ## Research / Actual Resources
 
 Payoff-tail and H20 families COMPLETE_FAIL; no completed-fit repeats.
@@ -114,26 +149,56 @@ historical handle owner UNKNOWN. New code removes per-batch D replacements,
 uses RAM permits/immutable predebits/exclusive manifest-last checkpoints.
 All joined/0fits-updates-GPU/330of600active upper. No exact optimizer-resume proof.
 
-Current parallel owners (not claims of running GPU):
-- Leibniz/Engine+Steward: NEW retained HGB context diagnostic,1200active3600elapsed/
-  2selected forwards/0fits-GRU-LATER/oneINNER12cells, HGB_NO/HGB_WITH/uniform/cash.
-  Old four-arm failure/debits unchanged.
-  A/research/current-kis100-hgb-context-retained-diagnostic-20261023-v1.
-- Averroes/Data: raw prior63 packet COMPLETEa45d947b/3295keys43dates/408+21checks,
-  corrected703.052of600overrun retained; original strict arrival/CA-qualified0.
-  A/data/current-modern-chronos2-prior63-input-20261023-v1.
-- Socrates/temporary Engine executor: no Chronos2 load/inference yet. Old strict
-  Source rejects arrival/CA gaps; prior partitions7575.303 exceed7200. Parent
-  delegated NEW retrospective MODP1 price-proxy Source review/adapter600active/
-  1800elapsed, no historical tradability/PIT/CAclean claim or old-source mutation.
-  New pre-effect lineage<=9600active28800elapsed includes all old actual debits/
-  newSource once; forecast<=4800/readoutcleanup<=1200/max4300calls/one model
-  load/0fits-updates/oneadaptiveINNER/LATER0/original fixedcells. No cherry-pick.
-  A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1.
-  Source: A/research/current-modern-chronos2-postcheckpoint-proposal-20261023-v1/CONSUMER.json.
-  Cached checkpoint2025-10-30 precedes consumed JulAug2026 outcomes; unknown
-  corpus/currentlisting/reused-data limits remain. Confirm actual load/PID/lease
-  before saying GPU runs. No arbitrary public-model code in Execution.
+Chronos raw prior63 packet COMPLETEa45d947b/3295keys43dates/408+21checks;
+corrected703.052of600overrun retained. Original strict arrival/CA-qualified0
+and its rejected Source remain unchanged, not a global research ban.
+Separately frozen retrospective current-vintage Chronos2 actual GPU diagnostic
+COMPLETE05203e42, forecastjoined18:02:19/GPUreleased18:02:20/readoutjoined18:05:08.
+One model load/1SYN+3295markettrios/0fits-updates/oneINNER15cells/LATER0;
+HGB_WITH cached scores reused/no secondforward. Fixedhalf growth+0.02264%/
+DD2.20978% failed both frozen growth/risk criteria. 19Source+3334artifactchecks;
+closed4299.945121of9600upper/REVISE retained/snapshot-only/no causal/PIT/alpha.
+A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1/RETRO-CONSUMER.json.
+Exact trusted checkpoint2025-10-30 precedes consumed JulAug2026 targets; corpus/
+currentlisting/arrival/CA/reuse limits remain. No arbitrary code in Execution.
+All actors joined/Socrates closed, not a ready inference rerun. Data now builds
+Source3be0c1a6 price-volume PRS3/Q3 matched packet1200active3600elapsed under
+A/data/current-kis100-volume-relative-strength-input-20261023-v1.
+
+Retained-HGB diagnostic now COMPLETE133checks/553.889730upper/0fits/2forwards/
+oneINNER12cells/LATER0/alljoined. Context did not improve the matched expert.
+Leibniz volume-relative-strength Source COMPLETE3be0c1a6/20NumPychecks/REVISE
+with narrowed activity-proxy/noncausal claims. No new fit yet; Data computes
+actual denominator/whole-date/alias support first. Steward coordinates resources.
+NEW warm GRUs COMPLETEa38153c4/592checks, actual two concurrent CUDA fits:
+NO39epochs/selected15/26793updates; WITH36/selected12/24732updates, bothpatience24.
+New sourcee882446b/seed20261024/weights-only best006 initialization/freshoptimizer,
+NOT exactresume/oldretry. 10bp/leg price-proxy growth/DDpercentinitialNAV:
+NO+0.58936/2.03362, WITH+1.13658/2.26982, uniform-0.80050/1.29784.
+OneadaptiveINNER12cells/LATER0; CHECK reused twice/selection optimistic, no
+independent alpha/causal context or actualPaperPnL claim. Allactorsjoined/GPU
+released, Cicero closed/no rerun. Newactual1118.894658/lineage9615.193953,
+oldfailure8136.299295 unchanged:
+A/research/current-modern-gru-epoch6-newoptimizer-warmstart-development-20261023-v1/CONSUMER.json.
+
+Current research owners: Leibniz pairedCPUvolume-HGB target-maskjoin/native proof
+then2fits onlyifliteralminimumCHECK63 holds,7200lineageactive14400elapsed.
+Data c0a88302 complete58743predicates/301.376801active: TRAIN2740dates133899rows,
+CHECKfeature75/5556 but targetintersection46..75unproven; INNER43/3295/all3cohorts.
+No guessed mask intersection/minimum changes/held-label leak.
+A/research/current-kis100-volume-relative-strength-development-20261023-v1.
+
+Socrates NEW scratch joint GRU/MLP/linear learnedcontextgate vsfixedthird
+direct-utility study; Sourcee1c07642/250native+96coldchecks/4CPU-SYNupdates only.
+Parent numeric contract at
+A/research/current-joint-moe-economic-development-20261023-v1/PARENT-CAMPAIGN.json.
+18000lineageactive43200elapsed includes3345.419009closedonce/new14100partitions;
+nativeCPU/CUDAoptimizer-RNG-safeIO proof before2newfits/5400seconds each/
+192epochs/131904updates/CHECKutilityearlystop24. Exactfull100softmaxweights
+for TRAIN/CHECK/replay1-5-10bp, notMSE/TopK/pretrainedexpert stacking.
+OneadaptiveINNER12cells/LATER0; no actual fit inferred from this dispatch.
+Scratch jointly trained branches are one model; post-fit target-fitted stacking
+still needs chronological OOF. No AGENTS/shared-control change or new authority.
 
 Parent Claude direction challenge SOUND_WITH_NAMED_LIMITS6485e91f:
 A/review/current-hgb-entry-closure-and-continuation-20261023-v1/review/RESPONSE.txt.

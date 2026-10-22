@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-2026-10-23 02:45KST / Oct22 17:45UTC.
+2026-10-23 04:00KST / Oct22 19:00UTC.
 A=D:/thericher-v2/model-artifacts. Parent shared MD/Git.
 AGENTS.md owns Paper authority/risk; private values never enter logs/MD/Claude.
 No KIS_LIVE_*. Model profitability is not Paper permission.
@@ -10,10 +10,21 @@ No KIS_LIVE_*. Model profitability is not Paper permission.
 HGB operational ENTRY COMPLETE, lifecycle ACTIVE/not owned-flat or PnL:
 1accepted BUY submit/1exact full fill/1current owned instrument, pendingfalse/
 unknown0 after exact recovery and separate stable native RO. Company next:
-current-kis100-hgb-owned-exit-deployment-v1, actual quiet restart-safe deployment
-for ORIGINALOct28>=19:45UTC. Meitner owns1200active3600elapsed prep/native proof/
-Claude/real installation/rollback. No orders now in this package, no new BUY.
-Other independently owned Paper tasks retain their standing authority.
+Owned-exit deployment also COMPLETE72245037/Sourcee487db86: Task
+thericher-kis-paper-kis100-hgb-owned-exit-20261028-r1 installedReady/next
+Oct28 19:45UTC (Oct29 04:45KST), finalTaskNEVERrun now. Realquietnativeidentity/
+stableexact-pathserviceinstance/rollback-reinstall passed;263originalTaskXML-ACL
+unchanged/3newprobesremoved/alljoined/0broker-orders-now/600of1200cumulativeupper.
+Assumed-honest marker provenance, not cryptographicorigin/liveCodexbarrier.
+InteractiveWindowsuserSession required. Actual lifecycle/owned-flat/PnL future.
+A/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/task-instance-repair-r1/CONSUMER.json.
+
+Current ONE outcome current-nightly-paper-context-recovery-v1. Meitner owns
+A/execution/current-nightly-paper-context-recovery-20261023-v1,
+1200actualactive3600elapsed: originalnightly retained-context firstcause/strictRO/
+testedexact-requestrecovery/correctedownedpath and next23:50KST preparation.
+No substitute/newforcedBUY/sourcefalseclosure or newcapital. Other independently
+owned Paper tasks retain standing authority; no Data/GPU idle requirement.
 
 R1 narrow entry closure:
 A/execution/current-kis100-hgb-native-technical-integration-20261022-r1/ENTRY-CLOSURE.json.
@@ -60,13 +71,23 @@ No standing observer disable or permanent machine-idle rule.
   1POST1GET/0rows-candidates, not non-send/closure. No substitute/reset/adoption/
   absence-based release. A/execution/current-f9-original-history-readonly-20261022-v1/
   visit-52c83296587542b2bbd7aa330aa0f322.json;156checks/Claude scopedSOUND.
+  Additional exacteffectreadback da006661/19checks/noAPIs/privateunchanged:
+  zeroBUYpost counters lackcompleteoriginalrequesttrace/dispatch binding,
+  no codedbrokerreject retained. UNKNOWN/HELD, no release or blindrepeat.
+  A/execution/current-f9-original-effect-evidence-readback-20261023-v1/delivery/CONSUMER.json.
 - Broker balanceOct22 08:38:21UTC/17:38:21KST matched all six native instruments/
   quantities including R5 three, zero opens. Historical separate read, NOT new
   HGB holdings or full buying-power/risk snapshot. Orderable funds separately
   failedHTTP500/EGW00201; it did not invalidate that balance-only evidence.
 - Original8 COMPLETE/febc9bff/eight BUY+eight SELL fullfills/owned-flat; completed
   thericher-kis-paper-current-nas-model-20261015 disabled with XML/ACL rollback.
-  Other owners' positions are never adopted. Fees/settlement/netPnL UNKNOWN.
+  NEW exact-linked gross-accounting CONSUMER5cabc996 coversall8closed positions:
+  aggregate gross_profit_negative, not eachindividualsign;14focus/0broker/
+  privateunchanged/allreadersjoined/ClaudeSOUND_WITH_NAMED_LIMITS.
+  A/execution/current-original8-gross-attribution-20261023-v1/delivery/CONSUMER.json.
+  Exact native nominal share/USD consideration, not CA/tax-adjusted attribution,
+  independent alpha or new broker snapshot. Fees missing from native schema,
+  settledcash/netPnL UNKNOWN. Other owners' positions are never adopted.
 
 ## Reader / Deployment Knowledge
 

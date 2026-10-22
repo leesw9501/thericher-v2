@@ -22,6 +22,27 @@ arrival clocks or clean-CA flags. Source/Engine owns a separately frozen
 retrospective price-proxy claim, not changing this original packet or old rejection.
 Parent proxies native delivery to Socrates/Steward; no fictitious role message.
 
+Temporary Infra source-only attribution COMPLETE563c9017 at
+A/execution/current-unregistered-scheduled-actor-attribution-20261023-v1/CONSUMER.json:
+exact9fe9750c matches scripts/run_owned_task_quiet.py/sharedfive projectTasks.
+Strongest source/time candidate thericher-kis-paper-intraday-head last17:28:00UTC,
+actor start+.634422s; parent2992 currently hosts Schedule/Running. Not historical
+OS-origin proof/Data blame. NoTask/API/Docker/private reads or mutations;
+60of180activeupper/221of600elapsed. Parent proxied to Execution's exit-admission
+consumer. Actual job/child source/args/mount capabilities still require binding,
+not blanket admission or disabling Data.
+
+Price-volume packet COMPLETEc0a88302/58743predicatechecks:
+A/data/current-kis100-volume-relative-strength-input-20261023-v1/CONSUMER.json.
+Source3be0c1a6 PRS3/Q3 prior5/20/63/original100axis/no zero-Q/literalduplicate/
+near-alias flag. TRAIN2740feature-calendar dates133899rows/CHECK75-5556/
+INNER43-3295/all3cohorts. TRAINaffine2759inputdates sealed before maturity/targets.
+CHECKtargetintersection46..75 only bounded, literal63 minimum UNPROVEN;
+Engine owns exact row-key/target-maskjoin beforefits, no guessed support.
+Actualactive301.376801of1200/alljoined/PID0/onefeaturematerialization/0targets/
+models-GPU-API-private. Knownzero volume allowed only with positive denominator;
+undefined remains unknown, no epsilon/imputation. Data producer now finished.
+
 ## Other Current Inputs / Closed Scopes
 
 Modern stock/SPY context Data:

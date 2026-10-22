@@ -1,91 +1,100 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own hypotheses/features/targets/splits/fitting/replay/ensembles, not broker risk.
-Parent shared MD/Git. HGB Paper entry COMPLETE07a82159/oneexactfullfill-owned/
-pendingfalse-unknown0; lifecycle active/originalOct28 owned-exit deployment next.
-Paper permission is independent of research profitability. AGENTS.md owns policy.
+2026-10-23 04:00KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own hypotheses/features/targets/splits/training/replay, not deterministic broker
+risk. Parent MD/Git. AGENTS.md owns policy. An MD is not a running worker.
 
-## Current Ready Work / Actual State
+## Current Ready / Owned
 
-Leibniz/Engine+Steward owns NEW artifact-only HGB context diagnostic:
-A/research/current-kis100-hgb-context-retained-diagnostic-20261023-v1.
-1200active3600elapsed including prep/proofs/review/IO/cleanup. Two selected
-retained HGB forwards,0fits-updates/interruptedGRUreuse/LATER. One adaptive
-INNER intake/max12financialcells: fixed HGB_NO/HGB_WITH/uniform/cash at original
-costs. Exact keys/affines/native codecs/weights freeze before inputs; scores/
-policies seal before labels/marks. No fallback winner or old four-arm regrade.
+Socrates owns NEW direct-economic joint model:
+A/research/current-joint-moe-economic-development-20261023-v1/PARENT-CAMPAIGN.json.
+Sourcee1c07642/CONTRACT572e487; three scratch branches(GRU32FiLM/MLP32/linear),
+context learnedgate versus identical jointly trained fixedthird expert control.
+No pretrained weights/predictions or post-fit stacking. Logits -> full100softmax
+tau1 -> fixed .10funded researchNAV; TRAINlogutility/entropy1e-4, CHECKunregularized
+utility, SAME saved allocations in1/5/10bp replay. Not MSE, TopK or live sizing.
 
-Socrates temporarily executes separate Chronos2 work with Steward:
-A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1.
-No model load/inference yet at READINESS-AUDIT17:30UTC. Data raw3295keys/43dates
-complete, but strict Source admits0windows due missing actual arrivals/CA.
-Old all-partition sum7575.303>7200 including corrected Data703.052/prep630;
-no refund or ceremonial Parent flag. Parent delegated NEW pre-effect
-retrospective MODP1 price-proxy Source review/adapter (600active1800elapsed)
-at A/research/current-modern-chronos2-retrospective-source-20261023-v1.
-Only a supportable claim-scoped new freeze may dispatch: lineage<=9600active/
-28800elapsed includes actual old Source/Data/prep/audit and newSource once,
-forecast<=4800/readout-cleanup<=1200; sum before effects must fit.
-Same trusted dated checkpoint/INNER43/full100axis/max4300trio/one load/zero fits/
-updates/oneadaptiveINNER/LATER0/original fixedcells. No date/key cherry-pick,
-arrival/CAtruth imputation, independent-alpha or historical-tradability claim.
-Current short Paper recovery host hold releases before new host dispatch.
+Total18000lineageactive43200elapsed includes3345.419009closedonce; new14100
+partitions(nativ900/twofits5400each/infer600/readout900/verifycleanup900).
+Actual intendedCPU/CUDA model/AdamW/RNG/safeI/O proof before market; up to3fixed
+SYNtechnical attempts/12updates9constructors perdevice inside900. Then twofits/
+192epochs131904updates/CHECK193/earlystop24/seed20261025, oneadaptiveINNER12cells/
+LATER0. Data exactModern46861c1b/ABIa5027850/raw-factor-context/affines/asof/purges;
+verify raw/scaled/clipped semantics, no double scaling. Source CPU250native+
+96coldpredicates/4updates/31.926431active is NOT GPU or market proof.
+No actual new fit inferred from the dispatch. Existing Steward allocates measured
+headroom/singleowner/two disjoint child paths, not a new approval platform.
 
-## Modern Four-Arm Failure / I/O Repair
+Leibniz owns NEW price-volume CPU HGB/fixedhalf family:
+A/research/current-kis100-volume-relative-strength-development-20261023-v1.
+Source3be0c1a6/PROPOSALca46de6d, Data c0a88302/58743predicatechecks/301.376801active.
+PRS3/Q3 prior5/20/63, raw close*volume activity proxy, not verified economic USD.
+TRAIN2740feature/calendar dates133899rows/CHECK75-5556/INNER43-3295/all3cohorts;
+TRAINaffine2759inputdates beforematurity/labels. ExactCHECK targetintersection
+46..75 is unproven; literalmin63 must be measured before fits.
+Freeze7200lineageactive14400elapsed including actual sharedSource/Data once;
+native+target-maskjoin400 first. Ifliteralmin/native/codec/cold pass, run exact
+twoCPUHGBfits/256stages257curves/oneINNER15cells/LATER0. Otherwise NOT_READY/
+0fits; no hidden stock/date drop, rephase or minimum relaxation.
 
-A/research/current-kis100-market-context-recent-regime-development-20261023-v1/FINAL-FAULT-R1.json
-CLOSED_TECHNICAL_FAULT_NO_RETRY. Actual run16:54:16..16:56:02UTC:
-two CPU HGB fits complete, GRU_NO exact4174updates/IOFAULT and GRU_WITH
-4597..4598bound/stopped/lastcompleteepoch6. Alljoined/GPUreleased16:56:08.
-Four market attempts/closed8136.299295debit unchanged; INNERforecasts-intakes0/
-LATER0/proper-financialUNKNOWN. No resumed or completed-fit repeat.
-Data TRAIN2747-CHECK75-INNER43dates/custody575/independent317checks;
-Source8b0d0b53/nativeCPU-CUDAproof passed, not proof the full study completed.
-Pre-model NVML ENV missing ProgramFiles and cross-OS basename faults retained.
+## Newly Completed / No Repeat
 
-I/O source repair:
+Warm GRUs COMPLETEa38153c4:
+A/research/current-modern-gru-epoch6-newoptimizer-warmstart-development-20261023-v1/CONSUMER.json.
+Actual simultaneousCUDA fits started18:18:56: NO39epochs/selected15/26793updates;
+WITH36/selected12/24732, bothpatience24. Exactepoch6 oldweights, NEWoptimizer/
+RNG/seed20261024, not exactresume/oldretry. Newactual1118.894658/lineage9615.193953/
+592checks/2selectedinferences/oneINNER12cells/LATER0/alljoined/GPUreleased.
+10bp/leg growth/DDpercentinitialresearchNAV: NO+0.58936/2.03362,
+WITH+1.13658/2.26982, uniform-0.80050/1.29784. CHECK fell then rose while TRAIN
+continued improving; do not extend epochs to rescue it. CHECK reused twice/
+selection optimistic; no independentalpha/causalcontext/convergence/PaperPnL.
+Selectedepochspositive, not epoch0 inherited-model/no-improvement cases.
+
+Chronos2 COMPLETE05203e42:
+A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1/RETRO-CONSUMER.json.
+Actual1GPUload/1SYN+3295markettrios/0fits-updates/oneINNER15cells/LATER0.
+HGB_WITH sealed forecast reuse/no secondforward. Fixedhalf growth+0.02264%/
+DD2.20978%, frozen growth+riskFAIL. 19Source+3334artifactchecks/
+4299.945121of9600closedupper; forecastjoined18:02:19/GPUreleased18:02:20.
+Snapshot-only/REVISE retained; exactcached2025-10-30 checkpoint before consumed
+JulAug2026 targets, corpus/CA/arrival/PIT limitations remain. No rerun.
+
+RetainedHGB context diagnostic COMPLETE133checks/553.889730upper/2forwards/
+0fits/oneINNER12cells/LATER0/alljoined:
+A/research/current-kis100-hgb-context-retained-diagnostic-20261023-v1/FINAL.json.
+10bp growth/DD: NO+1.3993%/1.9943%, WITH+0.3486%/2.9063%, uniform-0.8005%/1.2978%.
+Context did not improve the matched expert; descriptivefixedpair/no promotion.
+Do not swap a previously frozen blend after seeing these outcomes.
+
+## Immutable Fault / Other History
+
+Original modern four-arm CLOSED_TECHNICAL_FAULT_NO_RETRY:
+A/research/current-kis100-market-context-recent-regime-development-20261023-v1/FINAL-FAULT-R1.json.
+2HGBcomplete/2GRUinterrupted/old8136.299295debit/old4attempts/postupdateretry0/
+INNER0/proper-financialUNKNOWN preserved. New warm results do not regrade it.
+I/O source repair12groups76checks/330upper reproduced Windows-bind replace
+errno13/Win5, historicalhandleownerUNKNOWN. RAMpermits/immutablepredebits/
+manifest-last safestate adopted and actually proven in new warm CPU/CUDA.
 A/research/current-model-io-reliability-repair-20261023-v1/CONSUMER.json.
-12testgroups/76independent checks/330of600upper/alljoined/0fits-updates-GPU.
-Reproduced Windows-bind temporary.replace errno13/Win5; historical handle owner
-UNKNOWN. RAM permits/immutable predebits/exclusive manifest-last checkpoint.
-Not trainer deployment or exact optimizer-resume proof; old failure unchanged.
 
-## Recent Completed Families / No Repeat
+Payoff-tail/H20/cost-positive/ListNet/cross-stock/TabM/calibration/masked/raw/
+LSTM/TCN/Transformer/Ridge/rule/indicator/TimesFM/olderChronos families remain
+closed with original trials/failures in Git9ab3e58 and immutableA. No completed
+fits/forwards repeated for GPUload; oldlateroutcomes are never fresh by renaming.
 
-- Payoff-tail HGB+CUDA Huber/q10: COMPLETE_FAIL,18cells/oneINNER/LATER0.
-  A/research/current-kis100-payoff-tail-ensemble-development-20261022-v1.
-- H20 factorHGB/rawGRU/fixedhalf: COMPLETE_FAIL,15cells/oneINNER/LATER0.
-  A/research/current-kis100-low-turnover-h20-development-20261022-v1.
-- Cost-positive HGB/NN already fitted; artifact-only retained readout3bfbee55
-  complete/zero fits/oneNNforward/cachedHGB/18cells/properPASS-financeFAIL.
-  Fixed .55 gate stayed cash, no threshold rescue. Root:
-  A/research/current-kis100-cost-aware-direction-retained-readout-20261022-v1.
-- Technical-factor HGB selected22/native42 had descriptive growth+5.716282%
-  versus uniform-1.139394% at10bp/leg in its reused development scope, but
-  properFAIL/financePASS/overallFAIL. Its provisional Paper permission is separate.
-  A/research/current-kis100-technical-factor-tree-development-20261021-v1.
-- Raw TCN/GRU/Transformer/Ridge, masked pretrain/warm, ListNet, cross-stock rank,
-  onefold calibration and TabM/MLP actual fits/readouts are CLOSED, not untried.
-  Fixed ensembles did not beat the specified controls overall. No architecture
-  name/longer epoch/seed repeats merely for GPU load.
-- Earlier LSTM/MLP/RNN/Patch/rule/indicator/Chronos/TimesFM/LoRA/OOF families,
-  alias allocations and failed source/debit history remain Git c80d3d6 and A.
-  No previously opened later outcomes become untouched by renaming the study.
+## Research / Execution Boundary
 
-## Durable Research Knowledge
+HGB operationalENTRY complete07a82159/oneexactfullfill/currentowned/pendingfalse/
+unknown0, owned-exit Taskready72245037 fororiginalOct28. Not modelprofit proof.
+Original8 actual retained aggregategrossNEGATIVE/fees-settledcash-netPnLUNKNOWN
+(5cabc996), not evidence eachpositionlost or this new model's outcome.
 
-Compare raw/indicator-only/raw+indicator and genuinely distinct mechanisms;
-learned fusion uses purged chronological OOF, not in-sample expert predictions.
-Window/timeframe/targets/costs/trials are explicit finite axes. Restore best
-inner-validation checkpoint; final evaluation cannot tune it. Short runs do not
-prove convergence. Lower exposure/lower DD alone is not alpha; report growth/
-DD/turnover against aligned risky/same-gross and cash opportunity-cost references.
-
-Currentlisting/nonPIT/currentvintage/MODP/CA/finality/arrival/reuseddata limits
-remain. Foundation checkpoint must precede every consumed target; unused TRAIN
-metadata is not a block if TRAIN is not consumed. Unknown corpus limits remain.
-Research causal indexing is distinct from verified actual historical availability.
-Do not turn a research-only qualification into a company/Paper/GPU permission hold.
-Selected HGB fresh point895fd6db/zero fits/oneforward is operational, not a new
-research pass. Models/data D:, no public-model code in trusted Execution.
+Shared reuseddata means adaptive development, not independent alpha. Report
+growth/DD/turnover separately against aligned risky/samegross and cash opportunity
+cost. Lower exposure alone is not alpha. Whole-key/missing inputs stay explicit,
+no futuremaskimputation or final-outcome epoch choice. Scratch jointly trained
+branches form one model; post-fit learned stacking of target-fitted expert
+predictions still requires purged chronological OOF. Paper permission remains
+independent, model outputs untrusted proposals. Model/data D:, never public
+model code in trustedExecution or weights/marketbytes inGit.

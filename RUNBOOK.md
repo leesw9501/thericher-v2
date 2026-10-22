@@ -55,6 +55,23 @@ Direct manual reads are NOT evidence an OS scheduled observer ran.
 
 ## Owned Execution / No Blind Run
 
+HGB original-owned exit deployment COMPLETE72245037/Sourcee487db86:
+A/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/task-instance-repair-r1/CONSUMER.json.
+Task thericher-kis-paper-kis100-hgb-owned-exit-20261028-r1 installedReady,
+nextOct28 19:45UTC/Oct29 04:45KST. Actual rollback/reinstall and quietnative
+identity/stableexact-path service-instance proof passed. Final Task NOT run now.
+Interactive Windows user session required; no awake Codex/human barrier.
+Actual SELL/fill/owned-flat/PnL remain unobserved. No manual future launch.
+Source-bound readback only (capture output categorically, no rawprivate values):
+```powershell
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/task-instance-repair-r1/tasks.ps1 -Mode Readback -SourceSha256 e487db86f6a5f9b9e567037a2e4fab8c4521e95efcf55792a2dfa7385fc070f6
+```
+Other modes can mutate/invoke tasks and are NOT read-only commands. Preserve
+originalbasis/F9HELD/R5Oct27/HGBOct28/actualcurrentownership and allunknowns.
+Registered GetInstances emptywhileRunning is recorded, not explained away;
+service GetRunningTasks exactPath and nativeidentity support honest-host marker
+provenance only, never cryptographic OS-origin proof.
+
 Current material recovery compatibility:
 A/verification/current-hgb-native-technical-integration-20261023-v1/authority.json
 57d5df326715ec3ef128c867ab46c3250394e093dcb3f1cdf49175693ee6a1d6.
@@ -83,8 +100,9 @@ fill/currentowned, pendingfalse/unknown0. ENTRY complete/lifecycle active, not
 freshbroker/fees/netPnL. ENTRY-CLOSURE.json binds the exact immutable chain.
 Generic unavailable was not no-effect. Unregistered actor7468 caused role_source_changed admission
 code, not proven Data fault/source mutation. Do not adopt its unknown artifacts.
-F9 staysHELD; original R5 and bank preserved. Current goal is actual original
-Oct28 owned-only quiet exit deployment, not a future exit now or new BUY.
+F9 staysHELD; original R5 and bank preserved. Current goal repairs the existing
+nightly retained-context path; Oct28 owned-exit readiness is installed, not
+runtime closure or a new BUY.
 Qualified --recover-owned is an
 effect-capable recovery route, NEVER an offline reader. No new BUY/substitution.
 
