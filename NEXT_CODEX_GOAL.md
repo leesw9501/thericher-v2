@@ -66,27 +66,40 @@ fixed+0.3527/1.4563, uniform-0.8005/1.2978. Only3cohorts/reused data, maximum
 learnedissuer sleeveweight83.156%; not independent alpha/causal gate/PaperPnL.
 DO NOT replace today's already-frozen candidate with this newly seenwinner.
 
-Socrates runs ONE concentration-penalty campaign in
+Concentration-penalty campaign CLOSEDdf38d8b2 in
 A/research/current-joint-moe-concentration-penalty-development-20261023-v1.
 Warm learned17/newAdamW-RNG26/TRAIN+.005issuerHHI/CHECKunregularized,
 max192epochs131904updates/patience24/onefit/postupdateRetry0. New9000active/
 old8499.670274once/lineage18000 and originalelapsed origins unchanged.
-Native2CUDAproof26checks4updates9440a50b and preflight34d5579f passed;
-market-start20:49:59UTC/1start, actualCUDAcurves/checkpoints now exist.
+Actual24CUDAepochs16488updates/CHECKpatience24 restored newepoch0, byte-identical
+old17weights. Maxissuer83.156%all43/59.236%funded3 and HHIratios100% fail frozen
+concentration/noalias, despite growth/riskPASS. JointFAIL/no retune or rescue.
+366checks31pointers/alljoined/ownGPUreleased/lineage9772.785431of18000.
 Preflight1fault436c9e56 was tagged-safe-tensor decoding before0marketconstructors/
 updates; samecaps correction uses pinned native(modelsubtree), NOT oldoptimizer/
 RNG. Fault27.470561/debits/native1proof retained; no scientifictrial reset.
 Frozen issuermax<=.50 and HHI<=.75old both all43/funded3, plus growth/risk;
 no postfit cap, exposure rescue or seenwinner substitution.
 
-Leibniz independently executes ONE CPU prospective shadow from Sourcecc8c9aee:
+ONE CPU prospective shadow COMPLETE0120ee31 from Sourcecc8c9aee:
 A/research/current-joint-moe-prospective-shadow-point-20261023-v1.
-New120active1800elapsed/max2loads2forwards/1record/0labels-fits-GPU-retries,
+Actual14.304084of120activeupper/428.648of1800elapsed/2loads2forwards/1record/
+320independentROchecks/alljoined/recordd8b3d74f sealed21:04:58.347992UTC,
 same actualData ORIGINAL69 raw/factor/context-known, not derived67volume mask.
 Pin learned17/fixed32/uniform69 beforeOct23entry, full100 exact savedweightbytes.
 Logits/desiredweights are NOT rawnetpayoff scores or orders; no Papercapital/
 schedule or today's frozen candidate replacement. Native target-weight admission
-remains separate technical work. TemporaryZeno closed after Source/SYN only.
+remains separate technical work. Leibniz closed after actualpoint/shadow.
+TemporaryZeno now prepares ONE new H5 target Source/SYN proposal under300active/
+1800elapsed; Socrates disjoint numerical source prep only, NOT a newGPUfit.
+A/research/current-joint-moe-h5-target-proposal-20261023-v1 and
+A/research/current-joint-moe-h5-target-development-20261023-v1.
+Intended sameexperts/affines/warm17/newAdamW-RNG27/H5OPEN-e+4CLOSE/TRAIN+.005HHI/
+CHECKunregularized/patience16/max96/65952updates/onefit/postupdateRetry0.
+Proposed6000active includesSource300/native600/fit3600/infer300/readout600/
+verifycleanup600; realH5labels/purges/source/native proof before numerical release.
+Never deriveH5 fromH20payoffs. Adaptive reuseddata, not independentalpha or
+causalhorizon benefit; H5intent preceded Parentinspection, NOT penaltyoutcomeexistence.
 Other closed warm/Chronos/volume/intraday histories remain role boards/Git/A.
 
 ## Authority / Completion

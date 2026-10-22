@@ -98,24 +98,45 @@ No remaining Parent hold, global idle requirement or observer disable.
   199newchecks+5509reused; FINALFAMILY376c94cf binds14refs/payload7fd5580a.
   Family843of2400activeupper/3838.9of7200elapsed/alljoined, no moreacquisition.
   Samecalendar5.4NYSE/0bfcc405/prior63Jul27..Oct22/H20exitNov19CLOSE21UTC.
-- Socrates actualGPUconcentration-penalty campaign:
+- Socrates concentration-penalty campaign CLOSEDdf38d8b2:
   A/research/current-joint-moe-concentration-penalty-development-20261023-v1.
   ONE warmlearned17/newAdamW-RNG26/TRAIN+.005issuerHHI/CHECKunregularized,
   max192epochs131904updates/patience24/onefit/postupdateRetry0. New9000active/
   old8499.670274once/lineage18000, originalelapsed origins preserved.
-  Native2CUDA26checks4updates9440a50b/preflight34d5579f before marketstart
-  20:49:59UTC; actualCUDAcurves/checkpoints now exist. Taggedtensor preflight1
+  Actual24CUDAepochs16488updates/CHECKpatience24 restored newepoch0 (old17alias).
+  Maxissuer83.156%all43/59.236%funded3 and HHIratios100% failconcentration/noalias;
+  growth/riskPASS butjointFAIL.366checks31pointers/alljoined/GPUreleased/
+  lineage9772.785431of18000, no retune or rescue. Taggedtensor preflight1
   fault436c9e56/0marketconstructors-updates/debit27.470561 retained, corrected
   with exactpinned native(modelsubtree), never oldoptimizer/RNG restoration.
   Frozen issuermax<=.50/HHI<=.75old all43andfunded3 plusgrowth/risk, no rescue.
-- Leibniz now owns ONE CPUprospective shadow in
+- Leibniz completed ONE CPUprospective shadow0120ee31 in
   A/research/current-joint-moe-prospective-shadow-point-20261023-v1:
-  Sourcecc8c9aee/CONTRACT3e4497c1/new120active1800elapsed/2loads2forwards1record/
-  0fits-labels-GPU-retries. SAMEactualData ORIGINAL69 raw/factor/context-known,
-  not Volume67mask; learned17/fixed32/uniform69 savedweights beforeOct23entry.
+  Sourcecc8c9aee/CONTRACT3e4497c1/actual2CPUloads2forwards69rows/1recordd8b3d74f/
+  320independentROchecks/14.304084of120activeupper/alljoined/0fits-labels-GPU-retries.
+  Sealed21:04:58.347992UTC beforeOct23entry, original69 raw/factor/context-known,
+  not Volume67mask; learned17/fixed32/uniform69 exactbinary64weights persisted.
   Desiredweights are not rawpayoff/order DTO, no Paperbank/schedule/candidate swap.
-- TemporaryZeno closed after concentration-penalty Source dda805a6/49CPUchecks/
-  4SYNupdates146audit/Source300upper, not a GPUworker/new permanentrole.
+- TemporaryZeno's concentrationSource dda805a6/49CPUchecks4SYN146audit/300upper
+  is closed. NewH5 Source/SYN proposal300active1800elapsed in
+  A/research/current-joint-moe-h5-target-proposal-20261023-v1; Socrates prepares
+  disjoint A/research/current-joint-moe-h5-target-development-20261023-v1 SOURCEONLY,
+  no model/GPU/labels until finalH5contract/source/purges/nativeconsumer proof.
+  Intended1warm17/newAdamW-RNG27/sameexperts-affines/H5OPEN-e+4CLOSE/TRAIN+.005HHI/
+  CHECKunregularized/pati16/max96/65952updates/onefit/postupdateRetry0; proposed
+  6000active inclSource300/native600/fit3600/infer300/readout600/verifycleanup600.
+  No H5return inference fromH20payoff. H5intent preceded Parentinspection, NOT
+  penaltyoutcomeexistence; adaptive reuseddata/no causalhorizon or alpha claim.
+  Leibniz/Averroes closed after shadow/staticreview, not residentdaemon workers.
+
+Independent runtime static challenge:
+A/review/current-volume-gru67-runtime-static-challenge-20261023-v1/CONSUMER.json,
+REVIEWb4c71fef/12purechecks/0effects/30of120activeupper/alljoined. Parent flagged
+pending+exit recovery wrongly demanding entryTask and inheritedOct28topdates;
+additional findings timeoutdescendantjoin/mutex release and sanitizer canonical
+code/unhashable-value handling. Meitner fixes within runtimequalification scope.
+Static invented control flow is NOT actual OS/native/deployment proof. Actual
+SYNattempt1/2 failures retained; no third start without first-cause/fixture fix.
 
 Actual operational input block challenged with Claude before repair:
 A/review/current-feature-known-point-admission-20261023-v1/review/RESPONSE.txt,

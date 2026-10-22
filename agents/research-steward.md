@@ -13,7 +13,7 @@ No completedfit is a ready GPU job. Last20:43:18UTC exactlock absent,
 RTX4090 free22054MiB/37C; a new dispatch needs fresh atomic ownership/headroom.
 No global GPU-idle claim from that sample.
 
-Next owner Socrates:
+Last owner Socrates, now CLOSEDdf38d8b2:
 A/research/current-joint-moe-concentration-penalty-development-20261023-v1.
 ONE useful warm17/newoptimizer-RNG26/+0.005HHI hypothesis, not duplicatefit.
 Source300chargedonce/old8499.670274once, new<=9000/total18000, unchangedelapsed
@@ -23,18 +23,22 @@ Parent pre-effect numericalamendment allows max3fixedCUDA-SYNstarts/12updates/
 9constructors TOTALinside600; no extra scientifictrials.
 Preflight1fault436c9e56 before0marketconstructors-updates/27.470561debit retained.
 Taggedmodelsubtree decoding corrected using exactpinned native(), no oldoptimizer/
-RNG conversion/restoration. Native2CUDA9440a50b PASS26checks4updates and preflight
-34d5579f before actualONE marketstart20:49:59UTC; actor20:50:00.605UTC,
-container4f90cf5f/coordinator10716/startFILETIME134371757870715113.
-Curve012 proves12epochs8244updates/443.269sec, not final/converged result.
-Oneactualmarketfit/postupdateRetry0 unchanged; no age-reclaim/newclock/refund.
+RNG conversion/restoration. Native2CUDA9440a50b/preflight34d5579f beforeONE fit.
+Actual24epochs16488updates/CHECKpatience24/selectednewepoch0 (old17alias),
+concentration+noaliasFAIL/366checks31pointers/lineage9772.785431of18000.
+Allworkersjoined/ownGPUleasereleased/currentPID0/0ownedcontainers. Not a ready
+duplicatefit/convergence. No age-reclaim/newclock/refund or H20recipe rescue.
 
 Leibniz completed point61d11d44 on CPU,1forward/model67rows/0GPU/no rerun.
-Separate one prospective shadow record now dispatched120active1800elapsed/
-2CPUloads2forwards/0labels-fits-GPU-retries, original69raw/context/factor-known.
+Separate shadow0120ee31 COMPLETE:2CPUloads2forwards69rows/1record/0labels-fits-GPU,
+320ROchecks/14.304084of120activeupper/alljoined. Original69raw/context/factor-known.
+H5Source/SYN proposal now Zeno300active1800elapsed; Socrates numerical source
+preparation only. No newGPU job yet; actualsource/target/native readiness before
+one newH5 fit. Closedworkers aren't rerun or artificially held for permission.
 No GPUlease conflict or live/public code in Execution.
-Current Execution runtime and Data/CUDA repairs are independent. TemporaryZeno
-closed after Source dda805a6/49CPUchecks4SYN146audit/Source300upper, not a GPUworker.
+Current Execution runtime and research preparation are independent. TemporaryZeno
+previousSource dda805a6/49CPUchecks4SYN146audit/Source300upper is closed; its new
+H5Source assignment is not a GPUworker or reopening of that old Source budget.
 Other warm/Chronos/volume/intraday and prior model families remain closed.
 
 ## Allocation Policy

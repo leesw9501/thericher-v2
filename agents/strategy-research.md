@@ -47,13 +47,37 @@ one warm17/newAdamW-RNG26/+0.005issuerHHI hypothesis, no new model-name sweep.
 REVISE1eefc052 retained; cash-logitpremise inapplicable to issuer-only simplex,
 adopt unitmass/normalizedHHI/all-datecap proof. Warm/reset/training/penalty are
 confounded, no causalpenaltybenefit. No proof hardmax/utilityretention guaranteed.
-Socrates owns numerical A/research/current-joint-moe-concentration-penalty-development-20261023-v1,
-actualoneGPUfit20:49:59UTC after native2CUDA9440a50b/preflight34d5579f; no duplicate
-closedmodeltraining. Taggedtensor mechanicalrepair preservedfault/debit/caps.
+Concentrationdf38d8b2 COMPLETEFAIL:24epochs16488updates/CHECKpati24 selectedepoch0
+old17alias; maxissuer83.156%all43/59.236%funded3/HHIratios100% fail frozen,
+growth/riskPASS butjoint/noaliasFAIL.366checks31refs/alljoined/GPUreleased/
+lineage9772.785431; no retune/rescue. Taggedtensorrepair preservedfault/debits.
 Source correction2d100d58 fixes synthetic zero-head gradient assertion/tmpfs,
 not penalty/science; original failedproof/debits retained.
 
+Shadow0120ee31/d8b3d74f ACTUAL COMPLETE beforeOct23entry:2CPUloads2forwards69rows/
+1record/320independentROchecks/14.304084upper/alljoined/0labels-fits-GPU.
+Still no native targetweight admission/order/payoff DTO or candidate swap.
+TemporaryZeno now prepares new H5 target Source/SYN proposal300active1800elapsed,
+Socrates disjoint numerical SOURCEONLY, no newfit/GPU/marketlabels yet.
+Sameexperts/warm17/newAdamW-RNG27/H5OPEN-e+4CLOSE/pati16/max96/1fit proposed;
+exact targetpurges/source/cachedsame-key oldallocations required, noH20return reuse.
+Adaptive reuseddata; H5intent preceded Parentinspection, NOT penaltyresult existence.
+
 ## Completed / No Rescue
+
+Oct23 source screening, not a new installed model or performance result:
+https://arxiv.org/abs/1910.12430 explains differentiable convex layers;
+https://github.com/cvxpy/cvxpylayers (official Apache2.0 source/releases) and
+https://github.com/jankrepl/deepdow/blob/master/deepdow/layers/allocate.py
+show a possible explicit maximum-weight constrained allocation mechanism.
+DEFER new solver/runtime adoption now: the fixed HHI numerical test is already
+running and today's Paper consumer is the frozen payoff point, not these weights.
+If that test cannot meet concentration criteria, a NEW frozen constrained-layer
+campaign is an alternative, not retroactive projection/regrade of old results.
+Need real solver/gradient/latency/feasibility SYN proof and finite compute first;
+no vendor alpha claim or current-library GPU capability assumed from docs.
+No Moreau/paid/unclear-rights backend, dependency install or framework replacement
+was performed. Allocation-source inspiration is not broker-risk authority.
 
 Intraday path-rule40607bf0:208anchors/0alias/0fits-GPU/oneadaptiveoutcome21cells/
 59SYN187artifactchecks/alljoined/261.292upper includingSource240once.
