@@ -55,6 +55,39 @@ Direct manual reads are NOT evidence an OS scheduled observer ran.
 
 ## Owned Execution / No Blind Run
 
+Current material recovery compatibility:
+A/verification/current-hgb-native-technical-integration-20261023-v1/authority.json
+57d5df326715ec3ef128c867ab46c3250394e093dcb3f1cdf49175693ee6a1d6.
+580serial/18659fullPASS25skip/8workers/unmodified clean helper exit0/Ruff3Compose.
+Counts/exits observed from owned tools56529/55673 and independent18684collection;
+no raw full log/JUnit retained or invented. Current-child cleanup/mutex/process
+checks passed; older inactive siblings preserved, not cleanup failures.
+
+Modern four-arm campaign began16:54:16UTC/PID3548 and CLOSED technically16:56:
+A/research/current-kis100-market-context-recent-regime-development-20261023-v1,
+binding55fd190c/dispatch5fca8246/FINAL-FAULT-R1.json. TwoHGB complete/twoGRU
+interrupted/alljoined/GPUreleased/INNER0; closed8136.299295debit unchanged,
+post-update retry0. Do not resume from START/epoch files or refit completed HGB.
+Original NVML/minimal ENV and Linux-Windows descriptor faults have evidence;
+ProgramFiles whitelist and canonical host-basename fixes changed no model/seed.
+
+Meitner's current HGB route is
+A/execution/current-kis100-hgb-native-technical-integration-20261022-r1.
+Native exit30/actual cold mounts/host admission PASS is preparation, not a fill.
+Technical2-visit scope plus prior8 now consumed; no blind entry rerun. Source90
+ownership expiresOct22 17:50UTC, not a durable exit owner for Oct28. Exact
+visit8c7d73b8 strict RO proves1submit/1ack/1full fill/1owned/pendingtrue/unknown0.
+Recovery-only d26acfb03d79486e8511b9e198a07790 then native_leg_closed17:35:48,
+20GET1tokenPOST/0orders. Separate stable RO07a82159 now confirms1submit/ack/full
+fill/currentowned, pendingfalse/unknown0. ENTRY complete/lifecycle active, not
+freshbroker/fees/netPnL. ENTRY-CLOSURE.json binds the exact immutable chain.
+Generic unavailable was not no-effect. Unregistered actor7468 caused role_source_changed admission
+code, not proven Data fault/source mutation. Do not adopt its unknown artifacts.
+F9 staysHELD; original R5 and bank preserved. Current goal is actual original
+Oct28 owned-only quiet exit deployment, not a future exit now or new BUY.
+Qualified --recover-owned is an
+effect-capable recovery route, NEVER an offline reader. No new BUY/substitution.
+
 Oct22 fresh-HGB finite parent runtime evidence lives at
 A/execution/current-kis100-hgb-fresh-native-preparation-20261022-v1/parent-integration-r4.
 Source07a0016d binds original selected22 point, native policy7ecdb115,
@@ -68,8 +101,8 @@ not an accepted or filled entry. F9 unknown stays held independently.
 
 Parent temporary observer priority windows are recorded at
 A/execution/current-hgb-snapshot-priority-window-20261022-v1.
-All four pauses restored, last15:58:03UTC/original XML/ACL unchanged. Exact
-RESTORED-4.json is final current restoration evidence; no pending restore.
+All seven pauses restored, last17:36:35UTC/original XML/ACL unchanged. Exact
+RESTORED-7.json is current restoration evidence; no pending restore/role hold.
 This changes neither order authority nor budget; no schedule expansion.
 
 The eight-visit parent integration is now CLOSED. R6 Source9292d755 and
@@ -128,9 +161,11 @@ not covered merely by rerunning repository pytest.
 ## Verification
 
 Current authority:
-D:/thericher-v2/model-artifacts/verification/private-readback-coexistence-20261022-v1/authority.json
-360 focused serial PASS;18659 full PASS/25skip/18684collected; clean8workers/
-source-controlbefore-afterequal/Ruff/default-research-accounting Compose PASS.
+D:/thericher-v2/model-artifacts/verification/current-hgb-native-technical-integration-20261023-v1/authority.json
+57d5df32/580serialPASS/18659fullPASS25skip/18684collected/clean8workers.
+Fresh exact1375production+control match123a2072 and Ruff/default-research-
+accounting Compose PASS after recovery. Full rawstdout/JUnit not retained;
+counts/exits witnessed in original owned tool sessions, no invented log digest.
 External reader additionally has17synthetic tests, actual pinned RO native
 reads and the separate fresh Paper balance match. Repo tests alone do not
 validate code outside the suite.

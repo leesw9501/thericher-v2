@@ -1,176 +1,64 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-23 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own coordinated GPU resources/trial custody, not model choice or human approval.
-Parent shared MD/Git; prior NAS lifecycle COMPLETE/febc9bff;
-current HGB operational entry UNFINISHED.
+2026-10-23 KST. A=D:/thericher-v2/model-artifacts.
+Own resource/trial custody, not model choice/human approval. Parent shared MD/Git.
+AGENTS.md owns GPU authority and campaign invariants; an MD is not a GPU worker.
 
-## Actual Resources / Ready Queue
+## Current Actual / Ready
 
-Oct23 00:43KST new payoff-tail family actual CPU/CUDA workers both completed
-by14:13:22UTC,not an active GPU claim. Root
-A/research/current-kis100-payoff-tail-ensemble-development-20261022-v1:
-GPU-RELEASED.json confirms joined native/HGB/NN/inference actors; NN worker
-52.031063seconds/HGB52.276964 concurrent,not measured isolated GPUkernel time.
-Payoff-tail COMPLETE_FAIL. Distinct H20 CPUHGB/CUDAGRU/fixedhalf also
-COMPLETE_FAIL14:38:06UTC/two actual new fits/oneINNER15cells/LATER0/alljoined.
-Worker wall40.910119s and coordinator43.725935s are not GPU kernel time.
-Modern stock/SPY Data READY/TRAIN2747-CHECK75-INNER43dates/alljoined.
-Repaired Source and four-arm runtime preparation have no allocated GPU trainer;
-Source overrun1017.300140/900 retained and numerical binding not ready.
-Allocate useful new ready work after Data/runtime checks, not completed fits
-or dummy utilization. No external-app permission hold or GPU environment ban.
+Modern four-arm family CLOSED_TECHNICAL_FAULT_NO_RETRY:
+A/research/current-kis100-market-context-recent-regime-development-20261023-v1/FINAL-FAULT-R1.json.
+Two CPU HGB fits complete; two concurrent CUDA GRUs actually updated before
+16:56:02 I/O fault. Raw4174/context4597..4598bound/lastcompleteepoch6.
+Alljoined/GPUreleased16:56:08/one family4attempts/closed8136.299295unchanged/
+INNER0/LATER0. Historical4922MiB24percent41C sample is not ongoing usage.
+No silent resume/repeat of completed fits or claim of model convergence.
 
-Oct22 current: selected cost-direction fits finished yesterday; artifact-only
-continuation now COMPLETE3bfbee55/zero fits/optimizerupdates/one NN inference/
-18cells/oneINNER/LATER0/alljoined/GPUreleased. Original HGB32selected12 and
-NN21best1/4242updates MUST NOT repeat. Original1610.890397 debit preserved;
-continuation1277.342114 (incl600auditonce), lineage2888.232511. ProperPASS/
-financeFAIL, no retroactive threshold rescue. No active GPU trainer claimed.
-Project GPUfirst/personalco-use/concurrent-use authority remains unchanged.
-Scope the next allocation to a genuinely ready new frozen hypothesis, not
-dummy utilization. Reader repair12410a15 can coexist with source-attested
-nonprivate research/verification actors; don't impose machine-wide idle waits.
+I/O repair12groups/76checks/330of600upper complete/alljoined/0GPU:
+A/research/current-model-io-reliability-repair-20261023-v1/CONSUMER.json.
+Source-ready, not native training/optimizer resume/deployment. Existing failed
+family/data/safe checkpoints remain immutable and debits stay charged once.
 
-As of14:37UTC masked pretrain/warm is COMPLETE; no active GPU trainer inferred.
-Actual training/inference ended14:08:59, all owned actors joined/lease released.
-Native13.093+market342.83=355.923GPUleaseupper seconds, not sampledutilization
-or kernel time. Pretrain60/best50+warm22/best2/16624updates; cachedCold reused,
-0Cold refits/forwards. Closure852405bb/240checks/oneINNER15cells/FAIL/LATER0.
-Raw TCN/GRU/Transformer/Ridge also COMPLETE; no repeated fit.
-HGB/Ridge CPU family completed, CPU chosen intentionally; no GPU need.
+Leibniz now owns CPU-only retained-HGB context diagnostic1200active3600elapsed/
+2selectedforwards/0fits-GRU-LATER/oneINNER12cells. It must not reserve the GPU.
+A/research/current-kis100-hgb-context-retained-diagnostic-20261023-v1.
 
-Current16:20UTC: ListNet CUDA campaign COMPLETE26epochs/best6/5252updates/
-272.381496fitter seconds,219checks/4347.086139totalactiveupper/alljoined/
-GPUreleased. Not currently training. Readout proper/financeFAIL,0LATER.
-A/research/current-kis100-cross-sectional-rank-ensemble-development-20261021-v1/CONSUMER.json.
-Resource admission2c78a663 actually ran4CPU/CUDA SYNupdates, native1100.982447
-upper, then14cachebindingchecks/100600orderedkeys211.591451upper.
-Parent12000active21600elapsed anchor14:44:44/deadline20:44:44,
-Source1014.155471once/prep695.428467/onefit<=128ep25984updates/LATER0.
-Initial missing /kernel.py import was BEFORE model/update; one predeclared
-mount repair does not repeat a completed fit. Oldfailures/debits stay.
-15:27 aggregate sample33percent/2776of24564MiB/45C, not isolatedGPUutilization.
-Current frozen campaign still allows ONE fit; no duplicate parameters/seeds.
-Distinct cross-stock rank-attention/fixed3expert Source COMPLETEb2b50e43 at
-current-kis100-cross-stock-rank-ensemble-proposal-20261022-v1.
-Cross-stock development now COMPLETE07e4245d: actualCUDA25epochs/best5/
-5050updates/313.686713fitter seconds/330checks/FAIL/oneINNER18cells/LATER0/
-alljoined/GPUreleased/2624.153626totalupper. It actually started16:04:34UTC;
-16:07 sample33percent/2363of24564MiB/41C is historical aggregate use, not a cap
-or evidence training is still running. No model/GPU repeat after completion.
-Onefold calibration also COMPLETEcdc6270d: actualCUDA29epochs/best9/2233updates/
-117.114fitter seconds/189checks13SYN/FAIL/oneintake/0financialreplay-LATER/
-alljoined/GPUreleased/4548.110414totalupper. Not currently training.
-Initial OOF NOT_READY (54TRAINdates<64) remains separate, not a global hold.
-TabM32/factorMLP Source3cf2e337 CPU45checks and Datareusebb1e5c94 COMPLETE.
-Actual family COMPLETE17:37:16UTC/FINAL9f0db908/alljoined/GPUreleased:
-CPU MLP32epochs/best8/6464updates/415.971fitterseconds and CUDA TabM34/best10/
-6868updates/526.666fitterseconds. They started17:23:59/17:24:00 respectively;
-actual simultaneous CPU/GPU work, NOT two independent CUDA trainers.
-2759.201921closedupper includesSource538.988975/Data84.312942 once plus failed
-transport/artifact-only repair/cleanup.18uniqueSYN+23independentchecks/4lint
-findings retained/properFAIL/relative financePASS/oneINNER15cells/LATER0.
-No completed-fit repetition or ongoingGPUclaim after closure. Co-run distinct
-ready frozen work with measured headroom under one existing coordinator;
-concurrent permission is recorded, multiple-CUDA training not yet demonstrated.
-Next direction campaign plan is frozen at
-A/research/current-kis100-cost-aware-direction-development-20261022-v1/PARENT-CAMPAIGN.json:
-9000active21600elapsed/Source501.797031once/Data126.502285once/2firstfits/
-oneINNER18cells/LATER0. Sourcec8f7e013 and Data1bc1ce3e/DTO2bb5a208 READY.
-Wegener owns real runtime/native and resource preparation before new fitting.
-Prefer useful CPUHGB+CUDA neural concurrency under actual measured headroom;
-no newmarket/GPU claim from dispatch, duplicatefit or global app-name hold.
+Coordinate Socrates exact trusted Chronos2 zero-shot once actual Source/Data/
+claim/runtime/caps bind, not a claim already running. Readiness audit17:30:
+0model-load/inference/GPUactors; old strictSource0windows and partition overflow.
+Parent delegated separately frozen retrospective price-proxy Source correction/
+new lineage<=9600active28800elapsed, all old actual debits retained. Same checkpoint/
+43origins100axis/max4300trio/one load/0fits-updates/oneINNER/LATER0.
+A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1.
+Use existing resource owner/lock; no new resource/approval platform.
 
-Operator2026-10-22KST gives projectGPUpriorityFIRST, allows personal/external
-GPU co-use and concurrent distinct ready trainings. Do not require an app-name
-allowlist/all GPUusers to be projectowned. Current exactblock: ShellExperienceHost,
-CalculatorApp,WINWORD were unrecognized; headroomPASS/knowntrainers0/GPUcontainers0/
-leaseabsent, no proof another training was running. Old gate failure preserved.
-Wegener owns new explicit admission/source/native qualification; no market
-fit starts inferred from policy or a plan. ClaudeSOUND_WITH_NAMED_LIMITS RAW7c78e806:
-A/review/operator-gpu-priority-20261022-v1/claude/RESPONSE.txt.
-No blanket unleased-Python hold adopted; possible duplicate owned campaign
-requires exactPID/start/source clarification, scoped to that campaign.
+## Resource Policy / Next Allocation
 
-Allocate ready frozen campaigns under one resource coordinator and existing
-A/engine-research-agent/locks/gpu.lock; multiple child workers are allowed.
-Fresh actual PID/start/free-and-projected-peakVRAM/headroom facts,
-no age reclaim, completed-training repeats or dummy GPU workload. Execution
-reliability preempts safely. Old duration/VRAM ceilings are campaign-local.
-Completed masked debit4680.0615224upper includesSource950.1130104 and
-prep649.948512 exception once; no refund or overwritten closed clock.
-Upcoming rank campaign will freeze its own attempted-fit/updates/evaluation,
-active-worker and end-to-end ceilings before numerical dispatch. Record
-co-tenancy/per-workerwall/peakVRAM; noappkill, safecheckpoint/yield on actual
-OOM/thermal/driver trouble, unchanged one-fit trial caps and no hidden retry.
+Project first GPU priority including personal/external GPU co-use is approved.
+Unrecognized user apps are not permission holds; measure actual free/projected
+peak VRAM and desktop/driver reserve. Concurrent distinct useful frozen workers
+allowed, exactcampaign/PID/start/lease identifies a possible duplicate, not generic
+Python/app-name allowlists. Never kill user apps/change driver/age-reclaim live
+or unknown lease. Preserve per-worker wall/peak/co-tenancy; no isolated benchmark
+claim from concurrent aggregate readings or synthetic VRAM.
 
-## Completed Useful Compute / No Repeat
+Before actual model dispatch measure capacity and bind image/code/checkpoint/
+privatefree networknone mounts. Useful CPU/GPU workers may run concurrently.
+Execution reliability preempts at safe checkpoint; a short exact Paper recovery
+host-admission hold is not a permanent machine-idle or research permission rule.
+On actual OOM/thermal/driver faults safely checkpoint/yield and retain failures/
+debits; no hidden retry or extra trials beyond the frozen contract.
 
-Broad25 LSTM pair2CUDAfits38/61epochs/best8/31/7722updates/46.709537GPUworker
-seconds COMPLETE. Patch5121CUDAfit21/best1/44.017121GPUworker COMPLETE.
-TCN3CPUfits65/39/38epochs/11076updates/1245.231964CPUworker COMPLETE;
-measuredCPU8.506s vsCUDA87.239s/epoch, CUDA native11.21s only.
-CPU risk51solves/readout and prospectivepoint7c38f625 COMPLETE,0models-GPU.
-Purged OOF FINALc9ea459f/RESULT6275a146 COMPLETE:4CUDAfits66/30/62/63epochs,
-best36/0/32/33/12679updates/90.604708GPUworkerwall seconds,1allocation/
-allactorsjoined/leasefree.638.778194latestupper inclsource94/review60/
-Data95.829790/allnative-fit-readout-cleanup, no refund. INNERFAIL/PRED0.
-Actual 90.604708 workerwall is not separately measured GPUkernel time.
-Intraday FINAL4f8690d8 COMPLETE2CPUfits60/96epochs/best48/86/7488updates/
-139.654003marketworker seconds/875.654584totalupper/alljoined/leasefree.
-Actualclosure882f5f3b/397checks/RuffPASS adds300verificationupper separately:
-1175.654584wholeupper, originalFINAL/debits unchanged. Executor closed.
-NativeCPU4/CUDA4SYNupdates; CUDAmarketfits0. Route used two-step mean which
-multiplied coldCUDAsetup cost acrossfit. Retain oldchoice/result/debits;
-NEW native pacing separates fixedsetup from warmed actual train/eval loop.
-Do not call that projection definitive warmedGPUinferiority or repeatfits.
-Cost-aware family7a47b766 COMPLETE:actual2CUDAfits34/38epochs/best22/26/
-3456updates/86.746097fitseconds/100.423500native+marketallocationwall,
-notkernel/utilizationmeasurement. HGB1CPUfit12trees/best0, no newwinner.
-1618.430214wholeupper/5400/oneEVAL48logical26activecells/alljoined/leasefree,
-NO_TRADABLE_OPPORTUNITY/no retry; artifactonlyaliasfix preservedweights.
-Cross-asset FINALfe37689e COMPLETE2CPUfits16epochs/best0both/1120updates/
-2490forwards/oneOUTER15cells/PRED0/alljoined/1653.572269upper. NativeCUDA
-qualificationonly.128max/pat16 stopped on noimprovement, notglobal16cap.
-Selectedinitializations notlearnedalpha. CPU wasmeasuredfasterfor thissmall
-panel, notenvironment/GPUpermission failure. Newseed panel preservesCPU2.7.
-Wave COMPLETE/MIXED:118readbackchecks/8018actualforwards/30cells/no retries;
-4301cached-only/new4302-4/20constructors14restores. No seed/epoch rescue.
-Firstactual12000active21600elapsed/6NEWfits/26880updates60000forwards,
-source180/review60/prep360/native180/cache300/6fits1500each/inference120/
-readout900/cleanup180. Old4301fits/cache/debits retained, no bestseedsearch.
-CPUparallel only isolatedprocesses/disjointoutputs/cumulativewallsummed;
-no dummyGPUload. SeparatechartCNN source mayneedGPU afteractualpaceproof.
-ChartSource43.714upper/oldnative1constructor0updatesfailed; isolation-r1
-author+closure278.995662 exceeded180cap before anynativeattempt. Preserve
-deviation/no refund; r2 proof and Engineprep new600s each, no marketretry.
-Data independent phase1 READY/45750knownrows, PREDnumeric/render0.
-Chart COMPLETEedfb1906/58artifactchecks/active-runtimeRuffPASS/alljoined:
-actualCNN CUDA17/best1/2329updates19.482439fitter seconds, MLP CPU16/best0/
-2192updates4.246898s. Total4521updates10032forwards/1OUTER15cells/
-proper-financeFAIL/PRED0;phase2closed, notwaiting on Datadeadline.
-OneGPUlease32.966571wall/20.764674wholemarketworker/3.092126nativeworker,
-notkernel/utilization measurement. Selectedsafetensors/curves retained D.
-2386.202425totalupper inclallpriorfaults/one packet-keyword technicalrepair,
-no marketretry/refund. No GPUallocation now for CPUpoint/monthlyETF/Data.
-Conditionalchartactualgrant7200TOTALactive18000elapsed, no secondparentwait
-after actualfitter/native/Dataqualified. Includes all oldsource/failednative
-debits once;2marketfits1500s each/native600/oneGPUlease/cleanup400. Actual
-pacedgeometry200images, coldsetup separated from warmedsteadyloop. No silent
-CPU fallback/newmodel to consume time, no overlapping GPUowner or refits.
-OlderGRU/MLP/TCN/TimesFM/LoRA/OOF histories stay immutable Git/A.
+Payoff-tail/H20/TabM/ListNet/cross-stock/masked/raw/TimesFM/Chronos/GRU/LSTM
+closed families are not ready repeat jobs. GPU utilization itself is not a product
+outcome. Data/Source/compute readiness determines first useful allocation.
+Generated artifacts A/Docker /app/model_artifacts, market M,15percentfree/warn20.
 
-Active owned time includes failures/I/O/recovery/cleanup; queue/LLM elapsed
-is not GPUkernel time. Closeddebits never refunded. New campaigns own explicit
-caps/native API/curves/safeweights and actual final aliases before outcomes.
-Models A/market M/Docker /app/model_artifacts; D measured38.94percentfree,
-keep15percent/warn projected20. No market bytes/weights in Git.
+## Verification / Evidence
 
-## Verification
-
-A/verification/fund20-paper-runtime-20261021-v1/authority.json41796a7a:
-1374sources5802dd71/1764serialPASS2skip/18612fullPASS25skip/clean8workers/
-Ruff/three sample-envCompose PASS. Docs/external reuse requires fresh exact
-source/control equality plus independent changed-external proof; repo tests
-cannot certify D workers or actual GPU/Paper outcomes.
+Fresh compatibility57d5df32:
+A/verification/current-hgb-native-technical-integration-20261023-v1/authority.json.
+580serial/18659fullPASS25skip/8workers/cleanhelper/Ruff3Compose/
+exactproduction-control unchanged; external runtime still needs native evidence.
+Full stdout/JUnit not retained, no invented hash. Old inactive temp siblings
+preserved. Earlier measured resource/native/debit histories remain Git c80d3d6/A.

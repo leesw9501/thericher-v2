@@ -1,109 +1,75 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 01:03KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Parent owns direction, shared MD/integration/Git. No operator decision needed.
+2026-10-23 02:45KST / Oct22 17:45UTC.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Parent owns shared MD/Git/integration. No operator decision currently needed.
 
-## Company / Current Request
+## Company / Ready / Owned / Due
 
-Company current-kis100-hgb-operational-paper-entry-v1 remains UNFINISHED.
-Oct21 point/window expired unactivated; not a success or reusable current signal.
-Previous Data-versus-reader repair is COMPLETE12410a15. Current human request
-continues F9 exact reconciliation, next Paper readiness and parallel new research;
-it is active, not completed by that repair or a package commit.
+Entry company current-kis100-hgb-operational-paper-entry-v1 COMPLETE narrowly:
+stable post-recoveryRO07a82159 has1submit/1ack/1fullfill/1owned/pendingfalse/
+unknown0/F9HELD/protectedscopes unchanged. New ONE company outcome is
+current-kis100-hgb-owned-exit-deployment-v1, actual quiet restart-safe deployment
+for ORIGINALOct28>=19:45UTC, not waiting for/runtime-proving that future exit.
+Earlier Oct21 point expired unactivated. Human request continues F9 exact reconciliation,
+next Paper readiness and useful model/ensemble research; not complete by a
+reader repair/package commit. Native actor/GPU/fill status needs actual evidence.
 
-## Ready / Owned / Due
-
-Active continuation overrides earlier table projections below:
-- Parent: F9 original-history query COMPLETE0rows/nonterminal/HELD; HGB full
-  hidden-host proof COMPLETE71acabef. R4 actual intent0submit/ack/fill/owned;
-  known-unsubmitted pending terminally expired by visit4. The bounded parent
-  integration is now closed8visits/no HGB submit. Visit6risk_nointent after8GET;
-  missing visit8 outcome is not inferred. Exact post-cap native RO16:02:52
-  confirms0submit/ack/fill/owned/pending/unknown. All4observerpauses RESTORED.
-  Parent owns typed preflight diagnosis, not another blind broker invocation.
-- Data/Averroes: fresh69known point/input complete. Now owns offline modern
-  canonical stock/SPY alignment COMPLETE/TRAIN2747-CHECK75-INNER43dates,
-  826.145181/1200seconds/alljoined. Independent custody/allowlist readback next.
-- Execution/Meitner: nightly scoped readback complete, exception/dated-fill
-  attribution remain unknown. Prepares new HGB owned-only exit Oct28>=19:45UTC;
-  candidate only: two synthetic boundary fixtures failed; NOT qualified/deployed.
-  No broker/Task change; source-attested preflight first-cause repair is next.
-- Engine/Leibniz: payoff-tail and H20 CPU/CUDA fits/readouts COMPLETE_FAIL;
-  oneINNER each/LATER0/alljoined. Now prepares inert modern four-arm adapter,
-  no market fits while Source/Data/runtime bindings are incomplete.
-- Strategy/Socrates: market-context Source70375204/28native checks; overrun
-  1017.300140/900 retained/closed. New repair Source owns explicit asof/caps/
-  retained native state and context interactions; no numerical GO yet.
-  Validation/Jason full compatibility COMPLETEbb78c276, no running test claim.
-
-Throughput improvement: F9 stays locally reserved,not a company permission
-hold. New independent Paper input,model research and tests run concurrently.
-New metadata-only895fd6db entryOct22 14:30..19:30UTC uses the same point packet;
-the old16UTC start was convenience,not an external limit. Actual native
-readiness/writer admission decides launch,not unrelated future due times.
-Existing nightly14:50/F9 15:10 owners remain separate; no foreground wait.
-Actual observed bottlenecks are legacy process admission over development
-shells and uncoordinated observer reads, not a GPU authorization shortage.
-Prior bounded effect windows briefly separated new Windows host tools;
-all holds released/all observer pauses restored. This is NOT a durable
-machine-idle rule. Repair source-attested capability scope and typed preflight
-first-cause retention instead of indefinitely copying host wrappers. Current
-offline source/RO seed passes cannot reconstruct the unretained earlier fault.
-Fresh verification COMPLETEbb78c276/977serial18659fullPASS25skip/8workers/
-Ruff3Compose/exactsourcecontrolunchanged. Jason closed,not a running worker.
-
-| Owner | Actual State / Next Consumer |
+| Owner | Actual State / Next Action |
 | --- | --- |
-| Parent | Reader repair, native/freshbroker evidence, policy/tests integrated; commit/push. No private writer/Git owner conflict. |
-| Execution | R5 three accepted/full BUY fills/three owned instruments, active until original Oct27 exit. Nightly three accepted/full SELL fills. |
-| Engine / temporary Leibniz | Retained-checkpoint inference/readout COMPLETE3bfbee55; zero fits, one NN inference,18cells, properPASS/financeFAIL, all actors joined/GPU released. |
-| Data | Historical100 COMPLETE83closed/17unavailable/0remaining/87934new daily bars; no active collector. Original0067 stays frozen. |
-| Steward | No active GPU trainer claimed. Project priorityFIRST/co-use/concurrency approved; allocate only genuinely new ready frozen work. |
-| F9 scope | One original unknown outcome/reservationHELD; noack/no fill proof. No substitute, reset, adoption or absence-based release. |
+| Parent | Exact entry evidence integrated, recovery-only native_leg_closed and independent stable RO closure. All effects joined; observer pause7 restored17:36:35/originalXML-ACL unchanged/all holds released. Verify/commit/push owned MD. |
+| Meitner / Execution | New owned-only exit deployment1200active3600elapsed, originalOct28identity/bank/F9/R5 preserved, no orders now. Source90ownership17:50 cannot serveOct28 unchanged. No blind11th entry. |
+| Averroes / Data | Raw prior63 OPEN/CLOSE/SPYCLOSE feature-only Chronos2 packet, original100axis/INNER43/known masks; original cap600active1800elapsed, no labels/network/model. |
+| Socrates / temporary Engine | Chronos2 trusted dated zero-shot prep/conditional dispatch under exact Source/Data/mount/caps; numerical7200active21600elapsed/max4300calls/one load/0fits/oneINNER/LATER0. Not a claim that GPU has started. |
+| Leibniz / Engine+Steward | I/O repair source COMPLETE12groups76checks/330of600upper/0fits-GPU. NEW retained HGB-only context diagnostic1200active3600elapsed/2forwards/0fits-GRU-LATER/oneINNER12cells; coordinate ready Chronos2 GPU independently. |
 
-Fresh Paper balance Oct22 17:38KST: six owned instruments/all six quantities
-match native book including R5 three; zero open orders. Fees/settlement/netPnL
-UNKNOWN. No new orders, live behavior or schedule changes by this repair.
-Prior original8 BUY8/SELL8 full lifecycle complete; completed Task disabled.
+Current exact roots:
+- Execution: A/execution/current-kis100-hgb-native-technical-integration-20261022-r1.
+- Data: A/data/current-modern-chronos2-prior63-input-20261023-v1.
+- GPU candidate: A/research/current-modern-chronos2-postcheckpoint-development-20261023-v1.
+- CPU diagnostic: A/research/current-kis100-hgb-context-retained-diagnostic-20261023-v1.
+- I/O source: A/research/current-model-io-reliability-repair-20261023-v1/CONSUMER.json.
 
-## Throughput Review
+## Block / Alternatives / Throughput Review
 
-Actual bottleneck was a broad reader admission rule treating all market/research
-actors as private writers, plus legacy NAS/pre-start readers used outside their
-pointer/scope. Corrected for the current reader using actual actor/source/mount
-attestation and strict private RO/networknone/native schema/identity/mtime/
-membership/hash checks. Unknown private writers or changing/unbound data still
-withhold conclusions. Readback succeeded alongside owned verification/research.
+Current company dependency is actual original-owned exit deployment, NOT human
+approval/full data acquisition/model profit. Entry evidence now exists.
+Original8+new2 entry visits consumed. Visit9 pre-child30s barrier timeout was
+fixed by atomic native tool delivery for visit10; unregistered actor7468 started
+17:28:00, guard denied17:28:03. Code role_source_changed does NOT prove a known
+source changed (rolelist empty). Do not infer no-effect from that generic result.
 
-A separate full-console funds endpoint failedHTTP500/EGW00201; a scoped
-balance/open-orders-only client completed1POST4GET and exact account/quantity
-matching. Do not turn that partial view into a full buying-power/risk snapshot.
-Do not wait for unrelated market-idle or arbitrary future due margins.
+Execution challenges durable owned-exit recovery/installation with Claude and
+native reproduction; unknown actual private writer still denies conclusions.
+Alternatives inside standing authority:
+1. Deploy the actual original-owned Oct28 exit with a durable source-bound owner,
+   tested restart/unknown-request recovery and quiet-launch/rollback evidence.
+2. If installation fails, retain current custody and repair exact first cause;
+   source-only preparation is not deployment or permission for a substitute order.
+3. Continue independent Chronos2 and retained-HGB research now, no foreground wait.
+   Retain R5 originalOct27 and HGB Oct28 custody; F9 stays locally reserved.
 
-The prepared direction models were already trained. Repeating them would not
-fix a Docker input-copy failure. One artifact-only continuation restored exact
-selected weights, reused existing HGB forecasts and completed one NN inference/
-one adaptive outcome intake without a fit. Fixed .55 HGB gate was cash:
-properPASS/financeFAIL; no retroactive threshold rescue or alpha claim.
+Reversible improvement: role capability/source/mount attestation instead of a
+machine-idle rule; atomic Parent broadcast/barrier eliminated the measured
+model-roundtrip timeout. All temporary observer pauses/role holds are released.
+No ceremonial parent numerical-GO flag where original delegated bindings pass.
 
-Next useful paths: fresh HGB operating point/native admission, preserve/reconcile
-actual R5 positions and original exit, and a genuinely new payoff-aware research
-hypothesis. Old expired wiring/probes/training are not ready-to-rerun tasks.
-No company-wide permission hold, new agent platform or standing report worker.
+## Evidence / Not Running
 
-## Evidence / Verification
+R5 three accepted/full BUY fills/three owned; nightlyOct21 three SELL fills.
+Broker six-instrument match/zero opens is timestamped Oct22 08:38UTC, not current.
+F9 exact original history1POST1GET/0rows remains UNKNOWN/HELD, not absence-based
+release. Original8 lifecycle COMPLETE/febc9bff/completedTaskdisabled.
+A/execution/private-paper-custody-readback-20261022-v1/FINAL.json (12410a15).
 
-A/execution/private-paper-custody-readback-20261022-v1/FINAL.json
-12410a151c01da508e040a5b2a08f4b8b88586c6c8f032c37324820da8e80cdf.
-A/research/current-kis100-cost-aware-direction-retained-readout-20261022-v1/CONSUMER.json
-3bfbee55df81199be6d70321bc49288f33615fbbac80bb893196246f72d38075.
-A/data/current-kis-modp1-historical100-continuation-20261022-r2/FINAL.json.
+Modern four-arm16:54:16..16:56:02 CLOSED_TECHNICAL_FAULT_NO_RETRY:
+two completed HGB fits, GRU_NO4174updates/IOFAULT/GRU_WITH4597..4598bound/stopped.
+All actors joined/GPU released16:56:08/INNER0/LATER0/closed8136.299295unchanged.
+Historical epoch/sample files are not active training. Payoff-tail/H20 FAIL;
+no completed fit repeats or independent-alpha/PaperPnL claim.
 
-A/verification/private-readback-coexistence-20261022-v1/authority.json:
-360serialPASS/18659fullPASS25skip/18684collected/clean8workers/helperexit0/
-Ruff/3ComposePASS/source-controlbefore-afterequal;17externalSYN plus actual
-pinned native RO and fresh balance evidence. Source1375 digest123a2072.
-Claude SOUND_WITH_NAMED_LIMITS exact external response under reader/review.
-Assumed-honest host, not cryptographic OS Scheduler origin/atomic broker view.
-No outstanding parent exec sessions once verification completes.
-Preserve unrelated untracked %SystemDrive%/.
+Fresh compatibility57d5df32:580serial/18659fullPASS25skip/18684total/8workers/
+clean helperexit0/Ruff3Compose/exactproductioncontrol unchanged. No rawfull
+stdout/JUnit retained; old inactive test siblings preserved. External code has
+separate focused/native evidence. Prior details remain Git/external artifacts.
+Preserve unrelated untracked %SystemDrive%/. No new platform/report daemon.
