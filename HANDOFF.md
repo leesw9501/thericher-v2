@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-As of 2026-10-23 04:00 KST / Oct22 19:00 UTC.
+As of 2026-10-23 04:22 KST / Oct22 19:22 UTC.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 AGENTS.md owns authority. Parent owns shared MD/integration/Git.
@@ -24,10 +24,17 @@ No operator decision currently needed.
 - R5: three accepted BUY submits/three exact full fills/three owned instruments.
   Entry requests terminal; positions active, original exit Oct27>=19:45UTC.
 - Nightly Oct21: three accepted SELL submits/three exact full fills. Oct22 dated
-  dispatch separately ended retained_context_recovery_required: one retained
-  SELL start/35GET/1tokenPOST. Native FULL exists in that scope, but exact dated
-  attribution/exception cause UNKNOWN. No blind replay.
-  A/execution/nightly-result-20261022-readback-v1/FINAL.json.
+  dispatch ended retained_context_recovery_required: one SELL start/35GET/1POST.
+  NEW strict readback31fb11f6 independently links that dated request to ONE full
+  SELL fill/pending0/unknown0. The enclosing daily context remains active, not a
+  new unknown broker order. Current cycle_book_changed reproducer is two later
+  HGB registry additions; the historical exception remains UNKNOWN.
+  A/execution/current-nightly-paper-context-recovery-20261023-v1/CONSUMER.json.
+  21 serial native tests pass, but three image-test harness starts failed before
+  qualification; no recovery/API/credential/private-write/Task mutation occurred.
+  Corrected native-qualification-r1 is delegated inside the SAME1200active/
+  3600elapsed family; old120charged/three failed starts remain. Only after actual
+  image/cold/guard proof may its single-use no-order original-context recovery run.
 - Broker balance Oct22 08:38:21UTC/17:38:21KST matched all six native instruments/
   quantities including R5 three; zero open orders. Historical read, not a current
   balance or complete buying-power/risk snapshot.
@@ -181,12 +188,17 @@ released, Cicero closed/no rerun. Newactual1118.894658/lineage9615.193953,
 oldfailure8136.299295 unchanged:
 A/research/current-modern-gru-epoch6-newoptimizer-warmstart-development-20261023-v1/CONSUMER.json.
 
-Current research owners: Leibniz pairedCPUvolume-HGB target-maskjoin/native proof
-then2fits onlyifliteralminimumCHECK63 holds,7200lineageactive14400elapsed.
-Data c0a88302 complete58743predicates/301.376801active: TRAIN2740dates133899rows,
-CHECKfeature75/5556 but targetintersection46..75unproven; INNER43/3295/all3cohorts.
-No guessed mask intersection/minimum changes/held-label leak.
-A/research/current-kis100-volume-relative-strength-development-20261023-v1.
+Price-volume family COMPLETE_FAIL be906a96: exactCHECK72dates5333rows passes63;
+two CPU HGB fits/256stages each, PRICEselected0/VOLUME245. ProperPASS but frozen
+financeFAIL: fixedhalf equals VOLUME, not strictly better. At10bp/leg growth/DD
+percentinitialNAV: VOLUME/fixedhalf+1.92546/1.39856; PRICE/uniform-0.80050/1.29784.
+OneadaptiveINNER15cells/LATER0/1612independentchecks/2539.775582lineageupper/
+allactorsjoined/0GPU. No winner fallback, rerun, independent alpha or PaperPnL.
+A/research/current-kis100-volume-relative-strength-development-20261023-v1/CONSUMER.json.
+Leibniz now prepares distinct short-horizon SPY/QQQ feasibility from existing
+minute-data/study metadata, no new fit/labels/GPU or repeat of consumed studies.
+Averroes prepares exact existing-volume/warm-GRU Paper input reconstruction and
+minimal acquisition delta, metadata-only/no broker-account access or calls yet.
 
 Socrates NEW scratch joint GRU/MLP/linear learnedcontextgate vsfixedthird
 direct-utility study; Sourcee1c07642/250native+96coldchecks/4CPU-SYNupdates only.
@@ -197,6 +209,14 @@ nativeCPU/CUDAoptimizer-RNG-safeIO proof before2newfits/5400seconds each/
 192epochs/131904updates/CHECKutilityearlystop24. Exactfull100softmaxweights
 for TRAIN/CHECK/replay1-5-10bp, notMSE/TopK/pretrainedexpert stacking.
 OneadaptiveINNER12cells/LATER0; no actual fit inferred from this dispatch.
+V1 failed before label decode/model constructors/updates: full4992-session view
+was checked against a canonical3205-session digest. Native CPU/CUDA SYN passed,
+but no market training happened. Immutable fault a55dc293/3373.443270lineageupper,
+allactorsjoined/leaseReleased. Parent delegated ONE exact calendar-view/index
+bridge V2 under unchanged18000active/43200elapsed/caps/model/seed/split/H20phase;
+retain two failed preconstructor launches, allow two first logical fits only
+after actual role-key/mask/cold-entry proof. Another different prestart fault
+closes that package, not other lanes. No refund, hidden retry or GPU-running claim.
 Scratch jointly trained branches are one model; post-fit target-fitted stacking
 still needs chronological OOF. No AGENTS/shared-control change or new authority.
 

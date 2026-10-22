@@ -34,8 +34,10 @@ LLM authoring/queue is separate elapsed, not CPU/GPU spend.
 1. Inspect exact existing dated dispatch e9da2673 and native state using strict
    source-bound private RO parsers. Earlier outcome retained1SELLstart/35GET1POST/
    retained_context_recovery_required; native FULL exists but exact dated
-   attribution/exception cause remain UNKNOWN.
-   A/execution/nightly-result-20261022-readback-v1/FINAL.json.
+   attribution now independently bound31fb11f6: ONE full SELL/pending0/unknown0.
+   Enclosing context remains active; historical exception UNKNOWN. Current
+   cycle_book_changed reproduces two later HGB registry additions.
+   A/execution/current-nightly-paper-context-recovery-20261023-v1/CONSUMER.json.
 2. Establish first cause, reproducer and smallest tested recovery. Read-only
    queries may use Paper only through named owned clients if actually necessary;
    no repeat of the same uninformative history request. Never use observe() as
@@ -44,7 +46,12 @@ LLM authoring/queue is separate elapsed, not CPU/GPU spend.
    settlement once. Preserve account/basis/envelope identity, F9 unknownHELD,
    HGBowned1/originalOct28 and R5owned3/originalOct27; no foreign adoption,
    double-counting losses, substitute intent, new capital or forced BUY.
-4. Ask concise Claude before material recovery/routing. Exercise actual native
+4. Initial21serialPASS but three actual-image SYN harness starts failed. Preserve
+   old120charged/threefailedstarts; corrected native-qualification-r1 is delegated
+   inside SAME1200active3600elapsed, <=300additional/max3fixed no-effect starts.
+   Actual dependency/temp preflight precedes native tests in the same start.
+   Only qualified native/cold/guard proof enables single-use no-order recovery.
+   Ask concise Claude before material recovery/routing. Exercise actual native
    and cold/mocked paths, retain typed fixed-category first causes, and deploy
    the exact corrected owned path/next_due with quiet launch/rollback evidence.
    No manual substitute opportunity. Installation is not a runtime fill.
@@ -60,16 +67,25 @@ LLM authoring/queue is separate elapsed, not CPU/GPU spend.
  18000lineageactive/43200elapsed includes3345.419009closedonce; new14100partitions.
   Actual native CPU/CUDA optimizer/safeIO/RNG proof before2newfits;5400seconds each,
   192epochs/131904updates/CHECKearlystop24. No pretrained expert outputs/weights.
+  V1 nativeCPU/CUDA proof passed, market calendar binding failed BEFORE labels/
+  constructors/updates. Immutablea55dc293/3373.443270lineageupper retained. ONE
+  exactcanonical/originalindexV2 bridge is delegated under unchangedfamily/caps;
+  two failedstarts retained, two firstlogicalfits only after key/mask/cold proof.
   Exact saved full100softmax allocations for same TRAIN logutility/CHECK utility/
   1-5-10bp replay, oneadaptiveINNER12cells/LATER0; not MSE or TopK substitution.
   No individual expert profitability prerequisite. No actual fit inferred from
   a dispatch file. Existing Steward coordinates one real GPU owner/two children.
-- Leibniz/Engine: NEW price-volume HGB pair/exact fixedhalf, Source3be0c1a6,
-  Data c0a88302. Frozen prospective7200lineageactive14400elapsed, native+exact
-  target-mask join400 first; literalCHECK>=63 dates must be measured, not guessed.
-  If support and native/cold codec pass:2CPUfits/256stages/oneINNER15cells/LATER0.
-  If insufficient, close NOT_READY without a hidden stock/date/minimum change.
-  A/research/current-kis100-volume-relative-strength-development-20261023-v1.
+- Leibniz/Strategy: distinct short-horizon SPY/QQQ feasibility, existing minute
+  data/priorstudy metadata first; <=600active1800elapsed/no labels-fit-GPU yet.
+  A/research/current-short-horizon-spy-qqq-feasibility-20261023-v1.
+- Averroes/Data: exact volume/warm-GRU provisional Paper-input reconstruction,
+  existing cache/ABI and minimal acquisition delta; <=600active1800elapsed,
+  metadata-only/no calls-account-private-fit-GPU yet.
+  A/data/current-volume-gru-paper-input-feasibility-20261023-v1.
+
+Price-volume family COMPLETE_FAIL be906a96/twoCPUfits/PRICEselected0/VOLUME245/
+exactCHECK72passes63/1612checks/oneINNER15cells/LATER0/alljoined/lineage2539.775582.
+ProperPASS/financeFAIL: fixedhalf==VOLUME. Preserve result, no fallback/rerun.
 
 Completed, NOT ready reruns: warm GRU39/36epochs/selected15/12/51525updates,
 CONSUMERa38153c4/592checks/oneINNER12cells/LATER0/alljoined/GPUreleased;

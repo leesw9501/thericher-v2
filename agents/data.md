@@ -37,11 +37,21 @@ A/data/current-kis100-volume-relative-strength-input-20261023-v1/CONSUMER.json.
 Source3be0c1a6 PRS3/Q3 prior5/20/63/original100axis/no zero-Q/literalduplicate/
 near-alias flag. TRAIN2740feature-calendar dates133899rows/CHECK75-5556/
 INNER43-3295/all3cohorts. TRAINaffine2759inputdates sealed before maturity/targets.
-CHECKtargetintersection46..75 only bounded, literal63 minimum UNPROVEN;
-Engine owns exact row-key/target-maskjoin beforefits, no guessed support.
+Engine later measured exactCHECK72dates5333rows, literal63 minimum PASSED;
+twoCPUfits now completebe906a96/properPASSfinanceFAIL/1612checks/alljoined.
+No guessed support or hidden minimum change.
 Actualactive301.376801of1200/alljoined/PID0/onefeaturematerialization/0targets/
 models-GPU-API-private. Knownzero volume allowed only with positive denominator;
-undefined remains unknown, no epsilon/imputation. Data producer now finished.
+undefined remains unknown, no epsilon/imputation. Data producer finished.
+
+Current Averroes package:
+A/data/current-volume-gru-paper-input-feasibility-20261023-v1,
+<=600actualactive1800elapsed, metadata-only/no API-private-label-fit-GPU.
+Concrete consumer is ONE next honest provisional Paper point from completed
+volume HGB/warm GRU: exact source/affine/history/asof/full100axis compatibility,
+retained cache throughOct21 and minimal acquisition delta/ownership/cursor.
+Fresh HGB31unknown must distinguish failure/unattempted29 from source limitation.
+No source substitution, missing-symbol imputation or new acquisition dispatch yet.
 
 ## Other Current Inputs / Closed Scopes
 

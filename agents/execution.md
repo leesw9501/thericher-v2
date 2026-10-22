@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-2026-10-23 04:00KST / Oct22 19:00UTC.
+2026-10-23 04:22KST / Oct22 19:22UTC.
 A=D:/thericher-v2/model-artifacts. Parent shared MD/Git.
 AGENTS.md owns Paper authority/risk; private values never enter logs/MD/Claude.
 No KIS_LIVE_*. Model profitability is not Paper permission.
@@ -64,8 +64,17 @@ No standing observer disable or permanent machine-idle rule.
   Source8f1c212a/imageb96a8ef8/GOd5bd1aac/input5817e3ab/vintage7d8f4fe2.
 - NightlyOct21 three accepted/full SELL fills. Oct22 exact dispatch e9da2673
   ended retained_context_recovery_required after1SELLstart/35GET1POST.
-  Native FULL exists, exact dated-dispatch attribution/exception cause UNKNOWN.
-  A/execution/nightly-result-20261022-readback-v1/FINAL.json. No blind replay.
+  NEW31fb11f6 strictRO links ONE full SELL/pending0/unknown0 to that exact dated
+  request. Enclosing context remains active/three positive portfolio owners;
+  no new unknown broker order inferred. Current pure cycle_book_changed is
+  reproduced from two later HGB registry additions, historicalexceptionUNKNOWN.
+  A/execution/current-nightly-paper-context-recovery-20261023-v1/CONSUMER.json.
+  21serialPASS, three image harness starts failed before qualification. No API/
+  credentials/privatewrites/Taskmutations/recovery. Native-qualification-r1 now
+  delegated under SAME1200active3600elapsed; preserve old120charged/threefailed
+  starts. ActualnativeSYN/cold/guard required before single-use NO-ORDER original
+  context recovery. Scheduled routing must not enable that patch for arbitrary
+  future requests. Original nightly TaskReady/nextOct23 14:50UTC unchanged.
 - F9 one original submit attempt/no retained ack/fill/UNKNOWN/reservationHELD.
   Original pending/account/basis/date-bound history14:05:56..14:06:02UTC used
   1POST1GET/0rows-candidates, not non-send/closure. No substitute/reset/adoption/

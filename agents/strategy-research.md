@@ -27,12 +27,15 @@ New retrospective Source adopted ClaudeREVISE: snapshot representation only,
 not causal/PIT/CAclean/historical tradability/alpha. No imputed arrivals/CA or
 date/key filtering. Old source/debits unchanged; no need to rerun that recipe.
 
-Next concrete Source3be0c1a6 volume-relative-strength mechanism20NumPychecks:
+Concrete Source3be0c1a6 volume-relative-strength mechanism20NumPychecks:
 A/research/current-kis100-volume-relative-strength-proposal-20261023-v1/CONSUMER.json.
 Native close*volume is activity proxy only; PRS3 and Q3 windows5/20/63, same
 source/index/known/session masks, no epsilon/volume-imputation. Paired PRICE vs
-VOLUME HGB/fixedhalf proposal, no numerical GO yet. Data now materializes
-denominator/common-whole-date/near-alias support and TRAIN-input affine at
+VOLUME HGB/fixedhalf actual family now COMPLETE_FAILbe906a96: exactCHECK72,
+twoCPUfits/PRICEselected0/VOLUME245/properPASS/financeFAIL/1612checks/alljoined.
+Fixedhalf equalsVOLUME; no strict improvement or winnerfallback. At10bp/leg
+growth/DDpercentinitialNAV+1.92546/1.39856 versus uniform-0.80050/1.29784.
+Adaptive reuseddata, not independentalpha or Paperprofit. Packet remains at
 A/data/current-kis100-volume-relative-strength-input-20261023-v1.
 Actual SourceClaudeREVISE retained; no causal-volume or economic-capacity claim.
 
@@ -49,7 +52,16 @@ change/fine-tuning ban/individualbranchprofit prerequisite. Parent ACCEPTED
 separate numerical18000lineageactive43200elapsed, actualnativeCUDA/optimizer/
 safeIO proof first/twofits/oneadaptiveINNER12cells/LATER0. Socrates owns
 current-joint-moe-economic-development-20261023-v1. Source CPU proof is NOT
-actualGPU/marketperformance; no such outcome claimed yet.
+actualGPU/marketperformance. V1 nativeGPU SYN passed but a calendar-view hash
+mismatch stopped market BEFORE labels/constructors/updates; a55dc293 closed,
+no numerical performance. ONE explicit canonical/global index bridge V2 now
+delegated under unchangedfamily/caps/science, old launches/debits preserved.
+
+Leibniz now owns source-only distinct short-horizon SPY/QQQ feasibility:
+A/research/current-short-horizon-spy-qqq-feasibility-20261023-v1.
+<=600active1800elapsed, existing minute/study metadata first, no labels/newfit/
+GPU. Exact available target/window/asof/costs/purge/split or concrete rejection;
+do not repeat old LSTM/TCN/LightGBM/rule studies or create a reading-list gate.
 
 ## Completed Mechanisms / Do Not Rescue
 

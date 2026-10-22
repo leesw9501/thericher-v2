@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 04:00KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 04:22KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/splits/training/replay, not deterministic broker
 risk. Parent MD/Git. AGENTS.md owns policy. An MD is not a running worker.
 
@@ -22,20 +22,31 @@ SYNtechnical attempts/12updates9constructors perdevice inside900. Then twofits/
 LATER0. Data exactModern46861c1b/ABIa5027850/raw-factor-context/affines/asof/purges;
 verify raw/scaled/clipped semantics, no double scaling. Source CPU250native+
 96coldpredicates/4updates/31.926431active is NOT GPU or market proof.
-No actual new fit inferred from the dispatch. Existing Steward allocates measured
-headroom/singleowner/two disjoint child paths, not a new approval platform.
+V1 actual native CPU/CUDA SYN passed but market workers failed at calendar-view
+binding BEFORE labels/model constructors/updates. a55dc293/3373.443270lineageupper,
+alljoined/leaseReleased; native SYN is not market training. Parent authorized
+ONE mechanical V2 bridge within SAME18000/43200: canonical3205 versus original4992
+calendar views explicitly mapped, globalH20phase/purges/keys/seed/model unchanged.
+Retain old two failed launches; two new starts may perform the original two
+logical fits only after real metadata/mask/cold proof. No refund/old result edit.
+V2-RELEASE-BOUND.json records this, not an ongoing GPU claim. Existing Steward
+allocates measured headroom/singleowner/two disjoint children, no approval platform.
 
-Leibniz owns NEW price-volume CPU HGB/fixedhalf family:
+Price-volume CPU HGB/fixedhalf family COMPLETE_FAIL be906a96:
 A/research/current-kis100-volume-relative-strength-development-20261023-v1.
 Source3be0c1a6/PROPOSALca46de6d, Data c0a88302/58743predicatechecks/301.376801active.
 PRS3/Q3 prior5/20/63, raw close*volume activity proxy, not verified economic USD.
-TRAIN2740feature/calendar dates133899rows/CHECK75-5556/INNER43-3295/all3cohorts;
-TRAINaffine2759inputdates beforematurity/labels. ExactCHECK targetintersection
-46..75 is unproven; literalmin63 must be measured before fits.
-Freeze7200lineageactive14400elapsed including actual sharedSource/Data once;
-native+target-maskjoin400 first. Ifliteralmin/native/codec/cold pass, run exact
-twoCPUHGBfits/256stages257curves/oneINNER15cells/LATER0. Otherwise NOT_READY/
-0fits; no hidden stock/date drop, rephase or minimum relaxation.
+TRAIN2740dates133899rows/exactCHECK72dates5333rows/INNER43-3295/all3cohorts;
+literalminimum63 passed, not relaxed. Two real CPU HGB fits/256stages each/
+PRICEselected0/VOLUME245/oneINNER15cells/LATER0/1612checks/allactorsjoined.
+ProperPASS/financeFAIL: fixedhalf==VOLUME, PRICE==uniform; no fallback or regrade.
+At10bp/leg growth/DDpercentinitialNAV: VOLUME/fixedhalf+1.92546/1.39856,
+PRICE/uniform-0.80050/1.29784. Lineage2539.775582upper, noGPU/trainingrerun.
+Leibniz now source-only short-horizon SPY/QQQ feasibility using existing metadata,
+first checking prior intraday studies. No new labels/fits/GPU; concrete distinct
+target/window/cost/split/purge hypothesis or rejection, not a model-name list.
+Averroes separately checks exact retained inputs needed for a next provisional
+volume/warm-GRU Paper point; no source substitution/imputation or numerical GO.
 
 ## Newly Completed / No Repeat
 

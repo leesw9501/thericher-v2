@@ -48,10 +48,16 @@ Sourcee1c07642/CONTRACT572e487/PARENT-CAMPAIGN. Two scratchjoint GRU+MLP+linear
 learnedcontextgate vsfixedthird/directlogutility, not pretrainedstacking.
 18000lineageactive/new14100partitions/43200elapsed includes3345.419009oldonce;
 nativeactualCPU/CUDAoptimizer/safeIO proof before2fits/5400seconds each/
-192epochs/oneINNER12cells/LATER0. Freshheadroom/singleexistingleaseowner/
-twoactualdisjointchildren beforeclaimingtraining. Leibniz CPUvolumeexecutor
-7200lineage/14400elapsed: Datac0a88302 ready butCHECKtargetintersection46..75/
-min63unproven, native+join first/noGPUneed.
+192epochs/oneINNER12cells/LATER0. V1 actualnativeCPU/CUDA passed but canonical
+versus fullcalendar digest mismatch stopped market before labels/constructors/
+updates; a55dc293/3373.443270lineageupper/oldtwofailedstarts preserved/alljoined/
+leaseReleased. ONE Parent-authorized V2 indexbridge inside SAME18000/43200,
+actualrolemetadata/key/mask/cold proof before two firstlogicalfits, not rerunning
+completedtraining. Freshheadroom/singleexistingleaseowner/twoactualdisjoint
+children beforeclaimingtraining.19:21UTC RTX4090 sample2percent/2119of24564MiB/
+37C; not currently training evidence. VolumeCPU COMPLETEbe906a96/twofits/
+properPASSfinanceFAIL/1612checks/alljoined/noGPU. Leibniz now short-horizon
+SPY/QQQ feasibility/no new labels-fit-GPU yet; Data exact Paperinput needs.
 
 ## Resource Policy / Next Allocation
 
