@@ -6,36 +6,33 @@ AGENTS.md owns policy. Parent MD/Git. A role MD/assignment is not a running fit.
 
 ## Current Allocation
 
-Noether is the single GPU resource coordinator and owns NEW9-fit preparation:
-A/research/current-h5-chronological-expert-gate-development-20261024-v1.
-Four raw GRUs/four factor HGBs/one OOF depth2 gate, distinct physical prefix
-views/output paths. Original0e7a1baf/4b611fee closed after native proof/metadata failure;
-no active market fit observed yet. Actual GPU19:16UTC:9percent/2305MiB used/21834MiB free,
-not proof of an owned numerical worker.
+Noether single GPU coordinator. Chronological expert/gate continuationfd6ce8aa/Consumer1d1db187/Delivery5447d9f8
+is COMPLETE_FAIL:9marketfits/21cells, four GRUs epochs/selected47/23,29/5,
+24/0,27/3,total15110updates;4HGBfixed128+depth2gate1. At10bp Gate
+-.1221%growth/.7843%DD, rawGRU+.5037/1.4682,HGB-2.9058/3.1854.
+Gate9cohorts cash6/GRU3; growthfailed, lower exposure is not alpha.
+256checks/107pins/alljoined/leaseReleased;2162.283734of14400activeupper incl
+old1102.280426once. Original0e7a metadata failure/debits preserved; recovery
+added0SYNfit/updates. No completed training repeated/Paper model changed.
 
-Original nativeGPU4updates+allRNGcold PASS; CPU HGB/tree1SYNfit each/export
-passed then numpyint64 diagnostic JSON fault, CPUcold unrun. Marketfits/
-OOF-CHECK-INNER/cells0. Alljoined/leaseReleased,1102.280426active retained.
-NEW fixed-output technical continuation0SYNrefits/missingcold first, then only
-9unattempted marketfits. Originaldeadline02:56:18UTC/14400active/28800elapsed,
-including Data297.220779
-plus feasibility191.012160 ONCE. Four GRUs <=17000updates each/68000total,
-max100/pat24;4HGB fixed128;gate1;nativeGRU<=4updates/HGB1SYNfit/gate1SYNfit;
-21financialcells/one adaptiveINNER43intake/LATER0/0post-update retries.
-No old warm starts, held OOF expert mount or winner/checkpoint rescue.
-Real native optimizer/tree solver/checkpoint/codec proof precedes fits.
+Noether now owns NEW stock-level score-fusion preparation at
+A/research/current-h5-oof-score-fusion-development-20261024-v1.
+Reuse sealed expert OOF/final forecasts0expertrefits/forwards. Propose3fits:
+Ridge21features, small MLP21, matched same-initial MLP with two score channels
+zeroed (feature-only ablation). Inputs2expert scores+factor10+context9,
+predictions combined BEFORE fixed TopDecile allocation. Chronological
+metaFITfirst200/metaCHECKlast51 of251phase dates, exact target-maturity purge
+and FIT-only affine required before source freeze. New finite4800active/
+14400elapsed/native solver/checkpoint proof/trials/cells/strongestkill to be
+frozen before numerics; no current market/GPU fit claimed. Adaptive reused
+data, no independent alpha or global Paper profit gate.
 
-Native first serial; at most two independent GRU workers after measured peak/
-free resources support7GiB per worker plus4GiB desktop/driver reserve.
-CPU HGB disjoint folds may run concurrently with actual RAM/CPU headroom.
-Per-child Source/data/split/PID/start/lease/output/budget identity required.
-Co-tenancy timings are not isolated benchmarks. Do not age-reclaim unknown
-ownership, kill user apps or require an application-name allowlist.
-
-Slow1056b4d3e79 and phaseTCN6215d1ed are CLOSED_FAIL/alljoined/released, not
-ready repeats. Selected Paper9409 unchanged. Project has first GPU priority
-including personal apps, but no dummy/repeated training for utilization.
-Execution emergency preempts safely; Data05:10 due is not a global GPU hold.
+Measure actual free/projected peak and desktop reserve before any child.
+Two independent useful MLP workers may share GPU only if frozen source and
+measured headroom permit; initial native/restore proofs isolated first.
+No app-name allowlist hold, user-app kill, dummy utilization or lease age
+reclaim. Execution emergency preempts safely; Data05:10 due is no GPU hold.
+Parent readiness helpers are CPU/source-only, not active numerical workers.
 
 ## Closed Workers / Never Repeat As Ready
 

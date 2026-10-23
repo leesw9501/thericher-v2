@@ -31,45 +31,32 @@ Reference is not realized native fills/net PnL/PIT/independent alpha.
 
 ## Current Research / Actual Next Action
 
-Noether owns NEW chronological expert/gate campaign preparation:
-A/research/current-h5-chronological-expert-gate-development-20261024-v1.
-Original0e7a1baf/4b611fee is CLOSED technical failure before market fits.
-Noether now owns named fixed-output technical continuation; no market fit claim. No completed training is repeated, selected Paper9409 unchanged.
+Chronological expert/gate continuationfd6ce8aa/Consumer1d1db187/Delivery5447d9f8
+is COMPLETE_FAIL:9marketfits/21cells, four GRUs epochs/selected47/23,29/5,
+24/0,27/3,total15110updates;4HGBfixed128+depth2gate1. At10bp Gate
+-.1221%growth/.7843%DD, rawGRU+.5037/1.4682,HGB-2.9058/3.1854.
+Gate9cohorts cash6/GRU3; growthfailed, lower exposure is not alpha.
+256checks/107pins/alljoined/leaseReleased;2162.283734of14400activeupper incl
+old1102.280426once. Original0e7a metadata failure/debits preserved; recovery
+added0SYNfit/updates. No completed training repeated/Paper model changed.
 
-Ready Data: Source56e5685a/Consumerb5852786/Manifest ea8ca283,12fresh prefix
-affines/11physical views/251 mature OOF phase rows. Expert containers receive
-only their exact physical prefix leaves, never original wholeTRAIN or held
-OOF labels. Independent reviewd0a415c4 found no defects; actual mounts remain
-the numerical coordinator's responsibility. Data297.220779+feasibility
-191.012160 active debit charged ONCE within14400active/28800elapsed ceiling.
+Noether now owns NEW stock-level score-fusion preparation at
+A/research/current-h5-oof-score-fusion-development-20261024-v1.
+Reuse sealed expert OOF/final forecasts0expertrefits/forwards. Propose3fits:
+Ridge21features, small MLP21, matched same-initial MLP with two score channels
+zeroed (feature-only ablation). Inputs2expert scores+factor10+context9,
+predictions combined BEFORE fixed TopDecile allocation. Chronological
+metaFITfirst200/metaCHECKlast51 of251phase dates, exact target-maturity purge
+and FIT-only affine required before source freeze. New finite4800active/
+14400elapsed/native solver/checkpoint proof/trials/cells/strongestkill to be
+frozen before numerics; no current market/GPU fit claimed. Adaptive reused
+data, no independent alpha or global Paper profit gate.
 
-Fixed9-fit family:3OOF blocks plus FINAL, each fresh raw63x6+context9 GRU and
-factor10+context9 HGB, then one depth2/minleaf32 tree selecting CASH/UNIFORM/
-RAW/HGB from chronological OOF forecasts. Four GRUs max100/pat24/17000updates
-each; four HGB fixed128stages; one gate. Shared allocations/keys/costs/masks;
-all learned normalizers and expert innerCHECK strictly prior to their OOF.
-Held OOF labels open only after block forecasts/model/affine seals. Gate
-frozen before companyCHECK; reused adaptive INNER43 is not independent alpha.
-21predeclared cost cells include fixed-half and exposure-matched uniform as
-descriptive controls, not new tunable candidates. No retries/seed/phase grid.
-
-Native solver/autograd/regularization/checkpoint-allRNG/cold restore and safe
-tree codec must pass on meaningful synthetic input before market fits.
-One GPU coordinator may start two independent ready GRUs only with measured
-headroom; CPU HGB sidecars may run independently. Original Source0e7a1baf/Consumer4b611fee/Delivery136b901a closed TECHNICAL_INCOMPLETE:
-4nativeGRUupdates/allRNGcold PASS; HGB/tree SYN1fit each/export PASS but CPU
-cold not run after numpyint64 JSON diagnostic fault. Marketfits/OOF/CHECK/
-INNER/cells0, alljoined/leaseReleased.1102.280426active kept. Noether's NEW
-technical-continuation source repairs only diagnostic int serialization and
-uses retained SYN models0refits for missingcold, then9UNATTEMPTEDmarketfits.
-Original remaining caps/deadline02:56:18UTC/21cells/olddebits unchanged.
-
-Closed latest: slowGRU1056b4d3e79/91ef9fbc36epochs/selected12, growth-.619445%/
-DD1.049780%; phaseTCN6215d1ed/e81d169959epochs/selected35, -.148271/4.162968.
-Both COMPLETE_FAIL/alljoined/released, no Paper swap or causal isolation.
-Fixed-allocation bound6bc88ba5/40SYNchecks shows constant convex growth cannot
-beat its best aligned component under linear funding/costs; risk may improve.
-Time-varying gates break that premise. Never retroactively regrade F08.
+Ready Data56e5685a/b5852786/ea8ca283,12prefix affines/11views/251OOFphase rows.
+Expert leaves exclude original wholeTRAIN and heldOOFlabels; reviewd0a415c4
+PASS with limits. Future actual GRU9409 point belongs only to05:40owner.
+Fixedallocation bound6bc88ba5 applies to constant aligned allocations, NOT
+nonlinear score fusion or time-varying gates. Old F08 failure not regraded.
 
 ## Completed Matched H5 Results
 

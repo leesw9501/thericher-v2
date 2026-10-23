@@ -52,6 +52,16 @@ slot makes that point NOT_READY/input failure, not no-signal or zero imputation.
 Repair exact same-date/63feature slots or freeze a separately reviewed future
 contract. Do not rerun the completed CPU proof or fabricate Oct23-close data.
 
+Prospective marks adapter Source3205f306/Consumerdbf5d227 ready17SYN/Ruff/
+ClaudeSOUNDlimits at
+A/data/current-h5-prospective-marks-adapter-preparation-20261024-v1.
+Exact retained capture pages -> opens[100]/closes[5,100], original69/31NaN;
+no caller arbitrary arrays/actual prices/API/measurement. Old capture host
+ENTRY_ASOF_EXPIRED_NO_START makes BYMD-only reuse invalid. Kant prepares
+separate capture-only successor for Oct31postclose, no install/call now.
+Actual preentry reference and capture producer remain dependencies, not entry
+gates or PIT/finality/netPnL qualification.
+
 ## Reused Historical Inputs / Closed Work
 
 Chronological fusion prefix Data is READY, not merely a proposed source:

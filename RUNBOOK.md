@@ -11,7 +11,7 @@ bank reset or profit expansion. Preserve unrelated %SystemDrive%/.
 
 2026-10-24 04:20KST: ONE company outcome gru-h5-next-session-paper-readiness-v1.
 Actual dated Data/point/final controller readiness unfinished. Primary H5 code
-770436c pushed; most recent docs checkpoint41d5260. Parent owns current MD/Git.
+770436c pushed; most recent docs checkpoint06ed829. Parent owns current MD/Git.
 Consumed installers/probes/recovery workers are evidence, never blind commands.
 
 ## Actual Owned Due / Status
@@ -95,6 +95,17 @@ accepted Data/point/join/reference, new compiler-r2/generated/dated-actual-r1.
 ALREADY PRESENT accepted reference required; missing-reference fallback is NOT
 qualified. No model/refreeze/release/Task effect; no owner competition/overwrite.
 
+Dated pure qualifier Source4c45e8ea (independent review pending):
+D:/thericher-v2/model-artifacts/execution/current-h5-dated-native-qualification-preparation-20261024-v1.
+Default INERT, no actual candidate reads. Exact --actual command in CONSUMER
+requires future actual candidate/native hashes AFTER bridge build. Pure
+runtime.sources/binding only, never runtime.run/custody/private/order. Reuse
+1fe7 body/image proof with explicit changed binding; not actual OSowner/fill.
+Readiness4c7ba027/5d81d565 PARENT-STEPS at
+D:/thericher-v2/model-artifacts/execution/current-h5-dated-release-readiness-20261024-v1.
+H5 tasks.ps1 has Library/Owner/Readback, NOT Install. Import Library then
+inherited InstallOwned with H5 overrides. Exit/readback before entry/readback.
+
 Current compiler:
 D:/thericher-v2/model-artifacts/execution/current-h5-bounded-owned-exit-drain-preparation-20261024-v1/compiler-r2.
 Source30ab13c8/Consumer47afb5cd;48Python/81countercombos/26Scheduler mocks/
@@ -137,11 +148,33 @@ Never run recovery-capable observe() as an offline reader.
 
 ## Research / No Duplicate Work
 
+Chronological expert/gate continuationfd6ce8aa/Consumer1d1db187/Delivery5447d9f8
+is COMPLETE_FAIL:9marketfits/21cells, four GRUs epochs/selected47/23,29/5,
+24/0,27/3,total15110updates;4HGBfixed128+depth2gate1. At10bp Gate
+-.1221%growth/.7843%DD, rawGRU+.5037/1.4682,HGB-2.9058/3.1854.
+Gate9cohorts cash6/GRU3; growthfailed, lower exposure is not alpha.
+256checks/107pins/alljoined/leaseReleased;2162.283734of14400activeupper incl
+old1102.280426once. Original0e7a metadata failure/debits preserved; recovery
+added0SYNfit/updates. No completed training repeated/Paper model changed.
+
+Noether now owns NEW stock-level score-fusion preparation at
+A/research/current-h5-oof-score-fusion-development-20261024-v1.
+Reuse sealed expert OOF/final forecasts0expertrefits/forwards. Propose3fits:
+Ridge21features, small MLP21, matched same-initial MLP with two score channels
+zeroed (feature-only ablation). Inputs2expert scores+factor10+context9,
+predictions combined BEFORE fixed TopDecile allocation. Chronological
+metaFITfirst200/metaCHECKlast51 of251phase dates, exact target-maturity purge
+and FIT-only affine required before source freeze. New finite4800active/
+14400elapsed/native solver/checkpoint proof/trials/cells/strongestkill to be
+frozen before numerics; no current market/GPU fit claimed. Adaptive reused
+data, no independent alpha or global Paper profit gate.
+
+
 Slow-GRU1056b4d3e79/91ef9fbc closedFAIL36epochs/selected12/alljoined/released;
 no rerun. PhaseTCN6215d1ed/e81d1699 CLOSED_FAIL59epochs/selected35/2065updates,
 3newcells/9bytecached/alljoined/leaseReleased, growth-.148271%/DD4.162968%at10bp.
-Noether SOURCE/SYN-only chronological OOF-prefix feasibility and Godel fixed
-allocation blend bounds are current prep, not running fits/GPU jobs.
+Chronological9fits are CLOSED; no repeat of OOF-prefix/native preparation.
+Current NEW stock-level score-fusion preparation is described above.
 Driver headroom measured, no app-name GPU hold. No Paper candidate swap.
 Closed seeds317002b1/TCNff022d49/halfR3f08cf819/leanSYN76c7e6db remain closed.
 Do not run unused halfhelper44cd or refit controls; all history in Engine/Git/A.

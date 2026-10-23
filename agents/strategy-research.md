@@ -18,12 +18,18 @@ funding/linear costs/marks, constant convex allocation growth cannot exceed
 its best component; risk may improve. Nonlinear admission/time-varying gates
 break the premise. No actual campaign attestation or old F08 regrade.
 
-The actionable mechanism is now Noether's chronological GRU/HGB/depth2 gate,
-using READY prefix Data56e5685a/b5852786 and separate OOF labels. Godel's current
-sidecar is narrow independent bridge-v3 path-order review, not a new research
-platform. Point-v2 source/mock regression1fb7b63b passed; actual Scheduler
-default omission is Parent/Kant's installation repair, not Research authority.
-Selected GRU9409/Paper risk unchanged. No claim that preparation is a fit.
+Chronological expert/gate mechanism is now consumed1d1db187/5447d9f8:
+9fits/21cells/alljoined, Gate-.1221%growth/.7843%DD at10bp versus
+rawGRU+.5037/1.4682,HGB-2.9058/3.1854. Cash6/GRU3 of9cohorts,
+growthFAIL/lowerexposure notalpha. No old criterion regrade or Paper swap.
+
+Next actionable hypothesis is stock-level SCORE fusion, not another cohort
+winner tree. Noether prepares Ridge/MLP/feature-only matchedMLP on sealed OOF
+expert predictions+factor/context. Pre-rank score composition can change asset
+ordering, so the constant-allocation convex bound does not prove impossibility.
+No new fits yet; exact chronology/OOFaffine/targetpurge/finite Source/native
+proof and strongestkill precede numerical work. Godel current independent
+dated-qualifier review is an invoked capability, not a new durable team.
 
 ## Consumed Mechanisms / Do Not Duplicate
 

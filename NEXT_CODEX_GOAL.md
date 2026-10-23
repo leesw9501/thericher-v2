@@ -81,15 +81,30 @@ growth-.148271%/DD4.162968% at10bp,3newcells/9bytecached/alljoined/leaseReleased
 Conditional22CHECK/missing4808-4888 limits stay, no causal/Paper swap claim.
 Prefix Data56e5685a/b5852786/ea8ca283 READY on M:12prefix affines/11views/
 251OOFphase rows, separate heldlabels/expertleaf allowlist, independent review
-d0a415c4 PASS with limits. Noether owns NEW9-fit source/native preparation at
+d0a415c4 PASS with limits. Closed chronological9-fit family at
 A/research/current-h5-chronological-expert-gate-development-20261024-v1:
 4rawGRU/4factorHGB/one chronological depth2 gate;21costcells,
 14400active/28800elapsed incl Data+feasibility once, no retries/LATER.
-Original0e7a1baf/4b611fee closed TECHNICAL_INCOMPLETE:4SYNGRUupdates/cold
-PASS, HGB/tree SYN1fit each/export PASS then metadata numpyint64 JSON fault;
-marketfits/intakes/cells0/alljoined/leaseReleased,1102.280426active retained.
-Noether owns new fixed-output technical continuation,0SYNrefits then only
-unattempted9marketfits within original remaining caps/deadline. No Paper swap.
+Chronological expert/gate continuationfd6ce8aa/Consumer1d1db187/Delivery5447d9f8
+is COMPLETE_FAIL:9marketfits/21cells, four GRUs epochs/selected47/23,29/5,
+24/0,27/3,total15110updates;4HGBfixed128+depth2gate1. At10bp Gate
+-.1221%growth/.7843%DD, rawGRU+.5037/1.4682,HGB-2.9058/3.1854.
+Gate9cohorts cash6/GRU3; growthfailed, lower exposure is not alpha.
+256checks/107pins/alljoined/leaseReleased;2162.283734of14400activeupper incl
+old1102.280426once. Original0e7a metadata failure/debits preserved; recovery
+added0SYNfit/updates. No completed training repeated/Paper model changed.
+
+Noether now owns NEW stock-level score-fusion preparation at
+A/research/current-h5-oof-score-fusion-development-20261024-v1.
+Reuse sealed expert OOF/final forecasts0expertrefits/forwards. Propose3fits:
+Ridge21features, small MLP21, matched same-initial MLP with two score channels
+zeroed (feature-only ablation). Inputs2expert scores+factor10+context9,
+predictions combined BEFORE fixed TopDecile allocation. Chronological
+metaFITfirst200/metaCHECKlast51 of251phase dates, exact target-maturity purge
+and FIT-only affine required before source freeze. New finite4800active/
+14400elapsed/native solver/checkpoint proof/trials/cells/strongestkill to be
+frozen before numerics; no current market/GPU fit claimed. Adaptive reused
+data, no independent alpha or global Paper profit gate.
 
 Closed: new seeds105/106317002b1 both negative; only104 positive.
 TCN continuationff022d49 actual47totalepochs/selected23, growth-.909557%/

@@ -139,19 +139,35 @@ A/data/current-h5-chronological-fusion-prefix-views-20261024-v1.
 labels separate/expert leaves exclude wholeTRAIN. Independentd0a415c4 PASS
 with limits, not actual fitter-mount attestation. No new acquisition needed.
 
-Noether owns NEW9-fit source/native preparation at
+Closed chronological9-fit family at
 A/research/current-h5-chronological-expert-gate-development-20261024-v1:
 3OOFblocks+FINAL,4rawGRU/4factorHGB/one depth2 CASH-UNIFORM-RAW-HGB gate.
-Original numerical Source0e7a1baf/Consumer4b611fee/Delivery136b901a closed
-TECHNICAL_INCOMPLETE: nativeGRU4updates/allRNGcold PASS; HGB/tree SYNfit1each
-nontrivialsplit/export PASS, numpyint64 metadata JSON failed before CPUcold.
-Marketfits/OOF/CHECK/INNER/cells0, alljoined/leaseReleased;1102.280426active
-kept. Noether owns named fixed-output technical continuation: retained SYN
-models0refits, int diagnostic repair/missingcold first, then only9UNATTEMPTED
-marketfits. Preserve original14400active/28800elapsed deadline02:56:18UTC/
-21cells/allolddebits once. No new completed-fit retry or Paper9409 change.
-Godel narrow bridge-v3 review; Aquinas dated-release readiness; Kant measured
-Task-default repair. No new permanent roles/agent platform.
+Chronological expert/gate continuationfd6ce8aa/Consumer1d1db187/Delivery5447d9f8
+is COMPLETE_FAIL:9marketfits/21cells, four GRUs epochs/selected47/23,29/5,
+24/0,27/3,total15110updates;4HGBfixed128+depth2gate1. At10bp Gate
+-.1221%growth/.7843%DD, rawGRU+.5037/1.4682,HGB-2.9058/3.1854.
+Gate9cohorts cash6/GRU3; growthfailed, lower exposure is not alpha.
+256checks/107pins/alljoined/leaseReleased;2162.283734of14400activeupper incl
+old1102.280426once. Original0e7a metadata failure/debits preserved; recovery
+added0SYNfit/updates. No completed training repeated/Paper model changed.
+
+Noether now owns NEW stock-level score-fusion preparation at
+A/research/current-h5-oof-score-fusion-development-20261024-v1.
+Reuse sealed expert OOF/final forecasts0expertrefits/forwards. Propose3fits:
+Ridge21features, small MLP21, matched same-initial MLP with two score channels
+zeroed (feature-only ablation). Inputs2expert scores+factor10+context9,
+predictions combined BEFORE fixed TopDecile allocation. Chronological
+metaFITfirst200/metaCHECKlast51 of251phase dates, exact target-maturity purge
+and FIT-only affine required before source freeze. New finite4800active/
+14400elapsed/native solver/checkpoint proof/trials/cells/strongestkill to be
+frozen before numerics; no current market/GPU fit claimed. Adaptive reused
+data, no independent alpha or global Paper profit gate.
+Dated qualifier4c45e8ea is source-ready; Godel independently reviews it before
+actual candidate use. Aquinas readiness5d81d565 clarifies Library+InstallOwned,
+not a nonexistent Install mode. Marks adapter3205/dbf5 ready17SYN, but old
+capture host ENTRY_ASOF_EXPIRED_NO_START prevents a simple BYMD change;
+Kant prepares a separate capture-only successor, never an entry gate.
+No new permanent role/platform.
 
 Closed actual results, 10bp EACH leg; growth/DD percentages of initial research
 NAV on reused INNER, not independent alpha/Paper PnL:
@@ -172,7 +188,7 @@ Older closed families remain in Git/immutable A and Engine's compact index.
 
 ## Verification / Recovery
 
-Latest pushed checkpoint41d5260. Current fresh primary authority:
+Previous integrated checkpoint06ed829; use Git log for latest hash. Current fresh primary authority:
 A/verification/current-h5-owned-exit-drain-integration-20261024-v1/AUTHORITY.json
 SHA056c456a:560serial/18795fullPASS25skip/8actualworkers/originalhelper33507exit0,
 current C:/trpy/runs/r-a93980b9 and lease absent/Ruff/threeCompose PASS,
