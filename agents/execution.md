@@ -1,18 +1,28 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-2026-10-23 11:36KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
+2026-10-23 21:50KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
 AGENTS.md owns Paper authority, one original cash-tenth and deterministic risk.
 Never KIS_LIVE_* or private/raw/secret output; modelprofit is not permission.
 
 ## Current Company / Actual Model Point
 
-Typed controller is still NOT installed. Parent finalSource8c5aeb71 closes
+Typed controller is NOW installed: actual exit-first/entry deployment34c24846 at
+A/execution/current-joint17-weight-owned-runtime-20261023-v1/parent-release-r2/CONSUMER.json.
+RELEASE7861b82f/Source8c5aeb71/image75df0968/input01e6ea40/policy11b5657c.
+Two quiet tasks Ready, fresh separate definition/ACL readbacks;63old XML/ACL
+unchanged,0manualTaskstarts/API/orders. Same .005 ORIGINAL cohort/sharedtenth,
+F9 UNKNOWN/HELD unchanged. Entry Oct24 00:30..01:00KST/ownedexitNov20 05:45KST.
+Fresh39Scheduler mocks/exact540+7source/1382primary/image/date passed;
+ClaudeSOUNDlimits53772d03/independent419b2e6e. Installation is not a fill.
+Aquinas owns source-safe current results; Parent integrates/Git. The previous
+preparation facts below retain their historical proof limits, not a no-install hold.
+Parent finalSource8c5aeb71 closes
 bootstrap options/entry/cwd and proven sealed-bootstrap lexical false conflicts;
 540+7hashes/63focusedPASS/independent SOUND_WITH_LIMITS3positive12negative.
 Nash actual current full admission2f55166d PASS:6source-bound CUA controls/web,
-one5.765s snapshot/alljoined/0private-API-Task effects. Parent later owns
-RELEASE/install/readback. No schedule expansion/manual Task/API in this scoped
-heartbeat. Native/risk/quiet bodies unchanged; no new fill/runtime inference.
+one5.765s snapshot/alljoined/0private-API-Task effects at that old checkpoint.
+Parent installation above supersedes preparation-only status. Native/risk/quiet
+bodies unchanged; no new fill/runtime inference.
 Evidence A/execution/current-joint17-weight-owned-runtime-20261023-v1/
 deployment-r4/source8c-actual-admission-r1/CONSUMER.json. F9 remains UNKNOWN/HELD.
 H5 coexistence263f53f0 is source-only container/attachment preparation with

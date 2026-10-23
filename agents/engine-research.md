@@ -30,6 +30,20 @@ installedReady/neverrun entryOct23 13:45..14:15UTC/H20ownedexitNov19>=20:45.
 Nativebodybd39e96b/d9ad7768 byteidentical, finalguard19/phase8/cold/readback;
 finalhash notfullynativeexecuted. One .005ORIGINALbasis/sharedtenth, not fill.
 
+## New Assigned Matched Comparison
+
+Oct23 21:50KST: Noether owns
+A/research/current-shared-lag-vs-gru-h5-development-20261023-v1.
+Consume ready proposal772776ed and existing exact H5 Data28d7ed8f; separately
+freeze matched two-fit SharedLag63-FiLM versus GRU raw-encoder contract,
+native optimizer/checkpoint proof and actual resources before dispatch.
+No finished fit is rerun;44epoch ed4a596d and three-seed preemption stay closed.
+One GPU coordinator, measured reserved/driver memory and desktop reserve;
+useful CPU preparation and CUDA fitting independent of installed Paper tasks.
+IO prototype0fcda9ea is future-only until native/parity proof, not a reason to
+delay useful research or claim measured speedup. Current assignment is
+preparation, not evidence that fitting is already running. Parent sharedMD/Git.
+
 ## Completed Joint / Concentration Models
 
 JointMoE a4a7b041 COMPLETE:

@@ -2,16 +2,20 @@
 
 ## Current Reality
 
-2026-10-23 12:35KST /03:35UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-23 21:50KST /12:50UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
 decision currently required. NEVER read/route KIS_LIVE_* or enable real money,
 public exposure or paid commitments. Preserve unrelated %SystemDrive%/.
 
-ONE company outcome remains native-target-weight-paper-consumer-v1.
-Typed code/native transport are complete; new quiet controller release and
-installation are NOT complete. A test, MD, helper or future due is not closure.
+native-target-weight-paper-consumer-v1 is COMPLETE for typed native-path evidence
+and owned readiness: actual quiet exit-first/entry installation and separate
+definition/ACL readbacks passed. ONE next company outcome is
+joint17-first-session-runtime-attribution-v1. Installation is NOT a submit/fill.
+Parent owns integration/Git; Noether prepares the new matched temporal-encoder
+campaign and coordinates GPU, Aquinas reads actual Paper evidence, Pauli's
+independent deployment review is complete. Preparation is not running training.
 
 ## Actual Paper / Due
 
@@ -52,6 +56,22 @@ inventory. Fresh quote/account/orderability and exact unknown reconciliation
 precede effects. No manual final Task start to prove readiness.
 
 ## Typed Weight / Deployment
+
+CURRENT ACTUAL deployment34c24846 at
+A/execution/current-joint17-weight-owned-runtime-20261023-v1/parent-release-r2/CONSUMER.json.
+Source8c5aeb71/RELEASE7861b82f/image75df0968/input01e6ea40/policy11b5657c.
+Exit installed FIRST, then entry; both Ready/never manually started, separate
+readbacks PASS. All63 original task XML/ACL hashes unchanged; two new tasks.
+Entry Oct24 00:30..01:00KST; conditional owned exit Nov20 05:45KST onward.
+Same joint17-Oct23-v1/.005 ORIGINAL gross cohort inside the ONE initial tenth;
+F9 original UNKNOWN/HELD, owned R5/HGB/nightly identities unchanged.
+Exact540+7source/image/date/input and1382primarysource/control pins revalidated;
+fresh39Scheduler mocks/independent419b2e6e/ClaudeSOUNDlimits53772d03.
+No Task start, credentials, broker/API/order or new model forward during install.
+Per-effect actual owner/admission/fresh quote/funds/risk remain mandatory. Future
+actor coexistence must bind real frozen sources, not a generic Research exemption.
+The following preparation history is superseded ONLY for installation status;
+its proof-transfer limits and original failures remain retained.
 
 Main pushed7f3d6e4/c97cfe6, test-onlydfb14ec, doc checkpointc7a07f1.
 Inert research/model_paper_weights.py sourceb165ef77: full100/known69, exact
@@ -114,7 +134,7 @@ ownership/source revalidation, not another operator approval. Nash separately
 prepares precise H5 research actor capability only after its Source is frozen,
 so independent research is not mistaken for private custody writing.
 
-PROPOSED, NOT installed: joint17-Oct23-v1/.005ORIGINALgross, entry Oct24
+Former proposal, NOW installed above: joint17-Oct23-v1/.005ORIGINALgross, entry Oct24
 00:30..01:00KST /Oct23 15:30..16UTC; conditional exit Nov20 05:45KST /
 Nov19 20:45UTC.8entryvisits/atmost8positions/8exitvisits/2pending-firstrecoveries;
 69proposals are partial coverage, not69fills. Keep source/bank/counters/identity.
@@ -218,24 +238,20 @@ adoption in a NEW campaign. No old-study rewrite or another standing worker.
 Kant completed temporal-expert proposal772776ed: shared-lag63/288rawencoder
 params/rank<=6,17CPUchecks/24Parent-rehashed pins/alljoined/0marketfits-GPU.
 Audit verifies actual patch6/mixer3/attention5fits; no global DLinear first-use.
-Next Engine may freeze a matched two-fit raw-encoder comparison; no fit/alpha
-or need for another human approval inferred from this ready proposal.
-All assigned numerical/proposal/prototype workers are now joined. Standing
-Windows tasks keep their own due times; the app heartbeat was one-shot only.
-Company typed deployment remains unfinished; staged effect-disabled release
-is not installed readiness. Do not advance the company goal from these packages.
+Noether now owns a NEW matched two-fit raw-encoder comparison under
+A/research/current-shared-lag-vs-gru-h5-development-20261023-v1, with actual
+contract/native/resource checks before fits. Old completed numerical/proposal/
+prototype workers are joined; no new running-fit claim until runtime evidence.
+Standing Windows tasks own due times; no foreground session wait/app follow-up
+chain. Typed deployment readiness is complete above, not from these packages.
 
 The obsolete Oct21/22 app heartbeat automation was deleted; existing Windows
 workers/schedules were not deleted. Source-safe Scheduler readback still shows
 nightly Ready/Oct23 14:50UTC, R5 exit Oct27 19:45UTC, F9 nextNov17 20:45UTC.
 Original NAS task remains Disabled. These facts do not establish new fills.
 
-Leibniz now owns independent current-capped-seed-ensemble-h20-development-20261023-v1:
-THREE prospective scratch seeds/same10percent-cap architecture/fixed-third
-blend, no best-seed fallback. Batch16 native CPU/CUDA pace and resource proof
-before device choice/concurrency,7200active/28800elapsed/18cells/LATER0.
-This is preparation, not evidence of a running fit or GPU training. Old failed
-study stays closed. One Steward resource owner; no dummy/duplicate training.
+The old three-seed campaign is closed/resource-preempted, not a ready rerun.
+One current Steward resource owner is Noether; no dummy/duplicate training.
 
 Next-date Data Source2c91d1a7/consumer13603b66 and deployment80f486ff COMPLETE
 for readiness ONLY. Exact one-shot thericher-kis-paper-oct26-model-input-refresh-20261023-v1

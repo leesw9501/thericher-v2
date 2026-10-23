@@ -6,7 +6,13 @@ Role memory/dispatch/START is not an active GPU process.
 
 ## Current Resource Facts
 
-Current coordinator Leibniz. Socrates LLM capacity failure did not stop the old
+Current coordinator is Noether for the NEW matched temporal-encoder campaign
+current-shared-lag-vs-gru-h5-development-20261023-v1. Check exact actual lease/
+PID/start/campaign and measured reserved/driver headroom before dispatch;
+assignment alone does not prove a running fit. Parent Joint17 two-task
+installation is complete34c24846, not a Research/GPU permission hold. Frozen
+actual actor descriptors are needed only for real coexistence at effect time.
+Previous coordinator Leibniz completed its work. Socrates LLM capacity failure did not stop the old
 capped dispatcher; its b611eb7e fit completed and was recovered without rerun.
 Latest3seed campaign9e5f6f0a/Source11be7847 actually ran3concurrent CUDA fits:
 25epochs/4300updates each. Driver free682MiB breached4096MiB reserve despite

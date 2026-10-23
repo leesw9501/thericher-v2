@@ -15,17 +15,29 @@ Preserve unrelated untracked %SystemDrive%/ and other owners' work.
 
 Oct23 02:36UTC: obsolete Oct21/22 Codex app heartbeat `automation` was deleted.
 This did not delete or modify Windows tasks. No replacement follow-up chain.
-Current typed controller Source8c5aeb71 remains preparation-only/not installed;
-do not run its Install mode from this scoped follow-up. Source-bound final
-actor admission2f55166d PASS is current only; parent RELEASE/install remain separate.
+That one-shot scope has ended. On Oct23 21:50KST the current human-authorized
+deployment installed the exact two typed quiet tasks, Source8c5aeb71 and
+RELEASE7861b82f. Source-bound actor admission2f55166d remains current-only,
+not future admission or a fill. Do not rerun installation or manually start tasks.
 Exact evidence: A/execution/current-joint17-weight-owned-runtime-20261023-v1/
 parent-bootstrap-boundary-r1/CONSUMER-R3.json and
 deployment-r4/source8c-actual-admission-r1/CONSUMER.json.
-parent-release-r1/RELEASE-CANDIDATE.json is staged allow_execute:false, not an
-effect-capable RELEASE.json or an installed Task. Five exact refs verified;
-39current Scheduler mocks/6unchanged quiet body files transfer only their scope.
-Later delegated deployment must recheck date/source/owner and actual resources;
-no new operator permission requirement is created by this heartbeat's scope.
+parent-release-r1/RELEASE-CANDIDATE.json remains the immutable old staged record.
+Current RELEASE.json7861b82f and parent-release-r2/CONSUMER.json34c24846 prove
+exit-first/entry install and separate readbacks; all63 old XML/ACL unchanged.
+Fresh39Scheduler mocks/540+7source and1382primary pins/dated input/image passed;
+independent419b2e6e and ClaudeSOUNDlimits53772d03. No Task/API/order start.
+Entry Oct24 00:30..01:00KST, conditional owned exit Nov20 05:45KST onward.
+Native fresh owner/admission/quotes/funds/risk and exact pending recovery remain
+mandatory. No further operator approval is required for delegated private work.
+
+Current source-bound Joint17 readback only:
+```powershell
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-joint17-weight-owned-runtime-20261023-v1/tasks.ps1 -Mode Readback -Phase entry -SourceSha256 8c5aeb71e96797e56b8d2ee93502b5fce281063c14a0f122dc03436e2da7a1fe -ReleaseSha256 7861b82f552049cf2026b95dc7891838bd0e184793f6c55caa48782ec0516626
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-joint17-weight-owned-runtime-20261023-v1/tasks.ps1 -Mode Readback -Phase exit -SourceSha256 8c5aeb71e96797e56b8d2ee93502b5fce281063c14a0f122dc03436e2da7a1fe -ReleaseSha256 7861b82f552049cf2026b95dc7891838bd0e184793f6c55caa48782ec0516626
+```
+Other modes are NOT offline result readers. Do not infer actual submit/fill
+from Ready/exit code or run a recovery-capable observe() to inspect outcomes.
 
 ## Current Read-Only Custody
 

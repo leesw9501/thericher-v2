@@ -1,29 +1,36 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 12:35KST /03:35UTC integration checkpoint.
+2026-10-23 21:50KST /12:50UTC deployment integration checkpoint.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent sharedMD/Git.
 No operator decision required. Active long request continues.
 
 ## Company / Ready / Owned / Due
 
-ONE company outcome: native-target-weight-paper-consumer-v1.
-Typed core, exact input and actual native worker are COMPLETE. Production quiet
-controller release/installation is NOT complete; do not substitute code/tests/
-a future due for actual readiness. Saved Joint17 weights remain weights,
+Completed native-target-weight-paper-consumer-v1: typed core/input/native proof
+plus actual exit-first/entry quiet installation and separate readbacks34c24846.
+ONE next company outcome: joint17-first-session-runtime-attribution-v1.
+Do not substitute installed readiness for an actual runtime outcome or fill.
+Saved Joint17 weights remain weights,
 never payoff/rank/TopK/renormalized survivors. One .005 ORIGINAL gross cohort
 inside the SAME original shared virtual-cash tenth. F9 unknown stays HELD.
 
 | Owner | Actual Work / Concrete Consumer |
 | --- | --- |
-| Parent / 총괄 | Prior checkpoints pushed; Source8c5aeb71/540+7hashes/63focusedPASS/current admission PASS. Own sharedMD/Git and later exact RELEASE/install; no typed installation during this scoped heartbeat. PRIMARY93991da5 unchanged1382digests. |
-| Meitner / 실행 | Completed9d host-scope repair; Parent took over the final unchecked-bootstrap-slot fix. Source/native/risk/Task bodies otherwise unchanged. Token audit5948c966 confirms scoped60s issuance guard, not Data300s starvation. |
-| Nash / 실행 보조 | Final Source8c/contextd0be current actual admission2f55166d PASS/6CUA+web/one5.765s snapshot/alljoined. Old22 lexical-hint denial retained. No install/start/API or future-admission claim. |
-| Averroes / 반증·효율 | Bootstrap final8c review complete. IO prototype0fcda9ea complete9SYN checks/Reader parity/8pins unchanged/default old path; future-only/not activated, no actual GPU speedup. |
-| Socrates / 엔진·GPU | LLM capacity failure; no active assignment. Numerical capped fit completed and was recovered once, not rerun. |
-| Leibniz / 엔진·GPU | H5ed4a596d actual44CUDAepochs/7612updates/selected20/9cells COMPLETE_FAIL/alljoined/released;1352.587384active, initial faults retained. Not a ready repeat. |
-| Kant / 데이터 → 전략 | Data job installedReady/neverrun20:10UTC. Proposal772776ed complete: shared-lag63/288params/17CPU checks/24pins/alljoined/0fits. Prior patch6/mixer3/attention5 actual fits audited, not first-use Transformer claim. |
+| Parent / 총괄 | Actual deployment34c24846 complete/RELEASE7861b82f/twoReady/63oldXML-ACL unchanged/0starts-API. Own sharedMD/Git and exact next runtime integration. PRIMARY93991da5 unchanged1382digests. |
+| Noether / 엔진·연구 자원 | NEW matched SharedLag63-FiLM versus GRU H5 campaign preparation; disjoint external research root, one resource coordinator, actual contract/native/source/headroom before two fits. No running-fit claim yet. |
+| Aquinas / 실행 관측 | Actual Scheduler/exact immutable Paper outcomes read-only; no manual tasks/API/orders or foreground session wait. Preserve F9 unknown and original shared tenth. |
+| Pauli / 독립 검토 | Complete419b2e6e SOUND_WITH_NAMED_LIMITS:35public source pins/sixquietbody/fivequalification refs; no new native trial or actual fill claim. |
+| Previous workers / 종료 | Old H5 fit/proposal/IO prototype and three-seed resource-preemption are closed/joined, not duplicate ready fits. Existing Data job remains installed20:10UTC. |
 
 ## Throughput Review
+
+12:50UTC: critical-path installation completed in3.96s after exact source/date/
+image/primary-authority revalidation. Two quiet tasks Ready;63old definitions/
+ACL unchanged. Human approval was not a blocker. Noether prepares NEW matched
+research and Aquinas checks existing runtime evidence in disjoint write sets.
+Reversible improvement: close the staged-release-to-installed gap immediately,
+then qualify actual new research actors if they overlap an effect window rather
+than requiring an idle machine. No duplicate full suite for unchanged1382pins.
 
 03:15UTC closure: H5fit COMPLETE44epochs/CHECKselected20/earlystop24,9cells
 failed growth-retention/cached-risk while cap/turnover passed. All numerical
@@ -47,14 +54,15 @@ timing for a FUTURE reversible improvement; never retune the frozen run.
 Nash source-only H5 coexistence addendum follows exact frozen R2 source, not a
 generic Research exemption. Existing due times/typed preparation stay separate.
 
-Ready: final staged controller release for later scoped deployment; Engine's
-matched temporal-expert contract/native preparation with ready proposal and
-future-only IO prototype. ALL assigned numerical/proposal/prototype commands
-joined; no active GPU training claim. Data installed, not acquired yet.
+Ready: Engine's matched temporal-expert contract/native preparation with ready
+proposal and future-only IO prototype; Noether assigned. Actual typed deployment
+is complete, not a remaining staged-release package. Old numerical/proposal/
+prototype commands joined; no active new GPU training claim. Data installed,
+not acquired yet. Aquinas reads exact current existing outcomes independently.
 Owned write sets are disjoint. Actual complete research workers are joined,
 not running merely because old stateboards describe their dispatch.
 Due: Volume entry Oct23 13:45UTC/22:45KST, nightly14:50UTC/23:50KST.
-Proposed Joint17 entry15:30..16UTC/Oct24 00:30..01KST is NOT installed yet.
+Joint17 entry15:30..16UTC/Oct24 00:30..01KST is installedReady, not run/fill.
 
 Reversible improvement: classify ACTUAL private-custody write capability, not
 every Data/Research actor or unrelated future due. Stable reviewed source/job/
