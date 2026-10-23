@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 11:36KST /02:36UTC integration checkpoint.
+2026-10-23 12:15KST /03:15UTC integration checkpoint.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent sharedMD/Git.
 No operator decision required. Active long request continues.
 
@@ -20,13 +20,33 @@ inside the SAME original shared virtual-cash tenth. F9 unknown stays HELD.
 | Nash / 실행 보조 | Final Source8c/contextd0be current actual admission2f55166d PASS/6CUA+web/one5.765s snapshot/alljoined. Old22 lexical-hint denial retained. No install/start/API or future-admission claim. |
 | Averroes / 반증 검토 | Final8c bootstrap SOUND_WITH_LIMITS:3positive/12negative cases, known process.env effect hint reproduced. Not actual install/broad security proof. |
 | Socrates / 엔진·GPU | LLM capacity failure; no active assignment. Numerical capped fit completed and was recovered once, not rerun. |
-| Leibniz / 엔진·GPU | 3CUDAfits9e5f6f0a resource-preempted25epochs each/12900updates/0finance/alljoined. Capacity9b3e767b complete2SYN/serialstreaming qualified. Own NEW one-fit hard-capped H5 preparation, not retry closed studies. |
-| Kant / 데이터 | Oct26 Source2c91d1a7/deployment80f486ff ACTUALLY installedReady/neverrun one-shot20:10UTC;32Scheduler mocks/62old definitions unchanged. No fresh-data/model claim or manual collector start. Package complete. |
+| Leibniz / 엔진·GPU | H5ed4a596d actual44CUDAepochs/7612updates/selected20/9cells COMPLETE_FAIL/alljoined/released;1352.587384active, initial faults retained. Not a ready repeat. |
+| Kant / 데이터 → 전략 | Oct26 quiet Data job installedReady/neverrun20:10UTC. Now bounded temporal-expert diversity source/CPU proposal; no new market fit or changes to closed studies. |
 
 ## Throughput Review
 
-Ready: final controller release preparation and independent one-fit hard-capped
-H5 campaign qualification. GPU capacity calibration complete; Data installed.
+03:15UTC closure: H5fit COMPLETE44epochs/CHECKselected20/earlystop24,9cells
+failed growth-retention/cached-risk while cap/turnover passed. All numerical
+workers joined, not running from this board. Invoked throughput a094a779 found
+recursive reservation/history validation outside epoch timing (4.37s versus
+18.75s at41). One FUTURE reversible improvement: reuse a call-local validated
+reservation snapshot; retain payload hashes/fsync/custody and cold verification.
+No current fit mutation, speedup promise or indefinite GPU job for utilization.
+
+03:05UTC: ready/owned/due rechecked. H5 ONEfit actually started03:02UTC,
+curve23/3979updates on CUDA independently observed; no duplicate fit or Data/
+session wait. Initial source errors repaired within unchanged family, completed
+native3+1SYNupdates reused, no extra native optimizer. Real varied-workload
+reserved6.16GiB exceeds SYN1.3GiB despite peak allocated.323GiB; actual driver
+free~16GiB preserves4GiB reserve. Do not add workers from tiny-SYN projection.
+Averroes invoked read-only throughput review of source-safe epoch/IO/resource
+timing for a FUTURE reversible improvement; never retune the frozen run.
+Nash source-only H5 coexistence addendum follows exact frozen R2 source, not a
+generic Research exemption. Existing due times/typed preparation stay separate.
+
+Ready: final staged controller release for later scoped deployment; independent
+temporal-expert proposal. H5/three-seed/capacity numerical workers all joined;
+no claim of active GPU training. Data readiness installed, not acquired yet.
 Owned write sets are disjoint. Actual complete research workers are joined,
 not running merely because old stateboards describe their dispatch.
 Due: Volume entry Oct23 13:45UTC/22:45KST, nightly14:50UTC/23:50KST.

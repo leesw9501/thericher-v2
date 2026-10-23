@@ -122,9 +122,17 @@ calibration9b3e767b now COMPLETE/2SYN/2239checks/259.916158active/alljoined.
 Streaming peak395allocated/1314reservedMiB versus full822/1736; historical
 reserve-breach attribution remains partial. Serial-first with6GiB projection+
 4GiB reserve, no concurrent cold restore; multichild capacity not established.
-NEW independent hard-capped H5 streaming package may use ONE new scratch fit/
-9cells/6000active/28800elapsed/LATER0 after source/native/Claude qualification.
-It is not a retry/evaluation rescue of the closed3seeds or an independent-alpha claim.
+NEW hard-capped H5 streaming package is COMPLETE_FAIL ed4a596d/Source07dea204,
+actual44CUDAepochs/7612updates/CHECKselected20/patience24. At10bp/leg new growth
++.186712%/DD.487299%initialNAV versus cachedH5+.568159/.454562 and uniform
+-.822368/1.218932. Cap/turnoverPASS, growth-retention/cached-riskFAIL.9cells/
+oneadaptiveINNER/LATER0/1352.587384active/alljoined/GPUreleased. Technical
+directory/import errors repaired without repeating3+1nativeSYNupdates or the
+ONEmarketfit. No old3seed rescue/oldresult regrade/independent-alpha/PaperPnL.
+Throughput a094a779 identified recursive checkpoint/history scans outside the
+epoch timer; future call-local snapshot reuse is not implemented or a speedup.
+Kant owns one bounded nonduplicate temporal-expert source/CPU proposal; no next
+fit or architecture change inferred until its actual source/contract is ready.
 
 Independent next-date Data Source2c91d1a7/consumer13603b66/deployment80f486ff
 ACTUALLY installedReady/neverrun quiet one-shotOct23 20:10UTC whole70-page

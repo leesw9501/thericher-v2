@@ -1,16 +1,27 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts.
+2026-10-23 12:06KST. A=D:/thericher-v2/model-artifacts.
 Own mechanisms/pure kernels/consumable proposals, not broker risk or model
 selection/evaluation authority. Parent MD/Git; Engine numerical contracts.
 Invoked role, not a daemon/per-indicator MD or another report platform.
 
 ## Current Ready Mechanism
 
-Leibniz owns current-capped-allocation-h20-proposal-20261023-v1: one NEW
-jointly-trained capped-simplex allocation hypothesis, not another HHI penalty
-or posthoc projection/regrade of the old MoE. Audit prior use/official source,
-pure gradient/tie/feasibility kernel and fixed cap before numerical dispatch.
+Leibniz capped-simplex proposal153ab658/d7e44bcf was consumed: oneCPUH20fit
+b611eb7e closedFAIL; threeCUDAseed fits9e5f6f0a resource-preempted/financeUNKNOWN.
+New hard-capped H5 ONEfit actually started03:02UTC after exactleaf/import ABI
+repairs; prior native3+1updates reused, no repeated market/nativefit. Not a
+new ready duplicate of those mechanisms or a causal/independent-alpha claim.
+
+Kant now invokes Strategy Research, disjoint root
+A/research/current-temporal-expert-diversity-proposal-20261023-v1:
+audit actual previous temporal-linear/patch-attention/mixer trials, then choose
+ONE nonduplicate data-efficient raw expert for existing63x6+factor10/context9
+hard-capped H5 pipeline. Max3official primary sources/oneproposal/240active/
+1200elapsed/CPU SYNonly; no market decode/fit/GPU/collector or new framework.
+Deliver executable proposal or concrete rejection with source/license/causal
+mask/baseline/cost/funding/finite futurefit scope, not a model-name reading list.
+This preparation cannot alter or delay the running frozen H5 campaign.
 Engine owns final data/target/splits/cost/funding/fit/evaluation contracts;
 Steward owns actual resources. No model fit/GPU/broker inferred from this board.
 

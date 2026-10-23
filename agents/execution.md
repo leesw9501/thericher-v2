@@ -15,6 +15,11 @@ RELEASE/install/readback. No schedule expansion/manual Task/API in this scoped
 heartbeat. Native/risk/quiet bodies unchanged; no new fill/runtime inference.
 Evidence A/execution/current-joint17-weight-owned-runtime-20261023-v1/
 deployment-r4/source8c-actual-admission-r1/CONSUMER.json. F9 remains UNKNOWN/HELD.
+H5 coexistence263f53f0 is source-only container/attachment preparation with
+32RO/one Research-outputRW/networknone; coordinator interpreter/closed argv
+not bound, so no complete admission grant. Study has since closed/alljoined.
+This named metadata gap is not a global Research/Paper permission hold and is
+not part of the current staged effect-disabled RELEASE candidate.
 
 Previous current-volume-gru-provisional-paper-point-v1 COMPLETE for point/readiness:
 actual Engine point61d11d44 is COMPLETE, NOT broker dispatched:

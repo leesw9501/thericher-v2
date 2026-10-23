@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 11:46KST /02:46UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-23 12:15KST /03:15UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
@@ -189,9 +189,25 @@ allocated822/reserved1736MiB, driver minimum20225MiB; CPUcache streaming peak
 395/1314MiB, minimum20647MiB, identical SYN weights/loss. Historical682MiB cause
 partlyUNKNOWN. Serial-first/6GiB projected child+4GiB reserve/no overlapping
 cold restore, NOT measured multichild capacity. Parent rehashed19refs.
-Leibniz next owns NEW hard-capped H5 streaming campaign, one new scratch fit/
-9cells/6000active/28800elapsed/LATER0, not an old3seed retry or prefix rescue.
-Source/native/Claude qualification precedes actual training; dispatch is not GPU use.
+NEW H5 hard-cap streaming COMPLETE_FAIL ed4a596d/Source07dea204:
+A/research/current-capped-h5-streaming-development-20261023-v1/
+h5-import-continuation-r2/CONSUMER.json. ONEactualCUDAfit44epochs/7612updates/
+CHECKselected20/patience24/423.415s; serial selected-cold proof and one forecast
+pass complete. At10bp/leg growth+.186712%/DD.487299%initialresearchNAV versus
+cachedH5+.568159/.454562 and uniform-.822368/1.218932. All43issuer<=.10 and
+turnover pass; growth-retention/cached-risk fail.9cells/oneadaptiveINNER/LATER0,
+not independent alpha/causal cap benefit/PaperPnL. No winner/threshold rescue.
+Allworkers joined/leaseReleased/1352.587384of6000active. Peak allocated331MiB,
+reserved6312MiB/minsampledfree15614MiB; no extra worker admitted. Parent verified
+13refs, including one explicitly mapped guest selected-manifest path. Initial
+directory/import faults/debits retained;3+1nativeSYNupdates reused, no fit retry.
+
+Throughput review a094a779 found recursive reservation/history verification
+outside the epoch timer: epoch41 timed4.37s versus18.75s curve interval.
+Source operation counts are not measured disk-time attribution/allocator cause.
+Future call-local validated reservation snapshot can remove repeated scans while
+retaining payload hashes/fsync/custody/cold checks; NOT implemented or speedup.
+Kant owns one temporal-expert diversity source/CPU proposal, not a running fit.
 
 The obsolete Oct21/22 app heartbeat automation was deleted; existing Windows
 workers/schedules were not deleted. Source-safe Scheduler readback still shows

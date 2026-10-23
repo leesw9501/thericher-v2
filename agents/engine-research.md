@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 11:36KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 12:15KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own model/feature/target/replay interpretation, not broker risk. Parent MD/Git.
 AGENTS.md owns policy; Source/MD/dispatch is not a running fit.
 
@@ -226,13 +226,27 @@ CPUcache peak395allocated/1314reservedMiB versus full822/1736, identical SYN
 weights/loss; driver minimum20647/20225MiB. Historical682MiB attribution partial.
 Serial-first, projected6GiBchild+4GiBreserve, no overlapping cold restore;
 multichild capacity unproved. Parent independently rehashed19consumer refs.
-Leibniz next owns NEW current-capped-h5-streaming-development-20261023-v1:
-trueH5Data28d7ed8f plus fixed10percent cap INSIDE training, one new scratch seed/
-fit, batch16 CPUcache/CUDAstream, max9cells/6000active/28800elapsed/LATER0.
-Freeze comparable H5 funding/row/cost/risk and maxepochs/CHECKpatience before
-numerical dispatch; source/native/Claude qualification first. No oldH20fit
-retry/3seed prefix financial rescue/user-app blame/permission hold. Dispatch is
-not actual training. Existing Paper readiness remains separate.
+H5 hard-cap streaming CLOSED COMPLETE_FAIL ed4a596d/Source07dea204:
+A/research/current-capped-h5-streaming-development-20261023-v1/
+h5-import-continuation-r2/CONSUMER.json. TrueH5Data28d7ed8f/fixed10percent cap
+inside scratch training/batch16 CPUcache/CUDAstream. ONEactual44epoch CUDAfit/
+7612updates/CHECKselected20/patience24/423.415s, selected-cold exact proof and
+one43date forecast complete. At10bp/leg growth+.186712%/DD.487299%initialNAV
+versus cachedH5+.568159/.454562 and uniform-.822368/1.218932; nine nonoverlap
+H5cohorts/.10originalNAV each. Cap<=.10 onall43/turnoverPASS, growthretention/
+cached-H5-DD FAIL.9cells/oneadaptiveINNER/LATER0/alljoined/GPUreleased/
+1352.587384active/493verification+28readbackchecks. Parent verified13refs with
+explicit oneguest-to-host selected manifest mapping. Adaptive price proxy,
+not independent alpha/causal cap/totalreturn/PaperPnL. No selection rescue.
+Initial directory-vs-file and joint.require import faults kept,3+1nativeSYN
+updates reused, ZERO marketfit retry. Future proposals are not completedfit reruns.
+
+Throughput a094a779: epoch41 timed4.37s versus18.75s between curve writes;
+recursive reservation/history verification lies outside the epoch timer.
+Future call-local reservation snapshot reuse retains hashes/fsync/custody;
+not implemented or a measured speedup. Original frozen run unchanged.
+Kant owns one nonduplicate temporal-expert source/CPU proposal via Strategy;
+no next market/GPU campaign inferred from a model name. Paper remains separate.
 
 ## Closed Families / No Duplicate Work
 
