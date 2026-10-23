@@ -9,6 +9,7 @@ from thericher_v2.data.us_equity_session import (
 from thericher_v2.market.resample import SessionWindow
 
 MODEL_PAPER_20_SESSION_PROFILE = "model-proposal-nas-20session-2026-v1"
+MODEL_PAPER_5_SESSION_PROFILE = "model-proposal-nas-5session-2026-v1"
 MODEL_PAPER_V1_PROFILE = "model-proposal-nas-v1"
 MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE = "model-proposal-nas-post-open-prior-session-v1"
 
@@ -47,7 +48,7 @@ def validate_model_paper_horizon(first, last, *, profile):
         raise ValueError("model_sessions_invalid")
     if not first.open_ts < first.close_ts < last.open_ts < last.close_ts:
         raise ValueError("model_session_clocks_invalid")
-    if profile == MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE:
+    if profile in (MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE, MODEL_PAPER_5_SESSION_PROFILE):
         _validate_post_open_five_sessions(first, last)
         return
     if profile == MODEL_PAPER_V1_PROFILE:

@@ -672,6 +672,7 @@ def run(
             or profile not in {
                 StockCycleProfile.MODEL_PROPOSAL_NAS,
                 StockCycleProfile.MODEL_WEIGHTS_NAS,
+                StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
             }
             or not callable(target_loader)
             or any(

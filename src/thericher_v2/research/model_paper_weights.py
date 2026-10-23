@@ -17,6 +17,7 @@ from thericher_v2.research.decision_receipt import (
     receipt_from_target_exposure_proposal,
 )
 from thericher_v2.research.model_paper_horizon import (
+    MODEL_PAPER_5_SESSION_PROFILE,
     MODEL_PAPER_20_SESSION_PROFILE,
     validate_model_paper_horizon,
 )
@@ -30,6 +31,7 @@ from thericher_v2.research.model_paper_proposal import (
 )
 
 MODEL_PAPER_WEIGHTS_PROFILE = "model-weights-nas-20session-2026-v1"
+MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE = "model-weights-nas-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_SCHEMA = "model-paper-target-weight-input-v1"
 WEIGHT_UNITS = "fraction_of_one_original_basis_gross_cohort_ceiling"
 EXECUTION_BASIS = "gross_limit_cost_not_fees_settlement_or_replay_equivalence"
@@ -38,6 +40,16 @@ EXECUTION_BASIS = "gross_limit_cost_not_fees_settlement_or_replay_equivalence"
 def _need(value, reason):
     if not value:
         raise ValueError(reason)
+
+
+def model_paper_weights_horizon_profile(profile):
+    """Map only explicit weight profiles; never infer a horizon from dates."""
+    _need(type(profile) is str, "weights_profile_invalid")
+    if profile == MODEL_PAPER_WEIGHTS_PROFILE:
+        return MODEL_PAPER_20_SESSION_PROFILE
+    if profile == MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE:
+        return MODEL_PAPER_5_SESSION_PROFILE
+    raise ValueError("weights_profile_invalid")
 
 
 @dataclass(frozen=True, slots=True)
@@ -261,19 +273,21 @@ def _weight_targets(metadata, entry_session):
     )
 
 
-def prepare_model_paper_weights_input(metadata, *, entry_session, exit_session):
+def prepare_model_paper_weights_input(
+    metadata, *, entry_session, exit_session, profile=MODEL_PAPER_WEIGHTS_PROFILE
+):
+    model_paper_weights_horizon_profile(profile)
     _need(type(metadata) is ModelPaperWeightsMetadata, "weights_metadata_invalid")
     metadata.__post_init__()
     return ModelPaperWeightsInput(
-        metadata, _weight_targets(metadata, entry_session), entry_session, exit_session
+        metadata, _weight_targets(metadata, entry_session), entry_session, exit_session,
+        profile=profile,
     )
 
 
 def validate_model_paper_weights_input(value):
-    _need(
-        type(value) is ModelPaperWeightsInput and value.profile == MODEL_PAPER_WEIGHTS_PROFILE,
-        "weights_profile_invalid",
-    )
+    _need(type(value) is ModelPaperWeightsInput, "weights_profile_invalid")
+    horizon_profile = model_paper_weights_horizon_profile(value.profile)
     _need(
         value.weight_units == WEIGHT_UNITS and value.execution_basis == EXECUTION_BASIS,
         "weights_semantics_invalid",
@@ -282,7 +296,7 @@ def validate_model_paper_weights_input(value):
     value.metadata.__post_init__()
     first, last = value.entry_session, value.exit_session
     _need(type(first) is SessionWindow and type(last) is SessionWindow, "weights_sessions_invalid")
-    validate_model_paper_horizon(first, last, profile=MODEL_PAPER_20_SESSION_PROFILE)
+    validate_model_paper_horizon(first, last, profile=horizon_profile)
     _need(
         value.metadata.weights_observed_at < first.open_ts
         and value.metadata.exit_not_before == last.close_ts - timedelta(minutes=15),
@@ -333,7 +347,9 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
             "execution_basis",
         }
         and document["schema"] == MODEL_PAPER_WEIGHTS_SCHEMA
-        and document["profile"] == MODEL_PAPER_WEIGHTS_PROFILE
+        and document["profile"] in (
+            MODEL_PAPER_WEIGHTS_PROFILE, MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+        )
         and document["weight_units"] == WEIGHT_UNITS
         and document["execution_basis"] == EXECUTION_BASIS,
         "weights_input_schema_invalid",
@@ -397,6 +413,7 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
         metadata,
         entry_session=session(document["entry_session"]),
         exit_session=session(document["exit_session"]),
+        profile=document["profile"],
     )
     _need(
         serialize_model_paper_weights_input(result) == payload,

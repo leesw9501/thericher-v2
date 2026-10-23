@@ -53,10 +53,12 @@ from thericher_v2.research.model_paper_proposal import (
     ModelPaperTarget,
 )
 from thericher_v2.research.model_paper_weights import (
+    MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
     MODEL_PAPER_WEIGHTS_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
     ModelPaperWeightsMetadata,
+    model_paper_weights_horizon_profile,
     validate_model_paper_weights_input,
 )
 
@@ -99,12 +101,18 @@ class StockCycleProfile(Enum):
     CURRENT20_EQUALRANK4 = "current20-equalrank4-paper-20261018-v1"
     MODEL_PROPOSAL_NAS = MODEL_PAPER_PROFILE
     MODEL_WEIGHTS_NAS = MODEL_PAPER_WEIGHTS_PROFILE
+    MODEL_WEIGHTS_NAS_H5 = MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE
 
 
 _MODEL_INPUT_TYPES = {
     StockCycleProfile.MODEL_PROPOSAL_NAS: ModelPaperInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS: ModelPaperWeightsInput,
+    StockCycleProfile.MODEL_WEIGHTS_NAS_H5: ModelPaperWeightsInput,
 }
+
+_MODEL_WEIGHT_PROFILES = frozenset(
+    (StockCycleProfile.MODEL_WEIGHTS_NAS, StockCycleProfile.MODEL_WEIGHTS_NAS_H5)
+)
 
 
 _STATUSES = frozenset(
@@ -441,7 +449,7 @@ def model_paper_pointer(policy_ref):
 
 def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NAS):
     """Exact typed admission; weights are revalidated, never converted to scores."""
-    weights = profile is StockCycleProfile.MODEL_WEIGHTS_NAS
+    weights = profile in _MODEL_WEIGHT_PROFILES
     _check(type(value) is _MODEL_INPUT_TYPES[profile], "cycle_input_invalid")
     if weights:
         # Frozen dataclasses can still be forged in memory. Rebuild the entire
@@ -455,7 +463,7 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
             "cycle_input_invalid",
         )
     _check(
-        value.profile == MODEL_PAPER_WEIGHTS_PROFILE
+        value.profile == profile.value
         if weights
         else value.profile
         in {
@@ -476,14 +484,16 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
         "cycle_session_invalid",
     )
     opened, closed = value.entry_session.open_ts, value.entry_session.close_ts
-    horizon_profile = MODEL_PAPER_20_SESSION_PROFILE if weights else value.profile
+    horizon_profile = (
+        model_paper_weights_horizon_profile(value.profile) if weights else value.profile
+    )
     _check(
         opened <= at < closed < value.exit_session.open_ts
         and model_paper_horizon_valid(
             value.entry_session, value.exit_session, profile=horizon_profile
         )
         and (
-            horizon_profile != MODEL_PAPER_20_SESSION_PROFILE
+            (not weights and horizon_profile != MODEL_PAPER_20_SESSION_PROFILE)
             or value.metadata.exit_not_before == value.exit_session.close_ts - timedelta(minutes=15)
         ),
         "cycle_session_invalid",
@@ -540,9 +550,10 @@ def _model_record_input(
             and record["active"]["exit_session"] == _pack(value.exit_session),
             "cycle_input_binding_mismatch",
         )
-        if profile is StockCycleProfile.MODEL_WEIGHTS_NAS:
+        if profile in _MODEL_WEIGHT_PROFILES:
             _check(
-                value.metadata.original_basis_gross_ceiling == Decimal(".005"),
+                value.profile == profile.value
+                and value.metadata.original_basis_gross_ceiling == Decimal(".005"),
                 "cycle_input_binding_mismatch",
             )
     if record["pending"] is not None:

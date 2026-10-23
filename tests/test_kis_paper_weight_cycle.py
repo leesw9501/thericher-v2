@@ -14,6 +14,7 @@ from test_model_paper_weights import metadata, prepared
 from thericher_v2.execution import kis_paper_current_stock_cycle as cycle
 from thericher_v2.research import model_paper_proposal as payoff
 from thericher_v2.research.model_paper_weights import (
+    MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
     MODEL_PAPER_WEIGHTS_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
@@ -96,6 +97,7 @@ def test_old_profile_values_and_codec_are_unchanged_by_additive_weights_profile(
         "CURRENT20_EQUALRANK4": "current20-equalrank4-paper-20261018-v1",
         "MODEL_PROPOSAL_NAS": "model-proposal-nas-v1",
         "MODEL_WEIGHTS_NAS": MODEL_PAPER_WEIGHTS_PROFILE,
+        "MODEL_WEIGHTS_NAS_H5": MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
     }
     original = payoff_point()
     assert cycle._unpack(cycle._pack(original)) == original
