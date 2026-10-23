@@ -2,226 +2,161 @@
 
 ## Current Reality
 
-2026-10-23 08:45KST / Oct22 23:45UTC integration checkpoint.
-C:/Users/Public/Documents/thericher-v2.
+2026-10-23 10:00KST /01:00UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Operator -> Codex Orchestrator -> role agents. Parent sharedMD/Git.
-AGENTS.md owns standing private free Data/Research/KIS Paper authority.
-No operator decision currently needed; active long request continues.
+Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
+AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
+decision currently required. NEVER read/route KIS_LIVE_* or enable real money,
+public exposure or paid commitments. Preserve unrelated %SystemDrive%/.
 
-Previous current-volume-gru-provisional-paper-point-v1 COMPLETE for ACTUALpoint
-and future owned readiness, NOT futurefill/ownedflat/PnL. Next ONE company
-outcome: native-target-weight-paper-consumer-v1. Separate typed weights from
-raw payoff scores; preserve all already-owned deployed jobs and unknown requests.
+ONE company outcome remains native-target-weight-paper-consumer-v1.
+Typed code/native transport are complete; new quiet controller release and
+installation are NOT complete. A test, MD, helper or future due is not closure.
 
-## Owned Paper / Next Opportunities
+## Actual Paper / Due
 
-- NEW Volume245/contextGRU12 point61d11d44: exactly1CPUrestore+forward/component/
-  67rows/0fits-labels-GPU-retries/348checks/alljoined/95.644196of420upper.
-  POINTb71758c6/nativeINPUTf2a2948b/policy9efb34bf/model8ebcb94f/commonmask5ee8539b/
-  N67/K7/no signveto; publicationOct22 20:40:50.861551UTC beforeOct23OPEN.
-  A/research/current-volume-gru-feature-known67-point-20261023-v1/CONSUMER.json.
-- Quiet owned readiness COMPLETEba57e33d:
-  A/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/CLOSED.json.
-  FinalSourcebb5667d8/release-r3/native20image4f4294ed. Actual native-body proof
-  bd39e96b/d9ad7768; native child/runtime/bundle byte-identical after final
-  coordinator lifecycle fix19tests/phase8/cold and actual rollback/readback.
-  Finalhash NOT fully native-executed; do not hide proof-transfer scope.
-  EntryTask thericher-kis-paper-volume-gru67-entry-20261023-v1 installedReady/
-  neverrun Oct23 13:45..14:15UTC (22:45..23:15KST). Conditional exact-owned exit
-  thericher-kis-paper-volume-gru67-owned-exit-20261119-v1 installedReady/neverrun
-  Nov19 20:45UTC (Nov20 05:45KST). Entry .005ORIGINALbasis, samevolume-gru-Oct23
-  slot, not7guaranteedorders or new per-row banks. Native last15min exit proxy
-  differs from analytical targetCLOSE21:00. RealRisk accept/submit/fill unknown.
-- Source repair fixed pending-exit requiring wrong entryowner, timeout exact
-  descendant/container join and durable active marker, sanitized typed failures,
-  helper APP/IPC sequence and invented exit-read clocks. Old3failedqualification
-  starts/debits retained, successor2fixedstarts. Conservative old240+new360=600
-  combinedupper/1500; exact cumulative childwall not independently retained.
- 0API/credential/private/order/TaskStartcalls. Allownedhosts/containersjoined.
-  Preexisting59project XML/ACL unchanged, 264before/266after; unrelated nonproject
-  namespace drift UNKNOWN, not reverted. Actual no-console source/native proof
-  plus installed pythonw action, not actual future Task-origin/OS-crypto proof.
-- Nightly recoveryc8cbd76d COMPLETE: exact originalOct22 SELL acknowledged/fullfill,
-  contextcomplete/pending0/unknown0/portfolioowned3;14GET1POST/0orders/alljoined,
-  independentpostROe32ed23c. OriginalTask unchangedReady Oct23 23:50KST.
-  Current HGB-addition prefixfault reproduced; historicalexception UNKNOWN.
-  One-use3357b5d3 overlay consumed/NOTscheduled, never a reader/rerun.
-- R5:3accepted/fullBUYfills/3nativeowned, originalexitOct27>=19:45UTC retained.
-  Source8f1c212a/imageb96a8ef8/GOd5bd1aac/input5817e3ab/vintage7d8f4fe2.
-- HGB:1accepted/fullBUY/currentowned/pendingfalse/unknown0, original.005cohort.
-  ENTRY-CLOSURE5559ca83/R107a82159; old10entryvisits consumed/Source90expired.
-  Original-owned exit72245037/e487db86 installedReady Oct28 19:45UTC/
-  Oct29 04:45KST, finalTask neverrun now. No actualSELL/ownedflat/netPnL.
-- F9: originalattempt/no retainedack-fill/UNKNOWN/reservationHELD. Exact original
-  history1POST1GET/0rows is not non-send. Additionaltrace da006661/19checks/0API
-  found missingcomplete originaltrace/dispatchbinding/codedreject. No repeat
-  emptyquery/substitute/reset/expiryrelease; currentabsence/open0 not closure.
-- Original8:8BUY8SELLfullfills/ownedflat/completedTaskdisabled. Accounting5cabc996/
-  14checks aggregate nominalgrossNEGATIVE, not everypositionnegative.
-  Fee-schema/settledcash/netPnL UNKNOWN, not CA/tax-adjusted/independentalpha.
-- Freshbrokerread16da7a56/result85ca09c0 atOct22 20:02UTC:7/7nativeinstrument
-  quantitiesmatched/R5three/0missing-extra-mismatch/0opens/4GET1POST/0orders/
-  nofundsquery/privatewrites/alljoined. HGB not separately enumerated. Not full
-  buyingpower/cash-equity/netPnL or retrospectiveF9non-send; no duplicatequery.
+- F9: original attempt/no retained acknowledgement-fill/UNKNOWN/reservationHELD.
+  History1tokenPOST1GET/0rows is not non-send. Trace da006661 lacks exact original
+  guard/dispatch/identity/coded rejection. New source a638e1a6 at
+  A/execution/current-f9-history-filter-audit-20261023-v1/CONSUMER.json:
+  211checks/no filter-pagination bug/no useful repeat/0private-API. No substitute,
+  release, reset or current-absence-as-flat inference.
+- R5:3accepted/fullBUY/3owned; original exit Oct27>=19:45UTC retained.
+  Source8f1c212a/imageb96a8ef8/GOd5bd1aac/input5817e3ab.
+- HGB:1accepted/fullBUY/currentowned/pendingfalse/unknown0/.005originalcohort.
+  ENTRY5559ca83/R107a82159. Original exit Oct28 19:45UTC /Oct29 04:45KST.
+- Nightly original Oct22 SELL acknowledged/fullfill/contextcomplete/pending0/
+  unknown0/portfolioowned3. Recoveryc8cbd76d/postROe32ed23c/14GET1POST0orders.
+  One-use3357b5d3 consumed/NOTscheduled, never a reader. Original Task unchanged
+  Ready Oct23 23:50KST /14:50UTC. Compatibility36f9d118/562inventedchecks proves
+  completed-to-fresh full genericv4 book, not actual provider/advance/lock/fill;
+  retained additions and own mutations still deny. No permissive prefix fix.
+- Original8:8BUY8SELLfullfills/ownedflat/completedTaskdisabled. Accounting5cabc996
+  aggregate nominal gross NEGATIVE, not every-position loss; fees/settlement/net
+  PnL unknown. Official sourceabf3a1fb/23SYNchecks finds no documented Paper
+  exact-fee-plus-settlement route, not a tested server rejection. Observed gross,
+  assumed costs and measured net knowledge stay separate; no execution gate.
+- Last broker read16da7a56/result85ca09c0 Oct22 20:02UTC:7/7 native quantities
+  matched/0missing-extra-mismatch/0opens/4GET1POST0orders/alljoined/nofundsquery.
+  Not full account/equity/netPnL or F9 non-send proof.
+- Volume point61d11d44/inputf2a2948b/policy9efb34bf/model8ebcb94f ACTUAL:
+  oneCPUrestore+forward/component67rows/0fits-labels-GPU/alljoined.
+  Entry thericher-kis-paper-volume-gru67-entry-20261023-v1 installedReady,
+  Oct23 22:45KST /13:45UTC; conditional exact-owned exit Nov20 05:45KST /
+  Nov19 20:45UTC. One .005ORIGINALbasis cohort, not7guaranteedorders.
+  Native sourcebb5667d8/bodybd39e96b-d9ad7768/image4f4294ed.
 
-Keep one shared ORIGINAL virtual-cash tenth/ownedcosts/losses/reservations.
-All7observerpauses RESTORED17:36:35UTC/XML-ACL unchanged. Reader12410a15 uses
-actual privatewriters/mounts/source +networknone/RO and before-after stability,
-not all research/market actors. Sharedquietlauncher may include SPYPaper.
-Assumed-honest-host markers, not cryptographic OS-scheduler origin.
-Windows interactive user session/online Docker still required, not awakeCodex.
+One ORIGINAL virtual-cash tenth is shared. Count owned costs/losses/unknown
+reservations once, respect buying power, never expand from profit/adopt foreign
+inventory. Fresh quote/account/orderability and exact unknown reconciliation
+precede effects. No manual final Task start to prove readiness.
 
-## Research / Actual Owners
+## Typed Weight / Deployment
 
-- Socrates: actual H5 GPU campaign CLOSED c359420f in
-  A/research/current-joint-moe-h5-target-development-20261023-v1.
-  CONSUMER-H5.json:19epochs13129updates/selected3/patience16/43forecasts/9newcells/
-  LATER0/alljoined/GPUreleased/1083.761527lineageof6000. At10bp growth+0.56816%/
-  DD0.45456%initialresearchNAV vs oldcached+0.48724/0.80093, uniform-0.82237/1.21893.
-  Financial/turnover/funded-concentration pass; all43max57.6823%>.50 fails.
-  FrozenjointFAIL retained, not independent alpha/PaperPnL or candidate replacement.
-  Source479b8923/phase2-v2, one warmoriginal17/newAdamW-RNG27/H5 target with
-  TRAIN+.005HHI/CHECKunregularized. Actual fit body693.977232s/peak564338688bytes;
-  no convergence claim. Nativeb8608018/28checks4CUDAupdates/cold-cache parity,
-  heldINNER absent from fit. Header pretarget fault21.844upper retained; no retry.
-- Data/Averroes: H5view READY28d7ed8f:
-  A/data/current-joint-moe-h5-target-view-20261023-v1/CONSUMER.json.
-  DTOceaeef36/ABIdd33bdd2/Source737cbfef, TRAIN2762dates135297rows/CHECK1098106
-  (4clockpurges/10endpointunknown retained)/INNER43-3295/all9complete5closes.
-  47107checks21postsealrefs/alljoined/11activeupper insideData300. This Data
-  DID materialize H5/heldINNER; copied Source-only sentence corrected in immutable
-  CONSUMER-SCOPE-CORRECTION.json7b4183d8, no payload alteration/rematerialization.
-- Leibniz: original liquidETF next-campaign Source249f58dc/0395e27a:
-  A/research/current-liquid-etf-next-campaign-proposal-20261023-v1/CONSUMER.json.
-  SPY/QQQ/IWM downsideH5, proposed2fits HGBq.20/causalTCN and fixedforecasthalf/
-  alignedcontrols; same63x7/finitecaps/21cells/LATER0. Metadata coverage through
-  Jul10. Original action-aware branch closed NOT_READY; the explicit price-only
-  successor below completed actual fits. Do not repeat the old proposal.
-  PriorETF/TCN/q25 audited; nofirst-use/freshholdout claim. ClaudeREVISE retained,
-  cyclictop1control/1percentNAVmargin added beforevalues;33SYNchecks/85upper/alljoined.
-- Original dividend-inclusive ETF recipe closed NOT_READY6d06ed20: dividend
- currency/share/collision units unproven,0marketdecode/fit; not a Paper hold.
- NEW price-only Source4b33debf/contract74fd27c0/kernel2c406f5b/Claudecd14808b:
- split-carried shares/no dividends, explicit biased component proxy, not totalreturn.
- Dataacec097d READY/alljoined/TRAIN4523-CHECK501-INNER1381/all3/146221native+76host,
- aggregateData23.076110s inclold8.788339 once. A/data/current-liquid-etf-price-only-input-20261023-v1.
-- Two actual ETF CPU fits and21cell readout COMPLETE:
- A/research/current-liquid-etf-price-only-development-20261023-v1/MATERIAL-RESULT.json,
- Source132cee3f. HGB43stages/selected19/patience24;TCN18epochs1278updates/selected2/
- patience16. Fixedhalf frozenprimary PASS at10bp: price-only growth+10.5601%/
- DD31.9249% Jan2021-Jul2026, versusHGB+2.5779/30.5726,TCN+9.8312/33.1078,
- uniform+0.7813/34.4575. Not totalreturn/alpha/PaperPnL. ForcedH5 fees53.8140%
- initialNAV/turnover538.14 are material. NEW carry/buyhold diagnostic is now
- COMPLETE FAIL: A/research/current-etf-carry-forward-bootstrap-repair-20261023-v1/
- CONSUMER.json; Sourceddfd5fef (full exact hash in consumer), resultb36fa093.
- At10bp HALFcarry price-onlygrowth60.0407%/DD31.3331% versus uniformcarry
- 91.6445%/29.8463% and equaltrio buyhold92.5464%/29.8324%, same Jan2021-Jul2026.
- Both frozen growth/risk fail.33cells/30nativechecks/99independentchecks/0fits/
- alljoined/combinedcarry81.376of300/totalLineage500.610110. No model promotion
- or alternate winner; old21cell PASS unchanged. Carry changes exposure and
- mechanics together, so no causal fee-isolation claim. Bootstrap failure and
- its69.891debit retained; original deadline00:07:59UTC not reset.
- CPU chosen BEFOREfits: native original medianCPU.0290s/CUDA.7113s, aggregation
- .0326/.8261 did not improve. Source1 used; no GPU permission hold or fallback.
- Allworkersjoined/0GPUworkers/lineage419.234110of7200; earliestclock21:32:05UTC
- ->01:32:05UTC neverreset. No completedfit rerun.
-- Meitner completed immutable SDK delivery b6ab7f0b/Source0cc9b799 and rebound
-  three original tasks. Now auditing nightly foreign-owner compatibility with
-  invented fixtures only; no new API/order/task or private-state effects.
-- Leibniz narrowed the next GPU mechanism to gap-weighted date-local CatBoost
-  pairwise trees versus matched RMSE. Source1c915e3e/candidate06aa7634:
-  A/research/current-next-gpu-mechanism-audit-20261023-v1/CONSUMER.json.
-  Native readiness proof only is dispatched; no new market fits or GPU training
-  inferred. Existing old CatBoost rejection remains closed.
-- TemporaryZeno H5Source7eb762c3/a9e83042/ca103bde/17SYN/Source300upper closed.
-  Source consumer and11refs verified. Role memory is not a daemon/GPUprocess.
+Main pushed7f3d6e4/c97cfe6, test-onlydfb14ec, doc checkpointc7a07f1.
+Inert research/model_paper_weights.py sourceb165ef77: full100/known69, exact
+binary64weightsa8e77119/31UNAVAILABLEzero; no payoff scoring/TopK/renormalization/
+model runtime. Explicit MODEL_WEIGHTS_NAS uses existing native bank/risk/order
+lifecycle. Unit31/adversarial15/native32/workerABI10 pass.
 
-Completed concentrationdf38d8b2:24CUDAepochs16488updates/CHECKpatience24 selected
-newepoch0=old17alias. All43max83.156%/funded3max59.236%/HHIratios100% fail
-frozen.50/.75 criteria; growth/riskPASS butjoint/noaliasFAIL.366checks31refs/
-alljoined/GPUreleased/lineage9772.785431. No retune/rerun/projection rescue.
-Completed jointMoEa4a7b041:41/56epochs/28167+38472updates/selected17/32/12INNERcells/
-LATER0/673checks.10bp growth/DD%initialresearchNAV learned+.9110/.8422,
-fixed+.3527/1.4563,uniform-.8005/1.2978; frozencriteriaPASS, only3cohorts/reuseddata/
-concentration/nonPIT-currentvintage-CA-arrival-finality limits, not alpha/PaperPnL.
-Prospective shadow0120ee31/d8b3d74f ACTUALsealed21:04:58UTC beforeOct23entry:
-2CPUloads2forwards69rows/1record/320ROchecks/14.304084upper/alljoined/0labels-fits-GPU.
-Full100 exact learned17/fixed32/uniform69 binary64weights, not payoff/order DTO.
-Other completed warmGRU/Chronos2/volume/intraday/rule/ML/DL/foundation families
-and old faults/debits stay Git/immutableA/roleboards. No duplicate training.
+Actual input86c1b30d at
+A/research/current-joint-weight-native-input-20261023-v1/release-r3/CONSUMER.json:
+input01e6ea40/policy11b5657c/model8b7484a7; saved shadow0120ee31/d8b3d74f,
+0newNN-fit-order,69routes67e3d813. Independentc3f9aef9:886checks/8negatives.
+Do not swap this point for a newly seen research winner.
 
-## Data / Code Boundary / Verification
+Actual new image75df096838f7d4d75a61239d5c2d16f3d5b781220ccee253b3fcc337338e807c.
+Buildconfig1b8809 is NOT imageId. Actual75df cold f9d7d609:
+A/execution/current-joint17-weight-paper-runtime-repair-20261023-v1/CONSUMER.json.
+Source983f9b12/66+36checks/20OwnerAdmission exchanges/two cold processes:
+unknownnoresubmit/F9held/typedownedSELL/terminal/completed-no-client.
+483files/11independentrefs/alljoined/family390of600; old fixture faults retained.
+Old4f RO sidecar attempted a locking read and was denied, NOT positive old-image
+execution evidence;18common byte closure is a transfer limitation.
 
-Oct22 current acquisition COMPLETE376c94cf:70GET1POST70pages6993rows88.021926sec/
-payload7fd5580a/DTO27536bd5/alljoined/family843upper. Raw/factor/context69known,
-volume67 because2native5bar activitysums0 makeQundefined; no missingprices/
-HTTP/economicilliquidity proof. ORIGINAL69point UNKNOWN/0forwards, explicitly
-superseded by GENERAL complete-feature PRE-SCORE67/full10033masked/commonmask5ee.
-Not prefeature67/old69success/epsilon/imputation/sourcevintage splice. Claude
-SOUNDlimits; no signveto/risk-survivor renorm. SameNYSE5.4calendar0bfcc405/prior63
-Jul27..Oct22/H20Nov19CLOSE21UTC. Historical arrival/CA/finality unknown.
-Historical10083closed17unavailable87934newbars/0remaining/alljoined. No closed
-cursor reruns; SEC403 closes only exactscopes. No newpaid/publicdata.
+New controller root A/execution/current-joint17-weight-owned-runtime-20261023-v1.
+Old8fad431e NEVER installed: review468d54ab found static PID/CID admission and
+full Config.Env capture. Corrected Source088efac216824f9b83b26d222a187043b0f85c76e07a51a34a45faea21d4051b:
+capability-r1/CONSUMER.json190c2eb6. Stable reviewed source/job/mount rules admit
+fresh identities, RO readers/disjoint actors; unknown writers/source changes deny.
+Daemon projects ENV names/argv-match booleans, no values/raw argv.29Python/
+2mockCIM/39owner checks plus real never-started canary projection pass.
+Unchanged quiet/native bodies transfer, not a full new effect invocation.
+Alljoined/420of600. Averroes independently reviews final Source; Nash binds stable
+safe capability rules in deployment-r1. Parent owns RELEASE/install/readback.
+Never bind PID snapshots or stop research merely to evade admission.
 
-The mutable-primary dependency of old Volume/HGB owners is repaired by actual
-same-version SDK delivery, not by silently changing their original source pins.
-A/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/CONSUMER.json
-b6ab7f0b/Source0cc9b799:476SDK .py plus1375 historical source+2control pins,
-separate original credential/custody roots; Volume entry/exit and HGB exit
-reboundReady. Final source transfers byte-identical actual native bodies;
-finalhash itself was not an additional native run. Rollback/reinstall/readback
-complete, alljoined,0API/Taskstarts. R5/nightly XML/ACL unchanged. Historical
-controls are evidence, not current authority. Primary c97cfe6 merged/pushed.
-Development branch codex/native-target-weight-paper-consumer remains at
-C:/Users/User/.codex/worktrees/native-target-weight-paper/thericher-v2;
-Parent pureweight DTO/tests, Meitner core/native tests, Averroes adversarialtest.
-Native pilot preserves gross limit-cost/reservation semantics, NOT measured
-all-in fees/settlement. Claude27c0845d SOUNDlimits retained. Do not edit frozen
-delivery source or replace actual owned requests/basis/counters.
-Actual inert weight input COMPLETE86c1b30d:
-A/research/current-joint-weight-native-input-20261023-v1/release-r3/CONSUMER.json,
-input01e6ea40/policy11b5657c/model8b7484a7. Full100/known69/69proposals, exact
-oldlearned17binaryweightsa8e77119/0NN-forward-fit-order/outcome. Two preconversion
-route-schema faults retained; final0.027903s, not runtime deployment or fill.
-Known69routes from acquisition67e3d813; unknown31UNAVAILABLEzero, no inventedvenue.
-Code7f3d6e4/c97cfe6 committed/PUSHED main, not new runtime deployment.
-Worktreeauthority491bf085 at A/verification/current-native-weight-worker-admission-20261023-v1/
-attempt-r1/AUTHORITY.json:512serial/18747fullPASS25skip/actual8workers/clean
-originalhelper/Ruff3Compose/exact1380sources. Primary retains13 legacy CRLF
-scripts, normalized text equal but byte-distinct from worktree. New PRIMARY
-authority93991da5 at A/verification/current-native-weight-primary-integration-20261023-v1/
-attempt-r2/AUTHORITY.json:546serial/18747fullPASS25skip/18772total/actual8/
-originalhelperexit0+clean/Ruff3Compose/exact1380+2controls digestde002fd2.
-Full372.57s/helper399.07s. First14308-pass partial failed a proven allocator-
-address substring test, not private output; d80f4c99 reproducer/test-onlydfb14ec
-fix committed/PUSHED. No normalization of historical script pins.
-Independentinputc3f9aef9:886checks8negatives17sourcefiles unchanged/alljoined.
-Native current-core successor A/execution/current-weight-native-fixture-repair-20261023-v1/
-CONSUMER.json:317+290 assertions/two actual processes, unknown exact request+F9
-held/no resubmit, owned-only old4+typed1 invented SELLs/terminal/restart proven.
-Old2fixture faults180upper retained; successor160upper/combined340of600/alljoined.
-Old4f RO projection attempted locking-store read and was denied; no book changes,
-NOT positive oldimage execution evidence.18common source bytes match; transfer
-limitation retained. Actual current imagec409e24e;4777ef4f was buildCONFIG, not
-addressable image ID. No real broker/private/Task effects from these proofs.
-Found actual worker injection stillraw-only: minimal two-profile allowlist now
-added,10ABItestsPASS and fresh primary authority93991da5 above.
-Actual newworkerimage75df0968 built. Nash owns new runtime qualification/template
-A/execution/current-joint17-weight-paper-preparation-20261023-v1; no newTask
-installed yet. Actual75df cold successor Source983f9b12 passed66+36assertions/
-20OwnerAdmission exchanges, bothhostsjoined/containersabsent. Old twofixture
-faults/debits retained; final consumer sealing and new quiet controller binding
-are separate from this proof. Proposedone entryOct23 15:30..16UTC/ownedexitNov19>=20:45UTC,
-ONEjoint17-Oct23/.005originalbasis; all69targets not69guaranteedorders.
+PROPOSED, NOT installed: joint17-Oct23-v1/.005ORIGINALgross, entry Oct24
+00:30..01:00KST /Oct23 15:30..16UTC; conditional exit Nov20 05:45KST /
+Nov19 20:45UTC.8entryvisits/atmost8positions/8exitvisits/2pending-firstrecoveries;
+69proposals are partial coverage, not69fills. Keep source/bank/counters/identity.
 
-Historical pre-weight primary compatibility54526ef3 (not current authority):
-A/verification/current-nightly-context-recovery-20261023-v1/authority.json.
-1464serialPASS/18659fullPASS25skip/18684total425.26s/actual8workers/cleanoriginal
-helper/Ruff3Compose/exact1375production-control123a2072. Fullstdout/JUnit/in-run
-workerproof retained. Initialargument/quietstdoutverifierfaults NOT authority;
-independentsealer validated SAMEsuccessfulhelper, no cleanupbypass/rerun.
-Exactdigest checks/Ruff3Compose fresh passed beforeff940e4. Newcode requires
-fresh changed-path/full authority, not blind reuse. Externalcode has own native
-proofs. Preserve unrelated untracked %SystemDrive%/. D15percentfree/warn20.
-Never read/route KIS_LIVE_* or output private/raw/secrets. Continue ready work.
+Old-owner SDK delivery COMPLETE b6ab7f0b/Source0cc9b799:
+A/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/CONSUMER.json.
+476SDK .py/1375historicalsource+2control pins/original credential-custody roots.
+Volume entry/exit and HGB exit reboundReady/rollback-reinstall-readback;
+0API/Taskstarts, R5/nightly XML-ACL unchanged. Final source transfers exact
+native-body bytes, not another finalhash native run. Historical controls are
+evidence, not current authority. Frozen delivery protects old exits from main edits.
+
+## Research / Current Owners
+
+Completed fits are not ready reruns. Detailed history stays roleboards/Git/A.
+
+- H20 MoEa4a7b041 twoCUDAfits41/56epochs/selected17-32/12adaptivecells passed frozen
+  criteria;3cohorts/high concentration/reused data, not alpha/PaperPnL.
+  HHIpenaltydf38d8b2 failed/oldalias. H5c359420f actual19CUDAepochs13129updates/
+  selected3/body693.977s/peak564338688bytes failed all43issuer57.6823percent cap;
+  other finance/funded-risk passed. Alljoined/released. Data28d7ed8f DID materialize
+  H5; correction7b4183d8 fixes copied prose only.
+- LiquidETF CPU HGB43stages/TCN18epochs1278updates/21cellprice-onlyPASS47e05ba9.
+  NEW carryf9bbcd67/b36fa093 FAIL: half60.0407%/DD31.3331 versus equaltrio hold
+  92.5464/29.8324, Jan2021-Jul2026/10bp/price-only.33cells/0fits/alljoined.
+  No old regrade, causal fee-isolation, totalreturn or Paper promotion.
+- Gap-rank47e3fb87 ACTUAL2GPUfits71/67trees/selected7-3/138updates, fit bodies
+  1.538533/.707056s.12cells/oneadaptiveINNER/LATER0/all3conditionsFAIL/alljoined/
+  GPUreleased/390.619243lineage. Source/native faults retained, no successful
+  refit. Representativecee301f8:137350rows/3.36Mpairs/GPU.764s-CPU2.574s for
+  configured backends; not identical-optimizer acceleration or a timing bound.
+- Cached fusiond114b164 REJECT: same43/full100/3295mask, inverse3 funding alignment
+  (.10total/3 versus .10percohort). HalfMoE-RMSE+.390976%/DD1.697941 failsDD;
+  halfMoE-pairwise-.118392%/.740976 failsgrowth. Both caps pass, neither all3.
+  6cachedcells/0fits-forwards-heldarchives-GPU/alljoined; no blend retune.
+- TabM d941a343 was ACTUALLY tested:34CUDAepochs6868updates/selected10 versus MLP
+  32epochs/selected8. Source23672b19 rejects duplicate architecture priority, not
+  every H20 transfer. New proposal2783b108/ClaudeREVISE5e38479d is mature TRAIN
+  memory32 plus one globalMLP19 and fixed raw-payoff half, not official TabR.
+
+Socrates owns current-mature-memory-h20-development-20261023-v1 Source/native
+preparation, NOT training. TRAIN-only nonalias, strict target maturity, ties,
+optimizer/codec/pace/pins/caps before conditional one-fit numerical dispatch;
+no extra Parent permission wait. Kant owns thin calendar/bank/INNER-feature-only
+packet, no held labels/API/GPU. Steward coordinates GPU actual PID/start/lease
+and measured headroom; personal apps not permission holds, no dummy training.
+
+Ready fitpacket435a3a6e:
+A/data/current-gap-rank-h20-fit-input-20261023-v1/CONSUMER.json,19features,
+TRAIN134187rows/3471546pairs,CHECK5558/203162,17391native+149host/26refs/alljoined/
+Data37.992288once. Reuse exact packet/affines/100mask; no recreation.
+Historical10083closed/17unavailable/87934newbars/0remaining; freshOct22 capture
+70GET1POST/6993rows/alljoined,69raw-context-factor known/67volume due2zero activity
+sums, not economic illiquidity. Currentlisting/nonPIT/CA/TR/arrival/finality limits
+constrain claims, not company/Paper authority. No new paid/public data.
+
+## Verification / Recovery
+
+PRIMARY authority93991da5:
+A/verification/current-native-weight-primary-integration-20261023-v1/attempt-r2/AUTHORITY.json.
+546serial/18747fullPASS25skip/18772total/actual8/originalhelperexit0+clean/Ruff/
+default-research-accountingCompose(.env.example),1380sources+2controls digestde002fd2.
+Full372.57s/helper399.07s. Allocator-address false positive d80f4c99 fixed test-only
+dfb14ec; first partial not authority.13legacyCRLFscripts preserved. Worktree491bf085/
+old54526ef3 are scoped history. Docs/external reuse needs exact current digest and
+fresh changed-external checks; repo tests cannot validate external code.
+
+Reader12410a15 uses networknone/private-sourceRO/no observe-lock-recovery and
+actual writers/mounts/before-after stability, not all research/future due times.
+All7oldobserver pauses restored Oct22 17:36UTC; no remaining global role hold.
+Assumed honest host, not cryptographic OS Scheduler origin. Interactive Windows
+session/online Docker required, not awake Codex. Models A/data M/D15%free-warn20%.
+Continue ready delegated work; never foreground-wait for sessions/quotas.

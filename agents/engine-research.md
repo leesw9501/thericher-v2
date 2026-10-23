@@ -151,6 +151,42 @@ numerical GO. Leibniz owns current-pairwise-tree-native-readiness-20261023-v1:
 real CatBoost CPU/CUDA pair-weight/safeJSON/curve/pace SYN proof, max4fits/8trees
 each, no market. Old CatBoost rejection stays immutable; date-local arbitrary
 rank scores are not expected returns or native Paper weight inputs.
+Actual Engine preparation c73c6473 at
+A/research/current-gap-rank-h20-development-20261023-v1/CONSUMER.json is READY
+59SYN/23metadatarefs, no market dispatcher/fits at that frozen checkpoint.
+Socrates now prepares exact two-fit dispatcher; Kant prepares actual6leaf
+TRAIN/CHECK independently. Leibniz uses retainedCPUselected model without
+refit plus3unstarted slots, aggregate5SYNcalls/40trees/600active/7200elapsed.
+Parent conditional dispatch permits exact2GPUfits/12financialcells/LATER0 ONLY
+after actual native/Data/worker/source/lineage/headroom conditions pass; no
+extra Parent GO wait, silent model/metric change or source-only training claim.
+That dispatch is now COMPLETE FAIL47e3fb87:
+A/research/current-gap-rank-h20-development-20261023-v1/NUMERICAL-CONSUMER.json.
+Actual2GPUfits71/67trees/selected7/3/138updates; fit bodies1.538533/.707056s.
+CHECK order regret .498121 versus RMSE .487192; all3 frozen conditions fail.
+10bp growth/DD%initialresearchNAV pairwise-.382594/.488777, RMSE-.043015/1.275429,
+uniform-.266832/.432872. Funding .10TOTAL split3cohorts, not old MoE .10PERcohort.
+OneadaptiveINNER/12cells/LATER0/alljoined/GPUreleased/390.619243lineageof6000.
+No rerun/winnerfallback/independent alpha or Paper promotion.
+
+New cached fusion Source d114b164 at
+A/research/current-moe-tree-fusion-feasibility-20261023-v1/CONSUMER.json REJECT:
+same43/full100/3295mask, proven inverse3 NAV alignment to .10PERcohort. At10bp
+HALF_MOE_RMSE growth+.390976%/DD1.697941% (DD>uniform1.297843%); HALF_MOE_PAIRWISE
+growth-.118392%/DD.740976% (growth fails). Both issuer caps pass but neither all3.
+6derived comparisoncells/116workerchecks/22pins/67.969activeupper/alljoined/
+0newfits-restores-forwards-heldarchives-GPU. Equal-third negative growth proved
+algebraically, no extra readout. Old results unchanged, no blend retune/rescue.
+
+Next owned Source/native preparation:
+A/research/current-mature-memory-h20-development-20261023-v1. Strategy23672b19/
+proposal2783b108 rejected TabM duplication (actualprior34CUDAepochs/6868updates
+d941a343) and proposes one mature TRAIN-memory32 expert plus one globalMLP19
+and fixed raw-payoff half. No learned stacking. TRAIN-only support nonalias and
+strict target maturity/tie/native optimizer/codec/pace before one new fit;
+conditional dispatch inside frozen6000active/28800elapsed, no Parent GO wait.
+This assignment is not training. Source reviewREVISE5e38479d retained, no
+coordinate/k/threshold rescue; previous failures and debits remain closed.
 
 ## Closed Families / No Duplicate Work
 

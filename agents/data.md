@@ -66,6 +66,15 @@ Unknown action units constrain that old consumer, not company/Paper authority.
 
 ## Retained Inputs / Closed Cursors
 
+Completed fitpacket435a3a6e at
+A/data/current-gap-rank-h20-fit-input-20261023-v1/CONSUMER.json: actual six
+source leaves/FACTOR10+CONTEXT9 affines from ABIa5027850 verified. TRAIN2747dates/
+134187rows/3471546pairs, CHECK75/5558/203162pairs,19FP32 features/rawFP64 targets.
+17391native+149hostchecks/26independently verified refs/alljoined; Data400subtotal
+37.992288 inclprior20.849017 once. Derived bytes M/research_inputs only; no
+INNER/canonical/API/credentials/models/GPU. Memory consumer may reuse the exact
+packet without recreating it; old models/outcomes are not fresh replication.
+
 Modern context46861c1b/ABIa5027850: TRAIN2747dates134187rows/CHECK75-5558/
 INNER43-3295/threeH20cohorts/19tailpurges/custody575+317checks.
 Volume packc0a88302:58743predicates/301.376801upper/alljoined; exact later

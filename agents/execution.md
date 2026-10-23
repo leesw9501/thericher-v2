@@ -87,6 +87,17 @@ Public no-effect Source checks are not an actual fill or futureaccountrisk pass.
 
 ## Latest Actual Custody
 
+Current additional owners: Meitner prepares the quiet typed-weight controller
+at A/execution/current-joint17-weight-owned-runtime-20261023-v1; no install yet.
+Nash owns official-source-only Paper fee/settlement capability research at
+A/execution/current-paper-fee-settlement-capability-20261023-v1, no credentials/
+private/API/Task access. Both improve existing native execution/PnL consumers,
+not new broker/risk platforms. Native f9d7d609 proof is complete, not running.
+Nightly compatibility completion36f9d118 passed562invented checks: completed
+context starts fresh full-binding with generic foreignv4 owners; retained-book/
+own-mutation denials remain. Parent keeps original nightly unchanged. Source
+advance/provider/locks were invented; this is not actual future account/fill proof.
+
 Fresh BALANCE/OPEN-ORDERS-only API20:02UTC:
 A/execution/current-paper-balance-openorders-readback-20261023-v1/CONSUMER.json
 16da7a56/result85ca09c0,4GET1POST/0orders/nofundsquery/privatewrites/alljoined.
@@ -119,6 +130,11 @@ F9:1originalattempt/no retainedack-fill/UNKNOWN/reservationHELD. Original exactd
 history1POST1GET/0rows-candidates was not non-send. Additionaltrace da006661/
 19checks/0API found missingcomplete originaltrace/dispatchbinding/codedrejection.
 ZeroBUYcounters/currentabsence/open0 do not release. No query repeat/new identity.
+Source-only follow-up a638e1a6 at
+A/execution/current-f9-history-filter-audit-20261023-v1/CONSUMER.json passed211
+checks: official pinned filter/date/pagination semantics match existing source,
+no useful repeat identified. Missing exact original dispatch/guard/identity/
+coded rejection persists;0private/API, no outcome or reservation release inferred.
 Original8:8BUY8SELL fullfills/ownedflat/completedTaskdisabled. Accounting5cabc996/
 14checks aggregate retainedgrossNEGATIVE (not eachindividualsign); fee-schema/
 settledcash/netPnL UNKNOWN, not CA/tax-adjusted/freshbroker/independentalpha.

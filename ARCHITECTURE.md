@@ -115,6 +115,39 @@ the same receipt cannot change its persisted side. Acknowledgement, open-order
 state, and later reconciliation are execution facts; neither a receipt nor an
 acknowledgement is a fill or realized-PnL claim.
 
+### Typed Target-Weight Paper Input
+
+The target-position graph has two explicitly different native consumers:
+`model_paper_proposal.py` consumes forecast-payoff proposals; the inert
+`research/model_paper_weights.py` consumes sealed target weights. A weight is
+neither expected return nor a ranking score. The latter uses the explicit
+`MODEL_WEIGHTS_NAS` stock-cycle profile and the existing guarded worker, not a
+model loader, payoff scorer or a second broker implementation.
+
+The versioned weight input retains the complete source slot axis, availability
+mask, binary64 weight identity, source/model/policy references and causal session
+clocks. Unknown slots have zero weight and explicitly unavailable routes.
+Admission never selects TopK, renormalizes surviving targets, or reallocates
+rounded/unavailable slots. A finite number of native visits is partial coverage,
+not a claim that every retained proposal was considered or filled.
+
+Execution converts each slot to a bounded fraction of one cohort's original
+gross-cost ceiling; native quotes, whole shares, risk and buying power may only
+reduce it. The cohort consumes the same persisted aggregate original Paper
+allocation, costs, losses and unknown reservations. It is not a new bank per
+model or row, nor a measured-fee/settlement guarantee. Intent-before-effects,
+exact unknown-request recovery and owned-only exits use the existing lifecycle.
+An explicit profile parameter is required when reading its retained model record;
+there is no fallback through the legacy payoff codec.
+
+Model fitting and inference remain outside Execution. Already-owned older
+workers use content-pinned same-version source/SDK deliveries with separate
+credential/custody roots, so normal repository development cannot silently
+invalidate their future exits. This preserves old identities and counters;
+it does not import historical policy snapshots as current authority. Runtime
+qualification, installation, accepted submission, linked fill and attributable
+PnL remain distinct facts. Current dated deployments belong in RUNBOOK/HANDOFF.
+
 ## Modules
 
 ```text
@@ -130,8 +163,8 @@ dashboard/   read-focused monitor plus emergency controls
 ops/         daily reports, next-goal scripts, scheduled maintenance
 ```
 
-Durable work is owned by Data, Engine Research, Research Steward, and Execution
-lanes. Research Steward owns only cross-track GPU and sealed-evaluation custody;
+Durable work is owned by Data, Strategy Research, Engine Research, Research
+Steward, and Execution lanes. Research Steward owns only cross-track GPU and sealed-evaluation custody;
 it does not select a strategy or modify execution risk. Codex may run their
 disjoint work packages in parallel. Validation is independent and temporary;
 Infra and Review are invoked capabilities.

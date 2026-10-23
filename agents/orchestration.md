@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 08:45KST / Oct22 23:45UTC integration checkpoint.
+2026-10-23 09:30KST / Oct23 00:30UTC integration checkpoint.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent sharedMD/Git.
 No operator decision currently needed; continue active long request.
 
@@ -27,12 +27,12 @@ fees/settlement are unmeasured. Residual cash subtracts costs once.
 | Owner | Actual Work / Next Consumer |
 | --- | --- |
 | Parent | Main dfb14ec pushed; PRIMARY93991da5 PASS546serial/18747full25skip/actual8/cleanhelper/Ruff3Compose/digestde002fd2. Exact allocator-address test reproducer/fix, no private leak. Integrate owned runtime/MD/Git. |
-| Meitner / Execution | SDKdelivery b6ab7f0b/Source0cc9b799 COMPLETE/three tasks reboundReady. Now invented-fixture nightly foreign-owner compatibility audit; no actual effects. |
-| Socrates / Engine+Steward | ETFcarry diagnostic COMPLETEFAIL: HALF60.0407%/DD31.3331 vs buyhold92.5464/29.8324;33cells/0fits/alljoined/500.610110lineage. No ETF promotion. Coordinates the separate CatBoost SYN GPU owner; no market fit yet. |
-| Averroes / Review | Preview test false positive proved d80f4c99/fixdfb14ec. Now completing exact expected-error catches/daily fresh-vs-retained nightly audit, SYN only; no production guard changes. |
-| Leibniz / Strategy | GPU pairwise-tree Source1c915e3e/candidate06aa7634 complete. Native CatBoost CPU/CUDA API/weights/safeIO/pace proof dispatched, max4SYNfits/8trees, no market fit yet. |
-| Kant / invoked Data | Oldaction-awareNOT_READY6d06ed20 preserved. Newprice-onlyDataacec097d READY4523/501/1381/all3/alljoined/23.076110aggregateData, no fetch. |
-| Nash / invoked Execution | Actual75df cold successor Source983f9b12 PASS66+36assertions/20OwnerAdmissionexchanges/alljoined, final sealing. Oldfixturefaults retained; new production coordinator owned by Meitner, no installation yet. |
+| Meitner / Execution | Old SDKdelivery complete. New quiet controller8fad431e not released/installed: review found static PID/CID admission and raw Env collection. Fix dynamic source/capability rules and names-only daemon projection, not an idle-machine workaround. |
+| Socrates / Engine+Steward | Gap-rank47e3fb87 CLOSEDFAIL/2GPUfits71-67trees/selected7-3/138updates/12cells/alljoined/390.619243lineage. Now cached MoE/tree fusion feasibility,0fits/forwards/newheldarchives; align funding/keys first. |
+| Averroes / Review | Nightly36f9d118 complete. Independent controller review468d54ab confirms both P1s at8fad431e; no actual secret access. Fix before release, other work continues. |
+| Leibniz / Strategy | Representative GPUcee301f8 PASS; market fits now closed by Engine. TabM already tested d941a343, no duplicate. Source23672b19 proposes ONE mature TRAIN-memory32 plus globalMLP alternative, not numerical GO. |
+| Kant / invoked Data | Fitpacket435a3a6e READY134187TRAIN/5558CHECK/3471546-203162pairs/19features/26refs/17391native+149host/alljoined. No INNER/API/GPU; Data400subtotal37.992288. |
+| Nash / invoked Execution | Feesabf3a1fb complete: no documented Paper exact-fee+settlement route. F9filtera638e1a6/211checks found no filter/pagination bug/useful repeat; UNKNOWN/HELD unchanged, no API/private effects. |
 
 TemporaryZeno H5Source7eb762c3/a9e83042/17SYN/Source300upper closed. No permanent
 daemon or training inferred from MD/START alone. Completedpoint/shadow/fits
@@ -68,6 +68,16 @@ unknown31UNAVAILABLEzero; no score/rank/nativeoldpoint reuse except staticroutin
 Reversible improvement: fix exact source/bootstrap/test faults once before new
 full dispatch; keep independent native Paper, carry replay and useful GPU
 readiness disjoint. No dummy training or another resource/agent platform.
+Current improvement: prepare actual TRAIN/CHECK fit packet in parallel with
+native GPU qualification. Routine measured API/postfit faults use retained-model
+continuation inside unchanged caps, not another permission wait or fit repeat.
+Actual numerical dispatch requires ready frozen evidence, not a Source proposal.
+Latest review: native APIs and Data were ready, then representative137350-row
+GPU calibration was3.37x faster for its configured backend; exact two fits ran.
+Don't optimize utilization by rerunning them. Next cheap composition audit must
+align .10percohort versus .10total/3 funding; headline growth is not comparable.
+Current Paper-only technical dependency is dynamic capability admission, not
+operator permission. Never use an idle machine/PID snapshot as its fix.
 
 ## Research / Data Evidence
 
