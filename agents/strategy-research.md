@@ -1,9 +1,25 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-23 08:40KST. A=D:/thericher-v2/model-artifacts.
+2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts.
 Own mechanisms/pure kernels/consumable proposals, not broker risk or model
 selection/evaluation authority. Parent MD/Git; Engine numerical contracts.
 Invoked role, not a daemon/per-indicator MD or another report platform.
+
+## Current Ready Mechanism
+
+Leibniz owns current-capped-allocation-h20-proposal-20261023-v1: one NEW
+jointly-trained capped-simplex allocation hypothesis, not another HHI penalty
+or posthoc projection/regrade of the old MoE. Audit prior use/official source,
+pure gradient/tie/feasibility kernel and fixed cap before numerical dispatch.
+Engine owns final data/target/splits/cost/funding/fit/evaluation contracts;
+Steward owns actual resources. No model fit/GPU/broker inferred from this board.
+
+Immediately preceding mature-memory proposal2783b108 was consumed and is now
+COMPLETE_JOINT_FAIL_NO_RERUN4f05e335: one CPU MLP26epochs/8944updates/selected2
+and actual CUDA1.503billion candidate distances. Fixed-half worsened CHECK MSE
+and failed growth, risk passed. Alljoined/15cells/LATER0/265.966291active.
+TabM duplication rejection remains valid: oldd941a343 had34CUDAepochs/6868updates.
+Source23672b19 was a proposal, not an unexecuted training queue. No retune/rescue.
 
 ## Current Consumed Mechanisms
 
@@ -86,21 +102,14 @@ Source1c915e3e/candidate06aa7634. One date-local economic-gap-weighted GPU
 CatBoost PairLogitPairwise versus matched RMSE mechanism, not first CatBoost/
 ranking use or qualified alpha. Official Apache2.0 source and advisory
 SOUND_WITH_NAMED_LIMITS2505a7d7 recorded; old GPU RMSE rejection preserved.
-Current bounded native readiness package:
-A/research/current-pairwise-tree-native-readiness-20261023-v1.
-Max4 real SYNfits/8trees each/600active7200elapsed, CPU+CUDA API/pair-weight/
-safe JSON prefix/pace proof before any market fit. Attest old addon4bb201b5,
-coordinate measured GPU headroom with Steward. No market/outcome/credentials/
-private/Execution/task access, no current numerical GO or GPU-utilization goal.
-First native source00618b41 stopped at the optional PairLogit use_weights
-parameter guard before any completed model receipt/GPU call. Exact first cause
-af6e5145 retained, failedCPUattempt UNKNOWN<=8trees/96.422807active once, no
-market. Explicit metric-spelling-only successor
-current-pairwise-tree-native-metric-repair-20261023-v1 is authorized inside the
-same600active/7200elapsed family: one additional CPU repair plus3unstarted slots,
-aggregate5SYNfitcalls/40trees max inclfailed8, no automatic retry. Pair weights/
-model/seed/fixture unchanged; actual weighted-objective/safeIO/pace still unproven
-until repaired native run passes. No unrelated objectweights added to appease API.
+Pairwise native readiness and retained-model artifact continuation completed;
+the optional use_weights and predict-API first causes/debits remain immutable.
+Actual GPU weighted-objective/safe JSON/cold-prefix proofs passed before the
+representative137350-row pace studycee301f8, then actual two GPU market fits
+47e3fb87 completed71/67trees/selected7/3 and failed all3 frozen criteria.
+Cached fusiond114b164 likewise rejected both fixed halves after funding
+alignment. No pending native permission, first-use claim, duplicate fit or
+postfit parameter rescue. Source inspiration is not checked project alpha.
 
 ## Completed / No Rescue
 

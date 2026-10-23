@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 06:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own model/feature/target/replay interpretation, not broker risk. Parent MD/Git.
 AGENTS.md owns policy; Source/MD/dispatch is not a running fit.
 
@@ -178,15 +178,33 @@ growth-.118392%/DD.740976% (growth fails). Both issuer caps pass but neither all
 0newfits-restores-forwards-heldarchives-GPU. Equal-third negative growth proved
 algebraically, no extra readout. Old results unchanged, no blend retune/rescue.
 
-Next owned Source/native preparation:
-A/research/current-mature-memory-h20-development-20261023-v1. Strategy23672b19/
-proposal2783b108 rejected TabM duplication (actualprior34CUDAepochs/6868updates
-d941a343) and proposes one mature TRAIN-memory32 expert plus one globalMLP19
-and fixed raw-payoff half. No learned stacking. TRAIN-only support nonalias and
-strict target maturity/tie/native optimizer/codec/pace before one new fit;
-conditional dispatch inside frozen6000active/28800elapsed, no Parent GO wait.
-This assignment is not training. Source reviewREVISE5e38479d retained, no
-coordinate/k/threshold rescue; previous failures and debits remain closed.
+Mature-memory campaign COMPLETE_JOINT_FAIL_NO_RERUN:
+A/research/current-mature-memory-h20-development-20261023-v1/CONSUMER.json
+4f05e335. Actual one CPU MLP fit26epochs/8944updates/selected2/patience24;
+CPU chosen from same native workload .001853s versus CUDA .004208s, not a GPU
+permission hold. Actual CUDA performed1502640735 candidate distances including
+TRAIN nonalias screening and CHECK/INNER memory searches. TRAIN-only bank,
+strict exit-before-query-previous-close, tie-shared memory32 and fixed-half raw
+forecasts; no learned stacking or reused CHECK/INNER labels in the memory bank.
+Half worsened CHECK MSE .065283 versus globalMLP .064108; at10bp growth/DD%
+initialresearchNAV HALF-.130274/.316838 versus global+.650591/.612164 and
+uniform-.266832/.432872. Funding .10TOTAL/3cohorts, NOT old MoE .10PERcohort.
+Growth/MSE fail, aligned-risk passes; no replacement-winner promotion of GLOBAL.
+15cells/oneadaptiveINNER/LATER0/52native+207nonalias+85independent+106custody
+checks;10containers/3coldchildren joined/GPUreleased/265.966291of6000active.
+Data f25398a3 retained thin134187-row TRAIN bank refs/32feature-only screen dates,
+no copied labels; Data12.476417 plus prior37.992288 counted once. No rerun/retune.
+
+Next ready preparation, not an actual fit:
+A/research/current-capped-allocation-h20-development-20261023-v1, Socrates owns
+Engine+Steward; Leibniz owns current-capped-allocation-h20-proposal-20261023-v1.
+Investigate ONE new jointly-trained capped-simplex allocation: concentration
+bounded by construction instead of another soft-HHI penalty or posthoc rescue.
+Existing cached causal inputs, fixed cap/target/splits/cost/funding before
+outcomes, actual optimizer/gradient/tie/codec/pace proof and concise Claude
+challenge precede conditional one-fit dispatch. Maximum7200active/28800elapsed
+includes preparation/native/fit/evaluation/cleanup, finite cells/LATER0. An old
+failed campaign stays failed; no extra Parent approval wait when frozen ready.
 
 ## Closed Families / No Duplicate Work
 

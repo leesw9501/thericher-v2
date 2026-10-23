@@ -1,10 +1,25 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-23 08:40KST. A=D:/thericher-v2/model-artifacts.
+2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts.
 Own resource/trial custody, not model choice/approvals. Parent MD/Git.
 Role memory/dispatch/START is not an active GPU process.
 
 ## Current Resource Facts
+
+Current coordinator Socrates. Completed memory4f05e335 used CUDA for1.503billion
+candidate distances and CPU for its one26epoch MLP fit, selected from actual
+same-workload timing. All10containers/3coldchildren joined/ownGPUlease released;
+265.966291active includes old Source/Data once. GPU trees47e3fb87 also completed
+two actual CUDA market fits71/67trees/selected7/3/alljoined. Neither completed
+campaign is a ready rerun. Historical resource samples below are not current
+ownership or a claim that GPU is idle now.
+
+Next preparation is current-capped-allocation-h20-development-20261023-v1:
+ONE new capped-simplex joint allocation mechanism, not a repeated old fit.
+Freeze data/target/cap/splits/seed/costs/trials/7200active-28800elapsed ceilings,
+native optimizer/gradient/cold checkpoint and measured capacity/pace before
+conditional numerical dispatch. Readiness, MD and authoring are not training.
+Existing Execution repair/install stays disjoint; no role-wide GPU/API hold.
 
 JointMoE a4a7b041 two actualCUDAfits COMPLETE:41/56epochs28167/38472updates/
 selected17/32/patience24/oneINNER12cells/LATER0/alljoined/ownleaseReleased.
@@ -68,13 +83,11 @@ Carry replay bootstrap failed before any numerical intake; named technical
 successor completed33cells/0fits, both growth/risk FAIL versus simple holding.
 Old69.891debit/combinedcarry81.376of300/original00:07:59UTC retained, alljoined;
 allLineage500.610110. No completed model training repeated or GPU used.
-GPU mechanism Source1c915e3e/candidate06aa7634 COMPLETE. Leibniz now owns actual
-CatBoost native-readiness proof at
-A/research/current-pairwise-tree-native-readiness-20261023-v1:
-max4SYNfits/8trees,600active7200elapsed/market0. Socrates remains resource
-coordinator; current GPU ownership must come from actual PID/start/lease and
-measured reserve, not this dispatch. Pairwise-tree market campaign NOT released.
-No completion rerun, unknowndesktop permission hold or queued work calledactive.
+GPU mechanism Source1c915e3e/candidate06aa7634/native and representative pace
+qualification are CLOSED. Actual two market GPU fits47e3fb87 subsequently
+completed and failed frozen criteria. Old native API faults/debits remain;
+there is no pending numerical permission or ready duplicate tree fit. Current
+ownership still requires actual PID/start/lease, not this historical record.
 
 ## Allocation Policy
 

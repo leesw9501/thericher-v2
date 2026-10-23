@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 10:00KST /01:00UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-23 10:30KST /01:30UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
@@ -76,15 +76,23 @@ execution evidence;18common byte closure is a transfer limitation.
 
 New controller root A/execution/current-joint17-weight-owned-runtime-20261023-v1.
 Old8fad431e NEVER installed: review468d54ab found static PID/CID admission and
-full Config.Env capture. Corrected Source088efac216824f9b83b26d222a187043b0f85c76e07a51a34a45faea21d4051b:
-capability-r1/CONSUMER.json190c2eb6. Stable reviewed source/job/mount rules admit
-fresh identities, RO readers/disjoint actors; unknown writers/source changes deny.
-Daemon projects ENV names/argv-match booleans, no values/raw argv.29Python/
-2mockCIM/39owner checks plus real never-started canary projection pass.
-Unchanged quiet/native bodies transfer, not a full new effect invocation.
-Alljoined/420of600. Averroes independently reviews final Source; Nash binds stable
-safe capability rules in deployment-r1. Parent owns RELEASE/install/readback.
-Never bind PID snapshots or stop research merely to evade admission.
+full Config.Env capture. Source088 then added stable reviewed source/job/mount
+rules and names-only Python-received Docker CLI projection. This is NOT proof
+that daemon/CLI internals never materialize values. Sourcefec65b1e corrected
+optional missing Tmpfs formatter failure, proved39focused/12actual formatter
+cases and no-mount unrelated-container admission. Old600/600 charge retained,
+no extra native worker starts. The unchanged quiet/native body transfer is not
+a full finalhash effect invocation. No private/API/Taskstart from these repairs.
+
+Current repair owners: Meitner fixes reviewer-identified joined-IPC isolation
+gap and truthful current observer/web capabilities; Nash deployment-r2 owns
+actual safe metadata and stable source/job/mount rules; Averroes delta review.
+Known observer account READ/token writes and web disjoint emergency controls
+are not actual private-book writers or credential-free no-lock readers. Do not
+force unrelated services through a new sandbox or stop research to clear the
+census. Unknown/protected-book writers, source changes and unsafe unknown
+containers still deny. Parent owns final RELEASE/install/readback. No release
+may reuse stale Source088/fec bindings after a further source correction.
 
 PROPOSED, NOT installed: joint17-Oct23-v1/.005ORIGINALgross, entry Oct24
 00:30..01:00KST /Oct23 15:30..16UTC; conditional exit Nov20 05:45KST /
@@ -127,12 +135,25 @@ Completed fits are not ready reruns. Detailed history stays roleboards/Git/A.
   every H20 transfer. New proposal2783b108/ClaudeREVISE5e38479d is mature TRAIN
   memory32 plus one globalMLP19 and fixed raw-payoff half, not official TabR.
 
-Socrates owns current-mature-memory-h20-development-20261023-v1 Source/native
-preparation, NOT training. TRAIN-only nonalias, strict target maturity, ties,
-optimizer/codec/pace/pins/caps before conditional one-fit numerical dispatch;
-no extra Parent permission wait. Kant owns thin calendar/bank/INNER-feature-only
-packet, no held labels/API/GPU. Steward coordinates GPU actual PID/start/lease
-and measured headroom; personal apps not permission holds, no dummy training.
+Mature-memory4f05e335 at
+A/research/current-mature-memory-h20-development-20261023-v1/CONSUMER.json is
+COMPLETE_JOINT_FAIL_NO_RERUN: one CPU MLP26epochs/8944updates/selected2/patience24,
+actual CUDA1.503billion candidate distances. CPU fit was selected from native
+same-workload timing, not GPU permission. HALF CHECK MSE .065283 worsened versus
+GLOBAL .064108; at10bp HALF growth-.130274%/DD.316838%initialNAV, failed growth
+and MSE while aligned-risk passed.15cells/oneadaptiveINNER/LATER0/all10containers
+and3coldchildren joined/GPUreleased/265.966291active. No GLOBAL winner fallback.
+Dataf25398a3 thin TRAIN134187refs/32feature-only screen dates/strict maturity,
+no copied labels; old37.992288 and new12.476417Data counted once.
+
+Next independent preparation: Socrates Engine+Steward owns
+current-capped-allocation-h20-development-20261023-v1; Leibniz owns its Strategy
+proposal. NEW jointly-trained capped-simplex allocation, not old posthoc rescue
+or another HHI penalty. Finite fixed cap/targets/splits/cost/funding/native
+gradient-tie-optimizer-codec/pace/headroom before conditional one fit. Dispatch
+is not training. Kant audits existing next-session data refresh metadata, no
+new collection/schedule. Steward coordinates actual PID/start/lease/resources;
+personal apps not permission holds, no completed-fit rerun or dummy training.
 
 Ready fitpacket435a3a6e:
 A/data/current-gap-rank-h20-fit-input-20261023-v1/CONSUMER.json,19features,
