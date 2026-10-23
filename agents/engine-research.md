@@ -40,9 +40,30 @@ native optimizer/checkpoint proof and actual resources before dispatch.
 No finished fit is rerun;44epoch ed4a596d and three-seed preemption stay closed.
 One GPU coordinator, measured reserved/driver memory and desktop reserve;
 useful CPU preparation and CUDA fitting independent of installed Paper tasks.
-IO prototype0fcda9ea is future-only until native/parity proof, not a reason to
-delay useful research or claim measured speedup. Current assignment is
-preparation, not evidence that fitting is already running. Parent sharedMD/Git.
+IO prototype0fcda9ea passed actual optimizer/codec/default parity in this NEW
+campaign:4serialCUDA native children/12updates/NATIVE-PASS. Source297b367b,
+seed20261104/max100epochs/patience24/LR schedule/twofits/7200active14400elapsed/
+9cells/LATER0. Actual coordinator46128/start134372337134406655 began12:55UTC
+and CLOSED13:13UTC. FINAL-CONSUMER87750f60 COMPLETE_FAIL: GRU54epochs/
+9342updates/selected30, SharedLag80/13840/selected56, bothpatience24. At10bp/leg
+growth/DDpercent initialresearchNAV GRU+.105333/.452555, SharedLag-.926595/
+1.284482, uniform-.822368/1.218932. Cap/turnover pass; growth/DD fail.
+187independent numerical checks/207source-output checks/two actual selected-cold
+exact restores/alljoined/GPUleaseReleased/1980.197280activechargedupper.
+Parent53hashes/1382primary pins passed2c84faac. SameH5data/splits/cost/funding,
+adaptive reused priceproxy; no old44epochfit repeated or Paper candidate change.
+IO timings are measured, not an isolated causal speedup. Parent sharedMD/Git.
+
+Next separately frozen research preparation:
+A/research/current-unit-simplex-encoder-comparison-h5-development-20261023-v1.
+ONE fit per encoder/TWO TOTAL; unit-simplex WITHOUT within-cohort .10 cap, not
+a change to deterministic Paper/sharedinitialtenth. Unit-source reviewa2c62d08
+SOUNDlimits; its mistaken two-fits-per-arm sentence is rejected. Same seed/H5/
+split/purge/CHECK/cost/funding and finite new caps, actual changed-math native
+proof before market fits; report HHI/effectiveN/cohort spread separately. Old
+failures immutable; adaptive hypothesis not causalcap/encoder/independentalpha.
+Long new dispatch is pending measured Volume coexistence or its23:15KST window
+closure, not human approval. Source/short native prep continues; no waiting loop.
 
 ## Completed Joint / Concentration Models
 

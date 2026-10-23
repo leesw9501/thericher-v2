@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 21:50KST /12:50UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-23 22:24KST /13:24UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
@@ -13,9 +13,14 @@ native-target-weight-paper-consumer-v1 is COMPLETE for typed native-path evidenc
 and owned readiness: actual quiet exit-first/entry installation and separate
 definition/ACL readbacks passed. ONE next company outcome is
 joint17-first-session-runtime-attribution-v1. Installation is NOT a submit/fill.
-Parent owns integration/Git; Noether prepares the new matched temporal-encoder
-campaign and coordinates GPU, Aquinas reads actual Paper evidence, Pauli's
-independent deployment review is complete. Preparation is not running training.
+Parent owns integration/Git. Noether's Source297b367b matched comparison is now
+COMPLETE_FAIL87750f60: actual54/80CUDAepochs, alljoined/GPUleaseReleased. It now
+prepares a NEW unit-simplex allocation comparison; no long new market fit yet.
+Aquinas prepares the measured legacy Volume coexistence fix without touching
+today's installed tasks. Pauli's explicit typed-profile RO reader is qualified;
+Parent actual readcc250f6f found typed_record_not_created/UNKNOWN before trigger.
+Kant prepares next-date SAME Joint17 forward; Mill tests future-only IO prefix
+optimization. These disjoint assignments do not themselves prove running fits.
 
 ## Actual Paper / Due
 
@@ -238,10 +243,23 @@ adoption in a NEW campaign. No old-study rewrite or another standing worker.
 Kant completed temporal-expert proposal772776ed: shared-lag63/288rawencoder
 params/rank<=6,17CPUchecks/24Parent-rehashed pins/alljoined/0marketfits-GPU.
 Audit verifies actual patch6/mixer3/attention5fits; no global DLinear first-use.
-Noether now owns a NEW matched two-fit raw-encoder comparison under
-A/research/current-shared-lag-vs-gru-h5-development-20261023-v1, with actual
-contract/native/resource checks before fits. Old completed numerical/proposal/
-prototype workers are joined; no new running-fit claim until runtime evidence.
+Noether completed the NEW matched two-fit raw-encoder comparison under
+A/research/current-shared-lag-vs-gru-h5-development-20261023-v1, Source297b367b.
+Actual4serialCUDA native children/12optimizer updates proved both encoders,
+serial checkpoint restore and IO opt-in parity before market fits. SameH5data,
+seed20261104/CHECKonly selection/max100epochs/patience24/LR schedule/two fits,
+7200active/14400elapsed/LATER0/9cells. FINAL-CONSUMER87750f60: GRU54epochs/
+9342updates/selected30, SharedLag80/13840/selected56; bothpatience24. At10bp/leg,
+growth/DDpercent initialresearchNAV GRU+.105333/.452555, SharedLag-.926595/
+1.284482, uniform-.822368/1.218932. Growth/DD fail, cap/turnover pass; no retune,
+winner adoption or old-result regrade. Two serial selected-cold exact proofs,
+187independent numerical checks/207source-output checks/alljoined/GPUreleased/
+1980.197280activechargedupper. Parent independently hashed53external refs,
+mapped both guest manifests, and rechecked1382primary pins:2c84faac.
+Contract7GiBprojection+4GiBdriver reserve is enforced by dispatch's11264MiB
+prechild guard; inherited claim-room2048 label is not the operative projection.
+Driver samples reached73percentGRU/96percentSharedLag, not isolated benchmarks.
+Old completed numerical/proposal/prototype workers are joined, not rerun.
 Standing Windows tasks own due times; no foreground session wait/app follow-up
 chain. Typed deployment readiness is complete above, not from these packages.
 
@@ -252,6 +270,18 @@ Original NAS task remains Disabled. These facts do not establish new fills.
 
 The old three-seed campaign is closed/resource-preempted, not a ready rerun.
 One current Steward resource owner is Noether; no dummy/duplicate training.
+
+NEW source/math/native preparation only:
+A/research/current-unit-simplex-encoder-comparison-h5-development-20261023-v1.
+Remove within-cohort .10 cap in a separately frozen two-fit research contract,
+not Paper's original shared .10 allocation/risk. Unit review a2c62d08 was prepared
+before the latest capped outcome was read; motivation still uses older failures
+and is explicitly adaptive. SAME installed Joint17/input/bank remain unchanged.
+Measured Volume hook381a9b04 has no external Research descriptor ingress and
+requires old static host/CID claims. Long new fit dispatch is temporarily scoped
+to qualified coexistence or after its22:45..23:15KST window/actual writer closure,
+not operator approval/global GPU ban. Noether/Mill join short probes by22:40;
+source/reader/next-date preparation continues. Do not foreground-wait.
 
 Next-date Data Source2c91d1a7/consumer13603b66 and deployment80f486ff COMPLETE
 for readiness ONLY. Exact one-shot thericher-kis-paper-oct26-model-input-refresh-20261023-v1

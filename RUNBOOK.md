@@ -41,6 +41,22 @@ from Ready/exit code or run a recovery-capable observe() to inspect outcomes.
 
 ## Current Read-Only Custody
 
+Joint17 explicit typed-profile reader is independently inspected by Parent and
+qualified on invented native state:20tests/actualimage75df0968/networknone/
+source-privateRO/no lock-recovery. Source4f385552, command:
+```powershell
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B D:/thericher-v2/model-artifacts/execution/current-joint17-first-runtime-reader-20261023-v1/host.py --mode current --source-sha256 4f385552c75831eb4521e4f2a0db5478329ef74ae41a331d933a284cee9bcc49
+```
+Append --visit-id ONLY with an exact caller-supplied owned32hex visit, never a
+latest-artifact scan. Current actual readcc250f6f at
+A/execution/current-joint17-first-runtime-reader-20261023-v1/read-a079e8f5a9ba4f4f8ba40c14df901a22/RESULT.json
+proves offline completion/stable bytes, typed_record_not_created/UNKNOWN before
+trigger, NOT zero orders/fills. Exact native retained custody and exact visit
+classification are separate: per-request visit-to-fill causality is NOT_RETAINED
+in the categorical transport output. Do not invent it or withhold independently
+proved typed custody because OS-origin proof is unavailable. No fresh broker/
+fees/settlement/netPnL or F9 outcome claim; original reservation unchanged.
+
 Qualified source/outcomes:
 D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/FINAL.json
 SHA12410a151c01da508e040a5b2a08f4b8b88586c6c8f032c37324820da8e80cdf.

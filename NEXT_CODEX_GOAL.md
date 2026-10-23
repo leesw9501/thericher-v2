@@ -56,21 +56,35 @@ proof transfer is not a full final-source native effect invocation.
 
 ## Parallel Ready Research
 
-Noether owns a NEW matched two-fit SharedLag63-FiLM versus GRU H5 campaign:
+Noether COMPLETED the matched two-fit SharedLag63-FiLM versus GRU H5 campaign:
 A/research/current-shared-lag-vs-gru-h5-development-20261023-v1.
-Reuse proposal772776ed/Data28d7ed8f, freeze same data/splits/purges/costs/funding/
-cap and finite fitting/evaluation/active+elapsed ceilings before numbers.
-Exercise actual native optimizer/checkpoint/codec, train/CHECK curves, suitable
-early stopping and restore selected CHECK checkpoint. Old44epoch H5 failure
-ed4a596d and three-seed resource fault9e5f6f0a remain closed, not ready reruns.
-Measure actual free/allocated/reserved/driver headroom; one coordinator,
-serial-first/no overlapping cold restore until real co-tenancy measured.
-Personal GPU apps are not a permission hold. No dummy training or duplicate fit.
-Future-only IO prototype0fcda9ea may be adopted only with native/parity proof;
-do not delay useful fitting or claim a synthetic speedup as real training gain.
-Adaptive reused-data comparisons are not independent alpha or Paper PnL.
+FINAL-CONSUMER87750f60/Source297b367b: actualGRU54epochs/selected30 and
+SharedLag80/selected56, bothpatience24/9cells/LATER0. At10bp growth/DDpercent
+initialresearchNAV GRU+.105333/.452555, SharedLag-.926595/1.284482,
+uniform-.822368/1.218932. Growth/DD FAIL, cap/turnover PASS. Alljoined/GPUreleased;
+no replacement of current Paper candidate. Parent53refs/1382primary pins verified.
 
-Aquinas reads existing Paper results in parallel. A worker-owned next_due never
+NEW source/math/native preparation:
+A/research/current-unit-simplex-encoder-comparison-h5-development-20261023-v1.
+Same two encoders on unit-simplex WITHOUT within-cohort .10 cap under a new
+frozen twofit-total contract; NOT Paper budget or deterministic-risk changes.
+Keep same H5 target/split/purge/seed/CHECK/cost/funding, finite new caps and real
+changed-math native proof; disclose adaptive reuse/concentration/smallcohorts.
+Old44epoch/H5/three-seed failures remain closed, not ready reruns or regrades.
+Measured legacy Volume hook381a9b04 lacks descriptor ingress and requires static
+host/CID claims. Aquinas prepares a narrow external coexistence adapter without
+touching today's installed path. Long new market fits await qualified coexistence
+or its23:15KST window/actual writer closure; this is scoped technical timing,
+not human approval/global GPU ban. Join short native probes before22:40KST.
+One coordinator/actual allocated-reserved-driver headroom/desktop reserve,
+no app-name hold/dummyfit/overlapping coldrestore. Mill's IO prefix prototype
+is FUTURE-only and cannot mutate a frozen study or claim unmeasured GPU speedup.
+Kant prepares SAME learned17 next-date forward for actual accepted Data refresh,
+not another collector or fabricated future feature. Source/CPU work continues.
+
+Aquinas reads existing Paper results in parallel; Pauli's typed RO reader4f385552
+is qualified and actual pretrigger readcc250f6f is record-not-created/UNKNOWN,
+not zero orders/fills. A worker-owned next_due never
 becomes foreground session waiting. Continue another ready disjoint package.
 
 ## Verification And Completion

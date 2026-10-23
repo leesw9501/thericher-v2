@@ -6,10 +6,22 @@ Role memory/dispatch/START is not an active GPU process.
 
 ## Current Resource Facts
 
-Current coordinator is Noether for the NEW matched temporal-encoder campaign
-current-shared-lag-vs-gru-h5-development-20261023-v1. Check exact actual lease/
-PID/start/campaign and measured reserved/driver headroom before dispatch;
-assignment alone does not prove a running fit. Parent Joint17 two-task
+Current coordinator Noether completed the matched temporal-encoder campaign
+Source297b367b/FINAL87750f60:actualGRU54epochs/9342updates/selected30,
+SharedLag80/13840/selected56, bothpatience24. Allworkers/containers joined,
+leaseReleased13:13UTC/1980.197280activeupper/9cells/LATER0. No oldfit repeated.
+Four serial nativeCUDA children/12updates proved codec/IO parity; actual
+dispatch required11264MiBfree/oneGPUchild/no overlappingcold. Driver sampled
+max73percentGRU/96percentSharedLag/minfree15176/20092MiB; co-tenancy not an
+isolated benchmark. Inherited room2048 label was not operative7GiBprojection.
+Parent53hashes/1382primary pins verified2c84faac. Financial growth/DD criteria
+failed; this is not a new ready rerun. Next Noether owns unit-simplex source/
+math/short-native preparation only under a new contract. Long market dispatch
+awaits qualified coexistence or Volume23:15KST/actualwriterclosure; measured
+legacy hook381a9b04 lacks descriptor ingress/static host-CID acceptance, not
+operator approval/globalGPU ban. Short probes join before22:40KST; CPU/source
+work continues. Check actual lease/PID/start and resources before new fits.
+Parent Joint17 two-task
 installation is complete34c24846, not a Research/GPU permission hold. Frozen
 actual actor descriptors are needed only for real coexistence at effect time.
 Previous coordinator Leibniz completed its work. Socrates LLM capacity failure did not stop the old
