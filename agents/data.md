@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 01:18KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 02:41KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendars/features/availability, not account/orders/model
 selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
@@ -13,6 +13,9 @@ context/full100 axis and previous-close availability, use existing TRAIN affines
 once; no silent69->68, Volume67 mask reuse, labels or outcome imputation.
 Existing installed05:10KST refresh below remains its sole current Data owner.
 No extra collector, API call or data-readiness claim from image/SYN success.
+Source-safe Scheduler readback17:38UTC confirms Ready/next05:10KST, not acquisition.
+Parent connects existing exact Data/point/reference readers; no new reader may
+substitute time/latest-file inference for the immutable accepted chain.
 
 Next-session metadata audit COMPLETE:
 A/data/current-next-session-data-readiness-20261023-v1/FINAL-CONSUMER.json.
@@ -45,6 +48,8 @@ full100mask does not authorize a silent dynamic69->68 change. Required missing
 slot makes that point NOT_READY/input failure, not no-signal or zero imputation.
 Repair exact same-date/63feature slots or freeze a separately reviewed future
 contract. Do not rerun the completed CPU proof or fabricate Oct23-close data.
+
+## Reused Historical Inputs / Closed Work
 
 Memory thin packet f25398a3 COMPLETE at
 A/data/current-mature-memory-h20-input-20261023-v1/CONSUMER.json:

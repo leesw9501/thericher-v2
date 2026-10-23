@@ -2,361 +2,149 @@
 
 ## Current Rules
 
-C:/Users/Public/Documents/thericher-v2. Run scripts/start_next_codex_task.ps1.
-AGENTS.md owns authority. Private no-cost Data/Research/KIS Paper is delegated.
-No KIS_LIVE_*, live/real money, private/raw output, foreign adoption, bank reset,
-profit expansion or replacement of an unknown request. One shared original
-virtual-cash tenth. Paper fills and research price proxies are different facts.
-
+Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Models/generated outputs stay A (Docker /app/model_artifacts), data M.
-D free latest approximately38.9percent; preserve15percent/warn20percent.
-Preserve unrelated untracked %SystemDrive%/ and other owners' work.
+Run scripts/start_next_codex_task.ps1; AGENTS.md owns standing private free
+Data/Research/KIS Paper authority. No KIS_LIVE_*/real money/paid/public work.
+No private/raw/credential output, foreign adoption, unknown-request substitute,
+bank reset or profit expansion. Preserve unrelated %SystemDrive%/.
 
-CURRENT Oct24 01:18KST: Joint17 actual15:30/15:34UTC failed20 before native
-visits at owner-call boundary. Parent contained only exact ENTRY15:35:42;
-original backup under A/execution/current-joint17-first-session-owner-fault-20261024-v1.
-Do not run old install/rollback/rebind drafts or infer no-submit from missing
-visits. Logging-only779e94de/RELEASE7e7e24ac is NOW deployed exit-first15:56:08,
-both definition/ACL readbacks passed. Natural15:58 failed20; hash-bound
-OWNER-DIAGNOSTIC-current.json target59623ae4 retains
-DENY_SCHEDULED_OWNER/job_runtime_unbound/CIM_chain. Only ENTRY disabled16:00:49;
-no remaining original opportunity. Exit/bank/identities/counters held, root:
-A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1.
-Do not rerun consumed update.ps1/contain.ps1, old install or recovery-capable
-worker as a reader. No new window/backdate/manual Task start/guard bypass.
-Exact current alias repro36a3f415 supports new9b9dbd50/RELEASE758b4c95, not
-historical failed-subbranch proof. Conditional EXIT alone updated16:11:41;
-source/hash allowlist repair49mocks/cold540/unchanged477SDK, original entry
-disabled unchanged/mutex/all three counter roots zero/original exit timing/ACL.
-Consumer8325dc56 at
-A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/parent-release/CONSUMER.json.
-No repaired actual live-owner pass yet. No consumed update script is a reader.
+2026-10-24 02:35KST: ONE company outcome gru-h5-next-session-paper-readiness-v1.
+Actual dated Data/point/final controller readiness unfinished. Primary H5 code
+770436c pushed; most recent docs checkpointfeb5dc5. Parent owns current MD/Git.
+Consumed installers/probes/recovery workers are evidence, never blind commands.
 
-Primary H5 profile code770436c pushed, new authority24640869 at
-A/verification/current-model-weight-h5-integration-20261024-v1/AUTHORITY.json:
-560serial/18795fullPASS25skip/8actualworkers/helperexit0/clean/Ruff/3Compose/
-1384exactsource-control. Old93991 is historical for the current primary tree.
-Separate cold540/477 proves today's H20 SDK has not imported new H5 code.
-Separate new H5 image81373d2a is built, NOT deployed as an order worker.
-A/execution/current-h5-native-image-preparation-20261024-v1/CONSUMER.json f3e5c658:
-741frozen build files/736actual image sources/11ABIchecks/H20golden/inert worker
-and full100/69SYN exact roundtrip. Materializer591a86d3/6e98261d replaces no old
-builder5bca; actual dated Data/forward/input remain pending. Current company
-goal is gru-h5-next-session-paper-readiness-v1, no raw market reads/order from
-the synthetic proof. Actual Data05:10KST is the next dated dependency.
+## Actual Owned Due / Status
 
-Nightly exact15:25:55 privateRO2d168c90 proved currentSELL1attempt/1ack/1fullfill/
-cyclecomplete; sharedpositive7/unresolved1/reservationexists, not fresh broker
-positions. Helper's one scoped read is consumed; exact evidence under
-A/execution/current-paper-results-readback-20261023-v1/nightly-current-r1.
-Latest fresh broker count7758823e14:34 is separately7positions0opens, no quantity
-or model ownership match, funds/fees/settlement/netPnL not observed/F9stillHELD.
+- Existing quiet refresh thericher-kis-paper-oct26-model-input-refresh-20261023-v1:
+  Oct24 05:10KST /Oct23 20:10UTC,Source2c91d1a7,69NAS+SPY/70pages.
+  Source still Oct22 close. No duplicate collector/manual Task start.
+  Accept only actual Oct23-close RUNTIME-FINAL/DTO/source/verifier/alljoined
+  chain; task exit/clock/install is not acquisition.
+- H5 proposed new slot unit-gru-h5-Oct26-v1:
+  entryOct26 13:40..14:10UTC, exitOct30 19:45..20:00UTC,4minrepeat/max8visits.
+  Final dated release/install NOT_DONE. Ten-minute-postopen/fifteen-minute-
+  preclose execution proxies != research OPEN/CLOSE.
+- Joint17 original15:30/15:34/15:58UTC failed20,59623ae4
+  DENY_SCHEDULED_OWNER/job_runtime_unbound/CIM_chain. Only expired entry disabled.
+  Alias/hash-only repair9b9dbd50/758b4c95 deployed ONLY conditional EXIT16:11:41;
+  consumer8325dc56, actual repaired owner pass unobserved. Original entry/bank/
+  identities/counters/window retained; no backdate/new request/manual Task start.
+- R5 original3owned exitOct27>=19:45UTC /Oct28>=04:45KST.
+  HGB original1owned exitOct28>=19:45UTC /Oct29>=04:45KST.
+  F9UNKNOWN/HELD; history0/currentabsence/open0 is not non-send/release authority.
+- Nightly Oct23 14:50UTC exactprivateRO2d168c90 at15:25:55:SELL1intent/attempt/
+  ack/fullfill/cyclecomplete; sharedpositive7/unresolved1/buyreservationexists.
+  Not a fresh broker snapshot/whole-account terminal. OriginalNAS8 roundtrip
+  flat/aggregate nominalgrossnegative; fees/settlement/netPnL UNKNOWN.
+- Volume original entryfailed20/contained/expired. Corrected diagnostic74303b03/
+  0561a114 NOT deployed; no expired-entry reactivation. No new observer/app
+  heartbeat chain; obsolete Oct21/22 Codex automation was deleted.
 
-Oct23 02:36UTC: obsolete Oct21/22 Codex app heartbeat `automation` was deleted.
-This did not delete or modify Windows tasks. No replacement follow-up chain.
-That one-shot scope has ended. On Oct23 21:50KST the current human-authorized
-deployment installed the exact two typed quiet tasks, Source8c5aeb71 and
-RELEASE7861b82f. Source-bound actor admission2f55166d remains current-only,
-not future admission or a fill. Do not rerun installation or manually start tasks.
-Exact evidence: A/execution/current-joint17-weight-owned-runtime-20261023-v1/
-parent-bootstrap-boundary-r1/CONSUMER-R3.json and
-deployment-r4/source8c-actual-admission-r1/CONSUMER.json.
-parent-release-r1/RELEASE-CANDIDATE.json remains the immutable old staged record.
-Current RELEASE.json7861b82f and parent-release-r2/CONSUMER.json34c24846 prove
-exit-first/entry install and separate readbacks; all63 old XML/ACL unchanged.
-Fresh39Scheduler mocks/540+7source and1382primary pins/dated input/image passed;
-independent419b2e6e and ClaudeSOUNDlimits53772d03. No Task/API/order start.
-Entry Oct24 00:30..01:00KST, conditional owned exit Nov20 05:45KST onward.
-Native fresh owner/admission/quotes/funds/risk and exact pending recovery remain
-mandatory. No further operator approval is required for delegated private work.
-
-Current source-bound Joint17 EXIT definition readback only (ENTRY deliberately
-disabled/expired and fails this enabled-definition reader):
+Joint17 EXIT definition/ACL readback ONLY (ENTRY disabled deliberately):
 ```powershell
 & 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/tasks.ps1 -Mode Readback -Phase exit -SourceSha256 9b9dbd50b3610c89188fb5e2f4b5a5cebdd18e3231a7cf55e372d057fda590e2 -ReleaseSha256 758b4c95e3154acc117d0efc03ecd31e81fe140870f1a0a30abb7e0b3bc7d0d2
 ```
-Other modes are NOT offline result readers. Do not infer actual submit/fill
-from Ready/exit code or run a recovery-capable observe() to inspect outcomes.
+Other modes are not offline readers. Source-safe status/next/last timestamps
+do not prove a fill or cryptographic OS Scheduler origin.
+
+## H5 Actual Point / Controller
+
+Frozen materializer:
+D:/thericher-v2/model-artifacts/research/current-unit-gru-h5-typed-point-preparation-20261024-v1.
+Source591a86d3/Consumer6e98261d; sameGRU9409/originalTRAINaffines/full100/
+required69/unknown31zero. CPUrestore/SYNproof complete; actualpoint NOT_DONE.
+After accepted actual Data chain, exact FUTURE-COMMAND.json permits ONCE:
+```powershell
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B D:/thericher-v2/model-artifacts/research/current-unit-gru-h5-typed-point-preparation-20261024-v1/run.py future --source-sha 591a86d393f1b7b40cb754a5bf8fdf1107b8821a6edb7ed2fee8229098ddd35d
+```
+Do not restore/refit/infer twice or use a missing-data point to fake readiness.
+Actual outputs FUTURE-CONSUMER/POINT/MODEL-PAPER-WEIGHTS/JOINED are bound through
+existing exact readers, not latest-file discovery.
+
+Prospective reference5512508f/c1ff1cf8:
+D:/thericher-v2/model-artifacts/research/current-gru-h5-prospective-reference-preparation-20261024-v1.
+GRU9409vsuniform/same69/onecohort/six1-5-10bp cells. Freeze before entry from
+actual Data/point, not after outcomes. Later retained actual entry OPEN+five
+CLOSE marks/capture metadata are required. No actual reference yet.
+
+Parent reader bridge (qualified8b23ec50/ba408a02, not effect release):
+D:/thericher-v2/model-artifacts/execution/current-h5-point-reader-integration-20261024-v1.
+Default only checks required point-file presence; no inference/Task/private/API:
+```powershell
+uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/current-h5-point-reader-integration-20261024-v1/bridge.py
+```
+11unit/14independent/10cold checks/ClaudeSOUNDlimits; two original binding
+omissions fixed, original findings preserved. Verify exact SOURCE8b23ec50 and
+its three code hashes before the actual command. After accepted actual point,
+--build-actual validates existing Data/point/join/reference chain, freezes the
+reference only if absent and generates NEW disabled dated-actual-r1 candidate.
+It does NOT run a model, release effects or install Tasks. Do not rerun an
+already-created immutable candidate or separately refreeze its reference.
+
+Quiet compilerSource4a6e8fcc/Consumer87ffada2 at
+D:/thericher-v2/model-artifacts/execution/current-h5-quiet-controller-preparation-20261024-v1.
+Generated/not-ready-r2 is disabled/nullinput/nullpolicy/noRELEASE.
+Parent must independently qualify actual dated route/owner/admission, bind final
+proofs/release and install EXIT FIRST/ENTRY SECOND with separate XML/ACL readback.
+Positive generic SYN binding is not actual dated input or scheduled-owner proof.
+
+New H5 image81373d2a/nativeSource193d5709/Parentconsumer1fe7e59e:
+173nativeSYNchecks/38realIPC/quiet/alljoined, fake broker/book only.
+Cold exec is SAME OS PID/new interpreter. No realprivate/API/Task/fill claim.
+Do not rerun consumed actual SYNdriver. Old H20 roots/SDK stay immutable.
+Legacyreaderfbd36240 SYN1181checks is scoped pure parser compatibility, not
+full old worker/locks/actual private or own R5/HGB/H20 capsule qualification.
 
 ## Current Read-Only Custody
 
-Volume ENTRY recovery is CONTAINED, not a current runnable command. Actual
-22:45/22:49KST failures20; original window closed23:15. Exact backup and facts:
-D:/thericher-v2/model-artifacts/execution/current-volume-first-window-technical-recovery-20261023-v1.
-Never rerun containment/research-dispatch-facts.ps1 (immutable CreateNew output),
-backdate/re-enable expired entry or release unknown reservations. Logging-only
-cdbd7da6 was NOT deployed: legacy h.call drops denial stdout before the new
-exception.stdout branch can see it. A separately versioned corrected diagnostic
-must retain safe stdout BEFORE the identical returncode failure. Owner denial
-itself is not observed; pre-owner prefix passed. Parent architecture advisory
-REVISEfc0311ff at current-paper-owner-proof-simplification-20261023-v1/PARENT-REVIEW.json
-means no blanket owner/ancestry relaxation. Original exit remains on0cc9b799.
-Research closureccd0a50c is point-in-time scoped writers, not account/no-submit
-proof. Actual Noether market dispatcher40628/start134372386280941023 Sourcefa957bb6
-began14:17:08UTC; do not duplicate it or create a competing Volume owner.
-
-Joint17 explicit typed-profile reader is independently inspected by Parent and
-qualified on invented native state:20tests/actualimage75df0968/networknone/
-source-privateRO/no lock-recovery. Source4f385552, command:
-```powershell
-& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B D:/thericher-v2/model-artifacts/execution/current-joint17-first-runtime-reader-20261023-v1/host.py --mode current --source-sha256 4f385552c75831eb4521e4f2a0db5478329ef74ae41a331d933a284cee9bcc49
-```
-Append --visit-id ONLY with an exact caller-supplied owned32hex visit, never a
-latest-artifact scan. Current actual readcc250f6f at
-A/execution/current-joint17-first-runtime-reader-20261023-v1/read-a079e8f5a9ba4f4f8ba40c14df901a22/RESULT.json
-proves offline completion/stable bytes, typed_record_not_created/UNKNOWN before
-trigger, NOT zero orders/fills. Exact native retained custody and exact visit
-classification are separate: per-request visit-to-fill causality is NOT_RETAINED
-in the categorical transport output. Do not invent it or withhold independently
-proved typed custody because OS-origin proof is unavailable. No fresh broker/
-fees/settlement/netPnL or F9 outcome claim; original reservation unchanged.
-
-Qualified source/outcomes:
-D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/FINAL.json
-SHA12410a151c01da508e040a5b2a08f4b8b88586c6c8f032c37324820da8e80cdf.
-SOURCE.json binds helper code and immutable native-reader dependencies.
-Use exact qualified source, not edited/unqualified scripts.
-
-Credential-free, network-disabled, private/source RO native inspection:
+Qualified12410a15:
+D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/FINAL.json.
+Use only with a new actual consumer and unchanged pinned source/capabilities.
 ```powershell
 uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/host.py --mode r5
 uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/host.py --mode nightly
 uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/host.py --mode f9
 ```
-
-This checks actual private RW containers/effect-capable or unknown hosts,
-not unrelated Data/Research/verification work or arbitrary nearest due times.
-Exact actor/source/mount attestation and unchanged private membership/identity/
-mtime/bytes remain mandatory. No observe(), lock creation or order/recovery call.
-Unknown/mutating custody withholds conclusions; never reinterpret missing as flat.
-R5 native model_paper_pointer(policy) and F9 CURRENT20 pointer cannot be swapped.
-Assumed-honest-host projection, not cryptographic Scheduler-origin evidence.
-
-A separately approved READ-ONLY API query, not the offline reader:
+Explicit typed-profile reader4f385552:
 ```powershell
-uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/balance_host.py
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B D:/thericher-v2/model-artifacts/execution/current-joint17-first-runtime-reader-20261023-v1/host.py --mode current --source-sha256 4f385552c75831eb4521e4f2a0db5478329ef74ae41a331d933a284cee9bcc49
 ```
-It selectively loads Paper credentials, sends them only through stdin, checks
-the owned account identity inside the process, and queries balance/open orders
-only. One token POST/24GET ceiling/1.25s pacing/110s work budget; no orders.
-Never print private values or mark a balance-only result as a full risk snapshot.
-Token/collection controls are separate from the private order book.
+--visit-id requires an exact supplied owned32hex visit, never a latest scan.
+All use networknone/private-sourceRO/no observe-lock-recovery and exact
+before-after membership/identity/mtime/bytes. Actual/unknown protected writers
+or unstable/unbound files withhold scoped conclusions, not all research.
+Categorical transport alone lacks exact per-request visit-to-fill causality.
 
-Latest separate read20:02UTC Oct22: broker7/7nativeinstrument quantities matched,
-R5three/0missing-extra-mismatch/0opens,4GET1POST/0orders/nofundsquery/alljoined.
-A/execution/current-paper-balance-openorders-readback-20261023-v1/CONSUMER.json
-16da7a56/result85ca09c0. HGB not separately enumerated; not full account/risk,
-settledcash/equity or F9non-send proof. Older six-instrument read is historical.
-Current retained R5 has three accepted/full
-BUY fills, nightly three accepted/full SELL fills. F9 unknown1/reservationHELD.
-Fees/settlement/netPnL UNKNOWN. Full console's orderable-funds query separately
-returned HTTP500/EGW00201; that failure did not erase complete balance evidence.
-Direct manual reads are NOT evidence an OS scheduled observer ran.
+Fresh account-only queries require a separately scoped consumer/owner/resource
+check. Latest14:34UTC7758823e count7positive/0opens/1POST4GET/allHTTP200 is NOT
+native quantity/ownership/funds/netPnL match or F9non-send. Do not repeat it
+merely because it is possible. Missing funds does not erase complete holdings.
+Never run recovery-capable observe() as an offline reader.
 
-## Owned Execution / No Blind Run
+## Research / No Duplicate Work
 
-Current company native-target-weight-paper-consumer-v1 is implementation, not a
-command to start existing tasks. Previous actualpoint61d11d44 +ownedreadiness
-ba57e33d complete at
-A/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/CLOSED.json.
-NativeSourcebb5667d8/release-r3/native20image4f4294ed. Actualnativebodybd39e96b/
-d9ad7768 byte-identical; finalcoordinator19tests/phase8/cold/rollback/readback.
-Finalhash NOTfullynativeexecuted, preserve exact proof-transfer limit.
-Entrythericher-kis-paper-volume-gru67-entry-20261023-v1 installedReady/neverrun
-Oct23 13:45..14:15UTC (22:45..23:15KST); conditionalexactownedexit
-thericher-kis-paper-volume-gru67-owned-exit-20261119-v1 installedReady/neverrun
-Nov19>=20:45UTC (Nov20 05:45KST). One volume-gru-Oct23/.005ORIGINALbasis slot,
-not7orders/fills or another10percent. Source-owned metadata readback only:
-```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/owner.ps1 -Mode Readback -Owner Volume -Phase entry -DeliverySha256 0cc9b7994a81cd9802c9d0e322cc942fc033b389dd8b319f8ce11c88308907ea
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/owner.ps1 -Mode Readback -Owner Volume -Phase exit -DeliverySha256 0cc9b7994a81cd9802c9d0e322cc942fc033b389dd8b319f8ce11c88308907ea
-```
-No other mode is a read-only command. NativeCLI/SYN is not actual Taskorigin,
-BrokerRiskaccept/fill/ownedflat/netPnL. Existing59projectXML-ACL unchanged;
-unrelatednonprojectdrift unknown/notreverted. Old3failedqualifications/repair2
-retained, conservative combinedupper600of1500/alljoined/0actualprivateAPI-orders/
-0TaskStartcalls. Do not run consumed qualification or expired oldentry scripts.
+Slow-GRU1056b4d3e79/91ef9fbc closedFAIL36epochs/selected12/alljoined/released;
+no rerun. Noether prepares ONE fresh TCN104 fixed-phase arithmetic objective,
+pending exact Godel-source/Claude/native proof;4800active14400elapsed/3500updates/
+max100pat24/4nativeupdates/3newcells+9cached/LATER0/no retries. Actual Source/
+PID/start/lease establishes dispatch, not the preparation assignment.
+Driver headroom measured, no app-name GPU hold. No Paper candidate swap.
+Closed seeds317002b1/TCNff022d49/halfR3f08cf819/leanSYN76c7e6db remain closed.
+Do not run unused halfhelper44cd or refit controls; all history in Engine/Git/A.
+Research price proxies != Paper fills/netPnL, reused INNER != fresh replication.
 
-Current delivery is COMPLETE b6ab7f0b/Source0cc9b799, actual rollback/reinstall/
-readback for Volume entry/exit and HGB exit. Immutable476-file same-version SDK
-and1375-source historical authority protect old owners from main changes;
-credential/custody roots, old nativeimage/requests/basis/counters are unchanged.
-Final delivery source transfers exact previously executed native-body bytes,
-not another actual finalhash native run. Historical controls are not current
-policy authority. Do not edit frozen delivery bytes. Main c97cfe6 now merged.
-
-Nightly context recovery COMPLETE, NOT a new HGB entry:
-A/execution/current-nightly-paper-context-recovery-20261023-v1/native-qualification-r1/CONSUMER.json
-c8cbd76d actual contextcomplete and independent stablepostROe32ed23c prove
-pending0/unknown0/portfolioowned3/F9HELD/R5owned3/HGBowned1/bank unchanged.
-14GET1POST0orders/allhostsjoined/native22serial28PASS/420of1200upper/olddebits
-retained. Current cycle_book_changed reproduces two laterHGB additions;
-historicalexception UNKNOWN. Actual no-order release3357b5d3 consumed ONCE.
-It is NOT a reusable reader or scheduled patch; never invoke/duplicate it here.
-Consumer binds actualresult470223dc/strictpostRO, not Taskexit inference.
-Original nightly Task nextOct23 14:50UTC (23:50KST); no manual opportunity.
-
-HGB original-owned exit deployment COMPLETE72245037/Sourcee487db86:
-A/execution/current-kis100-hgb-owned-exit-deployment-20261022-v1/task-instance-repair-r1/CONSUMER.json.
-Task thericher-kis-paper-kis100-hgb-owned-exit-20261028-r1 installedReady,
-nextOct28 19:45UTC/Oct29 04:45KST. Actual rollback/reinstall and quietnative
-identity/stableexact-path service-instance proof passed. Final Task NOT run now.
-Interactive Windows user session required; no awake Codex/human barrier.
-Actual SELL/fill/owned-flat/PnL remain unobserved. No manual future launch.
-Source-bound readback only (capture output categorically, no rawprivate values):
-```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-owned-sdk-immutability-20261023-v1/phase2-r1/owner.ps1 -Mode Readback -Owner HGB -Phase exit -DeliverySha256 0cc9b7994a81cd9802c9d0e322cc942fc033b389dd8b319f8ce11c88308907ea
-```
-Other modes can mutate/invoke tasks and are NOT read-only commands. Preserve
-originalbasis/F9HELD/R5Oct27/HGBOct28/actualcurrentownership and allunknowns.
-Registered GetInstances emptywhileRunning is recorded, not explained away;
-service GetRunningTasks exactPath and nativeidentity support honest-host marker
-provenance only, never cryptographic OS-origin proof.
-
-Current material recovery compatibility:
-A/verification/current-nightly-context-recovery-20261023-v1/authority.json
-54526ef38cb54b78f3e7edbaf82d8ca22e0a485f3b65e980dd0e64e75c89073f.
-1464serial/18659fullPASS25skip/18684total/actual8workers/originalhelperexit0+
-cleanup/Ruff3Compose/exact1375production-control123a2072. Fullstdout/JUnit/
-actualworkerproof retained. Initialfailedargument run/quietstdoutverifier fault
-NOT authority; independentsealer validates SAMEcomplete successfulhelper run,
-not cleanupbypass/testrepeat. Older inactive siblings preserved.
-
-Current actualmodel point, NOT a broker command:
-A/research/current-volume-gru-feature-known67-point-20261023-v1/CONSUMER.json
-61d11d44/POINTb71758c6/nativeINPUTf2a2948b/policy9efb34bf/model8ebcb94f.
-ActualpublicationOct22 20:40:50.861551UTC/1CPUforwardeach67rows/348checks/
-alljoined/0fits-labels-GPU. N67/K7/no signveto/mask5ee8539b. Originalfixed69
-wholepoint UNKNOWN/0forwards:2native5bar activitysum0 makeQundefined. NEW general
-complete-feature PRE-SCOREmask/base69/full10033masked, not prefeature67 or
-economicilliquidity. DataFAMILY376c94cf/70GET1POST70pages6993rows/alljoined.
-Actual67bridgebff318f2/code522e6f48/memberfb335cfd/nativeSYN20PASS.
-Historical preparation owner Meitner (superseded by installedrelease-r3 above):
-A/execution/current-volume-gru-feature-known67-runtime-preparation-20261023-v1.
-Original900active2400elapsed/max3fixedNO-EFFECTqualification family FAILED
-d49a6768 with allattempts/debits retained. Successorba57e33d repaired exactsource/
-helperAPP-IPC/exitfixture/parentjoin/lifecycle underseparate600active1800elapsed/
-2starts; no mathematicalmodel/point/intent reset. Use currentSource above.
-One .005ORIGINALbasis cohort/samevolume-gru-Oct23slot inside sharedtenth,
-NOT seven guaranteedorders/per-rownewbank. No unsupported/risk survivor renorm,
-F9release/unknownscore0/HGBexitdate inheritance. Actual Risk accept/BUY/fill/
-futureownedflat/fees/PnL UNKNOWN. No expired69template as new entry command.
-
-Modern four-arm campaign began16:54:16UTC/PID3548 and CLOSED technically16:56:
-A/research/current-kis100-market-context-recent-regime-development-20261023-v1,
-binding55fd190c/dispatch5fca8246/FINAL-FAULT-R1.json. TwoHGB complete/twoGRU
-interrupted/alljoined/GPUreleased/INNER0; closed8136.299295debit unchanged,
-post-update retry0. Do not resume from START/epoch files or refit completed HGB.
-Original NVML/minimal ENV and Linux-Windows descriptor faults have evidence;
-ProgramFiles whitelist and canonical host-basename fixes changed no model/seed.
-
-Frozen HGB entry evidence (NOT a current executable route):
-A/execution/current-kis100-hgb-native-technical-integration-20261022-r1.
-Native exit30/actual cold mounts/host admission PASS is preparation, not a fill.
-Technical2-visit scope plus prior8 now consumed; no blind entry rerun. Source90
-ownership expiresOct22 17:50UTC, not a durable exit owner for Oct28. Exact
-visit8c7d73b8 strict RO proves1submit/1ack/1full fill/1owned/pendingtrue/unknown0.
-Recovery-only d26acfb03d79486e8511b9e198a07790 then native_leg_closed17:35:48,
-20GET1tokenPOST/0orders. Separate stable RO07a82159 now confirms1submit/ack/full
-fill/currentowned, pendingfalse/unknown0. ENTRY complete/lifecycle active, not
-freshbroker/fees/netPnL. ENTRY-CLOSURE.json binds the exact immutable chain.
-Generic unavailable was not no-effect. Unregistered actor7468 caused role_source_changed admission
-code, not proven Data fault/source mutation. Do not adopt its unknown artifacts.
-F9 staysHELD; original R5 and bank preserved. Nightly retained-context repair is
-complete, not the current company objective. Oct28 owned-exit readiness is installed, not
-runtime closure or a new BUY.
-Qualified --recover-owned is an
-effect-capable recovery route, NEVER an offline reader. No new BUY/substitution.
-
-Earlier frozen eight-visit HGB runtime evidence lives at
-A/execution/current-kis100-hgb-fresh-native-preparation-20261022-v1/parent-integration-r4.
-Source07a0016d binds original selected22 point, native policy7ecdb115,
-input9a8c1549, image4f4294ed and ONE .005 original shared-basis cohort.
-Do not run old R2/R3, original disabled Task, an expired point or a generic
-reader observe(). The actual native RESULT and exact private linkage decide
-submit/fill, never HOST-START or coordinator exit. Total8 actual-visit cap
-includes preserved technical/pre-host failures; current entry cap19:30UTC.
-Visit4 closed the exact known-unsubmitted expired intent with0order calls,
-not an accepted or filled entry. F9 unknown stays held independently.
-
-Parent temporary observer priority windows are recorded at
-A/execution/current-hgb-snapshot-priority-window-20261022-v1.
-All seven pauses restored, last17:36:35UTC/original XML/ACL unchanged. Exact
-RESTORED-7.json is current restoration evidence; no pending restore/role hold.
-This changes neither order authority nor budget; no schedule expansion.
-
-The eight-visit parent integration is CLOSED. Its R6 Source9292d755 and
-POST-CAP-CUSTODY.json described native0submit/fill/owned/pending/unknown at
-16:02UTC BEFORE the later R1 accepted fullfill/recovery, not current custody.
-The known-unsubmitted earlier intent remains terminal, not the later filled leg.
-Do not run R4/R5/R6 again. Pre-host first cause is unretained/UNKNOWN; current
-offline source/actual-private-writer/RO-seed probes pass, not retrospective proof.
-Later R1 entry/recovery evidence above supersedes that old no-entry projection;
-all original attempts and exact identities remain retained.
-The diagnostic import repair has actual pinned-image networknone cold PASS
-and36focused checks; it changes no native sizing/risk/threshold or bank rules.
-
-Historical authority for that exact F9/HGB recovery, not current repository code:
-A/verification/current-f9-hgb-fresh-preparation-20261022-v1/authority.json,
-bb78c276/977serial/18659fullPASS25skip/clean8workers/Ruff3ComposePASS.
-External native fullhost proof71acabef and focused19tests are separate evidence,
-not covered merely by rerunning repository pytest.
-
-- R5 same original -r2 execute Task; source8f1c212a/imageb96a8ef8/
-  GOd5bd1aac/input5817e3ab/vintage7d8f4fe2. Six Oct21 entry slots were
-  inspected, not just the first failed slot. Entries2/4/6 actually led to the
-  three linked fills now held. Exit Oct27>=19:45UTC and owned recovery slots
-  remain. Do not manually rerun an entry or replace request identity.
-- Original8 NAS lifecycle COMPLETE/febc9bff (eight BUY/eight SELL full fills).
-  Completed Task thericher-kis-paper-current-nas-model-20261015 is disabled;
-  exact retirement/XML/ACL backups are under
-  A/execution/current-nas-completed-task-retirement-20261022-v1.
-- HGB priorclose Task remains disabled; its Oct21 point/entry window expired.
-  Later fresh point/R1 entry is already COMPLETE with one fullfill/currentowned.
-  Do not prepare a duplicate entry; the current owner is the original Oct28 exit.
-- F9 exact original unknown request/reservation stays HELD. Fresh empty open
-  orders/position absence does not establish original non-send or allow release.
-- Nightly/fund20/measurement tasks keep their separate owners/contracts.
-  Read source-safe Task status/time if needed; task exit/installation is not fill.
-- No new automation, follow-up chain, schedule expansion or public interface
-  was created by the reader repair.
-
-## Completed Research / Data Are Not Commands
-
-- A/data/current-kis-modp1-historical100-continuation-20261022-r2/FINAL.json:
-  all100 cursors terminal,83qualifiedclosed/17unavailable,87934newbars,
-  zero remaining/alljoined. Do not rerun that consumed historical collector.
-  Future fresh-session acquisition needs its own consumer/scope/cursor.
-  Original frozen0067/81ad6523 stays unchanged; finality/PIT/TR not observed.
-- HGB/NN cost-positive fits COMPLETE at
-  A/research/current-kis100-cost-aware-direction-development-20261022-v1:
-  HGB32/selected12, neural21/best1/4242CUDAupdates. Original copy fault
-  affected post-fit inference, not completion of training. No refit.
-- Artifact-only continuation COMPLETE at
-  A/research/current-kis100-cost-aware-direction-retained-readout-20261022-v1/CONSUMER.json:
-  3bfbee55/zero fits/one NN inference/cachedHGB reuse/oneINNER18cells/LATER0/
-  alljoined/GPUreleased. ProperPASS/financeFAIL; fixed .55 HGB gate was cash.
-  Keep old failure and all budgets; no threshold rescue or alpha claim.
-- Other completed model families/custody remain in role stateboards and Git.
-  An MD/proposal/historical GPU sample is not an active process.
-
-## Verification
+## Verification / Storage
 
 Current PRIMARY authority:
-D:/thericher-v2/model-artifacts/verification/current-native-weight-primary-integration-20261023-v1/attempt-r2/AUTHORITY.json
-93991da5/546serialPASS/18747fullPASS25skip/18772collected/actual8workers.
-Fresh exact1380sources+2controls digestde002fd2; originalhelperexit0 and clean
-temp authority, Ruff/default-research-accounting Compose PASS with .env.example.
-Fullstdout/JUnit/in-run worker proof retained,372.57s tests/399.07s helper.
-The first partial run failed a proven allocator-address privacy-test false
-positive (d80f4c99); test-only repairdfb14ec is pushed, no private leak. Partial
-failure is not authority.13 legacy CRLF scripts preserved; no pin normalization.
-Earlier54526ef3 and worktree491bf085 are historical/scoped, not this authority.
-External reader additionally has17synthetic tests, actual pinned RO native
-reads and the separate fresh Paper balance match. Repo tests alone do not
-validate code outside the suite.
+D:/thericher-v2/model-artifacts/verification/current-model-weight-h5-integration-20261024-v1/AUTHORITY.json
+SHA24640869:560serial/18795fullPASS25skip/18820total/actual8workers/original
+helperexit0/clean/Ruff/threeCompose(.env.example),1384exact source-control.
+Old93991/54526ef3/worktree491bf085 are historical, not current authority.
+Docs/external-only reuse requires current exact source-before.json digests and
+fresh changed-external checks. Repository tests cannot validate external code.
 
+For tracked code/control/material recovery changes:
 ```powershell
 uv run --no-env-file --extra dev pytest -q <changed paths> --maxfail=1 --durations=15
 .\scripts\run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot
@@ -365,14 +153,11 @@ docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet
 docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.accounting.yml config --quiet
 ```
-
-Preserve helper Global mutex/lease/process/exactcount-skip checks and verified
-non-reparse current-child cleanup; no cleanup-denial bypass or partial authority.
-SYN Scheduler tests mock all entrypoints and disable module auto-loading.
-Test scratch C: measured NVMe; market/model bytes D:.
-Frozen historical commands/installers/probes are evidence, never rerun as readers.
-When passing remaining pytest flags, bind -Workers explicitly. With pwsh -File,
-pass --junitxml and D:/absolute/path.xml as SEPARATE arguments: measured
---junitxml=D:/... split at the colon and collected no tests. A quiet -q worker
-count line is not guaranteed; source/argv-bound actual worker facts and complete
-retained counts, not an invented stdout line, establish the count.
+Preserve original Globalmutex/lease/process/actualworker/count/skip/clean-temp
+authority. Synthetic Scheduler tests mock EVERY entrypoint and disable module
+autoload. No partial/unclean authority reuse. Weekly serial remains separate.
+With pwsh -File, pass --junitxml and D:/absolute.xml separately; measured equals
+form split at colon/collected0. Prefer explicit -Workers binding.
+Test scratch C: NVMe; data M/models A/Docker /app/model_artifacts.
+Keep15percent Dfree/warn projected20percent. uv run --no-env-file and .env.example
+avoid implicit credentials. No secrets/private raw/broker IDs/prices in outputs.
