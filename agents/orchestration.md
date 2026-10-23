@@ -1,12 +1,33 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 23:20KST /14:20UTC. Parent sharedMD/Git.
+2026-10-24 01:18KST /Oct23 16:18UTC. Parent sharedMD/Git.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents. No operator decision required.
 
 ## Company / Actual Readiness
 
-ONE company outcome: joint17-first-session-runtime-attribution-v1.
+ONE company outcome: gru-h5-next-session-paper-readiness-v1. Prior Joint17
+first-opportunity attribution COMPLETE for failure/handled scoped recovery,
+NOT successful entry or repaired live-owner proof.
+CURRENT: first15:30 and15:34UTC attempts failed20 at coordinator owner-call
+boundary (census_unavailable/no native visits). Only ENTRY contained15:35:42;
+exactXML/SDDL at A/execution/current-joint17-first-session-owner-fault-20261024-v1.
+Diagnostic successor779e94de/RELEASE7e7e24ac deployed exit-first15:56:08 with both
+readbacks; original natural15:58 failed20. Hash-bound diagnostic59623ae4 retains
+DENY_SCHEDULED_OWNER/job_runtime_unbound/CIM_chain. Only ENTRY disabled16:00:49
+after original window ended; original conditional exit stays installed.
+Model/input/policy/slot/counters/bank/F9 preserved. Aq reproduces exact runtime
+predicate, not generic gate relaxation. No late activation/backdate/manual start.
+Source/result root: A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1.
+Exact current alias repro36a3f415/same hash, not historical subbranch, supports
+49mock/cold tested Source9b9dbd50/RELEASE758b4c95. Conditional EXIT alone updated
+16:11:41, original entry disabled unchanged/mutex/all three counter roots zero,
+same timing/ACL/no API/Task start/reset. Consumer8325dc56 at
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/parent-release/CONSUMER.json;
+ClaudeSOUNDlimits4f54b676, actual new scheduled owner NOT_OBSERVED.
+H5 code770436c pushed:560serial/18795fullPASS25skip/8actualworkers/clean/Ruff/
+3Compose, new authority24640869/exact1384files. Today's deployed oldSDK isolation
+cold540/477passed separately. Do not reuse old93991 as current primary authority.
 Prior native-target-weight-paper-consumer-v1 COMPLETE for typed native-path
 evidence and actual owned readiness, not actual submit/fill. Installation
 34c24846/RELEASE7861b82f/Source8c5aeb71/image75df0968 is real: exit-first/entry,
@@ -18,12 +39,13 @@ full100/known69/unavailable31zero, no score/TopK/renormalization/new bank.
 
 | Owner | Running / Ready / Exact Consumer |
 | --- | --- |
-| Parent / 총괄 | Integrate actual model/reader results and current runtime; own sharedMD/Git. Typed deployment complete. No manual final task start. |
-| Noether / 엔진·연구 자원 | Comparison87750f60 COMPLETE_FAIL/alljoined. NEW Sourcefa957bb6/READY47d5441d actual market dispatcher40628/start134372386280941023 began14:17:08UTC after scoped writer closureccd0a50c. Two total fits, original17:24UTC deadline; not completed-fit evidence. |
-| Aquinas / 실행 관측 | Retained custody c096e5f9/noAPI. Volume actually failed20 twice, only ENTRY contained; repair first-fault transport below dropped-stdout check. No activated coexistence adapter or expired-task rebind. |
+| Parent / 총괄 | Alias conditional exit deployed8325dc56. Built separate H5image81373d2a and full69SYN ABI f3e5c658. Own sharedMD/Git/real H5 qualification and future deployment. No manual task start. |
+| Noether / 엔진·연구 자원 | SYN throughput sourcea8151b1d/coordinator29100/start134372455362504525 actually dispatched16:12:16UTC; final/join pending, no marketfit. Next fixed-half12cell/0fit-forward-LATER-GPU cached replay after compatibility/review. |
+| Aquinas / 실행 관측 | Alias repair prepared49mocks/cold. Now assigned native H5 source/SYN adaptation current-h5-native-route-preparation-20261024-v1; no Tasks/API/private/Docker effects. |
 | Pauli / 실행 판독 | Explicit typed RO reader4f385552/20nativeSYNtests qualified. Parent actualcc250f6f offline/stable/typed_record_not_created UNKNOWN. Exact visit and typed custody stay distinct; categorical transport lacks per-request visit-to-fill linkage. |
-| Kant / 다음 입력 | COMPLETE source/CPU forward preparation741444b2; future Oct26 point NOT_READY until actual Data. Base69 contract unchanged, missing required input is not a silent dynamic68/no-signal skip. |
+| Kant / 다음 입력 | COMPLETE typed H5 materializer591a86d3/6e98261d,1CPUrestore/1SYNforward/6tests/477SDK/alljoined. Future Oct26 actual point NOT_READY until accepted Data. Base69 contract unchanged. |
 | Mill / 효율 개선 | COMPLETE_REJECT321ef342: restored-mtime overwrite defeats prefix memo. Never activate. Actual ClaudeREVISEe875c902 separately corrects substring mislabel. |
+| Godel / 조합 검토 | Fixed-half GRU+TCN kerneld814e26e/46SYNtests complete, allhelpersjoined15:23:47. No financial screen/fit/forward. Needs exact sealed-output compatibility and finite new analytical contract before use. |
 
 ## Due / Scoped Blocks
 
@@ -33,8 +55,11 @@ full100/known69/unavailable31zero, no score/TopK/renormalization/new bank.
   fail-stop prefix passed, actual first owner denial unobserved. Nightly23:50KST
   remains Ready/separate driver; future owners remain exclusive.
 - Joint17 entry Oct24 00:30..01:00KST; conditional owned exit Nov20>=05:45KST.
-  Exact first-opportunity runtime is not observable before the natural trigger.
-  Keep the company outcome unfinished; no foreground session wait.
+  Three original natural attempts failed; diagnostic source779e is installed,
+  ENTRY contained/expired, exact PSreason job_runtime_unbound now observed.
+  Current alias mismatch reproduced and exact candidate deployed only to future
+  exit; failed-process exact subbranch and repaired runtime still unobserved.
+  Old8c/779 sources remain immutable. No blind repeat, extension/substitute/reset.
 - Data refresh Oct24 05:10KST: existing quiet one-shot installed, no new data
   acquired by preparation. Actual accepted runtime/DTO/source/verifier/alljoined
   chain needed before next-date forward. Source presently through Oct22 close.
@@ -61,6 +86,21 @@ One ORIGINAL initial virtual-cash tenth; costs/losses/unknown reservations count
 once, respect buying power, no profit expansion or adoption of foreign inventory.
 
 ## Throughput / Reversible Improvement
+
+Actual runtime generation/PID/start/lease must be sent at dispatch, not only at
+the final report. Parent inspected stale source-only TCN rootaaed and its native
+attempt was correctly denied by known live PID39692/runtime-r2bc95:0children/
+updates/active, no lease deletion/retry. Never treat absent STARTED in an older
+generation as no running work. Actual3fa13f22 TCN fit is now joined/closed.
+814.59fitseconds for2epochs versus GRU213.88for42 is the next measured Research
+bottleneck; native representative SYN profiling before more market fitting.
+Actual release facts must reach the waiting role promptly: this probe was still
+at0native children after containment while waiting for a stale first-window
+release. Parent supplied actual contained/expired readback and dispatch began
+16:12:16. Future owner transitions send exact current facts immediately; do not
+wait for another human permission, old due time or a completed LLM narrative.
+Prior13:07UTC installation/comparison details below are historical evidence,
+not current active ownership or the new primary authority.
 
 12:50UTC installation completed in3.96s after exact source/date/image/1382primary
 pin revalidation. No added human approval or repeat19k-test suite was needed.

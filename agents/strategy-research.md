@@ -1,11 +1,24 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-23 12:31KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 01:03KST. A=D:/thericher-v2/model-artifacts.
 Own mechanisms/pure kernels/consumable proposals, not broker risk or model
 selection/evaluation authority. Parent MD/Git; Engine numerical contracts.
 Invoked role, not a daemon/per-indicator MD or another report platform.
 
 ## Current Ready Mechanism
+
+SharedLag comparisons297b367b/87750f60 andfa957bb6/eac36f68 consumed/failed
+replacement criteria, not ready duplicate fits. Unit-simplex GRU remains an
+adaptive candidate (+1.482630%growth/.812878%DD at10bp initialresearchNAV), not
+independent alpha/Paper profit. CausalTCN own-code MIT proposalcf554ca9 consumed
+by runtime-r2/bc959937:3fa13f22 time-reserve stop after2epochs/346updates,
+not architecture refutation. Noether owns short SYN throughput diagnosis.
+Fixed-half pure kernel d814e26e at
+A/research/current-fixed-gru-tcn-blend-preparation-20261024-v1 passed46SYNtests;
+allhelpers joined15:23:47UTC. Engine owns exact compatible sealed-output
+12cell/zero-fit-forward analytical follow-through and scoped Claude review.
+Individual expert profitability is not required; no more learning epochs,
+GPU use or untouched replication implied by this cached-policy composition.
 
 Leibniz capped-simplex proposal153ab658/d7e44bcf was consumed: oneCPUH20fit
 b611eb7e closedFAIL; threeCUDAseed fits9e5f6f0a resource-preempted/financeUNKNOWN.

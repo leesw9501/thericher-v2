@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 23:20KST /14:20UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-24 01:18KST /Oct23 16:18UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
@@ -11,15 +11,46 @@ public exposure or paid commitments. Preserve unrelated %SystemDrive%/.
 
 native-target-weight-paper-consumer-v1 is COMPLETE for typed native-path evidence
 and owned readiness: actual quiet exit-first/entry installation and separate
-definition/ACL readbacks passed. ONE next company outcome is
-joint17-first-session-runtime-attribution-v1. Installation is NOT a submit/fill.
+definition/ACL readbacks passed. Joint17 first-opportunity attribution is now
+COMPLETE for technical failure classification/explicitly scoped recovery, NOT
+successful entry. ONE current outcome is gru-h5-next-session-paper-readiness-v1.
+CURRENT: first natural15:30/15:34UTC attempts actually failed20; newcoordinator
+failure markerscensus_unavailable/no native visits localize owner-call failure
+before private seed. Original ENTRY contained15:35:42;
+originalXML0957fa1b/SDDL at
+A/execution/current-joint17-first-session-owner-fault-20261024-v1.
+Logging-only successor Source779e94de/RELEASE7e7e24ac actually deployed
+exit-first/update-only/readbacks15:56:08; original next natural15:58 attempt
+failed20. Exact diagnostic59623ae4 is DENY_SCHEDULED_OWNER/job_runtime_unbound/
+CIM_chain, not a root fix, submit or fill. Evidence:
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/parent-release-r1/DEPLOYED.json
+and OWNER-DIAGNOSTIC-current.json (hash-bound immutable target). Parent disabled
+only ENTRY after original window closed, containment16:00:49. First containment
+disabled it but final XML assertion failed on absent default Enabled node;
+namespace-aware independent comparison then confirmed only that setting changed.
+Exit/model/input/policy/slot/bank/counters preserved. No manual Task start,
+backdate/extension/order/counter reset. RawClaudeREVISEacd9f78d and explicit
+adjudication retained, not agreement. Aq owns exact runtime predicate
+reproduction and a tested successor, not generic owner bypass.
+CURRENT REPAIR: harmless native repro36a3f415 found exact CPython3.14 alias
+excluded while same trusted binary hash matches; not proof of failed-process
+exact subbranch. Source9b9dbd50/RELEASE758b4c95 adds only exact alias/hash,
+49mocks/cold540/unchanged477SDK and ClaudeSOUNDlimits4f54b676. Parent updated
+ONLY conditional EXIT16:11:41, same original timing/principal/ACL, original
+ENTRY disabled unchanged, original mutex/all three counter roots zero. No reset,
+private/API/order/Task start. Exact independent consumer8325dc56:
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/parent-release/CONSUMER.json.
+Actual repaired scheduled-owner pass remains NOT_OBSERVED. Root/source mock
+transfer is not cryptographic OS Scheduler-origin proof under honest host.
 Parent owns integration/Git. Noether's Source297b367b matched comparison is now
 COMPLETE_FAIL87750f60: actual54/80CUDAepochs, alljoined/GPUleaseReleased. It now
-owns NEW unit-simplex comparison Sourcefa957bb6/READY47d5441d. Actual market
-dispatcher40628/start134372386280941023 began14:17:08UTC after scoped writer
-closureccd0a50c; two total fits/one per encoder, old caps/deadline17:24UTC intact.
-STARTED is not completed-fit evidence. No old/native fit repeated. Aquinas now
-repairs categorical first-fault retention; no coexistence adapter is activated.
+completed NEW unit-simplex comparison Sourcefa957bb6/FINALeac36f68, alljoined
+14:23:33UTC. GRU42epochs/selected18, SharedLag30/selected6; at10bp/leg initial
+researchNAV growth/DDpercent GRU+1.482630/.812878, SharedLag-.501393/2.727931,
+uniform-.822368/1.218932. SharedLag replacement FAIL; GRU is an adaptive reused
+development candidate, not independent alpha or Paper PnL. No old/native fit
+repeated. Actual new TCN is runtime-r2 below, NOT its old source-only root.
+Aquinas completed corrected first-fault retention; no coexistence adapter activated.
 Pauli's explicit typed-profile RO reader is qualified;
 Parent actual readcc250f6f found typed_record_not_created/UNKNOWN before trigger.
 Kant completed next-date SAME Joint17 source/CPU preparation741444b2, not future
@@ -27,6 +58,45 @@ market inference. Mill's future-only IO prefix optimization321ef342 was REJECTED
 same-size overwrite/restored-mtime counterexample; never activate it. Its raw
 Claude verdict is REVISEe875c902; positive-word substring parsing was corrected
 in immutable PARENT-ADVISORY-CORRECTION.json, not by rewriting old evidence.
+
+Latest closed GPU campaign: A/research/current-causal-tcn-h5-unit-simplex-development-20261023-v1/runtime-r2.
+Sourcebc959937/marketPID39692/start134372404534051204 began14:47:36UTC;
+actual CUDA first update14:49:54, no duplicate GRU. FINAL3fa13f22 is now CLOSED/
+alljoined/leaseReleased:2epochs/selected2/346updates/814.59fitseconds/time-reserve
+stop, at10bp growth-.418819%/DD.912709%;82independentchecks/1758.876621activeupper
+inside4800. Frozen screen FAIL, not TCN architecture/convergence refutation.
+Next bounded SYN throughput/backend probe only under Noether; no market rerun.
+Kernel/sourceMITcf554ca9/addendum99e5a045. Fixed-half blend preparationd814e26e
+passed46SYNtests/allhelpersjoined15:23:47,0financialscreens/fits/forwards.
+Parent looked at stale rootaaed7d3e and attempted its native once, correctly
+denied by this live lease:0GPUchildren/0updates/0active. Preserve that separate
+failed attempt, never retry it, delete/reclaim the live lease or mix generations.
+
+Next GRU H5 point preparation9c57a42d/Source5bca96ff is CPU/SYN-ready, not market
+inference or deployment. Additive explicit H5 input/native/worker profile now
+implemented in primary source; old20canonical4845bytes/SHA41541738 unchanged.
+Kant completed NEW typed-point successor Source591a86d3/Consumer6e98261d under
+A/research/current-unit-gru-h5-typed-point-preparation-20261024-v1; old5bca stays
+immutable. OneCPUrestore/oneSYNforward/6tests/477freshSDK/independent canonical
+read/alljoined. Actual Data/date point still NOT_READY, no market fit/forward.
+Parent built separate native image81373d2a, Consumerf3e5c658 at
+A/execution/current-h5-native-image-preparation-20261024-v1:741frozen buildfiles,
+736actualimage source/11ABIchecks/H20golden/inert worker and exact full100/
+required69 invented-input roundtrip. No existing deployment replacement/order.
+Aq owns next native H5 source/SYN adaptation; Data05:10KST remains actual future
+dependency. No foreground wait or duplicate collector.
+Noether owns bounded fixed-half cached-output replay after exact compatibility/
+review, no new fits/forwards/GPU or untouched-data claim.
+First it actually dispatched SYN throughput Sourcea8151b1d/PID29100/
+start134372455362504525 at16:12:16UTC, same throughput root below. START proves
+dispatch, not completed native updates; inspect exact final/join/lease next.
+H5 code770436c is pushed;560changed-path serial/18795fullPASS25skip/8actualworkers/
+helperexit0/clean/Ruff/3Compose(.env.example)/1384source-control checks passed.
+New authority24640869 at
+A/verification/current-model-weight-h5-integration-20261024-v1/AUTHORITY.json.
+Old93991da5 authority is HISTORICAL ONLY now. Separate deployed-SDK cold proved
+540source/477oldSDK files, no H5 import leakage/Task/private/API/containers.
+Do not deploy this H5 code into today's immutable Joint17 Source8c5aeb71.
 
 ## Actual Paper / Due
 
@@ -46,6 +116,12 @@ in immutable PARENT-ADVISORY-CORRECTION.json, not by rewriting old evidence.
   Ready Oct23 23:50KST /14:50UTC. Compatibility36f9d118/562inventedchecks proves
   completed-to-fresh full genericv4 book, not actual provider/advance/lock/fill;
   retained additions and own mutations still deny. No permissive prefix fix.
+  CURRENT Oct23 14:50UTC: exact privateROread at15:25:55 proved1SELLintent/
+  attempt1/ack1/fullfill1/cyclecomplete. Evidence2d168c90:
+  A/execution/current-paper-results-readback-20261023-v1/nightly-current-r1/EXISTING-HELPER-RESULT-CONSUMER.json.
+  Shared owned positive instruments7/unresolved1/buy reservation exists, stable
+  private files/0writers before-after/containerclosed. Not fresh broker holdings;
+  F9HELD, fees/settlement/netPnL unknown. Dispatch-only status was not fill proof.
 - Original8:8BUY8SELLfullfills/ownedflat/completedTaskdisabled. Accounting5cabc996
   aggregate nominal gross NEGATIVE, not every-position loss; fees/settlement/net
   PnL unknown. Official sourceabf3a1fb/23SYNchecks finds no documented Paper
@@ -69,6 +145,21 @@ in immutable PARENT-ADVISORY-CORRECTION.json, not by rewriting old evidence.
   Conditional exact-owned exit remains Nov20 05:45KST /
   Nov19 20:45UTC. One .005ORIGINALbasis cohort, not7guaranteedorders.
   Native sourcebb5667d8/bodybd39e96b-d9ad7768/image4f4294ed.
+
+Fresh broker count-only query completed14:34UTC:7positive instruments/0open
+orders/3exchange groups/1tokenPOST4GET/allHTTP200/0orders/nofundsquery. This is
+NOT native quantity/ownership match or F9/Volume no-send proof. Evidence7758823e:
+A/execution/current-paper-token-http-diagnostic-20261023-v1/HOLDINGS-RESULT.json.
+Prior14:27 Docker balance read36c3c607 failed auth_rejected/1POST0GET; its HTTP
+code was discarded. Later token796fa1e1 and holdings success do not invent that
+first failure's cause. No invalid-key/operator-action conclusion is warranted.
+
+Correct Volume logger Source74303b03/Consumer0561a114 now retains categorical
+stdout BEFORE unchanged R6 h.need;29focused+20SDK+34owner mocks+7lineage mocks,
+cold60/Ruff and ClaudeSOUNDlimits858e22d2. READY_NOT_DEPLOYED, actual owner
+rejection still unknown. Harmless pythonw argv probe31032e6e falsified argv0
+mismatch, no Task/private/API; actual executed source2098a0ed preserved separately
+before nonsemantic formatting. Do not reuse flawed cdbd or expired rebind draft.
 
 Parent14:15:42UTC ccd0a50c proved current scoped0running Paper tasks,
 0execution-artifact hosts/1container/0exact private-volume RW mounts after

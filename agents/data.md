@@ -1,10 +1,18 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 01:18KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendars/features/availability, not account/orders/model
 selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
 ## Current Actual / Next Consumer
+
+Current consumer is provisional GRUH5 Oct26OPEN->Oct30CLOSE. Frozen typed
+materializer591a86d3/6e98261d and new native image81373d2a/f3e5c658 are CPU/SYN
+ready, NOT actual accepted dated input. Both require original69 raw/factor/
+context/full100 axis and previous-close availability, use existing TRAIN affines
+once; no silent69->68, Volume67 mask reuse, labels or outcome imputation.
+Existing installed05:10KST refresh below remains its sole current Data owner.
+No extra collector, API call or data-readiness claim from image/SYN success.
 
 Next-session metadata audit COMPLETE:
 A/data/current-next-session-data-readiness-20261023-v1/FINAL-CONSUMER.json.

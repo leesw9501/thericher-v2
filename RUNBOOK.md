@@ -13,6 +13,46 @@ Models/generated outputs stay A (Docker /app/model_artifacts), data M.
 D free latest approximately38.9percent; preserve15percent/warn20percent.
 Preserve unrelated untracked %SystemDrive%/ and other owners' work.
 
+CURRENT Oct24 01:18KST: Joint17 actual15:30/15:34UTC failed20 before native
+visits at owner-call boundary. Parent contained only exact ENTRY15:35:42;
+original backup under A/execution/current-joint17-first-session-owner-fault-20261024-v1.
+Do not run old install/rollback/rebind drafts or infer no-submit from missing
+visits. Logging-only779e94de/RELEASE7e7e24ac is NOW deployed exit-first15:56:08,
+both definition/ACL readbacks passed. Natural15:58 failed20; hash-bound
+OWNER-DIAGNOSTIC-current.json target59623ae4 retains
+DENY_SCHEDULED_OWNER/job_runtime_unbound/CIM_chain. Only ENTRY disabled16:00:49;
+no remaining original opportunity. Exit/bank/identities/counters held, root:
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1.
+Do not rerun consumed update.ps1/contain.ps1, old install or recovery-capable
+worker as a reader. No new window/backdate/manual Task start/guard bypass.
+Exact current alias repro36a3f415 supports new9b9dbd50/RELEASE758b4c95, not
+historical failed-subbranch proof. Conditional EXIT alone updated16:11:41;
+source/hash allowlist repair49mocks/cold540/unchanged477SDK, original entry
+disabled unchanged/mutex/all three counter roots zero/original exit timing/ACL.
+Consumer8325dc56 at
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/parent-release/CONSUMER.json.
+No repaired actual live-owner pass yet. No consumed update script is a reader.
+
+Primary H5 profile code770436c pushed, new authority24640869 at
+A/verification/current-model-weight-h5-integration-20261024-v1/AUTHORITY.json:
+560serial/18795fullPASS25skip/8actualworkers/helperexit0/clean/Ruff/3Compose/
+1384exactsource-control. Old93991 is historical for the current primary tree.
+Separate cold540/477 proves today's H20 SDK has not imported new H5 code.
+Separate new H5 image81373d2a is built, NOT deployed as an order worker.
+A/execution/current-h5-native-image-preparation-20261024-v1/CONSUMER.json f3e5c658:
+741frozen build files/736actual image sources/11ABIchecks/H20golden/inert worker
+and full100/69SYN exact roundtrip. Materializer591a86d3/6e98261d replaces no old
+builder5bca; actual dated Data/forward/input remain pending. Current company
+goal is gru-h5-next-session-paper-readiness-v1, no raw market reads/order from
+the synthetic proof. Actual Data05:10KST is the next dated dependency.
+
+Nightly exact15:25:55 privateRO2d168c90 proved currentSELL1attempt/1ack/1fullfill/
+cyclecomplete; sharedpositive7/unresolved1/reservationexists, not fresh broker
+positions. Helper's one scoped read is consumed; exact evidence under
+A/execution/current-paper-results-readback-20261023-v1/nightly-current-r1.
+Latest fresh broker count7758823e14:34 is separately7positions0opens, no quantity
+or model ownership match, funds/fees/settlement/netPnL not observed/F9stillHELD.
+
 Oct23 02:36UTC: obsolete Oct21/22 Codex app heartbeat `automation` was deleted.
 This did not delete or modify Windows tasks. No replacement follow-up chain.
 That one-shot scope has ended. On Oct23 21:50KST the current human-authorized
@@ -31,10 +71,10 @@ Entry Oct24 00:30..01:00KST, conditional owned exit Nov20 05:45KST onward.
 Native fresh owner/admission/quotes/funds/risk and exact pending recovery remain
 mandatory. No further operator approval is required for delegated private work.
 
-Current source-bound Joint17 readback only:
+Current source-bound Joint17 EXIT definition readback only (ENTRY deliberately
+disabled/expired and fails this enabled-definition reader):
 ```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-joint17-weight-owned-runtime-20261023-v1/tasks.ps1 -Mode Readback -Phase entry -SourceSha256 8c5aeb71e96797e56b8d2ee93502b5fce281063c14a0f122dc03436e2da7a1fe -ReleaseSha256 7861b82f552049cf2026b95dc7891838bd0e184793f6c55caa48782ec0516626
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-joint17-weight-owned-runtime-20261023-v1/tasks.ps1 -Mode Readback -Phase exit -SourceSha256 8c5aeb71e96797e56b8d2ee93502b5fce281063c14a0f122dc03436e2da7a1fe -ReleaseSha256 7861b82f552049cf2026b95dc7891838bd0e184793f6c55caa48782ec0516626
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/tasks.ps1 -Mode Readback -Phase exit -SourceSha256 9b9dbd50b3610c89188fb5e2f4b5a5cebdd18e3231a7cf55e372d057fda590e2 -ReleaseSha256 758b4c95e3154acc117d0efc03ecd31e81fe140870f1a0a30abb7e0b3bc7d0d2
 ```
 Other modes are NOT offline result readers. Do not infer actual submit/fill
 from Ready/exit code or run a recovery-capable observe() to inspect outcomes.

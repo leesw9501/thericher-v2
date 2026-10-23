@@ -1,8 +1,34 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 01:18KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own model/feature/target/replay interpretation, not broker risk. Parent MD/Git.
 AGENTS.md owns policy; Source/MD/dispatch is not a running fit.
+
+CURRENT results: unit-simplexSourcefa957bb6/FINALeac36f68 COMPLETE_FAIL applies
+SharedLag replacement. GRU42epochs/selected18 at10bp/leg priceproxy growth
++1.482630%/DD.812878%; SharedLag30/selected6 -.501393%/DD2.727931%; uniform
+-.822368%/DD1.218932%.125independent checks/alljoined14:23/LATER0. These are
+adaptive reused outcomes, not alpha/seed-variance/convergence/Paper PnL.
+Actual NEW TCN runtime-r2/Sourcebc959937 FINAL3fa13f22 is CLOSED/alljoined:
+onefit2epochs/selected2/346updates/814.59seconds/time-reserve stop; growth
+-.418819%/DD.912709% at10bp. Frozen screen FAIL, not TCN architecture refutation.
+82independent checks; cached GRU predictions reused with0GRUrefit/forwards.
+Next measured need is representative SYN throughput/backend profiling, not
+rerunning or extending closed fits. Owner Noether; actual SYN probe a8151b1d/
+PID29100/start134372455362504525 dispatched16:12:16UTC after real Paper closure.
+Root A/research/current-causal-tcn-representative-throughput-syn-20261024-v1.
+Native final/join not yet integrated; no market learning or dummy GPU claim.
+Fixed-half GRU+TCN kerneld814e26e/46SYNtests is READY_PREPARATION only; no new
+financial screen/fit/forward, not yet a blend result. Keep original12cell proposal.
+
+Provisional next-date GRUH5 preparation9c57a42d/Source5bca96ff restored checkpoint
+9409a2f4 onceCPU/SYN. Primary additive H5 profile code770436c is now implemented
+and fully verified24640869, not deployed into today's H20 SDK. New dated
+materializer591a86d3/6e98261d is now complete: oneCPUrestore/oneSYNforward/6tests/
+477freshSDK/alljoined. Parent native image81373d2a/f3e5c658 actual full100/69SYN
+roundtrip passes, no actual dated input/deployment. Preserve69/full100 and no
+redistribution after lots/cap8/unsupported routes. Data05:10 remains future.
+Prior projection of fa957 as running below is superseded by this exact closure.
 
 ## Actual Point / Execution Consumer
 

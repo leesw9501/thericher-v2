@@ -1,13 +1,47 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
+2026-10-24 01:18KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
 AGENTS.md owns Paper authority, one original cash-tenth and deterministic risk.
 Never KIS_LIVE_* or private/raw/secret output; modelprofit is not permission.
 
 ## Current Company / Actual Model Point
 
-Current company outcome joint17-first-session-runtime-attribution-v1, not an
-installation or profitability claim. Volume ENTRY actually ran22:45/22:49KST
+CURRENT: Joint17 actual15:30/15:34UTC failed20/coordinator census_unavailable,
+no native visit/ACTIVE marker. Source localizes owner call before private seed;
+its original PSdenial was discarded. Original ENTRY contained15:35:42 with
+XML0957fa1b/SDDL backup at A/execution/current-joint17-first-session-owner-fault-20261024-v1.
+Logging-only779e94de/RELEASE7e7e24ac actually deployed exit-first15:56:08 with
+both definition/ACL readbacks/quiescent original mutex/zero counters. Natural
+15:58 failed20; diagnostic59623ae4 is DENY_SCHEDULED_OWNER/job_runtime_unbound/
+CIM_chain. Parent disabled only expired ENTRY16:00:49, conditional EXIT retained.
+Root: A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1.
+Same native image/input/policy/bank/slot/counters, no owner bypass/Task start,
+backdate/extension/reset. Aq reproduces exact path/hash predicate; category alone
+does not distinguish subchecks. Claude rawREVISEacd9f78d/adjudication retained,
+never relabeled agreement. Current harmless repro36a3f415 finds excluded exact
+CPython alias with same trusted hash; historical failed subbranch unobserved.
+Tested9b9dbd50/RELEASE758b4c95 adds only alias/hash;49mocks/cold540/477unchangedSDK/
+ClaudeSOUNDlimits4f54b676. Parent UPDATEd ONLY conditional EXIT16:11:41, exact
+original timing/principal/ACL, ENTRY disabled unchanged/originalmutex/threecounter
+roots zero/no reset/private/API/Task start. Consumer8325dc56 at
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/parent-release/CONSUMER.json.
+Actual repaired live scheduled owner remains NOT_OBSERVED.
+Nightly current2d168c90 exact SELL intent1/attempt1/ack1/fullfill1/cyclecomplete;
+privateRO stable/no API, shared positive instruments7/unresolved1/buy reservation
+exists. Not fresh broker holdings. Fresh count-only broker7758823e14:34 separately
+has7positions0opens/1POST4GET/0orders, no owned quantity match/F9 release.
+H5 explicit input/native/worker code770436c fully verified24640869 is not in
+today's immutable H20 deployment. New image81373d2a/f3e5c658 separately proves
+736image sources/11ABIchecks/H20golden/inert worker/full100-required69SYN input
+canonical roundtrip. Kant materializer591a86d3/6e98261d ready CPU/SYN only, actual
+Data/date point still pending. Aq now owns native H5 source/SYN adaptation at
+A/execution/current-h5-native-route-preparation-20261024-v1; no broker/private/
+Task/Docker effects in that package. Parent owns real image/source qualification
+and future exit-first deployment, not replacement of current unknown identity.
+
+Current company outcome gru-h5-next-session-paper-readiness-v1. Prior Joint17
+first-opportunity attribution COMPLETE for failure and scoped recovery, not
+successful entry/profitability. Volume ENTRY actually ran22:45/22:49KST
 and failed20. Parent disabled ONLY that entry22:52KST; exact ORIGINAL.xml/SDDL
 and containment under A/execution/current-volume-first-window-technical-recovery-20261023-v1.
 23:15KST window closed, no backdate/manual start/new order/identity or bank reset.

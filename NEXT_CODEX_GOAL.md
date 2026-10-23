@@ -2,122 +2,95 @@
 
 ## One Company Outcome
 
-joint17-first-session-runtime-attribution-v1:
-obtain and interpret the exact first natural owned Joint17 Paper opportunity,
-distinguishing technical failure, no intent, submit, acceptance, exact fill,
-pending recovery and current owned inventory. Repair a reversible first cause
-inside standing authority when possible; do not substitute an unknown request.
-This is execution learning, not a profitability or independent-alpha claim.
+gru-h5-next-session-paper-readiness-v1: make the existing selected unit-simplex
+GRU candidate consumable by the native KIS Paper path for Oct26 OPEN to Oct30
+CLOSE, with an exact dated input and owned entry/exit readiness. This is
+provisional execution learning, not independent alpha or measured Paper PnL.
 
-## Actual Starting Point
-
-Root C:/Users/Public/Documents/thericher-v2.
+Root: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Previous native-target-weight-paper-consumer-v1 COMPLETE for typed native-path
-evidence and actual owned readiness, not for submit/fill:
-A/execution/current-joint17-weight-owned-runtime-20261023-v1/parent-release-r2/CONSUMER.json
-SHA34c2484650e87b69c42f4c18de1b6661be988c659b839ba19b5432f666b7a139.
-Source8c5aeb71, RELEASE7861b82f, actual image75df0968, nativeABI f9d7d609,
-input01e6ea40/policy11b5657c/slotjoint17-Oct23-v1. Exit installed FIRST then
-entry; both quiet Ready with separate definition/ACL readbacks. All63 original
-task XML/ACL unchanged,0manualTaskstarts/API/orders. Fresh39Scheduler mocks,
-540+7source and1382primary pins/date/image/input passed; independent419b2e6e,
-ClaudeSOUND_WITH_NAMED_LIMITS53772d03. The exact unchanged native/quiet-body
-proof transfer is not a full final-source native effect invocation.
+Run scripts/start_next_codex_task.ps1; read HANDOFF.md, AGENTS.md, RUNBOOK.md
+and active roleboards. Parent owns shared policy/goal/MD/Git.
 
-- Joint17 entry: Oct24 00:30..01:00KST, Oct23 15:30..16UTC.
-- Conditional exact-owned exit: Nov20 05:45KST onward, Nov19>=20:45UTC.
-- Volume22:45/22:49KST attempts failed20; only that entry contained22:52KST,
-  original window closed23:15. Exact XML/SDDL and first-cause work under
-  A/execution/current-volume-first-window-technical-recovery-20261023-v1.
-  No inferred no-submit/fill, backdate or substitute. Nightly Oct23 23:50KST.
-- Next-date Data refresh: Oct24 05:10KST, installed not acquired.
+## Prior Outcome And Current Evidence
 
-## Execution Work
+joint17-first-session-runtime-attribution-v1 is COMPLETE for actual technical
+failure classification and explicitly scoped repair, NOT a successful entry.
+Original natural15:30/15:34/15:58UTC attempts failed20 before native seed.
+Diagnostic59623ae4 retains job_runtime_unbound/CIM_chain. Current harmless
+reproduction36a3f415 finds an exact CPython alias missing from the finite list,
+same trusted binary hash; failed-process exact subbranch was not retained.
+Only expired entry remains disabled. Conditional exit alone updated16:11:41UTC,
+same original timing/principal/ACL, Source9b9dbd50/RELEASE758b4c95. Original mutex
+held/all three counter roots zero/no reset/API/Task start. Actual repaired
+scheduled owner has NOT yet been observed. Independent linkage8325dc56:
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/parent-release/CONSUMER.json.
+No backdate, expired-entry activation, substitute request or fill inference.
 
-1. Run scripts/start_next_codex_task.ps1; read HANDOFF/AGENTS/RUNBOOK and active
-   roleboards. Parent owns sharedMD/Git; check actual current owners/resources.
-2. Use source-safe Task status/times and exact immutable launch/native/dispatch
-   evidence. Read exact private custody only through qualified network-disabled
-   source/private RO parsers with before/after stability; no observe/lock/recovery
-   as an offline reader. Missing evidence and task exits are not fills.
-3. Preserve exact Joint17 source/input/policy/slot, original shared initial-cash
-   tenth/.005 original cohort, F9 UNKNOWN/HELD, R5/HGB exits and nightly owner.
-   No new capital, profit expansion, foreign inventory or substitute request.
-4. At the natural owned opportunity bind scheduled owner, input/date/image,
-   actual protected writers, exact persisted request and current native risk.
-   Fresh quotes/funds/orderability and unknown reconciliation precede effects.
-   New Research source/argv/mount rules must be exact if coexistence is needed;
-   no global idle-machine hold or generic Research exemption. Installation does
-   not require manually starting a final task.
-5. Classify the actual first outcome narrowly. Reproduce a technical first cause,
-   fix and test the affected path, preserve debits/unknowns, deploy exact recovery
-   inside standing Paper authority without blindly repeating a broken job.
-   Actual accepted/fill/current-owned evidence stays distinct from fees,
-   settlement and net PnL not observed. Honest-host markers are not cryptographic
-   OS scheduler-origin proof.
+Primary H5 code770436c is pushed. Full authority24640869:560serial/18795fullPASS,
+25skip/8actualworkers/originalhelperexit0/clean/Ruff/3Compose(.env.example),
+exact1384source-control files. Docs/external-only reuse requires those same pins.
+A/verification/current-model-weight-h5-integration-20261024-v1/AUTHORITY.json.
 
-## Parallel Ready Research
+New frozen H5 materializer591a86d3/Consumer6e98261d is READY_CPU_SYN_ONLY:
+A/research/current-unit-gru-h5-typed-point-preparation-20261024-v1.
+Same selected GRU9409a2f4, original TRAIN affines/full100/required69; oneCPU
+restore/oneSYNforward/6tests/canonical independent read/alljoined. Old5bca stays
+immutable. Actual dated point/market forward is NOT done.
+New separate native image81373d2a/Consumerf3e5c658 at
+A/execution/current-h5-native-image-preparation-20261024-v1 verifies frozen741
+build files,736actual image source files,11ABIchecks/H20golden/inert worker,
+and exact full100/known69 invented H5 input roundtrip. No existing runtime
+replacement, broker/private/credential call, actual point or deployment claim.
 
-Noether COMPLETED the matched two-fit SharedLag63-FiLM versus GRU H5 campaign:
-A/research/current-shared-lag-vs-gru-h5-development-20261023-v1.
-FINAL-CONSUMER87750f60/Source297b367b: actualGRU54epochs/selected30 and
-SharedLag80/selected56, bothpatience24/9cells/LATER0. At10bp growth/DDpercent
-initialresearchNAV GRU+.105333/.452555, SharedLag-.926595/1.284482,
-uniform-.822368/1.218932. Growth/DD FAIL, cap/turnover PASS. Alljoined/GPUreleased;
-no replacement of current Paper candidate. Parent53refs/1382primary pins verified.
+## Ready Work And Real Dependencies
 
-NEW source/math/native preparation:
-A/research/current-unit-simplex-encoder-comparison-h5-development-20261023-v1.
-Same two encoders on unit-simplex WITHOUT within-cohort .10 cap under a new
-frozen twofit-total contract; NOT Paper budget or deterministic-risk changes.
-Keep same H5 target/split/purge/seed/CHECK/cost/funding, finite new caps and real
-changed-math native proof; disclose adaptive reuse/concentration/smallcohorts.
-Old44epoch/H5/three-seed failures remain closed, not ready reruns or regrades.
-Measured legacy Volume hook381a9b04 lacks descriptor ingress and requires static
-host/CID claims. READY47d5441d/Sourcefa957bb6 completed4actualCUDA native
-children/12updates,52native+404SYNchecks. Actual14:15:42UTC scoped writer facts
-ccd0a50c after contained-window closure authorize independent market dispatch
-40628/start134372386280941023 at14:17:08UTC. Keep original twofit-total/
-7200active/deadline17:24UTC, exact context and joined resource ownership;
-STARTED is not a completed fit. Nightly has a separate driver/worker, not the
-Volume census (source tracea3f73a8b); actual coexistence still measured,
-Execution reliability preempts safely. No blanket GPU/approval wait.
-One coordinator/actual allocated-reserved-driver headroom/desktop reserve,
-no app-name hold/dummyfit/overlapping coldrestore. Mill's IO prefix prototype
-321ef342 is REJECTED/not activated: restored-mtime overwrite counterexample;
-actual ClaudeREVISEe875c902 overrides a positive-word parser mislabel via separate
-immutable correction. No frozen study mutation. Kant's SAME learned17 next-date
-source/CPU preparation741444b2 is complete, market forward NOT_READY until
-actual accepted Data refresh. Original base69 raw/factor/context and full100mask
-contract cannot silently become dynamic68.
+1. Data: existing owned quiet refresh Oct24 05:10KST /Oct23 20:10UTC, Source
+   2c91d1a7,69NAS+SPY/70pages. Do not duplicate its collector or infer acquisition
+   from install/clock/exit. Accept actual terminal/DTO/source/verifier/alljoined
+   chain with Oct23 close inputs; missing required features means this point
+   NOT_READY, not a company approval hold or silent69-to68 change.
+2. Engine: independently check frozen materializer/selected payload/affines/ABI.
+   After actual accepted Data, run its exact FUTURE-COMMAND once within frozen
+   caps. No refit, labels or checkpoint selection from Paper outcomes. Bind
+   full100 weights/known69/unavailable31zero, publication before Oct26OPEN and
+   H5 exit proxy Oct30>=19:45UTC. No TopK/renormalization or old H20 mislabel.
+3. Execution: Aq owns source/SYN native H5 adaptation under
+   A/execution/current-h5-native-route-preparation-20261024-v1; Parent owns real
+   native qualification/release/quiet exit-first deployment. Use explicit H5
+   enum and exact immutable new image/SDK; do not edit deployed H20 roots.
+   Preserve original shared initial-cash tenth/.005cohort, F9 UNKNOWN/HELD,
+   existing costs/losses/pending reservations, cap8/whole shares/orderability/
+   fresh quote-funds/identity-first reconciliation. Targets are not guaranteed
+   fills; skipped mass is not redistributed. Entry/exit source readiness is not
+   a trade. Actual owner/risk checks remain mandatory before each effect.
 
-Actual Volume first cause remains unknown. Old h.call drops categorical stdout
-before raising, so first loggercdbd7da6 is insufficient. Correct the successor
-diagnostic below that unchanged returncode check; no expired-task reactivation
-or generic owner-gate bypass. Claude architecture challengeREVISEfc0311ff names
-causal diagnosis before any narrower owner change. Preserve old unknown custody
-and reservations; this does not hold independent Research or Joint17 preparation.
+## Independent Research Continues
 
-Aquinas reads existing Paper results in parallel; Pauli's typed RO reader4f385552
-is qualified and actual pretrigger readcc250f6f is record-not-created/UNKNOWN,
-not zero orders/fills. A worker-owned next_due never
-becomes foreground session waiting. Continue another ready disjoint package.
+Noether owns actual SYN TCN throughput campaign Sourcea8151b1d, coordinator
+PID29100/start134372455362504525/16:12:16UTC under
+A/research/current-causal-tcn-representative-throughput-syn-20261024-v1.
+This is native optimizer/backend diagnosis, not new market learning. Verify
+actual completion/children/lease rather than infer from START/MD. Preserve closed
+TCN3fa13f22 (2epochs/time-reserve stop, not architecture refutation), GRU/SharedLag
+comparisoneac36f68 and prior87750f60; no duplicate fits or clock refunds.
+Next ready fixed-half cached GRU/TCN replay d814e26e: exact sealed compatibility,
+short Claude challenge,12finitecells/zero fits-forwards-LATER/GPU. Learned gates
+need chronological out-of-fold expert inputs; this fixed blend does not learn.
+All results on reused INNER remain adaptive development, not fresh replication.
 
 ## Verification And Completion
 
-AGENTS.md owns delegated private no-cost Data/Research/KIS Paper authority.
-Never read/route KIS_LIVE_*, enable live/real money, pay or expose publicly.
-Data stays M/models A; preserve15percent Dfree/warn20percent. No private/raw
+AGENTS.md owns standing private no-cost Data/Research/KIS Paper authority.
+Never read/route KIS_LIVE_*, enable real money, pay or expose publicly.
+Data stays M/models A; preserve15percent Dfree/warn20percent. No raw/private
 values, credentials or account/order identifiers in output/Git/Claude.
+Use focused checks first. Tracked code/control/material recovery requires the
+AGENTS serial/full/Ruff/three-Compose policy. Exact unchanged primary pins may
+reuse24640869 only for docs/external work plus fresh independent external checks.
 
-Tracked code/control/runtime change: changed-path serial plus fresh original
-scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and default/research/
-accounting Compose with .env.example. External/docs-only may reuse PRIMARY
-authority93991da5 ONLY when exact1382source/control pins still match, with
-fresh focused/independent checks of changed external code and outputs.
-
-Complete this company outcome only with exact first-opportunity runtime
-classification and handled or explicitly scoped recovery state, not a due
-time/install/test/commit alone. Verify/commit/push, refresh stateboards and
-replace this file with ONE material next outcome; continue ready useful work.
+Complete only with actual accepted dated input, native H5 consumer evidence,
+owned quiet readiness and explicit remaining runtime/PnL limits. A future due
+time, SYN point, image build or package commit is not this outcome. Verify,
+commit/push, refresh stateboards, replace with ONE material next outcome and
+continue active request. Workers own next_due; no foreground session wait.

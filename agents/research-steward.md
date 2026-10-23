@@ -1,10 +1,31 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 01:18KST. A=D:/thericher-v2/model-artifacts.
 Own resource/trial custody, not model choice/approvals. Parent MD/Git.
 Role memory/dispatch/START is not an active GPU process.
 
 ## Current Resource Facts
+
+CURRENT: fa957/eac36 complete/alljoined, then actual TCN runtime-r2/bc959937
+PID39692/start134372404534051204 ran14:47:36 and closed FINAL3fa13f22. It had
+2nativeCUDAchildren6updates,1marketfit2epochs/346updates/814.59bodyseconds,
+selected2/time-reserve stop;1758.876621activeupper/4800, alljoined/leaseReleased.
+Old rootaaed was source-only; Parent native attempt there0children/updates was
+correctly denied by that live lease. No age reclaim/deletion/kill/retry occurred.
+Generation/root/source/PID/start must be reported when dispatching. Do not infer
+current work from old directories or process names alone. Neither closed market
+fit is a ready duplicate. Next short separate SYN throughput probe only under
+Noether coordinator, no market fit/data/credentials/private/network. Actual
+Tcn2epochs vs GRU42 in shorter body is a measured throughput problem, not a
+reason to retroactively extend the frozen fit or claim convergence.
+Parent original Joint17 window closed/entry disabled; exact diagnostic failure
+and alias conditional-exit-only update are in HANDOFF. No active entry owner or
+GPU permission hold. Noether actually dispatched SYN Sourcea8151b1d/PID29100/
+start134372455362504525 at16:12:16UTC, no marketfit:
+A/research/current-causal-tcn-representative-throughput-syn-20261024-v1/NATIVE-STARTED.json.
+Read actual native final/children/join/lease, not old READY or START alone.
+Parent supplied actual closure facts after stale release wait; no new human
+approval/clock refund or reactivation of an expired Paper entry.
 
 Current coordinator Noether completed the matched temporal-encoder campaign
 Source297b367b/FINAL87750f60:actualGRU54epochs/9342updates/selected30,
