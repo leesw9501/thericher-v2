@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 12:15KST /03:15UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-23 12:35KST /03:35UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
@@ -206,8 +206,24 @@ Throughput review a094a779 found recursive reservation/history verification
 outside the epoch timer: epoch41 timed4.37s versus18.75s curve interval.
 Source operation counts are not measured disk-time attribution/allocator cause.
 Future call-local validated reservation snapshot can remove repeated scans while
-retaining payload hashes/fsync/custody/cold checks; NOT implemented or speedup.
-Kant owns one temporal-expert diversity source/CPU proposal, not a running fit.
+retaining payload hashes/fsync/custody/cold checks. Future-only opt-in prototype
+0fcda9ea now exists under that throughput-r1/prototype-r1/CONSUMER.json:
+9SYNchecks/exact ledger+independent Reader parity/8original pins unchanged.
+For12SYNepochs reservation calls90->24, payload validation156/fsync50 unchanged;
+single ordered wall.464->.270s is NOT an actual-campaign/GPU speedup. Default
+old path retained; no activation/model-data-GPU-Broker-Task work/alljoined.
+Both versions retain the named post-check/pre-write external-writer race;
+independent Reader rejects it. Native optimizer/codec proof still needed before
+adoption in a NEW campaign. No old-study rewrite or another standing worker.
+Kant completed temporal-expert proposal772776ed: shared-lag63/288rawencoder
+params/rank<=6,17CPUchecks/24Parent-rehashed pins/alljoined/0marketfits-GPU.
+Audit verifies actual patch6/mixer3/attention5fits; no global DLinear first-use.
+Next Engine may freeze a matched two-fit raw-encoder comparison; no fit/alpha
+or need for another human approval inferred from this ready proposal.
+All assigned numerical/proposal/prototype workers are now joined. Standing
+Windows tasks keep their own due times; the app heartbeat was one-shot only.
+Company typed deployment remains unfinished; staged effect-disabled release
+is not installed readiness. Do not advance the company goal from these packages.
 
 The obsolete Oct21/22 app heartbeat automation was deleted; existing Windows
 workers/schedules were not deleted. Source-safe Scheduler readback still shows

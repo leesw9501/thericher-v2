@@ -245,8 +245,21 @@ Throughput a094a779: epoch41 timed4.37s versus18.75s between curve writes;
 recursive reservation/history verification lies outside the epoch timer.
 Future call-local reservation snapshot reuse retains hashes/fsync/custody;
 not implemented or a measured speedup. Original frozen run unchanged.
-Kant owns one nonduplicate temporal-expert source/CPU proposal via Strategy;
-no next market/GPU campaign inferred from a model name. Paper remains separate.
+Future-only opt-in prototype0fcda9ea subsequently passed9SYN tests/Reader and
+ledger parity, preserving156payload validations/50fsyncs while reservation
+calls fell90->24 over12SYNepochs. Default old path and8source pins unchanged,
+no actual training adoption/speedup/model work. Named external-write race stays
+and Reader rejects it. Native optimizer/codec proof is required in a NEW frozen
+campaign before using the prototype; no old-family rerun or criterion change.
+Kant completed772776ed source/CPU proposal via Strategy:
+A/research/current-temporal-expert-diversity-proposal-20261023-v1/CONSUMER.json.
+SHARED_LAG63_FILM32/288rawencoder params/rank<=6, not a DLinear reproduction.
+17CPU checks/24Parent-rehashed pins/ClaudeSOUNDlimits/0marketfits-GPU/alljoined.
+Per-stock arithmetic repairs diagnosed layout rounding; not financial epsilon.
+Prior actual patch6/mixer3/attention5fits mean a new model-name sweep is not a
+genuine first use. Next ready Engine package is a separately frozen matched
+two-fit raw-encoder comparison; no new fit/qualified alpha or operator GO inferred.
+Paper readiness and the completed H5 failure remain separate.
 
 ## Closed Families / No Duplicate Work
 

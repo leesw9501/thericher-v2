@@ -33,6 +33,13 @@ memory, not allocated alone or app-name allowlists; no current cap change.
 Throughput review a094a779 identified recursive boundary history checks outside
 epoch timer (4.37s timed/18.75s interval at41), not per-update fsync/idle proof.
 Future call-local snapshot reuse is a proposal only; frozen results untouched.
+Prototype0fcda9ea now READY_FUTURE_ONLY under throughput-r1/prototype-r1:
+9SYN checks/12epochs each/default-old-path/Reader+ledger parity/8old pins stable.
+Reservation calls90->24 with payload validation156/fsync50 unchanged; ordered
+SYN.464->.270s is not actual training/GPU throughput. No activation or model/
+market/GPU work; allcommands joined/90of240active. Both retain post-check/write
+external-writer race and Reader denial. Future numerical adoption needs its own
+actual optimizer/codec proof, not a rerun or rewrite of the closed H5 campaign.
 Do not kill personal apps or blame them without evidence; project remains first
 GPU priority. Old clocks/fits/failures are closed, not refunded or restarted.
 

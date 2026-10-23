@@ -130,9 +130,14 @@ oneadaptiveINNER/LATER0/1352.587384active/alljoined/GPUreleased. Technical
 directory/import errors repaired without repeating3+1nativeSYNupdates or the
 ONEmarketfit. No old3seed rescue/oldresult regrade/independent-alpha/PaperPnL.
 Throughput a094a779 identified recursive checkpoint/history scans outside the
-epoch timer; future call-local snapshot reuse is not implemented or a speedup.
-Kant owns one bounded nonduplicate temporal-expert source/CPU proposal; no next
-fit or architecture change inferred until its actual source/contract is ready.
+epoch timer. Future-only prototype0fcda9ea passed9SYNchecks/Reader-ledger parity/
+8original pins unchanged; reservation calls90->24, payload hashes/fsync unchanged.
+It is not activated or an actual-campaign/GPU speedup. Before new numerical
+adoption retain the named race/Reader limits and prove native optimizer/codec.
+Kant proposal772776ed is ready: shared-lag63/288rawencoder params/rank<=6,
+17CPUchecks/24pins/alljoined/0marketfits-GPU. Prior patch6/mixer3/attention5
+actual fits audited; no global first-use claim. A matched two-fit Engine
+contract/nativeproof is next preparation, not a fit or operator approval gate.
 
 Independent next-date Data Source2c91d1a7/consumer13603b66/deployment80f486ff
 ACTUALLY installedReady/neverrun quiet one-shotOct23 20:10UTC whole70-page
