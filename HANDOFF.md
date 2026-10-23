@@ -106,6 +106,13 @@ No PID/CID allowlist, world-idle or arbitrary Node exemption. No typed Task
 installed or final RELEASE granted; current admission is not future admission.
 Native/risk/Task bodies unchanged; byte transfer is not a new effect invocation.
 This scoped heartbeat does not expand schedules or manually invoke Paper work.
+Parent staged five exactly hashed references in parent-release-r1/
+RELEASE-CANDIDATE.json (allow_execute:false), NOT RELEASE.json.39fresh isolated
+Scheduler mocks passed;6quiet-owner body files match the two consumed actual
+quiet starts. No extra native start/install. Later deployment needs exact-date/
+ownership/source revalidation, not another operator approval. Nash separately
+prepares precise H5 research actor capability only after its Source is frozen,
+so independent research is not mistaken for private custody writing.
 
 PROPOSED, NOT installed: joint17-Oct23-v1/.005ORIGINALgross, entry Oct24
 00:30..01:00KST /Oct23 15:30..16UTC; conditional exit Nov20 05:45KST /

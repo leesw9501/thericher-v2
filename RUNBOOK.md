@@ -21,6 +21,11 @@ actor admission2f55166d PASS is current only; parent RELEASE/install remain sepa
 Exact evidence: A/execution/current-joint17-weight-owned-runtime-20261023-v1/
 parent-bootstrap-boundary-r1/CONSUMER-R3.json and
 deployment-r4/source8c-actual-admission-r1/CONSUMER.json.
+parent-release-r1/RELEASE-CANDIDATE.json is staged allow_execute:false, not an
+effect-capable RELEASE.json or an installed Task. Five exact refs verified;
+39current Scheduler mocks/6unchanged quiet body files transfer only their scope.
+Later delegated deployment must recheck date/source/owner and actual resources;
+no new operator permission requirement is created by this heartbeat's scope.
 
 ## Current Read-Only Custody
 
