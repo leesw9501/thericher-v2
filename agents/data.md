@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-23 11:36KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendars/features/availability, not account/orders/model
 selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
@@ -28,6 +28,15 @@ Reuse immutable qualified r3/kernel/affine parts, no expired old dispatch,
 old62+new1 splice, duplicate collector or new platform. Future volume membership
 is UNKNOWN; general complete-feature mask must not hardcode67 or imply that
 Joint raw/context/factor shares Volume exclusions. Engine owns new date forwards.
+
+Next-date SAME learned17 source/CPU preparation741444b2 at
+A/research/current-next-session-joint17-forward-preparation-20261023-v1/CONSUMER-V2.json
+is complete, NOT a new market point. Its MASK-SCOPE.md records that the current
+Data/forward contract requires original69 raw/factor/context plus joint_date_known;
+full100mask does not authorize a silent dynamic69->68 change. Required missing
+slot makes that point NOT_READY/input failure, not no-signal or zero imputation.
+Repair exact same-date/63feature slots or freeze a separately reviewed future
+contract. Do not rerun the completed CPU proof or fabricate Oct23-close data.
 
 Memory thin packet f25398a3 COMPLETE at
 A/data/current-mature-memory-h20-input-20261023-v1/CONSUMER.json:

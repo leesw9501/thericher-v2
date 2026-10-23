@@ -27,7 +27,10 @@ proof transfer is not a full final-source native effect invocation.
 
 - Joint17 entry: Oct24 00:30..01:00KST, Oct23 15:30..16UTC.
 - Conditional exact-owned exit: Nov20 05:45KST onward, Nov19>=20:45UTC.
-- Existing Volume entry: Oct23 22:45..23:15KST; nightly Oct23 23:50KST.
+- Volume22:45/22:49KST attempts failed20; only that entry contained22:52KST,
+  original window closed23:15. Exact XML/SDDL and first-cause work under
+  A/execution/current-volume-first-window-technical-recovery-20261023-v1.
+  No inferred no-submit/fill, backdate or substitute. Nightly Oct23 23:50KST.
 - Next-date Data refresh: Oct24 05:10KST, installed not acquired.
 
 ## Execution Work
@@ -72,15 +75,29 @@ Keep same H5 target/split/purge/seed/CHECK/cost/funding, finite new caps and rea
 changed-math native proof; disclose adaptive reuse/concentration/smallcohorts.
 Old44epoch/H5/three-seed failures remain closed, not ready reruns or regrades.
 Measured legacy Volume hook381a9b04 lacks descriptor ingress and requires static
-host/CID claims. Aquinas prepares a narrow external coexistence adapter without
-touching today's installed path. Long new market fits await qualified coexistence
-or its23:15KST window/actual writer closure; this is scoped technical timing,
-not human approval/global GPU ban. Join short native probes before22:40KST.
+host/CID claims. READY47d5441d/Sourcefa957bb6 completed4actualCUDA native
+children/12updates,52native+404SYNchecks. Actual14:15:42UTC scoped writer facts
+ccd0a50c after contained-window closure authorize independent market dispatch
+40628/start134372386280941023 at14:17:08UTC. Keep original twofit-total/
+7200active/deadline17:24UTC, exact context and joined resource ownership;
+STARTED is not a completed fit. Nightly has a separate driver/worker, not the
+Volume census (source tracea3f73a8b); actual coexistence still measured,
+Execution reliability preempts safely. No blanket GPU/approval wait.
 One coordinator/actual allocated-reserved-driver headroom/desktop reserve,
 no app-name hold/dummyfit/overlapping coldrestore. Mill's IO prefix prototype
-is FUTURE-only and cannot mutate a frozen study or claim unmeasured GPU speedup.
-Kant prepares SAME learned17 next-date forward for actual accepted Data refresh,
-not another collector or fabricated future feature. Source/CPU work continues.
+321ef342 is REJECTED/not activated: restored-mtime overwrite counterexample;
+actual ClaudeREVISEe875c902 overrides a positive-word parser mislabel via separate
+immutable correction. No frozen study mutation. Kant's SAME learned17 next-date
+source/CPU preparation741444b2 is complete, market forward NOT_READY until
+actual accepted Data refresh. Original base69 raw/factor/context and full100mask
+contract cannot silently become dynamic68.
+
+Actual Volume first cause remains unknown. Old h.call drops categorical stdout
+before raising, so first loggercdbd7da6 is insufficient. Correct the successor
+diagnostic below that unchanged returncode check; no expired-task reactivation
+or generic owner-gate bypass. Claude architecture challengeREVISEfc0311ff names
+causal diagnosis before any narrower owner change. Preserve old unknown custody
+and reservations; this does not hold independent Research or Joint17 preparation.
 
 Aquinas reads existing Paper results in parallel; Pauli's typed RO reader4f385552
 is qualified and actual pretrigger readcc250f6f is record-not-created/UNKNOWN,

@@ -1,10 +1,26 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-2026-10-23 21:50KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
+2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts. Parent sharedMD/Git.
 AGENTS.md owns Paper authority, one original cash-tenth and deterministic risk.
 Never KIS_LIVE_* or private/raw/secret output; modelprofit is not permission.
 
 ## Current Company / Actual Model Point
+
+Current company outcome joint17-first-session-runtime-attribution-v1, not an
+installation or profitability claim. Volume ENTRY actually ran22:45/22:49KST
+and failed20. Parent disabled ONLY that entry22:52KST; exact ORIGINAL.xml/SDDL
+and containment under A/execution/current-volume-first-window-technical-recovery-20261023-v1.
+23:15KST window closed, no backdate/manual start/new order/identity or bank reset.
+Missing native receipts/typed record is UNKNOWN, not no-submit or flat.
+Exact no-effect prefix reached fail-stop before owner; actual denial unknown.
+Old h.call drops nonzero stdout, so first logging-only cdbd7da6 is insufficient;
+correct a separate successor without weakening returncode/owner/native risk.
+Claude parent designREVISEfc0311ff: reproduce named cause, no blanket ancestry
+relaxation. No generic coexistence adapter activated, original exit stays0cc9b799.
+Parent14:15:42 scoped task/process/container factsccd0a50c permit independent
+Research; not custody closure or release. Actual new market dispatcher40628
+started14:17UTC. Do not add a competing Volume owner while it runs. Nightly
+23:50 and Joint17 Oct24 00:30 retain their own effects/admission checks.
 
 Typed controller is NOW installed: actual exit-first/entry deployment34c24846 at
 A/execution/current-joint17-weight-owned-runtime-20261023-v1/parent-release-r2/CONSUMER.json.
@@ -49,7 +65,8 @@ A/execution/current-volume-gru67-runtime-technical-repair-20261023-v1/CLOSED.jso
 FinalSourcebb5667d8/release-r3/native20image4f4294ed; actualnativebodybd39e96b/
 d9ad7768 byte-identical, finalcoordinator19tests/phase8/cold/actualrollback-readback.
 Finalhash NOT fullynativeexecuted, proof-transfer scope explicit. BothownedTasks
-installedReady/neverrun: quietentryOct23 13:45..14:15UTC (22:45..23:15KST),
+original readiness only; actual entry failures/containment are above. Quietentry
+Oct23 13:45..14:15UTC (22:45..23:15KST),
 conditional exactownedexitNov19>=20:45UTC (Nov20 05:45KST). One .005ORIGINALbasis
 slot volume-gru-Oct23/sharedtenth, no bank/counter reset after effects.
 Old3failedqualificationstarts retained; successor2/600conservativecombinedupper

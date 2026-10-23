@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-23 12:15KST. A=D:/thericher-v2/model-artifacts.
+2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts.
 Own resource/trial custody, not model choice/approvals. Parent MD/Git.
 Role memory/dispatch/START is not an active GPU process.
 
@@ -19,8 +19,19 @@ failed; this is not a new ready rerun. Next Noether owns unit-simplex source/
 math/short-native preparation only under a new contract. Long market dispatch
 awaits qualified coexistence or Volume23:15KST/actualwriterclosure; measured
 legacy hook381a9b04 lacks descriptor ingress/static host-CID acceptance, not
-operator approval/globalGPU ban. Short probes join before22:40KST; CPU/source
-work continues. Check actual lease/PID/start and resources before new fits.
+operator approval/globalGPU ban. This timing projection is superseded:
+NEW Sourcefa957bb6/READY47d5441d passed4actualCUDA native children/12updates,
+52native+404SYNchecks/alljoined. Parent14:15:42UTC actual scoped0tasks/0execution
+hosts/1container0privateRW factsccd0a50c after contained Volume window permit
+separate Research, not reservation/account closure. Actual market coordinator
+40628/start134372386280941023 began14:17:08UTC. Original two-total-fits,
+7200active/deadline17:24UTC and measured7GiB+4GiB driver reserve unchanged.
+No repeat native/completed fit. Nightly23:50 driver is separate sourcea3f73a8b,
+not Volume census; actual Execution needs preempt at safe checkpoint. Joint17
+00:30 own admission still applies; no new Volume owner while fits active.
+IO prefix prototype321ef342 REJECTED/notactivated after overwrite counterexample;
+prior call-local opt-in prototype used in frozen campaigns is not this candidate.
+Check actual lease/PID/start and resources before adding workers.
 Parent Joint17 two-task
 installation is complete34c24846, not a Research/GPU permission hold. Frozen
 actual actor descriptors are needed only for real coexistence at effect time.

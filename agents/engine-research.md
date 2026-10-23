@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 12:15KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 23:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own model/feature/target/replay interpretation, not broker risk. Parent MD/Git.
 AGENTS.md owns policy; Source/MD/dispatch is not a running fit.
 
@@ -62,8 +62,21 @@ SOUNDlimits; its mistaken two-fits-per-arm sentence is rejected. Same seed/H5/
 split/purge/CHECK/cost/funding and finite new caps, actual changed-math native
 proof before market fits; report HHI/effectiveN/cohort spread separately. Old
 failures immutable; adaptive hypothesis not causalcap/encoder/independentalpha.
-Long new dispatch is pending measured Volume coexistence or its23:15KST window
-closure, not human approval. Source/short native prep continues; no waiting loop.
+READY47d5441d/Sourcefa957bb6 completed4realCUDA native children/12updates,
+52native+404SYNchecks, alljoined before market dispatch. Parent actual scoped
+writer closureccd0a50c14:15:42UTC after contained Volume window; no account or
+request closure inferred. Actual market dispatcher40628/start134372386280941023
+began14:17:08UTC under exact DISPATCH-CONTEXT. Two total fits,7200active and
+original17:24UTC deadline unchanged; STARTED not fit/financial-result proof.
+No old native/market fit repeated. Nightly source tracea3f73a8b uses a separate
+driver/worker; keep actual resource/execution headroom, no global GPU wait.
+
+Next-date SAME Joint17 source/CPU preparation741444b2 is complete, market point
+NOT_READY pending accepted Data refreshOct24 05:10KST. Current original69
+raw/factor/context contract cannot silently infer on68; full100mask remains.
+IO prefix prototype321ef342 is REJECTED/not activated due restored-mtime
+overwrite counterexample. Actual advisoryREVISEe875c902 is separately corrected;
+future review parsing must read explicit verdict, never a positive-word match.
 
 ## Completed Joint / Concentration Models
 

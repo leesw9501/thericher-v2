@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 22:24KST /13:24UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-23 23:20KST /14:20UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
@@ -15,12 +15,18 @@ definition/ACL readbacks passed. ONE next company outcome is
 joint17-first-session-runtime-attribution-v1. Installation is NOT a submit/fill.
 Parent owns integration/Git. Noether's Source297b367b matched comparison is now
 COMPLETE_FAIL87750f60: actual54/80CUDAepochs, alljoined/GPUleaseReleased. It now
-prepares a NEW unit-simplex allocation comparison; no long new market fit yet.
-Aquinas prepares the measured legacy Volume coexistence fix without touching
-today's installed tasks. Pauli's explicit typed-profile RO reader is qualified;
+owns NEW unit-simplex comparison Sourcefa957bb6/READY47d5441d. Actual market
+dispatcher40628/start134372386280941023 began14:17:08UTC after scoped writer
+closureccd0a50c; two total fits/one per encoder, old caps/deadline17:24UTC intact.
+STARTED is not completed-fit evidence. No old/native fit repeated. Aquinas now
+repairs categorical first-fault retention; no coexistence adapter is activated.
+Pauli's explicit typed-profile RO reader is qualified;
 Parent actual readcc250f6f found typed_record_not_created/UNKNOWN before trigger.
-Kant prepares next-date SAME Joint17 forward; Mill tests future-only IO prefix
-optimization. These disjoint assignments do not themselves prove running fits.
+Kant completed next-date SAME Joint17 source/CPU preparation741444b2, not future
+market inference. Mill's future-only IO prefix optimization321ef342 was REJECTED:
+same-size overwrite/restored-mtime counterexample; never activate it. Its raw
+Claude verdict is REVISEe875c902; positive-word substring parsing was corrected
+in immutable PARENT-ADVISORY-CORRECTION.json, not by rewriting old evidence.
 
 ## Actual Paper / Due
 
@@ -50,10 +56,31 @@ optimization. These disjoint assignments do not themselves prove running fits.
   Not full account/equity/netPnL or F9 non-send proof.
 - Volume point61d11d44/inputf2a2948b/policy9efb34bf/model8ebcb94f ACTUAL:
   oneCPUrestore+forward/component67rows/0fits-labels-GPU/alljoined.
-  Entry thericher-kis-paper-volume-gru67-entry-20261023-v1 installedReady,
-  Oct23 22:45KST /13:45UTC; conditional exact-owned exit Nov20 05:45KST /
+  Entry thericher-kis-paper-volume-gru67-entry-20261023-v1 actually ran at22:45
+  and22:49KST, result20. Parent disabled ONLY that entry at22:52KST, preserving
+  exact XML/SDDL under A/execution/current-volume-first-window-technical-recovery-20261023-v1.
+  Its23:15KST window is now closed; no backdate/rebind/manual start. Missing
+  native receipts and missing typed record are UNKNOWN, not no-submit proof.
+  Exact pre-owner prefix reached a fail-stop/no private/API; actual owner denial
+  remains unobserved. Existing h.call discards nonzero stdout, so frozen logger
+  cdbd7da6 is NOT a sufficient denial diagnostic. Prepare a separate corrected
+  successor, preserve original returncode/owner/risk checks and old bytes.
+  Parent design review REVISEfc0311ff: no blanket ancestry/owner-gate relaxation.
+  Conditional exact-owned exit remains Nov20 05:45KST /
   Nov19 20:45UTC. One .005ORIGINALbasis cohort, not7guaranteedorders.
   Native sourcebb5667d8/bodybd39e96b-d9ad7768/image4f4294ed.
+
+Parent14:15:42UTC ccd0a50c proved current scoped0running Paper tasks,
+0execution-artifact hosts/1container/0exact private-volume RW mounts after
+containment/window end. This enables independent Research, not account closure,
+reservation release or a no-order conclusion. Future nightly23:50 and Joint17
+00:30 owners remain separate. No gate change or new Volume recovery scheduled.
+
+Current docs/external integration: fresh primary1382hashes unchanged at14:26UTC;
+reuse full authority93991da5 (546serial/18747fullPASS25skip/8workers/clean).
+Fresh advisory-parser12tests/Ruff repo+new helper/default-research-accounting
+Compose(.env.example)/gitdiffcheck PASS. This is not runtime/fill verification;
+external numerical/diagnostic changes retain their own focused proof obligations.
 
 One ORIGINAL virtual-cash tenth is shared. Count owned costs/losses/unknown
 reservations once, respect buying power, never expand from profit/adopt foreign

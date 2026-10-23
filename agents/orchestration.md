@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 22:07KST /13:07UTC. Parent sharedMD/Git.
+2026-10-23 23:20KST /14:20UTC. Parent sharedMD/Git.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents. No operator decision required.
 
@@ -19,28 +19,31 @@ full100/known69/unavailable31zero, no score/TopK/renormalization/new bank.
 | Owner | Running / Ready / Exact Consumer |
 | --- | --- |
 | Parent / 총괄 | Integrate actual model/reader results and current runtime; own sharedMD/Git. Typed deployment complete. No manual final task start. |
-| Noether / 엔진·연구 자원 | Source297b367b comparison COMPLETE_FAIL87750f60:54/80CUDAepochs/selected30-56, alljoined/leaseReleased. New unit-simplex twofit research source/native prep only; marketdispatch pending scoped Volume interoperability/window. |
-| Aquinas / 실행 관측 | Retained custody c096e5f9/noAPI. Source381a9b04 confirms legacy Volume static host/CID barrier; prepares narrow external adapter without touching today's installed path. Earlier one-source/phase Joint17 candidate is not a general grant. |
+| Noether / 엔진·연구 자원 | Comparison87750f60 COMPLETE_FAIL/alljoined. NEW Sourcefa957bb6/READY47d5441d actual market dispatcher40628/start134372386280941023 began14:17:08UTC after scoped writer closureccd0a50c. Two total fits, original17:24UTC deadline; not completed-fit evidence. |
+| Aquinas / 실행 관측 | Retained custody c096e5f9/noAPI. Volume actually failed20 twice, only ENTRY contained; repair first-fault transport below dropped-stdout check. No activated coexistence adapter or expired-task rebind. |
 | Pauli / 실행 판독 | Explicit typed RO reader4f385552/20nativeSYNtests qualified. Parent actualcc250f6f offline/stable/typed_record_not_created UNKNOWN. Exact visit and typed custody stay distinct; categorical transport lacks per-request visit-to-fill linkage. |
-| Kant / 다음 입력 | Owns current-next-session-joint17-forward-preparation-20261023-v1: SAME learned17 checkpoint to next dated Oct26 typed input, source/SYN/CPU restore only. No future-data fabrication, fits, API or scheduling. |
-| Mill / 효율 개선 | Future-only IO prefix-revalidation prototype, preserve legacy Reader/full payload validation before publication. No old-study mutation/marketfit/activation. Join short CPU probes before22:40KST. |
+| Kant / 다음 입력 | COMPLETE source/CPU forward preparation741444b2; future Oct26 point NOT_READY until actual Data. Base69 contract unchanged, missing required input is not a silent dynamic68/no-signal skip. |
+| Mill / 효율 개선 | COMPLETE_REJECT321ef342: restored-mtime overwrite defeats prefix memo. Never activate. Actual ClaudeREVISEe875c902 separately corrects substring mislabel. |
 
 ## Due / Scoped Blocks
 
-- Volume entry Oct23 22:45..23:15KST, nightly23:50KST: installed Ready at last
-  actual readback, not today's submit/fill. Existing owners remain exclusive.
+- Volume22:45/22:49KST actual exit20; ONLY ENTRY disabled22:52KST with original
+  XML/SDDL backup. Original23:15 window closed, no manual start/backdate/substitute.
+  Native receipt/typed record missing is UNKNOWN, not no-submit. Old pre-owner
+  fail-stop prefix passed, actual first owner denial unobserved. Nightly23:50KST
+  remains Ready/separate driver; future owners remain exclusive.
 - Joint17 entry Oct24 00:30..01:00KST; conditional owned exit Nov20>=05:45KST.
   Exact first-opportunity runtime is not observable before the natural trigger.
   Keep the company outcome unfinished; no foreground session wait.
 - Data refresh Oct24 05:10KST: existing quiet one-shot installed, no new data
   acquired by preparation. Actual accepted runtime/DTO/source/verifier/alljoined
   chain needed before next-date forward. Source presently through Oct22 close.
-- Alternate ready paths during those external dependencies: finish matched
-  numerical comparison; qualify exact typed RO reader; prepare next-date forward.
-  Measured old Volume ingress381a9b04 does not accept a new source descriptor;
-  new long fits stay scoped pending qualified adapter or23:15KST/actual writer
-  closure. Short native/source/reader preparation continues, no foreground wait
-  or approval/globalGPU hold. Do not disrupt today's22:45 natural opportunity.
+- Actual writer closureccd0a50c at14:15:42UTC:0scoped Paper tasks/0execution
+  artifact hosts/1container/0exact private RW mounts. It is not account terminal,
+  request resolution or reservation release. New frozen market fits now run;
+  nightly source tracea3f73a8b is separate from Volume, not actual coexistence
+  qualification. Repair first-fault transport and integrate completed future
+  input/IO results in parallel, no foreground session wait/new approval hold.
 
 ## Actual Paper / Preserve
 
@@ -64,6 +67,12 @@ pin revalidation. No added human approval or repeat19k-test suite was needed.
 Next improve actual Research/Paper coexistence by frozen source/job/argv/mount
 capability, not PID lists or treating all market/research actors as writers.
 Unknown/actual protected-book writers still defer the affected reader/effect.
+Actual first-fault retention was also defective: h.call raises ValueError before
+returning nonzero stdout, so loggercdbd7da6 cannot retain the denial using
+exception.stdout. Correct a separate successor before any recovery deployment.
+Parent Claude owner-design reviewREVISEfc0311ff: no generic gate relaxation or
+claim that owner is the cause; reproduce and repair the exact failing condition.
+Future verdict parsing uses explicit structured verdict, not positive substring.
 
 Completed capped research: max100epochs/patience24/LR schedule/twofits/7200active/
 14400elapsed/9cells/LATER0. Four serialCUDA native children/12updates proved

@@ -41,6 +41,21 @@ from Ready/exit code or run a recovery-capable observe() to inspect outcomes.
 
 ## Current Read-Only Custody
 
+Volume ENTRY recovery is CONTAINED, not a current runnable command. Actual
+22:45/22:49KST failures20; original window closed23:15. Exact backup and facts:
+D:/thericher-v2/model-artifacts/execution/current-volume-first-window-technical-recovery-20261023-v1.
+Never rerun containment/research-dispatch-facts.ps1 (immutable CreateNew output),
+backdate/re-enable expired entry or release unknown reservations. Logging-only
+cdbd7da6 was NOT deployed: legacy h.call drops denial stdout before the new
+exception.stdout branch can see it. A separately versioned corrected diagnostic
+must retain safe stdout BEFORE the identical returncode failure. Owner denial
+itself is not observed; pre-owner prefix passed. Parent architecture advisory
+REVISEfc0311ff at current-paper-owner-proof-simplification-20261023-v1/PARENT-REVIEW.json
+means no blanket owner/ancestry relaxation. Original exit remains on0cc9b799.
+Research closureccd0a50c is point-in-time scoped writers, not account/no-submit
+proof. Actual Noether market dispatcher40628/start134372386280941023 Sourcefa957bb6
+began14:17:08UTC; do not duplicate it or create a competing Volume owner.
+
 Joint17 explicit typed-profile reader is independently inspected by Parent and
 qualified on invented native state:20tests/actualimage75df0968/networknone/
 source-privateRO/no lock-recovery. Source4f385552, command:
