@@ -95,6 +95,31 @@ cash subtracts costs once. No new approval platform.
 
 ## Parallel Research
 
+Current integration checkpoint Oct23 01:53UTC, NOT company completion:
+controller Source83013c05 has50focused/28independentParent tests and final IPC/
+observer/web source review PASS. Actual web/source/mount projection matches,
+but full live host census DENIES normal Codex control-plane project references
+because its candidate scope is too broad; this is a proven implementation fault,
+not9 proven private writers or a human permission hold. Meitner owns the minimal
+executed-code/opaque-effect candidate repair; Nash owns exact purpose evidence
+and stable source/job capability binding. No new typed Task installed yet.
+Never release against stale Source830 after its successor; keep original input/
+policy/bank/F9 and unchanged native/quiet/Task body transfer explicit.
+
+Mature-memory4f05e335 CLOSEDFAIL: oneCPU26epoch/8944update MLP plus actual CUDA
+1.503billion distances,15cells/LATER0/alljoined; fixed-half worsened MSE and failed
+growth, no GLOBAL fallback/rerun. New capped-allocation Source153ab658/d7e44bcf
+fixes10percent issuer cap by construction, not old-result projection. Actual
+native CPU+CUDA optimizer/codec proofs passed; same-batch CPU chosen for fit.
+Socrates LLM capacity error is NOT a model-fit failure: Leibniz owns exact
+PID/start/output/lease recovery, no duplicate fit, no changed clocks or retries.
+
+Independent next-date Data Source2c91d1a7/consumer13603b66 is ready for one quiet
+Oct23 20:10UTC whole70-page capture for Oct26, not acquired/fresh yet. Kant owns
+its disjoint exact new-task qualification/install package; no manual collector
+or Taskstart, no changes to today's Volume/typed inputs. Current company outcome
+still needs the actual typed controller release and correctly scoped readiness.
+
 H5 campaign CLOSED c359420f in
 A/research/current-joint-moe-h5-target-development-20261023-v1/CONSUMER-H5.json.
 Actual19CUDAepochs/13129updates/selected3/CHECKpatience16; onefit/43forecasts/

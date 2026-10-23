@@ -1,10 +1,34 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-23 06:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendars/features/availability, not account/orders/model
 selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
 ## Current Actual / Next Consumer
+
+Next-session metadata audit COMPLETE:
+A/data/current-next-session-data-readiness-20261023-v1/FINAL-CONSUMER.json.
+Existing kernels/collector/calendar/TRAIN affines reusable; current evidence is
+through Oct22 close ONLY. Known existing schedules do not establish the full
+69NAS+SPY refresh owner. Oct26 input needs a NEW dated cursor/whole pages:
+BYMD20261023, prior63Jul28..Oct23, entrye4984/Oct26 13:30UTC, H20Nov20 21UTC.
+Candidate due Oct23 20:10UTC is not an installed job or provider-finality proof.
+
+Kant now prepares current-oct26-model-input-refresh-20261023-v1: Source/tests/
+quiet owner plan only, no current API/credential/Taskstart or schedule install.
+Reuse immutable qualified r3/kernel/affine parts, no expired old dispatch,
+old62+new1 splice, duplicate collector or new platform. Future volume membership
+is UNKNOWN; general complete-feature mask must not hardcode67 or imply that
+Joint raw/context/factor shares Volume exclusions. Engine owns new date forwards.
+
+Memory thin packet f25398a3 COMPLETE at
+A/data/current-mature-memory-h20-input-20261023-v1/CONSUMER.json:
+TRAIN134187 existing bank refs,32feature-only screen dates/2368queries including
+19purged feature-tail dates. Strict bank target exit before query previous
+regular close, ties shared; no label copies or Data distance/model/GPU work.
+304native+172host checks/16refs/alljoined/new12.476417active, prior37.992288
+linked once. Engine actual memory4f05e335 subsequently FAILED MSE/growth;
+Data readiness is not a qualified forecast/performance claim or a ready rerun.
 
 ExactH5view READY28d7ed8f:
 A/data/current-joint-moe-h5-target-view-20261023-v1/CONSUMER.json.

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 10:30KST /01:30UTC integration checkpoint.
+2026-10-23 10:53KST /01:53UTC integration checkpoint.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent sharedMD/Git.
 No operator decision required. Active long request continues.
 
@@ -16,12 +16,12 @@ inside the SAME original shared virtual-cash tenth. F9 unknown stays HELD.
 | Owner | Actual Work / Concrete Consumer |
 | --- | --- |
 | Parent / 총괄 | Main681f04a pushed, current MD integration. Own RELEASE, actual two-task installation/readback and Git. PRIMARY93991da5 exact unchanged authority, not repeated full-suite work for MD. |
-| Meitner / 실행 | New controller current-joint17-weight-owned-runtime-20261023-v1. Corrected source/job capability admission, names-only Python receiver and actual formatter optional-Tmpfs failure. IPC fix and exact current observer/web capability representation are bounded source successors, not permission waits. Not installed. |
-| Nash / 실행 보조 | deployment-r2: source-safe actual actor/mount/security facts and stable source/job capability rules, not PID/CID snapshots. No private/API/Taskstart; Parent installs only after exact bindings ready. |
+| Meitner / 실행 | Source83013c05 has50focused tests and completed IPC/known observer-web fixes. Actual whole-host census still incorrectly selects generic project references. Own minimal executed-project-code/opaque-effect scope repair, native/risk/Task bodies unchanged. Not installed. |
+| Nash / 실행 보조 | r2 actual web projection/source/mount binding PASS; whole-host admission honestly DENY. r3 one CIM purpose query distinguishes four long-lived Codex node control references, five expired old rows and actual research/diagnostic jobs. No PID exemptions. |
 | Averroes / 반증 검토 | Independent targeted controller deltas. Original static-ID/raw-Env problems and remaining joined-IPC false admission identified. Review is advisory to the named repair, not a company-wide hold. |
-| Socrates / 엔진·GPU | Memory4f05e335 CLOSEDFAIL: CPU26epoch fit plus actual CUDA1.503billion distances/alljoined. Now capped-allocation-h20 preparation: new by-construction concentration mechanism, conditional one fit only after frozen native/Data/resource evidence. No fit inferred from dispatch. |
-| Leibniz / 전략 | current-capped-allocation-h20-proposal-20261023-v1: official-source mechanism, duplicate audit and pure capped-simplex SYN kernel. No market/GPU/broker authority. |
-| Kant / 데이터 | current-next-session-data-readiness-20261023-v1: existing owned postclose acquisition/feature route for Oct26, metadata only/no new collection or schedule. Completed packets are reused. |
+| Socrates / 엔진·GPU | Capped-allocation actual native CPU+CUDA optimizer/codec proofs PASS, CPU selected from measured same-batch pace. LLM capacity failure, not evidence numerical job failed; no new assignment until recovery transfers safely. |
+| Leibniz / 전략 → 엔진 복구 | Strategy153ab658/d7e44bcf completed10percent capped-simplex kernel/177+27+92checks. Takes over exact capped campaign PID/start/output/lease recovery after Socrates capacity error; never duplicate/restart a live or completed fit. |
+| Kant / 데이터 | Oct26 dated refresh Source2c91d1a7/13603b66 ready2817native/38mock/70metadata checks. Own disjoint one-shot20:10UTC quiet installation qualification, no acquisition/manualTaskstart or changes to today's models. |
 
 ## Throughput Review
 
@@ -46,6 +46,15 @@ materializes values. Safe unknown containers need explicit isolated IPC as well
 as no private mounts/network/privileges; joined IPC was a concrete reviewer gap.
 Old600/600 source charges and actual qualification failures are retained;
 narrow new repairs have separate named finite caps, not a refund or extra fit.
+
+01:53UTC review: code-only source qualification missed the actual control-plane
+false conflict. Actual r2 facts exposed it before release. Apply the scoped
+executed-code/opaque-effect boundary, not another all-service registration
+platform. Four persistent Codex control references are not four proven writers;
+five expired rows retain unknown historical purpose. Active actual research
+dispatch and its Docker child need source/job/mount capability, not PID grants.
+Independent Data deployment continues. Failed Engine LLM is recovered by an
+available existing role with exact process/output checks, not a repeated fit.
 
 ## Actual Paper / Preserve
 
