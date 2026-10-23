@@ -9,9 +9,9 @@ Data/Research/KIS Paper authority. No KIS_LIVE_*/real money/paid/public work.
 No private/raw/credential output, foreign adoption, unknown-request substitute,
 bank reset or profit expansion. Preserve unrelated %SystemDrive%/.
 
-2026-10-24 02:35KST: ONE company outcome gru-h5-next-session-paper-readiness-v1.
+2026-10-24 04:20KST: ONE company outcome gru-h5-next-session-paper-readiness-v1.
 Actual dated Data/point/final controller readiness unfinished. Primary H5 code
-770436c pushed; most recent docs checkpointfeb5dc5. Parent owns current MD/Git.
+770436c pushed; most recent docs checkpoint41d5260. Parent owns current MD/Git.
 Consumed installers/probes/recovery workers are evidence, never blind commands.
 
 ## Actual Owned Due / Status
@@ -25,6 +25,22 @@ Consumed installers/probes/recovery workers are evidence, never blind commands.
   entryOct26 13:40..14:10UTC, exitOct30 19:45..20:00UTC,4minrepeat/max8visits.
   Final dated release/install NOT_DONE. Ten-minute-postopen/fifteen-minute-
   preclose execution proxies != research OPEN/CLOSE.
+  Qualified drain successor30ab13c8/47afb5cd fixes4starts-vs8owned without
+  widening windows/cadence/bank.8existing visits+2exact recoveries, no ninth
+  nativefinalization. FlatRO is nonterminal; Claude REVISE retained.
+- ONE05:40KST point wrapper Sourcecb5d46e1 at
+  D:/thericher-v2/model-artifacts/research/current-h5-scheduled-point-materialization-preparation-20261024-v2.
+  SAME Task ENABLED/Ready05:40KST after OS-effective comparison recovery
+  19:24:04UTC/e1bb5190 and separate fresh readback34a56f70 under
+  D:/thericher-v2/model-artifacts/research/current-h5-point-os-task-normalization-20261024-v1.
+  Comparator Source024cf375/57fakechecks/ClaudeSOUNDlimits, actual rawXML
+  onlyEnabled delta/ACL/source/action/time/principal unchanged. Installation
+  is not actual point/Data/OSwake. Old Read-H5PointTask string reader falsely
+  refuses omitted defaults; do not use it as current reader or rerun installer.
+  Source/mock regression1fb7b63b PASS. Exact591a once AFTER acceptedData,
+  completedpoint independently reused0forwards; partialunknown refuses.
+  Existing05:10 Data ONLY WakeToRun turnedtrue19:05:09UTC/3a306e71,
+  originalsource/actions/time/cursor/ACL unchanged. Wake notOSguarantee.
 - Joint17 original15:30/15:34/15:58UTC failed20,59623ae4
   DENY_SCHEDULED_OWNER/job_runtime_unbound/CIM_chain. Only expired entry disabled.
   Alias/hash-only repair9b9dbd50/758b4c95 deployed ONLY conditional EXIT16:11:41;
@@ -68,26 +84,23 @@ GRU9409vsuniform/same69/onecohort/six1-5-10bp cells. Freeze before entry from
 actual Data/point, not after outcomes. Later retained actual entry OPEN+five
 CLOSE marks/capture metadata are required. No actual reference yet.
 
-Parent reader bridge (qualified8b23ec50/ba408a02, not effect release):
-D:/thericher-v2/model-artifacts/execution/current-h5-point-reader-integration-20261024-v1.
-Default only checks required point-file presence; no inference/Task/private/API:
-```powershell
-uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/current-h5-point-reader-integration-20261024-v1/bridge.py
-```
-11unit/14independent/10cold checks/ClaudeSOUNDlimits; two original binding
-omissions fixed, original findings preserved. Verify exact SOURCE8b23ec50 and
-its three code hashes before the actual command. After accepted actual point,
---build-actual validates existing Data/point/join/reference chain, freezes the
-reference only if absent and generates NEW disabled dated-actual-r1 candidate.
-It does NOT run a model, release effects or install Tasks. Do not rerun an
-already-created immutable candidate or separately refreeze its reference.
+Parent current bridge-v3 Sourcee6baa35d:
+D:/thericher-v2/model-artifacts/execution/current-h5-point-reader-integration-20261024-v3.
+13unit/7cold/Ruff; independent36tests+2subtests PASS58481b63/Consumerc2e4cf2c. Default checks file
+presence only, no model/Data/Task/private/API. Source closes three Python files.
+Pins591a/5512/30ab; all fixed mutable point/input/join paths admitted BEFORE
+freezer/byte reads, postreference consumer stable. Preserve old8b/v2 evidence.
+Actual --build-actual permitted ONCE only after05:40owner closed and exact
+accepted Data/point/join/reference, new compiler-r2/generated/dated-actual-r1.
+ALREADY PRESENT accepted reference required; missing-reference fallback is NOT
+qualified. No model/refreeze/release/Task effect; no owner competition/overwrite.
 
-Quiet compilerSource4a6e8fcc/Consumer87ffada2 at
-D:/thericher-v2/model-artifacts/execution/current-h5-quiet-controller-preparation-20261024-v1.
-Generated/not-ready-r2 is disabled/nullinput/nullpolicy/noRELEASE.
-Parent must independently qualify actual dated route/owner/admission, bind final
-proofs/release and install EXIT FIRST/ENTRY SECOND with separate XML/ACL readback.
-Positive generic SYN binding is not actual dated input or scheduled-owner proof.
+Current compiler:
+D:/thericher-v2/model-artifacts/execution/current-h5-bounded-owned-exit-drain-preparation-20261024-v1/compiler-r2.
+Source30ab13c8/Consumer47afb5cd;48Python/81countercombos/26Scheduler mocks/
+Ruff/alljoined. No old4a/24a build for deployment. Parent actual dated
+native/owner qualification/release then EXITFIRST/ENTRYSECOND install and
+separate XML/ACL readbacks are still required.
 
 New H5 image81373d2a/nativeSource193d5709/Parentconsumer1fe7e59e:
 173nativeSYNchecks/38realIPC/quiet/alljoined, fake broker/book only.
@@ -125,10 +138,10 @@ Never run recovery-capable observe() as an offline reader.
 ## Research / No Duplicate Work
 
 Slow-GRU1056b4d3e79/91ef9fbc closedFAIL36epochs/selected12/alljoined/released;
-no rerun. Noether prepares ONE fresh TCN104 fixed-phase arithmetic objective,
-pending exact Godel-source/Claude/native proof;4800active14400elapsed/3500updates/
-max100pat24/4nativeupdates/3newcells+9cached/LATER0/no retries. Actual Source/
-PID/start/lease establishes dispatch, not the preparation assignment.
+no rerun. PhaseTCN6215d1ed/e81d1699 CLOSED_FAIL59epochs/selected35/2065updates,
+3newcells/9bytecached/alljoined/leaseReleased, growth-.148271%/DD4.162968%at10bp.
+Noether SOURCE/SYN-only chronological OOF-prefix feasibility and Godel fixed
+allocation blend bounds are current prep, not running fits/GPU jobs.
 Driver headroom measured, no app-name GPU hold. No Paper candidate swap.
 Closed seeds317002b1/TCNff022d49/halfR3f08cf819/leanSYN76c7e6db remain closed.
 Do not run unused halfhelper44cd or refit controls; all history in Engine/Git/A.
@@ -136,7 +149,13 @@ Research price proxies != Paper fills/netPnL, reused INNER != fresh replication.
 
 ## Verification / Storage
 
-Current PRIMARY authority:
+Current fresh PRIMARY authority:
+D:/thericher-v2/model-artifacts/verification/current-h5-owned-exit-drain-integration-20261024-v1/AUTHORITY.json
+SHA056c456a:560serial/18795fullPASS25skip/8actualworkers/helper33507exit0/
+currentchild-r-a93980b9-and-lease-absent/Ruff/threeCompose/1384samefiles.
+Full417.70s/serial67.76s; primary compatibility ONLY, external drain needs its
+own independent checks. No repeated fullsuite for unchanged primary/docs.
+Original source-equivalent H5 authority:
 D:/thericher-v2/model-artifacts/verification/current-model-weight-h5-integration-20261024-v1/AUTHORITY.json
 SHA24640869:560serial/18795fullPASS25skip/18820total/actual8workers/original
 helperexit0/clean/Ruff/threeCompose(.env.example),1384exact source-control.

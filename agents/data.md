@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 02:41KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 04:17KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendars/features/availability, not account/orders/model
 selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
@@ -13,7 +13,10 @@ context/full100 axis and previous-close availability, use existing TRAIN affines
 once; no silent69->68, Volume67 mask reuse, labels or outcome imputation.
 Existing installed05:10KST refresh below remains its sole current Data owner.
 No extra collector, API call or data-readiness claim from image/SYN success.
-Source-safe Scheduler readback17:38UTC confirms Ready/next05:10KST, not acquisition.
+Parent19:05:09UTC changed ONLY WakeToRun false->true, with original XML/ACL
+backups and unchanged source/action/time/cursor. Ready/next05:10KST remains
+installation, not acquisition or guaranteed OS wake. Consumer3a306e71 at
+A/data/current-oct26-input-refresh-wake-readiness-20261024-v1/CONSUMER.json.
 Parent connects existing exact Data/point/reference readers; no new reader may
 substitute time/latest-file inference for the immutable accepted chain.
 
@@ -50,6 +53,20 @@ Repair exact same-date/63feature slots or freeze a separately reviewed future
 contract. Do not rerun the completed CPU proof or fabricate Oct23-close data.
 
 ## Reused Historical Inputs / Closed Work
+
+Chronological fusion prefix Data is READY, not merely a proposed source:
+A/data/current-h5-chronological-fusion-prefix-views-20261024-v1.
+Source56e5685a/Consumerb5852786/Manifest ea8ca283/Delivery1cff5854.
+Actual1.70GB under M/us_equities/research_inputs/current-h5-chronological-fusion-prefix-views-20261024-v1:
+11physical views/12fresh prefix affines, four FIT prefixes and chronological
+innerCHECK, 420+420+416 OOF dates/251 mature five-day phase rows. Four target
+boundary purges stay NaN; original three TRAIN files unchanged. OOF labels
+are separate; expert allowlist excludes original wholeTRAIN/heldOOFlabels.
+No model/financial/GPU/API calls.10SYN/908independent/66cold checks/alljoined;
+independent reviewd0a415c4 found no defects across741checks, with named limits:
+no coefficient recomputation or actual future container mount attestation.
+Data297.220779 plus feasibility191.012160 active debit charged ONCE to the
+new Engine9-fit family; this is not independent evaluation/Paper input.
 
 Memory thin packet f25398a3 COMPLETE at
 A/data/current-mature-memory-h20-input-20261023-v1/CONSUMER.json:

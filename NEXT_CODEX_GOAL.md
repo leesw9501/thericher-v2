@@ -45,37 +45,51 @@ OS scheduled-owner, dated point, fill or final deployment.
    original TRAIN affines/raw63x6/factor10/context9/full100/required69/31zero.
    No refit/labels/checkpoint selection/TopK/reweight. CPU/SYN preparation is
    complete, actual dated point remains NOT_DONE.
-3. Execution compiler4a6e8fcc/87ffada2 at
-   A/execution/current-h5-quiet-controller-preparation-20261024-v1 is generic
-   source/SYN-ready; positive generated binding assurance447ef71f passed26checks.
-   Parent connects existing readers in current-h5-point-reader-integration-20261024-v1,
-   reader glue8b23ec50/ba408a02 is qualified11unit/14independent/10coldchecks,
-   then qualifies final dated route/owner/admission and releases/installs
-   exit FIRST/entry second with separate definition/ACL readbacks.
+3. Execution successor compiler-r2 Source30ab13c8/Consumer47afb5cd qualified
+   48Python/81countercases/26Scheduler mocks/alljoined at
+   A/execution/current-h5-bounded-owned-exit-drain-preparation-20261024-v1.
+   Existing8exit visits/2pending recoveries/clocks/entry/owner/risk unchanged,
+   no ninthfinalization or flatRO=terminal claim. Original4a/24a failures kept.
+   Parent bridge-v3e6baa35d13unit/7cold/Ruff, independent36tests+2subtests PASS58481b63/c2e4cf2c; retained reference required.
+   Use new immutable readerglue only after exact point; NOT old4a/bridge8b/v2.
+   Then qualify final dated native/owner/admission, release and install EXIT
+   FIRST/ENTRY SECOND with separate definition/ACL readbacks.
    Slot unit-gru-h5-Oct26-v1; Oct26 13:40..14:10UTC entry,
-   Oct30 19:45..20:00UTC exit, <=8visits each. Proxies != OPEN/CLOSE replay.
-   Original shared initial virtual-cash tenth/.005cohort/F9UNKNOWN-HELD/
-   pending costs-losses-reservations/cap8/whole shares/freshquote-funds/
-   exact identity-first reconciliation remain. No skipped-mass redistribution.
+   Oct30 19:45..20:00UTC exit. Proxies != OPEN/CLOSE replay.
+   Original shared tenth/.005cohort/F9HELD/cost-loss-reservations/cap8/
+   whole shares/freshquote-funds/exactidentity reconciliation, no redistribution.
 4. Freeze prospective reference5512508f/c1ff1cf8 before entry AFTER actual
    Data/point: GRU9409 vs uniform same69/onecohort/six1-5-10bp cells.
    Later retained actual entry OPEN/five CLOSE marks only; no actual reference
    yet. Not native whole-share fills/net PnL/independent PIT/alpha.
+5. Point wrapper-v2cb5d46e1 independently reviewed1fb7b63b. SAME one05:40KST
+   task is now ENABLED/Ready after source-bound OS-effective comparison repair
+   19:24:04UTC, consumere1bb5190/separate34a56f70 at
+   A/research/current-h5-point-os-task-normalization-20261024-v1.
+   OnlyEnabled XMLdelta/ACL/source/action/time/principal unchanged; no manual
+   start/Data/model call. Old string reader is historical, not current proof.
+   Completedpoint reuse0forwards; partialunknown refuses. Data05:10 ONLY
+   WakeToRun enabled19:05:09UTC/3a306e71, no duplicate collector or orders.
 
 ## Independent Research
 
 Slow-GRU1056b4d3e79/91ef9fbc COMPLETE_FAIL:36epochs/selected12/6228updates,
 same initial model/allRNG,6nativeupdates/cold/alljoined/released. At10bp growth
 -.619445%/DD1.049780%, CHECK/growth kills fail;0controlfit-forward/Paper change.
-Noether now prepares ONE fresh TCN104 fixed-phase arithmetic funded-PnL
-functional from Godel's source/SYN objective audit. Freeze source and concise
-Claude challenge before native work; exact552TRAIN/22conditionalCHECK, missing
-4808/4888 stay UNKNOWN, no phase search or zero-cash completion claim.
-Onefit/max100pat24/3500updates/4800active14400elapsed/4nativeupdates/43forecasts/
-3newcells+9bytecachedcells/LATER0/0retries. Current root
-A/research/current-h5-fixed-phase-cash-objective-development-20261024-v1.
-No Paper swap/hidden grid/causal component claim; actual Source/PID/start/lease
-establishes dispatch, not this assignment. Preserve all prior trials/debits.
+PhaseTCN6215d1ed/e81d1699 also CLOSED_FAIL:59epochs/selected35/2065updates,
+growth-.148271%/DD4.162968% at10bp,3newcells/9bytecached/alljoined/leaseReleased.
+Conditional22CHECK/missing4808-4888 limits stay, no causal/Paper swap claim.
+Prefix Data56e5685a/b5852786/ea8ca283 READY on M:12prefix affines/11views/
+251OOFphase rows, separate heldlabels/expertleaf allowlist, independent review
+d0a415c4 PASS with limits. Noether owns NEW9-fit source/native preparation at
+A/research/current-h5-chronological-expert-gate-development-20261024-v1:
+4rawGRU/4factorHGB/one chronological depth2 gate;21costcells,
+14400active/28800elapsed incl Data+feasibility once, no retries/LATER.
+Original0e7a1baf/4b611fee closed TECHNICAL_INCOMPLETE:4SYNGRUupdates/cold
+PASS, HGB/tree SYN1fit each/export PASS then metadata numpyint64 JSON fault;
+marketfits/intakes/cells0/alljoined/leaseReleased,1102.280426active retained.
+Noether owns new fixed-output technical continuation,0SYNrefits then only
+unattempted9marketfits within original remaining caps/deadline. No Paper swap.
 
 Closed: new seeds105/106317002b1 both negative; only104 positive.
 TCN continuationff022d49 actual47totalepochs/selected23, growth-.909557%/
@@ -93,7 +107,9 @@ Data M/models A; keep15percent Dfree/warn20percent.
 Complete ONLY with actual accepted dated input, final native consumer evidence
 and owned quiet readiness plus explicit remaining runtime/PnL limits.
 Future due/SYN/image/package commit is not company completion.
-Verify required changed paths; exact unchanged primary may reuse24640869 plus
+Fresh primary056c456a now560serial/18795fullPASS25skip/actual8workers/helper0/
+clean/Ruff/threeCompose/1384samefiles, not external drain/deployment proof.
+Verify required changed paths; exact unchanged primary may reuse056c456a plus
 fresh independent external checks. Commit/push, refresh boards, replace this
 with ONE next material outcome and continue the active request.
 Workers own next_due; do not foreground-wait while another ready package exists.

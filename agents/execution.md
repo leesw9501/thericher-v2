@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-24 02:48KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 04:20KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic broker risk/intents/orders/fills/custody/accounting.
 Parent MD/Git. AGENTS.md owns authority; no new operator decision required.
 
@@ -11,7 +11,7 @@ Oct23-close Data/dated GRU9409 point/final controller readiness.
 Data quiet refresh05:10KST owned elsewhere, not a reason to stop source/SYN.
 Selected model unchanged despite new research results.
 
-Primary explicit H5 profile770436c/authority24640869 complete; old H20 golden
+Primary explicit H5 profile770436c/authority056c456a complete; old H20 golden
 4845bytes/SHA41541738 unchanged. Separate image81373d2a/f3e5c658 verifies741build/
 736actualsource/11ABI/full100-known69 SYN payload, not worker deployment.
 Materializer591a86d3/6e98261d readyCPU/SYN, not actual dated input.
@@ -24,29 +24,42 @@ terminal replay/fake originalbank-F9held, alljoined/containerabsent/console0.
 Cold exec new interpreter SAME OS PID; fake broker/book, NOT actual OS owner/
 real private/API/Task/fill/PnL. Do not repeat the consumed native attempt.
 
-Quiet compilerSource4a6e8fcc/consumer87ffada2:
-A/execution/current-h5-quiet-controller-preparation-20261024-v1.
-19SYN/26mockedScheduler/defaultinert/sourceclosed; generated/not-ready-r2
-disabled/nullinput/nullpolicy/noRELEASE. Parent supplies existing exact Data/
-point reader callback, then a NEW dated candidate; no constantTrue production
-validator. Aquinas447ef71f passed26positive/negative canonical generated
-native-binding checks/alljoined; original4a unchanged/not superseded.
-Parent's suspected exit_end ABI mismatch was falsified by actual RouteSpec;
-do not remove a valid schedule/end field or supersede working source for that.
+Qualified bounded-exit successor:
+A/execution/current-h5-bounded-owned-exit-drain-preparation-20261024-v1.
+Compiler-r2 Source30ab13c8/Consumer47afb5cd,48Python/81countercases/
+26Scheduler mocks/defaultinert/Ruff/alljoined. Original4a real capacity bug
+70049442:4naturalstarts could leave4of8owned. First24a pending-progress bug
+also kept. New source keeps existing8visits+2exactpendingrecoveries, entry/
+native/risk/SDK/owner bodies unchanged. No ninthfinalization/flatRO=terminal,
+widerwindow/cadence/bank or broker proof. Claude REVISE twice retained, not
+agreement; unchanged native _recover retains exact request/account/basis.
+Initial exit_end ABI suspicion was falsified; do not edit on that premise.
 
-Parent mutable integration:
-A/execution/current-h5-point-reader-integration-20261024-v1.
-SOURCE8b23ec50/Consumerba408a02 now ready11unit/14independent/10coldchecks/
-ClaudeSOUNDlimits; Kantconsumer2b5c06d7. Two original refs-member/pointconsumer
-binding omissions fixed; no actual Data/point/reference/candidate/effect.
-Import Data reader's generic
-builder before uniquely named compiler module; no new model restore/forward.
-Final actual dated qualification/release/install still NOT_DONE.
+Parent bridge-v3 Sourcee6baa35d at
+A/execution/current-h5-point-reader-integration-20261024-v3:
+13unit/7cold/Ruff; independent36tests+2subtests PASS58481b63/c2e4cf2c.
+Use only completed point task+ALREADY PRESENT accepted reference; no fallback. Validates fixed
+input/point/join paths BEFORE delegated read/freeze; pins30ab/591a/5512.
+Old4a/24a/bridge8b/v2 retained, not deployment route. Actual dated candidate/
+qualification/release/EXITFIRST install/readbacks still NOT_DONE.
+Aquinas readiness4c7ba027/5d81d565 complete11puretests/exact commands.
+H5 tasks has Library/Owner/Readback, NOT Install; import Library then inherited
+InstallOwned with H5 overrides. New dated-native-qualification source-only
+helper preparation active; no actual candidate/Task/Docker/API/private/model.
+
+Point-v2cb5d46e1/6deb5017 independent1fb7b63b PASS. SAME Task now ENABLED/
+Ready05:40 after19:24:04UTC OS-effective comparison repair024cf375/57checks/
+ClaudeSOUNDlimits, consumer e1bb5190/separate34a56f70. Actual XML onlyEnabled
+delta/ACL/source/action/time/principal unchanged; no manualstart/model/Data.
+Old string reader's omitted-default false refusal preserved, not current proof.
+Sole Data05:10 WakeToRun only changed19:05:09UTC/3a306e71. Installation/wake
+request is not acquisition or point. Future05:40 owner has one591a call.
+
 Proposed unit-gru-h5-Oct26-v1 entryOct26 13:40..14:10UTC /exitOct30 19:45..20UTC,
 4minrepeat/8visits/2pending-firstrecoveries/max8positions.
 Original .005basis within sharedinitialtenth/cap8/whole shares/freshquote-
 funds/orderability/exact pending identity, no skipped-mass redistribution.
-Ten-minute postopen/fifteen-minute preclose proxies are not OPEN/CLOSE replay.
+Execution proxies are not research OPEN/CLOSE replay.
 
 Legacy-reader coexistencefbd36240:
 A/execution/current-h5-legacy-reader-coexistence-syn-20261024-v1.
@@ -116,6 +129,6 @@ One-use consumed helpers/Task exit/timestamp/install/preview != submit/fill.
 Preserve ONE original sharedinitialtenth, costs/losses/pendingbuyreserves once,
 broker buyingpower, deterministic risk, no profit expansion/foreign adoption.
 Never read KIS_LIVE_*/print private values or reset unknown reservations.
-Current primary24640869:560serial/18795fullPASS25skip/8workers/clean/Ruff/
+Current primary056c456a:560serial/18795fullPASS25skip/8workers/clean/Ruff/
 threeCompose(.env.example)/1384exactfiles;93991 historical. External edits need
 their own checks. RUNBOOK owns current commands; no blind historical reruns.

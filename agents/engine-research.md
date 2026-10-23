@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 02:48KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 04:17KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own data/targets/features/fits/replay/ensembles, not deterministic broker risk.
 AGENTS.md owns authority; Parent shared MD/Git. Completed fits are not ready jobs.
 
@@ -8,7 +8,7 @@ AGENTS.md owns authority; Parent shared MD/Git. Completed fits are not ready job
 
 Selected provisional Paper candidate remains unit-simplex GRU9409a2f4,
 not a newly selected seed/TCN/blend. This is execution learning, not profitability
-promotion. Primary explicit H5 profile770436c/authority24640869 is implemented.
+promotion. Primary explicit H5 profile770436c/authority056c456a is implemented.
 Typed materializer591a86d3/Consumer6e98261d under
 A/research/current-unit-gru-h5-typed-point-preparation-20261024-v1 uses original
 TRAIN affines/raw63x6/factor10/context9/full100/required69, unknown31zero.
@@ -31,45 +31,45 @@ Reference is not realized native fills/net PnL/PIT/independent alpha.
 
 ## Current Research / Actual Next Action
 
-The same-initial-state GRU105 slow-first-path campaign is CLOSED at
-A/research/current-gru105-slow-first-path-development-20261024-v1.
-Sourcea6c1c261/Consumer6b4d3e79/Delivery91ef9fbc COMPLETE_FAIL/alljoined/
-released17:42:13,36epochs/selected12/6228updates,6nativeupdates/cold exact.
-Initial model/allRNG matched; at10bp growth-.619445%/DD1.049780%, worse than
-old105-.583790/1.021021. CHECK/growth kills fail,0controlsfit-forward/Paper change.
-525.042556/2400active, no retry/refund. This finite LR path failed, not all LR.
-Retained-only diagnosis35e72174/Consumer/proposal4117f1e3 found:
-- Three GRUs share checked algorithm/DTO/affines; finite nonzero gradients.
-- New105/106 both selected epoch1, not epoch0/no training; later TRAIN utility
-  improves while CHECK deteriorates. Gate entropy is not issuer entropy.
-- GRU104 effectiveN2.86 vs105/10671.68/64.86; one slot55.13percent of104gain.
-- TCN's selected CHECK gain did not transfer to INNER. Gradient norms missing.
-Strongest inference: seed/path-dependent overfit/unstable CHECK, NOT proven cause.
+Noether owns NEW chronological expert/gate campaign preparation:
+A/research/current-h5-chronological-expert-gate-development-20261024-v1.
+Original0e7a1baf/4b611fee is CLOSED technical failure before market fits.
+Noether now owns named fixed-output technical continuation; no market fit claim. No completed training is repeated, selected Paper9409 unchanged.
 
-The consumed intervention used same initial105 model/RNG/hash8cf9785d/seed20261105,
-initialLR1e-4 vs1e-3, unchanged loss/allocation/AdamW weight_decay/scheduler/
-max100/pat24/data/splits/purges/affines. Smaller effective AdamW decay is named.
-Reuse cached105/uniform controls0refits/forwards;104 descriptive only.
-Before numerical dispatch freeze2400active/5400elapsed/1fit/17300updates/
-6nativeupdates/5CUDAchildren/one selected43forward/9cells/LATER0/0retries.
-That exact attempted fit/debit is closed, not a ready duplicate.
-No grid, tiny-epsilon success inflation, still-negative profitability claim,
-Paper winner swap or old failure regrade. KL proposal rejected, not next.
+Ready Data: Source56e5685a/Consumerb5852786/Manifest ea8ca283,12fresh prefix
+affines/11physical views/251 mature OOF phase rows. Expert containers receive
+only their exact physical prefix leaves, never original wholeTRAIN or held
+OOF labels. Independent reviewd0a415c4 found no defects; actual mounts remain
+the numerical coordinator's responsibility. Data297.220779+feasibility
+191.012160 active debit charged ONCE within14400active/28800elapsed ceiling.
 
-NEXT assigned Noether: ONE fresh TCN104 fixed-phase arithmetic funded-PnL
-functional, A/research/current-h5-fixed-phase-cash-objective-development-20261024-v1.
-Consume Godel's exact frozen source/SYN proposal and concise Claude challenge
-before numerical work. Same H5Data/affines/full100/phase4903mod5,552TRAIN/
-22conditionalCHECK; missing4808/4888 remain UNKNOWN, not zero cash/full24CHECK.
-New functional/support/monitor/final8pack normalization and fastpath/budget
-are confounded; no causal component claim. Reuse exact oldTCN2/GRU104/uniform
-cells/forecasts,0control fits/forwards/replays;47TCN descriptive only.
-Onefit/max100/pat24/3500updates/<=120000dateforwards/4nativeupdates/selected43/
-1intake/3newcells+9bytecached/LATER0/4800active14400elapsed/0retries. Real native
-autograd/logit-gate/final8/AdamW/scheduler/allRNG restore-nextupdate parity first.
-Preserve original growth-over-GRU/uniform/DD/turnover screen PLUS new gain/risk
-againstoldTCN; no criterion/phase/winner rescue or Paper swap. Numerical Source/
-PID/start/lease, not assignment, establishes running. Godel proposal not yet fit.
+Fixed9-fit family:3OOF blocks plus FINAL, each fresh raw63x6+context9 GRU and
+factor10+context9 HGB, then one depth2/minleaf32 tree selecting CASH/UNIFORM/
+RAW/HGB from chronological OOF forecasts. Four GRUs max100/pat24/17000updates
+each; four HGB fixed128stages; one gate. Shared allocations/keys/costs/masks;
+all learned normalizers and expert innerCHECK strictly prior to their OOF.
+Held OOF labels open only after block forecasts/model/affine seals. Gate
+frozen before companyCHECK; reused adaptive INNER43 is not independent alpha.
+21predeclared cost cells include fixed-half and exposure-matched uniform as
+descriptive controls, not new tunable candidates. No retries/seed/phase grid.
+
+Native solver/autograd/regularization/checkpoint-allRNG/cold restore and safe
+tree codec must pass on meaningful synthetic input before market fits.
+One GPU coordinator may start two independent ready GRUs only with measured
+headroom; CPU HGB sidecars may run independently. Original Source0e7a1baf/Consumer4b611fee/Delivery136b901a closed TECHNICAL_INCOMPLETE:
+4nativeGRUupdates/allRNGcold PASS; HGB/tree SYN1fit each/export PASS but CPU
+cold not run after numpyint64 JSON diagnostic fault. Marketfits/OOF/CHECK/
+INNER/cells0, alljoined/leaseReleased.1102.280426active kept. Noether's NEW
+technical-continuation source repairs only diagnostic int serialization and
+uses retained SYN models0refits for missingcold, then9UNATTEMPTEDmarketfits.
+Original remaining caps/deadline02:56:18UTC/21cells/olddebits unchanged.
+
+Closed latest: slowGRU1056b4d3e79/91ef9fbc36epochs/selected12, growth-.619445%/
+DD1.049780%; phaseTCN6215d1ed/e81d169959epochs/selected35, -.148271/4.162968.
+Both COMPLETE_FAIL/alljoined/released, no Paper swap or causal isolation.
+Fixed-allocation bound6bc88ba5/40SYNchecks shows constant convex growth cannot
+beat its best aligned component under linear funding/costs; risk may improve.
+Time-varying gates break that premise. Never retroactively regrade F08.
 
 ## Completed Matched H5 Results
 

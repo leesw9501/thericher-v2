@@ -1,32 +1,29 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-24 02:41KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 04:17KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable proposals, not final
 fit/selection or deterministic broker risk. Parent MD/Git; Engine contracts.
 AGENTS.md owns policy. A proposal is not an active fit or qualified alpha.
 
 ## Current Package / Consumer
 
-Godel owns bounded source/SYN-only objective audit:
-A/research/current-h5-training-replay-objective-audit-20261024-v1.
-Consumer: next Engine target/optimizer design after current matched H5 studies,
-not another name/parameter sweep. Compare actual TRAIN/CHECK utility/targets
-against nonoverlapping funded replay/cost/carry semantics. TCN's higher CHECK
-utility but worse INNER growth motivates an audit, NOT proof of its cause.
-No weights/labels/archive/market numeric cells/model/GPU/API/private/Task.
+Objective audit was consumed by phaseTCN6215d1ed/e81d1699:59epochs/selected35,
+growth-.148271%/DD4.162968% at10bp, COMPLETE_FAIL/alljoined. SlowGRU1056b4d3e79
+also closedFAIL. Neither is a ready rerun or causal explanation.
 
-Deliver concrete estimand differences plus ONE actionable next mechanism and
-pure SYN kernel/tests, or a concrete rejection. Bound240active/1200elapsed.
-Preserve costs/funding/baselines and old criteria/trial/holdout history.
-Do not duplicate closed cap/HHI/LR/fixed-half work or invent causality.
-Numerical dispatch requires Engine's separately frozen contract, not this board.
+Fixed-allocation bound audit6bc88ba5 at
+A/research/current-fixed-allocation-fusion-bound-audit-20261024-v1:
+40SYNtests/Ruff/ClaudeAGREElimits/alljoined. Under exact aligned fractional
+funding/linear costs/marks, constant convex allocation growth cannot exceed
+its best component; risk may improve. Nonlinear admission/time-varying gates
+break the premise. No actual campaign attestation or old F08 regrade.
 
-Noether's same-initial GRU105 slower-LR-path is now CLOSED_FAIL6b4d3e79/
-91ef9fbc:36epochs/selected12/6228updates, exactinitial/allRNG/6nativeupdates/
-cold/alljoined/released17:42:13. CHECK/growth failed; no Paper change.
-Noether prepares ONE fresh TCN104 phase-cash functional from this source audit,
-pending exact frozen source/Claude/native proof, not another old-fit retry.
-Model/risk or public-model rights changes remain outside Strategy authority.
+The actionable mechanism is now Noether's chronological GRU/HGB/depth2 gate,
+using READY prefix Data56e5685a/b5852786 and separate OOF labels. Godel's current
+sidecar is narrow independent bridge-v3 path-order review, not a new research
+platform. Point-v2 source/mock regression1fb7b63b passed; actual Scheduler
+default omission is Parent/Kant's installation repair, not Research authority.
+Selected GRU9409/Paper risk unchanged. No claim that preparation is a fit.
 
 ## Consumed Mechanisms / Do Not Duplicate
 
