@@ -62,6 +62,12 @@ Old4a/24a failures and Claude REVISE adjudications remain preserved.
 Slot unit-gru-h5-Oct26-v1: entryOct26 13:40..14:10UTC, exitOct30 19:45..20UTC.
 Proxy executions != research OPEN/CLOSE. Shared original tenth/.005basis/
 max8owned/whole shares/F9HELD/no skipped-mass redistribution.
+Source/SYN capabilitya8047808 subsequently found a terminal-liveness gap:
+last exact SELL removes pending but leaves slot active; drain's flat RO cannot
+finalize it. Installed readiness is not lifecycle completion. Aquinas now owns
+minimal repository same-last-visit atomic/idempotent closure repair with focused
+negative tests; Parent must fresh-verify/build/deploy before relying on repair.
+Do not patch immutable1c30 or add a ninth visit. Existing install unchanged.
 Finalizer root A/execution/current-h5-final-dated-readiness-20261024-v1.
 RELEASE8b29032f binds actual operational claims87b9d407 (38tests/actualboot/
 categorical admissionf4d13f9d), actual native/owner and unchanged primary proof.
@@ -109,13 +115,36 @@ Rules10d0055f: equalrank primaryFAIL; exploratory Bollinger+1.302/.758 is
 not a retroactive winner. SlowGRU/phaseTCN/105-106 seeds also closed failed.
 All are adaptive reused data, not independent alpha/Paper PnL.
 
-Current disjoint dispatch:
-Noether fixed-score-rank fusion49759d12 -> finite compatible three-cost-cell
-comparison, then ONE useful next GPU proposal. Do not repeat closed models.
-Aquinas exact operational actor claims/source-only admission for candidate1c30.
-Kant future-close captureea2e7403 binding to actual pre-entry reference.
-Godel short independent/Claude recovered-publication final release challenge.
+Fixed-rank fusion COMPLETE_PASS68093a24/3d7f4f6d:3newcells/177independentchecks,
+0fits/forwards/GPU/LATER,157.634951of240activeupper including oldprep120once.
+At10bp growth+.775099%/DD.817573 vs alignedGRU+.503744/1.468196,
+SCOREMLP+.042864/.894397; same100axis/43rows/3295eligible/9cohorts/costs/marks.
+Compatibility4136142d closes cached-baseline binding; independentcd0efbe0
+passed14SYNmismatchkills/0replay. Original ClaudeREVISE remains/adjudicated,
+not agreement. Adaptive reused INNER, not independent
+alpha or replacement for a different GRU9409 Paper model.
+A/research/current-h5-fixed-score-rank-fusion-development-20261024-v1.
+Noether now prepares paired RankNet indicator/score-only ablation at
+A/research/current-h5-ranknet-indicator-ablation-development-20261024-v1.
+Source5a2ae563/coordinator45168/start134372642347473937 began21:23:54UTC,
+native4CUDAupdates PASS. SCORE_ONLY78epochs/selected54/1014updates retained;
+Both RankNet fits CLOSED78/25epochs,selected54/1,total1339updates; original
+technical failure occurs after retained SCORE_ONLY forecast because metadata
+expects missing CHECK.npz. Original5a Consumer TECHNICAL_INCOMPLETE/Delivery
+f97f87bc at21:28:56/alljoined/GPUreleased; finance verdict not known.
+Noether owns bounded publication continuation,0refits/oldSCORErepeat;
+do not duplicate. No GPU hold (21:20 sample21838MiBfree).
+Aquinas pure sparse-H5-input compatibility for a future fusion consumer.
+Kant historical feature-only contract readiness, no held later labels opened.
+Godel independent frozen comparison interpretation, no duplicate replay.
 Assignments are not proof of active CPU/GPU numerical workers.
+
+Future capture06714e29 bound ACTUAL referencec992 to Sourcec78f80c8 under
+A/data/current-gru-h5-postclose-marks-20261030-v1. Parent disabled registration,
+definition/ACL readback, enable and separate readback completed21:19UTC;
+independent KantConsumer3bc826c4 confirms Ready/0instances/Oct31 05:10KST.
+A/data/current-h5-future-close-capture-reference-bound-preparation-20261024-v1/parent-installed-readback-r1/CONSUMER.json.
+Quiet one-shot/capture-only/70pages, not OSwake/capture/finality guarantee.
 
 ## Verification / Next Action
 
@@ -125,6 +154,6 @@ A/verification/current-h5-owned-exit-drain-integration-20261024-v1/AUTHORITY.jso
 Fresh1384source/control digests unchanged; Ruff/default/research/accounting
 Compose with .env.example passed. External changes have scoped proofs; another
 unchanged19k run is not external validation.
-Latest pushed checkpoint55a3fa7; Git owns history. Actual release/readbacks
+Latest pushed checkpointb572143; Git owns history. Actual release/readbacks
 closed readiness; NEXT now owns one bounded fusion decision. Verify/commit/
 push current integration and continue ready work. No foreground session wait.

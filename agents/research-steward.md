@@ -6,10 +6,16 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-Noether is the single GPU coordinator. Current assigned work is fixed-score-rank
-fusion49759d12 compatible finite3cost-cell replay from existing outputs, then
-ONE useful next GPU campaign proposal. Replay/source preparation is CPU work,
-not active GPU training. No closed numerical campaign is represented as running.
+Noether single GPU coordinator. Fixed-rank fusion68093a24 closed3cells/
+177checks/0fits-forward-GPU/alljoined. Next assigned work is paired RankNet
+indicator/score-only ablation source preparation at
+A/research/current-h5-ranknet-indicator-ablation-development-20261024-v1.
+Source5a2ae563/actualcoordinator45168/start134372642347473937 began21:23:54UTC,
+native4CUDAupdates PASS. SCORE_ONLY fit78epochs/selected54/1014updates/237.11s
+retained (peak Torchreserved90MiB). Noether owns remaining INDICATOR/closure;
+do not duplicate or interpret this as final paired finance outcome.
+21:20UTC sample RTX4090free21838MiB/util2%; no resource-authority hold.
+No closed campaign is represented as running.
 
 Closed9-fit1d1db187/5447d9f8:4GRU/4HGB/depth2gate,21cells,
 15110GRUupdates/2162.283734of14400activeupper, alljoined/released.

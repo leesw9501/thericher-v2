@@ -99,16 +99,22 @@ their conflicting read; unrelated Data/Research/future due times do not.
 ## Independent Research / Future Capture
 
 Closed9fit1d1db187/Meta3fit2620331b/rules10d0055f are not ready training.
-Fixed-score-rank preparation49759d12 is assigned to Noether for compatible
-finite3cell comparison; no expert refit/forward. Next useful GPU work needs
-a new frozen finite contract, not repetition for utilization.
+Fixed-score-rank comparison68093a24 COMPLETE_PASS3cells/177checks/0newmodels:
+A/research/current-h5-fixed-score-rank-fusion-development-20261024-v1/CONSUMER.json.
+No duplicate comparison. Noether prepares paired RankNet indicator ablation;
+requires new frozen finite contract, not repetition for utilization.
 PrefixData56e5 is ready; later global untouched status UNKNOWN.
 
-Capture-only preparationea2e7403/Consumere79e3986 +marksadapter3205/dbf5:
-A/data/current-h5-future-close-capture-preparation-20261024-v1.
-Oct31 05:10..05:15KST only,70pages/BYMD20261030. Kant binds actual referencec992.
-Not installed/captured yet; no feature/training stage. Old expired host is not
-made usable merely by changing BYMD. Missing future marks are unknown, not zero.
+Capture-only sourceea2e7403 +marksadapter3205/dbf5 is now ACTUALLY bound and
+installed: preparation06714e29 -> deploymentc78f80c8 with referencec992.
+A/data/current-gru-h5-postclose-marks-20261030-v1/READY-SOURCE-R3.json.
+Parent21:19UTC registration/readback/enable/readback PASS; independent3bc826c4:
+A/data/current-h5-future-close-capture-reference-bound-preparation-20261024-v1/parent-installed-readback-r1/CONSUMER.json.
+Task thericher-kis-paper-gru-h5-postclose-marks-20261031-v1 Ready/0instances,
+Oct31 05:10..05:15KST only,70pages/BYMD20261030, no features/models.
+Do not repeat Bind/install/enable; source-safe ReadbackEnabled ONLY with exact
+0671/c78 full pins in that immutable consumer/source. No manualTaskstart.
+Not yet captured, not OSwake/finality guarantee. Missing marks unknown, not zero.
 Future aligned analytical reference is not native whole-share/Paper net PnL.
 
 ## Verification / Recovery

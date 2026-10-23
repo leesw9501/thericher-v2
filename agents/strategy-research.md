@@ -13,10 +13,12 @@ Parent release/readbacks subsequently completed7c2bb723. No private/raw
 evaluation values or model/Task/API work in this review.
 A/review/current-h5-final-dated-readiness-20261024-v1.
 
-Noether consumes fixed-score-rank kernel49759d12,12SYN/Ruff:
+Noether consumed fixed-score-rank kernel49759d12,12SYN/Ruff:
 A/research/current-h5-fixed-score-rank-fusion-preparation-20261024-v1.
 Fixed.5rawGRUfinal+.5SCOREMLP ranks before SAME TopDecile, no expert refit.
-Exact compatibility/newfinite3cell contract precedes actual comparison.
+Actual comparison68093a24/3d7f4f6d passed3cells/177checks after exact baseline
+compatibility4136142d. ClaudeREVISE baseline advice retained/adjudicated;
+new interpretation review pending, no independent/Paper claim.
 This is not constant allocation blending; fixed-allocation bound6bc8 alone
 cannot refute it. CurrentTopDecile requires25eligible, not an invented5.
 
@@ -24,8 +26,9 @@ Consumed new results: gate9fit1d1db187 growthFAIL, stockMLP3fit2620331b
 improvedfeatureonly butrawGRUreplacementFAIL. Technicalrules10d0055f primary
 equalrankFAIL; exploratory Bollinger+1.302%/.758% at10bp is a distinct
 hypothesis, NOT retroactive winner/independent alpha/Paper swap.
-New GPU proposal should add a falsifiable mechanism, not architecture-name
-novelty or repeat completed models. Engine owns targets/chronology/costs/caps.
+Current GPU source preparation is paired RankNet indicator ablation. It adds a
+ranking objective and matched technical-channel ablation, not architecture-name
+novelty or repeated fit. Engine owns targets/chronology/costs/caps.
 
 Actual GRU9409 datedinput181e/referencec992 now ready from sole forward and
 fixed-output recovery, not another fit. Parent native release/readbacks closed.

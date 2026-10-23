@@ -28,9 +28,14 @@ bounds_not_exact stays explicit. Parent actualcandidate1c30/nativeb9.
 
 ## Current Owned Next Package
 
-Kant: bind existing capture-only sourceea2e7403 to actual pre-entry referencec992,
-prepare exact final source/mock/install-readback commands under disjoint root.
-Do NOT install/startTask/collector/callAPI while Parent finishes native readiness.
+Capture binding/installation COMPLETE: preparation06714e29 -> Sourcec78f80c8,
+actual pre-entry referencec992. Parent21:19UTC registered disabled/readback/
+enable/readback; independent3bc826c4 at
+A/data/current-h5-future-close-capture-reference-bound-preparation-20261024-v1/parent-installed-readback-r1/CONSUMER.json.
+TaskReady/0instances/nextOct31 05:10KST, quiet one-shot. Do not repeat installer
+or manually start. Source A/data/current-gru-h5-postclose-marks-20261030-v1.
+Kant now tiny historical feature-only build-contract readiness from existing
+da03/b8b8 metadata; no market payload/held later labels/new acquisition/model.
 Preparation:
 A/data/current-h5-future-close-capture-preparation-20261024-v1
 Consumere79e3986;11PythonSYN/18Scheduler mocks/Ruff/ClaudeSOUNDlimits.

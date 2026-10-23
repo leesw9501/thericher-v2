@@ -50,6 +50,25 @@ entryOct26 13:40..14:10UTC /exitOct30 19:45..20UTC,PT4M/max8owned.
 ONE original sharedtenth/.005basis/cost-loss-pending reserves/whole shares,
 freshquote-funds/exactrequest reconciliation/no skippedmassredistribution.
 Proxy execution != research OPEN/CLOSE, not measured net PnL.
+
+## Current Technical Repair
+
+Sparse fusion API compatibility4832404b/7SYN/Ruff complete: full100/69known,
+7positive/62knownzero/31unknownzero is supported without SDK change. Future
+Engine sparse producer/new canonical input/policy/7target candidate still needed.
+A/execution/current-h5-sparse-fusion-input-compatibility-20261024-v1.
+
+Terminal capabilitya8047808/6source-SYN checks found a real liveness gap:
+last SELL reconciliation returns advanced/native_leg_closed with pendingNone,
+but leaves slot active. Controller flatRO stops; next natural trigger still
+does not finalize. No ninth visit/flatRO terminal assumption is authorized.
+A/execution/current-h5-terminal-closure-capability-check-20261024-v1.
+Aquinas owns minimal repository execution-module/focused-test repair: same
+last visit validates exact owned-flat/terminal evidence and closes atomically,
+idempotent crash replay, pending/unknown/unbound/missing/foreign withhold,
+F9reservation unchanged. Claude before semantics edit; Godel independent review.
+No immutable candidate/task/release/private edits by agents. Parent must fresh
+verify primary/build/image and same-identity deployment; not yet repaired runtime.
 ## Joint17 Actual Failure / Conditional Repair
 
 Original source8c5aeb71/RELEASE7861b82f/image75df0968/input01e6ea40/

@@ -29,11 +29,11 @@ EXIT retained. Original point cb5 Task remains disabled; no duplicate forward.
 
 ## Ready Parallel Packages
 
-1. Engine/Steward Noether: finish prepared fixed-score-rank fusion49759d12 as
-   exactly one compatible finite three-cost-cell comparison. Sealed raw-GRUfinal
-   and SCOREMLP ranks BEFORE same TopDecile, no expert refit/forward. Verify
-   row keys/availability/payoff/costs/controls before financial dispatch.
-2. Then own ONE new useful trainable technical/rule-aware fusion mechanism or
+1. Fixed-score-rank comparison68093a24 is COMPLETE_PASS3cells/177checks,
+   no expert fit/forward/GPU/LATER. Exact baseline compatibility4136142d and
+   costs/marks shared; original ClaudeREVISE retained/adjudicated. Do not repeat.
+   Reused INNER result is not independent alpha or deployed GRU9409 evidence.
+2. Noether owns ONE new useful trainable technical/rule-aware fusion mechanism or
    its exact executable rejection. Prefer a matched ablation isolating the
    added mechanism, chronological OOF experts and inner-validation/purge.
    Freeze source/data/features/targets/trial and active+elapsed ceilings,
@@ -44,15 +44,25 @@ EXIT retained. Original point cb5 Task remains disabled; no duplicate forward.
 3. Strategy/Review: consume closed turnoverauditb8dd0f36/137SYN for NEW campaign
    interpretation, not a duplicate audit or retroactive regrading. Retain
    original failures/debits; no broad claim that lower exposure is alpha.
-4. Data Kant: actual-reference-bound future capture06714e29 is ready; Parent
-   may bind/install exact quiet capture-only Oct31 05:10..05:15KST opportunity
-   with readbacks. Sourceea2e/marksadapter3205,70pages, no model/feature stage.
-   Future aligned marks are not currently observed and never gate Paper entry.
+4. Capture06714e29 ->c78f80c8 is installed/Ready/independentreadback3bc826c4,
+   quiet Oct31 05:10..05:15KST one-shot70pages, referencec992/adapter3205.
+   Do not repeat Bind/install/enable/manualstart. Future marks not yet observed,
+   no model/feature stage and never a Paper entry gate. Data may ready exact
+   historical feature-only contracts without opening later held outcomes.
 5. Execution: preserve installed unit-gru-h5-Oct26-v1 entryOct26 13:40..14:10UTC
    and exitOct30 19:45..20UTC. Do not manually start or substitute an order.
    Owned R5/HGB exits and F9 UNKNOWN/HELD remain exact separate dependencies.
    Actual technical faults/owned-position recovery preempt at safe checkpoints.
    Reattach only exact categorical runtime/intent/fill/owned-inventory evidence.
+
+Current Execution preemption: a8047808 source/SYN found last-SELL terminal
+state liveness gap. Aquinas minimal same-native-visit atomic/idempotent closure
+patch + focused negatives; Godel independent review. No extra order/visit,
+clock/capital change or unknown/foreign release. Existing install unchanged;
+Parent fresh serial/full authority, image and exact-identity deployment are
+required before claiming repaired runtime. This does not stop independent
+Research/Data. RankNet original2fits closed; fixed-output publication recovery
+must retain original5a technical failure/debit and never repeat completed fits.
 
 ## Claim / Risk Boundary
 
