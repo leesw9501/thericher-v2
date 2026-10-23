@@ -37,15 +37,22 @@ originalaffines/no Oct26mask copy. Sixsealedforecasts f39ba12d retained;
 readout. Allchildrenclosed/no current numericalworker/GPUlease.
 Global reuse UNKNOWN: adaptive later DEVELOPMENT, not fresh replication.
 
-Noether assigned ONE new matched MSE score-only negative-control campaign at
+ONE matched MSE score-only negative-control campaign is now CLOSED at
 A/research/current-h5-ranknet-matched-mse-control-20261024-v1.
 Exact RankNet GRU+HGB two-score inputs/init/allRNG/split/optimizer and original
 CHECK pair-loss selection; only trainingloss changes.1fit/43forwards/3newcells,
 finite clocks/max100epochs/pat24 before dispatch. No RankNet refit/baseline
 replay/newseed/LATER. Godel e298599d/ClaudeSOUNDlimits recommends narrow
 dominance test:RankNet10bp growth>MSE AND DD<=MSE+1e-12; else kill/inconclusive.
-Not a winner, independent alpha or Paper swap. Single-seed/posthoc nomination
-and shared pair-loss selection bias retained; actual running fit not yet claimed.
+Source36aee70a/Deliveryee65a717:actual1CUDAfit63epochs/best39/819updates,
+163.3475fitseconds/43forwards/3newcells/177independentchecks,alljoined/leasefree.
+At10bp MSE+1.049020%/.608148DD versusRankNet+2.010878/.839298:
+growthhigher but DDworse, NARROW_RANKNET_DOMINANCE_NOT_ESTABLISHED.
+Not a winner, independent alpha or Paper swap. Single-seed/posthoc nomination,
+gradient scaling/effective regularization and pair-loss selection bias retained.
+Noether next PREPARES predeclared two-new-seed paired losses/fixed six-expert
+midrank fusion at A/research/current-h5-seed-stable-rank-fusion-preparation-20261024-v1.
+No new numerical dispatch before frozen caps/source/challenge/current NEXT.
 
 Fixedrank68093a24/Delivery3d7f4f6d COMPLETE_PASS,3cells/177checks/0newmodels.
 At10bp +.775099growth/.817573DD versusalignedGRU+.503744/1.468196 and

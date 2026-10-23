@@ -54,6 +54,15 @@ outside repair. Install/tests are not natural owner/fill/terminal runtime/PnL.
 
 ## Owned Due / Safe Results
 
+HGB quiet diagnostics are NOW installed, not only prepared:
+A/execution/current-hgb-quiet-failure-diagnostic-parent-release-20261024-v1/CONSUMER.json
+SHA83849232. One UPDATE23:34:53UTC changed only Arguments to deliverya2e3dd8d;
+nativee487 and original identity/state/bank/clock/ACL/markers unchanged.
+R2updater0f2b69e0/readbackPASS; no repeat Apply/Undo/completed recorders.
+New delivery owner.ps1 -Mode Readback -Owner HGB -Phase exit with deliverypin
+is source-safe only; never Owner as offline reader. Diagnostics are best-effort
+immutable early-faults plus hash-bound current pointers, not fills/no-send proof.
+
 Joint17 failed/expired ENTRY stays disabled. Conditional EXIT alias-only
 9b9dbd50/release758b4c95/consumer8325dc56 retains originalNov19>=20:45UTC.
 Repaired natural owner unobserved; no expired-entry reactivation.
@@ -80,6 +89,15 @@ A/research/current-gru9409-six-later-preserved-forecast-readout-continuation-202
 Six sealed forecasts f39ba12d/2514marks incl21existing-data supplement;
 readout0model operations. No completed fit/forward/readout repetition.
 Global later reuse UNKNOWN; adaptive development, not independent alpha.
+
+Matched MSE36aee70a/ee65a717/independent05ebec08 closed1CUDAfit63epochs/best39/
+819updates/3newcells/177checks. RankNetgrowthhigher/DDworse, NOT dominance.
+No model rerun/Paper swap. Full83Data56a0de0d/d5c8b951 is a NEW feature-only
+vintage, no forecasts/labels/readout or overwriting old results.
+NEXT is pair current-acquisition cause projection/deployment. Fresh current
+failure codes must not be inferred from sticky quarantine or old receipts.
+Environment caveats in HANDOFF remain; future children use safe explicit-key
+lookups, no wholeenv copy/iteration or implicit .env load.
 
 ## Verification / Recovery
 

@@ -16,10 +16,13 @@ Original publicationfailure retained; continuation85eb/237e finished original
 907.553172cumulativeactiveupper/alljoined/GPUleaseReleased. No GPU job now.
 Selected9409 sixlater readout26e70cd3 is also CLOSED_FAIL:6cells/2514marks,
 0newmodels during readout/allchildrenjoined/no resourcelease. Data21missing
-marks reused existing pages/0API. Next Noether assigned ONE new matched MSE
-score-only control,1fit/3newcells/common CHECKpairloss selection. Frozen finite
-clocks/native optimizer-checkpoint smoke before dispatch; current running fit
-not asserted. No completedfit/RankNet/expert repeat or parameter grid.
+marks reused existing pages/0API. Matched MSE Source36aee70a is now CLOSED:
+1CUDAfit63epochs/best39/819updates/163.3475fitsec/43forwards/3newcells,
+actualworker188.5712sec, separately900prefreezeupper+120cleanupupper,
+1208.5712/3000chargedupper. PeakTorchreserved69206016bytes; measuredfree21899MiB
+at23:28UTC/4GiBreserve/7GiBprojection. No GPU denial/unrecognizedapp hold.
+Allchildrenjoined/GPUleaseReleased. No current numericaljob. Next seed-stable
+paired-loss fusion is preparation only, not four fits already running.
 21:20UTC sample RTX4090free21838MiB/util2%; no resource-authority hold.
 No closed campaign is represented as running.
 

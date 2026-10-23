@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 08:10KST /Oct23 23:10UTC.
+2026-10-24 08:40KST /Oct23 23:40UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents. Parent owns shared MD/Git.
@@ -103,12 +103,38 @@ All2514marks verified;9SYN/47independentchecks;0newrestore/forward/fit during
 readout. Allchildrenclosed/no numericalworker/GPUlease. Global reuse UNKNOWN,
 not fresh replication and no Paper policy swap.
 
-NEXT now ranknet-matched-mse-control-v1: Noether owns ONE new exactly matched
-two-score MSE control under original CHECK pair-loss selection,1fit/3newcells,
-finite caps before dispatch. Directione298599d/ClaudeSOUNDlimits; no model
-promotion from a negative control. Aquinas weekendauditeb45ffea found no new
-Paper outcome and now prepares logging-only HGB failure retention. Kant audits
-usable inputs/mask causes; Godel checks matching. No running fit asserted yet.
+Matched MSE company outcome COMPLETE36aee70a/ee65a717/independent05ebec08:
+A/research/current-h5-ranknet-matched-mse-control-20261024-v1/CONSUMER.json.
+Actual1CUDAfit63epochs/best39/819updates/163.3475fitsec/43forwards/3newcells/
+177independentchecks/alljoined/GPUleasefree. At10bp RankNet+2.010878/.839298DD
+versusMSE+1.049020/.608148: growthhigher/DDworse, narrow dominance NOT_ESTABLISHED.
+No winner/Paper swap; common pair-loss selector/scaled-gradient/single-seed/
+posthoc nomination limits retained. Noether prepares fixed seed-stable rank
+fusion, not another completedfit or a currently running GPU job.
+
+HGB diagnostic-only deliverya2e3dd8d ACTUALLY updated23:34:53UTC, Parent83849232:
+A/execution/current-hgb-quiet-failure-diagnostic-parent-release-20261024-v1/CONSUMER.json.
+One arguments-only Task UPDATE/typedreadbackPASS; same nativee487/state/bank/
+schedule/effectiveACL/markers. ParentR20f2b69/independent9e37487a17SYN; R1REVISE
+preserved, fixes fresh rollback census/abandonedmutexwithhold. No Taskstart/API/
+model; actual future fault/fills unobserved. Do not rerun completed updater.
+
+Data full83 packet VERIFIEDd5c8b951/Source56a0de0d/DTO24e9b09e:
+A/data/current-six-later-full83-suffix-input-20261024-v1.
+Newmasks80/80/80/80/81/81 vsold80/80/80/59/60/60, onebuild/0API/models/labels/
+readout. Old packets/results untouched; no performance-improvement inference.
+Tesla368ed70e proves NAS actual numeric revisions/freshappend alreadyworking;
+QQQ/SPY latestfour0acceptedpages/currentcause UNKNOWN because old stickyreason
+hides currentfailures. NEXT now pair-current-acquisition-diagnostic-deployment-v1:
+one additive source-safe current-run category field in existing receipt, not
+relaxed revision rules/new cache lineage. Aquinas source recommendation complete.
+
+Completed review-helper env caveats are explicit at Data first-cause
+REVIEW-ENVIRONMENT-LIMIT.json and MSE ENVIRONMENT-AUDIT.json. Whole-env
+copy/enumeration occurred in old review bootstrap; credential-variable presence/
+access/routing cannot be attested absent. No values retained or liveAPI invoked.
+Future helpers use direct explicit safe bootstrap lookups; no retrospective
+zero-secret-access assertion or numerical rerun to hide original limitation.
 Do not repeat closed fits/readouts. Engine board indexes historical families.
 
 ## Verification / Continue
@@ -119,5 +145,6 @@ A/verification/current-h5-in-visit-terminal-closure-integration-20261024-v1/AUTH
 helper86953exit0/clean current child+lease/1385source-control unchanged.
 Ruff/default/research/accounting Compose(.env.example) PASS. External code needs
 scoped checks; repeated repo tests cannot validate external code.
-Tracked code pushed51a4caa. NEXT owns ONE next material company outcome.
+Tracked code pushed51a4caa; deployment/research handoff pushed22a6148.
+NEXT owns ONE next material company outcome.
 Continue ready independent work, no foreground market-session wait.
