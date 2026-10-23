@@ -1,12 +1,31 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts.
+2026-10-23 11:36KST. A=D:/thericher-v2/model-artifacts.
 Own resource/trial custody, not model choice/approvals. Parent MD/Git.
 Role memory/dispatch/START is not an active GPU process.
 
 ## Current Resource Facts
 
-Current coordinator Socrates. Completed memory4f05e335 used CUDA for1.503billion
+Current coordinator Leibniz. Socrates LLM capacity failure did not stop the old
+capped dispatcher; its b611eb7e fit completed and was recovered without rerun.
+Latest3seed campaign9e5f6f0a/Source11be7847 actually ran3concurrent CUDA fits:
+25epochs/4300updates each. Driver free682MiB breached4096MiB reserve despite
+~795MiB Torch allocated per child; reserved/other allocation attribution UNKNOWN.
+Safe committed-epoch preemption joined12containers/5coldchildren/ownleaseReleased.
+Financial cells/held decodes0; not convergence/profitability or a ready retry.
+Evidence A/research/current-capped-seed-ensemble-h20-development-20261023-v1/CONSUMER.json.
+Leibniz completed capacity9b3e767b:2/2SYNprobes/2239checks/259.916158active/
+0marketfits/financial cells/alljoined/leaseReleased. Full GPUcache peak822/1736
+allocated/reservedMiB, driverfree22487->20225->22497. CPUcache batch16 streaming
+395/1314MiB,22498->20647->22499; SYN final weights/loss identical. Historical
+682MiB attribution still partlyUNKNOWN. New work uses serial-first,6GiBchild
+projection+4GiBreserve/no overlapping coldrestore; no measured concurrency claim.
+Next NEW capped-H5-streaming ONE scratch fit/9cells/6000active/28800elapsed
+Source/native/CHECKcontract preparation is owned by Leibniz, not running from MD.
+Do not kill personal apps or blame them without evidence; project remains first
+GPU priority. Old clocks/fits/failures are closed, not refunded or restarted.
+
+Completed memory4f05e335 used CUDA for1.503billion
 candidate distances and CPU for its one26epoch MLP fit, selected from actual
 same-workload timing. All10containers/3coldchildren joined/ownGPUlease released;
 265.966291active includes old Source/Data once. GPU trees47e3fb87 also completed
@@ -14,12 +33,10 @@ two actual CUDA market fits71/67trees/selected7/3/alljoined. Neither completed
 campaign is a ready rerun. Historical resource samples below are not current
 ownership or a claim that GPU is idle now.
 
-Next preparation is current-capped-allocation-h20-development-20261023-v1:
-ONE new capped-simplex joint allocation mechanism, not a repeated old fit.
-Freeze data/target/cap/splits/seed/costs/trials/7200active-28800elapsed ceilings,
-native optimizer/gradient/cold checkpoint and measured capacity/pace before
-conditional numerical dispatch. Readiness, MD and authoring are not training.
-Existing Execution repair/install stays disjoint; no role-wide GPU/API hold.
+Capped allocation b611eb7e is COMPLETE_FAIL_NO_RESCUE: oneCPU25epoch fit,
+17175updates, CPU selected by measured batch4 pace;767.231790active/alljoined.
+Neither it nor the three preempted CUDA fits is a ready duplicate. Existing
+Execution repair/preparation stays disjoint; no role-wide GPU/API hold.
 
 JointMoE a4a7b041 two actualCUDAfits COMPLETE:41/56epochs28167/38472updates/
 selected17/32/patience24/oneINNER12cells/LATER0/alljoined/ownleaseReleased.

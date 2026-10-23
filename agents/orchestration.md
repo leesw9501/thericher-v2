@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-23 10:53KST /01:53UTC integration checkpoint.
+2026-10-23 11:36KST /02:36UTC integration checkpoint.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent sharedMD/Git.
 No operator decision required. Active long request continues.
 
@@ -15,18 +15,18 @@ inside the SAME original shared virtual-cash tenth. F9 unknown stays HELD.
 
 | Owner | Actual Work / Concrete Consumer |
 | --- | --- |
-| Parent / 총괄 | Main681f04a pushed, current MD integration. Own RELEASE, actual two-task installation/readback and Git. PRIMARY93991da5 exact unchanged authority, not repeated full-suite work for MD. |
-| Meitner / 실행 | Source83013c05 has50focused tests and completed IPC/known observer-web fixes. Actual whole-host census still incorrectly selects generic project references. Own minimal executed-project-code/opaque-effect scope repair, native/risk/Task bodies unchanged. Not installed. |
-| Nash / 실행 보조 | r2 actual web projection/source/mount binding PASS; whole-host admission honestly DENY. r3 one CIM purpose query distinguishes four long-lived Codex node control references, five expired old rows and actual research/diagnostic jobs. No PID exemptions. |
-| Averroes / 반증 검토 | Independent targeted controller deltas. Original static-ID/raw-Env problems and remaining joined-IPC false admission identified. Review is advisory to the named repair, not a company-wide hold. |
-| Socrates / 엔진·GPU | Capped-allocation actual native CPU+CUDA optimizer/codec proofs PASS, CPU selected from measured same-batch pace. LLM capacity failure, not evidence numerical job failed; no new assignment until recovery transfers safely. |
-| Leibniz / 전략 → 엔진 복구 | Strategy153ab658/d7e44bcf completed10percent capped-simplex kernel/177+27+92checks. Takes over exact capped campaign PID/start/output/lease recovery after Socrates capacity error; never duplicate/restart a live or completed fit. |
-| Kant / 데이터 | Oct26 dated refresh Source2c91d1a7/13603b66 ready2817native/38mock/70metadata checks. Own disjoint one-shot20:10UTC quiet installation qualification, no acquisition/manualTaskstart or changes to today's models. |
+| Parent / 총괄 | Main9120c50 pushed; final Source8c5aeb71/540+7hashes/63focusedPASS/current admission PASS. Own sharedMD/Git and later exact RELEASE/install; no typed installation during this scoped heartbeat. PRIMARY93991da5 unchanged1382digests. |
+| Meitner / 실행 | Completed9d host-scope repair; Parent took over the final unchecked-bootstrap-slot fix. Source/native/risk/Task bodies otherwise unchanged. Token audit5948c966 confirms scoped60s issuance guard, not Data300s starvation. |
+| Nash / 실행 보조 | Final Source8c/contextd0be current actual admission2f55166d PASS/6CUA+web/one5.765s snapshot/alljoined. Old22 lexical-hint denial retained. No install/start/API or future-admission claim. |
+| Averroes / 반증 검토 | Final8c bootstrap SOUND_WITH_LIMITS:3positive/12negative cases, known process.env effect hint reproduced. Not actual install/broad security proof. |
+| Socrates / 엔진·GPU | LLM capacity failure; no active assignment. Numerical capped fit completed and was recovered once, not rerun. |
+| Leibniz / 엔진·GPU | 3CUDAfits9e5f6f0a resource-preempted25epochs each/12900updates/0finance/alljoined. Capacity9b3e767b complete2SYN/serialstreaming qualified. Own NEW one-fit hard-capped H5 preparation, not retry closed studies. |
+| Kant / 데이터 | Oct26 Source2c91d1a7/deployment80f486ff ACTUALLY installedReady/neverrun one-shot20:10UTC;32Scheduler mocks/62old definitions unchanged. No fresh-data/model claim or manual collector start. Package complete. |
 
 ## Throughput Review
 
-Ready: scoped controller source/capability repair and deployment metadata;
-independent constrained-allocation preparation; next-session Data readiness.
+Ready: final controller release preparation and independent one-fit hard-capped
+H5 campaign qualification. GPU capacity calibration complete; Data installed.
 Owned write sets are disjoint. Actual complete research workers are joined,
 not running merely because old stateboards describe their dispatch.
 Due: Volume entry Oct23 13:45UTC/22:45KST, nightly14:50UTC/23:50KST.
@@ -47,14 +47,15 @@ as no private mounts/network/privileges; joined IPC was a concrete reviewer gap.
 Old600/600 source charges and actual qualification failures are retained;
 narrow new repairs have separate named finite caps, not a refund or extra fit.
 
-01:53UTC review: code-only source qualification missed the actual control-plane
-false conflict. Actual r2 facts exposed it before release. Apply the scoped
-executed-code/opaque-effect boundary, not another all-service registration
-platform. Four persistent Codex control references are not four proven writers;
-five expired rows retain unknown historical purpose. Active actual research
-dispatch and its Docker child need source/job/mount capability, not PID grants.
-Independent Data deployment continues. Failed Engine LLM is recovered by an
-available existing role with exact process/output checks, not a repeated fit.
+02:36UTC review: Parent closed the last known control-bootstrap bypass locally
+instead of another delegation cycle; exact JS entry/options/cwd are pinned.
+63focused tests and independent narrow review are not live admission. Nash owns
+that preparation separately. Actual GPU work did run, but three concurrent fits
+exceeded measured driver reserve: safe preemption/alljoined/0finance. Next
+reversible improvement is full tensor-lifecycle allocated/reserved/driver-free
+measurement, not more tinybatch pace tests or a new human permission gate.
+Old Oct21/22 app heartbeat automation deleted; no replacement chain or changes
+to existing Windows schedules. No manual Task/client/order/collector this followup.
 
 ## Actual Paper / Preserve
 
@@ -105,6 +106,9 @@ Completed research is not a queue of duplicate fits:
   oneadaptiveINNER/LATER0. HALF-.130274%/DD.316838%initialNAV failed MSE/growth,
   aligned-risk passed;265.966291active/alljoined/GPUreleased. No GLOBAL fallback.
 - TabM already actually tested34CUDAepochs/6868updates/d941a343; no first-use claim.
+- CappedCPU b611eb7e25epochs/17175updates failed retained-growth/DD conditions;
+  NEW3seedCUDA9e5f6f0a25epochs each/12900updates preempted at682MiBfree versus
+  4096reserve.12containers joined/0finance/LATER0; unknown financial result.
 
 Research funding, costs, payoff/availability and row keys must align before
 comparison. Reused data is adaptive development, not independent alpha or Paper

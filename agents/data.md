@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 11:36KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendars/features/availability, not account/orders/model
 selection. Parent sharedMD/Git; AGENTS.md owns authority.
 
@@ -12,10 +12,18 @@ Existing kernels/collector/calendar/TRAIN affines reusable; current evidence is
 through Oct22 close ONLY. Known existing schedules do not establish the full
 69NAS+SPY refresh owner. Oct26 input needs a NEW dated cursor/whole pages:
 BYMD20261023, prior63Jul28..Oct23, entrye4984/Oct26 13:30UTC, H20Nov20 21UTC.
-Candidate due Oct23 20:10UTC is not an installed job or provider-finality proof.
+Actual installed Oct23 20:10UTC owner is recorded below; no provider-finality
+or fresh-data inference follows from installation.
 
-Kant now prepares current-oct26-model-input-refresh-20261023-v1: Source/tests/
-quiet owner plan only, no current API/credential/Taskstart or schedule install.
+Kant completed current-oct26-model-input-refresh-20261023-v1: Source2c91d1a7/
+consumer13603b66/deployment80f486ff. Exact one-shot task
+thericher-kis-paper-oct26-model-input-refresh-20261023-v1 installedReady/neverrun
+Oct23 20:10UTC /Oct24 05:10KST, quietpythonw/CREATE_NO_WINDOW children.2817native/
+38mock/70metadata/32Scheduler mock checks;62old definitions unchanged. No API,
+credential, market decode or manualTaskstart in preparation/install. Runtime
+clocks unstarted. Exact RUNTIME-FINAL READY plus RUNTIME-CONSUMER/DTO/source/
+independent-verifier/alljoined links must precede consumption; installation is
+not data freshness. Parent independently rehashed all36Source refs unchanged.
 Reuse immutable qualified r3/kernel/affine parts, no expired old dispatch,
 old62+new1 splice, duplicate collector or new platform. Future volume membership
 is UNKNOWN; general complete-feature mask must not hardcode67 or imply that

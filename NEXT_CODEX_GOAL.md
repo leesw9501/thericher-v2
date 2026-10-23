@@ -95,30 +95,42 @@ cash subtracts costs once. No new approval platform.
 
 ## Parallel Research
 
-Current integration checkpoint Oct23 01:53UTC, NOT company completion:
-controller Source83013c05 has50focused/28independentParent tests and final IPC/
-observer/web source review PASS. Actual web/source/mount projection matches,
-but full live host census DENIES normal Codex control-plane project references
-because its candidate scope is too broad; this is a proven implementation fault,
-not9 proven private writers or a human permission hold. Meitner owns the minimal
-executed-code/opaque-effect candidate repair; Nash owns exact purpose evidence
-and stable source/job capability binding. No new typed Task installed yet.
-Never release against stale Source830 after its successor; keep original input/
-policy/bank/F9 and unchanged native/quiet/Task body transfer explicit.
+Current integration checkpoint Oct23 02:46UTC, NOT company completion:
+Final Source8c5aeb71/contextd0be392b fixes executed-code/closed-bootstrap slots
+and a proven lexical effect-hint false conflict inside the sealed bootstrap.
+540+7hashes/63focusedPASS/independent SOUND_WITH_LIMITS3positive12negative.
+ACTUAL current full admission2f55166d PASS:6exact-source CUA controls/web,
+one5.765s snapshot/alljoined/0private-API-Task effects. No PID exemption,
+world-idle/generic Node grant, future-admission or fill inference. No new typed
+Task installed yet. Parent owns
+exact RELEASE and later separately scoped installation/readback. This heartbeat
+does not expand schedules. Keep input/policy/bank/F9/native-body transfer exact.
 
 Mature-memory4f05e335 CLOSEDFAIL: oneCPU26epoch/8944update MLP plus actual CUDA
 1.503billion distances,15cells/LATER0/alljoined; fixed-half worsened MSE and failed
-growth, no GLOBAL fallback/rerun. New capped-allocation Source153ab658/d7e44bcf
-fixes10percent issuer cap by construction, not old-result projection. Actual
-native CPU+CUDA optimizer/codec proofs passed; same-batch CPU chosen for fit.
-Socrates LLM capacity error is NOT a model-fit failure: Leibniz owns exact
-PID/start/output/lease recovery, no duplicate fit, no changed clocks or retries.
+growth, no GLOBAL fallback/rerun. Capped allocation b611eb7e completed CPU fit
+25epochs/17175updates and failed retained-growth/DD, no rescue. Leibniz recovered
+that completed job after Socrates LLM capacity error without a new fit/forward.
+NEW three-seed ensemble9e5f6f0a actually ran three simultaneous CUDA fits,
+25epochs/4300updates each, then free682MiB breached4096MiB reserve. All12
+containers joined/lease released/financial cells0; result UNKNOWN, not loss or
+convergence. No retry/prefix rescue. Leibniz owns max2whole-workload synthetic
+capacity probes/600active/1800elapsed/0marketfits/held outcomes, measuring actual
+allocated/reserved/driver memory before any NEW useful campaign concurrency.
 
-Independent next-date Data Source2c91d1a7/consumer13603b66 is ready for one quiet
-Oct23 20:10UTC whole70-page capture for Oct26, not acquired/fresh yet. Kant owns
-its disjoint exact new-task qualification/install package; no manual collector
-or Taskstart, no changes to today's Volume/typed inputs. Current company outcome
-still needs the actual typed controller release and correctly scoped readiness.
+calibration9b3e767b now COMPLETE/2SYN/2239checks/259.916158active/alljoined.
+Streaming peak395allocated/1314reservedMiB versus full822/1736; historical
+reserve-breach attribution remains partial. Serial-first with6GiB projection+
+4GiB reserve, no concurrent cold restore; multichild capacity not established.
+NEW independent hard-capped H5 streaming package may use ONE new scratch fit/
+9cells/6000active/28800elapsed/LATER0 after source/native/Claude qualification.
+It is not a retry/evaluation rescue of the closed3seeds or an independent-alpha claim.
+
+Independent next-date Data Source2c91d1a7/consumer13603b66/deployment80f486ff
+ACTUALLY installedReady/neverrun quiet one-shotOct23 20:10UTC whole70-page
+capture for Oct26; not acquired/fresh yet.32Scheduler mocks/62old definitions
+unchanged/0API or Taskstart. No changes to today's Volume/typed inputs. Company
+outcome still needs actual typed controller release and correctly scoped readiness.
 
 H5 campaign CLOSED c359420f in
 A/research/current-joint-moe-h5-target-development-20261023-v1/CONSUMER-H5.json.

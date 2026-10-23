@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-23 10:30KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-23 11:36KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own model/feature/target/replay interpretation, not broker risk. Parent MD/Git.
 AGENTS.md owns policy; Source/MD/dispatch is not a running fit.
 
@@ -195,16 +195,44 @@ checks;10containers/3coldchildren joined/GPUreleased/265.966291of6000active.
 Data f25398a3 retained thin134187-row TRAIN bank refs/32feature-only screen dates,
 no copied labels; Data12.476417 plus prior37.992288 counted once. No rerun/retune.
 
-Next ready preparation, not an actual fit:
-A/research/current-capped-allocation-h20-development-20261023-v1, Socrates owns
-Engine+Steward; Leibniz owns current-capped-allocation-h20-proposal-20261023-v1.
-Investigate ONE new jointly-trained capped-simplex allocation: concentration
-bounded by construction instead of another soft-HHI penalty or posthoc rescue.
-Existing cached causal inputs, fixed cap/target/splits/cost/funding before
-outcomes, actual optimizer/gradient/tie/codec/pace proof and concise Claude
-challenge precede conditional one-fit dispatch. Maximum7200active/28800elapsed
-includes preparation/native/fit/evaluation/cleanup, finite cells/LATER0. An old
-failed campaign stays failed; no extra Parent approval wait when frozen ready.
+Capped allocation COMPLETE_FAIL_NO_RESCUE b611eb7e/Source53dc9e2a:
+A/research/current-capped-allocation-h20-development-20261023-v1/CONSUMER.json.
+Fixed10percent issuer capped-simplex inside new scratch joint TRAIN/CHECK/
+inference, not posthoc projection.177kernel/27source/92independent plus actual
+23CPU+23CUDA optimizer/codec/gradient checks passed. Native batch4 CPU.02566s
+versus CUDA.03559s choseCPU. ONE actual fit25epochs/17175updates/selectedlogical1,
+fit580.623s. At10bp growth+.716353%/DD1.381210%initialNAV; cap/positivegrowth/
+growth-over-uniform pass, growthretention/DD-versus-old-and-uniform fail.
+Entry cap does not bound marked weight drift.12cells/oneINNER/LATER0/all8
+containers/3coldchildren joined/767.231790active. Original dispatcher completed
+despite Socrates LLM capacity failure; Leibniz recovered outputs without any
+extra fit/forward/replay, clocks unchanged. Adaptive price proxy, not alpha or
+PaperPnL; no alternate winner/threshold/checkpoint rescue.
+
+Three-seed ensemble CLOSED RESOURCE_TECHNICAL_FAULT_FINANCE_UNKNOWN:
+A/research/current-capped-seed-ensemble-h20-development-20261023-v1/CONSUMER.json
+9e5f6f0a/Source11be7847. THREE actual concurrent CUDA scratch fits, same fixed
+cap architecture/batch16/fixed-third blend;25epochs/4300updates each,12900total.
+CHECK-selected epochs23/24/18 were retained after committed-epoch preemption,
+not converged fits. Actual free682MiB breached4096MiB desktop/driver reserve;
+2GiB-per-child projection/native pace did not qualify whole-workload capacity.
+12containers/5coldchildren joined/ownGPUreleased/965.526635active;0financial
+cells/held decodes/LATER0, finance UNKNOWN. Parent verified19consumer refs.
+No prefix financial rescue, post-update retry, best-seed choice or old regrade.
+Calibration9b3e767b COMPLETE at
+A/research/current-capped-gpu-capacity-calibration-20261023-v1/CONSUMER.json:
+2SYN/2239checks/259.916158active/0marketfits/0held/alljoined/released. Streaming
+CPUcache peak395allocated/1314reservedMiB versus full822/1736, identical SYN
+weights/loss; driver minimum20647/20225MiB. Historical682MiB attribution partial.
+Serial-first, projected6GiBchild+4GiBreserve, no overlapping cold restore;
+multichild capacity unproved. Parent independently rehashed19consumer refs.
+Leibniz next owns NEW current-capped-h5-streaming-development-20261023-v1:
+trueH5Data28d7ed8f plus fixed10percent cap INSIDE training, one new scratch seed/
+fit, batch16 CPUcache/CUDAstream, max9cells/6000active/28800elapsed/LATER0.
+Freeze comparable H5 funding/row/cost/risk and maxepochs/CHECKpatience before
+numerical dispatch; source/native/Claude qualification first. No oldH20fit
+retry/3seed prefix financial rescue/user-app blame/permission hold. Dispatch is
+not actual training. Existing Paper readiness remains separate.
 
 ## Closed Families / No Duplicate Work
 

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-23 10:30KST /01:30UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-23 11:46KST /02:46UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents; Parent sharedMD/Git.
 AGENTS.md owns private free Data/Research/KIS Paper authority. No operator
@@ -84,15 +84,28 @@ cases and no-mount unrelated-container admission. Old600/600 charge retained,
 no extra native worker starts. The unchanged quiet/native body transfer is not
 a full finalhash effect invocation. No private/API/Taskstart from these repairs.
 
-Current repair owners: Meitner fixes reviewer-identified joined-IPC isolation
-gap and truthful current observer/web capabilities; Nash deployment-r2 owns
-actual safe metadata and stable source/job/mount rules; Averroes delta review.
-Known observer account READ/token writes and web disjoint emergency controls
-are not actual private-book writers or credential-free no-lock readers. Do not
-force unrelated services through a new sandbox or stop research to clear the
-census. Unknown/protected-book writers, source changes and unsafe unknown
-containers still deny. Parent owns final RELEASE/install/readback. No release
-may reuse stale Source088/fec bindings after a further source correction.
+Source83013c05 completed private-IPC consistency and truthful observer/web
+capabilities:50focused/28independentParent tests,533files+7external refs stable,
+independent source review SOUND_WITH_LIMITS. Actual r2 web image/source/mount
+projection passes, but whole-host admission still DENIES generic control-plane
+project references. Four same-birth CUA controls share exact bootstrap22234fbe;
+five expired identities retain unknown historical purpose. Nash r3 evidence
+189a06a8/e0f5db2c distinguishes actual research/diagnostic jobs from cwd mentions.
+Meitner9d fixed executed-code scope; Parent closed unchecked bootstrap options.
+Actual22 admission then exposed a lexical effect-hint false conflict inside
+the exact sealed bootstrap. Final Source8c5aeb71/contextd0be392b pins every
+five/nine-argument slot, JS entry hashes, Temp root, session syntax and two exact
+observed normalized-cwd hashes. Unknown forms/programs remain denied;63focused
+unit tests and independent SOUND_WITH_LIMITS/3positive12negative cases pass.
+Nash ACTUAL full current admission2f55166d PASS:6source-bound CUA controls/web,
+540files+7external unchanged,1snapshot/5.765s/alljoined/0private-API-Task effects.
+Evidence A/execution/current-joint17-weight-owned-runtime-20261023-v1/
+deployment-r4/source8c-actual-admission-r1/CONSUMER.json and
+parent-bootstrap-boundary-r1/CONSUMER-R3.json. Old denials/failures retained.
+No PID/CID allowlist, world-idle or arbitrary Node exemption. No typed Task
+installed or final RELEASE granted; current admission is not future admission.
+Native/risk/Task bodies unchanged; byte transfer is not a new effect invocation.
+This scoped heartbeat does not expand schedules or manually invoke Paper work.
 
 PROPOSED, NOT installed: joint17-Oct23-v1/.005ORIGINALgross, entry Oct24
 00:30..01:00KST /Oct23 15:30..16UTC; conditional exit Nov20 05:45KST /
@@ -146,14 +159,53 @@ and3coldchildren joined/GPUreleased/265.966291active. No GLOBAL winner fallback.
 Dataf25398a3 thin TRAIN134187refs/32feature-only screen dates/strict maturity,
 no copied labels; old37.992288 and new12.476417Data counted once.
 
-Next independent preparation: Socrates Engine+Steward owns
-current-capped-allocation-h20-development-20261023-v1; Leibniz owns its Strategy
-proposal. NEW jointly-trained capped-simplex allocation, not old posthoc rescue
-or another HHI penalty. Finite fixed cap/targets/splits/cost/funding/native
-gradient-tie-optimizer-codec/pace/headroom before conditional one fit. Dispatch
-is not training. Kant audits existing next-session data refresh metadata, no
-new collection/schedule. Steward coordinates actual PID/start/lease/resources;
-personal apps not permission holds, no completed-fit rerun or dummy training.
+Capped allocation b611eb7e COMPLETE_FAIL_NO_RESCUE, Source53dc9e2a at
+A/research/current-capped-allocation-h20-development-20261023-v1/CONSUMER.json.
+One actual CPU fit25epochs/17175updates/selectedlogical1,580.623s fit body;
+native CPU/CUDA optimizer/codec passed and same-batch CPU was faster. At10bp
+growth+.716353%/DD1.381210%initialresearchNAV: issuer10percent cap passes,
+growth-retention and both risky-DD comparisons fail.12cells/oneINNER/LATER0/
+767.231790active/all8containers joined. Socrates LLM capacity error did NOT stop
+the numerical dispatcher: Leibniz recovered final artifacts without extra fits,
+forwards or replay. No model rescue or claim of independent alpha/PaperPnL.
+
+Three-seed CUDA ensemble9e5f6f0a subsequently CLOSED RESOURCE_TECHNICAL_FAULT:
+A/research/current-capped-seed-ensemble-h20-development-20261023-v1/CONSUMER.json.
+Three concurrent scratch fits actually ran25epochs/4300updates each,12900total;
+not a plan or GPU permission hold. Free VRAM fell to682MiB, below4GiB reserve.
+Checkpoint-bound preemption joined all12containers/5coldchildren and released
+the lease. Zero financial cells/held outcomes: performance UNKNOWN, not zero
+or a failed-profit result. Parent rehashed19consumer refs. No retry/rescue.
+Whole-workload capacity calibration9b3e767b COMPLETE:2/2SYNprobes/0marketfits/
+0held outcomes/2239checks/259.916158active/alljoined/released. Full cache peak
+allocated822/reserved1736MiB, driver minimum20225MiB; CPUcache streaming peak
+395/1314MiB, minimum20647MiB, identical SYN weights/loss. Historical682MiB cause
+partlyUNKNOWN. Serial-first/6GiB projected child+4GiB reserve/no overlapping
+cold restore, NOT measured multichild capacity. Parent rehashed19refs.
+Leibniz next owns NEW hard-capped H5 streaming campaign, one new scratch fit/
+9cells/6000active/28800elapsed/LATER0, not an old3seed retry or prefix rescue.
+Source/native/Claude qualification precedes actual training; dispatch is not GPU use.
+
+The obsolete Oct21/22 app heartbeat automation was deleted; existing Windows
+workers/schedules were not deleted. Source-safe Scheduler readback still shows
+nightly Ready/Oct23 14:50UTC, R5 exit Oct27 19:45UTC, F9 nextNov17 20:45UTC.
+Original NAS task remains Disabled. These facts do not establish new fills.
+
+Leibniz now owns independent current-capped-seed-ensemble-h20-development-20261023-v1:
+THREE prospective scratch seeds/same10percent-cap architecture/fixed-third
+blend, no best-seed fallback. Batch16 native CPU/CUDA pace and resource proof
+before device choice/concurrency,7200active/28800elapsed/18cells/LATER0.
+This is preparation, not evidence of a running fit or GPU training. Old failed
+study stays closed. One Steward resource owner; no dummy/duplicate training.
+
+Next-date Data Source2c91d1a7/consumer13603b66 and deployment80f486ff COMPLETE
+for readiness ONLY. Exact one-shot thericher-kis-paper-oct26-model-input-refresh-20261023-v1
+installedReady/neverrun Oct23 20:10UTC /Oct24 05:10KST.70wholepages/63sessions
+Jul28..Oct23/newOct26 cursor, dynamic general volume mask,2817native/38mock/
+70metadata plus32Scheduler mocks;62old task definitions unchanged. No API,
+credentials, raw-market decode or manual Taskstart from preparation/install.
+Actual RUNTIME-FINAL/CONSUMER/DTO/source/verifier/alljoined binding is required
+before next-date features are used. Source freshness still only Oct22 close.
 
 Ready fitpacket435a3a6e:
 A/data/current-gap-rank-h20-fit-input-20261023-v1/CONSUMER.json,19features,

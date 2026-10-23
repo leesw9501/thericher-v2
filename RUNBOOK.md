@@ -13,6 +13,15 @@ Models/generated outputs stay A (Docker /app/model_artifacts), data M.
 D free latest approximately38.9percent; preserve15percent/warn20percent.
 Preserve unrelated untracked %SystemDrive%/ and other owners' work.
 
+Oct23 02:36UTC: obsolete Oct21/22 Codex app heartbeat `automation` was deleted.
+This did not delete or modify Windows tasks. No replacement follow-up chain.
+Current typed controller Source8c5aeb71 remains preparation-only/not installed;
+do not run its Install mode from this scoped follow-up. Source-bound final
+actor admission2f55166d PASS is current only; parent RELEASE/install remain separate.
+Exact evidence: A/execution/current-joint17-weight-owned-runtime-20261023-v1/
+parent-bootstrap-boundary-r1/CONSUMER-R3.json and
+deployment-r4/source8c-actual-admission-r1/CONSUMER.json.
+
 ## Current Read-Only Custody
 
 Qualified source/outcomes:
