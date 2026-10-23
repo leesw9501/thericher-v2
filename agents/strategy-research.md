@@ -26,9 +26,12 @@ Consumed new results: gate9fit1d1db187 growthFAIL, stockMLP3fit2620331b
 improvedfeatureonly butrawGRUreplacementFAIL. Technicalrules10d0055f primary
 equalrankFAIL; exploratory Bollinger+1.302%/.758% at10bp is a distinct
 hypothesis, NOT retroactive winner/independent alpha/Paper swap.
-Current GPU source preparation is paired RankNet indicator ablation. It adds a
-ranking objective and matched technical-channel ablation, not architecture-name
-novelty or repeated fit. Engine owns targets/chronology/costs/caps.
+RankNet indicator ablation85eb/237e is CLOSED_FAILgrowth after2fits/1339updates/
+6cells/354checks. INDICATOR+.490887/.403909DD vsSCORE_ONLY+2.010878/.839298
+at10bp; not a retroactive fallback winner. Independent later development can
+investigate a NEW frozen hypothesis without rewriting this failed one.
+Godel now reviews actual terminal-liveness patch; Engine prepares selected9409
+six-later-cohort diagnostic without claiming global untouched data.
 
 Actual GRU9409 datedinput181e/referencec992 now ready from sole forward and
 fixed-output recovery, not another fit. Parent native release/readbacks closed.

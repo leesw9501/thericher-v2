@@ -119,13 +119,23 @@ Future aligned analytical reference is not native whole-share/Paper net PnL.
 
 ## Verification / Recovery
 
-Primary authority:
-A/verification/current-h5-owned-exit-drain-integration-20261024-v1/AUTHORITY.json
-SHA056c456a.560serial/18795fullPASS25skip/actual8workers/helper0/clean;
-1384source-control digests unchanged. Reuse only with exact current equality.
+Current primary authority:
+A/verification/current-h5-in-visit-terminal-closure-integration-20261024-v1/AUTHORITY.json
+SHAb9cc42d1.628serial/27focused/18822fullPASS25skip/18847total/actual8workers/
+originalhelper86953exit0/clean/1385source-control unchanged. Old056 historical.
+Codef6ee7819/newtests0e4cadac; actualnewimage9a109133/SDKcd04 PASS9609f3f0:
+A/execution/current-h5-in-visit-terminal-image-preparation-20261024-v1/CONSUMER.json.
+Terminal repair is not deployed yet: old installed1c30/release8b29/image813
+remains until exact replacement/readbacks. Aquinas prepares, Parent updates;
+same slot/bank/input/policy/clocks/counters/ACL, no manualTaskstart.
+Zero-owned/no-SELL not fixed or treated as terminal. Reuse authority only on
+exact current source/control equality; external edits need scoped checks.
 Fresh external tests/proofs validate external changes; unchanged repo tests do not.
 Ruff/default/research/accounting Compose use .env.example; uv --no-env-file.
 Code/control changes require AGENTS fresh serial+full authority. Docs/external
 only may reuse matching authority plus fresh changed-scope evidence.
+Changed native data/forecast/output handoffs need one tiny actual producer/
+consumer role/file/schema smoke inside existing caps. Evidence reuse includes
+resolvedSDK/bootstrap/import order, not merely same file bytes. No new approval.
 At interruption recheck exact ownership/status; do not repeat completed fits,
 reclaim an unknown live lease, reset counters or invent runtime results.

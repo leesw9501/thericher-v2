@@ -38,12 +38,22 @@ No duplicate replay, no independent alpha/Paper swap or advisory-agreement claim
 
 Noether now prepares ONE matched RankNet indicator/score-only ablation:
 A/research/current-h5-ranknet-indicator-ablation-development-20261024-v1.
-Source5a2ae563 frozen before dispatch; coordinator45168/start134372642347473937,
-native4realupdates+ALLRNGcold PASS. SCORE_ONLY result78epochs/selected54/
-1014updates/237.11fitsec is retained. Noether owns paired INDICATOR and closure;
-do not duplicate. Frozen2fits/max100epochs/pat24/CHECKpairloss/bestcheckpoint,
-3600active/10800elapsed,6newfinancialcells/no LATER. Not yet final pair verdict.
-No artificial GPU use or closedfit repeat.
+Original5a2ae5632fits CLOSED78/25epochs,selected54/1,total1339updates,
+sameinitial/allRNG/native4updates/cold2. Forecast publication failed missing
+CHECK.npz after SCORE output; originale00e30a4/f97f87bc remains technicalfailure.
+Continuation85eb3ac7/Consumer237e75c2/Delivery807e0502 adds0fits/SCORErepeats,
+onlyremainingINDICATOR43forwards,6cells/354checks/alljoined/released.
+COMPLETE_FAIL:10bp INDICATOR+.490887%growth/.403909DD vsSCORE_ONLY
++2.010878/.839298 andfixedrank+.775099/.817573. Growthkill FAIL;
+SCORE_ONLY is not retroactive fallback winner. Cumulative907.553172activeupper.
+No pre-failure SCORE NPZ seal; stable postclosure/source/actor under honest-host
+assumption, not original sealed success. No current GPU job.
+
+Next Noether: ONE selectedGRU9409 six-later-cohort diagnostic contract, fixed
+checkpoint/affines/threecosts/uniform/riskyDD/growth/finiteforward and evaluation
+ceilings before later outcomes. Data Kant feature-only packet underway; no
+Oct26maskcopy or heldlabel intake. Globalreuse UNKNOWN: later development,
+not independent replication/Paper permission gate. No completed-fit repetition.
 
 Recent CLOSED adaptive reused-data results, growth/DD% at10bp EACH leg:
 - Chronological9fit1d1db187/5447d9f8:4GRU/4HGB/depth2gate,21cells,

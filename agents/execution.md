@@ -69,6 +69,12 @@ idempotent crash replay, pending/unknown/unbound/missing/foreign withhold,
 F9reservation unchanged. Claude before semantics edit; Godel independent review.
 No immutable candidate/task/release/private edits by agents. Parent must fresh
 verify primary/build/image and same-identity deployment; not yet repaired runtime.
+Code now FROZENf6ee7819/tests0e4cadac;27focused/628serial PASS, review7e105349.
+Fresh Parentb9cc42d1 full18822PASS25skip/8workers/helper0/clean/1385same.
+Newactualimage9a109133/SDKcd04/Consumer9609f3f0 proves focused changed semantics
+and H20golden inside newimage,736members; old173/38transport not repeated.
+Aquinas prepares exact same-identity source-bound successor/Parent4steps,
+no actualdeployment/private/Task calls. Zeroowned/noSELL intentionally out ofscope.
 ## Joint17 Actual Failure / Conditional Repair
 
 Original source8c5aeb71/RELEASE7861b82f/image75df0968/input01e6ea40/

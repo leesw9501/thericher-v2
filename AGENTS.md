@@ -157,6 +157,12 @@ unchanged, never refunded. Exercise the real native solver/optimizer and
 checkpoint/diagnostic API on small synthetic input before market fits, not
 only fake numerical fixtures. These are bounded experiment controls, not human
 approval or a block on another ready lane.
+For a new or changed data/forecast/output handoff, exercise a tiny native
+producer-to-consumer smoke with its actual role/file/schema names before market
+payloads or fits. Reuse only when producer and consumer sources, resolved
+SDK/bootstrap/import order and schema all match. Charge it inside existing
+caps, not another market trial or approval. Retain an allowlisted failure stage,
+source/frame and exception category, never raw exception text or payloads.
 Safe checkpoints/weights may stay on D: when the new contract permits. A short
 or timed run is not proof of convergence; storage on D: is not a dataset split.
 

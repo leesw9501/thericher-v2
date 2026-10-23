@@ -6,7 +6,8 @@ Parent owns shared MD/Git; AGENTS.md authority. No operator decision.
 
 ## Company / Ready / Owned
 
-ONE h5-next-fusion-development-decision-v1 follows completed dated readiness:
+ONE h5-in-visit-terminal-closure-v1 follows completed fusion development decision
+237e75c2. H5 dated readiness remains installed:
 candidate1c30/release8b29/claims87b9, actual EXIT-first/ENTRY installed/readbacks,
 consumer7c2bb723. Readiness is not natural owner, submit, fill or net PnL.
 Actual Data70GET1POST/70accepted/closed and sole GRU forward are complete.
@@ -15,11 +16,11 @@ unchanged. No second forward. Input181e/referencec992 now frozen.
 
 | Owner | Current disjoint package |
 | --- | --- |
-| Parent / 총괄 | Actual H5ready7c2b pushedb572143. Capturec78 installed/readbacks3bc8; integrate material research. |
-| Noether / 엔진·연구 자원 | Fixedrank6809 COMPLETE_PASS3cells/177checks/0models. Preparing paired RankNet indicator ablation; not yet actual GPU fit claim. |
-| Aquinas / 실행 | Sparse H5 typed-input pure compatibility for future fusion consumer; no model/broker/Task effects. |
-| Kant / 데이터 | CaptureReadback3bc8 closedReady/nextOct31. Tiny historical feature-only build contract readiness, no later labels. |
-| Godel / 전략·검토 | Frozen fixed-rank comparison interpretation review; no duplicate numerical replay. Final8658 and turnoverb8dd closed. |
+| Parent / 총괄 | Readinessb572/capture+fusion3d5 pushed. Own fresh primary authority/new image/same-identity terminal repair integration. |
+| Noether / 엔진·연구 자원 | RankNet237e COMPLETE_FAIL2fits/1339updates/6cells/alljoined/released. Next selected9409 six-later-cohort diagnostic contract; no current numerical job. |
+| Aquinas / 실행 | Minimal repository H5 same-last-visit terminal closure and focused negative tests; not deployed yet. |
+| Kant / 데이터 | Actual offline six-date feature-only packet construction, originalaffines/noheldlabels/noGPU. Readinessd151 and capture3bc8 closed. |
+| Godel / 전략·검토 | Independent terminal patch review; fixedrankcd0e14SYN mismatch kills closed, no duplicate numerical replay. |
 
 21:39UTC preemption: Aquinas now owns minimal repository terminal-liveness
 repair (a8047808 lastSELL->active slot); Godel reviews its exact patch. No
@@ -48,6 +49,17 @@ Kant builds six-date feature-only packet for future9409diagnostic; no later labe
   F9UNKNOWN/HELD, shared reservation preserved. Fees/settlement/net unknown.
 
 ## Throughput Review
+
+07:09KST review: functional patch f6ee7819/newtests0e4cadac frozen,27focused/
+628relatedserial PASS. Parent helper86953 subsequentlyexit0:18822PASS25skip/
+18847total/407.69s/8actualworkers/clean/1385same, authorityb9cc42d1.
+Newimage9a109133/SDKcd04 actualH5lastSELL/H20golden PASS9609; Godel7e105
+scopedPASS. Aquinas now prepares exactidentitydeployment; not yet deployed.
+Kant's later packet failed before payload;
+exact stdlib-junction cause found, separate NPZ smoke still needs named cause.
+Noether prepares only bounded Job-join repair, no model repetition. Reversible
+improvement adopted589edf04: tiny changed native handoff smoke with exact
+producer/consumer/resolvedSDK/bootstrap/schema, existingcaps/no new approval.
 
 06:30KST review: H5 release/readiness and reference-bound capture are closed,
 not blockers. Fixedrank3cell comparison closed PASS with independent14mismatch

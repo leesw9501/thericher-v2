@@ -12,8 +12,9 @@ money, paid/public work, secret/private raw output. Preserve %SystemDrive%/.
 Completed company outcome: gru-h5-next-session-paper-readiness-v1.
 Joint17 original entry FAILED, not a deployment/fill success to repeat.
 Selected successor is existing GRU9409, not an outcome-selected new model.
-Actual dated readiness is COMPLETE7c2bb723. Current ONE company outcome is
-h5-next-fusion-development-decision-v1; NEXT owns bounded research details.
+Actual dated readiness is COMPLETE7c2bb723. Fusion development decision also
+closed237e75c2; current ONE company outcome h5-in-visit-terminal-closure-v1.
+NEXT owns scoped repair/deployment and parallel research details.
 
 ## Actual Dated Input / Recovery
 
@@ -66,7 +67,12 @@ Source/SYN capabilitya8047808 subsequently found a terminal-liveness gap:
 last exact SELL removes pending but leaves slot active; drain's flat RO cannot
 finalize it. Installed readiness is not lifecycle completion. Aquinas now owns
 minimal repository same-last-visit atomic/idempotent closure repair with focused
-negative tests; Parent must fresh-verify/build/deploy before relying on repair.
+negative tests is now CODE_COMPLETE: f6ee7819/newtests0e4cadac,27focused/
+628serial PASS. Independent7e105349 scopedPASS. Fresh primaryb9cc42d1:
+18822fullPASS25skip/8workers/407.69s/helper86953exit0/clean/1385unchanged.
+Actual new image9a109133/SDKcd04cc25 nativeH5lastSELL/H20golden/736bytes
+PASS9609f3f0, alljoined. Parent exact source-bound replacement is pending;
+not deployed repair. Zero-owned/no-SELL closure stays out of scope.
 Do not patch immutable1c30 or add a ninth visit. Existing install unchanged.
 Finalizer root A/execution/current-h5-final-dated-readiness-20261024-v1.
 RELEASE8b29032f binds actual operational claims87b9d407 (38tests/actualboot/
@@ -131,12 +137,25 @@ native4CUDAupdates PASS. SCORE_ONLY78epochs/selected54/1014updates retained;
 Both RankNet fits CLOSED78/25epochs,selected54/1,total1339updates; original
 technical failure occurs after retained SCORE_ONLY forecast because metadata
 expects missing CHECK.npz. Original5a Consumer TECHNICAL_INCOMPLETE/Delivery
-f97f87bc at21:28:56/alljoined/GPUreleased; finance verdict not known.
-Noether owns bounded publication continuation,0refits/oldSCORErepeat;
-do not duplicate. No GPU hold (21:20 sample21838MiBfree).
-Aquinas pure sparse-H5-input compatibility for a future fusion consumer.
-Kant historical feature-only contract readiness, no held later labels opened.
-Godel independent frozen comparison interpretation, no duplicate replay.
+f97f87bc at21:28:56/alljoined/GPUreleased. Publication continuation85eb3ac7/
+Consumer237e75c2/Delivery807e0502 CLOSED_COMPLETE_FAIL:INDICATOR43newforwards,
+6cells/354independentchecks,0refits/SCORErepeats/native-redo. At10bp INDICATOR
+growth+.490887%/DD.403909, SCORE_ONLY+2.010878/.839298 versusfixedrank
++.775099/.817573. PrimaryINDICATORgrowthkill FAIL; ablation is not fallback
+winner. Same-initial/allRNG proof retained. Originalfailure/debit kept;
+cumulative907.553172activeupper, alljoined/leaseReleased/no current GPU job.
+No pre-failure SCORE NPZ seal was retained; source/actor + stable post-closure
+snapshot under honest-host assumption, not original sealed success/proof.
+Noether next prepares one selected9409 scopedlaterdiagnostic, not refits.
+Aquinas prepares same-identity deployment successor; no Task/private writes.
+Kant later packetbda462 failed initialization before0payload. Diagnostic634d1719
+proved NumPy contextvars lazy import hit trusted uv runtime junction/audit;
+bootstrap fixed, NPZ smoke still failed without named cause. New bounded
+diagnostic must capture stage/category before one actual builder; no packet yet.
+Noether selected9409 contract320aa746/37ef3646 has1CPUrestore/3SYN proof,
+0actualdatedforwards/laterlabels; Job proof f43dea82/READY0c545b93/59checks
+joined. Exact Data/handoff remains its local dependency, not approval hold.
+Godel completed frozen patch7e105349 review, no duplicate numerical replay.
 Assignments are not proof of active CPU/GPU numerical workers.
 
 Future capture06714e29 bound ACTUAL referencec992 to Sourcec78f80c8 under
@@ -148,12 +167,14 @@ Quiet one-shot/capture-only/70pages, not OSwake/capture/finality guarantee.
 
 ## Verification / Next Action
 
-Primary authority056c456a:
-A/verification/current-h5-owned-exit-drain-integration-20261024-v1/AUTHORITY.json.
-560serial/18795fullPASS25skip/18820total/actual8workers/originalhelper0/clean.
-Fresh1384source/control digests unchanged; Ruff/default/research/accounting
-Compose with .env.example passed. External changes have scoped proofs; another
-unchanged19k run is not external validation.
-Latest pushed checkpointb572143; Git owns history. Actual release/readbacks
-closed readiness; NEXT now owns one bounded fusion decision. Verify/commit/
-push current integration and continue ready work. No foreground session wait.
+Current primaryb9cc42d1:
+A/verification/current-h5-in-visit-terminal-closure-integration-20261024-v1/AUTHORITY.json.
+628serial/27focused/18822fullPASS25skip/18847total/actual8workers/helper86953exit0,
+exactcurrent C:/trpy/runs/r-c3c053fc andlease absent,1385source/control unchanged.
+Ruff/default/research/accounting Compose with .env.example PASS. Shared native
+handoff rule updated after589edf04 REVISE/adjudication, included in authority.
+Old056 is historical, not authority for changed primary. External work still
+needs its scoped checks; unchanged full suite cannot validate external code.
+Latest pushed checkpoint3d5b495; Git owns history. NEXT owns actual deployment
+of tested terminal-liveness repair. Image/source/tests alone are not deployment.
+Continue independent research/Data; no foreground session wait.

@@ -2,93 +2,79 @@
 
 ## One Company Outcome
 
-h5-next-fusion-development-decision-v1: finish one bounded rule-aware/pre-rank
-fusion research decision using existing chronological expert outputs and
-technical hypotheses. Either reject it with exact evidence or freeze its
-scoped development result; do not require a winner, retune seen outcomes or
-replace the already-installed provisional GRU Paper candidate.
+h5-in-visit-terminal-closure-v1: repair and deploy exact terminal closure inside
+the existing last H5 native exit visit. After exact owned SELL reconciliation,
+the policy slot must durably close when its own terminal/flat evidence is
+complete, without a ninth visit, extra order, broader window or capital change.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Run scripts/start_next_codex_task.ps1; read HANDOFF/AGENTS/RUNBOOK/active boards.
-Parent shared MD/Git. No operator decision now; never KIS_LIVE_*/real money/
-paid/public work or secret/private raw output.
+Run scripts/start_next_codex_task.ps1; follow HANDOFF/AGENTS/RUNBOOK/active boards.
+Parent owns shared policy/MD/Git/integration. Private no-cost Paper work is
+delegated; never KIS_LIVE_*/real money/paid/public work or private raw output.
 
-## Completed Company Outcome / Preserve
+## Verified Starting State
 
-gru-h5-next-session-paper-readiness-v1 is COMPLETE for actual dated readiness:
-Data70GET1POST/closed; sole GRU9409 forward; retained-output publication recovery
-preserving original numericalexit2; typedinput181e/referencec992; actualcandidate
-1c30/nativeb9/release8b29032f/image813; EXIT-first then ENTRY registration and
-independent definition/ACL readbacks. Exact consumer7c2bb723:
-A/execution/current-h5-final-dated-readiness-20261024-v1/CONSUMER.json.
+Current installed dated H5 readiness remains7c2bb723: actual Data70/point181e/
+referencec992/candidate1c30/nativeb9/release8b29/image813, EXIT-first/ENTRY
+definition/ACL readbacks PASS. It is not natural scheduled-owner/fill/lifecycle
+closure. EntryOct26 13:40..14:10UTC, exitOct30 19:45..20UTC.
+Source/SYN capabilitya8047808 confirms last reconciled SELL clears pending
+but returns advanced/native_leg_closed with active slot; drain stops flat and
+later triggers do not finalize. Missing/flat RO alone is not terminal.
 
-This is NOT a natural scheduled-owner pass, submit, fill, net PnL or successful
-Joint17 entry. Old Joint17 entry failed/expired-disabled; conditional alias-only
-EXIT retained. Original point cb5 Task remains disabled; no duplicate forward.
+Previous fusion company objective completed a development decision:
+fixedrank68093a24 passes named relative screen on reused nine INNER cohorts;
+RankNet indicator pair Source5a -> continuation85eb/Consumer237e75c2
+COMPLETE_FAIL (growth kill),2fits/1339updates,6cells/354checks/alljoined/released.
+Original missingCHECK.npz failure/debit preserved,0refits/SCORErepeats,
+only remaining INDICATOR43forwards. Neither result is independent alpha or
+a Paper9409 swap. History/proofs stay immutable; no duplicate experiments.
 
-## Ready Parallel Packages
+## Work / Parallel Ownership
 
-1. Fixed-score-rank comparison68093a24 is COMPLETE_PASS3cells/177checks,
-   no expert fit/forward/GPU/LATER. Exact baseline compatibility4136142d and
-   costs/marks shared; original ClaudeREVISE retained/adjudicated. Do not repeat.
-   Reused INNER result is not independent alpha or deployed GRU9409 evidence.
-2. Noether owns ONE new useful trainable technical/rule-aware fusion mechanism or
-   its exact executable rejection. Prefer a matched ablation isolating the
-   added mechanism, chronological OOF experts and inner-validation/purge.
-   Freeze source/data/features/targets/trial and active+elapsed ceilings,
-   convergence/overfit/checkpoint/strongest-kill rules BEFORE numerics.
-   Exercise real native optimizer/checkpoint on SYN first. Use CUDA when
-   measured useful, CPU for pure replay; no dummy utilization, completed-fit
-   repeats, hidden retries, outcome-driven reranking or reopened holdout.
-3. Strategy/Review: consume closed turnoverauditb8dd0f36/137SYN for NEW campaign
-   interpretation, not a duplicate audit or retroactive regrading. Retain
-   original failures/debits; no broad claim that lower exposure is alpha.
-4. Capture06714e29 ->c78f80c8 is installed/Ready/independentreadback3bc826c4,
-   quiet Oct31 05:10..05:15KST one-shot70pages, referencec992/adapter3205.
-   Do not repeat Bind/install/enable/manualstart. Future marks not yet observed,
-   no model/feature stage and never a Paper entry gate. Data may ready exact
-   historical feature-only contracts without opening later held outcomes.
-5. Execution: preserve installed unit-gru-h5-Oct26-v1 entryOct26 13:40..14:10UTC
-   and exitOct30 19:45..20UTC. Do not manually start or substitute an order.
-   Owned R5/HGB exits and F9 UNKNOWN/HELD remain exact separate dependencies.
-   Actual technical faults/owned-position recovery preempt at safe checkpoints.
-   Reattach only exact categorical runtime/intent/fill/owned-inventory evidence.
+1. Execution Aquinas: minimal actual repository patch and focused tests.
+   Reuse existing owned-terminal verification/durable storage under exact lock;
+   make same-visit closure atomic/idempotent. Pending/unknown/partial/nonflat/
+   missing/unbound/foreign evidence must withhold. Preserve F9 held reservation.
+   Claude challenge before recovery semantics. No immutable deployment/private/
+   task writes; parent integrates.
+2. Review Godel: independently review exact patch/source/tests, especially crash
+   replay, false-flat/foreign adoption and duplicate effects. No new gate/report.
+3. Parent: focused serial changed-path coverage, fresh full
+   scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and default/
+   research/accounting Compose with .env.example. Old056 authority is not fresh
+   authority for changed primary code. Build exact updated native image/SDK.
+   Prepare and install source-bound replacement while preserving SAME slot,
+   input/policy, original basis, counters, pending identities, phase clocks and
+   protected ACL. Preserve old definitions/rollback; skip active owners.
+   Validate actual readbacks. No manual strategy/Task invocation or substitute.
+4. Engine/Steward Noether: independent ONE selectedGRU9409 six-later-cohort
+   diagnostic preparation using frozen original checkpoint/affines, exact dates/
+   costs/baseline/eligibility/finiteforward-evaluation-resource caps. Global
+   reuse remains UNKNOWN: scoped later development, not independent promotion.
+   No retraining completed models or SCORE_ONLY posthoc winner. Use GPU only
+   when useful and source/input/resource ownership is ready.
+5. Data Kant: one offline feature-only six-date packet at
+   A/data/current-h5-later-feature-only-packet-20261024-v1, outputs under M.
+   Freeze canonical<=Sep30 +Oct23wholepage policy before decode, original
+   TRAINaffines/prior63/raw-factor-context/dynamic observed masks; no Oct26mask
+   copy, fitting, held later labels, API, models or imputation. Data300active/
+   900elapsed/0retry is charged once to its eventual diagnostic.
+   Capturec78/refc992 is already installed/readback3bc8 for Oct31 05:10KST;
+   do not repeat Bind/install/enable/start. Future marks not observed yet.
 
-Current Execution preemption: a8047808 source/SYN found last-SELL terminal
-state liveness gap. Aquinas minimal same-native-visit atomic/idempotent closure
-patch + focused negatives; Godel independent review. No extra order/visit,
-clock/capital change or unknown/foreign release. Existing install unchanged;
-Parent fresh serial/full authority, image and exact-identity deployment are
-required before claiming repaired runtime. This does not stop independent
-Research/Data. RankNet original2fits closed; fixed-output publication recovery
-must retain original5a technical failure/debit and never repeat completed fits.
+## Preserve / Complete
 
-## Claim / Risk Boundary
+ONE original shared initial virtual-cash tenth/.005basis/cost-loss-pending
+reservations/max8owned/whole shares/fresh broker facts/exact unknown-request
+reconciliation. No profit-expanded bank/foreign adoption/unknown release/
+clock extension or signal-threshold workaround. Original R5/HGB/Joint17 exits
+remain owned separately. Fees/settlement/net stay unknown without exact proof.
 
-All reused INNER screening is adaptive development, not independent alpha.
-Six potentially later mature dates do not establish global untouched outcomes.
-Current-listing/nonPIT/CA/finality/arrival limitations stay explicit without
-blocking private research or provisional Paper authority.
-ONE original shared initial tenth/.005basis/cost-loss-pending reservations/
-max8owned/whole shares/fresh broker facts/exact unknown-request reconciliation
-remain unchanged. No profit-expanded bank, foreign adoption, reset or skipped
-mass redistribution. Fees/settlement/net remain unknown without exact proof.
-Readiness/source/mock/install/Task exit/missing artifact never means a fill.
-
-## Completion / Continue
-
-Require exact frozen comparison outputs/curves/trial-resource debit,
-independent compatibility/claim checks and a concrete accept-or-reject decision.
-Failed primary criteria can complete this hypothesis, not prove no model can work.
-Do not add another report/gate/agent platform. Claude challenges material
-interpretation; advisory is not authority or an unrelated-lane hold.
-
-Primary056c456a560serial/18795fullPASS25skip/actual8workers/helper0/clean may be
-reused ONLY with exact1384tracked source/control digests unchanged; external
-code needs fresh scoped evidence. Ruff and default/research/accounting Compose
-use .env.example, credential-free uv --no-env-file. Code/control changes follow
-AGENTS fresh serial/full verification. Commit/push, refresh actual stateboards,
-replace this with ONE material next company outcome and continue the active
-long request while ready work exists. Worker-owned due times never require
-foreground market-session waiting.
+Complete only with exact tested code, new image/source-bound actual deployment
+and independent definition/ACL readbacks. Source tests/commit/image alone are
+not deployed repair; natural owner/fills/closure remain unobserved until runtime.
+At material completion verify/commit/push, refresh stateboards, replace NEXT
+with ONE next company outcome and continue the active long request. Lane-local
+faults/due times never require unrelated research hold or foreground sleep.

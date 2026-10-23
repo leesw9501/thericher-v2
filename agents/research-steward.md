@@ -10,10 +10,13 @@ Noether single GPU coordinator. Fixed-rank fusion68093a24 closed3cells/
 177checks/0fits-forward-GPU/alljoined. Next assigned work is paired RankNet
 indicator/score-only ablation source preparation at
 A/research/current-h5-ranknet-indicator-ablation-development-20261024-v1.
-Source5a2ae563/actualcoordinator45168/start134372642347473937 began21:23:54UTC,
-native4CUDAupdates PASS. SCORE_ONLY fit78epochs/selected54/1014updates/237.11s
-retained (peak Torchreserved90MiB). Noether owns remaining INDICATOR/closure;
-do not duplicate or interpret this as final paired finance outcome.
+Source5a2ae563 coordinator45168 completed2fits78/25epochs/selected54/1/
+1339updates, native4CUDAupdates/cold2, peakTorchreserved90MiB perfit.
+Original publicationfailure retained; continuation85eb/237e finished original
+6cells with0refits/SCORErepeat,onlyINDICATOR43forwards. COMPLETE_FAILgrowth,
+907.553172cumulativeactiveupper/alljoined/GPUleaseReleased. No GPU job now.
+Next Noether prepares selected9409sixlaterdiagnostic,0retraining; wait only its
+exact Data dependency while Execution repair/Data feature packet proceed.
 21:20UTC sample RTX4090free21838MiB/util2%; no resource-authority hold.
 No closed campaign is represented as running.
 

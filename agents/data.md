@@ -34,8 +34,13 @@ enable/readback; independent3bc826c4 at
 A/data/current-h5-future-close-capture-reference-bound-preparation-20261024-v1/parent-installed-readback-r1/CONSUMER.json.
 TaskReady/0instances/nextOct31 05:10KST, quiet one-shot. Do not repeat installer
 or manually start. Source A/data/current-gru-h5-postclose-marks-20261030-v1.
-Kant now tiny historical feature-only build-contract readiness from existing
-da03/b8b8 metadata; no market payload/held later labels/new acquisition/model.
+Historical feature-only build readinessd151c911 is complete with six dates,
+prior63/sourcepolicy/unchanged9409affines and no numeric payload intake.
+Kant now owns NEW actual offline feature-only materialization:
+A/data/current-h5-later-feature-only-packet-20261024-v1.
+Freeze canonical<=Sep30 +Oct23wholepage policy, originalaffines/raw-factor-
+context/observedmask before decode.300active/900elapsed/0retry; outputM,
+no targets/heldlabels/refit/forward/GPU/API/imputation. Not yet actualready.
 Preparation:
 A/data/current-h5-future-close-capture-preparation-20261024-v1
 Consumere79e3986;11PythonSYN/18Scheduler mocks/Ruff/ClaudeSOUNDlimits.

@@ -10489,3 +10489,20 @@ duplicate project campaign, not inferred from a process name. Policy/source
 changes are not evidence that training actually started or deployed.
 D:/thericher-v2/model-artifacts/review/operator-gpu-priority-20261022-v1/claude/RESPONSE.txt
 Raw SHA256 7c78e80657c649fb6baed88b32d6acde9e80bd81380045db96ce9179e7792b82.
+
+## 2026-10-24 KST - Small Native Handoff Smoke Inside Existing Budgets
+
+Consumer: prevent avoidable SDK/import-order and forecast-role publication
+faults in the bounded data -> model -> replay loop. For changed handoffs use
+one tiny native producer/consumer synthetic check with actual role/file/schema
+names, not another market evaluation, report or approval. Reuse only exact
+producer/consumer source, resolved SDK/bootstrap/import-order and schema
+coverage. Preserve allowlisted failure stage/source frame/category, never raw
+exception/payload values. Charge existing caps; unrelated lanes continue.
+
+Claude REVISE identified insufficient byte/schema-only reuse; adopt its
+producer/consumer/resolved-import constraint, not a claim of agreement or a
+global gate. Advisory evidence:
+D:/thericher-v2/model-artifacts/review/current-native-handoff-smoke-rule-challenge-20261024-v1/RESULT.json
+SHA256 589edf048ad1ebff756d8a7dbebd74ed6e0add292e93a527a111ebd1ed8cc26c.
+No old experiment is rerun or regraded.

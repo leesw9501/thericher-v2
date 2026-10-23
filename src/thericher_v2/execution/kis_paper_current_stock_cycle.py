@@ -722,30 +722,94 @@ def _exit_decision_at(record, pointer, session, earliest, eligible, at):
     return at
 
 
+def _owned_terminal_flat(record, binding, replayed, proofs, projection):
+    owner_ids = {
+        budget._stock_owner_id(v["instrument_binding_ref"]) for v in record["owners"].values()
+    }
+    stocks = [s for s in projection.stocks_by_owner if s.owner_ref in owner_ids]
+    return (
+        {s.owner_ref for s in stocks} == owner_ids
+        and all(s.quantity == 0 for s in stocks)
+        and all(
+            ref.run_id in binding["terminal_evidence"]
+            and budget._terminal(replayed[ref.run_id], proofs.get(ref.run_id))
+            for owner, _ in budget._owners(binding)
+            if owner.owner_ref in owner_ids
+            for ref in owner.state_refs
+        )
+    )
+
+
 def _completed_flat(root, record, at):
     """Validate retained native ownership, never claim a fresh broker snapshot."""
     with _shared(root):
         binding = _book(root, record["account_ref"], record["basis_ref"])
         _owned_registry(record, binding)
         _, replayed, proofs, projection = _projection(root, binding, at)
+        _check(
+            _owned_terminal_flat(record, binding, replayed, proofs, projection),
+            "cycle_owned_not_flat",
+        )
+
+
+def _complete_h5_exit(root, record, pointer, proof, at):
+    """Close the exact last H5 SELL using durable native facts, not another visit."""
+    with _shared(root):
+        _check(
+            record.get("profile") == StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value
+            and proof.side == "sell"
+            and record["pending"] is not None
+            and record["active"] is not None
+            and record["active"]["input_ref"] == proof.input_ref,
+            "cycle_request_changed",
+        )
+        _model_record_input(
+            record, proof.input_ref, record["policy_ref"], StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+        )
+        binding = _book(root, record["account_ref"], record["basis_ref"])
+        _owned_registry(record, binding)
+        _check(
+            {
+                symbol
+                for symbol, entry in binding["stocks"].items()
+                if any(plan["input_ref"] == proof.input_ref for plan in entry["plans"])
+            }
+            <= set(record["owners"]),
+            "cycle_owner_missing",
+        )
+        current, _ = _proof(root, binding, record["pending"])
+        _check(
+            replace(current, binding_ref=proof.binding_ref, owner_refs=proof.owner_refs) == proof,
+            "cycle_request_changed",
+        )
+        execution._scope(root, current, at)
+        _, replayed, proofs, projection = _projection(root, binding, at)
         owner_ids = {
             budget._stock_owner_id(v["instrument_binding_ref"]) for v in record["owners"].values()
         }
-        stocks = [s for s in projection.stocks_by_owner if s.owner_ref in owner_ids]
+        owners = [owner for owner, _ in budget._owners(binding) if owner.owner_ref in owner_ids]
+        runs = {ref.run_id for owner in owners for ref in owner.state_refs}
         _check(
-            {s.owner_ref for s in stocks} == owner_ids and all(s.quantity == 0 for s in stocks),
+            bool(owner_ids)
+            and {owner.owner_ref for owner in owners} == owner_ids
+            and all(owner.state_refs for owner in owners)
+            and current.run_id in runs
+            and current.run_id in binding["terminal_evidence"]
+            and budget._terminal(replayed[current.run_id], proofs.get(current.run_id)),
             "cycle_owned_not_flat",
         )
-        _check(
-            all(
-                ref.run_id in binding["terminal_evidence"]
-                and budget._terminal(replayed[ref.run_id], proofs.get(ref.run_id))
-                for owner, _ in budget._owners(binding)
-                if owner.owner_ref in owner_ids
-                for ref in owner.state_refs
-            ),
-            "cycle_owned_not_flat",
-        )
+        if not _owned_terminal_flat(record, binding, replayed, proofs, projection):
+            return False
+        _check(proof.input_ref not in record["completed"], "cycle_checkpoint_invalid")
+        # Publish pending/active/completed together while custody is still locked.
+        closed = record | {
+            "pending": None,
+            "active": None,
+            "completed": [*record["completed"], proof.input_ref],
+        }
+        _save(pointer, closed)
+        record.update(closed)
+        return True
 
 
 def _recover(record, root, paths, client_factory, clock, pointer=None):
@@ -887,6 +951,12 @@ def _recover(record, root, paths, client_factory, clock, pointer=None):
         cancellation_proofs=proofs,
     )
     if result.status == "reconciled":
+        if (
+            proof.side == "sell"
+            and record.get("profile") == StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value
+            and _complete_h5_exit(root, record, pointer, proof, require_utc(clock()))
+        ):
+            return CurrentStockCycleOutcome("complete", "policy_owned_flat", 1)
         if proof.side == "buy":
             record["active"]["entries_done"].append(pending["symbol"])
         record["pending"] = None
@@ -1023,7 +1093,12 @@ def run_kis_paper_current_stock_cycle(
                         if scoped
                         else _recover(record, root, paths, client_factory, clock)
                     )
-                    _save(pointer, record)
+                    if not (
+                        profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+                        and result.status == "complete"
+                        and result.reason == "policy_owned_flat"
+                    ):
+                        _save(pointer, record)
                     return result
             at = require_utc(clock())
             if expected_input_ref is not None or expected_policy_ref is not None:
@@ -1273,7 +1348,12 @@ def run_kis_paper_current_stock_cycle(
                 if scoped
                 else _recover(record, root, paths, client_factory, clock)
             )
-            _save(pointer, record)
+            if not (
+                profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+                and outcome.status == "complete"
+                and outcome.reason == "policy_owned_flat"
+            ):
+                _save(pointer, record)
             return outcome
     except _CycleFault as error:
         return CurrentStockCycleOutcome("unavailable", str(error), leg_count)
