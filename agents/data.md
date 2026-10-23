@@ -1,181 +1,67 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 04:17KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own source/storage/calendars/features/availability, not account/orders/model
-selection. Parent sharedMD/Git; AGENTS.md owns authority.
+2026-10-24 06:06KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own source/storage/calendar/availability/features; not account/order/model choice.
+AGENTS.md authority; Parent shared MD/Git.
 
-## Current Actual / Next Consumer
+## Current Consumer / Actual Status
 
-Current consumer is provisional GRUH5 Oct26OPEN->Oct30CLOSE. Frozen typed
-materializer591a86d3/6e98261d and new native image81373d2a/f3e5c658 are CPU/SYN
-ready, NOT actual accepted dated input. Both require original69 raw/factor/
-context/full100 axis and previous-close availability, use existing TRAIN affines
-once; no silent69->68, Volume67 mask reuse, labels or outcome imputation.
-Existing installed05:10KST refresh below remains its sole current Data owner.
-No extra collector, API call or data-readiness claim from image/SYN success.
-Parent19:05:09UTC changed ONLY WakeToRun false->true, with original XML/ACL
-backups and unchanged source/action/time/cursor. Ready/next05:10KST remains
-installation, not acquisition or guaranteed OS wake. Consumer3a306e71 at
-A/data/current-oct26-input-refresh-wake-readiness-20261024-v1/CONSUMER.json.
-Parent connects existing exact Data/point/reference readers; no new reader may
-substitute time/latest-file inference for the immutable accepted chain.
+GRU9409 H5 Oct26->Oct30 input is now ACTUAL, not a waiting collector:
+A/data/current-oct26-model-input-refresh-20261023-v1.
+Source2c91d1a7 naturally completed20:10UTC,70GET1POST/70accepted/clientclosed/
+alljoined/RUNTIME-FINAL READY. Raw/factor/context original69/full100,
+raw63x6/factor10/context9, previous-close Oct23. No silent mask shrink/imputation.
+Parent ONLY WakeToRun repair3a306e71 preceded actual acquisition; no Data rerun.
 
-Next-session metadata audit COMPLETE:
-A/data/current-next-session-data-readiness-20261023-v1/FINAL-CONSUMER.json.
-Existing kernels/collector/calendar/TRAIN affines reusable; current evidence is
-through Oct22 close ONLY. Known existing schedules do not establish the full
-69NAS+SPY refresh owner. Oct26 input needs a NEW dated cursor/whole pages:
-BYMD20261023, prior63Jul28..Oct23, entrye4984/Oct26 13:30UTC, H20Nov20 21UTC.
-Actual installed Oct23 20:10UTC owner is recorded below; no provider-finality
-or fresh-data inference follows from installation.
+Original strict host reader rejected four legitimate /out metadata references.
+Adapter98f67e92:
+A/data/current-oct26-host-namespace-adapter-20261024-v1.
+Exact mount-attested ref COPIES only; rawDTO/payload/digests unchanged.
+Actualreadbacka15512aa,6SYN/AST and independent18checks/34438e8e.
+Original policy591a retained; technical adapter must be separately source-bound.
 
-Kant completed current-oct26-model-input-refresh-20261023-v1: Source2c91d1a7/
-consumer13603b66/deployment80f486ff. Exact one-shot task
-thericher-kis-paper-oct26-model-input-refresh-20261023-v1 installedReady/neverrun
-Oct23 20:10UTC /Oct24 05:10KST, quietpythonw/CREATE_NO_WINDOW children.2817native/
-38mock/70metadata/32Scheduler mock checks;62old definitions unchanged. No API,
-credential, market decode or manualTaskstart in preparation/install. Runtime
-clocks unstarted. Exact RUNTIME-FINAL READY plus RUNTIME-CONSUMER/DTO/source/
-independent-verifier/alljoined links must precede consumption; installation is
-not data freshness. Parent independently rehashed all36Source refs unchanged.
-Reuse immutable qualified r3/kernel/affine parts, no expired old dispatch,
-old62+new1 splice, duplicate collector or new platform. Future volume membership
-is UNKNOWN; general complete-feature mask must not hardcode67 or imply that
-Joint raw/context/factor shares Volume exclusions. Engine owns new date forwards.
+Sole model forward is Engine's f65 call20:33. It later failed publication
+because legacySDK loaded before CoreSDK, not missing Data/changed timestamps.
+Retained-output publisherb2bc produced typedinput181e/consumerbd00 and
+referencec992 with0new Data/model calls. Exact inference clocks not retained;
+bounds_not_exact stays explicit. Parent actualcandidate1c30/nativeb9.
 
-Next-date SAME learned17 source/CPU preparation741444b2 at
-A/research/current-next-session-joint17-forward-preparation-20261023-v1/CONSUMER-V2.json
-is complete, NOT a new market point. Its MASK-SCOPE.md records that the current
-Data/forward contract requires original69 raw/factor/context plus joint_date_known;
-full100mask does not authorize a silent dynamic69->68 change. Required missing
-slot makes that point NOT_READY/input failure, not no-signal or zero imputation.
-Repair exact same-date/63feature slots or freeze a separately reviewed future
-contract. Do not rerun the completed CPU proof or fabricate Oct23-close data.
+## Current Owned Next Package
 
-Prospective marks adapter Source3205f306/Consumerdbf5d227 ready17SYN/Ruff/
-ClaudeSOUNDlimits at
+Kant: bind existing capture-only sourceea2e7403 to actual pre-entry referencec992,
+prepare exact final source/mock/install-readback commands under disjoint root.
+Do NOT install/startTask/collector/callAPI while Parent finishes native readiness.
+Preparation:
+A/data/current-h5-future-close-capture-preparation-20261024-v1
+Consumere79e3986;11PythonSYN/18Scheduler mocks/Ruff/ClaudeSOUNDlimits.
+Marksadapter3205f306/dbf5d227:
 A/data/current-h5-prospective-marks-adapter-preparation-20261024-v1.
-Exact retained capture pages -> opens[100]/closes[5,100], original69/31NaN;
-no caller arbitrary arrays/actual prices/API/measurement. Old capture host
-ENTRY_ASOF_EXPIRED_NO_START makes BYMD-only reuse invalid. Kant prepares
-separate capture-only successor for Oct31postclose, no install/call now.
-Actual preentry reference and capture producer remain dependencies, not entry
-gates or PIT/finality/netPnL qualification.
+17SYN; exact retained page chain -> original69 opens/fivecloses,31NaN.
+Only Oct31 05:10..05:15KST,70pages/BYMD20261030. No feature/training stage.
+Old host ENTRY_ASOF_EXPIRED cannot be bypassed by a BYMD edit.
+Future capture/marks are NOT yet observed and never a gate on Paper entry.
+No provider finality/PIT/independent-alpha/net PnL claim from repeated marks.
 
-## Reused Historical Inputs / Closed Work
+## Reusable Data / Claim Limits
 
-Chronological fusion prefix Data is READY, not merely a proposed source:
+Chronological prefix views are ready:
 A/data/current-h5-chronological-fusion-prefix-views-20261024-v1.
-Source56e5685a/Consumerb5852786/Manifest ea8ca283/Delivery1cff5854.
-Actual1.70GB under M/us_equities/research_inputs/current-h5-chronological-fusion-prefix-views-20261024-v1:
-11physical views/12fresh prefix affines, four FIT prefixes and chronological
-innerCHECK, 420+420+416 OOF dates/251 mature five-day phase rows. Four target
-boundary purges stay NaN; original three TRAIN files unchanged. OOF labels
-are separate; expert allowlist excludes original wholeTRAIN/heldOOFlabels.
-No model/financial/GPU/API calls.10SYN/908independent/66cold checks/alljoined;
-independent reviewd0a415c4 found no defects across741checks, with named limits:
-no coefficient recomputation or actual future container mount attestation.
-Data297.220779 plus feasibility191.012160 active debit charged ONCE to the
-new Engine9-fit family; this is not independent evaluation/Paper input.
-
-Memory thin packet f25398a3 COMPLETE at
-A/data/current-mature-memory-h20-input-20261023-v1/CONSUMER.json:
-TRAIN134187 existing bank refs,32feature-only screen dates/2368queries including
-19purged feature-tail dates. Strict bank target exit before query previous
-regular close, ties shared; no label copies or Data distance/model/GPU work.
-304native+172host checks/16refs/alljoined/new12.476417active, prior37.992288
-linked once. Engine actual memory4f05e335 subsequently FAILED MSE/growth;
-Data readiness is not a qualified forecast/performance claim or a ready rerun.
-
-ExactH5view READY28d7ed8f:
+Source56e5685a/consumerb5852786/manifest ea8ca283/reviewd0a415c4.
+1.70GB on M,11views/12prefixaffines/251OOFphase rows; labels separate,
+expert allowlist excludes wholeTRAIN/heldOOFlabels. Actual expert9fits consumed.
+H5 original view28d7ed8f:
 A/data/current-joint-moe-h5-target-view-20261023-v1/CONSUMER.json.
-DTOceaeef36/ABIdd33bdd2/Source737cbfef. ActualTRAIN2762dates135297rows,
-CHECK1098106 (4clockpurges/10endpointunknown retained), INNER43-3295/all9complete
-five-close cohorts/global4903+5*k. 47107checks21postsealrefs/alljoined/
-11activeupper INSIDEData300/nativenextproof300 unchanged. MarketbytesM.
-This Data DID decode canonicalOHLC/materializeH5/heldINNER; copied Source-only
-sentence in limitations is erroneous, tiny immutable metadata correction only.
-No H20payoff/exit/mask reuse, newfeatures-affines/imputation/API/models/GPU.
-Fit allowlist d7f00e84 excludescanonical/heldINNER; raw-clipped features and
-TRAINaffines exact once. Nativephase1b8608018 passed; Parentreleased Socrates
-actualH5fit21:43UTC/Source479b8923. Data ready is not performance qualification.
+Exact frozen fitpacket/affines available; not instructions to reacquire.
 
-Averroes completed current acquisition and feature family:
-A/data/current-volume-gru-next-session-input-preparation-20261023-v1/FAMILY-CLOSURE.json
-376c94cf. Actual collector54380 start20:15:49UTC/alljoined/0active;70GET1POST/
-70wholepages6993rows/cf802567/88.02s, no retry. Raw bytes M only, no rawoutput.
-Prior63 Jul27..Oct22, actualavailability20:17:17.392UTC/inputasof20:20:12.353419.
-NativeMODP1/GUBN0, full100axis/base-prefeature69, no old-current row splice.
-Raw/factor/context69known; Volume67. Slots44/68 observed5bar nativeactivitysum0
-makesQ undefined;20/63all69known. Not API/missingprice/permanentabsence or proof
-of economic illiquidity. ORIGINAL fixed69 consumer staysWHOLE_MATCHED_DATE_UNKNOWN.
+Later-outcome metadata da03a132/b8b86ce1:
+A/data/current-gru9409-later-outcome-readiness-20261024-v1.
+Six mature later phase entries are potentially available, but307registry checks
+do not cover every recent family: global untouched status UNKNOWN. No numeric
+LATER labels/forwards/financial cells opened by that metadata probe.
+Historical feature-only masks and original affines must be rebuilt correctly
+for a new diagnostic; do not copy Oct26 known69 mask into historical dates.
 
-Exact consumer bindings:
-- CURRENT.features.npz M/us_equities/research_inputs/same-family/current-features,
-  hash7fd5580a; CURRENT-DTO27536bd5/CURRENT-FEATURE-SOURCEa26326dc.
-- Historical pureABI0b627113, actualindependentverifyc9dc7b67/730predicates,
-  denominator55786b88; currentpredicates1588/finalmetadata14/postseal13.
-- Same NYSE pandas_market_calendars5.4.0 CALENDAR0bfcc405, exact4992retainedprefix,
-  extendedDec31. Oct23global4983/H20exit5002 Nov19CLOSE21:00UTC.
-- R3Ready7313038c/collector6bfc4536/199newSYNchecks+5509reused, no exception text/
-  bodies in output. R2proofs retained. Scoped newclient token60s/default300
-  unchanged; existing actual atomicdirectory+legacylocks, no age-reclaim.
-- Conservative finalfamily843/2400active, elapsed3838.9/7200; old181/source661
-  chargedonce. Allnative/collector/feature/verifier actors joined, no models/labels.
-
-Parent chose EXPLICIT new pre-SCORE complete-feature consumer after challenge:
-base-prefeature69 retained; GENERAL base & raw & factor & context & volume_known
-gives67/full100axis33masked, identical sharedmask5ee8539b before both forecasts.
-Old69failure is not passed/rewritten. No epsilon or further fetch.
-New bridge bff318f2/522e6f48/memberfb335cfd, point61d11d44/inputf2a2948b already
-published by Engine; Data did not select stocks by scores or produce orders.
-No active collector inferred from this board. Follow current assigned source/
-metadata package only; do not rematerialize complete H5/current acquisition.
-
-Immutable scope correction7b4183d8 at same H5root CONSUMER-SCOPE-CORRECTION.json
-completed without payload changes. H5modelc359420f nowclosed, not running.
-Oldaction-awareETF recipe actuallyclosedNOT_READY6d06ed20 with0marketdecodes/fits:
-currency/share/collision units not proved. New Source4b33debf/74fd27c0/2c406f5b
-uses documented splits and PRICE_ONLY(no dividends) component. Actual packet
-acec097d at A/data/current-liquid-etf-price-only-input-20261023-v1/CONSUMER.json:
-TRAIN4523/CHECK501/INNER1381/all3known/146221native+76hostchecks/alljoined;
-aggregateData23.076110seconds inclold8.788339once. Raw/arrays M only; exact
-TRAINaffine beforelabelmasks, heldINNER physicallyabsent fromfit allowlist.
-No historicalarrival/PIT/totalreturn/qualifiedeconomic claim. Engine twoCPUfits
-and21cellreadoutcomplete; noDatarematerialization to fillGPU or missingpaperwait.
-Unknown action units constrain that old consumer, not company/Paper authority.
-
-## Retained Inputs / Closed Cursors
-
-Completed fitpacket435a3a6e at
-A/data/current-gap-rank-h20-fit-input-20261023-v1/CONSUMER.json: actual six
-source leaves/FACTOR10+CONTEXT9 affines from ABIa5027850 verified. TRAIN2747dates/
-134187rows/3471546pairs, CHECK75/5558/203162pairs,19FP32 features/rawFP64 targets.
-17391native+149hostchecks/26independently verified refs/alljoined; Data400subtotal
-37.992288 inclprior20.849017 once. Derived bytes M/research_inputs only; no
-INNER/canonical/API/credentials/models/GPU. Memory consumer may reuse the exact
-packet without recreating it; old models/outcomes are not fresh replication.
-
-Modern context46861c1b/ABIa5027850: TRAIN2747dates134187rows/CHECK75-5558/
-INNER43-3295/threeH20cohorts/19tailpurges/custody575+317checks.
-Volume packc0a88302:58743predicates/301.376801upper/alljoined; exact later
-CHECKjoin72dates5333rows passed63, not original46..75 estimate.
-Fresh oldHGBa76460b4:69known31unknown throughOct21;31=empty1/failure1/
-unattempted29, not permanent source-limited. Expired point never resurrected.
-
-Historical100 continuation COMPLETE83closed17unavailable/87934newbars/
-0remaining/alljoined: A/data/current-kis-modp1-historical100-continuation-20261022-r2/FINAL.json.
-No completed-cursor rerun. SEC wwwmap/direct-AAPL403 close only their exact scopes,
-not allSEC/no-free-data/globalresearch authority.
-
-## Durable Scope / Recovery
-
-Static currentNAS/nonPIT/currentvintage/MODP1/CA/TR/arrival/finality limits remain.
-Elapsed session is not providerfinality; current capture is actual availability
-upperbound, not historical arrival. Undefined data is never imputed.
-Limits apply to named consumers, not independent Paper/other valid input branches.
-Source-attest actual marketcache/token writers at dispatch; unknown owner defers
-only its scope. Generic sharedquietlauncher/intraday-head can include SPY Paper,
-not blanket market-only. Reader custody12410a15 scopes actual private writers.
-No KIS_LIVE_* or secrets/private/raw output. Market M/models A;15%free floor.
-Detailed raw evidence/failed attempts/history stay immutableA/Git, not journals.
+Current_listing/nonPIT/corporate-action/finality/arrival limits constrain claims,
+not private exploratory/Paper authority. Missing required input is not imputed.
+Detailed historical acquisition/throughput/cursors stay exact artifacts/Git;
+HANDOFF/RUNBOOK contain current production dependencies and commands.

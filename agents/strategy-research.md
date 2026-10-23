@@ -1,36 +1,37 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-24 04:17KST. A=D:/thericher-v2/model-artifacts.
-Own source-grounded mechanisms/pure kernels/consumable proposals, not final
-fit/selection or deterministic broker risk. Parent MD/Git; Engine contracts.
-AGENTS.md owns policy. A proposal is not an active fit or qualified alpha.
+2026-10-24 06:10KST. A=D:/thericher-v2/model-artifacts.
+Own source-grounded mechanisms/pure kernels/consumable hypotheses,
+not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
-## Current Package / Consumer
+## Current Package / Concrete Consumer
 
-Objective audit was consumed by phaseTCN6215d1ed/e81d1699:59epochs/selected35,
-growth-.148271%/DD4.162968% at10bp, COMPLETE_FAIL/alljoined. SlowGRU1056b4d3e79
-also closedFAIL. Neither is a ready rerun or causal explanation.
+Godel closed short final recovered-publication challenge86589cb8,
+including Claude falsification-first review. Inspect b2bc fixed-output recovery/
+sameweights/provenance/bounds and actualcandidate1c30/nativeproofdcfa before
+Parent release/readbacks subsequently completed7c2bb723. No private/raw
+evaluation values or model/Task/API work in this review.
+A/review/current-h5-final-dated-readiness-20261024-v1.
 
-Fixed-allocation bound audit6bc88ba5 at
-A/research/current-fixed-allocation-fusion-bound-audit-20261024-v1:
-40SYNtests/Ruff/ClaudeAGREElimits/alljoined. Under exact aligned fractional
-funding/linear costs/marks, constant convex allocation growth cannot exceed
-its best component; risk may improve. Nonlinear admission/time-varying gates
-break the premise. No actual campaign attestation or old F08 regrade.
+Noether consumes fixed-score-rank kernel49759d12,12SYN/Ruff:
+A/research/current-h5-fixed-score-rank-fusion-preparation-20261024-v1.
+Fixed.5rawGRUfinal+.5SCOREMLP ranks before SAME TopDecile, no expert refit.
+Exact compatibility/newfinite3cell contract precedes actual comparison.
+This is not constant allocation blending; fixed-allocation bound6bc8 alone
+cannot refute it. CurrentTopDecile requires25eligible, not an invented5.
 
-Chronological expert/gate mechanism is now consumed1d1db187/5447d9f8:
-9fits/21cells/alljoined, Gate-.1221%growth/.7843%DD at10bp versus
-rawGRU+.5037/1.4682,HGB-2.9058/3.1854. Cash6/GRU3 of9cohorts,
-growthFAIL/lowerexposure notalpha. No old criterion regrade or Paper swap.
+Consumed new results: gate9fit1d1db187 growthFAIL, stockMLP3fit2620331b
+improvedfeatureonly butrawGRUreplacementFAIL. Technicalrules10d0055f primary
+equalrankFAIL; exploratory Bollinger+1.302%/.758% at10bp is a distinct
+hypothesis, NOT retroactive winner/independent alpha/Paper swap.
+New GPU proposal should add a falsifiable mechanism, not architecture-name
+novelty or repeat completed models. Engine owns targets/chronology/costs/caps.
 
-Next actionable hypothesis is stock-level SCORE fusion, not another cohort
-winner tree. Noether prepares Ridge/MLP/feature-only matchedMLP on sealed OOF
-expert predictions+factor/context. Pre-rank score composition can change asset
-ordering, so the constant-allocation convex bound does not prove impossibility.
-No new fits yet; exact chronology/OOFaffine/targetpurge/finite Source/native
-proof and strongestkill precede numerical work. Godel current independent
-dated-qualifier review is an invoked capability, not a new durable team.
-
+Actual GRU9409 datedinput181e/referencec992 now ready from sole forward and
+fixed-output recovery, not another fit. Parent native release/readbacks closed.
+Turnoveraudit b8dd0f36 already sealed137SYN/ClaudeSOUNDlimits, reattested only:
+cash T=A+V increases with exit gain; costs already charged. New contracts may
+separate raw turnover or entry-valued churn; old failures remain unchanged.
 ## Consumed Mechanisms / Do Not Duplicate
 
 - SharedLag63-FiLM proposal772776ed:17CPU checks/own code/source references;
@@ -68,10 +69,9 @@ dated-qualifier review is an invoked capability, not a new durable team.
 
 ## Next Data / Claim Boundary
 
-Selected provisional GRU9409 Paper input remains unchanged. Existing installed
-Data refresh05:10KST supplies actual Oct23-close evidence before H5 dated point.
-Prospective-reference5512508f/c1ff1cf8 is a prepared onecohort GRU/uniform
-pre-entry reference, not actual future outcome/Paper PnL or independent alpha.
+Selected provisional GRU9409 Paper input remains unchanged. Data70/pointinput181e
+and actual pre-entry referencec992 are complete; future outcomes remain unknown,
+not Paper PnL or independent alpha.
 No source/fit/profitability gate suspends independent delegated Paper work.
 Proposals become one executable finite experiment or rejection, not a reading
 list/per-indicator MD/new agent platform. Engine owns numerical interpretation.

@@ -1,63 +1,66 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 04:17KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own data/targets/features/fits/replay/ensembles, not deterministic broker risk.
-AGENTS.md owns authority; Parent shared MD/Git. Completed fits are not ready jobs.
+2026-10-24 06:10KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own targets/features/fits/replay/ensembles, not deterministic broker risk.
+AGENTS.md authority; Parent shared MD/Git. Completed fits are not ready jobs.
 
-## Current Candidate / Deployment Consumer
+## Current Candidate / Actual Consumer
 
-Selected provisional Paper candidate remains unit-simplex GRU9409a2f4,
-not a newly selected seed/TCN/blend. This is execution learning, not profitability
-promotion. Primary explicit H5 profile770436c/authority056c456a is implemented.
-Typed materializer591a86d3/Consumer6e98261d under
-A/research/current-unit-gru-h5-typed-point-preparation-20261024-v1 uses original
-TRAIN affines/raw63x6/factor10/context9/full100/required69, unknown31zero.
-One CPU restore/SYN forward only; actual dated point NOT_DONE.
+Selected provisional GRU9409a2f4 remains unchanged. Actual Data70pages/closed,
+sole f65 CPUrestore/forward20:33 completed. Original joined exit2 publication
+fault (Data imported legacy SDK before Core SDK) is preserved.
+Fixed-output publisherb2bc4ce2 produced typedinput181ebc3b/consumerbd0058bc:
+A/research/current-h5-retained-point-publication-recovery-20261024-v2.
+0new restores/forwards/fits; same binary64weights/full100/known69/31zero,
+original591a policy/TRAINaffines/raw63x6/factor10/context9.
+Exact inference instants not retained: explicit enclosing bounds only.
+Old cb5 point Task disabled before inference; never run original FUTURE-COMMAND.
 
-Existing Data refresh Oct24 05:10KST /Oct23 20:10UTC must supply exact accepted
-Oct23-close terminal/DTO/source/verifier/alljoined chain; current source Oct22.
-Run exact FUTURE-COMMAND once afterward, no newfit/labels/candidate selection.
-Separate native image81373d2a and actual SYN transport1fe7e59e passed; no actual
-provider fill/private/Task proof. Parent connects actual dated controller.
-H5 entry Oct26 13:40 proxy/exit Oct30>=19:45UTC != research OPEN/CLOSE;
-cap8/whole shares/.005originalbasis, no skipped-mass redistribution.
+Actual pre-entry referencec992c47b:
+A/research/current-gru-h5-prospective-reference-preparation-20261024-v1/REFERENCE.json.
+GRU vs uniform same69/onecohort/six1-5-10bp cells. Future marks not observed.
+Actual dated candidate1c30/nativeb9/input181e/sourcebridge3a8c already built;
+native actualproofdcfab/owner71mock72ff pass. Actual release8b29 and quiet
+EXIT-first/ENTRY install/readbacks COMPLETE7c2bb723, not runtime/fill proof.
+H5 Oct26 13:40UTC entry/Oct30>=19:45 exit proxies != research OPEN/CLOSE,
+max8owned/whole shares/.005originalbasis/sharedtenth/F9held/noredistribution.
+Operational learning, not profitability promotion/independent alpha/net PnL.
 
-Future reference5512508f/c1ff1cf8 at
-A/research/current-gru-h5-prospective-reference-preparation-20261024-v1:
-GRU9409 vs uniform same69, onecohort/six1-5-10bp cells,9SYNtests.
-Freeze actual reference before entry after Data/point. No actual reference yet.
-Later measurement needs retained entry OPEN+five CLOSEs/capture metadata.
-Reference is not realized native fills/net PnL/PIT/independent alpha.
+## Research / Actual Next Action
 
-## Current Research / Actual Next Action
+Noether now owns fixed-score-rank fusion preparation49759d12 -> compatible
+finite3cost-cell comparison. Combine stored raw-GRUfinal and SCOREMLPranks
+BEFORE fixed TopDecile, not constant allocation blend. Freeze exact keys/
+availability/payoff/costs/baselines and cap before numerics;0expertrefit/forward.
+Then autonomously prepare/start ONE useful bounded next GPU campaign with
+native optimizer/checkpoint/chronological validation/early stopping proof.
+No artificial GPU utilization or completed model repeat.
 
-Chronological expert/gate continuationfd6ce8aa/Consumer1d1db187/Delivery5447d9f8
-is COMPLETE_FAIL:9marketfits/21cells, four GRUs epochs/selected47/23,29/5,
-24/0,27/3,total15110updates;4HGBfixed128+depth2gate1. At10bp Gate
--.1221%growth/.7843%DD, rawGRU+.5037/1.4682,HGB-2.9058/3.1854.
-Gate9cohorts cash6/GRU3; growthfailed, lower exposure is not alpha.
-256checks/107pins/alljoined/leaseReleased;2162.283734of14400activeupper incl
-old1102.280426once. Original0e7a metadata failure/debits preserved; recovery
-added0SYNfit/updates. No completed training repeated/Paper model changed.
+Recent CLOSED adaptive reused-data results, growth/DD% at10bp EACH leg:
+- Chronological9fit1d1db187/5447d9f8:4GRU/4HGB/depth2gate,21cells,
+  15110GRUupdates. Gate-.1221/.7843 vsrawGRU+.5037/1.4682,
+  HGB-2.9058/3.1854. GrowthFAIL, alljoined/released.
+  A/research/current-h5-chronological-expert-gate-technical-continuation-20261024-v1.
+- Stock-score3fit2620331b/a3e6b000: SCOREMLP+.0429/.8944,
+  matchedfeatureonlyMLP-1.0013/1.5447, Ridge-.9210/1.2745.
+  MLP29/32epochs,selected5/8,793updates. Improved ablation, rawGRU
+  replacementFAIL; alljoined/released,0expertrefit.
+  A/research/current-h5-oof-score-fusion-development-20261024-v1.
+- Rules10d0055f/b99cf74e: equalrank primaryFAIL; trend/reversal/RMStrend
+  negative; Bollingermeanrevert+1.302/.758 exploratory, not retroactivewinner.
+  15newcells/9cached/0fits/GPU/alljoined.
+  A/research/current-h5-technical-rule-score-development-20261024-v1.
+Cash-notional-turnover audit b8dd0f36 closed137SYN/ClaudeSOUNDlimits.
+For matched entry A, exit V and legfee c: T=A+V, G=(1-c)T-2A,fees=cT.
+Better exit mechanically increases cash turnover. NEW campaigns report it
+separately or use entry-price T0=2A for churn; never double-subtract costs or
+regrade old failures. Preserve original criteria/debits.
 
-Noether now owns NEW stock-level score-fusion preparation at
-A/research/current-h5-oof-score-fusion-development-20261024-v1.
-Reuse sealed expert OOF/final forecasts0expertrefits/forwards. Propose3fits:
-Ridge21features, small MLP21, matched same-initial MLP with two score channels
-zeroed (feature-only ablation). Inputs2expert scores+factor10+context9,
-predictions combined BEFORE fixed TopDecile allocation. Chronological
-metaFITfirst200/metaCHECKlast51 of251phase dates, exact target-maturity purge
-and FIT-only affine required before source freeze. New finite4800active/
-14400elapsed/native solver/checkpoint proof/trials/cells/strongestkill to be
-frozen before numerics; no current market/GPU fit claimed. Adaptive reused
-data, no independent alpha or global Paper profit gate.
-
-Ready Data56e5685a/b5852786/ea8ca283,12prefix affines/11views/251OOFphase rows.
-Expert leaves exclude original wholeTRAIN and heldOOFlabels; reviewd0a415c4
-PASS with limits. Future actual GRU9409 point belongs only to05:40owner.
-Fixedallocation bound6bc88ba5 applies to constant aligned allocations, NOT
-nonlinear score fusion or time-varying gates. Old F08 failure not regraded.
-
+PrefixData56e5/b585/ea8c remains ready:12affines/11views/251OOFphase rows.
+Later metadata da03/b8b8 suggests six mature dates but global untouched status
+UNKNOWN; use a new correctly scoped diagnostic, never copy Oct26 mask to past.
+Pre-rank fusion may be exploratory even with individually failed experts.
+Constant-allocation convex bound6bc8 does not prohibit nonlinear score fusion.
 ## Completed Matched H5 Results
 
 At10bp EACH leg, growth/DD percentages of initial research NAV; reused adaptive

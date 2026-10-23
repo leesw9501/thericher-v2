@@ -4,212 +4,122 @@
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Run scripts/start_next_codex_task.ps1; AGENTS.md owns standing private free
-Data/Research/KIS Paper authority. No KIS_LIVE_*/real money/paid/public work.
-No private/raw/credential output, foreign adoption, unknown-request substitute,
-bank reset or profit expansion. Preserve unrelated %SystemDrive%/.
+Run scripts/start_next_codex_task.ps1; read HANDOFF/NEXT/AGENTS/active boards.
+AGENTS.md owns private free Data/Research/KIS Paper authority. Never read
+KIS_LIVE_*, print private/raw values, use real money, pay or expose publicly.
+Preserve ONE original shared initial tenth, F9UNKNOWN/HELD and original requests.
+Parent owns integration/Git; preserve unrelated %SystemDrive%/.
 
-2026-10-24 04:20KST: ONE company outcome gru-h5-next-session-paper-readiness-v1.
-Actual dated Data/point/final controller readiness unfinished. Primary H5 code
-770436c pushed; most recent docs checkpoint06ed829. Parent owns current MD/Git.
-Consumed installers/probes/recovery workers are evidence, never blind commands.
+## Completed Commands / Never Repeat
 
-## Actual Owned Due / Status
+- Data2c91 naturally completed70GET/1POST/70accepted Oct23 20:10UTC:
+  A/data/current-oct26-model-input-refresh-20261023-v1/RUNTIME-FINAL.json.
+  Do not restart the collector or infer acquisition from Task exit.
+- Original cb5 point Task was DISABLED20:17:54UTC BEFORE inference. Exact
+  containment1ff4de7f:
+  A/research/current-h5-point-os-task-normalization-20261024-v1/PARENT-NAMESPACE-CONTAINMENT.json.
+  Never blindly enable it, run original FUTURE-COMMAND or old qualifier commands.
+- One f65 technical point20:33 restored/forwarded GRU9409, publication exit2.
+  Original numerical failure/claim/join remain immutable.
+- Retained-output publication b2bc recovered SAME weights with Core SDK first:
+  A/research/current-h5-retained-point-publication-recovery-20261024-v2/PUBLICATION.json
+  SHA0d97e69c. Do not repeat publication or restore/forward.
+  Typed input181ebc3b/consumerbd0058bc, original591a model policy; additional
+  technicalf65/adapter98f/worker84ad/publicationb2bc provenance remains explicit.
+  Inference enclosing bounds are NOT exact duration.
+- Actual pre-entry referencec992 frozen:
+  A/research/current-gru-h5-prospective-reference-preparation-20261024-v1/REFERENCE.json.
+- Recovered-reader integration3a8c built actual candidate ONCE:
+  A/execution/current-h5-bounded-owned-exit-drain-preparation-20261024-v1/compiler-r2/generated/dated-actual-r1.
+  Source1c30c7cb/nativeb9f89303/input181e/policy591a/image81373d2a.
+  Do not rebuild or overwrite; old4a/24a/bridge8b/v2/v3 are historical evidence.
 
-- Existing quiet refresh thericher-kis-paper-oct26-model-input-refresh-20261023-v1:
-  Oct24 05:10KST /Oct23 20:10UTC,Source2c91d1a7,69NAS+SPY/70pages.
-  Source still Oct22 close. No duplicate collector/manual Task start.
-  Accept only actual Oct23-close RUNTIME-FINAL/DTO/source/verifier/alljoined
-  chain; task exit/clock/install is not acquisition.
-- H5 proposed new slot unit-gru-h5-Oct26-v1:
-  entryOct26 13:40..14:10UTC, exitOct30 19:45..20:00UTC,4minrepeat/max8visits.
-  Final dated release/install NOT_DONE. Ten-minute-postopen/fifteen-minute-
-  preclose execution proxies != research OPEN/CLOSE.
-  Qualified drain successor30ab13c8/47afb5cd fixes4starts-vs8owned without
-  widening windows/cadence/bank.8existing visits+2exact recoveries, no ninth
-  nativefinalization. FlatRO is nonterminal; Claude REVISE retained.
-- ONE05:40KST point wrapper Sourcecb5d46e1 at
-  D:/thericher-v2/model-artifacts/research/current-h5-scheduled-point-materialization-preparation-20261024-v2.
-  SAME Task ENABLED/Ready05:40KST after OS-effective comparison recovery
-  19:24:04UTC/e1bb5190 and separate fresh readback34a56f70 under
-  D:/thericher-v2/model-artifacts/research/current-h5-point-os-task-normalization-20261024-v1.
-  Comparator Source024cf375/57fakechecks/ClaudeSOUNDlimits, actual rawXML
-  onlyEnabled delta/ACL/source/action/time/principal unchanged. Installation
-  is not actual point/Data/OSwake. Old Read-H5PointTask string reader falsely
-  refuses omitted defaults; do not use it as current reader or rerun installer.
-  Source/mock regression1fb7b63b PASS. Exact591a once AFTER acceptedData,
-  completedpoint independently reused0forwards; partialunknown refuses.
-  Existing05:10 Data ONLY WakeToRun turnedtrue19:05:09UTC/3a306e71,
-  originalsource/actions/time/cursor/ACL unchanged. Wake notOSguarantee.
-- Joint17 original15:30/15:34/15:58UTC failed20,59623ae4
-  DENY_SCHEDULED_OWNER/job_runtime_unbound/CIM_chain. Only expired entry disabled.
-  Alias/hash-only repair9b9dbd50/758b4c95 deployed ONLY conditional EXIT16:11:41;
-  consumer8325dc56, actual repaired owner pass unobserved. Original entry/bank/
-  identities/counters/window retained; no backdate/new request/manual Task start.
-- R5 original3owned exitOct27>=19:45UTC /Oct28>=04:45KST.
-  HGB original1owned exitOct28>=19:45UTC /Oct29>=04:45KST.
-  F9UNKNOWN/HELD; history0/currentabsence/open0 is not non-send/release authority.
-- Nightly Oct23 14:50UTC exactprivateRO2d168c90 at15:25:55:SELL1intent/attempt/
-  ack/fullfill/cyclecomplete; sharedpositive7/unresolved1/buyreservationexists.
-  Not a fresh broker snapshot/whole-account terminal. OriginalNAS8 roundtrip
-  flat/aggregate nominalgrossnegative; fees/settlement/netPnL UNKNOWN.
-- Volume original entryfailed20/contained/expired. Corrected diagnostic74303b03/
-  0561a114 NOT deployed; no expired-entry reactivation. No new observer/app
-  heartbeat chain; obsolete Oct21/22 Codex automation was deleted.
+## Installed Deployment / Readback Only
 
-Joint17 EXIT definition/ACL readback ONLY (ENTRY disabled deliberately):
-```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File D:/thericher-v2/model-artifacts/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1/tasks.ps1 -Mode Readback -Phase exit -SourceSha256 9b9dbd50b3610c89188fb5e2f4b5a5cebdd18e3231a7cf55e372d057fda590e2 -ReleaseSha256 758b4c95e3154acc117d0efc03ecd31e81fe140870f1a0a30abb7e0b3bc7d0d2
-```
-Other modes are not offline readers. Source-safe status/next/last timestamps
-do not prove a fill or cryptographic OS Scheduler origin.
+Actual dated native proof:
+A/execution/current-h5-dated-native-binding-qualification-20261024-v3/ACTUAL-PROOF.json
+SHAdcfab5cf. Actual binding entry/exit/recovery, source/image/SDK stable.
+Owner/controller71 source/mock proof:
+A/execution/current-h5-dated-owner-qualification-20261024-v1/CONSUMER.json
+SHA72ff2993. Neither is natural scheduled-owner/fill evidence.
 
-## H5 Actual Point / Controller
+Actual final integration root:
+A/execution/current-h5-final-dated-readiness-20261024-v1.
+Consumer7c2bb723: actual EXIT-first then ENTRY registration and fresh independent
+readbacks21:15:25UTC. Source1c30c7cb/RELEASE8b29032f/image81373d2a;
+operational actor claims87b9d407/38tests/actualboot/categoricalf4d13f9d.
+Do NOT rerun finalize --create, install commands or completed readback recorder.
+Use generated tasks.ps1 -Mode Readback for current source-safe status ONLY;
+never -Mode Owner as an offline result reader. Source+release pins above.
+Bind exact operational actor-claims JSON, not a generic qualification report.
+Final release has EXACTLY five verified refs: native_ABI, controller_qualification,
+parent_full_authority, scheduled_owner, actor_claims. Use candidate source1c30,
+not compiler30ab. Validate SAME release/hash with Python common.release and PS
+ReleaseProof before registration. Never read credentials for qualification.
 
-Frozen materializer:
-D:/thericher-v2/model-artifacts/research/current-unit-gru-h5-typed-point-preparation-20261024-v1.
-Source591a86d3/Consumer6e98261d; sameGRU9409/originalTRAINaffines/full100/
-required69/unknown31zero. CPUrestore/SYNproof complete; actualpoint NOT_DONE.
-After accepted actual Data chain, exact FUTURE-COMMAND.json permits ONCE:
-```powershell
-& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B D:/thericher-v2/model-artifacts/research/current-unit-gru-h5-typed-point-preparation-20261024-v1/run.py future --source-sha 591a86d393f1b7b40cb754a5bf8fdf1107b8821a6edb7ed2fee8229098ddd35d
-```
-Do not restore/refit/infer twice or use a missing-data point to fake readiness.
-Actual outputs FUTURE-CONSUMER/POINT/MODEL-PAPER-WEIGHTS/JOINED are bound through
-existing exact readers, not latest-file discovery.
+Existing recipe:
+A/execution/current-h5-dated-release-readiness-20261024-v1/readiness.py
+Source4c7ba027/Consumer5d81d565, parent_commands(actualRoot, sourceSha, releaseSha).
+H5 tasks.ps1 has Library/Owner/Readback, NOT Install. Import H5 Library then
+InstallOwned with H5 overrides. NEVER call historical owner_library main Install
+or register disabled UNBOUND_RELEASE XML templates.
+Completed order: EXIT install -> independent XML/ACL Readback -> ENTRY install -> readback.
+Validate each result before next; preserve original absence/definitions/rollback.
+No manual Task Run/Start or broker worker merely to inspect readiness.
 
-Prospective reference5512508f/c1ff1cf8:
-D:/thericher-v2/model-artifacts/research/current-gru-h5-prospective-reference-preparation-20261024-v1.
-GRU9409vsuniform/same69/onecohort/six1-5-10bp cells. Freeze before entry from
-actual Data/point, not after outcomes. Later retained actual entry OPEN+five
-CLOSE marks/capture metadata are required. No actual reference yet.
+Slot unit-gru-h5-Oct26-v1:
+entryOct26 13:40..14:10UTC /Oct26 22:40..23:10KST;
+exitOct30 19:45..20:00UTC /Oct31 04:45..05:00KST.
+PT4M repeats; entry8visitcap/exit8+2exact recoveries, max8owned, whole shares,
+.005 original basis within shared tenth, no skipped-mass redistribution.
+Execution proxies != research OPEN/CLOSE. RO flat is nonterminal; unknown,
+technical/nonprogress/clock failure stops; no ninth finalization.
+Install/readback != natural owner pass, submit, fill or realized net PnL.
+Source-owned markers assume an honest host, not cryptographic OS-origin proof.
 
-Parent current bridge-v3 Sourcee6baa35d:
-D:/thericher-v2/model-artifacts/execution/current-h5-point-reader-integration-20261024-v3.
-13unit/7cold/Ruff; independent36tests+2subtests PASS58481b63/Consumerc2e4cf2c. Default checks file
-presence only, no model/Data/Task/private/API. Source closes three Python files.
-Pins591a/5512/30ab; all fixed mutable point/input/join paths admitted BEFORE
-freezer/byte reads, postreference consumer stable. Preserve old8b/v2 evidence.
-Actual --build-actual permitted ONCE only after05:40owner closed and exact
-accepted Data/point/join/reference, new compiler-r2/generated/dated-actual-r1.
-ALREADY PRESENT accepted reference required; missing-reference fallback is NOT
-qualified. No model/refreeze/release/Task effect; no owner competition/overwrite.
+## Existing Paper / Safe Readers
 
-Dated pure qualifier Source4c45e8ea (independent review pending):
-D:/thericher-v2/model-artifacts/execution/current-h5-dated-native-qualification-preparation-20261024-v1.
-Default INERT, no actual candidate reads. Exact --actual command in CONSUMER
-requires future actual candidate/native hashes AFTER bridge build. Pure
-runtime.sources/binding only, never runtime.run/custody/private/order. Reuse
-1fe7 body/image proof with explicit changed binding; not actual OSowner/fill.
-Readiness4c7ba027/5d81d565 PARENT-STEPS at
-D:/thericher-v2/model-artifacts/execution/current-h5-dated-release-readiness-20261024-v1.
-H5 tasks.ps1 has Library/Owner/Readback, NOT Install. Import Library then
-inherited InstallOwned with H5 overrides. Exit/readback before entry/readback.
+Joint17 original entryfailed/expired-disabled. ONLY conditional EXITalias repair:
+Source9b9dbd50/RELEASE758b4c95/consumer8325dc56 at
+A/execution/current-joint17-owner-diagnostic-recovery-20261024-v1/runtime-alias-repair-r1.
+Actual repaired natural owner unobserved. Do not reactivate original entry.
 
-Current compiler:
-D:/thericher-v2/model-artifacts/execution/current-h5-bounded-owned-exit-drain-preparation-20261024-v1/compiler-r2.
-Source30ab13c8/Consumer47afb5cd;48Python/81countercombos/26Scheduler mocks/
-Ruff/alljoined. No old4a/24a build for deployment. Parent actual dated
-native/owner qualification/release then EXITFIRST/ENTRYSECOND install and
-separate XML/ACL readbacks are still required.
+R5threeowned exitsOct27>=19:45UTC; HGBoneowned exitsOct28>=19:45UTC.
+Nightly Oct23 exact RO result2d168c90 shows SELL1accepted/fullfill/cyclecomplete:
+A/execution/current-paper-results-readback-20261023-v1/nightly-current-r1/EXISTING-HELPER-RESULT-CONSUMER.json.
+Not fresh broker/whole-book terminal. F9 remains original UNKNOWN/HELD;
+history0/open0/currentabsence cannot release or substitute.
+OriginalNAS8 roundtripflat/grossnegative; fees/settlement/net remain unknown.
 
-New H5 image81373d2a/nativeSource193d5709/Parentconsumer1fe7e59e:
-173nativeSYNchecks/38realIPC/quiet/alljoined, fake broker/book only.
-Cold exec is SAME OS PID/new interpreter. No realprivate/API/Task/fill claim.
-Do not rerun consumed actual SYNdriver. Old H20 roots/SDK stay immutable.
-Legacyreaderfbd36240 SYN1181checks is scoped pure parser compatibility, not
-full old worker/locks/actual private or own R5/HGB/H20 capsule qualification.
+Use only existing strict network-disabled private/source-RO readers with
+before/after membership/identity/mtime/bytes and exact intent/fill ownership.
+No observe()/recovery as offline reader. Actual private writers defer only
+their conflicting read; unrelated Data/Research/future due times do not.
 
-## Current Read-Only Custody
+## Independent Research / Future Capture
 
-Qualified12410a15:
-D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/FINAL.json.
-Use only with a new actual consumer and unchanged pinned source/capabilities.
-```powershell
-uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/host.py --mode r5
-uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/host.py --mode nightly
-uv run --no-env-file python -I -B D:/thericher-v2/model-artifacts/execution/private-paper-custody-readback-20261022-v1/host.py --mode f9
-```
-Explicit typed-profile reader4f385552:
-```powershell
-& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B D:/thericher-v2/model-artifacts/execution/current-joint17-first-runtime-reader-20261023-v1/host.py --mode current --source-sha256 4f385552c75831eb4521e4f2a0db5478329ef74ae41a331d933a284cee9bcc49
-```
---visit-id requires an exact supplied owned32hex visit, never a latest scan.
-All use networknone/private-sourceRO/no observe-lock-recovery and exact
-before-after membership/identity/mtime/bytes. Actual/unknown protected writers
-or unstable/unbound files withhold scoped conclusions, not all research.
-Categorical transport alone lacks exact per-request visit-to-fill causality.
+Closed9fit1d1db187/Meta3fit2620331b/rules10d0055f are not ready training.
+Fixed-score-rank preparation49759d12 is assigned to Noether for compatible
+finite3cell comparison; no expert refit/forward. Next useful GPU work needs
+a new frozen finite contract, not repetition for utilization.
+PrefixData56e5 is ready; later global untouched status UNKNOWN.
 
-Fresh account-only queries require a separately scoped consumer/owner/resource
-check. Latest14:34UTC7758823e count7positive/0opens/1POST4GET/allHTTP200 is NOT
-native quantity/ownership/funds/netPnL match or F9non-send. Do not repeat it
-merely because it is possible. Missing funds does not erase complete holdings.
-Never run recovery-capable observe() as an offline reader.
+Capture-only preparationea2e7403/Consumere79e3986 +marksadapter3205/dbf5:
+A/data/current-h5-future-close-capture-preparation-20261024-v1.
+Oct31 05:10..05:15KST only,70pages/BYMD20261030. Kant binds actual referencec992.
+Not installed/captured yet; no feature/training stage. Old expired host is not
+made usable merely by changing BYMD. Missing future marks are unknown, not zero.
+Future aligned analytical reference is not native whole-share/Paper net PnL.
 
-## Research / No Duplicate Work
+## Verification / Recovery
 
-Chronological expert/gate continuationfd6ce8aa/Consumer1d1db187/Delivery5447d9f8
-is COMPLETE_FAIL:9marketfits/21cells, four GRUs epochs/selected47/23,29/5,
-24/0,27/3,total15110updates;4HGBfixed128+depth2gate1. At10bp Gate
--.1221%growth/.7843%DD, rawGRU+.5037/1.4682,HGB-2.9058/3.1854.
-Gate9cohorts cash6/GRU3; growthfailed, lower exposure is not alpha.
-256checks/107pins/alljoined/leaseReleased;2162.283734of14400activeupper incl
-old1102.280426once. Original0e7a metadata failure/debits preserved; recovery
-added0SYNfit/updates. No completed training repeated/Paper model changed.
-
-Noether now owns NEW stock-level score-fusion preparation at
-A/research/current-h5-oof-score-fusion-development-20261024-v1.
-Reuse sealed expert OOF/final forecasts0expertrefits/forwards. Propose3fits:
-Ridge21features, small MLP21, matched same-initial MLP with two score channels
-zeroed (feature-only ablation). Inputs2expert scores+factor10+context9,
-predictions combined BEFORE fixed TopDecile allocation. Chronological
-metaFITfirst200/metaCHECKlast51 of251phase dates, exact target-maturity purge
-and FIT-only affine required before source freeze. New finite4800active/
-14400elapsed/native solver/checkpoint proof/trials/cells/strongestkill to be
-frozen before numerics; no current market/GPU fit claimed. Adaptive reused
-data, no independent alpha or global Paper profit gate.
-
-
-Slow-GRU1056b4d3e79/91ef9fbc closedFAIL36epochs/selected12/alljoined/released;
-no rerun. PhaseTCN6215d1ed/e81d1699 CLOSED_FAIL59epochs/selected35/2065updates,
-3newcells/9bytecached/alljoined/leaseReleased, growth-.148271%/DD4.162968%at10bp.
-Chronological9fits are CLOSED; no repeat of OOF-prefix/native preparation.
-Current NEW stock-level score-fusion preparation is described above.
-Driver headroom measured, no app-name GPU hold. No Paper candidate swap.
-Closed seeds317002b1/TCNff022d49/halfR3f08cf819/leanSYN76c7e6db remain closed.
-Do not run unused halfhelper44cd or refit controls; all history in Engine/Git/A.
-Research price proxies != Paper fills/netPnL, reused INNER != fresh replication.
-
-## Verification / Storage
-
-Current fresh PRIMARY authority:
-D:/thericher-v2/model-artifacts/verification/current-h5-owned-exit-drain-integration-20261024-v1/AUTHORITY.json
-SHA056c456a:560serial/18795fullPASS25skip/8actualworkers/helper33507exit0/
-currentchild-r-a93980b9-and-lease-absent/Ruff/threeCompose/1384samefiles.
-Full417.70s/serial67.76s; primary compatibility ONLY, external drain needs its
-own independent checks. No repeated fullsuite for unchanged primary/docs.
-Original source-equivalent H5 authority:
-D:/thericher-v2/model-artifacts/verification/current-model-weight-h5-integration-20261024-v1/AUTHORITY.json
-SHA24640869:560serial/18795fullPASS25skip/18820total/actual8workers/original
-helperexit0/clean/Ruff/threeCompose(.env.example),1384exact source-control.
-Old93991/54526ef3/worktree491bf085 are historical, not current authority.
-Docs/external-only reuse requires current exact source-before.json digests and
-fresh changed-external checks. Repository tests cannot validate external code.
-
-For tracked code/control/material recovery changes:
-```powershell
-uv run --no-env-file --extra dev pytest -q <changed paths> --maxfail=1 --durations=15
-.\scripts\run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot
-uv run --no-env-file --extra dev ruff check .
-docker compose --env-file .env.example config --quiet
-docker compose --env-file .env.example --profile research config --quiet
-docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.accounting.yml config --quiet
-```
-Preserve original Globalmutex/lease/process/actualworker/count/skip/clean-temp
-authority. Synthetic Scheduler tests mock EVERY entrypoint and disable module
-autoload. No partial/unclean authority reuse. Weekly serial remains separate.
-With pwsh -File, pass --junitxml and D:/absolute.xml separately; measured equals
-form split at colon/collected0. Prefer explicit -Workers binding.
-Test scratch C: NVMe; data M/models A/Docker /app/model_artifacts.
-Keep15percent Dfree/warn projected20percent. uv run --no-env-file and .env.example
-avoid implicit credentials. No secrets/private raw/broker IDs/prices in outputs.
+Primary authority:
+A/verification/current-h5-owned-exit-drain-integration-20261024-v1/AUTHORITY.json
+SHA056c456a.560serial/18795fullPASS25skip/actual8workers/helper0/clean;
+1384source-control digests unchanged. Reuse only with exact current equality.
+Fresh external tests/proofs validate external changes; unchanged repo tests do not.
+Ruff/default/research/accounting Compose use .env.example; uv --no-env-file.
+Code/control changes require AGENTS fresh serial+full authority. Docs/external
+only may reuse matching authority plus fresh changed-scope evidence.
+At interruption recheck exact ownership/status; do not repeat completed fits,
+reclaim an unknown live lease, reset counters or invent runtime results.
