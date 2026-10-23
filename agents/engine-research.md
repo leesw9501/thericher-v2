@@ -1,85 +1,79 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 06:10KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own targets/features/fits/replay/ensembles, not deterministic broker risk.
-AGENTS.md authority; Parent shared MD/Git. Completed fits are not ready jobs.
+2026-10-24 08:10KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own targets/features/fits/replay/fusion, not deterministic broker risk.
+AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
-## Current Candidate / Actual Consumer
+## Operational Candidate / Consumer
 
-Selected provisional GRU9409a2f4 remains unchanged. Actual Data70pages/closed,
-sole f65 CPUrestore/forward20:33 completed. Original joined exit2 publication
-fault (Data imported legacy SDK before Core SDK) is preserved.
-Fixed-output publisherb2bc4ce2 produced typedinput181ebc3b/consumerbd0058bc:
-A/research/current-h5-retained-point-publication-recovery-20261024-v2.
-0new restores/forwards/fits; same binary64weights/full100/known69/31zero,
-original591a policy/TRAINaffines/raw63x6/factor10/context9.
-Exact inference instants not retained: explicit enclosing bounds only.
-Old cb5 point Task disabled before inference; never run original FUTURE-COMMAND.
-
-Actual pre-entry referencec992c47b:
+Provisional GRU9409a2f4 remains the operational Paper baseline, not a profitable
+or independent-alpha promotion. Solef65 CPUrestore/forward20:33 then publication
+exit2; CoreSDK-first b2bc recovered SAME retained weights/0newmodels.
+Input181e/full100/known69/31zero/referencec992:
 A/research/current-gru-h5-prospective-reference-preparation-20261024-v1/REFERENCE.json.
-GRU vs uniform same69/onecohort/six1-5-10bp cells. Future marks not observed.
-Actual dated candidate1c30/nativeb9/input181e/sourcebridge3a8c already built;
-native actualproofdcfab/owner71mock72ff pass. Actual release8b29 and quiet
-EXIT-first/ENTRY install/readbacks COMPLETE7c2bb723, not runtime/fill proof.
-H5 Oct26 13:40UTC entry/Oct30>=19:45 exit proxies != research OPEN/CLOSE,
-max8owned/whole shares/.005originalbasis/sharedtenth/F9held/noredistribution.
-Operational learning, not profitability promotion/independent alpha/net PnL.
+Original591a policy/TRAINaffines/raw63x6/factor10/context9 unchanged.
+Oldcb5 task disabled before inference; never run original FUTURE-COMMAND.
+Inference clocks are explicit enclosing bounds, not exact duration.
 
-## Research / Actual Next Action
+Current actual native91c09718/3e1d3e15/release0fb32aa7/image9a109133
+replaces historical1c30/8b29/813. Parentc2369abd/actualindependentbe057619:
+A/execution/current-h5-in-visit-terminal-parent-release-20261024-v1/CONSUMER.json.
+Same-last-SELL closure tested/deployed; natural owner/fills/lifecycle unobserved.
+EntryOct26 13:40..14:10UTC/exitOct30 19:45..20UTC;max8owned/whole shares/
+.005originalbasis/sharedtenth/F9held/no redistribution. Proxies != research marks.
+Capturec78/refc992 installed forOct31 05:10KST; future marks not observed.
 
-Fixed-rank fusion68093a24/Delivery3d7f4f6d COMPLETE_PASS3cells/177checks,
-0expertfit/forward/GPU/LATER. Same sealed100axis/43rows/3295eligible/9cohorts/
-marks/costs, compatibility4136142d closes original ClaudeREVISE baseline issue.
-At10bp growth+.775099%/DD.817573 vsalignedGRU+.503744/1.468196 and SCOREMLP
-+.042864/.894397. Adaptive reused INNER only; different from deployed9409.
-A/research/current-h5-fixed-score-rank-fusion-development-20261024-v1.
-No duplicate replay, no independent alpha/Paper swap or advisory-agreement claim.
+## Latest Research / Next Ready Work
 
-Noether now prepares ONE matched RankNet indicator/score-only ablation:
-A/research/current-h5-ranknet-indicator-ablation-development-20261024-v1.
-Original5a2ae5632fits CLOSED78/25epochs,selected54/1,total1339updates,
-sameinitial/allRNG/native4updates/cold2. Forecast publication failed missing
-CHECK.npz after SCORE output; originale00e30a4/f97f87bc remains technicalfailure.
-Continuation85eb3ac7/Consumer237e75c2/Delivery807e0502 adds0fits/SCORErepeats,
-onlyremainingINDICATOR43forwards,6cells/354checks/alljoined/released.
-COMPLETE_FAIL:10bp INDICATOR+.490887%growth/.403909DD vsSCORE_ONLY
-+2.010878/.839298 andfixedrank+.775099/.817573. Growthkill FAIL;
-SCORE_ONLY is not retroactive fallback winner. Cumulative907.553172activeupper.
-No pre-failure SCORE NPZ seal; stable postclosure/source/actor under honest-host
-assumption, not original sealed success. No current GPU job.
+SelectedGRU9409 sixlater diagnostic COMPLETE_FAIL26e70cd3:
+A/research/current-gru9409-six-later-preserved-forecast-readout-continuation-20261024-v1/runtime-r1/CONSUMER.json.
+10bp EACH leg, percent initial researchNAV:
+GRU -4.141629growth/4.532880DD versusuniform -.808493/1.388829.
+Both growth AND risky-DD predicates fail; no policy replacement/profit claim.
+DataDTO9cdb27e8/05634720 dynamic masks80/80/80/59/60/60,
+originalaffines/no Oct26mask copy. Sixsealedforecasts f39ba12d retained;
+21missing NAS Oct1 closes supplied from existing pagesbb60d0e9/0API.
+2514requiredmarks/6cells/9SYN/47independentchecks;0newrestore/forward/fit in
+readout. Allchildrenclosed/no current numericalworker/GPUlease.
+Global reuse UNKNOWN: adaptive later DEVELOPMENT, not fresh replication.
 
-Next Noether: ONE selectedGRU9409 six-later-cohort diagnostic contract, fixed
-checkpoint/affines/threecosts/uniform/riskyDD/growth/finiteforward and evaluation
-ceilings before later outcomes. Data Kant feature-only packet underway; no
-Oct26maskcopy or heldlabel intake. Globalreuse UNKNOWN: later development,
-not independent replication/Paper permission gate. No completed-fit repetition.
+Noether assigned ONE new matched MSE score-only negative-control campaign at
+A/research/current-h5-ranknet-matched-mse-control-20261024-v1.
+Exact RankNet GRU+HGB two-score inputs/init/allRNG/split/optimizer and original
+CHECK pair-loss selection; only trainingloss changes.1fit/43forwards/3newcells,
+finite clocks/max100epochs/pat24 before dispatch. No RankNet refit/baseline
+replay/newseed/LATER. Godel e298599d/ClaudeSOUNDlimits recommends narrow
+dominance test:RankNet10bp growth>MSE AND DD<=MSE+1e-12; else kill/inconclusive.
+Not a winner, independent alpha or Paper swap. Single-seed/posthoc nomination
+and shared pair-loss selection bias retained; actual running fit not yet claimed.
 
-Recent CLOSED adaptive reused-data results, growth/DD% at10bp EACH leg:
-- Chronological9fit1d1db187/5447d9f8:4GRU/4HGB/depth2gate,21cells,
-  15110GRUupdates. Gate-.1221/.7843 vsrawGRU+.5037/1.4682,
-  HGB-2.9058/3.1854. GrowthFAIL, alljoined/released.
-  A/research/current-h5-chronological-expert-gate-technical-continuation-20261024-v1.
-- Stock-score3fit2620331b/a3e6b000: SCOREMLP+.0429/.8944,
-  matchedfeatureonlyMLP-1.0013/1.5447, Ridge-.9210/1.2745.
-  MLP29/32epochs,selected5/8,793updates. Improved ablation, rawGRU
-  replacementFAIL; alljoined/released,0expertrefit.
-  A/research/current-h5-oof-score-fusion-development-20261024-v1.
-- Rules10d0055f/b99cf74e: equalrank primaryFAIL; trend/reversal/RMStrend
-  negative; Bollingermeanrevert+1.302/.758 exploratory, not retroactivewinner.
-  15newcells/9cached/0fits/GPU/alljoined.
-  A/research/current-h5-technical-rule-score-development-20261024-v1.
-Cash-notional-turnover audit b8dd0f36 closed137SYN/ClaudeSOUNDlimits.
-For matched entry A, exit V and legfee c: T=A+V, G=(1-c)T-2A,fees=cT.
-Better exit mechanically increases cash turnover. NEW campaigns report it
-separately or use entry-price T0=2A for churn; never double-subtract costs or
-regrade old failures. Preserve original criteria/debits.
+Fixedrank68093a24/Delivery3d7f4f6d COMPLETE_PASS,3cells/177checks/0newmodels.
+At10bp +.775099growth/.817573DD versusalignedGRU+.503744/1.468196 and
+SCOREMLP+.042864/.894397, same100axis/43rows/3295eligible/9INNERcohorts.
+Compatibility4136142d/independentcd0e14SYN mismatchkills; original ClaudeREVISE
+retained/adjudicated, not agreement or replacement for a differentGRU9409.
 
-PrefixData56e5/b585/ea8c remains ready:12affines/11views/251OOFphase rows.
-Later metadata da03/b8b8 suggests six mature dates but global untouched status
-UNKNOWN; use a new correctly scoped diagnostic, never copy Oct26 mask to past.
-Pre-rank fusion may be exploratory even with individually failed experts.
-Constant-allocation convex bound6bc8 does not prohibit nonlinear score fusion.
+RankNet paired ablation COMPLETE_FAIL237e75c2/Delivery807e0502:
+A/research/current-h5-ranknet-indicator-ablation-publication-continuation-20261024-v1.
+INDICATOR+.490887/.403909DD versusSCORE_ONLY+2.010878/.839298 at10bp.
+2fits78/25epochs,selected54/1,1339updates;6cells/354checks/alljoined/released.
+Original5a publication missingCHECK.npz failure retained;85eb continuation
+0refits/SCORErepeats,43remaining INDICATORforwards only.907.553172activeupper.
+No pre-failure SCOREseal; stable postclosure/source/actor under honest host,
+not originalsealed success. SCORE_ONLY is not retroactive fallback winner.
+
+Other recently closed adaptive INNER comparisons:
+- Chronological9fit1d1db187/5447d9f8:4GRU/4HGB/depth2gate/15110GRUupdates;
+  gate-.1221/.7843 versusGRU+.5037/1.4682, growthFAIL/alljoined.
+- Stock3fit2620331b/a3e6b000:2MLP+Ridge/793updates,29/32epochs selected5/8;
+  SCORE+.0429/.8944 versusfeatureonly-1.0013/1.5447,Ridge-.9210/1.2745.
+  Ablation improved, rawGRU replacementFAIL/alljoined.
+- Rules10d0055f/b99cf74e:15newcells/9cached/0fits;primaryequalrankFAIL,
+  exploratoryBollinger+1.302/.758 not retroactivewinner. Trend/reversal negative.
+- Turnoverauditb8dd0f36/137SYN:cashT=A+V,G=(1-c)T-2A,fees=cT.
+  NEW campaigns separate mechanical cashT or use entry-valued churn; old criteria
+  unchanged/no double fees. Prefix56e5 ready/12affines/11views/251OOFphase rows.
+
 ## Completed Matched H5 Results
 
 At10bp EACH leg, growth/DD percentages of initial research NAV; reused adaptive
