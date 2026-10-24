@@ -27,6 +27,13 @@ Original300active/1200elapsed/origin15:54/hard16:14UTC bounds remain closed.
 No model/oldFEVAL/fit/APIKIS/order/schedule. Godel challenges NEW future-point
 consumer separately; this snapshot does not promote a model or bind old jobs.
 
+L NEW Source consumer106e/21e6 may read existing F Data60b1 under explicit
+NEW_TRAIN_CURRENT1186 role (old1124+33+29); aliases/bytes/original roles remain
+immutable. No acquisition/export requested. All past labels are now declared
+training, never claimed untouched evaluation; actual clocks/knownness/source
+binding must pass before fits. Current future packet remains exact479565/
+7f82, no historical financialreadout or model/Paper promotion from Data.
+
 F historical TRAIN build/verify ACTUAL COMPLETE_DATA_ONLY8004f1ad:
 A/data/current-toto-task-adaptation-inputs-20261024-v1;
 readinessdb6826b7/Source8bcdaa30,31.1601upper consumed once.

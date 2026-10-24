@@ -138,15 +138,32 @@ Not F historical completion/performance/alpha/Execution compatibility or a
 fourth Paper slot. Native missing inline point-hash check is retained; Parent
 and final verifier separately proved exact producer bytes before reliance.
 
-J price-amplitude normalization contrast is next independent CPU package:
-A/research/current-d1-context-amplitude-ablation-readiness-20261025-v1,
-consumer96b9/contract5318/Source47aa/ClaudeSOUND_WITH_LIMITS. Two fixed Ridge/
-PCA8 pipelines on existing F Data60b1, z-context versus close/last-1; reused
-development, not isolated volatility-causal alpha. Tesla concrete source only
-at current-d1-context-amplitude-ablation-development-20261025-v1; no native/
-market GO yet. Original16:22..16:52UTC/600active includes90readiness once.
-At most2market fits/3cells435marks/one outcome intake; equalactions close
-before outcomes with PnLUNKNOWN. No F/I rerun or existing Paper change.
+J is CLOSED technical70c8/Sourcee609/281upper: Native02f8 PASS but market
+Unicode-clock.max raises beforefits, after3feature/TRAIN-CHECK label intake.
+0fits/scores/modelseals/EVALprices/cells; financialUNKNOWN, no J market retry.
+Exact root A/research/current-d1-context-amplitude-ablation-development-20261025-v1.
+Dependent K CLOSED_NOT_READYfa64 at
+A/research/current-prospective-three-expert-fusion-development-20261025-v1;
+0native/model/point/outcomes/cells/150upper/no fallback/automatic revival.
+Both alljoined/removed; original shared Paper owners unaffected.
+Separate engineering repair8cd2/f7f4 ACTUAL14PASS/NumPy2.5.1/invented full
+three-role clock geometry, no market/models/financialmarks/J invocation:
+A/research/current-research-clock-boundary-repair-20261025-v1/native-r1/CONSUMER.json.
+Use its awareUTC predicate only in genuinely new consumers; it does not prove
+old J actual purge or revive old study budgets.
+L NEW expanded-history prospective refit is Source-only assigned Noether:
+A/research/current-expanded-history-prospective-fusion-development-20261025-v1.
+Readiness106e5e90/3ad2b6ea/contract21e6bee0/Claudee216c1d8 SOUND_WITH_LIMITS
+at current-expanded-history-prospective-fusion-readiness-20261025-v1.
+Explicit NEW_TRAIN_CURRENT1186 merges old1124TRAIN+33CHECK+29EVAL throughJul2026;
+old roles/aliases unchanged, no historical scoring/readout/holdout claim.
+Two fixedZ/REL Ridge/PCA8 models, one NEW current point plus cachedI equal1/3
+scoreblend. Unvalidated model artifact only, not J/K success/Paper deployment.
+Call actual awareUTC old-role boundaries AND all1186targetCLOSE<futureOPEN
+before any fitting; fixture success is not that actual admission. ExistingCPU
+image/4threads, no GPU/API/tasks/orders/newruntime. Hard17:19:19UTC/600active
+origin16:49:19 incl60prep/180Source/60Native/120fit/60point/60verify/60cleanup.
+No numerical GO from this paragraph; Parent consumes concrete Source/Native.
 
 Retained H source contract (consumed/CLOSED):dc14/9907/f6fb at
 A/research/current-tabular-icl-four-action-readiness-20261025-v1.

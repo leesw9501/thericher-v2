@@ -13,7 +13,10 @@ GPUallocated682528768/reserved727711744bytes.1actual model-only restore/
 fullpass/head/publication/0fits/outcomes/cells.60fixedchecks/RuffPASS, allthree
 modelchildren joined/removed/exactCID absent/lease free. No active worker.
 Research-only QQQ point, no deployment/F historical completion or I rerun.
-J is CPU source preparation only, no GPU requirement/new readiness platform.
+J/K are CLOSED70c8/fa64; J0marketfits and no K models/point. L NEW expanded-
+history prospective consumer is Noether Source-only, no numerical worker.
+OriginalL16:49:19..17:19:19UTC/600active; existing CPU4threads/oneworker, noGPU
+or new resource platform. Do not rerun completed F/I models to fill GPU.
 
 Prior closed allocation: A Source773b warm-support study closed
 COMPLETE_FAIL05b02e54/Deliveryb2fb14c9; all five children joined/removed.

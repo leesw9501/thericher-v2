@@ -30,14 +30,39 @@ refit/regrade, Paper promotion/fourth slot/orders/schedules or profit claim.
 Data479565eb/e44b/DTO7f82ec1e complete:3Tiingo EODGET/no retry/252same-vintage
 adjClose/missing0/observedOct24 16:01:45UTC/revised nonPIT, market bytesM.
 
-Next parallel J CPU contrast: price-amplitude preservation versus window z,
-same fixed Ridge/PCA8 and cost ledger, not a new model/grid. Readiness96b9f621/
-Source47aa9498/contract5318bfb6/ClaudeSOUND_WITH_LIMITS at
-A/research/current-d1-context-amplitude-ablation-readiness-20261025-v1.
-Two paired fits/one readout/3cells435marks maximum, equalactions kill before
-outcomes=>PnLUNKNOWN. Reused development/pipeline contrast, not volatility-
-causal alpha or automatic Paper promotion. Tesla concrete source preparation
-only, no native/market GO. Original16:22..16:52UTC/600active includes90prep once.
+J ACTUAL TECHNICAL_INCOMPLETE_CLOSED_NO_MARKET_RETRY/TERMINAL70c8d744 at
+A/research/current-d1-context-amplitude-ablation-development-20261025-v1/TERMINAL-r1.json.
+Sourcee609/Native02f8 PASS; real market worker Unicode-clock.max fails before
+fits.3feature roles/TRAIN-CHECK labels admitted;0fits/scores/modelseals/
+EVALprices/financialcells. Alljoined/removed/281upper, financialUNKNOWN.
+Native missed market all-role split predicate, not solver/codec/ledger.
+Parent3terminal refs match; original failure/source/caps remain unchanged.
+
+K dependency CLOSED_NOT_READYfa64d38a at
+A/research/current-prospective-three-expert-fusion-development-20261025-v1/FINAL-CONSUMER.json.
+Required two J models absent;0native/models/point/outcomes/cells/150upper,
+alljoined/no worker. No I-only fallback or automatic revival. Parent6refs match.
+
+Engineering clock repair ACTUAL14PASS/Source8cd266a4/Consumerf7f4fd7f at
+A/research/current-research-clock-boundary-repair-20261025-v1/native-r1/CONSUMER.json.
+One existing NumPy2.5.1 CPU container reproduces Umax failure and tests SAME
+strict awareUTC predicate on invented TRAIN1124/CHECK33/EVAL29x5 clocks.
+.985sec/alljoined/removed/0market/models/financialmarks. Review7a774960/
+Claude225ccb48 SOUND_WITH_LIMITS, no original J mutation/retry. This proves
+invented helper behavior, not actual old J purge validity or K readiness.
+L NEW expanded-history prospective refit direction is approved for Source
+preparation only: readiness106e5e90/Source3ad2b6ea/contract21e6bee0/Claude
+e216c1d8 SOUND_WITH_LIMITS, Parent7refs match. Root
+A/research/current-expanded-history-prospective-fusion-readiness-20261025-v1.
+Noether sole concrete writer at current-expanded-history-prospective-fusion-development-20261025-v1.
+ALL1186 old1124TRAIN+33CHECK+29EVAL become explicit NEW_TRAIN_CURRENT3558asset
+rows throughJul2026; old aliases immutable. Changed cutoff/future-only purpose,
+not J retry/history regrade or untouched holdout. Two fixed Ridge/PCA8 models,
+one current Oct26..30 point/equal thirds with cached I;0historical predictions/
+financialcells/GPU/API/Paper. Actual awareUTC clock admission before fits;
+native fixtures are not actual-purge proof. Original16:49:19..17:19:19UTC/
+600active incl60prep+180Source+60Native+120fit+60point+60verify+60cleanup.
+No Native/market/point GO until concrete source and same-reader native proof.
 
 ## Completed / Actual Account Observation
 
