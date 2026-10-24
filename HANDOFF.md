@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 12:40KST /03:40UTC.
+2026-10-24 12:57KST /03:57UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -21,12 +21,34 @@ integrates effects; Tesla independently reads actual deployment metadata.
 Independent actual TimesFM readback4e3b69f3 PASS: both Ready0/quiet/clocks/ACL/
 original GRU bytes exact. Evidence:
 A/review/current-timesfm-h5-dated-actual-install-readback-20261024-v1/CONSUMER.json.
-Noether completed support8/whole-share CPU comparison and now prepares a new
-NAS-supported-before-training hypothesis, without market numerical dispatch.
-Aq diagnoses the failed private-RO projection using source/native synthetic
-schemas only. Godel challenges the next research direction with Claude.
+Noether completed support8 comparison. Parent adopted new partial Top8
+group-rank proposalbca57dc8 after duplicate check974bc50f: NAS-only training
+already existed, but this objective/raw-GRU32/control combination is distinct.
+Implementation/native proof/ONE CUDA fit/18cells are delegated at
+A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
+3600active/7200elapsed wholefamily inclprep, seed20261110/100epochs/pat24/
+17300market+6nativeupdates/43INNER forecasts/0LATER. BOUND begins03:52:31UTC,
+deadline05:52:31UTC; kernel/Data/worker implementation is being written. No
+numerical/GPU worker observed running yet; BOUND is not training evidence.
+Aq native diagnostic3a817a1d passed14real-disk/4protocol checks, original private
+error not reproduced. Diagnostic successorb447 failed same-entry SYN before
+private attempt; technical-r1 52470 SYN passed then ONE actual attempt stopped
+at mount_scope. No successful feasibility/stability projection, not zero shares.
+A/execution/current-timesfm-whole-share-diagnostic-read-20261024-v1/technical-r1/CONSUMER.json.
+Parent stopped additional attempts/adapter expansion: optional last-close proxy
+is not required for existing native Paper sizing, which remains authoritative.
+Keep faults/debits and F9; no forced shares or cap/weight change.
+Closed-consumer3e1ae648 proves owned children/containers joined and actual private
+worker never started; exact mount mismatch not retained. No further attempts.
+Godel's Claude direction/duplicate check closed; no new approval platform.
 Kant's NYS probe and future25 capture readback are complete. Tesla now audits
-actual Paper/research actor admission source-only; no new runtime change yet.
+Paper/research admission audit2078f4f2 CLOSED11invented native cases:
+A/execution/current-paper-research-concurrency-admission-audit-20261024-v1/CONSUMER.json.
+Unlisted project hosts/GPU actors conditionally deny whole Paper visit. Existing
+claim schema supports exact finite source/job/isolation envelopes, but BOTH
+immutable releases would need actual cutover; no current actual conflict was
+observed. This finite weekend fit should join beforeOct26, so no speculative
+Task/claim redeployment now. Unknown/private writers and risk remain protected.
 No owned GPU worker now; completed inference/training must not be repeated.
 Other ready work continues while a named technical package is repaired.
 Claude next-direction REVIEW.json completed/SOUND_WITH_LIMITS, response471033a5:
@@ -34,6 +56,10 @@ A/review/current-native-supported-universe-h5-direction-20261024-v1/REVIEW.json.
 Check duplicate estimand, causal support/mature labels and H5 split purge before
 one new matched fit; rule/uniform share support/gross, no best rule on outcomes.
 This is adaptive development, not a new independent-performance claim.
+Tesla owns a source-only NEW dated Joint17 point readiness map at
+A/execution/current-joint17-next-dated-point-readiness-20261024-v1.
+Reuse exact existing model/producer/affines if ready, otherwise name exact Data
+gap. No old entry reactivation/new fit/model call/Task/private/API effect in prep.
 
 ## Actual GRU Deployment
 
@@ -186,7 +212,8 @@ A/research contains the exact named roots below; old failures/debits stay unchan
 
 ## Verification / Recovery
 
-Primary+docs ddd01c6 pushed. Current full authority2ef959d2:
+Primary ddd01c6 and dated-deployment docs/next-goal d75d97a pushed.
+Current full authority2ef959d2:
 A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
 475changed-path serial/18956fullPASS25skip/18981total/8actualworkers397.74sec,
 original helper31518exit0/clean child+lease/1390exact inclrequirementslocks,

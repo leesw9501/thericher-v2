@@ -16,8 +16,13 @@ Publication1fb1 consumed; actual TimesFM two-task installation completed03:33UTC
 not an actual fill or alpha. No market/native/fit repeat. CPU support8 replay
 completed12cells/2dispatches/303.71activeupper/1192.37elapsed, old failure/debit
 preserved, alljoined. New NAS-supported-before-training hypothesis is currently
-source/data-contract preparation, not an active or ready CUDA fit. No useful
-ready GPU job is being withheld for authority or personal app names.
+proposalbca57dc8 adopted; native proof/ONE CUDA fit delegated at
+A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
+Not yet observed running. Wholefamily3600active/7200elapsed inclprep,6native+
+17300marketupdates/18cells/0LATER; exact forward cap before native dispatch.
+At03:47UTC RTX4090free21903MiB/util8%/37C, Dfree38.79%; this sample is not
+future headroom or running-training proof. No app-name/authority hold; measure
+again at allocation, no completed-fit repetition.
 Do not infer current utilization or a running process from closed evidence.
 
 Noether single GPU coordinator. Fixed-rank fusion68093a24 closed3cells/

@@ -93,10 +93,34 @@ Closed support8 replay:
 A/research/current-native-support8-equal-weight-whole-share-conformance-h5-development-20261024-v1/recovery-r1/CONSUMER.json.
 4c27bb40/fef87137,12cells/2dispatches/0fits/forwards; no retry or rerun.
 GRU Top8 fractional failed same-gross uniform growth/DD. Private proxy-share
-projectiond320 failed ONE actual RO attempt, not infeasibility; diagnostic work
-uses native synthetic schemas only until a positively qualified successor.
+projectiond320 failed ONE actual RO attempt, not infeasibility. Native repair
+3a817 passed14real-disk/4protocol cases but original private error not reproduced.
+Successorb447 failed same-entry SYN; technical-r1 52470 passedSYN then one actual
+attempt failed mount_scope before private worker start. Final3e1ae648:
+A/execution/current-timesfm-whole-share-diagnostic-read-20261024-v1/CLOSED-CONSUMER.json.
+Allownedjoined/no feasibility or stability conclusion. Parent retired optional
+proxy attempts, not actual native Paper sizing. Do not rerun these helpers.
 
-Primary ddd01c6 pushed; full2ef959d2:
+New research implementation:
+A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
+BOUND03:52:31..05:52:31UTC,3600active/7200elapsed incl14.249prepupper. One fit/
+seed20261110/100epochs/pat24/17300market+6nativeupdates/43INNER forecasts/18cells/
+0LATER. Draft source/BOUND is not a running GPU job. No source-frozen dispatch
+command yet in this state. On interruption inspect actual source/attempt/PID/
+lease/result and classify before resuming; never blindly restart completed fit.
+Newly dated Joint17 readiness is source-only at
+A/execution/current-joint17-next-dated-point-readiness-20261024-v1.
+No original expired entry/installer/reactivation or model call in preparation.
+
+Admission audit2078f4f2:
+A/execution/current-paper-research-concurrency-admission-audit-20261024-v1/CONSUMER.json.
+11invented native cases, no actual overlap observed. Existing finite source/job
+envelope schema can cover real isolated Research, but both immutable Paper
+releases need actual readback if changed. No change was applied for hypothetical
+Monday overlap; finite weekend worker should close first. Keep unknown/private
+writer exclusion, mutex, exact request/F9/risk controls.
+
+Primary ddd01c6 and deployment docs/next-goal d75d97a pushed; full2ef959d2:
 A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
 475serial/18956fullPASS25skip/8actualworkers397.74sec/1390same incllocks/clean/
 Ruff+default/research/accounting Compose(.env.example) PASS.

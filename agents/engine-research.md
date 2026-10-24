@@ -52,8 +52,14 @@ not actual Paper budget. NumPy private header failure/debit retained; public
 native API continuation used final predeclared retry/12cells total. Alljoined.
 Noether now prepares NAS-supported-before-training H5 hypothesis at
 A/research/current-native-supported-universe-h5-training-preparation-20261024-v1.
-Source/metadata-only duplicate/data readiness check; no new market fit/forward/
-financial dispatch yet. Current Paper inputs/points/risk remain unchanged.
+PROPOSALbca57dc8 adopted: NEW partial Top8 equal-target-group rank objective,
+raw63 GRU32, fixed TREND21/slot-uniform8/same gross. NAS-only training itself
+already existed, closest prior utility8601bd2e; addendum974bc50f distinguishes
+estimand. Parent delegates native proof/ONE CUDA fit/18cells at
+A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
+3600active/7200elapsed inclprep, seed20261110/100epochs/pat24/17300market+
+6nativeupdates/43INNER forecasts/0LATER; exact forward cap before numerical
+dispatch. Not yet observed running. Current Paper points/risk remain unchanged.
 
 Beta-residualrule COMPLETE_FAILb0e3ced1/Deliverybdca1acf/Source0f3cb076 at
 A/research/current-h5-beta-residual-reversal-development-20261024-v1.

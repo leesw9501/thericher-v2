@@ -8,6 +8,20 @@ BEFORE fitting/ranking. Compare one justified trainable expert with a prespecifi
 simple rule and uniform at aligned support/gross. Adaptive development, not
 independent alpha, a profitable-model claim or an automatic Paper swap.
 
+Adopted mechanism native-nas-top8-partial-ranking-h5-v1, PROPOSALbca57dc8 at
+the preparation root below. NAS-only training is NOT new; prior long-NAS
+utility8601bd2e and NAS507 breadth already tested it. NEW raw63 GRU32 learns a
+partial top-eight equal-target-group rank loss; fixed TREND21/slot-uniform8
+controls. Godel addendum974bc50f distinguishes that estimand. Parent delegates
+implementation/native proof/ONE CUDA fit/18cells under3600active/7200elapsed
+wholefamily caps including carried prep, seed20261110/max100epochs/pat24/
+17300market+6nativeupdates/43INNER forecasts/oneINNER outcome intake/0LATER.
+Freeze sufficient full TRAIN/CHECK forward cap before native dispatch;
+proposal288000 understated epoch0 plus100epochs. One prefinancial fixed-output
+continuation cannot repeat fits/optimizer/forecasts/consumed cells. Actual root:
+A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
+Source preparation is not a fit; current Paper point/risk/schedules unchanged.
+
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Run scripts/start_next_codex_task.ps1; read HANDOFF/AGENTS/RUNBOOK/active boards.
@@ -61,6 +75,9 @@ inadequate mature labels kill the proposed fit; do not force numerical work.
   Preserve old attempt/debit; retain safe stage/category on nonzero exit and
   qualify actual strict schemas before any separately bounded successor RO read.
   No private values, fresh funds/orderability claim or frozen-weight/cap change.
+  CLOSED3e1ae648: follow-up52470 actual attempt stopped mount_scope before private
+  worker start; alljoined. Parent retired optional proxy expansion. No success,
+  infeasibility or zero-share inference. Existing native Paper sizing continues.
 - Invoked Execution/Review Tesla: source-only concurrency admission audit at
   A/execution/current-paper-research-concurrency-admission-audit-20261024-v1.
   Determine whether independent credential-free research falsely blocks actual
@@ -69,6 +86,10 @@ inadequate mature labels kill the proposed fit; do not force numerical work.
   bank/mutex, source/identity/risk and F9 protections.
 - Data/Kant supports an exact Engine-named gap, not blanket reacquisition.
   Strategy/Review challenges named mechanisms, not another reading list/gate.
+  Tesla additionally maps a NEW dated Joint17 point from retained models at
+  A/execution/current-joint17-next-dated-point-readiness-20261024-v1, source-only
+  producer/affine/raw-input readiness; no model call, old-entry reactivation,
+  private/API/Task effect or duplicate fit during that preparation.
 
 ## Completion And Continue
 
