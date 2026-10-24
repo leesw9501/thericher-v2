@@ -47,13 +47,28 @@ also excludes reserved SPY/QQQ owners, while AMS is skipped. Source design
 review must preserve exact ownership/sharedV4 bank and old pinned readers;
 never simply remove the reserved-symbol deny or silently upgrade the bank.
 
-New zero-fit later-history scorecard Source43bfe9fc at
+Zero-fit later-history scorecard is COMPLETE/CLOSED FINALa91748c0 at
 A/research/current-three-etf-post-jul31-frozen-evaluation-development-20261025-v1.
 Data808c/DTOb145 already built/verified11H5/55days/tail4; dailyclose[11,5,3].
-Native GO only so far, not actual inference/readout. Forecast all frozen models/
-8actions and seal/join BEFORE one price intake. Actual models were created
-after these historical targets: retrospective adaptive/nonPIT/globalreuse
-UNKNOWN, not prospective/independent evidence or an automatic Paper swap.
+Native9b937f10/seal7be3dade/one readout2f5f9354/58checks6e9d PASS.
+One frozen-model GPU inference17.6778sec/694MiB reserved,0fits;7computed
+ledgers/8logical policies/385marks/one price intake/10bp each leg. Alljoined/
+removed/leasefree/650upper CLOSED. Source-binding continuatione460/3e2c consumed
+without new forecasts, original failure preserved. Do not rerun builders/
+native/inference/readout/finalizers. N-full +5.06130% growth/2.42963%DD is
+retrospective55days and mean risky exposure.45455/cash30days, not independent
+alpha/Paper PnL or a new winner. Same-model DIAG contrast is not fitted M.
+Uniform is cost-matched H5 roundtrip. Claudeed58 SOUND_WITH_LIMITS.
+
+New QQQ H5 source design SOURCE-DESIGN.json under
+A/review/current-n-ln-frozen-output-integration-20261025-v1 conditionally reuses
+the existing V4 aggregate QQQ owner, NOT the legacy unit runner (early-exit
+hazard). Require actual old prefix terminal-flat and legacy issuers retired/
+quiescent before any effect; never reset cycle/bank/history/F9 or create a new
+invisible namespace. Actual boundary is not proven yet. Kant owns scoped
+read-only check at current-qqq-h5-legacy-boundary-readonly-20261025-v1; Tesla
+owns new pure planner/test pair, not a CLI/dispatch/deployment. Old three NAS
+jobs stay intact. Do not invoke a recovery observer as a reader.
 
 Company NEXT: exact natural Oct26 GRU/TimesFM/Joint17 entry outcomes below.
 Current independent I research point is COMPLETE_VERIFIED_NO_DEPLOYMENT:

@@ -78,13 +78,37 @@ Existing snapshot only/API0;11H5cohorts55days afterJul31,59sessions with4tail
 Oct20..23 censored. FirstentryAug3/lastOct13/lasttargetOct19, missing0, raw
 FP64identity/FP32bound PASS. Canonicaldailyclose[11,5,3]; features/targets
 physically separate, actualF/NMreader7SYN/build1/verify1/alljoined/241.5797upper.
-Noether prepares a NEW zero-fit frozen-model later-history scorecard. Actual
-model artifacts were created AFTER those targets; retrospective/revisednonPIT/
-globalreuseUNKNOWN, NOT prospective/independentalpha or a Paper-selection pass.
-Source43bfe9fc/Contract0a2a; Native9b937f10 actual CPUcodec/clock/action/ledger
-handoff PASS/two children removed/0realdata. Parent authorized one frozen-model
-GPU inference with611priorupper, not readout. All8actions/predictions must seal
-and join before one targetprice intake. No new fit/currentpoint/oldNative repeat.
+Later scorecard is COMPLETE_DESCRIPTIVE_FROZEN_MODEL_DEVELOPMENT_CLOSED:
+A/research/current-three-etf-post-jul31-frozen-evaluation-development-20261025-v1/FINAL-CONSUMER.json
+SHAa91748c0. Source43bfe9fc/Native9b937f10; one actual GPU inference17.6778sec/
+peakreserved694MiB, zero training. Retained I/L/N models restored once; all
+predictions/actions sealed7be3dade before one price intake/7computed ledgers/
+8logical policies/385marks. Readout2f5f9354: 55-session growth/DD percent
+I -7.04575/12.67341; L -7.37076/12.90786; N-full +5.06130/2.42963;
+N-diag +1.21873/3.22242; L-full -3.96397/9.63468; L-diag -5.36856/10.23257;
+uniform -2.08318/6.76693; analytical cash0/0. Costs10bp EACH leg from raw
+prices, funded compounding research ledger, not the fixed Paper bank/PnL.
+N-full holds cash30/55days/mean risky exposure.45455, so exposure/timing
+confound any covariance-quality claim. DIAG is the SAME trained covariance
+with offdiagonals zeroed, not closed M's matched separately trained model.
+Uniform is cost-matched H5 roundtrip, not permanent buy-and-hold. Actual models
+were created AFTER targets: retrospective/revisednonPIT/globalreuseUNKNOWN,
+not prospective/independent alpha or a winner/Paper swap. One permitted exact
+producer-seal path-binding continuatione460/3e2c preserved first failure;
+zero model/inference reruns, alljoined/removed/leasefree/650upper CLOSED.
+58fixed-output checks6e9d PASS; Claude interpretationed58 SOUND_WITH_LIMITS.
+No N/L/LN currentpoint, old result, input or task changed. Do not rerun.
+
+QQQ source design at A/review/current-n-ln-frozen-output-integration-20261025-v1/SOURCE-DESIGN.json
+rejects invisible V5/ETF namespaces while the three frozen V4 readers remain
+active. Parent conditionally adopts sequential reuse of the existing aggregate
+QQQ owner plus a separate exact H5 request journal, not legacy unit-cycle
+dispatch. Legacy unit code may exit a new H5 BUY early. BEFORE any new effect,
+the actual old QQQ prefix must be strictly terminal-flat and legacy QQQ issuers
+retired/quiescent; that boundary is currently UNKNOWN, not absent. Kant owns a
+separate read-only actual boundary check; Tesla owns a new pure planner/test
+pair, not a runtime adapter/deployment. Keep old bank/cycle/history/F9/three NAS
+jobs intact. A pure planner or proposed boundary cannot grant dispatch.
 Company still awaits the original three natural entries, not these packages.
 
 I actual prospective point COMPLETE, NEW research output, not F historical

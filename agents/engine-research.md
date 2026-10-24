@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-25 02:17KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-25 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
@@ -25,14 +25,24 @@ Policybd903 pre-N-output, Lmeans+Ncovariance/8fixedactions/one computation/
 Native7math+8codec checks; no alpha/realized risk-diversification/Paper claim.
 Working N covariance is not calibrated L forecast-error covariance.
 
-Next zero-fit frozen-model scorecard Source preparation at
+Zero-fit frozen-model scorecard COMPLETE/CLOSED at
 A/research/current-three-etf-post-jul31-frozen-evaluation-development-20261025-v1.
 Actual Data808c/DTOb145 ready11post-Jul31H5cohorts/55days/tail4censored;
-compare8fixed policies including N/L full-v-DIAG OF SAME covariance, not a
-matched diagonal fit or closed M result. Source/Native before any forecasting;
-predictions/actions sealed before one target intake. Actual artifacts were
-created after targets: retrospective adaptive/nonPIT/globalreuseUNKNOWN,
-not prospective/independent alpha or a winner/Paper swap.0newfits authorized.
+FINALa91748c0/Source43bfe9fc/Native9b937f10/inferenceseal7be3dade/result2f5f9354.
+One GPU inference17.6778sec/peakreserved694MiB;0fits/optimizer, 7computed
+ledgers/8logical policies/385marks/one raw-price intake/10bp EACH leg.
+55-session growth/DD%: N-full5.06130/2.42963, N-diag1.21873/3.22242;
+L-full-3.96397/9.63468,L-diag-5.36856/10.23257,L-top1-7.37076/12.90786,
+I-top1-7.04575/12.67341,uniform-2.08318/6.76693,cash0/0. N-full meanrisky
+exposure.45455/cash30days: gains are exposure/timing-confounded, not causal
+covariance quality. DIAG is SAME trained covariance with offdiagonals0, not
+matched fitted diagonal M. Uniform pays H5 roundtrip costs, not permanent
+buy-and-hold. Actual artifacts postdate targets: retrospective adaptive/
+nonPIT/globalreuseUNKNOWN, not prospective/independent alpha or Paper PnL.
+58fixed-output checks6e9d/Claudeed58 SOUND_WITH_LIMITS, alljoined/removed/
+leasefree/650upper CLOSED. Exact seal path continuatione460/3e2c consumed;
+original failure/clocks/debits retained, no inference/readout repeat. N/L/LN
+future points unchanged; no highest-return winner or automatic Paper swap.
 
 L separate Paper consumer now PREPARED_NOT_DEPLOYED/INPUT271aee51/DELIVERYfbcdf230.
 Saved point only,0fits/inference. SDK6423 admits offline; source AMS retained
