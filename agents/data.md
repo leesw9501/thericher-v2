@@ -1,10 +1,26 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 18:22KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 20:01KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
+
+B Toto context252/H5 packet ACTUAL COMPLETE58279e06/Source6b74dc32/
+Feature0610cb6d/DTO402cc653 under
+A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
+29nonoverlapcohorts145sessions/no tail/gaps0/input[29,3,252]F64sourcebytes
+preserved/explicitF32error5.731542e-8. Actual252only, runtime4falsepads notbars.
+Features/targets physically separate/commonbaseInput/differentgroupmaskhash.
+NativeSYN1285upper/build1verify1/retry0/alljoined/64.1426upper inclSource60.
+ActualSYN54888 10:57:23UTC/build39228/verify22064. Parent9refs pass, no arrays
+decoded by Parent. Initial UV runtime hardlink inspection failure preserved;
+use technical-r1, no A rebuild/API/model or profitability qualification.
+ConsumerTesla B runner/source, runtimeAquinas pending, no numerical model GO.
+
+Warm-support A Data38913880/0afa/b989/24b1 complete2267/2266/502/395rows/
+scalerff80 unchanged/onebuild1verify/61.3967upper/8Parentrefs. Model773b
+completed2CPUfits/222NEWupdates/4cells/COMPLETE_FAIL05b02e54, no Data repeat.
 
 NEW3ETF held-feedback packet ACTUAL COMPLETEd48134ac/Source905575e4/
 DTO45845b96/ABIf41d234d/allowlistfbe7df21 at

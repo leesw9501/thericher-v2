@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 18:59KST /09:59UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-24 20:01KST /11:01UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -95,12 +95,70 @@ GRUOct26 13:40UTC/TimesFM14:20UTC/Joint17H20 17:00UTC are future owned jobs;
 no manual duplicate/newcapital/reset/foreign adoption. Existing close captures/
 exits unchanged, future wake/fill unknown. No active numerical/GPU worker now.
 
-Godel separately owns zero-numerical next-mechanism readiness under
-A/research/current-post-deployment-next-mechanism-readiness-20261024-v1:
-compare an actually justified data-recency/convergence question with a genuinely
-untried cross-series public foundation expert. Official rights/version/dates/
-duplicate/data/resource/kill checks only; no download/model/data-array/evaluation
-or numerical GO. Do not let this source package delay the actual import repair.
+Warm-support research ACTUAL COMPLETE_FAIL/FINAL05b02e54/Deliveryb2fb14c9:
+A/research/current-three-etf-warm-start-support-adaptation-20261024-v1.
+Source773b8cde/result6550a061/Parent7public refs+primary criterion confirmed.
+2resumed CPUfits/222NEWupdates/616242marketrows/6restores/4cells/1intake/
+1580readoutsteps/all5joined/removed. Original first100 epochs NOT repeated.
+OLD PID60928/new59steps/selected109/end159; RECENT49696/new163/selected213/
+end263, bothPAT50, not global convergence. Actual10:50:42..10:51:07UTC.
+2025..Jul26 growth/DD%: recent3.7995/11.1234,old7.7113/6.8935,
+anchor7.5396/6.6944,uniform32.0903/21.4100. All positive, frozen recent-over-old/
+incremental/uniform criteria FAIL; no fallback/Paper swap/independent alpha.
+Native actual CPU AND CUDA forward/gradient/cold RNG PASS,9148SYNrows/
+10updates/8restores/oneNative. Full-N2267 timed SYN CPU.09209s/CUDA1.19687s,
+CUDApeak148MiB. One warm+timed indicative co-tenant sample, NOT general benchmark.
+CUDA unsupported error NOTOBSERVED. CPU chosen by measured protocol, no GPU
+permission/environment block. GPUlease released10:50:38UTC, no active A PID.
+Worker wall SUM48.4642s; conservative total upper590, not actual GPU spend.
+Original09:52..13:52/6000active/old failures/debits unchanged; no A rerun.
+
+A Data38913880/Source0afa589a/DTOb989a544/ABI24b116a6 complete/closed:
+A/data/current-three-etf-warm-start-support-inputs-20261024-v1.
+2267/2266/502/395rows/scalerff80 unchanged/onebuild1verify/61.3967upper.
+Parent8refs match, no arrays decoded by Parent.
+
+Current parallel B: Toto grouping SOURCE/runtime work, NOT running inference.
+Protocol07de4a1a/Sourcef1a44ba0/compilerc0ebc56a, Godel closed:
+A/research/current-toto-cross-series-h5-preparation-20261024-v1.
+Same dated checkpoint/joint versus separated groups,2026only/context252/
+5TRADING-observation horizon/business ordinals+separate realUTC, fixed top1
+positive elsecash compiler and five-session buyhold/cost-aware replay.
+Native/compiler/model evidence still pending; no fitting or Paper promotion.
+
+Public cache ACTUAL verifiedf9a5c981/Source10387728:
+A/research/current-toto-isolated-runtime-preparation-20261024-v1.
+D:/thericher-v2/model-artifacts/public-models/Datadog/Toto-Open-Base-1.0/af7a04c59173191cfceb896647d1821ffc308233/model.safetensors
+605239264bytes/SHA69b67e60decc90baf741729abcf1fe8fe0881e3e3337176042053c28a122fa4c,
+confige381ed28/patch64/stride64/12layers/StudentT24/F32/132header tensors.
+One no-auth download/32.6648s/helperjoined; no tensors/model loaded,153upper.
+Official codeb4d4c9f3/v0.1.4/Apache2. Runtime import unqualified: GluonTS eager
+training-stack imports/declared NumPy<2. Aquinas temporaryInfra owns separate
+runtime-subset-r1 minimal reviewed inference derivative/lock/import plan.
+Keep existing A/Paper/Torch2.7 image unchanged; no blind full requirements,
+unsafe pickle/dynamic remote code or model execution before exact Source GO.
+
+B Data ACTUAL COMPLETE58279e06/Source6b74dc32/Feature0610cb6d/DTO402cc653:
+A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
+29cohorts145sessions/no tail/gaps0/context[29,3,252]F64sourcebytes preserved;
+explicitF32error5.731542e-8<2^-24, runtime4pads false/structural not realbars.
+Inputs/targets separate RO allowlists, commonbaseInput/differentgroupmask
+hashes. NativeSYN1285upper/build1verify1/retry0/alljoined/64.1426upper incl60.
+Parent9namedrefs PASS without array decode. Original UV runtime hardlink
+inspection failure preserved before effects; use actual technical-r1, not root.
+ActualSYN54888 10:57:23UTC/build39228/verify22064, alljoined, Data role closed.
+
+Tesla owns B runner/DTO/analytical kernels SOURCE ONLY under
+A/research/current-toto-cross-series-h5-development-20261024-v1.
+Pure invented compiler/replay unit feedback<=2runs/32cases/512toy pathsteps
+within Source120 is delegated;0model/backbone/market calls, preserve failures.
+Full B Source/numerical GO still waits actual runtime/loader/ABI/counters.
+Noether remains sole GPU coordinator, ready for fresh B capacity ACK only.
+B10:20..14:20UTC/7200active14400elapsed includes protocol180, cacheInfra153,
+newInfra/Data/Engine actual once; no old A/c625 refunds. One TOTAL trusted
+model load across loadedNative+forecasting,3newcells/1intake; exact counters/
+headroom/locks must freeze before effects. Invalid means reject BEFORE official
+zero sanitization, all generated64-tail/internal head points counted.
 
 Actual Data d48134ac/Source905575e4/DTO45845b96/ABIf41d234d remains immutable:
 A/data/current-three-etf-held-feedback-inputs-20261024-v1.

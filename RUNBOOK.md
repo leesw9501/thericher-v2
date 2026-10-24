@@ -12,38 +12,35 @@ Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
 ## Current Actual Deployment
 
-Current research3ETF state-feedback is CLOSED COMPLETE_FAIL1e9028d2:
-A/research/current-three-etf-held-feedback-development-20261024-v1/FINAL-CONSUMER.json.
-Actual2CPUfits200updates6cells/native6updates99actor49encoder rows/alljoined/
-removed/862.405593activeupper. Fixed-output9e8c/independentcc649a7a pass.
-DO NOT run its launch.ps1 -Execute, --chain, any stage or finalization again.
-Both MAX100/best95and100 do not prove convergence. R1 draft unrun/unqualified.
-No c590 GPU training or automatic Paper model swap.
+Company NEXT: exact natural Oct26 GRU/TimesFM/Joint17 entry outcomes below.
+Metadata-only snapshot10:02:43UTC, six planned tasks enabled/Ready/0instances:
+A/execution/current-oct26-entry-metadata-readback-20261024-v1/METADATA-20261024T100243Z.json
+SHAf3295a41. No current source/ACL/natural-owner/broker fill inference.
 
-Action-inertia c625 is CLOSED_TECHNICAL_INCOMPLETE_NATIVE_IMPORT7049faef:
-A/research/current-three-etf-action-inertia-development-20261024-v1/FINAL-CONSUMER.json.
-Actual native CPU container/Torch/NumPy import then DATA=ROOT.parents[1]
-IndexError at/src, before native function/model/market effect. Alljoined,
-193.087152activeupper; attempt1/0retry/continuation0 exhausted. No evaluate,
-relaunch, c625 edit or name-only restart. Financial question remains unanswered.
+Research A warm-support CLOSED COMPLETE_FAIL05b02e54/Source773b:
+A/research/current-three-etf-warm-start-support-adaptation-20261024-v1/FINAL-CONSUMER.json.
+Actual2CPUfits222NEWupdates/616242rows/6restores/4cells/alljoined, no first100
+repeat; PAT50/selected109and213, no convergence/alpha/Paper swap. Native BOTH
+CPU/CUDA passed; fullN2267 timed.09209/1.19687sec, CPUchosen. Do not run its
+launch -Execute/-Verify, model/native/readout/finalization again.
 
-Import-only engineering repair Source5f1 COMPLETE_PASSc29ac6f5:
-A/research/current-action-inertia-container-import-repair-20261024-v1/FINAL-CONSUMER.json.
-Actual09:54:46UTC/network-none stdlib child/two cases/0.631774s/alljoined/
-removed. Original IndexError/fixed import PASS.0Torch/NumPy/model/array/kernel/
-financial/GPU; oldc625 source unchanged. Real/src under different basenames
-does NOT qualify full-worker bootstrap/native or any scientific continuation.
-Engine41.255upper/Parent combined conservative161.255upper. Do not repeat
-launch -Execute or probe; default source-only check is not runtime evidence.
+Current B source, NO model/inference command qualified yet:
+A/research/current-toto-cross-series-h5-development-20261024-v1 (Tesla).
+Proto07de/f1a4/compiler c0eb at current-toto-cross-series-h5-preparation.
+Actual Data58279e06/Source6b74/Feature0610/DTO402c at
+A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
+29cohorts/145sessions/context252/gaps0/features-labels separate, no rebuild.
+Cache69b67e60...a122fa4c/605239264bytes verified once, no model loaded.
+Aquinas runtime-subset-r1 in current-toto-isolated-runtime-preparation needs
+reviewed minimal dependency/loader/import Source before build/import GO.
+No default full requirements/pickle/remote code or A/Paper mutation.
+All B numerical effects need exact finite Source+Noether resource ACK first.
+Family10:20..14:20UTC/7200active, no repeated cache download or old A rerun.
 
-NEXT company is Oct26 natural GRU/TimesFM/Joint17 entry outcomes. No reinstall/
-manual duplicate/point recomputation/new budget. Godel independently evaluates
-next source mechanisms under
-A/research/current-post-deployment-next-mechanism-readiness-20261024-v1.
-No numerical/model/download authorization inferred from that role's MD.
-Data d481/9055/4584/f41d exact6184dates/gaps0/newTRAIN-onlyscaler is immutable;
-no rebuild/double affine. Old flat a593 equal-policy kill remains closed with
-0financialintake/cells/PnL NOT_EVALUATED, no spent e450 continuation repeat.
+Earlier c590 COMPLETE_FAIL1e9028d2, c625 CLOSED_TECHNICAL_INCOMPLETE7049faef
+and separate import repairc29ac6f5 stay closed. Import-only two aliases under
+real/src is NOT full-worker/native or scientific resume authority. No old
+launch/chain/evaluate/probe repetition. Exact evidence/history HANDOFF/Git.
 
 Holdings-only primary4bd2 pushedba1345b; actual one-shot API COMPLETE. Authority:
 A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json

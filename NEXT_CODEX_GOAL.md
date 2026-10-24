@@ -57,13 +57,47 @@ ad685 is not a new order-safety defect or speculative permission to expand.
 
 ## Parallel Research / Do Not Make Market Waiting Global
 
-Ready independent source package Godel:
-A/research/current-post-deployment-next-mechanism-readiness-20261024-v1.
-Compare one duplicate-checked recency/convergence mechanism with a genuinely
-untried cross-series public foundation expert. Official version/license/
-trusted dated checkpoint/data/runtime/resource/strongest-kill facts first.
-Source-only120activeupper/900elapsed, no arrays/model/download/evaluation yet.
-This is not a reading list, an approval wait or evidence a GPU worker runs.
+Warm-support study A is CLOSED COMPLETE_FAIL05b02e54/Source773b:
+A/research/current-three-etf-warm-start-support-adaptation-20261024-v1.
+2resumed CPUfits/222NEWupdates/616242rows/6restores/4cells/alljoined;
+old59newsteps/selected109,recent163/selected213,bothPAT50. No first100 repeat.
+Recent3.7995%growth/11.1234%DD versus old7.7113/6.8935; frozen tests fail.
+Native CPU AND CUDA parity/cold proofs passed. N2267 timedSYN CPU.09209sec/
+CUDA1.19687sec/peak148MiB, protocol choseCPU; not a general benchmark or
+GPU environment/permission block. No further A native/fit/evaluation/reranking.
+Whole conservative590upper inside original09:52..13:52/6000active.
+
+Current parallel B: source-ready Toto group-ID contrast, Godel07de/Sourcef1a4:
+A/research/current-toto-cross-series-h5-preparation-20261024-v1.
+2026only/context252/H5TRADINGsteps/business ordinals+separate realUTC,
+same fixed checkpoint/joint vs separated groups/fixed compiler+aligned
+five-session BUYHOLD replay,0fits/3newcells/1intake after qualification.
+Kant Data COMPLETE58279e06/Source6b74/Feature0610/DTO402c at
+A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
+29cohorts145sessions/gaps0/separatefeature-targetallowlists,4runtimepadsfalse.
+Initial UV hardlink inspection failure preserved; bind actual technical-r1.
+
+Aquinas temporary Infra:
+A/research/current-toto-isolated-runtime-preparation-20261024-v1/runtime-subset-r1.
+One no-auth605239264byte checkpoint verified69b67e60...a122fa4c/confige381.
+No tensor/model loaded. Exact official source/Apache2/minimal safe-only loader/
+GluonTS eager-import and NumPy compatibility need reviewed locked derivative,
+then bounded build/import GO. Do not alter A/Paper/current Torch runtime,
+install full training stack or use unsafe pickle/dynamic remote code.
+Tesla Engine source:
+A/research/current-toto-cross-series-h5-development-20261024-v1.
+PureSYN compiler/replay unit feedback<=2runs/32cases/512toy steps within
+Source120 is delegated,0market/model/backbone/public-code execution.
+Final library/ABI/source/counter/headroom qualification before numerical GO.
+
+B10:20..14:20UTC/7200active14400elapsed includes protocol180/initialInfra153/
+Data64.1426/newInfra/Engine actual once, not extra budgets. One TOTAL trusted
+checkpointload across loadedNative+forecasts; no reload after failed/unknown
+load. Allinternalpatch/mean-tail/distributionpoints counted before effects;
+invalid means rejected BEFORE official neutral-zero substitution.
+Noether remains sole GPU coordinator, no active numerical worker/lease now.
+Exact May2025 checkpoint cannot qualify Jan-Apr2025 as postcheckpoint;
+all project2026 data reused/adaptive, no independent alpha/Paper-PnL claim.
 
 If a distinct useful campaign is ready, Parent adopts its finite Source/
 data/split/target/cost/trial/time/stop contract and dispatches Data/Engine/

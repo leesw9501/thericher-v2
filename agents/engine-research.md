@@ -1,49 +1,64 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 18:59KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 20:01KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Ready Package
 
-three-etf-held-feedback-ablation-v1 COMPLETE_FAIL1e9028d2:
-A/research/current-three-etf-held-feedback-development-20261024-v1/FINAL-CONSUMER.json.
-Sourcec590/result8595/fixed-output9e8c/independentcc649a7a/ClaudeSOUND_WITH_LIMITS.
-Actual2CPUfits200updates/560630marketrows/6cells, native6updates99actor49encoder
-rows/alljoined/removed/862.405593activeupper. MAX100 each/selected95state100blind;
-not convergence or proof that more epochs help. StateDD worse thanblind inboth;
-B growth/utility worse too. Both positive net historical growth, below uniform
-growth with much less risky exposure; no alpha/Paper PnL or automatic swap.
-Old07:50..09:50 clock/debits remain, no native/fit/evaluation/finalization repeat.
-R1 resource draft saved/unfrozen/unrun; not GPU-performance evidence.
+A common-warm-start support comparison COMPLETE_FAIL:
+A/research/current-three-etf-warm-start-support-adaptation-20261024-v1/FINAL-CONSUMER.json
+SHA05b02e546592d8d77e322f71b082ba37f7e7d1f0ea7b87700582f2b8b2cc8a74,
+Source773b8cde/Result6550a061/Deliveryb2fb14c9. Parent7refs/criterion match.
+2resumed CPUfits/222NEWupdates/616242rows/6restores/4cells/1intake/alljoined.
+Original first100 NOT repeated. OLD59newsteps/selected109/end159; RECENT163/
+selected213/end263,bothPAT50. No global convergence or equal-update claim.
+Actual10:50:42..10:51:07UTC/CPUoverlap, workerSUM48.4642s; conservative590upper,
+not actual GPU spend. Recent growth/DD3.7995/11.1234%,old7.7113/6.8935,
+anchor7.5396/6.6944,uniform32.0903/21.4100; all frozen testsFAIL.
+Reused adaptive2025..Jul26, not alpha/PaperPnL; no fallback swap or A rerun.
+Native CPU AND CUDA forward/grad/cold checkpoint PASS9148SYNrows/10updates/
+8restores. N2267 single timedCPU.09209s/CUDA1.19687s/peak148MiB.
+Not general isolated benchmark. CUDA unsupported error NOTOBSERVED; measured
+protocol choseCPU, not permission/environment failure. GPUlease closed.
 
-Action-inertia c625 CLOSED_TECHNICAL_INCOMPLETE_NATIVE_IMPORT/FINAL7049faef:
-A/research/current-three-etf-action-inertia-development-20261024-v1.
-Actual native attempt09:43:59..09:44:02UTC/alljoined/193.087152activeupper.
-IndexError on eager DATA=ROOT.parents[1] at/src import, before native function/
-PREDEBIT/model/restore/actor/market array/cell/outcome intake. Actual Torch/
-NumPy imports/container occurred. Not financial failure or zero PnL.
-Attempt1/0retry/continuation0 exhausted; old Source/failure/clock unchanged.
-Do not run/evaluate it or rename same question to reset caps.
+Company NEXT remains actual Oct26 GRU/TimesFM/Joint17 natural entry evidence.
+B current source package, Tesla disjoint executor:
+A/research/current-toto-cross-series-h5-development-20261024-v1.
+Protocol07de4a1a/Sourcef1a44ba0/compilerc0ebc56a, Godel complete/closed:
+A/research/current-toto-cross-series-h5-preparation-20261024-v1.
+One trusted Toto checkpoint/joint vs separate groupIDs/2026only/context252/
+5TRADING steps/business ordinals+realUTC. Fixed top1positive elsecash,
+five-session held quantities/entryOPEN1/exitCLOSE5/10bpeachside; uniform ALSO
+five-session buyhold. Compound NAV, dailyCLOSEDD, no per-cohort PnL resets.
+0fits. Same model/data/backend; freshKV percondition; pre-sanitize full64tail
+audit, invalid means reject not neutral. One TOTAL actual checkpointload across
+loadedNative+allforecasts; no silent reload/retry after failed/unknownload.
+Forecasts BOTHconditions sealed before separate CPU readout opens labels.
 
-Independent import repair COMPLETE_PASSc29ac6f5:
-A/research/current-action-inertia-container-import-repair-20261024-v1.
-Source5f1/actual09:54:46UTC/1network-none stdlib child2cases/0.631774s/
-alljoined/removed/0Torch/NumPy/model/array/kernel/finance. Parent10refs match,
-c625 unchanged. Basenames differ under real/src: no full-worker/native/
-financial qualification or old scientific resume. Engine41.255upper/Parent
-combined conservative161.255upper; no old debit refund. No probe repeat.
-NEXT company Oct26 three-candidate Paper entries, not a research gate.
-Noether complete/idle. Godel active source-only alternatives under
-A/research/current-post-deployment-next-mechanism-readiness-20261024-v1;
-no dataset/model/download/numerical GO. Adopt distinct useful frozen campaign
-when ready, not another seed/epoch run merely to occupy GPU.
+B Data ACTUAL COMPLETE58279e06/6b74dc32/Feature0610cb6d/DTO402cc653:
+A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
+29cohorts145sessions/gaps0/context[29,3,252]F64preserved/F32error5.731542e-8;
+physicaltargets separate/known4runtimepadsfalse. Onebuild1verify/native1285upper/
+alljoined/64.1426upperinclSource60. Parent9refs pass; no Data rebuild.
+Public cachef9a5c981/Source10387728 verifies605239264bytes/SHA69b67e60...a122fa4c,
+not model inference. Aquinas runtime-subset-r1 still needs exact reviewed minimal
+GluonTS/NumPy compatibility/lock and real import proof before numerical GO.
 
-Data d481/9055/4584/f41d remains actual6184dates/gaps0/newTRAIN-only9channel
-scaler. No rebuild/double affine; raw/normalized X[N,9,31], adjusted O/C[N,3],
-original scheduledOPEN cutoff/priorCLOSE state. Data role remains closed.
-Prior flat FINALa5939dbc COMPLETE_FAIL_EQUAL_POLICIES,0financialintake/cells,
-not zero PnL. Single e450 continuation used, no teacher/native/fit repetition.
+Short queue: B pureSYN DTO/compiler/replay unit feedback<=2localruns/32cases/
+512toy pathsteps inside Source120,0model/backbone/market operations. Actual
+runtime/import/long-context/backend/counter qualification remains.
+Depth queue: one loaded fixed foundation instance -> grouped/separate forecasts
+->3newfinancialcells/1intake once exact Source/Steward capacity qualifies.
+No unfrozen train/sampling/window/precision/grid. B10:20..14:20UTC/7200active/
+14400elapsed includes protocol180/cacheInfra153/Data64.1426/newInfra/Engine
+actual once, no old refunds. Do not couple B's source block to Paper or A.
+No current training/inference GPU PID, Noether sole resource coordinator.
+
+Earlier c5901e9028d2 COMPLETE_FAIL and c6257049faef technical import failure
+remain closed. Separate import repairc29ac6f5 actual two-alias/src PASS is NOT
+full worker/native/scientific continuation authority. Exact history HANDOFF/
+Git51d48d8/immutable consumers; no old native/fit/evaluation repeat.
 
 ## Operational Candidate / Consumer
 
