@@ -87,9 +87,23 @@ different unused cash, not alpha/Paper PnL. Auxiliary benefit/product screen FAI
 Conservative preparation start04:21:46 yields actual unchanged deadline08:21:46,
 earlier than allowed ceiling08:44:51; Data first SYN/start and2.6254sec charged
 once. Closed clocks/failures/debits unchanged; no numerical retry or best-loser.
-Next source/metadata-only intraday ETF novelty/readiness proposal underway at
+Next source/metadata proposal COMPLETE5ca57548/Sourcebb038a1c/proposal1d49096e:
 A/research/current-intraday-etf-next-experiment-preparation-20261024-v1.
-Retained minute sessions are not an instruction to retrain or a new fit claim.
+97staticchecks/no numerics, prior minute GRU/MTF/attention/HGB/ORB/switch and
+daily learned exits checked. New consumer is fixed equal SPY/QQQ entry121,
+three held ages136/151/166, predict terminal181 OPEN minus nextOPEN[d+1]
+value per entry notional. One CPU Ridge(alpha1/SVD), no entry model/GPU/window
+sweep. State8/31closed-closes, next-bar one-minute latency, strict missingness.
+TRAIN145/CHECK43/EVAL63 scheduled sessions; nominal archive clocks/DST/source
+limits and repeated old-data use remain, not new algorithm/independent alpha.
+Parent adopts1800active/7200elapsed/origin05:25:38.0591816/deadline07:25:38.0591816UTC,
+prep60upper+actualData charged once. Data/Kant exact offline packet build GO;
+Engine source/native-interface preparation GO, no numerical model dispatch yet.
+1nativeSYNfit/1marketfit/1884predictions/12cells/oneoutcome/0LATER/0retry,
+one shared pre-model/fixed-output continuation, never repeated fit/pred/cells.
+A/research/current-intraday-etf-fixed-entry-exit-development-20261024-v1.
+Missing required June05 bars cannot be imputed/deleted; qualify actual packet
+first. Claude new target/clock/exposure review before final Source dispatch.
 Claude c6d011e4 REVISE corrections adopted: equal H5 coefficient, complete H1
 support/purge, exact gradient path and adaptive reused-data claim. Exact design
 is Codex-proposed under delegated research authority, not human-specified.

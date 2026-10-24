@@ -52,6 +52,37 @@ not an input-unavailable or zero-profit outcome. No further data/model rerun.
 
 ## Owned Next / Future Capture
 
+Joint17 H20 capture preparation ACTUALLY COMPLETE45ded08c/Sourcec837a620 at
+A/data/current-joint17-h20-prospective-capture-preparation-20261024-v1/joint17-h20-r2/CONSUMER.json.
+23SYN/18SchedulerMock/16typedCOM/Ruff/ClaudeSOUND_WITH_LIMITS; old27source
+members exact. Prior style/SDK-initialization failures retained, final helpers
+joined. DST-correct Oct26..Nov20 research OPEN69+CLOSE1380, unknown31 preserved.
+Parent bound ONCE to Source474d67e9 then actually registered DISABLED/exit0:
+A/data/current-joint17-h20-postclose-marks-20261120-v1/READY-SOURCE-R3.json.
+Task thericher-kis-paper-joint17-h20-postclose-marks-20261121-v1,
+Nov21 06:35..06:40KST/PT15M/quietpythonw,69GETmax1POST/client1/0retry.
+Independent disabled8db1791c PASS; Parent EnableReadback actually exit0,
+ENABLED_EFFECTIVE_MATCH_ACL_UNCHANGED_NOT_STARTED. Independent actual enabled
+9be5e4e9 PASS:
+A/review/current-joint17-h20-capture-actual-readback-20261024-v1/ENABLED-CONSUMER.json.
+Both COM Booleantrue/Ready0/nextNov20 21:35UTC/source/action/XML/ACL stable;
+legacy27files/existing70+25tasks unchanged. No API/capture. Do not repeat
+Bind/install/enable or startTask/collector/
+derive now or change old70/25. Actual future
+marks NOT_OBSERVED; research OPEN price != actual fresh Paper entry fill price.
+
+New exact offline intraday exit packet build assigned:
+A/data/current-intraday-etf-fixed-entry-exit-input-20261024-v1.
+Consumer5ca5/proposal1d49/Sourcebb03; source CSVs already retained,0acquisition.
+Preserve251 scheduled keys/TRAIN145/CHECK43/EVAL63. First input-only state8/
+known/cutoff leaves seal before labels; TRAIN-only scaler, separate TRAIN/CHECK
+remaining-value targets and sequestered EVAL held marks, separate2026ABI-only.
+SPY June05 four-bar gap exact overlap must be checked before fit; no deletion/
+imputation/window change. 1build1verify/Data300active1200elapsed, whole family
+1800active/7200elapsed hard07:25:38.0591816UTC, prep60+actualData charged once.
+Real SYN/header/clock handoff before source decode; no models/financial cells/
+broker/Task/private custody/credential access. Missing input is lane-local.
+
 Current TimesFM input COMPLETE33d12d81:
 A/data/current-timesfm-ordinal-dated-input-development-20261024-v1/pg-coherent512-r1/VERIFIED-CONSUMER.json.
 DTO21c1727d/source7563d0e5/payload1ec54ac1;25x512=12800 positive closes,

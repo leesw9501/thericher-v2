@@ -8,8 +8,13 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 NEW H1-auxiliary/H5 transfer actually completed paired CUDA fits and24cells at
 A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json.
-Categorical COMPLETE_FAIL; independent result/contract review with Claude is
-active, no new scientific winner, Paper swap or numerical dispatch. Current
+Categorical COMPLETE_FAIL; independent result327d1c5b/ClaudeSOUND_WITH_LIMITS
+confirms no source-contract blocker to the recorded failure, no winner/Paper
+swap/numerical dispatch. Different actual LR paths prevent equal-LR causal
+claims; A TRAIN_H1=0 is an unused-head placeholder, not measured H1 performance.
+Conditional Top8 cutoff-pair idea is NOT dispatched: first reject duplicate/
+closed-family relabeling; Noether's distinct intraday ETF input readiness takes
+priority to broaden mechanisms beyond reused daily outcomes. Current
 Joint17 H20 point e06c/2ead is accepted by native Execution and parent release
 022f created/actual installed222d/independentd092 PASS. Old6 preserved, future
 entry/fill/PnL remain unobserved; H20 capture preparation not actual marks.

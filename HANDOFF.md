@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 14:27KST /05:27UTC.
+2026-10-24 14:43KST /05:43UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -16,7 +16,8 @@ Preserve unrelated untracked %SystemDrive%/. History is Git/immutable artifacts.
 
 Prior timesfm-ordinal-dated-paper-proposal-v1 is COMPLETE AS DEPLOYMENT.
 Joint17-oct26-h20-paper-deployment-v1 is COMPLETE AS DEPLOYMENT. NEXT owns
-joint17-h20-prospective-capture-ready-v1, not future acquired marks or PnL.
+joint17-h20-prospective-capture-ready-v1 is also COMPLETE AS DEPLOYMENT, not
+future acquired marks or PnL. NEXT owns intraday-etf-fixed-entry-exit-comparison-v1.
 Prior H5 comparison is
 SUPERSEDED TECHNICALLY INCOMPLETE, not a completed learned-model comparison.
 TimesFM Data, actual CUDA point,
@@ -64,8 +65,16 @@ isolated speed.10bp fractional growth/DD%:A-.105830/.129984,B-.152218/.168831,
 uniform8+.002597/.064461; auxiliary/product screen FAIL. Whole-share exposure
 differs, not actual Paper PnL. Actual conservative04:21:46 preparation start
 yields unchanged08:21:46 deadline, earlier than Data-derived ceiling. Detailed
-curves/counts/24cells remain immutable; no repeat fit/replay. Next intraday ETF
-metadata/duplicate proposal only, no next numerical dispatch yet.
+curves/counts/24cells remain immutable; no repeat fit/replay. Interpretation327d/
+ClaudeSOUNDlimits confirms recorded failure; different realized LR paths and
+unused-head TRAIN_H1 placeholder preclude stronger causal claims. No Top8 retry
+dispatched. Next intraday source proposal5ca5/1d49/bb03 passed97staticchecks;
+Parent adopts new CPU Ridge held-exit family1800active/7200elapsed/hard07:25:38UTC,
+1fit/1884predictions/12cells/noGPU or entry/rank/window sweep. Source preparation
+and Data offline exact packet build active; no model numerical dispatch yet.
+Data TRAIN145/CHECK43/EVAL63 sessions fixed, strict SPYJune05 gap check before
+fit; separate input/target/held leaves and TRAIN-only scaler. Preparation60upper
+and actualData charged once. Existing archive reused/adaptive, not fresh alpha.
 Aq native diagnostic3a817a1d passed14real-disk/4protocol checks, original private
 error not reproduced. Diagnostic successorb447 failed same-entry SYN before
 private attempt; technical-r1 52470 SYN passed then ONE actual attempt stopped
@@ -218,6 +227,21 @@ Research actors; quiet now is not Monday concurrency proof. No bypass was made.
 
 ## Data / Owned Due
 
+Joint17 H20 capture preparation45ded08c/Sourcec837a620 at
+A/data/current-joint17-h20-prospective-capture-preparation-20261024-v1/joint17-h20-r2.
+23SYN/18SchedulerMock/16typedCOM/Ruff/ClaudeSOUND; legacy27source members exact.
+Parent bound474d67e9 then InstallDisabled and EnableReadback ONCE, both original
+processes exit0. Deployment root:
+A/data/current-joint17-h20-postclose-marks-20261120-v1.
+Independent disabled8db1791c then actual enabled9be5e4e9 PASS:
+A/review/current-joint17-h20-capture-actual-readback-20261024-v1/ENABLED-CONSUMER.json.
+Both COM Enabled Booleantrue/Ready0/source-action-XML-ACL stable; existing70/25
+tasks and27source files unchanged across read. Nov21 06:35..06:40KST,
+69GETmax1POST/client1/0retry/PT15M; DST-correct Nov20close21UTC. No API/capture/
+derive now; do NOT repeat Bind/install/enable. Future1449research marks unknown,
+not OSwake/provider-finality/actualfill/fees/PnL proof. Initial style/SDK failures
+retained under prep root; final helpersjoined, no historical mutation.
+
 Future TimesFM25 capture is ACTUALLY enabled/readback, not acquired:
 BoundSource9a3311d8 / Preparation36f8ea5b,
 A/data/current-timesfm-h5-postclose-marks-20261030-v1.
@@ -244,6 +268,12 @@ No reactivation, substitute entry or proof of repaired natural owner yet.
 NightlyOct23 exact2d168c90 proves1SELL accepted/fullfill/cyclecomplete, not wholebook.
 OriginalNAS8 proves8BUY+8SELL/ownedflat/grossnegative, fees/settledcash/net unknown.
 F9a638e1a6 audit found no useful identical retry; absence never releases its reserve.
+Current Paper public-pointer checkbd60e06e found no eligible newer bound result
+within its exact scope, not proof later outcomes do not exist. Known nightly
+2d16 is carried historical evidence, not freshly requalified/current wholebook.
+Tesla owns source/SYN first-cause repair of F9 offline-reader0fcc failure at
+A/execution/current-f9-offline-reader-first-cause-20261024-v1. No actual private/
+broker read/recovery/reservation change is authorized by that synthetic package.
 
 ## Closed Research / Do Not Repeat
 

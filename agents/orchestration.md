@@ -7,8 +7,9 @@ decision presently. Preserve unrelated untracked %SystemDrive%/.
 ## One Outcome / Actual Owners
 
 Joint17-oct26-h20-paper-deployment-v1 COMPLETE AS DEPLOYMENT, not fill/PnL.
-NEXT joint17-h20-prospective-capture-ready-v1: finite69-route coherent H20 mark
-capture ready for future cost-aware replay; actual future values unobserved.
+Joint17 H20 capture-ready COMPLETE: actual bound474d/enable/independent9be5,
+future1449marks unobserved. NEXT intraday-etf-fixed-entry-exit-comparison-v1:
+one transparent cost-aware CPU learned-exit comparison with exact causal inputs.
 Prior H5 Top8 comparison SUPERSEDED TECHNICALLY INCOMPLETE, not completed.
 Prior dated TimesFM deployment COMPLETE, future runtime/fills still unobserved.
 
@@ -16,10 +17,10 @@ Prior dated TimesFM deployment COMPLETE, future runtime/fills still unobserved.
 | --- | --- |
 | Parent / 총괄 | Joint17 actual install222d/session41586exit0; integrate independent readbacks/results, shared MD/Git. |
 | Aquinas / 실행 | Complete/agent closed: candidate730c/installer60-0; phase Plan bug fixed before actual effects. |
-| Noether / 엔진·자원 | H1/H5 COMPLETE_FAIL/785checks/alljoined; retained intraday ETF metadata/duplicate proposal only. |
-| Kant / 데이터 | H1 build26e2 complete/missing0; H20 future69-route coherent capture source/SYN preparation. |
-| Godel / 검토 호출 | Independent new paired-result interpretation/Claude, no numerical dispatch. |
-| Tesla / 실행 호출 | Candidate reviewca703 passed; new installed-readback preparation and exact existing Paper-result pointers. |
+| Noether / 엔진·자원 | H1/H5 complete; new intraday fixed-entry/learned-exit CPU source preparation, no new model numerical dispatch. |
+| Kant / 데이터 | H1/H20 prep complete; exact offline intraday state/target packet build authorized. |
+| Godel / 검토 호출 | Complete/closed: aux result327d, H20 capture disabled8db1/enabled9be5 actual readbacks. |
+| Tesla / 실행 호출 | Actual Joint17 d092 PASS/Paper bd60 unknown; F9 offline-reader source/SYN first-cause repair only. |
 
 ## Current Evidence / Dependencies
 
@@ -59,8 +60,11 @@ each6310MiBreserved/observedGPUmax93%/minfree8245MiB. No ongoing fit inferred.
 Uniform8 outperformed both at10bp; genuinely new input/target mechanism readiness
 comes before a next frozen fit, not repeated seeds for utilization.
 New capture coveragef29e proves existing H5 five-close pages cannot satisfy
-Joint17 H20/1449future marks. Kant prepares separate coherent69-route variant,
-Nov21 06:35KST proposed; no install/capture yet, old70/25 untouched.
+Joint17 H20/1449future marks. Preparation45de/c837/joint17-h20-r2 complete:
+23SYN/18SchedulerMock/16typedCOM/Ruff/ClaudeSOUND, old27source members exact.
+Parent bound474d, disabled read8db1, actual enable exit0 and independent9be5
+PASS. No future capture. Nov21 06:35KST/69GET1POST/oneclient/
+0retry, old70/25 unchanged. No repeat Bind/install or manual run/derive.
 
 Optional private proxy reader CLOSED3e1ae648/mount_scope before private worker,
 no feasibility conclusion. Do not reopen it; native Paper sizing is consumer.
@@ -80,9 +84,15 @@ Original shared tenth/basis/costs/losses/pending/fresh runtime risk remain intac
 
 ## Throughput Review
 
-14:20KST: prioritize actual reusable Joint17 point/deployment, not repeated failed
-research bootstrap. Move DTO/API/metadata smoke before GPU construction; compact
-manifest SDK mounts avoid Windows argv overflow. Respect closed caps/failures.
+14:38KST after deployment9c2c2d2 pushed: ready Parent capture-enable after actual
+disabled review; owned Godel source/COM, Tesla exact Paper pointers, Noether
+intraday metadata proposal. Markets/quotas are not foreground dependencies.
+One reversible improvement implemented: construct phase-specific Plan fresh
+inside each registration and independently assert literal intended dates in
+mock/live-COM preflight. This caught59/1 before effects and passed60/0; avoid
+reusing a self-consistent but wrong phase plan. No new policy/report platform.
+Move DTO/API/metadata smoke before GPU construction; compact manifest SDK
+mounts avoid Windows argv overflow. Respect closed caps/failures.
 No fresh full suite for docs/external changes while exact1390 production digests
 match; actual external/native checks qualify external code. No dummy GPU work or
 personal-app hold. Ready independent Data/Research continue, not foreground waits.

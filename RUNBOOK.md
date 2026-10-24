@@ -63,6 +63,22 @@ qualification; preserve actual XML+ACL afterwards. No generic new COM platform.
 
 ## Data / Due / Completed Commands
 
+Joint17 H20 capture is ACTUALLY enabled; do NOT Bind/install/enable again:
+A/data/current-joint17-h20-postclose-marks-20261120-v1/READY-SOURCE-R3.json474d67e9.
+Preparationc837a620/joint17-h20-r2 at
+A/data/current-joint17-h20-prospective-capture-preparation-20261024-v1.
+Parent Bind/InstallDisabled/EnableReadback exit0; independent disabled8db1 and
+enabled9be5 PASS at
+A/review/current-joint17-h20-capture-actual-readback-20261024-v1/ENABLED-CONSUMER.json.
+Task thericher-kis-paper-joint17-h20-postclose-marks-20261121-v1,
+Nov21 06:35..40KST/PT15M/69GETmax1POST/oneclient/0retry/quietpythonw.
+ReadbackEnabled ONLY using prep parent.ps1, exact PreparationSha
+c837a6208eab23f88a1077c8c84d552a806549ccec87cc23298560ce6f70a9e1 and DeploymentSha
+474d67e944e4686c7708b22a544f83de83ffa371244ef2a0ee73bfc0e9c2f5f6.
+Both COM Enabled true/Ready0/source/clocks/ACL/legacy27/70+25tasks stable.
+Future1449researchmarks NOT_OBSERVED, not actual fill/fee/netPnL or OSwake proof.
+No manual Task/collector/derive to simulate a future result.
+
 TimesFM25 capture bound9a3311d8/prep36f8ea5b ACTUALLY enabled/readback:
 A/data/current-timesfm-h5-postclose-marks-20261030-v1.
 Independentec7cb1b9:
