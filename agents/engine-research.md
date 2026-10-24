@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 09:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
@@ -15,10 +15,12 @@ Original591a policy/TRAINaffines/raw63x6/factor10/context9 unchanged.
 Oldcb5 task disabled before inference; never run original FUTURE-COMMAND.
 Inference clocks are explicit enclosing bounds, not exact duration.
 
-Current actual native91c09718/3e1d3e15/release0fb32aa7/image9a109133
-replaces historical1c30/8b29/813. Parentc2369abd/actualindependentbe057619:
-A/execution/current-h5-in-visit-terminal-parent-release-20261024-v1/CONSUMER.json.
-Same-last-SELL closure tested/deployed; natural owner/fills/lifecycle unobserved.
+Current actual Source16484c39/nativeb0b63a29/release2695b7c5/image2ff53eff
+replaces historical91/0fb/9a. Parent actual02:54:48UTC/independenta20dfc1e:
+A/execution/current-h5-zero-order-gru-cutover-preparation-20261024-v1/final-readback-r1/CONSUMER.json.
+Same-last-SELL and ALL-target sizing-only no-order closure are deployed. GRU69
+targets/max8 cannot prove all69 sizing skips from an empty8-target prefix;
+that gap is outside this repair. Natural owner/fills/lifecycle remain unobserved.
 EntryOct26 13:40..14:10UTC/exitOct30 19:45..20UTC;max8owned/whole shares/
 .005originalbasis/sharedtenth/F9held/no redistribution. Proxies != research marks.
 Capturec78/refc992 installed forOct31 05:10KST; future marks not observed.
@@ -32,13 +34,26 @@ Actual CUDA market worker41376 ran02:06:50..02:07:00UTC,1selected head/core load
 consumed. Point04b23dcc/metadata23566672,120checks/Ruff/alljoined/leasefree.
 Publication1fb1ca2b is canonical H5 with28axis/25known/1NAS eligible target;
 NYS mass skipped without redistribution. Parent actual source-bound receiver
-accepted it, not an installed opportunity, actual order or profitable model.
+accepted it. Actual TimesFM source63/native248/release9b/image2ff tasks were
+metadata-qualified03:33:19UTC after original ACL-assumption failure. Existing
+EXIT retained; missing ENTRY created once; installation is not an actual order,
+natural owner or profitable model. EntryOct26 14:20..14:50UTC, exitOct30 19:49..20.
 Native8dcbb24b and initial SDKfixture failure remain separate closed evidence.
 Both declared core loads/native+market are consumed; do NOT repeat any stage.
-Noether now owns retained SIX-versus-uniform loss attribution at
-A/research/current-h5-six-later-loss-attribution-20261024-v1.
-One finite CPU diagnostic,0fits/restores/forwards/new selection/reranking;
-diagnose aligned gross/cost/turnover/contribution facts, not causal alpha.
+Retained SIX attribution failed before analytics due key-clock mismatch at
+A/research/current-h5-six-later-loss-attribution-20261024-v1; no retry there.
+Separate key-only admission7e2 and NEW native support8 replay are distinct.
+Support8 replay4c27bb40/fef87137 completed12cells/2dispatches/0model operations:
+A/research/current-native-support8-equal-weight-whole-share-conformance-h5-development-20261024-v1/recovery-r1/CONSUMER.json.
+At10bp eachleg GRU Top8 fractional -.15991%/.16771DD versus uniform8
+-.05431/.06364, both at .005 gross: growth/DD FAIL. Whole-share -.14600/.15079
+versus -.04407/.05750 includes different unused cash, not alpha. B is invented,
+not actual Paper budget. NumPy private header failure/debit retained; public
+native API continuation used final predeclared retry/12cells total. Alljoined.
+Noether now prepares NAS-supported-before-training H5 hypothesis at
+A/research/current-native-supported-universe-h5-training-preparation-20261024-v1.
+Source/metadata-only duplicate/data readiness check; no new market fit/forward/
+financial dispatch yet. Current Paper inputs/points/risk remain unchanged.
 
 Beta-residualrule COMPLETE_FAILb0e3ced1/Deliverybdca1acf/Source0f3cb076 at
 A/research/current-h5-beta-residual-reversal-development-20261024-v1.
@@ -50,7 +65,8 @@ TimesFMfeasibilitye13553ca rejects duplicatezero-shot:126forwards18cells and
 adaptation502+1246updates alreadyclosed. Aq36db2761 verified NESTED ordinal
 premarket-abi-repair-r1 alreadyclosed2fits341+651updates; rootFAIL was incomplete.
 Comparison goal SUPERSEDED, no duplicate repair/training. Old scientificFAIL/
-financialDDFAIL/growthpass retained. New timesfm-ordinal-dated-paper-proposal-v1.
+financialDDFAIL/growthpass retained. Dated Paper proposal subsequently deployed;
+current NEXT is native-supported-universe-h5-comparison-v1, not a repeated fit.
 Noether modelrequirements at
 A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1.
 Metadatahelper failed one assertion after20/24checks, joined/no retry; not a

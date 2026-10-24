@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-24 09:50KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
@@ -12,9 +12,12 @@ Native8dcbb24b/1278903a closed01:35:38UTC; real market worker41376 then ran
 02:06:50..02:07:00UTC,1selected core/head load and1batch25windows/0fits.
 Both wholepoint core loads consumed;1107.6067/2400activeupper including checks/
 cleanup. All workers joined/GPUlease released;120checks/Ruff PASS.
-Publication1fb1 and Parent receiver ready, not runtime installation or alpha.
-No market/native/fit repeat. Current Noether attribution is CPU-only useful
-diagnosis; no useful ready GPU job is being withheld for authority or app names.
+Publication1fb1 consumed; actual TimesFM two-task installation completed03:33UTC,
+not an actual fill or alpha. No market/native/fit repeat. CPU support8 replay
+completed12cells/2dispatches/303.71activeupper/1192.37elapsed, old failure/debit
+preserved, alljoined. New NAS-supported-before-training hypothesis is currently
+source/data-contract preparation, not an active or ready CUDA fit. No useful
+ready GPU job is being withheld for authority or personal app names.
 Do not infer current utilization or a running process from closed evidence.
 
 Noether single GPU coordinator. Fixed-rank fusion68093a24 closed3cells/
@@ -48,7 +51,7 @@ alljoined, growth/riskyDDfail. TimesFMzero-shot/adaptations already CLOSED,
 not new GPU jobs. Originalordinalroot failedCPU_PREFLIGHT/0GPU BUT nestedrepair
 36db2761 proves already2marketfits341+651updates/alljoined/leasefree; no repeat.
 New Data33d1/actualpoint9b00/typedpublication1fb1 are complete. Current Execution
-dependency is matching immutable SDK/image for no-order closure, not more GPU.
+SDK/image2ff no-order closure is now actually deployed, not a current GPU block.
 Parent475serial/18956fullPASS25skip/8workers397.74sec/1390incllocks/clean2ef959d2.
 Independent attribution/venue audit/mark coverage continue during verification.
 Inspect named nested recovery READBACK/FINAL and trialcustody before untried/

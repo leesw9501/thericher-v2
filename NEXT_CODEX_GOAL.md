@@ -2,107 +2,92 @@
 
 ## One Company Outcome
 
-timesfm-ordinal-dated-paper-proposal-v1: produce ONE newly dated, causal
-FROZEN_RANK research point and connect its weights to the existing deterministic
-H5 Paper path as an explicitly provisional operational baseline. Prepare a
-separately owned opportunity only when exact point/route/identity/risk bindings
-are ready. No forced order, profitability promotion or original-request replacement.
+native-supported-universe-h5-comparison-v1: produce one cost-aware H5 comparison
+whose causal universe and finite support match the existing NAS Paper consumer
+BEFORE fitting/ranking. Compare one justified trainable expert with a prespecified
+simple rule and uniform at aligned support/gross. Adaptive development, not
+independent alpha, a profitable-model claim or an automatic Paper swap.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Run scripts/start_next_codex_task.ps1; follow HANDOFF/AGENTS/RUNBOOK/active boards.
-Parent owns shared MD/Git. Private no-cost Data/Research/KIS Paper authority
-continues; never KIS_LIVE_*, real money, paid/public work or raw secret output.
+Run scripts/start_next_codex_task.ps1; read HANDOFF/AGENTS/RUNBOOK/active boards.
+Parent owns shared MD/Git. Private no-cost Data/Research/KIS Paper delegated;
+never KIS_LIVE_*, real money, paid/public work or secret/private raw output.
 
 ## Verified Starting State
 
-Prior timesfm-ordinal-executable-comparison-v1 is SUPERSEDED: its unexecuted
-premise was false. Aq36db2761 verified nested premarket-abi-repair-r1 already
-closed2marketfits341+651updates after the root CPUfailure. Do NOT rerun them:
-A/research/current-timesfm-ordinal-native-recovery-preparation-20261024-v1/CONSUMER.json.
-Original failure/debits remain; exact repair retained at
-A/research/current-timesfm-ordinal-ranking-development-20261021-v1/premarket-abi-repair-r1.
-Old scientific/financial DD failures stay failures despite positive growth.
-Choosing the simpler existing scalar head for provisional operation is adaptive,
-not an independent selection pass or a comparison with unrelated H5 studies.
+Previous timesfm-ordinal-dated-paper-proposal-v1 COMPLETE AS DEPLOYMENT:
+Data33d12d81/DTO21c1/payload1ec5, actual CUDA point9b00/publication1fb1,
+typed receiver, source63/native248/release9b/image2ff. Actual continuationd89/
+session45948 completed03:33:19UTC, retaining EXIT and creating missing ENTRY only.
+Independent actual readback4e3b69f3 PASS:
+A/review/current-timesfm-h5-dated-actual-install-readback-20261024-v1/CONSUMER.json.
+Both Ready0/quiet/source/clocks/ACL correct; original GRU raw XML unchanged.
+Initial installer77fa remains failed. Never rerun point/core/head/continuation/
+Apply/create/release. Installation is not a fill, natural owner or no-send proof.
 
-Execution source mapc8a3fb9b:
-A/execution/current-timesfm-ordinal-paper-consumer-readiness-20261024-v1/CONSUMER.json.
-Exact ordinal Paper consumer not found in checked scope. Minimal path is
-Research CUDA encoder+selected scalar head -> fairTop5 -> generic H5 weight DTO;
-no TimesFM/public model code in Execution. Claude04b6d472 prefers this direction
-with exact asof/checkpoint/context/horizon/adapter and F9/risk kill conditions.
+GRU164/b0/269/image2ff/independenta20 entryOct26 13:40..14:10UTC; TimesFM entry
+14:20..14:50UTC. Existing exitsOct30/capturesOct31 retain original owners/times.
+Future25 capture9a33 enabled/ec7, not acquired. Pair5bf7/6d45/image7d15 current.
+Joint17 expired ENTRY disabled; repaired conditional EXIT remainsNov19.
+No manual Task/collector start merely for inspection. HANDOFF owns other dues.
 
-Pair deployment COMPLETE5bf73743/actual6d45fa0f/source0399/image7d; no repeat
-Apply/Undo/optional R5 repair. Code6f9bd8f and docs2b858e5 pushed. Full09998:
-187serial/18889PASS25skip/8workers/405.78sec/1387exact/clean/Ruff+threeCompose.
-Betaresidualb0e/bdca CLOSED_FAIL43scoredates/3cells; no rerun or fallback.
+Support8 replay4c27bb40/fef87137 completed12cells/2dispatches/0newmodels:
+A/research/current-native-support8-equal-weight-whole-share-conformance-h5-development-20261024-v1/recovery-r1/CONSUMER.json.
+Same-gross growth/DD failed uniform. Hypothetical B and whole-share cash effects
+are not actual Paper budget/alpha. Old failures/debits unchanged, no reruns.
 
-## Parallel Ownership / Work
+Claude direction SOUND_WITH_LIMITS, response471033a5:
+A/review/current-native-supported-universe-h5-direction-20261024-v1/REVIEW.json.
+Duplicate estimand, outcome-dependent support, target-interval overlap or
+inadequate mature labels kill the proposed fit; do not force numerical work.
 
-1. Engine/Steward Noether owns the new dated-point contract/Research wrapper:
-   A/research/current-timesfm-ordinal-dated-point-development-20261024-v1.
-   Reuse exact selected FROZEN_RANK head MODEL.npz f40b04d5/descriptor14dedaa8,
-   native TimesFM2.5 core2f776efe and CUDA runtime d6b43213. Head is [1,1280],
-   not the old three-class restore ABI, zero fresh head or final-trained state.
-   No new training, seed, model selection or historical forecast replay.
-   Freeze finite SYN/load/restore/forward/time/VRAM/output caps BEFORE operations,
-   exact source/SDK/bootstrap/weights and actual native role/file/schema smoke.
-   Coordinate one GPU owner; useful inference may use available headroom.
-2. Data/Kant owns
-   A/data/current-timesfm-ordinal-current-input-preparation-20261024-v1.
-   Bind original fixed25 identities and512positive completed closes per symbol,
-   native16x32 patch normalization, truthful full-axis/venue/known mapping,
-   calendar/cutoff/availability/asof. No clipped-GRU inverse, copied69mask,
-   missing values, provider substitution or unsupported-slot renormalization.
-   Prefer existing exact data; a necessary bounded current Paper market-only
-   acquisition is delegated after its source/scope/GET/POST/clock caps freeze.
-   Single authenticated client/shared token+rate gates, raw bytesM only. No
-   account/order/Live access in Data. No API invocation merely to fill a quota.
-3. Invoked Execution/Aquinas owns minimal adapter/owned-opportunity preparation:
-   A/execution/current-timesfm-ordinal-paper-consumer-readiness-20261024-v1.
-   Reuse ModelPaperWeightRow/Metadata and model-weights-nas-5session-2026-v1,
-   exact generic H5 native risk/custody. New truthful model/transform/input/
-   output/policy hashes and causal timestamps; original25 fairTop5 tie behavior.
-   Existing .005 original-basis cohort ceiling inside ONE shared initial tenth,
-   whole shares/max8/unknown reservations/fresh account-quote-orderability facts.
-   Ties/unsupported routes may leave mass unused, never redistribute or lift caps.
-   Parent binds actual release/schedule only after exact new point is ready;
-   no overwrite of installed GRU input/slot/clocks or substitute F9 request.
-4. Godel challenges the named implementation/claim boundaries; Strategy/Tesla
-   supplies existing source/family facts. No repeat broad review/full test merely
-   for external-only work, no new model/agent/report platform. Old confidence,
-   pair loss, adaptive development and growth/DD facts do not become probabilities
-   or guaranteed profit. Check named nested recovery links before untried claims.
+## Parallel Packages
 
-## Completion / Continue
+- Engine/Steward Noether: exact prior-study/source/data-contract check at
+  A/research/current-native-supported-universe-h5-training-preparation-20261024-v1.
+  If genuinely ready, freeze one matched campaign before numerical dispatch:
+  causal NAS mask/missingness, H5 target/loss/purge, chronological splits, rule/
+  uniform controls, support/gross/costs, growth and risky-DD kill, trial/update/
+  evaluation caps, active-worker AND elapsed ceilings, epoch/patience/LR/best
+  checkpoint diagnostics and any technical retry. No best-rule selection on
+  evaluation outcomes. Real native optimizer/checkpoint/data-handoff SYN first.
+  Useful CUDA is delegated with measured headroom; no completed-fit repetition
+  or model-name/utilization search. Source-only preparation is not a trained result.
+- Execution/Aquinas: failed private-RO proxy-share projection remains
+  input_unavailable at A/execution/current-timesfm-whole-share-basis-readiness-20261024-v1.
+  Source/native-SYN successor:
+  A/execution/current-timesfm-whole-share-native-codec-repair-20261024-v1.
+  Preserve old attempt/debit; retain safe stage/category on nonzero exit and
+  qualify actual strict schemas before any separately bounded successor RO read.
+  No private values, fresh funds/orderability claim or frozen-weight/cap change.
+- Invoked Execution/Review Tesla: source-only concurrency admission audit at
+  A/execution/current-paper-research-concurrency-admission-audit-20261024-v1.
+  Determine whether independent credential-free research falsely blocks actual
+  Paper owners; exact reproducer and smallest existing-pattern repair first,
+  not a new actor platform/Task. Preserve actual/unknown private-writer exclusion,
+  bank/mutex, source/identity/risk and F9 protections.
+- Data/Kant supports an exact Engine-named gap, not blanket reacquisition.
+  Strategy/Review challenges named mechanisms, not another reading list/gate.
 
-Current evidence: Data33d12d81/DTO21c1/payload1ec5 complete25x512; actual CUDA
-point9b00/Point04b2/typedpublication1fb1 complete, workers joined. Parent real
-receiver accepted exact source/Data/point/SDK chain at
-A/execution/current-timesfm-ordinal-paper-parent-binding-20261024-v1/ACCEPTED.json.
-No model rerun. Opportunity bound, NOT released/installed. Sizing-only no-order
-slot closure plus IPC fixes fresh-full verified2ef959d2:475serial/18956fullPASS
-25skip/8workers397.74sec/1390incllocks/clean/Ruff+threeCompose; review9618PASS.
-Old9a immutable capsule not upgraded; Aq prepares matching SDK/image. Parent
-owns actual release/readback; retained attribution/venue audit/mark coverage
-continue independently.
+## Completion And Continue
 
-Require exact Data contract/payload, actual restored-model dated point, canonical
-weight roundtrip and real source-bound existing Execution consumption/preparation.
-Any installed opportunity needs independent actual route/readback; installation
-is not a submit/fill. Record no-intent/technical/submit/accept/fill/owned/closure
-separately. Runtime outcomes remain unfinished until real receipts exist.
+Require exact input/support/split/target/cost bindings, native checks, actual
+bounded comparative outputs and joined workers. If duplicated or unavailable,
+record scoped rejection, choose a ready alternative and update ONE company
+objective; no company-wide wait or independent-replication relabeling.
 
-External-only work reuses full2ef959d2 only with exact1390source/control digests and
-fresh focused native/independent checks. Tracked runtime edits require AGENTS
-fresh serial/full/Ruff/threeCompose(.env.example). Verify/commit/push, refresh
-boards/HANDOFF/RUNBOOK, replace NEXT with ONE material outcome and continue.
-Workers own next_due; keep ready lanes moving without foreground session waits.
+Exploratory losses do not suspend provisional Paper. Preserve ONE original
+virtual-cash tenth, costs/losses/pending/F9UNKNOWN-HELD and exact original
+requests. No forced shares, redistribution of old unsupported mass, foreign
+adoption, substitute unknown order, profit expansion or schedule reset.
+Submit/accept/fill/current-owned/closure and fees/settlement/net PnL are distinct.
 
-Preserve original shared initial tenth, F9UNKNOWN-HELD and all original requests/
-inventory; no profit expansion/foreign adoption/reset. H5entryOct26/R5exitOct27/
-HGBexitOct28/H5exitOct30/captureOct31/Joint17conditionalexitNov19 unchanged.
-Expired Joint17 ENTRY stays disabled. No net PnL/fees/settledcash claim without
-exact evidence. Child environments use direct safe-name lookups only, never
-whole-env copies/iteration or implicit dotenv. Public/live/paid authority unchanged.
+Full2ef959d2:475serial/18956PASS25skip/8workers397.74sec/1390exact incllocks/
+clean/Ruff/threeCompose. Docs/external reuse ONLY with exact1390match and fresh
+focused native/independent proof. Tracked runtime/shared-control edits require
+AGENTS fresh serial/full/Ruff/default,research,accounting Compose(.env.example).
+Use uv --no-env-file, named safe child environments, bytesM/artifactsA.
+Integrate material completion, verify/commit/push, refresh boards, replace NEXT
+with ONE next outcome and continue the active long request. Workers own next_due;
+no foreground market/quota wait while another package is ready.

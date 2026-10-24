@@ -1,160 +1,109 @@
 # Runbook
 
-## Current Rules
+## Current Authority / Storage
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Run scripts/start_next_codex_task.ps1; read HANDOFF/NEXT/AGENTS/active boards.
-AGENTS owns private free Data/Research/Paper authority. Never read KIS_LIVE_*,
-print private/raw values, spend, use live or serve publicly. Preserve original
-shared initial tenth/F9UNKNOWN-HELD/request identities and %SystemDrive%/.
-Parent owns shared MD/Git.
+Run scripts/start_next_codex_task.ps1; read current HANDOFF/NEXT/AGENTS/boards.
+Private no-cost Data/Research/KIS Paper authority is delegated. Never KIS_LIVE_*,
+real money, paid/public work or secret/private raw output. One original shared
+virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
+Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
-## Current H5 Deployment / Safe Readback
+## Current Actual Deployment
 
-Current repo no-order-empty-cohort fix is verified2ef959d2, NOT deployed.
-Core67db51ee/newtestabb95fe1 plus host/worker IPC matching reasons/0effects;
-475serial/18956fullPASS25skip/8workers397.74sec/1390same incllocks/clean.
-Old immutable9a below remains current until matching successor runtime proof
-and actual Task readback. No repeat primary suite while1390matches; external
-code requires its own focused checks. New point9b00/publication1fb1 accepted:
-A/execution/current-timesfm-ordinal-paper-parent-binding-20261024-v1/ACCEPTED.json.
-Bound newslot is NOT installed. Never rerun accept.py/CreateNew/model stages.
+GRU both original tasks use Source16484c39153f710e37bbc94750b31df86d8a383a5b4ff1f24b55a5ca5389ac6c
+and Release2695b7c5fdccaca7b8af0c46e0698bb3f24a55e229767fee78b52ddc74e5bbb5,
+nativeb0b63a29/image2ff53eff. Candidate:
+A/execution/current-h5-zero-order-gru-cutover-preparation-20261024-v1/candidate.
+Parent actual02:54:48UTC transaction completed/exit0/mutex released:
+A/execution/current-h5-zero-order-gru-parent-release-20261024-v1/TRANSACTION-COMPLETE.json.
+Independent actuala20dfc1e:
+A/execution/current-h5-zero-order-gru-cutover-preparation-20261024-v1/final-readback-r1/CONSUMER.json.
+Same slot/input181/policy591/ACL/principal/bank/clocks; prior91/0fb/9a is history.
+EntryOct26 13:40..14:10UTC; exitOct30 19:45..20UTC; PT4M/max8/recovery2.
+Only candidate tasks.ps1 -Mode Readback with those exact pins for metadata.
+No repeat release --create, apply, Update or Undo. Installation is not a fill.
+All-target sizing-only closure does not fix69targets/max8 cap-exhausted empty state.
 
-Replacement COMPLETE22:57UTC, ParentPS67205exited0/mutexreleased.
-Both original tasks use candidate:
-A/execution/current-h5-in-visit-terminal-deployment-preparation-20261024-v1/candidate.
-SOURCE91c09718a0c6294d775ce54f10b772495121d22a2b03a0e122912a7681bd69ac.
-RELEASE0fb32aa73e6895919e3cd9bb8cdbb37de8c0165836ee99aa15fa0b59eed6c9b1.
-Image9a10913344bccad401200e29598c128b4e44475f1552f39043db3dae98d1f20c.
-Slot unit-gru-h5-Oct26-v1/input181e/policy591a; same original bank/clocks/ACL.
-EntryOct26 13:40..14:10UTC /22:40..23:10KST;
-exitOct30 19:45..20UTC /Oct31 04:45..05:00KST; quietpythonw/PT4M/max8owned.
+## TimesFM Actual Installation / Readback Only
 
-Closeoutc2369abd:
-A/execution/current-h5-in-visit-terminal-parent-release-20261024-v1/CONSUMER.json.
-Transaction/backup/ordered phase readbacks bound there. Actual independent
-readbackbe057619:
-A/review/current-h5-in-visit-terminal-closure-review-20261024-v1/final-readback/CONSUMER.json.
-Source/claims/image/phase/ACL stable;0Taskwrites/runs in independent read.
-Use candidate tasks.ps1 -Mode Readback with exact Source/Release pins ONLY
-for source-safe metadata. Never Owner/observe as offline reader.
-Do NOT rerun release --create, parent_update, overlay, Undo or closeout recorders.
-Old1c30/8b29/813 is HISTORY, not current deployment. Strict all-absent cutover
-is not history migration/no-send. SDDL normalization preserved original rights
-and every other XML node; initial refusal retained, no mixed definitions now.
-H5f6ee closes SAME last reconciled SELL, no ninth visit/extra effects. H20
-unchanged;unknown/missing/unbound/nonflat/foreign withhold. Zeroowned/noSELL
-outside repair. Install/tests are not natural owner/fill/terminal runtime/PnL.
+Source63c775b8/native248d35bd/RELEASE9bcb8771/image2ff, point1fb1/28axis25known1NAS.
+Root A/execution/current-timesfm-h5-dated-deployment-preparation-20261024-v1/candidate.
+Parent release root A/execution/current-timesfm-h5-parent-release-20261024-v1.
+Do NOT repeat point/core/head/forward/publication/accept/release --create.
 
-## Completed Commands / Never Repeat
+Original installer77fa3938/session4894 exited1 after creating EXIT, before ENTRY.
+Exact actual attempt, not latest-artifact discovery:
+A/execution/current-timesfm-h5-dated-deployment-preparation-20261024-v1/parent-install-r1/attempt-e0f97a55743c49f0843523bf8af39ea8.
+BACKUP.UTC03:16:16.4244954 binds Source63/Release9b/Claims7308 and actual GRU bytes.
+Failure acl_changed; rollback withheld. Both original GRU definitions/ACL still exact.
+Actual EXIT Ready0/unrun; strict existing typed Readback PASS, XML77ff3008 and
+ACL882f94d0 EXACTLY SAME canonical ACL as GRU. Additional Protected/3ACE rule was
+an unmeasured installer assumption; actual OS4allow ACEs include current-user read.
+Do not change permissions, create EXIT again, delete tasks, reset or rerun Apply.
+Same-attempt recovery-r1/continue.ps1 Source d89d6b62c6daaf62d0659b5063c50f6826889488262197d13c16c3e00da7d575
+ACTUALLY ran once/session45948/exit0 at03:33:19UTC. Bound actual result:
+A/execution/current-timesfm-h5-dated-deployment-preparation-20261024-v1/parent-install-r1/recovery-r1/actual-continuation/COMPLETE.json.
+Both tasks metadata-qualified, original EXIT retained and only missing ENTRY
+created. Original GRU raw XML unchanged. Never rerun continuation/Apply/create/
+release/Undo. Existing candidate tasks.ps1 Readback is metadata-only; independent
+actual readback4e3b69f3 PASS at
+A/review/current-timesfm-h5-dated-actual-install-readback-20261024-v1/CONSUMER.json.
+Both Ready0/quiet/clocks/ACL/source correct, original GRU raw bytes unchanged.
+No installation-to-fill/no-send/natural-owner inference.
+Synthetic tests polluted sibling attempt-* directories; match exact source/
+release/claims/time/GRU bytes, never latest/one-directory heuristics.
+New entryOct26 14:20..14:50UTC; exit triggerOct30 19:49..20UTC, native19:45..20.
+No runtime, no-send, fill or broad Research-concurrency claim from installation.
 
-- Data2c91 completedOct23 20:10UTC/70GET1POST/70accepted/closed:
-  A/data/current-oct26-model-input-refresh-20261023-v1/RUNTIME-FINAL.json.
-- Oldcb5 point task disabled20:17 before inference/containment1ff4de7f. Never
-  enable or run original FUTURE-COMMAND. Solef65 restored/forwarded20:33 then
-  publicationexit2. CoreSDK-first retained-outputb2bc recovered SAME weights
-  with0newmodels/consumerbd00/input181e. Bounds are not exact duration.
-- Referencec992:
-  A/research/current-gru-h5-prospective-reference-preparation-20261024-v1/REFERENCE.json.
-- Old1c30 and new91 candidates already built/released; no overwrite/rebuild
-  merely to inspect. Actual updated-image proof9609f3f0:
-  A/execution/current-h5-in-visit-terminal-image-preparation-20261024-v1/CONSUMER.json.
+Parent CODEC-SHAPE-PROBE.json ed30 proves first-register XML may add URI/SD and
+omit/reorder defaults. Use existing strict typed fields/effectiveACL for first
+qualification; preserve actual XML+ACL afterwards. No generic new COM platform.
 
-## Owned Due / Safe Results
+## Data / Due / Completed Commands
 
-HGB quiet diagnostics are NOW installed, not only prepared:
-A/execution/current-hgb-quiet-failure-diagnostic-parent-release-20261024-v1/CONSUMER.json
-SHA83849232. One UPDATE23:34:53UTC changed only Arguments to deliverya2e3dd8d;
-nativee487 and original identity/state/bank/clock/ACL/markers unchanged.
-R2updater0f2b69e0/readbackPASS; no repeat Apply/Undo/completed recorders.
-New delivery owner.ps1 -Mode Readback -Owner HGB -Phase exit with deliverypin
-is source-safe only; never Owner as offline reader. Diagnostics are best-effort
-immutable early-faults plus hash-bound current pointers, not fills/no-send proof.
+TimesFM25 capture bound9a3311d8/prep36f8ea5b ACTUALLY enabled/readback:
+A/data/current-timesfm-h5-postclose-marks-20261030-v1.
+Independentec7cb1b9:
+A/data/current-timesfm-h5-prospective-capture-preparation-20261024-v1/parent-installed-readback-r1/default-enabled-projection-r2/CONSUMER.json.
+Oct31 05:35..05:40KST,25GETmax1POST/oneclient/retry0, future150marks unknown.
+Only ReadbackEnabled via prep parent.ps1 with PreparationSha36f8ea5b86dcbc0bdac5dc9bc0b33ff8220102f130f4c3e2d898d0795e77dbb1
+and DeploymentSha9a3311d86376f09528d17e7235b6156bc48a86785613b85caa4b197b6a4ac038.
+No Bind/install/enable repeat. Original GRU70 capturec78/refc992 remains
+Oct31 05:10..05:15KST. Ready/enabled is not wake/capture/finality.
 
-Joint17 failed/expired ENTRY stays disabled. Conditional EXIT alias-only
-9b9dbd50/release758b4c95/consumer8325dc56 retains originalNov19>=20:45UTC.
-Repaired natural owner unobserved; no expired-entry reactivation.
-R5threeowned exitOct27>=19:45UTC; HGBoneowned exitOct28>=19:45UTC.
-Nightly exactRO2d168c90:SELL1accepted/fullfill/cyclecomplete, not wholebook.
-F9UNKNOWN/HELD; absence/history0/open0 cannot release or substitute.
-Use strict network-disabled private/sourceRO readers with exact intent/fill
-binding and before-after membership/fileidentity/mtime/bytes. Actual private
-writers defer conflicting reads, not unrelated research. No recovery observe().
-Fresh broker query is separate; fees/settledcash/net PnL remain unobserved.
+Pair actual5bf7/6d45/source0399/image7d15/nextOct26 21:55UTC; no repeatApply/Undo.
+HGB diagnostic update8384/a2e3 actually complete; R5exitOct27, HGBexitOct28.
+Joint17 expired entry disabled; alias-only conditional exitNov19>=20:45UTC remains.
+Never reactivate consumed old jobs, substitute requests or infer fills from task exit.
+Nightly2d16 actual1SELL fullfill/cyclecomplete is not wholebook closure.
+F9 stays UNKNOWN/HELD; missing holdings/open orders never release its reserve.
 
-## Future Marks / Closed Research
+NYS bounded probe9ab77d21:
+A/data/current-h5-nys-quote-capability-20261024-v1/CONSUMER.json.
+JPM two exact REST routes HTTP200/success,2GET1POST/retry0/allclosed/raw0.
+Weekend clock stale/book invalid; not fresh quote, orderability or blanket NYS
+execution support. No account/order/live calls or NAS profile changes. Do not
+repeat the completed probe merely to turn a stale weekend clock into a pass.
 
-Capturec78f80c8/refc992 installed21:19UTC; independent3bc826c4:
-A/data/current-h5-future-close-capture-reference-bound-preparation-20261024-v1/parent-installed-readback-r1/CONSUMER.json.
-Task thericher-kis-paper-gru-h5-postclose-marks-20261031-v1, Oct31 05:10..05:15KST,
-70pages/BYMD20261030/capture-only. Exact source-safe ReadbackEnabled ONLY;
-no Bind/install/enable/manual start. No actual future marks/finality yet.
+## Verification / Continue
 
-Fixedrank68093a24 passed INNER screen; RankNet237e75c2 FAILED indicator growth.
-SelectedGRU9409 later26e70cd3 FAILED growth/DD:10bp-4.1416%/4.5329DD versus
-uniform-.8085/1.3888. Root:
-A/research/current-gru9409-six-later-preserved-forecast-readout-continuation-20261024-v1/runtime-r1.
-Six sealed forecasts f39ba12d/2514marks incl21existing-data supplement;
-readout0model operations. No completed fit/forward/readout repetition.
-Global later reuse UNKNOWN; adaptive development, not independent alpha.
+Closed support8 replay:
+A/research/current-native-support8-equal-weight-whole-share-conformance-h5-development-20261024-v1/recovery-r1/CONSUMER.json.
+4c27bb40/fef87137,12cells/2dispatches/0fits/forwards; no retry or rerun.
+GRU Top8 fractional failed same-gross uniform growth/DD. Private proxy-share
+projectiond320 failed ONE actual RO attempt, not infeasibility; diagnostic work
+uses native synthetic schemas only until a positively qualified successor.
 
-Matched MSE36aee70a/ee65a717/independent05ebec08 closed1CUDAfit63epochs/best39/
-819updates/3newcells/177checks. RankNetgrowthhigher/DDworse, NOT dominance.
-No model rerun/Paper swap. Full83Data56a0de0d/d5c8b951 is a NEW feature-only
-vintage, no forecasts/labels/readout or overwriting old results.
-Pair current-acquisition projection/deployment is COMPLETE5bf73743. NEXT is
-timesfm-ordinal-dated-paper-proposal-v1. Fresh current acquisition codes still
-require a natural receipt, never sticky quarantine or old receipts.
-Environment caveats in HANDOFF remain; future children use safe explicit-key
-lookups, no wholeenv copy/iteration or implicit .env load.
-
-## Verification / Recovery
-
-Current authority2ef959d2:
+Primary ddd01c6 pushed; full2ef959d2:
 A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
-475serial/18956fullPASS25skip/18981total/8actualworkers397.74sec/helper0/clean.
-Source/control1390exact inclrequirementslocks. Old09998/b9 are history, not
-authority for current core+IPC changes.
-Credential-free exact source check:
+475serial/18956fullPASS25skip/8actualworkers397.74sec/1390same incllocks/clean/
+Ruff+default/research/accounting Compose(.env.example) PASS.
+Exact credential-free reuse check:
 uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/snapshot.py --check
-1390primary/control files must match before docs/external-only reuse.
-Fresh scoped external checks are required; repo tests are not external proof.
-Tracked code/control edits need AGENTS fresh serial/full authority.
-Ruff uses uv run --no-env-file; default/research/accounting Compose uses
---env-file .env.example and config --quiet.
-Changed native handoffs need tiny actual role/file/schema/bootstrap/SDK smoke
-inside existing caps, not new approvals/trials. After interruption recheck owners;
-never reclaim unknown live leases/reset counters/invent runtime outcomes.
-
-Current pair route ACTUALLY VERIFIED, Parent5bf73743/primary6f9bd8f pushed:
-A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1/CONSUMER.json.
-Image7d15a67e/source039985ec/bootstrap/publicconfig53403ed7 verified.
-R3 zero-effect failure00:38UTC/immutableFAILURE flagsfalse/noBACKUP retained.
-R4Sourcec1e3618a/updatera69bc174 actually applied Task/tag00:57UTC but postcheck/
-rollback withheld. CurrentTasknewbootstrap/image7d15/Ready0instances/nextOct26
-21:55UTC; oldalias15c is NOT current. R4BACKUP/FAILURE retained in
-A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1.
-OnlycheckedSD plus directRegInfoindentation differ; actualACL identical. Godel
-independentactual6d45fa0f01:07:28UTC closes completeexpectedTask/image/ACL/clock:
-A/review/current-pair-safe-bootstrap-20261024-v1/actual-closure-r4/ACTUAL-READBACK-010716.json.
-Do NOT repeatApply/Undo/reset/R5repair. OptionalR5 reader retired after metadata
-invocation withholding; not actualDockerfailure or companygate. HGB unchanged.
-No collector/Task manual start to claim deployment or current cause.
-
-Seed-fusion4CUDAfits complete23:58UTC/Deliveryb6809136; no rerun.
-Later0fittransfer sealed06c2ea3a/Consumer9fe5ad50 at
-A/research/current-h5-six-later-ranking-transfer-development-20261024-v1/technical-r1.
-Alljoined/leasefree; Data2892marksdf319a00 and retainedreadout8d27/db08 now CLOSED:
-A/research/current-h5-six-later-ranking-transfer-readout-continuation-20261024-v1/CONSUMER.json.
-12cells/0modelops/growthFAIL/DDpass, no fallback winner. Do not duplicate.
-Betaresidualruleb0e3ced1/bdca1acf CLOSED_FAIL43scoredates/3cells/0modelops,
-19SYN24checks/alljoined; no repeated scoring or criterion rescue.
-TimesFMfeasibilitye13553ca rejects another completed zero-shot/adaptation run.
-OriginalrootCPUfailure remains BUT Aq36db2761 verified nestedrepair already
-closed2fits341+651updates. Comparison goal SUPERSEDED; no duplicatefit/repair.
-Newpoint fixed25/512closes/selectedheadf40b04d5/core2f776efe/runtime d6b43213/
-fairTop5/genericH5DTO. Wrapper/native SYN may overlap Data under frozen budgets;
-market phase binds exact new input. Aqc8a3map/b7d9SDK17checks prepare a NEWslot,
-not installed until point/Data/policy ready. OriginalGRU/F9/bank/clocks unchanged.
-No TimesFM3/download/framework replacement or activeGPU claim from old logs.
+Docs/external changes need their actual focused proof, not another full suite
+while1390matches. Tracked runtime/control changes follow AGENTS fresh authority.
+No recovery observe() as an offline reader. Actual private writers alone scope
+custody-read admission; retain exact source/mount/identity/mtime/byte checks.
+Never foreground-wait for market/quotas while another package is ready.

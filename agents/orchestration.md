@@ -1,83 +1,78 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-24. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Parent owns shared MD/Git. AGENTS authority; no operator decision now.
+2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Parent owns direction/sharedMD/Git. AGENTS authority; no operator decision now.
 
-## Company / Owners
+## One Company Outcome / Actual Owners
 
-ONE outcome: timesfm-ordinal-dated-paper-proposal-v1. Produce a newly dated
-selected FROZEN_RANK point and connect existing deterministic H5 Paper consumer.
-Prior unexecuted-comparison premise SUPERSEDED: nested recovery36db2761 already
-closed2marketfits341+651updates. No duplicate repair/training or oldpass regrade.
-Old scientific/financialDD failures stay failures; provisional Paper is not alpha.
+NEXT native-supported-universe-h5-comparison-v1: align causal support before
+one justified fit and matched cost-aware comparison. Prior dated TimesFM point,
+consumer, actual installation and independent4e3b69f3 readback are COMPLETE AS
+DEPLOYMENT, not a natural owner/fill/PnL. Parent integrates verified docs/Git.
 
-| Actual owner | Current disjoint package |
+| Owner | Current disjoint package |
 | --- | --- |
-| Parent / 총괄 | Actual point binding complete;475serial/18956fullPASS25skip/8workers clean2ef959d2. Own integration/release/shared MD/Git. |
-| Noether / 엔진·연구 자원 | New CUDA point CLOSED9b00; retained SIX-versus-uniform loss attribution dispatched,0new fits/forwards. No GPU worker now. |
-| Kant / 데이터 | Coherent25x512 input COMPLETE33d1; prospective mark coverage against existing collectors dispatched, no duplicate capture. |
-| Tesla / 전략 탐색 호출 | NAS-only H5 versus actual NYS adapter capability source audit dispatched; no API or implementation effects. |
-| Aquinas / 실행 | Core67db/newtestabb9 frozen; external immutable SDK/image successor preparation dispatched. No Task/broker effects. |
-| Godel / 검토 | Combined core+IPC review961884b4 PASS with scoped limits; old9a capsule is not upgraded by repo edits. |
+| Parent / 총괄 | Actual GRU, TimesFM two-task and future25 capture integration; shared MD/Git. |
+| Godel / 검토 호출 | Claude challenge for NAS-supported-before-training hypothesis; no market/model effects. |
+| Noether / 엔진·자원 | Support8 replay closed12cells; new NAS-universe training source/data-contract preparation only. |
+| Aquinas / 실행 | Failed private-RO projection causal diagnosis, native synthetic schema only; no actual private retry yet. |
+| Kant / 데이터 | NYS2GET1POST probe closed9ab77d21; independent capture readbackec7 closed. |
+| Tesla / 전략·검토 호출 | TimesFM readback4e3b69f3 closed; source-only Paper/research admission audit. |
 
-Engine requirements:
-A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1/MODEL-REQUIREMENTS.json.
-New pointroot A/research/current-timesfm-ordinal-dated-point-development-20261024-v1.
-Selectedheadf40b04d5/core2f776efe/runtime d6b43213, fixed25/512closes/16x32/H5.
-No zero freshhead, old3class restoration, historical replay or new fit.
-Data root A/data/current-timesfm-ordinal-current-input-preparation-20261024-v1.
-Temporaryprobe A/data/current-timesfm-ordinal-completeness-capability-probe-20261024-v1.
-Execution prep A/execution/current-timesfm-ordinal-paper-consumer-readiness-20261024-v1/opportunity-preparation-r1.
-Proposed NEWslot timesfm-frozen-rank-h5-Oct26-v1/entry14:20..14:50UTC/exitOct30
-19:45..20UTC/PT4M is NOT installed. OriginalGRU slot/clocks unchanged; .005
-cohort ceiling within sharedtenth/F9held/max8/whole shares, no redistribution.
+Exact actual TimesFM failure root:
+A/execution/current-timesfm-h5-dated-deployment-preparation-20261024-v1/parent-install-r1/attempt-e0f97a55743c49f0843523bf8af39ea8.
+Source63/release9b/claims7308/BACKUP03:16:16.4244954/current GRU bytes bind it.
+Originalinstaller77fa/session4894 failed acl_changed after EXIT create, before ENTRY.
+Existing typed EXIT Readback PASS/Ready0/unrun/XML77ff3008/ACL882f same as GRU.
+Unmeasured Protected/3ACE condition was wrong; actual OS4ACE adds current-user read.
+Actual continuationd89/session45948 exited0 at03:33:19UTC: existing EXIT retained,
+only missing ENTRY created, both metadata-qualified and original GRU XML exact.
+A/execution/current-timesfm-h5-dated-deployment-preparation-20261024-v1/parent-install-r1/recovery-r1/actual-continuation/COMPLETE.json.
+No Task start/private/broker/model call; do NOT repeat continuation/Apply/create/
+delete/reset. Synthetic sibling attempt directories are not real dispatch evidence.
 
-## Exact Dependencies / Alternatives
+## Dependencies / Ready Alternatives
 
-Data33d1 produced25x512 coherent closes throughOct23, with PG95overlap changes
-handled by a separately coherent source rather than blending vintages.
-Actual CUDA market point9b00 completed02:06:50..02:07:00UTC,1core/head load and
-1batch/0fits. Canonical H5publication1fb1 has28axis/25known/1NAS target, no
-redistribution of unsupported NYS mass. All model workers joined/leasefree.
-Parent actual receiver accepted real source/Data/point/SDK chain with0modelcalls:
-A/execution/current-timesfm-ordinal-paper-parent-binding-20261024-v1/ACCEPTED.json.
-New opportunity is bound, NOT released/installed. Original GRU remains unchanged.
-Current dependency: tested no-order-empty-slot repair and matching immutable
-SDK/host/worker/image, not Data, approval, quota or a GPU outage.
+Company install technical fault is recovered, not an approval/GPU/profitability
+hold. New research source/data preparation and integration continue. Claude
+direction471033a5 SOUND_WITH_LIMITS; exact duplicate/support/label/split kills
+must be answered before fitting, not a standing permission hold.
+Private proxy-share attemptd320 is input_unavailable, not zero shares; source/
+native schema diagnosis is independent of natural Paper authority.
+Do not widen old NAS profile or mutate old point to force an order.
+Same-initial-tenth, F9held, whole shares and fresh runtime risk remain authoritative.
+Broad frozen actor claims may withhold unregistered Research/Data actors; record
+that exact limitation, not a promise of unrestricted parallel Paper execution.
 
-Claude04b prefers A: dated frozen point plus existing Paper path. Kill A for
-incompatible checkpoint/context/horizon/adapter, duplicate/unbound asof, future
-data, altered requests/publicmodelcode in Execution or F9/risk bypass. Then B:
-exact retained SIX-versus-uniform attribution. C: genuinely new failure-directed
-training only after a new contract, not another seed/model-name repeat.
+Original comparison premise was superseded: nested TimesFM recovery36db already
+closed2fits341+651updates. New actual point9b00 consumes Data33d1/publication1fb.
+Both core loads consumed/alljoined/leasefree. No current GPU job inferred.
 
-## Closed / Due
+## Actual / Due
 
-Pair actualdeployment5bf73743/independent6d45fa0f/source0399/image7d complete;
-R3/R4failures preserved, optionalR5reader retired, no repeatedApply/Undo.
-Code6f9bd8f/docs2b858e5 pushed; full09998:187serial/18889PASS25skip/8workers/
-405.78sec/1387exact/clean/Ruff+threeCompose. Requirements separately image-bound.
-New external code needs its focused proof, not another full run while1387match.
-FourCUDAfitsb680/later48forwards9fe5/2892marksdf31/readout12cells8d27 CLOSED;
-beta-ruleb0e CLOSED_FAIL43dates/3cells/0models. No reruns or fallback winners.
-
-InstalledGRU91/0fb/image9a entryOct26 13:40..14:10UTC/exitOct30 19:45..20UTC;
-R5threeowned exitOct27,HGBoneowned exitOct28,captureOct31 05:10KST unchanged.
-Nightly2d168c90 SELL1accepted/fullfill/cyclecomplete, not wholebook closure.
-F9UNKNOWN/HELD; Joint17expiredENTRY disabled/conditionalexitNov19 retained.
-No new eligible receipt inferred; fees/settledcash/net remain unobserved.
+GRU164/b0/269/image2ff updated02:54:48UTC, independenta20; original input181/
+policy591/slot/clocks/ACL intact. EntryOct26 13:40..14:10UTC; exitOct30 19:45..20.
+TimesFM entryOct26 14:20..14:50/exitOct30 19:49..20 is actually installed; no fill yet.
+Future25 capture9a33 enabled/ec7, Oct31 05:35..40KST; original70 05:10..15 unchanged.
+Pair5bf7/6d45/source0399/image7d15 current, nextOct26 21:55UTC; no Apply/Undo repeat.
+R5exitOct27/HGBexitOct28; Joint17expiredENTRY disabled/conditionalexitNov19.
+Nightly2d16 exact1SELL fullfill is not wholebook. F9UNKNOWN/HELD; netPnL unknown.
 
 ## Throughput Review
 
-11:30KST: typed receiver caught a real all-zero-sizing active-slot leak.
-Core67db closes only positively proven sizing-only no-order cohorts in the same
-visit; host/worker reason maps and zero-effect grammar are now included.
-475serial/18956fullPASS25skip/8actualworkers397.74sec/1390incllocks/clean,
-Ruff/threeCompose PASS; authority2ef959d2. Independent9618 no blocking issue.
-While verification/runtime prep run, loss attribution, venue capability audit
-and exact future-mark coverage are disjoint ready work. No repeated training
-or foreground market-session wait. Fresh full2ef959d2 supersedes09998 for current
-source, not runtime deployment.
-One GPU coordinator, real headroom before launch; actual running claims need
-PID/start/source, not an MD/assignment. No foreground market-session wait.
-History stays Git/immutable artifacts, not stale running projections.
+12:40KST: Task repair complete; independent readback and goal rotation now ready.
+Native metadata probes refuted literal-XML and invented ACL assumptions before
+allowing another registry effect. Reuse qualified typed reader and measured
+canonical ACL; stop building stricter unmeasured controls or generic platforms.
+Future tests isolate mock attempts from actual deployment output. Positive
+real field/schema admission must precede claiming synthetic fixture readiness.
+Native coverage audit found69targets/max8; first8 retain97.78%weight. NEW12cell
+support8 replay4c27 completed, same-gross growth/DD failed versus uniform. Real
+Paper exposure remains unknown. Next hypothesis aligns universe before fitting,
+not broad selection followed by dropping80%NYS mass. Duplicate/data-contract and
+Claude challenge precede new numerical work, not a permanent new approval gate.
+No dummy GPU work or personal-app permission hold.
+
+Primary ddd01c6 pushed; full2ef:475serial/18956PASS25skip/8workers397.74sec/
+1390incllocks/clean/Ruff+threeCompose. Exact source reuse plus focused external
+checks, not repeated unrelated full tests. Continue active request while ready work exists.

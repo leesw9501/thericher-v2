@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 10:10KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
@@ -12,7 +12,8 @@ Four /out metadata refs use mount-attested adapter98f67e92/actuala15512aa/
 review34438e8e, rawDTO/payload/digests unchanged.
 Sole Engineforwardf65 publicationexit2 was SDK import order, not missing data.
 Retained b2bc recovered sameweights/input181e/full100/known69/31zero,
-referencec992/0newmodel calls. Current native91/0fb/9a, not historical1c30.
+referencec992/0newmodel calls. Current GRU nativeb0/source164/release269/image2ff,
+actual independent readbacka20; prior91/0fb/9a is history.
 
 Sixlater packet ACTUAL_READY:
 A/data/current-h5-later-feature-only-packet-20261024-v2.
@@ -40,10 +41,25 @@ initial0call path-separator failure/debit preserved. PG95overlap differences
 required its own coherent512 recovery, not source blending/rescaling. Existing
 24source windows unchanged. Grade observedD1, not minute-RTH/PIT/CA/finality.
 Actual Engine point9b00/publication1fb1 and Parent receiver consumed these exact
-refs; no recapture/model repeat. Kant now owns future-mark coverage at
+refs; no recapture/model repeat. Future-mark coverage completedb1ca8f9f at
 A/data/current-timesfm-h5-prospective-mark-coverage-20261024-v1.
-Check full25 research and1NAS Paper needs against existing installed capture/
-collectors; no API/schedule/market bytes or future-mark observation claim.
+Full25 needs150exact marks;1NAS needs6. Existing70/83capture routes cover0exact
+25identities. New capture ACTUALLY enabled9a3311d8/prep36f8ea5b, independently
+readbackec7cb1b9:
+A/data/current-timesfm-h5-prospective-capture-preparation-20261024-v1/parent-installed-readback-r1/default-enabled-projection-r2/CONSUMER.json.
+Boundroot A/data/current-timesfm-h5-postclose-marks-20261030-v1,
+Oct31 05:35..05:40KST,25GET/max1POST/client1/retry0. Never repeat Bind/install/
+enable. Original70capturec78/refc992 remains05:10..05:15KST. Future marks/wake/
+finality not observed. Initial explicitXML Enabled=true assumption failed;
+narrow actual COM Boolean getters proved enabled without Task changes.
+
+NYS capability probe9ab77d21/Source62d013bc/Outcome80b48e93 COMPLETE:
+A/data/current-h5-nys-quote-capability-20261024-v1/CONSUMER.json.
+ONE JPM/NYS/slot11,2GET1POST/0retry/2.755worker seconds/allclosed/rawretained0.
+Both REST routes HTTP200/resultsuccess; positive last/tick categories but stale
+weekend clock/book invalid. CLOCK_UNAVAILABLE_OR_STALE, not blanket unsupported
+or fresh tradability/orderability. No accounts/orders/live or NAS profile edits.
+Do not repeat completed probe merely to obtain a pass while market is closed.
 
 Exact FINALaffines build VERIFIED:b3b4e756/DTO518824f8/Consumera2166d64 at
 A/data/current-six-later-final-expert-affine-input-20261024-v1.
