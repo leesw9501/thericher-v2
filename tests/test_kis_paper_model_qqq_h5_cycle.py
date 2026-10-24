@@ -23,6 +23,7 @@ from thericher_v2.execution.kis_paper_fill_accounting import (
     KisPaperExecutionObservation,
     fill_identity_ref,
 )
+from thericher_v2.execution.kis_paper_quote import KisPaperQuoteError
 from thericher_v2.execution.kis_paper_spy_fill_cycle import _RecoveryRequired
 from thericher_v2.execution.kis_readonly import KisPaperOpenOrder, KisPaperOpenOrdersSnapshot
 
@@ -886,3 +887,201 @@ def test_pre_submit_purpose_still_requires_typed_market_reads(harness, stage):
     assert not harness["client"].submits
     if stage == "callback":
         assert record(harness)["pending"]["wire_started_at"] is None
+
+
+@pytest.mark.parametrize("phase", ["entry", "exit", "custody_reconcile"])
+def test_provider_completion_uses_fresh_clock_without_backdating_facts(harness, phase):
+    client, provider = harness["client"], harness["evidence_provider"]
+    if phase == "exit":
+        assert cycle.run_qqq_h5_cycle(**harness).status == "advanced"
+        harness["phase"] = "exit"
+        client.now = harness["value"].exit_session.close_ts - timedelta(minutes=10)
+    elif phase == "custody_reconcile":
+        client.unknown = True
+        assert cycle.run_qqq_h5_cycle(**harness).status == "pending"
+        provider.market_reads_available = False
+    observed = []
+
+    def completed_later(request):
+        client.now += timedelta(seconds=2)
+        evidence = provider(request)
+        observed.append((request, evidence, client.now))
+        return evidence
+
+    harness["evidence_provider"] = completed_later
+    outcome = cycle.run_qqq_h5_cycle(**harness)
+    assert outcome.status == ("pending" if phase == "custody_reconcile" else "advanced")
+    for request, evidence, completed in observed:
+        assert request.observed_at < completed == evidence.writer_boundary.observed_at
+        if evidence.reads is not None:
+            assert evidence.reads.completed_at == completed
+    if phase != "custody_reconcile":
+        intent = client.submits[-1]
+        assert intent.created_at == observed[0][2]
+        state = canary.KisPaperCanaryStateStore(client.root / (intent.run_id + ".json")).read()
+        assert state.submission_started_at == observed[1][2]
+    else:
+        assert len(client.submits) == 1 and observed[0][1].reads is None
+        assert not budget._load_binding(client.root)["qqq"]["orders"][-1]["closed"]
+
+
+@pytest.mark.parametrize("stage", ["plan", "prewire", "custody_reconcile"])
+@pytest.mark.parametrize("change", ["book", "state", "journal"])
+def test_provider_query_cannot_rebase_changed_custody_or_journal(harness, stage, change):
+    client, provider = harness["client"], harness["evidence_provider"]
+    if stage == "custody_reconcile":
+        client.unknown = True
+        assert cycle.run_qqq_h5_cycle(**harness).status == "pending"
+    elif stage == "plan" and change == "journal":
+        assert cycle.run_qqq_h5_cycle(**harness).status == "advanced"
+        harness["phase"] = "exit"
+        client.now = harness["value"].exit_session.close_ts - timedelta(minutes=10)
+    before_submits = len(client.submits)
+    initial_calls = len(provider.calls)
+    mutated = {}
+
+    def during_query(evidence):
+        if len(provider.calls) - initial_calls != (2 if stage == "prewire" else 1):
+            return evidence
+        client.now += timedelta(seconds=1)
+        if change == "book":
+            foreign_reservation(client.root)
+            path = client.root / budget.BUDGET_FILE
+        elif change == "state":
+            states = cycle._book(client.root, client.pins, client.now)[1]
+            state = next(iter(states.values()))
+            path = client.root / (state.intent.run_id + ".json")
+            budget._atomic_json(
+                path,
+                replace(state, updated_at=state.updated_at + timedelta(microseconds=1)).to_dict(),
+            )
+        else:
+            path = client.root / ("h5qqq-" + client.pins.input_ref[7:] + ".json")
+            document = record(harness)
+            document["status"] = "no_intent"
+            cycle._save(path, document)
+        mutated[path] = path.read_bytes()
+        return evidence
+
+    provider.on_read = during_query
+    with pytest.raises((_RecoveryRequired, ValueError)):
+        cycle.run_qqq_h5_cycle(**harness)
+    assert mutated and len(client.submits) == before_submits
+    assert all(path.read_bytes() == payload for path, payload in mutated.items())
+    if stage != "plan":
+        assert not budget._load_binding(client.root)["qqq"]["orders"][-1]["closed"]
+
+
+@pytest.mark.parametrize("boundary", ["proposal", "entry_close", "exit_close", "reads_ttl"])
+def test_provider_query_expiration_is_checked_at_completion(harness, boundary):
+    client, provider = harness["client"], harness["evidence_provider"]
+    if boundary == "exit_close":
+        assert cycle.run_qqq_h5_cycle(**harness).status == "advanced"
+        harness["phase"] = "exit"
+        client.now = harness["value"].exit_session.close_ts - timedelta(seconds=1)
+    before_submits = len(client.submits)
+
+    def expires(evidence):
+        if boundary == "proposal":
+            client.now = harness["value"].targets[0].proposal.valid_until
+        elif boundary == "entry_close":
+            client.now = harness["value"].entry_session.close_ts
+        elif boundary == "exit_close":
+            client.now = harness["value"].exit_session.close_ts
+        else:
+            client.now += timedelta(seconds=121)
+        return replace(
+            evidence, writer_boundary=replace(evidence.writer_boundary, observed_at=client.now)
+        )
+
+    provider.on_read = expires
+    with pytest.raises((_RecoveryRequired, ValueError, KisPaperQuoteError)):
+        cycle.run_qqq_h5_cycle(**harness)
+    assert len(client.submits) == before_submits
+    assert record(harness) is None or record(harness)["pending"] is None
+
+
+@pytest.mark.parametrize("boundary", ["seed_ttl", "session_close"])
+def test_provider_completion_cannot_extend_existing_seed_ttl(harness, boundary):
+    client, provider = harness["client"], harness["evidence_provider"]
+    if boundary == "session_close":
+        client.now = harness["value"].entry_session.close_ts - timedelta(seconds=10)
+
+    def expires_at_prewire(request):
+        if provider.calls:
+            client.now = pending_state(harness).intent.valid_until
+        return provider(request)
+
+    harness["evidence_provider"] = expires_at_prewire
+    with pytest.raises(_RecoveryRequired, match="prewire_expired"):
+        cycle.run_qqq_h5_cycle(**harness)
+    assert not client.submits and record(harness)["pending"]["wire_started_at"] is None
+    assert not budget._load_binding(client.root)["qqq"]["orders"][-1]["closed"]
+
+
+@pytest.mark.parametrize("invalid", ["future", "stale", "holding_horizon"])
+def test_post_provider_clock_keeps_writer_freshness_and_h5_retirement_bounds(harness, invalid):
+    client, provider = harness["client"], harness["evidence_provider"]
+
+    def invalid_boundary(evidence):
+        boundary = evidence.writer_boundary
+        if invalid == "future":
+            boundary = replace(boundary, observed_at=client.now + timedelta(seconds=1))
+        elif invalid == "stale":
+            client.now += timedelta(seconds=121)
+        else:
+            boundary = replace(boundary, excluded_until=client.now + timedelta(minutes=5))
+        return replace(evidence, writer_boundary=boundary)
+
+    provider.on_read = invalid_boundary
+    with pytest.raises(ValueError, match="writer"):
+        cycle.run_qqq_h5_cycle(**harness)
+    assert record(harness) is None and not client.submits
+
+
+@pytest.mark.parametrize("stage", ["plan", "prewire", "custody_reconcile"])
+def test_provider_clock_regression_never_stages_or_releases_unknown_request(harness, stage):
+    client, provider = harness["client"], harness["evidence_provider"]
+    if stage == "custody_reconcile":
+        client.unknown = True
+        assert cycle.run_qqq_h5_cycle(**harness).status == "pending"
+    before_submits = len(client.submits)
+    initial_calls = len(provider.calls)
+    retained = record(harness)
+
+    def regresses(evidence):
+        if len(provider.calls) - initial_calls == (2 if stage == "prewire" else 1):
+            client.now = provider.calls[-1].observed_at - timedelta(seconds=1)
+        return evidence
+
+    provider.on_read = regresses
+    with pytest.raises(_RecoveryRequired, match="provider_clock_regressed"):
+        cycle.run_qqq_h5_cycle(**harness)
+    assert len(client.submits) == before_submits
+    if stage == "plan":
+        assert record(harness) is None
+    else:
+        current = record(harness)
+        assert current["pending"]["wire_started_at"] == (
+            None if stage == "prewire" else retained["pending"]["wire_started_at"]
+        )
+        if retained is not None:
+            assert current == retained
+        binding, _, projection, _, _ = cycle._book(
+            client.root, client.pins, provider.calls[-1].observed_at
+        )
+        assert not binding["qqq"]["orders"][-1]["closed"]
+        assert projection.reserved_buys == D(50)
+
+
+def test_provider_completion_requires_aware_clock(harness):
+    client, provider = harness["client"], harness["evidence_provider"]
+
+    def naive_completion(evidence):
+        client.now = client.now.replace(tzinfo=None)
+        return evidence
+
+    provider.on_read = naive_completion
+    with pytest.raises(ValueError):
+        cycle.run_qqq_h5_cycle(**harness)
+    assert record(harness) is None and not client.submits

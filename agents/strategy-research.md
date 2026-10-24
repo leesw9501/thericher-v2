@@ -17,6 +17,15 @@ per-fold, not physicalwallclock order; no globalnormalizer/late-label mount,
 allOOF sealed beforeMETA targets. Parent amendments freeze30nominal/31Icalls
 repair/2loads and4800activeSUM7200elapsed under originalclock. No numerical
 dispatch by Strategy. Publicsource/license/evidence inProposal, not a new list.
+Actual consumer now CLOSEDd1faa121/267checks:3newCUDAprefixfits73/72/71epochs,
+6Ridge/PCA heads/I29OOF/one3leaf tree. PrimaryFAIL vs maskeduniform/cachedNfull;
+no retune, Paper promotion or general rejection of hierarchical ensembles.
+Interpretationaf3b336a SOUND_WITH_LIMITS; constant IWM choice is not proof of
+leaf collapse, equal cash dates/entrygross are not matched portfolio risk.
+IPC1e8246b6/clock51e97da1 are SOUND_WITH_LIMITS; actual IPC/clock/runtime
+proof remains separately scoped. Godel now challenges ONE pooled cross-sectional
+Ridge OOF head with official-source basis, no arrays/fit/market effects; Noether
+owns its source-only readiness. Kant/Tesla continue disjoint Paper connection.
 
 Later N/L frozen-output interpretationed58 SOUND_WITH_LIMITS: the eleven
 cohorts are descriptive/reused/exposure-confounded, not covariance quality or

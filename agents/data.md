@@ -11,13 +11,27 @@ A/data/current-chronological-oof-risk-gated-tree-inputs-20261025-v1.
 Prefix1157/1167/1177 with innerCHECK119; OOF10/10/9 startsJan2/Mar17/May28.
 Each prefix label closes before blockfirstOPEN; Iselection frontierDec31.
 Historical252x3context/5x3targets; late11/currentOct23 same newer snapshot,
-not cross-vintage/global-index equality. Parent ADOPTION2f2a6f5a now grants
-Data-build/verify only. Kant builds physically isolatedFIT/CHECK target views
-M and OOFfeatures-only; META29labels separate/notmountedtoexpertworkers.
-Aliasalone cannot enforceisolation. ExistingF/late/currentbuffers reused, no
-download or oldbuild repeat. NativeSYNactualreader/onebuild+independentverify
-before numericalGO; model/GPU/private/API effects0 in readiness. Sourceclock
-20:16:22..22:16:22UTC, Data360activeupper inclusive/readiness counted once.
+not cross-vintage/global-index equality. Actual build-r1 is COMPLETE:
+Source3611dbbe/DTOb377b631/CONSUMER0346f956/ALLOWLIST18403213/ABI52d5c122.
+Physical FIT/CHECK/OOF counts1038/119/10,1048/119/10,1058/119/9; OOF
+features/clocks only and META29labels separate. Native actual readers13SYN
+and166 independent byte/dtype/clock/knownness checks PASS; onebuild/oneverify,
+allchildren joined/34.5474596activeupper including readiness/bootstrapfault.
+ExistingF/late/current unchanged, no download/model/API/private effects.
+Do not rebuild. Aliasalone is not isolation: Engine must use exact allowlisted
+leaf mounts, never the payload root. Kant now independently audits frozen
+Engine dispatch/source02c9 audit COMPLETE4a320ebc:30source refs/own-fold8files,
+I6feature/clock leaves, no META/later-label mounts; source-only limitation.
+Consumer FINALd1faa121 now closes3newN/6L/oneI/OOFtree as primary FAIL, no
+data rebuild or profitability promotion. Kant temporarily implements small
+typed QQQ evidence-provider glue/tests in
+A/execution/current-l-qqq-h5-evidence-provider-preparation-20261025-v1:
+Source2a92/nativeb520/consumer a657c171 passes21SYN in actual2ff/finalclock
+1e7cSDK480,7.6449sec/alljoined/removed;0actual client methods/token/API/private/
+Task effects. Kant now prepares existing generic-token/shared-budget glue in
+native-token-budget-r1, not another client/token cache. Actual host attestation
+remains Execution's dependency, not a Data capability or permission hold.
+Original family20:16:22..22:16:22UTC/4800activeSUM7200elapsed unchanged.
 
 NEW later-history data COMPLETE808c40ce/DTOb14591f2 at
 A/data/current-three-etf-post-jul31-frozen-evaluation-inputs-20261025-v1.

@@ -161,27 +161,67 @@ bounded VERSIONED cooperative-Paper-peer source preparation at
 A/execution/current-cooperative-paper-peer-admission-preparation-20261025-v1,
 not edits/deployment of old capsules/tasks. Exact shared-lock/risk/source/actor
 proof is needed; no broad Python/Docker exemption or counter GENESIS reset.
+External prototype Source05d0f4c4/native-r1 CONSUMERc21453bd passes12invented
+actual-image2ff/network-none cases, including supervisor death while a child
+still holds inherited exclusion. Allchildren joined/removed; no real private
+mounts/API/tasks. Separate ROseed/effect/postseed Docker calls still need one
+FD-inheriting native-visit supervisor. Tesla owns that concrete integration,
+not an already-deployed peer exemption. Claude5c774454 names this kill test.
 Current3scheduled jobs remain unchanged; any later affected action cutover
 preserves inputs/policies/cohorts/requests/capital/operational debit roots.
 
-NEW learned hierarchical campaign ADOPTED FOR SOURCE/DATA ONLY, not running
-models: ADOPTION2f2a6f5a at
-A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1.
-Proposal731c/Sourcee759/Claude9936; Data readinessc690 verifies29metadata facts.
-ThreeNEW Nprefix fits+sixNEW Lheads on1157/1167/1177past prefixes, OOF10/10/9;
-fixedI Dec31 frontier before Jan2 targets. One depth2/minleaf7 multioutput tree
-uses12separateI/Z/REL/N means under fixedNcashmask. Later11outcomes alreadyseen;
-max2newledgers110marks; same cash dates/entrygross are not equal risk/exposure.
-Current treepoint may reuse cached expertpoints, no duplicate full-history fits.
-Concurrency35be/6ea SOUNDlimits: physical per-fold target isolation allows up3N
-workers under one measured coordinator; ALL OOF sealed before META labels.
-Native loaded-I synthetic call precedes29market calls;30nominal/31repair max,
-2loads max only allowed premarket repair. Parent4800activeSUM/7200elapsed,
-original20:16:22..22:16:22UTC; max ceilings not minimum startup reservations.
-Kant builds isolated M views; Noether concrete Source/native/resource prep.
-Numerical GO awaits source/actualData/guest native proof. No old budget refund,
-Paper swap, independent alpha or live authority. Research process has no KIS.
-Company still awaits the original three natural entries, not these packages.
+NEW chronological OOF hierarchical campaign is COMPLETE_FAIL/CLOSED:
+A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1/FINAL-CONSUMER.json
+SHAd1faa121/Source02c9/ADOPTION2f2a. Data3611/b377/0346 has physical three
+prefixes1157/1167/1177 and OOF10/10/9,13nativeSYN+166independent checks;
+source-mount review4a320 is separately limited assurance. Three NEW Gaussian
+GRUs actually ran concurrently21:08:22..21:09:00UTC,73/72/71epochs/best48/47/46/
+PAT25/3672updates. Six NEW Ridge/PCA heads21006assetrows; fixed ADAPT7
+1load/1SYN+29OOF calls. All7 expert seals precede META29 labels. ONE depth2/
+min7/3leaf tree on12means, fixedNcashmask, current researchpoint5de9/IWM
+before one late-price intake/2new ledgers110marks. No old full-history refit.
+55-session10bp-each-leg growth/DD%: tree -3.69613/5.46732, maskeduniform
++1.28774/3.40707, cachedNfull +5.06130/2.42963. Primary FAIL; no retune/
+reranking/Paper promotion. Same cash dates/entrygross are not matched portfolio
+risk; constant IWM choices do not prove collapsed leaves. Late11alreadyseen/
+revisednonPIT/globalreuseUNKNOWN, not independent alpha or Paper PnL.
+267fixed-output checks/Parent18reference hashes PASS, allchildren joined/
+removed/leasefree/1335.1110742upper CLOSED; Claudeaf3b336a SOUND_WITH_LIMITS.
+Original native exit2 remains; one Decimal28vs60 reference-only remainderf8b4
+kept1e-38/kernel and repeated zero model work. No failure/debit refund/rerun.
+Device-total80% near21:09UTC is not per-job timing; no current GPU worker.
+
+Next concrete connection faults: source-only provider contract614d7be1 at
+A/review/current-qqq-h5-evidence-provider-contract-20261025-v1 maps existing
+stock_preview_snapshot/stock_exit_snapshot to typed QQQ evidence, no new client.
+Initial adapter sampled clock BEFORE synchronous provider; valid completed
+reads/writer facts would look future. Correction COMPLETE cycle1e7c38b7/
+testsca2260f9, FINALc8733d4a/AUTHORITY5fda9440 at
+A/verification/current-qqq-h5-post-provider-clock-integration-20261025-v1.
+Post-provider real clock/exact full-custody+journal/TTL revalidated without
+backdating or resetting original request/possible-wire identity. Clock75/
+serial1022/full19111PASS25SKIP/8workers/Ruff/3Compose PASS;1396current exact.
+New native09636f54/ddb53931 uses actualimage2ff,18advancing-provider calls,
+16adapter/9native/6prewire/4FAKEsubmits, alljoined/removed. No actual KIS/Task.
+Claude51e97da1 SOUND_WITH_LIMITS. Old7460 is not the new clock authority.
+External provider Source2a92/nativeb520/a657c171 at
+A/execution/current-l-qqq-h5-evidence-provider-preparation-20261025-v1
+passes21SYN in actual2ff/finalclockSDK480,7.6449sec/alljoined/removed, no
+real client methods/token/private/API. Kant now prepares exact existing
+generic-token/shared-budget glue, not another client or actual authority.
+Tesla owns per-stage isolation/exclusion. A visit mutex cannot assert H5-long
+legacy retirement.
+Unified prototype6c686d78/db63252f has4PASS+1readiness-timeout before kill,
+not gate success/failure; allcontainer/CLIs closed, individual child admission
+unqualified. Later cross-container SCM capability3652afbe at peer/scm-r1
+passes exact supervisor-container death/fresh-open denial until effect closes,
+ROseed/network-none vs RWeffect/bridge retained;7containers/2Linuxvolumes removed/
+12.1835sec. It does NOT yet qualify actual native descendants/OwnerAdmission/
+one-outstanding-phase production transport. Claude1e8246b6 SOUND_WITH_LIMITS.
+Tesla prepares that copied-source integration, no original job cutover. No
+actual QQQ provider/driver/job deployed. Original3jobs/company goal pending.
+Noether/Godel separately examine one pooled cross-sectional Ridge OOF head
+from retained means, source-only/no market fit yet; no duplicate NN training.
 
 I actual prospective point COMPLETE, NEW research output, not F historical
 evaluation. Root A/research/current-toto-adapt7-prospective-point-20261025-v1;

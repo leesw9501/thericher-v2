@@ -88,18 +88,36 @@ or invalid terminal evidence publication. Default inert; trusted actual evidence
 provider/host integration still unqualified, not a new operator permission.
 No driver/job installed. Source797591fa shows closed claims cannot truthfully
 admit foreign Paper writers; oldH5exit peer denial is conditional SOURCE only.
-Tesla prepares a versioned exact cooperating-peer variant, not current-job
+Tesla prototype Source05d0/native-r1 consumer c21453bd passes12actual-image
+SYN cases, not a deployed cooperating-peer variant. Separate ROseed/effect/
+postseed calls still need one FD-inheriting native-visit supervisor; strongest
+kill is parent death while a private child remains alive. No current-job
 edits, generic allowlists or counter resets. Keep all old capsules intact.
 Old three NAS jobs stay intact. Never use a recovery observer as a reader.
 
-NEW OOF campaign source/data preparation only: ADOPTION2f2a6f5a at
+OOF campaign is CLOSED; do NOT run its old commands: FINALd1faa121 at
 A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1.
-No numerical GO yet. Datac690/prefix1157/1167/1177/OOF10/10/9,3NEW N+6NEW L,
-fixedI/one depth2min7tree/fixedNmask/2ledgers110marks. Up3N concurrent only
-physically isolated target mounts; I actualSYN before29OOF; samecached late11/
-currentexpert points, no old full-model refits. Native/code/Data binding then
-Parent numerical GO; original20:16:22..22:16:22UTC/4800activeSUM/7200elapsed.
-Do not invoke a source-only readiness helper as an already-approved model job.
+Data0346/b377/Source02c9, actual3CUDAprefix fits73/72/71epochs/best48/47/46,
+6CPUheads/fixedI29OOF/one tree/2new ledgers110marks. Primary FAIL on reused
+late11: no tuning/financial rerun/Paper promotion.267checks/alljoined/removed/
+leasefree/1335.111upper; source-native exit2 and remainderf8b4 preserved.
+Current researchpoint5de9 is not a new Paper job. Read immutable fixed outputs,
+not old source/Native/experts/meta/readout launchers. No current GPU worker.
+
+QQQ clock correction1e7c/testca226 is COMPLETE fresh5fda9440/FINALc8733d4a at
+A/verification/current-qqq-h5-post-provider-clock-integration-20261025-v1:
+75clock/1022serial/19111full25skip/8workers/Ruff/3Compose/1396current exact.
+Native09636/ddb53931 actual2ff/18advancing-provider calls/alljoined. Old7460
+is superseded, not reused for changed clock code. No actual broker/Task effect.
+Provider2a92/nativeb520/a657c171 passes21SYN/finalclockSDK480 at
+A/execution/current-l-qqq-h5-evidence-provider-preparation-20261025-v1;
+no actual host/token/private methods. Kant prepares generic-token/budget glue.
+SCM capability3652afbe (peer/scm-r1) proves shared FD survives supervisor death
+with separate RO/network-none vs RW/bridge,7containers/2volumes removed. Actual
+native descendant/phase/OwnerAdmission integration remains unqualified; Tesla
+prepares copied-source integration. Unified6c686/db632 stays PARTIAL, not
+retroactive PASS. No current provider/CLI/task/source cutover. A visit mutex
+is not H5 legacy retirement; caller projections alone are not host proof.
 
 Company NEXT: exact natural Oct26 GRU/TimesFM/Joint17 entry outcomes below.
 Current independent I research point is COMPLETE_VERIFIED_NO_DEPLOYMENT:

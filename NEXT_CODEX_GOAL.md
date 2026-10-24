@@ -68,20 +68,22 @@ Research actors or future due times. No recovery observe() as offline reading.
    actually overlapping. Tesla prepares versioned cooperative-peer source,
    not a blanket exemption/current-job edit. Keep exact original operational
    counters/debits and identities; source prediction is not runtime failure.
-3. New OOF hierarchical campaign ADOPTION2f2a6f5a at
-   A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1
-   is adopted for Source/Data preparation, NOT numerical GO. Proposal731c/
-   Datac690; prefixes1157/1167/1177, OOF10/10/9,3NEW Nfits+6NEW Lheads,
-   fixed I beforeOOF, one depth2/minleaf7 tree on12separate means. Fixed N
-   cashmask and two cost-aware ledgers110marks; later11alreadyviewed, adaptive
-   only. Kant builds isolatedprefix M views; Noether Source/actualnative proof.
-   Concurrentfolds need per-worker physical label isolation; allOOF seals
-   beforeMETA labels. Up3N+oneI measuredheadroom, no GPU app-name hold. LoadedI
-   SYN before29OOF calls, max30nominal/31premarket repair. Parent4800activeSUM/
-   7200elapsed at20:16:22..22:16:22UTC; original market counts otherwise fixed.
-   Read exact ADOPTION/Proposal before Source/dispatch. No duplicate completed
-   full N/L fits/current expertforwards; no oldF rescue/independent alpha/Paper
-   swap. A local dependency does not hold other ready lanes/existing Paper.
+3. OOF hierarchical campaign is CLOSED primary FAIL, not a ready training job:
+   A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1/FINAL-CONSUMER.json
+   SHAd1faa121/Source02c9:3actual concurrent newGRUs73/72/71epochs/best48/47/46,
+   sixRidge/PCA heads, one fixedI29OOF/depth2min7tree/2ledgers110marks.
+   Tree -3.69613% vs maskeduniform +1.28774%/cachedNfull +5.06130%; fixed
+   conjunction FAIL on alreadyseen55sessions/adaptive only.267checks/alljoined/
+   leasefree/1335.111upper; no repeats, retune, independent alpha or Paper swap.
+   Clock/custody/TTL correction1e7c/testca226 is COMPLETEfresh5fda9440:
+   1022serial/19111full25skip/8workers/Ruff/3Compose/1396match/new2ffnative.
+   External provider2a92/nativeb520/a657c171 passes21SYN/finalclockSDK480,
+   not actual host authority. Kant prepares existing generic-token/budget glue;
+   Tesla copied-source native/phase/OwnerAdmission integration after SCM
+   capability3652afbe. Retain seedRO/network-none vs effectRW/bridge. Unified
+   4PASS+1readiness-timeout remains PARTIAL. H5 retirement is not a visit mutex.
+   Noether/Godel examine one pooled cross-sectional Ridge on retained OOF
+   means, SOURCE-ONLY/no new market fit or duplicate NN training yet.
 
 ## Completed Inputs, Not Ready Jobs
 

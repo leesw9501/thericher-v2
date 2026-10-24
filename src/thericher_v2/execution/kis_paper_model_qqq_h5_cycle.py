@@ -326,7 +326,7 @@ def _save(pointer, record):
     _check(pointer.read_bytes() == core._canonical(record), "qqq_h5_cycle_write_unverified")
 
 
-def _evidence(provider, pins, value, binding, states, side, at, *, purpose):
+def _evidence(provider, pins, value, binding, states, side, at, *, purpose, clock, pointer, record):
     _check(purpose in {"pre_submit", "custody_reconcile"}, "qqq_h5_cycle_evidence_purpose_invalid")
     evidence = provider(
         QqqH5EvidenceRequest(
@@ -339,6 +339,8 @@ def _evidence(provider, pins, value, binding, states, side, at, *, purpose):
             at,
         )
     )
+    completed_at = require_utc(clock())
+    _check(completed_at >= at, "qqq_h5_cycle_provider_clock_regressed")
     _check(
         type(evidence) is QqqH5CycleEvidence
         and evidence.provider_source_ref == pins.provider_source_ref,
@@ -352,14 +354,21 @@ def _evidence(provider, pins, value, binding, states, side, at, *, purpose):
         and boundary.legacy_sources == pins.legacy_sources,
         "qqq_h5_cycle_writer_source_changed",
     )
-    core._writers(boundary, boundary.reference, binding, states, value, at)
+    # The request attests this exact parent, not a book or journal changed
+    # during synchronous IO. Never backdate completed provider facts.
+    current = _book(pointer.parent, pins, completed_at)
+    _check(
+        _load(pointer, pins) == record and current[0] == binding and current[1] == states,
+        "qqq_h5_cycle_provider_custody_changed",
+    )
+    core._writers(boundary, boundary.reference, current[0], current[1], value, completed_at)
     if purpose == "pre_submit":
         core._typed(
             evidence.reads,
             KisPaperStockPreviewReads if side == "buy" else KisPaperStockExitReads,
             "qqq_h5_cycle_market_reads_required",
         )
-    return evidence
+    return evidence, completed_at, current
 
 
 def _client(client, pins):
@@ -491,17 +500,22 @@ def _prewire(pointer, expected_ref, paths, pins, value, provider, client, clock,
             _nonsent(state, seed, at) and pending["wire_started_at"] is None,
             "qqq_h5_cycle_prewire_state_changed",
         )
+        evidence, at, current = _evidence(
+            provider,
+            pins,
+            value,
+            binding,
+            states,
+            seed.intent.side,
+            at,
+            purpose="pre_submit",
+            clock=clock,
+            pointer=pointer,
+            record=record,
+        )
+        binding, states, projection, replayed, proofs = current
         journal = _journal(record, pins)
         target, quantity, _ = core._cohort(value, journal, binding, replayed, proofs, projection)
-        evidence = _evidence(
-            provider, pins, value, binding, states, seed.intent.side, at, purpose="pre_submit"
-        )
-        # Provider calls may have been slow. Recheck their exact data at the
-        # current clock, along with the native lifecycle's own fresh snapshot.
-        at = require_utc(clock())
-        core._writers(
-            evidence.writer_boundary, evidence.writer_boundary.reference, binding, states, value, at
-        )
         _check(
             is_us_equity_regular_session_window(at)
             and seed.intent.created_at <= at < seed.intent.valid_until,
@@ -536,7 +550,13 @@ def _prewire(pointer, expected_ref, paths, pins, value, provider, client, clock,
                 rec.snapshot.captured_at,
             )
         core._book_reads(
-            replace(evidence.reads, snapshot=native_snapshot),
+            # This combined check includes the earlier native snapshot; the
+            # provider's own observation times remain unchanged above.
+            replace(
+                evidence.reads,
+                snapshot=native_snapshot,
+                started_at=min(evidence.reads.started_at, native_snapshot.captured_at),
+            ),
             target,
             projection,
             pins.account_ref,
@@ -569,10 +589,7 @@ def _prewire(pointer, expected_ref, paths, pins, value, provider, client, clock,
         _check(
             _load(pointer, pins) == record
             and budget._load_binding(paths.state_root, pins.account_ref) == binding
-            and canary.KisPaperCanaryStateStore(
-                paths.state_root / (seed.intent.run_id + ".json")
-            ).read()
-            == state,
+            and _states(paths.state_root, binding) == states,
             "qqq_h5_cycle_prewire_custody_changed",
         )
         pending["wire_started_at"] = at.isoformat()
@@ -593,6 +610,9 @@ def _visit(pointer, record, pins, paths, value, provider, client, clock):
             state.intent.side,
             require_utc(clock()),
             purpose="custody_reconcile",
+            clock=clock,
+            pointer=pointer,
+            record=record,
         )
     if pending["wire_started_at"] is not None and state.phase == "intent_recorded":
         # The marker may precede a crash before native submission_started. That
@@ -754,9 +774,20 @@ def run_qqq_h5_cycle(
             if quantity and at >= journal.exit_close:
                 return QqqH5CycleOutcome("held", "expired_exit_no_substitute")
         side = "buy" if record is None else "sell"
-        evidence = _evidence(
-            evidence_provider, pins, value, binding, states, side, at, purpose="pre_submit"
+        evidence, at, current = _evidence(
+            evidence_provider,
+            pins,
+            value,
+            binding,
+            states,
+            side,
+            at,
+            purpose="pre_submit",
+            clock=clock,
+            pointer=pointer,
+            record=record,
         )
+        binding, states, _, _, _ = current
         args = dict(
             value=value,
             binding=binding,
@@ -781,7 +812,9 @@ def run_qqq_h5_cycle(
             else core.plan_qqq_h5_exit(journal=journal, **args)
         )
         _check(
-            budget._load_binding(paths.state_root, pins.account_ref) == binding,
+            _load(pointer, pins) == record
+            and budget._load_binding(paths.state_root, pins.account_ref) == binding
+            and _states(paths.state_root, binding) == states,
             "qqq_h5_cycle_parent_changed",
         )
         record = _stage(pointer, pins, plan, binding)

@@ -6,16 +6,22 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-No current model worker. NEW OOF family ADOPTION2f2a6f5a at
+No current GPU/model worker. NEW OOF family at
 A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1
-adopts3NEW Nprefix fits+6Lheads/fixedI29OOF/tree. Numerical GO pending actual
-Source/Data/native proof. Up3N concurrent+oneI under one measured coordinator,
-isolated target mounts, no personal-app allowlist; co-tenancy not benchmark.
-NativeI inventedcall first, sameprocessmaycontinue29OOF, N/Lfits startonlyafter
-its exactpass. 30nominal/31onlypremarketmechanicalrepair calls/2loads max;
-originalNNfit/updatecaps unchanged. 4800activeSUM/7200elapsed original20:16:22
-to22:16:22UTC. No fullphase minimumreservation or old debrief budget refunds.
-Noether Source/resourceprep, Kant isolatedprefix physicalData build.
+is COMPLETE_FAIL/CLOSED FINALd1faa121/Source02c9,267checks/1335.1110742upper.
+Actual3concurrentN fits21:08:22..21:09:00UTC,73/72/71epochs/PAT25/best48/47/46,
+3672updates, workerSUM115.4796465sec (overlapping, not isolated benchmark).
+Peakreserved1151336448/1163919360/1176502272bytes. I1load/1SYN+29OOF/
+20.2051guardsec, sixCPU Lheads20.6723guardSUM; expertguardSUM156.357094.
+All expert/meta/readout children joined/removed/leasefree, no old fit repeat.
+Device-total80% observed near21:09UTC is not per-worker utilization evidence.
+Fixed tree primary FAIL; no tuning or additional training under this closed
+family. Native initial reference-error exit2 and one no-model-repeat CPU
+remainderf8b4 remain charged. Physical Data0346 and mount review4a320 retained.
+Original4800SUM/7200elapsed ceilings do not become another budget. QQQ clock
+repair now COMPLETE5fda9440/1022serial19111full25skip/8workers/allclosed;
+Noether next owns source-only pooled Ridge-head readiness, not a GPU worker.
+No useful prepared GPU fit is held for permissions or desktop process names.
 QQQadapter CPU QA COMPLETE7460a456/997serial19086full25skip/1396match,
 nativea93077b8/8invented scenarios/alljoined; no GPU/model/actualbroker effect.
 
@@ -40,13 +46,11 @@ single permitted source-binding continuatione460/3e2c. No new numerical retry.
 no application-name veto or duplicate completed fits for utilization.
 Source43e4522c repo QA remains separate from these external numerical proofs.
 
-Noether currently owns CPU verification of the new pure QQQ-H5 planner, not
-a model worker: A/verification/current-qqq-h5-pure-planner-integration-20261025-v1.
-Core0fe13554/testac11fbeb COMPLETE fresh762941dc:872serial/19036full25skip/
-8workers/1394match/Ruff/3Compose/alljoined/cleanup. Cold3SDK4a9f8aaa passes
-12invented V4 books. No new numerical worker/lease. Godel's radius candidateb9e7 is
-not recommended for fitting;12pure tests,0GPU/market/model effects. No prepared
-GPU fit is being withheld by permissions/capacity; completed N remains closed.
+Earlier pure QQQ-H5 planner verification762941dc is closed and superseded by
+current adapter authority7460a456/1396files above, not another active QA job.
+Cold3SDK4a9f8aaa passed12invented V4 books. Radius candidateb9e7 is rejected
+for fitting;12pure tests/0GPU/market effects. Current OOF actual stages must
+close with exact outputs/resources; no permission/environment hold.
 
 I ACTUAL complete/FINALbc8daa85 at
 A/research/current-toto-adapt7-prospective-point-resource-readiness-20261025-v1/FINAL-CONSUMER.json.

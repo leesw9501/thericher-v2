@@ -71,6 +71,32 @@ prepares versioned exact cooperating-peer Source/SYN plan at
 A/execution/current-cooperative-paper-peer-admission-preparation-20261025-v1.
 Old3jobs/capsules/inputs/requests/debit roots unchanged; no blanket permissions,
 private-reader writer exemption or GENESIS reset. Paper authority still delegated.
+Prototype Source05d0f4c4/native-r1 consumer c21453bd passes12invented native
+image2ff/network-none cases, including supervisor death with surviving child
+retaining exclusion. No real private mounts/API/tasks; alljoined. Concrete
+remaining integration: one FD-inheriting supervisor across ROseed/effect/
+postseed children. Tesla owns that external source/SYN work, not deployment.
+Unified6c686d78/db63252f has4PASS+1readiness-timeout BEFORE strongestkill;
+not actual exclusion success/failure. Allcontainer/CLIs closed, no real private
+effect; individual child readiness/join proof remains unqualified. Parent
+chooses bounded invented-only cross-container shared-FD probe, preserving
+seed private-RO/network-none vs effect private-RW/bridge, not silent merging.
+Provider contract614d7be1 names real initial synchronous-read timestamp bug:
+correction COMPLETE1e7c38b7/testca2260f9, fresh5fda9440/FINALc8733d4a at
+A/verification/current-qqq-h5-post-provider-clock-integration-20261025-v1:
+75clock/1022serial/19111full25skip/8workers/Ruff/3Compose/1396match PASS.
+Actual2ff native09636/ddb53931/18advancing-provider calls/alljoined/removed;
+exact post-query custody/journal, per-fact TTL and original identities retained.
+External provider2a92/nativeb520/a657c171 passes21SYN with final1e7cSDK480,
+0real client methods/token/private/API; Kant prepares existing generic-token/
+shared-budget glue, not actual host authority. Later SCM capability3652afbe
+passes supervisor-container death while surviving RWstandin holds exclusion,
+then fresh-open admission after closure, preserving ROseed/network-none.
+7containers/2Linuxvolumes removed; actual native descendants/one-phase owner
+protocol remains Tesla's integration, not deployment. Actual writer/admission,
+retirement horizon/token/native driver remain separately unqualified. No
+new credentials/client/Task from those tests. A visit mutex is not H5-long
+legacy retirement; current runtime facts must be re-observed before wire.
 
 NEW separately scoped L preparation: A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
 fbcdf230 binds INPUT271aee51/Sourceeabc/SDK6423. Saved point4cb9 reused without

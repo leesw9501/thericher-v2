@@ -6,22 +6,34 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
-NEW chronological OOF hierarchical composition ADOPTED source/data ONLY:
-A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1/ADOPTION.json
-SHA2f2a6f5a; Proposal731c/Sourcee759/Datac690/7SYN/Claude9936 SOUNDlimits.
-1157/1167/1177prefixes, innerCHECK119, OOF10/10/9. ThreeNEW Nfits and6NEW
-Lheads/prefix-only scaler-PCA, fixedI selected beforeJan2 targets; no completed
-fullN/L refits. One depth2/minleaf7 multioutput tree on12I/Z/REL/N means,
-fixedNcashmask. Two new110mark ledgers vsmaskeduniform/cachedNfull; later11
-alreadyseen, adaptive/notindependent. Currenttreepoint fromcachedexpertpoints
-beforelatefinancialintake, notconditionalonitswinner. Concurrentfolds35be/6ea
-SOUND require physicaltargetisolation and allOOF sealed beforeMETA reader.
-NativeN/L/tree then loadedI realSYN before29OOF; up3N+oneI measuredheadroom.
-Exact original20:16:22..22:16:22UTC/4800activeSUM7200elapsed, ceilings not
-minimumreserves; atmost30Icalls nominal/31premarket repair/2loads. No market
-retry/old budgetrefund. Kant actualMviews/ABI; Noether concreteSource/native/
-resourceprep. Numerical GO NOT yet granted, no training running from this MD.
-This is distinct from rejected radiusb9e7; no Paper/broker/credential authority.
+Chronological OOF hierarchical composition COMPLETE_FAIL/CLOSED:
+A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1/FINAL-CONSUMER.json
+SHAd1faa121/Source02c9/ADOPTION2f2a. Three NEW prefix Gaussian GRUs ran
+concurrently,73/72/71epochs, selected48/47/46, PAT25,3672updates total;
+peak reserved1151336448/1163919360/1176502272bytes. Six NEW Ridge/PCA heads
+fit21006assetrows. Fixed ADAPT7 used1load/1SYN+29OOF calls, no new full-history
+N/L fits or current expert forwards. Physical1157/1167/1177prefixes with
+OOF10/10/9/Data0346/b377; actual all7 expert seals precede META29 target intake.
+ONE depth2/min7 tree with3leaves uses12separate means and fixed Ncashmask.
+Currentpoint5de9/IWM sealed BEFORE one later-price intake/2ledgers110marks.
+55-session10bp-each-leg growth/DD%: TREE -3.69613/5.46732, maskeduniform
++1.28774/3.40707, cachedNfull +5.06130/2.42963. Primary conjunction FAIL;
+no retuning/reranking/Paper promotion. All30cashdays/entrygross match, not
+portfolio risk. Constant late IWM choice does not prove collapsed tree leaves.
+Late11alreadyviewed/revisednonPIT/globalreuseUNKNOWN: adaptive development,
+not independent alpha or Paper PnL. Claudeaf3b336a SOUND_WITH_LIMITS.
+267fixed-output checks/Parent18reference hashes PASS/allchildren joined/
+removed/leasefree,1335.1110742upper CLOSED. Source-native first exit2 remains;
+one context-only Decimal28vs60 remainderf8b4 kept1e-38/kernel and repeated
+zero model work. Native journal16 plus3 library comparisons=19calls<=24,
+disclosed without altering original journal. No old failure/debit refund.
+No current GPU worker. QQQ post-provider clock repair is COMPLETE1e7c/
+fresh5fda9440/1022serial19111full25skip. Noether now examines ONE pooled
+cross-sectional Ridge stack of retained OOF means, source-only/no market fit:
+A/research/current-pooled-cross-sectional-oof-stacking-readiness-20261025-v1.
+Pooled4coeff versus tree complexity is a new mechanism, not a renamed tree
+retry/independent replication. Do not duplicate closed experts or infer a
+trainable ready job before its exact contract/native proof.
 
 N ACTUAL COMPLETEe0b422cd at
 A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.
