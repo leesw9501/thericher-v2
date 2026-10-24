@@ -2,88 +2,74 @@
 
 ## One Company Outcome
 
-intraday-etf-fixed-entry-exit-comparison-v1: determine whether ONE transparent
-remaining-value exit model improves a fixed intraday SPY/QQQ entry over a
-prespecified loss-state exit rule and uniform hold after costs. First qualify
-the exact physical input/target packet, then run the frozen CPU/native/replay
-loop. A missing input or failed model is a scoped result, not a company hold.
+paper-holdings-only-observation-v1: make an existing native account-only Paper
+query usable as one explicitly executed, guarded, categorical observation,
+then obtain one fresh bounded result if the owned runtime permits. Holdings
+must not depend on quote/orderable-funds success. This is not order readiness,
+full risk/cash/settlement, owned inventory, exact fill or F9 closure.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Run scripts/start_next_codex_task.ps1; follow HANDOFF/AGENTS/RUNBOOK/active boards.
-Parent owns shared MD/Git/integration. Standing private no-cost authority applies.
-No KIS_LIVE_*, real money, paid/public work or secret/private raw output.
+Parent shared MD/Git/integration. Private no-cost KIS Paper is already delegated;
+never KIS_LIVE_*, real-money, paid/public work, secret/private values or raw output.
 
-## Frozen Direction / Ownership
+## Implement Narrowly
 
-Proposal1d49096e/Sourcebb038a1c/Consumer5ca57548,97staticchecks:
-A/research/current-intraday-etf-next-experiment-preparation-20261024-v1.
-No numerical work occurred in that preparation. Prior switch4060, minute
-GRU/MTF/attention/HGB/ORB, daily learned exits and future exit-ceiling diagnostics
-were checked; this is a new consumer, not a new algorithm or completed old fit.
+Source readinesscd93 and Claude directione0c8/SOUND_WITH_LIMITS:
+A/execution/current-paper-holdings-readonly-refresh-readiness-20261024-v1/CONSUMER.json.
+A/review/current-paper-holdings-only-direction-20261024-v1/CONSUMER.json.
+No ready standalone guarded duplicate found; native
+KisPaperStockReadOnlyClient.stock_exit_account_snapshot() already works
+without funds/quotes. Reuse it; no new reader/agent/platform.
 
-- Data/Kant owns A/data/current-intraday-etf-fixed-entry-exit-input-20261024-v1
-  and the proposed M/us_equities/research_inputs/current-intraday-etf-fixed-entry-exit-input-v1.
-  Existing exact two retained CSVs, no acquisition. Fixed251 sessions:
-  TRAIN145/CHECK43/EVAL63. Keep all keys; check SPY June05 missing4 bars against
-  exact required windows, no deletion/imputation/window or source changes.
-  Physical input-only state8/known/cutoff leaves seal before labels; TRAIN-only
-  scaler; separate TRAIN/CHECK remaining-value targets and sequestered EVAL
-  held marks. Ten2026 sessions are separate feature ABI only, no targets/model.
-  ACTUAL packet READY702b/ac21/semantic4328+technical2db7/ABIcd53/allowliste0a4:
-  29SYN38independent/1build1verify/alljoined. Gaps22..25 outside required windows,
-  known870/258/378+60, heldmissing0; no impute/delete. FinalData117.5324upper+
-  prep60once=177.5324knownfamily. CP949 CLI failed before0numeric; Data consumed
-  the ONE shared continuation. Remaining0, no rebuild/old-launcher rerun.
-  Data review_unavailable not agreement; frozenR1unusedjson F401 disclosed.
-- Engine/Steward Noether owns
-  A/research/current-intraday-etf-fixed-entry-exit-development-20261024-v1.
-  Fixed pair entry at sessionOPEN+121min; decisions136/151/166, 31 completed
-  closes for30 increments, exit no earlier nextOPEN[d+1], terminalOPEN181.
-  y=(OPEN181-OPEN[d+1])/OPEN121, one pooled Ridge(alpha1,svd), safe JSON/scaler.
-  Four policies RIDGE_EXIT/LOSS_STATE_RULE_EXIT/HOLD_UNIFORM_PAIR/CASH;
-  costs0/10/25bp each leg,12cells. Same fee-inclusive .10 invented initial
-  research NAV; no real bank/order/sizing/entry policy change or early-cash reuse.
-  Require Claude target/units/clock/exposure/reuse challenge and Parent adoption
-  of exact Source/actual Data before numerical native/model dispatch.
-- Parent adopted1800 cumulative active owned seconds/7200elapsed, conservative
-  preparation origin05:25:38.0591816UTC and hard deadline07:25:38.0591816UTC.
-  Prep actual60upper and actualData/SYN/IO/failures charged once. Partitions as
-  proposal unchanged: Data300active1200elapsed,native90,fit60,prediction60,
-  readout300,verification180,sourceprep300; retain shared headroom.
-  Native SYNfit1/64predictions; marketfit1/0retry/1884predictionrows including
-  cold parity; financialcells12/outcomeintake1/0LATER/0new2026forecast. One
-  shared pre-model/fixed-output continuation, no repeated fit/prediction/cells.
-  CPU fits this small8-feature design; no dummy GPU or new DL/window sweep.
-- Execution/Tesla completed F9 offline-reader source/invented-fixture checks at
-  A/execution/current-f9-offline-reader-first-cause-20261024-v1.
-  Consumerf8e64cd4/38checks+11assertions: existing r3 DELIVERYec834629 already
-  binds completed readbackda006661, still F9UNKNOWN/HELD. Mount failure class
-  reproduced, exact historical low-level cause unknown; no new runtime patch/
-  private/API/Task/recovery. Do not re-repair or repeat broker query rejected by
-  a638; inspect explicit DELIVERY before root-only failure claims.
+- Parent owns one additive src/thericher_v2/execution/kis_paper_holdings.py
+  and integration. Focused tests may have a disjoint test-file owner.
+- Explicit inert default/--execute, one client/token reuse. Exact virtual host,
+  tokenPOST/ordersGET/balanceGET only; deny quotes/funds/order submit/modify/
+  cancel/live before wire. Existing complete three-venue/page parsers,
+  GET<=40/POST<=1/zero retries/one-second pace/15-second request ceiling.
+- Shared native atomic token-start gate under
+  M/us_equities/kis_paper_private/collection-control-v1, default300seconds.
+  Claim immediately before a fresh POST. Typed deferred/next_due when known;
+  no foreground wait, reset, age reclaim or second post-response write.
+- Freeze aggregate monotonic bound and use a bounded hidden one-child launcher
+  for actual execution/cleanup. No manual observer/Task, no schedule change,
+  no private bank/custody/reconciliation read/write or funds/quote workaround.
+  Preserve an active named observer's ownership.
+- Child env is cleared and supplied only necessary OS keys plus the four
+  selected Paper fields in memory. No implicit dotenv, full-env copy,
+  KIS_LIVE lookup or raw exception/DTO serialization. Module uses named env
+  loader only. Never persist even masked account IDs/account refs.
+- Output only typed categorical status/reason/captured/completed timestamps,
+  complete-group counts, admitted request-attempt counts, read_only/paper
+  scope, submit_capability false and opaque invocation/evidence pointer.
+  Incomplete/stale/timeout/failed group has unknown counts, not zero. Treat
+  observations as sequential and configured-account scoped, not atomic or
+  proof of project ownership or any unknown request's terminal state.
 
-## Evidence And Claims
+## Preserve And Verify
 
-10bp primary: growth exceeds BOTH rule and uniform, DD no worse than uniform.
-Report exposure duration, turnover, fees, growth/DD separately. Lower exposure
-alone is not alpha; negative net growth is not a profitable opportunity.
-Archive/year/outcomes are repeatedly reused, two correlated ETFs/nominal clocks/
-CA/PIT/finality/arrival limits: adaptive development, not independent replication.
-Seal coefficients/scaler/predictions/actions before EVAL held outcome intake.
-No best-loser rescue, tuning on EVAL, Paper swap or profitability prerequisite.
+Joint17 actual deployment222d/independentd092 and H20 capture474d/enabled9be5
+complete; never repeat Apply/point/release/Bind/install/enable. Keep old2ff
+images, future task pins and existing70/25 captures. Check source-reference
+blast radius before runtime use; do not broadly redeploy unrelated owners.
+One original shared initial tenth/basis/costs/losses/pending/F9UNKNOWN-HELD stays.
 
-Joint17 actual deployment222d/independentd092 and H20 capture474d/enabled9be5 are
-COMPLETE AS DEPLOYMENTS. No repeat Apply/create/point/release/Bind/install/enable.
-Future entries/fills/research1449marks/wake/PnL unknown. Preserve original shared
-initial tenth/basis/costs/losses/pending/F9UNKNOWN-HELD and other owned schedules.
-Current public-pointer checkbd60 establishes no eligible newer result within
-scope, not that none exists. Existing GRU/TimesFM/R5/HGB exits remain owned.
+Closed intraday exit FINAL1305:1CPUfit/1884predictions/12cells/Native103/
+independent146/alljoined/245.3869activeupper/COMPLETE_FAIL. No repeat. At10bp
+Ridge loses to rule and uniform; no Paper swap. Old frozen9style warnings and
+DataF401 are disclosed, not retroactively rewritten. Research continues only
+as source/literature sequential-exit preparation under its own finite scope.
 
-Focused external/native checks first. Full2ef authority reused ONLY with exact
-1390production/control digest match; last475serial/18956PASS25skip/8workers/clean.
-Tracked runtime/control edits require fresh AGENTS serial/full/Ruff/3Compose
-using .env.example. Use uv --no-env-file; dataM/artifactsA; no implicit dotenv.
-At material completion verify/commit/push, refresh boards, replace NEXT with ONE
-next material outcome and continue the active request. No foreground market/
-quota wait or new agent/report platform. Stop only for actual operator authority.
+Before tracked-code runtime delivery: changed-path serial, fresh clean
+scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and default/research/
+accounting Compose with .env.example. Old2ef/1390 proof cannot cover new code.
+Focused tests must prove forbidden wire, token deferral/budget/deadline,
+partial-page withholding, secret canaries, inert default and external evidence.
+Only after actual qualified source/owner/runtime checks execute the single
+Paper read. Recoverable quota/provider failure defers its worker only.
+
+At material completion verify/commit/push, refresh boards, replace NEXT with
+ONE next material company outcome and continue the active request. Market dataM,
+artifactsA; no new recurring worker/report/public interface or approval platform.

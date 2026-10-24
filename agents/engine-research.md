@@ -103,7 +103,20 @@ SPYJune05 offsets22..25 outside fixed windows, no impute/delete. FinalData117.53
 plus prep60once=177.5324knownfamily. CP949 CLI failed before0numeric; ONEshared
 continuation consumed by DataR1. Model remainingcontinuations0, not an extra
 allowance. FrozenData unused-importF401 disclosed, not rewritten/rebuilt.
-Engine source/native-interface preparation GO, no numerical model dispatch yet.
+Frozen model Source19b64a28 at same development root is Parent-adopted. Own
+5sources Ruff/30AST-interface-header checks, Parent74ref+fit-mount checks pass;
+Claude98120530 REVISE adjudication2f13 accepted, not relabeled SOUND. Exact
+1506unique states+378cold parity=1884, remaining_fraction=time not shares,
+static held-to-age TRAIN; adaptive/nominal/exposure limits unchanged.
+Actual chain COMPLETE_FAIL06:05:16UTC/FINAL1305cd58, no worker/lease now.
+Native103/independent146/marketfit1/pred1884/12cells/alljoined/removed,
+245.386874activeupper/deadline/debits unchanged. 10bp growth/DD%:
+Ridge-1.297060/1.299079,lossrule-1.230566/1.235294,uniform-1.104214/1.118199.
+Allprimary predicates FAIL, no winner/Paper swap. At0bp Ridge-.038395 vs
+uniform+.154836;10bp fees~1.259% of inventedNAV. Fixed daily1hentry cost hurdle
+matters. Extended project Ruff found9frozen style warnings; verifier Ruff PASS.
+No refit/predict/replay. Next source/literature-only sequential-exit readiness:
+A/research/current-intraday-sequential-exit-next-mechanism-preparation-20261024-v1.
 1nativeSYNfit/1marketfit/1884predictions/12cells/oneoutcome/0LATER/0retry,
 one shared pre-model/fixed-output continuation, never repeated fit/pred/cells.
 A/research/current-intraday-etf-fixed-entry-exit-development-20261024-v1.

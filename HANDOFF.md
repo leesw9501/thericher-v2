@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 14:59KST /05:59UTC.
+2026-10-24 15:24KST /06:24UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -15,9 +15,9 @@ Preserve unrelated untracked %SystemDrive%/. History is Git/immutable artifacts.
 ## Company Outcome / Actual Owners
 
 Prior timesfm-ordinal-dated-paper-proposal-v1 is COMPLETE AS DEPLOYMENT.
-Joint17-oct26-h20-paper-deployment-v1 is COMPLETE AS DEPLOYMENT. NEXT owns
-joint17-h20-prospective-capture-ready-v1 is also COMPLETE AS DEPLOYMENT, not
-future acquired marks or PnL. NEXT owns intraday-etf-fixed-entry-exit-comparison-v1.
+Joint17-oct26-h20-paper-deployment-v1 and its H20 capture-ready are COMPLETE AS
+DEPLOYMENTS, not future acquired marks/fills/PnL. Intraday fixed-entry exit
+comparison COMPLETE_FAIL. NEXT paper-holdings-only-observation-v1.
 Prior H5 comparison is
 SUPERSEDED TECHNICALLY INCOMPLETE, not a completed learned-model comparison.
 TimesFM Data, actual CUDA point,
@@ -77,8 +77,19 @@ payloadref hashes match without arraydecode/rebuild. Known870/258/378+60,
 Evalheldmissing0,June05gap22..25 outside required windows/noimpute/delete.
 FinalData117.5324upper+prep60once=177.5324knownfamily. CP949 review-CLI failure
 consumed ONE shared continuation before0numeric; modelremaining0. Data
-review_unavailable not agreement, frozenR1unusedjson F401 disclosed; no model
-numerical dispatch yet.
+review_unavailable not agreement, frozenR1unusedjson F401 disclosed. New frozen
+modelSource19b64a28 Parent-adopted after74ref/fit-mount checks and own30checks/
+Ruff; Claude9812 REVISE adjudication2f13 accepted, no fabricated SOUND.
+Actual chain COMPLETE_FAIL06:05:16UTC/FINAL1305cd58:
+A/research/current-intraday-etf-fixed-entry-exit-development-20261024-v1/FINAL-CONSUMER.json.
+Native103/independent146/marketfit1/pred1884/12cells/alljoined/removed,
+245.3869activeupper/deadline/debits unchanged. At10bp growth/DD%:
+Ridge-1.297060/1.299079,rule-1.230566/1.235294,uniform-1.104214/1.118199.
+All3primary predicates FAIL. 0bp uniform+.154836 vs Ridge-.038395;10bp fees
+~1.259% of inventedNAV. Fixed daily1hentry cost hurdle matters; do not blindly
+repeat exits. Extended project Ruff found9frozen style warnings, retained;
+verifier Ruff passed. No refit/predict/replay or Paper promotion. Noether now
+prepares source-only sequential-stopping mechanism/kill tests,0newnumerics.
 Data TRAIN145/CHECK43/EVAL63 sessions fixed, strict SPYJune05 gap check before
 fit; separate input/target/held leaves and TRAIN-only scaler. Preparation60upper
 and actualData charged once. Existing archive reused/adaptive, not fresh alpha.

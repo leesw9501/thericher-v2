@@ -8,18 +8,19 @@ decision presently. Preserve unrelated untracked %SystemDrive%/.
 
 Joint17-oct26-h20-paper-deployment-v1 COMPLETE AS DEPLOYMENT, not fill/PnL.
 Joint17 H20 capture-ready COMPLETE: actual bound474d/enable/independent9be5,
-future1449marks unobserved. NEXT intraday-etf-fixed-entry-exit-comparison-v1:
-one transparent cost-aware CPU learned-exit comparison with exact causal inputs.
+future1449marks unobserved. Intraday comparison COMPLETE_FAIL1305/alljoined.
+NEXT paper-holdings-only-observation-v1: narrow guarded account-only observation,
+not funds/quotes/bank/reconciliation or existing observer replacement.
 Prior H5 Top8 comparison SUPERSEDED TECHNICALLY INCOMPLETE, not completed.
 Prior dated TimesFM deployment COMPLETE, future runtime/fills still unobserved.
 
 | Owner | Actual disjoint package |
 | --- | --- |
-| Parent / 총괄 | Joint17 actual install222d/session41586exit0; integrate independent readbacks/results, shared MD/Git. |
+| Parent / 총괄 | Thin holdings-only consumer implementation/integration; existing orders/bank/observer/tasks untouched. |
 | Aquinas / 실행 | Complete/agent closed: candidate730c/installer60-0; phase Plan bug fixed before actual effects. |
-| Noether / 엔진·자원 | H1/H5 complete; new intraday fixed-entry/learned-exit CPU source preparation, no new model numerical dispatch. |
+| Noether / 엔진·자원 | Intraday1305 complete; sequential-exit source/literature/kill-test proposal only, no fit/GPU. |
 | Kant / 데이터 | Complete/closed: intradayData702b/ac21/1build1verify/29SYN38checks/alljoined. |
-| Godel / 검토 호출 | Complete/closed: aux result327d, H20 capture disabled8db1/enabled9be5 actual readbacks. |
+| Godel / 검토 호출 | Holdings directione0c8/ClaudeSOUNDlimits complete, no primary/API/private effects. |
 | Tesla / 실행 호출 | Complete/closed: F9f8e6 and holdingscd93 primitive/readiness; no fresh API/private read or new adapter. |
 
 ## Current Evidence / Dependencies
@@ -83,6 +84,15 @@ Nightly2d16 exact1SELL fill/closure is not wholebook. F9 UNKNOWN/HELD.
 Original shared tenth/basis/costs/losses/pending/fresh runtime risk remain intact.
 
 ## Throughput Review
+
+15:07KST before numerical chain: only ready compute is small CPU Ridge; Data
+702b/ac21 complete and74source refs/fit mounts exact. Noether owns one mutable
+runtime/output. All other invoked roles closed; no unknown-GPU permission hold.
+Reuse pinned existing host4ec with ROOT pointed only at new runtime, not old
+host.main/old study. This removes another launcher implementation; preserve
+exact source/role mounts/native proof/old de bits and original deadline.
+Native/fit GO is not actual execution proof; inspect phase identity/markers on
+interruption rather than blindly relaunching. No foreground session wait.
 
 14:38KST after deployment9c2c2d2 pushed: ready Parent capture-enable after actual
 disabled review; owned Godel source/COM, Tesla exact Paper pointers, Noether
