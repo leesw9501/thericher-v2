@@ -119,6 +119,25 @@ prepares copied-source integration. Unified6c686/db632 stays PARTIAL, not
 retroactive PASS. No current provider/CLI/task/source cutover. A visit mutex
 is not H5 legacy retirement; caller projections alone are not host proof.
 
+Later research is CLOSED; never rerun old launchers:
+A/research/current-pooled-cross-sectional-oof-stacking-development-20261025-v1/FINAL-CONSUMER.json
+SHA c317836d, oneCPUfit/55marks/positive5.017965%growth but primaryFAIL.
+A/research/current-three-etf-diagonal-density-prospective-development-20261025-v1/FINAL-CONSUMER.json
+SHA b7d0c162, oneNEWCUDAfit80epochs/best55/PAT25/1360updates,2.085575%growth/
+1.630106%DD, primaryFAIL. Allchild/container/leases closed, no current GPUjob.
+Matched initial/stats do not make covariance causal or reused data independent.
+
+NEWQQQ direct visit source1691378a/495a072a passes13nativeSYN; hosta0e3/
+ae408518 passes16code/codecSYN. These are NOT installation or actual owner
+facts. Current source implementation is
+A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/runtime-graft-r1.
+No actual dispatch/Task registration. Prep entryOct26 18:00..18:15UTC/exitOct30
+19:55..20:00 within originalL input; late entry differs from researchOPEN1.
+Use MAP at A/review/current-qqq-runtime-root-source-map-20261025-v1/MAP.json
+for qualified existing classes/mounts; RuntimeSharedControlRoot/TokenGuard
+were placeholder labels, not a schema requiring new approval. Fresh actual
+owner/disabled-legacy/custody/IPC and original10percent remain mandatory.
+
 Company NEXT: exact natural Oct26 GRU/TimesFM/Joint17 entry outcomes below.
 Current independent I research point is COMPLETE_VERIFIED_NO_DEPLOYMENT:
 A/research/current-toto-adapt7-prospective-point-resource-readiness-20261025-v1/FINAL-CONSUMER.json

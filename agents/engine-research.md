@@ -6,6 +6,35 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+Latest two studies are CLOSED, not queued fits:
+
+- Pooled OOF-RMS head FINALc317836d at
+  A/research/current-pooled-cross-sectional-oof-stacking-development-20261025-v1:
+  Source dac32a93, ONE CPU Ridge/87rows/four shared coefficients, zero base
+  calls, one currentpoint/IWM before one55mark ledger. Growth5.017965%/
+  DD2.520247%/utility.180713 versus frozen Nfull5.061297/2.429631/.187359:
+  positive descriptive growth, primary conjunction FAIL; no retune/Paper swap.
+  TRAIN-only RMS is an explicit different regularizer, not raw-alpha1 advice;
+  exact zero RMS keeps a zero channel at scale1.87rows are29dependent clusters.
+  Native realSVD/reference/cold/ledger PASS; all4children removed/693.969829upper.
+- Learned diagonal density FINALb7d0c162 at
+  A/research/current-three-etf-diagonal-density-prospective-development-20261025-v1:
+  Source3e216e54, ONE NEW CUDAfit80epochs/best55/PAT25/1360updates,
+  matched INITIALa8230cef/STATS07e01a2e BEFORE first update. Same9head/5001
+  parameters, diagonal data loss/covariance; off-row data gradients0 (AdamW
+  decay can change dormant rows). Growth2.085575%/DD1.630106%/utility.077665:
+  lower DD but growth/utility fail frozen criterion; not an unprofitable-model
+  or causal-covariance claim. Currentpointc5eb4c81 is .5SPY/.5QQQ, before late
+  intake, not a broker input. Native CPU/CUDA/allRNG cold PASS/384fixed checks,
+  all5children removed/leasefree/459.251927upper, peakreserved1128MiB.
+
+Both use the same globally-seen late11cohorts/55sessions,10bp each leg,
+revisednonPIT/adaptive development/globalreuseUNKNOWN, not independent alpha
+or Paper PnL. Old outputs/debits remain unchanged. No current GPU worker or
+new training dispatch. Noether temporarily reviews the direct QQQ runtime
+graft source; Tesla owns that implementation. Source-scope mismatch is a local
+dependency, not permission to repeat completed fits.
+
 Chronological OOF hierarchical composition COMPLETE_FAIL/CLOSED:
 A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1/FINAL-CONSUMER.json
 SHAd1faa121/Source02c9/ADOPTION2f2a. Three NEW prefix Gaussian GRUs ran
@@ -27,13 +56,9 @@ removed/leasefree,1335.1110742upper CLOSED. Source-native first exit2 remains;
 one context-only Decimal28vs60 remainderf8b4 kept1e-38/kernel and repeated
 zero model work. Native journal16 plus3 library comparisons=19calls<=24,
 disclosed without altering original journal. No old failure/debit refund.
-No current GPU worker. QQQ post-provider clock repair is COMPLETE1e7c/
-fresh5fda9440/1022serial19111full25skip. Noether now examines ONE pooled
-cross-sectional Ridge stack of retained OOF means, source-only/no market fit:
-A/research/current-pooled-cross-sectional-oof-stacking-readiness-20261025-v1.
-Pooled4coeff versus tree complexity is a new mechanism, not a renamed tree
-retry/independent replication. Do not duplicate closed experts or infer a
-trainable ready job before its exact contract/native proof.
+QQQ post-provider clock repair remains COMPLETE1e7c/fresh5fda9440,
+1022serial19111full25skip. The newer pooled/diagonal studies above are closed,
+not another ready run of this OOF family.
 
 N ACTUAL COMPLETEe0b422cd at
 A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.

@@ -6,6 +6,18 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+Latest allocation is CLOSED, no current GPU/model worker:
+diagonal Source3e216e54/FINALb7d0c162, one CUDAfit80epochs/best55/PAT25/
+1360updates,37.282304sec fitworker/54.251926sec full sequential chain,
+peakreserved1128MiB. Exact initial/stats match old teacher; no teacher fit/
+forward/restoration or retry. Native6updates/9calls144rows/5constructors/
+2coldrestores; all5children removed/leasefree/459.251927upper. Financial
+primaryFAIL despite positive growth/lower DD; not a resource failure.
+Pooled CPU head Source dac32a93/FINALc317836d also closed:one87-row fit,
+4children/8.969829childSUM/693.969829upper, zero base-model/GPU calls.
+Neither unused ceiling becomes new trials. Noether is a temporary source
+reviewer for actual Paper preparation, not an active training worker.
+
 No current GPU/model worker. NEW OOF family at
 A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1
 is COMPLETE_FAIL/CLOSED FINALd1faa121/Source02c9,267checks/1335.1110742upper.
@@ -20,7 +32,7 @@ family. Native initial reference-error exit2 and one no-model-repeat CPU
 remainderf8b4 remain charged. Physical Data0346 and mount review4a320 retained.
 Original4800SUM/7200elapsed ceilings do not become another budget. QQQ clock
 repair now COMPLETE5fda9440/1022serial19111full25skip/8workers/allclosed;
-Noether next owns source-only pooled Ridge-head readiness, not a GPU worker.
+Newer pooled/diagonal work above is also complete, not another GPU worker.
 No useful prepared GPU fit is held for permissions or desktop process names.
 QQQadapter CPU QA COMPLETE7460a456/997serial19086full25skip/1396match,
 nativea93077b8/8invented scenarios/alljoined; no GPU/model/actualbroker effect.

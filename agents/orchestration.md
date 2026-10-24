@@ -16,11 +16,11 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | Integrate closed OOFd1faa and fresh clock5fda, shared MD/Git. Company waits original natural3entries. |
-| Tesla / 실행 구현 | SCM3652 capabilityPASS; copied-source actual-descendant/phase/OwnerAdmission SYN integration, no actual-job edits. |
-| Kant / 데이터 | Provider2a92/a657 native21PASS; temporary Execution generic-token/shared-budget glue external-only. |
-| Godel / 전략·반증 | IPC1e824/clock51e97/OOFaf3b complete; pooled-head mechanism/Claude challenge, no numerical dispatch. |
-| Noether / 엔진·자원 | OOFd1faa and clock5fda COMPLETE; pooled cross-sectional OOF Ridge readiness source-only. No current model worker. |
+| Parent / 총괄 | Integrate closed poolc317/diagonalb7d0 and direct-QQQ preparation; shared MD/Git. Original3entries pending. |
+| Tesla / 실행 구현 | Direct1691/13SYN and hosta0e3/16SYN complete; actual owner/retirement/control runtime-graft source implementation, no original-job edits. |
+| Kant / 데이터 | Token6161/11SYN and runtime-root map767a complete; source expert, no current data/model/API worker. |
+| Godel / 전략·반증 | Direct3a32/diagonalbd3a/pooled recipe challenge complete; no current numerical worker. |
+| Noether / 엔진·자원 | Poolc317/diagonalb7d0 CLOSED; temporary independent runtime-graft source review. No current model/GPU worker. |
 
 QQQ source design at
 A/review/current-n-ln-frozen-output-integration-20261025-v1/SOURCE-DESIGN.json
@@ -72,6 +72,25 @@ legacy-retirement policy: a visit mutex cannot manufacture that horizon.
 Clock1e7c/ca226 is now fixed and verified5fda. Provider21SYN/a657 and later
 SCM3652 capability pass their limited scopes; actual token/host/phase/native
 descendant integration remains ready engineering work, not deployed authority.
+NewQQQ is now source-feasible as ONE private-RW bridge native adapter visit,
+not the old NAS ROseed/effect/postseed pipeline. Kant0099/Claude3a32 and
+actual1691378a/495a072a13SYN prove preparation only; sourcea0e3/ae408518
+16SYN tests host-code/codec, not an actual scheduled owner. Old NAS SCM559f
+never reached guest (mount-projection mismatch) and remains unfinished oldEXIT
+coexistence work, NOT a newQQQ/company gate. Original3jobs unchanged.
+Parent selected preparation entryOct26 18:00..18:15UTC/exitOct30 19:55..20:00;
+full originalL validity allows them, but timing alone proves no liveness.
+MAP767a identifies existing control root/gate/custody volume and owner-library
+functions. RuntimeSharedControlRoot/TokenGuard were conceptual placeholders,
+not missing approval schemas. Bind actual qualified classes/mounts, no new gate.
+Latest independent studies poolc317 and diagonalb7d0 closed with positive
+descriptive growth but primaryFAIL; no further fit or Paper input swap.
+Independent review2c0c8f60 caught real fresh-host false-denial defects: extracted
+PS library omitted explicit imports under disabled autoload; raw/mixed-path
+argv hash comparisons treated equivalent Windows invocation as different.
+Tesla runtime-graft-r2 repairs these with qualified PS7.5+ bootstrap and exact
+parsed argv/path binding; Noether reviews. Actual Task owner/install remains
+unobserved, not an operator approval. No old partial proof becomes runtime PASS.
 
 ## Completed / Do Not Repeat
 

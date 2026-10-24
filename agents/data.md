@@ -31,6 +31,12 @@ Source2a92/nativeb520/consumer a657c171 passes21SYN in actual2ff/finalclock
 Task effects. Kant now prepares existing generic-token/shared-budget glue in
 native-token-budget-r1, not another client/token cache. Actual host attestation
 remains Execution's dependency, not a Data capability or permission hold.
+Token glue61610f51/40c643ca is COMPLETE11nativeSYN/23FAKEHTTP,0realAPI.
+Kant's source-only root MAP767a69f9 now resolves canonical control host/guest
+path, existing RequestBudget/token gate and original custody volume, plus
+owner-library/fresh-retirement readback functions. No invented approval schema.
+No actual private contents/Task/API queried. Role source expert is complete;
+Tesla runtime-graft implementation and Noether review remain separate owners.
 Original family20:16:22..22:16:22UTC/4800activeSUM7200elapsed unchanged.
 
 NEW later-history data COMPLETE808c40ce/DTOb14591f2 at

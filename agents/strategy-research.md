@@ -26,6 +26,15 @@ IPC1e8246b6/clock51e97da1 are SOUND_WITH_LIMITS; actual IPC/clock/runtime
 proof remains separately scoped. Godel now challenges ONE pooled cross-sectional
 Ridge OOF head with official-source basis, no arrays/fit/market effects; Noether
 owns its source-only readiness. Kant/Tesla continue disjoint Paper connection.
+Those studies now CLOSED: pooledc317 positive5.017965%/DD2.520247%, learned
+diagonalb7d0 positive2.085575%/DD1.630106%; both fail fixed criterion against
+fullN, no regrade/Paper swap. RMS was Parent's explicit prospective different
+regularizer, not raw-recipe advisory qualification. Diagbd3a SOUND_WITH_LIMITS:
+learned diagonal NLL differs from posthoc zeroing; actual init/stats match is
+now proven but means/selected epochs/cash/exposure prevent covariance causality.
+DirectQQQ3a32 SOUND_WITH_LIMITS removes old NAS multiphase as a dependency;
+actual fresh owner/retirement/canonical roots still required. No numerical role
+is running from this Strategy board; source-specific advisory helpers closed.
 
 Later N/L frozen-output interpretationed58 SOUND_WITH_LIMITS: the eleven
 cohorts are descriptive/reused/exposure-confounded, not covariance quality or

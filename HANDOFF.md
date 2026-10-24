@@ -220,8 +220,45 @@ ROseed/network-none vs RWeffect/bridge retained;7containers/2Linuxvolumes remove
 one-outstanding-phase production transport. Claude1e8246b6 SOUND_WITH_LIMITS.
 Tesla prepares that copied-source integration, no original job cutover. No
 actual QQQ provider/driver/job deployed. Original3jobs/company goal pending.
-Noether/Godel separately examine one pooled cross-sectional Ridge OOF head
-from retained means, source-only/no market fit yet; no duplicate NN training.
+Pooled OOF-RMS head is now CLOSED FINALc317836d/Source dac32a93 at
+A/research/current-pooled-cross-sectional-oof-stacking-development-20261025-v1.
+One CPU fit87rows/four shared coefficients/zero base calls; one currentIWM
+point before one55mark ledger. Growth5.017965%/DD2.520247%/utility.180713
+versus Nfull5.061297/2.429631/.187359: positive descriptive growth, fixed
+conjunction FAIL, no retune/Paper swap. Explicit TRAIN-RMS regularization,
+zero RMS kept at scale1;87rows are29dependent clusters. All4children removed,
+nativeSVD/reference/cold/ledger PASS/693.969829upper. Original tree unchanged.
+
+Learned diagonal-density GRU is CLOSED FINALb7d0c162/Source3e216e54 at
+A/research/current-three-etf-diagonal-density-prospective-development-20261025-v1.
+One NEW CUDAfit80epochs/best55/PAT25/1360updates,37.282304fitsec/1128MiB
+reserved; exact INITa8230cef/STATS07e01a2e match old teacher before updates.
+Diagonal branch is in training loss and raw covariance, not post-hoc zeroing.
+Native CPU/CUDA/allRNG cold/384fixed checks PASS; all5children removed/
+leasefree/459.251927upper. Growth2.085575%/DD1.630106%/utility.077665 has
+lower DD but fails frozen growth/utility criteria, with different exposure.
+Currentc5eb4c81=.5SPY/.5QQQ before late-price intake; no broker input change.
+Both later11cohort comparisons remain globally-seen/adaptive/revisednonPIT,
+not independent alpha, pure covariance causality or actual Paper PnL.
+
+NEWQQQ minimum path is one direct native adapter visit, not old NAS multiphase
+SCM transfer. Kant0099/Claude3a32 support this limited source direction.
+Direct fixture-repair Source1691378a/Consumer495a072a passes13actual2ffSYN,
+8native calls/6prewire/23budgetedFAKEHTTP/3.5708sec/alljoined. Prior38e2
+pytest-import failure (0tests) retained, not regraded. Host-binding sourcea0e3/
+ae408518 passes16code/codecSYN, not actual scheduled-owner proof. Parent chose
+preparation entryOct26 18:00..18:15UTC/exitOct30 19:55..20:00; valid originalL,
+late entry is execution learning, not an OPEN1 replay or timing safety proof.
+Root map767a identifies existing control path/gate/budget and canonical private
+volume; no missing TokenGuard approval schema. Tesla implements the small
+actual owner/retirement/control graft, Noether independently reviews. No task
+installation, private/credential/broker call or original3job change yet.
+Review2c0c8f60 identified two actual-code false-denial risks before runtime:
+autoload-disabled owner bootstrap lost required explicit imports, and Windows
+argv raw/path representations differed. Current revision is runtime-graft-r2;
+PS7.5+ exact executable/import bootstrap and strict parsed-argv/path-only
+normalization are being repaired/reviewed. Do not install the older partial
+graft or interpret its mocked owner as an actual scheduled host.
 
 I actual prospective point COMPLETE, NEW research output, not F historical
 evaluation. Root A/research/current-toto-adapt7-prospective-point-20261025-v1;
