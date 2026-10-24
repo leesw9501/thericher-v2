@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 16:40KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 18:22KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
@@ -16,8 +16,10 @@ Fullrequiredgaps0,1build1verify/no retry/alljoined,49.9150477upper once,
 firstSYN08:19:38.975709UTC. Parent6named metadata refs match. No model/replay/
 API/private/Task; no dataset rebuild/double adjustment/oldscaler/PIT claim.
 Noether c590 study COMPLETE_FAIL1e9028d2/2fits200updates/6cells/alljoined.
-Native6updates99actor49encoder rows; Data is unchanged. NEW action-inertia
-source preparation reuses exact EVAL leaves/scaler, no data rebuild/retry/API.
+Native6updates99actor49encoder rows; Data unchanged. Action-inertia c625
+closed7049faef on container import BEFORE market arrays/model/financial cells.
+Separate import repairc29ac6f5 PASS is not data/native/financial qualification.
+Next-mechanism source readiness has no new Data build/API/model authority yet.
 Old07:50..09:50 clocks/debits remain closed; no numerical work by Data.
 Older flat81f3 and3ETF readinessb7fc/9926 remain immutable, not new build work.
 

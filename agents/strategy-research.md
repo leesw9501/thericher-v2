@@ -1,13 +1,24 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-24 18:22KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 18:59KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable hypotheses,
 not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
-Current SOURCE-ONLY action-inertia preparation owned by Godel:
+Current SOURCE-ONLY next-mechanism readiness, Godel active:
+A/research/current-post-deployment-next-mechanism-readiness-20261024-v1.
+Compare duplicate-checked recency/convergence versus a genuinely untried
+cross-series public foundation expert. Official sources/rights/dates/runtime/
+data/resource/kill facts, no download/model/arrays/numerical GO.120sourceupper/
+900elapsed, preserve proposal debit if adopted. No reading-list platform.
+Import repair advisoryd815 SOUNDlimits complete; actual repairc29ac6f5 PASS,
+not scientific resume. c625 remains technical failure7049faef/0financialcells.
+
+Prior action-inertia source preparation COMPLETEd8c689b1:
 A/research/current-three-etf-action-inertia-preparation-20261024-v1.
+Kernel f344abab/fixturesc5d338eb/Proposalec564d57, Parent3refs match.
+ClaudeSOUND_WITH_LIMITS/bc5a4daa. Native UNRUN, not runtime qualification.
 Duplicate-check prior carry/turnover/inactivity evidence, then one fixed causal
 L1 band0.05 proposal/pure kernel interface/native fixtures/Claude challenge.
 No numeric/array/model/ledger execution or new threshold search. Consumer is
@@ -15,6 +26,9 @@ Noether's disjoint action-inertia actor/host glue and Parent Source adoption.
 Terminal liquidation and actual quantities/cash remain explicit. Derivative
 hedging paper2103.01775 is mechanism inspiration, not equity alpha/optimality.
 New09:20..10:20UTC/1800active3600elapsed; Strategy120upper once, no old refund.
+Native force_daily bypass is not threshold0 equivalence: matching CLOSE
+weights can drift at nextOPEN. Fixed-band gap skip tested separately; fixtures
+remain unqualified: c625 failed importing before fixtures. No old native rerun.
 
 c590 held-feedback COMPLETE_FAIL1e9028d2/2CPUfits200updates6cells/alljoined,
 native6updates99actor49encoder rows/862.405593activeupper.

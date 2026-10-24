@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 18:22KST /09:22UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-24 18:59KST /09:59UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -64,25 +64,43 @@ No old native/fit/evaluation/finalization repeat or automatic Paper model swap.
 R1 resource draft saved/unfrozen/unrun; CPU/GPU comparative performance unknown,
 not missing GPU permission. Optional profiling never postponed actual CPU pair.
 
-NEXT three-etf-action-inertia-development-v1. NEW proposed fixed L1 weight
-band0.05 skips small changes by retaining actual quantities/cash; actor uses
-own prior-CLOSE state, accounting later sees currentOPEN, terminalCLOSE exits
-once. Same frozen models/data,0fits; not old-result regrade or threshold search.
-- Godel/Strategy source-only owner:
-  A/research/current-three-etf-action-inertia-preparation-20261024-v1.
-  Duplicate-check/source proposal/kernel interface/native fixtures/Claude;
-  no model/array/ledger execution. Reject an equivalent completed mechanism.
-- Noether/Engine source-only owner:
-  A/research/current-three-etf-action-inertia-development-20261024-v1.
-  Actor/host/checkpoint glue, no numerical GO yet. Kernel writer is disjoint.
-- Parent owns source adoption/integration/shared MD/Git.
-New conservative09:20..10:20UTC/1800active3600elapsed; Strategy120upper and
-Engine60upper once. Exact native/phase/cumulative reservations before effects.
-Proposed0fits/2marketrestores/6830marketactor+encoderrows/6newcells6cached/
-10245newreadoutsteps, no retry/old trajectory rerun. Primary STATE band improves
-own old growth/DD/turnover BOTH roles; BLIND+uniform are named action controls.
-Reused retrospective adaptive history, no independent alpha/Paper promotion.
-See NEXT for exact scope; original failures/debits stay closed.
+Action-inertia Sourcec625 CLOSED_TECHNICAL_INCOMPLETE_NATIVE_IMPORT:
+A/research/current-three-etf-action-inertia-development-20261024-v1/FINAL-CONSUMER.json
+SHA7049faef2e56656677118b96bb06941ebda3bf8453bbf367d64ba205b27340de.
+One native attempt09:43:59..09:44:02UTC/PID45572/coordinator43296/alljoined/
+removed/193.087152activeupper. Actual Torch/NumPy imports/container occurred;
+unused DATA=ROOT.parents[1] raises IndexError under /src before native function/
+PREDEBIT/model/restore/actor/market array/cell/outcome intake. Not financial
+failure or zero PnL. Native attempt1 consumed; original09:20..10:20/0retry/
+continuation0 frozen. DO NOT edit/relaunch old source or rename to reset caps.
+
+Independent import repair COMPLETE_PASSc29ac6f5:
+A/research/current-action-inertia-container-import-repair-20261024-v1/FINAL-CONSUMER.json
+SHAc29ac6f580a7afcbfc98a64d5e63e37ab5cfec7b7608870e57a61239b0a23462.
+Source5f1, actual claim09:54:46.552161UTC/coordinator59484/attachment55632.
+One network-none stdlib child/two cases: original IndexError, fixed import PASS;
+0.631774actualchild/alljoined/removed/0Torch/NumPy/model/array/kernel/financial.
+Parent10public refs match. Engine41.255036upper; Parent conservative combined
+161.255036upper replaces Engine30source allowance with Parent60 and adds90
+advisory once. No duplicate child/cleanup charges, no old scientific refunds.
+Actual finish before Parent10:17 despite Source code's looser10:20 guard.
+Original c625 Source/members unchanged. No probe repeat or scientific resume.
+Different basenames share real/src parent: NOT full worker bootstrap/native/
+financial qualification. Godel/Clauded815 SOUND_WITH_LIMITS:
+A/review/current-action-inertia-import-repair-review-20261024-v1/CONSUMER.json.
+
+NEXT oct26-three-candidate-paper-entry-runtime-v1. Exact existing GRU/TimesFM/
+Joint17 entry outcomes, not another installation or profitable-model gate.
+GRUOct26 13:40UTC/TimesFM14:20UTC/Joint17H20 17:00UTC are future owned jobs;
+no manual duplicate/newcapital/reset/foreign adoption. Existing close captures/
+exits unchanged, future wake/fill unknown. No active numerical/GPU worker now.
+
+Godel separately owns zero-numerical next-mechanism readiness under
+A/research/current-post-deployment-next-mechanism-readiness-20261024-v1:
+compare an actually justified data-recency/convergence question with a genuinely
+untried cross-series public foundation expert. Official rights/version/dates/
+duplicate/data/resource/kill checks only; no download/model/data-array/evaluation
+or numerical GO. Do not let this source package delay the actual import repair.
 
 Actual Data d48134ac/Source905575e4/DTO45845b96/ABIf41d234d remains immutable:
 A/data/current-three-etf-held-feedback-inputs-20261024-v1.
