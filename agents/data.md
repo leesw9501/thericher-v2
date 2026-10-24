@@ -1,13 +1,20 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 16:24KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 16:40KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
-Kant owns NEW flat120/150 state preparation/build:
+Kant COMPLETE/closed NEW flat120/150 state views:
 A/data/current-flat-waiting-option-entry-views-20261024-v1.
+Consumer81f353b4/Source2917cc35/DTO0f268322/ABIdef04203/allowliste5f72b75.
+Inputs1004/AZ151144/Bpaired146,1build1verify/32SYN3186checks/Ruff/alljoined;
+Data25.655918upper once, firstSYN07:31:10.958497UTC, continuation0used.
+Parent9named metadata hashes match, no new array decode/rebuild. Feature5
+explicit max running-peak drawdown over31CLOSEs, accepted before model Source.
+Data review842f unavailable, not agreement/global hold. Proposal361a separate
+SOUNDlimits. CHECK/EVALpayoff/oldheld/scaler/2026/model/API/private reads0.
 Consumer Engine flat-waiting-option-entry, Proposala067/Strategy79e4. Same251
 scheduled SPY/QQQ sessions/31completed predecision CLOSEs/8features, A72/B73/
 CHECK43/EVAL63; separate typed inputs/targets/role allowlists/physical ABI.

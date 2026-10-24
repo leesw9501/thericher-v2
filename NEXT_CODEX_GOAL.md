@@ -30,6 +30,11 @@ cleanup once; LLM/review/queue elapsed separate. Old clocks/debits stay.
   and actual physical ABI; teacher inputs sealed before student labels.
   No imputation/key deletion/clock shift. Onebuild/oneverify,<=300active1200elapsed
   within company ceilings; old EVAL held leaf only in final accounting. No2026.
+  ACTUAL COMPLETE81f353b4/Source2917cc35/DTO0f268322/ABIdef04203:
+  1004input/A144/B146target rows,32SYN3186checks/Ruff/alljoined,25.655918upper
+  once. Parent9metadata refs match. DO NOT rebuild; consume actual ABI including
+  max running-peak drawdown over31completed CLOSEs. Datareview unavailable,
+  not agreement/global hold. Shared continuation1 remains unused.
 - Engine/Noether owns A/research/current-flat-waiting-option-entry-development-20261024-v1.
   Three new CPU Ridge(alpha1/SVD) fits: A late teacher, B waiting-advantage early
   model and matched B myopic early model. Own-chunk scalers, teacher B predictions
