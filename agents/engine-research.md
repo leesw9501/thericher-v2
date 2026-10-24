@@ -6,6 +6,23 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+NEW chronological OOF hierarchical composition ADOPTED source/data ONLY:
+A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1/ADOPTION.json
+SHA2f2a6f5a; Proposal731c/Sourcee759/Datac690/7SYN/Claude9936 SOUNDlimits.
+1157/1167/1177prefixes, innerCHECK119, OOF10/10/9. ThreeNEW Nfits and6NEW
+Lheads/prefix-only scaler-PCA, fixedI selected beforeJan2 targets; no completed
+fullN/L refits. One depth2/minleaf7 multioutput tree on12I/Z/REL/N means,
+fixedNcashmask. Two new110mark ledgers vsmaskeduniform/cachedNfull; later11
+alreadyseen, adaptive/notindependent. Currenttreepoint fromcachedexpertpoints
+beforelatefinancialintake, notconditionalonitswinner. Concurrentfolds35be/6ea
+SOUND require physicaltargetisolation and allOOF sealed beforeMETA reader.
+NativeN/L/tree then loadedI realSYN before29OOF; up3N+oneI measuredheadroom.
+Exact original20:16:22..22:16:22UTC/4800activeSUM7200elapsed, ceilings not
+minimumreserves; atmost30Icalls nominal/31premarket repair/2loads. No market
+retry/old budgetrefund. Kant actualMviews/ABI; Noether concreteSource/native/
+resourceprep. Numerical GO NOT yet granted, no training running from this MD.
+This is distinct from rejected radiusb9e7; no Paper/broker/credential authority.
+
 N ACTUAL COMPLETEe0b422cd at
 A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.
 New current-history1067TRAIN/119innerCHECK, Sourceaa61/Native56c4 actual CPU/

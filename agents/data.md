@@ -6,6 +6,19 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+NEW OOF composition readinessc690643f/29metadata checks complete at
+A/data/current-chronological-oof-risk-gated-tree-inputs-20261025-v1.
+Prefix1157/1167/1177 with innerCHECK119; OOF10/10/9 startsJan2/Mar17/May28.
+Each prefix label closes before blockfirstOPEN; Iselection frontierDec31.
+Historical252x3context/5x3targets; late11/currentOct23 same newer snapshot,
+not cross-vintage/global-index equality. Parent ADOPTION2f2a6f5a now grants
+Data-build/verify only. Kant builds physically isolatedFIT/CHECK target views
+M and OOFfeatures-only; META29labels separate/notmountedtoexpertworkers.
+Aliasalone cannot enforceisolation. ExistingF/late/currentbuffers reused, no
+download or oldbuild repeat. NativeSYNactualreader/onebuild+independentverify
+before numericalGO; model/GPU/private/API effects0 in readiness. Sourceclock
+20:16:22..22:16:22UTC, Data360activeupper inclusive/readiness counted once.
+
 NEW later-history data COMPLETE808c40ce/DTOb14591f2 at
 A/data/current-three-etf-post-jul31-frozen-evaluation-inputs-20261025-v1.
 Existing Oct24 same-vintage snapshot only,0API.59sessions Aug3..Oct23 give

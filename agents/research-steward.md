@@ -6,6 +6,19 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+No current model worker. NEW OOF family ADOPTION2f2a6f5a at
+A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1
+adopts3NEW Nprefix fits+6Lheads/fixedI29OOF/tree. Numerical GO pending actual
+Source/Data/native proof. Up3N concurrent+oneI under one measured coordinator,
+isolated target mounts, no personal-app allowlist; co-tenancy not benchmark.
+NativeI inventedcall first, sameprocessmaycontinue29OOF, N/Lfits startonlyafter
+its exactpass. 30nominal/31onlypremarketmechanicalrepair calls/2loads max;
+originalNNfit/updatecaps unchanged. 4800activeSUM/7200elapsed original20:16:22
+to22:16:22UTC. No fullphase minimumreservation or old debrief budget refunds.
+Noether Source/resourceprep, Kant isolatedprefix physicalData build.
+QQQadapter CPU QA COMPLETE7460a456/997serial19086full25skip/1396match,
+nativea93077b8/8invented scenarios/alljoined; no GPU/model/actualbroker effect.
+
 N COMPLETEe0b422cd, one actual CUDA fit67epochs/1139updates/best42/PAT25.
 Sourceaa61/Native56c4; fitworker32.4077sec/guard36.6544sec,
 peakallocated669227008/reserved1182793728bytes. One later model-only restore/

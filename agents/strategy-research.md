@@ -6,6 +6,18 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
+OOF risk-gated-tree readiness COMPLETEd47a50e7/Proposal731c/Sourcee759 at
+A/research/current-chronological-oof-risk-gated-tree-readiness-20261025-v1.
+7SYN/Claude9936 SOUNDlimits; Parent ADOPTION2f2a6f5a source/data preparation.
+New3prefixN+6L fits provide genuineOOF29 meta-training; fixedIfrontierDec31,
+not fullN/L in-sample outputs. Multioutputtree depth2min7 on12rawnet means,
+fixed Ncashmask, twoledgers110marks; late11alreadyseen/adaptive only. No
+independent alpha/convergence/Paperclaim. Concurrency35be/6ea SOUND: isolation
+per-fold, not physicalwallclock order; no globalnormalizer/late-label mount,
+allOOF sealed beforeMETA targets. Parent amendments freeze30nominal/31Icalls
+repair/2loads and4800activeSUM7200elapsed under originalclock. No numerical
+dispatch by Strategy. Publicsource/license/evidence inProposal, not a new list.
+
 Later N/L frozen-output interpretationed58 SOUND_WITH_LIMITS: the eleven
 cohorts are descriptive/reused/exposure-confounded, not covariance quality or
 alpha. QQQ V4 handoff reviewf08d96bf/Consumer9dd512e7 SOUND_WITH_LIMITS at

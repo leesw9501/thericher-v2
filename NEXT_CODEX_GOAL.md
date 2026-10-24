@@ -59,16 +59,29 @@ Research actors or future due times. No recovery observe() as offline reading.
    Pure core0fe13554/testac11fbeb is now verified762941dc; old3SDK cold V4
    compatibility4a9f8aaa passes12inventedbooks. Parent chooses ONE original L
    INPUT271aee, not equivalent LN as another cohort or a scorecard winner.
-   Tesla owns the NEW runtime-adapter module/test pair. Adopt Claudeea0e/9e31
-   revisions: exact intermediate journal/parent/proposed/seed recovery, no
-   last-write-wins book replacement, wire-unknown never resubmitted/released,
-   fresh native prewire full-bank/QQQ/quote/orderability checks. No CLI/task/
-   broker deployment yet; adapter needs separate freeze/review/fresh QA.
-3. Continue a genuinely new useful research package once its finite data/
-   target/split/cost/trial/time/stop contract is ready. Do not repeat completed
-   fits, points, evaluations or failed exhausted packages for GPU utilization.
-   GPU project priority/concurrent useful work follows measured headroom.
-   A local dependency does not hold the other ready lanes or existing Paper.
+   Runtime-adapter1cd47255/test39cb0cef is now COMPLETE4b7a4fe2/fresh7460a456:
+   997serial/19086full25skip/1396match/actualimage2ff8SYN scenarios/a93077b8.
+   Exact intermediate/crash/original-anchor recovery and fresh prewire checks
+   implemented; custody_reconcile does not require provider market reads.
+   No actual provider/CLI/task/broker deployment yet. Source797591fa shows real
+   QQQ peers cannot join closed read-only claims; old H5 exits may also deny if
+   actually overlapping. Tesla prepares versioned cooperative-peer source,
+   not a blanket exemption/current-job edit. Keep exact original operational
+   counters/debits and identities; source prediction is not runtime failure.
+3. New OOF hierarchical campaign ADOPTION2f2a6f5a at
+   A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1
+   is adopted for Source/Data preparation, NOT numerical GO. Proposal731c/
+   Datac690; prefixes1157/1167/1177, OOF10/10/9,3NEW Nfits+6NEW Lheads,
+   fixed I beforeOOF, one depth2/minleaf7 tree on12separate means. Fixed N
+   cashmask and two cost-aware ledgers110marks; later11alreadyviewed, adaptive
+   only. Kant builds isolatedprefix M views; Noether Source/actualnative proof.
+   Concurrentfolds need per-worker physical label isolation; allOOF seals
+   beforeMETA labels. Up3N+oneI measuredheadroom, no GPU app-name hold. LoadedI
+   SYN before29OOF calls, max30nominal/31premarket repair. Parent4800activeSUM/
+   7200elapsed at20:16:22..22:16:22UTC; original market counts otherwise fixed.
+   Read exact ADOPTION/Proposal before Source/dispatch. No duplicate completed
+   full N/L fits/current expertforwards; no oldF rescue/independent alpha/Paper
+   swap. A local dependency does not hold other ready lanes/existing Paper.
 
 ## Completed Inputs, Not Ready Jobs
 
@@ -93,11 +106,12 @@ their budgets/results remain unchanged, not dispatch authority.
 
 ## Verification And Continuation
 
-Fresh repo authority762941dc:
-A/verification/current-qqq-h5-pure-planner-integration-20261025-v1/AUTHORITY.json.
-872serial/19036full25skip/19061total/8workers/Ruff/three Compose profiles PASS,
-exact1394 protected before/after/current hashes match. This covers the pure
-core, NOT the new unfinished adapter. Earlier43e is historical. Docs/external-only
+Fresh repo authority7460a456:
+A/verification/current-qqq-h5-runtime-adapter-integration-20261025-v1/AUTHORITY.json.
+997serial/19086full25skip/19111total/8workers/Ruff/three Compose profiles PASS,
+exact1396 protected before/after/current match. Actual native a93077b8 is separate
+invented FakeClient evidence, not broker deployment. Earlier7629/43e historical.
+Docs/external-only
 changes may reuse it ONLY after exact fresh digest checks plus independent
 changed-output checks. New tracked code/test/runtime/control changes need
 fresh changed-path serial and scripts/run_parallel_tests.ps1

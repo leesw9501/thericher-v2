@@ -58,11 +58,19 @@ Fraction whole-share sizing, complete shared replay, immutable legacy prefix,
 linked-cohort H5 exit/journal and runtime_authorized=False. No credentials/
 broker/Task/private writes or runtime driver. Parent selected ONE original L
 INPUT271aee for engineering linkage, not both equivalent L/LN cohorts.
-NEXT Tesla owns new runtime-adapter module/tests only, not a CLI/installer or
-actual broker invocation. Claudeea0e/9e31 REVISE adopted: exact journal stages/
-parent-proposed-seed recovery, never overwrite unrelated book changes, fresh
-native prewire facts and exact unknown-request custody. Pure-core7629 does NOT
-cover that unfinished adapter; new freeze/review/fresh QA before adoption.
+Runtime-adapter1cd47255/test39cb0cef COMPLETE4b7a4fe2; fresh7460a456 passes
+997serial/19086full25skip/8workers/1396match/Ruff/3Compose/alljoined/cleanup.
+Actualimage2ff nativea930/8invented scenarios/16adapter+9native calls/6prewire/
+4Fake submits;0actualprivate/API/Task. Claudeea0e/9e31 revisions addressed,
+including original markerdate, safe other-owner updates/nonsent diagnostics,
+terminalcandidate validation beforewrite and custody-only recovery proof.
+Defaultinert; actualtrustedprovider/driver/deployment NOTqualified/installed.
+NewSource797591fa predicts closed foreign-writer claims cannot accept QQQ and
+may deny overlapping GRU/TimesFM exits. No observed overlap/failure. Tesla
+prepares versioned exact cooperating-peer Source/SYN plan at
+A/execution/current-cooperative-paper-peer-admission-preparation-20261025-v1.
+Old3jobs/capsules/inputs/requests/debit roots unchanged; no blanket permissions,
+private-reader writer exemption or GENESIS reset. Paper authority still delegated.
 
 NEW separately scoped L preparation: A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
 fbcdf230 binds INPUT271aee51/Sourceeabc/SDK6423. Saved point4cb9 reused without

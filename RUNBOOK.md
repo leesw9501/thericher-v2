@@ -23,12 +23,13 @@ rerun completed builder/native/inference. Future runtime needs this exact
 updated source capsule, fresh facts and native risk; old pinned SDKs lack AMS.
 Clock interpretation and declared unrun future measurement stay in that root.
 
-Current fresh repo authority762941dc:
-A/verification/current-qqq-h5-pure-planner-integration-20261025-v1/AUTHORITY.json.
-872serial/19036fullPASS25skip/19061total/8workers/Ruff/3Compose(.env.example),
-1394 exact before/after/current match/alljoined/own temp+lease removed.
-Pure core0fe13554/testac11fbeb only; new unfinished adapter not covered.
-Earlier43e/134a below are historical, not current source authority.
+Current fresh repo authority7460a456:
+A/verification/current-qqq-h5-runtime-adapter-integration-20261025-v1/AUTHORITY.json.
+997serial/19086fullPASS25skip/19111total/8workers/Ruff/3Compose(.env.example),
+1396exact/alljoined/own temp+lease removed. Includes purecore0fe13554 and
+adapter1cd47255/test39cb0cef. Actualimage2ff native a93077b8/8SYN scenarios
+uses FakeClient only, not actual broker/provider/deployment evidence.
+Earlier7629/43e/134a below are historical, not current source authority.
 
 N actual future covariance expert COMPLETEe0b422cd at
 A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.
@@ -80,9 +81,25 @@ Not an entry grant, fresh holdings or proof against arbitrary manual code.
 Pure core4a9f8aaa cold compatibility passes all3frozen SDKs/4inventedbooks each,
 12load+12replay calls; no private/API/Task effects. Parent selects ONE L input,
 not both L/LN cohorts. Tesla now prepares separate runtime-adapter module/tests;
-Claudeea0e/9e31 REVISE adopted for exact crash-stage binding/fresh native
-prewire checks. No new driver/job installed; adapter still needs its own QA.
+Claudeea0e/9e31 revisions implemented/tested in adapter1cd4/fresh7460a456.
+custody_reconcile can omit market quote/funds, while pre_submit rechecks them.
+Original possible-wire date/intent survive restart; no stale parent overwrite
+or invalid terminal evidence publication. Default inert; trusted actual evidence
+provider/host integration still unqualified, not a new operator permission.
+No driver/job installed. Source797591fa shows closed claims cannot truthfully
+admit foreign Paper writers; oldH5exit peer denial is conditional SOURCE only.
+Tesla prepares a versioned exact cooperating-peer variant, not current-job
+edits, generic allowlists or counter resets. Keep all old capsules intact.
 Old three NAS jobs stay intact. Never use a recovery observer as a reader.
+
+NEW OOF campaign source/data preparation only: ADOPTION2f2a6f5a at
+A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1.
+No numerical GO yet. Datac690/prefix1157/1167/1177/OOF10/10/9,3NEW N+6NEW L,
+fixedI/one depth2min7tree/fixedNmask/2ledgers110marks. Up3N concurrent only
+physically isolated target mounts; I actualSYN before29OOF; samecached late11/
+currentexpert points, no old full-model refits. Native/code/Data binding then
+Parent numerical GO; original20:16:22..22:16:22UTC/4800activeSUM/7200elapsed.
+Do not invoke a source-only readiness helper as an already-approved model job.
 
 Company NEXT: exact natural Oct26 GRU/TimesFM/Joint17 entry outcomes below.
 Current independent I research point is COMPLETE_VERIFIED_NO_DEPLOYMENT:
