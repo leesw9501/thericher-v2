@@ -50,6 +50,8 @@ function Invoke-PairForwardProfileService {
         $ErrorActionPreference = "Continue"
         $arguments = @(
             "compose",
+            "--env-file",
+            (Join-Path $ProjectRoot ".env.example"),
             "--project-directory",
             $ProjectRoot,
             "--profile",
@@ -66,7 +68,9 @@ function Invoke-PairForwardProfileService {
         } else {
             $arguments += $Service
         }
-        $output = @(& docker.exe @arguments 2>&1)
+        $output = @(
+            Invoke-PairForwardBootstrap -ProjectRoot $ProjectRoot -ComposeArguments $arguments 2>&1
+        )
         $exitCode = [int]$LASTEXITCODE
     } finally {
         $ErrorActionPreference = $priorErrorActionPreference
@@ -75,6 +79,23 @@ function Invoke-PairForwardProfileService {
         ExitCode = $exitCode
         Output = $output
     }
+}
+
+function Invoke-PairForwardBootstrap {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$ProjectRoot,
+        [Parameter(Mandatory = $true)]
+        [string[]]$ComposeArguments
+    )
+
+    $python = Join-Path $ProjectRoot ".venv/Scripts/python.exe"
+    $bootstrap = Join-Path $ProjectRoot "scripts/run_kis_paper_daily_pair_forward_bootstrap.py"
+    if (-not (Test-Path -LiteralPath $python -PathType Leaf) `
+            -or -not (Test-Path -LiteralPath $bootstrap -PathType Leaf)) {
+        throw "Pair forward bootstrap is unavailable."
+    }
+    & $python -I -S -B $bootstrap --execute --compose --project-root $ProjectRoot -- @ComposeArguments
 }
 
 function Invoke-PairForwardGuardReceipt {

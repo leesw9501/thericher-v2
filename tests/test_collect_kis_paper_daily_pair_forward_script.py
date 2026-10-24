@@ -69,6 +69,7 @@ def test_credentialed_collection_uses_nonreserving_token_due_check(
     assert isinstance(receipt, dict)
     assert receipt["payload"] == {
         "status": "ready",
+        "current_run_failure_reasons_by_target": {},
         "runtime_contract_sha256": _runtime_contract_sha256(script),
     }
 
@@ -145,9 +146,20 @@ def test_control_gate_failure_emits_recovery_without_constructing_a_client(
     }
 
 
+@pytest.mark.parametrize(
+    ("token_due", "rate_deferred", "reason"),
+    [
+        (False, False, "token_request_not_due"),
+        (True, True, "rate_limited"),
+        (False, True, "token_request_not_due"),
+    ],
+)
 def test_token_deferral_keeps_its_existing_reason_outside_control_failure_boundary(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
+    token_due: bool,
+    rate_deferred: bool,
+    reason: str,
 ) -> None:
     script = _script_module()
     emitted: dict[str, object] = {}
@@ -155,14 +167,15 @@ def test_token_deferral_keeps_its_existing_reason_outside_control_failure_bounda
     monkeypatch.setattr(
         script,
         "KisPaperMarketDataTokenStartGate",
-        lambda **_kwargs: _TokenGate(False),
+        lambda **_kwargs: _TokenGate(token_due),
     )
     monkeypatch.setattr(script, "KisPaperMarketDataRateGate", lambda **_kwargs: _RateGate())
+    monkeypatch.setattr(script, "_rate_gate_is_deferred", lambda *_args: rate_deferred)
     monkeypatch.setattr(
         script,
         "_defer_pair_cache",
         lambda **_kwargs: SimpleNamespace(
-            safe_payload=lambda: {"status": "deferred", "reason": "token_request_not_due"}
+            safe_payload=lambda: {"status": "deferred", "reason": reason}
         ),
     )
     monkeypatch.setattr(
@@ -191,7 +204,8 @@ def test_token_deferral_keeps_its_existing_reason_outside_control_failure_bounda
     assert isinstance(receipt, dict)
     assert receipt["payload"] == {
         "status": "deferred",
-        "reason": "token_request_not_due",
+        "reason": reason,
+        "current_run_failure_reasons_by_target": {"QQQ/NAS": reason, "SPY/AMS": reason},
         "runtime_contract_sha256": _runtime_contract_sha256(script),
     }
 
@@ -886,6 +900,89 @@ def test_cache_current_preflight_never_reads_kis_configuration_or_constructs_cli
     }
 
 
+@pytest.mark.parametrize("current_failures", [{"QQQ/NAS": "transport_failure"}, {}])
+def test_current_run_cause_does_not_replace_persisted_quarantine(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    current_failures: dict[str, str],
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+    committed: dict[str, object] = {}
+    rows = {target: () for target in ("QQQ/NAS", "SPY/AMS") if target not in current_failures}
+    observation = SimpleNamespace(
+        rows_by_target=rows,
+        failure_reasons_by_target=current_failures,
+        observed_at=datetime(2026, 8, 3, 21, tzinfo=UTC),
+    )
+    old_payload = {"status": "partial", "reason": "daily_retained_revision_conflict"}
+    _install_ready_gates(monkeypatch, script)
+    monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
+    monkeypatch.setattr(script, "UrllibKisPaperDailyPairForwardTransport", lambda **_: object())
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_: object())
+    monkeypatch.setattr(
+        script, "collect_kis_paper_daily_pair_forward_observation", lambda *_, **__: observation
+    )
+
+    def commit(**kwargs: object) -> SimpleNamespace:
+        committed.update(kwargs)
+        return SimpleNamespace(status="partial", safe_payload=lambda: old_payload)
+
+    monkeypatch.setattr(script, "commit_kis_paper_daily_pair_forward_observation", commit)
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "c")
+
+    assert _run_credentialed_collection(script, tmp_path) == 20
+    assert committed["failure_reasons_by_target"] is current_failures
+    assert committed["rows_by_target"] is rows
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    assert receipt["payload"] == {
+        **old_payload,
+        "current_run_failure_reasons_by_target": current_failures,
+        "runtime_contract_sha256": _runtime_contract_sha256(script),
+    }
+    assert "current_run_failure_reasons_by_target" not in old_payload
+
+
+def test_current_run_failure_projection_is_target_scoped_and_never_coerces_objects() -> None:
+    script = _script_module()
+
+    class PrivateObject:
+        def __str__(self) -> str:
+            pytest.fail("must not stringify private object")
+
+        def __repr__(self) -> str:
+            pytest.fail("must not represent private object")
+
+    failures = {
+        "QQQ/NAS": PrivateObject(),
+        "SPY/AMS": "rate_limited private-cause-canary",
+        "unknown/private-target-canary": "private-cause-canary",
+    }
+    projected = script._current_run_failure_reasons(failures)  # noqa: SLF001
+    assert projected == {
+        "QQQ/NAS": "unexpected_private_daily_collector_error",
+        "SPY/AMS": "unexpected_private_daily_collector_error",
+    }
+    assert "canary" not in json.dumps(projected)
+    assert failures["SPY/AMS"] == "rate_limited private-cause-canary"
+    assert script._current_run_failure_reasons({}) == {}  # noqa: SLF001
+
+
+def test_current_failure_value_is_read_once_before_sanitizing() -> None:
+    script = _script_module()
+
+    class OneRead(dict[str, object]):
+        def __getitem__(self, key: str) -> object:
+            value = super().__getitem__(key)
+            self.clear()
+            return value
+
+    assert script._current_run_failure_reasons(OneRead({"QQQ/NAS": "rate_limited"})) == {  # noqa: SLF001
+        "QQQ/NAS": "rate_limited"
+    }
+
+
 class _TokenGate:
     def __init__(self, due: bool = True) -> None:
         self.checked = False
@@ -958,6 +1055,7 @@ def _assert_collector_stage(
     assert payload["status"] == "unavailable"
     assert payload["reason"] == "collector_unavailable"
     assert payload["failure_stage"] == expected_stage
+    assert "current_run_failure_reasons_by_target" not in payload
     assert payload["runtime_contract_sha256"] == _runtime_contract_sha256(script)
     if expected_commit_failure_kind is None:
         assert "commit_failure_kind" not in payload

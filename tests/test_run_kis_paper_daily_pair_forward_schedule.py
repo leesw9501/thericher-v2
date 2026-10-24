@@ -22,6 +22,9 @@ def test_pair_forward_schedule_uses_guarded_preflight_then_collection() -> None:
     assert '"kis-paper-daily-pair-forward"' not in source
     assert '"kis-paper-daily-pair-forward-preflight"' not in source
     assert '"--profile",' in source
+    assert '"--env-file",' in source
+    assert '(Join-Path $ProjectRoot ".env.example")' in source
+    assert "Invoke-PairForwardBootstrap -ProjectRoot $ProjectRoot" in source
     assert '"--rm",' in source
     assert '"--no-deps",' in source
     assert '"--pull",' in source
@@ -51,7 +54,8 @@ def test_pair_forward_schedule_defers_for_timezone_or_running_data_worker() -> N
     assert "--schedule-guard-failed" in source
     assert "thericher-kis-paper-daily-backfill" in source
     assert "kis-paper-daily-pair-forward-v2-preflight" in source
-    assert ".env" not in source
+    assert '".env.example"' in source
+    assert '".env"' not in source
     assert "kis_paper_app_key" not in source
     assert "kis_paper_app_secret" not in source
     assert "kis_paper_account" not in source
@@ -80,6 +84,9 @@ def _run_schedule(
         "\n".join(
             (
                 "$ErrorActionPreference = 'Stop'",
+                "$PSModuleAutoLoadingPreference = 'None'",
+                "Import-Module Microsoft.PowerShell.Management",
+                "Import-Module Microsoft.PowerShell.Utility",
                 f". '{escaped_script}'",
                 "$resolvedDefaultProjectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path",
                 f"if ($resolvedDefaultProjectRoot -ne '{escaped_default_root}') {{ exit 92 }}",
@@ -108,6 +115,10 @@ def _run_schedule(
                 "    }",
                 "    Write-Output 'synthetic-private-service-stdout'",
                 "    Write-Error 'synthetic-private-service-stderr' -ErrorAction Continue",
+                "}",
+                "function Invoke-PairForwardBootstrap {",
+                "    param([string]$ProjectRoot, [string[]]$ComposeArguments)",
+                "    docker.exe @ComposeArguments",
                 "}",
                 f"$exitCode = Invoke-PairForwardSchedule -ProjectRoot '{escaped_project_root}'",
                 "[pscustomobject]@{",
@@ -139,6 +150,8 @@ def _run_schedule(
 def _compose_prefix(tmp_path: Path) -> list[str]:
     return [
         "compose",
+        "--env-file",
+        str(tmp_path / "project with spaces" / ".env.example"),
         "--project-directory",
         str(tmp_path / "project with spaces"),
         "--profile",

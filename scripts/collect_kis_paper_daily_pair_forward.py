@@ -25,6 +25,7 @@ from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     get_kis_paper_daily_pair_forward_commit_failure_phase,
     get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase,
     load_verified_kis_paper_daily_pair_forward_cache,
+    sanitize_kis_paper_daily_pair_forward_failure_reason,
 )
 from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataClient,
@@ -80,6 +81,18 @@ _RUNTIME_CONTRACT = MappingProxyType(
 _TARGET_KEYS = tuple(
     f"{symbol}/{exchange}" for symbol, exchange in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
 )
+
+
+def _current_run_failure_reasons(failures: Mapping[str, object]) -> dict[str, str]:
+    projected: dict[str, str] = {}
+    for target in _TARGET_KEYS:
+        if target not in failures:
+            continue
+        value = failures[target]
+        projected[target] = sanitize_kis_paper_daily_pair_forward_failure_reason(
+            value if type(value) is str else "unexpected_private_daily_collector_error"
+        )
+    return projected
 
 
 def main(
@@ -195,13 +208,14 @@ def _run_credentialed_collection(
             cache_identity=cache_identity,
         )
     if not token_request_is_due or rate_gate_is_deferred:
+        defer_reason = "token_request_not_due" if not token_request_is_due else "rate_limited"
         try:
             result = _defer_pair_cache(
                 cache_root=cache_root,
                 repository_root=repository_root,
                 frozen_boundary=frozen_boundary,
                 observed_at=observed_at,
-                reason="token_request_not_due" if not token_request_is_due else "rate_limited",
+                reason=defer_reason,
                 cache_identity=cache_identity,
             )
         except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
@@ -225,7 +239,12 @@ def _run_credentialed_collection(
             artifact_root=artifact_root,
             repository_root=repository_root,
             observed_at=observed_at,
-            payload=result.safe_payload(),
+            payload={
+                **result.safe_payload(),
+                "current_run_failure_reasons_by_target": _current_run_failure_reasons(
+                    {target: defer_reason for target in _TARGET_KEYS}
+                ),
+            },
             exit_code=_RECOVERY_EXIT,
             cache_identity=cache_identity,
         )
@@ -276,7 +295,12 @@ def _run_credentialed_collection(
             observed_at=observation.observed_at,
             cache_identity=cache_identity,
         )
-        payload = result.safe_payload()
+        payload = {
+            **result.safe_payload(),
+            "current_run_failure_reasons_by_target": _current_run_failure_reasons(
+                observation.failure_reasons_by_target
+            ),
+        }
     except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
         commit_failure_kind = _commit_failure_kind(error)
         commit_failure_phase = _commit_failure_phase(error, commit_failure_kind)
