@@ -1,10 +1,23 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-24 14:24KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 16:24KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable hypotheses,
 not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
+
+NEW source preparation COMPLETE79e481fd/Proposala06753a5/ClaudeSOUNDlimitsc2ab:
+A/research/current-cost-aware-entry-mechanism-preparation-20261024-v1/CONSUMER.json.
+One distinct estimand: early net entry advantage over waiting for frozen causal
+later-entry policy, versus matched myopic. Duplicate evidence and4primary-source/
+license pointers retained. Not generic selective-entry novelty or optimality.
+Parent adopted source/Data preparation,3CPUfits1596market predictions/0GPU,
+07:11..09:11UTC1800active7200elapsed; no model numerical GO yet. Signed waiting
+payoff must not be clipped by hindsight; a pass could merely shift thresholds,
+so matched controls/costs/exposure/drawdown remain explicit. No new platform.
+Fixed-entry continuation5376 COMPLETE_FAIL/5fits6cells/alljoined; don't repeat
+held-exit models to avoid entry-cost question. DataKant/EngineNoether own new ABI/
+source implementation; Strategy proposal alone grants no runtime/model authority.
 
 NEW H1-auxiliary/H5 transfer actually completed paired CUDA fits and24cells at
 A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json.

@@ -1,21 +1,29 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 16:13KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 16:24KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Ready Package
 
-Chronological continuation sourcee486/consumer0964 is implementation-ready,
-not numerically executed. Stage Data21e3/DTO255c/ABId67a complete, A49/B48/C48
-sessions; per-head own-chunk scalers, teachers sealed before student labels.
-C3/C2/C1 versus matched C3/T2/T1, five market fits. Original08:08UTC deadline/
-1800active/7200elapsed; Data18.901196+prep60+implementation30 upper once.
-<=256native predictions(plan208)/2460market predictions/6newcells/12cached/
-one EVAL intake/0GPU/no retries. Tesla reviews source before Parent GO;
-Noether owns source and dispatcher. LSM-inspired hypothesis is not optimality
-or profit proof; fixed-entry fees may dominate every exit policy.
+New flat waiting-option model/source preparation assigned to Noether:
+A/research/current-flat-waiting-option-entry-development-20261024-v1.
+Proposala067/Consumer79e4/ClaudeSOUNDlimitsc2ab, early net advantage over a
+frozen later-entry policy versus matched myopic early model. Data/Kant builds
+exact flat120/150 ABI, not held136 relabel.3CPUmarketfits/3nativefits/
+1596market predictions/2explicit B-only frequency calibrations/9newcells6cached/
+oneintake/0GPU. Origin07:11/hard09:11UTC1800active7200elapsed, Strategy300upper+
+modelsource30upper+Dataactual once. No native/model numerical GO until exact
+Data/source/cashflow proof. Signed waiting payoff, no hindsight max; lower
+participation alone is not alpha. Current source preparation is not fitting.
+
+Prior chronological continuation ACTUALLY COMPLETE_FAIL/FINAL53769c3d:
 A/research/current-intraday-chronological-continuation-development-20261024-v1.
+Sourcee486/Resultb56a; native5fits208pred,market5fits2460pred,6newcells12cached/
+143checks/Ruff/all9joined/removed/170.8066activeupper/0GPU/0retry. Actualchain
+07:14:22..39UTC, unchanged08:08deadline.10bp growth/DD% -1.306047/1.306047 vs
+matched-1.311070/1.312056 vs uniform-1.104214/1.118199; no Paper swap/refit.
+Stage Data21e3/DTO255c complete once; prior teachers/scalers remain immutable.
 Old pooled Ridge1305 COMPLETE_FAIL1fit1884pred12cells, not running; H1/H5
 paired CUDA closed. No refit/reranking/replay of old immutable outputs.
 

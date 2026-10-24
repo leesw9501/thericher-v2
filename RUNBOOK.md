@@ -12,17 +12,21 @@ Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
 ## Current Actual Deployment
 
-Holdings-only primary4bd2 freshly qualified; actual API pending. Authority:
+Holdings-only primary4bd2 pushedba1345b; actual one-shot API COMPLETE. Authority:
 A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json
 f19d8b4f/232serial/18988fullPASS25skip/19013total/8workers432.31sec/helper85662exit0.
 1392manifest76f5 explicitly POST-run, not a pre-run snapshot. Ruff and all three
 Compose(.env.example) pass. Exact credential-free reuse check:
 uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-paper-holdings-only-integration-20261024-v1/snapshot.py --check
 CLI default is inert. Do NOT execute it without the hard-bounded owned runtime.
-Original external probe223a is blocked by reviewd53b BEFORE credentials;
-technical-r1/new source-bound native smoke pending. Old SELFTEST does not
-qualify corrected source. No API/custody/bank/F9/order effects from source tests.
-A/execution/current-paper-holdings-only-native-probe-20261024-v1.
+Original probe223a blocked by reviewd53b BEFORE credentials; never execute it.
+Corrected source2b258/controller9e043/22mocks/native094d qualified. Parent actual
+execute32326846 exited0 at07:18:55UTC/1POST4GET/7positions0open/submitfalse,
+COMPLETE213e/independent27bc/cleanupJOINED+ABSENT_CONFIRMED:
+A/execution/current-paper-holdings-only-native-probe-20261024-v1/technical-r1/execute-32326846-bea6-4446-a0d7-2b772a695581/COMPLETE.json.
+Do not repeat a completed observation. Old SELFTEST does not qualify corrected
+source; actual uses new4297. Counts sequential/configured-account, not owned
+fills/funds/full risk/F9 closure. No actual custody/bank/order/schedule change.
 
 GRU both original tasks use Source16484c39153f710e37bbc94750b31df86d8a383a5b4ff1f24b55a5ca5389ac6c
 and Release2695b7c5fdccaca7b8af0c46e0698bb3f24a55e229767fee78b52ddc74e5bbb5,
