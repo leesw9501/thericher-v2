@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Observed through 2026-10-25 01:29KST /Oct24 16:29UTC. Root C:/Users/Public/Documents/thericher-v2.
+Observed through 2026-10-25 02:17KST /Oct24 17:17UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -50,19 +50,20 @@ strict awareUTC predicate on invented TRAIN1124/CHECK33/EVAL29x5 clocks.
 .985sec/alljoined/removed/0market/models/financialmarks. Review7a774960/
 Claude225ccb48 SOUND_WITH_LIMITS, no original J mutation/retry. This proves
 invented helper behavior, not actual old J purge validity or K readiness.
-L NEW expanded-history prospective refit direction is approved for Source
-preparation only: readiness106e5e90/Source3ad2b6ea/contract21e6bee0/Claude
-e216c1d8 SOUND_WITH_LIMITS, Parent7refs match. Root
-A/research/current-expanded-history-prospective-fusion-readiness-20261025-v1.
-Noether sole concrete writer at current-expanded-history-prospective-fusion-development-20261025-v1.
-ALL1186 old1124TRAIN+33CHECK+29EVAL become explicit NEW_TRAIN_CURRENT3558asset
-rows throughJul2026; old aliases immutable. Changed cutoff/future-only purpose,
-not J retry/history regrade or untouched holdout. Two fixed Ridge/PCA8 models,
-one current Oct26..30 point/equal thirds with cached I;0historical predictions/
-financialcells/GPU/API/Paper. Actual awareUTC clock admission before fits;
-native fixtures are not actual-purge proof. Original16:49:19..17:19:19UTC/
-600active incl60prep+180Source+60Native+120fit+60point+60verify+60cleanup.
-No Native/market/point GO until concrete source and same-reader native proof.
+L ACTUAL COMPLETE_UNVALIDATED_CURRENT_POINT/FINAL7cb49397 at
+A/research/current-expanded-history-prospective-fusion-development-20261025-v1/FINAL-CONSUMER.json.
+Sourcee7fc/Native7e0b/FIT8120/modelseal6d2c/point4cb9.2NEWCPU Ridge/PCA8/
+StandardScaler models fit3558assetrows each; old1124+33+29 explicitlycurrent
+TRAIN1186 throughJul2026, no old alias mutation/holdout claim/history scoring.
+Actual clock46f6 passes all historical labels throughJul31<Oct26OPEN BEFORE
+targetdecode/fit.1current479565/7f82packet/2coldheads/cachedI3rawnets/equal1/3
+blend ->QQQ researchproposal forOct26..30, publishedOct25 02:12:44KST.
+Native9.9265/fit5.6916/point4.3402sec/CPU4threads/noGPU;66fixedchecks/Parent9refs
+PASS/all4children joined/removed/exactCID absent/no worker/294.9583upper CLOSED.
+No historical predictions/financialcells/alpha/Paper deployment or J/K rescue.
+Source21assertions twice=42 vs requested40 disclosed, no numerical cap increase.
+No completed Native/fit/point/verifier rerun. Current company objective remains
+original Oct26 natural entries, not completed by these research packages.
 
 ## Completed / Actual Account Observation
 

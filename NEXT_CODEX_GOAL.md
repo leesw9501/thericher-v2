@@ -151,19 +151,22 @@ three-role clock geometry, no market/models/financialmarks/J invocation:
 A/research/current-research-clock-boundary-repair-20261025-v1/native-r1/CONSUMER.json.
 Use its awareUTC predicate only in genuinely new consumers; it does not prove
 old J actual purge or revive old study budgets.
-L NEW expanded-history prospective refit is Source-only assigned Noether:
-A/research/current-expanded-history-prospective-fusion-development-20261025-v1.
-Readiness106e5e90/3ad2b6ea/contract21e6bee0/Claudee216c1d8 SOUND_WITH_LIMITS
-at current-expanded-history-prospective-fusion-readiness-20261025-v1.
-Explicit NEW_TRAIN_CURRENT1186 merges old1124TRAIN+33CHECK+29EVAL throughJul2026;
-old roles/aliases unchanged, no historical scoring/readout/holdout claim.
-Two fixedZ/REL Ridge/PCA8 models, one NEW current point plus cachedI equal1/3
-scoreblend. Unvalidated model artifact only, not J/K success/Paper deployment.
-Call actual awareUTC old-role boundaries AND all1186targetCLOSE<futureOPEN
-before any fitting; fixture success is not that actual admission. ExistingCPU
-image/4threads, no GPU/API/tasks/orders/newruntime. Hard17:19:19UTC/600active
-origin16:49:19 incl60prep/180Source/60Native/120fit/60point/60verify/60cleanup.
-No numerical GO from this paragraph; Parent consumes concrete Source/Native.
+L ACTUAL COMPLETE_UNVALIDATED_CURRENT_POINT/FINAL7cb49397 at
+A/research/current-expanded-history-prospective-fusion-development-20261025-v1/FINAL-CONSUMER.json.
+Sourcee7fc/Native7e0b/FIT8120/modelseal6d2c/point4cb9.2NEWCPU Ridge/PCA8 fits,
+3558rows each/1186explicitcurrentTRAIN throughJul2026; actualclockadmission
+beforetargetdecode/fit.1currentpacket/2heads/equal1/3withcachedI ->QQQresearch
+proposal, publishedOct25 02:12:44KST forOct26..30.66fixedchecks/Parent9refsPASS,
+alljoined/removed/294.9583upper CLOSED. No historical forecasts/readout/holdout
+claim/financialcells/GPU/API/Paper. Source42vs40assertions disclosed; no numeric
+cap increase. Do not rerun completed L or revive J/K. Future outcome analysis
+requires its own declared consumer; unvalidated point is not deployment.
+
+Prepared packages are consumed; original ONE company outcome remains pending
+Oct26 natural entries. Latest Scheduler538dd661 atOct24 16:59:29UTC shows six
+Ready/idle/enabled and expected due times, NOT fills. No current numerical
+worker/ready frozen GPU fit. A genuinely new ready delegated package may
+proceed, but no compute-only trial, foreground market sleep or false closure.
 
 Retained H source contract (consumed/CLOSED):dc14/9907/f6fb at
 A/research/current-tabular-icl-four-action-readiness-20261025-v1.

@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-25 01:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-25 02:17KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
@@ -27,12 +27,12 @@ Original300active/1200elapsed/origin15:54/hard16:14UTC bounds remain closed.
 No model/oldFEVAL/fit/APIKIS/order/schedule. Godel challenges NEW future-point
 consumer separately; this snapshot does not promote a model or bind old jobs.
 
-L NEW Source consumer106e/21e6 may read existing F Data60b1 under explicit
-NEW_TRAIN_CURRENT1186 role (old1124+33+29); aliases/bytes/original roles remain
-immutable. No acquisition/export requested. All past labels are now declared
-training, never claimed untouched evaluation; actual clocks/knownness/source
-binding must pass before fits. Current future packet remains exact479565/
-7f82, no historical financialreadout or model/Paper promotion from Data.
+L actual7cb4 consumed F Data60b1 as explicitcurrentTRAIN1186 (old1124+33+29),
+immutable aliases/bytes/original roles/no new export. Actual awareUTC46f6
+passes all pastlabels throughJul31<futureOct26OPEN beforetargetdecode/fit;
+oldlabels nowtraining, never untouched evaluation. Current479565/7f82packet
+once; futureclock additionally read for prefitadmission, not extra features.
+Point4cb9/66checks/allclosed, no historical financialreadout/Paper promotion.
 
 F historical TRAIN build/verify ACTUAL COMPLETE_DATA_ONLY8004f1ad:
 A/data/current-toto-task-adaptation-inputs-20261024-v1;

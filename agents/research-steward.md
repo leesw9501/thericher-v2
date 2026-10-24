@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-25 01:29KST. A=D:/thericher-v2/model-artifacts.
+2026-10-25 02:17KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
@@ -13,10 +13,11 @@ GPUallocated682528768/reserved727711744bytes.1actual model-only restore/
 fullpass/head/publication/0fits/outcomes/cells.60fixedchecks/RuffPASS, allthree
 modelchildren joined/removed/exactCID absent/lease free. No active worker.
 Research-only QQQ point, no deployment/F historical completion or I rerun.
-J/K are CLOSED70c8/fa64; J0marketfits and no K models/point. L NEW expanded-
-history prospective consumer is Noether Source-only, no numerical worker.
-OriginalL16:49:19..17:19:19UTC/600active; existing CPU4threads/oneworker, noGPU
-or new resource platform. Do not rerun completed F/I models to fill GPU.
+J/K CLOSED70c8/fa64; J0marketfits/no Kmodels/point. L ACTUAL CLOSED7cb4:
+CPU4threads/2fits3558rows each/one currentpoint, Native9.9265/fit5.6916/
+point4.3402sec/0GPU.66checks/all4children removed/exactCID absent/no worker/
+lease/294.9583upper, original600 closed. No prepared frozen GPU campaign or
+permission/environment hold. Do not rerun F/I/L or create dummy utilization.
 
 Prior closed allocation: A Source773b warm-support study closed
 COMPLETE_FAIL05b02e54/Deliveryb2fb14c9; all five children joined/removed.

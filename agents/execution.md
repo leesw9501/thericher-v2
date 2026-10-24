@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-25 01:18KST. A=D:/thericher-v2/model-artifacts.
+2026-10-25 02:17KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic risk/intents/orders/custody/accounting; Parent sharedMD/Git.
 AGENTS private Paper authority; no operator decision presently.
 Original shared initial tenth/basis/costs/losses/pending/F9UNKNOWN-HELD unchanged.
@@ -19,6 +19,15 @@ A/execution/current-oct26-entry-metadata-readback-20261024-v1/METADATA-20261024T
 SHAf3295a41. No task/definition/order/account invocation from that query.
 
 ## Immediate Holdings Consumer
+
+Latest Scheduler readback538dd661 observedOct24 16:59:29UTC:
+A/execution/current-oct26-entry-metadata-readback-20261024-v1/READBACK-20261024T165929Z.json.
+Six enabled/Ready3/0instances/allnextUTCmatch, projection76490bf4 hashchecked.
+Raw last-run1999 sentinel versus prior null is not execution evidence; JSON
+date comparison corrected offline, no extra COM query or schedule mutation.
+No fresh source/ACL/origin/submit/fill/PnL claim. GRUOct26 22:40KST/TimesFM
+23:20KST/Joint17Oct27 02:00KST unchanged. L actual7cb4/4cb9 newmodels+research
+point is NOT an installed Paper profile/fourth owner or bank change.
 
 New kis_paper_holdings.py4bd2 reuses native account-only primitive, without
 quotes/funds/observe/custody/reconciliation.32tests/b58c,232serial and fresh
