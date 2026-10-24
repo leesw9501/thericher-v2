@@ -1,10 +1,23 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 20:01KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 22:03KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
+
+C payoff-representation Data ACTUAL COMPLETE35d110ff/Sourcede05c05a/
+DTO608bc2db/TRAINfeature23f02732/EVALfeaturebbc13578:
+A/data/current-toto-postcheckpoint-representation-inputs-20261024-v1/technical-build-r1.
+33TRAIN cohorts/165sessions May7..Dec31 2025, context252; actual missing0,
+F64rawbytes match/F32error5.742599e-8<2^-24.99entryO/495dailyC values remain
+TRAIN-only targets; GPU gets no labels. EVAL29/145 exact B hash aliases, no
+re-export or target-value access. CPUfit TRAIN only; EVALtargets stay behind
+prediction-seal barrier. SYN7PASS/build1verify1/retry0/alljoined,44.3673upper
+plus priorcalendar-prep31.170078once. ActualSYN58460/build52900/verify53756
+12:52:20..24UTC. No API/models/PCA/head/net-target math. Prepared bounds and
+numeric QA are distinct facts. ConsumerTesla C Source; no model GO from Data.
+Same revised non-PIT/arrival/finality/CA limits, no independent-performance claim.
 
 B Toto context252/H5 packet ACTUAL COMPLETE58279e06/Source6b74dc32/
 Feature0610cb6d/DTO402cc653 under
@@ -16,7 +29,9 @@ NativeSYN1285upper/build1verify1/retry0/alljoined/64.1426upper inclSource60.
 ActualSYN54888 10:57:23UTC/build39228/verify22064. Parent9refs pass, no arrays
 decoded by Parent. Initial UV runtime hardlink inspection failure preserved;
 use technical-r1, no A rebuild/API/model or profitability qualification.
-ConsumerTesla B runner/source, runtimeAquinas pending, no numerical model GO.
+B modelaebc later loaded/movedCUDA once then scalar-hook setup failed4240
+before any native/market forward. Data unchanged; no B export/model rerun.
+R5runtime named-import completion is not a financial or full-package pass.
 
 Warm-support A Data38913880/0afa/b989/24b1 complete2267/2266/502/395rows/
 scalerff80 unchanged/onebuild1verify/61.3967upper/8Parentrefs. Model773b

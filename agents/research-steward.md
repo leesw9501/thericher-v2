@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-24 20:01KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 21:45KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
@@ -17,19 +17,34 @@ CUDApeak148MiB. CUDA unsupported error NOTOBSERVED, no permission/driver issue.
 ChosenCPU by frozen measurement; no general benchmark or currentGPUload claim.
 A09:52..13:52/6000active remains closed, unused attempts do not add new fits.
 
-Current B source lanes: Tesla runner/DTO/replay; Aquinas reviewed runtime-subset/
-dependency closure; Godel protocol07de complete; Kant BData58279e06 complete/
-closed29cohorts145sessions/separatefeatures/labels. Cacheoneverified605MB,
-no actual Tensor/model load or inference. Noether is sole GPU coordinator and
-can give fresh capacity ACK only after B exact Source/numerical scope qualifies.
-B10:20..14:20/7200active14400elapsed includes protocol180/initialInfra153/
-Data64.1426/newInfra/Engine actual once; no A/c625 spend refund.
-At most one model-owning B GPU process; one actual checkpointload across loaded
-Native and allforecast requests. Record exact source/image/actor PID/start/
-lease/headroom and allinternalpaddedpoints, no sampled/extragrid shortcuts.
-Current 252-real+4-structural padding is not imputed market data. Keep measured
-desktop/driver reserve; personal/unrecognized apps do not require approval.
-Never kill apps or reserve GPU for an unready worker.
+B CLOSED4240afc3/Sourceaebc1cef at current-toto-cross-series-h5-development-
+20261024-v1/technical-runtime-r2. Actual12:14:21..30UTC guard45888/launcher55316/
+attachment55336: one safetensors load/CUDA move succeeded; plain-callable scaler
+hook setup AttributeError BEFORE Native.0forwards/market arrays/fits/cells/
+intakes. Peak memory/utilization NOTRETAINED, not inferred. Alljoined/positive
+owned removal/lease released;1330conservative upper, not exact GPU spend.
+No B reload; original712d, all build/resource failures and single load preserved.
+R5named import58b52fc7/image259c/variant9289 is usable limited research runtime,
+not full upstream NumPy compatibility or a successful market model experiment.
+
+Separate engineering4c7b/d04b actualCPU2308values/4scaler calls/2cases/
+1zero-param receiver/2forwards/2.9648sec/46checks/allclosed;100upper once.
+No Toto/checkpoint/GPU/PnL; executable Ruff passes, two reader E501 findings
+retained. It proves public callable delegation, not real loaded token geometry.
+Scope A/research/current-toto-callable-scaler-instrumentation-repair-20261024-v1.
+
+Current C: Data/Kant builds33postcheckpoint TRAIN cohorts, aliases B29EVAL;
+Tesla owns new payoff-representation runner Source, Godelf276/f3d2 ready/closed.
+No C model GO/job or resource lease. Noether sole resource coordinator, ready
+for actual Source/library/native/capacity binding, not a human approver.
+C12:23:28..14:23:28UTC/3600active7200elapsed inclusive prep, not old B clock
+reset. Two C loads/native attempts and one positive-zero-market mechanical
+repair may be frozen prospectively inside unchanged cumulative caps; market/
+unknown effects stop that repair path. No altered tolerance or outcome rerank.
+Batch4 needs real B1/B2/B4/freshness proof and all row/internal work counts.
+Small TRAIN-only PCA/Ridge runs on CPU; frozen Toto features use GPU, no dummy
+training or new end-to-end epochs. Two Ridge/two PCA/scaler fits counted apart.
+Keep measured desktop/driver reserve; personal apps are not a permission hold.
 
 Prior c625 import-failed native attempt exhausted/193.087152upper. Separate
 engineering repairc29ac6f5 passed0.631774s/1stdlibchild2cases/0model/GPU.

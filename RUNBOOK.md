@@ -24,18 +24,40 @@ repeat; PAT50/selected109and213, no convergence/alpha/Paper swap. Native BOTH
 CPU/CUDA passed; fullN2267 timed.09209/1.19687sec, CPUchosen. Do not run its
 launch -Execute/-Verify, model/native/readout/finalization again.
 
-Current B source, NO model/inference command qualified yet:
-A/research/current-toto-cross-series-h5-development-20261024-v1 (Tesla).
+Current B is CLOSED technical-incomplete; do NOT invoke it again:
+A/research/current-toto-cross-series-h5-development-20261024-v1/technical-runtime-r2.
+Sourceaebc1cef/variant9289b1e0/image259cf33f. Original712d/8members remain
+unchanged in the parent folder. FINAL-CONSUMER4240afc3 binds actual6574 dispatch,
+failure7e3f8802 and lifecyclebcc20aa5. One load/CUDA transfer succeeded12:14UTC;
+plain-callable scaler hook setup failed before Native.0forwards/market arrays/
+fits/cells/intakes, alljoined/removed/lease released. Peak GPU unknown; PnL not
+evaluated.1330charged upper, single load spent, no reload/readout/finalize repeat.
 Proto07de/f1a4/compiler c0eb at current-toto-cross-series-h5-preparation.
 Actual Data58279e06/Source6b74/Feature0610/DTO402c at
 A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
 29cohorts/145sessions/context252/gaps0/features-labels separate, no rebuild.
 Cache69b67e60...a122fa4c/605239264bytes verified once, no model loaded.
-Aquinas runtime-subset-r1 in current-toto-isolated-runtime-preparation needs
-reviewed minimal dependency/loader/import Source before build/import GO.
+Actual isolated runtime named import COMPLETE58b52fc7/Source2b4dd4ec:
+A/research/current-toto-isolated-runtime-preparation-20261024-v1/runtime-subset-r1/runtime-isolation-r5.
+Exact image259cf33f/variant9289, same Torch2.7+cu128/NumPy2.5.1;15modules,
+alljoined/removed, zero model/tensor/GPU. Two prior failed builds and the
+metadata-only diagnostic remain retained; four total builds are not four fits.
+Only B child prunes unused calendar/project packages and retains base hub.36.2.
+GluonTS NumPy<2 remains unsatisfied: limited derivative, not full-package support.
+Use structured actual-r1/RESULT.json9fc5/module_backend_facts as import evidence;
+mixed IMPORT.log warnings are not a pure JSON input to the launcher.
 No default full requirements/pickle/remote code or A/Paper mutation.
-All B numerical effects need exact finite Source+Noether resource ACK first.
+Exact Source/import/ACK refs and eight child members were independently checked.
+Resource-helper failure before B attempt/lease is recorded in
+A/research/current-toto-b-resource-readiness-20261024-v1/GUARD-PREFLIGHT-FAULT.json.
+Four OS keys caused NVML exit255; the same scope plus direct ProgramFiles/
+ProgramW6432 passed. Use its named repaired guard, not an environment copy,
+GPU permission hold or another completed model attempt. No manual restart:
+first inspect the exact owner's dispatch/attempt/lease and terminal records.
 Family10:20..14:20UTC/7200active, no repeated cache download or old A rerun.
+Separate callable-scaler engineering repair and proposed C representation/
+payoff readiness are NOT B continuation. Their current source/consumer pointers
+are on Engine/Steward/orchestration boards; no C numerical command is adopted.
 
 Earlier c590 COMPLETE_FAIL1e9028d2, c625 CLOSED_TECHNICAL_INCOMPLETE7049faef
 and separate import repairc29ac6f5 stay closed. Import-only two aliases under

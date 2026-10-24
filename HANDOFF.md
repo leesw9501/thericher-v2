@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 20:01KST /11:01UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-24 21:45KST /12:45UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -118,7 +118,8 @@ A/data/current-three-etf-warm-start-support-inputs-20261024-v1.
 2267/2266/502/395rows/scalerff80 unchanged/onebuild1verify/61.3967upper.
 Parent8refs match, no arrays decoded by Parent.
 
-Current parallel B: Toto grouping SOURCE/runtime work, NOT running inference.
+Original parallel B: Toto grouping is now CLOSED technical-incomplete4240,
+not a failed financial model or a ready reload. Exact closure follows below.
 Protocol07de4a1a/Sourcef1a44ba0/compilerc0ebc56a, Godel closed:
 A/research/current-toto-cross-series-h5-preparation-20261024-v1.
 Same dated checkpoint/joint versus separated groups,2026only/context252/
@@ -132,11 +133,29 @@ D:/thericher-v2/model-artifacts/public-models/Datadog/Toto-Open-Base-1.0/af7a04c
 605239264bytes/SHA69b67e60decc90baf741729abcf1fe8fe0881e3e3337176042053c28a122fa4c,
 confige381ed28/patch64/stride64/12layers/StudentT24/F32/132header tensors.
 One no-auth download/32.6648s/helperjoined; no tensors/model loaded,153upper.
-Official codeb4d4c9f3/v0.1.4/Apache2. Runtime import unqualified: GluonTS eager
-training-stack imports/declared NumPy<2. Aquinas temporaryInfra owns separate
-runtime-subset-r1 minimal reviewed inference derivative/lock/import plan.
+Official codeb4d4c9f3/v0.1.4/Apache2. Initial cache freeze had unqualified
+GluonTS eager training imports/NumPy<2. Aquinas later repaired the separate
+runtime-subset-r1 isolated derivative as recorded below.
 Keep existing A/Paper/Torch2.7 image unchanged; no blind full requirements,
 unsafe pickle/dynamic remote code or model execution before exact Source GO.
+
+Actual B runtime repair COMPLETE named imports, not numerical qualification:
+A/research/current-toto-isolated-runtime-preparation-20261024-v1/runtime-subset-r1/runtime-isolation-r5/CONSUMER.json
+SHA58b52fc7/Source2b4dd4ec/variant9289b1e0, exact image
+sha256:259cf33ff9b92903d960f84aa39ed27176fc0d0aea4d21b5d6b0bba27970dda7.
+Actual11:54:40UTC build18.0246sec/import5.5122sec/15modules/alljoined/removed.
+Base is established research d6b43213, NOT Paper2ff. First2ff build lacked
+Torch metadata; next build exposed inherited hub/toolz conflicts. Both failed
+builds retained, third metadata-only diagnostic unqualified, fourth build/import
+passed. B child alone keeps hub0.36.2 and prunes unused exchange-calendars,
+pandas-market-calendars/thericher-v2; base/A/Paper unchanged. Torch2.7/cu128/
+NumPy2.5.1 and official numerical bodies unchanged; known upstream GluonTS
+NumPy<2 remains UNSAT, only a limited research derivative. np.in1d remains
+outside supported closure. No model/tensor/forecast/GPU used by Infra.
+Parent checked96 Source members and actual structured RESULT9fc5f1b6.
+Import log has warnings; use structured RESULT/module_backend_facts, not an
+invented success or JSON parsing of the whole mixed log. ClaudeSOUNDlimits/
+responsea1747905. Debits153/127/30/15/60/60/90 retained once.
 
 B Data ACTUAL COMPLETE58279e06/Source6b74dc32/Feature0610cb6d/DTO402cc653:
 A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
@@ -148,12 +167,50 @@ Parent9namedrefs PASS without array decode. Original UV runtime hardlink
 inspection failure preserved before effects; use actual technical-r1, not root.
 ActualSYN54888 10:57:23UTC/build39228/verify22064, alljoined, Data role closed.
 
-Tesla owns B runner/DTO/analytical kernels SOURCE ONLY under
+Tesla completed B runner/DTO/analytical kernels SOURCE ONLY under
 A/research/current-toto-cross-series-h5-development-20261024-v1.
-Pure invented compiler/replay unit feedback<=2runs/32cases/512toy pathsteps
-within Source120 is delegated;0model/backbone/market calls, preserve failures.
-Full B Source/numerical GO still waits actual runtime/loader/ABI/counters.
-Noether remains sole GPU coordinator, ready for fresh B capacity ACK only.
+Original runnable Source712d4d10/implementation9624c908/8members checked;
+32original+12final pureSYN plus8new cleanup mocks PASS,0model/market calls.
+Positive exact CID/labels precede start/removal; never delete by name after a
+failed create. Actual model/ABI/numerical qualification is still UNRUN.
+Noether actually executed technical-runtime-r2 Sourceaebc1cef/dispatch6574c487
+with structured import/ACK. FINAL-CONSUMER4240afc3:12:14:21..30UTC, guard45888/
+launcher55316/attachment55336. One strict checkpoint load AND CUDA transfer
+returned; scaler register_forward_hook raised AttributeError before Native.
+Scaler is a plain callable, not nn.Module.0forwards/market arrays/forecasts/
+fits/cells/intakes; growth/DD/utility NOT_EVALUATED, peak GPU not retained.
+All CLI joined/positive own-container removal/lease released. Parent exact
+failure7e3f8802/lifecyclebcc20aa5/dispatch links match; loads1. Original712d,
+all runtime/resource faults and1330conservative upper retained, not GPU spend.
+Single B load spent: do not reload/evaluate or call another name the same study.
+
+Separate callable-scaler engineering repair ACTUAL PASS4c7b125f/Sourced04b5fd8:
+A/research/current-toto-callable-scaler-instrumentation-repair-20261024-v1.
+2cases/2308invented inputvalues/4public scaler calls/1zero-param own receiver/
+2receiver forwards/2.9648CPUchildsec/46independent checks/alljoined/removed.
+No Toto/checkpoint/GPU/market/PnL.100upper once. Executable Ruff passes;
+two reader E501 findings retained. Delegation proof is not loaded token proof.
+
+Current C adopted fixed-procedure readinessf27603b9/Sourcef3d2047b:
+A/research/current-toto-payoff-representation-readiness-20261024-v1.
+Same FP32-valued three-ETF panel: raw756 versus frozen Transformer-context768,
+TRAIN-only StandardScaler/PCA8(fullSVD,whiten)/onehot3/Ridgealpha1 netH5;
+native mean is control, not a head feature. No pure pretraining/equal-variance/
+independent-alpha claim. Claude REVISE/cb15b63f retained, corrections/narrow
+claims adjudicated; not agreement. Actual C model/head/financial work UNRUN.
+Kant C Data ACTUAL COMPLETE35d110ff/Sourcede05c05a/DTO608bc2db:
+A/data/current-toto-postcheckpoint-representation-inputs-20261024-v1/technical-build-r1.
+33TRAIN165sessionsMay7..Dec31 2025/29EVAL145sessions Jan..Jul2026, gaps0.
+F64rawbytes match/F32error5.742599e-8, EVAL bytes hash-alias unchanged/no target
+values accessed. SYN7PASS/build1verify1/alljoined12:52UTC,44.3673upper plus
+calendar-prep31.170078once. TRAINfeature23f0/EVALfeaturebbc1, labels separate.
+Tesla owns concrete three-phase C Source at
+A/research/current-toto-payoff-representation-development-20261024-v1;
+Noether sole resource/trial coordinator. GPUfeatures have no labels; CPUheads
+fit TRAIN only; both EVAL predictions seal before separate EVAL-price readout.
+C3600active7200elapsed/conservative12:23:28..14:23:28UTC incl prep. Two loads/
+native attempts and one positive-zero-market mechanical repair may be frozen
+prospectively inside unchanged caps; no B retry, outcome rerank or hidden grid.
 B10:20..14:20UTC/7200active14400elapsed includes protocol180, cacheInfra153,
 newInfra/Data/Engine actual once; no old A/c625 refunds. One TOTAL trusted
 model load across loadedNative+forecasting,3newcells/1intake; exact counters/

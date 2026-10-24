@@ -1,18 +1,35 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-24 20:01KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 21:45KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable hypotheses,
 not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
-Completed next-mechanism readiness b6681a20, A adopted:
+Completed next-mechanism readiness b6681a20, A adopted and closed05b02e54:
 A/research/current-post-deployment-next-mechanism-readiness-20261024-v1.
-Readiness120upper retained once in A; no numerical effects. Noether owns
-matched epoch100 OLD/RECENT support fits, old scaler/commonCHECK/4EVALpolicies;
-Data actual38913880 ready, not an operator-permission wait.
+Readiness120upper retained once in A; actual matched warm-support fits failed
+their frozen comparison. Data38913880 unchanged; no first100 repeat or winner.
 
-Current B protocol SOURCE_READY07de4a1a/Sourcef1a44ba0, Godel closed:
+NEW C procedure adopted from f27603b9/Sourcef3d2047b/Proposal314a5b99:
+A/research/current-toto-payoff-representation-readiness-20261024-v1.
+Fixed frozen-token768 versus SAME FP32-valued three-ETF raw756 procedure,
+TRAIN-only StandardScaler/PCA8(fullSVD,whiten)/onehot3/Ridgealpha1; netH5
+execution-payoff target. Native price head is control only. Do not claim a
+pure pretraining effect, equal retained variance or independent alpha.
+Claude REVISE/cb15b63f retained/adjudicated: accept procedure claim and exact
+last-real-context-token proof; no fifth scaling cell/bootstrap. Mature TRAIN
+prices in EVAL's past context are causal, not target leakage; targets must
+mature before first EVALOPEN and target files never enter feature worker.
+Data C548a/e426 calendar33TRAIN165sessions+29EVAL145session aliases ready,
+numericTRAIN QA/build delegated to Kant. Tesla actual runner Source pending.
+C3600active7200elapsed/12:23:28..14:23:28UTC inclusive prep, no numerical
+dispatch by Strategy. Two prospective load/native attempts with one zero-market
+mechanical repair inside unchanged caps do NOT amend closed B's one load.
+No fit nominated by prior73174da7 review was local, not research exhaustion;
+this newly specified matched procedure reverses that local readiness finding.
+
+Original B protocol07de4a1a/Sourcef1a44ba0 remains unchanged, B now CLOSED4240:
 A/research/current-toto-cross-series-h5-preparation-20261024-v1.
 Same exact dated Toto checkpoint, joint/separate groupIDs,252past D1/H5,
 2026onlytargets; verify actual grouping/scaling semantics and invalid-mean
@@ -20,8 +37,9 @@ rejection BEFORE official zero sanitization. Fixed top1-positive/cash compiler,
 aligned uniform/costs/dailyCLOSEDD, count internal padded decoder points too.
 Compiler c0ebc56a/ClaudeSOUNDlimits e3e3bc02; native fixtures unrun.
 ActualData58279e06 ready29cohorts145sessions/technical-r1; cache69b67 verified,
-runtime dependency/loader qualification pending. No actual model/forecast/GPU
-claim from source. Source180activeupper/
+Runtime r5 image259c named imports passed; actual B loaded/moved toCUDA then
+failed scaler hook setup BEFORE any native/market forward. No B finance result
+or reload. Source180activeupper/
 1200elapsed; Bfamily10:20..14:20UTC/7200active14400elapsed, separate from A.
 Aquinas temporaryInfra owns runtime-subset-r1; Tesla B Engine owns runner/
 compiler/replay source. A warm-support05b02e54 nowCOMPLETE_FAIL/alljoined,

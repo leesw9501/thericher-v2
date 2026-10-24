@@ -67,37 +67,52 @@ CUDA1.19687sec/peak148MiB, protocol choseCPU; not a general benchmark or
 GPU environment/permission block. No further A native/fit/evaluation/reranking.
 Whole conservative590upper inside original09:52..13:52/6000active.
 
-Current parallel B: source-ready Toto group-ID contrast, Godel07de/Sourcef1a4:
-A/research/current-toto-cross-series-h5-preparation-20261024-v1.
-2026only/context252/H5TRADINGsteps/business ordinals+separate realUTC,
-same fixed checkpoint/joint vs separated groups/fixed compiler+aligned
-five-session BUYHOLD replay,0fits/3newcells/1intake after qualification.
-Kant Data COMPLETE58279e06/Source6b74/Feature0610/DTO402c at
-A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
-29cohorts145sessions/gaps0/separatefeature-targetallowlists,4runtimepadsfalse.
-Initial UV hardlink inspection failure preserved; bind actual technical-r1.
+Toto group-ID study B is CLOSED technical-incomplete4240afc3/Sourceaebc:
+A/research/current-toto-cross-series-h5-development-20261024-v1/technical-runtime-r2/FINAL-CONSUMER.json.
+Actual one strict load/CUDA move12:14UTC, then plain-callable scaler hook API
+failure before Native.0forwards/market arrays/fits/cells/intakes; not zero PnL.
+Alljoined/removed/lease free,1330upper/no B reload or financial continuation.
+Original712d and every runtime/resource failure remain unchanged.
+Public605MB checkpoint69b67/confige381 is cached, no redownload. R5runtime
+ACTUAL15imports PASS58b5/Source2b4d/variant9289/image259c under the existing
+Torch2.7/cu128/NumPy2.5.1. Known GluonTS NumPy<2 remains unsatisfied: limited
+research derivative, not upstream/full numerical support or Paper runtime.
+Separate CPU callable repair4c7b/d04b PASS2308values/4calls/2cases/46checks/
+allclosed/0Toto/GPU/market. Do not relabel it as B continuation or token proof.
 
-Aquinas temporary Infra:
-A/research/current-toto-isolated-runtime-preparation-20261024-v1/runtime-subset-r1.
-One no-auth605239264byte checkpoint verified69b67e60...a122fa4c/confige381.
-No tensor/model loaded. Exact official source/Apache2/minimal safe-only loader/
-GluonTS eager-import and NumPy compatibility need reviewed locked derivative,
-then bounded build/import GO. Do not alter A/Paper/current Torch runtime,
-install full training stack or use unsafe pickle/dynamic remote code.
-Tesla Engine source:
-A/research/current-toto-cross-series-h5-development-20261024-v1.
-PureSYN compiler/replay unit feedback<=2runs/32cases/512toy steps within
-Source120 is delegated,0market/model/backbone/public-code execution.
-Final library/ABI/source/counter/headroom qualification before numerical GO.
+Current parallel C: adopted procedure contrastf27603b9/Sourcef3d2047b at
+A/research/current-toto-payoff-representation-readiness-20261024-v1.
+Fixed raw same-panel756 versus frozen Toto last-context Transformer768,
+TRAIN-only StandardScaler/PCA8(fullSVD,whiten)/onehot3/Ridgealpha1 netH5.
+Native mean is a control only. No pure-pretraining/equal-capacity/alpha claim;
+Claude REVISE/cb15b63f retained and narrowly adjudicated, not agreement.
+Kant C Data ACTUAL COMPLETE35d110ff/Sourcede05c05a/DTO608bc2db:
+A/data/current-toto-postcheckpoint-representation-inputs-20261024-v1/technical-build-r1.
+33postcheckpoint TRAIN cohorts/165sessionsMay7..Dec31 2025/missing0/F64bytes
+match/F32boundPASS;29EVAL145sessions B hash aliases unchanged/no targetvalue
+access. SYN7PASS/build1verify1/alljoined/44.3673upper+31.170078prep once.
+Use TRAINfeature23f0/EVALfeaturebbc1 aliases, not a fresh dataset rebuild.
+Tesla owns concrete C GPUfeatures -> CPU TRAIN-headfits -> separate EVAL
+readout Source at
+A/research/current-toto-payoff-representation-development-20261024-v1.
+No C numerical GO yet; bind actual Data, library/observer/token API/native,
+safe numeric serialization and Noether capacity before numerical dispatch.
 
-B10:20..14:20UTC/7200active14400elapsed includes protocol180/initialInfra153/
-Data64.1426/newInfra/Engine actual once, not extra budgets. One TOTAL trusted
-checkpointload across loadedNative+forecasts; no reload after failed/unknown
-load. Allinternalpatch/mean-tail/distributionpoints counted before effects;
-invalid means rejected BEFORE official neutral-zero substitution.
-Noether remains sole GPU coordinator, no active numerical worker/lease now.
-Exact May2025 checkpoint cannot qualify Jan-Apr2025 as postcheckpoint;
-all project2026 data reused/adaptive, no independent alpha/Paper-PnL claim.
+C3600active7200elapsed, conservative12:23:28..14:23:28UTC inclusive prep.
+No backbone optimizer, exactly2market Ridge plus2PCA/scaler fits,4newcells/
+1EVALintake/580daily marks if learned actions differ. Identical learned actions
+close preoutcome alias0cells. Freeze actual33TRAIN+29EVAL/batch/internal work
+counts before load; no hidden window/seed/alpha/rank/search/fallback.
+NEW C prospectively permits at most2loads/native attempts and1 mechanical
+repair only with positive zero-market-array/forecast/fit/outcome evidence,
+same checkpoint/seed/split/precision/claim and unchanged cumulative counters/
+time. No acceptance relaxation, market retry, unknown-effect continuation or
+old B/A refunds. Actual native checkpoint/token and real PCA/Ridge APIs on
+small invented input precede market paths, not only fake numerical fixtures.
+Noether remains sole GPU coordinator. Ready useful GPU work needs headroom,
+not a personal-app allowlist; no current model inferred from source/MD/ACK.
+May2025 checkpoint cannot qualify Jan-Apr2025 targets as postcheckpoint.
+ALL2026 project data remain reused/adaptive, not independent alpha/Paper PnL.
 
 If a distinct useful campaign is ready, Parent adopts its finite Source/
 data/split/target/cost/trial/time/stop contract and dispatches Data/Engine/

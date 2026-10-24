@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 20:01KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 21:30KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
@@ -23,37 +23,47 @@ Not general isolated benchmark. CUDA unsupported error NOTOBSERVED; measured
 protocol choseCPU, not permission/environment failure. GPUlease closed.
 
 Company NEXT remains actual Oct26 GRU/TimesFM/Joint17 natural entry evidence.
-B current source package, Tesla disjoint executor:
-A/research/current-toto-cross-series-h5-development-20261024-v1.
-Protocol07de4a1a/Sourcef1a44ba0/compilerc0ebc56a, Godel complete/closed:
-A/research/current-toto-cross-series-h5-preparation-20261024-v1.
-One trusted Toto checkpoint/joint vs separate groupIDs/2026only/context252/
-5TRADING steps/business ordinals+realUTC. Fixed top1positive elsecash,
-five-session held quantities/entryOPEN1/exitCLOSE5/10bpeachside; uniform ALSO
-five-session buyhold. Compound NAV, dailyCLOSEDD, no per-cohort PnL resets.
-0fits. Same model/data/backend; freshKV percondition; pre-sanitize full64tail
-audit, invalid means reject not neutral. One TOTAL actual checkpointload across
-loadedNative+allforecasts; no silent reload/retry after failed/unknownload.
-Forecasts BOTHconditions sealed before separate CPU readout opens labels.
+B CLOSED TECHNICAL_INCOMPLETE_LOADED_NATIVE_SETUP_FAILURE, not science failure:
+A/research/current-toto-cross-series-h5-development-20261024-v1/technical-runtime-r2/FINAL-CONSUMER.json
+SHA4240afc3/Sourceaebc1cef/dispatch6574c487/image259cf33f/variant9289b1e0.
+Actual12:14:21..30UTC: one strict checkpoint load AND CUDA transfer succeeded;
+AuditEngine then called register_forward_hook on the public plain-callable
+scaler (not nn.Module). AttributeError at guest_worker.py:99 BEFORE Native.
+0native forwards/0market arrays or forecasts/0fits/0cells/0intakes. Growth/DD/
+utility NOT_EVALUATED, not zero. GPU peak not retained. AllCLI joined, positive
+owned container removed, lease released. Original712d and all faults retained;
+1330conservative upper includes prior1309 once, not exact GPU time. Single
+load cap spent; no B reload, market evaluation or name-only scientific restart.
+Parent checked exact failure/lifecycle/dispatch links and loads1 counter.
 
 B Data ACTUAL COMPLETE58279e06/6b74dc32/Feature0610cb6d/DTO402cc653:
 A/data/current-toto-cross-series-h5-inputs-20261024-v1/technical-r1.
 29cohorts145sessions/gaps0/context[29,3,252]F64preserved/F32error5.731542e-8;
 physicaltargets separate/known4runtimepadsfalse. Onebuild1verify/native1285upper/
 alljoined/64.1426upperinclSource60. Parent9refs pass; no Data rebuild.
-Public cachef9a5c981/Source10387728 verifies605239264bytes/SHA69b67e60...a122fa4c,
-not model inference. Aquinas runtime-subset-r1 still needs exact reviewed minimal
-GluonTS/NumPy compatibility/lock and real import proof before numerical GO.
+Public cachef9a5c981/Source10387728 verifies605239264bytes/SHA69b67e60...a122fa4c.
+Runtime r5 ACTUAL15named imports PASS58b52fc7/Source2b4d/image259c/variant9289:
+A/research/current-toto-isolated-runtime-preparation-20261024-v1/runtime-subset-r1/runtime-isolation-r5.
+Same Torch2.7/cu128/NumPy2.5.1; B-only calendar/project-package pruning and
+base hub.36.2 resolve actual inherited conflicts. Known GluonTS NumPy<2 remains
+unsatisfied: limited derivative, not full-package or forward qualification.
 
-Short queue: B pureSYN DTO/compiler/replay unit feedback<=2localruns/32cases/
-512toy pathsteps inside Source120,0model/backbone/market operations. Actual
-runtime/import/long-context/backend/counter qualification remains.
-Depth queue: one loaded fixed foundation instance -> grouped/separate forecasts
-->3newfinancialcells/1intake once exact Source/Steward capacity qualifies.
-No unfrozen train/sampling/window/precision/grid. B10:20..14:20UTC/7200active/
-14400elapsed includes protocol180/cacheInfra153/Data64.1426/newInfra/Engine
-actual once, no old refunds. Do not couple B's source block to Paper or A.
-No current training/inference GPU PID, Noether sole resource coordinator.
+Short queue: Noether's SEPARATE callable-scaler instrumentation repair at
+A/research/current-toto-callable-scaler-instrumentation-repair-20261024-v1.
+Actual published CPU scaler + tiny own receiver, <=4cases/3072 invented input
+values/one30sec native/180active900elapsed; no Toto load/weights/GPU/market/PnL.
+Dispatch is not a completed proof. Preserve original B32+12+8pure tests as
+software-only; they did not qualify the public loaded object API.
+Depth queue: Godel reviews NEW frozen-representation versus same-panel raw
+context under matched TRAIN-only PCA8/Ridge execution-payoff readout; Kant
+prepares calendar/coverage/schema ONLY. Source roots current-toto-payoff-
+representation-readiness and current-toto-postcheckpoint-representation-inputs,
+both dated20261024-v1. No C fit/feature extraction or Source adoption yet.
+Post-May6 2025 TRAIN/29existing2026EVAL is a proposal, not an independent split
+or qualified winner. New C must establish a distinct estimand and finite caps;
+it cannot reset old B or launch merely for utilization. No current GPU worker.
+Earlier bounded next-readiness73174da7/Source05e9 nominated no fit, not exhaustion
+or a prohibition on this newly specified representation/payoff contrast.
 
 Earlier c5901e9028d2 COMPLETE_FAIL and c6257049faef technical import failure
 remain closed. Separate import repairc29ac6f5 actual two-alias/src PASS is NOT
