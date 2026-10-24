@@ -16,6 +16,15 @@ contract/native conditions, max900active/3600elapsed,150epochs/2550marketupdates
 No old fits/forwards are repeated, no current L input/Task/bank is changed.
 Actual freeze/start/results are unknown until worker evidence; old closed
 studies below remain closed, not new training authority.
+Kant map5646d164 corrects Parent's initial wording BEFORE dispatch: all cached
+means/targets are H5 SIMPLE net return, not log return; no log1p(mean) trick.
+Use same-unit mean and variance-squared risk proxy, keep ledger log-NAV utility
+separate, and apply20bp stress only in the ledger. Physical history blocks
+contain all3targets/old1124+33+29 roles, not isolated1067FIT/QQQ-only files.
+Noether/Godel were redirected to preserve helpers/debits and correct contracts
+before numerical work. No old financial outputs are changed or regraded.
+Godel also owns a separate one-fit QQQ indicator-HGB CPU comparison proposal
+under its own600active/3600elapsed cap, not another fit in Noether's family.
 
 One later zero-fit diagnostic is CLOSED technical-incomplete, not a financial
 failure: A/research/current-next-risk-composition-mechanism-readiness-20261025-v1/

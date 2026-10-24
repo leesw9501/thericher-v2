@@ -19,7 +19,7 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 | Parent / 총괄 | Integrate actually installed L QQQ Source482c/Release7cdb/readbackf1fb; shared MD/Git. Original3entries pending. |
 | Tesla / 실행 구현 | Exact independent9-task readbackf1fb complete; no current mutable worker. New2 Ready/never-run; old6 unchanged. |
 | Kant / 데이터 | Map exact QQQ-only target/units/least-privilege leaves and cached expert predictions; no data rebuild/API. |
-| Godel / 전략·반증 | Falsification-first QQQ-only density/blend challenge; old diagnostic/fixture work closed. |
+| Godel / 전략·반증 | QQQ challenge then separate indicator-HGB CPU preparation, own finite caps; unit map required before numerics. |
 | Noether / 엔진·자원 | New QQQ-only marginal-density campaign source/native preparation; one prospective GPU fit only after frozen contract/native proof. No fit inferred yet. |
 
 QQQ source design at
@@ -153,6 +153,11 @@ a side bank or migrate current owners merely for more venues. Reversible next
 improvement at23:46UTC: research QQQ/cash directly using existing data/expert
 outputs, rather than tying research to AMEX registry migration. Data, challenge
 and one new-target GPU campaign source preparation are disjoint and dispatched.
+Kant5646 caught Parent's net-log wording error before fitting: actual targets/
+cached means are SIMPLE net return. Parent redirected both new researchers to
+correct source contracts/no log1p(mean), preserve old outputs/caps and source-
+attest logical1186->1067/119 rather than claim physical/Q-only isolation.
+This is a factual model-unit repair, not an operator hold or Paper input swap.
 
 Fresh5fda9440/FINALc8733d4a covers clock1e7c/testca226:
 75clock/1022serial/19111full25skip/8workers/Ruff/three Compose PASS; Parent

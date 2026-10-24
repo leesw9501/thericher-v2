@@ -6,6 +6,17 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+NEW QQQ data/unit map5646d164/Source726d1698/ALLOWLIST5cb7f07f at
+A/data/current-qqq-only-density-input-readiness-20261025-v1 is complete.
+IMPORTANT: cached I/L_Z/L_REL/N and new target are H5 SIMPLE NET RETURN
+(C5/O1)*.999/1.001-1, NOT net-log. log1p(mean) is not expected log return.
+QQQ asset axis1; covariance is in simple-return squared units.20bp stress
+applies in the ledger only, not another subtraction from cached means.
+Current1186history ->1067FIT119CHECK is a source-attested logical split over
+physical1124/33/29 blocks/all3targets, not FIT-only/QQQ-only mount isolation.
+Current/later feature-only leaves are listed separately; later55alreadyseen.
+38refs checked, no arrays/financial values decoded/rebuilt. Helpers closed.
+
 Latest source capability23c74441 at
 A/review/current-qqq-runtime-root-source-map-20261025-v1/ams-source-readiness-r1
 confirms official quote EXCD=AMS and order/orderability OVRS_EXCG_CD=AMEX,
