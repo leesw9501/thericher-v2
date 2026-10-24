@@ -80,39 +80,62 @@ research derivative, not upstream/full numerical support or Paper runtime.
 Separate CPU callable repair4c7b/d04b PASS2308values/4calls/2cases/46checks/
 allclosed/0Toto/GPU/market. Do not relabel it as B continuation or token proof.
 
-Current parallel C: adopted procedure contrastf27603b9/Sourcef3d2047b at
-A/research/current-toto-payoff-representation-readiness-20261024-v1.
-Fixed raw same-panel756 versus frozen Toto last-context Transformer768,
-TRAIN-only StandardScaler/PCA8(fullSVD,whiten)/onehot3/Ridgealpha1 netH5.
-Native mean is a control only. No pure-pretraining/equal-capacity/alpha claim;
-Claude REVISE/cb15b63f retained and narrowly adjudicated, not agreement.
-Kant C Data ACTUAL COMPLETE35d110ff/Sourcede05c05a/DTO608bc2db:
-A/data/current-toto-postcheckpoint-representation-inputs-20261024-v1/technical-build-r1.
-33postcheckpoint TRAIN cohorts/165sessionsMay7..Dec31 2025/missing0/F64bytes
-match/F32boundPASS;29EVAL145sessions B hash aliases unchanged/no targetvalue
-access. SYN7PASS/build1verify1/alljoined/44.3673upper+31.170078prep once.
-Use TRAINfeature23f0/EVALfeaturebbc1 aliases, not a fresh dataset rebuild.
-Tesla owns concrete C GPUfeatures -> CPU TRAIN-headfits -> separate EVAL
-readout Source at
+C ACTUAL COMPLETE_FAIL_CLOSEDb75fb38d/Sourcefad5cf23:
 A/research/current-toto-payoff-representation-development-20261024-v1.
-No C numerical GO yet; bind actual Data, library/observer/token API/native,
-safe numeric serialization and Noether capacity before numerical dispatch.
+1load/native4calls/17GPUfeature batches62cohorts/2Ridge+2PCA+2scaler fits/
+4cells1intake580marks/alljoined/lease free. GPU15.3222sec/peak619MiB.
+Toto growth/DD -2.99155/14.38039%, Raw+1.70418/14.84775; primaryFAIL.
+289fixed checks/Parent20refs+criterion pass. No C rerun or fallback winner.
+C Data35d110ff/de05/DTO608b is consumed, not a ready rebuild.
 
-C3600active7200elapsed, conservative12:23:28..14:23:28UTC inclusive prep.
-No backbone optimizer, exactly2market Ridge plus2PCA/scaler fits,4newcells/
-1EVALintake/580daily marks if learned actions differ. Identical learned actions
-close preoutcome alias0cells. Freeze actual33TRAIN+29EVAL/batch/internal work
-counts before load; no hidden window/seed/alpha/rank/search/fallback.
-NEW C prospectively permits at most2loads/native attempts and1 mechanical
-repair only with positive zero-market-array/forecast/fit/outcome evidence,
-same checkpoint/seed/split/precision/claim and unchanged cumulative counters/
-time. No acceptance relaxation, market retry, unknown-effect continuation or
-old B/A refunds. Actual native checkpoint/token and real PCA/Ridge APIs on
-small invented input precede market paths, not only fake numerical fixtures.
-Noether remains sole GPU coordinator. Ready useful GPU work needs headroom,
-not a personal-app allowlist; no current model inferred from source/MD/ACK.
-May2025 checkpoint cannot qualify Jan-Apr2025 targets as postcheckpoint.
-ALL2026 project data remain reused/adaptive, not independent alpha/Paper PnL.
+D fixed .5Raw-net+.5Toto-net score fusion CLOSED_FAIL9ea7aed3/Source405b:
+A/research/current-toto-fixed-score-fusion-development-20261024-v1.
+1newcell145marks/1price intake/4cached baselines0replay/0fits-GPU;252.81upper.
+Growth -6.57685%, Raw+1.70418; growth/utilityFAIL/DDpass, allhelpersjoined.
+
+E native-head calibration CLOSED_FAILed584758/Source59aca02f:
+A/research/current-toto-native-head-calibration-development-20261024-v1.
+CPU13.4478sec/one selected-decoder load/37cohorts10batches/1Ridge fit/
+2cells1intake290marks/215checks/alljoined/200upper;0backbone-GPU-retries.
+Calibrated growth/DD -3.37323/14.38039%, fee-aware Native -3.91274/11.56306.
+Growth improves, utility/DDFAIL. Preserve failures; no rerun/Paper swap.
+
+F ACTUAL technical-incomplete CLOSEDe964eb30/Source07148b22: two concurrent
+GPUfits15epochs each/selected7/540updates each, native PASS/cache1186complete.
+Seal nested-reference fault BEFORE selected inference/EVALtargets/cells;
+checkpoints retained/alljoined/lease free. Financial result UNKNOWN. No rerun.
+G CPU SPO+ versus matched MSE COMPLETE_FAIL/Source621ac689:2fits139updates/
+3cells435marks. SPO -2.41840% vs MSE+5.97778% growth, all primary predicatesFAIL;
+not a selected MSE fallback, independent alpha or Paper PnL. Both closed.
+Exact results/roots/limitations in HANDOFF and Engine board. Separate pure
+nested-reference reader26b2/41cb is complete16SYN/10actualmetadatafiles, two
+tensor payloads unread/unverified; not F continuation/model work.
+Current independent Strategy readiness: TabICL four-action classifier at
+A/research/current-tabular-icl-four-action-readiness-20261025-v1.
+Source/rights/dated checkpoint/safe loader/runtime only, no model/download GO.
+
+Retained F source contract (consumed/CLOSED above, not dispatch authority):
+historical-TRAIN task adaptation, frozen encoder head versus
+trainable whole TransformerLayer11 plus same Linear771 head. Tesla owns
+concrete Source at A/research/current-toto-task-adaptation-development-20261024-v1;
+Kant owns TRAIN build/verify at A/data/current-toto-task-adaptation-inputs-20261024-v1;
+Noether alone coordinates GPU/native resource readiness. Source/metadata are
+not running model training. Adopted readiness6c964fa9/Sourcefceb182d/Proposalb7ba642f,
+ClaudeSOUND_WITH_LIMITS/response3a0c7808; F-only interpretation in DECISIONS.
+TRAIN1124H5cohorts/5620sessions2003..May2 2025; CHECK aliases C TRAIN33,
+EVAL aliases C29. Both selection/EVAL are postcheckpoint, but historical
+TRAIN/pretraining overlap presumed and ALL outcomes reused/adaptive.
+No independent alpha, pretraining-causal claim or automatic Paper promotion.
+F7200active14400elapsed/origin13:45:18/hard17:45:18UTC, inclusive preparation.
+Max2market fits/64epochs each/patience8/chronological CHECK/best restoration;
+selected EVAL prediction seal precedes one target intake/3cells435marks max.
+Prefix cache once1186cohorts, no target files in extractor; real last-layer
+autograd/freeze/mask and safe model/AdamW/RNG cold-next-update proof precede
+market work. New F permits2full checkpoint/native attempts/8backbone calls/
+160native cohortrows/24native updates/8saves8restores within native600sec,
+only one positive-zero-market mechanical repair; no tolerance relaxation or
+market retry. Source/actual Data/capacity binding needed before numerical GO.
+Noether allocates measured headroom, not app allowlists or utilization targets.
 
 If a distinct useful campaign is ready, Parent adopts its finite Source/
 data/split/target/cost/trial/time/stop contract and dispatches Data/Engine/
@@ -167,9 +190,16 @@ If only the future windows block this company outcome, record their exact due
 facts and keep a ready independent research/data package moving; no foreground
 session sleeps or new report/agent platform/schedule chain.
 
-Verify actual external outputs with focused/native/independent checks. Reuse
-primaryf19d only while exact1392digests match; tracked code/runtime/control
-changes require AGENTS serial/full/Ruff/default+research+accounting Compose.
+Verify actual external outputs with focused/native/independent checks. Old
+primaryf19d no longer matches DECISIONS after the F-scoped control append;
+other1391 source/control files match. Kant owns fresh1392 before/after binding,
+focused serial/full helper/Ruff/3Compose under
+A/verification/current-toto-f-scoped-control-integration-20261024-v1.
+Do not reuse old authority or edit its manifest. NEW fresh authority134a6866
+under bootstrap-r7/AUTHORITY.json now passes280serial+1harness regression/
+18988full25skip/8actualworkers/394.21pytestsec/Ruff/3Compose. Exact1392 current
+matches before/after; checked helper cleanup/lease exit0. No tracked code/control
+changes during that run. External native proof is separate from repo tests.
 At material company completion integrate evidence, verify/commit/push, replace
 NEXT with ONE next company outcome and continue the active request. A research
 subpackage commit does not prematurely complete the Paper company outcome.

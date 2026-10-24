@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-24 21:45KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 23:24KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable hypotheses,
 not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
@@ -11,23 +11,40 @@ A/research/current-post-deployment-next-mechanism-readiness-20261024-v1.
 Readiness120upper retained once in A; actual matched warm-support fits failed
 their frozen comparison. Data38913880 unchanged; no first100 repeat or winner.
 
-NEW C procedure adopted from f27603b9/Sourcef3d2047b/Proposal314a5b99:
-A/research/current-toto-payoff-representation-readiness-20261024-v1.
-Fixed frozen-token768 versus SAME FP32-valued three-ETF raw756 procedure,
-TRAIN-only StandardScaler/PCA8(fullSVD,whiten)/onehot3/Ridgealpha1; netH5
-execution-payoff target. Native price head is control only. Do not claim a
-pure pretraining effect, equal retained variance or independent alpha.
-Claude REVISE/cb15b63f retained/adjudicated: accept procedure claim and exact
-last-real-context-token proof; no fifth scaling cell/bootstrap. Mature TRAIN
-prices in EVAL's past context are causal, not target leakage; targets must
-mature before first EVALOPEN and target files never enter feature worker.
-Data C548a/e426 calendar33TRAIN165sessions+29EVAL145session aliases ready,
-numericTRAIN QA/build delegated to Kant. Tesla actual runner Source pending.
-C3600active7200elapsed/12:23:28..14:23:28UTC inclusive prep, no numerical
-dispatch by Strategy. Two prospective load/native attempts with one zero-market
-mechanical repair inside unchanged caps do NOT amend closed B's one load.
-No fit nominated by prior73174da7 review was local, not research exhaustion;
-this newly specified matched procedure reverses that local readiness finding.
+C procedure f276/f3d2 was consumed by actual fad5/b75fb38d COMPLETE_FAIL:
+A/research/current-toto-payoff-representation-development-20261024-v1.
+Frozen-token768 versus raw756 -> TRAIN-only PCA8/Ridge, not a pure pretraining
+or equal-capacity comparison. C interpretation5f863/a6e9/ClaudeSOUNDlimits
+supports scoped criterion failure. D proposed fixed score-half composition
+f1929/kernel8623 executed405b/9ea7 COMPLETE_FAIL, one new cell145marks;
+no baseline replays/fits/GPU. No fallback or old regrade.
+E native-head calibration59ac/ed584 is also closedFAIL, utility/DD failure.
+
+F actual07148/e964 closed2GPUfits after native/cache PASS; selected output
+phase failed nested reference before EVALforward/labels/cells. Financial
+UNKNOWN, not a strategy failure/winner. No F numerical restart authorized.
+G four-action SPO+ vs MSE proposal339184c3/Source6b2a3812 was consumed by
+actual Source621ac689 COMPLETE_FAIL at
+A/research/current-four-action-net-payoff-regret-development-20261024-v1.
+2CPUfits139updates/3cells435marks/alljoined, MSE+5.97778%,SPO-2.41840%
+growth; all primary SPO criteriaFAIL. REVISE/adjudication retained. No fallback,
+independent alpha or late source amendment after completed outputs.
+Primary paper https://arxiv.org/html/1710.08005v5 supports the decision-loss
+mechanism, not project equity alpha. No ready numerical proposal presently.
+Current Godel source-only readiness:
+A/research/current-tabular-icl-four-action-readiness-20261025-v1.
+Check official TabICL dated classifier/code+weight rights/safe loader/runtime
+and exact4action target/available packet against prior mechanisms. No download,
+model, arrays, training or GPU yet. Rejection affects only this candidate.
+
+Retained F readiness6c964fa9/Sourcefceb182d/Proposalb7ba642f adopted:
+A/research/current-toto-task-adaptation-readiness-20261024-v1.
+Frozen encoder-head vs trainable whole last TransformerLayer11+same head,
+1124historical TRAIN/33CHECK/29EVAL. F-only historical TRAIN/pretraining overlap
+interpretation in DECISIONS/ClaudeSOUND_WITH_LIMITS response3a0c7808; reused
+CHECK/EVAL remain adaptive, not independent alpha or pure attention causality.
+Concrete Source/Data/resource readiness in parallel, no numerical run inferred.
+Consumer F Engine at current-toto-task-adaptation-development-20261024-v1.
 
 Original B protocol07de4a1a/Sourcef1a44ba0 remains unchanged, B now CLOSED4240:
 A/research/current-toto-cross-series-h5-preparation-20261024-v1.

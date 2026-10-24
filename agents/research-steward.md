@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-24 21:45KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 23:24KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
@@ -33,18 +33,38 @@ No Toto/checkpoint/GPU/PnL; executable Ruff passes, two reader E501 findings
 retained. It proves public callable delegation, not real loaded token geometry.
 Scope A/research/current-toto-callable-scaler-instrumentation-repair-20261024-v1.
 
-Current C: Data/Kant builds33postcheckpoint TRAIN cohorts, aliases B29EVAL;
-Tesla owns new payoff-representation runner Source, Godelf276/f3d2 ready/closed.
-No C model GO/job or resource lease. Noether sole resource coordinator, ready
-for actual Source/library/native/capacity binding, not a human approver.
-C12:23:28..14:23:28UTC/3600active7200elapsed inclusive prep, not old B clock
-reset. Two C loads/native attempts and one positive-zero-market mechanical
-repair may be frozen prospectively inside unchanged cumulative caps; market/
-unknown effects stop that repair path. No altered tolerance or outcome rerank.
-Batch4 needs real B1/B2/B4/freshness proof and all row/internal work counts.
-Small TRAIN-only PCA/Ridge runs on CPU; frozen Toto features use GPU, no dummy
-training or new end-to-end epochs. Two Ridge/two PCA/scaler fits counted apart.
-Keep measured desktop/driver reserve; personal apps are not a permission hold.
+C CLOSED_COMPLETE_FAILb75fb38d/Sourcefad5: actual GPU features15.3222sec,
+peak649469952bytes,1load/native4calls8rows/17marketbatches62cohorts/2CPU
+Ridge+PCA/scaler fits/4cells580marks/alljoined/lease free/750upper.
+D fixed fusion9ea7/405b closed1cell145marks/0GPU/252.81upper.
+E decoder calibrationed584/59ac closedCPU13.4478sec/1decoder payload/1Ridge/
+2cells290marks/215checks/200upper,0backbone-GPU/no lease/alljoined.
+All failed their own criteria; no fallback winner or Paper promotion.
+
+F ACTUAL TECHNICAL_INCOMPLETE_CLOSED_NO_RETRYe964eb30/Source07148b22:
+2concurrent CUDAfits15epochs/best7/540updates each; native CPU/CUDA actual
+grad/mask/freeze/safe next-update PASS. One full load/39cachecalls1186cohorts.
+Native peak1009MiB, frozen118/adapt334MiB allocated; workerSUM120.8971sec,
+1141.0385cumulativeupper/383checks/all4containers removed/lease released.
+Seal nested-reference fault before selected constructor/EVALforward/labels/
+cells, initial layer tensor read occurred. Financial UNKNOWN, no retry/refit.
+G621a CPU2fits139updates/3cells435marks/allclosedFAIL/619.1736upper.
+No current numerical GPU job; no utilization-only training or repeated fits.
+Tesla separate engineering reader is not a GPU/model/F-continuation job.
+
+Retained F resource contract (consumed/CLOSED); readiness root
+A/research/current-toto-task-adaptation-resource-readiness-20261024-v1.
+No F model run inferred from source work. F7200active14400elapsed/origin
+13:45:18/hard17:45:18UTC inclusive prep. Source/data/native capacity before
+two fitting workers: frozen encoder-head vs trainable whole last layer11+head.
+Prefixcache once1186cohorts; max64epochs/patience8/innerCHECK/best restore.
+Safe model/AdamW/RNG restore and next optimizer update parity before market.
+New F prospective2full-checkpoint/native attempts/8calls160rows24updates/
+8safe-saves8cold-restores within native600sec; one explicit mechanical repair
+only after positive0market effects, same procedure/tolerance/caps.0market retry.
+Measure reserve/headroom; independent training may co-run under one resource
+owner, no app allowlist. F-only TRAIN overlap/reused CHECK-EVAL interpretation
+in DECISIONS does not change old A/B/C/D/E contracts or debit clocks.
 
 Prior c625 import-failed native attempt exhausted/193.087152upper. Separate
 engineering repairc29ac6f5 passed0.631774s/1stdlibchild2cases/0model/GPU.

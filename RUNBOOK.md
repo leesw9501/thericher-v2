@@ -55,20 +55,48 @@ ProgramW6432 passed. Use its named repaired guard, not an environment copy,
 GPU permission hold or another completed model attempt. No manual restart:
 first inspect the exact owner's dispatch/attempt/lease and terminal records.
 Family10:20..14:20UTC/7200active, no repeated cache download or old A rerun.
-Separate callable-scaler engineering repair and proposed C representation/
-payoff readiness are NOT B continuation. Their current source/consumer pointers
-are on Engine/Steward/orchestration boards; no C numerical command is adopted.
+Separate callable-scaler repair4c7b and actual C representation b75fb38d,
+D fixed fusion9ea7aed3 and E calibrationed584758 are CLOSED, not B continuation.
+Do not execute their completed launch/verify/fit/readout commands again.
+C used GPU15.3222sec/62cohorts/two CPU heads/4cells; D1cell and E2cells each
+failed their own frozen criteria. Exact roots on Engine/HANDOFF; no Paper swap.
+F Source07148b22 is now TECHNICAL_INCOMPLETE_CLOSED_NO_RETRYe964eb30:
+2GPUfits15epochs/best7/540updates each/cache1186/native PASS; nested COMPLETE
+path fault in seal before EVALforward/labels/cells. Keep checkpoints/failure;
+no launcher/native/cache/fit/seal/readout rerun. G621ac689 completed2CPUfits/
+3cells and failed primary criteria; no rerun/fallback. Exact results HANDOFF.
+Retained F Source at
+A/research/current-toto-task-adaptation-development-20261024-v1;
+TRAIN producer A/data/current-toto-task-adaptation-inputs-20261024-v1;
+resource coordinator A/research/current-toto-task-adaptation-resource-readiness-20261024-v1.
+F origin13:45:18/hard17:45:18UTC/7200active remains CLOSED, not a fresh
+allowance. Separate pure nested-reference reader cannot authorize a model run.
+Use trusted cached checkpoint/r5image259c, no repeat download/runtime build.
+Historical TRAIN overlap/reused CHECK-EVAL remain adaptive per DECISIONS.
 
 Earlier c590 COMPLETE_FAIL1e9028d2, c625 CLOSED_TECHNICAL_INCOMPLETE7049faef
 and separate import repairc29ac6f5 stay closed. Import-only two aliases under
 real/src is NOT full-worker/native or scientific resume authority. No old
 launch/chain/evaluate/probe repetition. Exact evidence/history HANDOFF/Git.
 
-Holdings-only primary4bd2 pushedba1345b; actual one-shot API COMPLETE. Authority:
+Holdings-only primary4bd2 pushedba1345b; actual one-shot API COMPLETE. HISTORICAL authority:
 A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json
 f19d8b4f/232serial/18988fullPASS25skip/19013total/8workers432.31sec/helper85662exit0.
 1392manifest76f5 explicitly POST-run, not a pre-run snapshot. Ruff and all three
-Compose(.env.example) pass. Exact credential-free reuse check:
+Compose(.env.example) passed then. After the F-scoped DECISIONS append, ONLY
+that control digest differs: DO NOT reuse this authority or overwrite76f5.
+NEW fresh134a6866 COMPLETE at
+A/verification/current-toto-f-scoped-control-integration-20261024-v1/bootstrap-r7/AUTHORITY.json:
+280serial+1harness regression/18988full25skip/19013total/8actualworkers/
+394.21pytestsec/helper9588exit0aftercheckedcleanup/Ruff/3Compose PASS.
+Current1392 matches before/after; no old authority substitution.
+Measured Windows cleared-env bootstrap requires literal PATHEXT and the named
+WindowsPowerShell/v1.0 PATH for tests that invoke powershell.exe by basename.
+Missing PATHEXT caused early-return/detached native child behavior; failed and
+partial attempts stay invalid. Prefer direct .NET/Python process wait over
+aliases. Use only explicit safe OS/bootstrap keys, never copy credential env.
+The following credential-free check currently FAILS as expected, not a broker
+or production-code fault:
 uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-paper-holdings-only-integration-20261024-v1/snapshot.py --check
 CLI default is inert. Do NOT execute it without the hard-bounded owned runtime.
 Original probe223a blocked by reviewd53b BEFORE credentials; never execute it.

@@ -10506,3 +10506,31 @@ global gate. Advisory evidence:
 D:/thericher-v2/model-artifacts/review/current-native-handoff-smoke-rule-challenge-20261024-v1/RESULT.json
 SHA256 589edf048ad1ebff756d8a7dbebd74ed6e0add292e93a527a111ebd1ed8cc26c.
 No old experiment is rerun or regraded.
+
+## 2026-10-24 KST - F-Scoped Historical Training / Post-Checkpoint Evaluation
+
+Consumer: the separately bounded Toto frozen-versus-last-layer task-adaptation
+representation study, not a new promotion gate or general policy rewrite.
+For this adaptive study, supervised historical TRAIN labels may predate the
+trusted checkpoint and are presumed to overlap an unknown pretraining corpus.
+TRAIN performance cannot establish independent learning or pretraining novelty.
+Checkpoint date/coverage admission applies to CHECK/selection and EVAL outcomes:
+both start after the immutable 2025-05-06 checkpoint, with TRAIN targets mature
+before CHECK and CHECK targets mature before EVAL. Historical context prices
+may include mature TRAIN observations; target files never enter feature workers.
+
+This is isolated task/representation development. Previously reused CHECK33
+and EVAL29, revised non-PIT prices and corpus uncertainty remain explicit.
+Even a criterion pass is descriptive and hypothesis-generating, not qualified
+independent performance, pure pretraining/attention causality, a selected
+replacement or Paper PnL. Paper authority remains independent. AGENTS.md and
+all closed B/C/D contracts, counters and failures remain unchanged; this
+clarification cannot retroactively qualify or regrade them.
+
+Parent adopts this F-only interpretation after reading the concise challenge,
+including its memorization-conditioned-generalization rejection. Actual data
+knownness, live autograd/freeze/mask and safe cold-restore proof remain technical
+prerequisites of the finite F source, not operator approval or a global hold.
+Claude SOUND_WITH_LIMITS is advisory, not the authority grant:
+D:/thericher-v2/model-artifacts/research/current-toto-task-adaptation-readiness-20261024-v1/RESPONSE.txt
+SHA256 3a0c7808b5e7909ba6dc4f926e1c4877f972bdc95cec17c990563fa31a2829cd.

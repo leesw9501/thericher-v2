@@ -1,10 +1,29 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 22:03KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 23:24KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
+
+F historical TRAIN build/verify ACTUAL COMPLETE_DATA_ONLY8004f1ad:
+A/data/current-toto-task-adaptation-inputs-20261024-v1;
+readinessdb6826b7/Source8bcdaa30,31.1601upper consumed once.
+1124H5cohorts/5620target sessions2003-01-02..2025-05-02,252past real closes;
+four original source roles map by global indices; actual3joins PASS. CHECK
+exact C TRAIN33 and EVAL exact C29 aliases, no re-export/alias target intake.
+Source249e62fe/DTO60b1c66f,11SYN/native+independent verify/Ruff PASS;
+missing0/sampledrop0/F64bytes match/F32error5.915795e-8<2^-24.
+Actual14:23:13..18UTC/allhelpersjoined/one build1verify/retry0/55.0862upper.
+Parent13namedmetadatarefs checked without array decode. No Data rebuild.
+Kant fresh1392-source-control verification COMPLETE134a6866 at
+A/verification/current-toto-f-scoped-control-integration-20261024-v1/bootstrap-r7/AUTHORITY.json:
+280serial+1harness regression/18988full25skip/8workers/Ruff/3Compose,
+checked cleanup/current1392, no F data/model repeat or numerical debit.
+Target files separate/no labels in extractor;
+trainer TRAIN/CHECK only, EVAL targets behind selected-prediction seal.
+Completed Data is not a running GPU or model pass. Historical TRAIN
+overlap/reused CHECK-EVAL are adaptive only per F-scoped DECISIONS.
 
 C payoff-representation Data ACTUAL COMPLETE35d110ff/Sourcede05c05a/
 DTO608bc2db/TRAINfeature23f02732/EVALfeaturebbc13578:

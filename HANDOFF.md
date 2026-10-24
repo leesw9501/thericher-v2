@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 21:45KST /12:45UTC. Root C:/Users/Public/Documents/thericher-v2.
+Observed through 2026-10-25 00:04KST /Oct24 15:04UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -197,20 +197,100 @@ Same FP32-valued three-ETF panel: raw756 versus frozen Transformer-context768,
 TRAIN-only StandardScaler/PCA8(fullSVD,whiten)/onehot3/Ridgealpha1 netH5;
 native mean is control, not a head feature. No pure pretraining/equal-variance/
 independent-alpha claim. Claude REVISE/cb15b63f retained, corrections/narrow
-claims adjudicated; not agreement. Actual C model/head/financial work UNRUN.
+claims adjudicated; not agreement. C now ACTUAL COMPLETE_FAIL_CLOSED:
+A/research/current-toto-payoff-representation-development-20261024-v1/FINAL-CONSUMER.json
+SHAb75fb38d/Sourcefad5cf23/Result93243edf. Actual13:22:53..13:23:15UTC;
+one load, GPU native4calls/8cohortrows,17market batches/62cohorts,2CPU Ridge/
+2PCA/2scaler fits,174predictions,4cells/1intake/580marks. No backbone updates.
+Toto-token growth/DD -2.99155/14.38039%, Raw +1.70418/14.84775,
+Native +4.40025/11.56306, Uniform -.01742/8.99399,10bp each leg.
+Primary growth+utility FAIL/DDpass. No fallback winner or Paper model swap.
+GPUphase15.3222sec, maxallocated649469952bytes(~619MiB), reserved677380096.
+Wholeguard22.1352sec;750conservative total upper is NOT GPU spend. Allworkers/
+owned containers joined/removed/lease free. CPU and loaded GPU native actually
+passed; no technical continuation.289fixed-output checks PASS, Parent20exact
+refs+criterion checked. Timing-reader correction1bf6e456 only,0numeric reruns.
+Independent interpretation5f863c73/a6e90ef7/ClaudeSOUNDlimits supports the recorded
+failure and scope, not independent alpha or pure pretraining causality.
 Kant C Data ACTUAL COMPLETE35d110ff/Sourcede05c05a/DTO608bc2db:
 A/data/current-toto-postcheckpoint-representation-inputs-20261024-v1/technical-build-r1.
 33TRAIN165sessionsMay7..Dec31 2025/29EVAL145sessions Jan..Jul2026, gaps0.
 F64rawbytes match/F32error5.742599e-8, EVAL bytes hash-alias unchanged/no target
 values accessed. SYN7PASS/build1verify1/alljoined12:52UTC,44.3673upper plus
 calendar-prep31.170078once. TRAINfeature23f0/EVALfeaturebbc1, labels separate.
-Tesla owns concrete three-phase C Source at
-A/research/current-toto-payoff-representation-development-20261024-v1;
-Noether sole resource/trial coordinator. GPUfeatures have no labels; CPUheads
-fit TRAIN only; both EVAL predictions seal before separate EVAL-price readout.
-C3600active7200elapsed/conservative12:23:28..14:23:28UTC incl prep. Two loads/
-native attempts and one positive-zero-market mechanical repair may be frozen
-prospectively inside unchanged caps; no B retry, outcome rerank or hidden grid.
+C3600active7200elapsed/conservative12:23:28..14:23:28UTC remains CLOSED. Do not
+repeat C native/extraction/fits/readout or consume unused second-load allowance.
+Noether sole resource coordinator, no current model/GPU worker inferred.
+
+Separate successors, not C/B continuation:
+- D fixed .5Raw-net+.5Toto-net score fusion ACTUAL COMPLETE_FAIL9ea7aed3,
+  Source405bef11 under A/research/current-toto-fixed-score-fusion-development-20261024-v1.
+  1newcell145marks/1price intake/4cached baselines0replay/0fits-GPU,
+  allhelpersjoined/252.8094upper. Growth -6.57685% versus Raw+1.70418,
+  growth/utilityFAIL/DDpass. Parent2exact metadata links+predicates checked.
+- E native-head calibration ACTUAL COMPLETE_FAIL_CLOSEDed584758/Source59aca02f
+  under A/research/current-toto-native-head-calibration-development-20261024-v1.
+  CPU13.4478sec/one selected-decoder load/37cohorts10batches/1Ridge fit/
+  2cells1intake290marks/215checks/alljoined/200upper,0backbone-GPU-retries.
+  Calibrated growth/DD -3.37323/14.38039%, fee-aware Native -3.91274/11.56306;
+  growth improves, utility/DDFAIL. Parent8exact metadata links+criteria checked.
+- F task-adaptation readiness6c964fa9/Sourcefceb182d/Proposalb7ba642f adopted,
+  ClaudeSOUND_WITH_LIMITS/response3a0c7808 and F-scoped interpretation DECISIONS.
+  Tesla concrete Source: A/research/current-toto-task-adaptation-development-20261024-v1.
+  Kant TRAIN producer COMPLETE8004f1ad/Source249e62fe/DTO60b1c66f:
+  A/data/current-toto-task-adaptation-inputs-20261024-v1.
+  Actual1124TRAIN/3source joins/missing0/F64bytes/F32boundPASS/11SYN/
+  build1verify1/alljoined/55.0862upper; Parent13metadatarefs checked.
+  Actual F FINALe964eb30/Source07148b22 TECHNICAL_INCOMPLETE_CLOSED_NO_RETRY:
+  one load/39cachecalls1186cohorts/two concurrent GPUfits15epochs each/
+  best7/540updates each/PATIENCE8. Native CPU/CUDA autograd/mask/freeze/safe
+  restore+next-update PASS.383checks/4containers removed/lease released.
+  Native peak1009MiB; fits frozen118/adapt334MiB. SUM120.8971sec/1141.0385upper.
+  Seal nested-path ABI failed before selected constructor/EVALforward/labels/
+  cells; selected COMPLETE metadata hashes match. Financial outcome UNKNOWN, not zero or a
+  financial loser. Initial layer tensor WAS read; not zero tensor effects.
+  Historical TRAIN1124cohorts5620sessions; CHECK33/EVAL29 exact C aliases.
+  Frozen versus trainable whole last layer+same head; max64epochs/patience8,
+  chronological CHECK/best restore/safe AdamW-RNG next-update native proof.
+  F7200active14400elapsed/origin13:45:18/hard17:45:18UTC inclusive preparation.
+  Original up to2native full loads/one positive-zero-market mechanical repair
+  did NOT cover this post-market fault. No retry/retraining/evaluation.
+  TRAIN overlap presumed, reused CHECK/EVAL adaptive only, no alpha/Paper swap.
+No operator decision currently; paid/live/public/unclear rights boundaries
+unchanged. Closed D/E results cannot select a fallback or reset old debits.
+G joint4action SPO+ vs matched MSE ACTUAL COMPLETE_FAIL/Source621ac689:
+A/research/current-four-action-net-payoff-regret-development-20261024-v1.
+2CPUfits139updates/1scaler1PCA/3cells435marks/1EVALintake/alljoined/619.1736upper.
+Growth/DD% MSE+5.97778/8.01069,SPO-2.41840/14.84775,uniform-.01742/8.99399.
+MSE69epochs/best5,SPO70/best6,bothPAT64. All SPO primary predicatesFAIL,
+no fallback winner/independent alpha/Paper promotion. Closed before proposed
+late recovery amendment; no retrospective adoption. Native separate RO-phase
+fixture unrun, actual fit->seal->readout succeeded. No G rerun.
+Tesla separate pure reader COMPLETE26b2c067/Source41cb4dc7:
+A/research/current-toto-nested-checkpoint-reference-reader-20261024-v1.
+16SYN cases including actual junction/swap PASS; actual two selected metadata
+chains/10metadata files verified. TWO tensor payloads unread/unverified by this
+reader;0model/codec/forward/labels/fits/cells/GPU/alljoined. ClaudeSOUNDlimits.
+Not F continuation or numerical recovery. No current numerical GPU worker.
+Godel now owns TabICL four-action classifier source-only feasibility at
+A/research/current-tabular-icl-four-action-readiness-20261025-v1.
+New mechanism/dated trusted checkpoint/rights/safe loader/runtime precede any
+adoption/download/model/GPU; not yet a ready numerical job or alpha evidence.
+F resource64537e5e/contract4d0f snapshot14:22:36UTC/free22173MiB/host37.1GB/
+D38.76%, no model/lease. Source-bound fresh ACK still needed at actual dispatch.
+After F-scoped DECISIONS append the old exact1392 check correctly fails ONLY
+that control file. Kant owns NEW focused/full/Ruff/3Compose verification at
+A/verification/current-toto-f-scoped-control-integration-20261024-v1.
+Oldf19d is historical, not current reuse authority; other1391 files unchanged.
+Parent freezes code/control while that run executes. No repeated market fits.
+Verification now COMPLETE fresh134a6866, exact1392 before/after/current PASS:
+A/verification/current-toto-f-scoped-control-integration-20261024-v1/bootstrap-r7/AUTHORITY.json.
+280serial+1named harness regression PASS; full18988PASS25skip/19013total,
+8actualworkers/394.21pytestsec/helper9588exit0aftercheckedtemp/lease cleanup,
+Ruff/default+research+accounting Compose(.env.example) PASS. Parent exact1392
+and authority hash independently checked; not old f19d reuse. Earlier harness
+failures preserved: missing PATHEXT/early native detach, then omitted Windows
+PowerShell PATH. Failed/partial runs were NOT authority; helper unchanged.
 B10:20..14:20UTC/7200active14400elapsed includes protocol180, cacheInfra153,
 newInfra/Data/Engine actual once; no old A/c625 refunds. One TOTAL trusted
 model load across loadedNative+forecasting,3newcells/1intake; exact counters/

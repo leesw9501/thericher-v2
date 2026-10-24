@@ -1,10 +1,75 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 21:30KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 23:24KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Ready Package
+
+C ACTUAL COMPLETE_FAIL_CLOSED b75fb38d/Sourcefad5cf23/Result93243edf:
+A/research/current-toto-payoff-representation-development-20261024-v1.
+1load/native4calls8cohortrows/market17batches62cohorts/2Ridge+2PCA+2scaler
+fits/174EVAL predictions/4cells1intake580marks/alljoined/removed/lease free.
+Actual13:22:53..13:23:15UTC, GPU15.3222sec/peak649469952bytes(~619MiB), whole
+guard22.1352sec;750conservative upper, no deep-backbone updates. CPU and real
+CUDA native PASS, no continuation.289checks/Parent20refs+criterion PASS.
+10bp growth/DD%:Toto -2.99155/14.38039,Raw+1.70418/14.84775,
+Native+4.40025/11.56306,Uniform-.01742/8.99399. Growth/utility criterion FAIL,
+DDpass, no partial pass/fallback/Paper promotion/alpha/pretraining causality.
+Independent5f863c73/a6e90ef7/ClaudeSOUNDlimits supports recorded scoped failure.
+No C load/fit/feature/readout rerun or unused-cap borrowing.
+
+D fixed half-score fusion COMPLETE_FAIL9ea7aed3/Source405bef11 at
+A/research/current-toto-fixed-score-fusion-development-20261024-v1.
+1newcell145marks/1price intake/4cached baselines0replays/0fits-GPU/alljoined,
+252.8094upper; growth -6.57685% versus Raw+1.70418, utilityFAIL/DDpass.
+E native-head calibration COMPLETE_FAIL_CLOSEDed584758/Source59aca02f at
+A/research/current-toto-native-head-calibration-development-20261024-v1.
+CPU13.4478sec/one decoder payload/37cohorts10batches/1Ridge/2cells290marks/
+215checks/alljoined/200upper;0backbone-GPU-retries. Calibrated growth/DD
+-3.37323/14.38039%, fee-aware Native -3.91274/11.56306; utility/DDFAIL.
+No C/D/E rerun, fallback winner or automatic Paper swap.
+
+F ACTUAL TECHNICAL_INCOMPLETE_CLOSED_NO_RETRYe964eb30/Source07148b22:
+A/research/current-toto-task-adaptation-development-20261024-v1.
+Two concurrent GPUfits15epochs/best7/540updates each; native CPU/CUDA mask/
+freeze/autograd/safe next-update PASS/cache1186cohorts complete.383checks/
+all4containers removed/lease free/1141.0385upper. Native peak1009MiB,
+allocated frozen118/adapt334MiB. Nested selected-7/COMPLETE basename fault
+before selected constructor/EVALforward/labels/cells; initial layer WAS read.
+Selected COMPLETE metadata hashes match, financial outcome UNKNOWN, not zero/a loser.
+No covered post-market retry/refit. Tesla separate pure-reference reader has
+no model/tensor decode/forward; it is not F numerical continuation. Reader
+26b2/41cb is now complete16SYN/10actualmetadatafiles; tensor payloads remain
+unread/unverified by that reader. Original F final/source remain unchanged.
+G SPO+ vs MSE Source621ac689 ACTUAL COMPLETE_FAIL:
+A/research/current-four-action-net-payoff-regret-development-20261024-v1.
+2CPUfits139updates/1scaler1PCA/3cells435marks/1intake/alljoined/619.1736upper;
+MSE69epochs/best5,SPO70/best6,bothPAT64. Growth/DD% MSE+5.97778/8.01069,
+SPO-2.41840/14.84775,uniform-.01742/8.99399; all SPO primary predicatesFAIL.
+No fallback/independent alpha/Paper promotion. Late repair rule NOT adopted
+after close. Native separate RO-phase fixture unrun; actual readout succeeded.
+Parent G4Source members/2metadatarefs/primary predicates independently checked;
+182fixed-output checks PASS. New TabICL four-action classifier readiness is
+Strategy source-only, no public download/model/native/GPU GO yet.
+
+Retained F source contract (consumed/CLOSED above): readiness6c964fa9/fceb182d/
+b7ba642f adopted; Tesla concrete Source,
+Kant actual TRAIN build, Noether resource coordination in parallel:
+A/research/current-toto-task-adaptation-development-20261024-v1;
+A/data/current-toto-task-adaptation-inputs-20261024-v1.
+Frozen encoder-head versus trainable whole last layer11+same Linear771head,
+TRAIN1124cohorts/CHECK33/EVAL29,252past closes/H5net target. Safe model/AdamW/
+RNG cold-next-update parity/native mask+freeze+live gradients before market.
+Max64epochs/patience8/inner CHECK MSE/earliest best incl0; no EVAL selection.
+F7200active14400elapsed/origin13:45:18/hard17:45:18UTC inclusive preparation;
+2fits, prefixcache once1186cohorts, up to3cells435marks/one EVAL intake.
+Two native full-load attempts/one zero-market mechanical repair inside unchanged
+native600/8calls160rows24updates8saves8restores;0market retry. Actual Source/
+Data/capacity needed before numerical GO, source is not running training.
+F historical TRAIN overlap and reused CHECK/EVAL explicitly adaptive, not alpha
+or pretraining causality. DECISIONS F-scoped interpretation/ClaudeSOUNDlimits
+response3a0c7808 applies only F; all closed studies/debits unchanged.
 
 A common-warm-start support comparison COMPLETE_FAIL:
 A/research/current-three-etf-warm-start-support-adaptation-20261024-v1/FINAL-CONSUMER.json
@@ -48,20 +113,15 @@ Same Torch2.7/cu128/NumPy2.5.1; B-only calendar/project-package pruning and
 base hub.36.2 resolve actual inherited conflicts. Known GluonTS NumPy<2 remains
 unsatisfied: limited derivative, not full-package or forward qualification.
 
-Short queue: Noether's SEPARATE callable-scaler instrumentation repair at
+Completed engineering: Noether's SEPARATE callable-scaler instrumentation repair at
 A/research/current-toto-callable-scaler-instrumentation-repair-20261024-v1.
 Actual published CPU scaler + tiny own receiver, <=4cases/3072 invented input
 values/one30sec native/180active900elapsed; no Toto load/weights/GPU/market/PnL.
-Dispatch is not a completed proof. Preserve original B32+12+8pure tests as
+Actual PASS4c7b/d04b/100upper; preserve original B32+12+8pure tests as
 software-only; they did not qualify the public loaded object API.
-Depth queue: Godel reviews NEW frozen-representation versus same-panel raw
-context under matched TRAIN-only PCA8/Ridge execution-payoff readout; Kant
-prepares calendar/coverage/schema ONLY. Source roots current-toto-payoff-
-representation-readiness and current-toto-postcheckpoint-representation-inputs,
-both dated20261024-v1. No C fit/feature extraction or Source adoption yet.
-Post-May6 2025 TRAIN/29existing2026EVAL is a proposal, not an independent split
-or qualified winner. New C must establish a distinct estimand and finite caps;
-it cannot reset old B or launch merely for utilization. No current GPU worker.
+Completed C readinessf276/f3d2 and Data35d1/de05/DTO608b are consumed by actual
+C fad5, not ready future numerical jobs. Postcheckpoint chronology is not an
+independent split on reused outcomes. No B reset/current GPU worker inferred.
 Earlier bounded next-readiness73174da7/Source05e9 nominated no fit, not exhaustion
 or a prohibition on this newly specified representation/payoff contrast.
 
