@@ -23,13 +23,13 @@ rerun completed builder/native/inference. Future runtime needs this exact
 updated source capsule, fresh facts and native risk; old pinned SDKs lack AMS.
 Clock interpretation and declared unrun future measurement stay in that root.
 
-Current fresh repo authority7460a456:
-A/verification/current-qqq-h5-runtime-adapter-integration-20261025-v1/AUTHORITY.json.
-997serial/19086fullPASS25skip/19111total/8workers/Ruff/3Compose(.env.example),
+Current fresh repo authority5fda9440:
+A/verification/current-qqq-h5-post-provider-clock-integration-20261025-v1/AUTHORITY.json.
+1022serial/19111fullPASS25skip/19136total/8workers/Ruff/3Compose(.env.example),
 1396exact/alljoined/own temp+lease removed. Includes purecore0fe13554 and
-adapter1cd47255/test39cb0cef. Actualimage2ff native a93077b8/8SYN scenarios
+adapter1e7c38b7/testca2260f9. Actualimage2ff native ddb53931/18provider calls
 uses FakeClient only, not actual broker/provider/deployment evidence.
-Earlier7629/43e/134a below are historical, not current source authority.
+Earlier7460/7629/43e/134a below are historical, not current source authority.
 
 N actual future covariance expert COMPLETEe0b422cd at
 A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.
@@ -130,7 +130,13 @@ Matched initial/stats do not make covariance causal or reused data independent.
 NEWQQQ direct visit source1691378a/495a072a passes13nativeSYN; hosta0e3/
 ae408518 passes16code/codecSYN. These are NOT installation or actual owner
 facts. Current source implementation is
-A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/runtime-graft-r1.
+A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/runtime-graft-r2.
+Sourcef7a87b3b/Consumerd7f3ec3e closes36focused SYN checks and50own/499reused
+source references; all children joined. Explicit PS7.5+ imports and parsed
+Windows argv/path binding repair the earlier false denials. allow_execute=false;
+no actual owner/namespace/installation or broker outcome is asserted. Current
+activation-readiness is source-safe OS/Docker/Task metadata only. Future Task
+origin cannot be proven before installation and is not another approval gate.
 No actual dispatch/Task registration. Prep entryOct26 18:00..18:15UTC/exitOct30
 19:55..20:00 within originalL input; late entry differs from researchOPEN1.
 Use MAP at A/review/current-qqq-runtime-root-source-map-20261025-v1/MAP.json

@@ -17,9 +17,9 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 | Owner | Current disjoint work |
 | --- | --- |
 | Parent / 총괄 | Integrate closed poolc317/diagonalb7d0 and direct-QQQ preparation; shared MD/Git. Original3entries pending. |
-| Tesla / 실행 구현 | Direct1691/13SYN and hosta0e3/16SYN complete; actual owner/retirement/control runtime-graft source implementation, no original-job edits. |
+| Tesla / 실행 구현 | Runtime-graft-r2 f7a8/36focused SYN closed; activation-readiness-r1 source-safe actual OS/Docker/Task bindings, no install or original-job edits. |
 | Kant / 데이터 | Token6161/11SYN and runtime-root map767a complete; source expert, no current data/model/API worker. |
-| Godel / 전략·반증 | Direct3a32/diagonalbd3a/pooled recipe challenge complete; no current numerical worker. |
+| Godel / 전략·반증 | One distinct next-hypothesis proposal only, or concrete rejection; no new numerical dispatch/Paper input swap. |
 | Noether / 엔진·자원 | Poolc317/diagonalb7d0 CLOSED; temporary independent runtime-graft source review. No current model/GPU worker. |
 
 QQQ source design at
@@ -88,8 +88,10 @@ descriptive growth but primaryFAIL; no further fit or Paper input swap.
 Independent review2c0c8f60 caught real fresh-host false-denial defects: extracted
 PS library omitted explicit imports under disabled autoload; raw/mixed-path
 argv hash comparisons treated equivalent Windows invocation as different.
-Tesla runtime-graft-r2 repairs these with qualified PS7.5+ bootstrap and exact
-parsed argv/path binding; Noether reviews. Actual Task owner/install remains
+Tesla runtime-graft-r2 f7a8 closes36focused SYN checks/50own+499reused refs,
+allchildren joined. Qualified PS7.5+ bootstrap and exact parsed argv/path binding
+are repaired; Noether reviews. The exit20->99 negative-check fault was wrapper
+exit propagation, not a relaxed production guard. Actual Task owner/install remains
 unobserved, not an operator approval. No old partial proof becomes runtime PASS.
 
 ## Completed / Do Not Repeat

@@ -59,7 +59,7 @@ no application-name veto or duplicate completed fits for utilization.
 Source43e4522c repo QA remains separate from these external numerical proofs.
 
 Earlier pure QQQ-H5 planner verification762941dc is closed and superseded by
-current adapter authority7460a456/1396files above, not another active QA job.
+current clock-corrected authority5fda9440/1396files above, not another active QA job.
 Cold3SDK4a9f8aaa passed12invented V4 books. Radius candidateb9e7 is rejected
 for fitting;12pure tests/0GPU/market effects. Current OOF actual stages must
 close with exact outputs/resources; no permission/environment hold.

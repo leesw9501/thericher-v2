@@ -90,7 +90,9 @@ Research actors or future due times. No recovery observe() as offline reading.
    prerequisite. Source1691/495a13SYN and hosta0e3/ae40816SYN are preparation,
    not actual owner/installation. MAP767a resolves existing control path/gate/
    canonical custody volume; no new approval descriptor/gate. Tesla owns
-   current runtime-graft-r1 source, Noether source review. Parent-selected
+   current runtime-graft-r2 Sourcef7a87b3b is closed with36focused SYN checks;
+   Noether independently reviews the repaired source. Tesla owns source-safe
+   activation-readiness, not installation or a broker visit. Parent-selected
    preparation entryOct26 18:00..18:15UTC and exitOct30 19:55..20:00 are not
    installed and do not prove nonoverlap. Actual owner/retirement/roots/IPC
    binding needs exact source/native qualification, not a caller boolean.
@@ -118,11 +120,11 @@ their budgets/results remain unchanged, not dispatch authority.
 
 ## Verification And Continuation
 
-Fresh repo authority7460a456:
-A/verification/current-qqq-h5-runtime-adapter-integration-20261025-v1/AUTHORITY.json.
-997serial/19086full25skip/19111total/8workers/Ruff/three Compose profiles PASS,
-exact1396 protected before/after/current match. Actual native a93077b8 is separate
-invented FakeClient evidence, not broker deployment. Earlier7629/43e historical.
+Fresh repo authority5fda9440:
+A/verification/current-qqq-h5-post-provider-clock-integration-20261025-v1/AUTHORITY.json.
+1022serial/19111full25skip/19136total/8workers/Ruff/three Compose profiles PASS,
+exact1396 protected before/after/current match. Actual native ddb53931 is separate
+invented FakeClient evidence, not broker deployment. Earlier7460/7629/43e historical.
 Docs/external-only
 changes may reuse it ONLY after exact fresh digest checks plus independent
 changed-output checks. New tracked code/test/runtime/control changes need

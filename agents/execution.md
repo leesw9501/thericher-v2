@@ -105,8 +105,12 @@ Hosta0e3/ae40851816SYN qualifies code/codec only, not an actual scheduled host.
 Parent prep entryOct26 18:00..18:15UTC/exitOct30 19:55..20:00, within originalL;
 late entry notOPEN1 replay/timing-liveness proof. Root MAP767a identifies existing
 control/gate/budget and canonical private volume, not a new descriptor oracle.
-Tesla now owns runtime-graft-r1 actual owner/retirement/control code; Noether
-independent review. No install/actual dispatch yet. Old NAS conditional peer
+Runtime-graft-r2 Sourcef7a87b3b/Consumerd7f3ec3e is closed36focused SYN checks,
+50own+499reused source refs/allchildren joined. PS7.5 imports and strict parsed
+argv physical-path normalization repair the source-only false denials. Noether
+independent review; Tesla activation-readiness-r1 checks source-safe actual
+metadata and installable bindings, not broker/Task invocation. allow_execute=false;
+no install/actual dispatch yet. Old NAS conditional peer
 coexistence is separate local unfinished work, not a newQQQ gate.
 
 NEW separately scoped L preparation: A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json

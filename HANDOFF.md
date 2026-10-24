@@ -256,9 +256,14 @@ installation, private/credential/broker call or original3job change yet.
 Review2c0c8f60 identified two actual-code false-denial risks before runtime:
 autoload-disabled owner bootstrap lost required explicit imports, and Windows
 argv raw/path representations differed. Current revision is runtime-graft-r2;
-PS7.5+ exact executable/import bootstrap and strict parsed-argv/path-only
-normalization are being repaired/reviewed. Do not install the older partial
-graft or interpret its mocked owner as an actual scheduled host.
+Sourcef7a87b3b/Consumerd7f3ec3e now closes36focused SYN checks/50own+499reused
+source references with all children joined. PS7.5+ imports and parsed argv
+physical-path normalization are repaired; other argv atoms/raw CIM continuity
+stay exact. The exit20->99 negative-check fault was the SYN wrapper's dot-source
+exit propagation, not a production guard change. Noether reviews the closed
+source; Tesla owns activation-readiness-r1 with actual source-safe metadata only.
+allow_execute=false; no new Task, broker call or installed owner. Do not install
+the older partial graft or treat mocked owners as real scheduled provenance.
 
 I actual prospective point COMPLETE, NEW research output, not F historical
 evaluation. Root A/research/current-toto-adapt7-prospective-point-20261025-v1;
