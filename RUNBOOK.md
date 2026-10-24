@@ -12,6 +12,22 @@ Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
 ## Current Actual Deployment
 
+Current research3ETF state-feedback comparison is SOURCE PREPARATION ONLY,
+not a scheduled Paper task or running GPU fit. Data actuald481/9055/4584/f41d:
+A/data/current-three-etf-held-feedback-inputs-20261024-v1.
+No rebuild:6184dates/gaps0/newTRAIN2002-2010 scaler/onebuild1verify/alljoined.
+Actor/trainer A/research/current-three-etf-held-feedback-development-20261024-v1
+and pure kernel A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1
+await actual combined source/native/runtime qualification. No model numerical GO.
+Futurefamily07:50..09:50UTC/3000active7200elapsed; use exact qualified commands
+only after Parent adoption, never infer runtime/GPU from a Source/plan.
+Closed flat waiting option a593 at technical-continuation-r1/FINAL-CONSUMER.json:
+3fits1596pred/native3/136/alljoined/411.7215upper/COMPLETE_FAIL_EQUAL_POLICIES.
+0financialintake/cells/cacheconsumption, PnL NOT_EVALUATED. Do not rerun original
+393 or spent e450 continuation. Single e450 reused old teacher, repaired exact
+guest/host publisher paths and originalraw adapter; complete IO schema native
+proof is required in new campaigns, not a toy canonical-field NPZ.
+
 Holdings-only primary4bd2 pushedba1345b; actual one-shot API COMPLETE. Authority:
 A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json
 f19d8b4f/232serial/18988fullPASS25skip/19013total/8workers432.31sec/helper85662exit0.

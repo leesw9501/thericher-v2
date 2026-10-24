@@ -6,17 +6,24 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-No current GPU fit. Closed paired CUDAA/B observed93%/6310MiBreserved each;
-never repeat for utilization. Continuation Sourcee486/FINAL5376 ACTUALLY closed
-5nativefits208pred/5marketfits2460pred/6newcells12cached/143checks/alljoined/
-removed/170.8066activeupper/0GPU/0retry. Old08:08deadline/debits unchanged.
-A/research/current-intraday-chronological-continuation-development-20261024-v1.
-NEW flat waiting-option source/Dataprep only:3CPUfits/1596market predictions/
-9newcells6cached/oneoutcome/0GPU; numerical GO pending actual ABI/sourceproof.
-07:11..09:11UTC/1800active7200elapsed, Strategy300upper/modelsource30upper/
-Dataactual once. Small SVD is CPU work; no dummy DL comparator. At07:15UTC
-4090free21908/24564MiB/util2%/37C; sample only, no future resource guarantee.
-Parent actual holdings query complete, not compute/GPU spend or PaperPnL.
+No running GPU fit. Prior flat question COMPLETE_FAIL_EQUAL_POLICIESa593:
+3marketfits1596pred/native3fits136/103checks/alljoined/411.7215activeupper,
+0financialcells/intakes. Single technical continuation consumed, no repeat.
+Paired earlier CUDA2fits actually observed93%/6310MiBreserved each but are
+CLOSED, not current utilization. No missing personal-app/GPU permission.
+
+New ready Data d481/9055/4584/f41d has6184dates, onebuild/verify/gaps0/alljoined,
+49.9150477upper once. Noether owns future3ETF pairedTCN resource/trainer source;
+Aquinas pure sequential kernel prep, no native/model construct or market fit yet.
+Family07:50..09:50UTC/3000active7200elapsed; known379.915upper before kernel/
+native/otherownedIO, no refund of older families.2marketfits<=200updates,
+100epochs/arm/pat20CHECK, native<=6updates512actorrows/market<=560630rows/
+6cells/0retry. Same existing CPU/CUDA source/runtime pinned before native.
+CPU/CUDA native timings and actual free/projected VRAM decide useful backend/
+concurrency, not an app allowlist or fixed old memory cap. Sum owned worker
+active times, distinguish end-to-end/coordinator waits/co-tenancy; no claimed
+running work from Source only. Reserve/debit complete trajectories efficiently
+rather than per-date JSON. Data/models stayD; no completed-model repetition.
 
 NEWpoint COMPLETE9b00a90d, source root
 A/research/current-timesfm-ordinal-dated-point-development-20261024-v1.

@@ -2,84 +2,115 @@
 
 ## One Company Outcome
 
-cost-aware-flat-waiting-option-entry-v1: obtain one bounded executable research
-decision on early entry's net advantage over waiting for a frozen later-entry
-policy, versus matched myopic entry. Reject concretely if data, native cashflow
-conformance or the frozen screen fails. Not an architecture sweep or a Paper
-profitability gate. Root C:/Users/Public/Documents/thericher-v2.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+three-etf-held-feedback-ablation-v1: complete one matched state-conditioned
+versus state-blind daily-target policy comparison using existing SPY/QQQ/IWM
+adjusted data and the exact three-asset carried fee ledger. Obtain a bounded
+decision, not a new platform or generic direct-utility novelty claim.
 
+Root C:/Users/Public/Documents/thericher-v2.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Run scripts/start_next_codex_task.ps1; follow HANDOFF/AGENTS/RUNBOOK/boards.
 Parent shared MD/Git/integration. Standing private no-cost Data/Research/KIS
-Paper authority remains; never KIS_LIVE_*, real money, paid/public work or raw/
-private values. Independent Paper preparation/results continue.
+Paper authority continues independently. Never KIS_LIVE_*, real money,
+paid/public work or raw/private values. No automatic Paper model swap.
 
-## Frozen Direction / Disjoint Owners
+## Adopted Direction / Split Work
 
-Strategy proposal a06753a5 and Claude SOUND_WITH_LIMITS/c2abe6f4:
-A/research/current-cost-aware-entry-mechanism-preparation-20261024-v1/PROPOSAL.json.
-Parent adopts the estimand, not numerical dispatch yet. Conservative origin
-2026-10-24 07:11UTC/hard09:11UTC/7200elapsed/1800active owned-worker seconds.
-Strategy300upper once/model-source30upper once/new Data/native/fits/I/O/failure/
-cleanup once; LLM/review/queue elapsed separate. Old clocks/debits stay.
+Proposalbf6858c8/Consumerf071be08, Claude REVISE/dc9b6c07 preserved/adjudicated:
+A/research/current-three-etf-held-feedback-ablation-preparation-20261024-v1.
+Accept matched initialization/zero-slot invariance, not an unsupported claim
+that deterministic AdamW decay advances RNG. No no-trade branch or inactivity
+claim. Both arms keep real holdings, daily target actions and identical fees.
 
-- Data/Kant owns A/data/current-flat-waiting-option-entry-views-20261024-v1.
-  Existing SPY/QQQ251scheduled sessions, no acquisition. Flat120/150 features,
- 31completed CLOSEs[d-31,d), fixed eight channels; fill121/151/terminal181 OPEN.
-  Original145TRAIN/43CHECK/63EVAL, A72/B73. Separate input/target/role leaves
-  and actual physical ABI; teacher inputs sealed before student labels.
-  No imputation/key deletion/clock shift. Onebuild/oneverify,<=300active1200elapsed
-  within company ceilings; old EVAL held leaf only in final accounting. No2026.
-  ACTUAL COMPLETE81f353b4/Source2917cc35/DTO0f268322/ABIdef04203:
-  1004input/A144/B146target rows,32SYN3186checks/Ruff/alljoined,25.655918upper
-  once. Parent9metadata refs match. DO NOT rebuild; consume actual ABI including
-  max running-peak drawdown over31completed CLOSEs. Datareview unavailable,
-  not agreement/global hold. Shared continuation1 remains unused.
-- Engine/Noether owns A/research/current-flat-waiting-option-entry-development-20261024-v1.
-  Three new CPU Ridge(alpha1/SVD) fits: A late teacher, B waiting-advantage early
-  model and matched B myopic early model. Own-chunk scalers, teacher B predictions
-  frozen before B labels. Waiting payoff stays signed, never hindsight max.
-- Parent exact Data/source adoption before native/model dispatch. Real native
-  three-fit safe-JSON/ABI and entry-offset scalar cashflow proof precedes market
-  fitting. Old fixed121 pricing cannot silently price151 entry.
+Parent freezes conservative origin2026-10-24 07:50UTC/hard09:50UTC,
+3000cumulative active owned-worker seconds/7200elapsed. Strategy240upper and
+Data-readiness30upper once; Engine source60upper once; actual new Data/kernel/
+native/fit/I/O/checkpoint/failure/cleanup once. LLM/review/queue elapsed separate.
+Actual phase reserves and exact Source must fit residual ceilings before any
+model native/market operation; no clock reset, refund, second pair or retry.
 
-## Finite Comparison
+- Data/Kant owns A/data/current-three-etf-held-feedback-inputs-20261024-v1.
+  Exact existing adjusted loader/context/snapshot, no new acquisition. Fixed3
+  X[N,9,31], adjusted OPEN/CLOSE[N,3], source/clock/knownness/role ABI.
+  TRAIN2002-2010, CHECK2011-2012; their exact counts sum2769. Reused EVAL_A
+  2013-2019/1762 and EVAL_B2020-July2026/1653; total6184, NOT6218.
+  NEW TRAIN-only channel scaler shared by both arms. Never old2002-2012 scaler
+  or unadjusted canonical marks, double dividends/splits, dropped/imputed rows.
+  Keep original scheduled-OPEN decision convention and prior-CLOSE state;
+  UTC-day-ended context cannot be relabeled literal prior-CLOSE availability.
+  Onebuild/oneverify,<=180active600elapsed within company ceiling.
+  ACTUAL COMPLETEd48134ac/Source905575e4/DTO45845b96/ABIf41d234d,
+  TRAIN2267/CHECK502/EVAL1762+1653/6184 total/allgaps0/alljoined;
+  49.9150477upper once, firstSYN08:19:38.975709UTC. Parent6metadata refs match.
+  Consume actual physical aliases/role leaves; DO NOT rebuild/double-normalize.
+- Invoked Kernel/Aquinas owns
+  A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1.
+  Small sequential callback wrapper over original exact fee primitive/Decimal
+  oracle; source and callable native fixtures, no numerical dispatch yet.
+  No general100-axis solver, new action space, framework or permanent role.
+- Engine/Steward/Noether owns
+  A/research/current-three-etf-held-feedback-development-20261024-v1.
+  Actor/trainer/checkpoint/source glue and one resource owner. Bind actual
+  Data/kernel interfaces before final Source and Parent model numerical GO.
 
-3marketfits/3nativefits/<=256native prediction rows;1596market predictions HARD
-including diagnostics/cold parity; two explicit B-only ETF early/late/cash
-frequency calibrations. One outcome intake,<=9newcells/6exact cached uniform/
-cash cells at0/10/25bp. No old refit/forecast/replay. Missing cache-economic
-compatibility is input_unavailable, not permission to rerun old controls.
-One shared pre-model/fixed-retained-output technical continuation within
-unchanged caps;0fit/prediction/cell retries.
+## Paired Contract
 
-At most one long entry per ETF/session, fixed fee-inclusive .05 INITIAL research
-budget each; no reentry/resizing/short/overnight/leverage/profit recycling.
-Freeze actions at10bp each leg; re-account SAME actions at0/25bp. Compare waiting
-option, matched myopic, B-only timing/participation hash, uniform121 and cash.
-At10bp growth must beat all risky controls and DD be no worse than myopic/uniform;
-positive net growth additionally required for positive modeled opportunity.
-Cash DD is not a hurdle. Equal sealed learned policies close noninformative
-with0newcells/0targetintake. Lower exposure alone is not alpha; reused development
-is not fresh replication. Tiny SVD fits use CPU, not dummy GPU utilization.
+Same four causal Conv1d/ReLU layers width8/dilations1,2,4,8, last8-vector plus
+four slots, Linear12->4/softmax,876parameters each. Complete CPU seed101
+initialization once, clone all bytes to both arms. Own prior-CLOSE stock3
+weights/g and(cash_weight-1)/g, g1 research sleeve; initial slots exactly0.
+Control slots always0 but its true portfolio/fees/cash/gradients still carry.
+No current-OPEN drift/future-CLOSE actor input; no role-state/gradient carry.
+This normalized research sleeve is NOT the private Paper tenth/bank.
 
-## Preserve Actual Paper / Verify
+Keep existing252*(mean daily log NAV growth-5*population variance),10bp each
+side on actual changed notional/terminal liquidation, AdamW.001/wd.01/float64.
+<=100epochs per arm/one update per epoch/CHECK utility patience20, earliest
+checkpoint on ties, restore safe best checkpoint. No EVAL-selected epochs,
+new scheduler/loss/architecture/seed/grid. Retain curves/stop/convergence limits.
+No detached candidate feedback/TRAIN ledger; no gradient in CHECK/EVAL.
 
-Prior holdings-only observation COMPLETE: actual execute32326846 at07:18:55UTC,
-read-only1POST4GET/7positive positions/0open orders/submitfalse. Source2b258/
-controller9e043/COMPLETE213e/independent27bc; joined/container absent.
-A/execution/current-paper-holdings-only-native-probe-20261024-v1/technical-r1.
-Do not repeat it for research. Counts are sequential configured-account facts,
-not owned fills/funds/full risk/F9 closure. F9 remains UNKNOWN/HELD.
-Joint17 actual222d/d092 and H20 capture474d/9be5 COMPLETE AS DEPLOYMENTS;
-GRU/TimesFM future tasks/original shared tenth/bank/requests remain untouched.
+Finite totals:2marketfits/<=200market optimizer updates;<=6native updates/
+512native actor rows; market actor/encoder rows HARD560630 including all
+TRAIN/CHECK and6830final EVAL rows.6new10bp cells:2models+daily uniform for each
+of2roles,10245readout mark steps. No full EVAL cold rerun, recost grid, new
+fitted baseline, extra diagnostics/continuation/retry. Uniform is daily
+rebalanced, not buy-and-hold. Initialcash0 growth is a reference, not zero-DD gate.
+For BOTH reused roles require paired growth/utility improvement and no-worse
+DD; useful relative opportunity additionally beats aligned uniform growth/DD.
+Exposure differences and reused-history/single-pair limitations stay explicit.
 
-Prior continuation53769c3d COMPLETE_FAIL:5marketfits2460pred/6newcells/143checks/
-170.8066activeupper/alljoined; no repeat/Paper swap. Pooled Ridge1305 and paired
-CUDA8b14 remain closed failures, not ready numerical jobs.
+Source weights/scaler freeze before EVAL; enforce causal per-step ordering,
+not an impossible all-future-actions-before-all-outcomes seal. Actor first sees
+context/prior-CLOSE state, then accounting sees currentOPEN, then CLOSE marks.
+Use actual fee-funded quantities/cash and final liquidation once.
 
-Reuse primary authorityf19d only while exact1392source digests match; fresh
-focused native/independent checks qualify external source/outputs. New tracked
-runtime/control changes require AGENTS serial/full/Ruff/three Compose(.env.example).
-At material completion verify/commit/push, refresh boards, replace NEXT with
-ONE material next outcome and continue the active request.
+## Native / Resources / Preserve
+
+Actual source/import/schema/role IO and sequential gradient/Decimal parity,
+clone/initialcash equality/unused-column invariance/future-price perturbation
+tests BEFORE market fits, within the SAME native counters. Pin existing
+CPU/CUDA image/runtime; host dist-info alone is not qualification.
+Measure native CPU/CUDA usefulness and free/projected VRAM/headroom. Useful
+concurrent fits may run under one Steward if measured capacity permits.
+No app-name approval wait, dummy GPU load, user-app killing or driver change.
+
+Prior flat-wait question COMPLETE_FAIL_EQUAL_POLICIES:
+A/research/current-flat-waiting-option-entry-development-20261024-v1/technical-continuation-r1/FINAL-CONSUMER.json
+a5939dbc; total3marketfits1596pred/native3fits136,103checks/Ruff/alljoined/
+411.7215activeupper. Bteacher buy0, identical WAIT/MYOPIC targets/coefficients/
+EVAL1early125cash.0outcome intake/newcells/cached consumption; PnL UNKNOWN,
+not zero. Single continuation consumed, no further dispatch. Original393
+failure/teacher bytes retained; e450 fixed all producer refs/raw-adapter schema.
+Do not reuse those closed allowances/forecasts as this new experiment.
+
+Holdings actual32326846/213e at07:18:55UTC:7positive positions0open/read-only/
+submitfalse; NOT owned fills/full risk/F9 closure. No repeated query for research.
+Joint17 actual222d/d092 and H20 capture474d/9be5 complete AS DEPLOYMENTS.
+GRU/TimesFM/Joint17 future tasks and original shared tenth/F9UNKNOWN-HELD stay.
+
+Current primary authorityf19d reuses only exact1392source digests. External
+source/outputs need their own actual focused/native proof, not another repo
+suite. Tracked runtime/control changes follow AGENTS fresh serial/full/Ruff/
+three Compose(.env.example). At material completion verify/commit/push, refresh
+boards, replace NEXT with ONE material outcome and continue active work.

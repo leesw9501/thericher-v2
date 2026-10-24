@@ -6,26 +6,37 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Ready Package
 
-New flat waiting-option model/source preparation assigned to Noether:
-A/research/current-flat-waiting-option-entry-development-20261024-v1.
-Proposala067/Consumer79e4/ClaudeSOUNDlimitsc2ab, early net advantage over a
-frozen later-entry policy versus matched myopic early model. Data/Kant builds
-exact flat120/150 ABI, not held136 relabel.3CPUmarketfits/3nativefits/
-1596market predictions/2explicit B-only frequency calibrations/9newcells6cached/
-oneintake/0GPU. Origin07:11/hard09:11UTC1800active7200elapsed, Strategy300upper+
-modelsource30upper+Dataactual once. No native/model numerical GO until exact
-Data/source/cashflow proof. Signed waiting payoff, no hindsight max; lower
-participation alone is not alpha. Current source preparation is not fitting.
+Flat waiting-option FINALa5939dbc COMPLETE_FAIL_EQUAL_POLICIES:
+A/research/current-flat-waiting-option-entry-development-20261024-v1/technical-continuation-r1.
+Total3marketfits1596pred/native3fits136/103checks/Ruff/alljoined/
+411.7215activeupper. Bteacher buy0 -> same targets/coefficients and EVAL
+1early125cash each.0intakes/newcells/cached consumption; PnL NOT_EVALUATED,
+not zero. Original393 failure/teacher retained; singlee450 continuation spent.
+No old fit/pred/native retry or threshold rescue.
 
-Prior chronological continuation ACTUALLY COMPLETE_FAIL/FINAL53769c3d:
-A/research/current-intraday-chronological-continuation-development-20261024-v1.
-Sourcee486/Resultb56a; native5fits208pred,market5fits2460pred,6newcells12cached/
-143checks/Ruff/all9joined/removed/170.8066activeupper/0GPU/0retry. Actualchain
-07:14:22..39UTC, unchanged08:08deadline.10bp growth/DD% -1.306047/1.306047 vs
-matched-1.311070/1.312056 vs uniform-1.104214/1.118199; no Paper swap/refit.
-Stage Data21e3/DTO255c complete once; prior teachers/scalers remain immutable.
-Old pooled Ridge1305 COMPLETE_FAIL1fit1884pred12cells, not running; H1/H5
-paired CUDA closed. No refit/reranking/replay of old immutable outputs.
+NEXT three-etf-held-feedback-ablation-v1, Proposalf071/bf6858c8:
+A/research/current-three-etf-held-feedback-ablation-preparation-20261024-v1.
+Claude REVISE/dc9b preserved/adjudicated, not agreement. Both876-paramTCN
+daily-target policies have identical init/parameters/fees/real carried book;
+one sees own prior-CLOSE state4, one zero slots. No exact no-trade claim.
+Noether source/trainer root A/research/current-three-etf-held-feedback-development-20261024-v1.
+Aquinas invoked pure callback kernel source root
+A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1.
+No new model native/fits yet. Kernel/actual schema/runtime complete native proof
+and Parent exact Source GO precede2marketfits/<=200updates/100epochs perarm/
+pat20CHECK/<=6nativeupdates512rows/560630market actorrows/6cells/0retry.
+Existing CUDA only if measured useful/headroom; no utilization-only work.
+
+Data ACTUAL READYd48134ac/905575e4/DTO45845b96/ABIf41d234d:
+A/data/current-three-etf-held-feedback-inputs-20261024-v1.
+TRAIN2267/CHECK502/EVAL_A1762/EVAL_B1653 total6184, newTRAIN-only9channel
+scaler/raw+normalized X[N,9,31]/adjusted O,C[N,3]/allgaps0, onebuild/verify/
+alljoined.49.9150477upper once, Parent6metadata refs match. Do not rebuild or
+double-normalize. Prior OPEN decision convention with past-CLOSE book state,
+not a renamed previousCLOSE cutoff. Allhistory reused/revised, no PIT/Paper claim.
+Newfamily07:50..09:50UTC/3000active7200elapsed; Strategy240+Datareadiness30+
+Engine60+actualnewData49.915=379.915upper before kernel/native/otherownedIO.
+Finalize exact residual phase reserves before any model numerical dispatch.
 
 ## Operational Candidate / Consumer
 

@@ -6,6 +6,19 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+NEW3ETF held-feedback packet ACTUAL COMPLETEd48134ac/Source905575e4/
+DTO45845b96/ABIf41d234d/allowlistfbe7df21 at
+A/data/current-three-etf-held-feedback-inputs-20261024-v1.
+TRAIN2267/CHECK502/EVAL_A1762/EVAL_B1653 total6184. Existing verified adjusted
+loader/context, newTRAIN-only9channel mean/std, raw/normalized X[N,9,31]
+separate from O/C[N,3], actual PMC5.4 OPEN/CLOSE/priorCLOSE/32D1 clocks.
+Fullrequiredgaps0,1build1verify/no retry/alljoined,49.9150477upper once,
+firstSYN08:19:38.975709UTC. Parent6named metadata refs match. No model/replay/
+API/private/Task; no dataset rebuild/double adjustment/oldscaler/PIT claim.
+Noether model and Aquinas kernel source preparation consume this exact ABI;
+model numerical GO still pending. Family07:50..09:50UTC/3000active7200elapsed.
+Older flat81f3 and3ETF readinessb7fc/9926 remain immutable, not new build work.
+
 Kant COMPLETE/closed NEW flat120/150 state views:
 A/data/current-flat-waiting-option-entry-views-20261024-v1.
 Consumer81f353b4/Source2917cc35/DTO0f268322/ABIdef04203/allowliste5f72b75.

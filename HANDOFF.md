@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 16:40KST /07:40UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-24 17:19KST /08:19UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -36,50 +36,71 @@ execute old probe as recovery.
 
 ## Next Outcome / Actual Owners
 
-NEXT cost-aware-flat-waiting-option-entry-v1. Proposal a06753a5/Claude
-SOUND_WITH_LIMITS/c2abe6f4:
-A/research/current-cost-aware-entry-mechanism-preparation-20261024-v1.
-Early advantage over frozen causal later-entry policy vs matched myopic entry,
-not fixed-entry exit retuning. New conservative07:11..09:11UTC/1800active/
-7200elapsed, Strategy300upper/model-source30upper/Dataactual once.
-Parent exact model Source393e0e10 adoption/GO now granted, not yet execution
-proof. Actual binding is runtime-source-r1, NOT preparation rootde9547:
-A/research/current-flat-waiting-option-entry-development-20261024-v1/runtime-source-r1/SOURCE.json.
-Noether owns one native->teacher->models->readout chain,3nativefits136planned/
-3marketfits1596pred/9newcells6cached/oneintake/0GPU/no numerical retry.
-156AST/metadata checks/Ruff and Parent fresh inert --check-source pass.
-Known355.655918upper before controller/native; hard09:11UTC/caps unchanged.
-After interruption inspect exact runtime COORDINATOR/phase CLOSED/CHAIN-CLOSED
-before any resume; missing completion is UNKNOWN, never blind rerun.
-ACTUAL first chain stopped TECHNICAL_INCOMPLETE07:45:59UTC, owner58472,
-all3phase workers joined/removed/cumulative362.5265094upper. Native3fits136
-and teacher1marketfit290pred are COMPLETE; MODELS failed BEFORE0fits/0pred/
-B-target intake at TEACHER_SEAL_BEFORE_B_TARGETS. Exact B teacher model ref
-/out/LATE_A.json differs from admitted Windows host path, same1655bytes/SHAf7cd.
-Parent also found UNREACHED readout raw-held/canonical-fields mismatch; original
-data_adapter.HELD_MEMBERS+marks is required. Do not rerun the chain/native/A fit/
-B teacher forecasts. Noether first-cause/fixed-output recovery preparation,
-Godel concise advisory. Remaining2fits1306pred/9newcells/onefirstoutcome only if
-Parent adopts ONE predeclared shared continuation inside unchanged09:11/caps.
-No recovery GO yet; no target/seed/split/model retune or debit refund.
+Prior flat-wait outcome COMPLETE_FAIL_EQUAL_POLICIES/FINALa5939dbc:
+A/research/current-flat-waiting-option-entry-development-20261024-v1/technical-continuation-r1/FINAL-CONSUMER.json.
+Total3marketfits1596pred/native3fits136,103checks/Ruff/alljoined/removed,
+411.7215activeupper. Bteacher buy0 -> equal WAIT/MYOPIC targets/coefficients/
+EVAL1early125cash.0outcome/newcells/cache consumption. PnL/positive opportunity
+NOT_EVALUATED, not zero. Original393 first failure/teacher bytes retained;
+onee450 technical continuation completed08:10:23UTC, no native/teacher repeat
+or second continuation. Raw-held fix passed host SYN but actual held path
+was not reached because of declared equal-policy kill. No Paper swap.
 
-- Kant/Data COMPLETE/closed:81f353b4/Source2917cc35/DTO0f268322/ABIdef04203 at
-  A/data/current-flat-waiting-option-entry-views-20261024-v1.
-  Existing251sessions/flat120,150/8features/A72,B73/TRAIN145,CHECK43,EVAL63,
-  inputs1004/AZ151144/Btargets146.1build1verify/32SYN3186checks/Ruff/alljoined.
-  FirstSYN07:31:10.958497UTC/Data25.655918upper once, no continuation used.
-  Parent9named metadata hashes match; no array open/rebuild. Explicit max
-  running-peak drawdown over31CLOSEs accepted before model Source. Data review
-  unavailable842f is not agreement; proposal review361a is separate SOUNDlimits.
-- Noether/Engine and sole GPU coordinator:
-  A/research/current-flat-waiting-option-entry-development-20261024-v1.
-  Model/entry-aware cash-wrapper/native preparation, no fits yet.3marketfits/
-  3nativefits/1596market predictions/9newcells6cached/oneintake/0GPU.
-- Godel/Strategy79e4 complete; now source-only next useful GPU-capable portfolio
-  learning readiness, not a GPU job/dispatch or second company objective.
-- Aquinas/Execution actual public holdings readback and capped-empty audit
-  complete/closed. No permanent worker. Audit evidence below, no deployment.
-Parent exact source/Data GO and Git; package restrictions never block other lanes.
+NEXT three-etf-held-feedback-ablation-v1. Proposalf071/bf6858c8/ClaudeREVISE
+dc9b preserved/adjudicated, not agreement:
+A/research/current-three-etf-held-feedback-ablation-preparation-20261024-v1.
+PriorCLOSE held-weight input versus zero-state inputs, both REAL daily-target
+carried ledgers/fees, no new no-trade branch/inaction claim or generic novelty.
+New origin07:50/hard09:50UTC/3000active7200elapsed. Strategy240upper and Data
+readiness30upper once, Engine60upper once, actualnewData/kernel/native/fits/
+cleanup once. Exact reserves before model Source GO; no numerical model GO yet.
+
+- Kant/Data COMPLETE/closed:d48134ac/Source905575e4/DTO45845b96/ABIf41d234d:
+  A/data/current-three-etf-held-feedback-inputs-20261024-v1.
+  Onebuild/verify/gaps0/alljoined,49.9150477upper once. FirstSYN08:19:38.975709UTC,
+  Parent6metadata refs match. TRAIN2267/CHECK502/EVAL1762+1653 total6184.
+  NewTRAIN-only9channel scaler/raw+normalized X[N,9,31]/adjusted O,C[N,3],
+  actual clock/knownness ABI. Do not rebuild/double-normalize/use oldscaler.
+- Noether/Engine and sole resource owner active:
+  A/research/current-three-etf-held-feedback-development-20261024-v1.
+  Twin876-paramTCN actor/trainer/safe checkpoint/source glue.2fits<=200updates/
+  100epochs each/pat20CHECK;<=6native updates512rows/560630market actorrows/
+  6cells/10245readoutsteps/0retries. CUDA only if measured useful/headroom.
+- Aquinas/invoked pure kernel active:
+  A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1.
+  Small sequential callback over existing exact3asset fee primitive/Decimal
+  oracle, source/native fixtures only, no numeric execution yet. Disjoint writes.
+- Godel/Strategy source refinement complete/closed. No permanent LLM inferred.
+Parent owns integration/shared MD/Git and final exact model Source GO. This
+normalized g1 research sleeve is NOT private Paper bank/tenth/capital authority.
+
+Existing input readinessb7fc/Source9926 at
+A/data/current-three-etf-causal-carry-input-readiness-20261024-v1.
+Old3ETF raw source/adjusted loader/context/fee libraries exist. General100-axis
+carry solver is NOT a prerequisite. New state/step ABI still needs actual Data/
+native qualification. Unknown arrival/finality/revised adjustment limits remain,
+not a restriction on independent Paper. Actor cutoff remains scheduledOPEN
+with prior-CLOSE book state, not a relabeled previous literalCLOSE cutoff.
+
+## Retained Flat Input / Recovery Knowledge
+
+Data81f353b4/Source2917cc35/DTO0f268322/ABIdef04203 COMPLETE ONCE:
+A/data/current-flat-waiting-option-entry-views-20261024-v1.
+Inputs1004/A144/B146,32SYN3186checks/Ruff/Data25.655918upper/alljoined.
+Oldreused251session A72/B73/CHECK43/EVAL63, explicit max31CLOSE drawdown.
+Parent9metadata refs matched. Do not rebuild. Data review unavailable842f not
+agreement/global hold; proposal361a separate SOUNDlimits.
+
+Original393 native3/Ateacher1fit290pred completed; MODELS first failed before
+Btargets/0fits0pred because '/out/LATE_A.json' guest ref differed from Windows
+host ref despite same1655bytes/SHAf7cd. One shared technical continuatione450
+explicitly bound named producers and unchanged bcc9 raw adapter/5934kernel.
+135metadata/source checks+11host raw-conversion SYN,0extra fits/native preds,
+then remaining2fits1306pred done, alljoined. Models/calibrations embedded refs
+also needed canonical published host paths; do not fix only first comparison.
+Always native-test COMPLETE producer-consumer physical schema/namespace, not
+a same-container toy IO or a canonical field list against raw NPZ. Histories/
+firstfault/carry362.5265/392.5265/final411.7215 and original09:11 clock preserved.
 
 ## Actual Deployments / Due / Do Not Repeat
 

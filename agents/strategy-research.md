@@ -6,6 +6,21 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
+Current next paired3ETF proposal SOURCE READYf071be08/Proposalbf6858c8:
+A/research/current-three-etf-held-feedback-ablation-preparation-20261024-v1.
+Claude REVISE/dc9b preserved/adjudicated: full cloned initialization and unused
+zero-slot invariance accepted; deterministic AdamW decay is not an RNG draw.
+State-conditioned versus state-blind876-paramTCN daily targets, same actual
+carried ledger/loss/fees; omit new no-trade branch, no inactivity/first-use claim.
+Fixed3 existing source/solver reuse avoids general100 carry ABI prerequisite.
+Data actuald481 ready6184dates/newTRAIN-only scaler, not metadata-only fitness.
+Noether actor/source and invoked Aquinas kernel prep, no new model numerical GO.
+Family07:50..09:50UTC/3000active7200elapsed; future2fits<=200updates/6native
+updates512rows/560630market actorrows/6cells/0retry. Strategy240upper once.
+Flat a593 COMPLETE_FAIL_EQUAL_POLICIES/3fits1596pred/0financialtargets; no PnL
+or zero-return inference, no retraining/threshold changes. Readiness729c and
+b7fc remain scoped source facts, not proof every historical model is untried.
+
 NEW source preparation COMPLETE79e481fd/Proposala06753a5/ClaudeSOUNDlimitsc2ab:
 A/research/current-cost-aware-entry-mechanism-preparation-20261024-v1/CONSUMER.json.
 One distinct estimand: early net entry advantage over waiting for frozen causal
