@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Observed through 2026-10-25 00:04KST /Oct24 15:04UTC. Root C:/Users/Public/Documents/thericher-v2.
+Observed through 2026-10-25 01:18KST /Oct24 16:18UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -10,6 +10,19 @@ real money, paid/public work or raw/private values. ONE original shared virtual-
 cash tenth/basis/costs/losses/pending, no profit expansion/foreign adoption.
 F9 UNKNOWN/HELD. No operator decision presently. Preserve untracked %SystemDrive%/.
 Detailed closed history is Git4ecc4cf/ba1345b and exact consumers, not this board.
+
+Current I prospective point is NEW research output, not continuation of F's
+historical evaluation. Data479565eb/e44b/DTO7f82ec1e is COMPLETE:3Tiingo EOD
+GETs/no retry/252same-vintage adjClose sessions throughOct23/missing0;
+observed Oct24 16:01:45UTC, revised/nonPIT. Actual feature/clocks remain on M.
+Root A/research/current-toto-adapt7-prospective-point-20261025-v1;
+corrected Source81e89f1a/Consumerf799c13c,29pure checks. Parent22refs match.
+Container-name shadowing caught/fixed before any numerical effects; prior
+Source preserved. Noether has Native-only GO with fresh measured resource ACK;
+same model-only reader/invented producer->cold RO consumer first. No actual
+retained-model/current-packet point GO yet. Family prior490.7093143upper,
+hard16:47:49UTC/1200active; Native180/point240/cleanup180/remainingverify30.
+No old F EVAL/outcomes/refit/regrade or fourth Paper slot/orders/schedules.
 
 ## Completed / Actual Account Observation
 
@@ -272,10 +285,54 @@ A/research/current-toto-nested-checkpoint-reference-reader-20261024-v1.
 chains/10metadata files verified. TWO tensor payloads unread/unverified by this
 reader;0model/codec/forward/labels/fits/cells/GPU/alljoined. ClaudeSOUNDlimits.
 Not F continuation or numerical recovery. No current numerical GPU worker.
-Godel now owns TabICL four-action classifier source-only feasibility at
+H actual COMPLETE_FAIL_CLOSED58fb8ea7/Sourceb9d04ff3:
+A/research/current-tabular-icl-four-action-development-20261025-v1/FINAL-CONSUMER.json.
+Native CPUproducer->separate RO CUDAconsumer SAME resolver/class/FP32view/
+probability/prefix/ledger PASS:5calls245rows2loads, before market.
+Market GPU1contextfit/1load/62singletonforwards69750physicalrows plus1CPU
+Logistic fit/shared1raw scaler/PCA+1official view;0deep optimizer updates.
+Exact3cells435marks/1EVALintake, all4children joined/removed/lease released,
+160fixed checks/Parent6refs+primary predicates checked/1145.7382upper.
+GPU market peakreserved216MiB/allocated188MiB, actual co-tenanted timing.
+Growth/DD%:TabICL0/0 (ALL29CASH),Logistic+.16237/8.34659,
+uniform-.01742/8.99399. GrowthFAIL/utilityDDpass. Three actual readout cells,
+not zero-intake/unknown PnL. No contextual allocation benefit/alpha/fallback/
+Paper promotion. Original alias-only kill did not trigger; do not regrade.
+No retries/continuations and no H native/model/readout repeat.
+Current independent direction readiness: Kant exact Oct23 prospective252input
+homology/cursor inspection; Godel/Claude challenges a NEW retained-F ADAPT
+prospective-point consumer, NOT old F EVAL/readout/training or a Paper order.
+No new model/point GO from that proposal. Company still awaits Oct26 original
+three natural entries; no substitute request/slot/budget or schedule expansion.
+Kant identified concrete inputgap: latest confirmed Tiingo Oct2snapshot ends
+Sep30 (315sessions/ETF), lacks17Octsessions/51close slots. ExistingF source is
+Aug9 raw adjClose, NOT canonical unadjusted close; currentinput homology unproven.
+Under existing July18 Tiingo3ETF EOD authority, Parent assigned exactly3new
+responses for2025-07-01..Oct23 plus one same-vintage adjClose252 feature build/
+verify. Root A/data/current-toto-prospective-oct23-inputs-20261025-v1;
+raw/canonical M, namedscopedtokenreader, no other.env/materialized secrets/
+KIS/live/model/oldFEVAL/order. Origin15:54/hard16:14UTC/300active1200elapsed.
+No retry/provider blend/old-prefix stitching; actualacquisition/QA pending.
+
+Retained H readiness (consumed/CLOSED):dc14eca3/Source990722b4/Proposalf6fbdc08:
 A/research/current-tabular-icl-four-action-readiness-20261025-v1.
-New mechanism/dated trusted checkpoint/rights/safe loader/runtime precede any
-adoption/download/model/GPU; not yet a ready numerical job or alpha evidence.
+Parent adopted ORIGINAL3cells435marks, not the late fourth-financial-baseline/
+minimum-activity suggestion. TRAIN-majority diagnostic/cash reference/constant
+action and weak-baseline limitations retained; no qualified selection/alpha.
+Legacy HFjingang/TabICL-clf revision eaf789a9b25ee8486d6f48997ba076f850bbc30b,
+tabicl-classifier-v1.1-0506.ckpt108313079bytes/SHAcd0296d7..., upstreamMay6
+before May7CHECK. Current renamed file has DIFFERENT bytes; never substitute.
+Codev0.1.4/commit1badfa744f3098926acae9fabf63e0cec5dd7237, code/model cardBSD3,
+official loader weights_only=True; actual restricted load still UNRUN.
+Common TRAIN panel756->scaler/PCA8 then official single internal FP32 view for
+TabICL and Logistic4; frozen1124TRAINsupport/33CHECKdiagnostics/29EVAL,
+singleton causal queries/n_estimators1/no CHECK tuning, EVAL prices after seal.
+H origin15:02:32/hard17:02:32UTC/3600active7200elapsed inclusive preparation.
+Tesla concrete Source at A/research/current-tabular-icl-four-action-development-20261025-v1;
+Noether Source/metadata plus separately approved exact acquisition+import at
+A/research/current-tabicl-v1-runtime-readiness-20261025-v1/acquisition-import-r1.
+No model/native/GPU GO yet. Safe binary acquisition/import is candidate-local,
+no new framework/primary runtime or Paper change. All closed F/G caps remain.
 F resource64537e5e/contract4d0f snapshot14:22:36UTC/free22173MiB/host37.1GB/
 D38.76%, no model/lease. Source-bound fresh ACK still needed at actual dispatch.
 After F-scoped DECISIONS append the old exact1392 check correctly fails ONLY
@@ -403,14 +460,16 @@ failures/debits remain Git4ecc4cf and role/shared-custody consumers.
 
 ## Verification / Recovery
 
-Authorityf19d8b4f:
-A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json.
-232serial/18988fullPASS25skip/19013total/8workers432.31sec/helper85662exit0/
-clean child+lease/Ruff/default+research+accounting Compose(.env.example) PASS.
-1392manifest76f5 explicitly POST-run, not pre-run; prior1390 checked before
-additions/two staged hashes frozen during helper. Reuse command in RUNBOOK.
-External changes need native/independent proof, not another suite while1392
-matches. Historical2ef cannot cover holdings.
+Current authority134a6866:
+A/verification/current-toto-f-scoped-control-integration-20261024-v1/bootstrap-r7/AUTHORITY.json.
+280focused serial+1harness regression/18988fullPASS25skip/19013total/8actual
+workers/394.21pytestsec; checked Global mutex/lease/current-child cleanup,
+Ruff/default+research+accounting Compose(.env.example) PASS. Exact1392
+before/after/current digests match. Earlier f19d no longer covers the later
+F-scoped DECISIONS append; do not overwrite its manifest or reuse it.
+Docs/external-only work may reuse134a only while exact1392 still match.
+External helpers require separate native/independent proof, not repo-suite
+reruns. No tracked code/control changes in the present I package.
 
 Custody readers: networknone/source+privateRO/actual-writer admission/before-
 after membership+identity+mtime+bytes, never recovery observe(). Fresh broker

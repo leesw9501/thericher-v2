@@ -1,12 +1,20 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-24 23:24KST. A=D:/thericher-v2/model-artifacts.
+2026-10-25 01:18KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-No active numerical/GPU PID or lease. A Source773b warm-support study closed
+I resource readiness4cb9d919/c3a52901 complete, snapshot16:02UTC free17979MiB/
+host28.28GB/no lease. Noether now owns Native-only GO for corrected Source
+81e89f1a/Consumerf799c13c at current-toto-adapt7-prospective-point-20261025-v1.
+Fresh actual ACK/lease/PID still required at dispatch; readiness is not GPUuse.
+Projection4GiB worker+4GiB desktop reserve, host8+8GiB. Prior490.7093143upper,
+Native<=180 cumulative/hard16:47:49UTC/family1200. No actual retained-model or
+current-input point until Native PASS/Parent stage GO. Original F/H closed.
+
+Prior closed allocation: A Source773b warm-support study closed
 COMPLETE_FAIL05b02e54/Deliveryb2fb14c9; all five children joined/removed.
 Actual2CPUfits59+163NEWupdates/616242rows/6restores/4cells. Inherited epoch100
 not repeated, old/recent selected109/213,bothPAT50. WorkerSUM48.4642s, whole

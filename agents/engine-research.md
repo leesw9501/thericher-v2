@@ -1,10 +1,24 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 23:24KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-25 01:18KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Ready Package
+
+I NEW prospective ADAPT7 point, root
+A/research/current-toto-adapt7-prospective-point-20261025-v1.
+Data479565eb/e44b complete252throughOct23; Source81e89f1a/Consumerf799c13c.
+Readinessfc1493/92ffa/ClaudeSOUND_WITH_LIMITS. Parent22source refs match;
+29purecases, pre-GO container-name correction preserved. Noether Native-only
+GO now: invented full-shape producer->coldROconsumer, SAME model-only reader.
+Actual retained state.safetensors identity/loadability remains unverified
+until point stage. No point GO/oldF EVAL/outcomes/refit/regrade. Model-only
+restoration does not construct optimizer/scheduler or resume RNG.
+Family prior490.7093143upper/hard16:47:49UTC/1200active. Native<=180 cumulative,
+one future packet<=240 after Native PASS;0fits/0financialcells/0orders/schedules.
+Point is research-only dated prediction, not F performance/completion,
+independent alpha, Execution compatibility or a fourth installed Paper slot.
 
 C ACTUAL COMPLETE_FAIL_CLOSED b75fb38d/Sourcefad5cf23/Result93243edf:
 A/research/current-toto-payoff-representation-development-20261024-v1.
@@ -49,9 +63,29 @@ MSE69epochs/best5,SPO70/best6,bothPAT64. Growth/DD% MSE+5.97778/8.01069,
 SPO-2.41840/14.84775,uniform-.01742/8.99399; all SPO primary predicatesFAIL.
 No fallback/independent alpha/Paper promotion. Late repair rule NOT adopted
 after close. Native separate RO-phase fixture unrun; actual readout succeeded.
+H actual COMPLETE_FAIL_CLOSED58fb8ea7/Sourceb9d04ff3 at
+A/research/current-tabular-icl-four-action-development-20261025-v1.
+Native actual CPUproducer->ROCUDAconsumer5calls245rows2loads/prefix/API/
+class/preprocessing/ledger PASS before market.1GPUcontextfit+62singleton
+calls69750physicalrows/1load,1CPU Logisticfit/1rawPCA/scaler/1officialview.
+0deep optimizer updates/3cells435marks/1EVALintake/160checks/all4children
+removed/lease free/1145.7382upper. Peakreserved216MiB/allocated188MiB.
+TabICL ALL29CASH, growth0/DD0; Logistic+.16237%/8.34659%, uniform-.01742/8.99399.
+GrowthFAIL/utilityDDpass; actual three cells, not an alias-zero-intake result.
+No useful conditional allocation/alpha/Paper promotion or H rerun.
+I future-input consumer above supersedes the source-only readiness projection.
+Original three Paper entries remain unchanged.
+
 Parent G4Source members/2metadatarefs/primary predicates independently checked;
 182fixed-output checks PASS. New TabICL four-action classifier readiness is
-Strategy source-only, no public download/model/native/GPU GO yet.
+Strategy packetdc14/9907/f6fb complete; Parent adopted ORIGINAL3cells435marks,
+not late4thcell/min-activity amendment. Concrete H Source now Tesla-owned at
+A/research/current-tabular-icl-four-action-development-20261025-v1.
+TabICL legacy4action vs Logistic4, sharedTRAIN756->PCA8->officialFP32view,
+1124support/33CHECKdiagnostic/29EVALsingleton queries. N_estimators1, no CHECK
+selection/support updates/extra transforms. H3600active7200elapsed conservative
+15:02:32..17:02:32UTC incl all preparation. Noether exact public acquisition/
+import readiness disjoint; no actual model/native/GPU GO until concreteSource.
 
 Retained F source contract (consumed/CLOSED above): readiness6c964fa9/fceb182d/
 b7ba642f adopted; Tesla concrete Source,

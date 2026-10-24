@@ -1,10 +1,31 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 23:24KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-25 01:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
+
+Current NEW prospective Oct23 feature-only acquisition/build COMPLETE:
+A/data/current-toto-prospective-oct23-inputs-20261025-v1.
+Existing July18 Tiingo StandardEOD3ETF authorization/approved scoped token
+reader reused, not another credential grant. Exactly3requests/no retry,
+2025-07-01..2026-10-23; all bytesM, one newvintage/raw adjClose252, no provider
+blend/oldprefix/double adjustment or canonical unadjusted close substitution.
+Consumer479565eb/Sourcee44b549a/DTO7f82ec1e/ABIc10cc246 verified. Exactly3GET
+attempted/accepted/closed,0retry; new snapshot332sessions per ETF. Required
+252context2025-10-23..2026-10-23 is complete:756closes/missing0/F64rawbytes
+match/F32relative-error5.7030e-8<2^-24. Native16checks/build1/verify1/RuffPASS,
+all4children joined;100.7093143active-upper once, not the300 ceiling.
+Observed availability2026-10-24T16:01:45.172522UTC; revised adjusted/nonPIT,
+not the old F TRAIN vintage or historical decision-time/finality proof.
+Features M/us_equities/research_inputs/current-toto-prospective-oct23-inputs-20261025-v1/POINT;
+features712558bf/clocks229881c8. New causal context may contain past2026 dates;
+it is NOT an old F EVAL packet/outcome intake. No future target prices.
+F actualTRAIN uses Aug9 Tiingo raw adjClose/revised nonPIT/USD/FXnone; preserve.
+Original300active/1200elapsed/origin15:54/hard16:14UTC bounds remain closed.
+No model/oldFEVAL/fit/APIKIS/order/schedule. Godel challenges NEW future-point
+consumer separately; this snapshot does not promote a model or bind old jobs.
 
 F historical TRAIN build/verify ACTUAL COMPLETE_DATA_ONLY8004f1ad:
 A/data/current-toto-task-adaptation-inputs-20261024-v1;
