@@ -63,10 +63,25 @@ Saved point only, no fit/inference/task/broker/custody changes; full3asset
 axis/cash0, QQQ/NAS only, actual AMS preserved unsupported. Updated SDK6423
 admits offline; not a fourth installed job or runtime completion. Native16/
 independent8ec3/fresh repo43e4 support preparation only. Existing3 jobs unchanged.
-Noether prepares M conditional full-v-diagonal covariance expert, root
-A/research/current-three-etf-conditional-covariance-development-20261025-v1;
-not completed training or a numerical GO. Parent exact Source/native adoption
-and existing caps still apply. No duplicate F/I/L training or global GPU hold.
+M original historical fit contrast CLOSED638a before any Native/model/data;
+340upper/old clocks retained. N DIFFERENT future-only expert COMPLETEe0b4,
+one CUDA fit67epochs/best42/1139updates/one currentpoint4650; allworkersclosed,
+no old F/I/L training repeat. LN complementary composition4337/pointf038/
+input8081 prepared; fixedbd903 beforeNoutput,8actions/0newmodelcalls, current
+QQQ equalsL. Neither N/LN has measured financial performance or a new task.
+Independent9671 verifies92files; typed QQQ admission is NOT full execution:
+stock planner excludes reserved SPY/QQQ owners, AMS unsupported. Prepare a
+legitimate owner/routing repair without adopting old inventory/resetting bank
+or invalidating old pinned V4 readers. No blanket deny removal or fake venue.
+
+Data808c/DTOb145 complete11post-Jul31H5cohorts/55days/tail4censored. New
+Noether scorecard at A/research/current-three-etf-post-jul31-frozen-evaluation-development-20261025-v1
+has Source43bfe9fc/Native GO only. No training, new acquisition or currentpoint
+repeat. Seal all predictions/actions before one price intake/7ledgers;
+8logical policies include full-v-DIAG OF SAME covariance, not a matched-fit
+M comparison. Models actually created after targetdates: retrospective,
+adaptive/revisednonPIT/globalreuseUNKNOWN, not prospective/independent alpha.
+Original company outcome remains the natural three entry outcomes above.
 
 Warm-support study A is CLOSED COMPLETE_FAIL05b02e54/Source773b:
 A/research/current-three-etf-warm-start-support-adaptation-20261024-v1.

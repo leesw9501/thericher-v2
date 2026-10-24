@@ -20,6 +20,21 @@ SHAf3295a41. No task/definition/order/account invocation from that query.
 
 ## Immediate Holdings Consumer
 
+N one CUDAfit/currentpoint4650 nowcomplete, standalone researchproposalSPY/AMS;
+that is not an eligible NAS intent. Never remap SPY toNAS/NYS to force execution.
+LN complementary Lmean/Ncovariance pointf038/H5INPUT8081 actual4337d4e8 at
+A/research/current-l-mean-n-covariance-future-composition-20261025-v1.
+CurrentQQQ target aliasesL;0modelcalls/broker/schedules/custody, .005original
+cohort/one shared tenth/F9 held unchanged. Native7math+8codec PASS, independent
+frozen-output review and source-only legitimate AMS reuse/design assigned.
+Preparation is not deployment/fill or proof of one-share affordability.
+Independent9671f4f3 PASS verifies92stableN/LNfiles. Source audit found another
+REAL execution gap: stock_plan._plan_scope and budget_strategy._stock_seed_states
+exclude reserved SPY/QQQ owners. Typed QQQ admission does not reach a usable
+planner. Investigate versioned QQQ/ETF ownership using existing registries;
+do not remove deny globally/adopt baseline inventory or createV5 unseen by
+old pinned V4 controllers. Current3jobs and F9 untouched; source design only.
+
 NEW separately scoped L preparation: A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
 fbcdf230 binds INPUT271aee51/Sourceeabc/SDK6423. Saved point4cb9 reused without
 models/API/private/schedule changes. Three original slots/cash0, QQQ/NAS only;

@@ -6,14 +6,21 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-NEW M conditional-covariance preparation assigned to Noether in
-A/research/current-three-etf-conditional-covariance-development-20261025-v1.
-Original600prep within3600active/7200elapsed, originOct24 17:32:09UTC;
-whole-family hard19:32:09UTC. No market/GPU fit claimed before exact frozen
-Source/native proof. Two distinct matched full/diagonal fit arms, not repeated
-F/I/L or utilization-only work. Measure headroom; project priority unchanged.
-Parent L Paper input preparation used CPU/offline source only; no GPU reason
-to repeat that completed point. Repo QA is separately complete43e4522c.
+N COMPLETEe0b422cd, one actual CUDA fit67epochs/1139updates/best42/PAT25.
+Sourceaa61/Native56c4; fitworker32.4077sec/guard36.6544sec,
+peakallocated669227008/reserved1182793728bytes. One later model-only restore/
+current-forward/point4650; all4children removed/3leases released/429upper CLOSED.
+This is useful completed training, no reason to repeat it for GPU utilization.
+Old M Native reserve-admission failure638a occurred BEFORE any model/GPU/data;
+340upper/old clocks intact. Native resource had18GiB free, not a GPU hold.
+Parent LN one scalar composition uses CPU/no model, result4337/f038 prepared.
+
+Noether next owns single coordinated frozen-model inference (not training):
+A/research/current-three-etf-post-jul31-frozen-evaluation-development-20261025-v1.
+Data808c/b145 actual11cohorts ready; Source/Native pending. One existing cached
+Toto load, retained N/L/I checkpoints, no extra fits or dummy utilization.
+Keep fresh measured headroom/project priority; no application-name veto.
+Source43e4522c repo QA remains separate from these external numerical proofs.
 
 I ACTUAL complete/FINALbc8daa85 at
 A/research/current-toto-adapt7-prospective-point-resource-readiness-20261025-v1/FINAL-CONSUMER.json.

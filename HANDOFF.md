@@ -2,7 +2,8 @@
 
 ## Current Reality
 
-Observed through 2026-10-25 02:17KST /Oct24 17:17UTC. Root C:/Users/Public/Documents/thericher-v2.
+Updated 2026-10-25 KST; exact observation times remain in linked evidence.
+Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -34,14 +35,57 @@ kernel timestamps; CLOCK-INTERPRETATION.json retains this limitation. The single
 future-cohort measurement is declared but unrun in FUTURE-MEASUREMENT.json;
 neither document creates a collector/schedule or gates existing Paper.
 
-Noether owns new conditional full-versus-diagonal H5 covariance proposal M:
-A/research/current-three-etf-conditional-covariance-development-20261025-v1.
-Same GRU32/seed/layout/inputs/selector; conditional joint density is a new
-mechanism, not another run of completed F/I/L. All history remains adaptively
-reused. Source/native preparation only; no market/GPU fit evidenced yet.
-Parent scientific direction adopted in principle; exact Source/native/bounds
-and concise Claude challenge precede numerical dispatch. Company objective
-remains the existing three natural entries, not this independent preparation.
+M historical covariance comparison CLOSED_UNQUALIFIED, not scientific failure:
+A/research/current-three-etf-conditional-covariance-development-20261025-v1/NATIVE-PREP-CLOSED.json
+SHA638ab0a4. Source813119/24checks ready but host full_phase_reserve required
+180+20sec versus197remaining, BEFORE Docker/Native/models/arrays/updates.
+Resource read admitted18GiB free; not GPU permission/capacity. Source-only
+repair6c339 remained unrun at expiry. Allhelpersjoined/leasefree/340upper;
+original clocks/debits intact, no market fit or financial result to retry.
+
+N ACTUAL COMPLETE_UNVALIDATED_PROSPECTIVE_RESEARCH_POINT/e0b422cd:
+A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1.
+All1186 matured old-role cohorts become explicit current history,1067TRAIN/
+119innerCHECK. Sourceaa61/Native56c4 actual CPU/CUDA/all-RNG cold PASS, then
+ONE CUDA fit67epochs/1139updates/best42/PATIENCE25. CHECK NLL3.90539->2.67383
+is adaptive density selection, not financial performance/convergence. Worker
+32.4077sec/guard36.6544sec/peakallocated669227008/reserved1182793728bytes.
+Actual1186 clocks admitted before labels/fit; strict1067/119 target boundary.
+One selectedmodel-only restore/current252 packet/forward/publication produced
+POINT4650d97b atOct24 18:26:02UTC forOct26..30, researchallocationSPY.
+No historical selected predictions/outcome intake/financialcell/Paper effect.
+All4 children joined/removed/3leases released;429activeupper CLOSED, no rerun.
+M closed340upper remains separate, not refunded/recharged. Claude282fb907
+SOUND_WITH_LIMITS, no new prep deadline or minimum-full-runtime reservation.
+
+LN complementary fixed composition ACTUAL COMPLETE4337d4e8 at
+A/research/current-l-mean-n-covariance-future-composition-20261025-v1/COMPLETE.json.
+Policybd903 froze BEFORE N output; L rawnet means + N rawnet covariance,
+same input/target axis,8fixed actions/one calculation/0modelcalls or outcomes.
+POINTf0386383 and H5INPUT80816f6a prepared; current allocationQQQ matchesL,
+not incremental performance/alpha. All3 stock slots/cash0/AMS skips/.005
+originalbasis ceiling unchanged;0broker/schedules/custody. Native7math+8actual
+codec/worker synthetic checks PASS, sourcebridge43b2; independent9671f4f3
+PASS verifies92stablefiles. Typed admission is NOT complete execution:
+stock planner/bank parser exclude reserved SPY/QQQ owners in the stocks
+registry. Source-only coherent QQQ/ETF ownership repair is being investigated;
+no blanket deny removal/foreign adoption/V5 migration invisible to old readers.
+N covariance is a working penalty, not L-error covariance or calibrated tails.
+
+New later-data input is COMPLETE Source808c40ce/DTOb14591f2 at
+A/data/current-three-etf-post-jul31-frozen-evaluation-inputs-20261025-v1.
+Existing snapshot only/API0;11H5cohorts55days afterJul31,59sessions with4tail
+Oct20..23 censored. FirstentryAug3/lastOct13/lasttargetOct19, missing0, raw
+FP64identity/FP32bound PASS. Canonicaldailyclose[11,5,3]; features/targets
+physically separate, actualF/NMreader7SYN/build1/verify1/alljoined/241.5797upper.
+Noether prepares a NEW zero-fit frozen-model later-history scorecard. Actual
+model artifacts were created AFTER those targets; retrospective/revisednonPIT/
+globalreuseUNKNOWN, NOT prospective/independentalpha or a Paper-selection pass.
+Source43bfe9fc/Contract0a2a; Native9b937f10 actual CPUcodec/clock/action/ledger
+handoff PASS/two children removed/0realdata. Parent authorized one frozen-model
+GPU inference with611priorupper, not readout. All8actions/predictions must seal
+and join before one targetprice intake. No new fit/currentpoint/oldNative repeat.
+Company still awaits the original three natural entries, not these packages.
 
 I actual prospective point COMPLETE, NEW research output, not F historical
 evaluation. Root A/research/current-toto-adapt7-prospective-point-20261025-v1;

@@ -6,16 +6,33 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
-NEW M source preparation: conditional joint H5 net-return density, learned
-full-v-diagonal Cholesky with matched GRU32/seed/layout/selector and fixed
-mean-variance actions. Noether owns
-A/research/current-three-etf-conditional-covariance-development-20261025-v1.
-No market fit/GPU use claimed yet; original600prep within3600active/7200elapsed,
-originOct24 17:32:09UTC/hard19:32:09UTC. Parent direction in principle only;
-exact Source/native before fitting. ClaudeREVISE/d03915b6 led to named prefreeze
-count-unit, cash-risk-comparator, volatility-domain and momentum-rule fixes;
-not an extra approval/model arm. All history remains reused adaptive evidence.
-Existing F/I/L complete models are NOT repeated.
+N ACTUAL COMPLETEe0b422cd at
+A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.
+New current-history1067TRAIN/119innerCHECK, Sourceaa61/Native56c4 actual CPU/
+CUDA/cold RNG PASS. One CUDA fit67epochs/1139updates/best42/PATIENCE25;
+normalized CHECK NLL3.90539->2.67383 is adaptive selection, not financial gain.
+Worker32.4077sec/guard36.6544/peakreserved1128MiB; one current-point4650d97b
+forOct26..30 selectsSPY research-only.0historicalpredictions/cells/outcomes,
+all4children removed/leases free/429upper CLOSED. Do not repeat training.
+Old M8131 historical contrast CLOSED638a beforeNative/models/arrays due
+full180+20sec reservation versus197remaining.340upper remains, not a scientific
+failure/refund or permission hold. N changed cutoff/future purpose, notMrescue.
+
+LN fixed complementary expert ACTUAL4337d4e8:
+A/research/current-l-mean-n-covariance-future-composition-20261025-v1.
+Policybd903 pre-N-output, Lmeans+Ncovariance/8fixedactions/one computation/
+0models/outcomes; POINTf038/H5INPUT8081 prepared, currentQQQ aliasesL action.
+Native7math+8codec checks; no alpha/realized risk-diversification/Paper claim.
+Working N covariance is not calibrated L forecast-error covariance.
+
+Next zero-fit frozen-model scorecard Source preparation at
+A/research/current-three-etf-post-jul31-frozen-evaluation-development-20261025-v1.
+Actual Data808c/DTOb145 ready11post-Jul31H5cohorts/55days/tail4censored;
+compare8fixed policies including N/L full-v-DIAG OF SAME covariance, not a
+matched diagonal fit or closed M result. Source/Native before any forecasting;
+predictions/actions sealed before one target intake. Actual artifacts were
+created after targets: retrospective adaptive/nonPIT/globalreuseUNKNOWN,
+not prospective/independent alpha or a winner/Paper swap.0newfits authorized.
 
 L separate Paper consumer now PREPARED_NOT_DEPLOYED/INPUT271aee51/DELIVERYfbcdf230.
 Saved point only,0fits/inference. SDK6423 admits offline; source AMS retained

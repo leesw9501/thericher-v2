@@ -29,6 +29,32 @@ A/verification/current-l-paper-route-preservation-20261025-v1/AUTHORITY.json.
 1392 exact before/after/current hashes match/alljoined/own temp+lease removed.
 Prior134a below is historical after the parser/test change, not reusable.
 
+N actual future covariance expert COMPLETEe0b422cd at
+A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.
+Sourceaa61/Native56c4, one CUDA fit67epochs/best42/PAT25/1139updates,
+one point4650 forOct26..30, allchildren joined/removed/429upper CLOSED.
+Do not run its fit/native/point/finalizer again. CHECK density selection is
+adaptive, not financial validation. Old M reservation failure638a remains
+technical BEFORE any Native/model/data/fit; no clock or debit reset.
+
+LN actual fixed complementary composition4337d4e8:
+A/research/current-l-mean-n-covariance-future-composition-20261025-v1/COMPLETE.json.
+Pointf038/input8081, Lmeans+Ncovariance under predeclaredbd903/8actions;
+Native7math+8codec PASS/independent9671f4f3 verifies92stablefiles. CurrentQQQ
+allocation equalsL, no incremental alpha or deployment claim. Do not rebuild.
+Full execution is NOT ready merely from typed admission: old stock planner
+also excludes reserved SPY/QQQ owners, while AMS is skipped. Source design
+review must preserve exact ownership/sharedV4 bank and old pinned readers;
+never simply remove the reserved-symbol deny or silently upgrade the bank.
+
+New zero-fit later-history scorecard Source43bfe9fc at
+A/research/current-three-etf-post-jul31-frozen-evaluation-development-20261025-v1.
+Data808c/DTOb145 already built/verified11H5/55days/tail4; dailyclose[11,5,3].
+Native GO only so far, not actual inference/readout. Forecast all frozen models/
+8actions and seal/join BEFORE one price intake. Actual models were created
+after these historical targets: retrospective adaptive/nonPIT/globalreuse
+UNKNOWN, not prospective/independent evidence or an automatic Paper swap.
+
 Company NEXT: exact natural Oct26 GRU/TimesFM/Joint17 entry outcomes below.
 Current independent I research point is COMPLETE_VERIFIED_NO_DEPLOYMENT:
 A/research/current-toto-adapt7-prospective-point-resource-readiness-20261025-v1/FINAL-CONSUMER.json

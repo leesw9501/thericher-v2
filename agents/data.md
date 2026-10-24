@@ -6,6 +6,19 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+NEW later-history data COMPLETE808c40ce/DTOb14591f2 at
+A/data/current-three-etf-post-jul31-frozen-evaluation-inputs-20261025-v1.
+Existing Oct24 same-vintage snapshot only,0API.59sessions Aug3..Oct23 give
+11nonoverlapH5cohorts/55days,4tail Oct20..23 censored. FirstentryAug3/lastOct13/
+lasttargetOct19; alltargetOPEN strictly after model-selectionJul31 cutoff.
+RawvendorFP64 identity/FP32bound/knownness/officialUTCcalendar PASS/missing0.
+Feature/target leaves separate; dailyclose canonical[11,5,3], not[11,3,5].
+ActualF/NMreaders7SYN/build1/independentverify1 PASS/allchildrenjoined,
+241.579737upper; market payload27750bytes M, source/DTO refs A. No re-export.
+Consumer new frozen-model scorecard, not model fitting/Paper qualification.
+Actualmodel/source availability AFTER targetdates: retrospective revisednonPIT/
+globalreuseUNKNOWN, not untouched independent/prospective evidence.
+
 Current NEW prospective Oct23 feature-only acquisition/build COMPLETE:
 A/data/current-toto-prospective-oct23-inputs-20261025-v1.
 Existing July18 Tiingo StandardEOD3ETF authorization/approved scoped token
