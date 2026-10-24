@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Observed through 2026-10-25 01:18KST /Oct24 16:18UTC. Root C:/Users/Public/Documents/thericher-v2.
+Observed through 2026-10-25 01:29KST /Oct24 16:29UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -11,18 +11,33 @@ cash tenth/basis/costs/losses/pending, no profit expansion/foreign adoption.
 F9 UNKNOWN/HELD. No operator decision presently. Preserve untracked %SystemDrive%/.
 Detailed closed history is Git4ecc4cf/ba1345b and exact consumers, not this board.
 
-Current I prospective point is NEW research output, not continuation of F's
-historical evaluation. Data479565eb/e44b/DTO7f82ec1e is COMPLETE:3Tiingo EOD
-GETs/no retry/252same-vintage adjClose sessions throughOct23/missing0;
-observed Oct24 16:01:45UTC, revised/nonPIT. Actual feature/clocks remain on M.
-Root A/research/current-toto-adapt7-prospective-point-20261025-v1;
-corrected Source81e89f1a/Consumerf799c13c,29pure checks. Parent22refs match.
-Container-name shadowing caught/fixed before any numerical effects; prior
-Source preserved. Noether has Native-only GO with fresh measured resource ACK;
-same model-only reader/invented producer->cold RO consumer first. No actual
-retained-model/current-packet point GO yet. Family prior490.7093143upper,
-hard16:47:49UTC/1200active; Native180/point240/cleanup180/remainingverify30.
-No old F EVAL/outcomes/refit/regrade or fourth Paper slot/orders/schedules.
+I actual prospective point COMPLETE, NEW research output, not F historical
+evaluation. Root A/research/current-toto-adapt7-prospective-point-20261025-v1;
+corrected Source81e89f1a/Consumerf799c13c/29pure checks/Parent22refs match.
+Native129067b1 producer->coldRO consumer PASS23.935611sec; Parent checked exact
+producer-point binding missing in the frozen reader before relying on parity.
+Actual point actual-point-r1/point/POINT.json SHA7dad3951, producedOct25
+01:24:22KST forOct26..30, contextthroughOct23; research-only QQQ allocation.
+One public load/fullpass/actual retained-model restore/block/head/current
+packet/publication,0fits/updates/financialcells/outcomes/API/orders.17.621699sec,
+exit0/joined/removed; GPUallocated682528768/reserved727711744bytes. Parent exact
+point hash/bytes/terminal binding checked. FINALbc8daa85 at
+A/research/current-toto-adapt7-prospective-point-resource-readiness-20261025-v1/FINAL-CONSUMER.json
+confirms60fixed-output checks/RuffPASS/alljoined/removed/lease free/557.266624
+cumulativeupper; Parent6final refs match. No model worker remains.
+F financial result remains UNKNOWN; no old EVAL/
+refit/regrade, Paper promotion/fourth slot/orders/schedules or profit claim.
+Data479565eb/e44b/DTO7f82ec1e complete:3Tiingo EODGET/no retry/252same-vintage
+adjClose/missing0/observedOct24 16:01:45UTC/revised nonPIT, market bytesM.
+
+Next parallel J CPU contrast: price-amplitude preservation versus window z,
+same fixed Ridge/PCA8 and cost ledger, not a new model/grid. Readiness96b9f621/
+Source47aa9498/contract5318bfb6/ClaudeSOUND_WITH_LIMITS at
+A/research/current-d1-context-amplitude-ablation-readiness-20261025-v1.
+Two paired fits/one readout/3cells435marks maximum, equalactions kill before
+outcomes=>PnLUNKNOWN. Reused development/pipeline contrast, not volatility-
+causal alpha or automatic Paper promotion. Tesla concrete source preparation
+only, no native/market GO. Original16:22..16:52UTC/600active includes90prep once.
 
 ## Completed / Actual Account Observation
 

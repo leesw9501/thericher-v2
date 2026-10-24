@@ -1,18 +1,19 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-25 01:18KST. A=D:/thericher-v2/model-artifacts.
+2026-10-25 01:29KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-I resource readiness4cb9d919/c3a52901 complete, snapshot16:02UTC free17979MiB/
-host28.28GB/no lease. Noether now owns Native-only GO for corrected Source
-81e89f1a/Consumerf799c13c at current-toto-adapt7-prospective-point-20261025-v1.
-Fresh actual ACK/lease/PID still required at dispatch; readiness is not GPUuse.
-Projection4GiB worker+4GiB desktop reserve, host8+8GiB. Prior490.7093143upper,
-Native<=180 cumulative/hard16:47:49UTC/family1200. No actual retained-model or
-current-input point until Native PASS/Parent stage GO. Original F/H closed.
+I ACTUAL complete/FINALbc8daa85 at
+A/research/current-toto-adapt7-prospective-point-resource-readiness-20261025-v1/FINAL-CONSUMER.json.
+Source81e89f1a, Native23.935611sec/realpoint17.621699sec/557.266624familyupper;
+GPUallocated682528768/reserved727711744bytes.1actual model-only restore/
+fullpass/head/publication/0fits/outcomes/cells.60fixedchecks/RuffPASS, allthree
+modelchildren joined/removed/exactCID absent/lease free. No active worker.
+Research-only QQQ point, no deployment/F historical completion or I rerun.
+J is CPU source preparation only, no GPU requirement/new readiness platform.
 
 Prior closed allocation: A Source773b warm-support study closed
 COMPLETE_FAIL05b02e54/Deliveryb2fb14c9; all five children joined/removed.
