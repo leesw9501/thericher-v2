@@ -1,10 +1,32 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-25 02:17KST. A=D:/thericher-v2/model-artifacts.
+2026-10-25 KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable hypotheses,
 not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
+
+Later N/L frozen-output interpretationed58 SOUND_WITH_LIMITS: the eleven
+cohorts are descriptive/reused/exposure-confounded, not covariance quality or
+alpha. QQQ V4 handoff reviewf08d96bf/Consumer9dd512e7 SOUND_WITH_LIMITS at
+A/review/current-qqq-h5-v4-owner-connection-20261025-v1. Actual old QQQ must be
+terminal-flat and legacy issuers enforceably retired; a journal/mutex alone
+cannot prevent old unit-controller early exit. Parent/Kant/Tesla own that work.
+Actual retirement1287/b4b8 is now verified; old3jobs unchanged. New adapter
+advisoryea0e2ffd/9e31479f REVISE at
+A/review/current-qqq-h5-runtime-adapter-preparation-20261025-v1. Parent adopts
+explicit intermediate parent/proposed/seed crash recovery and fresh native
+prewire facts, not another standing approval. Tesla implements bounded module/
+tests only. No runtime adoption/actual API/deployment from this advice.
+
+One new joint-radius calibration mechanism examined at
+A/research/current-next-risk-composition-mechanism-readiness-20261025-v1:
+Consumerb9e788fa/Sourcef8657dfa/Claude019ea558 SOUND_WITH_LIMITS. Pure kernel
+12SYN tests PASS, no arrays/model/fit/GPU/financial effects. NO_NEW_FIT_RECOMMENDED:
+one common radius merely rescales risk aversion; eleven reused cohorts cannot
+establish calibration or independent improvement. No renamed training job,
+Paper swap or scalar sweep. Allhelpers joined/role closed. Retained kernel is
+not a ready numerical campaign. Other truly ready research may proceed.
 
 I retained-ADAPT7 NEW prospective point readiness COMPLETEfc1493/Source92ffa,
 contract1cf598ce/review8127bb57/ClaudeSOUND_WITH_LIMITS/response6d18798f at

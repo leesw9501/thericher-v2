@@ -23,10 +23,13 @@ AMS grammar is preserved as UNSUPPORTED, never routed or redistributed.
 Sourceeabc21a6/SDK64236484 (478 source files) plus16 invented guest checks and
 one exact offline SDK/input admission passed; all3 owned containers absent.
 This is not installation, submit, fill or alpha. Existing3 jobs/F9 unchanged.
-Tracked parser/tests changed; NEW fresh authority43e4522c now passes614serial/
+At that parser/test integration, authority43e4522c passed614serial/
 18992full25skip/19017total/8workers/Ruff/3Compose. Exact1392 before/after/current
 hashes match; Global mutex/lease/temp cleanup and all children joined. Root:
 A/verification/current-l-paper-route-preservation-20261025-v1/AUTHORITY.json.
+The later pure-core authority762941dc below supersedes it; SDK6423 does not
+yet include the new QQQ core/unfinished adapter. A future runtime needs a new
+exact source capsule, not mutation of this immutable preparation.
 Tesla independent8ec3347c PASS_INERT_PREPARATION_ONLY at
 A/review/current-l-paper-preparation-implementation-20261025-v1/CONSUMER.json.
 Whole-share affordability/fresh funds/quotes remain unknown, not zero. Worker
@@ -105,10 +108,39 @@ active. Parent conditionally adopts sequential reuse of the existing aggregate
 QQQ owner plus a separate exact H5 request journal, not legacy unit-cycle
 dispatch. Legacy unit code may exit a new H5 BUY early. BEFORE any new effect,
 the actual old QQQ prefix must be strictly terminal-flat and legacy QQQ issuers
-retired/quiescent; that boundary is currently UNKNOWN, not absent. Kant owns a
-separate read-only actual boundary check; Tesla owns a new pure planner/test
-pair, not a runtime adapter/deployment. Keep old bank/cycle/history/F9/three NAS
-jobs intact. A pure planner or proposed boundary cannot grant dispatch.
+retired/quiescent. Actual RO Consumer62916e7d/Finalc234a684 at
+A/execution/current-qqq-h5-legacy-boundary-readonly-20261025-v1/technical-r2
+proves2BUY/SELL accepted/fullfill/terminal proofs, owned-flat,0pending/unknown/
+orphan. Full canonical V4 replay20owners/47states passes; OTHER unknown1 stays
+reserved. Native8SYN + corrected host4checks; alljoined/removed/stable private
+membership/identity/mtime/bytes. Not fresh broker holdings, fees or net PnL.
+Parent ACTUALLY disabled the exhausted legacy QQQ unit task19:47:21UTC:
+A/execution/current-l-ensemble-paper-preparation-20261025-v1/qqq-legacy-retirement-r1/RESULT.json
+SHA1287a886. Exact original XML/ACL backed up; only Settings.Enabled changed,
+74siblings/last-run/result/ACL unchanged. Independentb4b874fd 14checks confirms
+Disabled/0instances and original3entry jobs Enabled/Ready/unchanged. Do NOT
+reenable/manual-invoke that legacy controller on expanded QQQ history. This is
+managed honest-host retirement, not proof against arbitrary manual code or a
+new entry grant. Existing bank/cycle/history/F9/three NAS jobs unchanged.
+
+Pure QQQ H5 core0fe13554/testac11fbeb is complete: exact Fraction sizing,
+global V4 replay, immutable legacy prefix, input/policy-bound journal and only
+linked H5 residual exits. runtime_authorized=False; no IO/client/dispatch.
+Fresh authority762941dc at
+A/verification/current-qqq-h5-pure-planner-integration-20261025-v1/AUTHORITY.json:
+872serial/19036fullPASS25skip/19061total/8workers/409.23wallsec/Ruff/3Compose,
+exact1394 before/after/current match/alljoined/own scratch and lease removed.
+Old3SDK cold synthetic compatibility4a9f8aaa passes4books each/12load+12replay
+calls; original basis/cost/loss/OTHER reservation preserved. Failed bootstrap/
+fixture attempts remain retained, no actual private/API effects. Earlier43e
+is now historical for the protected-code baseline, not current authority.
+Parent chooses ONE original L INPUT271aee for the engineering connection;
+LN's same current QQQ action does not create another automatic cohort.
+Tesla now owns a NEW runtime-adapter module/test pair, not a deployment.
+Claude adapterea0e2ffd/9e31479f REVISE requires explicit exact intermediate
+parent/proposed/seed crash recovery and fresh native prewire checks; Parent
+adopts these revisions. New adapter code is NOT covered by7629 until its own
+freeze/review/fresh QA. No actual QQQ broker invocation or new task installed.
 Company still awaits the original three natural entries, not these packages.
 
 I actual prospective point COMPLETE, NEW research output, not F historical

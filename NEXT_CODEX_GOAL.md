@@ -50,11 +50,20 @@ Research actors or future due times. No recovery observe() as offline reading.
    conditionally reuses the existing aggregate QQQ owner/V4 bank and a separate
    exact H5 request journal. The legacy unit runner may sell a new H5 BUY early;
    do not use it, globally remove reserved-symbol denies or add an invisible
-   ETF/V5 registry. First establish actual old QQQ terminal-flat and enforceable
-   legacy-issuer retirement/quiescence. This is currently UNKNOWN, not absent.
-   Kant owns the bounded read-only boundary package at
-   A/execution/current-qqq-h5-legacy-boundary-readonly-20261025-v1. Tesla owns
-   new pure planner/tests only; pure admission is not a verified runtime adapter.
+   ETF/V5 registry. Actual old QQQ boundary62916e7d/c234 is terminal-flat with
+   2fullyfilled BUY/SELL/0pending; fullV4/20owners47states passes/OTHER unknown1
+   reservation preserved. Parent retired the exact old managed QQQ unit task
+   at19:47:21UTC/RESULT1287a886, independentb4b874fd14checks/74others unchanged.
+   Do not reenable or manually invoke that old logical controller. Honest-host
+   retirement is not an entry grant or fresh broker holdings observation.
+   Pure core0fe13554/testac11fbeb is now verified762941dc; old3SDK cold V4
+   compatibility4a9f8aaa passes12inventedbooks. Parent chooses ONE original L
+   INPUT271aee, not equivalent LN as another cohort or a scorecard winner.
+   Tesla owns the NEW runtime-adapter module/test pair. Adopt Claudeea0e/9e31
+   revisions: exact intermediate journal/parent/proposed/seed recovery, no
+   last-write-wins book replacement, wire-unknown never resubmitted/released,
+   fresh native prewire full-bank/QQQ/quote/orderability checks. No CLI/task/
+   broker deployment yet; adapter needs separate freeze/review/fresh QA.
 3. Continue a genuinely new useful research package once its finite data/
    target/split/cost/trial/time/stop contract is ready. Do not repeat completed
    fits, points, evaluations or failed exhausted packages for GPU utilization.
@@ -84,10 +93,11 @@ their budgets/results remain unchanged, not dispatch authority.
 
 ## Verification And Continuation
 
-Fresh repo authority43e4522c:
-A/verification/current-l-paper-route-preservation-20261025-v1/AUTHORITY.json.
-614serial/18992full25skip/19017total/8workers/Ruff/three Compose profiles PASS,
-exact1392 protected before/after/current hashes match. Docs/external-only
+Fresh repo authority762941dc:
+A/verification/current-qqq-h5-pure-planner-integration-20261025-v1/AUTHORITY.json.
+872serial/19036full25skip/19061total/8workers/Ruff/three Compose profiles PASS,
+exact1394 protected before/after/current hashes match. This covers the pure
+core, NOT the new unfinished adapter. Earlier43e is historical. Docs/external-only
 changes may reuse it ONLY after exact fresh digest checks plus independent
 changed-output checks. New tracked code/test/runtime/control changes need
 fresh changed-path serial and scripts/run_parallel_tests.ps1
