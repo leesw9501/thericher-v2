@@ -6,6 +6,14 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
+Tesla owns bounded source-only NYS routing capability audit at
+A/research/current-h5-nys-route-capability-audit-20261024-v1.
+Actual new TimesFM point9b00/publication1fb1 has1NAS target after unsupported
+NYS Top5mass is skipped, not renormalized. Distinguish narrow deployed H5profile
+from real provider/adapter capability using official sources; no API/credentials/
+route edit/model ops or deployment claim. Concrete consumer is a future minimal
+H5 venue extension if source evidence supports it, not a new platform.
+
 Tesla residualmechanism proposal delivered and consumed at
 A/research/current-h5-next-mechanism-strategy-preparation-20261024-v1.
 Actualb0e3ced1/bdca1acf COMPLETE_FAIL:43scoredates/3cells/0fits/GPU,
@@ -14,10 +22,12 @@ TimesFMaudite13553ca at
 A/research/current-timesfm-dated-checkpoint-feasibility-20261024-v1/CONSUMER.json
 REJECTS duplicatezero-shot:126marketforwards18cells andadaptation502+1246updates
 alreadyclosed. Exact2.5 officialdatedcheckpoint2f776efe/2025-10-01 andexisting
-runtime recorded, no download/import/currentresourceclaim. Originalordinal
-only failedCPU_PREFLIGHT/0GPU; Engine/Infra investigate distinct executable
-continuation, not a fresh-model claim. Strategy supplies scoped source/evidence,
-not another numerical worker. Engine owns final contract/dispatch.
+runtime recorded, no download/import/currentresourceclaim. OriginalrootCPUfailure
+was incomplete: Aq36db2761 found closednestedpremarketrepair/2fits341+651updates.
+No duplicate study. GodelClaude04b6d472 prefers NEWdated existingFROZEN_RANK
+point+genericPaperprep, exactcheckpoint/context/horizon/asof/adapter/F9riskkills,
+not oldpassregrade. Strategy supplies source/evidence, not a numerical worker.
+Engine owns pointcontract/dispatch; Execution never imports publicmodelcode.
 Seed-fusion5912/b680 closed4CUDAfits/21cells: SIX+.895132/.433812DD vs
 MSE3+1.150893/.400580 at10bp, relative primaryFAIL/no fallback winner.
 Latertransferreadout8d27e39a/db08562c now COMPLETE_FAIL at

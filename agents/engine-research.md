@@ -25,6 +25,21 @@ Capturec78/refc992 installed forOct31 05:10KST; future marks not observed.
 
 ## Latest Research / Next Ready Work
 
+Currentpoint COMPLETE9b00a90d/Deliveryf8c3ca6d:
+A/research/current-timesfm-ordinal-dated-point-development-20261024-v1/CONSUMER.json.
+Actual CUDA market worker41376 ran02:06:50..02:07:00UTC,1selected head/core load,
+1batch25windows/0fits/optimizer/financialcells. Exact Data33d1/DTO21c1/payload1ec5
+consumed. Point04b23dcc/metadata23566672,120checks/Ruff/alljoined/leasefree.
+Publication1fb1ca2b is canonical H5 with28axis/25known/1NAS eligible target;
+NYS mass skipped without redistribution. Parent actual source-bound receiver
+accepted it, not an installed opportunity, actual order or profitable model.
+Native8dcbb24b and initial SDKfixture failure remain separate closed evidence.
+Both declared core loads/native+market are consumed; do NOT repeat any stage.
+Noether now owns retained SIX-versus-uniform loss attribution at
+A/research/current-h5-six-later-loss-attribution-20261024-v1.
+One finite CPU diagnostic,0fits/restores/forwards/new selection/reranking;
+diagnose aligned gross/cost/turnover/contribution facts, not causal alpha.
+
 Beta-residualrule COMPLETE_FAILb0e3ced1/Deliverybdca1acf/Source0f3cb076 at
 A/research/current-h5-beta-residual-reversal-development-20261024-v1.
 43scoredates/3cells/0modelops/19SYN24checks/Ruff/alljoined/4.212measuredactive;
@@ -32,13 +47,20 @@ Claude11.671sec separate.10bp growth-1.429593%/DD2.382049 versusREVERSAL5
 -1.429557/2.437812,uniform-.822368/1.218932. RepeatedHHI.031636->.030864,
 but growth/riskyDDfail; no marketneutrality/winner/Paper swap or rerun.
 TimesFMfeasibilitye13553ca rejects duplicatezero-shot:126forwards18cells and
-adaptation502+1246updates alreadyclosed. Distinct ordinal studyOct21 failed
-CPU_PREFLIGHT/0GPU, not a failed market comparison. New companygoal:
-timesfm-ordinal-executable-comparison-v1. Aq owns exact firstcause/nativeSYN;
-Noether owns newlinked protocol/caps/input/baseline adjudication at
+adaptation502+1246updates alreadyclosed. Aq36db2761 verified NESTED ordinal
+premarket-abi-repair-r1 alreadyclosed2fits341+651updates; rootFAIL was incomplete.
+Comparison goal SUPERSEDED, no duplicate repair/training. Old scientificFAIL/
+financialDDFAIL/growthpass retained. New timesfm-ordinal-dated-paper-proposal-v1.
+Noether modelrequirements at
 A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1.
-No market run/GPU allocation inferred from preparation. Reuse existing trusted
-2.5 checkpoint/runtime; no completed fit/encoder repeat or TimesFM3 substitution.
+Metadatahelper failed one assertion after20/24checks, joined/no retry; not a
+new model failure or independently repeated67check qualification. New pointroot:
+A/research/current-timesfm-ordinal-dated-point-development-20261024-v1.
+Selectedf40b04d5/head[1,1280]/core2f776efe/runtime d6b43213, fixed25/512closes/
+16x32nativecontext/H5/fairTop5->typedDTO. No zero freshhead or old3class restore.
+Source/caps/native proof before new datedforward; no replay/fit/labelintake.
+DataKant owns exactcurrentwindow/asof,Aqc8a3 Executionmap. Newpoint provisional,
+not independent performance. No GPU worker inferred or TimesFM3 substitution.
 
 SelectedGRU9409 sixlater diagnostic COMPLETE_FAIL26e70cd3:
 A/research/current-gru9409-six-later-preserved-forecast-readout-continuation-20261024-v1/runtime-r1/CONSUMER.json.
@@ -93,8 +115,8 @@ fees already deducted; same fourpolicies/threecosts, no hidden retuning.
 974.621/2400cumulativeactiveupper, prior technical failures/debits preserved.
 Six reused/mixedvintage cohorts, not independent alpha. Noether assesses only
 existing aggregate mechanism evidence next; no fresh models/cells inferred.
-Tesla's residualmechanism is now closed above; datedTimesFM audit prevents
-duplicate work. Next numerical dispatch requires actual new source/native caps.
+Tesla residualmechanism closed above; datedTimesFM audit plus nestedrepair
+proof prevents duplicates. New point dispatch requires actual source/native caps.
 
 Fixedrank68093a24/Delivery3d7f4f6d COMPLETE_PASS,3cells/177checks/0newmodels.
 At10bp +.775099growth/.817573DD versusalignedGRU+.503744/1.468196 and

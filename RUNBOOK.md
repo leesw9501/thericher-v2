@@ -12,6 +12,15 @@ Parent owns shared MD/Git.
 
 ## Current H5 Deployment / Safe Readback
 
+Current repo no-order-empty-cohort fix is verified2ef959d2, NOT deployed.
+Core67db51ee/newtestabb95fe1 plus host/worker IPC matching reasons/0effects;
+475serial/18956fullPASS25skip/8workers397.74sec/1390same incllocks/clean.
+Old immutable9a below remains current until matching successor runtime proof
+and actual Task readback. No repeat primary suite while1390matches; external
+code requires its own focused checks. New point9b00/publication1fb1 accepted:
+A/execution/current-timesfm-ordinal-paper-parent-binding-20261024-v1/ACCEPTED.json.
+Bound newslot is NOT installed. Never rerun accept.py/CreateNew/model stages.
+
 Replacement COMPLETE22:57UTC, ParentPS67205exited0/mutexreleased.
 Both original tasks use candidate:
 A/execution/current-h5-in-visit-terminal-deployment-preparation-20261024-v1/candidate.
@@ -95,21 +104,21 @@ Matched MSE36aee70a/ee65a717/independent05ebec08 closed1CUDAfit63epochs/best39/
 No model rerun/Paper swap. Full83Data56a0de0d/d5c8b951 is a NEW feature-only
 vintage, no forecasts/labels/readout or overwriting old results.
 Pair current-acquisition projection/deployment is COMPLETE5bf73743. NEXT is
-timesfm-ordinal-executable-comparison-v1. Fresh current acquisition codes still
+timesfm-ordinal-dated-paper-proposal-v1. Fresh current acquisition codes still
 require a natural receipt, never sticky quarantine or old receipts.
 Environment caveats in HANDOFF remain; future children use safe explicit-key
 lookups, no wholeenv copy/iteration or implicit .env load.
 
 ## Verification / Recovery
 
-Current authority09998fff:
-A/verification/current-pair-acquisition-bootstrap-integration-20261024-v1/AUTHORITY.json.
-187serial/18889fullPASS25skip/18914total/8actualworkers/405.78sec/helper0/clean.
-Source/control1387exact; requirements locks separately build-context-bound.
-Oldb9cc42d1 is history for current six-file pair patch, not current authority.
+Current authority2ef959d2:
+A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
+475serial/18956fullPASS25skip/18981total/8actualworkers397.74sec/helper0/clean.
+Source/control1390exact inclrequirementslocks. Old09998/b9 are history, not
+authority for current core+IPC changes.
 Credential-free exact source check:
-uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-pair-acquisition-bootstrap-integration-20261024-v1/snapshot.py --check
-1387primary/control files must match before docs/external-only reuse.
+uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/snapshot.py --check
+1390primary/control files must match before docs/external-only reuse.
 Fresh scoped external checks are required; repo tests are not external proof.
 Tracked code/control edits need AGENTS fresh serial/full authority.
 Ruff uses uv run --no-env-file; default/research/accounting Compose uses
@@ -142,8 +151,10 @@ A/research/current-h5-six-later-ranking-transfer-readout-continuation-20261024-v
 Betaresidualruleb0e3ced1/bdca1acf CLOSED_FAIL43scoredates/3cells/0modelops,
 19SYN24checks/alljoined; no repeated scoring or criterion rescue.
 TimesFMfeasibilitye13553ca rejects another completed zero-shot/adaptation run.
-OriginalordinalCPU_PREFLIGHT failure/0GPU remains; invokedInfraAq firstcause/
-nativeSYN andEngineNoether newlinked contract prep are distinct. Freeze caps
-before operations; actualmarket dispatch only after source-bound native/input/
-baseline admission, not another approval gate. Use existing2.5weights/runtime,
-no TimesFM3/download/framework replacement or currentGPU claim from old logs.
+OriginalrootCPUfailure remains BUT Aq36db2761 verified nestedrepair already
+closed2fits341+651updates. Comparison goal SUPERSEDED; no duplicatefit/repair.
+Newpoint fixed25/512closes/selectedheadf40b04d5/core2f776efe/runtime d6b43213/
+fairTop5/genericH5DTO. Wrapper/native SYN may overlap Data under frozen budgets;
+market phase binds exact new input. Aqc8a3map/b7d9SDK17checks prepare a NEWslot,
+not installed until point/Data/policy ready. OriginalGRU/F9/bank/clocks unchanged.
+No TimesFM3/download/framework replacement or activeGPU claim from old logs.

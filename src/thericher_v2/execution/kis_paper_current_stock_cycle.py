@@ -113,6 +113,7 @@ _MODEL_INPUT_TYPES = {
 _MODEL_WEIGHT_PROFILES = frozenset(
     (StockCycleProfile.MODEL_WEIGHTS_NAS, StockCycleProfile.MODEL_WEIGHTS_NAS_H5)
 )
+_H5_NO_ORDER_SIZING_REASONS = frozenset({"target_already_satisfied", "whole_share_capacity_zero"})
 
 
 _STATUSES = frozenset(
@@ -137,6 +138,7 @@ _REASONS = frozenset(
         "exact_request_retained",
         "native_leg_closed",
         "policy_owned_flat",
+        "policy_no_order_complete",
         "already_completed",
         "native_recovery_required",
         "cycle_reference_invalid",
@@ -168,6 +170,7 @@ _REASONS = frozenset(
         "cycle_retirement_unproven",
         "cycle_retired_request_restored",
         "cycle_owned_not_flat",
+        "cycle_no_order_state_changed",
     }
 )
 _TYPES = {
@@ -750,6 +753,131 @@ def _completed_flat(root, record, at):
             _owned_terminal_flat(record, binding, replayed, proofs, projection),
             "cycle_owned_not_flat",
         )
+        for input_ref, active in record.get("no_order_completed", {}).items():
+            _check(
+                input_ref in record["completed"]
+                and active["input_ref"] == input_ref
+                and _h5_no_order_absent(
+                    root, record, active, binding, replayed, proofs, projection
+                ),
+                "cycle_retirement_unproven",
+            )
+
+
+def _h5_no_order_value(record, active):
+    if (
+        record.get("profile") != StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value
+        or record["pending"] is not None
+        or active is None
+        or type(active.get("entry_no_order")) is not dict
+    ):
+        return None
+    targets = _unpack(active["targets"])
+    symbols = [target.proposal.symbol for target in targets]
+    skips = active["entry_no_order"]
+    if (
+        not symbols
+        or active["entries_done"] != symbols
+        or set(skips) != set(symbols)
+        or any(reason not in _H5_NO_ORDER_SIZING_REASONS for reason in skips.values())
+        or type(active["exit_attempts"]) is not int
+        or active["exit_attempts"] != 0
+    ):
+        return None
+    _model_record_input(
+        record | {"active": active},
+        active["input_ref"],
+        record["policy_ref"],
+        StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+    )
+    value = _unpack(active["model_input"])
+    return _validate_model_input(
+        value, value.entry_session.open_ts, StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+    )
+
+
+def _h5_no_order_absent(root, record, active, binding, replayed, proofs, projection):
+    value = _h5_no_order_value(record, active)
+    if value is None:
+        return False
+    plans = [*binding["portfolio"]["plans"]]
+    plans.extend(plan for entry in binding.get("stocks", {}).values() for plan in entry["plans"])
+    _check(
+        not any(plan["input_ref"] == value.input_ref for plan in plans),
+        "cycle_retirement_unproven",
+    )
+    _check(
+        _owned_terminal_flat(record, binding, replayed, proofs, projection),
+        "cycle_owned_not_flat",
+    )
+    for target in value.targets:
+        instrument = KisPaperStockInstrument(
+            target.proposal.symbol, target.receipt.instrument_binding_ref
+        )
+        request_id = "model-" + budget._digest(
+            [
+                record["policy_ref"],
+                value.input_ref,
+                instrument.binding_ref,
+                "buy",
+                0,
+                value.entry_session.open_ts.isoformat(),
+            ]
+        )
+        identity_book = binding | {
+            "stocks": {
+                instrument.symbol: dict(
+                    exchange=instrument.order_exchange,
+                    instrument_binding_ref=instrument.binding_ref,
+                )
+            }
+        }
+        identity = budget._stock_identity(identity_book, instrument.symbol, request_id, "buy")
+        path = root / ("bk-" + identity + ".json")
+        lock = path.with_name("." + path.name + ".lock")
+        for node in (path, lock):
+            _unlinked(node)
+            _check(not node.exists(), "cycle_retirement_unproven")
+    return True
+
+
+def _complete_h5_no_order(root, record, pointer, at):
+    """Retire only positively recorded sizing skips, never an inferred flat slot."""
+    active = record["active"]
+    if _h5_no_order_value(record, active) is None:
+        return False
+    with _shared(root):
+        binding = _book(root, record["account_ref"], record["basis_ref"])
+        _owned_registry(record, binding)
+        _, replayed, proofs, projection = _projection(root, binding, at)
+        _check(
+            _h5_no_order_absent(root, record, active, binding, replayed, proofs, projection),
+            "cycle_retirement_unproven",
+        )
+        saved = budget._read_json(pointer)
+        _check(
+            saved is not None
+            and saved["ref"] == record["ref"]
+            and saved["ref"]
+            == "sha256:"
+            + budget._digest({key: value for key, value in saved.items() if key != "ref"})
+            and saved["active"] is not None
+            and saved["active"]["input_ref"] == active["input_ref"],
+            "cycle_no_order_state_changed",
+        )
+        _check(active["input_ref"] not in record["completed"], "cycle_checkpoint_invalid")
+        # Retain the positive no-order proof together with the atomic completion.
+        closed = record | {
+            "active": None,
+            "completed": [*record["completed"], active["input_ref"]],
+            "no_order_completed": record.get("no_order_completed", {})
+            | {
+                active["input_ref"]: active,
+            },
+        }
+        _save(pointer, closed)
+        record.update(closed)
+        return True
 
 
 def _complete_h5_exit(root, record, pointer, proof, at):
@@ -1176,6 +1304,8 @@ def run_kis_paper_current_stock_cycle(
                 )
                 if model_profile:
                     record["active"]["model_input"] = _pack(value)
+                if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5:
+                    record["active"]["entry_no_order"] = {}
                 _save(pointer, record)
             active = record["active"]
             targets = _unpack(active["targets"])
@@ -1323,6 +1453,20 @@ def run_kis_paper_current_stock_cycle(
             if result.status != "prepared":
                 if side == "buy":
                     active["entries_done"].append(instrument.symbol)
+                    if (
+                        profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+                        and type(active.get("entry_no_order")) is dict
+                        and type(result) is entries.KisPaperStockPlan
+                        and result.status == "no_intent"
+                        and result.reason in _H5_NO_ORDER_SIZING_REASONS
+                        and result.binding is None
+                        and result.intents == ()
+                        and result.plan_ref is None
+                        and result.reservation is None
+                    ):
+                        active["entry_no_order"][instrument.symbol] = result.reason
+                        if _complete_h5_no_order(root, record, pointer, at):
+                            return CurrentStockCycleOutcome("complete", "policy_no_order_complete")
                     _save(pointer, record)
                 return CurrentStockCycleOutcome("no_intent", "native_risk_no_intent")
             owner = record["owners"].setdefault(

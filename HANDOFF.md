@@ -2,13 +2,38 @@
 
 ## Current Reality
 
-2026-10-24 10:10KST /01:10UTC.
+2026-10-24 11:35KST /02:35UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents. Parent owns shared MD/Git.
 AGENTS.md owns private Data/Research/Paper authority. No operator decision now.
 Never KIS_LIVE_*, real money, paid/public work or private raw output.
 Preserve unrelated %SystemDrive%/. History stays in Git/immutable artifacts.
+
+Current TimesFM point COMPLETE9b00a90d:
+A/research/current-timesfm-ordinal-dated-point-development-20261024-v1/CONSUMER.json.
+Data33d12d81/DTO21c1727d/payload1ec54ac1:25x512 coherent observedD1 closes
+throughOct23. PG95overlap changes required coherent-source recovery, not blending.
+Total30GET2POST/alljoined; initial0call path-match failure retained. Actual market
+CUDA02:06:50..02:07:00UTC/1core+selectedhead load/1batch/0fits/120checks/Ruff.
+Point04b23dcc/H5publication1fb1ca2b/28axis25known1NAS target, no redistribution.
+Both declared core loads consumed/alljoined/leasefree; no model rerun. Parent
+real typed receiver bound exact Data/source/point/SDK with0modelcalls:
+A/execution/current-timesfm-ordinal-paper-parent-binding-20261024-v1/ACCEPTED.json.
+Newslot timesfm-frozen-rank-h5-Oct26-v1 is bound, NOT released/installed.
+
+Sizing-only zero-order active-slot repair/core67db51ee plus host/worker IPC now
+fresh-full VERIFIED, NOT DEPLOYED. Atomic same-visit empty-cohort closure needs
+positive sizing proof/no plans/pending/orders/locks/orphans/foreign state;
+quote-unavailable does not qualify. H20/finalSELL/bank/F9 unchanged. Claude
+f907236f SOUNDlimits; combined review961884b4 PASS. Fresh2ef959d2:
+A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
+475serial/18956fullPASS25skip/8actualworkers397.74sec/helper31518exit0/clean/
+1390exact inclrequirementslocks/Ruff+threeCompose PASS. Earlier focused IPC
+enum failure fixed before snapshot. Old immutable9a capsule NOT upgraded by
+repo edits; Aq prepares matching SDK/host/worker/image successor. No new
+Task/broker effects yet. Parallel Noether loss attribution, Tesla NYS capability
+audit and Kant future-mark coverage; no GPU training falsely marked active.
 
 Pair six-file patch is FRESH FULL-VERIFIED AND ACTUALLY ROUTED. Parent5bf73743:
 A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1/CONSUMER.json.
@@ -36,15 +61,22 @@ next/Ready0 with onlycheckedSD+directRegInfoindent differences. No further
 metadata mutations; R4failure remains failure, not relabeled success. Optional
 R5 reader withheld native metadata with0output/LASTEXITCODE null; direct Docker
 succeeded. Causeunknown, not an engine/Docker outage and not a companygate.
-R5 retired, allhelpersjoined. New goal timesfm-ordinal-executable-comparison-v1.
+R5 retired, allhelpersjoined. New goal timesfm-ordinal-dated-paper-proposal-v1.
 Residualrule COMPLETE_FAILb0e3ced1/bdca1acf/Source0f3cb076:43scoredates/3cells/
 0modelops/19SYN24checks/alljoined.10bp-1.429593%/2.382049DD versusREVERSAL5
 -1.429557/2.437812 anduniform-.822368/1.218932; growth/riskyDDfail despite
 HHIimprovement. No criterion rescue/Paper swap. TimesFMfeasibilitye13553ca
 rejects duplicatezero-shot: prior126forwards18cells andCUDAadaptation502+1246
-updates alreadyclosed. Originalordinalstudy failedCPU_PREFLIGHT/0GPU;
-Aq owns exactfirstcause/nativeSYNrepair, Noether newlinked comparisoncontract.
-No current GPU worker inferred; no completedfit repeated.
+updates alreadyclosed. Aq36db2761 then verified NESTED ordinal recovery already
+closed2fits341+651updates/67oldchecks. RootCPUfailure alone was incomplete;
+unexecuted-comparison goal SUPERSEDED, not a new successful experiment.
+Existing FROZEN_RANKf40b04d5/scalar1280 is a provisional operational baseline,
+not an old-pass regrade or alpha. Noether handoff:
+A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1/MODEL-REQUIREMENTS.json.
+Aqc8a3fb9b identified genericH5 adapter/no ordinal consumer in checkedscope;
+GodelClaude04b6d472 prefers one newdatedpoint with namedkills. Data/Kant binds
+fixed25/512closes/asof/routes, Noether Research wrapper/nativepoint, Aq inert
+Execution prep. No GPU job/Paper deployment inferred; original owners untouched.
 No Taskstart/collector/API in this deployment; installation is not acquisition.
 
 Seed-fusionSource5912db24/Deliveryb6809136 COMPLETE by23:58:15UTC:
@@ -140,6 +172,15 @@ Installation is not OSwake, capture, PIT or provider-finality proof.
 
 ## Research / Actual Owners
 
+Newdated ordinalpoint NATIVE proof8dcbb24b/Result1278903a complete at
+A/research/current-timesfm-ordinal-dated-point-development-20261024-v1/NATIVE-CONSUMER.json.
+CUDA01:35:21..38UTC/worker8.1917sec/1selectedhead+core restore/1invented25x512
+batch/0market/0updates/peakreserved~1.05GB/alljoined/leasefree. Do NOT repeat.
+Native proof alone was not current Data; actual point9b00 now supersedes this
+old pending projection. Adapter pureSDK firstfixture
+failure retained; zero unknown AMS ETF rows need truthful /UNAVAILABLE projection,
+not changes to original fixed25 model scores/weights or native risk.
+
 All are adaptive reused-data development, not independent alpha/Paper PnL.
 Growth/DD below are percent of initial research NAV,10bp EACH leg.
 Fixedrank68093a24 passed named INNER screen:+.775099/.817573 versus aligned
@@ -184,7 +225,7 @@ Tesla368ed70e proves NAS actual numeric revisions/freshappend alreadyworking;
 QQQ/SPY latestfour0acceptedpages/currentcause UNKNOWN because old stickyreason
 hides currentfailures. Paircurrentcategory producer is now actually routed5bf7,
 not relaxed revision rules/new cache lineage. A natural receipt is still needed
-to know currentcause. NEXT is the distinct ordinal executable comparison.
+to know currentcause. NEXT is a new dated ordinal Paper proposal, not a duplicatefit.
 
 Completed review-helper env caveats are explicit at Data first-cause
 REVIEW-ENVIRONMENT-LIMIT.json and MSE ENVIRONMENT-AUDIT.json. Whole-env
@@ -196,12 +237,10 @@ Do not repeat closed fits/readouts. Engine board indexes historical families.
 
 ## Verification / Continue
 
-Authority09998fff:
-A/verification/current-pair-acquisition-bootstrap-integration-20261024-v1/AUTHORITY.json.
-187serial/18889fullPASS25skip/18914total/8actualworkers/405.78sec;
-originalhelper41044exit0/clean child+lease/1387source-control unchanged after6f9.
-Ruff/default/research/accounting Compose(.env.example) PASS. External code needs
+Current authority2ef959d2:475serial/18956fullPASS25skip/8actualworkers397.74sec/
+1390exact/clean/Ruff+threeCompose(.env.example), source-check in RUNBOOK.
+Prior09998 is history for pair6f9, not current core+IPC. External code needs
 scoped checks; repeated repo tests cannot validate external code.
-Tracked current code pushed6f9bd8f; older51a4/22a6/4d79 remain history.
+Latest pushed primary6f9bd8f/docs2b858e5; current core+IPC ready to commit.
 NEXT owns ONE next material company outcome.
 Continue ready independent work, no foreground market-session wait.

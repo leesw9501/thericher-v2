@@ -110,7 +110,7 @@ NATIVE_REASONS = {
     "advanced": {"native_leg_closed"},
     "pending": {"exact_request_retained"},
     "hold": {"await_declared_exit", "outside_declared_session"},
-    "complete": {"already_completed", "policy_owned_flat"},
+    "complete": {"already_completed", "policy_owned_flat", "policy_no_order_complete"},
     "no_intent": {
         "native_risk_no_intent",
         "cycle_never_reserved_retired",
@@ -152,6 +152,7 @@ NATIVE_REASONS = {
         "cycle_retirement_unproven",
         "cycle_retired_request_restored",
         "cycle_owned_not_flat",
+        "cycle_no_order_state_changed",
     },
 }
 
@@ -598,6 +599,10 @@ def _categorical(value):
         and value["reason"] in NATIVE_REASONS[value["status"]]
         and type(value["leg_count"]) is int
         and value["leg_count"] in {0, 1},
+        "native_cycle_output_invalid",
+    )
+    _require(
+        value["reason"] != "policy_no_order_complete" or value["leg_count"] == 0,
         "native_cycle_output_invalid",
     )
     return dict(

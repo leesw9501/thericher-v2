@@ -45,6 +45,7 @@ SAFE_REASONS = frozenset(
         "await_declared_exit",
         "outside_declared_session",
         "policy_owned_flat",
+        "policy_no_order_complete",
         "native_risk_no_intent",
         "cycle_reference_invalid",
         "cycle_value_invalid",
@@ -82,13 +83,14 @@ SAFE_REASONS = frozenset(
         "cycle_retirement_unproven",
         "cycle_retired_request_restored",
         "cycle_owned_not_flat",
+        "cycle_no_order_state_changed",
     }
 )
 STATUS_REASONS = {
     "advanced": {"native_leg_closed"},
     "pending": {"exact_request_retained"},
     "hold": {"await_declared_exit", "outside_declared_session"},
-    "complete": {"already_completed", "policy_owned_flat"},
+    "complete": {"already_completed", "policy_owned_flat", "policy_no_order_complete"},
     "no_intent": {
         "native_risk_no_intent",
         "cycle_never_reserved_retired",
@@ -266,6 +268,8 @@ def validate_result(value):
         type(value["leg_count"]) is not int or value["leg_count"] not in {0, 1}
     ):
         invalid()
+    if value["reason"] == "policy_no_order_complete" and value.get("leg_count") != 0:
+        invalid()
     if "calls" in value:
         calls = value["calls"]
         if (
@@ -277,6 +281,10 @@ def validate_result(value):
             or calls["cancel_posts"] > 1
             or calls["buy_posts"] + calls["sell_posts"] > 1
             or sum(calls.values()) > 128
+        ):
+            invalid()
+        if value["reason"] == "policy_no_order_complete" and any(
+            calls[key] for key in ("buy_posts", "sell_posts", "cancel_posts")
         ):
             invalid()
     if "http_start_gaps_seconds" in value:

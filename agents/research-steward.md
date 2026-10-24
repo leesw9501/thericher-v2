@@ -6,6 +6,17 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+NEWpoint COMPLETE9b00a90d, source root
+A/research/current-timesfm-ordinal-dated-point-development-20261024-v1.
+Native8dcbb24b/1278903a closed01:35:38UTC; real market worker41376 then ran
+02:06:50..02:07:00UTC,1selected core/head load and1batch25windows/0fits.
+Both wholepoint core loads consumed;1107.6067/2400activeupper including checks/
+cleanup. All workers joined/GPUlease released;120checks/Ruff PASS.
+Publication1fb1 and Parent receiver ready, not runtime installation or alpha.
+No market/native/fit repeat. Current Noether attribution is CPU-only useful
+diagnosis; no useful ready GPU job is being withheld for authority or app names.
+Do not infer current utilization or a running process from closed evidence.
+
 Noether single GPU coordinator. Fixed-rank fusion68093a24 closed3cells/
 177checks/0fits-forward-GPU/alljoined. Paired RankNet work is CLOSED at
 A/research/current-h5-ranknet-indicator-ablation-development-20261024-v1.
@@ -34,10 +45,14 @@ readout8d27/db08 CLOSED12cells/0modelops/12SYN75checks; growthFAIL/DDpass,
 974.621/2400cumulativeactiveupper/alljoined. No duplicate inference/training.
 Betaresidualb0e/bdca also CLOSED43scoredates/3cells/0GPU/4.212measuredactive/
 alljoined, growth/riskyDDfail. TimesFMzero-shot/adaptations already CLOSED,
-not new GPU jobs. OriginalordinalfailedCPU_PREFLIGHT/0GPU; Aq exactnative
-firstcause/SYN repair +Noether newlinked contract preparation are active LLM
-packages, not market/GPU workers. No launch until native dependency/source/caps
-and actual resource admission. Resource ownership is free, not permission-denied.
+not new GPU jobs. Originalordinalroot failedCPU_PREFLIGHT/0GPU BUT nestedrepair
+36db2761 proves already2marketfits341+651updates/alljoined/leasefree; no repeat.
+New Data33d1/actualpoint9b00/typedpublication1fb1 are complete. Current Execution
+dependency is matching immutable SDK/image for no-order closure, not more GPU.
+Parent475serial/18956fullPASS25skip/8workers397.74sec/1390incllocks/clean2ef959d2.
+Independent attribution/venue audit/mark coverage continue during verification.
+Inspect named nested recovery READBACK/FINAL and trialcustody before untried/
+failure-only claims, not only a rootFINAL or shortMD index.
 Parent8worker full09998 also complete405.78sec/18889PASS25skip/clean lease/temp.
 21:20UTC sample RTX4090free21838MiB/util2%; no resource-authority hold.
 No closed campaign is represented as running.

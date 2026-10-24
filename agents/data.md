@@ -32,6 +32,19 @@ not an input-unavailable or zero-profit outcome. No further data/model rerun.
 
 ## Owned Next / Future Capture
 
+Current TimesFM input COMPLETE33d12d81:
+A/data/current-timesfm-ordinal-dated-input-development-20261024-v1/pg-coherent512-r1/VERIFIED-CONSUMER.json.
+DTO21c1727d/source7563d0e5/payload1ec54ac1;25x512=12800 positive closes,
+2024-10-09..2026-10-23, targetOct26 ordinal5235. Total30GET2POST, joined;
+initial0call path-separator failure/debit preserved. PG95overlap differences
+required its own coherent512 recovery, not source blending/rescaling. Existing
+24source windows unchanged. Grade observedD1, not minute-RTH/PIT/CA/finality.
+Actual Engine point9b00/publication1fb1 and Parent receiver consumed these exact
+refs; no recapture/model repeat. Kant now owns future-mark coverage at
+A/data/current-timesfm-h5-prospective-mark-coverage-20261024-v1.
+Check full25 research and1NAS Paper needs against existing installed capture/
+collectors; no API/schedule/market bytes or future-mark observation claim.
+
 Exact FINALaffines build VERIFIED:b3b4e756/DTO518824f8/Consumera2166d64 at
 A/data/current-six-later-final-expert-affine-input-20261024-v1.
 Same6dates/masks80/80/80/80/81/81; originalrawfeatures normalized ONCE with

@@ -157,6 +157,8 @@ def test_runtime_contract_covers_exact_native_status_and_reason_enumerations():
         ("unavailable", "cycle_retirement_unproven"),
         ("unavailable", "cycle_retired_request_restored"),
         ("unavailable", "cycle_owned_not_flat"),
+        ("unavailable", "cycle_no_order_state_changed"),
+        ("complete", "policy_no_order_complete"),
         ("no_intent", "cycle_target_quote_unavailable"),
         ("unavailable", "cycle_quote_timestamp_unavailable"),
         ("unavailable", "cycle_quote_timestamp_invalid"),

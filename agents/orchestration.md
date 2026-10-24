@@ -1,72 +1,83 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-24 10:10KST /01:10UTC.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Parent owns shared MD/Git. AGENTS owns authority; no operator decision now.
+2026-10-24. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Parent owns shared MD/Git. AGENTS authority; no operator decision now.
 
-## Company / Ready / Owned
+## Company / Owners
 
-Current ONE company outcome: timesfm-ordinal-executable-comparison-v1.
-Previous beta rule COMPLETE_FAILb0e3ced1/bdca1acf/43scoredates/3cells/0modelops/
-19SYN24checks/alljoined; growth/riskyDDfail despite HHIimprovement. No swap.
-Previouspair objective COMPLETE5bf73743; independentactual6d45fa0f confirms
-appliedquietTask/image7d/source0399/sameACL/triggers/next. Primary6f9bd8f pushed.
-R4postcheck failure preserved, onlycheckedSD/RegInfoindent differed; no repeat
-mutation. OptionalR5 reader withheld metadata (native0output/LASTEXITCODE null,
-causeunknown); directDocker/independentreader succeeded. Not an engine outage/gate.
-Matched MSE36aee70a/ee65a717/05ebec08 COMPLETE1fit/3cells/177checks;
-RankNetgrowthhigher/DDworse, NOT dominance/no winner. Previous
-h5-in-visit-terminal-closure-v1 COMPLETE on tested code AND actual replacement,
-not source-only readiness. Parentc2369abd and independent actualbe057619:
-A/execution/current-h5-in-visit-terminal-parent-release-20261024-v1/CONSUMER.json.
-Both original tasks91/0fb/9a; EXIT/readback then ENTRY/readback under original
-mutex, released22:57UTC/PS67205exit0. Same slot/input/policy/clocks/principal/
-effectiveACL/sharedtenth/F9hold. No natural owner/fill/terminal runtime claim.
+ONE outcome: timesfm-ordinal-dated-paper-proposal-v1. Produce a newly dated
+selected FROZEN_RANK point and connect existing deterministic H5 Paper consumer.
+Prior unexecuted-comparison premise SUPERSEDED: nested recovery36db2761 already
+closed2marketfits341+651updates. No duplicate repair/training or oldpass regrade.
+Old scientific/financialDD failures stay failures; provisional Paper is not alpha.
 
-| Actual owner | Disjoint work |
+| Actual owner | Current disjoint package |
 | --- | --- |
-| Parent / 총괄 | Deployment5bf7 actualclosed/primary6f9pushed; sharedMD/Git/newcompanyoutcome/integration, no Applyrepeat. |
-| Noether / 엔진·연구 자원 | Betaruleclosedb0e; newlinked TimesFMordinal contract/input/caps preparation, no market/GPU job inferred. |
-| Aquinas / 실행·호출형 인프라 | Metadatarepairclosed/alljoined. Exact old ordinal CPU_PREFLIGHT firstcause/nativeSYN repair only; no market/GPU/private/Task work. |
-| Kant / 데이터 | FINALaffinesb3b4/5188 and2892marksdf319a00 complete;21GET1POST/21accepted/42newmarks/alljoined. No pending Data rerun. |
-| Tesla / 전략 조사 | Residualconsumed; TimesFMaudite135 rejects duplicate126forward/18cell+502/1246update families, supplies exact distinct ordinal-failure facts. |
-| Godel / 검토 | Actualclosure6d45 complete9checks/0effects; available focused researchcontract/interpretation challenge, no whole-suite rerun. |
+| Parent / 총괄 | Actual point binding complete;475serial/18956fullPASS25skip/8workers clean2ef959d2. Own integration/release/shared MD/Git. |
+| Noether / 엔진·연구 자원 | New CUDA point CLOSED9b00; retained SIX-versus-uniform loss attribution dispatched,0new fits/forwards. No GPU worker now. |
+| Kant / 데이터 | Coherent25x512 input COMPLETE33d1; prospective mark coverage against existing collectors dispatched, no duplicate capture. |
+| Tesla / 전략 탐색 호출 | NAS-only H5 versus actual NYS adapter capability source audit dispatched; no API or implementation effects. |
+| Aquinas / 실행 | Core67db/newtestabb9 frozen; external immutable SDK/image successor preparation dispatched. No Task/broker effects. |
+| Godel / 검토 | Combined core+IPC review961884b4 PASS with scoped limits; old9a capsule is not upgraded by repo edits. |
 
-## Evidence / Due
+Engine requirements:
+A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1/MODEL-REQUIREMENTS.json.
+New pointroot A/research/current-timesfm-ordinal-dated-point-development-20261024-v1.
+Selectedheadf40b04d5/core2f776efe/runtime d6b43213, fixed25/512closes/16x32/H5.
+No zero freshhead, old3class restoration, historical replay or new fit.
+Data root A/data/current-timesfm-ordinal-current-input-preparation-20261024-v1.
+Temporaryprobe A/data/current-timesfm-ordinal-completeness-capability-probe-20261024-v1.
+Execution prep A/execution/current-timesfm-ordinal-paper-consumer-readiness-20261024-v1/opportunity-preparation-r1.
+Proposed NEWslot timesfm-frozen-rank-h5-Oct26-v1/entry14:20..14:50UTC/exitOct30
+19:45..20UTC/PT4M is NOT installed. OriginalGRU slot/clocks unchanged; .005
+cohort ceiling within sharedtenth/F9held/max8/whole shares, no redistribution.
 
-- Current deployment91c09718/native3e/release0fb/image9a, Parentc2369abd;
-  SDDL-only a419/4b82 preserved original rights/allotherXML, no mixeddefs.
-- H5 entryOct26 13:40..14:10UTC; exitOct30 19:45..20UTC; max8originalvisits,
-  no ninth finalization. Zeroowned/noSELL is outside code repair.
-- R5threeowned exitOct27>=19:45UTC; HGBoneowned exitOct28>=19:45UTC.
-  Joint17 failed/expired ENTRY disabled, alias-only conditional EXIT retained.
-- Nightly exactRO2d168c90:SELL1accepted/fullfill/cyclecomplete; not wholebook.
-  F9UNKNOWN/HELD, fees/settledcash/net unobserved.
-- Future capturec78/refc992 installed, independent3bc8, Oct31 05:10KST.
-  Installation is not acquisition/OSwake/finality.
-- Sixlater actual26e70cd3 FAIL:GRU9409-4.1416%/4.5329DD versusuniform-.8085/
-  1.3888 at10bp.2514marks/6cells/9SYN/47checks/0newmodels/alljoined.
-  No policy swap or independent-alpha claim from adaptive later development.
+## Exact Dependencies / Alternatives
+
+Data33d1 produced25x512 coherent closes throughOct23, with PG95overlap changes
+handled by a separately coherent source rather than blending vintages.
+Actual CUDA market point9b00 completed02:06:50..02:07:00UTC,1core/head load and
+1batch/0fits. Canonical H5publication1fb1 has28axis/25known/1NAS target, no
+redistribution of unsupported NYS mass. All model workers joined/leasefree.
+Parent actual receiver accepted real source/Data/point/SDK chain with0modelcalls:
+A/execution/current-timesfm-ordinal-paper-parent-binding-20261024-v1/ACCEPTED.json.
+New opportunity is bound, NOT released/installed. Original GRU remains unchanged.
+Current dependency: tested no-order-empty-slot repair and matching immutable
+SDK/host/worker/image, not Data, approval, quota or a GPU outage.
+
+Claude04b prefers A: dated frozen point plus existing Paper path. Kill A for
+incompatible checkpoint/context/horizon/adapter, duplicate/unbound asof, future
+data, altered requests/publicmodelcode in Execution or F9/risk bypass. Then B:
+exact retained SIX-versus-uniform attribution. C: genuinely new failure-directed
+training only after a new contract, not another seed/model-name repeat.
+
+## Closed / Due
+
+Pair actualdeployment5bf73743/independent6d45fa0f/source0399/image7d complete;
+R3/R4failures preserved, optionalR5reader retired, no repeatedApply/Undo.
+Code6f9bd8f/docs2b858e5 pushed; full09998:187serial/18889PASS25skip/8workers/
+405.78sec/1387exact/clean/Ruff+threeCompose. Requirements separately image-bound.
+New external code needs its focused proof, not another full run while1387match.
+FourCUDAfitsb680/later48forwards9fe5/2892marksdf31/readout12cells8d27 CLOSED;
+beta-ruleb0e CLOSED_FAIL43dates/3cells/0models. No reruns or fallback winners.
+
+InstalledGRU91/0fb/image9a entryOct26 13:40..14:10UTC/exitOct30 19:45..20UTC;
+R5threeowned exitOct27,HGBoneowned exitOct28,captureOct31 05:10KST unchanged.
+Nightly2d168c90 SELL1accepted/fullfill/cyclecomplete, not wholebook closure.
+F9UNKNOWN/HELD; Joint17expiredENTRY disabled/conditionalexitNov19 retained.
+No new eligible receipt inferred; fees/settledcash/net remain unobserved.
 
 ## Throughput Review
 
-10:10KST throughput: deploymentactuallyclosed; no more helperrepair required.
-R4desiredstate is valid despite postcheck failure; independent exact readback
-is sufficient. Retire optionalR5 rather than make its health another gate.
-RulemechanismCPU comparison now closedFAIL; datedfoundationaudit rejects a
-duplicate. Exact unexecuted ordinalnative repair +newcontract prep now parallel,
-not an invented active GPU fit. No sessionwait or repeated completed training.
-Full batch:
-187serial/18889fullPASS25skip/8actualworkers/
-405.78sec/1387exact/cleanhelpertemp+lease/Ruff+threeComposePASS, authority09998.
-Requirements locks separately image-context-bound, not inherited1387scope.
-No new whole-suite run for external-only metadata repair; independently check
-that changed helper and exact primary digest instead. Image7d actualsourceprobe
-and fullTask/ACL/alias proof6d45 complete; no source-only deployment claim.
-R3/R4failures stay immutable. No operatorpermission/account risk hold.
-FourCUDAfits/later48forwards/2892marks/12cellreadout CLOSED; no duplication.
-Reversible improvement: use existing unscaled beta/momentum inputs for ONE
-cheap distinct mechanism before spending on more noisy seed/fusion fits.
-Prepared datedfoundation study may use GPU only after real compatibility/input
-admission, not for utilization. Actual workers need source/PID/receipts, not plans.
-History stays Git/artifacts; future Paper clocks remain unchanged.
+11:30KST: typed receiver caught a real all-zero-sizing active-slot leak.
+Core67db closes only positively proven sizing-only no-order cohorts in the same
+visit; host/worker reason maps and zero-effect grammar are now included.
+475serial/18956fullPASS25skip/8actualworkers397.74sec/1390incllocks/clean,
+Ruff/threeCompose PASS; authority2ef959d2. Independent9618 no blocking issue.
+While verification/runtime prep run, loss attribution, venue capability audit
+and exact future-mark coverage are disjoint ready work. No repeated training
+or foreground market-session wait. Fresh full2ef959d2 supersedes09998 for current
+source, not runtime deployment.
+One GPU coordinator, real headroom before launch; actual running claims need
+PID/start/source, not an MD/assignment. No foreground market-session wait.
+History stays Git/immutable artifacts, not stale running projections.

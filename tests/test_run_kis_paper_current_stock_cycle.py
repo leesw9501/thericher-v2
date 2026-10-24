@@ -240,6 +240,8 @@ def test_host_contract_agrees_with_worker_pairs_plus_fixed_failure_code():
         ("unavailable", "cycle_retirement_unproven"),
         ("unavailable", "cycle_retired_request_restored"),
         ("unavailable", "cycle_owned_not_flat"),
+        ("unavailable", "cycle_no_order_state_changed"),
+        ("complete", "policy_no_order_complete"),
         ("no_intent", "cycle_target_quote_unavailable"),
         ("unavailable", "cycle_quote_timestamp_unavailable"),
         ("unavailable", "cycle_quote_timestamp_invalid"),
@@ -257,7 +259,7 @@ def test_native_reasons_reject_every_wrong_status(allowed, reason, status):
     from test_kis_paper_current_stock_cycle_worker import w as worker
 
     value = payload()
-    leg_count = 0 if reason == "cycle_target_quote_unavailable" else 1
+    leg_count = 0 if reason in {"cycle_target_quote_unavailable", "policy_no_order_complete"} else 1
     value.update(status=status, reason=reason, leg_count=leg_count)
     if status == allowed:
         assert w.validate_result(value) == value
@@ -270,6 +272,29 @@ def test_native_reasons_reject_every_wrong_status(allowed, reason, status):
         w.validate_result(value)
     with pytest.raises(ValueError, match="native_cycle_output_invalid"):
         worker._categorical(dict(status=status, reason=reason, leg_count=leg_count))
+
+
+@pytest.mark.parametrize("leg_count", [True, 1, "0", None])
+def test_no_order_completion_rejects_nonzero_or_invalid_leg_count(leg_count):
+    from test_kis_paper_current_stock_cycle_worker import w as worker
+
+    value = payload() | dict(
+        status="complete", reason="policy_no_order_complete", leg_count=leg_count
+    )
+    with pytest.raises(ValueError, match="stock_worker_output_invalid"):
+        w.validate_result(value)
+    with pytest.raises(ValueError, match="native_cycle_output_invalid"):
+        worker._categorical(
+            dict(status="complete", reason="policy_no_order_complete", leg_count=leg_count)
+        )
+
+
+@pytest.mark.parametrize("counter", ["buy_posts", "sell_posts", "cancel_posts"])
+def test_no_order_completion_rejects_broker_effect_counters(counter):
+    value = payload() | dict(status="complete", reason="policy_no_order_complete", leg_count=0)
+    value["calls"][counter] = 1
+    with pytest.raises(ValueError, match="stock_worker_output_invalid"):
+        w.validate_result(value)
 
 
 @pytest.mark.parametrize("field", ["failure_diagnostic", "quote_payload", "private"])

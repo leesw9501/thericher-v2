@@ -6,6 +6,25 @@ Parent sharedMD/Git; AGENTS authority. No operator decision now.
 
 ## Current Actual Deployment
 
+New H5 sizing-only no-order repair is VERIFIED, NOT DEPLOYED. Core67db51ee/
+testabb95fe1 plus host/worker IPC reasons/zero-effect grammar; same-visit atomic
+empty-cohort completion requires exact positive proof/no plan/pending/order/
+lock/orphan/foreign state. Quote-unavailable does not qualify. H20/finalSELL
+unchanged; no forced shares or new broker effects. Claude f907236f SOUNDlimits,
+combined review961884b4 PASS. Fresh authority2ef959d2:
+A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
+475serial/18956fullPASS25skip/8workers397.74sec/1390same incllocks/clean/Ruff+
+threeCompose PASS. Old9a immutable capsule below remains current. Aquinas owns
+external SDK/image successor proof; Parent owns actual cutover.
+
+TimesFM actual point9b00/publication1fb1 accepted by existing real typed receiver:
+A/execution/current-timesfm-ordinal-paper-parent-binding-20261024-v1/ACCEPTED.json.
+Exact Data/source/point hashes/28axis25known1NAS target. Newslot
+timesfm-frozen-rank-h5-Oct26-v1/.005originalbasis/max8/PT4M is bound, NOT
+released/installed. EntryOct26 14:20..14:50UTC, exitOct30 19:45..20UTC window.
+Original GRU clocks/input/sharedtenth/F9UNKNOWN-HELD unchanged. NYS mass unused,
+no redistribution/public model code in Execution.
+
 H5 same-final-visit terminal closure TESTED_AND_DEPLOYED, Parentc2369abd:
 A/execution/current-h5-in-visit-terminal-parent-release-20261024-v1/CONSUMER.json.
 Actual candidate:
@@ -43,8 +62,8 @@ A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1/CONSUM
 Primary6f9bd8f/full09998/image7d15/quietTask/sameACL+triggers+next. No broker
 effects/private reads/Taskstart in that deployment; optionalR5reader is retired.
 This does not change any Execution owner/intent/bank/schedule or prove a fill.
-Aquinas currently invokedInfra for TimesFMordinalnativefirstcause, not a
-running Execution broker worker. Future Paper owners remain installed/exclusive.
+Aquinas currently prepares matching immutable no-order runtime, not a running
+broker worker. Future Paper owners remain installed/exclusive.
 
 Weekendauditeb45ffea at A/execution/current-paper-weekend-owned-status-20261024-v1
 found no NEW eligible outcome; old exact Nightly pointer unchanged,0private
