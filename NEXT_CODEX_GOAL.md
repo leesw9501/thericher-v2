@@ -2,115 +2,99 @@
 
 ## One Company Outcome
 
-three-etf-held-feedback-ablation-v1: complete one matched state-conditioned
-versus state-blind daily-target policy comparison using existing SPY/QQQ/IWM
-adjusted data and the exact three-asset carried fee ledger. Obtain a bounded
-decision, not a new platform or generic direct-utility novelty claim.
+three-etf-action-inertia-development-v1: determine whether one fixed causal
+no-trade band improves the cost-aware carried-portfolio result of the frozen
+three-ETF state-feedback policy. This is a NEW action mechanism, not another
+fit, threshold search, old failure regrade or Paper model swap.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Run scripts/start_next_codex_task.ps1; follow HANDOFF/AGENTS/RUNBOOK/boards.
-Parent shared MD/Git/integration. Standing private no-cost Data/Research/KIS
-Paper authority continues independently. Never KIS_LIVE_*, real money,
-paid/public work or raw/private values. No automatic Paper model swap.
+Follow HANDOFF/AGENTS/RUNBOOK/active stateboards. Parent owns shared MD/Git.
+Standing private no-cost Data/Research/KIS Paper authority remains independent.
+Never KIS_LIVE_*, real money, paid/public work or secrets/private raw output.
+Preserve original shared Paper tenth/basis/costs/losses/pending/F9UNKNOWN-HELD.
 
-## Adopted Direction / Split Work
+## Closed Predecessor / Do Not Repeat
 
-Proposalbf6858c8/Consumerf071be08, Claude REVISE/dc9b6c07 preserved/adjudicated:
-A/research/current-three-etf-held-feedback-ablation-preparation-20261024-v1.
-Accept matched initialization/zero-slot invariance, not an unsupported claim
-that deterministic AdamW decay advances RNG. No no-trade branch or inactivity
-claim. Both arms keep real holdings, daily target actions and identical fees.
+three-etf-held-feedback-ablation-v1 COMPLETE_FAIL:
+A/research/current-three-etf-held-feedback-development-20261024-v1/FINAL-CONSUMER.json
+SHA1e9028d260f224d4bfe79e391ca6c7e9af99d2051c0cdd29baf943b4355beb92.
+Sourcec590/result8595/fixed-output9e8c, independentcc649a7a/ClaudeSOUND_WITH_LIMITS.
+Actual2CPUfits/200updates/560630marketrows/6cells; native6updates99actor49encoder
+rows; alljoined/removed/862.405593activeupper. Both MAX100, selected95/100;
+not convergence or evidence that extra epochs would help. GPU0 in this pair.
+Old07:50..09:50 clock/debits and failure remain immutable. No old native,
+training, evaluation trajectory or finalization rerun. Resource R1 stays an
+unqualified saved draft, not GPU performance evidence or a readiness gate.
 
-Parent freezes conservative origin2026-10-24 07:50UTC/hard09:50UTC,
-3000cumulative active owned-worker seconds/7200elapsed. Strategy240upper and
-Data-readiness30upper once; Engine source60upper once; actual new Data/kernel/
-native/fit/I/O/checkpoint/failure/cleanup once. LLM/review/queue elapsed separate.
-Actual phase reserves and exact Source must fit residual ceilings before any
-model native/market operation; no clock reset, refund, second pair or retry.
+## New Frozen Question
 
-- Data/Kant owns A/data/current-three-etf-held-feedback-inputs-20261024-v1.
-  Exact existing adjusted loader/context/snapshot, no new acquisition. Fixed3
-  X[N,9,31], adjusted OPEN/CLOSE[N,3], source/clock/knownness/role ABI.
-  TRAIN2002-2010, CHECK2011-2012; their exact counts sum2769. Reused EVAL_A
-  2013-2019/1762 and EVAL_B2020-July2026/1653; total6184, NOT6218.
-  NEW TRAIN-only channel scaler shared by both arms. Never old2002-2012 scaler
-  or unadjusted canonical marks, double dividends/splits, dropped/imputed rows.
-  Keep original scheduled-OPEN decision convention and prior-CLOSE state;
-  UTC-day-ended context cannot be relabeled literal prior-CLOSE availability.
-  Onebuild/oneverify,<=180active600elapsed within company ceiling.
-  ACTUAL COMPLETEd48134ac/Source905575e4/DTO45845b96/ABIf41d234d,
-  TRAIN2267/CHECK502/EVAL1762+1653/6184 total/allgaps0/alljoined;
-  49.9150477upper once, firstSYN08:19:38.975709UTC. Parent6metadata refs match.
-  Consume actual physical aliases/role leaves; DO NOT rebuild/double-normalize.
-- Invoked Kernel/Aquinas owns
-  A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1.
-  Small sequential callback wrapper over original exact fee primitive/Decimal
-  oracle; source and callable native fixtures, no numerical dispatch yet.
-  No general100-axis solver, new action space, framework or permanent role.
-- Engine/Steward/Noether owns
-  A/research/current-three-etf-held-feedback-development-20261024-v1.
-  Actor/trainer/checkpoint/source glue and one resource owner. Bind actual
-  Data/kernel interfaces before final Source and Parent model numerical GO.
+Proposed constant band0.05 over the L1 difference of all four target weights
+from the policy's OWN prior-CLOSE stock/cash weights. Gate before currentOPEN
+prices: <=band retains actual stock quantities and cash; >band invokes the
+original exact fee-funded target rebalance. Every policy still consumes its
+own real carried ledger; never reuse old actions after changing that ledger.
+TerminalCLOSE liquidation always occurs exactly once, outside the band.
+No hidden entry/exit band, parameter sweep, new loss, seed, fit or optimizer.
 
-## Paired Contract
+Use both exact c590 selected models, unchanged scaler/architecture, and uniform
+as named controls. Three NEW band policies over EVAL_A/B produce6new cells;
+the old6aggregate daily-target cells are cached controls, never replayed.
+Primary STATE band must improve its OWN old growth, have no-worse drawdown and
+lower changed-notional turnover in BOTH roles. BLIND/uniform controls distinguish
+generic execution savings from feedback-specific benefit. No best-loser
+promotion, threshold selection or changed original criterion. Cash/full uniform,
+exposure, fees and drawdown remain separate; lower exposure is not alpha.
+These outcomes are adaptively reused revised history, not fresh replication,
+PIT/arrival/finality qualification or measured Paper PnL.
 
-Same four causal Conv1d/ReLU layers width8/dilations1,2,4,8, last8-vector plus
-four slots, Linear12->4/softmax,876parameters each. Complete CPU seed101
-initialization once, clone all bytes to both arms. Own prior-CLOSE stock3
-weights/g and(cash_weight-1)/g, g1 research sleeve; initial slots exactly0.
-Control slots always0 but its true portfolio/fees/cash/gradients still carry.
-No current-OPEN drift/future-CLOSE actor input; no role-state/gradient carry.
-This normalized research sleeve is NOT the private Paper tenth/bank.
+Mechanism references, not proof for our equity policy:
+https://arxiv.org/abs/2103.01775 (derivative hedging, not our task);
+https://stanford.edu/~boyd/papers/cvx_portfolio.html (cost-aware control).
+Use source ideas only; no public code/weights, new dependencies or framework.
 
-Keep existing252*(mean daily log NAV growth-5*population variance),10bp each
-side on actual changed notional/terminal liquidation, AdamW.001/wd.01/float64.
-<=100epochs per arm/one update per epoch/CHECK utility patience20, earliest
-checkpoint on ties, restore safe best checkpoint. No EVAL-selected epochs,
-new scheduler/loss/architecture/seed/grid. Retain curves/stop/convergence limits.
-No detached candidate feedback/TRAIN ledger; no gradient in CHECK/EVAL.
+## Owners / Bounds
 
-Finite totals:2marketfits/<=200market optimizer updates;<=6native updates/
-512native actor rows; market actor/encoder rows HARD560630 including all
-TRAIN/CHECK and6830final EVAL rows.6new10bp cells:2models+daily uniform for each
-of2roles,10245readout mark steps. No full EVAL cold rerun, recost grid, new
-fitted baseline, extra diagnostics/continuation/retry. Uniform is daily
-rebalanced, not buy-and-hold. Initialcash0 growth is a reference, not zero-DD gate.
-For BOTH reused roles require paired growth/utility improvement and no-worse
-DD; useful relative opportunity additionally beats aligned uniform growth/DD.
-Exposure differences and reused-history/single-pair limitations stay explicit.
+- Godel/Strategy owns duplicate-check/proposal/pure kernel interface and native
+  fixtures under A/research/current-three-etf-action-inertia-preparation-20261024-v1.
+  Short falsification-first Claude challenge; retain exact categorical verdict,
+  limits and external pointer. Reject an already completed equivalent test.
+- Noether/Engine owns source/runtime integration under
+  A/research/current-three-etf-action-inertia-development-20261024-v1.
+  Reuse actual Data d481/9055/4584/f41d and exact c590 model producer bindings.
+  No data rebuild, affine refit, model fit, credentials, Paper or Task effects.
+- Parent integrates/adopts exact Source/native/runtime reserves and verifies
+  actual completion. Preparation/source is not numerical execution evidence.
 
-Source weights/scaler freeze before EVAL; enforce causal per-step ordering,
-not an impossible all-future-actions-before-all-outcomes seal. Actor first sees
-context/prior-CLOSE state, then accounting sees currentOPEN, then CLOSE marks.
-Use actual fee-funded quantities/cash and final liquidation once.
+New conservative origin2026-10-24 09:20UTC/hard10:20UTC;
+1800cumulative active owned-worker seconds/3600elapsed. Strategy source120upper,
+Engine source60upper once; freeze actual native/restore/actor/readout/check/
+cleanup caps and residual reserves BEFORE numerical dispatch. Source/review/
+queue time is not a claim of GPU training. Preserve all old study debits.
+Proposed market maxima:0fits/0updates,2model restores,6830actor+encoder rows,
+6new cells/6cached controls/10245new readout steps. Native SYN/import/codec
+counts must be independently finite and frozen in Source, not market retries.
+No completed-model repeat for utilization or new retry/continuation allowance.
 
-## Native / Resources / Preserve
+Native must exercise actual producer-host namespaces, NPZ/clock/knownness ABI,
+model/scaler hashes, zero-band parity with the old ledger on SYN only, true
+quantity/cash preservation, fee/terminal/event order and future-price causality.
+No full old EVAL cold rerun. Keep hidden minimal-env children and exact join/
+cleanup/phase claims. A qualified CPU path is appropriate for tiny frozen
+actors; optional GPU profiling must not postpone ready work.
 
-Actual source/import/schema/role IO and sequential gradient/Decimal parity,
-clone/initialcash equality/unused-column invariance/future-price perturbation
-tests BEFORE market fits, within the SAME native counters. Pin existing
-CPU/CUDA image/runtime; host dist-info alone is not qualification.
-Measure native CPU/CUDA usefulness and free/projected VRAM/headroom. Useful
-concurrent fits may run under one Steward if measured capacity permits.
-No app-name approval wait, dummy GPU load, user-app killing or driver change.
+## Independent Execution / Completion
 
-Prior flat-wait question COMPLETE_FAIL_EQUAL_POLICIES:
-A/research/current-flat-waiting-option-entry-development-20261024-v1/technical-continuation-r1/FINAL-CONSUMER.json
-a5939dbc; total3marketfits1596pred/native3fits136,103checks/Ruff/alljoined/
-411.7215activeupper. Bteacher buy0, identical WAIT/MYOPIC targets/coefficients/
-EVAL1early125cash.0outcome intake/newcells/cached consumption; PnL UNKNOWN,
-not zero. Single continuation consumed, no further dispatch. Original393
-failure/teacher bytes retained; e450 fixed all producer refs/raw-adapter schema.
-Do not reuse those closed allowances/forecasts as this new experiment.
+Joint17 H20 deployment222d/d092 and capture474d/9be5 are COMPLETE AS INSTALLATION,
+not future runtime/fills. GRU/TimesFM/Joint17 first entries remain Oct26 UTC;
+do not manually duplicate them. Holdings32326846/213e read ONCE07:18:55UTC:
+7positions0open/read_only/submitfalse, not owned fills/full risk/F9 closure.
+No repeated successful observation merely to support this research.
 
-Holdings actual32326846/213e at07:18:55UTC:7positive positions0open/read-only/
-submitfalse; NOT owned fills/full risk/F9 closure. No repeated query for research.
-Joint17 actual222d/d092 and H20 capture474d/9be5 complete AS DEPLOYMENTS.
-GRU/TimesFM/Joint17 future tasks and original shared tenth/F9UNKNOWN-HELD stay.
-
-Current primary authorityf19d reuses only exact1392source digests. External
-source/outputs need their own actual focused/native proof, not another repo
-suite. Tracked runtime/control changes follow AGENTS fresh serial/full/Ruff/
-three Compose(.env.example). At material completion verify/commit/push, refresh
-boards, replace NEXT with ONE material outcome and continue active work.
+Close only on exact bounded experiment evidence or a demonstrated duplicate/
+input/technical failure; preserve scope and partial debits, no invented zeroes.
+Current primary authorityf19d may be reused only while exact1392digests match;
+external source/runtime outputs require fresh focused/native/independent proof.
+Tracked runtime/control changes require AGENTS serial/full/Ruff/three Compose.
+Integrate evidence, verify, commit/push, replace NEXT with ONE material next
+company outcome and continue while ready delegated work exists.

@@ -12,21 +12,25 @@ Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
 ## Current Actual Deployment
 
-Current research3ETF state-feedback comparison is SOURCE PREPARATION ONLY,
-not a scheduled Paper task or running GPU fit. Data actuald481/9055/4584/f41d:
-A/data/current-three-etf-held-feedback-inputs-20261024-v1.
-No rebuild:6184dates/gaps0/newTRAIN2002-2010 scaler/onebuild1verify/alljoined.
-Actor/trainer A/research/current-three-etf-held-feedback-development-20261024-v1
-and pure kernel A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1
-await actual combined source/native/runtime qualification. No model numerical GO.
-Futurefamily07:50..09:50UTC/3000active7200elapsed; use exact qualified commands
-only after Parent adoption, never infer runtime/GPU from a Source/plan.
-Closed flat waiting option a593 at technical-continuation-r1/FINAL-CONSUMER.json:
-3fits1596pred/native3/136/alljoined/411.7215upper/COMPLETE_FAIL_EQUAL_POLICIES.
-0financialintake/cells/cacheconsumption, PnL NOT_EVALUATED. Do not rerun original
-393 or spent e450 continuation. Single e450 reused old teacher, repaired exact
-guest/host publisher paths and originalraw adapter; complete IO schema native
-proof is required in new campaigns, not a toy canonical-field NPZ.
+Current research3ETF state-feedback is CLOSED COMPLETE_FAIL1e9028d2:
+A/research/current-three-etf-held-feedback-development-20261024-v1/FINAL-CONSUMER.json.
+Actual2CPUfits200updates6cells/native6updates99actor49encoder rows/alljoined/
+removed/862.405593activeupper. Fixed-output9e8c/independentcc649a7a pass.
+DO NOT run its launch.ps1 -Execute, --chain, any stage or finalization again.
+Both MAX100/best95and100 do not prove convergence. R1 draft unrun/unqualified.
+No c590 GPU training or automatic Paper model swap.
+
+NEXT action-inertia SOURCE PREPARATION ONLY:
+A/research/current-three-etf-action-inertia-preparation-20261024-v1 (Godel);
+A/research/current-three-etf-action-inertia-development-20261024-v1 (Noether).
+No numerical GO/command yet. New09:20..10:20UTC/1800active3600elapsed.
+One fixed causal L1 band0.05 retains quantities/cash below threshold, original
+fee-funded rebalance otherwise, terminalCLOSE once. No fits or threshold grid.
+Old6cells cached; proposed6newcells/6830modelrows/2marketrestores only after
+actual frozen Source/native/reserve adoption. Do not launch old comparison.
+Data d481/9055/4584/f41d exact6184dates/gaps0/newTRAIN-onlyscaler is immutable;
+no rebuild/double affine. Old flat a593 equal-policy kill remains closed with
+0financialintake/cells/PnL NOT_EVALUATED, no spent e450 continuation repeat.
 
 Holdings-only primary4bd2 pushedba1345b; actual one-shot API COMPLETE. Authority:
 A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json

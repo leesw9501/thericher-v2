@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 17:19KST /08:19UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-24 18:22KST /09:22UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles; Parent shared MD/Git.
 AGENTS private no-cost Data/Research/KIS Paper delegated. Never KIS_LIVE_*,
@@ -46,41 +46,53 @@ onee450 technical continuation completed08:10:23UTC, no native/teacher repeat
 or second continuation. Raw-held fix passed host SYN but actual held path
 was not reached because of declared equal-policy kill. No Paper swap.
 
-NEXT three-etf-held-feedback-ablation-v1. Proposalf071/bf6858c8/ClaudeREVISE
-dc9b preserved/adjudicated, not agreement:
-A/research/current-three-etf-held-feedback-ablation-preparation-20261024-v1.
-PriorCLOSE held-weight input versus zero-state inputs, both REAL daily-target
-carried ledgers/fees, no new no-trade branch/inaction claim or generic novelty.
-New origin07:50/hard09:50UTC/3000active7200elapsed. Strategy240upper and Data
-readiness30upper once, Engine60upper once, actualnewData/kernel/native/fits/
-cleanup once. Exact reserves before model Source GO; no numerical model GO yet.
+three-etf-held-feedback-ablation-v1 ACTUAL COMPLETE_FAIL:
+A/research/current-three-etf-held-feedback-development-20261024-v1/FINAL-CONSUMER.json
+SHA1e9028d260f224d4bfe79e391ca6c7e9af99d2051c0cdd29baf943b4355beb92.
+Sourcec590/result8595/fixed-output9e8c; Parent17 exact public refs match.
+Native6updates99actor49encoder rows;2CPUfits200updates560630marketrows/
+6cells10245readoutsteps/0retry/alljoined/removed/862.405593activeupper.
+Actual fits09:07:58..09:14:18UTC, MAX100 each/best95state100blind.
+Not convergence or proof that more epochs help; old07:50..09:50 clocks retained.
+10bp growth/DD%: EVAL_A state39.3572/8.0718, blind34.6788/7.4066,
+uniform165.0088/22.7402; EVAL_B26.2786/9.7716,26.9190/9.3803,155.6474/34.2341.
+Positive replay growth is not alpha or Paper PnL; lower risky exposure matters.
+State has worse DD than blind in BOTH roles and fails B growth/utility too.
+Independent cc649a7a/ClaudeSOUND_WITH_LIMITS confirms failure, no source blocker:
+A/review/current-three-etf-held-feedback-interpretation-20261024-v1/CONSUMER.json.
+No old native/fit/evaluation/finalization repeat or automatic Paper model swap.
+R1 resource draft saved/unfrozen/unrun; CPU/GPU comparative performance unknown,
+not missing GPU permission. Optional profiling never postponed actual CPU pair.
 
-- Kant/Data COMPLETE/closed:d48134ac/Source905575e4/DTO45845b96/ABIf41d234d:
-  A/data/current-three-etf-held-feedback-inputs-20261024-v1.
-  Onebuild/verify/gaps0/alljoined,49.9150477upper once. FirstSYN08:19:38.975709UTC,
-  Parent6metadata refs match. TRAIN2267/CHECK502/EVAL1762+1653 total6184.
-  NewTRAIN-only9channel scaler/raw+normalized X[N,9,31]/adjusted O,C[N,3],
-  actual clock/knownness ABI. Do not rebuild/double-normalize/use oldscaler.
-- Noether/Engine and sole resource owner active:
-  A/research/current-three-etf-held-feedback-development-20261024-v1.
-  Twin876-paramTCN actor/trainer/safe checkpoint/source glue.2fits<=200updates/
-  100epochs each/pat20CHECK;<=6native updates512rows/560630market actorrows/
-  6cells/10245readoutsteps/0retries. CUDA only if measured useful/headroom.
-- Aquinas/invoked pure kernel active:
-  A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1.
-  Small sequential callback over existing exact3asset fee primitive/Decimal
-  oracle, source/native fixtures only, no numeric execution yet. Disjoint writes.
-- Godel/Strategy source refinement complete/closed. No permanent LLM inferred.
-Parent owns integration/shared MD/Git and final exact model Source GO. This
-normalized g1 research sleeve is NOT private Paper bank/tenth/capital authority.
+NEXT three-etf-action-inertia-development-v1. NEW proposed fixed L1 weight
+band0.05 skips small changes by retaining actual quantities/cash; actor uses
+own prior-CLOSE state, accounting later sees currentOPEN, terminalCLOSE exits
+once. Same frozen models/data,0fits; not old-result regrade or threshold search.
+- Godel/Strategy source-only owner:
+  A/research/current-three-etf-action-inertia-preparation-20261024-v1.
+  Duplicate-check/source proposal/kernel interface/native fixtures/Claude;
+  no model/array/ledger execution. Reject an equivalent completed mechanism.
+- Noether/Engine source-only owner:
+  A/research/current-three-etf-action-inertia-development-20261024-v1.
+  Actor/host/checkpoint glue, no numerical GO yet. Kernel writer is disjoint.
+- Parent owns source adoption/integration/shared MD/Git.
+New conservative09:20..10:20UTC/1800active3600elapsed; Strategy120upper and
+Engine60upper once. Exact native/phase/cumulative reservations before effects.
+Proposed0fits/2marketrestores/6830marketactor+encoderrows/6newcells6cached/
+10245newreadoutsteps, no retry/old trajectory rerun. Primary STATE band improves
+own old growth/DD/turnover BOTH roles; BLIND+uniform are named action controls.
+Reused retrospective adaptive history, no independent alpha/Paper promotion.
+See NEXT for exact scope; original failures/debits stay closed.
 
-Existing input readinessb7fc/Source9926 at
-A/data/current-three-etf-causal-carry-input-readiness-20261024-v1.
-Old3ETF raw source/adjusted loader/context/fee libraries exist. General100-axis
-carry solver is NOT a prerequisite. New state/step ABI still needs actual Data/
-native qualification. Unknown arrival/finality/revised adjustment limits remain,
-not a restriction on independent Paper. Actor cutoff remains scheduledOPEN
-with prior-CLOSE book state, not a relabeled previous literalCLOSE cutoff.
+Actual Data d48134ac/Source905575e4/DTO45845b96/ABIf41d234d remains immutable:
+A/data/current-three-etf-held-feedback-inputs-20261024-v1.
+TRAIN2267/CHECK502/EVAL1762+1653/6184total, gaps0/newTRAIN-only9channel scaler/
+raw+normalized X[N,9,31]/adjusted O,C[N,3]/49.9150477upper/onebuild/verify.
+No rebuild/double affine. Original kernel5807/Consumer7bfe at
+A/research/current-three-etf-held-feedback-kernel-preparation-20261024-v1
+passed49 native rows inside c590. Prior scheduledOPEN decision cutoff and
+prior-CLOSE state are not a relabeled literal prior-CLOSE decision. Revised/
+arrival/finality limits remain, not a restriction on independent Paper.
 
 ## Retained Flat Input / Recovery Knowledge
 

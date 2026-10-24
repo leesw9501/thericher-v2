@@ -15,8 +15,10 @@ separate from O/C[N,3], actual PMC5.4 OPEN/CLOSE/priorCLOSE/32D1 clocks.
 Fullrequiredgaps0,1build1verify/no retry/alljoined,49.9150477upper once,
 firstSYN08:19:38.975709UTC. Parent6named metadata refs match. No model/replay/
 API/private/Task; no dataset rebuild/double adjustment/oldscaler/PIT claim.
-Noether model and Aquinas kernel source preparation consume this exact ABI;
-model numerical GO still pending. Family07:50..09:50UTC/3000active7200elapsed.
+Noether c590 study COMPLETE_FAIL1e9028d2/2fits200updates/6cells/alljoined.
+Native6updates99actor49encoder rows; Data is unchanged. NEW action-inertia
+source preparation reuses exact EVAL leaves/scaler, no data rebuild/retry/API.
+Old07:50..09:50 clocks/debits remain closed; no numerical work by Data.
 Older flat81f3 and3ETF readinessb7fc/9926 remain immutable, not new build work.
 
 Kant COMPLETE/closed NEW flat120/150 state views:
