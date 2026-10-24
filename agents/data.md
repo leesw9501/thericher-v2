@@ -71,17 +71,23 @@ Bind/install/enable or startTask/collector/
 derive now or change old70/25. Actual future
 marks NOT_OBSERVED; research OPEN price != actual fresh Paper entry fill price.
 
-New exact offline intraday exit packet build assigned:
+New exact offline intraday exit packet ACTUALLY READY702baddd62bc:
 A/data/current-intraday-etf-fixed-entry-exit-input-20261024-v1.
-Consumer5ca5/proposal1d49/Sourcebb03; source CSVs already retained,0acquisition.
-Preserve251 scheduled keys/TRAIN145/CHECK43/EVAL63. First input-only state8/
-known/cutoff leaves seal before labels; TRAIN-only scaler, separate TRAIN/CHECK
-remaining-value targets and sequestered EVAL held marks, separate2026ABI-only.
-SPY June05 four-bar gap exact overlap must be checked before fit; no deletion/
-imputation/window change. 1build1verify/Data300active1200elapsed, whole family
-1800active/7200elapsed hard07:25:38.0591816UTC, prep60+actualData charged once.
-Real SYN/header/clock handoff before source decode; no models/financial cells/
-broker/Task/private custody/credential access. Missing input is lane-local.
+SemanticSource43287571 + actualTechnicalSource2db75580, actualDTOac21e2e4,
+physicalABIcd534627/allowliste0a42cfc. Onebuild/oneverify/alljoined,29nativeSYN/
+38independent checks. All251 keys kept/TRAIN145/CHECK43/EVAL63 with870/258/378
+known states/knownsupervision TRAIN870,CHECK258. Separate2026feature60 only;
+input-only seal64e45bab precedes labels; TRAIN-only scaler/EVALheld sequestered,
+heldmissing0. SPY June05 gaps22..25 are outside every required feature/target/
+held window; actual proofc3454c92, no keysdeleted/imputed or window change.
+First SYN05:49:01.870121UTC, finalData117.5323736activeupper includesfailure/
+sourceIO/publication; prep60once gives177.5323736knownfamily. Hard07:25:38.0591816
+unchanged. ONE shared continuation consumed by CP949 Claude CLI decoding before
+0numeric; originalfailure/Source/debits immutable, allactual numeric inR1 once.
+Model remainingcontinuations0, no Data rebuild. Data review_unavailable not
+agreement; frozenR1launcher retainsunusedjson F401, scientificmodulesRuff pass.
+Parent adopted exact physical leaves; new model Source/native dispatch pending.
+No model/financial cells/API/Task/private custody/credentials or2026targets.
 
 Current TimesFM input COMPLETE33d12d81:
 A/data/current-timesfm-ordinal-dated-input-development-20261024-v1/pg-coherent512-r1/VERIFIED-CONSUMER.json.

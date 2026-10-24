@@ -96,8 +96,13 @@ value per entry notional. One CPU Ridge(alpha1/SVD), no entry model/GPU/window
 sweep. State8/31closed-closes, next-bar one-minute latency, strict missingness.
 TRAIN145/CHECK43/EVAL63 scheduled sessions; nominal archive clocks/DST/source
 limits and repeated old-data use remain, not new algorithm/independent alpha.
-Parent adopts1800active/7200elapsed/origin05:25:38.0591816/deadline07:25:38.0591816UTC,
-prep60upper+actualData charged once. Data/Kant exact offline packet build GO;
+Parent adopts1800active/7200elapsed/origin05:25:38.0591816/deadline07:25:38.0591816UTC.
+Data ACTUALLY READY702b/ac21/semantic4328+technical2db7/ABIcd53/allowliste0a4,
+29SYN38independent/1build1verify/alljoined/251keys/no missing required values.
+SPYJune05 offsets22..25 outside fixed windows, no impute/delete. FinalData117.5324
+plus prep60once=177.5324knownfamily. CP949 CLI failed before0numeric; ONEshared
+continuation consumed by DataR1. Model remainingcontinuations0, not an extra
+allowance. FrozenData unused-importF401 disclosed, not rewritten/rebuilt.
 Engine source/native-interface preparation GO, no numerical model dispatch yet.
 1nativeSYNfit/1marketfit/1884predictions/12cells/oneoutcome/0LATER/0retry,
 one shared pre-model/fixed-output continuation, never repeated fit/pred/cells.

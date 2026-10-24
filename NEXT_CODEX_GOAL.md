@@ -30,7 +30,12 @@ were checked; this is a new consumer, not a new algorithm or completed old fit.
   Physical input-only state8/known/cutoff leaves seal before labels; TRAIN-only
   scaler; separate TRAIN/CHECK remaining-value targets and sequestered EVAL
   held marks. Ten2026 sessions are separate feature ABI only, no targets/model.
-  Real synthetic parser/clock/header handoff before decode; build1/verify1.
+  ACTUAL packet READY702b/ac21/semantic4328+technical2db7/ABIcd53/allowliste0a4:
+  29SYN38independent/1build1verify/alljoined. Gaps22..25 outside required windows,
+  known870/258/378+60, heldmissing0; no impute/delete. FinalData117.5324upper+
+  prep60once=177.5324knownfamily. CP949 CLI failed before0numeric; Data consumed
+  the ONE shared continuation. Remaining0, no rebuild/old-launcher rerun.
+  Data review_unavailable not agreement; frozenR1unusedjson F401 disclosed.
 - Engine/Steward Noether owns
   A/research/current-intraday-etf-fixed-entry-exit-development-20261024-v1.
   Fixed pair entry at sessionOPEN+121min; decisions136/151/166, 31 completed
@@ -50,11 +55,13 @@ were checked; this is a new consumer, not a new algorithm or completed old fit.
   cold parity; financialcells12/outcomeintake1/0LATER/0new2026forecast. One
   shared pre-model/fixed-output continuation, no repeated fit/prediction/cells.
   CPU fits this small8-feature design; no dummy GPU or new DL/window sweep.
-- Execution/Tesla separately reproduces F9 offline-reader0fcc technical failure
-  using source/invented fixtures at
+- Execution/Tesla completed F9 offline-reader source/invented-fixture checks at
   A/execution/current-f9-offline-reader-first-cause-20261024-v1.
-  No actual private/API/Task/recovery read in that package. No F9 release from
-  absence, no repeat broker query rejected by a638, no optional proxy platform.
+  Consumerf8e64cd4/38checks+11assertions: existing r3 DELIVERYec834629 already
+  binds completed readbackda006661, still F9UNKNOWN/HELD. Mount failure class
+  reproduced, exact historical low-level cause unknown; no new runtime patch/
+  private/API/Task/recovery. Do not re-repair or repeat broker query rejected by
+  a638; inspect explicit DELIVERY before root-only failure claims.
 
 ## Evidence And Claims
 

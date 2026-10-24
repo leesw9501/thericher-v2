@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 14:43KST /05:43UTC.
+2026-10-24 14:59KST /05:59UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -71,7 +71,14 @@ unused-head TRAIN_H1 placeholder preclude stronger causal claims. No Top8 retry
 dispatched. Next intraday source proposal5ca5/1d49/bb03 passed97staticchecks;
 Parent adopts new CPU Ridge held-exit family1800active/7200elapsed/hard07:25:38UTC,
 1fit/1884predictions/12cells/noGPU or entry/rank/window sweep. Source preparation
-and Data offline exact packet build active; no model numerical dispatch yet.
+active; Data exact packet READY702b/ac21, semantic4328+technical2db7/ABIcd53/
+allowliste0a4. Onebuild/oneverify/29SYN38checks/alljoined; Parent fresh20public/
+payloadref hashes match without arraydecode/rebuild. Known870/258/378+60,
+Evalheldmissing0,June05gap22..25 outside required windows/noimpute/delete.
+FinalData117.5324upper+prep60once=177.5324knownfamily. CP949 review-CLI failure
+consumed ONE shared continuation before0numeric; modelremaining0. Data
+review_unavailable not agreement, frozenR1unusedjson F401 disclosed; no model
+numerical dispatch yet.
 Data TRAIN145/CHECK43/EVAL63 sessions fixed, strict SPYJune05 gap check before
 fit; separate input/target/held leaves and TRAIN-only scaler. Preparation60upper
 and actualData charged once. Existing archive reused/adaptive, not fresh alpha.
@@ -271,9 +278,12 @@ F9a638e1a6 audit found no useful identical retry; absence never releases its res
 Current Paper public-pointer checkbd60e06e found no eligible newer bound result
 within its exact scope, not proof later outcomes do not exist. Known nightly
 2d16 is carried historical evidence, not freshly requalified/current wholebook.
-Tesla owns source/SYN first-cause repair of F9 offline-reader0fcc failure at
-A/execution/current-f9-offline-reader-first-cause-20261024-v1. No actual private/
-broker read/recovery/reservation change is authorized by that synthetic package.
+F9 source/SYN first-cause review COMPLETEf8e64cd4/38checks+11assertions at
+A/execution/current-f9-offline-reader-first-cause-20261024-v1. Original root0fcc
+failure ALREADY has explicit DELIVERYec834629 -> r3deliveryda006661 completed,
+still UNKNOWN/HELD. SYN reproduced mount failure class and qualified existing
+/source remedy, not exact historical low-level cause. No new patch/private/API/
+Task/recovery; alljoined. Do not repeat reader repair or root-only failure claim.
 
 ## Closed Research / Do Not Repeat
 

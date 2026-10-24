@@ -18,9 +18,9 @@ Prior dated TimesFM deployment COMPLETE, future runtime/fills still unobserved.
 | Parent / 총괄 | Joint17 actual install222d/session41586exit0; integrate independent readbacks/results, shared MD/Git. |
 | Aquinas / 실행 | Complete/agent closed: candidate730c/installer60-0; phase Plan bug fixed before actual effects. |
 | Noether / 엔진·자원 | H1/H5 complete; new intraday fixed-entry/learned-exit CPU source preparation, no new model numerical dispatch. |
-| Kant / 데이터 | H1/H20 prep complete; exact offline intraday state/target packet build authorized. |
+| Kant / 데이터 | Complete/closed: intradayData702b/ac21/1build1verify/29SYN38checks/alljoined. |
 | Godel / 검토 호출 | Complete/closed: aux result327d, H20 capture disabled8db1/enabled9be5 actual readbacks. |
-| Tesla / 실행 호출 | Actual Joint17 d092 PASS/Paper bd60 unknown; F9 offline-reader source/SYN first-cause repair only. |
+| Tesla / 실행 호출 | Complete/closed: F9f8e6 and holdingscd93 primitive/readiness; no fresh API/private read or new adapter. |
 
 ## Current Evidence / Dependencies
 

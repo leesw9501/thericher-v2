@@ -39,8 +39,16 @@ minimumfree8245MiB. Co-tenancy timings not isolated benchmark. Last optimizer
 step timestamp not retained; early stopping not global convergence. Deadline
 08:21:46 from conservative04:21:46 preparation, earlier than Data-derived ceiling,
 unchanged; no source-time or active-debit reset. Allfitsjoined/leasefree.
-Next intraday ETF source/metadata readiness is preparation only,0newnumerics.
-No rerun/new campaign authorized by a completed fit, idle GPU or consumed lease.
+Next intraday ETF preparation5ca5/1d49/bb03 complete97staticchecks/0numerics.
+Parent adopted fixed-entry/remaining-value CPU Ridge family, not another GPU
+sweep:1800active7200elapsed/origin05:25:38.0591816/hard07:25:38.0591816UTC.
+Data build300active1200elapsed and source preparation active; model/native
+numerical dispatch waits only on exact physical Data and Parent Source adoption,
+not permission or GPU-owner classification. New model1fit/noGPU/1884predictions/
+12cells/oneoutcome, nativeSYN1fit/64predictions, sharedcontinuation1/no marketfit
+retry. Prep60upper+actualData charged once. Small870x8SVD design belongs on CPU;
+do not add a DL comparator for utilization. Original GPU fits are CLOSED, no
+active worker inferred from a plan. No old clock/debit/model repeat.
 At03:47UTC RTX4090free21903MiB/util8%/37C, Dfree38.79%; this sample is not
 future headroom or running-training proof. No app-name/authority hold; measure
 again at allocation, no completed-fit repetition. Reusable engineering fact:

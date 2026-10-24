@@ -109,6 +109,27 @@ Nightly2d16 proves1SELL accepted/fullfill/cyclecomplete, not current wholebook.
 OriginalNAS8 roundtrip8BUY+8SELL/ownedflat/grossnegative; fees/settledcash/net unknown.
 F9a638e1a6 found no useful identical retry; missing holdings/orders is not rejection,
 reservation release, substitution or authority to adopt another owner's inventory.
+Root failure0fcc is NOT current F9 reader status: explicit DELIVERYec834629
+already binds completed r3 deliveryda006661/COMPLETE_BOUNDED_READBACK_ORIGINAL_F9_UNKNOWN_HELD:
+A/execution/current-f9-original-effect-evidence-readback-20261023-v1/DELIVERY.json.
+New source/SYN auditf8e64cd4 at
+A/execution/current-f9-offline-reader-first-cause-20261024-v1/CONSUMER.json
+reproduced readonly /app nested mount failure before Python and qualified the
+EXISTING /source remedy using2invented containers/38checks+11assertions. Exact
+historical low-level cause remains unknown; no new runtime patch/private read/
+API/Task/recovery. Alljoined/removed. Do not re-repair or repeat the closed
+reader; inspect explicit DELIVERY/nested recovery before root-failure claims.
+F9 still UNKNOWN/HELD: no exact no-send/rejection correlation was manufactured.
+Holdings-only source readinesscd93ab96 at
+A/execution/current-paper-holdings-readonly-refresh-readiness-20261024-v1/CONSUMER.json
+finds existing stock_exit_account_snapshot(): no funds/quotes, normally4GET,
+max40GET+optional1POST/0retry; complete scoped positions/open orders in RAM.
+No ready standalone guarded categorical command/image/actor consumer established;
+method alone has no shared token-start gate. Do not invoke reconcile/observe or
+scheduled observer as a substitute. No actual credentials/API/private read or
+new adapter in this package; source presence is not fresh holdings. A separately
+complete account query need not depend on funds/quotes/weekend, but still needs
+its proper owned dispatch. Deferred integration, not a permission hold.
 
 ## Verification / Claims
 
