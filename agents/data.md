@@ -1,8 +1,27 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 14:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
+
+## Current Exact Consumer
+
+Joint17 NEW H20 point e06c3d1a/2ead now consumes exact original Joint69 features
+from Data2c91/DTO545d/payload4a8b. No new acquisition, label use or feature
+rebuild; old once-scaled raw63/factor10/context9 applied only once. Parent8dae
+current-runtime receiver PASS; actual deployment still Execution-owned.
+
+H1 TRAIN/CHECK auxiliary targets ACTUALLY COMPLETE26e2e1be/Source65d4d414/
+DTOaca22bed/allowlista94b3a0a:
+A/data/current-h1-auxiliary-train-check-targets-20261024-v1/CONSUMER.json.
+TRAIN2762dates/135297rows,CHECK109/8106; missing supervised H1/flags/positive
+finite/maturity/outside-H5 labels all0. SAME retained H5.marks O[e]/C[e] gives
+one-SESSION H1, not one hour or a transform of H5 return. H1 supervision mask
+separate; causal U/H5 keys/scaler/purges unchanged, NaN outside H5 supervision.
+One build/independent verify/0retry/alljoined;2.6254169active seconds, first SYN
+04:44:51.468932UTC. Charged once to new model family, not old closed Top8 retry.
+OutputsM, no API/provider blend/imputation/INNER labels in training. Engine's
+separate finite contract consumed exact refs; Data receipt is not fit authority.
 
 ## Actual Inputs / Completed
 

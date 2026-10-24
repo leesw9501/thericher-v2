@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 14:20KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
@@ -15,14 +15,43 @@ cleanup. All workers joined/GPUlease released;120checks/Ruff PASS.
 Publication1fb1 consumed; actual TimesFM two-task installation completed03:33UTC,
 not an actual fill or alpha. No market/native/fit repeat. CPU support8 replay
 completed12cells/2dispatches/303.71activeupper/1192.37elapsed, old failure/debit
-preserved, alljoined. New NAS-supported-before-training hypothesis is currently
-proposalbca57dc8 adopted; native proof/ONE CUDA fit delegated at
-A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
-Not yet observed running. Wholefamily3600active/7200elapsed inclprep,6native+
-17300marketupdates/18cells/0LATER; exact forward cap before native dispatch.
+preserved, alljoined. Top8 group-rank family at
+A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1
+is CLOSED TECHNICAL_INCOMPLETE. Originalebb9 WinError206 before Docker;
+technical-r1d531 then failed invalid invented ticker in typed fixture. Actual
+CUDA model/AdamW/scheduler construction +synthetic autograd,0optimizerupdates/
+marketfits/INNERforecasts/financialcells. Actual GPU child1/alljoined/released,
+438.907activeupper retained. One continuation consumed; no further dispatch.
+Claude7731 REVISE/adjudicationa1c2af9d; never call this zero native effects,
+successful training or a science loser. NEW H1 auxiliary/H5 campaign is a
+different paired scientific question, not that closed family's retry.
+A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json:
+actual2fit outputs/24cells/COMPLETE_FAIL/alljoined/containersremoved/leasefree,
+903.8961cumulativeactiveupper including retained402.8993failure and new source
+IO60/cleanup240 upper. Parent7200active/14400elapsed/2fit/6nativeupdates caps
+unchanged. Original4native updates retained; fixed-output checkpoint path
+mapping4b8b continuation, no repeated native optimizer steps. Native CUDA
+checks are not market fits; actual FIT-A66e/FIT-B0c5 outputs now prove fits.
+Final independent7a4c9f6d passed785assertions. Actual concurrentA/B first updates
+05:01:57.116/57.132UTC, joins05:03:18.008/30.854;51/50epochs,best27/26,
+8823/8650updates,PATIENCE24 both. Each peakreserved6310MiB, observedGPUmax93%,
+minimumfree8245MiB. Co-tenancy timings not isolated benchmark. Last optimizer
+step timestamp not retained; early stopping not global convergence. Deadline
+08:21:46 from conservative04:21:46 preparation, earlier than Data-derived ceiling,
+unchanged; no source-time or active-debit reset. Allfitsjoined/leasefree.
+Next intraday ETF source/metadata readiness is preparation only,0newnumerics.
+No rerun/new campaign authorized by a completed fit, idle GPU or consumed lease.
 At03:47UTC RTX4090free21903MiB/util8%/37C, Dfree38.79%; this sample is not
 future headroom or running-training proof. No app-name/authority hold; measure
-again at allocation, no completed-fit repetition.
+again at allocation, no completed-fit repetition. Reusable engineering fact:
+477 per-file mounts exceed Windows argv limit; source-only manifest-attested
+directory mount fixes transport. Run actual DTO/schema CPU fixtures BEFORE GPU
+construction; use valid real grammar, not SYN000 tickers. This does not create
+an extra retry/optimizer allowance or waive a frozen cap.
+Joint17 new dated point COMPLETEe06c3d1a: CPU1construct/restore/forward,
+0fit/GPU04:12:40..42UTC/native1.1166sec/alljoined. Noether remains GPU coordinator,
+no current lease or running fit inferred. Actual new H20 sourcee676/DTO2ead is
+ready for Execution; do not rerun either actual point or consumed old native SYN.
 Do not infer current utilization or a running process from closed evidence.
 
 Noether single GPU coordinator. Fixed-rank fusion68093a24 closed3cells/

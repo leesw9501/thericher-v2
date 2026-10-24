@@ -101,16 +101,44 @@ A/execution/current-timesfm-whole-share-diagnostic-read-20261024-v1/CLOSED-CONSU
 Allownedjoined/no feasibility or stability conclusion. Parent retired optional
 proxy attempts, not actual native Paper sizing. Do not rerun these helpers.
 
-New research implementation:
+Closed technical Top8 family, DO NOT DISPATCH:
 A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
-BOUND03:52:31..05:52:31UTC,3600active/7200elapsed incl14.249prepupper. One fit/
-seed20261110/100epochs/pat24/17300market+6nativeupdates/43INNER forecasts/18cells/
-0LATER. Draft source/BOUND is not a running GPU job. No source-frozen dispatch
-command yet in this state. On interruption inspect actual source/attempt/PID/
-lease/result and classify before resuming; never blindly restart completed fit.
-Newly dated Joint17 readiness is source-only at
-A/execution/current-joint17-next-dated-point-readiness-20261024-v1.
-No original expired entry/installer/reactivation or model call in preparation.
+Original Win206 then one compact-mount continuation failed synthetic SYN000
+route after CUDA model/AdamW/scheduler construction/autograd;0optimizerupdates/
+marketfits/financialcells. Actual closurec470b2f4/438.907activeupper/alljoined/
+leasefree, one continuation consumed. Not a ready fit or science failure.
+
+NEW H1 auxiliary/H5 paired campaign actually complete, detailed verification
+pending; no repeat numerical dispatch:
+A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json.
+2fit outputs66e3/0c5f,24cells/readout8b14/COMPLETE_FAIL/alljoined/leasefree,
+903.8961activeupper. Original native4 updates retained across checkpoint
+guest-path fixed-output recovery4b8b; old family untouched. H1 Data26e2/aca2
+TRAIN2762/CHECK109 missing0, same O[e]/C[e]/one-session target, not hourly.
+Parent adopted7200active/14400elapsed/2fits/max100epochs/pat24 before dispatch;
+no INNER outcomes for checkpoint choice or unseen-independent claim.
+
+New actual Joint17 point e06c/DTO2ead/policye038/current receiver8dae complete;
+CPU1restore/forward only,0newfit/GPU. Current H20 candidateaff55c9c/native8853/
+SDKb25/image2ff and independentca703 pass. Parent RELEASE022fe2a5 created once:
+A/execution/current-joint17-oct26-parent-release-20261024-v1/RELEASE-PROOF.json.
+Fresh parent installer at
+A/execution/current-joint17-oct26-parent-install-20261024-v1/install.ps1
+ACTUALLY APPLIED once, session41586/exit0 at05:26:11UTC. Exact actual attempt
+attempt-dbcc0a18b5764c6fb9a22477bf04639d/COMPLETE.json222deac1 under same root.
+CREATE_ONLY_EXIT_THEN_ENTRY_METADATA_QUALIFIED, both Ready0/unrun/quiet;
+independent actual readbackd0927e06 PASS at
+A/review/current-joint17-oct26-h20-deployment-review-20261024-v1/ACTUAL-READBACK-FINAL.json.
+New2metadata/old6XML-ACL-next exact, not natural owner/submit/fill/PnL.
+No repeat Apply/create/release/point.
+Installer b1febef5/60PASS0FAIL mock flow + actual COM clock preflight passed
+after map and stale-Plan bugs fixed before effects; old failures retained.
+New slot
+joint17-Oct26-v1/entryOct26 17:00..17:30UTC/exitNov20 20:45..21:00UTC.
+Do not use expired Oct23 installer or repeat point/acceptance/release. First
+registration uses typed critical settings and validated effective ACL, not a
+literal XML equality or invented Protected/three-ACE requirement. Old6 tasks
+must retain actual XML/ACL/next; no Task starts/broker/private/model work here.
 
 Admission audit2078f4f2:
 A/execution/current-paper-research-concurrency-admission-audit-20261024-v1/CONSUMER.json.

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 12:57KST /03:57UTC.
+2026-10-24 14:27KST /05:27UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -15,21 +15,57 @@ Preserve unrelated untracked %SystemDrive%/. History is Git/immutable artifacts.
 ## Company Outcome / Actual Owners
 
 Prior timesfm-ordinal-dated-paper-proposal-v1 is COMPLETE AS DEPLOYMENT.
-NEXT owns native-supported-universe-h5-comparison-v1. Data, actual CUDA point,
+Joint17-oct26-h20-paper-deployment-v1 is COMPLETE AS DEPLOYMENT. NEXT owns
+joint17-h20-prospective-capture-ready-v1, not future acquired marks or PnL.
+Prior H5 comparison is
+SUPERSEDED TECHNICALLY INCOMPLETE, not a completed learned-model comparison.
+TimesFM Data, actual CUDA point,
 typed consumer, release and BOTH actual TimesFM tasks are complete. Parent
 integrates effects; Tesla independently reads actual deployment metadata.
 Independent actual TimesFM readback4e3b69f3 PASS: both Ready0/quiet/clocks/ACL/
 original GRU bytes exact. Evidence:
 A/review/current-timesfm-h5-dated-actual-install-readback-20261024-v1/CONSUMER.json.
-Noether completed support8 comparison. Parent adopted new partial Top8
-group-rank proposalbca57dc8 after duplicate check974bc50f: NAS-only training
-already existed, but this objective/raw-GRU32/control combination is distinct.
-Implementation/native proof/ONE CUDA fit/18cells are delegated at
-A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
-3600active/7200elapsed wholefamily inclprep, seed20261110/100epochs/pat24/
-17300market+6nativeupdates/43INNER forecasts/0LATER. BOUND begins03:52:31UTC,
-deadline05:52:31UTC; kernel/Data/worker implementation is being written. No
-numerical/GPU worker observed running yet; BOUND is not training evidence.
+Noether support8 comparison completed. NEW Top8 group-rank attempt at
+A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1
+is CLOSED TECHNICAL_INCOMPLETE. Sourceebb9/311b failed WinError206 before
+Docker creation; technical-r1d531 fixed477 per-file mounts but stopped at
+invalid invented SYN000/NAS fixture in the real typed decoder. Actual CUDA
+GRU/AdamW/scheduler construction and synthetic autograd DID occur;0optimizer
+updates/marketfits/INNER forecasts/financialcells. Alljoined/leasefree,
+438.907activeupper carried, original05:52:31UTC deadline/caps unedited.
+Its ONE continuation is consumed. No further dispatch or relabeling as zero
+native effects/science failure/success. Claude7731 REVISE, review7a988470,
+adjudicationa1c2af9d at
+A/review/current-top8-prefit-fixture-recovery-adjudication-20261024-v1.
+Parent adopts closure, not an undisclosed extra allowance. Pure parent CPU DTO
+test confirmed100 valid letter-only routes/8*.125 using current+SDK561b exact
+bytes; this is not a repaired model result. Old Joint SDKb165 is not asserted
+byte-identical; actual new point passes current561b typed receiver.
+
+NEW H1-auxiliary/H5 paired campaign ACTUALLY completed two CUDA fits:
+A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json.
+Sourced76a/contract6fc4/fitA66e3/fitB0c5f/readout8b14;24cells/COMPLETE_FAIL,
+903.8961activeupper/alljoined/leasefree. Independent7a4c9f6d passed785assertions;
+interpretation review pending, not a winner/Paper swap. A=.5L5, B=.5L5+.5L1,
+same init/seed/support/
+H5 CHECK selection, separately clipped backbone+H5 and H1 head. Parent adopted
+2fits/max100epochs/pat24/7200active/14400elapsed before model dispatch. Native
+4updates preserved after guest /out checkpoint ref failed Windows host loading;
+predeclared fixed-output continuation4b8b did not repeat them. No old-family
+retry/regrade. H1 Data26e2/Source65d4/DTOaca2 complete TRAIN2762/CHECK109,
+135297/8106rows, missing0; actualbuild1/verify1/2.6254169sec charged once.
+SAME retained O[e]/C[e], H1 one SESSION, separate supervision not changed U/H5/
+scaler or INNER labels in fitting. Claude c6d0 REVISE corrections adopted;
+origin-corrected Consumer0ee5 states exact design is Codex-, not human-proposed.
+A51/best27/8823updates,B50/best26/8650updates,PATIENCE24 both; real concurrent
+updates05:01:57UTC/joins05:03:18..30.854UTC, last-step exactUTC unrecorded.
+Each peakreserved6310MiB/observedGPUmax93%/minfree8245MiB; not current usage or
+isolated speed.10bp fractional growth/DD%:A-.105830/.129984,B-.152218/.168831,
+uniform8+.002597/.064461; auxiliary/product screen FAIL. Whole-share exposure
+differs, not actual Paper PnL. Actual conservative04:21:46 preparation start
+yields unchanged08:21:46 deadline, earlier than Data-derived ceiling. Detailed
+curves/counts/24cells remain immutable; no repeat fit/replay. Next intraday ETF
+metadata/duplicate proposal only, no next numerical dispatch yet.
 Aq native diagnostic3a817a1d passed14real-disk/4protocol checks, original private
 error not reproduced. Diagnostic successorb447 failed same-entry SYN before
 private attempt; technical-r1 52470 SYN passed then ONE actual attempt stopped
@@ -49,17 +85,56 @@ claim schema supports exact finite source/job/isolation envelopes, but BOTH
 immutable releases would need actual cutover; no current actual conflict was
 observed. This finite weekend fit should join beforeOct26, so no speculative
 Task/claim redeployment now. Unknown/private writers and risk remain protected.
-No owned GPU worker now; completed inference/training must not be repeated.
+Completed H1/H5 workers are joined; no active fit inferred from stale plans.
+Detailed current resource evidence is in Steward/consumer, not global usage.
 Other ready work continues while a named technical package is repaired.
 Claude next-direction REVIEW.json completed/SOUND_WITH_LIMITS, response471033a5:
 A/review/current-native-supported-universe-h5-direction-20261024-v1/REVIEW.json.
 Check duplicate estimand, causal support/mature labels and H5 split purge before
 one new matched fit; rule/uniform share support/gross, no best rule on outcomes.
 This is adaptive development, not a new independent-performance claim.
-Tesla owns a source-only NEW dated Joint17 point readiness map at
+Tesla completed NEW dated Joint17 readiness54eb5c49 at
 A/execution/current-joint17-next-dated-point-readiness-20261024-v1.
-Reuse exact existing model/producer/affines if ready, otherwise name exact Data
-gap. No old entry reactivation/new fit/model call/Task/private/API effect in prep.
+Readiness54eb5c49: exact69/full100Data2c91/DTO545d/payload4a8b exists, no data gap
+identified. Existing Joint17 epoch17 is H20, not new H5 study; Oct26 entry implies
+Nov20>=20:45UTC exit. Old Nov19 conditional exit is a DIFFERENT original cohort.
+Existing1a3 producer reused exact four /out host adapter98f67e92/a155/34438.
+NEW actual CPU construct1/restore1/whole-dateforward1 completed04:12:40..42UTC,
+0fit/GPU. Canonical2ead50c0/policye038d643/Source-R2e6763bf7/Consumer e06c3d1a at
+A/research/current-joint17-oct26-reference-adaptation-20261024-v1.
+18path checks/real native H20 schema smoke/565independent checks/alljoined,
+native1.1166sec/whole90activeupper/521.55elapsed. First host slash-equality
+failure and checker opened_at/closed_at API failure retained; actual one forward
+not repeated. No DTO/affine/mass/rank/private/API/Task change. Parent current561b
+receiver accepted8dae23db at
+A/execution/current-joint17-oct26-parent-binding-20261024-v1/ACCEPTED.json.
+accept_executed.py retains exact executed hash; accept.py formatting-only later.
+Execution/Aquinas completed current2ff/native H20 separate slot joint17-Oct26-v1
+entryOct26 17:00..17:30UTC /Oct27 02:00..02:30KST, exitNov20 20:45..21UTC:
+A/execution/current-joint17-oct26-h20-deployment-preparation-20261024-v1.
+Candidateaff55c9c/SDKb25/native8853cdbf/prep730c9f9b passes actual-image
+5positive11negative+66owner mocks. Independentca703a9d PASS with no blockers;
+exact repaired9b CIM/alias bootstrap preserved, not old8c runtime. Actual self
+PowerShell CIM read works; this does not prove natural scheduled Python owner.
+Parent RELEASE022fe2a5 actually created once, full2ef source1390 still exact:
+A/execution/current-joint17-oct26-parent-release-20261024-v1.
+Parent fresh create-only installer at
+A/execution/current-joint17-oct26-parent-install-20261024-v1/install.ps1
+ACTUALLY ran once, session41586/exit0, at05:26:11.1746506UTC. Exact actual
+attempt-dbcc0a18b5764c6fb9a22477bf04639d/COMPLETE.json222deac1 in that root:
+CREATE_ONLY_EXIT_THEN_ENTRY_METADATA_QUALIFIED; original6XML/ACL/next preserved,
+0Taskstarts/private/broker/modelcalls. BothReady0/unrun. Independent actual
+d0927e06 PASS exact2new/source/release/clocks/quiet/principal/ACL and old6
+XML/ACL/next preserved:
+A/review/current-joint17-oct26-h20-deployment-review-20261024-v1/ACTUAL-READBACK-FINAL.json.
+Original expired entry remains disabled; no natural owner/fill/PnL claim.
+Do NOT repeat Apply/create/release/point/acceptance. Installer
+b1febef5 first fixed map lookup, then stale exit Plan reuse caught59PASS1FAIL;
+phase-specific Plan refresh passed60/0 plus realCOM independent clock preflight
+BEFORE effects. Failures retained, not actual registration failures. Other
+scheduler metadata next13:40/14:20/14:50/
+15:10/15:29, configured intraday17:28 overlaps final2min; offset is not
+serialization proof. Original/future owner and bank admission remain required.
 
 ## Actual GRU Deployment
 

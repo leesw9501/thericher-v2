@@ -1,10 +1,29 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 14:24KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable hypotheses,
 not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
+
+NEW H1-auxiliary/H5 transfer actually completed paired CUDA fits and24cells at
+A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json.
+Categorical COMPLETE_FAIL; independent result/contract review with Claude is
+active, no new scientific winner, Paper swap or numerical dispatch. Current
+Joint17 H20 point e06c/2ead is accepted by native Execution and parent release
+022f created/actual installed222d/independentd092 PASS. Old6 preserved, future
+entry/fill/PnL remain unobserved; H20 capture preparation not actual marks.
+The proposal is Parent/Codex-proposed, not exact human-specified. Direction
+review0ee53533 records equal .5L5 coefficient and separate clipping correction.
+Primary sources used for this concrete gradient-path design:
+https://docs.pytorch.org/docs/2.7/generated/torch.Tensor.detach.html
+https://docs.pytorch.org/docs/2.7/generated/torch.nn.utils.clip_grad_norm_.html
+https://proceedings.mlr.press/v80/chen18a.html
+Detach blocks gradients but shares storage; no auxiliary in-place mutation.
+Clipping one combined parameter list couples its total norm, hence separate
+backbone/H5 and auxiliary-head clipping. GradNorm is general multitask evidence,
+not finance profit or authority to add another tuned loss/grid/dependency.
+Exact study results, not those general sources, decide this project's claims.
 
 NYS routing capability audit CLOSED829a0230 at
 A/research/current-h5-nys-route-capability-audit-20261024-v1.

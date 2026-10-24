@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-24 12:57KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 14:24KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic risk/intents/orders/custody/accounting; Parent sharedMD/Git.
 AGENTS private Paper authority; no operator decision presently.
 Original shared initial tenth/basis/costs/losses/pending/F9UNKNOWN-HELD unchanged.
@@ -74,6 +74,30 @@ fit should close beforeOct26; do not redeploy merely for a hypothetical overlap.
 Unknown/private writer, book/request/F9/risk checks remain unchanged.
 
 ## Other Actual Evidence / Due
+
+NEW Joint17 H20 point2ead/policye038/Consumere06c/currentreceiver8dae COMPLETE,
+not old Oct23/Nov19 cohort. Candidateaff55c9c/native8853/SDKb25/image2ff,
+prep730c/actual-image5positive11negative+66owner mocks/independentca703 PASS.
+Repaired9b CIM/alias bootstrap retained; own-PowerShell CIM live query passes,
+not natural scheduled Python-owner proof. Parent RELEASE022fe2a5 CREATED once:
+A/execution/current-joint17-oct26-parent-release-20261024-v1.
+Parent fresh CREATE-only installer:
+A/execution/current-joint17-oct26-parent-install-20261024-v1/install.ps1.
+Parent ACTUAL session41586/exit0 installed05:26:11UTC, codeb1febef5/60PASS0FAIL
+flow mocks plus real COM clock preflight. Exact actual attempt under that root:
+attempt-dbcc0a18b5764c6fb9a22477bf04639d/COMPLETE.json222deac1.
+CREATE_ONLY_EXIT_THEN_ENTRY_METADATA_QUALIFIED; both Ready0/unrun/quiet,
+old6XML/ACL/next preserved,0Taskstarts/private/broker/models. Independent actual
+readbackd0927e06 PASS:
+A/review/current-joint17-oct26-h20-deployment-review-20261024-v1/ACTUAL-READBACK-FINAL.json.
+Exact2new clocks/quiet/principal/ACL and old6 stable before/after. Expired old
+entry remains disabled. Map lookup and stale exit Plan reused for entry caught/
+fixed BEFORE effects; original59/1mock failure immutable, no failed real register.
+Newslot joint17-Oct26-v1, entryOct26 17:00..17:30UTC/PT4M/max8; exitNov20
+20:45..21UTC/PT4M/recovery2. .005originalbasis/sharedtenth/bank/F9 unchanged.
+EXIT-first then ENTRY actual; typed/effectiveACL first qualification, no invented
+Protected/three-ACE assumption. No repeat Apply/create/actualpoint/acceptance/
+release. Installation is not broker acceptance, a fill or natural-owner proof.
 
 Future25 capture9a33 enabled/readbackec7, not captured; old70 unchanged.
 Pair5bf7/6d45/source0399/image7d15 actually routed, current cause needs natural result.

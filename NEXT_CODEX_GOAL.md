@@ -2,113 +2,74 @@
 
 ## One Company Outcome
 
-native-supported-universe-h5-comparison-v1: produce one cost-aware H5 comparison
-whose causal universe and finite support match the existing NAS Paper consumer
-BEFORE fitting/ranking. Compare one justified trainable expert with a prespecified
-simple rule and uniform at aligned support/gross. Adaptive development, not
-independent alpha, a profitable-model claim or an automatic Paper swap.
-
-Adopted mechanism native-nas-top8-partial-ranking-h5-v1, PROPOSALbca57dc8 at
-the preparation root below. NAS-only training is NOT new; prior long-NAS
-utility8601bd2e and NAS507 breadth already tested it. NEW raw63 GRU32 learns a
-partial top-eight equal-target-group rank loss; fixed TREND21/slot-uniform8
-controls. Godel addendum974bc50f distinguishes that estimand. Parent delegates
-implementation/native proof/ONE CUDA fit/18cells under3600active/7200elapsed
-wholefamily caps including carried prep, seed20261110/max100epochs/pat24/
-17300market+6nativeupdates/43INNER forecasts/oneINNER outcome intake/0LATER.
-Freeze sufficient full TRAIN/CHECK forward cap before native dispatch;
-proposal288000 understated epoch0 plus100epochs. One prefinancial fixed-output
-continuation cannot repeat fits/optimizer/forecasts/consumed cells. Actual root:
-A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
-Source preparation is not a fit; current Paper point/risk/schedules unchanged.
+joint17-h20-prospective-capture-ready-v1: make the new Joint17 H20 Paper
+opportunity's future research-mark acquisition ready through one finite,
+coherent 69-route capture with exact source/model/calendar binding, quiet
+installation and independent actual metadata readback. Future marks, actual
+fills, fees and net PnL are not observed by this deployment.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Run scripts/start_next_codex_task.ps1; read HANDOFF/AGENTS/RUNBOOK/active boards.
-Parent owns shared MD/Git. Private no-cost Data/Research/KIS Paper delegated;
-never KIS_LIVE_*, real money, paid/public work or secret/private raw output.
+Run scripts/start_next_codex_task.ps1; follow HANDOFF/AGENTS/RUNBOOK/active boards.
+Parent owns integration/shared MD/Git. Standing private no-cost Data/Research/
+KIS Paper authority applies; never KIS_LIVE_*, real-money, paid/public work,
+secret/account/order/raw broker or private-value output.
 
-## Verified Starting State
+## Completed Dependency
 
-Previous timesfm-ordinal-dated-paper-proposal-v1 COMPLETE AS DEPLOYMENT:
-Data33d12d81/DTO21c1/payload1ec5, actual CUDA point9b00/publication1fb1,
-typed receiver, source63/native248/release9b/image2ff. Actual continuationd89/
-session45948 completed03:33:19UTC, retaining EXIT and creating missing ENTRY only.
-Independent actual readback4e3b69f3 PASS:
-A/review/current-timesfm-h5-dated-actual-install-readback-20261024-v1/CONSUMER.json.
-Both Ready0/quiet/source/clocks/ACL correct; original GRU raw XML unchanged.
-Initial installer77fa remains failed. Never rerun point/core/head/continuation/
-Apply/create/release. Installation is not a fill, natural owner or no-send proof.
+Joint17 actual point e06c/2ead/policye038/current receiver8dae is deployed:
+candidateaff55c9c/native8853/SDKb25/image2ff/release022fe2a5.
+Parent actual05:26:11UTC/session41586exit0/COMPLETE222deac1:
+A/execution/current-joint17-oct26-parent-install-20261024-v1/attempt-dbcc0a18b5764c6fb9a22477bf04639d/COMPLETE.json.
+Independent actuald0927e06:
+A/review/current-joint17-oct26-h20-deployment-review-20261024-v1/ACTUAL-READBACK-FINAL.json.
+New entryOct26 17:00..17:30UTC and exitNov20 20:45..21UTC Ready0/unrun/quiet;
+old6XML/ACL/next preserved. No repeat Apply/create/point/acceptance/release.
+Prior expired Oct23 entry stays disabled; original Nov19 conditional exit separate.
+Installation is not a natural owner, accepted order, fill or lifecycle closure.
 
-GRU164/b0/269/image2ff/independenta20 entryOct26 13:40..14:10UTC; TimesFM entry
-14:20..14:50UTC. Existing exitsOct30/capturesOct31 retain original owners/times.
-Future25 capture9a33 enabled/ec7, not acquired. Pair5bf7/6d45/image7d15 current.
-Joint17 expired ENTRY disabled; repaired conditional EXIT remainsNov19.
-No manual Task/collector start merely for inspection. HANDOFF owns other dues.
+## Ready Ownership
 
-Support8 replay4c27bb40/fef87137 completed12cells/2dispatches/0newmodels:
-A/research/current-native-support8-equal-weight-whole-share-conformance-h5-development-20261024-v1/recovery-r1/CONSUMER.json.
-Same-gross growth/DD failed uniform. Hypothetical B and whole-share cash effects
-are not actual Paper budget/alpha. Old failures/debits unchanged, no reruns.
+- Data/Kant prepares the existing collector/adapter's separate H20 variant at
+  A/data/current-joint17-h20-prospective-capture-preparation-20261024-v1.
+  Coveragef29ebf71: exact69routes need OPEN69+CLOSE1380=1449 fields. H5 pages
+  cannot satisfy H20. One coherent MODP1 page per route; no vintage splicing,
+  imputation or silent changes to existing70/25 captures. Source calendar
+  Oct26..Nov20 includes DST: Nov20 close21UTC, not fixed20UTC.
+- Proposed single owned capture Nov21 06:35..06:40KST; max69GET/1POST/oneclient/
+  0retry. Preparation is default-inert/source/SYN only. Parent reviews exact
+  preparation and tests before bind/install; independent actual readback must
+  qualify real source/clock/quiet/default-enabled properties. Preserve prior
+  definitions/rollback, do not start the task or collect future marks now.
+- Actual Paper entry uses a fresh runtime quote later than research OPEN.
+  Research marks are a cost-aware replay reference, not exact realized fills,
+  fees, settlement or net PnL. Unknown future fields remain unknown.
+- Engine/Steward Noether prepares one distinct retained intraday ETF experiment
+  at A/research/current-intraday-etf-next-experiment-preparation-20261024-v1.
+  Source/metadata duplicate/causal split/window/fill/cost/native-batch readiness
+  first; no numerical dispatch without a fresh finite contract. Do not repeat
+  completed daily fits or call source-only preparation an active GPU job.
+- Current H1/H5 comparison actually CLOSED_FAIL:2concurrentCUDAfits/24cells/
+  785checks/alljoined/leasefree at
+  A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json.
+  A51/best27/8823updates,B50/best26/8650,earlystop24; auxiliary loses to A and
+  Uniform8. Old failure/native4+remainingcold2/deadline08:21:46/debits preserved.
+  Godel reviews interpretation; Tesla checks exact existing Paper pointers.
+  These independent packages do not hold Data/Execution authority.
 
-Claude direction SOUND_WITH_LIMITS, response471033a5:
-A/review/current-native-supported-universe-h5-direction-20261024-v1/REVIEW.json.
-Duplicate estimand, outcome-dependent support, target-interval overlap or
-inadequate mature labels kill the proposed fit; do not force numerical work.
+## Finish And Continue
 
-## Parallel Packages
+Require focused native/calendar/default-inert/quiet definition tests, exact
+source/input bindings, actual installed metadata and independent readback.
+Do not infer future acquisition or profitability; workers own next_due.
+Preserve original shared initial virtual-cash tenth/basis/losses/costs/pending,
+F9 UNKNOWN/HELD and original request identities. No substitute or forced shares.
 
-- Engine/Steward Noether: exact prior-study/source/data-contract check at
-  A/research/current-native-supported-universe-h5-training-preparation-20261024-v1.
-  If genuinely ready, freeze one matched campaign before numerical dispatch:
-  causal NAS mask/missingness, H5 target/loss/purge, chronological splits, rule/
-  uniform controls, support/gross/costs, growth and risky-DD kill, trial/update/
-  evaluation caps, active-worker AND elapsed ceilings, epoch/patience/LR/best
-  checkpoint diagnostics and any technical retry. No best-rule selection on
-  evaluation outcomes. Real native optimizer/checkpoint/data-handoff SYN first.
-  Useful CUDA is delegated with measured headroom; no completed-fit repetition
-  or model-name/utilization search. Source-only preparation is not a trained result.
-- Execution/Aquinas: failed private-RO proxy-share projection remains
-  input_unavailable at A/execution/current-timesfm-whole-share-basis-readiness-20261024-v1.
-  Source/native-SYN successor:
-  A/execution/current-timesfm-whole-share-native-codec-repair-20261024-v1.
-  Preserve old attempt/debit; retain safe stage/category on nonzero exit and
-  qualify actual strict schemas before any separately bounded successor RO read.
-  No private values, fresh funds/orderability claim or frozen-weight/cap change.
-  CLOSED3e1ae648: follow-up52470 actual attempt stopped mount_scope before private
-  worker start; alljoined. Parent retired optional proxy expansion. No success,
-  infeasibility or zero-share inference. Existing native Paper sizing continues.
-- Invoked Execution/Review Tesla: source-only concurrency admission audit at
-  A/execution/current-paper-research-concurrency-admission-audit-20261024-v1.
-  Determine whether independent credential-free research falsely blocks actual
-  Paper owners; exact reproducer and smallest existing-pattern repair first,
-  not a new actor platform/Task. Preserve actual/unknown private-writer exclusion,
-  bank/mutex, source/identity/risk and F9 protections.
-- Data/Kant supports an exact Engine-named gap, not blanket reacquisition.
-  Strategy/Review challenges named mechanisms, not another reading list/gate.
-  Tesla additionally maps a NEW dated Joint17 point from retained models at
-  A/execution/current-joint17-next-dated-point-readiness-20261024-v1, source-only
-  producer/affine/raw-input readiness; no model call, old-entry reactivation,
-  private/API/Task effect or duplicate fit during that preparation.
-
-## Completion And Continue
-
-Require exact input/support/split/target/cost bindings, native checks, actual
-bounded comparative outputs and joined workers. If duplicated or unavailable,
-record scoped rejection, choose a ready alternative and update ONE company
-objective; no company-wide wait or independent-replication relabeling.
-
-Exploratory losses do not suspend provisional Paper. Preserve ONE original
-virtual-cash tenth, costs/losses/pending/F9UNKNOWN-HELD and exact original
-requests. No forced shares, redistribution of old unsupported mass, foreign
-adoption, substitute unknown order, profit expansion or schedule reset.
-Submit/accept/fill/current-owned/closure and fees/settlement/net PnL are distinct.
-
-Full2ef959d2:475serial/18956PASS25skip/8workers397.74sec/1390exact incllocks/
-clean/Ruff/threeCompose. Docs/external reuse ONLY with exact1390match and fresh
-focused native/independent proof. Tracked runtime/shared-control edits require
-AGENTS fresh serial/full/Ruff/default,research,accounting Compose(.env.example).
-Use uv --no-env-file, named safe child environments, bytesM/artifactsA.
-Integrate material completion, verify/commit/push, refresh boards, replace NEXT
-with ONE next outcome and continue the active long request. Workers own next_due;
-no foreground market/quota wait while another package is ready.
+Full authority2ef959d2 remains reusable ONLY with exact1390 source/control match:
+475serial/18956PASS25skip/8workers397.74sec/clean/Ruff/threeCompose(.env.example).
+Fresh focused external tests validate external changes; repo tests do not.
+Tracked runtime/control changes require AGENTS fresh serial/full/Ruff/Compose.
+Use uv --no-env-file; dataM/artifactsA; no implicit dotenv or whole-env copies.
+At material completion verify/commit/push, refresh boards, replace NEXT with ONE
+next material outcome and continue the active request. No foreground market/
+quota wait while another package is ready; no new platform or report system.

@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 12:40KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 14:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
@@ -50,16 +50,60 @@ At10bp eachleg GRU Top8 fractional -.15991%/.16771DD versus uniform8
 versus -.04407/.05750 includes different unused cash, not alpha. B is invented,
 not actual Paper budget. NumPy private header failure/debit retained; public
 native API continuation used final predeclared retry/12cells total. Alljoined.
-Noether now prepares NAS-supported-before-training H5 hypothesis at
-A/research/current-native-supported-universe-h5-training-preparation-20261024-v1.
-PROPOSALbca57dc8 adopted: NEW partial Top8 equal-target-group rank objective,
-raw63 GRU32, fixed TREND21/slot-uniform8/same gross. NAS-only training itself
-already existed, closest prior utility8601bd2e; addendum974bc50f distinguishes
-estimand. Parent delegates native proof/ONE CUDA fit/18cells at
+Top8 group-rank family Sourceebb9/technical-r1d531 is CLOSED TECHNICAL_INCOMPLETE:
 A/research/current-native-nas-top8-group-rank-h5-development-20261024-v1.
-3600active/7200elapsed inclprep, seed20261110/100epochs/pat24/17300market+
-6nativeupdates/43INNER forecasts/0LATER; exact forward cap before numerical
-dispatch. Not yet observed running. Current Paper points/risk remain unchanged.
+Windows argv failure first; compact SDK mount repair then invalid invented
+SYN000/NAS fixture. Actual CUDA model/AdamW/scheduler constructed and synthetic
+autograd occurred;0optimizerupdates/marketfits/INNERforecasts/financialcells.
+Alljoined/leasefree/438.907activeupper/old05:52:31deadline unchanged. One allowed
+continuation consumed, no further dispatch; Claude7731/adjudicationa1c2af9d.
+Not zero native effects, a completed comparison or model-performance failure.
+Valid letter-only DTO fixture passes separate parent CPU check, not model proof.
+
+NEW H1-auxiliary/H5 ranking campaign has ACTUAL results, not just preparation:
+A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/technical-r1/CONSUMER.json.
+Source d76a3345/contract6fc44964/fitA66e33d66/fitB0c5feeb3/readout8b14a6ca.
+Same fresh raw63 GRU32/two-head init/seed20261111/support/Top8/H5 CHECK selection;
+A=.5L5 with unused H1 head outside optimizer, B=.5L5+.5L1. Separate backbone+H5
+and auxiliary-head clipping isolates cross-head clipping scale. Data26e2/aca2
+TRAIN2762/CHECK109 H1 supervision missing0; H1 is one SESSION, not one hour.
+Parent adopted2fits/100epochs/pat24/34600marketupdates/580028dateforwards/
+6nativeupdates/24financial cells/7200active/14400elapsed before numerical work;
+Data2.6254sec and prep60 charged once, deadline no later08:44:51.468932UTC.
+Original native completed4updates then host used guest /out state ref as a
+Windows path; failure preserved. Predeclared fixed-output continuation4b8b
+mapped exact checkpoint files without repeating native4. New actual phases
+cold/FIT-A/FIT-B/INFER/READOUT complete,24cells/903.8961activeupper/alljoined/
+leasefree, COMPLETE_FAIL. Final independent7a4c9f6d passed785assertions:
+A/research/current-h1-h5-auxiliary-rank-development-20261024-v1/FINAL-INDEPENDENT-CHECKS.json.
+A51epochs/best27/8823updates; B50/best26/8650updates, PATIENCE24 both. Actual
+first updates05:01:57.116/57.132UTC; join05:03:18.008/30.854. Exact last optimizer
+step UTC unrecorded; early stopping is not global convergence. Max2concurrent,
+each peakreserved6310MiB/GPUobservedmax93%/minfree8245MiB, not isolated timings.
+At10bp eachleg fractional growth/DD%: A-.105830/.129984, B-.152218/.168831,
+TREND21-.176982/.191646,uniform8+.002597/.064461. Whole A-.104104/.127942,
+B-.149283/.162709,TREND-.117020/.132730,uniform+.031178/.051862 reflects
+different unused cash, not alpha/Paper PnL. Auxiliary benefit/product screen FAIL.
+Conservative preparation start04:21:46 yields actual unchanged deadline08:21:46,
+earlier than allowed ceiling08:44:51; Data first SYN/start and2.6254sec charged
+once. Closed clocks/failures/debits unchanged; no numerical retry or best-loser.
+Next source/metadata-only intraday ETF novelty/readiness proposal underway at
+A/research/current-intraday-etf-next-experiment-preparation-20261024-v1.
+Retained minute sessions are not an instruction to retrain or a new fit claim.
+Claude c6d011e4 REVISE corrections adopted: equal H5 coefficient, complete H1
+support/purge, exact gradient path and adaptive reused-data claim. Exact design
+is Codex-proposed under delegated research authority, not human-specified.
+
+Joint17 NEW H20 point COMPLETEe06c3d1a/sourcee676/DTO2ead/policye038 at
+A/research/current-joint17-oct26-reference-adaptation-20261024-v1/CONSUMER.json.
+Actual CPU1construct/restore/forward04:12:40..42UTC,0fit/GPU, same epoch17/
+100axis69known31zero/once-scaledData2c91/545d/4a8b.18path+565independent checks/
+alljoined, retained initial host-path/checker API failures, no actual rerun.
+Parent current561b real receiver8dae accepts H20 Oct26->Nov20, not H5. New
+Execution actually installed222d/session41586exit0, independentd092 PASS new2/
+old6preserved. EntryOct26 17:00UTC/exitNov20 20:45UTC, not research OPEN fill
+assumption. H20 future coherent mark capture preparation active; old Oct23/Nov19
+cohort unchanged. No installation/future-mark/alpha/actual-fee-PnL inference.
 
 Beta-residualrule COMPLETE_FAILb0e3ced1/Deliverybdca1acf/Source0f3cb076 at
 A/research/current-h5-beta-residual-reversal-development-20261024-v1.
@@ -72,7 +116,7 @@ adaptation502+1246updates alreadyclosed. Aq36db2761 verified NESTED ordinal
 premarket-abi-repair-r1 alreadyclosed2fits341+651updates; rootFAIL was incomplete.
 Comparison goal SUPERSEDED, no duplicate repair/training. Old scientificFAIL/
 financialDDFAIL/growthpass retained. Dated Paper proposal subsequently deployed;
-current NEXT is native-supported-universe-h5-comparison-v1, not a repeated fit.
+current NEXT is joint17-h20-prospective-capture-ready-v1, not a repeated fit.
 Noether modelrequirements at
 A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1.
 Metadatahelper failed one assertion after20/24checks, joined/no retry; not a
