@@ -196,7 +196,7 @@ def test_invalid_metadata_and_weight_caps_rejected(fault):
         elif fault == "nan":
             replace(value.metadata.rows[0], score=D("NaN"))
         elif fault == "venue":
-            replace(value.metadata.rows[0], route="AAPL/AMS")
+            replace(value.metadata.rows[0], route="AAPL/UNKNOWN")
         elif fault == "slot":
             replace(value.metadata.rows[0], slot=True)
         elif fault == "duplicate":
@@ -207,6 +207,23 @@ def test_invalid_metadata_and_weight_caps_rejected(fault):
             replace(
                 value.metadata, rows=tuple(replace(r, weight=D(".2")) for r in value.metadata.rows)
             )
+
+
+def test_amex_row_survives_roundtrip_without_routing_or_redistribution():
+    original = prepared()
+    rows = tuple(
+        replace(row, route="SPY/AMS") if index == 0 else row
+        for index, row in enumerate(original.metadata.rows)
+    )
+    value = prepared(rows=rows)
+    loaded = reload(value)
+    assert loaded.metadata.rows == rows
+    assert loaded.metadata.rows[0].eligibility == "UNSUPPORTED_VENUE"
+    assert loaded.metadata.eligible_weight == Fraction(2, 5)
+    assert loaded.metadata.skipped_weight == Fraction(3, 5)
+    assert [target.route for target in loaded.targets] == ["AMD/NAS", "AMZN/NAS"]
+    assert all(target.research_weight == D(".2") for target in loaded.targets)
+    assert sum(target.proposal.target_exposure for target in loaded.targets) == D(".01")
 
 
 def test_model_input_targets_cannot_be_mutated_even_with_valid_receipts():

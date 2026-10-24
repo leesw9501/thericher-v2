@@ -11,6 +11,38 @@ cash tenth/basis/costs/losses/pending, no profit expansion/foreign adoption.
 F9 UNKNOWN/HELD. No operator decision presently. Preserve untracked %SystemDrive%/.
 Detailed closed history is Git4ecc4cf/ba1345b and exact consumers, not this board.
 
+## New Independent Work (Oct25 KST)
+
+L Paper connection is PREPARED_NOT_DEPLOYED in a separately owned consumer:
+A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
+SHAfbcdf230. Saved point4cb9 reused, zero model loads/fits/inference/API/custody/
+schedule changes. INPUT271aee51 keeps SPY/AMS, QQQ/NAS, IWM/AMS and cash0;
+only QQQ yields a target under the existing H5 .005-original-basis ceiling.
+AMS grammar is preserved as UNSUPPORTED, never routed or redistributed.
+Sourceeabc21a6/SDK64236484 (478 source files) plus16 invented guest checks and
+one exact offline SDK/input admission passed; all3 owned containers absent.
+This is not installation, submit, fill or alpha. Existing3 jobs/F9 unchanged.
+Tracked parser/tests changed; NEW fresh authority43e4522c now passes614serial/
+18992full25skip/19017total/8workers/Ruff/3Compose. Exact1392 before/after/current
+hashes match; Global mutex/lease/temp cleanup and all children joined. Root:
+A/verification/current-l-paper-route-preservation-20261025-v1/AUTHORITY.json.
+Tesla independent8ec3347c PASS_INERT_PREPARATION_ONLY at
+A/review/current-l-paper-preparation-implementation-20261025-v1/CONSUMER.json.
+Whole-share affordability/fresh funds/quotes remain unknown, not zero. Worker
+start/publication clocks are conservative inference interval bounds, not exact
+kernel timestamps; CLOCK-INTERPRETATION.json retains this limitation. The single
+future-cohort measurement is declared but unrun in FUTURE-MEASUREMENT.json;
+neither document creates a collector/schedule or gates existing Paper.
+
+Noether owns new conditional full-versus-diagonal H5 covariance proposal M:
+A/research/current-three-etf-conditional-covariance-development-20261025-v1.
+Same GRU32/seed/layout/inputs/selector; conditional joint density is a new
+mechanism, not another run of completed F/I/L. All history remains adaptively
+reused. Source/native preparation only; no market/GPU fit evidenced yet.
+Parent scientific direction adopted in principle; exact Source/native/bounds
+and concise Claude challenge precede numerical dispatch. Company objective
+remains the existing three natural entries, not this independent preparation.
+
 I actual prospective point COMPLETE, NEW research output, not F historical
 evaluation. Root A/research/current-toto-adapt7-prospective-point-20261025-v1;
 corrected Source81e89f1a/Consumerf799c13c/29pure checks/Parent22refs match.
@@ -501,14 +533,21 @@ failures/debits remain Git4ecc4cf and role/shared-custody consumers.
 
 ## Verification / Recovery
 
-Current authority134a6866:
+Current authority43e4522c:
+A/verification/current-l-paper-route-preservation-20261025-v1/AUTHORITY.json.
+614serial/18992fullPASS25skip/19017total/8actualworkers; all joined, own temp
+and lease removed, Ruff/default+research+accounting Compose(.env.example) PASS.
+Parent checked all1392 current protected hashes against exact before/after.
+Docs/external-only work may reuse it only while those exact digests match.
+
+Historical authority134a6866:
 A/verification/current-toto-f-scoped-control-integration-20261024-v1/bootstrap-r7/AUTHORITY.json.
 280focused serial+1harness regression/18988fullPASS25skip/19013total/8actual
 workers/394.21pytestsec; checked Global mutex/lease/current-child cleanup,
 Ruff/default+research+accounting Compose(.env.example) PASS. Exact1392
 before/after/current digests match. Earlier f19d no longer covers the later
 F-scoped DECISIONS append; do not overwrite its manifest or reuse it.
-Docs/external-only work may reuse134a only while exact1392 still match.
+It predates the AMS parser/test change and is not current authority.
 External helpers require separate native/independent proof, not repo-suite
 reruns. No tracked code/control changes in the present I package.
 

@@ -57,6 +57,17 @@ ad685 is not a new order-safety defect or speculative permission to expand.
 
 ## Parallel Research / Do Not Make Market Waiting Global
 
+NEW completed independent L Paper preparation: INPUT271aee51/DELIVERYfbcdf230
+under A/execution/current-l-ensemble-paper-preparation-20261025-v1.
+Saved point only, no fit/inference/task/broker/custody changes; full3asset
+axis/cash0, QQQ/NAS only, actual AMS preserved unsupported. Updated SDK6423
+admits offline; not a fourth installed job or runtime completion. Native16/
+independent8ec3/fresh repo43e4 support preparation only. Existing3 jobs unchanged.
+Noether prepares M conditional full-v-diagonal covariance expert, root
+A/research/current-three-etf-conditional-covariance-development-20261025-v1;
+not completed training or a numerical GO. Parent exact Source/native adoption
+and existing caps still apply. No duplicate F/I/L training or global GPU hold.
+
 Warm-support study A is CLOSED COMPLETE_FAIL05b02e54/Source773b:
 A/research/current-three-etf-warm-start-support-adaptation-20261024-v1.
 2resumed CPUfits/222NEWupdates/616242rows/6restores/4cells/alljoined;

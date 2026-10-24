@@ -20,6 +20,20 @@ SHAf3295a41. No task/definition/order/account invocation from that query.
 
 ## Immediate Holdings Consumer
 
+NEW separately scoped L preparation: A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
+fbcdf230 binds INPUT271aee51/Sourceeabc/SDK6423. Saved point4cb9 reused without
+models/API/private/schedule changes. Three original slots/cash0, QQQ/NAS only;
+SPY/AMS and IWM/AMS remain known UNSUPPORTED, no remap/redistribution. Existing
+H5 weight profile and .005 cohort ceiling within original shared tenth.
+16 guest invented checks plus exact offline source-capsule/input admission
+passed, all3 children removed. PREPARED_NOT_DEPLOYED, not a fourth installed
+owner/submit/fill/alpha; old frozen SDKs do not gain AMS parser support.
+Fresh43e4522c authority PASS614serial/18992full25skip/8workers/Ruff/3Compose,
+exact1392 before/after/current match. Independent8ec3347c PASS preparation only.
+Affordability/fresh quotes/funds remain runtime unknowns, not zero. Recorded
+worker-start/publication bound model operations, not exact kernel timestamps;
+see CLOCK-INTERPRETATION.json. Old134a authority is not reused after this patch.
+
 Latest Scheduler readback538dd661 observedOct24 16:59:29UTC:
 A/execution/current-oct26-entry-metadata-readback-20261024-v1/READBACK-20261024T165929Z.json.
 Six enabled/Ready3/0instances/allnextUTCmatch, projection76490bf4 hashchecked.

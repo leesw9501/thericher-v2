@@ -12,6 +12,23 @@ Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
 ## Current Actual Deployment
 
+New L input/capsule is inert preparation, NOT another deployed owner:
+A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
+fbcdf230; INPUT271aee51/Sourceeabc21a6/SDK64236484. All3 source slots/cash0;
+QQQ/NAS only, AMS retained unsupported. Existing H5 .005 cohort ceiling remains
+inside the one original shared tenth; whole-share feasibility not observed.
+Native16 synthetic checks and exact offline copied-SDK admission PASS;
+independent8ec3347c PASS. Existing3 scheduled jobs/F9 remain unchanged. Do not
+rerun completed builder/native/inference. Future runtime needs this exact
+updated source capsule, fresh facts and native risk; old pinned SDKs lack AMS.
+Clock interpretation and declared unrun future measurement stay in that root.
+
+Current fresh repo authority43e4522c:
+A/verification/current-l-paper-route-preservation-20261025-v1/AUTHORITY.json.
+614serial/18992fullPASS25skip/19017total/8workers/Ruff/3Compose(.env.example),
+1392 exact before/after/current hashes match/alljoined/own temp+lease removed.
+Prior134a below is historical after the parser/test change, not reusable.
+
 Company NEXT: exact natural Oct26 GRU/TimesFM/Joint17 entry outcomes below.
 Current independent I research point is COMPLETE_VERIFIED_NO_DEPLOYMENT:
 A/research/current-toto-adapt7-prospective-point-resource-readiness-20261025-v1/FINAL-CONSUMER.json

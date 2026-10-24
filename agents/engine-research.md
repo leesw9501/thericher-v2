@@ -6,6 +6,22 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+NEW M source preparation: conditional joint H5 net-return density, learned
+full-v-diagonal Cholesky with matched GRU32/seed/layout/selector and fixed
+mean-variance actions. Noether owns
+A/research/current-three-etf-conditional-covariance-development-20261025-v1.
+No market fit/GPU use claimed yet; original600prep within3600active/7200elapsed,
+originOct24 17:32:09UTC/hard19:32:09UTC. Parent direction in principle only;
+exact Source/native before fitting. ClaudeREVISE/d03915b6 led to named prefreeze
+count-unit, cash-risk-comparator, volatility-domain and momentum-rule fixes;
+not an extra approval/model arm. All history remains reused adaptive evidence.
+Existing F/I/L complete models are NOT repeated.
+
+L separate Paper consumer now PREPARED_NOT_DEPLOYED/INPUT271aee51/DELIVERYfbcdf230.
+Saved point only,0fits/inference. SDK6423 admits offline; source AMS retained
+unsupported, QQQ/NAS only,0cash/no reweight. Not new Paper fill/profit evidence.
+Fresh43e4522c source authority and independent8ec3347c support preparation only.
+
 I NEW prospective ADAPT7 point, root
 A/research/current-toto-adapt7-prospective-point-20261025-v1.
 Data479565eb/e44b complete252throughOct23; Source81e89f1a/Consumerf799c13c.

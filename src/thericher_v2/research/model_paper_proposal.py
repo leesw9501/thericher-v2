@@ -34,7 +34,8 @@ MODEL_PAPER_SCHEMA = "model-paper-proposal-input-v1"
 # 1bd7c16341e9c3d7eb36350854dc4776cc1301bdab31cb902db36db83c2658ea.
 # Adopted: preserve weights/foreign ownership; no NYSE bank or routing mutation.
 _PIN = re.compile(r"sha256:[0-9a-f]{64}", re.ASCII)
-_ROUTE = re.compile(r"[A-Z]{1,10}/(?:NAS|NYS)", re.ASCII)
+# Preserve AMEX slots without making them executable: eligibility stays NAS-only.
+_ROUTE = re.compile(r"[A-Z]{1,10}/(?:NAS|NYS|AMS)", re.ASCII)
 
 
 def _need(ok, reason):

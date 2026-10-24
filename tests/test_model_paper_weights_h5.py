@@ -122,6 +122,33 @@ def test_finite_weight_to_horizon_profile_mapping():
     )
 
 
+@pytest.mark.parametrize("amex_weight", ["0.0", "0.5", "1.0"])
+def test_amex_weights_preserve_full_axis_without_increasing_nas_target(amex_weight):
+    first, last = _window(date(2026, 10, 26)), _window(date(2026, 10, 30))
+    weight = Decimal(amex_weight)
+    rows = (
+        ModelPaperWeightRow(0, "SPY/AMS", True, weight),
+        ModelPaperWeightRow(1, "QQQ/NAS", True, Decimal(1) - weight),
+        ModelPaperWeightRow(2, "IWM/AMS", True, Decimal("0.0")),
+    )
+    value = prepare_model_paper_weights_input(
+        _metadata(first, last, rows), entry_session=first, exit_session=last,
+        profile=MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+    )
+    loaded = _load(serialize_model_paper_weights_input(value))
+    assert loaded == value
+    assert loaded.metadata.rows == rows
+    assert loaded.metadata.skipped_weight == Fraction(weight)
+    assert loaded.metadata.rows[0].eligibility == "UNSUPPORTED_VENUE"
+    assert loaded.metadata.rows[2].eligibility == "UNSUPPORTED_VENUE"
+    assert all(target.route == "QQQ/NAS" for target in loaded.targets)
+    if weight == 1:
+        assert loaded.targets == ()
+    else:
+        assert len(loaded.targets) == 1
+        assert loaded.targets[0].proposal.target_exposure == Decimal(".005") * (1 - weight)
+
+
 @pytest.mark.parametrize(
     "profile",
     [
