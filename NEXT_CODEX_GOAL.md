@@ -40,62 +40,41 @@ Research actors or future due times. No recovery observe() as offline reading.
 
 ## Ready Parallel Work
 
-1. Finish a legitimate new ensemble QQQ H5 connection WITHOUT disturbing the
-   original three jobs. Saved L INPUT271aee51/DELIVERYfbcdf230 and equivalent
-   LN INPUT80816f6a/COMPLETE4337d4e8 are inert preparation, not deployment.
-   Full source slots remain SPY/AMS, QQQ/NAS, IWM/AMS/cash0; AMS unsupported,
-   never remapped/renormalized. Use ONE exact input, not two automatic cohorts.
-2. Source design at
-   A/review/current-n-ln-frozen-output-integration-20261025-v1/SOURCE-DESIGN.json
-   conditionally reuses the existing aggregate QQQ owner/V4 bank and a separate
-   exact H5 request journal. The legacy unit runner may sell a new H5 BUY early;
-   do not use it, globally remove reserved-symbol denies or add an invisible
-   ETF/V5 registry. Actual old QQQ boundary62916e7d/c234 is terminal-flat with
-   2fullyfilled BUY/SELL/0pending; fullV4/20owners47states passes/OTHER unknown1
-   reservation preserved. Parent retired the exact old managed QQQ unit task
-   at19:47:21UTC/RESULT1287a886, independentb4b874fd14checks/74others unchanged.
-   Do not reenable or manually invoke that old logical controller. Honest-host
-   retirement is not an entry grant or fresh broker holdings observation.
-   Pure core0fe13554/testac11fbeb is now verified762941dc; old3SDK cold V4
-   compatibility4a9f8aaa passes12inventedbooks. Parent chooses ONE original L
-   INPUT271aee, not equivalent LN as another cohort or a scorecard winner.
-   Runtime-adapter1cd47255/test39cb0cef is now COMPLETE4b7a4fe2/fresh7460a456:
-   997serial/19086full25skip/1396match/actualimage2ff8SYN scenarios/a93077b8.
-   Exact intermediate/crash/original-anchor recovery and fresh prewire checks
-   implemented; custody_reconcile does not require provider market reads.
-   No actual provider/CLI/task/broker deployment yet. Source797591fa shows real
-   QQQ peers cannot join closed read-only claims; old H5 exits may also deny if
-   actually overlapping. Tesla prepares versioned cooperative-peer source,
-   not a blanket exemption/current-job edit. Keep exact original operational
-   counters/debits and identities; source prediction is not runtime failure.
-3. OOF hierarchical campaign is CLOSED primary FAIL, not a ready training job:
-   A/research/current-chronological-oof-risk-gated-tree-development-20261025-v1/FINAL-CONSUMER.json
-   SHAd1faa121/Source02c9:3actual concurrent newGRUs73/72/71epochs/best48/47/46,
-   sixRidge/PCA heads, one fixedI29OOF/depth2min7tree/2ledgers110marks.
-   Tree -3.69613% vs maskeduniform +1.28774%/cachedNfull +5.06130%; fixed
-   conjunction FAIL on alreadyseen55sessions/adaptive only.267checks/alljoined/
-   leasefree/1335.111upper; no repeats, retune, independent alpha or Paper swap.
-   Clock/custody/TTL correction1e7c/testca226 is COMPLETEfresh5fda9440:
-   1022serial/19111full25skip/8workers/Ruff/3Compose/1396match/new2ffnative.
-   External provider2a92/nativeb520/a657c171 passes21SYN/finalclockSDK480,
-   not actual host authority. Kant prepares existing generic-token/budget glue;
-   Tesla copied-source native/phase/OwnerAdmission integration after SCM
-   capability3652afbe. Retain seedRO/network-none vs effectRW/bridge. Unified
-   4PASS+1readiness-timeout remains PARTIAL. H5 retirement is not a visit mutex.
-   New pooled head CLOSEDc317 (oneCPUfit,5.017965%growth/2.520247%DD), learned
-   diagonal density CLOSED b7d0 (oneNEWCUDAfit80epochs/best55,2.085575%/
-   1.630106%DD). Positive descriptive growth but frozen criteria FAIL; alljoined,
-   no duplicate training/Paper swap/independent alpha. No current GPU worker.
-4. Finish the SMALL NEWQQQ direct native runtime graft, not an old NAS SCM
-   prerequisite. Source1691/495a13SYN and hosta0e3/ae40816SYN are preparation,
-   not actual owner/installation. MAP767a resolves existing control path/gate/
-   canonical custody volume; no new approval descriptor/gate. Tesla owns
-   current runtime-graft-r2 Sourcef7a87b3b is closed with36focused SYN checks;
-   Noether independently reviews the repaired source. Tesla owns source-safe
-   activation-readiness, not installation or a broker visit. Parent-selected
-   preparation entryOct26 18:00..18:15UTC and exitOct30 19:55..20:00 are not
-   installed and do not prove nonoverlap. Actual owner/retirement/roots/IPC
-   binding needs exact source/native qualification, not a caller boolean.
+1. Supplementary L QQQ H5 is NOW INSTALLED, not a ready builder to rerun:
+   A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/
+   parent-installed-readback-r1/CONSUMER.json SHA f1fb2956.
+   Exact Source482cd50e/Release7cdb3045/TaskAPI166d9b7a/image2ff53eff,
+   ONE original INPUT271aee51; no second LN cohort. New names:
+   thericher-kis-paper-l-qqq-h5-entry-20261026, Oct26 18:00..18:15UTC;
+   thericher-kis-paper-l-qqq-h5-exit-20261030, Oct30 19:55..20:00UTC.
+   PT4M repetition/quiet pythonw; independent Oct24 23:40:54UTC metadata
+   validates Ready/enabled/never-run/zero instances and old6 XML/ACL unchanged.
+   Installation is NOT actual owner-origin, submit, acceptance or fill evidence.
+   Do not reinstall/manual-run/reset. Read exact natural outcomes when due.
+2. Preserve the existing QQQ aggregate V4 owner and separate H5 journal;
+   native bootstrap never creates a bank or basis. Old boundary62916e7d/c234
+   was terminal-flat; legacy thericher-kis-paper-qqq-unit-20261006 stays disabled
+   to prevent early exit. R4 operational recovery requires exact quiescence
+   and resolved CREATE, never age reclaim or native reservation release.
+   Current source slots SPY/AMS, QQQ/NAS, IWM/AMS/cash0 remain unmodified;
+   only QQQ is routed, without venue substitution or renormalization.
+3. Prepare a separate truthful AMS profile using source readiness23c74441:
+   A/review/current-qqq-runtime-root-source-map-20261025-v1/ams-source-readiness-r1.
+   Official quote AMS/order AMEX support is not an account entitlement proof.
+   Local typed/provider/sizing/exit/recovery and ownership bindings need focused
+   implementation; never broadly remove NASD guards or alter the current cohort.
+   Noether owns a disjoint external patch/preparation; Parent integration and
+   fresh verification precede any tracked/runtime use.
+4. OOF tree d1faa121, pooled c317836d and learned diagonal b7d0c162 are CLOSED,
+   not queued fits. Positive descriptive growth in the latter two did not pass
+   their frozen comparison on reused55sessions. NEW QQQ-only marginal-density
+   preparation at A/research/current-qqq-only-marginal-density-development-20261025-v1
+   targets the actually deployable QQQ/cash domain, not a duplicate old fit.
+   Noether owns one new-target GPU campaign; Kant maps units/leaves and Godel
+   challenges. Actual numerical start is unknown until worker evidence; no
+   permission hold or current L input swap. Diagnostic793565d1 is
+   technical-incomplete with UNKNOWN PnL; separate b9b8411d only repairs its
+   precision fixture on invented data, not its real readout or financial result.
 
 ## Completed Inputs, Not Ready Jobs
 

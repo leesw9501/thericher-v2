@@ -13,6 +13,14 @@ closed; F actual2GPUfits closed technical/financialUNKNOWN. H TabICL actual
 all29CASH/COMPLETE_FAIL is not adopted. I new prospective ADAPT7 Research point
 is not broker input/capital allocation or a fourth installed owner.
 Research does not gate original natural Paper opportunities or release F9.
+CURRENT supplementary L QQQ H5 is INSTALLED: Source482cd50e/Release7cdb3045,
+TaskAPI166d9b7a/image2ff53eff/exactINPUT271aee51. Parent-installed-readback-r1
+CONSUMERf1fb2956 under directQQQroot confirms new2 Ready/enabled/never-run/
+0instances atOct24 23:40:54UTC; old6 XML/ACL/next/last unchanged, legacyQQQ
+disabled. EntryOct27 03:00..03:15KST, exitOct31 04:55..05:00KST/PT4M/quiet.
+No manual Task run, API/order or bank/request/reservation change. Source/native
+runtime facts and fills remain future evidence. Older preparation below is
+historical, not the current release. Cleanupff5a fresh24cases is clean PASS.
 At10:02:43UTC six exact planned entry/exit tasks enabled/Ready3/0instances,
 future13:40/14:20/17:00UTC Oct26 entries; metadata only, no source/ACL/fill proof:
 A/execution/current-oct26-entry-metadata-readback-20261024-v1/METADATA-20261024T100243Z.json
@@ -112,6 +120,19 @@ independent review; Tesla activation-readiness-r1 checks source-safe actual
 metadata and installable bindings, not broker/Task invocation. allow_execute=false;
 no install/actual dispatch yet. Old NAS conditional peer
 coexistence is separate local unfinished work, not a newQQQ gate.
+R3 final Sourceba8cad56/Consumer00f79ca0 fixes the later-discovered ACTIVE-HOST
+lifetime defect: readonly prerequisites precede claim; exact own child/container
+quiescence can archive only operational state, never native reservations.
+10+2 earlier-body checks and3 namespace checks are distinct. Current R4 is a
+small unresolved-CREATE assertion fix (stopped orphan risk, not broker duplicate),
+with installable candidate preparation. No Task registration or actual runtime.
+R4 Source71a8e8fc/Consumer81e31e36 is now frozen4focused checks; independent
+review8ae53687 found no blocking changed-path defect. Candidate482cd50e/
+preparedrelease998b30b5 at activation-readiness-r3 has15admission/24mocked Task
+body checks, but scratch cleanup error5 withholds overall harness PASS.
+That failed cleanup is preserved. Subsequent ff5a1649 legally recovered its
+exact scratch and passed fresh24cases with clean exit; candidate bytes unchanged.
+Parent installed current release and independentf1fb verifies it above.
 
 NEW separately scoped L preparation: A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
 fbcdf230 binds INPUT271aee51/Sourceeabc/SDK6423. Saved point4cb9 reused without

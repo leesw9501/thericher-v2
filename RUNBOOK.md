@@ -12,7 +12,24 @@ Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
 ## Current Actual Deployment
 
-New L input/capsule is inert preparation, NOT another deployed owner:
+L QQQ H5 is now installed using exact original INPUT271aee51, not LN as a
+second cohort. Source482cd50e/Release7cdb3045/TaskAPI166d9b7a/image2ff53eff:
+A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/activation-readiness-r3.
+Actual Parent receipts PARENT-entry/COMPLETE.json and PARENT-exit/COMPLETE.json;
+independent parent-installed-readback-r1/CONSUMER.json SHA f1fb2956 confirms
+two Ready/enabled/never-run/zero-instance tasks atOct24 23:40:54UTC.
+Entry thericher-kis-paper-l-qqq-h5-entry-20261026: Oct27 03:00..03:15KST;
+exit thericher-kis-paper-l-qqq-h5-exit-20261030: Oct31 04:55..05:00KST.
+PT4M repeats, quiet pythonw, no manual demand start. Do NOT reinstall or run
+InstallNewOnly again; inspect natural exact receipts/owned custody when due.
+Rollback API is only for these exact new definitions proven never run, not
+unknown orders/budget reset. Original six task XML/ACL/next/last facts unchanged;
+legacy QQQ unit remains disabled. Source binding uses the canonical existing
+private volume/control root and preserves the original shared tenth/F9 hold.
+R4 review8ae53687 plus fresh whole-SYN cleanupff5a1649/24cases qualify source
+engineering; installation still does not prove runtime origin, orders or fills.
+
+Earlier L builder/input capsule remains immutable preparation, not this release:
 A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
 fbcdf230; INPUT271aee51/Sourceeabc21a6/SDK64236484. All3 source slots/cash0;
 QQQ/NAS only, AMS retained unsupported. Existing H5 .005 cohort ceiling remains
@@ -86,7 +103,8 @@ custody_reconcile can omit market quote/funds, while pre_submit rechecks them.
 Original possible-wire date/intent survive restart; no stale parent overwrite
 or invalid terminal evidence publication. Default inert; trusted actual evidence
 provider/host integration still unqualified, not a new operator permission.
-No driver/job installed. Source797591fa shows closed claims cannot truthfully
+At that older checkpoint no driver/job was installed; current482c above
+supersedes that status. Source797591fa shows closed claims cannot truthfully
 admit foreign Paper writers; oldH5exit peer denial is conditional SOURCE only.
 Tesla prototype Source05d0/native-r1 consumer c21453bd passes12actual-image
 SYN cases, not a deployed cooperating-peer variant. Separate ROseed/effect/
@@ -116,7 +134,8 @@ SCM capability3652afbe (peer/scm-r1) proves shared FD survives supervisor death
 with separate RO/network-none vs RW/bridge,7containers/2volumes removed. Actual
 native descendant/phase/OwnerAdmission integration remains unqualified; Tesla
 prepares copied-source integration. Unified6c686/db632 stays PARTIAL, not
-retroactive PASS. No current provider/CLI/task/source cutover. A visit mutex
+retroactive PASS. That old NAS SCM branch has no CLI/task/source cutover;
+current QQQ482c uses the direct native path instead. A visit mutex
 is not H5 legacy retirement; caller projections alone are not host proof.
 
 Later research is CLOSED; never rerun old launchers:
@@ -129,7 +148,7 @@ Matched initial/stats do not make covariance causal or reused data independent.
 
 NEWQQQ direct visit source1691378a/495a072a passes13nativeSYN; hosta0e3/
 ae408518 passes16code/codecSYN. These are NOT installation or actual owner
-facts. Current source implementation is
+facts. The earlier source implementation checkpoint was
 A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/runtime-graft-r2.
 Sourcef7a87b3b/Consumerd7f3ec3e closes36focused SYN checks and50own/499reused
 source references; all children joined. Explicit PS7.5+ imports and parsed

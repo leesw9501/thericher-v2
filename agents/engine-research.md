@@ -6,6 +6,29 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+NEW active preparation (not yet a running fit):
+A/research/current-qqq-only-marginal-density-development-20261025-v1.
+Consumer is the actually deployable QQQ/cash domain, not AMEX bank migration.
+Noether freezes one new QQQ marginal-density GRU target/head plus fixed cached
+expert blends; Kant checks exact data/unit/leaf contracts and Godel challenges.
+Parent grants native->one GPU fit->point->fixed readout only after those exact
+contract/native conditions, max900active/3600elapsed,150epochs/2550marketupdates.
+No old fits/forwards are repeated, no current L input/Task/bank is changed.
+Actual freeze/start/results are unknown until worker evidence; old closed
+studies below remain closed, not new training authority.
+
+One later zero-fit diagnostic is CLOSED technical-incomplete, not a financial
+failure: A/research/current-next-risk-composition-mechanism-readiness-20261025-v1/
+post-density-r1/execution-r1/CONSUMER.json SHA793565d1/Source da36b038.
+The native full-gross reference assertion used Decimal28 instead of60 before
+the cold reader; actual target decodes/ledgers/model calls were0. PnL UNKNOWN.
+One attempt/allhelpers joined/CID removed/266.345604upper charged, no retry or
+refund. This does not reject timing or prohibit another useful model campaign.
+Separate engineering-only native-fixture-repair-r1 Consumerb9b8411d/Sourcee23f7450
+passes10checks/15inventedmarks/1.55sec with only the reference assertion's
+precision60 context fixed. Allhelpers closed; zero real targets/model calls.
+Use this pattern in future fixtures; it does not resume the failed diagnostic.
+
 Latest two studies are CLOSED, not queued fits:
 
 - Pooled OOF-RMS head FINALc317836d at

@@ -6,6 +6,16 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+Latest source capability23c74441 at
+A/review/current-qqq-runtime-root-source-map-20261025-v1/ams-source-readiness-r1
+confirms official quote EXCD=AMS and order/orderability OVRS_EXCG_CD=AMEX,
+including documented virtual BUY/SELL limit TRs. Current ensemble NASD-only
+instrument/sizing/exit/recovery guards are local implementation restrictions,
+not proof KIS lacks AMS. Common Canary/mapper already admit AMEX. Actual
+account/instrument entitlement remains unobserved; no API was called. Future
+separate profile needs exact provider/risk/ownership binding and tests, not
+AMS->NAS substitution. Current QQQ input/unsupported slots remain unchanged.
+
 NEW OOF composition readinessc690643f/29metadata checks complete at
 A/data/current-chronological-oof-risk-gated-tree-inputs-20261025-v1.
 Prefix1157/1167/1177 with innerCHECK119; OOF10/10/9 startsJan2/Mar17/May28.

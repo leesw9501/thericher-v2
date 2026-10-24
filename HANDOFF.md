@@ -14,7 +14,28 @@ Detailed closed history is Git4ecc4cf/ba1345b and exact consumers, not this boar
 
 ## New Independent Work (Oct25 KST)
 
-L Paper connection is PREPARED_NOT_DEPLOYED in a separately owned consumer:
+CURRENT L QQQ H5 connection is INSTALLED, runtime/fills still unobserved:
+A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/
+parent-installed-readback-r1/CONSUMER.json SHA f1fb2956. Source482cd50e,
+Release7cdb3045, TaskAPI166d9b7a, image2ff53eff; exact original INPUT271aee51.
+Parent registered entryOct24 23:39:36UTC and exit23:39:51UTC. Natural entry
+Oct27 03:00..03:15KST, exitOct31 04:55..05:00KST, PT4M quiet pythonw.
+Independent metadataOct24 23:40:54UTC: new2 Ready/enabled/never-run/0instances,
+old6 XML/ACL/next/last unchanged, legacyQQQ disabled. No manual run/API/order,
+bank/request/basis/reservation change; no second LN cohort or alpha claim.
+Whole-SYN cleanupff5a1649 resolves the old temp lookup error with24fresh mocked
+cases/clean exit; R4 changed review8ae53687 has no blocking code finding.
+Current company goal remains original three natural entry outcomes, unfinished.
+At23:46UTC Parent dispatched NEW QQQ-only marginal-density/blend research at
+A/research/current-qqq-only-marginal-density-development-20261025-v1; Noether
+owns frozen-source/native then one new-target GPU fit, Kant data/unit contracts,
+Godel challenge. Max900active/3600elapsed; no numerical start is inferred yet.
+This matches current QQQ/cash routing without AMEX bank migration. Current
+L release/input/Tasks/basis are not changed or chosen by those later results.
+
+## Closed Preparation And Research Evidence
+
+Earlier L builder is immutable PREPARED_NOT_DEPLOYED evidence, not this release:
 A/execution/current-l-ensemble-paper-preparation-20261025-v1/DELIVERY.json
 SHAfbcdf230. Saved point4cb9 reused, zero model loads/fits/inference/API/custody/
 schedule changes. INPUT271aee51 keeps SPY/AMS, QQQ/NAS, IWM/AMS and cash0;
@@ -264,6 +285,31 @@ exit propagation, not a production guard change. Noether reviews the closed
 source; Tesla owns activation-readiness-r1 with actual source-safe metadata only.
 allow_execute=false; no new Task, broker call or installed owner. Do not install
 the older partial graft or treat mocked owners as real scheduled provenance.
+Subsequent independent source review f6f4fad3/29a1508f identifies one P1:
+ACTIVE-HOST precedes fallible admission outside try and has no exact quiescent
+recovery. R2 remains undeployed. R3 final Sourceba8cad56 at runtime-graft-r3/
+namespace-r1/ closes this lifetime repair; Consumer00f79ca0 links10+2 checks
+on exact earlier body plus3 final namespace checks. R4 only tightens ambiguous
+Docker CREATE completion before operational archive. A late CREATE alone
+creates a stopped orphan, not a duplicate broker order; review severity was
+calibrated, not made a company/account permission hold. Operational claim
+closure must preserve every native unknown order/reservation.
+No age reclaim, substitute intent or original three-job change is allowed.
+Data actor review06037427 at A/review/current-qqq-runtime-root-source-map-20261025-v1/
+data-actor-claims-r1 qualifies five exact host fragments, not child containers.
+Retained current Data task instances0; a future unknown child denies that visit,
+not current deployment/company work. No blanket credential or private grant.
+One additional zero-fit diagnostic closed technical-incomplete793565d1 at
+A/research/current-next-risk-composition-mechanism-readiness-20261025-v1/post-density-r1/execution-r1.
+Native Decimal28/60 reference mismatch precedes cold reader/real targets:
+0financial ledgers/model calls, PnL UNKNOWN/allchildren closed/266.345604upper.
+No retry or result inference; independent Paper recovery continues.
+AMS source readiness23c74441 at A/review/current-qqq-runtime-root-source-map-20261025-v1/
+ams-source-readiness-r1 confirms official quote AMS / order+orderability AMEX.
+Current ensemble exclusion is local NASD-only profile/sizing/exit/recovery,
+not a provider-wide impossibility. Account entitlement is still unobserved;
+no API/private call. Future separate profile is ready implementation work,
+not a remap or change to this exact QQQ input, bank or original three jobs.
 
 I actual prospective point COMPLETE, NEW research output, not F historical
 evaluation. Root A/research/current-toto-adapt7-prospective-point-20261025-v1;

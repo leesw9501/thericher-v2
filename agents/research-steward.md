@@ -6,6 +6,15 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+NEW prospective allocation preparation is QQQ-only marginal-density at
+A/research/current-qqq-only-marginal-density-development-20261025-v1.
+Noether is the single resource coordinator. One new-target GPU fit may start
+after frozen unit/data/native API proofs; no actual start is inferred yet.
+Max900active SUM/3600elapsed/1marketfit/150epochs/2550marketupdates plus fixed
+bounded native/current/late/readout stages; actual worker contract must freeze
+these before numerical dispatch. Measure free/peak with4GiB desktop reserve;
+no app-name permission veto, no duplicate old training or dummy utilization.
+
 Latest allocation is CLOSED, no current GPU/model worker:
 diagonal Source3e216e54/FINALb7d0c162, one CUDAfit80epochs/best55/PAT25/
 1360updates,37.282304sec fitworker/54.251926sec full sequential chain,

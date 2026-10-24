@@ -6,6 +6,15 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
+Latest proposal3fb03b48/Source90d99227 at
+A/research/current-next-risk-composition-mechanism-readiness-20261025-v1/post-density-r1
+recommended one zero-fit constant-duty-gross uniform comparison, not another
+density fit merely for occupancy. Claudecb12 SOUND_WITH_LIMITS: equal intended
+gross is not realized-risk matching or causal timing. Adopted execution-r1
+closed793565d1 technical-incomplete before any real target/ledger: a Decimal28
+native assertion falsely rejected the precision60 full-gross boundary. No
+financial result, retry, model call or Paper change; all owned helpers closed.
+
 OOF risk-gated-tree readiness COMPLETEd47a50e7/Proposal731c/Sourcee759 at
 A/research/current-chronological-oof-risk-gated-tree-readiness-20261025-v1.
 7SYN/Claude9936 SOUNDlimits; Parent ADOPTION2f2a6f5a source/data preparation.
@@ -23,9 +32,9 @@ no retune, Paper promotion or general rejection of hierarchical ensembles.
 Interpretationaf3b336a SOUND_WITH_LIMITS; constant IWM choice is not proof of
 leaf collapse, equal cash dates/entrygross are not matched portfolio risk.
 IPC1e8246b6/clock51e97da1 are SOUND_WITH_LIMITS; actual IPC/clock/runtime
-proof remains separately scoped. Godel now challenges ONE pooled cross-sectional
-Ridge OOF head with official-source basis, no arrays/fit/market effects; Noether
-owns its source-only readiness. Kant/Tesla continue disjoint Paper connection.
+proof remains separately scoped. The pooled cross-sectional Ridge OOF head's
+official-source challenge and readiness are complete. Kant/Tesla continue
+disjoint Paper connection.
 Those studies now CLOSED: pooledc317 positive5.017965%/DD2.520247%, learned
 diagonalb7d0 positive2.085575%/DD1.630106%; both fail fixed criterion against
 fullN, no regrade/Paper swap. RMS was Parent's explicit prospective different
