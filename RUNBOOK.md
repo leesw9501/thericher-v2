@@ -94,19 +94,22 @@ Matched MSE36aee70a/ee65a717/independent05ebec08 closed1CUDAfit63epochs/best39/
 819updates/3newcells/177checks. RankNetgrowthhigher/DDworse, NOT dominance.
 No model rerun/Paper swap. Full83Data56a0de0d/d5c8b951 is a NEW feature-only
 vintage, no forecasts/labels/readout or overwriting old results.
-NEXT is pair current-acquisition cause projection/deployment. Fresh current
-failure codes must not be inferred from sticky quarantine or old receipts.
+Pair current-acquisition projection/deployment is COMPLETE5bf73743. NEXT is
+timesfm-ordinal-executable-comparison-v1. Fresh current acquisition codes still
+require a natural receipt, never sticky quarantine or old receipts.
 Environment caveats in HANDOFF remain; future children use safe explicit-key
 lookups, no wholeenv copy/iteration or implicit .env load.
 
 ## Verification / Recovery
 
-Authorityb9cc42d1:
-A/verification/current-h5-in-visit-terminal-closure-integration-20261024-v1/AUTHORITY.json.
-628serial/27focused/18822fullPASS25skip/18847total/8actualworkers/helper0/clean.
+Current authority09998fff:
+A/verification/current-pair-acquisition-bootstrap-integration-20261024-v1/AUTHORITY.json.
+187serial/18889fullPASS25skip/18914total/8actualworkers/405.78sec/helper0/clean.
+Source/control1387exact; requirements locks separately build-context-bound.
+Oldb9cc42d1 is history for current six-file pair patch, not current authority.
 Credential-free exact source check:
-uv run --no-env-file python D:/thericher-v2/model-artifacts/verification/current-h5-in-visit-terminal-closure-integration-20261024-v1/snapshot.py --check
-1385primary/control files must match before docs/external-only reuse.
+uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-pair-acquisition-bootstrap-integration-20261024-v1/snapshot.py --check
+1387primary/control files must match before docs/external-only reuse.
 Fresh scoped external checks are required; repo tests are not external proof.
 Tracked code/control edits need AGENTS fresh serial/full authority.
 Ruff uses uv run --no-env-file; default/research/accounting Compose uses
@@ -114,3 +117,33 @@ Ruff uses uv run --no-env-file; default/research/accounting Compose uses
 Changed native handoffs need tiny actual role/file/schema/bootstrap/SDK smoke
 inside existing caps, not new approvals/trials. After interruption recheck owners;
 never reclaim unknown live leases/reset counters/invent runtime outcomes.
+
+Current pair route ACTUALLY VERIFIED, Parent5bf73743/primary6f9bd8f pushed:
+A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1/CONSUMER.json.
+Image7d15a67e/source039985ec/bootstrap/publicconfig53403ed7 verified.
+R3 zero-effect failure00:38UTC/immutableFAILURE flagsfalse/noBACKUP retained.
+R4Sourcec1e3618a/updatera69bc174 actually applied Task/tag00:57UTC but postcheck/
+rollback withheld. CurrentTasknewbootstrap/image7d15/Ready0instances/nextOct26
+21:55UTC; oldalias15c is NOT current. R4BACKUP/FAILURE retained in
+A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1.
+OnlycheckedSD plus directRegInfoindentation differ; actualACL identical. Godel
+independentactual6d45fa0f01:07:28UTC closes completeexpectedTask/image/ACL/clock:
+A/review/current-pair-safe-bootstrap-20261024-v1/actual-closure-r4/ACTUAL-READBACK-010716.json.
+Do NOT repeatApply/Undo/reset/R5repair. OptionalR5 reader retired after metadata
+invocation withholding; not actualDockerfailure or companygate. HGB unchanged.
+No collector/Task manual start to claim deployment or current cause.
+
+Seed-fusion4CUDAfits complete23:58UTC/Deliveryb6809136; no rerun.
+Later0fittransfer sealed06c2ea3a/Consumer9fe5ad50 at
+A/research/current-h5-six-later-ranking-transfer-development-20261024-v1/technical-r1.
+Alljoined/leasefree; Data2892marksdf319a00 and retainedreadout8d27/db08 now CLOSED:
+A/research/current-h5-six-later-ranking-transfer-readout-continuation-20261024-v1/CONSUMER.json.
+12cells/0modelops/growthFAIL/DDpass, no fallback winner. Do not duplicate.
+Betaresidualruleb0e3ced1/bdca1acf CLOSED_FAIL43scoredates/3cells/0modelops,
+19SYN24checks/alljoined; no repeated scoring or criterion rescue.
+TimesFMfeasibilitye13553ca rejects another completed zero-shot/adaptation run.
+OriginalordinalCPU_PREFLIGHT failure/0GPU remains; invokedInfraAq firstcause/
+nativeSYN andEngineNoether newlinked contract prep are distinct. Freeze caps
+before operations; actualmarket dispatch only after source-bound native/input/
+baseline admission, not another approval gate. Use existing2.5weights/runtime,
+no TimesFM3/download/framework replacement or currentGPU claim from old logs.

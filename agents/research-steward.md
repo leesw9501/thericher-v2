@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-24 08:10KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 09:50KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
@@ -21,8 +21,24 @@ marks reused existing pages/0API. Matched MSE Source36aee70a is now CLOSED:
 actualworker188.5712sec, separately900prefreezeupper+120cleanupupper,
 1208.5712/3000chargedupper. PeakTorchreserved69206016bytes; measuredfree21899MiB
 at23:28UTC/4GiBreserve/7GiBprojection. No GPU denial/unrecognizedapp hold.
-Allchildrenjoined/GPUleaseReleased. No current numericaljob. Next seed-stable
-paired-loss fusion is preparation only, not four fits already running.
+Allchildrenjoined/GPUleaseReleased for MSE. Seed-stable fusion5912db24 is also
+CLOSED by23:58:15UTC,Deliveryb6809136:
+A/research/current-h5-seed-stable-rank-fusion-development-20261024-v1.
+4newCUDAfits/1872marketupdates/172INNERforwards/21newcells/0retry/old1070refits.
+Actual max2concurrent after21899-21906MiBfree/4GiBreserve admission;
+368.3709worker-sumsec co-tenants charged separately,1508.3709/7200activeupper.
+SIX relative primaryfailed; no bestseed/threshold rescue or repeat training.
+Latertransfertechnical-r1c3f96eda/9fe5ad50 CLOSED0fits/8restores/48forwards,
+alljoined/leasefree; forecast06c2 preserved. Data2892marksdf319a00 then retained
+readout8d27/db08 CLOSED12cells/0modelops/12SYN75checks; growthFAIL/DDpass,
+974.621/2400cumulativeactiveupper/alljoined. No duplicate inference/training.
+Betaresidualb0e/bdca also CLOSED43scoredates/3cells/0GPU/4.212measuredactive/
+alljoined, growth/riskyDDfail. TimesFMzero-shot/adaptations already CLOSED,
+not new GPU jobs. OriginalordinalfailedCPU_PREFLIGHT/0GPU; Aq exactnative
+firstcause/SYN repair +Noether newlinked contract preparation are active LLM
+packages, not market/GPU workers. No launch until native dependency/source/caps
+and actual resource admission. Resource ownership is free, not permission-denied.
+Parent8worker full09998 also complete405.78sec/18889PASS25skip/clean lease/temp.
 21:20UTC sample RTX4090free21838MiB/util2%; no resource-authority hold.
 No closed campaign is represented as running.
 

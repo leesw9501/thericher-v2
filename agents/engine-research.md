@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-24 08:10KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 09:50KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
@@ -24,6 +24,21 @@ EntryOct26 13:40..14:10UTC/exitOct30 19:45..20UTC;max8owned/whole shares/
 Capturec78/refc992 installed forOct31 05:10KST; future marks not observed.
 
 ## Latest Research / Next Ready Work
+
+Beta-residualrule COMPLETE_FAILb0e3ced1/Deliverybdca1acf/Source0f3cb076 at
+A/research/current-h5-beta-residual-reversal-development-20261024-v1.
+43scoredates/3cells/0modelops/19SYN24checks/Ruff/alljoined/4.212measuredactive;
+Claude11.671sec separate.10bp growth-1.429593%/DD2.382049 versusREVERSAL5
+-1.429557/2.437812,uniform-.822368/1.218932. RepeatedHHI.031636->.030864,
+but growth/riskyDDfail; no marketneutrality/winner/Paper swap or rerun.
+TimesFMfeasibilitye13553ca rejects duplicatezero-shot:126forwards18cells and
+adaptation502+1246updates alreadyclosed. Distinct ordinal studyOct21 failed
+CPU_PREFLIGHT/0GPU, not a failed market comparison. New companygoal:
+timesfm-ordinal-executable-comparison-v1. Aq owns exact firstcause/nativeSYN;
+Noether owns newlinked protocol/caps/input/baseline adjudication at
+A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1.
+No market run/GPU allocation inferred from preparation. Reuse existing trusted
+2.5 checkpoint/runtime; no completed fit/encoder repeat or TimesFM3 substitution.
 
 SelectedGRU9409 sixlater diagnostic COMPLETE_FAIL26e70cd3:
 A/research/current-gru9409-six-later-preserved-forecast-readout-continuation-20261024-v1/runtime-r1/CONSUMER.json.
@@ -50,9 +65,36 @@ At10bp MSE+1.049020%/.608148DD versusRankNet+2.010878/.839298:
 growthhigher but DDworse, NARROW_RANKNET_DOMINANCE_NOT_ESTABLISHED.
 Not a winner, independent alpha or Paper swap. Single-seed/posthoc nomination,
 gradient scaling/effective regularization and pair-loss selection bias retained.
-Noether next PREPARES predeclared two-new-seed paired losses/fixed six-expert
-midrank fusion at A/research/current-h5-seed-stable-rank-fusion-preparation-20261024-v1.
-No new numerical dispatch before frozen caps/source/challenge/current NEXT.
+Predeclared two-new-seed paired losses/fixed six-expert midrank fusion CLOSED,
+Source5912db24/Deliveryb6809136/Result404472e8 at
+A/research/current-h5-seed-stable-rank-fusion-development-20261024-v1.
+4newCUDAfits/max2concurrent/1872marketupdates/172forwards/21cells;
+108MSE38epochs/best14,RN25/best1;109MSE37/best13,RN44/best20.
+At10bp:SIX+.895132/.433812DD,RN3-.081006/.936817,MSE3+1.150893/.400580.
+FIXED_SIX_BENEFIT_NOT_ESTABLISHED; no bestseed/fallback winner or loss-causality
+claim from6-vs-3 sizing. Alljoined23:58:15UTC/leasefree/old107cached0refits.
+
+Exact FINALaffine Data518824f8/b3b4e756 now ready; not inverse-rescaled9409input.
+New sixlater transfer technical-r1Sourcec3f96eda/Consumer9fe5ad50 at
+A/research/current-h5-six-later-ranking-transfer-development-20261024-v1/technical-r1.
+0fits/8restores/48expert-dateforwards; sealedforecast06c2ea3a on fixed6dates/
+masks80/80/80/80/81/81.29SYN/146independent/RuffPASS/alljoined/leasefree.
+Initial ORIGIN_KEYS failure occurred before model operations,3.445sec preserved.
+Original technical status INPUT_UNAVAILABLE_MARKS_SEALED_FORECASTS is retained.
+Data marksdf319a00/81270019/3d845eb6 subsequently supplied all2892; both original
+Source5d228a58 AND RecoverySource4b4db601 required. Retained-only readout now
+COMPLETE_FAIL8d27e39a/Deliverydb08562c/Source7ad46a58/Result79dfaf52 at
+A/research/current-h5-six-later-ranking-transfer-readout-continuation-20261024-v1.
+12newcells/12SYN/75independent/Ruff/alljoined;0newfit/restore/forward/GPU.
+10bp:SIX-2.187411/2.223693DD,RN3-2.804132/2.804132,
+MSE3-2.059881/2.283938,aligneduniform-.903134/1.497358.
+SIX primarygrowthFAIL/DDpass; no fallback winner/Paper swap. AllmeanGross1,
+fees already deducted; same fourpolicies/threecosts, no hidden retuning.
+974.621/2400cumulativeactiveupper, prior technical failures/debits preserved.
+Six reused/mixedvintage cohorts, not independent alpha. Noether assesses only
+existing aggregate mechanism evidence next; no fresh models/cells inferred.
+Tesla's residualmechanism is now closed above; datedTimesFM audit prevents
+duplicate work. Next numerical dispatch requires actual new source/native caps.
 
 Fixedrank68093a24/Delivery3d7f4f6d COMPLETE_PASS,3cells/177checks/0newmodels.
 At10bp +.775099growth/.817573DD versusalignedGRU+.503744/1.468196 and

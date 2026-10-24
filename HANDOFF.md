@@ -2,13 +2,70 @@
 
 ## Current Reality
 
-2026-10-24 08:40KST /Oct23 23:40UTC.
+2026-10-24 10:10KST /01:10UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> role agents. Parent owns shared MD/Git.
 AGENTS.md owns private Data/Research/Paper authority. No operator decision now.
 Never KIS_LIVE_*, real money, paid/public work or private raw output.
 Preserve unrelated %SystemDrive%/. History stays in Git/immutable artifacts.
+
+Pair six-file patch is FRESH FULL-VERIFIED AND ACTUALLY ROUTED. Parent5bf73743:
+A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1/CONSUMER.json.
+Primary6f9bd8f committed/pushed. Authority09998fff:
+A/verification/current-pair-acquisition-bootstrap-integration-20261024-v1/AUTHORITY.json.
+187 related serial PASS;18889 full PASS/25skip/8actualworkers/405.78sec;
+1387exact source/control unchanged,clean helper exit/temp/lease,Ruff/threeCompose
+(.env.example) PASS. Requirements locks are separately image-context-bound,
+not in the1387snapshot. Oldb9 authority is historical for this patch.
+Safe bootstrap039985ec uses direct safe env names/explicit.env.example/lazy
+existing two-Paper-app loader. Public Docker plugin config53403ed7 is fixed.
+Image7d15a67e actual network-disabled/RO public source-probePASS and currentalias.
+A/data/current-pair-acquisition-bootstrap-deployment-20261024-v1/READINESS.json.
+First R3 Apply failed00:38:39UTC BEFORE tag/Task attempts, no BACKUP; FAILURE
+retained. R4Sourcec1e3618a/updatera69bc174/44SYN/ClaudeSOUNDlimits064fa42b
+then attempted ONE tag/TaskUPDATE00:57UTC; postcheck+rollback withheld. Current
+actual Task DOES use newbootstrap/image7d15,Ready/noinstances/nextOct26 21:55UTC.
+R4BACKUP/FAILURE retained at
+A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1.
+Read-only expected/current field diff proves ONLY inserted checked-SD text and
+two direct RegistrationInfo indentation nodes differ; effectiveACL unchanged.
+Do NOT rerun Apply/Undo or assume oldalias15c remains. Godel independent actual
+readback6d45fa0f at01:07:28UTC validates completeappliedTask/image/ACL/triggers/
+next/Ready0 with onlycheckedSD+directRegInfoindent differences. No further
+metadata mutations; R4failure remains failure, not relabeled success. Optional
+R5 reader withheld native metadata with0output/LASTEXITCODE null; direct Docker
+succeeded. Causeunknown, not an engine/Docker outage and not a companygate.
+R5 retired, allhelpersjoined. New goal timesfm-ordinal-executable-comparison-v1.
+Residualrule COMPLETE_FAILb0e3ced1/bdca1acf/Source0f3cb076:43scoredates/3cells/
+0modelops/19SYN24checks/alljoined.10bp-1.429593%/2.382049DD versusREVERSAL5
+-1.429557/2.437812 anduniform-.822368/1.218932; growth/riskyDDfail despite
+HHIimprovement. No criterion rescue/Paper swap. TimesFMfeasibilitye13553ca
+rejects duplicatezero-shot: prior126forwards18cells andCUDAadaptation502+1246
+updates alreadyclosed. Originalordinalstudy failedCPU_PREFLIGHT/0GPU;
+Aq owns exactfirstcause/nativeSYNrepair, Noether newlinked comparisoncontract.
+No current GPU worker inferred; no completedfit repeated.
+No Taskstart/collector/API in this deployment; installation is not acquisition.
+
+Seed-fusionSource5912db24/Deliveryb6809136 COMPLETE by23:58:15UTC:
+4newCUDAfits/1872marketupdates/172dateforwards/21newcells/alljoined/leasefree.
+SIX+.895132%/.433812DD versusMSE3+1.150893/.400580 at10bp eachleg:
+FIXED_SIX_BENEFIT_NOT_ESTABLISHED; no fallback winner/Paper swap.
+Noether later transfer technical-r1Sourcec3f96eda/Consumer9fe5ad50 now CLOSED:
+0fits/8restores/48forwards, sealed06c2ea3a,29SYN/146independent/RuffPASS.
+Forecasts preserved;0financialcells pending exact2892marks, no inference rerun.
+Initial ORIGIN_KEYS ABI failure/debit preserved, allhelpersjoined/leasefree.
+Kant marks package now COMPLETEdf319a00/DTO81270019/payload3d845eb6:
+2892/2892required,2850retained+42new,21GET1POST/21accepted/0networkretry/
+8SYN+independentreader/Ruff/alljoined. Both original5d228a58 AND technical
+RecoverySource4b4db601 required; initial self-probe-match0call defer retained.
+Retained-only12cell readout now COMPLETE_FAIL8d27e39a/db08562c/7ad46a58:
+A/research/current-h5-six-later-ranking-transfer-readout-continuation-20261024-v1.
+10bp SIX-2.187411%/2.223693DD versusuniform-.903134/1.497358;
+RN3-2.804132/2.804132,MSE3-2.059881/2.283938. GrowthFAIL/DDprimarypass,
+no fallback winner/Paper swap.12SYN/75independent/Ruff/alljoined/0modelops.
+Noether existing-aggregate diagnosis/Tesla next-mechanism preparation;
+no current GPU training inferred and no ready closed-fit repetition.
 
 H5 same-final-visit terminal repair is TESTED AND DEPLOYED.
 Parent CONSUMERc2369abd:
@@ -109,8 +166,8 @@ Actual1CUDAfit63epochs/best39/819updates/163.3475fitsec/43forwards/3newcells/
 177independentchecks/alljoined/GPUleasefree. At10bp RankNet+2.010878/.839298DD
 versusMSE+1.049020/.608148: growthhigher/DDworse, narrow dominance NOT_ESTABLISHED.
 No winner/Paper swap; common pair-loss selector/scaled-gradient/single-seed/
-posthoc nomination limits retained. Noether prepares fixed seed-stable rank
-fusion, not another completedfit or a currently running GPU job.
+posthoc nomination limits retained. Seedstablefusionb680 is now closed and
+indexed above, not a ready or currently running GPU job.
 
 HGB diagnostic-only deliverya2e3dd8d ACTUALLY updated23:34:53UTC, Parent83849232:
 A/execution/current-hgb-quiet-failure-diagnostic-parent-release-20261024-v1/CONSUMER.json.
@@ -125,9 +182,9 @@ Newmasks80/80/80/80/81/81 vsold80/80/80/59/60/60, onebuild/0API/models/labels/
 readout. Old packets/results untouched; no performance-improvement inference.
 Tesla368ed70e proves NAS actual numeric revisions/freshappend alreadyworking;
 QQQ/SPY latestfour0acceptedpages/currentcause UNKNOWN because old stickyreason
-hides currentfailures. NEXT now pair-current-acquisition-diagnostic-deployment-v1:
-one additive source-safe current-run category field in existing receipt, not
-relaxed revision rules/new cache lineage. Aquinas source recommendation complete.
+hides currentfailures. Paircurrentcategory producer is now actually routed5bf7,
+not relaxed revision rules/new cache lineage. A natural receipt is still needed
+to know currentcause. NEXT is the distinct ordinal executable comparison.
 
 Completed review-helper env caveats are explicit at Data first-cause
 REVIEW-ENVIRONMENT-LIMIT.json and MSE ENVIRONMENT-AUDIT.json. Whole-env
@@ -139,12 +196,12 @@ Do not repeat closed fits/readouts. Engine board indexes historical families.
 
 ## Verification / Continue
 
-Authorityb9cc42d1:
-A/verification/current-h5-in-visit-terminal-closure-integration-20261024-v1/AUTHORITY.json.
-27focused/628serial/18822fullPASS25skip/18847total/8actualworkers/407.69sec;
-helper86953exit0/clean current child+lease/1385source-control unchanged.
+Authority09998fff:
+A/verification/current-pair-acquisition-bootstrap-integration-20261024-v1/AUTHORITY.json.
+187serial/18889fullPASS25skip/18914total/8actualworkers/405.78sec;
+originalhelper41044exit0/clean child+lease/1387source-control unchanged after6f9.
 Ruff/default/research/accounting Compose(.env.example) PASS. External code needs
 scoped checks; repeated repo tests cannot validate external code.
-Tracked code pushed51a4caa; deployment/research handoff pushed22a6148.
+Tracked current code pushed6f9bd8f; older51a4/22a6/4d79 remain history.
 NEXT owns ONE next material company outcome.
 Continue ready independent work, no foreground market-session wait.

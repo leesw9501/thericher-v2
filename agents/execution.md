@@ -38,6 +38,14 @@ Primaryb9cc42d1:18822fullPASS25skip/8workers/helper0/clean/1385same.
 
 ## Current Independent Work
 
+Data pair currentcategory route is now ACTUALLY deployed5bf73743/6d45fa0f:
+A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1/CONSUMER.json.
+Primary6f9bd8f/full09998/image7d15/quietTask/sameACL+triggers+next. No broker
+effects/private reads/Taskstart in that deployment; optionalR5reader is retired.
+This does not change any Execution owner/intent/bank/schedule or prove a fill.
+Aquinas currently invokedInfra for TimesFMordinalnativefirstcause, not a
+running Execution broker worker. Future Paper owners remain installed/exclusive.
+
 Weekendauditeb45ffea at A/execution/current-paper-weekend-owned-status-20261024-v1
 found no NEW eligible outcome; old exact Nightly pointer unchanged,0private
 query repeat/0Taskchanges/API. Logging-only HGB quiet early

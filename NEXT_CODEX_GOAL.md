@@ -2,88 +2,90 @@
 
 ## One Company Outcome
 
-pair-current-acquisition-diagnostic-deployment-v1: make the next owned QQQ/SPY
-daily forward run retain its CURRENT acquisition-failure category separately
-from persisted historical revision quarantine. Deliver a tested, actually routed
-producer, not another report or a claim that collection/data quality recovered.
+timesfm-ordinal-executable-comparison-v1: turn the previously unexecuted ordinal
+TimesFM study into ONE technically sound, bounded comparison, or establish the
+exact input/runtime failure that prevents it. Do not repeat completed TimesFM
+zero-shot/adaptation studies, erase the old failure, or force GPU utilization.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Run scripts/start_next_codex_task.ps1; follow HANDOFF/AGENTS/RUNBOOK/active boards.
 Parent owns shared MD/Git. Standing private no-cost Data/Research/KIS Paper
-authority remains. Never KIS_LIVE_*/real money/paid/public work or raw private output.
+authority continues. Never KIS_LIVE_*, real money, paid/public work or raw secrets.
 
 ## Verified Starting State
 
-H5 terminal repair deployedc2369abd/actualreadbackbe057619:91/0fb/image9a.
-HGB logging-only successor ACTUALLY updated23:34:53UTC, Parent83849232:
-A/execution/current-hgb-quiet-failure-diagnostic-parent-release-20261024-v1/CONSUMER.json.
-One arguments-only Task UPDATE/no Taskstart/API/model; nativee487/state/bank/
-clock/ACL/markers unchanged. R2review9e37487a/17SYN; R1failures preserved.
-Natural runtime/fills/closure/PnL remain unobserved for these future opportunities.
+Pair deployment COMPLETE5bf73743, independentactual6d45fa0f:
+A/data/current-pair-acquisition-bootstrap-deployment-recovery-20261024-v1/CONSUMER.json.
+Actualsource0399/image7d/quietTask/sameACL/triggers/next; R4postcheck failure
+preserved, optional R5 reader retired. No Apply/Undo/repeated metadata repair.
+Code6f9bd8f pushed; full09998:187serial/18889PASS25skip/8workers/405.78sec/
+1387exact/clean/Ruff+threeCompose(.env.example). Installation is not collection.
 
-Previous company objective ranknet-matched-mse-control-v1 COMPLETE:
-Source36aee70a/Deliveryee65a717/independent05ebec08.
-OneCUDAfit63epochs/best39/819updates/163.35fitsec,43forwards/3newcells/177checks.
-10bp RankNet+2.010878%/.839298DD versus MSE+1.049020/.608148:
-growthhigher/DDworse, narrow dominance NOT_ESTABLISHED, no winner/Paper swap.
-Alljoined/GPUleasefree. Closed fits/results/debits are not ready jobs.
+Previous beta-residual rule COMPLETE_FAILb0e3ced1/bdca1acf:
+A/research/current-h5-beta-residual-reversal-development-20261024-v1/CONSUMER.json.
+43scoredates/3cells/19SYN24checks/0modelops/alljoined.10bp-1.429593%/2.382049DD
+versusREVERSAL5-1.429557/2.437812 anduniform-.822368/1.218932. Growth/riskyDD
+failed despite lower repeated-issuer HHI. No rescue/Paper swap or rerun.
 
-Tesla368ed70e proves NAS numeric overlaps differ(mainlyvolume/close), but fresh
-rows already append throughOct23. Pairfourlatest0acceptedpages/currentcause
-UNKNOWN; sticky quarantine hides current causes. No revision-policy relaxation.
-A/data/current-forward-daily-revision-first-cause-20261024-v1/CONSUMER.json.
-Aquinas exact additive-projection recommendation:
-A/data/current-pair-current-cause-projection-preparation-20261024-v1/CONSUMER.json.
-Existing ClaudeSOUND_WITH_LIMITS, no raw payload. Preserve its env caveat.
+TimesFM feasibilitye13553ca rejects another zero-shot duplicate:
+A/research/current-timesfm-dated-checkpoint-feasibility-20261024-v1/CONSUMER.json.
+Actual prior126marketforwards18cells and adaptation502+1246updates are CLOSED.
+The distinct original ordinal study at
+A/research/current-timesfm-ordinal-ranking-development-20261021-v1
+failed CPU_PREFLIGHT before GPU allocation. Its failure/debits remain immutable.
 
-## Work / Parallel Ownership
+## Ready Parallel Packages
 
-1. Parent: narrowly edit scripts/collect_kis_paper_daily_pair_forward.py and
-   tests/test_collect_kis_paper_daily_pair_forward_script.py.
-   Add payload.current_run_failure_reasons_by_target from EXACT current
-   observation failure mapping or current token/rate defer reason, using existing
-   sanitizer/target allowlist. No str/repr of arbitrary objects or unknown keys.
-   Preserve token-before-rate precedence. Failed commit/control/environment/
-   collection stages OMIT new mapping; absence is unknown, not empty success.
-   Success mapping may be empty while old quarantine persists. Do not mutate
-   observation/commit validation or derive current cause from old cache state.
-2. Verify focused serial changed-path/compatibility coverage, fresh full
-   scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff, default/research/
-   accounting Compose(.env.example). Previousb9 exact authority ends when code
-   changes. Inspect current owned launch route/image/source; deliver new producer
-   via that route with quiet action, original triggers/identity/state/ACL intact.
-   Parent owns any reversible inactive-owner replacement/readback. No manual
-   Task/collector invocation merely to claim readiness.
-3. Review Godel: concise exact patch/receipt-shape/secret-canary/failure-boundary
-   review, no duplicate whole suite. Prior numeric revision semantics unchanged.
-4. Engine/Steward Noether: independent frozen seed-stable ranking/fusion
-   PREPARATION at A/research/current-h5-seed-stable-rank-fusion-preparation-20261024-v1.
-   Two fixed new seeds pairedRankNet/MSE/4newfits proposed, existing seed retained
-   without refit; fixed six-expert midrank-before-TopDecile primary, no bestseed/
-   weightsearch/new held blocks. Claude challenge/finite fit-update-forward-cell/
-   active+elapsed caps and actual resource admission BEFORE numerical dispatch.
-   Parent may dispatch the ready frozen package inside this objective without
-   changing company outcome. Actual CPU/GPU workers/ownership must be evidenced.
-5. Data Kant: full83 suffix sixdate packet VERIFIEDd5c8b951/56a0de0d:
-   A/data/current-six-later-full83-suffix-input-20261024-v1.
-   Masks80/80/80/80/81/81 vs old80/80/80/59/60/60; newvintage only/no economic
-   evaluation/labels/forecasts/API/old-result change. Do not rerun builders.
+1. Invoked Infra/Aquinas owns
+   A/research/current-timesfm-ordinal-native-recovery-preparation-20261024-v1.
+   Find the exact original worker/transport first cause from safe source and
+   synthetic metadata; check bounded existing continuations before duplication.
+   Freeze source and caps before native SYN:0marketpayload/fits/weights/GPU,
+   max2syntheticoptimizerupdates/900active/3600elapsed/0retry. Minimal actual
+   role/file/schema/solver bridge smoke using existing network-disabled pinned
+   runtime; no download, runtime replacement, credentials, KIS or Scheduler.
+2. Engine/Steward Noether owns
+   A/research/current-timesfm-ordinal-executable-comparison-preparation-20261024-v1.
+   Adjudicate original protocol, exact cached representations/targets/splits/
+   checkpoint date/rights and first-cause repair. Freeze ONE new linked contract,
+   fit/update/forward/cell/active/elapsed caps BEFORE numerical dispatch. Keep
+   old spend/failures unchanged; no silent retry or completed encoder refit.
+   No market run until exact native dependency passes. Use actual CPU/GPU
+   throughput/headroom, one coordinator and disjoint output paths. No dummy
+   GPU work, app-name hold or age-reclaimed unknown lease.
+3. Use only existing exact TimesFM2.5 trusted safetensors/runtime. Official
+   checkpoint d418f3e8 released2025-10-01/weight2f776efe, Apache2.0 metadata;
+   independently bind actual target intervals after checkpoint release.
+   Undisclosed corpus/context and global outcome reuse remain limitations.
+   No TimesFM3 substitution, arbitrary public code in Execution, new weights
+   download or broad hyperparameter search. Native ABI/safety and compatible
+   baseline/payoff/cost bindings precede fitting/evaluation. Chronological
+   validation/early stopping are allowed under the NEW frozen contract, never
+   chosen from final outcomes. A technical PASS is not a profitable model.
+4. Data/Kant is available for exact packet/calendar/mark dependencies; completed
+  2892marks/full83/FINALaffines are not ready reruns. Strategy/Tesla supplies
+   bounded official-source/completed-family evidence, Godel concise challenge
+   of the named source/interpretation. Parent integrates instead of serially
+   implementing every lane. Independent Paper due times remain worker-owned.
 
 ## Completion / Preserve
 
-Complete with tested additive source, exact actually deployed owned producer
-route and independent readback. A future natural receipt is needed to know
-the next actual acquisition cause; installation is not runtime recovery.
-No source-value rewrite, new cache lineage, cleared quarantine, historical
-cause inference, target/policy/budget/signal change or new scheduler platform.
-Current authorityb9:1385files/18822PASS25skip/628serial/8workers is historical
-after any code change, not fresh authority for this patch.
+Complete with first-cause evidence/reproducer, source-bound native handoff,
+frozen new contract, actual bounded comparison or exact input_unavailable,
+focused independent checks, joined workers and resource/debit closure. Failure
+is an honest outcome, not permission hold or a fallback winner. If no ready path,
+record exact dependencies and2-4 alternatives in orchestration, challenge with
+Claude and execute another delegated path; no foreground session/quotawait.
 
-Preserve original shared initial virtualcash tenth/F9UNKNOWN-HELD/owned requests,
-R5exitOct27/HGBexitOct28/H5entryOct26+exitOct30/captureOct31 clocks.
-No foreign inventory, substitute request, reservation reset or profit-expanded bank.
-Fees/settlement/net remain unknown. Child environments use explicit safe bootstrap
-key lookups only, never whole-env copy/iteration or implicit .env loading.
-At material completion verify/commit/push, refresh boards, replace NEXT with ONE
-material next outcome and continue ready delegated work; no foreground session wait.
+For external-only work reuse full09998 ONLY with exact1387source/control digest
+and fresh external checks. Tracked runtime edits require AGENTS fresh serial/
+full/Ruff/threeCompose(.env.example). Refresh current boards/HANDOFF/RUNBOOK,
+verify/commit/push, replace NEXT with ONE material next outcome and continue.
+
+Preserve original shared initial virtualcash tenth/F9UNKNOWN-HELD/requests,
+owned inventory and all Paper clocks. H5entryOct26,R5exitOct27,HGBexitOct28,
+H5exitOct30/captureOct31,Joint17conditionalexitNov19 unchanged. Expired Joint17
+ENTRY remains disabled. No substitute order/foreign inventory/profit expansion.
+No fill, settledcash/fees/net PnL claim without exact evidence. New children use
+direct named safe env lookups, no whole-env copy/iteration or implicit dotenv.
