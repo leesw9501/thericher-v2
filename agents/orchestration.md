@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-24 14:20KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-24 16:13KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns direction/shared MD/Git. Standing AGENTS authority; no operator
 decision presently. Preserve unrelated untracked %SystemDrive%/.
 
@@ -16,12 +16,12 @@ Prior dated TimesFM deployment COMPLETE, future runtime/fills still unobserved.
 
 | Owner | Actual disjoint package |
 | --- | --- |
-| Parent / 총괄 | Thin holdings-only consumer implementation/integration; existing orders/bank/observer/tasks untouched. |
-| Aquinas / 실행 | Complete/agent closed: candidate730c/installer60-0; phase Plan bug fixed before actual effects. |
-| Noether / 엔진·자원 | Intraday1305 complete; sequential-exit source/literature/kill-test proposal only, no fit/GPU. |
-| Kant / 데이터 | Complete/closed: intradayData702b/ac21/1build1verify/29SYN38checks/alljoined. |
-| Godel / 검토 호출 | Holdings directione0c8/ClaudeSOUNDlimits complete, no primary/API/private effects. |
-| Tesla / 실행 호출 | Complete/closed: F9f8e6 and holdingscd93 primitive/readiness; no fresh API/private read or new adapter. |
+| Parent / 총괄 | Holdings4bd2/32tests/freshf19d integration; corrected smoke and actual query pending. Shared MD/Git. |
+| Aquinas / 실행 | Correct external probe technical-r1 for reviewd53b, tests only/no credentials/API. |
+| Noether / 엔진·자원 | Continuation sourcee486/0964 READY; phase dispatcher prep, numerical GO pending. |
+| Kant / 데이터 | Complete/closed: Data21e3/DTO255c,1build1verify/23SYN2118checks/alljoined. |
+| Godel / 검토 호출 | Dispatchd53b found three concrete external faults before credentials; primary authority intact. |
+| Tesla / 실행 호출 | Independent continuation source/target/split/count review only. |
 
 ## Current Evidence / Dependencies
 
@@ -84,6 +84,15 @@ Nightly2d16 exact1SELL fill/closure is not wholebook. F9 UNKNOWN/HELD.
 Original shared tenth/basis/costs/losses/pending/fresh runtime risk remain intact.
 
 ## Throughput Review
+
+16:13KST: no market/session wait. Ready independent CPU comparison has Data21e3
+and sourcee486; allocate after concrete source review. Holdings32tests/232serial/
+fresh18988PASS25skip completef19d. Reversible improvement: parse actual embedded
+PowerShell and force known attach-child join even if Docker cleanup raises;
+reviewd53b caught gaps that mocked admission/network-none smoke did not cover.
+Corrections stay external, unchanged1392 authority needs no repeat full suite.
+No actual holdings query yet, no current GPU fit claimed. New tiny SVD belongs
+on CPU; closed CUDA/Ridge must not repeat. No operator approval missing.
 
 15:07KST before numerical chain: only ready compute is small CPU Ridge; Data
 702b/ac21 complete and74source refs/fit mounts exact. Noether owns one mutable

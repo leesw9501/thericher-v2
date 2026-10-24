@@ -12,6 +12,18 @@ Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
 ## Current Actual Deployment
 
+Holdings-only primary4bd2 freshly qualified; actual API pending. Authority:
+A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json
+f19d8b4f/232serial/18988fullPASS25skip/19013total/8workers432.31sec/helper85662exit0.
+1392manifest76f5 explicitly POST-run, not a pre-run snapshot. Ruff and all three
+Compose(.env.example) pass. Exact credential-free reuse check:
+uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-paper-holdings-only-integration-20261024-v1/snapshot.py --check
+CLI default is inert. Do NOT execute it without the hard-bounded owned runtime.
+Original external probe223a is blocked by reviewd53b BEFORE credentials;
+technical-r1/new source-bound native smoke pending. Old SELFTEST does not
+qualify corrected source. No API/custody/bank/F9/order effects from source tests.
+A/execution/current-paper-holdings-only-native-probe-20261024-v1.
+
 GRU both original tasks use Source16484c39153f710e37bbc94750b31df86d8a383a5b4ff1f24b55a5ca5389ac6c
 and Release2695b7c5fdccaca7b8af0c46e0698bb3f24a55e229767fee78b52ddc74e5bbb5,
 nativeb0b63a29/image2ff53eff. Candidate:
@@ -164,14 +176,15 @@ releases need actual readback if changed. No change was applied for hypothetical
 Monday overlap; finite weekend worker should close first. Keep unknown/private
 writer exclusion, mutex, exact request/F9/risk controls.
 
-Primary ddd01c6 and deployment docs/next-goal d75d97a pushed; full2ef959d2:
+Historical primary ddd01c6 and deployment docs d75d97a used full2ef959d2:
 A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
 475serial/18956fullPASS25skip/8actualworkers397.74sec/1390same incllocks/clean/
 Ruff+default/research/accounting Compose(.env.example) PASS.
 Exact credential-free reuse check:
 uv run --no-env-file python -B D:/thericher-v2/model-artifacts/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/snapshot.py --check
-Docs/external changes need their actual focused proof, not another full suite
-while1390matches. Tracked runtime/control changes follow AGENTS fresh authority.
+That1390 authority cannot cover new holdings code. Current1392/f19d is above.
+Docs/external changes need actual focused proof, not another full suite while
+current1392matches. Tracked runtime/control changes follow AGENTS fresh authority.
 No recovery observe() as an offline reader. Actual private writers alone scope
 custody-read admission; retain exact source/mount/identity/mtime/byte checks.
 Never foreground-wait for market/quotas while another package is ready.

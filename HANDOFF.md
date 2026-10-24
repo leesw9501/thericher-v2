@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-24 15:24KST /06:24UTC.
+2026-10-24 16:13KST /07:13UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -11,6 +11,32 @@ Never KIS_LIVE_*, real money, paid/public work or secret/private raw output.
 ONE shared original virtual-cash tenth, no profit expansion/foreign adoption.
 F9 original request remains UNKNOWN/HELD. No operator decision presently.
 Preserve unrelated untracked %SystemDrive%/. History is Git/immutable artifacts.
+
+## Immediate Resume / Do Not Repeat
+
+Joint17 installation222d/d092 and H20 capture474d/9be5 are complete; do not
+repeat point/release/install/enable. Future natural runs/fills remain unknown.
+New holdings-only module4bd2 and32tests/b58c are implemented and freshly
+qualified by authorityf19d, not yet actual broker evidence. Network-none native
+image2ff+qualified RO source smoke passed; controller mocks passed.
+Independent dispatch reviewd53b caught three external-only bugs BEFORE any
+actual credentials/API: PowerShell leading+, exceptional child join, discarded
+external before/after pins. Aquinas owns technical-r1 correction/tests; Parent
+owns new source-bound native smoke and one actual bounded read after fixes.
+Never rerun original probe223a with --mode execute.
+A/review/current-paper-holdings-native-dispatch-review-20261024-v1/CONSUMER.json.
+A/execution/current-paper-holdings-only-native-probe-20261024-v1.
+
+Parallel NEW CPU continuation sourcee486/consumer0964 is READY but numerical
+dispatch has NOT occurred. Noether owns implementation/commands; Tesla reviews
+exact source before Parent GO. Stage Data21e3/DTO255c/ABId67a is complete:
+A49/B48/C48 sessions, one build/verify/23SYN/2118checks/alljoined;18.901196sec
+charged once. Keep prep60+implementation30 upper, original06:08..08:08UTC/
+1800active/7200elapsed caps. Five market fits,<=256native predictions(plan208),
+2460market predictions/6newcells/12cached/0GPU/one outcome; no old replay/refit.
+A/research/current-intraday-chronological-continuation-development-20261024-v1.
+H1/H5 CUDA2fits and pooled intraday Ridge1fit are CLOSED FAIL, not running.
+GPU93% was observed during completed paired fits, not current utilization.
 
 ## Company Outcome / Actual Owners
 
@@ -339,12 +365,14 @@ A/research contains the exact named roots below; old failures/debits stay unchan
 ## Verification / Recovery
 
 Primary ddd01c6 and dated-deployment docs/next-goal d75d97a pushed.
-Current full authority2ef959d2:
-A/verification/current-h5-no-order-terminal-contract-integration-20261024-v1/AUTHORITY.json.
-475changed-path serial/18956fullPASS25skip/18981total/8actualworkers397.74sec,
-original helper31518exit0/clean child+lease/1390exact inclrequirementslocks,
+Current full authorityf19d8b4f:
+A/verification/current-paper-holdings-only-integration-20261024-v1/AUTHORITY.json.
+232changed-path serial/18988fullPASS25skip/19013total/8workers432.31sec,
+original helper85662exit0/clean child+lease/1392exact inclrequirementslocks,
 Ruff/default/research/accounting Compose(.env.example) PASS.
-Docs/external reuse only while exact1390match; fresh scoped external checks still
+1392manifest76f5 is explicitly POST-run, not a pre-run snapshot; prior1390
+checked before additions, two staged hashes frozen during helper.
+Docs/external reuse only while exact1392match; fresh scoped external checks still
 required. Repo tests do not validate external code. No new full run for docs alone.
 Use RUNBOOK current commands; never recovery observe() as an offline reader.
 Read private custody only with scoped actual-writer admission, strict parsers and

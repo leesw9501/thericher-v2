@@ -1,10 +1,19 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-24 14:20KST. A=D:/thericher-v2/model-artifacts.
+2026-10-24 16:13KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
+
+No current GPU fit. Closed paired CUDAA/B observed93%/6310MiBreserved each;
+never repeat fits for utilization. Ready continuation sourcee486/0964 is five
+tiny CPU SVD fits, numerical GO pending source review. Data21e3 complete
+18.901196+prep60+implementation30 upper once; original06:08..08:08UTC/
+1800active7200elapsed/5nativefits<=256pred/5marketfits2460pred/6newcells/
+12cached/oneoutcome/0GPU/no numerical retry. Old debits stay historical.
+A/research/current-intraday-chronological-continuation-development-20261024-v1.
+Holdings integration/full tests are separate work, not GPU spend.
 
 NEWpoint COMPLETE9b00a90d, source root
 A/research/current-timesfm-ordinal-dated-point-development-20261024-v1.
