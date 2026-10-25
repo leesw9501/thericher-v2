@@ -58,16 +58,50 @@ leaseclosed/734.5673of1800upper. No old model call or completed fit repeated.
 Fixed50/50 GRU/Toto analysis-r1 is also CLOSED FINAL7c87666a/Source3ba0a6f6:
 10bp growth/DD2.0890%/4.3950% versus1.7724%/4.3372%, primaryDD FAIL.
 99checks/4ledgers220marks/onepriceintake/0models-GPU/all4containersremoved/
-92.6946upper. Neither result changes current Paper. Kant prepares the frozen
-quarterensemble's typed input only, no new task/order/cohort; Hume reviews seed
-source, Noether chooses next distinct hypothesis rather than dummy GPU use.
+92.6946upper. Neither result changes current Paper. Kant implements a minimal
+explicit non-broker cash row/new H5 profile and focused tests for the frozen
+quarterensemble consumer; preserve old bytes/IDs and all installed inputs.
+Fresh authoritya5ba950a/FINAL704c3543 is COMPLETE at
+A/verification/current-cash-aware-h5-profile-fixture-integration-20261025-v1:
+1134serial/19160fullPASS25skip19185total/8workers/Ruff/3Compose,1398exact
+before/after/current/allchildrenjoined/owned scratch+lease removed. Separate
+2ffnative27/CONSUMERd7b619cf/INPUT1d733d5d and independentc3bd169d prove
+inert input preparation only, not deployment. Original L271 remains unchanged.
+First full failed the old exact5-enum fixture (14931pass/5skip/1fail), preserved;
+exact6th pair fixed,25known descendants quiescent/normal owned-child cleanup.
+Nested bootstrap then failed before owner/collection/children; sibling-root fresh
+full passed. No failed/partial/unclean authority was reused. No new task/cohort.
+Hume's seed review21cf confirms21refs/three-seed logic but finds a future-host
+cleanup-exception/lease-release defect; Godel repairs that invented path only.
+Noether's direction review recommends one11indicator-vs-learned-bias CPU
+prospective study, not more same55financial screens/TCN/seed repeats. Hume
+completed that study at
+A/research/current-qqq-indicator-versus-bias-prospective-development-20261025-v1/
+CONSUMER.json SHA4ee0086b/Source5303d46c: exactly2CPUfits/550updates/
+2currentforwards/645checks, all5containersremoved/481.9590of600upper.
+Indicator arm50epochs selected0/q.5; bias500epochs selected500/q.6082262835.
+Both selected policies are constant, no conditional indicator information
+demonstrated and no financial PASS. Reaching500 is not convergence proof.
+Future12cohort evaluation remains unrun; comparing these two constant policies
+cannot establish conditional information, so do not create a waiting worker.
+All historical financialcells/oldmodelcalls/GPU/API/Paper effects0.
 Noether remains sole GPU coordinator; no current training is inferred.
 F9 actor-calibrationd691 ran a history guest but discarded its final response;
 request counts/fresh outcome UNKNOWN, charged upper1POST/10GET, never zeroed.
 Host-hardening96e0f3fb/Sourceabd5 at the F9 root passes46native checks, yet its
 new attempt was denied BEFORE private/credential/API access (newcalls0).
-F9UNKNOWN/HELD unchanged. Tesla now captures exact first rejected actor metadata
-before decision in engineering-only actor-firstcause-r1; no broker retry there.
+F9UNKNOWN/HELD unchanged. First-cause9afca062/ea4da064 passes12native checks;
+qualified-refresh0bf98681/18fb passes49 but stops before credentials/broker:
+exact denied record.py is Noether's source-verified public artifact writer,
+not a proved private writer. Tesla binds that exact path/source/ancestry in
+public-writer-bound-r1/f6aef9ba/Sourcee5380635 passes61native but preflight
+finds a different Docker Desktop CLI identity, before final broker dispatch.
+Newcalls0; original upper1POST10GET stays. Independent b54640d0 confirms F9
+and L482 share identity-before-argv applicability code, not actual L failure.
+Tesla owns a minimal command-applicability-first repair/source/runtime cutover
+proposal; no Desktop-parent waiver, ambiguous fallback or manual Task/API.
+Natural L input/cycle/bank/window/source remain unchanged until separately
+qualified state-aware graft. No more blind history attempts.
 
 Important model semantics: labels are SIMPLE net return, not net-log. Ledger
 q is post-fee NAV weight; at fee f, g=q*(1+f)/(1+f*q), terminal NAV=1+g*r_net.

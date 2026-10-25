@@ -79,10 +79,17 @@ Research actors or future due times. No recovery observe() as offline reading.
    fixed quarterensemble2.8387%growth/2.1892%DD versusconstant1.1287%/2.6733%.
    Two untrained controls already pass the descriptive predicate; no seedwinner
    or independent alpha claim.50/50 composition7c87666a/3ba0 is CLOSED FAIL-DD,
-   0models/GPU. No completed fit/readout is queued again. Kant prepares only
-   the frozen quarterensemble's typed Paper input under a new external root;
-   no deployment/newcohort/original task or L input change. Noether chooses
-   one genuinely distinct ready hypothesis, not an automatic seed sweep.
+   0models/GPU. No completed fit/readout is queued again. Kant implements the
+   smallest explicit cash-aware typed H5 contract/tests for the quarterensemble;
+   native27/INPUT1d733d5d/CONSUMERd7b619cf are PREPARED_NOT_DEPLOYED.
+   Original v1 bytes/IDs/risk and installed L/input/tasks stay unchanged. Fresh
+   full QAa5ba950a/FINAL704c3543 at
+   current-cash-aware-h5-profile-fixture-integration-20261025-v1 is COMPLETE:
+   1134serial/19160full25skip/8workers/1398exact/Ruff3Compose. Initial exact-enum
+   failure and cleanup remain retained; no failed/partial authority reused.
+   Hume's indicator-vs-bias4ee0086b is also CLOSED:2CPUfits550updates/
+   645checks/all5removed, bothselectedconstant/no conditional-info/financialPASS.
+   No same55financial scoring/new recurring worker/dummyGPU use.
    Diagnostic793565d1 is
    technical-incomplete with UNKNOWN PnL; separate b9b8411d only repairs its
    precision fixture on invented data, not its real readout or financial result.
@@ -92,8 +99,15 @@ Research actors or future due times. No recovery observe() as offline reading.
    response: counts/outcome UNKNOWN, charged upper1POST/10GET. New host-hardening
    96e0f3fb/Sourceabd5 passes46native checks but was denied before private/API
    (newcalls0). F9 UNKNOWN/HELD remains; no historical zero-call inference.
-   Tesla's next actor-firstcause-r1 is engineering-only: record the exact first
-   denied actor's safe capability/source tuple BEFORE decision, no broker retry.
+   First-cause9afc/ea4d passes12native; qualified-refresh0bf9/18fb49checks
+   captures the exact denied public review-record writer before any API call.
+   Public-writer-boundf6ae then captures DockerDesktop actor_identity before
+   any freshbroker call. Source3c9d fixes identity-before-argv applicability;
+   independent fadc29ad review has no blocking delta finding. Shared code
+   is source-bound in F9/L/original3, not proof of actual task failure.
+   Tesla prepares the minimal exact state-aware source graft; Hume's categorical
+   CLI probe9a43 finds stats but fulltemplate remains unqualified. No Desktop
+   waiver/automatic history loop/new request/bank reset. F9 hold unchanged.
    Scope actual private writers, not unrelated control/research or future due;
    never waive an unknown private writer or release reservations from missing
    holdings/history. Named bounded readonly account/history opportunity remains
@@ -122,11 +136,13 @@ their budgets/results remain unchanged, not dispatch authority.
 
 ## Verification And Continuation
 
-Fresh repo authority5fda9440:
-A/verification/current-qqq-h5-post-provider-clock-integration-20261025-v1/AUTHORITY.json.
-1022serial/19111full25skip/19136total/8workers/Ruff/three Compose profiles PASS,
-exact1396 protected before/after/current match. Actual native ddb53931 is separate
-invented FakeClient evidence, not broker deployment. Earlier7460/7629/43e historical.
+Fresh repo authoritya5ba950a/FINAL704c3543:
+A/verification/current-cash-aware-h5-profile-fixture-integration-20261025-v1/AUTHORITY.json.
+1134serial/19160full25skip/19185total/8workers/Ruff/three Compose profiles PASS,
+exact1398 protected before/after/current match/alljoined/own scratch+lease removed.
+Cash-native27/input1d733d5d are separate inert proof, not deployed authority.
+Prior5fda clock/ddb53931 inventedFakeClient evidence remains historical/relevant
+to unchanged clock code, not new broker deployment. Earlier7460/7629/43e historical.
 Docs/external-only
 changes may reuse it ONLY after exact fresh digest checks plus independent
 changed-output checks. New tracked code/test/runtime/control changes need

@@ -33,6 +33,20 @@ repeat under the consumed Source. Tesla now owns engineering-only
 actor-firstcause-r1: capture exact first-denied safe capability/source metadata
 before decision, no broker/private/credential/task effects or blanket waiver.
 F9 remains UNKNOWN/HELD; no empty-holdings/history-based release or substitution.
+Latest F9 preparation is public-writer-bound-r1/CONSUMERf6aef9ba under that
+root's qualified-refresh-r1:61native checks, newbroker/private calls0. Exact
+DockerDesktop CLI identity denial was retained before final query. Independent
+Reviewb54640d0 finds shared F9/L identity-before-argv applicability code, not
+proof of an active privatewriter or actual L task failure. Tesla prepares the
+minimal source/native/state-aware graft; no old task/source/input/bank mutation
+or blanket Desktop waiver. No blind additional history attempt.
+Separately new cash-aware H5 type supports positive QQQ fractional ceilings,
+all-cash locally refuses before custody, and generic stock-cycle execution
+rejects this new profile before IO. Old v1 bytes/IDs/profiles unchanged.
+Parent fresh serial/full authoritya5ba950a/FINAL704c3543 is complete at
+A/verification/current-cash-aware-h5-profile-fixture-integration-20261025-v1:
+1134serial/19160full25skip/8workers/1398exact/Ruff3Compose/alljoined/clean.
+new profile is preparation, NOT deployed into the existing L482 SDK/task.
 At10:02:43UTC six exact planned entry/exit tasks enabled/Ready3/0instances,
 future13:40/14:20/17:00UTC Oct26 entries; metadata only, no source/ACL/fill proof:
 A/execution/current-oct26-entry-metadata-readback-20261024-v1/METADATA-20261024T100243Z.json

@@ -21,13 +21,20 @@ Future distinct input packets need a separately frozen consumer, not an old retr
 Toto direct utility FINALd6956a8d at
 A/research/current-toto-qqq-direct-utility-development-20261025-v1 is also CLOSED:
 onefit11epochs/best3/781updates, primaryDD FAIL/allhelpersclosed. Do not run its
-native/fit/infer/readout again. Godel's NEW three-seed and Noether's zero-fit
-50/50 composition are separate consumers, not retries of these completed jobs.
+native/fit/infer/readout again. Seedc024cf25 and fixedmix7c87666a are now also
+CLOSED:3fits/2465updates/71checks and0models/99checks respectively. No old
+fit/forward/readout command is a ready job. Currentquarter10a421ee is a new
+materialization of a prior-bound rule/components, not a preprice scalar receipt.
+Its q/cash needs a truthful typed adapter; INPUT271aee's stock unit-mass codec
+cannot express cash. Do not renormalize q or replace deployed L's exact input.
 F9 host-hardening96e0f3fb/Sourceabd5 passed46native checks but its fresh attempt
 was denied before private/API. Earlier actor-calibrationd691 did run a history
 guest whose final response was discarded; counts/outcome remain UNKNOWN and
 upper1POST/10GET stays charged. Do not report all-series calls0 or rerun blindly.
-Actor-firstcause-r1 is metadata-only first-cause capture, not a broker command.
+Actor-firstcause9afca062/Sourceea4da064 is metadata-only:12native checks and
+current metadata admission PASS, historical actor still UNKNOWN. Tesla owns
+qualified-refresh-r1 for one new exact guarded RO visit; total<=2POST20GET,
+not an order/recovery/reservation release. Its source alone is not fresh evidence.
 Ledger q is post-fee NAV target: g=q*(1+f)/(1+f*q), wealth=1+g*r_simple_net.
 Direct sample-log loss uses that exact identity, never log1p(mean) or q*r.
 The source-only clock helper7e23 is not production-integrated or a purge policy.
@@ -62,13 +69,17 @@ rerun completed builder/native/inference. Future runtime needs this exact
 updated source capsule, fresh facts and native risk; old pinned SDKs lack AMS.
 Clock interpretation and declared unrun future measurement stay in that root.
 
-Current fresh repo authority5fda9440:
-A/verification/current-qqq-h5-post-provider-clock-integration-20261025-v1/AUTHORITY.json.
-1022serial/19111fullPASS25skip/19136total/8workers/Ruff/3Compose(.env.example),
-1396exact/alljoined/own temp+lease removed. Includes purecore0fe13554 and
-adapter1e7c38b7/testca2260f9. Actualimage2ff native ddb53931/18provider calls
-uses FakeClient only, not actual broker/provider/deployment evidence.
-Earlier7460/7629/43e/134a below are historical, not current source authority.
+Current fresh repo authoritya5ba950a/FINAL704c3543:
+A/verification/current-cash-aware-h5-profile-fixture-integration-20261025-v1/AUTHORITY.json.
+1134serial/19160fullPASS25skip/19185total/8workers/Ruff/3Compose(.env.example),
+1398exact/alljoined/own temp+lease removed. Newcash weights40ff8346/core13bbac51/
+cycle8a7b421b; original v1 bytes/proposalIDs preserved. Literal CASH is opt-in
+non-broker coordinate; generic stock driver rejects that profile before IO,
+positive QQQ uses exact original .005*q, allcash locally refuses before custody.
+Prepared current INPUT1d733d5d/native27/d7b619cf is NOT deployed. Native/input
+root: A/execution/current-fixed-seed-ensemble-qqq-paper-input-preparation-20261025-v1/qualified-native-r1.
+Do not replace deployed L271 or use expired current forecasts for later cohorts.
+Earlier5fda/7460/7629/43e/134a below are historical source authorities.
 
 N actual future covariance expert COMPLETEe0b422cd at
 A/research/current-three-etf-full-covariance-prospective-point-development-20261025-v1/FINAL-CONSUMER.json.

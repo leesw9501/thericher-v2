@@ -24,9 +24,15 @@ controls saved before updates.71checks/all12containersremoved/leaseclosed/
 734.5673of1800upper. No completed fit/old-model call repeated. Fixedquarter
 ensemble is descriptive only;2initializations already pass the predicate.
 50/50 GRU/Toto7c87666a also CLOSED,0GPU/4containersremoved/92.6946upper.
-No current training is inferred. Kant's Paper-input preparation and Hume's
-source review are CPU/source-only; Noether checks next distinct useful
-hypothesis rather than scheduling another seed sweep for utilization.
+No current GPU training is inferred. Kant's cash-aware Paper contract is CPU
+engineering. Hume's small11indicator-vs-learned-bias CPU family is CLOSED
+4ee0086b/Source5303d46c:2fits/550updates/2currentpoints/645checks/all5removed/
+481.9590of600upper,0historicalfinancialcells/oldmodelcalls/GPU. Both selected
+policies constant; no conditional-information/financial pass or convergenceclaim.
+All model jobs are closed; no ready useful GPU job is held for permission.
+Noether's source review found TCN already tested; do not relabel it untried or
+schedule another seed/same55 sweep for utilization. Hume and Tesla coordinate
+source/mount descriptors around one short F9 RO read without global idle.
 No desktop app-name veto, invented active worker or dummy utilization.
 
 Latest allocation is CLOSED, no current GPU/model worker:

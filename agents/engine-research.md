@@ -6,10 +6,34 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
-Short queue: Kant prepares the frozen quarterensemble's typed QQQ Paper input,
-no deployment/newcohort/order. Hume independently reads new-seed source.
-Noether remains sole GPU coordinator and reviews one distinct next hypothesis;
-completed training below is not a ready GPU queue.
+Short queue: cash-aware typed H5 contract and frozen-quarter input are ready
+with Parent fulla5ba950a/FINAL704c3543 complete, not another model job/deployment. Actual
+CONSUMERd7b619cf/Sourceb8af463d/INPUT1d733d5d at
+A/execution/current-fixed-seed-ensemble-qqq-paper-input-preparation-20261025-v1/qualified-native-r1:
+27native2ff checks/oneinput/old271byte-proposalsstable/allhelpersclosed;
+independent retained-output checkc3bd169d passes. Current
+q.608380138874054/cash.39161986112594604 is preserved.
+10a421ee materializes the fixed scalar now, not preprice scalar publication;
+rule/components were preprice-bound. Do not normalize q or useg(q) as weight.
+Existing L/tasks unchanged;1134serial/19160full25skip/8workers/1398exact/
+Ruff3Compose passed, while native/input scope stays inert. Hume21cf source
+review confirms21pins/seedlogic and names a future cleanup-exception issue,
+not actual residual containers; Godel repairs only future host reuse.
+Noether direction: existing TCN/indicator studies are not untried architectures.
+NEW11indicator-vs-matched-learned-bias CPU study is now CLOSED at
+A/research/current-qqq-indicator-versus-bias-prospective-development-20261025-v1/
+CONSUMER.json SHA4ee0086b/Source5303d46c. Exactly2fits/550updates/
+2currentforwards/645checks; all5containersremoved/481.9590of600activeupper.
+Indicator arm50epochs selected0/q.5 (no selected slope); bias500epochs/
+selected500/q.6082262835, cap reached not convergence. Both selected policies
+are constant; conditional information NOT_DEMONSTRATED, no financial PASS.
+One declared mechanical native continuation retained original failure/debit,
+no market retry. All train/CHECK reuse disclosed;0historicalfinancialcells/
+oldmodelcalls/GPU/Paper. First12 NEW H5 test is unrun, not a company wait or
+new scheduler. These constant outputs cannot establish conditional indicator
+value; preserve their limitation rather than wait60sessions to call it learned
+signal evidence. A cash bias was NOT_ESTABLISHED risky comparator, not zeroDD.
+Noether remains sole GPU coordinator; completed training is not a ready queue.
 
 Three-NEW-seed sensitivity CLOSED COMPLETE_DESCRIPTIVE_SEED_SENSITIVITY:
 A/research/current-qqq-direct-utility-seed-sensitivity-development-20261025-v1/

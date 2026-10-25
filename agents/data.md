@@ -6,6 +6,21 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+Kant's cash-preserving QQQ input preparation is COMPLETE, not deployed:
+A/execution/current-fixed-seed-ensemble-qqq-paper-input-preparation-20261025-v1/
+qualified-native-r1/CONSUMER.json SHAd7b619cf/Sourceb8af463d, SDK480.
+Actual2ff network-none/sourceRO/outputRW native27 PASS, one guest/one INPUT
+1d733d5d, no model/forward/price/API/private/Task effects. Currentquarter
+10a421ee maps [SPY,QQQ,IWM,CASH]=[0,.608380138874054,0,.39161986112594604],
+not g(q)/renormalization/unsupported-stock cash. Fixed original .005 gross
+cohort ceiling remains, not exact research post-fee allocation or Paper PnL.
+Rule/components preprice-bound; standalone scalar/typed input published later,
+not falsely preprice. Old INPUT271aee bytes/proposals unchanged. Allhelpers
+joined/containerremoved; Godelc3bd169d independently verifies retained outputs.
+Parent fulla5ba950a/FINAL704c3543 is complete1134serial/19160full25skip/
+8workers/1398exact/Ruff3Compose; still no L/job/bank/input replacement.
+D storage remeasured38.71%free/1442.17GiB; no data acquisition here.
+
 NEW QQQ data/unit map5646d164/Source726d1698/ALLOWLIST5cb7f07f at
 A/data/current-qqq-only-density-input-readiness-20261025-v1 is complete.
 IMPORTANT: cached I/L_Z/L_REL/N and new target are H5 SIMPLE NET RETURN

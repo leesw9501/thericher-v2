@@ -54,6 +54,7 @@ from thericher_v2.research.model_paper_proposal import (
 )
 from thericher_v2.research.model_paper_weights import (
     MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+    MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
     MODEL_PAPER_WEIGHTS_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
@@ -102,16 +103,22 @@ class StockCycleProfile(Enum):
     MODEL_PROPOSAL_NAS = MODEL_PAPER_PROFILE
     MODEL_WEIGHTS_NAS = MODEL_PAPER_WEIGHTS_PROFILE
     MODEL_WEIGHTS_NAS_H5 = MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE
+    MODEL_WEIGHTS_NAS_CASH_H5 = MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE
 
 
 _MODEL_INPUT_TYPES = {
     StockCycleProfile.MODEL_PROPOSAL_NAS: ModelPaperInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_H5: ModelPaperWeightsInput,
+    StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5: ModelPaperWeightsInput,
 }
 
 _MODEL_WEIGHT_PROFILES = frozenset(
-    (StockCycleProfile.MODEL_WEIGHTS_NAS, StockCycleProfile.MODEL_WEIGHTS_NAS_H5)
+    (
+        StockCycleProfile.MODEL_WEIGHTS_NAS,
+        StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+        StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5,
+    )
 )
 _H5_NO_ORDER_SIZING_REASONS = frozenset({"target_already_satisfied", "whole_share_capacity_zero"})
 
@@ -1130,6 +1137,12 @@ def run_kis_paper_current_stock_cycle(
     try:
         _check(type(execute) is bool and callable(clock), "cycle_configuration_invalid")
         _check(type(profile) is StockCycleProfile, "cycle_input_invalid")
+        # Cash-aware weights use the QQQ H5 journal, not this stock registry's
+        # older H5 completion/recovery branches.
+        _check(
+            profile is not StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5,
+            "cycle_cash_profile_requires_qqq_h5_adapter",
+        )
         current20 = profile is StockCycleProfile.CURRENT20_EQUALRANK4
         model_profile = profile in _MODEL_INPUT_TYPES
         scoped = current20 or model_profile

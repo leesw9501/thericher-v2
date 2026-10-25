@@ -32,6 +32,7 @@ from thericher_v2.research.model_paper_proposal import (
 
 MODEL_PAPER_WEIGHTS_PROFILE = "model-weights-nas-20session-2026-v1"
 MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE = "model-weights-nas-5session-2026-v1"
+MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE = "model-weights-nas-cash-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_SCHEMA = "model-paper-target-weight-input-v1"
 WEIGHT_UNITS = "fraction_of_one_original_basis_gross_cohort_ceiling"
 EXECUTION_BASIS = "gross_limit_cost_not_fees_settlement_or_replay_equivalence"
@@ -47,7 +48,9 @@ def model_paper_weights_horizon_profile(profile):
     _need(type(profile) is str, "weights_profile_invalid")
     if profile == MODEL_PAPER_WEIGHTS_PROFILE:
         return MODEL_PAPER_20_SESSION_PROFILE
-    if profile == MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE:
+    if profile in (
+        MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE, MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE
+    ):
         return MODEL_PAPER_5_SESSION_PROFILE
     raise ValueError("weights_profile_invalid")
 
@@ -63,13 +66,16 @@ class ModelPaperWeightRow:
         _need(type(self.slot) is int and 0 <= self.slot < 512, "weights_slot_invalid")
         _need(type(self.route) is str, "weights_route_invalid")
         _need(type(self.feature_known) is bool, "weights_knownness_invalid")
+        cash = self.route == "CASH"
+        # CASH is an available allocation coordinate, never a market instrument.
+        _need(not cash or self.feature_known, "weights_cash_knownness_invalid")
         # Missing features need no invented venue merely to preserve the full
         # symbol axis. Such rows cannot produce any routed proposal.
         unrouted = self.route.endswith("/UNAVAILABLE") and _ROUTE.fullmatch(
             self.route.removesuffix("/UNAVAILABLE") + "/NAS"
         )
         _need(
-            _ROUTE.fullmatch(self.route) or (not self.feature_known and unrouted),
+            cash or _ROUTE.fullmatch(self.route) or (not self.feature_known and unrouted),
             "weights_route_invalid",
         )
         _need(
@@ -87,6 +93,8 @@ class ModelPaperWeightRow:
 
     @property
     def eligibility(self):
+        if self.route == "CASH":
+            return "CASH_ALLOCATION"
         if not self.feature_known:
             return "FEATURE_UNAVAILABLE"
         if not self.route.endswith("/NAS"):
@@ -198,6 +206,24 @@ class ModelPaperWeightsMetadata:
             Fraction(),
         )
 
+    @property
+    def cash_weight(self):
+        return sum(
+            (Fraction(row.weight) for row in self.rows if row.eligibility == "CASH_ALLOCATION"),
+            Fraction(),
+        )
+
+
+def _validate_cash_profile(metadata, profile):
+    slots = tuple(row.slot for row in metadata.rows if row.route == "CASH")
+    if profile == MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE:
+        _need(
+            len(metadata.rows) > 1 and slots == (len(metadata.rows) - 1,),
+            "weights_cash_axis_invalid",
+        )
+    else:
+        _need(not slots, "weights_cash_profile_invalid")
+
 
 @dataclass(frozen=True, slots=True)
 class ModelPaperWeightsInput:
@@ -279,6 +305,7 @@ def prepare_model_paper_weights_input(
     model_paper_weights_horizon_profile(profile)
     _need(type(metadata) is ModelPaperWeightsMetadata, "weights_metadata_invalid")
     metadata.__post_init__()
+    _validate_cash_profile(metadata, profile)
     return ModelPaperWeightsInput(
         metadata, _weight_targets(metadata, entry_session), entry_session, exit_session,
         profile=profile,
@@ -294,6 +321,7 @@ def validate_model_paper_weights_input(value):
     )
     _need(type(value.metadata) is ModelPaperWeightsMetadata, "weights_metadata_invalid")
     value.metadata.__post_init__()
+    _validate_cash_profile(value.metadata, value.profile)
     first, last = value.entry_session, value.exit_session
     _need(type(first) is SessionWindow and type(last) is SessionWindow, "weights_sessions_invalid")
     validate_model_paper_horizon(first, last, profile=horizon_profile)
@@ -349,6 +377,7 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
         and document["schema"] == MODEL_PAPER_WEIGHTS_SCHEMA
         and document["profile"] in (
             MODEL_PAPER_WEIGHTS_PROFILE, MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+            MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
         )
         and document["weight_units"] == WEIGHT_UNITS
         and document["execution_basis"] == EXECUTION_BASIS,

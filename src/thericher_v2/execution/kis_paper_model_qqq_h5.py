@@ -25,7 +25,11 @@ from thericher_v2.research.decision_receipt import (
     receipt_from_target_exposure_proposal,
 )
 from thericher_v2.research.model_paper_proposal import _canonical
-from thericher_v2.research.model_paper_weights import ModelPaperWeightsInput
+from thericher_v2.research.model_paper_weights import (
+    MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
+    ModelPaperWeightsInput,
+    validate_model_paper_weights_input,
+)
 
 from . import kis_paper_budget_strategy as budget
 from .kis_paper_canary import KisPaperCanaryIntent, KisPaperCanaryState
@@ -280,9 +284,16 @@ def _writers(boundary, expected_ref, binding, states, value, at):
 
 def _input(value):
     _need(type(value) is ModelPaperWeightsInput, "qqq_h5_input_invalid")
-    _validate_model_input(
-        value, value.entry_session.open_ts, StockCycleProfile.MODEL_WEIGHTS_NAS_H5
-    )
+    profile = StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+    if value.profile == MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE:
+        validate_model_paper_weights_input(value)
+        # A typed all-cash allocation is inert, not a runtime no-intent/recovery visit.
+        _need(bool(value.targets), "qqq_h5_cash_input_no_target")
+        try:
+            profile = StockCycleProfile(value.profile)
+        except ValueError:
+            raise QqqH5PlanningError("qqq_h5_cash_profile_not_registered") from None
+    _validate_model_input(value, value.entry_session.open_ts, profile)
     _need(len(value.targets) == 1 and value.targets[0].route == "QQQ/NAS", "qqq_h5_only_qqq_target")
     return value.targets[0]
 
