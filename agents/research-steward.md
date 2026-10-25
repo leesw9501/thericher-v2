@@ -6,14 +6,22 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-NEW prospective allocation preparation is QQQ-only marginal-density at
-A/research/current-qqq-only-marginal-density-development-20261025-v1.
-Noether is the single resource coordinator. One new-target GPU fit may start
-after frozen unit/data/native API proofs; no actual start is inferred yet.
-Max900active SUM/3600elapsed/1marketfit/150epochs/2550marketupdates plus fixed
-bounded native/current/late/readout stages; actual worker contract must freeze
-these before numerical dispatch. Measure free/peak with4GiB desktop reserve;
-no app-name permission veto, no duplicate old training or dummy utilization.
+Noether is the single GPU resource coordinator. QQQ marginal-density e9f8d79e
+is CLOSED: ONE CUDAfit31epochs/selected6/527updates,12.680840fitsec,1128MiB
+reserved,234checks/all5containers removed/leaseNONE/218.9246activeupper.
+Continuous sizing025f also closed69.8737upper/0models/GPU. HGB369.47upper
+closed with missing late outputs; no forbidden old inference/fit repeated.
+Godel direct-GRU f9e68b65 is now CLOSED:1CUDAfit26epochs/selected1/442updates,
+1128MiB reserved/all5containersremoved/leaseNONE/506.16of900upper. Its tiny
+development comparison PASS does not qualify alpha or expand Paper authority.
+NEXT one GPU candidate is Hume's Toto direct-allocation development, conditional
+on frozen actual host/native/optimizer/cold proof (prep6991999e alone unqualified).
+Reviewbef95670:22166MiB free, projected6GiB plus4GiB reserve eligible, no lease
+created by review. Source RO/output RW handoff and B2/B8 cumulative counters
+must be correct before dispatch. Max1fit30epochs/P8/2130updates and2700active/
+7200elapsed, old prep charges retained once. No actual start is inferred yet.
+Godel's three-NEW-seed sensitivity is SOURCE ONLY, not a concurrent GPU grant.
+No desktop app-name veto, invented active worker or dummy utilization.
 
 Latest allocation is CLOSED, no current GPU/model worker:
 diagonal Source3e216e54/FINALb7d0c162, one CUDAfit80epochs/best55/PAT25/

@@ -26,12 +26,30 @@ bank/request/basis/reservation change; no second LN cohort or alpha claim.
 Whole-SYN cleanupff5a1649 resolves the old temp lookup error with24fresh mocked
 cases/clean exit; R4 changed review8ae53687 has no blocking code finding.
 Current company goal remains original three natural entry outcomes, unfinished.
-At23:46UTC Parent dispatched NEW QQQ-only marginal-density/blend research at
-A/research/current-qqq-only-marginal-density-development-20261025-v1; Noether
-owns frozen-source/native then one new-target GPU fit, Kant data/unit contracts,
-Godel challenge. Max900active/3600elapsed; no numerical start is inferred yet.
-This matches current QQQ/cash routing without AMEX bank migration. Current
-L release/input/Tasks/basis are not changed or chosen by those later results.
+Latest research is matched to executable QQQ/cash, not blocked on AMEX bank
+migration. Marginal-GRUe9f8 closed31epochs/best6/527updates/CUDA12.68084sec;
+cash result fails growth versusQQQ. Continuous sizing025f is positive1.6898%
+but fails fixed10bpDD versusconstantmeanq; no regrade. HGB0c4f fitted25iters,
+but lost late outputs;791 binding repair cannot recreate them, PnL UNKNOWN.
+Corrected direct-GRUf9e68b65/Sourcebcfbb6d3 at
+A/research/current-qqq-direct-log-utility-development-20261025-v1/protocol-r2
+completed1CUDAfit26epochs/best1/442updates,4ledgers220marks/46checks/allclosed.
+10bp growth1.1820% vsconstantmeanq1.1594%, DD2.7384%vs2.7501%: tiny2.26bp
+increment passes frozen development criterion, not alpha/Paper promotion.
+Current shadowq44.9224% is not actual capital; L482/7cdb/271 is unchanged.
+Next source work: three NEW seeds/initial controls (Godel), actual Toto
+direct-allocation native/trainer (Hume), source-only50/50 compositionf8b13613
+waiting on exact Toto receipts. Noether coordinates GPU;22166MiB free measured,
+6GiB+4GiBreserve eligible, no current fit inferred. Toto prep699/checkpoint/
+post-checkpoint CHECK facts are not native/fit qualification by themselves.
+F9 host aceaad/e8e2feef21SYN is ready but actual visit was withheld at opaque
+actor admission; no private/credential/broker read, F9UNKNOWN/HELD unchanged.
+Tesla calibrates the exact actual-private-writer scope without blanket waiver.
+
+Important model semantics: labels are SIMPLE net return, not net-log. Ledger
+q is post-fee NAV weight; at fee f, g=q*(1+f)/(1+f*q), terminal NAV=1+g*r_net.
+Direct loss uses sample log1p(g*r), never log1p(mean) or log1p(q*r). This
+prefit correction preserves old real-ledger results and all frozen failures.
 
 ## Closed Preparation And Research Evidence
 

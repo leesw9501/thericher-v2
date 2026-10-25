@@ -63,18 +63,31 @@ Research actors or future due times. No recovery observe() as offline reading.
    Official quote AMS/order AMEX support is not an account entitlement proof.
    Local typed/provider/sizing/exit/recovery and ownership bindings need focused
    implementation; never broadly remove NASD guards or alter the current cohort.
-   Noether owns a disjoint external patch/preparation; Parent integration and
-   fresh verification precede any tracked/runtime use.
+   Preparation113f56ec stopped at V4 stock-parser/frozen-reader and ownership
+   compatibility. No dummy profile patch or bank migration is adopted; current
+   research/execution does not wait on this separate migration.
 4. OOF tree d1faa121, pooled c317836d and learned diagonal b7d0c162 are CLOSED,
    not queued fits. Positive descriptive growth in the latter two did not pass
-   their frozen comparison on reused55sessions. NEW QQQ-only marginal-density
-   preparation at A/research/current-qqq-only-marginal-density-development-20261025-v1
-   targets the actually deployable QQQ/cash domain, not a duplicate old fit.
-   Noether owns one new-target GPU campaign; Kant maps units/leaves and Godel
-   challenges. Actual numerical start is unknown until worker evidence; no
-   permission hold or current L input swap. Diagnostic793565d1 is
+   their frozen comparison on reused55sessions. QQQ marginal-densitye9f8 and
+   continuous sizing025f are also CLOSED, not queued fits. Corrected direct-GRU
+   f9e68b65 at A/research/current-qqq-direct-log-utility-development-20261025-v1/protocol-r2
+   completed1CUDAfit26epochs/best1 and a tiny development comparison PASS,
+   not alpha/Paper promotion. NEW source work is three-NEW-seed sensitivity
+   (Godel) and actual foundation Toto native/trainer implementation (Hume).
+   Noether alone coordinates resources; frozen/native/source proofs precede
+   actual one-fit Toto dispatch. No current start is inferred or L input swapped.
+   Fixed50/50 GRU/Toto compositionf8b13613 waits on exact Toto producer receipts,
+   not a waiting worker. Diagnostic793565d1 is
    technical-incomplete with UNKNOWN PnL; separate b9b8411d only repairs its
    precision fixture on invented data, not its real readout or financial result.
+5. Tesla owns F9 read-only host/actor calibration under
+   A/execution/current-f9-readonly-reconciliation-20261025-v1. Sourceaceaad/
+   e8e2feef21SYN passed but actual visit withheld at opaque actor admission:
+   broker/private/credential calls0, next_due unknown, F9 UNKNOWN/HELD remains.
+   Scope actual private writers, not unrelated control/research or future due;
+   never waive an unknown private writer or release reservations from missing
+   holdings/history. Named bounded readonly account/history opportunity remains
+   delegated after source/native qualification; no task/order invocation.
 
 ## Completed Inputs, Not Ready Jobs
 

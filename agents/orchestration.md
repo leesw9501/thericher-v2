@@ -16,11 +16,12 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | Integrate actually installed L QQQ Source482c/Release7cdb/readbackf1fb; shared MD/Git. Original3entries pending. |
-| Tesla / 실행 구현 | Exact independent9-task readbackf1fb complete; no current mutable worker. New2 Ready/never-run; old6 unchanged. |
-| Kant / 데이터 | Map exact QQQ-only target/units/least-privilege leaves and cached expert predictions; no data rebuild/API. |
-| Godel / 전략·반증 | QQQ challenge then separate indicator-HGB CPU preparation, own finite caps; unit map required before numerics. |
-| Noether / 엔진·자원 | New QQQ-only marginal-density campaign source/native preparation; one prospective GPU fit only after frozen contract/native proof. No fit inferred yet. |
+| Parent / 총괄 | Integrate direct-GRU PASS-small/sizing FAIL/HGB unknown and installed L482/7cdb/f1fb; shared MD/Git. Original3entries pending. |
+| Tesla / 실행 구현 | F9 exact opaque-actor admission calibration; actual broker/private reads still0 at e8e2feef. No order/bank mutation. |
+| Kant / 데이터 | Unit map5646 and pure clock helper7e23/14tests complete; no current numerical/Data/API worker. |
+| Godel / 전략·반증 | Direct-GRU f9e68b65 CLOSED; three-NEW-seed sensitivity/initial controls SOURCE PREP, no new fit yet. |
+| Noether / 엔진·자원 | Sole GPU coordinator; Toto resource/sourcebef956 and fixed50/50 compositionf8b13613 complete, no numeric worker. |
+| Hume / 엔진 실험(임시) | Actual Toto native/host/trainer implementation; one future fit conditional on frozen/native qualification, not inferred active. |
 
 QQQ source design at
 A/review/current-n-ln-frozen-output-integration-20261025-v1/SOURCE-DESIGN.json
@@ -158,6 +159,28 @@ cached means are SIMPLE net return. Parent redirected both new researchers to
 correct source contracts/no log1p(mean), preserve old outputs/caps and source-
 attest logical1186->1067/119 rather than claim physical/Q-only isolation.
 This is a factual model-unit repair, not an operator hold or Paper input swap.
+At00:38UTC failure/integration review: new QQQ density31epochs/best6 failed
+growth; continuous sizing positive1.6898% but fixed10bp DD condition failed.
+HGB's11row call produced no retained NPZ, so its retrospectivereadout remains
+UNKNOWN; source791 binding repair cannot manufacture missing predictions.
+One reversible improvement is now required for NEW producers: validate actual
+external DTO/key-hash ABI before predicting, persist outputs before fallible
+readback, and declare bounded mechanical persistence recovery before dispatch.
+Godel's prefit proof aad04556 also falsifies Parent's fee-linear q identity:
+q is post-fee NAV weight; g=q(1+f)/(1+fq), wealth=1+g*r. Correct before fitting,
+preserve old Source/debits; no model result regrade or operator hold. F9 remains
+UNKNOWN/HELD pending a genuinely fresh exact readonly path, not missing=zero.
+At01:03UTC integration: corrected direct-GRU f9e68b65 passes its frozen
+development comparison by only2.26bps growth; all5containers/leaseclosed.
+Do not call this independent alpha or swap current Paper. Next actions are
+finite NEW-seed/initialization sensitivity and a distinct foundation learner.
+Toto prep699's loss/cache/date facts are ready, but actual native/bootstrap/
+cold source needs completion. Resourcebef956 measured22166MiB free; no GPU
+allocation inferred. Fixed50/50 sourcef8b13613 waits on its exact output receipt,
+not on human approval or a foreground worker. F9's refreshed host aceaad/21SYN
+withheld because an opaque PS actor was unregistered, not a proven writer;
+Tesla now classifies that exact source/actual private scope, never blanket-waives
+unknown PRIVATE writers or treats unrelated control as a permanent global hold.
 
 Fresh5fda9440/FINALc8733d4a covers clock1e7c/testca226:
 75clock/1022serial/19111full25skip/8workers/Ruff/three Compose PASS; Parent

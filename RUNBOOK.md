@@ -10,6 +10,18 @@ real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
+Research recovery: completed QQQ marginal e9f8, continuous sizing025f and
+corrected direct-GRUf9e68b65 must not be retrained/replayed from old commands.
+Direct-GRU source/result is under
+A/research/current-qqq-direct-log-utility-development-20261025-v1/protocol-r2.
+HGB0c4f/791 at current-qqq-indicator-hgb-development-20261025-v1 has weights
+and a current cash point, but NO retained late prediction NPZ. Its frozen
+one-call cap forbids recreating that retrospective output; PnL remains UNKNOWN.
+Future distinct input packets need a separately frozen consumer, not an old retry.
+Ledger q is post-fee NAV target: g=q*(1+f)/(1+f*q), wealth=1+g*r_simple_net.
+Direct sample-log loss uses that exact identity, never log1p(mean) or q*r.
+The source-only clock helper7e23 is not production-integrated or a purge policy.
+
 ## Current Actual Deployment
 
 L QQQ H5 is now installed using exact original INPUT271aee51, not LN as a

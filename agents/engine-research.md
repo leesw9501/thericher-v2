@@ -6,16 +6,30 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
-NEW active preparation (not yet a running fit):
-A/research/current-qqq-only-marginal-density-development-20261025-v1.
-Consumer is the actually deployable QQQ/cash domain, not AMEX bank migration.
-Noether freezes one new QQQ marginal-density GRU target/head plus fixed cached
-expert blends; Kant checks exact data/unit/leaf contracts and Godel challenges.
-Parent grants native->one GPU fit->point->fixed readout only after those exact
-contract/native conditions, max900active/3600elapsed,150epochs/2550marketupdates.
-No old fits/forwards are repeated, no current L input/Task/bank is changed.
-Actual freeze/start/results are unknown until worker evidence; old closed
-studies below remain closed, not new training authority.
+Short queue: Godel prepares a finite three-NEW-seed sensitivity/initialization
+control at A/research/current-qqq-direct-utility-seed-sensitivity-preparation-20261025-v1.
+SOURCE ONLY, no new fit grant yet; fixed ensemble, no best-seed selection.
+Long candidate: Hume implements actual Toto direct-allocation native/trainer at
+A/research/current-toto-qqq-direct-utility-development-20261025-v1, reusing
+prepared6991999e with official checkpoint/cache and post-checkpoint CHECK facts.
+Steward reviewbef95670 measured22166MiB free,6GiB+4GiB reserve eligible;
+source/out-root/cold/optimizer counter fixes still precede qualification. One
+fit30epochs/P8/max2130updates is conditional on frozen/native proof, not yet
+claimed running. Max2700active/7200elapsed; old prep/debits retained once.
+Noether is sole GPU coordinator; Godel's completed direct-GRU lease is closed.
+50/50 GRU/Toto post-fee-q composition readinessf8b13613 is SOURCE ONLY,
+waiting for exact immutable Toto current/late receipts, not a waiting worker.
+
+Corrected direct-GRU protocol-r2 FINALf9e68b65/Sourcebcfbb6d3 at
+A/research/current-qqq-direct-log-utility-development-20261025-v1:
+ONE CUDAfit26epochs/selected1/442updates/1128MiB reserved. At10bp, varyingq
+growth/DD1.1820%/2.7384% vsconstantmeanq1.1594%/2.7501%;20bp.1949%/
+2.8669% vs.1725%/2.8794%. Frozen development criterion PASS, only2.26bp
+growth increment, not independent alpha/Paper promotion. Current research
+shadowq44.9224%, no actual capital/intent.46checks/4ledgers220marks/oneprice
+intake/all5containersremoved/leaseclosed/506.16of900activeupper. First wrong
+identityd8bb/aad045 remains prefit-falsified6toy cases/30marks/0models, not
+regraded. Verifier precision repair used retained outputs, no financial replay.
 Kant map5646d164 corrects Parent's initial wording BEFORE dispatch: all cached
 means/targets are H5 SIMPLE net return, not log return; no log1p(mean) trick.
 Use same-unit mean and variance-squared risk proxy, keep ledger log-NAV utility
@@ -23,8 +37,37 @@ separate, and apply20bp stress only in the ledger. Physical history blocks
 contain all3targets/old1124+33+29 roles, not isolated1067FIT/QQQ-only files.
 Noether/Godel were redirected to preserve helpers/debits and correct contracts
 before numerical work. No old financial outputs are changed or regraded.
-Godel also owns a separate one-fit QQQ indicator-HGB CPU comparison proposal
-under its own600active/3600elapsed cap, not another fit in Noether's family.
+Latest completed QQQ studies (not ready retraining):
+
+- Marginal density FINALe9f8d79e/Sourceca37c1cd at
+  A/research/current-qqq-only-marginal-density-development-20261025-v1:
+  ONE CUDAfit31epochs/best6/P25/527updates,12.680840sec/1128MiB reserved,
+  first actual update00:01:44UTC. Current and later inference each once;
+  old expert model calls0. NEW_Q cash0/0growth/DD vs alwaysQQQ2.4124%/
+  6.1270% at10bp;20bp baseline.1839%/6.4081%. PrimaryFAIL/all5containers
+  removed/leaseNONE/234checks/6ledgers330marks/218.9246upper CLOSED.
+- Continuous sizing FINAL025f73a6 at
+  A/research/current-qqq-continuous-sizing-development-20261025-v1:
+  declared working-proxy q=clip(mean/(10variance)) vs constantmean(q).
+  10bp growth/DD1.6898%/.9205% vs.3891%/.8916%; primaryDD FAIL.
+  20bp1.3678%/.9205% vs.0717%/.9340%, not a rescue/regrade.
+  Average intended gross14.3655%/7fractional+4cashcohorts; current research
+  shadow30.7570%QQQ, not actual capital or a Paper input.99checks/4ledgers/
+  220marks/69.8737upper/all4containersclosed/0modelcalls or GPU.
+- Indicator-HGB86059108/Consumer0c4f1a77 at
+  A/research/current-qqq-indicator-hgb-development-20261025-v1:
+  ONE CPUfit25returned iterations/currentcashpoint. Its one11rowlate call
+  failed before retaining NPZ/seal. Binding-only791ac331 passes6cold rejection
+  tests but cannot recreate absent outputs without forbidden second call.
+  PnL UNKNOWN/0financialcells; cumulative369.47upper/allhelpersclosed. Keep
+  weights/currentpoint for future distinct inputs; no old fit/forward retry.
+
+Ledger semantic correction from aad04556: q is POST-entry-fee NAV target.
+At fee f, effective initial-risk fraction g=q*(1+f)/(1+f*q), hence exact
+terminal wealth=1+g*r_simple_net. Direct learning must use log1p(g*r), not
+log1p(q*r). Old binary endpoints remain identical; continuous025f metrics
+are actual ledger results, but its proxy optimum is NOT exact fee-inclusive
+portfolio optimality. No old result is recalculated/regraded.
 
 One later zero-fit diagnostic is CLOSED technical-incomplete, not a financial
 failure: A/research/current-next-risk-composition-mechanism-readiness-20261025-v1/
