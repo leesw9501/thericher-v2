@@ -18,10 +18,10 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 | Owner | Current disjoint work |
 | --- | --- |
 | Parent / 총괄 | Integrates sealed point9014a724 and fresh original8 metadata67927009; pushed5f49550. QA d3932f49 protected1405 still exact; no external deployment inferred. |
-| Mencius / 기술환경·독립 검토 | Temporal-source findings sent directly. New SYN-only volume-initialization probe180active/600elapsed/max2creates/networknone; no native trading guest/private/API effects. |
-| Bernoulli / 실행 구현 | Fresh-admission CLOSED39ceb3ae pre-native copy failure/0guest/debit/submit/fill, root+CLI joined/daemon absent/SYN volume retained/accounting incomplete. May propose same-state recovery after copy probe, not replay/reset. Original8 intact. |
-| Cicero / 엔진·GPU 조정 | Lower-envelope ab43546d COMPLETE_FAIL/99checks/all4closed/0models. New broaderCHECK contract frozen3600active/7200elapsed/oneCATfit, actual Data/native/headroom precede launch; no running fit inferred. |
-| Chandrasekhar / 데이터 | CHECK design5685f76a CLOSED/source-only. Actual bounded derivation child<=300 within Engine family follows final cachedFP32-newlane requirements, no oldFP64 parity/affine rebuild. Direct role handoff. |
+| Mencius / 기술환경·독립 구현 | Frozen fixture_census.py cc2e8010/8regressions/Ruff, directAPIhandoff toBern. Knownpositivelyclosed CIDs aren't current actors; unknown/missingproofHOLD. No Docker/actualprivate effects. |
+| Bernoulli / 실행 구현 | Clock64037d87 closed/ROclock+EXITseedPASS/effectABIwrapperfailed BEFORESELL, owned1 entry1exit1 unchanged. Narroweffect-source-abi-r1 300active/900elapsed/max2effect+postseed, exactsamebook/no reset,3roleargvmatrixbeforeeffect. Actual8unchanged. |
+| Cicero / 엔진·GPU 조정 | Ablation05ce12f6/f9874194 MIXED_OR_INCONCLUSIVE/2GPUfits164best100+146best82/203+272checks/all7closed. PriorCAT+NN closed too; no readytraining, standby for concrete Paperconsumer/nooccupancyjobs. |
+| Chandrasekhar / 데이터 | Actual broaderCHECK input READY236e9e28/94bb8b92/2f04ec2a,13cohorts A7B6/4888unavailable/241checks/all4closed/300upper. Parent9refs exact/direct Enginehandoff. No Data or model worker remains. |
 
 Historical Averroes/Euler/Godel/Noether/Hume packages are CLOSED; their role
 names and old compute allowances do not mean active agents or ready fits.
@@ -49,6 +49,29 @@ with true early-date validation, not confusing old tree-prefix selection on
 wholeCHECK with a chronological date prefix. Final newFP32 lane excludes old
 fullCHECK-selected HGB/CAT controls rather than creating false parity or
 duplicating fits. Original8 future sessions remain owned, not a foreground wait.
+Review11:49UTC: new isolated TEST fixtures replace recovery administration for
+the next happy-path qualification only. Failed/unknown fixtures remain archived
+and cannot be called recovered. RealPaper identity/reservations/recovery rules
+unchanged. Claude ADOPT_FRESH_SYN_WITH_LIMITS9a41fe0a supports this scoped choice;
+exact mount source/type/RW/State and physical synthetic isolation still hold.
+Reversible improvement: reuse prior sorted-complete-mount predicate and retain
+actual operands/results before fallible validation, not another helper platform.
+Failure review12:10UTC: the next ROseed passed; a reproduced fixture census
+path re-inspects an already positively closed CID. Actualroundexception was
+not retained. Do
+not turn the reproduced source defect into claimed historical causality.
+Parent fixed common mount-state comparison locally(15puretests); Mencius
+implemented the disjoint closed-CID classifier(8regressions). Bern integrates
+with pre-round safeFrame capture in ONE bounded normal test-development family,
+not another recovery/approval/report layer for every pre-effect error. New
+attempts stay isolated, oldfailed/unknown claims/debits untouched. No model or
+actualPaper hold; NN research remains independent and no oldfit is repeated.
+Failure review12:48UTC: nativeBUY+exactfill now prove entry wiring, not full
+lifecycle. FakeUTC was reset at eachguest, so postseed correctly rejected a
+futurefill. Retainedcompletiontime diagnosis and exactknownownedstate enable
+one bounded SAMEcase EXIT-only test, not anotherBUY/factory. Source/run/phase
+bound finalUTC sidecar, positiveclosure beforehostadvance and unchangedguards
+address testtime semantics without actualsleep or realaccountauthority changes.
 
 Resume throughput review: app update removed prior LLM connections. Controller
 root absent/no non-self named process; Docker census only web, so no old fit or

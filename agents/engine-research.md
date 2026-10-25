@@ -6,6 +6,46 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+Latest actual GPU campaign is CLOSEDd7f9a5cf/Source84b99bab at
+A/research/current-nas-broader-check-development-20261025-v1.238checks/
+Parent33refs exact; PID37988 start11:34:12UTC/19.085fitseconds/154trees/
+selected90/OD64.13validcohorts/83forecastdates/6174rows/12ledgers/520CLOSE/
+636NAVevents;all6Engine+4Data containersclosed/GPUleaseabsent/825.226upper.
+Combined10bp growth/DD+1.4216%/.3536% versus uniform+.8326%/.8699%; EVAL_A
+growth+1.0006% versus+1.0614% fails ONEof12gates. COMPLETE_FAIL unchanged,
+not total model rejection or a Paper authority hold.0oldmodelcalls/retries.
+
+That assigned family current-nas-broader-check-neural-blend-development-20261025-v1
+is now CLOSED3c6967aa/Source9c1832fa/verify13a0ac70, COMPLETE_FAIL. OneCUDAfit
+32epochs/best7/PAT25/2784updates/26.45attachedworker seconds,201independent/
+199closure/Parent38refs exact/all6closed/GPUleaseabsent/360.760activeupper.
+10bp combined fixedCAT+NN growth/DD+.527%/.704%, RAWNN+.765%/.933%, cachedCAT
++1.422%/.354%;10of14gates fail. No retune/oldCATcalls/Paper swap.
+Information ablation is now CLOSED05ce12f6/Sourcef9874194/verify46f3706a at
+current-nas-broader-check-feature-information-ablation-20261025-v1/native-fixture-recovery-r1.
+RAW378164trees/best100/16.57s, FCTX19146/best82/13.61s;203independent/
+272closure/Parent49refs exact/all7closed/leaseabsent/388.594upper. Combined
+10bp growth/DD RAW+1.096%/.491%, FCTX+.719%/.451%, cachedFULL+1.422%/.354%,
+uniform+.833%/.870%. Neither smallerinput passes frozensufficiency; FULL
+incremental advantage inconsistent inblockB. MIXED_OR_INCONCLUSIVE on13seen
+cohorts, not causalfeatureproof/independentalpha or input/Paper swap.
+Original constant invented feature failureb1026fdf/f86ffd75 had0marketfits;
+repair30.531/90 withinoriginalcaps, oldfailed8nativeupper retained/cumulative24.
+Both originallyplannedmarketfits completedONCE, no FULLmodelcalls/Datarebuild.
+No new ready frozen training. Coordinator standby; next concrete product
+consumer is prepared397-input Paper connection/native runtime, not more
+feature/search variants on these13outcomes.
+
+Closed neural protocol (not another dispatch):
+ONE new shared-stock MLP ranking transfer seed20261030 plus ONE fixed equal-
+rank blend with the cached chronological CAT scores,3000active/5400elapsed.
+Data236e9e28 remains unchanged; no CATfit/restore/forward, scaler/newData
+build or oldNN replay. New exact finite epochs/updates/curves/earlystop/native/
+ledger/metric caps and Claude precede numerical dispatch. Same13seen/adaptive
+outcomes, not new independent data or oldcriterion rescue. No automatic input
+swap and no actual new GPU launch inferred merely from this assignment.
+Older protocols below are closed history, not active launch instructions.
+
 Latest CLOSED seed-stability:
 A/research/current-nas-hgb-catboost-seed-stability-development-20261025-v1,
 FINAL5d0d6983/Sourcea74ca4ae/verify85f27429, adaptive PASS only. Exactly3 NEW
@@ -46,6 +86,9 @@ No eval-selected epochs, phase changes, survivor-mask shrink or model retry.
 Old HGB may be a control only if actual source excludes laterCHECK selection
 dependence; otherwise report unavailable/use uniform, do not duplicate its fit.
 Assignment/source design is not actual GPU launch or a Paper permission hold.
+Actual Data236e9e28/94bb8b92/2f04ec2a is READY:13whole cohorts(A7B6), all14
+retained/origin4888 unavailable,241checks/build1verify1/0retry/all4closed/
+300activeupper/Parent9refs exact. Direct handoff received; no repeat Data build.
 
 CLOSE-path transfer below is also CLOSED Consumerf0c2c08c/Source69395dc6/
 verify2b448af0/202checks: ONE new CUDAfit23/best3/2001updates/PAT20/32.207s,

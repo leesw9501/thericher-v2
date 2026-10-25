@@ -88,6 +88,22 @@ separate invented-data transport probe,180active/600elapsed/max2creates/
 networknone, no native trading guest/private account. Preserve exact old state
 and await its working recipe before any separately bounded recovery; original8
 native/Task/private paths and seed RO rule are unchanged.
+Copy probe is now CLOSEDf41fb62b/743e5d13/d3e73d9d: transport-only measured
+ROcopy READ_ONLY, RWinitializer first then ROreadback success; all2containers/
+inventedvolume closed/removed. No fullbook/oldcause/trading proof. Current
+same-case-recovery-r1 is a new bounded engineering continuation at samevolume/
+5filebook/tape/input/policy/financial+counterroots,900active/1800elapsed/
+max8routeRO+1initializer, no factoryrerun/reset/newnamespace/volume deletion.
+Unexpected membership HOLD; RWinit then ROexactverify before unattempted guest.
+Preserve priorunknowns/debits and fullpoststate on allterminal paths.
+Samecase recovery is CLOSED444868eb, NOT_INSTALL_READY,0debit/submit/fill;
+initialfullbook+ROverify passed, seedclosurefailed/operands+reply missing,
+opclaimHELD/fullpoststate+volume retained. Do not rerun/clear it. Current
+TEST-only fresh-isolated-happy-path-r1 uses new isolated mutable identities,
+900active/1800elapsed, productionrisk unchanged, oldunknowns archived. It is
+not recovery proof/actualPaperfill/Taskorigin/install. Review pointer:
+A/review/current-syn-fixture-isolation-challenge-20261025-v1/RESPONSE.txt9a41fe0a.
+Actual comparison operands/publicseedreply/fullpoststate must survive failures.
 
 Research recovery: completed QQQ marginal e9f8, continuous sizing025f and
 corrected direct-GRUf9e68b65 must not be retrained/replayed from old commands.

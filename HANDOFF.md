@@ -79,150 +79,151 @@ that contract. Empty history/missing opener cannot prove no-send or free reserve
 
 ## Current Packages
 
-All dispatched training/inference is CLOSED; do not repeat completed fits.
-Latest seed-stability FINAL5d0d6983/Sourcea74ca4ae/verify85f27429 is CLOSED
-adaptivePASS: exactly3newGPU CatBoost fits25.795/31.054/26.951s, no oldmodel
-calls/retry, allhelpersjoined/removed/leaseabsent. Fixed HGB+mean-rank3 gives
-+1.2072%growth/.3835%DD at10bp/leg on9seen cohorts, not independent alpha or
-Paper PnL/input promotion. Device sampled peak14780MiB is not process allocation.
-Its SAME frozen composition now has a separate inert current-point input at
+Parent owns shared MD/Git; pushed8a2e06d. Current numerical claims below use
+actual closed workers, not role names or remaining budgets. No old fit repeats.
+
+Engine: broader CHECK study is CLOSED COMPLETE_FAIL at
+A/research/current-nas-broader-check-development-20261025-v1/CONSUMER.json,
+SHAd7f9a5cf46f0533bbb6af7fb892078bc3c3c50d4a98fc0872f227698e3912c7f.
+Source84b99bab/verifyb9e2b65d/238checks/Parent33refs exact. Actual GPU PID37988
+started11:34:12UTC;154trees/selected90/OD64/19.085fitseconds. One new seed/
+prefix-calendar protocol,0oldmodelcalls/retries. Combined10bp growth/DD
++1.4216%/.3536% versus uniform+.8326%/.8699%; EVAL_A growth+1.0006% versus
++1.0614% fails ONE of12 frozen gates. Never regrade COMPLETE_FAIL.12ledgers/
+520CLOSEs/636NAVevents,825.226activeupper, all6Engine+4Data containers closed/
+GPUleaseabsent. Research percentages are not private cash or Paper PnL.
+
+Neural transfer is now CLOSED COMPLETE_FAIL at
+A/research/current-nas-broader-check-neural-blend-development-20261025-v1:
+Consumer3c6967aa/Source9c1832fa/verify13a0ac70,201independent+199closure checks/
+Parent38refs exact. OneCUDAfit32epochs/best7/PAT25/2784updates/26.45attached-
+worker seconds,360.760activeupper/all6closed/GPUleaseabsent.10bp combined
+blend growth/DD+.527%/.704%, RAWNN+.765%/.933%, cachedCAT+1.422%/.354%.
+Blend fails10of14gates, no retune/oldCATcalls/Paper swap. Torch peak allocated/
+reserved531970560/557842432bytes, not device-total use.
+Information ablation is also CLOSED at
+A/research/current-nas-broader-check-feature-information-ablation-20261025-v1/native-fixture-recovery-r1:
+Consumer05ce12f6/Sourcef9874194/verify46f3706a,203independent+272closurechecks/
+Parent49refs exact/all7closed/leaseabsent/388.594activeupper. RAW378 trained
+164trees/selected100/16.57s; FACTOR_CONTEXT19 146/82/13.61s. SameData13/
+original397knownmask/prefix-onlyselection/cachedFULLcontrol,0FULLmodelcalls.
+Combined10bp growth/DD FULL+1.422%/.354%, RAW+1.096%/.491%, FCTX+.719%/.451%,
+uniform+.833%/.870%. Frozen smaller-input sufficiency fails; FULL advantage
+is not consistent in blockB. MIXED_OR_INCONCLUSIVE/adaptive, not alpha,
+causal indicator contribution or supported input simplification/Paper swap.
+Original all-zero invented fixture failureb1026fdf/f86ffd75 stays technical,
+0marketfits then; named numeric-fixture repair used30.531/90active inside
+originalfamily. Old failed8nativeiteration upper retained, cumulative24upper.
+No Data/scaler rebuild or completed fit repeated. GPU coordinator is standby;
+no ready frozen training remains and no dummy occupancy job is assigned.
+
+Data at A/data/current-nas-broader-check-inputs-20261025-v1 is CLOSED READY:
+Consumer236e9e28/Source94bb8b92/DTO2f04ec2a,13whole cohorts(A7/B6), all14
+candidates retained/origin4888 unavailable;241checks/build1verify1/0retry/
+all4closed/300activeupper/Parent9refs exact. OriginalTRAIN/once-affine and new
+cachedFP32 lane, not old classicalFP64 parity. Old wholeCHECK-selected HGB/CAT
+are not chronological controls. Do not rebuild this qualified packet.
+
+Seed-stability FINAL5d0d6983/a74ca4ae/85f27429 is CLOSED adaptivePASS:
+3newGPUfits25.795/31.054/26.951s; fixedHGB+mean-rank3 growth/DD+1.2072%/.3835%
+on9seen cohorts. Its SAME current point is separately PREPARED_NOT_DEPLOYED at
 A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1:
-Consumer9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432.
-Exactly3 CPU restores/3 forwards/207rows,0fits/oldmodelcalls/GPU;8native/
-11independent/52closure checks, both containers closed/141.312activeupper.
-Full100/69known31unknown, seven equal weights, .005 TOTAL original-basis ceiling.
-Parent37 direct refs exact. PREPARED_NOT_DEPLOYED; old d5f53 and original8/L271
-inputs stay unchanged. No private book, broker, Task or capital effect.
-Zero-fit lower-envelope comparison is CLOSED COMPLETE_FAIL at
-A/research/current-nas-three-seed-lower-envelope-allocation-development-20261025-v1:
-Consumerab43546d/Source966db56b/verify77c67e02/99checks/Parent21refs exact.
-Onecompile/intake/twoledgers90CLOSEs,0modelcalls/GPU/retries,all4closed/
-296.885activeupper.10bp growth+1.2282% versus fixedmean3+1.2072%, but DD
-differs only by roundoff: strict improvement failed. No retune/input swap.
-Next assigned Engine family is current-nas-broader-check-development-20261025-v1:
-one NEW prefix-selected CatBoost fit, originalTRAIN/once-affine, purged early
-CHECK validation and two frozen laterCHECK blocks/max14phase3mod5 origins.
-Data design5685f76a/5a6a4bc3 is source-only. Engine's final contract deliberately
-uses existing FP32 context, NOT old classical FP64 parity; fullCHECK-selected
-HGB/CAT controls are excluded. Exact new-role native/bounded derivation precede
-fitting; no affine/frame rebuild. Globally reused CHECK is NOT fresh.
-No new GPU worker is inferred from this assignment.
-Cross-asset attention FINALe480fc35/Source11cb9d87/verifya848edc5 is complete:
-FULL/DIAGONAL concurrent CUDA23/26epochs, selected3/6,2001/2262updates,
-35.673/39.510seconds. FULL improves growth but loses frozen drawdown condition;
-criterionFAIL, not runtime failure. All5containers closed/removed/absent.
-Closed-output attribution91be0f6b/f375877e passed37checks/101.52activeupper:
-FULL drawdown4929..4946, aggregate concentration equal, turnover difference
-from terminal proceeds is not proven churn. No regrade/alpha/Paper promotion.
-Source-only readiness6ad6338f/a87b4f06 proves generic R-D already tested on old
-25/R21/HGB; it is not a new mechanism. Parent explicitly assigns full100/397
-attention CLOSE-path target TRANSFER with one new CUDA fit and exact cached
-FULL control, never another FULL fit. Contract/Claude/changed loss-role native
-must precede fit; this preparation is not active GPU work or a Paper hold.
-Engine root A/research/current-nas-attention-close-path-target-transfer-20261025-v1;
-Data root A/data/current-nas-attention-close-path-target-inputs-20261025-v1.
-4500activeSUM/7200elapsed, readiness300 counted once, onefit1700/160max/PAT20/
-13920updates/no numerical retry, no feature/scaler rebuild/INNER fit labels.
-New Data loss READY5d69577e/Source5cdb4105/DTOff9d4c68/seal605e12cf at
-Data root receipt-recovery-r1: build1/verify1/24checks/exactmasks/keys/clocks/
-all3childrenjoined. Old Data300 failure af6b1f55 stays failed; new explicitly
-bounded engineering recovery174.084/180 comes from familyreserve additionally,
-not a refund, morefit or repeated successfulnative. Data directly handed to
-Engine consumed it in CLOSED transfer Consumerf0c2c08c/Source69395dc6/
-verify2b448af0/202checks: one newCUDAfit23/best3/2001updates/32.207s, cached
-FULL never refit. Growth/DD -.0385%/.9118% versus FULL+.5750%/.7204%, fixed
-criterionFAIL; not runtime failure or a remaining fit assignment.
+9014a724/c08261ea/INPUTe886f8f3/POLICYd8fe0432.3CPUrestores/3forwards/207rows,
+8native11independent52closure/bothclosed/141.312upper/Parent37refs exact;
+full100/69known31zero/sevenequalweights/.005TOTAL. No oldd5f53/original8/L271
+input swap. Lower-envelope ab43546d/966db56b/77c67e02 is CLOSED COMPLETE_FAIL:
++1.2282% growth versus mean3+1.2072%,
+DD strict improvement failed up to roundoff.99checks/Parent21refs/all4closed/
+0models/GPU/296.885upper. No retune or Paper promotion.
+Attention e480fc35 and CLOSE-target f0c2c08c/69395dc6/2b448af0 are also CLOSED
+criterionFAIL, not idle fits; old checkpoints/native failures/debits stay intact.
 
-The app update lost the previous LLM agent connections. Resume census found no
-non-self controller-preparation process and only the web Docker container;
-the proposed controller root did not exist. No completed training was rerun.
-The first risk-moment handoff and first-cohort35-policy seal are now COMPLETE
-below; Data/Engine numerical workers are closed, no GPU/model run inferred.
-Parent owns paper_account_round.py and its tests; Mencius
-completed paper_peer_visit.py/tests ac678/53PASS1symlink-privilegeSKIP, real
-Windows ownerdeath/junction/two-process exclusion. These components are NOT
-deployed; fresh final QA d3932f49 now covers1405exact/976serialPASS2skip/
-19305fullPASS26skip/19331total/8workers/Ruff3Compose, own temp/leases closed.
-a31c is prior-source history. Earlier partial/failing runs remain failed.
-Unused paper_peer_group/parked-peer source is excluded from production; its
-frozen D-only prototype remains history, not an active dependency. Parent's
-round focused20PASS/Ruffclean. Bernoulli owns the single-owner-r1
-finite account dispatcher under current-cooperative-paper-peer-integration-20261025-v1.
-single-owner-r1 CLOSED67c93640/Source30a5e995/Release9125b4c5 is source/native
-preparation ONLY:13host cases/12Taskmocks/changed native SYN/Job-daemon survival,
-no installReady or real scheduled-origin proof. Parent34refs match. Its scope
-is HGB-only; Joint17/old8 migration is not proved. Production adapter child
-single-owner-production-adapter-r1 CLOSED FAILED a6c12425/3bd743ef:16host/
-14pairedowner mocks/5nativevisits. Constant SYN clock stalled real pacing;
-root watchdog lost exact Job join,1282lower>1200activecap. Known processes/
-daemon contained, old inventedhold/pending/debits retained, lostJoin UNKNOWN.
-No changed-route wire/fill/exit proved and no real private/API/Task effect.
-fixture-recovery-kernels-r1 CLOSEDf18df988/Source da4c6913 passed5tests:
-advancing SYN time and retained root/CLI Job handles are qualified helpers,
-not native-route proof. fixture-recovery-r1 then CLOSED technical-incomplete:
-new Jobs/daemon closed, but a loop-local pin shadowed native_source_sha256;
-host correctly refused the wrong source. Full post-effect SYN book was not
-retained before volume deletion, so that case is unrecoverable/unknown, not
-successful recovery or permission to reconstruct it. Old failure/debits stay.
-Bernoulli now owns fresh-admission-syn-r1, an INDEPENDENT invented account/book
-scenario,600activeSUM/1800elapsed/max8newvisits. Explicit native-source binding,
-positive Job join and full poststate retention before volume removal precede
-new admission-to-owned-exit proof. It cannot resolve/relabel the old case.
-That independent case is now CLOSED39ceb3ae25ad7db50d21f4d6309f6390f05a519098e15191fd00eceb2b1768b8,
-FAILED_PRE_NATIVE_FIXTURE_SETUP_NOT_INSTALL_READY. One capsule created, native
-guest/debit/submit/fill0. Initial SYN book copy returned nonzero against RO seed
-mount; exact Docker diagnostic not captured, so causality is source inference.
-Root/CLI Jobs joined/daemon absent; SYN volume/evidence retained, active-time
-accounting incomplete, not certified. Stale-snapshot deletion blocker was fixed;
-no prior unknown case is resolved. Mencius now owns a separate SYN-only copy
-probe180active/600elapsed/max2creates/networknone, not a native replay. It must
-establish a working prepopulation-before-RO recipe without weakening RO seed.
-Original8/real private state remain untouched; no install, old14/model replay
-or old hold reclamation. Any continuation must preserve exact retained state.
-Four-peer bridge hooks are superseded unfinished prototypes, not runtime.
-Claude f60301a9 RECOMMEND_B_PHASED/independent review support single ownership,
-original native capsule interfaces/paths/counters, one private child at a time,
-NEW actual owner ABI and positive process/daemon closure. No service or naked
-native.run/shared-interpreter rewrite now. Models become proposal-only only
-after positively quiescent old writers; no actual cutover has occurred.
-Old8 Task/private/bank/counter roots remain unchanged. No broker effects are
-assigned to this implementation phase; it does not hold independent lanes.
+Execution root A/execution/current-cooperative-paper-peer-integration-20261025-v1.
+Adopted B_PHASED finite account owner preserves original whole legs, SDK/risk/
+journals/counters/shared allocation; at most one private-capable capsule.
+No persistent service, reciprocal RW peers or actual old8 migration/cutover.
+Core account_round/peer_visit have QA d3932f49:976serialPASS2skip/19305fullPASS
+26skip/19331total/8workers/1405exact/Ruff3Compose/clean; no external deployment
+proof. Unused paper_peer_group is removed. Old partial QA is never authority.
 
-Original custom controller preparation CLOSED1847406f: both Docker bootstrap
-attempts failed before native visits, no adapter/host/runtime was qualified.
-653.272 conservative active upper exceeded600; preserve limitations/failures,
-do not replay that capsule. Simplification-r1 recommends the existing proven
-H5 command-first algorithm with prospective PT1M, not a new generic seed/event
-journal; Claude SOUND_WITH_LIMITS393351d6 is advisory. Its conservative bound
-104.225 exceeded60 too, not a qualified budget pass or runtime. The new bounded
-consumer is A/execution/current-hgb-catboost-h5-existing-graft-preparation-20261025-v1,
-inert release only; no new Task or alteration of old8/L271/F9.
-Its closed consumer9eb232ce binds capsuleSource4dc7fe0a/inertReleasef476a8f6:
-26Windows host/factory cases/quiet+reparse/14native visits total. Native13
-failed foreign fixture because an Oct30 state was copied into an Oct26 clock;
-the failure was retained. Separate visit14 proved genuine foreign-owner refusal,
-unchanged bank/no-renorm; completed13 were not replayed. Allchildrenjoined/
-containersremoved/224activeupper. Still NOT_INSTALL_READY: reciprocal peer
-admission/whole-leg exclusion remain unintegrated. Review and Claude28dfc95b
-REVISE agree bank locks alone do not cover lock-free RO seed or daemon create
-closure. Adopt canonical-bank (not policy/group-version) exclusion across
-seed/effect/postseed, positive process+daemon closure and exact parked-host
-recognition; never whitelist foreign private writers or release reservations.
-This is source-predicted overlap risk, not an observed Oct30 runtime failure.
+Fixture-regression-r1 is CLOSED PARTIALc675511f:2isolatedattempts each proved
+BUYacceptance+exactlinkedfill, no SELL/ownedexit/deadline. Postseed restarted
+fakeUTC beforefilltime; unchanged future-time guard refused it. Read-only
+diagnosis at retainedcompletionUTC succeeded.2of2attempts/10creates/541active,
+allJobs/daemons/opclaimsclosed/books+F9+debits+markers+volumes retained.
+No actualKISorder or actualPaperinput/Task change.
+Clock recovery same-owned-syn-clock-exit-r1 is CLOSED FAILED64037d87:
+ROclock->host->EXITseed passed, but effectwrapper required the seed-only source
+flag and raisedValueError BEFOREnativeSELL. No SELL/fill/exit, owned1,
+entrydebit1+exitdebit1, F9/book/counters retained, allJobs/daemons/opclaimsclosed.
+Oldhard13:08:22 respected; mechanicalcontinuationclosedpre-effect/no newdebit.
+Current NARROW test repair is effect-source-abi-r1,300active/900elapsed/
+max2nativecreates, exact attempt2
+Consumer60cd5c5f/book196870d2/debit618747fd/inputd5f53/policy3cfc/nativece0e.
+Same retained shortroot/volume/o+g+financialcounterroots, entrydebit1/oneowned
+instrument/no cohortpending/opclaimsclosed; F9held. NO ENTRY/init/factory/reset/
+newnamespace/reclaim/refund. Bootstrap only from trusted18:25:07.5Z Oct26,
+clockhorizonthroughoriginalOct30 20:00UTC/exitanchor19:45:30. Named clocksidecar
+handoff is source/run/phase-bound and accepted only afterpositiveclosure; host
+advances before nextguest, missing/backward/unboundHOLD. Validclock never
+turns failednative into success, no actualsleep or productionguard relaxation.
+Preserve all oldfailedscopes and current poststate, prove exactSYNSELL/fill/
+currentownedflat only on actualruntime. It is not actualPaperfill/PnL/install.
+Repair only SYNclockheader nativeSource from immutable /route/SOURCE.json SHA,
+not seed-only argv flag; originalnativeCLI Source validation remains unchanged.
+Actual frozen seed/effect/postseed argv matrix must pass before anycapsule.
+Only remaining EXITeffect+postseed/no newseed/init/factory/ENTRY/reset; new
+exitdebit is additional, never refunded. If protocol needs anotherseed, close
+pre-effect with preciseinterface limitation rather than bypass or addcreates.
 
-Data probe is CLOSED at
-A/data/current-pair-whole-observation-capability-probe-20261025-v1:
-CONSUMER dbcb315480d10c5ba9b29de77efafef02174c55eda8a41b256568a57e91b3668,
-Source1b24450f/Outcome fc4a690c/Native c633b70f. Actual1tokenPOST+2dailyGET,
-allHTTP200, no retry. QQQ/NAS and SPY/AMS each retained100 parsed daily rows;
-63 official sessions Jul28..Oct23 verified per target, missing0.11native cases,
-all helpers joined/containers removed;302.536active upper/600 at07:08:45UTC.
-Parent independently rehashed all three direct consumer references:0mismatch.
-Observations stay under M/us_equities/observations/current-pair-whole-observation-capability-probe-20261025-v1.
-NO canonical commit/reset/quarantine clear, account/order/live or Task effects.
-This new opt-in probe does not prove the installed natural worker recovered,
-PIT/corporate-action/finality qualification or a new Paper input. Do not rerun.
-Original natural pair opportunity recorded forOct26 21:55UTC stays separate.
+Closed fixture support:
+Parent fixture_mounts.py fd0314d0 passed15pure cases/Ruff; Mencius
+fixture_census.py cc2e8010 passed8regressions/Ruff. The latter skips only
+positively joined/closed/daemon-absent CIDs while preserving historical facts;
+missing/unknown closure still holds. Helpers are frozen/directly handed to
+Bernoulli. Both seed/terminal copies use the SAME complete-state comparison;
+actual census exception category/source/line is retained BEFORE round catches.
+Short mutable roots under A/execution/syn-<nonce> avoid the observed long-path
+factory preparation problem; no registry or production-path change. No old mutable
+state alias, held-claim clearing or refund. Correct only fixture mount-order
+equality by sorting COMPLETE dictionaries; preserve exact source/type/RW,
+unique destinations, State equality and existing canonical guards. Tiny
+reorder/RW/source/type/duplicate tests precede RWinitializer->ROwholebookverify
+and unmodified native entry/ownedexit. Retain actual comparison operands,
+public seed response and full poststate on every path after positive Jobs.
+This proves synthetic happy-path qualification ONLY, not old recovery, actual
+KIS fill, scheduler origin or installReady. Genuine recovery remains separate.
+Parent adopted Claude ADOPT_FRESH_SYN_WITH_LIMITS, advisory evidence
+A/review/current-syn-fixture-isolation-challenge-20261025-v1/RESPONSE.txt
+SHA9a41fe0accabdc6fa5dd4dc18951772b5e2df6d5ac02b6415af6899a848a3b87.
+
+Closed failed fixtures remain archived, NOT repeated/resolved:
+single-owner-production-adapter a6c12425/3bd743ef stalled SYN clock/lostJoin
+UNKNOWN/1282lower>1200cap; fixture-recovery-r1 wrong hash/lost fullpoststate.
+fresh-admission-syn-r1 Consumer39ceb3ae pre-native copyfailure/activeclockUNKNOWN;
+same-case-recovery-r1 Consumer444868eb full5fileinit/ROverify PASS, firstROseed
+closure failed, actual operands/seedresponse not retained, opclaim HELD.
+All its root/CLI Jobs and exact daemons closed, full current book/F9/volume
+retained;110.4active/619elapsed/3newcreates4cumulative. No submit/debit/fill.
+Copy probe f41fb62b/743e5d13/d3e73d9d proves only one-file RWinit-before-RO,
+all2containers/volume closed; old uncaptured cause is not retroactively proved.
+fresh-isolated4f87e714 failed factory path preparation before Docker. Its
+one declared bootstrap continuation0e882c3b reached strict nativeROseed PASS
+and retained entrydebit1, but no effect create/submit/fill/exit. Closed-CID
+census bug reproduced; actualroundexception missing and terminalmount gap
+remained.112.7active/3creates, fullpoststate+volume/counters retained, opclaim
+HELD. Do not rerun or clear it. New pure helper fixes do not resolve that case.
+Clock/root-Job kernelsf18df988/da4c6913 passed5tests only. Prior single-owner
+67c93640 and existing-graft9eb232ce are preparation, not deployable migration.
+Actual original8/private basis/F9 remain unchanged by all these test packages.
+
+Data probe current-pair-whole-observation-capability-probe-20261025-v1 is CLOSED
+dbcb3154/1b24450f/fc4a690c/c633b70f:1tokenPOST2GET/all200/each100rows/
+63requiredsessions/missing0/11native/allclosed/302.536upper. Observations stay
+M/us_equities/observations under that root; no canonical/quarantine reset.
+Natural retention CONFIGURED_VERIFIED_PENDING_NATURAL_RUN403d5908 remains due
+Oct26 21:55UTC. Neither probe nor config proves installed transport recovery,
+PIT/corporate-action/provider-finality or new Paper input. Do not rerun.
 
 ## Completed Research
 

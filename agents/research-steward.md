@@ -6,6 +6,22 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+Broader chronological CAT is CLOSEDd7f9a5cf/84b99bab: oneactualGPUfit37988,
+19.085s/154trees/selected90/OD64/238checks/all6Engine+4Data containersclosed/
+GPUleaseabsent.825.226upper is NOT GPUtime. Sampled device peak14889MiB/minfree
+9250MiB, processallocationUNKNOWN_NOT_PROCESS_SAMPLED. COMPLETE_FAIL is the
+one EVAL_Agrowth condition, not an environment failure. No repeat.
+Neural-blend is also CLOSED3c6967aa/9c1832fa/201+199checks, COMPLETE_FAIL:
+oneCUDAfit32/best7/2784updates/26.45s/all6closed/leaseabsent/360.760upper.
+Torch peakallocated531970560/reserved557842432bytes. No duplicate fit.
+Feature-information ablation is CLOSED05ce12f6/f9874194: exactly2GPUfits
+RAW378164/best100/16.57s and FCTX19146/best82/13.61s,203+272checks/all7closed/
+leaseabsent/388.594upper. Initial allzeroSYNfailureb1026fdf technical/0market;
+namedfixture recovery30.531/90 retainedoldfailed8nativeupper/cumulative24.
+No FULLfit/restore/forward/Datarebuild or repeated completedmarketfit. Result
+MIXED_OR_INCONCLUSIVE, no smallerinput/Paperadoption. No ready frozen training
+or active GPUworker. Cicero standby; no dummy occupancy job or permissions wait.
+
 Latest numerical work is CLOSED seed-stability FINAL5d0d6983/Sourcea74ca4ae/
 verify85f27429 at
 A/research/current-nas-hgb-catboost-seed-stability-development-20261025-v1.

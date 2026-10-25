@@ -47,6 +47,62 @@ max2creates/networknone. Establish observed copy behavior and prepopulation
 before RO; never weaken production RO seed or reset/reconstruct old cases.
 No original8/real bank effect. Bernoulli may propose state-preserving recovery,
 not replay the closed attempt or declare changed-route qualification.
+Measured copy probe CLOSEDf41fb62b/743e5d13/d3e73d9d, SYN transport only:
+READ_ONLY copy failure, RWinitializer before ROreadback success,2containers/
+oneinventedvolume closed/removed. No fullbook/oldcause/trading proof inferred.
+Current assigned recovery: fresh-admission-same-case-recovery-r1,900active/
+1800elapsed/max8routeROvisits+1initializer/cumulativecreates10. SAME retained
+volume/5filebook/membership7e411d9d/tape/input/policy/financial+counterroots;
+initial membership check then RWinit and separateRObyteverify before guest,
+unexpectedHOLD. Prior operationalclaims closed, no reclaim or factoryrerun.
+Retain complete current poststate after positive joins on everyterminal path
+and retainvolume. No prior active-clock refund, oldcase adoption or install.
+Same-case recovery is now CLOSED444868eb: full5fileinit/ROverify PASS, firstRO
+seedclosurefailed with missingactualoperands/reply; exactmountorder bug is
+source-reproduced, not proof of that historical runtime cause. Fullbook/F9/
+volume retained, opclaimHELD, root/CLI Jobs+daemons closed;110.4active/
+619elapsed/3newcreates4cumulative/0debit/submit/fill. No claimclear or rerun.
+Parent adopted one fresh-isolated-happy-path-r1 test900active/1800elapsed,
+NEWnonce SYNmutable identities, archivedoldunknowns, noalias/read of oldmutable
+state. Preserve productionrisk, fix only order by sortingcompletemountdicts and
+keep exactguards/State/duplicate/RW/type/source checks. Tinycases then initRO
+verification/nativeentryexit; retain operands+seedresponse+fullpoststateallpaths.
+This is synthetic happy-path qualification only; genuine recovery remains
+separate, not actualPaperfill/Taskorigin/install. Claude advisory9a41fe0a at
+A/review/current-syn-fixture-isolation-challenge-20261025-v1 supports package
+isolation, not a broker-authority grant. No actualPaper safeguards changed.
+That fresh case is CLOSED4f87e714/continuation0e882c3b, PARTIAL/notinstall:
+shortpath factory/5fileinit/ROverify/5mountcases/nativeROseed passed,
+entrydebit1 retained, no effectcreate/submit/fill/exit. Reproduced closed-CID
+fixture census bug/actualroundexception unretained/terminalmount gap. Jobs/
+daemons closed/fullpoststate+volume/counters retained/opclaimHELD;112.7active/
+3creates. No reclaim/rerun. Current assigned fixture-regression-r1 is1500active/
+2700elapsed/max2freshattempts/max18creates, newshortisolatedmutableroots.
+Parent mounthelperfd0314d0 passed15tests; Mencius censushelpercc2e8010 passed8;
+Ruffclean/frozen/directhandoff. Samehelper for all snapshot comparisons and
+pre-round safeFrame sink prevent repeated missing diagnostics. Existing
+productionguards unchanged; oldstates never adopted or called recovered.
+Fixture regression now CLOSEDc675511f, PARTIAL:2separateSYNBUYacceptances/
+exactlinkedfills, noSELL/ownedexit/deadline. PostseedfakeUTC reset beforefill;
+guardcorrectlyrefused, retainedcompletionUTC ROschema diagnosis passed.
+AllJobs/daemons/opclaimsclosed/2of2attempts10creates541active/retainedfullstate.
+Current same-owned-syn-clock-exit-r1 is600active/1200elapsed/max5creates,
+exactattempt2consumer60cd5c5f/book196870d2/debit618747fd/inputd5f53/policy3cfc/
+nativece0e, SAMEvolume/shortmutableroot/o+g/financialcounterpaths. Entrydebit1
+andownedinstrument1/no cohortpending/F9held preserved. No ENTRY/init/factory/
+reset/newnamespace/reclaim/refund. Trustedretainedclock bootstrap; strictbound
+sidecarafterpositiveclosure advanceshostbefore nextguest, no actualsleep or
+futureguardrelax. Only ROdiag+3exitnative+optionaldeadline. ActualSYNSELL/fill/
+ownedflat proof needed; no actualKIS/Paperfill/PnL or installation inference.
+Clockrecovery CLOSED64037d87 BEFOREnativeSELL: ROclock+EXITseed passed,
+effectwrapper assumedseed-onlysourceflag/ValueError. Owned1/entry1exit1/F9/
+fullbook preserved/allJobsdaemonsopclaimsclosed. Oldhardrespected; later
+mechanicalcontinuationpre-effectclosed/no newdebit. Currenteffect-source-abi-r1
+is300active/900elapsed/max2creates, SAMEexactknownattempt2.No ENTRY/init/
+factory/reset/newnamespace/reclaim/refund. Fixonly SYNclockheader nativeSource
+fromboundrouteSOURCE hash, keeporiginalnativeflagvalidation andtiny3roleargv
+matrixbeforecapsule. RemainingEXITeffect+postseedonly; ifnewseedrequired close
+pre-effect interface gap, no extra create/bypass. Oldcase never regraded.
 Older preparation/protocol notes below are frozen history, not active owners.
 NEW connection audit COMPLETE at
 A/execution/current-nas-robust-ranking-paper-connection-readiness-20261025-v1,

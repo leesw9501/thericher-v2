@@ -19,6 +19,14 @@ as a NEW experiment, not exact old classical parity or FP32 widening. Its
 DATA-REQUIREMENTS govern the actual child; agree schema/float/source explicitly
 before native/payloads. Old fullCHECK-selected HGB/CAT controls are excluded,
 no feature/scaler rebuild is needed and prior design is not relabeled.
+Actual child is now READY at
+A/data/current-nas-broader-check-inputs-20261025-v1/CONSUMER.json,
+SHA236e9e280145706aa5db447037b1d86df01c16cbea2df42a3b4056663a61ef3b;
+Source94bb8b92/DTO2f04ec2a.13whole supported cohorts (A7/B6), all14 candidates
+recorded/origin4888 unavailable. One actualrole native/build/independent verify,
+241checks/0retry/all4containersjoinedremoved/300activeupper; Parent9refs exact.
+Prefix-only label isolation and FP32 slices qualified, direct Cicero handoff
+sent. No Data/model/GPU rerun or inferred new fitting from this READY status.
 Earlier metadata-readiness9a689144/d47ce173 identified two laterCHECK blocks
 from held data, not untouched data. Its elapsed cap overrun stays reported.
 WholeTRAIN affines cannot support past-only evaluation withinTRAIN; afterTRAIN
