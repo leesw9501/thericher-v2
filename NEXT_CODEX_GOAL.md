@@ -27,6 +27,31 @@ No manual duplicate Task/strategy visit or inferred future outcome.
 
 ## Current Parallel Packages
 
+Latest closed source+native progress: Mean3 inert COW d6848702/root67b66ecb/
+central42379075/native9b16d069,9host+8Taskmocks/Ruff/Parent808members exact.
+New tiny-schema+exact-mean3 no-intent native->host handoff0889efce at
+A/execution/current-mean3-native-no-intent-handoff-20261025-r2:
+2networknonecontainers/12CLIJobsclosed/34.228s/actualbrokerprivateTask0.
+Owner/BankLeg invented; no fullNativeBridge/Task/exclusion/deploy claim.
+Prior preworker fixture failured4193c11/6.430s retained, no trade replay.
+Parent adopts b4d8a49c thin shared-gate graft (ClaudeADOPT_WITH_LIMITS), not all8
+proposal-only rewrite. Bernoulli owns firststock-shape inert COW at
+A/execution/current-stock-ingress-shared-gate-graft-preparation-20261025-v1,
+source+mocktests600active/1800elapsed/no actualchanges. Distinct L and actual
+all-runnable-ingress exclusion/quiescence/realTaskruntime still outstanding.
+
+Latest wider-prefix Engine Consumer78eb5b20/Source644a0a53 is CLOSED:
+3NEWGPUfits201/100/112trees/selected137/36/48;251H5cohorts/3843+273checks/
+all9closed/leaseabsent/Parent69refs exact. COMPLETE_FAIL_FIXED_ENSEMBLE:
+combined10bp growth/DD CAT+4.989%/5.568%, blend+4.598%/4.470%; oneof21 fails
+combinedgrowthversusCAT.20bp erases growth. No regrade/oldmodelcalls/Paperswap.
+Existing fold-local Data84611e51/cad317e3 reuse confirmed/no rebuild;
+696.001combinedactiveupper/3600, notGPUtime or independentalpha.
+Cicero next owns a distinct cost/absolute-entry-edge consumer, not a seen
+blendweight/seed search. No new actualGPU worker inferred from assignment.
+
+## Frozen Package Context (Not Dispatch Orders)
+
 Execution: adopted B_PHASED finite account-owned serial whole legs, original
 SDK/risk/journals/counters, at most one private-capable capsule. No actual
 old8 migration, new service or reciprocal RW peer whitelist.

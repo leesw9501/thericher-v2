@@ -3,6 +3,25 @@
 2026-10-25 KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic risk/intents/orders/custody/accounting; Parent sharedMD/Git.
 AGENTS private Paper authority; no operator decision presently.
+LATEST additional mean3 COW is CLOSEDd6848702/root67b66ecb/native9b16d069/
+central42379075:9host+8Taskmocks/RuffPASS/Parent808pins exact, falseReleases.
+Exacte886/d8fe/2f299/219435/newops/counter/marker roots, samephysicalbank/basis,
+pairedoneshot/oneleg/original8/8/2. Native no-intent handoff is CLOSED0889efce
+at A/execution/current-mean3-native-no-intent-handoff-20261025-r2:
+tinySYNschema then exactMean3 ->actualnativeworker+strictparser->actualContext
+sink,2networknonecontainers/12CLIJobsclosed/exactdaemonsabsent/34.228seconds.
+Owner/BankLeg invented, not fullNativeBridge/realTask/exclusion/deployment.
+Actualbroker/private/Task0. Preworker d419 failure/6.430s staysclosed; invalid
+numericroute reproduced and100letterroutespass, no oldBUY/SELL repeated.
+Parentadopted thin sharedgate b4d8a49c/ClaudeADOPT_WITH_LIMITS, not all8proposal
+migration. Bernoulli now owns firststockshape COW ingress prototype at
+A/execution/current-stock-ingress-shared-gate-graft-preparation-20261025-v1,
+source+mocktests600active/1800elapsed/zeroactualeffects. Lsecondshape/allrunnable
+ingress/positiveoldclosure/actual8rebind/runtime remain technicalwork; old8
+unchanged. Freshprewirecensus remains, noRWwhitelist/native-lock-only shortcut.
+
+Earlier component evidence follows; old active-sounding protocols are closed,
+not permission to rerun their commands.
 LATEST: effect-source-abi-r1 CLOSEDf3498a3e, exact SYNSELLattempt/acceptance/
 full linked fill/currentowned0/cohortpendingfalse, strictstateparser+terminalRO.
 AllJobs/daemons/opclaimsclosed/fullbookF9+volume retained, entry1exit2/no refunds.

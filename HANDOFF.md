@@ -79,8 +79,62 @@ that contract. Empty history/missing opener cannot prove no-send or free reserve
 
 ## Current Packages
 
-Parent owns shared MD/Git; pushed8a2e06d. Current numerical claims below use
+Parent owns shared MD/Git; latest checkpoint4af158b. Current numerical claims below use
 actual closed workers, not role names or remaining budgets. No old fit repeats.
+
+LATEST completed wider-prefix research:
+A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1,
+Consumer78eb5b2083c2f3476d8cc2524e722ad796a018de15a19d7cd0573f025eb65f33,
+Source644a0a53862db7604caecd81cd96bfc7d55d59ec5db92d4f7708cfa153cebc3e.
+Three NEW GPU CatBoost fits201/100/112trees, selected137/36/48 from each
+chronological innerCHECK; attached guest phases13.733/12.918/10.930seconds.
+Existing GRU predictions reused/no oldmodelcalls.251H5cohorts/1256forecastdates/
+78732rows/32ledgers/20080CLOSEmarks/3843independent+273closurechecks/all9closed/
+GPUleaseabsent. Parent69refs/0mismatch.10bp per-leg combined growth/DD:
+CAT+4.989%/5.568%, fixedhalf-rank blend+4.598%/4.470%, cachedGRU-14.278%/
+21.834%, uniform-6.161%/11.774%. COMPLETE_FAIL_FIXED_ENSEMBLE: ONEof21 fails
+(combinedgrowth versus CAT). LowerblendDD/higherutility do not regrade it.
+20bp growth CAT-.036%/blend-.426%; friction is material, not independentalpha.
+Current-listing/nonPIT/globallyreused development, not PaperPnL or automatic
+input/model swap. Engine upper391.001seconds plus Datareadiness300 and metadata5
+=696.001/3600; not GPUtime. Sampled devicepeak14095MiB is not processallocation.
+Data reuse-readiness84611e51/cad317e3 found existing F1/F2/F3 FIT-only affines
+already adequate: no new kernel/scaler/data build. Crossfold H5 dependence
+retained, no251purge/rephase. Cicero now prepares ONE distinct cost/entry-edge
+consumer; no next GPU worker inferred until actual evidence.
+
+LATEST additional Paper preparation:
+A/execution/current-mean3-existing-native-inert-preparation-20261025-v1,
+Consumerd6848702a93c5586594dd9d1c77752f390c2aac2c97353f989ca16b0b749b15d,
+rootSource67b66ecb/controllerSourceea0260f9/nativeSource9b16d069/central42379075.
+Exact mean3 INPUTe886/POLICYd8fe/COHORT2f299/BUNDLE219435; new code/ops/counter/
+marker roots, same physical bank/original basis. Paired one-shot/oneleg,8/8/2
+unchanged.9host+8Taskfactorymocks/RuffPASS, Parent808members/0mismatch.
+False releases/no actual Task/Docker/KIS/private/old8 change in preparation.
+New native handoff at
+A/execution/current-mean3-native-no-intent-handoff-20261025-r2/CONSUMER.json,
+SHA0889efce729d6e5e91113ca79dc77581d1852b1553e04b228288ad6527dc278f:
+tiny invented schema then exactMean3 point -> actual nativeworker/strictparser
+-> actualContext safe sink, both no_intent.2network-none containers/12CLIJobs
+closed/exactdaemonsabsent/34.228seconds. Owner/BankLeg invented: NOT full
+NativeBridge/realTask/account-writer qualification, actual broker/private/Task0.
+Prior d4193c11 pre-worker numericSYNroute failure/6.430seconds stays closed;
+same constructor rejection reproduced,100letterroutes pass, no trade repeated.
+Do not rerun either closed proof/controller or call this installReady.
+
+Parent adopts thin shared-gate direction, not all8 proposal-only migration:
+A/review/current-extra-h5-minimal-single-writer-integration-20261025-v1/
+CONSUMER.jsonb4d8a49c3ae8301f2da41d5f9d024bc17869b66acd5343764c3543bb518d94b2.
+Claude ADOPT_WITH_LIMITS: shared exclusion must cover every runnable same-bank
+ingress, including unknown daemon-create holds. Native locks/running-only
+census alone do not cover whole ROseed/effect/postseed; this is a source gap,
+not an observed real-account collision. Bernoulli prepares first stock-shape
+COW graft at current-stock-ingress-shared-gate-graft-preparation-20261025-v1,
+source+mocktests only600active/1800elapsed/no actual changes. Distinct L shape,
+positive old-writer closure/all8 rebindings and runtime proof remain future
+technical work; old8 remain enabled/unchanged for original opportunities.
+
+## Earlier Closed Package Evidence
 
 Engine: broader CHECK study is CLOSED COMPLETE_FAIL at
 A/research/current-nas-broader-check-development-20261025-v1/CONSUMER.json,

@@ -9,6 +9,27 @@ Private no-cost Data/Research/KIS Paper authority is delegated. Never KIS_LIVE_*
 real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
+Current additional Mean3 COW is CLOSEDd6848702 at
+A/execution/current-mean3-existing-native-inert-preparation-20261025-v1:
+9host+8Taskmocks/Ruff/808Parentpins, inertroot67b66ecb/native9b16/central4237.
+New A/execution/current-mean3-native-no-intent-handoff-20261025-r2 proof0889efce
+passes tinySYNschema then exactpoint nativeworker/parser->Context capture;
+2networknonecontainers/12CLIJobsclosed/34.228s/actualprivatebrokerTask0.
+Owner/BankLeg invented, no fullNativeBridge/Task/writer-exclusion qualification.
+Do not rerun the closed proof. Prior invalidSYNroute d419/6.430s staysfailed;
+namedfixture repair had100validrows before native, not repeated trade/model.
+Parent adopted thin sharedgate b4d8a49c/ClaudeADOPT_WITH_LIMITS, no all8proposal
+rewrite. Current-stock-ingress-shared-gate-graft-preparation-20261025-v1 is
+source+mocktest only, old8actions/windows/financialidentities unchanged.
+No addedpilot activation until allrunnable-ingress exclusion/positivequiescence/
+actualpaired route are qualified. This is technical work, not new approval.
+
+Latest Engine78eb5b20/644a0a53 prefixcampaign is CLOSED:3NEWGPUfits/251cohorts/
+3843+273checks/all9closed/leaseabsent/no oldmodelcalls.10bp growth/DD CAT4.989%/
+5.568%, blend4.598%/4.470%; oneof21criteriafails,20bperasesgrowth. No alpha/
+Paperswap or oldfit rerun. Cicero prepares a new distinct cost/entry-edge study;
+newSource/contract alone never means GPU is running. Market/models remainM/A.
+
 Latest TEST lifecycle outcome is CLOSEDf3498a3e at
 A/execution/current-cooperative-paper-peer-integration-20261025-v1/effect-source-abi-r1/CONSUMER.json:
 SYNSELL accepted/exactfullfill/currentowned0/pendingfalse/strictparser+terminal

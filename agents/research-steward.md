@@ -6,6 +6,16 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+Latest actual campaign78eb5b20/Source644a0a53 is CLOSED:
+3NEWGPUfits201/100/112trees/best137/36/48/13.733+12.918+10.930guestseconds,
+251H5cohorts/3843+273checks/all9closed/leaseabsent. No oldmodelcalls. Sampled
+devicepeak14095MiB/minfree10046MiB, not processallocation/isolationbenchmark.
+Engine391.001+Datareadiness300+metadata5=696.001/3600activeupper, not GPUtime.
+COMPLETE_FAIL_FIXED_ENSEMBLE, noautomaticPaper swap. Cicero now owns ONE new
+cost/absolute-entry-edge readiness/campaign, not another seenblendweight/seed
+sweep. Actual nextGPU allocation needs its own frozencontract/native/PID/start/
+lease/firststep evidence; no readyworker or utilization claim from role names.
+
 Broader chronological CAT is CLOSEDd7f9a5cf/84b99bab: oneactualGPUfit37988,
 19.085s/154trees/selected90/OD64/238checks/all6Engine+4Data containersclosed/
 GPUleaseabsent.825.226upper is NOT GPUtime. Sampled device peak14889MiB/minfree

@@ -6,7 +6,22 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
-Latest actual GPU campaign is CLOSEDd7f9a5cf/Source84b99bab at
+Latest wider-prefix campaign is CLOSED78eb5b20/Source644a0a53 at
+A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1.
+3NEWGPUCatfits201/100/112trees/best137/36/48/13.733+12.918+10.930guestseconds;
+no oldGRU/HGB/CATmodelcalls.251H5cohorts/1256forecastdates/78732rows/32ledgers/
+3843independent+273closurechecks/all9closed/GPUleaseabsent/Parent69refs exact.
+COMPLETE_FAIL_FIXED_ENSEMBLE: only combinedgrowthvsCAT fails21AND.10bp
+growth/DD CAT+4.989%/5.568%, blend+4.598%/4.470%, GRU-14.278%/21.834%,
+uniform-6.161%/11.774%.20bp CAT-.036%growth/blend-.426%; cost sensitivity
+is concrete. Currentlisting/nonPIT/globallyadaptive, not alpha/PaperPnL.
+Existing Data84611e51/cad317e3 reuse confirmed/no newkernel/build; crossfold
+outcome dependence retained/no251rephase. Engine391.001+Data300+metadata5=
+696.001activeupper/3600, not GPUtime. No currentworker inferred after closure.
+Cicero now owns ONE distinct cost/absolute-entry-edge consumer readiness or
+finite new campaign; no oldfit/seenblendweight tuning/automaticPaper swap.
+
+Earlier actual GPU campaign is CLOSEDd7f9a5cf/Source84b99bab at
 A/research/current-nas-broader-check-development-20261025-v1.238checks/
 Parent33refs exact; PID37988 start11:34:12UTC/19.085fitseconds/154trees/
 selected90/OD64.13validcohorts/83forecastdates/6174rows/12ledgers/520CLOSE/
@@ -32,7 +47,7 @@ cohorts, not causalfeatureproof/independentalpha or input/Paper swap.
 Original constant invented feature failureb1026fdf/f86ffd75 had0marketfits;
 repair30.531/90 withinoriginalcaps, oldfailed8nativeupper retained/cumulative24.
 Both originallyplannedmarketfits completedONCE, no FULLmodelcalls/Datarebuild.
-New preparation, not yet a claimed GPU run:
+Closed protocol detail, not a new dispatch:
 A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1.
 Cicero froze a distinct wider-prefix contract:3new397-CatBoost fold fits,
 cached matching prefix-GRU OOF only/no oldGRUmodelcalls, fixedhalf-rank blend,
