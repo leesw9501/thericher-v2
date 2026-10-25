@@ -81,10 +81,15 @@ Noether/Hume/Strategy workers may be resumed for a concrete new package.
 The app update lost the previous LLM agent connections. Resume census found no
 non-self controller-preparation process and only the web Docker container;
 the proposed controller root did not exist. No completed training was rerun.
-Bernoulli owns D-only existing-graft HGB-CAT preparation, Chandrasekhar owns
-the first risk-moment feature handoff, and Averroes owns its pure-kernel native
-diagnosis. Euler's risk-composition proposal is delivered/closed. These are
-bounded workers, not daemons. No broker/private-state effects are assigned.
+The first risk-moment handoff and first-cohort35-policy seal are now COMPLETE
+below; Data/Engine numerical workers are closed, no GPU/model run inferred.
+Parent owns paper_peer_group.py/tests and cross-capsule integration; Mencius
+owns paper_peer_visit.py/tests. Both tracked components are WIP, not deployed,
+and require fresh final-source QA; a31c covers the prior dcb9107 source only.
+Bernoulli owns D-only copy-on-write cooperative adapters at
+A/execution/current-cooperative-paper-peer-integration-20261025-v1.
+Old8 Task/private/bank/counter roots remain unchanged. No broker effects are
+assigned to this implementation phase; it does not hold independent lanes.
 
 Original custom controller preparation CLOSED1847406f: both Docker bootstrap
 attempts failed before native visits, no adapter/host/runtime was qualified.
@@ -95,6 +100,18 @@ journal; Claude SOUND_WITH_LIMITS393351d6 is advisory. Its conservative bound
 104.225 exceeded60 too, not a qualified budget pass or runtime. The new bounded
 consumer is A/execution/current-hgb-catboost-h5-existing-graft-preparation-20261025-v1,
 inert release only; no new Task or alteration of old8/L271/F9.
+Its closed consumer9eb232ce binds capsuleSource4dc7fe0a/inertReleasef476a8f6:
+26Windows host/factory cases/quiet+reparse/14native visits total. Native13
+failed foreign fixture because an Oct30 state was copied into an Oct26 clock;
+the failure was retained. Separate visit14 proved genuine foreign-owner refusal,
+unchanged bank/no-renorm; completed13 were not replayed. Allchildrenjoined/
+containersremoved/224activeupper. Still NOT_INSTALL_READY: reciprocal peer
+admission/whole-leg exclusion remain unintegrated. Review and Claude28dfc95b
+REVISE agree bank locks alone do not cover lock-free RO seed or daemon create
+closure. Adopt canonical-bank (not policy/group-version) exclusion across
+seed/effect/postseed, positive process+daemon closure and exact parked-host
+recognition; never whitelist foreign private writers or release reservations.
+This is source-predicted overlap risk, not an observed Oct30 runtime failure.
 
 Data probe is CLOSED at
 A/data/current-pair-whole-observation-capability-probe-20261025-v1:
@@ -162,6 +179,24 @@ one predeclared bootstrap pins the exact61-file actual import closure, not a
 blanket waiver. DRO prototype5bab7b01/INPUT6b07ee31/POLICY744ff8cf and
 quarterensemble cash INPUT1d733d5d/d7b619cf also remain prepared, not deployed.
 No old8/L271 input/financial identity swap.
+
+Risk-composition proposal3894d2e/REVISE-adjudication27a7 is source-only, no active
+12-cohort/150-day worker. First native failed N10's invented negative-gap fixture;
+diagnosis recorded N01..09 passes, not a full pass. Corrected boundary
+A/research/current-nas-rank-null-first-cohort-preparation-20261025-v1/corrected-boundary-r1:
+Consumer003cce1d/Source6612b582/requirements21fae519,12/12native/purekernel
+unchanged/allclosed. Actual-feature producer/consumer are distinct from the
+legacy invented-only consumer; old failure/debits retained.
+Data actual-feature-r1 under current-nas-risk-strata-first-cohort-input-20261025-v1:
+Consumer3f74937c/Source6ca67e2e/payload604e9314,ONEwrapper smoke+ONEexisting
+feature intake+ONEindependentcheck/69known31unknown/missingrisk0/allclosed79.210upper.
+Only two computed risk statistics+identity DTO live on A; raw market/source NPZ
+stay M. No point/scaler/model rebuild. Engine actual-first-cohort-r1 at the
+first-cohort preparation root sealed35policies including31fixed null paths:
+Sourcebb838681/sealbcaf8bbe/verify159e43b1,ONEactualcompile+verify/allclosed.
+Original100axis/69known31zero/realCASH64 retained. Pre-outcome mass qualified,
+averaged-control continuous-risk gap INCONCLUSIVE; all31 nulls retained without
+selection. No models/GPU/outcomes/ledgers/Paper input or performance verdict.
 
 Execution audit2f50419e at
 A/execution/current-nas-robust-ranking-paper-connection-readiness-20261025-v1

@@ -40,6 +40,17 @@ Bernoulli now owns inert current-hgb-catboost-h5-existing-graft-preparation-2026
 actual existing native/custody/host guards and finite8/8/2 caps. Proposed entryOct26
 18:25..19:40UTC/exitOct30 19:45..20UTC; no guarantee of seven exit completions.
 No Task/private/sizing/API/order effects in that package; old8/L271/F9 intact.
+Existing-graft capsule9eb232ce is now CLOSED/inertSource4dc7fe0a:26Windows
+host/factory cases,14native visits total. Originalforeigncase13 failed because
+fixture contained a future Oct30 state at Oct26 clock; only corrected14 was
+newly executed, genuineforeign/noadopt/no-renorm/bankstable. Alljoined/removed,
+224activeupper/900. Still NOT_INSTALL_READY. Reciprocal73ae4d26 and independent
+review find canonical-bank whole-leg exclusion/parked-peer recognition needed;
+Claude28dfc95b REVISE names supervisor death/daemon create closure risks.
+No observed actual overlap failure is claimed. Parent owns paper_peer_group
+code/tests; Mencius paper_peer_visit code/tests; Bernoulli new D-only adapters
+current-cooperative-paper-peer-integration-20261025-v1. No old8 claims/source/
+Task/private/bank/window/counters have been updated. Native locks/risk remain.
 Initial480catalog assertion met unrelated Data edits before
 effects; known-zero bootstrap pins61actual import nodes, not a blanket waiver
 or repeated model/native/build. Old8/L271/F9/financial identities unchanged.

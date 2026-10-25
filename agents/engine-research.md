@@ -12,11 +12,19 @@ generic inverse-vol/covariance repetition was rejected with prior evidence.
 Claude REVISE adjudicated27a7, not agreement/calibrated significance or alpha.
 Only first Oct26 pre-outcome seed preparation was assigned, no12-cohort/150day
 worker or new company goal. Averroes source80bc4a57/Datarequirementsc0b342c6
-at current-nas-rank-null-first-cohort-preparation-20261025-v1 is CLOSED native
-ASSERTION/no qualified boundary. Bounded diagnosis-r1 must identify the actual
-case/source cause; Data may prepare metadata but not decode actual features
-until exact producer/consumer qualification. No model, GPU, outcome or replay
-was run; old fits remain closed. This does not hold original Paper entries.
+at current-nas-rank-null-first-cohort-preparation-20261025-v1 failed N10's
+invented negative-gap fixture; diagnosis observed N01..09 passes, not fullPASS.
+Corrected-boundary-r1 Consumer003cce1d/Source6612b582/requirements21fae519 is
+CLOSED12/12native/purekernelunchanged, separate actual-feature adapter qualified.
+Data3f74937c/604e9314 then completed one risk-only feature intake+verify.
+Actual-first-cohort-r1 Sourcebb838681/sealbcaf8bbe/verify159e43b1 is now CLOSED:
+ONEactualcompile+independentcheck/35policies/31nullpaths/100slots/69known31zero.
+Pre-outcome pooled-mass qualifies only its stated condition; averaged-control
+continuous-risk gap is INCONCLUSIVE; all31 nulls retained.181.763activeupper
+includes successfulboundary120.460once; oldfailed153.294+diagnosis51.028
+unchanged. No model/GPU/price/outcome/ledger/Paperinput/150dayworker. Future
+Oct30 outcomes are not observed; no calibrated-p or alpha claim. Old fits stay
+closed and this does not hold original Paper entries.
 
 Latest actual GPU family is CLOSED at
 A/research/current-nas-h5-397-catboost-ranking-transfer-development-20261025-v1:

@@ -17,10 +17,11 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | Natural PAIR configured/readback403d; freshQAa31c185serial/19210full25skip/8workers/1399exact/Ruff3Compose/clean. Initial full/RuffE501 failure retained; integrate/commit owned changes, company outcome unfinished. |
-| Bernoulli / 실행 구현 | Custom loop1847 CLOSEDfailed/0native and superseded. Owns inert existing-graft HGB-CAT capsule current-hgb-catboost-h5-existing-graft-preparation-20261025-v1; preserve proven host/native flow, PT1M/new prospective identity, no Task/private/broker effects. |
-| Chandrasekhar / 데이터 | Pair new-layout nativec1aa/10cases/independent4e73/120upper/allclosed. Owns first-cohort risk-moment Data handoff metadata/source, actual payload waits for corrected exact native qualification, not a session wait. |
-| Averroes / 엔진 경계 | First-cohort source preparation80bc/c0b3 CLOSEDnative ASSERTION/no qualified result. Owns bounded diagnosis-r1, no old retry, model/outcome/GPU/private effects. |
+| Parent / 총괄 | dcb9107 pushed:PAIR configured403d/QAa31c. Owns new paper_peer_group.py/tests and cross-capsule binding/integration. New shared-control code needs fresh final QA; no old8 Task/private effects yet. |
+| Mencius / 실행 독립 검토·구현 | Owns ONLY paper_peer_visit.py/tests: small stdlib canonical-bank whole-leg exclusion/positive closure. Source review and ClaudeREVISE require parent-death/daemon-create safety, not another actor platform. |
+| Bernoulli / 실행 구현 | Inert capsule9eb2 CLOSED/26host/14native/foreignfixture corrected onlyvisit14/allclosed. Owns D-only current-cooperative-paper-peer-integration-20261025-v1 copy-on-write adapters; no Task/private/broker effects. |
+| Chandrasekhar / 데이터 | CLOSED actualriskDTO3f74937c/604e9314/oneintake+verify/allclosed79.210upper. RawNPZ staysM; no models/outcomes, no ongoing collector from this role. |
+| Averroes / 엔진 경계 | CLOSED corrected003c/6612/12cases then actual35policy firstOct26sealbcaf/verify159e/allclosed. No fits/outcomes/GPU/Paperinput. Original N10 failure/diagnosis retained. |
 | Euler / 전략 준비 | CLOSED proposal3894d2e/ClaudeREVISE adjudicated27a7/16refs. Conditional risk-cell31null mechanism; no active12cohort/150day worker and no model/evaluation/GPU run. |
 | Godel / 전략·반증 | CLOSED H5/397 CatBoost readinessc02e/a575/4bbmetadata and pure pair8d2df/48checks. Explicit transfer, oldH20/19notrerun; no native/fit/GPU effect. |
 | Noether / 엔진·자원 | CLOSED CatBoost2e9f actualGPU163/best99/OD64 plus ensembleCPU8159/59checks/allclosed. No active GPU/LLM worker; coordinator role resumes first ready useful family, no duplicate fit. |
@@ -39,6 +40,15 @@ Next reversible simplification: discard the unproved custom event journal/
 generic seed and reuse actual command-first H5 guards. PT1M improves opportunity
 density but never guarantees seven orders/exits. Both failed bootstrap debits
 and conservative over-cap bounds remain, not a new human approval queue.
+Throughput review08:02UTC: prior Data/Engine work has concrete closure, not
+ready training to repeat. Parent and Mencius implement disjoint shared-control
+components; Bernoulli adapts existing actual native/host wiring in D only.
+The Source-only peer-overlap prediction is a scoped Execution repair before
+additional deployment, not an observed failure or a whole-company hold.
+Reversible improvement: one canonical physical-bank exclusion, reuse L's
+positive child/create/daemon closure patterns, retain existing budget locks.
+Final code freeze precedes ONE fresh required compatibility run; a31c is not
+authority for these new files. Original company natural entry outcome remains.
 
 Throughput review05:22UTC: no future market-session foreground wait. Parent
 integrates disjoint MD/Git, Noether owns NAS model runtime/resources, Godel checks

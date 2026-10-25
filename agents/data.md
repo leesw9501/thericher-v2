@@ -31,11 +31,15 @@ parent-activation-r1 confirms configured/Task XML-ACL-idle-next exact. No Task/
 trigger/canonical change or actual natural run/recovery claimed; old0dbc is history.
 Original recorded next_due Oct26 21:55UTC stays. Diagnosisabbcf6e6 closed.
 
-Chandrasekhar now owns current-nas-risk-strata-first-cohort-input-20261025-v1:
-source/metadata before original-unit beta62/corr62 handoff. Engine native
-80bc/c0b3 failed an ASSERTION, so actual feature payload is NOT admitted yet.
-Only the exact repaired Data-producer/Engine-consumer synthetic boundary can
-admit ONE existing-point extraction; no point/scaler/model rebuild or API.
+Risk feature handoff is COMPLETE at current-nas-risk-strata-first-cohort-input-20261025-v1/actual-feature-r1:
+Consumer3f74937c/Source6ca67e2e/payload604e9314/verifyc932f47e/allclosed.
+Corrected Engine boundary003c/6612 passed12cases; new exact-wrapper smoke
+preceded ONEfeature intake+ONEindependent check/69known31unknown/missing0,
+79.210upper including prior30once. No point/scaler/model/outcome/API rebuild.
+Original preparation deadline was closed, not reset. Actual-stage caps were
+prospectively separate; old failure/debits remain. Only computed risk statistics
+and identity DTO live on A; all source/raw market NPZ staysM. Engine subsequently
+sealed35first-Oct26 shadow policies, not a Data/Paper performance claim.
 
 Current NAS point bridge COMPLETE at
 A/data/current-nas-robust-ranking-point-bridge-20261025-v1, Consumer820ab41c/
