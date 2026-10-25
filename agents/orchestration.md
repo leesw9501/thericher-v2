@@ -16,12 +16,12 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | Integrate direct-GRU PASS-small/sizing FAIL/HGB unknown and installed L482/7cdb/f1fb; shared MD/Git. Original3entries pending. |
-| Tesla / 실행 구현 | F9 exact opaque-actor admission calibration; actual broker/private reads still0 at e8e2feef. No order/bank mutation. |
-| Kant / 데이터 | Unit map5646 and pure clock helper7e23/14tests complete; no current numerical/Data/API worker. |
-| Godel / 전략·반증 | Direct-GRU f9e68b65 CLOSED; three-NEW-seed sensitivity/initial controls SOURCE PREP, no new fit yet. |
-| Noether / 엔진·자원 | Sole GPU coordinator; Toto resource/sourcebef956 and fixed50/50 compositionf8b13613 complete, no numeric worker. |
-| Hume / 엔진 실험(임시) | Actual Toto native/host/trainer implementation; one future fit conditional on frozen/native qualification, not inferred active. |
+| Parent / 총괄 | Integrate seed c024cf25, mix7c87666a and F9 first-cause; shared MD/Git. Original3entries pending, L482/7cdb installed. |
+| Tesla / 실행 구현 | F9 engineering-only actor-firstcause-r1; capture exact rejected safe source/capability before decision. d691 history guest ran/final discarded;96e0 newcalls0, UNKNOWN/HELD. |
+| Kant / 데이터 | Frozen quarterensemble QQQ typed Paper-input preparation only; no newtask/API/fit. Unit map5646/helper7e23 complete. |
+| Godel / 전략·반증 | NEW-seed c024cf25 CLOSED:3fits26/93/26epochs/2465updates/all12closed; supplies exact preprice currentpoint mapping, no new numerical job. |
+| Noether / 엔진·자원 | Sole GPU coordinator; mix7c87666a CLOSED FAIL-DD/0models. Bounded next-distinct-hypothesis/throughput review, no active GPU. |
+| Hume / 엔진 실험(임시) | Toto d6956a8d CLOSED/all6containersremoved/leaseabsent. Independent new-seed source review, no numerical work. |
 
 QQQ source design at
 A/review/current-n-ln-frozen-output-integration-20261025-v1/SOURCE-DESIGN.json
@@ -170,17 +170,19 @@ Godel's prefit proof aad04556 also falsifies Parent's fee-linear q identity:
 q is post-fee NAV weight; g=q(1+f)/(1+fq), wealth=1+g*r. Correct before fitting,
 preserve old Source/debits; no model result regrade or operator hold. F9 remains
 UNKNOWN/HELD pending a genuinely fresh exact readonly path, not missing=zero.
-At01:03UTC integration: corrected direct-GRU f9e68b65 passes its frozen
-development comparison by only2.26bps growth; all5containers/leaseclosed.
-Do not call this independent alpha or swap current Paper. Next actions are
-finite NEW-seed/initialization sensitivity and a distinct foundation learner.
-Toto prep699's loss/cache/date facts are ready, but actual native/bootstrap/
-cold source needs completion. Resourcebef956 measured22166MiB free; no GPU
-allocation inferred. Fixed50/50 sourcef8b13613 waits on its exact output receipt,
-not on human approval or a foreground worker. F9's refreshed host aceaad/21SYN
-withheld because an opaque PS actor was unregistered, not a proven writer;
-Tesla now classifies that exact source/actual private scope, never blanket-waives
-unknown PRIVATE writers or treats unrelated control as a permanent global hold.
+At01:29UTC integration: corrected direct-GRU f9e68b65 has a tiny2.26bps
+development PASS, Toto d6956a8d actual11epochs/best3/781updates is CLOSED.
+Toto10bp growth2.9505%vs2.3384% improves, but DD6.0383%vs5.9118% fails;
+all6containers/leaseclosed/1014.4713activeupper. Do not claim alpha, rerun a
+completed fit or swap current Paper. Ready independent work is3NEWseeds with
+initial controls and a frozen50/50 zero-fit composition whose dependency exists.
+F9d691 ran a history guest, response discarded at finaladmission/countsUNKNOWN;
+new96e0/abd5 attempt failed BEFORE private/API. One upperPOST/10GET charged.
+Repeated actor_unregistered without exact failed tuple is an instrumentation
+fault, not useful evidence for another broker try. Reversible improvement:
+Tesla records the first failed capability/source projection BEFORE deciding,
+engineering-only/noAPI; no blanket PS waiver, privatewriter admission or bank
+release. This lane-local fault does not pause ready research or future jobs.
 
 Fresh5fda9440/FINALc8733d4a covers clock1e7c/testca226:
 75clock/1022serial/19111full25skip/8workers/Ruff/three Compose PASS; Parent

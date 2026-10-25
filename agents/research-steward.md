@@ -14,13 +14,19 @@ closed with missing late outputs; no forbidden old inference/fit repeated.
 Godel direct-GRU f9e68b65 is now CLOSED:1CUDAfit26epochs/selected1/442updates,
 1128MiB reserved/all5containersremoved/leaseNONE/506.16of900upper. Its tiny
 development comparison PASS does not qualify alpha or expand Paper authority.
-NEXT one GPU candidate is Hume's Toto direct-allocation development, conditional
-on frozen actual host/native/optimizer/cold proof (prep6991999e alone unqualified).
-Reviewbef95670:22166MiB free, projected6GiB plus4GiB reserve eligible, no lease
-created by review. Source RO/output RW handoff and B2/B8 cumulative counters
-must be correct before dispatch. Max1fit30epochs/P8/2130updates and2700active/
-7200elapsed, old prep charges retained once. No actual start is inferred yet.
-Godel's three-NEW-seed sensitivity is SOURCE ONLY, not a concurrent GPU grant.
+Toto direct-allocation is now CLOSED FINALd6956a8d/Source770b9ba0: oneCUDAfit
+11epochs/selected3/781updates,200.998fitsec. Native/fit/inference peakreserved
+906/308/768MiB, all6containersremoved/leaseabsent,1014.4713of2700activeupper.
+Frozen financial comparison FAIL DD; no rerun or remaining-cap refund.
+Three-NEW-seed sensitivity is now CLOSED FINALc024cf25/Sourcee640fdfb:
+seeds20261120/21/22 fit26/93/26epochs, selected1/68/1,2465updates, initial
+controls saved before updates.71checks/all12containersremoved/leaseclosed/
+734.5673of1800upper. No completed fit/old-model call repeated. Fixedquarter
+ensemble is descriptive only;2initializations already pass the predicate.
+50/50 GRU/Toto7c87666a also CLOSED,0GPU/4containersremoved/92.6946upper.
+No current training is inferred. Kant's Paper-input preparation and Hume's
+source review are CPU/source-only; Noether checks next distinct useful
+hypothesis rather than scheduling another seed sweep for utilization.
 No desktop app-name veto, invented active worker or dummy utilization.
 
 Latest allocation is CLOSED, no current GPU/model worker:

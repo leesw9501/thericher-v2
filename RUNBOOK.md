@@ -18,6 +18,16 @@ HGB0c4f/791 at current-qqq-indicator-hgb-development-20261025-v1 has weights
 and a current cash point, but NO retained late prediction NPZ. Its frozen
 one-call cap forbids recreating that retrospective output; PnL remains UNKNOWN.
 Future distinct input packets need a separately frozen consumer, not an old retry.
+Toto direct utility FINALd6956a8d at
+A/research/current-toto-qqq-direct-utility-development-20261025-v1 is also CLOSED:
+onefit11epochs/best3/781updates, primaryDD FAIL/allhelpersclosed. Do not run its
+native/fit/infer/readout again. Godel's NEW three-seed and Noether's zero-fit
+50/50 composition are separate consumers, not retries of these completed jobs.
+F9 host-hardening96e0f3fb/Sourceabd5 passed46native checks but its fresh attempt
+was denied before private/API. Earlier actor-calibrationd691 did run a history
+guest whose final response was discarded; counts/outcome remain UNKNOWN and
+upper1POST/10GET stays charged. Do not report all-series calls0 or rerun blindly.
+Actor-firstcause-r1 is metadata-only first-cause capture, not a broker command.
 Ledger q is post-fee NAV target: g=q*(1+f)/(1+f*q), wealth=1+g*r_simple_net.
 Direct sample-log loss uses that exact identity, never log1p(mean) or q*r.
 The source-only clock helper7e23 is not production-integrated or a purge policy.

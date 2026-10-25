@@ -37,14 +37,37 @@ completed1CUDAfit26epochs/best1/442updates,4ledgers220marks/46checks/allclosed.
 10bp growth1.1820% vsconstantmeanq1.1594%, DD2.7384%vs2.7501%: tiny2.26bp
 increment passes frozen development criterion, not alpha/Paper promotion.
 Current shadowq44.9224% is not actual capital; L482/7cdb/271 is unchanged.
-Next source work: three NEW seeds/initial controls (Godel), actual Toto
-direct-allocation native/trainer (Hume), source-only50/50 compositionf8b13613
-waiting on exact Toto receipts. Noether coordinates GPU;22166MiB free measured,
-6GiB+4GiBreserve eligible, no current fit inferred. Toto prep699/checkpoint/
-post-checkpoint CHECK facts are not native/fit qualification by themselves.
-F9 host aceaad/e8e2feef21SYN is ready but actual visit was withheld at opaque
-actor admission; no private/credential/broker read, F9UNKNOWN/HELD unchanged.
-Tesla calibrates the exact actual-private-writer scope without blanket waiver.
+Toto direct utility is now CLOSED COMPLETE_FAIL, FINALd6956a8d at
+A/research/current-toto-qqq-direct-utility-development-20261025-v1.
+Source770b9ba0, ONE CUDAfit11epochs/selected3/781updates/200.998fitsec,
+308MiB fit-reserved VRAM. At10bp growth/DD2.9505%/6.0383% versusconstantmeanq
+2.3384%/5.9118%;20bp.7897%/6.3125% versus.1899%/6.1834%. Growth improves,
+fixed DD criterion FAIL; not alpha/Paper promotion. Native CPU/CUDA/all-RNG
+cold PASS,4ledgers220marks/onepriceintake/zero retries. All6containers removed,
+leaseabsent/1014.4713of2700activeupper. Parent rehashed9final references,0mismatch.
+Three-NEW-seed sensitivity is now CLOSED COMPLETE_DESCRIPTIVE_SEED_SENSITIVITY:
+A/research/current-qqq-direct-utility-seed-sensitivity-development-20261025-v1/
+FINAL-CONSUMER.json SHAc024cf25/Sourcee640fdfb. Seeds20261120/21/22 fit26/93/26
+epochs, selected1/68/1,2465updates total. Fixed quarterensemble includes the
+original retained q, not a selected seed:10bp growth/DD2.8387%/2.1892% versus
+ownconstant1.1287%/2.6733%;20bp1.8634%/2.2918% versus.1696%/2.7990%.
+Two initializations already satisfy the descriptive predicate; median paired
+training excess4.73bp/range2.51..672.16bp is not seed robustness/independent
+replication.71checks/28ledgers1540marks/onepriceintake/all12containersremoved/
+leaseclosed/734.5673of1800upper. No old model call or completed fit repeated.
+Fixed50/50 GRU/Toto analysis-r1 is also CLOSED FINAL7c87666a/Source3ba0a6f6:
+10bp growth/DD2.0890%/4.3950% versus1.7724%/4.3372%, primaryDD FAIL.
+99checks/4ledgers220marks/onepriceintake/0models-GPU/all4containersremoved/
+92.6946upper. Neither result changes current Paper. Kant prepares the frozen
+quarterensemble's typed input only, no new task/order/cohort; Hume reviews seed
+source, Noether chooses next distinct hypothesis rather than dummy GPU use.
+Noether remains sole GPU coordinator; no current training is inferred.
+F9 actor-calibrationd691 ran a history guest but discarded its final response;
+request counts/fresh outcome UNKNOWN, charged upper1POST/10GET, never zeroed.
+Host-hardening96e0f3fb/Sourceabd5 at the F9 root passes46native checks, yet its
+new attempt was denied BEFORE private/credential/API access (newcalls0).
+F9UNKNOWN/HELD unchanged. Tesla now captures exact first rejected actor metadata
+before decision in engineering-only actor-firstcause-r1; no broker retry there.
 
 Important model semantics: labels are SIMPLE net return, not net-log. Ledger
 q is post-fee NAV weight; at fee f, g=q*(1+f)/(1+f*q), terminal NAV=1+g*r_net.

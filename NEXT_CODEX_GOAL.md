@@ -72,18 +72,28 @@ Research actors or future due times. No recovery observe() as offline reading.
    continuous sizing025f are also CLOSED, not queued fits. Corrected direct-GRU
    f9e68b65 at A/research/current-qqq-direct-log-utility-development-20261025-v1/protocol-r2
    completed1CUDAfit26epochs/best1 and a tiny development comparison PASS,
-   not alpha/Paper promotion. NEW source work is three-NEW-seed sensitivity
-   (Godel) and actual foundation Toto native/trainer implementation (Hume).
-   Noether alone coordinates resources; frozen/native/source proofs precede
-   actual one-fit Toto dispatch. No current start is inferred or L input swapped.
-   Fixed50/50 GRU/Toto compositionf8b13613 waits on exact Toto producer receipts,
-   not a waiting worker. Diagnostic793565d1 is
+   not alpha/Paper promotion. Toto FINALd6956a8d/Source770b9ba0 is now CLOSED:
+   oneCUDAfit11epochs/selected3/781updates; growth2.9505% but DD6.0383% exceeds
+   constantmeanq5.9118%, primaryFAIL. All6containers/leaseclosed, no rerun.
+   Three NEW seeds c024cf25/e640 are now CLOSED:3fits26/93/26epochs,
+   fixed quarterensemble2.8387%growth/2.1892%DD versusconstant1.1287%/2.6733%.
+   Two untrained controls already pass the descriptive predicate; no seedwinner
+   or independent alpha claim.50/50 composition7c87666a/3ba0 is CLOSED FAIL-DD,
+   0models/GPU. No completed fit/readout is queued again. Kant prepares only
+   the frozen quarterensemble's typed Paper input under a new external root;
+   no deployment/newcohort/original task or L input change. Noether chooses
+   one genuinely distinct ready hypothesis, not an automatic seed sweep.
+   Diagnostic793565d1 is
    technical-incomplete with UNKNOWN PnL; separate b9b8411d only repairs its
    precision fixture on invented data, not its real readout or financial result.
 5. Tesla owns F9 read-only host/actor calibration under
    A/execution/current-f9-readonly-reconciliation-20261025-v1. Sourceaceaad/
-   e8e2feef21SYN passed but actual visit withheld at opaque actor admission:
-   broker/private/credential calls0, next_due unknown, F9 UNKNOWN/HELD remains.
+   actor-calibrationd691's history guest ran but final admission discarded its
+   response: counts/outcome UNKNOWN, charged upper1POST/10GET. New host-hardening
+   96e0f3fb/Sourceabd5 passes46native checks but was denied before private/API
+   (newcalls0). F9 UNKNOWN/HELD remains; no historical zero-call inference.
+   Tesla's next actor-firstcause-r1 is engineering-only: record the exact first
+   denied actor's safe capability/source tuple BEFORE decision, no broker retry.
    Scope actual private writers, not unrelated control/research or future due;
    never waive an unknown private writer or release reservations from missing
    holdings/history. Named bounded readonly account/history opportunity remains

@@ -6,19 +6,46 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
-Short queue: Godel prepares a finite three-NEW-seed sensitivity/initialization
-control at A/research/current-qqq-direct-utility-seed-sensitivity-preparation-20261025-v1.
-SOURCE ONLY, no new fit grant yet; fixed ensemble, no best-seed selection.
-Long candidate: Hume implements actual Toto direct-allocation native/trainer at
-A/research/current-toto-qqq-direct-utility-development-20261025-v1, reusing
-prepared6991999e with official checkpoint/cache and post-checkpoint CHECK facts.
-Steward reviewbef95670 measured22166MiB free,6GiB+4GiB reserve eligible;
-source/out-root/cold/optimizer counter fixes still precede qualification. One
-fit30epochs/P8/max2130updates is conditional on frozen/native proof, not yet
-claimed running. Max2700active/7200elapsed; old prep/debits retained once.
-Noether is sole GPU coordinator; Godel's completed direct-GRU lease is closed.
-50/50 GRU/Toto post-fee-q composition readinessf8b13613 is SOURCE ONLY,
-waiting for exact immutable Toto current/late receipts, not a waiting worker.
+Short queue: Kant prepares the frozen quarterensemble's typed QQQ Paper input,
+no deployment/newcohort/order. Hume independently reads new-seed source.
+Noether remains sole GPU coordinator and reviews one distinct next hypothesis;
+completed training below is not a ready GPU queue.
+
+Three-NEW-seed sensitivity CLOSED COMPLETE_DESCRIPTIVE_SEED_SENSITIVITY:
+A/research/current-qqq-direct-utility-seed-sensitivity-development-20261025-v1/
+FINAL-CONSUMER.json SHAc024cf25/Sourcee640fdfb/Resultcb23de6d. Seeds20261120/
+21/22 fit26/93/26epochs, selected1/68/1,2465updates. Three currentpoints and
+six latecalls (threeinitial/threetrained), no original-model call.71checks/
+28ledgers1540marks/onepriceintake/all12containersremoved/leaseclosed/
+734.5673of1800upper. Fixed quartermean(originalq+3trainedq), not bestseed:
+10bp growth/DD2.8387%/2.1892% vsownconstant1.1287%/2.6733%;20bp1.8634%/
+2.2918% vs.1696%/2.7990%. Two initializations already pass the descriptive
+predicate; paired training excess median4.73bp/range2.51..672.16bp and seed21's
+20bpDD failure prevent a robustness/independent-replication claim. No omnibus
+success grade, reranking or Paper swap. Initial controls diagnose learning,
+not a replacement for a chronological future test.
+
+Fixed50/50 GRU/Toto composition CLOSED COMPLETE_FAIL_CLOSED:
+A/research/current-qqq-gru-toto-fixed-sizing-composition-20261025-v1/analysis-r1/
+FINAL-CONSUMER.json SHA7c87666a/Source3ba0a6f6. One predeclared arithmetic
+mix of post-feeq,0models/GPU.10bp growth/DD2.0890%/4.3950% vsconstant1.7724%/
+4.3372%;20bp.5176%/4.5976% vs.2058%/4.5388%; primaryDD FAIL. Meanintended
+gross70.4739% is not matched realized risk. Current shadow72.4600%QQQ before
+prices is not actual capital.99checks/4ledgers220marks/onepriceintake/
+all4containersremoved/92.6946upper. Preserve original individual failures.
+
+Foundation direct utility is CLOSED COMPLETE_FAIL, not another ready fit:
+A/research/current-toto-qqq-direct-utility-development-20261025-v1/FINAL-CONSUMER.json
+SHAd6956a8d/Source770b9ba0. ONE CUDAfit11epochs/selected3/781updates,
+200.998fitsec/308MiBreserved. Native CPU/CUDA, true optimizer/all-RNG cold
+next-update/checkpoint and12funded-ledger identities pass. One currentB1+
+laterB11,4ledgers220marks/onepriceintake/zero retries.10bp growth/DD
+2.9505%/6.0383% vsconstantmeanq2.3384%/5.9118%;20bp.7897%/6.3125%
+vs.1899%/6.1834%. Frozen DD comparison FAIL despite better growth.
+All6containersremoved/leaseabsent/1014.4713of2700activeupper; Parent9refs
+match. Official dated checkpoint still has corpus limitations; TRAIN1124/
+CHECK33 differs from raw-GRU1067/119, not a causal architecture comparison.
+Seen55sessions/nonPIT/adaptive development, not independent alpha/Paper PnL.
 
 Corrected direct-GRU protocol-r2 FINALf9e68b65/Sourcebcfbb6d3 at
 A/research/current-qqq-direct-log-utility-development-20261025-v1:

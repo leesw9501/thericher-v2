@@ -21,6 +21,18 @@ disabled. EntryOct27 03:00..03:15KST, exitOct31 04:55..05:00KST/PT4M/quiet.
 No manual Task run, API/order or bank/request/reservation change. Source/native
 runtime facts and fills remain future evidence. Older preparation below is
 historical, not the current release. Cleanupff5a fresh24cases is clean PASS.
+Current F9 root: A/execution/current-f9-readonly-reconciliation-20261025-v1.
+Actor-calibrationd691 completed a history guest but final admission discarded
+its response: request counts/outcome UNKNOWN, charged upper1POST/10GET.
+Host-hardening-r1/CONSUMER96e0f3fb, runtimeSourceabd5:46native checks PASS,
+strict unqualified-delivery retention and exact research-artifact-writer scope.
+Its new attempt was denied BEFORE private/credential/API access (newcalls0);
+actual failed actor tuple was not captured, not proof of a private writer.
+Remaining new read opportunity is unused, cumulative ceiling2POST/20GET; no
+repeat under the consumed Source. Tesla now owns engineering-only
+actor-firstcause-r1: capture exact first-denied safe capability/source metadata
+before decision, no broker/private/credential/task effects or blanket waiver.
+F9 remains UNKNOWN/HELD; no empty-holdings/history-based release or substitution.
 At10:02:43UTC six exact planned entry/exit tasks enabled/Ready3/0instances,
 future13:40/14:20/17:00UTC Oct26 entries; metadata only, no source/ACL/fill proof:
 A/execution/current-oct26-entry-metadata-readback-20261024-v1/METADATA-20261024T100243Z.json
