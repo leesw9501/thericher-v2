@@ -74,20 +74,71 @@ that contract. Empty history/missing opener cannot prove no-send or free reserve
 
 ## Current Packages
 
-All newly dispatched training/inference is CLOSED. No active GPU fit or
-unnecessarily held ready GPU campaign is claimed; do not repeat completed fits.
-Noether/Hume/Strategy workers may be resumed for a concrete new package.
+All dispatched training/inference is CLOSED; do not repeat completed fits.
+Latest seed-stability FINAL5d0d6983/Sourcea74ca4ae/verify85f27429 is CLOSED
+adaptivePASS: exactly3newGPU CatBoost fits25.795/31.054/26.951s, no oldmodel
+calls/retry, allhelpersjoined/removed/leaseabsent. Fixed HGB+mean-rank3 gives
++1.2072%growth/.3835%DD at10bp/leg on9seen cohorts, not independent alpha or
+Paper PnL/input promotion. Device sampled peak14780MiB is not process allocation.
+Cross-asset attention FINALe480fc35/Source11cb9d87/verifya848edc5 is complete:
+FULL/DIAGONAL concurrent CUDA23/26epochs, selected3/6,2001/2262updates,
+35.673/39.510seconds. FULL improves growth but loses frozen drawdown condition;
+criterionFAIL, not runtime failure. All5containers closed/removed/absent.
+Closed-output attribution91be0f6b/f375877e passed37checks/101.52activeupper:
+FULL drawdown4929..4946, aggregate concentration equal, turnover difference
+from terminal proceeds is not proven churn. No regrade/alpha/Paper promotion.
+Source-only readiness6ad6338f/a87b4f06 proves generic R-D already tested on old
+25/R21/HGB; it is not a new mechanism. Parent explicitly assigns full100/397
+attention CLOSE-path target TRANSFER with one new CUDA fit and exact cached
+FULL control, never another FULL fit. Contract/Claude/changed loss-role native
+must precede fit; this preparation is not active GPU work or a Paper hold.
+Engine root A/research/current-nas-attention-close-path-target-transfer-20261025-v1;
+Data root A/data/current-nas-attention-close-path-target-inputs-20261025-v1.
+4500activeSUM/7200elapsed, readiness300 counted once, onefit1700/160max/PAT20/
+13920updates/no numerical retry, no feature/scaler rebuild/INNER fit labels.
+New Data loss READY5d69577e/Source5cdb4105/DTOff9d4c68/seal605e12cf at
+Data root receipt-recovery-r1: build1/verify1/24checks/exactmasks/keys/clocks/
+all3childrenjoined. Old Data300 failure af6b1f55 stays failed; new explicitly
+bounded engineering recovery174.084/180 comes from familyreserve additionally,
+not a refund, morefit or repeated successfulnative. Data directly handed to
+Engine consumed it in CLOSED transfer Consumerf0c2c08c/Source69395dc6/
+verify2b448af0/202checks: one newCUDAfit23/best3/2001updates/32.207s, cached
+FULL never refit. Growth/DD -.0385%/.9118% versus FULL+.5750%/.7204%, fixed
+criterionFAIL; not runtime failure or a remaining fit assignment.
 
 The app update lost the previous LLM agent connections. Resume census found no
 non-self controller-preparation process and only the web Docker container;
 the proposed controller root did not exist. No completed training was rerun.
 The first risk-moment handoff and first-cohort35-policy seal are now COMPLETE
 below; Data/Engine numerical workers are closed, no GPU/model run inferred.
-Parent owns paper_peer_group.py/tests and cross-capsule integration; Mencius
-owns paper_peer_visit.py/tests. Both tracked components are WIP, not deployed,
-and require fresh final-source QA; a31c covers the prior dcb9107 source only.
-Bernoulli owns D-only copy-on-write cooperative adapters at
-A/execution/current-cooperative-paper-peer-integration-20261025-v1.
+Parent owns paper_account_round.py and its tests; Mencius
+completed paper_peer_visit.py/tests ac678/53PASS1symlink-privilegeSKIP, real
+Windows ownerdeath/junction/two-process exclusion. These components are NOT
+deployed; fresh final QA d3932f49 now covers1405exact/976serialPASS2skip/
+19305fullPASS26skip/19331total/8workers/Ruff3Compose, own temp/leases closed.
+a31c is prior-source history. Earlier partial/failing runs remain failed.
+Unused paper_peer_group/parked-peer source is excluded from production; its
+frozen D-only prototype remains history, not an active dependency. Parent's
+round focused20PASS/Ruffclean. Bernoulli owns the single-owner-r1
+finite account dispatcher under current-cooperative-paper-peer-integration-20261025-v1.
+single-owner-r1 CLOSED67c93640/Source30a5e995/Release9125b4c5 is source/native
+preparation ONLY:13host cases/12Taskmocks/changed native SYN/Job-daemon survival,
+no installReady or real scheduled-origin proof. Parent34refs match. Its scope
+is HGB-only; Joint17/old8 migration is not proved. Production adapter child
+single-owner-production-adapter-r1 CLOSED FAILED a6c12425/3bd743ef:16host/
+14pairedowner mocks/5nativevisits. Constant SYN clock stalled real pacing;
+root watchdog lost exact Job join,1282lower>1200activecap. Known processes/
+daemon contained, old inventedhold/pending/debits retained, lostJoin UNKNOWN.
+No changed-route wire/fill/exit proved and no real private/API/Task effect.
+New fixture-recovery-r1 and Mencius clock/root-Job kernels150 inside650active/
+1800elapsed/max8newnative repair the test harness first. Old8 untouched;
+no install, failed-loop/old14/tiny/model/point replay or old hold reclamation.
+Four-peer bridge hooks are superseded unfinished prototypes, not runtime.
+Claude f60301a9 RECOMMEND_B_PHASED/independent review support single ownership,
+original native capsule interfaces/paths/counters, one private child at a time,
+NEW actual owner ABI and positive process/daemon closure. No service or naked
+native.run/shared-interpreter rewrite now. Models become proposal-only only
+after positively quiescent old writers; no actual cutover has occurred.
 Old8 Task/private/bank/counter roots remain unchanged. No broker effects are
 assigned to this implementation phase; it does not hold independent lanes.
 
@@ -197,6 +248,22 @@ Sourcebb838681/sealbcaf8bbe/verify159e43b1,ONEactualcompile+verify/allclosed.
 Original100axis/69known31zero/realCASH64 retained. Pre-outcome mass qualified,
 averaged-control continuous-risk gap INCONCLUSIVE; all31 nulls retained without
 selection. No models/GPU/outcomes/ledgers/Paper input or performance verdict.
+
+Completed cross-asset attention family:
+A/research/current-nas-cross-asset-attention-development-20261025-v1,
+CONTRACTaa081fc7/requirementsd1a6bdbe/finalSource11cb9d87. Two CUDA fits are
+closed as FINALe480fc35 above, adaptive seenINNER9 only. Initial CPU native
+failed an order-sensitive checkpoint fingerprint; old3updates/19forwards/source
+749upper retained. checkpoint-recovery-r1 Source7aa29bbc qualified CPU cold
+next-update and CUDA selector/checkpoint exactness before actual market fits.
+Data A/data/current-nas-feature-only-attention-inputs-20261025-v1:
+Consumera6a313d1/Sourcefd0111ee/DTOdb65399b/ABI37c4756e/allowlistb9d8160e,
+ONEbuild+verify/oneactual-role native/allclosed190.754upper inclmetadata30once.
+Feature dates2766/123/43/full100x397 with296TRAIN/1053CHECK feature-known but
+future-label-unknown peers retained; separate loss files/affinesONCE. All array
+payload stays M, no acquisition/point rebuild. Actual two market fits and five
+container closures are proven, not inferred from this Data handoff. Direct
+exact Data->Engine callbacks are allowed without Parent relay.
 
 Execution audit2f50419e at
 A/execution/current-nas-robust-ranking-paper-connection-readiness-20261025-v1

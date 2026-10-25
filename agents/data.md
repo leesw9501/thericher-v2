@@ -6,6 +6,15 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+CLOSE-target handoff is CLOSED/consumed at
+A/data/current-nas-attention-close-path-target-inputs-20261025-v1/receipt-recovery-r1:
+Consumer5d69577e/Source5cdb4105/DTOff9d4c68/seal605e12cf. Onebuild/oneverify/
+24checks, exact TRAIN/CHECK rows/masks/keys/clocks and independent8point oracle;
+all3childrenjoined/removed. No feature/affine rebuild or INNER targets/API/Task.
+Old native receipt failure af6b1f55/300upper remains failed; named recovery
+174.084/180 retained successfulnative without replay. Engine onefitf0c2 is
+now CLOSED, not another ready Data build. Natural retention due below unchanged.
+
 PAIR retention source is IMPLEMENTED/defaultOFF: cache4627738c/executione8d379fb/
 script0515d42c/testsce937997.102focused then Parent394serial/19209full25skip/
 8workers/1399exact/Ruff3Compose, authority0dbcc98a. Legacy canonical/merge/

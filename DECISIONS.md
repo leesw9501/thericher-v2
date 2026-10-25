@@ -10534,3 +10534,37 @@ prerequisites of the finite F source, not operator approval or a global hold.
 Claude SOUND_WITH_LIMITS is advisory, not the authority grant:
 D:/thericher-v2/model-artifacts/research/current-toto-task-adaptation-readiness-20261024-v1/RESPONSE.txt
 SHA256 3a0c7808b5e7909ba6dc4f926e1c4877f972bdc95cec17c990563fa31a2829cd.
+
+## 2026-10-25 KST - One Account Owner Before A Persistent Service
+
+Consumer: make the original GRU/TimesFM/Joint17 and additional L/HGB-CatBoost
+Paper legs executable without N-way private-writer peer permissions. Prefer
+one bounded account dispatcher, serial whole original legs and at most one
+private-capable capsule active. Models publish proposals; they do not become
+independent account actors. Keep Python/Docker and existing native SDK/risk,
+guest/private paths, source-bound journals, input/policy/intent identities,
+per-cohort counters and ONE original initial tenth/F9 reservations unchanged.
+
+First qualify a finite serial round and its NEW central scheduled-owner ABI;
+do not call unchanged-source dry mode native qualification, debit twice,
+borrow another Task's owner proof or infer fills from callbacks. A persistent
+service and a single shared-interpreter rewrite are later choices after runtime
+evidence, not prerequisites. Only positively quiescent old writers may become
+proposal-only. Disabled triggers, names or code installation do not prove that.
+
+The staged four-peer source/bridge design is superseded, not completed or
+deployed. Reuse its useful finite binding and operational exclusion components
+without adding reciprocal RW exceptions. Serial dispatch still needs positive
+child/Job and exact daemon/create closure; native bank locks and exact request
+reconciliation remain decisive. No approval/capital/live authority is added.
+
+Claude RECOMMEND_B_PHASED is advisory; Parent adopts its simpler ownership,
+not a grant to bypass native/source/deadline checks. Independent source review
+also recommends preserving NAS and L's different journal/native interfaces.
+D:/thericher-v2/model-artifacts/execution/current-cooperative-paper-peer-integration-20261025-v1/simpler-executor-review-r1/CONSUMER.json
+Evidence SHA256 f60301a9c30a0ae4d67086c860c19c3ced894d1cd895cd11d1f98e4996cae590.
+
+Within assigned frozen contracts, qualified role handoffs may go directly from
+Data to Engine. Parent owns direction/integration, not an extra serial relay.
+This avoids idle prepared work while Parent handles an independent lane; it
+does not let a worker change trial caps, broker risk, rights or Git ownership.

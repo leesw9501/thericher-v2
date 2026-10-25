@@ -17,11 +17,12 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | dcb9107 pushed:PAIR configured403d/QAa31c. Owns new paper_peer_group.py/tests and cross-capsule binding/integration. New shared-control code needs fresh final QA; no old8 Task/private effects yet. |
-| Mencius / 실행 독립 검토·구현 | Owns ONLY paper_peer_visit.py/tests: small stdlib canonical-bank whole-leg exclusion/positive closure. Source review and ClaudeREVISE require parent-death/daemon-create safety, not another actor platform. |
-| Bernoulli / 실행 구현 | Inert capsule9eb2 CLOSED/26host/14native/foreignfixture corrected onlyvisit14/allclosed. Owns D-only current-cooperative-paper-peer-integration-20261025-v1 copy-on-write adapters; no Task/private/broker effects. |
-| Chandrasekhar / 데이터 | CLOSED actualriskDTO3f74937c/604e9314/oneintake+verify/allclosed79.210upper. RawNPZ staysM; no models/outcomes, no ongoing collector from this role. |
-| Averroes / 엔진 경계 | CLOSED corrected003c/6612/12cases then actual35policy firstOct26sealbcaf/verify159e/allclosed. No fits/outcomes/GPU/Paperinput. Original N10 failure/diagnosis retained. |
+| Parent / 총괄 | Fresh QA d3932f49 PASS976serial/19305full26skip/1405exact/Ruff3Compose; owns integration/Git. No external deployment inferred. Old8 Task/private roots unchanged. |
+| Mencius / 실행 독립 검토·구현 | Core ac678 and scoped disk-fixture repair verified. Owns new advancing-SYN-clock/root-Job helper150 inside Execution recovery650; no repo writes. |
+| Bernoulli / 실행 구현 | Production-adapter-r1 CLOSED FAILED a6c12425/3bd743ef,5native/stalledSYNclock/lostJobjoin/1282lower>1200. Contained, oldSYNhold retained. NEW fixture-recovery-r1 max8native/650active/1800elapsed, no actualTask/private effects. |
+| Cicero / 엔진·GPU 조정 | CLOSED seed-stability5d0d6983/3NEWGPUfits/adaptivePASS/alljoined; attentione480 and onefitCLOSE-transferf0c2 criterionFAIL. No current numerical worker or oldfit rerun. |
+| Chandrasekhar / 데이터·전략 탐색 | CLOSED targetloss READY5d69577e/Source5cdb4105/DTOff9d4c68/24checks/build1verify1/all3joined. Old300failure retained; one named recovery174.084/180 from familyreserve, successfulnative not repeated. Direct Enginehandoff sent. |
+| Averroes / 엔진 경계 | CLOSED corrected003c/6612/12cases then actual35policy firstOct26sealbcaf/verify159e/allclosed. No outcomes or Paperinput. Original N10 failure/diagnosis retained. |
 | Euler / 전략 준비 | CLOSED proposal3894d2e/ClaudeREVISE adjudicated27a7/16refs. Conditional risk-cell31null mechanism; no active12cohort/150day worker and no model/evaluation/GPU run. |
 | Godel / 전략·반증 | CLOSED H5/397 CatBoost readinessc02e/a575/4bbmetadata and pure pair8d2df/48checks. Explicit transfer, oldH20/19notrerun; no native/fit/GPU effect. |
 | Noether / 엔진·자원 | CLOSED CatBoost2e9f actualGPU163/best99/OD64 plus ensembleCPU8159/59checks/allclosed. No active GPU/LLM worker; coordinator role resumes first ready useful family, no duplicate fit. |
@@ -40,15 +41,21 @@ Next reversible simplification: discard the unproved custom event journal/
 generic seed and reuse actual command-first H5 guards. PT1M improves opportunity
 density but never guarantees seven orders/exits. Both failed bootstrap debits
 and conservative over-cap bounds remain, not a new human approval queue.
-Throughput review08:02UTC: prior Data/Engine work has concrete closure, not
-ready training to repeat. Parent and Mencius implement disjoint shared-control
-components; Bernoulli adapts existing actual native/host wiring in D only.
-The Source-only peer-overlap prediction is a scoped Execution repair before
-additional deployment, not an observed failure or a whole-company hold.
-Reversible improvement: one canonical physical-bank exclusion, reuse L's
-positive child/create/daemon closure patterns, retain existing budget locks.
-Final code freeze precedes ONE fresh required compatibility run; a31c is not
-authority for these new files. Original company natural entry outcome remains.
+Throughput review09:36UTC: attention and attribution are closed, not idle
+ready fits. Engine/Data prepare one explicit CLOSE-target transfer and reuse
+the exact cached FULL control, avoiding duplicate completed training. Execution
+owns actual central adapter/native packet/paired-exit work; old8 remain ready
+for their original future opportunities. Parent owns final QA/Git after the
+invoked Validation fixture write set freezes. C free14.81percent exposed real-
+disk dependencies in synthetic tests; D free38.6percent is not the block.
+Reversible improvement: scoped synthetic disk facts plus actual projected-floor
+negative tests across related consumers, instead of repeating a full suite for
+each host-dependent failure. No production floor or cleanup denial is bypassed.
+R1 fixture failure and R2/R3 partial suites remain failed, not authority. Fresh
+final-source coverage is still required; repo tests do not qualify D adapters.
+Claude f603 B_PHASED direction stays adopted; no double debit, native bypass,
+N-way private-writer permissions or unknown-intent reset. Company outcome and
+future natural entries remain unfinished, with no foreground session wait.
 
 Throughput review05:22UTC: no future market-session foreground wait. Parent
 integrates disjoint MD/Git, Noether owns NAS model runtime/resources, Godel checks

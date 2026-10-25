@@ -5,9 +5,11 @@ import hashlib
 import json
 from datetime import UTC, datetime
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
+from thericher_v2.execution import kis_private_daily_collector as storage
 from thericher_v2.execution.kis_market_data import (
     KIS_PAPER_DAILY_PATH,
     KIS_PAPER_MARKET_DATA_BASE_URL,
@@ -33,6 +35,31 @@ from thericher_v2.execution.kis_private_daily_collector import (
 )
 
 _OBSERVED_AT = datetime(2026, 7, 21, 18, 0, tzinfo=UTC)
+
+
+@pytest.mark.parametrize("free,projected,blocked", [
+    (149_999, 0, True), (150_000, 0, False), (150_001, 1, False),
+    (150_001, 2, True), (900_000, 750_000, False), (900_000, 750_001, True),
+])
+def test_projected_cache_floor_uses_synthetic_disk_facts(
+    tmp_path, monkeypatch, free, projected, blocked
+):
+    queried = []
+
+    def disk_usage(path):
+        queried.append(Path(path))
+        assert Path(path) == tmp_path
+        return SimpleNamespace(total=1_000_000, used=1_000_000 - free, free=free)
+
+    monkeypatch.setattr(storage, "shutil", SimpleNamespace(
+        disk_usage=disk_usage, rmtree=storage.shutil.rmtree
+    ))
+    assert storage.private_daily_cache_would_cross_free_space_floor(
+        cache_root=tmp_path / "absent" / "cache", repo_root=tmp_path / "repo",
+        projected_bytes=projected,
+    ) is blocked
+    assert queried == [tmp_path]
+    assert not (tmp_path / "absent").exists()
 
 
 class _RecordingTransport:

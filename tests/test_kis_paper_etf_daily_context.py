@@ -98,6 +98,14 @@ def intake(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setattr(native.urllib.request, "build_opener", lambda *args: opener)
     cache = tmp_path / "market" / data.CACHE_ROOT.name
     artifacts = tmp_path / "artifacts" / data.ARTIFACT_ROOT.name
+
+    def disk_usage(path):
+        assert Path(path).resolve().is_relative_to(tmp_path.resolve())
+        return SimpleNamespace(total=1_000_000_000, used=100_000_000, free=900_000_000)
+
+    monkeypatch.setattr(data.storage, "shutil", SimpleNamespace(
+        disk_usage=disk_usage, rmtree=data.storage.shutil.rmtree
+    ))
     kwargs = dict(
         cache_root=cache,
         artifact_root=artifacts,
@@ -177,6 +185,19 @@ def test_complete_native_input_and_early_spy_two(intake) -> None:
     for path in kwargs["artifact_root"].rglob("*.json"):
         text = path.read_text()
         assert "synthetic-token" not in text and '"open"' not in text and '"clos"' not in text
+
+
+def test_projected_storage_floor_blocks_before_client(intake, monkeypatch):
+    _, opener, kwargs = intake
+    monkeypatch.setattr(data.storage.shutil, "disk_usage", lambda _: SimpleNamespace(
+        total=1_000_000_000, used=848_000_001, free=151_999_999
+    ))
+    monkeypatch.setattr(data.native, "KisPaperMarketDataClient",
+                        lambda *a, **k: pytest.fail("storage_floor_must_precede_client"))
+    result = collect(intake)
+    assert result.reason == "storage_floor"
+    assert result.token_posts == result.daily_gets == 0 and opener.calls == []
+    assert not (kwargs["cache_root"] / ".collector.lock.d").exists()
 
 
 @pytest.mark.parametrize("options", [{}, {"requested_symbols": None},

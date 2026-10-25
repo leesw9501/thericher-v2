@@ -10,7 +10,18 @@ real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
-Current final source QA is a31c5f1885ce11592d9d673a1f444e17f359890380a50b4b4acb54d35430c00e:
+Current final source QA is d3932f49cd04da7011cded5b28faf29c8c94cc3ccae5c899e505ab61638ba2ae:
+A/verification/current-account-serial-round-integration-20261025-v1/technical-r8/AUTHORITY.json.
+976serialPASS2knownskip/19305fullPASS26knownskip/19331total/8workers/1405exact,
+Ruff/default+research+accountingCompose(.env.example), own scratch/leases/
+processes closed. Earlier failed/partial suites are not authority. Test-only
+capacity proxy installs before collection and session/module fixture setup;
+only resolved owned pytest scratch gets synthetic capacity. Outside queries,
+path errors and actual projected-floor tests remain, production15percent
+unchanged. External D runtime still needs fresh native/independent checks;
+this suite does not qualify deployment, broker fills or an old failed command.
+
+Historical prior-source QA is a31c5f1885ce11592d9d673a1f444e17f359890380a50b4b4acb54d35430c00e:
 A/verification/current-pair-retention-deployment-integration-20261025-v1/technical-r2/AUTHORITY.json.
 185serial/19210full25skip/19235total/8workers/1399exact/Ruff3Compose,
 own scratch/leases/processes closed. Earlier full passed but Ruff found one

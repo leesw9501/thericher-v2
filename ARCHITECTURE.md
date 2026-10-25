@@ -19,6 +19,21 @@ acyclic. Across timestamps, only durable portfolio and broker state feed the
 next graph evaluation. A learned node can produce evidence or a desired target
 state; only deterministic Execution code may create an `OrderIntent`.
 
+Operational ownership is account-centric. Competing models publish proposals;
+one bounded account dispatcher advances original per-cohort legs serially, with
+at most one private-capable capsule active. Preserve the existing native risk,
+guest/private paths, input/policy/intent identity, initial shared allocation and
+restart counters. The dispatcher does not debit again or infer fills from a
+callback return. Account reads and physically isolated Data/Research remain
+separate scopes, not a global permission wait.
+
+The first consolidation is a finite serial round in the existing Python/Docker
+runtime, not a shared-interpreter rewrite, an always-on service or reciprocal
+permissions among independent broker writers. Actual Task-owner ABI and process/
+daemon closure must be qualified before replacing an old effect path. A model
+Task may become proposal-only only after its old writer is positively quiescent;
+source changes or disabled triggers alone do not prove that closure.
+
 ## Deployability-First Input Contract
 
 The active paper-trading graph prefers inputs that KIS can provide at the

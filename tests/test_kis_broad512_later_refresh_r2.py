@@ -12,6 +12,7 @@ from types import SimpleNamespace
 import pytest
 
 from thericher_v2.data import kis_broad512_later_refresh_r2 as r
+from thericher_v2.execution import kis_private_daily_collector as storage
 from thericher_v2.execution.kis_market_data import (
     KisMarketDataResponse,
     KisPaperDailyQuery,
@@ -24,6 +25,32 @@ from thericher_v2.execution.kis_private_daily_collector import (
     run_bounded_kis_paper_private_daily_collection,
     write_kis_paper_private_daily_cache,
 )
+
+
+@pytest.fixture(autouse=True)
+def synthetic_cache_disk(tmp_path, monkeypatch):
+    facts = SimpleNamespace(total=1_000_000_000, used=100_000_000, free=900_000_000)
+
+    def disk_usage(path):
+        assert Path(path).resolve().is_relative_to(tmp_path.resolve())
+        return facts
+
+    monkeypatch.setattr(storage, "shutil", SimpleNamespace(
+        disk_usage=disk_usage, rmtree=storage.shutil.rmtree
+    ))
+    return facts
+
+
+@pytest.mark.parametrize("delta", [-1, 0, 1])
+def test_projected_15_percent_floor_boundary(tmp_path, synthetic_cache_disk, delta):
+    projected = 16 * 1024**2
+    synthetic_cache_disk.free = 150_000_000 + projected + delta
+    synthetic_cache_disk.used = synthetic_cache_disk.total - synthetic_cache_disk.free
+    if delta < 0:
+        with pytest.raises(r.Stop, match="storage_floor"):
+            r.floor(tmp_path, projected)
+    else:
+        r.floor(tmp_path, projected)
 
 
 @pytest.fixture(autouse=True)

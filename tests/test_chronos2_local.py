@@ -521,11 +521,18 @@ def test_backend_error_is_redacted(model_files, backend):
 
 
 @pytest.fixture
-def prepare_script():
+def prepare_script(monkeypatch):
     path = Path(__file__).resolve().parents[1] / "scripts" / "prepare_chronos2_model.py"
     spec = importlib.util.spec_from_file_location("prepare_chronos2", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    monkeypatch.setattr(
+        module,
+        "shutil",
+        SimpleNamespace(
+            disk_usage=lambda _: SimpleNamespace(total=10**12, used=10**11, free=9 * 10**11)
+        ),
+    )
     return module
 
 

@@ -149,6 +149,10 @@ def rig(tmp_path, monkeypatch):
     monkeypatch.setattr(m, "datetime", NativeClock)
     monkeypatch.setattr(c, "_MARKET_BASE", tmp_path / "M")
     monkeypatch.setattr(c, "_ARTIFACT_BASE", tmp_path / "A")
+    # The synthetic market volume is independent of the host scratch drive.
+    monkeypatch.setattr(
+        c.shutil, "disk_usage", lambda _: SimpleNamespace(free=900_000_000, total=1_000_000_000)
+    )
     monkeypatch.setattr(urllib.request, "build_opener", lambda *_args: opener)
     monkeypatch.setattr(
         socket.socket, "connect", lambda *_args: pytest.fail("real network forbidden")

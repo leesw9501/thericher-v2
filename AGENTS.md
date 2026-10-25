@@ -26,6 +26,12 @@ limitation, repair it or choose another correctly scoped action.
 
 Paper is an early execution-learning loop, not a reward for model profitability.
 An operational baseline may trade while research/prospective data continue.
+A model/strategy is a proposal source, not a separate concurrent private-bank
+writer. Prefer one account-owned bounded serial dispatcher with the existing
+native risk and per-cohort journals/counters. Stage a finite serial round before
+an always-on service; do not construct N-way broker-writer peer permissions.
+Migrate old writers only after positive owned-process/container closure and
+preserve their exact inputs, pending intents, operational paths and allocation.
 A research-only ban on credentials, APIs, orders, GPU or schedules applies to
 THAT package/process, not independent Data or Execution work. Enforce the
 separation in client/state paths, not only prose.
@@ -82,6 +88,10 @@ Codex owns direction, dispatch and integration, not every lane's implementation.
   in a lane require disjoint writes/resources. Keep one active collector per
   cache/account gate and one GPU resource coordinator. Ready independent GPU
   workers may run concurrently under that coordinator and measured headroom.
+- Roles may directly exchange exact schemas, qualified evidence and readiness
+  callbacks inside their assigned contracts. Parent is not a serial relay or
+  extra approval for an already-qualified handoff. Scope, trial caps, shared
+  risk and Git remain with their named owners; report material changes to Parent.
 - Prioritize actual Paper technical faults/unresolved owned positions; keep
   independent data/research preparation moving during repairs.
 - Workers own cooldowns/next_due. Do not foreground-wait for sessions/quotas

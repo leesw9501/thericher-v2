@@ -4,6 +4,7 @@ import json
 import os
 from datetime import UTC, datetime, timedelta
 from pathlib import Path, PureWindowsPath
+from types import SimpleNamespace
 
 import pytest
 
@@ -39,6 +40,34 @@ from thericher_v2.execution.kis_private_daily_collector import (
 )
 
 _OBSERVED_AT = datetime(2026, 7, 21, 18, 0, tzinfo=UTC)
+
+
+@pytest.fixture(autouse=True)
+def synthetic_cache_disk(tmp_path, monkeypatch):
+    facts = SimpleNamespace(total=1_000_000_000, used=100_000_000, free=900_000_000)
+
+    def disk_usage(path):
+        assert Path(path).resolve().is_relative_to(tmp_path.resolve())
+        return facts
+
+    monkeypatch.setattr(daily_collector, "shutil", SimpleNamespace(
+        disk_usage=disk_usage, rmtree=daily_collector.shutil.rmtree
+    ))
+    return facts
+
+
+def test_backfill_projected_floor_blocks_before_client(tmp_path, synthetic_cache_disk):
+    synthetic_cache_disk.free = (
+        150_000_000 + daily_collector.KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PROJECTED_BYTES - 1
+    )
+    synthetic_cache_disk.used = synthetic_cache_disk.total - synthetic_cache_disk.free
+    result = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: pytest.fail("storage_floor_must_precede_client"),
+        cache_root=tmp_path / "cache", repo_root=tmp_path / "repo", code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+    )
+    assert result.status == "storage_floor_would_be_crossed"
+    assert result.manifest_path is None
 
 
 class _RecordingTransport:

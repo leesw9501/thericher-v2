@@ -13,6 +13,17 @@ closed; F actual2GPUfits closed technical/financialUNKNOWN. H TabICL actual
 all29CASH/COMPLETE_FAIL is not adopted. I new prospective ADAPT7 Research point
 is not broker input/capital allocation or a fourth installed owner.
 Research does not gate original natural Paper opportunities or release F9.
+Current B_PHASED account-owner direction supersedes reciprocal private peers.
+Core account_round/peer_visit QA d3932f49 is fresh976serial/19305full/1405exact,
+NOT D-runtime/deployment proof. Production-adapter-r1 CLOSED FAILED a6c12425/
+3bd743ef:16host/14pairedowner mocks/5nativevisits; fixed SYN clock stalled
+pacing, watchdog lost exact Job join, activeSUM1282lower>1200. No positive
+changed-route wire/fill/ownedexit proved; no real private/API/Task effects.
+Known processes/daemon contained; old inventedhold/pending/debits retained,
+lostJoin UNKNOWN. Bernoulli now owns fixture-recovery-r1; Mencius clock/root-
+Job helper150 is inside650active/1800elapsed/max8newnative. No broken-loop
+replay, gate/rate weakening or old8 migration/install before native proof.
+Older preparation/protocol notes below are frozen history, not active owners.
 NEW connection audit COMPLETE at
 A/execution/current-nas-robust-ranking-paper-connection-readiness-20261025-v1,
 Consumer2f50419e/13source refs. Existing model-weights-nas-5session-2026-v1

@@ -3,11 +3,13 @@ from __future__ import annotations
 import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from types import SimpleNamespace
 from urllib.parse import parse_qs, urlsplit
 
 import pytest
 
 import thericher_v2.execution.kis_paper_daily_history as daily_history
+from thericher_v2.execution import kis_private_daily_collector as storage
 from thericher_v2.execution.kis_market_data import (
     KIS_PAPER_DAILY_PATH,
     KIS_PAPER_DAILY_TR_ID,
@@ -35,6 +37,38 @@ from thericher_v2.execution.kis_paper_daily_history import (
     UrllibKisPaperDailyHistoryTransport,
     run_kis_paper_daily_history_collection,
 )
+
+
+@pytest.fixture(autouse=True)
+def synthetic_cache_disk(tmp_path, monkeypatch):
+    facts = SimpleNamespace(total=1_000_000_000, used=100_000_000, free=900_000_000)
+
+    def disk_usage(path):
+        assert Path(path).resolve().is_relative_to(tmp_path.resolve())
+        return facts
+
+    monkeypatch.setattr(storage, "shutil", SimpleNamespace(
+        disk_usage=disk_usage, rmtree=storage.shutil.rmtree
+    ))
+    return facts
+
+
+def test_history_projected_floor_blocks_before_client(tmp_path, synthetic_cache_disk):
+    synthetic_cache_disk.free = (
+        150_000_000 + storage.KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PROJECTED_BYTES - 1
+    )
+    synthetic_cache_disk.used = synthetic_cache_disk.total - synthetic_cache_disk.free
+    clock = _Clock()
+    control = tmp_path / "control"
+    result = run_kis_paper_daily_history_collection(
+        client_factory=lambda: pytest.fail("storage_floor_must_precede_client"),
+        request_gate=KisPaperMarketDataRateGate(control_root=control, clock=clock),
+        token_start_gate=KisPaperMarketDataTokenStartGate(control_root=control, clock=clock),
+        cache_root=tmp_path / "cache", evidence_root=tmp_path / "evidence",
+        repo_root=tmp_path / "repo", code_revision="git:test", max_chunks=1,
+        clock=clock, monotonic_clock=clock.monotonic,
+    )
+    assert result.status == "storage_floor_would_be_crossed"
 
 
 class _Clock:

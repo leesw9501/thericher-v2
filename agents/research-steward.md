@@ -6,6 +6,36 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+Latest numerical work is CLOSED seed-stability FINAL5d0d6983/Sourcea74ca4ae/
+verify85f27429 at
+A/research/current-nas-hgb-catboost-seed-stability-development-20261025-v1.
+Exactly3 new GPU fits25.795/31.054/26.951s,0oldmodelcalls/0numericalretry;
+all helpers joined/removed/GPUleaseabsent. Device sampled peak14780MiB,
+per-process allocation UNKNOWN_NOT_PROCESS_SAMPLED, not an isolated benchmark.
+Trees240/296/281,bestCHECK176/232/217; adaptive PASS only. Activeupper712.756/
+4500 includes Source600 once, NOT712GPU seconds. CLOSE-transferf0c2/6939/
+2b44 is CLOSEDtoo: oneCUDAfit23/best3/2001updates/32.207s, criterionFAIL.
+Protocols below are history, not idle ready fits. No numerical worker inferred
+from role names or saved source; no completed model restarted for occupancy.
+
+Cicero's cross-asset-attention family is COMPLETE/CLOSED at
+A/research/current-nas-cross-asset-attention-development-20261025-v1/FINAL-CONSUMER.json,
+SHAe480fc35/Source11cb9d87/verifya848edc5/200checks. Actual concurrent CUDA fits
+FULL23/best3/2001updates/35.673s and DIAGONAL26/best6/2262updates/39.510s,
+bothPAT20; first updates09:06:08UTC. Each peakallocated98387456bytes/reserved
+117440512bytes. Co-tenant timings are not isolated benchmarks. All5 exact
+containers joined/removed/absent; no live numerical worker. CriterionFAIL is
+the frozen drawdown comparison, not missing GPU/data authority. Source upper
+849+51=900 is not independently timed authoring; old failures/debits retained.
+Sealed-output attribution91be0f6b is closed. Next resource owner remains Cicero
+for the explicitly assigned full100/397 CLOSE-path target transfer, ONE new
+CUDA fit with exact cached FULL control (never another FULL fit). Contract/
+Claude/changed Data loss-role smoke are preparation, not active training.
+4500activeSUM/7200elapsed including readiness300 once; onefit1700/PAT20/160max/
+13920updates/no numerical retry. Source/input invariant mismatch stops only
+this transfer, not independent Execution. Recheck real headroom before launch;
+no unknown-user-process permission hold or completed-fit occupancy replay.
+
 Latest GPU work is COMPLETE/CLOSED, not an idle ready fit:
 CatBoostH5/397 FINAL2e9f6ead/Source94b3085e/603c3765 at
 A/research/current-nas-h5-397-catboost-ranking-transfer-development-20261025-v1.

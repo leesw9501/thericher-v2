@@ -6,6 +6,62 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+Latest CLOSED seed-stability:
+A/research/current-nas-hgb-catboost-seed-stability-development-20261025-v1,
+FINAL5d0d6983/Sourcea74ca4ae/verify85f27429, adaptive PASS only. Exactly3 NEW
+GPU CatBoost seeds20261026/27/28, trees240/296/281, CHECKprefix176/232/217;
+fit25.795/31.054/26.951s. No old-model calls/retries; helpers joined/removed,
+leaseabsent. Device sampled peak14780MiB is NOT per-process allocation.
+At10bp rawCAT growth+.3687/+.9473/+.9043%; fixed HGB blends+1.1776/+1.2029/
+1.0476%, DD.3835/.3295/.3835%. Predeclared HGB+mean-rank3+1.2072%/DD.3835%.
+No best-seed selection or independent alpha; nine seen reused cohorts and
+currentlisting/nonPIT/CA/arrival/finality limits remain. Consume sealed models
+next, not duplicate fits or an automatic Paper input swap.
+
+CLOSE-path transfer below is also CLOSED Consumerf0c2c08c/Source69395dc6/
+verify2b448af0/202checks: ONE new CUDAfit23/best3/2001updates/PAT20/32.207s,
+cached FULL never refit. Growth/DD -.0385%/.9118% versus FULL+.5750%/.7204%:
+criterionFAIL, not runtime failure or Paper promotion. Earlier descriptions
+below retain its frozen protocol/failures, not an active fit assignment.
+
+Cross-asset attention is now CLOSED, criterionFAIL not runtime failure:
+A/research/current-nas-cross-asset-attention-development-20261025-v1/FINAL-CONSUMER.json
+SHAe480fc35; Source11cb9d87/actualconsumer502a9086/verifya848edc5/200checks.
+Two concurrent CUDA fits: FULL23epochs/bestCHECK3/2001updates/35.673seconds;
+DIAGONAL26/best6/2262/39.510seconds, both PAT20. Identical initialization and
+schedule, nominal32385parameters each; diagonal Q/K inactivity means this is
+not perfect effective-capacity or economic-causality identification. At10bp/leg
+FULLgrowth/DD +.5750%/.7204%, DIAGONAL -.0982%/.5829%; FULL loses the frozen
+DIAGONAL-DD condition. Fixed half-rank HGB-FULL +.9641%/.4057% is descriptive,
+not an automatic winner/Paperinput or independent alpha. All5containers joined/
+removed/absent; no current fit. Data a6a313d1 preserves full100 feature context
+2766/123/43, separate loss masks and296TRAIN/1053CHECK feature-known label-
+unknown peers. Old checkpoint-order failure/recovery/debits remain unchanged;
+source849+51=900 is declared upper, not measured authoring/GPU duration.
+Closed-output-only attribution91be0f6b/Sourcef375877e is COMPLETE37checks/
+101.52activeupper, no refit/forward/raw-price intake/new ledger/GPU. FULL DD
+spans4929..4946, same aggregate concentration, turnover difference is terminal
+proceeds arithmetic not proven churn. Source-only readiness6ad6338f/a87b4f06
+found generic asset R-D already tested on25/R21/HGB and financially failed;
+five CLOSEs cannot be called the old OPEN/CLOSE target. Parent adopts an
+explicit full100/397/FULL-attention CLOSE-path target TRANSFER instead, at
+A/research/current-nas-attention-close-path-target-transfer-20261025-v1.
+One new CUDA fit, exact cached FULL conditional control only if non-target
+invariants match, never refit that completed control. 4500activeSUM/7200elapsed,
+Data300/source900/native120/fit1700/160epochs/PAT20/13920updates, no numerical
+retry; prior readiness300 counted once, not GPU spend. Contract/Claude and
+actual changed loss-role native handoff precede market fitting. Feature frame
+a6a313d1 stays unchanged; Data owns new TRAIN/CHECK R-D_close loss only.
+Known9 reused cohorts remain adaptive; old criterionFAIL is not regraded.
+Data receipt-recovery-r1 is READY5d69577e/Source5cdb4105/DTOff9d4c68/
+seal605e12cf: onebuild+oneverify/24checks/exactoldloss masks/keys/clocks,
+independent8point oracle/all3childrenjoined. Original native receipt failure
+af6b1f55/300upper remains failed. Explicit engineering recovery174.084/180
+uses family reserve in addition to that old300, never a refund or morefits.
+The successful recovery native was not replayed after host-only path repair.
+Direct handoff reached Cicero; new marketfit is not inferred from DataREADY.
+Direct role handoffs remain allowed; Parent owns shared direction/Git.
+
 Next distinct proposal3894d2e at current-nas-risk-composition-next-readiness-20261025-v1
 tests frozen rank versus31 concentration-preserving risk-cell null paths;
 generic inverse-vol/covariance repetition was rejected with prior evidence.
