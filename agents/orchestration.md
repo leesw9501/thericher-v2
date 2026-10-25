@@ -18,14 +18,37 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 | Owner | Current disjoint work |
 | --- | --- |
 | Parent / 총괄 | Integrates sealed point9014a724 and fresh original8 metadata67927009; pushed5f49550. QA d3932f49 protected1405 still exact; no external deployment inferred. |
-| Mencius / 실행 독립 검토 | Clock/root-Job helperf18df988/da4c6913 CLOSED5PASS. Reviews new fresh-admission-syn-r1 source binding/full SYN poststate retention; no repo/private effects. |
-| Bernoulli / 실행 구현 | INDEPENDENT fresh-admission-syn-r1,600activeSUM/1800elapsed/max8native. Prior adapter failed; fixture-recovery lost poststate and is unrecoverable/unknown, not restarted or relabeled resolved. Original8 intact. |
-| Cicero / 엔진·GPU 조정 | Seedmean point9014a724/e886f8f3/d8fe0432 CLOSED/inert,3CPUrestores/3forwards/0fits. Next source-only campaign readiness180active/600elapsed; no new numerical allocation yet. |
-| Chandrasekhar / 데이터 | Existing broader-historical-development readiness metadata only60active/180elapsed, direct to Cicero. No acquisition/array decode or old loss/point/probe rebuild. |
+| Mencius / 기술환경·독립 검토 | Temporal-source findings sent directly. New SYN-only volume-initialization probe180active/600elapsed/max2creates/networknone; no native trading guest/private/API effects. |
+| Bernoulli / 실행 구현 | Fresh-admission CLOSED39ceb3ae pre-native copy failure/0guest/debit/submit/fill, root+CLI joined/daemon absent/SYN volume retained/accounting incomplete. May propose same-state recovery after copy probe, not replay/reset. Original8 intact. |
+| Cicero / 엔진·GPU 조정 | Lower-envelope ab43546d COMPLETE_FAIL/99checks/all4closed/0models. New broaderCHECK contract frozen3600active/7200elapsed/oneCATfit, actual Data/native/headroom precede launch; no running fit inferred. |
+| Chandrasekhar / 데이터 | CHECK design5685f76a CLOSED/source-only. Actual bounded derivation child<=300 within Engine family follows final cachedFP32-newlane requirements, no oldFP64 parity/affine rebuild. Direct role handoff. |
 
 Historical Averroes/Euler/Godel/Noether/Hume packages are CLOSED; their role
 names and old compute allowances do not mean active agents or ready fits.
 Latest six new GPU fits (attention2, CLOSE-transfer1, CatBoostseeds3) are closed.
+
+Resume review11:05UTC: original8 metadata67927009 stays unchanged. Parent
+source-pin readback2536cc37 at the same external readback root checks2377
+source members+39directrefs/0mismatch, exact2ff image present; not runtime.
+Execution fresh SYN native had not launched in the named process census.
+Independent review found stale earlier snapshot could permit deletion after a
+later unknown create; Bernoulli repairs that fixture predicate before visits,
+holding the invented volume if current create/Job/daemon/poststate is unknown.
+This is not an actual account failure or a hold on original8.
+Research has a small zero-fit min-rank diagnostic, while Data designs broader
+CHECK development from already-held bytes. CHECK is globally reused, not fresh;
+whole-TRAIN affines prohibit past-only claims for within-TRAIN folds. Reversible
+improvement: widen subsequent evaluation beyond9seen cohorts rather than launch
+another seed sweep; qualified role handoffs remain direct. No foreground wait.
+Failure review11:24UTC: fresh SYN capsule never started its native guest;
+the initializer copied into an RO seed target and returned nonzero, but no
+exact daemon diagnostic was captured. Do not promote that source inference
+to measured cause. Small isolated copy probe now precedes any state-preserving
+continuation; production RO mount/risk/oldunknowns remain. Research continues
+with true early-date validation, not confusing old tree-prefix selection on
+wholeCHECK with a chronological date prefix. Final newFP32 lane excludes old
+fullCHECK-selected HGB/CAT controls rather than creating false parity or
+duplicating fits. Original8 future sessions remain owned, not a foreground wait.
 
 Resume throughput review: app update removed prior LLM connections. Controller
 root absent/no non-self named process; Docker census only web, so no old fit or

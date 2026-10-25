@@ -22,10 +22,30 @@ Consumer9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432,3CPUrestores/
 3forwards/207rows/0fits/GPU/oldmodelcalls.8native11independent52closure checks,
 bothcontainersclosed/141.312activeupper; Parent37refs exact. Full100/69known/
 31unknownzero, seven1/7/.005TOTAL. No old d5f53 or original8/L271 input swap.
-Cicero now owns source-only current-next-engine-campaign-readiness-20261025-v1,
-180active/600elapsed, ONE demonstrated-limitation mechanism with explicit
-finite contract/Claude and existing Data coverage. No numerical launch assigned
-yet; completion or remaining compute allowance is not another fit instruction.
+Cicero's next readiness was consumed in the CLOSED zero-fit lower-envelope
+diagnostic at current-nas-three-seed-lower-envelope-allocation-development-20261025-v1:
+Consumerab43546d/Source966db56b/verify77c67e02,99checks/Parent21refs exact.
+10bp growth+1.2282% versus unchangedmean3+1.2072%; DD equality up to roundoff
+fails required strict improvement. COMPLETE_FAIL, not another ranking choice.
+Onecompile/intake/twoledgers90CLOSEs/0models/GPU/retries/all4closed/
+296.885activeupper. No retune/new typed input or Paper swap.
+
+Next assigned family: current-nas-broader-check-development-20261025-v1,
+one NEW CatBoost seed20261029 with prefix-only CHECK checkpoint selection,
+not a completed fullCHECK-selected fit replay. Original TRAIN/once-affines;
+validation4780..4819 with target-interval purge, later evaluation4820..4859
+and4860..4902, fixedphase3mod5/max14origins. Globally reused/adaptive CHECK,
+not untouched or independent alpha. Data design5685f76a/5a6a4bc3 precedes the
+final Engine choice of cached FP32 as an explicitly NEW input lane, not old
+FP64 parity or widening. WholeCHECK-selected HGB/CAT controls are excluded;
+primary control is alignedUNIFORM per block and combined. Exact role smoke
+and bounded Data derivation/verify precede fitting; direct handoff allowed.
+Family3600activeSUM/7200elapsed; Engine freezes exact partitions, onefit,
+600tree/PAT64 ceilings/minimum supported cohorts/metrics before dispatch.
+No eval-selected epochs, phase changes, survivor-mask shrink or model retry.
+Old HGB may be a control only if actual source excludes laterCHECK selection
+dependence; otherwise report unavailable/use uniform, do not duplicate its fit.
+Assignment/source design is not actual GPU launch or a Paper permission hold.
 
 CLOSE-path transfer below is also CLOSED Consumerf0c2c08c/Source69395dc6/
 verify2b448af0/202checks: ONE new CUDAfit23/best3/2001updates/PAT20/32.207s,

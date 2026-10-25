@@ -93,6 +93,20 @@ Exactly3 CPU restores/3 forwards/207rows,0fits/oldmodelcalls/GPU;8native/
 Full100/69known31unknown, seven equal weights, .005 TOTAL original-basis ceiling.
 Parent37 direct refs exact. PREPARED_NOT_DEPLOYED; old d5f53 and original8/L271
 inputs stay unchanged. No private book, broker, Task or capital effect.
+Zero-fit lower-envelope comparison is CLOSED COMPLETE_FAIL at
+A/research/current-nas-three-seed-lower-envelope-allocation-development-20261025-v1:
+Consumerab43546d/Source966db56b/verify77c67e02/99checks/Parent21refs exact.
+Onecompile/intake/twoledgers90CLOSEs,0modelcalls/GPU/retries,all4closed/
+296.885activeupper.10bp growth+1.2282% versus fixedmean3+1.2072%, but DD
+differs only by roundoff: strict improvement failed. No retune/input swap.
+Next assigned Engine family is current-nas-broader-check-development-20261025-v1:
+one NEW prefix-selected CatBoost fit, originalTRAIN/once-affine, purged early
+CHECK validation and two frozen laterCHECK blocks/max14phase3mod5 origins.
+Data design5685f76a/5a6a4bc3 is source-only. Engine's final contract deliberately
+uses existing FP32 context, NOT old classical FP64 parity; fullCHECK-selected
+HGB/CAT controls are excluded. Exact new-role native/bounded derivation precede
+fitting; no affine/frame rebuild. Globally reused CHECK is NOT fresh.
+No new GPU worker is inferred from this assignment.
 Cross-asset attention FINALe480fc35/Source11cb9d87/verifya848edc5 is complete:
 FULL/DIAGONAL concurrent CUDA23/26epochs, selected3/6,2001/2262updates,
 35.673/39.510seconds. FULL improves growth but loses frozen drawdown condition;
@@ -154,8 +168,17 @@ Bernoulli now owns fresh-admission-syn-r1, an INDEPENDENT invented account/book
 scenario,600activeSUM/1800elapsed/max8newvisits. Explicit native-source binding,
 positive Job join and full poststate retention before volume removal precede
 new admission-to-owned-exit proof. It cannot resolve/relabel the old case.
-Mencius reviews that fixture independently. Original8/real private state remain
-untouched; no install, old14/tiny/model/point replay or old hold reclamation.
+That independent case is now CLOSED39ceb3ae25ad7db50d21f4d6309f6390f05a519098e15191fd00eceb2b1768b8,
+FAILED_PRE_NATIVE_FIXTURE_SETUP_NOT_INSTALL_READY. One capsule created, native
+guest/debit/submit/fill0. Initial SYN book copy returned nonzero against RO seed
+mount; exact Docker diagnostic not captured, so causality is source inference.
+Root/CLI Jobs joined/daemon absent; SYN volume/evidence retained, active-time
+accounting incomplete, not certified. Stale-snapshot deletion blocker was fixed;
+no prior unknown case is resolved. Mencius now owns a separate SYN-only copy
+probe180active/600elapsed/max2creates/networknone, not a native replay. It must
+establish a working prepopulation-before-RO recipe without weakening RO seed.
+Original8/real private state remain untouched; no install, old14/model replay
+or old hold reclamation. Any continuation must preserve exact retained state.
 Four-peer bridge hooks are superseded unfinished prototypes, not runtime.
 Claude f60301a9 RECOMMEND_B_PHASED/independent review support single ownership,
 original native capsule interfaces/paths/counters, one private child at a time,

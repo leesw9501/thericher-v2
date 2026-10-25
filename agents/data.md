@@ -6,6 +6,25 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+Current new source-only CHECK adapter design is CLOSED at
+A/data/current-check-two-block-adapter-design-20261025-v1:
+Consumer5685f76a/Source5a6a4bc3. It names roles/files/clock and interval purges,
+physical label isolation, original FP64 lane and native/build/verify plan;
+no arrays/native/build/API/private effects. Concrete consumer is Cicero's
+current-nas-broader-check-development-20261025-v1. One bounded derivation
+child<=300active inside Engine3600 may start only on exact qualified Engine
+requirements and changed-role native; no generic fold platform/guard monkeypatch.
+Engine final contract instead chooses the already qualified cached FP32 lane
+as a NEW experiment, not exact old classical parity or FP32 widening. Its
+DATA-REQUIREMENTS govern the actual child; agree schema/float/source explicitly
+before native/payloads. Old fullCHECK-selected HGB/CAT controls are excluded,
+no feature/scaler rebuild is needed and prior design is not relabeled.
+Earlier metadata-readiness9a689144/d47ce173 identified two laterCHECK blocks
+from held data, not untouched data. Its elapsed cap overrun stays reported.
+WholeTRAIN affines cannot support past-only evaluation withinTRAIN; afterTRAIN
+CHECK can reuse them ONCE. Full original feature-known cohort, never shrink
+by outcome-known survivors; missing economic dates remain unavailable.
+
 CLOSE-target handoff is CLOSED/consumed at
 A/data/current-nas-attention-close-path-target-inputs-20261025-v1/receipt-recovery-r1:
 Consumer5d69577e/Source5cdb4105/DTOff9d4c68/seal605e12cf. Onebuild/oneverify/

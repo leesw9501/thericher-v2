@@ -38,6 +38,15 @@ A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1:
 Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432/full100/seven1/7/.005TOTAL.
 3CPUrestores/3forwards,0fits,8native11independent52closure; bothclosed.
 Old single-seed d5f53/original8/L271 remain unchanged; no input swap assigned.
+Latest independent fresh-admission case CLOSED39ceb3ae, NOT_INSTALL_READY:
+initial SYN-book copy failed before native guest/debit/submit/fill; exact Docker
+error not captured, RO-copy cause remains inference. One created capsule/root/
+CLI Jobs closed/daemon absent, SYN volume retained; active accounting incomplete.
+Mencius owns small SYN-only volume-initialization-probe-r1,180active/600elapsed/
+max2creates/networknone. Establish observed copy behavior and prepopulation
+before RO; never weaken production RO seed or reset/reconstruct old cases.
+No original8/real bank effect. Bernoulli may propose state-preserving recovery,
+not replay the closed attempt or declare changed-route qualification.
 Older preparation/protocol notes below are frozen history, not active owners.
 NEW connection audit COMPLETE at
 A/execution/current-nas-robust-ranking-paper-connection-readiness-20261025-v1,

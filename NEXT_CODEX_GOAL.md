@@ -41,6 +41,12 @@ fresh-admission-syn-r1, new invented account/book only,600activeSUM/1800elapsed/
 max8newnative. Prove explicit native-source binding and admission/fill/ownedexit
 plus deadline/foreign negatives; retain full SYN poststate after positive Job
 join BEFORE volume deletion on every path. Mencius independently reviews.
+This case is now CLOSED39ceb3ae/FAILED_PRE_NATIVE_FIXTURE_SETUP: initial SYN
+book copy failed before guest/debit/submit/fill; one created capsule closed,
+volume retained/active accounting incomplete. Exact Docker cause unobserved.
+Mencius owns separate SYN-only volume-initialization-probe-r1,180active/
+600elapsed/max2creates/networknone, working initialization-before-RO recipe.
+No seed-RO weakening or oldcase reset; any recovery preserves retained state.
 No broken-loop/old14/tiny/RO/model/point/build replay or real-bank reset.
 Original8 remain untouched; no rollout before fresh source/native/readback.
 Latest original8 metadata READBACK67927009 at Oct25 10:38:44UTC confirms
@@ -61,8 +67,19 @@ PREPARED_NOT_DEPLOYED9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432 at
 A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1.
 3CPUrestores/3forwards/207rows/0fits,8native11independent52closure/bothclosed,
 full100/sevenequalweights/.005TOTAL. No oldinput swap or broker effect.
-Cicero owns source-only next-engine-campaign-readiness-20261025-v1; Data may
-directly supply existing historical-coverage metadata. No next fit is inferred.
+Cicero closed zero-fit lower-envelope diagnosticab43546d/Source966db56b:
+growth+1.2282% versus fixedmean3+1.2072%, strict DD improvement FAIL,
+99checks/21Parentrefs exact/all4closed/296.885upper. No retune/input swap.
+Next assigned family current-nas-broader-check-development-20261025-v1 uses
+one NEW CatBoost prefix-validation protocol, originalTRAIN/once-affine,
+purged earlyCHECK validation and two fixed laterCHECK blocks/max14phase3mod5
+origins. Data source-only design5685f76a/5a6a4bc3 is superseded only as to
+the chosen float lane: Engine deliberately uses cached FP32, not old FP64
+parity, and excludes wholeCHECK-selected HGB/CAT controls. Exact new-role
+native/bounded onebuild+verify precede fitting, no affine/frame rebuild. Family
+3600activeSUM/7200elapsed with exact partitions frozen by Engine before
+numerical launch. No oldfit repeat or fresh/independent claim; no new running
+GPU fit inferred from assignment. Direct Data->Engine handoff remains allowed.
 Qualified direct role handoffs do not wait for Parent as another approval.
 
 Data: PAIR retention CONFIGURED_VERIFIED_PENDING_NATURAL_RUN403d5908, original

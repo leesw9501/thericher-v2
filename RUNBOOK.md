@@ -60,6 +60,15 @@ SHA9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432.3CPUrestores/
 3forwards/207rows,8native11independent52closure/bothcontainersclosed.
 Full100/69known31unknownzero/sevenequalweights/.005TOTAL; no old input swap.
 Use sealed files, not its completed producer/model/native commands.
+Subsequent lower-envelope diagnostic is CLOSEDab43546d/Source966db56b at
+A/research/current-nas-three-seed-lower-envelope-allocation-development-20261025-v1.
+COMPLETE_FAIL strictDD improvement/99checks/all4closed/0models/GPU; do not
+rerun its compile/intake/ledgers or change the Paper input from this result.
+Next Engine source/contract lives at
+A/research/current-nas-broader-check-development-20261025-v1; Data design
+current-check-two-block-adapter-design-20261025-v1/CONSUMER5685f76a is source-
+only. No launch command is implied by this pointer; exact native/role/source
+and new bounded originalTRAIN/purgedCHECK-prefix protocol precede fitting.
 
 Current account-dispatch work lives under
 A/execution/current-cooperative-paper-peer-integration-20261025-v1.
@@ -70,6 +79,15 @@ Bernoulli owns independent fresh-admission-syn-r1 (new invented account/book,
 600activeSUM/1800elapsed/max8visits); Mencius reviews explicit source binding
 and poststate retention before volume removal. No actual install command is
 qualified, no oldcase/Task/private/API replay is the next command.
+Fresh-admission is also CLOSED39ceb3ae/FAILED_PRE_NATIVE_FIXTURE_SETUP:
+one created capsule, nativeguest/debit/submit/fill0, root+CLI Jobs joined/
+daemon absent, SYN volume retained/active accounting incomplete. Its initial
+copy into RO target failed; exact Docker diagnostic is unobserved. Do not run
+run_owned/run_admission again. New syn-volume-initialization-probe-r1 is a
+separate invented-data transport probe,180active/600elapsed/max2creates/
+networknone, no native trading guest/private account. Preserve exact old state
+and await its working recipe before any separately bounded recovery; original8
+native/Task/private paths and seed RO rule are unchanged.
 
 Research recovery: completed QQQ marginal e9f8, continuous sizing025f and
 corrected direct-GRUf9e68b65 must not be retrained/replayed from old commands.
@@ -140,6 +158,10 @@ A/execution/current-original-eight-opportunity-readback-20261025-v1/READBACK.jso
 SHA679270097a1d15f3cdae0465e934d7dcb5eba162aa667a173a1fafa5781c73ad.
 All8Ready/enabled/0instances/XML+effectiveACL identical, legacyQQQ disabled.
 This read-only metadata is not scheduler-origin, holdings, acceptance or fills.
+Same-root SOURCE-PINS-READBACK.json SHA2536cc379b516e1d36ae8191573a4dcec2fe2c12fa4812f8f9d8ab75a44fa5ac
+at11:02:51UTC checks2377source members+39directrefs/0mismatch and local exact
+image2ff presence. Honors frozen native-root mapping; no worker/Task launch or
+private state read. Source integrity is not future runtime success.
 Fresh F9 readonly result is CLOSED under current-f9-readonly-reconciliation-20261025-v1/
 f9-source-corrected-r1/actual-closure-r1/CONSUMER.json SHAf1f1b847:
 1POST/1GET, history0, UNKNOWN/HELD unchanged. Do not run Actual/Preflight again

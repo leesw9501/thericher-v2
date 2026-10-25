@@ -20,10 +20,15 @@ from role names or saved source; no completed model restarted for occupancy.
 Seed-mean current point9014a724/c08261ea is also CLOSED:3CPUrestores/3forwards/
 207rows/0fits/GPU,8native11independent52closure/bothcontainersclosed,
 141.312activeupper. Its typed inpute886f8f3/d8fe0432 is inert, not deployment.
-Cicero currently prepares ONE next source-only campaign at
-A/research/current-next-engine-campaign-readiness-20261025-v1,180active/
-600elapsed, no new numerical worker allocated. Data directly provides existing
-coverage metadata; actual ready contract/headroom must precede useful dispatch.
+Zero-fit lower-envelope diagnostic is CLOSEDab43546d/966db56b, COMPLETE_FAIL:
+99checks/all4closed/296.885activeupper,0models/GPU/retries. No remaining job
+or reason to refit from that source. Next assigned resource family is
+A/research/current-nas-broader-check-development-20261025-v1, one new prefix-
+selected CatBoost seed20261029 (distinct from old fullCHECK-selected fits),
+3600activeSUM/7200elapsed including Data/native/failed attempts/cleanup.
+OriginalTRAIN/cachedFP32-newlane/once-affine/purgedCHECKprefix, two fixed laterCHECK blocks,
+not new independent data. Source/native/headroom precede launch; no actual
+new GPU worker is inferred from this assignment. Do not repeat old training.
 
 Cicero's cross-asset-attention family is COMPLETE/CLOSED at
 A/research/current-nas-cross-asset-attention-development-20261025-v1/FINAL-CONSUMER.json,
