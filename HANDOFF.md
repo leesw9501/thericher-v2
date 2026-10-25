@@ -11,6 +11,13 @@ ONE original shared initial virtual-cash tenth; preserve costs/losses/pending/
 F9 UNKNOWN-HELD. No profit-expanded bank, reset, foreign inventory adoption or
 forced share. No operator decision presently. Preserve untracked %SystemDrive%/.
 
+Final safe Scheduler readback at2026-10-25 17:20:59UTC:
+A/execution/current-original-eight-opportunity-readback-20261026-final-v1/READBACK.json,
+SHA3b52c29d1a00bcf73eca274eb4cd9a7be1757ecc87cd8cbc84947b5dd5dd1fe3.
+All8Ready/enabled/0instances/exact originalXML+ACL/nexttimes. No invocation,
+mutation/KIS/private read or fill/OS-origin claim. Earlier readbacks are dated
+history, not conflicting outcomes. Numerical/role workers are closed.
+
 Current memory is this file/NEXT/stateboards. Earlier detailed history is in
 Git6b38a33:HANDOFF.md and immutable external consumers, not a reason to repeat
 closed commands. AGENTS/DECISIONS own policy. All paths abbreviated A/M below
@@ -79,8 +86,81 @@ that contract. Empty history/missing opener cannot prove no-send or free reserve
 
 ## Current Packages
 
-Parent owns shared MD/Git; latest checkpoint0ea7ca1. Current numerical claims below use
+Parent owns shared MD/Git; latest checkpoint3d3b42d. Current numerical claims below use
 actual closed workers, not role names or remaining budgets. No old fit repeats.
+
+FINAL batch:14NEWmarketfits=12CUDA+2CPU completed ONCE; all assigned model,
+native and source-review workers closed. No currently ready frozen training
+job, GPU/resource/permission/driver hold, originalmodel/proof/ledger rerun.
+MetaFINALd11077be/e7962b6f:2CPUfits/167cohorts/1750+84checks/all7closed,
+COMPLETE_FAIL_CONDITIONAL_TREE; no leaf/feature/seed/cash rescue/Paperswap.
+SPYFINAL66fdef27/5e5d8a69 at
+A/research/current-spy-passive-phase-h5-benchmark-20261026-v1:
+8newledgers/37907+91checks/all4closed/0modelsGPU/oldcalls0/521.045upper.
+One existingcache/allrequiredmarks; no acquisition/privateCSV/auth read.
+20bp eachleg/initialNAV1/stake.10,2020-12-30..2025-12-29: passivegrowth9.711%/
+DD3.422%, flatH5-3.428%/5.895%, cachedCAT-.036%/6.975%. Meta167window:
+passive7.976%/2.975%, flatH5-1.063%/2.967%, cachedCAT1.469%/5.148%.
+Not annualized; DD is absolute ORIGINALNAV peak-minus-NAV. Passive meanheld
+gross13.477% versusflat9.996%/different universe/overnight/rebalance/risk;
+nominalprice proxy, NOT alpha/isolatedfee effect/TR/PaperPnL or a Paperchange.
+Prefer passive AND matched-cadence references in future new contracts, not a
+new approval or Paper profitabilitygate. All old criteria/results unchanged.
+Latest sourcechecks23Fourier+17Meta+12SPY+76L/0mismatches; D:free36.8percent.
+
+Company runtime remains due at the original windows, with original8 unchanged.
+App one-shot chatfollowup creation failed3bounded validation attempts; NO app
+automation/WindowsTask created, no recurring/cron workaround or replacement
+chain. Do not promise automaticchatwake. Native Windows jobs still own their
+due opportunities; missing outcome is unknown, never fill/profit. Resume exact
+receipts/owners, not completed training. Earlier package projections below
+are now closed history where superseded.
+
+Latest closed Fourier family:
+A/research/current-nas-prefix-fourier-linear-ranking-development-20261026-v1/FINAL-CONSUMER.json,
+SHA714c939b01d3089e7c3145ed9c77351b4c2e13c8799870afdd1867262d780b68,
+Sourceb9a45163.6NEWCUDAheads/6OOFcalls/24newledgers/3875+142checks/
+all13containers+rootclosed/leaseabsent/0oldmodelcalls. COMPLETE_FAIL_FIXED_RFF_MAP:
+pooled ordering RFF.690052>LINEAR.689885/onlyF1improves; fixedblend20bp
+growth-1.900%/DD8.062% versusCAT-.036%/6.975%. No map/seed/epoch/weight rescue,
+qualified alpha or Paper swap. Selected LINEAR1/1/1,RFF3/2/1;2workersco-ran,
+all actual firstLBFGSsteps retained. FitworkerSUM73.896seconds is not
+kernel-onlyGPUtime;1147.568familyactiveupper, devicepeak4740MiB/co-tenancy.
+FinalRFFtrainconverged, LINEARnot; selected checkpoints need not converge.
+This makes12NEWmarketGPUfits in the three current prefix families, all closed.
+
+Ringfenced financing is CLOSED40c47bc7/Source2a42c6e3 at
+A/research/current-nas-ringfenced-netting-feasibility-20261026-v1/native-codec-recovery-r1/FINAL-CONSUMER.json:
+251events/6ledgers/69541+53checks/allclosed/0modelsGPU, no outsidecash.
+Original serialization failurebe1af1e3/335.757upper/6nativeledgers retained;
+mechanical codec repair qualified ONE new nativecase then first market bundle
+ONCE, total497.140/1200upper/originaldeadline unchanged.20bp ranknetgrowth
+1.951%/DD1.144%, matchedgross1.376%/1.243%, uniformnet.975%/4.057%.
+Meanrankgross1.653%originalNAV versusuniform5.352%/250capacityconstrained/
+249netheadroom suppressed. Feasible accounting/fee identity, NOT matched-risk
+alpha/Paper/input-update/ownedregistry or broker-risk qualification.
+
+Current next Engine package is source/native preparation at
+A/research/current-nas-chronological-expert-tree-development-20261026-v1,
+consuming Herschel's source READY at same-name readiness root. Two mature-
+earlier-OOF CAT/LINEAR/RFF conditional-payoff trees, not generic tree novelty:
+MetaF2FIT416rows,MetaF3FIT836/purgeactual4H5intervals, evalF2/F3only167cohorts.
+RAWcontext9+rankdisagreement/margins15features, no base model regeneration,
+in-sample expert output, missing-input imputation or oldRFFbudget reuse.
+Cicero freezes/natively qualifies its own <=2CPUfit family; source readiness
+is NOT fit/market completion. No GPU worker currently after closed Fourier.
+
+Ltail/deadline repair is CLOSEDaac7a14c/Source7379177f at
+A/execution/current-l-ingress-tail-deadline-repair-20261026-v1:
+16focusedchecks/76Parentpins/new3productionRuffPASS/300upper/allhelpersclosed/
+falseRelease/0actualeffects. Returned failures now exit20; postmetadata/preACK
+and packet-forward deadlines rechecked, helpers capped, cleanup permittedlate.
+This does NOT absolutely bound import/pre-loader/OS latency or qualify actual
+host timing/cutover. Frozen testhelper79lintstyle warnings preserved, not a
+whole-tree Ruff pass. Original2P2source defect scopedfix, no old21+14 replay.
+Bern/Mencius/Chandra roles closed; no permanent LLM/extraPaperworker implied.
+
+Earlier detailed package projections below are closed history where superseded.
 
 Fresh original8 metadata at15:41:27UTC is READ_ONLY/8Ready/enabled/0instances,
 all prior XML/effectiveACL exact; next entry/exit times unchanged.

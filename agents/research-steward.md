@@ -8,11 +8,37 @@ Old protocols are immutable history, not ready jobs.
 
 ## Current Resource Owner
 
+No current owned numerical workers after all packages closed. Latest Meta:
+d11077be/e7962b6f,2NEWCPUfits/534.618upper/all7closed/GPU0/noGPUlease.
+SPYreference66fdef27/5e5d8a69,0modelsGPU/8ledgers/521.045upper/all4closed.
+Total current continuation14NEWmarketfits=12CUDA+2CPU, all completed once;
+native invented proofs are not additional marketfits. No ready frozen GPU
+campaign, no resource/permission/driver hold and no occupancy job queued.
+Original Paper/runtime evidence remains a future-session dependency.
+
+Latest Fourier family is CLOSED714c939b/b9a45163:6NEWCUDAheadfits,
+all13containers+rootclosed/leaseabsent/currentworkers0/0oldmodelcalls.
+Six actual first LBFGSsteps,2workersco-ran; selected LINEAR1/1/1,RFF3/2/1.
+FitworkerSUM73.896s includes I/O/curves/restore, not device-kernel time.
+1147.568/5400activeupper includes900Source once; no budget refund.
+Sampled devicepeak4740MiB/70samples/co-tenancy not isolation; perworker
+Torchallocated peaks331..702MB. This completed12NEWmarketCUDAfits across
+the three current prefix families, not an idle environment or ready rerun.
+No current GPU worker after closure. A next expert-tree source-readiness
+question is not a trained model or GPU allocation; CPU tree work may suffice.
+
+Closed contract history below, not a ready launch:
 Cicero01a17223-d4bb-71b3-b066-516d926b80b2 is the sole GPU coordinator.
 No current GPU training worker is evidenced after closure of SIX new market
-fits below. Current ringfenced-netting-feasibility-20261026-v1 is a legitimate
-zero-model/CPU ledger package. Herschel prepares one distinct Strategy
-proposal; source/role names alone do not prove a fit or a ready campaign.
+fits below. Ringfenced feasibility is now CLOSED40c47bc7/Source2a42c6e3:
+0modelsGPU/1marketbundle/6ledgers/allhelpersclosed,497.140combinedactiveupper
+including the failed proof335.757 and named scalar-codec recovery; no refund.
+Current family current-nas-prefix-fourier-linear-ranking-development-20261026-v1
+has up to6NEW GPU-capable convex-head fits, max2concurrent/headroomchecked,
+5400SUM/7200elapsed/original15:40:34UTC/hard17:40:34. Herschel source600+
+kernel90 charged once inside900Source, no added trial or GPU resource owner.
+Native LBFGS/role/source/Claude checks precede payload; source/contract alone
+does NOT prove a GPU fit, lease or first update.
 
 Parent nvidia-smi at about15:40UTC showed RTX4090 total24564MiB,
 used2393/free21746/utilization2percent/temp36C. This is one device snapshot,

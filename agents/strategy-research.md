@@ -1,11 +1,40 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-25 KST. A=D:/thericher-v2/model-artifacts.
+2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
 Own source-grounded mechanisms/pure kernels/consumable hypotheses,
 not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
+All invoked Strategy sidecars are CLOSED/consumed, no active Strategy worker:
+Fourierproposal e52e5813 -> FINAL714c939b fixedmapFAIL/6CUDAfits;
+expert-tree readiness -> FINALd11077be conditionaltreeFAIL/2CPUfits;
+SPYsource readiness b35609f7 -> FINAL66fdef27 descriptive8ledgers/0models.
+No re-proposal or rerun of these exact consumers. The source-only handoffs
+did not themselves prove numerical results; exact Engine consumers did.
+Simple passive/cadence-matched SPY references expose holding/cost differences,
+not new alpha or a ban on research/provisional Paper. A future distinct
+mechanism needs a concrete unmet question, not another model/seed for GPUuse.
+Prior source protocols below are closed history, not current assignments.
+
+Current concrete proposal is READY_SOURCE_ONLY/consumed by Engine:
+A/research/current-next-distinct-expert-readiness-20261026-v1/PROPOSAL.json,
+SHAe52e581305b4960b35c69d9b9cd895193a9dfe8f960b2b0a88841cf7c685552e.
+Invoked Herschel proposed fixedGaussianFourier512 versus matchedlinear397
+convex pairwise heads, three existing chronological prefixes/cachedCATblend.
+Reject generic cross-sectional ranks/beta-reversal/memory as already known;
+bounded inventory found no exact Fourier trial, not proof of global novelty.
+Official Rahimi/Recht2007 mechanism and existing NumPy/PyTorch licenses linked
+in proposal; no copied public code/weights or stock-alpha claim from paper.
+Pure feature_map/pair_head Source handoff is CLOSED under
+A/research/current-nas-prefix-fourier-linear-ranking-development-20261026-v1/herschel-source.
+Proposal600+helper90 Sourceupper charged once inside Engine family5400SUM,
+not separate fits/resources. Engine/Cicero owns native,6newattempts maximum,
+data/trials/checkpoints/costs/interpretation; no actual fit or GPU use inferred
+from this source-only work. Claude SOUND_WITH_LIMITS is advisory at familyroot,
+not human approval. Parent owns MD/Git. No further Strategy numeric job queued.
+
+Earlier projections below are closed history, not current dispatch orders.
 Prior risk-composition proposal3894d2e/27a7 is CLOSED/consumed in first-Oct26
 35-policy sealbcaf8bbe/verify159e43b1; it is not an active Euler worker or a
 12-cohort/150-day campaign. Seed-stability5d0d6983 and its current typed

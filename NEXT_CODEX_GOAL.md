@@ -11,6 +11,16 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Run scripts/start_next_codex_task.ps1, then HANDOFF/AGENTS/RUNBOOK/active boards.
 Parent owns shared policy, dispatch, integration and Git.
 
+Current package checkpoint: hostcapture/GRUSYN/Ltail source work and all
+14NEWmarketfits(12CUDA+2CPU) are CLOSED, not ready reruns. MetaTreeD11077be
+failsconditionalcriterion; SPYreference66fdef27 is descriptive only. Current
+live numerical workers0. Company outcome remains pending actual session.
+Original Windows8 unchanged/enabled; app one-shot followup creation failed
+3boundedvalidation attempts, no automation created/no cronworkaround. Do not
+assume automaticchatwake or infer a runtime result before its exact receipt.
+Use the current Engine/Execution boards; below launch details are history
+where superseded, never permission to repeat completed fits/proofs/ledgers.
+
 | Candidate | Original entry UTC | Owned exit UTC |
 | --- | --- | --- |
 | GRU H5 | Oct26 13:40..14:10 | Oct30 19:45..20:00 |
@@ -100,11 +110,24 @@ no adoption/retune. Its ZERO-FIT persistent-target shadow is also CLOSED at
 current-nas-persistent-target-netting-shadow-20261026-v1:251events/6ledgers/
 38761accounting+48closure/all4closed, fee savings hold for matchedshares but
 NAV1financing violates ringfenced.10 at8events. Accounting-only/not feasible
-Paper. Cicero next owns separate ringfenced-netting-feasibility-20261026-v1,
-causallyfeasiblepairedshares/cachedpredictions/0models/GPU. No fee-savings-as-
-alpha or claimed current Execution input-update capability/closedledger rerun.
-Herschel owns ONE distinct-expert Strategy readiness sidecar; Cicero alone
-coordinates any separately frozen numerical consumer. No duplicate oldfits.
+Paper. Ringfenced feasibility is now CLOSED40c47bc7/Source2a42c6e3 under
+native-codec-recovery-r1:251events/6ledgers/69541+53checks/allclosed/0modelsGPU,
+497.140combinedupper includes failedproof335.757/no refund/old6cases retained.
+20bp ranknetgrowth1.951%/DD1.144%, matchedgross1.376%/1.243%, uniformnet.975%/
+4.057%. No outsidecash, but meanrankgross1.653%originalNAV versusuniform5.352%,
+not risk-matched alpha/Paper or currentExecution input-update qualification.
+Herschel's distinct Fourier proposal e52e5813/purekernel handoff is consumed by
+Cicero at current-nas-prefix-fourier-linear-ranking-development-20261026-v1:
+6NEWheadattempts max/5400activeSUM/7200elapsed/hard17:40:34UTC, actualnative
+LBFGS/role/Source/Claude/headroom before payload. Existing data/cachedCATonly,
+0oldmodelcalls/Paperswap, analyticaltreasury-financing limitation stays.
+Source contract is not evidence a GPU worker/fit is actually running.
+That Fourier family is now CLOSED714c939b/b9a45163:6NEWCUDAfits/24newledgers/
+3875+142checks/all13closed/leaseabsent/no oldmodelcalls. Ordering primary
+fails pooled and2of3folds; fixedblend20bp growth-1.900%/DD8.062% versusCAT
+-.036%/6.975%. No retune/rerun/adoption. Next source-only question:
+current-nas-chronological-expert-tree-readiness-20261026-v1, mature earlierOOF
+expert selection or concrete rejection, no numerical/GPU budget yet.
 
 Data natural retention403d5908 remains due Oct26 21:55UTC; no duplicate probe.
 Data limitations constrain claims, not unrelated Paper or research authority.

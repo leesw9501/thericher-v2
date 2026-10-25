@@ -1,10 +1,27 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-25 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-26 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability/features, not account/order/model choice.
 Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
+
+Latest SPY source sidecar is CLOSEDb35609f7 at
+A/data/current-spy-passive-cost-baseline-readiness-20261026-v1/READINESS.json.
+Existing CANONICAL-MODERN.npz f6e5dc18 and NYSEcalendar87e8047a support the
+concrete zero-fit passive/phaseH5 consumer; no acquisition/privateCSV/API.
+Engine consumer is now CLOSED66fdef27/Source5e5d8a69 at
+A/research/current-spy-passive-phase-h5-benchmark-20261026-v1:
+one existingcacheintake/allrequiredmarks/8newledgers/37907+91checks/all4closed.
+Actual prices stayM/RAM, normalizedresearchNAV onA. NominalKISMODP1 price
+proxy/unknownCA-dividendTR-arrival-finality/currentvintage remain explicit.
+No oldmodels/forecasts/ledger rerun; no fresh acquisition or source repair.
+Scoped Engine Meta role derivation is CLOSEDd11077be/e7962b6f under newM
+current-nas-chronological-expert-tree-development-20261026-v1:416/836FIT rows,
+4actual targetinterval purges, separate label-freeEVAL. No canonical rewrite,
+newscaler or originalData build. Its twoCPUfits failed scientificcriterion.
+Natural retention403d5908 remains dueOct26 21:55UTC; no duplicate probe.
+Earlier projections below are closed history where superseded.
 
 Current source-only sidecar is
 A/data/current-nas-fold-local-preprocessing-readiness-20261025-v1.

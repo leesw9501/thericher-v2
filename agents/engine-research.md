@@ -8,23 +8,96 @@ agents/engine-research.md. That history is NOT a ready-job queue.
 
 ## Current Owner / Ready Work
 
-Cicero is the sole Engine/GPU coordinator. SIX new prefix market GPU fits
-closed in this continuation; none is queued to rerun. Current named work:
-A/research/current-nas-ringfenced-netting-feasibility-20261026-v1.
-It uses cached forecasts/gross marks, one251-event bundle/six finite ledgers,
-zero model calls/GPU. Freeze cash, owned basis, unoffset realized losses and
-fees inside the original .10; no inaccessible .90 financing, borrowing,
-profit-expanded target or separate unmatched rank paths. Native role smoke
-and source/Claude checks precede payload. Source is not proof of completion.
+All currently assigned numerical work is CLOSED; no running CPU/GPUworker.
+Meta expert tree FINALd11077be/Sourcee7962b6f at
+A/research/current-nas-chronological-expert-tree-development-20261026-v1:
+2NEWCPUfits/167cohorts/1750+84checks/all7closed/0basecalls/GPU/534.618upper.
+COMPLETE_FAIL_CONDITIONAL_TREE.20bp combined growth/DD TREE-3.353%/7.517%,
+FIT-onlyCONSTANT-2.690%/7.955%, fixedHALF-1.977%/6.046%, cachedCAT+1.469%/
+5.148%. Tree is not constantalias, but never selectedCAT on167economicdates;
+not stationary expert competence or a reason to tune seen leaves/features.
+Exact source/schema/codec role transfer passed, not independent alpha.
 
-Herschel is an invoked Strategy sidecar at
-A/research/current-next-distinct-expert-readiness-20261026-v1:
-ONE genuinely different existing-data hypothesis or concrete rejection.
-No fits/GPU/arrays/broker rights. Exact ready handoff may go directly to
-Cicero, who owns any separately frozen numerical family and resources.
-No new model worker is inferred from these assignments.
+SPY business reference FINAL66fdef27/Source5e5d8a69 is CLOSED at
+A/research/current-spy-passive-phase-h5-benchmark-20261026-v1:
+one existingcacheintake/8newledgers/37907+91checks/all4closed/0modelsGPU/
+oldcalls0/521.045upper. All requiredmarks admitted; no privateCSV/auth read,
+realprices/absolutequantities remainM/RAM.20bp eachleg, full initialNAV1,
+paid initialstake.10, DD is absolute ORIGINALNAV peak-minus-value:
+2020-12-30..2025-12-29 PASSIVEgrowth9.711%/DD3.422% versusFLATH5-3.428%/
+5.895% and cachedCAT-.036%/6.975%. Meta167 window2022-08-31..2025-12-29:
+PASSIVE7.976%/2.975%, FLATH5-1.063%/2.967%, cachedCAT1.469%/5.148%.
+Not annualized. Passive meanheldgross13.477%originalNAV versusflat9.996%
+in251window; different universe/overnight/fixedshare drift/rebalancing/risk.
+Nominalprice proxy/not totalreturn, causal fee savings, alpha or PaperPnL.
+Prefer these descriptive passive AND cadence-matched cost references in a
+future new contract, not another model merely for complexity. Missing input
+scopes that comparison only; no oldresult regrade or Paper profitabilitygate.
+
+Next company dependency is original natural Paper runtime; no automatic
+chatfollowup was installed (app rejected3bounded one-shot create requests).
+Original Windows opportunities remainenabled, no newTask/order/budget.
+Closed launch protocols below are retrieval history, not ready reruns.
+
+Fourier family below is now CLOSED714c939b/Sourceb9a45163:
+6actualCUDAfits/6OOFcalls/24newledgers/3875independent+142closurechecks/
+all13containers+rootclosed/GPUleaseabsent/currentworkers0/0oldmodelcalls.
+COMPLETE_FAIL_FIXED_RFF_MAP, no seed/map/bandwidth/epoch/blend rescue.
+Pooled ordering loss RFF.690052 versus LINEAR.689885; only F1 improves,
+not pooled or2of3folds.20bp combined growth/DD: LINEAR-4.571%/9.678%,
+RFF+.117%/7.955%, fixedhalfRFFCAT-1.900%/8.062%, cachedCAT-.036%/6.975%,
+uniform-11.164%/15.907%. No Fourier-specific blend-cause attribution without
+LINEAR+CAT control. No new alpha/Paper input. All6firstLBFGSsteps recorded,
+2concurrentworkers; selectedsteps LINEAR1/1/1,RFF3/2/1, outer7/7/7 and6/7/7.
+FinalTRAINconverged RFFtrue/LINEARfalse; selected checkpoints need not converge.
+FitworkerSUM73.896s includes I/O/diagnostics, not kernel-onlyGPUtime;
+family1147.568/5400activeupper. Devicepeak4740MiB/co-tenancy not isolation.
+
+Next invoked Strategy readiness (not a fit):
+A/research/current-nas-chronological-expert-tree-readiness-20261026-v1,
+ONE conditional CAT/LINEAR/RFF expert-tree transfer on mature previous OOF,
+or concrete duplicate/schema rejection. Native/numerical caps are NOT granted
+by that source-only proposal. Never reuse old family residual budget or train
+on in-sample/future expert outputs. Existing Paper remains independent.
+
+Closed launch contract for retrieval, NOT another ready job:
+Cicero is the sole Engine/GPU coordinator. SIX new prefix market GPU fits
+closed in this continuation; none is queued to rerun. New frozen family:
+A/research/current-nas-prefix-fourier-linear-ranking-development-20261026-v1.
+Fixed Gaussian Fourier512 representation versus matched linear397 pairwise
+heads on three existing chronological prefixes; fixed half-rank cachedCAT
+blend. Up to6NEWfit attempts/0marketretry/5400activeSUM/7200elapsed,
+original anchor15:40:34UTC/hard17:40:34. Native actual LBFGS/role/selectedstate
+checks and source/Claude/headroom precede payload. No oldmodelcalls/newData/
+Paperinput swap. Analytical NAV1treasury convention is NOT ringfenced.10
+feasibility; selection data are globally adaptive. Source is not a running
+GPU worker or completed fit. Actual allocation requires PID/start/firststep.
+
+Herschel's source-only proposal is READY, not a new numerical owner:
+A/research/current-next-distinct-expert-readiness-20261026-v1/PROPOSAL.json,
+SHAe52e581305b4960b35c69d9b9cd895193a9dfe8f960b2b0a88841cf7c685552e.
+Its disjoint pure feature_map/pair_head handoff is under the new family root's
+herschel-source/SOURCE-HANDOFF.json. Proposal600+kernel90 Sourceupper charged
+ONCE inside family900Source/5400SUM, not new fits per role. No numerical/native
+success is inferred from the source-only handoff.
 
 ## Latest Closed Evidence
+
+Ringfenced financing is now COMPLETE_RINGFENCED_FEASIBLE:
+A/research/current-nas-ringfenced-netting-feasibility-20261026-v1/native-codec-recovery-r1/FINAL-CONSUMER.json,
+SHA40c47bc786bc8633184caa1c3efae175547b4cf0413558ecb9aab62eae75ab4f,
+Source2a42c6e3/251events/6ledgers/69541independent+53closurechecks/allclosed.
+Original proof failed NumPy-bool JSON serialization be1af1e3/Source2051689f,
+0market; preserved335.757upper/23cases/6inventedledgers. Named mechanical
+codec repair used2scalarcases/ONEnew composednativeledger, then dispatched
+the original never-run market bundle ONCE. Total497.140/1200upper/original
+16:35:25deadline unchanged/0modelsGPUretry. No refund or completed-fit replay.
+20bp originalNAV growth/DD ranknet+1.951%/1.144%, matchedgross+1.376%/1.243%,
+uniformnet+.975%/4.057%; fee-only matchedwealth difference .5749percentagepoint.
+Outsidefinancing0,250of251capacityconstrained, meanrankgross1.653%originalNAV
+versusuniform5.352%,249netownheadroom suppressed for paired attribution.
+Not alpha/profitability/Paper pass or risk-matched rank-versus-uniform proof.
+No current ownedregistry/input-update or broker-risk change.
 
 Prefix ranking: A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1.
 Consumer78eb5b20/Source644a0a53, 3NEW GPU CatBoost fits201/100/112trees,

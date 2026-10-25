@@ -9,6 +9,22 @@ Private no-cost Data/Research/KIS Paper authority is delegated. Never KIS_LIVE_*
 real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
+Latest package completion pointers (do not rerun closed launchers):
+Fourier: A/research/current-nas-prefix-fourier-linear-ranking-development-20261026-v1,
+FINAL714c939b/Sourceb9a45163/6NEWCUDAheads/3875+142checks/all13closed,
+COMPLETE_FAIL_FIXED_RFF_MAP/no adoption or retune. Current next source/native
+package is current-nas-chronological-expert-tree-development-20261026-v1,
+new2CPUmeta-fit family on mature earlierOOF; no base model calls/GPU needed.
+Ringfinance: current-nas-ringfenced-netting-feasibility-20261026-v1/native-codec-recovery-r1,
+FINAL40c47bc7/2a42c6e3/251events/6ledgers/497.140combinedupper/allclosed,
+feasible paired accounting not alpha/Paper or broker input-update capability.
+Ltail: A/execution/current-l-ingress-tail-deadline-repair-20261026-v1,
+Consumeraac7a14c/7379177f/16focused/76pins/new3productionRuffPASS,
+falseRelease/no actualeffects. Absolute pre-loader/import/OSlatency notproven;
+frozen testhelper79stylewarnings not blanketRuffPASS. No old21+14 replay.
+Original8fresh metadata526c839d at15:41:27UTC:8enabled/Ready/0instances,
+exact priorXML/ACL/nexttimes, imagepresent/no Task/API/private effects.
+C_NOW preserves originals, not exhaustive legacy migration for extraMean3.
 Current Oct26 continuation (below older protocols are frozen history):
 stock exit-continuation repair5319ce88 is CLOSED,54focused+24Taskmocks,
 review5854cba1/F1closed/F2explicitcutoffhandoff. Original hashed drain/debits
