@@ -15,7 +15,14 @@ SYNSELL accepted/exactfullfill/currentowned0/pendingfalse/strictparser+terminal
 RO/allJobsdaemonsclosed/entry1exit2/F9held. NOT actualKIS/PaperPnL/install.
 Hosttailactualreturn was not retained beforeassertion, so wholehosttail remains
 unqualified. Do not rerun trade/clock/factory scripts to fix a report. Final
-host-result-capture-r1 is source-only/inventedtests, no runtime/private calls.
+host-result-capture-r1 remains source-only/inventedtests, no runtime/private calls.
+New same-root host-result-capture-wired-r1 has Consumer00a7dc6b/Sourcead6ade5d,
+26exactfiles/9integration tests/new helper Ruff PASS. It wires safe per-run
+results into actualContext before host assertions and blocks a producer retry
+after a capture failure. Invented native returns only; actualnative/API/Task0,
+allow_executefalse, not Mean3/runtime/install or oldwholehost qualification.
+Do not invoke its launcher as a strategy or rerun old fixtures. Execution owns
+an independent extra-H5 readiness assessment; no extra Task has been installed.
 
 Current final source QA is d3932f49cd04da7011cded5b28faf29c8c94cc3ccae5c899e505ab61638ba2ae:
 A/verification/current-account-serial-round-integration-20261025-v1/technical-r8/AUTHORITY.json.

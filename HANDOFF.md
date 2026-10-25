@@ -162,8 +162,21 @@ Never repeat SELL/BUY merely to repair a report. Current final source-only
 host-result-capture-r1 is now CLOSED4e7bd41d/4puretests/RuffPASS: prepared
 source-bound capture of allowlisted status/counts BEFOREunchangedassert,
 actualfunctionexercised usinginventedreturns, no runtime/private/model effects.
-Patch is NOTwired/installed; it cannot reconstruct missing historical return
-or regrade f349 as whole-host PASS. Production readiness remains separate.
+That original patch remains immutable. New host-result-capture-wired-r1 is
+CLOSED HOST_CAPTURE_WIRED_9_INTEGRATION_TESTS_PASS_NOT_DEPLOYED at the same
+integration root: Consumer00a7dc6bd0c976c079e09a937dea7d93150522fa8505ddcfda27a62244fad5a4,
+Sourcead6ade5d4a34998adbfb65ae05d90771e41ce00181104959b0f1861dffb358a7.
+All26source members match. Driver->actualContext->native-return->safe sink is
+wired; actual originalrun_single and validators were exercised with INVENTED
+returns. Per-run/source/release/round/phase/sequence exclusive records precede
+host assertions; a latched sink failure blocks a second producer invocation.
+Nine focused tests pass, new helper/test/freezer Ruff passes. Native/API/Task
+effects0, allow_executefalse. This is not actual native/runtime qualification,
+Mean3 input binding, installation or reconstruction of the old missing return.
+The old source-specific task plan/root remains inert, not a deployable action.
+Bernoulli assesses exact extra-H5 deployment gaps; Mencius independently reviews
+the new wiring/Claude challenge. Cicero owns ONE distinct new useful research
+readiness/campaign, not duplicate fits or GPU occupancy. No new GPU run claimed.
 
 Reusable fixture support is CLOSED: mounthelperfd0314d0/15puretests and
 censushelpercc2e8010/8regressions/Ruffclean. Compare COMPLETE mount dictionaries

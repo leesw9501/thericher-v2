@@ -12,7 +12,16 @@ wholehosttail NOT_QUALIFIED/technicalmarkerretained. Finalsource-only
 host-result-capture-r1 CLOSED4e7bd41d/4puretests/RuffPASS, prepares safe status/
 count capture BEFOREunchangedactualassert. NOTwired/installed/runtimequalified,
 NO Docker/native/private/model/Task rerun and no oldeffectstatus reconstructed.
-Next narrow work is NEWcandidate source-bound wiring/readiness, no repeatSELL.
+NEW host-result-capture-wired-r1 is CLOSED00a7dc6b/Sourcead6ade5d at the same
+integration root:26source-exact/9focused integrations PASS/new helper Ruff.
+Driver and actualContext emit safe source/release/run/round/phase/sequence
+results before caller assertions. A failed sink blocks a caught caller retry
+BEFORE the native producer. Actual originalrun_single/validators tested with
+invented returns only; no actual native/API/Task effects, allow_executefalse,
+not whole-host/runtime/deployment qualification. Original task-plan/root is
+still inert and oldd5f53 model binding is not newMean3. Bernoulli now owns
+the disjoint extra-H5 readiness assessment; Parent wired capture locally.
+Mencius owns independent source/Claude challenge. No repeated old SELL/BUY.
 Older protocol descriptions below are closed history, not active instructions.
 Original shared initial tenth/basis/costs/losses/pending/F9UNKNOWN-HELD unchanged.
 Company NEXT: exact Oct26 natural GRU/TimesFM/Joint17 entry outcomes. Existing

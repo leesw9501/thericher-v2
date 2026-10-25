@@ -48,11 +48,15 @@ are evidenced, but whole host-tail completion is NOT qualified. Keep technical
 marker/oldfailed64037d87+c675511f+earlierclaims unchanged. No more native
 dispatch in these closed scopes; never repeat SELL/BUY to repair reporting.
 
-Source-only host-result-capture-r1 is CLOSED4e7bd41d/4puretests/RuffPASS:
-exactactualfunction exercised with inventedreturns, safe status/count capture
-BEFORE unchangedassert. Patch is prepared, NOTwired/installed/runtimequalified.
-Next Execution work is source-bound wiring/readiness assessment on a NEW
-candidate, not regrading oldeffects or repeating SELL merely to fix reporting.
+Original source-only host-result-capture-r1 stays CLOSED4e7bd41d/4puretests.
+New host-result-capture-wired-r1 Consumer00a7dc6b/Sourcead6ade5d is wired on an
+INERT new candidate:26source-exact/9focused integration tests/new helper Ruff.
+ActualContext and originalrun_single/validators consumed INVENTED returns;
+exclusive source/run/phase/count capture precedes host assertions. A sink
+failure latches BEFORE another native producer invocation. Actual native/API/
+Task effects0, allow_executefalse; not runtime/install/Mean3 binding or old
+host-tail requalification. Bernoulli owns exact additional-H5 readiness gaps,
+Mencius source/Claude review. No old SELL/BUY replay merely to repair reporting.
 Do not install/migrate old8 or launch anotherstrategy to close a test report.
 Current Paper opportunities remain owned independently. All dispatched workers
 are closed; Parent owns next dispatch/Git, not a standing daemon.
@@ -71,9 +75,11 @@ sufficiency, FULL advantage varies by block. No input simplification/causal
 indicator/independentalpha or Paper swap supported. Nativeallzero fixture
 failureb1026fdf remains technical; named repair30.531/90/cumulative24native
 iterationupper/olddebits retained, originalmarkettrials2 completedONCE.
-No active model worker or next frozen training; GPU standby is not a permission
-hold. Do not restart completed fits for occupancy. Next concrete consumer is
-prepared397-input Paper connection/runtime, not another reused-cohort sweep.
+Cicero now owns ONE genuinely distinct useful research readiness/campaign;
+no new GPU run is claimed until a frozen ready contract and actual worker
+exist. GPU standby is not a permission hold. Do not restart completed fits or
+another reused-cohort parameter sweep for occupancy. Prepared397-input Paper
+connection/runtime remains an independent ready consumer.
 Prior neural transfer3c6967aa/9c1832fa is CLOSED COMPLETE_FAIL,32epochs/best7/
 2784updates/26.45worker seconds/201+199checks/Parent38refs/all6closed/leaseabsent.
 Fixed blend underperforms cachedCAT; do not retune or rerun it.
