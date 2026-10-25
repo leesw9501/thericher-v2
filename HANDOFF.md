@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-25 KST. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-26 KST. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
 Private no-cost Data/Research/KIS Paper authority is delegated by AGENTS.md.
@@ -79,8 +79,68 @@ that contract. Empty history/missing opener cannot prove no-send or free reserve
 
 ## Current Packages
 
-Parent owns shared MD/Git; latest checkpoint4af158b. Current numerical claims below use
+Parent owns shared MD/Git; latest checkpointf9a9d29. Current numerical claims below use
 actual closed workers, not role names or remaining budgets. No old fit repeats.
+
+Current additional readiness delta (all still INERT, no old8/actual changes):
+stock prototype60bfc8de/c322a23c passed36ingress+24Taskmocks but dropped original
+multi-leg exit continuation. Parent's NEW repair at
+A/execution/current-stock-ingress-exit-continuation-repair-20261025-v1 is
+CLOSED5319ce88d4389020d1f06e70c75d9a1a0974393fa3f7d5668c9a056728eedb5b:
+54Context/originaldrain/counter/pending/deadline mock tests+24Taskmocks PASS.
+Original source-hashed exit_drain/CLOSED and per-leg debit rules retained;
+top-levelpending now stops nonzero rather than normal success. Advancing-clock
+tests preserve exact pending bytes/technical state/debits with no late call.
+Finite round cutoff remains narrower than original after-cutoff recovery;
+next separately scoped exact reconciliation is required, not timing parity.
+600conservative source/test upper charged/not CPU-GPU time;0actualeffects.
+Review FINAL-PIN5854cba1 under current-stock-exit-continuation-repair-20261025-v1
+accepts F1closed/F2explicitlimitation. Production/test Ruff passes; sealhelper
+only retains E501longliteral, no whole-root lint/runtime/cutover claim.
+
+L prototype current-l-ingress-shared-gate-graft-preparation-20261025-v1 is
+CLOSED PARTIAL30ffc94a/d4b116f2:16mockchecks perrevision, actualowner/provider
+bootstrap not connected, source/attempt lineage must remain original. No
+activation. Chandra now implements the concrete own-L provider in NEW
+A/execution/current-l-ingress-owned-provider-integration-20261026-v1.
+Bern now owns ONE full GRU native no-intent seed/effect/postseed qualification
+at current-stock-gru-full-native-no-intent-qualification-20261026-v1,
+freshSYNonly/networknone/max4creates900active1800elapsed/0actualprivateKIS.
+Source mocks and prior0889 do not qualify that pending whole native path.
+
+Same-bank census3154a836 under current-same-bank-ingress-census-20261025-v1
+enumerated281Tasks/77projectnamespacecandidates/61enabled/0instances at14:43UTC.
+Original8 is NOT the complete writer universe: R5Oct27/HGBOct28/oldJ17Nov19/
+volumeGRU67Nov19 source paths share the private volume, plus unexamined routes.
+No actual Action/actor/private proof from names/tags/zero instances. Mencius
+resolved safe Action/public-source bindings in a separate read-only scope:
+current-same-bank-ingress-action-binding-20261026-v1/CONSUMER.json.
+11selected routes/public pins match, including live logging overlays. None of
+the enabled expired diagnostics was positively qualified for safe retirement.
+Remaining inline/demand/owned-recovery paths stay scoped unknown, not deleted.
+Parent compares a bounded exclusive round with broad legacy migration; no
+unbounded all-enabled-task rewrite or new global permission gate is adopted.
+Withhold ONLY added-pilot cutover; preserve original opportunities/recovery,
+unknown reservations, Data/research. No Task was changed by this census.
+
+Latest absolute-edge research is CLOSED291c4e7c/Sourcec95e21b9 at
+A/research/current-nas-prefix-absolute-edge-cash-development-20261025-v1:
+3NEWGPUregressors65/67/70trees/SELECTbest1/3/6, chronologicalSELECT/CAL,
+7607independentchecks/all9closed/leaseabsent/848.500activeupper. F1/F2entered84
+each,F3entered0; COMPLETE_INSUFFICIENT_ENTRY_SUPPORT.20bp gate growth/DD
+-13.540%/17.978%, matchedsame-cash uniform-9.634%/12.071%, ownalways-16.562%/
+21.676%. No threshold retune/Paperswap/alpha. Six new marketGPUfits completed
+across this and prefixrank family, no oldmodel replays. Cicero now owns a
+distinct ZERO-FIT persistent target-position/netting cost mechanism, now CLOSED:
+current-nas-persistent-target-netting-shadow-20261026-v1/FINAL-CONSUMER.json,
+Sourceca0fc18e/251events/6ledgers/38761accounting+48closurechecks/all4closed.
+20bp nettedgrowth5.838%/DD4.997%, matchedroundtrip2.276%/5.389%, uniformnet
+2.877%/5.700%; identicalshares save35.46percentturnover/3.5617percentagepoint
+NAV modeledfees. NAV1financing causes8ringfenced.10shortfalls/max.009768extra
+originalNAV: accounting-only, NOT alpha/feasiblePaper. Cicero now owns separate
+current-nas-ringfenced-netting-feasibility-20261026-v1, samecachedpredictions/
+actualpricegaps/cashfeasiblepairedsharepaths/0models/GPU. No closedledger rerun,
+dummy training or currentH5Execution input-update/ownedregistry claim.
 
 LATEST completed wider-prefix research:
 A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1,
@@ -90,7 +150,7 @@ Three NEW GPU CatBoost fits201/100/112trees, selected137/36/48 from each
 chronological innerCHECK; attached guest phases13.733/12.918/10.930seconds.
 Existing GRU predictions reused/no oldmodelcalls.251H5cohorts/1256forecastdates/
 78732rows/32ledgers/20080CLOSEmarks/3843independent+273closurechecks/all9closed/
-GPUleaseabsent. Parent69refs/0mismatch.10bp per-leg combined growth/DD:
+GPUleaseabsent. Parent70current-consumer refs/0mismatch.10bp per-leg growth/DD:
 CAT+4.989%/5.568%, fixedhalf-rank blend+4.598%/4.470%, cachedGRU-14.278%/
 21.834%, uniform-6.161%/11.774%. COMPLETE_FAIL_FIXED_ENSEMBLE: ONEof21 fails
 (combinedgrowth versus CAT). LowerblendDD/higherutility do not regrade it.
@@ -121,6 +181,13 @@ NativeBridge/realTask/account-writer qualification, actual broker/private/Task0.
 Prior d4193c11 pre-worker numericSYNroute failure/6.430seconds stays closed;
 same constructor rejection reproduced,100letterroutes pass, no trade repeated.
 Do not rerun either closed proof/controller or call this installReady.
+Independent ADDENDUM-NATIVE-NO-INTENT.json at the thin-gate review root below
+accepts this scoped proof. Tiny bypasses runtime.run via tiny_bound and proves
+guarded-worker/schema ABI only; EXACT proves new Mean3 runtime binding. Their
+identical no-intent return bytes are NOT input identity. Host consumes the
+retained reply directly, not original run_single/real NativeBridge/Task paths.
+Observed controller40.658seconds total across failedr1+passingr2,3creates/
+17CLIJobs; do not add nested CLI wall time or refund the initial failure.
 
 Parent adopts thin shared-gate direction, not all8 proposal-only migration:
 A/review/current-extra-h5-minimal-single-writer-integration-20261025-v1/

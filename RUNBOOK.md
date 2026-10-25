@@ -9,6 +9,26 @@ Private no-cost Data/Research/KIS Paper authority is delegated. Never KIS_LIVE_*
 real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
+Current Oct26 continuation (below older protocols are frozen history):
+stock exit-continuation repair5319ce88 is CLOSED,54focused+24Taskmocks,
+review5854cba1/F1closed/F2explicitcutoffhandoff. Original hashed drain/debits
+retained; pending/cutoff stop nonzero, exact state remains for separate
+reconciliation. No late recovery/timing-parity/runtime or actualcutover claim.
+Bern owns ONE fresh SYN full-GRU NativeBridge qualification, not an old trade
+replay; Chandra owns distinct L provider source/mock integration.
+Safe Action/public-source census current-same-bank-ingress-action-binding-
+20261026-v1 binds11priority/quiet routes, not just original8. R5/HGB/oldJ17/
+GRU67 remain writer-capable; unknown expired demand paths are not disposable
+diagnostics. No Task changes. Preserve original due opportunities/owned exits.
+Parent compares finite exclusive-round preparation against broad migration;
+only added-pilot cutover remains unqualified, no company permission hold.
+Absolute-edge study291c4e7c/c95e21b9 CLOSED:3NEWGPUfits/7607checks/all9closed,
+F3noentrysupport/losses/no adoption. SIX prefixGPUfits this turn closed.
+Zero-fit shadow current-nas-persistent-target-netting-shadow-20261026-v1 is
+CLOSED/accounting-only:20bp nettedgrowth5.838% versus matchedroundtrip2.276%,
+35.46percentturnover saved. NAV1financing violates a ringfenced.10 sleeve
+at8events; NOT alpha/feasiblePaper. New ringfenced-feasibility study is separate,
+cached predictions/0models/GPU, never rerun closed ledgers for reporting.
 Current additional Mean3 COW is CLOSEDd6848702 at
 A/execution/current-mean3-existing-native-inert-preparation-20261025-v1:
 9host+8Taskmocks/Ruff/808Parentpins, inertroot67b66ecb/native9b16/central4237.
@@ -27,7 +47,7 @@ actualpaired route are qualified. This is technical work, not new approval.
 Latest Engine78eb5b20/644a0a53 prefixcampaign is CLOSED:3NEWGPUfits/251cohorts/
 3843+273checks/all9closed/leaseabsent/no oldmodelcalls.10bp growth/DD CAT4.989%/
 5.568%, blend4.598%/4.470%; oneof21criteriafails,20bperasesgrowth. No alpha/
-Paperswap or oldfit rerun. Cicero prepares a new distinct cost/entry-edge study;
+Paperswap or oldfit rerun. Its subsequent absolute-edge study is closed above;
 newSource/contract alone never means GPU is running. Market/models remainM/A.
 
 Latest TEST lifecycle outcome is CLOSEDf3498a3e at
@@ -50,7 +70,7 @@ PASS including projection/serialization failures/caughtretry/nativecount1.
 Productionhelper/freezer RuffPASS; external test I001 retained. Use r2 only,
 still falseRelease/actualnative0, not a strategy launch or deploy authority.
 Additional Mean3 readiness is NO_DEPLOY; current-mean3-existing-native-inert-
-preparation-20261025-v1 is assigned source/test-only600active/1200elapsed,
+preparation-20261025-v1 is closed source/test-only600active/1200elapsed,
 paired one-shot/oneleg/original8/8/2 caps. No new Task/Docker/API/private work.
 
 Current final source QA is d3932f49cd04da7011cded5b28faf29c8c94cc3ccae5c899e505ab61638ba2ae:

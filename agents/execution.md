@@ -1,8 +1,28 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-25 KST. A=D:/thericher-v2/model-artifacts.
+2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic risk/intents/orders/custody/accounting; Parent sharedMD/Git.
 AGENTS private Paper authority; no operator decision presently.
+Current stock source delta is CLOSED5319ce88, reviewed5854cba1:
+A/execution/current-stock-ingress-exit-continuation-repair-20261025-v1.
+54actualContext/originaldrain/debit/pending/cutoff mockchecks+24Taskmocks PASS;
+native/private/Task/Docker0. Original source-hashed full exit_drain now used;
+top-levelpending stops nonzero. New narrower round cutoff remains explicit:
+retain exact pending/technical/debits for separately scoped reconciliation,
+not original after-cutoff recovery parity or a late-effect permission.
+Production/test RuffPASS; immutable sealhelper E501 is metadata-only/not
+whole-root lint claim. Old60bfc8de remains CLOSED exit-continuation-gap.
+L30ffc94a is PARTIAL with owner/provider/attempt-lineage work outstanding;
+Chandra now implements actual own-L provider in NEW
+current-l-ingress-owned-provider-integration-20261026-v1.
+Bern owns one full GRU native no-intent qualification in freshSYNonly at
+current-stock-gru-full-native-no-intent-qualification-20261026-v1,
+900active1800elapsed/max4creates/actualprivateKIS0. No runtime inferred yet.
+Samebank census3154a836:281Tasks/77projectcandidates/61enabled/0instances,
+not Actionownership/closure. Other R5/HGB/oldJ17/GRU67 future writer paths
+mean original8 NOT allrunnable. Mencius maps actual safeActions; addedpilot
+only withheld, original8/owned recovery remain unchanged/no actual rollout.
+
 LATEST additional mean3 COW is CLOSEDd6848702/root67b66ecb/native9b16d069/
 central42379075:9host+8Taskmocks/RuffPASS/Parent808pins exact, falseReleases.
 Exacte886/d8fe/2f299/219435/newops/counter/marker roots, samephysicalbank/basis,

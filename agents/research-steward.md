@@ -1,19 +1,30 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-25 KST. A=D:/thericher-v2/model-artifacts.
+2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
 Own measured resources/leases/trial custody, not model choice/approval.
 AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
+
+Absolute-edge family291c4e7c/c95e21b9 is CLOSED:3newGPUfits65/67/70trees,
+best1/3/6,11.304+11.835+11.437attachedguestseconds,7607checks/all9closed/
+leaseabsent/848.500activeupper (not GPUtime). Insufficient F3entrysupport,
+no adopted model. Together with prefixrank78eb, SIX new marketGPUfits closed;
+no oldmodelcalls/duplicate training. Current next resource package is ZERO-FIT
+ringfenced target-position feasibility/ledger preparation, so GPU is standby.
+Earlier shadow Sourceca0fc18e is CLOSED/all4helpersclosed/0fits/GPU; modeled
+fee identity held but NAV1financing was not a feasible ringfenced.10 policy.
+Do not allocate synthetic/dummy fits for utilization. Start the next genuinely
+ready frozen trainable study under normal headroom/custody, no permission hold.
 
 Latest actual campaign78eb5b20/Source644a0a53 is CLOSED:
 3NEWGPUfits201/100/112trees/best137/36/48/13.733+12.918+10.930guestseconds,
 251H5cohorts/3843+273checks/all9closed/leaseabsent. No oldmodelcalls. Sampled
 devicepeak14095MiB/minfree10046MiB, not processallocation/isolationbenchmark.
 Engine391.001+Datareadiness300+metadata5=696.001/3600activeupper, not GPUtime.
-COMPLETE_FAIL_FIXED_ENSEMBLE, noautomaticPaper swap. Cicero now owns ONE new
-cost/absolute-entry-edge readiness/campaign, not another seenblendweight/seed
-sweep. Actual nextGPU allocation needs its own frozencontract/native/PID/start/
+COMPLETE_FAIL_FIXED_ENSEMBLE, noautomaticPaper swap. Its cost/absolute-entry
+successor is also closed above, not another seenblendweight/seed sweep.
+Actual nextGPU allocation needs its own frozencontract/native/PID/start/
 lease/firststep evidence; no readyworker or utilization claim from role names.
 
 Broader chronological CAT is CLOSEDd7f9a5cf/84b99bab: oneactualGPUfit37988,

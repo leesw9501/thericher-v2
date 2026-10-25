@@ -1,16 +1,36 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-25 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-26 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own targets/features/fits/replay/fusion, not deterministic broker risk.
 AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+Latest absolute-edge family is CLOSED291c4e7c/Sourcec95e21b9:
+A/research/current-nas-prefix-absolute-edge-cash-development-20261025-v1.
+3NEWGPUregressors65/67/70trees/SELECTbest1/3/6, separateCAL59dates,
+7607independentchecks/all9closed/GPUleaseabsent/848.500activeupper.
+COMPLETE_INSUFFICIENT_ENTRY_SUPPORT: F1/F2all84enter,F3all83cash/no support.
+At20bp gate growth/DD-13.540%/17.978%, matchedsame-cash uniform-9.634%/12.071%,
+ownalways-16.562%/21.676%. No retune/adoption/Paperswap or alpha claim.
+Six new marketGPUfits across the two prefix studies are completed, not ready
+jobs to rerun. ZERO-FIT persistent-target shadow is now CLOSED:
+A/research/current-nas-persistent-target-netting-shadow-20261026-v1,
+FINAL-CONSUMER.json/Sourceca0fc18e/251events/6ledgers/38761accountingchecks/
+48closurechecks/all4closed. At20bp nettedgrowth/DD5.838%/4.997%, matched
+roundtrip2.276%/5.389%, uniformnet2.877%/5.700%; identicalsharepaths save
+35.46percentturnover/3.5617percentagepointsNAVfees. Accounting-only: NAV1cash
+financesfixedgross, ringfenced.10wouldshortfall8times/max.009768originalNAV.
+Not alpha/feasiblePaper or current broker owner/input-update capability.
+Cicero owns NEW current-nas-ringfenced-netting-feasibility-20261026-v1:
+causallycashfeasiblecommonsharepath/net-vs-roundtrip/uniformcontrols, cached
+predictions/grossmarks/0models/GPU. No closedledger rerun or occupancytraining.
+
 Latest wider-prefix campaign is CLOSED78eb5b20/Source644a0a53 at
 A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1.
 3NEWGPUCatfits201/100/112trees/best137/36/48/13.733+12.918+10.930guestseconds;
 no oldGRU/HGB/CATmodelcalls.251H5cohorts/1256forecastdates/78732rows/32ledgers/
-3843independent+273closurechecks/all9closed/GPUleaseabsent/Parent69refs exact.
+3843independent+273closurechecks/all9closed/GPUleaseabsent/Parent70refs exact.
 COMPLETE_FAIL_FIXED_ENSEMBLE: only combinedgrowthvsCAT fails21AND.10bp
 growth/DD CAT+4.989%/5.568%, blend+4.598%/4.470%, GRU-14.278%/21.834%,
 uniform-6.161%/11.774%.20bp CAT-.036%growth/blend-.426%; cost sensitivity
@@ -18,8 +38,8 @@ is concrete. Currentlisting/nonPIT/globallyadaptive, not alpha/PaperPnL.
 Existing Data84611e51/cad317e3 reuse confirmed/no newkernel/build; crossfold
 outcome dependence retained/no251rephase. Engine391.001+Data300+metadata5=
 696.001activeupper/3600, not GPUtime. No currentworker inferred after closure.
-Cicero now owns ONE distinct cost/absolute-entry-edge consumer readiness or
-finite new campaign; no oldfit/seenblendweight tuning/automaticPaper swap.
+Its subsequent absolute-entry family is closed above; no oldfit/seenblendweight
+tuning/automaticPaper swap.
 
 Earlier actual GPU campaign is CLOSEDd7f9a5cf/Source84b99bab at
 A/research/current-nas-broader-check-development-20261025-v1.238checks/
