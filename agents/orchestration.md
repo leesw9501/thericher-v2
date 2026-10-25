@@ -17,12 +17,23 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | FreshQA0dbcc98a:394serial/19209full25skip/8workers/1399exact/Ruff3Compose/clean. Integrate/commit code+current docs, original company natural outcomes unfinished. |
-| Tesla / 실행 구현 | CLOSED DRO5bab/6b07/744f and ensemble3b68/d5f53/3cfc/e605 typed inputs, PREPAREDnotdeployed/sevenpositive. No broker/private/Task/old8 change; finite exit coverage unqualified. |
-| Kant / 데이터 | PAIR retention4files/defaultOFF/sourceQA0dbc COMPLETE. Owns NEW source/native-first read-only pair observations-only capability probe, no canonical commit/Task/account/order/live. |
+| Parent / 총괄 | Resume source1399exact/0mismatch, QA0dbcc98a reused only for unchanged protected source. Integrate closed actual Data evidence and review disjoint preparations; original company outcome unfinished. |
+| Bernoulli / 실행 구현 | Recovered D-only HGB-CAT finite controller preparation, current-hgb-catboost-h5-controller-preparation-20261025-v1. Original Tesla absent/root absent/non-self actors0; no Task/private/broker effects. |
+| Chandrasekhar / 데이터 | Closed probe dbcb3154:actual1POST2GET/all200/2x100rows/2x63sessions/missing0/alljoined. Owns metadata-only current-pair-retention-natural-deployment-readiness-20261025-v1; no Task/image/service change. |
+| Euler / 전략 준비 | Metadata/source-only current-nas-risk-composition-next-readiness-20261025-v1: next distinct causal portfolio benchmark proposal, no payload/model/ledger/GPU effects. |
 | Godel / 전략·반증 | CLOSED H5/397 CatBoost readinessc02e/a575/4bbmetadata and pure pair8d2df/48checks. Explicit transfer, oldH20/19notrerun; no native/fit/GPU effect. |
 | Noether / 엔진·자원 | CLOSED CatBoost2e9f actualGPU163/best99/OD64 plus ensembleCPU8159/59checks/allclosed. No active GPU/LLM worker; coordinator role resumes first ready useful family, no duplicate fit. |
 | Hume / 엔진 실험(임시) | CLOSED point60a73f76/oneCPUrestore/twoforwards/138stockseq/10SYN/105.746upper. OldF9scope stillclosed/UNKNOWN-HELD, no broker call or GPU allocation. |
+
+Resume throughput review: app update removed prior LLM connections. Controller
+root absent/no non-self named process; Docker census only web, so no old fit or
+controller was restarted blindly. Recovered disjoint preparation workers above;
+Parent integrates sealed Data probe and Git. Reversible improvement: eliminate
+artificial four-minute gaps between already-ready native visits, while retaining
+measured API pacing, exact risk/custody and finite recovery/deadline counters.
+Preparation is not installation or a fill. Original task-owned session due
+times remain independent, with no foreground wait. Data actual probe closed at
+07:08:45UTC; neither old worker transport nor new research input is inferred.
 
 Throughput review05:22UTC: no future market-session foreground wait. Parent
 integrates disjoint MD/Git, Noether owns NAS model runtime/resources, Godel checks

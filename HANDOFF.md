@@ -78,16 +78,27 @@ All newly dispatched training/inference is CLOSED. No active GPU fit or
 unnecessarily held ready GPU campaign is claimed; do not repeat completed fits.
 Noether/Hume/Strategy workers may be resumed for a concrete new package.
 
-Data source work is COMPLETE/defaultOFF, verified below. Kant now owns a NEW
-bounded read-only QQQ/SPY whole-observation capability probe at
-A/data/current-pair-whole-observation-capability-probe-20261025-v1.
-Native network-none/source check precedes scoped Paper credentials/network.
-At most1tokenPOST+2dailyGET(+1positivelytransient GET retry), QQQ/NAS+SPY/AMS.
-New observations-only M namespace, NO canonical commit/reset/quarantine clear,
-account/order/live or Task/service invocation. Existing token/client/gates/
-measured pacing; unknown owner/cooldown defers only this worker via next_due.
-Do not call this a recovered installed natural run or historical dataset grade.
-The original natural pair opportunity recorded forOct26 21:55UTC is separate.
+The app update lost the previous LLM agent connections. Resume census found no
+non-self controller-preparation process and only the web Docker container;
+the proposed controller root did not exist. No completed training was rerun.
+Bernoulli now owns D-only HGB-CAT controller preparation, Chandrasekhar owns
+PAIR natural-worker retention rollout readiness, and Euler owns the next
+nonduplicate risk-composition proposal. These are bounded workers, not daemons.
+No Task/broker/private-state effects are assigned to these preparation packages.
+
+Data probe is CLOSED at
+A/data/current-pair-whole-observation-capability-probe-20261025-v1:
+CONSUMER dbcb315480d10c5ba9b29de77efafef02174c55eda8a41b256568a57e91b3668,
+Source1b24450f/Outcome fc4a690c/Native c633b70f. Actual1tokenPOST+2dailyGET,
+allHTTP200, no retry. QQQ/NAS and SPY/AMS each retained100 parsed daily rows;
+63 official sessions Jul28..Oct23 verified per target, missing0.11native cases,
+all helpers joined/containers removed;302.536active upper/600 at07:08:45UTC.
+Parent independently rehashed all three direct consumer references:0mismatch.
+Observations stay under M/us_equities/observations/current-pair-whole-observation-capability-probe-20261025-v1.
+NO canonical commit/reset/quarantine clear, account/order/live or Task effects.
+This new opt-in probe does not prove the installed natural worker recovered,
+PIT/corporate-action/finality qualification or a new Paper input. Do not rerun.
+Original natural pair opportunity recorded forOct26 21:55UTC stays separate.
 
 ## Completed Research
 

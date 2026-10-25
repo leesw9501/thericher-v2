@@ -87,13 +87,16 @@ training. Tesla DRO typed input5bab/6b07/744f is also PREPAREDnotdeployed,
 22native+cold/sevenpositive, original.005total/fullweights. Kant owns future
 optional PAIR whole-page observation retention/reader, preservingcanonical/
 quarantine. Source/defaultOFF now verified394serial/19209full25skip/8workers/
-1399same/Ruff3Compose authority0dbcc98a, not old1398 reuse. Kant now owns NEW
-bounded source/native-first read-only pair capability probe at
-A/data/current-pair-whole-observation-capability-probe-20261025-v1. OnlyQQQ/NAS
-andSPY/AMS/onepageeach/1tokenPOST+2dailyGET(+1transientGET), observations-only M
-namespace/NO canonical commit/reset/Task/account/order/live. Existing scoped
-Paper loader/client/token/gates/pacing. Heldowner/cooldown defers only that
-worker; probe evidence is not installed natural-run recovery or dataset grade.
+1399same/Ruff3Compose authority0dbcc98a, not old1398 reuse. Read-only pair probe
+is CLOSED at A/data/current-pair-whole-observation-capability-probe-20261025-v1:
+Consumerdbcb3154/Source1b24450f/Outcomefc4a690c. Actual1tokenPOST2dailyGET,
+allHTTP200/0retry;QQQ-NAS andSPY-AMS each100rows/63sessions/missing0.11native
+cases/allhelpersclosed/302.536activeupper. No canonical/Task/account/order/live
+effects or installed-worker recovery/dataset-grade claim. Do not repeat.
+After app update, parallel ready work is D-only HGB-CAT finite controller
+preparation, metadata-only natural PAIR retention deployment readiness and one
+nonduplicate causal risk-composition proposal. New worker names/roots are in
+orchestration.md; no completed model, input build or probe is a ready retry.
 Future-host
 repairSourcea1d9c888/23checks/79.665upper is closed; each expected child must
 have closure before lease release, post-Popen failures join owned CLI, old

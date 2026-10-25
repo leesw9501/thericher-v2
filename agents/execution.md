@@ -31,8 +31,13 @@ Actual DRO input5bab7b01/6b07ee31/744ff8cf (22native+cold) and ensemble input
 PREPARED_NOT_DEPLOYED. Ensemble root:
 A/execution/current-hgb-catboost-h5-ensemble-paper-input-preparation-20261025-v1.
 12newbinding+cold/onebuild+verify,seven unchanged1/7/full10069+31/trueCASH-NAS/
-.005TOTAL. No new controller/Task/private/sizing/API/order; exit-window coverage
-not qualified. Initial480catalog assertion met unrelated Data edits before
+.005TOTAL. New controller is not yet qualified or installed. After app update,
+Bernoulli owns D-only current-hgb-catboost-h5-controller-preparation-20261025-v1:
+back-to-back ready native visits, finite original-risk/counter/deadline/recovery
+semantics, quiet launch and synthetic native proof. Proposed entryOct26
+18:25..19:40UTC/exitOct30 19:45..20UTC; no guarantee of seven exit completions.
+No Task/private/sizing/API/order effects in that package; old8/L271/F9 intact.
+Initial480catalog assertion met unrelated Data edits before
 effects; known-zero bootstrap pins61actual import nodes, not a blanket waiver
 or repeated model/native/build. Old8/L271/F9/financial identities unchanged.
 Current graft actual03:24..25UTC applied5actions (GRU2,TimesFM2,Joint17exit);

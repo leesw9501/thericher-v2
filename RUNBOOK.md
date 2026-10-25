@@ -17,10 +17,18 @@ own scratch/leases/25PID-start actors closed. Suite ONCE; post-test field-adapte
 fault preserved, exact-source closure completed only unrun checks. Prior a5ba/
 704c is1398history. PAIR --retain-observations source IMPLEMENTED/defaultOFF,
 not installed. Whole parsed pages/publicquery/source/capture/hash/asof, no raw
-HTTP/auth, canonical rewrite or quarantine clear. New owned capability probe
-under A/data/current-pair-whole-observation-capability-probe-20261025-v1 has
-separate native/API scope and M observations-only output, not a Task invocation.
-Use only its actual sealed commands/results, no source-only recovery claim.
+HTTP/auth, canonical rewrite or quarantine clear. Capability probe under
+A/data/current-pair-whole-observation-capability-probe-20261025-v1 is CLOSED:
+Consumerdbcb3154/Source1b24450f/Outcomefc4a690c/Nativec633b70f,11native cases,
+actual1tokenPOST2dailyGET/allHTTP200/no retry.Each target100rows/63required
+sessions Jul28..Oct23/missing0;allhelpersclosed/302.536activeupper. Do not run
+the completed native/API probe again. M observations-only;no canonical/Task
+change or proof of installed transport recovery/finality/PIT/CA.
+New metadata-only retention deployment readiness is separately owned under
+A/data/current-pair-retention-natural-deployment-readiness-20261025-v1.
+New D-only HGB-CAT controller preparation is under
+A/execution/current-hgb-catboost-h5-controller-preparation-20261025-v1;
+no install command is qualified yet and no original Task should be replayed.
 Current HGB-CAT point8159/e6e and input3b68/d5f53/3cfc/e605 are complete/
 PREPARED_NOT_DEPLOYED; no model/builder rerun or old8/L271 swap.
 

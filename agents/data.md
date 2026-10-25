@@ -11,13 +11,21 @@ script0515d42c/testsce937997.102focused then Parent394serial/19209full25skip/
 8workers/1399exact/Ruff3Compose, authority0dbcc98a. Legacy canonical/merge/
 quarantine unchanged; whole parsed pages/query/source/capture/hash/asof only,
 not raw HTTP/auth or a MODP0->1 upgrade. Installed worker remains unchanged.
-Kant now owns NEW source/native-first read-only QQQ-SPY capability probe at
-A/data/current-pair-whole-observation-capability-probe-20261025-v1. Max1token
-POST+2dailyGET(+1known-transientGET), onlyQQQ/NAS+SPY/AMS, new observations-only
-M namespace/NO canonical commit, account/order/live or Task/service invocation.
-Existing scoped Paper loader/client/token/gates/pacing; heldowner/cooldown yields
-only worker next_due, not global wait. Manual probe is NOT installed-run recovery
-or dataset promotion. Diagnosisabbcf6e6/8SYN/ClaudeSOUNDlimits is closed.
+Actual probe is CLOSED at
+A/data/current-pair-whole-observation-capability-probe-20261025-v1:
+CONSUMERdbcb315480d10c5ba9b29de77efafef02174c55eda8a41b256568a57e91b3668,
+Source1b24450f/Outcomefc4a690c/Nativec633b70f.11native cases; actual1tokenPOST
+and2dailyGET/allHTTP200/0retry. QQQ/NAS+SPY/AMS each100parsed rows,63official
+sessions Jul28..Oct23/missing0 verified;allhelpersjoined/containersremoved,
+302.536activeupper/600. Parent independently rehashed three direct refs:0mismatch.
+Only M/us_equities/observations/current-pair-whole-observation-capability-probe-20261025-v1
+changed; canonical/privatebank/Task unchanged. No repeat call/native/build.
+Installed-worker transport recovery and PIT/CA/finality remain unproved.
+After app update Chandrasekhar owns metadata-only natural retention deployment
+readiness at A/data/current-pair-retention-natural-deployment-readiness-20261025-v1.
+No Task/service/image/canonical change is authorized in that package. Preserve
+original recorded next_due Oct26 21:55UTC; a successful direct probe is not
+an installed natural-run outcome. Diagnosisabbcf6e6/8SYN is closed.
 
 Current NAS point bridge COMPLETE at
 A/data/current-nas-robust-ranking-point-bridge-20261025-v1, Consumer820ab41c/
