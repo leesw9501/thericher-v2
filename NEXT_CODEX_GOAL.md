@@ -29,48 +29,38 @@ No manual duplicate Task/strategy visit or inferred future outcome.
 
 Execution: adopted B_PHASED finite account-owned serial whole legs, original
 SDK/risk/journals/counters, at most one private-capable capsule. No actual
-old8 migration, service or reciprocal RW peer whitelist. Bernoulli owns
+old8 migration, new service or reciprocal RW peer whitelist.
+
+Latest TEST outcome is CLOSED at
 A/execution/current-cooperative-paper-peer-integration-20261025-v1/
-effect-source-abi-r1,300activeSUM/900elapsed/max2nativecreates. Prior clock
-recovery64037d87 is CLOSEDFAILED: ROclock->host->EXITseed passed, effectwrapper
-assumed seed-only sourceflag/ValueError BEFOREnativeSELL. Owned1/entry1exit1/
-F9/fullbook retained, allJobs/daemons/opclaimsclosed; no newdebit afteroldhard.
-Fix ONLY SYNclockheader nativeSource using immutable /route/SOURCE.json SHA,
-preserve originalnativeCLI Source validation. Actualseed/effect/postseed argv
-matrix first, then only remainingEXITeffect+postseed, no newseed/ENTRY/init/
-factory/reset/newnamespace/reclaim/refund or capextension. Ifinterface requires
-anotherseed closepre-effect withprecise limitation, do not bypass.
-Use exact retained attempt2 Consumer60cd5c5f/book196870d2/debit618747fd/
-inputd5f53/policy3cfc/nativece0e and SAME volume/shortroot/o+g/counter roots.
-Known exact SYN BUY+full linked fill/ownedinstrument1/entrydebit1/no pending/
-opclaimsclosed, F9held. NO ENTRY/init/factory/reset/newnamespace/reclaim/refund.
+effect-source-abi-r1/CONSUMER.json,
+SHAf3498a3eb6ea81e91dbe1d401c302152923d46421fb8e60639b30f1c3d8abc77.
+Exact retained attempt2 had a prior SYN BUY/fullfill. New work proved ONE
+SYN SELL attempt/acceptance/exact full linked fill, currentowned0/cohortpending
+false through strict complete-state parser and terminal native RO. Bound
+monotone clock handoff passed; all root/CLI Jobs joined/exactdaemons absent/
+opclaimsclosed/fullstate+F9+volume retained. Counters entry1/exit2, no refund.
+No actualKIS/Paperfill/PnL/Taskchange or installReady inference.
 
-Bootstrap from trusted Oct26 18:25:07.5Z, host horizon through originalOct30
-20:00UTC/exitanchor19:45:30. Tiny actual named clocksidecar handoff first:
-source/run/phase-bound finalUTC is accepted only AFTER positive guest closure;
-advance host before nextguest. Missing/backward/unbound evidence HOLD. Valid
-clock never qualifies failed native. Keep perguest bounds/future-time guard,
-No actualsleep. The old5create scope is CLOSED; only2remaining visits are
-now assigned. Retain
-complete poststate/sidecars/operands/responses/counters on all terminal paths.
-Exact SYN SELL/fill/currentownedflat need actual evidence. This is NOT actual
-KIS/Paperfill/PnL, OS scheduler origin or installReady.
+Qualification limit: host tail expected status advanced, actual effect return
+was NOT retained before its assertion. Native effects and final scoped state
+are evidenced, but whole host-tail completion is NOT qualified. Keep technical
+marker/oldfailed64037d87+c675511f+earlierclaims unchanged. No more native
+dispatch in these closed scopes; never repeat SELL/BUY to repair reporting.
 
-Closed regressionc675511f proved2separate SYN BUYacceptances/exactfills, not
-SELL: postseedfakeUTC reset beforefilltime.2of2attempts/10creates/541active,
-allJobs/daemons/opclaimsclosed/books+F9+markers+volumes retained. Preserve that
-closed scope. Earlier39ceb3ae/444868eb/4f87e714/0e882c3b/lostJoin/lostpoststate
-failures and held claims remain archived with their exact limitations; the
-current recovery cannot resolve or adopt another case.
+Source-only host-result-capture-r1 is CLOSED4e7bd41d/4puretests/RuffPASS:
+exactactualfunction exercised with inventedreturns, safe status/count capture
+BEFORE unchangedassert. Patch is prepared, NOTwired/installed/runtimequalified.
+Next Execution work is source-bound wiring/readiness assessment on a NEW
+candidate, not regrading oldeffects or repeating SELL merely to fix reporting.
+Do not install/migrate old8 or launch anotherstrategy to close a test report.
+Current Paper opportunities remain owned independently. All dispatched workers
+are closed; Parent owns next dispatch/Git, not a standing daemon.
 
-Frozen support: Parent mounthelperfd0314d0/15tests and Mencius censushelper
-cc2e8010/8tests/Ruffclean. Complete dictionary comparison ignores only array
-order; exact State/source/type/RW/unique-destination guards remain. Only
-positively joined/daemon-absent CIDs are closed history, unknownproofHOLD.
-Actual census category/source/line is captured before round catches.
-No helper rerun/new approval gate. Parent's test-isolation choice follows
-Claude advisory9a41fe0a at A/review/current-syn-fixture-isolation-challenge-20261025-v1/RESPONSE.txt.
-Actual Paper safeguards/identities/private state and original8 stay unchanged.
+Frozen helperfd0314d0(15tests) and censushelpercc2e8010(8tests)/Ruffclean remain
+usable without rerun. Exact source/type/RW/unique-destination/State guards stay.
+Only positively closed CIDs are historical; unknownproofHOLD. Scope test
+isolation advisory9a41fe0a remains in HANDOFF, not a broker authority grant.
 
 Engine/Steward: latest information ablation is CLOSED05ce12f6/f9874194 at
 A/research/current-nas-broader-check-feature-information-ablation-20261025-v1/native-fixture-recovery-r1.

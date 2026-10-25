@@ -142,80 +142,54 @@ Execution root A/execution/current-cooperative-paper-peer-integration-20261025-v
 Adopted B_PHASED finite account owner preserves original whole legs, SDK/risk/
 journals/counters/shared allocation; at most one private-capable capsule.
 No persistent service, reciprocal RW peers or actual old8 migration/cutover.
-Core account_round/peer_visit have QA d3932f49:976serialPASS2skip/19305fullPASS
-26skip/19331total/8workers/1405exact/Ruff3Compose/clean; no external deployment
-proof. Unused paper_peer_group is removed. Old partial QA is never authority.
+Core account_round/peer_visit QA d3932f49:976serialPASS2skip/19305fullPASS
+26skip/19331total/8workers/1405exact/Ruff3Compose/clean, NOT external deployment.
 
-Fixture-regression-r1 is CLOSED PARTIALc675511f:2isolatedattempts each proved
-BUYacceptance+exactlinkedfill, no SELL/ownedexit/deadline. Postseed restarted
-fakeUTC beforefilltime; unchanged future-time guard refused it. Read-only
-diagnosis at retainedcompletionUTC succeeded.2of2attempts/10creates/541active,
-allJobs/daemons/opclaimsclosed/books+F9+debits+markers+volumes retained.
-No actualKISorder or actualPaperinput/Task change.
-Clock recovery same-owned-syn-clock-exit-r1 is CLOSED FAILED64037d87:
-ROclock->host->EXITseed passed, but effectwrapper required the seed-only source
-flag and raisedValueError BEFOREnativeSELL. No SELL/fill/exit, owned1,
-entrydebit1+exitdebit1, F9/book/counters retained, allJobs/daemons/opclaimsclosed.
-Oldhard13:08:22 respected; mechanicalcontinuationclosedpre-effect/no newdebit.
-Current NARROW test repair is effect-source-abi-r1,300active/900elapsed/
-max2nativecreates, exact attempt2
-Consumer60cd5c5f/book196870d2/debit618747fd/inputd5f53/policy3cfc/nativece0e.
-Same retained shortroot/volume/o+g+financialcounterroots, entrydebit1/oneowned
-instrument/no cohortpending/opclaimsclosed; F9held. NO ENTRY/init/factory/reset/
-newnamespace/reclaim/refund. Bootstrap only from trusted18:25:07.5Z Oct26,
-clockhorizonthroughoriginalOct30 20:00UTC/exitanchor19:45:30. Named clocksidecar
-handoff is source/run/phase-bound and accepted only afterpositiveclosure; host
-advances before nextguest, missing/backward/unboundHOLD. Validclock never
-turns failednative into success, no actualsleep or productionguard relaxation.
-Preserve all oldfailedscopes and current poststate, prove exactSYNSELL/fill/
-currentownedflat only on actualruntime. It is not actualPaperfill/PnL/install.
-Repair only SYNclockheader nativeSource from immutable /route/SOURCE.json SHA,
-not seed-only argv flag; originalnativeCLI Source validation remains unchanged.
-Actual frozen seed/effect/postseed argv matrix must pass before anycapsule.
-Only remaining EXITeffect+postseed/no newseed/init/factory/ENTRY/reset; new
-exitdebit is additional, never refunded. If protocol needs anotherseed, close
-pre-effect with preciseinterface limitation rather than bypass or addcreates.
+Latest SYN lifecycle evidence is CLOSED at effect-source-abi-r1/CONSUMER.json,
+SHAf3498a3eb6ea81e91dbe1d401c302152923d46421fb8e60639b30f1c3d8abc77:
+one SELLattempt/acceptance/exactfull linked fill, currentowned0/cohortpending
+false through strict complete-state parser plus terminal nativeRO. This closes
+ONLY the exact retained attempt2 SYN-owned instrument after its priorBUY/fill,
+not case1, actual KIS, Paper PnL or an actual account. Allroot/CLIJobs joined/
+exactdaemonsabsent/opclaimsclosed/fullstate+F9+volume retained. Countersequence3,
+entry1/exit2, no refunds or clearedtechnicalmarker. Boundmonotoneclock handoff
+passed; actual8/privatebasis/F9 stay untouched.
 
-Closed fixture support:
-Parent fixture_mounts.py fd0314d0 passed15pure cases/Ruff; Mencius
-fixture_census.py cc2e8010 passed8regressions/Ruff. The latter skips only
-positively joined/closed/daemon-absent CIDs while preserving historical facts;
-missing/unknown closure still holds. Helpers are frozen/directly handed to
-Bernoulli. Both seed/terminal copies use the SAME complete-state comparison;
-actual census exception category/source/line is retained BEFORE round catches.
-Short mutable roots under A/execution/syn-<nonce> avoid the observed long-path
-factory preparation problem; no registry or production-path change. No old mutable
-state alias, held-claim clearing or refund. Correct only fixture mount-order
-equality by sorting COMPLETE dictionaries; preserve exact source/type/RW,
-unique destinations, State equality and existing canonical guards. Tiny
-reorder/RW/source/type/duplicate tests precede RWinitializer->ROwholebookverify
-and unmodified native entry/ownedexit. Retain actual comparison operands,
-public seed response and full poststate on every path after positive Jobs.
-This proves synthetic happy-path qualification ONLY, not old recovery, actual
-KIS fill, scheduler origin or installReady. Genuine recovery remains separate.
-Parent adopted Claude ADOPT_FRESH_SYN_WITH_LIMITS, advisory evidence
+Qualification limit: fixture hosttail expected advanced; actual effect return
+was NOT retained before assertion. Native effects/currentstate are evidenced,
+but wholehosttailcompletion remains NOT_QUALIFIED, no installReady claim.
+Never repeat SELL/BUY merely to repair a report. Current final source-only
+host-result-capture-r1 is now CLOSED4e7bd41d/4puretests/RuffPASS: prepared
+source-bound capture of allowlisted status/counts BEFOREunchangedassert,
+actualfunctionexercised usinginventedreturns, no runtime/private/model effects.
+Patch is NOTwired/installed; it cannot reconstruct missing historical return
+or regrade f349 as whole-host PASS. Production readiness remains separate.
+
+Reusable fixture support is CLOSED: mounthelperfd0314d0/15puretests and
+censushelpercc2e8010/8regressions/Ruffclean. Compare COMPLETE mount dictionaries
+order-independently plus exactState, keep original source/type/RW/unique-
+destination guards; omit only positively closed historical CIDs, unknownHOLD.
+Safe category/source/frame captures precede catches; preserve actual operands/
+publicresponses/fullpoststate on every path after positive child closure.
+Short SYN mutable roots under A/execution avoid long factory paths; no Windows
+registry/production-root change. Parent adopted scoped test-isolation advice:
 A/review/current-syn-fixture-isolation-challenge-20261025-v1/RESPONSE.txt
 SHA9a41fe0accabdc6fa5dd4dc18951772b5e2df6d5ac02b6415af6899a848a3b87.
+This is advisory, not broker authority or proof of actual scheduled origin.
 
-Closed failed fixtures remain archived, NOT repeated/resolved:
-single-owner-production-adapter a6c12425/3bd743ef stalled SYN clock/lostJoin
-UNKNOWN/1282lower>1200cap; fixture-recovery-r1 wrong hash/lost fullpoststate.
-fresh-admission-syn-r1 Consumer39ceb3ae pre-native copyfailure/activeclockUNKNOWN;
-same-case-recovery-r1 Consumer444868eb full5fileinit/ROverify PASS, firstROseed
-closure failed, actual operands/seedresponse not retained, opclaim HELD.
-All its root/CLI Jobs and exact daemons closed, full current book/F9/volume
-retained;110.4active/619elapsed/3newcreates4cumulative. No submit/debit/fill.
-Copy probe f41fb62b/743e5d13/d3e73d9d proves only one-file RWinit-before-RO,
-all2containers/volume closed; old uncaptured cause is not retroactively proved.
-fresh-isolated4f87e714 failed factory path preparation before Docker. Its
-one declared bootstrap continuation0e882c3b reached strict nativeROseed PASS
-and retained entrydebit1, but no effect create/submit/fill/exit. Closed-CID
-census bug reproduced; actualroundexception missing and terminalmount gap
-remained.112.7active/3creates, fullpoststate+volume/counters retained, opclaim
-HELD. Do not rerun or clear it. New pure helper fixes do not resolve that case.
-Clock/root-Job kernelsf18df988/da4c6913 passed5tests only. Prior single-owner
-67c93640 and existing-graft9eb232ce are preparation, not deployable migration.
-Actual original8/private basis/F9 remain unchanged by all these test packages.
+Closed failed scopes remain immutable/NOTrerun:
+a6c12425/3bd743ef stalledfakeclock/lostJoinUNKNOWN/1282lower>1200cap;
+fixture-recovery-r1 wronghash/lostpoststateunrecoverable;39ceb3ae pre-native
+ROcopyfailure/activeclockUNKNOWN;444868eb init+ROverifyPASS/seedclosurefailure/
+missingoperands/opclaimHELD;4f87e714 factorypathfailure and0e882c3b bootstrap
+continuationROseedPASS/entrydebit1/noeffect/closedCIDdefect/markerHELD.
+Regressionc675511f had2SYNBUYacceptances/exactfills/noSELL, postseedfakeclock
+rollbackcorrectlyrefused;2attempts10creates541active/allJobsclosed/stateretained.
+Clock64037d87 ROclock->EXITseedPASS/effectwrapperseed-onlyflagValueErrorBEFORE
+SELL, owned1/entry1exit1 thenretained/allclosed; oldhard13:08respected.
+Those failed outcomes/clocks/debits are not refunded or resolved by f349.
+Clockkernelsf18df988/da4c6913, copyprobef41fb62b/743e5d13/d3e73d9d and old
+67c93640/9eb232ce retain only their named scopes. No realPaper side effects.
 
 Data probe current-pair-whole-observation-capability-probe-20261025-v1 is CLOSED
 dbcb3154/1b24450f/fc4a690c/c633b70f:1tokenPOST2GET/all200/each100rows/

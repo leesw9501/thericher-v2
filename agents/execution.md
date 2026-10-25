@@ -3,6 +3,17 @@
 2026-10-25 KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic risk/intents/orders/custody/accounting; Parent sharedMD/Git.
 AGENTS private Paper authority; no operator decision presently.
+LATEST: effect-source-abi-r1 CLOSEDf3498a3e, exact SYNSELLattempt/acceptance/
+full linked fill/currentowned0/cohortpendingfalse, strictstateparser+terminalRO.
+AllJobs/daemons/opclaimsclosed/fullbookF9+volume retained, entry1exit2/no refunds.
+Only retainedattempt2 closes; not otherSYNcase, actualKIS/PaperPnL orinstall.
+Hosttailactualeffectreturn NOT_RETAINED beforeexpectedadvanced assertion;
+wholehosttail NOT_QUALIFIED/technicalmarkerretained. Finalsource-only
+host-result-capture-r1 CLOSED4e7bd41d/4puretests/RuffPASS, prepares safe status/
+count capture BEFOREunchangedactualassert. NOTwired/installed/runtimequalified,
+NO Docker/native/private/model/Task rerun and no oldeffectstatus reconstructed.
+Next narrow work is NEWcandidate source-bound wiring/readiness, no repeatSELL.
+Older protocol descriptions below are closed history, not active instructions.
 Original shared initial tenth/basis/costs/losses/pending/F9UNKNOWN-HELD unchanged.
 Company NEXT: exact Oct26 natural GRU/TimesFM/Joint17 entry outcomes. Existing
 installations remain unchanged; Research c590 failure/c625 technical closure/

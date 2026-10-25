@@ -19,7 +19,7 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 | --- | --- |
 | Parent / 총괄 | Integrates sealed point9014a724 and fresh original8 metadata67927009; pushed5f49550. QA d3932f49 protected1405 still exact; no external deployment inferred. |
 | Mencius / 기술환경·독립 구현 | Frozen fixture_census.py cc2e8010/8regressions/Ruff, directAPIhandoff toBern. Knownpositivelyclosed CIDs aren't current actors; unknown/missingproofHOLD. No Docker/actualprivate effects. |
-| Bernoulli / 실행 구현 | Clock64037d87 closed/ROclock+EXITseedPASS/effectABIwrapperfailed BEFORESELL, owned1 entry1exit1 unchanged. Narroweffect-source-abi-r1 300active/900elapsed/max2effect+postseed, exactsamebook/no reset,3roleargvmatrixbeforeeffect. Actual8unchanged. |
+| Bernoulli / 실행 구현 | CLOSEDf3498a3e SYNSELL/fullfill/ownedflat/pendingfalse/allJobsclosed/entry1exit2. Hosttail NOT_QUALIFIED. Capture4e7bd41d/4puretests/Ruff preparedNOTwired. No active runtime oractual8change. |
 | Cicero / 엔진·GPU 조정 | Ablation05ce12f6/f9874194 MIXED_OR_INCONCLUSIVE/2GPUfits164best100+146best82/203+272checks/all7closed. PriorCAT+NN closed too; no readytraining, standby for concrete Paperconsumer/nooccupancyjobs. |
 | Chandrasekhar / 데이터 | Actual broaderCHECK input READY236e9e28/94bb8b92/2f04ec2a,13cohorts A7B6/4888unavailable/241checks/all4closed/300upper. Parent9refs exact/direct Enginehandoff. No Data or model worker remains. |
 

@@ -9,6 +9,13 @@ Private no-cost Data/Research/KIS Paper authority is delegated. Never KIS_LIVE_*
 real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
+Latest TEST lifecycle outcome is CLOSEDf3498a3e at
+A/execution/current-cooperative-paper-peer-integration-20261025-v1/effect-source-abi-r1/CONSUMER.json:
+SYNSELL accepted/exactfullfill/currentowned0/pendingfalse/strictparser+terminal
+RO/allJobsdaemonsclosed/entry1exit2/F9held. NOT actualKIS/PaperPnL/install.
+Hosttailactualreturn was not retained beforeassertion, so wholehosttail remains
+unqualified. Do not rerun trade/clock/factory scripts to fix a report. Final
+host-result-capture-r1 is source-only/inventedtests, no runtime/private calls.
 
 Current final source QA is d3932f49cd04da7011cded5b28faf29c8c94cc3ccae5c899e505ab61638ba2ae:
 A/verification/current-account-serial-round-integration-20261025-v1/technical-r8/AUTHORITY.json.
