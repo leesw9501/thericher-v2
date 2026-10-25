@@ -9,19 +9,20 @@ Preserve unrelated untracked %SystemDrive%/. MDs are not active workers.
 
 NEXT oct26-three-candidate-paper-entry-runtime-v1 is unfinished: exact natural
 GRU/TimesFM/Joint17 entry outcomes, not installation/research/commits. Existing
-three jobs are unchanged. Preserve ONE original initial virtual-cash tenth,
+three jobs retain their original financial identities/windows, with host code
+updated as recorded below. Preserve ONE original initial virtual-cash tenth,
 costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 ## Ready / Owned / Due
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | Integrate seed c024cf25, mix7c87666a and F9 first-cause; shared MD/Git. Original3entries pending, L482/7cdb installed. |
-| Tesla / 실행 구현 | Shared F9/L Docker command-applicability-first source repair + exact graft proposal, no actualtask/API. f6ae preflightnewcalls0/F9UNKNOWN-HELD/priorupper1POST10GET. |
-| Kant / 데이터 | Minimal cash-aware H5 contract/core-profile admission + focused tests; tracked write set frozen before Parent QA. No deployed input/task/API/fit change. |
-| Godel / 전략·반증 | Cash5pins review7a5d157f/57checks PASS; cleanup8ec16/f5c5/15invented PASS, no actualruntime effect. Seedc024 closed. |
-| Noether / 엔진·자원 | Sole GPU coordinator; mix7c87666a CLOSED, direction review recommends small conditional-information CPU study, not another same55/TCN screen. |
-| Hume / 엔진 실험(임시) | Indicator/bias4ee0086b CLOSED:2CPUfits550updates/645checks/all5removed, both selectedconstant/no financialPASS. No active model/GPU worker. |
+| Parent / 총괄 | Cash feature pushed b489371; a5ba/704c current authority. Six-action graft complete/independent6f5b readback; integrate and carry separate L cutover. Natural company outcomes unfinished. |
+| Tesla / 실행 구현 | Actual metadata-only L absence qualifiedb3a17845 at03:46UTC; prepare exact two-existing-task source graft, no actual Task effects yet. No generic ancestor waiver. |
+| Kant / 데이터 | CLOSED input641b88a9/Source54b9da9d/DTOa079c624/allowlist3f307c14:251keys/97530official1m/14native+2950verify/no missing. Agent closed; no collector/model worker. |
+| Godel / 전략·반증 | CLOSED actual8Task metadata6f5b7942/08fa8da4 at03:47:32UTC, all8 Ready/never-run/0instances/L2unchanged/legacydisabled/1398exact. No actual worker inferred. |
+| Noether / 엔진·자원 | Sole GPU coordinator. Reviewcdf56c0f closed/no blocking finding. New frozen54373cd2 intradayTCN/indicatorMLP/fixedblend now has verified input; runtime-r1 implementation/native preparation, no fit yet evidenced. |
+| Hume / 엔진 실험(임시) | CLOSED F9 actual readonlyf1f1b847/Source3407:1POST1GET/history0/stable custody; UNKNOWN/HELD. Agent closed, no further query in closed contract. |
 
 QQQ source design at
 A/review/current-n-ln-frozen-output-integration-20261025-v1/SOURCE-DESIGN.json
@@ -36,6 +37,34 @@ confirms Disabled/0instances/74other definitions and original3entries unchanged.
 Do not reenable or manually invoke retired old unit logic. Managed honest-host
 evidence is not arbitrary-host proof, fresh holdings or an entry grant.
 No blanket symbol-deny removal, legacy unit dispatch, false venue or side bank.
+
+Current activation root:
+A/execution/current-owned-paper-command-first-graft-activation-20261025-v1.
+SOURCE7453efa2/CONSUMER69313b5f/updatec1eda0ab qualified the actual updater:
+15 transaction scenarios,14 boundaries,4 census/SYN refusals,3 cold codecs.
+Fresh activation-r3 code roots retain original native/operations/counter/marker
+roots. Exact runtime authority0a564343/GO bb93f549 binds three true releases
+and qualified argv. Parent applied original EXIT/ENTRY pairs under original
+serialization/whole-definition/ACL/session/quiescence checks. L is excluded.
+At03:24..03:25UTC Parent actually applied the reviewed updater: GRU pair
+completed; TimesFM pair and Joint17exit were updated but comparison/recovery
+withheld. Partial Source94671106 later closed TimesFM readback and updated ONLY
+Joint17entry. Independent03:47:32UTC metadata6f5b7942/08fa8da4 classifies all8
+Ready/enabled/never-run/zero instances/effective ACL unchanged; all6 new actions
+pass typed Readback. The old failing comparator tested EXPECTED embedded XML SD
+against effective ACL, although RegisterTask supplied the exact original ACL.
+Measured updated XML SD equals that effective ACL. Preserve actual failed
+attempts; never rerun Apply/resume. Source-bound normalization preserved actual
+ACL; the other five actions were not registered again. No TaskRun,
+broker, private custody or financial state effect occurred from this cutover.
+Parent rehashed all1398 protected repo files during integration:0mismatch versus
+a5ba/704c; external caller tests, not repeated unchanged repo tests, qualify
+the external change. L actual prefix-r1 Sourceb3a17845 qualifies old482/271
+journal/original operational absence at03:46UTC with0targetopen/decode and
+stable readset/final admission; no credential/API/Task effects. Failedbc148 is
+retained; Parent self-only AST established exact public tool encoding try/catch,
+then45 focused cases qualified the narrow prefix. No generic ancestor waiver.
+L's two-task source cutover is ordinary ready implementation, not permission.
 Parent chooses ONE exact original L INPUT271aee for this engineering consumer;
 LN currently aliasesQQQ and does not justify a second automatic cohort. No
 research-scorecard winner selection or original three-job change.
@@ -43,7 +72,7 @@ research-scorecard winner selection or original three-job change.
 Original due entries UTC: GRU Oct26 13:40..14:10, TimesFM14:20..14:50,
 Joint17 H20 17:00..17:30. H5 exitsOct30 19:45/19:49..20:00, H20 exitNov20
 20:45..21:00. Exact source/release/installation roots remain in HANDOFF/RUNBOOK.
-Latest Scheduler538dd661/Oct24 16:59:29UTC sixenabled/Ready/0instances with
+Latest Scheduler6f5b7942/Oct25 03:47:32UTC eightenabled/Ready/0instances with
 expected next times is metadata only, not acceptance/fill/current inventory.
 Existing R5 three exitsOct27, HGB oneOct28 and conditionalNov19 unchanged.
 No foreground market sleep, manual duplicate visit or replacement follow-up.
@@ -126,6 +155,16 @@ no current numerical worker is inferred from historical source contracts.
 
 ## Throughput Review
 
+Current03:50UTC: six-action actual repair and F9 actual query completed while
+Data built a new intraday packet; no foreground session/quota wait. Next ready
+paths are L two-action cutover and Noether's new bounded TCN/MLP native+fits.
+One reversible coordination improvement: name and inspect a fixed immutable
+dependency-Consumer path, not just wait_agent final status when that agent also
+owns unrelated long work. Reviewcdf56c0f was published03:36UTC but parent final
+waiting did not surface it; source availability and agent-final status differ.
+Do not turn independent advisory review into a second approval gate after
+actual scoped tests/Claude/Parent review; material findings still require action.
+
 At23:28UTC before integration: original three opportunities are future-owned,
 not an idle-company justification. Tesla owns narrow R4/activation candidate;
 Noether owns changed-path review. Other Data/numerical helpers are closed.
@@ -170,28 +209,24 @@ Godel's prefit proof aad04556 also falsifies Parent's fee-linear q identity:
 q is post-fee NAV weight; g=q(1+f)/(1+fq), wealth=1+g*r. Correct before fitting,
 preserve old Source/debits; no model result regrade or operator hold. F9 remains
 UNKNOWN/HELD pending a genuinely fresh exact readonly path, not missing=zero.
-At01:37UTC integration: seedc024 closed3fits/2465updates/71checks/all12removed;
-fixedquarter growth2.8387%/DD2.1892% is descriptive,2initialcontrols also pass.
-Toto d695 and fixedmix7c87 fail DD; no completed job is repeated. Currentquarter
-10a421ee q.608380138874054/cash.39161986112594604 is materialized now from
-preprice rule/components, not falsely labelled preprice scalar publication.
-Kant found a real consumer gap: current stock-only unit-mass codec cannot
-represent cash. Prepare a minimal explicit cash-preserving adapter, never
-renormalize q or park cash in unsupported stocks; installed L stays unchanged.
-Hume21cf confirms source/effect controls but exposes future-host cleanup-error
-lease release; Godel repairs only that invented failure path, not closed fits.
-F9d691 history counts/outcome remain UNKNOWN/upper1POST10GET. First-cause9afc/
-ea4d passes12native and actual metadata admission; prior transient actor remains
-unknown. New public-writer-bound f6ae captures DockerDesktop CLI actor_identity
-before any new broker visit. Independent Claude b546 SOUND_WITH_LIMITS confirms
-shared F9/L code checks attachment identity before argv rule applicability.
-Not an actual privatewriter or observed L failure. Exact block: verb/target
-unknown. Alternatives: qualify the exact categorical command/source, or prove
-natural actor/descendant closure before fresh admission. Tesla implements the
-minimal shared matcher repair/native/graft proposal, not a Desktop-parent waiver.
-Parent cash-profile QA and Kant SDK/input native proceed independently. Hume's
-indicator/bias4ee is closed with both selectedconstant/0financialcells; do not
-turn its unrun12cohort test into a60session company wait. No market/quota sleep.
+At02:41UTC handoff review: code/input/QA complete b489371/a5ba/704c; all model
+studies closed, no rerun or permission-held GPU work. Actual company outcome is
+still original3 natural entries. Task metadata728435f0/f4c79c2c proves8Ready/
+enabled/zeroinstances/XML-ACL-action-window-principal8/8match, NOT no journal/fill.
+F9 remains UNKNOWN/HELD; old query counts UNKNOWN/charged1POST10GET. Hume's
+c66aed4b proves exactly one finite readonly-stats argv vector matchesa78a;
+whitespace-format mismatch is resolved as capability evidence, not any-Desktop
+permission/historical-child closure. All other actors/children remain checked.
+Shared matcher/roots repair candidate1ba663/4312/9ba now has150focused checks
+and changed-review9cb610/closureb217 after the two real old3 root defects were
+fixed. Six old3 actions are source-ready; L still needs positive private absence.
+Current bottleneck is a DEPLOYER, not another source-review report: existing
+task_candidate API only defines/reads tasks. Reversible improvement is to
+separate the ready-six UpdateOnly installer from L's metadata-only absence
+helper, with disjoint Godel/Tesla write sets and parallel independent review.
+No existing source/release proof is overwritten; activation uses explicit new
+code-root lineage and preserves native/ops/counter roots and exact old identities.
+Only Parent performs verified actual effects. No market/quota foreground sleep.
 
 Prior5fda9440/FINALc8733d4a covers clock1e7c/testca226:
 75clock/1022serial/19111full25skip/8workers/Ruff/three Compose PASS; Parent

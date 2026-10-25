@@ -6,6 +6,20 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+NEW offline consumer COMPLETE: Engine contract54373cd2/requirements7dd83211
+at A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
+Readiness8c4c6be7 under A/data/current-qqq-intraday-h1-h5-input-readiness-20261025-v1
+located the retained archive. Actual ONEbuild+ONEindependent verification at
+A/data/current-qqq-c120-session-close-inputs-20261025-v1/CONSUMER641b88a9,
+Source54b9da9d/DTOa079c624/ABI75175b5c/ALLOWLIST3f307c14 is COMPLETE.
+251keys145FIT/43CHECK/63EVAL retained;97530 officialRTHrows/outside0/missing0,
+two210-row early closes/DST/officialCLOSE verified. 16767EVAL held marks plus
+180 structural padding separately isolated.14native+2950independent checks,
+Ruff/allhelpersclosed/6.05new seconds. QQQ-only first120minute view/entryopen+121
+to SAME-sessionCLOSE, not H5/H60 relabeling; features/targets/EVALfuture separate.
+No imputation/download/API/model. Reused nominal archive retains adjustment/
+PIT-arrival-finality limitations, not qualified independent performance data.
+
 Kant's cash-preserving QQQ input preparation is COMPLETE, not deployed:
 A/execution/current-fixed-seed-ensemble-qqq-paper-input-preparation-20261025-v1/
 qualified-native-r1/CONSUMER.json SHAd7b619cf/Sourceb8af463d, SDK480.

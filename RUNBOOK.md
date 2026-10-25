@@ -41,6 +41,27 @@ The source-only clock helper7e23 is not production-integrated or a purge policy.
 
 ## Current Actual Deployment
 
+Source-control graft six typed actions are now updated; do not repeat Apply or
+resume. At03:24..25UTC GRU pair, TimesFM pair and Joint17exit moved to activation-r3;
+later partial closure updated ONLY Joint17entry. All6 idle/never-run/effective ACL unchanged. Original attempt
+receipts live under A/execution/current-owned-paper-command-first-graft-activation-20261025-v1.
+Partial-closure-r1/resume.ps1 Source94671106 already returned TimesFM readback
+closure PASS and Joint17 one-entry update PASS. Failed original attempts stay
+immutable; five actions were not registered again. Independent03:47:32UTC
+parent-installed-readback-r1/CONSUMER6f5b7942/READBACK08fa8da4 confirms
+all8 Ready/enabled/never-run/0instances/L2unchanged/legacydisabled/1398exact.
+No TaskRun. Current activation-r3 Source/Release:
+GRU43c41964/04b093dd, TimesFM1f9eac09/24671d22, Joint175a28de8f/a11e8996.
+L's separate actual metadata-only prefix-r1 reader Sourceb3a17845 has qualified
+old482 journal/attempt absence at03:46UTC. It is CLOSED: do not rerun Inspect.
+Prepare the separately scoped two-existing-task source graft; do not reinstall,
+adopt foreign state or change the original INPUT271/bank/reservation.
+Fresh F9 readonly result is CLOSED under current-f9-readonly-reconciliation-20261025-v1/
+f9-source-corrected-r1/actual-closure-r1/CONSUMER.json SHAf1f1b847:
+1POST/1GET, history0, UNKNOWN/HELD unchanged. Do not run Actual/Preflight again
+or release a reservation from empty history. Exact source/custody/reply proof
+qualifies this diagnostic, not terminal non-send, fees or net PnL.
+
 L QQQ H5 is now installed using exact original INPUT271aee51, not LN as a
 second cohort. Source482cd50e/Release7cdb3045/TaskAPI166d9b7a/image2ff53eff:
 A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/activation-readiness-r3.

@@ -6,6 +6,15 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+NEW frozen queue: QQQ C120 -> same-session official CLOSE sizing, contract54373cd2
+at A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
+RawTCN/indicatorMLP two new fits/fixedblend, not any completed family rerun.
+Data packet641b88a9/DTOa079c624/ALLOWLIST3f307c14 is complete; no operator
+or GPU-process-name hold. Noether owns native/runtime preparation and may run
+useful independent expert workers concurrently after native+input readiness and
+fresh measured VRAM reserve. 2400activeSUM/7200elapsed/hard14:20KST; old
+debits/checkpoints remain closed. Current GPU fit has not yet been evidenced.
+
 Noether is the single GPU resource coordinator. QQQ marginal-density e9f8d79e
 is CLOSED: ONE CUDAfit31epochs/selected6/527updates,12.680840fitsec,1128MiB
 reserved,234checks/all5containers removed/leaseNONE/218.9246activeupper.

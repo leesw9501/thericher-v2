@@ -6,6 +6,21 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+NEW distinct intraday target is frozen, not a completed/repeated fit:
+A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
+CONTRACT54373cd2/DATA-REQUIREMENTS7dd83211/CONSUMERa5c48b60/Source5c90b626.
+QQQ first120 completed1m -> entryOPEN at RTHopen+121min -> same-session
+official CLOSE, not old H60 or H5/session data relabeling. Raw causalTCN and
+indicatorMLP, fixed50/50 post-fee q blend, two fits<=180epochs/PAT30/1800updates.
+Reused145FIT/43CHECK/63EVAL explicitly adaptive; not untouched/independent alpha.
+2400activeSUM/7200elapsed/hard14:20KST, actual native optimizer/RNG/checkpoint
+proof before fitting. Data packet is now COMPLETE641b88a9/Source54b9da9d/
+DTOa079c624/ABI75175b5c/ALLOWLIST3f307c14 under
+A/data/current-qqq-c120-session-close-inputs-20261025-v1,14native+2950verify/
+251keys/no missing/allhelpersclosed. Noether owns runtime-r1 implementation/
+native/resource dispatch. No model worker is inferred from a contract/source
+file alone. No Paper/broker-risk change.
+
 Short queue: cash-aware typed H5 contract and frozen-quarter input are ready
 with Parent fulla5ba950a/FINAL704c3543 complete, not another model job/deployment. Actual
 CONSUMERd7b619cf/Sourceb8af463d/INPUT1d733d5d at

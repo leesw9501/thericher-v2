@@ -14,6 +14,40 @@ Detailed closed history is Git4ecc4cf/ba1345b and exact consumers, not this boar
 
 ## New Independent Work (Oct25 KST)
 
+CURRENT host-control graft has completed six-task typed readback. Parent03:24..25UTC
+used A/execution/current-owned-paper-command-first-graft-activation-20261025-v1
+Source7453efa2/GO bb93f549: GRU pair complete, TimesFM pair and Joint17exit
+actually updated. Parent's later partial closure updated ONLY Joint17entry.
+All6 Ready/never-run/zero instances,
+effective ACL unchanged; five updated actions pass typed readback. Original failed
+attempts are retained. Partial closure Source94671106/CONSUMER2d987ec9 repairs
+only expected XML SecurityDescriptor precedence; TimesFM readback closure and
+Joint17entry update both returned success. Other five actions were not registered
+again. Independent metadata at03:47:32UTC confirms all8 Ready/enabled/never-run/
+zero instances, L2 unchanged and legacyQQQ disabled:
+A/execution/current-owned-paper-command-first-graft-activation-20261025-v1/
+parent-installed-readback-r1/CONSUMER.json SHA6f5b7942, READBACK08fa8da4.
+All1398 protected hashes/source closures match; helpers joined. Independent
+partial delta reviewcdf56c0f found no blocking defect in70refs. Never rerun old Apply/
+resume/reset or infer submit/fill from installation. Current activation-r3 pairs:
+GRU Source43c41964/Release04b093dd, TimesFM1f9eac09/24671d22,
+Joint175a28de8f/a11e8996; old source/releases remain historical evidence.
+L metadata-only reader prefix-r1 Sourceb3a17845 actually qualified at03:46UTC:
+EXACT oldL482/INPUT271 journal and original operational attempts absent,
+stable source-attested readset, target0open/decode and no broker/credential/Task
+effects. Root: A/execution/current-owned-paper-command-first-graft-preparation-20261025-v1/
+runtime-graft-completion-r1/absence-reader-r2/fresh-capsule-r1/prefix-r1.
+Old failed bc148 prefix was retained; exact controlled public tool encoding
+try/catch was qualified, no generic shell waiver. L source graft is now ready
+implementation work, not missing operator permission or a global hold.
+F9 fresh read is now QUALIFIED_READONLY_DIAGNOSTIC_NOT_TERMINAL, not another
+pre-API failure: A/execution/current-f9-readonly-reconciliation-20261025-v1/
+f9-source-corrected-r1/actual-closure-r1/CONSUMER.json SHAf1f1b847.
+Actual1POST/1GET; exact original history absent0rows/0candidates, custody stable,
+no retained acknowledgment/fill. UNKNOWN/HELD unchanged. Prior charged upper
+1POST/10GET stays; accounted series upper2POST/11GET, no further query in this
+closed contract. Missing opener/dispatch correlation prevents a no-send claim.
+
 CURRENT L QQQ H5 connection is INSTALLED, runtime/fills still unobserved:
 A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/
 parent-installed-readback-r1/CONSUMER.json SHA f1fb2956. Source482cd50e,

@@ -17,9 +17,9 @@ Never KIS_LIVE_*, real money, paid/public work or raw/private output.
 
 | Candidate | Natural entry UTC | Exit UTC | Retained source/release |
 | --- | --- | --- | --- |
-| GRU H5 | Oct26 13:40..14:10 (22:40KST) | Oct30 19:45..20:00 | 16484c39 / 2695b7c5 |
-| TimesFM H5 | Oct26 14:20..14:50 (23:20KST) | Oct30 19:49..20:00 | 63c775b8 / 9bcb8771 |
-| Joint17 H20 | Oct26 17:00..17:30 (Oct27 02:00KST) | Nov20 20:45..21:00 | aff55c9c / 022fe2a5 |
+| GRU H5 | Oct26 13:40..14:10 (22:40KST) | Oct30 19:45..20:00 | 43c41964 / 04b093dd |
+| TimesFM H5 | Oct26 14:20..14:50 (23:20KST) | Oct30 19:49..20:00 | 1f9eac09 / 24671d22 |
+| Joint17 H20 | Oct26 17:00..17:30 (Oct27 02:00KST) | Nov20 20:45..21:00 | 5a28de8f / a11e8996 |
 
 Use exact full source/job/task/session/intent paths and pins in HANDOFF/RUNBOOK
 and their external consumers, not these abbreviations as hash authority.
@@ -27,8 +27,15 @@ All three use image2ff53eff and original .005 cohort ceilings inside ONE shared
 initial virtual-cash tenth. Preserve original basis/costs/losses/pending buys,
 F9 UNKNOWN/HELD, expired Oct23 and conditional Nov19 identities/owners.
 No reinstall/reset/substitute/recomputed point or manual duplicate visit.
-Current exact metadata538dd661 atOct24 16:59:29UTC shows six Ready/idle/enabled
-with expected due times, not natural execution, broker acceptance or fills.
+Current pairs use activation-r3 under
+A/execution/current-owned-paper-command-first-graft-activation-20261025-v1.
+Parent actual UpdateOnly and exact partial closure now passed six typed readbacks;
+initial failed XML-SD comparison attempts are preserved, other five were not
+registered again. Original native/operational roots and input/policy/bank/window
+identities remain unchanged. Independent03:47:32UTC Consumer6f5b7942/Readback08fa8da4
+confirms all8 Ready/enabled/never-run/0instances, L2 unchanged, legacyQQQdisabled
+and1398 protected hashes exact. Full pins live in parent-installed-readback-r1.
+This is installation, not natural execution, broker acceptance or fills.
 
 Execution reads exact immutable dispatch/input/policy/request/intent/fill and
 current owned-inventory linkage with existing strict readers. Distinguish
