@@ -17,6 +17,13 @@ Trees240/296/281,bestCHECK176/232/217; adaptive PASS only. Activeupper712.756/
 2b44 is CLOSEDtoo: oneCUDAfit23/best3/2001updates/32.207s, criterionFAIL.
 Protocols below are history, not idle ready fits. No numerical worker inferred
 from role names or saved source; no completed model restarted for occupancy.
+Seed-mean current point9014a724/c08261ea is also CLOSED:3CPUrestores/3forwards/
+207rows/0fits/GPU,8native11independent52closure/bothcontainersclosed,
+141.312activeupper. Its typed inpute886f8f3/d8fe0432 is inert, not deployment.
+Cicero currently prepares ONE next source-only campaign at
+A/research/current-next-engine-campaign-readiness-20261025-v1,180active/
+600elapsed, no new numerical worker allocated. Data directly provides existing
+coverage metadata; actual ready contract/headroom must precede useful dispatch.
 
 Cicero's cross-asset-attention family is COMPLETE/CLOSED at
 A/research/current-nas-cross-asset-attention-development-20261025-v1/FINAL-CONSUMER.json,

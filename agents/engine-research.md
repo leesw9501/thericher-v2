@@ -15,8 +15,17 @@ leaseabsent. Device sampled peak14780MiB is NOT per-process allocation.
 At10bp rawCAT growth+.3687/+.9473/+.9043%; fixed HGB blends+1.1776/+1.2029/
 1.0476%, DD.3835/.3295/.3835%. Predeclared HGB+mean-rank3+1.2072%/DD.3835%.
 No best-seed selection or independent alpha; nine seen reused cohorts and
-currentlisting/nonPIT/CA/arrival/finality limits remain. Consume sealed models
-next, not duplicate fits or an automatic Paper input swap.
+currentlisting/nonPIT/CA/arrival/finality limits remain. SAME composition's
+current point is now CLOSED/PREPARED_NOT_DEPLOYED at
+A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1:
+Consumer9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432,3CPUrestores/
+3forwards/207rows/0fits/GPU/oldmodelcalls.8native11independent52closure checks,
+bothcontainersclosed/141.312activeupper; Parent37refs exact. Full100/69known/
+31unknownzero, seven1/7/.005TOTAL. No old d5f53 or original8/L271 input swap.
+Cicero now owns source-only current-next-engine-campaign-readiness-20261025-v1,
+180active/600elapsed, ONE demonstrated-limitation mechanism with explicit
+finite contract/Claude and existing Data coverage. No numerical launch assigned
+yet; completion or remaining compute allowance is not another fit instruction.
 
 CLOSE-path transfer below is also CLOSED Consumerf0c2c08c/Source69395dc6/
 verify2b448af0/202checks: ONE new CUDAfit23/best3/2001updates/PAT20/32.207s,

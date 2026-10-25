@@ -34,11 +34,19 @@ single-owner-r1 67c93640 is preparation only. Production-adapter-r1 CLOSED
 FAILED a6c12425/3bd743ef: constant SYN clock stalled pacing, watchdog lost exact
 Job join,1282lower>1200cap. Known processes/daemon contained; lostJoin UNKNOWN,
 old invented hold/pending/debits retained. No actual private/API/Task effect.
-Bernoulli owns NEW fixture-recovery-r1; Mencius clock/root-Job helper150 is
-inside650activeSUM/1800elapsed/max8newnative. Prove advancing SYN time and
-retained root Job before unfinished changed-route submit/fill/ownedexit and
-deadline/foreign negatives. No broken-loop/old14/tiny/model/point replay.
+Clock/root-Job kernelsf18df988 are CLOSED5PASS. fixture-recovery-r1 is CLOSED
+technical-incomplete: wrong SYN source hash rejected and full poststate lost;
+never reconstruct or call that case resolved. Bernoulli owns INDEPENDENT
+fresh-admission-syn-r1, new invented account/book only,600activeSUM/1800elapsed/
+max8newnative. Prove explicit native-source binding and admission/fill/ownedexit
+plus deadline/foreign negatives; retain full SYN poststate after positive Job
+join BEFORE volume deletion on every path. Mencius independently reviews.
+No broken-loop/old14/tiny/RO/model/point/build replay or real-bank reset.
 Original8 remain untouched; no rollout before fresh source/native/readback.
+Latest original8 metadata READBACK67927009 at Oct25 10:38:44UTC confirms
+all8Ready/enabled/0instances/XML+effectiveACL exact/legacyQQQdisabled.
+Root A/execution/current-original-eight-opportunity-readback-20261025-v1.
+Metadata is not a fill, inventory or OS-origin proof.
 
 Engine/Steward: all completed fits stay closed. Attention FULL/DIAGONAL
 e480fc35 and CLOSE-target transfer f0c2c08c (one new CUDAfit23/best3/2001updates,
@@ -48,7 +56,13 @@ A/research/current-nas-hgb-catboost-seed-stability-development-20261025-v1:
 FINAL5d0d6983/Sourcea74ca4ae/verify85f27429. Exactly3 NEW GPU seeds,0oldmodelcalls/
 retries; all helpers joined/removed, lease absent. Fixed HGB+mean-rank3 growth/
 DD +1.2072%/.3835% at10bp/leg on nine SEEN cohorts, not independent alpha,
-Paper PnL or an input swap. Consume sealed models next; do not duplicate fits.
+Paper PnL or an input swap. Its separate current point/typed input is CLOSED
+PREPARED_NOT_DEPLOYED9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432 at
+A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1.
+3CPUrestores/3forwards/207rows/0fits,8native11independent52closure/bothclosed,
+full100/sevenequalweights/.005TOTAL. No oldinput swap or broker effect.
+Cicero owns source-only next-engine-campaign-readiness-20261025-v1; Data may
+directly supply existing historical-coverage metadata. No next fit is inferred.
 Qualified direct role handoffs do not wait for Parent as another approval.
 
 Data: PAIR retention CONFIGURED_VERIFIED_PENDING_NATURAL_RUN403d5908, original

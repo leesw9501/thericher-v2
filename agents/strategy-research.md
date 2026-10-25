@@ -6,11 +6,15 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
-Current owner Euler prepares ONE nonduplicate causal risk-composition proposal
-at A/research/current-nas-risk-composition-next-readiness-20261025-v1.
-Source/metadata only; no market extraction, fits, replay or GPU work yet. The
-consumer is an Engine experiment distinguishing predictive rank gains from
-same-gross allocation/exposure effects. Existing closed studies are not rerun.
+Prior risk-composition proposal3894d2e/27a7 is CLOSED/consumed in first-Oct26
+35-policy sealbcaf8bbe/verify159e43b1; it is not an active Euler worker or a
+12-cohort/150-day campaign. Seed-stability5d0d6983 and its current typed
+point9014a724 are also closed; prepared input is not a Paper deployment.
+Current source-only strategy capability is invoked through Cicero at
+A/research/current-next-engine-campaign-readiness-20261025-v1. Choose ONE
+concrete demonstrated limitation and exact existing-data consumer, not another
+model reading list or duplicate fit. Data provides broader historical coverage
+metadata directly. No next market extraction/fit/replay/GPU run is assigned yet.
 
 The H5/397 CatBoost transfer is COMPLETE, not a ready training job. Prior
 readiness Consumerc02e2a10/Proposal a57591c8/

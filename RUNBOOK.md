@@ -54,6 +54,22 @@ A/execution/current-hgb-catboost-h5-existing-graft-preparation-20261025-v1;
 no install command is qualified yet and no original Task should be replayed.
 Current HGB-CAT point8159/e6e and input3b68/d5f53/3cfc/e605 are complete/
 PREPARED_NOT_DEPLOYED; no model/builder rerun or old8/L271 swap.
+New seed-mean point/input is separately CLOSED/PREPARED_NOT_DEPLOYED:
+A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1/CONSUMER.json
+SHA9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432.3CPUrestores/
+3forwards/207rows,8native11independent52closure/bothcontainersclosed.
+Full100/69known31unknownzero/sevenequalweights/.005TOTAL; no old input swap.
+Use sealed files, not its completed producer/model/native commands.
+
+Current account-dispatch work lives under
+A/execution/current-cooperative-paper-peer-integration-20261025-v1.
+Production-adapter and fixture-recovery-r1 are CLOSED failed/incomplete;
+the latter lost full SYN poststate and cannot be reconstructed or relabeled
+resolved. Clock/root-Job kernelsf18df988/da4c6913 passed5tests only.
+Bernoulli owns independent fresh-admission-syn-r1 (new invented account/book,
+600activeSUM/1800elapsed/max8visits); Mencius reviews explicit source binding
+and poststate retention before volume removal. No actual install command is
+qualified, no oldcase/Task/private/API replay is the next command.
 
 Research recovery: completed QQQ marginal e9f8, continuous sizing025f and
 corrected direct-GRUf9e68b65 must not be retrained/replayed from old commands.
@@ -119,6 +135,11 @@ registering a phase-object argument; b0a2f406 exact repair21checks+actual
 typed/factory readback corrected L exit/entry. Original failed attempts remain.
 Exit0 alone never proves success; inspect exact categorical status/readback.
 No bank/request reset, private reader replay, manual task or broker order.
+Fresh original8 metadata at Oct25 10:38:44UTC:
+A/execution/current-original-eight-opportunity-readback-20261025-v1/READBACK.json
+SHA679270097a1d15f3cdae0465e934d7dcb5eba162aa667a173a1fafa5781c73ad.
+All8Ready/enabled/0instances/XML+effectiveACL identical, legacyQQQ disabled.
+This read-only metadata is not scheduler-origin, holdings, acceptance or fills.
 Fresh F9 readonly result is CLOSED under current-f9-readonly-reconciliation-20261025-v1/
 f9-source-corrected-r1/actual-closure-r1/CONSUMER.json SHAf1f1b847:
 1POST/1GET, history0, UNKNOWN/HELD unchanged. Do not run Actual/Preflight again

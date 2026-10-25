@@ -54,7 +54,12 @@ TaskAPIc79d124c, exact INPUT271aee51. Independent last actual readback at
 Oct25 04:18:43UTC: parent-installed-readback-r1/CONSUMER.json
 SHA4f81aebcea1cf1e0f4727d2f7448cab56c7de24b3ac9580f6501d1f88c58c108.
 All8 then Ready/enabled/never-run/0instances, old6hash-exact/legacydisabled.
-This is metadata then, not a current process census, OS-origin proof or fill.
+Fresh metadata at Oct25 10:38:44UTC:
+A/execution/current-original-eight-opportunity-readback-20261025-v1/READBACK.json
+SHA679270097a1d15f3cdae0465e934d7dcb5eba162aa667a173a1fafa5781c73ad.
+All8 Ready/enabled/0instances, XML/effectiveACL identical to the earlier
+readback; legacy QQQ disabled/quiescent. No Task invocation or mutation.
+These are dated metadata facts, not OS-origin proof, holdings or fills.
 
 Failed XML-SD comparator and L phase-object argument attempts are retained.
 Partial fixes94671106/b0a2f406 closed them; never rerun Apply/resume/update_l/
@@ -80,6 +85,14 @@ adaptivePASS: exactly3newGPU CatBoost fits25.795/31.054/26.951s, no oldmodel
 calls/retry, allhelpersjoined/removed/leaseabsent. Fixed HGB+mean-rank3 gives
 +1.2072%growth/.3835%DD at10bp/leg on9seen cohorts, not independent alpha or
 Paper PnL/input promotion. Device sampled peak14780MiB is not process allocation.
+Its SAME frozen composition now has a separate inert current-point input at
+A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1:
+Consumer9014a724/Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432.
+Exactly3 CPU restores/3 forwards/207rows,0fits/oldmodelcalls/GPU;8native/
+11independent/52closure checks, both containers closed/141.312activeupper.
+Full100/69known31unknown, seven equal weights, .005 TOTAL original-basis ceiling.
+Parent37 direct refs exact. PREPARED_NOT_DEPLOYED; old d5f53 and original8/L271
+inputs stay unchanged. No private book, broker, Task or capital effect.
 Cross-asset attention FINALe480fc35/Source11cb9d87/verifya848edc5 is complete:
 FULL/DIAGONAL concurrent CUDA23/26epochs, selected3/6,2001/2262updates,
 35.673/39.510seconds. FULL improves growth but loses frozen drawdown condition;
@@ -130,9 +143,19 @@ single-owner-production-adapter-r1 CLOSED FAILED a6c12425/3bd743ef:16host/
 root watchdog lost exact Job join,1282lower>1200activecap. Known processes/
 daemon contained, old inventedhold/pending/debits retained, lostJoin UNKNOWN.
 No changed-route wire/fill/exit proved and no real private/API/Task effect.
-New fixture-recovery-r1 and Mencius clock/root-Job kernels150 inside650active/
-1800elapsed/max8newnative repair the test harness first. Old8 untouched;
-no install, failed-loop/old14/tiny/model/point replay or old hold reclamation.
+fixture-recovery-kernels-r1 CLOSEDf18df988/Source da4c6913 passed5tests:
+advancing SYN time and retained root/CLI Job handles are qualified helpers,
+not native-route proof. fixture-recovery-r1 then CLOSED technical-incomplete:
+new Jobs/daemon closed, but a loop-local pin shadowed native_source_sha256;
+host correctly refused the wrong source. Full post-effect SYN book was not
+retained before volume deletion, so that case is unrecoverable/unknown, not
+successful recovery or permission to reconstruct it. Old failure/debits stay.
+Bernoulli now owns fresh-admission-syn-r1, an INDEPENDENT invented account/book
+scenario,600activeSUM/1800elapsed/max8newvisits. Explicit native-source binding,
+positive Job join and full poststate retention before volume removal precede
+new admission-to-owned-exit proof. It cannot resolve/relabel the old case.
+Mencius reviews that fixture independently. Original8/real private state remain
+untouched; no install, old14/tiny/model/point replay or old hold reclamation.
 Four-peer bridge hooks are superseded unfinished prototypes, not runtime.
 Claude f60301a9 RECOMMEND_B_PHASED/independent review support single ownership,
 original native capsule interfaces/paths/counters, one private child at a time,

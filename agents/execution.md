@@ -20,9 +20,24 @@ NOT D-runtime/deployment proof. Production-adapter-r1 CLOSED FAILED a6c12425/
 pacing, watchdog lost exact Job join, activeSUM1282lower>1200. No positive
 changed-route wire/fill/ownedexit proved; no real private/API/Task effects.
 Known processes/daemon contained; old inventedhold/pending/debits retained,
-lostJoin UNKNOWN. Bernoulli now owns fixture-recovery-r1; Mencius clock/root-
-Job helper150 is inside650active/1800elapsed/max8newnative. No broken-loop
-replay, gate/rate weakening or old8 migration/install before native proof.
+lostJoin UNKNOWN. Clock/root-Job kernelsf18df988/da4c6913 CLOSED5PASS, but
+fixture-recovery-r1 CLOSED technical-incomplete: loop-local hash shadowing
+correctly rejected by host; full post-effect SYN state not retained. That case
+is unrecoverable/unknown, never reconstructed or called resolved. Bernoulli
+owns INDEPENDENT fresh-admission-syn-r1, invented new account/book only,
+600activeSUM/1800elapsed/max8newnative. Explicit native-source binding and
+full poststate snapshot after positive root/CLI Job join BEFORE volume removal
+are required even on failure. Mencius independently reviews. No real-bank
+reset, oldcase/old14/model replay, gate/rate weakening or install before proof.
+Latest original8 metadata67927009 at Oct25 10:38:44UTC under
+A/execution/current-original-eight-opportunity-readback-20261025-v1/READBACK.json:
+all8Ready/enabled/0instances, XML/effectiveACL exact, legacyQQQdisabled.
+No TaskRun, private read, broker effect or holdings/fill inference.
+Separate seed-mean current input is PREPARED_NOT_DEPLOYED9014a724 at
+A/research/current-nas-hgb-catboost-seed-mean-current-point-20261025-v1:
+Sourcec08261ea/INPUTe886f8f3/POLICYd8fe0432/full100/seven1/7/.005TOTAL.
+3CPUrestores/3forwards,0fits,8native11independent52closure; bothclosed.
+Old single-seed d5f53/original8/L271 remain unchanged; no input swap assigned.
 Older preparation/protocol notes below are frozen history, not active owners.
 NEW connection audit COMPLETE at
 A/execution/current-nas-robust-ranking-paper-connection-readiness-20261025-v1,
@@ -58,8 +73,9 @@ newly executed, genuineforeign/noadopt/no-renorm/bankstable. Alljoined/removed,
 224activeupper/900. Still NOT_INSTALL_READY. Reciprocal73ae4d26 and independent
 review find canonical-bank whole-leg exclusion/parked-peer recognition needed;
 Claude28dfc95b REVISE names supervisor death/daemon create closure risks.
-No observed actual overlap failure is claimed. Parent owns paper_peer_group
-code/tests; Mencius paper_peer_visit code/tests; Bernoulli new D-only adapters
+No observed actual overlap failure is claimed. Parent owns paper_account_round;
+unused paper_peer_group is removed, not an active dependency. Mencius completed
+paper_peer_visit; Bernoulli owns new D-only adapters
 current-cooperative-paper-peer-integration-20261025-v1. No old8 claims/source/
 Task/private/bank/window/counters have been updated. Native locks/risk remain.
 Initial480catalog assertion met unrelated Data edits before
