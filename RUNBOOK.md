@@ -25,19 +25,25 @@ native/fit/infer/readout again. Seedc024cf25 and fixedmix7c87666a are now also
 CLOSED:3fits/2465updates/71checks and0models/99checks respectively. No old
 fit/forward/readout command is a ready job. Currentquarter10a421ee is a new
 materialization of a prior-bound rule/components, not a preprice scalar receipt.
-Its q/cash needs a truthful typed adapter; INPUT271aee's stock unit-mass codec
-cannot express cash. Do not renormalize q or replace deployed L's exact input.
-F9 host-hardening96e0f3fb/Sourceabd5 passed46native checks but its fresh attempt
-was denied before private/API. Earlier actor-calibrationd691 did run a history
-guest whose final response was discarded; counts/outcome remain UNKNOWN and
-upper1POST/10GET stays charged. Do not report all-series calls0 or rerun blindly.
-Actor-firstcause9afca062/Sourceea4da064 is metadata-only:12native checks and
-current metadata admission PASS, historical actor still UNKNOWN. Tesla owns
-qualified-refresh-r1 for one new exact guarded RO visit; total<=2POST20GET,
-not an order/recovery/reservation release. Its source alone is not fresh evidence.
+Its cash-aware typed adapter/input are COMPLETE and inert, as pinned below;
+INPUT271aee remains the deployed stock-unit-mass input. Do not renormalize q.
+F9 readonly closuref1f1b847 below supersedes old pre-API preparation as the
+current outcome. Earlier d691 discarded response stays UNKNOWN/upper1POST10GET;
+fresh actual1POST1GET gives seriesupper2POST11GET. No refund or blind query loop.
 Ledger q is post-fee NAV target: g=q*(1+f)/(1+f*q), wealth=1+g*r_simple_net.
 Direct sample-log loss uses that exact identity, never log1p(mean) or q*r.
 The source-only clock helper7e23 is not production-integrated or a purge policy.
+
+Latest completed research commands are historical, not ready jobs:
+A/research/current-qqq-c120-session-close-sizing-development-20261025-v1
+FINALb345f7fa, H5/prior20 current-qqq-c120-prior20-h5session-sizing-development-20261025-v1
+FINALadd7b7af, and current-nas-calendar-group-dro-ranking-development-20261025-v1
+FINAL0fef154f/runtimeSourceb0ab641a/Resulta9316527. The NAS four fits/selected
+inference/readout are CLOSED; do not run launch.ps1/controller.py/native/fit/
+complete_retained.py again. Numeric primaryPASS on9reused cohorts does not cure
+prelaunch logical-attempt-ID limitation.29checks992bc6c4/Parent35refs exact,
+allchildrenremoved/leaseabsent/1019.861upper. Current next-source work is Data
+current-point compatibility plus H5/397 CatBoost transfer readiness, not training.
 
 ## Current Actual Deployment
 

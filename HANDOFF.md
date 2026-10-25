@@ -44,18 +44,25 @@ year groups/sum2762dates/135297rows without feature/target values. Column order
 FACTOR10,CONTEXT9,then RAW63x6; no affine reapplication. New pure sparse H5
 kernel Consumer030532d7/Source3e9024ec/kernelb3951161 passes37invented+cold
 checks, full original mask/mark/funding math retained; old strict guard unchanged.
-The NAS four-fit CONTRACTe5e1de20/scientificSource9e93d5b4 is now FROZEN at
+The NAS four-fit CONTRACTe5e1de20/scientificSource9e93d5b4 is now CLOSED at
 A/research/current-nas-calendar-group-dro-ranking-development-20261025-v1:
-Ridge/HGB CPU plus paired same-init ERM/DRO, max100epochs/PAT20/12700updates
-each,7200activeSUM/14400elapsed/hard08:38UTC. Noether owns runtime/native and
-one GPU coordinator; no market worker is inferred from a contract/source.
-Godel CPU codec Consumer9ef106b4/Source8a6c2fbb/code55d29239 qualifies actual
-RidgeSVD/HGB numeric cold persistence without pickle:32checks/5coldartifacts/
-one invented Ridge and five-stage HGB fit/allhelpersclosed. Its7.5175823native
-seconds and60source upper are charged ONCE inside the family. Initial omitted
-API mount failure and the one mechanical native continuation stay consumed;
-remaining native must mount every declared member. Independent frozen-contract
-review is disjoint from the runtime writer; no extra fit/retry/approval gate.
+FINAL0fef154f/Resulta9316527/runtimeSourceb0ab641a, four fits. Paired same-init
+CUDA ERM/DRO each24epochs/best4/PAT20/3048updates,42.78/42.86fitseconds,
+peakreserved979369984bytes each; Ridge1fit/HGB1fit selectedprefix33. No repeat.
+10bp DROgrowth/DD +1.0026%/.3456%, ERM +.9151%/.3456%; fixed HGB-DRO blend
++.9717%/.7258%. Numerical primaryPASS, not independent alpha/Paper PnL or an
+ensemble-improvement claim. Only9reused economic cohorts/nonPIT/globalUNKNOWN.
+NOT_FULLY_PROCEDURALLY_QUALIFIED: logical native attempt2 ID was not explicit
+before NN launch. Do not cure this retrospectively or rerun the completed fits.
+Parent's counter warning arrived after native; Noether stopped coordinator66500
+after fits had sealed. Retained completion861d224a ran only unattempted inference/
+readout, no fit/native replay. Allchildren removed/leaseabsent/1019.861activeupper.
+Native32calls/12updates/744dates/120closes; one held intake/12ledgers540close marks.
+29fixed-output checks992bc6c4; Parent independently rehashed35refs/0mismatch.
+CPU codec9ef106b4/8a6c2fbb/55d29239 and failed first mount/one repair stay charged.
+The independent static contract review does not erase attempt-binding limitation.
+Next: Data current-point compatibility and one H5/397 CatBoost transfer readiness;
+no new market worker is inferred, old H20/19 CatBoost is already tested.
 
 CURRENT host-control graft has completed six-task typed readback. Parent03:24..25UTC
 used A/execution/current-owned-paper-command-first-graft-activation-20261025-v1

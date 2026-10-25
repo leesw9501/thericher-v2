@@ -20,23 +20,31 @@ The former hit its cap, not proven convergence. Fixedblend loses to its constant
 on growth AND drawdown; no Paper adoption. All6containers removed/leaseabsent,
 284.174finalupper; no completed H1/H5 fit/forward/readout repeated.
 
-NEW ready family: A/research/current-nas-calendar-group-dro-ranking-development-20261025-v1.
-Frozen CONTRACTe5e1de20/scientificSource9e93d5b4 binds Data6a615a41,
-397adapter0433ea5f and sparse-ledger030532d7. FOUR market fits only:
-Ridge/HGB CPU plus paired same-init ERM/DRO neural experts, max100epochs/PAT20,
-12700updates EACH/7200activeSUM/14400elapsed/hard08:38UTC. Noether owns the
-single GPU coordinator and runtime/native/dispatch; actual PID/start/resource
-proof is required before calling a worker running. Both neural arms share the
-native-qualified backend; warm representative batches/transfers/synchronization
-before choice, no cold microbenchmark or desktop-app-name veto.
+Latest NAS family is CLOSED:
+A/research/current-nas-calendar-group-dro-ranking-development-20261025-v1.
+FINAL0fef154f/Sourceb0ab641a/Resulta9316527: FOUR market fits, two CPU
+Ridge/HGB and two actual concurrent CUDA ERM/DRO24epochs/best4/PAT20/
+3048updates each. Actual fit42.7834/42.8647seconds, peakreserved979369984bytes
+each; co-tenancy timings are not isolated speed benchmarks. Warmed SYN backend
+choice preceded fits. Native32calls/12updates/744dates/120closes, no repeat.
+12ledgers/oneintake/29checks/allchildrenremoved/leaseabsent/1019.861activeupper.
+Numeric primaryPASS but logical-attempt2 prelaunch ID binding INCOMPLETE;
+never retrospectively refund/regrade. Coordinator66500 stopped after sealed
+fits; retained completion861d224a finished only unattempted inference/readout.
+No active numerical worker remains. Noether retains resource coordination,
+not a promise that GPU is currently running. Data current-point readiness and
+one H5/397 CatBoost transfer are preparation only; old H20/19 CatBoost is closed.
+Routine review messages use queued/checkpoint-aware coordination; stopping an
+active worker for an ambiguous bookkeeping question creates avoidable recovery.
+Actual unsafe/irreversible activity still warrants immediate containment.
 Godel CPU codec9ef106b4/Source8a6c2fbb qualified ONE invented Ridge and ONE
 five-stage HGB fit/32checks/5coldartifacts, no market fits/GPU. Charge its
 7.5175823native seconds plus60source upper ONCE inside the family, not a new
 allowance. Its initial missing-API mount failure consumed the ONE mechanical
 native continuation; preserve failed attempt/debits. Allhelpers joined/both
-containers removed. Before remaining native, mount every declared Source member
-and bind actual child/family metadata, not only the Python file. No duplicate
-completed codec proof or market retry. Source/runtime preparation is not training.
+containers removed. Full declared mounts/child-family metadata are required on
+future reuse, not another completed native proof. No duplicate codec fit or
+market retry. Source/runtime preparation is not training.
 
 Noether is the single GPU resource coordinator. QQQ marginal-density e9f8d79e
 is CLOSED: ONE CUDAfit31epochs/selected6/527updates,12.680840fitsec,1128MiB

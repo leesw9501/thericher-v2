@@ -58,13 +58,18 @@ convergence), CPU DualTCN44/best14,896updates. Blend -5.363%growth/9.844%DD
 loses toconstantq -5.246%/9.515%;166checks/all6removed/leaseabsent. No rerun.
 Next independent Research preparation is NAS GroupDRO proposal670f6787:
 metadata6a615a41/groups3250/adapter3970433 and sparseledger0305/3e90/b395
-are ready. Four-fit CONTRACTe5e1de20/scientificSource9e93d5b4 is FROZEN at
+are ready. Four-fit CONTRACTe5e1de20/scientificSource9e93d5b4 is now CLOSED at
 A/research/current-nas-calendar-group-dro-ranking-development-20261025-v1:
-Ridge/HGB CPU and matched same-init ERM/DRO, max100epochs/PAT20/12700updates
-each,7200activeSUM/14400elapsed/hard08:38UTC. Noether owns runtime/native/
-GPU coordinator; no market fit inferred. CPU codec9ef106b4/Source8a6c2fbb
-has32native checks/cold proof;7.5175823native seconds+60source upper charged
-once and one mechanical continuation consumed. Do not repeat it or old H1/H5.
+FINAL0fef154f/Sourceb0ab641a/Resulta9316527. Four fits, paired CUDA ERM/DRO
+24epochs/best4/PAT20/3048updates each.10bp DRO +1.0026%growth/.3456%DD versus
+ERM +.9151%/.3456%, fixedrankblend +.9717%/.7258%; numeric primaryPASS only.
+Native32calls12updates744dates120closes/12ledgers540marks/oneintake/29checks/
+allchildrenclosed/leaseabsent/1019.861upper. Prelaunch logical-attempt2 ID binding
+INCOMPLETE, not retrospectively cured or independent alpha/Paper evidence.
+Retained completion861d finished only unattempted inference/readout after
+coordinator stop; no fit/native replay. Do not repeat this study or old H1/H5.
+Ready preparation: Data existing currentNASpoint/397 compatibility and one
+H5/397 CatBoost transfer; old H20/19 CatBoost was completed, not an untried name.
 No paid/Paper input/budget change or hold on original company opportunities.
 
 1. Supplementary L QQQ H5 is NOW INSTALLED, not a ready builder to rerun:

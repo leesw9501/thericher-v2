@@ -34,16 +34,23 @@ ERM+Ridge/HGB/fixedblend. DataMetaFINAL6a615a41/groups3250104f (11years/2762
 whole dates), adapter3970433 order FACTOR10+CONTEXT9+RAW63x6/no extra affine.
 Sparseledger030532d7/Source3e9024ec/kernelb3951161 preserves full original mask/
 funding/mark/cost math,37invented+coldPASS; no original guard/result rewrite.
-Retained ClaudeREVISE is adjudicated by the frozen CONTRACTe5e1de20/
-scientificSource9e93d5b4, not called agreement. Noether now owns concrete
-runtime/native before four market fits: Ridge/HGB and matched ERM/DRO,
-max100epochs/PAT20/12700updates each,7200activeSUM/14400elapsed/hard08:38UTC.
-Godel CPU codec9ef106b4/Source8a6c2fbb/code55d29239 is qualified on actual
-RidgeSVD/HGB/cold numeric states,32checks/5artifacts. Charge7.5175823native
-seconds+60source upper once; its failed incomplete mount consumed the one
-mechanical native continuation. No market retry or repeated codec native.
-Full declared-file mounts and child/family metadata precede remaining native.
-Independent static contract review is disjoint, no new permission gate.
+Retained ClaudeREVISE is adjudicated by CONTRACTe5e1de20/scientificSource9e93,
+not agreement. Actual NAS family is now CLOSED FINAL0fef154f/Resulta9316527/
+runtimeSourceb0ab641a. Four fits: Ridge/HGB CPU (HGBselected33), same-init
+CUDA ERM/DRO24epochs/best4/PAT20/3048updates EACH.10bpDRO +1.0026%growth/
+.3456%DD versusERM +.9151%/.3456%; fixedrankblend +.9717%/.7258%. Numerical
+primaryPASS only on9reused cohorts, not alpha/ensemble dominance/Paper return.
+Native32calls/12updates/744dates/120closes, onepriceintake/12ledgers540closes;
+29checks992bc6c4/Parent35refs exact/allchildrenremoved/leaseabsent/1019.861upper.
+Native logical-attempt2 mapping was not explicit before launch: procedural
+qualification INCOMPLETE, not cured by positive results. Coordinator66500 was
+stopped after sealed fits; continuation861d224a only completed unattempted
+inference/readout. No native/fit replay or refunded cap. Keep this limitation,
+not another permission hold or a reason to repeat completed training.
+CPU codec9ef106b4/8a6c2fbb/55d29239 and first failed mount/one mechanical repair
+remain carried. New dispatches bind stage/case IDs before launch. Current work
+is retained-runtime reuse review, Data current-point compatibility and Godel's
+one H5/397 CatBoost transfer readiness, not a claim CatBoost is an untried model.
 Broader NAS metadata1c99721d supports conditional research, not a fit by itself.
 Its netpayoff5 entry-principal units must be derived, never relabeled paid NAV.
 Data H1 packet remains COMPLETE641b88a9/Source54b9da9d/
