@@ -6,6 +6,15 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+Current source-only sidecar is
+A/data/current-nas-fold-local-preprocessing-readiness-20261025-v1.
+Chandrasekhar checks the existing prefix Data b5852786/Source56e5685a/
+manifestea8ca283 against Cicero's new prefix-OOF CatBoost+cached-GRU consumer.
+Those existing FIT-only fold affines/role views are the reuse path; no new
+scaler/kernel/data build, raw rows, API, Docker or model fit is assigned here.
+300active/600elapsed source+SYN ceiling; direct concrete mismatch/handoff only,
+not another catalog/report or a company-wide permission hold.
+
 Current new source-only CHECK adapter design is CLOSED at
 A/data/current-check-two-block-adapter-design-20261025-v1:
 Consumer5685f76a/Source5a6a4bc3. It names roles/files/clock and interval purges,

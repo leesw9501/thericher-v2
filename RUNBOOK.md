@@ -23,6 +23,14 @@ after a capture failure. Invented native returns only; actualnative/API/Task0,
 allow_executefalse, not Mean3/runtime/install or oldwholehost qualification.
 Do not invoke its launcher as a strategy or rerun old fixtures. Execution owns
 an independent extra-H5 readiness assessment; no extra Task has been installed.
+Review8f403930/ClaudeREVISE found r1's pre-I/O latch gap. Corrected wired-r2
+Consumer974edc98/Sourcef00bdf62 latches before ALL fallible capture,10focused
+PASS including projection/serialization failures/caughtretry/nativecount1.
+Productionhelper/freezer RuffPASS; external test I001 retained. Use r2 only,
+still falseRelease/actualnative0, not a strategy launch or deploy authority.
+Additional Mean3 readiness is NO_DEPLOY; current-mean3-existing-native-inert-
+preparation-20261025-v1 is assigned source/test-only600active/1200elapsed,
+paired one-shot/oneleg/original8/8/2 caps. No new Task/Docker/API/private work.
 
 Current final source QA is d3932f49cd04da7011cded5b28faf29c8c94cc3ccae5c899e505ab61638ba2ae:
 A/verification/current-account-serial-round-integration-20261025-v1/technical-r8/AUTHORITY.json.

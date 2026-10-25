@@ -32,9 +32,18 @@ cohorts, not causalfeatureproof/independentalpha or input/Paper swap.
 Original constant invented feature failureb1026fdf/f86ffd75 had0marketfits;
 repair30.531/90 withinoriginalcaps, oldfailed8nativeupper retained/cumulative24.
 Both originallyplannedmarketfits completedONCE, no FULLmodelcalls/Datarebuild.
-No new ready frozen training. Coordinator standby; next concrete product
-consumer is prepared397-input Paper connection/native runtime, not more
-feature/search variants on these13outcomes.
+New preparation, not yet a claimed GPU run:
+A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1.
+Cicero froze a distinct wider-prefix contract:3new397-CatBoost fold fits,
+cached matching prefix-GRU OOF only/no oldGRUmodelcalls, fixedhalf-rank blend,
+251H5cohorts across F1/F2/F3 instead of another13cohort parameter sweep.
+Existing Data b5852786/Source56e5685a provides FIT-prefix-only affines and
+physical role views; no wholeTRAINglobalaffines/newData/scaler rebuild.
+3600activeSUM/6000elapsed/3marketattempts/0retry, nativeactualAPI smoke first;
+all3forecasts sealed before ONE target/mark readout. Same globallyreused data,
+not freshholdout/independentalpha or Paper input swap. Data source-readiness
+sidecar checks exact role/affine handoff, no duplicate numerical work.
+Prepared397-input Paper connection remains an independent ready consumer.
 
 Closed neural protocol (not another dispatch):
 ONE new shared-stock MLP ranking transfer seed20261030 plus ONE fixed equal-

@@ -174,9 +174,24 @@ Nine focused tests pass, new helper/test/freezer Ruff passes. Native/API/Task
 effects0, allow_executefalse. This is not actual native/runtime qualification,
 Mean3 input binding, installation or reconstruction of the old missing return.
 The old source-specific task plan/root remains inert, not a deployable action.
-Bernoulli assesses exact extra-H5 deployment gaps; Mencius independently reviews
-the new wiring/Claude challenge. Cicero owns ONE distinct new useful research
-readiness/campaign, not duplicate fits or GPU occupancy. No new GPU run claimed.
+Independent review and Claude both returned REVISE at
+A/review/current-host-result-capture-wiring-20261025-v1/CONSUMER.json8f403930:
+r1 covered I/O failure but not earlier projection/serialization exceptions.
+Parent adopted the fix in immutable NEW host-result-capture-wired-r2:
+Sourcef00bdf625b39e9b58314734646ab25a723512d72955a1967d85093798b8f6536,
+Consumer974edc98f768dfac00889c4dda0605c86bd7da0aa7ae9c469408178f2d63c2ee.
+The failure latch now precedes ALL fallible capture work, cleared only after
+complete exclusive write/hash/readback.10focused tests PASS, including caught
+projection/serialization failure then retry blocked before producer. Production
+helper/freezer Ruff passes; external test has import-order I001, not claimed
+fully lint-clean. Native/API/Task0/falseRelease, no oldhost requalification.
+Extra-H5 assessment current-extra-h5-deployment-readiness-20261025-v2 found
+typed Mean3 compatible but no new binding/controller/central-origin graph or
+actual single-writer integration/runtime qualification. Not deployable yet.
+Bernoulli now owns concrete COW mean3-existing-native inert preparation,
+600active/1200elapsed/source+tests only/paired finite one-shot, old8 unchanged.
+Cicero owns ONE distinct new useful research readiness/campaign, not duplicate
+fits or GPU occupancy. No new GPU run claimed until evidenced.
 
 Reusable fixture support is CLOSED: mounthelperfd0314d0/15puretests and
 censushelpercc2e8010/8regressions/Ruffclean. Compare COMPLETE mount dictionaries

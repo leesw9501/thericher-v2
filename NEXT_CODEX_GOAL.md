@@ -56,7 +56,17 @@ exclusive source/run/phase/count capture precedes host assertions. A sink
 failure latches BEFORE another native producer invocation. Actual native/API/
 Task effects0, allow_executefalse; not runtime/install/Mean3 binding or old
 host-tail requalification. Bernoulli owns exact additional-H5 readiness gaps,
-Mencius source/Claude review. No old SELL/BUY replay merely to repair reporting.
+Mencius/Claude REVISE8f403930 found a pre-I/O latch gap; Parent adopted it in
+NEW wired-r2 Sourcef00bdf62/Consumer974edc98.10focused tests pass, including
+projection/serialization failure then caught retry blocked BEFORE producer.
+Production helper/freezer Ruff PASS; external test retains import-orderI001.
+No actual native/API/Task effects or oldhost qualification. Use r2, not r1.
+Extra-H5 assessment current-extra-h5-deployment-readiness-20261025-v2 says
+NO_DEPLOY: Mean3 typed input is compatible but new Source/binding/central root,
+actual single-writer integration and runtime qualification remain technical
+work. Bernoulli now implements NEW inert Mean3 COW preparation, source/test
+only600active/1200elapsed, paired ONE-SHOT pilot/oneleg/no seven-target claim.
+No old SELL/BUY replay merely to repair reporting.
 Do not install/migrate old8 or launch anotherstrategy to close a test report.
 Current Paper opportunities remain owned independently. All dispatched workers
 are closed; Parent owns next dispatch/Git, not a standing daemon.

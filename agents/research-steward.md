@@ -19,8 +19,14 @@ RAW378164/best100/16.57s and FCTX19146/best82/13.61s,203+272checks/all7closed/
 leaseabsent/388.594upper. Initial allzeroSYNfailureb1026fdf technical/0market;
 namedfixture recovery30.531/90 retainedoldfailed8nativeupper/cumulative24.
 No FULLfit/restore/forward/Datarebuild or repeated completedmarketfit. Result
-MIXED_OR_INCONCLUSIVE, no smallerinput/Paperadoption. No ready frozen training
-or active GPUworker. Cicero standby; no dummy occupancy job or permissions wait.
+MIXED_OR_INCONCLUSIVE, no smallerinput/Paperadoption. Those fits remain closed.
+Current assigned family is NEW current-nas-prefix-oof-catboost-gru-rank-blend-
+development-20261025-v1:3newfold397-CatBoost fits/max600trees/OD64 each,
+cachedGRUOOF only/no oldmodelcalls,251H5cohorts/FIT-onlyfoldaffines.
+Contract3600activeSUM/6000elapsed/1800treeupdates/0retry; actual native/source/
+schema/cache/headroom checks precede fits. Do not infer a running GPUworker
+from this contract; integrate exactPID/start/lease/firststep when delivered.
+Cicero is sole coordinator, independent Paper preparation continues.
 
 Latest numerical work is CLOSED seed-stability FINAL5d0d6983/Sourcea74ca4ae/
 verify85f27429 at
@@ -38,7 +44,7 @@ Seed-mean current point9014a724/c08261ea is also CLOSED:3CPUrestores/3forwards/
 141.312activeupper. Its typed inpute886f8f3/d8fe0432 is inert, not deployment.
 Zero-fit lower-envelope diagnostic is CLOSEDab43546d/966db56b, COMPLETE_FAIL:
 99checks/all4closed/296.885activeupper,0models/GPU/retries. No remaining job
-or reason to refit from that source. Next assigned resource family is
+or reason to refit from that source. Historical assigned resource family was
 A/research/current-nas-broader-check-development-20261025-v1, one new prefix-
 selected CatBoost seed20261029 (distinct from old fullCHECK-selected fits),
 3600activeSUM/7200elapsed including Data/native/failed attempts/cleanup.

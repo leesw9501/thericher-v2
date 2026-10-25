@@ -21,7 +21,18 @@ invented returns only; no actual native/API/Task effects, allow_executefalse,
 not whole-host/runtime/deployment qualification. Original task-plan/root is
 still inert and oldd5f53 model binding is not newMean3. Bernoulli now owns
 the disjoint extra-H5 readiness assessment; Parent wired capture locally.
-Mencius owns independent source/Claude challenge. No repeated old SELL/BUY.
+Mencius/Claude REVISE8f403930 found projection/serialization outside r1 latch.
+Corrected immutable wired-r2 Consumer974edc98/Sourcef00bdf62 latches BEFORE
+allfalliblecapture and clears only on fullsuccess.10focusedPASS including both
+injectedfailures/caughtretry/nativecount1. Productionhelper/freezer RuffPASS;
+test-onlyI001 retained. No runtime/install qualification; use r2 not r1.
+Readiness current-extra-h5-deployment-readiness-20261025-v2 is NO_DEPLOY:
+typedmean3 compatible, actual new capsule/binding/root/owner/runtime missing.
+Bernoulli now implements COW mean3-existing-native-inert preparation under
+A/execution/current-mean3-existing-native-inert-preparation-20261025-v1,
+600activeSUM/1200elapsed/source+tests only, paired ONE-SHOT/oneleg/original
+8entry8exit2recovery caps. No Task/Docker/API/private effects or old8 migration.
+No repeated old SELL/BUY; actual single-writer integration remains technical.
 Older protocol descriptions below are closed history, not active instructions.
 Original shared initial tenth/basis/costs/losses/pending/F9UNKNOWN-HELD unchanged.
 Company NEXT: exact Oct26 natural GRU/TimesFM/Joint17 entry outcomes. Existing
