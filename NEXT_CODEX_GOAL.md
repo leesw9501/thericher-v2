@@ -51,11 +51,21 @@ New H1 research FINALb345f7fa is CLOSED, not a queued model job. TCN65epochs/
 selected35 and MLP130/selected105 were CPU market fits; native CPU+CUDA passed.
 10bp blend growth/DD -3.247%/3.722% versusconstantq -3.888%/4.155% is only
 relative adaptive PASS, not profitability. No completed fit/native/readout rerun.
-Next Research is a genuinely new H5-session/prior20-daily context contract;
-New family is now frozen at
+The distinct H5-session/prior20-daily context family is also CLOSED at
 A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1:
-Consumer58412e5e/contractfe29b4ba/DataReq4ae74cba/Source07191985. Data may
-materialize one verified view now; no H1 rerun or Paper input/budget swap.
+FINALadd7b7af/Sourcea406b35d/Result215035e0. CUDA MLP180/best180(cap,not
+convergence), CPU DualTCN44/best14,896updates. Blend -5.363%growth/9.844%DD
+loses toconstantq -5.246%/9.515%;166checks/all6removed/leaseabsent. No rerun.
+Next independent Research preparation is NAS GroupDRO proposal670f6787:
+metadata6a615a41/groups3250/adapter3970433 and sparseledger0305/3e90/b395
+are ready. Four-fit CONTRACTe5e1de20/scientificSource9e93d5b4 is FROZEN at
+A/research/current-nas-calendar-group-dro-ranking-development-20261025-v1:
+Ridge/HGB CPU and matched same-init ERM/DRO, max100epochs/PAT20/12700updates
+each,7200activeSUM/14400elapsed/hard08:38UTC. Noether owns runtime/native/
+GPU coordinator; no market fit inferred. CPU codec9ef106b4/Source8a6c2fbb
+has32native checks/cold proof;7.5175823native seconds+60source upper charged
+once and one mechanical continuation consumed. Do not repeat it or old H1/H5.
+No paid/Paper input/budget change or hold on original company opportunities.
 
 1. Supplementary L QQQ H5 is NOW INSTALLED, not a ready builder to rerun:
    A/execution/current-l-qqq-command-first-graft-activation-preparation-20261025-v1/
@@ -98,8 +108,8 @@ materialize one verified view now; no H1 rerun or Paper input/budget swap.
    fixed quarterensemble2.8387%growth/2.1892%DD versusconstant1.1287%/2.6733%.
    Two untrained controls already pass the descriptive predicate; no seedwinner
    or independent alpha claim.50/50 composition7c87666a/3ba0 is CLOSED FAIL-DD,
-   0models/GPU. No completed fit/readout is queued again. Kant implements the
-   smallest explicit cash-aware typed H5 contract/tests for the quarterensemble;
+   0models/GPU. No completed fit/readout is queued again. The smallest explicit
+   cash-aware typed H5 contract/tests for the quarterensemble are COMPLETE;
    native27/INPUT1d733d5d/CONSUMERd7b619cf are PREPARED_NOT_DEPLOYED.
    Original v1 bytes/IDs/risk and installed L/input/tasks stay unchanged. Fresh
    full QAa5ba950a/FINAL704c3543 at
@@ -112,25 +122,16 @@ materialize one verified view now; no H1 rerun or Paper input/budget swap.
    Diagnostic793565d1 is
    technical-incomplete with UNKNOWN PnL; separate b9b8411d only repairs its
    precision fixture on invented data, not its real readout or financial result.
-5. Tesla owns F9 read-only host/actor calibration under
-   A/execution/current-f9-readonly-reconciliation-20261025-v1. Sourceaceaad/
-   actor-calibrationd691's history guest ran but final admission discarded its
-   response: counts/outcome UNKNOWN, charged upper1POST/10GET. New host-hardening
-   96e0f3fb/Sourceabd5 passes46native checks but was denied before private/API
-   (newcalls0). F9 UNKNOWN/HELD remains; no historical zero-call inference.
-   First-cause9afc/ea4d passes12native; qualified-refresh0bf9/18fb49checks
-   captures the exact denied public review-record writer before any API call.
-   Public-writer-boundf6ae then captures DockerDesktop actor_identity before
-   any freshbroker call. Source3c9d fixes identity-before-argv applicability;
-   independent fadc29ad review has no blocking delta finding. Shared code
-   is source-bound in F9/L/original3, not proof of actual task failure.
-   Tesla prepares the minimal exact state-aware source graft; Hume's categorical
-   CLI probe9a43 finds stats but fulltemplate remains unqualified. No Desktop
-   waiver/automatic history loop/new request/bank reset. F9 hold unchanged.
-   Scope actual private writers, not unrelated control/research or future due;
-   never waive an unknown private writer or release reservations from missing
-   holdings/history. Named bounded readonly account/history opportunity remains
-   delegated after source/native qualification; no task/order invocation.
+5. F9 bounded readonly visit is CLOSED, not another ready query:
+   A/execution/current-f9-readonly-reconciliation-20261025-v1/
+   f9-source-corrected-r1/actual-closure-r1/CONSUMER.json SHAf1f1b847.
+   Source3407e9f3/qualifieddelivery4cd403e2: actual1POST/1GET, original exact
+   history0rows/0candidates/stable custody, no orders. UNKNOWN/HELD remains;
+   missing opener/dispatch correlation and empty history cannot prove no-send.
+   Prior discarded response charged upper1POST/10GET is not refunded; series
+   upper2POST/11GET. Allhelpers joined/removed, no further query in this closed
+   contract or reservation release/new request/substitute/bank reset. Scope
+   admission to actual private writers, not unrelated Data/Research/future due.
 
 ## Completed Inputs, Not Ready Jobs
 

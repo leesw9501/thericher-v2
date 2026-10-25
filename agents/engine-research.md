@@ -20,15 +20,31 @@ CPU+CUDA qualified; one cold timing is not warmed/isolated speed proof. Fixed
 blend10bp growth/DD -3.247%/3.722% versusconstantq -3.888%/4.155% and aligned
 QQQ -14.906%/15.846%. Relative adaptive PASS only; not profitability/alpha.
 108checks/all6removed/leaseabsent/oneEVALintake/254.555finalupper; no rerun.
-Next distinct hypothesis is H5 holding + prior20 daily context (not resampled
-same-history information); Data prep8d00c388/d82f81d2/14native/0rawintake ready.
-New finite contract is now FROZEN at
+The distinct H5/prior20 family (not resampled same-history information) is
+also CLOSED at
 A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1:
-Consumer58412e5e/contractfe29b4ba/DataReq4ae74cba/Source07191985. Data builds
-once now; two new experts/fixedblend,180epochs/PAT30/3000activeSUM/7200elapsed/
-hard06:12UTC, EVALphase0/12cohorts+3flattails. Native/warmed device calibration
-precedes new fits; H1 models/debits remain closed. Broader NAS metadata1c99721d
-supports a future data-rich conditional ranking family, not raw intake or fits.
+FINALadd7b7af/Sourcea406b35d/Result215035e0,166checks/all6removed/leaseabsent/
+284.174finalupper. CUDA dailyMLP180epochs/best180/720updates(cap not
+convergence), CPU DualTCN44/best14/176updates/PAT30. Fixedblend growth/DD
+-5.363%/9.844% loses toconstantq -5.246%/9.515%: primaryFAIL, no Paper swap.
+Datae2c4346f/930e/0ee3/4461 completed onebuild/verify14native+7710independent.
+All old H1/H5 source/results/debits remain closed, no repeated fits or eval.
+NEW ready preparation: NAS GroupDRO proposal670f6787/Source1bf45f3a, matched
+ERM+Ridge/HGB/fixedblend. DataMetaFINAL6a615a41/groups3250104f (11years/2762
+whole dates), adapter3970433 order FACTOR10+CONTEXT9+RAW63x6/no extra affine.
+Sparseledger030532d7/Source3e9024ec/kernelb3951161 preserves full original mask/
+funding/mark/cost math,37invented+coldPASS; no original guard/result rewrite.
+Retained ClaudeREVISE is adjudicated by the frozen CONTRACTe5e1de20/
+scientificSource9e93d5b4, not called agreement. Noether now owns concrete
+runtime/native before four market fits: Ridge/HGB and matched ERM/DRO,
+max100epochs/PAT20/12700updates each,7200activeSUM/14400elapsed/hard08:38UTC.
+Godel CPU codec9ef106b4/Source8a6c2fbb/code55d29239 is qualified on actual
+RidgeSVD/HGB/cold numeric states,32checks/5artifacts. Charge7.5175823native
+seconds+60source upper once; its failed incomplete mount consumed the one
+mechanical native continuation. No market retry or repeated codec native.
+Full declared-file mounts and child/family metadata precede remaining native.
+Independent static contract review is disjoint, no new permission gate.
+Broader NAS metadata1c99721d supports conditional research, not a fit by itself.
 Its netpayoff5 entry-principal units must be derived, never relabeled paid NAV.
 Data H1 packet remains COMPLETE641b88a9/Source54b9da9d/
 DTOa079c624/ABI75175b5c/ALLOWLIST3f307c14 under

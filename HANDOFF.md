@@ -22,21 +22,40 @@ timing is not warmed/isolated speed evidence or a global CPU preference.
 10bp fixedblend growth/DD -3.247%/3.722%, constant-average-q -3.888%/4.155%,
 alignedQQQ -14.906%/15.846%: relative adaptive PASS, NOT profitability/alpha.
 108checks/oneEVALpriceintake/all6containersremoved/leaseabsent/254.555finalupper.
-No completed fit/native/inference/readout is queued again. Next research
-preparation is H5-session holding plus causal prior20 daily context from the
-same archive, not a retroactive H1 regrade. Data skeleton8d00c388/d82f81d2 at
-A/data/current-qqq-c120-prior20-h5-input-preparation-20261025-v1 is ready:
-all251keys/calendar capacities121FIT/39CHECK/59EVAL,14native checks/0rawintake.
-New Engine contract is now FROZEN at
+No completed fit/native/inference/readout is queued again. The distinct
+H5-session/prior20-daily context study is also CLOSED, not a retroactive H1
+regrade: FINALadd7b7af/Result215035e0/Sourcea406b35d at
 A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1:
-CONSUMER58412e5e/CONTRACTfe29b4ba/DataReq4ae74cba/Source07191985.
-Data may build once now; phase0 EVAL12five-sessioncohorts/3flattails,
-heldABI[12,5,390]/21768requiredCLOSE/1632pad. Two NEW experts/fixedblend,
-max180epochs/PAT30/3000activeSUM/7200elapsed/hard06:12UTC. No H1 rerun.
+DailyMLP CUDA180epochs/best180/720updates (cap, not convergence); DualTCN
+CPU44epochs/best14/176updates/PAT30.166checks/all6removed/leaseabsent/
+284.174finalupper. Blend10bp growth/DD -5.363%/9.844% versusconstantq
+-5.246%/9.515%: worse growth AND drawdown, primaryFAIL/no Paper swap.
+Datae2c4346f/Source930e40ae/DTO0ee3feac/allowlist4461c7f6 completed ONEbuild/
+ONEverify/0retry,14native+7710independent/Ruff. No H1/H5 fit/readout rerun.
 Separate metadata-only NAS readiness1c99721d locates83 collected/17unavailable
 axes and135297TRAIN rows; no acquisition needed. Current-listing/nonPIT/
 adjustment/arrival limitations stay, and netpayoff5 is entry-principal payoff,
-not paid-NAV return. It is future research preparation, not another fit grant.
+not paid-NAV return. Next NAS proposal670f6787/Source1bf45f3a at
+A/research/current-nas-cross-sectional-strategy-proposal-20261025-v1 proposes
+calendar-year GroupDRO versus matchedERM, Ridge/HGB controls and fixedblend.
+Claude REVISE retained/adjudicated, not agreement or a finance guarantee.
+Final DataMeta6a615a41/GroupMapping3250104f/adapter3970433ea5f binds11 TRAIN
+year groups/sum2762dates/135297rows without feature/target values. Column order
+FACTOR10,CONTEXT9,then RAW63x6; no affine reapplication. New pure sparse H5
+kernel Consumer030532d7/Source3e9024ec/kernelb3951161 passes37invented+cold
+checks, full original mask/mark/funding math retained; old strict guard unchanged.
+The NAS four-fit CONTRACTe5e1de20/scientificSource9e93d5b4 is now FROZEN at
+A/research/current-nas-calendar-group-dro-ranking-development-20261025-v1:
+Ridge/HGB CPU plus paired same-init ERM/DRO, max100epochs/PAT20/12700updates
+each,7200activeSUM/14400elapsed/hard08:38UTC. Noether owns runtime/native and
+one GPU coordinator; no market worker is inferred from a contract/source.
+Godel CPU codec Consumer9ef106b4/Source8a6c2fbb/code55d29239 qualifies actual
+RidgeSVD/HGB numeric cold persistence without pickle:32checks/5coldartifacts/
+one invented Ridge and five-stage HGB fit/allhelpersclosed. Its7.5175823native
+seconds and60source upper are charged ONCE inside the family. Initial omitted
+API mount failure and the one mechanical native continuation stay consumed;
+remaining native must mount every declared member. Independent frozen-contract
+review is disjoint from the runtime writer; no extra fit/retry/approval gate.
 
 CURRENT host-control graft has completed six-task typed readback. Parent03:24..25UTC
 used A/execution/current-owned-paper-command-first-graft-activation-20261025-v1

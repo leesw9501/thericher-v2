@@ -6,7 +6,22 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
-Latest proposal3fb03b48/Source90d99227 at
+Current consumed proposal: NAS calendar-year Group-DRO versus matched ERM at
+A/research/current-nas-cross-sectional-strategy-proposal-20261025-v1,
+Consumer670f6787/Proposal364cebff. It changes TRAIN objective emphasis, not a
+claim that GRU/ranking/attention is new. Official1911.08731v2 motivates group
+robustness/regularization on NLI/images, not stock alpha. Claude REVISE is retained
+and adjudicated, not reported as agreement. Frozen Engine consumer e5e1de20/
+9e93d5b4 uses actual final Data6a615 and397adapter0433, Ridge/HGB controls and
+fixed HGB-DRO rank blend; all data reused/current-listing/non-PIT, not independent
+replication. H1b345/H5add7 are CLOSED; neither should be retrained automatically.
+Sparse-unit-mass H5 pure helper030532d7 fixes old strict-positive admission only
+in this new consumer, preserving old source/results/full-mask/mark requirements.
+Godel completed CPU numeric codec9ef106b4/Source8a6c2fbb and now independently
+checks the frozen contract. Engine owns numerical targets/splits/fits/results;
+no Strategy broker/risk authority or extra experiment budget.
+
+Earlier proposal3fb03b48/Source90d99227 at
 A/research/current-next-risk-composition-mechanism-readiness-20261025-v1/post-density-r1
 recommended one zero-fit constant-duty-gross uniform comparison, not another
 density fit merely for occupancy. Claudecb12 SOUND_WITH_LIMITS: equal intended

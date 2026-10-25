@@ -14,14 +14,29 @@ b345f7fa/Sourcea056f4d4: two concurrent CPU market fits65/130epochs,975updates,
 all6containersremoved/leaseabsent/254.555finalupper. CPU+CUDA native paths
 qualified; one cold timing selected CPU in this family, not warmed/isolated
 benchmark evidence or a global GPU restriction. Do not repeat completed fits.
-New H5/prior20 contract58412e5e/fe29b4ba is now frozen; Data builds once.
-Two new experts/fixedblend,180epochs/PAT30/3000activeSUM/7200elapsed/hard06:12UTC.
-No current new market worker inferred until actual frozen native/input/resource
-readiness and PID/start; completed H1 fits remain closed. Broader NAS1c997
-input metadata is a future resource-rich hypothesis, not an additional fit grant.
-Noether keeps resource coordination; future useful campaigns should warm both
-backends and include representative batches/transfer/sync before device choice.
-No dummy benchmark/training or application-name veto; old debits stay closed.
+H5/prior20 is also CLOSED FINALadd7b7af/Sourcea406b35d: actual DAILY_MLP CUDA
+180epochs/best180/720updates and DUAL_TCN CPU44epochs/best14/176updates.
+The former hit its cap, not proven convergence. Fixedblend loses to its constant
+on growth AND drawdown; no Paper adoption. All6containers removed/leaseabsent,
+284.174finalupper; no completed H1/H5 fit/forward/readout repeated.
+
+NEW ready family: A/research/current-nas-calendar-group-dro-ranking-development-20261025-v1.
+Frozen CONTRACTe5e1de20/scientificSource9e93d5b4 binds Data6a615a41,
+397adapter0433ea5f and sparse-ledger030532d7. FOUR market fits only:
+Ridge/HGB CPU plus paired same-init ERM/DRO neural experts, max100epochs/PAT20,
+12700updates EACH/7200activeSUM/14400elapsed/hard08:38UTC. Noether owns the
+single GPU coordinator and runtime/native/dispatch; actual PID/start/resource
+proof is required before calling a worker running. Both neural arms share the
+native-qualified backend; warm representative batches/transfers/synchronization
+before choice, no cold microbenchmark or desktop-app-name veto.
+Godel CPU codec9ef106b4/Source8a6c2fbb qualified ONE invented Ridge and ONE
+five-stage HGB fit/32checks/5coldartifacts, no market fits/GPU. Charge its
+7.5175823native seconds plus60source upper ONCE inside the family, not a new
+allowance. Its initial missing-API mount failure consumed the ONE mechanical
+native continuation; preserve failed attempt/debits. Allhelpers joined/both
+containers removed. Before remaining native, mount every declared Source member
+and bind actual child/family metadata, not only the Python file. No duplicate
+completed codec proof or market retry. Source/runtime preparation is not training.
 
 Noether is the single GPU resource coordinator. QQQ marginal-density e9f8d79e
 is CLOSED: ONE CUDAfit31epochs/selected6/527updates,12.680840fitsec,1128MiB
