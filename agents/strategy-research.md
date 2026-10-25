@@ -6,8 +6,14 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
-Next concrete consumer is ONE explicit H5/397 CatBoost transfer, not a claim
-that GPU trees are untried. Source-ready Consumerc02e2a10/Proposal a57591c8/
+Current owner Euler prepares ONE nonduplicate causal risk-composition proposal
+at A/research/current-nas-risk-composition-next-readiness-20261025-v1.
+Source/metadata only; no market extraction, fits, replay or GPU work yet. The
+consumer is an Engine experiment distinguishing predictive rank gains from
+same-gross allocation/exposure effects. Existing closed studies are not rerun.
+
+The H5/397 CatBoost transfer is COMPLETE, not a ready training job. Prior
+readiness Consumerc02e2a10/Proposal a57591c8/
 Sourceb0c3e539 under
 A/research/current-nas-boosted-ranking-readiness-20261025-v1/h5-transfer-r1.
 Old H20/19 PairLogit47e3 completed and stays closed. Image259c lacks CatBoost;
@@ -16,7 +22,9 @@ or global runtime replacement. Metadata2containers removed/zero fits/GPU.
 Pure equal-date pair helper Consumer8d2dfc7b/Source08aec09f/code9a542b29
 passes48invented checks,15source upper once; exact1/P_date weights replace
 old payoff-gap weights. No CatBoost import/native/market effect from Strategy.
-Noether owns finite Engine freeze/native/onefit/interpretation, not this board.
+Engine closed that native/onefit/readout as FINAL2e9f6ead/Source94b3085e:
+163trees/selected99/81checks/allclosed. SAME fixed HGB-CAT current point8159
+and typed input3b68 are complete; only the new controller preparation is active.
 Direct economic/turnover proposal57cdc500 was concretely rejected: economic
 MoE already completed; adjacent-weight L1 is not independent-H5 book turnover.
 These findings do not prohibit a useful explicit horizon/input transfer.

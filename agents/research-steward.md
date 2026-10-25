@@ -48,10 +48,14 @@ never retrospectively refund/regrade. Coordinator66500 stopped after sealed
 fits; retained completion861d224a finished only unattempted inference/readout.
 No active numerical worker remains from that study. Noether retains resource
 coordination, not a promise GPU is currently running. Data point820ab41c is
-COMPLETE and Hume owns a disjoint CPU-only oldDRObest4 point consumer:0fits,
-one synthetic69 plus one current69 forward/one restore under a new small cap.
-One H5/397 CatBoost transferc02e/a575/purepair8d2df is source-ready only;
-existing4bb has CatBoost1.2.10,259c does not. Native/onefit still Noether-owned.
+COMPLETE and Hume's CPU-only oldDRObest4 point consumer is CLOSED60a73f76:
+0fits/one synthetic69 plus one current69 forward/one restore, as above.
+The H5/397 CatBoost transferc02e/a575/purepair8d2df was consumed by the CLOSED
+2e9f6ead native/onefit, not another ready allocation. Existing4bb has
+CatBoost1.2.10,259c does not. Euler now prepares the next distinct hypothesis;
+there is not yet a ready frozen GPU campaign. Resume census07:21UTC found
+RTX4090/24564MiB total/2095MiB used/7percentGPU/41C. This is capacity then,
+not training or an isolated throughput benchmark; remeasure before dispatch.
 OldH20/19CatBoost stays closed, no duplicate trial/category-novelty claim.
 Future-host repaira1d9c888/23checks/79.6646upper is CLOSED: expected-stage
 closure required, guarded post-Popen joining, one-off oldresume rejected.

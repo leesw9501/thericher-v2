@@ -10,13 +10,24 @@ real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
-Current source QA0dbcc98a at
+Current final source QA is a31c5f1885ce11592d9d673a1f444e17f359890380a50b4b4acb54d35430c00e:
+A/verification/current-pair-retention-deployment-integration-20261025-v1/technical-r2/AUTHORITY.json.
+185serial/19210full25skip/19235total/8workers/1399exact/Ruff3Compose,
+own scratch/leases/processes closed. Earlier full passed but Ruff found one
+long test line; that failed authority is retained, final-byte suite is fresh.
+Natural V2 Compose pins7d15/frozenSDK+CLI RO mounts/collector-only retention.
+Actual parent metadata readback403d5908 under
+A/data/current-pair-retention-natural-deployment-readiness-20261025-v1/parent-activation-r1
+confirms configured/Taskunchanged/enabledidle/nextOct26 21:55UTC. No service
+launch/API/TaskRun/natural-recovery claim. Do not run closed proof/QA commands.
+
+Historical source QA0dbcc98a at
 A/verification/current-pair-whole-observation-integration-20261025-v1/postcheck-closure-r1/AUTHORITY.json:
 394serial/19209full25skip/19234total/8workers/1399exact/Ruff3Compose(.env.example),
 own scratch/leases/25PID-start actors closed. Suite ONCE; post-test field-adapter
 fault preserved, exact-source closure completed only unrun checks. Prior a5ba/
-704c is1398history. PAIR --retain-observations source IMPLEMENTED/defaultOFF,
-not installed. Whole parsed pages/publicquery/source/capture/hash/asof, no raw
+704c is1398history. PAIR --retain-observations source defaults OFF, natural V2
+Compose now explicitly opts in as above. Whole parsed pages/publicquery/source/capture/hash/asof, no raw
 HTTP/auth, canonical rewrite or quarantine clear. Capability probe under
 A/data/current-pair-whole-observation-capability-probe-20261025-v1 is CLOSED:
 Consumerdbcb3154/Source1b24450f/Outcomefc4a690c/Nativec633b70f,11native cases,
@@ -24,10 +35,11 @@ actual1tokenPOST2dailyGET/allHTTP200/no retry.Each target100rows/63required
 sessions Jul28..Oct23/missing0;allhelpersclosed/302.536activeupper. Do not run
 the completed native/API probe again. M observations-only;no canonical/Task
 change or proof of installed transport recovery/finality/PIT/CA.
-New metadata-only retention deployment readiness is separately owned under
+Completed retention deployment readiness/native and parent readback are under
 A/data/current-pair-retention-natural-deployment-readiness-20261025-v1.
-New D-only HGB-CAT controller preparation is under
-A/execution/current-hgb-catboost-h5-controller-preparation-20261025-v1;
+Custom HGB-CAT controller source-only failure1847 is closed; its commands are
+not retries. New inert existing-graft preparation is under
+A/execution/current-hgb-catboost-h5-existing-graft-preparation-20261025-v1;
 no install command is qualified yet and no original Task should be replayed.
 Current HGB-CAT point8159/e6e and input3b68/d5f53/3cfc/e605 are complete/
 PREPARED_NOT_DEPLOYED; no model/builder rerun or old8/L271 swap.
@@ -64,8 +76,11 @@ FINAL0fef154f/runtimeSourceb0ab641a/Resulta9316527. The NAS four fits/selected
 inference/readout are CLOSED; do not run launch.ps1/controller.py/native/fit/
 complete_retained.py again. Numeric primaryPASS on9reused cohorts does not cure
 prelaunch logical-attempt-ID limitation.29checks992bc6c4/Parent35refs exact,
-allchildrenremoved/leaseabsent/1019.861upper. Current next-source work is Data
-current-point compatibility plus H5/397 CatBoost transfer readiness, not training.
+allchildrenremoved/leaseabsent/1019.861upper. Subsequent current-point bridges,
+H5/397 CatBoost training and fixed-ensemble point/input are also CLOSED as
+recorded above; their historical commands are not the next work. Current
+workers prepare the new finite controller, natural retention rollout and one
+distinct risk-composition hypothesis. No completed numerical job is restarted.
 
 ## Current Actual Deployment
 

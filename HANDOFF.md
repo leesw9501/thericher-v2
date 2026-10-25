@@ -81,10 +81,20 @@ Noether/Hume/Strategy workers may be resumed for a concrete new package.
 The app update lost the previous LLM agent connections. Resume census found no
 non-self controller-preparation process and only the web Docker container;
 the proposed controller root did not exist. No completed training was rerun.
-Bernoulli now owns D-only HGB-CAT controller preparation, Chandrasekhar owns
-PAIR natural-worker retention rollout readiness, and Euler owns the next
-nonduplicate risk-composition proposal. These are bounded workers, not daemons.
-No Task/broker/private-state effects are assigned to these preparation packages.
+Bernoulli owns D-only existing-graft HGB-CAT preparation, Chandrasekhar owns
+the first risk-moment feature handoff, and Averroes owns its pure-kernel native
+diagnosis. Euler's risk-composition proposal is delivered/closed. These are
+bounded workers, not daemons. No broker/private-state effects are assigned.
+
+Original custom controller preparation CLOSED1847406f: both Docker bootstrap
+attempts failed before native visits, no adapter/host/runtime was qualified.
+653.272 conservative active upper exceeded600; preserve limitations/failures,
+do not replay that capsule. Simplification-r1 recommends the existing proven
+H5 command-first algorithm with prospective PT1M, not a new generic seed/event
+journal; Claude SOUND_WITH_LIMITS393351d6 is advisory. Its conservative bound
+104.225 exceeded60 too, not a qualified budget pass or runtime. The new bounded
+consumer is A/execution/current-hgb-catboost-h5-existing-graft-preparation-20261025-v1,
+inert release only; no new Task or alteration of old8/L271/F9.
 
 Data probe is CLOSED at
 A/data/current-pair-whole-observation-capability-probe-20261025-v1:
@@ -171,7 +181,8 @@ NAS already has a whole-page/asof reader. PAIR incoming pages were missing;
 current-run failure projection was already deployed, no duplicate patch needed.
 New optional --retain-observations keeps whole PARSED pages/public query/hash/
 capture/asof, not raw HTTP/auth. Legacy canonical/merge/quarantine unchanged,
-default OFF, not an installed-worker upgrade. Code hashes:
+default OFF in the CLI. Natural V2 Compose now opts in, with fresh final-byte
+QA/readback complete below; no actual natural collection inferred. Code hashes:
 - data cache4627738ce534272803cd60251ef42b6ab25e366c8da06157e76cf02c76795011
 - executione8d379fb6d4bc984420a9df80b7d6aaf82287e5ee4e2f3749dee4776b998aaec
 - script0515d42c07bba848c7b27cb3594b668e49d3f800952b1e0e6fbc81926a566f3b
@@ -184,7 +195,28 @@ Ruff/default+research+accountingCompose(.env.example) PASS. Own C scratch/
 leases/25PID-start actors closed. Full suite ONCE. Post-test QA wrapper used
 nonexistent probe fields; failure preserved, exact-source closure completed
 only unrun Ruff/Compose/probe checks, no suite/model replay. Olda5ba/704c is
-prior1398 history, not authority for this source.
+prior1398 history, not authority for that source. The subsequent two-path
+Compose/test change requires NEW authority, not reuse of0dbc.
+
+PAIR rollout native c1aa5941 at
+A/data/current-pair-retention-natural-deployment-readiness-20261025-v1/native-layout-r1:
+10invented cases/ONE7d15-app-layout guest/no retry/no API/credentials;
+defaultOFF/preflightflagfree/whole-generation/asof/canonical-preservation/
+sticky-quarantine passed. Independent4e73bf36/Parent8refs exact/alljoined,
+120activeupper/240. Compose pins7d15 and two frozen RO source mounts; source
+CLI0515/source480 exact, no Task/triggers/identity/canonical/collector invocation.
+Parent first fresh full19210PASS25skip then Ruff rejected one long test line;
+failure retained, not passing authority. Exact final-byte fresh QA CLOSED at
+A/verification/current-pair-retention-deployment-integration-20261025-v1/technical-r2:
+AUTHORITY a31c5f1885ce11592d9d673a1f444e17f359890380a50b4b4acb54d35430c00e,
+185serial/19210fullPASS25skip/19235total/8actualworkers/1399source exact,
+Ruff/default+research+accountingCompose PASS, own scratch/processes/leases closed.
+Parent readback CONFIGURED_VERIFIED_PENDING_NATURAL_RUN at
+A/data/current-pair-retention-natural-deployment-readiness-20261025-v1/parent-activation-r1/CONSUMER.json
+SHA403d59086683e4e19ccb59f11c4b8f85f9da3da7046a1c1ac4d065ee8b26697c.
+Task XML/ACL/enabled/idle/nextOct26 21:55UTC exact; no Task/service/API invocation.
+First metadata comparison mistook decoded DateTime for ISO string; explicit UTC
+normalization fixed the reader only, not the schedule or prior evidence.
 
 ## Recovery Rules
 

@@ -97,6 +97,13 @@ After app update, parallel ready work is D-only HGB-CAT finite controller
 preparation, metadata-only natural PAIR retention deployment readiness and one
 nonduplicate causal risk-composition proposal. New worker names/roots are in
 orchestration.md; no completed model, input build or probe is a ready retry.
+Natural PAIR retention is now CONFIGURED_VERIFIED_PENDING_NATURAL_RUN:
+A/data/current-pair-retention-natural-deployment-readiness-20261025-v1/parent-activation-r1/CONSUMER.json,
+SHA403d5908. New-layout nativec1aa/10cases/allclosed, fresh final-byte QAa31c5f18
+185serial/19210full25skip/8workers/1399exact/Ruff3Compose. Original Task XML/
+ACL/enabledidle/nextOct26 21:55UTC unchanged; no manual run or recovery inferred.
+Custom HGB-CAT loop1847 failed before native and is superseded, not install-ready;
+current source-only work reuses the proven H5 command-first graft with PT1M.
 Future-host
 repairSourcea1d9c888/23checks/79.665upper is closed; each expected child must
 have closure before lease release, post-Popen failures join owned CLI, old

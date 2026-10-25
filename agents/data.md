@@ -21,11 +21,21 @@ sessions Jul28..Oct23/missing0 verified;allhelpersjoined/containersremoved,
 Only M/us_equities/observations/current-pair-whole-observation-capability-probe-20261025-v1
 changed; canonical/privatebank/Task unchanged. No repeat call/native/build.
 Installed-worker transport recovery and PIT/CA/finality remain unproved.
-After app update Chandrasekhar owns metadata-only natural retention deployment
-readiness at A/data/current-pair-retention-natural-deployment-readiness-20261025-v1.
-No Task/service/image/canonical change is authorized in that package. Preserve
-original recorded next_due Oct26 21:55UTC; a successful direct probe is not
-an installed natural-run outcome. Diagnosisabbcf6e6/8SYN is closed.
+Natural retention new-layout native is COMPLETEc1aa5941/independent4e73bf36
+under A/data/current-pair-retention-natural-deployment-readiness-20261025-v1/native-layout-r1:
+10invented cases/one7d15-app-layout guest/0retry/allclosed/120upper. Parent
+8directrefs exact. Parent changed only V2 Compose mounts/pinnedimage/collector
+flag and one test; final-byte QAa31c5f18 is COMPLETE185serial/19210full25skip/
+8workers/1399exact/Ruff3Compose/clean. Parent readback403d5908 under
+parent-activation-r1 confirms configured/Task XML-ACL-idle-next exact. No Task/
+trigger/canonical change or actual natural run/recovery claimed; old0dbc is history.
+Original recorded next_due Oct26 21:55UTC stays. Diagnosisabbcf6e6 closed.
+
+Chandrasekhar now owns current-nas-risk-strata-first-cohort-input-20261025-v1:
+source/metadata before original-unit beta62/corr62 handoff. Engine native
+80bc/c0b3 failed an ASSERTION, so actual feature payload is NOT admitted yet.
+Only the exact repaired Data-producer/Engine-consumer synthetic boundary can
+admit ONE existing-point extraction; no point/scaler/model rebuild or API.
 
 Current NAS point bridge COMPLETE at
 A/data/current-nas-robust-ranking-point-bridge-20261025-v1, Consumer820ab41c/
@@ -35,8 +45,9 @@ including prior readiness60once. Array leaves are on M, not Git/A metadata.
 Original100keys/Joint69/unknown31NaN retained; PAIRED69 has[69,397] and slots.
 Oct23closed input -> Oct26entry, Oct30H5exit only future metadata; no labels,
 rawprices/models/API/newscaler or second affine. Volume67 is not this mask.
-Listed ticker CASH/slot64 is an actual stock, not synthetic cash. Ready Hume
-CPU model consumer is separate; current prediction/Paper result not yet claimed.
+Listed ticker CASH/slot64 is an actual stock, not synthetic cash. Hume's
+separate CPU model point is CLOSED60a73f76; typed input5bab is prepared, not a
+Paper result. Ensemble point8159/input3b68 are also complete, not rebuild jobs.
 Kant's worker is CLOSED; no ongoing collection inferred. Readiness8eba3bad
 reused existing retained current packet, so no new acquisition was necessary.
 

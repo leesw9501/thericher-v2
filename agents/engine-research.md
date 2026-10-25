@@ -6,6 +6,18 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+Next distinct proposal3894d2e at current-nas-risk-composition-next-readiness-20261025-v1
+tests frozen rank versus31 concentration-preserving risk-cell null paths;
+generic inverse-vol/covariance repetition was rejected with prior evidence.
+Claude REVISE adjudicated27a7, not agreement/calibrated significance or alpha.
+Only first Oct26 pre-outcome seed preparation was assigned, no12-cohort/150day
+worker or new company goal. Averroes source80bc4a57/Datarequirementsc0b342c6
+at current-nas-rank-null-first-cohort-preparation-20261025-v1 is CLOSED native
+ASSERTION/no qualified boundary. Bounded diagnosis-r1 must identify the actual
+case/source cause; Data may prepare metadata but not decode actual features
+until exact producer/consumer qualification. No model, GPU, outcome or replay
+was run; old fits remain closed. This does not hold original Paper entries.
+
 Latest actual GPU family is CLOSED at
 A/research/current-nas-h5-397-catboost-ranking-transfer-development-20261025-v1:
 FINAL2e9f6ead/Source94b3085e/CONTRACT603c3765/Result12dda533. ONE actual GPU

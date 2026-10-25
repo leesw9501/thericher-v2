@@ -17,10 +17,11 @@ costs/losses/owned inventory/pending buys/F9 UNKNOWN-HELD. No substitute/reset.
 
 | Owner | Current disjoint work |
 | --- | --- |
-| Parent / 총괄 | Resume source1399exact/0mismatch, QA0dbcc98a reused only for unchanged protected source. Integrate closed actual Data evidence and review disjoint preparations; original company outcome unfinished. |
-| Bernoulli / 실행 구현 | Recovered D-only HGB-CAT finite controller preparation, current-hgb-catboost-h5-controller-preparation-20261025-v1. Original Tesla absent/root absent/non-self actors0; no Task/private/broker effects. |
-| Chandrasekhar / 데이터 | Closed probe dbcb3154:actual1POST2GET/all200/2x100rows/2x63sessions/missing0/alljoined. Owns metadata-only current-pair-retention-natural-deployment-readiness-20261025-v1; no Task/image/service change. |
-| Euler / 전략 준비 | Metadata/source-only current-nas-risk-composition-next-readiness-20261025-v1: next distinct causal portfolio benchmark proposal, no payload/model/ledger/GPU effects. |
+| Parent / 총괄 | Natural PAIR configured/readback403d; freshQAa31c185serial/19210full25skip/8workers/1399exact/Ruff3Compose/clean. Initial full/RuffE501 failure retained; integrate/commit owned changes, company outcome unfinished. |
+| Bernoulli / 실행 구현 | Custom loop1847 CLOSEDfailed/0native and superseded. Owns inert existing-graft HGB-CAT capsule current-hgb-catboost-h5-existing-graft-preparation-20261025-v1; preserve proven host/native flow, PT1M/new prospective identity, no Task/private/broker effects. |
+| Chandrasekhar / 데이터 | Pair new-layout nativec1aa/10cases/independent4e73/120upper/allclosed. Owns first-cohort risk-moment Data handoff metadata/source, actual payload waits for corrected exact native qualification, not a session wait. |
+| Averroes / 엔진 경계 | First-cohort source preparation80bc/c0b3 CLOSEDnative ASSERTION/no qualified result. Owns bounded diagnosis-r1, no old retry, model/outcome/GPU/private effects. |
+| Euler / 전략 준비 | CLOSED proposal3894d2e/ClaudeREVISE adjudicated27a7/16refs. Conditional risk-cell31null mechanism; no active12cohort/150day worker and no model/evaluation/GPU run. |
 | Godel / 전략·반증 | CLOSED H5/397 CatBoost readinessc02e/a575/4bbmetadata and pure pair8d2df/48checks. Explicit transfer, oldH20/19notrerun; no native/fit/GPU effect. |
 | Noether / 엔진·자원 | CLOSED CatBoost2e9f actualGPU163/best99/OD64 plus ensembleCPU8159/59checks/allclosed. No active GPU/LLM worker; coordinator role resumes first ready useful family, no duplicate fit. |
 | Hume / 엔진 실험(임시) | CLOSED point60a73f76/oneCPUrestore/twoforwards/138stockseq/10SYN/105.746upper. OldF9scope stillclosed/UNKNOWN-HELD, no broker call or GPU allocation. |
@@ -34,6 +35,10 @@ measured API pacing, exact risk/custody and finite recovery/deadline counters.
 Preparation is not installation or a fill. Original task-owned session due
 times remain independent, with no foreground wait. Data actual probe closed at
 07:08:45UTC; neither old worker transport nor new research input is inferred.
+Next reversible simplification: discard the unproved custom event journal/
+generic seed and reuse actual command-first H5 guards. PT1M improves opportunity
+density but never guarantees seven orders/exits. Both failed bootstrap debits
+and conservative over-cap bounds remain, not a new human approval queue.
 
 Throughput review05:22UTC: no future market-session foreground wait. Parent
 integrates disjoint MD/Git, Noether owns NAS model runtime/resources, Godel checks
