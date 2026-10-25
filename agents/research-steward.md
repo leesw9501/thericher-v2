@@ -6,6 +6,21 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
+Latest GPU work is COMPLETE/CLOSED, not an idle ready fit:
+CatBoostH5/397 FINAL2e9f6ead/Source94b3085e/603c3765 at
+A/research/current-nas-h5-397-catboost-ranking-transfer-development-20261025-v1.
+OneGPUfit163trees/selected99/OD64, fit phase17.3176seconds; capacity receipts
+precede native/fit, actualallocationpeak UNKNOWN_NOT_SAMPLED. NativeN1/A1
+one3treefit/OD2 and cold cases bound before effects, zero repair/retry.
+375.589activeupper includes prep330once (readiness30;Source300 including
+pure15+futurehost79.6646),81checks/allhelpersremoved/GPUleaseabsent.
+SAME ensemble CPU currentpoint is also CLOSED8159/e6e:two restores/fourcalls/
+276rows/59checks/allclosed142.102upper. No current GPU training/inference worker.
+Noether role is dormant until useful new frozen work, not a permission hold
+or reason to repeat training. Hume's prior DRO point60a73 is also
+CLOSED: CPU one restore/twoforwards/138stockseq/105.746upper,0fits/GPU.
+No dummy training to keep utilization up; completed fit is never ready work.
+
 QQQ C120 -> same-session official CLOSE sizing is CLOSED, contract54373cd2
 at A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
 RawTCN/indicatorMLP two new fits/fixedblend, not any completed family rerun.
@@ -31,9 +46,18 @@ choice preceded fits. Native32calls/12updates/744dates/120closes, no repeat.
 Numeric primaryPASS but logical-attempt2 prelaunch ID binding INCOMPLETE;
 never retrospectively refund/regrade. Coordinator66500 stopped after sealed
 fits; retained completion861d224a finished only unattempted inference/readout.
-No active numerical worker remains. Noether retains resource coordination,
-not a promise that GPU is currently running. Data current-point readiness and
-one H5/397 CatBoost transfer are preparation only; old H20/19 CatBoost is closed.
+No active numerical worker remains from that study. Noether retains resource
+coordination, not a promise GPU is currently running. Data point820ab41c is
+COMPLETE and Hume owns a disjoint CPU-only oldDRObest4 point consumer:0fits,
+one synthetic69 plus one current69 forward/one restore under a new small cap.
+One H5/397 CatBoost transferc02e/a575/purepair8d2df is source-ready only;
+existing4bb has CatBoost1.2.10,259c does not. Native/onefit still Noether-owned.
+OldH20/19CatBoost stays closed, no duplicate trial/category-novelty claim.
+Future-host repaira1d9c888/23checks/79.6646upper is CLOSED: expected-stage
+closure required, guarded post-Popen joining, one-off oldresume rejected.
+Synthetic subprocess proof is not Docker-daemon absence; each real run must
+close every intended child. Carry helpers once inside new campaign Source,
+not independent allowances, and bind stage/case/attempt IDs before effects.
 Routine review messages use queued/checkpoint-aware coordination; stopping an
 active worker for an ambiguous bookkeeping question creates avoidable recovery.
 Actual unsafe/irreversible activity still warrants immediate containment.

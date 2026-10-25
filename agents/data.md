@@ -6,7 +6,33 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
-H5 contract now FROZEN: Engine58412e5e/fe29b4ba/4ae74cba/07191985 at
+PAIR retention source is IMPLEMENTED/defaultOFF: cache4627738c/executione8d379fb/
+script0515d42c/testsce937997.102focused then Parent394serial/19209full25skip/
+8workers/1399exact/Ruff3Compose, authority0dbcc98a. Legacy canonical/merge/
+quarantine unchanged; whole parsed pages/query/source/capture/hash/asof only,
+not raw HTTP/auth or a MODP0->1 upgrade. Installed worker remains unchanged.
+Kant now owns NEW source/native-first read-only QQQ-SPY capability probe at
+A/data/current-pair-whole-observation-capability-probe-20261025-v1. Max1token
+POST+2dailyGET(+1known-transientGET), onlyQQQ/NAS+SPY/AMS, new observations-only
+M namespace/NO canonical commit, account/order/live or Task/service invocation.
+Existing scoped Paper loader/client/token/gates/pacing; heldowner/cooldown yields
+only worker next_due, not global wait. Manual probe is NOT installed-run recovery
+or dataset promotion. Diagnosisabbcf6e6/8SYN/ClaudeSOUNDlimits is closed.
+
+Current NAS point bridge COMPLETE at
+A/data/current-nas-robust-ranking-point-bridge-20261025-v1, Consumer820ab41c/
+Source004dec65/DTOda974f52/ABI99075943/allowlistabdb0157.14invented checks,
+ONEactualbuild+ONEindependentverify/0retry/all3helpersjoined/121.6684upper
+including prior readiness60once. Array leaves are on M, not Git/A metadata.
+Original100keys/Joint69/unknown31NaN retained; PAIRED69 has[69,397] and slots.
+Oct23closed input -> Oct26entry, Oct30H5exit only future metadata; no labels,
+rawprices/models/API/newscaler or second affine. Volume67 is not this mask.
+Listed ticker CASH/slot64 is an actual stock, not synthetic cash. Ready Hume
+CPU model consumer is separate; current prediction/Paper result not yet claimed.
+Kant's worker is CLOSED; no ongoing collection inferred. Readiness8eba3bad
+reused existing retained current packet, so no new acquisition was necessary.
+
+Earlier H5 contract is CLOSED FINALadd7: Engine58412e5e/fe29b4ba/4ae74cba/07191985 at
 A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1.
 One offline build/independent verify is COMPLETEe2c4346f/Source930e40ae/
 DTO0ee3feac/ABI0fcfaa18/ALLOWLIST4461c7f6,14native+7710independent/Ruff/
@@ -17,7 +43,8 @@ A/data/current-nas-daily-cross-sectional-input-readiness-20261025-v1 confirms
 83collected/17unavailable fixed axes/159335knownasset-days, TRAIN135297/
 CHECK8106rows and63daycontext. No payload/model/acquisition/Norgate access.
 Currentlisting/nonPIT/adjustment/arrival limits remain; source netpayoff5 is
-entry-principal payoff. This is a future candidate input, not current fitting.
+entry-principal payoff. NAS GroupDRO fits are now CLOSED0fef154f; new H5/397
+CatBoost transfer uses the same data without a feature/affine rebuild.
 
 Original H5-session/prior20-daily skeleton below is superseded by e2c above:
 A/data/current-qqq-c120-prior20-h5-input-preparation-20261025-v1/

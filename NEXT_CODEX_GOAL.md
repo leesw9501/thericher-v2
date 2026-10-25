@@ -68,8 +68,36 @@ allchildrenclosed/leaseabsent/1019.861upper. Prelaunch logical-attempt2 ID bindi
 INCOMPLETE, not retrospectively cured or independent alpha/Paper evidence.
 Retained completion861d finished only unattempted inference/readout after
 coordinator stop; no fit/native replay. Do not repeat this study or old H1/H5.
-Ready preparation: Data existing currentNASpoint/397 compatibility and one
-H5/397 CatBoost transfer; old H20/19 CatBoost was completed, not an untried name.
+Data currentNASpoint bridge is COMPLETE820ab41c/004dec65/da974f52/99075943/
+abdb0157 at A/data/current-nas-robust-ranking-point-bridge-20261025-v1:
+14SYN/onebuild+verify/0retry/100keys/Joint69unknown31/paired69x397/allclosed.
+Hume's separate CPU-only designatedDRObest4 current point is CLOSED60a73f76,
+0fits/one restore/twoforwards/10SYN/allclosed/105.746upper. Execution source audit2f50419e confirms existing
+stock H5 keeps full sparse weights; foreign-owner and cutoff-tie/visit limits
+are local constraints, no blanket planner/bank patch or installed task change.
+One H5/397 CatBoost transfer readinessc02e/a575 and purepair8d2df/48checks are
+complete; old H20/19 CatBoost was completed, not an untried name. Actual new
+H5/397 family is now CLOSED2e9f6ead/94b3085e/603c3765: oneGPUfit163trees/
+CHECKprefix99/OD64,81checks/375.589upper/allclosed.10bp CAT+.6655%/.4638%DD,
+fixedHGB-CAT +1.3260%/.3941%DD versuscachedHGB -1.3504%/2.2989%DD; adaptive
+9seen cohorts, not alpha/PaperPnL. SAME ensemble CPU point is CLOSED8159/e6e/
+59checks/0fits/tworestores4calls/allclosed. Ensemble input3b68/d5f53/3cfc/e605
+is PREPAREDnotdeployed/12newbinding+cold/sevenpositive/.005TOTAL. No repeated
+training. Tesla DRO typed input5bab/6b07/744f is also PREPAREDnotdeployed,
+22native+cold/sevenpositive, original.005total/fullweights. Kant owns future
+optional PAIR whole-page observation retention/reader, preservingcanonical/
+quarantine. Source/defaultOFF now verified394serial/19209full25skip/8workers/
+1399same/Ruff3Compose authority0dbcc98a, not old1398 reuse. Kant now owns NEW
+bounded source/native-first read-only pair capability probe at
+A/data/current-pair-whole-observation-capability-probe-20261025-v1. OnlyQQQ/NAS
+andSPY/AMS/onepageeach/1tokenPOST+2dailyGET(+1transientGET), observations-only M
+namespace/NO canonical commit/reset/Task/account/order/live. Existing scoped
+Paper loader/client/token/gates/pacing. Heldowner/cooldown defers only that
+worker; probe evidence is not installed natural-run recovery or dataset grade.
+Future-host
+repairSourcea1d9c888/23checks/79.665upper is closed; each expected child must
+have closure before lease release, post-Popen failures join owned CLI, old
+one-off retained completion is not a generic resume path. No new fit claimed.
 No paid/Paper input/budget change or hold on original company opportunities.
 
 1. Supplementary L QQQ H5 is NOW INSTALLED, not a ready builder to rerun:
@@ -161,10 +189,12 @@ their budgets/results remain unchanged, not dispatch authority.
 
 ## Verification And Continuation
 
-Fresh repo authoritya5ba950a/FINAL704c3543:
-A/verification/current-cash-aware-h5-profile-fixture-integration-20261025-v1/AUTHORITY.json.
-1134serial/19160full25skip/19185total/8workers/Ruff/three Compose profiles PASS,
-exact1398 protected before/after/current match/alljoined/own scratch+lease removed.
+Fresh repo authority0dbcc98a:
+A/verification/current-pair-whole-observation-integration-20261025-v1/postcheck-closure-r1/AUTHORITY.json.
+394serial/19209full25skip/19234total/8workers/Ruff/three Compose profiles PASS,
+exact1399 protected before/after/current/alljoined/own scratch+lease removed.
+Full suite ONCE; post-test wrapper field fault retained, exact-source closure
+completed only unrun postchecks. Olda5ba/704c is prior1398 history.
 Cash-native27/input1d733d5d are separate inert proof, not deployed authority.
 Prior5fda clock/ddb53931 inventedFakeClient evidence remains historical/relevant
 to unchanged clock code, not new broker deployment. Earlier7460/7629/43e historical.

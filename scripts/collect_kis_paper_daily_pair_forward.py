@@ -39,6 +39,7 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
 from thericher_v2.execution.kis_paper_daily_nas_forward import latest_completed_us_equity_d1_session
 from thericher_v2.execution.kis_paper_daily_pair_forward import (
     KisPaperDailyPairForwardError,
+    KisPaperDailyPairForwardRetainedObservation,
     UrllibKisPaperDailyPairForwardTransport,
     collect_kis_paper_daily_pair_forward_observation,
 )
@@ -114,6 +115,7 @@ def main(
         default=KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY.isoformat(),
     )
     parser.add_argument("--cache-lineage", choices=("v1", "v2"), default="v1")
+    parser.add_argument("--retain-observations", action="store_true")
     parser.add_argument(
         "--schedule-guard-failed",
         choices=("host_timezone_not_kst", "shared_dispatcher_busy"),
@@ -121,6 +123,9 @@ def main(
     args = parser.parse_args(argv)
     if not args.execute and not args.preflight and not args.readiness:
         _emit({"status": "not_executed", "reason": "execute_flag_required"})
+        return _NOT_EXECUTED_EXIT
+    if args.retain_observations and not args.execute:
+        _emit({"status": "not_executed", "reason": "observation_retention_requires_execute"})
         return _NOT_EXECUTED_EXIT
     if args.schedule_guard_failed is not None and not args.preflight:
         _emit({"status": "not_executed", "reason": "preflight_flag_required"})
@@ -179,6 +184,7 @@ def main(
         frozen_boundary=frozen_boundary,
         observed_at=observed_at,
         cache_identity=cache_identity,
+        **({"retain_observations": True} if args.retain_observations else {}),
     )
 
 
@@ -193,7 +199,10 @@ def _run_credentialed_collection(
     cache_identity: KisPaperDailyPairForwardCacheIdentity = (
         KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
     ),
+    retain_observations: bool = False,
 ) -> int:
+    if type(retain_observations) is not bool:
+        raise ValueError("pair observation opt-in is invalid")
     try:
         rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
         token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root)
@@ -271,8 +280,17 @@ def _run_credentialed_collection(
             client,
             frozen_boundary=frozen_boundary,
             observed_at=observed_at,
+            **({
+                "observation_root": cache_root / "observations-v1",
+                "repository_root": repository_root,
+            } if retain_observations else {}),
         )
+        if retain_observations and not isinstance(
+            observation, KisPaperDailyPairForwardRetainedObservation
+        ):
+            raise KisPaperDailyPairForwardError("pair observation retention is unbound")
     except (
+        KisPaperDailyPairForwardCacheError,
         KisPaperDailyPairForwardError,
         KisPaperMarketDataError,
         OSError,
@@ -301,6 +319,8 @@ def _run_credentialed_collection(
                 observation.failure_reasons_by_target
             ),
         }
+        if retain_observations:
+            payload["retained_observation_refs"] = dict(observation.retained_pages or {})
     except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
         commit_failure_kind = _commit_failure_kind(error)
         commit_failure_phase = _commit_failure_phase(error, commit_failure_kind)

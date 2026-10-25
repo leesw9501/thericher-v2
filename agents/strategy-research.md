@@ -6,20 +6,37 @@ not final fitting/model selection/broker risk. Parent sharedMD/Git.
 
 ## Current Package / Concrete Consumer
 
+Next concrete consumer is ONE explicit H5/397 CatBoost transfer, not a claim
+that GPU trees are untried. Source-ready Consumerc02e2a10/Proposal a57591c8/
+Sourceb0c3e539 under
+A/research/current-nas-boosted-ranking-readiness-20261025-v1/h5-transfer-r1.
+Old H20/19 PairLogit47e3 completed and stays closed. Image259c lacks CatBoost;
+existing isolated4bb has CatBoost1.2.10/Apache2/NP2.5.1/SciPy1.18.1, no install
+or global runtime replacement. Metadata2containers removed/zero fits/GPU.
+Pure equal-date pair helper Consumer8d2dfc7b/Source08aec09f/code9a542b29
+passes48invented checks,15source upper once; exact1/P_date weights replace
+old payoff-gap weights. No CatBoost import/native/market effect from Strategy.
+Noether owns finite Engine freeze/native/onefit/interpretation, not this board.
+Direct economic/turnover proposal57cdc500 was concretely rejected: economic
+MoE already completed; adjacent-weight L1 is not independent-H5 book turnover.
+These findings do not prohibit a useful explicit horizon/input transfer.
+
 Current consumed proposal: NAS calendar-year Group-DRO versus matched ERM at
 A/research/current-nas-cross-sectional-strategy-proposal-20261025-v1,
 Consumer670f6787/Proposal364cebff. It changes TRAIN objective emphasis, not a
 claim that GRU/ranking/attention is new. Official1911.08731v2 motivates group
 robustness/regularization on NLI/images, not stock alpha. Claude REVISE is retained
 and adjudicated, not reported as agreement. Frozen Engine consumer e5e1de20/
-9e93d5b4 uses actual final Data6a615 and397adapter0433, Ridge/HGB controls and
-fixed HGB-DRO rank blend; all data reused/current-listing/non-PIT, not independent
-replication. H1b345/H5add7 are CLOSED; neither should be retrained automatically.
+9e93d5b4 used actual final Data6a615 and397adapter0433, Ridge/HGB controls and
+fixed HGB-DRO rank blend. Actual FINAL0fef154f is CLOSED, numericPASS with
+prelaunch logical-attempt-ID limitation, not full procedural qualification.
+All data reused/current-listing/non-PIT, not independent replication.
+H1b345/H5add7 are also CLOSED; none should be retrained automatically.
 Sparse-unit-mass H5 pure helper030532d7 fixes old strict-positive admission only
 in this new consumer, preserving old source/results/full-mask/mark requirements.
-Godel completed CPU numeric codec9ef106b4/Source8a6c2fbb and now independently
-checks the frozen contract. Engine owns numerical targets/splits/fits/results;
-no Strategy broker/risk authority or extra experiment budget.
+Godel completed CPU numeric codec9ef106b4/Source8a6c2fbb and static contract
+review. Its latest pure pair helper is closed; no current Strategy numerical
+worker or broker/risk authority/extra experiment budget is inferred.
 
 Earlier proposal3fb03b48/Source90d99227 at
 A/research/current-next-risk-composition-mechanism-readiness-20261025-v1/post-density-r1

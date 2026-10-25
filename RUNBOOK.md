@@ -10,6 +10,20 @@ real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
 
+Current source QA0dbcc98a at
+A/verification/current-pair-whole-observation-integration-20261025-v1/postcheck-closure-r1/AUTHORITY.json:
+394serial/19209full25skip/19234total/8workers/1399exact/Ruff3Compose(.env.example),
+own scratch/leases/25PID-start actors closed. Suite ONCE; post-test field-adapter
+fault preserved, exact-source closure completed only unrun checks. Prior a5ba/
+704c is1398history. PAIR --retain-observations source IMPLEMENTED/defaultOFF,
+not installed. Whole parsed pages/publicquery/source/capture/hash/asof, no raw
+HTTP/auth, canonical rewrite or quarantine clear. New owned capability probe
+under A/data/current-pair-whole-observation-capability-probe-20261025-v1 has
+separate native/API scope and M observations-only output, not a Task invocation.
+Use only its actual sealed commands/results, no source-only recovery claim.
+Current HGB-CAT point8159/e6e and input3b68/d5f53/3cfc/e605 are complete/
+PREPARED_NOT_DEPLOYED; no model/builder rerun or old8/L271 swap.
+
 Research recovery: completed QQQ marginal e9f8, continuous sizing025f and
 corrected direct-GRUf9e68b65 must not be retrained/replayed from old commands.
 Direct-GRU source/result is under

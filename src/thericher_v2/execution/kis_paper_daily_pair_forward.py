@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+import hashlib
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
@@ -13,13 +14,22 @@ from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ROOT,
     KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
     KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
+    KisPaperDailyPairForwardCacheError,
     KisPaperDailyPairForwardRow,
     KisPaperDailyPairForwardRun,
     commit_kis_paper_daily_pair_forward_observation,
+    retain_kis_paper_daily_pair_forward_page,
     sanitize_kis_paper_daily_pair_forward_failure_reason,
 )
 
-from .kis_market_data import KisPaperDailyQuery, KisPaperDailyRawPage, KisPaperMarketDataError
+from . import kis_market_data
+from .kis_market_data import (
+    KIS_PAPER_DAILY_PATH,
+    KIS_PAPER_DAILY_TR_ID,
+    KisPaperDailyQuery,
+    KisPaperDailyRawPage,
+    KisPaperMarketDataError,
+)
 from .kis_paper_daily_history import UrllibKisPaperDailyHistoryTransport
 from .kis_paper_daily_nas_forward import latest_completed_us_equity_d1_session
 
@@ -57,6 +67,13 @@ class KisPaperDailyPairForwardObservation:
     observed_at: datetime
 
 
+@dataclass(frozen=True, slots=True)
+class KisPaperDailyPairForwardRetainedObservation(KisPaperDailyPairForwardObservation):
+    """Opt-in metadata only; the legacy observation's fields/serialization stay unchanged."""
+
+    retained_pages: Mapping[str, Mapping[str, str]]
+
+
 def collect_kis_paper_daily_pair_forward_once(
     client: KisPaperDailyPairForwardClient,
     *,
@@ -64,13 +81,23 @@ def collect_kis_paper_daily_pair_forward_once(
     repository_root: Path | str,
     frozen_boundary: date = KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
     observed_at: datetime | None = None,
+    retain_observations: bool = False,
 ) -> KisPaperDailyPairForwardRun:
     """Fetch one page per fixed pair target and retain completed later sessions only."""
 
+    retention = {}
+    if type(retain_observations) is not bool:
+        raise ValueError("pair observation opt-in is invalid")
+    if retain_observations:
+        retention = {
+            "observation_root": Path(cache_root) / "observations-v1",
+            "repository_root": repository_root,
+        }
     observation = collect_kis_paper_daily_pair_forward_observation(
         client,
         frozen_boundary=frozen_boundary,
         observed_at=observed_at,
+        **retention,
     )
     return commit_kis_paper_daily_pair_forward_observation(
         rows_by_target=observation.rows_by_target,
@@ -87,6 +114,9 @@ def collect_kis_paper_daily_pair_forward_observation(
     *,
     frozen_boundary: date = KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
     observed_at: datetime | None = None,
+    observation_root: Path | str | None = None,
+    repository_root: Path | str | None = None,
+    capture_clock: Callable[[], datetime] = lambda: datetime.now(UTC),
 ) -> KisPaperDailyPairForwardObservation:
     """Fetch one fixed-target observation without touching the durable cache."""
 
@@ -99,6 +129,11 @@ def collect_kis_paper_daily_pair_forward_observation(
         for symbol, exchange in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
     )
     if eligible_through is None:
+        if observation_root is not None:
+            return KisPaperDailyPairForwardRetainedObservation(
+                rows_by_target={key: () for key in target_keys},
+                failure_reasons_by_target={}, observed_at=observed, retained_pages={},
+            )
         return KisPaperDailyPairForwardObservation(
             rows_by_target={key: () for key in target_keys},
             failure_reasons_by_target={},
@@ -108,17 +143,24 @@ def collect_kis_paper_daily_pair_forward_observation(
     anchor = eligible_through.strftime("%Y%m%d")
     rows_by_target: dict[str, tuple[KisPaperDailyPairForwardRow, ...]] = {}
     failures: dict[str, str] = {}
+    retained_pages: dict[str, Mapping[str, str]] = {}
     for symbol, exchange in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS:
         target_key = _target_key(symbol, exchange)
         try:
-            page = client.fetch_daily_raw_page(
-                KisPaperDailyQuery(
-                    symbol=symbol,
-                    exchange=exchange,
-                    by_date=anchor,
-                    approved_symbol_exchanges=_SYMBOL_EXCHANGES,
-                )
+            query = KisPaperDailyQuery(
+                symbol=symbol,
+                exchange=exchange,
+                by_date=anchor,
+                approved_symbol_exchanges=_SYMBOL_EXCHANGES,
             )
+            page = client.fetch_daily_raw_page(query)
+            if observation_root is not None:
+                # Retention is opt-in and precedes all canonical merge/publication.
+                # A failed retention aborts the invocation, not just this target's merge.
+                retained_pages[target_key] = _retain_whole_page(
+                    page, query=query, observation_root=observation_root,
+                    repository_root=repository_root, captured_at=capture_clock(),
+                )
             rows_by_target[target_key] = _completed_forward_rows(
                 page,
                 symbol=symbol,
@@ -128,11 +170,69 @@ def collect_kis_paper_daily_pair_forward_observation(
             )
         except (KisPaperDailyPairForwardError, KisPaperMarketDataError, ValueError) as error:
             failures[target_key] = sanitize_kis_paper_daily_pair_forward_failure_reason(error)
+    if observation_root is not None:
+        return KisPaperDailyPairForwardRetainedObservation(
+            rows_by_target=rows_by_target, failure_reasons_by_target=failures,
+            observed_at=observed, retained_pages=retained_pages,
+        )
     return KisPaperDailyPairForwardObservation(
         rows_by_target=rows_by_target,
         failure_reasons_by_target=failures,
         observed_at=observed,
     )
+
+
+def _retain_whole_page(
+    page: KisPaperDailyRawPage, *, query: KisPaperDailyQuery,
+    observation_root: Path | str, repository_root: Path | str | None,
+    captured_at: datetime,
+) -> Mapping[str, str]:
+    try:
+        if (
+            type(page.page.query) is not KisPaperDailyQuery or page.page.query != query
+            or not page.page.required_ohlcv_fields_present
+        ):
+            raise ValueError
+        rows = tuple(
+            KisPaperDailyPairForwardRow(
+                symbol=query.symbol, exchange=query.exchange, session_date=_compact_date(raw.xymd),
+                open=Decimal(raw.open), high=Decimal(raw.high), low=Decimal(raw.low),
+                close=Decimal(raw.clos), volume=Decimal(raw.tvol),
+            )
+            for raw in page.rows
+        )
+        if rows and (
+            page.page.newest_date != max(raw.xymd for raw in page.rows)
+            or page.page.oldest_date != min(raw.xymd for raw in page.rows)
+        ):
+            raise ValueError
+        return retain_kis_paper_daily_pair_forward_page(
+            rows=rows, query=_public_query_envelope(query), captured_at=captured_at,
+            observation_root=observation_root, repo_root=repository_root,
+        )
+    except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
+        raise KisPaperDailyPairForwardCacheError("pair whole-page retention failed") from error
+
+
+def _public_query_envelope(query: KisPaperDailyQuery) -> dict[str, str]:
+    """Copy only actual non-auth request fields; never inspect a request's headers."""
+
+    return {
+        "endpoint": KIS_PAPER_DAILY_PATH,
+        "tr_id": KIS_PAPER_DAILY_TR_ID,
+        "SYMB": query.symbol,
+        "EXCD": query.exchange,
+        "GUBN": "0",
+        "BYMD": query.by_date,
+        "MODP": query.adjustment_mode,
+        "continuation": query.continuation or "",
+        "collector_source_sha256": "sha256:" + hashlib.sha256(
+            Path(__file__).read_bytes()
+        ).hexdigest(),
+        "request_source_sha256": "sha256:" + hashlib.sha256(
+            Path(kis_market_data.__file__).read_bytes()
+        ).hexdigest(),
+    }
 
 
 def _completed_forward_rows(

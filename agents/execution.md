@@ -13,6 +13,28 @@ closed; F actual2GPUfits closed technical/financialUNKNOWN. H TabICL actual
 all29CASH/COMPLETE_FAIL is not adopted. I new prospective ADAPT7 Research point
 is not broker input/capital allocation or a fourth installed owner.
 Research does not gate original natural Paper opportunities or release F9.
+NEW connection audit COMPLETE at
+A/execution/current-nas-robust-ranking-paper-connection-readiness-20261025-v1,
+Consumer2f50419e/13source refs. Existing model-weights-nas-5session-2026-v1
+and MODEL_WEIGHTS_NAS_H5 stock route preserve ALL sparse positive weights,
+no Top3/renormalization. Real CASH/NAS is a stock; bare CASH is the separate
+ETF synthetic coordinate, not this profile. No core/planner/bank patch is
+presently justified. Data point820ab41c is now complete; Hume actual prediction
+and canonical typed input/runtime/native remain separate. Cutoff ties can
+exceed nominal7/old8visit geometry; bind actual support before new finite
+controller. Foreign registered owners cannot be adopted even when flat, and
+skipped/unaffordable mass is not redistributed. No private feasibility/holdings/
+orderability query, Task change or new Paper owner occurred. Old8/L271/F9 stay.
+Tesla's static worker is CLOSED; source capability is not deployed execution.
+Actual DRO input5bab7b01/6b07ee31/744ff8cf (22native+cold) and ensemble input
+3b68c915/INPUTd5f53cc1/POLICY3cfcbbf1/BUNDLEe60527ed/Source937d98e9 are now
+PREPARED_NOT_DEPLOYED. Ensemble root:
+A/execution/current-hgb-catboost-h5-ensemble-paper-input-preparation-20261025-v1.
+12newbinding+cold/onebuild+verify,seven unchanged1/7/full10069+31/trueCASH-NAS/
+.005TOTAL. No new controller/Task/private/sizing/API/order; exit-window coverage
+not qualified. Initial480catalog assertion met unrelated Data edits before
+effects; known-zero bootstrap pins61actual import nodes, not a blanket waiver
+or repeated model/native/build. Old8/L271/F9/financial identities unchanged.
 Current graft actual03:24..25UTC applied5actions (GRU2,TimesFM2,Joint17exit);
 later Source94671106 partial closure passed TimesFM readback and updated ONLY
 Joint17entry. Independent03:47:32UTC readback6f5b7942/08fa8da4 under activation

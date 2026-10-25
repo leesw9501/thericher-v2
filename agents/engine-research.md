@@ -6,6 +6,28 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
+Latest actual GPU family is CLOSED at
+A/research/current-nas-h5-397-catboost-ranking-transfer-development-20261025-v1:
+FINAL2e9f6ead/Source94b3085e/CONTRACT603c3765/Result12dda533. ONE actual GPU
+fit163trees/CHECKprefix99/OD64, fit phase17.318seconds; nativeN1/A1 fitted3trees
+with scaledSYN OD2, not an old19-feature rerun.81checks/Parent90refs exact,
+4newledgers180closes/oneintake/allchildrenclosed/leaseabsent/375.589upper.
+10bp CATgrowth/DD +.6655%/.4638%; predeclared half-rank HGB-CAT +1.3260%/
+.3941%, cachedHGB -1.3504%/2.2989%. Adaptive9seen cohorts only, not alpha,
+automatic winner adoption or Paper return. CatBoost peakallocatedVRAM UNKNOWN;
+capacity and GPU backend proved, not a sampled allocation peak. No repeatedfit.
+THAT SAME fixed HGB-CAT currentpoint is now CLOSED8159ef3e/Sourcee6e000e4:
+59checks/twoCPUrestores/fourcalls/276rows/0fits/GPU/allclosed142.102upper.
+Noether worker is closed, not a ready GPU trial waiting for permission.
+Hume designatedDRO currentpoint is CLOSED60a73f76/
+Sourceaebbf64a:1CPUrestore/oneSYN+onecurrent69forward/10checks/allclosed/
+105.746upper, original100keys/Joint69/unknown31. Tesla canonical DRO H5 input
+is PREPARED5bab7b01/INPUT6b07ee31/POLICY744ff8cf/22native+cold, not deployed.
+Tesla ensemble input3b68c915/INPUTd5f53cc1/Policy3cfcbbf1/BUNDLEe60527ed is also
+PREPAREDnotdeployed,12freshbinding+cold/onebuild+verify/seven1/7/full10069+31/
+.005TOTAL/no model/private effects. Kant source retention is verified0dbcc98a;
+new Data probe only, no completed model/data rebuild or training repeat.
+
 The distinct intraday target is now CLOSED, not a queued/repeated fit:
 A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
 CONTRACT54373cd2/DATA-REQUIREMENTS7dd83211/CONSUMERa5c48b60/Source5c90b626.
@@ -48,9 +70,13 @@ stopped after sealed fits; continuation861d224a only completed unattempted
 inference/readout. No native/fit replay or refunded cap. Keep this limitation,
 not another permission hold or a reason to repeat completed training.
 CPU codec9ef106b4/8a6c2fbb/55d29239 and first failed mount/one mechanical repair
-remain carried. New dispatches bind stage/case IDs before launch. Current work
-is retained-runtime reuse review, Data current-point compatibility and Godel's
-one H5/397 CatBoost transfer readiness, not a claim CatBoost is an untried model.
+remain carried. New dispatches bind stage/case IDs before launch. Current work:
+future-host repairSourcea1d9c888 COMPLETE23checks/79.665upper/0models;
+Hume CPU-only current-point consumer on ready Data820ab41c/004dec65/da974f52/
+99075943 (100keys/Joint69/unknown31),0fit/oneSYN+onecurrentforward/one restore;
+Noether one H5/397 CatBoost finite freeze/runtime on readyc02e/a575/4bb and
+purepair8d2df/08aec09f/48checks. Old H20/19 CatBoost is completed; this is an
+explicit useful transfer, not an untried-category or independent-alpha claim.
 Broader NAS metadata1c99721d supports conditional research, not a fit by itself.
 Its netpayoff5 entry-principal units must be derived, never relabeled paid NAV.
 Data H1 packet remains COMPLETE641b88a9/Source54b9da9d/

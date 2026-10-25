@@ -14,6 +14,7 @@ import hashlib
 import io
 import json
 import os
+import stat
 import uuid
 from collections.abc import Iterator, Mapping, Sequence
 from contextlib import contextmanager
@@ -89,6 +90,18 @@ _SAFE_REASONS = frozenset(
         "unexpected_private_daily_collector_error",
     }
 )
+
+_OBSERVATION_QUERY_FIELDS = frozenset({
+    "endpoint", "tr_id", "SYMB", "EXCD", "GUBN", "BYMD", "MODP", "continuation",
+    "collector_source_sha256", "request_source_sha256",
+})
+_OBSERVATION_FIELDS = frozenset({
+    "schema", "query", "snapshot_sha256", "rows_sha256", "row_count", "captured_at",
+    "recorded_at", "normalization", "price_basis",
+})
+_OBSERVATION_SCHEMA = "kis-paper-daily-pair-whole-observation-v1"
+_OBSERVATION_NORMALIZATION = "whole_parsed_page_sorted_unique_sessions_not_HTTP_body"
+_OBSERVATION_BASIS = "nominal_MODP0_not_CA_finality_or_PIT_qualification"
 
 
 @dataclass(frozen=True, slots=True)
@@ -411,6 +424,255 @@ class KisPaperDailyPairForwardRun:
                 "live_endpoints_used": False,
             },
         }
+
+
+def retain_kis_paper_daily_pair_forward_page(
+    *,
+    rows: Sequence[KisPaperDailyPairForwardRow],
+    query: Mapping[str, str],
+    captured_at: datetime,
+    observation_root: Path | str,
+    repo_root: Path | str | None = None,
+) -> dict[str, str]:
+    """Retain one whole parsed page, separately from the first-retained canonical cache.
+
+    Equal session duplicates are normalized; contradictory in-page rows are rejected.
+    A partial content-addressed directory is never reclaimed or silently completed.
+    """
+
+    public_query = _observation_query(query)
+    captured = _observation_clock(captured_at)
+    recorded = datetime.now(UTC)
+    if captured > recorded or _date_from_compact(public_query["BYMD"]) > captured.date():
+        raise KisPaperDailyPairForwardCacheError("pair observation capture clock is invalid")
+    target_key = _target_key(public_query["SYMB"], public_query["EXCD"])
+    incoming = tuple(rows)
+    if any(type(row) is not KisPaperDailyPairForwardRow for row in incoming):
+        raise KisPaperDailyPairForwardCacheError("pair observation whole page is invalid")
+    whole = _merge_rows((), incoming, target_key=target_key).rows
+    if (
+        not whole or len(whole) > 100
+        or any(not getattr(row, field).is_finite() for row in whole
+               for field in ("open", "high", "low", "close", "volume"))
+        or any(row.session_date > _date_from_compact(public_query["BYMD"]) for row in whole)
+    ):
+        raise KisPaperDailyPairForwardCacheError("pair observation whole page is invalid")
+    payload = _compressed_rows(whole)
+    snapshot_sha256 = _sha256(payload)
+    root = _observation_root(observation_root, repo_root, create=True)
+    directory = _observation_directory(root, public_query, snapshot_sha256)
+    directory.parent.mkdir(exist_ok=True)
+    try:
+        directory.mkdir()
+    except FileExistsError:
+        _observation_ordinary(directory)
+        # Complete duplicates keep the first capture/retention timestamps and bytes.
+        document, digest = _read_whole_observation(directory)
+        _validate_whole_observation(document, public_query, snapshot_sha256)
+        retained = _observation_ordinary(directory / "page.csv.gz").read_bytes()
+        if (
+            retained != payload or document["rows_sha256"] != _rows_sha256(whole)
+            or document["row_count"] != len(whole)
+        ):
+            raise KisPaperDailyPairForwardCacheError(
+                "pair observation payload is invalid"
+            ) from None
+        return _observation_reference(root, directory, snapshot_sha256, digest)
+    document = {
+        "schema": _OBSERVATION_SCHEMA,
+        "query": public_query,
+        "snapshot_sha256": snapshot_sha256,
+        "rows_sha256": _rows_sha256(whole),
+        "row_count": len(whole),
+        "captured_at": captured.isoformat(),
+        "recorded_at": recorded.isoformat(),
+        "normalization": _OBSERVATION_NORMALIZATION,
+        "price_basis": _OBSERVATION_BASIS,
+    }
+    _write_bytes_new(directory / "page.csv.gz", payload)
+    # The descriptor is the terminal marker; failures leave an explicit partial generation.
+    encoded = (json.dumps(document, sort_keys=True, separators=(",", ":")) + "\n").encode()
+    _write_bytes_new(directory / "observation.json", encoded)
+    return _observation_reference(root, directory, snapshot_sha256, _sha256(encoded))
+
+
+def load_kis_paper_daily_pair_observation_as_of(
+    *,
+    observation_root: Path | str,
+    query: Mapping[str, str],
+    snapshot_sha256: str,
+    observation_sha256: str,
+    as_of: datetime,
+    required_sessions: Sequence[date],
+    repo_root: Path | str | None = None,
+) -> tuple[KisPaperDailyPairForwardRow, ...]:
+    """Read one exact, available whole-page vintage; never stitch or select latest rows."""
+
+    public_query = _observation_query(query)
+    as_of = _observation_clock(as_of)
+    required = tuple(required_sessions)
+    if (
+        not required or any(type(session) is not date for session in required)
+        or required != tuple(sorted(set(required)))
+        or not _is_sha256(snapshot_sha256) or not _is_sha256(observation_sha256)
+    ):
+        raise KisPaperDailyPairForwardCacheError("pair observation selection is invalid")
+    root = _observation_root(observation_root, repo_root, create=False)
+    directory = _observation_directory(root, public_query, snapshot_sha256)
+    document, digest = _read_whole_observation(directory)
+    if digest != observation_sha256:
+        raise KisPaperDailyPairForwardCacheError("pair observation descriptor hash is invalid")
+    _validate_whole_observation(document, public_query, snapshot_sha256)
+    recorded = _observation_clock_text(document["recorded_at"])
+    if recorded > as_of:
+        raise KisPaperDailyPairForwardCacheError("pair observation unavailable at requested time")
+    payload = _observation_ordinary(directory / "page.csv.gz").read_bytes()
+    if _sha256(payload) != snapshot_sha256:
+        raise KisPaperDailyPairForwardCacheError("pair observation snapshot hash is invalid")
+    target_key = _target_key(public_query["SYMB"], public_query["EXCD"])
+    rows = _parse_compressed_rows(payload, target_key=target_key)
+    if (
+        len(rows) != document["row_count"] or _rows_sha256(rows) != document["rows_sha256"]
+        or not set(required).issubset(row.session_date for row in rows)
+        or any(row.session_date > _date_from_compact(public_query["BYMD"]) for row in rows)
+        or any(not getattr(row, field).is_finite() for row in rows
+               for field in ("open", "high", "low", "close", "volume"))
+    ):
+        raise KisPaperDailyPairForwardCacheError("pair observation context is unavailable")
+    return rows
+
+
+def _observation_query(query: Mapping[str, str]) -> dict[str, str]:
+    if (
+        not isinstance(query, Mapping) or set(query) != _OBSERVATION_QUERY_FIELDS
+        or any(type(value) is not str for value in query.values())
+        or query["endpoint"] != "/uapi/overseas-price/v1/quotations/dailyprice"
+        or query["tr_id"] != "HHDFS76240000"
+        or (query["SYMB"], query["EXCD"]) not in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
+        or query["GUBN"] != "0" or query["MODP"] != "0"
+        or query["continuation"] not in {"", "F"}
+        or not _is_sha256(query["collector_source_sha256"])
+        or not _is_sha256(query["request_source_sha256"])
+    ):
+        raise KisPaperDailyPairForwardCacheError("pair observation public query is invalid")
+    _date_from_compact(query["BYMD"])
+    return dict(query)
+
+
+def _date_from_compact(value: str) -> date:
+    try:
+        if len(value) != 8 or not value.isascii() or not value.isdigit():
+            raise ValueError
+        return date(int(value[:4]), int(value[4:6]), int(value[6:]))
+    except (ValueError, TypeError) as error:
+        raise KisPaperDailyPairForwardCacheError(
+            "pair observation query date is invalid"
+        ) from error
+
+
+def _observation_clock(value: datetime) -> datetime:
+    if not isinstance(value, datetime):
+        raise KisPaperDailyPairForwardCacheError("pair observation UTC clock is invalid")
+    try:
+        return require_utc(value, "observation clock")
+    except ValueError as error:
+        raise KisPaperDailyPairForwardCacheError("pair observation UTC clock is invalid") from error
+
+
+def _observation_clock_text(value: object) -> datetime:
+    try:
+        if type(value) is not str:
+            raise ValueError
+        return _observation_clock(datetime.fromisoformat(value))
+    except ValueError as error:
+        raise KisPaperDailyPairForwardCacheError("pair observation UTC clock is invalid") from error
+
+
+def _observation_ordinary(path: Path) -> Path:
+    for parent in (*reversed(path.absolute().parents), path):
+        try:
+            info = parent.lstat()
+        except FileNotFoundError:
+            continue
+        if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 1024:
+            raise KisPaperDailyPairForwardCacheError("pair observation path is invalid")
+    return path
+
+
+def _observation_root(
+    value: Path | str, repo_root: Path | str | None, *, create: bool,
+) -> Path:
+    path = Path(value).absolute()
+    if ".." in path.parts:
+        raise KisPaperDailyPairForwardCacheError("pair observation path is invalid")
+    _observation_ordinary(path)
+    repository = _repository_root(repo_root)
+    resolved = path.resolve(strict=False)
+    mounted = repository / "market_data"
+    if resolved.is_relative_to(repository) and not (
+        mounted.is_mount() and resolved.is_relative_to(mounted)
+    ):
+        raise KisPaperDailyPairForwardCacheError("pair forward cache must stay outside Git")
+    return _external_root(path, repository, create=create)
+
+
+def _observation_directory(root: Path, query: Mapping[str, str], snapshot: str) -> Path:
+    binding = _sha256_json({"query": dict(query), "snapshot_sha256": snapshot})
+    return _observation_ordinary(root / binding[7:])
+
+
+def _observation_reference(
+    root: Path, directory: Path, snapshot: str, descriptor: str,
+) -> dict[str, str]:
+    return {
+        "relative_path": (directory / "observation.json").relative_to(root).as_posix(),
+        "snapshot_sha256": snapshot,
+        "observation_sha256": descriptor,
+    }
+
+
+def _read_whole_observation(directory: Path) -> tuple[dict[str, object], str]:
+    def unique(items: list[tuple[str, object]]) -> dict[str, object]:
+        if len(items) != len(dict(items)):
+            raise ValueError
+        return dict(items)
+
+    try:
+        data = _observation_ordinary(directory / "observation.json").read_bytes()
+        if len(data) > 16384:
+            raise ValueError
+        document = json.loads(data, object_pairs_hook=unique)
+        if not isinstance(document, dict):
+            raise ValueError
+    except (OSError, ValueError) as error:
+        raise KisPaperDailyPairForwardCacheError(
+            "pair observation is incomplete or invalid"
+        ) from error
+    return document, _sha256(data)
+
+
+def _validate_whole_observation(
+    document: Mapping[str, object], query: Mapping[str, str], snapshot: str,
+) -> None:
+    if (
+        set(document) != _OBSERVATION_FIELDS
+        or document["schema"] != _OBSERVATION_SCHEMA
+        or document["normalization"] != _OBSERVATION_NORMALIZATION
+        or document["price_basis"] != _OBSERVATION_BASIS
+        or not isinstance(document["query"], Mapping)
+        or _observation_query(document["query"]) != query
+        or document["snapshot_sha256"] != snapshot
+        or not _is_sha256(document["rows_sha256"])
+        or type(document["row_count"]) is not int or not 1 <= document["row_count"] <= 100
+    ):
+        raise KisPaperDailyPairForwardCacheError("pair observation binding is invalid")
+    captured = _observation_clock_text(document["captured_at"])
+    recorded = _observation_clock_text(document["recorded_at"])
+    if (
+        captured > recorded or recorded > datetime.now(UTC)
+        or _date_from_compact(query["BYMD"]) > captured.date()
+    ):
+        raise KisPaperDailyPairForwardCacheError("pair observation capture clock is invalid")
 
 
 def commit_kis_paper_daily_pair_forward_observation(
