@@ -14,12 +14,36 @@ Detailed closed history is Git4ecc4cf/ba1345b and exact consumers, not this boar
 
 ## New Independent Work (Oct25 KST)
 
+NEW C120 same-session-close study is CLOSED FINALb345f7fa/Result01707e31 at
+A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
+Two CPU market fits: rawTCN65epochs/selected35, indicatorMLP130/selected105,
+975updates. Native CPU+CUDA optimizer/RNG/cold handoff passed; the one cold
+timing is not warmed/isolated speed evidence or a global CPU preference.
+10bp fixedblend growth/DD -3.247%/3.722%, constant-average-q -3.888%/4.155%,
+alignedQQQ -14.906%/15.846%: relative adaptive PASS, NOT profitability/alpha.
+108checks/oneEVALpriceintake/all6containersremoved/leaseabsent/254.555finalupper.
+No completed fit/native/inference/readout is queued again. Next research
+preparation is H5-session holding plus causal prior20 daily context from the
+same archive, not a retroactive H1 regrade. Data skeleton8d00c388/d82f81d2 at
+A/data/current-qqq-c120-prior20-h5-input-preparation-20261025-v1 is ready:
+all251keys/calendar capacities121FIT/39CHECK/59EVAL,14native checks/0rawintake.
+New Engine contract is now FROZEN at
+A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1:
+CONSUMER58412e5e/CONTRACTfe29b4ba/DataReq4ae74cba/Source07191985.
+Data may build once now; phase0 EVAL12five-sessioncohorts/3flattails,
+heldABI[12,5,390]/21768requiredCLOSE/1632pad. Two NEW experts/fixedblend,
+max180epochs/PAT30/3000activeSUM/7200elapsed/hard06:12UTC. No H1 rerun.
+Separate metadata-only NAS readiness1c99721d locates83 collected/17unavailable
+axes and135297TRAIN rows; no acquisition needed. Current-listing/nonPIT/
+adjustment/arrival limitations stay, and netpayoff5 is entry-principal payoff,
+not paid-NAV return. It is future research preparation, not another fit grant.
+
 CURRENT host-control graft has completed six-task typed readback. Parent03:24..25UTC
 used A/execution/current-owned-paper-command-first-graft-activation-20261025-v1
 Source7453efa2/GO bb93f549: GRU pair complete, TimesFM pair and Joint17exit
 actually updated. Parent's later partial closure updated ONLY Joint17entry.
 All6 Ready/never-run/zero instances,
-effective ACL unchanged; five updated actions pass typed readback. Original failed
+effective ACL unchanged; all six updated actions pass typed readback. Original failed
 attempts are retained. Partial closure Source94671106/CONSUMER2d987ec9 repairs
 only expected XML SecurityDescriptor precedence; TimesFM readback closure and
 Joint17entry update both returned success. Other five actions were not registered
@@ -32,14 +56,26 @@ partial delta reviewcdf56c0f found no blocking defect in70refs. Never rerun old 
 resume/reset or infer submit/fill from installation. Current activation-r3 pairs:
 GRU Source43c41964/Release04b093dd, TimesFM1f9eac09/24671d22,
 Joint175a28de8f/a11e8996; old source/releases remain historical evidence.
+L two-task graft is NOW INSTALLED: Source6bc9da68/Release60d500f3,
+TaskAPIc79d124c/exact original INPUT271aee. Independent04:18:43UTC metadata at
+A/execution/current-l-qqq-command-first-graft-activation-preparation-20261025-v1/
+parent-installed-readback-r1/CONSUMER.json SHA4f81aebc confirms all8 Ready/
+enabled/never-run/0instances, old6 hash-exact/legacyQQQ disabled/1398code exact.
+Runtime image2ff and original L ops/native/counter/control roots remain intact.
+Initial64fa installer registered one wrong phase-object EXIT argument and
+withheld; case-insensitive PowerShell dynamic parameter shadow was the cause.
+Exact partial repair Sourceb0a2f406 passed21fresh checks, then corrected only
+L exit/entry. Failed attempts remain immutable; reviewd79693de notes exit0
+alone is not success. Exact result and independent readback passed. No TaskRun,
+broker order, bank/request reset or private replay. Never rerun the installers.
 L metadata-only reader prefix-r1 Sourceb3a17845 actually qualified at03:46UTC:
 EXACT oldL482/INPUT271 journal and original operational attempts absent,
 stable source-attested readset, target0open/decode and no broker/credential/Task
 effects. Root: A/execution/current-owned-paper-command-first-graft-preparation-20261025-v1/
 runtime-graft-completion-r1/absence-reader-r2/fresh-capsule-r1/prefix-r1.
 Old failed bc148 prefix was retained; exact controlled public tool encoding
-try/catch was qualified, no generic shell waiver. L source graft is now ready
-implementation work, not missing operator permission or a global hold.
+try/catch was qualified, no generic shell waiver. This is historical custody
+absence, not fresh holdings or F9 reservation-release evidence.
 F9 fresh read is now QUALIFIED_READONLY_DIAGNOSTIC_NOT_TERMINAL, not another
 pre-API failure: A/execution/current-f9-readonly-reconciliation-20261025-v1/
 f9-source-corrected-r1/actual-closure-r1/CONSUMER.json SHAf1f1b847.
@@ -48,7 +84,8 @@ no retained acknowledgment/fill. UNKNOWN/HELD unchanged. Prior charged upper
 1POST/10GET stays; accounted series upper2POST/11GET, no further query in this
 closed contract. Missing opener/dispatch correlation prevents a no-send claim.
 
-CURRENT L QQQ H5 connection is INSTALLED, runtime/fills still unobserved:
+HISTORICAL initial L installation below is superseded by6bc9/60d5 above;
+runtime/fills still unobserved:
 A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/
 parent-installed-readback-r1/CONSUMER.json SHA f1fb2956. Source482cd50e,
 Release7cdb3045, TaskAPI166d9b7a, image2ff53eff; exact original INPUT271aee51.
@@ -70,7 +107,7 @@ A/research/current-qqq-direct-log-utility-development-20261025-v1/protocol-r2
 completed1CUDAfit26epochs/best1/442updates,4ledgers220marks/46checks/allclosed.
 10bp growth1.1820% vsconstantmeanq1.1594%, DD2.7384%vs2.7501%: tiny2.26bp
 increment passes frozen development criterion, not alpha/Paper promotion.
-Current shadowq44.9224% is not actual capital; L482/7cdb/271 is unchanged.
+That shadowq44.9224% was not actual capital; original INPUT271 remains unchanged.
 Toto direct utility is now CLOSED COMPLETE_FAIL, FINALd6956a8d at
 A/research/current-toto-qqq-direct-utility-development-20261025-v1.
 Source770b9ba0, ONE CUDAfit11epochs/selected3/781updates/200.998fitsec,

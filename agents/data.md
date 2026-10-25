@@ -6,6 +6,26 @@ Parent owns shared MD/Git; AGENTS authority.
 
 ## Current Exact Consumer
 
+H5 contract now FROZEN: Engine58412e5e/fe29b4ba/4ae74cba/07191985 at
+A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1.
+One offline build/independent verify is ready to run. Exact heldABI[12,5,390],
+21768requiredclose/1632structuralpad, phase0/12cohorts+3flat tails. No H1 rebuild.
+Separate metadata-only NAS daily readiness1c99721d at
+A/data/current-nas-daily-cross-sectional-input-readiness-20261025-v1 confirms
+83collected/17unavailable fixed axes/159335knownasset-days, TRAIN135297/
+CHECK8106rows and63daycontext. No payload/model/acquisition/Norgate access.
+Currentlisting/nonPIT/adjustment/arrival limits remain; source netpayoff5 is
+entry-principal payoff. This is a future candidate input, not current fitting.
+
+Next H5-session/prior20-daily view is PREPARED only, not built:
+A/data/current-qqq-c120-prior20-h5-input-preparation-20261025-v1/
+CONSUMER8d00c388/Source d82f81d2,14native+Ruff/1.046sec/allhelpersclosed.
+All251keys retained; first20 daily-context missing and last4/per-role-boundary
+H5 target maturity masks stay explicit. Calendar capacities121FIT/39CHECK/59EVAL;
+stride5 phase0 EVAL proposal12cohorts+3taildays requires Engine freeze. Same
+archive/official-session daily OHLCV excludes current partial session; preserve
+overnight/weekend/earlyclose/DST gaps. Zero raw intake/new build/model/API.
+
 NEW offline consumer COMPLETE: Engine contract54373cd2/requirements7dd83211
 at A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
 Readiness8c4c6be7 under A/data/current-qqq-intraday-h1-h5-input-readiness-20261025-v1

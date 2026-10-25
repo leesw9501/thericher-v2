@@ -6,7 +6,7 @@ AGENTS authority; Parent shared MD/Git. Closed models are not ready fit jobs.
 
 ## Current Research
 
-NEW distinct intraday target is frozen, not a completed/repeated fit:
+The distinct intraday target is now CLOSED, not a queued/repeated fit:
 A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
 CONTRACT54373cd2/DATA-REQUIREMENTS7dd83211/CONSUMERa5c48b60/Source5c90b626.
 QQQ first120 completed1m -> entryOPEN at RTHopen+121min -> same-session
@@ -14,12 +14,27 @@ official CLOSE, not old H60 or H5/session data relabeling. Raw causalTCN and
 indicatorMLP, fixed50/50 post-fee q blend, two fits<=180epochs/PAT30/1800updates.
 Reused145FIT/43CHECK/63EVAL explicitly adaptive; not untouched/independent alpha.
 2400activeSUM/7200elapsed/hard14:20KST, actual native optimizer/RNG/checkpoint
-proof before fitting. Data packet is now COMPLETE641b88a9/Source54b9da9d/
+proof before fitting. Actual FINALb345f7fa/Result01707e31/Sourcea056f4d4:
+CPU market fits TCN65epochs/selected35, MLP130/selected105,975updates. Native
+CPU+CUDA qualified; one cold timing is not warmed/isolated speed proof. Fixed
+blend10bp growth/DD -3.247%/3.722% versusconstantq -3.888%/4.155% and aligned
+QQQ -14.906%/15.846%. Relative adaptive PASS only; not profitability/alpha.
+108checks/all6removed/leaseabsent/oneEVALintake/254.555finalupper; no rerun.
+Next distinct hypothesis is H5 holding + prior20 daily context (not resampled
+same-history information); Data prep8d00c388/d82f81d2/14native/0rawintake ready.
+New finite contract is now FROZEN at
+A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1:
+Consumer58412e5e/contractfe29b4ba/DataReq4ae74cba/Source07191985. Data builds
+once now; two new experts/fixedblend,180epochs/PAT30/3000activeSUM/7200elapsed/
+hard06:12UTC, EVALphase0/12cohorts+3flattails. Native/warmed device calibration
+precedes new fits; H1 models/debits remain closed. Broader NAS metadata1c99721d
+supports a future data-rich conditional ranking family, not raw intake or fits.
+Its netpayoff5 entry-principal units must be derived, never relabeled paid NAV.
+Data H1 packet remains COMPLETE641b88a9/Source54b9da9d/
 DTOa079c624/ABI75175b5c/ALLOWLIST3f307c14 under
 A/data/current-qqq-c120-session-close-inputs-20261025-v1,14native+2950verify/
-251keys/no missing/allhelpersclosed. Noether owns runtime-r1 implementation/
-native/resource dispatch. No model worker is inferred from a contract/source
-file alone. No Paper/broker-risk change.
+251keys/no missing/allhelpersclosed. Runtime-r1 and all H1 workers are closed;
+no worker is inferred from a contract/source alone. No Paper/broker-risk change.
 
 Short queue: cash-aware typed H5 contract and frozen-quarter input are ready
 with Parent fulla5ba950a/FINAL704c3543 complete, not another model job/deployment. Actual

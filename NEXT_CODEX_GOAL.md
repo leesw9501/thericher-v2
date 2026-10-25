@@ -47,15 +47,27 @@ Research actors or future due times. No recovery observe() as offline reading.
 
 ## Ready Parallel Work
 
+New H1 research FINALb345f7fa is CLOSED, not a queued model job. TCN65epochs/
+selected35 and MLP130/selected105 were CPU market fits; native CPU+CUDA passed.
+10bp blend growth/DD -3.247%/3.722% versusconstantq -3.888%/4.155% is only
+relative adaptive PASS, not profitability. No completed fit/native/readout rerun.
+Next Research is a genuinely new H5-session/prior20-daily context contract;
+New family is now frozen at
+A/research/current-qqq-c120-prior20-h5session-sizing-development-20261025-v1:
+Consumer58412e5e/contractfe29b4ba/DataReq4ae74cba/Source07191985. Data may
+materialize one verified view now; no H1 rerun or Paper input/budget swap.
+
 1. Supplementary L QQQ H5 is NOW INSTALLED, not a ready builder to rerun:
-   A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/
-   parent-installed-readback-r1/CONSUMER.json SHA f1fb2956.
-   Exact Source482cd50e/Release7cdb3045/TaskAPI166d9b7a/image2ff53eff,
+   A/execution/current-l-qqq-command-first-graft-activation-preparation-20261025-v1/
+   parent-installed-readback-r1/CONSUMER.json SHA4f81aebc.
+   Exact Source6bc9da68/Release60d500f3/TaskAPIc79d124c/image2ff53eff,
    ONE original INPUT271aee51; no second LN cohort. New names:
    thericher-kis-paper-l-qqq-h5-entry-20261026, Oct26 18:00..18:15UTC;
    thericher-kis-paper-l-qqq-h5-exit-20261030, Oct30 19:55..20:00UTC.
-   PT4M repetition/quiet pythonw; independent Oct24 23:40:54UTC metadata
-   validates Ready/enabled/never-run/zero instances and old6 XML/ACL unchanged.
+   PT4M repetition/quiet pythonw; independent Oct25 04:18:43UTC metadata
+   validates all8 Ready/enabled/never-run/zero instances, old6 XML/ACL unchanged,
+   legacyQQQdisabled/1398code exact. Initial phase-object installer failure is
+   retained; exact partial repair updated only L exit/entry. No rerun/reset.
    Installation is NOT actual owner-origin, submit, acceptance or fill evidence.
    Do not reinstall/manual-run/reset. Read exact natural outcomes when due.
 2. Preserve the existing QQQ aggregate V4 owner and separate H5 journal;

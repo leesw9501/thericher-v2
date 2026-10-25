@@ -54,16 +54,26 @@ No TaskRun. Current activation-r3 Source/Release:
 GRU43c41964/04b093dd, TimesFM1f9eac09/24671d22, Joint175a28de8f/a11e8996.
 L's separate actual metadata-only prefix-r1 reader Sourceb3a17845 has qualified
 old482 journal/attempt absence at03:46UTC. It is CLOSED: do not rerun Inspect.
-Prepare the separately scoped two-existing-task source graft; do not reinstall,
-adopt foreign state or change the original INPUT271/bank/reservation.
+L's two-existing-task graft has NOW completed: Source6bc9da68/Release60d500f3/
+TaskAPIc79d124c/input271. Independent04:18:43UTC metadata at
+A/execution/current-l-qqq-command-first-graft-activation-preparation-20261025-v1/
+parent-installed-readback-r1/CONSUMER.json SHA4f81aebc confirms all8 Ready/
+enabled/never-run/0instances, old6 hash-exact/legacydisabled/1398code exact.
+Original ops/native/counter/control roots and .005 budget are preserved.
+Do not rerun update_l.ps1 or partial repair. Original64fa failed once after
+registering a phase-object argument; b0a2f406 exact repair21checks+actual
+typed/factory readback corrected L exit/entry. Original failed attempts remain.
+Exit0 alone never proves success; inspect exact categorical status/readback.
+No bank/request reset, private reader replay, manual task or broker order.
 Fresh F9 readonly result is CLOSED under current-f9-readonly-reconciliation-20261025-v1/
 f9-source-corrected-r1/actual-closure-r1/CONSUMER.json SHAf1f1b847:
 1POST/1GET, history0, UNKNOWN/HELD unchanged. Do not run Actual/Preflight again
 or release a reservation from empty history. Exact source/custody/reply proof
 qualifies this diagnostic, not terminal non-send, fees or net PnL.
 
-L QQQ H5 is now installed using exact original INPUT271aee51, not LN as a
-second cohort. Source482cd50e/Release7cdb3045/TaskAPI166d9b7a/image2ff53eff:
+HISTORICAL initial L installation used original INPUT271aee51, not LN as a
+second cohort. Source482cd50e/Release7cdb3045/TaskAPI166d9b7a/image2ff53eff
+is superseded by6bc9/60d5/c79d above:
 A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/activation-readiness-r3.
 Actual Parent receipts PARENT-entry/COMPLETE.json and PARENT-exit/COMPLETE.json;
 independent parent-installed-readback-r1/CONSUMER.json SHA f1fb2956 confirms

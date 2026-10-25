@@ -6,14 +6,22 @@ AGENTS.md policy; Parent shared MD/Git.
 
 ## Actual Allocation
 
-NEW frozen queue: QQQ C120 -> same-session official CLOSE sizing, contract54373cd2
+QQQ C120 -> same-session official CLOSE sizing is CLOSED, contract54373cd2
 at A/research/current-qqq-c120-session-close-sizing-development-20261025-v1.
 RawTCN/indicatorMLP two new fits/fixedblend, not any completed family rerun.
-Data packet641b88a9/DTOa079c624/ALLOWLIST3f307c14 is complete; no operator
-or GPU-process-name hold. Noether owns native/runtime preparation and may run
-useful independent expert workers concurrently after native+input readiness and
-fresh measured VRAM reserve. 2400activeSUM/7200elapsed/hard14:20KST; old
-debits/checkpoints remain closed. Current GPU fit has not yet been evidenced.
+Data packet641b88a9/DTOa079c624/ALLOWLIST3f307c14 is complete. Actual final
+b345f7fa/Sourcea056f4d4: two concurrent CPU market fits65/130epochs,975updates,
+all6containersremoved/leaseabsent/254.555finalupper. CPU+CUDA native paths
+qualified; one cold timing selected CPU in this family, not warmed/isolated
+benchmark evidence or a global GPU restriction. Do not repeat completed fits.
+New H5/prior20 contract58412e5e/fe29b4ba is now frozen; Data builds once.
+Two new experts/fixedblend,180epochs/PAT30/3000activeSUM/7200elapsed/hard06:12UTC.
+No current new market worker inferred until actual frozen native/input/resource
+readiness and PID/start; completed H1 fits remain closed. Broader NAS1c997
+input metadata is a future resource-rich hypothesis, not an additional fit grant.
+Noether keeps resource coordination; future useful campaigns should warm both
+backends and include representative batches/transfer/sync before device choice.
+No dummy benchmark/training or application-name veto; old debits stay closed.
 
 Noether is the single GPU resource coordinator. QQQ marginal-density e9f8d79e
 is CLOSED: ONE CUDAfit31epochs/selected6/527updates,12.680840fitsec,1128MiB

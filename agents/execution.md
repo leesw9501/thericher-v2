@@ -25,14 +25,21 @@ No broker/financial state change or fill inference. Parent owns actual effects.
 L prefix-r1 Sourceb3a17845 actual reader qualified old482/271 journal and
 original operational absence03:46UTC, target0open/decode/stable protected
 readset/networknone/privateRO/sourceattested. One visit CLOSED, not a no-order
-or reservation-release proof. Tesla prepares separate two-existing-task graft;
-old installed L482/7cdb and INPUT271 remain current until actual cutover.
+or reservation-release proof. L cutover is now COMPLETE6bc9da68/60d500f3/
+c79d124c/INPUT271/image2ff. Independent04:18:43UTC metadata4f81aebc at
+A/execution/current-l-qqq-command-first-graft-activation-preparation-20261025-v1/
+parent-installed-readback-r1/CONSUMER.json confirms all8 Ready/enabled/never-run/
+0instances/old6hash-exact/legacydisabled/1398code exact. The64fa installer failed
+after EXIT acquired a phase-object argument; b0a2f406 partial repair21checks+
+exact factory/typed readback corrected L exit/entry, no private replay/TaskRun/
+API/order/bank/request/counter reset. Preserve failures; never rerun installers
+or conclude success from exit0. Original ops/native/control roots are kept.
 F9 SOURCE3407 fresh read now actually qualified, closuref1f1b847 under
 f9-source-corrected-r1/actual-closure-r1:1POST/1GET/history absent0, unchanged
 custody/exact pending+account binding. Prior upper1POST10GET retained; accounted
 upper2POST11GET, no further query in this closed scope. No acknowledgment/fill
 or complete original opener/dispatch correlation; UNKNOWN/HELD stays.
-CURRENT supplementary L QQQ H5 is INSTALLED: Source482cd50e/Release7cdb3045,
+HISTORICAL initial L QQQ H5 installation: Source482cd50e/Release7cdb3045,
 TaskAPI166d9b7a/image2ff53eff/exactINPUT271aee51. Parent-installed-readback-r1
 CONSUMERf1fb2956 under directQQQroot confirms new2 Ready/enabled/never-run/
 0instances atOct24 23:40:54UTC; old6 XML/ACL/next/last unchanged, legacyQQQ
