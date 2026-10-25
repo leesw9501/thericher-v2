@@ -3,6 +3,12 @@
 2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic risk/intents/orders/custody/accounting; Parent sharedMD/Git.
 AGENTS private Paper authority; no operator decision presently.
+Fresh original8 metadata526c839d at15:41:27UTC:8Ready/enabled/0instances,
+exact oldXML/ACL/nexttimes; image2ff present, no actual invocation/mutation.
+Source-only Action censuscc5aa243/advisorya9f76df4 adopts C_NOW: preserve
+original opportunities/owned exits and target actual faults; no comprehensive
+legacy migration for an extra pilot. Future finite exclusive route must cover
+entry AND ownedexit/recovery, not starve/disarm unknown original recovery.
 Current stock source delta is CLOSED5319ce88, reviewed5854cba1:
 A/execution/current-stock-ingress-exit-continuation-repair-20261025-v1.
 54actualContext/originaldrain/debit/pending/cutoff mockchecks+24Taskmocks PASS;
@@ -12,15 +18,21 @@ retain exact pending/technical/debits for separately scoped reconciliation,
 not original after-cutoff recovery parity or a late-effect permission.
 Production/test RuffPASS; immutable sealhelper E501 is metadata-only/not
 whole-root lint claim. Old60bfc8de remains CLOSED exit-continuation-gap.
-L30ffc94a is PARTIAL with owner/provider/attempt-lineage work outstanding;
-Chandra now implements actual own-L provider in NEW
-current-l-ingress-owned-provider-integration-20261026-v1.
-Bern owns one full GRU native no-intent qualification in freshSYNonly at
+L30ffc94a is superseded by source/provider integration CLOSEDc1d80a69 at
+current-l-ingress-owned-provider-integration-20261026-v1,Sourceee5f62a5:
+21Python+14PScases/76Parentpins/new4productionRuffPASS. Own-L owner/binding/
+IPC/directclaim connected with invented OS/private/daemon data; releasefalse,
+actualeffects0. Mencius independently reviews, no realowner/bootstrap claim.
+New full GRU no-intent SYN qualification PASSES at
 current-stock-gru-full-native-no-intent-qualification-20261026-v1,
-900active1800elapsed/max4creates/actualprivateKIS0. No runtime inferred yet.
+Sourced3c6fbc6/actualoriginalrun_single/NativeBridge/3safecaptures,
+4networknonecreates/allclosed/retainednewSYNvolume/entry1exit0recovery0.
+ActualprivateKISTask0, TESTowner/mount/clock substitutions only/notcutover.
+Chandra reviews closed proof without native replay. Old wholehosttail failure
+and all previous SYN books/debits remain immutable, not retrospectively fixed.
 Samebank census3154a836:281Tasks/77projectcandidates/61enabled/0instances,
 not Actionownership/closure. Other R5/HGB/oldJ17/GRU67 future writer paths
-mean original8 NOT allrunnable. Mencius maps actual safeActions; addedpilot
+mean original8 NOT allrunnable. Closed safeAction census binds11routes; addedpilot
 only withheld, original8/owned recovery remain unchanged/no actual rollout.
 
 LATEST additional mean3 COW is CLOSEDd6848702/root67b66ecb/native9b16d069/

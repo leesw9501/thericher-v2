@@ -79,8 +79,45 @@ that contract. Empty history/missing opener cannot prove no-send or free reserve
 
 ## Current Packages
 
-Parent owns shared MD/Git; latest checkpointf9a9d29. Current numerical claims below use
+Parent owns shared MD/Git; latest checkpoint0ea7ca1. Current numerical claims below use
 actual closed workers, not role names or remaining budgets. No old fit repeats.
+
+Fresh original8 metadata at15:41:27UTC is READ_ONLY/8Ready/enabled/0instances,
+all prior XML/effectiveACL exact; next entry/exit times unchanged.
+A/execution/current-original-eight-opportunity-readback-20261026-v1/READBACK.json
+SHA526c839d7cf1ccd936f5d897914737c7f7efde8ee25a86f3d0c9d10ca417a61e.
+Image2ff is locally present. No Task invocation/mutation/KIS/private read.
+This is preparation metadata, not active-process closure or a future fill.
+
+Current scope decision: C_NOW from Action censuscc5aa243/addenduma9f76df4.
+Keep original opportunities and target their actual failures; do NOT dispatch
+a comprehensive legacy migration for an extra pilot. A future finite exclusive
+round needs exact competing-writer closure and feasible entry AND owned-exit/
+recovery windows, never disarm unknown recovery or reduce original chances.
+No added-pilot deployment now; original authority/opportunities unchanged.
+
+Bern's full GRU native qualification now passes at
+A/execution/current-stock-gru-full-native-no-intent-qualification-20261026-v1:
+Source d3c6fbc620c1eb77bb1a06eb9596eb72f376f7f7842d597397d680995e4acd39,
+one originalrun_single/actualNativeBridge seed-no_intent-postseed/3safecaptures,
+4networknonecreates including initializer, exactrootjoined/all4namesabsent,
+newSYNvolume retained/entry1exit0recovery0/no outerdebit/actualAPIprivateTask0.
+Test owner/mount/clock substitutions remain: NOT actualbank/Taskorigin/cutover.
+Chandra independently reviews this closed proof; never repeat it for reporting.
+
+L own-provider source/mock package is now CLOSEDc1d80a69/Sourceee5f62a5 at
+A/execution/current-l-ingress-owned-provider-integration-20261026-v1:
+21Python+14PowerShellcases,76Parent sourcepins exact/new4productionRuffPASS.
+Actualbinding.build/admission/IPC/directclaim/API and realPSowner functions
+exercised with invented OS/private/daemon data; source/attempt lineage kept.
+Original guest unchanged except explicit projector-parameter adapter; release
+false/noactualeffects. Independent Mencius review pending, no runtime claim.
+Parent broad external L Ruff probe found inherited lint554issues, not a new
+runtime fault or blanket lint authority; changed production files pass.
+
+Engine/Steward boards are current compact projections; full prior trial history
+is retained in Git0ea7ca1 and external artifacts, not an active queue. Herschel
+owns a distinct Strategy readiness sidecar, not a new GPU owner or broker lane.
 
 Current additional readiness delta (all still INERT, no old8/actual changes):
 stock prototype60bfc8de/c322a23c passed36ingress+24Taskmocks but dropped original

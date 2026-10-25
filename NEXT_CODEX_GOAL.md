@@ -22,6 +22,8 @@ Original8 image2ff/source/releases/input/policy/request/native/ops/counter/
 marker identities and Task windows remain unchanged as HANDOFF records.
 Dated readback67927009:8Ready/enabled/0instances/exactXML+ACL; source2536cc37:
 2377members+39refs exact/imagepresent. These are not runtime/fill evidence.
+Fresh metadata526c839d at15:41:27UTC again8Ready/enabled/0instances/exact
+definitions, all next entry/exit times preserved; image2ff stillpresent.
 Do not manually duplicate an old Task or strategy opportunity.
 
 ## Ready Parallel Work
@@ -35,20 +37,24 @@ That prototype60bfc8de is CLOSED with an exit-continuation gap. Parent repair
 current-stock-ingress-exit-continuation-repair-20261025-v1 is CLOSED5319ce88:
 54focused+24Taskmocks, originaldrain/debits restored, top-levelpending/nonzero
 stop and cutoffhandoff tested. Narrow deadline is NOT old recovery-timing
-parity, native/Task/cutover proof remains pending. Bern now owns ONE full GRU
-native no-intent SYN qualification in
+parity or actualTask/cutover proof. Bern's ONE full GRU native no-intent SYN
+qualification is now PASS at
 A/execution/current-stock-gru-full-native-no-intent-qualification-20261026-v1,
-max4creates900active1800elapsed/0actualKISprivate/never oldBUYSELLreplay.
+Sourced3c6fbc6/4networknonecreates/3safecaptures/rootjoined/allnamesabsent,
+entry1exit0recovery0/0actualKISprivate/TESTowneronly. Do not rerun it.
 Chandrasekhar is a temporary Execution sidecar for the distinct L shape in
 A/execution/current-l-ingress-shared-gate-graft-preparation-20261025-v1.
-L prototype30ffc94a is PARTIAL/inert. Current concrete own-L provider work is
+L prototype30ffc94a is superseded by CLOSED source/mock provider integration
 A/execution/current-l-ingress-owned-provider-integration-20261026-v1.
-Writes are disjoint; both are inert source/mock preparation, not activation.
-Mencius independently reviews concrete source and strongest kill conditions.
+Consumerc1d80a69/Sourceee5f62a5/21Python+14PS/76pins/new4productionRuffPASS,
+actualold lineage/ops preserved, invented OS/private/daemon only/falseRelease.
+Mencius reviews L; Chandra independently reviews the fullGRU native proof.
 Safe Action census current-same-bank-ingress-action-binding-20261026-v1
 binds11priority/quiet routes; no safely disposable enabled diagnostic qualified.
-Compare finite exclusive-round preparation with broad migration, not endless
-unexamined legacy grafts. Never discard unknown owned recovery or block old8.
+Adopt C_NOW/addenduma9f76df4: preserve original opportunities and target actual
+faults, not comprehensive legacy migration for an extra pilot. Future finite
+exclusive round needs exact competing-writer closure and entry AND owned-exit/
+recovery windows; no unknown recovery disarm or reduced original chances.
 
 Shared exclusion must cover EVERY runnable same-bank ingress. Acquire before
 RO seed/credentials/create/debit and retain through the whole logical visit;
@@ -83,10 +89,10 @@ COMPLETE_FAIL_FIXED_ENSEMBLE; only combinedgrowth versus CAT fails21AND.
 10bp growth/DD CAT4.989%/5.568%, blend4.598%/4.470%;20bp erases growth.
 No regrade/oldmodelcalls/Paperswap/independentalpha. Existing prefix Data
 84611e51/cad317e3 reuse confirmed, no duplicate scaler/kernel/data build.
-Cicero now owns a DISTINCT absolute-edge/cost-aware-entry study at
+Subsequent DISTINCT absolute-edge/cost-aware-entry study at
 A/research/current-nas-prefix-absolute-edge-cash-development-20261025-v1:
 chronological SELECT/CAL, finite3newGPUregressors, same-entry uniform controls,
-native API/role smoke before data/fits. Follow its frozen caps/clock/stop rule.
+native API/role smoke before data/fits; closed below, not a ready job.
 Source/contract is not proof a GPU worker is running. No occupancy training.
 This absolute-edge study is now CLOSED291c4e7c/c95e21b9:3NEWGPUfits,
 7607checks/all9closed/leaseabsent, insufficientF3entrysupport and20bplosses,
@@ -97,6 +103,8 @@ NAV1financing violates ringfenced.10 at8events. Accounting-only/not feasible
 Paper. Cicero next owns separate ringfenced-netting-feasibility-20261026-v1,
 causallyfeasiblepairedshares/cachedpredictions/0models/GPU. No fee-savings-as-
 alpha or claimed current Execution input-update capability/closedledger rerun.
+Herschel owns ONE distinct-expert Strategy readiness sidecar; Cicero alone
+coordinates any separately frozen numerical consumer. No duplicate oldfits.
 
 Data natural retention403d5908 remains due Oct26 21:55UTC; no duplicate probe.
 Data limitations constrain claims, not unrelated Paper or research authority.

@@ -12,7 +12,7 @@ NEXT oct26-three-candidate-paper-entry-runtime-v1 remains UNFINISHED:
 exact natural GRU/TimesFM/Joint17 entry outcomes, not research/install/commits.
 Original8 image2ff/source/releases/financial roots are unchanged.
 GRU entry Oct26 13:40UTC; TimesFM14:20; Joint17 17:00; additional L18:00.
-Metadata67927009 at10:38:44UTC:8Ready/enabled/0instances/exactXML+ACL;
+Metadata526c839d at15:41:27UTC:8Ready/enabled/0instances/exactXML+ACL;
 source-readback2536cc37:2377members+39refs exact/imagepresent.
 These are dated metadata, not runtime/fills. No foreground session wait.
 Retain ONE original initial virtual-cash tenth/costs/losses/owned/pending/
@@ -23,10 +23,11 @@ F9UNKNOWN-HELD; no substitution/reset/foreign adoption/profit expansion.
 | Owner | Current disjoint work |
 | --- | --- |
 | Parent / 총괄 | Closed stock5319repair54+24mocks/review5854; integrates metadata/proof/models, Git. No actual old8/Task/private changes. |
-| Bernoulli / 실행 | Now ONE full GRU native no-intent SYN qualification900active1800elapsed/max4creates. Old60bfc8gap/root5319preserved; no actualbroker/private. |
-| Mencius / 기술환경·독립 검토 | Census3154 disprovesall8universe. Now safe Action/public-source binding for legacywriters/verifiedexpired diagnostics, read-only/no Taskchanges. |
+| Bernoulli / 실행 | Full GRU native no-intent SYN PASS/d3c6,4creates/3safecaptures/allclosed, no actualbroker/private/Task or cutover claim. No rerun. |
+| Mencius / 기술환경·독립 검토 | Action censuscc5aa243 closed/advisoryC_NOWa9f76df4. Now independent L provider source review, no effects. |
 | Cicero / 엔진·GPU 조정 | SIX NEWGPUfits and target-netting shadow closed. Now ZERO-FIT ringfenced.10 feasible matched-share ledgers, not occupancytraining or currentbroker capability. |
-| Chandrasekhar / 임시 실행 L 담당 | PartialL30ffc closed16mocks; now own-L actualprovider integration Source/mockscope600active1800elapsed. No actualold/private effects. |
+| Chandrasekhar / 임시 실행 L 담당 | L c1d80a69/ee5f62a5 closed21Python+14PS/mockedOS. Now independent fullGRU native proof review, no replay/effects. |
+| Herschel / 임시 전략 탐색 | ONE distinct existing-data expert/target proposal or concrete rejection, no fits/GPU; numerical handoff through Cicero. |
 
 One resource coordinator may start distinct ready useful CUDA workers with
 measured VRAM/headroom, never completed training or dummy occupancy.
@@ -64,6 +65,14 @@ Original capture4e7bd41d and failed scopes stay immutable. Old unknown SYN
 claims do not block independent actual Paper or new isolated development.
 
 ## Throughput Review
+
+15:45UTC completion review: GRU fullnative SYN path passes, L provider source
+connected, original8 freshreadback unchanged. Adopt C_NOW: no comprehensive
+legacy migration just for an extra pilot; a future exclusive round needs both
+entry and owned-exit safety. Research financing repair and distinct-expert
+readiness stay disjoint; completed models/ledgers never rerun for reporting.
+Reversible improvement: compact Engine/Steward boards to current facts and
+Git0ea7ca1 history instead of stale active-looking historical launch recipes.
 
 15:26UTC handoff review: stock sourceP1 and pending-status gap repaired54+24;
 finality/runtime still unproved. Census uncovered additional legacywriters,
