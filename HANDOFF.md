@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, integrated parallel results through15:11UTC Oct26.
+2026-10-27 KST, integrated parallel results through15:19UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -22,18 +22,27 @@ model profitability or permission. Namespace Consumer d20a801b at
 A/execution/current-native-public-reference-namespace-recovery-20261026-v1
 qualifies exact four public aliases in Windows and image2ff Linux: six cases,
 737SDK files unchanged, sourceb6cf1904/releaseb5bb781c,0private/API/Task effects.
-Leibniz owns TF original-root cutover/exact technical-latch disposition;
-its entry14:20..14:50UTC has expired, paired Oct30 exit must stay compatible.
-Socrates prepares exact J17 then L source-specific aliases before17:00/18:00;
-TF proof cannot impersonate another source. Installation still needs actual
-readback; no new entry window, counter/bank reset or unknown-order substitute.
-Faraday repairs Docker safe-metadata JSON framing, then one separately bounded
-optional future-definition activation. Old R4 remains the evidenced deployment;
+TF actual cutover is now evidenced: ACTUAL-PAIR-FINAL78fd46b5 at15:11:42UTC,
+outerc078a08a/release83674888/nativeb6cf1904. Original Oct30 19:49 exit enabled,
+expired entry disabled/0instances/ACL preserved/0TaskRun/77othercomparedexact.
+Fresh exact account/basis/input/policy/native-book projectionee172045 proves
+no TF registered plan/pending request. Only its technical marker archived
+e5fc94d5; counters/debits/private/F9 unchanged. No historical zero-wire claim,
+new entry window, substitute or fill. External actual-root serial6eda4475 PASS.
+Leibniz now owns separately bounded J17 paired cutover before17:00.
+L auditbd70d25c found NO matching namespace defect: actual original producer
+release reproduced,3host/2guestcases/499closedfiles/0changes. Preserve original
+Lsource6bc9da68/release60d500f3, no gratuitous redeployment.
+Faraday proved Docker JSON framing but its next candidate stage differed only
+in embedded SDDL spelling; exact original R4 restored f6f2e275 at15:09UTC.
+New embedded-SDDL scope is separately assigned, not another effect attempt.
+Old R4 remains the evidenced deployment;
 same app follow-up stays on its old pins until actual new installation proof.
 J17 readiness5cf67874 is also CLOSED:6actualhost/Linuxcases/737SDKexact,
 source90a228cc/outer889a011d, actual worker-generated release9e8524ee,
 not pretty test-envelopefd31deb6. J17-READINESS46c3373f binds11public files;
-actual deployment remains separate. S now prepares L without Task effects.
+actual deployment remains separate. S now freezes four-cell later2026 comparison
+for saved JOINT/GRURISK/LOWVOL/uniform, no new fits or outcomes in that package.
 Schrodinger's 2026 acquisition97343f3c CLOSED:1POST/23GET/2300rows/43of47
 potential asset-days filled,4remaining/0overwrite/conflict/allworkersclosed.
 Raw M only. Current packet producer is separately assigned for40cohorts/

@@ -79,10 +79,14 @@ TF-READINESS.json is the exact code-only copy/config/release handoff. Consumer
 d20a801b has6Windows/Linux cases/737SDKexact, nativeSourceb6cf1904 and
 NAMESPACE-RELEASEb5bb781c. Original four public proofs remain history, not
 new-source qualification. Never copy private/OPS/counters/markers into a new
-root. Leibniz owns actual TF cutover/latch disposition and compatible exit;
-TF entry ended14:50UTC. Socrates prepares J17/L-specific bindings. Do not
-reuse TF proof for them or create a new entry opportunity. Existing technical
-HOLD needs exact request disposition, never generic deletion or bank reset.
+root. Actual TF cutover78fd46b5 has outerc078/release8367 and original Oct30
+19:49exit enabled; expiredentrydisabled. Exact TFbookee172045 has0plans/
+pending; only technical marker archivede5fc, all bank/counter/F9 preserved.
+Actual-root serial6eda4475 PASS, no new entry window or fill claim. Leibniz
+now owns exact J17 paired activation; readiness5cf67874/workerrelease9e8524ee
+is not the pretty testfd31. Lbd70d25c needs NO patch/redeployment: original
+6bc9/60d5 remains. Do not reuse TF proof for another source or call observe()
+as a reader. Any technical HOLD needs exact request disposition, no bank reset.
 
 At Oct26 02:07:23UTC all8 were enabled/Ready/0instances, exact XML/effectiveACL/
 nexttimes. Metadata is dated, not future process closure/acceptance/fill.

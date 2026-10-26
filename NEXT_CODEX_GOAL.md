@@ -31,11 +31,11 @@ A missing or future receipt is unknown. L is additional, not company completion.
 
 ## Ready / Owned / Due
 
-- Current disjoint packages through15:11UTC Oct26, not company completion:
-  Leibniz TF original-root namespace cutover/latch disposition/compatible exit;
+- Current disjoint packages through15:19UTC Oct26, not company completion:
+  Leibniz J17 original-root namespace paired cutover before17:00;
   Schrodinger2026 frozen comparison packets; Faraday Docker safe-metadata JSON
-  framing then OPTIONAL future-definition activation; Socrates exact J17/L
-  namespace readiness. Parent shared MD/Git. No installation
+  framing completed, new OPTIONAL embedded-SDDL activation; Socrates later2026
+  four-cell comparison predeclaration. Parent shared MD/Git. No installation
   inferred from assignment. Inputs/identity/triggers/budget unchanged.
   Actual GRU13:40 public1963c43b unavailable/recovery_required, dated13:46
   strict snapshot finds no exactGRUfinancial linkage. Later seed projections
@@ -62,6 +62,11 @@ A missing or future receipt is unknown. L is additional, not company completion.
   Namespace d20a801b is now host+Linux qualified6cases/737SDKexact,
   TFsourceb6cf1904/releaseb5bb781c. TF window already ended14:50; preserve
   original identity/counters/exit, not a rushed replacement opportunity.
+  TF actual78fd46b5 at15:11:42 has exit enabled/newouterc078/release8367,
+  expiredentrydisabled/0instances/ACLpreserved. Exact bookee172045 has0TF
+  plans/pending; technical-only archivee5fc94d5, no private/F9/debit reset.
+  No fill/zero historical wire claim. Lbd70d25c needs NO namespace patch,
+  original6bc9/60d5 unchanged after3host/2guestchecks/0Task effects.
   J17 readiness5cf67874 also qualified6actualcases/737SDKexact; actual
   worker release9e8524ee, not prettyfd31. Code cutover still separately owned.
   New2026 acquisition97343f3c actually1POST/23GET/2300rows/43of47gapsfilled,

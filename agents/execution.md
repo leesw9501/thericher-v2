@@ -70,13 +70,21 @@ Docker JSON framing is now PROVEN_JSON_VALUE_STREAM_CONTRACT_SOURCE_ONLY:
 Correct parser adoption is not Task deployment; old R4 remains evidenced.
 
 Public namespace qualified Consumerd20a801b:6Windows/Linuxcases/737SDKsame,
-TFnativeb6cf1904/releaseb5bb781c. Leibniz owns original-root actual cutover/
-exact technical-marker disposition and compatible paired exit. TF entry
-expired14:50UTC; no replacement opportunity. J17 readiness5cf67874 also
+TFnativeb6cf1904/releaseb5bb781c. ACTUAL-PAIR-FINAL78fd46b5 at15:11:42UTC
+under current-timesfm-public-namespace-owned-recovery-20261026-v1 proves
+exit enabled/newouterc078/release8367/expiredentrydisabled/0instances/
+ACLpreserved/0TaskRun/77othercomparedexact. Exact request scopeee172045
+has0TFplan/pending with account/basis/input/policy/full-native-book binding.
+Only technical marker archived e5fc94d5, private/F9/counters/debits unchanged;
+not a historical zero-wire claim. Actual-root serial6eda4475 PASS. No new
+entry opportunity. Leibniz now owns separate J17 paired cutover before17:00.
+J17 readiness5cf67874 also
 CLOSED6actualcases/11publicfiles, native90a228cc/outer889a011d and actual
 worker-generated release9e8524ee, not pretty testfd31. J17-READINESS46c3373f
-is handed directly to Execution; no actual installation inferred. Socrates
-now prepares L separately. All original private roots/counters/requests/F9,
+is handed directly to Execution; no actual J17 installation inferred. L
+Consumerbd70d25c reproduces original producer bytes/3host2guestcases and
+finds no namespace defect; copysetEMPTY, original6bc9/60d5/Tasks unchanged.
+All original private roots/counters/requests/F9,
 financial guards/inputs/policy/windows unchanged by public-source readiness.
 
 ## Actual GRU / P0 Source Repair

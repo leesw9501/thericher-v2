@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, through15:11UTC Oct26. A=D:/thericher-v2/model-artifacts;
+2026-10-27 KST, through15:19UTC Oct26. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -28,10 +28,10 @@ Assignments below do not prove that a numerical worker has started.
 | Owner | Current package / actual state |
 | --- | --- |
 | Parent / 총괄 | Integrate/Git and qualified public-namespace runtime repair; no fill/profit inference from research. Future-Task edit reviewd4ef7f35 separates mutable-definition ownership from bank-reader admission, not broker authority. |
-| Leibniz / 실행 | current-timesfm-public-namespace-owned-recovery-20261026-v1: original-root code cutover, exact technical latch disposition and compatible paired exit. Entry window ended14:50, no substitute. Prior GRU observationb03317f2 CLOSED. |
+| Leibniz / 실행 | TF actual78fd46b5 exit enabled/newc078, expiredentrydisabled; exact TF0plan/pending/technical-only archivee5fc. New current-joint17-public-namespace-owned-recovery-20261026-v1 pair cutover before17:00. No new opportunity/reset. |
 | Schrodinger / 엔진·연구 자원 | Acquisition97343f3c CLOSED1POST/23GET/2300rows/43of47gapsfilled. New current-2026-h5-frozen-comparison-packets-20261026-v1 features/outcomes-separated producer,0inference/economics. Sole GPU/registry owner; no active fit inferred. |
-| Faraday / 데이터·임시 Infra | current-docker-safe-metadata-json-contract-recovery-20261026-v1, then separately frozen current-entry-skip-json-contract-parent-activation-20261026-v1. Correct whole-output JSON parsing before actual Task staging. Earlier activation NOT installed; R4 remains actual. |
-| Socrates / 전략·임시 실행 | J17 readiness5cf67874 CLOSED6actualcases/737SDKexact/11publicfiles, worker-produced release9e8524ee. New current-L-public-reference-namespace-preparation-20261026-v1, no Task effects. No source borrows another cohort's proof. |
+| Faraday / 데이터·임시 Infra | JSON53documents proven; subsequent candidate SDDL spelling failed readback, exact oldR4restoredf6f2e275. New current-entry-skip-embedded-sddl-activation-20261026-v1, same Task/trigger/budget. No installation inferred. |
+| Socrates / 전략·임시 실행 | J17 readiness5cf67874 CLOSED; Lbd70d25c NO_PATCH_NEEDED/0Task effects. New current-joint-expert-2026-comparison-predeclaration-20261026-v1, savedJOINT/GRURISK/LOWVOL/uniform NET20, no inference/ledgers/fits. |
 
 New roots are under A/execution, A/data or A/research respectively. Closed
 training/ledgers are not rerun. SEC contact remains an optional isolated gap.
@@ -139,9 +139,10 @@ permanent role/platform is needed for these concrete packages.
   immutable artifacts. No completed training/ledger/SYNtrade is ready again.
 
 ## Throughput Review
-15:11UTC: actual bottleneck is public Windows/Linux release namespace, not
+15:19UTC: actual bottleneck is public Windows/Linux release namespace, not
 GPU/data/model profitability/permission. TF host+Linux qualificationd20a801b
-is closed; L owns original-root cutover and S prepares J17 before17:00.
+is closed and actual TF exit enabled. L owns J17 original-root cutover
+before17:00; S found original L needs no namespace code change.
 TF expired14:50, never conceal that by resetting its identity/window. Existing
 same one-shot18:42:59UTC remains unchanged until an
 actual new optional deployment requires exact reader/source prompt update.
