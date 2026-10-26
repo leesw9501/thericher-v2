@@ -51,9 +51,15 @@ availability/finality/PIT/TR. Its60s scoped floor is conservative delegated
 calibration, NOT proof of official one-minute wording; primary search excerpt
 currently says1/s. Legacy300s defaults/frozen contracts unchanged.
 Next assigned current-2026-h5-frozen-comparison-packets-20261026-v1 separates
-feature-only and outcome/held-price packets. Same40cohorts/100slots/4000keys,
-no imputation/window shrink, missing REQUIRED remains DATA_UNAVAILABLE. No
-model inference/ledgers/registry before its qualified handoff. Existing69/25/70/retention
+feature-only and outcome/held-price packets. It is now CLOSED55532634:
+4000keys/3063eligiblefeaturesREADY, held6fieldsDATA_UNAVAILABLE. CODX
+Feb17/18/19CLOSE+Feb20OPEN; BKYI Jun15CLOSE+Jun16OPEN. Carry at nextOPEN
+requires two marks absent from the earlier potential-key scan. No model/
+inference/ledger/registry/imputation/window shrink. New exact bounded
+current-2026-h5-held-mark-source-probe-20261026-v1 first inspects retained
+pages, then only useful different upper-date pages, sameMODP1/venue/rawM.
+S separately checks official economic events; absent/zero/provider-limit
+is not automatically a no-trade/zero valuation. Existing69/25/70/retention
 owners unchanged; Data is not a private-custody writer.
 
 A/data/current-memory-terminal-half-forward-capture-readiness-20261026-v1/READINESS.json,

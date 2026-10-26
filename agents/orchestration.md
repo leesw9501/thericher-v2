@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, through15:19UTC Oct26. A=D:/thericher-v2/model-artifacts;
+2026-10-27 KST, through15:34UTC Oct26. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -18,6 +18,10 @@ date before UNTIL. Host/app availability required; not future delivery proof.
 No new chain/standing monitor. Native update, no direct app DB writes.
 SAME saved one-shot updated to include installed pilot/recovery, actual due
 unchanged; readback8209e860/12checks+4negative cases. No new follow-up job.
+Latest native update69e6ac5c follows actual newentry96f676ec;8fields exact,
+rule/thread/notifications unchanged. Entry942 reader binds outerf4dd/runtime
+19902, recovery/exit remainR4. Prior18:42:59 due not freshly exposed, nominal
+18:45 unchanged. Config is not delivery; no new chain.
 
 ## Current Disjoint Owners
 
@@ -28,10 +32,10 @@ Assignments below do not prove that a numerical worker has started.
 | Owner | Current package / actual state |
 | --- | --- |
 | Parent / 총괄 | Integrate/Git and qualified public-namespace runtime repair; no fill/profit inference from research. Future-Task edit reviewd4ef7f35 separates mutable-definition ownership from bank-reader admission, not broker authority. |
-| Leibniz / 실행 | TF actual78fd46b5 exit enabled/newc078, expiredentrydisabled; exact TF0plan/pending/technical-only archivee5fc. New current-joint17-public-namespace-owned-recovery-20261026-v1 pair cutover before17:00. No new opportunity/reset. |
-| Schrodinger / 엔진·연구 자원 | Acquisition97343f3c CLOSED1POST/23GET/2300rows/43of47gapsfilled. New current-2026-h5-frozen-comparison-packets-20261026-v1 features/outcomes-separated producer,0inference/economics. Sole GPU/registry owner; no active fit inferred. |
-| Faraday / 데이터·임시 Infra | JSON53documents proven; subsequent candidate SDDL spelling failed readback, exact oldR4restoredf6f2e275. New current-entry-skip-embedded-sddl-activation-20261026-v1, same Task/trigger/budget. No installation inferred. |
-| Socrates / 전략·임시 실행 | J17 readiness5cf67874 CLOSED; Lbd70d25c NO_PATCH_NEEDED/0Task effects. New current-joint-expert-2026-comparison-predeclaration-20261026-v1, savedJOINT/GRURISK/LOWVOL/uniform NET20, no inference/ledgers/fits. |
+| Leibniz / 실행 | TF78fd46b5 and J17d28be2ab actual cutovers CLOSED; J17 pair enabled17:00/Nov20/0instances. Existing strict private-reader exact newSource handoff preparation only, no actual private read inferred. |
+| Schrodinger / 엔진·연구 자원 | Packet55532634 features4000keys/3063eligible READY,6heldfieldsUNAVAILABLE. Exact held-mark source probe plus separately frozen saved-expert feature-only GPU inference2newpasses/0fits/economics; disjoint Data/network and GPU/no-target paths under sole coordinator. Actual worker start not inferred. |
+| Faraday / 데이터·임시 Infra | Optional entry96f676ec ACTUALLY enabledf4dd/runtime19902; recovery/exitR4. New current-paper-safe-first-cause-handoff-20261026-v1 source-only diagnostics, no tonight deployment or Task edits. |
+| Socrates / 전략·임시 실행 | Contract5d669dc3/d597 frozen adaptive four-cell comparison remainsDATA_UNAVAILABLE. New current-2026-h5-held-mark-economic-support-20261026-v1 official CODX/BKYI event/source facts, no prices/models/PnL. |
 
 New roots are under A/execution, A/data or A/research respectively. Closed
 training/ledgers are not rerun. SEC contact remains an optional isolated gap.
@@ -139,10 +143,11 @@ permanent role/platform is needed for these concrete packages.
   immutable artifacts. No completed training/ledger/SYNtrade is ready again.
 
 ## Throughput Review
-15:19UTC: actual bottleneck is public Windows/Linux release namespace, not
-GPU/data/model profitability/permission. TF host+Linux qualificationd20a801b
-is closed and actual TF exit enabled. L owns J17 original-root cutover
-before17:00; S found original L needs no namespace code change.
+15:34UTC: known Windows/Linux namespace repair is ACTUALLY deployed for TF
+exit/J17 pair, not a new market result. Next runtime17:00 is worker-owned;
+research's exact6held-field gap is a separate bottleneck, not a company hold.
+Probe retained/new exact upper-date pages and official event facts in parallel.
+S found original L needs no namespace code change.
 TF expired14:50, never conceal that by resetting its identity/window. Existing
 same one-shot18:42:59UTC remains unchanged until an
 actual new optional deployment requires exact reader/source prompt update.

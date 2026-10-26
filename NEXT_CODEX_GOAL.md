@@ -31,11 +31,11 @@ A missing or future receipt is unknown. L is additional, not company completion.
 
 ## Ready / Owned / Due
 
-- Current disjoint packages through15:19UTC Oct26, not company completion:
-  Leibniz J17 original-root namespace paired cutover before17:00;
-  Schrodinger2026 frozen comparison packets; Faraday Docker safe-metadata JSON
-  framing completed, new OPTIONAL embedded-SDDL activation; Socrates later2026
-  four-cell comparison predeclaration. Parent shared MD/Git. No installation
+- Current disjoint packages through15:34UTC Oct26, not company completion:
+  Leibniz exact private-reader handoff after actual J17 pair cutover;
+  Schrodinger exact six-held-field source probe; Faraday safe first-cause
+  handoff preparation; Socrates official economic/event support for two gaps.
+  Parent shared MD/Git. No runtime success
   inferred from assignment. Inputs/identity/triggers/budget unchanged.
   Actual GRU13:40 public1963c43b unavailable/recovery_required, dated13:46
   strict snapshot finds no exactGRUfinancial linkage. Later seed projections
@@ -52,7 +52,7 @@ A missing or future receipt is unknown. L is additional, not company completion.
   change; cheapcontrols3436a2a3 also closed. Fixed blend4fe1d90c declared
   before Parent inspected TCN economics, not untouched/independent evidence.
   Host cold09d59a0b first-effect-stop passed only invented data; optional
-  upgrade actual installation still unobserved. Existing SPY
+  upgrade is now ACTUALLY installed96f676ec, not a fill. Existing SPY
   future Task e9466a1c IS installed Nov20, no current/future HTTP result.
   Joint3803ba62 has since completed3CUDAfits/9541updates/131checks/allclosed:
   NET20+5.7661%/DD3.1443%, frozen4checks pass but noise unresolved/reused.
@@ -69,9 +69,19 @@ A missing or future receipt is unknown. L is additional, not company completion.
   original6bc9/60d5 unchanged after3host/2guestchecks/0Task effects.
   J17 readiness5cf67874 also qualified6actualcases/737SDKexact; actual
   worker release9e8524ee, not prettyfd31. Code cutover still separately owned.
+  J17 actuald28be2ab/pair28cab416 is enabled15:27:50, outer889a011d/
+  release13ce39f3/native90a228cc,17:00entry/Nov20exit unchanged/86otherexact.
+  No actual private read/TaskRun/KIS. Exact new public routing cdc824cd/
+  e5c15241 under current-oct26-public-reader-supersession-20261026-v1 also
+  binds TF OLD entry proofs to preserved backups, not repaired-source history.
   New2026 acquisition97343f3c actually1POST/23GET/2300rows/43of47gapsfilled,
- 4remaining/0overwrite/conflict/allclosed. Separate packet build now assigned,
-  no model/inference/economics yet or claim of untouched outcomes.
+ 4remaining/0overwrite/conflict/allclosed. Packet55532634 features4000keys/
+  3063eligible READY,6requiredheldfieldsUNAVAILABLE; source probe/economic
+  fact check continue without date drop or new model/econ calls. Contract
+  5d669dc3/d5978936 is adaptive retrospective, not untouched confirmation.
+  Qualified features separately feed two savedF3GPUfirstpasses under Steward,
+  new scope0fits/economics/targets/network. Missingheldmarks block economic
+  cells, not this feature-only inference. Assignment is not observed start.
 
 - Parent repaired the EXISTING same-chat follow-up oct26-paper. Nominal
   Oct26 18:45UTC/Oct27 03:45KST, actual saved18:42:59UTC/03:42:59KST.
@@ -79,6 +89,10 @@ A missing or future receipt is unknown. L is additional, not company completion.
   INSTALLED extra pilot/recovery;12backend checks+4negative cases PASS.
   Evidence8209e860 in current-memory-terminal-half-early-parent-activation-20261026-v1/FOLLOWUP-READBACK.json.
   Saved configuration is not future delivery; host/app availability required.
+  Superseding same-ID update69e6ac5c after actual entry upgrade96f676ec binds
+  outerf4dd ->runtime19902/newentryreader942abc5c. Recovery/exit oldR4 intact.
+  Eightfullfield readback checks pass; rule/thread/notifications preserved.
+  Priorobserved18:42:59 due not freshly exposed after native update; no chain.
 - Optional public reader4f4e2e51/ROUTES-r2ef4f5099 is ready; CLI in RUNBOOK.
   Transport is not original-window/private intent/fill/current-owned proof.
   Use existing separately admitted strict private readers; never observe()

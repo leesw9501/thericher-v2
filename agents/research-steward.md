@@ -37,8 +37,14 @@ Joint current point also CLOSED: one restore/forward100padded/69known,
 backdate/automaticroll/rerun. Schrodinger's 2026Data readiness92ed2a2d is
 CLOSED40cohorts/4000keys/47potential asset-day gaps. Actual bounded gap
 acquisition97343f3c then filled43/47,1POST/23GET/2300rows/allworkersclosed.
-Feature/outcome-separated packets are the new disjoint preparation before a
-frozen later-period comparison; no model/economic replay yet or active fit.
+Feature/outcome-separated packets55532634 are CLOSED:3063eligiblefeature
+rows/4000fixedkeysREADY but6heldfieldsUNAVAILABLE. Contract5d669dc3/d5978936
+freezes four saved-expert/control NET20cells. Economic cells need held marks;
+qualified feature inference does not. New current-2026-h5-saved-expert-feature-
+inference-20261026-v1 is assigned2savedF3/onefirstpass each/0fits/economics,
+same coordinator with disjoint Data HTTP worker. Fresh VRAM/actual source/
+checkpoint/schema bootstrap facts precede execution, no activeGPU inference
+claimed merely from assignment. Exact source probe/event facts continue.
 No dummy load or repeat of completed fits.
 MetaGate CPU campaign CLOSED_VERIFIED_REJECT; registry654cc9f9 was appended
 once by Steward. SameOPEN netting CLOSED2cba605f/fourcells/positivecash,

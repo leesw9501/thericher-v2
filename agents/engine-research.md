@@ -7,6 +7,19 @@ debits remain Git0438ecd:agents/engine-research.md and immutable consumers.
 
 ## Current Consumer / Ready Work
 
+Latest later-period consumer: Data55532634 features4000keys/3063eligible/
+40cohortsREADY,6requiredheldfieldsUNAVAILABLE. Frozen comparison contract
+5d669dc3/Consumerd5978936: savedF3JOINTATTN/GRURISK/LOWVOL20/uniform,
+four NET20cells/sameOPEN/.10notional/kernelb105, no fits or ratio search.
+ClaudeREVISE retained; retrospective adaptive screen, not untouched replication.
+Financial cells remain blocked, not qualified feature-only inference. Steward
+now owns separately frozen current-2026-h5-saved-expert-feature-inference-
+20261026-v1: two savedF3models/one new market pass each,0fits/economics,
+feature-only/source/modelRO/no target or network. Actual start not inferred.
+Data exactpage probe and Strategy official event check run in parallel. This is a
+six-field scoped block, not GPU/Paper permission or a ban on other hypotheses.
+Saved models already trained remain saved; no duplicate training for load.
+
 New H5 downside campaign CLOSED at A/research/current-h5-downside-expert-
 development-20261026-v1/CONSUMER.json, SHAf6ccbb64. Six new CUDA market fits,
 two native fits,3238market updates/89epochs, eight first economic ledgers.

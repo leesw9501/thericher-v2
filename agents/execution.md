@@ -64,10 +64,17 @@ compliance unproven, never regraded/refunded. Parent Claude d4ef7f35 permits
 ONLY narrow future Task-definition edit admission for this installer; no
 private read/API/Run, old optional-owner positive closure, unchanged trigger/
 ACL and staged readback. It is NOT bank-reader or future runtime authority.
-Current future-definition activation remains unproven until actual readback.
+Earlier future-definition attempts are retained failures, not installations.
 Docker JSON framing is now PROVEN_JSON_VALUE_STREAM_CONTRACT_SOURCE_ONLY:
 53actualsafe documents/IDs matched/one probe, native6cases,0private/API/Task.
 Correct parser adoption is not Task deployment; old R4 remains evidenced.
+Superseding actual optional entry96f676ec is now enabled15:21:15UTC after
+embedded-SDDL fix; newentryf4dd/runtime19902/release5ba4,79otherXML/ACLsame.
+Recovery/exit oldR4 remain,0TaskRun/KIS/private/fill. Entry reader942abc5c
+via current-entry-skip-pilot-parent-activation-20261026-v1/READER-BINDING.json
+uses explicit outer/runtime mapping and new receipt root, not old R4entry.
+Same appfollowup69e6ac5c updated/8fieldreadback/rulethreadnotificationssame;
+postupdate actual due not freshly exposed, config not future delivery.
 
 Public namespace qualified Consumerd20a801b:6Windows/Linuxcases/737SDKsame,
 TFnativeb6cf1904/releaseb5bb781c. ACTUAL-PAIR-FINAL78fd46b5 at15:11:42UTC
@@ -81,11 +88,24 @@ entry opportunity. Leibniz now owns separate J17 paired cutover before17:00.
 J17 readiness5cf67874 also
 CLOSED6actualcases/11publicfiles, native90a228cc/outer889a011d and actual
 worker-generated release9e8524ee, not pretty testfd31. J17-READINESS46c3373f
-is handed directly to Execution; no actual J17 installation inferred. L
+was consumed by ACTUAL J17d28be2ab/pair28cab416 at15:27:50UTC:
+both original17:00entry/Nov20exit enabled/0instances/ACL/86otherdefs exact,
+outer889a011d/release13ce39f3/native90a228cc/producer9e8524ee. No private
+read/pending conclusion or TaskRun/KIS. Native exact-request checks remain.
+Public readercdc824cd/manifeste5c15241 at current-oct26-public-reader-
+supersession-20261026-v1 binds J17 CURRENT and TF HISTORICAL entry backups.
+18checks/9TFpublicresults:4532aae3unavailable,8seed-only. Not financial proof
+or TF future-exit routing. No recovery observe() or old-source masquerading. L
 Consumerbd70d25c reproduces original producer bytes/3host2guestcases and
 finds no namespace defect; copysetEMPTY, original6bc9/60d5/Tasks unchanged.
 All original private roots/counters/requests/F9,
 financial guards/inputs/policy/windows unchanged by public-source readiness.
+TF operational cutover completed before deadline, but report deadline overrun
+is preserved in Consumer; no retroactive cap pass. J17 actual closure628.05s/
+1800/10.87measuredcommandseconds, allownedprocessesclosed. Leibniz next
+prepares exact existing strict currentgoal private-reader handoff,0actualread.
+Faraday prepares allowlisted failure-stage diagnostics for a future explicit
+repair only; tonight's Sources/Taskdefinitions remain unchanged by that work.
 
 ## Actual GRU / P0 Source Repair
 

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, integrated parallel results through15:19UTC Oct26.
+2026-10-27 KST, integrated parallel results through15:34UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -29,26 +29,51 @@ Fresh exact account/basis/input/policy/native-book projectionee172045 proves
 no TF registered plan/pending request. Only its technical marker archived
 e5fc94d5; counters/debits/private/F9 unchanged. No historical zero-wire claim,
 new entry window, substitute or fill. External actual-root serial6eda4475 PASS.
-Leibniz now owns separately bounded J17 paired cutover before17:00.
+TF Consumer also preserves report-deadline failure: operational readback was
+15:11:42 before15:13:27 deadline, final report overran. No retroactive pass.
+J17 actual pair is now enabled at15:27:50UTC: Consumerd28be2ab/pair28cab416
+under current-joint17-public-namespace-owned-recovery-20261026-v1,
+outer889a011d/release13ce39f3/native90a228cc/producer9e8524ee. Original
+17:00entry/Nov20exit/ACL/input/policy/private paths/counters/F9 unchanged,
+0instances/TaskRun/KIS/private reads,86otherdefinitions unchanged.
+No runtime fill or fresh private pending conclusion from this deployment.
 L auditbd70d25c found NO matching namespace defect: actual original producer
 release reproduced,3host/2guestcases/499closedfiles/0changes. Preserve original
 Lsource6bc9da68/release60d500f3, no gratuitous redeployment.
 Faraday proved Docker JSON framing but its next candidate stage differed only
 in embedded SDDL spelling; exact original R4 restored f6f2e275 at15:09UTC.
-New embedded-SDDL scope is separately assigned, not another effect attempt.
-Old R4 remains the evidenced deployment;
-same app follow-up stays on its old pins until actual new installation proof.
+Embedded-SDDL actual callback96f676ec at15:21:15 proves OPTIONAL ENTRY upgrade
+enabled/0instances/18:30UTC, outerf4dd1991/runtime19902db4/release5ba4d309,
+79otherXML/ACL unchanged. Recovery/exit remain oldR4f4b1974b/32a5fbf9.
+No TaskRun/KIS/private access/fill. Same oct26-paper automation updated through
+native tool,8fields exactly read back,69e6ac5c FOLLOWUP-READBACK.json in
+current-entry-skip-embedded-sddl-activation-20261026-v1. Rule/thread/notification
+unchanged; nominal18:45UTC, priorobserved18:42:59 not freshly exposed after
+update. Host/app delivery unobserved. No new follow-up chain.
 J17 readiness5cf67874 is also CLOSED:6actualhost/Linuxcases/737SDKexact,
 source90a228cc/outer889a011d, actual worker-generated release9e8524ee,
 not pretty test-envelopefd31deb6. J17-READINESS46c3373f binds11public files;
-actual deployment remains separate. S now freezes four-cell later2026 comparison
-for saved JOINT/GRURISK/LOWVOL/uniform, no new fits or outcomes in that package.
+readiness was consumed by the actual deployment above, not a ready duplicate.
+Current public reader cdc824cd under current-oct26-public-reader-supersession-
+20261026-v1 binds manifest e5c15241: TF HISTORICAL entry source/release at
+exact backup-r2 old hashes, J17 CURRENT repaired source. Same reader bytes,
+18checks/9actualTFpublic projections/0private/API/Task/Ruff/ASTsame. TF actual
+4532aae397554aa6ac273df9459c2e24 unavailable/recovery_required;8seed-only,
+not fill/reconciliation. This manifest is NOT TF future-exit routing.
 Schrodinger's 2026 acquisition97343f3c CLOSED:1POST/23GET/2300rows/43of47
 potential asset-days filled,4remaining/0overwrite/conflict/allworkersclosed.
 Raw M only. Current packet producer is separately assigned for40cohorts/
 4000keys Jan07..Oct16entries/lastCloseOct22; features separate from outcomes,
-no inference/economic cells yet. Required missing data is not imputed or
-silently dropped. Unknown reuse is not fresh/PIT/TR/finality evidence.
+Data packet55532634 now has4000keys/3063eligible feature rows READY but6held
+fields unavailable: CODX Feb17/18/19CLOSE+Feb20OPEN and BKYI Jun15CLOSE+
+Jun16OPEN. No imputation/date drop/inference/economics. Fixed four-cell
+contract5d669dc3/d5978936 is retrospective adaptive, ClaudeREVISE retained.
+Schrodinger probes exact retained/new upper-date KIS pages; Socrates separately
+checks official economic/trading-event support, not another model rerun.
+Qualified features are also separately assigned to two savedF3 GPU first
+passes under one coordinator,0fits/economics/no targets/network mounts. This
+does not require missing HELD prices; actual worker start remains unobserved.
+Unknown reuse is not fresh/PIT/TR/finality evidence.
 
 Fresh compatibility Consumer6d7aaeb8 at
 A/verification/current-native-public-reference-recovery-20261026-v1:

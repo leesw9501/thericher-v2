@@ -100,8 +100,8 @@ Do not rerun read_scheduler.ps1 into its closed exclusive evidence output.
 ## Existing App Follow-Up
 
 ACTIVE same-chat heartbeat oct26-paper is saved through native automation tools.
-Nominal Oct27 03:45KST / Oct26 18:45UTC; actual stored jittered next_due
-Oct27 03:42:59KST /18:42:59UTC, after final L entry03:15KST.
+Nominal Oct27 03:45KST / Oct26 18:45UTC; prior observed jittered next_due
+Oct27 03:42:59KST /18:42:59UTC, not freshly exposed after latest native update.
 One fixed date before UNTIL; no recurring report/replacement chain/new worker.
 Saved config and read-only app-row check:
 A/orchestration/current-oct26-app-followup-repair-20261026-v1/CONSUMER.json,
@@ -111,6 +111,10 @@ database/config edit or cron workaround. A suggested card/create success alone
 did not establish time; backend UTC/actual-due readback did. Host and desktop
 app availability remain necessary; saved next_due is not actual delivery.
 Do not rerun the exclusive inspect.py output or create a duplicate follow-up.
+Latest same-ID native update69e6ac5c under current-entry-skip-embedded-sddl-
+activation-20261026-v1/FOLLOWUP-READBACK.json:8exactfieldchecks, rule/thread/
+notifications unchanged. Prompt binds ACTUALLY installed entryf4dd ->19902,
+reader942abc5c; oldR4 recovery/exit unchanged. No delivery/new worker inferred.
 
 ## Optional Public Outcome Reader
 
@@ -123,6 +127,14 @@ not activation-code-only directories. No SDK/client/CLI/recovery imports.
 
 Catalog ALL public visits; missing/empty catalog is UNKNOWN, never no-intent,
 zero orders or success. The tag may be GRU, TimesFM, Joint17 or L.
+For current J17 and HISTORICAL TF entry use superseding manifeste5c15241
+in A/execution/current-oct26-public-reader-supersession-20261026-v1,
+Consumercdc824cd. Reader bytes unchanged,18checks/9actualpublicTFprojections/
+0private/API/Task, Ruff and formatting-AST identity PASS. TF source/release
+now point to exact OLD backup bytes, not new-source masquerading. Actual TF
+entry4532aae3 unavailable/recovery_required;8seeds not financial evidence.
+This entry manifest is NOT TF future-exit routing. J17 current actual pair
+d28be2ab uses889a/13ce/90a/9e85, not old-source observations.
 
 ```powershell
 $python = 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe'
@@ -136,6 +148,12 @@ actual phase. VISIT32 below is a placeholder, never guessed/latest identity:
 
 ```powershell
 & $python -I -S -B $reader --manifest-sha256 $pin --tag GRU --visit VISIT32 --phase entry
+```
+
+```powershell
+$reader = 'D:/thericher-v2/model-artifacts/execution/current-oct26-public-reader-supersession-20261026-v1/receipt_reader.py'
+$pin = 'e5c15241b56aacc62535bb3d900f6595f8687e5ea19e267026f13e51c63fc66e'
+& $python -I -S -B $reader --manifest-sha256 $pin --tag Joint17 --catalog
 ```
 
 SOURCE_BOUND_PUBLIC_TRANSPORT_ONLY is not fresh scheduled-opportunity or
@@ -215,6 +233,15 @@ SHA57c43f59, installed3futureTasks with activeRelease32a5fbf9 after exact58ba
 20,730byte cached staging.08:44UTC all3Ready/0instances/neverstarted and
 original8 XML/ACL unchanged. No Task manually invoked or broker called.
 Do not rerun installation/staging/model calls or use a false release.
+That R4 entry is now superseded by actual96f676ec in
+current-entry-skip-embedded-sddl-activation-20261026-v1/CALLBACK.json:
+entryf4dd1991/runtime19902db4/release5ba4d309, same18:30trigger/ACL/input/
+policy/ONEtenth/79otherdefinitions exact. Recovery/exit remain originalR4.
+Entry public reader exact CLI and receipt root are in
+A/execution/current-entry-skip-pilot-parent-activation-20261026-v1/READER-BINDING.json,
+reader942abc5c. Do not scan old R4 entry results or compare outerf4dd with
+runtime19902 as if one Source. Bounded skip progression stops at first effect/
+pending/unknown; one visit still not full-basket or fill proof. No reinstallation.
 Source-owned Readback/never-started rollback commands remain under
 current-memory-terminal-half-early-activation-preparation-20261026-v1/COMMANDS.json;
 rollback after any start requires actual positive closure, no reservation reset.
