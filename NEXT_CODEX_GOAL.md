@@ -46,34 +46,57 @@ ADOPTEDd3407cdb/manifest8f8ddcb1, original320/J174aa/optional bindings retained.
 
 ## Disjoint Ready Work
 
-- Execution/Leibniz: MSFT generic account-session native SYN Sourcec3fd8e69
-  passed entry/unknown-cancel/exact-recovery/exit on an INVENTED bank. Generic
-  QQQ attempt67aca140 FAILED reserved-ETF scope; never remove that guard.
-  NEW current-paper-engineering-msft-host-guest-integration-20261027-v1:
-  implement real host->Linux guest financial SYN/OwnerAdmission/BankLeg/
-  Job/container closure, max900owned/1800elapsed/one case+one predeclared
-  technical retry. No actual credentials/private bank/Task/KIS in this package.
-  Do not rush or weaken guards for today's market close. Parent alone assigns
-  any real finite opportunity after source/input/account owner binding.
-- Parent: current-code image27dde810 is built/748exact source members/native
-  import+inert API PASS/0credentials-network-private, Consumer6e27f996.
-  Existing737SDK/images/old owners unchanged. Source/native readiness is not
-  actual deployment. Integrate the new bridge and narrowly repair any fault.
-- Data/Faraday: q10packetsa56a5e9a built once/62.83active/allJobsclosed and
-  consumed. Current public L selector is adopted; no result was read.
-  Only useful new source/availability preparation, no duplicate collectors.
-- Engine/Steward/Schrodinger: q10ab2d70d6 CLOSED_REJECT, actual3CUDAfits/
-  1199updates/77epochs/3OOF140rows/0retry/0financial/all11CIDs55Jobsclosed.
-  Pinball .0039509128 loses constant .0039075562 and vol .0038617389.
-  No rescue/repeat. Inventory existing foundation checkpoints/dates and
-  underrepresented hypotheses before any genuinely new finite campaign.
-- Strategy/Halley: one concrete nonduplicate selection proposal or rejection,
-  with causal technical/price-volume features and aligned cheap cost controls.
-  Subtracting one common benchmark alone does NOT change same-date ranks.
-  No new market numerical dispatch until a distinct frozen contract.
-- Invoked Review/Socrates: optional c55d Source forensics closed, no actual
-  historical cause proven. Share exact diagnostic seam with new MSFT host;
-  no extra private read or new report/agent platform.
+Execution/Leibniz operational Consumer92042ff4 is READY FALSE RELEASE,
+NOT installed:
+A/execution/current-msft-oct27-operational-binding-preparation-20261027-v1.
+Host37bda1e9/route d6787bc5/image27dde/input169ee4b2/policy206e36be.
+Separate deterministic MSFT engineering proposal, not a substitute unknown
+QQQ request or a profitable-model claim. Four finite quiet windows UTC:
+Oct27 entry13:40..13:44/recovery13:47..13:51, Nov2 exit20:45..20:49/
+exactexitrecovery20:52..20:56. Native H5 includes entry session, Nov2 CLOSE.
+Maximum .005 of original full basis B stays inside ONE original B/10.
+Parent qualifies actual same-account native book/MSFT registration/current
+owner closure, then uses tested TRUE-release/install/rollback package;
+no hand-edited release, Task.Run or borrowed SYN owner. Socrates owns ONE
+network-none RO read20:42..21:00UTC in current-msft-operational-native-book-
+admission-20261027-v1; assignment is not a completed read. Existing pending,
+F9 reservations, native quote/orderability/risk and owner checks remain.
+
+Completed full host->Linux financial SYN b3fedf64 PASS/allresourcesclosed,
+actual BankLeg/Jobs/CIDs/OwnerAdmission/deadlines/5native visits, SYN account/
+HTTP/financial clock/owner. Not a real financial result; do not repeat.
+Actual readonly faef83ee consumed1POST5GET/0retry, original account anchor
+matches;7sequential broker holdings not adopted, NASD openorders0 scope only,
+MSFT positive orderable at fixed reference NOT actual quote/sizing/equity.
+No unknown reservation release or actual new order proved.
+
+Data/Faraday:
+A/data/current-nas8-hgb18-currentpoint-features-20261027-v1.
+Exact20context61prior OHLCV endingOct26 -> NAS8/18features, no labels.
+Completed HANDOFFe76f0401:20GET1POST0retry/20accepted/5Jobsclosed59.768869active,
+native actual producer/cold consumer/independent verification/Ruff PASS.
+Featureend20:00UTC/observed20:49:48.613373, M-only immutable raw/no splice/
+imputation/PIT/CA/finality promotion. Direct Engine handoff, independent of
+private-bank writer. Next only small source/schema readiness, no duplicate data.
+
+Engine/Steward/Schrodinger: NAS8 HGB18 Sourcec9c35f6e/result4f6016b8 CLOSED_REJECT,
+3CPUfits112stages/3OOF47dates376rows/4NET20cells/0retry/allclosed.
+Growth2.8773413%/DD1.9274526% beats baseline growth but fails uniform8 DD1.8751808%.
+Do not regrade/rerun. New current-nas8-hgb18-feature-only-currentpoint-20261027-v1
+reuses saved F3 stage11,0fits/0economic/max1actual8row inference/allow_submitFALSE.
+Research OPEN[e+5] differs from native H5 CLOSE[e+4]; later Paper binding is
+an explicit operational variant, not exact backtest replication. Then audit
+source-only NAS8 ranking-target CUDA readiness for genuinely untested work.
+Completed q10/context/seeds/foundation comparisons are not active/repeat jobs.
+
+Strategy/Halley: separately frozen20:48UTC/hard21:48,600owned/3600elapsed,
+A/research/current-nas8-hierarchical-logreturn-composition-20261027-v1.
+One raw HGB residual + beta60*(.25*prior20 SPY log momentum) formula,
+beta-only control,0fits/model calls/HTTP/retries/1projection/max2NET20cells/
+1held intake. Actual prior-only scalar ABI and full47policy alias checks
+before prices. Kill unless growth beats BOTH HGB/beta-only and DD<=uniform8;
+no ratio/sign/window rescue. Adaptive reused-data development, not alpha.
+Old source-only elapsed654/600/Claude REVISE remains recorded/closed.
 
 ## Boundaries / Completion
 

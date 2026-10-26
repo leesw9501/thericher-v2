@@ -22,6 +22,20 @@ Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Original three-entry goal explicitly SUPERSEDED_NOT_ACHIEVED. GRU/TF/J17/L/
 optional original entry windows have now ended; do not extend/reopen them.
 
+New finite engineering controller is READY FALSE RELEASE, NOT installed:
+A/execution/current-msft-oct27-operational-binding-preparation-20261027-v1/CONSUMER.json,
+92042ff4/host37bda1e9/image27dde/input169ee4b2/policy206e36be. Preparation
+COMMANDS.ps1 is INERT only; do not add --execute or hand-edit FALSE release.
+Parent-owned tested activation package is separate; actual bank/registration/
+current custody must qualify first, no synthetic owner grant. Windows UTC:
+Oct27 entry13:40..13:44/recovery13:47..13:51; Nov2 exit20:45..20:49/
+exactexitrecovery20:52..20:56. Native H5 includes entry session/Nov2 CLOSE.
+Gross .005 is maximum of original full basis, within shared tenth, not a new
+allocation. Full host/Linux financial SYN b3fedf64 passed/allclosed, no actual
+broker fill. Real readonly faef83ee consumed1POST5GET/0retry/anchor matches;
+7broker holdings not adopted, NASD openorders0 never releases unknowns.
+MSFT positive orderable at fixed reference is not quote/affordability/equity.
+
 L installed outer32012b79/releasedc004d88/host0ccb1112 at18:11:10UTC.
 Exact18:12 visitfce25c9f571c4f2d8d8afd1276396410 diagnostic7d02658b:
 source_pin at host.call44 before PowerShell metadata subprocess. Frozen7.6.7

@@ -20,7 +20,31 @@ Source/native baseline, not a silent QQQ substitute. QQQ prototype67aca140
 FAILED: reserved ETF scope rejects generic path,3development attempts retained.
 Never remove that guard/adopt foreign inventory/substitute unknown QQQ.
 Current image27dde has748exact members/inert native API PASS but is NOT an
-admitted broker writer. Single native entry/recovery/exit smoke still needed.
+admitted broker writer. Full actual host->Linux SYN b3fedf64 now PASSED:
+BankLeg/Jobs/CIDs/123OwnerAdmission exchanges/native deadlines,5visits for
+partialBUY/unknownCANCEL/exactrecovery/owned SELL/flat. SYN owner/account/HTTP/
+financial clock, not actual Scheduler/broker fills; all owned resources closed.
+Full I/O preflight covers canonical state, CONTROL locks/timing and artifacts.
+Prior3failed financial attempts remain charged/closed; do not replay PASS.
+
+Real operational source READY_FALSE_RELEASE_NOT_INSTALLED, Consumer92042ff4:
+A/execution/current-msft-oct27-operational-binding-preparation-20261027-v1/CONSUMER.json.
+Host37bda1e9/image27dde/input169ee4b2/policy206e36be; deterministic engineering
+MSFT proposal, not learned profitability. Four finite quiet definitions:
+Oct27 entry13:40..13:44/recovery13:47..13:51UTC, Nov2 exit20:45..20:49/
+exit-recovery20:52..20:56. Native H5 includes entry session, Nov2 CLOSE.
+Maximum metadata .005 of original full basis B, within ONE original B/10;
+not .005 of that tenth or a new bank. Parent stages TRUE release/install only
+after actual same-account book/registration/current-owner qualification.
+Socrates ONE actual network-none RO admission scope20:42..21:00UTC is separate;
+do not reuse consumed L/optional readers or infer completion from assignment.
+
+Real Paper readonly capability Consumerfaef83ee at20:20:48..54UTC completed
+1tokenPOST/5GET/0retry. Paper4 matches original anchor; sequential complete
+NASD/NYSE/AMEX holdings7broker instruments are NOT adopted strategy inventory.
+NASD open-orders0 is scoped only, never F9/unknown reservation release.
+MSFT orderable positive at fixed1USD reference is not quote/sizing/equity.
+No fees/netPnL/fresh native registration proof; all workers closed. No repeat.
 Socrates actual L RO667c967a consumed18:58:21,13Jobs/containerclosed. Missing
 journal UNKNOWN/counts null/notflat/F9unchanged; pre-read native admission
 independent. Optional actual5634e962 CONSUMED/all13Jobs+containerclosed; no exact cohort

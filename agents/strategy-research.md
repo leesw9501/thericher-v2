@@ -7,6 +7,22 @@ Detailed closed history: Gitbb391f30 and immutable source/consumer records.
 
 ## Current / Concrete Consumer
 
+Halley now owns newly frozen fixed hierarchical composition:
+A/research/current-nas8-hierarchical-logreturn-composition-20261027-v1.
+Origin20:48UTC/hard21:48,600owned/3600elapsed,0fits/model calls/HTTP/retries,
+1full47row projection/max2new NET20ledgers/1held intake. Exact raw residual
+HGB + beta60*(.25*SPYprior20 CLOSE log momentum), beta-only control; existing
+NAS8/keys/20bp-per-leg/.10once/kernel fixed. Actual prior-only SPY scalar/file
+ABI and complete policy aliases before any held prices. No scalar imputation,
+double inverse or ratio/sign search. Kill unless growth beats BOTH HGB and
+beta-only and DD<=uniform8. Adaptive reused development, not independent alpha.
+
+Prior source-only proposal is CLOSED, consumercategorically REVISE/no retained
+Claude rationale;654elapsed/600,46ownedupper/120, overrun stays recorded.
+Missing scalar and alias checks belong to the NEW tested package, not proof
+the adverse advice agreed or a refund/extension. Closed HGB18 result remains
+REJECT despite2.8773%growth: DD1.9275% exceeds uniform8 1.8752%.
+
 Cost-position proposal2509c8ca/kernelcfdd89ce was consumed by CLOSED gate
 eca8d542. Gate outputs EXACT0/1; native economic kernel applies .10 ONCE.
 FLAT enters only above fixed roundtrip cost hurdle; held position retains
@@ -39,10 +55,9 @@ exact cohort UNKNOWN/counts null/notflat/F9 unchanged. Source forensicsc602
 three invented cases show possible empty sinks, not actual c55d cause.
 No more private reads. MSFT host receives the categorical diagnostic seam.
 
-Halley now checks one distinct selection-mechanism Source proposal or concrete
-duplicate rejection. Common benchmark subtraction alone preserves same-date
-ranks; old beta-peer Ridge/stock-specific research must not be repeated.
-No market data/model/financial dispatch in this proposal package.
+Selection Source9763f147 was consumed by closed HGB18 study; common benchmark
+subtraction alone preserves same-date ranks, causal unequal beta target is
+distinct. No old beta-peer Ridge/stock-specific result is relabelled new.
 
 ## Recent Decisions / Lessons
 

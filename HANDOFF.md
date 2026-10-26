@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST; evidence through19:32UTC Oct26.
+2026-10-27 KST; current integration review20:50UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 AGENTS.md owns authority. Parent owns shared MD/Git and installed cutovers.
@@ -15,6 +15,30 @@ SUPERSEDED_NOT_ACHIEVED, not completed. Ended entry windows are not reopened.
 Direction review1a99ab9c/Claude ADOPT_WITH_LIMITS is advisory, not authority.
 
 ## Execution First
+
+Newest bridge evidence b3fedf64:
+A/execution/current-msft-account-session-full-io-preflight-20261027-v1/CONSUMER.json.
+PASS full Linux I/O preflight and real host->Linux financial SYN: actual
+BankLeg/Jobs/CIDs/OwnerAdmission123exchanges/native deadlines,5native visits,
+partialBUY/unknownCANCEL/exactrecovery/owned-fill-only SELL/flat stop. All owned
+processes/CIDs closed; one proposal load, original invented QQQ reserve/basis
+preserved. Source guards/HTTP/account/financial clock were SYN, NOT real
+Scheduler/account authority or broker fills. Current image27dde unchanged.
+Prior3financial SYN failures remain closed: manifest key, private path, missing
+CONTROL RW mount. Fourth passes; no old debit refund or completed replay.
+Full preflight now covers canonical state, CONTROL atomic locks/timing and
+artifact writes. New real controller/input/policy/quiet definitions for Oct27
+are being prepared, default false-release/no actual order/Task install yet.
+
+Actual KIS Paper readonly faef83ee:
+A/execution/current-msft-paper-real-readonly-readiness-20261027-v1/CONSUMER.json.
+20:20:48..54UTC,1tokenPOST/5GET/0retry, one RAM client, Paper4 matches pinned
+original account/basis anchor. NASD/NYSE/AMEX holdings complete sequentially,
+7broker instruments NOT adopted/attributed as strategy inventory. NASD-native
+open-order scope0 does NOT release F9/unknowns. MSFT orderable endpoint positive
+at fixed1USD reference is capability only, NOT market quote/sizing/settled cash.
+No fresh native bank/MSFT-registration replay or fees/netPnL. All workers closed,
+no secrets/raw bodies retained. Manual named probe, not observer/Scheduler proof.
 
 L natural18:12 visit fce25c9f571c4f2d8d8afd1276396410 has exact diagnostic
 HOST-FAILURE.json SHA7d02658b under
@@ -105,6 +129,28 @@ benchmarks. Useful training was short, no GPU permission hold or dummy load.
 Next Source-only work checks genuinely nonduplicate selection hypotheses and
 existing foundation checkpoints/date/reuse before another numerical campaign.
 
+That next selection family is now CLOSED_REJECT, pre-fit NAS8 addenduma50a4f46:
+A/research/current-liquid17-volume-conditioned-open5-selection-development-20261027-v1.
+Explicit ownerbaa2 attests0native/marketfits/restores/forwards/registry/held
+intakes before narrowing17 to NASDAQ8 for current native NASD-only guard.
+AAPL/AMD/AMZN/GOOGL/META/MSFT/NVDA/TSLA selected; original20context/600snapshot/
+17Data and debits remain. Indicator15+beta60/residualmom5/relativevolume =18,
+CPU HGB3fits112stages(23/58/31), best3/38/11,47OOF376rows/4costcells/0retry.
+Sourcec9c35f6e/result4f6016b8: growth2.8773413%/DD1.9274526% beats MOM20/REV5
+and uniform8 growth2.5081159%, but fails frozen uniform8 DD1.8751808%.
+Original reject stands, not a qualified winner/alpha. All workers closed,
+528.695435owned/1800,3701.496146elapsed/5400; no old cost refund/regrade.
+Currentpoint package reuses saved F3 stage11, at most1actual8row inference/
+0fits/0economic/allow_submit FALSE, with separate Faraday current features.
+Native H5 CLOSE[e+4] differs from research OPEN[e+5]; Paper is an explicitly
+labelled operational variant if later bound, not exact backtest replication.
+Separate fixed hierarchical composition20:48..21:48UTC has0fits/0model calls,
+one full47feature-only projection/max2NET20cells; actual prior-only SPY scalar
+and full weight aliases must precede prices. New family, not old failure rescue.
+Existing Chronos2 and
+TimesFM2.5 comparisons/adaptation were already completed; metadata inventory
+a04d103f rejects duplicate replay, TTM exact public weight date unverified.
+
 Data eeebb16a CLOSED_READY:1712known CLOSE per fixed8ETF, seven geometry-bad
 context rows flagged; strictQQQ1712 OPEN/CLOSE. Exact producer refs in data.md.
 No canonical/PIT/TR/CA/finality promotion or duplicate acquisition.
@@ -113,12 +159,19 @@ Mixed intraday Data task measured next19:24UTC; not paused for an assumed
 
 ## Owners / Verification
 
-Leibniz: minimal finite account-session bridge Source/native preparation with
-current-code image below, not an actual new broker owner/Task yet.
+Leibniz: full IO/native bridge SYN now passed; prepares true same-account
+Oct27 operational wrapper/typed input/policy/disabled definitions, not an
+admitted new broker owner or actual order yet. Real owner/custody/quote guards
+cannot borrow SYN authority. Socrates real readonly capability has completed.
 Generic QQQ prototype67aca140 FAILED at reserved-ETF stock guard;3development
 attempts retained. New separate deterministic MSFT preparation is selected,
 not a silent QQQ substitution, guard relaxation or unknown reservation reset.
-Faraday: q10 Data packets, no HTTP; current writer-closure probe completed.
+Faraday: completed NAS8 derived view95.8401active and new currentpoint
+HANDOFFe76f0401,20GET1POST0retry/20accepted/5Jobsclosed/59.768869active.
+Exact20context61prior OHLCV endingOct26 ->8x18 raw features; native ABI/
+verification/Ruff PASS, raw M-only/no splice/imputation. Featureend20:00UTC,
+observed20:49:48.613373, not close-time availability. Direct Engine handoff;
+no model/PIT/CA/finality/Paper qualification from feature readiness alone.
 Socrates: L strict RO CONSUMED667c967a, observation18:58:21.887555UTC:
 A/execution/current-l-fresh-typed-custody-readonly-20261026T184715-v1/CONSUMER.json.
 Original account/basis/input/policy/full-book and private stability PASS;
@@ -127,10 +180,13 @@ NOT flat/zero.13Jobs/container closed. Native pre-read admission independently
 qualified; later Faraday bc25 is NOT retroactive pre-read evidence. F9 unchanged.
 Old1815..1829 scope expired UNINVOKED; new320 scope consumed, no reuse after4335.
 Optional19:12 scope also consumed5634e962, no extra snapshot or reuse.
-Current MSFT nativeSYN Sourcec3fd8e69 passed entry/unknown-cancel/recovery/exit
-on invented bank, not actual financial evidence. New host->Linux integration
-at current-paper-engineering-msft-host-guest-integration-20261027-v1 remains
-in preparation, max900owned/1800elapsed, no actual broker/Task/private access.
+Current MSFT nativeSYN Sourcec3fd8e69 and fullIO b3fedf64 are completed,
+not actual financial evidence. Real operational Consumer92042ff4/host37bda1e9/
+image27dde is READY FALSE RELEASE, no Task install. Four finite quiet windows:
+Oct27 entry13:40..13:44/recovery13:47..13:51UTC, Nov2 exit20:45..20:49/
+exactexitrecovery20:52..20:56. Parent stages activation; Socrates owns ONE
+actual offline bank/MSFT registration read20:42..21:00UTC, not yet a result.
+Shared basis/F9/native risk remain authoritative. No duplicate completed SYN.
 Schrodinger/Halley: research above. Parent: integration/Git/actual cutovers.
 No tracked production writes assigned in these packages.
 

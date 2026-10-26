@@ -7,6 +7,14 @@ immutable consumers. Closed clocks/charges are never reset/refunded.
 
 ## Actual Resource / Ready Work
 
+NAS8 HGB18 Sourcec9c35f6e/result4f6016b8 CLOSED_REJECT,3CPUfits112stages/
+3OOF47dates/4cells,528.695435owned/3701.496146elapsed, allclosed. Stronger
+growth but failed frozen uniform8 DD; no rerun/regrade. Currentpoint reuses
+saved F3 stage11,0fits/max1actual forward/allow_submitFALSE. New source-only
+NAS8 rank-target duplicate audit follows currentpoint closure, not CUDA work
+already running. Parent GPU sample20:49UTC4090/1647of24564MiB/2%; no unknown-
+desktop permission hold, no need to repeat completed fits for utilization.
+
 Prior CPU numerical consumer eca8d542:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json.
 CLOSED CPU-only, one140row projection/two cost cells/zero fits or GPU;
@@ -32,9 +40,9 @@ benchmarks. Useful training was short, no GPU permission hold or dummy load.
 Next Source-only work checks genuinely nonduplicate selection hypotheses and
 existing foundation checkpoints/date/reuse before another numerical campaign.
 
-Steward now inventories already-completed TimesFM/Chronos/TTM checkpoint and
-trusted release dates from existing metadata only,60owned/600elapsed/0model
-loads/downloads/numerical calls. No already-completed fit repeats. Exact dated
+Foundation metadata inventorya04d103f is CLOSED,0new model/download/GPU.
+Chronos2/TimesFM2.5/TTM existing comparisons/adaptations already completed;
+TTM exact public weight date unverified in checked metadata. Exact dated
 checkpoint before every target may support post-checkpoint development;
 unknown/overlapping scope remains isolated representation/runtime only.
 

@@ -7,6 +7,40 @@ Gitbb391f30 and immutable consumers; they are not a ready dispatch queue.
 
 ## Current / Next
 
+NAS8 HGB18 CLOSED_REJECT, Sourcec9c35f6e/result4f6016b8:
+A/research/current-liquid17-volume-conditioned-open5-selection-development-20261027-v1/CONSUMER.json.
+Three CPU fits112stages(23/58/31), selected3/38/11;3OOF/47dates/376stockrows/
+4NET20cells/zero retries. All workers closed. Growth2.8773413%/DD1.9274526%
+beats MOM20(1.8536915%/2.8816634%), REV5(2.1750102%/2.2215214%) and
+uniform8 growth2.5081159%, but fails uniform8 DD1.8751808%. Do not relax the
+old criterion or call this a qualified winner. Owned528.695435/1800,
+elapsed3701.496146/5400; original19:26:14 origin and all source/data costs stay.
+The pre-fit NAS8 addenduma50a narrowed routes for native NASD guard BEFORE
+numerical work under explicit zero-work attestationbaa2; not a result filter.
+
+Current Schrodinger package:
+A/research/current-nas8-hgb18-feature-only-currentpoint-20261027-v1.
+Reuse saved F3 stage11 safely: at most1actual8row restore/forward, zero fits,
+zero economic cells. Faraday owns separate actual current features. Output
+allow_submit FALSE; an exploratory proposal is not a risk or broker grant.
+Research OPEN[e+5] differs from native H5 CLOSE[e+4]; eventual Paper use is
+an explicitly labelled operational variant, not exact backtest replication.
+
+Separate Halley composition package, newly frozen20:48UTC/hard21:48UTC:
+A/research/current-nas8-hierarchical-logreturn-composition-20261027-v1.
+Fixed raw residual + beta60*(.25*prior20 SPY log momentum), beta-only control;
+0fits/model calls/HTTP/retries,1feature projection/max2new NET20cells/1held
+intake,600owned/3600elapsed. Actual prior-only scalar ABI and exact full-policy
+aliases before prices; alias stops/reuses control, never threshold rescue.
+Kill unless growth beats BOTH residual HGB and beta-only, DD<=uniform8.
+Adaptive reused-data development, not independent alpha. Prior source-only
+proposal elapsed654/600 and Claude REVISE remain closed; no refunded debit.
+
+Next GPU readiness is source-only NAS8 rank-target duplicate audit after
+currentpoint closure, not an active training claim. Actual20:49UTC GPU sample:
+4090,1647/24564MiB,2% utilization. Ready work may use measured headroom; no
+permission hold or dummy training. Closed model work below is not running.
+
 Newest CLOSED consumer:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json,
 eca8d542. One CPU candidate/140 chronological rows/one native handoff/one

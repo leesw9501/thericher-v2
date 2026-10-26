@@ -29,7 +29,31 @@ consumed by the separate two-cell supported study, not original four-cell pass.
 
 ## Current Assigned Work / Owners
 
-Faraday now owns exact scalar q10 label/feature packets for adopted1326968d:
+Newest Faraday work CLOSED VERIFIED_READY, HANDOFFe76f0401:
+A/data/current-nas8-hgb18-currentpoint-features-20261027-v1.
+Exact20context routes/61prior OHLCV rows ending Oct26, NAS8 feature-only view
+and18indicators, no labels/held outcomes. Actual20GET/1POST/zero retries,
+20accepted independently captured pages, raw bytes M-only.5Jobs positive
+closed,59.768869active upper/180, native producer/cold consumer/independent
+verification/Ruff PASS. Feature end20:00UTC Oct26, observed20:49:48.613373;
+do not backdate availability to close. No vintage splice/canonical overwrite/
+PIT/CA/TR/volume-adjustment/finality promotion. Direct Engine handoff.
+FEATURES9d85870d/ROLEd6a22a2c, exact8x18 raw FP64, FIT affine belongs to Engine.
+
+Next short metadata-only readiness: original SPY600 source/calendar pointer
+to Halley, existing NAS8 rank-target data ABI with Schrodinger.60owned/600elapsed,
+no HTTP/model/held payload/numeric market/private operations or duplicate data.
+
+Completed NAS8 study Data view:
+A/data/current-liquid17-volume-open5-selection-packets-20261027-v1/nas8-r1.
+Derived from qualified17-role packets; original20context/600snapshot/debits
+preserved, no HTTP/raw snapshot reread.8-only FIT affines/feature-only OOF/
+separate8+SPY held data. Actual native8-codec qualified; cumulative95.8401
+active seconds inside240. Consumed by closed HGB18 study, do not rebuild.
+
+The q10 packet work below is CLOSED and consumed, not a current dispatch:
+
+Faraday completed exact scalar q10 label/feature packets for adopted1326968d:
 A/data/current-qqq-open5-adverse-tail-label-packets-20261027-v1.
 One build/3FIT-INNER roles/3feature-only OOF/separate140held labels,180active
 worker seconds inside original family20:17:27 hard deadline,0HTTP/private/API/
