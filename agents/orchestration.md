@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, through15:34UTC Oct26. A=D:/thericher-v2/model-artifacts;
+2026-10-27 KST, through15:56UTC Oct26. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -32,10 +32,10 @@ Assignments below do not prove that a numerical worker has started.
 | Owner | Current package / actual state |
 | --- | --- |
 | Parent / 총괄 | Integrate/Git and qualified public-namespace runtime repair; no fill/profit inference from research. Future-Task edit reviewd4ef7f35 separates mutable-definition ownership from bank-reader admission, not broker authority. |
-| Leibniz / 실행 | TF78fd46b5 and J17d28be2ab actual cutovers CLOSED; J17 pair enabled17:00/Nov20/0instances. Existing strict private-reader exact newSource handoff preparation only, no actual private read inferred. |
-| Schrodinger / 엔진·연구 자원 | Packet55532634 features4000keys/3063eligible READY,6heldfieldsUNAVAILABLE. Exact held-mark source probe plus separately frozen saved-expert feature-only GPU inference2newpasses/0fits/economics; disjoint Data/network and GPU/no-target paths under sole coordinator. Actual worker start not inferred. |
-| Faraday / 데이터·임시 Infra | Optional entry96f676ec ACTUALLY enabledf4dd/runtime19902; recovery/exitR4. New current-paper-safe-first-cause-handoff-20261026-v1 source-only diagnostics, no tonight deployment or Task edits. |
-| Socrates / 전략·임시 실행 | Contract5d669dc3/d597 frozen adaptive four-cell comparison remainsDATA_UNAVAILABLE. New current-2026-h5-held-mark-economic-support-20261026-v1 official CODX/BKYI event/source facts, no prices/models/PnL. |
+| Leibniz / 실행 | TF/J17 cutovers CLOSED; post1730 private-reader HANDOFFfb2eb768/Source62acea74 ready UNCONSUMED. LLM closed, named Tasks owned; resume role for qualified material result, no actual private read inferred. |
+| Schrodinger / 엔진·연구 자원 | GPU inference73685a2c CLOSED2savedrestores/4forwards/0fits/econ/allGPUclosed. New current-liquid-etf-context-qqq-h5-preparation-20261026-v1 source/native2inventedfits only before contract adoption, sole coordinator. |
+| Faraday / 데이터·임시 Infra | Fixed8ETF readinessb70276e1 CLOSED. New current-liquid-etf-context-acquisition-20261026-v1 sameMODP1 2020..Oct23/110GETincluding6retry/1POST, rawM only. Actual network result not inferred. |
+| Socrates / 전략·임시 실행 | Official venuefactsff4e59fc CLOSED, no actual price/no-print inference. New current-2026-h5-model-owned-price-support-20261026-v1 sealed target/availability masks only; old4cell remainsDATA_UNAVAILABLE. |
 
 New roots are under A/execution, A/data or A/research respectively. Closed
 training/ledgers are not rerun. SEC contact remains an optional isolated gap.
@@ -143,10 +143,15 @@ permanent role/platform is needed for these concrete packages.
   immutable artifacts. No completed training/ledger/SYNtrade is ready again.
 
 ## Throughput Review
-15:34UTC: known Windows/Linux namespace repair is ACTUALLY deployed for TF
+15:56UTC: known Windows/Linux namespace repair is ACTUALLY deployed for TF
 exit/J17 pair, not a new market result. Next runtime17:00 is worker-owned;
 research's exact6held-field gap is a separate bottleneck, not a company hold.
 Probe retained/new exact upper-date pages and official event facts in parallel.
+Those exact probes/events are now CLOSED, not a ready repeated query. Useful
+feature-only GPU inference proceeded despite unavailable held marks and is
+also CLOSED. Next reversible improvement: fixed liquidETF context/QQQ target
+with explicit supported-source intake, while one sealed-model support audit
+keeps the old uniform gap from turning into a global research hold.
 S found original L needs no namespace code change.
 TF expired14:50, never conceal that by resetting its identity/window. Existing
 same one-shot18:42:59UTC remains unchanged until an

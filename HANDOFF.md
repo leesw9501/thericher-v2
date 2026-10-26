@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, integrated parallel results through15:34UTC Oct26.
+2026-10-27 KST, integrated parallel results through15:56UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -70,10 +70,41 @@ Jun16OPEN. No imputation/date drop/inference/economics. Fixed four-cell
 contract5d669dc3/d5978936 is retrospective adaptive, ClaudeREVISE retained.
 Schrodinger probes exact retained/new upper-date KIS pages; Socrates separately
 checks official economic/trading-event support, not another model rerun.
-Qualified features are also separately assigned to two savedF3 GPU first
-passes under one coordinator,0fits/economics/no targets/network mounts. This
-does not require missing HELD prices; actual worker start remains unobserved.
+Saved-expert GPU inference is now CLOSED73685a2c: actual2restores/2native+
+2marketforwards/4000keys/3063eligible permodel,0fits/optimizer/economiccells.
+Peak allocations GRU478853632/JOINT618570752bytes, two positively closed
+containers/leaseabsent. Exact feature/model/affine filesRO/networknone,
+0heldprice intake. No duplicated old forecasts or performance promotion.
+Exact source probe144757ef is CLOSED1POST/2GET/0retry/overwrite/conflict:
+CODX BYMD Feb20 returned newestFeb13; BKYI BYMD Jun16 newestJun11. All6
+required rows ABSENT, not nonpositive/malformed. Both exact cursors closed,
+no repeated query or inferred halt/zero valuation. Official event facts pending.
+Official factsff4e59fc now show requested dates within issuer-reported Nasdaq
+suspensions (CODX Jan14..Mar11; BKYI May12close..Jul08open); Parent independently
+opened their SEC/issuer records. This is venue-event support, NOT proof of KIS
+causation/no trading anywhere/OTC prints/executable valuation or historic PIT.
+S now audits SEALED model-owned price support without price/payoff readout;
+old uniform-inclusive40-cohort comparison stays DATA_UNAVAILABLE.
 Unknown reuse is not fresh/PIT/TR/finality evidence.
+
+Post17:30 private reader HANDOFFfb2eb768 at
+A/execution/current-joint17-public-namespace-owned-recovery-20261026-v1/
+post1730-private-reader/HANDOFF.json is ready/UNCONSUMED, not actual custody.
+Source62acea74/CLAIMS1576674a, source-privateRO/networknone/three fresh
+admissions/full stability, exact J17 public-window/join and positive relevant
+owner closure first. Execute read_once.ps1 STANDALONE only when qualified;
+no observe/recovery. Leibniz LLM closed after handoff; named Tasks remain owned.
+Fixed8ETF/QQQ-target readinessb70276e1 is closed, proposed94GET/~3.2-5.4min
+old aggregate wire/materialization estimate, not guaranteed ETA. Faraday is
+now assigned finite sameMODP1 collection under current-liquid-etf-context-
+acquisition-20261026-v1: existing trio first, five histories+tails/IWMholes,
+110GETincluding6technicalretries/1POST/0rePOST/2020..Oct23/noIPOcrawl. No
+actual HTTP result inferred yet. Schrodinger prepares a separate QQQ-only vs
+fixed8-context native GRU ablation, max2inventedfits/restores/0marketfits until
+explicit contract adoption. Named root current-liquid-etf-context-qqq-h5-
+preparation-20261026-v1, not old study regrading or a new company goal.
+Source-only first-cause proposalf91b717d is not deployed and
+does NOT capture errors before its native event channel initializes.
 
 Fresh compatibility Consumer6d7aaeb8 at
 A/verification/current-native-public-reference-recovery-20261026-v1:

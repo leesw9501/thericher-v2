@@ -61,6 +61,21 @@ pages, then only useful different upper-date pages, sameMODP1/venue/rawM.
 S separately checks official economic events; absent/zero/provider-limit
 is not automatically a no-trade/zero valuation. Existing69/25/70/retention
 owners unchanged; Data is not a private-custody writer.
+Probe144757ef is CLOSED1POST/2GET/0retry, all6rowsABSENT, not malformed/zero:
+CODX upperFeb20 newestFeb13; BKYI upperJun16 newestJun11.0overwrite/conflict,
+allworkersclosed. Exact cursors closed; no repeated page/zero/availability
+imputation or automatic halt inference. Strategy official-event facts pending.
+Faraday's new disjoint current-liquid-etf-engine-panel-readiness-20261026-v1
+audits existing fixed SPY/QQQ/IWM/TLT/GLD/XLK/XLF/XLE context and QQQtarget
+metadata only, no APIs/arrays/models/collector/schedules. Not a shrink or
+regrading of the blocked100-stock/40-cohort comparison.
+Readinessb70276e1 is now CLOSED; new finite acquisition is separately assigned
+current-liquid-etf-context-acquisition-20261026-v1. Samevenue/MODP1/GUBN0,
+2020Jan02..Oct23: reuse coherenttrio, fivehistories+QQQ/IWMtails/twoIWMholes,
+max110GETincluding6technicalretry/1POST/0rePOST, no pre2020/IPO/universecrawl.
+Raw M only; overlap revisions/conflicts unavailable, no canonicaloverwrite.
+Actual result not inferred. Token floor60s is scoped existing calibration,
+legacy300 default unchanged; GET1.25s uses alreadyqualified client path.
 
 A/data/current-memory-terminal-half-forward-capture-readiness-20261026-v1/READINESS.json,
 SHA5d0bc0f86cf30591e89ee838d8ac38c385f6d6f54a35d4d95152f74220d6036f.

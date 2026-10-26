@@ -136,6 +136,16 @@ entry4532aae3 unavailable/recovery_required;8seeds not financial evidence.
 This entry manifest is NOT TF future-exit routing. J17 current actual pair
 d28be2ab uses889a/13ce/90a/9e85, not old-source observations.
 
+Company private outcome reader is separately prepared, actual scope UNCONSUMED:
+A/execution/current-joint17-public-namespace-owned-recovery-20261026-v1/
+post1730-private-reader/HANDOFF.json,fb2eb768. Verify Source62acea743d21c6b76ab7917233f97d858ed8e1e44541de2189e3c4028921de4b
+and CLAIMS1576674a before STANDALONE read_once.ps1 invocation. AFTER17:30UTC
+and exact currentJ17 public/window/parent-join + relevant owner closure only.
+Three fresh source/actor/mount admissions, private/sourceRO/networknone/full
+membership/stat/bytes stability remain; no actual private read in preparation.
+Missing/unmapped/active/unknown stays unknown; never observe/recovery or
+reservation release. Literal command and all limits are in that HANDOFF.
+
 ```powershell
 $python = 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe'
 $reader = 'D:/thericher-v2/model-artifacts/execution/current-oct26-runtime-reader-readiness-20261026-v1/receipt_reader.py'

@@ -106,6 +106,13 @@ is preserved in Consumer; no retroactive cap pass. J17 actual closure628.05s/
 prepares exact existing strict currentgoal private-reader handoff,0actualread.
 Faraday prepares allowlisted failure-stage diagnostics for a future explicit
 repair only; tonight's Sources/Taskdefinitions remain unchanged by that work.
+That diagnostic proposalf91b717d is now SOURCE_READY_NOT_DEPLOYED/6purecases,
+but before-channel-initialization errors remain unsupported. No runtime claim.
+Existing post1730 private-reader HANDOFFfb2eb768/Source62acea74/CLAIMS1576674a
+is ready UNCONSUMED. Standalone literal read_once.ps1 after17:30 and exact
+public/window/join/relevantownerclosure only; original three admissions/
+networknone/private-sourceRO/fullstability retained. No fresh private read.
+Leibniz LLM closed after handoff, not an always-running owner; Tasks owned.
 
 ## Actual GRU / P0 Source Repair
 

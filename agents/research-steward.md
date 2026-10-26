@@ -43,8 +43,13 @@ freezes four saved-expert/control NET20cells. Economic cells need held marks;
 qualified feature inference does not. New current-2026-h5-saved-expert-feature-
 inference-20261026-v1 is assigned2savedF3/onefirstpass each/0fits/economics,
 same coordinator with disjoint Data HTTP worker. Fresh VRAM/actual source/
-checkpoint/schema bootstrap facts precede execution, no activeGPU inference
-claimed merely from assignment. Exact source probe/event facts continue.
+checkpoint/schema bootstrap facts preceded actual run. CLOSED73685a2c:
+2restores/2native+2marketforwards/0fits/optimizersteps,3063eligible permodel,
+peak478853632/618570752bytes/bothGPUcontainersclosed/leaseabsent. Exactfile
+feature/model/affineRO/noheld/noNetwork, measuredchildwall10.94s, ownedupper
+91.04/300/elapsed435.50/1800. Not an activeGPUjob or economic pass.
+New liquidETF/QQQ ablation source/native preparation assigned under same sole
+coordinator, max2inventedfits/restores/no marketfits until contract adoption.
 No dummy load or repeat of completed fits.
 MetaGate CPU campaign CLOSED_VERIFIED_REJECT; registry654cc9f9 was appended
 once by Steward. SameOPEN netting CLOSED2cba605f/fourcells/positivecash,

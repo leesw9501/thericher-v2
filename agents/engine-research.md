@@ -15,10 +15,18 @@ ClaudeREVISE retained; retrospective adaptive screen, not untouched replication.
 Financial cells remain blocked, not qualified feature-only inference. Steward
 now owns separately frozen current-2026-h5-saved-expert-feature-inference-
 20261026-v1: two savedF3models/one new market pass each,0fits/economics,
-feature-only/source/modelRO/no target or network. Actual start not inferred.
+feature-only/source/modelRO/no target or network. Now CLOSED73685a2c:
+actual2restores/2native+2marketforwards/4000keys3063eligible/0fits/econ,
+bothGPUcontainersclosed/leaseabsent, forecastsealca7dfff0. No duplicate pass.
 Data exactpage probe and Strategy official event check run in parallel. This is a
 six-field scoped block, not GPU/Paper permission or a ban on other hypotheses.
 Saved models already trained remain saved; no duplicate training for load.
+Venuefactsff4e59fc support Nasdaq suspensions, not missing-field values or
+no-prints. Strategy now checks sealed model-owned availability masks only.
+New disjoint current-liquid-etf-context-qqq-h5-preparation-20261026-v1 owns
+QQQ-only vsfixed8-context GRU/source/native preparation, max2inventedfits/
+restores/0marketfits before adoption. Faraday's finite8source capture proceeds;
+old100stock40-cohort criteria/results remain unchanged.
 
 New H5 downside campaign CLOSED at A/research/current-h5-downside-expert-
 development-20261026-v1/CONSUMER.json, SHAf6ccbb64. Six new CUDA market fits,

@@ -83,6 +83,13 @@ ClaudeREVISE/adaptive-retrospective retained, no arrays/model/economics.
 Current source-only scope current-2026-h5-held-mark-economic-support-
 20261026-v1 checks official CODX Feb17-20/BKYI Jun15-16 events vsproviderholes.
 No future fact becomes past decision-time knowledge or zero/filled valuation.
+That fact check is CLOSEDff4e59fc: requested dates lie inside issuer-reported
+Nasdaq suspension intervals, not proof of no all-venue trades/OTC pricing or
+the exact KIS absence cause. Six marks remain unavailable, no fake fill/zero.
+Current current-2026-h5-model-owned-price-support-20261026-v1 audits sealed
+JOINT/GRURISK target masks and existing availability only,0model/economics.
+Any separately frozen supported-model comparison needs its own interpreted
+claim; original uniform-inclusive4cell does not silently become a pass.
 Exact four public aliases/source/release only, no private/bank/counter changes.
 J17/L/future exits priority; do not repeat broken schedules
 without first-cause/reproducer or invent a rushed substitute GRU opportunity.
