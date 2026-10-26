@@ -10,9 +10,17 @@ immutable consumers. Closed clocks/charges are never reset/refunded.
 NAS8 HGB18 Sourcec9c35f6e/result4f6016b8 CLOSED_REJECT,3CPUfits112stages/
 3OOF47dates/4cells,528.695435owned/3701.496146elapsed, allclosed. Stronger
 growth but failed frozen uniform8 DD; no rerun/regrade. Currentpoint reuses
-saved F3 stage11,0fits/max1actual forward/allow_submitFALSE. New source-only
-NAS8 rank-target duplicate audit follows currentpoint closure, not CUDA work
-already running. Parent GPU sample20:49UTC4090/1647of24564MiB/2%; no unknown-
+saved F3 stage11 currentpoint COMPLETE,0fits/1actualforward/allow_submitFALSE.
+Rank-target duplicate audit closed/no exact completed match in bounded ledger;
+ranking itself is not new. New TOTAL RankNet18 family21:08..23:08UTC is
+conditionally adopted3600owned7200elapsed/3fits192epochs18000updates/3OOF/
+max2NET20cells. Source600 includes180ready+90reviewONCE,Data300/rest2700.
+That family now CLOSED:3CUDAfits737updates/69epochs/3OOF/2cells/0retry,
+allworkers+leaseclosed. Actual20/20/29epochs/best0/0/9,66/66/68MiB peaks,
+fitwalls2.37/2.48/3.49s. Both primarygrowth criteria fail/DDpass, no rerun.
+New RankHalfcurrentpoint300owned/1800elapsed/max1actual8row CUDAforward/
+0fits-held-economic may reuse savedF3epoch9 and cachedHGBpoint. Parent
+sample20:49UTC4090/1647of24564MiB/2%; no unknown-
 desktop permission hold, no need to repeat completed fits for utilization.
 
 Prior CPU numerical consumer eca8d542:

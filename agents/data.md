@@ -7,6 +7,18 @@ source contracts remain Gitbb391f30 and immutable consumers.
 
 ## Current Useful Data
 
+Newest completed TOTAL RankNet sidecars, Source20383a8a:
+A/data/current-nas8-total-open5-ranknet18-packets-20261027-v1/HANDOFF.json.
+Direct logOPEN[e+5]/OPEN[e] labels, no residual-y inversion. FIT234/314/394
+dates/INNER55each/OOF16/16/15, same18features8stocks/47OOF keys and interval
+purges. Actual named producer/cold consumer PASS,4Jobsclosed32.256245active/
+300,0HTTP/no helddecode/no targetaffine. Old feature payloads selectively
+decoded once without residualy, only required OPEN fields from retainedCSV.
+Existing held9 refs reused, no price reread into learner. Engine consumed once.
+New RankHalfcurrentpoint reuses completedFEATURES9d85870d/ROLEd6a22a2c;
+no new data/labels/downloads needed. Next only concrete missing consumer/cursor,
+not an instruction to rebuild completed packets.
+
 Latest fixed8ETF CLOSE recovery:
 A/data/current-liquid-etf-close-field-consumer-recovery-20261026-v1/CONSUMER.json,
 eeebb16a. SPY/QQQ/IWM/TLT/GLD/XLK/XLF/XLE each1712 known CLOSE proxies,

@@ -91,6 +91,27 @@ def _snapshot(paths, account, cohort):
     return book, record, value, tuple(done)
 
 
+def _same_skip_active(old, new, profile, symbol):
+    expected = old | {"entries_done": new["entries_done"]}
+    if new == expected:
+        return True
+    if profile is not core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5:
+        return False
+    previous, current = old.get("entry_no_order"), new.get("entry_no_order")
+    if type(previous) is not dict or type(current) is not dict or symbol in previous:
+        return False
+    reasons = core._H5_NO_ORDER_SIZING_REASONS
+    reason = current.get(symbol)
+    if (
+        type(reason) is not str or reason not in reasons
+        or not set(previous) <= set(old["entries_done"])
+        or any(type(value) is not str or value not in reasons for value in previous.values())
+    ):
+        return False
+    # Preserve every old proof; only this completed target may add a sizing skip.
+    return new == expected | {"entry_no_order": previous | {symbol: reason}}
+
+
 def run_native_account_session(
     *,
     cohort: PaperAccountCohort,
@@ -205,6 +226,7 @@ def run_native_account_session(
         if outcome.leg_count != 0:
             return result("yield_after_first_native_leg")
         if pending:
+            _need(outcome.status != "no_intent", "account_session_skip_changed")
             return result("pending_preserved")
         if cohort.mode != "entry" or outcome.status != "no_intent":
             return result("native_non_skip_stop")
@@ -215,9 +237,12 @@ def run_native_account_session(
         )
         if oldrecord is not None:
             _need(
-                newrecord["owners"] == oldrecord["owners"]
-                and {k: v for k, v in newrecord["active"].items() if k != "entries_done"}
-                == {k: v for k, v in oldrecord["active"].items() if k != "entries_done"},
+                {k: v for k, v in newrecord.items() if k not in {"ref", "active"}}
+                == {k: v for k, v in oldrecord.items() if k not in {"ref", "active"}}
+                and _same_skip_active(
+                    oldrecord["active"], newrecord["active"], cohort.profile,
+                    value.targets[len(oldprefix)].proposal.symbol,
+                ),
                 "account_session_skip_changed",
             )
         # Reuse c7's cursor contract only for the completed, unreserved skip.

@@ -2,211 +2,158 @@
 
 ## Current Reality
 
-2026-10-27 KST; current integration review20:50UTC Oct26.
+2026-10-27 KST, through21:43UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-AGENTS.md owns authority. Parent owns shared MD/Git and installed cutovers.
-Assignments do not prove active LLMs, numerical workers or GPU.
+AGENTS.md owns authority. Parent owns shared MD/Git/actual cutovers.
 Preserve unrelated %SystemDrive%/. No operator decision currently identified.
 
-Company: coexistent-native-paper-execution-runtime-v1, UNFINISHED.
-Original oct26-three-candidate-paper-entry-runtime-v1 is explicitly
-SUPERSEDED_NOT_ACHIEVED, not completed. Ended entry windows are not reopened.
-Direction review1a99ab9c/Claude ADOPT_WITH_LIMITS is advisory, not authority.
+Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
+Original three-entry goal is SUPERSEDED_NOT_ACHIEVED, not complete.
+Installation, synthetic fills, a Task exit or a due time is not a broker fill.
+Source-only tests and assignments do not prove active workers/GPU or deployment.
 
-## Execution First
+## Actual Paper Deployment
 
-Newest bridge evidence b3fedf64:
-A/execution/current-msft-account-session-full-io-preflight-20261027-v1/CONSUMER.json.
-PASS full Linux I/O preflight and real host->Linux financial SYN: actual
-BankLeg/Jobs/CIDs/OwnerAdmission123exchanges/native deadlines,5native visits,
-partialBUY/unknownCANCEL/exactrecovery/owned-fill-only SELL/flat stop. All owned
-processes/CIDs closed; one proposal load, original invented QQQ reserve/basis
-preserved. Source guards/HTTP/account/financial clock were SYN, NOT real
-Scheduler/account authority or broker fills. Current image27dde unchanged.
-Prior3financial SYN failures remain closed: manifest key, private path, missing
-CONTROL RW mount. Fourth passes; no old debit refund or completed replay.
-Full preflight now covers canonical state, CONTROL atomic locks/timing and
-artifact writes. New real controller/input/policy/quiet definitions for Oct27
-are being prepared, default false-release/no actual order/Task install yet.
+Four finite MSFT engineering Tasks ACTUALLY enabled21:32:22UTC Oct26,
+ACTUALabe9f4ac:
+A/execution/current-msft-disabled-task-acl-recovery-20261027-v1/canonical-ai-r2/ACTUAL.json.
+Runtime host37bda1e9/route d6787bc5/image27dde810/TRUE0e63c915.
+Input169ee4b2/policy206e36be; one native leg per visit, not whole-basket service.
 
-Actual KIS Paper readonly faef83ee:
+| Phase | Exact Task suffix after thericher-kis-paper-msft-engineering- | UTC opportunity |
+| --- | --- | --- |
+| Entry | entry-20261027-v1 | Oct27 13:40..13:44 |
+| Exact recovery | recovery-20261027-v1 | Oct27 13:47..13:51 |
+| Owned exit | exit-20261102-v1 | Nov2 20:45..20:49 |
+| Exact exit recovery | exact-exit-recovery-20261102-v1 | Nov2 20:52..20:56 |
+
+Entry is Oct27 22:40 KST. All4enabled/0instances/actual native definition and
+exact canonical ACL readback;88other Task membership/XML/ACL unchanged.
+No Task.Run/KIS/private write at installation. Wait for the OWNED opportunity,
+not foreground session sleep/manual duplicate. No actual new order/fill yet.
+Native H5 includes entry session: Oct27/28/29/30/Nov2, exit Nov2 CLOSE.
+Research OPEN[e+5] is Nov3 OPEN: explicitly different, never exact replication.
+Maximum .005 of original full basis B stays inside original shared B/10;
+metadata is not an allocation, affordability proof or a spending target.
+F9 UNKNOWN-HELD/costs/losses/pending remain; no profit expansion/adoption/reset.
+
+Recovery history is CLOSED, not commands to repeat: original e9 installer
+failed after creating ONLY disabled entry because unprotected DACL materialized
+3inherited ACEs/AI flag. R1 Source73f84 set protected exact4ACEs but OS also
+retained AI metadata:237chars not235. Owner/group/ACE bytes/XML stayed exact.
+R2 f803a8c0 recognizes ONLY that exact P+AI form, no repeat Set; creates remaining
+3disabled with flags18, validates all4 before enable. Source/native mocks/
+negatives and Claude GO_WITH_LIMITS, actual readback above. Old failures/
+journals/TRUE remain. Never rerun consumed e9/73/r2 apply or reset a reservation.
+Parent closure2 was Denied with no effects; exact historical actor unretained,
+NOT proven to be Data/tests. Later fresh closure4 independently admitted2passes.
+
+## Readiness Evidence / Limits
+
+Actual native RO f68c4e53 at20:55:13UTC, CONSUMED/all59Jobs+readerPIDsclosed:
+A/execution/current-msft-operational-native-book-admission-20261027-v1/CONSUMER.json.
+Original account/basis/fullbook/private-source stability PASS. MSFT unregistered;
+15registered stocks total does NOT prove other7 NAS8 eligible. Remaining native
+cap/gross positive,1unknown pending/positive reserve unchanged. No independent
+F9 attribution/release, fresh broker/quote/affordability/fees/PnL or new grant.
+No extra private snapshot or reuse of this consumed scope.
+
+Actual Paper readonly faef83ee at20:20:48..54UTC:
 A/execution/current-msft-paper-real-readonly-readiness-20261027-v1/CONSUMER.json.
-20:20:48..54UTC,1tokenPOST/5GET/0retry, one RAM client, Paper4 matches pinned
-original account/basis anchor. NASD/NYSE/AMEX holdings complete sequentially,
-7broker instruments NOT adopted/attributed as strategy inventory. NASD-native
-open-order scope0 does NOT release F9/unknowns. MSFT orderable endpoint positive
-at fixed1USD reference is capability only, NOT market quote/sizing/settled cash.
-No fresh native bank/MSFT-registration replay or fees/netPnL. All workers closed,
-no secrets/raw bodies retained. Manual named probe, not observer/Scheduler proof.
+1tokenPOST/5GET/0retry, scoped Paper4 matches original anchor. Sequential complete
+NASD/NYSE/AMEX holdings7instruments NOT adopted as strategy inventory; NASD
+openorders0 is scoped only. MSFT positive orderable at fixed1USD reference is
+capability, NOT current market quote/sizing/settled cash/equity. All closed.
+Manual named probes are not observer/Scheduler provenance or financial closure.
 
-L natural18:12 visit fce25c9f571c4f2d8d8afd1276396410 has exact diagnostic
-HOST-FAILURE.json SHA7d02658b under
-A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/ops-L-QQQ-H5-INPUT271aee-v1.
-L outer32012b79/releasedc004d88/host0ccb1112 was installed18:11:10.
-Retained stack proves source_pin at host.call44 before the PowerShell metadata
-subprocess: frozen7.6.7 hashfa2c8bb1 differs from installed7.6.9 hash2a6769a3,
-valid Microsoft signature. This proves THIS attempt's first cause, not when
-the binary changed or the cause of earlier empty attempts.
+Full host->Linux financial SYN b3fedf64 passed: canonical state/CONTROL atomic
+timing-lock/artifact I/O, actual BankLeg/Jobs/CIDs/123OwnerAdmission exchanges/
+physical deadlines/5visits/partialBUY-unknownCANCEL-exactrecovery-ownedSELL-flat.
+Owner/account/HTTP/financial clock were SYN. All closed, prior3failed attempts
+retained; no duplicate proof. Image27dde has748exact members/Python3.12.15.
+Use manifest-index image27dde, NOT failed config digest2a5e7ce0.
+Existing frozen737SDK/images are not silently upgraded.
 
-Future-exit-only metadata repair ACTUALLY installed19:09:29:
-A/execution/current-L-future-exit-pwsh-owned-activation-20261026-v1/current-scope-closure-r2/ACTUAL.json,
-b5d053d7. Current43351f18/release60dc71a1; expired entry disabled with historical
-arguments unchanged, original Oct30 19:55..20:00 exit enabled/native definition
-PASS/ACL preserved/86other definitions identical. Three metadata files only,
-8native L-owner/7optional/11argv cases and mocked install/rollback passed;
-Claude GO_WITH_LIMITS. Fresh two-pass6f919c3a and reader closure precede copy.
-Zero TaskRun/KIS/private write/window changes. Initial Parent ad-hoc census
-loop failed BEFORE copy/Task changes; FIRST-PROBE-FAILURE preserves it and
-the exact proven bounded probe replaced it. No historical Job/financial claim.
+## Research / Data
 
-Optional entry18:30..18:35 remains outerf4dd1991/runtime19902db4/release5ba4d309;
-recovery/exit remain R4f4b1974b/32a5fbf9. Exact host run
-c55d5bb79b174b37b123a17163fba66b has no public outcome; reader942abc5c returned
-UNKNOWN_MISSING_PUBLIC_RESULT at18:43. Empty directory/task exit0 is NOT
-no-intent, acceptance, fill or owner closure. Recovery identity and custody
-are being qualified; no substitute request or financial inference.
-Optional PowerShell provider is compatible; L's pin fault is not its proven
-cause. Optional actor-claims3420bb4c/34476b72 is STAGED, NOT deployed.
-Optional actual RO5634e962 is CONSUMED, all13Jobs/containerclosed:
-A/execution/current-optional-fresh-typed-custody-readonly-20261026T1912-v1/CONSUMER.json.
-Read bracket19:16:37..40UTC, exact guest timestamp unretained. Independent
-native admission/private stability PASS, UNKNOWN_NO_EXACT_COHORT_RECORD,
-counts null/inventory-pending-terminal unknown, NOT flat/zero; F9 unchanged.
-Source forensicsc60220d2 reproduces empty sink after defer/pre-native caught
-failure on invented fixtures, not the historical c55d cause. No runtime fix
-or actual effects. MSFT host will retain these categorical failures.
+All percentages below are total retrospective research growth, NOT annualized
+or actual-account PnL; current-listing/vendor-proxy/CA-volume/PIT/TR/finality
+limitations remain. Reused47dates are adaptive development, not independent alpha.
 
-Exact recovery task is thericher-kis-paper-memory-terminal-exact-recovery-20261026-v1;
-no current owned recovery pointer, hence no recovery run inferred. Two-pass
-bc25a349 found no current related writer; task exit0 still is not a fill.
+| Closed study | Actual result / interpretation |
+| --- | --- |
+| NAS8 HGB18 c9c35f6e/result4f6016b8 | 3CPUfits112stages/47dates4NET20cells. Growth2.8773413%/DD1.9274526%; beats MOM/REV/uniform growth but fails uniform8 DD1.8751808%, frozen REJECT. |
+| Fixed hierarchy32f56f86/result82f43728 | Raw HGB residual+beta60*(.25*prior20 SPYlogmom). Growth3.0543561%/DD2.2988859%, beta-only2.7259332%/2.1699072%; fails frozen DD.2cells/0fits/all5CIDs27Jobsclosed. Earlier pre-native directory failure remains UNKNOWN/charged, not a failed model. |
+| TOTAL RankNet18 01b8103e/resultedf9aed4 | 3CUDAfits737updates69epochs/3OOF47dates/2cells. Earlystop20/20/29epochs, best0/0/9; first2selected checkpoints are initial, not learned winners. Ranker2.4306671%/DD1.7226584%, fixed average-rank blend2.5881617%/1.7134204%; DD passes but HGB-growth target fails, frozen REJECT. All workers/lease closed. |
 
-J17 installed4aa87b59/88a89ea1/1ba617f3 scoped-RW artifact repair11481bbe.
-Original17:28 public8ed result is incomplete. Separate actor_unregistered
-failure lacks the exact historical actor/visit join. Strict RO0d134765 at
-17:33:02 found no J17 registered/pending request with exact account/basis/
-input-policy/full-book checks and stable private membership/identity/mtime/
-bytes. POST-WINDOW-CONSUMER0a84cd22 records13Jobs closed. Not fresh broker
-inventory, historical zero wire or another reservation release.
+Blend beats uniform8(2.5081159%/1.8751808%) on this reused development set.
+That is a useful risk/return tradeoff, NOT a regraded primary pass or robust alpha.
+Provisional Paper does not require a research winner; deterministic risk remains.
+Costs are20bp EACH actual netted leg, .10initialNAV target ONCE, same keys/kernel.
+New safe training uses INNER curves/best restore, not final-PnL checkpoint choice.
+Actual CUDA fits took2.37/2.48/3.49s with66/66/68MiB peaks; low later utilization
+is not proof of a permission hold. No dummy or completed-fit repeats.
 
-GRU/TF original windows ended with technical failures. TF future-exit
-c078a08a/83674888 repaired; expired entry disabled. Preserve original exits,
-counters and private paths. F9 UNKNOWN-HELD. ONE original shared initial
-virtual-cash tenth/costs/losses/pending remain; no profit expansion, foreign
-adoption or substitute unknown. Fees/settlement/net PnL remain unobserved.
+HGB currentpoint af0b3333/sourceec7822eb/proposal065bf7d7 is COMPLETE:
+A/research/current-nas8-hgb18-feature-only-currentpoint-20261027-v1.
+1native+1actual8row restore/forward/0fits-held-economic/allclosed,
+allow_submitFALSE,8positive fair ties, not native SDK/dispatcher bound.
+New RankHalf currentpoint reuses saved F3epoch9/affine plus cached HGBpoint,
+max1actual8row CUDA inference/0fits-held-economic; do not repeat training.
 
-## Independent Research
+Data currentpoint HANDOFFe76f0401:20GET1POST0retry/20accepted,61priorOHLCV
+x20context ->8x18features,5Jobsclosed59.768869active, native/verification/RuffPASS.
+Feature endOct26 20:00UTC/actual observed20:49:48.613373, not close-time availability.
+FEATURES9d85870d/ROLEd6a22a2c; raw M-only, no stale-vintage splice/imputation.
+TOTAL RankNet sidecars20383a8a: direct OPEN5 labels, FIT234/314/394dates,
+INNER55each/OOF16/16/15; no residual-y inversion, FIT-only learner affine,
+targets physically separated.4Jobsclosed32.256245active/300,0HTTP/no held decode.
+Completed foundation inventorya04d103f found existing Chronos2/TimesFM2.5/TTM
+comparisons/adaptations; no duplicate fit/download. TTM exact public date unverified.
+Older context/seeds/q10/gate results stay in role boards/Git/immutable consumers.
 
-Newest: A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json,
-SHAeca8d542, CLOSED. One CPU candidate/140chronological rows/one native
-handoff/projection/held intake/two new cells/zero fits-restores-forwards-retries
-or old-control replays. All3CIDs/15Jobs closed;186.976owned/600,
-2535.065elapsed/3600; original17:47:56 origin never reset.
-20bp EACH leg: gate growth6.1468%/DD2.4345%/turnover1.2711 versus cached
-QQQ_ONLY5.5991%/2.4345%/3.6186. Narrow frozen checks pass, noise unresolved.
-AlwaysQQQ6.4203%/sameDD weakly dominates: no broad superiority, alpha or
-Paper promotion. Retrospective total returns, not annualized/Paper PnL.
+## Owners / Ready Work
 
-Prior QQQ OPEN5 context b419f22a CLOSED:6CUDAfits/1568updates/100epochs/
-6OOF/8cells/allCIDs-Jobs-leaseclosed;461.478owned/3600,1350.036elapsed/7200.
-Context4.9165%/DD2.4596% loses QQQ_ONLY5.5991%/2.4345%; both primary checks
-fail. Bootstrap failures/debits preserved, no completed-fit retry/rescue.
-Seed16bfa3f7 CLOSED:6fits/19269updates; newseeds/fixed-thirds fail cachedGRU.
-2026 supported pair CLOSED: GRU1.6049%/DD1.5213%, Joint1.0148%/1.4367%,
-40cohorts/20bp; availability-conditioned development, not independent alpha.
+- Parent: integration/verification/Git; actual four-Task installation above.
+- Leibniz: pure8row HGB/RankHalf proposal->native typed adapter/cold roundtrip;
+  existing serial owner only, no new Task/bank or changed MSFT input/release.
+- Schrodinger: RankHalf current inference, actual resource coordination, not
+  repeating completed RankNet. Native SDK/horizon/foreign-skip boundaries stay.
+- Faraday: completed current/TOTAL packets; direct existing refs, no duplicates.
+- Halley: source-only initial-vs-learned attribution readiness, no new fit.
+- Socrates: native guard patch completed; source-only separate US_H5 exchange
+  readiness. Old NASD-only profile/ETF guard/owners remain untouched.
 
-Newest q10 family CLOSED_REJECT, Consumerab2d70d6:
-A/research/current-qqq-open5-adverse-tail-risk-development-20261027-v1/CONSUMER.json.
-Actual3CUDAfits/1199updates/77epochs/3OOF140rows/zero retries/financial cells.
-Earlystop22/22/33epochs, best2/2/13 from INNER only, not a fixed16epoch cap.
-Pooled raw pinball .0039509128 loses FITconstant .0039075562 and weightedvol
-.0038617389; BOTH primary checks FAIL. No refit/threshold/architecture rescue,
-ES certificate, independent alpha or Paper promotion. All11CIDs/55Jobs/root/
-lease closed,905.152owned/3000 and2279.863elapsed/5400; original18:47:27 origin,
-Data62.83/Source600(includesprep96.055)/Halley90/verify120 counted once.
-Fits2.44/2.63/2.63s, peaks180/218/255MB; first two were co-tenants, not isolated
-benchmarks. Useful training was short, no GPU permission hold or dummy load.
-Next Source-only work checks genuinely nonduplicate selection hypotheses and
-existing foundation checkpoints/date/reuse before another numerical campaign.
+## Preserved Original Execution
 
-That next selection family is now CLOSED_REJECT, pre-fit NAS8 addenduma50a4f46:
-A/research/current-liquid17-volume-conditioned-open5-selection-development-20261027-v1.
-Explicit ownerbaa2 attests0native/marketfits/restores/forwards/registry/held
-intakes before narrowing17 to NASDAQ8 for current native NASD-only guard.
-AAPL/AMD/AMZN/GOOGL/META/MSFT/NVDA/TSLA selected; original20context/600snapshot/
-17Data and debits remain. Indicator15+beta60/residualmom5/relativevolume =18,
-CPU HGB3fits112stages(23/58/31), best3/38/11,47OOF376rows/4costcells/0retry.
-Sourcec9c35f6e/result4f6016b8: growth2.8773413%/DD1.9274526% beats MOM20/REV5
-and uniform8 growth2.5081159%, but fails frozen uniform8 DD1.8751808%.
-Original reject stands, not a qualified winner/alpha. All workers closed,
-528.695435owned/1800,3701.496146elapsed/5400; no old cost refund/regrade.
-Currentpoint package reuses saved F3 stage11, at most1actual8row inference/
-0fits/0economic/allow_submit FALSE, with separate Faraday current features.
-Native H5 CLOSE[e+4] differs from research OPEN[e+5]; Paper is an explicitly
-labelled operational variant if later bound, not exact backtest replication.
-Separate fixed hierarchical composition20:48..21:48UTC has0fits/0model calls,
-one full47feature-only projection/max2NET20cells; actual prior-only SPY scalar
-and full weight aliases must precede prices. New family, not old failure rescue.
-Existing Chronos2 and
-TimesFM2.5 comparisons/adaptation were already completed; metadata inventory
-a04d103f rejects duplicate replay, TTM exact public weight date unverified.
+L18:12 exactfce25c9f diagnostic7d02658b proves stale frozenPS7.6.7 versus installed
+signed7.6.9 before metadata subprocess, not optional's cause. Actual L future-exit
+4335/60dc repairb5d053d7 enabled original Oct30exit, expired entrydisabled/86otherssame.
+Future public L selector d3407cdb/manifest8f8ddcb1 is qualified, no outcome read.
+J17 original17:28 public8ed incomplete; strict RO0d134765 at17:33:02 no exact
+registered/pending J17, not historical zero wire/fresh broker or release of F9.
+L RO667c967a and optional RO5634e962 CONSUMED/all13Jobs+CIDsclosed each:
+missing exact journal/cohort/counts null stays UNKNOWN, not zero/flat.
+Optional c55d public942 UNKNOWN_MISSING_PUBLIC_RESULT, forensicsc602 only possible
+empty-sink causes. Original R4 recovery/exit/source/identity remains, no run inferred.
+Original exits UTC: GRU Oct30 19:45..20:00, TF19:49..20:00, L19:55..20:00;
+optional Nov20 SELLcutoff20:35/cleanup20:40, J17 20:45..21:00.
+Data retention21:55/future SPY captureNov20 22:05 retain owners, no duplicate.
+Same-chat oct26-paper is one-shot; config is not delivery, no replacement chain.
 
-Data eeebb16a CLOSED_READY:1712known CLOSE per fixed8ETF, seven geometry-bad
-context rows flagged; strictQQQ1712 OPEN/CLOSE. Exact producer refs in data.md.
-No canonical/PIT/TR/CA/finality promotion or duplicate acquisition.
-Mixed intraday Data task measured next19:24UTC; not paused for an assumed
-18:00 conflict. Existing retention21:55 and future captures keep their owners.
+## Verification / Git
 
-## Owners / Verification
-
-Leibniz: full IO/native bridge SYN now passed; prepares true same-account
-Oct27 operational wrapper/typed input/policy/disabled definitions, not an
-admitted new broker owner or actual order yet. Real owner/custody/quote guards
-cannot borrow SYN authority. Socrates real readonly capability has completed.
-Generic QQQ prototype67aca140 FAILED at reserved-ETF stock guard;3development
-attempts retained. New separate deterministic MSFT preparation is selected,
-not a silent QQQ substitution, guard relaxation or unknown reservation reset.
-Faraday: completed NAS8 derived view95.8401active and new currentpoint
-HANDOFFe76f0401,20GET1POST0retry/20accepted/5Jobsclosed/59.768869active.
-Exact20context61prior OHLCV endingOct26 ->8x18 raw features; native ABI/
-verification/Ruff PASS, raw M-only/no splice/imputation. Featureend20:00UTC,
-observed20:49:48.613373, not close-time availability. Direct Engine handoff;
-no model/PIT/CA/finality/Paper qualification from feature readiness alone.
-Socrates: L strict RO CONSUMED667c967a, observation18:58:21.887555UTC:
-A/execution/current-l-fresh-typed-custody-readonly-20261026T184715-v1/CONSUMER.json.
-Original account/basis/input/policy/full-book and private stability PASS;
-L_JOURNAL_NOT_RECORDED_UNKNOWN/counts null/inventory-pending-terminal unknown,
-NOT flat/zero.13Jobs/container closed. Native pre-read admission independently
-qualified; later Faraday bc25 is NOT retroactive pre-read evidence. F9 unchanged.
-Old1815..1829 scope expired UNINVOKED; new320 scope consumed, no reuse after4335.
-Optional19:12 scope also consumed5634e962, no extra snapshot or reuse.
-Current MSFT nativeSYN Sourcec3fd8e69 and fullIO b3fedf64 are completed,
-not actual financial evidence. Real operational Consumer92042ff4/host37bda1e9/
-image27dde is READY FALSE RELEASE, no Task install. Four finite quiet windows:
-Oct27 entry13:40..13:44/recovery13:47..13:51UTC, Nov2 exit20:45..20:49/
-exactexitrecovery20:52..20:56. Parent stages activation; Socrates owns ONE
-actual offline bank/MSFT registration read20:42..21:00UTC, not yet a result.
-Shared basis/F9/native risk remain authoritative. No duplicate completed SYN.
-Schrodinger/Halley: research above. Parent: integration/Git/actual cutovers.
-No tracked production writes assigned in these packages.
-
-Code a3b3f1ba pushed: opt-in finite paper_account_session and nearest-wire
-callback-clock fix. Existing737SDK/images unchanged. NEW staged current image
-sha256:27dde810cfa63aaa0e4a79da1a99de344a0a5734718d851d911d9284864acaaf
-has748exact members/native import+inert API PASS/Python3.12.15; two network-none
-RO/no-private containers closed. NOT deployed as broker owner. Consumer6e27f996:
-A/execution/current-native-account-session-runtime-image-20261027-v1/CONSUMER.json.
-Initial config-digest launch failed before create; correct manifest-index ID
-used without image-byte change, not a hidden trade retry.
-Docs87b88699 pushed. Final code authority70193a28:
-A/verification/current-paper-account-session-clock-recovery-20261026-v1/CONSUMER.json.
-213serialPASS/19437fullPASS/26knownSKIP35warnings/eightworkers/375.23s/helper0/
-Ruff/default-research-accountingComposePASS with .env.example.
-18:44 all1411 protected source/policy digests still match; exact C: child/
-dotlease removed,18PID-starts closed. MD-only reuse requires those exact pins;
-changed external sources still need fresh native checks/deployment readback.
-
-This compact current state supersedes stale ready/running projections.
-Detailed history/closed commands stay Gitbb391f30 and immutable artifacts,
-not an implicit queue. Existing same-chat oct26-paper is one-shot; no replacement
-chain. Continue ready work without foreground waiting.
+New guardd4550208 + test564eb4b3: actual native RED reproduced before fix.
+Only current-target H5 sizing-skip proof append allowed; bank/owners/pending/
+old proofs/other metadata/cursor stay checked.43focusedPASS/ClaudeGOlimits.
+Parent fresh authority7131c2a1:
+A/verification/current-h5-no-order-prefix-compatibility-20261027-v1/CONSUMER.json.
+559changed-path serialPASS86.78s;19461fullPASS/26knownSKIP35warnings/8actual
+workers378.74s/helper0/Ruff/default+research+accountingoverlay with.env.examplePASS.
+1411digests exact; C:/trpy/runs/r-4c9f6669 and dotlease removed/22PID-startsclosed.
+First helper argument-binding error happened before helper body, not a run;
+corrected explicit -Workers/-PytestArgs. No cleanup/lease denial bypass.
+This patch is verified but NOT deployed to MSFT37/image27. Old70193a28 immutable.
+Last pushed snapshot before this integration: deaabcbb. Parent commits owned
+verified code/docs only; unfinished company outcome remains UNFINISHED.

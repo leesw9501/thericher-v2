@@ -12,6 +12,7 @@ import pytest
 
 import test_kis_paper_current_stock_cycle as legacy
 import test_kis_paper_weight_cycle as weights
+import test_kis_paper_weight_h5_cycle as h5
 import test_model_paper_profile as model
 from test_kis_paper_current_stock_cycle_worker import w
 from test_kis_paper_portfolio_execute import ACCOUNT, CONFIG
@@ -19,6 +20,7 @@ from test_model_paper_weights import ModelPaperWeightRow, metadata, prepared
 from thericher_v2.execution import kis_paper_current_stock_cycle as core
 from thericher_v2.execution.paper_account_round import PaperRoundSlot
 from thericher_v2.execution.paper_account_session import PaperAccountCohort
+from thericher_v2.research.model_paper_weights import prepare_model_paper_weights_input
 
 SOURCE = "sha256:" + "a" * 64
 
@@ -214,6 +216,231 @@ def test_prefix_restart_uses_retained_basket_and_same_original_basis(h):
     assert second["cursor"] == 2 and second["native_calls"] == 1
     assert h["loads"] == 1 and not h["submits"]
     assert weights.bank_bytes(h) == before
+
+
+def sizing_skip_setup(
+    h, monkeypatch, *, profile=h5.H5, first_skip="quote", reason="target_already_satisfied"
+):
+    original = h5.point(profile)
+    rows = (
+        ModelPaperWeightRow(0, "AAPL/NAS", True, Decimal(".5")),
+        ModelPaperWeightRow(1, "MSFT/NAS", True, Decimal(".25")),
+        ModelPaperWeightRow(2, "AMZN/NAS", True, Decimal(".25")),
+    )
+    value = prepare_model_paper_weights_input(
+        metadata(rows, exit_not_before=original.metadata.exit_not_before),
+        entry_session=original.entry_session, exit_session=original.exit_session,
+        profile=original.profile,
+    )
+    weights.bind(h, value, profile)
+    preview = legacy.NativeSyntheticStockClient.stock_preview_snapshot
+
+    def expensive_middle(client, **kwargs):
+        symbol = client.instrument.symbol
+        funds = h["funds"]
+        if symbol == "MSFT" and reason == "whole_share_capacity_zero":
+            h["funds"] = Decimal(1)
+        try:
+            reads = preview(client, **kwargs)
+        finally:
+            h["funds"] = funds
+        if (symbol == "MSFT" and reason == "whole_share_capacity_zero") or (
+            symbol != "MSFT" and not (symbol == "AAPL" and first_skip == "sizing")
+        ):
+            return reads
+        price = Decimal(100000)
+        quote = core.KisPaperSpyLimitInput(
+            price, 4, Decimal(".0001"), h["now"], price, price
+        )
+        orderable = replace(reads.orderable, reference_price=price)
+        return replace(reads, quote=quote, buy_limit=price, orderable=orderable,
+                       snapshot=replace(reads.snapshot, orderable_funds=orderable))
+
+    monkeypatch.setattr(
+        legacy.NativeSyntheticStockClient, "stock_preview_snapshot", expensive_middle
+    )
+    if first_skip == "quote":
+        h["quote_skip"].add("AAPL")
+    elif first_skip == "foreign":
+        reserve_foreign(h, value.targets[0])
+    bank = weights.bank_bytes(h)
+    first = visit(h, max_native_calls=1)
+    retained = copy.deepcopy(weights.record(h))
+    assert first["cursor"] == 1 and first["native_calls"] == 1
+    if first_skip == "fill":
+        assert first["stop"] == "yield_after_first_native_leg"
+        assert set(retained["owners"]) == {"AAPL"} and h["wires"] == 1
+        bank = weights.bank_bytes(h)
+    else:
+        assert retained["owners"] == {}
+        assert weights.bank_bytes(h) == bank and h["wires"] == 0
+    advance(h, 61)
+    return value, retained, bank
+
+
+@pytest.mark.parametrize("first_skip", ["quote", "sizing", "foreign", "fill"])
+@pytest.mark.parametrize("reason", ["target_already_satisfied", "whole_share_capacity_zero"])
+def test_h5_existing_record_sizing_skip_reaches_later_native_leg(
+    h, monkeypatch, first_skip, reason
+):
+    value, retained, bank = sizing_skip_setup(
+        h, monkeypatch, first_skip=first_skip, reason=reason
+    )
+    native = core.run_kis_paper_current_stock_cycle
+    skipped = []
+    prior_submits = list(h["submits"])
+
+    def checked_native(**kwargs):
+        result = native(**kwargs)
+        if result.status == "no_intent":
+            saved = weights.record(h)
+            assert weights.bank_bytes(h) == bank and saved["owners"] == retained["owners"]
+            assert saved["active"]["entries_done"] == ["AAPL", "MSFT"]
+            assert saved["active"]["entry_no_order"] == (
+                retained["active"]["entry_no_order"] | {"MSFT": reason}
+            )
+            skipped.append(True)
+        return result
+
+    monkeypatch.setattr(core, "run_kis_paper_current_stock_cycle", checked_native)
+
+    result = visit(h, loader=forbidden)
+
+    assert skipped == [True]
+    assert result["stop"] == "yield_after_first_native_leg"
+    assert result["native_calls"] == 2 and result["skipped"] == 1
+    assert result["calls"]["buy_posts"] == 1
+    assert h["wires"] == len(prior_submits) + 1
+    assert h["submits"][:-1] == prior_submits and h["submits"][-1].symbol == "AMZN"
+    saved = weights.record(h)
+    assert saved["active"]["entries_done"] == ["AAPL", "MSFT", "AMZN"]
+    assert saved["active"]["entry_no_order"] == (
+        retained["active"]["entry_no_order"] | {"MSFT": reason}
+    )
+    assert saved["owners"] == retained["owners"] | {"AMZN": saved["owners"]["AMZN"]}
+    assert core._unpack(saved["active"]["model_input"]) == value
+    binding = core.budget._load_binding(h["root"])
+    assert binding["basis_ref"] == h["initial"]["basis_ref"]
+    assert binding["allocated_usd"] == h["initial"]["allocated_usd"]
+
+
+def test_h5_sizing_skip_call_limit_yields_then_restarts_exact_next_target(h, monkeypatch):
+    value, retained, bank = sizing_skip_setup(h, monkeypatch, first_skip="sizing")
+    first = visit(h, loader=forbidden, max_native_calls=1)
+    assert first["stop"] == "native_call_limit" and first["native_calls"] == first["skipped"] == 1
+    assert first["cursor"] == 2 and first["calls"]["buy_posts"] == h["wires"] == 0
+    assert weights.bank_bytes(h) == bank
+    saved = weights.record(h)
+    assert saved["owners"] == retained["owners"] and saved["pending"] is None
+    assert saved["active"]["entry_no_order"] == {
+        "AAPL": "target_already_satisfied", "MSFT": "target_already_satisfied"
+    }
+    advance(h, 61)
+    second = visit(h, loader=forbidden, max_native_calls=1)
+    assert second["stop"] == "yield_after_first_native_leg" and second["native_calls"] == 1
+    assert second["cursor"] == 3 and second["calls"]["buy_posts"] == h["wires"] == 1
+    assert h["loads"] == 1 and [i.symbol for i in h["submits"]] == ["AMZN"]
+    assert core._unpack(weights.record(h)["active"]["model_input"]) == value
+
+
+def test_h5_all_sizing_skips_complete_without_new_bank_or_leg(h, monkeypatch):
+    _, _, bank = sizing_skip_setup(h, monkeypatch, first_skip="sizing")
+    preview = legacy.NativeSyntheticStockClient.stock_preview_snapshot
+
+    def expensive_last(client, **kwargs):
+        reads = preview(client, **kwargs)
+        if client.instrument.symbol != "AMZN":
+            return reads
+        price = Decimal(100000)
+        orderable = replace(reads.orderable, reference_price=price)
+        return replace(reads, buy_limit=price, orderable=orderable,
+                       quote=core.KisPaperSpyLimitInput(
+                           price, 4, Decimal(".0001"), h["now"], price, price
+                       ), snapshot=replace(reads.snapshot, orderable_funds=orderable))
+
+    monkeypatch.setattr(legacy.NativeSyntheticStockClient, "stock_preview_snapshot", expensive_last)
+    result = visit(h, loader=forbidden)
+    assert result["native"] == dict(
+        status="complete", reason="policy_no_order_complete", leg_count=0
+    )
+    assert result["stop"] == "native_non_skip_stop" and result["native_calls"] == 2
+    saved = weights.record(h)
+    assert saved["active"] is None and saved["pending"] is None and saved["owners"] == {}
+    assert saved["completed"] == [h["data"].input_ref]
+    assert weights.bank_bytes(h) == bank and h["wires"] == 0 and not h["submits"]
+
+
+@pytest.mark.parametrize("change", [
+    "metadata", "top_metadata", "old_reason", "old_reason_removed", "wrong_target",
+    "extra_target", "disallowed_reason", "other_profile", "bank", "owners", "pending",
+    "targets", "cursor_jump", "intent",
+])
+def test_h5_sizing_skip_never_waives_other_mutations(h, monkeypatch, change):
+    profile = h5.H20 if change == "other_profile" else h5.H5
+    _, retained, _ = sizing_skip_setup(h, monkeypatch, profile=profile, first_skip="sizing")
+    native = core.run_kis_paper_current_stock_cycle
+    mutated = []
+
+    def changed_native(**kwargs):
+        result = native(**kwargs)
+        if mutated or result.status != "no_intent":
+            return result
+        saved = weights.record(h)
+        notes = saved["active"].setdefault("entry_no_order", {})
+        if change == "metadata":
+            saved["active"]["exit_attempts"] += 1
+        elif change == "top_metadata":
+            saved["unexpected"] = "invented_unrelated_metadata"
+        elif change == "old_reason":
+            notes["AAPL"] = "whole_share_capacity_zero"
+        elif change == "old_reason_removed":
+            del notes["AAPL"]
+        elif change == "wrong_target":
+            notes["AMZN"] = notes.pop("MSFT")
+        elif change == "extra_target":
+            notes["AMZN"] = "target_already_satisfied"
+        elif change == "disallowed_reason":
+            notes["MSFT"] = "quote_timestamp_unavailable"
+        elif change == "other_profile":
+            notes["MSFT"] = "target_already_satisfied"
+        elif change == "bank":
+            reserve_foreign(h, h["data"].targets[-1])
+        elif change == "owners":
+            target = h["data"].targets[-1]
+            saved["owners"]["AMZN"] = dict(
+                instrument_binding_ref=target.receipt.instrument_binding_ref, plans={}
+            )
+        elif change == "pending":
+            saved["pending"] = dict(arguments=core._pack(dict(
+                input_ref=h["data"].input_ref, request_id="model-invented-unexpected"
+            )))
+        elif change == "targets":
+            saved["active"]["targets"] = core._pack(())
+        elif change == "cursor_jump":
+            saved["active"]["entries_done"].append("AMZN")
+        else:
+            owner, _ = core.budget._owners(core.budget._load_binding(h["root"]))[0]
+            path = h["root"] / (owner.state_refs[0].run_id + ".json")
+            state = core.canary.KisPaperCanaryStateStore(path).read()
+            forged = replace(state, intent=replace(
+                state.intent, limit_price=state.intent.limit_price + Decimal(1)
+            ))
+            core.budget._atomic_json(path, forged.to_dict())
+        core._save(weights.pointer(h), saved)
+        mutated.append(True)
+        return result
+
+    monkeypatch.setattr(core, "run_kis_paper_current_stock_cycle", changed_native)
+    if change == "intent":
+        result = visit(h, loader=forbidden)
+        assert result["native"]["status"] == "unavailable"
+        assert result["stop"] == "native_non_skip_stop"
+    else:
+        with pytest.raises((ValueError, core._CycleFault)):
+            visit(h, loader=forbidden)
+    assert mutated == [True] and h["wires"] == 0 and not h["submits"]
+    binding = core.budget._load_binding(h["root"])
+    assert binding["basis_ref"] == retained["basis_ref"] == h["initial"]["basis_ref"]
 
 
 def test_unknown_retained_recovery_precedes_expired_loader_without_resubmit(h):

@@ -18,28 +18,52 @@ elapsed3701.496146/5400; original19:26:14 origin and all source/data costs stay.
 The pre-fit NAS8 addenduma50a narrowed routes for native NASD guard BEFORE
 numerical work under explicit zero-work attestationbaa2; not a result filter.
 
-Current Schrodinger package:
+Completed currentpoint, Sourceec7822eb/proposal065bf7d7:
 A/research/current-nas8-hgb18-feature-only-currentpoint-20261027-v1.
-Reuse saved F3 stage11 safely: at most1actual8row restore/forward, zero fits,
-zero economic cells. Faraday owns separate actual current features. Output
-allow_submit FALSE; an exploratory proposal is not a risk or broker grant.
+Saved F3 stage11,1native+1actual8row restore/forward,0fits/held/economic/retries,
+allclosed138.913255owned/1046.835496elapsed. Eight positive allocations are
+fair ties, not8wins. Output allow_submitFALSE/not native SDK or dispatcher
+bound. Provisional Paper does not require a scientific winner; model output
+never grants broker-risk authority.
 Research OPEN[e+5] differs from native H5 CLOSE[e+4]; eventual Paper use is
 an explicitly labelled operational variant, not exact backtest replication.
 
-Separate Halley composition package, newly frozen20:48UTC/hard21:48UTC:
-A/research/current-nas8-hierarchical-logreturn-composition-20261027-v1.
-Fixed raw residual + beta60*(.25*prior20 SPY log momentum), beta-only control;
-0fits/model calls/HTTP/retries,1feature projection/max2new NET20cells/1held
-intake,600owned/3600elapsed. Actual prior-only scalar ABI and exact full-policy
-aliases before prices; alias stops/reuses control, never threshold rescue.
-Kill unless growth beats BOTH residual HGB and beta-only, DD<=uniform8.
-Adaptive reused-data development, not independent alpha. Prior source-only
-proposal elapsed654/600 and Claude REVISE remain closed; no refunded debit.
+Hierarchical composition CLOSED_REJECT, Source32f56f86/result82f43728:
+A/research/current-nas8-hierarchical-logreturn-composition-technical-repair-20261027-v1.
+Actual scalar ABI/whole-policy aliases before prices PASS,1projection/2NET20
+cells/1held/0fits-modelcalls-HTTP-retries. Compose3.0543561%growth/DD2.2988859%
+beats HGB and beta-only2.7259332%/2.1699072%, but fails uniform8 DD1.8751808%.
+No formula rescue/alpha claim. All5CIDs27Jobsclosed,141.543817newowned/343elapsed;
+old pre-native directory failure240.314309/421 remains UNKNOWN/charged once,
+combined381.858125. Earlier source654/600/ClaudeREVISE stays closed too.
 
-Next GPU readiness is source-only NAS8 rank-target duplicate audit after
-currentpoint closure, not an active training claim. Actual20:49UTC GPU sample:
-4090,1647/24564MiB,2% utilization. Ready work may use measured headroom; no
-permission hold or dummy training. Closed model work below is not running.
+Completed CUDA family, Source01b8103e/resultedf9aed4:
+A/research/current-nas8-total-open5-ranknet18-development-20261027-v1.
+21:08..23:08UTC/3600owned7200elapsed,Source600(includesready180+review90ONCE),
+Data300/rest2700. Same NAS8/18features/3purgedfolds/47OOF; new TOTAL OPEN5
+within-date28pair BCE, not residual y. Shared18-32-16-1 GELU/dropout.1/AdamW
+lr.001wd.001/seed20261027,192maxepochs/18000updates/3fits, INNER earlystop20/
+delta1e-6/best restore/LRhalfpatience5. Max1tinyCUDAfit4updates/new actual
+producer-codec smoke before market,3OOF/1held/max2NET20cells/0marketretry.
+Ranker plus fixed.5 average-TIE-RANK HGB blend, not raw-score mixing. Each
+primary growth>HGB and DD<=uniform8; adaptive reused data, no rescue/alpha.
+Actual3fits737updates69epochs/3OOF47dates/2NET20cells/0retry/allworkersclosed.
+Earlystop20/20/29epochs, best0/0/9: first2selected initial checkpoints,
+not learned winners. Fitwalls2.37/2.48/3.49s, peaks66/66/68MiB. Ranker growth
+2.4306671%/DD1.7226584%, RankHalf2.5881617%/1.7134204%. Both frozen growth
+criteria fail versus HGB, DD passes: REJECT fixed recipes, no rerun/regrade.
+Blend dominates uniform8 on reused development only, useful tradeoff not alpha.
+Ownedupper1182.301532/3600,elapsed1177.964987/7200, leaseabsent.
+Bounded duplicate audit found no exact completed match; ranking itself NOT new.
+
+Next currentpoint:
+A/research/current-nas8-fixed-rankhalf-currentpoint-20261027-v1.
+300owned/1800elapsed, saved F3epoch9/FIT18affine+cached HGBcurrentpoint,
+max1actual8row CUDArestore/forward/0fits-held-economic, new current role smoke
+before payload. Fixed average-TIE-RANK recipe unchanged, allow_submitFALSE,
+actual clocks/nonparity/refs preserved, not a new private writer/Paper pass.
+Halley source-only initial-vs-learned attribution readiness is separate;
+no control inference/ledgers granted merely by that source review.
 
 Newest CLOSED consumer:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json,

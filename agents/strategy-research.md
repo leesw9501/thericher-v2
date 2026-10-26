@@ -7,57 +7,46 @@ Detailed closed history: Gitbb391f30 and immutable source/consumer records.
 
 ## Current / Concrete Consumer
 
-Halley now owns newly frozen fixed hierarchical composition:
-A/research/current-nas8-hierarchical-logreturn-composition-20261027-v1.
-Origin20:48UTC/hard21:48,600owned/3600elapsed,0fits/model calls/HTTP/retries,
-1full47row projection/max2new NET20ledgers/1held intake. Exact raw residual
-HGB + beta60*(.25*SPYprior20 CLOSE log momentum), beta-only control; existing
-NAS8/keys/20bp-per-leg/.10once/kernel fixed. Actual prior-only SPY scalar/file
-ABI and complete policy aliases before any held prices. No scalar imputation,
-double inverse or ratio/sign search. Kill unless growth beats BOTH HGB and
-beta-only and DD<=uniform8. Adaptive reused development, not independent alpha.
+Current Halley package is SOURCE-only learned-vs-initial attribution readiness:
+A/research/current-nas8-ranknet-learning-attribution-readiness-20261027-v1.
+60owned/600elapsed, inspect retained metadata/code for exact F3initial weights
+or deterministic initializer proof. F1/F2selectedepoch0 and F3epoch9 in CLOSED
+3CUDAfit RankNet study, not all learned selected models. No new fit/forward/
+market/held payload or source-only authority for an extra financial experiment.
+If a future ablation is feasible it needs its own finite same-key/cost scope;
+no outcome rescue, alpha or retrospective regrade.
 
-Prior source-only proposal is CLOSED, consumercategorically REVISE/no retained
-Claude rationale;654elapsed/600,46ownedupper/120, overrun stays recorded.
-Missing scalar and alias checks belong to the NEW tested package, not proof
-the adverse advice agreed or a refund/extension. Closed HGB18 result remains
-REJECT despite2.8773%growth: DD1.9275% exceeds uniform8 1.8752%.
+RankNet independent Source review closed70owned inside Source600 ONCE.
+Native constructor/checkpoint/hand-off and original targets/28pair ties/
+FIT-only affine/OOF/rank-not-raw blend reviewed, not a performance approval.
+Actual3fits737updates/47OOF2cells completed elsewhere/allclosed. Ranker
+2.4307%/DD1.7227%, RankHalf2.5882%/1.7134%; primary HGB-growth contrast fails,
+DD passes. Blend dominates uniform8 on reused data, not independent alpha.
 
-Cost-position proposal2509c8ca/kernelcfdd89ce was consumed by CLOSED gate
-eca8d542. Gate outputs EXACT0/1; native economic kernel applies .10 ONCE.
-FLAT enters only above fixed roundtrip cost hurdle; held position retains
-nonnegative mean forecast. This is one-step proxy, not Bellman optimality
-or theorem about expected utility. exp(Elog) is not E(simple return).
+Fixed hierarchy32f56/result82f43728 CLOSED_REJECT:
+A/research/current-nas8-hierarchical-logreturn-composition-technical-repair-20261027-v1.
+Exact raw HGB residual+beta60*(.25*prior20 SPYlogmom), actual scalar ABI/full
+weight-path aliases before prices PASS.2NET20cells/0fits/0HTTP/all5CIDs27Jobsclosed.
+Growth3.0544%/DD2.2989% beats HGB/beta-only, fails frozen uniform8 DD. No ratio/
+sign/metric rescue.141.543817newowned/343elapsed; initial directory-precondition
+failure0market/held/ledger stays scientificUNKNOWN/240.314309charged once.
+Earlier source-only654/600/ClaudeREVISE stays closed, not a new advisoryGO.
 
-Gate20bp growth6.1468%/DD2.4345%/turnover1.2711 improves cachedNN5.5991%/
-sameDD/3.6186 but alwaysQQQ6.4203%/sameDD weakly dominates. Noise unresolved,
-no broad alpha or Paper promotion. No threshold/ratio rescue or old replay.
-Halley proposal050ac73c was consumed by CLOSED_REJECTab2d70d6: adverse-path q10
-proper-score question versus FITconstant and weighted-vol reference. Native
-75e57 tinyfit/restore passed; no mean/policy/threshold axis added. New independent
-Source/ABI/physical-mount review120active is charged to family verify120 once,
-not an extra ledger/evaluation intake. Direct exchange with Schrodinger/Data.
+Selection proposal9763f147 was consumed by NAS8 HGB18 CLOSED_REJECT:
+growth2.8773%/DD1.9275%, uniform8DD1.8752%. Common benchmark subtraction alone
+preserves same-date ranks; unequal causal beta target is distinct. No exact
+duplicate claim from bounded registry search and no retrospective asset filter.
 
-Primary references supporting cost-aware forecast/position separation:
+Cost-position gateeca8d542 CLOSED:6.1468%/DD2.4345% improves cachedNN but
+alwaysQQQ6.4203%/sameDD weakly dominates. One-step cost proxy, not Bellman/
+expected-utility optimality or alpha. q10ab2d70d6 loses constant/vol proper-score
+references; no rescue. Detailed mechanisms/history are Gitdeaabcbb/consumers.
+Primary sources:
+https://www.microsoft.com/en-us/research/publication/learning-to-rank-using-gradient-descent/
+https://www.microsoft.com/en-us/research/wp-content/uploads/2005/08/icml_ranking.pdf
 https://web.stanford.edu/~boyd/papers/cvx_portfolio.html
-https://arxiv.org/abs/2103.01775v1
-No upstream code copied or dependency added. Derivative-hedging results do
-not prove this QQQ gate optimal. Preserve source claims versus project facts.
-
-Socrates temporarily consumed L RO667c967a at18:58:21: exact account/basis/
-input/policy/native full-book/stability PASS, absent L journal UNKNOWN/counts
-null/not flat;13Jobs/containerclosed/F9unchanged. Native pre-read admission
-was independent, Faraday's later bc25 is NOT pre-read authority. No historical
-Job-receipt gate when fresh actual source-attested writer absence qualifies.
-L320 scope consumed; after current4335 source change never reuse it. Old
-1815..1829 scope expired UNINVOKED. Optional actual5634e962 also CONSUMED/13Jobsclosed/private stable, missing
-exact cohort UNKNOWN/counts null/notflat/F9 unchanged. Source forensicsc602
-three invented cases show possible empty sinks, not actual c55d cause.
-No more private reads. MSFT host receives the categorical diagnostic seam.
-
-Selection Source9763f147 was consumed by closed HGB18 study; common benchmark
-subtraction alone preserves same-date ranks, causal unequal beta target is
-distinct. No old beta-peer Ridge/stock-specific result is relabelled new.
+No upstream code/dependency added. Toy/search ranking and portfolio theory do
+not prove stock alpha; exp(Elog) is not E(simple return).
 
 ## Recent Decisions / Lessons
 
