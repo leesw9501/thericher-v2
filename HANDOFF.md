@@ -143,31 +143,73 @@ Existing CANONICAL-MODERNf6e5dc18 supplies a direct adapter; no new data build.
 Source-only EWMA proposal d1f6c056 and initial43headerchecks remain separate;
 the original metadata tuple/list failure was retained, not relabeled success.
 
-NEW current Engine scope:
-A/research/current-rank-memory-cadence-development-20261026-v1.
-Fixed causal daily rank-memory20 x FAST5/SLOW20 basket selection, same-gross
-uniform controls and exact-window passive SPY reference; optional covariance
-was discarded before payload, so no matched-risk claim.0fits/GPU planned.
-Faraday completed the canonical adapter/named-field producer in
-current-low-turnover-strategy-readiness-20261026-v1/held-marks-adapter-r1:
-HANDOFF8b3d5d6c/Sourcec521309d/API1a27581f,33inventednativechecks/RuffPASS,
-no marketdecode/build/model/ledger. Agentclosed; exact handoff delivered.
-Engine owns cold consumer/policy/replay/native/runtime and sole GPU coordination.
-Source/dispatch is not evidence that a numerical worker or training is running.
-Initial native consumer CLOSED_TECHNICAL before market: an invented fixture
-expected9reviews from62forecastrows but permits8. Real market geometry is
-unchanged. Schrodinger owns the separately named native-geometry-recovery-r1
-fixture-only repair and first market run within additive bounded custody;
-old native failure/2584.416activeupper and original607.984 remain retained.
-Original proposal1200upper/held-readiness180 plus new adapter<=600 are charged
-once within the new campaign, never refunded from the old607.984 result.
-Invoked Strategy Discovery/Socrates separately prepares ONE useful next
-trainable economic hypothesis or concrete rejection at
-A/research/current-next-trainable-economic-expert-readiness-20261026-v1.
-Source only; no GPU/market/ledger dispatch or new durable agent platform.
-Faraday separately audits official MODP0/1 price-basis semantics against retained
-source at A/data/current-canonical-price-basis-source-audit-20261026-v1;
-no API, raw values, dataset/model or ledger effects, not a Paper gate.
+Rank-memory/cadence is CLOSED after the separately named fixture-only recovery:
+A/research/current-rank-memory-cadence-development-20261026-v1/native-geometry-recovery-r1/CONSUMER.json,
+SHAd97bc30ed9ab3fa9c05acba74637aa37280a4f8a9edb747f9994e4efd9d1a61d.
+14ledgers/1235sessions/9002checks/0fits/GPU, all required prices known and all
+workers closed. All6frozen20bp criteria pass: MEMORY_SLOW growth6.8047% /
+originalNAVabsoluteDD2.3524%, RAW_SLOW2.9333%/7.0943%, UNIFORM_SLOW1.8297%/
+5.8954%. FASTmemory does not dominate raw;10bp changes some rankings.
+Adaptive/currentlisting/nonPIT/priceproxy, not independent alpha/TR/PaperPnL.
+Combined2710.978activeupper INCLUDES failed-native2584.416 and Source120repair;
+no refund/double debit. Fixture64rows gives9reviews; real geometry unchanged.
+First market readout ONCE; original producer33nativechecks was reused with
+both source pins, not repeated. No completed model or ledger was replayed.
+
+Faraday's source-only price-basis audit is CLOSED:
+A/data/current-canonical-price-basis-source-audit-20261026-v1/CONSUMER.json,
+SHA45dc9e8c32ab98db622197a339e4865af8c248bdd99f524dc2721047b2ce0bc4.
+41checks/0API: official MODP0unadjusted/MODP1adjusted intent, retained split
+witnesses outside this fixed100,29sameMODP1revisions. Conditional vendor price
+proxy, not verified dividends/CA/actual-share accounting or revision invariance.
+No blanket dataset invalidity or unrelated Paper hold follows from this limit.
+
+Six NEW MARKET GPU fits and two nativeGPU solver/checkpoint smokes completed:
+A/research/current-late-carry-h20-ranking-development-20261026-v1/READOUT-RELEASE.json,
+SHA597c3f94339d0869948f0c837893afecc0894c0d00e60ec105c56448391c315f.
+Source369713ab/chain4fc067e1/scoreseal57e92260/SCORES213b54dc/
+RESULT91a07efc/verify1d6d6379,2368checks. All11containers/55CLIJobs/root
+closed; GPUlease absent. Sampleddevice peak13327MiB/util98% is co-tenancy,
+not ongoing training or isolated per-worker use. ActiveSUM1795.003 includes
+1740Source/Data once within6000; nested jobs are not added twice.
+Matched19features/3prefixes/19purges/innerCHECK/OD64/max600trees, safe FINAL
+before fallible diagnostics and SELECTED checkpoint. TERMINAL20 versus
+LATE_CARRY15afterfirst5 uses futureC4 as LABEL ONLY.63fixed-share20cohorts.
+COMPLETE_FAIL_LATE_CARRY_MECHANISM:20bp originalNAVgrowth/absoluteDD,
+LATE-.8289%/6.5533%, TERMINAL+2.0098%/7.2471%, UNIFORM-2.4946%/10.0683%.
+No target/seed/cost rescue, significance, independent alpha or Paper adoption.
+Data2ec0d86f/a6b60c2b+840c36a8/16native+142independentchecks supports one
+pairedtarget build. InitialREQ physical ABI/actualROLE/HANDOFF canonical;
+addendume2dfdd7b resolves proposed aliases, no data/model rebuild.
+
+Current parallel owners (dispatch/source is not numerical completion):
+- Leibniz: current-paper-static-h20-composition-development-20261026-v1,
+  seven fixed policies/14ledgers/62origins3543..4763/exit4782, fixedq20 with
+  no H5intermediate resize. Uses sealed scores,0newmodelcalls.1800activeSUM
+  including readinessSource600once/5400elapsed;03:53:11..05:23:11UTC.
+  Sole primary MEMORY_LATE_HALF, no automatic reference winner or Paper swap.
+- Faraday: SPY static20 reference is CLOSED72401083/Source838c6be1,
+  two matched62cohort ledgers/242native+6362independentchecks,0models/retries,
+  bothnumericalPIDsclosed/363activeupper.20bp growth4.5097%/absoluteDD3.2698%,
+  mean/maxgross10.0284%/11.3787%; different risk/universe, not alpha/PaperPnL.
+  Now SOURCE-only current-rank-memory-current-warm-input-readiness-20261026-v1,
+  <=300active/900elapsed: existing data/model sufficiency for23recentdailywarm
+  forecasts, no arrays/acquisition/modelcalls/actualcurrentpacket yet.
+- Socrates: current-raw397-h20-transfer-readiness-20261026-v1, exact prior
+  duplication/affine/feature-order audit before potential3new RAW397H20 fits.
+  Schrodinger: separate current-raw397-h20-runtime-readiness-20261026-v1,
+  resolved native API/metadata only. Both600sourceactive/1200elapsed, no new
+  market/GPU allocation yet; completed TERMINAL19 will not be refit.
+
+Pure incremental memory proposal adapter is CLOSED, not deployed:
+A/execution/current-rank-memory-paper-proposal-preparation-20261026-v1/CONSUMER.json,
+SHAe7228bcf41acbec7fb800e3891812d13e37cc18308d018b284db201f76001bb2.
+17nativechecks/Source134ecaa1, restart/idempotency/model/mask/calendar guards,
+actual existing staticH5/H20 factory serialize/load. No current2026continuous
+forecasts/warm state/route provenance; retained-but-now-feature-unknown static
+factory gap rejects explicitly, not forced liquidation. No actual order/bank
+effects or original input swap. Static20 research above addresses the research
+H5resize versus real static-order mismatch without another broker writer.
 
 ## Closed Evidence / Recovery Pointers
 
@@ -214,7 +256,8 @@ External changed code needs its own fresh native/focused checks; repeated repo
 tests do not validate it. One-off app readback has4UP017style warnings retained;
 no blanket external-root Ruffpass or fresh19305-suite run is claimed.
 
-Latest pushed checkpoint247ca0a repaired app timing and current dispatch.
+Latest pushed checkpoint52c0b3c compacted current memory after247ca0a repaired
+app timing. Later owned facts remain pending integration until verified commit.
 Continue ready delegated work. Actual original runtime closes the ONE company
 outcome, not a package commit. Preserve unfinished work/counters/owned pending
 on interruption; classify resume/restart/reconcile/complete with actual evidence.

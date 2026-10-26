@@ -37,24 +37,31 @@ Task or strategy opportunity. Missing or future receipts are unknown, not fills.
   Additional Mean3 rejected for overlapping owned exits under C_NOW. Scope:
   A/execution/current-oct26-runtime-reader-readiness-20261026-v1.
   No original Task mutation/invocation, KIS or order in this inspection package.
-- Engine Research + Steward / Schrodinger: source/native preparation for NEW
-  A/research/current-rank-memory-cadence-development-20261026-v1.
-  Earlier zero-fit buffer family69a74b37 is CLOSED INPUT_UNAVAILABLE, not a
-  financial failure; price-source fault resolved by Data below.0fits/GPU
-  planned for this policy experiment; do not invent a training start.
-  Existing completed fits are excluded. A ready campaign may use useful
-  CPU/CUDA concurrency after native handoff/solver checks and actual headroom;
-  source preparation is not evidence that training has started.
-- Strategy + scoped Data / Faraday: CLOSED source coverage0918e966 and exact
-  canonical adapter8b3d5d6c/33nativechecks under
-  A/research/current-low-turnover-strategy-readiness-20261026-v1.
-  Exact handoff delivered to Engine; no new acquisition or duplicate build.
-- Invoked Strategy Discovery / Socrates: ONE next useful trainable hypothesis
-  or rejection under current-next-trainable-economic-expert-readiness-20261026-v1;
-  source only, no market/GPU/model/ledger dispatch or new durable role.
+- Engine + Steward / Schrodinger: late-carry family CLOSED597c3f94, SIX NEW
+  marketGPUfits+two nativefits/2368readoutchecks/all11containers+55CLIJobs
+  closed. COMPLETE_FAIL_LATE_CARRY_MECHANISM, no target/seed/cost rescue.
+  Memory/cadence CLOSEDd97bc30e/14ledgers/9002checks passes adaptive screen,
+  not independent alpha/PaperPnL. No completed fit or old ledger is ready again.
+- Leibniz: NEW current-paper-static-h20-composition-development-20261026-v1,
+  7fixedpolicies/14ledgers/62cohorts/fixedq20/no H5resize;0newmodelcalls/GPU.
+  1800activeSUM including priorSource600once/5400elapsed, hard05:23:11UTC.
+  Sole primary MEMORY_LATE_HALF, no automatic Paper adoption/reference winner.
+- Faraday: SPY static20 CLOSED72401083/242native+6362independentchecks,
+  two10/20bp ledgers/allhelpersclosed/0models. Now SOURCE-only current-rank-memory-current-warm-input-readiness-20261026-v1,
+  <=300active/900elapsed, existing23warmdata/model sufficiency, no actual
+  current2026forecast or arrays/modelcalls yet. Earlier Data canonical
+  adapter8b3d5d6c, price-audit45dc9e8c and pairedtarget2ec0d86f are CLOSED;
+  no acquisition or duplicate build required for these existing consumers.
+- Socrates: current-raw397-h20-transfer-readiness-20261026-v1 exact duplicate/
+  normalized raw ABI audit; Schrodinger separately checks native397 runtime.
+  Both source-only600active/1200elapsed, no market/GPU allocation yet.
+  Potential3newprefix fits reuse completed TERMINAL19 baseline, never refit it.
+- Execution adaptere7228bcf/17nativechecks is pure PREPARED_NOT_DEPLOYED:
+  current daily forecasts/warm provenance and retained-feature static gap remain
+  explicit. No original strategy/Task/privatebank change from this preparation.
 - Existing Data retention403d5908 owns Oct26 21:55UTC; no duplicate collector.
 
-Latest14NEWmarketfits (12CUDA+2CPU), Fourier/meta trees, SPY references,
+Prior14NEWmarketfits (12CUDA+2CPU), Fourier/meta trees, SPY references,
 ringfenced ledgers, full-GRU SYN and Ltail source repair are CLOSED. Their
 failures/limits stay unchanged. No repeated old fit, ledger or synthetic trade
 for reporting or GPU occupancy. Additional Mean3 stays inert/prepared.

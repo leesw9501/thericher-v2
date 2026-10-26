@@ -18,12 +18,13 @@ Claude REVISE remains advisory and retained, not agreement. Narrow the contrast
 to memory increments within each cadence and explicit interaction; source
 readiness is not numerical qualification.
 
-Engine's NEW consumer is
-A/research/current-rank-memory-cadence-development-20261026-v1.
-It adopts the four-arm factorial, drops optional covariance before payload,
-uses explicit same-gross controls/passive reference, not matched-risk claims.
-Source/native preparation is not a fit or GPU worker. Engine owns final frozen
-caps, input/target/cost/metrics, actual run and interpretation.
+Engine's memory consumer is CLOSEDd97bc30e/f8717535/RESULT2f4f71bd under
+current-rank-memory-cadence-development-20261026-v1/native-geometry-recovery-r1.
+14newledgers/9002checks/0fits/GPU, all6predeclared20bp criteria pass.
+MEMORY_SLOW growth6.8047%/absoluteDD2.3524% versusRAW_SLOW2.9333%/7.0943%,
+but FASTmemory does not dominate raw and10bp changes rankings. Samegross,
+not equalrisk, independentalpha, totalreturn or PaperPnL. Source-only advisory
+never becomes a claim of actual numerical execution or generic memory merit.
 
 Concrete Data fault discovered while earlier buffer family closed:
 supervision-gated H5.marks is not a dense held-price tape. Source coverage at
@@ -36,12 +37,24 @@ Original proposal/
 readiness1200upper and held coverage180 are charged once when consumed; new
 adapter<=600active within reserved Data900. No per-indicator agent/platform.
 
-Invoked Socrates now prepares ONE distinct useful next trainable economic
-hypothesis or rejection at
+Invoked Socrates completed ONE distinct next trainable objective proposal at
 A/research/current-next-trainable-economic-expert-readiness-20261026-v1.
-It may not fit/consume market ledgers/allocate GPU or duplicate the current
-factorial. Engine still owns model/caps/numerical interpretation and resource
-dispatch. A source-only recommendation is not a ready training job.
+Consumerd1d13b9c/296+28metadata/0fits/GPU,source600upper once;agentclosed.
+Matched terminal20 versus late15afterfirst5 pre-entry ranking, not newarchitecture.
+Engine actually completed sixNEWmarketGPUfits+two nativefits and the first
+verified readout, READOUT-RELEASE597c3f94/RESULT91a07efc/2368checks:
+COMPLETE_FAIL_LATE_CARRY_MECHANISM.20bp growth LATE-.8289%, TERMINAL+2.0098%,
+UNIFORM-2.4946%; weaker late concordance, no rescue or independent-alpha claim.
+All workers closed. Leibniz now consumes sealed scores in separately frozen
+Paper-faithful STATIC20 seven-arm numerical composition, no new model calls.
+Faraday separately supplies matched SPY20 reference, not an alpha test.
+
+Current Socrates scope is current-raw397-h20-transfer-readiness-20261026-v1:
+audit exact prior raw397/H20/prefix duplicates and resolved raw63x6 affine/
+feature order before proposing THREE new RAW397_TERMINAL_H20 fits versus
+completed TERMINAL19. Source-only <=600active/1200elapsed,0market/GPU/models;
+not a promise of novelty or training. Schrodinger independently checks native
+runtime readiness. No new public weights/dependencies or architecture platform.
 
 ## Closed / Reusable Evidence
 

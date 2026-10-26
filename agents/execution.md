@@ -29,7 +29,7 @@ Each cohort .005TOTAL ceiling within ONE original initial virtual-cash tenth,
 not .005perstock or a profit-expanded bank. No foreign inventory adoption,
 substitute request, forced share or reset. Preserve costs/losses/pending/F9.
 
-Fresh metadata at15:41:27UTC:
+Dated metadata at2026-10-25 15:41:27UTC:
 A/execution/current-original-eight-opportunity-readback-20261026-v1/READBACK.json,
 SHA526c839d7cf1ccd936f5d897914737c7f7efde8ee25a86f3d0c9d10ca417a61e.
 8Ready/enabled/0instances/exact priorXML/effectiveACL/unchanged nexttimes;
@@ -46,6 +46,23 @@ upper1POST10GET remains, seriesupper2POST11GET. No further old-scope query or
 reservation release from empty history/missing opener.
 
 ## Current Disjoint Source Work
+
+New rank-memory proposal preparation is CLOSED at
+A/execution/current-rank-memory-paper-proposal-preparation-20261026-v1/CONSUMER.json,
+SHAe7228bcf41acbec7fb800e3891812d13e37cc18308d018b284db201f76001bb2.
+Source134ecaa1/API9e21a3ed,17SYNtests/adapter+testRuffPASS/ClaudeADOPTlimits.
+Pure100slot daily state, warm23/fixedphase/idempotence/safeJSON and existing
+H5/H20staticfactory roundtrip,0market/model/private/API/Task/bank effects.
+Static H20 selection is NOT research's commonH5 quantity resize; retained
+feature-ineligible SLOW basket is explicitly refused by staticfactory, not
+silently sold/zeroed. No actual2026continuous forecast/warmstate/currentroute/
+model provenance/ownedtarget-update exists. Not deployment. Inherited seal.py
+has oneE501; no blanketwhole-rootRuffPASS. Parent independent17tests PASS via
+unittest discovery (direct sealed script footer intentionally refuses TESTS
+overwrite). New static-H20 numerical sidecar is owned by Leibniz in Engine:
+sevenpolicies/14ledgers/fixedq20/62cohorts/0newmodelcalls, not another broker
+writer or alteration of an original opportunity. Faraday separately audits
+existing current23warminput source sufficiency; no actualcurrentforecast yet.
 
 Current resume package is CLOSED at
 A/execution/current-oct26-runtime-reader-readiness-20261026-v1/CONSUMER.json,

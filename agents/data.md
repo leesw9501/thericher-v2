@@ -7,7 +7,40 @@ Git247ca0a:agents/data.md. Historical launch recipes are not ready jobs.
 
 ## Current Exact Consumer
 
-Schrodinger's NEW rank-memory-cadence-development family needs an unconditional
+Late-Carry H20 target handoff is VERIFIED_READY at
+A/data/current-late-carry-h20-paired-input-20261026-v1/CONSUMER.json,
+SHAcd54909610849ecae8260ecc5a557001f57940a71e8d2feb9d972592ed9a9a51.
+HANDOFF2ec0d86f/Sourcea6b60c2b/technicalRecovery840c36a8/API5d5178d4;
+both original and technical Source pins required.16Data-native+142checks,
+oneactualtargetbuild/oneverify;6roles each19tailpurges,235329supervised row
+appearances across reused folds (not unique rows),requiredunknown0;
+63heldcohorts x20marks/last4782/unknown0. Native Cat solver/fits belong to Engine.
+Physical actual ABI: F1/FIT/H20.paired-targets.npz etc, fields label_TERMINAL,
+label_LATE_CARRY,calendar_mature,loss_known; held-OOF/H20.evaluation.npz.
+Actual HANDOFF/ROLE wins over superseded proposed aliases. Binding addendum
+e2dfdd7b preserves all bytes; no rebuild/rename. Data240upper once inside
+Engine600 reservation; original02:45:32..03:15:32UTC, allhelpersclosed.
+First outer path-spelling reference guard failed before0targetbuilds; its
+canonical intake/debit is retained, metadata-only recovery preceded the ONE
+actual build. Never compare Windows path spelling as whole-reference identity.
+
+Price-basis source audit is CLOSED45dc9e8c at
+A/data/current-canonical-price-basis-source-audit-20261026-v1/CONSUMER.json.
+Official MODP0 unadjusted/MODP1 adjusted INTENT; retained split witnesses cover
+AAPL/NVDA, neither is this selected100 sample. No blanket sample CA proof or
+invalidation; conditional vendor-MODP1 priceproxy, not dividendTR/actual-share
+accounting. SameMODP1 had retained revisions, not identicalvintage guarantee.
+41metadata checks/0KIS/market arrays/fit/ledger. No repeat capability probe.
+Previous assigned Data helpers are closed. Current SOURCE-only request:
+A/research/current-rank-memory-current-warm-input-readiness-20261026-v1,
+<=300active/900elapsed. Trace existing23completed-session warm feature/model
+sufficiency for adaptere7228bcf, exact original100/calendars/model identity;
+no marketarrays/acquisition/fit/forecast/private/API yet. This readiness is
+not an actualcurrentpacket or a condition on the original Paper opportunities.
+
+## Reusable Held-Price Adapter
+
+Schrodinger's now-closed rank-memory-cadence family needed an unconditional
 daily held-price tape, not another dataset download. Faraday's source coverage
 is READY at
 A/research/current-low-turnover-strategy-readiness-20261026-v1/held-marks-readiness-r1/VERIFIED-READINESS.json,

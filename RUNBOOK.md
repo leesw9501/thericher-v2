@@ -124,12 +124,30 @@ exist. Data0918e966/277+24checks supports direct observed daily holding marks.
 No API acquisition or duplicate feature/scaler build. Never impute or use
 future price availability to select a surviving universe.
 
-Current Engine scope is current-rank-memory-cadence-development-20261026-v1;
-current Data adapter is current-low-turnover-strategy-readiness-20261026-v1/
-held-marks-adapter-r1. Source/native preparation is not training. Model/strategy
-authority does not change deterministic Paper risk or the original inputs.
-Use current boards/contracts, not old launch recipes. Old studies' caps protect
-their results, not a global ban on new useful GPU training.
+Memory/cadence is CLOSEDd97bc30e/14ledgers/9002checks, passes its frozen
+adaptive screen after a fixture-only native repair. No fit/GPU. Late-carry
+family actually completed SIX NEW marketGPUfits+two nativefits:
+A/research/current-late-carry-h20-ranking-development-20261026-v1/READOUT-RELEASE.json,
+SHA597c3f94339d0869948f0c837893afecc0894c0d00e60ec105c56448391c315f.
+RESULT91a07efc/2368checks/11containers+55CLIJobsclosed/GPUleaseabsent.
+COMPLETE_FAIL_LATE_CARRY_MECHANISM, no rescue/refit/current Paper swap.
+Sealed SCORES213b54dc may be consumed without additional model calls.
+
+Current parallel CPU scopes: current-paper-static-h20-composition-development-20261026-v1
+(Leibniz,7arms/14ledgers/62cohorts/fixedq20/1800activeSUM including600prior
+Sourceonce/5400elapsed) and current-spy-static-h20-reference-20261026-v1
+(Faraday,same62cohorts/twoledgers/600active/1800elapsed). These are separate
+new accounting contrasts, not repeats of H5resizing/63window/SPYpassive.
+Socrates raw397/H20 novelty and Schrodinger runtime readiness remain source
+only; no inferred GPU training before exact new frozen allocation.
+
+Pure proposal adaptere7228bcf/17nativechecks at
+A/execution/current-rank-memory-paper-proposal-preparation-20261026-v1
+is not deployed. No actual2026dailywarmforecast/provenance yet; static factory
+rejects retained-feature-unknown baskets. Numerical STATIC20 research does
+not remove that gap or override deterministic Paper risk. Original inputs,
+requests/Tasks/budget remain unchanged. Use current boards/contracts, not
+old launch recipes; completed fits/ledgers/native trades are not ready again.
 
 ## Existing Data Owners
 
