@@ -12,9 +12,34 @@ CONSUMER.json, ade959b7: exact retained SPY/AMS MODP1/GUBN0 whole page,
 100 official sessions June03..Oct23, input5bf75db9 under M;0HTTP/credentials.
 Native5/source19 checks/Ruff passed, source worker closed. Not future prices,
 CA/TR/PIT/finality or same-vintage proof. H5 reuses existing GRU70 capture.
-Faraday now owns current-spy-h20-forward-capture-activation-20261026-v1:
-one Nov20 22:05..22:10UTC SPY page using the existing Data owner/gates/quiet
-runner. Installation not yet evidenced; current69/25/70/retention unchanged.
+Activation preparation CLOSED as an explicit fallback, NOT installed:
+A/data/current-spy-h20-forward-capture-activation-20261026-v1/CONSUMER.json.
+Existing69 runtime/ownership/schema is source-fixed, not safely turned into
+one SPY query by editing config. Minimal adapter and quiet disabled definition
+are native/mock ready; default --run remains intentionally unbound/inert.
+Native10/mockScheduler12/whole-page21-row edge2 checks;0actualHTTP/Task calls.
+The concrete finite owner integration below supersedes that inert fallback;
+do not repeat an installation or impersonate the existing69 owner.
+
+NEW owner integration ACTUALLY completed: runtimeSourceb710e3e4 at
+A/data/current-spy-h20-one-query-owner-integration-20261026-v1/CONSUMER.json,
+SHAe9466a1c. One-time Task thericher-kis-paper-spy-h20-modp1-postclose-20261121-v1
+installed/enabled/Ready, next Nov20 22:05..22:10UTC = Nov21 07:05..07:10KST.
+Actual disabled+enabled readbacks match,0instances/starts/HTTP; existing80
+project Task XML/ACL identical. Quiet pythonw/CREATE_NO_WINDOW. Native12 and
+mockScheduler13 PASS, allhelpersclosed. Dedicated durable once-only cursor,
+Source/PID-start, lazy scoped config, existing300s token/1.25s pacing controls,
+max1POST/1GET, rawM-only. No future-data guarantee/duplicated69collector.
+The Data installation package is closed; named future Task remains owned.
+Faraday subsequently completed new OOF gate input f40bf022:168FIT/83SCREEN,
+exact RMS20 and168newLOWVOL TRAIN payoff labels,7native+7cold+1027checks.
+SCREEN packet contains no F3 price/payoff labels. One build/intake,0models/
+HTTP/Tasks; source process and children closed. Engine actually consumed it,
+so no missing-label preparation remains. Six isolated TCN label packets
+c4146b1c are also complete/reusable without rebuilding old training inputs.
+Faraday is currently assigned an Infra/Execution optional release preparation,
+not a new Data collector. Socrates owns the disjoint exact same-OPEN netting
+price-tape producer/consumer; existing69/25/70/retention owners unchanged.
 
 A/data/current-memory-terminal-half-forward-capture-readiness-20261026-v1/READINESS.json,
 SHA5d0bc0f86cf30591e89ee838d8ac38c385f6d6f54a35d4d95152f74220d6036f.

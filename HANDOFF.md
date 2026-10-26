@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-26 KST, new parallel dispatch through10:07UTC.
+2026-10-26 KST, integrated parallel results through12:24UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -17,15 +17,71 @@ Git0438ecd:HANDOFF.md and exact immutable consumers. Closed failures/debits
 stay unchanged. Abbreviated hashes below are retrieval aids, not authority in
 place of the full referenced manifest. An assignment is not an active worker.
 
-New disjoint packages are implementing: Parent finite target-progress API,
-Leibniz public cohort/exit attribution, Schrodinger H5 downside expert,
-Faraday one future SPY H20 capture, Socrates price-only pullback/reclaim CPU
-comparison. New downside research is now CLOSEDf6ccbb64:6marketCUDAfits/
+Parent finite target-progress API and public cohort attribution are committed/
+pushed c7d04c86, not a deployed Paper upgrade. Downside research is CLOSED
+f6ccbb64:6marketCUDAfits/
 2native/3238updates;20bp growth-3.0561%/DD7.5045% versus RETURN-11.1224%/
 19.0725%. Relative-risk contrast passes, NOT positive20bp growth/independent
 alpha. Physical purged-price isolation unproven; feature/loss masks unchanged.
 All11containers/55CLIJobs/lease/rootPID closed; no ongoing training claim.
-Saved F3 current feature-only prediction/proposal is separately assigned.
+Saved F3 current prediction is complete16eb8ee4; SPY concrete future owner is
+installed e9466a1c. No current-data/model call is ready for a duplicate run.
+
+Latest completions supersede those preparation statuses:
+- H5 current point16eb8ee4/sourceaa5cdb6e CLOSED: actual CUDA2restores/
+  2forwards138rows at10:37:59UTC,69known/100axis, seven weights each, routegap0.
+  Missing392byteSDK leaf fixed; cached native calls not repeated. Old447.48
+  charged once, cumulative606.62/900 before10:49 hard. Fifteen new CLIJobs/
+  containers/rootPID/lease closed. Research-only, NOT installed; analytical
+  CLOSE versus SDK close-minus15 remains NON_PARITY. Frozen codec F401unused
+  import retained, not default external-Ruff-clean fiction.
+- H5 future reference froze10:54:10UTC BEFORE13:30OPEN, Sourcea1384a8f;
+  current69+SPY exactly existing GRU70,0newcalls/Tasks/models/outcomes. One
+  existing-registry declaration, eight future cost cells, all69 primary coverage;
+  eight portfolio NAV marks from six raw prices/name. Not yet performance.
+- Actual custody/cohort join3e8ca53a CLOSED one admitted RO read10:37UTC,
+  R5 three positive owner scopes and HGB one paired with existing exits;
+  three positive scopes/oneunknown attempt remain UNMAPPED. No broker holdings/
+  profit claim, adoption or reservation release. Seventy independent checks,
+  seven final-source native checks, all Jobs/container closed. Source-owned
+  PowerShell launcher fixed actual inline caller admission, not a wildcard.
+- Data one-query SPY H20 runtimeb710e3e4 ACTUALLY installed/enabled/Ready,
+  Nov20 22:05..22:10UTC/Nov21 07:05KST. Native12/mock13; existing80 project
+  XML/ACL unchanged;0actualHTTP/Taskstarts. Future values unobserved. Data
+  LLM package closed; future owned Task does not require a permanent agent.
+- LOWVOL433692d0 completed0models/two first ledgers:20bp-5.6360%/DD8.4624%
+  versus learnedRISK-3.0561%/7.5045%; bothnegative, no independent alpha.
+- TCNcd3440c0: three market fit attempts timed out, zero completed fits/
+  forecasts/economic ledgers. Tiny native fit did not predict large-batch
+  epoch time;2144.46owned upper remains charged. All30Jobs/containers/lease
+  closed. This is technical failure, not a scientific rejection.
+- Synthetic throughput engineering3eac327c CLOSED: old B2048 about822rows/s,
+  FAST cuDNN/TF32 about269455rows/s in its measured synthetic geometry.
+  Checkpoint serialization .08..16s dominates FAST batch compute .008s.
+  Different numerical backend/warmup/co-tenancy prevents a causal speed or
+  market-convergence claim. Batch deadlines/checkpoint tail are now tested.
+  Schrodinger prepares NEW fast-TCN recipe/seed, not an old partial resume;
+  no actual new training start has yet been evidenced at this integration.
+- OOF tree gate CLOSED_VERIFIED_REJECT: current-h5-oof-policy-gate-
+  development-20261026-v1/CONSUMER.json. F3 20bp growth+.2180%/DD2.8496%
+  versus LOWVOL+.4012%/sameDD; fails its frozen LOWVOL comparison. Positive
+  growth on this reused screen is not a winner/independent alpha. Data
+  producer f40bf022 is complete; no missing-label preparation remains.
+- Turnover source a69cbf09 validates old20bp fees at10.0339% of initial
+  research NAV. Static-price L1 savings are NOT actual turnover/PnL. Socrates
+  now owns four new same-OPEN net-delta/full-rebuy x0/20bp cells, one intake,
+  no model/old-ledger replay. Original CLOSE-exit failures remain unchanged.
+- Native entry-skip prototype bed5564f and actual host cold binding09d59a0b
+  passed invented first-skip/one-effect-stop, one token/factory/budget. Failed
+  underfunded fixture/debits retained; real accounts/Tasks unchanged. Faraday
+  prepares OPTIONAL pilot release only, not an original8 replacement/install.
+- Legacy custody decoder e24c576e is source/SYN-ready6cases/41checks, no new
+  actual snapshot. Operational labels do not establish model-performance or
+  exit bindings; existing three positives/oneunknown stay unmapped.
+Current four disjoint packages: Leibniz token-path readiness from safe source/
+Task metadata; Schrodinger new FAST TCN; Faraday optional release preparation;
+Socrates same-OPEN netting experiment. Parent integrates/Git. No operator hold.
+Company entry objective UNFINISHED.
 Actual future11 Paper
 Tasks/original inputs/counters are unchanged. Previous closed worker facts
 below apply to their named scopes, not these new packages.
@@ -39,9 +95,10 @@ New source integration bb0b8ca4 at A/execution/current-finite-cohort-progress-
 All20observed test processes/currentC scratch+lease absent; Ruff/default/
 research/accountingCompose with.env.example PASS. Old round AST unchanged,
 four real-native invented-journal handoff cases passed. This is NOT actual
-host/token/owner or current Paper deployment. Final attribution source6feb213c/
-841d is implemented49tests; actual join withheld pre-create0private reads.
-New exact-actor repair is isolated. Price-only entry recipe9b4b713b closed
+host/token/owner or current Paper deployment. Final attribution source841d
+is implemented49tests; initial pre-create failures remain retained and actual
+actor recovery3e8ca53a above supersedes their pending status. Price-only entry
+recipe9b4b713b closed
 sparse TRAIN8<12;0EVAL outcomes or market economic ledgers, no rule rescue.
 
 ## One Company Outcome / Original Deployment

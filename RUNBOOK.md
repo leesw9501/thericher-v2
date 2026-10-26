@@ -32,16 +32,28 @@ Evidence: A/execution/current-finite-cohort-progress-20261026-v1 and
 current-paper-cohort-attribution-20261026-v1/PROGRESS-REVIEW.json.
 New pure `execution.paper_cohort_attribution.attribute_paper_cohorts` joins
 caller-qualified identity/input/policy facts; it does not open custody or query
-a broker. `recovery_only` is not a paired exit. First actual attribution was
-withheld before container/read by actor_unregistered, not zero holdings or
-unmapped pending identity. A separately scoped first-cause repair is assigned;
-do not rerun the closed earlier read/proof commands.
+a broker. `recovery_only` is not a paired exit. Initial actor_unregistered
+failures are retained; actual repair3e8ca53a completed one stable admitted RO
+read10:37UTC: R5three/HGBone positive scopes paired existing exits, three
+positives/oneunknown remain unmapped. Do not rerun that closed snapshot.
+Legacy decoder6a4d9ff7/catalogec6beb00 at current-paper-legacy-owner-
+attribution-preparation-20261026-v1 is source/SYN-ready6fixtures/41checks.
+Its INTEGRATION.json names the next existing reader's SAME RAM book/facts
+hook; operating custody labels do not prove model PnL or a paired exit.
 Fresh combined source authority: bb0b8ca4 CONSUMER.json in the finite-progress
 root,19412fullPASS26knownSKIP/8actualworkers/392.44s/1409exact sources,
 210serialPASS1knownSKIP/Ruff+3ComposePASS/all20PIDs+currentC scratchlease absent.
 Reuse only on exact protected digest identity; external changes need their own
 native checks. Initial helper argument binding failed before any pytest worker;
 corrected explicit -Workers/-PytestArgs run is the fresh authority, no bypass.
+
+Native entry-skip adapter bed5564f is a DIFFERENT domain bridge, not a use of
+generic traversal completion as a fill. Host cold09d59a0b at
+A/execution/current-native-entry-skip-host-binding-preparation-20261026-v1/host-effectful-fixture-r1/CONSUMER.json
+passed first skip -> one invented broker effect -> stop, one shared token/
+factory/budget, host visits1/internal native_calls2. Original failed fixture
+and debits remain. No real Task/private/KIS deployment occurred. Its OPTIONAL
+pilot release preparation is not a command to replace today's original8.
 
 Company objective oct26-three-candidate-paper-entry-runtime-v1 is UNFINISHED.
 Original8 source/release/input/policy/native/ops/identity pins are in HANDOFF.

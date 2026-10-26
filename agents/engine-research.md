@@ -19,18 +19,44 @@ Peak worker allocation825924608bytes;11containers/55CLIJobs/rootPID/lease
 closed. Owned upper921.15/5400s, elapsed1009.15/10800s. Purged-date OPEN/CLOSE
 paths were read by the label loader, though excluded from features, affines,
 loss and checkpoint choice: physical future-price isolation NOT established.
-New assigned next: saved F3 JOINT+RETURN current H5 prediction/proposal at
-current-h5-downside-expert-current-point-20261026-v1, <=2newrestores/forwards,
-0fits/ledgers/outcomes. Feature-only current handoff, no target mount; no
-current prediction result or Paper deployment yet. Completed fits stay closed.
+Saved F3 current point recovery CLOSED16eb8ee4: actual CUDA2restores/forwards
+138rows/69known, two seven-weight proposals. Initial5a13faa3 completed two
+native SYN calls before missing392byteSDK leaf855cdf3d; those were not repeated.
+Old447.48 charged once, cumulative606.62/900,15newJobs/containers/lease closed.
+Forecast90260407/JOINTtypedcb03f127. Research-only, not installed; analytical
+CLOSE/SDK close-minus15 NON_PARITY remains. Future reference457e5caa froze
+10:54:10UTC beforeOPEN, existing GRU70 capture reused,0futureoutcomes.
 Socrates' adopted CPU entry recipe0c1fa44c CLOSED9b4b713b sparse TRAIN8<12;
 0CHECK/EVAL input/outcomes or economic ledgers, no threshold rescue. New
-current-h5-downside-simple-risk-control-20261026-v1 may test ONE causal past20
-RMS LOWVOL control against exact cached H5 scores/results,0fits/modelcalls/
-oldledgerreplays, <=2new cost cells only after exact past-feature ABI freeze.
-Missing canonical risk input closes that control, not the independent lanes.
-All are reused historical development only. These are
-new economic hypotheses, not renaming or repeating the closed12GPUfits.
+New LOWVOL control CLOSED433692d0: exact past20FP64 CLOSE logratio RMS,
+251samecohorts/gross/topK/costs;2newledgers/0modelcalls/oldledgerreplays.
+20bp growth-5.6360%/DD8.4624%, worse than cached GRURISK-3.0561%/7.5045%.
+Forty independent checks; cheap control does not dominate, both growths
+negative. Owned upper90.39/600s/elapsed695.37/2400s/allworkersclosed.
+TCNcd3440c0 CLOSED technical failure: three market fit attempts timed out,
+zero completed/forecasts/economics, partial checkpoints not completed models.
+2144.46owned upper retained/all30Jobs/containers/lease closed. Six Data target
+packets c4146b1c physically isolate purged future prices; old GRU caveat remains.
+Synthetic engineering3eac327c measured OLD B2048~822rows/s versus FAST~269455;
+checkpoint serialization .08..16s dominates FAST compute .008s. Synthetic
+fixed-order/co-tenancy/backend contrast is not market convergence/causality.
+NEW current-h5-fast-tcn-risk-recipe-development-20261026-v1 is assigned to
+Schrodinger: seed20261027/FAST recipe, one B2048 worker initially, three new
+models, tested batch deadlines and explicit checkpoint cadence, bounded caps.
+No old partial resume/refund or new numerical start claim from assignment.
+
+OOF policy gate CLOSED_VERIFIED_REJECT at current-h5-oof-policy-gate-
+development-20261026-v1: F1+F2 fit/F3 reused83screen,20bp GATE+.2180%/DD2.8496%
+vs LOWVOL+.4012%/sameDD. Frozen LOWVOL contrast fails; RETURN+4.9220% is
+descriptive, not a post-hoc selection. Dataf40bf022/registry654cc9f9 complete.
+New same-OPEN turnover policy source a69cbf09 is adopted for four actual CPU
+cells under current-h5-risk-netted-policy-development-20261026-v1, one exact
+intake/0models/oldledgerreplays. Old20bp fee10.0339%NAV is checked arithmetic;
+static L1 savings are not measured PnL. NET_DELTA vs FULL rebuy at identical
+OPEN/target quantities,0/20bp; missing prices invalidate, not silently drop.
+Zero-cost NAV and fee identity must hold; net20growth<=cash kills positive
+after-cost hypothesis. New timing is not an old CLOSE-exit result regrade.
+All are reused historical development, not independent alpha/Paper authority.
 
 Original memory/TERMINAL19 fixed-half point is CLOSED. Its cached early-profile
 derivative is INSTALLED as a limited future pilot, not a runtime result:

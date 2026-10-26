@@ -15,16 +15,42 @@ unchanged. Continuation needs same source/slot and exact reconciled cursor+1;
 unknown/pending stops without releasing reservations. Pure traversal is not
 fill/flatness/PnL. ClaudeGOlimits at A/execution/current-finite-cohort-progress-
 20261026-v1/REVIEW.json; future native bridge is still unqualified.
-Leibniz attribution source CLOSED6feb213c/final841d:49focusedPASS/Ruff,
-exact public schedule bindings7. Actual join UNKNOWN:2pre-create attempts,
-0containers/0private reads, actor_unregistered. No assignment of old positive
-owners or pending identity to public cohort names. Thirteen Jobs/PIDs closed.
-New external-only current-paper-attribution-actor-recovery-20261026-v1 owns
-exact actor/source/capability diagnosis, final-source handoff and at most one
-new admitted RO snapshot. It is not a reason to pause Data/research/Paper.
+Attribution final841d:49focusedPASS/Ruff/exact public schedule bindings7.
+Initial actor_unregistered attempts/0private reads remain historical; actual
+actor recovery3e8ca53a below supersedes their pending status. This does not
+assign unbound old positive owners or pending identity to model labels.
 Parent native progress integration4PASS used the real native journal with an
 invented broker/network denied. Actual H20 host/owner/token bridge unqualified;
 do not use SELL exit_attempts as progress or relabel source tests deployment.
+
+Actor recovery now CLOSED3e8ca53a/source d889f5e1: one actual admitted RO read
+at10:37UTC, full membership/identity/mtime/bytes unchanged. Twenty owner scopes,
+seven positive: R5 three with Oct27 19:45/19:55UTC exits, HGB one with Oct28
+19:45 exit; three positive and one unknown attempt still unmapped. Seventy
+independent checks/final841d native7PASS/allJobs+containerclosed,0KIS/credentials/
+orders/locks/privatewrites. Source-owned PS launcher binds real inline-caller
+class without ignoring unknown writers. Dated native accounting, not current
+broker holdings/fees/settlement/PnL. No second snapshot or label inference.
+Native entry-skip prototype bed5564f CLOSED four invented real-native cases:
+same RequestBudget/client factory ONCE, only original unreserved no-intent
+prefix+1 continues, STOP first effect/pending/unknown. Host binding recovery
+09d59a0b at current-native-entry-skip-host-binding-preparation-20261026-v1/
+host-effectful-fixture-r1 passed14preflight/92independent checks, one cold
+first-skip/one-effect-stop; visits1/native_calls2 kept distinct. Allprocesses/
+containerclosed. Prior underfunded fixture/debits preserved; real private/
+KIS/Task/R4 unchanged, not deployment. Faraday prepares an OPTIONAL pilot
+release under current-entry-skip-pilot-release-preparation-20261026-v1;
+original8 sources/identity/schedules are not candidates for replacement.
+
+Legacy decoder e24c576e/6a4d9ff7 is ready6fixtures/41checks, no second actual
+snapshot. Next existing admitted RO read may extend exact SPY/QQQ/portfolio/
+default-NAS operational custody classification in the SAME RAM book/facts.
+Mixed history stays unmapped; labels are not model PnL or exit proof. Current
+three positive scopes/oneunknown remain unmapped until actual strict binding.
+Leibniz now owns current-paper-token-phase-readiness-20261026-v1, source and
+safe Task metadata only. Actual snapshot observer PT4M from12:23UTC may be
+near original entry phases, but token contention is unproven: inspect actual
+reuse/state paths before any repair.0POST/KIS/Task invocation/sourcechanges.
 
 NEXT oct26-three-candidate-paper-entry-runtime-v1 is UNFINISHED.
 Original image sha256:2ff53eff188570db5ab078bcf06904c85ed8412d8b80a5147af34cab4c759df3.

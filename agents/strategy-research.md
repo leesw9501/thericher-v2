@@ -24,12 +24,29 @@ profit claim or general rejection of pullbacks. Source and recipe remain closed.
 Original EVAL remains reused development, not untouched confirmation. No duplicate
 old Ridge fits or generic ORB nomination; exact nearest ORB already exists.
 
-New owner: Socrates at current-h5-downside-simple-risk-control-20261026-v1,
-cheap strongest kill for learned downside's economic value: ONE past20 RMS
-LOWVOL control, exact matched keys/availability/gross/costs, cached H5 outputs
-only. <=8metadata refs first; actual canonical past-return ABI required before
-one intake/two new ledger cells.0fits/modelcalls/GPU/oldledgerreplays;600owned/
-2400elapsed seconds. No new primary source or independent-performance claim.
+LOWVOL control CLOSED433692d0 at current-h5-downside-simple-risk-control-
+20261026-v1: exact past20 FP64 close-logratio RMS/251cohorts, two FIRST new
+cost cells,0modelcalls/GPU/oldledgerreplays.20bp growth-5.6360%/DD8.4624%
+versus learnedRISK-3.0561%/7.5045%; simple control does not dominate, BOTH
+negative/reused development. Forty independent checks/allworkersclosed.
+Depth2 OOF gate source33086862/kernel8129cb35 was consumed by actual
+current-h5-oof-policy-gate-development-20261026-v1, CLOSED_VERIFIED_REJECT.
+Chronological F1+F2 fit/F3 reused83screen:20bp GATE+.2180%/DD2.8496% versus
+LOWVOL+.4012%/sameDD. Frozen LOWVOL contrast fails; cached RETURN+4.9220%
+is descriptive, not post-hoc winner selection. Dataf40bf022/registry654cc9f9
+complete,307.93/900owned upper/allworkersclosed; no queued gate fit remains.
+
+Turnover source a69cbf09 at current-h5-risk-turnover-policy-preparation-
+20261026-v1 is CLOSED_SOURCE_SYN_READY_NOT_MARKET_TESTED. Old20bp fees equal
+10.0339%initialNAV. Fixed-price L1 proxy50.2->17.9793 is NOT executable
+turnover/PnL. Kernelb10507cc/contractd78d0efc: same rebalanceOPEN and target
+quantities, NET_DELTA vs FULL rebuy x0/20bp, same terminalCLOSE, cash>=0.
+Four invented cases/47checks+42independent/Ruff/ClaudeADOPTlimits passed.
+Socrates now owns current-h5-risk-netted-policy-development-20261026-v1:
+one complete price intake/four cells/one CPU worker/0models/oldledgerreplay,
+300owned/1200elapsed. Strongest kill net20growth<=cash; mechanical fee savings
+are not alpha. Different old CLOSE-exit timing cannot be regraded. Missing
+held exit prices are unavailable, not dropped. No market result yet evidenced.
 
 No additional strategy numerical package is queued solely to fill the GPU.
 Current memory/TERMINAL19 proposal79d99cf9 was consumed by the limited

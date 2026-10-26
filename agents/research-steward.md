@@ -11,11 +11,24 @@ New downside expert f6ccbb64 CLOSED:6newmarketGPUfits+2native,3238updates,
 peak825924608bytes,11containers/55CLIJobs/rootPID/lease absent. Owned upper
 921.15/5400s, elapsed1009.15/10800s; actual fits are complete, not running.
 Same-device paired workers were co-tenants, not isolated timing benchmarks.
-Schrodinger now owns new current-h5-downside-expert-current-point-20261026-v1,
-<=2savedmodelrestores/forwards,0fits; active<=900s/elapsed<=2400s, no target
-mount. Assignment is not current GPU utilization. Independently Socrates runs a CPU-only
-entry-information comparison with0fits, no GPU lease competition. Completed
-training below remains closed and is not a resource-utilization queue.
+Current point recovery CLOSED16eb8ee4: two actual CUDA restores/forwards138rows,
+69known/two seven-target proposals,0fits. Initial5a13faa3/native calls reused,
+447.48charged once/cumulative606.62/900;15newJobs/containers/lease closed.
+No model/current-point repeat or target mount.
+TCNcd3440c0 CLOSED: three market attempts timed out,zero completed/forecasts/
+ledgers,2144.46owned upper retained; all30Jobs/containers/lease closed. Tiny
+native completion did not predict full-batch time. New engineering3eac327c
+is CLOSED synthetic-only; FAST B2048~269455rows/s vs OLD~822, checkpoint
+serialization cost .08..16s vs FAST .008s batch, not market convergence.
+Schrodinger now prepares NEW current-h5-fast-tcn-risk-recipe-development-
+20261026-v1: seed20261027/FAST backend, one B2048 worker first, three models,
+maxfour process starts only exact predeclared one technical resume inside
+unchanged caps, not an old partial retry. Ready resources need measured
+headroom; assignment alone is not evidence of an active CUDA worker.
+MetaGate CPU campaign CLOSED_VERIFIED_REJECT; registry654cc9f9 was appended
+once by Steward. New same-OPEN netting CPU four-cell campaign requests its
+own complete freeze/registry binding without blocking independent GPU work.
+Completed training below remains closed, not a resource-utilization queue.
 
 Previous batch12NEWmarketGPUfits+4nativeGPUtoyfits completed ONCE:
 late-carry597c3f94:6+2; RAW397b2bf2b03:3+1; TopTail92b04e63:3+1.

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-26 KST, new dispatch through10:07UTC. A=D:/thericher-v2/model-artifacts;
+2026-10-26 KST, through12:24UTC. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -21,25 +21,17 @@ unchanged; readback8209e860/12checks+4negative cases. No new follow-up job.
 
 ## Current Disjoint Owners
 
-The previous packages below are CLOSED, not currently running. New disjoint
-packages are assigned and implementation is in progress. Downside campaign
-has now closed six new GPU fits; no inference of ongoing use. Parent owns paper_account_round.py/tests and
-shared MD/Git. Leibniz alone owns paper_cohort_attribution.py/tests.
+Parent owns shared MD/Git/integration. Source changes are committed/pushed
+c7d04c86; no role may edit tracked files in current external-only packages.
+Assignments below do not prove that a numerical worker has started.
 
-- Parent: opt-in finite original-target progress loop; stop on unknown/pending/
-  nonsequential cursor. Old API and tonight's11 Task definitions unchanged.
-- Leibniz: current-paper-cohort-attribution-20261026-v1, public strategy/exit
-  source CLOSED6feb213c/49PASS, actual join withheld pre-create0private reads.
-  New external actor-recovery package, no wildcard writer bypass/unknown release.
-- Schrodinger: downside f6ccbb64 CLOSED6marketCUDAfits/2native,20bp-3.0561%/
-  DD7.5045%, relative improvement not profitability. New saved-F3 current-point
-  package assigned,0fits, sole GPU coordinator; all old workers closed.
-- Faraday: ade959b7 closed existing SPY/MODP1 reference5bf75db9 with0HTTP;
-  now current-spy-h20-forward-capture-activation-20261026-v1, one future query.
-- Socrates: proposal0f9a64e4/contract0c1fa44c CLOSED; Parent adopted exact
-  pullback/reclaim CPU comparison CLOSED sparse TRAIN8entries<12.0EVAL
-  inputs/outcomes/marketledgers/fits/GPU; no rescue or repeat. Native16 plus
-  independent35checks, actual source/consumer references in Strategy board.
+| Owner | Current package / actual state |
+| --- | --- |
+| Parent / 총괄 | Integrate results and exact existing Paper opportunities; prospective H5 reference457e5caa registered before OPEN with0outcomes. No current Task/image replacement. |
+| Leibniz / 실행 | current-paper-token-phase-readiness-20261026-v1: exact token reuse/guard paths versus actual PT4M observer phase, source/metadata only. No inferred conflict or automatic rate/Task change. |
+| Schrodinger / 엔진·연구 자원 | current-h5-fast-tcn-risk-recipe-development-20261026-v1: new seed/FAST backend, one B2048 worker first, three finite models/checkpoint deadlines. Actual fit start not yet evidenced; sole GPU/registry owner. |
+| Faraday / 데이터·임시 Infra | current-entry-skip-pilot-release-preparation-20261026-v1: source-attested OPTIONAL pilot upgrade/rollback from passed host cold09d59a0b; no actual Task install or original8 change. |
+| Socrates / 전략·임시 엔진 | current-h5-risk-netted-policy-development-20261026-v1: sameOPEN NET_DELTA/FULL rebuy x0/20bp, one tape intake/four CPU cells,0models/oldledgerreplay. |
 
 New roots are under A/execution, A/data or A/research respectively. Closed
 training/ledgers are not rerun. SEC contact remains an optional isolated gap.
@@ -47,23 +39,33 @@ Throughput improvement: advance reconciled original targets without redoing
 completed work; use a new economic entry contrast rather than old Ridge fits.
 The company still needs original natural runtime closure; this is not deployment.
 
-10:23UTC Throughput Review: three disjoint role packages remain assigned
-(current-point, SPY one-shot, actor repair); Strategy completed sparse recipe
-and now owns a new cheap causal LOWVOL control against cached H5 risk scores,
-0fits/modelcalls/GPU/oldledgerreplays. Original next13:40UTC unchanged.
-Parent source package bb0b8ca4 CLOSED210serial/19412fullPASS26knownSKIP,
-8actualworkers/392.44s/1409exact/Ruff+3ComposePASS/20PIDs+scratchlease absent.
-One reversible improvement: test the simple risk-information baseline before
-spending more GPU on the same newly learned risk recipe. Actual attribution
-admission failure is scoped first-cause work, not a Data/Research/Paper hold.
+## Latest Completions / Scoped Gaps
 
-| Owner | Current bounded work / actual evidence |
-| --- | --- |
-| Parent / 총괄 | Extra pilot57c43f59 ACTUALLY installed3futureTasks/32a5active release/58ba stagedONCE. Fresh239serialPASS1SKIP+19317fullPASS26SKIP/8workers/385.33s/all14PIDs+scratchleaseabsent. Original8 XML/ACL unchanged08:44,0broker/Taskinvocations. |
-| Faraday / 데이터·임시 인프라 | CLOSEDc09f4e6e buildfb40c222/SDK7cb41263/18nativechecks/737members/quietconsole0. Parent later installed it for the limited pilot57c43f59; original2ff untouched. No active Infra worker. |
-| Leibniz / 실행 개발 | Admitted-reader54861326/2a8aa5c6 CLOSED: first cold Linux invented fixture/3freshadmissions/onecontainer+13Jobsclosed/86finalchecks. Actual private scope unconsumed/future CLI sealed. No active worker. |
-| Schrodinger / 엔진·GPU 조정 | All12marketGPU+4native fits CLOSED; new TTM4463c25f CUDA25rows/0fit/allclosed. Codec recovery0d065cf4 CLOSED oneFIRSTcachedprojection/5selected/SDK3NAS+2unsupportedNYS,0models/ledgers/Paper. Executor closed. |
-| Socrates / 전략·임시 판독 | Actual custody086e8941 CLOSED09:15UTC:20knownowner scopes/7positive,47intents/41attempts/40acknowledged+positive linked cumulative fill states/46terminal/1nonterminalunknown.0API/writes/locks; not today's trades or broker matching. Allworkersclosed. |
+- H5 GRU downsidef6ccbb64:6newmarketGPUfits completed,20bp growth-3.0561%/
+  DD7.5045%, better than RETURN/uniform/LOWVOL433692d0 but not profitable.
+- Currentpoint16eb8ee4: actual CUDA2restores/forwards138rows,69known/two
+  seven-target proposals,0newfits/Paper. Initial missingSDKleaf failure kept.
+- TCNcd3440c0:3marketfit attempts timed out,0completed/forecasts/economics;
+  native1fit completed, isolated target packets6. Unknown exact update/epoch
+  counts,2144.46/3600charged, all30Jobs/containers/lease closed. Not scientific
+  rejection or convergence. Engineering probe owns repair, not same-fit retry.
+- Actual attribution3e8ca53a at10:37UTC: R5three+HGBone positive native owner
+  scopes paired existing exits; three positives/oneunknown stillUNMAPPED.
+  One actual ROread/70independent+7nativechecks/allclosed,0API/unknownrelease.
+- SPY future runtimee9466a1c/b710e3e4 ACTUALLY installed once Nov20 22:05UTC;
+  enabled/Ready/0instances, native12/mock13, existing80XML/ACL identical.
+  No current HTTP/future prices. Existing69/25/70 captures not duplicated.
+- Gate Dataf40bf022 completed7native/7cold/1027checks and was consumed by
+  actual depth2 fit. CLOSED_VERIFIED_REJECT: F3 GATE+.2180% vs LOWVOL+.4012%
+  at20bp/sameDD2.8496%; no post-hoc RETURN selection/independent alpha.
+- TCN engineering3eac327c CLOSED synthetic: FAST B2048~269455rows/s vs
+  OLD~822, checkpoints .08..16s vs batch .008s. New FAST recipe is a separately
+  frozen study, not retry/refund/convergence of oldcd3440c0 partials.
+- Host09d59a0b cold binding passed first-skip/one-effect-stop, one token/
+  factory/budget, no actual private/KIS/Task. Underfunded prior failed case
+  stays charged. Legacy e24c576e source/SYN ready; no new custody snapshot.
+- Turnover a69cbf09 checked old20bp fees10.0339%NAV; source/SYNready four
+  sameOPEN cells. Static L1 proxy is not a market performance result.
 
 Roles directly exchange exact image/SDK/schema readiness; no Parent serial
 relay or extra approval. Parent owns trial scopes/shared risk/Git. No new
@@ -91,36 +93,23 @@ permanent role/platform is needed for these concrete packages.
   immutable artifacts. No completed training/ledger/SYNtrade is ready again.
 
 ## Throughput Review
+12:24UTC: four disjoint packages ready/owned, next original13:40UTC and same
+one-shot18:42:59UTC. No operator decision. Completed native/custody/model
+proofs are not repeated; source-prepared host upgrade is not installed.
+One reversible improvement: examine fee burden/position transitions instead
+of only adding fits. At20bp old full turnover paid10.0339%initialNAV; test
+sameOPEN netting on unchanged weights, not loosen a frozen model criterion.
+Separately inspect exact token paths against actual observer phase before
+calling it a collision or imposing a new schedule/rate constraint.
 
-09:20UTC yield review: all role packages/workers closed, no ready justified
-numerical job withheld. Exact original opportunities/newpilot are installed
-future paths, not human permission blocks. Next original13:40UTC, same saved
-follow-up18:42:59UTC. No foreground wait or new recurring chain. One reversible
-improvement: actual native custody replay took7.15s and avoided broad broker
-requery/registered-stock-as-inventory inference. Current counts are cumulative,
-not today's/new-model fills. Future original runtime still closes companygoal.
-Pending-only recovery/unchanged BUY cutoff preserve actual request authority.
-No completed proof/fit repeat or new admission platform. Foreign-target skip is
-per-target, NOT whole-basket rejection. Do not invent stricter overlap holds.
-Measured fourth imported source was added explicitly; no blanket742copy or
-dependency reinstall. Build1/source737nativechecks18/allcontainersclosed;
-auxiliary metadata verifier failures remain failures, no rerun for reporting.
-Efficiency result: intradayData "pending" was stale; actualFINALs show6Ridge
-fits completed. No numerical/GPU work duplicated. SEC contact request is
-asynchronous and blocks only its denied acquisition branch, not other lanes.
-
-New opt-in earlyH20 freshSELL close-45..-25, cleanup until-20, positive closure
-before original Joint17-15. Explicit NON_PARITY; later-session exact unknown
-recovery remains possible, no clock-based flatness/refund.
-Foreign registration is per cycle record. Quiet entry/serial descriptors do
-not prove shared-stock coownership. Existing native skip leaves weights/basket
-unchanged and can advance other targets; never bypass ownership or manually
-filter/reweight original proposals. Count-only reader is not buying power.
-
-Fresh source authoritydd834d4c:526serial/19317fullPASS26knownSKIP/8workers/
-389.91s/allPIDs+lease+scratchclosed/1406exact/Ruff+3ComposePASS.
-Do not repeat full suite absent protected changes; external capsule code gets
-its own native checks. Image/capsule/actual admission remain distinct proof.
+Fresh source authoritybb0b8ca4:210serialPASS1knownSKIP/19412fullPASS26SKIP/
+35warnings/8actualworkers/392.44s/1409exact/Ruff+3ComposePASS/all20PIDs+currentC
+scratchlease absent. Reuse only exact protected sources; external code needs
+its own changed-source native checks, not another unrelated full repo run.
+Docs-only integration12:26UTC: all1409 protected digests still exact against
+source-after f5691991;76 small source/evidence links across six new consumers
+rehashed exactly, git diff --check PASS. This validates integration identity,
+not another market fit, current GPU usage or actual Paper deployment.
 
 Optional public reader4f4e2e51 is transport-only. Actual unknown writers/
 unstable custody withhold financial conclusions, not all Data/research actors.
