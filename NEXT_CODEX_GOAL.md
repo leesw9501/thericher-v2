@@ -42,20 +42,38 @@ Task or strategy opportunity. Missing or future receipts are unknown, not fills.
   closed. COMPLETE_FAIL_LATE_CARRY_MECHANISM, no target/seed/cost rescue.
   Memory/cadence CLOSEDd97bc30e/14ledgers/9002checks passes adaptive screen,
   not independent alpha/PaperPnL. No completed fit or old ledger is ready again.
-- Leibniz: NEW current-paper-static-h20-composition-development-20261026-v1,
-  7fixedpolicies/14ledgers/62cohorts/fixedq20/no H5resize;0newmodelcalls/GPU.
-  1800activeSUM including priorSource600once/5400elapsed, hard05:23:11UTC.
-  Sole primary MEMORY_LATE_HALF, no automatic Paper adoption/reference winner.
+  RAW397 family also completed3NEWGPUfits and63forecasts with0retraining;
+  its technicalchainb2bf2b03 remains failed. Separate cache-only39e177a7/
+  release77b2b57d completed2FIRSTledgers/774checks/REJECT. No control replay.
+- Leibniz static-H20 CLOSEDb117c2ea/14ledgers/7114checks/allworkersclosed,
+  fixedq20/no H5resize/0newmodelcalls/GPU. Primary latehalf FAILED relative
+  to terminalhalf utility; no automatic reference winner/Paper switch.
 - Faraday: SPY static20 CLOSED72401083/242native+6362independentchecks,
-  two10/20bp ledgers/allhelpersclosed/0models. Now SOURCE-only current-rank-memory-current-warm-input-readiness-20261026-v1,
-  <=300active/900elapsed, existing23warmdata/model sufficiency, no actual
-  current2026forecast or arrays/modelcalls yet. Earlier Data canonical
+  warm source18c5c16c and actual24origin DataREADYbe104020/28native+52checks
+  are CLOSED (own-date89/90/69masks, no copied currentmask). Actual CPU point
+  current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1
+  is CLOSED79d99cf9/PREPARED_NOT_DEPLOYED:24CAT+1TERMINALcurrentforecasts,
+  bootstrapstate/8positiveweights/staticH20typedinput,13native+14independent
+  checks/routegap0/allclosed/0fit/GPU/private/orders. Initial unsupported
+  SDK keyword failure is retained, not called passing; acrossnames4restores/
+  5predictattempts/2407reservedrows,4completedcalls2307rows/oneData/compose/
+  verify,2169.35inclusiveupper. Metadata .005TOTAL is NOT capital allocation.
+  Leibniz now source-reviews minimal existing account-owned finite serial
+  admission300active/900elapsed, not a new brokerwriter/Task or original swap.
+  Earlier Data canonical
   adapter8b3d5d6c, price-audit45dc9e8c and pairedtarget2ec0d86f are CLOSED;
   no acquisition or duplicate build required for these existing consumers.
-- Socrates: current-raw397-h20-transfer-readiness-20261026-v1 exact duplicate/
-  normalized raw ABI audit; Schrodinger separately checks native397 runtime.
-  Both source-only600active/1200elapsed, no market/GPU allocation yet.
-  Potential3newprefix fits reuse completed TERMINAL19 baseline, never refit it.
+- Socrates NEW source-only label-TopK membership-pair objective proposal,
+  current-top-tail-h20-objective-readiness-20261026-v1, adopted minimum3CatTAIL
+  ONLY; no optional6MLP in this family. Schrodinger owns source/runtime and
+  assigned current-top-tail-h20-objective-development-20261026-v1: freeze3900
+  activeSUM/7200elapsed, Source1200=Socrates600+NEWruntime300+implementation300,
+  native180/fits1350/infer120/readout300/verify240/cleanup180/reserve330.
+  Exactly3newfits/1800trees/0marketretry/63forecasts/2newledgers, oldCatUNIFORM
+  control reused with0modelcalls/ledgerreplay. New native weighted-Pool oracle
+  precedes market. Sourceadoption is not actual GPU allocation/fit evidence.
+  Existing uniform-pair validators remain immutable; explicit typedtail
+  sidecar/labelONLY TopK-inclusion fractions, not portfolio/percentile weights.
 - Execution adaptere7228bcf/17nativechecks is pure PREPARED_NOT_DEPLOYED:
   current daily forecasts/warm provenance and retained-feature static gap remain
   explicit. No original strategy/Task/privatebank change from this preparation.

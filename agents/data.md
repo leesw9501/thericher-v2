@@ -31,12 +31,43 @@ AAPL/NVDA, neither is this selected100 sample. No blanket sample CA proof or
 invalidation; conditional vendor-MODP1 priceproxy, not dividendTR/actual-share
 accounting. SameMODP1 had retained revisions, not identicalvintage guarantee.
 41metadata checks/0KIS/market arrays/fit/ledger. No repeat capability probe.
-Previous assigned Data helpers are closed. Current SOURCE-only request:
-A/research/current-rank-memory-current-warm-input-readiness-20261026-v1,
-<=300active/900elapsed. Trace existing23completed-session warm feature/model
-sufficiency for adaptere7228bcf, exact original100/calendars/model identity;
-no marketarrays/acquisition/fit/forecast/private/API yet. This readiness is
-not an actualcurrentpacket or a condition on the original Paper opportunities.
+Warm source-readiness is CLOSED SOURCE_ONLY_GAP at
+A/data/current-rank-memory-current-warm-input-readiness-20261026-v1/CONSUMER.json,
+SHA18c5c16cba55bed3e99e0b94ee0c3a8878a2b4c8dcf2ffebb194dce5602e27dd.
+222+clock1+295checks/300Sourceupper/0arrays/models/acquisition. CURRENT inputs
+are onepoint/joint69unknown31, not volume67. Required23warmorigins4961..4983
+(Sep23..Oct23), firstdecision4984Oct26, underlying86sessions4898..4983
+(Jun24..Oct23). Original memory CATF3 seed20261029/checkpoint60127ff3/
+Source644a0a53 is NOT Mean3; cached F3 forecasts end2025-12-24, not thiswarm.
+New calculations cannot establish historical prediction availability.
+
+Parent chose a separate current-time retrospective bootstrap, not backdating
+olde722 availability. NEW assigned Data scope:
+A/data/current-rank-memory-current-warm-feature-input-20261026-v1;
+payloads under M/us_equities/research_inputs with same namespace. Freeze1500
+activeSUM/2700elapsed: Source600(previous300+new300),native120,build180,
+verify180,cleanup120,reserve300. One actual support intake/build/verify,
+0marketretry/scalerfit/model/API/GPU/private/Task effects. Existing retained
+source first; actual missing support needs an exact scoped request, not impute.
+24origin unscaled factor10FP64/context9FP64/clippedraw63x6FP32, own-date
+100mask/officialclocks/capture/provenance. Engine applies each distinct model's
+saved affines once. Named CURRENT_TIME_WARM_FEATURES_V1 producer/coldconsumer
+native handoff before payload. Assignment is NOT actual packet/coverage proof
+or a condition on the original Paper opportunities.
+
+That actual Data package is now CLOSED VERIFIED_READY:
+A/data/current-rank-memory-current-warm-feature-input-20261026-v1/CONSUMER.json,
+SHAbe1040200e19bdf1983b35778e0b47bb9a9a96076b5904355073a30ae9634941.
+24origins/86sourcesessions/full100, eligible9datesx89/12x90/3x69, allrequired
+eligible raw/factor/context known.93retainedpages eachONCE/onebuild/oneverify/
+0retry, native28+independent52checks/newcodeRuffPASS/4PIDsclosed.
+664activeupper includes priorSource300once. Actual unscaled packet and ROLE
+under M/us_equities/research_inputs/current-rank-memory-current-warm-feature-input-20261026-v1;
+ABI fields/actual capture+construction clocks preserve NOT_OBSERVED historical
+arrival. No model/API/GPU/Paper/Task/cache mutation or original input change.
+Faraday now owns temporary Engine CPU currentpoint consumer, not Data rebuild;
+each exact model's distinct affines are applied once. No new acquisition needed
+for this handoff. Future natural retention/capture owners below stay unchanged.
 
 ## Reusable Held-Price Adapter
 

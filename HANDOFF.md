@@ -183,23 +183,55 @@ pairedtarget build. InitialREQ physical ABI/actualROLE/HANDOFF canonical;
 addendume2dfdd7b resolves proposed aliases, no data/model rebuild.
 
 Current parallel owners (dispatch/source is not numerical completion):
-- Leibniz: current-paper-static-h20-composition-development-20261026-v1,
-  seven fixed policies/14ledgers/62origins3543..4763/exit4782, fixedq20 with
-  no H5intermediate resize. Uses sealed scores,0newmodelcalls.1800activeSUM
-  including readinessSource600once/5400elapsed;03:53:11..05:23:11UTC.
-  Sole primary MEMORY_LATE_HALF, no automatic reference winner or Paper swap.
+- Leibniz static-H20 is CLOSEDb117c2ea/Source6742437c/RESULT2e4de8e9,
+  14ledgers/62cohorts/fixedq20/7114checks/4containers+25Jobsclosed,
+  789.183activeupper includes600priorSourceonce,0newmodelcalls/GPU/retry.
+  Primary latehalf FAILED relative to terminalhalf utility:20bp growth/DD
+  latehalf6.9129%/3.0838%, terminalhalf8.5277%/2.9571%, memory4.8860%/2.8221%.
+  References are descriptive, no automatic winner/Paper switch or old regrade.
 - Faraday: SPY static20 reference is CLOSED72401083/Source838c6be1,
   two matched62cohort ledgers/242native+6362independentchecks,0models/retries,
   bothnumericalPIDsclosed/363activeupper.20bp growth4.5097%/absoluteDD3.2698%,
   mean/maxgross10.0284%/11.3787%; different risk/universe, not alpha/PaperPnL.
-  Now SOURCE-only current-rank-memory-current-warm-input-readiness-20261026-v1,
-  <=300active/900elapsed: existing data/model sufficiency for23recentdailywarm
-  forecasts, no arrays/acquisition/modelcalls/actualcurrentpacket yet.
-- Socrates: current-raw397-h20-transfer-readiness-20261026-v1, exact prior
-  duplication/affine/feature-order audit before potential3new RAW397H20 fits.
-  Schrodinger: separate current-raw397-h20-runtime-readiness-20261026-v1,
-  resolved native API/metadata only. Both600sourceactive/1200elapsed, no new
-  market/GPU allocation yet; completed TERMINAL19 will not be refit.
+  Warm source gap18c5c16c is now resolved by actual DataREADYbe104020:
+  24origins/86sourcesessions/93pages once/28native+52checks/664activeupper,
+  own-date89/90/69masks, no copiedcurrentmask or acquisition. Source payload
+  under M/us_equities/research_inputs/current-rank-memory-current-warm-feature-input-20261026-v1.
+- Socrates source audit is CLOSEDfe122637/sealb81a56ee/97+94+17checks,
+  nine-nearest-contract audit found no exact RAW397H20duplicate (not global
+  novelty). Runtime readiness is source-only, not matrix/native qualification.
+  Parent assigned Schrodinger NEW current-raw397-h20-transfer-development-20261026-v1:
+  3newprefixGPUfits/1800trees/0retry/3selectedpredictions/63origins/2newledgers,
+  completed TERMINAL19 controls reused with0modelcalls/baselineledgerreruns.
+  Freeze4500activeSUM/7200elapsed before native: Source1500(600+600+new300),
+  native180,fits1350,infer120,readout300,verify240,cleanup180,reserve630.
+  Raw.npy is clipped NOT affine-normalized: saved RAW6affine ONCE FP64->FP32,
+  first19BITparity/19purges/actualseed20261026; no oldH5supervised loader.
+  One newreal397nativefit<=8trees/named schema handoff precedes market. Source
+  adoption is not an actual fit start; ClaudeREVISE/adjudication/noise limits
+  retained. No Paper/identity/budget change or independent-alpha qualification.
+
+That RAW397 family actually completed3marketGPUfits/63forecasts and closed
+technical b2bf2b03, Sourcee97b21cf/SCORES390f7ccb. Missing nested-ref bytes
+prevented readout create;0helddecode/marketledgers then, no fit repeated.
+Positive116closurechecks/7containers/35CLIJobs/ownedleasebackup+removal;
+2157.5015inclusiveupper unchanged. NEW cache-only downstream consumer:
+A/research/current-raw397-h20-cached-readout-20261026-v1/CONSUMER.json,
+SHA39e177a778921e1a8ffd0d8d9c795e0c0db72dfd02f12c907d1a94c9134b9759.
+Release77b2b57d/2FIRSTledgers/774checks/all4containers+20CLIJobsclosed,
+368.035newupper/0modelcalls/GPU/controlreplay. REJECT:20bp growth-.243%/
+absoluteDD11.382% vsTerminal19+2.010%/7.247%,4of5termsfail/1of3foldwins.
+No old failure regrade, raw-data impossibility claim or rescue tuning.
+
+Current NEW GPU family is minimal label-TopK membership-weighted Cat19/H20,
+not the closed RAW397 recipe. Source7574ac63/seal55ad8b33/18math+56metadata+
+21refs/ClaudeADOPTlimits. Parent assigned Schrodinger
+current-top-tail-h20-objective-development-20261026-v1:3newfits ONLY,
+3900activeSUM/7200elapsed inclSource1200(600+NEWruntime300+implementation300),
+native180/fits1350/infer120/readout300/verify240/cleanup180/reserve330.
+OldCatUNIFORM controls reused, not refit/restored/inferred/replayed. Optional
+6MLP declined THISfamily, not a GPU/learning prohibition. Native weighted-Pool
+nondegenerate oracle precedes market; source assignment is not an active fit.
 
 Pure incremental memory proposal adapter is CLOSED, not deployed:
 A/execution/current-rank-memory-paper-proposal-preparation-20261026-v1/CONSUMER.json,
@@ -210,6 +242,24 @@ forecasts/warm state/route provenance; retained-but-now-feature-unknown static
 factory gap rejects explicitly, not forced liquidation. No actual order/bank
 effects or original input swap. Static20 research above addresses the research
 H5resize versus real static-order mismatch without another broker writer.
+
+Actual current memory/TERMINAL19 fixed-half point is now PREPARED_NOT_DEPLOYED:
+A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json,
+SHA79d99cf975c13b4b5a6d886f0ca6056cd5308c85911900f54962d6363dab0e64.
+Source d4fdb2d1. Original CAT397H5F3 model60127ff3/Source644a0a53 withmemory20
+plus TERMINAL19F3 model10207583/Source369713ab, distinct savedaffines once.
+Actual24CAT+1currentTERMINAL forecasts, honest current-time bootstrap (not past
+observed availability),8positiveweights/full100/current69/routegap0, static
+H20input serialize/load.13native+14independentchecks/Ruff/allworkersclosed.
+Initial unsupported Ranker.predict(task_type) TypeError is retained; actual
+SDK probe proved CPU default before recovery reads. Acrossnames4restores/
+5predictattempts/2407reservedrows;4completedcalls2307rows, failed100 not outputs.
+2169.35inclusiveupper preserves allolddebits and pure600activecap unproven
+(elapsed12m19,780newadoptionupper is not CPUtime/retroactive oldcap pass).
+INPUT.json is under api-signature-recovery-r1/out/actual. .005TOTAL is metadata,
+NOT actual allocation/order/cohort/deployment. No original strategy/Task/bank
+change. Leibniz source-reviews the minimum existing finite account dispatcher
+admission, including feasible owned exit, not another concurrent private writer.
 
 ## Closed Evidence / Recovery Pointers
 

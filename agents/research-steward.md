@@ -34,14 +34,63 @@ No old memory/buffer/Source debit refund, duplicate training or dummy occupancy.
 Caps/source documents alone are not actual workers/closure/numerical results.
 
 Source discoveryd1d13b9c/296+28metadata is consumed once, not another owner.
-Leibniz now owns CPU-only static-H20 composition1800activeSUM/5400elapsed,
-including priorSource600once;14ledgers/0fits/GPU, no original Paper swap.
+Leibniz static-H20 CLOSED b117c2ea/14ledgers/7114checks/789.183activeupper
+including priorSource600once/4containers+25Jobsclosed,0modelcalls/GPU.
 Faraday SPY static20 reference CLOSED72401083/2ledgers/363activeupper,
 allPIDsclosed/0models; now current23warm source-readiness300active/900elapsed.
 Socrates raw397/H20 novelty and Schrodinger native-runtime readiness are
-SOURCE-only600active/1200elapsed each, no numerical/GPU allocation yet.
-Only after exact useful new contract/native handoff freeze may a NEW397
-campaign use measured headroom; completed TERMINAL19 baseline is never refit.
+SOURCE-only600active/1200elapsed each. Parent adopted NEW raw397/H20 recipe,
+assigned current-raw397-h20-transfer-development-20261026-v1 to Schrodinger.
+Freeze4500activeSUM/7200elapsed before numerical: Source1500(600+600+new300),
+native180,fits1350,infer120,readout300,verify240,cleanup180,reserve630.
+3NEWmarketfits/1800treeupper/0marketretry,1new397nativeGPUfit<=8trees,
+3selectedforecasts/63origins/2newledgers;0old19modelcalls/baselineledgerreruns.
+Do not use proposed900Source: it would omit one already allocated600scope.
+ActualPID/start/firstupdate/headroom/closure remain required facts, not inferred
+from adoption. Native397 and projected wide-fit peak determine safe useful
+concurrency; no blanket GPU hold or desktop-app exclusion.
+
+Current397 recovery supersedes dispatch only, not old contracts/results:
+sourceguard failed1.665640s, then nativeproducer first NPZ failed2.897917s
+for missing fixture parents,0nativeGPU/marketfit/ledger. Oldroot/5CLI/container
+positively closed/leaseabsent. Named native-fixture-directory-recovery-r1
+freezes5400inclusiveactiveSUM/SAMEhard06:07:16UTC, prior1684.563557 includes
+1500Source+bothfailures+NEWfixSource180once. Directory60/native180/fits1350/
+infer120/readout300/verify240/cleanup180/reserve1285.436443. Aggregate still
+1nativeGPUfit<=8trees/3marketfits/1800trees/2newledgers/0marketretry; no further
+technical rename loop. No completed native proof/model was repeated.
+Parent device snapshot04:11UTC:4090 free22691MiB/used1448/util5%/38C,
+D:free1371.1GiB/36.8%. Dated preflight, not training/isolated-use proof.
+
+397 actualhandoffb2bf2b03 is now CLOSED:3newmarketGPUfits/363trees,
+selected67/79/25, fitwallSUM10.058s;1nativeGPUfit8trees/2coldrestores/
+2inventedledgers,3newpredictions/63dates.0marketledger/helddecode because
+missing nested ref bytes failed BEFORE readout create.7containers/35CLIJobs/
+PID16536/daemonclosed,116closurechecks, exactownedlease backed up then removed.
+Inclusive2157.5015upper preserves oldsource/failures/unstartedreadout300/
+cleanup120; not actual GPUtime/refunded budget. Devicepeak13327MiB/util98%
+co-tenancy, no current owned GPUworker.
+New cached-readout1000activeSUM/1800elapsed is CPU-only/2FIRSTledgers/
+0fits/restores/inference/controlreplay. Separate Faraday currentpoint3600/
+5400elapsed is CPU-only/2restores/4predicts/0fit; source1744 counts Data664
+and pure780elapsedupper once. Pure old600active compliance is unproven,
+not retroactively repaired; conservative780 is not CPU/GPUspend. No GPUjob
+is manufactured merely because completed training released resources.
+
+CPUpoint Faraday is now CLOSED79d99cf9 after ONE named SDKsignature repair:
+0fits/GPU, originalunsupportedkeywordstage keptfailed. Acrossnames4restores/
+5predictattempts/2407reservedrows,4completedcalls2307rows/13native+14checks/
+allworkersclosed,2169.35inclusiveupper within4200, no refund of olddebits or
+claimed600purecap compliance. Typed8weightcurrentpoint is not deployed.
+
+Next sole-coordinator family: current-top-tail-h20-objective-development-20261026-v1,
+minimal3CatTAIL ONLY after7574ac63/55ad8b33 source and299runtimeupper.
+3900activeSUM/7200elapsed:Source1200(600+runtime300+new300),native180,
+fits1350,infer120,readout300,verify240,cleanup180,reserve330. Actual PID/first
+tree/headroom/closure required; sourcefreeze/MD is not GPUstart. At most
+1completednativeGPUfit8trees/3marketfits1800trees/63forecasts/2newledgers,
+0oldmodelcalls/0marketretry. Optional6MLP is declined THIS question, not a
+resource/framework or learning prohibition. Useful resources remain delegated.
 
 ## Latest Closed Work
 

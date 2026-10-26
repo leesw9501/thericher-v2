@@ -133,13 +133,33 @@ RESULT91a07efc/2368checks/11containers+55CLIJobsclosed/GPUleaseabsent.
 COMPLETE_FAIL_LATE_CARRY_MECHANISM, no rescue/refit/current Paper swap.
 Sealed SCORES213b54dc may be consumed without additional model calls.
 
-Current parallel CPU scopes: current-paper-static-h20-composition-development-20261026-v1
-(Leibniz,7arms/14ledgers/62cohorts/fixedq20/1800activeSUM including600prior
-Sourceonce/5400elapsed) and current-spy-static-h20-reference-20261026-v1
-(Faraday,same62cohorts/twoledgers/600active/1800elapsed). These are separate
-new accounting contrasts, not repeats of H5resizing/63window/SPYpassive.
-Socrates raw397/H20 novelty and Schrodinger runtime readiness remain source
-only; no inferred GPU training before exact new frozen allocation.
+Static composition is CLOSEDb117c2ea/14ledgers/7114checks/789.183activeupper/
+all4containers+25Jobsclosed, primary latehalf FAIL. Matched SPY static20 is
+CLOSED72401083/2ledgers/6362checks/allPIDsclosed/363activeupper. Both62cohorts,
+not repeated H5resizing/old63window/passive. No automatic reference selection.
+Socrates raw397/H20 source audit CLOSEDfe122637; Parent assigned NEW
+current-raw397-h20-transfer-development-20261026-v1 to sole GPU coordinator
+Schrodinger:3newfits/0retry/2newledgers,4500activeSUM including Source1500once/
+7200elapsed frozen before numerical. Existing TERMINAL19 controls reused with
+0oldmodelcall/baselineledger replay. Actual source/native/fit/closure facts
+must be read from its own new artifacts; assignment is not training evidence.
+Faraday separately source-audits current23dailywarm input/model sufficiency,
+no actual currentforecast or data acquisition yet.
+
+Later actual warm handoff be104020 and CPU point79d99cf9 are CLOSED:
+A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json.
+24CAT+1TERMINALforecasts/8positiveweights/staticH20input/current69mask/
+routegap0/13native+14independentchecks/allworkersclosed. PREPARED_NOT_DEPLOYED,
+no allocation/order/Task/originalinput change. Initial SDKkeyword failure and
+all counters preserved; do not rerun hostrun/old model inference for logging.
+Future admission uses Leibniz's current existing-serial-dispatcher source
+readiness, not this inference launcher or a new peer bank writer.
+
+RAW397 cached-readout39e177a7/77b2b57d is CLOSED_REJECT,2FIRSTledgers/
+774checks/0modelcalls. Schrodinger's NEXTminimalCatTAIL objective is a NEW
+3fit family3900activeSUM/7200elapsed, not a RAW397 retry or optional9fit sweep.
+Source readiness7574ac63/55ad8b33/native weighted-metric proof must precede
+market dispatch. No launch command for closed studies is a current next job.
 
 Pure proposal adaptere7228bcf/17nativechecks at
 A/execution/current-rank-memory-paper-proposal-preparation-20261026-v1

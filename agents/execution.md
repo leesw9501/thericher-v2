@@ -60,9 +60,55 @@ model provenance/ownedtarget-update exists. Not deployment. Inherited seal.py
 has oneE501; no blanketwhole-rootRuffPASS. Parent independent17tests PASS via
 unittest discovery (direct sealed script footer intentionally refuses TESTS
 overwrite). New static-H20 numerical sidecar is owned by Leibniz in Engine:
-sevenpolicies/14ledgers/fixedq20/62cohorts/0newmodelcalls, not another broker
-writer or alteration of an original opportunity. Faraday separately audits
-existing current23warminput source sufficiency; no actualcurrentforecast yet.
+sevenpolicies/14ledgers/fixedq20/62cohorts/0newmodelcalls, now CLOSEDb117c2ea/
+primaryFAIL, not another brokerwriter or alteration of an original opportunity.
+Data warm18c5c16c found a real source gap: cached historical forecasts are not
+current23warmdates and retrospectively computed scores are not observed-then.
+
+Leibniz NEW pure preparation scope:
+A/execution/current-rank-memory-current-time-bootstrap-preparation-20261026-v1,
+<=600active/1800elapsed. Current-time bootstrap retains actual computation/model/
+feature clocks before CURRENTdecision; no forged past available_at or change
+to e722's strict historical admission. Future ordinary advance still requires
+availability before its own entry. Parent's proposed future fixed-half memory/
+TERMINAL19 composition is explicitly adaptive from seen research references,
+NOT a primarypass/regrade/independentalpha/adoption. Claude challenge and
+invented existing-factory/clock/gap/restart tests belong to this pure scope.
+0market/model/private/broker/schedule effects; no original input/request/bank
+change. Data actual24origin support is separately assigned, not yet a packet.
+
+Pure bootstrap scope is now CLOSED2afc6264/Sourcea4ebf16b/DTO1f0b47e6,
+9NEWtests/RuffPASS/ClaudeADOPT_WITH_LIMITS. Existing17tests/staticledgers not
+replayed. Exact current4984+official H20exitlocal43 enforced. No liveworker/
+Claude/exec/timer; actualelapsed12m19, separate active clock unmeasured, so
+600activecap compliance NOTproven (not silently reset). This is functional
+source evidence, not runtime/numerical/time-authority proof.
+Data actual warmbe104020 is ready. Faraday's separately frozen CPU Engine
+currentpoint3600activeSUM/5400elapsed charges a conservative780elapsedSource
+upper once, not CPUspend or retroactive oldcap compliance. No actualcurrent
+forecast/proposal or Paperdeployment yet. Native schema/clock/affine handoff
+and source review precede new actual inference; originals remain unchanged.
+
+Currentpoint is now ACTUALLY CLOSED PREPARED_NOT_DEPLOYED at
+A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json,
+SHA79d99cf975c13b4b5a6d886f0ca6056cd5308c85911900f54962d6363dab0e64.
+Source d4fdb2d1;13native+14independentchecks/Ruff/allworkersclosed. Actual
+24CAT+1TERMINALforecasts/current69mask/8positiveweights/no routegap,
+staticH20input serialize/load. Honest current-time warm bootstrap, not past
+observed forecasts/independent alpha/primarypass. .005TOTAL onlymetadata,
+0allocation/cohort/order/Task/originalinput change. Initial unsupportedRanker
+predict(task_type) failed before0Data/compose; actualSDKsignature/CPU-default
+proof precedes recovery. Acrossnames4restores/5predictattempts/2407reserved
+rows;4completedcalls2307rows (failed100 not completed),2169.35inclusiveupper.
+Oldfailure, pure600activecap-unproven and all olddebits remain unchanged.
+
+Leibniz NEW source-only current-memory-terminal-half-serial-admission-readiness-20261026-v1
+reviews minimum EXISTING account-owned finite serialdispatcher integration,
+300active/900elapsed. No private/API/Taskquery or mutation/order/actualcapital
+proof. Quiet entry alone cannot solve H20exit overlap with originalJoint17.
+Preserve exactoriginals/custody/ops/counters, only positive owned process/Job/
+daemon/create closure permits a scoped migration. No broadlegacy migration
+for a pilot/newpeerRWbank writer or force of an expired original opportunity.
 
 Current resume package is CLOSED at
 A/execution/current-oct26-runtime-reader-readiness-20261026-v1/CONSUMER.json,

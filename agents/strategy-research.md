@@ -56,6 +56,29 @@ completed TERMINAL19. Source-only <=600active/1200elapsed,0market/GPU/models;
 not a promise of novelty or training. Schrodinger independently checks native
 runtime readiness. No new public weights/dependencies or architecture platform.
 
+RAW397 actually completed3newGPUfits; downstream cache-only39e177a7/77b2b57d
+REJECT at20bp: growth-.243%/absoluteDD11.382% vsTerminal19+2.010%/7.247%,
+4of5conditionsfail/1of3foldwins. Better average concordance did not improve
+selected-tail economics. No raw/seed/ensemble rescue or oldresult regrade.
+
+Current concrete NEXT mechanism is minimal label-TopK inclusion pair weighting:
+A/research/current-top-tail-h20-objective-readiness-20261026-v1/CONSUMER.json,
+SHA7574ac63b9bade2b3f5216224e3a03fe8a5e6cb6ea531b337041e30dbb935102,
+seal55ad8b33/18inventedmath+56metadata+21refs/helpersRuff/ClaudeADOPTlimits.
+Three NEW CatTAIL fits versus cached same19/H20 uniformCat controls; exact
+prior formula not found in bounded audit, not a novel ranking category.
+f=K*oraclelabelTopKweights gives inclusion1/fraction/0, not portfolio weights
+or percentile ranks; strict future-label loss ONLY mass f_i*(1-f_j), date1,
+alltied dates zero loss retained. No new feature/seed/horizon/sampler axis.
+Objective AND ownCHECK selector change, not a causal gradient-only ablation.
+Pair surrogate ignores inside-top/bottom order and can magnify near-boundary
+noise; not direct PnL optimization or proven LambdaRank/NDCG replication.
+Optional matchedMLP6fits declined as unnecessary for THIS smaller question,
+not an oldepoch/GPU/framework prohibition. Official sources/version/license
+in REFERENCES.json; no downloads/new dependencies or external weights.
+Schrodinger owns actual3900activeSUM/7200elapsed/native weightedmetric proof/
+3fits/2newledgers, not this source dispatch. No further proposal before result.
+
 ## Closed / Reusable Evidence
 
 Initial source metadata43checks retained the producer's tuple/list roundtrip
