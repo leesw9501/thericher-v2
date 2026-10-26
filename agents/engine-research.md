@@ -19,13 +19,19 @@ DEVELOPMENT_NOT_KILLED_NOISE_UNRESOLVED. AlwaysQQQ6.4203%/sameDD weakly
 dominates gate: no broad superiority/independent alpha/Paper promotion.
 136/140 ON proposals increase mean exposure; lower turnover is not alpha.
 
-Next DISTINCT preparation: QQQ OPEN5 adverse-path quantile-risk forecast
-versus FITconstant and past-volatility reference. Schrodinger owns final
-contract/packets/registry/GPU, Halley mechanism/kill review. Max600owned/
-1800elapsed/one tiny invented native fit+restore, NO market fits adopted yet.
-Freeze target feature-availability/purge, predictive kill, finite three-prefix
-family, optimizer/curves/early-stop and time/update/evaluation ceilings before
-dispatch. Do not add architecture/seed axes to rescue closed results.
+Newest q10 family CLOSED_REJECT, Consumerab2d70d6:
+A/research/current-qqq-open5-adverse-tail-risk-development-20261027-v1/CONSUMER.json.
+Actual3CUDAfits/1199updates/77epochs/3OOF140rows/zero retries/financial cells.
+Earlystop22/22/33epochs, best2/2/13 from INNER only, not a fixed16epoch cap.
+Pooled raw pinball .0039509128 loses FITconstant .0039075562 and weightedvol
+.0038617389; BOTH primary checks FAIL. No refit/threshold/architecture rescue,
+ES certificate, independent alpha or Paper promotion. All11CIDs/55Jobs/root/
+lease closed,905.152owned/3000 and2279.863elapsed/5400; original18:47:27 origin,
+Data62.83/Source600(includesprep96.055)/Halley90/verify120 counted once.
+Fits2.44/2.63/2.63s, peaks180/218/255MB; first two were co-tenants, not isolated
+benchmarks. Useful training was short, no GPU permission hold or dummy load.
+Next Source-only work checks genuinely nonduplicate selection hypotheses and
+existing foundation checkpoints/date/reuse before another numerical campaign.
 
 ## Recent Completed Research
 

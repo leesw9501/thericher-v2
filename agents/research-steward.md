@@ -7,7 +7,7 @@ immutable consumers. Closed clocks/charges are never reset/refunded.
 
 ## Actual Resource / Ready Work
 
-Newest numerical consumer eca8d542:
+Prior CPU numerical consumer eca8d542:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json.
 CLOSED CPU-only, one140row projection/two cost cells/zero fits or GPU;
 all3CIDs15Jobs closed.186.976owned/600,2535.065elapsed/3600.
@@ -18,11 +18,25 @@ Prior CUDA QQQcontext b419f22a CLOSED:6fits/1568updates/100epochs/6OOF/
 1350.036elapsed/7200 incl120prep ONCE. Actual fit walls5.44..7.28s: useful
 work was short, GPU was not forbidden. Both context primary checks fail.
 
-Next current assignment: DISTINCT QQQ OPEN5 adverse-path quantile Source/native
-preparation with Halley; max600owned/1800elapsed/one tiny invented GPUfit/
-restore, zero market fits until final compact contract. Check actual native
-pinball/optimizer/checkpoint and producer-consumer schema before payloads.
-Do not repeat completed mean fits or add hidden seed/window multipliers.
+Newest q10 family CLOSED_REJECT, Consumerab2d70d6:
+A/research/current-qqq-open5-adverse-tail-risk-development-20261027-v1/CONSUMER.json.
+Actual3CUDAfits/1199updates/77epochs/3OOF140rows/zero retries/financial cells.
+Earlystop22/22/33epochs, best2/2/13 from INNER only, not a fixed16epoch cap.
+Pooled raw pinball .0039509128 loses FITconstant .0039075562 and weightedvol
+.0038617389; BOTH primary checks FAIL. No refit/threshold/architecture rescue,
+ES certificate, independent alpha or Paper promotion. All11CIDs/55Jobs/root/
+lease closed,905.152owned/3000 and2279.863elapsed/5400; original18:47:27 origin,
+Data62.83/Source600(includesprep96.055)/Halley90/verify120 counted once.
+Fits2.44/2.63/2.63s, peaks180/218/255MB; first two were co-tenants, not isolated
+benchmarks. Useful training was short, no GPU permission hold or dummy load.
+Next Source-only work checks genuinely nonduplicate selection hypotheses and
+existing foundation checkpoints/date/reuse before another numerical campaign.
+
+Steward now inventories already-completed TimesFM/Chronos/TTM checkpoint and
+trusted release dates from existing metadata only,60owned/600elapsed/0model
+loads/downloads/numerical calls. No already-completed fit repeats. Exact dated
+checkpoint before every target may support post-checkpoint development;
+unknown/overlapping scope remains isolated representation/runtime only.
 
 Project is first GPU priority even during personal/external use. Unknown
 desktop process name is not a permission hold. Measure free/projected peak

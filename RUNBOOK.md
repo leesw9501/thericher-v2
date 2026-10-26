@@ -28,10 +28,14 @@ source_pin at host.call44 before PowerShell metadata subprocess. Frozen7.6.7
 hashfa2c8bb1 differs from actual valid Microsoft7.6.9 hash2a6769a3.
 A/execution/current-l-qqq-single-native-visit-preparation-20261025-v1/ops-L-QQQ-H5-INPUT271aee-v1.
 Earlier empty visits retain unknown cause. Future-exit-only PS metadata
-43351f18/60dc71a1 STAGED, NOT installed, under
-A/execution/current-pwsh7-l-optional-runtime-compatibility-20261026-v1.
-Parent checks relevant actual host/Job/container closure before apply; preserve
-original Oct30 19:55..20:00 exit/ACL, disable expired entry, no TaskRun.
+43351f18/60dc71a1 ACTUALLY installed19:09:29 b5d053d7:
+A/execution/current-L-future-exit-pwsh-owned-activation-20261026-v1/current-scope-closure-r2/ACTUAL.json.
+Expired entry disabled/oldargs preserved; original Oct30 19:55..20:00 exit
+enabled/native checkerPASS/ACL and86otherdefs same/0TaskRun/KIS/private.
+Fresh bounded census6f919c3a and reader closure preceded copy. Missing old
+anonymous Job receipts are not active writers. Parent first ad-hoc census
+loop failed before effects, FIRST-PROBE-FAILURE retained. Do not repeat
+consumed apply/probe commands or invent historical financial closure.
 
 Optional entry outerf4dd1991/runtime19902db4/release5ba4d309 unchanged.
 Recovery/exit remain originalR4f4b1974b/32a5fbf9. Current public mapping:
@@ -70,21 +74,49 @@ exact source/image/private paths, network none and source/private RO, no
 lock or recovery, full native input/policy/account/basis/intent/fill joins and
 before/after membership/file identity/mtime/byte stability. Missing stays unknown.
 
-L native RO Source52e1d9eb/edf190f5 passes one Linux invented cold/3negatives;
-6Jobs/containerclosed, actual read0. NEW Parent one-read scope18:47:15..19:05
-UTC binds CURRENT320/dc004 and actual closure. Old1815..1829 scope expired
-UNINVOKED, not reusable. Pin updates require a NEW exact reader binding.
+L actual RO667c967a consumed18:58:21/current320dc004,13Jobs/containerclosed/
+private stability/native fullbookPASS. L_JOURNAL_NOT_RECORDED_UNKNOWN/counts
+null/inventory-pending-terminal unknown, not flat/zero. Native pre-read
+admission independently qualified; later bc25 census is not retroactive proof.
+After current4335 source change, never reuse that scope. Old1815..1829
+scope expired UNINVOKED. Optional actual RO5634e962 is also CONSUMED:
+A/execution/current-optional-fresh-typed-custody-readonly-20261026T1912-v1/CONSUMER.json.
+Bracket19:16:37..40UTC/exactguesttimestamp unretained; independent native
+admission/private stability PASS/13Jobs+containerclosed. UNKNOWN_NO_EXACT_
+COHORT_RECORD/counts null/inventory-pending-terminal unknown, not flat/zero.
+No extra snapshot/recovery/reservation release. c55d historical cause remains
+unknown after three Source-only invented reproducers c60220d2.
+
+Current future L public selector is ADOPTEDd3407cdb, manifest8f8ddcb1:
+A/execution/current-l-future-exit-pwsh-public-reader-binding-20261026-v1/COMMANDS.json.
+Use C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe with its
+exact selector/manifest/scope Lfuture/phase exit and exact owned visit.
+Do not invoke without an actual exact visit. Old320 diagnostic/J174aa/optional
+pins preserved; no financial/runtime qualification from these ten pure tests.
+
 Prior technical-cold failure traced native store.read() taking an exclusive
 lock; new seam uses validated RO states through explicit copied-function
 dependencies, no global monkeypatch or relaxed parser/audit.
 Do not run old unqualified read_once scripts or consumed J17 scopes.
 
-Opt-in repo paper_account_session API is source-committed a3b3f1ba, NOT
-deployed to today's737SDK/images. One lazy token/client/budget per finite
-native visit, exact no-intent prefix+1 only under unchanged native bank;
-stop on first leg/pending/unknown/technical/deadline. Pending recovers once
-before fresh data. No basket/zero-fill/TTL-renewal claim. A future deployment
-needs its actual source/producer-consumer/owner binding, not a source-only test.
+Opt-in repo paper_account_session API a3b3f1ba is NOT deployed to today's
+737SDK/images. NEW staged image27dde810 verified748members/native inert API/
+Python3.12.15, Consumer6e27f996 under
+A/execution/current-native-account-session-runtime-image-20261027-v1.
+Use actual manifest-index ID27dde810, not config digest2a5e7ce0. Initial
+NoSuchImage before create is retained. No existing image/task replaced.
+Generic stock path excludes reserved QQQ/SPY/TLT/GLD. QQQ prototype67aca140
+FAILED; don't schedule it or remove the guard. Separate MSFT engineering
+Source/native preparation uses generic account-session, not an unknown
+substitution. Native entry/pending recovery/exit and real owner bridge must
+qualify before actual Task/order; no another operator approval for routine
+private Paper work.
+
+One lazy token/client/budget per finite native visit, exact no-intent prefix+1
+only under unchanged native bank; stop first leg/pending/unknown/technical/
+deadline. Initial pending recovers once before fresh data. No basket/zero-fill/
+TTL-renewal claim. Future deployment needs actual source/input/producer-consumer/
+owner/wire-window binding and original shared budget/F9 preservation.
 
 ## Verification
 

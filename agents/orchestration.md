@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, through18:44UTC Oct26.
+2026-10-27 KST, through19:32UTC Oct26.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns direction/shared MD/Git/installed cutovers. AGENTS owns authority.
 Preserve %SystemDrive%/. History: Gitbb391f30 and immutable consumers.
@@ -27,16 +27,25 @@ Reversible improvement: retain allowlisted failure stage/source/frame and
 exercise ACTUAL native state collection on RO Linux mounts. Task success and
 a mocked Windows fixture missed today's two faults. No new platform or gate.
 
+Throughput review19:17: actual L future-exit repairb5d053d7 and RO667c967a
+are closed; optional financial outcome UNKNOWN. Replace missing-historical-Job
+gate with exact fresh actual related-writer admission, not a risk waiver.
+Reversible improvement: reuse proven bounded census6f919c3a; Parent ad-hoc
+PowerShell empty-array loop failed before effects and was retained.
+Current image27dde has748exact members/inert API PASS, not a new owner.
+Generic QQQ prototype FAILED67aca140; separate MSFT engineering baseline
+preserves reserved ETF guard/unknown QQQ. No operator decision required.
+
 ## Disjoint Current Packages
 
 | Owner | Ready / owned / closure |
 | --- | --- |
-| Parent / 총괄 | Exact result integration; actual future-exit-only L cutover after current closure; MD/Git. |
-| Leibniz / 실행 | Source apply/verify for L320/dc004 to4335/60dc; expired entry disabled, original exit/ACL unchanged; no actual Task/API/private call. |
-| Faraday / 데이터·임시 Infra | Exact optional entry/recovery task/time/run and actor/container closure facts; no manual Task/reschedule. Optional3420/3447 NOT deployed. |
-| Socrates / 전략·임시 검증 | L RO state seam with explicit dependency, no global monkeypatch; one invented Linux cold+3negatives, zero actual scope until fresh Parent assignment. |
-| Schrodinger / 엔진·연구 자원 | Gateeca8d542 CLOSED/3CIDs15Jobs/0GPU. Distinct QQQ adverse-path Source/native, max600owned/1800elapsed/one tinyfit,0marketfits. Sole GPU/registry owner. |
-| Halley / 임시 전략 | Gate alias/math review plus risk-forecast proposal vs cheap references, max300owned/900elapsed/no new market numerics; direct schema exchange with Schrodinger. |
+| Parent / 총괄 | Integration/Git; actual PS repair closed; next admitted finite native cohort, no premature fill claim. |
+| Leibniz / 실행 | Separate MSFT generic-account-session Source/native300owned/900elapsed/0actualbroker/Task; QQQ failure closed, old guards unchanged. |
+| Faraday / 데이터 | q10packetsa56a5e9a consumed/62.83active/allJobsclosed. L future public selector adopted d3407cdb; no result read or task change. |
+| Socrates / 임시 검증 | Optional5634e962 CONSUMED/13Jobsclosed/missingcohortUNKNOWN; c55d Source forensicsc602 historicalcauseUNKNOWN; no more actual reads. |
+| Schrodinger / 엔진·연구 자원 | q10ab2d70d6 CLOSED_REJECT/3fits1199updates/11CIDs55Jobsclosed; Source-only foundation checkpoint/date inventory before any new trial. |
+| Halley / 임시 전략 | Next selection-mechanism Source proposal or concrete duplicate rejection; no numerical market dispatch. |
 
 Assignment/MD is not active worker evidence. No tracked code writes assigned.
 No completed training repeated; CPU gate needs no dummy GPU. Project first
@@ -45,7 +54,7 @@ GPU priority; measure capacity rather than requiring desktop apps to close.
 ## Current Evidence / Due
 
 L18:12 HOST-FAILURE7d02658b proves source_pin before metadata subprocess.
-Future-exit43351f18/60dc71a1 STAGED, NOT installed. Optional exact
+Future-exit43351f18/60dc71a1 installed19:09:29/entrydisabled/86otherdefs same. Optional exact
 c55d5bb79b174b37b123a17163fba66b public942 reader is
 UNKNOWN_MISSING_PUBLIC_RESULT at18:43; empty sink is not no-intent/closure.
 J17 strict0d134765 no registered/pending exact J17 at17:33:02, stable full
@@ -57,10 +66,24 @@ Data measured next19:24, retention21:55; no gratuitous pause/duplicate.
 Existing same-chat oct26-paper one-shot nominal18:45; config is not delivery.
 No replacement chain, recurring report or foreground wait.
 
-Newest research gateeca8d5426.1468%/DD2.4345 beats cachedNN5.5991%/sameDD,
+Prior research gateeca8d5426.1468%/DD2.4345 beats cachedNN5.5991%/sameDD,
 but alwaysQQQ6.4203%/sameDD dominates. Narrow development only, no alpha/Paper
 promotion. QQQcontextb419f22a and seeds16bfa3f7 CLOSED, not active GPU jobs.
 Dataeeebb16a CLOSED_READY; no duplicate acquisition.
+
+Newest q10 family CLOSED_REJECT, Consumerab2d70d6:
+A/research/current-qqq-open5-adverse-tail-risk-development-20261027-v1/CONSUMER.json.
+Actual3CUDAfits/1199updates/77epochs/3OOF140rows/zero retries/financial cells.
+Earlystop22/22/33epochs, best2/2/13 from INNER only, not a fixed16epoch cap.
+Pooled raw pinball .0039509128 loses FITconstant .0039075562 and weightedvol
+.0038617389; BOTH primary checks FAIL. No refit/threshold/architecture rescue,
+ES certificate, independent alpha or Paper promotion. All11CIDs/55Jobs/root/
+lease closed,905.152owned/3000 and2279.863elapsed/5400; original18:47:27 origin,
+Data62.83/Source600(includesprep96.055)/Halley90/verify120 counted once.
+Fits2.44/2.63/2.63s, peaks180/218/255MB; first two were co-tenants, not isolated
+benchmarks. Useful training was short, no GPU permission hold or dummy load.
+Next Source-only work checks genuinely nonduplicate selection hypotheses and
+existing foundation checkpoints/date/reuse before another numerical campaign.
 
 ## Verification / Continuation
 

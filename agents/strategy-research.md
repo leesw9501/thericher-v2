@@ -16,9 +16,11 @@ or theorem about expected utility. exp(Elog) is not E(simple return).
 Gate20bp growth6.1468%/DD2.4345%/turnover1.2711 improves cachedNN5.5991%/
 sameDD/3.6186 but alwaysQQQ6.4203%/sameDD weakly dominates. Noise unresolved,
 no broad alpha or Paper promotion. No threshold/ratio rescue or old replay.
-Halley independently checks alias/math and proposes ONE distinct adverse-path
-quantile-risk forecast question with Schrodinger. Max300owned/900elapsed/
-no market numerics; actual native target/output smoke precedes any market fit.
+Halley proposal050ac73c was consumed by CLOSED_REJECTab2d70d6: adverse-path q10
+proper-score question versus FITconstant and weighted-vol reference. Native
+75e57 tinyfit/restore passed; no mean/policy/threshold axis added. New independent
+Source/ABI/physical-mount review120active is charged to family verify120 once,
+not an extra ledger/evaluation intake. Direct exchange with Schrodinger/Data.
 
 Primary references supporting cost-aware forecast/position separation:
 https://web.stanford.edu/~boyd/papers/cvx_portfolio.html
@@ -26,12 +28,21 @@ https://arxiv.org/abs/2103.01775v1
 No upstream code copied or dependency added. Derivative-hedging results do
 not prove this QQQ gate optimal. Preserve source claims versus project facts.
 
-Socrates is temporarily assigned Execution's L genuinely RO state-reader seam,
-not a new permanent team. Native Linux52e1d9eb/edf190f5 passes one cold and
-three negatives/three native AST checks;6Jobs/containerclosed. Actual private
-read0. NEW Parent scope18:47:15..19:05UTC currentL320/dc004 permits one read
-only AFTER actual relevant owner closure. Old1815..1829 scope expired
-UNINVOKED. No observe/recovery/locks/global monkeypatch/RO audit bypass.
+Socrates temporarily consumed L RO667c967a at18:58:21: exact account/basis/
+input/policy/native full-book/stability PASS, absent L journal UNKNOWN/counts
+null/not flat;13Jobs/containerclosed/F9unchanged. Native pre-read admission
+was independent, Faraday's later bc25 is NOT pre-read authority. No historical
+Job-receipt gate when fresh actual source-attested writer absence qualifies.
+L320 scope consumed; after current4335 source change never reuse it. Old
+1815..1829 scope expired UNINVOKED. Optional actual5634e962 also CONSUMED/13Jobsclosed/private stable, missing
+exact cohort UNKNOWN/counts null/notflat/F9 unchanged. Source forensicsc602
+three invented cases show possible empty sinks, not actual c55d cause.
+No more private reads. MSFT host receives the categorical diagnostic seam.
+
+Halley now checks one distinct selection-mechanism Source proposal or concrete
+duplicate rejection. Common benchmark subtraction alone preserves same-date
+ranks; old beta-peer Ridge/stock-specific research must not be repeated.
+No market data/model/financial dispatch in this proposal package.
 
 ## Recent Decisions / Lessons
 

@@ -13,11 +13,21 @@ Original GRU/TF/J17 entry objective is SUPERSEDED_NOT_ACHIEVED, not completed.
 Those original windows ended. Keep exact failures/unknowns/exits; no extension,
 substitute request, bank reset or profitability claim.
 
-Leibniz prepares L future-exit-only PS metadata4335/60dc and mocked activation;
-Parent applies only after exact current owner closure. Faraday qualifies actual
-optional task/run/closure metadata, not another collector. Socrates' new one-
-read RO scope18:47:15..19:05UTC is bound to currentL320/dc004 and actual owner
-closure; old1815..1829 scope expired UNINVOKED. Roles exchange exact evidence.
+L future-exit4335/60dc ACTUALLY installed19:09:29 b5d053d7; expired entry
+disabled, original exit/ACL/86otherdefs same/native checkerPASS/0TaskRun/KIS.
+Leibniz now prepares separate deterministic MSFT generic-account-session
+Source/native baseline, not a silent QQQ substitute. QQQ prototype67aca140
+FAILED: reserved ETF scope rejects generic path,3development attempts retained.
+Never remove that guard/adopt foreign inventory/substitute unknown QQQ.
+Current image27dde has748exact members/inert native API PASS but is NOT an
+admitted broker writer. Single native entry/recovery/exit smoke still needed.
+Socrates actual L RO667c967a consumed18:58:21,13Jobs/containerclosed. Missing
+journal UNKNOWN/counts null/notflat/F9unchanged; pre-read native admission
+independent. Optional actual5634e962 CONSUMED/all13Jobs+containerclosed; no exact cohort
+record means UNKNOWN/counts null/notflat, private stability/native admission
+PASS, F9 unchanged. No extra snapshot. Source forensicsc602 reproduces possible
+empty sinks but NOT actual c55d historical cause. Faraday now builds disjoint q10 Data packets, no new broker/collector.
+
 Do not ignore every Data/research process or trust a role/process name.
 Actual/unknown custody writers remain a conflict.
 
@@ -64,8 +74,12 @@ report deadline overrun is preserved, not retroactively passed.
   Exact18:12 visitfce25c9f HOST-FAILURE7d02658b proves source_pin at call44,
   before metadata subprocess: frozenPS7.6.7/fa2c8bb1 differs installed valid
   Microsoft7.6.9/2a6769a3. Not a dated explanation of earlier empty attempts.
-  Future-exit-only three-file stage43351f18/60dc71a1 is NOT installed yet.
-  Original entry ended; never reopen. Partial three-static-host Data rules
+  Future-exit-only three-file43351f18/60dc71a1 installed19:09:29 b5d053d7:
+  A/execution/current-L-future-exit-pwsh-owned-activation-20261026-v1/current-scope-closure-r2/ACTUAL.json.
+  Entry disabled/oldargs preserved, original exit enabled/native checkerPASS/
+  ACL and86otherdefs same. Fresh two-pass6f919c3a and reader closure precede
+  copy. Parent first ad-hoc census failure retained before any effects.
+  Never reopen ended entry. Partial three-static-host Data rules
   remain limited, not full mixed-wrapper/container grant. Earlier XML-node/
   inert-return fixture failures and exact-source recoveries are retained.
   A/execution/current-l-qqq-command-first-graft-activation-preparation-20261025-v1/technical-r4/activation/L.
@@ -97,6 +111,12 @@ Whole intraday schedule wrapper may also dispatch a prospective Paper cycle;
 a cache-only leaf grant cannot cover that mixed wrapper.
 Measured mixed-task next19:24UTC, zero instances at17:50:43: it was NOT paused,
 rescheduled or launched merely to make an assumed18:00 conflict disappear.
+
+Current L future public selector ADOPTEDd3407cdb/manifest8f8ddcb1 at
+A/execution/current-l-future-exit-pwsh-public-reader-binding-20261026-v1.
+Ten positive/negative pure cases PASS, no outcome/private/Task/API read.
+Scope Lfuture/exit/exactownedvisit; preserve historical320/J174aa/optional
+outer-runtime pins. Installation/public transport is not financial closure.
 
 ## Reader Rules / Commands
 

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST; evidence through18:44UTC Oct26.
+2026-10-27 KST; evidence through19:32UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 AGENTS.md owns authority. Parent owns shared MD/Git and installed cutovers.
@@ -25,12 +25,16 @@ subprocess: frozen7.6.7 hashfa2c8bb1 differs from installed7.6.9 hash2a6769a3,
 valid Microsoft signature. This proves THIS attempt's first cause, not when
 the binary changed or the cause of earlier empty attempts.
 
-Future-exit-only metadata repair is STAGED, NOT installed:
-A/execution/current-pwsh7-l-optional-runtime-compatibility-20261026-v1/READINESS.json.
-Source43351f18/release60dc71a1; three metadata files,8native L-owner/7optional/
-11argv-definition synthetic cases, Scheduler/COM/CIM mocked. Parent checks
-actual relevant owner closure before copying. Disable expired L entry; keep
-original Oct30 19:55..20:00 exit/ACL/identities. No risk bypass or fresh entry.
+Future-exit-only metadata repair ACTUALLY installed19:09:29:
+A/execution/current-L-future-exit-pwsh-owned-activation-20261026-v1/current-scope-closure-r2/ACTUAL.json,
+b5d053d7. Current43351f18/release60dc71a1; expired entry disabled with historical
+arguments unchanged, original Oct30 19:55..20:00 exit enabled/native definition
+PASS/ACL preserved/86other definitions identical. Three metadata files only,
+8native L-owner/7optional/11argv cases and mocked install/rollback passed;
+Claude GO_WITH_LIMITS. Fresh two-pass6f919c3a and reader closure precede copy.
+Zero TaskRun/KIS/private write/window changes. Initial Parent ad-hoc census
+loop failed BEFORE copy/Task changes; FIRST-PROBE-FAILURE preserves it and
+the exact proven bounded probe replaced it. No historical Job/financial claim.
 
 Optional entry18:30..18:35 remains outerf4dd1991/runtime19902db4/release5ba4d309;
 recovery/exit remain R4f4b1974b/32a5fbf9. Exact host run
@@ -40,6 +44,18 @@ no-intent, acceptance, fill or owner closure. Recovery identity and custody
 are being qualified; no substitute request or financial inference.
 Optional PowerShell provider is compatible; L's pin fault is not its proven
 cause. Optional actor-claims3420bb4c/34476b72 is STAGED, NOT deployed.
+Optional actual RO5634e962 is CONSUMED, all13Jobs/containerclosed:
+A/execution/current-optional-fresh-typed-custody-readonly-20261026T1912-v1/CONSUMER.json.
+Read bracket19:16:37..40UTC, exact guest timestamp unretained. Independent
+native admission/private stability PASS, UNKNOWN_NO_EXACT_COHORT_RECORD,
+counts null/inventory-pending-terminal unknown, NOT flat/zero; F9 unchanged.
+Source forensicsc60220d2 reproduces empty sink after defer/pre-native caught
+failure on invented fixtures, not the historical c55d cause. No runtime fix
+or actual effects. MSFT host will retain these categorical failures.
+
+Exact recovery task is thericher-kis-paper-memory-terminal-exact-recovery-20261026-v1;
+no current owned recovery pointer, hence no recovery run inferred. Two-pass
+bc25a349 found no current related writer; task exit0 still is not a fill.
 
 J17 installed4aa87b59/88a89ea1/1ba617f3 scoped-RW artifact repair11481bbe.
 Original17:28 public8ed result is incomplete. Separate actor_unregistered
@@ -75,11 +91,19 @@ Seed16bfa3f7 CLOSED:6fits/19269updates; newseeds/fixed-thirds fail cachedGRU.
 2026 supported pair CLOSED: GRU1.6049%/DD1.5213%, Joint1.0148%/1.4367%,
 40cohorts/20bp; availability-conditioned development, not independent alpha.
 
-Schrodinger sole GPU/registry owner with Halley prepares a DISTINCT QQQ OPEN5
-adverse-path quantile-risk question versus FITconstant/past-vol references.
-Source/native only, max600owned/1800elapsed/one tiny invented fit+restore;
-NO market fit adopted yet. Completed models are not repeated for utilization.
-Current headroom precedes useful dispatch; personal GPU use is not a hold.
+Newest q10 family CLOSED_REJECT, Consumerab2d70d6:
+A/research/current-qqq-open5-adverse-tail-risk-development-20261027-v1/CONSUMER.json.
+Actual3CUDAfits/1199updates/77epochs/3OOF140rows/zero retries/financial cells.
+Earlystop22/22/33epochs, best2/2/13 from INNER only, not a fixed16epoch cap.
+Pooled raw pinball .0039509128 loses FITconstant .0039075562 and weightedvol
+.0038617389; BOTH primary checks FAIL. No refit/threshold/architecture rescue,
+ES certificate, independent alpha or Paper promotion. All11CIDs/55Jobs/root/
+lease closed,905.152owned/3000 and2279.863elapsed/5400; original18:47:27 origin,
+Data62.83/Source600(includesprep96.055)/Halley90/verify120 counted once.
+Fits2.44/2.63/2.63s, peaks180/218/255MB; first two were co-tenants, not isolated
+benchmarks. Useful training was short, no GPU permission hold or dummy load.
+Next Source-only work checks genuinely nonduplicate selection hypotheses and
+existing foundation checkpoints/date/reuse before another numerical campaign.
 
 Data eeebb16a CLOSED_READY:1712known CLOSE per fixed8ETF, seven geometry-bad
 context rows flagged; strictQQQ1712 OPEN/CLOSE. Exact producer refs in data.md.
@@ -89,16 +113,36 @@ Mixed intraday Data task measured next19:24UTC; not paused for an assumed
 
 ## Owners / Verification
 
-Leibniz: future L-exit Source-only activation preparation/diagnostics.
-Faraday: exact optional task/run/closure facts and source bindings.
-Socrates: L strict RO native-state seam using invented Linux input only;
-old1815..1829 actual scope expired UNINVOKED, never extend/reuse.
+Leibniz: minimal finite account-session bridge Source/native preparation with
+current-code image below, not an actual new broker owner/Task yet.
+Generic QQQ prototype67aca140 FAILED at reserved-ETF stock guard;3development
+attempts retained. New separate deterministic MSFT preparation is selected,
+not a silent QQQ substitution, guard relaxation or unknown reservation reset.
+Faraday: q10 Data packets, no HTTP; current writer-closure probe completed.
+Socrates: L strict RO CONSUMED667c967a, observation18:58:21.887555UTC:
+A/execution/current-l-fresh-typed-custody-readonly-20261026T184715-v1/CONSUMER.json.
+Original account/basis/input/policy/full-book and private stability PASS;
+L_JOURNAL_NOT_RECORDED_UNKNOWN/counts null/inventory-pending-terminal unknown,
+NOT flat/zero.13Jobs/container closed. Native pre-read admission independently
+qualified; later Faraday bc25 is NOT retroactive pre-read evidence. F9 unchanged.
+Old1815..1829 scope expired UNINVOKED; new320 scope consumed, no reuse after4335.
+Optional19:12 scope also consumed5634e962, no extra snapshot or reuse.
+Current MSFT nativeSYN Sourcec3fd8e69 passed entry/unknown-cancel/recovery/exit
+on invented bank, not actual financial evidence. New host->Linux integration
+at current-paper-engineering-msft-host-guest-integration-20261027-v1 remains
+in preparation, max900owned/1800elapsed, no actual broker/Task/private access.
 Schrodinger/Halley: research above. Parent: integration/Git/actual cutovers.
 No tracked production writes assigned in these packages.
 
 Code a3b3f1ba pushed: opt-in finite paper_account_session and nearest-wire
-callback-clock fix. NOT deployed to today's frozen737SDK/images.
-Docs bb391f30 pushed. Final authority70193a28:
+callback-clock fix. Existing737SDK/images unchanged. NEW staged current image
+sha256:27dde810cfa63aaa0e4a79da1a99de344a0a5734718d851d911d9284864acaaf
+has748exact members/native import+inert API PASS/Python3.12.15; two network-none
+RO/no-private containers closed. NOT deployed as broker owner. Consumer6e27f996:
+A/execution/current-native-account-session-runtime-image-20261027-v1/CONSUMER.json.
+Initial config-digest launch failed before create; correct manifest-index ID
+used without image-byte change, not a hidden trade retry.
+Docs87b88699 pushed. Final code authority70193a28:
 A/verification/current-paper-account-session-clock-recovery-20261026-v1/CONSUMER.json.
 213serialPASS/19437fullPASS/26knownSKIP35warnings/eightworkers/375.23s/helper0/
 Ruff/default-research-accountingComposePASS with .env.example.
