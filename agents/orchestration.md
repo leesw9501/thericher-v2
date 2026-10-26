@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-26 KST, through09:00UTC. A=D:/thericher-v2/model-artifacts;
+2026-10-26 KST, through09:20UTC. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -25,9 +25,9 @@ unchanged; readback8209e860/12checks+4negative cases. No new follow-up job.
 | --- | --- |
 | Parent / 총괄 | Extra pilot57c43f59 ACTUALLY installed3futureTasks/32a5active release/58ba stagedONCE. Fresh239serialPASS1SKIP+19317fullPASS26SKIP/8workers/385.33s/all14PIDs+scratchleaseabsent. Original8 XML/ACL unchanged08:44,0broker/Taskinvocations. |
 | Faraday / 데이터·임시 인프라 | CLOSEDc09f4e6e buildfb40c222/SDK7cb41263/18nativechecks/737members/quietconsole0. Parent later installed it for the limited pilot57c43f59; original2ff untouched. No active Infra worker. |
-| Leibniz / 실행 개발 | Pure reader40bf5f5d/8f446fe6 CLOSED12native+82checks/0actualprivate. NOW admitted-host-r1 first cold Linux fixture/actual source-capability binding, not a deployment gate or private read. Existing exact RO transport reused. |
+| Leibniz / 실행 개발 | Admitted-reader54861326/2a8aa5c6 CLOSED: first cold Linux invented fixture/3freshadmissions/onecontainer+13Jobsclosed/86finalchecks. Actual private scope unconsumed/future CLI sealed. No active worker. |
 | Schrodinger / 엔진·GPU 조정 | All12marketGPU+4native fits CLOSED; new TTM4463c25f CUDA25rows/0fit/allclosed. Codec recovery0d065cf4 CLOSED oneFIRSTcachedprojection/5selected/SDK3NAS+2unsupportedNYS,0models/ledgers/Paper. Executor closed. |
-| Socrates / 전략·임시 판독 | Broker query scopes CLOSED (NASD+AMEX7/NYSE0, not a merged total). NOW current-owned-custody-count-snapshot-20261026-v1: ONE separately admitted networknone/privateRO native owned-count read,0API/credentials/writes; do not infer that assignment is a completed private read. |
+| Socrates / 전략·임시 판독 | Actual custody086e8941 CLOSED09:15UTC:20knownowner scopes/7positive,47intents/41attempts/40acknowledged+positive linked cumulative fill states/46terminal/1nonterminalunknown.0API/writes/locks; not today's trades or broker matching. Allworkersclosed. |
 
 Roles directly exchange exact image/SDK/schema readiness; no Parent serial
 relay or extra approval. Parent owns trial scopes/shared risk/Git. No new
@@ -56,11 +56,13 @@ permanent role/platform is needed for these concrete packages.
 
 ## Throughput Review
 
-09:00UTC handoff review: original opportunities and new pilot are installed
-future paths, not human permission blocks. Holdings/new CUDAforecast/policy/
-activation verification closed. Only extra reader's cold integration is owned.
-One reversible improvement: its exact guest CLI already exists, so qualify
-new caller/image/RO fixture without rebuilding transport or old proof replay.
+09:20UTC yield review: all role packages/workers closed, no ready justified
+numerical job withheld. Exact original opportunities/newpilot are installed
+future paths, not human permission blocks. Next original13:40UTC, same saved
+follow-up18:42:59UTC. No foreground wait or new recurring chain. One reversible
+improvement: actual native custody replay took7.15s and avoided broad broker
+requery/registered-stock-as-inventory inference. Current counts are cumulative,
+not today's/new-model fills. Future original runtime still closes companygoal.
 Pending-only recovery/unchanged BUY cutoff preserve actual request authority.
 No completed proof/fit repeat or new admission platform. Foreign-target skip is
 per-target, NOT whole-basket rejection. Do not invent stricter overlap holds.

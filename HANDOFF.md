@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-26 KST, checked through 09:00UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-26 KST, checked through 09:20UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
 AGENTS owns standing private no-cost Data/Research/KIS Paper authority.
@@ -190,10 +190,14 @@ Current disjoint assignments after fresh full:
   used ONLY by this pilot, not an original upgrade. No new BUY after18:35.
   Reader40bf5f5d/Source8f446fe6 has12native+82checks,0actualprivate; sharedV4
   five modules match old67/newfb40, new profile needs newSDK. Leibniz owns
-  admitted-host-r1 first cold Linux fixture/actual capability binding under
-  current-memory-terminal-early-offline-reader-preparation-20261026-v1.
-  No actual read now or new deployment gate; later source/caller/mount/writer
-  admission and full RO readset stability are mandatory.
+  admitted-host-r1 is now CLOSED54861326 under
+  current-memory-terminal-early-offline-reader-preparation-20261026-v1:
+  Source2a8aa5c6/first cold Linux INVENTED fixture/3actual admission phases/
+  onecontainer+13Jobsclosed/86final checks. FirstcoldSource1c1ac544 retained;
+  final restrictive source renewal tested separately, no cold replay/regrade.
+  No actual private/KIS/model/Task. Sealed future actual CLI in COMMANDS.json
+  is unconsumed; fresh caller/image/RO-mount/writer admission and full before/
+  after membership/identity/mtime/bytes remain mandatory. SYN is not a fill.
 - Socrates: registration-count helper and actual admitted read are CLOSED.
   Original plain consumer SYN passed; wrapper-recovery-r1 startup125 preserved
   with exact daemon cause unknown. New wrapper-native-correction-r2 PASSED
@@ -219,10 +223,19 @@ Current disjoint assignments after fresh full:
   Original account anchor matched in RAM; no raw private/secret values saved.
   Do not sum staggered snapshots into a unique instantaneous account total,
   infer model-linked fills or claim full funds/equity/risk/PnL. Unknown F9 held.
-  NOW Socrates owns current-owned-custody-count-snapshot-20261026-v1:
-  one separate actual native custody-only count through fresh source/writer/
-  RO-mount/readset admission,0KIS/credentials/privatewrites/locks. This is NOT
-  another broker query or matching to the old7; assignment is not a result.
+  Separate actual native custody snapshot is now CLOSED at
+  A/execution/current-owned-custody-count-snapshot-20261026-v1/CONSUMER.json,
+  SHA086e89410f5b9e589f79ce108aa67fd94934f04ca2aea5437c1386b0c4c79454.
+  Stable book09:15UTC:20knownowner scopes/15registeredstocks/7positive owner
+  scopes/47cumulativeintents/41submitattempts/40acknowledged references/
+  40positive exact-linked cumulative fill states/46terminalstates and
+  1submittednonterminal unknown. NOT today's40trades, distinct fill events,
+  current broker holdings or new-model outcomes. No matching to broker7 or
+  inferred public cohort identity for opaque pendingowner. F9 stays held.
+  One actual RO/networknone read/3freshadmissions/originalanchor match/full
+  readset stability/exit0/exactCID+PIDclosure,0KIS/credentials/orders/recovery/
+  locks/privatewrites. Native smoke passed; external Ruff19findings retained
+  (style+2unused), not default-Ruff/full-suite clean. Parent8refs exact.
 - Schrodinger completed saved-expert audit bd2896db (12refs/0modelcalls).
   Parent adopted ONE new Oct26 H5 point using saved adapted TTM-B epoch11:
   A/research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1.
@@ -289,6 +302,8 @@ One existing registry append, model/uniform69/SPY arms, sessions4984..5003,
 Primary20bp modelgrowth>uniform69 and DD<=1.25uniformDD; SPY descriptive.
 This prospective declaration has no performance/Paper-PnL result yet.
 Operational early-exit Paper is explicitly NON_PARITY with this close benchmark.
+Its18:30 entry also differs from analytical13:30OPEN; neither entry nor exit
+timing is a matching Paper-PnL/benchmark comparison.
 
 Data actual warmbe104020:24origins/86sourcesessions/93retainedpages once,
 28native+52checks/allclosed. Existing own-date89/90/69 masks, no copiedmask.
@@ -335,11 +350,15 @@ complete/unrecoverable/operator. Do not repeat completed fits or force runtime
 closure. Verify/commit/push material packages, continue ready delegated work;
 company goal closes only on actual original runtime, not this source checkpoint.
 Primary source checkpoint a9513c8b3b3fed6fe1e065f7ccdcce284fa5a414 is pushed.
-09:00UTC review: limited pilot installed/original8 preserved; new CUDApoint/
-cachedpolicy/holdings complete. Leibniz completes only missing cold reader
-integration, no session wait or duplicate fits. One reversible improvement:
-existing RO transport already has exact guest CLI; qualify only new caller/
-image/RO fixture instead of rebuilding transport or replaying old proof.
+09:20UTC yield review: all role packages/processes closed. Original8, limited
+pilot, single follow-up and future Data captures keep their exact owners.
+Next original runtime13:40UTC, follow-up18:42:59UTC; no foreground session
+wait/extra chain. CUDApoint/cachedpolicy/holdings/custody/cold reader complete;
+no ready justified numerical job left unlaunched. One reversible improvement:
+reuse native custody replay (7.15s), not broad broker requery or equating
+registered15 with holdings. Company stays UNFINISHED; actual original runtime
+outcomes, not another proof/fit repeat, determine next objective. No Paper
+operator decision currently required.
 IntradayETF audit4ba8c35e CLOSED13refs: Data702baddd
 was ALREADY consumed by FINAL1305cd58/53769c3d,6marketRidge+6nativefits,
 COMPLETE_FAIL/allclosed. Stale "pending" corrected,0duplicate dispatch.

@@ -41,13 +41,17 @@ A missing or future receipt is unknown. L is additional, not company completion.
   activeRelease32a5fbf9, cachedINPUT58ba/policy7d5f. No model/inference repeat.
   Exact-pending-only recovery Oct26 18:36..18:40; no fresh BUY after18:35.
   Fresh SELL Nov20 until20:35/cleanup20:40, NON_PARITY analytical C[e19].
+  Entry18:30 also differs from analytical13:30OPEN; no timing/PnL equivalence.
   One240s visit may stop at a foreign skip/no-intent; NOT full-basket closure.
   Original8 XML/ACL unchanged/0instances08:44UTC; no manual Task/broker call.
   Source/profile/image tests and original identity pins remain in HANDOFF.
 - Extra reader40bf5f5d/8f446fe6 has12native+82independent checks,0actual
-  private reads. Its admitted-host-r1 cold Linux/actual capability binding
-  is separately owned under current-memory-terminal-early-offline-reader-preparation-20261026-v1.
-  Do not claim that unfinished caller is qualified from its path/pure test.
+  private reads. Its admitted-host-r1 is CLOSED54861326/Source2a8aa5c6:
+  first cold Linux invented fixture/3freshadmissions/onecontainer+13Jobsclosed/
+  86final checks. Firstcold1c1ac544 retained; final restrictive renewal tested
+  separately, not another cold pass. Sealed future actual CLI in COMMANDS.json
+  under current-memory-terminal-early-offline-reader-preparation-20261026-v1/admitted-host-r1.
+  Actual private scope is unconsumed; fresh runtime admission still required.
   Public diagnostic status is not exact fill/current-owned proof. Never use
   mode.retained/observe/recovery/lock creation for an offline read.
 - Engine/Steward: this batch12NEWmarketGPUfits+4nativefits CLOSED. Late-carry
@@ -66,6 +70,13 @@ A missing or future receipt is unknown. L is additional, not company completion.
   NYSE0/completepagination c21a946b at08:28UTC.2tokenPOST/3GET total/0orders,
   exact original account anchor. Not a simultaneous unique total/model-fill/
   full funds/equity/PnL claim; F9 UNKNOWN-HELD unchanged. No requery needed.
+- Separate actual custody-only snapshot086e8941 under
+  current-owned-custody-count-snapshot-20261026-v1:20knownowner scopes/
+  7positive/47cumulativeintents/41submitattempts/40acknowledged refs/
+  40positive cumulative fill states/46terminal/1submittednonterminal unknown.
+  Stable RO read09:15UTC,0API/writes/locks. Not today's trades/new-model
+  outcomes/broker matching/PnL or an inferred pendingowner public identity.
+  Unknown reservations preserved, allhelpersclosed. Company still UNFINISHED.
 - New TTM-B point4463c25f ACTUALLY CLOSED: CUDA1restore/1forward25rows,
   0fits/all3containersclosed, source2b075c04/forecastdd236065. Cached policy
   recovery0d065cf4 fixed only caller digest ABI after preserved native failure;

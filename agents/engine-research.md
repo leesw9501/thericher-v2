@@ -25,6 +25,8 @@ Old pure600active-cap compliance remains unproven, not retroactively passed.
 Execution/Parent installed the distinct earlyH20 limited pilot57c43f59 from
 these CACHED weights after fresh shared-control81e3b6a9 verification.
 FreshSELL close-45..-25/cleanup-20 is NON_PARITY with analytical C[e19].
+Operational entry18:30 also differs from analytical13:30OPEN; do not attribute
+its eventual Paper result to the benchmark's matching entry/exit timing.
 Actual oldSDK/sharedBook compatibility, private registration and feasible
 owned-entry/exit recovery belong to Execution; never infer from research.
 Original GRU/TimesFM/Joint17/L opportunities stay unchanged.

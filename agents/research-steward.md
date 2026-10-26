@@ -84,8 +84,10 @@ do not repeat training/TTM inference or use dummy GPU occupancy.
 No ready numerical job is intentionally left unlaunched. Model/current-point
 weights are cached and handed to Execution; repeated completed training would
 not improve that consumer. Imagefb40c222 is used by the limited installed
-pilot57c43f59; original8/image2ff unchanged. Only its offline-reader cold
-integration remains owned, no GPU needed. Research future benchmark frozen,
+pilot57c43f59; original8/image2ff unchanged. Offline reader54861326 is now
+closed/ready for separately admitted future use; no active GPU/CPU worker
+from these packages. Actual custody086e8941 closed,0API/model calls.
+Research future benchmark frozen,
 no outcomes
 yet. Reassess on concrete current-consumer fault/new input or ready frozen
 campaign, preserving old trials and actual ownership/headroom.

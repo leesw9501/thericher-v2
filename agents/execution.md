@@ -59,6 +59,8 @@ Oldd3932f49 is historical, not reused for these changed paths.
 New profile model-weights-nas-20session-early-exit-non-parity-2026-v1:
 freshSELL close-45..-25/cleanup-20/positiveclosure before originalJoint17-15.
 NON_PARITY analytical C[e19], default15min/oldserialization unchanged.
+The pilot's18:30 entry also differs from analytical13:30OPEN; no timing parity
+or Paper-PnL equivalence is claimed from the fixed close benchmark.
 Unknown identity/reservation survives deadlines; later official-session
 recovery is tested. No real Task/order/account/private/image deployment yet.
 Original8 frozenD SDK/image2ff/actions unaffected by these three primary files.
@@ -102,8 +104,11 @@ Parent57c43f59 ACTUALLY INSTALLED3futureTasks/trueRelease32a5fbf9 after
 staging58ba20,730bytesonce.08:44:19UTC3Ready/0instances/neverstarted;
 original8 XML+ACL unchanged. No manualTask/KIS/order. Future is not a fill.
 Reader40bf5f5d/8f446fe6 has12native+82checks/0actualprivate. New profile
-needs newSDK; Leibniz owns admitted-host-r1 coldLinux/capability binding,
-no actual read now. No mode.retained/observe/recovery/lock as offline reader.
+uses newSDK. Admitted-host-r1 CLOSED54861326/Source2a8aa5c6: first cold
+Linux INVENTED fixture/3freshadmissions/onecontainer+13Jobsclosed/86checks.
+Final restrictive renewal checked independently; no cold replay/regrade.
+Future actual CLI sealed/unconsumed, fresh admission and full RO stability
+mandatory. No mode.retained/observe/recovery/lock as offline reader.
 
 Invoked Socrates registration-only package at
 A/execution/current-memory-terminal-half-registration-readiness-20261026-v1
@@ -124,10 +129,17 @@ positive/completepagination08:28:52..54UTC/1POST1GET/0continuation/retry/order.
 Original account anchor matched in RAM. No raw payload/private values retained.
 Do not merge staggered snapshots into instantaneous account unique-total or
 model-linked fill. No full funds/equity/risk/fees/settlement/PnL; F9 stays held.
-Socrates now owns current-owned-custody-count-snapshot-20261026-v1: ONE actual
-admitted offline native owned-count read,0API/credentials/writes/locks/orders.
-No new broker query or matching to staggered7. Keep missing/unbound unknown;
-actual result and closure still required, not inferred from this assignment.
+Actual custody-only snapshot is CLOSED086e8941 at
+A/execution/current-owned-custody-count-snapshot-20261026-v1/CONSUMER.json.
+09:15UTC stable native replay:20knownowner scopes/7positive owner scopes,
+47cumulativeintents/41submitattempts/40acknowledged references/40positive
+exact-linked cumulative fill states/46terminal and1submittednonterminalunknown.
+NOT today's40trades/distinct fill events/new-model results or matching to
+earlier broker7. Do not infer public cohort identity for opaque pendingowner.
+One actual networknone/ROread/3freshadmissions/originalanchor matched/full
+readset stable/exit0/exactCID+PIDclosed,0API/credentials/writes/locks/orders.
+F9 stays held. New SDK smoke passed; frozen external Ruff19findings explicitly
+retained, no default-Ruff clean claim/extra full-suite or API replay.
 
 ## Closed Preparation History
 

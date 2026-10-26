@@ -179,10 +179,24 @@ installed/accountbound/profitability or an original input swap.
 Extra offline reader40bf5f5d/8f446fe6:12native+82checks,0actualprivate reads.
 Five sharedV4 modules match old/new; new early-profile decoder uses newSDK.
 Its public exact-visit CLI is in current-memory-terminal-early-offline-reader-preparation-20261026-v1/COMMANDS.json.
-admitted-host-r1 owns first cold Linux/actual capability binding. Do not invoke
-an unqualified callback or infer fill from public sink; no observe/recovery/
-mode.retained/locks as a reader. Actual private read requires fresh source/
-caller/image/RO-mount/writer admission and full readset stability.
+admitted-host-r1 is CLOSED54861326/Source2a8aa5c6: first cold Linux invented
+fixture/3freshadmissions/onecontainer+13Jobsclosed/86finalchecks. Final renewal
+has separate fail-closed source/default checks, not another cold replay.
+No actual private read in that package; its one-use future CLI is sealed at
+current-memory-terminal-early-offline-reader-preparation-20261026-v1/admitted-host-r1/COMMANDS.json.
+Invoke ONLY after actual relevant owner closure at the existing follow-up;
+fresh caller/image/RO-mount/writer admission and full before/after membership/
+identity/mtime/bytes remain mandatory. No callback placeholder, observe/
+recovery/mode.retained/locks or public-status-as-fill inference.
+
+Current cumulative custody snapshot086e8941 is CLOSED at
+A/execution/current-owned-custody-count-snapshot-20261026-v1/CONSUMER.json:
+one actual stable networknone/ROread09:15UTC,20knownowner scopes/7positive,
+47intents/41attempts/40acknowledged references/40positive exact-linked fill
+states/46terminal/1submittednonterminalunknown. Allhelpersclosed/0API/writes.
+Do NOT requery/replay it or call those today's40trades, distinct execution
+events, new-model results or matching to earlier broker7. Unknown/F9 held.
+External Ruff19findings retained; source is sealed, not default-Ruff clean.
 
 Same oct26-paper follow-up now covers all installed entries/recovery. Actual
 due18:42:59UTC/Oct27 03:42:59KST unchanged;12backend checks+4negative cases,
@@ -199,6 +213,8 @@ SPY/10+20bp/fixedshares,0outcomes. Data5d0bc0f8 proves existing installed
 Joint1769 includes exactcurrent69/selected8; dailyOPEN from same futurepages.
 No duplicate69collector. Separate sameMODP1SPY gap is not a Paper hold.
 New early Paper is NON_PARITY with close benchmark, not measured PnL.
+Its18:30 entry is also later than analytical13:30OPEN; both entry and exit
+timing differ, so future benchmark growth cannot be labeled Paper PnL.
 Pure new dailyOPEN source5a68f5d5/API2812897e:6016nativechecks/13rejectcases/
 Ruff/allPIDsclosed,0actualfutureprices. No additional collection or model run.
 
