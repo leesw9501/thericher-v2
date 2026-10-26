@@ -130,7 +130,40 @@ current-h20-early-paper-r9-runtime-build-20261026-v1 and current-memory-terminal
 half-early-runtime-preparation-20261026-v1 require their own native handoff.
 Foreign stock registration remains per cycle record; serial descriptors alone
 do not co-own it. Actual strict registration/writer admission precedes new
-effects; never bypass/adopt/filterweights to force deployment.
+effects; never bypass/adopt/filterweights to force deployment. Native itself
+skips foreign targets without reweighting and may advance others. Partial
+overlap is not whole-basket rejection or a new permission hold.
+
+New image is BUILT, not deployed: fb40c222 with SDK7cb41263,
+A/execution/current-h20-early-paper-r9-runtime-build-20261026-v1/quiet-parity-recovery-r1/CONSUMER.json,
+SHAc09f4e6e62cafd49065cd0ee79ab67d1bac6f3ae259fd179ce594aa586b2593d.
+Onebuild/18nativechecks/737exactsource/4containersclosed/quietchildhandle0.
+Use its exact four-overlay SDK/image, not primarysrc or original2ff binding.
+Old registration startup125 remains failed; never rerun its closed launch.
+Corrected wrapper-r2 passed INVENTED state. Actual-registration-r3 is CLOSED
+028c15d8 under current-memory-terminal-half-registration-readiness-20261026-v1:
+07:08UTC15registered/target8/intersection1/unregistered7,3freshadmissions/
+1network-none ROread/stability/StateExit0/exactCIDabsence. Not broker holdings,
+funds or ongoing eligibility; its consumed one-shot is not a new command.
+
+Guest transport-r2 and financial callback-r3 are CLOSED361c3484/7626a844
+under current-memory-terminal-half-early-runtime-preparation-20261026-v1.
+R3 has3actual Linux native.run calls/66checks with INVENTED bank/client;
+not a real order. Operational-binding-r4 CLOSEDb0e363fe/Source12f19530,
+Parent96source refs exact: production client/path/owner and FALSE release.
+Initial-source inert smoke62/final15mode checks are not install/financial use.
+Recovery must require exact retained pending; fresh BUY keeps original entry
+wire cutoff after pacing/token checks. Fresh BUY18:30..18:35, FALSE exact
+recovery18:36..18:40; one finite visit is not full-basket closure. Separate
+activation/readback/rollback preparation is owned, no Task change yet.
+Do not launch a false descriptor or claim real readiness from its inert path.
+
+Socrates owns NEW current-paper-fresh-holdings-readonly-20261026-v1 actual
+holdings-only Paper query. Max1tokenPOST/2GET/0retry/0orders, scoped Paper
+loader/categorical projection; never use recovery observe() as its reader.
+Engine owns NEW current-ttm-adapted-b-oct26-h5-current-point-20261026-v1:
+saved adapted-B, strict new25x512 current wrapper/native/dedup, <=1forward
+before13:30UTC,0fits. Preparation is not a Paper swap or a new ready command.
 
 Research latest12NEWmarketGPUfits+4nativefits CLOSED: latecarry597c3f94,
 RAW397 firstcachedreadout39e177a7, TopTail92b04e63 all REJECT fixed contrasts.
@@ -143,6 +176,8 @@ SPY/10+20bp/fixedshares,0outcomes. Data5d0bc0f8 proves existing installed
 Joint1769 includes exactcurrent69/selected8; dailyOPEN from same futurepages.
 No duplicate69collector. Separate sameMODP1SPY gap is not a Paper hold.
 New early Paper is NON_PARITY with close benchmark, not measured PnL.
+Pure new dailyOPEN source5a68f5d5/API2812897e:6016nativechecks/13rejectcases/
+Ruff/allPIDsclosed,0actualfutureprices. No additional collection or model run.
 
 ## Existing Data Owners
 

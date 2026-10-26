@@ -19,9 +19,20 @@ Future pages/availability/finality/early operational fills NOT_OBSERVED.
 
 Engine forward benchmark8bf86e20 froze beforeOct26OPEN:20sessions4984..5003/
 model8-uniform69-SPY/10+20bp/434metadatachecks/0outcomes. Existing capture
-owners below unchanged. Faraday currently owns temporary isolated public
-runtime build, not another Data acquisition/rebuild. Actual warmbe104020 and
+owners below unchanged. Faraday's temporary public image build is CLOSED
+c09f4e6e/imagefb40c222, not Data acquisition. Actual warmbe104020 and
 currentpoint79d99cf9 are complete; do not repeat them.
+
+DailyOPEN projection source is now ACTUALLY PREPARED, no future prices:
+A/data/current-memory-terminal-half-forward-open-projection-preparation-20261026-v1/CONSUMER.json,
+SHA5a68f5d50bfdd97ae71068f505e738dfb226636df7c82650015ec4e2636cbb8b.
+Source349a3456/API2812897e, actual-schema invented producer->coldconsumer
+6016checks/13rejectcases/Ruff/allPIDsclosed. Parent19refs exact.20x100 OPEN/
+CLOSE with2760requiredstockfields/31unavailable slots; numeric/capture/elapsed
+separate, finality/arrival NOT_OBSERVED. Existing capture/firstOPEN output
+unchanged. SPY descriptive INPUT_UNAVAILABLE, no fabricated overallpass.
+0actualprices/models/fits/GPU/ledger/API/Task/private effects. Later actual
+capture/receipt/stableRO reader required before measurement, not a new gate.
 
 ## Closed Reusable Consumers
 
@@ -182,7 +193,15 @@ unchanged. ONE shared continuation consumed by CP949 Claude CLI decoding before
 0numeric; originalfailure/Source/debits immutable, allactual numeric inR1 once.
 Model remainingcontinuations0, no Data rebuild. Data review_unavailable not
 agreement; frozenR1launcher retainsunusedjson F401, scientificmodulesRuff pass.
-Parent adopted exact physical leaves; new model Source/native dispatch pending.
+Parent adopted exact physical leaves. The "model pending" projection was
+STALE: exact FINAL consumers1305cd58 and53769c3d closed this input's fixed-entry
+and chronological continuation studies (1+5marketRidgefits/6nativefits,
+COMPLETE_FAIL/allclosed). Audit13metadatarefs/0arrays/modelcalls at
+A/research/current-intraday-etf-engine-consumer-readiness-20261026-v1/CONSUMER.json,
+SHA4ba8c35e1519a2f09f8ba088497df65c8dfc1e579fe5dea9a0c438e5e69c69f0.
+ActualFINAL paths: research/current-intraday-etf-fixed-entry-exit-development-20261024-v1/FINAL-CONSUMER.json
+and research/current-intraday-chronological-continuation-development-20261024-v1/FINAL-CONSUMER.json.
+No duplicate Data build/old model/native/readout dispatch from that stale line.
 No model/financial cells/API/Task/private custody/credentials or2026targets.
 
 Current TimesFM input COMPLETE33d12d81:
@@ -279,6 +298,17 @@ retained page chain -> original69 opens/fivecloses,31NaN. No actual marks yet,
 OSwake/finality/PIT guarantee or gate on Paper entry.
 
 ## Reusable Inputs / Claim Boundary
+
+SEC actual quarterly-fact acquisition remains a scoped CLOSED_UNAVAILABLE
+branch, not a global model/Paper hold. Current public-fundamental source
+PROPOSAL at A/research/current-public-fundamental-feature-feasibility-20261021-v1
+retains denied1GET/0accepted and missing legitimate contact-bearing User-Agent.
+Parent asked asynchronously for an operator-designated contact; no new request,
+fabricated contact/identity, alternate host/proxy or old-cap reuse. Official
+[read API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)
+and [access policy](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data)
+were rechecked Oct26. Existing provider-field FUND20 proxy experiments are
+NOT an accepted SEC filing panel or historical PIT evidence.
 
 Prefix Source56e5685a/consumerb5852786/manifest ea8ca283:
 A/data/current-h5-chronological-fusion-prefix-views-20261024-v1.

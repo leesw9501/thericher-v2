@@ -47,6 +47,12 @@ Data5d0bc0f8 source coverage proves existing installed Joint1769 matches
 current69/selected8. DailyOPEN may derive from retained future pages, no
 duplicate69collector. SPY sameMODP1 missing is separately scoped; existing
 MODP0 pair is distinct. Future prices/arrival/finality are NOT_OBSERVED.
+Pure adapter5a68f5d5 is now CLOSED_PREPARED_NATIVE_READY at
+A/data/current-memory-terminal-half-forward-open-projection-preparation-20261026-v1.
+Source349a3456/API2812897e,6016invented producer/coldconsumer checks/
+13rejectioncases/Ruff/allPIDsclosed.20x100 dailyOPEN+CLOSE/2760requiredstock
+fields, original31unknown preserved.0actual prices/modelcalls/fit/GPU/ledger/
+Task effects. SPY remains descriptive INPUT_UNAVAILABLE; no evaluation pass.
 
 ## Latest Closed Campaigns / Do Not Repeat
 
@@ -103,6 +109,37 @@ Later-outcome custody10765244 is UNKNOWN_NOT_FRESH: limited metadata audit
 does not prove all later outcomes used or unused. No synthetic date reservation
 or old target masking can manufacture independence. Current-listing/nonPIT/
 CA/dividend/arrival/finality limits stay explicit, not a global research hold.
+
+Intraday Data702baddd is ALREADY CONSUMED, not a ready unstarted fit:
+A/research/current-intraday-etf-engine-consumer-readiness-20261026-v1/CONSUMER.json,
+SHA4ba8c35e1519a2f09f8ba088497df65c8dfc1e579fe5dea9a0c438e5e69c69f0.
+13metadatarefs/0arrays/models/GPU; exactFINAL1305cd58 and53769c3d record
+1+5marketRidgefits/6nativefits/COMPLETE_FAIL/allclosed. Cost-aware fixed-entry
+economics was the documented bottleneck, not CUDA permission. Data's stale
+pending line replaced; different entry-information hypothesis remains allowed,
+not an architecture-only duplicate dispatch or a global neural-model ban.
+
+Earlier FUND20 recurrent numerical-r1/FINAL at
+A/research/current-fundamental20-recurrent-expert-development-20261021-v1
+records2actualGPUfits/scientific+financialPASS/CLOSED_COMPLETE. Its root's
+earlier READBACK/CLOSED describe source prep with0marketfits, NOT the final
+numerical result. Reuse terminal consumers, not stale prep as a new fit queue.
+The provider-field retrospective ASOF proxy is not an accepted SEC fact panel,
+historical PIT, independent alpha or native Paper cash PnL. No old regrade.
+
+Saved-expert current-input audit is CLOSED at
+A/research/current-completed-expert-current-input-readiness-20261026-v1/CONSUMER.json,
+SHAbd2896dbba2e7330908f08cea519d1a7e59e636c4a79d8abe51f528313715fbf.
+12refs/0arrays/weights/models/GPU; elapsed518.5/source10.346s. TTM-B saved
+epoch11 model e6d9045f is selected for ONE new current H5 point, not a refit.
+Parent ADOPTED A/research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1:
+original affine/SDK/checkpoint/source and literal25x512 endingOct23 must join
+Data33d12d81. Native actual producer/coldconsumer and exact point dedup first;
+then at most1restore/1forward25rows before13:30UTC.0fit/optimizer/ledgers/
+download/Paper changes,900active/1800elapsed; no fallback or automatic roll.
+H5 Oct26OPEN..Oct30CLOSE remains unchanged. Public corpus/provider proxy
+limitations remain; no independent performance/Paper profitability claim.
+Assignment is not evidence of completed forecast or actual GPU use.
 
 No ready useful GPU numerical job is being withheld by CUDA/permission.
 Do not invent fits for occupancy or repeat old63 mining for its own sake.

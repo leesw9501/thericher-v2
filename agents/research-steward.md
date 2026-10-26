@@ -48,13 +48,36 @@ model8/uniform69/SPY,10+20bp/.10paidstake/fixedshares,434metadatachecks.
 0futureoutcomes/weightsdecode/modelcalls/GPU/evaluation/schedules.
 This is a prospective declaration, not independent performance or PaperPnL.
 Data5d0bc0f8 source coverage uses existing69capture; no new69collector.
+Temporary Data projection5a68f5d5 now CLOSED:6016nativechecks/Ruff/allPIDs
+closed/0actualfutureprices/models/GPU/ledger/registry/Task. Source process
+14.278s/native root.843s with cold.063s NESTED, elapsed699.6/1500. No invented
+all-active clock or new numerical allocation. API2812897e, exact existing
+capture schema; later evidence remains required, not recreated by SYN.
 
 ## Current Queue / Next Action
 
+Source audit4ba8c35e CLOSED: intraday Data702baddd already consumed by exact
+FINAL1305cd58/53769c3d,6marketRidge+6nativefits complete/failed/closed.
+13metadatarefs/0arrays/weights/models/GPU here. Elapsed297.1/900,
+measuredcommands2.694s includes retained.127s parser failure, not CPU/GPUutil.
+No new fit queue from stale preparation/"pending" prose. Different input/
+entry-information hypothesis can justify a new separately frozen campaign;
+no hidden CUDA restriction, default dummy training or neural-class ban.
+
+Saved-expert source auditbd2896db CLOSED12refs/0modelcalls. Parent adopted
+ONE new saved adapted-TTM-B current H5 point under
+A/research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1.
+Schrodinger owns source/Data join/native/dedup, then <=1restore/1forward25rows
+before13:30UTC. Freeze900active/1800elapsed,0fits/optimizer/retries/ledgers/
+downloads. Native <=2restores/2forwards/8inventedrows, separate from actual
+25row point. Use measured CUDA headroom if useful; tiny inference may be CPU.
+No numerical dispatch/GPU claim from assignment alone or repeat old forecast.
+
 No ready numerical job is intentionally left unlaunched. Model/current-point
 weights are cached and handed to Execution; repeated completed training would
-not improve that consumer. Infra and Execution now prepare isolated newprofile
-image/capsule; no GPU needed. Research future benchmark is frozen, no outcomes
+not improve that consumer. Infra imagefb40c222 is BUILT/c09f4e6e, not deployed;
+Execution newroute/capsule remains owned, no GPU needed. Research future
+benchmark is frozen, no outcomes
 yet. Reassess on concrete current-consumer fault/new input or ready frozen
 campaign, preserving old trials and actual ownership/headroom.
 

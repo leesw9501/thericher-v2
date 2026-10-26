@@ -63,16 +63,51 @@ Unknown identity/reservation survives deadlines; later official-session
 recovery is tested. No real Task/order/account/private/image deployment yet.
 Original8 frozenD SDK/image2ff/actions unaffected by these three primary files.
 
-Leibniz now owns only NEW external capsule/RouteSpec/native SYN and actual
-oldfrozenSDK sharedV4 invented-state reader compatibility at
+Leibniz owns NEW external capsule/RouteSpec/operational binding at
 A/execution/current-memory-terminal-half-early-runtime-preparation-20261026-v1.
-Faraday owns isolated newimage/publicSDKbuild, direct pinned handoff permitted.
+Faraday's isolated newimage/publicSDKbuild is closed; use exact pins below.
 Current79d99cf9 eightweights repackage from cache,0modelcalls/fit/bankeffects.
 Actual registration guard is perTHIScycle owners; serial descriptors do not
 co-own registered stocks. Before activation inspect strict actual source-safe
 registration intersection/owner closure/account/basis/budget. Never bypass/
-adopt/filter/replace targets. A conflict blocks only extra candidate.
+adopt/filter/replace targets. Existing native marks a foreign target done/
+no-intent and may advance other original targets. Partial overlap is NOT a
+whole-basket rejection or human approval; remaining count is not risk eligibility.
 Source/image/capsule/SYN checks are not financial runtime evidence.
+
+Actual isolated image build now CLOSEDc09f4e6e at
+A/execution/current-h20-early-paper-r9-runtime-build-20261026-v1/quiet-parity-recovery-r1/CONSUMER.json.
+Imagefb40c222/SDK7cb41263,1build/18nativechecks/737exactpublicmembers/
+4ownedcontainersabsent/quietconsolehandle0. Original2ff preserved, not deployed.
+FullSource hashes and auxiliary metadata-check failure limits in HANDOFF.
+Component249f6e59 proved7invented visits/oldSDK V4 and repackage58ba once.
+Real guest transport361c3484 then financial guest7626a844 are CLOSED:
+3native.run/66checks/17admissions, invented accepted/fill/owned/pending,
+all Jobs/container/PIDs/locks closed. Not actual private/broker effects.
+Operational-binding-r4 CLOSEDb0e363fe/Source12f19530; Parent96refs exact.
+Real client/path/owner defaults source, initial-source inert smoke62/final15
+mode checks, NOT actual private/Linux deployment. Exact pending-only recovery;
+fresh BUY18:30..18:35 after pacing/token; FALSE recovery18:36..18:40, exitNov20
+20:15..20:40. One finite visit is not whole-basket entry/exit closure.
+Leibniz now prepares separate literal activation/readback/rollback source,
+no Task install/invocation/credential/broker use. False release stays immutable.
+
+Invoked Socrates registration-only package at
+A/execution/current-memory-terminal-half-registration-readiness-20261026-v1
+passed a plain invented native consumer. Wholewrapper
+recovery-r1 failed startup125 before consumer, no private reads/container left.
+Corrected wrapper-r2 passed on INVENTED state. Actual-registration-r3 is
+CLOSED028c15d8:15registered/target8/intersection1/unregistered7 at07:08UTC,
+3freshactor/source/mount admissions/networknone/source+privateRO/stablebytes/
+exit0/exactCIDabsence. Not holdings/funds/ongoing eligibility. Retain failed
+source clocks; do not rerun a consumed scope or release unknown reservations.
+
+Socrates now owns NEW current-paper-fresh-holdings-readonly-20261026-v1:
+one actual holdings-only query, max1tokenPOST/2GET/0retry/0orders, real scoped
+Paper credential/account binding and categorical/count-only output. No raw
+private values or recovery observe(); full risk/equity/PnL is out of scope.
+Holdings completeness is independent of orderable-funds availability; neither
+missing nor complete holdings releases F9 UNKNOWN-HELD.
 
 ## Closed Preparation History
 
