@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-26 KST, checked through 08:14UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-26 KST, checked through 09:00UTC. Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
 AGENTS owns standing private no-cost Data/Research/KIS Paper authority.
@@ -51,8 +51,11 @@ INPUT271aee51d6dfdc63ed598ac0af35197529aeded2a786756ad92258d5678cc30e.
 Legacy QQQ unit Task stays disabled; L uses its existing aggregate QQQ V4
 owner/separate H5 journal, not a second private bank.
 
-Dated original8 metadata Oct26 02:07:23UTC: enabled/Ready/0instances/exact
-XML+effectiveACL+nexttimes. At02:18:47 all4 public catalogs empty: UNKNOWN.
+Dated original8 metadata refreshed Oct26 08:17:48UTC: enabled/Ready/0instances/
+exact unchanged source/XML/effectiveACL/nexttimes. Evidence8153712d under
+A/execution/current-memory-terminal-half-early-activation-preparation-20261026-v1/ORIGINAL8-FACTS.json.
+This is not current private custody or root/Job/container closure. Earlier
+02:18:47 all4 public catalogs empty: UNKNOWN.
 A/execution/current-oct26-runtime-reader-readiness-20261026-v1/CONSUMER.json,
 SHA4f4e2e514c8f4e43de8bf89f15cf76de4e57a295bfbff7a17fc1018627e6dcbc.
 DateTime/string false drift was corrected OFFLINE, no schedule requery/change.
@@ -81,10 +84,14 @@ SHA5a1124115c91af88097685721b4999c3bb3a59f6b0454b06f33fb1a642bd61b1.
 actual due. COUNT/too-early-UNTIL failures and initial local-time projection
 remain historical. No direct DB edit/Windows Task change or duplicate job.
 Host/app must stay available; saved due is not future delivery or a broker fill.
+The SAME one-shot now includes the installed extra pilot/exact recovery;
+actual due18:42:59UTC unchanged. Parent readback8209e860:12backend checks+
+4negative cases PASS, stable prompt/config, no new chain or schedule expansion.
 
 ## Additional Ensemble / New Profile
 
-Actual current point is PREPARED_NOT_DEPLOYED:
+Original research current point is CLOSED; its early-profile cached derivative
+is now INSTALLED as the LIMITED future pilot described below:
 A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json,
 SHA79d99cf975c13b4b5a6d886f0ca6056cd5308c85911900f54962d6363dab0e64.
 Original CAT397H5F3 model60127ff3/Source644a0a53 with20-rank memory plus
@@ -150,16 +157,43 @@ Current disjoint assignments after fresh full:
   invented accepted/fill/owned and later exact pending identity retained.
   Mocked broker/bank only; all container/Job/PIDs/locks positively closed.
   Operational-binding-r4 is CLOSED READY_SOURCE_FALSE_NOT_INSTALLED:
-  CONSUMERb0e363feb368ccc86292e9760eed085dd2c3703328efa98e3168753cf576a77d,
-  finalSource12f19530/host32bcc76e/routeb06fefb8; Parent96source refs exact.
+  CONSUMER-FINAL5d33797af044c83feaa625af5ccf1cf0838869a082b31f152cfccbf1a27c88b0,
+  finalSource491062fd/hostf4b1974b/routeb06fefb8; Parent96source refs and13
+  final consumer-chain refs exact. Earlier consumerb0e363fe remains history;
+  final finite recovery binding was frozen08:12:41 within the same cap.
   Real native defaults/client/path source, inert smoke62 on initial source,
   final15pure mode checks/compile/PSparse, not final Linux/private deployment.
   Recovery requires retained pending before native.run; fresh BUY remains
   Oct26 18:30..18:35 even after pacing/token and longer recovery. Separate
   exact recovery FALSE definition18:36..18:40; exitNov20 20:15..20:40.
-  One finite visit is not whole-basket closure. Leibniz now prepares literal
-  activation/readback/rollback under current-memory-terminal-half-early-
-  activation-preparation-20261026-v1, no Task activation or credential use.
+  One finite visit is not whole-basket closure. Activation preparation is now
+  CLOSED1701f459 under current-memory-terminal-half-early-activation-preparation-20261026-v1,
+  Sourceb4588408, FALSE release/Prepare CLI/no-Execute denial passed;
+  exit->recovery->entry install order, exact never-started rollback only.
+  Advisory NO_GO49d46d97 has unknown raw reason/substring-parser caveat;
+  own SINGLE_VISIT_REACHABILITY_NOT_PROVEN finding/3alternatives retained,
+  not attributed to Claude or a global permission veto. Parent adopts the
+  one-visit pilot limitation, not full-basket progress.
+  Parent current-writer admission08:31:17:2actual actors/0containers/ADMIT,
+  actual self PID/start/argv/source + existing qualified capability checks,
+  no private financial reads/locks/credentials/KIS. This dated fact is not
+  future ownership or flatness. Fresh activation-specific verification runs
+  completed under current-memory-terminal-half-early-parent-activation-20261026-v1;
+  239changed-path serialPASS/1knownSKIP+19317fullPASS/26knownSKIP/35warnings/
+  8actualworkers/385.33pytestseconds/helper0,1406digests exact. All14PIDs/
+  exactcurrentC:child+lease absent08:41UTC; Ruff/currenthelpers/3ComposePASS.
+  Parent CONSUMER57c43f59ba3395c3c9af4da0b77509aa73beb6a4766059715502bff93221d9b8:
+  cached58ba20,730bytes stagedONCE/0models, trueRelease32a5fbf9,
+  actual3futureTasks installed exit->recovery->entry.08:44:19UTC all3Ready/
+  enabled/neverstarted/0instances/source+ACL+nextUTCexact; original8 XML/ACL
+  unchanged/0instances. No Task invocation/KIS/orders. Imagefb40/SDK7cb41263
+  used ONLY by this pilot, not an original upgrade. No new BUY after18:35.
+  Reader40bf5f5d/Source8f446fe6 has12native+82checks,0actualprivate; sharedV4
+  five modules match old67/newfb40, new profile needs newSDK. Leibniz owns
+  admitted-host-r1 first cold Linux fixture/actual capability binding under
+  current-memory-terminal-early-offline-reader-preparation-20261026-v1.
+  No actual read now or new deployment gate; later source/caller/mount/writer
+  admission and full RO readset stability are mandatory.
 - Socrates: registration-count helper and actual admitted read are CLOSED.
   Original plain consumer SYN passed; wrapper-recovery-r1 startup125 preserved
   with exact daemon cause unknown. New wrapper-native-correction-r2 PASSED
@@ -175,19 +209,40 @@ Current disjoint assignments after fresh full:
   StateExit0/exactCIDremoval PASS. No holdings/capital/orderability/fill/PnL
   claim or perpetual eligibility.7.696sactualowner/16.6scommandwall/588elapsed,
   no credentials/KIS/recovery/locks/Task/orders/F9 release. Allhelpersclosed.
-  NEW current-paper-fresh-holdings-readonly-20261026-v1 owns one separate
-  actual Paper HOLDINGS-ONLY query, max1tokenPOST/2GET/0retry/0orders,
-  scoped Paper loader/actual account match/count-only output. A missing
-  orderable-funds result cannot erase a separately complete holdings result;
-  this is not full account/risk/PnL or authority to release F9 UNKNOWN-HELD.
+  Fresh broker holdings are now CLOSED in two separate exact scopes:
+  current-paper-fresh-holdings-readonly-20261026-v1/CONSUMER.json observed
+  7positive instruments in complete NASD+AMEX queries08:17:17..20UTC,
+  account partial because the frozen2GETcap omitted NYSE, NOT providerfailure.
+  current-paper-nyse-holdings-readonly-completion-20261026-v1/CONSUMER.json,
+  SHAc21a946b, observed0positive NYSE instruments08:28:52..54UTC with complete
+  pagination/1GET/1tokenPOST/0retry/order. Prior scope1POST2GET unchanged.
+  Original account anchor matched in RAM; no raw private/secret values saved.
+  Do not sum staggered snapshots into a unique instantaneous account total,
+  infer model-linked fills or claim full funds/equity/risk/PnL. Unknown F9 held.
+  NOW Socrates owns current-owned-custody-count-snapshot-20261026-v1:
+  one separate actual native custody-only count through fresh source/writer/
+  RO-mount/readset admission,0KIS/credentials/privatewrites/locks. This is NOT
+  another broker query or matching to the old7; assignment is not a result.
 - Schrodinger completed saved-expert audit bd2896db (12refs/0modelcalls).
   Parent adopted ONE new Oct26 H5 point using saved adapted TTM-B epoch11:
   A/research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1.
-  New typed25x512 Data join/native SDK smoke/exact point dedup first; then
-  at most1restore/1forward25rows before13:30UTC.0fits/downloads/ledgers/
-  Paper changes,900active/1800elapsed. H5Oct26OPEN..Oct30CLOSE, not H20.
-  Actual new forecast/GPU use NOT yet evidenced; public corpus/proxy limits
-  remain, no independent-alpha claim or adoption of old TTM custody.
+  ACTUALLY CLOSED4463c25f at08:23:14UTC: CUDA1restore/1forward25rows,
+  native2restores/2forwards8inventedrows,0fits/optimizers/ledgers/Paper.
+  All3containers/CLIchildren closed; elapsed721.64/1800,
+  activeupper67.782/900, actual peak allocated39,655,424bytes.
+  Source2b075c04/point8966473e/forecastdd236065; Parent11evidence refs exact.
+  H5Oct26OPEN..Oct30CLOSE, not H20. No model replay or old custody adoption;
+  public corpus/proxy limits remain, no independent-alpha/Paper-PnL claim.
+  NEW prospective typed-policy postprocess froze top5 rawH5>20bp, equal.2
+  with cash remainder and aligned same-gross/full uniform25 controls BEFORE
+  cached score decode. Native codec failed weights_input_pin_mismatch;
+  no actual score projection/model/financial decode in the failed scope.
+  Separate codec-recovery-r1 is CLOSED0d065cf4: caller64hex fix only,
+  ONE FIRST cached projection/5selected/FULL_STAKE; SDK3NAS/2unsupportedNYS
+  retained without redistribution. Same-gross/full uniform25/cash contracts,
+  existing H5capture matched,0models/fits/GPU/outcomes/ledgers/Paper.
+  New424.8elapsed/600,activeupper15 plus old40 once; old publication overrun
+ 44.005s retained. Not installed/accountbound/profitability or an input swap.
 - Parent integrates. No permanent daemon or unnecessary new durable role.
 
 ## Research / Data Results
@@ -280,13 +335,16 @@ complete/unrecoverable/operator. Do not repeat completed fits or force runtime
 closure. Verify/commit/push material packages, continue ready delegated work;
 company goal closes only on actual original runtime, not this source checkpoint.
 Primary source checkpoint a9513c8b3b3fed6fe1e065f7ccdcce284fa5a414 is pushed.
-08:14UTC review: actual count/transport/financial SYN stages closed; real
-operational binding, fresh holdings-only query and NEW saved-TTM current point
-are disjoint owned work, no session wait. One reversible improvement is the
-pending-only/fresh-wire cutoff seam, not another replay of completed proofs.
+09:00UTC review: limited pilot installed/original8 preserved; new CUDApoint/
+cachedpolicy/holdings complete. Leibniz completes only missing cold reader
+integration, no session wait or duplicate fits. One reversible improvement:
+existing RO transport already has exact guest CLI; qualify only new caller/
+image/RO fixture instead of rebuilding transport or replaying old proof.
 IntradayETF audit4ba8c35e CLOSED13refs: Data702baddd
 was ALREADY consumed by FINAL1305cd58/53769c3d,6marketRidge+6nativefits,
 COMPLETE_FAIL/allclosed. Stale "pending" corrected,0duplicate dispatch.
 Different entry-information work remains allowed, not a neural/CUDA ban.
 SEC real-quarterly fact branch stays source-denied/missing contact only;
-operator contact question is asynchronous, no acquisition or global hold.
+operator asked for explanation; official free/no-key API/contact-header role
+explained. No contact address supplied/approved; no further SEC request,
+fake identity or old screenshot-email reuse. Optional, not a global hold.

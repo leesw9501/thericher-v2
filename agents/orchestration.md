@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-26 KST, through08:14UTC. A=D:/thericher-v2/model-artifacts;
+2026-10-26 KST, through09:00UTC. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -16,16 +16,18 @@ Existing same-chat oct26-paper follow-up REPAIRED/SAVED5a112411:
 nominal18:45UTC/Oct27 03:45KST, actual18:42:59UTC/03:42:59KST, one eligible
 date before UNTIL. Host/app availability required; not future delivery proof.
 No new chain/standing monitor. Native update, no direct app DB writes.
+SAME saved one-shot updated to include installed pilot/recovery, actual due
+unchanged; readback8209e860/12checks+4negative cases. No new follow-up job.
 
 ## Current Disjoint Owners
 
 | Owner | Current bounded work / actual evidence |
 | --- | --- |
-| Parent / 총괄 | Integration/Git, preserve originals, strict actual account registration/writer admission before any extra deployment. No operator decision presently. |
-| Faraday / 데이터·임시 인프라 | CLOSEDc09f4e6e: actual newimagefb40c222/SDK7cb41263,1build/18nativechecks/737exactmembers/4containersabsent/quietconsolehandle0. Four named overlays onto immutable2ff, not deployed. |
-| Leibniz / 실행 개발 | Component249f6e59/guest transport361c3484/financial SYN7626a844 CLOSED. Operational-sourceb0e363fe CLOSED96refs exact/15modechecks/initialinert62, not deployment. NOW separate finite activation/readback/rollback prep; BUY18:30..18:35/recovery18:36..18:40FALSE. |
-| Schrodinger / 엔진·GPU 조정 | Prior12marketGPU+4native fits CLOSED. Saved-expert auditbd2896db CLOSED12refs; NOW ONE new saved TTM-B current H5 point, typed25x512/native/dedup then <=1forward25rows/0fits beforeOPEN. Assignment is not GPU/forecast evidence. |
-| Socrates / 전략·임시 판독 | Actual registration028c15d8 CLOSED15registered/target8/intersection1/unregistered7; not holdings. NOW NEW fresh holdings-only Paper query, max1tokenPOST/2GET/0retry/0orders/categorical output, no F9 release. |
+| Parent / 총괄 | Extra pilot57c43f59 ACTUALLY installed3futureTasks/32a5active release/58ba stagedONCE. Fresh239serialPASS1SKIP+19317fullPASS26SKIP/8workers/385.33s/all14PIDs+scratchleaseabsent. Original8 XML/ACL unchanged08:44,0broker/Taskinvocations. |
+| Faraday / 데이터·임시 인프라 | CLOSEDc09f4e6e buildfb40c222/SDK7cb41263/18nativechecks/737members/quietconsole0. Parent later installed it for the limited pilot57c43f59; original2ff untouched. No active Infra worker. |
+| Leibniz / 실행 개발 | Pure reader40bf5f5d/8f446fe6 CLOSED12native+82checks/0actualprivate. NOW admitted-host-r1 first cold Linux fixture/actual source-capability binding, not a deployment gate or private read. Existing exact RO transport reused. |
+| Schrodinger / 엔진·GPU 조정 | All12marketGPU+4native fits CLOSED; new TTM4463c25f CUDA25rows/0fit/allclosed. Codec recovery0d065cf4 CLOSED oneFIRSTcachedprojection/5selected/SDK3NAS+2unsupportedNYS,0models/ledgers/Paper. Executor closed. |
+| Socrates / 전략·임시 판독 | Broker query scopes CLOSED (NASD+AMEX7/NYSE0, not a merged total). NOW current-owned-custody-count-snapshot-20261026-v1: ONE separately admitted networknone/privateRO native owned-count read,0API/credentials/writes; do not infer that assignment is a completed private read. |
 
 Roles directly exchange exact image/SDK/schema readiness; no Parent serial
 relay or extra approval. Parent owns trial scopes/shared risk/Git. No new
@@ -33,7 +35,8 @@ permanent role/platform is needed for these concrete packages.
 
 ## Evidence / No Duplicate Queue
 
-- Currentpoint79d99cf9 PREPARED_NOT_DEPLOYED:24CAT+1TERMINALforecasts,
+- Currentpoint79d99cf9 CLOSED; cached early derivative installed57c43f59.
+ 24CAT+1TERMINALforecasts,
   full100/current69/8weights, honest current-time bootstrap/13native+14checks,
  0fit/GPU/allocation/orders. Failed SDK keyword/debits retained.
 - Late-carry597c3f94:6newGPUmarketfits+2native/scientificFAIL.
@@ -53,12 +56,12 @@ permanent role/platform is needed for these concrete packages.
 
 ## Throughput Review
 
-08:14UTC handoff review: original opportunities are a ready future path,
-not a human permission block. Image/dailyOPEN/component/transport/actualcount/
-financial SYN closed; real operational binding, fresh holdings read and new
-saved-model current point are three disjoint owned paths. No session wait.
-One reversible improvement: pending-only recovery and unchanged fresh BUY
-wire cutoff prevent a recovery deadline from opening new entry authority.
+09:00UTC handoff review: original opportunities and new pilot are installed
+future paths, not human permission blocks. Holdings/new CUDAforecast/policy/
+activation verification closed. Only extra reader's cold integration is owned.
+One reversible improvement: its exact guest CLI already exists, so qualify
+new caller/image/RO fixture without rebuilding transport or old proof replay.
+Pending-only recovery/unchanged BUY cutoff preserve actual request authority.
 No completed proof/fit repeat or new admission platform. Foreign-target skip is
 per-target, NOT whole-basket rejection. Do not invent stricter overlap holds.
 Measured fourth imported source was added explicitly; no blanket742copy or

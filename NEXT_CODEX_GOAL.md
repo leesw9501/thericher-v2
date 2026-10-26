@@ -17,6 +17,7 @@ Parent owns shared policy/documents/integration/Git. AGENTS owns authority.
 | TimesFM H5 | Oct26 14:20..14:50 | Oct30 19:49..20:00 |
 | Joint17 H20 | Oct26 17:00..17:30 | Nov20 20:45..21:00 |
 | Additional L QQQ H5 | Oct26 18:00..18:15 | Oct30 19:55..20:00 |
+| Optional memory/terminal one-visit pilot | Oct26 18:30..18:35 | Nov20 20:15..20:40 |
 
 Preserve original8 image2ff/source/release/input/policy/identity/native/ops/
 counters and exact windows. No manual duplicate Task or strategy opportunity.
@@ -26,52 +27,29 @@ A missing or future receipt is unknown. L is additional, not company completion.
 
 - Parent repaired the EXISTING same-chat follow-up oct26-paper. Nominal
   Oct26 18:45UTC/Oct27 03:45KST, actual saved18:42:59UTC/03:42:59KST.
-  One eligible date before UNTIL, no recurring chain. Evidence5a112411:
-  A/orchestration/current-oct26-app-followup-repair-20261026-v1/CONSUMER.json.
+  One eligible date before UNTIL, no recurring chain. Updated to include the
+  INSTALLED extra pilot/recovery;12backend checks+4negative cases PASS.
+  Evidence8209e860 in current-memory-terminal-half-early-parent-activation-20261026-v1/FOLLOWUP-READBACK.json.
   Saved configuration is not future delivery; host/app availability required.
 - Optional public reader4f4e2e51/ROUTES-r2ef4f5099 is ready; CLI in RUNBOOK.
   Transport is not original-window/private intent/fill/current-owned proof.
   Use existing separately admitted strict private readers; never observe()
   recovery as a reader. Dated original8Ready/0instances is not current closure.
-- New distinct opt-in earlyH20 production profile is FROZEN e4f9d597 and
-  FRESHLY VERIFIED dd834d4c, not deployed. Default15min/originalSDK/image/
-  actions remain unchanged. Fresh526serial +19317fullPASS/26knownSKIP/
-  8workers/389.91s/cleanlease+scratch,1406exact digests/Ruff/threeComposePASS.
-  Authority: A/verification/current-h20-early-exit-profile-20261026-v1/AUTHORITY.json.
-  No reuse of historicald3932f49 for this change.
-- Faraday owns isolated immutable2ff-overlay image/publicSDK build under
-  A/execution/current-h20-early-paper-r9-runtime-build-20261026-v1.
-  Leibniz owns new capsule/RouteSpec/native handoff and oldSDK synthetic
-  sharedV4 compatibility under
-  A/execution/current-memory-terminal-half-early-runtime-preparation-20261026-v1.
-  Image build is now CLOSEDc09f4e6e: imagefb40c222/SDK7cb41263,1build/
-  18image+SDKchecks/737exactmembers/quietchildhandle0/4containersabsent.
-  Original2ff unchanged. Component249f6e59 now CLOSED: one WindowsSDK7visit
-  SYN/old67db V4 parserPASS, cachedINPUT58ba/newpolicy7d5f repackageONCE.
-  No model/private/Task/orders. Real host+Linuxguest transport-r2 now CLOSED
- 361c3484/62checks/2containers+Jobs+PIDsclosed. It did NOT call financial
-  native.run. First financial guest proof-r3 is now CLOSED7626a844:
-  3native.run/66checks/17admissions/invented bank+broker/allclosed.
-  Operational-binding-r4 is CLOSEDb0e363fe, Source12f19530/Parent96refs exact:
-  actual defaults/paths/client/owner source,15pure mode checks/pending-only
-  recovery. Fresh BUY18:30..18:35; FALSE exact recovery18:36..18:40, exitNov20
-  20:15..20:40. One finite visit is not whole-basket closure. FALSE release/
-  initial-source inert smoke62 is not Task installation or real client use.
-  Leibniz owns separate literal activation/readback/rollback preparation.
-  No actual new strategy/Task/deployment yet.
-  No original Task/image/capsule change, private bank access or model rerun.
-- Extra memory/TERMINAL19 fixed-half current point79d99cf9 is PREPARED_NOT_DEPLOYED:
-  actual24CAT+1TERMINALforecasts/full100/current69/8weights/routegap0,
- 13native+14checks/allclosed; current reconstructed warm history, not past
-  observed forecasts. .005TOTAL metadata is not allocation. Repackage cached
-  weights only for new profile; no inference/fit repeat or originalinput swap.
-- Before any added activation, prove exact relevant writer closure, actual
-  symbol-registration compatibility, same account/basis/risk and feasible
-  entry AND exit/recovery. The foreign-symbol guard is per cycle record:
-  serial descriptors alone do not co-own registered symbols. Never bypass/
-  adopt/filter/replace targets to force a cohort. Existing native per-target
-  no-intent may advance other original targets; partial intersection is NOT
-  whole-basket rejection. Preserve original opportunities/F9 reservation.
+- Optional memory/terminal pilot is ACTUALLY INSTALLED, NOT a runtime result:
+  A/execution/current-memory-terminal-half-early-parent-activation-20261026-v1/CONSUMER.json,
+  SHA57c43f59. R4FINAL5d33797a/root491062fd/hostf4b1974b, imagefb40c222,
+  activeRelease32a5fbf9, cachedINPUT58ba/policy7d5f. No model/inference repeat.
+  Exact-pending-only recovery Oct26 18:36..18:40; no fresh BUY after18:35.
+  Fresh SELL Nov20 until20:35/cleanup20:40, NON_PARITY analytical C[e19].
+  One240s visit may stop at a foreign skip/no-intent; NOT full-basket closure.
+  Original8 XML/ACL unchanged/0instances08:44UTC; no manual Task/broker call.
+  Source/profile/image tests and original identity pins remain in HANDOFF.
+- Extra reader40bf5f5d/8f446fe6 has12native+82independent checks,0actual
+  private reads. Its admitted-host-r1 cold Linux/actual capability binding
+  is separately owned under current-memory-terminal-early-offline-reader-preparation-20261026-v1.
+  Do not claim that unfinished caller is qualified from its path/pure test.
+  Public diagnostic status is not exact fill/current-owned proof. Never use
+  mode.retained/observe/recovery/lock creation for an offline read.
 - Engine/Steward: this batch12NEWmarketGPUfits+4nativefits CLOSED. Late-carry
  597c3f94, RAW397cache39e177a7 and TopTail92b04e63 all REJECT their fixed
   scientific contrasts. No completed training/ledger/proof is ready again.
@@ -83,21 +61,18 @@ A missing or future receipt is unknown. L is additional, not company completion.
   installed Joint1769 exactly covers current69/selected8. Reuse pages for
   dailyOPEN; new pure projection5a68f5d5 is CLOSED6016nativechecks/Ruff/
   allPIDsclosed/0actualprices. SPY same-MODP1 gap is separately scoped, not
-  a Paper hold. Count-only registration wrapper had startup125/no private
-  read; corrected full cold-wrapper-r2 now PASSED on invented state only.
-  NEW actual-registration-r3 delegates ONE offline private count after fresh
-  genuine actor/source/mount admission, no credentials/KIS/recovery/locks/
-  Task/broker effect. Actualr3 now CLOSED028c15d8:15registered/target8/
-  intersection1/unregistered7 at07:08UTC,3freshadmissions/1ROread/exit0/
-  exactclosure. Not holdings/funds/order eligibility, no F9 release.
-- New fresh-holdings-only query has its own Socrates scope, max1tokenPOST/
-  2GET/0retry/0orders. Count-only, exact account match; not full risk/PnL.
-- Engine/Steward saved-expert auditbd2896db CLOSED12refs/0modelcalls.
-  ONE new saved-TTM-B Oct26 H5 point is adopted under research/
-  current-ttm-adapted-b-oct26-h5-current-point-20261026-v1. Exact current25x512
-  join/dedup/native consumer first, then <=1forward25rows before13:30UTC;
-  0fits/ledgers/downloads/Paper swaps,900active/1800elapsed. H5 target stays
-  Oct26OPEN..Oct30CLOSE; no H20 conversion or old custody adoption.
+  a Paper hold. Actual registration028c15d8 is separate from broker holdings.
+- Actual Paper holdings scopes CLOSED: NASD+AMEX7positive08:17UTC, separate
+  NYSE0/completepagination c21a946b at08:28UTC.2tokenPOST/3GET total/0orders,
+  exact original account anchor. Not a simultaneous unique total/model-fill/
+  full funds/equity/PnL claim; F9 UNKNOWN-HELD unchanged. No requery needed.
+- New TTM-B point4463c25f ACTUALLY CLOSED: CUDA1restore/1forward25rows,
+  0fits/all3containersclosed, source2b075c04/forecastdd236065. Cached policy
+  recovery0d065cf4 fixed only caller digest ABI after preserved native failure;
+  ONE FIRST projection selects5, SDK retains3NAS/2unsupportedNYS without
+  redistribution. Same-gross/full uniform25/cash prospective H5 comparisons,
+  exact existing25capture reused,0futureoutcomes/ledgers/models/Paper effects.
+  Typed proposal is NOT installed or an original input/custody substitute.
 - IntradayETF sourceaudit4ba8c35e CLOSED13refs: Data702baddd ALREADY consumed
   by FINAL1305cd58/53769c3d,6marketRidge+6nativefits/COMPLETE_FAIL/allclosed.
   Remove stale pending, do not refit.0arrays/modelcalls/GPU in this audit;
@@ -119,8 +94,13 @@ netPnL. Deadlines/task exits/missing evidence never release reservations.
 Operational early exit is NON_PARITY with analytical C[e19]; later exact
 unknown-request recovery remains possible under actual official sessions.
 
-Verify changed work as AGENTS requires. For docs/external-only continuation,
-reuse freshdd834d4c ONLY with exact1406source digests and fresh checks of changed
-external code. Integrate/commit/push packages without claiming company closure.
+Fresh additional shared-control authority81e3b6a9:239serialPASS/1knownSKIP,
+19317fullPASS/26knownSKIP/8actualworkers/385.33s/helper0/all14PIDs+exact
+scratch+leaseclosed/1406digests exact/Ruff/threeComposePASS. FRESH-FULL.json
+under current-memory-terminal-half-early-parent-activation-20261026-v1.
+For docs/external-only continuation reuse ONLY with exact protected source
+digests and fresh checks of changed external code. No full-suite rerun for
+docs; material new controls still follow AGENTS. Integrate/commit/push without
+claiming company closure.
 Replace this file with ONE next company outcome after actual runtime closure;
 continue ready independent work without foreground session/quota waiting.

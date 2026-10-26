@@ -7,7 +7,8 @@ debits remain Git0438ecd:agents/engine-research.md and immutable consumers.
 
 ## Current Consumer / Ready Work
 
-Current memory/TERMINAL19 fixed-half point is PREPARED_NOT_DEPLOYED:
+Original memory/TERMINAL19 fixed-half point is CLOSED. Its cached early-profile
+derivative is INSTALLED as a limited future pilot, not a runtime result:
 A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json,
 SHA79d99cf975c13b4b5a6d886f0ca6056cd5308c85911900f54962d6363dab0e64.
 Original CAT397H5F3 model60127ff3/Source644a0a53 with20-rank memory plus
@@ -21,8 +22,8 @@ Acrossnames4CPUrestores/5attempts/2407reservedrows,4completedcalls2307rows;
 2169.35inclusiveupper/4200. No fit/GPU/ledger/broker/Task effect or repeat.
 Old pure600active-cap compliance remains unproven, not retroactively passed.
 
-Execution/Infra now prepare a new distinct earlyH20 operational route from
-these CACHED weights. Source profile verifieddd834d4c, not deployed.
+Execution/Parent installed the distinct earlyH20 limited pilot57c43f59 from
+these CACHED weights after fresh shared-control81e3b6a9 verification.
 FreshSELL close-45..-25/cleanup-20 is NON_PARITY with analytical C[e19].
 Actual oldSDK/sharedBook compatibility, private registration and feasible
 owned-entry/exit recovery belong to Execution; never infer from research.
@@ -132,14 +133,30 @@ A/research/current-completed-expert-current-input-readiness-20261026-v1/CONSUMER
 SHAbd2896dbba2e7330908f08cea519d1a7e59e636c4a79d8abe51f528313715fbf.
 12refs/0arrays/weights/models/GPU; elapsed518.5/source10.346s. TTM-B saved
 epoch11 model e6d9045f is selected for ONE new current H5 point, not a refit.
-Parent ADOPTED A/research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1:
-original affine/SDK/checkpoint/source and literal25x512 endingOct23 must join
-Data33d12d81. Native actual producer/coldconsumer and exact point dedup first;
-then at most1restore/1forward25rows before13:30UTC.0fit/optimizer/ledgers/
-download/Paper changes,900active/1800elapsed; no fallback or automatic roll.
-H5 Oct26OPEN..Oct30CLOSE remains unchanged. Public corpus/provider proxy
-limitations remain; no independent performance/Paper profitability claim.
-Assignment is not evidence of completed forecast or actual GPU use.
+Current point is ACTUALLY CLOSED4463c25f at
+A/research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1/CONSUMER.json:
+Data33d12d81 exact25x512 endingOct23/native coldsmokes/dedup passed; CUDA
+1restore/1forward25rows08:23:12..13UTC,0fits/optimizers/ledgers/Paper.
+Native2restores/2forwards8inventedrows; all3containers/CLIchildren closed.
+Source2b075c04/point8966473e/forecastdd236065/Parent11refs exact;
+elapsed721.64/1800,activeupper67.782/900,peakallocated39,655,424bytes.
+H5Oct26OPEN..Oct30CLOSE, not H20, independent alpha or old custody adoption.
+
+NEW current-ttm-b-h5-prospective-portfolio-preparation-20261026-v1 froze
+top5 rawH5>.002/tie originalslot/each.2/cash remainder BEFORE scoredecode.
+Uniform25 SAME INITIAL GROSS is risk reference, fullstakeuniform25/cash are
+opportunity references.10/20bp eachleg/fixedshares, no performance pass.
+Native codec failed BEFORE actual cached projection: caller supplied a
+sha256:-prefixed ref where existing load_model_paper_weights_input requires
+bare64hex. Failed source/no-retry/debits remain; separate codec-recovery-r1
+is ACTUALLY CLOSED0d065cf4: caller fix only/ONEFIRST cached projection,
+5selected/FULL_STAKE, SDK3NAS/2unsupportedNYS without redistribution.
+Samegross/full uniform25/cash contracts and exact TimesFM25 H5 capture join
+ready,0models/outcomes/ledgers/API/Paper. New424.8elapsed/600,15activeupper
+plus old40 once; old publication44.005soverrun retained. One existing registry
+append/trial1 is metadata, not future outcomes/profitability or capture proof.
+No new collector/historical regrade/old TTM forecast repeat; typed proposal
+is not installed/accountbound or equivalent to the five-stock analytical arm.
 
 No ready useful GPU numerical job is being withheld by CUDA/permission.
 Do not invent fits for occupancy or repeat old63 mining for its own sake.

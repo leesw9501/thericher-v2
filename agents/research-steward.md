@@ -64,20 +64,29 @@ No new fit queue from stale preparation/"pending" prose. Different input/
 entry-information hypothesis can justify a new separately frozen campaign;
 no hidden CUDA restriction, default dummy training or neural-class ban.
 
-Saved-expert source auditbd2896db CLOSED12refs/0modelcalls. Parent adopted
-ONE new saved adapted-TTM-B current H5 point under
-A/research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1.
-Schrodinger owns source/Data join/native/dedup, then <=1restore/1forward25rows
-before13:30UTC. Freeze900active/1800elapsed,0fits/optimizer/retries/ledgers/
-downloads. Native <=2restores/2forwards/8inventedrows, separate from actual
-25row point. Use measured CUDA headroom if useful; tiny inference may be CPU.
-No numerical dispatch/GPU claim from assignment alone or repeat old forecast.
+Saved-expert auditbd2896db CLOSED12refs. NEW saved adapted-TTM-B point is
+ACTUALLY CLOSED4463c25f under research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1:
+CUDA1restore/1forward25rows08:23:12..13UTC,peakallocated39,655,424bytes,
+native2restores/2forwards8inventedrows,0fits/optimizers/retries/ledgers.
+All3containers/CLIchildren closed.721.64elapsed/1800,67.782activeupper/900,
+20.608processwall includes nested native/actual spans once; not sustained
+GPU usage or training. Parent11evidence refs exact. No duplicate old forecast.
+
+New cached policy projection native failed before actual scoredecode at caller
+hash ABI (prefixed ref vs bare64hex). Preserve original failed600/120scope;
+separate codec-recovery-r1 CLOSED0d065cf4: ONE tiny repaired native seam and
+ONE FIRST cached projection,5selected/SDK3NAS+2unsupportedNYS,0models/fits/
+GPU/outcomes/API/Task. Policy/target/cost/ties unchanged. New424.8elapsed/600,
+15activeupper/120 plus old40 countedonce; old publication44.005soverrun stays.
+Allcommands closed/executor closed. No other ready numerical fit withheld;
+do not repeat training/TTM inference or use dummy GPU occupancy.
 
 No ready numerical job is intentionally left unlaunched. Model/current-point
 weights are cached and handed to Execution; repeated completed training would
-not improve that consumer. Infra imagefb40c222 is BUILT/c09f4e6e, not deployed;
-Execution newroute/capsule remains owned, no GPU needed. Research future
-benchmark is frozen, no outcomes
+not improve that consumer. Imagefb40c222 is used by the limited installed
+pilot57c43f59; original8/image2ff unchanged. Only its offline-reader cold
+integration remains owned, no GPU needed. Research future benchmark frozen,
+no outcomes
 yet. Reassess on concrete current-consumer fault/new input or ready frozen
 campaign, preserving old trials and actual ownership/headroom.
 

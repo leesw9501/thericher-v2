@@ -9,8 +9,8 @@ Closed proposals below are consumed history, not an automatic launch queue.
 ## Current Decision
 
 No additional strategy numerical package is queued solely to fill the GPU.
-Current memory/TERMINAL19 proposal79d99cf9 is already ready for Execution's
-cached-input/newprofile handoff. Operational testing and separately frozen
+Current memory/TERMINAL19 proposal79d99cf9 was consumed by the limited
+installed early-profile pilot57c43f59, not a completed fill/basket. Separately frozen
 future benchmark8bf86e20 have higher immediate decision value than another
 adaptive old63 sweep. This is NOT a model-class/epoch/GPU permission ban.
 
@@ -58,11 +58,15 @@ broker holdings or risk eligibility. Old startup125 failure stays historical.
 It now owns a distinct fresh HOLDINGS-ONLY Paper read, no strategy tuning or
 broker write. Parent owns shared Git; this does not consume a strategy trial.
 
-Saved-expert source reviewbd2896db (12refs) selected one NEW TTM adapted-B
-Oct26 H5 current point, no additional fit. Parent adopted its strict typed
-Data join/native/dedup contract under Engine; no fresh Paper input swap,
-old custody adoption, H20 conversion or independent-alpha claim. Current
-model reuse has more immediate value than reopening completed old63 sweeps.
+Saved-expert source reviewbd2896db led to ACTUAL new TTM-B CUDA25row point
+4463c25f,0fits/allclosed, not a Paper swap/H20 conversion/old custody adoption.
+Frozen follow-on policy is top<=5 rawH5>.002/tie originalslot/each.2 and cash
+remainder. Compare same-initial-gross uniform25 plus fullstake/cash references;
+lower exposure/DD is not alpha. Native caller hash ABI failed before current
+scores were decoded; isolated unchanged-policy recovery0d065cf4 now CLOSED:
+ONEFIRST cached projection/5selected/SDK3NAS+2unsupportedNYS,0models/Paper.
+No model/threshold hunt. New policy is descriptive prospective
+development, not fresh alpha or additional broker risk permission.
 
 ## Closed / Reusable Evidence
 

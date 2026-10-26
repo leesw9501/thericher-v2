@@ -116,14 +116,16 @@ No broad legacy migration or repeat of closed GRU/L/SYN trades just to deploy
 another pilot. Exact prepared points, inert source, unsafe old-return caveats
 and positive native proof limits remain in HANDOFF/Execution/Git.
 
-Current extra ensemble79d99cf9 is PREPARED_NOT_DEPLOYED: cached24CAT+
+Current extra ensemble79d99cf9 is CLOSED; its early-profile derivative is now
+installed as a limited future one-visit pilot. Cached24CAT+
 1TERMINALforecasts/8weights/full100/current69/13native+14checks, no training
 repeat needed. Reconstructed warm history is current-time, not past observed.
 A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json.
 Do not rerun old hostrun/model inference to repair logs.
 
-Distinct earlyH20 production source e4f9d597 is freshly verifieddd834d4c,
-not deployed. FreshSELL close-45..-25/cleanup-20 and later-session same-request
+Distinct earlyH20 source e4f9d597 was verifieddd834d4c; additional activation
+has fresh shared-control verification81e3b6a9 and Parent57c43f59 below.
+FreshSELL close-45..-25/cleanup-20 and later-session same-request
 recovery are NON_PARITY with analytical C[e19]. Default15min/original8D SDK/
 image/actions remain unchanged. New isolated image/capsule under execution/
 current-h20-early-paper-r9-runtime-build-20261026-v1 and current-memory-terminal-
@@ -134,7 +136,7 @@ effects; never bypass/adopt/filterweights to force deployment. Native itself
 skips foreign targets without reweighting and may advance others. Partial
 overlap is not whole-basket rejection or a new permission hold.
 
-New image is BUILT, not deployed: fb40c222 with SDK7cb41263,
+New image fb40c222/SDK7cb41263 is used by ONLY the added pilot, not originals:
 A/execution/current-h20-early-paper-r9-runtime-build-20261026-v1/quiet-parity-recovery-r1/CONSUMER.json,
 SHAc09f4e6e62cafd49065cd0ee79ab67d1bac6f3ae259fd179ce594aa586b2593d.
 Onebuild/18nativechecks/737exactsource/4containersclosed/quietchildhandle0.
@@ -149,21 +151,42 @@ funds or ongoing eligibility; its consumed one-shot is not a new command.
 Guest transport-r2 and financial callback-r3 are CLOSED361c3484/7626a844
 under current-memory-terminal-half-early-runtime-preparation-20261026-v1.
 R3 has3actual Linux native.run calls/66checks with INVENTED bank/client;
-not a real order. Operational-binding-r4 CLOSEDb0e363fe/Source12f19530,
-Parent96source refs exact: production client/path/owner and FALSE release.
+not a real order. Operational-binding-r4 FINAL5d33797a/Source491062fd/
+hostf4b1974b, Parent96source+13finalchain refs exact. Earlierb0e363fe is history.
 Initial-source inert smoke62/final15mode checks are not install/financial use.
 Recovery must require exact retained pending; fresh BUY keeps original entry
-wire cutoff after pacing/token checks. Fresh BUY18:30..18:35, FALSE exact
-recovery18:36..18:40; one finite visit is not full-basket closure. Separate
-activation/readback/rollback preparation is owned, no Task change yet.
-Do not launch a false descriptor or claim real readiness from its inert path.
+wire cutoff after pacing/token checks. Actual new future entry18:30..18:35,
+exact-pending recovery18:36..18:40, exitNov20 20:15..20:40. One240s visit is
+NOT full-basket closure and may stop at foreign-target no-intent. Parent
+A/execution/current-memory-terminal-half-early-parent-activation-20261026-v1/CONSUMER.json,
+SHA57c43f59, installed3futureTasks with activeRelease32a5fbf9 after exact58ba
+20,730byte cached staging.08:44UTC all3Ready/0instances/neverstarted and
+original8 XML/ACL unchanged. No Task manually invoked or broker called.
+Do not rerun installation/staging/model calls or use a false release.
+Source-owned Readback/never-started rollback commands remain under
+current-memory-terminal-half-early-activation-preparation-20261026-v1/COMMANDS.json;
+rollback after any start requires actual positive closure, no reservation reset.
 
-Socrates owns NEW current-paper-fresh-holdings-readonly-20261026-v1 actual
-holdings-only Paper query. Max1tokenPOST/2GET/0retry/0orders, scoped Paper
-loader/categorical projection; never use recovery observe() as its reader.
-Engine owns NEW current-ttm-adapted-b-oct26-h5-current-point-20261026-v1:
-saved adapted-B, strict new25x512 current wrapper/native/dedup, <=1forward
-before13:30UTC,0fits. Preparation is not a Paper swap or a new ready command.
+Both actual holdings scopes are CLOSED: NASD+AMEX7positive at08:17UTC,
+separate NYSE0/completepagination c21a946b at08:28UTC,2POST3GETtotal/0orders.
+Not simultaneous unique total/model fill/funds/PnL; never requery closed scopes
+or release F9 UNKNOWN-HELD. No raw private payload retained.
+TTM-B current point4463c25f CLOSED: actual CUDA25row forecast/0fits/allclosed.
+Cached policy0d065cf4 corrected only caller64hex ABI, ONE FIRST projection/
+5selected/3NAS supported and2NYS unsupported without redistribution. Not
+installed/accountbound/profitability or an original input swap.
+
+Extra offline reader40bf5f5d/8f446fe6:12native+82checks,0actualprivate reads.
+Five sharedV4 modules match old/new; new early-profile decoder uses newSDK.
+Its public exact-visit CLI is in current-memory-terminal-early-offline-reader-preparation-20261026-v1/COMMANDS.json.
+admitted-host-r1 owns first cold Linux/actual capability binding. Do not invoke
+an unqualified callback or infer fill from public sink; no observe/recovery/
+mode.retained/locks as a reader. Actual private read requires fresh source/
+caller/image/RO-mount/writer admission and full readset stability.
+
+Same oct26-paper follow-up now covers all installed entries/recovery. Actual
+due18:42:59UTC/Oct27 03:42:59KST unchanged;12backend checks+4negative cases,
+no recurring chain. Saved configuration is not future delivery; app/host needed.
 
 Research latest12NEWmarketGPUfits+4nativefits CLOSED: latecarry597c3f94,
 RAW397 firstcachedreadout39e177a7, TopTail92b04e63 all REJECT fixed contrasts.
@@ -203,6 +226,13 @@ SHAdd834d4c4ce3025bf00c2a6cb01d73d53eb0bdf872806457ddd7b5c4fdfd70eb.
 all10PIDs/exactcurrentchild/lease absent.1406source digests exact, repoRuff/
 default+research+accountingCompose(.env.example)/diffPASS.
 No originalTask/private/order or runtime activation in that verification.
+Later additional shared-control activation used FRESH-FULL81e3b6a9 under
+current-memory-terminal-half-early-parent-activation-20261026-v1:
+239serialPASS/1knownSKIP+19317fullPASS26knownSKIP/35warnings/8actualworkers/
+385.33s/helper0/1406exact, all14PIDs+exactC:child+lease absent. Ruff and3Compose
+PASS. No cleanup bypass or inactive-sibling deletion. This verifies controls,
+not actual future admission/submit/fill. Use it as latest unchanged-source
+authority for docs/external-only continuation, not a reason to repeat suites.
 
 Follow AGENTS. For tracked code/test/dependency/runtime/shared-control or
 material Execution recovery: changed-path serial coverage and fresh full

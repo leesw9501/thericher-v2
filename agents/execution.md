@@ -78,19 +78,32 @@ Source/image/capsule/SYN checks are not financial runtime evidence.
 Actual isolated image build now CLOSEDc09f4e6e at
 A/execution/current-h20-early-paper-r9-runtime-build-20261026-v1/quiet-parity-recovery-r1/CONSUMER.json.
 Imagefb40c222/SDK7cb41263,1build/18nativechecks/737exactpublicmembers/
-4ownedcontainersabsent/quietconsolehandle0. Original2ff preserved, not deployed.
+4ownedcontainersabsent/quietconsolehandle0. Original2ff preserved; newfb40
+used only by the limited pilot below, not an original upgrade or proven fill.
 FullSource hashes and auxiliary metadata-check failure limits in HANDOFF.
 Component249f6e59 proved7invented visits/oldSDK V4 and repackage58ba once.
 Real guest transport361c3484 then financial guest7626a844 are CLOSED:
 3native.run/66checks/17admissions, invented accepted/fill/owned/pending,
 all Jobs/container/PIDs/locks closed. Not actual private/broker effects.
-Operational-binding-r4 CLOSEDb0e363fe/Source12f19530; Parent96refs exact.
+Operational-binding-r4 FINAL5d33797a/Source491062fd/hostf4b1974b;
+Parent96source+13finalchain refs exact. Earlierb0e363fe is retained history.
 Real client/path/owner defaults source, initial-source inert smoke62/final15
 mode checks, NOT actual private/Linux deployment. Exact pending-only recovery;
 fresh BUY18:30..18:35 after pacing/token; FALSE recovery18:36..18:40, exitNov20
 20:15..20:40. One finite visit is not whole-basket entry/exit closure.
-Leibniz now prepares separate literal activation/readback/rollback source,
-no Task install/invocation/credential/broker use. False release stays immutable.
+Activation1701f459/Sourceb4588408 is CLOSED FALSE; source-owned Prepare/
+no-Execute denial/never-started exact rollback checked. Parent adopts one-visit
+pilot (possibly foreign-skip/no-intent), NOT full-basket. Original8 unchanged
+08:17:48 metadata; current writer admission08:31 ADMIT2actors/0containers,
+no actual private read/effect or future closure claim. New shared-control
+verification81e3b6a9:239serialPASS/1knownSKIP+19317fullPASS26knownSKIP/
+8workers/385.33s/all14PIDs+scratchleaseabsent/1406exact/Ruff+3ComposePASS.
+Parent57c43f59 ACTUALLY INSTALLED3futureTasks/trueRelease32a5fbf9 after
+staging58ba20,730bytesonce.08:44:19UTC3Ready/0instances/neverstarted;
+original8 XML+ACL unchanged. No manualTask/KIS/order. Future is not a fill.
+Reader40bf5f5d/8f446fe6 has12native+82checks/0actualprivate. New profile
+needs newSDK; Leibniz owns admitted-host-r1 coldLinux/capability binding,
+no actual read now. No mode.retained/observe/recovery/lock as offline reader.
 
 Invoked Socrates registration-only package at
 A/execution/current-memory-terminal-half-registration-readiness-20261026-v1
@@ -102,12 +115,19 @@ CLOSED028c15d8:15registered/target8/intersection1/unregistered7 at07:08UTC,
 exit0/exactCIDabsence. Not holdings/funds/ongoing eligibility. Retain failed
 source clocks; do not rerun a consumed scope or release unknown reservations.
 
-Socrates now owns NEW current-paper-fresh-holdings-readonly-20261026-v1:
-one actual holdings-only query, max1tokenPOST/2GET/0retry/0orders, real scoped
-Paper credential/account binding and categorical/count-only output. No raw
-private values or recovery observe(); full risk/equity/PnL is out of scope.
-Holdings completeness is independent of orderable-funds availability; neither
-missing nor complete holdings releases F9 UNKNOWN-HELD.
+Fresh actual Paper holdings scopes are CLOSED:
+current-paper-fresh-holdings-readonly-20261026-v1:7positive instruments,
+NASD+AMEX complete08:17:17..20UTC/1POST2GET/overallaccountpartial because our
+2GETcap omittedNYSE, not providerfailure. NEW NYSE-only completionc21a946b
+at current-paper-nyse-holdings-readonly-completion-20261026-v1 observed0
+positive/completepagination08:28:52..54UTC/1POST1GET/0continuation/retry/order.
+Original account anchor matched in RAM. No raw payload/private values retained.
+Do not merge staggered snapshots into instantaneous account unique-total or
+model-linked fill. No full funds/equity/risk/fees/settlement/PnL; F9 stays held.
+Socrates now owns current-owned-custody-count-snapshot-20261026-v1: ONE actual
+admitted offline native owned-count read,0API/credentials/writes/locks/orders.
+No new broker query or matching to staggered7. Keep missing/unbound unknown;
+actual result and closure still required, not inferred from this assignment.
 
 ## Closed Preparation History
 

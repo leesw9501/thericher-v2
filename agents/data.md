@@ -22,6 +22,12 @@ model8-uniform69-SPY/10+20bp/434metadatachecks/0outcomes. Existing capture
 owners below unchanged. Faraday's temporary public image build is CLOSED
 c09f4e6e/imagefb40c222, not Data acquisition. Actual warmbe104020 and
 currentpoint79d99cf9 are complete; do not repeat them.
+Existing TimesFM25 Data33d12d81/25x512 endingOct23 was also consumed by NEW
+TTM-B point4463c25f: actual CUDA25row inference08:23UTC,0newfits/allclosed.
+This is a different saved model/current forecast, not new market acquisition
+or a repeat of TimesFM inference. Exact25 H5 MODP1 future capture is reusable
+for its prospective comparison only after literal scope/date/unit join;
+no new collector/schedule or future outcome/finality claim.
 
 DailyOPEN projection source is now ACTUALLY PREPARED, no future prices:
 A/data/current-memory-terminal-half-forward-open-projection-preparation-20261026-v1/CONSUMER.json,
@@ -303,8 +309,10 @@ SEC actual quarterly-fact acquisition remains a scoped CLOSED_UNAVAILABLE
 branch, not a global model/Paper hold. Current public-fundamental source
 PROPOSAL at A/research/current-public-fundamental-feature-feasibility-20261021-v1
 retains denied1GET/0accepted and missing legitimate contact-bearing User-Agent.
-Parent asked asynchronously for an operator-designated contact; no new request,
-fabricated contact/identity, alternate host/proxy or old-cap reuse. Official
+Parent explained the optional free/no-key API and request-header contact role
+after the operator asked. No address supplied/approved; no new request,
+fabricated identity, old screenshot email, alternate host/proxy or old-cap reuse.
+Contact omission was NOT established as the403cause or a guaranteed fix. Official
 [read API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)
 and [access policy](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data)
 were rechecked Oct26. Existing provider-field FUND20 proxy experiments are
