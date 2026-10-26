@@ -19,6 +19,30 @@ and debits are not erased by this compaction.
 
 ## Actual Paper / Due
 
+CURRENT J17 recovery11481bbe is installed at17:24:46UTC, not a fill:
+A/execution/current-joint17-artifact-mount-owned-recovery-20261026-v1/CONSUMER.json.
+Actual source4aa87b59/release88a89ea1/native1ba617f3/producer3c8c6d52 and
+scoped D: RW artifact-output mount preserve private/native paths/image/SDK/
+input/policy/window/one budget/F9. Original entry17:28 opportunity only;
+end17:30 and Nov20 exit unchanged. Early strict reader c0b83c02 was consumed
+once before repair and proved no J17 registered/pending request at17:23:24.
+Its snapshot is not later current inventory; technical marker ff27b8ef was
+archived byte-exact, no private-state/reservation reset.
+Do NOT invoke old889 post1730 reader fb2 or current public e5 manifest as
+authority for new4aa visits. Preserve historical proofs; new bound derivatives
+are assigned. Active native Jobs/CIDs override a quiet Task status. Never
+manually run the strategy/Task to inspect results.
+
+Repo account-session source change has FRESH compatibility:
+A/verification/current-paper-account-session-integration-20261026-v1-AUTHORITY.json,
+ccc5d80e (base result c4cee025):212serialPASS/19436fullPASS/26knownSKIP/
+35warnings/eightactualworkers/381.15s/helper0/Ruff/threeComposePASS using
+.env.example. Exact C:/trpy/runs/r-56849221 and dotlease removed;18 observed
+PID-starts closed.1409 non-MD digests plus unchanged AGENTS/DECISIONS pins.
+No old temp sibling cleanup. Reuse only with exact protected source/policy;
+changed external code requires separate native proof. This is NOT deployment
+of the new opt-in API: today's737SDK/image remain byte-exact old code.
+
 Current development is not a replacement launch command:
 `execution.paper_account_round.run_cohort_progress` is an opt-in pure traversal
 helper. Real native invented-journal integration passed four tests: quote skip

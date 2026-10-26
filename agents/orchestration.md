@@ -1,10 +1,31 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, through15:56UTC Oct26. A=D:/thericher-v2/model-artifacts;
+2026-10-27 KST, through17:29UTC Oct26. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
 ## Company / Due
+
+Throughput review17:39UTC: original GRU/TF/J17 natural windows are now past;
+their planned trade outcome was NOT achieved. J17 post17:28 kernel/container
+closure is positive and fresh strict reader0d134765 at17:33:02 finds no exact
+registered/pending J17 request. Native public visit8ed is incomplete; separate
+worker-entry actor_unregistered failure is observed but lacks an exact retained
+actor/visit join. Do not convert current-actor guesses or Task exit into cause,
+zero historical effects or fill. F9 remains untouched. Company classification
+is being challenged with Claude, not held for an operator permission.
+Ready alternatives: source-attest noncustody Data/research admission before
+original L18/optional18:30; finish the finite account-session API for a future
+owned cohort; or use a separately named bounded engineering baseline after
+exact prior-request reconciliation, never as an unknown-request substitute.
+Parent integrates those outcomes; Leibniz forensics/Faraday L+optional audit/
+Socrates direction challenge/Schrodinger independent QQQ bootstrap repair
+remain disjoint. QQQ first launch failed FileNotFound before recorded stages;
+coordinator owns positive lease/process cleanup and bounded unchanged-cap
+pre-market bootstrap repair. No GPU-running claim from Source/adoption.
+Reversible improvement: retain exact offending actor/category at admission
+failure and qualify actual noncustody capability, instead of diagnosing a
+blanket actor_unregistered failure by time proximity or suppressing the guard.
 
 oct26-three-candidate-paper-entry-runtime-v1 UNFINISHED; actual natural entry
 outcomes, not research/install/commit. Original8 image2ff/identities unchanged.
@@ -25,6 +46,27 @@ rule/thread/notifications unchanged. Entry942 reader binds outerf4dd/runtime
 
 ## Current Disjoint Owners
 
+Current throughput review supersedes stale assignment projections below:
+Parent completed actual J17 scoped-RW artifact recovery11481bbe17:24:46:
+source4aa87b59/release88a89ea1/native1ba617f3; original17:28 fired, actual
+native Job/result still needs closure. Not a fill. Early c0b83c02 strict RO
+snapshot qualified only technical-latch archive; private/bank/F9 untouched.
+Leibniz proved path+post-effect writer and reviews source-frozen four-file API;
+Faraday owns new current public route and L/optional artifact-mount audit;
+Socrates prepares a NEW after1730 strict RO scope, not observe/recovery.
+Schrodinger owns ADOPTED QQQ OPEN5 six-fit study3398a015 at17:26:48/hard
+19:26:48,3600owned/zero retry/native-role qualification before fits. Adoption
+is not actual GPU-running evidence. Halley advice recommends this distinct
+information question over adding architecture/seed axes. New seed six fits
+and 2026 two-model economics are CLOSED, not active GPU work. Data fixed-eight
+close-field recovery is CLOSED_READY, no duplicate acquisition. Repo full test
+owner was Parent:19436PASS/26knownSKIP35warnings/381.15s/helper0; exact
+C:/trpy/runs/r-56849221/dotlease gone,18PIDsclosed/Ruff/threeComposePASS.
+Fresh authorityccc5d80e, no running test job and no duplicate full rerun.
+Reversible improvement: include native artifact WRITE feasibility in a mount
+repair, not only path-validator success. Preserve original17:30 entry deadline,
+private operational paths, one shared budget and F9 reservation throughout.
+
 Parent owns shared MD/Git/integration. Source changes are committed/pushed
 c7d04c86; no role may edit tracked files in current external-only packages.
 Assignments below do not prove that a numerical worker has started.
@@ -32,13 +74,18 @@ Assignments below do not prove that a numerical worker has started.
 | Owner | Current package / actual state |
 | --- | --- |
 | Parent / 총괄 | Integrate/Git and qualified public-namespace runtime repair; no fill/profit inference from research. Future-Task edit reviewd4ef7f35 separates mutable-definition ownership from bank-reader admission, not broker authority. |
-| Leibniz / 실행 | TF/J17 cutovers CLOSED; post1730 private-reader HANDOFFfb2eb768/Source62acea74 ready UNCONSUMED. LLM closed, named Tasks owned; resume role for qualified material result, no actual private read inferred. |
-| Schrodinger / 엔진·연구 자원 | GPU inference73685a2c CLOSED2savedrestores/4forwards/0fits/econ/allGPUclosed. New current-liquid-etf-context-qqq-h5-preparation-20261026-v1 source/native2inventedfits only before contract adoption, sole coordinator. |
-| Faraday / 데이터·임시 Infra | Fixed8ETF readinessb70276e1 CLOSED. New current-liquid-etf-context-acquisition-20261026-v1 sameMODP1 2020..Oct23/110GETincluding6retry/1POST, rawM only. Actual network result not inferred. |
-| Socrates / 전략·임시 실행 | Official venuefactsff4e59fc CLOSED, no actual price/no-print inference. New current-2026-h5-model-owned-price-support-20261026-v1 sealed target/availability masks only; old4cell remainsDATA_UNAVAILABLE. |
+| Leibniz / 실행 | Review40f82517/ClaudeGOlimits CLOSED. Now sole tracked owner: paper_account_session.py/current_stock_cycle_worker.py and two named tests. Focusedtests only, Parent fullverify/Git. No today runtime/image/Task changes; post1730 readerfb2 unconsumed. |
+| Schrodinger / 엔진·연구 자원 | ETF native2fits/4updates/2restores32checks CLOSED2d66d440. New OPEN5-aligned source/SYN readiness (target/terminal nextOPEN) before6marketfits, not old study regrade. Sole GPU/registry coordinator; S2cell request once. |
+| Faraday / 데이터·임시 Infra | Fixed8 capture actual72GET/1POST/67pagesaccepted/5wholepage rejects. New CLOSE-only research consumer replay+oldercursor recovery, max34GET/1POST; strict canonicalBar/QQQ target unchanged, geometry flags retained. |
+| Socrates / 전략·임시 실행 | Supportdc589e81 showsJOINT/GRU ownrequiredgap0; LOWVOL4/uniform6. New separately frozen supported-neural-pair2NET20cells/0fits/API/oldledgers; original4cell unavailable, no globalcontrol superiority. |
+| Halley / 임시 엔진 재현 | New current-joint-attention-seed-stability-preparation-20261026-v1 source-only two newseeds/6futurefits/fixedthree-seedweightblend, no marketdispatch until Parent+Steward; exact oldfoldseed duplicates checked. Disjoint artifact write set. |
 
 New roots are under A/execution, A/data or A/research respectively. Closed
 training/ledgers are not rerun. SEC contact remains an optional isolated gap.
+Exception to prior external-only allocation: Leibniz now implements exactly
+four assigned tracked files; other roles remain external-only. Parent owns
+shared MD/Git/fulltest authority and must NOT reuse1409source authority once
+those code/tests change. Frozen deployed images/grafts remain unchanged.
 Throughput improvement: advance reconciled original targets without redoing
 completed work; use a new economic entry contrast rather than old Ridge fits.
 The company still needs original natural runtime closure; this is not deployment.

@@ -1,11 +1,22 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-26 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own source/storage/calendar/availability, not model choice or account/orders.
 Parent owns shared MD/Git; AGENTS owns policy. Full closed package/source history:
 Git247ca0a:agents/data.md. Historical launch recipes are not ready jobs.
 
 ## Current Forward Consumer
+
+Latest fixed-eight research CLOSE-field recovery is CLOSED_READY eeebb16a:
+A/data/current-liquid-etf-close-field-consumer-recovery-20261026-v1/CONSUMER.json.
+SPY/QQQ/IWM/TLT/GLD/XLK/XLF/XLE each1712 known CLOSE proxies over
+2020-01-02..2026-10-23; zero unknown/conflicted CLOSE fields. Seven original
+OHLC-geometry-bad rows remain flagged as context only. Strict QQQ target has
+1712 full-Bar-valid OPEN/CLOSE rows. This is not canonical Bar promotion,
+verified price accuracy, PIT/TR/corporate actions or provider finality.
+Actual additional22GET/1POST/zero retries; replayed old rejected bytes first,
+then only older needed cursors. ROLEaaeaefdc/panel74254a6b/strictQQQ73c2fa34
+are the concrete Engine OPEN5 producer inputs. Do not repeat acquisition.
 
 New reference completion A/data/current-spy-modp1-benchmark-completion-20261026-v1/
 CONSUMER.json, ade959b7: exact retained SPY/AMS MODP1/GUBN0 whole page,
@@ -76,6 +87,17 @@ max110GETincluding6technicalretry/1POST/0rePOST, no pre2020/IPO/universecrawl.
 Raw M only; overlap revisions/conflicts unavailable, no canonicaloverwrite.
 Actual result not inferred. Token floor60s is scoped existing calibration,
 legacy300 default unchanged; GET1.25s uses alreadyqualified client path.
+Actual capture finished72GET/1POST/67accepted5rejected pages. QQQ/SPY/TLT/XLK
+each1712known rows; IWM1710, GLD1288, XLF/XLE793 each. Rejected pages all
+providerSUCCESS/100positivefiniteCLOSE/99validBars/ONEgeometryinvalid, so
+wholepage parse rejection is NOT proof of provider history limit. New
+current-liquid-etf-close-field-consumer-recovery-20261026-v1 explicitly
+research-CLOSE-only observes valid dated fields with geometry_bad flags,
+replays exact5raw pages before olderGLD/XLF/XLE cursors (max34GET/1POST).
+Canonical/native fullBar validation and strictQQQOPEN/CLOSE target remain.
+Observed closeproxy is NOT proven accurate/CA/PIT/TR/finality/tradability;
+no impute/rescale/overwrites or silent oldscope pass. Engine must accept the
+declared quality tier before use. No model/payoff build in acquisition.
 
 A/data/current-memory-terminal-half-forward-capture-readiness-20261026-v1/READINESS.json,
 SHA5d0bc0f86cf30591e89ee838d8ac38c385f6d6f54a35d4d95152f74220d6036f.

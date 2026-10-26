@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, integrated parallel results through15:56UTC Oct26.
+2026-10-27 KST, integrated parallel results through17:27UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -17,8 +17,44 @@ Git0438ecd:HANDOFF.md and exact immutable consumers. Closed failures/debits
 stay unchanged. Abbreviated hashes below are retrieval aids, not authority in
 place of the full referenced manifest. An assignment is not an active worker.
 
-Current P0 is the reproduced public Windows-path/Linux namespace fault, not
-model profitability or permission. Namespace Consumer d20a801b at
+Latest P0 recovery is ACTUALLY installed11481bbe under
+A/execution/current-joint17-artifact-mount-owned-recovery-20261026-v1.
+Natural17:00 J17 visit987b70dede7143108b485e250b8f398e failed core1153;
+exact-image bf323940 proved artifact mount absent. Parent caught that RO
+validator success was insufficient: native post-effect evidence writes need
+RW. Native writer cef72e97 proves RO EROFS/RW actual write+atomic rename.
+Fresh admitted13-Job reader c0b83c02 at17:23:24 verifies original account/basis/
+exact input-policy/full book and NO J17 registered/pending request, stable RO.
+Only technical marker ff27b8ef archived byte-exact; private/bank/F9/counters/
+debits untouched. Six public/source files changed;737SDK/image unchanged.
+Pair actually enabled17:24:46/ACL preserved/86otherdefs identical:
+outer4aa87b59/release88a89ea1/native1ba617f3/producer3c8c6d52. Next ORIGINAL
+entry17:28, end17:30, exitNov20 unchanged. Installation is NOT a fill.
+Old889 post1730/public-reader scopes cannot qualify new4aa visits; separately
+bound derivatives are assigned. Never infer old zero wire from this snapshot.
+
+Research six-seed-fit campaign16bfa3f7 is CLOSED:6newCUDAfits/19269updates/
+6OOF/3NET20cells/all9CIDs45Jobs/root/leaseclosed. Original Joint advantage is
+not seed-stable: newseeds1.7472%/DD4.6525%,3.1438%/4.2053%; fixed-thirds
+3.9095%/3.4984% versus cached GRU4.4455%/3.4087%. No winner rescue/alpha.
+2026 two-model pair CLOSED: GRU1.6049%/DD1.5213%, Joint1.0148%/1.4367%,
+20bp EACH leg/40cohorts; adaptive availability-conditioned, not Paper PnL.
+Data eeebb16a now has1712 CLOSE proxies each for fixed8ETF/seven flagged
+geometry-bad context rows, strict QQQ1712 OPEN/CLOSE. No canonical/PIT/TR claim.
+Next finite QQQ OPEN5 context campaign ADOPTED at17:26:48,hard19:26:48:
+A/research/current-liquid-etf-open5-context-development-20261026-v1/ADOPTION.json.
+Contract3398a015/source858d1d46/Consumer ea8ea590: twoarms/threeprefixes/
+6fits/11520updates/8cells/zero retries/3600owned incl120prep once. Schrodinger
+must bind actual isolated packets/native bootstrap before fits, not repeat
+completed studies. This adoption is NOT an actually running GPU worker.
+Four-file repo native account-session change is source-frozen, not deployed.
+Fresh verification c4cee025 at A/verification/current-paper-account-session-
+integration-20261026-v1-CONSUMER.json:212serialPASS/19436fullPASS26knownSKIP/
+35warnings/8workers/381.15s/helper0/Ruff/threeComposePASS. Exact C: child
+r-56849221/dotlease removed,18PID-starts closed,1409 non-MD digests recorded.
+
+Earlier public Windows-path/Linux namespace repair remains history, not a
+profitability or permission hold. Namespace Consumer d20a801b at
 A/execution/current-native-public-reference-namespace-recovery-20261026-v1
 qualifies exact four public aliases in Windows and image2ff Linux: six cases,
 737SDK files unchanged, sourceb6cf1904/releaseb5bb781c,0private/API/Task effects.

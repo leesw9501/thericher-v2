@@ -790,6 +790,109 @@ def run(
     return result
 
 
+def run_account_session(
+    config=None,
+    *,
+    execute=False,
+    cohort=None,
+    paths=None,
+    target_loader=None,
+    owner_ready=None,
+    source_ready=None,
+    deadline=None,
+    control_root=CONTROL,
+    clock=lambda: datetime.now(UTC),
+    monotonic=time.monotonic,
+    sleeper=time.sleep,
+    first_failure_sink=None,
+    max_native_calls=32,
+):
+    """Opt-in guest of an existing account owner; not a new CLI or writer.
+
+    The real host retains BankLeg, original debits and Job/container closure.
+    Source admission must not eagerly load an expired/fresh proposal when an
+    exact retained request is being recovered. Existing ``run`` is unchanged.
+    """
+    if execute is False:
+        return dict(status="inert", credential_reads=0, broker_calls=0)
+    from thericher_v2.execution.paper_account_session import (
+        PaperAccountCohort,
+        run_native_account_session,
+    )
+
+    _require(type(execute) is bool and type(config) is readonly.KisPaperConfig,
+             "account_session_configuration_invalid")
+    readonly._require_exact_paper_base_url(config.base_url)
+    _require(type(cohort) is PaperAccountCohort, "account_session_configuration_invalid")
+    cohort.validate()
+    _require(all(callable(f) for f in (owner_ready, source_ready, target_loader)),
+             "account_session_configuration_invalid")
+    deadline = readonly.require_utc(deadline)
+    _require(deadline <= cohort.slot.ends_at, "account_session_deadline_widened")
+    started = monotonic()
+    tick_deadline = min(started + 280, started + (deadline - clock()).total_seconds())
+    limits = factory = None
+
+    def admission():
+        _require(
+            cohort.slot.starts_at <= readonly.require_utc(clock()) < deadline
+            and monotonic() < tick_deadline,
+            "account_session_deadline_closed",
+        )
+        _require(source_ready() is not False and owner_ready() is not False,
+                 "account_session_admission_denied")
+        _require(
+            cohort.slot.starts_at <= readonly.require_utc(clock()) < deadline
+            and monotonic() < tick_deadline,
+            "account_session_deadline_closed",
+        )
+
+    class SessionBudget(RequestBudget):
+        def _execution_window_check(self, request):
+            super()._execution_window_check(request)
+            admission()
+            if request.method == "POST":
+                side = request.headers.get("tr_id")
+                if side == canary.KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
+                    _require(cohort.mode == "entry", "account_session_fresh_buy_forbidden")
+                elif side == canary.KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID:
+                    _require(cohort.mode == "exit", "account_session_fresh_sell_forbidden")
+
+    def resources():
+        nonlocal limits, factory
+        if limits is None:
+            admission()
+            limits = SessionBudget(control_root=control_root, clock=clock,
+                                   monotonic=monotonic, sleeper=sleeper)
+            limits.deadline = min(limits.deadline, tick_deadline)
+            factory = client_factory(config, limits)
+        return limits
+
+    def client(instrument):
+        resources()
+        return factory(instrument)
+
+    def configure(value, side, operational_session):
+        resources().configure_early_exit(value, side, operational_session)
+
+    result = run_native_account_session(
+        cohort=cohort, paths=native_paths() if paths is None else paths,
+        expected_account_ref=budget._digest(
+            [config.base_url, config.account_number, config.account_product_code]
+        ),
+        target_loader=target_loader, client_factory=client, configure_early_exit=configure,
+        admit=admission, deadline=deadline, clock=clock, monotonic=monotonic,
+        first_failure_sink=first_failure_sink, max_native_calls=max_native_calls,
+    )
+    result.update(
+        calls=dict.fromkeys(("token_posts", "get_requests", "buy_posts", "sell_posts",
+                             "cancel_posts"), 0) if limits is None else dict(limits.calls),
+        paper_only=True, unknown_effects_not_assumed_zero=True,
+        fees="not_observed", settled_cash="not_observed", net_pnl="not_observed",
+    )
+    return result
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")

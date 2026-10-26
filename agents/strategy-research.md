@@ -1,12 +1,24 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST. A=D:/thericher-v2/model-artifacts.
 Socrates owns source/strategy mechanisms; Engine owns final campaign/fitting/
 interpretation. Parent owns shared MD/Git. AGENTS owns authority.
 Full previous source proposals/contracts/debits: Git0438ecd and immutable A.
 Closed proposals below are consumed history, not an automatic launch queue.
 
 ## Current Decision
+
+Latest outcome overrides old ready projections: Joint seed-stability study
+16bfa3f7 completed six new fits; both new seeds and a fixed three-seed blend
+failed cached GRU growth/DD. Development sensitivity, not a new winner or a
+general rejection of attention. Supported 2026 two-model comparison is closed
+under current-2026-h5-supported-neural-pair-development-20261026-v1:
+GRU total growth1.6049%/DD1.5213%, Joint1.0148%/1.4367%,20bp EACH leg.
+Availability-conditioned pair only; unavailable LOWVOL/uniform controls are
+not zero/inferior and original four-cell unavailable result stays unchanged.
+Halley compares information value of prepared QQQ OPEN5 context against more
+seeds/new architectures, without new numerical calls. Socrates temporarily
+prepares exact J17 request-scope recovery evidence, never offline observe().
 
 New source0f9a64e4 at A/research/current-intraday-entry-information-proposals-
 20261026-v1/CONSUMER.json is CLOSED_SOURCE_READY: price-only30m trend/15m

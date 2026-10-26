@@ -1,11 +1,24 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST. A=D:/thericher-v2/model-artifacts.
 AGENTS owns resource policy; Parent owns MD/Git. Schrodinger
 01a175f1-b376-7e32-bbbb-61675f72668c is sole GPU coordinator.
 Closed allocation/source/debit history: Git0438ecd and immutable consumers.
 
 ## Actual Resource State
+
+Latest completed CUDA campaign: current-joint-attention-seed-stability-
+development-20261026-v1/CONSUMER.json,16bfa3f7. Six NEW fits/19269 updates,
+six OOF passes/three NET20 cells/zero retries. All nine containers,45 CLI Jobs,
+root/supervisor and lease closed;949.0005/3600 owned upper includes prep once.
+New seeds28/29 and fixed-thirds blend fail cached GRU growth/DD contrasts;
+original Joint advantage is not seed-stable. Do not rerun completed fits.
+Current ready work is QQQ OPEN5-aligned eight-ETF context preparation under
+Schrodinger, not an active GPU fit. Data close-field consumer eeebb16a now has
+1712 known CLOSE proxies per ETF, seven retained geometry-bad context rows;
+QQQ target1712 rows remains strict full-Bar. Final producer/consumer binding
+and finite six-fit contract precede market dispatch, not another approval.
+No old registry/closed debit reset and no utilization-only training.
 
 New downside expert f6ccbb64 CLOSED:6newmarketGPUfits+2native,3238updates,
 peak825924608bytes,11containers/55CLIJobs/rootPID/lease absent. Owned upper

@@ -1,11 +1,37 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST. A=D:/thericher-v2/model-artifacts.
 Own deterministic risk/intents/orders/custody/accounting, not model selection.
 Parent owns shared MD/Git. AGENTS owns standing private Paper authority.
 No operator decision presently; never KIS_LIVE_* or real-money behavior.
 Full historical roots/receipts/failed scopes: Git3d3b42d:agents/execution.md,
 HANDOFF/RUNBOOK and exact immutable artifacts. Old launch recipes are not jobs.
+
+Current P0: natural J17 visit987b70dede7143108b485e250b8f398e at17:00UTC
+returned unavailable/native_recovery_required; FIRSTCAUSE9c75060f identifies
+core1153 path validation. Exact2ff-image reproducer bf323940 proves missing
+/app/model_artifacts mount, not an API/account/permission failure. Private
+mount is present. Six invalid-path controls remain denied; no guard bypass.
+Parent disabled ONLY original J17 pair at17:10:44UTC with zero instances/
+source actors; five retained OSJob roots and exact route containers positively
+closed. Evidence A/execution/current-joint17-artifact-mount-owned-recovery-
+20261026-v1. Fresh exact reader c0b83c02 at17:23:24 confirmed original account/
+basis/input-policy/native-book and no J17 registered/pending request, stable
+private bytes. Technical ff27b8ef only archived; F9/bank/counters unchanged.
+Native writer cef72e97 proves RO EROFS/RW actual write. Six public/source files
+actually deployed,737SDK exact. Pair enabled17:24:46: outer4aa87b59/release
+88a89ea1/native1ba617f3/producer3c8c6d52, original exit/window/ACL preserved,
+86otherdefs exact. Consumer11481bbe; natural17:28 produced visit8edba9287d07
+4059b02eb836f96d009f, no complete result at17:28:26. Not submit/fill evidence.
+Original17:30 end is not extended. Old889 readers are superseded as CURRENT
+authority; preserve them as historical proofs and use a bound new scope.
+
+Repo-only native account-session implementation is now SOURCE_FROZEN in four
+assigned files, not deployed to today's immutable SDK/image. Parent changed-
+path serial212PASS; fresh full8-worker19436PASS/26knownSKIP35warnings/381.15s/
+helper0/Ruff/threeComposePASS. Exact C:/trpy/runs/r-56849221 and dotlease
+removed,18PID-starts closed. Verification c4cee025 has1409 non-MD digests.
+Do not infer today's deployment or financial outcome from these code tests.
 
 ## Actual Owned Opportunities
 
@@ -112,7 +138,14 @@ Existing post1730 private-reader HANDOFFfb2eb768/Source62acea74/CLAIMS1576674a
 is ready UNCONSUMED. Standalone literal read_once.ps1 after17:30 and exact
 public/window/join/relevantownerclosure only; original three admissions/
 networknone/private-sourceRO/fullstability retained. No fresh private read.
-Leibniz LLM closed after handoff, not an always-running owner; Tasks owned.
+Leibniz then completed source-only consolidation40f82517/ClaudeGOlimits,
+39checks/24operationalfilesunchanged. Now implements ONLY tracked
+paper_account_session.py, current_stock_cycle_worker.py and their two named
+test files: once-only lazyclient/budget across original no-effect skips,
+firsteffect/pending/unknown stop, pending recovery before fresh input. No
+today image/graft/Task/input/policy/private changes. Parent owns fresh
+serial/full8worker/Ruff/Compose/Git after code handoff; old1409 digest authority
+cannot cover new code. This is future code readiness, not runtime deployment.
 
 ## Actual GRU / P0 Source Repair
 

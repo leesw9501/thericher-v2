@@ -1,11 +1,26 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-26 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Engine owns hypotheses/targets/features/fits/replay/fusion, not broker risk.
 Parent owns MD/Git; AGENTS owns policy. Closed detailed contracts/results/
 debits remain Git0438ecd:agents/engine-research.md and immutable consumers.
 
 ## Current Consumer / Ready Work
+
+Latest closed research: seed stability16bfa3f7 completed six new CUDA fits/
+19269 updates/six OOF/three NET20 cells. Seed28 growth1.7472%/DD4.6525%,
+seed29 3.1438%/4.2053%, fixed-thirds blend3.9095%/3.4984% versus cached
+GRU4.4455%/3.4087%. Original Joint5.7661%/3.1443% contrast is not seed-stable;
+no seed winner/reranking/independent alpha. All workers/lease closed.
+2026 supported pair is also CLOSED: GRU1.6049%/1.5213%, Joint1.0148%/1.4367%,
+40 cohorts/20bp EACH leg/one price intake/two cells/zero fits. Availability-
+conditioned retrospective evidence, not controls/Paper PnL; old four-cell
+unavailable result remains unchanged.
+Next distinct question is whether eight-ETF context adds value to a QQQ-only
+GRU with target and terminal both OPEN[e+5]. Native source54ab0704/contract
+3358bd3c/Claude GO_WITH_LIMITS are source/SYN-ready, not market fits. Bind Data
+eeebb16a and strict QQQ target; retain flagged context and effective-capacity/
+one-seed/noise limits. Schrodinger owns final six-fit preparation and GPU.
 
 Latest later-period consumer: Data55532634 features4000keys/3063eligible/
 40cohortsREADY,6requiredheldfieldsUNAVAILABLE. Frozen comparison contract
@@ -27,6 +42,18 @@ New disjoint current-liquid-etf-context-qqq-h5-preparation-20261026-v1 owns
 QQQ-only vsfixed8-context GRU/source/native preparation, max2inventedfits/
 restores/0marketfits before adoption. Faraday's finite8source capture proceeds;
 old100stock40-cohort criteria/results remain unchanged.
+ETF native2fits/4AdamWupdates/2restores/32checks are CLOSED2d66d440. Parent
+retains ClaudeREVISE with narrower fixedrecipe/noise-unresolved claims and
+requests a NEW OPEN5-aligned readiness source: targetO[e+5]/O[e], terminal
+nextOPEN,5dailyCLOSE NAVmarks and target-exit purge. No marketfits yet; old
+H5CLOSE proofs/results unchanged, native optimizer reuse only exactAPI/source.
+Supported-neural supportdc589e81 has0own-required gaps forJOINT/GRU; LOWVOL4,
+uniform6. S now owns separately frozen2cell NET20 exploratory replay,0models/
+oldledgers, no broad control superiority or original4cell pass.
+Temporary Halley prepares joint-attention2NEWseed/6futurefit sensitivity plus
+fixed1/3 original+two newtargetweight blend,0market effects in preparation.
+Exactfold/data/seed duplicates must not refit; Schrodinger remains sole GPU/
+registry coordinator. No extra permanent role/MD or implied numerical start.
 
 New H5 downside campaign CLOSED at A/research/current-h5-downside-expert-
 development-20261026-v1/CONSUMER.json, SHAf6ccbb64. Six new CUDA market fits,

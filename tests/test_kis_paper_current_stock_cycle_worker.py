@@ -965,3 +965,29 @@ def test_cli_fixed_projection_exits_zero_for_native_advanced_and_hold(monkeypatc
         monkeypatch.setattr(w, "run", lambda *a, result=result, **k: result)
         assert w.main(["--execute"]) == 0
         assert json.loads(capsys.readouterr().out) == result
+
+
+def test_account_session_default_is_inert_before_config_state_or_callbacks(monkeypatch):
+    def forbidden(*args, **kwargs):
+        pytest.fail("inert_account_session_touched_runtime")
+
+    monkeypatch.setattr(w, "RequestBudget", forbidden)
+    monkeypatch.setattr(w, "client_factory", forbidden)
+    monkeypatch.setattr(w, "native_paths", forbidden)
+    assert w.run_account_session(owner_ready=forbidden, source_ready=forbidden) == dict(
+        status="inert", credential_reads=0, broker_calls=0
+    )
+
+
+def test_account_session_rejects_nonvirtual_config_before_native_state(monkeypatch):
+    monkeypatch.setattr(w, "native_paths", lambda: pytest.fail("untrusted_config_reached_state"))
+    config = replace(CONFIG)
+    object.__setattr__(config, "base_url", "https://openapi.koreainvestment.com:9443")
+    with pytest.raises(w.readonly.KisPaperReadOnlyError):
+        w.run_account_session(config, execute=True)
+
+
+@pytest.mark.parametrize("execute", [None, 0, 1, "true"])
+def test_account_session_requires_explicit_boolean_execution(execute):
+    with pytest.raises(ValueError, match="account_session_configuration_invalid"):
+        w.run_account_session(CONFIG, execute=execute)
