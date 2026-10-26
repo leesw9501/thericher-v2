@@ -116,58 +116,33 @@ No broad legacy migration or repeat of closed GRU/L/SYN trades just to deploy
 another pilot. Exact prepared points, inert source, unsafe old-return caveats
 and positive native proof limits remain in HANDOFF/Execution/Git.
 
-All previous14marketfits(12CUDA+2CPU), Fourier/meta/SPY/ringfinance are CLOSED.
-The first new zero-fit buffer family451396d9/RESULT1a62cd93 is also CLOSED:
-10stockarms INPUT_UNAVAILABLE/2SPYreference ledgers only, not performanceFAIL.
-Existing H5 packet omitted tail4776/4777 due target maturity; canonical prices
-exist. Data0918e966/277+24checks supports direct observed daily holding marks.
-No API acquisition or duplicate feature/scaler build. Never impute or use
-future price availability to select a surviving universe.
-
-Memory/cadence is CLOSEDd97bc30e/14ledgers/9002checks, passes its frozen
-adaptive screen after a fixture-only native repair. No fit/GPU. Late-carry
-family actually completed SIX NEW marketGPUfits+two nativefits:
-A/research/current-late-carry-h20-ranking-development-20261026-v1/READOUT-RELEASE.json,
-SHA597c3f94339d0869948f0c837893afecc0894c0d00e60ec105c56448391c315f.
-RESULT91a07efc/2368checks/11containers+55CLIJobsclosed/GPUleaseabsent.
-COMPLETE_FAIL_LATE_CARRY_MECHANISM, no rescue/refit/current Paper swap.
-Sealed SCORES213b54dc may be consumed without additional model calls.
-
-Static composition is CLOSEDb117c2ea/14ledgers/7114checks/789.183activeupper/
-all4containers+25Jobsclosed, primary latehalf FAIL. Matched SPY static20 is
-CLOSED72401083/2ledgers/6362checks/allPIDsclosed/363activeupper. Both62cohorts,
-not repeated H5resizing/old63window/passive. No automatic reference selection.
-Socrates raw397/H20 source audit CLOSEDfe122637; Parent assigned NEW
-current-raw397-h20-transfer-development-20261026-v1 to sole GPU coordinator
-Schrodinger:3newfits/0retry/2newledgers,4500activeSUM including Source1500once/
-7200elapsed frozen before numerical. Existing TERMINAL19 controls reused with
-0oldmodelcall/baselineledger replay. Actual source/native/fit/closure facts
-must be read from its own new artifacts; assignment is not training evidence.
-Faraday separately source-audits current23dailywarm input/model sufficiency,
-no actual currentforecast or data acquisition yet.
-
-Later actual warm handoff be104020 and CPU point79d99cf9 are CLOSED:
+Current extra ensemble79d99cf9 is PREPARED_NOT_DEPLOYED: cached24CAT+
+1TERMINALforecasts/8weights/full100/current69/13native+14checks, no training
+repeat needed. Reconstructed warm history is current-time, not past observed.
 A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json.
-24CAT+1TERMINALforecasts/8positiveweights/staticH20input/current69mask/
-routegap0/13native+14independentchecks/allworkersclosed. PREPARED_NOT_DEPLOYED,
-no allocation/order/Task/originalinput change. Initial SDKkeyword failure and
-all counters preserved; do not rerun hostrun/old model inference for logging.
-Future admission uses Leibniz's current existing-serial-dispatcher source
-readiness, not this inference launcher or a new peer bank writer.
+Do not rerun old hostrun/model inference to repair logs.
 
-RAW397 cached-readout39e177a7/77b2b57d is CLOSED_REJECT,2FIRSTledgers/
-774checks/0modelcalls. Schrodinger's NEXTminimalCatTAIL objective is a NEW
-3fit family3900activeSUM/7200elapsed, not a RAW397 retry or optional9fit sweep.
-Source readiness7574ac63/55ad8b33/native weighted-metric proof must precede
-market dispatch. No launch command for closed studies is a current next job.
+Distinct earlyH20 production source e4f9d597 is freshly verifieddd834d4c,
+not deployed. FreshSELL close-45..-25/cleanup-20 and later-session same-request
+recovery are NON_PARITY with analytical C[e19]. Default15min/original8D SDK/
+image/actions remain unchanged. New isolated image/capsule under execution/
+current-h20-early-paper-r9-runtime-build-20261026-v1 and current-memory-terminal-
+half-early-runtime-preparation-20261026-v1 require their own native handoff.
+Foreign stock registration remains per cycle record; serial descriptors alone
+do not co-own it. Actual strict registration/writer admission precedes new
+effects; never bypass/adopt/filterweights to force deployment.
 
-Pure proposal adaptere7228bcf/17nativechecks at
-A/execution/current-rank-memory-paper-proposal-preparation-20261026-v1
-is not deployed. No actual2026dailywarmforecast/provenance yet; static factory
-rejects retained-feature-unknown baskets. Numerical STATIC20 research does
-not remove that gap or override deterministic Paper risk. Original inputs,
-requests/Tasks/budget remain unchanged. Use current boards/contracts, not
-old launch recipes; completed fits/ledgers/native trades are not ready again.
+Research latest12NEWmarketGPUfits+4nativefits CLOSED: latecarry597c3f94,
+RAW397 firstcachedreadout39e177a7, TopTail92b04e63 all REJECT fixed contrasts.
+No completed model/ledger/SYN trade is ready again. Optional old63MLP19
+source494111bb declines current dispatch for low new decision value, not CUDA/
+permission/model-class ban. Detailed results/debits in Engine/Steward boards.
+
+Forward benchmark8bf86e20 froze BEFORE Oct26OPEN,20sessions/model8-uniform69-
+SPY/10+20bp/fixedshares,0outcomes. Data5d0bc0f8 proves existing installed
+Joint1769 includes exactcurrent69/selected8; dailyOPEN from same futurepages.
+No duplicate69collector. Separate sameMODP1SPY gap is not a Paper hold.
+New early Paper is NON_PARITY with close benchmark, not measured PnL.
 
 ## Existing Data Owners
 
@@ -185,19 +160,28 @@ Data/market endpoints and Execution/account-order ownership stay separate.
 
 ## Verification / Continue
 
+Five-file source freeze e4f9d597 is FRESHLY VERIFIED:
+A/verification/current-h20-early-exit-profile-20261026-v1/AUTHORITY.json,
+SHAdd834d4c4ce3025bf00c2a6cb01d73d53eb0bdf872806457ddd7b5c4fdfd70eb.
+526serialPASS,19317fullPASS/26knownSKIP/19343total/35existingwarnings/
+8actualworkers/389.91s/helperexit0. Mutex/probes/cleanup preserved;
+all10PIDs/exactcurrentchild/lease absent.1406source digests exact, repoRuff/
+default+research+accountingCompose(.env.example)/diffPASS.
+No originalTask/private/order or runtime activation in that verification.
+
 Follow AGENTS. For tracked code/test/dependency/runtime/shared-control or
 material Execution recovery: changed-path serial coverage and fresh full
 scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, then Ruff and three
 Compose views using .env.example. Preserve mutex/lease/process/count/skip and
 safe cleanup checks. No partial/unclean authority reuse.
 
-Docs/external-only reuse requires exact1405 protected digests from
-A/verification/current-account-serial-round-integration-20261025-v1/technical-r8/source-after.json
-and passing authorityd3932f49/AUTHORITY.json:976serialPASS2skip,
-19305fullPASS26skip/19331total/8workers/allchildrenclosed/cleanscratch.
-Fresh external focused/native checks remain necessary; repo tests do not cover
-those files. Never call an old full suite a fresh run or a helper's style
-warnings whole-root RuffPASS.
+Docs/external-only reuse needs all1406protected digests exact against
+A/verification/current-h20-early-exit-profile-20261026-v1/source-after.json
+SHA5fcb0c0e0cd005bdee06bd394c1bb370abffb4671b66cb7fab47866d6439a2ad.
+OldR8/d3932f49/19305full is historical, not this source authority.
+Changed external code needs its own fresh native/focused checks. Repeated
+repo suites do not validate external wrappers or prove runtime deployment.
+Do not rerun full suite absent protected changes merely for docs/status.
 
 ```powershell
 uv run --no-env-file --extra dev ruff check .

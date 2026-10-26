@@ -55,10 +55,12 @@ from thericher_v2.research.model_paper_proposal import (
 from thericher_v2.research.model_paper_weights import (
     MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
     MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
+    MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
     MODEL_PAPER_WEIGHTS_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
     ModelPaperWeightsMetadata,
+    model_paper_early_exit_window,
     model_paper_weights_horizon_profile,
     validate_model_paper_weights_input,
 )
@@ -102,6 +104,7 @@ class StockCycleProfile(Enum):
     CURRENT20_EQUALRANK4 = "current20-equalrank4-paper-20261018-v1"
     MODEL_PROPOSAL_NAS = MODEL_PAPER_PROFILE
     MODEL_WEIGHTS_NAS = MODEL_PAPER_WEIGHTS_PROFILE
+    MODEL_WEIGHTS_NAS_H20_EARLY_EXIT = MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
     MODEL_WEIGHTS_NAS_H5 = MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE
     MODEL_WEIGHTS_NAS_CASH_H5 = MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE
 
@@ -109,6 +112,7 @@ class StockCycleProfile(Enum):
 _MODEL_INPUT_TYPES = {
     StockCycleProfile.MODEL_PROPOSAL_NAS: ModelPaperInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS: ModelPaperWeightsInput,
+    StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_H5: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5: ModelPaperWeightsInput,
 }
@@ -116,6 +120,7 @@ _MODEL_INPUT_TYPES = {
 _MODEL_WEIGHT_PROFILES = frozenset(
     (
         StockCycleProfile.MODEL_WEIGHTS_NAS,
+        StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
         StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
         StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5,
     )
@@ -504,7 +509,11 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
         )
         and (
             (not weights and horizon_profile != MODEL_PAPER_20_SESSION_PROFILE)
-            or value.metadata.exit_not_before == value.exit_session.close_ts - timedelta(minutes=15)
+            or value.metadata.exit_not_before
+            == value.exit_session.close_ts
+            - timedelta(
+                minutes=45 if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT else 15
+            )
         ),
         "cycle_session_invalid",
     )
@@ -950,6 +959,21 @@ def _complete_h5_exit(root, record, pointer, proof, at):
 def _recover(record, root, paths, client_factory, clock, pointer=None):
     pending = record["pending"]
     args = _unpack(pending["arguments"])
+    if record.get("profile") == StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT.value:
+        value = _unpack(record["active"]["model_input"])
+        if pending["side"] == "sell":
+            retained = model_paper_early_exit_window(
+                value, operational_session=_unpack(pending["session"])
+            )
+            _check(args["valid_until"] <= retained.exit_end, "cycle_request_changed")
+            session = _current_exit_session(require_utc(clock()), value.exit_session)
+            if (
+                session is None
+                or require_utc(clock())
+                >= model_paper_early_exit_window(value, operational_session=session).cleanup_end
+            ):
+                # A time limit is not reconciliation, flat inventory or a refund.
+                return CurrentStockCycleOutcome("pending", "exact_request_retained")
     binding = _book(root, record["account_ref"], record["basis_ref"])
     _owned_registry(record, binding)
     plans = binding.get("stocks", {}).get(pending["symbol"], {}).get("plans", [])
@@ -1121,6 +1145,8 @@ def run_kis_paper_current_stock_cycle(
     execute: bool = False,
     profile: StockCycleProfile = StockCycleProfile.LEGACY_NAS,
     first_failure_sink: Callable[[dict], None] | None = None,
+    configure_early_exit: Callable[[ModelPaperWeightsInput, str, SessionWindow | None], None]
+    | None = None,
 ) -> CurrentStockCycleOutcome:
     """One pending leg/visit; exact retained recovery precedes target_loader.
 
@@ -1146,6 +1172,9 @@ def run_kis_paper_current_stock_cycle(
         current20 = profile is StockCycleProfile.CURRENT20_EQUALRANK4
         model_profile = profile in _MODEL_INPUT_TYPES
         scoped = current20 or model_profile
+        early = profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT
+        if early:
+            _check(callable(configure_early_exit), "cycle_configuration_invalid")
         if scoped:
             _pin(expected_input_ref)
             _pin(expected_policy_ref)
@@ -1210,6 +1239,27 @@ def run_kis_paper_current_stock_cycle(
                         record["policy_ref"] == expected_policy_ref, "cycle_input_binding_mismatch"
                     )
                     _model_record_input(record, expected_input_ref, expected_policy_ref, profile)
+                    if early and record["active"] is not None:
+                        retained = _unpack(record["active"]["model_input"])
+                        pending = record["pending"]
+                        side = (
+                            pending["side"]
+                            if pending
+                            else (
+                                "sell"
+                                if require_utc(clock()) >= retained.metadata.exit_not_before
+                                else "buy"
+                            )
+                        )
+                        configure_early_exit(
+                            retained,
+                            side,
+                            (
+                                _current_exit_session(require_utc(clock()), retained.exit_session)
+                                if side == "sell"
+                                else None
+                            ),
+                        )
                 if current20:
                     _check(
                         record["policy_ref"] == expected_policy_ref
@@ -1276,6 +1326,8 @@ def run_kis_paper_current_stock_cycle(
                     _completed_flat(root, record, at)
                     return CurrentStockCycleOutcome("complete", "already_completed")
                 value = _validate_input(value, at, profile)
+                if early:
+                    configure_early_exit(value, "buy", None)
                 if model_profile and not value.targets:
                     return CurrentStockCycleOutcome("no_intent", "native_risk_no_intent")
                 if record is None:
@@ -1329,6 +1381,22 @@ def run_kis_paper_current_stock_cycle(
             if model_profile:
                 exit_eligible = _unpack(active["model_input"]).metadata.exit_not_before
             side = "sell" if at >= exit_eligible else "buy"
+            early_window = (
+                model_paper_early_exit_window(
+                    _unpack(active["model_input"]),
+                    operational_session=(
+                        _current_exit_session(at, exit_session) if side == "sell" else None
+                    ),
+                )
+                if early
+                else None
+            )
+            if (
+                early
+                and side == "sell"
+                and not (early_window.exit_start <= at < early_window.exit_end)
+            ):
+                return CurrentStockCycleOutcome("hold", "outside_declared_session")
             session = _current_exit_session(at, exit_session) if side == "sell" else entry_session
             if side == "buy" and at >= entry_session.close_ts:
                 return CurrentStockCycleOutcome("hold", "await_declared_exit")
@@ -1398,7 +1466,7 @@ def run_kis_paper_current_stock_cycle(
                     action="exit",
                     target_exposure=Decimal(0),
                     decided_at=decided_at,
-                    valid_until=session.close_ts,
+                    valid_until=early_window.exit_end if early else session.close_ts,
                 )
                 receipt = receipt_from_target_exposure_proposal(
                     proposal,
@@ -1429,6 +1497,12 @@ def run_kis_paper_current_stock_cycle(
                 _save(pointer, record)
                 return CurrentStockCycleOutcome("no_intent", "cycle_target_quote_unavailable")
             at = require_utc(clock())
+            if early and not (
+                (early_window.entry_start <= at < early_window.entry_end)
+                if side == "buy"
+                else (early_window.exit_start <= at < early_window.exit_end)
+            ):
+                return CurrentStockCycleOutcome("hold", "outside_declared_session")
             args = dict(
                 expected_account_ref=expected_account_ref,
                 expected_basis_ref=binding["basis_ref"],

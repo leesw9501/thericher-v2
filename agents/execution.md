@@ -45,7 +45,41 @@ actual1POST1GET/history0/stablecustody, UNKNOWN-HELD unchanged. Prior discarded
 upper1POST10GET remains, seriesupper2POST11GET. No further old-scope query or
 reservation release from empty history/missing opener.
 
-## Current Disjoint Source Work
+## Current New Profile / Disjoint Work
+
+Distinct opt-in earlyH20 source is FROZEN e4f9d597, implementation0830305f:
+A/execution/current-memory-terminal-half-serial-adapter-preparation-20261026-v1.
+Fresh authority:
+A/verification/current-h20-early-exit-profile-20261026-v1/AUTHORITY.json,
+SHAdd834d4c4ce3025bf00c2a6cb01d73d53eb0bdf872806457ddd7b5c4fdfd70eb.
+526changed-pathserialPASS/19317fullPASS26knownSKIP/8workers/389.91s/
+all10PIDs+lease+scratchclosed/1406exactdigests/Ruff+threeComposePASS.
+Oldd3932f49 is historical, not reused for these changed paths.
+
+New profile model-weights-nas-20session-early-exit-non-parity-2026-v1:
+freshSELL close-45..-25/cleanup-20/positiveclosure before originalJoint17-15.
+NON_PARITY analytical C[e19], default15min/oldserialization unchanged.
+Unknown identity/reservation survives deadlines; later official-session
+recovery is tested. No real Task/order/account/private/image deployment yet.
+Original8 frozenD SDK/image2ff/actions unaffected by these three primary files.
+
+Leibniz now owns only NEW external capsule/RouteSpec/native SYN and actual
+oldfrozenSDK sharedV4 invented-state reader compatibility at
+A/execution/current-memory-terminal-half-early-runtime-preparation-20261026-v1.
+Faraday owns isolated newimage/publicSDKbuild, direct pinned handoff permitted.
+Current79d99cf9 eightweights repackage from cache,0modelcalls/fit/bankeffects.
+Actual registration guard is perTHIScycle owners; serial descriptors do not
+co-own registered stocks. Before activation inspect strict actual source-safe
+registration intersection/owner closure/account/basis/budget. Never bypass/
+adopt/filter/replace targets. A conflict blocks only extra candidate.
+Source/image/capsule/SYN checks are not financial runtime evidence.
+
+## Closed Preparation History
+
+The following records are searchable context, NOT current owner assignments,
+launch commands, repeated inference or source-only deployment claims. Current
+truth above and HANDOFF supersedes old future-tense projections.
+
 
 New rank-memory proposal preparation is CLOSED at
 A/execution/current-rank-memory-paper-proposal-preparation-20261026-v1/CONSUMER.json,
@@ -212,9 +246,10 @@ recovery. This is a scoped added-pilot technical gap, not a new company hold.
 
 ## Verification / Recovery
 
-Repo authorityd3932f49:976serialPASS2skip/19305fullPASS26skip/8workers/
-1405protectedfiles; exact source reuse only under AGENTS plus fresh external
-focused/native checks. No source-only proof of actual deployment.
+Current repo source authoritydd834d4c is recorded above; historicald3932f49
+has been superseded for the five changed paths. Docs/external-only reuse needs
+all1406protected digests exact plus fresh external native/focused checks.
+No source-only proof of actual deployment.
 Old SYN f3498a3e had accepted/fullfill/owned0/entry1exit2 but lost host return;
 its old wholehosttail remains unqualified, not fixed retrospectively by new
 proofs. Other failed SYN attempts/books/debits/unknowns remain immutable.

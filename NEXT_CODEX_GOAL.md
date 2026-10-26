@@ -2,16 +2,14 @@
 
 ## One Company Outcome
 
-`oct26-three-candidate-paper-entry-runtime-v1` remains UNFINISHED: integrate
-the exact natural GRU, dated TimesFM and Joint17 entry outcomes. Research,
-installation, synthetic proofs, task exits and commits do not complete it.
+oct26-three-candidate-paper-entry-runtime-v1 remains UNFINISHED: integrate the
+exact natural GRU, dated TimesFM and Joint17 entry outcomes. Installation,
+research, synthetic tests, task exits and commits do not complete it.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Run scripts/start_next_codex_task.ps1, then HANDOFF/AGENTS/RUNBOOK/active boards.
-Parent owns shared documents, integration and Git. Closed launch recipes and
-full previous package evidence remain in Git2a57a57 and immutable artifacts;
-do not repeat them because they once appeared in this goal.
+Parent owns shared policy/documents/integration/Git. AGENTS owns authority.
 
 | Candidate | Original entry UTC | Owned exit UTC |
 | --- | --- | --- |
@@ -20,87 +18,74 @@ do not repeat them because they once appeared in this goal.
 | Joint17 H20 | Oct26 17:00..17:30 | Nov20 20:45..21:00 |
 | Additional L QQQ H5 | Oct26 18:00..18:15 | Oct30 19:55..20:00 |
 
-Original8 image2ff/source/releases/input/policy/request/native/ops/counters
-and windows remain as HANDOFF/Execution record. Do not duplicate an original
-Task or strategy opportunity. Missing or future receipts are unknown, not fills.
+Preserve original8 image2ff/source/release/input/policy/identity/native/ops/
+counters and exact windows. No manual duplicate Task or strategy opportunity.
+A missing or future receipt is unknown. L is additional, not company completion.
 
-## Current Ready / Owned / Due
+## Ready / Owned / Due
 
-- Parent: repair the app follow-up and integrate current facts. ACTIVE app
-  heartbeat oct26-paper is saved in this chat: nominal Oct26 18:45UTC
-  (Oct27 03:45KST), actual jittered due18:42:59UTC. One date before its UNTIL,
-  no recurring chain. Readback5a112411 at
+- Parent repaired the EXISTING same-chat follow-up oct26-paper. Nominal
+  Oct26 18:45UTC/Oct27 03:45KST, actual saved18:42:59UTC/03:42:59KST.
+  One eligible date before UNTIL, no recurring chain. Evidence5a112411:
   A/orchestration/current-oct26-app-followup-repair-20261026-v1/CONSUMER.json.
-  Saved state is not proof that a future chat wake or broker action occurred.
-- Execution / Leibniz: CLOSED4f4e2e51/af3e9e2d, optional exact public reader
-  ready;21focused/3selectorchecks, original8 unchanged. No actual outcome yet.
-  Additional Mean3 rejected for overlapping owned exits under C_NOW. Scope:
-  A/execution/current-oct26-runtime-reader-readiness-20261026-v1.
-  No original Task mutation/invocation, KIS or order in this inspection package.
-- Engine + Steward / Schrodinger: late-carry family CLOSED597c3f94, SIX NEW
-  marketGPUfits+two nativefits/2368readoutchecks/all11containers+55CLIJobs
-  closed. COMPLETE_FAIL_LATE_CARRY_MECHANISM, no target/seed/cost rescue.
-  Memory/cadence CLOSEDd97bc30e/14ledgers/9002checks passes adaptive screen,
-  not independent alpha/PaperPnL. No completed fit or old ledger is ready again.
-  RAW397 family also completed3NEWGPUfits and63forecasts with0retraining;
-  its technicalchainb2bf2b03 remains failed. Separate cache-only39e177a7/
-  release77b2b57d completed2FIRSTledgers/774checks/REJECT. No control replay.
-- Leibniz static-H20 CLOSEDb117c2ea/14ledgers/7114checks/allworkersclosed,
-  fixedq20/no H5resize/0newmodelcalls/GPU. Primary latehalf FAILED relative
-  to terminalhalf utility; no automatic reference winner/Paper switch.
-- Faraday: SPY static20 CLOSED72401083/242native+6362independentchecks,
-  warm source18c5c16c and actual24origin DataREADYbe104020/28native+52checks
-  are CLOSED (own-date89/90/69masks, no copied currentmask). Actual CPU point
-  current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1
-  is CLOSED79d99cf9/PREPARED_NOT_DEPLOYED:24CAT+1TERMINALcurrentforecasts,
-  bootstrapstate/8positiveweights/staticH20typedinput,13native+14independent
-  checks/routegap0/allclosed/0fit/GPU/private/orders. Initial unsupported
-  SDK keyword failure is retained, not called passing; acrossnames4restores/
-  5predictattempts/2407reservedrows,4completedcalls2307rows/oneData/compose/
-  verify,2169.35inclusiveupper. Metadata .005TOTAL is NOT capital allocation.
-  Leibniz now source-reviews minimal existing account-owned finite serial
-  admission300active/900elapsed, not a new brokerwriter/Task or original swap.
-  Earlier Data canonical
-  adapter8b3d5d6c, price-audit45dc9e8c and pairedtarget2ec0d86f are CLOSED;
-  no acquisition or duplicate build required for these existing consumers.
-- Socrates NEW source-only label-TopK membership-pair objective proposal,
-  current-top-tail-h20-objective-readiness-20261026-v1, adopted minimum3CatTAIL
-  ONLY; no optional6MLP in this family. Schrodinger owns source/runtime and
-  assigned current-top-tail-h20-objective-development-20261026-v1: freeze3900
-  activeSUM/7200elapsed, Source1200=Socrates600+NEWruntime300+implementation300,
-  native180/fits1350/infer120/readout300/verify240/cleanup180/reserve330.
-  Exactly3newfits/1800trees/0marketretry/63forecasts/2newledgers, oldCatUNIFORM
-  control reused with0modelcalls/ledgerreplay. New native weighted-Pool oracle
-  precedes market. Sourceadoption is not actual GPU allocation/fit evidence.
-  Existing uniform-pair validators remain immutable; explicit typedtail
-  sidecar/labelONLY TopK-inclusion fractions, not portfolio/percentile weights.
-- Execution adaptere7228bcf/17nativechecks is pure PREPARED_NOT_DEPLOYED:
-  current daily forecasts/warm provenance and retained-feature static gap remain
-  explicit. No original strategy/Task/privatebank change from this preparation.
-- Existing Data retention403d5908 owns Oct26 21:55UTC; no duplicate collector.
-
-Prior14NEWmarketfits (12CUDA+2CPU), Fourier/meta trees, SPY references,
-ringfenced ledgers, full-GRU SYN and Ltail source repair are CLOSED. Their
-failures/limits stay unchanged. No repeated old fit, ledger or synthetic trade
-for reporting or GPU occupancy. Additional Mean3 stays inert/prepared.
-C_NOW preserves original opportunities; do not migrate every legacy writer
-merely to add another pilot. A separate added round still needs exact competing
-writer closure and feasible entry AND owned-exit/recovery windows.
+  Saved configuration is not future delivery; host/app availability required.
+- Optional public reader4f4e2e51/ROUTES-r2ef4f5099 is ready; CLI in RUNBOOK.
+  Transport is not original-window/private intent/fill/current-owned proof.
+  Use existing separately admitted strict private readers; never observe()
+  recovery as a reader. Dated original8Ready/0instances is not current closure.
+- New distinct opt-in earlyH20 production profile is FROZEN e4f9d597 and
+  FRESHLY VERIFIED dd834d4c, not deployed. Default15min/originalSDK/image/
+  actions remain unchanged. Fresh526serial +19317fullPASS/26knownSKIP/
+  8workers/389.91s/cleanlease+scratch,1406exact digests/Ruff/threeComposePASS.
+  Authority: A/verification/current-h20-early-exit-profile-20261026-v1/AUTHORITY.json.
+  No reuse of historicald3932f49 for this change.
+- Faraday owns isolated immutable2ff-overlay image/publicSDK build under
+  A/execution/current-h20-early-paper-r9-runtime-build-20261026-v1.
+  Leibniz owns new capsule/RouteSpec/native handoff and oldSDK synthetic
+  sharedV4 compatibility under
+  A/execution/current-memory-terminal-half-early-runtime-preparation-20261026-v1.
+  These assignments are not actual image/capsule deployment or broker work.
+  No original Task/image/capsule change, private bank access or model rerun.
+- Extra memory/TERMINAL19 fixed-half current point79d99cf9 is PREPARED_NOT_DEPLOYED:
+  actual24CAT+1TERMINALforecasts/full100/current69/8weights/routegap0,
+ 13native+14checks/allclosed; current reconstructed warm history, not past
+  observed forecasts. .005TOTAL metadata is not allocation. Repackage cached
+  weights only for new profile; no inference/fit repeat or originalinput swap.
+- Before any added activation, prove exact relevant writer closure, actual
+  symbol-registration compatibility, same account/basis/risk and feasible
+  entry AND exit/recovery. The foreign-symbol guard is per cycle record:
+  serial descriptors alone do not co-own registered symbols. Never bypass/
+  adopt/filter/replace targets to force a cohort. Scope conflict to this extra
+  proposal; preserve original natural opportunities and F9 reservation.
+- Engine/Steward: this batch12NEWmarketGPUfits+4nativefits CLOSED. Late-carry
+ 597c3f94, RAW397cache39e177a7 and TopTail92b04e63 all REJECT their fixed
+  scientific contrasts. No completed training/ledger/proof is ready again.
+  Optional old63MLP19 source judgement494111bb declines current dispatch for
+  low decision value, not GPU permission or a global neural-model prohibition.
+- Future benchmark8bf86e20 is frozen before Oct26OPEN,0outcomes/modelcalls:
+  model/uniform69/SPY,20sessions/10+20bp/fixedshares/.10paidstake,
+ 434metadatachecks/one registry append. Data coverage5d0bc0f8 proves existing
+  installed Joint1769 exactly covers current69/selected8. Reuse pages for
+  dailyOPEN; SPY same-MODP1 gap is separately scoped, not a Paper hold.
+- Existing Data retention403d5908 owns Oct26 21:55UTC; GRU/TF Oct30 and
+  Joint17Nov20 captures are already installed. Do not repeat Bind/install/
+  enable/manualcollector. No future marks/finality outcome yet.
 
 ## Authority / Completion
 
-Follow AGENTS standing private no-cost Paper authority, not package-local bans
-across unrelated lanes. Never KIS_LIVE_*, real money, secrets/private raw output
-or unapproved paid/public/runtime changes. Preserve ONE original initial
-virtual-cash tenth, owned costs/losses/pending/F9 UNKNOWN-HELD. No reset,
-substitute request, foreign inventory adoption, profit expansion or forced fill.
+Follow AGENTS private no-cost Paper authority; never KIS_LIVE_*, real money,
+secret/private output or unapproved paid/public/major runtime work.
+Preserve ONE original initial virtual-cash tenth, costs/losses/pending/F9
+UNKNOWN-HELD; no reset, profit expansion, substitute unknown or foreign adoption.
 
-Use exact immutable categorical readers, not recovery observe() as an offline
-reader. Retain actual submit/acceptance/fill/owned/terminal distinctions and
-unknown fees/settlement/net PnL. No task-exit/latest-file inference.
+Distinguish no-intent, technicalfailure, submit attempt, acceptance, exact fill,
+current owned inventory, terminal reconciliation and measured fees/settlement/
+netPnL. Deadlines/task exits/missing evidence never release reservations.
+Operational early exit is NON_PARITY with analytical C[e19]; later exact
+unknown-request recovery remains possible under actual official sessions.
 
-Verify as AGENTS requires. Docs/external-only reuse of full authorityd3932f49
-requires all1405 protected digests exact plus fresh external checks. Integrate,
-commit/push material packages without calling them company completion. Replace
-this file with ONE next company outcome only after actual runtime closure;
-continue ready delegated work without foreground session waiting.
+Verify changed work as AGENTS requires. For docs/external-only continuation,
+reuse freshdd834d4c ONLY with exact1406source digests and fresh checks of changed
+external code. Integrate/commit/push packages without claiming company closure.
+Replace this file with ONE next company outcome after actual runtime closure;
+continue ready independent work without foreground session/quota waiting.

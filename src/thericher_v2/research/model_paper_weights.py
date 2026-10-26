@@ -11,6 +11,7 @@ from decimal import Decimal, InvalidOperation
 from fractions import Fraction
 
 from thericher_v2.contracts import TargetExposureProposal, require_utc
+from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN, us_equity_2026_session
 from thericher_v2.market.resample import SessionWindow
 from thericher_v2.research.decision_receipt import (
     DecisionReceiptReferences,
@@ -31,11 +32,17 @@ from thericher_v2.research.model_paper_proposal import (
 )
 
 MODEL_PAPER_WEIGHTS_PROFILE = "model-weights-nas-20session-2026-v1"
+MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE = (
+    "model-weights-nas-20session-early-exit-non-parity-2026-v1"
+)
 MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE = "model-weights-nas-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE = "model-weights-nas-cash-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_SCHEMA = "model-paper-target-weight-input-v1"
 WEIGHT_UNITS = "fraction_of_one_original_basis_gross_cohort_ceiling"
 EXECUTION_BASIS = "gross_limit_cost_not_fees_settlement_or_replay_equivalence"
+EARLY_EXIT_EXECUTION_BASIS = (
+    "NON_PARITY_analytical_C_e19_early_exit_gross_limit_cost_not_fees_settlement"
+)
 
 
 def _need(value, reason):
@@ -46,10 +53,11 @@ def _need(value, reason):
 def model_paper_weights_horizon_profile(profile):
     """Map only explicit weight profiles; never infer a horizon from dates."""
     _need(type(profile) is str, "weights_profile_invalid")
-    if profile == MODEL_PAPER_WEIGHTS_PROFILE:
+    if profile in (MODEL_PAPER_WEIGHTS_PROFILE, MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE):
         return MODEL_PAPER_20_SESSION_PROFILE
     if profile in (
-        MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE, MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE
+        MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+        MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
     ):
         return MODEL_PAPER_5_SESSION_PROFILE
     raise ValueError("weights_profile_invalid")
@@ -307,16 +315,26 @@ def prepare_model_paper_weights_input(
     metadata.__post_init__()
     _validate_cash_profile(metadata, profile)
     return ModelPaperWeightsInput(
-        metadata, _weight_targets(metadata, entry_session), entry_session, exit_session,
+        metadata,
+        _weight_targets(metadata, entry_session),
+        entry_session,
+        exit_session,
         profile=profile,
+        execution_basis=(
+            EARLY_EXIT_EXECUTION_BASIS
+            if profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
+            else EXECUTION_BASIS
+        ),
     )
 
 
 def validate_model_paper_weights_input(value):
     _need(type(value) is ModelPaperWeightsInput, "weights_profile_invalid")
     horizon_profile = model_paper_weights_horizon_profile(value.profile)
+    early = value.profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
     _need(
-        value.weight_units == WEIGHT_UNITS and value.execution_basis == EXECUTION_BASIS,
+        value.weight_units == WEIGHT_UNITS
+        and value.execution_basis == (EARLY_EXIT_EXECUTION_BASIS if early else EXECUTION_BASIS),
         "weights_semantics_invalid",
     )
     _need(type(value.metadata) is ModelPaperWeightsMetadata, "weights_metadata_invalid")
@@ -327,7 +345,8 @@ def validate_model_paper_weights_input(value):
     validate_model_paper_horizon(first, last, profile=horizon_profile)
     _need(
         value.metadata.weights_observed_at < first.open_ts
-        and value.metadata.exit_not_before == last.close_ts - timedelta(minutes=15),
+        and value.metadata.exit_not_before
+        == last.close_ts - timedelta(minutes=45 if early else 15),
         "weights_session_clocks_invalid",
     )
     _need(
@@ -335,6 +354,41 @@ def validate_model_paper_weights_input(value):
         "weights_target_composition_changed",
     )
     return value
+
+
+@dataclass(frozen=True, slots=True)
+class ModelPaperEarlyExitWindow:
+    """Operational deadlines, not an altered official session or closure proof."""
+
+    entry_start: datetime
+    entry_end: datetime
+    exit_start: datetime
+    exit_end: datetime
+    cleanup_end: datetime
+    closure_before: datetime
+
+
+def model_paper_early_exit_window(value, *, operational_session=None):
+    validate_model_paper_weights_input(value)
+    _need(value.profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE, "weights_profile_invalid")
+    session = value.exit_session if operational_session is None else operational_session
+    _need(type(session) is SessionWindow, "weights_sessions_invalid")
+    official = us_equity_2026_session(session.open_ts.astimezone(US_EQUITY_EASTERN).date())
+    _need(
+        official is not None
+        and official.window == session
+        and session.open_ts >= value.exit_session.open_ts,
+        "weights_sessions_invalid",
+    )
+    close = session.close_ts
+    return ModelPaperEarlyExitWindow(
+        value.entry_session.open_ts,
+        value.entry_session.close_ts,
+        close - timedelta(minutes=45),
+        close - timedelta(minutes=25),
+        close - timedelta(minutes=20),
+        close - timedelta(minutes=15),
+    )
 
 
 def serialize_model_paper_weights_input(value):
@@ -375,12 +429,20 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
             "execution_basis",
         }
         and document["schema"] == MODEL_PAPER_WEIGHTS_SCHEMA
-        and document["profile"] in (
-            MODEL_PAPER_WEIGHTS_PROFILE, MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+        and document["profile"]
+        in (
+            MODEL_PAPER_WEIGHTS_PROFILE,
+            MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
+            MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
         )
         and document["weight_units"] == WEIGHT_UNITS
-        and document["execution_basis"] == EXECUTION_BASIS,
+        and document["execution_basis"]
+        == (
+            EARLY_EXIT_EXECUTION_BASIS
+            if document["profile"] == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
+            else EXECUTION_BASIS
+        ),
         "weights_input_schema_invalid",
     )
     raw = document["metadata"]

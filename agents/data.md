@@ -5,7 +5,25 @@ Own source/storage/calendar/availability, not model choice or account/orders.
 Parent owns shared MD/Git; AGENTS owns policy. Full closed package/source history:
 Git247ca0a:agents/data.md. Historical launch recipes are not ready jobs.
 
-## Current Exact Consumer
+## Current Forward Consumer
+
+A/data/current-memory-terminal-half-forward-capture-readiness-20261026-v1/READINESS.json,
+SHA5d0bc0f86cf30591e89ee838d8ac38c385f6d6f54a35d4d95152f74220d6036f.
+70sourcechecks/17stable references CLOSED. Current69 symbol/slot membership
+EXACTLY equals the installed Joint17 H20 capture69; selected8 included.
+No duplicate69collector required. Existing output firstOPEN+20CLOSE; dailyOPEN
+may derive separately from the same retained future pages, no oldroute rewrite.
+SPY absent; existing pairMODP0 differs from stockMODP1. A separately scoped
+one sameMODP1SPY page is the minimum if needed, not a Paper permission hold.
+Future pages/availability/finality/early operational fills NOT_OBSERVED.
+
+Engine forward benchmark8bf86e20 froze beforeOct26OPEN:20sessions4984..5003/
+model8-uniform69-SPY/10+20bp/434metadatachecks/0outcomes. Existing capture
+owners below unchanged. Faraday currently owns temporary isolated public
+runtime build, not another Data acquisition/rebuild. Actual warmbe104020 and
+currentpoint79d99cf9 are complete; do not repeat them.
+
+## Closed Reusable Consumers
 
 Late-Carry H20 target handoff is VERIFIED_READY at
 A/data/current-late-carry-h20-paired-input-20261026-v1/CONSUMER.json,

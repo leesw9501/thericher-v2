@@ -16,6 +16,7 @@ from thericher_v2.research import model_paper_proposal as payoff
 from thericher_v2.research.model_paper_weights import (
     MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
     MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
+    MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
     MODEL_PAPER_WEIGHTS_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
@@ -100,6 +101,7 @@ def test_old_profile_values_and_codec_are_unchanged_by_additive_weights_profile(
         "MODEL_WEIGHTS_NAS": MODEL_PAPER_WEIGHTS_PROFILE,
         "MODEL_WEIGHTS_NAS_H5": MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
         "MODEL_WEIGHTS_NAS_CASH_H5": MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
+        "MODEL_WEIGHTS_NAS_H20_EARLY_EXIT": MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
     }
     original = payoff_point()
     assert cycle._unpack(cycle._pack(original)) == original

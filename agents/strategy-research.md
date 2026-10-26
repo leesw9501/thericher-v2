@@ -1,83 +1,56 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-26 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own source-grounded mechanisms/pure kernels/readiness, not fitting or broker risk.
-Parent owns shared MD/Git. Full older proposals: Git247ca0a:agents/strategy-research.md.
+2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
+Socrates owns source/strategy mechanisms; Engine owns final campaign/fitting/
+interpretation. Parent owns shared MD/Git. AGENTS owns authority.
+Full previous source proposals/contracts/debits: Git0438ecd and immutable A.
+Closed proposals below are consumed history, not an automatic launch queue.
 
-## Current Concrete Consumer
+## Current Decision
 
-Faraday proposed causal daily percentile-rank EWMA20 crossed with FAST5/SLOW20
-basket selection on existing cached CAT forecasts, not another architecture
-name or old rank-buffer replay. Original proposal:
-A/research/current-low-turnover-strategy-readiness-20261026-v1/PROPOSAL.json,
-SHAd1f6c0569f888e3ee25c17ea6fd450944533a34062158eb02d3360ed73cb1dc3.
-Official dynamic-trading/cost research motivates predictor persistence; no
-optimal-policy replication or equity-alpha claim, public code/weights/runtime
-adoption. Generic momentum/buffer/H20/partial-rebalance work was already known.
-Claude REVISE remains advisory and retained, not agreement. Narrow the contrast
-to memory increments within each cadence and explicit interaction; source
-readiness is not numerical qualification.
+No additional strategy numerical package is queued solely to fill the GPU.
+Current memory/TERMINAL19 proposal79d99cf9 is already ready for Execution's
+cached-input/newprofile handoff. Operational testing and separately frozen
+future benchmark8bf86e20 have higher immediate decision value than another
+adaptive old63 sweep. This is NOT a model-class/epoch/GPU permission ban.
 
-Engine's memory consumer is CLOSEDd97bc30e/f8717535/RESULT2f4f71bd under
-current-rank-memory-cadence-development-20261026-v1/native-geometry-recovery-r1.
-14newledgers/9002checks/0fits/GPU, all6predeclared20bp criteria pass.
-MEMORY_SLOW growth6.8047%/absoluteDD2.3524% versusRAW_SLOW2.9333%/7.0943%,
-but FASTmemory does not dominate raw and10bp changes rankings. Samegross,
-not equalrisk, independentalpha, totalreturn or PaperPnL. Source-only advisory
-never becomes a claim of actual numerical execution or generic memory merit.
+Current matched MLP19/H20 uniform-pair source review is CLOSED:
+A/research/current-uniform-pair-mlp19-h20-readiness-20261026-v1/CONSUMER.json,
+SHA494111bbee5499032a799d1409831070e6827c41a26bfd69061b46427866a38d.
+JUDGEMENT695000c7/ClaudeADOPTlimits5496e8d3. Not an exact duplicate; concrete
+residual/current-consumer need not established. Parent accepts REJECT_CURRENT_
+OLD63_DISPATCH for low incremental decision value.0models/fits/GPU/ledger/
+registry/dependency effects. Elapsed416, Source300active compliance unproven,
+not retroactive cap pass/refund. New input/diagnosed failure or separately
+frozen later outcomes may justify a new scope; no permanent reviewer/daemon.
 
-Concrete Data fault discovered while earlier buffer family closed:
-supervision-gated H5.marks is not a dense held-price tape. Source coverage at
-held-marks-readiness-r1/VERIFIED-READINESS.json SHA0918e966 proves existing
-canonical candidate-superset support; no API acquisition or old replay needed.
-Faraday's new pure adapter/named-field producer scope held-marks-adapter-r1
-is CLOSED8b3d5d6c/Sourcec521309d/API1a27581f with33inventednativechecks/
-RuffPASS,0market/build/ledger/fits. Exact handoff delivered; agentclosed.
-Original proposal/
-readiness1200upper and held coverage180 are charged once when consumed; new
-adapter<=600active within reserved Data900. No per-indicator agent/platform.
+## Latest Mechanisms / Actual Outcome
 
-Invoked Socrates completed ONE distinct next trainable objective proposal at
-A/research/current-next-trainable-economic-expert-readiness-20261026-v1.
-Consumerd1d13b9c/296+28metadata/0fits/GPU,source600upper once;agentclosed.
-Matched terminal20 versus late15afterfirst5 pre-entry ranking, not newarchitecture.
-Engine actually completed sixNEWmarketGPUfits+two nativefits and the first
-verified readout, READOUT-RELEASE597c3f94/RESULT91a07efc/2368checks:
-COMPLETE_FAIL_LATE_CARRY_MECHANISM.20bp growth LATE-.8289%, TERMINAL+2.0098%,
-UNIFORM-2.4946%; weaker late concordance, no rescue or independent-alpha claim.
-All workers closed. Leibniz now consumes sealed scores in separately frozen
-Paper-faithful STATIC20 seven-arm numerical composition, no new model calls.
-Faraday separately supplies matched SPY20 reference, not an alpha test.
+- RAW397/H20 sourcefe122637 ->3actualnewGPUfitsb2bf2b03, then FIRST cached
+  readout39e177a7/77b2b57d REJECT.20bp growth-.243%/absoluteDD11.382%
+  vsTerminal19+2.010%/7.247%. Better broad concordance did not improve selected
+  tail economics. No raw/seed/blend rescue or historical failure regrade.
+- Minimal TopK-inclusion pair proposal7574ac63/seal55ad8b33 actually completed:
+  A/research/current-top-tail-h20-objective-development-20261026-v1/CONSUMER.json,
+  SHA92b04e634bb4cc79e812f81f864927507410345c38f7a228087f7fddab5fc94b.
+ 3marketGPU+1nativefit/772checks/2FIRSTledgers/allclosed;REJECT all4terms.
+ 20bp -14.3001%growth/24.0232%DD vsuniformCat+2.00985%/7.24705%.
+  f=K*labelTopKallocation is inclusion1/fraction/0, strict pairmass
+  f_i*(1-f_j)/date1, zero-alltie dates retained, labelONLY. OwnCHECK-selector
+  also changes: recipe contrast, not causal objective-only ablation/NDCG
+  reproduction/PnL optimization. No optional6MLP/extra seed/target rescue.
+- Memory/cadenced97bc30e passes adaptive screen; static20b117c2ea primary
+  latehalfFAIL against terminalhalfutility. Terminalhalf reference8.5277%/
+ 2.9571% at20bp is descriptive/adaptively chosen, not independent alpha.
+  Future8bf86e20 freezes same current model8 vsuniform69/SPY before OPEN,
+ 0outcomes. Early operational Paper is NON_PARITY with close benchmark.
+- Official references/version/license live in the consumed proposals; no new
+  public checkpoint/download/dependency was introduced in these scopes.
 
-Current Socrates scope is current-raw397-h20-transfer-readiness-20261026-v1:
-audit exact prior raw397/H20/prefix duplicates and resolved raw63x6 affine/
-feature order before proposing THREE new RAW397_TERMINAL_H20 fits versus
-completed TERMINAL19. Source-only <=600active/1200elapsed,0market/GPU/models;
-not a promise of novelty or training. Schrodinger independently checks native
-runtime readiness. No new public weights/dependencies or architecture platform.
-
-RAW397 actually completed3newGPUfits; downstream cache-only39e177a7/77b2b57d
-REJECT at20bp: growth-.243%/absoluteDD11.382% vsTerminal19+2.010%/7.247%,
-4of5conditionsfail/1of3foldwins. Better average concordance did not improve
-selected-tail economics. No raw/seed/ensemble rescue or oldresult regrade.
-
-Current concrete NEXT mechanism is minimal label-TopK inclusion pair weighting:
-A/research/current-top-tail-h20-objective-readiness-20261026-v1/CONSUMER.json,
-SHA7574ac63b9bade2b3f5216224e3a03fe8a5e6cb6ea531b337041e30dbb935102,
-seal55ad8b33/18inventedmath+56metadata+21refs/helpersRuff/ClaudeADOPTlimits.
-Three NEW CatTAIL fits versus cached same19/H20 uniformCat controls; exact
-prior formula not found in bounded audit, not a novel ranking category.
-f=K*oraclelabelTopKweights gives inclusion1/fraction/0, not portfolio weights
-or percentile ranks; strict future-label loss ONLY mass f_i*(1-f_j), date1,
-alltied dates zero loss retained. No new feature/seed/horizon/sampler axis.
-Objective AND ownCHECK selector change, not a causal gradient-only ablation.
-Pair surrogate ignores inside-top/bottom order and can magnify near-boundary
-noise; not direct PnL optimization or proven LambdaRank/NDCG replication.
-Optional matchedMLP6fits declined as unnecessary for THIS smaller question,
-not an oldepoch/GPU/framework prohibition. Official sources/version/license
-in REFERENCES.json; no downloads/new dependencies or external weights.
-Schrodinger owns actual3900activeSUM/7200elapsed/native weightedmetric proof/
-3fits/2newledgers, not this source dispatch. No further proposal before result.
+One role suffices for chart/technical/momentum/ML/DL/public-model/composition
+source work; no per-indicator agent/MD or permanent synthesis team. A new
+proposal must name a real residual/consumer and become a finite experiment or
+concrete rejection, not an ever-growing reading list.
 
 ## Closed / Reusable Evidence
 

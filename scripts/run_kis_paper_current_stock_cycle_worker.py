@@ -482,6 +482,8 @@ class RequestBudget:
         self.deadline = monotonic() + 280
         self.calls = dict(token_posts=0, get_requests=0, buy_posts=0, sell_posts=0, cancel_posts=0)
         self.starts = []
+        self.early_exit_window = None
+        self.early_exit_side = None
         self.token = KisPaperMarketDataTokenStartGate(
             control_root=control_root,
             minimum_request_interval_seconds=60,
@@ -498,6 +500,41 @@ class RequestBudget:
             monotonic_clock=monotonic,
             sleeper=self.sleep,
         )
+
+    def configure_early_exit(self, value, side, operational_session=None):
+        from thericher_v2.research.model_paper_weights import model_paper_early_exit_window
+
+        _require(side in {"buy", "sell"}, "early_exit_side_invalid")
+        window = model_paper_early_exit_window(value, operational_session=operational_session)
+        _require(self.early_exit_window in (None, window), "early_exit_window_changed")
+        _require(self.early_exit_side in (None, side), "early_exit_side_changed")
+        self.early_exit_window = window
+        self.early_exit_side = side
+
+    def _execution_window_check(self, request):
+        window = getattr(self, "early_exit_window", None)
+        if window is None:
+            return
+        at = readonly.require_utc(self.clock())
+        if self.early_exit_side == "sell" and at >= window.cleanup_end:
+            raise canary.KisPaperCanaryError("early_exit_cleanup_closed")
+        if request.method == "POST":
+            tr_id = request.headers.get("tr_id")
+            if tr_id == canary.KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
+                allowed = (
+                    self.early_exit_side == "buy" and window.entry_start <= at < window.entry_end
+                )
+            elif tr_id == canary.KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID:
+                allowed = (
+                    self.early_exit_side == "sell" and window.exit_start <= at < window.exit_end
+                )
+            else:
+                allowed = urlsplit(request.url).path in {
+                    readonly.KIS_PAPER_TOKEN_PATH,
+                    canary.KIS_PAPER_US_CANCEL_PATH,
+                }
+            if not allowed:
+                raise canary.KisPaperCanaryError("early_exit_fresh_order_closed")
 
     def sleep(self, duration):
         if (
@@ -534,13 +571,17 @@ class RequestBudget:
         else:
             key = "sell_posts"
         self._check(key)
+        self._execution_window_check(request)
         self.rate.wait_for_request_slot()
         self._check(key)
+        self._execution_window_check(request)
         if before_wire is not None:
             before_wire()
         self._check(key)
+        self._execution_window_check(request)
         if key == "token_posts" and not self.token.claim_token_request_start():
             raise canary.KisPaperCanaryError("token_request_not_due")
+        self._execution_window_check(request)
         self.calls[key] += 1
         self.starts.append(self.monotonic())
         self.pacer.record_request_start()
@@ -674,10 +715,12 @@ def run(
     if profile is not None:
         if (
             type(profile) is not StockCycleProfile
-            or profile not in {
+            or profile
+            not in {
                 StockCycleProfile.MODEL_PROPOSAL_NAS,
                 StockCycleProfile.MODEL_WEIGHTS_NAS,
                 StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+                StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
             }
             or not callable(target_loader)
             or any(
@@ -692,6 +735,8 @@ def run(
     ):
         raise ValueError("model_profile_injection_invalid")
     limits = RequestBudget(control_root=CONTROL, clock=clock)
+    if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT:
+        injected["configure_early_exit"] = limits.configure_early_exit
     paths = native_paths()
     try:
         result = _categorical(

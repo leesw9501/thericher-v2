@@ -1,98 +1,78 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-26 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Operator -> Parent -> bounded role executors. Parent owns shared MD/Git.
-AGENTS owns authority. Preserve unrelated untracked %SystemDrive%/.
-An MD/dispatch/source freeze is not an active worker or deployment.
-Earlier history: Git421da85/52c0b3c and exact immutable external consumers.
+2026-10-26 KST, through06:13UTC. A=D:/thericher-v2/model-artifacts;
+M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
+Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
-## One Company Outcome
+## Company / Due
 
-NEXT oct26-three-candidate-paper-entry-runtime-v1 remains UNFINISHED:
-exact natural GRU/TimesFM/Joint17 entry outcomes, not research/install/commits.
-Original8 image2ff/source/releases/financial identities remain unchanged.
-Entry UTC Oct26: GRU13:40..14:10, TimesFM14:20..14:50, Joint17 17..17:30,
-additional L18..18:15. Existing Data retention403d5908 owns21:55UTC.
-Retain ONE original initial virtual-cash tenth, owned costs/losses/pending,
-F9 UNKNOWN-HELD; no reset/substitution/foreign adoption/profit expansion.
+oct26-three-candidate-paper-entry-runtime-v1 UNFINISHED; actual natural entry
+outcomes, not research/install/commit. Original8 image2ff/identities unchanged.
+Oct26 UTC: GRU13:40..14:10, TF14:20..14:50, Joint17 17..17:30, L18..18:15.
+Existing Data retention21:55UTC; no foreground session wait/manual duplicates.
+ONE original tenth, owned costs/losses/pending/F9 UNKNOWN-HELD preserved.
 
-## Actually Assigned / Due
+Existing same-chat oct26-paper follow-up REPAIRED/SAVED5a112411:
+nominal18:45UTC/Oct27 03:45KST, actual18:42:59UTC/03:42:59KST, one eligible
+date before UNTIL. Host/app availability required; not future delivery proof.
+No new chain/standing monitor. Native update, no direct app DB writes.
 
-| Owner | Current disjoint package and evidence boundary |
+## Current Disjoint Owners
+
+| Owner | Current bounded work / actual evidence |
 | --- | --- |
-| Parent / 총괄 | Integrate actual evidence/shared contracts/Git; preserve original opportunities and existing one-shot follow-up. No operator decision presently. |
-| Schrodinger / 엔진·GPU 조정 | RAW397 models/forecasts b2bf2b03 CLOSED; downstream cache-only39e177a7/77b2b57d CLOSED_REJECT. NEW minimal3CatTAIL objective assigned after7574ac63/55ad8b33 source readiness,3900activeSUM/7200elapsed inclSource1200once. Native/sourcefreeze precedes market; no GPU start inferred. |
-| Faraday / 임시 엔진 추론 | Current memory/TERMINAL19 CPUpoint79d99cf9 CLOSED_PREPARED_NOT_DEPLOYED, actual24+1forecasts/8positiveweights/13native+14checks/allclosed. InitialSDKfailure preserved, no training/GPU/broker/allocation. No repeat of completed outputs. |
-| Leibniz / 실행 준비 | Purebootstrap2afc6264 CLOSED9newtests. NEW source-only existing account-owned finite serial admission readiness300active/900elapsed; no private/API/Task/order. Needs feasible entry AND owned-exit/recovery, not another peer writer. |
-| Socrates / 전략 탐색 | TopK-inclusion pair-source7574ac63/55ad8b33 CLOSED18math+56metadata+21refs. Minimal3CatTAIL adopted, optional6MLP declined THISfamily;0market/GPU. No next proposal before actual result. |
+| Parent / 총괄 | Integration/Git, preserve originals, strict actual account registration/writer admission before any extra deployment. No operator decision presently. |
+| Faraday / 데이터·임시 인프라 | Future coverage5d0bc0f8 CLOSED: existing69 equals current69/selected8. NOW assigned isolated2ff-overlay image/publicSDK at execution/current-h20-early-paper-r9-runtime-build-20261026-v1; source recipe e3de560b, not build/runtime proof. |
+| Leibniz / 실행 개발 | Five production/test paths FROZEN e4f9d597/526serialPASS. NOW external new early capsule/RouteSpec/native SYN + oldSDK sharedV4 invented-state proof at execution/current-memory-terminal-half-early-runtime-preparation-20261026-v1. No private/Task/broker/model work. |
+| Schrodinger / 엔진·GPU 조정 | All12marketGPU+4native fits CLOSED. Forward benchmark8bf86e20 frozen before OPEN,434metadatachecks/0outcomes/modelcalls. Sole resource coordinator; no numerical worker from closed families. |
+| Socrates / 전략 탐색 | MLP19source494111bb CLOSED_REJECT_CURRENT_DISPATCH: low new decision value on old63, not exact duplicate/GPU hold/global neural-model ban. No implementation/fits. |
 
-These are bounded actual LLM dispatches, not permanent daemons.
-Schrodinger remains the sole GPU coordinator; useful concurrency is allowed
-under measured headroom, no unknown-user/app permission hold or dummy training.
+Roles directly exchange exact image/SDK/schema readiness; no Parent serial
+relay or extra approval. Parent owns trial scopes/shared risk/Git. No new
+permanent role/platform is needed for these concrete packages.
 
-## Material Results / No Duplicate Queue
+## Evidence / No Duplicate Queue
 
-- Late-carry597c3f94:6NEWmarketGPUfits+2nativefits/2368checks/allclosed,
-  scientificFAIL; memory/cadenced97bc30e:14ledgers/9002checks/adaptivePASS.
-- Static20b117c2ea:14ledgers/7114checks/allclosed, primary latehalfFAIL;
-  terminalhalf8.5277%growth/2.9571%absoluteDD at20bp is descriptive/adaptive,
-  not an automatic new winner or Paper alpha. SPYmatched72401083:
-  2ledgers/6362checks,4.5097%/3.2698%, different universe/risk.
-- RAW397b2bf2b03:3NEWmarketGPUfits+1nativefit/63forecasts, then host metadata
-  fault BEFORE0readout/helddecode. Positive116closurechecks/7containers/
-  35CLIJobs/leaseexactownedbackup+removal.2157.5015inclusiveupper preserved.
-  Separate FIRST cache-only readout39e177a7:2ledgers/774checks/REJECT,
-  growth-.243%/absoluteDD11.382% vs TERMINAL19+2.010%/7.247%,4of5termsfail.
-  No fit/restore/inference/GPU/control replay in that downstream consumer.
-- Warm Data18c5c16c sourcegap ->be104020 actual24origins/86sourcesessions,
-  own-date89/90/69masks/28native+52checks/93pages once/onebuild/allclosed.
-  Purebootstrap2afc6264 separates current reconstructed state from past
-  observed forecasts.9newtests pass; its600activecap compliance is unproven,
-  elapsed12m19 retained. New consumer charges780conservativeelapsedupper,
-  not CPUspend or a retroactive cap pass.
+- Currentpoint79d99cf9 PREPARED_NOT_DEPLOYED:24CAT+1TERMINALforecasts,
+  full100/current69/8weights, honest current-time bootstrap/13native+14checks,
+ 0fit/GPU/allocation/orders. Failed SDK keyword/debits retained.
+- Late-carry597c3f94:6newGPUmarketfits+2native/scientificFAIL.
+  RAW397b2bf2b03:3market+1native, pre-readout metadata failure retained;
+  first cache-only39e177a7/774checks REJECT, no old model/control rerun.
+  TopTail92b04e63:3market+1native/772checks/2FIRSTledgers REJECT,
+ 20bp growth-14.3001%/DD24.0232% vs uniformCat+2.00985%/7.24705%.
+  Allworkers closed. Dated98%device peak is co-tenancy, not current use.
+- Static20b117c2ea primarylatehalfFAIL. Terminalhalf8.5277%/2.9571%
+  descriptive/adaptive, not alpha/PaperPnL. Memorycadenced97bc30e passes
+  adaptive screen; no new profitability authority or originalinput switch.
+- Forward8bf86e20: current model/uniform69/SPY,4984..5003/fixedshares/
+ 10+20bp,0outcomes. Data5d0bc0f8: no new69collector; dailyOPEN from future
+  pages, separate sameMODP1SPY gap. Source plan is not actual capture/finality.
+- Prior14marketfits(12CUDA+2CPU) and all old studies remain CLOSED in Git0438ecd/
+  immutable artifacts. No completed training/ledger/SYNtrade is ready again.
 
-All preceding14marketfits(12CUDA+2CPU) also stay CLOSED in Git/history.
-No completed training, old metric bundle or SYNtrade is ready again.
+## Throughput Review
 
-## Existing Follow-Up / Runtime Reader
+06:13UTC handoff: original opportunities are a ready future path, not a human
+permission block. Two disjoint execution/Infra packages now use verified
+source; no unnecessary numerical worker repeats or extra gate/platform.
+One reversible improvement: build only finite public overlays onto immutable
+2ff, not a repo-root Docker context/dependency reinstall. Cached eight weights
+are repackaged once; no expensive model/inference replay for deployment.
 
-ACTIVE same-chat oct26-paper is saved/read back via native automation tools.
-Nominal Oct26 18:45UTC /Oct27 03:45KST, actual stored jittered18:42:59UTC,
-after L ends18:15. One eligible date before UNTIL, no recurring chain.
-A/orchestration/current-oct26-app-followup-repair-20261026-v1/CONSUMER.json
-SHA5a1124115c91af88097685721b4999c3bb3a59f6b0454b06f33fb1a642bd61b1.
-9readback+9purechecks; original Windows Tasks unchanged. Backend UTC readback,
-not suggested card alone, established timing. Host/app availability required;
-saved state is not future execution proof. No duplicate follow-up.
+New opt-in earlyH20 freshSELL close-45..-25, cleanup until-20, positive closure
+before original Joint17-15. Explicit NON_PARITY; later-session exact unknown
+recovery remains possible, no clock-based flatness/refund.
+Foreign registration is per cycle record. Quiet entry/serial descriptors do
+not prove safe shared-stock coownership. Actual registration conflict blocks
+only extra candidate; never bypass ownership or alter original proposals.
 
-Optional public reader4f4e2e51/ROUTES-r2ef4f5099 is ready, not financial proof.
-Actual current original-window/private-intent/fill/owned custody still requires
-the existing separately admitted strict reader; no recovery observe().
-Task exit/missing/latest/public transport is never a fill or release of F9.
-Operational logging disabled: honest-host source evidence, not cryptographic
-proof of OS Scheduler origin.
+Fresh source authoritydd834d4c:526serial/19317fullPASS26knownSKIP/8workers/
+389.91s/allPIDs+lease+scratchclosed/1406exact/Ruff+3ComposePASS.
+Do not repeat full suite absent protected changes; external capsule code gets
+its own native checks. Image/capsule/actual admission remain distinct proof.
 
-## Throughput Review / Next Integration
-
-At latest failure/handoff: natural Paper runtime is a READY future path, not
-an operator permission hold. All nine newly completed marketGPUfits and their
-forecasts are preserved. Readout uses caches; source/reference/SDK faults
-must not restart fit chains. Complete reference path/bytes/sha schemas before
-stage registration; probe the ACTUAL SDK signature before model reads.
-
-Current CPUpoint uses explicit current-time retrospective warm bootstrap,
-not fabricated historical availability; two frozen model/affine recipes remain
-distinct. All old failed stages/counters stay failed/retained. A named SDK
-recovery is reversible, no capital/request/order reset or extra model fit.
-Tail research changes one objective/selector recipe, not a model zoo:
-3Cat fits instead of9, with independent native weighted-loss oracle.
-
-C_NOW preserves originals and fixes demonstrated faults. Additional Mean3
-remains inert because its planned owned exits overlap. New serial admission
-review must reuse the existing finite account dispatcher and preserve exact
-old custody/operational paths after positive writer closure, not migrate every
-legacy writer or use a quiet entry as proof of feasible exit.
-
-Integrate actual outcomes, fresh external checks and exact1405digest verification,
-commit/push material packages, keep NEXT UNFINISHED until actual runtime closure.
-Continue ready lanes without foreground session/quota waiting.
+Optional public reader4f4e2e51 is transport-only. Actual unknown writers/
+unstable custody withhold financial conclusions, not all Data/research actors.
+No taskexit/latest/missing inference; honest host is not cryptographic OS-origin
+proof. Preserve unfinished goal while integrating/committing material packages.
