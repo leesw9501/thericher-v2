@@ -19,6 +19,30 @@ and debits are not erased by this compaction.
 
 ## Actual Paper / Due
 
+Current development is not a replacement launch command:
+`execution.paper_account_round.run_cohort_progress` is an opt-in pure traversal
+helper. Real native invented-journal integration passed four tests: quote skip
+then original next target, exact pending stop, all-skips/no-debit traversal and
+persisted-prefix restart. Old `run_serial_round` AST is unchanged. No current
+Task/image/host adapter is wired to this helper; do not invoke a strategy to
+"test" it. A future admitted bridge must expose the original target prefix,
+reuse a valid token, preserve native request/debit/pre-wire controls, and prove
+actual owner/child/container closure. SELL `exit_attempts` is not a cursor.
+Evidence: A/execution/current-finite-cohort-progress-20261026-v1 and
+current-paper-cohort-attribution-20261026-v1/PROGRESS-REVIEW.json.
+New pure `execution.paper_cohort_attribution.attribute_paper_cohorts` joins
+caller-qualified identity/input/policy facts; it does not open custody or query
+a broker. `recovery_only` is not a paired exit. First actual attribution was
+withheld before container/read by actor_unregistered, not zero holdings or
+unmapped pending identity. A separately scoped first-cause repair is assigned;
+do not rerun the closed earlier read/proof commands.
+Fresh combined source authority: bb0b8ca4 CONSUMER.json in the finite-progress
+root,19412fullPASS26knownSKIP/8actualworkers/392.44s/1409exact sources,
+210serialPASS1knownSKIP/Ruff+3ComposePASS/all20PIDs+currentC scratchlease absent.
+Reuse only on exact protected digest identity; external changes need their own
+native checks. Initial helper argument binding failed before any pytest worker;
+corrected explicit -Workers/-PytestArgs run is the fresh authority, no bypass.
+
 Company objective oct26-three-candidate-paper-entry-runtime-v1 is UNFINISHED.
 Original8 source/release/input/policy/native/ops/identity pins are in HANDOFF.
 Image sha256:2ff53eff188570db5ab078bcf06904c85ed8412d8b80a5147af34cab4c759df3.

@@ -3,8 +3,10 @@ from datetime import UTC, datetime, timedelta, timezone
 import pytest
 
 from thericher_v2.execution.paper_account_round import (
+    PaperCohortProgress,
     PaperRoundContractError,
     PaperRoundSlot,
+    run_cohort_progress,
     run_serial_round,
 )
 
@@ -175,3 +177,157 @@ def test_unbounded_input_iterator_and_alias_of_same_policy_route_are_rejected():
     )
     with pytest.raises(PaperRoundContractError):
         run([first, alias])
+
+
+ADAPTER = "sha256:" + "a" * 64
+
+
+def progress(item, before, *, state="advanced", **changes):
+    fields = dict(
+        slot=item, adapter_ref=ADAPTER, before=before, after=before + 1,
+        state=state, reconciled=True, unknown_pending=False,
+    )
+    fields.update(changes)
+    return PaperCohortProgress(**fields)
+
+
+def cohort(invoke=None, **changes):
+    fields = dict(
+        adapter_ref=ADAPTER, work_units=3, completed=0, clock=lambda: NOW,
+        monotonic=lambda: 0.0,
+        invoke_original_target=invoke or (lambda item, cursor, _: progress(item, cursor)),
+        max_visits=4, wall_seconds=300,
+    )
+    fields.update(changes)
+    return run_cohort_progress(slot(), **fields)
+
+
+def test_cohort_advances_skipped_original_target_then_remaining_without_outer_debits():
+    calls = []
+
+    def invoke(item, cursor, deadline):
+        assert deadline == NOW + timedelta(seconds=300)
+        calls.append(cursor)
+        return progress(item, cursor, state="no_intent" if cursor == 0 else "advanced")
+
+    result = cohort(invoke)
+    assert calls == [0, 1, 2]
+    assert result["status"] == "traversal_complete_not_fill_evidence"
+    assert result["completed_after"] == 3
+    assert result["outer_debits"] == result["waits"] == 0
+    assert not result["broker_acceptance_fill_inventory_PnL_proved"]
+
+
+def test_cohort_resumes_exact_persisted_cursor_and_does_not_repeat_completed_work():
+    calls = []
+    result = cohort(
+        lambda item, cursor, _: (calls.append(cursor) or progress(item, cursor)), completed=2
+    )
+    assert calls == [2] and result["completed_before"] == 2
+    assert cohort(completed=3)["invocations"] == 0
+
+
+@pytest.mark.parametrize("changes", [
+    {"unknown_pending": True}, {"reconciled": False}, {"state": "pending"},
+])
+def test_cohort_never_continues_or_consumes_cursor_with_unknown_effects(changes):
+    result = cohort(lambda item, cursor, _: progress(item, cursor, **changes))
+    assert result["status"] == "stopped_for_exact_reconciliation"
+    assert result["completed_after"] == 0 and result["invocations"] == 1
+
+
+@pytest.mark.parametrize("changes", [
+    {"before": 1}, {"after": 0}, {"after": 2}, {"after": True},
+    {"before": False}, {"after": 4}, {"state": "filled"}, {"reconciled": 1},
+    {"unknown_pending": 0}, {"slot": slot("other")}, {"slot": slot(phase="entry")},
+    {"adapter_ref": "sha256:" + "b" * 64}, {"state": "complete"},
+])
+def test_cohort_invalid_or_non_sequential_feedback_stops_without_replacement(changes):
+    result = cohort(lambda item, cursor, _: progress(item, cursor, **changes))
+    assert result["status"] == "stopped_for_adapter_recovery"
+    assert result["invocations"] == 1 and result["completed_after"] == 0
+
+
+def test_cohort_rejects_callback_dict_claiming_fill_and_never_echoes_payload():
+    result = cohort(lambda *_: {"status": "filled", "private": "do-not-echo"})
+    assert result["invocations"] == 1 and "do-not-echo" not in str(result)
+
+
+def test_cohort_complete_assertion_is_traversal_only_and_unavailable_stops():
+    result = cohort(lambda item, cursor, _: progress(item, cursor, state="complete"), completed=2)
+    assert result["completed_after"] == 3
+    assert not result["broker_acceptance_fill_inventory_PnL_proved"]
+    result = cohort(lambda item, cursor, _: progress(item, cursor, state="unavailable"))
+    assert result["completed_after"] == 0 and result["invocations"] == 1
+
+
+def test_cohort_discontinuous_second_feedback_keeps_only_prior_reconciled_progress():
+    result = cohort(lambda item, cursor, _: progress(item, 0))
+    assert result["invocations"] == 2 and result["completed_after"] == 1
+
+
+@pytest.mark.parametrize("offset", [-1, 900, 901])
+def test_cohort_does_not_wait_or_invoke_outside_original_window(offset):
+    result = cohort(clock=lambda: NOW + timedelta(seconds=offset))
+    assert result["invocations"] == result["waits"] == 0
+
+
+def test_cohort_monotonic_budget_expires_even_if_utc_does_not_advance():
+    ticks = iter([0, 0, 300])
+    result = cohort(monotonic=lambda: next(ticks))
+    assert result["invocations"] == 1 and result["status"] == "cohort_deadline"
+
+
+def test_cohort_monotonic_elapsed_narrows_deadline_and_never_widens():
+    ticks = iter([0, 20, 40, 60])
+    deadlines = []
+    result = cohort(
+        lambda item, cursor, end: (deadlines.append(end) or progress(item, cursor)),
+        monotonic=lambda: next(ticks),
+    )
+    assert deadlines == [NOW + timedelta(seconds=s) for s in (280, 260, 240)]
+    assert result["invocations"] == 3
+
+
+def test_cohort_original_end_is_not_widened_and_visit_limit_is_finite():
+    result = cohort(wall_seconds=900, max_visits=1)
+    assert result["steps"][0]["deadline_utc"] == slot().ends_at.isoformat()
+    assert result["invocations"] == 1 and result["status"] == "cohort_visit_limit"
+
+
+@pytest.mark.parametrize("values", [[1, 0], [0, float("nan")], [0, float("inf")], [0, True]])
+def test_cohort_invalid_monotonic_clock_never_calls_adapter(values):
+    ticks, calls = iter(values), []
+    with pytest.raises(PaperRoundContractError):
+        cohort(lambda *_: calls.append(True), monotonic=lambda: next(ticks))
+    assert not calls
+
+
+@pytest.mark.parametrize("changes", [
+    {"completed": -1}, {"completed": 4}, {"completed": True},
+    {"work_units": 0}, {"work_units": 513}, {"max_visits": 33},
+    {"max_visits": True}, {"wall_seconds": 901}, {"adapter_ref": "unbound"},
+])
+def test_cohort_bad_contract_rejected_before_effects(changes):
+    calls = []
+    with pytest.raises(PaperRoundContractError):
+        cohort(lambda *_: calls.append(True), **changes)
+    assert not calls
+
+
+def test_cohort_callback_exception_stops_and_redacts_private_error():
+    def fail(*_):
+        raise OSError("private-do-not-retain")
+
+    result = cohort(fail)
+    assert result["invocations"] == 1 and result["completed_after"] == 0
+    assert result["steps"][0]["category"] == "OSError"
+    assert "private-do-not-retain" not in str(result)
+
+
+def test_cohort_process_interrupt_is_not_swallowed():
+    def fail(*_):
+        raise KeyboardInterrupt()
+
+    with pytest.raises(KeyboardInterrupt):
+        cohort(fail)

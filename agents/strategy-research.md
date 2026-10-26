@@ -8,6 +8,29 @@ Closed proposals below are consumed history, not an automatic launch queue.
 
 ## Current Decision
 
+New source0f9a64e4 at A/research/current-intraday-entry-information-proposals-
+20261026-v1/CONSUMER.json is CLOSED_SOURCE_READY: price-only30m trend/15m
+pullback/5m volatility-normalized release, original Data702 ABI, ten native
+handoff checks/Ruff/ClaudeADOPTlimits,0market effects. Exact contract0c1fa44c
+was adopted by Parent without threshold changes. Socrates now implements
+current-intraday-pullback-reclaim-development-20261026-v1 as invoked Engine:
+one finite CPU comparison, now CLOSED_NONINFORMATIVE_SPARSE_TRAIN:
+A/research/current-intraday-pullback-reclaim-development-20261026-v1/CONSUMER.json.
+TRAIN candidate8entries(4perETF) failed frozen>=12support; CHECK/EVAL inputs
+and outcomes NOT_OPENED.0marketledgers/fits/GPU/oldproofreplays. New native
+cashflow API/Decimal oracle16checks plus35independent checks, allchildrenclosed.
+Owned upper270.59/1200s,elapsed458.40/3600s. No threshold/timeframe rescue,
+profit claim or general rejection of pullbacks. Source and recipe remain closed.
+Original EVAL remains reused development, not untouched confirmation. No duplicate
+old Ridge fits or generic ORB nomination; exact nearest ORB already exists.
+
+New owner: Socrates at current-h5-downside-simple-risk-control-20261026-v1,
+cheap strongest kill for learned downside's economic value: ONE past20 RMS
+LOWVOL control, exact matched keys/availability/gross/costs, cached H5 outputs
+only. <=8metadata refs first; actual canonical past-return ABI required before
+one intake/two new ledger cells.0fits/modelcalls/GPU/oldledgerreplays;600owned/
+2400elapsed seconds. No new primary source or independent-performance claim.
+
 No additional strategy numerical package is queued solely to fill the GPU.
 Current memory/TERMINAL19 proposal79d99cf9 was consumed by the limited
 installed early-profile pilot57c43f59, not a completed fill/basket. Separately frozen

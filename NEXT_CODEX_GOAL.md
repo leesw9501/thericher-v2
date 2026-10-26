@@ -25,6 +25,18 @@ A missing or future receipt is unknown. L is additional, not company completion.
 
 ## Ready / Owned / Due
 
+- New parallel packages (Oct26 around10:07UTC), not company completion:
+  Parent finite original-target progress API; Leibniz exact public cohort/exit
+  attribution; Schrodinger H5 downside-expert campaign; Socrates adopted
+  pullback/reclaim CPU entry comparison; Faraday one future SPY H20 capture.
+  Exact new scopes/owners in active stateboards. Downside f6ccbb64 now CLOSED
+  six new CUDA fits/two native, relative-risk improvement but negative20bp
+  growth; saved F3 new current-point preparation assigned,0fits. No Paper
+  runtime result is inferred from research. Original11 Paper Tasks unchanged.
+  Existing SPY/MODP1 reference ade959b7/5bf75db9 recovered with0HTTP; future
+  benchmark remains unmeasured. New entry contract0c1fa44c is frozen, not
+  an old Ridge/control refit or permission to reopen old outcomes.
+
 - Parent repaired the EXISTING same-chat follow-up oct26-paper. Nominal
   Oct26 18:45UTC/Oct27 03:45KST, actual saved18:42:59UTC/03:42:59KST.
   One eligible date before UNTIL, no recurring chain. Updated to include the

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-26 KST, through09:20UTC. A=D:/thericher-v2/model-artifacts;
+2026-10-26 KST, new dispatch through10:07UTC. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -20,6 +20,42 @@ SAME saved one-shot updated to include installed pilot/recovery, actual due
 unchanged; readback8209e860/12checks+4negative cases. No new follow-up job.
 
 ## Current Disjoint Owners
+
+The previous packages below are CLOSED, not currently running. New disjoint
+packages are assigned and implementation is in progress. Downside campaign
+has now closed six new GPU fits; no inference of ongoing use. Parent owns paper_account_round.py/tests and
+shared MD/Git. Leibniz alone owns paper_cohort_attribution.py/tests.
+
+- Parent: opt-in finite original-target progress loop; stop on unknown/pending/
+  nonsequential cursor. Old API and tonight's11 Task definitions unchanged.
+- Leibniz: current-paper-cohort-attribution-20261026-v1, public strategy/exit
+  source CLOSED6feb213c/49PASS, actual join withheld pre-create0private reads.
+  New external actor-recovery package, no wildcard writer bypass/unknown release.
+- Schrodinger: downside f6ccbb64 CLOSED6marketCUDAfits/2native,20bp-3.0561%/
+  DD7.5045%, relative improvement not profitability. New saved-F3 current-point
+  package assigned,0fits, sole GPU coordinator; all old workers closed.
+- Faraday: ade959b7 closed existing SPY/MODP1 reference5bf75db9 with0HTTP;
+  now current-spy-h20-forward-capture-activation-20261026-v1, one future query.
+- Socrates: proposal0f9a64e4/contract0c1fa44c CLOSED; Parent adopted exact
+  pullback/reclaim CPU comparison CLOSED sparse TRAIN8entries<12.0EVAL
+  inputs/outcomes/marketledgers/fits/GPU; no rescue or repeat. Native16 plus
+  independent35checks, actual source/consumer references in Strategy board.
+
+New roots are under A/execution, A/data or A/research respectively. Closed
+training/ledgers are not rerun. SEC contact remains an optional isolated gap.
+Throughput improvement: advance reconciled original targets without redoing
+completed work; use a new economic entry contrast rather than old Ridge fits.
+The company still needs original natural runtime closure; this is not deployment.
+
+10:23UTC Throughput Review: three disjoint role packages remain assigned
+(current-point, SPY one-shot, actor repair); Strategy completed sparse recipe
+and now owns a new cheap causal LOWVOL control against cached H5 risk scores,
+0fits/modelcalls/GPU/oldledgerreplays. Original next13:40UTC unchanged.
+Parent source package bb0b8ca4 CLOSED210serial/19412fullPASS26knownSKIP,
+8actualworkers/392.44s/1409exact/Ruff+3ComposePASS/20PIDs+scratchlease absent.
+One reversible improvement: test the simple risk-information baseline before
+spending more GPU on the same newly learned risk recipe. Actual attribution
+admission failure is scoped first-cause work, not a Data/Research/Paper hold.
 
 | Owner | Current bounded work / actual evidence |
 | --- | --- |

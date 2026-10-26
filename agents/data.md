@@ -7,6 +7,15 @@ Git247ca0a:agents/data.md. Historical launch recipes are not ready jobs.
 
 ## Current Forward Consumer
 
+New reference completion A/data/current-spy-modp1-benchmark-completion-20261026-v1/
+CONSUMER.json, ade959b7: exact retained SPY/AMS MODP1/GUBN0 whole page,
+100 official sessions June03..Oct23, input5bf75db9 under M;0HTTP/credentials.
+Native5/source19 checks/Ruff passed, source worker closed. Not future prices,
+CA/TR/PIT/finality or same-vintage proof. H5 reuses existing GRU70 capture.
+Faraday now owns current-spy-h20-forward-capture-activation-20261026-v1:
+one Nov20 22:05..22:10UTC SPY page using the existing Data owner/gates/quiet
+runner. Installation not yet evidenced; current69/25/70/retention unchanged.
+
 A/data/current-memory-terminal-half-forward-capture-readiness-20261026-v1/READINESS.json,
 SHA5d0bc0f86cf30591e89ee838d8ac38c385f6d6f54a35d4d95152f74220d6036f.
 70sourcechecks/17stable references CLOSED. Current69 symbol/slot membership

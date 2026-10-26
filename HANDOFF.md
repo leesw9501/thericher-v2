@@ -2,7 +2,8 @@
 
 ## Current Reality
 
-2026-10-26 KST, checked through 09:20UTC. Root C:/Users/Public/Documents/thericher-v2.
+2026-10-26 KST, new parallel dispatch through10:07UTC.
+Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
 AGENTS owns standing private no-cost Data/Research/KIS Paper authority.
@@ -15,6 +16,33 @@ This is current working memory, not a launch diary. Full preceding history is
 Git0438ecd:HANDOFF.md and exact immutable consumers. Closed failures/debits
 stay unchanged. Abbreviated hashes below are retrieval aids, not authority in
 place of the full referenced manifest. An assignment is not an active worker.
+
+New disjoint packages are implementing: Parent finite target-progress API,
+Leibniz public cohort/exit attribution, Schrodinger H5 downside expert,
+Faraday one future SPY H20 capture, Socrates price-only pullback/reclaim CPU
+comparison. New downside research is now CLOSEDf6ccbb64:6marketCUDAfits/
+2native/3238updates;20bp growth-3.0561%/DD7.5045% versus RETURN-11.1224%/
+19.0725%. Relative-risk contrast passes, NOT positive20bp growth/independent
+alpha. Physical purged-price isolation unproven; feature/loss masks unchanged.
+All11containers/55CLIJobs/lease/rootPID closed; no ongoing training claim.
+Saved F3 current feature-only prediction/proposal is separately assigned.
+Actual future11 Paper
+Tasks/original inputs/counters are unchanged. Previous closed worker facts
+below apply to their named scopes, not these new packages.
+SPY MODP1 historical reference ade959b7/5bf75db9 was recovered from existing
+M bytes with0HTTP; future H20 prices remain unobserved. Strategy proposal
+0f9a64e4/contract0c1fa44c adopted without retuning, not a numerical result.
+
+New source integration bb0b8ca4 at A/execution/current-finite-cohort-progress-
+20261026-v1/CONSUMER.json:210serialPASS1knownSKIP,19412fullPASS26knownSKIP/
+35warnings/8actualworkers/392.44s;1409protected sources before/after exact.
+All20observed test processes/currentC scratch+lease absent; Ruff/default/
+research/accountingCompose with.env.example PASS. Old round AST unchanged,
+four real-native invented-journal handoff cases passed. This is NOT actual
+host/token/owner or current Paper deployment. Final attribution source6feb213c/
+841d is implemented49tests; actual join withheld pre-create0private reads.
+New exact-actor repair is isolated. Price-only entry recipe9b4b713b closed
+sparse TRAIN8<12;0EVAL outcomes or market economic ledgers, no rule rescue.
 
 ## One Company Outcome / Original Deployment
 

@@ -9,6 +9,23 @@ HANDOFF/RUNBOOK and exact immutable artifacts. Old launch recipes are not jobs.
 
 ## Actual Owned Opportunities
 
+New parallel development, not runtime replacement: Parent owns opt-in finite
+target-progress API in paper_account_round.py; old round API/installed11Tasks
+unchanged. Continuation needs same source/slot and exact reconciled cursor+1;
+unknown/pending stops without releasing reservations. Pure traversal is not
+fill/flatness/PnL. ClaudeGOlimits at A/execution/current-finite-cohort-progress-
+20261026-v1/REVIEW.json; future native bridge is still unqualified.
+Leibniz attribution source CLOSED6feb213c/final841d:49focusedPASS/Ruff,
+exact public schedule bindings7. Actual join UNKNOWN:2pre-create attempts,
+0containers/0private reads, actor_unregistered. No assignment of old positive
+owners or pending identity to public cohort names. Thirteen Jobs/PIDs closed.
+New external-only current-paper-attribution-actor-recovery-20261026-v1 owns
+exact actor/source/capability diagnosis, final-source handoff and at most one
+new admitted RO snapshot. It is not a reason to pause Data/research/Paper.
+Parent native progress integration4PASS used the real native journal with an
+invented broker/network denied. Actual H20 host/owner/token bridge unqualified;
+do not use SELL exit_attempts as progress or relabel source tests deployment.
+
 NEXT oct26-three-candidate-paper-entry-runtime-v1 is UNFINISHED.
 Original image sha256:2ff53eff188570db5ab078bcf06904c85ed8412d8b80a5147af34cab4c759df3.
 Do not duplicate/reset an original strategy visit.

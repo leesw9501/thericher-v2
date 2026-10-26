@@ -7,7 +7,17 @@ Closed allocation/source/debit history: Git0438ecd and immutable consumers.
 
 ## Actual Resource State
 
-This batch12NEWmarketGPUfits+4nativeGPUtoyfits completed ONCE:
+New downside expert f6ccbb64 CLOSED:6newmarketGPUfits+2native,3238updates,
+peak825924608bytes,11containers/55CLIJobs/rootPID/lease absent. Owned upper
+921.15/5400s, elapsed1009.15/10800s; actual fits are complete, not running.
+Same-device paired workers were co-tenants, not isolated timing benchmarks.
+Schrodinger now owns new current-h5-downside-expert-current-point-20261026-v1,
+<=2savedmodelrestores/forwards,0fits; active<=900s/elapsed<=2400s, no target
+mount. Assignment is not current GPU utilization. Independently Socrates runs a CPU-only
+entry-information comparison with0fits, no GPU lease competition. Completed
+training below remains closed and is not a resource-utilization queue.
+
+Previous batch12NEWmarketGPUfits+4nativeGPUtoyfits completed ONCE:
 late-carry597c3f94:6+2; RAW397b2bf2b03:3+1; TopTail92b04e63:3+1.
 All named numerical roots/containers/CLIJobs/leases positively closed.
 No worker currently running from those families. Device98%/13327MiB sample

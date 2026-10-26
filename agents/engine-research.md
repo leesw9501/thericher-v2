@@ -7,6 +7,31 @@ debits remain Git0438ecd:agents/engine-research.md and immutable consumers.
 
 ## Current Consumer / Ready Work
 
+New H5 downside campaign CLOSED at A/research/current-h5-downside-expert-
+development-20261026-v1/CONSUMER.json, SHAf6ccbb64. Six new CUDA market fits,
+two native fits,3238market updates/89epochs, eight first economic ledgers.
+20bp EACHleg JOINT_RISK growth-3.0561%/DD7.5045%, RETURN-11.1224%/19.0725%,
+uniform-11.1641%/15.5822%. Risk pinball .013975 versus FITconstant .016261;
+relative five-term contrast passes, but positive20bp growth FALSE.10bp model
+growth+1.9628% is sensitivity, not primary profitability/independent alpha.
+Earlystop selected RETURN2/0/3 and JOINT2/6/4; no convergence claim.
+Peak worker allocation825924608bytes;11containers/55CLIJobs/rootPID/lease
+closed. Owned upper921.15/5400s, elapsed1009.15/10800s. Purged-date OPEN/CLOSE
+paths were read by the label loader, though excluded from features, affines,
+loss and checkpoint choice: physical future-price isolation NOT established.
+New assigned next: saved F3 JOINT+RETURN current H5 prediction/proposal at
+current-h5-downside-expert-current-point-20261026-v1, <=2newrestores/forwards,
+0fits/ledgers/outcomes. Feature-only current handoff, no target mount; no
+current prediction result or Paper deployment yet. Completed fits stay closed.
+Socrates' adopted CPU entry recipe0c1fa44c CLOSED9b4b713b sparse TRAIN8<12;
+0CHECK/EVAL input/outcomes or economic ledgers, no threshold rescue. New
+current-h5-downside-simple-risk-control-20261026-v1 may test ONE causal past20
+RMS LOWVOL control against exact cached H5 scores/results,0fits/modelcalls/
+oldledgerreplays, <=2new cost cells only after exact past-feature ABI freeze.
+Missing canonical risk input closes that control, not the independent lanes.
+All are reused historical development only. These are
+new economic hypotheses, not renaming or repeating the closed12GPUfits.
+
 Original memory/TERMINAL19 fixed-half point is CLOSED. Its cached early-profile
 derivative is INSTALLED as a limited future pilot, not a runtime result:
 A/research/current-adaptive-memory-terminal-half-current-point-20261026-v1/api-signature-recovery-r1/CONSUMER.json,
