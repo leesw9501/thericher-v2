@@ -86,8 +86,27 @@ that contract. Empty history/missing opener cannot prove no-send or free reserve
 
 ## Current Packages
 
-Parent owns shared MD/Git; latest checkpoint3d3b42d. Current numerical claims below use
+Parent owns shared MD/Git; prior checkpoint2a57a57. Current numerical claims below use
 actual closed workers, not role names or remaining budgets. No old fit repeats.
+
+Oct26 resume: app follow-up repair is COMPLETE. Native MCP created/updated
+oct26-paper in this chat; read-only exact appSQL/TOML projection confirms
+ACTIVE, nominal Oct26 18:45UTC (Oct27 03:45KST), actual jittered18:42:59UTC,
+one eligible date before UNTIL and no previous invocation. Evidence:
+A/orchestration/current-oct26-app-followup-repair-20261026-v1/CONSUMER.json,
+SHA5a1124115c91af88097685721b4999c3bb3a59f6b0454b06f33fb1a642bd61b1.
+9readbackchecks/9pureguardcases; no Windows Task, source, capital or request
+change. Backend stored the unanchored wall-clock fields as UTC; the first
+saved12:45KST projection was corrected through the native update tool before
+reliance. Prior failed COUNT/too-early UNTIL creates produced no saved worker;
+an anchored suggested card alone was not deployment. App/host availability is
+still necessary; saved next_due is not proof of execution or a Paper outcome.
+
+Current bounded role executors: Leibniz checks exact runtime reader readiness
+and minimal additional Paper preparation; Schrodinger owns distinct useful
+Engine work and sole GPU coordination; Faraday owns consumable Strategy/Data
+readiness. Their new scopes are in NEXT. No fit is inferred from dispatch.
+Older closed recipes below are history, not currently running jobs.
 
 FINAL batch:14NEWmarketfits=12CUDA+2CPU completed ONCE; all assigned model,
 native and source-review workers closed. No currently ready frozen training
@@ -109,9 +128,9 @@ new approval or Paper profitabilitygate. All old criteria/results unchanged.
 Latest sourcechecks23Fourier+17Meta+12SPY+76L/0mismatches; D:free36.8percent.
 
 Company runtime remains due at the original windows, with original8 unchanged.
-App one-shot chatfollowup creation failed3bounded validation attempts; NO app
-automation/WindowsTask created, no recurring/cron workaround or replacement
-chain. Do not promise automaticchatwake. Native Windows jobs still own their
+Prior app creation failure is superseded by the exact saved/read-back heartbeat
+above; no WindowsTask, cron workaround or replacement chain was created.
+Do not promise a future successful chatwake. Native Windows jobs still own their
 due opportunities; missing outcome is unknown, never fill/profit. Resume exact
 receipts/owners, not completed training. Earlier package projections below
 are now closed history where superseded.

@@ -9,6 +9,24 @@ Private no-cost Data/Research/KIS Paper authority is delegated. Never KIS_LIVE_*
 real money, paid/public work or secret/private raw output. One original shared
 virtual-cash tenth; F9UNKNOWN/HELD and all original requests/basis stay intact.
 Parent owns shared MD/Git. Preserve unrelated %SystemDrive%/.
+
+Current app follow-up (not a broker/Windows worker): oct26-paper, ACTIVE in
+this chat. Nominal Oct27 03:45KST / Oct26 18:45UTC; actual stored jittered due
+Oct27 03:42:59KST /18:42:59UTC, after the final original L entry window.
+Native automation_update create/update plus read-only SQL/TOML verification:
+A/orchestration/current-oct26-app-followup-repair-20261026-v1/CONSUMER.json,
+SHA5a1124115c91af88097685721b4999c3bb3a59f6b0454b06f33fb1a642bd61b1.
+One fixed date before UNTIL; no recurring report or replacement chain. The
+local database/config were never edited directly. Backend UTC readback, not
+a suggested card or successful create alone, established the intended time.
+Do not rerun inspect.py into its exclusive existing evidence file. Use native
+automation_update view for the app card; future actual delivery still needs
+the host and desktop app available. Original Paper8 and Data worker unchanged.
+This saved schedule is not evidence of a submitted order, fill or future wake.
+
+Current ready role work is NEXT, not the frozen launch recipes below.
+All last14marketfits, MetaTree, SPY references and source/native proofs are
+closed. Do not replay them because a historical paragraph says next/current.
 Latest package completion pointers (do not rerun closed launchers):
 Fourier: A/research/current-nas-prefix-fourier-linear-ranking-development-20261026-v1,
 FINAL714c939b/Sourceb9a45163/6NEWCUDAheads/3875+142checks/all13closed,
