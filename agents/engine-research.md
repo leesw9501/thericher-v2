@@ -1,134 +1,81 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
 2026-10-26 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Engine owns targets/features/fits/replay/fusion, not broker risk.
-Parent owns MD/Git. AGENTS owns policy; NEXT owns the single company outcome.
-Full earlier trial history and exact artifacts remain in Git0ea7ca1:
-agents/engine-research.md. That history is NOT a ready-job queue.
+Engine owns targets/features/fits/replay/fusion, not deterministic broker risk.
+Parent owns shared MD/Git. AGENTS owns policy; NEXT owns ONE company outcome.
+Detailed prior experiments/sources: Git247ca0a and Git0ea7ca1:
+agents/engine-research.md. Closed history is not another launch queue.
 
 ## Current Owner / Ready Work
 
-All currently assigned numerical work is CLOSED; no running CPU/GPUworker.
-Meta expert tree FINALd11077be/Sourcee7962b6f at
-A/research/current-nas-chronological-expert-tree-development-20261026-v1:
-2NEWCPUfits/167cohorts/1750+84checks/all7closed/0basecalls/GPU/534.618upper.
-COMPLETE_FAIL_CONDITIONAL_TREE.20bp combined growth/DD TREE-3.353%/7.517%,
-FIT-onlyCONSTANT-2.690%/7.955%, fixedHALF-1.977%/6.046%, cachedCAT+1.469%/
-5.148%. Tree is not constantalias, but never selectedCAT on167economicdates;
-not stationary expert competence or a reason to tune seen leaves/features.
-Exact source/schema/codec role transfer passed, not independent alpha.
+Schrodinger is the actually dispatched Engine and sole GPU coordinator.
+NEW scope A/research/current-rank-memory-cadence-development-20261026-v1:
+fixed daily causal percentile-rank EWMA20 x FAST5/SLOW20 basket selection,
+six same-gross risky arms including uniform controls, exact-window SPYpassive.
+Optional covariance dropped BEFORE payload; equal gross is not equal risk.
+Warm3520..3542/first3543/final4777,1235helddays,247commonreviews/62slowselections.
+Fourteen policy-cost ledgers planned at10/20bp peractualtradedleg;0fits/GPU.
+Frozen contract/caps/native proof govern actual dispatch. Source preparation
+does not prove a running numerical worker, training or a completed market run.
 
-SPY business reference FINAL66fdef27/Source5e5d8a69 is CLOSED at
-A/research/current-spy-passive-phase-h5-benchmark-20261026-v1:
-one existingcacheintake/8newledgers/37907+91checks/all4closed/0modelsGPU/
-oldcalls0/521.045upper. All requiredmarks admitted; no privateCSV/auth read,
-realprices/absolutequantities remainM/RAM.20bp eachleg, full initialNAV1,
-paid initialstake.10, DD is absolute ORIGINALNAV peak-minus-value:
-2020-12-30..2025-12-29 PASSIVEgrowth9.711%/DD3.422% versusFLATH5-3.428%/
-5.895% and cachedCAT-.036%/6.975%. Meta167 window2022-08-31..2025-12-29:
-PASSIVE7.976%/2.975%, FLATH5-1.063%/2.967%, cachedCAT1.469%/5.148%.
-Not annualized. Passive meanheldgross13.477%originalNAV versusflat9.996%
-in251window; different universe/overnight/fixedshare drift/rebalancing/risk.
-Nominalprice proxy/not totalreturn, causal fee savings, alpha or PaperPnL.
-Prefer these descriptive passive AND cadence-matched cost references in a
-future new contract, not another model merely for complexity. Missing input
-scopes that comparison only; no oldresult regrade or Paper profitabilitygate.
+Data handoff is now READY at
+A/research/current-low-turnover-strategy-readiness-20261026-v1/held-marks-adapter-r1/HANDOFF.json,
+SHA8b3d5d6cdd096ac5f6b3bbf4532b5b2e3cc6a7fbaf201983dd230b766bcc457d.
+Sourcec521309d/API1a27581f: canonical_daily.project_campaign with literal100
+slots/official clocks/capture_known, exact1235daily observations, eligibility
+separate from observed held marks.33invented named-producer/coldconsumerchecks/
+RuffPASS; no actual market packet/replay/model. Engine's actual cold consumer
+and full required-mark admission remain required within its existing caps.
+No new data acquisition/build/scaler is needed. Original Faradayproposal1200,
+held-readiness180 and newadapter600 conservative Sourceupper counted once
+within NEW family; not GPU time or refund from old studies.
 
-Next company dependency is original natural Paper runtime; no automatic
-chatfollowup was installed (app rejected3bounded one-shot create requests).
-Original Windows opportunities remainenabled, no newTask/order/budget.
-Closed launch protocols below are retrieval history, not ready reruns.
+Socrates is an invoked Strategy Discovery sidecar at
+A/research/current-next-trainable-economic-expert-readiness-20261026-v1.
+One genuinely useful next trainable hypothesis or concrete rejection; no market
+fits/GPU/ledger or duplicate of the current zero-fit composition. A readiness
+proposal does not grant numerical trials; Steward retains sole resource custody.
 
-Fourier family below is now CLOSED714c939b/Sourceb9a45163:
-6actualCUDAfits/6OOFcalls/24newledgers/3875independent+142closurechecks/
-all13containers+rootclosed/GPUleaseabsent/currentworkers0/0oldmodelcalls.
-COMPLETE_FAIL_FIXED_RFF_MAP, no seed/map/bandwidth/epoch/blend rescue.
-Pooled ordering loss RFF.690052 versus LINEAR.689885; only F1 improves,
-not pooled or2of3folds.20bp combined growth/DD: LINEAR-4.571%/9.678%,
-RFF+.117%/7.955%, fixedhalfRFFCAT-1.900%/8.062%, cachedCAT-.036%/6.975%,
-uniform-11.164%/15.907%. No Fourier-specific blend-cause attribution without
-LINEAR+CAT control. No new alpha/Paper input. All6firstLBFGSsteps recorded,
-2concurrentworkers; selectedsteps LINEAR1/1/1,RFF3/2/1, outer7/7/7 and6/7/7.
-FinalTRAINconverged RFFtrue/LINEARfalse; selected checkpoints need not converge.
-FitworkerSUM73.896s includes I/O/diagnostics, not kernel-onlyGPUtime;
-family1147.568/5400activeupper. Devicepeak4740MiB/co-tenancy not isolation.
+## Latest Closed Result / Concrete Recovery
 
-Next invoked Strategy readiness (not a fit):
-A/research/current-nas-chronological-expert-tree-readiness-20261026-v1,
-ONE conditional CAT/LINEAR/RFF expert-tree transfer on mature previous OOF,
-or concrete duplicate/schema rejection. Native/numerical caps are NOT granted
-by that source-only proposal. Never reuse old family residual budget or train
-on in-sample/future expert outputs. Existing Paper remains independent.
+First zero-fit cadence/2Kbuffer family:
+A/research/current-low-turnover-expert-campaign-20261026-v1/CONSUMER.json,
+SHA69a74b377ce04e99e6ac0ccea86b1efef316e4f5a07c62a7b990236deb8a866d.
+Source451396d9/RESULT1a62cd93.12attempts,10stockarms INPUT_UNAVAILABLE,
+2SPYreferences only, empty primary/NON-PASS. NOT financial failure/success.
+7invented nativeledgers/108aggregatechecks,20checks of completed outputs;
+4containers/24CLIJobs/rootclosed/607.984activeupper incl600Sourceonce.
+0fits/oldmodelcalls/GPU/retries. No old bundle replay to recover missing logs.
 
-Closed launch contract for retrieval, NOT another ready job:
-Cicero is the sole Engine/GPU coordinator. SIX new prefix market GPU fits
-closed in this continuation; none is queued to rerun. New frozen family:
-A/research/current-nas-prefix-fourier-linear-ranking-development-20261026-v1.
-Fixed Gaussian Fourier512 representation versus matched linear397 pairwise
-heads on three existing chronological prefixes; fixed half-rank cachedCAT
-blend. Up to6NEWfit attempts/0marketretry/5400activeSUM/7200elapsed,
-original anchor15:40:34UTC/hard17:40:34. Native actual LBFGS/role/selectedstate
-checks and source/Claude/headroom precede payload. No oldmodelcalls/newData/
-Paperinput swap. Analytical NAV1treasury convention is NOT ringfenced.10
-feasibility; selection data are globally adaptive. Source is not a running
-GPU worker or completed fit. Actual allocation requires PID/start/firststep.
+H5.marks is target/feature-admitted, not dense daily holding prices. Its tail
+4776/4777 has no price slots due its own future H5 target purge; actual canonical
+same-day prices exist. Coverage0918e966/277+24checks proves allcandidate
+FAST78670/SLOW78430/initial57730 member-date required prices, no missing.
+Exact first ledger-failure time was not retained and remains unknown; source
+coverage is not an inventory replay. New adapter repairs the CONSUMER source,
+not old models/results/criteria, target purge, masks or independent claims.
 
-Herschel's source-only proposal is READY, not a new numerical owner:
-A/research/current-next-distinct-expert-readiness-20261026-v1/PROPOSAL.json,
-SHAe52e581305b4960b35c69d9b9cd895193a9dfe8f960b2b0a88841cf7c685552e.
-Its disjoint pure feature_map/pair_head handoff is under the new family root's
-herschel-source/SOURCE-HANDOFF.json. Proposal600+kernel90 Sourceupper charged
-ONCE inside family900Source/5400SUM, not new fits per role. No numerical/native
-success is inferred from the source-only handoff.
+## Earlier Closed Evidence / Do Not Duplicate
 
-## Latest Closed Evidence
+All preceding14NEWmarketfits=12CUDA+2CPU completed ONCE; no old worker/lease.
+Fourier714c939b/Sourceb9a45163:6CUDAheads, fixedmap criterionFAIL; no new seed/
+width/epoch/blend rescue. MetaTreed11077be/e7962b6f:2CPUtrees/167cohorts,
+conditionalcriterionFAIL; no leaf/feature/constant/cash rescue.
+Prefix78eb5b20:3GPUfits, fixedblendFAIL; absoluteedge291c4e7c:3GPUfits,
+insufficientF3entrysupport. Old failures/selection debits remain immutable.
 
-Ringfenced financing is now COMPLETE_RINGFENCED_FEASIBLE:
-A/research/current-nas-ringfenced-netting-feasibility-20261026-v1/native-codec-recovery-r1/FINAL-CONSUMER.json,
-SHA40c47bc786bc8633184caa1c3efae175547b4cf0413558ecb9aab62eae75ab4f,
-Source2a42c6e3/251events/6ledgers/69541independent+53closurechecks/allclosed.
-Original proof failed NumPy-bool JSON serialization be1af1e3/Source2051689f,
-0market; preserved335.757upper/23cases/6inventedledgers. Named mechanical
-codec repair used2scalarcases/ONEnew composednativeledger, then dispatched
-the original never-run market bundle ONCE. Total497.140/1200upper/original
-16:35:25deadline unchanged/0modelsGPUretry. No refund or completed-fit replay.
-20bp originalNAV growth/DD ranknet+1.951%/1.144%, matchedgross+1.376%/1.243%,
-uniformnet+.975%/4.057%; fee-only matchedwealth difference .5749percentagepoint.
-Outsidefinancing0,250of251capacityconstrained, meanrankgross1.653%originalNAV
-versusuniform5.352%,249netownheadroom suppressed for paired attribution.
-Not alpha/profitability/Paper pass or risk-matched rank-versus-uniform proof.
-No current ownedregistry/input-update or broker-risk change.
+Ringfinance40c47bc7/2a42c6e3:251events/6ledgers, feasible modeled ringfenced
+accounting, not risk-matched alpha or Paper input update. SPYreference66fdef27/
+5e5d8a69:8ledgers/0models/allclosed, descriptive only. At20bp originalNAV1/
+paidstake.10,251window passivegrowth9.711%/absoluteDD3.422% versus flatH5
+-3.428%/5.895% and cachedCAT-.036%/6.975%. Different universe, gross drift,
+overnight/cadence/risk; not causal fee savings, totalreturn or PaperPnL.
+Use appropriate passive AND cadence controls in new contracts, not a new gate.
 
-Prefix ranking: A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1.
-Consumer78eb5b20/Source644a0a53, 3NEW GPU CatBoost fits201/100/112trees,
-best137/36/48; cached GRU predictions only/no old model calls.251 H5 cohorts,
-1256forecastdates/78732rows/3843independent+273closure checks/all9closed/
-leaseabsent/70Parent refs exact. COMPLETE_FAIL_FIXED_ENSEMBLE: oneof21
-conditions fails, combined growth versus CAT.10bp per-leg growth/DD:
-CAT+4.989%/5.568%, half-rank blend+4.598%/4.470%, GRU-14.278%/21.834%,
-uniform-6.161%/11.774%.20bp CAT-.036%growth/blend-.426%. Lower DD or higher
-utility does not regrade the frozen criterion. Engine391.001+Data300+
-metadata5=696.001activeupper, not GPUtime. Device peak14095MiB is not
-per-process allocation or an isolated benchmark.
-
-Absolute edge: A/research/current-nas-prefix-absolute-edge-cash-development-20261025-v1.
-Consumer291c4e7c/Sourcec95e21b9,3NEW GPU regressors65/67/70trees,
-SELECTbest1/3/6, separate chronological CAL59 dates.7607checks/all9closed/
-leaseabsent/848.500activeupper. COMPLETE_INSUFFICIENT_ENTRY_SUPPORT:
-F1/F2enter84each,F3all83cash.20bp gate growth/DD-13.540%/17.978%,
-same-cash uniform-9.634%/12.071%, ownalways-16.562%/21.676%.
-No threshold/checkpoint retune or Paper adoption.
-
-Persistent-target accounting shadow:
-A/research/current-nas-persistent-target-netting-shadow-20261026-v1/FINAL-CONSUMER.json,
-SHA1f72d5321311b24ef4c260f43b4ca68d06ced4801f0e4f31ba8747bf6c1690ac,
-Sourceca0fc18e/251events/6ledgers/38761accounting+48closure checks/all4closed.
-20bp netted growth/DD5.838%/4.997%, matched roundtrip2.276%/5.389%,
-uniformnet2.877%/5.700%; identical share paths save35.46percentturnover/
-3.5617percentagepointsNAV modeled fees. ACCOUNTING ONLY: NAV1cash funded
-fixedgross, ringfenced.10wouldshortfall8times/max.009768originalNAV.
-Not alpha, ringfenced feasibility or current Paper input-update capability.
-New feasibility work above is a different policy, not a rerun/regrade.
+Current company dependency is original natural Paper runtime. The existing
+same-chat follow-up oct26-paper is NOWsaved/read-back, nominalOct26 18:45UTC.
+No source-only study or profitability threshold delays standing Paper authority.
+Use actual exact runtime, not source tests/install/taskexit, to close that goal.
 
 ## Prepared Paper Consumer
 

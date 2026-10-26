@@ -47,6 +47,23 @@ reservation release from empty history/missing opener.
 
 ## Current Disjoint Source Work
 
+Current resume package is CLOSED at
+A/execution/current-oct26-runtime-reader-readiness-20261026-v1/CONSUMER.json,
+SHA4f4e2e514c8f4e43de8bf89f15cf76de4e57a295bfbff7a17fc1018627e6dcbc.
+Sourceaf3e9e2d/ROUTES-r2ef4f5099,2377source members/21focused/3selector/
+RuffPASS/allhelpersclosed. AtOct26 02:07:23UTC original8enabled/Ready/
+0instances/exact XML+ACL+nexttimes; initialDateTime/string drift flag was
+corrected OFFLINE, no Task change/requery. Four public catalogs at02:18:47
+have no visits: unknown, not no-intent or zeroorders. Pure optional reader
+and full CLI are RUNBOOK; it never blocks an admitted private reader.
+Source/phase/visit/join is NOT fresh original-window/private-financial proof.
+Claude ADOPT_WITH_LIMITS. Conditional unknown new Data/research actor denial
+was reproduced, but current probe rows were its own Python/uv; no tonight
+blocker proven. Narrow exact source/capability repair if actually needed,
+never a process-name ignore, broad RW allowlist or future-due-only hold.
+ExtraMean3 remains inert: its owned-exit window overlaps original GRU/TF/L;
+C_NOW rejects exhaustive migration simply to add it. Leibniz is closed.
+
 Ltail/deadline repair is CLOSEDaac7a14c/Source7379177f at
 A/execution/current-l-ingress-tail-deadline-repair-20261026-v1:
 16focusedchecks/76Parentpins/new3productionRuffPASS/300upper/559.943elapsed/

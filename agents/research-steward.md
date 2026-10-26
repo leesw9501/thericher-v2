@@ -1,83 +1,69 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-26 KST. A=D:/thericher-v2/model-artifacts.
-Own resource/trial/holdout custody, not model choice or approval.
-AGENTS owns policy; Parent owns shared MD/Git.
-Full historical allocations: Git0ea7ca1:agents/research-steward.md.
-Old protocols are immutable history, not ready jobs.
+Own actual resource/trial/holdout custody, not model choice/human approval.
+AGENTS owns policy; Parent owns shared MD/Git. Previous detailed allocations:
+Git247ca0a and Git0ea7ca1:agents/research-steward.md. Closed clocks immutable.
 
-## Current Resource Owner
+## Actual Resource Owner
 
-No current owned numerical workers after all packages closed. Latest Meta:
-d11077be/e7962b6f,2NEWCPUfits/534.618upper/all7closed/GPU0/noGPUlease.
-SPYreference66fdef27/5e5d8a69,0modelsGPU/8ledgers/521.045upper/all4closed.
-Total current continuation14NEWmarketfits=12CUDA+2CPU, all completed once;
-native invented proofs are not additional marketfits. No ready frozen GPU
-campaign, no resource/permission/driver hold and no occupancy job queued.
-Original Paper/runtime evidence remains a future-session dependency.
+Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is the sole current coordinator,
+not old closed Cicero. Current new research scope:
+A/research/current-rank-memory-cadence-development-20261026-v1.
+It is a ZERO-FIT rank-memory/selection-cadence comparison.0GPU/optimizer/
+modelrestore/forward planned; source/native preparation is not training.
+No remaining old GPU lease or ready rerun is inferred from unused budgets.
 
-Latest Fourier family is CLOSED714c939b/b9a45163:6NEWCUDAheadfits,
-all13containers+rootclosed/leaseabsent/currentworkers0/0oldmodelcalls.
-Six actual first LBFGSsteps,2workersco-ran; selected LINEAR1/1/1,RFF3/2/1.
-FitworkerSUM73.896s includes I/O/curves/restore, not device-kernel time.
-1147.568/5400activeupper includes900Source once; no budget refund.
-Sampled devicepeak4740MiB/70samples/co-tenancy not isolation; perworker
-Torchallocated peaks331..702MB. This completed12NEWmarketCUDAfits across
-the three current prefix families, not an idle environment or ready rerun.
-No current GPU worker after closure. A next expert-tree source-readiness
-question is not a trained model or GPU allocation; CPU tree work may suffice.
+Parent measured RTX4090 at Oct26 resume:24564MiB total/1550used/22589free,
+5percent utilization/38C. D:free36.8percent. These are dated device snapshots,
+not per-process allocation/isolated benchmark/current resource promises.
+Project first GPU priority and useful concurrency remain authorized even with
+personal apps; no blanket unknown-consumer hold, no user-app kill/driver change.
 
-Closed contract history below, not a ready launch:
-Cicero01a17223-d4bb-71b3-b066-516d926b80b2 is the sole GPU coordinator.
-No current GPU training worker is evidenced after closure of SIX new market
-fits below. Ringfenced feasibility is now CLOSED40c47bc7/Source2a42c6e3:
-0modelsGPU/1marketbundle/6ledgers/allhelpersclosed,497.140combinedactiveupper
-including the failed proof335.757 and named scalar-codec recovery; no refund.
-Current family current-nas-prefix-fourier-linear-ranking-development-20261026-v1
-has up to6NEW GPU-capable convex-head fits, max2concurrent/headroomchecked,
-5400SUM/7200elapsed/original15:40:34UTC/hard17:40:34. Herschel source600+
-kernel90 charged once inside900Source, no added trial or GPU resource owner.
-Native LBFGS/role/source/Claude checks precede payload; source/contract alone
-does NOT prove a GPU fit, lease or first update.
+Faraday Data handoff8b3d5d6c/Sourcec521309d/API1a27581f provides exact canonical
+held-price projection and33native named-field checks; no market/GPU work.
+New Engine contract freezes5400activeSUM/7200elapsed from02:14:28UTC.
+Source contributions are originalproposal/readiness1200upper ONCE,
+held-readiness180 +newadapter600=780 ONCE within reservedData900,
+EngineSource600upper plus native/market/verify/cleanup/reserve within5400.
+No old buffer607.984 or closed Source debit refund/reuse.
+Caps/source documents alone are not actual workers/closure/numerical results.
 
-Parent nvidia-smi at about15:40UTC showed RTX4090 total24564MiB,
-used2393/free21746/utilization2percent/temp36C. This is one device snapshot,
-not current per-process headroom, worker allocation or an isolated benchmark.
-Recheck measured/projected peak/reserve before dispatch. Project has first
-GPU priority even during personal apps; useful ready workers may co-run.
-Never kill user apps, reclaim live/unknown project leases by age, change
-drivers or start dummy/duplicate fits to occupy the GPU.
+Socrates Strategy Discovery owns ONE source-only next trainable hypothesis or
+concrete rejection at current-next-trainable-economic-expert-readiness-20261026-v1,
+<=900sourceactive/1800elapsed;0fits/GPU/marketledgers. A future adopting family
+must charge this source once inside its own frozen budget, not silently use
+another campaign's trial or holdout. No separate GPU coordinator is created.
 
-## Latest Closed Allocations
+## Latest Closed Work
 
-Prefixrank78eb5b20/Source644a0a53 at
-A/research/current-nas-prefix-oof-catboost-gru-rank-blend-development-20261025-v1:
-3NEW GPUfits201/100/112trees/best137/36/48,
-guest13.733+12.918+10.930seconds.251cohorts/3843+273checks/all9closed/
-leaseabsent. Engine391.001+Data300+metadata5=696.001activeupper, NOT GPUtime.
-Sampled devicepeak14095MiB/minfree10046MiB, processallocationUNKNOWN.
-COMPLETE_FAIL_FIXED_ENSEMBLE, no automatic Paper swap.
+First new cadence/2Kbuffer consumer69a74b37/Source451396d9 is CLOSED:
+12policycost attempts,10stockarms INPUT_UNAVAILABLE/2SPYreferences only,
+7nativeledgers/108aggregatechecks/20completed-outputchecks,4containers/
+24CLIJobs/rootclosed/607.984activeupper including600Sourceonce.
+0fits/models/GPU; missing held prices are a consumer-packet fault, not an
+environment, permission or missing-original-data hold. Canonical support is
+proven by Data0918e966. Old financial primary remains NON-PASS for input.
 
-Absoluteedge291c4e7c/Sourcec95e21b9 at
-A/research/current-nas-prefix-absolute-edge-cash-development-20261025-v1:
-3NEW GPUfits65/67/70trees/SELECTbest1/3/6,
-guest11.304+11.835+11.437seconds.7607checks/all9closed/leaseabsent/
-848.500activeupper, NOT GPUtime. InsufficientF3entrysupport/losses,
-no adoption/retune/old model calls/retries.
+All preceding14NEWmarketfits completed once:12CUDA+2CPU. Latest Fourier714c939b/
+b9a45163 had6CUDAfits, selectedLINEAR1/1/1,RFF3/2/1 and actual firstLBFGSsteps.
+FitworkerSUM73.896seconds includesI/O/checkpoint work, not kernel-onlyGPUtime.
+Devicepeak4740MiB/co-tenancy, perworker331..702MB; all13containers/rootclosed.
+Earlier3prefixCAT78eb5b20 and3absoluteedge291c4e7c fits closed; MetaTreed11077be
+twoCPUfits closed. No seed/epoch/map retry or dummy occupancy job.
+SPY66fdef27 and ringfinance40c47bc7 are zero-fit accounting/reference studies,
+not trained models, independent alpha or qualified Paper inputs.
 
-Target-netting shadow Sourceca0fc18e is CLOSED/all4helpersclosed/
-0fits/models/GPU. Identical-share modeled fee savings hold, but NAV1
-financing is not ringfenced.10 feasibility. New feasibility policy is
-separately frozen; old ledgers/clocks/debits remain closed.
+## Next Allocation / Recovery
 
-## Next Allocation
-
-Give the first ready frozen useful campaign actual headroom and preserve its
-data/split/seed/fit-update-evaluation/active-SUM/elapsed caps, native API and
-role smoke, outputs, lease/PID/start/first-step and per-worker timings/VRAM.
-Missing fields defer that campaign only. Old studies' epoch/VRAM/no-rerun caps
-do not globally prohibit distinct campaigns; concurrency never adds trials
-to a one-fit contract. Charge failures/I-O/cleanup without refund; review/
-orchestration/queue are separate. Execution reliability can preempt at a safe
-checkpoint. No repeated closed training, synthetic occupancy or new resource
-platform. Existing custody and source-bound verification remain authoritative.
+Give the first ready frozen USEFUL trainable campaign measured headroom.
+Preserve exact data/split/seed/fit-update/evaluation/activeSUM/elapsed caps,
+native real optimizer/checkpoint and actual schema handoff, outputs/lease/
+PID/start/firststep, perworker clock/peak and positive process/daemon closure.
+One coordinator may co-run distinct ready workers; old study caps are not
+global GPU/time limits and concurrency never adds trials to a frozen family.
+Actual OOM/thermal/driver/Execution need checkpoints/yields safely, preserves
+failed attempts/debits, no silent retry or invented convergence.
+Current zero-fit economics can run on CPU; do not turn GPU utilization into
+the goal or claim a training start from dispatch. Original Paper remains an
+independent due owner; preserve its chances while research continues.

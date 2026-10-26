@@ -32,21 +32,26 @@ Task or strategy opportunity. Missing or future receipts are unknown, not fills.
   no recurring chain. Readback5a112411 at
   A/orchestration/current-oct26-app-followup-repair-20261026-v1/CONSUMER.json.
   Saved state is not proof that a future chat wake or broker action occurred.
-- Execution / Leibniz: source-safe original opportunity and strict outcome
-  reader readiness, then the shortest useful added-Paper preparation or a
-  concrete technical rejection under C_NOW. Owned new scope:
+- Execution / Leibniz: CLOSED4f4e2e51/af3e9e2d, optional exact public reader
+  ready;21focused/3selectorchecks, original8 unchanged. No actual outcome yet.
+  Additional Mean3 rejected for overlapping owned exits under C_NOW. Scope:
   A/execution/current-oct26-runtime-reader-readiness-20261026-v1.
   No original Task mutation/invocation, KIS or order in this inspection package.
-- Engine Research + Steward / Schrodinger: choose and freeze a DISTINCT
-  economically motivated campaign under
-  A/research/current-low-turnover-expert-campaign-20261026-v1.
+- Engine Research + Steward / Schrodinger: source/native preparation for NEW
+  A/research/current-rank-memory-cadence-development-20261026-v1.
+  Earlier zero-fit buffer family69a74b37 is CLOSED INPUT_UNAVAILABLE, not a
+  financial failure; price-source fault resolved by Data below.0fits/GPU
+  planned for this policy experiment; do not invent a training start.
   Existing completed fits are excluded. A ready campaign may use useful
   CPU/CUDA concurrency after native handoff/solver checks and actual headroom;
   source preparation is not evidence that training has started.
-- Strategy + scoped Data / Faraday: concrete low-turnover hypotheses and exact
-  existing-data readiness under
+- Strategy + scoped Data / Faraday: CLOSED source coverage0918e966 and exact
+  canonical adapter8b3d5d6c/33nativechecks under
   A/research/current-low-turnover-strategy-readiness-20261026-v1.
-  Send exact schemas/evidence directly to Engine, not through another approval.
+  Exact handoff delivered to Engine; no new acquisition or duplicate build.
+- Invoked Strategy Discovery / Socrates: ONE next useful trainable hypothesis
+  or rejection under current-next-trainable-economic-expert-readiness-20261026-v1;
+  source only, no market/GPU/model/ledger dispatch or new durable role.
 - Existing Data retention403d5908 owns Oct26 21:55UTC; no duplicate collector.
 
 Latest14NEWmarketfits (12CUDA+2CPU), Fourier/meta trees, SPY references,
