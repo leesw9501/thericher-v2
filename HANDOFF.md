@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, integrated parallel results through17:27UTC Oct26.
+2026-10-27 KST, integrated parallel results through17:56UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -16,6 +16,53 @@ This is current working memory, not a launch diary. Full preceding history is
 Git0438ecd:HANDOFF.md and exact immutable consumers. Closed failures/debits
 stay unchanged. Abbreviated hashes below are retrieval aids, not authority in
 place of the full referenced manifest. An assignment is not an active worker.
+
+CURRENT COMPANY: coexistent-native-paper-execution-runtime-v1. Prior
+oct26-three-candidate-paper-entry-runtime-v1 is SUPERSEDED_NOT_ACHIEVED, not
+completed. Direction1a99ab9c/Claude ADOPT_WITH_LIMITS preserves all failed/
+unknown outcomes and original exits. Next is narrow noncustody coexistence
+repair for original L18/optional18:30, not a rushed replacement J17 request.
+Post-window0a84cd22 records current4aa Job/container closure and strict reader
+0d134765 at17:33:02: no J17 registered/pending request, original account/basis/
+input-policy/full book validated, private membership/identity/mtime/bytes stable,
+13Jobs closed. Exact public8ed remains incomplete/UNKNOWN; a separate
+actor_unregistered failure lacks the historical offending actor/visit join.
+Data17:28 coexistence is not causal proof. F9/other reservations untouched.
+Current public reader6ead6c8b/manifest1ce1a965
+under current-joint17-rw-public-reader-binding-20261026-v1 separates current
+4aa from exact historical889. Both actual private reader scopes are consumed.
+
+Code is committed/pushed a3b3f1ba. FINAL verification70193a28 under
+A/verification/current-paper-account-session-clock-recovery-20261026-v1:
+213serialPASS/19437fullPASS/26knownSKIP35warnings/eightworkers/375.23s/helper0/
+Ruff/threeComposePASS.1411 protected source/policy digests exact; C: child
+r-0086cf35 and dotlease gone,18PID-starts closed. Final near-wire clock-rollback
+regression failed before fix and passes after UTC/lower-bound recheck. Old
+19436/c4cee025/ccc5 authority remains immutable old-source evidence. The new
+opt-in account API is NOT deployed to today's737SDK/image.
+
+Actual L partial static-host coexistence repair17:55:41:
+A/execution/current-l-three-static-data-claims-owned-activation-20261026-v1/ACTUAL.json,
+source2f53dcf2/releasedd6b991e; original18:00..18:15 entry and Oct30 exit
+enabled/zero instances/ACL preserved/86otherdefs identical. Three JSON files,
+actual67-file binding.closure and native definition checks pass. First optional
+Enabled XML-node omission and exact-source bounded resume are retained, no
+private/KIS/TaskRun/trigger change. NOT a full mixed-wrapper/container grant.
+Original Data intraday-head NEXT19:24UTC at17:50:43, so it was NOT paused or
+rescheduled to avoid an assumed conflict. Mixed wrapper can submit prospective
+SPY; never classify it as cache-only or blindly repin that old rule.
+Current public1ce1a965 is J17-current but still oldL6bc historical after this
+cutover; separately bound currentL derivative is assigned, not installed proof.
+
+QQQ OPEN5 actual study is CLOSED b419f22a under current-liquid-etf-open5-
+context-development-20261026-v1/first-fit-consumer-r1/CONSUMER.json:
+6CUDAfits/1568updates/100epochs/6OOF/8cells/zero market retries/allCIDsJobs/
+leaseclosed,461.478owned/3600 and1350.036elapsed/7200 incl prep120 once.
+Initial bootstrap/path failures remain historical failures; no marketfit replay.
+20bp EACH leg total growth/DD: CONTEXT4.9165%/2.4596%, QQQ_ONLY5.5991%/
+2.4345%, alwaysQQQ6.4203%/2.4345%, MOMVOL1.6512%/1.2572%. Both context
+primary checks FAIL; no threshold/seed/ratio rescue or Paper/alpha claim.
+Next cost/position-aware hypothesis is Source research, not active training.
 
 Latest P0 recovery is ACTUALLY installed11481bbe under
 A/execution/current-joint17-artifact-mount-owned-recovery-20261026-v1.

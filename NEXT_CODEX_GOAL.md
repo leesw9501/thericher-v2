@@ -47,18 +47,23 @@ must not become an indefinite company-wide hold.
   Data source/argv/write-scope/mount qualification and tested claims/release
   bindings. Existing stale Compose/Python pins are evidence to inspect, not
   authority to blindly repin. No blanket actor exemption.
-- Engine/Steward/Schrodinger: independent QQQ OPEN5 two-arm/six-fit campaign.
+- Engine/Steward/Schrodinger: QQQ OPEN5 two-arm/six-fit campaign CLOSED b419f22a.
   ADOPTION in A/research/current-liquid-etf-open5-context-development-20261026-v1
   fixes origin17:26:48/hard19:26:48 UTC,3600 owned/11520 updates/8 cells/
-  zero market retries. First bootstrap failed FileNotFound before recorded
-  stages. Prove exact cleanup and repair the pre-market bootstrap within the
-  unchanged limits if no numerical cap was consumed. Do not claim GPU active
-  from adoption, a lease or a source file. Never rerun completed training.
+  zero market retries. Bootstrap/path failures were repaired before market
+  fits with old costs preserved. Actual6fits/1568updates/6OOF/8cells complete;
+  fixed context primary FAILS, all CIDs/Jobs/lease closed. Do not refit/rescue
+  the recipe. Next cost/position-aware Source proposal is not a market trial.
 - Strategy/Review: challenge concrete decisions when needed; no new permanent
   team, approval platform, per-agent next-goal file or report chain.
 
 Existing opportunities, not new launch commands:
 L Oct26 18:00..18:15 UTC, original Oct30 exit.
+L partial three-static-host repair ACTUALLY enabled17:55:41 UTC,
+source2f53dcf2/releasedd6b991e, original pair/windows/ACL preserved. Native
+source/definition checks passed;86otherdefs unchanged. Not a full mixed-
+wrapper/container grant or fill. Mixed intraday task measured next19:24,
+not paused or rescheduled to avoid an assumed conflict.
 Optional entry Oct26 18:30..18:35, exact-pending recovery18:36..18:40,
 original Nov20 exit. Current installed optional entry outerf4dd/runtime19902/
 release5ba4, recovery/exit remain originalR4. Preserve their exact identities.
@@ -92,8 +97,10 @@ Use changed-path serial coverage then fresh scripts/run_parallel_tests.ps1
 -RequireCleanTempRoot, Ruff and default/research/accounting Compose with
 .env.example for code/control/runtime changes, per AGENTS.md.
 The new repo account-session API is NOT deployed to today's frozen737SDK/image.
-Final callback-clock regression was reproduced before the narrow fix;
-fresh213 serial tests passed and its new eight-worker full run is in progress.
+Final callback-clock regression was reproduced before the narrow fix.
+FINAL verification70193a28:213serialPASS/19437fullPASS/26knownSKIP35warnings/
+eightworkers/375.23s/helper0/Ruff/threeComposePASS;1411 digests exact and exact
+C: child/dotlease removed,18PID-starts closed. Commit a3b3f1ba pushed.
 Old19436 full authority applies only to its exact old source, not that fix.
 
 After a material achieved outcome, verify/commit/push, replace this file with

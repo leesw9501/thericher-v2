@@ -7,6 +7,22 @@ debits remain Git0438ecd:agents/engine-research.md and immutable consumers.
 
 ## Current Consumer / Ready Work
 
+NEWEST QQQ OPEN5 context campaign is CLOSED b419f22a at
+A/research/current-liquid-etf-open5-context-development-20261026-v1/first-fit-consumer-r1/CONSUMER.json.
+Six actual CUDA fits/1568updates/100epochs/six OOF/280rows/eight cost cells,
+zero market retries; all owned CIDs/CLI Jobs/lease closed. Initial bootstrap
+FileNotFound and later guest path failures remain TECHNICAL_INCOMPLETE;
+exact pre-market repair/debits preserved, no completed-fit replay.
+20bp EACH leg: CONTEXT total growth4.9165%/DD2.4596%, QQQ_ONLY5.5991%/
+2.4345%, alwaysQQQ6.4203%/2.4345%, MOMVOL1.6512%/1.2572%. Both frozen
+context primary conditions FAIL; positive total growth is not superiority,
+annualized return or Paper PnL. Retrospective/vendor/non-PIT/TR limitations
+and effective-capacity/noise limits remain. No threshold/seed/ratio rescue.
+Owned upper461.478/3600, elapsed1350.036/7200 includes prep120 exactly once;
+actual fit stage walls5.44..7.28s, not ongoing GPU work. Halley now researches
+ONE cost/position-aware objective/composition question using primary sources,
+no new market trial yet. Schrodinger retains GPU/registry ownership.
+
 Latest closed research: seed stability16bfa3f7 completed six new CUDA fits/
 19269 updates/six OOF/three NET20 cells. Seed28 growth1.7472%/DD4.6525%,
 seed29 3.1438%/4.2053%, fixed-thirds blend3.9095%/3.4984% versus cached

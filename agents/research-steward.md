@@ -7,6 +7,16 @@ Closed allocation/source/debit history: Git0438ecd and immutable consumers.
 
 ## Actual Resource State
 
+NEWEST actual allocation is CLOSED b419f22a:
+current-liquid-etf-open5-context-development-20261026-v1/first-fit-consumer-r1.
+Six CUDA fits/1568updates/100epochs/6OOF/8cells/zero market retry completed;
+all CIDs/CLIJobs/lease closed. Owned461.478/3600 incl prior120 once, elapsed
+1350.036/7200. Initial bootstrap/path failures retained, only pre-market
+source repair; no actual fit repeated. Fit walls5.44..7.28s show useful work
+was short, not that GPU was forbidden. Fixed context recipe REJECTED both
+growth/DD primary checks; don't repeat it for utilization. Next cost/position-
+aware hypothesis is Source research only, no adopted/active GPU fit yet.
+
 Latest completed CUDA campaign: current-joint-attention-seed-stability-
 development-20261026-v1/CONSUMER.json,16bfa3f7. Six NEW fits/19269 updates,
 six OOF passes/three NET20 cells/zero retries. All nine containers,45 CLI Jobs,

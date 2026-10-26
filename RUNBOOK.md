@@ -19,6 +19,32 @@ and debits are not erased by this compaction.
 
 ## Actual Paper / Due
 
+L CURRENT installed source is2f53dcf2/releasedd6b991e after partial three-static-
+Data-host rule repair17:55:41. A/execution/current-l-three-static-data-claims-
+owned-activation-20261026-v1/ACTUAL.json. Original pair/windows/ACL preserved,
+86otherdefs exact, native definition checks PASS. No full mixed-wrapper/
+container grant, private write, KIS call or TaskRun. First absent optional XML
+Enabled-node error and bounded resume are preserved. Do not manually repeat
+apply.ps1 or force a strategy to inspect evidence. Public1ce J17 manifest still
+binds OLD L6bc and cannot qualify new2f visits; new currentL binding is assigned.
+Datahead measured next19:24, zero instances; it was not disabled or rescheduled.
+
+LATEST code authority is70193a28 under
+A/verification/current-paper-account-session-clock-recovery-20261026-v1/CONSUMER.json:
+213serialPASS/19437fullPASS26knownSKIP35warnings/eightworkers375.23s/helper0/
+Ruff/threeComposePASS/1411exact protected source-policy pins; exact C: child
+r-0086cf35/dotlease removed and18PID-starts closed. Commit a3b3f1ba pushed.
+Old ccc5/c4cee authorities below are old-source history after the near-wire
+callback-clock fix; never reuse them as the new code's fresh authority.
+Current company coexistent-native-paper-execution-runtime-v1 explicitly
+supersedes the unachieved original3-entry objective, not its request/custody
+obligations. New public1ce1a965 current4aa reader and exact historical889
+selector live in current-joint17-rw-public-reader-binding-20261026-v1.
+Early and new post1730 private scopes are both consumed. Post-window0a84cd22/
+strict0d134765 at17:33:02 finds no exact J17 registered/pending request with
+stable full native custody. Public8ed is still incomplete/UNKNOWN; do not
+invent offending historical actor identity or claim a model no-signal/fill.
+
 CURRENT J17 recovery11481bbe is installed at17:24:46UTC, not a fill:
 A/execution/current-joint17-artifact-mount-owned-recovery-20261026-v1/CONSUMER.json.
 Actual source4aa87b59/release88a89ea1/native1ba617f3/producer3c8c6d52 and

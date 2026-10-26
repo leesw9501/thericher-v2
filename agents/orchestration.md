@@ -1,10 +1,23 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, through17:29UTC Oct26. A=D:/thericher-v2/model-artifacts;
+2026-10-27 KST, through17:56UTC Oct26. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
 ## Company / Due
+
+CURRENT coexistent-native-paper-execution-runtime-v1; prior three-entry goal
+is explicitly SUPERSEDED_NOT_ACHIEVED per direction1a99ab9c/Claude limits.
+Parent installed qualified PARTIAL L3staticData-host rules17:55:41:
+source2f53dcf2/releasedd6b991e, same18:00..18:15/Oct30 pair and ACL,0instances,
+86otherdefs exact. Native source/definition checks pass; no API/private/window/
+TaskRun change or full mixed-wrapper/container claim. New publicL binding is
+assigned; old1ce J17 manifest cannot qualify newL2f. Optional stage stays
+uninstalled until exact entry-source/release/output routing is qualified.
+Intradayhead actually next19:24, not18; no gratuitous disable or trigger move.
+QQQ six-fit research CLOSED b419f22a/REJECT both context primary conditions,
+all CIDs/Jobs/lease closed, no repeated fit. Halley cost/position-aware Source
+proposal is independent next work, not an adopted numerical campaign.
 
 Throughput review17:39UTC: original GRU/TF/J17 natural windows are now past;
 their planned trade outcome was NOT achieved. J17 post17:28 kernel/container
