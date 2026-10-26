@@ -40,23 +40,61 @@ packets c4146b1c physically isolate purged future prices; old GRU caveat remains
 Synthetic engineering3eac327c measured OLD B2048~822rows/s versus FAST~269455;
 checkpoint serialization .08..16s dominates FAST compute .008s. Synthetic
 fixed-order/co-tenancy/backend contrast is not market convergence/causality.
-NEW current-h5-fast-tcn-risk-recipe-development-20261026-v1 is assigned to
-Schrodinger: seed20261027/FAST recipe, one B2048 worker initially, three new
-models, tested batch deadlines and explicit checkpoint cadence, bounded caps.
-No old partial resume/refund or new numerical start claim from assignment.
+NEW current-h5-fast-tcn-risk-recipe-development-20261026-v1 actually CLOSED
+0e18519c/sourcee09205a4: three CUDAmarketfits/1741updates/three OOFpasses
+78732rows/two new ledgers/91checks,0oldfits/technicalresumes. Market epochs
+16/15/17/best4/3/5/INNERpatience12; max96 was not a forced16epoch ceiling.
+20bp growth-4.3401%/DD8.5480% vs GRURISK-3.0561%/7.5045%: REJECT,
+though pinball improves. AllCIDs/rootPID/GPUlease closed. Owned1068.35/4800,
+elapsed1286.71/7200, no old timeout refund/convergence or active-GPU claim.
 
 OOF policy gate CLOSED_VERIFIED_REJECT at current-h5-oof-policy-gate-
 development-20261026-v1: F1+F2 fit/F3 reused83screen,20bp GATE+.2180%/DD2.8496%
 vs LOWVOL+.4012%/sameDD. Frozen LOWVOL contrast fails; RETURN+4.9220% is
 descriptive, not a post-hoc selection. Dataf40bf022/registry654cc9f9 complete.
-New same-OPEN turnover policy source a69cbf09 is adopted for four actual CPU
-cells under current-h5-risk-netted-policy-development-20261026-v1, one exact
-intake/0models/oldledgerreplays. Old20bp fee10.0339%NAV is checked arithmetic;
-static L1 savings are not measured PnL. NET_DELTA vs FULL rebuy at identical
-OPEN/target quantities,0/20bp; missing prices invalidate, not silently drop.
-Zero-cost NAV and fee identity must hold; net20growth<=cash kills positive
-after-cost hypothesis. New timing is not an old CLOSE-exit result regrade.
-All are reused historical development, not independent alpha/Paper authority.
+SameOPEN study current-h5-risk-netted-policy-development-20261026-v1 CLOSED
+2cba605f: four cells/one exactintake/0models/oldledgerreplays/53checks/Ruff.
+2020-12-30..2025-12-29 total NOT annualized growth,251cohorts: NET20+4.4455%/
+DD3.4087%, matchedFULL20-1.9244%/7.0593%, bothzero-cost+8.1318%/2.6347%.
+Allrequiredprices complete; zero-cost NAV/quantity/cost identity checked,
+6.3700%NAV savings are mechanical fees, not alpha. Fixed .10target differs
+old paidstake/CLOSEexit; those historical grades are not changed. Owned
+151.36/300/elapsed456.89/1200/allchildrenclosed. New three cheap-control
+NET20 cells RETURN/LOWVOL/uniform-eligible are separate, RISKcache not rerun.
+
+Completed source preparation: joint end-to-end cross-sectional attention on
+existing397-vector
+(63x6 past-bar channels plus19 context features, NOT397 per timestep),
+masked current cross-stock context, not fusion trained on in-sample experts.
+That preparation's zero fits is not current progress: subsequent campaign
+3803ba62 completed3CUDAfits below. Socrates completed cheap controls and
+predeclared fixed50:50GRU/TCN portfolio-weight fusion,
+A/research/current-gru-tcn-fixed-netted-fusion-predeclaration-20261026-v1/
+CONTRACT.md,4fe1d90c. Two newNET20cells only TCN/fusion, cachedGRU/controls
+reused. Declared12:39:34 before Parent inspected TCN financial readout, NOT
+before computation; all reused adaptive development, not independent alpha.
+Joint preparation5f84b923 was consumed by actual market campaign3803ba62/
+source6a5df471: THREEnewCUDAmodels/9541updates/three OOFpasses/ONEnewNET20
+cell/131checks/Ruff. Selectedepochs1/2/3, completed13/14/15/INNERpatience12.
+NET20 total growth+5.7661%/DD3.1443% versus cached RISK+4.4455%/3.4087%,
+LOWVOL+3.0505%/4.3688%; all4primary checks pass. Status is deliberately
+CLOSED_DEVELOPMENT_NOT_KILLED_NOISE_UNRESOLVED, not independent alpha/Paper
+profit or causal attention-only ablation. CLOSE5 labels versus overnight NET
+portfolio NONPARITY retained. AllPIDs/CIDs/leaseclosed,799.77/5400owned,
+457.41/600Source includes prior342.84 ONCE,1238.79/9000elapsed.
+Fixedfusion73fa6ea5 is also CLOSED_REJECT: NET20+4.2137%/DD3.2775% fails
+growth overGRU, no ratio search or duplicate forecasts/ledgers.
+
+Joint F3 current-point scope is CLOSED: one actual restore/forward100padded/
+69known,55checks/allclosed,0fits/oldpointreplay. DATED-H5-PROPOSAL1bb01c94 is
+metadata, NOT fullSDKinput: weights_session_clocks_invalid at primary
+model_paper_weights.py:347 requires observed_at<entry.open. Stamp actual
+postopen times; no backdate/Oct27 auto-roll or clock-policy change here.
+Existing preopen original Paper inputs are independent of this limitation.
+Schrodinger now owns current-2026-h5-risk-later-replay-readiness-20261026-v1
+as invokedData: source/metadata coverage and typed producer proposal only,
+no actual new arrays/modelcalls/economics. Fixed phase/year/enddate before
+outcome intake; unknown historical reuse remains, not untouched replication.
 
 Original memory/TERMINAL19 fixed-half point is CLOSED. Its cached early-profile
 derivative is INSTALLED as a limited future pilot, not a runtime result:

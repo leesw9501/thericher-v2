@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-26 KST, integrated parallel results through12:24UTC.
+2026-10-27 KST, integrated parallel results through15:11UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Codex Orchestrator -> roles. Parent owns shared MD/Git.
@@ -16,6 +16,38 @@ This is current working memory, not a launch diary. Full preceding history is
 Git0438ecd:HANDOFF.md and exact immutable consumers. Closed failures/debits
 stay unchanged. Abbreviated hashes below are retrieval aids, not authority in
 place of the full referenced manifest. An assignment is not an active worker.
+
+Current P0 is the reproduced public Windows-path/Linux namespace fault, not
+model profitability or permission. Namespace Consumer d20a801b at
+A/execution/current-native-public-reference-namespace-recovery-20261026-v1
+qualifies exact four public aliases in Windows and image2ff Linux: six cases,
+737SDK files unchanged, sourceb6cf1904/releaseb5bb781c,0private/API/Task effects.
+Leibniz owns TF original-root cutover/exact technical-latch disposition;
+its entry14:20..14:50UTC has expired, paired Oct30 exit must stay compatible.
+Socrates prepares exact J17 then L source-specific aliases before17:00/18:00;
+TF proof cannot impersonate another source. Installation still needs actual
+readback; no new entry window, counter/bank reset or unknown-order substitute.
+Faraday repairs Docker safe-metadata JSON framing, then one separately bounded
+optional future-definition activation. Old R4 remains the evidenced deployment;
+same app follow-up stays on its old pins until actual new installation proof.
+J17 readiness5cf67874 is also CLOSED:6actualhost/Linuxcases/737SDKexact,
+source90a228cc/outer889a011d, actual worker-generated release9e8524ee,
+not pretty test-envelopefd31deb6. J17-READINESS46c3373f binds11public files;
+actual deployment remains separate. S now prepares L without Task effects.
+Schrodinger's 2026 acquisition97343f3c CLOSED:1POST/23GET/2300rows/43of47
+potential asset-days filled,4remaining/0overwrite/conflict/allworkersclosed.
+Raw M only. Current packet producer is separately assigned for40cohorts/
+4000keys Jan07..Oct16entries/lastCloseOct22; features separate from outcomes,
+no inference/economic cells yet. Required missing data is not imputed or
+silently dropped. Unknown reuse is not fresh/PIT/TR/finality evidence.
+
+Fresh compatibility Consumer6d7aaeb8 at
+A/verification/current-native-public-reference-recovery-20261026-v1:
+185serialPASS/19412fullPASS26knownSKIP35warnings/389.10s/8actualworkers,
+helper0/1409protectedexact/23observedPID-startsclosed/Ruff/threeComposePASS.
+Helper verifies/removes its exact safe current child and lease; no interval
+entry remains. Its basename was not separately retained; inactive siblings
+were not deleted. External namespace/runtime code needs its own native proof.
 
 Parent finite target-progress API and public cohort attribution are committed/
 pushed c7d04c86, not a deployed Paper upgrade. Downside research is CLOSED
@@ -60,17 +92,26 @@ Latest completions supersede those preparation statuses:
   Checkpoint serialization .08..16s dominates FAST batch compute .008s.
   Different numerical backend/warmup/co-tenancy prevents a causal speed or
   market-convergence claim. Batch deadlines/checkpoint tail are now tested.
-  Schrodinger prepares NEW fast-TCN recipe/seed, not an old partial resume;
-  no actual new training start has yet been evidenced at this integration.
+  NEW FAST TCN actually started12:31UTC and is CLOSED0e18519c: three market
+  fits/1741updates/three OOF forwards78732rows/two first ledgers/91checks.
+  At20bp growth-4.3401%/DD8.5480%, worse than cachedGRU-3.0561%/7.5045%:
+  REJECT this frozen contrast. Epochs16/15/17, best4/3/5, INNERpatience12;
+  not arbitrary16epochs or convergence. All CIDs/rootPID/GPUlease closed,
+ 1068.35owned upper/4800,1286.71elapsed/7200. Old timed-out costs unchanged.
 - OOF tree gate CLOSED_VERIFIED_REJECT: current-h5-oof-policy-gate-
   development-20261026-v1/CONSUMER.json. F3 20bp growth+.2180%/DD2.8496%
   versus LOWVOL+.4012%/sameDD; fails its frozen LOWVOL comparison. Positive
   growth on this reused screen is not a winner/independent alpha. Data
   producer f40bf022 is complete; no missing-label preparation remains.
-- Turnover source a69cbf09 validates old20bp fees at10.0339% of initial
-  research NAV. Static-price L1 savings are NOT actual turnover/PnL. Socrates
-  now owns four new same-OPEN net-delta/full-rebuy x0/20bp cells, one intake,
-  no model/old-ledger replay. Original CLOSE-exit failures remain unchanged.
+- SameOPEN netting study CLOSED2cba605f, four actual cells/53independent
+  checks/Ruff/allprocessesclosed. 2020-12-30..2025-12-29,251H5cohorts,
+  total NOT annualized growth at20bp: NET+4.4455%/DD3.4087%, FULL-1.9244%/
+ 7.0593%. Zero-cost NAV/target quantities agree; fee savings exactly6.3700%
+  initialNAV. Price coverage complete, no dropped held exit prices. Fixed
+  .10 research target is NOT Paper's private initial-tenth bank. Different
+  old CLOSE-exit timing/paidstake results are unchanged. Reused-history
+  positive performance is not independent alpha; simple netted controls are
+  separately assigned, no duplicate RISK cell/model/price acquisition.
 - Native entry-skip prototype bed5564f and actual host cold binding09d59a0b
   passed invented first-skip/one-effect-stop, one token/factory/budget. Failed
   underfunded fixture/debits retained; real accounts/Tasks unchanged. Faraday
@@ -78,12 +119,68 @@ Latest completions supersede those preparation statuses:
 - Legacy custody decoder e24c576e is source/SYN-ready6cases/41checks, no new
   actual snapshot. Operational labels do not establish model-performance or
   exit bindings; existing three positives/oneunknown stay unmapped.
-Current four disjoint packages: Leibniz token-path readiness from safe source/
-Task metadata; Schrodinger new FAST TCN; Faraday optional release preparation;
-Socrates same-OPEN netting experiment. Parent integrates/Git. No operator hold.
+Token-path audit8f2a7c0a/52checks confirms original GRU/TF/J17 and observer
+share D timing/gate/60s floor, valid-token reuse only within a visit. Actual
+collision NOT observed; :39/:40 phase alone is not failure. ClaudeNO_GO/
+measurement_required opposes speculative changes, not normal Paper authority.
+No POST/credentials/timing-state/Task changes in that audit.
+Latest completed research: joint cross-sectional expert3803ba62 trained THREE
+new CUDA models/9541updates, selected1/2/3 after13/14/15epochs/INNERpatience12.
+NET20 total growth+5.7661%/DD3.1443%, four frozen comparisons pass, but
+NOISE_UNRESOLVED/reused development, NOT independent alpha/Paper PnL.
+AllPIDs/CIDs/leaseclosed,131checks/Ruff,799.77/5400owned including old342.84
+preparation ONCE. Input397 means63x6 raw lags plus19context, not397/timebar.
+Fixed50:50GRU/TCN fusion73fa6ea5 REJECT: +4.2137%/DD3.2775% does not exceed
+GRU growth. No new ratio or rerun. Declaration4fe1d90c preceded Parent's
+reading TCN economics, NOT producer computation or untouched confirmation.
+Joint current point is CLOSED: one actual F3 restore/forward100padded slots/
+69known,55checks/allclosed,0fits. Metadata proposal1bb01c94 is NOT full SDK
+input: weights_session_clocks_invalid, observed_at is after today's OPEN.
+No backdating/next-day auto-roll; this consumer limit is not a Paper authority
+hold. Existing preopen original inputs remain intact.
+
+## Current Runtime Fault / Priority
+
+GRU natural first entry13:40 public result1963c43b is unavailable/
+worker_recovery_required; later visits are recovery seed projections, NOT
+submission/fill proof. At13:46 ONE admitted stable RO snapshot found no exact
+GRU model record/accepted submit/fill/current owned linkage. Native cumulative
+20scopes/7positive/47intents/41attempts/40ack/40positive fill states/oneunknown
+remain dated facts, not today's trades. Legacy operating Portfolio aggregate
+has3positive/mixed input history; it overlaps model attribution, never add it
+or call it single-model performance. Old F9 reservation unchanged.
+
+P0 FIRSTCAUSE-CALLBACK.json under current-gru-paper-first-cause-recovery-
+preparation-20261026-v1 deterministically reproduces exact image2ff/release
+e918/nativeSourceb0b63a29 failure: runtime.effect_release.checked rejects a
+host Windows verifier path in Linux (source_pin/ValueError, before inner
+failure hook).737 actual SDK files match. No actual visit traceback survived;
+this is exact source/image/release reproduction consistent with the fallback,
+NOT historical-zero-wire/auth/current-account evidence. No KIS/private state
+was used in those source probes.
+
+Socrates owns current-native-public-reference-namespace-recovery-20261026-v1:
+exact FOUR public verifier RO aliases, same hashes, host+guest validation,
+private paths/broker logic/input/policy/budget/counters unchanged. No wildcard
+or skipped check. Runtime source pins may be explicitly superseded only after
+qualification; original immutable versions remain history. Prioritize future
+TF14:20..14:50 then J17/L/exits, not a rushed substitute GRU opportunity.
+Qualified mapping/preparation is not actual deployment or a private HOLD reset.
+
+Leibniz owns dated GRU observation closure (ONE actual snapshot consumed).
+Faraday owns OPTIONAL future Task-definition activation, not a bank writer.
+Earlier3e415a1e/caller recovery are deferred/not installed; original R4 stays
+enabled. Parent Claude d4ef7f35 GO_WITH_LIMITS separates this inactive future
+Task's mutable-definition scope from whole-bank reader census. Only exact
+old optional owner must be quiescent; installer cannot read private state,
+start a Task or change triggers/ACL. Future runtime/private-reader controls
+remain unchanged. Actual enabled/readback proof still required.
+Schrodinger owns 2026 later-period Data readiness (source/metadata only),
+not new model training or an untouched-holdout claim. Parent shared MD/Git.
+No operator decision currently; one lane's fault does not stop the others.
 Company entry objective UNFINISHED.
-Actual future11 Paper
-Tasks/original inputs/counters are unchanged. Previous closed worker facts
+Original input/policy/counters/windows remain unchanged; no runtime repair
+deployment is inferred from preparation. Previous closed worker facts
 below apply to their named scopes, not these new packages.
 SPY MODP1 historical reference ade959b7/5bf75db9 was recovered from existing
 M bytes with0HTTP; future H20 prices remain unobserved. Strategy proposal

@@ -19,26 +19,54 @@ Parent owns shared policy/documents/integration/Git. AGENTS owns authority.
 | Additional L QQQ H5 | Oct26 18:00..18:15 | Oct30 19:55..20:00 |
 | Optional memory/terminal one-visit pilot | Oct26 18:30..18:35 | Nov20 20:15..20:40 |
 
-Preserve original8 image2ff/source/release/input/policy/identity/native/ops/
-counters and exact windows. No manual duplicate Task or strategy opportunity.
+Preserve original input/policy/identity/native/ops/counters and exact windows.
+Original8 image2ff/source/release pins below are immutable HISTORY, not a ban
+on a qualified technical repair: exact image/source/release now reproduces
+host Windows public-verifier paths rejected in Linux before worker setup.
+S owns narrowly qualified FOUR-public-ref namespace recovery; NEW source/pins
+only after host+guest samehash RO proof and positive owned closure. Never
+private-path remap, skipped validation, fake old provenance, HOLD/bank reset
+or substitute intent. No manual duplicate Task or strategy opportunity.
 A missing or future receipt is unknown. L is additional, not company completion.
 
 ## Ready / Owned / Due
 
-- Current disjoint packages through12:24UTC, not company completion:
-  Leibniz token-path/observer-phase source readiness; Schrodinger NEW FAST
-  TCN recipe; Faraday OPTIONAL entry-skip release preparation; Socrates four
-  sameOPEN net-delta/full-rebuy x0/20bp CPU cells. Parent shared MD/Git.
-  No new training or deployment is inferred from assignments. Original11
-  Paper Tasks unchanged. Exact owners/caps/source pointers in stateboards.
+- Current disjoint packages through15:11UTC Oct26, not company completion:
+  Leibniz TF original-root namespace cutover/latch disposition/compatible exit;
+  Schrodinger2026 frozen comparison packets; Faraday Docker safe-metadata JSON
+  framing then OPTIONAL future-definition activation; Socrates exact J17/L
+  namespace readiness. Parent shared MD/Git. No installation
+  inferred from assignment. Inputs/identity/triggers/budget unchanged.
+  Actual GRU13:40 public1963c43b unavailable/recovery_required, dated13:46
+  strict snapshot finds no exactGRUfinancial linkage. Later seed projections
+  do not qualify as actual recovery/fill; Company UNFINISHED. Reproducer
+  FIRSTCAUSE-CALLBACK under current-gru-paper-first-cause-recovery-preparation-
+  20261026-v1 matches737SDKfiles/image2ff/releasee918, not actualtraceback.
   Downsidef6ccbb64 completed6CUDAfits; currentpoint16eb8ee4 completed two
   actual restores/forwards138rows. TCNcd3440c0 three timed-out attempts closed,
   zero completed; new synthetic engineering3eac327c informs a distinct recipe,
-  not old partial resume. OOF tree gate completed/rejected vs LOWVOL on reused
-  F3, not an independent winner. Oldfee10.0339%NAV motivates new netting
-  contrast, not old result regrading. Host cold09d59a0b first-effect-stop
-  passed only invented data; optional upgrade is not installed. Existing SPY
+  not old partial resume. New FAST0e18519c actually completed3CUDAfits/
+  1741updates/3OOF78732rows/91checks, REJECT20bp-4.3401%/DD8.5480% vsGRU;
+  allCIDs/PID/leaseclosed, no ongoing worker from it. SameOPEN2cba605f NET20
+  +4.4455%/DD3.4087% over2020-12-30..2025-12-29 (NOT annualized), no oldgrade
+  change; cheapcontrols3436a2a3 also closed. Fixed blend4fe1d90c declared
+  before Parent inspected TCN economics, not untouched/independent evidence.
+  Host cold09d59a0b first-effect-stop passed only invented data; optional
+  upgrade actual installation still unobserved. Existing SPY
   future Task e9466a1c IS installed Nov20, no current/future HTTP result.
+  Joint3803ba62 has since completed3CUDAfits/9541updates/131checks/allclosed:
+  NET20+5.7661%/DD3.1443%, frozen4checks pass but noise unresolved/reused.
+  Fixedfusion73fa6ea5 REJECT+4.2137%/DD3.2775% vsGRUgrowth; no ratio rerun.
+  Jointpoint55checks/one actualrestoreforward69known is metadata only:
+  fullSDKpostopen clock invalid, no backdate/Oct27 auto-roll/oldinput swap.
+  Namespace d20a801b is now host+Linux qualified6cases/737SDKexact,
+  TFsourceb6cf1904/releaseb5bb781c. TF window already ended14:50; preserve
+  original identity/counters/exit, not a rushed replacement opportunity.
+  J17 readiness5cf67874 also qualified6actualcases/737SDKexact; actual
+  worker release9e8524ee, not prettyfd31. Code cutover still separately owned.
+  New2026 acquisition97343f3c actually1POST/23GET/2300rows/43of47gapsfilled,
+ 4remaining/0overwrite/conflict/allclosed. Separate packet build now assigned,
+  no model/inference/economics yet or claim of untouched outcomes.
 
 - Parent repaired the EXISTING same-chat follow-up oct26-paper. Nominal
   Oct26 18:45UTC/Oct27 03:45KST, actual saved18:42:59UTC/03:42:59KST.
@@ -120,10 +148,12 @@ netPnL. Deadlines/task exits/missing evidence never release reservations.
 Operational early exit is NON_PARITY with analytical C[e19]; later exact
 unknown-request recovery remains possible under actual official sessions.
 
-Latest source authoritybb0b8ca4 under current-finite-cohort-progress-
-20261026-v1/CONSUMER.json:210serialPASS/1knownSKIP,19412fullPASS/26knownSKIP/
-35warnings/8actualworkers/392.44s/helper0/all20PIDs+currentC scratch+lease
-absent/1409digests exact/Ruff/threeComposePASS. Code committed/pushedc7d04c86;
+Latest fresh compatibility6d7aaeb8 under verification/current-native-public-
+reference-recovery-20261026-v1/CONSUMER.json:185serialPASS/19412fullPASS/
+26knownSKIP35warnings/8actualworkers/389.10s/helper0/23observedPIDsclosed/
+1409digests exact/Ruff/threeComposePASS. Exact helper-owned safe cleanup0;
+ephemeral child basename not separately retained, inactive siblings unchanged.
+Code committed/pushedc7d04c86;
 pure APIs/native invented tests do not prove actual Paper host deployment.
 For docs/external-only continuation reuse ONLY with exact protected source
 digests and fresh checks of changed external code. No full-suite rerun for

@@ -47,10 +47,61 @@ snapshot. Next existing admitted RO read may extend exact SPY/QQQ/portfolio/
 default-NAS operational custody classification in the SAME RAM book/facts.
 Mixed history stays unmapped; labels are not model PnL or exit proof. Current
 three positive scopes/oneunknown remain unmapped until actual strict binding.
-Leibniz now owns current-paper-token-phase-readiness-20261026-v1, source and
-safe Task metadata only. Actual snapshot observer PT4M from12:23UTC may be
-near original entry phases, but token contention is unproven: inspect actual
-reuse/state paths before any repair.0POST/KIS/Task invocation/sourcechanges.
+Token-phase audit CLOSED8f2a7c0a/52checks: originalGRU/TF/J17 and observer
+share timing/gate/60s floor, valid token reuse withinvisit only. Phase :39/:40
+alone is not failure; actual <60s/busy claim needed. No measured collision,
+POST/credentials/tokenstate/Task changes. ClaudeNO_GO/measurement_required
+rejects speculative modification, not ordinary Paper execution authority.
+Leibniz now integrates legacy decoder into a derivative admitted postentry
+reader. Initial SYN pre-create role_capability_unreviewed/0containers retained;
+one narrow reviewed-actor fix allowed, no wildcard or actual private read.
+Faraday's OPTIONAL release candidate f4dd1991/5ba4d309 was adopted by Parent
+for entry-only activation. Reader namespace942abc5c/e1e90d06 must bind new
+outerTaskSource and runtime19902 explicitly, old recovery/exit selectors and
+strict SPEC2827 unchanged. Earlier3e415a1e and caller recovery deferred,
+0successful registrations/oldR4enabled/80definitions unchanged; old300owned
+compliance unproven, never regraded/refunded. Parent Claude d4ef7f35 permits
+ONLY narrow future Task-definition edit admission for this installer; no
+private read/API/Run, old optional-owner positive closure, unchanged trigger/
+ACL and staged readback. It is NOT bank-reader or future runtime authority.
+Current future-definition activation remains unproven until actual readback.
+Docker JSON framing is now PROVEN_JSON_VALUE_STREAM_CONTRACT_SOURCE_ONLY:
+53actualsafe documents/IDs matched/one probe, native6cases,0private/API/Task.
+Correct parser adoption is not Task deployment; old R4 remains evidenced.
+
+Public namespace qualified Consumerd20a801b:6Windows/Linuxcases/737SDKsame,
+TFnativeb6cf1904/releaseb5bb781c. Leibniz owns original-root actual cutover/
+exact technical-marker disposition and compatible paired exit. TF entry
+expired14:50UTC; no replacement opportunity. J17 readiness5cf67874 also
+CLOSED6actualcases/11publicfiles, native90a228cc/outer889a011d and actual
+worker-generated release9e8524ee, not pretty testfd31. J17-READINESS46c3373f
+is handed directly to Execution; no actual installation inferred. Socrates
+now prepares L separately. All original private roots/counters/requests/F9,
+financial guards/inputs/policy/windows unchanged by public-source readiness.
+
+## Actual GRU / P0 Source Repair
+
+At13:46 ONE stable admitted snapshot: no exact original GRU record/submit/
+accept/fill/current-owned link observed. Old20scopes7positive/47intents41attempts/
+40ack40cumulativefillstates/oneunknown unchanged, not today's or broker totals.
+Operating Portfolio aggregate3positive/mixed history overlaps model table,
+never sum again or attribute single-model PnL. F9 remains UNKNOWN-HELD.
+Natural GRU public1963c43b unavailable/worker_recovery_required; subsequent
+recovery seed_projection_only is not actual reconciliation or a fill. PT4M
+window13:40..14:10; source-safe task exit alone is not cause/completion.
+
+Socrates exact source/image/release reproduction: nativeb0b63/releasee918/
+image2ff rejects host Windows public verifier path in Linux at
+runtime.effect_release.checked(source_pin).737 SDK files match; no actual
+visit traceback retained. Root cause is deterministic and consistent with
+fallback, not new private-account/auth or zero historical-effects proof.
+P0 current-native-public-reference-namespace-recovery-20261026-v1 prepares
+exact FOUR public RO aliases with same SHA checks, host+guest native proof,
+private paths/ledger/inputs/policy/counters/budget unchanged. Old source pins
+are history; NEW runtime pins only after qualification. No hash bypass/global
+path remap/unknown reservation release or fresh control root to escape HOLD.
+Host transport recovery latch needs source-specific no-effect evidence, never
+infer safe reset from generic unavailable, missing record or counts.
 
 NEXT oct26-three-candidate-paper-entry-runtime-v1 is UNFINISHED.
 Original image sha256:2ff53eff188570db5ab078bcf06904c85ed8412d8b80a5147af34cab4c759df3.

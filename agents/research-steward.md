@@ -20,14 +20,31 @@ ledgers,2144.46owned upper retained; all30Jobs/containers/lease closed. Tiny
 native completion did not predict full-batch time. New engineering3eac327c
 is CLOSED synthetic-only; FAST B2048~269455rows/s vs OLD~822, checkpoint
 serialization cost .08..16s vs FAST .008s batch, not market convergence.
-Schrodinger now prepares NEW current-h5-fast-tcn-risk-recipe-development-
-20261026-v1: seed20261027/FAST backend, one B2048 worker first, three models,
-maxfour process starts only exact predeclared one technical resume inside
-unchanged caps, not an old partial retry. Ready resources need measured
-headroom; assignment alone is not evidence of an active CUDA worker.
+NEW FAST recipe actually CLOSED0e18519c/sourcee09205a4: three CUDA marketfits/
+1741updates,96maxepochs/actual16,15,17/best4,3,5/INNERpatience12. No technical
+resume/oldpartial/oldfit replay. Fit walls92.01/129.91/177.13s, peak allocated
+495945728/532190720/574615040bytes. AllCIDs/rootPID/GPUlease absent,1068.35
+owned upper/4800,1286.71elapsed/7200.20bp-4.3401%/DD8.5480%, REJECT vsGRU;
+no active numerical worker or convergence claim from this closed family.
+Joint cross-sectional campaign3803ba62 actually completed3CUDAfits9541updates,
+chosen1/2/3 after13/14/15epochs. Fit walls55.10/76.52/100.30s, peaks501034496/
+568648704/636457472bytes; RAM counters/fullcheckpoint every16, no perbatch D
+fsync guarantee. NET20+5.7661%/DD3.1443% passes4checks, noise unresolved on
+reused history.131checks/Ruff/allPIDs/CIDs/lease absent. Owned799.77/5400/
+Source457.41/600 includes prior342.84ONCE; elapsed1238.79/9000.
+Joint current point also CLOSED: one restore/forward100padded/69known,
+55checks/allclosed,0training. Metadata only/fullSDKpostopen ineligible, no
+backdate/automaticroll/rerun. Schrodinger's 2026Data readiness92ed2a2d is
+CLOSED40cohorts/4000keys/47potential asset-day gaps. Actual bounded gap
+acquisition97343f3c then filled43/47,1POST/23GET/2300rows/allworkersclosed.
+Feature/outcome-separated packets are the new disjoint preparation before a
+frozen later-period comparison; no model/economic replay yet or active fit.
+No dummy load or repeat of completed fits.
 MetaGate CPU campaign CLOSED_VERIFIED_REJECT; registry654cc9f9 was appended
-once by Steward. New same-OPEN netting CPU four-cell campaign requests its
-own complete freeze/registry binding without blocking independent GPU work.
+once by Steward. SameOPEN netting CLOSED2cba605f/fourcells/positivecash,
+no models/GPU, allprocessesclosed. New three cheap-control NET20 cells and
+later two fixed50:50GRU/TCN fusion cells have distinct finite contracts and
+one existing-registry binding each before intake, without replaying RISK.
 Completed training below remains closed, not a resource-utilization queue.
 
 Previous batch12NEWmarketGPUfits+4nativeGPUtoyfits completed ONCE:

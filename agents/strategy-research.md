@@ -42,13 +42,43 @@ Turnover source a69cbf09 at current-h5-risk-turnover-policy-preparation-
 turnover/PnL. Kernelb10507cc/contractd78d0efc: same rebalanceOPEN and target
 quantities, NET_DELTA vs FULL rebuy x0/20bp, same terminalCLOSE, cash>=0.
 Four invented cases/47checks+42independent/Ruff/ClaudeADOPTlimits passed.
-Socrates now owns current-h5-risk-netted-policy-development-20261026-v1:
-one complete price intake/four cells/one CPU worker/0models/oldledgerreplay,
-300owned/1200elapsed. Strongest kill net20growth<=cash; mechanical fee savings
-are not alpha. Different old CLOSE-exit timing cannot be regraded. Missing
-held exit prices are unavailable, not dropped. No market result yet evidenced.
+Actual current-h5-risk-netted-policy-development-20261026-v1 CLOSED2cba605f:
+one priceintake/fourcells/0models/oldledgerreplays,53independentchecks/Ruff/
+allchildrenclosed.2020-12-30..2025-12-29 total NOT annualized growth at20bp:
+NET+4.4455%/DD3.4087%, FULL-1.9244%/7.0593%. Zero-costboth+8.1318%/2.6347%.
+Zero-cost NAV/target quantities/cost identity and allrequiredprices verified;
+6.3700%NAV fee saving not alpha. Old CLOSEexit/paidstake grades unchanged.
+Owned151.36/300/elapsed456.89/1200, no positive-Paper/profitability promotion.
+Socrates completed three NEW NET20 controls RETURN/LOWVOL/uniformeligible,
+reusing exact RISKcache, no replay/newmodel. Then completed fixed50:50GRU/TCN
+portfolio-weight blend: Parent source4fe1d90c froze12:39:34 before Parent
+readTCNeconomics, not before computation. Exactly two newNET20cells TCN and
+fusion, cachedGRU/controls reused; individual profitability not prerequisite
+for exploratory blend, no ratiosearch/independent alpha/Paper authority.
 
 No additional strategy numerical package is queued solely to fill the GPU.
+Fixed50:50fusion73fa6ea5 is CLOSED_REJECT: NET20+4.2137%/DD3.2775% does not
+exceed GRU growth. No ratio tuning/extra projection/ledger rerun. Joint expert
+3803ba62 is independently CLOSED development screen, not new Strategy dispatch.
+Whole-share readiness Source/SYN is also CLOSED:6real native pure calls,
+no account/KIS/private/controller. g=.005 is a TOTAL-original-basis fraction,
+not a second fraction of approved A=B/10; ideal equalN flat-owner threshold
+A>=20*N*L plus actual remaining capacity. A zero target can be reported as
+target_already_satisfied even when flat, so reason alone proves no holdings.
+Source-only options for NEW cohorts do not change today's immutable sizing.
+
+Current invoked Execution P0, not more model tuning: exact GRU image2ff/
+nativeSourceb0b63/releasee918 reproduces Windows public ref -> Linux checked
+source_pin failure. Actual traceback unavailable, no account/wire conclusion.
+current-native-public-reference-namespace-recovery-20261026-v1 is CLOSED
+d20a801b:6host/Linuxcases/737SDKexact, TFsourceb6cf1904/releaseb5bb781c,
+no private/API/Task effects. Leibniz owns TF actual cutover/compatible exit;
+entry14:20..14:50 expired. J17 preparation5cf67874 is CLOSED and delivered
+directly to Execution, actual worker release9e8524ee rather than prettyfd31.
+Socrates now owns current-L-public-reference-namespace-preparation-20261026-v1.
+Exact four public aliases/source/release only, no private/bank/counter changes.
+J17/L/future exits priority; do not repeat broken schedules
+without first-cause/reproducer or invent a rushed substitute GRU opportunity.
 Current memory/TERMINAL19 proposal79d99cf9 was consumed by the limited
 installed early-profile pilot57c43f59, not a completed fill/basket. Separately frozen
 future benchmark8bf86e20 have higher immediate decision value than another

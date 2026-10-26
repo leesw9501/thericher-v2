@@ -40,12 +40,13 @@ Legacy decoder6a4d9ff7/catalogec6beb00 at current-paper-legacy-owner-
 attribution-preparation-20261026-v1 is source/SYN-ready6fixtures/41checks.
 Its INTEGRATION.json names the next existing reader's SAME RAM book/facts
 hook; operating custody labels do not prove model PnL or a paired exit.
-Fresh combined source authority: bb0b8ca4 CONSUMER.json in the finite-progress
-root,19412fullPASS26knownSKIP/8actualworkers/392.44s/1409exact sources,
-210serialPASS1knownSKIP/Ruff+3ComposePASS/all20PIDs+currentC scratchlease absent.
-Reuse only on exact protected digest identity; external changes need their own
-native checks. Initial helper argument binding failed before any pytest worker;
-corrected explicit -Workers/-PytestArgs run is the fresh authority, no bypass.
+Fresh compatibility: A/verification/current-native-public-reference-recovery-
+20261026-v1/CONSUMER.json,6d7aaeb8.185serialPASS/19412fullPASS26knownSKIP/
+35warnings/8actualworkers/389.10s/helper0/1409exact/23PID-startsclosed/Ruff/
+threeComposePASS. Safe exact child/lease cleanup is verified by helper0 plus
+no interval-created entry left; basename not independently retained, no old
+sibling deletion. Reuse only exact protected identity. External changed code
+still needs actual native checks; this suite does not prove its deployment.
 
 Native entry-skip adapter bed5564f is a DIFFERENT domain bridge, not a use of
 generic traversal completion as a fill. Host cold09d59a0b at
@@ -71,6 +72,17 @@ Task invocation, source rebinding or replacement order merely to observe them.
 Each original cohort .005TOTAL ceiling is inside the ONE original tenth.
 Other R5/HGB/conditional oldJ17/GRU67 writers are not erased or assumed flat.
 Original8 is NOT every runnable same-bank path.
+
+P0 namespace repair is qualified, not a blanket relaunch command:
+A/execution/current-native-public-reference-namespace-recovery-20261026-v1/
+TF-READINESS.json is the exact code-only copy/config/release handoff. Consumer
+d20a801b has6Windows/Linux cases/737SDKexact, nativeSourceb6cf1904 and
+NAMESPACE-RELEASEb5bb781c. Original four public proofs remain history, not
+new-source qualification. Never copy private/OPS/counters/markers into a new
+root. Leibniz owns actual TF cutover/latch disposition and compatible exit;
+TF entry ended14:50UTC. Socrates prepares J17/L-specific bindings. Do not
+reuse TF proof for them or create a new entry opportunity. Existing technical
+HOLD needs exact request disposition, never generic deletion or bank reset.
 
 At Oct26 02:07:23UTC all8 were enabled/Ready/0instances, exact XML/effectiveACL/
 nexttimes. Metadata is dated, not future process closure/acceptance/fill.

@@ -38,8 +38,23 @@ HTTP/Tasks; source process and children closed. Engine actually consumed it,
 so no missing-label preparation remains. Six isolated TCN label packets
 c4146b1c are also complete/reusable without rebuilding old training inputs.
 Faraday is currently assigned an Infra/Execution optional release preparation,
-not a new Data collector. Socrates owns the disjoint exact same-OPEN netting
-price-tape producer/consumer; existing69/25/70/retention owners unchanged.
+not a new Data collector. SameOPEN netting/control/fusion producers are CLOSED,
+not a ready rebuild. Schrodinger's invokedData readiness is CLOSED
+ENGINE-CONSUMER92ed2a2d under current-2026-h5-risk-later-replay-readiness-
+20261026-v1:40cohorts/4000keys, same100slots/63x6lags+19context, phase mod5==3,
+Jan07..Oct16entries/lastCloseOct22;47potential asset-day gaps. Actual bounded
+acquisition97343f3c at current-2026-h5-fixed-gap-acquisition-20261026-v1 is
+CLOSED1POST/23GET/2300rows/43potentialkeysfilled/4remaining,0overwrite/conflict,
+65.20sactualworker/105.27ownedupper/240, allworkersclosed. Raw M only;
+no account/order/live/model/economic cells. Today's arrival is not historic
+availability/finality/PIT/TR. Its60s scoped floor is conservative delegated
+calibration, NOT proof of official one-minute wording; primary search excerpt
+currently says1/s. Legacy300s defaults/frozen contracts unchanged.
+Next assigned current-2026-h5-frozen-comparison-packets-20261026-v1 separates
+feature-only and outcome/held-price packets. Same40cohorts/100slots/4000keys,
+no imputation/window shrink, missing REQUIRED remains DATA_UNAVAILABLE. No
+model inference/ledgers/registry before its qualified handoff. Existing69/25/70/retention
+owners unchanged; Data is not a private-custody writer.
 
 A/data/current-memory-terminal-half-forward-capture-readiness-20261026-v1/READINESS.json,
 SHA5d0bc0f86cf30591e89ee838d8ac38c385f6d6f54a35d4d95152f74220d6036f.

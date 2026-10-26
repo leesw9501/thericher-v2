@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-26 KST, through12:24UTC. A=D:/thericher-v2/model-artifacts;
+2026-10-27 KST, through15:11UTC Oct26. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns shared MD/Git, AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. Assignment is not active runtime.
 
@@ -27,11 +27,11 @@ Assignments below do not prove that a numerical worker has started.
 
 | Owner | Current package / actual state |
 | --- | --- |
-| Parent / 총괄 | Integrate results and exact existing Paper opportunities; prospective H5 reference457e5caa registered before OPEN with0outcomes. No current Task/image replacement. |
-| Leibniz / 실행 | current-paper-token-phase-readiness-20261026-v1: exact token reuse/guard paths versus actual PT4M observer phase, source/metadata only. No inferred conflict or automatic rate/Task change. |
-| Schrodinger / 엔진·연구 자원 | current-h5-fast-tcn-risk-recipe-development-20261026-v1: new seed/FAST backend, one B2048 worker first, three finite models/checkpoint deadlines. Actual fit start not yet evidenced; sole GPU/registry owner. |
-| Faraday / 데이터·임시 Infra | current-entry-skip-pilot-release-preparation-20261026-v1: source-attested OPTIONAL pilot upgrade/rollback from passed host cold09d59a0b; no actual Task install or original8 change. |
-| Socrates / 전략·임시 엔진 | current-h5-risk-netted-policy-development-20261026-v1: sameOPEN NET_DELTA/FULL rebuy x0/20bp, one tape intake/four CPU cells,0models/oldledgerreplay. |
+| Parent / 총괄 | Integrate/Git and qualified public-namespace runtime repair; no fill/profit inference from research. Future-Task edit reviewd4ef7f35 separates mutable-definition ownership from bank-reader admission, not broker authority. |
+| Leibniz / 실행 | current-timesfm-public-namespace-owned-recovery-20261026-v1: original-root code cutover, exact technical latch disposition and compatible paired exit. Entry window ended14:50, no substitute. Prior GRU observationb03317f2 CLOSED. |
+| Schrodinger / 엔진·연구 자원 | Acquisition97343f3c CLOSED1POST/23GET/2300rows/43of47gapsfilled. New current-2026-h5-frozen-comparison-packets-20261026-v1 features/outcomes-separated producer,0inference/economics. Sole GPU/registry owner; no active fit inferred. |
+| Faraday / 데이터·임시 Infra | current-docker-safe-metadata-json-contract-recovery-20261026-v1, then separately frozen current-entry-skip-json-contract-parent-activation-20261026-v1. Correct whole-output JSON parsing before actual Task staging. Earlier activation NOT installed; R4 remains actual. |
+| Socrates / 전략·임시 실행 | J17 readiness5cf67874 CLOSED6actualcases/737SDKexact/11publicfiles, worker-produced release9e8524ee. New current-L-public-reference-namespace-preparation-20261026-v1, no Task effects. No source borrows another cohort's proof. |
 
 New roots are under A/execution, A/data or A/research respectively. Closed
 training/ledgers are not rerun. SEC contact remains an optional isolated gap.
@@ -65,7 +65,53 @@ The company still needs original natural runtime closure; this is not deployment
   factory/budget, no actual private/KIS/Task. Underfunded prior failed case
   stays charged. Legacy e24c576e source/SYN ready; no new custody snapshot.
 - Turnover a69cbf09 checked old20bp fees10.0339%NAV; source/SYNready four
-  sameOPEN cells. Static L1 proxy is not a market performance result.
+  sameOPEN cells were consumed by CLOSED2cba605f. NET20+4.4455%/DD3.4087%
+  versus matchedFULL-1.9244%/7.0593%; zero-cost NAV/quantity/fee identity,
+  53checks/allclosed.2020-12-30..2025-12-29 total NOT annualized, not alpha.
+- SameNET20 cheap controls3436a2a3 CLOSED/53checks: LOWVOL+3.0505%/DD4.3688%,
+  uniformeligible+2.8826%/5.7114%, RETURN-4.6598%/16.7358%. CachedRISK+4.4455%/
+ 3.4087% passes frozen incremental screen; no RISK/oldledger replay or model
+  promotion. Reused nonPIT history cannot establish independent alpha.
+- FAST TCN0e18519c actually completed3fits/1741updates/3OOF78732rows/2ledgers/
+  91checks, REJECT at20bp-4.3401%/DD8.5480% vsGRU. AllCIDs/PID/lease closed.
+  Native/earlystop/low footprint, not an ongoing GPU worker or arbitrary16cap.
+- Token-path audit8f2a7c0a/52checks CLOSED: shared60s floor/within-visit reuse,
+  no measured collision. ClaudeNO_GO/measurement_required is against changing
+  controls without evidence, not a Paper execution hold.0POST/Task changes.
+- Reader integration95245588/source790fb90a CLOSED: one actual Linux SYN
+  container/two cases/78checks/18CLIJobsclosed,0actualprivate snapshot. First
+  unreviewed-role admission failed beforecreate; exact fixed CLI passed with
+  no permission widening. Native decoder59e82fd0 is CRLF-normalized6a4d9ff7,
+  AST/normalized bytes exact. Four Ruff findings retained, not a clean claim.
+- Joint expert Source5f84b923 CLOSED39checks/one nativefit2updates/coldrestore,
+ 0marketpayloads; actual397 layout63x6lags+19context. New adopted market
+  campaign3803ba62 actually completed3fits/9541updates/131checks/allclosed,
+  NET20+5.7661%/DD3.1443%/4primarychecks. NOISE_UNRESOLVED/reused, not alpha.
+- Fixed fusion73fa6ea5 REJECT+4.2137%/DD3.2775% vsGRUgrowth, no ratio rescue.
+  Joint currentpoint1restore/forward100padded69known/55checks CLOSED, but
+  fullSDKpostopen clocks invalid; metadata not installed/auto-rolled.
+- Whole-share sizing Source/SYN audit completed6nativepurecases/0actualacct:
+  g=.005 is TOTAL basis B; A=B/10 is shared allocation. EqualN ideal flat-owner
+  threshold is A>=20*N*L, not .005 applied again to A. Actual retained reasons
+  may conflate zero target with already satisfied; never infer holdings/zero
+  orders/affordability from that categorical field. Today's weights unchanged.
+
+## Runtime Fault / Recovery
+
+Actual GRU public1963c43b is unavailable/worker_recovery_required; subsequent
+seed projections are not financial evidence. Dated13:46 strict snapshot has
+no exact GRU submit/accept/fill/current-owned linkage.20scopes/7positive and
+oneunknown remain cumulative, not today's trades. Source code allows PT4M
+visits through14:08; inactive between visits is not phase/basket completion.
+
+Deterministic exact image2ff/nativeb0b63/releasee918 reproducer14:04 fails
+runtime.effect_release.checked(source_pin): host Windows public-verifier path
+is not absolute in Linux.737 SDK files match. No actual traceback survived,
+so do not claim measured auth failure or zero historical effects. S owns
+public-only namespace repair/host+guest RO cold proof for TF/J17/L/exits;
+no wildcard/privatepath remap/hashskip, inputs/counters/F9/financial logic same.
+Original immutable source pins stay history; qualified repair gets NEW pins,
+never pretend old-source provenance or clear an unknown private request.
 
 Roles directly exchange exact image/SDK/schema readiness; no Parent serial
 relay or extra approval. Parent owns trial scopes/shared risk/Git. No new
@@ -93,14 +139,27 @@ permanent role/platform is needed for these concrete packages.
   immutable artifacts. No completed training/ledger/SYNtrade is ready again.
 
 ## Throughput Review
-12:24UTC: four disjoint packages ready/owned, next original13:40UTC and same
-one-shot18:42:59UTC. No operator decision. Completed native/custody/model
-proofs are not repeated; source-prepared host upgrade is not installed.
-One reversible improvement: examine fee burden/position transitions instead
-of only adding fits. At20bp old full turnover paid10.0339%initialNAV; test
-sameOPEN netting on unchanged weights, not loosen a frozen model criterion.
-Separately inspect exact token paths against actual observer phase before
-calling it a collision or imposing a new schedule/rate constraint.
+15:11UTC: actual bottleneck is public Windows/Linux release namespace, not
+GPU/data/model profitability/permission. TF host+Linux qualificationd20a801b
+is closed; L owns original-root cutover and S prepares J17 before17:00.
+TF expired14:50, never conceal that by resetting its identity/window. Existing
+same one-shot18:42:59UTC remains unchanged until an
+actual new optional deployment requires exact reader/source prompt update.
+One reversible improvement: test the EXACT produced release including its
+four verified public refs in the actual Linux image, not a nearby SYN envelope
+with those fields absent. Caller ABI slash mismatch and whole-bank census on
+a future-definition-only edit are separate local fixes, not new bank authority.
+No operator decision or foreground market wait; completed fits are not rerun.
+Second reversible improvement: parse the Docker projected JSON as whole
+structured output/validated document stream, not one pretty-printed line per
+object. Keep safe field/shape/CID checks and actual runtime privacy unchanged.
+
+Fresh compatibility6d7aaeb8 in verification/current-native-public-reference-
+recovery-20261026-v1:185serialPASS/19412fullPASS26SKIP35warnings/389.10s/
+8actualworkers/1409exact/23PID-startsclosed/helper0/Ruff+3ComposePASS.
+Source-attested exact helper child/lease cleanup and no interval entry left;
+basename not separately retained, inactive siblings untouched. External actual
+checks remain independent; this is not deployment or company completion.
 
 Fresh source authoritybb0b8ca4:210serialPASS1knownSKIP/19412fullPASS26SKIP/
 35warnings/8actualworkers/392.44s/1409exact/Ruff+3ComposePASS/all20PIDs+currentC
