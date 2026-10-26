@@ -1,171 +1,58 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-27 KST. A=D:/thericher-v2/model-artifacts.
-AGENTS owns resource policy; Parent owns MD/Git. Schrodinger
-01a175f1-b376-7e32-bbbb-61675f72668c is sole GPU coordinator.
-Closed allocation/source/debit history: Git0438ecd and immutable consumers.
+Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is sole GPU/registry coordinator.
+Parent owns MD/Git; AGENTS owns policy. History/debits: Gitbb391f30 and
+immutable consumers. Closed clocks/charges are never reset/refunded.
 
-## Actual Resource State
+## Actual Resource / Ready Work
 
-NEWEST actual allocation is CLOSED b419f22a:
-current-liquid-etf-open5-context-development-20261026-v1/first-fit-consumer-r1.
-Six CUDA fits/1568updates/100epochs/6OOF/8cells/zero market retry completed;
-all CIDs/CLIJobs/lease closed. Owned461.478/3600 incl prior120 once, elapsed
-1350.036/7200. Initial bootstrap/path failures retained, only pre-market
-source repair; no actual fit repeated. Fit walls5.44..7.28s show useful work
-was short, not that GPU was forbidden. Fixed context recipe REJECTED both
-growth/DD primary checks; don't repeat it for utilization. Next cost/position-
-aware hypothesis is Source research only, no adopted/active GPU fit yet.
+Newest numerical consumer eca8d542:
+A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json.
+CLOSED CPU-only, one140row projection/two cost cells/zero fits or GPU;
+all3CIDs15Jobs closed.186.976owned/600,2535.065elapsed/3600.
+Do not call it active GPU training or repeat it for utilization.
 
-Latest completed CUDA campaign: current-joint-attention-seed-stability-
-development-20261026-v1/CONSUMER.json,16bfa3f7. Six NEW fits/19269 updates,
-six OOF passes/three NET20 cells/zero retries. All nine containers,45 CLI Jobs,
-root/supervisor and lease closed;949.0005/3600 owned upper includes prep once.
-New seeds28/29 and fixed-thirds blend fail cached GRU growth/DD contrasts;
-original Joint advantage is not seed-stable. Do not rerun completed fits.
-Current ready work is QQQ OPEN5-aligned eight-ETF context preparation under
-Schrodinger, not an active GPU fit. Data close-field consumer eeebb16a now has
-1712 known CLOSE proxies per ETF, seven retained geometry-bad context rows;
-QQQ target1712 rows remains strict full-Bar. Final producer/consumer binding
-and finite six-fit contract precede market dispatch, not another approval.
-No old registry/closed debit reset and no utilization-only training.
+Prior CUDA QQQcontext b419f22a CLOSED:6fits/1568updates/100epochs/6OOF/
+8cells/zero market retry; all CIDs/Jobs/lease closed.461.478owned/3600,
+1350.036elapsed/7200 incl120prep ONCE. Actual fit walls5.44..7.28s: useful
+work was short, GPU was not forbidden. Both context primary checks fail.
 
-New downside expert f6ccbb64 CLOSED:6newmarketGPUfits+2native,3238updates,
-peak825924608bytes,11containers/55CLIJobs/rootPID/lease absent. Owned upper
-921.15/5400s, elapsed1009.15/10800s; actual fits are complete, not running.
-Same-device paired workers were co-tenants, not isolated timing benchmarks.
-Current point recovery CLOSED16eb8ee4: two actual CUDA restores/forwards138rows,
-69known/two seven-target proposals,0fits. Initial5a13faa3/native calls reused,
-447.48charged once/cumulative606.62/900;15newJobs/containers/lease closed.
-No model/current-point repeat or target mount.
-TCNcd3440c0 CLOSED: three market attempts timed out,zero completed/forecasts/
-ledgers,2144.46owned upper retained; all30Jobs/containers/lease closed. Tiny
-native completion did not predict full-batch time. New engineering3eac327c
-is CLOSED synthetic-only; FAST B2048~269455rows/s vs OLD~822, checkpoint
-serialization cost .08..16s vs FAST .008s batch, not market convergence.
-NEW FAST recipe actually CLOSED0e18519c/sourcee09205a4: three CUDA marketfits/
-1741updates,96maxepochs/actual16,15,17/best4,3,5/INNERpatience12. No technical
-resume/oldpartial/oldfit replay. Fit walls92.01/129.91/177.13s, peak allocated
-495945728/532190720/574615040bytes. AllCIDs/rootPID/GPUlease absent,1068.35
-owned upper/4800,1286.71elapsed/7200.20bp-4.3401%/DD8.5480%, REJECT vsGRU;
-no active numerical worker or convergence claim from this closed family.
-Joint cross-sectional campaign3803ba62 actually completed3CUDAfits9541updates,
-chosen1/2/3 after13/14/15epochs. Fit walls55.10/76.52/100.30s, peaks501034496/
-568648704/636457472bytes; RAM counters/fullcheckpoint every16, no perbatch D
-fsync guarantee. NET20+5.7661%/DD3.1443% passes4checks, noise unresolved on
-reused history.131checks/Ruff/allPIDs/CIDs/lease absent. Owned799.77/5400/
-Source457.41/600 includes prior342.84ONCE; elapsed1238.79/9000.
-Joint current point also CLOSED: one restore/forward100padded/69known,
-55checks/allclosed,0training. Metadata only/fullSDKpostopen ineligible, no
-backdate/automaticroll/rerun. Schrodinger's 2026Data readiness92ed2a2d is
-CLOSED40cohorts/4000keys/47potential asset-day gaps. Actual bounded gap
-acquisition97343f3c then filled43/47,1POST/23GET/2300rows/allworkersclosed.
-Feature/outcome-separated packets55532634 are CLOSED:3063eligiblefeature
-rows/4000fixedkeysREADY but6heldfieldsUNAVAILABLE. Contract5d669dc3/d5978936
-freezes four saved-expert/control NET20cells. Economic cells need held marks;
-qualified feature inference does not. New current-2026-h5-saved-expert-feature-
-inference-20261026-v1 is assigned2savedF3/onefirstpass each/0fits/economics,
-same coordinator with disjoint Data HTTP worker. Fresh VRAM/actual source/
-checkpoint/schema bootstrap facts preceded actual run. CLOSED73685a2c:
-2restores/2native+2marketforwards/0fits/optimizersteps,3063eligible permodel,
-peak478853632/618570752bytes/bothGPUcontainersclosed/leaseabsent. Exactfile
-feature/model/affineRO/noheld/noNetwork, measuredchildwall10.94s, ownedupper
-91.04/300/elapsed435.50/1800. Not an activeGPUjob or economic pass.
-New liquidETF/QQQ ablation source/native preparation assigned under same sole
-coordinator, max2inventedfits/restores/no marketfits until contract adoption.
-No dummy load or repeat of completed fits.
-MetaGate CPU campaign CLOSED_VERIFIED_REJECT; registry654cc9f9 was appended
-once by Steward. SameOPEN netting CLOSED2cba605f/fourcells/positivecash,
-no models/GPU, allprocessesclosed. New three cheap-control NET20 cells and
-later two fixed50:50GRU/TCN fusion cells have distinct finite contracts and
-one existing-registry binding each before intake, without replaying RISK.
-Completed training below remains closed, not a resource-utilization queue.
+Next current assignment: DISTINCT QQQ OPEN5 adverse-path quantile Source/native
+preparation with Halley; max600owned/1800elapsed/one tiny invented GPUfit/
+restore, zero market fits until final compact contract. Check actual native
+pinball/optimizer/checkpoint and producer-consumer schema before payloads.
+Do not repeat completed mean fits or add hidden seed/window multipliers.
 
-Previous batch12NEWmarketGPUfits+4nativeGPUtoyfits completed ONCE:
-late-carry597c3f94:6+2; RAW397b2bf2b03:3+1; TopTail92b04e63:3+1.
-All named numerical roots/containers/CLIJobs/leases positively closed.
-No worker currently running from those families. Device98%/13327MiB sample
-was co-tenancy, NOT per-worker isolated performance or ongoing training.
+Project is first GPU priority even during personal/external use. Unknown
+desktop process name is not a permission hold. Measure free/projected peak
+VRAM and desktop/driver reserve before each useful worker; a bounded resource
+probe is allowed. Never kill user apps/change drivers. Concurrent independent
+frozen campaigns retain separate caps/paths/PID-start/lease and co-tenancy
+timings, not isolated benchmark claims. Execution reliability may preempt at
+a safe checkpoint. OOM/driver failures retain debits; no silent retries.
 
-Earlier dated RTX4090 snapshot24564MiBtotal/1550used/22589free/38C is not
-current headroom. Project remains first GPU priority, personal/external use
-not a permission hold. Check real free/projectedpeak/reserve before newworkers;
-never kill apps/change driver, age-reclaim live leases or use dummy occupancy.
-Concurrent useful independent workers allowed inside their own frozen caps.
+## Closed Allocations / Duplicate Avoidance
 
-## Preserved Debits / No Duplicate Queue
-
-| Closed scope | Actual accounting / outcome |
+| Scope | Actual completion / retained charge |
 | --- | --- |
-| Late-carry6fits | 1795.003inclusiveupper includes1740Source/Data ONCE;6000cap.11containers55CLIJobsclosed. ScientificFAIL, no rerank/refit. |
-| RAW3973fits | 2157.5015inclusiveupper retains failed pre-readout nested-ref bytes stage/reserved300/cleanup120.7containers35Jobs/116closurechecks/ownedleasebackup+removal. New cached-readout368.035upper separately, no readdition/refund;REJECT. |
-| TopTail3fits | 1412.09675inclusiveupper/3900, source1200 once+failednative4.63797+newphases27.4588+cleanup180. Completed native fit reused after one header correction.3marketfits516trees/324selected;REJECT. |
-| Current CPU point | 2169.35inclusiveupper/4200 across original+SDK recovery;0fits/GPU.4restores5attempts2407reservedrows,4completedcalls2307rows. Oldpure600activecap compliance unproven,780conservativeSource elapsed adoption is not CPUtime or retroactive pass. |
+| Joint seeds16bfa3f7 | 6newfits/19269updates,9CIDs45Jobs/root/leaseclosed;949.0005owned/3600, prep125.832 ONCE. |
+| H5 downsidef6ccbb64 | 6market+2nativefits/3238updates,11CIDs55Jobs/leaseclosed;921.15owned/5400. |
+| FAST TCN0e18519c | 3fits/1741updates,allclosed;1068.35owned/4800. Old cd3440c0 timed-out3attempts2144.46/3600 unchanged. |
+| Joint3803ba62 | 3fits/9541updates/allclosed;799.77owned/5400 includes prior342.84 ONCE. |
+| Saved2026 inference73685a2c | 2restores/2native+2marketforwards/3063eligible each/0fits, bothGPUworkersclosed;91.04owned/300. |
+| H5 current point16eb8ee4 | 2CUDArestores/forwards138rows/0fits;606.62cumulative/900, prior447.48 ONCE,15newJobsclosed. |
+| Latecarry/RAW397/TopTail | 12newmarketfits+4native completed once; retained1795.003/2157.5015/1412.09675 owned upper respectively. |
 
-Close clocks/debits stay immutable. Finite caps are neither authority grants
-nor a ban on a separately useful campaign. No extraMLP6 in closedTopTail.
-Current source-only MLP19494111bb decline is expected decision-value judgement,
-not CUDA failure/unrecognized GPU use/exact duplicate/global neural-model ban.
+Exact ledger/holdout custody stays existing registry, not a new platform.
+Model choice is Engine's; Steward is resource/evidence custody, not an approval
+authority. Missing one campaign field defers that campaign only.
 
-## Holdout / Forward Custody
+## Forward Custody
 
-A/research/current-later-outcome-custody-readiness-20261026-v1/CONSUMER.json,
-SHA10765244c874d4728ee7941dac927ba7feae3fbc53e62f898e6554b9eca0821e.
-UNKNOWN_NOT_FRESH,0model/arrays/outcomes/GPU/registry mutation. Metadata frontier
-is incomplete: warm feature decoding is not target use/nonuse; do not assert
-all later data consumed/untouched. Elapsed1031.9 exceeded900 by131.9; exact
-active clock unmeasured. Preserve that failure, not budget-compliance fiction.
-
-NEW future benchmark8bf86e20 was frozen06:03:23UTC beforeOct26OPEN with ONE
-existingregistry append, record653da99e/trial1.20sessions4984..5003,
-model8/uniform69/SPY,10+20bp/.10paidstake/fixedshares,434metadatachecks.
-0futureoutcomes/weightsdecode/modelcalls/GPU/evaluation/schedules.
-This is a prospective declaration, not independent performance or PaperPnL.
-Data5d0bc0f8 source coverage uses existing69capture; no new69collector.
-Temporary Data projection5a68f5d5 now CLOSED:6016nativechecks/Ruff/allPIDs
-closed/0actualfutureprices/models/GPU/ledger/registry/Task. Source process
-14.278s/native root.843s with cold.063s NESTED, elapsed699.6/1500. No invented
-all-active clock or new numerical allocation. API2812897e, exact existing
-capture schema; later evidence remains required, not recreated by SYN.
-
-## Current Queue / Next Action
-
-Source audit4ba8c35e CLOSED: intraday Data702baddd already consumed by exact
-FINAL1305cd58/53769c3d,6marketRidge+6nativefits complete/failed/closed.
-13metadatarefs/0arrays/weights/models/GPU here. Elapsed297.1/900,
-measuredcommands2.694s includes retained.127s parser failure, not CPU/GPUutil.
-No new fit queue from stale preparation/"pending" prose. Different input/
-entry-information hypothesis can justify a new separately frozen campaign;
-no hidden CUDA restriction, default dummy training or neural-class ban.
-
-Saved-expert auditbd2896db CLOSED12refs. NEW saved adapted-TTM-B point is
-ACTUALLY CLOSED4463c25f under research/current-ttm-adapted-b-oct26-h5-current-point-20261026-v1:
-CUDA1restore/1forward25rows08:23:12..13UTC,peakallocated39,655,424bytes,
-native2restores/2forwards8inventedrows,0fits/optimizers/retries/ledgers.
-All3containers/CLIchildren closed.721.64elapsed/1800,67.782activeupper/900,
-20.608processwall includes nested native/actual spans once; not sustained
-GPU usage or training. Parent11evidence refs exact. No duplicate old forecast.
-
-New cached policy projection native failed before actual scoredecode at caller
-hash ABI (prefixed ref vs bare64hex). Preserve original failed600/120scope;
-separate codec-recovery-r1 CLOSED0d065cf4: ONE tiny repaired native seam and
-ONE FIRST cached projection,5selected/SDK3NAS+2unsupportedNYS,0models/fits/
-GPU/outcomes/API/Task. Policy/target/cost/ties unchanged. New424.8elapsed/600,
-15activeupper/120 plus old40 countedonce; old publication44.005soverrun stays.
-Allcommands closed/executor closed. No other ready numerical fit withheld;
-do not repeat training/TTM inference or use dummy GPU occupancy.
-
-No ready numerical job is intentionally left unlaunched. Model/current-point
-weights are cached and handed to Execution; repeated completed training would
-not improve that consumer. Imagefb40c222 is used by the limited installed
-pilot57c43f59; original8/image2ff unchanged. Offline reader54861326 is now
-closed/ready for separately admitted future use; no active GPU/CPU worker
-from these packages. Actual custody086e8941 closed,0API/model calls.
-Research future benchmark frozen,
-no outcomes
-yet. Reassess on concrete current-consumer fault/new input or ready frozen
-campaign, preserving old trials and actual ownership/headroom.
-
-Do not reopen old caps, repeat completed proof/fit/ledger for logging, create
-new registries/platforms or equate elapsed review time with CPU/GPU spend.
-Parent's company goal remains actual original Paper runtime, not utilization.
+Later-outcome readiness10765244 is UNKNOWN_NOT_FRESH; warm feature decode is
+not proof of target use/nonuse. Its1031.9elapsed exceeded900, preserved.
+Future20session benchmark8bf86e20 was frozen06:03:23UTC beforeOct26OPEN,
+original registry653da99e/trial1. Do not call unseen future marks available
+or manufacture an independent pass. Exact original contract is immutable.
+New retrospective development and provisional Paper can proceed separately.

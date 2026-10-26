@@ -13,10 +13,11 @@ Original GRU/TF/J17 entry objective is SUPERSEDED_NOT_ACHIEVED, not completed.
 Those original windows ended. Keep exact failures/unknowns/exits; no extension,
 substitute request, bank reset or profitability claim.
 
-Faraday prepares exact current Data source/argv/noncustody write/mount
-qualification for L first, optional second. Parent alone applies installed
-changes after source/native checks and positive owned closure. Leibniz owns
-admission forensics; roles exchange exact schemas/evidence directly.
+Leibniz prepares L future-exit-only PS metadata4335/60dc and mocked activation;
+Parent applies only after exact current owner closure. Faraday qualifies actual
+optional task/run/closure metadata, not another collector. Socrates' new one-
+read RO scope18:47:15..19:05UTC is bound to currentL320/dc004 and actual owner
+closure; old1815..1829 scope expired UNINVOKED. Roles exchange exact evidence.
 Do not ignore every Data/research process or trust a role/process name.
 Actual/unknown custody writers remain a conflict.
 
@@ -58,19 +59,27 @@ report deadline overrun is preserved, not retroactively passed.
 ## Current Original Opportunities
 
 - L QQQ H5: Oct26 18:00..18:15UTC, Oct30 19:55..20:00 owned exit.
-  ACTUAL partial static-host repair17:55:41: source2f53dcf2/releasedd6b991e.
-  A/execution/current-l-three-static-data-claims-owned-activation-20261026-v1/ACTUAL.json.
-  Three JSON files only, actual67-file closure/native definition checks pass,
-  pair enabled/zero instances/ACL preserved/86otherdefs unchanged. First missing
-  optional Enabled XML-node failure and bounded exact-source resume retained.
-  No private/KIS/TaskRun/window change; not full mixed-wrapper/container
-  coexistence or fill proof. Historical6bc9/60d5 evidence remains historical.
+  ACTUAL diagnostic18:11:10:source32012b79/releasedc004d88/host0ccb1112.
+  A/execution/current-l-safe-failure-diagnostic-owned-activation-20261026-v1/ACTUAL.json.
+  Exact18:12 visitfce25c9f HOST-FAILURE7d02658b proves source_pin at call44,
+  before metadata subprocess: frozenPS7.6.7/fa2c8bb1 differs installed valid
+  Microsoft7.6.9/2a6769a3. Not a dated explanation of earlier empty attempts.
+  Future-exit-only three-file stage43351f18/60dc71a1 is NOT installed yet.
+  Original entry ended; never reopen. Partial three-static-host Data rules
+  remain limited, not full mixed-wrapper/container grant. Earlier XML-node/
+  inert-return fixture failures and exact-source recoveries are retained.
   A/execution/current-l-qqq-command-first-graft-activation-preparation-20261025-v1/technical-r4/activation/L.
 - Optional: Oct26 entry18:30..18:35, exact-pending recovery18:36..18:40.
   Nov20 fresh SELL cutoff20:35, cleanup20:40. Installed entry outerf4dd1991/
   runtime19902db4/release5ba4d309; recovery/exit oldR4f4b1974b/32a5fbf9.
   Entry Source/current public reader942abc5c mapping is explicit; no equality
   assumption between outer and runtime pins.
+  Exact c55d5bb79b174b37b123a17163fba66b has empty public sink;942 reader
+  returned UNKNOWN_MISSING_PUBLIC_RESULT18:43. Task exit0 is not no-intent,
+  acceptance, fill or owner closure. Original recovery outcome remains under
+  exact source-safe inspection; no substitute request. Optional PS provider
+  is compatible; L's pin fault is not its proven cause. Optional actor stage
+  3420bb4c/34476b72 remains NOT deployed.
 - GRU Oct30 exit19:45..20:00; TF19:49..20:00; J17 Nov20 20:45..21:00.
   Preserve original identity/allocation/counters even after entry failure.
 - Existing SPY Nov20 22:05 capture e9466a1c and Data21:55 retention remain
@@ -83,7 +92,7 @@ L/optional artifact audit41c522c6 found no matching J17 mount omission:
 L uses /proof outside /sdk with its existing RW owned-proof bind;
 optional already mounts its original artifact root RW. Do not gratuitously
 remap/redeploy. Their admission still needs source-qualified coexistence:
-L Data rules have stale Compose/Python pins; optional lacks Data rules.
+only three static host rules were qualified; optional lacks installed Data rules.
 Whole intraday schedule wrapper may also dispatch a prospective Paper cycle;
 a cache-only leaf grant cannot cover that mixed wrapper.
 Measured mixed-task next19:24UTC, zero instances at17:50:43: it was NOT paused,

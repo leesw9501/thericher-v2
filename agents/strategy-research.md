@@ -1,228 +1,56 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
 2026-10-27 KST. A=D:/thericher-v2/model-artifacts.
-Socrates owns source/strategy mechanisms; Engine owns final campaign/fitting/
-interpretation. Parent owns shared MD/Git. AGENTS owns authority.
-Full previous source proposals/contracts/debits: Git0438ecd and immutable A.
-Closed proposals below are consumed history, not an automatic launch queue.
+Own source-backed mechanisms and pure proposals; Engine owns final fitting/
+targets/splits/cost interpretation. Parent owns MD/Git; AGENTS owns authority.
+Detailed closed history: Gitbb391f30 and immutable source/consumer records.
 
-## Current Decision
+## Current / Concrete Consumer
 
-Latest outcome overrides old ready projections: Joint seed-stability study
-16bfa3f7 completed six new fits; both new seeds and a fixed three-seed blend
-failed cached GRU growth/DD. Development sensitivity, not a new winner or a
-general rejection of attention. Supported 2026 two-model comparison is closed
-under current-2026-h5-supported-neural-pair-development-20261026-v1:
-GRU total growth1.6049%/DD1.5213%, Joint1.0148%/1.4367%,20bp EACH leg.
-Availability-conditioned pair only; unavailable LOWVOL/uniform controls are
-not zero/inferior and original four-cell unavailable result stays unchanged.
-Halley compares information value of prepared QQQ OPEN5 context against more
-seeds/new architectures, without new numerical calls. Socrates temporarily
-prepares exact J17 request-scope recovery evidence, never offline observe().
+Cost-position proposal2509c8ca/kernelcfdd89ce was consumed by CLOSED gate
+eca8d542. Gate outputs EXACT0/1; native economic kernel applies .10 ONCE.
+FLAT enters only above fixed roundtrip cost hurdle; held position retains
+nonnegative mean forecast. This is one-step proxy, not Bellman optimality
+or theorem about expected utility. exp(Elog) is not E(simple return).
 
-New source0f9a64e4 at A/research/current-intraday-entry-information-proposals-
-20261026-v1/CONSUMER.json is CLOSED_SOURCE_READY: price-only30m trend/15m
-pullback/5m volatility-normalized release, original Data702 ABI, ten native
-handoff checks/Ruff/ClaudeADOPTlimits,0market effects. Exact contract0c1fa44c
-was adopted by Parent without threshold changes. Socrates now implements
-current-intraday-pullback-reclaim-development-20261026-v1 as invoked Engine:
-one finite CPU comparison, now CLOSED_NONINFORMATIVE_SPARSE_TRAIN:
-A/research/current-intraday-pullback-reclaim-development-20261026-v1/CONSUMER.json.
-TRAIN candidate8entries(4perETF) failed frozen>=12support; CHECK/EVAL inputs
-and outcomes NOT_OPENED.0marketledgers/fits/GPU/oldproofreplays. New native
-cashflow API/Decimal oracle16checks plus35independent checks, allchildrenclosed.
-Owned upper270.59/1200s,elapsed458.40/3600s. No threshold/timeframe rescue,
-profit claim or general rejection of pullbacks. Source and recipe remain closed.
-Original EVAL remains reused development, not untouched confirmation. No duplicate
-old Ridge fits or generic ORB nomination; exact nearest ORB already exists.
+Gate20bp growth6.1468%/DD2.4345%/turnover1.2711 improves cachedNN5.5991%/
+sameDD/3.6186 but alwaysQQQ6.4203%/sameDD weakly dominates. Noise unresolved,
+no broad alpha or Paper promotion. No threshold/ratio rescue or old replay.
+Halley independently checks alias/math and proposes ONE distinct adverse-path
+quantile-risk forecast question with Schrodinger. Max300owned/900elapsed/
+no market numerics; actual native target/output smoke precedes any market fit.
 
-LOWVOL control CLOSED433692d0 at current-h5-downside-simple-risk-control-
-20261026-v1: exact past20 FP64 close-logratio RMS/251cohorts, two FIRST new
-cost cells,0modelcalls/GPU/oldledgerreplays.20bp growth-5.6360%/DD8.4624%
-versus learnedRISK-3.0561%/7.5045%; simple control does not dominate, BOTH
-negative/reused development. Forty independent checks/allworkersclosed.
-Depth2 OOF gate source33086862/kernel8129cb35 was consumed by actual
-current-h5-oof-policy-gate-development-20261026-v1, CLOSED_VERIFIED_REJECT.
-Chronological F1+F2 fit/F3 reused83screen:20bp GATE+.2180%/DD2.8496% versus
-LOWVOL+.4012%/sameDD. Frozen LOWVOL contrast fails; cached RETURN+4.9220%
-is descriptive, not post-hoc winner selection. Dataf40bf022/registry654cc9f9
-complete,307.93/900owned upper/allworkersclosed; no queued gate fit remains.
+Primary references supporting cost-aware forecast/position separation:
+https://web.stanford.edu/~boyd/papers/cvx_portfolio.html
+https://arxiv.org/abs/2103.01775v1
+No upstream code copied or dependency added. Derivative-hedging results do
+not prove this QQQ gate optimal. Preserve source claims versus project facts.
 
-Turnover source a69cbf09 at current-h5-risk-turnover-policy-preparation-
-20261026-v1 is CLOSED_SOURCE_SYN_READY_NOT_MARKET_TESTED. Old20bp fees equal
-10.0339%initialNAV. Fixed-price L1 proxy50.2->17.9793 is NOT executable
-turnover/PnL. Kernelb10507cc/contractd78d0efc: same rebalanceOPEN and target
-quantities, NET_DELTA vs FULL rebuy x0/20bp, same terminalCLOSE, cash>=0.
-Four invented cases/47checks+42independent/Ruff/ClaudeADOPTlimits passed.
-Actual current-h5-risk-netted-policy-development-20261026-v1 CLOSED2cba605f:
-one priceintake/fourcells/0models/oldledgerreplays,53independentchecks/Ruff/
-allchildrenclosed.2020-12-30..2025-12-29 total NOT annualized growth at20bp:
-NET+4.4455%/DD3.4087%, FULL-1.9244%/7.0593%. Zero-costboth+8.1318%/2.6347%.
-Zero-cost NAV/target quantities/cost identity and allrequiredprices verified;
-6.3700%NAV fee saving not alpha. Old CLOSEexit/paidstake grades unchanged.
-Owned151.36/300/elapsed456.89/1200, no positive-Paper/profitability promotion.
-Socrates completed three NEW NET20 controls RETURN/LOWVOL/uniformeligible,
-reusing exact RISKcache, no replay/newmodel. Then completed fixed50:50GRU/TCN
-portfolio-weight blend: Parent source4fe1d90c froze12:39:34 before Parent
-readTCNeconomics, not before computation. Exactly two newNET20cells TCN and
-fusion, cachedGRU/controls reused; individual profitability not prerequisite
-for exploratory blend, no ratiosearch/independent alpha/Paper authority.
+Socrates is temporarily assigned Execution's L genuinely RO state-reader seam,
+not a new permanent team. Native Linux52e1d9eb/edf190f5 passes one cold and
+three negatives/three native AST checks;6Jobs/containerclosed. Actual private
+read0. NEW Parent scope18:47:15..19:05UTC currentL320/dc004 permits one read
+only AFTER actual relevant owner closure. Old1815..1829 scope expired
+UNINVOKED. No observe/recovery/locks/global monkeypatch/RO audit bypass.
 
-No additional strategy numerical package is queued solely to fill the GPU.
-Fixed50:50fusion73fa6ea5 is CLOSED_REJECT: NET20+4.2137%/DD3.2775% does not
-exceed GRU growth. No ratio tuning/extra projection/ledger rerun. Joint expert
-3803ba62 is independently CLOSED development screen, not new Strategy dispatch.
-Whole-share readiness Source/SYN is also CLOSED:6real native pure calls,
-no account/KIS/private/controller. g=.005 is a TOTAL-original-basis fraction,
-not a second fraction of approved A=B/10; ideal equalN flat-owner threshold
-A>=20*N*L plus actual remaining capacity. A zero target can be reported as
-target_already_satisfied even when flat, so reason alone proves no holdings.
-Source-only options for NEW cohorts do not change today's immutable sizing.
+## Recent Decisions / Lessons
 
-Current invoked Execution P0, not more model tuning: exact GRU image2ff/
-nativeSourceb0b63/releasee918 reproduces Windows public ref -> Linux checked
-source_pin failure. Actual traceback unavailable, no account/wire conclusion.
-current-native-public-reference-namespace-recovery-20261026-v1 is CLOSED
-d20a801b:6host/Linuxcases/737SDKexact, TFsourceb6cf1904/releaseb5bb781c,
-no private/API/Task effects. Leibniz owns TF actual cutover/compatible exit;
-entry14:20..14:50 expired. J17 preparation5cf67874 is CLOSED and delivered
-directly to Execution, actual worker release9e8524ee rather than prettyfd31.
-L auditbd70d25c is CLOSED_NO_PATCH_NEEDED: exactoriginalrelease/3host2guest/
-0Task or code changes. J17 actuald28be2ab now enabled original pair; no fill.
-Socrates froze next contract5d669dc3/Consumerd5978936 for savedJOINT/GRURISK/
-LOWVOL/uniform later2026 NET20comparison. DATA_UNAVAILABLE6heldfields;
-ClaudeREVISE/adaptive-retrospective retained, no arrays/model/economics.
-Current source-only scope current-2026-h5-held-mark-economic-support-
-20261026-v1 checks official CODX Feb17-20/BKYI Jun15-16 events vsproviderholes.
-No future fact becomes past decision-time knowledge or zero/filled valuation.
-That fact check is CLOSEDff4e59fc: requested dates lie inside issuer-reported
-Nasdaq suspension intervals, not proof of no all-venue trades/OTC pricing or
-the exact KIS absence cause. Six marks remain unavailable, no fake fill/zero.
-Current current-2026-h5-model-owned-price-support-20261026-v1 audits sealed
-JOINT/GRURISK target masks and existing availability only,0model/economics.
-Any separately frozen supported-model comparison needs its own interpreted
-claim; original uniform-inclusive4cell does not silently become a pass.
-Exact four public aliases/source/release only, no private/bank/counter changes.
-J17/L/future exits priority; do not repeat broken schedules
-without first-cause/reproducer or invent a rushed substitute GRU opportunity.
-Current memory/TERMINAL19 proposal79d99cf9 was consumed by the limited
-installed early-profile pilot57c43f59, not a completed fill/basket. Separately frozen
-future benchmark8bf86e20 have higher immediate decision value than another
-adaptive old63 sweep. This is NOT a model-class/epoch/GPU permission ban.
+- QQQcontextb419f22a: six fits, context primary FAIL versus QQQ-only. Distinct
+  risk/cost information question is preferable to more arbitrary architectures.
+- Jointseeds16bfa3f7: both new seeds/fixed-thirds fail GRU growth/DD; original
+  attention result not robust. Do not choose the seen seed winner.
+- Intraday pullback study: TRAIN8entries fails frozen>=12; CHECK/EVAL not
+  opened, no ledgers. Sparse support, not a general rejection of pullbacks.
+- H5 depth2 OOF gate fails LOWVOL contrast; fixed blends do not establish
+  incremental value. Exploratory fusion is allowed without individual profit,
+  but learned gates use OOF and claims retain all selection reuse.
+- SameOPEN netting2cba605f improves cost accounting; lower fees/exposure alone
+  are not predictive alpha. Native quantity-delta costs stay unchanged.
+- Supported2026pair: JOINT/GRU required marks complete, LOWVOL4/uniform6
+  missing. Official Nasdaq suspension facts support venue context, not absent
+  price values, no-all-venue-trades or an imputation license.
 
-Current matched MLP19/H20 uniform-pair source review is CLOSED:
-A/research/current-uniform-pair-mlp19-h20-readiness-20261026-v1/CONSUMER.json,
-SHA494111bbee5499032a799d1409831070e6827c41a26bfd69061b46427866a38d.
-JUDGEMENT695000c7/ClaudeADOPTlimits5496e8d3. Not an exact duplicate; concrete
-residual/current-consumer need not established. Parent accepts REJECT_CURRENT_
-OLD63_DISPATCH for low incremental decision value.0models/fits/GPU/ledger/
-registry/dependency effects. Elapsed416, Source300active compliance unproven,
-not retroactive cap pass/refund. New input/diagnosed failure or separately
-frozen later outcomes may justify a new scope; no permanent reviewer/daemon.
-
-## Latest Mechanisms / Actual Outcome
-
-- RAW397/H20 sourcefe122637 ->3actualnewGPUfitsb2bf2b03, then FIRST cached
-  readout39e177a7/77b2b57d REJECT.20bp growth-.243%/absoluteDD11.382%
-  vsTerminal19+2.010%/7.247%. Better broad concordance did not improve selected
-  tail economics. No raw/seed/blend rescue or historical failure regrade.
-- Minimal TopK-inclusion pair proposal7574ac63/seal55ad8b33 actually completed:
-  A/research/current-top-tail-h20-objective-development-20261026-v1/CONSUMER.json,
-  SHA92b04e634bb4cc79e812f81f864927507410345c38f7a228087f7fddab5fc94b.
- 3marketGPU+1nativefit/772checks/2FIRSTledgers/allclosed;REJECT all4terms.
- 20bp -14.3001%growth/24.0232%DD vsuniformCat+2.00985%/7.24705%.
-  f=K*labelTopKallocation is inclusion1/fraction/0, strict pairmass
-  f_i*(1-f_j)/date1, zero-alltie dates retained, labelONLY. OwnCHECK-selector
-  also changes: recipe contrast, not causal objective-only ablation/NDCG
-  reproduction/PnL optimization. No optional6MLP/extra seed/target rescue.
-- Memory/cadenced97bc30e passes adaptive screen; static20b117c2ea primary
-  latehalfFAIL against terminalhalfutility. Terminalhalf reference8.5277%/
- 2.9571% at20bp is descriptive/adaptively chosen, not independent alpha.
-  Future8bf86e20 freezes same current model8 vsuniform69/SPY before OPEN,
- 0outcomes. Early operational Paper is NON_PARITY with close benchmark.
-- Official references/version/license live in the consumed proposals; no new
-  public checkpoint/download/dependency was introduced in these scopes.
-
-One role suffices for chart/technical/momentum/ML/DL/public-model/composition
-source work; no per-indicator agent/MD or permanent synthesis team. A new
-proposal must name a real residual/consumer and become a finite experiment or
-concrete rejection, not an ever-growing reading list.
-
-Socrates's temporary registration task is CLOSED028c15d8: actual private
-15registered/target8/intersection1/unregistered7 after3freshadmissions, not
-broker holdings or risk eligibility. Old startup125 failure stays historical.
-Its fresh broker scopes and separate custody snapshot086e8941 are now CLOSED:
-retained cumulative native40positive-fill states/7positiveowner scopes,
-not today's trades/model alpha or matching to broker7.0orders/privatewrites,
-no active executor. Parent owns Git; no strategy trial was consumed.
-
-Saved-expert source reviewbd2896db led to ACTUAL new TTM-B CUDA25row point
-4463c25f,0fits/allclosed, not a Paper swap/H20 conversion/old custody adoption.
-Frozen follow-on policy is top<=5 rawH5>.002/tie originalslot/each.2 and cash
-remainder. Compare same-initial-gross uniform25 plus fullstake/cash references;
-lower exposure/DD is not alpha. Native caller hash ABI failed before current
-scores were decoded; isolated unchanged-policy recovery0d065cf4 now CLOSED:
-ONEFIRST cached projection/5selected/SDK3NAS+2unsupportedNYS,0models/Paper.
-No model/threshold hunt. New policy is descriptive prospective
-development, not fresh alpha or additional broker risk permission.
-
-## Closed / Reusable Evidence
-
-Initial source metadata43checks retained the producer's tuple/list roundtrip
-failure rather than overwriting it as success. Held coverage277+24 then supplied
-the actual required-price support. Exact source/closure/time/style limitations:
-A/research/current-low-turnover-strategy-readiness-20261026-v1/CONSUMER.json.
-The old2Kbuffer result is INPUT_UNAVAILABLE, not strategy-profit evidence.
-
-Fourierproposal e52e5813 -> closed714c939b fixed-map FAIL/6CUDAfits;
-expert-tree readiness -> closedd11077be conditional FAIL/2CPUfits;
-SPYsourceb35609f7 -> closed66fdef27 descriptive references/0models.
-No re-proposal/rerun of completed consumers. Interpret passive/cadence outcomes
-with exposure, overnight, universe and cost differences, not pure alpha.
-New proposals become a concrete experiment/rejection, not an endless reading list.
-Earlier consumed mechanisms below retain selected safeguards; detailed old
-contracts/sources/results remain in Git and immutable artifacts.
-
-## Consumed Mechanisms / Do Not Duplicate
-
-- SharedLag63-FiLM proposal772776ed:17CPU checks/own code/source references;
-  matched capped87750f60 and unit-simplexeac36f68 both failed replacement.
-  Not a faithful DLinear reproduction or new nonlinear class/first-use claim.
-- CausalTCNcf554ca9:old3fa13f22 fit stopped2epochs/time; leanSYN76c7e6db
-  proved float parity/cold43.68x-71.53x SYN speedup. Actual continuationff022d49
- 47totalepochs/selected23 growth-.909557%/DD3.509977% at10bp, FAIL.
-- Fixed-half kernel d814e26e, binding788018ab and helper44cd were prepared.
-  Actual separate R3f08cf819 already completed12cells204checks/0fit-forward-GPU:
-  +.531905%growth/.746635%DD versusGRU+1.482630/.812878, growthcriterionFAIL.
-  Unused helper is NOT another ready replay. Prior failures/debits remain.
-- Seed105/106 recovery317002b1:bothnegative, only104positive. No bestseed/
-  blend retune or claim of robust profit; objective/optimization remains open.
-- Issuer hardcap153ab658 consumed b611eb7e and H5ed4a596d/relativecriteriaFAIL.
-  Three-seed9e5f6f0a resource-preempted/no financialcells, not convergence.
-  HHIpenaltydf38d8b2 selectedoldalias/FAIL. No oldfailure regrade.
-- Mature-memory2783b108 consumed4f05e335:CPUMLP26epochs+CUDA1.503billion
-  distances/15cellsFAIL. TabMd941a34334CUDAepochs vsMLP32 actually tested.
-  Prior actual patch6/mixer3/attention5 fits mean architecture-name novelty
-  must be checked against evidence, not a registry label.
-- GPU economic-gap pairwise47e3fb87:2actual71/67tree fits/allcriteriaFAIL;
-  cachedfusiond114b164 rejected. Official backend/source claims != alpha.
-- Volume relative-strength3be0c1a6 consumedbe906a96:properPASS/financeFAIL.
-  Native C*tvol is an activity proxy, not verified USDcapacity. Dynamic common
-  complete-feature mask is pre-SCORE/general, not outcome selection/illiquidity.
-  Actual point61d11d44 full100/derived67 exists; entry technical failure, nofill.
-- JointMoEa4a7b041 learned/fixedthird41/56CUDAepochs/selected17-32;
-  learned+.9110/.8422 vsuniform-.8005/1.2978, reused3cohorts/highconcentration,
-  not alpha. Actual Joint17 naturalentry failed before native seed; exact
-  alias/hash conditional-exit repair is Execution's scope, not a model change.
-- LiquidETF47e05ba9 price-onlyPASS, carryf9bbcd67 FAIL vs aligned equaltrio
-  hold. Chronos205203e42 actualGPUload/15cellsFAIL. Old source/rights/runtime
-  and immutable results stay Git/A; no arbitrary public code in Execution.
-
-## Next Data / Claim Boundary
-
-Selected provisional GRU9409 Paper input remains unchanged. Data70/pointinput181e
-and actual pre-entry referencec992 are complete; future outcomes remain unknown,
-not Paper PnL or independent alpha.
-No source/fit/profitability gate suspends independent delegated Paper work.
-Proposals become one executable finite experiment or rejection, not a reading
-list/per-indicator MD/new agent platform. Engine owns numerical interpretation.
+No broker/credential/risk authority in Strategy research packages. Direct
+qualified schema/readiness exchange with Engine is allowed; Parent is not
+an extra approval relay. Keep a small executable proposal set, not a reading
+list, separate agent per indicator or new reporting platform.

@@ -6,8 +6,10 @@ coexistent-native-paper-execution-runtime-v1
 
 Make the already-owned finite Paper execution reach its original native
 decision/reconciliation path while independent Data and Research work coexist.
-Use the existing L18:00 and optional18:30 UTC opportunities first. A technical
-failure, installation or task exit is not successful Paper execution.
+The original L18:00 and optional18:30 UTC entry opportunities have now ended.
+Inspect their exact results and repair future owned paths; do not reopen ended
+entry windows or replace unknown requests. A technical failure, installation
+or task exit is not successful Paper execution.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -41,32 +43,37 @@ must not become an indefinite company-wide hold.
 
 - Parent: integrate evidence, qualify actual source/mount/owner closure,
   repair only reversible delegated faults and own all installed cutovers/Git.
-- Execution/Leibniz: exact admission first-cause forensics and bounded
-  source-attested noncustody actor rules. Missing historical actor stays unknown.
-- Data/Infra/Faraday: prepare L first and optional second with current exact
-  Data source/argv/write-scope/mount qualification and tested claims/release
-  bindings. Existing stale Compose/Python pins are evidence to inspect, not
-  authority to blindly repin. No blanket actor exemption.
-- Engine/Steward/Schrodinger: QQQ OPEN5 two-arm/six-fit campaign CLOSED b419f22a.
-  ADOPTION in A/research/current-liquid-etf-open5-context-development-20261026-v1
-  fixes origin17:26:48/hard19:26:48 UTC,3600 owned/11520 updates/8 cells/
-  zero market retries. Bootstrap/path failures were repaired before market
-  fits with old costs preserved. Actual6fits/1568updates/6OOF/8cells complete;
-  fixed context primary FAILS, all CIDs/Jobs/lease closed. Do not refit/rescue
-  the recipe. Next cost/position-aware Source proposal is not a market trial.
+- Execution/Leibniz: L18:12 HOST-FAILURE7d02658b proves stale PS executable
+  pin before the metadata subprocess. Stage future-exit-only metadata43351f18/
+  60dc71a1 with original ACL/windows; Parent applies after actual owner closure.
+- Data/Infra/Faraday: exact optional task/run/closure/source facts. Its empty
+  c55d public sink remains UNKNOWN, not a signal or fill. Optional PS provider
+  is compatible; do not assume L's cause applies. Mixed Data next19:24 was not
+  paused/rescheduled. No blanket actor exemption or gratuitous pin updates.
+- Validation/Socrates: Source-native RO Linux seam52e1d9eb passed one cold/
+  three negatives;6Jobs/container closed. NEW one-read currentL320/dc004 scope
+  18:47:15..19:05UTC requires positive actual owner closure, exact native book
+  and private stability. Old1815..1829 scope expired UNINVOKED; no reuse.
+- Engine/Steward/Schrodinger: QQQ contextb419f22a CLOSED/primaryFAIL. Newest
+  cost-position gateeca8d542 CLOSED:140rows/two cells/0fits,3CIDs15Jobs closed.
+  Gate20bp6.1468%/DD2.4345 improves cachedNN but alwaysQQQ6.4203%/sameDD
+  dominates; no broad alpha/Paper promotion. Prepare DISTINCT adverse-path
+  quantile Source/native with Halley, max600owned/1800elapsed/one tinyfit,
+  NO market fit adopted yet. Do not rerun completed models for GPU occupancy.
 - Strategy/Review: challenge concrete decisions when needed; no new permanent
   team, approval platform, per-agent next-goal file or report chain.
 
 Existing opportunities, not new launch commands:
 L Oct26 18:00..18:15 UTC, original Oct30 exit.
-L partial three-static-host repair ACTUALLY enabled17:55:41 UTC,
-source2f53dcf2/releasedd6b991e, original pair/windows/ACL preserved. Native
-source/definition checks passed;86otherdefs unchanged. Not a full mixed-
-wrapper/container grant or fill. Mixed intraday task measured next19:24,
-not paused or rescheduled to avoid an assumed conflict.
+L diagnostic ACTUALLY installed18:11:10 UTC,source32012b79/releasedc004d88.
+Exact18:12 failure source_pin proves PS7.6.7 versus installed valid Microsoft
+7.6.9 hash drift. It does not date the binary change or explain earlier empty
+attempts. Future-exit metadata4335/60dc STAGED, NOT installed. Partial static
+Data actor rules are not a full mixed-wrapper/container grant or fill.
 Optional entry Oct26 18:30..18:35, exact-pending recovery18:36..18:40,
 original Nov20 exit. Current installed optional entry outerf4dd/runtime19902/
-release5ba4, recovery/exit remain originalR4. Preserve their exact identities.
+release5ba4, recovery/exit remain originalR4. Exact c55d public reader942
+returned UNKNOWN_MISSING_PUBLIC_RESULT at18:43. Preserve exact identities.
 Existing same-chat oct26-paper follow-up remains one-shot; do not create a
 replacement chain. Data retention owns21:55 UTC; do not duplicate collectors.
 
