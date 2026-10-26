@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, current review21:43UTC Oct26.
+2026-10-27 KST, current Throughput Review22:38UTC Oct26.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/cutovers; AGENTS owns authority.
 Preserve unrelated %SystemDrive%/. History is Git/immutable artifacts, not backlog.
@@ -12,11 +12,10 @@ goal SUPERSEDED_NOT_ACHIEVED; ended entries never reopened/substituted.
 Actual4MSFT Tasks installedabe9, not financial runtime/submit/fill. Nextowned
 entry Oct27 13:40UTC/22:40KST. No foreground session wait/operator/GPU hold.
 
-Current ready/owned: native adapter under Execution, saved RankHalf current
-inference under Engine, direct completed Data refs, initial-vs-learned Source
-diagnostic under Strategy, broader US_H5 Source readiness under Socrates.
-Parent verified code/actual installation, integrates/Git. Two-file native guard
-write set released; no current tracked writes assigned to agents.
+Current ready/owned: sizing repair after measured below-lot .005B diagnostic
+under Socrates; new-image financial SYN under Leibniz; C120/H60 causalpast
+producer under Data; masked-patch source/design under Engine+Strategy.
+Parent integrates/actual cutovers/Git; all tracked-code writes remain released.
 
 Bottleneck for company runtime is future owned opportunity and actual native
 evidence, not research profitability or missing docs. Ready independent work
@@ -34,12 +33,14 @@ Fresh scope admission is not a global proof all future research actors coexist.
 
 | Owner | Actual / next |
 | --- | --- |
-| Parent / 총괄 | 4Taskabe9 installed; new guard7131 fullverified; integrate/Git/new runtime preparation only after specific consumer ready. |
-| Leibniz / 실행 | Pure8row HGB/RankHalf->native typed input/cold parser adapter, no Task/bank/private/model/newtrackedwrites. Existing one serial account owner. |
-| Schrodinger / 엔진·연구 자원 | RankNet3CUDAfits737updates COMPLETE/REJECTstrictprimary/allclosed. New savedF3epoch9 RankHalf currentpoint max1CUDAforward8rows/0fits-held-economic/allowFALSE. |
-| Faraday / 데이터 | Currentpoint e76f and TOTAL20383 sidecars complete/direct handedoff; no duplicate downloads/labels. |
-| Halley / 임시 전략 | Composition32f56 REJECTDD/allclosed. New Source-only initial-vs-learned attribution readiness, no numerical rerun. |
-| Socrates / 임시 검증 | Native no-order patch released/Parentverified. Separate US_H5 exchange source-only readiness, oldNASprofile/ETFguard unchanged. |
+| Parent / 총괄 | Installed MSFT37 unchanged; image2be native/cold checks complete/not deployed; integrate actual lot cause, no market foreground wait. |
+| Leibniz / 실행 | New-image host/Linux HGB+RankHalf financial SYN, invented state only. First two fixture assertions failed, bounded same-case repair. |
+| Schrodinger / 엔진·연구 자원 | RankHalf currentpoint+initial attribution completed/allclosed. C120/H60 masked-patch SOURCE contract; no new fit yet. |
+| Faraday / 데이터 | One new causalpast packet projection720owned/3600elapsed after native boundary proof; no HTTP or whole-archive learner mount. |
+| Halley / 임시 전략 | Masked-patch source/license/duplicate/falsification review; adaptive archive not independent holdout. |
+| Socrates / 임시 검증 | Exact lot read consumed: .005B below1lot, native headroom subset enough. Prepare new immutable engineering sizing, no Task/private effect. |
+
+
 
 Assignments/MD do not prove active numerical workers. Actual GPU study finished:
 3fits20/20/29epochs, best0/0/9, peaks66/66/68MiB. Low later utilization is not a
@@ -60,8 +61,14 @@ permission hold. No dummy load or completed-fit repeats; useful concurrency allo
 - HGB c9c35+2.8773%/DD1.9275%, hierarchy32f56+3.0544%/2.2989%, RankNet01b810
   +2.4307%/1.7227%, RankHalf+2.5882%/1.7134%. Frozen combined primaries REJECT.
   RankHalf dominates uniform8 on reused development, not alpha/regradedpass.
-- Current HGB af0b/ec7822/065bf7 complete8positive fairties/allowFALSE,
-  no SDK/dispatcher bind. Research OPEN[e+5] differs from nativeCLOSE[e+4].
+- HGB af0b and RankHalf75f currentpoints COMPLETE; adapterfe2 native69ff/87963
+  allowFALSE/unallocated, imagee47/2be verified/not deployed. H5 nonparity stays.
+- Lot RESULTcd30aa16 consumed22:33UTC/all13JobsCIDclosed: .005B below one
+  retained-close lot, native cap/gross subset enough, original stable/reserves
+  held. Not due-time quote/funds. No silent policy/input/Task change.
+- Initial attributiond2f: ranker learning growth killed, RankHalf limited
+  contrast not killed; old primaries unchanged. New C120/H60 source/producer
+  work is ready independent research, no active CUDA training evidenced yet.
 - Prior L/optional consumed RO remains UNKNOWN/countsnull/notzero-flat; optional
   c55d missingpublic/forensicpossibleonly, J17 postwindow no exactrecord not
   zero historical wire. F9 and original shared tenth/cost/loss/pending preserved.
@@ -77,5 +84,5 @@ New authority7131c2a1:
 559serialPASS86.78s/19461fullPASS/26knownSKIP35warnings/8actualworkers378.74s/
 helper0/Ruff/threeComposePASS/1411exact/currentCchild+leaseabsent/22PID-startsclosed.
 Patch NOT deployed to immutableMSFT37/image27. Prior70193a28 stays old-source only.
-Last pushed before integration deaabcbb. Commit owned verified code/docs;
+Last pushed7f34ae95; new external image/outputs separately checked. Commit owned verified code/docs;
 company outcome requires actual native operational evidence, not this commit.

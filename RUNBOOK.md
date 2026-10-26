@@ -33,6 +33,18 @@ not allocated capital/affordability proof or per-target allowance. Native
 virtualhost/identity/owner/budget/quote/orderability/pending checks run at due.
 No invented1share/threshold change to force trade. Unknown reservations remain.
 
+New exact ONE-read lot diagnostic at22:33UTC, RESULTcd30aa16:
+A/execution/current-msft-fixed-gross-lastclose-lot-proxy-20261027-v1/RESULT-ACTUAL.json.
+Original account/basis/fullbook/source/input stable; MSFT still unregistered.
+Actual .005B target does NOT cover one retained Oct26 last-close whole lot,
+although native remaining-cap/gross-cash subset does. Unknown buy reservations
+remain held. This is OFFSESSION_LASTCLOSE_LOT_PROXY_ONLY, not fresh quote,
+funds, orderability or a guaranteed trade. One read consumed/13Jobs+CID closed,
+0credential/API/privatewrite/lock/recovery. Do not rerun. Socrates prepares
+a NEW immutable deterministic engineering sizing revision inside original
+B/10, not a forced minimum share, frozen-research regrade or unknown replacement.
+No revised input/Task is installed yet. Due-time native checks remain decisive.
+
 Original e9 installer/R1 73/r2 f803 recovery scripts are CONSUMED; no rerun.
 Historical failure: service materialized inherited ACEs/AI on unprotected ACL;
 protected R1 retained exactly4ACEs but OS also AI237vs235. R2 recognized only
@@ -58,7 +70,8 @@ Data/research actor names or unrelated future due times are not private writers.
 Actual MSFT RO f68c4e53 CONSUMED at20:55:13UTC/all59Jobs+readerPIDsclosed:
 A/execution/current-msft-operational-native-book-admission-20261027-v1/CONSUMER.json.
 Original account/basis/fullbook/stability PASS, MSFTunregistered, unknown reserve
-held; other7NAS8 eligibility NOT proved. No additional snapshot/scope reuse.
+held; other7NAS8 eligibility NOT proved. Never reuse a consumed scope;
+new named qualified readers remain possible for a concrete decision.
 Readonly API faef83ee consumed1POST5GET,7sequential broker holdings not adopted,
 NASD openorders0 scope only/fixed-reference orderable not quote/equity/PnL.
 Do not infer zero/flat from missing cohort, release F9 or promise profitability.
@@ -66,7 +79,11 @@ Do not infer zero/flat from missing cohort, release F9 or promise profitability.
 Native fullIO SYNb3fedf64 is completed/allclosed; mocks account/owner/HTTP/
 financialclock, not actual broker proof. Image27dde748members native inert API
 passed. Use actual manifest-index27dde, not failed configdigest2a5e7ce0.
-New verified repo guard is NOT installed into this immutable runtime image.
+New guard runtime image2be713ae is built/native-verified under
+A/execution/current-h5-no-order-native-runtime-image-20261027-v1/CONSUMER.json,
+e47a8578. New image does NOT replace installed MSFT37/image27. Pure adapter
+final lint-r2/HGB69ff1136 and RankHalf87963a1c remain allowFALSE/unallocated;
+new-image multirow financial SYN remains incomplete, not activation authority.
 
 ## Other Original Owned Paths
 

@@ -18,10 +18,14 @@ max2NET20cells. Source600 includes180ready+90reviewONCE,Data300/rest2700.
 That family now CLOSED:3CUDAfits737updates/69epochs/3OOF/2cells/0retry,
 allworkers+leaseclosed. Actual20/20/29epochs/best0/0/9,66/66/68MiB peaks,
 fitwalls2.37/2.48/3.49s. Both primarygrowth criteria fail/DDpass, no rerun.
-New RankHalfcurrentpoint300owned/1800elapsed/max1actual8row CUDAforward/
-0fits-held-economic may reuse savedF3epoch9 and cachedHGBpoint. Parent
-sample20:49UTC4090/1647of24564MiB/2%; no unknown-
-desktop permission hold, no need to repeat completed fits for utilization.
+RankHalfcurrentpoint75f COMPLETE1CUDAforward/34MiB/0fits, allclosed191.001owned.
+Initial attributiond2f COMPLETE1CUDAforward120rows/0fits,91.559919newowned,
+all3CIDs15Jobs/root/leaseclosed. No repeat completed training.
+Parent sample22:35UTC4090:1636used/22503free of24564MiB/3%/33C, dated only;
+no desktop permission hold. NEW masked-patch C120/H60 SOURCE readiness,
+no numerical fit freeze yet. Prospective Data oneprojection720owned/3600elapsed;
+Engine proposed1SSL+3fixedprobes needs final finite Source contract before
+numerics, not human approval. Fresh per-worker VRAM/lease checks at dispatch.
 
 Prior CPU numerical consumer eca8d542:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json.

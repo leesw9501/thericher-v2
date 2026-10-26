@@ -26,6 +26,18 @@ Maximum .005 of original full B inside B/10, not allocated/affordability proof.
 Due native owner/virtualhost/current quote/orderability/budget/pending checks stay.
 No force1share/threshold change/adoption/profit expansion or substitute unknown.
 
+New exact ONE-read lot diagnostic at22:33UTC, RESULTcd30aa16:
+A/execution/current-msft-fixed-gross-lastclose-lot-proxy-20261027-v1/RESULT-ACTUAL.json.
+Original account/basis/fullbook/source/input stable; MSFT still unregistered.
+Actual .005B target does NOT cover one retained Oct26 last-close whole lot,
+although native remaining-cap/gross-cash subset does. Unknown buy reservations
+remain held. This is OFFSESSION_LASTCLOSE_LOT_PROXY_ONLY, not fresh quote,
+funds, orderability or a guaranteed trade. One read consumed/13Jobs+CID closed,
+0credential/API/privatewrite/lock/recovery. Do not rerun. Socrates prepares
+a NEW immutable deterministic engineering sizing revision inside original
+B/10, not a forced minimum share, frozen-research regrade or unknown replacement.
+No revised input/Task is installed yet. Due-time native checks remain decisive.
+
 ## Closed Readiness / Recovery
 
 Native RO f68c4e53 CONSUMED at20:55:13UTC/all59Jobs+readerPIDsclosed:
@@ -34,7 +46,8 @@ Original anchor/account/basis/fullbook/stability PASS, MSFT unregistered.
 15registered stocks does not prove other7 NAS8 eligible. Remaining cap/gross
 positive,1unknown pending/positive reserve unchanged. No independent F9
 attribution/release, broker freshness/affordability/PnL or new private grant.
-No second snapshot or reuse of consumed L/optional/MSFT scope.
+Never reuse consumed L/optional/MSFT scope; a new named qualified read may
+address a concrete decision without changing its original limitations.
 
 Real readonly faef83ee20:20:48..54UTC:1POST5GET0retry/Paper4 anchor matches;
 7sequential complete broker holdings not adopted, NASD openorders0 scope only,
@@ -60,14 +73,19 @@ later closure4 independently admitted2passes, not a blanket concurrency waiver.
 
 ## New Source / Future Consumer
 
-Leibniz owns pure NAS8 research-proposal native adapter:
-A/execution/current-nas8-research-proposal-native-adapter-20261027-v1.
-300owned/1800elapsed, no private/KIS/Task/model/Git or tracked source edits.
-Actual prepare/serialize/cold load, all8slots/rawFP64 weights/clocks/provenance
-and allowFALSE. HGB065bf7 and newRankHalf separate frozeninputs; no newbank/
-peerwriter/MSFTswap. Native pertargetforeignskip/no manualreweight/adoption.
-CLOSE[e+4] variant explicit, not learned OPEN[e+5] replication. Onevisit
-yields first effect; finite future follow-on visits need same original owner.
+Native adapterfe2b37a2/source83814fc9 COMPLETE:
+A/execution/current-nas8-research-proposal-native-adapter-20261027-v1/CONSUMER.json.
+Actual prepare/serialize/cold load/all8slots/rawFP64/clocks/provenance/allowFALSE.
+Final lint-r2/HGB69ff1136 and RankHalf87963a1c; older root inputs superseded
+unallocated. No new bank/peerwriter or MSFT swap, native foreign skip unchanged.
+New imagee47a8578/2be713ae built750tracked inputs,748image members/native
+guard/inert API/both coldinputs PASS. NOT DEPLOYED. Exact image root:
+A/execution/current-h5-no-order-native-runtime-image-20261027-v1/CONSUMER.json.
+Actual host/Linux multirow SYN under current-nas8-account-host-guest-native-
+skip-syn-20261027-v1 is not yet qualified: first HGB and RankHalf fixture
+assertions failed, no actual account/API/Task. Only bounded same-case repair.
+
+
 
 Socrates reproduced native H5 existing-record no-order prefix fault, patched
 ONLY paper_account_session.py + tests. Exact current-target sizing proof append
@@ -75,7 +93,9 @@ allowed, old proofs/othermetadata/toprecord/bank/owners/pending/prefix unchanged
 43focusedPASS/ClaudeGOlimits. Parent authority7131c2a1:559serialPASS/19461fullPASS/
 26knownSKIP35warnings/8actualworkers/Ruff/threeComposePASS/cleanCchild+lease/
 22PID-startsclosed/1411digests exact. Codepatch NOT deployed to MSFT37/image27.
-Broader US_H5 exchange source-only readiness separate; oldNASprofile unchanged.
+Broader US_H5 source readinessc891b050: mixed NYSE/AMEX book requires legacy
+same-account reader/writer compatibility migration first. ClaudeREVISE; no
+partial activation, oldNASprofile/ETFguard and MSFT37 unchanged.
 
 ## Preserved Original Owners / Unknowns
 

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, through21:43UTC Oct26.
+2026-10-27 KST, through22:38UTC Oct26.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 AGENTS.md owns authority. Parent owns shared MD/Git/actual cutovers.
@@ -38,6 +38,18 @@ Maximum .005 of original full basis B stays inside original shared B/10;
 metadata is not an allocation, affordability proof or a spending target.
 F9 UNKNOWN-HELD/costs/losses/pending remain; no profit expansion/adoption/reset.
 
+New exact ONE-read lot diagnostic at22:33UTC, RESULTcd30aa16:
+A/execution/current-msft-fixed-gross-lastclose-lot-proxy-20261027-v1/RESULT-ACTUAL.json.
+Original account/basis/fullbook/source/input stable; MSFT still unregistered.
+Actual .005B target does NOT cover one retained Oct26 last-close whole lot,
+although native remaining-cap/gross-cash subset does. Unknown buy reservations
+remain held. This is OFFSESSION_LASTCLOSE_LOT_PROXY_ONLY, not fresh quote,
+funds, orderability or a guaranteed trade. One read consumed/13Jobs+CID closed,
+0credential/API/privatewrite/lock/recovery. Do not rerun. Socrates prepares
+a NEW immutable deterministic engineering sizing revision inside original
+B/10, not a forced minimum share, frozen-research regrade or unknown replacement.
+No revised input/Task is installed yet. Due-time native checks remain decisive.
+
 Recovery history is CLOSED, not commands to repeat: original e9 installer
 failed after creating ONLY disabled entry because unprotected DACL materialized
 3inherited ACEs/AI flag. R1 Source73f84 set protected exact4ACEs but OS also
@@ -57,7 +69,8 @@ Original account/basis/fullbook/private-source stability PASS. MSFT unregistered
 15registered stocks total does NOT prove other7 NAS8 eligible. Remaining native
 cap/gross positive,1unknown pending/positive reserve unchanged. No independent
 F9 attribution/release, fresh broker/quote/affordability/fees/PnL or new grant.
-No extra private snapshot or reuse of this consumed scope.
+Consumed scope cannot be reused; a separately named qualified reader is not
+prohibited by this package-local limitation.
 
 Actual Paper readonly faef83ee at20:20:48..54UTC:
 A/execution/current-msft-paper-real-readonly-readiness-20261027-v1/CONSUMER.json.
@@ -98,9 +111,21 @@ is not proof of a permission hold. No dummy or completed-fit repeats.
 HGB currentpoint af0b3333/sourceec7822eb/proposal065bf7d7 is COMPLETE:
 A/research/current-nas8-hgb18-feature-only-currentpoint-20261027-v1.
 1native+1actual8row restore/forward/0fits-held-economic/allclosed,
-allow_submitFALSE,8positive fair ties, not native SDK/dispatcher bound.
-New RankHalf currentpoint reuses saved F3epoch9/affine plus cached HGBpoint,
-max1actual8row CUDA inference/0fits-held-economic; do not repeat training.
+allow_submitFALSE,8positive fair ties.
+RankHalf currentpoint75f56ee4 is COMPLETE: saved F3epoch9/FITaffine plus
+cached HGBpoint,1actual8row CUDAforward/5positiveweights/34MiB/0fits-held-economic,
+allclosed191.001owned/324.320elapsed. Both current proposals are inert.
+Native adapterfe2b37a2/source83814fc9 COMPLETE: actual prepare/serialize/cold
+loader,8slots/rawFP64/clocks/explicit H5CLOSE[e+4] nonparity/allowFALSE.
+Final native inputs are lint-r2/HGB69ff1136 and RankHalf87963a1c; older root
+inputs superseded/unallocated. No private bank, allocation or deployment.
+
+Initial-weight attributiond2f620d9 COMPLETE: safe tensor identity checked,
+one saved F3initial CUDAforward120rows/15dates; cached32earlier dates reused.
+0fits/2newcontrols/1held/all3CIDs15Jobsclosed/91.559919newowned.
+Initial rank growth2.4598694% beats trained2.4306671%: positive learning-growth
+claim killed. Initial RankHalf2.3987388% vs trained2.5881617%: limited blend
+contrast not killed; no old primary regrade or independent-alpha claim.
 
 Data currentpoint HANDOFFe76f0401:20GET1POST0retry/20accepted,61priorOHLCV
 x20context ->8x18features,5Jobsclosed59.768869active, native/verification/RuffPASS.
@@ -115,15 +140,26 @@ Older context/seeds/q10/gate results stay in role boards/Git/immutable consumers
 
 ## Owners / Ready Work
 
-- Parent: integration/verification/Git; actual four-Task installation above.
-- Leibniz: pure8row HGB/RankHalf proposal->native typed adapter/cold roundtrip;
-  existing serial owner only, no new Task/bank or changed MSFT input/release.
-- Schrodinger: RankHalf current inference, actual resource coordination, not
-  repeating completed RankNet. Native SDK/horizon/foreign-skip boundaries stay.
-- Faraday: completed current/TOTAL packets; direct existing refs, no duplicates.
-- Halley: source-only initial-vs-learned attribution readiness, no new fit.
-- Socrates: native guard patch completed; source-only separate US_H5 exchange
-  readiness. Old NASD-only profile/ETF guard/owners remain untouched.
+- Parent: integration/Git and actual cutovers. New runtime image
+  sha256:2be713ae0c9f0b0dcc4658b42f7b3460ccf1dd6fd1ae8674debac1bd979cb42b
+  built from750tracked inputs;748image members/native d455 guard/inert API/
+  both cold adapter inputs PASS. Image CONSUMERe47a8578, NOT DEPLOYED to MSFT.
+- Leibniz: new-image host/Linux multirow SYN; first HGB/RankHalf fixture
+  assertions failed, no financial qualification. Same-case bounded repair
+  only; no actual private/API/Task effects.
+- Socrates: .005B below-lot cause above; source-only immutable sizing repair.
+- Schrodinger/Halley: C120/H60 masked-patch representation SOURCE readiness,
+  not active training. Existing archive/reused outcomes, RAW_LOG target.
+- Faraday: NEW causalpast producer/packet dispatch720owned/3600elapsed,
+  one market projection after actual producer-file-consumer smoke. Separate
+  PAST.npz and TARGET.npz; no whole archive/future prices to learner.
+  Readiness HANDOFF under data/current-c120-h60-causal-window-producer-readiness-
+  20261027-v1 is COMPLETE_SOURCE_ONLY, actual packets not yet evidenced.
+  Original145/43/63sessions, QQQscheduled6054/1806/2610, nominal C120/H60
+  minutes not H5sessions. Joint missing-mask counts await literal join.
+- Broader US_H5 readinessc891b050: NYSE/AMEX requires old same-account
+  parser/writer migration before first such book entry. Claude REVISE,
+  no partial activation/old NAS guard removal; unrelated research continues.
 
 ## Preserved Original Execution
 
@@ -155,5 +191,6 @@ workers378.74s/helper0/Ruff/default+research+accountingoverlay with.env.exampleP
 First helper argument-binding error happened before helper body, not a run;
 corrected explicit -Workers/-PytestArgs. No cleanup/lease denial bypass.
 This patch is verified but NOT deployed to MSFT37/image27. Old70193a28 immutable.
-Last pushed snapshot before this integration: deaabcbb. Parent commits owned
-verified code/docs only; unfinished company outcome remains UNFINISHED.
+Last pushed code/docs7f34ae95. New image2be and external preparations have their
+own native checks; none proves deployment or fills. Parent commits owned
+verified docs only; unfinished company outcome remains UNFINISHED.

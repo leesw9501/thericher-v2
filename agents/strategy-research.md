@@ -7,14 +7,24 @@ Detailed closed history: Gitbb391f30 and immutable source/consumer records.
 
 ## Current / Concrete Consumer
 
-Current Halley package is SOURCE-only learned-vs-initial attribution readiness:
-A/research/current-nas8-ranknet-learning-attribution-readiness-20261027-v1.
-60owned/600elapsed, inspect retained metadata/code for exact F3initial weights
-or deterministic initializer proof. F1/F2selectedepoch0 and F3epoch9 in CLOSED
-3CUDAfit RankNet study, not all learned selected models. No new fit/forward/
-market/held payload or source-only authority for an extra financial experiment.
-If a future ablation is feasible it needs its own finite same-key/cost scope;
-no outcome rescue, alpha or retrospective regrade.
+Closed attribution readiness84a36189 enabled separate actuald2f620d9 ablation:
+initial rank growth2.4598694% exceeds trained2.4306671%; positive ranker
+learning-growth claim killed. Initial RankHalf2.3987388% vs trained2.5881617%:
+limited blend contrast not killed, no old primary regrade or alpha.
+
+Current Halley SOURCE package: C120/H60 masked-patch representation,
+100owned/1200elapsed, official source/license/exact duplicate audit and
+falsification for one executable recipe. Engine final contract/numerical
+freeze pending, not active training. Data separately implements causalpast
+window producer, raw QQQH60 LOG label physically isolated from features.
+PatchTST general time-series claims are not stock-alpha evidence:
+https://arxiv.org/abs/2211.14730
+https://github.com/yuqinie98/PatchTST
+https://raw.githubusercontent.com/yuqinie98/PatchTST/main/LICENSE
+Source Apache2.0 checked; no upstream code/download/dependency/runtime change.
+Existing archive/outcome reuse remains UNKNOWN_NOT_FRESH, not new holdout.
+
+
 
 RankNet independent Source review closed70owned inside Source600 ONCE.
 Native constructor/checkpoint/hand-off and original targets/28pair ties/

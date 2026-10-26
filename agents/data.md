@@ -52,9 +52,32 @@ do not backdate availability to close. No vintage splice/canonical overwrite/
 PIT/CA/TR/volume-adjustment/finality promotion. Direct Engine handoff.
 FEATURES9d85870d/ROLEd6a22a2c, exact8x18 raw FP64, FIT affine belongs to Engine.
 
-Next short metadata-only readiness: original SPY600 source/calendar pointer
-to Halley, existing NAS8 rank-target data ABI with Schrodinger.60owned/600elapsed,
-no HTTP/model/held payload/numeric market/private operations or duplicate data.
+New Faraday dispatch: one causalpast packet build:
+A/data/current-c120-h60-causal-past-packets-20261027-v1.
+720ownedworker/3600end-to-end seconds, one actual market projection after
+native named producer->PAST.npz/ROLE coldconsumer future-poison/missing-mask/
+clock/role tests. No retry without exact predeclared first-cause scope, no HTTP.
+Exact source readiness HANDOFF under current-c120-h60-causal-window-producer-
+readiness-20261027-v1 is COMPLETE_SOURCE_ONLY20owned/404elapsed.
+Original FirstRate SPY0/QQQ1 remapped QQQthenSPY,120x10 rawOHLCV FP64;
+all original QQQkeys retained, unavailable mask not imputed/deleted.
+Nominal120completed-minute context, ENTRYOPEN origin+60seconds, exit bar
+CLOSE endorigin+3660. Target RAW_LOG y_log physically separate from PAST.
+145FIT/43INNER/63EVAL, QQQscheduled6054/1806/2610; actual jointknown counts
+await literal10field-mask join (INNER1800 is not yet a measured result).
+Engine owns new10channel FIT normalization once, no whole archive/futureprice
+mount to learner. Reused UNKNOWN_NOT_FRESH; no PIT/TR/finality/arrival claim.
+
+Intraday corpus metadata HANDOFF under current-intraday-causal-feature-corpus-
+readiness-20261027-v1 closed: KIS historical21+disjointcurrent metadata gives
+QQQ33/SPY34complete sessions, not a merged/rawvalidated modelpacket. FirstRate
+2022-09-30..2023-09-29 gives QQQ251complete/SPY250complete+1partial; existing
+C120/H60 1m/5m outcomes reused previously. Sample2026Sep28..Oct9 has10complete
+sessions each, full-bucket 1h/3h omits30minute RTHtail. No imputation/new data.
+Metadata helper36checks, correctnessRuffPASS/defaultRuff23E501 failed;
+source-only readiness does not claim clean full lint or native qualification.
+
+
 
 Completed NAS8 study Data view:
 A/data/current-liquid17-volume-open5-selection-packets-20261027-v1/nas8-r1.

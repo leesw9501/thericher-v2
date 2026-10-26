@@ -56,14 +56,34 @@ Blend dominates uniform8 on reused development only, useful tradeoff not alpha.
 Ownedupper1182.301532/3600,elapsed1177.964987/7200, leaseabsent.
 Bounded duplicate audit found no exact completed match; ranking itself NOT new.
 
-Next currentpoint:
-A/research/current-nas8-fixed-rankhalf-currentpoint-20261027-v1.
-300owned/1800elapsed, saved F3epoch9/FIT18affine+cached HGBcurrentpoint,
-max1actual8row CUDArestore/forward/0fits-held-economic, new current role smoke
-before payload. Fixed average-TIE-RANK recipe unchanged, allow_submitFALSE,
-actual clocks/nonparity/refs preserved, not a new private writer/Paper pass.
-Halley source-only initial-vs-learned attribution readiness is separate;
-no control inference/ledgers granted merely by that source review.
+Completed RankHalf currentpoint75f56ee4:
+A/research/current-nas8-fixed-rankhalf-currentpoint-20261027-v1/CONSUMER.json.
+Saved F3epoch9/FITaffine+cached HGBpoint,1actual8rowCUDAforward/5positive
+weights/34MiB,0fits-held-economic/allclosed191.001045owned/324.320elapsed.
+Adapterfe2 native lint-r2/HGB69ff1136 and RankHalf87963a1c allowFALSE/unallocated;
+image2be native/coldverified but not deployed. H5 nonparity/foreign skip remain.
+
+Initial attributiond2f620d9 COMPLETE:
+A/research/current-nas8-ranknet-initial-weight-attribution-20261027-v1/CONSUMER.json.
+F3initial tensors exactly match both F1/F2epoch0;1CUDAforward120rows/15F3dates,
+32cached dates reused/0fits/2newNET20controls/1held/all3CIDs15Jobsclosed,
+91.559919newowned/315.083648elapsed. Initial rank2.4598694% exceeds learned
+2.4306671%: positive learning-growth claim killed. Initial RankHalf2.3987388%
+versus learned2.5881617%: narrow blend contrast not killed, not alpha or a
+regraded primary. Prior1182.301532/readiness30 retained once.
+
+NEW C120/H60 masked-patch representation SOURCE readiness:
+A/research/current-c120-h60-patchmask-engine-readiness-20261027-v1.
+One fixed recipe proposed: actual past120x10 OHLCV,15patches8/shared temporal
+encoder, FIT-only masked reconstruction, raw/initial/trained fixed Ridge probes
+on identical QQQH60 RAW_LOG labels. Final numerical freeze not yet issued;
+do not infer active training from this plan. Existing archive145/43/63sessions
+is reused UNKNOWN_NOT_FRESH. Data dispatched one causalpacket build720owned/
+3600elapsed after actual named producer/coldconsumer boundary tests.
+Physically separate feature windows/labels; old whole-role BARS contains later
+prices and must never be mounted into learner/forecast. No HTTP/private broker.
+
+
 
 Newest CLOSED consumer:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json,

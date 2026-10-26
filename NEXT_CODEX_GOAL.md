@@ -38,7 +38,8 @@ affordability proof or 10percent permodel. Unknown F9/costs/losses/reservations 
 
 Actual native RO f68c4e53 at20:55:13UTC is CONSUMED/allclosed: original account/
 basis/stability/fullbook PASS, MSFT unregistered,1unknown pending reserve held.
-Other7NAS8 registration NOT proved. No second private snapshot or F9 release.
+Other7NAS8 registration NOT proved. Never reuse that consumed scope or release
+F9. New named lot read cd30aa16 is also consumed, not a fresh broker query.
 Readonly API faef83ee consumed1POST5GET,7sequential holdings not adopted,
 NASD openorders0 scope only/fixed-reference orderable not quote/equity.
 SYN fullIO b3fedf64 PASS/allclosed but owner/account/HTTP/financialclock SYN.
@@ -50,22 +51,30 @@ journals/TRUE; NEVER rerun consumed scripts or reset financial identity.
 
 ## Ready Parallel Packages
 
-- Execution/Leibniz: pure8row HGB and RankHalf proposal->actual native typed
-  input/serializer/cold loader adapter under existing one-account serial owner.
-  No new peerwriter/Task/bank, changed MSFT binding or claim all targets eligible.
-  Keep raw FP64 weights/slots/clocks and explicit CLOSE[e+4] operational variant;
-  research OPEN[e+5] is different. Native foreign skip, never manual reweight/adopt.
-- Engine/Steward: HGB currentpoint ec7822/proposal065bf7 ready8rows/0fits/
-  allowFALSE. New fixed-RankHalf currentpoint reuses saved RankNet F3epoch9+
-  FITaffine and cached HGBpoint; max1actual8rowCUDAforward/0fits-held-economic,
-  allowFALSE. No repeat completed training or Paper profitability gate.
-- Data/Faraday: completed currentpoint e76f (20GET1POST0retry) and direct TOTAL
-  sidecars20383a8a (0HTTP). Existing refs direct to consumers, no duplicates.
-- Strategy/Halley: source-only learned-vs-initial RankNet attribution readiness,
-  no source claim random initialization is new alpha.
-- Invoked Review/Socrates: two-file native H5 no-order skip patch verified.
-  Source-only separate US_H5 exchange capability/readiness, no guard removal
-  or legacy profile rewrite. Research beyond NAS8 need not wait for broker scope.
+- PRIORITY Execution/Socrates: .005B engineering input is below one Oct26
+  last-close lot despite native capacity subset covering one. Exact consumed
+  lot reader RESULTcd30aa16/13Jobsclosed/original binding stable/reserves held.
+  Prepare NEW immutable sizing input/policy and reversible unstarted-Task
+  revision under original B/10. Do not force one share, mutate old input or
+  replace unknown request. Actual installed bindings above remain unchanged.
+- Execution/Leibniz: adapterfe2b37a2 complete, native HGB69ff1136/RankHalf87963a1c
+  allowFALSE/unallocated. New image2be713ae verified d455/inert/cold inputs,
+  NOT deployed. New host/Linux multirow financial SYN first fixture assertions
+  failed; repair same case within frozen caps, not assume readiness.
+- Engine/Steward: RankHalf currentpoint75f56ee4 complete1CUDAforward/0fits.
+  Initial attributiond2f620d9 complete0fits; positive ranker-learning-growth
+  claim killed, blend's limited contrast not killed. No primary regrade.
+  NEW C120/H60 masked-patch SOURCE readiness with Strategy; do not claim
+  training before final contract/native API/real resource evidence.
+- Data: one causalpast producer/packet build720owned/3600elapsed dispatched
+  after source-readiness completion. QQQthenSPY120x10 past-only physical
+  windows, RAW_LOG QQQH60 target physically separate. Tiny actual boundary
+  tests before market projection, retain unavailable keys; no HTTP.
+- Strategy: source/duplicate/rights review for masked representation; existing
+  FirstRate archive is reused UNKNOWN_NOT_FRESH, not independent evaluation.
+  Broader US_H5 readinessc891b050 does not grant mixed-exchange book writes.
+
+
 
 Completed research stays completed: HGB18 c9c35, hierarchy32f56 and RankNet18
 01b810 all failed their frozen combined primary. Do not regrade them. RankHalf
@@ -95,7 +104,7 @@ New guard patch authority7131c2a1:
 A/verification/current-h5-no-order-prefix-compatibility-20261027-v1/CONSUMER.json.
 559serialPASS/19461fullPASS/26knownSKIP35warnings/8actualworkers378.74s/helper0,
 1411source exact/Ruff/threeCompose with.env.examplePASS/currentCchild+lease
-removed/22observedPID-startsclosed. Patch NOT deployed to MSFT37/image27.
+removed/22observedPID-startsclosed. New image2be contains patch, NOT deployed to MSFT37/image27.
 Source/runtime/control changes need fresh scoped/native/full checks perAGENTS;
 MD/external-only reuse needs exact digests, not repeated unrelated suites.
 
