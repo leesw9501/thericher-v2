@@ -2,11 +2,12 @@
 
 ## Current Reality
 
-2026-10-28 KST; observed Oct27UTC20:51.
+2026-10-28 KST; observed Oct27UTC21:32.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Last pushed5faae996; protected production94c16934/1412files/a1500c15.
+Checkpoint4a218f4d integrates freshData/diagnostic; production94c16934/
+1412files/a1500c15 unchanged through fresh protected check20:55.
 Parent shared MD/Git/integration. Preserve unrelated %SystemDrive%/.
 No operator decision pending. Never KIS_LIVE_*/live/paid/public without authority.
 ONE original B/10/cost/loss/pending/F9 unchanged; no reset/refund/profit expansion.
@@ -118,10 +119,76 @@ renormalization/full-US17 performance replication. Source/currentData consumer
 handoff direct. ResearchOPEN5 vs nativeH5close-minus15min nonparity stays explicit.
 Provisional Paper need not wait for profitable/independent model qualification.
 Engine now owns NEW current17-current-f3-provisional-inference-20261028-v1:
-one actual current CPUforward+fixedUniform SDK proposals, no retraining.
-Sagan source/SYN cost-turnover sequence hypothesis proceeds independently.
-Execution current-paper-next-finite-round-readiness examines shortest native
-path with custody-writer scope, not5expiredData argv rules as general solution.
+actual ONECPUforward17rows completed21:08:05.366076, checkpointload1/Dataintake1,
+nofit/GPU. Source dca3f374/ORIGINAL17b28a614e/forwardproof156bb994 retained.
+Post-forward SDK publication failed ordinary_file: constructor-r1 descriptor
+mount source is a DIRECTORY, original pinnedFILE5971977d exists. Do NOT rerun
+forward/model/Data. Closed3CIDs18Jobs/upper94.0895of180; originaltechnical
+failure retained. NEW saved-output-completion-r1 owns packaging/independent
+verify only,0model/fit/Data/held. Check all extra mount sources before create.
+
+Source-plan0711adopts ONE new CAPPED_CACHED_LINEAR NAS5 proposal, not old
+MSFT/F9 substitute. Parent ceiling .1fulloriginalB remains inside aggregateB/10/
+cost/loss/F9/currentbuyingpower; no actualallocationyet, native mayveto/size0.
+Earlier .01 unbound plan superseded before actualbinding, not a model change.
+Claude ceiling565e and selectedpath review GO_WITH_LIMITS.
+Faraday current17-provisional-finite-paper-input-readiness prepares NEW native
+NAS5 derivative from original17 unchangedrows, not retag9rowCASH5 (stockcycle
+rejects CASH5). EightNAS target exposures must equal projectedproposal; nine
+NYS remain unsupported/unspent, no renormalization or runtime profile change.
+
+Parent current-linear17-finite-account-round-preparation has inertbuilder/
+9purecases/Ruff, UNRUN/noADOPTION. Socrates current-linear17-paired-slot-
+controller-readiness implements oneowner entry/recovery pair with exactfinite
+observeryield/restore; Leibniz temporaryInfra owns quietfuture2Taskinstaller.
+Plan Oct28UTC14:15trigger/entry14:20..24/recovery14:27..31/restore>=14:33,
+Nov3exit20:45/recovery20:52. Window21existing13:40 writer mustactuallyclose,
+not inferred fromdue. NOTHING new installed; original duties unchanged.
+Quietfutureinstaller59846a10 is SOURCE_READY17SYN/47checks/Ruff/ClaudeGO,
+0actualCOM/Task/private calls, allownedprocessesclosed. Data/Infra agentclosed.
+Parent also found oldroute engineeringadapter hardMSFT/.01/1row/1traversal;
+NEWmodel_adapter exactf477/24d3/full17/8target/.1 wrapper passes6savedpoint
+seamchecks/0native/private/API. Existingnativeprefix traversal8 stops FIRST
+effectfulleg, no8submitpermission; recovery/exit loader forbidden. Paireddriver
+mustaccept8native traversalcounts butretainonebuy/sellwirecap. Fullnewruntime
+constructor/owner integration stillpending; do not installoldadapter unchanged.
+
+Sagan a120/4b4598e oneLeakyStateRidge+FeeProx hypothesis passed tinyactual
+Ridge/Brent/coldSYN, no market. Parent adopted NEW current-long17-feeprox-ridge-
+development360active/1800elapsed/onefit/oneforecast/oneheld/6cells/0retry/CPU1,
+GPU0. Sagan worker source; Steward finalcontract/registry/numericdispatch.
+Stateful actions use currentOPEN/previousq only; forecasts seal beforeheld.
+Old reusedoutcomes remain adaptive development, never independent alpha.
+
+## Current Account / CCNL Probe
+
+Parent actual21:05:37 comparison d5e29bea:
+A/execution/current-paper-immutable-anchor-account-compare-20261028-v1/RESULT.json.
+Scoped currentPaper config matches immutable originalaccountanchor; no current
+book/API/holdings/budget/reservation claim. Seven inventedchecks/Ruff pass.
+Comparator childenv inheritance NOT_ATTESTED, no envscan/HTTP; explicitLimits.
+Futurecontrolledchildren clear literal named OS environment before execution.
+
+Halley CCNLshape Sourcecfc04f42/nine actualnative fake-opener+gatecases ready.
+Parent cleared-env/Job caller21:20:11 DEFERRED0POST/0GET; owned due21:21:07.
+After other ready work, explicitnext_due-r1 Sourceaf63dc18 actual21:22:11:
+1tokenPOST/1GET/0retry, HTTP2xx/rt_success/outputARRAY14/all requiredfields
+present, nativeparse/continuationCOMPLETE. Output1absent is normal here.
+A/execution/current-paper-ccnl-response-shape-readiness-20261028-v1/
+next_due-r1/actual/RESULT.json. No rawrows/accounts/orderIDs persisted; ownJob
+closed. Originalinvocation/debits retained, combinedHTTP1POST1GET underoldcaps.
+FixedOct21publicdate is NOT originalF9timeproof or requestmatch; no terminal/
+release/PnL conclusion, reservationstillheld. No further identicalshapeprobe.
+
+Saved-point packaging7a94743f is now COMPLETE_VERIFIED, SDKpublicationecbe6e47
+at21:13:03.307702. TwoSDKproposals6aa3967d/7bd42144; independentverify1,
+no repeatedinference. Source70.357upper/120/twoCIDs12Jobsclosed.
+Faradayd4081458 newnativeNAS5inputf4775c8a/Policy24d339fa READY_FALSE:
+A/execution/current17-provisional-finite-paper-input-readiness-20261028-v1/
+actual-prepared/NATIVE-INPUT.json. Original17rows/8targets/9unsupported,
+sameexposuresasCASH9 atC=.1.16nativecases+9savedverify+realnativeinventedV3
+journal/restart unknownsubmit1/no secondsubmit. Not actualV4/runtimeadmission.
+Point muststagebyte-identical as /point/INPUT.json, not changeguestprofile.
 
 ## Verification / Continue
 

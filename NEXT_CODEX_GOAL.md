@@ -64,18 +64,41 @@ after publication. No imputation, old-prefix splice or target intake.
 
 Engine owns ONE current cached-Linear forward and fixed Uniform comparison at
 A/research/current17-current-f3-provisional-inference-20261028-v1.
-Use retained safe weights and exact current Data contract; no fitting/EVAL
-reopen or replay of completed SYN. SDK NAS8 skips9NYSE; unsupported weight
+Actualforward1/load1/17rows completed21:08:05.366076. Preserve original17
+b28a614e and forwardproof156bb994. Failed descriptor-directory mount retained;
+saved-output-completion-r1 Source7a94743f finished SDKpublicationecbe6e47 and
+independent savedverify without repeatingmodel/Data. No fitting/EVALreopen.
+SDK NAS8 skips9NYSE; unsupported weight
 stays cash, never silent renormalization/fullUS17 replication.
+Faradayd408 actual nativeNAS5 full17 inputf477/policy24d3 readyFalse, native16+
+savedverify9/inventedjournal. Not a retag of nine-rowCASH5 or actualV4 proof.
+Parent chose ONE CappedLinear C=.1fulloriginalB ceiling inside sharedB/10/F9,
+not newcapital/Uniform secondwriter. Native may veto/size0.
+Parent current-linear17-finite-account-round-preparation builder/modelvisit
+seam is source-only; oldbaseadapter is fixedMSFT/.01/1row and MUSTNOT be
+reused for newmodel. Newexact17/8adapter uses existing session's8 provenprefix
+traversals, stops firsteffectfulleg; recovery/exit proposal loader forbidden.
+Socrates pairedcontroller and Leibniz quietfutureinstaller remain source/SYN;
+NOTHING new installed. PlanOct28UTC14:15Task/14:20entry/14:27recovery,
+observerexactfiniteyield/restore>=14:33; originaldue duties unchanged.
 Capital UNALLOCATED/allow_submitfalse until existing native risk/slot owns it.
 Research H5OPEN versus native H5nearCLOSE nonparity remains explicit.
 Provisional Paper does not require profitable/independent research promotion.
 
+Actual currentPaperconfig matched originalimmutableanchor21:05:37, not current
+bank/brokerproof. Actual CCNLshape Sourceaf63dc18 at21:22:11 returned14rows,
+1POST1GET/2xx/nativeparsecomplete, rawvalues not retained. Originaldefer0HTTP
+preserved; Oct21publicdate is not originalF9match/terminalproof. No identical
+shapequery or reservationrelease. Actual F9 reconciliation remains separately
+scoped; a disjoint stockreservation is not a blanket company permission hold.
+
 Completed TCN/HGB proper-score tests passed original criteria. FixedHALF,
 cash-only absorption, economic VSN increment and risk-aware Linear rejected
 their frozen development tests. Preserve results/debits; no duplicate fits,
-rescues or independent-alpha claims. Strategy prepares ONE new cost/turnover
-sequence hypothesis, not an architecture grid or GPU-utilization exercise.
+rescues or independent-alpha claims. ONE new LeakyRidge/FeeProx campaign source
+current-long17-feeprox-ridge-development360/1800,1fit/1forecast/1held/6cells/
+0retry/CPU1/GPU0, fixedparameters/primary. Sagan worker; Steward finalcontract/
+registry/numericdispatch after typednativehandoff, no architecture grid.
 
 ## Verification / Continue
 

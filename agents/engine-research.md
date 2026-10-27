@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST; observed Oct27UTC20:51.
+2026-10-28 KST; observed Oct27UTC21:20.
 A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
 Model proposals never alter deterministic broker risk or original shared B/10.
 
@@ -79,12 +79,25 @@ SDKfile producer/consumer. CapitalUNALLOCATED/allowfalse, not current inference.
 Actual Data currentF3 Source3b474a7d/ROLEdb5ec7df/FEATURES225a160f READY;
 PUBLISHEDa6b56a3f20:45:57.581129UTC. New owned actual inference package:
 A/research/current17-current-f3-provisional-inference-20261028-v1.
-OneCPUforward retained safeLinear weights plus fixedUniform, no fitting/held
-reopen. Future SDK decision >= exact publication. SDKNAS8 skips9NYSE,
+ActualONECPUforward21:08:05.366076 completed/retained,1load/1Dataintake,
+no fitting/held reopen. dca3Source/ORIGINAL17b28a614e/forwardproof156bb994.
+SDK publication failed afterforward because /descriptors.json host source was
+directory, notfile; no repeatactualforward. Original3CIDs18Jobsclosed,
+upper94.0895/180. Saved-output-completion-r1 Source7a94743f COMPLETE_VERIFIED,
+2SDKproposals6aa3967d/7bd42144/pubecbe6e47 at21:13:03.307702, independentverify1,
+0model/fit/Data/held/twoCIDs12Jobsclosed/upper70.357of120. NAS8 skips9NYSE,
 unsupported weight stayscash/no silentrenorm/fullUS17 replication. Research
 H5OPEN vs nativeH5nearCLOSE nonparity explicit. No profitability gate for Paper.
-Sagan prepares ONE new cost/turnover sequence hypothesis source/SYN only;
-no architectural grid or repeated closed training to occupy GPU.
+Sagan a120/4b4598e oneLeakyStateRidge+FeeProx ready actualtinyRidge+Brent+
+coldSYN. Parent adopted NEW current-long17-feeprox-ridge-development360/1800,
+onefit/oneforecast/oneheld/6cells/0retry/CPU1GPU0, fixedparameters/primary.
+Sourceimplementation Sagan, finalcontract/registry/numericdispatch Steward.
+Forecast seals beforeheld, stateful controller takes currentOPEN/previousq only.
+No architecture grid, oldresult rescue, GPUutilization exercise or independent
+alpha claim from adaptive globallyreused outcomes.
 Probability proper scores do not establish expected PnL/confidence/Paper
 promotion. Operational Paper LOWVOL58f/f037 and MSFT65f/a861 are independent;
 runtime source7a failed actor admission, not a research permission hold.
+FaradayactualnativeNAS5d408 inputf477/Policy24d3 readyFalsefull17rows/8targets,
+not retagCASH5. Parent separate exactnewvisit wrapper needed: inheritedold
+engineeringadapter only acceptsMSFT/.01/1row and cannot consume the new point.

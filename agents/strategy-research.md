@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST; observed Oct27UTC20:51.
+2026-10-28 KST; observed Oct27UTC21:20.
 A=D:/thericher-v2/model-artifacts. Sagan current source-only proposal owner;
 Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
 
@@ -12,12 +12,19 @@ required20OHLC keys/80sessions/39stockvolume;17-only input rejected. Actual
 coherent20 acquisition and currentF3 projection3b474a7d now satisfy the named
 current input guards, not providerfinality or model performance.
 
-Current source/SYN-only package:
+Completed source/SYN-only package:
 A/research/current-long17-cost-turnover-sequence-readiness-20261028-v1.
 One new executable hypothesis addressing a demonstrated cost/turnover weakness
 with compatible baseline, native tiny solver smoke and chronological validation.
 No market/held/weights/GPU intake, architectural grid or rescue of old results.
-Hand off directly to Steward when finite producer/consumer/trial contract ready.
+Sourcea12015a4/contract4b4598e READY: oneinventedRidgefit/threeBrent solves+
+coldfile parity. LeakyStateRidge18 plus persistent FeeProx controller, not a
+GPU model. Costs matter forVSN but risk-aware turnover alreadynearUniform,
+so not a claim fees alone explain prior failures. Native optimality not alpha.
+Parent adopted NEW current-long17-feeprox-ridge-development360/1800,
+onefit/oneforecast/oneheld/6cells/0retry/CPU1GPU0. This role implementsdisjoint
+typedworker/causalcurrentOPEN+previousqledger seam, EngineSteward owns final
+contract/registry/numericaldispatch. No market numbers untilthat nativehandoff.
 
 Economic family4b8f7b78 is CLOSED_REJECT, not running. OriginalVSN+LSTM uses
 source inspiration, not copied weights:

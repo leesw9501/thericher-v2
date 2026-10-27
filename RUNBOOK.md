@@ -13,7 +13,7 @@ paths retain ONE original B/10/cost/loss/pending/F9, no reset/profit expansion.
 
 ## Current Owned Paths
 
-Observed Oct27UTC20:51. Company goal UNFINISHED; old entry/recovery windows
+Observed Oct27UTC21:28. Company goal UNFINISHED; old entry/recovery windows
 consumed. Do not Task.Run, repeat consumed installer, restore private state,
 force new intent or silently roll old opportunity dates.
 
@@ -66,10 +66,29 @@ CurrentF3 input Source3b474a7d READY17x20x18:
 A/data/current20-current-f3-proposal-input-20261028-v1/CONSUMER.json.
 FEATURE225a160f/ROLEdb5ec7df/PUBLISHEDa6b56a3f20:45:57.581129UTC.
 Oneprojection/native+independentsavedverifyclosed, no targets/model/credentials.
-Engine current17-current-f3-provisional-inference owns one actual cachedLinear
-forward+fixedUniform SDK proposals. NAS8only,9NYSEweightcash/no renormalization,
-capitalUNALLOCATED/allowfalse until native-owned slot/risk, no alpha claim.
+Engine actual1cachedLinear forward17rows completed21:08:05.366076 andretained;
+descriptor-directory failure preserved, NEVER rerun completedforward.
+saved-output-completion-r1/CONSUMER.json Source7a94743f completes SDKpubecbe6e47
+and independentverify,0model/Data. Actual nativeNAS5 inputf477/Policy24d3 at
+A/execution/current17-provisional-finite-paper-input-readiness-20261028-v1/
+actual-prepared/NATIVE-INPUT.json READY_FALSEfull17rows/8NAS/9unsupportedcash.
+No renormalization; untrustedC=.1originalB within sharedB/10 not newcapital.
+Parent newsourcebuilder stages SAMEbytes as/point/INPUT.json. Oldengineering
+adapter hardMSFT/.01/1row mustbe replaced by exactnewpointvisit adapter; native
+risk unchanged. Parent6wrapper+9purecases are not fullnewruntimeadmission.
+Source-only paircontroller/quietfuture2Taskinstaller pending; not installed.
+PlanOct28UTC14:15trigger/14:20entry/14:27recovery/observerrestore>=14:33,
+originalfuture duties unchanged, no actualfill/alpha claim.
 ResearchOPENH5/native nearCLOSEH5 parity is NOT established.
+
+CurrentPaper config vs ORIGINALimmutableanchor comparison d5e29bea passed
+21:05:37; no currentbank/API/budget/fillproof, no repeatneeded.
+CCNLshape probe Sourceaf63dc18 exact next_due-r1/actual/RESULT.json under
+A/execution/current-paper-ccnl-response-shape-readiness-20261028-v1:
+actual21:22:11 HTTP2xx/rt_success/outputARRAY14/nativeparsecomplete,
+1POST1GET/0retry/rawvaluesnotretained. Prior0HTTPdefer preserved. PublicOct21
+date is NOT originalF9submissiontime/requestlink, no release/PnL inference.
+Do not rerun identicalshapeprobe or an expired/consumed caller.
 
 Completed CUDA2446VSN/Linear and2602risk plusTCN/HGB/HALF/absorption are
 closed; no repeat fit/native/heldread for utilization. Strategy source/SYN work

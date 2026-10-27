@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-28 KST; Throughput Review Oct27UTC20:51 after actualData/diagnostic.
+2026-10-28 KST; Throughput Review Oct27UTC21:32 before runtime assembly.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent shared MD/Git/activation. Company coexistent-native-paper-execution-runtime-v1
 UNFINISHED. No operator decision pending. OriginalB/10/F9/%SystemDrive%/ preserved.
@@ -9,13 +9,13 @@ UNFINISHED. No operator decision pending. OriginalB/10/F9/%SystemDrive%/ preserv
 
 | Owner | Evidenced outcome / next concrete consumer |
 | --- | --- |
-| Parent / 총괄 | Integrate actual successfulData and current source-only Paper coexistence repair; next finite native preparation. No fill inference from installation/taskexit. |
-| Socrates / 실행 | Additive exact5Dataactor claims28c23d READY/source-only; now current-paper-next-finite-round-readiness: fix private-writer vs unrelated-actor scope, no broad waiver/blind retry. |
-| Schrodinger / 엔진·자원 | Sole registry/GPU coordinator; completedfits closed. Actual current17currentF3 single cached-Linear inference+Uniform proposals, CPU not retraining. |
-| Leibniz / 데이터 | ActualcurrentF3 Source3b474a7d READY;17x20x18 known/PUBLISHED20:45:57.581129; projection and independent saved verifyclosed. DirectEnginehand off. |
-| Faraday / 데이터 실행 | Actualcoherent20 capture complete:20GET/1POST/0retry/2000rows/alllast80sessions/44.956s. No active capture inferred from MD. |
-| Sagan / 전략 탐색 | Cost/turnover-aware sequence hypothesis source/SYN work for ONE future campaign, not a grid/reusedheld rescue. |
-| Halley / 결과 검토 | Public scheduled diagnostic sourcebccdb/driver9a42; actual20:25 ownerPASS,5Dataactors blocked123. Historical19:45 actor unknown. No recurring monitor. |
+| Parent / 총괄 | New finite runtimebuilder/actualpoint adapter6seam+9puretests; oldengineeringadapter hardMSFT/.01/1row found before deployment. Assemble only qualified new pair/point. |
+| Socrates / 실행 | current-linear17-paired-slot-controller-readiness: oneactualscheduledowner for entry/recovery, nativeprefix cap8/firsteffect only, exactfiniteobserveryield/restore; source/SYN underway, not installed. |
+| Schrodinger / 엔진·자원 | Single current17CPUforward COMPLETE. Saved-only SDKpackaging7a94 COMPLETE/2CIDs12Jobsclosed; newRidge/FeeProx finalcontract/registry/numericdispatch when nativeworkerready. No activeGPU fit claimed. |
+| Leibniz / 데이터·임시 인프라 | Data3b47 READY; temporary quietfutureinstaller5984 READY17SYN/47checks/ClaudeGO,0actualTaskcalls. Packageclosed/agentclosed. |
+| Faraday / 입력 연결 | ActualnativeNAS5d408 inputf477/Policy24d3 READY_FALSE full17/8targets;16native+9savedverify+inventedjournal/noresubmit. Packageclosed/agentclosed. |
+| Sagan / 전략 탐색 | a120LeakyRidge/FeeProx Source/SYN READY; NEW360/1800 onefit/oneforecast/oneheld/6cells/CPU1GPU0 worker source in progress, no marketresult yet. |
+| Halley / 결과 검토 | CCNLshapeSourcecfc0 ready; Parentactualaf63 1POST1GET/14rows/nativeparsecomplete, notF9match. Now concise source challenge of newmodelvisit8skip/firsteffect/recoveryforbidden seam. |
 
 Dispatch and directories are not running-process proof. One owner per mutable
 set; direct exact-contract handoffs allowed. GPU models2446/2602 are closed,
@@ -43,6 +43,14 @@ native runtime correction/preparation; one underrepresented cost-aware research
 hypothesis. Do not wait in foreground for tomorrow's session.
 
 ## Reversible Improvement
+
+Observed a queued next assignment terminate as a callback ACK without its
+assigned scope. Explicit Parent redispatch restored actual source/native
+delivery; distinguish handoff ACK from completed work and keep unfinished
+assignment owned until its concrete consumer exists, not a new tracking system.
+New actualpoint failure also proved that source-checking ordinary role mounts
+but not extra mounts missed a descriptor DIRECTORY. Saved-only completion
+checks ALL source file kinds/hashes before create, never repeats the forward.
 
 Use real source owner/producer/consumer/argv/mount/SDK seams before payloads.
 The admission block is self-imposed source configuration, not missing operator
