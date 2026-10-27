@@ -59,6 +59,12 @@ pointer. New exact admitted scope must join native account/basis/input/policy/
 request/intent/fill/current-owned state. Before/after membership/file identity/
 mtime/bytes and actual custody-writer admission are mandatory.
 Use network-disabled private+source RO, no recovery/lock creation.
+Source-only bundle417ac66e is READY at
+A/execution/current-msft-lowvol-reader-source-bundle-readiness-20261027-v1.
+Use exact immutable access.py+read.py legacy bundle, not mutable output root;
+one new cold native/fullstability/1CID6Jobsclosed. Reuse four prior bankFS cases
+without replay. Actual fresh three-phase custody admission remains a normal
+per-use check, not another permission or generic readiness wait.
 Never call recovery-capable observe() just to read. Unrelated Data/research
 and future schedules are not automatically active custody writers.
 
@@ -105,12 +111,21 @@ once, callerb205 binds exact compound proof. Never rerun run_phase.py's failed
 old NATIVE-CONSUMER guard/caller or duplicate completed training.
 Dataaf9175 onebuild/12intakes is also closed. Source/weights/outputs stay A/M.
 
-Active conditional CPU scopes: correlation family8:24:31..9:04:31/600owned
-includingproposal85once, data150/49solvers/oneledger; separate post-observation
-Linear+storedJointRisk policyablation300owned1200elapsed includingproposal55
-once. Actual data/action/solver native first, same exact cached cost contracts,
-actions sealed before held marks, no old model/baseline replays or Paper changes.
-Exact Source/caps/claims in NEXT and active boards, not executable old scopes.
+Consumed CPU scopes: correlationa1b19248 CLOSED numerical certification
+incomplete at first independent_KKT guard; no action seal/cost path/ledger/
+retry/performance conclusion. Data2a4f0ccc qualified, no rebuild.
+Linear+storedJointRisk7ec7e40d CLOSED/REJECT, growth.97039286%/peakDD2.16995268%,
+one path/ledger/no model or baseline replay. Old joint fullREJECT unchanged.
+Exact Consumers at A/research/current-correlation-aware-fixed-allocation-
+development-20261027-v1 and current-linear-joint-risk-exploratory-cost-
+development-20261027-v1. Never rerun these closed commands.
+Closed readiness packages: KKTebfd retains actualcauseUNRESOLVED;
+broaderData22587/source17c81c establish existing inputs, not new dataset/fits.
+NEW adopted LSTM family17ee29a0 at
+A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1:
+09:09:42..11:09:42UTC/2700owned7200elapsed, onefit/0retry/native before market.
+NEW CPU17Ridge family and separate fixedblend Source roots/caps are NEXT;
+do not execute prior consumers or infer training from a freeze.
 No profitability gate before delegated Paper or arbitrary GPU filler.
 
 Native generic financial closure25d932 at A/x/syn-rx-1027-lb/CONSUMER.json
@@ -126,6 +141,14 @@ named-owner quiescence; focused11/serial71/full19485+26/Ruff/3Compose PASS.
 Old1a06 failed fixture checks stays failed. Actual PS5.1 matched-case proof
 covers those two child classes, not every window or scheduled runtime outcome.
 No all-Task reinstall, active-owner interruption or unrelated Task changes.
+
+TTM exhausted noncustodial diagnostic retirement CONSUMED3b2ba869:
+A/execution/current-ttm-exhausted-diagnostic-disable-20261027-v1/CONSUMER.json.
+Only thericher-research-ttm-return-head-point-20261020 Enabled true->false,
+other87definitions/ACL/enabled unchanged. Native-default-r1 readbackd86bf6d9/
+Parent09:18exact current check, originalDPAPI rollback/source/failure retained.
+No Task.Run/delete/re-register/recovery/budget/financial change; no replay or
+automatic re-enable. All actual trading/unknown/F9 owners remain protected.
 
 Claude CLI2.1.296 structured_output ABI smoke works. Reuse strict decoder4053
 and exact COMMAND from A/verification/claude-review-abi-20261027-v1;

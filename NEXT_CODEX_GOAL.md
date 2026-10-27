@@ -39,62 +39,87 @@ No actual submit/fill/current broker holdings/PnL is inferred from installation.
 
 ## Current Parallel Work
 
-1. Parent integrates verified evidence and Git. After actual due/owner closure,
-   bind a NEW finite offline observation scope, never a consumed caller.
-   Clean strict reader is ready/inactive at
-   A/execution/current-msft-lowvol-outcome-reader-readiness-20261027-v1/source-clean-r1,
-   Sourceb859c283/Consumer0b1026b1. Ten native pure cases/Ruff/AST checks PASS,
-   not full bank-FS or actual private admission. Networknone/private+sourceRO,
-   exact account/basis/input/policy/request/fill joins and complete before/after
-   membership/identity/mtime/bytes still required. Missing/foreign/unbound =>NULL.
-   No recovery observe, reserve release or fill inference from public envelope.
-2. Joint family CLOSED_REJECTab98473e, never repeat this fit:
-   A/research/current-joint-return-risk-learning-development-20261027-v1.
-   Freeze9a193171/origin07:54:34/hard09:24:34/1800combinedowned including
-   proposalSource30once. Dataaf9175/Source0a0ac846 closed61.984owned.
-   Original warm native1fit2updates retained; unused cold286237 restored once,
-   1forward198rows/0updates, combined6forwards1188rows; old failure unchanged.
-   Actual ONE new CUDA marketfit COMPLETE55epochs7810updates/best40/
-   INNER_PATIENCE15/151.811trainer seconds,168MiB; callerb205/producer7c3917.
-   Two EVALpasses sealed before one dual-target intake, no baseline modelcalls.
-   RESULT says REJECT_DUAL_INCREMENT: returnBCE.67622494 losesLinear.67568712;
-   riskMSE1.153165 beatsRidge1.258145 but no alternate-winner/partial-head
-   promotion, width/lambda/seed rescue or repeat training. Final534.030/1800
-   owned,4CIDs/20CLIJobs closed/leaseabsent/7874forwards/Parent21refs exact.
-   No active GPU fit or additional training authority.
-3. Socrates CPU + Faraday Data: NEW conditional correlation allocation family
-   A/research/current-correlation-aware-fixed-allocation-development-20261027-v1.
-   Origin08:24:31/hard09:04:31,600combinedowned/2400elapsed including prior
-   proposal85once. Exact proposal31cd8020: same cached906 q support, past21OPEN
-   LedoitWolf correlation, q-anchored fixed quadratic/bands, existing SLSQP+
-   independent feasibility/KKT. No generic covariance novelty/grid/fallback.
-   Data150 separate A/data/current-past-open21-correlation-packets-20261027-v1
-   and M equivalent; one causal-history projection/native before market.
-   Freeze actual data/solver/action ABI and native proof before numerical.
-   <=49estimators/49solves/9800combined iterations/0retry/onearm/<=1ledger.
-   Exact whole-action alias =>reuse cached result/0ledger, not row-wise NAV reuse.
-   Seal actions before one held costpath intake, no baseline replay/model/GPU/API.
-   Strongest kill: growth>max(906,Linear,LOWVOL)+1e-10 AND peak-relative
-   DD<=min(all3)+1e-10. Missing/solver failures withhold, no tuned rescue.
-4. Failed-expert composition Source e5cbae3d complete; NEW conditional CPU
-   policy ablation owned by Schrodinger at
-   A/research/current-linear-joint-risk-exploratory-cost-development-20261027-v1.
-   <=300combinedowned1200elapsed actualfreeze including priorSource55once,
-   nofit/GPU/old target/old model calls. Exact post-observation proposal from
-   A/research/current-linear-joint-risk-exploratory-composition-readiness-20261027-v1.
-   ONE fixed originalLinearu * exp(-.5 storedSELECTED_risk), no double inverse
-   affine/head/epoch choice. New actual JOINT role-to-exactRatio action native
-   before any payload; no old THREE proof transfer. One forecast/u intake/
-   composition, fullactions sealed before one costpath/<=1ledger, no baseline
-   replay. Fullactionalias reuses exactcached result/0ledger. Must beat MAX
-   growth/MINpeakDD of906/Linear/LOWVOL. Whole joint REJECT retained forever,
-   no partial-head promotion/Paper move or independent-alpha interpretation.
-5. Leibniz Source-safe Scheduler health audit:
-   A/execution/current-scheduled-owner-health-audit-20261027-v1,
-   <=60owned1200elapsed. Public project metadata/explicit source-consumption
-   evidence only, no Task/private/KIS modifications. F9 future exits and unknown
-   operational ownership remain protected. Parent alone decides any later
-   verified reversible retirement, not a name/task-exit based cleanup.
+1. Parent integrates exact verified outcomes/Git; company runtime still awaits
+   original owned MSFT/LOWVOL opportunities above, not research profitability.
+   Clean strict reader Sourceb859/Consumer0b1026 at
+   A/execution/current-msft-lowvol-outcome-reader-readiness-20261027-v1/source-clean-r1
+   has native10/Ruff0/AST parity, NOT full bank-FS/private admission.
+   After due/owner closure bind a NEW finite offline scope/source/argv/SPEC/
+   diagnostic/point/anchor, never a consumed caller. Networknone/private+sourceRO,
+   actual actor/mount custody admission and full before/after membership/identity/
+   mtime/bytes. Exact account/basis/input/policy/request/fill joins; NULL for
+   missing/foreign/unbound. No recovery observe, lock creation or reserve release.
+2. Leibniz: audit057023ba CLOSED at
+   A/execution/current-scheduled-owner-health-audit-20261027-v1.
+   Root96/project88/enabled71/instances0/MSFT+LOWVOL8 XML+ACL exact.
+   ONE source-bound TTM diagnostic actually disabled09:13:49UTC, root
+   A/execution/current-ttm-exhausted-diagnostic-disable-20261027-v1,
+   Consumer3b2ba869/readbackd86bf6d9/Parent09:18exact XML+ACL+disabled+0instances.
+   Only Enabled true->false, other87definitions/ACL/enabled unchanged;
+   DPAPI rollback retained. Initial zero-effect native-default failure kept;
+   derived scope completed within original caps. No Task.Run/delete/API/private
+   effect, no trading-owner retirement. Package consumed/LLM released;
+   F9/MSFT/LOWVOL/future exits/unknown tasks protected.
+3. Socrates: KKT diagnostic CLOSED_VERIFIEDebfd3d00, native6solves97iterations/
+   invented sign oracles PASS; actual old residuals absent/cause UNRESOLVED.
+   No market retry or tolerance relaxation. Diversified20asset Sourcec81c0cce
+   adopted ONE CPU17equity Ridge question. Freeze NEW family at
+   A/research/current-liquid17-ridge-residual-open5-development-20261027-v1,
+   <=600combinedowned/2400elapsed actualstart, Source200 includes prior60once;
+   native90/fit30/infer30/replay30/verify90/cleanup30/reserve100. Existing0820
+   Data/17NAS+NYS/3ETFcontext/600sessions/3prefixes/47OOFcohorts. EXACT Ridge18
+   residualOPEN5/top5fairties vsUNIFORM17, original fractional.10NAV/20bpEACHleg,
+   not NAS100whole-share/KISrisk accounting.3marketfits/3predictionpasses/
+   <=20kfitrows4kpredictionrows/1nativefit+cold/1attempt0retry/2ledgers,
+   allscores+actions before oneHELD. Actual17-axis solver/file/ledger native
+   before market, FIT-only pooled scaler/INNERdiagnostic no selection. Strongest
+   growth>uniform+1e-10 AND peakDD<=uniform+1e-10. No subset/fold rescue.
+   First finish ONE fixed Linear/LSTM action blend
+   Source at A/research/current-predeclared-linear-lstm-fixed-blend-readiness-20261027-v1,
+   <=60owned/900elapsed actualstart. Freeze choice BEFORE LSTM outcomes or
+   label post-observation; no numerical authority/ratio or regime search.
+   Source predeclaration09:14 is before this consumer observed outputs, not
+   a proof of unused data. Parent pre-effect support correction preserves
+   native fairties/all100/exacthalf action weights; union may exceed20.
+   No lexical truncation or Paper10target/risk change. Forecast ABI pending.
+4. Faraday: correlation historyData CLOSED_READY2a4f0ccc; broader metadata
+   CLOSED22587af1 at A/data/current-broader-us-equity-research-input-readiness-20261027-v1.
+   Actual512/~1.2Mrows exist, allNAS tickerA..C, NOT full-US representative.
+   Existing507peer input needs new matched baselines/vintage;17NAS+NYS equities
+   and3ETF600common-session alternative needs exact new consumer scope.
+   No acquisition/build/array effects; direct metadata handoff to Engine.
+5. Halley: recurrent Source8a066987 CLOSED, independently compared9d96ecf3;
+   old GRU/LSTM/TCN already exist, no firstRNN/newraw/causalarchitecture claim.
+   Full invented bank-FS reader proof CLOSED12164f48 at
+   A/execution/current-msft-lowvol-reader-bankfs-native-20261027-v1,
+   4nativecalls/4CIDs28Jobsclosed/240conservativedebit. Actual e414/ded65/748SDK
+   fileloader/native bank/projection PASS, but actual admission UNQUALIFIED:
+   real-writer census unexercised and legacy mount included mutableoutputs.
+   Source-only mount repair CLOSED417ac66e at
+   A/execution/current-msft-lowvol-reader-source-bundle-readiness-20261027-v1,
+   120debit/1newSYNcold/1CID6Jobsclosed: exact access.py+read.py legacy bundle,
+   native imports/guards/fullmembership identity/mtime/bytes PASS. Ready for
+   NEW actual due caller; normal three-phase real-writer admission remains,
+   not a new permission/qualification wait. No actual private read/Task/API/
+   recovery/locks/financial effect/old consumed replay. Infra LLM released.
+6. Schrodinger sole GPU coordinator owns NEW adopted oneLSTM family:
+   A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1.
+   FAMILY-FREEZE actualorigin09:09:42/hard11:09:42UTC,2700combinedowned/
+   7200elapsed; Source500 includes Halley85+comparison15 ONCE. Otherpartitions
+   native240/affine30/fit900/infer180/readout90/verify200/cleanup90/reserve470.
+   One1562paramLSTM16/RAW63+context9/seed20261027, existing14aData/0b26affine
+   reused, same TOTAL_OPEN5/datepairBCE/splits/purges. One marketfit/0retry/
+   <=96epochs13632updates/15300allcalls12Mknownrows/97INNERchecks/2EVALpasses/
+   50000scores/oneheldtarget/0baselineModelcalls/financial. Fit900 includes
+   loading/INITIAL/checkpoint/I/O; stop usefultraining870+30tail. INNER-only
+   earlystop/LR, no EVAL checkpoint selection. New actual native1fit2updates/
+   <=8calls3200rows/1cold restore/model+optimizer+RNG/safeexport before market;
+   measured headroom first, no circular permission hold. Model Source/prep is
+   current, actual market training NOT yet evidenced. No duplicate old fit.
+
+Invoked Sagan Source-only LSTM review90owned900elapsed runs independently at
+A/research/current-raw63-lstm-source-review-20261027-v1. No numerical work,
+extra approval or repeat native calls; material findings go directly to Engine.
 
 Direct qualified role callbacks need no Parent approval relay. A lane-local
 block does not stop another ready package. An MD is memory, not a running LLM,
@@ -112,6 +137,25 @@ peakDD2.17489873% vsLinear.9838582%/2.22661241%; narrow Pareto PASS.
 New relative-DD contract adopted BEFORE Source/effects; old absolute-DD
 comparator remains UNAVAILABLE. LOWVOL2.097%/1.902% still dominates.
 No overall-winner claim, current Paper swap or extra allocation.
+
+Joint learningab98473e CLOSED_REJECT:55epochs7810updates/best40/151.811s,
+returnBCE.67622494 losesLinear, riskMSE1.153165 improvesRidge but full AND fails.
+534.030combinedowned/4CIDs20Jobsclosed/leaseabsent/Parent21refs exact.
+No head promotion, repeat fitting or outcome-driven lambda/seed rescue.
+
+Post-observation Linear/JointRisk7ec7e40d CLOSED/REJECT:
+A/research/current-linear-joint-risk-exploratory-cost-development-20261027-v1.
+Growth.97039286%/peakDD2.16995268% loses frozen maxgrowth/minDD references;
+one composition/path/ledger/0fitforwardGPUretry/native7/independent8/allclosed.
+116.779newowned plus55prior Source once, Parent14refs exact; no Paper move.
+
+Correlation familya1b19248 CLOSED_NUMERICAL_CERTIFICATION_INCOMPLETE:
+A/research/current-correlation-aware-fixed-allocation-development-20261027-v1.
+Data2a4f0ccc is qualified; first LedoitWolf/SLSQP returned success8iterations
+then independent primal/KKT certification denied. Per-component residuals NOT
+retained, no action seal/held cost path/ledger/marketretry/performance claim.
+209.381inclusiveowned/allclosed/Parent9refs exact. New synthetic diagnostic
+does not reopen this result; missing performance is unknown, not zero.
 
 Old fourfit/sixcost round, old failed one-head risk family and all historical
 debits remain unchanged. Data32007/point28e89/nativeinput75a7 are complete:

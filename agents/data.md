@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-27 KST,08:38UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,09:04UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own data/calendars/availability; Parent owns MD/Git. AGENTS owns authority.
 History/debits remain Git57074588 and original immutable consumers.
 
@@ -68,11 +68,23 @@ Source0a0ac846/codec896277/producer764d1b; onebuild12roleintakes/0retry/
 counts100009/17066/17458 mature, retained100axis/250EVAL/5purges. New typed
 dual producer-file-cold before market; separate held EVAL target, no rawprice/
 canonical/HTTP/model/GPU/Task/Git. Used by one joint model, never rebuild.
-Next NEW pastOPEN21 correlation Data150 inside CPU600 family, clock08:24:31..
-09:04:31. Root A/data/current-past-open21-correlation-packets-20261027-v1 +M
-equivalent. One canonical/q intake/projection/native, all49origins100slots,
-selected-support22pastOPEN knownness/capture/clocks; no futureentryOPEN or
-labels, missing/zeroSD withholds. Direct Engine callback, no new acquisition.
+PastOPEN21 correlation Data CLOSED_READY2a4f0ccc:
+A/data/current-past-open21-correlation-packets-20261027-v1/HANDOFF.json,
+M equivalent. Sourcee46df903/ROLEa7889f13/61.381owned, one canonical/q intake/
+projection/native, all49origins100slots/490selected histories have22pastOPEN
+known/nonzeroSD. Unselected29943unknown preserved; no futureentryOPEN/labels.
+Retrospective2026 capture never backdated to2025/PIT. Engine firstsolver KKT
+certification failure is NOT a Data failure; no rebuild or HTTP repetition.
+
+Existing-manifest-only broader-US input feasibility CLOSED22587af1:
+A/data/current-broader-us-equity-research-input-readiness-20261027-v1,
+60newowned/90cap, no arrays/acquisition/build/fullscan/allcommandsclosed.
+Actual512/~1.2Mrows, allNAS tickerA..C; not whole-US/sector representative.
+507peer training input exists but source/vintage differ; need new matched
+baseline, not reuse100BCE as aligned comparator. Existing17NAS+NYS equities
+with3ETF/600common sessions offer no-download diversification. Exact new
+consumer role/target/coverage remains a later numerical scope, not inferred.
+Metadata-only direct handoff to Socrates; no dataset projection authorized here.
 
 ## Qualified Current Inputs
 

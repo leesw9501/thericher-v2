@@ -1,104 +1,96 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, Throughput Review08:36UTC.
+2026-10-27 KST, Throughput Review09:18UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/activation; AGENTS owns authority.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-Historical detailed evidence stays Git/immutable Consumers, not a current diary.
+History stays Git9b881a81/84f849a5 and immutable Consumers, not another diary.
 
 ## Ready / Owned / Due
 
-| Owner | Current actual work / concrete consumer |
+| Owner | Actual result / next concrete consumer |
 | --- | --- |
-| Parent / 총괄 | Integrate actual Paper deployment and model outcomes using full606b authority plus external proofs; Git checkpoint pending9MD. No current Parent test process. |
-| Schrodinger / 엔진·GPU 자원 | Joint7c model1CUDAfit COMPLETE55epochs7810updates/best40/patience15/151.811s/168MiB. Two forecasts sealed/one target; RESULT REJECT_DUAL_INCREMENT. Final source/debit/closure verification, no retrain/head promotion or active GPU fit claimed. |
-| Socrates / 엔진 CPU | Fixedcost906576 closed/narrowPASS but LOWVOLdominates. NEW correlation family8:24:31..9:04:31UTC/600owned, Source/native + conditional49solver/oneledger, strongest LOWVOL/Linear/906 baseline. |
-| Faraday / 데이터 | Joint dualDataaf9175 closed/onebuild12intakes/61.984owned. NEW pastOPEN21 correlation feature/native packet150 owned inside CPUfamily, no provider acquisition/labels/model. |
-| Leibniz / 실행 | Reader clean0b1026/Sourceb859 closed/Ruff0/native10/AST semantic checks. Source-only project Scheduler health audit60owned1200elapsed; no Task/private/API changes, no name/exit based retirement. |
-| Halley / 호출형 전략 | Correlation proposal31cd closed/adopted conditionally. Optional failed-expert composition feasibility60owned900elapsed only; must preserve whole joint rejection/no partial-head promotion. No numerical authority. |
+| Parent / 총괄 | Pushed9b881a81; integrate closed research/actual diagnostic retirement under exact606b plus fresh external checks. No active Parent full-test process. |
+| Schrodinger / 엔진·GPU 자원 | ONE new task-specific LSTM16 family frozen09:09:42..11:09:42UTC/2700owned. Source/native preparation, no actual marketfit yet evidenced. Old CUDA55epoch joint and policy ablation CLOSED/REJECT. |
+| Socrates / 엔진 CPU | KKT diagnostic CLOSED/oldcauseUNRESOLVED. Freeze one Linear/LSTM blend Source before new outputs; then adopted17equity Ridge18 residualOPEN5/UNIFORM17/3prefixes/47cohorts CPUfamily600owned2400elapsed, native before fits. |
+| Faraday / 데이터 | Correlation2a4f0ccc and broader metadata22587af1 CLOSED;512NASA..C/~1.2Mrows, not fullUS.17NAS+NYS+3ETF existing alternative. Data LLM released, durable role standby. |
+| Leibniz / 실행 | TTM one diagnostic actually disabled3b2ba869/independentd86b/Parent09:18exactcheck. Other87unchanged, no trading-owner change. LLM released/role standby. |
+| Halley / 호출형 기술 | BankFS12164f48 plus source-only mount417ac66e CLOSED/1newSYNcold/1CID6Jobsclosed. Ready for NEW actual due reader with normal per-use custody/stability checks, not another qualification wait. Infra LLM released. |
+| Sagan / 호출형 Source검토 | LSTM frozen mask/loss/INNER/state source-only sidecar90owned900elapsed at A/research/current-raw63-lstm-source-review-20261027-v1; no numerical effects or new approval gate. Material findings go directly to Engine. |
 
-Actual MSFT901b/independent007b: entryOct27 13:40..44UTC/22:40KST,
+Exact package roots and finite caps are NEXT. Dispatch/MD does not prove an
+active numerical process; new training needs a genuinely ready frozen question.
+Closed fits are never repeated because GPU utilization looks low.
+Fixed Linear/LSTM proposal is pre-observation recipe only, not untouched data.
+Parent BEFORE new output intake corrected the assumed <=20 union: preserve
+exact fair ties/all100/half action weights, no lexical truncation. This research
+support correction does not change real10target adapter/risk or deploy a model.
+
+MSFT901b/independent007b: entryOct27 13:40..44UTC/22:40KST,
 recovery13:47..51; ownedexitNov2 20:45..49/recovery20:52..56.
-Actual LOWVOLf0a9/independent9967/cleanup13d3: enabled07:24:43UTC,
+LOWVOLf0a9/independent9967/cleanup13d3: enabled07:24:43UTC,
 entryOct27 15:30..34 (Oct28 00:30KST), recovery15:37..41;
 ownedexitNov3 14:35..39/recovery14:42..46. Other92unchanged at installation.
-Exact source/input/policy/TRUE release and consumed scopes in HANDOFF/RUNBOOK.
-Installation/time/task exit is not submit/fill/runtime closure.
+Exact inputs/TRUE release/consumed scopes stay HANDOFF/RUNBOOK.
+Installation, due time and task exit are not submit/fill/runtime closure.
+ONE original shared B/10/F9 UNKNOWN-HELD remains unchanged.
 
-## Material Evidence / Decisions
+## Material Evidence
 
-- Quiet PSfa23/test2da30 applied after observer0instances/namedprocess0.
-  Actual matched PS5.1 proof plus focused11/serial71/full19485PASS26SKIP/
-  399.96s/8observed worker pairs/own child+lease cleanup/Ruff/3Compose606b.
-  Pushed84f849a5. This fixes two nested child classes, not every desktop window.
-- LOWVOL hostba2/route3699/input58f/policyf037/TRUE2fc0/imagee414 actual4Tasks.
-  Original helper postseal mismatch failed before Task; R1/R2 literal-XML
-  failures preserved; R3 normalized ONLY measured defaults/UTC/order/exact
-  Author pair, native35records/12positive33negative/seven mocks. Exact one
-  disabled unstarted owned entry removed, no actual KIS/private bank effect.
-- Ridge3 Consumer13badf/Source72728: MSE1.258145 vsnaive1.587838/constant2.042956,
-  fixed primary PASS/one feature+three seals+one target/0fitGPUretry/112debit.
-  Parent15refs exact/fourruntimefiles Ruff. Oldfive family stays technically
-  incomplete after its counter replacement error; no result/cap regrade.
-- Fixed composition906576/Source9d8165: growth.99852744%/peakDD2.17489873%
-  vsLinear.9838582%/2.22661241%, less fees/turnover. One arm/path/replay,
-  no baselineReplay/modelcalls/148debit/allclosed. New relative-DD contract
-  adopted BEFORE Source/effects because cache lacks absolute-DD witness;
-  old absolute comparison UNAVAILABLE. LOWVOL2.097%/1.902% still dominates:
-  small comparator gain is not overall winner/alpha/current Paper replacement.
-- Joint Dataaf9175/Source0a0ac846 closed; original first19/masks/keys/clocks/
-  two task masks byte-compatible. Family9a193 origin7:54:34/hard9:24:34/
-  1800owned inclproposal30once. Original native1fit2updates completed, cold
-  caller TypeError before restore; retained warm7c + first-unused cold286237
-  gives total1fit2updates6forwards1188rows/1restore, no repeat warm training.
-  Callerb205 binds that chain; actual marketfit complete, two EVALpasses/
-  35656rows sealed before one dual-target read, all owned fit/infer resources
-  closed. SelectedreturnBCE.67622494 losesLinear.67568712, riskMSE1.153165
-  improvesRidge but frozen DUAL_INCREMENT is REJECT. No alternate winner.
-- Future I/O263faa actuallocal32publications/141reads/closedDexport/cold+
-  sixnegative proofs. DirectDhot-reader route remains unqualified after
-  postpublicationFileNotFound; not historical PermissionError attribution.
-  Volatile local spool isn't crash recovery; model-specific I/O native was
-  separately exercised. Old failed singleheadfit never resumed.
-- F9book764d/primary9b65 remain UNKNOWN-HELD/pending1/categorynotretained.
-  Accepted/fill/current-owned NULL, no reserve release/idless adoption or
-  repeated identical query. Its original schedule also owns future exits.
-  Clean future MSFT/LOWVOL reader is NOT an actual private observation scope.
+- Current full606b:19485PASS26knownSKIP399.96s/8observed worker pairs/
+  own child+lease closure, serial71/focused11/Ruff/three Compose. PSfa23/test2da30
+  are the only protected changes among1411. External/docs reuse requires
+  exact current digests and fresh external proofs, not another unrelated full.
+- Ridge3 13badf primary logMSE PASS vsnaive/constant,112newdebit/allclosed.
+  Fixed Linear/Ridge906 growth.99852744%/peakDD2.17489873% narrowly improves
+  Linear but cachedLOWVOL2.09734538%/1.90155322% still dominates.
+- Jointab98473e:55epochs/7810updates/best40/151.811s/168MiB; returnBCE
+  .67622494 losesLinear, riskMSE1.153165 improvesRidge but full AND REJECT.
+  Final534.030owned/4CIDs20Jobsclosed/leaseabsent/Parent21refs exact.
+  Unused cold286237 completed once; no completed warm optimizer replay.
+- Linear/JointRisk7ec7e40d: post-observation policy REJECT, growth.97039286%/
+  peakDD2.16995268%, one path/ledger/no model or baseline replay. Native7/
+  independent8/allclosed/116.779newowned plus55prior once/Parent14refs exact.
+- Correlationa1b19248: CLOSED numerical certification incomplete, not scientific
+  performance rejection or Data failure. One SLSQP success8iterations denied
+  by independent primal/KKT guard; component residuals not retained. No action
+  seal/held cost path/ledger/retry.209.381inclusiveowned/allclosed/Parent9refs.
+- Data2a4f0ccc: all49origins100slots retained, selected22pastOPEN histories
+  known/nonzeroSD, unselected unknowns preserved. Retrospective capture notPIT.
+- Scheduler057023ba: root96/project88/enabled71/instances0; MSFT+LOWVOL8 exact
+  XML/ACL.35 future direct pythonw launchers are not transitive no-window proof.
+  Source-bound exhausted TTM diagnostic actually disabled3b2ba869/other87
+  unchanged, DPAPI rollback/initial zero-effect failure preserved. Parent fresh
+  XML/ACL/enabled/instances match09:18. Unknown no-next-due/F9/exits protected.
+- Clean reader0b1026/Sourceb859 has native10/Ruff0/AST parity, NOT full bank-FS
+  or actual admission. At due freeze NEW finite networknone/private+sourceRO
+  caller with actual custody admission, exact joins and full file stability.
+  No recovery observe, lock creation or reservation release.
+  Full invented bankFS12164f48 extends cold typed-loader proof, not actual
+  custody admission. Mutable legacy mount gap repaired417ac66e/exacttwofiles/
+  one new nativecold/fullstability/closed. NEW actual caller still performs
+  fresh real-writer admission, not another readiness platform or permission.
 
-All model/cost numbers are reused2025/currentlisting/nonPIT/MODP1/CA/finality
-limited development. No independent alpha/actual Paper PnL. Source fixes and
-research outcome limits do not hold standing private Paper authority.
+All research numbers are adaptive reused2025/currentlisting/nonPIT/MODP1/CA/
+finality-limited. No independent alpha/actual Paper PnL or profitability gate.
+F9book764d/primary9b65 pending1/UNKNOWN-HELD; acceptance/fill/owned NULL.
 
-## Throughput / One Reversible Improvement
+## Throughput / Reversible Improvement
 
-Review08:36: company runtime depends on original22:40/00:30 KST opportunities,
-not missing operator permission. No foreground market wait. Ready alternatives
-are the bounded CPU correlation study/Data, Scheduler health facts, failed-
-expert Source feasibility and integration. Completed GPU work is not repeated
-for utilization; a new training candidate needs a genuinely ready frozen scope.
+Review09:18: company runtime depends on original22:40/00:30KST opportunities,
+not missing permission. Ready independent source/CPU/operational packages
+continue, no foreground market wait or new wakeup chain. Ready questions are
+one new LSTM temporal recipe and one cheap matched17equity CPU selection
+contrast, not another unchanged100 architecture grid. Data/Execution LLMs with
+no further distinct current write set were released, not kept as idle daemons.
 
-Reversible improvement: check the cached comparator's actual metric/schema
-before freezing a numerical contract. The absolute-DD gap was caught BEFORE
-new effects, allowing an explicitly new matching relative-DD comparison with
-old proposal unchanged. Never silently reinterpret a metric after seeing it.
+Improvement: persist allowlisted primal/stationarity/complementarity and exact
+caller at a numerical denial in a future implementation. Generic need() plus
+an aggregate guard lost first-cause evidence. Diagnose on invented inputs;
+do not rerun a closed market trial merely to recover omitted diagnostics.
 
-Other learned fixes remain: require explicit final quiescent handoff before
-dispatching sealed helpers; retain allowlisted predicate plus caller, not only
-need() leaf line; exercise actual OS default normalization in readonly metadata
-before a mutation; complete an unentered cold consumer without repeating a
-completed optimizer. These are reversible engineering practices, not new
-approval/report platforms. Direct qualified role callbacks stay autonomous.
-
-## Verification / Original Owners
-
-Current full606bc326/source1411 differs only PSfa23/test2da30; external-only/docs
-reuse needs exact protected digests plus fresh independent/native proofs.
-Separate serial scratch is retained after cleanup denial, no bypass/all-clean
-claim. No 19k rerun for unchanged D:helpers/docs, no claim core tests cover them.
-Never modify consumed installer/read scopes or original source/model/debits.
-
-Window21 Oct27 19:45UTC, HGBexitOct28 19:45; GRU/TF/L Oct30
-19:45/19:49/19:55..20:00; optionalNov20 cutoff20:35/cleanup20:40/J17
-20:45..21:00/Data21:55/SPY22:05 keep original owners. A time or absent record
-never proves flat/zero. No new follow-up chain/company completion from a package.
+Existing lessons remain: actual native producer/file/cold before numerical;
+explicit final quiescent source handoff before helper dispatch; actual metric
+semantics before freeze; no raw XML equality waiver; local volatile spool needs
+closed D export and is not crash recovery. No new gate/platform/approval layer.

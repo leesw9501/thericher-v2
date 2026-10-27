@@ -54,9 +54,21 @@ causal forecast-alpha, overall winner or reason to switch current Paper.
 Joint Source63879/contract8549 adopted as distinct new2head practical recipe,
 not generic MTL novelty/causal benefit. Newfamily7:54:34..9:24:34 UTC/1800owned,
 dualData/native/model-I/O proof before onefit; cachedLinear+Ridge references.
-Halley now Source-only correlation-aware allocation hypothesis readiness:
-check duplicates/existing libraries/causal past data and strongest aligned
-LOWVOL/Linear kill first. No optimizer/market/GPU authority from that proposal.
+Correlationa1b19248 closed numerical certification incomplete, no costpath;
+Data2a4f qualified, not a Data failure. Separate Linear/JointRisk7ec7e40d
+policy REJECT/growth.97039286%/peakDD2.16995268%, no old model regrade.
+
+Recurrent Source8a066987 CLOSED85owned, comparison9d96ecf3 CLOSED15owned:
+A/research/current-raw63-recurrent-expert-hypothesis-readiness-20261027-v1
+and current-raw63-feature-versus-recurrent-readiness-comparison-20261027-v1.
+Old GRU/LSTM and RAW63 inputs already exist; TCN changes both information
+representation and learner, not pure history attribution. One task-specific
+LSTM16/RAW63+context9/OPEN5pairBCE has no exact completed match in named audit.
+Parent adopted that ONE recipe, not newraw/firstRNN/architecture grid. Existing
+PyTorch2.7 LSTM/BSD3 official docs checked; no public weights/new dependency.
+Source Claude unavailable, not agreement. Schrodinger owns actual native/fit.
+Socrates separately prepares one fixed Linear/LSTM policy BEFORE new outputs;
+proposal does not modify primary, broker risk or grant numerical authority.
 
 ## Checked Project Evidence / Limits
 

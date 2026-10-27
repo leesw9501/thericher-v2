@@ -1,64 +1,49 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-27 KST,08:38UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,09:04UTC. A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is ONE GPU/registry coordinator.
 Parent owns MD/Git. Model choice belongs Engine, not a resource approval board.
 
 ## Current Ready / Owned
 
-Bounded fourfit round COMPLETE: LINEAR49epochs3479updates, MLP23/1633,
-crossasset17/1207, TCN16/4528; total10847marketupdates. All workers/leases
-CLOSED. No fourfit GPU worker or permission/headroom hold remains.
-TCN610MiB/100.626s andattention190MiB/28.817s are actualwork, not idle plans.
-Models are small/earlystopped; utilization is not product or reason to refit.
-ClosedA477.659752+B324.176247+C729.169227 retain original costs/failures.
+Schrodinger remains ONE GPU/registry coordinator. No active GPU fit claimed.
+Fourfit round CLOSED: LINEAR49epochs3479updates, MLP23/1633,
+crossasset17/1207, TCN16/4528. Old477.659752/324.176247/729.169227 debits,
+checkpoints/failed stages unchanged. No duplicate training after interruption.
 
-Socrates CPUcost900family closed310.26owned/6ledgers/no GPU. DataRaw6314a
-closed128.563943 included once inTCN. CurrentData/LOWVOL+Linearpoint/onecohort
-consumer required no newtraining; actual point28e89 completed one81-rowCPU
-forward and actualinert75a7 oneconversion/coldSDK. No GPU permission hold.
-Schrodinger can release GPU/coordinator worker; registry stays existing ledger.
-No extra architecture/seed/window arms after this predeclared round.
+Old forward-risk onehead family TECHNICAL_INCOMPLETE: Ridgefit1.226s complete,
+GPU failed counter os.replace at epoch6/at least736updates/fivecompleteepochs,
+16.719s. No marketretry, no qualified GPU model, all owner/lease closed.
+Ridge3 readout13badf subsequently uses completed Ridge, not a refit.
 
-NEW forward-risk contract357697bd is conditionally authorized, not reopening
-that round. Data02eb READY/onebuild/native-cold, direct callbacks delivered.
-Steward gpu/FROZEN.json07:01:55 binds CODEeaf6/registry a245/Sourceadf7 at
-A/research/current-nas100-forward-risk-learning-development-20261027-v1.
-Origin06:44/hard08:14/1800combinedowned incl Source150once; one new1217param
-20->32->16->1 MSE native/marketfit, actual CUDA optimizer/checkpoint before
-market and measured free VRAM/desktop reserve. MLP max200epochs/20kupdates/
-300fitsec/0marketretry, INNER-only earlystop/LR, safe weights D: only.
-Actual native728f passed optimizer2updates/cold restore after bounded shared
-mechanical correction; original bitwise-log consumer failure kept. Actual
-marketfit07:20:03..21 worker16.719s failed counter os.replace PermissionError
-at epoch6/at least736 durableupdates/five completeepochs; not a completed or
-qualified model. No marketretry cap0. All fit owner/container/lease closed.
-Old five-bundle family TECHNICAL_INCOMPLETE, no EVALtarget qualification.
-CPU/controller has distinct3method readout authority, not oldfamily relabel.
-Halley prepares future counter-I/O native readiness only, no oldmodel resume.
-Joint source63879/contract8549 closed/Parent adopted one distinct practical
-target combination; generic MTL already exists in older studies, not novel.
-NEW family freeze9a193171 at current-joint-return-risk-learning-development-
-20261027-v1:07:54:34..09:24:34UTC,1800combinedowned/5400elapsed including
-proposalSource30once. Schrodinger owns newEngine/GPU/registry, Faraday dualData
-150external, Socrates Source peer review. One1234param2head fit/0retry/
-128epochs18176updates300fitsec, <=18400forwards33Mrows/129INNER/2EVAL50krows.
-Native newdualData/optimizer/RNG/checkpoints and actual model spool/export/
-hostconsumer before market; exact Data/baseline support, source/registry and
-measured headroom first. Existing spool263faa only SYN component readiness,
-volatile tmpfs not a resume guarantee. Final weights/canonical export D: only.
-Actual new joint marketfit COMPLETE:55epochs7810updates/best40/patience15,
-151.8107trainer/155.4381stage seconds/168MiB; positive container/Job closure,
-leaseabsent. Two EVALpasses35656rows sealed before one dual-target intake.
-ReturnBCE.67622494 losesLinear.67568712, riskMSE1.153165 improvesRidge1.258145;
-frozen DUAL_INCREMENT REJECT, not a partial-head winner or retune opportunity.
-First native cold TypeError was corrected ONLY in unused cold caller286237,
-one restore/forward198rows/0fitupdates; totalnative1fit2updates6forwards1188rows.
-Original7c/warm failure kept; new marketcallerb205 consumes compound proof.
-No completed optimizer replay. Final evidence/debit verification is current
-work, not new training. No active GPU fit claimed and no dummy utilization.
-Old singleheadfit remains failed/closed, all old caps/debits unchanged; Paper
-reliability still preempts at safe checkpoint. No dummy utilization work.
+Joint familyab98473e at A/research/current-joint-return-risk-learning-development-20261027-v1
+CLOSED_REJECT_DUAL_INCREMENT. One new CUDA fit55epochs7810updates/best40/
+INNER_PATIENCE15/151.811trainerseconds/168MiB. ReturnBCE losesLinear; risk
+improvement cannot promote a partial head or rescue the whole AND criterion.
+Final534.030/1800combinedowned,4CIDs/20CLIJobs closed/leaseabsent,
+7874forwards/two EVALpasses/one dualtarget/Parent21refs exact.
+Old warm native1fit2updates was not repeated; unusedcold286237 restored and
+forwarded once, new marketcallerb205 binds compound native chain.
+Volatile localspool263faa has closed D export/cold proof; not crash recovery.
+No seed/width/lambda rerun or dummy utilization.
+
+CPU Linear/JointRisk7ec7e40d CLOSED/REJECT: one stored forecast/u composition/
+path/ledger/0fitforwardGPUretry/116.779newowned plus55prior once/allclosed.
+CPU covariancea1b19248 CLOSED numerical certification incomplete after first
+solver,209.381inclusiveowned/no costpath/ledger/retry/allclosed. Its new KKT
+diagnostic is invented/source-only, cannot reopen a market trial.
+
+NEW oneLSTM family adopted/frozen at
+A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1.
+Actual09:09:42..11:09:42UTC/2700combinedowned7200elapsed. Source500 includes
+closed Source8a06685+comparison9d9615 ONCE, not maximum allocations as debits.
+One1562paramLSTM16/RAW63context9/seed20261027;96epochs13632updates/
+fit900includingI/O/0marketretry/15300allcalls12Mknownrows/2EVALpasses/1target.
+Native1fit2updates<=8calls3200rows/1cold and actual safe model/optimizer/RNG
+localspool->Dexport before market; measured headroom before tiny native and
+projected real fit. Full partition/caps FAMILY-FREEZE/NEXT. Existing14aData/
+0b26affine reused, no new build/normalization. Current Source/native preparation,
+not yet an evidenced active marketfit. No oldmodel/cap rescue or dummy GPUload.
 
 Project first GPU priority still holds during personal apps. For a genuinely
 NEW ready frozen question, source/schema+freeVRAM permits tiny nativeCUDA,

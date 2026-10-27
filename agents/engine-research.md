@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,08:38UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,09:04UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
@@ -35,78 +35,60 @@ Installation not runtime/fill. Stock-only alternative remains dormant.
 
 ## Ready Research Queues
 
-- Short: NEW forward-risk contract357697bd/Source03c76 adopted at06:45:57;
-  origin06:44/hard08:14/1800combinedowned incl priorSource150once. Socrates
-  CPU/controller and Schrodinger GPU/Steward own disjoint learning paths at
-  current-nas100-forward-risk-learning-development-20261027-v1. Data02eb is
-  READY/native-cold complete/one projection, lossknown100009/17066/17458.
-  RAW19+past21OPENlogMS -> future5OPENlogMS with EPS1e-12, naive/constant/
-  fixedRidge/oneMLP20. New weighted solver/MSE optimizer/checkpoint native
-  before market; oneCPU+oneGPU fit/0retry. MLP200epochs/20kupdates/300fitsec,
-  INNER earlystop/LR only. Exact call/row/restore caps stay frozen contract;
-  Old five-bundle family is TECHNICAL_INCOMPLETE: real Ridge1fit complete
-  1.226s/model9c946; real GPU1fit failed counters os.replace PermissionError at
-  epoch6/at least736 durableupdates after five completed epochs,16.719s worker.
-  No marketretry cap0, no final-EVAL intake/qualified model yet. Both native
-  solvers passed after one combined mechanical correction; bitwise log <=2ULP
-  witnessed before GPU solver, original Data/failed Source immutable. All fit
-  resources closed. Future I/O fix cannot relabel or retry this failed fit.
-- Separate three-method readout CLOSED_VERIFIED13badf9a:
-  current-nas100-ridge-risk-information-readout-20261027-v1/CONSUMER.json.
-  Source72728/contract9ba388/native8/independent8/RuffPASS; newdebit112/300,
-  allworkersclosed. One EVALfeature/three seals/one EVALtarget,0fit/GPU/retry,
-  oneRidgeRestore+matrixforward17828rows;245scored dates/17458lossrows/missing0.
-  FP64 equaldate logMSE RIDGE1.2581452156451252 vsNAIVE1.587838183714173 and
-  constant2.042955650316317; both strict primary conditions PASS. Rolea5b11502/
-  payloadc2a27646/seal06769. Ridge was preselected for composition before
-  readout. Parent independently checked15refs/0mismatch and4runtimefiles Ruff.
-  Claude review_unavailable/processfailure, not agreement. Oldfive family
-  remains TECHNICAL_INCOMPLETE; this is reused2025 information, not alpha.
-- One-arm cost CLOSED_VERIFIED906576ea, Source9d8165/contract9bfe9:
-  current-fixed-linear-ridge-risk-cost-development-20261027-v1/CONSUMER.json.
-  New THREE078226/native6 readiness consumed, fixed same-u
-  support normalized u*exp(-.5RIDGE), explicit PREMARK arbitrary-Fraction unit
-  mass. Same original gross.1B/49origins/OPEN245/247NAV/20bp EACHleg/netwhole
-  shares/centties-even; cachedLINEARbaseline reused without model/ledger replay.
-  Old absolute-DD comparator stayed UNAVAILABLE (cache lacks NAV witness).
-  Explicit07:58:05 BEFORE-EFFECT adoption fixed NEW peak-relative-DD Pareto
-  before Source/effects, unchanged arm/caps/head. One sealed arm/one path/
-  one replay/0baselineReplay/modelcalls/retry, native6/independent7/allclosed/
-  148newdebit. Growth.99852744%/DD2.17489873% vsLinear.9838582%/2.22661241%,
-  fees.64491256%vs.7034818%, turnover3.2245628vs3.517409. Narrow primary PASS;
-  absolute comparison not regraded. Meanexposure.09762994 vs.09757212.
-  Cached LOWVOL2.097%/1.902% still dominates: no overall-winner/alpha/Paper
-  switch or additional allocation. Parent11refs exact; simulated local_paper.
-- NEW joint family proposal8549/source63879/freeze9a193171 at
-  current-joint-return-risk-learning-development-20261027-v1. Actual origin
-  07:54:34/hard09:24:34,1800combinedowned inclproposal30once. Schrodinger
-  Engine/GPU +Faraday separate dualData150, Socrates source-only peer review.
-  One NEW1234param20->32->16->2 pairBCE+standardized log-risk model,1fit/0retry/
-  128epochs18176updates300fitsec. Exact forward/row/check/restore caps stay
-  frozen. New dualData+optimizer/RNG+actual model local-spool/D-export ABI
-  native before market; FIT/INNER only, two forecasts before held dualtarget.
-  Both proper scores must beat cachedLinear+qualifiedRidge and ownINITIAL;
-  not generic MTL novelty or causal shared-encoder attribution. Actual ONE
-  marketfit COMPLETE55epochs7810updates/best40/INNER_PATIENCE15/151.811s/168MiB.
-  Original nativewarm1fit2updates retained, unusedcold286237 PASSone restore/
-  forward198rows/0updatesfit, callerb205 compound admission. Two EVALpasses
-  sealed before one dualtarget. ReturnBCE.67622494 losesLinear.67568712;
-  riskMSE1.153165 improvesRidge but full primary REJECT_DUAL_INCREMENT.
-  No alternate-winner/partial-head promotion or lambda/width/seed rescue.
-  Final evidence/debit verification pending, all fit/infer resources closed.
-- NEW CPU allocation family proposal31cd, actual08:24:31..09:04:31UTC,
- 600combinedowned inclproposal85once. Socrates +Faraday historyData150;
- <=49LedoitWolf/49SLSQP/9800iterations/0retry/onearm/<=1ledger, exactfullalias
- reusescached906/0ledger. Causalpast21OPEN packet/newsolver-action native before
- market. Strongest primary beats max growth/all3 and no worse min peakDD of
- cached906/Linear/LOWVOL; no baseline replay/grid/fallback/GPU/Paper mutation.
-- Depth: existing future20session benchmark8bf86e20 stays untouched, not a
-  company/Paper hold. Longer candidate training needs its own ready question/
-  finite budget/learning curves, never repeat finished fits for utilization.
+Schrodinger owns GPU resources. NEW oneLSTM16 family adopted/frozen:
+A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1.
+Actualorigin09:09:42/hard11:09:42UTC/2700owned7200elapsed, Source500 includes
+Halley85+comparison15once. One1562param RAW63_CONTEXT9 LSTM16, seed20261027,
+sameTOTAL_OPEN5/datepairBCE/2015..23FIT/2024INNER/2025EVAL, original14aData/
+0b26affine reused.96epochs13632updates/fit900 includingI/O/0marketretry,
+INNER-only earlystop/scheduler. New actual native optimizer/state/RNG/export/
+cold and measured resources before market. Numerical training not yet evidenced.
+Exact all-call/row/readout/closure caps NEXT/FAMILY-FREEZE, no old fit replay.
+Source8a066987/comparison9d96ecf3 confirm recurrent/RAW63 already studied;
+this is an uncompleted exact task-specific recipe, NOT new data/firstRNN/
+strict information superset or causal architecture attribution.
 
-The new risk question may be rejected if existing c39d/q10 studies already
-answer it or required OPEN paths are absent. Reused2025 is adaptive development,
-not untouched alpha. No profitability approval prerequisite for current Paper.
+Socrates: KKT synthetic diagnostic CLOSEDebfd3d00/6solves97iterations,
+sign oracles PASS; conservative mean-nu rule was explicitly frozen, not proven
+implementation defect/oldcause. Actual old residuals absent =>UNRESOLVED.
+Next Source-only20asset input question and one fixed Linear/LSTM blend proposal
+BEFORE new model outcomes; no payload/replay/numerical authority. Faraday22587
+confirms512NASA..C coverage and existing17equity+3ETF alternative, not wholeUS.
+
+Recent completed family consumers (under A/research):
+- current-nas100-ridge-risk-information-readout-20261027-v1,13badf9a:
+  MSE1.258145 vsnaive1.587838/constant2.042956, one feature/three seals/one
+  target/0fitGPUretry/112newowned/native8/independent8/Parent15refs/allclosed.
+  Old five-bundle family remains technically incomplete after counter I/O error.
+- current-fixed-linear-ridge-risk-cost-development-20261027-v1,906576ea:
+  growth.99852744%/peakDD2.17489873% vsLinear.9838582%/2.22661241%.
+  New relative-DD comparator adopted BEFORE effects, absolute unavailable.
+  One arm/path/ledger/0baselineReplay/modelcalls/retry/148newowned/allclosed.
+  LOWVOL2.09734538%/1.90155322% dominates, no current Paper swap.
+- current-joint-return-risk-learning-development-20261027-v1,ab98473e:
+  one1234param2head CUDAfit55epochs7810updates/best40/patience15/151.811s/
+  168MiB. ReturnBCE.67622494 losesLinear.67568712, riskMSE1.153165 beatsRidge,
+  but full REJECT_DUAL_INCREMENT. No partial-head promotion/seed/width rescue.
+ 534.030combinedowned/4CIDs20Jobsclosed/leaseabsent/Parent21refs exact.
+  Original warm optimizer retained, unused cold286237 restored once;
+  marketb205 consumes exact native chain, two EVALpasses before dualtarget.
+- current-linear-joint-risk-exploratory-cost-development-20261027-v1,7ec7e40d:
+  POST-observation policy REJECT, growth.97039286%/peakDD2.16995268%, loses
+  frozen maxgrowth/minDD references. One storedforecast/u/composition/path/
+  ledger/0fitforwardGPUretry/native7/independent8/116.779newowned plus55prior
+  Source once/allclosed/Parent14refs exact. Whole joint REJECT unchanged;
+  not head promotion/independent alpha/Paper change or a ratio rescue.
+- current-correlation-aware-fixed-allocation-development-20261027-v1,a1b19248:
+  CLOSED_NUMERICAL_CERTIFICATION_INCOMPLETE, not economic performance failure.
+  Data2a4f0ccc qualified, first LW/SLSQPsuccess8iterations then independent
+  primal/KKT denied. Separate residual magnitudes not saved. No action seal/
+  held cost path/ledger/marketretry, performance UNKNOWN not zero.
+ 209.381inclusiveowned/allclosed/Parent9refs. Old caps/results never reopened.
+
+Depth: future20session8bf86e20 untouched. New longer training must have a real
+question/learning curves/finite budget, not repeat a completed fit. All above
+are adaptive reused2025/currentlisting/nonPIT/MODP1/CA/finality limited, not
+independent alpha or a prerequisite for provisional Paper.
 
 ## Completed Information / Financial Comparison
 

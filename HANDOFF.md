@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, through08:44UTC.
+2026-10-27 KST, through09:18UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
@@ -10,7 +10,7 @@ Parent owns shared MD/Git/activation; AGENTS.md owns authority.
 Private no-cost Paper is delegated. Never KIS_LIVE_*/live/real money.
 Preserve ONE original B/10, costs/losses/pending/F9; no foreign adoption.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-Prior pushed checkpoint84f849a5; current integration checkpoint is GitHEAD.
+Pushed checkpoints84f849a5 and9b881a81; current integration is GitHEAD.
 Current actual LOWVOL metadata is separately
 evidenced below; documentation alone is not deployment.
 
@@ -51,39 +51,32 @@ This is installation/readback, NOT submit/fill/runtime closure. R3 is consumed.
 
 ## Current Parallel Owners
 
-- Execution Leibniz: LOWVOL release complete above; current source-only
-  return/risk cost-compatibility attestation, followed by future MSFT/LOWVOL
-  exact outcome-reader readiness. No actual private reads/Task/KIS effects in
-  these packages; reuse existing strict reader, no new receipt platform.
-- Schrodinger: clean modelroute/image proof complete; frozen Source reviewd033
-  found no dispatch blocker atd612/3699, but P2 safe_projection loses nested
-  counters/pending. Finding sent directly; changed Source supersedes that review.
-  Sole Steward also coordinates the newly authorized conditional risk family;
-  native GPU728f passed; actual one marketGPUfit started07:20 but failed after
-  counter-file os.replace PermissionError. No running GPU owner/lease remains,
-  no completed-model claim or automatic retry; old failed source/debits kept.
-- Socrates: actual inert LOWVOL binding complete; Claude CLI ABI smoke/strict
-  decoder complete. Old five-bundle risk family TECHNICAL_INCOMPLETE. New
-  separate Ridge3 readout13badf COMPLETE/PASS both fixed references, nofit/GPU/
-  retry. One-arm cost906576ea COMPLETE/ParetoPASS vsLinear; small gain remains
-  dominated by cachedLOWVOL, no current Paper swap. Now Source-only joint
-  peer review/cold caller handoff; no extra numerical work.
-- Faraday: risk Data02eb READY/CLOSED, one build/native/file/cold/fourJobsclosed,
-  102.039/350owned; direct handoffs delivered. NEXT-READY fixed LINEAR support/
-  inverse geometric RIDGE risk proposal complete. New pure-kernel/ABI invented
-  preparation at research/current-nas100-fixed-return-risk-composition-
-  readiness-20261027-v1/three-method-r1; no market composition in that readiness.
-  Next separate dualData150 joins exact return/risk targets for new joint family.
-- Halley: quiet fix22115377/test-adapter complete; Parent applied exact PSfa23/
-  test2da30 after observer Task0instances/namedprocess0. No Task/wrapper/config
-  change. LOWVOL R3 deployment complete; now future counter-I/O source/native
-  readiness at infra/current-research-local-spool-export-readiness-20261027-v1
-  COMPLETE SYN263faa: local32publications/141reader observations, closed exact
-  export/coldconsumer/sixnegative cases. Volatile tmpfs is not crash recovery;
-  actual model-role export/host ABI still needs new native before new fitting.
-  No oldmodel rerun. Full1480 completed0/19485PASS26SKIP399.96s; changed
-  serial71 and focused11PASS. Actual eight worker pairs and clean child/lease
-  closure observed. Native scheduled observer runtime not invoked.
+- Leibniz / Execution: audit057023ba and selective TTM diagnostic retirement
+  CLOSED3b2ba869; disabled exactly1, other87definitions/ACL/enabled unchanged.
+  Parent independently confirmed XML/ACL/disabled/instances0 at09:18:46UTC.
+  Rollback/failures retained; no Task.Run/KIS/private or trading-owner changes.
+  Execution LLM released to standby, not a permanent daemon.
+- Schrodinger / Engine and sole GPU coordinator: joint/JointRisk CLOSED/REJECT.
+  Source8a066987/comparison9d96ecf3 adopted ONE task-specific LSTM16, family
+  actualfreeze09:09:42..11:09:42UTC/2700owned. Current Source/native preparation,
+  not yet an evidenced marketfit. Existing RAW63/context9/affine reused.
+- Socrates / Engine CPU: KKT diagnosis CLOSEDebfd3d00, oldcauseUNRESOLVED,
+  no marketretry. Sourcec81c0cce adopted17equity Ridge residual OPEN5 versus
+  matched uniform17/3prefixes/47cohorts,600owned2400elapsed actualfreeze;
+  start after independent fixed Linear/LSTM Source choice is frozen.
+- Faraday / Data: correlation READY2a4f0ccc; broader metadata22587af1 closed.
+  Actual512/~1.2Mrows but allNAS tickerA..C, not wholeUS; existing507 input
+  needs matched baselines/vintage.17NAS+NYS equities+3ETF alternative identified.
+- Halley / invoked Infra: bank-FS12164f48 PASS4coldcalls/4CIDs28Jobsclosed.
+  Source-only bundle417ac66e then fixed mutable legacy mount: exactly access.py
+  and read.py, full stability/one new SYNcold/1CID6Jobsclosed/120debit. Ready
+  for NEW actual caller, with normal fresh three-phase real-writer admission
+  still required, not another permission/qualification wait. No actual read;
+  invoked Infra LLM released after quiescent handoff.
+
+Parent owns shared MD/Git/activation. Exact package roots are in NEXT/boards.
+Dispatch is not proof of an active numerical worker. Earlier release/native
+details and failures remain Git9b881a81 and immutable original Consumers.
 
 ## Completed Release Inputs
 
@@ -204,30 +197,29 @@ sealed before one dual-target intake,0baselineModelcalls/financialledgers.
 RESULT REJECT_DUAL_INCREMENT: selectedreturnBCE.6762249447 losesLinear
 .6756871201; riskMSE1.153165013 improvesRidge1.258145216 but no alternate
 winner/partial-head promotion or width/lambda/seed rescue. Fit/infer resources
-closed/leaseabsent; final source/debit/closure verification still owned by
-Schrodinger. Final Consumerab98473e is CLOSED_REJECT_DUAL_INCREMENT, all4CIDs/
+closed/leaseabsent. Final Consumerab98473e is CLOSED_REJECT_DUAL_INCREMENT, all4CIDs/
 20CLIJobs closed/leaseabsent,7874totalforwards/one dual-target intake,
 534.030combinedowned/1800 (no nested double count). Parent21refs exact.
 Never duplicate this completed fit. Weights/forecasts stay A:.
 All old failed models/debits and target/split history remain unchanged.
 
-NEW CPU correlation family proposal31cd at
-A/research/current-correlation-aware-fixed-allocation-development-20261027-v1,
-actual08:24:31..09:04:31UTC,600combinedowned inclproposal85once. SocratesEngine/
-Faraday pastOPEN21 Data150, one causalhistory projection/typed native before
-<=49LedoitWolf estimators/49SLSQP/9800combined iterations/0retry/onearm/<=1ledger.
-All49 native-action alias =>reusecached906/0ledger. Same originalB/gross/.002
-eachleg/wholeShares/clocks; primary growth>max(906,Linear,LOWVOL) and peakDD
-<=min(all3). No grid/fallback/baseline replay/GPU/API/extra Paper allocation.
-Data/solver/actionSource must qualify before numerical. Component readiness
-is local, not a company wait. Separate exploratory policyablation e5cbae3d
-adopted conditionally at research/current-linear-joint-risk-exploratory-cost-
-development-20261027-v1:300combinedowned1200elapsed from its own actualfreeze,
-priorSource55once,0newmodel/GPU/targetread. One immutable selectedrisk source
-change on oldLinearu, one new role-to-action native before any payload,
-one arm/path/ledger max, no baseline replay. Must beat max growth/min peakDD
-of906/Linear/LOWVOL. Explicit post-observation choice/extra adaptive trial;
-whole joint REJECT remains, no partial-head or Paper promotion.
+Correlation allocation CLOSED_NUMERICAL_CERTIFICATION_INCOMPLETEa1b19248:
+A/research/current-correlation-aware-fixed-allocation-development-20261027-v1.
+Qualified Data2a4f0ccc/all49origins100slots/selected22OPEN histories known,
+not a Data failure. One LedoitWolf/one SLSQP returned success8iterations;
+independent primal/KKT guard failed at allocation.py:131. Separate residual
+magnitudes NOT retained; do not infer the failing component or convergence.
+No action seal/held cost intake/ledger, performance UNKNOWN not zero.
+0retry/209.381inclusiveowned/allJobsclosed/Parent9refs exact. New invented
+KKT diagnostic cannot reopen this closed market attempt or relax its criterion.
+
+Post-observation Linear/JointRisk ablation CLOSED_VERIFIED7ec7e40d:
+A/research/current-linear-joint-risk-exploratory-cost-development-20261027-v1.
+Sourcefc05fe8e/RESULT30ee1fa8. One stored forecast/u intake/composition/path/
+ledger,0fit/forward/GPU/baselineReplay/retry. Growth.97039286%/peakDD2.16995268%:
+neither growth nor DD beats all frozen references. REJECT_EXPLORATORY_POLICY_
+INCREMENT; old joint rejection unchanged. Native7/independent8/allclosed,
+116.779newowned plus55prior Source once. Parent14refs exact. No ratio rescue.
 
 Future MSFT/LOWVOL count reader clean0b1026/Sourceb859 at
 A/execution/current-msft-lowvol-outcome-reader-readiness-20261027-v1/source-clean-r1:
@@ -235,8 +227,16 @@ Ruff0/AST equivalence/fresh10native pure cases, allresourcesclosed. NOT an actua
 private scope/fullbankFS/admission proof. Bind fresh finite post-due caller
 with exact selected clean SPEC, source/input/basis/intent/fill and stability.
 No consumed observer/private command or recovery observe. Counts unknown NULL.
-Leibniz now source-safe Scheduler health audit only, no mutations inferred safe
-from names, task exits or old due dates; keep unknown operational owners/F9.
+Scheduler audit057023ba complete:
+A/execution/current-scheduled-owner-health-audit-20261027-v1/CONSUMER.json.
+Root96/project88/enabled71/observedinstances0; MSFT/LOWVOL8 XML/ACL exact.
+35 future direct pythonw launchers are not transitive no-console proof.
+TTM one-shot diagnostic actually disabled09:13:49UTC under separate3b2ba869,
+independentd86bf6d9 and Parent09:18 exact current hash/enabled/instances check.
+Native omitted default Enabled=true caused initial zero-effect failure;
+derived caller accepts only measured absentTrue/exacttrue/false setting, not
+trigger or other XML changes. Original clock/caps retained; other87 unchanged,
+native DPAPI rollback retained. Other unknown operational owners/F9 protected.
 
 Quiet audit e4ad9fab:92root/84project/67enabled,31reportedfuture actions pythonw.
 Old1a06 observed a visible child but failed fixture checks. New22115377 matched
@@ -268,6 +268,9 @@ eight launcher+interpreter pairs observed around07:03UTC; after run all18
 observed PID members absent and own C:/trpy/runs/r-cfd41dca/lease absent.
 Changed serial71PASS4.20s/focused11PASS/startup1PASS/Ruff/threeCompose PASS.
 Only PSfa23/test2da30 changed among1411protected members; other1409exact.
+Fresh09:08 protected1411 mismatch0; startup1/Ruff/externalRuff/threeCompose
+PASS, closed-outcome reference checks45/0mismatch. External integration:
+A/verification/current-observer-native-quiet-fix-20261027-v1/EXTERNAL-CLOSED-RESEARCH-0918.json.
 Separate serial scratch retained, no all-scratch-clean claim. External code needs its
 own native/source/owner checks; these tests are not deployment or fill evidence.
 Prior full4c9a2956 and docs verification remain historical, not rewritten.
