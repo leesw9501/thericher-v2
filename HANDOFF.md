@@ -2,205 +2,173 @@
 
 ## Current Reality
 
-2026-10-27 KST, observed through13:41UTC.
+2026-10-28 KST, observed through Oct27 15:15UTC.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
-Current pushed code94c16934; no Parent test session. Preserve unrelated
-%SystemDrive%/. Parent alone owns shared MD/Git/activation; AGENTS owns authority.
-Private no-cost Paper is delegated. Never KIS_LIVE_*/live/real money.
-ONE original B/10, costs/losses/pending/F9 stay; no profit-expanded allocation,
-foreign inventory adoption or unknown-reservation release. No operator decision.
+Parent owns integration/shared MD/Git/activation; code94c16934, pushed docsff31086e.
+Preserve unrelated %SystemDrive%/. No actual operator decision is pending.
+Private no-cost Paper is delegated; never KIS_LIVE_*/live/real money.
+ONE original B/10/cost/loss/pending/F9 survives; no profit expansion, foreign
+inventory adoption, counter reset/refund or unknown reservation release.
 
-## Original Installed Paper / Do Not Replay
+## Actual Paper State
 
-| Actor | Actual evidence | Original UTC opportunities |
-| --- | --- | --- |
-| MSFT | actual901b0041/independent007b0145 under A/execution/current-msft-p010-operational-runtime-r2-preparation-20261027-v1/parent-source-pin-r4 | Oct27 entry13:40..44/recovery13:47..51; Nov2 exit20:45..49/recovery20:52..56 |
-| LOWVOL | actualf0a9cbac/readback9967c874/cleanup13d30667 under A/execution/lv-install-1027-r3 | Oct27 entry15:30..34/recovery15:37..41; Nov3 exit14:35..39/recovery14:42..46 |
+Original MSFT entry13:40/recovery13:47UTC ran. Exact public ROUND receipts
+7179b4a6/a9467d34 report technical_failure_unknown_effects/RuntimeError;
+outer debts0 do not prove native_calls0. Actual admitted reader56ce6efc at13:53
+passed three-phase admission, source/private stability and owned closure,
+found original account/basis matches but policy65f/a861 ABSENT/target1UNKNOWN/
+bound0. Accepted/fill/current owned remain NULL, not zero/no-submit/flat.
+Reader scope consumed; do not replay the same query.
+Evidence:
+A/execution/current-msft-original-opportunity-firstcause-20261027-v1/CONSUMER.json;
+A/execution/current-msft-lowvol-post-opportunity-reader-preparation-20261027-v1/parent-admission-r1/RESULT-ACTUAL.json.
 
-MSFT hoste1b014dd/routebf376d3a/input65f9571d/policya8612217/TRUE090ddb10.
-LOWVOL hostba2a30a5/route3699bd76/input58f15ad8/policyf037974e/TRUE2fc024c1.
-Both still use image e41497fd. No current submit/fill inferred from installation.
-Post-C-integration rehash150host/externalrefs matched; actual drivers use their
-D-frozen sources/images, not dormant transport.source_map over mutable C.
-MSFT gross.01 and requested LOWVOL.025 are portions of the SAME initial tenth,
-not guaranteed orders. Native risk/host/identity/quote/funds/reconciliation vetoes.
-Native H5 minimumNov2nearclose differs from researchNov3OPEN; operational exit
-variants stay explicit. Existing installers/scopes are consumed, not commands
-to rerun. No Task.Run/substitute intent/input roll/follow-up chain.
+Current app Node executable/manifest changed, bootstrap/both control program
+bytes and closed grammar unchanged. Current defect reproduced in
+A/execution/current-msft-custody-current-runtime-reproducer-20261027-v1.
+This is not proof of sole historical cause. Qualified common34c22d27 adds
+immutable allowlisted fault reason/frame/native-stage, no raw payload/retry.
+Claude5706a755 GO_WITH_LIMITS, advisory only; prior unavailable reviews remain.
 
-F9book764d9836/primary9b65a0e7 remains pending1/UNKNOWN-HELD. Prior exact joins
-did not retain response category or prove original outcome. Accepted/fill/owned
-NULL, not zero; no repeated identical query or reservation release.
+### LOWVOL Repaired Deployment
 
-Other retained opportunities: Window21Oct27 19:45UTC; HGBexitOct28 19:45;
-GRU/TimesFM/L Oct30 19:45/19:49/19:55..20:00; Joint17/Volume Nov19 and optional/
-Joint17 Nov20 cutoffs/exits. Exact source/task map eb451d98 below. Dates/zero
-instances/missing rows do not prove exhaustion or financial closure.
+Original four Tasks retained with unchanged names/triggers/principal/API7 ACL/
+input58f15ad8/policyf037974e/imagee41497fd/cohort/private paths/counters/basis/F9.
+New hoste2b06935/TRUE96f10d52. First entry updated15:06; old helper rejected
+Windows' omission of default Enabled=true. It was NOT blindly repeated.
+New helperf3e1bc17 changes only that semantic default;18original+13focused
+mock tests PASS, false/unknowns/ACL/source/history checks preserved.
+First entry strict readback PASS; remaining3 actions updated/read back15:14:47.
+Artifacts:
+A/execution/current-paper-runtime-custody-repair-20261027-v1/lowvol-activation-r1;
+same root/lowvol-activation-r2/inert/RESULT.json and task-repin-r2/CONSUMER.json.
+Verifier's helper-pin output field was empty from dot-source param clobber;
+its pre-call member checks passed. Independent current readback must explicitly
+retain source binding, not infer it from that blank field.
 
-## Ready / Owned / Due
+Original Oct27UTC entry15:30..34/recovery15:37..41 (Oct28KST00:30/00:37);
+Nov3UTC owned exit14:35..39/recovery14:42..46. Halley owns original finite15:42
+metadata callback. No Task.Run or financial result inferred from deployment.
 
-| Owner | Concrete work |
-| --- | --- |
-| Parent | Fresh MSFT actual-reader derivation parent-admission-r1, one read13:52..14:07 after owner closure/current admission. Tool runtime pins updated, same control bootstrap/entry grammar; preparation read0. Full1f0f requires exact protected bytes. |
-| Faraday / Strategy | Quote cf132417 CLOSED. Next assigned Source-only TimesFM native trainable-head/adapter feasibility90active1200elapsed; no new GPU/model load/fit inferred. |
-| Schrodinger / Engine and GPU custody | TimesFM8ec7 CLOSED/REJECT, all48native+market forwards done. Next assigned one fixed .5Ridge+.5TimesFM CPU blend240active1800elapsed, no model repeat/GPU/weight grid. |
-| Sagan / Execution | Future-reader callers closed. Now retained-NAS grouping/compiler150active/hard13:50, no actual Task/image/private mutation; e414 two-module witness8d61 qualifies that ABI, not fourteen deployments. |
-| Socrates / invoked Execution | Data534bf54e qualified/closed. Next assigned inert US Ridge17 route/host240active/hard14:12, reusing existing input/profile/image; no inference/conversion/order/date roll. |
-| Leibniz | Finite original MSFT metadata callback13:52UTC/deadline14:00. |
-| Halley | Finite original LOWVOL metadata callback15:42UTC/deadline15:50. |
+### MSFT Same-Input Technical R3
 
-Quote package roots:
-A/data/current-paper-quote-clock-capability-preparation-20261027-v1 and
-A/data/current-paper-quote-clock-capability-probe-20261027-v1.
-Current REST dymd/dhms decoder hardcodes Asia/Seoul and120s; prior offsession85c
-did not establish timezone. Official REST source or measured evidence required,
-not WebSocket inference or an automatic timezone/freshness relaxation.
-New delegated measurement: MSFT asking-price only/virtualhost/scoped Paper
-credentials, <=4GET inclfailures/<=2tokenPOST onlyneeded, existing300guard/
-atomic+legacy exclusion/1.25pace. Prefer one RAM client across immediate and
-13:31..13:33UTC RTH stages. A finite hidden worker may own next_due, no Task/
-recurrence/automation/privatebank/account/order/live/secret or raw-row retention.
-First actual query12:59:58UTC succeeded: unique fresh interpretation Asia/Seoul,
-alternative NY/UTC future>5s, valid/noncrossed best bid/ask. Current parser's
-Korea interpretation is supported, not a confirmed fault; no hotfix/freshness
-change made. Supervisor37948/worker40612/Sourceb38fb390, hard13:33UTC;
-Both13:31/13:32UTC RTH observations also succeeded, stamp advanced/Korea fresh.
-Quote Consumer cf132417 CLOSED:4GET/1POST/0failures/same RAM client/token,
-four original PID-starts absent/124.283activeupper. Wholeprocess1923.997s
-includes1920.419s worker-owned idle, not claimed compute or Parent sleep.
-No account/orderability/fill or universal endpoint/timezone/finality claim.
+Actual application/enable15:14:08 at
+A/execution/current-paper-runtime-custody-repair-20261027-v1/msft-activation-r3/RESULT.json.
+Plan e6f0a216/hostd58d4ecb, same original65f9571d/a8612217/cohort/imagee414/
+private identities/basis/pending/counters/F9. New exact technical entry15:45..49
+and recovery15:52..56UTC (Oct28KST00:45/00:52) created disabled/read back then
+enabled; two original future exits repinned, Nov2 20:45/20:52UTC clocks retained.
+Consumed13:40/47 Tasks untouched. Earlier14:45/14:55 drafts inert/expired.
+Native exact reconciliation/quote/orderability/risk still decide; no substitute
+intent or extra allocation. All four Ready/enabled/instances0 at application.
+Socrates prepares strict new outcome caller and finite15:57 metadata callback.
 
-Foundation Source root:
-A/research/current-liquid17-dated-foundation-checkpoint-readiness-20261027-v1.
-Legacy compatibility probe root:
-A/execution/current-nas-nys-legacy-two-module-compatibility-probe-20261027-v1.
-Clock scopes:
-A/execution/current-{msft,lowvol}-owned-opportunity-readiness-wait-20261027-v1.
-Clock workers do one post-due Task query then stop; no private read or financial
-inference. MD/dispatch is not proof of an active model, GPU or standing daemon.
+F9book764d9836/primary9b65a0e7 stays pending1/UNKNOWN-HELD. No result category
+or original outcome proven; no identical repeated query or reserve release.
+Fees/settled cash/net PnL stay unobserved. Native read-only custody readers are
+not fresh broker holdings queries and never recovery observe().
 
-TimesFM Engine root A/research/current-liquid17-timesfm-open512-development-20261027-v1;
-Data root A/data/current-liquid17-timesfm-open512-contexts-20261027-v1 with matching M input.
-Sourcef2cfb68c/contract78fa21d5, existing trusted safetensors2f776efe released
-2025-10-01 before every target. Past512OPEN ->sixfutureOPEN log(h6/h1), SPY
-residual uses retained past beta60; no realized entry denominator. Zero fits/
-updates/downloads/retries/<=2loads/1native+47market pipelines/18series each.
-All scores/actions seal before one held-label/marks/new matched ledger;
-globally reused outcomes/residual corpus limits prevent independent alpha.
-Actual family CLOSED8ec7aed7:47market forwards/846series/11.094s/1011.75MiB,
-total native+market48forwards/twoloads; MSE.001699889909/growth2.67900353%/
-DD1.40509650% lose Ridge. No repeated fit, forward or baseline replay.
-Data8841147d first build failed at audit-root admission before any OOF decode,
-not beta units. Explicit technical-path-repair-r1/Consumer534bf54e admitted only
-three exact old M OOF paths; same codec/keys/units/full-OHLC geometry qualified.
-Data240 includes both120upper stages, cumulative2groups/40CSV40JSON/4attempts/
-3OOFdecodes/oneprojection/verify. Failure and old clocks remain unchanged.
+## Latest Runtime Correction
 
-## New Code And Inactive Candidate
+LOWVOL15:42 callback: both15:30/15:37 Tasks closed/result20/instances0, not fills.
+Host802c34a2/Owner8617148d retain metadata.call/RuntimeException/no native result.
+Task_contract31 reproduces D:/ versus native Windows Path release argument
+mismatch; historical sole cause not exclusively proven. Missed recovery guard
+and expired correction scope not reused; original failed pair untouched.
+MSFT future four actions normalized15:40:47, same exact Source/TRUE file bytes/
+input/policy/clocks/ACL/history. Plan0a3c1a8a/helperace72658/33focused checks and
+native Arguments equality proof. Repair root/
+release-path-native-normalization-r1/MSFT/RESULT.json. Taskstate4 at15:45:52,
+not a fill. Halley now owns one15:57 metadata callback; Socrates reader prep.
 
-94c16934 implements NAS/NYS typed instrument, US H5 profile and exact venue
-joins through native sizing/intent/recovery/owned exit. Old NAS canonical bytes,
-V1-V4 keysets, broker risk and ETF branches remain. Source patch3f2ce1f7/0e2792f0
-at A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1.
-New runtime image d892c58d is BUILT, NOT DEPLOYED. Original e414 operations stay.
+## Independent Research / Actual Owners
 
-Inactive Ridge17 native input e7341d6c at
-A/execution/current-liquid17-long-ridge-native-input-binding-20261027-v1:
-input4ba112dd/policyf59f2d85/full17/allfivepositiveNYS/.025originalB UNALLOCATED/
-allowFALSE. One conversion/no modelcall/oneCIDeightJobsclosed/200upper.
-Real six clocks retained; native minimumNov2nearclose vsresearchNov3OPEN
-explicit. No automatic date roll, capital or execution release.
+Schrodinger owns Engine/GPU, Faraday Data. Current F3 frozen TimesFM hidden/
+linear residual head roots:
+A/research/current-liquid17-timesfm-frozen-head-development-20261027-v1;
+A/data/current-liquid17-timesfm-frozen-head-packets-20261027-v1.
+Global13:55:06..15:25:06UTC/1800combined active=Data300+Engine1500 unchanged.
+One1281parameter head on frozen1280hidden/beta60-SPY residual OPEN5,
+chronological INNER best/max40epochs/180s/patience8/LR schedule.
+Exact15 later F3 EVAL only after score/action seal; cached matched15 controls.
 
-Migration map eb451d98 at
-A/execution/current-nas-nys-owned-actor-migration-readiness-20261027-v1:
-14relevant actor bundles/source map, not deployment. Five historical inline
-owners/images remain scoped unresolved. Do not upgrade all inactive files or
-turn this into a company hold. Derive common replay kernel only where actual
-ABI is equal; preserve exact old inputs/private paths/basis/pending/F9.
-After positive old-process/container closure, pair compatible RO seed/readers
-and RW recovery/exit sources before conflicting NYSE writes. Pre-write rollback
-restores old sources/Task refs, never bank snapshots. Post-write rollback must
-retain mixed-bank-capable recovery/exit; no old-parser or reservation reset.
+Final Consumer19c14903 CLOSED_VERIFIED_REJECT15:20:57: actual1fit8epochs/
+4120updates6.738s, selected INITIALepoch0 as INNER worsened. MSE.001862879805
+loses matched Ridge.001837390593; exact UNIFORM action alias reuses whole15
+ledger, growth.99621176%/DD.37214407% loses Ridge. Total base2loads543forwards/
+8728series/no native replay; marketencode26.882s/1140MiB. Combined797.603703/
+1800/all8CIDs40Jobsclosed/leaseabsent15:22:05. GPU available, not currently
+training; old ACTOR-LIVE file is history.
+Data r2 HANDOFF264d3768/Source8965729a VERIFIED_READY_CLOSED15:18;
+first projection+independent verification PASS/20CSV20availability/3rolepayloads.
+Full2818FIT/55INNER/15EVAL axes retained;563cadenceFITdates/515nonempty/
+7713lossrows,11INNER/187rows,255EVALkeys. No EVAL targets emitted.
+Payload under matching M research_inputs/.../technical-summary-ref-continuation-r2.
+Exact qualified paths sent directly Engine15:16. Data247.055835/300/allJobs
+closed; original guard/r1summary failures unchanged, no completed producer/
+model-native replay or refund. Engine first market dispatch still owns original
+caps/hard15:25:06 and actually completed. No fit/projection duplicate or clock
+reopening. Next orthogonal hypothesis source-only; optional disagreement-gate
+NOT_ADOPTED/Claude REVISE/no numerical dispatch.
 
-New invented unique-ID proof8d61690e at
-A/execution/current-nas-nys-legacy-unique-id-native-qualification-20261027-v1:
-three cases/3CIDs18Jobsclosed/exactPID-startsabsent/10nativevisits. Olde414 plus
-ONLY two current budget modules passed cold mixed-book RO and exact partial
-NAS SELL/expired unknown cancel/no duplicate submit or reload/residual owned
-SELL/owned-flat, preserving F9/NYS/original basis.222.296ownedupper/360.
-This qualifies that exact ABI, not fourteen historic images or actual orders.
-Old failed fake-ID fixtures stay unchanged. Selected F821/F822/F823 checks
-pass; frozen report finalizer has9E501, no full external-tree Ruff-clean claim.
+Leibniz after LOWVOL repair prepares one source-only next sequence/composition
+hypothesis against actual existing qualified data, no fitting/label access.
+Sagan independent a2883177 PASS15:18: eight activated Tasks exact source/action/
+TRUE/ACL/clocks/semantics/history, two consumed originals unchanged;10reads/
+zero effects, explicit helperf3 pin. Halley/Socrates own finite due callbacks.
+An MD/dispatch is not evidence of an active worker or GPU training.
 
-## Outcome Reader
+Closed model evidence (not to rerun):
+- Long17 Ridge9266325e: growth4.06711336%/DD.76057783%, matched uniform
+  1.85962518%/1.04131163%; development screen PASS, not independent alpha.
+- MLP43c647cc/HGB23fc6c94/Rankerb16d33fe/gatec8423162 closed; frozen increments
+  fail, Ranker also retains technical envelope failure. Old results unchanged.
+- TimesFM8ec7aed7:47market forwards/846series/11.094s/1011.75MiB peak;
+  native+market48forwards/twoloads, MSE.001699889909/growth2.67900353%/
+  DD1.40509650% lose Ridge. Closed; no repeated base inference.
+- Fixed-half Ridge/TimesFM d27ed8a6 closed verified REJECT,0fit/GPU/modelcall.
+All currentlisting/nonPIT/MODP1/CA/finality/corpus/global outcome reuse limits
+remain. Exploratory/Paper authority is separate from independent-alpha claims.
 
-Original immutable bundle417ac66e remains READY for NEW original-NAS caller at
-A/execution/current-msft-lowvol-reader-source-bundle-readiness-20261027-v1.
-It supplies exact access.py/read.py copies; do not mount mutable outputroot.
-Its SYN wrapper is not an actual-private invocation or fill evidence.
+New image d892 built NOT deployed; US Ridge17 inpute7341d6c/currentproposal
+6329b00b and operational candidate remain inactive. No automatic date roll.
+Migration map eb451d98 covers14actor bundles, not14deployments.
+Compilerbcf75832 groups9; e414 two-module native proof8d61690e and 2ff exact
+three-case proof qualify named ABI compatibility only, no actual bank migration.
+Historical unknown source/image edges remain scoped, not a company-wide block.
 
-New reader87276bdb at
-A/execution/current-nas-nys-offline-custody-reader-20261027-v1 is source/SYN READY:
-six cold filesystem cases incl mixed-US/legacy equivalence/missing NULL/forged
-fill/venue-swap/wrong-profile denial. SixCIDs36Jobs/exactPID-starts closed,
-no actual custody admission. SDK a6568f12 has748members/14diffs versusded65:
-13new native source members plus prior approved quietPSfa23. Four Parent
-modules RuffPASS; frozen syn_finish has4E501, not whole-tree Ruff-clean.
+## Next Adopted Research Package
 
-Actual use always needs NEW finite caller/SPEC/point/anchor/diagnostic and fresh
-three-phase relevant-custody-writer census, exact source/image/RO/networknone
-and before/after membership/identity/mtime/bytes. Market-only actors/future due
-times are not automatically private writers. No recovery observe/lock creation.
-Require exact account/basis/input/policy/intent/fill linkage. Distinguish submit
-attempt/acceptance/linked fill/current owned inventory/terminal reconciliation;
-partial targets are not whole basket closure. Missing/foreign/unbound NULL,
-fees/settled cash/net PnL and fresh broker holdings unobserved unless proven.
-
-## Closed Research / Never Duplicate
-
-All historical outcomes globally reused/currentlisting/nonPIT/MODP1/CA/TR/
-finality limited. Research screens are not independent alpha, broker PnL or
-Paper permission. Market data M/models A; no generated bytes in Git.
-
-| Evidence | Actual retained result |
-| --- | --- |
-| Data f496b3b3/335fb02f/7861d8f7 | Long17/feature18/currentpoint/gate roles closed, exact old600 parity/gaps preserved, zero new HTTP needed |
-| Long Ridge9266325e | 3prefix fits; full47 growth4.06711336%/DD.76057783% vs uniform1.85962518%/1.04131163%, development screenPASS |
-| Long MLP43c647cc | CUDA3fits20/32/30epochs; MSE/growth/DD lose Ridge, REJECT |
-| OOF gatec8423162 | CPU15iterations/16FG, later15cohorts exact Ridge action alias; no required increment, REJECT |
-| Pairwiseb16d33fe | CUDA3fits28/32/26epochs/7074updates; growth4.25790885%/DD1.27038321%, ordering/DD fail. Outer post-readout envelope failed: technicalincomplete/retained REJECT, never regraded |
-| HGB23fc6c94 | CPU3fits20/20/31trees, selected0/0/11; two constant stages, MSE.001651825759 loses Ridge. Growth1.28218909%/DD1.04131163%, REJECT; 305.629upper/11Jobsclosed/0GPUretry |
-| Future envelope7d2f1c2d | Invented producer/host smoke PASS; HGB new terminal source check worked. Old Ranker result/clocks/debits unchanged |
-| TimesFM8ec7aed7 | Dated local model, native+market48forwards/2loads/864series, MSE.001699889909/growth2.67900353%/DD1.40509650%, REJECT vs Ridge;598.647combinedupper/allchildrenclosed/leaseabsent |
-
-Root names and numerical caps are in Engine/Sources, history in Git94c16934.
-No repeat completed fits/HTTP/projection/conversion/ledger or holdout reopening.
-Future20session benchmark remains untouched. Earlier LSTM/hybrid/TCN/joint/
-risk/correlation failures stay original Consumers/Git, not silently regraded.
-Parent fresh four-document check101hostrefs/0mismatch (HGB/reader/envelope/map);
-reference hashing is not a new numerical replay.
+NAS100_RAW397_LINEAR_TOTAL_OPEN5_PAIR_V1 contract3da91bae, one family only:
+A/research/current-nas100-raw397-linear-learning-development-20261028-v1.
+1000active/3600elapsed actualfreeze/Source150(includesprior45once)/native90/
+affine20/fit450/infer60/readout30/verify90/cleanup60/reserve50.
+One397coefficient/no-bias pairBCEfit on qualified raw63x6+indicator19 joined
+features/literal100/FIT2015..2023/INNER2024/EVAL2025. Max128epochs9088updates/
+INNERpatience16/LRschedule/bestincl0/10500calls16Mrows/2EVALpasses/oneheldtarget,
+noData rebuild/baseline replay/financialledger/retry. New native file/optimizer/
+all-state checkpoint proof before market; no EVAL epoch choice or alpha claim.
+Engine/Sagan directly source-attest actor/mount capabilities before launch;
+no active training inferred from adoption. Long17Lag512 d9cea31a is a distinct
+ready alternative, not a second automatic dispatch or TimesFM rescue.
 
 ## Verification / Recovery
 
-Current authority1f0fd37a:
-A/verification/current-nas-nys-native-integration-20261027-v1/CONSUMER.json.
-Full69460 exit0/19514PASS26knownSKIP35warnings418.91s; requested8/observed
-eight launcher-child pairs, all18PythonPIDmembers and own r-1cfc9e15/lease
-absent. Serial384/focused30/Ruff/default+research+accounting Compose using
-.env.example PASS. Sourcea1500c15 has1412protected members/post-full0mismatch.
-Actual image3.12 checks13specificnativehashes/3instrumentroundtrips/tenportable
-AST+mutation oracles PASS. A later SDK correctly adds the prior quietPS delta.
+Fresh authority:
+A/verification/current-paper-runtime-custody-recovery-20261027-v1/worker-telemetry-r1/CONSUMER.json.
+19514PASS/26knownSKIP/398.53s/35warnings;8observed worker pairs/19exact
+PID-starts absent/own r-86ce0ce9 and lease absent, inactive siblings untouched.
+Serial370PASS/1knownSKIP42.10s; externalcommon8; repoRuff/default/research/
+accounting Compose .env.example PASS.1412protected digest a1500c15 unchanged.
+Earlier full390.60s passed but lacked independent active roster; retained,
+not complete activation authority. No test spend refunded.
+Changed D code needs its own focused/source checks; repo tests cannot prove it.
+No unrelated full-suite repeat for docs/external-only exact-byte work.
 
-First full4585 passed19513/26 before test-only AST portability fix; it is not
-current authority. Earlier606b/4c9a proofs remain historical. New D helpers need
-their own focused/native checks. Frozen capture helper has1E501, not whole
-artifact Ruff-clean. Prior broad D-tree37 and Source HGB finalizer2E501 remain
-explicit. Separate C serial scratch and previously denied cleanup retained;
-no manual cleanup bypass or all-scratch-clean claim.
-
-At interruption recheck exact owner/PID-start/CID/checkpoint/next_due, classify
-resume/restart/reconcile/complete/unknown. Do not rerun closed work. Continue
-ready delegated packages while a lane waits. Only actual company outcome
-evidence permits one NEXT replacement; tests/install/due/commit are not outcome.
+Do not rerun consumed installers, actual private readers, closed models or
+activation scripts. Recheck actual ownership after interruption; reconcile
+partial state before any reversible action. Original snapshots/immutable failures
+remain external/Git. Company remains unfinished until exact native runtime
+closure; commit/install/research is not completion. Continue ready work.

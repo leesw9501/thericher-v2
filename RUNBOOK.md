@@ -12,7 +12,51 @@ Use uv --no-env-file for credential-free work and .env.example for Compose.
 MODEoff remains except named delegated Paper paths. ONE original B/10,
 costs/losses/pending/F9 survive restart; no profit expansion or foreign adoption.
 
-## Actual Runtime / Due
+## Current Repaired Runtime
+
+Observed Oct27 15:18UTC/Oct28KST. Current company outcome UNFINISHED.
+Parent metadata activation is complete, not a broker result:
+A/execution/current-paper-runtime-custody-repair-20261027-v1/msft-activation-r3/RESULT.json
+(15:14:08, Plane6f0/hostd58d) and lowvol-activation-r2/inert/RESULT.json
+(15:14:47, remaining3/hoste2b0; first entry previously reconciled, not repeated).
+Independent post-activation-independent-r1/CONSUMER.json a2883177 validates
+exact8 current Task duties and2unchanged consumed originals,10reads/zeroeffects.
+
+LOWVOL original entry15:30/recovery15:37UTC Oct27 (Oct28KST00:30/00:37),
+Nov3 exit14:35/recovery14:42; all original identities/input58f/policyf037/
+imagee414/basis/counters preserved. MSFT SAME original65f/a861/cohort/bank/
+image/counters/F9 uses new exact technical r3 pair15:45/15:52UTC Oct27
+(Oct28KST00:45/00:52); original consumed13:40/47 unchanged, Nov2 20:45/20:52
+exits repinned without changing duties/clocks. Older14:45/14:55 drafts inert.
+Do not rerun any activation/installer or manually Task.Run. These are consumed
+scopes, not operational replay commands. Native risk/reconciliation can veto.
+
+Original MSFT outcome is technical_failure_unknown_effects, actual reader56ce
+found policy ABSENT/target1UNKNOWN/bound0; accepted/fill/current-owned NULL.
+Current app Node/manifest admission defect is reproduced, not proof of sole
+historical cause/native_calls0. Common34c2 retains categorical fault stages.
+Helperf3e1 adds only measured omitted Enabled=true normalization; explicitfalse/
+unknowns/ACL/history remain strict.18old+13focused mock tests PASS.
+Leibniz verifier helper-pin output was blank from dot-source variable clobber;
+independent a288 explicitly verified full f3 before/after, not that blank field.
+
+Use new exact finite reader preparation under same repair root/
+post-repair-reader-preparation-r1, not consumed first MSFT actual reader.
+Halley owns original15:42 LOWVOL metadata callback; Socrates15:57MSFTr3.
+Private outcome reads require fresh actual writer closure/strict source+request
+joins/networknone/source+privateRO/full stability. Future due/research/Data alone
+are not custody conflicts. Never recovery observe() as an offline reader.
+No financial result inferred from scheduler exit/Ready/missing artifact.
+
+Current full recovery authority worker-telemetry-r1:19514/26/398.53s/eight
+actual worker pairs/owncleanup,serial370/1/externalcommon8/helper31/Ruff/
+3Compose PASS; exact1412protected a1500c15 remains required. Do not rerun
+full suite only for MD; independently test changed external code.
+
+## Frozen Installation History
+
+The following original installation facts are history, not current host refs
+or reusable commands. The repaired runtime above supersedes source references.
 
 A/execution/current-msft-p010-operational-runtime-r2-preparation-20261027-v1/parent-source-pin-r4/ACTUAL.json
 901b0041; independent POST-INSTALL-READBACK007b0145.

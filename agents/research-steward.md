@@ -1,115 +1,55 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-27 KST,13:41UTC. A=D:/thericher-v2/model-artifacts.
-Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is ONE GPU/registry coordinator.
-Parent owns MD/Git. Model choice belongs Engine, not a resource approval board.
+2026-10-28 KST, observed Oct27 15:18UTC.
+A=D:/thericher-v2/model-artifacts.
+Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is the ONE GPU/resource/registry
+coordinator. Parent shared MD/Git, Engine model choice; AGENTS owns policy.
 
-## Current Ready / Owned
+## Actual Resources / Latest Closure
 
-ONE GPU/registry coordinator remains Schrodinger. Latest useful GPU question,
-TimesFM OPEN512 zero-shot development, is CLOSED8ec7aed7/REJECT:
-A/research/current-liquid17-timesfm-open512-development-20261027-v1.
-Global12:56:41..14:26:41UTC/1140combinedowned(Data240+Engine900), zero fits/
-updates/retries/downloads, <=2local checkpoint loads/1native+47market pipelines.
-Sourcef2cfb68c/contract78fa21d5, local dated trusted safetensors/d6 runtime.
-Actual named native/cold handoff precedes market; direct Data readiness avoids
-Parent relay. Execution13:40 preempts at safe boundary; remeasure capacity,
-desktop4096MiB reserve/native peak<=8GiB, no appkill/driver change. Do not infer
-current GPU use from adoption. Actual native+market48forwards/2loads/864series,
-47market pipelines11.094s/peak1011.75MiB, no fit. Combined598.647upper,
-all children closed/GPUinactive/leaseabsent, proper/growth/DD increments fail.
-No duplicate model work. Next assigned fixed Ridge/TimesFM blend is CPU-only;
-Faraday's native trainable-head Source90/1200 is not adopted training or a GPU
-permission hold. Recheck actual capacity before any new qualified campaign.
-Latest rankingb16d33fe actualCUDA3fits28/32/26epochs/best8/12/6 and7074market
-updates are CLOSED, all8CIDs40Jobs/43observedPIDsabsent/leaseabsent.
-86MiBpeakeach/33.100+37.564+25.900leafseconds with co-tenancy, not isolated
-benchmarks.324.720inclusiveowned/2400 inclSource90once; no oldcostrefund.
-Scientific ordering/DD fails, retainedREJECT; post-readout host missingfield
-keeps overalltechnicalincomplete. Future-envelope7d2f CLOSED and new HGB23fc
-used it successfully, not a replay/regrade. HGB3CPUfits are CLOSED/REJECT/
-305.629inclusiveupper/11Jobsclosed/0GPU; registrye2915887 recorded once.
-Latest complete fits:
-- LSTM82b2b1d1:36epochs5112updates/best21/patience15/137.183s/756MiB,
-  350.946inclusiveowned/3CIDs15Jobsclosed/leaseabsent.5743calls4,293,956rows.
-- Static+sequence4fe28c9f:29epochs4118updates/best14/patience15/111.020s/
-  766MiB,272.591inclusiveowned/3CIDs15Jobsclosed/leaseabsent.4637calls/
-  3,469,601rows,1nativefit2updates/1cold,2EVALpasses before1heldtarget.
-Both lose cachedLinear pairBCE under frozen primary. No repeated fit/checkpoint/
-seed/window rescue. Hybrid used1572param one raw-input learner, not expertstack.
+F3 head Consumer19c14903 CLOSED_VERIFIED_REJECT15:20:57, CLOSURE-FINAL15:22:05.
+A/research/current-liquid17-timesfm-frozen-head-development-20261027-v1.
+Actual1marketfit8epochs4120updates/6.738s; INNER chose INITIALepoch0, not
+convergence or learned improvement. Base2loads543forwards8728series;
+marketencode26.882s/peak1140MiB. No completed native/model replay.
+All8containers/40CLIJobs closed/GPUlease absent, no active owned training now.
+Combined797.603703/1800 includesData247.055835 once; original failures/debits/
+13:55:06..15:25:06 clock stay closed. Old ACTOR-LIVE file is history.
 
-LSTM source11c04783 and hybrid72c22fb2 used existing d6 runtime/safeNPZ/typed
-roles/local volatile spool->closedDexport. No crash/power-loss recovery claim.
-Hybrid new397-input join and full optimizer/RNG native checks precededfit.
-LSTM native proof had narrower moment/RNG assertions; do not regrade it.
-Source rowmeter concern: local limits alone exceeded aggregate, but immutable
-geometry upper11,361,712<12M and prospective admission960d before inference.
-Sagan source-only6cd3 depended on supplier role totals, not numerical validation.
-Actual counts stayed below all ceilings; no completed stage was replayed.
+Data264d3768 qualified/closed and actually consumed, not a permission hold.
+Next sequence/expert readiness is source-only. Recheck actual free/projected
+peak VRAM and4096MiBdesktop reserve before useful new workers. This project
+has first GPU priority even with user apps; never kill apps/change drivers.
+Independent ready frozen jobs may run concurrently under ONE coordinator;
+no dummy training/utilization targets or repeating completed fits.
+Source-attest actual process/container/mount capabilities before broker
+admission; no giant checkpoint rehash per custody check or blanket block on
+Data/Research. Sagan inspects current reuse path, not a new agent platform.
+Execution emergency preempts safely, uncertainty defers exact worker only.
+Optional disagreement-gate is NOT_ADOPTED/Claude REVISE, no numerical grant.
 
-Long17 nonlinear Source0a4976d9 was adopted as ONE MLP18 recipe/threeprefixes,
-notseed/architecturesearch. Actual family CLOSED43c647cc at
-A/research/current-liquid17-long-history-mlp-development-20261027-v1.
-F1/F2/F3 CUDA20/32/30epochs, selected0/12/10, updates1600/2624/2550.
-Leafwall52.008/85.426/74.348s,86MiBpeakeach,<=2co-tenantprefixworkers;
-sumouterfitwalls223.980s includesstats/I-O/cleanup, not isolatedbenchmarks.
-6956forwards3,571,331knownrows/5actualOOFrestores1598logicalscores/
-1LABELS1MARKS1ledger/0baselineReplayretry,7CIDs37Jobsclosed/leaseabsent.
-417.573inclusiveowned/2400, nooldData/Ridge recharges. SelectedMSE/costs fail
-matchedRidge; no width/seed/longer-fit rescue. ModelEpoch0alias avoided one
-redundantrestore/forward, not a missing countedforecast.
+## Closed / No Reruns
 
-Current CPU gate family adopted11:07:07UTC/hard12:07:07:
-A/research/current-liquid17-ridge-mlp-regime-fusion-development-20261027-v1.
-One2parameter truechronologicalOOF expertgate/commonbreadth60, trainF1+F2 with
-targetexit<F3entry purge/evalF3later.900combinedowned=Data180once+Engine720;
-oneCPUsolver/zero newbase-model fit-restore-forward or GPU. Physical Data
-TRAIN/F3 split is Faraday-owned; direct qualified callback to Engine.
-Family now CLOSEDc8423162/REJECT, oneCPU15iterationfit/zeroGPU/basecalls;
-221.895inclusiveupper inclData111.689once. No active gate worker or GPU lease.
-GPU is available, no permission hold; no dummy training while no useful frozen
-GPU question is ready. CurrentNAS100 recurrence intake remains closed.
+Next ADOPTED397linear contract3da91bae/rootcurrent-nas100-raw397-linear-learning-development-20261028-v1:
+1000active/3600elapsed actualfreeze, onefit/max128epochs9088updates/fit450,
+source150includesprior45once/native90/affine20/infer60/readout30/verify90/
+cleanup60/reserve50. Exact10500calls16Mrows, new native/cold before market.
+Source/current capacity/actor-profile binding precede useful CUDA launch;
+inert profile is not current broker runtime admission. Existing07ac only has
+the old exact RO reader host rule, not arbitrary Research authority. Coordinate
+actual scoped actor facts directly Sagan, no blanket whitelist or new platform.
+No current GPU use inferred from adoption or source preparation.
 
-CPU long17 family9266325e CLOSED withscreenPASSgrowth4.067%/DD.761%,
-503.176combined inclData225.176ONCE+Engine278; noGPU. SavedF3 currentpoint
-6329b00b one17-rowCPUforward CLOSED/allowFALSE/unallocated, not a trade.
-Oldshort17b1/Linear-LSTM7246 also closed, no repeated fits/ledgers.
-Old fourfit/TCN/joint/risk-counter failures, weights and debits remain immutable;
-refer engine board/Git57392429 and original Consumers instead of a new diary.
+TimesFM8ec7:48native+market forwards/2loads/864series/peak1011.75MiB,
+47market11.094s; all children/lease closed, REJECT. Fixed-half blendd27e
+CPU0fit/GPU/modelcall closed verifiedREJECT.
+Long17MLP43c6:3CUDA20/32/30epochs,6774updates/sum223.980leafwalls/86MiB
+peak;7CIDs37Jobsclosed. Rankerb16d:3CUDA28/32/26epochs/7074updates,
+technical envelope failure retained plus scientific rejection.
+LSTM82b2:36epochs/best21/137.183s/756MiB, hybrid4fe2:29epochs/best14/
+111.020s/766MiB; both closed/rejected. HGB23fc/gatec842 CPU work closed.
+Co-tenant timings are not isolated benchmarks. Original ledger/debits/checkpoints/
+failures remain immutable; old per-study caps never global GPU limits.
 
-Project first GPU priority still holds during personal apps. For a genuinely
-NEW ready frozen question, source/schema+freeVRAM permits tiny nativeCUDA,
-measured peak thenmarketadmission, no circularapprovalhold. One existing
-resourceowner coordinates independent childworkers/exactPID-start/paths/caps.
-Native/market failures retain costs; no age-reclaim or dummyload.
-03:04sample4090free22494/24564MiB/4%/34C is dated only; remeasure next time.
-Desktop4096MiBreserve/no appkill/driverchange, co-tenancy notisolatedtiming.
-
-## Most Recent Actual Work
-
-A/research/current-nas100-open5-linear-mlp19-learning-development-20261027-v1/numerical-r1/CONSUMER.json.
-Source2730/contract8084,2actual concurrent CUDA fits: LINEAR49epochs3479updates/
-best33/81.7949s, MLP23epochs1633updates/best7/42.2183s,164MiBpeak each.
-REJECT nonlinear increment vs trained linear, no financial/Paper claim.
-Native2fits4updates/2cold; market5112updates/5438totalcalls/4EVALpaths/oneheld
-afterseals/0retry/allworkersclosed/GPUleaseabsent.477.659752combinedowned/
-3600 inclData132.034842 once,2827.446elapsed/7200. Source80/104.316s elapsed
-overrun unchanged. Do not retrain because a callback/UI missed the brief load.
-
-## Closed Custody / Recovery
-
-Recent immutable results/debits:
-EMA b35e114.272826combined (old80.615837 directory failure unchanged),
-weightedloss0129 actual3CUDAfits737updates/272.462539owned,
-vol c39d118.216123/0fits, RankNet edf91182.301532/3CUDAfits,
-initial d2f91.559919new/0fits, SSLb4031140.370863/88epochs4224updates,
-costd2ef195.4094/0fits, q10ab2d905.152/3CUDAfits.
-All corresponding resources closed; old caps are NOT global resource limits.
-Detailed old GRU/Joint/TCN/latecarry/downside/seed counts and native failures
-remain Git57074588 plus original consumers/registry. No repeated fitting.
-
-Later-outcome10765244 remains UNKNOWN_NOT_FRESH; bytes/key disjointness are not
-proof of unused outcomes. Future20session benchmark8bf86e20 frozenOct26
-06:03:23UTC/registry653da99e/trial1 remains untouched. Do not manufacture future
-marks or reuse oldTRAIN2025 as independent evidence. This does not hold adaptive
-development or provisional Paper. Existing ledger/custody only, no new reports.
+Next source-only sequence/expert readiness is assigned to Strategy/Leibniz.
+No model choice/approval platform, extra per-agent database or permanent daemon.
