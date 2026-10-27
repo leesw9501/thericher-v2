@@ -52,6 +52,13 @@ C120/H60 packets765a already consumed by closedTCN/HGB/HALF/utility studies.
 
 ## Next / Limits
 
+Leibniz new bounded current-owned-collector-progress-audit-20261028-v1
+(180owned/1200elapsed) checks exact existing collector Task/pointer/receipt
+session growth/first cause after Oct27UTC21:20/21:40. Not another current20
+capture/projection or broadrecursive market scan. One existing collector owner;
+no duplicate actor, schedule expansion or continuous-operation claim before
+actual evidence. Output categorical/count/sessiondates only. Parent sharedMD/Git.
+
 Respond directly to current Engine source/schema/clocks questions; do not
 repeat completed acquisition/projection. Fresh current acquisition is successful,
 not a claim of continuous collection. Dfree36.69percent at20:06 observation.

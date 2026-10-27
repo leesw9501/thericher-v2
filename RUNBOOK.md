@@ -13,7 +13,7 @@ paths retain ONE original B/10/cost/loss/pending/F9, no reset/profit expansion.
 
 ## Current Owned Paths
 
-Observed Oct27UTC22:06. Company goal UNFINISHED; old entry/recovery windows
+Observed Oct27UTC22:44. Company goal UNFINISHED; old entry/recovery windows
 consumed. Do not Task.Run, repeat consumed installer, restore private state,
 force new intent or silently roll old opportunity dates.
 
@@ -91,6 +91,16 @@ rollback retained; repair created only missing exit and left entry unchanged.
 NativeV4 invented bank proof passes wrapper->realworker/session/unknownfake
 submit/recovery without resubmit; actual custody/admission/financial result
 still requires runtime. Original future duties unchanged, no actualfill claim.
+Independent actual typed Task contractdf0267ac PASS for both definitions.
+Pinned e414 Docker fixture1579fa35 also PASS1.01s/one fakeunknownsubmit/
+recovery0newsubmit; no private/credentials/API, all3CIDs exited/removed.
+Neither test proves scheduled lineage or broker effects. See exact Consumers
+current-linear17-actual-entry-runtime-contract-20261028-v1 and
+current-linear17-docker-native-fixture-20261028-v1 under A/execution.
+Existing expired app heartbeat oct26-paper was UPDATED, not duplicated, to
+one eligible Oct28UTC14:40 follow-up. It checks actual due/source/paired
+evidence without invoking tasks/broker/collectors; quiet unless material.
+Tool update accepted; future delivery/result is not yet observed. No chain.
 ResearchOPENH5/native nearCLOSEH5 parity is NOT established.
 
 CurrentPaper config vs ORIGINALimmutableanchor comparison d5e29bea passed
@@ -107,9 +117,32 @@ closed; no repeat fit/native/heldread for utilization. FeeProx Source8104544f
 FINAL-CONSUMER-R1 is also CLOSED_REJECT,1CPUmarketfit/1forecast/1held/6cells,
 5CIDs30Jobsclosed/upper128.198376of360. No GPU training claimed from this fit.
 Use finalconsumer, not earlier precreate failure marker, for current status.
+Logistic sourcefixcd17 is also COMPLETE_VERIFIED/proper-scorePASS/1CPUfit/
+0EVAL/GPU, not profitability. Do not rerun it. Next ONE daily temporalTCN
+comparison is assigned to Steward/Sagan under family1200/3600 and one new
+CUDA fit; actual GPU activity requires worker evidence, not this plan.
 Faraday owns current-f9-exact-date-reconciliation-20261028-v1: exact original
 pending request source/date/binding and bounded read-only diagnosis, not new
 orders or reservation release. Currentshape probe alone is not F9 evidence.
+Exact F9 query is now COMPLETE22:21:01: Consumerf6d996e1/FINAL-ADDENDUM,
+Source6d58a6f6.1POST/1GET/0retry/0rows/0candidates; original account/basis/
+request/date bound in-process and native paginationcomplete. F9 still UNKNOWN-
+HELD, not proof of no send/terminal. Do not repeat without distinct evidence.
+All5CIDsremoved/51Jobsclosed. Next providerdate/retention work is SOURCE ONLY.
+
+After tonight's opportunity, credential-free public outcome command:
+
+```powershell
+$r = 'D:/thericher-v2/model-artifacts/execution/current-linear17-paired-public-outcome-reader-20261028-v1'
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B "$r/reader.py" --phase entry --output "$r/ENTRY-PUBLIC-OUTCOME.json"
+```
+
+Reader b3d4468b/SOURCE-R155301749,18nativecases/Ruff. Do not consume the
+one-shot output name before the opportunity; missing is UNKNOWN. Public
+session.calls were not retained by the frozen producer, so countNULL/
+CANNOT_ATTRIBUTENATIVECOUNT is correct. No latest-file scan/privatecontrol
+access/fill inference. Separate exact-cohort offline reader readiness is owned
+by Socrates; obey its actual custody admission/stability before future use.
 
 ## Verification
 
@@ -118,9 +151,10 @@ worker-telemetry-r1/CONSUMER.json:19514PASS26knownSKIP398.53s/eightactualpairs/
 owncleanup plusserial370/1. Reuse for MD/external-only ONLY after exact1412
 protected a1500c15 digest/membership check. External D code needs separate
 focused/native/actual proof; repo suite cannot validate it.
-Fresh protected1412/a150 reuse check22:07:38 passed at
-A/verification/current-paper-research-integration-20261028-r5/SOURCE-CHECK.json;
-Ruff/default/research/accounting Compose passed with .env.example.
+Latest protected1412/a150 reuse check22:44:04 passed at
+A/verification/current-paper-research-integration-20261028-r7/SOURCE-CHECK.json;
+Ruff/default/research/accounting Compose freshPASS with .env.example.
+Full suite was reused under exact digests, not rerun for MD/external-only work.
 
 Fresh checks, no real.env:
 

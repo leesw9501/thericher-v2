@@ -114,6 +114,12 @@ Initial partialinstall/disabledexit rollback retained, otherTasks unchanged.
 Entry Oct28UTC14:20/recovery14:27 underone14:15Task; observerrestore>=14:33.
 Exit Nov3UTC20:45/recovery20:52 underone20:40Task; restore>=20:58.
 ExistingWindow21actualclosure stillrequired, no due=>closure inference.
+Independent actual pair contractdf0267ac PASS: existing runtime typed
+ValidateDefinition/ValidateAcl and physical sameowner aliases, no mutations.
+Actual e414 Docker-native fixture1579fa35 PASS1.01s, fakeunknownsubmit1/
+recoverynoresubmit with inventedV4bank, no actualcredentials/API/private.
+Networknone/ROsource+point, pure testdeps RO bridge/no imagechange. Three
+fixtureCIDs exited/removed/absencechecked922799c7; not real custody proof.
 
 Faraday owns current-f9-exact-date-reconciliation-20261028-v1. Reuse strict
 source/native parsers, tiny invented matching proof and actual custody-writer
@@ -121,6 +127,36 @@ exclusion before network-disabled RO private projection. Original persisted
 date/identity stays in-process; bounded separately read-only CCNL diagnosis
 <=1POST/4GET/180active/900elapsed. No submit/privatebankwrites/substitute or
 release; absent match/holdings cannot establish original unknown outcome.
+This package is now CLOSED_EXACT_DATE_QUERY_COMPLETE at22:21:01:
+Consumerf6d996e1/Source6d58a6f6/FINAL-ADDENDUM. Exact original persisted
+date/identity/account/basis bound in-process,1POST/1GET/0retry,0rows/0candidates,
+native paginationcomplete. Acceptance/fill/terminal UNKNOWN, F9 HELD unchanged;
+no privatebook writes. Stableprivate/source,5CIDsremoved/51Jobsclosed,
+upper155.224419of180/elapsed757.197191of900. Do not repeat identicalquery.
+Faraday next source-only official historydate/timezone/retention contract,
+not another actual query or a company hold. External Ruff findings retained.
+Official review e5689607 is COMPLETE: local-market dates/current Paperselectors
+match; same-day/two-page restrictions are local, not documented retention.
+No max historicalspan/retention/returnedclock guarantee established. Do not
+call Korean-date replacement a documented correction. No newquery dispatched.
+Faraday package/agent closed; no operator action required.
+Halley new public readerb3d4468b/5e8d5476 ready18nativecases/Ruff/Jobsclosed.
+Exact public pair/run binding cannot recover nested counts dropped by frozen
+projection; countNULL/CANNOT_ATTRIBUTENATIVECOUNT, not0 or fill evidence.
+Socrates owns current-linear17-exact-cohort-reader-readiness-20261028-v1:
+reuse strict offline custody/native parsers for exactf477/24d3/currentcohort,
+tinyinvented V4 tests and usable futurecommand; source-only/no actualprivate
+reads now. Private financial evidence stays separate from public projection.
+Consumer18ba040d: host12 pass, unchanged strictcapsule/futurecb0e79cc bound,
+twoLinux fixture-negative expectations failed, NOT fullcoldPASS. All2CIDs14Jobs
+closed/actualprivate0/full240capdebited. NEW60/600/onecoldcall supplement
+corrects only synthetic emptyowner expectation with actual foreign-binding
+negative; productioncapsule/template unchanged, oldfailures/debits retained.
+Correction896c5883 PASS13Linux cases/1CID6Jobsclosed/actualprivateAPI0.
+NEW r2 template derivation90/600 replaces only unused narroweligibility with
+Oct28UTC14:35..Oct29UTC14:35; oneactualread/current-observed-at-read only,
+strictcapsule/SPEC unchanged/fresh relevantwriter admission/stability retained.
+Source preparation only until delivered/adopted; no actual reader run now.
 
 ## Existing Duties / Limited Capability
 

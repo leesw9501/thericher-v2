@@ -1,10 +1,37 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST; observed Oct27UTC22:04.
+2026-10-28 KST; observed Oct27UTC22:41.
 A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
 Model proposals never alter deterministic broker risk or original shared B/10.
 
 ## Latest Economic Campaign / Closed
+
+New daily Open5 cost-event Logistic19 family46862e7e/faa617b3 is CLOSED
+NATIVE_TECHNICAL_FAILURE_NOT_EVALUATED, Consumer0935438a at22:29:03.
+Market fits/predictions/INNERtargets/EVAL/financial/GPU0; native target was
+published but optimizer/gradient countsUNKNOWN, max1fit/80oracle charged.
+Actual source-only same-image reproducer853375c8: own broad private substring
+blocked trusted NumPy.testing._private during lazy SciPy.optimize import.
+TwoCIDs12Jobs closed/absent; upper102.998112of360/elapsed1470.454348of1800.
+No silent native retry, performance conclusion or old counter refund.
+Parent selected NEW current-liquid17-open5-logistic-sourcefix-development-
+20261028-v1,240active/1200elapsed: same data/target/model/split/primary,
+trusted exact solver imports before audit/marketpayload, negative guards kept.
+At most2import-onlypreflights beforeSource seal, then1nativeoptimizer/cold
+handoff and1firstmarketfit/INNER readout,0numericretry. Schrodinger dispatch,
+Sagan minimal patch. NEW sourcecd1714ed/contract62ae1f10 now COMPLETE_VERIFIED:
+oneCPUfit35iterations/39FG/.012s/converged/gradientinf9.69e-7,
+1INNERprediction/1targetintake187rows/0EVAL/0retry/GPU0.
+Logloss/Brier .683179054/.245035726 vs constant .692442815/.249647837 and
+VOL .691913146/.249382923: bothcriteriaPASS, DEVELOPMENT_NOT_KILLED_
+NOISE_UNRESOLVED. Eleven correlated reusedINNERdates, not PnL/alpha/promotion.
+SixCIDs36Jobs closed/newupper99.339346of240/elapsed353.805476of1200;
+old102.998112 debit preserved/cumulative202.337458. No repeated fit.
+Next ONE daily20x18 temporalTCN comparison assigned under Steward/Sagan:
+<=1200active/3600elapsed/1newCUDAfit/max300epochs/5000updates/fitwall<=360s.
+Freeze exact arch/seed/trainFIT-chronoVal/purge/curves/earlystop/LR/checkpoint
+before dispatch; outerINNERonlyproperreadout, savedlogisticbaseline no old
+model restore/forward,0EVAL/financial. No activeGPU fit inferred fromsource.
 
 Latest new CPU campaign is COMPLETE, not source-only:
 A/research/current-long17-feeprox-ridge-development-20261028-v1/
