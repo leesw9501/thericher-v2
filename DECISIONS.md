@@ -10568,3 +10568,17 @@ Within assigned frozen contracts, qualified role handoffs may go directly from
 Data to Engine. Parent owns direction/integration, not an extra serial relay.
 This avoids idle prepared work while Parent handles an independent lane; it
 does not let a worker change trial caps, broker risk, rights or Git ownership.
+
+## 2026-10-28 Future Full-Test Evidence
+
+Expose actual xdist worker/item/known-skip evidence in the existing full-test
+helper using normal verbosity and skip reasons. For future credential-free
+runs only, exact same-run framework counts, successful native/helper completion,
+source matching and verified managed cleanup suffice without a mandatory
+mid-run CIM roster. Keep mutex, active-owner probes, leases and non-reparse
+cleanup unchanged. Missing/changed reporting or worker replacement withholds
+authority. This does not alter model/GPU/private-custody proof or retrospectively
+promote the earlier missed-roster run. Consumer: Data/Research/Execution fixes
+verified without an avoidable repeat full solely for roster bookkeeping.
+Claude GO_WITH_LIMITS is advisory; Parent adopts the bounded simplification.
+D:/thericher-v2/model-artifacts/verification/future-pytest-worker-evidence-simplification-20261028-v1/claude-advisory.json

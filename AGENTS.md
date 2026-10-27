@@ -276,6 +276,14 @@ current-child cleanup. No cleanup-denial bypass or failed/partial/unclean/
 indeterminate authority reuse. Inactive siblings are not active-owner conflicts.
 Test scratch prefers measured C: NVMe; data/models stay on D:.
 
+For future credential-free full-test evidence, retain the same run's actual
+created N/N and N workers [M items], exact pass/known-skip totals, native/helper
+exit zero, source digests and verified current-child/lease cleanup. A mid-run
+CIM worker roster is diagnostic, not an extra mandatory pass condition.
+Crash/restart/replacement, missing counts or changed reporting semantics withhold
+authority. All existing mutex/process/lease/cleanup safeguards and separate
+GPU/private-custody/OS-origin proof remain; never regrade historical runs.
+
 Docs/external-only work may reuse last passing full authority ONLY when exact
 tracked production/tests/scripts/dependency/config digests match. Run fresh
 focused/independent checks of changed external code/outputs; repeated repo tests

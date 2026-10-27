@@ -67,8 +67,12 @@ risk to force a trade. Other original exit duties remain unchanged.
   worse than Logistic on frozen proper scores. No EVAL/PnL claim or rerun.
   Fixed HALF saved-probability fusion is CLOSED_REJECT, Sourceb6cec0f7:
   loss.685297/Brier.246082 lose Logistic,0fits/GPU/financial. No weight sweep
-  or automatic Paper promotion. Next source-only economic-gate compatibility
-  readiness180/900; actual training is closed, not inferred active from plans.
+  or automatic Paper promotion. Uniform-prior-gate e47a/e914 is now also
+  REJECT: growth1.177921%/endpointDD.111592% versus RAWUniform1.510498%/
+  .154600%; frozen growthFALSE/DDtrue,0model/GPU/EVAL. Next Data/Engine
+  source-only120/900 each checks old C120TCN checkpoint/schema and whether
+  new Oct27SPY/QQQ sessions are outside every prior split. No new decode/
+  fit/forward/label readout or independent-evidence claim before qualification.
 - Data: current20 capture and current F3 projection are complete. Answer concrete
   consumer/schema needs without duplicate acquisition or claiming continuous
   collection. Current point had one actual CPU forward, never repeat it.
@@ -78,8 +82,10 @@ risk to force a trade. Other original exit duties remain unchanged.
   PASS. Freshfull55957 also PASS19515/26knownskip/395.47s,8workers/19541items,
   closuref330/source2f05 match; Ruff/threeCompose PASS. Actual acquisition
   still needs its own evidence; a code fix is not cache growth.
-  Leibniz prepares scoped60 token-gate readiness/default300 preserved; no API
-  and one network-none preflight-only check assigned after current verification.
+  Scoped60 v2 token-gate/repoCLI now integrated, default/frozen300 preserved;
+  no API. Canonical derivative79bd native12checks/30SDKhashes PASS, one new
+  network-none preflight-only check adopted after fresh full. Earlier actual20
+  was direct-driver slash mismatch/d7c3, not scheduled-path failure.
   No recapture/expansion,
   old revisions retained/no MODP0->MODP1 splice.
 
@@ -93,12 +99,14 @@ Never KIS_LIVE_*/live/real-money, paid commitments, unclear rights, public
 exposure or major runtime replacement without operator authority. Private
 no-cost Paper/Data/Research and owned schedules are already delegated.
 
-Follow AGENTS verification. Two tracked schedule/test paths changed; old
-a150/19514 authority is not reusable. Serial83PASS; firstfull19515/26 passed
-but missed independent roster, retained as test pass only. Secondfull55957
-PASS19515/26knownskip/35warnings/395.47s, actual8pairs57f5 and19541collected.
-New protected1412source2f053b79/posthash0mismatch and closuref330: original
-19PID-start pairs/temp/lease absent; fresh Ruff/threeCompose.env.example PASS.
+Follow AGENTS verification. Exit fix7f93f029 pushed; its2f/full55957 and prior
+test-only46550 stay historical after the new scoped60/test-reporting changes.
+Current Sourceb1a05d40 at current-daily-pair-floor60-integration-20261028-v1:
+1412protected/base+8overrides/posthash0mismatch, full53102 PASS19532/
+26knownWindowslinkskip/35warnings/396.43s, actual8/8workers/19558items.
+Currentchild/lease absent/controllers0; serial165+57/Ruff/threeCompose PASS.
+Future CIM roster diagnostic only; exact same-run counts/cleanup/source and
+all private/GPU/OS safeguards remain. Do not repeat this full for docs-only work.
 Changed external code has separate native/actual proof, not repo authority.
 
 Integrate material evidence, verify, commit/push and continue the active request.

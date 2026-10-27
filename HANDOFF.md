@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Observed 2026-10-27 UTC23:43 / 2026-10-28 KST.
+Observed 2026-10-27 UTC23:58 / 2026-10-28 KST.
 Workspace: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company outcome: coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
@@ -183,9 +183,19 @@ at current-liquid17-daily-logistic-tcn-half-probability-development-20261028-v1.
 Logloss/Brier .685297/.246082 lose Logistic; one projection/target witness/
 verify,0fits/restores/forwards/GPU/EVAL/financial. FourCIDs26Jobs closed,
 upper84.691817/240/elapsed312.167226/900. No weight/threshold rescue.
-Schrodinger next owns source-only logistic economic-gate readiness180/900:
-check saved probability/Linear/payoff causal compatibility before numerical
-dispatch. No new training is running; no dummy GPU work or old fit repetition.
+Logistic/Linear pairing readinessa858/310f found no aligned INNER11 Linear
+output; existing EVAL15 cannot be relabeled, no extra forward performed.
+Alternative Uniform-prior-gate economic study is COMPLETE_REJECT,
+current-liquid17-uniform-prior-gate-economic-development-20261028-v1,
+Sourcee47a2ca9/Consumere914f45d. At20bp Gate growth1.177921%/endpointDD.111592%,
+RAWUniform1.510498%/.154600%, SAMEGROSSUniform.947073%/.111592%.
+Growth criterionFALSE/DDtrue; samegross contrast is descriptive, not alpha.
+One projection/OPENintake/3whole ledgers/verify,0model/GPU/EVAL/retry;
+fourCIDs25Jobs closed, upper75.646743/240/elapsed377.259546/900.
+Next Data/Engine source-only readiness120/900 each checks Oct27 complete
+SPY/QQQ session coverage against old C120TCN FIT/INNER/EVAL and retained
+checkpoint/schema. No new arrays/fit/forward/labels or unseen claim yet.
+No new training is running; no dummy GPU work or old fit repetition.
 Faraday source-only history clarification is complete/agent closed.
 Halley public-reader delivery is complete. Data auditfbcdae4e confirms actual
 Oct27 SPY/QQQ each390/390 regular-session minutes; old+head unmerged complete
@@ -200,18 +210,19 @@ typed handoffs; Parent owns shared policy/Git, not every implementation.
 
 ## Verification / Resume
 
-Two tracked code paths now changed for daily-pair native exit propagation:
-schedule PS1 and its tests. Old94c16934/a150 authority is NOT reusable.
-Changed-path serial83PASS/5.76s. First freshfull19515PASS/26skip/35warnings/
-397.46s retained, but independent worker roster was missed; not complete
-activation authority. Second fullsession55957 PASS19515/26knownsymlinkskip/
-35warnings/395.47s/19541collected, actual8/8workers and8CIMpairs57f5ae4b.
-Exact1412-source2f053b79/posthash0mismatch; original19PID-start pairs absent,
-own temp/lease absent, CLOSUREf330092c. Fresh Ruff/default/research/accounting
-overlay Compose.env.example PASS. Consumer at
-A/verification/current-daily-pair-exit-propagation-20261028-v1/CONSUMER.json.
-External code keeps separate native proofs. Future code changes need fresh
-authority; do not repeat this completed full for current docs-only updates.
+Native exit propagation fix7f93f029 is committed/pushed. Its Source2f053b79/
+full55957/serial83 and missed-roster prior46550 remain historical unchanged.
+New namedv2floor60 and future test-reporting batch is freshly verified:
+A/verification/current-daily-pair-floor60-integration-20261028-v1/CONSUMER.json.
+Sourceb1a05d40 =1412total protected/base2f plus8modified overrides,
+full53102 PASS19532/26knownWindowslinkSKIP/35warnings/396.43s/19558collected,
+actualcreated8/8+8frameworkworkers. No crash/restart/replacement observed;
+posthash0mismatch, own r-114835f5/temp+lease absent/currentcontrollers0.
+Changed-path serial165PASS/12.08s plus gate/retention57PASS/1.04s;
+fresh Ruff/default/research/accounting-overlay Compose.env.example PASS.
+Future mid-run roster is diagnostic, not an extra pass condition; all other
+mutex/owner/lease/cleanup and private/GPU/OS proofs remain. ClaudeGO_WITH_LIMITS.
+External code keeps separate native proofs. Do not repeat this full for docs.
 
 On genuine resume run scripts/start_next_codex_task.ps1, then current goal/
 AGENTS/stateboards. Do not rerun startup on compaction. Continue ready delegated

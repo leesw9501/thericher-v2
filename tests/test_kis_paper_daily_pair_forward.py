@@ -654,7 +654,7 @@ def test_pair_forward_v2_compose_uses_an_isolated_identity_and_preflight() -> No
     assert "order" not in preflight.lower()
 
 
-def test_pair_forward_v2_retains_observations_from_the_same_frozen_runtime() -> None:
+def test_pair_forward_v2_scopes_token_floor_with_frozen_sdk_and_preflight() -> None:
     source = COMPOSE.read_text(encoding="ascii")
     collector, remaining = source.split("  kis-paper-daily-pair-forward-v2:\n", 1)[1].split(
         "  kis-paper-daily-pair-forward-v2-preflight:\n", 1
@@ -662,14 +662,26 @@ def test_pair_forward_v2_retains_observations_from_the_same_frozen_runtime() -> 
     preflight = remaining.split("  kis-paper-daily-spy-stability-observer:\n", 1)[0]
     image = "image: sha256:7d15a67ee1350deff160b014540f5a3809c837c43363d0ef88f180c34a6c03e5"
     frozen_root = "D:/thericher-v2/model-artifacts/data/"
-    mounts = (
+    sdk_mount = (
         frozen_root
-        + "current-pair-whole-observation-capability-probe-20261025-v1/sdk/src:/app/src:ro",
+        + "current-pair-whole-observation-capability-probe-20261025-v1/sdk/src:/app/src:ro"
+    )
+    frozen_cli = (
         frozen_root
         + "current-pair-retention-natural-deployment-readiness-20261025-v1/"
         + "collect_kis_paper_daily_pair_forward.py:"
-        + "/app/scripts/collect_kis_paper_daily_pair_forward.py:ro",
+        + "/app/scripts/collect_kis_paper_daily_pair_forward.py:ro"
     )
+    current_cli = (
+        "./scripts/collect_kis_paper_daily_pair_forward.py:"
+        "/app/scripts/collect_kis_paper_daily_pair_forward.py:ro"
+    )
+    assert collector.count(current_cli) == 1
+    assert frozen_cli not in collector
+    assert preflight.count(frozen_cli) == 1
+    assert current_cli not in preflight
+    assert '      - --token-minimum-interval-seconds\n      - "60"\n' in collector
+    assert "--token-minimum-interval-seconds" not in preflight
     assert "      - --retain-observations\n" in collector
     assert "--retain-observations" not in preflight
     for service in (collector, preflight):
@@ -677,7 +689,7 @@ def test_pair_forward_v2_retains_observations_from_the_same_frozen_runtime() -> 
         assert service.count("image:") == 1
         assert "PYTHONPATH: /app/src" in service
         assert "read_only: true" in service
-        assert all(service.count(mount) == 1 for mount in mounts)
+        assert service.count(sdk_mount) == 1
     assert "network_mode: none" in preflight
     assert "KIS_PAPER_APP_KEY" not in preflight
     assert "KIS_PAPER_APP_SECRET" not in preflight

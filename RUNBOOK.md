@@ -121,7 +121,9 @@ Logistic sourcefixcd17 is also COMPLETE_VERIFIED/proper-scorePASS/1CPUfit/
 0EVAL/GPU, not profitability. Do not rerun it. Daily TCN5c45 is now closed:
 one CUDAfit22epochs/308updates/8.79s/87MiB, incremental proper-score REJECT.
 Fixed HALF b6ce also REJECT,0fit/GPU; do not rerun or sweep weights.
-Next economic-gate compatibility/readiness is source-only, not active training.
+Uniform-prior-gate e47a/e914 is also CLOSED_REJECT: growthFALSE/DDtrue,
+one saved projection/OPENintake/3ledgers/verify,0model/GPU/EVAL. No threshold
+rescue. Next Data/Engine later-session readiness is source-only, not training.
 Faraday owns current-f9-exact-date-reconciliation-20261028-v1: exact original
 pending request source/date/binding and bounded read-only diagnosis, not new
 orders or reservation release. Currentshape probe alone is not F9 evidence.
@@ -424,13 +426,21 @@ Separate manual serial scratch
 C:/trpy/serial-lowvol-20261027-v1 cleanup was tool-policy rejected before action:
 retained/no retry/no bypass; new serial quiet-serial-20261027-v1 also retained.
 Not an all-scratch-clean claim. New serial nas-nys scratch also retained.
-Current fresh authority is
+Previous exact authority is
 A/verification/current-daily-pair-exit-propagation-20261028-v1/CONSUMER.json:
 Source2f053b79/1412protected/0postmismatch, serial83PASS/5.76s, full55957
 19515PASS26knownWindowslinkSKIP35warnings/395.47s/19541collected/8workers,
 actual8CIMpairs57f5, all19originalPID-start pairs absent, own temp/lease absent.
 Ruff and default/research/accounting-overlay Compose.env.example PASS.
 Priorfull46550 testPASS stays test-only for missed roster, not retrograded.
+Current Sourceb1a05d40/Consumer at
+A/verification/current-daily-pair-floor60-integration-20261028-v1:
+1412total/base2f+8overrides/posthash0mismatch; full53102 PASS19532/26known
+WindowslinkSKIP35warnings/396.43s/19558items/actualcreated8/8+8workers.
+Own r-114835f5/lease absent/controllers0, serial165+57/Ruff/threeCompose PASS.
+The helper now shows actual worker/count/skip facts. Future mid-run CIM roster
+is diagnostic only; existing owner/mutex/lease/non-reparse cleanup unchanged.
+No unclean or partial authority reuse; no changed custody/GPU/OS proof.
 No Parent test session. Do not rerun a completed full for docs-only changes
 when exact protected digests match current authority.
 Do not remove old inactive siblings merely to make a directory listing empty.

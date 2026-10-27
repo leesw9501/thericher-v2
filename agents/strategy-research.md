@@ -1,7 +1,7 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST; observed Oct27UTC22:41.
-A=D:/thericher-v2/model-artifacts. Sagan current source-only proposal owner;
+2026-10-28 KST; observed Oct27UTC23:45.
+A=D:/thericher-v2/model-artifacts. Sagan source package is delivered/agent closed;
 Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
 
 ## Current Useful Proposal
@@ -16,13 +16,16 @@ and unchanged model/target/solver/primary. Direct source/codec handoff to Stewar
 not another architecture grid, human approval or repeated completed model.
 Sourcecd17 now COMPLETE_VERIFIED/propercriteriaPASS,1CPUfit/0EVAL/GPU,
 not profitability or independent alpha. Do not rerun that model.
-NEW current-liquid17-temporal-cost-event-tcn-readiness-20261028-v1:
-this role owns pure existing-PyTorch TCN20x18 kernel/curves/LR/earlystop/
-safecheckpoint/coldfile interface. Steward owns finalarchitecture/contract/
-split/scaler/nativecaps/numericaldispatch. Source180owned/1200elapsed charged
-ONCE insidefuture1200/3600 family, no marketpayload/fit until qualifiedhandoff.
-One fixed temporalexpert vs savedlogistic/constant/VOL, not hyperparametergrid,
-new framework or oldintradayTCNrerun. OuterINNER cannot chooseepochs.
+Pure TCN20x18 kernel is delivered. Actual dailyTCN5c45/caea is now closed:
+oneCUDAfit22epochs/308updates/8.79s, incremental proper-score REJECT versus
+Logistic. FixedHALFb6ce/1c22 also REJECT,0fit/GPU; no threshold/weight rescue.
+Fullstate safe-checkpoint/nativeRNG restore now passes after Parent callerf58
+fix; old native ABI failure and debits retained. No active GPU job inferred.
+Steward compatibilitya858/310f found missing aligned INNER Linear outputs,
+not a grant to relabel EVAL or forward again. No-model Uniform-prior-gate
+e47a/e914 is now CLOSED_REJECT: growthFALSE/endpointDDtrue,0model/GPU/EVAL.
+Probability skill is not expected PnL. Next exact frozen-model/new-session
+readiness with Data is source-only; preserve older tests and no threshold rescue.
 
 Cost-symmetric momentum/vol kernel is CLOSED and consumed by the risk-aware
 study2602, not an unrun proposal. Feature-support auditb0a2/bceb correctly

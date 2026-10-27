@@ -117,12 +117,20 @@ def main(
     parser.add_argument("--cache-lineage", choices=("v1", "v2"), default="v1")
     parser.add_argument("--retain-observations", action="store_true")
     parser.add_argument(
+        "--token-minimum-interval-seconds", type=int, choices=(60, 300), default=300
+    )
+    parser.add_argument(
         "--schedule-guard-failed",
         choices=("host_timezone_not_kst", "shared_dispatcher_busy"),
     )
     args = parser.parse_args(argv)
     if not args.execute and not args.preflight and not args.readiness:
         _emit({"status": "not_executed", "reason": "execute_flag_required"})
+        return _NOT_EXECUTED_EXIT
+    if args.token_minimum_interval_seconds == 60 and (
+        args.cache_lineage != "v2" or args.preflight
+    ):
+        _emit({"status": "not_executed", "reason": "scoped60_requires_v2_collector_or_readiness"})
         return _NOT_EXECUTED_EXIT
     if args.retain_observations and not args.execute:
         _emit({"status": "not_executed", "reason": "observation_retention_requires_execute"})
@@ -153,12 +161,18 @@ def main(
         _emit({"status": "not_executed", "reason": "canonical_container_roots_required"})
         return _NOT_EXECUTED_EXIT
     observed_at = _require_utc(clock())
+    token_policy = (
+        {"token_minimum_interval_seconds": 60}
+        if args.token_minimum_interval_seconds == 60
+        else {}
+    )
     if args.readiness:
         return _run_readiness(
             control_root=args.control_root,
             artifact_root=args.artifact_root,
             repository_root=args.repository_root,
             observed_at=observed_at,
+            **token_policy,
         )
     try:
         frozen_boundary = datetime.fromisoformat(args.frozen_boundary).date()
@@ -185,6 +199,7 @@ def main(
         observed_at=observed_at,
         cache_identity=cache_identity,
         **({"retain_observations": True} if args.retain_observations else {}),
+        **token_policy,
     )
 
 
@@ -200,12 +215,21 @@ def _run_credentialed_collection(
         KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
     ),
     retain_observations: bool = False,
+    token_minimum_interval_seconds: int = 300,
 ) -> int:
     if type(retain_observations) is not bool:
         raise ValueError("pair observation opt-in is invalid")
+    if (
+        type(token_minimum_interval_seconds) is not int
+        or token_minimum_interval_seconds not in (60, 300)
+    ):
+        raise ValueError("pair token floor is invalid")
     try:
         rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
-        token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root)
+        token_gate = KisPaperMarketDataTokenStartGate(
+            control_root=control_root,
+            minimum_request_interval_seconds=token_minimum_interval_seconds,
+        )
         token_request_is_due = token_gate.token_request_is_due()
         rate_gate_is_deferred = _rate_gate_is_deferred(rate_gate, observed_at)
     except (OSError, ValueError):
@@ -354,12 +378,21 @@ def _run_readiness(
     artifact_root: Path,
     repository_root: Path,
     observed_at: datetime,
+    token_minimum_interval_seconds: int = 300,
 ) -> int:
     """Check only control timing and aggregate Paper environment availability."""
+    if (
+        type(token_minimum_interval_seconds) is not int
+        or token_minimum_interval_seconds not in (60, 300)
+    ):
+        raise ValueError("pair token floor is invalid")
 
     try:
         rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
-        token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root)
+        token_gate = KisPaperMarketDataTokenStartGate(
+            control_root=control_root,
+            minimum_request_interval_seconds=token_minimum_interval_seconds,
+        )
         token_request_is_due = token_gate.token_request_is_due()
         rate_gate_is_deferred = _rate_gate_is_deferred(rate_gate, observed_at)
     except (OSError, ValueError):

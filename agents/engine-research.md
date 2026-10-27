@@ -44,9 +44,20 @@ at current-liquid17-daily-logistic-tcn-half-probability-development-20261028-v1.
 Logloss/Brier .685297395/.246082023 lose Logistic. One saved projection/target
 witness/verify;0fits/restores/forwards/GPU/EVAL/financial. FourCIDs26Jobs closed,
 upper84.691817/240/elapsed312.167226/900. No weight/threshold rescue.
-Next source-only economic-gate readiness180/900 checks exact saved Logistic/
-Linear/payoff causal compatibility before any new numerical dispatch. No
-active training now; no repeat completed fits for utilization or alpha claim.
+Economic-gate readinessa858/Consumer310fe6a2 is complete: original CappedLinear
+has EVAL15 outputs, not aligned Logistic INNER11 weights, so original pairing
+is NOT_READY and no new forward was run. Parent adopted one alternative:
+current-liquid17-uniform-prior-gate-economic-development-20261028-v1,
+now COMPLETE_REJECT Sourcee47a2ca9/Consumere914f45d. Fixed Uniform17 target
+retained only when saved probability>original FIT prior, removed mass cash.
+At20bp Gate growth1.177921%/endpointDD.111592%, RAWUniform1.510498%/.154600%,
+SAMEGROSSUniform.947073%/.111592%; growthFALSE/DDtrue. Samegross contrast
+descriptive only, no criterion rescue or independent alpha on reused11dates.
+Native8cases PASS; one projection/OPENintake/3whole ledgers/verify,
+0model/GPU/EVAL/retry. FourCIDs25Jobs closed, upper75.646743/240/
+elapsed377.259546/900. Next source-only frozen C120TCN/new-Oct27-session
+readiness120/900 with Data; retain weights/training coverage or NOT_READY,
+never repeat training to fill missing checkpoint. No active training now.
 
 Latest new CPU campaign is COMPLETE, not source-only:
 A/research/current-long17-feeprox-ridge-development-20261028-v1/
@@ -146,16 +157,13 @@ upper94.0895/180. Saved-output-completion-r1 Source7a94743f COMPLETE_VERIFIED,
 0model/fit/Data/held/twoCIDs12Jobsclosed/upper70.357of120. NAS8 skips9NYSE,
 unsupported weight stayscash/no silentrenorm/fullUS17 replication. Research
 H5OPEN vs nativeH5nearCLOSE nonparity explicit. No profitability gate for Paper.
-Sagan a120/4b4598e oneLeakyStateRidge+FeeProx ready actualtinyRidge+Brent+
-coldSYN. Parent adopted NEW current-long17-feeprox-ridge-development360/1800,
-onefit/oneforecast/oneheld/6cells/0retry/CPU1GPU0, fixedparameters/primary.
-Sourceimplementation Sagan, finalcontract/registry/numericdispatch Steward.
-Forecast seals beforeheld, stateful controller takes currentOPEN/previousq only.
-No architecture grid, oldresult rescue, GPUutilization exercise or independent
-alpha claim from adaptive globallyreused outcomes.
+Sagan a120/4b4598e LeakyStateRidge+FeeProx was consumed by the closed rejected
+8104 study above, not an unrun ready campaign. Its causal currentOPEN/previousq
+and coldfile ledger remain reusable, not a grant to repeat fits or rescue it.
 Probability proper scores do not establish expected PnL/confidence/Paper
 promotion. Operational Paper LOWVOL58f/f037 and MSFT65f/a861 are independent;
-runtime source7a failed actor admission, not a research permission hold.
+the historical source7a failed actor admission, not a research permission hold.
 FaradayactualnativeNAS5d408 inputf477/Policy24d3 readyFalsefull17rows/8targets,
-not retagCASH5. Parent separate exactnewvisit wrapper needed: inheritedold
-engineeringadapter only acceptsMSFT/.01/1row and cannot consume the new point.
+not retagCASH5. Parent new finite wrapperf545/TRUE459f is now installed for
+Oct28KST23:20/23:27 entry and Nov4KST05:45/05:52 exit. Old MSFT-only adapter
+was not relabeled. Actual native/financial outcome remains unobserved.

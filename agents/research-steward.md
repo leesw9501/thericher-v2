@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-28 KST; observed Oct27UTC22:41.
+2026-10-28 KST; observed Oct27UTC23:45.
 A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c sole GPU/shared registry owner.
 Parent shared policy/MD/Git/activation; other agents have disjoint outputs.
@@ -43,13 +43,21 @@ Newcd17 now COMPLETE_VERIFIED:1CPUfit35iterations/39FG/converged/.012s,
 1INNERforecast/readout187rows/0EVAL/GPU/retry, propercriteriaPASS (not PnL).
 SixCIDs36Jobs closed/newupper99.339346of240/elapsed353.805476of1200;
 old102.998112debit/cumulative202.337458 retained. No completed fit repeated.
-Next ONE daily temporalTCN assigned <=1200active/3600elapsed,
-1marketCUDAfit/max300epochs/5000updates/fit<=360s, finite Source/native caps
-before dispatch. Sagan disjoint purekernel Source180 chargedONCE insidefamily.
-Steward finalcontract/registry/headroom/lease/actual worker; train/chronoFIT
-validation curves/bestcheckpoint, never outerINNER epoch choice. Existing
-savedlogistic baseline only/no oldmodelrestore/forward/EVAL. No activeGPU fit
-claimed without PID/start evidence. Direct source handoffs.
+DailyTCN5c45/caea is CLOSED_REJECT: one CUDAfit22epochs/308updates/8.787719s/
+87.02MiB/best2, fiveCIDs31Jobs closed/lease absent, upper172.078670/720/
+elapsed344.815839/1800. Old checkpoint caller failure276.471960 retained;
+new native12checks/coldRNG proof passed with2additional synthetic updates,
+not a repeated completed market fit. FixedHALFb6ce/1c22 also CLOSED_REJECT:
+one saved projection/target witness/verify,0fits/GPU/financial; fourCIDs26Jobs
+closed, upper84.691817/240/elapsed312.167226/900. No weight rescue.
+No GPU training currently running. Logistic/Linear economic compatibility
+a858/310f found missing aligned INNER weights; no new model call. Alternative
+Uniform-prior-gate e47a/e914 now CLOSED_REJECT/growthFALSE/DDtrue,
+native8PASS/oneprojection/OPENintake/3ledgers/verify/0model/GPU/EVAL/retry,
+fourCIDs25Jobs closed/upper75.646743of240/elapsed377.259546of900.
+Next120active/900elapsed source-only old C120TCN checkpoint/schema and
+new Oct27session coverage readiness with Data. No extra weights/market arrays,
+model calls, EVAL or GPU lease; missing saved model is NOT a refit grant.
 
 Paper numeric yield18:45..55 consumed. Parent complete public census0actors at
 18:56:35/Docker0containers18:56:36 permits independent workers to resume after

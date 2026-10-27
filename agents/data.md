@@ -86,10 +86,21 @@ Authority2f053b79/closuref330 at current-daily-pair-exit-propagation-20261028-v1
 exact1412source match/19originalPID-start absent/currenttemp+lease absent.
 Existing Taskdefinition/trigger unchanged. Network-none preflight-only check
 assigned after this verification; no collector/API call implied by the fix.
-NEW current-daily-pair-token-floor60-readiness-20261028-v1(180/900) is source-
-only: same-mark observer240/default300 starvation reproduced, not retroactive
-historical cause. Prepare minimal named60 integration using proven atomic+
-legacy gate; frozen300/default/mark/unknownleases unchanged. No actualcall yet.
+Named v2 floor60 Source8127 proposal is now integrated with repo CLI mount;
+default/frozen300, stagedSDK08fcc, shared mark/atomic+legacy exclusion and
+unknown leases remain unchanged. Conditional240/300 starvation is not an
+observed historical token error. Sourceb1a/full53102 PASS19532/26knownskip,
+serial165+57/Ruff/threeCompose PASS; no actual acquisition claim.
+Actual direct preflight-r1 exited20 before Docker. Firstcause d7c3 is the
+driver's slash-style project-directory versus strict Windows prefix; scheduled
+Resolve-Path contract is already normalized, not an additional scheduled bug.
+New canonical derivative Source79bd/Consumer1b6c has current9pins and native
+cold12checks/30SDKhashes PASS, no actualcredentials/client/HTTP/cache/control.
+One coldCID removed/fiveJobsclosed. Parent adopted one actual network-none
+preflight after fresh full; result pending, never collector/API by this driver.
+Next separate metadata readiness120/900 checks Oct27 new complete SPY/QQQ
+against old765a C120TCN/HGB FIT/INNER/EVAL coverage. No new dataset/labels/
+model/weights decoded and no unseen/finality claim until exact evidence.
 
 Respond directly to current Engine source/schema/clocks questions; do not
 repeat completed acquisition/projection. Fresh current acquisition is successful,

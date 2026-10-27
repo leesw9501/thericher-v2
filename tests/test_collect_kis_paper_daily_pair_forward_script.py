@@ -3,11 +3,14 @@ from __future__ import annotations
 import importlib.util
 import io
 import json
-from datetime import UTC, datetime
+from contextlib import contextmanager
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
+
+from thericher_v2.execution import kis_market_data_rate_gate as gates
 
 
 def test_credentialed_collection_uses_nonreserving_token_due_check(
@@ -1088,3 +1091,131 @@ def _script_module() -> object:
     module = importlib.util.module_from_spec(specification)
     specification.loader.exec_module(module)
     return module
+
+
+def test_native_shared_mark_atomic_legacy_and_named_cli(monkeypatch, tmp_path):
+    script = _script_module()
+    control = tmp_path / "SYN-control"
+    at = [datetime(2026, 10, 27, 12, tzinfo=UTC)]
+    observer = gates.KisPaperMarketDataTokenStartGate(
+        control_root=control, minimum_request_interval_seconds=60, clock=lambda: at[0]
+    )
+    legacy = gates.KisPaperMarketDataTokenStartGate(control_root=control, clock=lambda: at[0])
+    assert observer.claim_token_request_start()
+    at[0] += timedelta(seconds=240)
+    assert observer.claim_token_request_start()
+    at[0] += timedelta(seconds=61)
+    assert not legacy.token_request_is_due()
+    before = (control / "token-request.json").read_bytes()
+    observed = []
+    lock_checks = []
+    real_lock = gates._exclusive_lock
+
+    @contextmanager
+    def real_atomic_then_legacy(path):
+        assert (control / "token-request.lock.d").is_dir()
+        lock_checks.append(True)
+        with real_lock(path):
+            yield
+
+    def actual_gate(**kwargs):
+        assert kwargs["control_root"] == Path("/app/collection_control")
+        gate = gates.KisPaperMarketDataTokenStartGate(
+            control_root=control,
+            minimum_request_interval_seconds=kwargs["minimum_request_interval_seconds"],
+            clock=lambda: at[0],
+        )
+        observed.append(gate)
+        return gate
+
+    class EnvironmentBoundary(RuntimeError):
+        pass
+
+    def no_credentials():
+        raise EnvironmentBoundary("SYN boundary before any credential read or client")
+
+    monkeypatch.setattr(gates, "_exclusive_lock", real_atomic_then_legacy)
+    monkeypatch.setattr(script, "KisPaperMarketDataTokenStartGate", actual_gate)
+    monkeypatch.setattr(
+        script,
+        "KisPaperMarketDataRateGate",
+        lambda **_: SimpleNamespace(snapshot=lambda: SimpleNamespace(retry_not_before_utc=None)),
+    )
+    monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", no_credentials)
+    monkeypatch.setattr(
+        script, "KisPaperMarketDataClient", lambda **_: pytest.fail("client forbidden")
+    )
+    args = ["--execute", "--cache-lineage", "v2", "--token-minimum-interval-seconds", "60"]
+    with pytest.raises(EnvironmentBoundary):
+        script.main(args, clock=lambda: at[0])
+    gate = observed[-1]
+    assert gate.token_request_is_due()
+    assert gate.snapshot().next_token_request_not_before_utc == at[0] - timedelta(seconds=1)
+    assert (control / "token-request.json").read_bytes() == before
+    assert gate.claim_token_request_start()
+    assert gates.KIS_PAPER_MARKET_DATA_TOKEN_MIN_REQUEST_INTERVAL_SECONDS == 300
+    assert lock_checks
+    held = control / "token-request.lock.d"
+    held.mkdir()
+    identity = held.stat()
+    mark = (control / "token-request.json").read_bytes()
+    try:
+        assert not gate.claim_token_request_start()
+        assert not gate.token_request_is_due()
+        assert (control / "token-request.json").read_bytes() == mark
+        assert not list(held.iterdir())
+    finally:
+        current = held.stat()
+        assert (identity.st_dev, identity.st_ino) == (current.st_dev, current.st_ino)
+        held.rmdir()
+
+
+@pytest.mark.parametrize("seconds", ["0", "59", "61", "301", "nan", "inf"])
+def test_cli_rejects_other_floor_before_any_gate(monkeypatch, seconds):
+    script = _script_module()
+    monkeypatch.setattr(
+        script, "KisPaperMarketDataTokenStartGate", lambda **_: pytest.fail("gate forbidden")
+    )
+    with pytest.raises(SystemExit) as exc:
+        script.main(
+            ["--execute", "--cache-lineage", "v2", "--token-minimum-interval-seconds", seconds]
+        )
+    assert exc.value.code == 2
+
+
+@pytest.mark.parametrize("mode,lineage", [("--execute", "v1"), ("--preflight", "v2")])
+def test_floor60_scoped_to_named_v2_token_callers(monkeypatch, mode, lineage):
+    script = _script_module()
+    monkeypatch.setattr(
+        script, "KisPaperMarketDataTokenStartGate", lambda **_: pytest.fail("gate forbidden")
+    )
+    assert (
+        script.main([mode, "--cache-lineage", lineage, "--token-minimum-interval-seconds", "60"])
+        == 2
+    )
+
+
+def test_default_300_unchanged_no_new_keyword(monkeypatch):
+    script = _script_module()
+    received = []
+    monkeypatch.setattr(
+        script, "_run_credentialed_collection", lambda **kwargs: received.append(kwargs) or 20
+    )
+    assert script.main(["--execute", "--cache-lineage", "v2"]) == 20
+    assert "token_minimum_interval_seconds" not in received[0]
+
+
+@pytest.mark.parametrize("floor", [0, 59, 61, 301, True, float("nan"), float("inf")])
+def test_direct_caller_rejects_invalid_policy_before_gate(monkeypatch, floor):
+    script = _script_module()
+    monkeypatch.setattr(
+        script, "KisPaperMarketDataTokenStartGate", lambda **_: pytest.fail("gate forbidden")
+    )
+    with pytest.raises(ValueError, match="token floor"):
+        script._run_readiness(
+            control_root=Path("/app/collection_control"),
+            artifact_root=Path("/app/model_artifacts"),
+            repository_root=Path("/app"),
+            observed_at=datetime.now(UTC),
+            token_minimum_interval_seconds=floor,
+        )
