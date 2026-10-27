@@ -298,8 +298,9 @@ def test_forged_full_weight_contract_denied_before_journal_or_client(h, fault):
     assert h["factories"] == 0 and h["submits"] == []
 
 
-def test_valid_larger_gross_contract_is_not_this_native_cohort(h):
-    bind(h, prepared(metadata(original_basis_gross_ceiling=D(".01"))))
+@pytest.mark.parametrize("gross", [D(".1000000000000000001"), D(1)])
+def test_gross_above_original_shared_tenth_is_not_native_cohort(h, gross):
+    bind(h, prepared(metadata(original_basis_gross_ceiling=gross)))
     before = bank_bytes(h)
     assert run(h).reason == "cycle_input_invalid"
     assert bank_bytes(h) == before and record(h) is None and h["factories"] == 0

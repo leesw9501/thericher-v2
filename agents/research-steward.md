@@ -22,10 +22,14 @@ RankHalfcurrentpoint75f COMPLETE1CUDAforward/34MiB/0fits, allclosed191.001owned.
 Initial attributiond2f COMPLETE1CUDAforward120rows/0fits,91.559919newowned,
 all3CIDs15Jobs/root/leaseclosed. No repeat completed training.
 Parent sample22:35UTC4090:1636used/22503free of24564MiB/3%/33C, dated only;
-no desktop permission hold. NEW masked-patch C120/H60 SOURCE readiness,
-no numerical fit freeze yet. Prospective Data oneprojection720owned/3600elapsed;
-Engine proposed1SSL+3fixedprobes needs final finite Source contract before
-numerics, not human approval. Fresh per-worker VRAM/lease checks at dispatch.
+no desktop permission hold. Masked-patchb403 now COMPLETE_REJECT:
+88epochs4224updates/best76/357.26s/368MiB,3Ridges/2610EVALkeys, all6CIDs/
+Jobs/leaseclosed. LearnedMSE8.75515e-6 loses RAW8.31183e-6.
+Initialnativefailure684.889651debit and3updates retained; cold1step only added.
+Final inclusive1140.370863ownedupper/3600, Data94.296747 separate.
+Coststudyd2ef is CLOSED/0fits-forwards-GPU/oneledger/195.4094aggregateowned,
+RAW/TRAINED/blendallcash63days, ALWAYS_QQQnegative, no thresholdrescue.
+No active GPUwork inferred. Keep useful readyresearch first, not dummyload.
 
 Prior CPU numerical consumer eca8d542:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json.

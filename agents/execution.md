@@ -21,7 +21,8 @@ Exact suffix after thericher-kis-paper-msft-engineering-:
 - exit-20261102-v1: Nov2 20:45..20:49UTC, owned only.
 - exact-exit-recovery-20261102-v1: Nov2 20:52..20:56UTC.
 
-H5 includes entry session, Nov2 CLOSE after DST; research OPEN[e+5]=Nov3OPEN.
+H5 includes entry session, Nov2 15:45ET near-close window after DST, not an
+official closing print; research OPEN[e+5]=Nov3OPEN.
 Maximum .005 of original full B inside B/10, not allocated/affordability proof.
 Due native owner/virtualhost/current quote/orderability/budget/pending checks stay.
 No force1share/threshold change/adoption/profit expansion or substitute unknown.
@@ -37,6 +38,17 @@ funds, orderability or a guaranteed trade. One read consumed/13Jobs+CID closed,
 a NEW immutable deterministic engineering sizing revision inside original
 B/10, not a forced minimum share, frozen-research regrade or unknown replacement.
 No revised input/Task is installed yet. Due-time native checks remain decisive.
+
+Current p010 stage is NOT deployable on image27. Exact second lot RO e25
+chooses .01fullB as first dated-close one-lot candidate; original binding/
+reserves stable,13Jobs/CIDclosed,0API. Actual image27 REJECTED that .01 at
+native admission and journal reload: a fixed .005 equality, not sharedbank risk.
+A/execution/current-msft-p010-operational-rebinding-preparation-20261027-v1/CONSUMER-UNAVAILABLE.json
+(e162e0bc) is closed; apply -Execute blocks before Task API. Old4Tasks/169/206
+unchanged. Leibniz owns cycle.py/test for explicit0<weightgross<=.1originalB;
+Socrates reviews frozen diff. Original B/10/cost/loss/F9/pending/orderability
+stay authoritative. New full tests/image/SDK/native checks and separate rebind
+are required before installation; codec/mock forwarding alone is not proof.
 
 ## Closed Readiness / Recovery
 
@@ -96,6 +108,22 @@ allowed, old proofs/othermetadata/toprecord/bank/owners/pending/prefix unchanged
 Broader US_H5 source readinessc891b050: mixed NYSE/AMEX book requires legacy
 same-account reader/writer compatibility migration first. ClaudeREVISE; no
 partial activation, oldNASprofile/ETFguard and MSFT37 unchanged.
+
+## New Verified Runtime / Next
+
+Native gross patch is VERIFIED by4c9a2956, coreDABF/threechangedfiles.
+711serialPASS/19482fullPASS26skip35warnings/8actualworkers382.78s,1411same/
+cleanCchildlease20PIDstartsclosed/Ruff3ComposePASS. New imagee41497fd actual
+four-input native admission+record+inert/guard PASS; Python3.12.16patch/748members,
+not installed. Separate new SDK/runtime-r2/TRUE/Source/4Taskcutover remains.
+4c9 authority includes Parent obsolete fresh.01 rejection test changed to
+>shared.1 rejection; retained owned-history expansion test stays. Peerreview
+2a324339+supplement nofindings/old.005 active+completed cache compatible.
+Current4Tasksstillold; Parent/Socrates separately stage p010 withnewimageSDK.
+Leibniz quoteSOURCE traces actualfutureaccessor/readonlyvirtualcapability.
+F9 r2d970 nofullhostqualification/0private, sevenunreviewedactors notprivatewriter
+findings. Halley reviewsminimalROscopefix, no newpermission/creatorplatform.
+F9 reservation stays; financeinspection doesnot hold newPaperpreparation.
 
 ## Preserved Original Owners / Unknowns
 

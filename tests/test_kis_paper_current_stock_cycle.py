@@ -1114,3 +1114,201 @@ def test_completed_hint_replays_whole_book_and_rejects_late_contradiction(h):
         client_factory=lambda _: pytest.fail("no_client"),
     )
     assert result.status == "unavailable" and len(h["submits"]) == 2
+
+
+def _native_model_gross_point(gross):
+    from datetime import date
+
+    from test_model_paper_weights import metadata
+    from thericher_v2.data.us_equity_session import us_equity_2026_session
+    from thericher_v2.research.model_paper_weights import (
+        MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+        ModelPaperWeightRow,
+        prepare_model_paper_weights_input,
+    )
+
+    first = us_equity_2026_session(date(2026, 10, 26)).window
+    last = us_equity_2026_session(date(2026, 10, 30)).window
+    meta = metadata(
+        (ModelPaperWeightRow(0, "MSFT/NAS", True, D(1)),),
+        original_basis_gross_ceiling=gross,
+        policy_ref="sha256:" + budget._digest(["invented-native-gross", str(gross)]),
+        exit_not_before=last.close_ts - timedelta(minutes=15),
+    )
+    return prepare_model_paper_weights_input(
+        meta, entry_session=first, exit_session=last,
+        profile=MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+    )
+
+
+def _native_model_gross_h(tmp_path, gross):
+    import test_model_paper_profile as model_native
+
+    value = _native_model_gross_point(gross)
+    result = model_native.h.__wrapped__(tmp_path)
+    result["data"] = value
+    result["now"] = value.entry_session.open_ts + timedelta(minutes=30)
+    result["call"].update(
+        profile=cycle.StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+        expected_input_ref=value.input_ref, expected_policy_ref=value.policy_ref,
+    )
+    return result
+
+
+@pytest.mark.parametrize("gross", [D(".005"), D(".01"), D(".1")])
+def test_native_model_gross_admission_is_within_original_shared_tenth(gross):
+    value = _native_model_gross_point(gross)
+    profile = cycle.StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+    at = value.entry_session.open_ts + timedelta(minutes=30)
+    encoded = cycle._pack(value)
+    assert cycle._validate_model_input(value, at, profile) is value
+    assert cycle._pack(value) == encoded
+
+
+@pytest.mark.parametrize("gross", [D(".005"), D(".01"), D(".1")])
+def test_native_model_gross_record_roundtrip_keeps_exact_declared_input(gross):
+    value = cycle._unpack(cycle._pack(_native_model_gross_point(gross)))
+    saved = dict(
+        owner_key=value.policy_ref,
+        pending=None,
+        active=dict(
+            input_ref=value.input_ref, model_input=cycle._pack(value),
+            targets=cycle._pack(value.targets), entry_session=cycle._pack(value.entry_session),
+            exit_session=cycle._pack(value.exit_session),
+        ),
+    )
+    before = copy.deepcopy(saved)
+    cycle._model_record_input(
+        saved, value.input_ref, value.policy_ref, cycle.StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+    )
+    assert saved == before
+
+
+def test_native_model_gross_one_percent_pending_restart_preserves_request_and_bank(tmp_path):
+    import test_model_paper_profile as model_native
+
+    h = _native_model_gross_h(tmp_path, D(".01"))
+    h["unknown"] = True
+    old_states = {
+        p.name: p.read_bytes() for p in h["root"].iterdir()
+        if p.name.startswith(("bs-", "bq-"))
+    }
+    assert run(h).status == "pending"
+    saved = model_native.record(h)
+    assert saved["pending"] is not None and len(h["submits"]) == 1
+    pending = copy.deepcopy(saved["pending"])
+    bank = (h["root"] / budget.BUDGET_FILE).read_bytes()
+    assert cycle._unpack(saved["active"]["model_input"]) == h["data"]
+    assert (
+        run(h, target_loader=lambda: pytest.fail("exact_pending_before_loader")).status == "pending"
+    )
+    assert model_native.record(h)["pending"]["arguments"] == pending["arguments"]
+    assert (h["root"] / budget.BUDGET_FILE).read_bytes() == bank
+    assert all((h["root"] / name).read_bytes() == raw for name, raw in old_states.items())
+    assert len(h["submits"]) == 1
+
+
+def test_native_model_gross_does_not_rewrite_existing_owned_cohort(tmp_path):
+    import test_model_paper_profile as model_native
+    from thericher_v2.research.model_paper_weights import prepare_model_paper_weights_input
+
+    h = _native_model_gross_h(tmp_path, D(".005"))
+    assert run(h).status == "advanced"
+    original = h["data"]
+    forged = prepare_model_paper_weights_input(
+        replace(original.metadata, original_basis_gross_ceiling=D(".01")),
+        entry_session=original.entry_session, exit_session=original.exit_session,
+        profile=original.profile,
+    )
+    saved = model_native.record(h)
+    saved["active"].update(
+        model_input=cycle._pack(forged), targets=cycle._pack(forged.targets),
+        input_ref=forged.input_ref,
+    )
+    pointer = h["root"] / cycle.model_paper_pointer(original.policy_ref)
+    cycle._save(pointer, saved)
+    before, book = pointer.read_bytes(), (h["root"] / budget.BUDGET_FILE).read_bytes()
+    result = run(
+        h, expected_input_ref=forged.input_ref,
+        target_loader=lambda: pytest.fail("no_replacement_of_executed_input"),
+        client_factory=lambda _: pytest.fail("owned_input_join_before_client"),
+    )
+    assert result.reason == "cycle_input_binding_mismatch"
+    assert pointer.read_bytes() == before
+    assert (h["root"] / budget.BUDGET_FILE).read_bytes() == book
+    assert len(h["submits"]) == 1
+
+
+def test_native_model_gross_registry_keeps_active_and_completed_input_history(tmp_path):
+    import test_model_paper_profile as model_native
+
+    h = _native_model_gross_h(tmp_path, D(".01"))
+    assert run(h).status == "advanced"
+    book = budget._load_binding(h["root"])
+    saved = model_native.record(h)
+    before = copy.deepcopy(book)
+    cycle._owned_registry(saved, book)
+    # Pure registry join only: a past input may remain registered after completion.
+    retained = copy.deepcopy(saved)
+    retained["completed"].append(saved["active"]["input_ref"])
+    retained["active"]["input_ref"] = "sha256:" + "e" * 64
+    cycle._owned_registry(retained, book)
+    retained["completed"] = []
+    with pytest.raises(cycle._CycleFault, match="cycle_input_binding_mismatch"):
+        cycle._owned_registry(retained, book)
+    assert book == before
+
+
+@pytest.mark.parametrize(
+    "gross", [D(0), D("-.01"), D("NaN"), D("Infinity"), D("-Infinity"),
+              D(".1000000000000000001"), D(1), "0.01"],
+)
+def test_native_model_gross_invalid_denied_before_client_or_book_change(tmp_path, gross):
+    h = _native_model_gross_h(tmp_path, D(".005"))
+    if type(gross) is D and gross.is_finite() and D(0) < gross <= D(1):
+        h["data"] = _native_model_gross_point(gross)
+    else:
+        object.__setattr__(h["data"].metadata, "original_basis_gross_ceiling", gross)
+    value = h["data"]
+    h["call"].update(expected_input_ref=value.input_ref, expected_policy_ref=value.policy_ref)
+    before = (h["root"] / budget.BUDGET_FILE).read_bytes()
+    outcome = run(h)
+    assert outcome.reason == "cycle_input_invalid"
+    assert h["factories"] == 0 and h["submits"] == []
+    assert (h["root"] / budget.BUDGET_FILE).read_bytes() == before
+    assert not (h["root"] / cycle.model_paper_pointer(value.policy_ref)).exists()
+
+
+@pytest.mark.parametrize("fault", ["receipt", "input_ref"])
+def test_native_model_gross_valid_amount_does_not_bypass_proposal_identity(tmp_path, fault):
+    h = _native_model_gross_h(tmp_path, D(".01"))
+    if fault == "receipt":
+        target = h["data"].targets[0]
+        object.__setattr__(target.receipt, "proposal_ref", "ref:" + "f" * 64)
+        h["call"]["expected_input_ref"] = h["data"].input_ref
+    else:
+        h["call"]["expected_input_ref"] = "sha256:" + "f" * 64
+    before = (h["root"] / budget.BUDGET_FILE).read_bytes()
+    result = run(h)
+    assert result.status == "unavailable"
+    assert h["factories"] == 0 and h["submits"] == []
+    assert (h["root"] / budget.BUDGET_FILE).read_bytes() == before
+
+
+def test_native_model_gross_tenth_is_not_a_new_bank_or_reservation_release(tmp_path):
+    import test_model_paper_profile as model_native
+
+    h = _native_model_gross_h(tmp_path, D(".1"))
+    old = copy.deepcopy(budget._load_binding(h["root"]))
+    result = run(h)
+    assert result.status == "advanced" and len(h["submits"]) == 1
+    book = budget._load_binding(h["root"])
+    for key in ("basis_ref", "basis_usd", "allocated_usd", "orders", "qqq", "portfolio"):
+        assert book[key] == old[key]
+    projection = budget.project_shared_budget(
+        binding=book, states=cycle._states(h["root"], book),
+        expected_account_ref=book["account_ref"], expected_basis_ref=book["basis_ref"],
+        expected_owner_refs=cycle._refs(book), as_of=h["now"],
+    )
+    assert projection.reserved_buys > 0 and projection.remaining_cap >= 0
+    assert model_native.record(h)["owners"].keys() == {"MSFT"}

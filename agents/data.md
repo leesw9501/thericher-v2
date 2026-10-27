@@ -52,21 +52,20 @@ do not backdate availability to close. No vintage splice/canonical overwrite/
 PIT/CA/TR/volume-adjustment/finality promotion. Direct Engine handoff.
 FEATURES9d85870d/ROLEd6a22a2c, exact8x18 raw FP64, FIT affine belongs to Engine.
 
-New Faraday dispatch: one causalpast packet build:
-A/data/current-c120-h60-causal-past-packets-20261027-v1.
-720ownedworker/3600end-to-end seconds, one actual market projection after
-native named producer->PAST.npz/ROLE coldconsumer future-poison/missing-mask/
-clock/role tests. No retry without exact predeclared first-cause scope, no HTTP.
-Exact source readiness HANDOFF under current-c120-h60-causal-window-producer-
-readiness-20261027-v1 is COMPLETE_SOURCE_ONLY20owned/404elapsed.
-Original FirstRate SPY0/QQQ1 remapped QQQthenSPY,120x10 rawOHLCV FP64;
-all original QQQkeys retained, unavailable mask not imputed/deleted.
-Nominal120completed-minute context, ENTRYOPEN origin+60seconds, exit bar
-CLOSE endorigin+3660. Target RAW_LOG y_log physically separate from PAST.
-145FIT/43INNER/63EVAL, QQQscheduled6054/1806/2610; actual jointknown counts
-await literal10field-mask join (INNER1800 is not yet a measured result).
-Engine owns new10channel FIT normalization once, no whole archive/futureprice
-mount to learner. Reused UNKNOWN_NOT_FRESH; no PIT/TR/finality/arrival claim.
+Causalpast Data COMPLETE7a3a83e5/source765a60f9:
+A/data/current-c120-h60-causal-past-packets-20261027-v1/HANDOFF.json.
+One projection; known FIT6054/INNER1800/EVAL2610, all6unknown INNER keys
+retained. Three Jobs/two CIDsclosed94.296747ownedupper/720,0HTTP/model.
+SeparatePAST/RAW_LOGTARGET. Producer pre-market inventedTARGET gap stays;
+Engine completed actual TARGET cold-codec before learner labels, no backdating.
+
+Cost-sidecar under current-c120-h60-first-daily-qqq-marks-20261027-v1 is now
+CLOSED/consumed by d2ef coststudy:63fixedcalendarQQQopportunities/60minuteCLOSE
+path each, sourcePrice onlyinData thenoneEngineintakeafteractionseals.
+Shared8nativecases, no missing/drop/imputation; no model/HTTP/private effects.
+Data cost counted ONCE inside aggregate195.4094/600. No furtherbuildassigned.
+ExactAMD/NVDAOct26metadata handedExecution; nativequote auditmayrequestsource
+knowledge, not a newcollectiongrant. OldData94.296747 staysseparate.
 
 Intraday corpus metadata HANDOFF under current-intraday-causal-feature-corpus-
 readiness-20261027-v1 closed: KIS historical21+disjointcurrent metadata gives

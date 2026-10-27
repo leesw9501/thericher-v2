@@ -12,19 +12,24 @@ initial rank growth2.4598694% exceeds trained2.4306671%; positive ranker
 learning-growth claim killed. Initial RankHalf2.3987388% vs trained2.5881617%:
 limited blend contrast not killed, no old primary regrade or alpha.
 
-Current Halley SOURCE package: C120/H60 masked-patch representation,
-100owned/1200elapsed, official source/license/exact duplicate audit and
-falsification for one executable recipe. Engine final contract/numerical
-freeze pending, not active training. Data separately implements causalpast
-window producer, raw QQQH60 LOG label physically isolated from features.
-PatchTST general time-series claims are not stock-alpha evidence:
+Patchmask source6adb1211 CLOSED40owned/866elapsed; actualSSL88epochb403
+CLOSED_REJECT: learnedMSE8.75515e-6 loses RAW8.31183e-6. Improves initial,
+not raw control, no economic/alpha claim. Prior KIS100masked pretraining+warm
+nested outputs exist; topPREP0 is not wholefamily zero-fit evidence.
+PatchTST method sources, not stock-alpha replication:
 https://arxiv.org/abs/2211.14730
 https://github.com/yuqinie98/PatchTST
 https://raw.githubusercontent.com/yuqinie98/PatchTST/main/LICENSE
-Source Apache2.0 checked; no upstream code/download/dependency/runtime change.
-Existing archive/outcome reuse remains UNKNOWN_NOT_FRESH, not new holdout.
+Apache2checked/no copied code/download/dependency change.
 
-
+F9 temporaryExecutionRO r2d970 is CLOSED_UNAVAILABLE afterABI/parentproof
+repair; remainingunreviewedactors denied,0actualprivate/0CID/8Jobsclosed.
+Now Halley SOURCE throughputreview90/900 under current-ro-admission-scope-
+efficiency-review-20261027-v1: exactretainedPID/start/source/mount facts only,
+one minimal scopefix/reversal; no guessinghistoricalroles, broadPowerShell
+waiver, private read or creator/lease platform. F9 unknownreserve stays.
+Coststudyd2ef CLOSED_REJECT/allthree modelactions cash63days;
+ALWAYS_QQQ-1.712384%/sampledDD1.71677%. Nofit/threshold/ratiorescue.
 
 RankNet independent Source review closed70owned inside Source600 ONCE.
 Native constructor/checkpoint/hand-off and original targets/28pair ties/

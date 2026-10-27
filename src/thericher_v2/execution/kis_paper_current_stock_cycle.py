@@ -355,6 +355,11 @@ def _projection(root, binding, at):
 
 
 def _owned_registry(record, binding):
+    weight_inputs = None
+    if record.get("profile") in {profile.value for profile in _MODEL_WEIGHT_PROFILES}:
+        weight_inputs = set(record["completed"])
+        if record["active"] is not None:
+            weight_inputs.add(record["active"]["input_ref"])
     for symbol, owned in record["owners"].items():
         entry = binding.get("stocks", {}).get(symbol)
         if entry is None:
@@ -374,6 +379,11 @@ def _owned_registry(record, binding):
             ),
             "cycle_foreign_stock_registration",
         )
+        if weight_inputs is not None:
+            _check(
+                all(plan["input_ref"] in weight_inputs for plan in entry["plans"]),
+                "cycle_input_binding_mismatch",
+            )
         expected = set(owned["plans"])
         if record["pending"] is not None and record["pending"]["symbol"] == symbol:
             expected.discard(record["pending"]["arguments"]["request_id"])
@@ -474,7 +484,9 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
         except (ValueError, TypeError, AttributeError, KeyError, ArithmeticError):
             raise _CycleFault("cycle_input_invalid") from None
         _check(
-            value.metadata.original_basis_gross_ceiling == Decimal(".005"),
+            type(value.metadata.original_basis_gross_ceiling) is Decimal
+            and value.metadata.original_basis_gross_ceiling.is_finite()
+            and Decimal(0) < value.metadata.original_basis_gross_ceiling <= budget.BUDGET_FRACTION,
             "cycle_input_invalid",
         )
     _check(
@@ -572,7 +584,11 @@ def _model_record_input(
         if profile in _MODEL_WEIGHT_PROFILES:
             _check(
                 value.profile == profile.value
-                and value.metadata.original_basis_gross_ceiling == Decimal(".005"),
+                and type(value.metadata.original_basis_gross_ceiling) is Decimal
+                and value.metadata.original_basis_gross_ceiling.is_finite()
+                and Decimal(0)
+                < value.metadata.original_basis_gross_ceiling
+                <= budget.BUDGET_FRACTION,
                 "cycle_input_binding_mismatch",
             )
     if record["pending"] is not None:

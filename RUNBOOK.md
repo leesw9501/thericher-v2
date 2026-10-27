@@ -27,8 +27,9 @@ Task prefix thericher-kis-paper-msft-engineering-:
 - exit-20261102-v1: Nov2 20:45..20:49UTC, owned only.
 - exact-exit-recovery-20261102-v1: Nov2 20:52..20:56UTC.
 
-H5 includes entry session, fifth CLOSE Nov2 after DST. Research OPEN[e+5] is
-Nov3 OPEN, explicit nonparity. Maximum .005 of original full B within B/10 is
+H5 includes entry session, fifth-session15:45ET near-close window Nov2 after
+DST, not official16:00 close. Research OPEN[e+5] is Nov3 OPEN, explicit
+nonparity. Maximum .005 of original full B within B/10 is
 not allocated capital/affordability proof or per-target allowance. Native
 virtualhost/identity/owner/budget/quote/orderability/pending checks run at due.
 No invented1share/threshold change to force trade. Unknown reservations remain.
@@ -44,6 +45,17 @@ funds, orderability or a guaranteed trade. One read consumed/13Jobs+CID closed,
 a NEW immutable deterministic engineering sizing revision inside original
 B/10, not a forced minimum share, frozen-research regrade or unknown replacement.
 No revised input/Task is installed yet. Due-time native checks remain decisive.
+
+Current p010 stage is NOT deployable on image27. Exact second lot RO e25
+chooses .01fullB as first dated-close one-lot candidate; original binding/
+reserves stable,13Jobs/CIDclosed,0API. Actual image27 REJECTED that .01 at
+native admission and journal reload: a fixed .005 equality, not sharedbank risk.
+A/execution/current-msft-p010-operational-rebinding-preparation-20261027-v1/CONSUMER-UNAVAILABLE.json
+(e162e0bc) is closed; apply -Execute blocks before Task API. Old4Tasks/169/206
+unchanged. Leibniz owns cycle.py/test for explicit0<weightgross<=.1originalB;
+Socrates reviews frozen diff. Original B/10/cost/loss/F9/pending/orderability
+stay authoritative. New full tests/image/SDK/native checks and separate rebind
+are required before installation; codec/mock forwarding alone is not proof.
 
 Original e9 installer/R1 73/r2 f803 recovery scripts are CONSUMED; no rerun.
 Historical failure: service materialized inherited ACEs/AI on unprotected ACL;
@@ -85,6 +97,26 @@ e47a8578. New image does NOT replace installed MSFT37/image27. Pure adapter
 final lint-r2/HGB69ff1136 and RankHalf87963a1c remain allowFALSE/unallocated;
 new-image multirow financial SYN remains incomplete, not activation authority.
 
+## Verified New Gross Runtime / Not Yet Installed
+
+Native gross patch is VERIFIED by4c9a2956, coreDABF/threechangedfiles.
+711serialPASS/19482fullPASS26skip35warnings/8actualworkers382.78s,1411same/
+cleanCchildlease20PIDstartsclosed/Ruff3ComposePASS. New imagee41497fd actual
+four-input native admission+record+inert/guard PASS; Python3.12.16patch/748members,
+not installed. Separate new SDK/runtime-r2/TRUE/Source/4Taskcutover remains.
+New image e41497fd3cddf4a0a3a6f17357a065cceec0085ec58db1e287599da3f4cd43df
+is BUILT/NATIVE-VERIFIED, NOT DEPLOYED:
+A/execution/current-native-model-gross-runtime-image-20261027-v1/CHECK-RESULT.json,
+e6c5056c.750explicit tracked Dockerinputs/748image members exact; actual
+oldMSFT169 .005/newMSFT65f .01/HGB69ff/Rank879 admission+record roundtrips,
+inertWorker and5skipguard cases PASS/networknone/publicRO/0private/API/model.
+Python3.12.16 is an official floating-base patch from3.12.15, same3.12/locked
+dependencies, not a major runtime replacement. Original images unchanged.
+Runtime SDK needs748 ABSOLUTE container paths, not750relative buildproof.
+Old staged65f/a861 cannot use27 or2be. Use new absolute748 SDK plus exact new
+Source/release/CONTROL identities, not the relative750 buildproof. Actual
+broker quote capability remains separate; native due facts not invented.
+
 ## Other Original Owned Paths
 
 Original GRU/TF/J17/L/optional entries ended, no reopen. Exits UTC:
@@ -108,7 +140,7 @@ not new invocation authority. Fees/settlement/netPnL unobserved without evidence
 
 ## Verification / New Consumer
 
-New guard authority7131c2a1:
+Old-source skip guard authority7131c2a1:
 A/verification/current-h5-no-order-prefix-compatibility-20261027-v1/CONSUMER.json.
 559serialPASS86.78s/19461fullPASS26knownSKIP35warnings/8actualworkers378.74s/helper0,
 Ruff/threeComposePASS/1411exact/currentCchild+leaseabsent/22PID-startsclosed.

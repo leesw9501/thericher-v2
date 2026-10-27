@@ -72,18 +72,34 @@ F3initial tensors exactly match both F1/F2epoch0;1CUDAforward120rows/15F3dates,
 versus learned2.5881617%: narrow blend contrast not killed, not alpha or a
 regraded primary. Prior1182.301532/readiness30 retained once.
 
-NEW C120/H60 masked-patch representation SOURCE readiness:
-A/research/current-c120-h60-patchmask-engine-readiness-20261027-v1.
-One fixed recipe proposed: actual past120x10 OHLCV,15patches8/shared temporal
-encoder, FIT-only masked reconstruction, raw/initial/trained fixed Ridge probes
-on identical QQQH60 RAW_LOG labels. Final numerical freeze not yet issued;
-do not infer active training from this plan. Existing archive145/43/63sessions
-is reused UNKNOWN_NOT_FRESH. Data dispatched one causalpacket build720owned/
-3600elapsed after actual named producer/coldconsumer boundary tests.
-Physically separate feature windows/labels; old whole-role BARS contains later
-prices and must never be mounted into learner/forecast. No HTTP/private broker.
+C120/H60 study CLOSED_REJECT, finalb4039102/audit63de9b55:
+A/research/current-c120-h60-patchmask-frozen-probe-development-20261027-v1/technical-native-r1/CAMPAIGN-CONSUMER.json.
+Actual1CUDA SSLfit88epochs/4224updates/INNER-best76/357.26s/368MiB,3Ridges/
+2610EVALkeys/1targetintake. MSE RAW8.31183e-6, INITIAL1.08627e-5,
+TRAINED8.75515e-6: learned improves initial, loses RAW5.33%. All6CIDs/Jobs/
+leaseclosed. Native failurebe164 preserved3updates; only unfinished cold1step
+and unusedRidge completed, no repeat fit. Inclusive1140.370863ownedupper/3600,
+old684.889651 unchanged. Reused archive/no alpha/PnL/Paper qualification.
 
+Causalpast Data COMPLETE7a3a83e5/source765a60f9:
+A/data/current-c120-h60-causal-past-packets-20261027-v1/HANDOFF.json.
+One projection; known FIT6054/INNER1800/EVAL2610, all6unknown INNER keys
+retained. Three Jobs/two CIDsclosed94.296747ownedupper/720,0HTTP/model.
+SeparatePAST/RAW_LOGTARGET. Producer pre-market inventedTARGET gap stays;
+Engine completed actual TARGET cold-codec before learner labels, no backdating.
 
+Frozen forecast cost study d2ef2393/audit72fec39c CLOSED_REJECT:
+A/research/current-c120-h60-frozen-forecast-cost-replay-20261027-v1/CONSUMER.json.
+RAW/TRAINED/fixed.5log-blend all63days BUY0, exactcash aliases/no duplicate
+ledgers. ALWAYS_QQQ63trades netgrowth-1.712384%, sampledCLOSE-DD1.71677%.
+Fixed blend fails growth>cash.20bp EACHleg/whole shares/fixedinitialbank;
+no threshold/ratio rescue, no actual PaperPnL. Native8cases/oneactionprojection/
+onepriceintake/oneactualledger/0fits-forwards-GPU/4CIDsclosed,
+195.4094aggregateowned/600 includesData andSource30 ONCE.
+
+Next hypothesis must be genuinely distinct and practical after these cost
+failures. Do not automatically rerun SSL or lower a frozen threshold to claim
+success. Provisional daily Paper remains independent of profitability.
 
 Newest CLOSED consumer:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json,
