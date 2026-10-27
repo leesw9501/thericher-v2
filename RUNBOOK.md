@@ -14,44 +14,61 @@ costs/losses/pending/F9 survive restart; no profit expansion or foreign adoption
 
 ## Current Repaired Runtime
 
-Observed Oct27 15:18UTC/Oct28KST. Current company outcome UNFINISHED.
-Parent metadata activation is complete, not a broker result:
-A/execution/current-paper-runtime-custody-repair-20261027-v1/msft-activation-r3/RESULT.json
-(15:14:08, Plane6f0/hostd58d) and lowvol-activation-r2/inert/RESULT.json
-(15:14:47, remaining3/hoste2b0; first entry previously reconciled, not repeated).
-Independent post-activation-independent-r1/CONSUMER.json a2883177 validates
-exact8 current Task duties and2unchanged consumed originals,10reads/zeroeffects.
+Observed Oct27UTC17:24/Oct28KST. Company outcome UNFINISHED.
+Original MSFT13:40/47 and r3 15:45/52, LOWVOL15:30/37 are consumed.
+No Task.Run, repeated installer, private state restore, forced entry or B/10 reset.
+MSFT r3 d58 faults af292aaa/ae038e23: exact bound NATIVE_EXECUTION/ValueError/
+transport.py575/worker_frame_invalid. Raw EOF cause not yet identified.
+Actual e414 bootstrap help/empty/missing-proof framedJSON tests do not reproduce
+the actual request failure. New safe first_failure_sink PREPb565/4native fixtures
+and Claude refreshedABI b7f6 advisory GO_WITH_LIMITS; not yet broker closure.
 
-LOWVOL original entry15:30/recovery15:37UTC Oct27 (Oct28KST00:30/00:37),
-Nov3 exit14:35/recovery14:42; all original identities/input58f/policyf037/
-imagee414/basis/counters preserved. MSFT SAME original65f/a861/cohort/bank/
-image/counters/F9 uses new exact technical r3 pair15:45/15:52UTC Oct27
-(Oct28KST00:45/00:52); original consumed13:40/47 unchanged, Nov2 20:45/20:52
-exits repinned without changing duties/clocks. Older14:45/14:55 drafts inert.
-Do not rerun any activation/installer or manually Task.Run. These are consumed
-scopes, not operational replay commands. Native risk/reconciliation can veto.
+New exact diagnostic single recovery preparation:
+A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1.
+host4b8b4e6c/routef341a625/TRUE9b8eb452/ParentPlan31e23615,
+17:30..34UTC Oct27/02:30KST Oct28, native recovery/outer phase exit NOT a sell.
+Same original65f/a861/cohort/imagee414/privatebank/gate/counters/round/B10/F9.
+Parent alone apply/readback/enable future one-shot, no substitute fresh intent.
+Parent actual17:25:03 activated: parent-activation-r1/RESULT.json,
+newTaskXMLc1bed5d3/API7ACL4f54. Single disabled-create/readback/enable and original
+two future exit action refs; no Task.Run. Activatorbf296446 eightfocusedPASS
+after exact never-run-history fix. This activation scope is CONSUMED, no replay.
+Original MSFTNov2UTC20:45/20:52 and LOWVOLNov3UTC14:35/14:42 exit duties stay.
+Native risk/unknown outcomes/cap eligibility may veto; do not reset them.
 
-Original MSFT outcome is technical_failure_unknown_effects, actual reader56ce
-found policy ABSENT/target1UNKNOWN/bound0; accepted/fill/current-owned NULL.
-Current app Node/manifest admission defect is reproduced, not proof of sole
-historical cause/native_calls0. Common34c2 retains categorical fault stages.
-Helperf3e1 adds only measured omitted Enabled=true normalization; explicitfalse/
-unknowns/ACL/history remain strict.18old+13focused mock tests PASS.
-Leibniz verifier helper-pin output was blank from dot-source variable clobber;
-independent a288 explicitly verified full f3 before/after, not that blank field.
+Current private reader actor-integration-recovery-r1/msft/RESULT-ACTUAL.json
+54605954 actual16:09 PASS: exact source/private membership/identity/mtime/bytes/
+ownCIDclosure,3admissions13Jobs. Policy65f/a861 ABSENT/target1UNKNOWN/bound0;
+accepted/fill/currentowned NULL, NOT zero/no-submit/flat. Actual own3actors only,
+not live GPU concurrency proof. Earlier f51 failure remains UNKNOWN/consumed.
+F9 pending1/UNKNOWN-HELD unchanged, fees/settledcash/netPnL unobserved.
 
-Use new exact finite reader preparation under same repair root/
-post-repair-reader-preparation-r1, not consumed first MSFT actual reader.
-Halley owns original15:42 LOWVOL metadata callback; Socrates15:57MSFTr3.
-Private outcome reads require fresh actual writer closure/strict source+request
-joins/networknone/source+privateRO/full stability. Future due/research/Data alone
-are not custody conflicts. Never recovery observe() as an offline reader.
-No financial result inferred from scheduler exit/Ready/missing artifact.
+New source-safe diagnostic offline reader:
+A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1/reader-r1/CONSUMER.json.
+Parser713b1cf5 requires exact public record path+SHA, actual TRUE9b8e, source/run/
+window/input/policy/phase binding, no latest scan/private/API/Docker/Task calls.
+Its five synthetic tests qualify parsing, not actual opportunity outcome.
+A missing/invalid diagnostic does not prove effects absent.
 
-Current full recovery authority worker-telemetry-r1:19514/26/398.53s/eight
-actual worker pairs/owncleanup,serial370/1/externalcommon8/helper31/Ruff/
-3Compose PASS; exact1412protected a1500c15 remains required. Do not rerun
-full suite only for MD; independently test changed external code.
+Paper readonly API V2 Source71b46541/result2d157c64 actual16:50 succeeded:
+1tokenPOST/3GET/0retries, NASD/NYSE/reference orderability,7dedup holding items.
+AMEX unqueried/accountmatch unknown, not cohort custody or executable sizing.
+Official once/min token source +scoped60floor/14tests succeeded, default300
+unchanged. Native worker already explicit60; no token-starvation EOF conclusion.
+No repeated account probes or quota foreground sleep.
+
+Finite17:30 broker Source4b8 retains inherited claims; exact new TCN profile is
+not implicitly admitted. Coordinator closes actual actors17:24..35/owner closure;
+other source work continues. New future concurrency needs exact profile/source
+adoption, no generic whitelist. No numerical duplicate after completed fits.
+
+Current full authority:
+A/verification/current-paper-runtime-custody-recovery-20261027-v1/worker-telemetry-r1/CONSUMER.json.
+19514PASS26knownSKIP398.53s/eight actualworkerpairs/exact owncleanup; serial370/1.
+Exact1412protected a1500c15 required for MD-only reuse. Fresh external wire/
+account/caller/metadata tests validate their own changed paths; full repo tests
+cannot validate external scripts. Ruff/default/research/accounting Compose use
+.env.example, never implicit real .env. No fresh20k suite merely for MD.
 
 ## Frozen Installation History
 

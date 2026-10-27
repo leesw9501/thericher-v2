@@ -1,59 +1,49 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-28 KST, observed Oct27 15:18UTC.
+2026-10-28 KST, observed Oct27UTC17:21.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Faraday owns current Data package; Parent shared MD/Git.
-Quality limits constrain claims/consumers, not independent Paper authority.
+Leibniz owns source/inventory; Parent shared MD/Git. No MD proves a collector runs.
 
-## Latest Closed Handoff
+## Current Useful Coverage
 
-F3 frozen TimesFM head:
-A/data/current-liquid17-timesfm-frozen-head-packets-20261027-v1/technical-summary-ref-continuation-r2.
-HANDOFF264d3768/Source8965729a VERIFIED_READY_CLOSED15:18.
-Payload under matching M/us_equities/research_inputs/.../technical-summary-ref-continuation-r2.
-Named context/target producers -> exact Engine consumers/codec27b03425;
-first projection+independent verification PASS/20CSV20availability/3oldpayloads.
-Full2818FIT/55INNER/15EVAL axes retained.563cadenceFITdates/515nonempty/
-7713lossrows,11INNER/187rows,255EVALkeys. No EVAL targets emitted.
+A/data/current-intraday-research-readiness-20261028-v1/CONSUMER.json
+4c8c955e CLOSED metadata inventory16:40, Source0eec3856/24checks/Ruff PASS.
+KIS complete SPY34/QQQ33sessions, partial51/52; four missing days remain.
+20stocks x10days have 1m/5m/10m/1h/3h files, distinct gap/final-partial flags.
+Existence is not complete/final data or historical decision-time arrival.
+No raw arrays/API/credentials/fits, no new download needed for ready research.
 
-Original guard failure and r1 final ref(ROOT/codec.py) FileNotFound preserved.
-R2 bound exact actual codec metadata and retained completed producer/assertion
-facts without replay; old failed actors never retroactively PASS.
-Data247.055835/300/allJobsclosed/0HTTP/GPU/modelcalls. Direct Enginehandoff15:16;
-Engine actually completed head19c14903/REJECT15:20:57. No rebuild/projection/
-fit replay, refunded failures or reopened original hard15:25:06 clock.
-D free fraction.367 before build. This MD is not a running collector claim.
+C120/H60 PAST packet Source765a60f9 is already qualified:
+A/data/current-c120-h60-causal-past-packets-20261027-v1.
+FIT6054/145sessions, INNER1806/43 (1800known/6unknown retained),
+EVAL2610/63 reused sessions. PAST120x10 QQQ/SPY OHLCV, ends no later than origin.
+Entry OPEN origin+60; target CLOSE start+3600/end+3660. No rebuild or imputation.
+Engine's new cost-event view must exercise its actual target/file ABI before fits.
 
-## Useful Existing Inputs / Do Not Rebuild
+## Qualified Closed Daily Handoffs
 
-Long17 Dataf496b3b3 is qualified/closed:2954origins/46070featureknown/
-46050labels/47x17OOFknown, exactold600overlap parity; one projection/20CSV+
-availability intakes/0HTTP. Gaps2021-05-05/2023-06-05 retained, no imputation.
-Currentpoint335fb02f reuses20rawcontexts/61sessions throughOct26, all17known,
-delivery/capture clocks distinct, no HTTP. Ridge currentproposal6329/nativee734
-already produced, do not repeat conversion/inference.
-OOF gate7861d8f7/physical packets closed; Engine gate rejected increment.
-TimesFM512 old47 contexts534bf54e closed/consumed; original884guard failure
-kept, exact M OOF path repair/40CSV40JSON/4attempts3decodes/oneprojection.
-Do not repeat original47model/context work for the new F3 head family.
+F3 head packets technical-summary-ref-continuation-r2:
+HANDOFF264d3768/Source8965729a/codec27b03425. Full2818FIT/55INNER/15EVAL
+axes retained;563cadenceFIT/515nonempty/7713lossrows, INNER187, EVAL255keys.
+20CSV20availability/3oldpayloads/one projection+independent verify,247.055835s.
+Original guard/summary-ref failures remain. Consumed by head19c14903 and
+Lag512 first unused adapter; neither repeats Data build or completed model work.
 
-Quote cf132417 CLOSED:
-A/data/current-paper-quote-clock-capability-probe-20261027-v1.
-4GET/1POST/0failures/same RAM client/token;13:31/13:32RTH uniquely Korea-fresh/
-positive noncrossedBBO/stampadvanced. Current REST timezone interpretation
-supported for measured endpoint; no freshness relaxation or repeated probe.
-All4original PID-starts absent,124.283activeupper;1923.997whole process includes
-1920.419worker idle, not CPU/GPU spend. No account/orderability/fill/finality claim.
+Long17f496b3b3/currentpoint335fb02f and currentRidgeproposal6329/nativee734
+already closed. Quote clock cf132417:4GET1POST, measured Korea-fresh timestamps,
+not provider finality/account/fill proof. Source and clock limits stay.
 
-## Storage / Consumer Boundaries
+## Current Next / Boundaries
 
-Canonical under M, generated metadata/models under A; never Git/raw logging.
-Keep15percentD free/warn projected20percent. Original Mode1/currentlisting/
-nonPIT/CA/TR/session-finality/capture limitations stay; independent-alpha or
-decision-time availability cannot be inferred from retained historical bars.
-Canonical1m resampling and direct daily history are separate sources.
-Missing required windows remain unavailable, no crop/fill/OPEN-only weakening.
-Use existing useful coverage/cursors before downloads or repeated probes.
-Private no-cost KIS Paper market acquisition is delegated through named owner;
-Execution owns account/order endpoints. Reuse valid client/token and documented
-pacing; cooldown is worker next_due, not a company wait.
+Current independent ready C120 consumers need no acquisition. Strategy prepares
+one original volume-absorption kernel, Engine owns targets/fits/comparisons.
+Execution V2 account probe is not Data ownership or a new collector.
+Official KIS once/min token issuance plus a scoped60floor succeeded; global300
+and frozen Data contracts are unchanged. Reuse valid clients, no retry flood.
+
+Canonical data M; generated models/metadata A. Keep15percentD free/warn projected
+20percent. Currentlisting/nonPIT/MODP1/corporate-action/finality/retrospective
+capture limits constrain claims, not all research or provisional Paper.
+Missing windows remain unavailable. Direct daily and derived canonical1m bars
+are separate sources. Named workers own cursors/cooldowns/next_due; no foreground
+session wait, repeated capability probes or invented collection progress.

@@ -1,71 +1,73 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-28 KST, observed Oct27 15:15UTC. A=D:/thericher-v2/model-artifacts.
-Parent owns activation/shared MD/Git; AGENTS owns standing Paper authority.
-Never live/KIS_LIVE_*. ONE initialB/10/cost/loss/pending/F9 stays unchanged.
+2026-10-28 KST, observed Oct27UTC17:25.
+A=D:/thericher-v2/model-artifacts. Parent TRUE/activation/shared MD/Git.
+Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Never live/KIS_LIVE_*. ONE originalB/10/cost/loss/pending/F9/identities retained.
 
-## Current Actual Runtime
+## Actual Paper State
 
-Original MSFT13:40/13:47UTC ran but exact diagnostics7179/a946 report
-technical_failure_unknown_effects/RuntimeError. Admitted actualreader56ce6efc
-at13:53: policy65f/a861 ABSENT/target1UNKNOWN/bound0; accepted/fill/current
-owned NULL, not zero/no-submit/flat. No repeated identical read/reserve release.
-Exact firstcause and RESULT-ACTUAL roots are in HANDOFF.
+Original MSFT13:40/13:47 and r3 15:45/15:52 consumed, LOWVOL15:30/15:37 consumed.
+MSFT r3 exact faults af292aaa/ae038e23 bind d58/release2b3e/input65f/policya861/
+round/run/window: NATIVE_EXECUTION/ValueError/transport.py575/worker_frame_invalid.
+Recovery outer slot_phase exit is NOT a sell. No qualified native/API/submit/fill.
+Exact actor-aware RO reader54605954 admitted16:09,3admissions13Jobs/full source
+and private stability/ownCID closed: policy ABSENT/target1UNKNOWN/bound0,
+accepted/fill/currentowned NULL, not zero/no-order/flat. Actual observed own3
+actors only, not GPU co-tenancy. Earlier f51 after_remove failure stays UNKNOWN;
+its own CID later positively absent. Never rerun consumed read or release risk.
 
-Current admission defect reproduced after app Node/manifest changed while
-bootstrap/control entries/closed grammar stayed unchanged. Not proof of sole
-historical cause/nativecalls0. Common34c22d27 captures allowlisted fault stage
-immutably; no raw payload/retry/risk/budget modifications.
+F9book764d9836/primary9b65a0e7 pending1/UNKNOWN-HELD. Missing holdings/open orders
+or expired jobs do not release it. No reset/foreign adoption/profit bank expansion.
+Fees/settledcash/netPnL remain unobserved without exact evidence.
 
-### LOWVOL
+## First Cause / Ready Exact Recovery
 
-Actual repaired hoste2b06935/TRUE96f10d52/imagee414/input58f/policyf037.
-All original4 names/triggers/principal/API7 ACL/paths/counters/basis/F9 retained.
-Entry updated15:06 then readback failed on omitted default Enabled=true.
-Derivativehelperf3e1 adds only that equivalence;18old+13focused tests PASS.
-Firstentry independently reconciled; remaining3 applied/read back15:14:47.
-No blind rerun, Task.Run or financial inference.
-A/execution/current-paper-runtime-custody-repair-20261027-v1/lowvol-activation-r2/inert/RESULT.json.
-Entry15:30..34/recovery15:37..41UTC Oct27 (Oct28KST00:30/00:37);
-owned exitNov3 14:35..39/recovery14:42..46. Halley callback15:42UTC.
+LOWVOL native Task contract whole argument D:/ versus Windows Path spelling
+defect reproduced. Consumed recovery missed120s guard, not replayed. Original
+future two exits normalized16:36:36/Plan160ebd82, same e2/TRUE96f/ACL/history/
+Nov3UTC14:35/14:42 duties. MSFT original future exits normalized15:40/Plan0a3c.
+Neither installation nor task exit is financial evidence.
 
-### MSFT Final Same-Input R3
+Actual e414 help/empty/missing-proof bootstrap gave framed JSON, not nativeEOF.
+Daemon omitted existing first_failure_sink; new PREPb5651fd9 adds only sanitized
+bound first-failure/transport capture. Four real same-image transport fixtures
+PASS. Claude refreshed ABI b7f6/SINK advisory GO_WITH_LIMITS, advisory not authority.
 
-Actual application/enabling15:14:08:
-A/execution/current-paper-runtime-custody-repair-20261027-v1/msft-activation-r3/RESULT.json.
-Hostd58d4ecb/Plane6f0a216/same original65f/a861/cohort/image/privatebank/
-counters/pending/F9. Created exact technical pair disabled/readback then enabled:
-15:45..49/recovery15:52..56UTC (Oct28KST00:45/00:52).
-Consumed13:40/47 Tasks remain untouched. Original Nov2 20:45/20:52 exit
-actions repinned, their duties/clocks unchanged. Earlier14:45/14:55 drafts inert.
-Native deterministic identity/fresh quote/funds/owned inventory/reconciliation
-can veto. It is not a substitute unknown intent or a second bank.
-All4Ready/enabled/instances0 at installation; no actual new runtime result yet.
+A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1:
+host4b8b4e6c/routef341a625/BINDING3b470007, one new recovery17:30..34UTC,
+native recovery/outer phase exit. Same65f/a861/cohort/imagee414/privatebank/gate/
+round/counters/B10/F9. Native unknown/missing/exhausted eligibility may veto.
+Parent actual17:25:03 installed/enabled: TRUE9b8eb452/Plan31e23615,
+parent-activation-r1/RESULT.json, newTaskXMLc1bed5d3/API7ACL4f54.
+Single disabled-create/readback/enable, no Task.Run or substitute entry.
+Eight synthetic tests PASS after exact never-run-history fix; old failed
+tests preserved. Activatorbf296446/helperace unchanged thereafter.
+Original Nov2UTC20:45/20:52 exit action refs only, clocks/duties unchanged.
+New actor profile unmerged; numerical actors closed17:24..35 for finite admission.
+All old installers/reads/opportunities consumed, no blind retry/time roll.
 
-Sagan independent a2883177 PASS15:18: exact8 current Task metadata/source/
-action/TRUE/ACL/semantics/history plus2unchanged consumed originals;10public
-metadata reads/zeroeffects/explicit helperf3 pin. Socrates prepares new exact
-offline outcome caller and finite15:57 Task callback. No private read during prep.
-Original actual installers/activation scopes and firstMSFTreader are consumed.
+## Actual Read-Only API Capability
 
-## Custody / Other Responsibilities
+A/execution/current-kis-paper-account-readonly-capability-20261028-v2/CONSUMER.json
+Source71b46541/result2d157c64 actual16:50:1tokenPOST3GET0retries,
+NASD/NYSEbalances/reference orderability SUCCESS;7deduplicated holding items.
+No AMEX/accountmatch/privateanchor read, NOT complete custody, exact owned
+holdings/fill, executable risk snapshot, settledcash or PnL. Scoped Paperloader,
+noLIVE/secrets/rawrows/privateamounts persisted;14synthetic tests/allactors closed.
 
-F9book764d9836/primary9b65a0e7 pending1/UNKNOWN-HELD remains; old missing response
-category is not no-order. No reserve release/reset/foreign inventory adoption.
-Strict offline reader needs exact source/input/policy/request/fill/current-owned
-binding, actual private-writer closure, RO/networknone and before/after full
-membership/identity/mtime/bytes. Market/research actors are not automatically
-private writers. Never recovery observe() as reader.
-Fresh broker holdings require a separate named read-only query. Missing funds
-does not invalidate separately complete holdings or prove account/risk readiness.
-Fees/settled cash/net PnL stay unobserved without exact evidence.
+V1 token defer0API retained. Observer q4min plus default300 can starve newclients;
+official one/min +V2 scoped60 floor succeeds without locks/startmark reset.
+Global300/frozenData unchanged. Native worker ALREADY explicit60; not proven
+cause of its EOF. No repeated identical account probe.
 
-Newd892 image/US Ridge17 inpute734 and operational candidate remain INACTIVE.
-Migration mapeb451d98:14source bundles, not14deployments. Compilerbcf75832
-groups9; e414 proof8d61690e and exact2ff native proof qualify named ABI only.
-Do not blanket block original NAS execution or migrate unknown historical
-owners; retain original paths/identity/pending/basis and safe compatible exits.
+## Verification / Next
 
-Fresh recovery tests19514/26 with exact8workerpairs/cleanup; serial370/1,
-externalcommon8/helper31/Ruff/threeCompose PASS, protecteda1500c15 unchanged.
-Source/tests/install are not financial proof. Company UNFINISHED.
+Fresh full19514PASS26knownSKIP/eight actualworkerpairs/owncleanup; serial370/1,
+externalcommon8/helper33/accountV2tests14/nativewire4/Ruff/threeCompose PASS.
+Exact1412protected a1500c15 required for reuse; new external caller needs own
+focused checks. Source/tests/registration are not native closure or broker PnL.
+Halley owns one17:35/hard17:39 source-safe callback. Reader713b1cf5 qualifies
+exact public source/release/run/time/input/policy binding, five syntheticPASS;
+no new private/API/Docker/Task call or task-exit financial inference.
+Newd892/USRidge17e734/6329 remain inactive; e414 still actual broker image.

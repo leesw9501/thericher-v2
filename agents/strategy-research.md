@@ -1,58 +1,43 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST, observed Oct27 15:50UTC.
-A=D:/thericher-v2/model-artifacts. Source-backed mechanisms/proposals only;
-Engine owns fitting/targets/splits/costs, Execution broker risk, Parent MD/Git.
+2026-10-28 KST, observed Oct27UTC17:21.
+A=D:/thericher-v2/model-artifacts.
+Leibniz current pure proposal owner; Engine targets/splits/fits, Parent shared MD/Git.
 
-## Ready / Adopted
+## Current Ready / Being Prepared
 
-NAS100_RAW397_LINEAR_TOTAL_OPEN5_PAIR_V1 contract3da91bae ADOPTED by Parent.
-A/research/current-nas100-raw397-linear-source-readiness-20261027-v1.
-One397coefficient/no-bias linear access to63x6 transformed history+19indicators,
-not another recurrent pooling layer or first project raw-history study.
-Actual existing hybrid join fb46bd27/rawfdca3082 and static19 packets qualified;
-same literal100/FIT2015..2023/INNER2024/EVAL2025/purges/masks/affines.
-Onefit/max128epochs/INNERpatience16/LR schedule/earliest bestincl0, exact
-proper pairBCE increment vs cachedLinear19/ownINITIAL/alignedconstant.
-No financial ledger/alpha/Paper promotion from proper-score pass.
-Engine numerical root current-nas100-raw397-linear-learning-development-20261028-v1,
-1000active/3600elapsed actualfreeze, native optimizer/checkpoint/new file ABI
-before market. Source actor attestation is not proof it is running.
+A/research/current-official-kis-strategy-kernel-readiness-20261028-v1/CONSUMER.json
+61da76cc CLOSED source-only review. Official KIS repository commit3a9be59a
+describes strategy_builder80indicators/10presets. Reuse license not verified;
+NO code imported, dependency installed or broker behavior changed.
+One original proposal: C120 volume absorption (volume expansion, range
+contraction, positive close-location pressure). Existing PAST input is present,
+but new consumer binding/kernel not yet qualified. Source checks15 PASS,
+zero market payload/fit/API; official source claims are not project results.
 
-Leibniz's Long17 Lag512 alternative is SOURCE_READY/NOT_DISPATCHED:
-A/research/current-liquid17-next-sequence-expert-readiness-20261027-v1.
-Contractd9cea31a/Source9171db64/Claude83c8bccc GO_WITH_LIMITS.
-Existing Data8965729a/codec27b03425, one CPU convex Ridge513 on512 beta-neutral
-OPEN trajectory lags; one fixed-half composition with cached staticRidge.
-Onefit/720active3600elapsed only IF separately adopted; native actual file/
-scaler/Torch solve/cold state required, not inherited TimesFM proof.
-Distinct question, no automatic second numerical campaign or old model replay.
+Leibniz now prepares one original pure executable kernel:
+A/research/current-c120-volume-absorption-rule-preparation-20261028-v1.
+180active/hard17:45, actual10-channel C120 ABI and synthetic causality/missing/
+finite tests, no market fits/replay. Concrete downstream cost/baseline/kill,
+not copied public code or80indicator grid. Command actors close17:24..35 for
+finite Paper admission; source writing may continue. Direct Engine handoff.
 
-## Closed / Rejected
+Cost-event TCN readiness077a5f01/6f773225 ADOPTED, numerical owner Engine.
+Faraday prepares independent nonDL tabular contract, not the same rule.
+RAW397 and Lag512 no longer ready/unrun: both actually completed and rejected.
 
-Head readiness1700f542 was adopted, not still pending. Actual frozen TimesFM
-hidden-head19c14903 CLOSED_REJECT15:20:57: one8epoch fit/best0INITIAL,
-MSE.001862879805 loses matched Ridge.001837390593, UNIFORM action alias/
-whole compatible cached15ledger; no learned improvement/convergence claim.
-Base2loads543forwards8728series/8CIDs40Jobsclosed/leaseabsent.
-Original Data failures and qualified r2 handoff247.055835 remain immutable.
+## Closed Evidence / Do Not Rescue
 
-Zero-shot TimesFM8ec7 and fixed-half blendd27e already rejected; no repeat.
-Optional stockwise disagreement gate is SOURCE_ONLY/NOT_ADOPTED,
-Claude REVISE retained, no numerical/registry grant. Do not keep rescuing the
-same failing forecast stream or silently substitute it for the adopted expert.
-Earlier Ranker/HGB/gate/LSTM/TCN/hybrid/foundation/rule/indicator studies stay in
-existing registry/immutable Consumers/Git, not a new reading-list platform.
+RAW3977f403578: one CUDA77epochs/best61/173.1s/528MiB, pairBCE.67845692
+loses cachedLinear19.67568712, no financial ledger.
+Lag512 HALF increment rejected on MSE/DD despite growth1.4342% vs1.3596%;
+DD.54094% vs.27041%. Original failed import retained/checked loader repaired,
+completed native/model not replayed. Consumer technical-host-import-r1.
+Head19c14903 best0INITIAL/UNIFORM alias REJECT; TimesFM8ec7/d27e and earlier
+ranker/gate/HGB/recurrent/hybrid/rule/indicator studies remain immutable history.
 
-## Evidence / Claim Boundaries
-
-Official PyTorch2.7 Linear source/license checked in397 readiness; installed
-Torch2.7/NumPy/safeNPZ runtime only, no install/download/new framework.
-Public foundation model checkpoint release/hash/corpus limits remain explicit.
-Compare hypotheses and matching keys/availability/payoff/costs; positive individual
-profit is not required for exploratory fusion. Learned fusion uses trueOOF,
-not in-sample predictions; at most31dates is a meaningful small-sample limit.
-Currentlisting/nonPIT/MODP1/CA/TR/finality/capture/global outcome reuse means
-adaptive development, not independent alpha or historical arrival proof.
-Proposals end in one executable contract or rejection, not permanent agents per
-indicator or more approval/gate/report systems. No credentials/KIS/Task effects.
+Compare aligned keys/availability/payoff/costs/turnover/DD; individual profit
+is not prerequisite for exploratory fusion, learned gates need chronological
+OOF. Currentlisting/nonPIT/MODP1/CA/finality/retrospective arrival/global outcomes
+and foundation pretraining scope constrain claims. Never label adaptive
+development independent alpha. No broker/credentials/risk authority.

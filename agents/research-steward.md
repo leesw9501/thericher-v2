@@ -1,55 +1,46 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-28 KST, observed Oct27 15:18UTC.
+2026-10-28 KST, observed Oct27UTC17:21.
 A=D:/thericher-v2/model-artifacts.
-Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is the ONE GPU/resource/registry
-coordinator. Parent shared MD/Git, Engine model choice; AGENTS owns policy.
+Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c owns ONE GPU/registry coordinator.
+Faraday only disjoint CPU package. Parent shared policy/MD/Git/activation.
 
-## Actual Resources / Latest Closure
+## Current Resources / Ready Work
 
-F3 head Consumer19c14903 CLOSED_VERIFIED_REJECT15:20:57, CLOSURE-FINAL15:22:05.
-A/research/current-liquid17-timesfm-frozen-head-development-20261027-v1.
-Actual1marketfit8epochs4120updates/6.738s; INNER chose INITIALepoch0, not
-convergence or learned improvement. Base2loads543forwards8728series;
-marketencode26.882s/peak1140MiB. No completed native/model replay.
-All8containers/40CLIJobs closed/GPUlease absent, no active owned training now.
-Combined797.603703/1800 includesData247.055835 once; original failures/debits/
-13:55:06..15:25:06 clock stay closed. Old ACTOR-LIVE file is history.
+New adopted cost-event TCN root current-intraday-cost-event-tcn-development-20261028-v1.
+Readiness077a5f01; actualfreeze1500active/5400elapsed, onefit/128epochs6144updates/
+7500forwards/1.1Mrows, INNERearlystop/schedule/restored checkpoint, no numericalretry.
+Actual Source c71c1119 and actor profile are constructor/inert preparation,
+NOT proof CUDA training or admission by existing broker claims.
 
-Data264d3768 qualified/closed and actually consumed, not a permission hold.
-Next sequence/expert readiness is source-only. Recheck actual free/projected
-peak VRAM and4096MiBdesktop reserve before useful new workers. This project
-has first GPU priority even with user apps; never kill apps/change drivers.
-Independent ready frozen jobs may run concurrently under ONE coordinator;
-no dummy training/utilization targets or repeating completed fits.
-Source-attest actual process/container/mount capabilities before broker
-admission; no giant checkpoint rehash per custody check or blanket block on
-Data/Research. Sagan inspects current reuse path, not a new agent platform.
-Execution emergency preempts safely, uncertainty defers exact worker only.
-Optional disagreement-gate is NOT_ADOPTED/Claude REVISE, no numerical grant.
+Paper single recovery17:30..34UTC is prioritized: close actual project actors
+by17:24 until17:35/exact broker owner closure. Source preparation can continue.
+Then measure actual free/projected peak VRAM with4096MiB desktop reserve and
+launch useful ready work; no assumption about utilization from source files.
+First GPU priority includes user apps; do not kill apps/change drivers.
+Independent frozen children may co-run under coordinator and measured headroom,
+but each keeps its own caps/output/checkpoints/PID-start and co-tenancy caveat.
 
-## Closed / No Reruns
+## Closed Workers / Do Not Repeat
 
-Next ADOPTED397linear contract3da91bae/rootcurrent-nas100-raw397-linear-learning-development-20261028-v1:
-1000active/3600elapsed actualfreeze, onefit/max128epochs9088updates/fit450,
-source150includesprior45once/native90/affine20/infer60/readout30/verify90/
-cleanup60/reserve50. Exact10500calls16Mrows, new native/cold before market.
-Source/current capacity/actor-profile binding precede useful CUDA launch;
-inert profile is not current broker runtime admission. Existing07ac only has
-the old exact RO reader host rule, not arbitrary Research authority. Coordinate
-actual scoped actor facts directly Sagan, no blanket whitelist or new platform.
-No current GPU use inferred from adoption or source preparation.
+RAW3977f403578 REJECT: actual CUDA77epochs/5467updates/best61/173.1s/528MiB;
+3CIDs19CLIJobs closed/GPUlease absent,516.10upper/1000. No new fit/seed rescue.
+Lag512 final technical-host-import-r1 REJECT: CPU1fit/8184unique model keys
+including native,6CIDs30Jobs closed, shared registry completed; final upper
+382.162/900 includes old337.949 once plus checked import fix/first unused adapter.
+Failed old host is retained, not retroactive PASS or a new trial.
 
-TimesFM8ec7:48native+market forwards/2loads/864series/peak1011.75MiB,
-47market11.094s; all children/lease closed, REJECT. Fixed-half blendd27e
-CPU0fit/GPU/modelcall closed verifiedREJECT.
-Long17MLP43c6:3CUDA20/32/30epochs,6774updates/sum223.980leafwalls/86MiB
-peak;7CIDs37Jobsclosed. Rankerb16d:3CUDA28/32/26epochs/7074updates,
-technical envelope failure retained plus scientific rejection.
-LSTM82b2:36epochs/best21/137.183s/756MiB, hybrid4fe2:29epochs/best14/
-111.020s/766MiB; both closed/rejected. HGB23fc/gatec842 CPU work closed.
-Co-tenant timings are not isolated benchmarks. Original ledger/debits/checkpoints/
-failures remain immutable; old per-study caps never global GPU limits.
+TimesFM head19c14903:8epochs/best0INITIAL,2base loads543forwards8728series,
+market encoding26.882s/1140MiB, fit6.738s.8CIDs40Jobs closed/lease absent.
+Combined797.603703 includes Data247.055835 once. Earlier TimesFM8ec7/d27e,
+MLP43c6/Rankerb16d/LSTM82b2/hybrid4fe2/HGB23fc/gatec842 closed as frozen.
+Old ACTOR-LIVE/lease narratives are not current processes. Never age-reclaim
+live/unknown ownership, refund failures or repeat completed work for utilization.
 
-Next source-only sequence/expert readiness is assigned to Strategy/Leibniz.
-No model choice/approval platform, extra per-agent database or permanent daemon.
+## Resource Decisions
+
+Execution reliability may preempt safely. A source profile is not runtime
+classification; actual actors/mounts/source membership must match exact rule.
+Unknown ownership defers that campaign, not all research. Native constructor/
+producer-consumer/file/optimizer checkpoint smoke precedes market fits inside
+caps. No human approval platform, permanent daemon or dummy training.
