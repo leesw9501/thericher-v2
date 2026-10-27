@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,05:25UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,07:07UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
@@ -25,11 +25,22 @@ No target/futureknownness selection, weight/price fallback or ratiorescue.
 
 Current executableconsumer: feature-onlyasofOct26/currentcaptured100point for
 LOWVOL21 andsavedLinear33/affine4c08, top10fairties/all100mask/allowFALSE.
-Old currentpoint unavailable from missing SPY context; Data route repair and
-unused actual inference stage keep direct schema handoff, no fit/PnLreplay.
+Data32007 repaired originalSPY/AMS, point28e89 actual oneCPUforward complete;
+nativeinert75a7 input58f preserves all100/81known/10targets, allowFALSE.
 One-cohort account-owned Paperconsumer Source is releasepriority; fullmultiple
 modelarchitecture not automatically prerequisite. Policy/profitability/source
 labels cannot mintcapital/brokerpermissions or roll an expiredidentity.
+
+NEW forward-risk Source03c76/contract357697bd adopted conditionally; c39d/q10
+and primary references were checked, not a first-vol-model claim. Data02eb
+READY/native/file/cold/oneprojection, separate EVAL labels held. CPU Ridge and
+oneGPU20-MSE MLP may advance after their actual native optimizer/checkpoint
+and measured resources; origin06:44/hard08:14/1800combinedowned. Strongestkill
+is no forecast increment over aligned naive/constant/Ridge/INITIAL references;
+log future OPEN mean-square is not alpha, latent variance or broker-risk change.
+Exact fit/call/time caps remain frozen, reused2025 not independent evidence.
+Faraday now inspects metadata-only complementary return+risk consumer readiness,
+not an additional fit/forecast intake or reopened old family arm.
 
 ## Checked Project Evidence / Limits
 

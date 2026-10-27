@@ -9,6 +9,64 @@ $RefreshCadenceMinutes = 4
 $SnapshotTtlMinutes = 5
 $MinimumSessionRemainingMinutes = 4
 
+function ConvertTo-ObserverNativeArguments {
+    param([string[]]$ArgumentList)
+    $parts = [System.Collections.Generic.List[string]]::new()
+    foreach ($argument in $ArgumentList) {
+        if ($null -eq $argument) { throw 'native_argument_null' }
+        $quote = $argument.Length -eq 0 -or $argument.Contains(' ') -or $argument.Contains("`t")
+        $builder = [System.Text.StringBuilder]::new()
+        if ($quote) { [void]$builder.Append('"') }
+        $slashes = 0
+        foreach ($character in $argument.ToCharArray()) {
+            if ($character -eq '\') { $slashes++; continue }
+            if ($character -eq '"') {
+                [void]$builder.Append(('\' * ($slashes * 2 + 1)))
+                [void]$builder.Append('"')
+            } else {
+                [void]$builder.Append(('\' * $slashes))
+                [void]$builder.Append($character)
+            }
+            $slashes = 0
+        }
+        [void]$builder.Append(('\' * $(if ($quote) { $slashes * 2 } else { $slashes })))
+        if ($quote) { [void]$builder.Append('"') }
+        $parts.Add($builder.ToString())
+    }
+    return [string]::Join(' ', $parts)
+}
+
+function Invoke-ObserverNativeQuiet {
+    param([string]$FilePath, [string[]]$ArgumentList)
+    $info = [System.Diagnostics.ProcessStartInfo]::new()
+    $info.FileName = $FilePath
+    $info.UseShellExecute = $false
+    $info.CreateNoWindow = $true
+    $info.RedirectStandardOutput = $true
+    $info.RedirectStandardError = $true
+    if ($null -ne $info.PSObject.Properties['ArgumentList']) {
+        foreach ($argument in $ArgumentList) { $info.ArgumentList.Add($argument) }
+    } else {
+        # Windows PowerShell/.NET Framework lacks ArgumentList.
+        $info.Arguments = ConvertTo-ObserverNativeArguments $ArgumentList
+    }
+    $process = [System.Diagnostics.Process]::new()
+    $process.StartInfo = $info
+    try {
+        $null = $process.Start()
+        $stdout = $process.StandardOutput.ReadToEndAsync()
+        $stderr = $process.StandardError.ReadToEndAsync()
+        $process.WaitForExit()
+        $out = [string]$stdout.Result
+        $err = [string]$stderr.Result
+        $lines = @([regex]::Split($out, '\r?\n') | Where-Object { $_.Length -gt 0 })
+        $lines += @([regex]::Split($err, '\r?\n') | Where-Object { $_.Length -gt 0 })
+        return [pscustomobject]@{ ExitCode = [int]$process.ExitCode; Output = $lines }
+    } finally {
+        $process.Dispose()
+    }
+}
+
 function Get-ObserverUtcNow {
     return (Get-Date).ToUniversalTime()
 }
@@ -66,11 +124,12 @@ function Get-SafeSessionStatus {
     $priorErrorActionPreference = $ErrorActionPreference
     try {
         $ErrorActionPreference = "Continue"
-        $output = @(
-            & uv.exe run --no-env-file --no-sync --project $ProjectRoot python $inspectorPath `
-                --observed-at $ObservedAt.ToString("o", [System.Globalization.CultureInfo]::InvariantCulture) 2>&1
+        $native = Invoke-ObserverNativeQuiet -FilePath (Get-Command uv.exe -CommandType Application).Source -ArgumentList @(
+            'run', '--no-env-file', '--no-sync', '--project', $ProjectRoot, 'python', $inspectorPath,
+            '--observed-at', $ObservedAt.ToString("o", [System.Globalization.CultureInfo]::InvariantCulture)
         )
-        $exitCode = [int]$LASTEXITCODE
+        $output = @($native.Output)
+        $exitCode = $native.ExitCode
     } finally {
         $ErrorActionPreference = $priorErrorActionPreference
     }
@@ -148,12 +207,13 @@ function Get-SafeBridgeOutcome {
     }
     try {
         $ErrorActionPreference = "Continue"
-        $output = @(
-            & $bridgePython $bridgeLauncher --execute --project-root $ProjectRoot `
-                --paper-credential-path (Join-Path $ProjectRoot ".env") `
-                --observer-invocation-id $ObserverInvocationId 2>&1
+        $native = Invoke-ObserverNativeQuiet -FilePath $bridgePython -ArgumentList @(
+            $bridgeLauncher, '--execute', '--project-root', $ProjectRoot,
+            '--paper-credential-path', (Join-Path $ProjectRoot '.env'),
+            '--observer-invocation-id', $ObserverInvocationId
         )
-        $exitCode = [int]$LASTEXITCODE
+        $output = @($native.Output)
+        $exitCode = $native.ExitCode
     } finally {
         $ErrorActionPreference = $priorErrorActionPreference
     }
