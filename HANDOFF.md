@@ -2,14 +2,19 @@
 
 ## Current Reality
 
-2026-10-27 KST, through03:55UTC.
+2026-10-27 KST, through05:25UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent owns shared MD/Git/cutovers. AGENTS.md owns standing authority.
 Private no-cost Paper/Research is delegated; never KIS_LIVE_*/live/real money.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-Previous integrated checkpoint57074588; current refresh hash is GitHEAD.
+Previous integrated checkpoint52bd943c; current refresh hash is GitHEAD.
+Fresh docs/external verification:
+A/verification/current-learning-consumer-integration-20261027-v1/CONSUMER.json.
+1411protected digests same/startup1PASS0.09s/repoRuff/3Compose PASS;
+18new publicrefs exact/seven changed external Python files RuffPASS.
+Inherited mock_client30findings not erased; no repeated fullsuite/native scope.
 
 ## Actual Installed Paper
 
@@ -85,40 +90,81 @@ Weightedloss0129751f CLOSED_REJECT,3CUDAfits737updates/best0/0/9:
 WeightedHalf2.566644% growth loses oldRankHalf. No loss/seed/rho rescue.
 Older immutable model/results/debits remain Git57074588 and role evidence.
 
+## Completed Information / Cost Round
+
+Four market fits TOTAL are COMPLETE; no new architecture/seed/window sweep.
+Crossasset attention e3d55322:
+A/research/current-nas100-open5-crossasset-context-readiness-20261027-v1/CONSUMER.json.
+Source42b8994f/1CUDAfit17epochs1207updates/best1/28.817s/190MiB.
+BCE.676423807 loses cachedLinear.675687120; owninitial/constant improve.
+REJECT_LEARNING_INCREMENT,324.176247owned/3000/all5CIDs29Jobsclosed.
+
+RAW63 TCN ca100650:
+A/research/current-nas100-open5-raw63-tcn-learning-development-20261027-v1/fixture-continuation-r1/CONSUMER.json.
+Source23d55dc4/1CUDAfit16epochs4528updates/100.626s/610MiB, INNERbest0.
+INITIAL=SELECTED BCE.681615732 losesLinear.675687120/constant.679284237.
+REJECT_SEQUENCE_INCREMENT; native2updates/cold before market,1EVALintake/
+0financial/0retry/all6CIDs+processesclosed/leaseabsent.
+Combined729.169227owned inclData128.563943, oldEngine290/R1technical499d
+NOT_EVALUATED retained. Old64-target FP32roundoff1.014e-6>1e-7 diagnostic
+NOT erased/passed; new fixture64featureknown/4targetknown tests mask independence.
+Market/science/model unchanged, EVAL independentFP64; no convergence claim.
+
+Cost d4e477a6 COMPLETE:
+A/research/current-nas100-frozen-score-cost-policy-development-20261027-v1/CONSUMER.json.
+Six real analytical whole-share ledgers/49rebalances/oneO-Cintake AFTER all
+actions sealed, native100slot6cases, source local_paper/allworkersclosed.
+2025-01-02..12-24, synthetic fullB with10%targetgross/20bp EACHleg:
+LOWVOL21 growth2.097%/DD1.902%; Linear.984%/2.227%; MLP.673%/2.919%;
+fixedhalfblend.140%/2.340%; MOM21-3.551%/4.694%; uniform1.275%/3.212%.
+Blend fails both single-growth contrasts; DD condition passes, frozen REJECT.
+Lowvol/linear positive is descriptive reused-data development, not independent
+alpha, private capital/risk parity, actual fees/settlement/KIS or Paper promotion.
+Uniform mean exposure8.718% vsLowvol9.802%; report rounding/exposure confounds.
+310.26owned/900/no new fit-forward-GPU/retry. Prior decisions remain unchanged.
+Next release priority is feature-only currentpoint and provisional Paper
+consumer, not more GPU load or profitability approval.
+
 ## Current Parallel Work
 
-- Schrodinger Engine+sole Steward: RAW63+context9 temporal information expert
-  Source03:43..04:13UTC/180owned. One existing TCN implementation preferred,
-  same100/roles/OPEN5/pairBCE/cached linear/ownINITIAL/constant. Conditional
-  future max1fit/96epochs/27168updates/6000combinedowned/14400elapsed to07:43,
-  native+Data+resource qualification first; no actual new fit claimed.
-- Faraday Data: RAW63/context feature-only role projection03:43..04:43/600owned
-  under current-nas100-open5-raw63-context-packets-20261027-v1. One original
-  raw63 intake/all3roles, exact RAW19 keys/masks/clocks, newRaw6FIT-only affine
-  belongs Engine. No labels/new target build/API; direct named codec callback.
-- Halley invoked Engine: cross-asset attention Source03:50..04:20/180owned,
-  current-nas100-open5-crossasset-context-readiness-20261027-v1. One small
-  per-date100-token expert/no future-date attention/IDs. Conditional max1fit/
-  128epochs9088updates/3000owned7200elapsed to05:50. Schrodinger admits its
-  bounded CUDA native then market worker through existing resource owner.
-- Socrates invoked CPU Engine/DataCost: finite frozen-score/rule cost-policy
-  Source03:43..04:13/180owned, current-nas100-frozen-score-cost-policy-readiness-
-  20261027-v1. Six noncash policies plus cash, five-session cadence/top10/
-  same-gross/20bp each leg, actions sealed before held O/C marks. No numerical
-  authority yet; potential900owned5400elapsed/no fit/GPU.
-- Leibniz Execution: current-rankhalf-serial-native-financial-syn-20261027-v1,
- 03:36..05:36/1800owned/maxONEscenario6nativevisits-CIDs. Actual native
-  financial calls ONLY invented account/bank/HTTP; real BankLeg/Jobs/IPC.
-  Pending stops next cohort; exact recovery preserves SYNF9 reserve/foreign
-  inventory. Use /scratch so all748 image/SDK members remain readable.
-  No real private/credential/KIS/Task/allocation change.
+- Faraday: currentpoint diagnostic cb0f8134 CLOSED_AUTH_SUCCESS_INPUT_UNAVAILABLE.
+  Token POST1/2xx/TTL86400/sameclient28GET/27accepted pages/ATLC rate_limited,
+  0retries.26stocks strict63history but exact SPY/NYS page empty; date mask
+  false, NOT cash/no-signal. Native/cold PASS, fourJobsclosed/238.652owned.
+  Original auth failure remains unclassified, not invalid credentials. NEW
+  supported-SPY-provider/cursor repair uses retained pages, <=120GET/1token/
+  600owned1800elapsed/300s token guard; no account/order/Task. Separate output.
+- Socrates: currentpoint8d749ce1 CLOSED_INPUT_UNAVAILABLE, actual model restore/
+  forward/proposals0; old115owned/Sourcece0 unchanged. New qualified Data may
+  directly trigger unused stage<=60owned/900elapsed, combined<=240, one saved
+  Linear33 restore/100rowCPUforward plus LOWVOL21, same63/masks/affine4c08.
+  Both allowFALSE/unallocated, no fit/held/PnL or rolled Oct27identity.
+- Schrodinger: minimum ONEcohort Source7cd5/e377/ClaudeGO_WITH_LIMITS, not full
+  two-model platform prerequisite. Existing MSFT adapter is MSFT-only; separate
+  pure model adapter/invented100slot codec can proceed without real custody.
+  Old Nov2 tight exit gap NOT qualified. Inspect NEW planned Nov3 early-session
+  exit and Oct27 15:30 entry, explicit operational nonparity; no task installed.
+- Leibniz: fixed RO API/durability25e6af47 CLOSED_PASS, Sourceed908e4d,
+  actuale414/ded65/all748/75attributes/6owner+6durabilitycases.2CIDs/Jobsclosed,
+  408olderfiles exact/zeroHTTP-financial. NEW changed-code invented financial
+  regression<=one scenario/6visits/600owned1800elapsed; same identity across
+  advanced steps, no old failed-case reset, real private/KIS/Task/credentials.
+- Halley crossasset and GPU resources are CLOSED; no active GPU fit claimed.
+  All model/oldSource failures/costs remain; no dummy utilization.
 
-Bounded broader NAS100 learning set is completed2 +TCN1 +crossasset1 =4fits
-TOTAL, not a grid/hidden multiplier. Existing debits/old verdicts never reset.
-No dummy GPU load. Recheck headroom; project first priority/4GiB desktop reserve.
-Ready candidates may co-run under ONE Steward; timings are co-tenancy, not
-isolated benchmarks. Native CUDA probe needs initial resource admission, not a
-circular requirement that its CUDA result already exist.
+Full native-financial SYN remains INCOMPLETE, not company/operator hold:
+original6355 sourcefixture intent.request_id failed before native recovery;
+continuation02a hostvenv _virtualenv wrongly looked up inLinuxmanifest;
+freshchanged-code regression81eb0f49 proved newSYN MSFTentrypartial ->
+EXACTrecovery/fullfill/ownedpositive/0recovery-orderPOST, then diagnostic
+aggregate projection.quantity failed. Rank uninvoked.3newCIDsclosed/233older
+files unchanged; optional fakeSimulator file remained olderpartial. No real
+account, originalF9 or4Tasks touched. Old scopes consumed, never replay them
+or call old failures passed. Engineering retests of changed fixture code are
+distinct from repeating immutable model trials or unresolved actual orders.
+Fixed probe25e6 proves native attributes and scratch persistence ordering, not
+the full new financial scenario or actual account deployment. Jobwall3.047s
+is not a complete source-active meter. Never relabel older failures passed.
 
 ## Data / Serial Readiness / Recovery
 

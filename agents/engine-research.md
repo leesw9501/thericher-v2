@@ -1,44 +1,69 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,03:55UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,05:25UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
-## Current Bounded Round
+## Current Release Work
 
-Broader NAS100 learning round = completed2 +TCN1 +crossasset1 =4marketfits
-TOTAL. No architecture/seed/window grid or old-study rescue. All EVAL2025
-reuses oldTRAIN/currentlisting/nonPIT/MODP1; no independent alpha/Paper claim.
-Direct Data/Steward callbacks avoid another Parent approval relay.
+The bounded fourfit information round and sixcost policies are COMPLETE.
+Do not add an architecture/seed/window sweep or keep GPU busy by refitting.
+All EVAL2025 reused oldTRAIN/currentlisting/nonPIT/MODP1; no independent alpha.
+Socrates currentpoint CLOSED_INPUT_UNAVAILABLE8d749ce1: Data auth succeeds,
+but SPY/NYS empty leaves RAW19 date mask false. Actual restore/forward/proposal
+0, not a cash signal. Sourcece0aea11/native CPU proof retained; old result/
+115owned unchanged. Faraday supported-route/remaining-cursor repair may send
+a NEW qualified asofOct26/currentcapture packet directly. Then an explicitly
+new unused actual-input stage may spend <=60owned/900elapsed from receipt,
+combined<=240owned, <=1savedBEST33 restore/one100rowCPUforward,0fit/held/PnL.
+Same literal100/masks/63history/top10fairties/affine4c08 and actual native ABI.
+Both LOWVOL21/LINEAR proposals allowFALSE/unallocated, not bank/lot authority.
+Linear training ended2023; current inference is not all-history refitting.
 
-Schrodinger owns one sequence-information expert Source:
-A/research/current-nas100-open5-sequence-information-readiness-20261027-v1,
-03:43..04:13UTC/180owned. Prefer existing proven TCN/actual PyTorch API,
-RAW63 transformed/clipped6channels +context9, same100/roles/OPEN5/pairBCE.
-Question is practical temporal information+architecture, not pure attribution.
-NewRaw6FIT-only affine; context9 exactcompleted affine when same keys/source.
-Conditional future max1fit/96epochs/27168updates/30000calls/2EVALpaths/one
-EVALtarget;6000combinedowned(Engine5400+Data600)/14400elapsed03:43..07:43.
-Lower frozen contract/native+Data+resource qualification first. No fit claimed.
+Schrodinger invoked single-cohort Source/pure adapter preparation:
+A/execution/current-lowvol-single-owner-paper-readiness-20261027-v1.
+Minimum one provisional modelcohort through EXISTING account-owned kernel/
+native risk/journals, preserving4MSFT/F9. Fullmulti-model dispatcher is not
+automatically prerequisite. Existing MSFT adapter cannot accept a basket;
+separately named pure model adapter preserves that frozen guard. Inspect NEW
+planned Nov3 early-session exit/Oct27 15:30 entry variant; original tight gap
+NOT qualified. No actual private/API/Docker/Task operation or date roll.
+If SPY remains unavailable, separately declared stock-only LOWVOL engineering
+eligibility may be considered, never silently change old RAW19/study masks.
 
-Halley invoked Engine owns one crossasset context Source:
-A/research/current-nas100-open5-crossasset-context-readiness-20261027-v1,
-03:50..04:20/180owned. Small per-date100-token attention/pointscore expert,
-no symbol/date IDs or attention across future dates. Same qualified RAW19/
-completedFITaffine/cachedLinear/ownINITIAL/constant. Native permutation,
-unknown-padding poison/date-isolation/optimizer/checkpoint before labels.
-Conditional1fit/128epochs9088updates/10000calls/2EVALpaths/one target intake,
-3000owned7200elapsed03:50..05:50. Sole Steward admits tiny CUDA probe, then
-measured peak/ready contract qualifies market worker. No circular CUDA hold.
+## Completed Information / Financial Comparison
 
-Socrates invoked CPU Engine/DataCost Source:
-A/research/current-nas100-frozen-score-cost-policy-readiness-20261027-v1,
-03:43..04:13/180owned. Frozen LINEAR/MLP/fixedhalfTIERANK/MOM21/LOWVOL21/
-UNIFORM plus cash, every5officialsessions/top10/fairties/samegross/20bp eachleg,
-whole quantities/quantity-delta netting via existing kernel. Weights seal before
-one held O/C intake; no future-missing selection/imputation. Fixedblend must
-beat both singles' net growth with DD<=aligned risky uniform, not zero cashDD.
-Potential900owned5400elapsed/max6ledgers/no fit-GPU; no numeric authority yet.
+Crossasset e3d55322, Source42b8994f:1CUDAfit17epochs1207updates/best1/28.817s/
+190MiB. SelectedBCE.676423807 improvesinitial/constant but losesLinear
+.675687120; REJECT_LEARNING_INCREMENT.324.176247owned/all5CIDs29Jobsclosed.
+A/research/current-nas100-open5-crossasset-context-readiness-20261027-v1/CONSUMER.json.
+
+RAW63 TCN ca100650,Source23d55dc4:
+A/research/current-nas100-open5-raw63-tcn-learning-development-20261027-v1/fixture-continuation-r1/CONSUMER.json.
+1actualCUDAfit16epochs4528updates/100.626s/610MiB,best0=INITIAL.
+BCE.681615732 losesLinear.675687120 andconstant.679284237; nolearning
+increment/sequence gain. REJECT_SEQUENCE_INCREMENT. OnephysicalEVALpath reused
+for INITIAL/SELECTED,1targetintake/0financial/0marketretry/all6CIDs+Jobsclosed.
+729.169227combinedowned inclData128.563943, oldEngine290/r1technical499d kept.
+Old1953pairFP32error1.014e-6>1e-7 remains diagnostic, NOT erased/passed.
+New64featureknown/4targetknown fixture tests mask independence; unchanged
+model/market/science, real optimizer/cold beforelabels, FP64 EVAL separately.
+No convergence/independent alpha claim or longer-fit rescue on seen outcomes.
+
+Cost d4e477a6 COMPLETE:
+A/research/current-nas100-frozen-score-cost-policy-development-20261027-v1/CONSUMER.json.
+Native100slot6cases; sixactions sealed BEFORE oneO/Cintake;6whole-share
+analytical local_paper ledgers/49rebalances/20bpEACHleg/fixedsyntheticB.
+2025Jan2..Dec24; growth/DD percentages:
+LOWVOL21 2.097/1.902, LINEAR .984/2.227, MLP .673/2.919,
+fixedhalfblend .140/2.340, MOM21 -3.551/4.694, uniform1.275/3.212.
+Blend fails both single-growth tests, passesuniformDD: frozen REJECT.
+MeanexposureLowvol9.802%/uniform8.718%, turnover2.375/0.507, costs.475%/.101%.
+No lower-exposure alpha inference; retained nonPIT/CA/dividendTR limits.
+310.26owned/900/no newfit-forward-GPU/retry/allworkersclosed.
+Positive descriptivegrowth is not independentalpha/nativebudget-risk/fill/
+settlement parity. Prioritize these cheap candidates' provisional consumer
+instead of requiring a scientific winner or inventing another GPU search.
 
 ## Completed Larger Learning Study / Do Not Repeat
 

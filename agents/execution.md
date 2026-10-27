@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-27 KST,03:55UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,05:25UTC. A=D:/thericher-v2/model-artifacts.
 Parent owns shared MD/Git/cutovers. AGENTS owns standing private Paper authority.
 Never KIS_LIVE_*/live/real money or reset ONE original sharedB/10/F9/cost/loss.
 
@@ -51,34 +51,63 @@ All read scopes CONSUMED; future observations require fresh exact admission.
 
 ## Current Integration Work
 
-Leibniz owns
-A/execution/current-rankhalf-serial-native-financial-syn-20261027-v1,
-03:36..05:36UTC/1800owned7200elapsed/maxONEscenario6nativevisits-CIDs.
-Actual nativeexecuteTRUE ONLY inventedaccount/bank/state/HTTP; real BankLeg/
-Jobs/IPC/NativeBridge/e414/ded65. Pending MSFT stops Rankbeforeguest; exact
-native recovery/linkfill then nextcohort; SYNF9reservation/foreigninventory/
-oneinitialtenth unchanged. Physicaltimersreal/scheduledfinancialclockSYN.
-Use /scratch, not /tmp, to verify all748SDKmembers including runtime.lock.
-No financial scenario retry after start; preserve failures/checkpoints.
-No realprivate/credentials/KIS/Task/schedule/allocation/model/GPU effects.
-Current proof is not actual owner/custody qualification or deployment.
+Fixed RO API/durability probe CLOSED_PASS25e6af47:
+A/execution/current-serial-native-fixture-api-durability-probe-20261027-v1/fixed-probe-r1/CONSUMER.json.
+Sourceed908e4d/e414/ded65/all748/75native attributes/6owner-getter cases/
+6scratch durability cases PASS. Exact stocks_by_owner row quantity, missing/
+duplicate/mismatch withhold; native result/failure AND fakeHTTP transition
+persist before diagnostics.2smokes/2CIDsclosed/408olderfilesbyte-identical,
+zeroHTTP/financial/recovery/credentials/actualprivate/Task. Jobwall3.047s is
+not a complete source-active meter. Mutating APIs signature-only, not full
+financial flow or host power-loss proof. First guard-failed probe4bac remains.
 
-Completed82f33dad/Source30b940bd:
-current-rankhalf-actual-owner-serial-integration-20261027-v1/CONSUMER.json.
-6operationalSYNcases PASS/realBankLeg/7visits/JobIPC/2actualinertCIDsclosed.
-NativeexecuteFALSE and financial response envelopes injected, not financial
-proof.747appmembers rehashed; tmpfs masked runtime.lock, exactimage/SDK still
-pinned. New financial package fixes mount. ProductionPythonRuffPASS; harness36
-lint findings retained. P2 contradiction: orderPOST with no_intent/zero-leg/
-pendingfalse cannot advance nextcohort; tokenPOST excluded. Consistent terminal
-payload may proceed only with matching proofs, not inferred financial closure.
-Earlier33371protocol mocks/75a3guard constructors are also inactive proofs only.
+Leibniz now owns NEW changed-code invented native financial regression:
+corrected candidate53aa90fe/helpera2da/patchd248 frozen before effects;
+maxONEscenario/6visits/600owned/1800elapsed from actual start. Same e414/
+ded65/networknone/sourceRO, entirely invented account/bank/HTTP. Exercise
+partial->exact recovery->next guest->owned exits, pending/F9/foreign guards.
+No old scope replay/reset or real custody/KIS/Task/credential effects.
+Zero-effect constructor fixes <=2 within caps; an advanced scenario preserves
+its exact identity, never reset to conceal a failure. No full-pass claim yet.
 
-P02525512f0f/c058/357/cohortrankhalf-p025-H5-close-e4-20261027-v1 remains
-UNALLOCATED/allowFALSE/NOTDEPLOYED, .025fullB=quartersharedtenth. No qualified
-Oct27slot preserves current4MSFT writers/Nov2 exits; do not roll date or add
-peer private-bank writers. Futurehandoff preserves original paths/counters/
-pending/inputs/policy and needs positive oldowner closure plus actual admission.
+Prior finite nativefinancial SYN remains failed/incomplete:
+- 6355b502: MSFTSYNentryPOST1/partial/pending, Rankguest0. Fixture incorrectly
+  accessed intent.request_id before recovery.3CIDsclosed/no actualaccount.
+- 02a39bef continuation: hostvenv _virtualenv looked up inLinuxmanifest,
+  failurebeforefinancial/newCID0. Oldsource/verdict/debit unchanged.
+- 81eb0f49 changed-code regression:
+  current-serial-native-recovery-fixed-fixture-regression-20261027-v1.
+  ActualLinuxconstructor/e414/ded65/all748 PASS; distinctnewSYNbank.
+  MSFTentryPOST1->partial->EXACTnative recoveryFULLFILL/ownedpositive,
+  recoveryorderPOST0. Then optionaldiagnostic used aggregate.quantity and
+  failed; Rankuninvoked/fakeSimulator file remained olderpartial.3newCIDs/
+  Jobsclosed/233olderfiles byte-identical, no rerun/current4Task effects.
+None provesfullserialscenario/realowner/custodyadmission/deployment. Never replay
+consumed calls or labeloldcasepassed. Changed-code engineering regression is
+not a model holdout trial or permission to repeat an unknown actual order.
+
+Schrodinger single-cohort Source/pure-code preparation:
+A/execution/current-lowvol-single-owner-paper-readiness-20261027-v1.
+One provisionalLOWVOLcohort may reuse account-owned session/bank/risk without
+fulltwo-model orchestrator. Original Source7cd5/e377/ClaudeGO_WITH_LIMITS.
+Candidate old Nov2 tight gap is NOT qualified: multiple20s cleanup steps have
+no aggregate30s bound. Inspect a NEW planned Nov3 early-session exit variant
+and Oct27 15:30 entry, not roll old p025/MSFT or call delay successful recovery.
+Pure invented proposal->native adapter tests may proceed; no actual private/
+API/Docker/Task/deployment authority in this package. Actual slots remain unqualified.
+Preserve current4MSFT. Currentpoint proposals allowFALSE/unallocated and must
+not be rolled ifOct27expires. Source feasibility is not actualadmission.
+
+Completed82f33dad/Source30b9 operationalBankLeg/Jobs/IPC6cases PASS but native
+FALSE/financialenvelopesinjected.747appmembers rehashed/tmp maskedruntime.lock;
+laterfinancial packages used/scratch/all748. ProductionPythonRuffPASS,
+harness36lint retained. P2 orderPOST/result contradiction stopsnextguest,
+tokenPOSTexcluded; consistentterminal requires exactproof, not inferredfill.
+
+P02525512f0f/c058/357 remains UNALLOCATED/allowFALSE/NOTDEPLOYED,
+.025fullB=quartersharedtenth. No qualifiedOct27slot preserving4MSFT/Nov2exit;
+do notroll/substitute/adoptforeign or addpeerbanks. Futurehandoff preserves
+original paths/counters/pending/inputs/policy and positive oldowner closure.
 
 ## Recovery / Preserved Owners
 

@@ -36,32 +36,43 @@ All old installers, including R4c59ff933/resume2497af62, are consumed.
 
 ## Ready Parallel Packages
 
-- Engine/Steward Schrodinger: sequence-information Source03:43..04:13UTC/
-  180owned; existing TCN RAW63+context9 vs cachedLinear/ownINITIAL/constant,
-  same NAS100/chronology/OPEN5/pairBCE. Conditional next1fit/96epochs/
-  27168updates/6000combinedowned14400elapsed to07:43; native+Data first.
-- Data Faraday: feature-only RAW63/context packets03:43..04:43/600owned;
-  exact4c4 RAW19 keys/masks/clocks, one oldraw63 intake/projection/all3roles,
-  no target rebuild/API/old affine. Direct named codec/native callback.
-- Invoked Engine Halley: per-date cross-asset attention Source03:50..04:20/
-  180owned; one small expert/no symbol IDs/no future-date attention.
-  Conditional1fit/128epochs9088updates/3000owned7200elapsed to05:50.
-  Same oldRaw19/affine/targets; sole Steward admits CUDA probe then market.
-- Invoked CPU Engine/DataCost Socrates: frozen-score cost-policy Source
-  03:43..04:13/180owned. Six noncash policies+cash,5-session cadence/top10/
-  sharedgross/20bp eachleg, weights sealed before held price intake. Potential
-  900owned5400elapsed; no numerical authority/fit/GPU yet.
-- Execution Leibniz: serial-native-financial-SYN03:36..05:36/1800owned/
-  ONEscenario/max6visits-CIDs. Real native executeTRUE ONLY invented account/
-  bank/HTTP, real BankLeg/Jobs/IPC; pending stops second cohort and exact
-  recovery preserves SYNF9/foreign inventory. No real private/KIS/Task change.
+- Data Faraday: cb0f8134 currentpoint CLOSED_AUTH_SUCCESS_INPUT_UNAVAILABLE:
+  token2xx/TTL86400/28GET/27accepted then rate_limited/0retry; SPY/NYS empty
+  masks datefalse despite26stocks63history. NEW supported-SPY-route/remaining
+  cursor repair, retained first/new output, <=120GET/1token/600owned1800elapsed,
+  existing300s token gate/oneclient. Exact100keys/63past/asofOct26, no imputation.
+- CPU point Socrates: old8d749 inputunavailable/restore-forward0/115owned.
+  New qualified Data can trigger unused stage<=60owned900elapsed/combined240,
+  <=1savedLinear33 restore/100rowCPUforward plusLOWVOL21,0fit/held/PnL.
+  Direct Data->point->consumer callback, allowFALSE/unallocated/no date roll.
+- Consumer Schrodinger: minimum ONEcohort existing native bank/risk, not full
+  two-model dispatcher. Source7cd5/e377/ClaudeGO_WITH_LIMITS; pure separately
+  named modeladapter may be tested on invented data, MSFT guard unchanged.
+  Old tightNov2 exit gap unqualified; inspect NEW plannedNov3earlyRTH exit/
+  Oct27 15:30 entry. No actual private/API/Task/deployment authority yet.
+- Execution Leibniz: fixedRO25e6 PASS/e414/ded65/all748/75attributes/6owner+
+  6durabilitycases/2CIDsclosed/zeroHTTPfinancial. NEW changed-code invented
+  nativefinancial regression<=1scenario/6visits/600owned1800elapsed, exact
+  pending recovery and producer persistence before diagnostics. No old reset,
+  real account/KIS/Tasks/credentials. Older81eb prefix not fullscenario pass.
+- Fourmarketfit round and CPU6cell comparison are CLOSED. No furtherGPU work
+  just for utilization. Current promising operational baselines are Lowvol and
+  Linear, not independent alpha/Paper selection qualification. Halley closed.
 
-One broader learning round = completed2 +TCN1 +crossasset1 =4marketfits TOTAL;
-no seed/architecture grid, refunded attempts or hidden window multipliers.
-Ready useful workers may co-run under ONE Steward with measured headroom,
-desktop reserve and exact PID/lease/resource closure; no dummy utilization.
+No real Task/bank/capital change in these preparations. New modelcohort needs
+actual qualified owner/slots/risk; source/install cannot substitute for runtime.
 
 ## Already Complete / Do Not Repeat
+
+Fourfits TOTAL completed: Linear49epochs3479updates/best33; MLP23/1633/best7;
+crossasset17/1207/best1; RAW63TCN16/4528/best0. Crossasset e3d55322 and TCN
+ca100650 fail cachedLinearBCE; all resources closed/no additionalmodelsearch.
+TCN729.169227combinedowned incloldR1failure418.563943, no erased diagnostics.
+Cost d4e477a6:6analytical whole-share local_paper ledgers,49origins,20bpeachleg,
+2025Jan2..Dec24. Lowvol2.097%growth/DD1.902%,Linear.984%/2.227%,
+blend.140%/2.340%,uniform1.275%/3.212%. Fixedblend primaryREJECT;
+310.26owned/no fits/GPU/retry. Positive retrospective growth is not alpha or
+nativePaperbudget/fill/fee parity; currentpoint/consumer work continues.
 
 NAS100 linear/MLP477.659752owned/allclosed/2CUDAfits49+23epochs/5112updates.
 BCE lower better: LINEAR.675687120 < MLP.676095196 < INITIAL.679823382.
@@ -90,7 +101,7 @@ Current tracked code0ce47bed/imagee414 is deployed, full authority4c9a2956:
 711serial/19482fullPASS26skip/8actualworkers/cleanCchildlease/1411same/Ruff/
 3Compose. Docs/external-only reuse requires exact protected source digests and
 fresh external/native checks; repo suite cannot prove untracked helper code.
-Previous checkpoint57074588; current refresh hash is GitHEAD/Parent-owned.
+Previous checkpoint52bd943c; current refresh hash is GitHEAD/Parent-owned.
 
 Only after actual company runtime completion integrate/verify/commit/push,
 replace this with ONE next company outcome, and continue. Package/install/

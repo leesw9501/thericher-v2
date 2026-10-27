@@ -1,30 +1,35 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,03:55UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,05:25UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
 
-## Small Executable Ready Set
+## Current Consumer / Closed Research
 
-- Temporal information: one existing TCN RAW63+context9 on matched100/
-  OPEN5/2015..2025 chronological roles, not another pointwise width/seed grid.
-  Source under current-nas100-open5-sequence-information-readiness-20261027-v1;
-  Engine exact contract/native before values. Raw63 is clipped/transformed,
-  not unscaled prices; no pure architecture/data-size attribution.
-- Crossasset information: one permutation-equivariant per-date100-token
-  attention scorer using same19past features; no symbol/date IDs/futuredate
-  attention. Invoked Engine Source current-nas100-open5-crossasset-context-
-  readiness-20261027-v1, same cachedlinear/initial/constant proper-score kill.
-- Cost/turnover/decision composition: current-nas100-frozen-score-cost-policy-
-  readiness-20261027-v1. Fixedhalf averageTIERANK/LINEAR/MLP/MOM21/LOWVOL21/
-  UNIFORM/cash, finite5sessioncadence/top10 and20bp eachleg BEFORE marks.
-  Candidate profitability is not a prerequisite for exploratory fusion.
-  Lower exposure is not alpha; unknown marks not imputed/selected away.
+Fourfit information round and sixpolicy comparison COMPLETE. No new model
+download/architecture/seed/rho search for GPUload.
+Attentione3d1fit17epochs/best1 andTCNca1001fit16epochs/best0 both failcached
+LinearBCE; source/currentdata/science limitations retained, no universal
+rejection of temporal/crossasset information. Actual GPUwork closed.
+TCNprecisionfixture failure remains diagnostic, not model evidence; corrected
+sparse-target native did not erase/regrade original.
 
-Whole learning round4fits TOTAL (2closed+one per new information question).
-Proposals become executable bounded work or rejection, not a reading list or
-another MD per indicator. Direct exact schema/readiness callbacks are allowed.
+Cost d4e477a6: sixfinite whole-share local_paper ledgers/20bpeachleg/49origins,
+2025Jan2..Dec24. Lowvol growth2.097%/DD1.902%, Linear.984%/2.227%,
+MLP.673%/2.919%,fixedblend.140%/2.340%,MOM21-3.551%/4.694%,
+uniform1.275%/3.212%. Fixedblendincrement REJECT despite somepositivegrowth.
+Lowvol descriptively strongest here, not independentalpha or Paper gate.
+Sharedrisky exposure/rounding/cost/turnover all reported; notcashzeroDDtarget.
+No target/futureknownness selection, weight/price fallback or ratiorescue.
+
+Current executableconsumer: feature-onlyasofOct26/currentcaptured100point for
+LOWVOL21 andsavedLinear33/affine4c08, top10fairties/all100mask/allowFALSE.
+Old currentpoint unavailable from missing SPY context; Data route repair and
+unused actual inference stage keep direct schema handoff, no fit/PnLreplay.
+One-cohort account-owned Paperconsumer Source is releasepriority; fullmultiple
+modelarchitecture not automatically prerequisite. Policy/profitability/source
+labels cannot mintcapital/brokerpermissions or roll an expiredidentity.
 
 ## Checked Project Evidence / Limits
 

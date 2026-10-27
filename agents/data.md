@@ -1,23 +1,41 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-27 KST,03:55UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,05:25UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own data/calendars/availability; Parent owns MD/Git. AGENTS owns authority.
 History/debits remain Git57074588 and original immutable consumers.
 
 ## Current Work
 
-Faraday owns current-nas100-open5-raw63-context-packets-20261027-v1,
-03:43..04:43UTC/600owned. Consumer is one existing-TCN RAW63+context9
-information expert, same literal100/roles/keys/masks/clocks as RAW19.
-One original raw63.npy intake/projection/all3roles; feature-only typed role
-files underM, no label/target rebuild/API/model/private/Task/Git/MD effects.
-Agree named producer/consumer directly with Engine; tiny actual file/cold smoke
-before market projection. Preserve63x6 transformed/clipped meaning, not raw
-OHLCV; exactmask/key parity or scope input_unavailable, never impute/drop.
-NewRaw6FIT-only affine belongs Engine; exact context9 old completed FIT affine
-may be reused when input/source/key parity is verified. No old2015..2025 affine.
+Original currentpoint scope CLOSED with unavailable required SPY context:
+A/data/current-nas100-feature19-currentpoint-20261027-v1/token-diagnostic-continuation-r1/CONSUMER.json,
+cb0f8134. Additional token POST1 succeeded/2xx/TTL86400; same in-memory client
+served28GET,27nativeaccepted pages then ATLC rate_limited,0retries. Original
+unclassified token failure remains unclassified, not invalid credentials or
+proof that the old4s timeout caused it. Explicit300s token guard retained.
+26stocks have strict63sessions, but exact SPY/NYS page is empty; date mask
+false/all100featuresunknown, NOT cash/no-signal. Actual schema/cold checks PASS,
+payload cannot drive a model. FournewJobsclosed/238.652cumulativeowned; old
+failure/cost unchanged. No persisted bearer/account/order/Task effects.
+
+Faraday now owns a NEW bounded route/cursor repair: resolve supported SPY
+price-provider mapping from historical context contract/official source, not
+silent NYS->AMS substitution or changed economic feature. Reuse retained27
+pages, finish remaining literal100keys/63prior sessions/asofOct26/current
+capture in a new namespace. Freeze <=120GET including <=2technical repeats
+per failed query, <=1tokenPOST/existing300s guard,600owned/1800elapsed from
+actual start. One client/1.25s measured pacing unless scoped calibration.
+Diagnose rate category before blanket cooldown; no company foreground wait.
+Direct qualified producer/file/cold handoff to Socrates and Schrodinger.
+No targets/affine/imputation/account/orders/live/Task/sharedMD/Git. Old masked
+packet remains unavailable; no overwrite, date roll or historical-arrival claim.
 
 ## Qualified Current Inputs
+
+RAW63/context14aefe63 COMPLETE:
+A/data/current-nas100-open5-raw63-context-packets-20261027-v1/HANDOFF.json.
+All100slots/276600keys/raw19mask+context9+UTCparity, one original raw63 intake/
+oneprojection/0retry, actualcold+independentfilesPASS/128.563943owned/allclosed.
+No target/affine/oldcodec changes. TCN consumed once, closed no increment.
 
 RAW19 COMPLETE VERIFIED_READY4c4ce7e3:
 A/data/current-nas100-open5-feature19-packets-20261027-v1/HANDOFF.json.
@@ -70,8 +88,8 @@ not historical decision-time arrival. Endpoint support is not full held path.
 One source-limited cursor is not all endpoints/history. Prefer existing useful
 data; no duplicate completed packets/downloads/probes.
 
-Socrates temporarily owns disjoint CPUcost Source and possible later held O/C
-view, not RAW63 writes; no cost numeric authority yet. Original69/25/70 cache
+Socrates sixcost ledgers are closed; only a new qualified currentpoint callback
+may use its unused inference stage, not RAW63 writes. Original69/25/70 cache
 acquisition/retention owners remain separate; Data actors are not automatically
 private-custody writers. Some mixed wrappers can submit Paper: attest actual
 source/write scope, never call them cache-only.

@@ -1,9 +1,9 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, Throughput Review03:55UTC.
+2026-10-27 KST, Throughput Review05:25UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/cutovers; AGENTS owns authority.
-Preserve unrelated %SystemDrive%/. History Git57074588/immutable consumers.
+Preserve unrelated %SystemDrive%/. History Git52bd943c/immutable consumers.
 
 ## Company / Due
 
@@ -17,26 +17,47 @@ F9 UNKNOWN-HELD is lane-local, not permission to stop other ready work.
 
 ## Ready / Owned
 
-| Owner | Actual status / next consumer |
+| Owner | Actual status / concrete next consumer |
 | --- | --- |
-| Parent / 총괄 | Previous57074588; integrate verified research/F9/current packages, current refresh hash is GitHEAD. |
-| Schrodinger / 엔진·자원 | Larger linear/MLP477.659752closed; TCN RAW63+context9 Source03:43..04:13/180owned. Sole GPU coordinator for both ready experts. |
-| Faraday / 데이터 | RAW19 packets4c4closed132.034842owned; RAW63/context label-free packets03:43..04:43/600owned, direct Engine codec callback. |
-| Halley / 호출형 엔진 | Crossasset per-date attention Source03:50..04:20/180owned; one candidate, no futuredate/ID inputs, resource admission from sole Steward. |
-| Socrates / 호출형 CPU연구·DataCost | F9book764d+primary9b65closed/no new recovery evidence; cost-policy Source03:43..04:13/180owned, sixnoncash+cash, no numerical authority yet. |
-| Leibniz / 실행 | NativefinancialSYN03:36..05:36/1800owned/ONEscenario6visits-CIDs; invented financial state/HTTP only, no current4Task/private change. |
+| Parent / 총괄 | Pushed52bd943c; integrate fourfit/sixpolicy/token diagnostic/native API proof; no companycompletion. |
+| Faraday / 데이터 | cb0f authSUCCESS/currentSPYcontext unavailable; NEW supportedroute/remainingcursor repair<=120GET/1token/600owned1800elapsed, no account/order. |
+| Socrates / 호출형 CPU연구 | Old8d749 inputunavailable/0actualforward; unused actual stage<=60owned900elapsed/combined240 on new qualified directData callback; allowFALSE. |
+| Schrodinger / 호출형 소비경로·자원 | Fourfit/GPUCLOSED; ONEcohort Source/pure adapter; inspect plannedNov3RTHexit/15:30entry, no private/Task/deployment authority. |
+| Leibniz / 실행 | FixedRO25e6 PASS/75attributes/6owner+6durability cases; NEW invented financial regression<=1scenario/6visits/600owned1800elapsed, no realKIS/private/Task. |
+| Halley / 호출형 엔진 | Attentione3dclosed1fit; workerclosed, no newGPU queue. |
 
-Source-only assignment is not a running GPU fit. Conditional futureTCN1fit/
-96epochs27168updates/6000combinedowned14400elapsed to07:43; crossasset1fit/
-128epochs9088updates/3000owned7200elapsed to05:50. Exact lower Source/native/
-Data/headroom first; roles exchange direct qualified callbacks. A tiny native
-CUDA probe is initially resource-admitted, then measured peak qualifies market.
-No circular require-native-before-CUDA hold or extra Parent approval relay.
-Bounded roundTOTAL4fits =completed2 +TCN1 +attention1, no grid/hidden trials.
-Potential CPUcost900owned5400elapsed/max6ledgers is separate/no GPU.
-Original debits/failed Source clocks/old verdicts never refunded.
+Current fourfitsTOTAL completed (2base+attention+TCN). Allleasesclosed; no
+utilizationfiller/extra seeds. Model source and oldnative failures remain.
+Current point/caller are releasepriority. DataKIS scope is market-only/oneclient/
+ownedcachegate, not Researchcredential or companywidepermission. NewPoint
+does not allocatePapercapital/lot/profitabilityprove. No deferred fullplatform
+as automatic prerequisite for firstsinglecohort; Source feasibility still needs
+exactnativeAPI/slots/actualowner/risk beforeeffects.
 
 ## Closed Material Evidence
+
+- cb0f8134 auth2xx/TTL86400/28GET/27accepted then ATLC rate_limited/0retry.
+  SPY/NYS empty/datefalse despite26stocks63history; not cash/no-signal.
+  238.652owned/all4Jobsclosed. Old tokenfailure unclassified, not badcredentials.
+  Socrates8d749 actualrestore/forward/proposal0; no hidden GPU permission hold.
+- FixedRO25e6/Sourceed90/e414/ded65/all748/75attributes/6owner+6durability
+  cases PASS.2smokes/2CIDsclosed/408olderfilesexact/zeroHTTPfinancial; only
+  Jobwall3.047s measured, no complete source-active meter/fullfinancialproof.
+- Attentione3d Source42b9:1CUDAfit17epochs1207updates/best1/28.817s/190MiB,
+  BCE.676423807 losesLinear.675687120,324.176247owned/5CIDs29Jobsclosed.
+- TCNca100 Source23d5:1CUDAfit16epochs4528updates/best0/100.626s/610MiB,
+  BCE.681615732 losesLinear/constant.729.169227combinedowned inclRaw14a
+ 128.563943;oldR1failure418.563943 preserved/no repeatedoptimizer.
+  Sparse-target fixture doesNOTerase64-targetFP32stressdiagnostic. All6CIDs/
+  Jobs/leaseclosed/onephysicalselectedINITIALforecast/oneEVAL/0financial.
+- Costd4e:6nativeanalyticalwhole-share local_paper ledgers/20bpeach/49origins/
+  actionsealbeforeoneO-Cintake,310.26owned/allclosed. Lowvol2.097%/DD1.902%,
+  Linear.984%/2.227%,blend.140%/2.340%,uniform1.275%/3.212%. BlendREJECT;
+  positive growth is descriptive reuseddata/notnativePaperRiskParity/alpha.
+- FinancialSYN6355/02a remainfailed; freshregression81eb nativeMSFTentry->
+  partial->EXACTrecovery/fullfill/ownedpositive/0recoveryorderPOST proved,
+  optionalaggregate.quantity diagnosticfailed/Ranknotrun/stalefakeSimulator
+  preserved.3newCIDsclosed/233oldfilesexact. No realTask/account/F9 effects.
 
 - MSFT compatibility78e admitted02:47:13/current record absent/countsNULL
   UNKNOWN, not no-submit/flat; allresourcesclosed/no effects.
@@ -58,6 +79,22 @@ Original debits/failed Source clocks/old verdicts never refunded.
  4MSFT. Do not roll date/unknownrequest. EMA b35e limitedreused47 improvement.
 
 ## Throughput / One Reversible Improvement
+
+Currentreview05:25: auth works; requiredSPY provider mapping and partialcurrent
+cursor are repairable Data issues, not an operator hold. Reuse27successful
+pages rather than repeat100queries. New qualified directData callback owns
+unused point inference, no Parent serial approval. Pure singleconsumer codec
+tests and changed-code financial regression proceed in disjoint invented roots.
+Probeall nativeattributes once, persist fakeHTTP truthbeforediagnostics; avoid
+one-field-at-time failures/permission relays. Preserve old failure verdicts.
+An irrelevant context dependency must not silently ban a stock-only rule:
+if necessary predeclare separate LOWVOL_STOCK21 operational eligibility,
+never mutate old RAW19 masks or claim unchanged cost-policy replication.
+New planned Nov3 earlyRTHexit may avoid tightNov2 cleanup overlap; check actual
+native retained exit API and owners, not require a full model platform first.
+Changed-code sandboxengineeringretests are distinctfrom repeatingfrozenmodel
+trials/unknownactualorders; requireboundedsourcefix+provennativeinterfaces,
+neverresetrealidentity/budget or claimoldfailedscenario complete.
 
 Prefer information diversity and cached controls to more local47outcome loss/
 seed tweaks. Ready conditional freezes avoid Parent serial relays. Resource

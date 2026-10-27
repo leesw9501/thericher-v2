@@ -61,27 +61,54 @@ labels dymd/dhms only; do not import WebSocket timezone fields or weaken freshne
 
 ## Current Research / Integration
 
-Exact current working packages/owners are agents/orchestration.md.
-Finished NAS100 numerical run:
-A/research/current-nas100-open5-linear-mlp19-learning-development-20261027-v1/numerical-r1/CONSUMER.json.
-2CUDAfits/49+23epochs/5112updates/4forecasts-before1EVAL/allclosed.
-REJECT nonlinear increment vs linear; strict_concordance withheld, no replay.
-RAW19 Data4c4 final HANDOFF/producer9bf54bce/codec c5220d13 are qualified;
-EVAL2025 is reused oldTRAIN. Do not repeat any completed fits after restart.
+Current owners/contracts: agents/orchestration.md. Fourmarketfits COMPLETE:
+linear/MLP2730 numerical-r1; attentione3d under
+A/research/current-nas100-open5-crossasset-context-readiness-20261027-v1;
+TCNca1006 under
+A/research/current-nas100-open5-raw63-tcn-learning-development-20261027-v1/fixture-continuation-r1.
+No repeat fit/seed/architecture grid. TCN best0 is selectedINITIAL, not untrained:
+actual16epochs4528updates/100.626s/610MiB; onlyforecast reused.
+Earlier499d precisionfixture failure and costs remain; FP64 EVAL separate.
+All modelresources/leases closed; no mandatory new GPU campaign.
 
-New TCN Source/RAW63 Data, crossasset Source and CPUcost Source are separate
-bounded packages with own clocks/caps/source pins; only exact qualified ready
-stages may run. Whole current round4marketfits TOTAL (2closed+1TCN+1attention).
-Schrodinger is sole resource coordinator; native CUDA probe is admitted BEFORE
-its measurement, then measured peak qualifies market fit. No circular hold.
-Next unfrozen preparation may use ensure_external_artifact_directory for OUTER
-parents. Preserve phase-leaf exclusive creation and Windows reparse checks.
+Cost d4e477a6:
+A/research/current-nas100-frozen-score-cost-policy-development-20261027-v1/CONSUMER.json.
+Six completed analytical local_paper ledgers/20bpeach/wholefixedsyntheticB,
+49OPEN rebalances/dailyCLOSE sampledDD/finalOPEN245, no privateRiskParity.
+Lowvol/Linear positive descriptive reused2025 data; blendREJECT/no metricrescue.
+No realfee/settlement/PnL/financial permissions from these results.
 
-P025 proposal25512f0f/c058/357 remains unallocated/allowFALSE/not deployed;
-no safe qualified Oct27 slot preserving4MSFT. Inert serial82f33dad/Source30b9
-used actual BankLeg/Jobs/IPC but nativeexecuteFALSE. New
-current-rankhalf-serial-native-financial-syn-20261027-v1 is invented financial
-state/HTTP only, no actual owner/custody/Task qualification. No install command.
+Current Data auth diagnostic cb0f8134 is CLOSED: token2xx/TTL86400/28GET/
+27accepted then rate_limited. SPY/NYS empty, RAW19date mask false; no current
+proposal, not cash/no-intent. Alljobsclosed/238.652owned. New supported-SPY
+route/cursor repair is bounded and separately named, original packet unchanged.
+Socrates old8d749 unavailable/actualrestore-forward0; qualified new Data may
+trigger unused<=60owned900elapsed actualinput stage (combined<=240owned).
+No source/clock/affine/mask mismatch or expired dated-input substitution.
+Onecohort Source7cd5/e377 proposes separate modeladapter, preserves MSFT-only
+guard. Old tightNov2 exit gap unqualified; NEW plannedNov3earlyRTH variant is
+under Source review, not installed or evidence of successful recovery.
+Never execute arbitrary scripts by latest-artifact discovery.
+Data RAW63 HANDOFF14aefe63 is COMPLETE128.563943owned/oneprojection/allclosed;
+RAW19 4c4 and originalcodec/targets/affine remain frozen. No second rebuild.
+Current point asofOct26 must expose actual capture, no labels/date roll.
+SavedLineartrainingFITended2023/INNER2024; point inference is not refitting.
+
+P025c058/357 remains allowFALSE/unallocated/NOTDEPLOYED, no qualifiedOct27slot.
+Operational serial82f was nativeFALSE; financialSYN6355/02a/81eb remain
+failed/incomplete.81eb nativeMSFTentry/recovery succeeded before optional
+aggregate quantity diagnostic failed; Rank notrun, fakeSimulator file stale.
+AllCIDs/Jobs closed and old files preserved. FixedRO25e6 now verifies75native
+attributes/6owner-row+6scratch durability cases insidee414/ded65/all748,
+2CIDsclosed/408olderfilesexact/zeroHTTPfinancial. Jobwall3.047s not complete
+source-active meter or host powerloss proof. NEW changed-code invented
+financial regression<=1scenario/6visits/600owned1800elapsed is in progress;
+same-identity recovery, result/fakeHTTP persistence before diagnostics.
+No replay oldscope, realrequest, bankreset, actualowner/admission/deployment proof.
+
+Next UNFROZEN preparation may reuse ensure_external_artifact_directory for
+OUTERparents; preserve exclusive phaseleaf/Windowsnonreparse checks.
+Original pending/counters/journals/namespace are authoritative, not test DTOs.
 
 ## Verification / Storage / Original Exits
 
