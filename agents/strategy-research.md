@@ -1,11 +1,19 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,13:14UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,13:41UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
 
 ## Current Consumer / Ready Proposal
+
+Next assigned Source-only question belongs Faraday at
+A/research/current-liquid17-timesfm-trainable-head-readiness-20261027-v1:
+90active1200elapsed actualfreeze, ONE installed-native Torch head/adapter
+recipe or specific rejection, no model/market/GPU/fit/download/install.
+Exact layer/gradient/checkpoint/target/normalization/data ABI and chronology,
+finite budgets/earlystop/curves/native optimizer+file smoke contract required.
+Engine owns later adoption/GPU resources; no broad search or dummy utilization.
 
 Current Sourcef2cfb68c/contract78fa21d5 at
 A/research/current-liquid17-dated-foundation-checkpoint-readiness-20261027-v1
@@ -18,6 +26,12 @@ New numerical consumer is Engine's current-liquid17-timesfm-open512-development-
 14:26:41UTC/1140combinedowned, zero fitting/downloads/retries. Dated release
 does not eliminate corpus/selection/currentlisting/nonPIT limits. No automatic
 Paper promotion or independent-alpha claim; no active GPU claim from a proposal.
+
+Numerical8ec7aed7 is now CLOSED/REJECT: local dated TimesFM rawMSE.001699889909,
+growth2.67900353%/DD1.40509650%, loses Ridge;48native+market forwards/2loads/
+0fits. Model inference is complete, not an environment hold. Next exploratory
+fixedhalf Ridge/TimesFM CPU composition has one finite predeclared policy,
+no new forecast or automatic Paper release. Existing47 outcomes globally reused.
 
 HGB Source d06257e0 adopted and CLOSED23fc6c94 after three CPU fits20/20/31,
 selected0/0/11; two constant stages, MSE/growth/DD increment fails =>REJECT.

@@ -39,47 +39,32 @@ F9book764d/primary9b65 pending1: no release or repeated identical query.
 - Parent: integrate verified external work under unchanged current source94c16934/
   full authority1f0fd37a. Original e414 Tasks stay; new d892 image is built, not
   deployed. No operator decision. Prior HGB/Ranker/Gate fits are all closed.
-- Faraday / Data: source-only quote-clock capability preparation at
-  A/data/current-paper-quote-clock-capability-preparation-20261027-v1.
-  <=120active1200elapsed actualfreeze. Native REST dymd/dhms currently uses
-  Asia/Seoul/120s, still unverified by prior offsession evidence. Check official
-  REST source, not WebSocket assumptions, and prepare one bounded read-only
-  Paper virtual-host probe. NO credentials or real HTTP in this PREP package.
-  Parent may explicitly dispatch a named measured probe under standing private
-  Paper authority; no change to freshness or timezone policy from assumptions.
-  Parent now delegates the complete named capability run at
-  A/data/current-paper-quote-clock-capability-probe-20261027-v1: MSFT asking-
-  price only, virtual host/Paper scoped credentials, no account/order/live.
-  <=4GET inclusive failures/<=2tokenPOST only when needed, existing token gate
-  and1.25s pace; prefer one RAM client/token across immediate and13:31..13:33UTC
-  RTH stages. <=240active/remainingelapsed through13:33UTC; one finite hidden
-  worker may own next_due, no new Task/recurrence/automation. No real secret,
-  raw row/price/body retention/logging. Keep known source limitations; no
-  timezone/freshness/risk change in this observation package. Scope native
-  producer/client smoke before HTTP; ordinary implementation needs no further
-  Parent/operator approval relay inside these frozen bounds.
-- Schrodinger / Engine and GPU coordination: adopted dated TimesFM development
-  at A/research/current-liquid17-timesfm-open512-development-20261027-v1.
-  Global12:56:41..14:26:41UTC/1140combinedowned=Data240+Engine900.
-  One local trusted TimesFM2.5-200m/512pastOPEN/sixforecastOPEN hypothesis;
-  zero fits/updates/downloads/retries, <=2loads/1synthetic+47market pipelines,
-  18series each/864totalseries. Actual named native/cold handoff before market.
-  Seal all scores/actions before one held-label/marks/new matched ledger.
-  Exact dated checkpoint precedes every target; residual corpus/global reuse
-  limits remain. Sourcef2cfb68c/contract78fa21d5, no new alpha/Paper authority.
-- Socrates / Data: typed OPEN512 contexts at
-  A/data/current-liquid17-timesfm-open512-contexts-20261027-v1 and matching
-  M/us_equities/research_inputs root, Data240 inside the SAME1140 family.
-  Strict full-OHLC/availability/512prior-session geometry, exact47OOFkeys,
-  SPY+17stock axis and retained beta60. No imputation/labels/model/API; direct
-  qualified producer-file-consumer callback to Engine, no Parent relay.
-- Sagan / Execution: new source-only post-opportunity caller preparation at
-  A/execution/current-msft-lowvol-post-opportunity-reader-preparation-20261027-v1,
-  <=180active1200elapsed/hard13:35UTC. Separate MSFT13:52..14:07UTC and
-  LOWVOL15:42..15:57 scopes, unchanged qualified host/transport and reader8727,
-  dedicated immutable capsules/new exact SPEC/source/image pins. No actual
-  private read or anchor bytes, Task invocation, API or deployment in PREP.
-  Parent retains fresh three-phase actual custody admission after due/closure.
+- Faraday / Strategy: after quote closure, one Source-only native TimesFM
+  trainable-head/adapter readiness at
+  A/research/current-liquid17-timesfm-trainable-head-readiness-20261027-v1,
+  <=90active1200elapsed from actualfreeze. Existing trusted local checkpoint/
+  installed runtime only, no model load/market/GPU/fit/download/install. One
+  feasible named recipe or specific rejection, no grid; direct callback to Engine.
+- Schrodinger / Engine and GPU coordination: after TimesFM closure, one NEW
+  CPU fixed .5Ridge+.5TimesFM rawscore composition at
+  A/research/current-liquid17-fixed-ridge-timesfm-blend-development-20261027-v1.
+  <=240active1800elapsed actualfreeze; Source45/native45/readout75/verify45/
+  cleanup30, 0fit/modelcall/GPU/retry. Exact799keys/availability/units/payoffs/
+  costs, seal actions before one LABELS+MARKS/new47ledger; cached controls not
+  replayed. Require MSE/growth/DD increment, no weight-grid or alpha claim.
+- Socrates / invoked Execution: after Data closure, inert US Ridge17 route/host
+  preparation at
+  A/execution/current-liquid17-ridge-us-native-operational-preparation-20261027-v1,
+  <=240active1800elapsed/hard14:12UTC actualfreeze. Reuse e734 native input/
+  d892/US_H5 and original clocks, allowFALSE/unallocated; no new inference or
+  conversion, actual private/Task/API/service/image build. No automatic date roll.
+- Sagan / Execution: minimum retained-NAS compatibility rollout preparation at
+  A/execution/current-retained-nas-minimum-compatibility-rollout-preparation-20261027-v1,
+  <=150active1200elapsed/hard13:50UTC actualfreeze. Small inert grouping/compiler
+  using exact actual actor/SDK ABIs, not fourteen full rewrites or deployments.
+  Parent's fresh invented proof8d61690e qualifies e414 plus two budget modules,
+  not other historical images. Preserve five inline scoped unknowns and all
+  original owner/input/policy/pending/basis/F9/paths. No actual mutation.
 - Invoked native verification: US/NAS reader qualification CLOSED
   87276bdb at A/execution/current-nas-nys-offline-custody-reader-20261027-v1.
   Six invented native FS cases/6CIDs36Jobsclosed, no actual custody admission.
@@ -112,6 +97,17 @@ rollback or reservation reset.
 
 ## Actual Outcome Reader
 
+Source-only two-caller preparation is CLOSED. Launcher-only claims deliberately
+are not a full current-actor admission. Parent owns a fresh MSFT derivation at
+A/execution/current-msft-lowvol-post-opportunity-reader-preparation-20261027-v1/parent-admission-r1.
+480active including240Source/165child/170host/30cleanup, hard14:07UTC;
+one actual read13:52..14:07 only. Source/grammar checks found app Node binary/
+manifest path changed but bootstrap and both control entry programs unchanged.
+Rebind only those runtime pins; preserve exact closed argv/cwd/no-child checks,
+assumed-honest-host limitation and unknown/private-writer refusal. Preflight
+actor0/two control exclusions/container0 is not future actual admission.
+Claude advisory unavailable, not agreement. No actual private reads yet.
+
 Immutable source-only bundle417ac66e is ready at
 A/execution/current-msft-lowvol-reader-source-bundle-readiness-20261027-v1.
 Use pinned legacy access.py/read.py, not mutable outputroot. Existing bankFS
@@ -128,6 +124,23 @@ If a technical fault appears, retain first cause and make a bounded scoped fix.
 
 ## Closed Research / Do Not Duplicate
 
+- TimesFM8ec7aed7: local dated checkpoint/47market pipelines/846series/
+  47forwards/11.094s, peak1011.75MiB; native+market total2loads48forwards.
+  MSE.001699889909 loses Ridge/MLP, growth2.67900353%/DD1.40509650% loses
+  Ridge =>CLOSED_REJECT. Combined598.647upper/childrenclosed/leaseabsent.
+  Data534bf54e technical-path-repair-r1 qualified exact old M OOF paths;
+  old8841147d audit-root failure retained. Two canonical groups40CSV+40JSON/
+  four OOF attempts/three decodes/one projection/verify explicitly counted.
+  Data240 includes old120+new120, no cost refund, imputation or model rerun.
+- Quote cf132417:4GET/1POST/0failures, one RAM client/token. Both13:31/13:32
+  RTH observations uniquely Korea-fresh/positive noncrossed BBO/stamp advanced.
+  No timezone/freshness hotfix, account/orderability/fill claim or repeated probe.
+  Actual original four PID-starts absent; worker idle disclosed separately,
+ 124.283activeupper/240, not claiming1923.997wholeprocesswall as GPU/CPU spend.
+- Fresh invented compatibility8d61690e:3CIDs18Jobsclosed/10native visits,
+  e414+exacttwo budget modules coldRO and partialSELL/unknowncancel/exact
+  recovery/ownedNASflat pass; original basis/F9/NYS untouched. Not actual
+  deployment/financial evidence or a regrade of the failed old fake-ID fixture.
 - HGB23fc6c94: three CPU fits20/20/31trees, selected0/0/11 (two constants,
   not learned skill). RawMSE.001651825759 losesRidge.001636696105;
   growth1.28218909%/DD1.04131163%, required growth/DD also fail =>REJECT.

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, observed through13:14UTC.
+2026-10-27 KST, observed through13:41UTC.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -43,11 +43,11 @@ instances/missing rows do not prove exhaustion or financial closure.
 
 | Owner | Concrete work |
 | --- | --- |
-| Parent | Integrate verified external results/current source; prioritize quote-clock capability and original Paper runtime. Current full1f0f is reusable only for exact protected bytes. |
-| Faraday / Data | Named quote-clock capability preparation120active1200elapsed; Parent now delegates separate measured Paper-only probe240active through13:33UTC. Source/worker must freeze before HTTP; do not wait for another routine approval. |
-| Schrodinger / Engine and GPU custody | Adopted dated TimesFM OPEN512 zero-shot development, global12:56:41..14:26:41/1140combinedowned inclData240once; native/cold before market, no new fit/download/retry. |
-| Sagan / Execution | Retained fake-ID collision diagnosed, no production module change justified; now separate future MSFT/LOWVOL reader source preparation180active/hard13:35, no private reads before due/admission. |
-| Socrates / Data | Strict OPEN512 contexts/exact47OOFkeys/SPY+17/beta60, Data240 in SAME TimesFM family; direct qualified ABI/output callback to Engine. Reader8727 is closed. |
+| Parent | Fresh MSFT actual-reader derivation parent-admission-r1, one read13:52..14:07 after owner closure/current admission. Tool runtime pins updated, same control bootstrap/entry grammar; preparation read0. Full1f0f requires exact protected bytes. |
+| Faraday / Strategy | Quote cf132417 CLOSED. Next assigned Source-only TimesFM native trainable-head/adapter feasibility90active1200elapsed; no new GPU/model load/fit inferred. |
+| Schrodinger / Engine and GPU custody | TimesFM8ec7 CLOSED/REJECT, all48native+market forwards done. Next assigned one fixed .5Ridge+.5TimesFM CPU blend240active1800elapsed, no model repeat/GPU/weight grid. |
+| Sagan / Execution | Future-reader callers closed. Now retained-NAS grouping/compiler150active/hard13:50, no actual Task/image/private mutation; e414 two-module witness8d61 qualifies that ABI, not fourteen deployments. |
+| Socrates / invoked Execution | Data534bf54e qualified/closed. Next assigned inert US Ridge17 route/host240active/hard14:12, reusing existing input/profile/image; no inference/conversion/order/date roll. |
 | Leibniz | Finite original MSFT metadata callback13:52UTC/deadline14:00. |
 | Halley | Finite original LOWVOL metadata callback15:42UTC/deadline15:50. |
 
@@ -66,7 +66,11 @@ First actual query12:59:58UTC succeeded: unique fresh interpretation Asia/Seoul,
 alternative NY/UTC future>5s, valid/noncrossed best bid/ask. Current parser's
 Korea interpretation is supported, not a confirmed fault; no hotfix/freshness
 change made. Supervisor37948/worker40612/Sourceb38fb390, hard13:33UTC;
-remaining RTH observations are pending, not inferred. No account/order claim.
+Both13:31/13:32UTC RTH observations also succeeded, stamp advanced/Korea fresh.
+Quote Consumer cf132417 CLOSED:4GET/1POST/0failures/same RAM client/token,
+four original PID-starts absent/124.283activeupper. Wholeprocess1923.997s
+includes1920.419s worker-owned idle, not claimed compute or Parent sleep.
+No account/orderability/fill or universal endpoint/timezone/finality claim.
 
 Foundation Source root:
 A/research/current-liquid17-dated-foundation-checkpoint-readiness-20261027-v1.
@@ -85,6 +89,14 @@ residual uses retained past beta60; no realized entry denominator. Zero fits/
 updates/downloads/retries/<=2loads/1native+47market pipelines/18series each.
 All scores/actions seal before one held-label/marks/new matched ledger;
 globally reused outcomes/residual corpus limits prevent independent alpha.
+Actual family CLOSED8ec7aed7:47market forwards/846series/11.094s/1011.75MiB,
+total native+market48forwards/twoloads; MSE.001699889909/growth2.67900353%/
+DD1.40509650% lose Ridge. No repeated fit, forward or baseline replay.
+Data8841147d first build failed at audit-root admission before any OOF decode,
+not beta units. Explicit technical-path-repair-r1/Consumer534bf54e admitted only
+three exact old M OOF paths; same codec/keys/units/full-OHLC geometry qualified.
+Data240 includes both120upper stages, cumulative2groups/40CSV40JSON/4attempts/
+3OOFdecodes/oneprojection/verify. Failure and old clocks remain unchanged.
 
 ## New Code And Inactive Candidate
 
@@ -111,6 +123,16 @@ After positive old-process/container closure, pair compatible RO seed/readers
 and RW recovery/exit sources before conflicting NYSE writes. Pre-write rollback
 restores old sources/Task refs, never bank snapshots. Post-write rollback must
 retain mixed-bank-capable recovery/exit; no old-parser or reservation reset.
+
+New invented unique-ID proof8d61690e at
+A/execution/current-nas-nys-legacy-unique-id-native-qualification-20261027-v1:
+three cases/3CIDs18Jobsclosed/exactPID-startsabsent/10nativevisits. Olde414 plus
+ONLY two current budget modules passed cold mixed-book RO and exact partial
+NAS SELL/expired unknown cancel/no duplicate submit or reload/residual owned
+SELL/owned-flat, preserving F9/NYS/original basis.222.296ownedupper/360.
+This qualifies that exact ABI, not fourteen historic images or actual orders.
+Old failed fake-ID fixtures stay unchanged. Selected F821/F822/F823 checks
+pass; frozen report finalizer has9E501, no full external-tree Ruff-clean claim.
 
 ## Outcome Reader
 
@@ -151,6 +173,7 @@ Paper permission. Market data M/models A; no generated bytes in Git.
 | Pairwiseb16d33fe | CUDA3fits28/32/26epochs/7074updates; growth4.25790885%/DD1.27038321%, ordering/DD fail. Outer post-readout envelope failed: technicalincomplete/retained REJECT, never regraded |
 | HGB23fc6c94 | CPU3fits20/20/31trees, selected0/0/11; two constant stages, MSE.001651825759 loses Ridge. Growth1.28218909%/DD1.04131163%, REJECT; 305.629upper/11Jobsclosed/0GPUretry |
 | Future envelope7d2f1c2d | Invented producer/host smoke PASS; HGB new terminal source check worked. Old Ranker result/clocks/debits unchanged |
+| TimesFM8ec7aed7 | Dated local model, native+market48forwards/2loads/864series, MSE.001699889909/growth2.67900353%/DD1.40509650%, REJECT vs Ridge;598.647combinedupper/allchildrenclosed/leaseabsent |
 
 Root names and numerical caps are in Engine/Sources, history in Git94c16934.
 No repeat completed fits/HTTP/projection/conversion/ledger or holdout reopening.

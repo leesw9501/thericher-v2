@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, Throughput Review13:14UTC.
+2026-10-27 KST, Throughput Review13:41UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/activation; AGENTS owns authority.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -12,10 +12,10 @@ History: Git94c16934 and immutable Consumers, not a current diary.
 | Owner | Actual result / next concrete consumer |
 | --- | --- |
 | Parent / 총괄 | Applied13source+3test NAS/NYS patch; current full1f0f PASS19514/26/418.91s/eight actualworkerpairs/owncleanup. Serial384/focused30/Ruff/3Compose PASS. Newd892 image built/notdeployed; originalhost150refs unchanged. Integrating/Git owned locally. |
-| Schrodinger / 엔진·GPU 조정 | Dated TimesFM OPEN512 development adopted12:56:41/hard14:26:41UTC, Engine900+Data240 once. Zero fits/updates/downloads/retries, native/cold before47market pipelines; no running GPU inferred from dispatch. |
-| Socrates / 데이터 | New exact47OOF OPEN512 contexts/full-OHLC availability/SPY+17 axis/retained beta60; direct qualified producer-file callback to Engine. Data240 in SAME family. Reader8727 is closed, not re-executed. |
-| Faraday / 데이터 | Quote probeb38 finite actual worker37948/40612/hard13:33UTC. First12:59:58 success, only Asia/Seoul fresh; no parser hotfix needed. Planned RTH13:31/13:32; no account/order calls. |
-| Sagan / 실행 | Retained-RW diagnostic CLOSED: fake broker-ID collision, no demonstrated third-module fault/RW completion. Now source-only separate MSFT/LOWVOL future callers180active/hard13:35, no actual private reads before due/admission. |
+| Schrodinger / 엔진·GPU 조정 | TimesFM8ec7 CLOSED/REJECT,48native+market forwards/2loads/peak1012MiB/allresourcesclosed. Next assigned one fixedhalf Ridge/TimesFM CPU composition240/1800, no repeated model/GPU/grid. |
+| Socrates / 호출 실행 | Data534bf54e path repair qualified/closed; next inert US Ridge17 route/host240active/hard14:12, existing input/profile/image only/no inference, conversion, private or Task effects. |
+| Faraday / 전략 탐색 | Quote cf132417 CLOSED:4GET1POST0failures/RTH stamps advance/Korea fresh/four original PID-starts absent. Next Source-only native TimesFM trainable-head90/1200, no model load/market/GPU/fit yet. |
+| Sagan / 실행 | Future-reader PREP closed, launcher-only claims not actual admission. Next minimum retained-NAS grouping/compiler150active/hard13:50; e414+two-module proof8d61 valid, not other historical actor deployments. |
 | Leibniz / 실행 시각대기 | Workerclock owns originalMSFT13:52UTC readinesscallback; oneTaskmetadataquery thenstop, no newTask/process/private/API/financialclaim. |
 | Halley / 실행 시각대기 | Workerclock owns originalLOWVOL15:42UTC readinesscallback; same finite scope, no recurringchain or extraorders. |
 
@@ -79,10 +79,11 @@ ONE original B/10/F9 UNKNOWN-HELD remains. Installation/time/taskexit notfills.
 
 ## Throughput / Reversible Improvement
 
-Review13:14: company runtime still needs original owned market opportunities.
+Review13:41: company runtime still needs original owned market opportunities.
 All prior CUDA fits are COMPLETE, not an environment/permission hold.
-Ready work is quote-clock measurement, new dated TimesFM GPU inference with
-independent Data preparation, and actual post-opportunity reader binding. Closed
+Quote measurement and new dated TimesFM inference are closed, no active GPU
+worker claimed. Ready work is fixed-score composition, trainable-head Source,
+inert US route/legacy compatibility and actual result-reader binding. Closed
 models are not rerun or a reason to revise frozen thresholds. Reused outcomes
 remain development evidence. Waiting belongs to named workers, not Parent.
 Reversible improvement: the complete bounded private quote probe is delegated
@@ -105,10 +106,20 @@ Current all-NAS slots remain usable on original frozen e414. Whole-
 bank NASD-only validation is a concrete futureNYSE compatibility fault, not an
 operatorapproval. No newbank/schemaV5/unknown-reserve release to work around it.
 
-The two-module legacy cold-RO proof passed; RW remains unqualified. One later
-retained diagnostic identified duplicated invented account/day broker IDs,
-not a demonstrated third native module fault. Preserve both closed results;
-do not edit retained IDs, production risk or repeat the broken fixture.
+The old two-module RW scope remains unqualified, its duplicated invented
+account/day broker IDs diagnosed without production changes. NEW independent
+unique-ID fixture8d61690e passed three native cases: coldRO, exact partial NAS
+SELL/unknown cancel/no duplicate submit or reload/residual SELL/owned-flat,
+F9/NYS/basis preserved;3CIDs18Jobsclosed/10nativevisits. Qualifies exacte414 ABI,
+not all fourteen actor deployments; old results and retained IDs untouched.
+
+Parent actual-reader preflight found app tool-control runtime pins outdated,
+not a private Data/model writer. New Node binary/manifest with identical prior
+bootstrap/both entry programs/closed grammar classified two no-child control
+references, leaving actor0/container0 at13:33. Fresh actual three-phase census
+still required at13:52; no package turns this dated sample into future authority.
+Reversible efficiency fix: only rebind measured runtime metadata, not reader
+logic, bank risk or all agents. Actual private reads remain0 in preparation.
 
 Keep actual named API/file/import/bootstrap native smoke ahead of its market
 consumer, retain caller+predicate at failures, reuse completed upstream effects,

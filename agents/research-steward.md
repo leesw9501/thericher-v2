@@ -1,13 +1,13 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-27 KST,13:14UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,13:41UTC. A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is ONE GPU/registry coordinator.
 Parent owns MD/Git. Model choice belongs Engine, not a resource approval board.
 
 ## Current Ready / Owned
 
-ONE GPU/registry coordinator remains Schrodinger. Current adopted useful GPU
-question is TimesFM OPEN512 zero-shot development, NOT another training run:
+ONE GPU/registry coordinator remains Schrodinger. Latest useful GPU question,
+TimesFM OPEN512 zero-shot development, is CLOSED8ec7aed7/REJECT:
 A/research/current-liquid17-timesfm-open512-development-20261027-v1.
 Global12:56:41..14:26:41UTC/1140combinedowned(Data240+Engine900), zero fits/
 updates/retries/downloads, <=2local checkpoint loads/1native+47market pipelines.
@@ -15,7 +15,12 @@ Sourcef2cfb68c/contract78fa21d5, local dated trusted safetensors/d6 runtime.
 Actual named native/cold handoff precedes market; direct Data readiness avoids
 Parent relay. Execution13:40 preempts at safe boundary; remeasure capacity,
 desktop4096MiB reserve/native peak<=8GiB, no appkill/driver change. Do not infer
-current GPU use from adoption; retained native/cold receipts precede final result.
+current GPU use from adoption. Actual native+market48forwards/2loads/864series,
+47market pipelines11.094s/peak1011.75MiB, no fit. Combined598.647upper,
+all children closed/GPUinactive/leaseabsent, proper/growth/DD increments fail.
+No duplicate model work. Next assigned fixed Ridge/TimesFM blend is CPU-only;
+Faraday's native trainable-head Source90/1200 is not adopted training or a GPU
+permission hold. Recheck actual capacity before any new qualified campaign.
 Latest rankingb16d33fe actualCUDA3fits28/32/26epochs/best8/12/6 and7074market
 updates are CLOSED, all8CIDs40Jobs/43observedPIDsabsent/leaseabsent.
 86MiBpeakeach/33.100+37.564+25.900leafseconds with co-tenancy, not isolated

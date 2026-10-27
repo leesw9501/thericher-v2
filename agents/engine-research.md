@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,13:14UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,13:41UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
@@ -35,7 +35,7 @@ Installation not runtime/fill. Stock-only alternative remains dormant.
 
 ## Ready Research Queues
 
-Current adopted family: dated TimesFM OPEN512 development at
+Most recent closed family: dated TimesFM OPEN512 development at
 A/research/current-liquid17-timesfm-open512-development-20261027-v1.
 Sourcef2cfb68c/contract78fa21d5; global12:56:41..14:26:41UTC,
 1140combinedowned=Data240+Engine900, not an extra model-search allocation.
@@ -52,7 +52,25 @@ qualified ABI callback. Seal scores/actions before one held-label+MARKS/new
 RawMSE/growth/DD primary comparison unchanged from contract. Checkpoint date
 supports post-checkpoint development only: residual corpus/currentlisting/
 nonPIT/MODP1/global selection reuse limits remain, not independent alpha.
-This is GPU inference, not training; adoption is not proof of a running worker.
+Actual8ec7aed7 CLOSED/REJECT: native+market48forwards/2loads/864series,
+47market pipelines11.094s/1011.75MiBpeak. MSE.001699889909 loses Ridge/MLP;
+growth2.67900353%/DD1.40509650% lose Ridge.598.647combinedownedupper,
+all children closed/GPU inactive/leaseabsent. Data534bf54e technical-path repair
+preserved original8841147d audit-root failure; exact M OOF paths, same codec/
+units/keys/fullOHLC, cumulative2groups40CSV40JSON/4attempts3decodes/1projection.
+No repeated native model load/forecast/fit or old cost refund.
+
+Next assigned CPU composition:
+A/research/current-liquid17-fixed-ridge-timesfm-blend-development-20261027-v1.
+240active1800elapsed from actualfreeze:45Source45native75readout45verify30cleanup.
+One fixed .5Ridge+.5TimesFM rawscore blend/exact799keys/units/availability/
+payoff/costs;0fits/modelcalls/GPU/retries. Seal actions before one LABELS+
+MARKS/new47ledger, cached controls not replayed; no weight grid. Individual
+winner not required for exploratory fusion; require declared MSE/growth/DD
+increment, retain adaptive globally reused47 limits. No independent alpha or
+Paper permission from this screen. Source/fitting dispatch is not active work.
+Faraday separately prepares one native trainable TimesFM-head Source recipe;
+Engine adopts only an actually feasible bounded contract, not GPU dummy load.
 
 Latest numerical family b16d33fe at
 A/research/current-liquid17-pairwise-ranking-development-20261027-v1:

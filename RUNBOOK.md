@@ -88,7 +88,9 @@ orderability unobserved. New finite sourceb38 probe at
 A/data/current-paper-quote-clock-capability-probe-20261027-v1 owns <=4GET/
 2POST/240active/hard13:33UTC, RAM client/token/default300guard/1.25pace.
 First12:59:58UTC observation supports Asia/Seoul/<=120s; NY/UTC future>5s.
-RTH13:31/13:32 observations remain pending. No parser/freshness edit or order
+RTH13:31/13:32 both succeeded/Korea-fresh/stamp advanced. Consumer cf132417
+closes4GET/1POST/0failures/same client-token/four original PID-starts absent.
+No parser/freshness edit or account/orderability/fill claim. Do not infer order
 inference. Never rerun this consumed stage, read raw responses or secret state.
 Official REST source:
 https://raw.githubusercontent.com/koreainvestment/open-trading-api/main/examples_llm/overseas_stock/inquire_asking_price/chk_inquire_asking_price.py
@@ -101,6 +103,15 @@ SDK a6568f12/image d892 with original NAS profile/point/policy/anchor binding.
 PREP does not admit actual private reads. Parent uses a new exact source-pin
 command only after original owner closure and fresh three-phase relevant-writer
 census; no old consumed caller, no inference from Task exit, no recovery observe.
+
+Parent's current MSFT derivation is parent-admission-r1 under that root, one
+13:52..14:07UTC actual read after its SOURCE is sealed. The base prep callers
+have launcher-only claims, NOT full current admission: do not invoke blindly.
+App tool-control Node executable/manifest changed; bootstrap and both exact
+entry hashes still match the prior closed grammar. Only runtime pins rebound,
+same cwd/argv/no-children/assumed-honest-host limitation. Preflight actor0/two
+control exclusions/container0 is not future actual admission. Source draft/
+Claude review_unavailable is not a financial result or authority over writers.
 
 ## Ready Inputs / No Repeat Work
 
