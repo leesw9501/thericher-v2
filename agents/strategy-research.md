@@ -1,103 +1,56 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST. A=D:/thericher-v2/model-artifacts.
-Own source-backed mechanisms and pure proposals; Engine owns final fitting/
-targets/splits/cost interpretation. Parent owns MD/Git; AGENTS owns authority.
-Detailed closed history: Gitbb391f30 and immutable source/consumer records.
+2026-10-27 KST,03:55UTC. A=D:/thericher-v2/model-artifacts.
+Own source-backed mechanisms/pure proposals, not broker risk/credentials.
+Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
+History/old deprecations remain Git57074588 and original immutable consumers.
 
-## Current / Concrete Consumer
+## Small Executable Ready Set
 
-Weighted-gap experiment0129751f is now CLOSED_REJECT:3CUDAfits/737updates,
-WeightedHalf2.566644%growth loses RankHalf2.588162%; no more loss/seed rescue.
-Proxy gap/(gap+.004) is not exact cost utility; ClaudeREVISE remains recorded.
-Fixed targetEMA.5 b35e2f84 completed:2.657095%/DD1.645632% versus RankHalf
-2.588162%/1.713420%, turnover lower on reused47 only; target lag/support/
-exposure confound, not independent alpha/Paper promotion. No rho sweep.
+- Temporal information: one existing TCN RAW63+context9 on matched100/
+  OPEN5/2015..2025 chronological roles, not another pointwise width/seed grid.
+  Source under current-nas100-open5-sequence-information-readiness-20261027-v1;
+  Engine exact contract/native before values. Raw63 is clipped/transformed,
+  not unscaled prices; no pure architecture/data-size attribution.
+- Crossasset information: one permutation-equivariant per-date100-token
+  attention scorer using same19past features; no symbol/date IDs/futuredate
+  attention. Invoked Engine Source current-nas100-open5-crossasset-context-
+  readiness-20261027-v1, same cachedlinear/initial/constant proper-score kill.
+- Cost/turnover/decision composition: current-nas100-frozen-score-cost-policy-
+  readiness-20261027-v1. Fixedhalf averageTIERANK/LINEAR/MLP/MOM21/LOWVOL21/
+  UNIFORM/cash, finite5sessioncadence/top10 and20bp eachleg BEFORE marks.
+  Candidate profitability is not a prerequisite for exploratory fusion.
+  Lower exposure is not alpha; unknown marks not imputed/selected away.
 
-Current concrete consumer is Engine's broader100 NAS learning question under
-current-nas100-open5-learning-readiness-20261027-v1. Original alphabet-selected
-NAS slots are NOT Nasdaq100/PIT. Data source/OPEN5/causal feature capability
-comes first; linear19 vs one nonlinear expert should test learning against
-constant/INITIAL rather than select another small-sample financial winner.
-No new public-model download/source search needed for this exact question.
-Keep prior official mechanisms as references, not an extra approval platform.
+Whole learning round4fits TOTAL (2closed+one per new information question).
+Proposals become executable bounded work or rejection, not a reading list or
+another MD per indicator. Direct exact schema/readiness callbacks are allowed.
 
+## Checked Project Evidence / Limits
 
-Closed attribution readiness84a36189 enabled separate actuald2f620d9 ablation:
-initial rank growth2.4598694% exceeds trained2.4306671%; positive ranker
-learning-growth claim killed. Initial RankHalf2.3987388% vs trained2.5881617%:
-limited blend contrast not killed, no old primary regrade or alpha.
+Latest NAS1002730/8084: LINEAR49epochs/best33 and MLP23/best7 actually trained
+onCUDA; pairBCE .675687 vs .676095. MLP beats owninitial/constant, notlinear.
+No nonlinear-increment claim; strict_concordance withheld asymmetric ties,
+primaryBCE unaffected/no metric rescue. EVAL2025reusedoldTRAIN/nonPIT, notalpha.
+Do not respond with a larger arbitrary MLP/seed search.
 
-Patchmask source6adb1211 CLOSED40owned/866elapsed; actualSSL88epochb403
-CLOSED_REJECT: learnedMSE8.75515e-6 loses RAW8.31183e-6. Improves initial,
-not raw control, no economic/alpha claim. Prior KIS100masked pretraining+warm
-nested outputs exist; topPREP0 is not wholefamily zero-fit evidence.
-PatchTST method sources, not stock-alpha replication:
-https://arxiv.org/abs/2211.14730
-https://github.com/yuqinie98/PatchTST
-https://raw.githubusercontent.com/yuqinie98/PatchTST/main/LICENSE
-Apache2checked/no copied code/download/dependency change.
+EMA b35e growth2.657095%/DD1.645632% vsRankHalf2.588162%/1.713420% on47reused
+outcomes; lag/support/exposure confound, not fee-only causality/p025 rewrite.
+Weightedgap0129 actual3CUDAfits/best0/0/9 failedoldRankHalfgrowth; no loss rescue.
+Initial d2f initialrank beats trained; narrowblending contrast differs, not old
+primary regrade. HGB/hierarchy/vol/SSL/q10/cost failures remain closed; see Engine.
+OldQQQgate6.1468% is weakly dominated by alwaysQQQ6.4203%/sameDD: strong simple
+references matter. Exp(Elog) is not E(simple return).
 
-F9 temporaryExecutionRO r2d970 is CLOSED_UNAVAILABLE afterABI/parentproof
-repair; remainingunreviewedactors denied,0actualprivate/0CID/8Jobsclosed.
-Halley throughput review6ea01896 CLOSED under current-ro-admission-scope-
-efficiency-review-20261027-v1: blanket denial is not private-writer evidence.
-One controller matched, six unresolved. Conditional existing-reader snapshot
-mode has no real pinned F9 input: Parent NOT adopting/implementing it now.
-No private read, broad host waiver or creator/lease platform. F9 reserve stays.
-Coststudyd2ef CLOSED_REJECT/allthree modelactions cash63days;
-ALWAYS_QQQ-1.712384%/sampledDD1.71677%. Nofit/threshold/ratiorescue.
+## Primary Method References
 
-RankNet independent Source review closed70owned inside Source600 ONCE.
-Native constructor/checkpoint/hand-off and original targets/28pair ties/
-FIT-only affine/OOF/rank-not-raw blend reviewed, not a performance approval.
-Actual3fits737updates/47OOF2cells completed elsewhere/allclosed. Ranker
-2.4307%/DD1.7227%, RankHalf2.5882%/1.7134%; primary HGB-growth contrast fails,
-DD passes. Blend dominates uniform8 on reused data, not independent alpha.
-
-Fixed hierarchy32f56/result82f43728 CLOSED_REJECT:
-A/research/current-nas8-hierarchical-logreturn-composition-technical-repair-20261027-v1.
-Exact raw HGB residual+beta60*(.25*prior20 SPYlogmom), actual scalar ABI/full
-weight-path aliases before prices PASS.2NET20cells/0fits/0HTTP/all5CIDs27Jobsclosed.
-Growth3.0544%/DD2.2989% beats HGB/beta-only, fails frozen uniform8 DD. No ratio/
-sign/metric rescue.141.543817newowned/343elapsed; initial directory-precondition
-failure0market/held/ledger stays scientificUNKNOWN/240.314309charged once.
-Earlier source-only654/600/ClaudeREVISE stays closed, not a new advisoryGO.
-
-Selection proposal9763f147 was consumed by NAS8 HGB18 CLOSED_REJECT:
-growth2.8773%/DD1.9275%, uniform8DD1.8752%. Common benchmark subtraction alone
-preserves same-date ranks; unequal causal beta target is distinct. No exact
-duplicate claim from bounded registry search and no retrospective asset filter.
-
-Cost-position gateeca8d542 CLOSED:6.1468%/DD2.4345% improves cachedNN but
-alwaysQQQ6.4203%/sameDD weakly dominates. One-step cost proxy, not Bellman/
-expected-utility optimality or alpha. q10ab2d70d6 loses constant/vol proper-score
-references; no rescue. Detailed mechanisms/history are Gitdeaabcbb/consumers.
-Primary sources:
-https://www.microsoft.com/en-us/research/publication/learning-to-rank-using-gradient-descent/
+These support mechanisms, not stock alpha/project replication:
 https://www.microsoft.com/en-us/research/wp-content/uploads/2005/08/icml_ranking.pdf
 https://web.stanford.edu/~boyd/papers/cvx_portfolio.html
-No upstream code/dependency added. Toy/search ranking and portfolio theory do
-not prove stock alpha; exp(Elog) is not E(simple return).
-
-## Recent Decisions / Lessons
-
-- QQQcontextb419f22a: six fits, context primary FAIL versus QQQ-only. Distinct
-  risk/cost information question is preferable to more arbitrary architectures.
-- Jointseeds16bfa3f7: both new seeds/fixed-thirds fail GRU growth/DD; original
-  attention result not robust. Do not choose the seen seed winner.
-- Intraday pullback study: TRAIN8entries fails frozen>=12; CHECK/EVAL not
-  opened, no ledgers. Sparse support, not a general rejection of pullbacks.
-- H5 depth2 OOF gate fails LOWVOL contrast; fixed blends do not establish
-  incremental value. Exploratory fusion is allowed without individual profit,
-  but learned gates use OOF and claims retain all selection reuse.
-- SameOPEN netting2cba605f improves cost accounting; lower fees/exposure alone
-  are not predictive alpha. Native quantity-delta costs stay unchanged.
-- Supported2026pair: JOINT/GRU required marks complete, LOWVOL4/uniform6
-  missing. Official Nasdaq suspension facts support venue context, not absent
-  price values, no-all-venue-trades or an imputation license.
-
-No broker/credential/risk authority in Strategy research packages. Direct
-qualified schema/readiness exchange with Engine is allowed; Parent is not
-an extra approval relay. Keep a small executable proposal set, not a reading
-list, separate agent per indicator or new reporting platform.
+https://arxiv.org/abs/2211.14730
+https://github.com/yuqinie98/PatchTST
+Old PatchTST source checkedApache2/no copied code or dependency change.
+Chronos2/TimesFM2.5/TTM trials already exist; unknown checkpoint/pretraining
+coverage permits isolated runtime/representation only. New information expert
+Source must verify actual native implementation/version/rights, not assume
+novelty or launch another public-model download for utilization.

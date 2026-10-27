@@ -1,175 +1,80 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-27 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Own source/storage/calendars/availability; Execution owns account/orders.
-Parent owns MD/Git; AGENTS owns policy. Historical exact cursors/commands/
-source contracts remain Gitbb391f30 and immutable consumers.
+2026-10-27 KST,03:55UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Own data/calendars/availability; Parent owns MD/Git. AGENTS owns authority.
+History/debits remain Git57074588 and original immutable consumers.
 
-## Current Useful Data
+## Current Work
 
-Newest completed TOTAL RankNet sidecars, Source20383a8a:
-A/data/current-nas8-total-open5-ranknet18-packets-20261027-v1/HANDOFF.json.
-Direct logOPEN[e+5]/OPEN[e] labels, no residual-y inversion. FIT234/314/394
-dates/INNER55each/OOF16/16/15, same18features8stocks/47OOF keys and interval
-purges. Actual named producer/cold consumer PASS,4Jobsclosed32.256245active/
-300,0HTTP/no helddecode/no targetaffine. Old feature payloads selectively
-decoded once without residualy, only required OPEN fields from retainedCSV.
-Existing held9 refs reused, no price reread into learner. Engine consumed once.
-New RankHalfcurrentpoint reuses completedFEATURES9d85870d/ROLEd6a22a2c;
-no new data/labels/downloads needed. Next only concrete missing consumer/cursor,
-not an instruction to rebuild completed packets.
+Faraday owns current-nas100-open5-raw63-context-packets-20261027-v1,
+03:43..04:43UTC/600owned. Consumer is one existing-TCN RAW63+context9
+information expert, same literal100/roles/keys/masks/clocks as RAW19.
+One original raw63.npy intake/projection/all3roles; feature-only typed role
+files underM, no label/target rebuild/API/model/private/Task/Git/MD effects.
+Agree named producer/consumer directly with Engine; tiny actual file/cold smoke
+before market projection. Preserve63x6 transformed/clipped meaning, not raw
+OHLCV; exactmask/key parity or scope input_unavailable, never impute/drop.
+NewRaw6FIT-only affine belongs Engine; exact context9 old completed FIT affine
+may be reused when input/source/key parity is verified. No old2015..2025 affine.
 
-Latest fixed8ETF CLOSE recovery:
-A/data/current-liquid-etf-close-field-consumer-recovery-20261026-v1/CONSUMER.json,
-eeebb16a. SPY/QQQ/IWM/TLT/GLD/XLK/XLF/XLE each1712 known CLOSE proxies,
-2020-01-02..2026-10-23. Seven original geometry-bad context rows retained and
-flagged; strictQQQ1712 full-Bar-valid OPEN/CLOSE for OPEN5 target.
-ROLEaaeaefdc/panel74254a6b/strictQQQ73c2fa34 are concrete Engine inputs.
-Additional22GET/1POST/zero retries after replaying retained rejected bytes.
-Not canonical/PIT/TR/CA/finality/price-accuracy promotion. Do not recollect.
+## Qualified Current Inputs
 
-Old strict72GET/1POST accepted67pages/rejected5 remain immutable. One bad OHLC
-row rejected its whole100row page; that was not a provider history limit.
-Field-scoped context recovery never relaxes strict target Bar validation.
+RAW19 COMPLETE VERIFIED_READY4c4ce7e3:
+A/data/current-nas100-open5-feature19-packets-20261027-v1/HANDOFF.json.
+Producer9bf54bce/codec c5220d13; exact17producer-file-cold checks PASS,
+6payload byte/header checks/Ruff PASS,1originalOPEN+RAW19intake/1build/0retry.
+132.034842owned/600,4synchronous processes exit0/no children. Engine consumed.
+All276600keys/100slots retained. FIT2015..2023:2264dates/100009mature rows;
+INNER2024:252/17066; EVAL2025:250/17458. Five static tail origins purged per
+role; labels never select forecast eligibility. FP64 rawfactor10+context9,
+separate TOTAL logOPEN[e+5]/OPEN[e]/knownness; EVAL physical labels held until
+four forecasts sealed, not fitting/forecast inputs. No old affine/clipping added.
 
-2026 frozen panels55532634:4000keys/3063eligiblefeatures/40cohorts, held6fields
-unavailable for original four-cell study. Bounded97343f3c acquisition filled
-43/47potentialkeys,23GET1POST; final144757ef2GET1POST found six required rows
-ABSENT, not zero/malformed. CODX/BKYI venue suspensions support context only.
-Exact cursors closed. JOINT/GRU model-owned subsets had requiredgap0 and were
-consumed by the separate two-cell supported study, not original four-cell pass.
+Capability40a0a5c3 closed32owned/120, one canonical decode. Original100 is
+alphabet NAS slice of512, NOT Nasdaq100/PIT/largecap.83closed/17unavailable
+cursors; canonical2014..Sep2026/159335known stock OHLCV rows. Fixed feature
+eligibility26..68/68..70/70..74 perdate, zero eligible OPEN5 endpoint gaps.
+EVAL2025 was oldTRAIN: adaptive reused data, not untouched replication.
+Raw63 FP32 six channels are logOHLC/firstC, lag1logC and relative log1pV,
+symmetrically clipped; not native prices or NAS8-18 features.
 
-## Current Assigned Work / Owners
+Faraday Source-reviewed completed2730 learner: no blocking issue in primary
+pairBCE/normalization/role isolation; WITHHOLD strict_concordance due asymmetric
+predicted-tie credit. No source patch/replay. Review closed/no active wait worker.
 
-Faraday broader-data capability40a0a5c3 COMPLETE/32owned/120:
-A/data/current-nas100-open5-input-capability-20261027-v1/CONSUMER.json.
-Consumer: Engine's one larger linear/nonlinear OPEN5 learning comparison, not
-another NAS8 parameter sweep. Original100 NAS alphabet slots, not Nasdaq100/
-PIT/largecap. Metadata handoff under current-broader-nasdaq-training-data-
-readiness-20261027-v1 found83closed/17unavailable cursors/159335known stock
-OHLCV rows2014..Sep2026. Verified OPEN[e+5]/OPEN[e], past63 clocks/masks and
-FIT2015..2023/INNER2024/EVAL2025:2264/252/250dates, feature-eligible
-26..68/68..70/70..74stocks per date, zero eligible endpoint gaps; five tail
-origins purged per role, all100slots retained. One canonical decode/no labels
-or prices emitted. Existing raw63 is transformed/clipped,
-not raw unscaled OHLCV. Target-knownness does not select forecast rows.
-Old TRAIN/CHECK/INNER filenames are not the new chronological roles. EVAL2025
-was oldTRAIN: adaptive development, not untouched replication.
-Current concrete producer03:02..04:02UTC/600owned:
-A/data/current-nas100-open5-feature19-packets-20261027-v1;
-packets M/us_equities/research_inputs/current-nas100-open5-feature19-packets-20261027-v1.
-One projection of all three roles, rawFP64 feature19/separate TOTALOPEN5 labels/
-known and static purge, original keys/masks/capture clocks. No old affine;
-Engine fits new FIT-only scaling. Named actual producer->cold consumer smoke
-before market build, direct schema agreement with Engine; no extra Parent
-relay. EVAL labels stay separate until forecasts frozen. No API/models/private
-or repeated original packet build. Original missing slots/limitations persist.
+## Other Useful Data / No Rebuild Queue
 
-Completed NAS8 packet work stays CLOSED. Weighted-loss family used NAS8 TOTAL
-role20383a8a/manifestabd32431/rankcodec8a76574c and exact FITaffines, no rebuild/
-new API/target inversion. Direct metadata/schema callbacks only as needed.
-47OOF entries2025-10-30..2026-10-01; target exits2025-11-06..2026-10-08.
-Original600sessions2024-05-23..2026-10-14. Retained61session currentpoint source
-throughOct26 is not a proved later untouched replication block; only single
-Oct27 entry features already produced. No independent outcome-use claim from
-raw presence or key disjointness. This does not block provisional Paper.
+- NAS8 currentpoint e76f0401:20contexts/61prior OHLCV throughOct26 ->8x18.
+  Observed20:49:48UTC, not backdated close. Source9d85870d/ROLEd6a22a2c;
+  actual20GET1POST/59.768869owned/allclosed. Used once by saved HGB/RankHalf.
+- NAS8 TOTAL role20383a8a:234/314/394FITdates,55INNER each,47OOF keys/
+  8stocks/18features/directOPEN5. Closed32.256245owned/4Jobs, no rebuild.
+ 47OOForigins2025-10-30..2026-10-01/targets throughOct8,600source sessions.
+- ETF recovery eeebb16a: SPY/QQQ/IWM/TLT/GLD/XLK/XLF/XLE1712known CLOSE
+  proxies2020..Oct23;7geometry-bad context rows flagged/retained, strictQQQ
+  fullBar1712. Original rejected pages are not provider history limits.
+- C120/H60 causal7a3a: FIT6054/INNER1800/EVAL2610, six unknown INNER retained;
+  separate PAST/RAW_LOGTARGET,94.296747owned/allclosed. SSL/cost study closed.
+- Intraday metadata: KISQQQ33/SPY34 complete sessions across disjoint stores,
+  not a merged qualified corpus. FirstRate2022-09-30..2023-09-29:
+  QQQ251complete/SPY250complete+1partial. Sep28..Oct9 sample10complete each.
+  1h/3h full buckets omit RTH30minute tail; no imputation/promotion.
+- Original fixed2026 fourcell held gaps remain absent; supported JOINT/GRU
+  subset study closed separately, not a repaired original full comparison.
 
+## Boundaries / Owners
 
-Newest Faraday work CLOSED VERIFIED_READY, HANDOFFe76f0401:
-A/data/current-nas8-hgb18-currentpoint-features-20261027-v1.
-Exact20context routes/61prior OHLCV rows ending Oct26, NAS8 feature-only view
-and18indicators, no labels/held outcomes. Actual20GET/1POST/zero retries,
-20accepted independently captured pages, raw bytes M-only.5Jobs positive
-closed,59.768869active upper/180, native producer/cold consumer/independent
-verification/Ruff PASS. Feature end20:00UTC Oct26, observed20:49:48.613373;
-do not backdate availability to close. No vintage splice/canonical overwrite/
-PIT/CA/TR/volume-adjustment/finality promotion. Direct Engine handoff.
-FEATURES9d85870d/ROLEd6a22a2c, exact8x18 raw FP64, FIT affine belongs to Engine.
+Source currentlisting/survival/nonPIT/currentvintageMODP1/corporate-action/
+volume/TR/finality/accuracy limitations remain. Retained capture clocks are
+not historical decision-time arrival. Endpoint support is not full held path.
+One source-limited cursor is not all endpoints/history. Prefer existing useful
+data; no duplicate completed packets/downloads/probes.
 
-Causalpast Data COMPLETE7a3a83e5/source765a60f9:
-A/data/current-c120-h60-causal-past-packets-20261027-v1/HANDOFF.json.
-One projection; known FIT6054/INNER1800/EVAL2610, all6unknown INNER keys
-retained. Three Jobs/two CIDsclosed94.296747ownedupper/720,0HTTP/model.
-SeparatePAST/RAW_LOGTARGET. Producer pre-market inventedTARGET gap stays;
-Engine completed actual TARGET cold-codec before learner labels, no backdating.
-
-Cost-sidecar under current-c120-h60-first-daily-qqq-marks-20261027-v1 is now
-CLOSED/consumed by d2ef coststudy:63fixedcalendarQQQopportunities/60minuteCLOSE
-path each, sourcePrice onlyinData thenoneEngineintakeafteractionseals.
-Shared8nativecases, no missing/drop/imputation; no model/HTTP/private effects.
-Data cost counted ONCE inside aggregate195.4094/600. No furtherbuildassigned.
-ExactAMD/NVDAOct26metadata handedExecution; nativequote auditmayrequestsource
-knowledge, not a newcollectiongrant. OldData94.296747 staysseparate.
-
-Intraday corpus metadata HANDOFF under current-intraday-causal-feature-corpus-
-readiness-20261027-v1 closed: KIS historical21+disjointcurrent metadata gives
-QQQ33/SPY34complete sessions, not a merged/rawvalidated modelpacket. FirstRate
-2022-09-30..2023-09-29 gives QQQ251complete/SPY250complete+1partial; existing
-C120/H60 1m/5m outcomes reused previously. Sample2026Sep28..Oct9 has10complete
-sessions each, full-bucket 1h/3h omits30minute RTHtail. No imputation/new data.
-Metadata helper36checks, correctnessRuffPASS/defaultRuff23E501 failed;
-source-only readiness does not claim clean full lint or native qualification.
-
-
-
-Completed NAS8 study Data view:
-A/data/current-liquid17-volume-open5-selection-packets-20261027-v1/nas8-r1.
-Derived from qualified17-role packets; original20context/600snapshot/debits
-preserved, no HTTP/raw snapshot reread.8-only FIT affines/feature-only OOF/
-separate8+SPY held data. Actual native8-codec qualified; cumulative95.8401
-active seconds inside240. Consumed by closed HGB18 study, do not rebuild.
-
-The q10 packet work below is CLOSED and consumed, not a current dispatch:
-
-Faraday completed exact scalar q10 label/feature packets for adopted1326968d:
-A/data/current-qqq-open5-adverse-tail-label-packets-20261027-v1.
-One build/3FIT-INNER roles/3feature-only OOF/separate140held labels,180active
-worker seconds inside original family20:17:27 hard deadline,0HTTP/private/API/
-orders. Actual schema QQQ_OPEN5_PHYSICAL_ADVERSE_Q10_ROLE_V1 and native75e57
-codec names, not conceptual aliases. Direct qualified handoff to Schrodinger;
-Actual once-only build/46checks complete, no duplicate old panel. HANDOFFa56a5e9a
-sent directly to Engine;3FIT-INNER pairs/3feature-only OOF/140held labels,
-62.83/180active upper, allJobsclosed. Source5c57341e/nativecodec75e57, no
-old-return/held-affine re-decode or raw-price output fields. Core producer Ruff
-PASS; handoff-summary generator retains3line-length findings, no full-clean claim.
-
-Previous temporary Infra/Execution source compatibility work is complete:
-A/execution/current-pwsh7-l-optional-runtime-compatibility-20261026-v1.
-L future-exit-only metadata43351f18/60dc71a1 ACTUALLY installed19:09:29,
-Consumerb5d053d7 under current-L-future-exit-pwsh-owned-activation-20261026-v1/
-current-scope-closure-r2. Expired entry disabled, original exit/ACL and86other
-definitions unchanged,0TaskRun/KIS/private effect. Reader667c967a closed first.
-PS installed7.6.9 signedMicrosoft differs L frozen7.6.7 hash; native owner/
-optional/argv mocks8/7/11 PASS. Optional provider itself needs no PS repair.
-Optional static actor stage3420bb4c/34476b72 also NOT installed; current entry
-remainsf4dd/runtime19902/release5ba4. Unknown custody writers still denied.
-Mixed intraday wrapper can submit prospective SPY; never label it cache-only.
-Two-pass actual current-related-writer absence bc25a349 was measured18:59,
-not retroactive pre-read authority. Historical missing Job receipt is not
-itself an active writer. Parent repeated exact probe6f919c3a before L cutover;
-no current actor/container/operational claim, no old anonymous Job join claim.
-
-Actual mixed Data next19:24UTC at17:50:43,0instances; no assumed18:00 conflict
-pause/reschedule occurred. Data market actors are not automatically custody
-writers; admission uses actual source/argv/write-scope/mounts.
-
-Existing SPY future capturee9466a1c/sourceb710e3e4 ACTUALLY installed once:
-thericher-kis-paper-spy-h20-modp1-postclose-20261121-v1,
-Nov20 22:05..22:10UTC, quiet pythonw. Native12/mock13,80otherXML/ACL exact,
-0actualHTTP/start at installation. Dedicated once cursor/max1POST1GET,
-M-only raw retention. No future-data guarantee or duplicate69collector.
-Existing retention21:55UTC and69/25/70 acquisition owners remain separate.
-
-## Durable Limitations / Next
-
-Keep source/cursor/dedupe/accepted-failure counts and measured pace/ETA or
-unknown/next_due in existing artifacts. Fresh-session work precedes backfill.
-Direct daily is separate from canonical1m resampling. Source-limited closes
-only its exact cursor, never all endpoints/history or unrelated research.
-
-Use scoped Paper credentials/token gate; no live secrets/raw output. One
-collector per cache/account gate. Existing documented pacing remains unless
-a bounded measured probe changes it. Waits belong to workers, not Parent.
-D: reserve>=15%, warn projected<20%; last36.8% is dated, not current capacity.
-SEC contact email remains optional/unprovided, isolated from Data/Research/
-Paper readiness; do not invent an address or repeat denied requests.
+Socrates temporarily owns disjoint CPUcost Source and possible later held O/C
+view, not RAW63 writes; no cost numeric authority yet. Original69/25/70 cache
+acquisition/retention owners remain separate; Data actors are not automatically
+private-custody writers. Some mixed wrappers can submit Paper: attest actual
+source/write scope, never call them cache-only.
+SPY future capturee9466a1c Nov20 22:05..22:10UTC and retention21:55 remain owned.
+Raw/model bytes stayM/A, Dfree36.72% at03:04 is dated; reserve15%,warn20%.
+SEC email remains optional/unprovided; no invented address/denied-request loop.

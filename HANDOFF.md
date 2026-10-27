@@ -2,27 +2,25 @@
 
 ## Current Reality
 
-2026-10-27 KST, through03:00UTC.
+2026-10-27 KST, through03:55UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Operator -> Parent Orchestrator -> roles. AGENTS.md owns standing authority.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Original three-entry objective SUPERSEDED_NOT_ACHIEVED; never reopen ended
-entries, substitute unknown requests or infer financial results from installs.
-Parent owns shared MD/Git/cutovers. Preserve unrelated %SystemDrive%/.
-No genuine operator decision identified. Never KIS_LIVE_*/live/real money.
+Parent owns shared MD/Git/cutovers. AGENTS.md owns standing authority.
+Private no-cost Paper/Research is delegated; never KIS_LIVE_*/live/real money.
+No genuine operator decision. Preserve unrelated %SystemDrive%/.
+Previous integrated checkpoint57074588; current refresh hash is GitHEAD.
 
 ## Actual Installed Paper
 
-ALL4 existing MSFT Tasks ACTUALLY enabled01:22:39UTC Oct27:
+ALL4 MSFT Tasks ACTUALLY NEW/enabled Oct27 01:22:39UTC:
 A/execution/current-msft-p010-operational-runtime-r2-preparation-20261027-v1/parent-source-pin-r4/ACTUAL.json,
 901b00411f6a9bc98d7a734d56b2fc9325b6d4cc9278834dc9a9d99071040986.
-Independent POST-INSTALL-READBACK.json007b0145: exact4XML/ACL/0instances/
-quiet pythonw/Hidden/future times and actual image present.88otherTasks unchanged.
-Hoste1b014dd/routebf376d3a/imagee41497fd/TRUE090ddb10/input65f9571d/
-policya8612217. NEW .01 of full original B inside ONE original shared B/10;
-not .1 per model, forced1share, affordability guarantee or a new private bank.
-No Task.Run/KIS/private write or new submit/fill at installation.
+Independent POST-INSTALL-READBACK.json007b0145 matches4XML/ACL/quiet pythonw/
+Hidden/0instances/next_due/image.88otherTasks unchanged at installation.
+Hoste1b014dd/routebf376d3a/imagee41497fd/TRUE090ddb10/input65f9571d/policya861.
+Gross .01 of original full B inside ONE shared original initialB/10, not a
+new bank, per-model tenth, forced share or affordability guarantee.
 
 | Suffix after thericher-kis-paper-msft-engineering- | UTC |
 | --- | --- |
@@ -31,142 +29,139 @@ No Task.Run/KIS/private write or new submit/fill at installation.
 | exit-20261102-v1 | Nov2 20:45..20:49, owned only |
 | exact-exit-recovery-20261102-v1 | Nov2 20:52..20:56 |
 
-H5 includes entry session; Nov2 15:45ET is near-close, not16:00 print.
-Research OPEN[e+5]=Nov3OPEN, explicit operational nonparity.
-Original shared basis/costs/losses/F9 UNKNOWN-HELD/pending remain unchanged.
-Native due-time virtualhost/identity/budget/pending/quote/orderability still veto.
-No new follow-up chain, manual duplicate worker or foreground session wait.
+H5 entry-inclusive fifth session ends near15:45ET Nov2, NOT16:00 print;
+research OPEN[e+5] is Nov3OPEN. Explicit operational nonparity.
+Native virtualhost/identity/budget/pending/fresh quote/orderability still veto.
+No Task.Run/KIS/private write or new submit/fill occurred at installation.
+No financial runtime closure yet. Do not foreground-wait or add follow-up chains.
 
-## Recovery / Verification
+## Actual Read-only Evidence / Unresolved F9
 
-Dated-close lot reads cd30/e25 are consumed/allclosed: .005B below one MSFT
-lot; .01B first finite candidate. Not fresh quote/funds/allocated capital.
-Old image27 hardcoded .005 and rejects .01. New code0ce47bed is PUSHED:
-weight-gross explicit0<g<=.1 plus active/completed input-ref binding. Legacy
-ten-target and deterministic account-risk functions unchanged.
-
-Fresh company authority4c9a2956 under verification/current-native-model-gross-
-contract-20261027-v1:711serialPASS/19482fullPASS26SKIP35warnings/8actualworkers/
-382.78s/Ruff/threeComposePASS,1411same/cleanCchild+lease/20PID-startsclosed.
-Helper0 is evidenced by exact clean-success path/summary; direct LASTEXITCODE
-was not separately serialized. Protected1411 rechecked00:45UTC unchanged.
-Imagee414 actual748members/native4input/inert/skip checks PASS; SDKded65b3d
-has748ABSOLUTE paths. Python3.12.16 patch vs3.12.15, same3.12/locked deps.
-
-All old installers/journals remain consumed. R2 actual failed before any update:
-real enabled XML omits Enabled. Parent restored old4 byte-exact00:52:33.
-Parent e28 dual-COM comparison fixed materialized defaults/reordering; actual
-then updated entry ONLY before stale XML SecurityDescriptor mirror refreshed.
-Actual API7 ACL stayed EXACT4f54c787, sameO/G/4ACEs/DACL/noSACL. Old XML mirror
-882f94d was stale/unprotected; new4f54 matches the actual protected ACL.
-R3 qualification failed before STARTED/effects: imported native SetContext
-shadowed helper SourceSha256. R4 ownSourcePin separates namespaces and finished
-ONLY remaining3updates+4enables. No financial reset or repeated entry update.
-R4 helperSourcec59ff933/resume2497af62 is CONSUMED; never rerun. Parent kept
-all prior failures/debits. RealCOM4preflight/16foreign negatives/raw4negative/
-ClaudeADOPT7b0137b2 precede reliance. Two exact XML mirror hashes only; actual
-API7 ACL/native controls remain separately strict. No broad security waiver.
-
-Quote actual85c1040d at00:34UTC under execution/current-msft-native-quote-
-readiness-20261027-v1:1POST2virtualGET2xx; last/tick valid, offsession BBO/stamp
-stale, orderability not observed. No unsupported-route/in-session-ready claim.
-REST timezone remains unverified; current parser assumes Korea. This is a
-capability limitation to measure, not permission to weaken freshness.
-
-## Research / Data / Ready Inputs
-
-All percentages below are retrospective, not annualized or actual account PnL.
-- HGBc9c35:3CPUfits,2.8773%growth/DD1.9275%, frozen REJECT vsuniform DD.
-- Hierarchy32f56:3.0544%/2.2989%, frozen REJECT; no ratio rescue.
-- RankNet01b810:3CUDAfits737updates/best0/0/9,2.4307%/1.7227%.
-  RankHalf2.5882%/1.7134%; old combined primary REJECT, useful adaptive tradeoff.
-- Initial attributiond2f: initialrank2.4599% beats learned; learning-growth
-  claim killed. Initialblend2.3987% below learned2.5882%, narrow contrast only.
-- SSLb403:88epochs4224updates/best76/368MiB; learned MSE8.75515e-6 loses
-  raw8.31183e-6. Allclosed; do not repeat completed training.
-- Costd2ef: RAW/TRAINED/blend all63days cash, ALWAYS_QQQ -1.7124%/DD1.7168%.
-- Volallocationc39d: VolRankHalf2.4106%/1.9520%, VolUniform2.1642%/1.9150%;
-  REJECT fixed recipe,118.2161owned/all4CIDsclosed/0fits. No regrade/rescue.
-
-Weighted loss0129751f/auditfeb8fe36 CLOSED_REJECT:
-A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/numerical-r1/CONSUMER.json.
-Actual3CUDAfits737updates/20-20-29epochs/best0-0-9, fitwalls11.85/13.67/25.71s,
-peaks66/66/68MiB. Native1fit2updates10forwards1cold; onlyF3new120rowforward,
-F1/F2INITIAL caches reused. WeightedRank2.510318%/DD1.722658%, WeightedHalf
-2.566644%/1.713420%; both growth checks fail against RankHalf2.588162%.
-2newledgers/1held/0retry/Datarebuild,272.462539owned/1200 inclSource40once.
-All8CIDs/3coordinators/GPUlease closed; no active numerical work from this family.
-ClaudeREVISE retained/narrow proxy only, no retune/alpha/Paper promotion.
-Fixed targetEMA.5 is COMPLETE, b35e2f84:
-A/research/current-nas8-fixed-target-inertia-readiness-20261027-v1/technical-continuation-r1/CONSUMER.json.
-Growth2.657095%/DD1.645632%, turnover1.552561 vs RankHalf2.697627; both
-predeclared primary checks pass on reused47 only. Previous targets are NOT
-inventory; lag/support/exposure confound attribution. No independent alpha or
-p025/Paper rewrite. One projection/ledger/held,0fits/forwards/GPU/allclosed.
-Initial directory failureff02 remains NOT_EVALUATED/80.615837owned; unused-stage
-continuation added33.656989, combined114.272826/240. Never repeat completed work.
-
-Next Data/Engine Source work broadens existing data rather than tuning this
-same47outcome set: original100 alphabet-ordered NAS slots, NOT Nasdaq100/PIT.
-A/data/current-broader-nasdaq-training-data-readiness-20261027-v1/HANDOFF.json
-finds83closed/17unavailable cursors. Existing canonical2014..Sep2026/159335
-known stock OHLCV rows; raw63 is transformed/clipped, not raw unscaled OHLCV.
-Capability40a0a5c3 verifies direct OPEN5/past63: FIT2264dates/26..68eligible
-stocks per date, INNER252/68..70, EVAL250/70..74, zero eligible endpoint gaps.
-All100slots retained/end5purge. FIT2015..2023/INNER2024/EVAL2025, not old
-TRAIN/CHECK/INNER file names whose dates are not chronological inner roles.
-Data now prepares one raw19/separate-label packet projection03:02..04:02UTC/
-600owned with Engine's named cold codec smoke first; no market fit/GPU yet.
-EVAL2025 was oldTRAIN, proper-score study remains adaptive development.
-
-RankHalf currentpoint75f complete. NEW native p025 proposal25512f0f:
-A/execution/current-rankhalf-p025-native-proposal-preparation-20261027-v1/CONSUMER.json.
-Inputc058a194/policy357af39b/cohortrankhalf-p025-H5-close-e4-20261027-v1,
-all8weights/5positive unchanged; .025fullB is .25 of original shared tenth.
-One actual cold native admission/record PASS/e414/SDKded65/allclosed.
-UNALLOCATED/allowFALSE/NOTDEPLOYED, no affordability/fresh-funds claim or peerwriter.
-Consumer is a future finite same-account SERIAL proposal dispatcher.
-
-Data20contexts/61priorOHLCV throughOct26 ->8x18currentpoint, observed20:49UTC
-not backdated close. CausalPAST7a3a separates future labels. Original47OOF
-entries2025-10-30..2026-10-01/targets throughOct8. Later raw throughOct26 is
-NOT a proved untouched replication block. Currentlisting/nonPIT/CA/TR/vendor
-volume/finality limitations persist; missing marks are not imputed.
-Chronos/TimesFM/TTM already tried; no duplicate public-model campaign.
-
-## Owners / Original Due Work
-
-Parent integration/Git. Faraday Data owns broader NAS100 packets03:02..04:02UTC/
-600owned after capability40a0 closed32owned; Schrodinger Engine+Steward owns
-learning Source02:50..03:10UTC/120owned, no active GPU fit.
-Leibniz serial capsule33371e2b and real guard/root75a3a13d are
-COMPLETE INACTIVE: one existing context/BankLeg, nested current session.pending/
-hold/unavailable stops before another cohort. Protocol12 used injected transport;
-real guard constructors/root checks8 plus public cold SDK passed, but actual
-owner/window/custody admission remains unqualified. No Task/allocation change.
-Leibniz now checks the smallest actual integration/timeline, source-only.
-Socrates actual one-read78e10375 COMPLETE at02:47:13UTC:
+MSFT compatibility78e10375 at02:47:13UTC:
 A/execution/current-msft-p010-owned-count-actual-readiness-20261027-v1/CONSUMER.json.
-Three admission phases and exact original account/basis/stability PASS; existing
-book/newSDK/count reader compatible. New p010 record absent, financial counts
-NULL/MissingEvidenceUnknown, NOT zero activity/no submit/flat/broker holdings.
-Networknone/private+sourceRO; CID/13Jobs/3callerPIDs closed. No credentials/KIS/
-Task/recovery/lock/private writes. Scope consumed; a night read needs fresh
-named scope. Reader projection13952128 passed6pure/cold checks; default Ruff
-retains5E501 (4old/1new), not a full clean lint claim. Socrates reviews count
-join/pending correctness now, no further private read. Halley closed.
-Role MDs/assignments do not prove running workers.
-F9 primary reader remains UNKNOWN-HELD: prior attempts denied/no primary read.
-Conditional snapshot-only RO idea lacked a real pinned input and was NOT adopted.
-Public staged/host-results/<host_run_id>/result-001.json is diagnostic-only,
-not a current pointer/fill proof. Reader SPEC57d40ce8 and count13952128 now bind
-65f/a861/e414. Do not invent OS-scheduler provenance or make its absence a
-global account-reading gate. Compatibility is not a future fill/current count.
+Fresh admitted networknone/private+sourceRO read; original account/basis and
+stability PASS. New65f/a861 record absent/countsNULL UNKNOWN, NOT no-submit/
+zero activity/flat/broker holdings. CID/13Jobs/3PIDs closed, scope consumed.
+
+F9 book764d9836 and exact canonical primary9b65a0e7 ACTUALLY read:
+A/execution/current-f9-existing-book-rebinding-read-20261027-v1/CONSUMER.json;
+A/execution/current-f9-exact-canonical-primary-read-20261027-v1/CONSUMER.json.
+Exact original account/basis/inputbb77/policyf66/request/intent joins PASS.
+One pending/submission-start journal; outcome_unknown/reconciliation_unresolved.
+POST attempt, acceptance, linked fills and current owned position remain NULL.
+Primary present/current intent-decision-price contract matches, response category
+NOT RETAINED. Current-primary/origin-unproven, not original broker/OS proof.
+No new basis for idless adoption, recovery, reserve release or identical history
+query. F9 path CLOSED UNKNOWN-HELD; preserve reservation and native identities.
+Book scope180owned and primary scope120owned remain charged; no retries.
+Each actual scope admitted3phases/stability PASS/positive resource closure.
+No KIS/credentials/Task/recovery/lock/private writes. Missing fees/settlement/
+netPnL/broker freshness remain unobserved; this does not hold other lanes.
+
+## Completed Engine Round
+
+Current NAS100 study CLOSED REJECT_LEARNING_INCREMENT:
+A/research/current-nas100-open5-linear-mlp19-learning-development-20261027-v1/numerical-r1/CONSUMER.json.
+Source273022eb/contract8084f3f4, original100 alphabet-selected NAS slots
+NOT Nasdaq100/PIT. FIT2015..2023/INNER2024/EVAL2025; EVAL was oldTRAIN.
+Two actual concurrent CUDA fits: LINEAR49epochs/3479updates/best33/81.795s,
+MLP23epochs/1633updates/best7/42.218s, peak164MiB each/co-tenancy.
+Same date-balanced pairBCE, lower is better:
+LINEAR_SELECTED .675687120; MLP_SELECTED .676095196;
+MLP_INITIAL .679823382; CONSTANT .679284237.
+MLP beats initial/constant but NOT trained linear; no nonlinear increment.
+WITHHOLD strict_concordance: asymmetric score-tie credit in descriptive metric.
+Primary BCE/selection unaffected; no patch/replay/metric rescue.
+Native2fits4updates/2cold restores; market5112updates/4forecast paths sealed
+before one EVALtarget intake. All workers/lease closed;0financial ledgers/retry.
+Combined477.659752owned/3600 inclData132.034842 once,2827.446elapsed/7200.
+Old Source80/104.316s elapsed overrun preserved; Claude unavailable not agreement.
+
+NAS8 EMA b35e2f84 COMPLETE: growth2.657095%/DD1.645632% versus RankHalf
+2.588162%/1.713420%, turnover1.552561 vs2.697627 on reused47 only.
+Target lag/support/exposure confound, not independent alpha/p025 rewrite.
+Combined114.272826owned incl unchanged80.615837 failed directory phase.
+Weightedloss0129751f CLOSED_REJECT,3CUDAfits737updates/best0/0/9:
+WeightedHalf2.566644% growth loses oldRankHalf. No loss/seed/rho rescue.
+Older immutable model/results/debits remain Git57074588 and role evidence.
+
+## Current Parallel Work
+
+- Schrodinger Engine+sole Steward: RAW63+context9 temporal information expert
+  Source03:43..04:13UTC/180owned. One existing TCN implementation preferred,
+  same100/roles/OPEN5/pairBCE/cached linear/ownINITIAL/constant. Conditional
+  future max1fit/96epochs/27168updates/6000combinedowned/14400elapsed to07:43,
+  native+Data+resource qualification first; no actual new fit claimed.
+- Faraday Data: RAW63/context feature-only role projection03:43..04:43/600owned
+  under current-nas100-open5-raw63-context-packets-20261027-v1. One original
+  raw63 intake/all3roles, exact RAW19 keys/masks/clocks, newRaw6FIT-only affine
+  belongs Engine. No labels/new target build/API; direct named codec callback.
+- Halley invoked Engine: cross-asset attention Source03:50..04:20/180owned,
+  current-nas100-open5-crossasset-context-readiness-20261027-v1. One small
+  per-date100-token expert/no future-date attention/IDs. Conditional max1fit/
+  128epochs9088updates/3000owned7200elapsed to05:50. Schrodinger admits its
+  bounded CUDA native then market worker through existing resource owner.
+- Socrates invoked CPU Engine/DataCost: finite frozen-score/rule cost-policy
+  Source03:43..04:13/180owned, current-nas100-frozen-score-cost-policy-readiness-
+  20261027-v1. Six noncash policies plus cash, five-session cadence/top10/
+  same-gross/20bp each leg, actions sealed before held O/C marks. No numerical
+  authority yet; potential900owned5400elapsed/no fit/GPU.
+- Leibniz Execution: current-rankhalf-serial-native-financial-syn-20261027-v1,
+ 03:36..05:36/1800owned/maxONEscenario6nativevisits-CIDs. Actual native
+  financial calls ONLY invented account/bank/HTTP; real BankLeg/Jobs/IPC.
+  Pending stops next cohort; exact recovery preserves SYNF9 reserve/foreign
+  inventory. Use /scratch so all748 image/SDK members remain readable.
+  No real private/credential/KIS/Task/allocation change.
+
+Bounded broader NAS100 learning set is completed2 +TCN1 +crossasset1 =4fits
+TOTAL, not a grid/hidden multiplier. Existing debits/old verdicts never reset.
+No dummy GPU load. Recheck headroom; project first priority/4GiB desktop reserve.
+Ready candidates may co-run under ONE Steward; timings are co-tenancy, not
+isolated benchmarks. Native CUDA probe needs initial resource admission, not a
+circular requirement that its CUDA result already exist.
+
+## Data / Serial Readiness / Recovery
+
+RAW19 packets4c4ce7e3 COMPLETE:
+A/data/current-nas100-open5-feature19-packets-20261027-v1/HANDOFF.json.
+All276600keys/100slots; mature FIT100009/INNER17066/EVAL17458 rows.
+Producer9bf54bce/codec c5220d13;17native checks/6payload checks/Ruff PASS,
+one build/0retry/all4processes closed. No old affine/missing imputation.
+Currentlisting/survival/nonPIT/MODP1/CA/TR/volume/finality limits remain.
+Capture clocks are retrospective, not historically known at entry.
+
+RankHalf p025 proposal25512f0f/inputc058a194/policy357af39b is UNALLOCATED/
+allowFALSE/NOTDEPLOYED. .025fullB is quarter of same shared tenth.
+No qualified Oct27 slot preserves four current MSFT writers; never roll dated
+input or substitute an unknown request. Inactive capsule33371/root75a3 and
+actual operational BankLeg/inert integration82f33dad are COMPLETE, not financial
+or actual custody admission. P2 order-POST/result contradiction stops next
+guest; token POST excluded. Next financial SYN is a distinct proof, not replay.
+
+Code0ce47bed and current imagee414 are deployed. Original installers/R2/e28/r3/
+R4c59ff933/resume2497af62 are CONSUMED, never rerun. Repairs measured actual
+COM default materialization, refreshed stale XML SD mirror (882f/4f54 only;
+actualAPI7 ACL always4f54) and helper/native source-pin namespace separation.
+No general security/financial waiver or original failure/debit erasure.
+Quote85c1040d consumed1POST2GET: offsession2xx/last+tick valid/BBO-stamp stale,
+orderability not observed. REST timezone unverified; do not weaken freshness.
+
+## Verification / Original Owners
+
+Fresh full authority4c9a2956:711serialPASS/19482fullPASS26SKIP35warnings/
+8actualworkers382.78s,1411same/cleanCchild+lease/20PID-starts/Ruff/3Compose.
+Direct helper LASTEXITCODE not serialized; complete successful cleanup path and
+summary establish helper0. Later docs checks0b324175:1411same/1startupPASS/
+Ruff/3Compose using.env.example/13publicpointer hashes/diff check PASS.
+Docs-only reuse needs exact protected hashes; external code needs its own fresh
+native/source checks, not another unrelated19k run. External lint limitations
+stay explicit (F9 book19, count reader5E501, numerical controller2F401).
+Never implicit.env; uv --no-env-file. ModelsA-only/dataM-only; Dreserve15%.
 
 Original GRU/TF/L exits Oct30 19:45/19:49/19:55..20:00UTC; optionalNov20
-SELLcutoff20:35/cleanup20:40, J17 20:45..21:00. Keep original identities/owners.
-Data retention21:55 and SPY Nov20 22:05 retain owners. Missing cohort is not
-flat/zero; J17 absent registered pending is not zero historical wire.
-BroaderUS_H5c891 needs old-reader migration before NYSE/AMEX book writes.
-After interruption recheck source/owners/checkpoints and actual immutable receipts;
-completed fits never repeat. Company completes only with native runtime evidence.
+SELLcutoff20:35/cleanup20:40; J17 20:45..21:00; Data21:55/SPYNov20 22:05
+retain owners. Ended entries stay SUPERSEDED_NOT_ACHIEVED, not reopened.
+L7.6.9 future-exit repairb5d053d7 is installed; J17/L/optional missing records
+are NOT zero historical wire or flat inventory. Old details: Git57074588.
+After interruption classify actual owners/checkpoints before resume/reconcile;
+completed fits never repeat. Company closes only on actual native runtime.
