@@ -40,22 +40,40 @@ No manual duplicate worker/Task, replacement follow-up chain or foreground wait.
 
 ## Ready Parallel Work
 
-- Parent: integrate actual901b/007b evidence, external checks, verify/commit/push
-  owned docs; prepare existing p025 model proposal for ONE finite same-account
-  serial dispatcher, not another concurrent bank writer. It is unallocated.
-- Engine/Steward: execute EXACT frozen new weighted-pair objective comparison
-  under research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1.
-  Hard02:00UTC/1200owned inclSource40once/2400elapsed, one new native4update
-  smoke before market labels, max3marketfits192epochs/5952updates/one seed,
-  <=3OOFforwards376rows/2newnonaliasNET20ledgers/1held/0retry/Datarebuild.
-  Reuse matched INITIAL/affine/control caches. Report both fixed policies;
-  ClaudeREVISE remains, narrowed cost-scale proxy only, no independent alpha.
+- Parent: actual901b/007b evidence verified/committed/pushed32c7f85b; continue
+  prepared model handoffs and fresh result-reader binding, not a new company goal.
+- Execution/Leibniz: serial capsule33371e2b and real guard/root qualification
+  75a3a13d COMPLETE INACTIVE. Two exact descriptors/ONEexisting context+BankLeg;
+  nested current session.pending/hold/unavailable stops before next cohort.
+  Protocol transport was injected, root constructors actual; no actual owner/
+  window/custody admission or allocation. Next smallest finite integration must
+  preserve today's four Tasks and Nov2 exit/recovery; no new peer writer.
+- Engine/Steward: weighted-loss0129751f/feb8 closedREJECT, actual3CUDAfits/
+  737updates/best0-0-9/8CIDsclosed. WeightedHalf2.566644%growth loses existing
+  RankHalf2.588162%; no refit/scale/seed rescue. Fixed targetEMA.5 b35e2f84
+  COMPLETE:2.657095%/DD1.645632%, both primary checks pass on reused47 only,
+  no independent alpha/p025 rewrite. Combined114.272826owned/allclosed/0GPU.
+- Data+Engine: original100 NAS slots (alphabet selection, NOT Nasdaq100/PIT),
+  broader existing canonical OPEN5/past63 capability then one linear vs nonlinear
+  proper-score learning question. Capability40a0 COMPLETE/32owned, zero eligible
+  endpoint gaps. Data now prepares raw19/separate-label packets03:02..04:02UTC/
+  600owned with actual producer-cold-consumer smoke; Engine Source-only
+  02:50..03:10UTC/120owned. FIT2015..2023/INNER2024/EVAL2025; EVAL is reused
+  oldTRAIN, not independent replication. No fit/GPU before finite numerical
+  freeze and qualified packet handoff; EVAL labels stay separate. Prefer diversity over
+  another loss/seed tweak on NAS8. No new download is needed for this probe.
+- Temporary RO/Socrates: actual one-read78e10375 at02:47:13UTC COMPLETE.
+  65f/a861/e414/SDKded65/count reader admitted3phases; original account/basis
+  and private/source stability PASS. Record absent/countsNULL UNKNOWN, not
+  no-submit/flat or broker holdings. CID/13Jobs/3PIDs closed/no side effects.
+  Scope consumed; night reading needs fresh qualified scope. Source-only count
+  join/pending review now, no additional private read/platform/provenance gate.
 - Execution: p025proposal25512f0f/inputc058a194/policy357af39b is native/cold
   verified on e414/SDKded65; eight weights/support unchanged/allowFALSE.
   .025fullB is quarter of original shared tenth, NOT allocated or affordable
   by proof. Future single serial-account handoff must retain foreign skip,
   original F9 and native budget; no substitute unknown or forced share.
-- Data packets/currentpoint are complete. No rebuild/recollection/untouched
+- Existing NAS8 packets/currentpoint are complete. No rebuild/recollection/untouched
   replication claim from later raw bytes. F9 optional RO inspection does not
   block another lane; conditional snapshot-only mode was not adopted.
 

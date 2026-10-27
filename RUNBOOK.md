@@ -64,11 +64,40 @@ Do not swap WebSocket fields into REST or weaken due-time freshness.
 
 Completed research/fit/checkpoint/debits are indexed in agents/engine-research.md
 and immutable consumers. Never repeat finished fits after interruption.
-New loss campaign:
-A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/PARENT-FREEZE.json,
-01:20..02:00UTC/1200owned/2400elapsed/Source40once, max3marketfits/192epochs/
-5952updates/one new native4update smoke/2newNET20cells/oneheld/0retry. No
-credentials/API/private/Task access. Assignment is not actual CUDA evidence.
+New loss campaign is CLOSED_REJECT0129751f/feb8:
+A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/numerical-r1/CONSUMER.json.
+Actual3CUDAfits737updates/best0-0-9/onlyF3newforward120rows/2newledgers/
+1held/0retry. All8CIDs/3coordinators/GPUlease closed,272.462539owned/1200.
+Do not rerun selected INITIAL or completed fits after restart.
+EMA.5 COMPLETEb35e2f84 under current-nas8-fixed-target-inertia-readiness-
+20261027-v1/technical-continuation-r1/CONSUMER.json:2.657095%/DD1.645632%,
+both primary checks pass reused47 only/noalpha; oneledger/0fits-GPU/allclosed.
+Initial ff02 technical failure remains NOT_EVALUATED/80.615837owned; separate
+unused-stage completion33.656989, combined114.272826/240. Do not repeat.
+Broader100 NAS capability40a0 COMPLETE/32owned; zero eligible endpoint gaps.
+Data raw19/separate OPEN5 packet projection03:02..04:02UTC/600owned, named
+producer-cold-consumer smoke first. Engine Source-only02:50..03:10UTC/120owned;
+original alphabet universe, FIT2015..2023/INNER2024/EVAL2025. EVAL2025 reused
+oldTRAIN, no independent claim. No market fit yet. Known-label masks never
+select forecast rows; old affines never cross the new chronological split.
+
+Inactive serial caller33371e2b and actual guard/root75a3a13d are complete:
+A/execution/current-rankhalf-same-account-serial-round-preparation-20261027-v1/CONSUMER.json;
+A/execution/current-rankhalf-single-bank-root-qualification-20261027-v1/CONSUMER.json.
+ONEexisting context/BankLeg, two descriptors, nested pending/hold/unavailable
+yields before next cohort. Protocol transport injected; actual owner/window/
+custody admission NOT qualified. Actual p025 window UNASSIGNED; preserve
+today's4Tasks/no overlap/early exit/substitute unknown. No install command yet.
+
+Reader57d40ce8/count13952128 and actual one-read78e10375 COMPLETE:
+A/execution/current-msft-p010-owned-count-actual-readiness-20261027-v1/CONSUMER.json.
+At02:47:13UTC three admission phases/account-basis/stability PASS for65f/a861/
+e414/ded65. Record absent/countsNULL UNKNOWN, not no-submit/zero activity/flat.
+CID/13Jobs/3PIDs closed; no KIS/Task/lock/recovery/private write. Read scope is
+CONSUMED, not a reusable command. Night reading needs fresh named admission
+with existing strict parser and exact native linkage. Public host-results/
+<uuid>/result-001 remains diagnostic-only, not causal fill/current pointer.
+Default count-helper Ruff retains5E501(4old/1new); correctness checks passed.
 
 RankHalf p025 native proposal:
 A/execution/current-rankhalf-p025-native-proposal-preparation-20261027-v1/CONSUMER.json,

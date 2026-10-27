@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, Throughput Review01:25UTC.
+2026-10-27 KST, Throughput Review03:00UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/cutovers; AGENTS owns standing authority.
 Preserve unrelated %SystemDrive%/. History is Git/immutable artifacts.
@@ -15,11 +15,11 @@ Entry Oct27 13:40UTC/22:40KST; exact recovery13:47. Owned exit Nov2
 
 | Owner | Current package / concrete consumer |
 | --- | --- |
-| Parent / 총괄 | Actual cutover done; integrate/check/commit, next finite serial-account model handoff. |
-| Schrodinger / 엔진·자원 | Frozen one-loss comparison01:20..02:00UTC,1200owned/2400elapsed; actual worker evidence required. |
-| Leibniz / 실행 | P025 native proposal25512f0f complete/allowFALSE/unallocated, no active writer. |
-| Faraday / 데이터 | Currentpoint/causal packets/metadata complete; known-schema callbacks only, no rebuild. |
-| Socrates / 임시 검토 | Recovery advisory7b0137b2 complete; no code or Task ownership. |
+| Parent / 총괄 | Actual cutover verified/pushed32c7f85b; integrate independent packages and next model handoff. |
+| Schrodinger / 엔진·자원 | EMA b35e2f84 completed; broader NAS100 Source learning contract02:50..03:10UTC/120owned, no active GPU fit. |
+| Leibniz / 실행 | Capsule33371/root75a3 inactive complete; smallest finite owner/window integration plan02:56..03:11UTC/120owned, no Task effects. |
+| Faraday / 데이터 | Capability40a0 complete/32owned; raw19/separate OPEN5 packets03:02..04:02UTC/600owned, direct codec smoke with Engine before one build. |
+| Socrates / 임시 검토 | Actual RO78e one-read complete/record absent/counts unknown/allclosed; source-only count/pending review03:00..03:15UTC/120owned. |
 | Halley / 임시 효율검토 | RO review6ea01896 complete; conditional snapshot mode not adopted. |
 
 Parent remaining company runtime dependency is the original future owned session,
@@ -39,8 +39,23 @@ ownSourcePin prevents SetContext shadowing; preserve pre-effect failures/debits.
 Do not repeat old model/financial/native proofs when source/schema/runtime match.
 CPU fixed-vol test c39d closedREJECT/118.2161owned/4CIDsclosed,0fits; new loss
 question is a bounded matched objective change, not an arbitrary architecture.
-Closed SSL88epochs/4224updates is real completed GPU work, not an active worker.
+Weighted loss actually completed3CUDAfits737updates, best0/0/9,8CIDsclosed.
+Both growth checks fail; no more loss/seed sweep on the same47outcomes.
+Closed SSL88epochs and weightedfits are completed GPU work, not active workers.
+No dummyload; next distinct readyGPU question may be frozen autonomously.
 Unknown desktop GPU users are not a permission hold; Steward checks headroom.
+
+Reversible improvement: stop local47outcome loss/seed tuning and qualify wider
+existing data for a concrete larger learning question. Original100NAS is an
+alphabet slice, not Nasdaq100/PIT; old July INNER cannot validate an earlier
+January CHECK. Use explicit chronological dates/new FIT-only scaling. Labels'
+future knownness never selects forecast eligibility. Capability40a0 passed;
+one packet build is now assigned, no market fit yet. EVAL2025 reused oldTRAIN.
+EMA.5 b35e improved2.5882->2.6571%/DD1.7134->1.6456% on reused47, not alpha;
+one CPU ledger/0GPU/combined114.272826owned/allclosed. Lag/support confounded.
+Reader compatibility78e now actual/closed with stable original account/basis.
+Record absent/countsNULL remains UNKNOWN, not zero activity/flat. Night needs
+fresh scope; no new reader/lease platform. Public projection not fill authority.
 
 ## Exact Evidence / Scope
 

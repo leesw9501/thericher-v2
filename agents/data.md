@@ -41,7 +41,31 @@ consumed by the separate two-cell supported study, not original four-cell pass.
 
 ## Current Assigned Work / Owners
 
-Current data packet work is CLOSED. New loss family uses original NAS8 TOTAL
+Faraday broader-data capability40a0a5c3 COMPLETE/32owned/120:
+A/data/current-nas100-open5-input-capability-20261027-v1/CONSUMER.json.
+Consumer: Engine's one larger linear/nonlinear OPEN5 learning comparison, not
+another NAS8 parameter sweep. Original100 NAS alphabet slots, not Nasdaq100/
+PIT/largecap. Metadata handoff under current-broader-nasdaq-training-data-
+readiness-20261027-v1 found83closed/17unavailable cursors/159335known stock
+OHLCV rows2014..Sep2026. Verified OPEN[e+5]/OPEN[e], past63 clocks/masks and
+FIT2015..2023/INNER2024/EVAL2025:2264/252/250dates, feature-eligible
+26..68/68..70/70..74stocks per date, zero eligible endpoint gaps; five tail
+origins purged per role, all100slots retained. One canonical decode/no labels
+or prices emitted. Existing raw63 is transformed/clipped,
+not raw unscaled OHLCV. Target-knownness does not select forecast rows.
+Old TRAIN/CHECK/INNER filenames are not the new chronological roles. EVAL2025
+was oldTRAIN: adaptive development, not untouched replication.
+Current concrete producer03:02..04:02UTC/600owned:
+A/data/current-nas100-open5-feature19-packets-20261027-v1;
+packets M/us_equities/research_inputs/current-nas100-open5-feature19-packets-20261027-v1.
+One projection of all three roles, rawFP64 feature19/separate TOTALOPEN5 labels/
+known and static purge, original keys/masks/capture clocks. No old affine;
+Engine fits new FIT-only scaling. Named actual producer->cold consumer smoke
+before market build, direct schema agreement with Engine; no extra Parent
+relay. EVAL labels stay separate until forecasts frozen. No API/models/private
+or repeated original packet build. Original missing slots/limitations persist.
+
+Completed NAS8 packet work stays CLOSED. Weighted-loss family used NAS8 TOTAL
 role20383a8a/manifestabd32431/rankcodec8a76574c and exact FITaffines, no rebuild/
 new API/target inversion. Direct metadata/schema callbacks only as needed.
 47OOF entries2025-10-30..2026-10-01; target exits2025-11-06..2026-10-08.

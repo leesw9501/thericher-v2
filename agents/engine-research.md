@@ -7,6 +7,30 @@ Gitbb391f30 and immutable consumers; they are not a ready dispatch queue.
 
 ## Current / Next
 
+Schrodinger current Source-only broader NAS100 learning readiness:
+A/research/current-nas100-open5-learning-readiness-20261027-v1,
+02:50..03:10UTC/120owned; direct Data callback allowed. One linear19 baseline
+vs one genuinely nonduplicate nonlinear expert, original100 NAS alphabet slots
+(not Nasdaq100/PIT), FIT2015..2023/INNER2024/EVAL2025. Qualify OPEN5/past63/
+new FIT affine before numerical dispatch. Proper-score contrast vs constant/
+own INITIAL, no financial/alpha claim from incomplete labels. No arrays/fits/
+GPU/packet build in this Source package; retain finite native/fit/checkpoint/
+epoch/update/evaluation/active+elapsed caps in the numerical contract.
+Short queue: close exact learning/data contract, then actual useful training.
+Long queue: broader-data candidate after qualification, not repeated NAS8
+loss/seed tweaks. No active GPU worker now; no permission/data-wide hold.
+
+Fixed targetEMA.5 COMPLETE b35e2f84:
+A/research/current-nas8-fixed-target-inertia-readiness-20261027-v1/technical-continuation-r1/CONSUMER.json.
+Growth2.657094676%/DD1.645631525%/turnover1.552561 versus RankHalf2.588161695%/
+1.713420369%/2.697627. Both primary checks pass on reused47 only:
+DEVELOPMENT_NOT_KILLED_NOISE_UNRESOLVED. Previous targets NOT holdings;
+lag/support/concentration/exposure confounds, no pure-fee attribution/alpha/
+p025 rewrite. Six native cases/one projection/ledger/held,0fits/GPU/allclosed.
+Initial directory failureff02 remains NOT_EVALUATED/80.615837owned unchanged;
+unused-stage continuation33.656989, combined114.272826/240. No rho sweep.
+
+
 NAS8 HGB18 CLOSED_REJECT, Sourcec9c35f6e/result4f6016b8:
 A/research/current-liquid17-volume-conditioned-open5-selection-development-20261027-v1/CONSUMER.json.
 Three CPU fits112stages(23/58/31), selected3/38/11;3OOF/47dates/376stockrows/
@@ -105,21 +129,21 @@ Native6/376positiveRMS/47keys/1allocation/2newledgers/1held/0fit-forward-GPU,
 118.216123/300owned/all4CIDs-PIDsclosed. PriorSource30 counted once.
 No allocation rescue, new independent-alpha claim or old verdict reversal.
 
-New loss campaign FROZEN01:20..02:00UTC under current-nas8-cost-weighted-
-ranknet-readiness-20261027-v1/PARENT-FREEZE.json, contract9dfda886.
-1200inclusiveowned/2400elapsed,Source40oncewithin150; same18-32-16-1/
-seed20261027/affines/47OOF. Loss priority gap/(gap+.004) normalized by date
-is cost-scale magnitude proxy, NOT actual turnover utility.
-Max1new nativeCUDAfit4updates/12forwards/1coldrestore before market labels,
-3marketfits192epochs/5952updates/7200allforwards/3OOF376rows/
-2newnonaliasNET20ledgers/1held/0retry/Datarebuild. Selected0 reuses qualified
-INITIAL forecasts; do not run old fit/forward/control ledger again.
-Each fixed policy must grow beyond cachedRankHalf and DD<=assetUniform.
-ClaudeREVISE retained/rationale not returned; Parent narrowed one objective
-ablation, not method novelty/alpha. Related H20 gap-pair experiment actually
-failed, not0fits from stale topSource. No recipe/seed/scale rescue.
-Actual worker/PID/headroom/fit evidence, not this assignment, establishes GPU use.
-Provisional Paper remains independent; current4MSFT deployed901b/next22:40KST.
+Weighted gap-loss CLOSED_REJECT0129751f/auditfeb8fe36:
+A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/numerical-r1/CONSUMER.json.
+Actual3CUDAfits737updates/20-20-29epochs/best0-0-9, fit11.85/13.67/25.71s,
+peaks66/66/68MiB. New native1fit2updates10forwards1cold and6cases PASS.
+F1/F2INITIAL forecasts reused, F3only1new120rowforward; no oldmodel replay.
+WeightedRank2.510318%/DD1.722658%, WeightedHalf2.566644%/1.713420%.
+Both lose cachedRankHalf2.588162% growth; DD checks pass. Two newledgers/
+oneheld/0retry/Datarebuild,272.462539owned/1200 includesSource40once.
+8CIDs/3coordinators/GPUleaseclosed; no active/queued numerical work.
+Same selectedepochs as old study is not a repeated fit: new loss/F3bytes differ.
+ClaudeREVISE retained/proxy-only/reused-data/noalpha. No scale/seed rescue.
+Current4MSFT installed901b/next22:40KST independently. P025 prototype is
+unallocated; capsule33371/root75a3 are inactive complete, not actual custody
+or window admission. Do not rewrite p025 using the new EMA retrospectively.
+
 
 Newest CLOSED consumer:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json,

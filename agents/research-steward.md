@@ -7,15 +7,22 @@ immutable consumers. Closed clocks/charges are never reset/refunded.
 
 ## Actual Resource / Ready Work
 
-NEW finite cost-scale gap-pair loss family FROZEN01:20..02:00UTC:
-A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/PARENT-FREEZE.json.
-1200owned/2400elapsed/Source40oncewithin150, max3marketfits/192epochs/
-5952updates+4newnative/7200allforwards/3OOF376rows/2newledgers/1held/0retry.
-Same existing GPU image/runtime, INITIAL/affines/control caches reused.
-Owner Schrodinger verifies actual free/projected VRAM/desktop reserve and exact
-PID/start/lease before workers. Unknown user apps are not a permission hold.
-Native smoke must precede market labels; no active CUDA claim from assignment.
-Execution repair done901b01:22:39/no active technical resource preemption.
+Weighted loss0129751f/auditfeb8fe36 is CLOSED_REJECT:
+3CUDAmarketfits737updates/69epochs/best0-0-9,66/66/68MiB peaks/
+11.85-13.67-25.71s fitwalls; native1fit2updates/10forwards/1cold.
+OnlyF3new120rowforward, F1/F2INITIAL caches reused.2newfinancialcells,
+272.462539owned/1200 inclSource40once.8CIDs/3coordinators absent/GPUleaseabsent.
+No active/queued numerical work from this family; no loss/seed/refit rescue.
+Steward remains coordinator, ready distinct GPU campaigns allowed autonomously.
+TargetEMA.5 b35e2f84 COMPLETE CPU-only/oneledger/0fits-GPU/allclosed,
+combined114.272826owned/240; original directory failure80.615837 unchanged.
+New Source-only NAS100 learning readiness02:50..03:10UTC/120owned:
+A/research/current-nas100-open5-learning-readiness-20261027-v1.
+Data capability runs independently with direct schema callbacks. No ready
+numerical freeze/active GPU worker yet. Prefer wider data/one learning contrast
+to more local47outcome parameter sweeps. Actual GPU launch needs measured
+headroom and named contract, not operator reapproval or arbitrary process list.
+Current MSFT actual4Task deployment901b is independent/no resource preemption.
 
 Fixed volallocationc39d CLOSED_REJECT/118.2161inclusiveowned/4CIDsclosed,
 1allocation/2ledgers/0fits-GPU. No volatility formula rescue/repeated work.

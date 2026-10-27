@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, through01:25UTC.
+2026-10-27 KST, through03:00UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Operator -> Parent Orchestrator -> roles. AGENTS.md owns standing authority.
@@ -88,13 +88,36 @@ All percentages below are retrospective, not annualized or actual account PnL.
 - Volallocationc39d: VolRankHalf2.4106%/1.9520%, VolUniform2.1642%/1.9150%;
   REJECT fixed recipe,118.2161owned/all4CIDsclosed/0fits. No regrade/rescue.
 
-New ONE weighted pair-loss campaign FROZEN01:20..02:00UTC,1200owned/2400elapsed:
-A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/PARENT-FREEZE.json.
-Contract9dfda886/Source40 counted once; max3marketfits/192epochs/5952updates,
-one new native4update smoke, <=2newNET20ledgers/1held/0retry/Datarebuild.
-Same18-32-16-1/INITIAL/affines/47OOF; new loss gap/(gap+.004), cost-scale proxy
-NOT transaction-cost utility. ClaudeREVISE retained; Parent narrowed one matched
-development contrast, not alpha/novelty. Assignment is not active CUDA evidence.
+Weighted loss0129751f/auditfeb8fe36 CLOSED_REJECT:
+A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/numerical-r1/CONSUMER.json.
+Actual3CUDAfits737updates/20-20-29epochs/best0-0-9, fitwalls11.85/13.67/25.71s,
+peaks66/66/68MiB. Native1fit2updates10forwards1cold; onlyF3new120rowforward,
+F1/F2INITIAL caches reused. WeightedRank2.510318%/DD1.722658%, WeightedHalf
+2.566644%/1.713420%; both growth checks fail against RankHalf2.588162%.
+2newledgers/1held/0retry/Datarebuild,272.462539owned/1200 inclSource40once.
+All8CIDs/3coordinators/GPUlease closed; no active numerical work from this family.
+ClaudeREVISE retained/narrow proxy only, no retune/alpha/Paper promotion.
+Fixed targetEMA.5 is COMPLETE, b35e2f84:
+A/research/current-nas8-fixed-target-inertia-readiness-20261027-v1/technical-continuation-r1/CONSUMER.json.
+Growth2.657095%/DD1.645632%, turnover1.552561 vs RankHalf2.697627; both
+predeclared primary checks pass on reused47 only. Previous targets are NOT
+inventory; lag/support/exposure confound attribution. No independent alpha or
+p025/Paper rewrite. One projection/ledger/held,0fits/forwards/GPU/allclosed.
+Initial directory failureff02 remains NOT_EVALUATED/80.615837owned; unused-stage
+continuation added33.656989, combined114.272826/240. Never repeat completed work.
+
+Next Data/Engine Source work broadens existing data rather than tuning this
+same47outcome set: original100 alphabet-ordered NAS slots, NOT Nasdaq100/PIT.
+A/data/current-broader-nasdaq-training-data-readiness-20261027-v1/HANDOFF.json
+finds83closed/17unavailable cursors. Existing canonical2014..Sep2026/159335
+known stock OHLCV rows; raw63 is transformed/clipped, not raw unscaled OHLCV.
+Capability40a0a5c3 verifies direct OPEN5/past63: FIT2264dates/26..68eligible
+stocks per date, INNER252/68..70, EVAL250/70..74, zero eligible endpoint gaps.
+All100slots retained/end5purge. FIT2015..2023/INNER2024/EVAL2025, not old
+TRAIN/CHECK/INNER file names whose dates are not chronological inner roles.
+Data now prepares one raw19/separate-label packet projection03:02..04:02UTC/
+600owned with Engine's named cold codec smoke first; no market fit/GPU yet.
+EVAL2025 was oldTRAIN, proper-score study remains adaptive development.
 
 RankHalf currentpoint75f complete. NEW native p025 proposal25512f0f:
 A/execution/current-rankhalf-p025-native-proposal-preparation-20261027-v1/CONSUMER.json.
@@ -113,12 +136,32 @@ Chronos/TimesFM/TTM already tried; no duplicate public-model campaign.
 
 ## Owners / Original Due Work
 
-Parent integration/Git/next serial-account preparation. Schrodinger Engine+
-Steward owns frozen new-loss workers/resource checks. Leibniz p025 prep closed;
-Faraday Data packets/metadata closed; Socrates recovery advisory closed; Halley
-RO review closed. Role MDs/assignments do not prove running workers.
+Parent integration/Git. Faraday Data owns broader NAS100 packets03:02..04:02UTC/
+600owned after capability40a0 closed32owned; Schrodinger Engine+Steward owns
+learning Source02:50..03:10UTC/120owned, no active GPU fit.
+Leibniz serial capsule33371e2b and real guard/root75a3a13d are
+COMPLETE INACTIVE: one existing context/BankLeg, nested current session.pending/
+hold/unavailable stops before another cohort. Protocol12 used injected transport;
+real guard constructors/root checks8 plus public cold SDK passed, but actual
+owner/window/custody admission remains unqualified. No Task/allocation change.
+Leibniz now checks the smallest actual integration/timeline, source-only.
+Socrates actual one-read78e10375 COMPLETE at02:47:13UTC:
+A/execution/current-msft-p010-owned-count-actual-readiness-20261027-v1/CONSUMER.json.
+Three admission phases and exact original account/basis/stability PASS; existing
+book/newSDK/count reader compatible. New p010 record absent, financial counts
+NULL/MissingEvidenceUnknown, NOT zero activity/no submit/flat/broker holdings.
+Networknone/private+sourceRO; CID/13Jobs/3callerPIDs closed. No credentials/KIS/
+Task/recovery/lock/private writes. Scope consumed; a night read needs fresh
+named scope. Reader projection13952128 passed6pure/cold checks; default Ruff
+retains5E501 (4old/1new), not a full clean lint claim. Socrates reviews count
+join/pending correctness now, no further private read. Halley closed.
+Role MDs/assignments do not prove running workers.
 F9 primary reader remains UNKNOWN-HELD: prior attempts denied/no primary read.
 Conditional snapshot-only RO idea lacked a real pinned input and was NOT adopted.
+Public staged/host-results/<host_run_id>/result-001.json is diagnostic-only,
+not a current pointer/fill proof. Reader SPEC57d40ce8 and count13952128 now bind
+65f/a861/e414. Do not invent OS-scheduler provenance or make its absence a
+global account-reading gate. Compatibility is not a future fill/current count.
 
 Original GRU/TF/L exits Oct30 19:45/19:49/19:55..20:00UTC; optionalNov20
 SELLcutoff20:35/cleanup20:40, J17 20:45..21:00. Keep original identities/owners.

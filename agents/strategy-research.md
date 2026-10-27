@@ -7,15 +7,20 @@ Detailed closed history: Gitbb391f30 and immutable source/consumer records.
 
 ## Current / Concrete Consumer
 
-New cost-scale gap-pair RankNet Source9dfda886 under current-nas8-cost-weighted-
-ranknet-readiness-20261027-v1 is consumed by Parent finite numerical freeze:
-01:20..02:00UTC/1200owned/2400elapsed/max3marketfits/2newledgers.
-Smooth gap/(gap+.004) is project-authored priority proxy, not exact cost-aware
-utility or a new architecture. ClaudeREVISE remains; rationale not returned.
-Related completed H20 gap-pair47e3fb87 failed; not0fits from stale topSource.
-Parent allows only matched objective contrast/INITIAL reuse/strong kill,
-not novelty, independent alpha or broker promotion. No second strategy review
-or public model download needed. Actual numerical outcome remains with Engine.
+Weighted-gap experiment0129751f is now CLOSED_REJECT:3CUDAfits/737updates,
+WeightedHalf2.566644%growth loses RankHalf2.588162%; no more loss/seed rescue.
+Proxy gap/(gap+.004) is not exact cost utility; ClaudeREVISE remains recorded.
+Fixed targetEMA.5 b35e2f84 completed:2.657095%/DD1.645632% versus RankHalf
+2.588162%/1.713420%, turnover lower on reused47 only; target lag/support/
+exposure confound, not independent alpha/Paper promotion. No rho sweep.
+
+Current concrete consumer is Engine's broader100 NAS learning question under
+current-nas100-open5-learning-readiness-20261027-v1. Original alphabet-selected
+NAS slots are NOT Nasdaq100/PIT. Data source/OPEN5/causal feature capability
+comes first; linear19 vs one nonlinear expert should test learning against
+constant/INITIAL rather than select another small-sample financial winner.
+No new public-model download/source search needed for this exact question.
+Keep prior official mechanisms as references, not an extra approval platform.
 
 
 Closed attribution readiness84a36189 enabled separate actuald2f620d9 ablation:
