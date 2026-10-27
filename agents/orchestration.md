@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, Throughput Review11:14UTC.
+2026-10-27 KST, Throughput Review11:52UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/activation; AGENTS owns authority.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -11,11 +11,11 @@ History: Gita6d68358/57392429 and immutable Consumers, not a current diary.
 
 | Owner | Actual result / next concrete consumer |
 | --- | --- |
-| Parent / 총괄 | Pusheda6d68358; integrate qualified gate/compatibility outputs. Source inspection distinguishes dormant transport from actual installed driver/image dependencies. No active Parent full-test process or actual private reader. |
-| Schrodinger / 엔진·GPU 자원 | OOF gatec8423162 CLOSED/REJECT, oneCPUfit/no base-model calls or GPU. Next concrete consumer is ranking Source proposal; no dummy training or repeated fits. |
-| Socrates / 전략 연구 | Source-only pairwise-ranking loss hypothesis,90owned1200elapsed; same18features/17stocks, no numerical reads or fitting. Completed Ridge/proposal remain closed; nativeinput follows stable NAS/NYS interface. |
-| Faraday / 데이터 | GateData7861d8f7 CLOSED/111.689owned/fiveJobsclosed/zero HTTP. Physical TRAIN/F3 role handoff consumed once; longDataf496 and point335f remain closed. |
-| Sagan / 실행 호환구현 | Narrow NAS/NYS source-only overlay+focusedtests,1200owned5400elapsed; oldNAS bytes/F9/V1-V4/risk intact, actualCsource/image/Tasks untouched. |
+| Parent / 총괄 | Applied13source+3test NAS/NYS patch; current full1f0f PASS19514/26/418.91s/eight actualworkerpairs/owncleanup. Serial384/focused30/Ruff/3Compose PASS. Newd892 image built/notdeployed; originalhost150refs unchanged. Integrating/Git owned locally. |
+| Schrodinger / 엔진·GPU 자원 | Rankingb16d CLOSED/retainedREJECT/host-envelope technicalincomplete, no activefit/lease. New future-envelope source-only repair60active600elapsed; no old result/clock rewriting. |
+| Socrates / 실행 입력 | Native bindinge734 CLOSED/full17/allfiveNYS/input4ba1/policyf59f/allowFALSE/.025Bunallocated/oneconversion/0modelcalls/oneCIDeightJobsclosed. |
+| Faraday / 전략 탐색 | Source-only HGB API/chronological stopping/safe export readiness90active1200elapsed/11:47:35..12:07:35. No Data rebuild/fitting/GPU authority; gateData remains closed. |
+| Sagan / 실행 호환구현 | CLOSED3f2ce1f7/1535legacy+29new tests/621owned. Exactpatch applied by Parent; LLM released, no actual bank/Tasks changed. |
 | Leibniz / 실행 시각대기 | Workerclock owns originalMSFT13:52UTC readinesscallback; oneTaskmetadataquery thenstop, no newTask/process/private/API/financialclaim. |
 | Halley / 실행 시각대기 | Workerclock owns originalLOWVOL15:42UTC readinesscallback; same finite scope, no recurringchain or extraorders. |
 
@@ -64,10 +64,10 @@ ONE original B/10/F9 UNKNOWN-HELD remains. Installation/time/taskexit notfills.
   losesRidge.00163670, growth2.27091913%/DD1.76913107% also losesRidge.
   417.573owned/7CIDs37Jobsclosed/leaseabsent/oneLABELSoneMARKSoneledger.
   Five actualOOFrestores cover1598logicalINITIAL/SELECTEDscores (F1alias).
-- Current606b full:19485PASS26knownSKIP399.96s/8observedworkerpairs/ownchild+
-  leaseclosure,serial71/focused11/Ruff/threeCompose.1411protectedmembers:
-  only approvedPSfa23/test2da30 changed versus baseline. Docs/external reuse
-  exactdigests/freshindependentproofs; no unrelated20k rerun.
+- Current1f0f full:19514PASS26knownSKIP418.91s/8observedworkerpairs/ownchild+
+  leaseclosure/all18PIDmembersabsent,serial384/focused30/Ruff/threeCompose.
+ 1412protectedmembers sourcea150 post-full0mismatch; docs/external reuse only
+  exactdigests/freshindependentproofs, no unrelated20k rerun.
   BroadD-treeRuff37knownstyle findings in frozenlegacy34/prepare2/lease1;
   newauthoredmodel/17Ridge/bundleguest+qualify paths PASS. Never call allD PASS.
 - TTM diagnostic disabled3b2ba869/other87unchanged/DPAPIrollback; no financial
@@ -79,13 +79,21 @@ ONE original B/10/F9 UNKNOWN-HELD remains. Installation/time/taskexit notfills.
 
 ## Throughput / Reversible Improvement
 
-Review11:14: company runtime still needs original owned market opportunities.
+Review11:52: company runtime still needs original owned market opportunities.
 All current CUDA fits are COMPLETE, not an environment/permission hold.
 Ready work is the successfulcandidate's native NAS/NYS path, ranking-loss
 Source proposal and integration. Completed OOF gate is not a reason to rerun
 experts or change a frozen threshold. Reused outcomes remain development
 evidence, not independent alpha. Waiting belongs to named finite clock
 workers; Parent does not sleep while another package is ready.
+
+Reversible improvement: use one version-neutral AST encoding for the ten old
+ABI/source oracles. Actual Python3.12 Docker and Python3.14 host now agree;
+semantic-mutation oracle still rejects real changes. This fixed a test-only
+portability fault, not the trading code, and required one fresh full run.
+Current full is closed and clean. GPU research/input binding used disjoint D
+paths and are closed; Source HGB/envelope repair can continue independently.
+No private actor or new market wait added.
 
 New implementation stays in a source-only overlay until source-attested old
 actors/deployment are understood. Current all-NAS slots remain usable. Whole-

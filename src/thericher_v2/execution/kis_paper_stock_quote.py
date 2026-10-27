@@ -52,8 +52,37 @@ class KisPaperStockInstrument:
         return "NASD"
 
 
-def _validate_instrument(instrument: KisPaperStockInstrument) -> None:
-    if type(instrument) is not KisPaperStockInstrument:
+@dataclass(frozen=True, slots=True, repr=False)
+class KisPaperUsStockInstrument:
+    """Explicit NAS/NYS route; listing attestation remains with the sealed input."""
+
+    symbol: str
+    binding_ref: str
+    venue: str
+
+    def __post_init__(self) -> None:
+        KisPaperStockInstrument(self.symbol, self.binding_ref)
+        if type(self.venue) is not str or self.venue not in {"NAS", "NYS"}:
+            raise KisPaperQuoteError("stock_venue_invalid")
+
+    @property
+    def market(self) -> Literal["US"]:
+        return "US"
+
+    @property
+    def quote_exchange(self) -> str:
+        return self.venue
+
+    @property
+    def order_exchange(self) -> str:
+        return {"NAS": "NASD", "NYS": "NYSE"}[self.venue]
+
+
+STOCK_INSTRUMENT_TYPES = (KisPaperStockInstrument, KisPaperUsStockInstrument)
+
+
+def _validate_instrument(instrument: KisPaperStockInstrument | KisPaperUsStockInstrument) -> None:
+    if type(instrument) not in STOCK_INSTRUMENT_TYPES:
         raise KisPaperQuoteError("stock_instrument_invalid")
     instrument.__post_init__()
 

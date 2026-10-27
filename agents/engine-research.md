@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,11:14UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,11:52UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
@@ -34,6 +34,24 @@ ACTUALf0a9/READBACK9967, hostba2/input58f/policyf037, same original shared B/10.
 Installation not runtime/fill. Stock-only alternative remains dormant.
 
 ## Ready Research Queues
+
+Latest numerical family b16d33fe at
+A/research/current-liquid17-pairwise-ranking-development-20261027-v1:
+three CUDA fits28/32/26epochs,best8/12/6,7074marketupdates/86MiBpeak each.
+Raw dimensionless pairwise logits, no Y inverse.7265forwards/3,728,384rows/
+30,860,512pairrows/oneheldlabel+MARKS+ledger/0retry/baseline replay.
+Retained growth4.25790885%/DD1.27038321%, discordance.47403004 versus
+Ridge4.06711336%/.76057783%/.47230914. Growth/top5utility pass, required
+ordering/DD fail =>retained REJECT, not a universal ban on exploratory fusion.
+Host COMPLETE omitted source_sha256 after readout, so overall status remains
+CLOSED_TECHNICAL_INCOMPLETE_READOUT_REJECT_RETAINED. All8CIDs40Jobs/43PIDmembers
+closed/leaseabsent/324.720owned. No completed numerical effect repeated.
+Schrodinger's separate future-envelope repair60active600elapsed under A/infra
+uses invented output only; old result/clocks/debits are not rewritten.
+Faraday now Source-only HGB readiness90active1200elapsed11:47:35..12:07:35:
+A/research/current-liquid17-boosted-tree-readiness-20261027-v1.
+Same18features/long17/threeprefixes, installed sklearn and chronological INNER
+API/safe export feasibility. Numerical NOT adopted yet; no newData acquisition.
 
 CPU longer-history17 family CLOSED_SCREEN_PASS_NOT_ALPHA9266325e:
 A/research/current-liquid17-long-history-ridge-open5-development-20261027-v1.
@@ -100,13 +118,14 @@ Data7861d8f7 physical roles closed; Parent40hostrefs/0mismatch, no numerical
 replay. Preserve rejection, not a new Ridge promotion or independent alpha.
 CurrentNAS100 recurrent recipe intake is CLOSED, no more variants for load.
 
-Parallel Source-only Strategy proposal:
+Closed Source proposal41543cc9/contract9c39b254:
 A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1,
-Socrates90owned1200elapsed from actual freeze. Compare one cross-sectional
+Socrates90owned1200elapsed from actual freeze. Compared one cross-sectional
 ranking loss mechanism against closed same-feature residual-MSE recipes; no
 architecture/seed/window grid or numerical authority. Exact masks/ties/pair
 counts/chronological inner stopping/OOF/cost comparison required in proposal.
 Public primary-source review, not another training success or activeGPU claim.
+It was adopted as the closed pairwise family above; no Source rerun.
 
 Recent closed consumers (under A/research):
 - current-nas100-open5-raw63-lstm-learning-development-20261027-v1,82b2b1d1:

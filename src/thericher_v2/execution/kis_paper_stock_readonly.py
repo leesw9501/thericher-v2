@@ -25,6 +25,7 @@ from .kis_paper_quote import (
     parse_kis_paper_qqq_limit_input,
 )
 from .kis_paper_stock_quote import (
+    STOCK_INSTRUMENT_TYPES,
     KisPaperStockInstrument,
     build_kis_paper_stock_quote_request,
     validate_kis_paper_stock_quote_request,
@@ -51,7 +52,7 @@ from .kis_readonly import (
 
 
 def _instrument(value: object) -> KisPaperStockInstrument:
-    if type(value) is not KisPaperStockInstrument:
+    if type(value) not in STOCK_INSTRUMENT_TYPES:
         raise KisPaperReadOnlyError("stock_instrument_invalid")
     try:
         replace(value)

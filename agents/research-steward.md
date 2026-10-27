@@ -1,12 +1,19 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-27 KST,11:14UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,11:52UTC. A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is ONE GPU/registry coordinator.
 Parent owns MD/Git. Model choice belongs Engine, not a resource approval board.
 
 ## Current Ready / Owned
 
 ONE GPU/registry coordinator remains Schrodinger. No active GPU fit claimed.
+Latest rankingb16d33fe actualCUDA3fits28/32/26epochs/best8/12/6 and7074market
+updates are CLOSED, all8CIDs40Jobs/43observedPIDsabsent/leaseabsent.
+86MiBpeakeach/33.100+37.564+25.900leafseconds with co-tenancy, not isolated
+benchmarks.324.720inclusiveowned/2400 inclSource90once; no oldcostrefund.
+Scientific ordering/DD fails, retainedREJECT; post-readout host missingfield
+keeps overalltechnicalincomplete. Future-envelope repair is source-only,
+not a replay/regrade. Next HGB readiness is CPU Source-only, not activeGPU.
 Latest complete fits:
 - LSTM82b2b1d1:36epochs5112updates/best21/patience15/137.183s/756MiB,
   350.946inclusiveowned/3CIDs15Jobsclosed/leaseabsent.5743calls4,293,956rows.

@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,11:52UTC. A=D:/thericher-v2/model-artifacts.
 Parent owns shared MD/Git/cutovers. AGENTS owns standing private Paper authority.
 Never KIS_LIVE_*/live/real money or reset ONE original sharedB/10/F9/cost/loss.
 
@@ -50,12 +50,25 @@ allowFALSE, no newbankwriter/intent/order or profitability authority granted.
 Concrete NAS/NYS compatibility plan found wholebank stock validation fixed to
 NASD, immutablequoteinstrument and modelprofile wrappers/readers NAS-only.
 Generic order enum alreadyNYSE-aware; V4 persists exchange, no V5 migration.
-Sagan now implements exact minimal source-only overlay+tests at
+Sagan closed exact minimal source-only overlay+tests3f2ce1f7 at
 A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1,
 1200owned5400elapsed. New separateprofile/instrumentNAS->NASD,NYS->NYSE,
 sealedroute/persistedexchange/intent/fill binding. OldNAS canonicalbytes,
-ETF/QQQpaths/risk/identity/F9reservation/V1-V4 keysets remain. No actualCsource,
-image/Task/private changes while overlay is prepared. BeforefirstNYSEentry,
+ETF/QQQpaths/risk/identity/F9reservation/V1-V4 keysets remain. Parent applied
+exact13production+3test patch0e2792f0; serial384 pass, first full4585 passed
+19513/26. Test-only portable AST correction now30focused and actual3.12image
+tenhash+mutation oracles PASS. Fresh full69460 PASS19514/26 in418.91s,
+authority1f0fd37a/1412source post-rehash0mismatch/all18PIDs+ownchild+leaseclosed.
+No production change after first full. Runtime image d892c58d
+built, not deployed. Post-C-integration source-only rehash of each original
+e1/ba2 host's75members/externalrefs matches: old hosts/e414 Tasks unchanged.
+Socrates now prepares one inactive actual Ridge17 native binding under
+A/execution/current-liquid17-long-ridge-native-input-binding-20261027-v1,
+240owned1800elapsed actualfreeze; new producer-file-image native before saved
+proposal, real clocks/full17/allfiveNYS/.025originalB/allowFALSE/unallocated.
+Consumer e7341d6c CLOSED; input4ba112dd/policyf59f2d85/oneconversion/200owned,
+oneCID/eightJobsclosed. No modelcall, API, actual bank or order. Native minimum
+Nov2nearclose vsresearchNov3OPEN is explicit, no automaticroll/parity. BeforefirstNYSEentry,
 Parent must source-attest compatible relevant readers/writers and positive
 oldprocess/containerclosure; no separatebank/foreignadoption/reserve reset.
 This is a codecompatibility requirement, not renewedoperatorapproval.

@@ -215,7 +215,7 @@ def _owned_quantity(projection, proof, snapshot):
     rows = [s for s in projection.stocks_by_owner if s.owner_ref == owner]
     _check(len(rows) == 1 and owner in dict(proof.owner_refs), "owner_projection_mismatch")
     stock = rows[0]
-    identity = (proof.instrument.symbol, "NASD")
+    identity = (proof.instrument.symbol, proof.instrument.order_exchange)
     _check((stock.symbol, stock.exchange) == identity, "owner_instrument_mismatch")
     quantity = _whole(stock.quantity)
     totals = [s for s in projection.stocks_by_instrument if (s.symbol, s.exchange) == identity]
@@ -282,7 +282,7 @@ def plan_stock_session_recovery(
                 and intent.fingerprint == proof.intent_ref
                 and intent.run_id == proof.run_id
                 and (intent.symbol, intent.exchange, intent.side)
-                == (proof.instrument.symbol, "NASD", proof.side),
+                == (proof.instrument.symbol, proof.instrument.order_exchange, proof.side),
                 "request_binding_mismatch",
             )
             _check(

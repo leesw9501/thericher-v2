@@ -100,6 +100,7 @@ def test_old_profile_values_and_codec_are_unchanged_by_additive_weights_profile(
         "MODEL_PROPOSAL_NAS": "model-proposal-nas-v1",
         "MODEL_WEIGHTS_NAS": MODEL_PAPER_WEIGHTS_PROFILE,
         "MODEL_WEIGHTS_NAS_H5": MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+        "MODEL_WEIGHTS_US_H5": "model-weights-us-5session-2026-v1",
         "MODEL_WEIGHTS_NAS_CASH_H5": MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
         "MODEL_WEIGHTS_NAS_H20_EARLY_EXIT": MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
     }

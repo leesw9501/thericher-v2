@@ -973,7 +973,6 @@ def test_stock_owner_requires_explicit_binding_and_is_not_a_global_allowlist(sym
         (True, "NASD", STOCK_BINDING, "instrument_invalid"),
         ("AAPL", "NAS", STOCK_BINDING, "instrument_invalid"),
         ("AAPL", "AMEX", STOCK_BINDING, "instrument_invalid"),
-        ("AAPL", "NYSE", STOCK_BINDING, "instrument_invalid"),
         ("AAPL", [], STOCK_BINDING, "instrument_invalid"),
     ],
 )

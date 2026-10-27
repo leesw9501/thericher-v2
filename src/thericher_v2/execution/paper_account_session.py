@@ -49,6 +49,7 @@ class PaperAccountCohort:
             and self.profile in {
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+                core.StockCycleProfile.MODEL_WEIGHTS_US_H5,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
             }
             and type(self.mode) is str
@@ -95,7 +96,7 @@ def _same_skip_active(old, new, profile, symbol):
     expected = old | {"entries_done": new["entries_done"]}
     if new == expected:
         return True
-    if profile is not core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5:
+    if profile not in core._H5_STOCK_PROFILES:
         return False
     previous, current = old.get("entry_no_order"), new.get("entry_no_order")
     if type(previous) is not dict or type(current) is not dict or symbol in previous:

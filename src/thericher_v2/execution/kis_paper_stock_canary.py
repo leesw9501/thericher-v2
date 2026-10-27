@@ -33,7 +33,11 @@ from .kis_paper_quote import (
     KIS_PAPER_US_SPY_PRICE_DETAIL_PATH,
     KisPaperQuoteError,
 )
-from .kis_paper_stock_quote import KisPaperStockInstrument, validate_kis_paper_stock_quote_request
+from .kis_paper_stock_quote import (
+    KisPaperStockInstrument,
+    KisPaperUsStockInstrument,
+    validate_kis_paper_stock_quote_request,
+)
 from .kis_paper_stock_readonly import (
     KisPaperStockExitReads,
     KisPaperStockPreviewReads,
@@ -55,7 +59,7 @@ from .kis_readonly import (
 _QUOTE_PATHS = frozenset({KIS_PAPER_US_SPY_ASKING_PRICE_PATH, KIS_PAPER_US_SPY_PRICE_DETAIL_PATH})
 
 
-def _bound_instrument(value: object) -> KisPaperStockInstrument:
+def _bound_instrument(value: object) -> KisPaperStockInstrument | KisPaperUsStockInstrument:
     try:
         return _instrument(value)
     except KisPaperReadOnlyError:

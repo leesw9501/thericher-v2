@@ -40,21 +40,47 @@ F9book764d/primary9b65 pending1: no release or repeated identical query.
   Last push a6d68358. Actual installed drivers use pinned routes/images; do not
   mistake dormant transport.source_map for the active call path. Check actual
   source dependencies before applying tracked code, then fresh required tests.
-- Sagan: source-only NAS/NYS implementation at
+- Sagan implementation CLOSED3f2ce1f7; Parent applied exact patch0e2792f0 at
   A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1.
   Freeze10:43:45UTC/hard12:13:45/1200active5400elapsed. Narrow13productionpaths
-  plus focused tests; no actual Csource/image/Task/private/broker changes.
+  plus focused tests. Csource now changed; full4585 passed19513/26, then a
+  test-only cross-version AST correction passed30focused and actual3.12 image
+  ten-oracle check. Fresh Parent full69460 PASS19514/26 in418.91s,
+  authority1f0fd37a/1412exactsource/all18PIDs+ownchild+leaseclosed.
+  Routing/recovery serial384 PASS; no production change after first full.
+  New image d892c58d built but NOT deployed; old e414 Tasks unchanged.
   New model-weights-us-5session-2026-v1 and closed venue instrument. Preserve
   old NAS canonicalbytes, V1-V4 keysets, original identities/risk and F9.
   First NYSE stock write needs compatible actual whole-bank readers/writers
   after positive old-actor closure, not a new bank or operator approval.
-- Socrates: Source-only ranking-loss proposal at
-  A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1,
-  <=90active1200elapsed from actualfreeze. Same18features/17stocks, one
-  cross-sectional ranking mechanism versus closed residual-MSE recipes.
-  Official primary sources/bounded duplicate check; no numerical payloads,
-  fitting, restore, GPU, credentials, broker or new architecture/seed sweep.
-  Parent may adopt a concrete finite campaign; Schrodinger remains GPU owner.
+- Schrodinger: ranking Source41543cc9/contract9c39b254 adopted at
+  A/research/current-liquid17-pairwise-ranking-development-20261027-v1.
+  Origin11:27:39UTC/hard13:27:39/2400owned7200elapsed, Source debit once.
+  Three required same18feature prefixes, one1153parameter architecture;
+  date-balanced strict-pair ranking loss/logits, not raw-return units. New
+  actual native optimizer/checkpoint/file ABI before market; <=2 useful CUDA
+  workers after measured headroom. No active fit inferred from dispatch.
+  Caps3marketfits/1native2updates/0retry/33152marketupdates/34000forwards/
+  17Mknownrows/146Mpairrows/6OOFpasses/10restores/oneHELD+MARKS+new47ledger.
+  Proper unit-free ordering/top5 utility and matched cost-growth/DD all required;
+  reused development only, no alpha or automatic Paper promotion.
+- Socrates: inactive full17 Ridge native binding CLOSED e7341d6c at
+  A/execution/current-liquid17-long-ridge-native-input-binding-20261027-v1,
+  <=240active1800elapsed from actualfreeze. Same saved current proposal once,
+  no model call/fit/GPU/private/broker/Task. New actual producer-file-image cold
+  smoke before saved payload; allowFALSE/unallocated/.025originalB. Real clocks
+  and H5/venue/inputpolicy bindings required, no forced earlier timestamp.
+  Actual input4ba112dd/policyf59f2d85, oneconversion/0modelcalls/oneCIDeightJobs
+  closed/200owned. Native minimumNov2nearclose vsresearchNov3OPEN is explicit.
+- Ranking family now CLOSED b16d33fe: three CUDA28/32/26epochs/7074updates,
+  growth4.25790885%/DD1.27038321%; ordering and frozenDD fail. Completed readout
+  REJECT retained; host missing source_sha256 makes overalltechnicalincomplete.
+  All8CIDs40Jobsclosed/leaseabsent/324.720owned. No completed calculation repeats.
+  Schrodinger owns a separate future-envelope source-only repair60active600elapsed
+  under A/infra/current-research-completion-envelope-repair-20261027-v1.
+- Faraday now Source-only shallowHGB readiness at
+  A/research/current-liquid17-boosted-tree-readiness-20261027-v1,
+ 11:47:35..12:07:35UTC/90active1200elapsed. No numerical authority or newData.
 - Leibniz: finite worker-clock MSFT metadata callback13:52UTC/deadline14:00,
   A/execution/current-msft-owned-opportunity-readiness-wait-20261027-v1.
 - Halley: finite worker-clock LOWVOL callback15:42UTC/deadline15:50,
@@ -105,10 +131,12 @@ If a technical fault appears, retain first cause and make a bounded scoped fix.
 
 ## Verify / Continue
 
-Current full authority606bc326:
-A/verification/current-observer-native-quiet-fix-20261027-v1/CONSUMER.json.
-19485PASS/26knownSKIP/399.96s/8observedworkerpairs/ownchild+lease closure,
-serial71/focused11/startup1/Ruff/threeCompose using.env.example PASS.
+Current full authority1f0fd37a:
+A/verification/current-nas-nys-native-integration-20261027-v1/CONSUMER.json.
+19514PASS/26knownSKIP/418.91s/8observedworkerpairs/all18PIDs+ownchild+lease
+closure, serial384/focused30/Ruff/threeCompose using.env.example PASS.
+Protected1412sourcea1500c15 post-full rehash0mismatch. Newimage d892 built/not
+deployed;13source hashes/three instrumentroundtrips/tenportableAST oracles pass.
 Docs/external reuse ONLY exact protected digests plus fresh external checks.
 Tracked code/runtime/control changes require changed-path serial coverage,
 fresh scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and default/

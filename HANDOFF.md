@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, through11:24UTC.
+2026-10-27 KST, through11:52UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
@@ -10,7 +10,7 @@ Parent owns shared MD/Git/activation; AGENTS.md owns authority.
 Private no-cost Paper is delegated. Never KIS_LIVE_*/live/real money.
 Preserve ONE original B/10, costs/losses/pending/F9; no foreign adoption.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-Pushed checkpointa6d68358; current integration is GitHEAD.
+Pushed checkpoint2e3dda74; current integration is GitHEAD.
 Current actual LOWVOL metadata is separately
 evidenced below; documentation alone is not deployment.
 
@@ -51,67 +51,49 @@ This is installation/readback, NOT submit/fill/runtime closure. R3 is consumed.
 
 ## Current Parallel Owners
 
-- Leibniz / Execution: audit057023ba and selective TTM diagnostic retirement
-  CLOSED3b2ba869; disabled exactly1, other87definitions/ACL/enabled unchanged.
-  Parent independently confirmed XML/ACL/disabled/instances0 at09:18:46UTC.
-  Rollback/failures retained; no Task.Run/KIS/private or trading-owner changes.
-  Now owns finite MSFT13:52UTC metadata callback/deadline14:00, not a daemon.
-- Schrodinger / Engine and sole GPU coordinator: LSTM82b2/hybrid4fe2 and
-  long17MLP43c647cc all CLOSED, no active GPUfit. MLP3prefixes20/32/30epochs/
-  6774updates/223.980sumleafwalls failedRidgeMSE/growth/DD; 7CIDs37Jobsclosed.
-  CPU gatec8423162 is also CLOSED/REJECT:15iterations/16FG/527maturelabels,
-  three fresh15cohort ledgers after exact Gate-Ridge actionalias deduplication.
-  Growth1.35963162%/DD.27041287%, no proper-score/growth increment.
-  221.895inclusiveupper inclData111.689once/allJobsclosed/noGPU/basecalls/retry.
-  Original preoptimizer loader failure preserved; unused-caller correction
-  repeated no completed solver. Coordinator LLM released until a ready intake.
-- Socrates / Engine CPU: long17Ridge9266325e CLOSED SCREEN_PASS_NOT_ALPHA,
-  growth4.06711336%/DD.76057783% versusuniform1.85962518%/1.04131163%,
-  combined503.176owned/3fits/6Jobsclosed. LatestF3currentpoint6329b00b CLOSED:
-  one17rowCPUforward/top5fairties/5positive/full17/exactmass1/allowFALSE/
-  requested.025B UNALLOCATED/no orders. All five positive targets are NYS;
-  old NAS-only profile would skip all five, not equivalent operational binding.
-  No EVALwinner/refit/extraallocation. Now owns Source-only pairwise ranking
-  readiness under A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1,
-  <=90active1200elapsed from actualfreeze, no numerical/GPU authority.
-- Faraday / Data: long17Dataf496b3b3 VERIFIED_READY_CLOSED:2954origins/
-  46070featureknown/46050labelknown, OOF47x17 required known. Existing20CSV/
-  availability intakes/oneprojection/0HTTP/fiveJobsclosed, exact old600parity.
-  NYS discoveryf29 StageB NOT_NEEDED, existing2007/08..2026 histories reused.
-  Preserve2021-05-05/2023-06-05 gaps/allcalendar slots. Directtypedhandoff.
-  Current17point335fb02f also READY/CLOSED,20retained61-sessioncontexts/
-  all17known/oneprojection/GET0POST0/fiveJobsclosed/141.758owned. Actual old
-  capture05:49KST versus newdelivery19:30KST/inference are distinguished.
-  GateData7861d8f7 physical five-role packets CLOSED/111.689owned/fiveJobsclosed;
-  TRAIN32featuredates/31maturelabeldates/F3later15, exact purged boundary.
-  Parent40combinedData+gatehostrefs/0mismatch, not numerical replay.
-- Halley / invoked Infra: bank-FS12164f48 PASS4coldcalls/4CIDs28Jobsclosed.
-  Source-only bundle417ac66e then fixed mutable legacy mount: exactly access.py
-  and read.py, full stability/one new SYNcold/1CID6Jobsclosed/120debit. Ready
-  for NEW actual caller, with normal fresh three-phase real-writer admission
-  still required, not another permission/qualification wait. No actual read;
-  Now owns finite LOWVOL15:42UTC metadata callback/deadline15:50. No new OS
-  process, schedule, recurrence, private read or financial inference.
+- Parent: applied exact NAS/NYS patch0e2792f0 (13production/3test paths) from
+  Sagan3f2ce1f7, plus test-only portable AST correction. Current authority1f0fd37a
+  at A/verification/current-nas-nys-native-integration-20261027-v1:
+  full69460 exit0/19514PASS26SKIP418.91s/8actual worker pairs, all18PIDmembers
+  and own C r-1cfc9e15/lease absent. Serial384/focused30/Ruff/3Compose PASS.
+  Source1412 a1500c15 post-full rehash0mismatch. New image d892c58d is built,
+  NOT deployed. Actual3.12 smoke13source hashes/3instrument codec roundtrips/
+  ten portableAST+mutation oracles pass, networknone/noprivate/brokercalls0.
+  Old MSFT/LOWVOL host150member/externalrefs remain exact; olde414 and Tasks
+  unchanged. Whole-bank NYSE writes require compatible actual readers/writers
+  after old-actor closure, not a newbank or operator permission.
+- Socrates: actual inactive Ridge17 native binding CLOSED e7341d6c at
+  A/execution/current-liquid17-long-ridge-native-input-binding-20261027-v1.
+  Same saved F3proposal once/full17known/allfiveNYS, input4ba112dd/policyf59f2d85,
+  requested.025originalB UNALLOCATED/allowFALSE/no model or broker call.
+  New invented producer-file-cold first; 3positive3negative/two routes/cold1,
+  oneCID/eightJobsclosed/200owned. Real clocks retained; native H5 minimum
+  Nov2nearclose differs from research Nov3OPEN, no automatic roll/parity claim.
+- Schrodinger: pairwise family CLOSED b16d33fe at
+  A/research/current-liquid17-pairwise-ranking-development-20261027-v1.
+  Three actual CUDA fits28/32/26epochs,best8/12/6,7074marketupdates; one ledger.
+  Retained growth4.25790885%/DD1.27038321% versus Ridge4.06711336%/.76057783%.
+  Ordering/requiredDD fail, so retained scientific REJECT. Host envelope omitted
+  source_sha256 AFTER completed readout: overall TECHNICAL_INCOMPLETE remains.
+  All8CIDs40Jobs/43observedPIDsclosed/leaseabsent/324.720owned, no retry.
+  A new60active600elapsed source-only future completion-envelope repair under
+  A/infra/current-research-completion-envelope-repair-20261027-v1 uses invented
+  output only; old results/source/clocks/debits never rewritten or replayed.
+- Faraday: prior Data f496/335f/7861 all closed, zero new acquisition. Now invoked
+  Strategy Source-only HGB readiness at
+  A/research/current-liquid17-boosted-tree-readiness-20261027-v1,
+ 11:47:35..12:07:35UTC/90active1200elapsed. Existing sklearn API/chronological
+  stopping/safe export feasibility only; no model/market numerical authority.
+- Leibniz: original finite MSFT13:52UTC metadata callback/deadline14:00.
+- Halley: original finite LOWVOL15:42UTC callback/deadline15:50.
+  Exact scopes under A/execution/current-{msft,lowvol}-owned-opportunity-readiness-
+  wait-20261027-v1. One post-due Task query then stop, no new OS worker/schedule/
+  recurrence/chain/private/API/Docker/financial inference. Parent separately
+  admits the fresh actual offline custody reader.
 
-Sagan now implements a narrow NAS/NYS compatibility overlay at
-A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1,
-1200owned5400elapsed. Source plan found wholebank NASD-only validation would
-reject futureNYSE entries for unrelatedNAS/F9readers. PreserveoldV1-V4/NAS
-bytes/risk/ETFspecialpaths/unknownreservation; genericintent enum alreadyNYSE.
-NO actualCsource/image/Task/private changes during overlay prep; exact actual
-reader/writer migration and positiveoldactor closure needed beforefirstNYSE
-effect. This is implementation work, not renewedoperatorapproval.
-
-Two finite metadata-only workerclock waiters own original next_due:
-Leibniz13:52UTC MSFT / Halley15:42UTC LOWVOL. Exact task/time ScopeJSON under
-A/execution/current-{msft,lowvol}-owned-opportunity-readiness-wait-20261027-v1.
-No newTask/backgroundprocess/recurrence/chain/private/KIS/Docker effects;
-one post-due taskmetadata callback, then stop. Parent's freshactual private
-admission/read remains separate; no fill inferred from taskmetadata.
-
-Parent owns shared MD/Git/activation. Exact package roots are in NEXT/boards.
-Dispatch is not proof of an active numerical worker. Earlier release/native
-details and failures remain Git9b881a81 and immutable original Consumers.
+Completed CPU OOF gatec842/Data7861 remains REJECT/closed, not a reason to refit.
+Ridge long17 development screen passes but is not independent alpha or Paper PnL.
+Parent owns shared MD/Git/activation; dispatch/MD is not proof of active GPU.
 
 ## Completed Release Inputs
 
@@ -325,7 +307,7 @@ its own validated child/lease cleanup. Separate serial scratch
 C:/trpy/serial-lowvol-20261027-v1 cleanup was tool-policy denied before execution:
 retained, no retry/bypass, not an all-scratch-clean claim. Old inactive siblings
 were not removed. This is the pre-quiet-patch authority, not current full.
-Fresh post-quiet authority606bc326:
+Prior post-quiet authority606bc326 (superseded for current code):
 A/verification/current-observer-native-quiet-fix-20261027-v1/CONSUMER.json.
 Helper1480 exit0/19485PASS26knownSKIP35warnings399.96s, requested8/actual
 eight launcher+interpreter pairs observed around07:03UTC; after run all18

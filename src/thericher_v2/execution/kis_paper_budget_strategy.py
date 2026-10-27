@@ -531,7 +531,7 @@ def _stock_price_ref(binding, symbol, input_ref, limit_price, side):
 
 
 def _stock_seed_states(binding):
-    """Parse retained explicitly bound NASD owners; no IO, adoption or migration."""
+    """Parse retained explicitly bound NASD/NYSE owners; no adoption or migration."""
     if binding["version"] != 4:
         return {}
     registry = binding["stocks"]
@@ -546,7 +546,8 @@ def _stock_seed_states(binding):
             or symbol in {"SPY", "QQQ", "TLT", "GLD"}
             or type(entry) is not dict
             or set(entry) != {"exchange", "instrument_binding_ref", "owner_ref", "plans"}
-            or entry["exchange"] != "NASD"
+            or type(entry["exchange"]) is not str
+            or entry["exchange"] not in {"NASD", "NYSE"}
             or type(entry["owner_ref"]) is not str
             or _SHA.fullmatch(entry["owner_ref"]) is None
             or type(entry["plans"]) is not list
@@ -578,7 +579,7 @@ def _stock_seed_states(binding):
                     or intent.run_id != run
                     or intent.client_order_id != "stock-" + identity
                     or intent.decision_id != "stock-" + identity
-                    or (intent.symbol, intent.exchange) != (symbol, "NASD")
+                    or (intent.symbol, intent.exchange) != (symbol, entry["exchange"])
                     or intent.price_contract_ref
                     != _stock_price_ref(
                         binding, symbol, plan["input_ref"], intent.limit_price, intent.side
@@ -1074,7 +1075,7 @@ def _owners(binding):
                         binding,
                         _stock_owner_id(entry["instrument_binding_ref"]),
                         symbol,
-                        "NASD",
+                        entry["exchange"],
                         records,
                         stock_binding_ref=entry["instrument_binding_ref"],
                     ),

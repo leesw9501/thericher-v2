@@ -210,16 +210,23 @@ No cleanup-denial bypass or failed/partial/unclean authority reuse.
 External helpers require their own fresh native/independent checks; repeating
 repo tests does not validate D:code.
 
-Current606bc326:
-A/verification/current-observer-native-quiet-fix-20261027-v1/CONSUMER.json.
-Helper0/19485PASS26knownSKIP399.96s/requested8/observed8launcher-child pairs;
-serial71PASS4.20s/focused11/startup1/Ruff/3Compose PASS. Only PSfa23/test2da30
-differ among1411protected members. Full own r-cfd41dca/lease and observed
-18PIDmembers absent after run. Prior full/serial authority stays historical.
+Current1f0fd37a:
+A/verification/current-nas-nys-native-integration-20261027-v1/CONSUMER.json.
+Helper69460 exit0/19514PASS26knownSKIP418.91s/requested8/observed8workerpairs;
+serial384PASS8.53s/focused30PASS2.23s/Ruff/3Compose PASS. Sourcea1500c15 has
+1412protected members/post-full rehash0mismatch. Own r-1cfc9e15/lease and all
+18observedPythonPIDmembers absent after run. First full4585 passed before a
+test-only AST portability correction; current authority is the later run.
+Actual3.12image13sourcehashes/threeinstrumentroundtrips/tenportableAST+mutation
+oracles PASS. Image d892c58d built/notdeployed; olde414 Tasks unchanged.
+Capture helper has one preserved external E501, not whole-artifact Ruff-clean.
+Prior606b/4c9a authority and all original outcomes remain historical.
 Separate manual serial scratch
 C:/trpy/serial-lowvol-20261027-v1 cleanup was tool-policy rejected before action:
 retained/no retry/no bypass; new serial quiet-serial-20261027-v1 also retained.
-Not an all-scratch-clean claim. No Parent test session.
+Not an all-scratch-clean claim. New serial nas-nys scratch also retained.
+No Parent test session. Do not rerun a completed full for docs-only changes
+when exact protected digests match current authority.
 Do not remove old inactive siblings merely to make a directory listing empty.
 
 Market bytes M-only/models A-only/Docker /app/model_artifacts.

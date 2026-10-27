@@ -34,7 +34,10 @@ from thericher_v2.execution.kis_paper_stock_canary import (
     KisPaperStockCanaryClient,
     UrllibKisPaperStockCanaryTransport,
 )
-from thericher_v2.execution.kis_paper_stock_quote import KisPaperStockInstrument
+from thericher_v2.execution.kis_paper_stock_quote import (
+    KisPaperStockInstrument,
+    KisPaperUsStockInstrument,
+)
 from thericher_v2.models.current_nas_frozen_rank_target import (
     FEATURE_SCHEMA_ID,
     MODELS,
@@ -615,7 +618,8 @@ def client_factory(config, limits):
 
     def client(instrument):
         nonlocal shared_token
-        _require(type(instrument) is KisPaperStockInstrument, "stock_instrument_invalid")
+        _require(type(instrument) in (KisPaperStockInstrument, KisPaperUsStockInstrument),
+                 "stock_instrument_invalid")
         if instrument not in clients:
             transport = OwnedTransport(instrument=instrument, limits=limits)
             bound = KisPaperStockCanaryClient(
@@ -720,6 +724,7 @@ def run(
                 StockCycleProfile.MODEL_PROPOSAL_NAS,
                 StockCycleProfile.MODEL_WEIGHTS_NAS,
                 StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+                StockCycleProfile.MODEL_WEIGHTS_US_H5,
                 StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
             }
             or not callable(target_loader)

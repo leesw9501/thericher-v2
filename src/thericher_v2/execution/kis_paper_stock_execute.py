@@ -22,7 +22,7 @@ from .kis_paper_portfolio_execute import _fresh, _funds, _unlinked
 from .kis_paper_portfolio_plan import _replay_scope, _states
 from .kis_paper_session import is_us_equity_regular_session_window
 from .kis_paper_spy_fill_cycle import _RecoveryRequired
-from .kis_paper_stock_quote import KisPaperStockInstrument
+from .kis_paper_stock_quote import STOCK_INSTRUMENT_TYPES, KisPaperStockInstrument
 from .kis_readonly import KisPaperConfig, KisPaperReadOnlySnapshot
 
 
@@ -53,7 +53,7 @@ class KisPaperStockExecutionBinding:
             isinstance(self.state_root, Path) and self.state_root.is_absolute(),
             "stock_root_pin_invalid",
         )
-        _check(type(self.instrument) is KisPaperStockInstrument, "stock_instrument_invalid")
+        _check(type(self.instrument) in STOCK_INSTRUMENT_TYPES, "stock_instrument_invalid")
         replace(self.instrument)
         _check(
             type(self.account_ref) is str
@@ -119,7 +119,7 @@ def _scope(root, proof, as_of=None):
     entry = binding["stocks"].get(proof.instrument.symbol)
     _check(
         entry is not None
-        and entry["exchange"] == "NASD"
+        and entry["exchange"] == proof.instrument.order_exchange
         and entry["instrument_binding_ref"] == proof.instrument.binding_ref,
         "stock_instrument_mismatch",
     )
@@ -141,7 +141,7 @@ def _scope(root, proof, as_of=None):
     _check(
         seed.intent.fingerprint == proof.intent_ref
         and (seed.intent.symbol, seed.intent.exchange, seed.intent.side)
-        == (proof.instrument.symbol, "NASD", proof.side),
+        == (proof.instrument.symbol, proof.instrument.order_exchange, proof.side),
         "stock_intent_mismatch",
     )
     _check(
@@ -251,12 +251,12 @@ def _stock_book(snapshot, projection, instrument, config, at, *, exit_only=False
     expected = next(
         s.quantity
         for s in projection.stocks_by_instrument
-        if (s.symbol, s.exchange) == (instrument.symbol, "NASD")
+        if (s.symbol, s.exchange) == (instrument.symbol, instrument.order_exchange)
     )
     _check(
         len(positions) <= 1
         and all(
-            p.exchange == "NASD"
+            p.exchange == instrument.order_exchange
             and p.currency == "USD"
             and type(p.quantity) is Decimal
             and p.quantity.is_finite()

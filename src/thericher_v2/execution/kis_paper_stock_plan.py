@@ -42,7 +42,7 @@ from .kis_paper_portfolio_budget import (
 from .kis_paper_portfolio_plan import _replay_scope, _states
 from .kis_paper_quote import KisPaperQuoteError, KisPaperSpyLimitInput
 from .kis_paper_spy_fill_cycle import _RecoveryRequired
-from .kis_paper_stock_quote import KisPaperStockInstrument
+from .kis_paper_stock_quote import STOCK_INSTRUMENT_TYPES, KisPaperStockInstrument
 from .kis_paper_stock_readonly import KisPaperStockPreviewReads
 from .kis_readonly import (
     KisPaperAccountIdentity,
@@ -121,7 +121,11 @@ def _time(value: object) -> datetime:
 
 
 def _typed(value: object, expected: type, category: str) -> None:
-    _check(type(value) is expected, category)
+    _check(
+        type(value) in STOCK_INSTRUMENT_TYPES
+        if expected is KisPaperStockInstrument else type(value) is expected,
+        category,
+    )
     with localcontext(_context([getattr(value, field.name) for field in fields(value)])):
         _check(replace(value) == value, category)
     if hasattr(value, "schema_version"):
@@ -235,7 +239,7 @@ def size_kis_paper_stock_target(
         _check(
             proposal.symbol == instrument.symbol
             and proposal.market == instrument.market == "US"
-            and instrument.order_exchange == "NASD"
+            and instrument.order_exchange in {"NASD", "NYSE"}
             and receipt.instrument_binding_ref == instrument.binding_ref,
             "instrument_binding_mismatch",
         )
@@ -250,7 +254,7 @@ def size_kis_paper_stock_target(
         owner = selected[0]
         _check(
             (owner.symbol, owner.exchange, owner.stock_binding_ref)
-            == (instrument.symbol, "NASD", instrument.binding_ref),
+            == (instrument.symbol, instrument.order_exchange, instrument.binding_ref),
             "stock_owner_binding_mismatch",
         )
         _typed(reads, KisPaperStockPreviewReads, "reads_invalid")
@@ -278,7 +282,8 @@ def size_kis_paper_stock_target(
         limit_price = reads.buy_limit
         funds = reads.orderable
         _check(
-            (funds.reference_symbol, funds.reference_exchange) == (instrument.symbol, "NASD")
+            (funds.reference_symbol, funds.reference_exchange)
+            == (instrument.symbol, instrument.order_exchange)
             and _amount(funds.reference_price, positive=True) == limit,
             "orderability_binding_mismatch",
         )
@@ -305,7 +310,7 @@ def size_kis_paper_stock_target(
             if position.symbol == instrument.symbol:
                 target_rows += 1
                 _check(
-                    position.exchange == "NASD" and position.currency == "USD",
+                    position.exchange == instrument.order_exchange and position.currency == "USD",
                     "position_binding_mismatch",
                 )
                 broker_quantity += _amount(position.quantity, whole=True)
@@ -324,7 +329,7 @@ def size_kis_paper_stock_target(
             (
                 Fraction(row.quantity)
                 for row in projection.stocks_by_owner
-                if (row.symbol, row.exchange) == (instrument.symbol, "NASD")
+                if (row.symbol, row.exchange) == (instrument.symbol, instrument.order_exchange)
             ),
             Fraction(0),
         )
@@ -401,7 +406,7 @@ def _plan_scope(
     _plan_check(
         budget._STOCK_SYMBOL.fullmatch(instrument.symbol) is not None
         and instrument.symbol not in {"SPY", "QQQ", "TLT", "GLD"}
-        and instrument.order_exchange == "NASD",
+        and instrument.order_exchange in {"NASD", "NYSE"},
         "stock_instrument_invalid",
     )
     budget.project_shared_budget(
@@ -417,7 +422,7 @@ def _plan_scope(
     if entry is not None:
         _plan_check(
             (entry["exchange"], entry["instrument_binding_ref"])
-            == ("NASD", instrument.binding_ref),
+            == (instrument.order_exchange, instrument.binding_ref),
             "stock_instrument_binding_mismatch",
         )
     return entry
@@ -464,7 +469,7 @@ def _retry_owner_refs(binding, expected_refs, request_id, input_ref, parent_ref,
     # still be reconstructed. A changed book instead needs current owner pins.
     if not isinstance(binding, Mapping) or binding.get("version") != 4:
         return expected_refs
-    if type(instrument) is not KisPaperStockInstrument:
+    if type(instrument) not in STOCK_INSTRUMENT_TYPES:
         return expected_refs
     _plan_check(set(binding) == budget._V4_KEYS, "stock_custody_mismatch")
     current = {owner.owner_ref: ref for owner, ref in budget._owners(binding)}
@@ -561,7 +566,7 @@ def build_kis_paper_stock_plan(
         updated.update(version=4, stocks={})
     if entry is None:
         updated["stocks"][instrument.symbol] = {
-            "exchange": "NASD",
+            "exchange": instrument.order_exchange,
             "instrument_binding_ref": instrument.binding_ref,
             "owner_ref": "sha256:" + "0" * 64,
             "plans": [],
@@ -600,7 +605,7 @@ def build_kis_paper_stock_plan(
         "stock-" + identity,
         "stock-" + identity,
         instrument.symbol,
-        "NASD",
+        instrument.order_exchange,
         sized.quantity,
         sized.limit_price,
         at,

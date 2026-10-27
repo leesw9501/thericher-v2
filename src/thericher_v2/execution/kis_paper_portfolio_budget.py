@@ -144,7 +144,10 @@ class KisPaperPortfolioOwnerBinding:
         else:
             _text(self.stock_binding_ref, _STOCK_BINDING, "stock_binding_invalid")
             _text(self.symbol, _STOCK_SYMBOL, "instrument_invalid")
-            _check(type(self.exchange) is str and self.exchange == "NASD", "instrument_invalid")
+            _check(
+                type(self.exchange) is str and self.exchange in {"NASD", "NYSE"},
+                "instrument_invalid",
+            )
         _check(type(self.state_refs) is tuple, "state_references_not_frozen")
         for reference in self.state_refs:
             _check(type(reference) is KisPaperPortfolioStateRef, "state_reference_invalid")

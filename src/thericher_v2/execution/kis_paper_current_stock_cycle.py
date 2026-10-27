@@ -57,6 +57,7 @@ from thericher_v2.research.model_paper_weights import (
     MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
     MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
     MODEL_PAPER_WEIGHTS_PROFILE,
+    MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
     ModelPaperWeightsMetadata,
@@ -76,7 +77,7 @@ from .kis_paper_portfolio_plan import _replay_scope, _states
 from .kis_paper_quote import KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE, KisPaperSpyLimitInput
 from .kis_paper_spy_fill_cycle import _RecoveryRequired
 from .kis_paper_stock_canary import KisPaperStockCanaryClient
-from .kis_paper_stock_quote import KisPaperStockInstrument
+from .kis_paper_stock_quote import KisPaperStockInstrument, KisPaperUsStockInstrument
 from .kis_paper_stock_readonly import (
     KisPaperStockExitAccountSnapshot,
     KisPaperStockExitReads,
@@ -107,6 +108,7 @@ class StockCycleProfile(Enum):
     MODEL_WEIGHTS_NAS_H20_EARLY_EXIT = MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
     MODEL_WEIGHTS_NAS_H5 = MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE
     MODEL_WEIGHTS_NAS_CASH_H5 = MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE
+    MODEL_WEIGHTS_US_H5 = MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE
 
 
 _MODEL_INPUT_TYPES = {
@@ -115,6 +117,7 @@ _MODEL_INPUT_TYPES = {
     StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_H5: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5: ModelPaperWeightsInput,
+    StockCycleProfile.MODEL_WEIGHTS_US_H5: ModelPaperWeightsInput,
 }
 
 _MODEL_WEIGHT_PROFILES = frozenset(
@@ -123,9 +126,14 @@ _MODEL_WEIGHT_PROFILES = frozenset(
         StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
         StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
         StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5,
+        StockCycleProfile.MODEL_WEIGHTS_US_H5,
     )
 )
 _H5_NO_ORDER_SIZING_REASONS = frozenset({"target_already_satisfied", "whole_share_capacity_zero"})
+_H5_STOCK_PROFILES = frozenset(
+    (StockCycleProfile.MODEL_WEIGHTS_NAS_H5, StockCycleProfile.MODEL_WEIGHTS_US_H5)
+)
+_H5_STOCK_PROFILE_VALUES = frozenset(profile.value for profile in _H5_STOCK_PROFILES)
 
 
 _STATUSES = frozenset(
@@ -204,6 +212,7 @@ _TYPES = {
         FrozenScoreMetadata,
         SessionWindow,
         KisPaperStockInstrument,
+        KisPaperUsStockInstrument,
         KisPaperStockPreviewReads,
         KisPaperStockExitReads,
         KisPaperStockExitAccountSnapshot,
@@ -472,6 +481,14 @@ def model_paper_pointer(policy_ref):
     return ".model-paper-nas-" + policy_ref[7:] + ".json"
 
 
+def _target_instrument(target, profile):
+    symbol, binding = target.proposal.symbol, target.receipt.instrument_binding_ref
+    if profile is StockCycleProfile.MODEL_WEIGHTS_US_H5:
+        _check(target.route in (symbol + "/NAS", symbol + "/NYS"), "cycle_target_invalid")
+        return KisPaperUsStockInstrument(symbol, binding, target.route.rsplit("/", 1)[1])
+    return KisPaperStockInstrument(symbol, binding)
+
+
 def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NAS):
     """Exact typed admission; weights are revalidated, never converted to scores."""
     weights = profile in _MODEL_WEIGHT_PROFILES
@@ -542,7 +559,9 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
         symbols.add(p.symbol)
         slots.add(target.slot)
         _check(
-            target.route == p.symbol + "/NAS"
+            (target.route in (p.symbol + "/NAS", p.symbol + "/NYS")
+             if profile is StockCycleProfile.MODEL_WEIGHTS_US_H5
+             else target.route == p.symbol + "/NAS")
             and p.market == "US"
             and p.action == "enter"
             and p.input_status == "ready"
@@ -561,7 +580,7 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
             receipt_from_target_exposure_proposal(p, references=references) == receipt,
             "cycle_receipt_invalid",
         )
-        KisPaperStockInstrument(p.symbol, receipt.instrument_binding_ref)
+        _target_instrument(target, profile)
     return value
 
 
@@ -599,6 +618,17 @@ def _model_record_input(
             and args["request_id"].startswith("model-"),
             "cycle_input_binding_mismatch",
         )
+        if profile is StockCycleProfile.MODEL_WEIGHTS_US_H5:
+            _validate_model_input(value, value.entry_session.open_ts, profile)
+            selected = [t for t in value.targets if t.proposal.symbol == args["instrument"].symbol]
+            _check(
+                len(selected) == 1
+                and args["instrument"] == _target_instrument(selected[0], profile),
+                "cycle_input_binding_mismatch",
+            )
+        else:
+            _check(type(args.get("instrument")) is not KisPaperUsStockInstrument,
+                   "cycle_input_binding_mismatch")
 
 
 def _proof(root, binding, pending):
@@ -798,7 +828,7 @@ def _completed_flat(root, record, at):
 
 def _h5_no_order_value(record, active):
     if (
-        record.get("profile") != StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value
+        record.get("profile") not in _H5_STOCK_PROFILE_VALUES
         or record["pending"] is not None
         or active is None
         or type(active.get("entry_no_order")) is not dict
@@ -820,11 +850,11 @@ def _h5_no_order_value(record, active):
         record | {"active": active},
         active["input_ref"],
         record["policy_ref"],
-        StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+        StockCycleProfile(record["profile"]),
     )
     value = _unpack(active["model_input"])
     return _validate_model_input(
-        value, value.entry_session.open_ts, StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+        value, value.entry_session.open_ts, StockCycleProfile(record["profile"])
     )
 
 
@@ -843,9 +873,7 @@ def _h5_no_order_absent(root, record, active, binding, replayed, proofs, project
         "cycle_owned_not_flat",
     )
     for target in value.targets:
-        instrument = KisPaperStockInstrument(
-            target.proposal.symbol, target.receipt.instrument_binding_ref
-        )
+        instrument = _target_instrument(target, StockCycleProfile(record["profile"]))
         request_id = "model-" + budget._digest(
             [
                 record["policy_ref"],
@@ -916,7 +944,7 @@ def _complete_h5_exit(root, record, pointer, proof, at):
     """Close the exact last H5 SELL using durable native facts, not another visit."""
     with _shared(root):
         _check(
-            record.get("profile") == StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value
+            record.get("profile") in _H5_STOCK_PROFILE_VALUES
             and proof.side == "sell"
             and record["pending"] is not None
             and record["active"] is not None
@@ -924,7 +952,7 @@ def _complete_h5_exit(root, record, pointer, proof, at):
             "cycle_request_changed",
         )
         _model_record_input(
-            record, proof.input_ref, record["policy_ref"], StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+            record, proof.input_ref, record["policy_ref"], StockCycleProfile(record["profile"])
         )
         binding = _book(root, record["account_ref"], record["basis_ref"])
         _owned_registry(record, binding)
@@ -1128,7 +1156,7 @@ def _recover(record, root, paths, client_factory, clock, pointer=None):
     if result.status == "reconciled":
         if (
             proof.side == "sell"
-            and record.get("profile") == StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value
+            and record.get("profile") in _H5_STOCK_PROFILE_VALUES
             and _complete_h5_exit(root, record, pointer, proof, require_utc(clock()))
         ):
             return CurrentStockCycleOutcome("complete", "policy_owned_flat", 1)
@@ -1301,7 +1329,7 @@ def run_kis_paper_current_stock_cycle(
                         else _recover(record, root, paths, client_factory, clock)
                     )
                     if not (
-                        profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+                        profile in _H5_STOCK_PROFILES
                         and result.status == "complete"
                         and result.reason == "policy_owned_flat"
                     ):
@@ -1385,7 +1413,7 @@ def run_kis_paper_current_stock_cycle(
                 )
                 if model_profile:
                     record["active"]["model_input"] = _pack(value)
-                if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5:
+                if profile in _H5_STOCK_PROFILES:
                     record["active"]["entry_no_order"] = {}
                 _save(pointer, record)
             active = record["active"]
@@ -1447,9 +1475,7 @@ def run_kis_paper_current_stock_cycle(
                 _save(pointer, record)
                 return CurrentStockCycleOutcome("complete", "policy_owned_flat")
             target = candidates[0]
-            instrument = KisPaperStockInstrument(
-                target.proposal.symbol, target.receipt.instrument_binding_ref
-            )
+            instrument = _target_instrument(target, profile)
             if (
                 side == "buy"
                 and scoped
@@ -1557,7 +1583,7 @@ def run_kis_paper_current_stock_cycle(
                 if side == "buy":
                     active["entries_done"].append(instrument.symbol)
                     if (
-                        profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+                        profile in _H5_STOCK_PROFILES
                         and type(active.get("entry_no_order")) is dict
                         and type(result) is entries.KisPaperStockPlan
                         and result.status == "no_intent"
@@ -1596,7 +1622,7 @@ def run_kis_paper_current_stock_cycle(
                 else _recover(record, root, paths, client_factory, clock)
             )
             if not (
-                profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H5
+                profile in _H5_STOCK_PROFILES
                 and outcome.status == "complete"
                 and outcome.reason == "policy_owned_flat"
             ):

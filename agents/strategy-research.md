@@ -1,13 +1,19 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,11:14UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,11:52UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
 
 ## Current Consumer / Ready Proposal
 
-Socrates owns Source-only pairwise-ranking readiness:
+Faraday owns current Source-only boosted-tree readiness:
+A/research/current-liquid17-boosted-tree-readiness-20261027-v1,
+11:47:35..12:07:35UTC/90active1200elapsed. Existing sklearn native API and
+chronological INNER/safe export feasibility, no numeric/fit/GPU/Data build.
+One shallow fixed recipe as a different inductive bias, not a depth/loss grid.
+
+Socrates closed Source-only pairwise-ranking readiness41543cc9/9c39b254:
 A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1.
 Actual freeze owns <=90 active seconds/1200 elapsed. One cross-sectional
 date-balanced loss hypothesis using existing18features/17stocks, not a new
@@ -19,7 +25,11 @@ The concrete next consumer is Engine's later finite campaign decision. Proposal
 must name exact masks/ties/pair counts, chronological inner stopping and trueOOF
 outputs, native optimizer/checkpoint/file ABI, matched growth/drawdown/cost
 comparators and a stop rule. Source research is not an active model or success.
-Claude unavailable is not agreement or a company hold.
+Claude unavailable is not agreement or a company hold. The adopted numerical
+family b16d33fe is now closed: retained growth4.25791%/DD1.27038% improves
+growth but fails ordering/DD versus Ridge. Post-readout missing source_sha256
+keeps the original host envelope technically incomplete. No retraining,
+regrade or claim of isolated causal loss effect; all outcomes globally reused.
 
 Current CPU two-parameter OOF gate is separately adopted at
 A/research/current-liquid17-ridge-mlp-regime-fusion-development-20261027-v1,

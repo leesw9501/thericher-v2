@@ -214,7 +214,7 @@ def _fresh_exit(
         if position.symbol == instrument.symbol:
             target_rows += 1
             _check(
-                position.exchange == "NASD" and position.currency == "USD",
+                position.exchange == instrument.order_exchange and position.currency == "USD",
                 "position_binding_mismatch",
             )
             broker_quantity += _amount(position.quantity, whole=True)
@@ -233,7 +233,7 @@ def _fresh_exit(
         (
             Fraction(row.quantity)
             for row in projection.stocks_by_owner
-            if (row.symbol, row.exchange) == (instrument.symbol, "NASD")
+            if (row.symbol, row.exchange) == (instrument.symbol, instrument.order_exchange)
         ),
         Fraction(0),
     )
@@ -385,7 +385,7 @@ def build_kis_paper_stock_exit_plan(
             "stock-" + identity,
             "stock-" + identity,
             instrument.symbol,
-            "NASD",
+            instrument.order_exchange,
             quantity,
             limit,
             at,

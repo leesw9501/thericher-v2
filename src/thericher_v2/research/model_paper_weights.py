@@ -36,6 +36,7 @@ MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE = (
     "model-weights-nas-20session-early-exit-non-parity-2026-v1"
 )
 MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE = "model-weights-nas-5session-2026-v1"
+MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE = "model-weights-us-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE = "model-weights-nas-cash-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_SCHEMA = "model-paper-target-weight-input-v1"
 WEIGHT_UNITS = "fraction_of_one_original_basis_gross_cohort_ceiling"
@@ -58,6 +59,7 @@ def model_paper_weights_horizon_profile(profile):
     if profile in (
         MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
         MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
+        MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
     ):
         return MODEL_PAPER_5_SESSION_PROFILE
     raise ValueError("weights_profile_invalid")
@@ -108,6 +110,16 @@ class ModelPaperWeightRow:
         if not self.route.endswith("/NAS"):
             return "UNSUPPORTED_VENUE"
         return "ELIGIBLE_NAS" if self.weight > 0 else "ZERO_WEIGHT"
+
+    def eligibility_for_profile(self, profile):
+        model_paper_weights_horizon_profile(profile)
+        if (
+            profile == MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE
+            and self.feature_known
+            and self.route.endswith(("/NAS", "/NYS"))
+        ):
+            return "ELIGIBLE_US" if self.weight > 0 else "ZERO_WEIGHT"
+        return self.eligibility
 
 
 def model_weight_bytes_ref(rows):
@@ -221,6 +233,20 @@ class ModelPaperWeightsMetadata:
             Fraction(),
         )
 
+    def eligible_weight_for_profile(self, profile):
+        return sum(
+            (Fraction(row.weight) for row in self.rows
+             if row.eligibility_for_profile(profile) in {"ELIGIBLE_NAS", "ELIGIBLE_US"}),
+            Fraction(),
+        )
+
+    def skipped_weight_for_profile(self, profile):
+        return sum(
+            (Fraction(row.weight) for row in self.rows
+             if row.eligibility_for_profile(profile) == "UNSUPPORTED_VENUE"),
+            Fraction(),
+        )
+
 
 def _validate_cash_profile(metadata, profile):
     slots = tuple(row.slot for row in metadata.rows if row.route == "CASH")
@@ -255,7 +281,7 @@ class ModelPaperWeightsInput:
         return "sha256:" + hashlib.sha256(serialize_model_paper_weights_input(self)).hexdigest()
 
 
-def _weight_targets(metadata, entry_session):
+def _weight_targets(metadata, entry_session, profile=MODEL_PAPER_WEIGHTS_PROFILE):
     reference = _digest(asdict(metadata))
     refs = DecisionReceiptReferences(
         "ref:" + metadata.policy_ref[7:],
@@ -264,10 +290,11 @@ def _weight_targets(metadata, entry_session):
         "ref:" + reference[7:],
     )
     ceiling = Fraction(metadata.original_basis_gross_ceiling)
+    namespace = "us" if profile == MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE else "nas"
     remaining = ceiling
     targets = []
     for row in metadata.rows:
-        if row.eligibility != "ELIGIBLE_NAS":
+        if row.eligibility_for_profile(profile) not in {"ELIGIBLE_NAS", "ELIGIBLE_US"}:
             continue
         # Each slot keeps its original ceiling. The remainder only trims roundoff;
         # it never reallocates an unsupported, unknown or rejected slot.
@@ -278,7 +305,7 @@ def _weight_targets(metadata, entry_session):
         if exposure <= 0:
             continue
         proposal = TargetExposureProposal(
-            f"model-weights-nas-{reference[7:]}-{row.slot}",
+            f"model-weights-{namespace}-{reference[7:]}-{row.slot}",
             row.route.split("/")[0],
             "US",
             "enter",
@@ -316,7 +343,7 @@ def prepare_model_paper_weights_input(
     _validate_cash_profile(metadata, profile)
     return ModelPaperWeightsInput(
         metadata,
-        _weight_targets(metadata, entry_session),
+        _weight_targets(metadata, entry_session, profile),
         entry_session,
         exit_session,
         profile=profile,
@@ -350,7 +377,8 @@ def validate_model_paper_weights_input(value):
         "weights_session_clocks_invalid",
     )
     _need(
-        type(value.targets) is tuple and value.targets == _weight_targets(value.metadata, first),
+        type(value.targets) is tuple
+        and value.targets == _weight_targets(value.metadata, first, value.profile),
         "weights_target_composition_changed",
     )
     return value
@@ -433,6 +461,7 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
         in (
             MODEL_PAPER_WEIGHTS_PROFILE,
             MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
+            MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
         )
