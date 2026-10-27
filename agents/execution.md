@@ -1,73 +1,73 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-28 KST, observed Oct27UTC17:25.
+2026-10-28 KST; observed Oct27UTC19:10.
 A=D:/thericher-v2/model-artifacts. Parent TRUE/activation/shared MD/Git.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Never live/KIS_LIVE_*. ONE originalB/10/cost/loss/pending/F9/identities retained.
 
 ## Actual Paper State
 
-Original MSFT13:40/13:47 and r3 15:45/15:52 consumed, LOWVOL15:30/15:37 consumed.
-MSFT r3 exact faults af292aaa/ae038e23 bind d58/release2b3e/input65f/policya861/
-round/run/window: NATIVE_EXECUTION/ValueError/transport.py575/worker_frame_invalid.
-Recovery outer slot_phase exit is NOT a sell. No qualified native/API/submit/fill.
-Exact actor-aware RO reader54605954 admitted16:09,3admissions13Jobs/full source
-and private stability/ownCID closed: policy ABSENT/target1UNKNOWN/bound0,
-accepted/fill/currentowned NULL, not zero/no-order/flat. Actual observed own3
-actors only, not GPU co-tenancy. Earlier f51 after_remove failure stays UNKNOWN;
-its own CID later positively absent. Never rerun consumed read or release risk.
+MSFT13:40/47, r3 15:45/52, diagnostic17:30 and lock-recovery18:50 opportunities
+consumed. LOWVOL15:30/37 consumed/result20. No qualified current native result,
+acceptance, fill or current owned inventory; Task exit0 is not success.
 
-F9book764d9836/primary9b65a0e7 pending1/UNKNOWN-HELD. Missing holdings/open orders
-or expired jobs do not release it. No reset/foreign adoption/profit bank expansion.
+Actual offline reader62e27074 at17:48:
+A/execution/current-msft-diagnostic-cohort-reader-preparation-20261028-v1/RESULT-ACTUAL.json.
+Threeadmissions13Jobs/oneROread/full source+private+legacy membership/identity/
+mtime/bytes stable/ownCIDabsent/allhandlesclosed. Policy65f/a861 ABSENT,
+target1UNKNOWN/bound0, complete financial counts NULL, not zero/no-order/flat.
+Private original account/basis anchor matches, NOT current .env account compare.
+Own3actors only, not actual GPU co-tenancy proof. Do not repeat without change.
+F9 pending1 UNKNOWN-HELD; no release from missing holdings or expired job.
 Fees/settledcash/netPnL remain unobserved without exact evidence.
 
-## First Cause / Ready Exact Recovery
+## Proven Bootstrap Defect / Actual Later Failure
 
-LOWVOL native Task contract whole argument D:/ versus Windows Path spelling
-defect reproduced. Consumed recovery missed120s guard, not replayed. Original
-future two exits normalized16:36:36/Plan160ebd82, same e2/TRUE96f/ACL/history/
-Nov3UTC14:35/14:42 duties. MSFT original future exits normalized15:40/Plan0a3c.
-Neither installation nor task exit is financial evidence.
+A/execution/current-central-runtime-lock-paired-capability-probe-20261028-v1/
+CONSUMER.json cc7a5bd1: actual constructor/e414/production tmpfs hides required
+/tmp/runtime.lock, runtime.py12/EOF/exit1. Samehash RO file bind alone passes
+bootstrap/exit0/noOOM;2CIDs+Jobsclosed/ClaudeGO_WITH_LIMITS. Lockb2a6e0c6.
+Proof is bootstrap, not native request/financial closure.
 
-Actual e414 help/empty/missing-proof bootstrap gave framed JSON, not nativeEOF.
-Daemon omitted existing first_failure_sink; new PREPb5651fd9 adds only sanitized
-bound first-failure/transport capture. Four real same-image transport fixtures
-PASS. Claude refreshed ABI b7f6/SINK advisory GO_WITH_LIMITS, advisory not authority.
+Actual18:46:09 installation at
+A/execution/current-msft-runtime-lock-exact-recovery-preparation-20261028-v1/
+parent-activation-r1/RESULT.json: host7a170d47/TRUE2887997f/Plan7d1e96ec,
+newTaskXMLd2ae6580/API7ACL4f54, recovery18:50..54UTC. Same original65f/a861/
+cohort/e414/bank/gate/round/counters/B10/F9. Only ROlock+required phase/source
+metadata, all host/route code identical4b8. No Task.Run, fresh entry or substitute.
 
-A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1:
-host4b8b4e6c/routef341a625/BINDING3b470007, one new recovery17:30..34UTC,
-native recovery/outer phase exit. Same65f/a861/cohort/imagee414/privatebank/gate/
-round/counters/B10/F9. Native unknown/missing/exhausted eligibility may veto.
-Parent actual17:25:03 installed/enabled: TRUE9b8eb452/Plan31e23615,
-parent-activation-r1/RESULT.json, newTaskXMLc1bed5d3/API7ACL4f54.
-Single disabled-create/readback/enable, no Task.Run or substitute entry.
-Eight synthetic tests PASS after exact never-run-history fix; old failed
-tests preserved. Activatorbf296446/helperace unchanged thereafter.
-Original Nov2UTC20:45/20:52 exit action refs only, clocks/duties unchanged.
-New actor profile unmerged; numerical actors closed17:24..35 for finite admission.
-All old installers/reads/opportunities consumed, no blind retry/time roll.
+Actual callback-r1/CONSUMER.json93856971: role_capability_unreviewed,
+admission.py142. Taskidle/result0 NOT success. Stage NATIVE_EXECUTION is set
+before CapsuleVisit.execute, NOT proof guest/API started; native calls/frame
+NOT_RETAINED. Parent public census0projectactors18:56:35/Docker0containers
+18:56:36 permitted independent research resume, not historical handle proof.
 
-## Actual Read-Only API Capability
+Socrates source-only guard check:
+A/execution/current-runtime-lock-capability-contract-repair-20261028-v1/CONSUMER.json.
+REAL actual constructors/guard pass eight valid mounts includingROlock;
+rw/target/source/type mutations deny. Line142 means zero OR ambiguous argv
+rule matches. Historical actor/census not retained, cause NOT a proven mount
+permission failure. Do not waive role checks or ask operator approval.
+Safe categorical helper is diagnostic-only, not yet deployed.
+Current next: compare exact existing Task/source argv contracts to claims in
+current-actor-task-contract-audit-20261028-v1; Parent owns minimal integration.
+No another broken recovery schedule before a concrete contract test/fix.
 
-A/execution/current-kis-paper-account-readonly-capability-20261028-v2/CONSUMER.json
-Source71b46541/result2d157c64 actual16:50:1tokenPOST3GET0retries,
-NASD/NYSEbalances/reference orderability SUCCESS;7deduplicated holding items.
-No AMEX/accountmatch/privateanchor read, NOT complete custody, exact owned
-holdings/fill, executable risk snapshot, settledcash or PnL. Scoped Paperloader,
-noLIVE/secrets/rawrows/privateamounts persisted;14synthetic tests/allactors closed.
+## Existing Duties / Limited Capability
 
-V1 token defer0API retained. Observer q4min plus default300 can starve newclients;
-official one/min +V2 scoped60 floor succeeds without locks/startmark reset.
-Global300/frozenData unchanged. Native worker ALREADY explicit60; not proven
-cause of its EOF. No repeated identical account probe.
+Original future MSFTNov2UTC20:45/52 exit refs7a/TRUE288;
+XML8e6bb8eb/d5106221, ACL4f54. LOWVOLNov3UTC14:35/42 retained.
+No replay consumed installers/read scopes, window roll, basis reset or foreign
+inventory adoption. Native eligibility may veto an exhausted/unknown request.
 
-## Verification / Next
+Direct Paper API V2 Source71b46541/result2d157c64 actual16:50:
+1tokenPOST3GET0retries, NASD/NYSEbalance/reference orderability SUCCESS,
+7dedup holdings; AMEX/accountmatch/owned attribution unknown. Not full risk,
+settledcash or PnL. Scoped60floor officialone/min succeeds, globalData300
+unchanged. Native already60, token starvation NOT established EOF cause.
 
-Fresh full19514PASS26knownSKIP/eight actualworkerpairs/owncleanup; serial370/1,
-externalcommon8/helper33/accountV2tests14/nativewire4/Ruff/threeCompose PASS.
-Exact1412protected a1500c15 required for reuse; new external caller needs own
-focused checks. Source/tests/registration are not native closure or broker PnL.
-Halley owns one17:35/hard17:39 source-safe callback. Reader713b1cf5 qualifies
-exact public source/release/run/time/input/policy binding, five syntheticPASS;
-no new private/API/Docker/Task call or task-exit financial inference.
-Newd892/USRidge17e734/6329 remain inactive; e414 still actual broker image.
+Broader e792/r2/r3 diagnostics overlay failed tests and is INACTIVE_NOT_ADOPTED.
+Old17:35 callback wrongly required FAULT filenameUUID==hostrun; producerUUIDs
+independent. Keep frozen callback limitation, not evidence of no effect.
+Exact1412protected a1500c15 permits full19514/26 authority reuse for MD only;
+changed D code gets independent focused/native tests. Installation != runtime.

@@ -8,22 +8,23 @@ On genuine resume run scripts/start_next_codex_task.ps1, then current
 HANDOFF/NEXT/AGENTS/stateboards. Do not rerun for mere compaction.
 Parent owns shared MD/Git/activation. Preserve unrelated %SystemDrive%/.
 Never read KIS_LIVE_*, print secrets/account/order IDs/raw broker or market rows.
-Use uv --no-env-file for credential-free work and .env.example for Compose.
+Use uv run --no-env-file for credential-free work and .env.example for Compose.
 MODEoff remains except named delegated Paper paths. ONE original B/10,
 costs/losses/pending/F9 survive restart; no profit expansion or foreign adoption.
 
 ## Current Repaired Runtime
 
-Observed Oct27UTC17:24/Oct28KST. Company outcome UNFINISHED.
+Observed Oct27UTC19:10/Oct28KST. Company outcome UNFINISHED.
 Original MSFT13:40/47 and r3 15:45/52, LOWVOL15:30/37 are consumed.
 No Task.Run, repeated installer, private state restore, forced entry or B/10 reset.
 MSFT r3 d58 faults af292aaa/ae038e23: exact bound NATIVE_EXECUTION/ValueError/
-transport.py575/worker_frame_invalid. Raw EOF cause not yet identified.
+transport.py575/worker_frame_invalid. Later actual-constructor/tmpfs probe
+reproduced runtime.lock disappearance; this does not prove every old EOF cause.
 Actual e414 bootstrap help/empty/missing-proof framedJSON tests do not reproduce
 the actual request failure. New safe first_failure_sink PREPb565/4native fixtures
 and Claude refreshedABI b7f6 advisory GO_WITH_LIMITS; not yet broker closure.
 
-New exact diagnostic single recovery preparation:
+Consumed exact diagnostic single recovery:
 A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1.
 host4b8b4e6c/routef341a625/TRUE9b8eb452/ParentPlan31e23615,
 17:30..34UTC Oct27/02:30KST Oct28, native recovery/outer phase exit NOT a sell.
@@ -36,19 +37,46 @@ after exact never-run-history fix. This activation scope is CONSUMED, no replay.
 Original MSFTNov2UTC20:45/20:52 and LOWVOLNov3UTC14:35/14:42 exit duties stay.
 Native risk/unknown outcomes/cap eligibility may veto; do not reset them.
 
-Current private reader actor-integration-recovery-r1/msft/RESULT-ACTUAL.json
-54605954 actual16:09 PASS: exact source/private membership/identity/mtime/bytes/
-ownCIDclosure,3admissions13Jobs. Policy65f/a861 ABSENT/target1UNKNOWN/bound0;
-accepted/fill/currentowned NULL, NOT zero/no-submit/flat. Actual own3actors only,
-not live GPU concurrency proof. Earlier f51 failure remains UNKNOWN/consumed.
+Current consumed private reader at
+A/execution/current-msft-diagnostic-cohort-reader-preparation-20261028-v1/RESULT-ACTUAL.json
+62e27074 actual17:48 PASS: exact source/private/legacy membership/identity/
+mtime/bytes/ownCIDclosure/allhandlesclosed,3admissions13Jobs/oneROread/17.077s.
+Policy65f/a861 ABSENT/target1UNKNOWN/bound0; complete financial counts NULL,
+NOT zero/no-submit/flat. Original private anchor matches, NOT current .env
+comparison. Own3actors only, not live GPU co-tenancy. Earlier failures retained.
 F9 pending1/UNKNOWN-HELD unchanged, fees/settledcash/netPnL unobserved.
 
-New source-safe diagnostic offline reader:
+Consumed source-safe diagnostic offline reader:
 A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1/reader-r1/CONSUMER.json.
 Parser713b1cf5 requires exact public record path+SHA, actual TRUE9b8e, source/run/
 window/input/policy/phase binding, no latest scan/private/API/Docker/Task calls.
 Its five synthetic tests qualify parsing, not actual opportunity outcome.
-A missing/invalid diagnostic does not prove effects absent.
+A missing/invalid diagnostic does not prove effects absent. Its frozen17:35
+callback wrongly added FAULT filenameUUID==hostrun; producerUUIDs independent.
+Do not silently regrade that callback or claim missingfinancialeffects.
+
+Minimal RO runtime-lock repair and actual later failure:
+A/execution/current-central-runtime-lock-paired-capability-probe-20261028-v1/CONSUMER.json
+cc7a5bd1: actual constructor/ALLproductionflags/tmpfs, missing/tmp/runtime.lock
+failsruntime.py12/EOF/exit1; SAMEhashROfile bind passes/exit0/noOOM. Alljobsclosed,
+ClaudeGO_WITH_LIMITS. Lockb2a6e0c6, no guest/private/API effects in the probe.
+
+A/execution/current-msft-runtime-lock-exact-recovery-preparation-20261028-v1/
+parent-activation-r1/RESULT.json: actual18:46:09 installed host7a170d47/
+TRUE2887997f/Plan7d1e96ec/newTaskXMLd2ae6580/API7ACL4f54, recovery18:50..54.
+Only ROlock+required phase/source metadata; actual host/route code unchanged4b8.
+No Task.Run/newentry/bank change; all activation scopes/opportunities consumed.
+Original Nov2MSFT20:45/52 action refs now7a/TRUE288, XML8e6bb8eb/d5106221;
+LOWVOLNov3UTC14:35/42 unchanged. Do not use old XML pins for future updates.
+
+callback-r1/CONSUMER.json93856971 records actual failure at admission.py142,
+role_capability_unreviewed. Taskexit0/idle is NOT success. Nativecalls/frame
+NOT_RETAINED. Recorded NATIVE_EXECUTION stage precedes actual guest execution.
+Source-only actual guard test current-runtime-lock-capability-contract-repair-
+20261028-v1 accepts8mountROlock; first predicate means0 OR ambiguous argv rules,
+historical actor unknown. Do not waive roles or treat this as human approval.
+ExistingTask/source argv audit and independently tested categorical diagnostics
+precede another minimal recovery. Broad e792/r2/r3 overlay failed/unadopted.
 
 Paper readonly API V2 Source71b46541/result2d157c64 actual16:50 succeeded:
 1tokenPOST/3GET/0retries, NASD/NYSE/reference orderability,7dedup holding items.
@@ -57,10 +85,15 @@ Official once/min token source +scoped60floor/14tests succeeded, default300
 unchanged. Native worker already explicit60; no token-starvation EOF conclusion.
 No repeated account probes or quota foreground sleep.
 
-Finite17:30 broker Source4b8 retains inherited claims; exact new TCN profile is
-not implicitly admitted. Coordinator closes actual actors17:24..35/owner closure;
-other source work continues. New future concurrency needs exact profile/source
-adoption, no generic whitelist. No numerical duplicate after completed fits.
+Broker7a retains inherited claims4ff; research profiles not implicitly admitted.
+Paper numeric yield18:45..55 consumed; Parent current0actor18:56:35 and
+Docker0container18:56:36 census permits independent research resume after own
+checks, not historical handle or financial proof. No continuing global quiet.
+New coexistence needs exact source/profile adoption, not generic whitelist.
+Current economicData49ac/native+coldEngine2446 already qualified;2new economic
+fits128updates each within2160/7200/hard20:08:43UTC, finalresults pending.
+TCN/HGB proper-score tests pass original criteria; fixedHALF and absorption
+utility reject, allclosed. No repeated completed training or outcome rescue.
 
 Current full authority:
 A/verification/current-paper-runtime-custody-recovery-20261027-v1/worker-telemetry-r1/CONSUMER.json.

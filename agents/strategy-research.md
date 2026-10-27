@@ -1,43 +1,42 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST, observed Oct27UTC17:21.
-A=D:/thericher-v2/model-artifacts.
-Leibniz current pure proposal owner; Engine targets/splits/fits, Parent shared MD/Git.
+2026-10-28 KST; observed Oct27UTC19:10.
+A=D:/thericher-v2/model-artifacts. Sagan current source-only proposal owner;
+Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
 
-## Current Ready / Being Prepared
+## Current Useful Proposal
 
-A/research/current-official-kis-strategy-kernel-readiness-20261028-v1/CONSUMER.json
-61da76cc CLOSED source-only review. Official KIS repository commit3a9be59a
-describes strategy_builder80indicators/10presets. Reuse license not verified;
-NO code imported, dependency installed or broker behavior changed.
-One original proposal: C120 volume absorption (volume expansion, range
-contraction, positive close-location pressure). Existing PAST input is present,
-but new consumer binding/kernel not yet qualified. Source checks15 PASS,
-zero market payload/fit/API; official source claims are not project results.
+A/research/current-economic-baseline-readiness-20261028-v1, cap180active/
+1200elapsed, SOURCE/SYNTHETIC ONLY. Concrete consumer: next economic campaign,
+NOT current frozen VSN/Linear contract. Prepare one cross-sectional momentum/
+vol-scaling rule from existing18feature metadata, full lag/unknown/cash/cost
+symmetry vs UNIFORM17. Two primary sources, exact original pure kernel/native
+synthetic ledger check, no grid/market/held/GPU/fits. Produce executable
+readiness or rejection, not another reading list or report system.
 
-Leibniz now prepares one original pure executable kernel:
-A/research/current-c120-volume-absorption-rule-preparation-20261028-v1.
-180active/hard17:45, actual10-channel C120 ABI and synthetic causality/missing/
-finite tests, no market fits/replay. Concrete downstream cost/baseline/kill,
-not copied public code or80indicator grid. Command actors close17:24..35 for
-finite Paper admission; source writing may continue. Direct Engine handoff.
+Adopted economic family4b8f7b78 is running under Engine/Steward with qualified
+Data49ac. Original smallVSN+LSTM uses source inspiration, not copied weights:
+official MIT commits deep_fin_benchmark bee6ee83 and deepm94aa1482. March code
+predates Oct22 paper revision; futures zero-training-cost results are not
+US-equity net-cost evidence or a literal reproduction claim.
 
-Cost-event TCN readiness077a5f01/6f773225 ADOPTED, numerical owner Engine.
-Faraday prepares independent nonDL tabular contract, not the same rule.
-RAW397 and Lag512 no longer ready/unrun: both actually completed and rejected.
+## Evidence That Changes Direction
 
-## Closed Evidence / Do Not Rescue
+TCN original proper-scorePASS and HGB original tolerancePASS are not PnL.
+New fixedHALF b8dba320 REJECT: loss.19085207 vs TCN.18641019; simple
+chronological INNERprior.17535899 is stronger than either learned expert.
+Preserve old result criteria; no posthoc reranking, weight sweep or alpha claim.
 
-RAW3977f403578: one CUDA77epochs/best61/173.1s/528MiB, pairBCE.67845692
-loses cachedLinear19.67568712, no financial ledger.
-Lag512 HALF increment rejected on MSE/DD despite growth1.4342% vs1.3596%;
-DD.54094% vs.27041%. Original failed import retained/checked loader repaired,
-completed native/model not replayed. Consumer technical-host-import-r1.
-Head19c14903 best0INITIAL/UNIFORM alias REJECT; TimesFM8ec7/d27e and earlier
-ranker/gate/HGB/recurrent/hybrid/rule/indicator studies remain immutable history.
+Original absorption kernel9913cf96 completed actual utility study:
+A/research/current-c120-absorption-utility-development-20261028-v1/CONSUMER.json.
+All63EVALsessions cash/0trades/growth0, fails predeclared growth>cash.
+Less exposure than losing controls is not alpha. No threshold/window rescue.
+Official KIS strategy_builder3a9be59a80indicators/10presets was source review
+only; reuse license not verified, NO code imported or dependency installed.
 
-Compare aligned keys/availability/payoff/costs/turnover/DD; individual profit
-is not prerequisite for exploratory fusion, learned gates need chronological
-OOF. Currentlisting/nonPIT/MODP1/CA/finality/retrospective arrival/global outcomes
-and foundation pretraining scope constrain claims. Never label adaptive
-development independent alpha. No broker/credentials/risk authority.
+RAW397, Lag512, TimesFM head and earlier studies are closed, not ready unrun
+work. Proposals must address an identifiable weakness with an executable finite
+test, not reward architectural complexity. Currentlisting/nonPIT/CA/finality/
+arrival/global outcome reuse and public-model pretraining limits remain explicit.
+Learned fusion needs chronological OOF, not in-sample experts. Model-side
+exploration never changes deterministic Execution risk or Paper permissions.

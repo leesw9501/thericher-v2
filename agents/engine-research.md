@@ -1,66 +1,68 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST, observed Oct27UTC17:21.
-A=D:/thericher-v2/model-artifacts. Parent shared MD/Git; Schrodinger GPU/registry,
-Faraday disjoint CPU preparation. Models never change deterministic broker risk.
+2026-10-28 KST; observed Oct27UTC19:10.
+A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
+Model proposals never alter deterministic broker risk or original shared B/10.
 
-## Current Adopted Campaign
+## Current Depth Campaign
 
-A/research/current-intraday-cost-event-tcn-development-20261028-v1.
-Parent adopted readiness CONTRACT077a5f01/Consumer6f773225 at17:12:05.
-One causal19009parameter TCN, C120x10 QQQ/SPY OHLCV, H60 binary net-cost event;
-tau=log1p(.002)-log1p(-.002), original FP64 target strictly greater than tau.
-FIT6054/145sessions, INNER1806/43 (6unknown retained), EVAL2610/63 reused.
-New native TARGET view/actual file ABI, CUDA optimizer/scheduler/all-state safe
-checkpoint/cold restoration before market. No claim from constructor previews.
+A/research/current-long17-vsn-economic-development-20261028-v1.
+Frozen readiness contract4b8f7b78; actual Engine source2446057d.
+TWO new models: original small VSN-style+LSTM and matched Linear360->1,
+20daily x18indicator histories/17stocks. Actual absolute-price self-financing
+17asset netlog objective with20bp each leg, research gross.1; not beta-residual
+labels as PnL, per-batch bank reset or overlapping-return Sharpe.
 
-1500active/5400elapsed, partitions200source(prior165once)/150native/60views/
-600fit/90forecast/60readout/150verify/60cleanup/130reserve. One fit128epochs/
-6144updates/B128/INNERpatience16/LRhalf4/earliest bestincl0;7500forwards/
-1.1Mwindowrows/1.32Bscalars, oneEVAL/heldtarget/0Data rebuild/ledger/numericalretry.
-At most2 inert import/constructor repairs before numerical/payload, inside caps.
-Equal-session proper BCE/Brier vs FITconstant/2volbins/ownINITIAL. Probability is
-not calibrated confidence, expected PnL, a policy, alpha or Paper qualification.
-Claude REVISE and overlap/currentlisting/nonPIT/finality limits stay explicit.
+Combined2160active/7200elapsed, hard20:08:43UTC: source180once/Data300/native240/
+2fits450each/forecast90/readout90/verify180/cleanup60/reserve120.
+128full ordered updates maximum each; chronological INNERpatience16/LRhalf4/
+bestincl0/safe checkpoint, no numerical retry. Keep model/economic/source/data
+clocks and counts distinct. Data49ac handoff qualified, unknowns retained.
+Named real CUDA optimizer/ledger/checkpoint/native+cold paths completed for
+both arms; actual fit directories now exist. Final fit/selection/forecast/
+held readout is NOT yet evidenced by a terminal Consumer. No duplicate launch.
+EVAL held prices unmounted until both forecasts seal. Compare matchedLinear,
+UNIFORM17 and ownINITIAL; aligned growth/DD/turnover, no threshold rescue.
+Global reuse/currentlisting/nonPIT/CA/finality limits remain, not independent alpha.
 
-Actor Source/profile exists but is NOT adopted by current broker claims4ff.
-Parent retains unchanged single17:30 recovery Source4b8; coordinator closes
-numerical actors by17:24 through17:35/actual owner closure. Source preparation
-continues; no repeated completed fit or global permission hold.
+## Latest Closed Results
 
-## Most Recent Actual Closures
+A/research/current-intraday-cost-event-tcn-development-20261028-v1/CONSUMER.json
+c88d51ec: VERIFIED_DEVELOPMENT_NOT_KILLED under its original proper-score test.
+One CUDAfit29epochs/1392updates/best13/33.5949s/136MiB; logloss.18641019,
+Brier.04153608 vs FITconstant.21587978/.04676702 and VOL.19875411/.04337462.
+FiveCIDs30Jobs closed/leaseabsent, upper274.77/1500. No repeat training.
 
-RAW397 Consumer7f403578/resultaf768e5e CLOSED_REJECT:
-A/research/current-nas100-raw397-linear-learning-development-20261028-v1.
-One CUDA fit77epochs/5467updates/best61/173.1s/528MiB. PairBCE.67845692
-improves INITIAL/constant but loses cachedLinear19.67568712. No financial ledger.
-6114calls/9122321rows/516.10upper of1000;3CIDs19Jobs closed/lease absent.
+A/research/current-c120-cost-event-tabular-development-20261028-v1/
+technical-readout-integrity-r2/CONSUMER.json: VERIFIED_DEVELOPMENT_NOT_KILLED.
+One native4tree fit and one market56tree fit/best40/.5515s/2610sealed forecasts.
+Logloss.19681702/Brier.043375472; Brier is slightly WORSE than VOL.043374616
+but inside frozen1e-6 tolerance. Preserve pycache/readout failures; unused
+stages alone recovered, no refit/native/forecast replay. Executorupper265.4811
+plus Steward terminal debit within720; owned Jobs closed.
 
-Lag512 technical-host-import-r1/CONSUMER.json CLOSED_REJECT:
-A/research/current-liquid17-lag512-fixed-blend-development-20261028-v1.
-One CPU FP64 Ridge513/alpha1/7713supervised rows, fixed HALF cachedRidge.
-HALF growth1.43422918% vs1.35963162%, DD.54094222% vs.27041287%,
-MSE.001886660604 vs.001837390593. Mandatory MSE/DD fail; not adopted.
-Original premarket import failure retained, exact checked-file-loader fix only,
-native/cold not repeated, first unused adapter/fit completed.6CIDs30Jobs closed;
-Steward final cumulative upper382.162/900, no refunded debits or clock reset.
+A/research/current-c120-fixedhalf-prior-diagnostic-20261028-v1/CONSUMER.json:
+CLOSED_REJECT_JOINT_INCREMENT. Fixed HALF loss.19085207/Brier.04205836
+loses TCN AND chronological INNER-only prior. Prior loss.17535899/Brier.03944737;
+one statistic from1800known/6unknown INNER rows, no EVAL calibration.
+One projection/one held read/0fits/restores/forwards/GPU. This challenges utility
+of complex classifiers, not a retroactive regrade of old frozen tests. No sweep.
 
-Head19c14903 CLOSED_REJECT: one8epoch fit/4120updates/best0INITIAL;
-MSE.001862879805 loses Ridge, actions UNIFORM alias cached15ledger.
-Combined797.603703/1800 incl Data247.055835 once;8CIDs40Jobs closed.
-Not convergence/improved trained head. Zero-shot TimesFM8ec7 and fixed-half
-d27e, MLP43c6/HGB23fc/Rankerb16d/OOFgatec842/LSTM82b2/hybrid4fe2 already closed.
-Long17Ridge9266 development growth4.0671%/DD.76058 vsuniform1.8596/1.04131;
-not independent alpha or actual broker PnL. No old model/ledger reruns.
+A/research/current-c120-absorption-utility-development-20261028-v1/CONSUMER.json:
+CLOSED_REJECT_UTILITY_SCREEN, all63EVAL sessions cash/0trades/growth0.
+Fails predeclared growth>cash despite beating losing exposed controls. No lower
+exposure-as-alpha or threshold rescue;8costcells/oneprojection/oneheld/0fit/GPU.
 
-## Ready Parallel Preparation
+RAW3977f403578, Lag512 technical-host-import-r1, head19c14903, TimesFM8ec7/d27e
+and earlier MLP/HGB/ranker/gate/recurrent/hybrid studies remain closed history.
+Long17Ridge9266 development growth4.0671%/DD.76058 vsuniform1.8596/1.04131 is
+not independent alpha or broker PnL. Do not repeat completed model/ledger work.
 
-Faraday: current-c120-cost-event-tabular-readiness-20261028-v1, one nonDL
-cost-event benchmark contract/native synthetic ABI, no market fits before
-adoption. Leibniz: original C120volume-absorption pure kernel, not copied
-unlicensed KIS code. Different hypotheses, not another ratio/window grid.
-Prepared work becomes a concrete experiment or rejection; no reading-list gate.
+## Next / Claim Boundary
 
-Current Paper LOWVOL58f/f037 and MSFT65f/a861 are operational consumers,
-not research promotions. Ridge17 e734/proposal6329 remains inactive/newd892
-not broker deployed. Financial acceptance/fill/owned inventory belong Execution.
+Finish only unused economic stages inside the frozen family caps and inspect
+terminal closures. Sagan prepares a stronger cost-symmetric economic baseline
+for a FUTURE contract, never changes the current frozen comparison.
+Probability proper scores do not establish expected PnL/confidence/Paper
+promotion. Operational Paper LOWVOL58f/f037 and MSFT65f/a861 are independent;
+runtime source7a failed actor admission, not a research permission hold.
