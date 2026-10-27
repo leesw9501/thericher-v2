@@ -7,48 +7,47 @@ Never live/KIS_LIVE_* or reset one original shared B/10/F9/pending/cost/loss ban
 ## Current Actual Deployment
 
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Four MSFT Tasks ACTUALLY enabled21:32:22UTC Oct26, ACTUALabe9f4ac:
-A/execution/current-msft-disabled-task-acl-recovery-20261027-v1/canonical-ai-r2/ACTUAL.json.
-Runtimehost37bda1e9/route d6787bc5/image27dde810/TRUE0e63c915,
-input169ee4b2/policy206e36be. One native leg/visit, not8orders or basketclosure.
-All4enabled/0instances/native definitions/exact ACL readback.88old Task
-membership/XML/ACL unchanged.0TaskRun/KIS/privatewrite at installation.
-No actual new submit/fill yet. Entry Oct27 22:40 KST is future owned opportunity.
+ALL4 existing MSFT Tasks NEW/enabled Oct27 01:22:39UTC:
+A/execution/current-msft-p010-operational-runtime-r2-preparation-20261027-v1/parent-source-pin-r4/ACTUAL.json,
+901b0041, independent POST-INSTALL-READBACK007b0145.
+Hoste1b014dd/routebf376d3a/imagee41497fd/TRUE090ddb10/input65f9571d/policya861.
+Exact4XML/ACL/0instances/quiet pythonw/Hidden/next_due/image verified;88others
+unchanged.0TaskRun/KIS/private write/new submit/fill at installation.
 
-Exact suffix after thericher-kis-paper-msft-engineering-:
-- entry-20261027-v1: Oct27 13:40..13:44UTC.
-- recovery-20261027-v1: Oct27 13:47..13:51UTC, retained unknown request only.
+Suffix after thericher-kis-paper-msft-engineering-:
+- entry-20261027-v1: Oct27 13:40..13:44UTC/22:40KST.
+- recovery-20261027-v1:13:47..13:51UTC, retained request only.
 - exit-20261102-v1: Nov2 20:45..20:49UTC, owned only.
-- exact-exit-recovery-20261102-v1: Nov2 20:52..20:56UTC.
+- exact-exit-recovery-20261102-v1:20:52..20:56UTC.
 
-H5 includes entry session, Nov2 15:45ET near-close window after DST, not an
-official closing print; research OPEN[e+5]=Nov3OPEN.
-Maximum .005 of original full B inside B/10, not allocated/affordability proof.
-Due native owner/virtualhost/current quote/orderability/budget/pending checks stay.
-No force1share/threshold change/adoption/profit expansion or substitute unknown.
+NEW .01 of original fullB inside ONE original sharedB/10/F9/cost/loss/pending,
+not a forced share or spending target. Dated-close reads cd30/e25 are consumed,
+not fresh quote/funds. H5 fifth session near-close15:45ET Nov2 differs from
+research Nov3OPEN. Native risk/quote/orderability/identity/unknown-request guards
+remain authoritative; never substitute unknown or adopt foreign inventory.
 
-New exact ONE-read lot diagnostic at22:33UTC, RESULTcd30aa16:
-A/execution/current-msft-fixed-gross-lastclose-lot-proxy-20261027-v1/RESULT-ACTUAL.json.
-Original account/basis/fullbook/source/input stable; MSFT still unregistered.
-Actual .005B target does NOT cover one retained Oct26 last-close whole lot,
-although native remaining-cap/gross-cash subset does. Unknown buy reservations
-remain held. This is OFFSESSION_LASTCLOSE_LOT_PROXY_ONLY, not fresh quote,
-funds, orderability or a guaranteed trade. One read consumed/13Jobs+CID closed,
-0credential/API/privatewrite/lock/recovery. Do not rerun. Socrates prepares
-a NEW immutable deterministic engineering sizing revision inside original
-B/10, not a forced minimum share, frozen-research regrade or unknown replacement.
-No revised input/Task is installed yet. Due-time native checks remain decisive.
+Code0ce47bed PUSHED/fresh4c9:711serial/19482fullPASS26skip/8actualworkers/
+Ruff/threeCompose/1411same/cleanCchild+lease. Imagee414/SDKded65 actual native
+checks passed. Oldimage27 .005 equality was fixed for explicit0<g<=.1 weight
+profiles, not aggregate risk or old owned input identity rewrite.
+All old ACL/R2/e28/r3/r4 recovery helpers are CONSUMED, never rerun.
+Real COM defaults and stale embedded XML SD caused metadata failures; actual
+API7ACL4f54 always stayed exact. Known XML mirror hashes882f/4f54 only normalized;
+separate actualACL/native/source/no-run checks remain. Helper ownSourcePin is
+separate from native SetContext. R4 completed remaining3updates+4enables only.
+Full first-cause/current evidence in HANDOFF and immutable original journals.
 
-Current p010 stage is NOT deployable on image27. Exact second lot RO e25
-chooses .01fullB as first dated-close one-lot candidate; original binding/
-reserves stable,13Jobs/CIDclosed,0API. Actual image27 REJECTED that .01 at
-native admission and journal reload: a fixed .005 equality, not sharedbank risk.
-A/execution/current-msft-p010-operational-rebinding-preparation-20261027-v1/CONSUMER-UNAVAILABLE.json
-(e162e0bc) is closed; apply -Execute blocks before Task API. Old4Tasks/169/206
-unchanged. Leibniz owns cycle.py/test for explicit0<weightgross<=.1originalB;
-Socrates reviews frozen diff. Original B/10/cost/loss/F9/pending/orderability
-stay authoritative. New full tests/image/SDK/native checks and separate rebind
-are required before installation; codec/mock forwarding alone is not proof.
+Quote85c1040d consumed1POST2GET/2xx: valid last/tick but offsession BBO/stamp
+stale/orderability unobserved. REST timezone unverified, current parser uses
+Korea. No unsupported-route/fresh-readiness claim or freshness weakening.
+
+P025 native model proposal25512f0f COMPLETE:
+A/execution/current-rankhalf-p025-native-proposal-preparation-20261027-v1/CONSUMER.json.
+Inputc058a194/policy357af39b/cohortrankhalf-p025-H5-close-e4-20261027-v1,
+eightweights/5positive/support unchanged; .025fullB=.25originalsharedtenth.
+One native cold admission/record PASS/e414/SDKded65/allclosed. allowFALSE,
+UNALLOCATED/NOTDEPLOYED/no affordability claim. Parent next ONE finite
+same-account SERIAL proposal dispatcher, not another peer private-bank writer.
 
 ## Closed Readiness / Recovery
 

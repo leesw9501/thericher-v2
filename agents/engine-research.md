@@ -97,9 +97,29 @@ no threshold/ratio rescue, no actual PaperPnL. Native8cases/oneactionprojection/
 onepriceintake/oneactualledger/0fits-forwards-GPU/4CIDsclosed,
 195.4094aggregateowned/600 includesData andSource30 ONCE.
 
-Next hypothesis must be genuinely distinct and practical after these cost
-failures. Do not automatically rerun SSL or lower a frozen threshold to claim
-success. Provisional daily Paper remains independent of profitability.
+Fixed inverse-RMS allocation CLOSED_REJECT c39d6791/audit6edc5b1b:
+A/research/current-nas8-volatility-allocation-readiness-20261027-v1/numerical-r1/CONSUMER.json.
+VolRankHalf2.410576%growth/DD1.952016%, VolUniform2.164206%/1.915017%,
+cached RankHalf2.588162%/1.713420%; frozen growth and DD checks fail.
+Native6/376positiveRMS/47keys/1allocation/2newledgers/1held/0fit-forward-GPU,
+118.216123/300owned/all4CIDs-PIDsclosed. PriorSource30 counted once.
+No allocation rescue, new independent-alpha claim or old verdict reversal.
+
+New loss campaign FROZEN01:20..02:00UTC under current-nas8-cost-weighted-
+ranknet-readiness-20261027-v1/PARENT-FREEZE.json, contract9dfda886.
+1200inclusiveowned/2400elapsed,Source40oncewithin150; same18-32-16-1/
+seed20261027/affines/47OOF. Loss priority gap/(gap+.004) normalized by date
+is cost-scale magnitude proxy, NOT actual turnover utility.
+Max1new nativeCUDAfit4updates/12forwards/1coldrestore before market labels,
+3marketfits192epochs/5952updates/7200allforwards/3OOF376rows/
+2newnonaliasNET20ledgers/1held/0retry/Datarebuild. Selected0 reuses qualified
+INITIAL forecasts; do not run old fit/forward/control ledger again.
+Each fixed policy must grow beyond cachedRankHalf and DD<=assetUniform.
+ClaudeREVISE retained/rationale not returned; Parent narrowed one objective
+ablation, not method novelty/alpha. Related H20 gap-pair experiment actually
+failed, not0fits from stale topSource. No recipe/seed/scale rescue.
+Actual worker/PID/headroom/fit evidence, not this assignment, establishes GPU use.
+Provisional Paper remains independent; current4MSFT deployed901b/next22:40KST.
 
 Newest CLOSED consumer:
 A/research/current-qqq-open5-position-cost-gate-development-20261027-v1/CONSUMER.json,

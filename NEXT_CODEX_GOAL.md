@@ -6,106 +6,86 @@ coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Make one already-owned finite Paper execution reach its real native decision/
 reconciliation path while independent Data/Research work can coexist.
-Installation/test/image/task-exit/due time is not a native financial result.
-Keep ended GRU/TF/J17/L/optional entries SUPERSEDED_NOT_ACHIEVED, never reopen
-or substitute an unknown request to manufacture a trade.
+Installation, tests, due time and task exit are not financial runtime evidence.
+Ended GRU/TF/J17/L/optional entries stay SUPERSEDED_NOT_ACHIEVED.
 
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-On genuine resume run scripts/start_next_codex_task.ps1 then HANDOFF/AGENTS/
-RUNBOOK and active stateboards. Parent owns shared MD/Git/integration/cutovers.
+On genuine resume run scripts/start_next_codex_task.ps1, then HANDOFF/AGENTS/
+RUNBOOK and active stateboards. Parent owns shared policy/Git/cutovers.
 
 ## Actual Owned Opportunity
 
-Four MSFT engineering Tasks ACTUALLY enabled21:32:22UTC Oct26:
-A/execution/current-msft-disabled-task-acl-recovery-20261027-v1/canonical-ai-r2/ACTUAL.json,
-abe9f4ac. Runtimehost37bda1e9/route d6787bc5/image27dde/TRUE0e63c915,
-input169ee4b2/policy206e36be. All4enabled/0instances/exact native definition/
-ACL/88otherTaskXML-ACL-membership unchanged;0TaskRun/KIS/privatewrites.
-This is installation only, NOT an actual new order or fill.
+ALL4 existing MSFT Tasks ACTUALLY rebound/enabled Oct27 01:22:39UTC:
+A/execution/current-msft-p010-operational-runtime-r2-preparation-20261027-v1/parent-source-pin-r4/ACTUAL.json,
+901b0041; POST-INSTALL-READBACK007b0145 independently matches4XML/ACL/quiet
+pythonw/0instances/next_due/image.88otherTasks unchanged. No Task.Run/KIS/private
+write/new broker submit or fill at installation.
 
-Exact Task prefix thericher-kis-paper-msft-engineering-:
-- entry-20261027-v1: Oct27 13:40..13:44UTC (22:40KST).
-- recovery-20261027-v1: Oct27 13:47..13:51UTC, original pending only.
+Hoste1b014dd/routebf376d3a/imagee41497fd/TRUE090ddb10/input65f9571d/policya861.
+Gross .01 of original fullB inside ONE original shared initialB/10, not a new
+bank/per-model tenth/profit expansion/forced lot. Preserve F9/cost/loss/pending.
+
+Task prefix thericher-kis-paper-msft-engineering-:
+- entry-20261027-v1: Oct27 13:40..13:44UTC,22:40KST.
+- recovery-20261027-v1: Oct27 13:47..13:51UTC, retained request only.
 - exit-20261102-v1: Nov2 20:45..20:49UTC, owned inventory only.
 - exact-exit-recovery-20261102-v1: Nov2 20:52..20:56UTC.
 
-No manual Task/collector duplicate, replacement follow-up chain or foreground
-market-session wait. Workers own next_due. Before effects actual native guards
-recheck owner/virtual host/basis/aggregate budget/pending/quote/orderability.
-Maximum .005 of full original B is inside ONE original B/10, not a new bank/
-affordability proof or 10percent permodel. Unknown F9/costs/losses/reservations stay.
+H5 entry-inclusive fifth-session15:45ET near-close differs from research
+OPEN[e+5]=Nov3OPEN. Native current virtualhost/identity/aggregate budget/pending/
+fresh quote/orderability still veto. Quote85c104 offsession2xx/stale is not fresh
+BBO or unsupported-route proof. REST timezone unverified, do not weaken freshness.
+No manual duplicate worker/Task, replacement follow-up chain or foreground wait.
 
-Actual native RO f68c4e53 at20:55:13UTC is CONSUMED/allclosed: original account/
-basis/stability/fullbook PASS, MSFT unregistered,1unknown pending reserve held.
-Other7NAS8 registration NOT proved. Never reuse that consumed scope or release
-F9. New named lot read cd30aa16 is also consumed, not a fresh broker query.
-Readonly API faef83ee consumed1POST5GET,7sequential holdings not adopted,
-NASD openorders0 scope only/fixed-reference orderable not quote/equity.
-SYN fullIO b3fedf64 PASS/allclosed but owner/account/HTTP/financialclock SYN.
+## Ready Parallel Work
 
-Old install e9 and recovery73 FAILED before enable. R1 only changed entry to
-exact4ACE protected rights; OS added AI metadata. R2 f803a8c0 recognizes exact
-P+AI237form/no repeatSet and completed remaining3creation. Preserve old failed
-journals/TRUE; NEVER rerun consumed scripts or reset financial identity.
+- Parent: integrate actual901b/007b evidence, external checks, verify/commit/push
+  owned docs; prepare existing p025 model proposal for ONE finite same-account
+  serial dispatcher, not another concurrent bank writer. It is unallocated.
+- Engine/Steward: execute EXACT frozen new weighted-pair objective comparison
+  under research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1.
+  Hard02:00UTC/1200owned inclSource40once/2400elapsed, one new native4update
+  smoke before market labels, max3marketfits192epochs/5952updates/one seed,
+  <=3OOFforwards376rows/2newnonaliasNET20ledgers/1held/0retry/Datarebuild.
+  Reuse matched INITIAL/affine/control caches. Report both fixed policies;
+  ClaudeREVISE remains, narrowed cost-scale proxy only, no independent alpha.
+- Execution: p025proposal25512f0f/inputc058a194/policy357af39b is native/cold
+  verified on e414/SDKded65; eight weights/support unchanged/allowFALSE.
+  .025fullB is quarter of original shared tenth, NOT allocated or affordable
+  by proof. Future single serial-account handoff must retain foreign skip,
+  original F9 and native budget; no substitute unknown or forced share.
+- Data packets/currentpoint are complete. No rebuild/recollection/untouched
+  replication claim from later raw bytes. F9 optional RO inspection does not
+  block another lane; conditional snapshot-only mode was not adopted.
 
-## Ready Parallel Packages
+Completed models/SSL/cost/volallocation remain completed with original failures,
+debits and quality limitations. No repeats for GPU utilization; no arbitrary
+new architecture/sweep. Useful ready GPU work may run under measured headroom.
 
-- PRIORITY Parent/Socrates: Native gross patch is VERIFIED by4c9a2956, coreDABF/threechangedfiles.
-711serialPASS/19482fullPASS26skip35warnings/8actualworkers382.78s,1411same/
-cleanCchildlease20PIDstartsclosed/Ruff3ComposePASS. New imagee41497fd actual
-four-input native admission+record+inert/guard PASS; Python3.12.16patch/748members,
-not installed. Separate new SDK/runtime-r2/TRUE/Source/4Taskcutover remains.
-  p01065f/a861 is NEW1%engineering input; oldimage27rejects it, stagee162
-  UNAVAILABLE andactual4Tasksstill37/27/169/.005. Preserve4exactrollback
-  definitions/ACL/triggers/identity, fresh admission beforeapply/noTask.Run.
-- Leibniz nativequote SOURCE audit: exactfuturequote accessor/virtualsupport,
-  prepareboundednamedreadonlyprobe, no orders/recovery/live/rawvalues.
-- Halley RO source/throughput review: r2d970 admission denied7unreviewedactors,
-  noactualprivateF9read. Fix actual-custody scope, not actor-name/global waiver
-  or another creator/lease platform; F9 remainsheld anddoesnotblockp010.
-- Engine/Data cost studyd2ef COMPLETE_REJECT:63days allmodelBUY0/cash,
-  ALWAYS_QQQ-1.712384%/sampledDD1.71677%. One actualledger/0fits/195.4094
-  aggregate/4CIDsclosed. No threshold/ratio rescue or repeated training.
-- ActualNASDAQregistratione628: RankHalf positiveunregisteredAMD/NVDA,
-  MSFTweight0; foreignpositions never adopted/reweighted. Gross affordability
-  unknown afterd674denial. Model/paperbank thresholds are distinct.
-- HGB/RankHalf adapters remain unallocated/FALSE, no model peerwriter.
-  New GPUcampaign onlyfor genuinely useful ready frozen question, notutilization.
+## Recovery / Claims
 
-Completed research stays completed: HGB18 c9c35, hierarchy32f56 and RankNet18
-01b810 all failed their frozen combined primary. Do not regrade them. RankHalf
-2.5882%growth/DD1.7134% versus uniform8 2.5081%/1.8752% is a useful adaptive
-development tradeoff, not independent alpha or a new primary pass. Initial2fold
-RankNet bestepoch0, finalfold9; actual3CUDAfits737updates69epochs/allclosed.
-Existing Chronos/TimesFM/TTM trials are not rerun. Useful GPU allowed, no dummyload.
+R4c59ff933/resume2497af62 and all earlier installers are CONSUMED, never rerun.
+Windows default materialization and stale embedded XML security mirror caused
+metadata failures; original API7 ACL4f54 stayed exact. Only exact old/new mirror
+hashes882f/4f54 normalized, with separate raw/native/source/ACL/no-run checks.
+R3 pre-effect source-pin shadowing fixed via ownSourcePin; original failures
+and original journal retained. No private or financial identity reset.
 
-## Evidence / Boundaries
+Distinguish no signal, native risk no-intent, technical failure, submit attempt,
+acceptance, exact fill, current owned inventory and terminal reconciliation.
+Missing evidence is unknown, not flat/zero PnL. Fees/settlement/netPnL unobserved
+without evidence. No KIS_LIVE_*/live/real money or unapproved paid/public work.
 
-Require exact source/input/policy/dispatch/native intent/fill/current-owned
-linkage. Distinguish no signal, technical failure, native risk no-intent,
-attempt, acceptance, exact fill, pending and terminal closure. Never infer
-zero/flat from missing receipts/task exit. Fees/settlement/netPnL unobserved
-without evidence. A complete native no-intent can be operational learning;
-failure before native admission is not a model signal.
+## Verification / Continue
 
-AGENTS standing private no-cost KIS Paper authority applies, not package-local
-credential bans across lanes. Never KIS_LIVE_*/live/real money. Ask only for real
-operator authority. Do not ignore actual unknown private writers; source-attest
-actual capability/mounts, not every Data/research actor or unrelated future due.
-Original Oct30/Nov20 exits/Data owners/F9 remain; no substitute unknown.
+Fresh4c9a2956:711serialPASS/19482fullPASS26skip35warnings/8actualworkers/
+382.78s/cleanCchild+lease/20PID-starts/Ruff/threeComposePASS/1411same.
+Code0ce47bed PUSHED; imagee414/absolute748SDKded65 actual native checks PASS.
+Docs/external-only reuse needs exact protected digests and fresh external checks;
+the repo suite does not validate external helper code by repetition.
 
-## Verification / Continuation
-
-Native gross patch is VERIFIED by4c9a2956, coreDABF/threechangedfiles.
-711serialPASS/19482fullPASS26skip35warnings/8actualworkers382.78s,1411same/
-cleanCchildlease20PIDstartsclosed/Ruff3ComposePASS. New imagee41497fd actual
-four-input native admission+record+inert/guard PASS; Python3.12.16patch/748members,
-not installed. Separate new SDK/runtime-r2/TRUE/Source/4Taskcutover remains.
-MD/external-only reuse needs exact protected digests and fresh external checks.
-Original7131 is oldsource only. Never treat source/install/commit as actualfill.
-
-Only after achieved company runtime evidence, integrate/verify/commit/push,
-replace this with ONE next company outcome and continue. A package commit or
-owned future opportunity is not company completion. Continue ready work,
-report only material outcomes/failures or genuine operator decisions.
+Only after actual company runtime completion, integrate/verify/commit/push,
+replace this with ONE next company outcome and continue. A package commit,
+installation or future opportunity is not company completion. Keep other ready
+work moving; report only material outcomes/failures or genuine operator decisions.

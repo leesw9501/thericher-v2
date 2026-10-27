@@ -41,6 +41,16 @@ consumed by the separate two-cell supported study, not original four-cell pass.
 
 ## Current Assigned Work / Owners
 
+Current data packet work is CLOSED. New loss family uses original NAS8 TOTAL
+role20383a8a/manifestabd32431/rankcodec8a76574c and exact FITaffines, no rebuild/
+new API/target inversion. Direct metadata/schema callbacks only as needed.
+47OOF entries2025-10-30..2026-10-01; target exits2025-11-06..2026-10-08.
+Original600sessions2024-05-23..2026-10-14. Retained61session currentpoint source
+throughOct26 is not a proved later untouched replication block; only single
+Oct27 entry features already produced. No independent outcome-use claim from
+raw presence or key disjointness. This does not block provisional Paper.
+
+
 Newest Faraday work CLOSED VERIFIED_READY, HANDOFFe76f0401:
 A/data/current-nas8-hgb18-currentpoint-features-20261027-v1.
 Exact20context routes/61prior OHLCV rows ending Oct26, NAS8 feature-only view

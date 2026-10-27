@@ -7,6 +7,17 @@ Detailed closed history: Gitbb391f30 and immutable source/consumer records.
 
 ## Current / Concrete Consumer
 
+New cost-scale gap-pair RankNet Source9dfda886 under current-nas8-cost-weighted-
+ranknet-readiness-20261027-v1 is consumed by Parent finite numerical freeze:
+01:20..02:00UTC/1200owned/2400elapsed/max3marketfits/2newledgers.
+Smooth gap/(gap+.004) is project-authored priority proxy, not exact cost-aware
+utility or a new architecture. ClaudeREVISE remains; rationale not returned.
+Related completed H20 gap-pair47e3fb87 failed; not0fits from stale topSource.
+Parent allows only matched objective contrast/INITIAL reuse/strong kill,
+not novelty, independent alpha or broker promotion. No second strategy review
+or public model download needed. Actual numerical outcome remains with Engine.
+
+
 Closed attribution readiness84a36189 enabled separate actuald2f620d9 ablation:
 initial rank growth2.4598694% exceeds trained2.4306671%; positive ranker
 learning-growth claim killed. Initial RankHalf2.3987388% vs trained2.5881617%:
@@ -24,10 +35,11 @@ Apache2checked/no copied code/download/dependency change.
 
 F9 temporaryExecutionRO r2d970 is CLOSED_UNAVAILABLE afterABI/parentproof
 repair; remainingunreviewedactors denied,0actualprivate/0CID/8Jobsclosed.
-Now Halley SOURCE throughputreview90/900 under current-ro-admission-scope-
-efficiency-review-20261027-v1: exactretainedPID/start/source/mount facts only,
-one minimal scopefix/reversal; no guessinghistoricalroles, broadPowerShell
-waiver, private read or creator/lease platform. F9 unknownreserve stays.
+Halley throughput review6ea01896 CLOSED under current-ro-admission-scope-
+efficiency-review-20261027-v1: blanket denial is not private-writer evidence.
+One controller matched, six unresolved. Conditional existing-reader snapshot
+mode has no real pinned F9 input: Parent NOT adopting/implementing it now.
+No private read, broad host waiver or creator/lease platform. F9 reserve stays.
 Coststudyd2ef CLOSED_REJECT/allthree modelactions cash63days;
 ALWAYS_QQQ-1.712384%/sampledDD1.71677%. Nofit/threshold/ratiorescue.
 

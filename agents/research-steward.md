@@ -7,6 +7,21 @@ immutable consumers. Closed clocks/charges are never reset/refunded.
 
 ## Actual Resource / Ready Work
 
+NEW finite cost-scale gap-pair loss family FROZEN01:20..02:00UTC:
+A/research/current-nas8-cost-weighted-ranknet-readiness-20261027-v1/PARENT-FREEZE.json.
+1200owned/2400elapsed/Source40oncewithin150, max3marketfits/192epochs/
+5952updates+4newnative/7200allforwards/3OOF376rows/2newledgers/1held/0retry.
+Same existing GPU image/runtime, INITIAL/affines/control caches reused.
+Owner Schrodinger verifies actual free/projected VRAM/desktop reserve and exact
+PID/start/lease before workers. Unknown user apps are not a permission hold.
+Native smoke must precede market labels; no active CUDA claim from assignment.
+Execution repair done901b01:22:39/no active technical resource preemption.
+
+Fixed volallocationc39d CLOSED_REJECT/118.2161inclusiveowned/4CIDsclosed,
+1allocation/2ledgers/0fits-GPU. No volatility formula rescue/repeated work.
+The families below are completed history, NOT current resource allocations.
+
+
 NAS8 HGB18 Sourcec9c35f6e/result4f6016b8 CLOSED_REJECT,3CPUfits112stages/
 3OOF47dates/4cells,528.695435owned/3701.496146elapsed, allclosed. Stronger
 growth but failed frozen uniform8 DD; no rerun/regrade. Currentpoint reuses
