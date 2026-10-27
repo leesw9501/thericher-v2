@@ -30,20 +30,25 @@ remain in Git440be599/immutable artifacts, not reusable recovery commands.
 No Task.Run/manual duplicate or new follow-up chain. H5Nov2nearclose is not
 researchNov3OPEN. Native fresh quote/funds/identity/budget/pending checks apply.
 
-LOWVOL host A/execution/lowvol-paper-20261027 finalba2/route3699 is staged,
-ParentTRUE2fc024 separately delegates the exact operational scope. Old helper
+LOWVOL host A/execution/lowvol-paper-20261027 finalba2/route3699 is ACTUAL:
+A/execution/lv-install-1027-r3/ACTUAL.json f0a9cbac/READBACK9967c874,
+fourTasks enabled07:24:43.9534964UTC/0instances/other92unchanged. ParentTRUE
+2fc024 separately delegates exact operational scope; no new bank/Task.Run/KIS.
+Old helper
 lv-install-1027/4711 failed member preflight before Task calls. R1afdb created
 ONE disabled unstarted entry07:07:54 then failed literal COM XML comparison;
 rollback withheld. Otherthree absent/other92unchanged. Both scopes consumed.
-Do not rerun them or delete the retained entry without exact journal/source/
-ACL/unstarted proof. Halley prepares r2 measured-default semantic repair;
-Parent alone owns actual cleanup/create/readback. No Task.Run/KIS/private
-effect so far. No latest-artifact scan or unsealed prepare/install caller.
+Do not rerun them. R3 exact cleanup13d30667 removed that one acknowledged
+disabled/unstarted entry after native semantic/typed/API7 proof; then created
+four and independently read back. R2/R3 scopes are also consumed; no reusable
+cleanup command. Actual ordinary OS time/default/order/Author normalization
+is not a waiver of unknown XML/source/ACL/action/owner checks. No latest-file
+scan, unsealed installer, manual Task invocation or fill inference.
 Input58f/policyf037/100rows/81known/10targets/requested.025fullB UNALLOCATED.
 Candidate entryOct27 15:30..34/recovery15:37..41, NEW plannedexitNov3
 14:35..39/recovery14:42..46. Nominal H5Nov2minimum remains unchanged.
-Parent must scope actual activation/admission/readback; source gap or future
-due time is not a financial result. Production private mounts must NEVER
+Actual scope/admission/readback complete, source gap or future due time is not
+a financial result. Production private mounts must NEVER
 appear in an offline invented financial SYN, even network-disabled.
 
 ## Result Reading / Custody
@@ -73,15 +78,39 @@ Do not borrow WebSocket semantics or weaken freshness.
 
 ## Ready Inputs / No Repeat Work
 
+Future outcome reader is CLEAN/INACTIVE at
+A/execution/current-msft-lowvol-outcome-reader-readiness-20261027-v1/source-clean-r1,
+Consumer0b1026/Sourceb859, native10/Ruff0/fullAST guards preserved. No actual
+private binding or fullbankFS proof. After owned opportunity/owner closure,
+Parent must freeze a NEW finite caller with selected SPEC/diag/point/anchor,
+actual actor/mount custody admission and before/after file stability. Never
+execute the old consumed caller merely because a clean parser now exists.
+
 Data32007/currentpoint28e89/actualinert75a7 are COMPLETE. Exact paths/pins in
 HANDOFF and role boards. No repeat56successful GETs/81rowforward/conversion.
 RAW19/RAW63 historical packets and fourfit/sixpolicy results remain immutable.
-New forward-risk contract357697bd is adopted; Data02eb READY/native/onebuild/
-separate EVALtargets. CPU/controller and GPU Steward work disjoint paths at
-A/research/current-nas100-forward-risk-learning-development-20261027-v1.
-Origin06:44/hard08:14,1800combinedowned includingSource150once, oneRidge/oneMLP
-marketfit/0retry; actual newsolver/optimizer native before market. Preserve
-premodel failures/debits; only predeclared technical correction inside caps.
+Old forward-risk357697bd/five family CLOSED TECHNICAL_INCOMPLETE after GPU
+counter replacement error, no retry. Separate Ridge3 readout13badf CLOSED/
+MSE PASS1.258145 vsnaive/constant, nofitGPUretry/112newdebit. Fixedcost906576
+closed/narrowParetoPASS vsLinear but dominated by LOWVOL; no current Paper swap.
+New relative-DD comparator adopted BEFORE Source/effects, old absolute-DD
+comparison remains unavailable. These are adaptive reused-data experiments.
+
+Joint family actual7:54:34..9:24:34/freeze9a193 now CLOSED_REJECTab98473e:
+one CUDA marketfit55epochs7810updates/best40/151.811s/168MiB, both forecasts
+before one dual-target. Return lostLinear; risk improvement cannot promote
+a partial head or rescue the old AND-primary. Allresourcesclosed/leaseabsent.
+Native warm1fit2updates was NOT repeated: unused cold286237 restored/forwarded
+once, callerb205 binds exact compound proof. Never rerun run_phase.py's failed
+old NATIVE-CONSUMER guard/caller or duplicate completed training.
+Dataaf9175 onebuild/12intakes is also closed. Source/weights/outputs stay A/M.
+
+Active conditional CPU scopes: correlation family8:24:31..9:04:31/600owned
+includingproposal85once, data150/49solvers/oneledger; separate post-observation
+Linear+storedJointRisk policyablation300owned1200elapsed includingproposal55
+once. Actual data/action/solver native first, same exact cached cost contracts,
+actions sealed before held marks, no old model/baseline replays or Paper changes.
+Exact Source/caps/claims in NEXT and active boards, not executable old scopes.
 No profitability gate before delegated Paper or arbitrary GPU filler.
 
 Native generic financial closure25d932 at A/x/syn-rx-1027-lb/CONSUMER.json

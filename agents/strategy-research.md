@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,07:07UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,08:11UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
@@ -37,10 +37,26 @@ READY/native/file/cold/oneprojection, separate EVAL labels held. CPU Ridge and
 oneGPU20-MSE MLP may advance after their actual native optimizer/checkpoint
 and measured resources; origin06:44/hard08:14/1800combinedowned. Strongestkill
 is no forecast increment over aligned naive/constant/Ridge/INITIAL references;
-log future OPEN mean-square is not alpha, latent variance or broker-risk change.
-Exact fit/call/time caps remain frozen, reused2025 not independent evidence.
-Faraday now inspects metadata-only complementary return+risk consumer readiness,
-not an additional fit/forecast intake or reopened old family arm.
+Old five-bundle family TECHNICAL_INCOMPLETE after actual GPU counter I/O error,
+no retry/regrade. Separate Ridge3 readout13badf passed both fixed proper-score
+references: MSE1.258145 vsnaive1.587838/constant2.042956, one feature/target
+intake with three seals beforetarget/0fit. This is log-proxy information on
+reused2025, not alpha/latent variance/broker risk or a Paper gate.
+Faraday's old FIVE pure kernel/native is closed; NEW three-method-r1 ABI proof
+must bind actual ROLEa5b11502/payloadc2a27646 before one fixed return/risk cost
+study. Coefficient.5/RIDGE chosen before readout; no head/ratio search. Cost
+contract matches cachedLinear/20bp EACHleg/whole shares, no baseline replay.
+Fixed composition cost906576ea narrowly PASS vsLinear, growth.99852744%/
+peakDD2.17489873% vs.9838582%/2.22661241%, after20bpEACHleg. New relative-DD
+contract adopted BEFORE Source/effects; old absolute comparison UNAVAILABLE.
+Cached LOWVOL2.097%/1.902% still dominates. Small net gain/less fees is not
+causal forecast-alpha, overall winner or reason to switch current Paper.
+Joint Source63879/contract8549 adopted as distinct new2head practical recipe,
+not generic MTL novelty/causal benefit. Newfamily7:54:34..9:24:34 UTC/1800owned,
+dualData/native/model-I/O proof before onefit; cachedLinear+Ridge references.
+Halley now Source-only correlation-aware allocation hypothesis readiness:
+check duplicates/existing libraries/causal past data and strongest aligned
+LOWVOL/Linear kill first. No optimizer/market/GPU authority from that proposal.
 
 ## Checked Project Evidence / Limits
 

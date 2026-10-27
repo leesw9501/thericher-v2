@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,07:06UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,08:38UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
@@ -29,8 +29,9 @@ coldSDK/zero new modelcalls. Six actual evidence-bound clocks include enclosing
 pipeline interval, not exact kernel profiler. Old MSFT guard unchanged.
 Existing native H5 minimumNov2 remains; NEW plannedNov3earlyRTH exit is an
 explicit nonparity variant, not successful recovery or old dated-input roll.
-HOST/4Task staging is Execution-owned at execution/lowvol-paper-20261027,
-no actual activation yet. Stock-only alternative remains dormant.
+LOWVOL actual fourTasks enabled07:24:43UTC, execution/lv-install-1027-r3/
+ACTUALf0a9/READBACK9967, hostba2/input58f/policyf037, same original shared B/10.
+Installation not runtime/fill. Stock-only alternative remains dormant.
 
 ## Ready Research Queues
 
@@ -43,8 +44,62 @@ no actual activation yet. Stock-only alternative remains dormant.
   fixedRidge/oneMLP20. New weighted solver/MSE optimizer/checkpoint native
   before market; oneCPU+oneGPU fit/0retry. MLP200epochs/20kupdates/300fitsec,
   INNER earlystop/LR only. Exact call/row/restore caps stay frozen contract;
-  five forecast seals before one EVALtarget. Registry/code frozen07:01:55,
-  not proof of a running/completed fit. No old fourfit expansion or Paper gate.
+  Old five-bundle family is TECHNICAL_INCOMPLETE: real Ridge1fit complete
+  1.226s/model9c946; real GPU1fit failed counters os.replace PermissionError at
+  epoch6/at least736 durableupdates after five completed epochs,16.719s worker.
+  No marketretry cap0, no final-EVAL intake/qualified model yet. Both native
+  solvers passed after one combined mechanical correction; bitwise log <=2ULP
+  witnessed before GPU solver, original Data/failed Source immutable. All fit
+  resources closed. Future I/O fix cannot relabel or retry this failed fit.
+- Separate three-method readout CLOSED_VERIFIED13badf9a:
+  current-nas100-ridge-risk-information-readout-20261027-v1/CONSUMER.json.
+  Source72728/contract9ba388/native8/independent8/RuffPASS; newdebit112/300,
+  allworkersclosed. One EVALfeature/three seals/one EVALtarget,0fit/GPU/retry,
+  oneRidgeRestore+matrixforward17828rows;245scored dates/17458lossrows/missing0.
+  FP64 equaldate logMSE RIDGE1.2581452156451252 vsNAIVE1.587838183714173 and
+  constant2.042955650316317; both strict primary conditions PASS. Rolea5b11502/
+  payloadc2a27646/seal06769. Ridge was preselected for composition before
+  readout. Parent independently checked15refs/0mismatch and4runtimefiles Ruff.
+  Claude review_unavailable/processfailure, not agreement. Oldfive family
+  remains TECHNICAL_INCOMPLETE; this is reused2025 information, not alpha.
+- One-arm cost CLOSED_VERIFIED906576ea, Source9d8165/contract9bfe9:
+  current-fixed-linear-ridge-risk-cost-development-20261027-v1/CONSUMER.json.
+  New THREE078226/native6 readiness consumed, fixed same-u
+  support normalized u*exp(-.5RIDGE), explicit PREMARK arbitrary-Fraction unit
+  mass. Same original gross.1B/49origins/OPEN245/247NAV/20bp EACHleg/netwhole
+  shares/centties-even; cachedLINEARbaseline reused without model/ledger replay.
+  Old absolute-DD comparator stayed UNAVAILABLE (cache lacks NAV witness).
+  Explicit07:58:05 BEFORE-EFFECT adoption fixed NEW peak-relative-DD Pareto
+  before Source/effects, unchanged arm/caps/head. One sealed arm/one path/
+  one replay/0baselineReplay/modelcalls/retry, native6/independent7/allclosed/
+  148newdebit. Growth.99852744%/DD2.17489873% vsLinear.9838582%/2.22661241%,
+  fees.64491256%vs.7034818%, turnover3.2245628vs3.517409. Narrow primary PASS;
+  absolute comparison not regraded. Meanexposure.09762994 vs.09757212.
+  Cached LOWVOL2.097%/1.902% still dominates: no overall-winner/alpha/Paper
+  switch or additional allocation. Parent11refs exact; simulated local_paper.
+- NEW joint family proposal8549/source63879/freeze9a193171 at
+  current-joint-return-risk-learning-development-20261027-v1. Actual origin
+  07:54:34/hard09:24:34,1800combinedowned inclproposal30once. Schrodinger
+  Engine/GPU +Faraday separate dualData150, Socrates source-only peer review.
+  One NEW1234param20->32->16->2 pairBCE+standardized log-risk model,1fit/0retry/
+  128epochs18176updates300fitsec. Exact forward/row/check/restore caps stay
+  frozen. New dualData+optimizer/RNG+actual model local-spool/D-export ABI
+  native before market; FIT/INNER only, two forecasts before held dualtarget.
+  Both proper scores must beat cachedLinear+qualifiedRidge and ownINITIAL;
+  not generic MTL novelty or causal shared-encoder attribution. Actual ONE
+  marketfit COMPLETE55epochs7810updates/best40/INNER_PATIENCE15/151.811s/168MiB.
+  Original nativewarm1fit2updates retained, unusedcold286237 PASSone restore/
+  forward198rows/0updatesfit, callerb205 compound admission. Two EVALpasses
+  sealed before one dualtarget. ReturnBCE.67622494 losesLinear.67568712;
+  riskMSE1.153165 improvesRidge but full primary REJECT_DUAL_INCREMENT.
+  No alternate-winner/partial-head promotion or lambda/width/seed rescue.
+  Final evidence/debit verification pending, all fit/infer resources closed.
+- NEW CPU allocation family proposal31cd, actual08:24:31..09:04:31UTC,
+ 600combinedowned inclproposal85once. Socrates +Faraday historyData150;
+ <=49LedoitWolf/49SLSQP/9800iterations/0retry/onearm/<=1ledger, exactfullalias
+ reusescached906/0ledger. Causalpast21OPEN packet/newsolver-action native before
+ market. Strongest primary beats max growth/all3 and no worse min peakDD of
+ cached906/Linear/LOWVOL; no baseline replay/grid/fallback/GPU/Paper mutation.
 - Depth: existing future20session benchmark8bf86e20 stays untouched, not a
   company/Paper hold. Longer candidate training needs its own ready question/
   finite budget/learning curves, never repeat finished fits for utilization.
