@@ -1,17 +1,28 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,11:52UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,13:14UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
 
 ## Current Consumer / Ready Proposal
 
-Faraday owns current Source-only boosted-tree readiness:
-A/research/current-liquid17-boosted-tree-readiness-20261027-v1,
-11:47:35..12:07:35UTC/90active1200elapsed. Existing sklearn native API and
-chronological INNER/safe export feasibility, no numeric/fit/GPU/Data build.
-One shallow fixed recipe as a different inductive bias, not a depth/loss grid.
+Current Sourcef2cfb68c/contract78fa21d5 at
+A/research/current-liquid17-dated-foundation-checkpoint-readiness-20261027-v1
+CLOSED and adopted as TimesFM OPEN512 development. Existing local trusted
+TimesFM2.5-200m release2025-10-01 precedes every target; Apache2/source and
+safe serialization checked. One past512OPEN/sixfutureOPEN endpoint hypothesis,
+not a model/checkpoint/window sweep or first project foundation-model study.
+New numerical consumer is Engine's current-liquid17-timesfm-open512-development-
+20261027-v1; strict Data ABI readiness is independent. Global12:56:41..
+14:26:41UTC/1140combinedowned, zero fitting/downloads/retries. Dated release
+does not eliminate corpus/selection/currentlisting/nonPIT limits. No automatic
+Paper promotion or independent-alpha claim; no active GPU claim from a proposal.
+
+HGB Source d06257e0 adopted and CLOSED23fc6c94 after three CPU fits20/20/31,
+selected0/0/11; two constant stages, MSE/growth/DD increment fails =>REJECT.
+Same18features/long17/chronological INNER/safeNPZ, no grid/new Data/GPU.
+Future-envelope7d2f worked; Ranker old technical failure remains unchanged.
 
 Socrates closed Source-only pairwise-ranking readiness41543cc9/9c39b254:
 A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1.
@@ -52,8 +63,9 @@ fixed Linear/LSTM blend7246. Completion evidence lives in Engine and Consumers.
 Dataf496b3b3 retained existing mixed NAS/NYS history and proved exact old600
 overlap. Point335fb02f reuses20existing contexts throughOct26/zeroHTTP.
 SavedF3proposal6329b00b/a9fd5d1a is inactive, full17/5positive/top5fairties,
-requested.025originalB unallocated/allowFALSE. Its mixed-venue native consumer
-is under source-only compatibility implementation, not a profitability gate.
+requested.025originalB unallocated/allowFALSE. Native bindinge7341d6c is closed;
+NAS/NYS production code94c16934 tested/image d892 built but not deployed.
+Relevant legacy reader/writer migration remains scoped, not a profitability gate.
 Installed original MSFT/LOWVOL opportunities remain independently owned.
 
 Old forward-risk five-bundle family is technically incomplete with failures

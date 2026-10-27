@@ -1,10 +1,32 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-27 KST,11:14UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,13:14UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own data/calendars/availability; Parent owns MD/Git. AGENTS owns authority.
 History/debits remain Git57074588 and original immutable consumers.
 
 ## Current Work
+
+Socrates owns NEW TimesFM OPEN512 contexts at
+A/data/current-liquid17-timesfm-open512-contexts-20261027-v1 and matching
+M/us_equities/research_inputs root. Global12:56:41..14:26:41UTC,
+Data240 inside SAME1140combinedfamily with Engine900, no cost refund.
+LIQUID17_DATED_TIMESFM_OPEN512_CONTEXT_V1: exact47OOFkeys/SPYfirst+17stocks,
+past OPEN[e-512:e], retained beta60, strict full-OHLC/availability/conflict
+geometry. Missing window means scopedUNAVAILABLE, no fill/crop/OPEN-only
+weakening. Actual named producer-file-cold smoke before projection; no held
+labels, downloads, model/GPU/API/private writes. Direct qualified ABI/output
+callback to Schrodinger, not an additional Parent approval relay.
+
+Faraday owns finite quote-clock capability probe at
+A/data/current-paper-quote-clock-capability-probe-20261027-v1, Sourceb38fb390.
+MSFT virtual Paper asking-price only/<=4GET inclfailures/<=2POST onlyneeded,
+one RAM client/token/default300guard+atomic/legacyexclusion/1.25pace,
+240active/hard13:33UTC. Supervisor37948/worker40612 observed launch, not
+permanent daemon. First actual12:59:58UTC query succeeded; unique fresh
+timestamp interpretation is Asia/Seoul (<=120s), NY/UTC future>5s. No parser
+or freshness relaxation needed on that evidence. Two RTH observations remain
+planned13:31/13:32; no account/order/orderability or fill claim. Never repeat
+the source-safe measurements simply to obtain a new timestamp.
 
 Physical trueOOF gate packets CLOSED_READY7861d8f7 at
 A/data/current-liquid17-ridge-mlp-gate-packets-20261027-v1 and

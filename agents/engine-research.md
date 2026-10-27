@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,11:52UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,13:14UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
@@ -35,6 +35,25 @@ Installation not runtime/fill. Stock-only alternative remains dormant.
 
 ## Ready Research Queues
 
+Current adopted family: dated TimesFM OPEN512 development at
+A/research/current-liquid17-timesfm-open512-development-20261027-v1.
+Sourcef2cfb68c/contract78fa21d5; global12:56:41..14:26:41UTC,
+1140combinedowned=Data240+Engine900, not an extra model-search allocation.
+Local google/timesfm-2.5-200m-pytorch safetensors2f776efe, released2025-10-01
+before all47targets; installed timesfm2.0.2/d6Torch2.7 runtime, no download.
+One zero-shot hypothesis: 512 strictly prior OPEN values/SPY+17stocks,
+six point-forecast OPEN endpoints, log(h6/h1) minus retained beta60*SPY term.
+No realized entry denominator, fit/update/retry or alternative head/checkpoint.
+<=2loads,1native+47market pipelines/18series each/864totalseries; internal
+padding/quantiles counted separately. New named producer-file-pipeline-cold
+smoke before market. Data owns strict full-OHLC/availability windows and direct
+qualified ABI callback. Seal scores/actions before one held-label+MARKS/new
+47cohort ledger; reuse cached controls, never replay completed baseline fits.
+RawMSE/growth/DD primary comparison unchanged from contract. Checkpoint date
+supports post-checkpoint development only: residual corpus/currentlisting/
+nonPIT/MODP1/global selection reuse limits remain, not independent alpha.
+This is GPU inference, not training; adoption is not proof of a running worker.
+
 Latest numerical family b16d33fe at
 A/research/current-liquid17-pairwise-ranking-development-20261027-v1:
 three CUDA fits28/32/26epochs,best8/12/6,7074marketupdates/86MiBpeak each.
@@ -46,12 +65,14 @@ ordering/DD fail =>retained REJECT, not a universal ban on exploratory fusion.
 Host COMPLETE omitted source_sha256 after readout, so overall status remains
 CLOSED_TECHNICAL_INCOMPLETE_READOUT_REJECT_RETAINED. All8CIDs40Jobs/43PIDmembers
 closed/leaseabsent/324.720owned. No completed numerical effect repeated.
-Schrodinger's separate future-envelope repair60active600elapsed under A/infra
-uses invented output only; old result/clocks/debits are not rewritten.
-Faraday now Source-only HGB readiness90active1200elapsed11:47:35..12:07:35:
-A/research/current-liquid17-boosted-tree-readiness-20261027-v1.
-Same18features/long17/threeprefixes, installed sklearn and chronological INNER
-API/safe export feasibility. Numerical NOT adopted yet; no newData acquisition.
+Future-envelope repair7d2f1c2d CLOSED and used successfully by new HGB;
+old Ranker result/clocks/debits are not rewritten.
+HGB23fc6c94 at A/research/current-liquid17-boosted-tree-development-20261027-v1
+CLOSED_VERIFIED_REJECT_HGB_INCREMENT. Three CPU fits20/20/31trees, earliest
+selected0/0/11; first two are constants, not learned skill. MSE.001651825759
+loses Ridge.001636696105; growth1.28218909%/DD1.04131163%, required primary
+increments fail.305.629inclusiveupper inclSource56.272once/11Jobsclosed/
+0GPU/retry. Registry e2915887 recorded once; no new Data or completed-fit replay.
 
 CPU longer-history17 family CLOSED_SCREEN_PASS_NOT_ALPHA9266325e:
 A/research/current-liquid17-long-history-ridge-open5-development-20261027-v1.
@@ -76,7 +97,7 @@ CurrentData335fb02f reused20retainedraw61sessioncontexts/noHTTP; independent
 actual capture/new delivery/inference clocks. MixedNYSE execution compatibility
 is source/runtime work, not a modelprofitability or operatorpermission wait.
 
-Schrodinger sole GPU coordinator: no active fit claimed. NEW Source-only
+Schrodinger remains sole GPU coordinator. Historical Source-only
 long17 nonlinear same-feature regression readiness60owned900elapsed at
 A/research/current-liquid17-long-history-nonlinear-hypothesis-readiness-20261027-v1.
 Source0a4976d9 adopted exactlyoneMLP18/3requiredprefixes; actualfamily CLOSED:

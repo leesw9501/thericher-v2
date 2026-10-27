@@ -36,57 +36,79 @@ F9book764d/primary9b65 pending1: no release or repeated identical query.
 
 ## Ready / Owned / Due
 
-- Parent: review/integrate the compatibility overlay and verified role outputs.
-  Last push a6d68358. Actual installed drivers use pinned routes/images; do not
-  mistake dormant transport.source_map for the active call path. Check actual
-  source dependencies before applying tracked code, then fresh required tests.
-- Sagan implementation CLOSED3f2ce1f7; Parent applied exact patch0e2792f0 at
-  A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1.
-  Freeze10:43:45UTC/hard12:13:45/1200active5400elapsed. Narrow13productionpaths
-  plus focused tests. Csource now changed; full4585 passed19513/26, then a
-  test-only cross-version AST correction passed30focused and actual3.12 image
-  ten-oracle check. Fresh Parent full69460 PASS19514/26 in418.91s,
-  authority1f0fd37a/1412exactsource/all18PIDs+ownchild+leaseclosed.
-  Routing/recovery serial384 PASS; no production change after first full.
-  New image d892c58d built but NOT deployed; old e414 Tasks unchanged.
-  New model-weights-us-5session-2026-v1 and closed venue instrument. Preserve
-  old NAS canonicalbytes, V1-V4 keysets, original identities/risk and F9.
-  First NYSE stock write needs compatible actual whole-bank readers/writers
-  after positive old-actor closure, not a new bank or operator approval.
-- Schrodinger: ranking Source41543cc9/contract9c39b254 adopted at
-  A/research/current-liquid17-pairwise-ranking-development-20261027-v1.
-  Origin11:27:39UTC/hard13:27:39/2400owned7200elapsed, Source debit once.
-  Three required same18feature prefixes, one1153parameter architecture;
-  date-balanced strict-pair ranking loss/logits, not raw-return units. New
-  actual native optimizer/checkpoint/file ABI before market; <=2 useful CUDA
-  workers after measured headroom. No active fit inferred from dispatch.
-  Caps3marketfits/1native2updates/0retry/33152marketupdates/34000forwards/
-  17Mknownrows/146Mpairrows/6OOFpasses/10restores/oneHELD+MARKS+new47ledger.
-  Proper unit-free ordering/top5 utility and matched cost-growth/DD all required;
-  reused development only, no alpha or automatic Paper promotion.
-- Socrates: inactive full17 Ridge native binding CLOSED e7341d6c at
-  A/execution/current-liquid17-long-ridge-native-input-binding-20261027-v1,
-  <=240active1800elapsed from actualfreeze. Same saved current proposal once,
-  no model call/fit/GPU/private/broker/Task. New actual producer-file-image cold
-  smoke before saved payload; allowFALSE/unallocated/.025originalB. Real clocks
-  and H5/venue/inputpolicy bindings required, no forced earlier timestamp.
-  Actual input4ba112dd/policyf59f2d85, oneconversion/0modelcalls/oneCIDeightJobs
-  closed/200owned. Native minimumNov2nearclose vsresearchNov3OPEN is explicit.
-- Ranking family now CLOSED b16d33fe: three CUDA28/32/26epochs/7074updates,
-  growth4.25790885%/DD1.27038321%; ordering and frozenDD fail. Completed readout
-  REJECT retained; host missing source_sha256 makes overalltechnicalincomplete.
-  All8CIDs40Jobsclosed/leaseabsent/324.720owned. No completed calculation repeats.
-  Schrodinger owns a separate future-envelope source-only repair60active600elapsed
-  under A/infra/current-research-completion-envelope-repair-20261027-v1.
-- Faraday now Source-only shallowHGB readiness at
-  A/research/current-liquid17-boosted-tree-readiness-20261027-v1,
- 11:47:35..12:07:35UTC/90active1200elapsed. No numerical authority or newData.
-- Leibniz: finite worker-clock MSFT metadata callback13:52UTC/deadline14:00,
+- Parent: integrate verified external work under unchanged current source94c16934/
+  full authority1f0fd37a. Original e414 Tasks stay; new d892 image is built, not
+  deployed. No operator decision. Prior HGB/Ranker/Gate fits are all closed.
+- Faraday / Data: source-only quote-clock capability preparation at
+  A/data/current-paper-quote-clock-capability-preparation-20261027-v1.
+  <=120active1200elapsed actualfreeze. Native REST dymd/dhms currently uses
+  Asia/Seoul/120s, still unverified by prior offsession evidence. Check official
+  REST source, not WebSocket assumptions, and prepare one bounded read-only
+  Paper virtual-host probe. NO credentials or real HTTP in this PREP package.
+  Parent may explicitly dispatch a named measured probe under standing private
+  Paper authority; no change to freshness or timezone policy from assumptions.
+  Parent now delegates the complete named capability run at
+  A/data/current-paper-quote-clock-capability-probe-20261027-v1: MSFT asking-
+  price only, virtual host/Paper scoped credentials, no account/order/live.
+  <=4GET inclusive failures/<=2tokenPOST only when needed, existing token gate
+  and1.25s pace; prefer one RAM client/token across immediate and13:31..13:33UTC
+  RTH stages. <=240active/remainingelapsed through13:33UTC; one finite hidden
+  worker may own next_due, no new Task/recurrence/automation. No real secret,
+  raw row/price/body retention/logging. Keep known source limitations; no
+  timezone/freshness/risk change in this observation package. Scope native
+  producer/client smoke before HTTP; ordinary implementation needs no further
+  Parent/operator approval relay inside these frozen bounds.
+- Schrodinger / Engine and GPU coordination: adopted dated TimesFM development
+  at A/research/current-liquid17-timesfm-open512-development-20261027-v1.
+  Global12:56:41..14:26:41UTC/1140combinedowned=Data240+Engine900.
+  One local trusted TimesFM2.5-200m/512pastOPEN/sixforecastOPEN hypothesis;
+  zero fits/updates/downloads/retries, <=2loads/1synthetic+47market pipelines,
+  18series each/864totalseries. Actual named native/cold handoff before market.
+  Seal all scores/actions before one held-label/marks/new matched ledger.
+  Exact dated checkpoint precedes every target; residual corpus/global reuse
+  limits remain. Sourcef2cfb68c/contract78fa21d5, no new alpha/Paper authority.
+- Socrates / Data: typed OPEN512 contexts at
+  A/data/current-liquid17-timesfm-open512-contexts-20261027-v1 and matching
+  M/us_equities/research_inputs root, Data240 inside the SAME1140 family.
+  Strict full-OHLC/availability/512prior-session geometry, exact47OOFkeys,
+  SPY+17stock axis and retained beta60. No imputation/labels/model/API; direct
+  qualified producer-file-consumer callback to Engine, no Parent relay.
+- Sagan / Execution: new source-only post-opportunity caller preparation at
+  A/execution/current-msft-lowvol-post-opportunity-reader-preparation-20261027-v1,
+  <=180active1200elapsed/hard13:35UTC. Separate MSFT13:52..14:07UTC and
+  LOWVOL15:42..15:57 scopes, unchanged qualified host/transport and reader8727,
+  dedicated immutable capsules/new exact SPEC/source/image pins. No actual
+  private read or anchor bytes, Task invocation, API or deployment in PREP.
+  Parent retains fresh three-phase actual custody admission after due/closure.
+- Invoked native verification: US/NAS reader qualification CLOSED
+  87276bdb at A/execution/current-nas-nys-offline-custody-reader-20261027-v1.
+  Six invented native FS cases/6CIDs36Jobsclosed, no actual custody admission.
+  New SDK a6568f12 has748members/14differences versusded65:13new native paths
+  plus previously approved quietPSfa23. Parent four authored modules RuffPASS.
+  Native worker200upper +Parent source/sdk <=240 stay inside480; no actual
+  broker, secret, recovery, lock creation or reservation release.
+- Leibniz: original finite MSFT metadata callback13:52UTC/deadline14:00,
   A/execution/current-msft-owned-opportunity-readiness-wait-20261027-v1.
-- Halley: finite worker-clock LOWVOL callback15:42UTC/deadline15:50,
+- Halley: original finite LOWVOL callback15:42UTC/deadline15:50,
   A/execution/current-lowvol-owned-opportunity-readiness-wait-20261027-v1.
-  These two do one post-due source-safe Task query then stop: no OS worker,
-  new schedule/recurrence/automation or financial inference. Ready work continues.
+  One post-due Task query then stop. No new OS worker/schedule/recurrence/chain
+  or financial inference. Ready work continues; Parent does not session-wait.
+
+Native Ridge17 input e7341d6c is CLOSED/INACTIVE: input4ba112dd/policyf59f2d85,
+full17/allfivepositiveNYS/.025originalB UNALLOCATED/allowFALSE/one conversion.
+Native minimumNov2nearclose vsresearchNov3OPEN remains explicit; no auto-roll.
+
+Migration map eb451d98 at
+A/execution/current-nas-nys-owned-actor-migration-readiness-20261027-v1:
+14actual-source actor bundles, no deployment. All actual current code paths
+are D-frozen; current C edit alone did not invalidate original operations.
+Five historical inline owners/images remain scoped unresolved, not assumed
+safe/exhausted. Migrate only relevant retained responsibilities after positive
+closure, preserving exact inputs/private paths/basis/pending/F9. Group common
+source ABI where proven; no blanket upgrade of inactive unreferenced files.
+Pre-write rollback restores exact old sources/Task refs, never bank snapshots.
+After NYSE state exists keep compatible read/recovery/exit code; no old-parser
+rollback or reservation reset.
 
 ## Actual Outcome Reader
 
@@ -106,6 +128,17 @@ If a technical fault appears, retain first cause and make a bounded scoped fix.
 
 ## Closed Research / Do Not Duplicate
 
+- HGB23fc6c94: three CPU fits20/20/31trees, selected0/0/11 (two constants,
+  not learned skill). RawMSE.001651825759 losesRidge.001636696105;
+  growth1.28218909%/DD1.04131163%, required growth/DD also fail =>REJECT.
+  305.629owned inclSource56.272once/11Jobsclosed/0GPU/retry/failures.
+  Future completion-envelope7d2f1c2d worked in this new campaign; original
+  Ranker host failure remains unchanged. No repeated old computation.
+- Rankerb16d33fe: three CUDA28/32/26epochs/7074updates, retained
+  growth4.25790885%/DD1.27038321%; ordering/DD fail. Outer post-readout envelope
+  failed, so technically incomplete/retained numerical REJECT, never regraded.
+- Parent fresh four-document metadata check:101hostrefs/0mismatch for HGB,
+  newUS reader, future envelope and migration map. No new market/label replay.
 - Long17 Dataf496b3b3 and currentpoint335fb02f are qualified/closed/zero HTTP.
   Exact old600 overlap is proven; historical gaps/nonPIT/CA/finality limits kept.
 - Long17 Ridge9266325e: three prefix fits, development growth4.06711336%/

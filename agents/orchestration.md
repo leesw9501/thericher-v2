@@ -1,21 +1,21 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, Throughput Review11:52UTC.
+2026-10-27 KST, Throughput Review13:14UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/activation; AGENTS owns authority.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-History: Gita6d68358/57392429 and immutable Consumers, not a current diary.
+History: Git94c16934 and immutable Consumers, not a current diary.
 
 ## Ready / Owned / Due
 
 | Owner | Actual result / next concrete consumer |
 | --- | --- |
 | Parent / 총괄 | Applied13source+3test NAS/NYS patch; current full1f0f PASS19514/26/418.91s/eight actualworkerpairs/owncleanup. Serial384/focused30/Ruff/3Compose PASS. Newd892 image built/notdeployed; originalhost150refs unchanged. Integrating/Git owned locally. |
-| Schrodinger / 엔진·GPU 자원 | Rankingb16d CLOSED/retainedREJECT/host-envelope technicalincomplete, no activefit/lease. New future-envelope source-only repair60active600elapsed; no old result/clock rewriting. |
-| Socrates / 실행 입력 | Native bindinge734 CLOSED/full17/allfiveNYS/input4ba1/policyf59f/allowFALSE/.025Bunallocated/oneconversion/0modelcalls/oneCIDeightJobsclosed. |
-| Faraday / 전략 탐색 | Source-only HGB API/chronological stopping/safe export readiness90active1200elapsed/11:47:35..12:07:35. No Data rebuild/fitting/GPU authority; gateData remains closed. |
-| Sagan / 실행 호환구현 | CLOSED3f2ce1f7/1535legacy+29new tests/621owned. Exactpatch applied by Parent; LLM released, no actual bank/Tasks changed. |
+| Schrodinger / 엔진·GPU 조정 | Dated TimesFM OPEN512 development adopted12:56:41/hard14:26:41UTC, Engine900+Data240 once. Zero fits/updates/downloads/retries, native/cold before47market pipelines; no running GPU inferred from dispatch. |
+| Socrates / 데이터 | New exact47OOF OPEN512 contexts/full-OHLC availability/SPY+17 axis/retained beta60; direct qualified producer-file callback to Engine. Data240 in SAME family. Reader8727 is closed, not re-executed. |
+| Faraday / 데이터 | Quote probeb38 finite actual worker37948/40612/hard13:33UTC. First12:59:58 success, only Asia/Seoul fresh; no parser hotfix needed. Planned RTH13:31/13:32; no account/order calls. |
+| Sagan / 실행 | Retained-RW diagnostic CLOSED: fake broker-ID collision, no demonstrated third-module fault/RW completion. Now source-only separate MSFT/LOWVOL future callers180active/hard13:35, no actual private reads before due/admission. |
 | Leibniz / 실행 시각대기 | Workerclock owns originalMSFT13:52UTC readinesscallback; oneTaskmetadataquery thenstop, no newTask/process/private/API/financialclaim. |
 | Halley / 실행 시각대기 | Workerclock owns originalLOWVOL15:42UTC readinesscallback; same finite scope, no recurringchain or extraorders. |
 
@@ -79,26 +79,36 @@ ONE original B/10/F9 UNKNOWN-HELD remains. Installation/time/taskexit notfills.
 
 ## Throughput / Reversible Improvement
 
-Review11:52: company runtime still needs original owned market opportunities.
-All current CUDA fits are COMPLETE, not an environment/permission hold.
-Ready work is the successfulcandidate's native NAS/NYS path, ranking-loss
-Source proposal and integration. Completed OOF gate is not a reason to rerun
-experts or change a frozen threshold. Reused outcomes remain development
-evidence, not independent alpha. Waiting belongs to named finite clock
-workers; Parent does not sleep while another package is ready.
+Review13:14: company runtime still needs original owned market opportunities.
+All prior CUDA fits are COMPLETE, not an environment/permission hold.
+Ready work is quote-clock measurement, new dated TimesFM GPU inference with
+independent Data preparation, and actual post-opportunity reader binding. Closed
+models are not rerun or a reason to revise frozen thresholds. Reused outcomes
+remain development evidence. Waiting belongs to named workers, not Parent.
+Reversible improvement: the complete bounded private quote probe is delegated
+inside explicit caps, eliminating an unnecessary Source->Parent approval relay
+for already-authorized ordinary capability work. No human approval is missing.
+Group common old ABI modules where proven instead of14full route rewrites;
+unknown source/image edges stay scoped, not a company-wide hold.
 
 Reversible improvement: use one version-neutral AST encoding for the ten old
 ABI/source oracles. Actual Python3.12 Docker and Python3.14 host now agree;
 semantic-mutation oracle still rejects real changes. This fixed a test-only
 portability fault, not the trading code, and required one fresh full run.
-Current full is closed and clean. GPU research/input binding used disjoint D
-paths and are closed; Source HGB/envelope repair can continue independently.
-No private actor or new market wait added.
+Current full is closed and clean. HGB/envelope repair are also CLOSED. New
+TimesFM/Data and quote workers use disjoint paths; no private actor or Parent
+market wait added. Source-attested market/model actors do not automatically
+deny a separate custody reader. Fresh actual private-writer admission remains.
 
-New implementation stays in a source-only overlay until source-attested old
-actors/deployment are understood. Current all-NAS slots remain usable. Whole-
+New native code is committed94c16934 and image d892 is built, NOT deployed.
+Current all-NAS slots remain usable on original frozen e414. Whole-
 bank NASD-only validation is a concrete futureNYSE compatibility fault, not an
 operatorapproval. No newbank/schemaV5/unknown-reserve release to work around it.
+
+The two-module legacy cold-RO proof passed; RW remains unqualified. One later
+retained diagnostic identified duplicated invented account/day broker IDs,
+not a demonstrated third native module fault. Preserve both closed results;
+do not edit retained IDs, production risk or repeat the broken fixture.
 
 Keep actual named API/file/import/bootstrap native smoke ahead of its market
 consumer, retain caller+predicate at failures, reuse completed upstream effects,

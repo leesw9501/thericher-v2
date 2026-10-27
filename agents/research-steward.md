@@ -1,19 +1,29 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-27 KST,11:52UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,13:14UTC. A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is ONE GPU/registry coordinator.
 Parent owns MD/Git. Model choice belongs Engine, not a resource approval board.
 
 ## Current Ready / Owned
 
-ONE GPU/registry coordinator remains Schrodinger. No active GPU fit claimed.
+ONE GPU/registry coordinator remains Schrodinger. Current adopted useful GPU
+question is TimesFM OPEN512 zero-shot development, NOT another training run:
+A/research/current-liquid17-timesfm-open512-development-20261027-v1.
+Global12:56:41..14:26:41UTC/1140combinedowned(Data240+Engine900), zero fits/
+updates/retries/downloads, <=2local checkpoint loads/1native+47market pipelines.
+Sourcef2cfb68c/contract78fa21d5, local dated trusted safetensors/d6 runtime.
+Actual named native/cold handoff precedes market; direct Data readiness avoids
+Parent relay. Execution13:40 preempts at safe boundary; remeasure capacity,
+desktop4096MiB reserve/native peak<=8GiB, no appkill/driver change. Do not infer
+current GPU use from adoption; retained native/cold receipts precede final result.
 Latest rankingb16d33fe actualCUDA3fits28/32/26epochs/best8/12/6 and7074market
 updates are CLOSED, all8CIDs40Jobs/43observedPIDsabsent/leaseabsent.
 86MiBpeakeach/33.100+37.564+25.900leafseconds with co-tenancy, not isolated
 benchmarks.324.720inclusiveowned/2400 inclSource90once; no oldcostrefund.
 Scientific ordering/DD fails, retainedREJECT; post-readout host missingfield
-keeps overalltechnicalincomplete. Future-envelope repair is source-only,
-not a replay/regrade. Next HGB readiness is CPU Source-only, not activeGPU.
+keeps overalltechnicalincomplete. Future-envelope7d2f CLOSED and new HGB23fc
+used it successfully, not a replay/regrade. HGB3CPUfits are CLOSED/REJECT/
+305.629inclusiveupper/11Jobsclosed/0GPU; registrye2915887 recorded once.
 Latest complete fits:
 - LSTM82b2b1d1:36epochs5112updates/best21/patience15/137.183s/756MiB,
   350.946inclusiveowned/3CIDs15Jobsclosed/leaseabsent.5743calls4,293,956rows.

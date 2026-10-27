@@ -84,9 +84,23 @@ Audit e4ad confirms current20 F9 schedule also supports eventual owned exits;
 not an exhausted diagnostic. Do not disable from a name or pending label.
 
 Quote85c consumed1POST2GET: offsession validlast/tick but BBO/stamp stale,
-orderability unobserved. REST dymd/dhms timezone remains unverified:
+orderability unobserved. New finite sourceb38 probe at
+A/data/current-paper-quote-clock-capability-probe-20261027-v1 owns <=4GET/
+2POST/240active/hard13:33UTC, RAM client/token/default300guard/1.25pace.
+First12:59:58UTC observation supports Asia/Seoul/<=120s; NY/UTC future>5s.
+RTH13:31/13:32 observations remain pending. No parser/freshness edit or order
+inference. Never rerun this consumed stage, read raw responses or secret state.
+Official REST source:
 https://raw.githubusercontent.com/koreainvestment/open-trading-api/main/examples_llm/overseas_stock/inquire_asking_price/chk_inquire_asking_price.py
 Do not borrow WebSocket semantics or weaken freshness.
+
+New post-opportunity source-only caller preparation:
+A/execution/current-msft-lowvol-post-opportunity-reader-preparation-20261027-v1.
+Separate MSFT13:52..14:07UTC and LOWVOL15:42..15:57 scopes use reader8727/
+SDK a6568f12/image d892 with original NAS profile/point/policy/anchor binding.
+PREP does not admit actual private reads. Parent uses a new exact source-pin
+command only after original owner closure and fresh three-phase relevant-writer
+census; no old consumed caller, no inference from Task exit, no recovery observe.
 
 ## Ready Inputs / No Repeat Work
 
