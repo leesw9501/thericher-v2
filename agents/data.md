@@ -1,10 +1,25 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,11:14UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own data/calendars/availability; Parent owns MD/Git. AGENTS owns authority.
 History/debits remain Git57074588 and original immutable consumers.
 
 ## Current Work
+
+Physical trueOOF gate packets CLOSED_READY7861d8f7 at
+A/data/current-liquid17-ridge-mlp-gate-packets-20261027-v1 and
+M/us_equities/research_inputs/current-liquid17-ridge-mlp-gate-packets-20261027-v1.
+Sourcea5904bb2/requirements221f7cb1; global11:07:07..12:07:07UTC,
+Data180once inside combined900, not another family or source download.
+Separate TRAIN_FEATURES/TRAIN_LABELS/F3_FEATURES/F3_LABELS/F3_MARKS roles;
+new LIQUID17_TRUE_OOF_GATE typed producer-file-consumer native before build.
+Only Data ingests old full47labels/marks once. Last TRAIN label date is purged
+at exact UTC targetexit==firstF3entry; features/17axis/masks remain. Fitter
+gets only TRAIN and F3features, never F3labels/marks. No base-model refit or
+HTTP/private access. Direct qualified schema/output callback to Engine.
+Actual111.689owned/fiveJobsclosed/onebuild/oneverify/zero retry. Engine consumed
+the physical roles and closed gatec8423162. Parent40combinedhostrefs verified,
+0mismatch; not independent numerical re-evaluation. Do not rebuild these roles.
 
 Long17 historical feature/target packets VERIFIED_READY_CLOSEDf496b3b3:
 A/data/current-liquid17-long-history-open5-packets-20261027-v1/HANDOFF.json.

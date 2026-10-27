@@ -53,6 +53,12 @@ appear in an offline invented financial SYN, even network-disabled.
 
 ## Result Reading / Custody
 
+Completed gatec8423162/Data7861d8f7 are evidence only, never rerun commands:
+A/research/current-liquid17-ridge-mlp-regime-fusion-development-20261027-v1,
+A/data/current-liquid17-ridge-mlp-gate-packets-20261027-v1.
+Old loader failure and separately pinned unused-caller correction are closed;
+no base-model repeat, current GPU fit or automatic deployment is authorized.
+
 Task exit/latest scan/preview/install is not submit/fill/owned-flat/PnL.
 Public host-results/<uuid>/result-001 is diagnostic-only, no causal current
 pointer. New exact admitted scope must join native account/basis/input/policy/

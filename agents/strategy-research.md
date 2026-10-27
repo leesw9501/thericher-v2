@@ -1,74 +1,60 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,11:14UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
 
-## Current Consumer / Closed Research
+## Current Consumer / Ready Proposal
 
-Fourfit information round and sixpolicy comparison COMPLETE. No new model
-download/architecture/seed/rho search for GPUload.
-Attentione3d1fit17epochs/best1 andTCNca1001fit16epochs/best0 both failcached
-LinearBCE; source/currentdata/science limitations retained, no universal
-rejection of temporal/crossasset information. Actual GPUwork closed.
-TCNprecisionfixture failure remains diagnostic, not model evidence; corrected
-sparse-target native did not erase/regrade original.
+Socrates owns Source-only pairwise-ranking readiness:
+A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1.
+Actual freeze owns <=90 active seconds/1200 elapsed. One cross-sectional
+date-balanced loss hypothesis using existing18features/17stocks, not a new
+width/seed/window grid or globally novel RankNet claim. Check official primary
+paper/docs and a bounded named-campaign metadata duplicate set. No numerical
+payload/label/model/solver access or GPU authority in this package.
 
-Cost d4e477a6: sixfinite whole-share local_paper ledgers/20bpeachleg/49origins,
-2025Jan2..Dec24. Lowvol growth2.097%/DD1.902%, Linear.984%/2.227%,
-MLP.673%/2.919%,fixedblend.140%/2.340%,MOM21-3.551%/4.694%,
-uniform1.275%/3.212%. Fixedblendincrement REJECT despite somepositivegrowth.
-Lowvol descriptively strongest here, not independentalpha or Paper gate.
-Sharedrisky exposure/rounding/cost/turnover all reported; notcashzeroDDtarget.
-No target/futureknownness selection, weight/price fallback or ratiorescue.
+The concrete next consumer is Engine's later finite campaign decision. Proposal
+must name exact masks/ties/pair counts, chronological inner stopping and trueOOF
+outputs, native optimizer/checkpoint/file ABI, matched growth/drawdown/cost
+comparators and a stop rule. Source research is not an active model or success.
+Claude unavailable is not agreement or a company hold.
 
-Current executableconsumer: feature-onlyasofOct26/currentcaptured100point for
-LOWVOL21 andsavedLinear33/affine4c08, top10fairties/all100mask/allowFALSE.
-Data32007 repaired originalSPY/AMS, point28e89 actual oneCPUforward complete;
-nativeinert75a7 input58f preserves all100/81known/10targets, allowFALSE.
-One-cohort account-owned Paperconsumer Source is releasepriority; fullmultiple
-modelarchitecture not automatically prerequisite. Policy/profitability/source
-labels cannot mintcapital/brokerpermissions or roll an expiredidentity.
+Current CPU two-parameter OOF gate is separately adopted at
+A/research/current-liquid17-ridge-mlp-regime-fusion-development-20261027-v1,
+11:07:07..12:07:07UTC/900combinedowned(Data180once+Engine720).
+F1+F2 trueOOF TRAIN features32dates, strict exit<F3entry leaves31mature labels;
+F3 later15dates. Physical roles prevent fitter access to F3 labels/marks.
+Completed experts are not refitted. Reused outcomes remain development evidence.
+Actual gatec8423162 is now CLOSED/REJECT: identical Ridge actions on later15
+cohorts, no proper-score/growth increment. No mechanism rescue or ratio grid.
 
-NEW forward-risk Source03c76/contract357697bd adopted conditionally; c39d/q10
-and primary references were checked, not a first-vol-model claim. Data02eb
-READY/native/file/cold/oneprojection, separate EVAL labels held. CPU Ridge and
-oneGPU20-MSE MLP may advance after their actual native optimizer/checkpoint
-and measured resources; origin06:44/hard08:14/1800combinedowned. Strongestkill
-is no forecast increment over aligned naive/constant/Ridge/INITIAL references;
-Old five-bundle family TECHNICAL_INCOMPLETE after actual GPU counter I/O error,
-no retry/regrade. Separate Ridge3 readout13badf passed both fixed proper-score
-references: MSE1.258145 vsnaive1.587838/constant2.042956, one feature/target
-intake with three seals beforetarget/0fit. This is log-proxy information on
-reused2025, not alpha/latent variance/broker risk or a Paper gate.
-Faraday's old FIVE pure kernel/native is closed; NEW three-method-r1 ABI proof
-must bind actual ROLEa5b11502/payloadc2a27646 before one fixed return/risk cost
-study. Coefficient.5/RIDGE chosen before readout; no head/ratio search. Cost
-contract matches cachedLinear/20bp EACHleg/whole shares, no baseline replay.
-Fixed composition cost906576ea narrowly PASS vsLinear, growth.99852744%/
-peakDD2.17489873% vs.9838582%/2.22661241%, after20bpEACHleg. New relative-DD
-contract adopted BEFORE Source/effects; old absolute comparison UNAVAILABLE.
-Cached LOWVOL2.097%/1.902% still dominates. Small net gain/less fees is not
-causal forecast-alpha, overall winner or reason to switch current Paper.
-Joint Source63879/contract8549 adopted as distinct new2head practical recipe,
-not generic MTL novelty/causal benefit. Newfamily7:54:34..9:24:34 UTC/1800owned,
-dualData/native/model-I/O proof before onefit; cachedLinear+Ridge references.
-Correlationa1b19248 closed numerical certification incomplete, no costpath;
-Data2a4f qualified, not a Data failure. Separate Linear/JointRisk7ec7e40d
-policy REJECT/growth.97039286%/peakDD2.16995268%, no old model regrade.
+## Closed Evidence / Paper Consumer
 
-Recurrent Source8a066987 CLOSED85owned, comparison9d96ecf3 CLOSED15owned:
-A/research/current-raw63-recurrent-expert-hypothesis-readiness-20261027-v1
-and current-raw63-feature-versus-recurrent-readiness-comparison-20261027-v1.
-Old GRU/LSTM and RAW63 inputs already exist; TCN changes both information
-representation and learner, not pure history attribution. One task-specific
-LSTM16/RAW63+context9/OPEN5pairBCE has no exact completed match in named audit.
-Parent adopted that ONE recipe, not newraw/firstRNN/architecture grid. Existing
-PyTorch2.7 LSTM/BSD3 official docs checked; no public weights/new dependency.
-Source Claude unavailable, not agreement. Schrodinger owns actual native/fit.
-Socrates separately prepares one fixed Linear/LSTM policy BEFORE new outputs;
-proposal does not modify primary, broker risk or grant numerical authority.
+Long17 Ridge9266325e: same18features/three chronological prefixes extended to2015,
+growth4.06711336%/peakDD.76057783% versus matched uniform1.85962518%/1.04131163%.
+Frozen screen passes, not independent alpha or actual broker PnL. Long17MLP43c6
+threeCUDAfits20/32/30epochs loses Ridge proper MSE/growth/DD; no outcome-driven
+width/seed rescue. Both are closed, as are standaloneLSTM82b2/hybrid4fe2 and
+fixed Linear/LSTM blend7246. Completion evidence lives in Engine and Consumers.
+
+Dataf496b3b3 retained existing mixed NAS/NYS history and proved exact old600
+overlap. Point335fb02f reuses20existing contexts throughOct26/zeroHTTP.
+SavedF3proposal6329b00b/a9fd5d1a is inactive, full17/5positive/top5fairties,
+requested.025originalB unallocated/allowFALSE. Its mixed-venue native consumer
+is under source-only compatibility implementation, not a profitability gate.
+Installed original MSFT/LOWVOL opportunities remain independently owned.
+
+Old forward-risk five-bundle family is technically incomplete with failures
+retained. Ridge3 proper-score13badf passed; fixed Linear/Ridge cost906576ea
+narrowly improved Linear but cachedLOWVOL still dominates. Jointab98473e and
+Linear/JointRisk7ec7e40d fail their frozen claims. Correlationa1b19248 failed
+independent numerical certification before a cost path. None is reopened.
+
+No model download, dummy GPU load, changed broker risk or extra allocation is
+authorized by a research result. Source/model/license/availability limits follow
+the concrete consumer; they do not block independent operational Paper.
 
 ## Checked Project Evidence / Limits
 

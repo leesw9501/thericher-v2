@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, through10:56UTC.
+2026-10-27 KST, through11:24UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
@@ -10,7 +10,7 @@ Parent owns shared MD/Git/activation; AGENTS.md owns authority.
 Private no-cost Paper is delegated. Never KIS_LIVE_*/live/real money.
 Preserve ONE original B/10, costs/losses/pending/F9; no foreign adoption.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-Pushed checkpoint57392429; current integration is GitHEAD.
+Pushed checkpointa6d68358; current integration is GitHEAD.
 Current actual LOWVOL metadata is separately
 evidenced below; documentation alone is not deployment.
 
@@ -55,16 +55,25 @@ This is installation/readback, NOT submit/fill/runtime closure. R3 is consumed.
   CLOSED3b2ba869; disabled exactly1, other87definitions/ACL/enabled unchanged.
   Parent independently confirmed XML/ACL/disabled/instances0 at09:18:46UTC.
   Rollback/failures retained; no Task.Run/KIS/private or trading-owner changes.
-  Execution LLM released to standby, not a permanent daemon.
+  Now owns finite MSFT13:52UTC metadata callback/deadline14:00, not a daemon.
 - Schrodinger / Engine and sole GPU coordinator: LSTM82b2/hybrid4fe2 and
   long17MLP43c647cc all CLOSED, no active GPUfit. MLP3prefixes20/32/30epochs/
   6774updates/223.980sumleafwalls failedRidgeMSE/growth/DD; 7CIDs37Jobsclosed.
-  NextSource-only trueOOF regimefusion60owned900elapsed, no basefit/grid.
+  CPU gatec8423162 is also CLOSED/REJECT:15iterations/16FG/527maturelabels,
+  three fresh15cohort ledgers after exact Gate-Ridge actionalias deduplication.
+  Growth1.35963162%/DD.27041287%, no proper-score/growth increment.
+  221.895inclusiveupper inclData111.689once/allJobsclosed/noGPU/basecalls/retry.
+  Original preoptimizer loader failure preserved; unused-caller correction
+  repeated no completed solver. Coordinator LLM released until a ready intake.
 - Socrates / Engine CPU: long17Ridge9266325e CLOSED SCREEN_PASS_NOT_ALPHA,
   growth4.06711336%/DD.76057783% versusuniform1.85962518%/1.04131163%,
   combined503.176owned/3fits/6Jobsclosed. LatestF3currentpoint6329b00b CLOSED:
   one17rowCPUforward/top5fairties/5positive/full17/exactmass1/allowFALSE/
-  requested.025B UNALLOCATED/no orders. No EVALwinner/refit/extraallocation.
+  requested.025B UNALLOCATED/no orders. All five positive targets are NYS;
+  old NAS-only profile would skip all five, not equivalent operational binding.
+  No EVALwinner/refit/extraallocation. Now owns Source-only pairwise ranking
+  readiness under A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1,
+  <=90active1200elapsed from actualfreeze, no numerical/GPU authority.
 - Faraday / Data: long17Dataf496b3b3 VERIFIED_READY_CLOSED:2954origins/
   46070featureknown/46050labelknown, OOF47x17 required known. Existing20CSV/
   availability intakes/oneprojection/0HTTP/fiveJobsclosed, exact old600parity.
@@ -73,12 +82,16 @@ This is installation/readback, NOT submit/fill/runtime closure. R3 is consumed.
   Current17point335fb02f also READY/CLOSED,20retained61-sessioncontexts/
   all17known/oneprojection/GET0POST0/fiveJobsclosed/141.758owned. Actual old
   capture05:49KST versus newdelivery19:30KST/inference are distinguished.
+  GateData7861d8f7 physical five-role packets CLOSED/111.689owned/fiveJobsclosed;
+  TRAIN32featuredates/31maturelabeldates/F3later15, exact purged boundary.
+  Parent40combinedData+gatehostrefs/0mismatch, not numerical replay.
 - Halley / invoked Infra: bank-FS12164f48 PASS4coldcalls/4CIDs28Jobsclosed.
   Source-only bundle417ac66e then fixed mutable legacy mount: exactly access.py
   and read.py, full stability/one new SYNcold/1CID6Jobsclosed/120debit. Ready
   for NEW actual caller, with normal fresh three-phase real-writer admission
   still required, not another permission/qualification wait. No actual read;
-  invoked Infra LLM released after quiescent handoff.
+  Now owns finite LOWVOL15:42UTC metadata callback/deadline15:50. No new OS
+  process, schedule, recurrence, private read or financial inference.
 
 Sagan now implements a narrow NAS/NYS compatibility overlay at
 A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1,

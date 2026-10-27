@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,11:14UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
@@ -71,13 +71,42 @@ losesmatchedRidge =>REJECT_NONLINEAR_INCREMENT.0marketretry/baselineReplay,
 Output-reader pure-import correction aftermodelcompletion/beforefirstOOFreadout
 preserved oldfailure and completed models; no inference/producer repetition.
 
-NEW Source-only regimefusion readiness60owned900elapsed at
-A/research/current-liquid17-ridge-mlp-regime-fusion-readiness-20261027-v1.
-One2parameter softgate ontrueOOF F1+F2, targetexit<F3entry purge/laterF3eval,
-commonbreadth60 featurebeforeentry. No array/label/solver/GPU/fit authority;
-separatephysicaltrain/eval custody and finite matched15cohort comparators if
-lateradopted. No in-sampleexpertstack, no more standalone width/seed search.
+Regimefusion Sourcea5904bb2/DATA-REQUIREMENTS221f7cb1 adopted11:07:07UTC:
+A/research/current-liquid17-ridge-mlp-regime-fusion-development-20261027-v1.
+Global hard12:07:07UTC/3600elapsed/900combinedowned=Data180once+Engine720.
+One CPU two-parameter expit(a+b*z) gate on common prior breadth60; raw Ridge
+and MLP scores already share target units, no second target inversion. Actual
+native optimizer/analytic-gradient oracle/named physical Data ABI before market.
+TrueOOF F1+F2 TRAIN32feature dates/544keys; strict targetexit<F3entry purges
+last label date, leaving31maturedates/527labels without removing features.
+F3 evaluates15laterdates/255keys. Fitter cannot mount F3labels/marks/full47.
+One L-BFGS-B fit/max100iterations300FG/0retry/base-model restore-fit-forward/GPU.
+Seal gate/baseline actions before one F3label+MARKS intake. Up to four unique
+fresh matched15cohort NAV1/.1original-target/20bpEACHleg ledgers, not sliced
+47cohort cash/positions. Gate must beat Ridge/MLP/fixedhalf rawMSE and exceed
+all Ridge/MLP/uniform growth while not exceeding any comparator peakDD.
+All47outcomes already seen globally: adaptive development only, no alpha or
+automatic Paper promotion. Source25cost charged once insideEngine720; old
+Data/MLP/Ridge costs never recharged. No in-sample stack/width/seed rescue.
+Actual consumer c8423162 CLOSED_VERIFIED_REJECT_OOF_GATE_INCREMENT.
+One15iteration/16FGfit,527maturelabels,oneF3projection/label/marks,
+three unique fresh15cohort ledgers: Gate/Ridge exact whole-action alias,
+growth1.35963162%/peakDD.27041287%. GateMSE.001837390568 versus
+Ridge.001837390593/MLP.001836428216/fixedhalf.001836116384; required increment
+fails.221.895inclusiveupper inclData111.689once/allJobsclosed/noGPUlease,
+base calls/retry. Original loader failure occurred before solver/arrays;
+source-loader-r1 completed unused stages within unchanged caps, not a refit.
+Data7861d8f7 physical roles closed; Parent40hostrefs/0mismatch, no numerical
+replay. Preserve rejection, not a new Ridge promotion or independent alpha.
 CurrentNAS100 recurrent recipe intake is CLOSED, no more variants for load.
+
+Parallel Source-only Strategy proposal:
+A/research/current-liquid17-pairwise-ranking-readiness-20261027-v1,
+Socrates90owned1200elapsed from actual freeze. Compare one cross-sectional
+ranking loss mechanism against closed same-feature residual-MSE recipes; no
+architecture/seed/window grid or numerical authority. Exact masks/ties/pair
+counts/chronological inner stopping/OOF/cost comparison required in proposal.
+Public primary-source review, not another training success or activeGPU claim.
 
 Recent closed consumers (under A/research):
 - current-nas100-open5-raw63-lstm-learning-development-20261027-v1,82b2b1d1:

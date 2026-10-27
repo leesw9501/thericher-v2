@@ -1,20 +1,20 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-27 KST, Throughput Review10:56UTC.
+2026-10-27 KST, Throughput Review11:14UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/activation; AGENTS owns authority.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-History: Git57392429/9b881a81 and immutable Consumers, not a current diary.
+History: Gita6d68358/57392429 and immutable Consumers, not a current diary.
 
 ## Ready / Owned / Due
 
 | Owner | Actual result / next concrete consumer |
 | --- | --- |
-| Parent / 총괄 | Pushed57392429; integrate verified closed models/data/currentproposal and ongoing compatibility under unchanged606b. No active Parent full-test process or actual private reader. |
-| Schrodinger / 엔진·GPU 자원 | Long17MLP43c6 CUDA3fits20/32/30epochs/6774updates CLOSED/REJECT, no activefit. Source-only trueOOF2parameter regimefusion60owned900elapsed; no recurrent/width/seed retries. |
-| Socrates / 엔진 CPU | Long17Ridge9266 screenPASS4.067%/.761%DD; F3point6329 oneCPUforward/5targets/allowFALSE/unallocated READY. Nativeinput waits concrete NAS/NYS interface, not profitability/permission. |
-| Faraday / 데이터 | LongDataf496 and point335f CLOSED,0HTTP. Exactold600parity/capture anddelivery clocks, no repeated build; newData only for namedconsumer. |
+| Parent / 총괄 | Pusheda6d68358; integrate qualified gate/compatibility outputs. Source inspection distinguishes dormant transport from actual installed driver/image dependencies. No active Parent full-test process or actual private reader. |
+| Schrodinger / 엔진·GPU 자원 | OOF gatec8423162 CLOSED/REJECT, oneCPUfit/no base-model calls or GPU. Next concrete consumer is ranking Source proposal; no dummy training or repeated fits. |
+| Socrates / 전략 연구 | Source-only pairwise-ranking loss hypothesis,90owned1200elapsed; same18features/17stocks, no numerical reads or fitting. Completed Ridge/proposal remain closed; nativeinput follows stable NAS/NYS interface. |
+| Faraday / 데이터 | GateData7861d8f7 CLOSED/111.689owned/fiveJobsclosed/zero HTTP. Physical TRAIN/F3 role handoff consumed once; longDataf496 and point335f remain closed. |
 | Sagan / 실행 호환구현 | Narrow NAS/NYS source-only overlay+focusedtests,1200owned5400elapsed; oldNAS bytes/F9/V1-V4/risk intact, actualCsource/image/Tasks untouched. |
 | Leibniz / 실행 시각대기 | Workerclock owns originalMSFT13:52UTC readinesscallback; oneTaskmetadataquery thenstop, no newTask/process/private/API/financialclaim. |
 | Halley / 실행 시각대기 | Workerclock owns originalLOWVOL15:42UTC readinesscallback; same finite scope, no recurringchain or extraorders. |
@@ -49,6 +49,11 @@ ONE original B/10/F9 UNKNOWN-HELD remains. Installation/time/taskexit notfills.
   newData delivery/capture clocks distinct, noHTTP. F3proposal6329b00b:
   one17rowCPUforward/top5fairties/5positive/mass1/93owned/threeJobsclosed,
   requested.025originalB UNALLOCATED/allowFALSE/no order or riskqualification.
+- Gatec8423162/Data7861d8f7: one15iteration16FGfit/527maturelabels/oneF3pass,
+  three fresh15cohort ledgers after exact Gate-Ridge actionalias deduplication.
+  Growth1.35963162%/DD.27041287%, identical Ridge actions; proper-score/growth
+  increment fails =>CLOSED_REJECT.221.895inclusiveupper inclData111.689once,
+  noGPU/base calls/retry. Parent40hostrefs/0mismatch, not numerical replay.
 - CUDA standaloneLSTM82b2:36epochs/best21/137.183s/756MiB;
   joint-input hybrid4fe2:29epochs/best14/111.020s/766MiB. Both loseLinearBCE,
   bothclosed/no retry. Fixedhalf actionblend7246:1.15486%growth/2.46159%DD,
@@ -74,10 +79,12 @@ ONE original B/10/F9 UNKNOWN-HELD remains. Installation/time/taskexit notfills.
 
 ## Throughput / Reversible Improvement
 
-Review10:56: company runtime still needs original owned market opportunities.
+Review11:14: company runtime still needs original owned market opportunities.
 All current CUDA fits are COMPLETE, not an environment/permission hold.
-Ready work is the successfulcandidate's native NAS/NYS path, chronologicalOOF
-fusion readiness and integration. Waiting belongs to named finite clock
+Ready work is the successfulcandidate's native NAS/NYS path, ranking-loss
+Source proposal and integration. Completed OOF gate is not a reason to rerun
+experts or change a frozen threshold. Reused outcomes remain development
+evidence, not independent alpha. Waiting belongs to named finite clock
 workers; Parent does not sleep while another package is ready.
 
 New implementation stays in a source-only overlay until source-attested old
