@@ -1,10 +1,26 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST; observed Oct27UTC21:20.
+2026-10-28 KST; observed Oct27UTC22:04.
 A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
 Model proposals never alter deterministic broker risk or original shared B/10.
 
 ## Latest Economic Campaign / Closed
+
+Latest new CPU campaign is COMPLETE, not source-only:
+A/research/current-long17-feeprox-ridge-development-20261028-v1/
+FINAL-CONSUMER-R1.json, Source8104544f/contract266e3eda.
+REJECT_FEEPROX_JOINT_RECIPE. One direct ridge fit8483rows/499dates/19coef,
+one255row forecast sealed before one HELD intake,6costcells/0marketretry/GPU0.
+20bp growth/DD/turnover: FeeProx1.235217%/.706998%/.293115;
+same-MU costblind1.554715%/.303168%/.458853; Uniform.996212%/.372144%/.248758.
+Primary growthFALSE/DDfalse/turnoverTRUE: lower turnover alone is not alpha.
+Costblind is retained development evidence, not a qualified winner or reason
+to replace the already frozen first CappedLinear Paper input.
+Precreate failure was before all native/model stages; Parent authorized only
+the unused stages under unchanged360active/1800elapsed/original hard deadline.
+Activeupper128.198376/elapsed1697.549413,5CIDs30CLIJobs closed. Native8Brent,
+INNER11Brent/EVAL30Brent plus45quantity pairs retained; independent saved
+witness verification did not refit/replay. Closed failures/debits stay intact.
 
 A/research/current-long17-vsn-economic-development-20261028-v1.
 Frozen readiness contract4b8f7b78; actual Engine source2446057d.

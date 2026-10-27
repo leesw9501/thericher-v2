@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST; observed Oct27UTC21:20.
+2026-10-28 KST; observed Oct27UTC22:04.
 A=D:/thericher-v2/model-artifacts. Sagan current source-only proposal owner;
 Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
 
@@ -21,10 +21,14 @@ Sourcea12015a4/contract4b4598e READY: oneinventedRidgefit/threeBrent solves+
 coldfile parity. LeakyStateRidge18 plus persistent FeeProx controller, not a
 GPU model. Costs matter forVSN but risk-aware turnover alreadynearUniform,
 so not a claim fees alone explain prior failures. Native optimality not alpha.
-Parent adopted NEW current-long17-feeprox-ridge-development360/1800,
-onefit/oneforecast/oneheld/6cells/0retry/CPU1GPU0. This role implementsdisjoint
-typedworker/causalcurrentOPEN+previousqledger seam, EngineSteward owns final
-contract/registry/numericaldispatch. No market numbers untilthat nativehandoff.
+Parent adopted current-long17-feeprox-ridge-development360/1800 and actual
+native/market work is now COMPLETE. FINAL-CONSUMER-R1.json Source8104544f:
+onefit/oneforecast/oneheld/6cells/0numericalretry/CPU1GPU0, all5CIDs30Jobs closed.
+REJECT_FEEPROX_JOINT_RECIPE: at20bp FeeProx growth1.235217%/DD.706998%/
+turnover.293115 loses same-MU costblind1.554715%/.303168%/.458853 on growth/DD.
+Uniform.996212%/.372144%/.248758. Turnover reduction alone did not improve
+the joint recipe. Keep persistent currentOPEN+previousq causal ledger/source
+as tested code, not a reason for a fee/threshold sweep or independent alpha.
 
 Economic family4b8f7b78 is CLOSED_REJECT, not running. OriginalVSN+LSTM uses
 source inspiration, not copied weights:

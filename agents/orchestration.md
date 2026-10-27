@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-28 KST; Throughput Review Oct27UTC21:32 before runtime assembly.
+2026-10-28 KST; Throughput Review Oct27UTC22:06 after actual installation.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent shared MD/Git/activation. Company coexistent-native-paper-execution-runtime-v1
 UNFINISHED. No operator decision pending. OriginalB/10/F9/%SystemDrive%/ preserved.
@@ -9,13 +9,13 @@ UNFINISHED. No operator decision pending. OriginalB/10/F9/%SystemDrive%/ preserv
 
 | Owner | Evidenced outcome / next concrete consumer |
 | --- | --- |
-| Parent / 총괄 | New finite runtimebuilder/actualpoint adapter6seam+9puretests; oldengineeringadapter hardMSFT/.01/1row found before deployment. Assemble only qualified new pair/point. |
-| Socrates / 실행 | current-linear17-paired-slot-controller-readiness: oneactualscheduledowner for entry/recovery, nativeprefix cap8/firsteffect only, exactfiniteobserveryield/restore; source/SYN underway, not installed. |
-| Schrodinger / 엔진·자원 | Single current17CPUforward COMPLETE. Saved-only SDKpackaging7a94 COMPLETE/2CIDs12Jobsclosed; newRidge/FeeProx finalcontract/registry/numericdispatch when nativeworkerready. No activeGPU fit claimed. |
+| Parent / 총괄 | Actual Linear17 pair installed22:05:25; entryd09b/exit4552/API7 4f54/enabled/unstarted. Default/equal-UTC readback repaired without changing entry or otherTasks. Integrate exact runtime checks/current docs. |
+| Socrates / 실행 | Pairedcontrollerfe350 COMPLETE14entry/7exit/15negative+10PS each; now independent actual two-Task typed runtime definition check, no Task.Run. |
+| Schrodinger / 엔진·자원 | Currentforward/packaging COMPLETE. FeeProx8104 CLOSED_REJECT/1CPUfit/5CIDs30Jobsclosed. Select one next useful underrepresented frozen campaign; no activeGPU fit inferred. |
 | Leibniz / 데이터·임시 인프라 | Data3b47 READY; temporary quietfutureinstaller5984 READY17SYN/47checks/ClaudeGO,0actualTaskcalls. Packageclosed/agentclosed. |
-| Faraday / 입력 연결 | ActualnativeNAS5d408 inputf477/Policy24d3 READY_FALSE full17/8targets;16native+9savedverify+inventedjournal/noresubmit. Packageclosed/agentclosed. |
-| Sagan / 전략 탐색 | a120LeakyRidge/FeeProx Source/SYN READY; NEW360/1800 onefit/oneforecast/oneheld/6cells/CPU1GPU0 worker source in progress, no marketresult yet. |
-| Halley / 결과 검토 | CCNLshapeSourcecfc0 ready; Parentactualaf63 1POST1GET/14rows/nativeparsecomplete, notF9match. Now concise source challenge of newmodelvisit8skip/firsteffect/recoveryforbidden seam. |
+| Faraday / 입력·복구 | Nativeinput package COMPLETE; new current-f9-exact-date-reconciliation source/date/binding plus bounded original-request read-only diagnosis, no release/neworder. |
+| Sagan / 전략 탐색 | FeeProx worker COMPLETE_REJECT. Direct implementation handoff to Steward's next frozen hypothesis, no completed fit rerun. |
+| Halley / 결과 검토 | Modelvisit and exact Task repair ClaudeGO_WITH_LIMITS; advisories source-only, not runtime/financial proof. |
 
 Dispatch and directories are not running-process proof. One owner per mutable
 set; direct exact-contract handoffs allowed. GPU models2446/2602 are closed,
@@ -38,9 +38,11 @@ No new registry/approval platform or more blindpostclose retries.
 Observer restored EXACT19:51:33/obligationfalse. Original future exit duties
 unchanged, no machine-wide research pause or reservation release.
 
-Ready alternatives in parallel: actualcurrentmodel proposals; concrete finite
-native runtime correction/preparation; one underrepresented cost-aware research
-hypothesis. Do not wait in foreground for tomorrow's session.
+Finite correction/input/installation now complete; exact native runtime result
+is due todayKST23:20/23:27, not yet observed. Worker owns due/finite waits;
+do not wait in foreground. Independent alternatives: originalF9 exact-request
+read-only diagnosis and one underrepresented executable research campaign.
+Installation is not company completion or broker acceptance.
 
 ## Reversible Improvement
 
@@ -51,6 +53,10 @@ assignment owned until its concrete consumer exists, not a new tracking system.
 New actualpoint failure also proved that source-checking ordinary role mounts
 but not extra mounts missed a descriptor DIRECTORY. Saved-only completion
 checks ALL source file kinds/hashes before create, never repeats the forward.
+Actual registration exposed another boundary: Windows omits schema defaults
+and rewrites equivalent UTC instants. Compare strict semantic definition plus
+typed runtime contract, not repeated literal XML retries. Preserve acknowledged
+enabled definitions; repair only the exact missing companion after readback.
 
 Use real source owner/producer/consumer/argv/mount/SDK seams before payloads.
 The admission block is self-imposed source configuration, not missing operator

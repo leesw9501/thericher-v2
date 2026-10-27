@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-28 KST; observed Oct27UTC21:20.
+2026-10-28 KST; observed Oct27UTC22:04.
 A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c sole GPU/shared registry owner.
 Parent shared policy/MD/Git/activation; other agents have disjoint outputs.
@@ -24,9 +24,15 @@ mount resolved DIRECTORY. ThreeCIDs18Jobsclosed/upper94.0895/180; no repeat.
 Saved-output-completion-r1 CLOSED_COMPLETE_VERIFIED Source7a94743f,
 SDKpubecbe6e47/independentsavedverify1/twoCIDs12Jobsclosed/upper70.357of120,
 0model/0Data. Source/mountfilekind preflight before children, no repeatedforward.
-NEW360/1800 onefit/oneforecast/oneheld/6cells/CPU1GPU0 LeakyRidge/FeeProx
-campaign source underway bySagan; Steward owns frozenregistry/numericdispatch
-only aftertypednativehandoff/source ready. No GPUtraining currentlyclaimed.
+LeakyRidge/FeeProx Source8104544f/contract266e3eda is CLOSED_REJECT:
+A/research/current-long17-feeprox-ridge-development-20261028-v1/
+FINAL-CONSUMER-R1.json. One native solver smoke,1marketfit/1forecast/1held/
+6cells/0numericalretry/CPU1GPU0,5CIDs30CLIJobs closed. Activeupper128.198376
+of360/elapsed1697.549413of1800. Precreate failure entered no numerical stage;
+Parent explicitly authorized unused stages inside unchanged caps/deadline,
+not a repeated fit or refunded old debit. Final reject, no parameter rescue.
+Steward next selects one useful underrepresented frozen campaign/readiness;
+no currently active GPU fit claimed and no completed training duplicated.
 
 Paper numeric yield18:45..55 consumed. Parent complete public census0actors at
 18:56:35/Docker0containers18:56:36 permits independent workers to resume after

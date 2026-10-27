@@ -13,7 +13,7 @@ paths retain ONE original B/10/cost/loss/pending/F9, no reset/profit expansion.
 
 ## Current Owned Paths
 
-Observed Oct27UTC21:28. Company goal UNFINISHED; old entry/recovery windows
+Observed Oct27UTC22:06. Company goal UNFINISHED; old entry/recovery windows
 consumed. Do not Task.Run, repeat consumed installer, restore private state,
 force new intent or silently roll old opportunity dates.
 
@@ -76,9 +76,21 @@ No renormalization; untrustedC=.1originalB within sharedB/10 not newcapital.
 Parent newsourcebuilder stages SAMEbytes as/point/INPUT.json. Oldengineering
 adapter hardMSFT/.01/1row mustbe replaced by exactnewpointvisit adapter; native
 risk unchanged. Parent6wrapper+9purecases are not fullnewruntimeadmission.
-Source-only paircontroller/quietfuture2Taskinstaller pending; not installed.
-PlanOct28UTC14:15trigger/14:20entry/14:27recovery/observerrestore>=14:33,
-originalfuture duties unchanged, no actualfill/alpha claim.
+New pair ACTUALLY INSTALLED22:05:25UTC, HOSTf545e9b6/TRUE459fa3c4.
+A/execution/current-linear17-default-normalization-repair-20261028-v1/actual/RESULT.json.
+Entry thericher-kis-paper-linear17-finite-entry-pair-20261028-v1 XMLd09b77ed;
+exit thericher-kis-paper-linear17-finite-exit-pair-20261103-v1 XML4552b5d5.
+Both API7ACL4f54/enabled/unstarted/0instances; quiet pythonw, no demand start,
+catchup/restart/repetition. Other project definitions/ACL/enabled unchanged.
+Today Oct28KST23:15trigger/23:20entry/23:27exactrecovery/restore>=23:33;
+Nov4KST05:40trigger/05:45exit/05:52exactrecovery/restore>=05:58.
+Do NOT repeat installer/repair or Task.Run. Initial lexical readback failed
+after entry enable: Windows schema-default omission/equivalent +09:00 UTC
+rendering, not an Action/ACL mismatch. Old failure and exact disabled-exit
+rollback retained; repair created only missing exit and left entry unchanged.
+NativeV4 invented bank proof passes wrapper->realworker/session/unknownfake
+submit/recovery without resubmit; actual custody/admission/financial result
+still requires runtime. Original future duties unchanged, no actualfill claim.
 ResearchOPENH5/native nearCLOSEH5 parity is NOT established.
 
 CurrentPaper config vs ORIGINALimmutableanchor comparison d5e29bea passed
@@ -91,8 +103,13 @@ date is NOT originalF9submissiontime/requestlink, no release/PnL inference.
 Do not rerun identicalshapeprobe or an expired/consumed caller.
 
 Completed CUDA2446VSN/Linear and2602risk plusTCN/HGB/HALF/absorption are
-closed; no repeat fit/native/heldread for utilization. Strategy source/SYN work
-for ONE cost/turnover hypothesis is not currently running GPU training.
+closed; no repeat fit/native/heldread for utilization. FeeProx Source8104544f
+FINAL-CONSUMER-R1 is also CLOSED_REJECT,1CPUmarketfit/1forecast/1held/6cells,
+5CIDs30Jobsclosed/upper128.198376of360. No GPU training claimed from this fit.
+Use finalconsumer, not earlier precreate failure marker, for current status.
+Faraday owns current-f9-exact-date-reconciliation-20261028-v1: exact original
+pending request source/date/binding and bounded read-only diagnosis, not new
+orders or reservation release. Currentshape probe alone is not F9 evidence.
 
 ## Verification
 
@@ -101,6 +118,9 @@ worker-telemetry-r1/CONSUMER.json:19514PASS26knownSKIP398.53s/eightactualpairs/
 owncleanup plusserial370/1. Reuse for MD/external-only ONLY after exact1412
 protected a1500c15 digest/membership check. External D code needs separate
 focused/native/actual proof; repo suite cannot validate it.
+Fresh protected1412/a150 reuse check22:07:38 passed at
+A/verification/current-paper-research-integration-20261028-r5/SOURCE-CHECK.json;
+Ruff/default/research/accounting Compose passed with .env.example.
 
 Fresh checks, no real.env:
 

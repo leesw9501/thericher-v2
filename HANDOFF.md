@@ -2,12 +2,12 @@
 
 ## Current Reality
 
-2026-10-28 KST; observed Oct27UTC21:32.
+2026-10-28 KST; observed Oct27UTC22:06.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Checkpoint4a218f4d integrates freshData/diagnostic; production94c16934/
-1412files/a1500c15 unchanged through fresh protected check20:55.
+Checkpoint74ab5c73 integrates current model input and CCNL capability;
+production94c16934/1412files/a1500c15 unchanged through protected check21:34.
 Parent shared MD/Git/integration. Preserve unrelated %SystemDrive%/.
 No operator decision pending. Never KIS_LIVE_*/live/paid/public without authority.
 ONE original B/10/cost/loss/pending/F9 unchanged; no reset/refund/profit expansion.
@@ -137,28 +137,49 @@ NAS5 derivative from original17 unchangedrows, not retag9rowCASH5 (stockcycle
 rejects CASH5). EightNAS target exposures must equal projectedproposal; nine
 NYS remain unsupported/unspent, no renormalization or runtime profile change.
 
-Parent current-linear17-finite-account-round-preparation has inertbuilder/
-9purecases/Ruff, UNRUN/noADOPTION. Socrates current-linear17-paired-slot-
-controller-readiness implements oneowner entry/recovery pair with exactfinite
-observeryield/restore; Leibniz temporaryInfra owns quietfuture2Taskinstaller.
-Plan Oct28UTC14:15trigger/entry14:20..24/recovery14:27..31/restore>=14:33,
-Nov3exit20:45/recovery20:52. Window21existing13:40 writer mustactuallyclose,
-not inferred fromdue. NOTHING new installed; original duties unchanged.
-Quietfutureinstaller59846a10 is SOURCE_READY17SYN/47checks/Ruff/ClaudeGO,
-0actualCOM/Task/private calls, allownedprocessesclosed. Data/Infra agentclosed.
+Parent current-linear17-finite-account-round-preparation is ASSEMBLED and
+ACTUALLY INSTALLED, not inert/source-only. HOSTf545e9b6/ROUTE235ea94b/
+TASK-PLANcbbedd00/TRUE459fa3c4, same inputf4775c8a/policy24d339fa.
+Socrates paired controllerfe350296 passed14entry/7exit/15negative plus10PS
+cases each. Same actual Task owns entry and exact-pending recovery; observer
+yield retries only proven no-mutation active-owner collisions, then restores
+against exact native closure. Unknown closure retains restore obligation.
+Actual installation22:05:25UTC at
+A/execution/current-linear17-default-normalization-repair-20261028-v1/actual/RESULT.json:
+entry Task thericher-kis-paper-linear17-finite-entry-pair-20261028-v1,
+XMLd09b77ed; exit thericher-kis-paper-linear17-finite-exit-pair-20261103-v1,
+XML4552b5d5. Both API7ACL4f54c787/enabled/unstarted/instances0.
+Quiet pythonw/no demand start/catchup/repetition/restart. First trigger today
+Oct28KST23:15; nativeentry23:20..24, exactrecovery23:27..31, restore>=23:33.
+Exit Nov4KST05:45..49/recovery05:52..56/restore>=05:58.
+Other project definitions/ACL/enabled unchanged; NO Task.Run/KIS/private calls
+in registration, NO observed submit/fill. ExistingWindow21writer must actually
+close before entry, not inferred fromdue. Original MSFT/LOWVOL duties remain.
+Initial installer5984 failed post-enable lexical XML check: Windows omitted
+defaultfalse StartWhenAvailable and rendered same UTC boundaries as +09:00.
+Entry exact semantic/ACL readback passed; exit disabled rollback removed only
+the exact new unstarted object. New repair preserves entry/frozen source and
+normalizes only in-memory schema defaults and proven equal instants;8mock/
+25checks/ClaudeGO. Original failure/debits retained, no blind reinstall.
 Parent also found oldroute engineeringadapter hardMSFT/.01/1row/1traversal;
 NEWmodel_adapter exactf477/24d3/full17/8target/.1 wrapper passes6savedpoint
 seamchecks/0native/private/API. Existingnativeprefix traversal8 stops FIRST
 effectfulleg, no8submitpermission; recovery/exit loader forbidden. Paireddriver
-mustaccept8native traversalcounts butretainonebuy/sellwirecap. Fullnewruntime
-constructor/owner integration stillpending; do not installoldadapter unchanged.
+accepts8native traversalcounts but retainsonebuy/sellwirecap. Composed actual
+FALSE constructors/production10mounts pass. Actual wrapper->real native
+worker/session/cycle on inventedV4 bank passes1unknownfake submit and exact
+recovery/noresubmit, preserving originalB/otherpending. Not real broker/custody
+or current OS writer admission; those remain runtime checks.
 
-Sagan a120/4b4598e oneLeakyStateRidge+FeeProx hypothesis passed tinyactual
-Ridge/Brent/coldSYN, no market. Parent adopted NEW current-long17-feeprox-ridge-
-development360active/1800elapsed/onefit/oneforecast/oneheld/6cells/0retry/CPU1,
-GPU0. Sagan worker source; Steward finalcontract/registry/numericdispatch.
-Stateful actions use currentOPEN/previousq only; forecasts seal beforeheld.
-Old reusedoutcomes remain adaptive development, never independent alpha.
+LeakyStateRidge/FeeProx is now COMPLETE_REJECT, not awaiting dispatch:
+A/research/current-long17-feeprox-ridge-development-20261028-v1/FINAL-CONSUMER-R1.json.
+Source8104544f/contract266e3eda,1marketfit/1forecast/1held/6cells/0retry/GPU0.
+20bp FeeProx growth1.235217%/DD.706998%/turnover.293115 loses same-MU
+costblind1.554715%/.303168%/.458853 on growth/DD. Uniform.996212%/.372144%.
+Lower turnover alone is not alpha. FiveCIDs30Jobs closed, activeupper128.198376
+of360/elapsed1697.549413of1800. Precreate failure entered no numerical stage;
+explicit unused-stage continuation stayed inside unchanged caps/deadline.
+No rescue or replacement of first frozen Paper input from reused outcomes.
 
 ## Current Account / CCNL Probe
 
@@ -195,8 +216,8 @@ Point muststagebyte-identical as /point/INPUT.json, not changeguestprofile.
 Full worker-telemetry-r1 authority19514PASS26knownSKIP398.53s/eightactualpairs/
 owncleanup plusserial370/1 reusable for MD/external-only only when exact1412/
 a150 match. Changed D code gets its own focused/native/actual evidence, not
-validated by repo suite. Fresh Ruff/threeCompose .env.example and protected
-check19:15 at current-paper-research-integration-20261028-r2 passed.
+validated by repo suite. Fresh Ruff/threeCompose .env.example and exact1412
+protected check22:07:38 at current-paper-research-integration-20261028-r5 pass.
 Parent refreshes exact digest/checkpoint before next commit. No new operator
 approval, foreground market/quota sleep, per-agent goals or report platform.
 Company goal remains UNFINISHED until an actual interpretable native Paper

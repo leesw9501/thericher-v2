@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-28 KST; observed Oct27UTC21:24.
+2026-10-28 KST; observed Oct27UTC22:06.
 A=D:/thericher-v2/model-artifacts. Parent TRUE/activation/shared MD/Git.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Never live/KIS_LIVE_*. ONE originalB/10/cost/loss/pending/F9/identities retained.
@@ -101,11 +101,26 @@ targets/9NYSunsupportedcash. ExistingNAS5 fullaxis, NOT CASH5retag/newprofile.
 Native16checks+savedverify9+inventedV3journal/restart identity/noresubmit pass,
 not actualV4/admission. Parent stagedcopy /point/INPUT.json samebytes planned.
 ONE untrustedC=.1fulloriginalB ceiling insideexistingB/10/F9/currentrisk,
-not permodelcapital. No actualallocation/newTask/submit yet.
-Socrates pairedcontroller source/SYN and Leibniz quietfutureinstaller in
-disjointscopes; Parentbuilder9pure/Ruff only. PlannedentryOct28UTC14:20,
-recovery14:27 underone14:15Task/observerfiniteyieldrestore>=14:33.
+not permodelcapital. No actual allocation/submit claimed.
+New native modeladapter37ffdd75 and HOSTf545e9b6/ROUTE235ea94b/TRUE459fa3c4
+are assembled/ACTUALLY INSTALLED22:05:25UTC. Constructor10mounts/guard and
+wrapper->realworker/session/cycle inventedV4 proof pass; recovery noresubmit,
+originalB/otherpending preserved. Not actual broker/writer admission.
+Exact pair at A/execution/current-linear17-default-normalization-repair-
+20261028-v1/actual/RESULT.json: entryXMLd09b77ed/exitXML4552b5d5/API7ACL4f54,
+enabled/unstarted/instances0. Originalentry unchanged, missing exit alone
+created after bounded default/equal-UTC normalization fix8mock/25checks.
+Initial partialinstall/disabledexit rollback retained, otherTasks unchanged.
+Entry Oct28UTC14:20/recovery14:27 underone14:15Task; observerrestore>=14:33.
+Exit Nov3UTC20:45/recovery20:52 underone20:40Task; restore>=20:58.
 ExistingWindow21actualclosure stillrequired, no due=>closure inference.
+
+Faraday owns current-f9-exact-date-reconciliation-20261028-v1. Reuse strict
+source/native parsers, tiny invented matching proof and actual custody-writer
+exclusion before network-disabled RO private projection. Original persisted
+date/identity stays in-process; bounded separately read-only CCNL diagnosis
+<=1POST/4GET/180active/900elapsed. No submit/privatebankwrites/substitute or
+release; absent match/holdings cannot establish original unknown outcome.
 
 ## Existing Duties / Limited Capability
 

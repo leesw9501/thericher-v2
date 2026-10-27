@@ -78,9 +78,17 @@ Parent current-linear17-finite-account-round-preparation builder/modelvisit
 seam is source-only; oldbaseadapter is fixedMSFT/.01/1row and MUSTNOT be
 reused for newmodel. Newexact17/8adapter uses existing session's8 provenprefix
 traversals, stops firsteffectfulleg; recovery/exit proposal loader forbidden.
-Socrates pairedcontroller and Leibniz quietfutureinstaller remain source/SYN;
-NOTHING new installed. PlanOct28UTC14:15Task/14:20entry/14:27recovery,
-observerexactfiniteyield/restore>=14:33; originaldue duties unchanged.
+Paired runtime is ACTUALLY INSTALLED22:05:25UTC, HOSTf545e9b6/TRUE459fa3c4.
+Exact two new Tasks enabled/unstarted: entryXMLd09b77ed/exitXML4552b5d5,
+API7ACL4f54c787. Evidence current-linear17-default-normalization-repair-
+20261028-v1/actual/RESULT.json under A/execution. Originalentry preserved;
+Windows default/UTC lexical readback issue repaired, old failure retained.
+No Task.Run/registration broker calls or financial outcome. PlanOct28UTC
+14:15Task/14:20entry/14:27recovery/restore>=14:33; Nov3UTC20:45exit/
+20:52recovery/restore>=20:58. Same Task owns each native phasepair.
+Inspect exact outcomes after opportunity, never infer from taskexit.
+Runtime actual writer admission/quote/risk/reconciliation remain required;
+otherproject definitions and originaldue duties unchanged.
 Capital UNALLOCATED/allow_submitfalse until existing native risk/slot owns it.
 Research H5OPEN versus native H5nearCLOSE nonparity remains explicit.
 Provisional Paper does not require profitable/independent research promotion.
@@ -95,10 +103,14 @@ scoped; a disjoint stockreservation is not a blanket company permission hold.
 Completed TCN/HGB proper-score tests passed original criteria. FixedHALF,
 cash-only absorption, economic VSN increment and risk-aware Linear rejected
 their frozen development tests. Preserve results/debits; no duplicate fits,
-rescues or independent-alpha claims. ONE new LeakyRidge/FeeProx campaign source
-current-long17-feeprox-ridge-development360/1800,1fit/1forecast/1held/6cells/
-0retry/CPU1/GPU0, fixedparameters/primary. Sagan worker; Steward finalcontract/
-registry/numericdispatch after typednativehandoff, no architecture grid.
+rescues or independent-alpha claims. LeakyRidge/FeeProx8104544f is now
+COMPLETE_REJECT: FINAL-CONSUMER-R1.json under current-long17-feeprox-ridge-
+development-20261028-v1.1fit/1forecast/1held/6cells/0retry/CPU1GPU0,
+5CIDs30Jobs closed. Activeupper128.198376/360, elapsed1697.549413/1800.
+20bp growth/DD FeeProx1.235217%/.706998% versus same-MU costblind
+1.554715%/.303168%, Uniform.996212%/.372144%; turnover criterion alonePASS.
+Steward chooses one next underrepresented executable hypothesis, not a rescue,
+new grid or replacement of already frozen first Paper input.
 
 ## Verification / Continue
 
