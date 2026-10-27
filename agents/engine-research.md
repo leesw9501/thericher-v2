@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST; observed Oct27UTC22:41.
+2026-10-28 KST; observed Oct27UTC23:43.
 A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
 Model proposals never alter deterministic broker risk or original shared B/10.
 
@@ -27,11 +27,26 @@ VOL .691913146/.249382923: bothcriteriaPASS, DEVELOPMENT_NOT_KILLED_
 NOISE_UNRESOLVED. Eleven correlated reusedINNERdates, not PnL/alpha/promotion.
 SixCIDs36Jobs closed/newupper99.339346of240/elapsed353.805476of1200;
 old102.998112 debit preserved/cumulative202.337458. No repeated fit.
-Next ONE daily20x18 temporalTCN comparison assigned under Steward/Sagan:
-<=1200active/3600elapsed/1newCUDAfit/max300epochs/5000updates/fitwall<=360s.
-Freeze exact arch/seed/trainFIT-chronoVal/purge/curves/earlystop/LR/checkpoint
-before dispatch; outerINNERonlyproperreadout, savedlogisticbaseline no old
-model restore/forward,0EVAL/financial. No activeGPU fit inferred fromsource.
+Daily20x18 temporalTCN is now CLOSED_REJECT, Source5c45fa1d/Consumercaea66fa
+at current-liquid17-temporal-checkpointfix-development-20261028-v1.
+OneactualCUDAfit22epochs/308updates/8.787719s/87.02MiB/bestepoch2,
+chronological FITvalidation/patience20, not convergence proof.
+Logloss/Brier .688125534/.247492109 lose Logistic, though beat constant/VOL.
+No EVAL/financial/refit; fiveCIDs31Jobs closed/GPUlease absent,
+upper172.078670/720/elapsed344.815839/1800. Weights safe on D:.
+Old checkpoint-ABI failure5302 after2SYNupdates/market0 remains charged276.47;
+new native12checks/fullstate RNGrestore PASS with2ADDITIONAL SYNupdates.
+Callerf58 records optimizer_steps, completed scheduler epoch and separate
+progress cursor, advances durable counters only after validated checkpoint.
+
+Fixed HALF Logistic+TCN is also CLOSED_REJECT, Sourceb6cec0f7/Consumer1c22e09e
+at current-liquid17-daily-logistic-tcn-half-probability-development-20261028-v1.
+Logloss/Brier .685297395/.246082023 lose Logistic. One saved projection/target
+witness/verify;0fits/restores/forwards/GPU/EVAL/financial. FourCIDs26Jobs closed,
+upper84.691817/240/elapsed312.167226/900. No weight/threshold rescue.
+Next source-only economic-gate readiness180/900 checks exact saved Logistic/
+Linear/payoff causal compatibility before any new numerical dispatch. No
+active training now; no repeat completed fits for utilization or alpha claim.
 
 Latest new CPU campaign is COMPLETE, not source-only:
 A/research/current-long17-feeprox-ridge-development-20261028-v1/

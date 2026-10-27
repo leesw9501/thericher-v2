@@ -68,10 +68,15 @@ function Invoke-PairForwardProfileService {
         } else {
             $arguments += $Service
         }
-        $output = @(
-            Invoke-PairForwardBootstrap -ProjectRoot $ProjectRoot -ComposeArguments $arguments 2>&1
-        )
-        $exitCode = [int]$LASTEXITCODE
+        $bootstrapResult = Invoke-PairForwardBootstrap `
+            -ProjectRoot $ProjectRoot -ComposeArguments $arguments
+        if ($null -eq $bootstrapResult -or @($bootstrapResult).Count -ne 1 `
+                -or $bootstrapResult.ExitCode -isnot [int] `
+                -or $null -eq $bootstrapResult.PSObject.Properties["Output"]) {
+            throw "Pair forward bootstrap result is unavailable."
+        }
+        $output = @($bootstrapResult.Output)
+        $exitCode = $bootstrapResult.ExitCode
     } finally {
         $ErrorActionPreference = $priorErrorActionPreference
     }
@@ -79,6 +84,27 @@ function Invoke-PairForwardProfileService {
         ExitCode = $exitCode
         Output = $output
     }
+}
+
+function ConvertTo-PairForwardNativeArgument {
+    param([AllowEmptyString()][string]$Value)
+    # Windows CommandLineToArgv convention; ProcessStartInfo never uses a shell.
+    $builder = New-Object System.Text.StringBuilder
+    [void]$builder.Append('"')
+    $slashes = 0
+    foreach ($character in $Value.ToCharArray()) {
+        if ($character -eq '\') { $slashes++; continue }
+        if ($character -eq '"') {
+            [void]$builder.Append(('\' * (2 * $slashes + 1)))
+        } else {
+            [void]$builder.Append(('\' * $slashes))
+        }
+        [void]$builder.Append($character)
+        $slashes = 0
+    }
+    [void]$builder.Append(('\' * (2 * $slashes)))
+    [void]$builder.Append('"')
+    return $builder.ToString()
 }
 
 function Invoke-PairForwardBootstrap {
@@ -95,7 +121,36 @@ function Invoke-PairForwardBootstrap {
             -or -not (Test-Path -LiteralPath $bootstrap -PathType Leaf)) {
         throw "Pair forward bootstrap is unavailable."
     }
-    & $python -I -S -B $bootstrap --execute --compose --project-root $ProjectRoot -- @ComposeArguments
+    $nativeArguments = @('-I', '-S', '-B', $bootstrap, '--execute', '--compose',
+        '--project-root', $ProjectRoot, '--') + $ComposeArguments
+    $start = New-Object System.Diagnostics.ProcessStartInfo
+    $start.FileName = $python
+    $start.Arguments = (($nativeArguments | ForEach-Object {
+        ConvertTo-PairForwardNativeArgument -Value $_
+    }) -join ' ')
+    $start.UseShellExecute = $false
+    $start.CreateNoWindow = $true
+    $start.RedirectStandardOutput = $true
+    $start.RedirectStandardError = $true
+    $process = New-Object System.Diagnostics.Process
+    $process.StartInfo = $start
+    $started = $false
+    try {
+        $started = $process.Start()
+        if (-not $started) { throw 'Pair forward bootstrap did not start.' }
+        $stdout = $process.StandardOutput.ReadToEndAsync()
+        $stderr = $process.StandardError.ReadToEndAsync()
+        $process.WaitForExit()
+        $exitCode = [int]$process.ExitCode
+        $output = @($stdout.GetAwaiter().GetResult(), $stderr.GetAwaiter().GetResult())
+        return [pscustomobject]@{ ExitCode = $exitCode; Output = $output }
+    } finally {
+        if ($started -and -not $process.HasExited) {
+            $process.Kill()
+            $process.WaitForExit()
+        }
+        $process.Dispose()
+    }
 }
 
 function Invoke-PairForwardGuardReceipt {

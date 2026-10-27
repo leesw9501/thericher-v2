@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Observed 2026-10-27 UTC22:41 / 2026-10-28 KST.
+Observed 2026-10-27 UTC23:43 / 2026-10-28 KST.
 Workspace: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company outcome: coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
@@ -122,10 +122,15 @@ not a full cold pass. No actual private/API reads,2CIDs14Jobs closed. NEW
 60owned/600elapsed/one-Linux-call synthetic correction fixes only empty-owner
 negative expectation; capsule/template unchanged, old240debit retained.
 Correction result896c5883 now PASS13Linux cases,1CID6Jobs closed,0private/API.
-Original failed fixtures remain. A separate source-only r2 template derivation
-widens the unused arbitrary10minute eligibility to24hours after closure while
-keeping one-read cap/fresh writer admission/stability and same strict kernel;
-do not use it until its exact source/command is evidenced and adopted.
+Original failed fixtures remain. r2 is now SOURCE_READY and Parent-adopted:
+Sourceebb972d7/Consumer79409302/Adoption25f5d5bf in parent-activation-template-r2.
+One future offline read only, Oct28UTC14:35..Oct29UTC14:35, observed at actual
+read time, not trigger time. Same strict kernel/SPEC cold13 reused with exact
+byte/schema equivalence; two public source checks/Jobs closed, actualprivate0.
+Fresh relevant-writer admission/positive owner closure/allRO/networknone/
+before-after stability remain required. Narrow r1/cb0 preserved, never replayed.
+Use the constant Sourcepin command from r2/HANDOFF after verifying members
+and unconsumed state. Existing app follow-up carries this exact adoption.
 
 Expired app follow-up oct26-paper was updated, not duplicated, for one
 Oct28UTC14:40 result check. App accepted it; future delivery/outcome unobserved.
@@ -160,27 +165,53 @@ NOISE_UNRESOLVED, not alpha/PnL/Paper promotion. Eleven reused correlated
 dates remain weak evidence. Private/EVAL/env/net/write negatives pass.
 SixCIDs36Jobs closed, newupper99.339346/240/elapsed353.805476/1200;
 old102.998112 debit unchanged, cumulative202.337458. Do not repeat the fit.
-Next ONE daily temporal TCN comparison is assigned to Steward/Sagan in
-disjoint scopes:1CUDAfit after frozen contract/native handoff/GPU headroom,
-same target/row alignment, internalFIT chronological validation; outerINNER
-never chooses epochs. Reuse saved logistic baseline, no refit/forward/EVAL.
-No active GPU fit claimed yet.
+Daily TCN is COMPLETE_REJECT, not pending GPU work:
+current-liquid17-temporal-checkpointfix-development-20261028-v1, Source5c45fa1d,
+Consumercaea66fa. One CUDAfit22epochs/308updates/8.787719s/87.02MiB,
+bestepoch2/chronological FIT-patience20. Logloss/Brier .688126/.247492 versus
+Logistic .683179/.245036; incremental criteria failed. No EVAL/financial replay,
+refit or automatic Paper swap. FiveCIDs31Jobs closed/GPU lease absent,
+upper172.078670/720/elapsed344.815839/1800. Weights remain on D:.
+Earlier native5302 failed checkpoint caller ABI after2 synthetic updates,
+marketfits0; failure/debit276.471960 preserved. Parent patchf58 adds required
+optimizer_steps, saves completed scheduler epoch with separate progress/cursor,
+and advances durability only after validated save. Seven pure API/AST tests and
+ClaudeGO pass; new actual native cold/RNG proof passes12checks with2 ADDITIONAL
+synthetic updates (cumulative4), not an old model resume.
+Fixed HALF saved Logistic+TCN diagnostic is CLOSED_REJECT, Consumer1c22e09e
+at current-liquid17-daily-logistic-tcn-half-probability-development-20261028-v1.
+Logloss/Brier .685297/.246082 lose Logistic; one projection/target witness/
+verify,0fits/restores/forwards/GPU/EVAL/financial. FourCIDs26Jobs closed,
+upper84.691817/240/elapsed312.167226/900. No weight/threshold rescue.
+Schrodinger next owns source-only logistic economic-gate readiness180/900:
+check saved probability/Linear/payoff causal compatibility before numerical
+dispatch. No new training is running; no dummy GPU work or old fit repetition.
 Faraday source-only history clarification is complete/agent closed.
-Halley public-reader delivery is complete. Leibniz owns a bounded existing-
-collector progress audit, not repeated current20 capture: exact Task/pointer/
-receipt growth/first cause, no broad scan or parallel collector. Completion
-is not continuous collection or permanent running LLMs. Roles coordinate direct
+Halley public-reader delivery is complete. Data auditfbcdae4e confirms actual
+Oct27 SPY/QQQ each390/390 regular-session minutes; old+head unmerged complete
+date unions35/34, not a new merged dataset/finality proof. Existing quiet1m
+collector works. NAS6MODP0 throughOct27 has retained revision conflicts;
+formal QQQ/SPY MODP0 pair stalledOct19/collection_required. Newcoherent20MODP1
+is unaffected; never splice the modes. Leibniz owns bounded360/1800 daily-pair
+preflight->collector firstcause/fix, not another capture or report platform.
+Prefer existing versionedrepo code; Parent grants tracked writes after exact
+diagnosis and owns fullverification. Roles coordinate direct
 typed handoffs; Parent owns shared policy/Git, not every implementation.
 
 ## Verification / Resume
 
-Tracked production94c16934 /1412 protected files/a1500c15 unchanged.
-Full authority:19514PASS/26knownSKIP/398.53s/eight worker pairs/own cleanup,
-plus serial370PASS/1skip. Exact fresh protected check22:44:04 at
-A/verification/current-paper-research-integration-20261028-r7/SOURCE-CHECK.json
-permits reuse for MD/external-only work. Fresh Ruff and default/research/
-accounting Compose pass using .env.example. External code has its own native/
-actual tests; repeated repository tests cannot validate it.
+Two tracked code paths now changed for daily-pair native exit propagation:
+schedule PS1 and its tests. Old94c16934/a150 authority is NOT reusable.
+Changed-path serial83PASS/5.76s. First freshfull19515PASS/26skip/35warnings/
+397.46s retained, but independent worker roster was missed; not complete
+activation authority. Second fullsession55957 PASS19515/26knownsymlinkskip/
+35warnings/395.47s/19541collected, actual8/8workers and8CIMpairs57f5ae4b.
+Exact1412-source2f053b79/posthash0mismatch; original19PID-start pairs absent,
+own temp/lease absent, CLOSUREf330092c. Fresh Ruff/default/research/accounting
+overlay Compose.env.example PASS. Consumer at
+A/verification/current-daily-pair-exit-propagation-20261028-v1/CONSUMER.json.
+External code keeps separate native proofs. Future code changes need fresh
+authority; do not repeat this completed full for current docs-only updates.
 
 On genuine resume run scripts/start_next_codex_task.ps1, then current goal/
 AGENTS/stateboards. Do not rerun startup on compaction. Continue ready delegated

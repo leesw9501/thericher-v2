@@ -50,6 +50,9 @@ risk to force a trade. Other original exit duties remain unchanged.
   Source18ba host12 pass/capsule unchanged; fixture correction896c PASS13Linux.
   Source-only r2 one-read template preparation removes arbitrary10minute
   eligibility, never fresh-writer/stability checks. No private activation now.
+  R2 is now Parent-adopted25f5d5bf/Sourceebb972d7 for one futureoffline read
+  Oct28UTC14:35..Oct29UTC14:35. Exact command/rules in r2/HANDOFF and RUNBOOK;
+  actual private reads remain0 until its due, fresh admitted invocation.
 - F9: exact original request/date query completed1POST/1GET/0rows/0candidates.
   UNKNOWN-HELD is unchanged. No identical query/release. Official source review
   e568 confirms local-market date/current Paper selectors, retention unproven;
@@ -60,15 +63,25 @@ risk to force a trade. Other original exit duties remain unchanged.
   open5-logistic-sourcefix-development-20261028-v1 is dispatched240/1200;
   same model/target/eager trusted imports, all input guards kept. NEW cd17 is
   now COMPLETE_VERIFIED/proper-score criteriaPASS/1CPUfit, no EVAL/PnL claim.
-  Next ONE daily temporalTCN comparison assigned <=1200active/3600elapsed/
-  1CUDAfit after frozen native handoff; saved logistic baseline, internalFIT
-  validation, no outerINNER epoch choice. Preserve old failures/debits; no
-  active GPU claim from preparation. Direct typed handoffs.
+  Daily TCN5c45 is now COMPLETE_REJECT/1CUDAfit22epochs308updates/8.79s,
+  worse than Logistic on frozen proper scores. No EVAL/PnL claim or rerun.
+  Fixed HALF saved-probability fusion is CLOSED_REJECT, Sourceb6cec0f7:
+  loss.685297/Brier.246082 lose Logistic,0fits/GPU/financial. No weight sweep
+  or automatic Paper promotion. Next source-only economic-gate compatibility
+  readiness180/900; actual training is closed, not inferred active from plans.
 - Data: current20 capture and current F3 projection are complete. Answer concrete
   consumer/schema needs without duplicate acquisition or claiming continuous
   collection. Current point had one actual CPU forward, never repeat it.
-  Leibniz audits existing collector Task/pointer/receipt growth in a bounded
-  disjoint scope; no blind duplicate collection or schedule expansion.
+  Auditfbcdae confirms new Oct27SPY/QQQ390/390 sessions/unmerged unions35/34.
+  DailyMODP0 pair stalledOct19. Measured PS5.1 loses native preflight10 as0;
+  exact Process.ExitCode fix applied to existing schedule/test paths, serial83
+  PASS. Freshfull55957 also PASS19515/26knownskip/395.47s,8workers/19541items,
+  closuref330/source2f05 match; Ruff/threeCompose PASS. Actual acquisition
+  still needs its own evidence; a code fix is not cache growth.
+  Leibniz prepares scoped60 token-gate readiness/default300 preserved; no API
+  and one network-none preflight-only check assigned after current verification.
+  No recapture/expansion,
+  old revisions retained/no MODP0->MODP1 splice.
 
 Research limitations constrain claims, not provisional Paper permission or
 another ready lane. No profitability/independent-validation gate before Paper.
@@ -80,11 +93,13 @@ Never KIS_LIVE_*/live/real-money, paid commitments, unclear rights, public
 exposure or major runtime replacement without operator authority. Private
 no-cost Paper/Data/Research and owned schedules are already delegated.
 
-Follow AGENTS verification. Tracked production94c16934/1412protected/a1500c15
-is unchanged; full19514PASS/26knownSKIP plus serial370/1 may be reused ONLY
-after fresh exact digest/membership check for MD/external-only changes.
-Changed external code needs focused native/actual evidence of its own.
-Fresh Ruff and default/research/accounting Compose use .env.example.
+Follow AGENTS verification. Two tracked schedule/test paths changed; old
+a150/19514 authority is not reusable. Serial83PASS; firstfull19515/26 passed
+but missed independent roster, retained as test pass only. Secondfull55957
+PASS19515/26knownskip/35warnings/395.47s, actual8pairs57f5 and19541collected.
+New protected1412source2f053b79/posthash0mismatch and closuref330: original
+19PID-start pairs/temp/lease absent; fresh Ruff/threeCompose.env.example PASS.
+Changed external code has separate native/actual proof, not repo authority.
 
 Integrate material evidence, verify, commit/push and continue the active request.
 A package commit is not company completion. Replace this file with ONE next

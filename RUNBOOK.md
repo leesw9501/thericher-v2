@@ -118,9 +118,10 @@ FINAL-CONSUMER-R1 is also CLOSED_REJECT,1CPUmarketfit/1forecast/1held/6cells,
 5CIDs30Jobsclosed/upper128.198376of360. No GPU training claimed from this fit.
 Use finalconsumer, not earlier precreate failure marker, for current status.
 Logistic sourcefixcd17 is also COMPLETE_VERIFIED/proper-scorePASS/1CPUfit/
-0EVAL/GPU, not profitability. Do not rerun it. Next ONE daily temporalTCN
-comparison is assigned to Steward/Sagan under family1200/3600 and one new
-CUDA fit; actual GPU activity requires worker evidence, not this plan.
+0EVAL/GPU, not profitability. Do not rerun it. Daily TCN5c45 is now closed:
+one CUDAfit22epochs/308updates/8.79s/87MiB, incremental proper-score REJECT.
+Fixed HALF b6ce also REJECT,0fit/GPU; do not rerun or sweep weights.
+Next economic-gate compatibility/readiness is source-only, not active training.
 Faraday owns current-f9-exact-date-reconciliation-20261028-v1: exact original
 pending request source/date/binding and bounded read-only diagnosis, not new
 orders or reservation release. Currentshape probe alone is not F9 evidence.
@@ -143,6 +144,18 @@ session.calls were not retained by the frozen producer, so countNULL/
 CANNOT_ATTRIBUTENATIVECOUNT is correct. No latest-file scan/privatecontrol
 access/fill inference. Separate exact-cohort offline reader readiness is owned
 by Socrates; obey its actual custody admission/stability before future use.
+
+Exact-cohort r2 is now Source-ready and Parent-adopted, not actually read:
+A/execution/current-linear17-exact-cohort-reader-readiness-20261028-v1/
+parent-activation-template-r2. SOURCEebb972d7c7b6139e264383596b9d31eb2b25df32f46a2a17cb5d63766f229da4,
+Consumer79409302/ParentAdoption25f5d5bf. Host12/cold13 reused only after exact
+kernel/SPEC/schema equality; sourcechecks pass,0actualprivate/Task/broker calls.
+One unconsumed future read eligible Oct28UTC14:35..Oct29UTC14:35, fresh relevant
+writer admission/positive owner closure/networknone/allRO/stability required.
+Observed time is actual read time. Verify Sourcehash/members/adoption first,
+then use constant-pin command from r2/HANDOFF.json. Never run now or repeat a
+consumed read. Old r1/cb0/failed fixtures retained. App follow-up already carries
+exact r2 adoption; no additional recurring report or broker worker was created.
 
 ## Verification
 
@@ -396,7 +409,7 @@ No cleanup-denial bypass or failed/partial/unclean authority reuse.
 External helpers require their own fresh native/independent checks; repeating
 repo tests does not validate D:code.
 
-Current1f0fd37a:
+Historical1f0fd37a, no longer current after the daily-pair schedule/test fix:
 A/verification/current-nas-nys-native-integration-20261027-v1/CONSUMER.json.
 Helper69460 exit0/19514PASS26knownSKIP418.91s/requested8/observed8workerpairs;
 serial384PASS8.53s/focused30PASS2.23s/Ruff/3Compose PASS. Sourcea1500c15 has
@@ -411,6 +424,13 @@ Separate manual serial scratch
 C:/trpy/serial-lowvol-20261027-v1 cleanup was tool-policy rejected before action:
 retained/no retry/no bypass; new serial quiet-serial-20261027-v1 also retained.
 Not an all-scratch-clean claim. New serial nas-nys scratch also retained.
+Current fresh authority is
+A/verification/current-daily-pair-exit-propagation-20261028-v1/CONSUMER.json:
+Source2f053b79/1412protected/0postmismatch, serial83PASS/5.76s, full55957
+19515PASS26knownWindowslinkSKIP35warnings/395.47s/19541collected/8workers,
+actual8CIMpairs57f5, all19originalPID-start pairs absent, own temp/lease absent.
+Ruff and default/research/accounting-overlay Compose.env.example PASS.
+Priorfull46550 testPASS stays test-only for missed roster, not retrograded.
 No Parent test session. Do not rerun a completed full for docs-only changes
 when exact protected digests match current authority.
 Do not remove old inactive siblings merely to make a directory listing empty.

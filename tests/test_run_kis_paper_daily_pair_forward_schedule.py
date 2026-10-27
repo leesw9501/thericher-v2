@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -11,6 +13,57 @@ SCRIPT = (
     / "scripts"
     / "run_kis_paper_daily_pair_forward_schedule.ps1"
 )
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="Windows PowerShell native boundary")
+def test_real_native_bootstrap_exit_controls_collection_without_global_mock(tmp_path: Path) -> None:
+    project = tmp_path / "native project with spaces"
+    scripts = project / "scripts"
+    python_dir = project / ".venv" / "Scripts"
+    scripts.mkdir(parents=True)
+    python_dir.mkdir(parents=True)
+    shutil.copyfile(sys.executable, python_dir / "python.exe")
+    config = Path(sys.executable).parents[1] / "pyvenv.cfg"
+    if config.is_file():
+        shutil.copyfile(config, project / ".venv" / "pyvenv.cfg")
+    (project / "docker-compose.yml").write_text("services: {}\n", encoding="ascii")
+    producer = scripts / "run_kis_paper_daily_pair_forward_bootstrap.py"
+    producer.write_text(
+        "import json,sys,time\nfrom pathlib import Path\n"
+        "r=Path(__file__).resolve().parents[1]\n"
+        "phase='preflight' if sys.argv[-1].endswith('-preflight') else 'collection'\n"
+        "assert sys.argv[sys.argv.index('--project-root')+1] == str(r)\n"
+        "with (r/'calls.jsonl').open('a') as f: f.write(json.dumps(phase)+'\\n')\n"
+        "print('invented-source-stdout')\nprint('invented-source-stderr',file=sys.stderr)\n"
+        "time.sleep(.05)\nraise SystemExit(10 if phase=='preflight' else 7)\n",
+        encoding="ascii",
+    )
+    harness = project / "h.ps1"
+    harness.write_text(
+        "$ErrorActionPreference='Stop'\n$PSModuleAutoLoadingPreference='None'\n"
+        "Import-Module Microsoft.PowerShell.Utility,Microsoft.PowerShell.Management\n"
+        f". '{SCRIPT}' -ProjectRoot '{project}'\n"
+        "function Test-KoreaStandardTime { return $true }\n"
+        "function Get-ScheduledTask { return $null }\n"
+        "function Start-ScheduledTask { throw 'TaskRun_forbidden' }\n"
+        "function docker.exe { throw 'Docker_forbidden' }\n"
+        f"$code=Invoke-PairForwardSchedule -ProjectRoot '{project}'\n"
+        "[pscustomobject]@{code=$code}|ConvertTo-Json -Compress\n",
+        encoding="ascii",
+    )
+    executable = Path("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe")
+    result = subprocess.run(
+        [str(executable), "-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy",
+         "Bypass", "-File", str(harness)],
+        capture_output=True, text=True, timeout=20, check=False,
+        creationflags=subprocess.CREATE_NO_WINDOW,
+    )
+    assert result.returncode == 0
+    assert result.stderr == ""
+    assert "invented-source" not in result.stdout
+    assert json.loads(result.stdout)["code"] == 7
+    assert [json.loads(v) for v in (project / "calls.jsonl").read_text().splitlines()] == [
+        "preflight", "collection"]
 
 
 def test_pair_forward_schedule_uses_guarded_preflight_then_collection() -> None:
@@ -24,7 +77,8 @@ def test_pair_forward_schedule_uses_guarded_preflight_then_collection() -> None:
     assert '"--profile",' in source
     assert '"--env-file",' in source
     assert '(Join-Path $ProjectRoot ".env.example")' in source
-    assert "Invoke-PairForwardBootstrap -ProjectRoot $ProjectRoot" in source
+    assert "Invoke-PairForwardBootstrap `" in source
+    assert "-ProjectRoot $ProjectRoot -ComposeArguments $arguments" in source
     assert '"--rm",' in source
     assert '"--no-deps",' in source
     assert '"--pull",' in source
@@ -118,7 +172,9 @@ def _run_schedule(
                 "}",
                 "function Invoke-PairForwardBootstrap {",
                 "    param([string]$ProjectRoot, [string[]]$ComposeArguments)",
-                "    docker.exe @ComposeArguments",
+                "    $output = @(docker.exe @ComposeArguments 2>&1)",
+                "    return [pscustomobject]@{ ExitCode = [int]$global:LASTEXITCODE; "
+                "Output = $output }",
                 "}",
                 f"$exitCode = Invoke-PairForwardSchedule -ProjectRoot '{escaped_project_root}'",
                 "[pscustomobject]@{",

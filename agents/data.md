@@ -1,10 +1,25 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-28 KST; observed Oct27UTC20:51.
+2026-10-28 KST; observed Oct27UTC22:48.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Leibniz owns Data/schema; Parent shared MD/Git. MD is not running-worker proof.
 
 ## Actual Fresh Acquisition
+
+Existing-collector audit is COMPLETE, Sourcefbcdae4e:
+A/data/current-owned-collector-progress-audit-20261028-v1/CONSUMER.json.
+Exact invocation/schedule/capture join Oct27UTC21:20 passed. SPY/QQQ each
+added one complete Oct27 regular-session390/390 record set. Head complete
+sessions14/13 plus independent older21 = unmerged date unions35/34, NOT a
+new merged training dataset or providerfinality proof. Added unique keys
+775SPY/800QQQ include broader capture rows, not only that one regular session.
+Existing intraday scheduler works/quiet pythonw verified; leave it intact.
+NAS6 MODP0 index throughOct27 has retained_revision_conflict/deferred, not
+clean qualification. Formal QQQ/SPY MODP0 daily pair latestOct19/input_unavailable;
+Oct27 finite receipt says collection_required. Taskexit0 is not a collector run.
+Fifteen metadatafiles independently stable/rechecked; no new HTTP/credentials/
+rawrows/Docker/privatebank/Taskmutation. Never splice MODP0 into coherent20MODP1.
+Next bounded recovery scope is separate below; actualcurrent20/F3 unchanged.
 
 A/data/current17-forward-modp1-capture-caller-20261028-v1/coherent20-owner-pulse-r1/
 technical-envelope-r1/CONSUMER.json, Source16f2f081, runtimeSource8db79059.
@@ -52,12 +67,29 @@ C120/H60 packets765a already consumed by closedTCN/HGB/HALF/utility studies.
 
 ## Next / Limits
 
-Leibniz new bounded current-owned-collector-progress-audit-20261028-v1
-(180owned/1200elapsed) checks exact existing collector Task/pointer/receipt
-session growth/first cause after Oct27UTC21:20/21:40. Not another current20
-capture/projection or broadrecursive market scan. One existing collector owner;
-no duplicate actor, schedule expansion or continuous-operation claim before
-actual evidence. Output categorical/count/sessiondates only. Parent sharedMD/Git.
+Leibniz owns NEW current-owned-daily-pair-collector-recovery-20261028-v1,
+360owned/1800elapsed: exact formal daily-pair preflight->collector/termination
+firstcause and minimal reversible fix. One existing cache/collector owner,
+no duplicatecurrent20capture/scheduleexpansion or cursor reset. ActualData
+HTTP only if necessary afternativeproof,<=1POST/4GET/0unboundedretry withshared
+token discipline/worker-ownednext_due. Preferversioned existingrepo modulefix;
+current assignedwritesD-only until Parent grants exact tracked writeSet.
+Revision-conflict oldgenerations/limits retained; no silent overwrite/finality
+promotion. Nextconsumer is fresh operationalPaperinput/Engine research.
+This diagnosis/candidate scope is now COMPLETE Sourcecc215287/Consumerabcce3a7:
+real WindowsPowerShell5.1 boundary loses preflight10 asouter0 and skipscollector.
+Typed Process.ExitCode/hidden shell-free child fixes it; native inventedrow
+commit/load and focused22 cases passed/ClaudeGO/noactualAPI/Task/cache writes.
+Parent applied exact versioned schedule/test patch, changedpathSERIAL83PASS;
+freshfull55957 PASS19515/26knownskip/395.47s, serial83/Ruff/threeCompose PASS.
+Authority2f053b79/closuref330 at current-daily-pair-exit-propagation-20261028-v1;
+exact1412source match/19originalPID-start absent/currenttemp+lease absent.
+Existing Taskdefinition/trigger unchanged. Network-none preflight-only check
+assigned after this verification; no collector/API call implied by the fix.
+NEW current-daily-pair-token-floor60-readiness-20261028-v1(180/900) is source-
+only: same-mark observer240/default300 starvation reproduced, not retroactive
+historical cause. Prepare minimal named60 integration using proven atomic+
+legacy gate; frozen300/default/mark/unknownleases unchanged. No actualcall yet.
 
 Respond directly to current Engine source/schema/clocks questions; do not
 repeat completed acquisition/projection. Fresh current acquisition is successful,
