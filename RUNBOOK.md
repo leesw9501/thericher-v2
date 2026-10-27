@@ -6,102 +6,96 @@ Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 On genuine resume run scripts/start_next_codex_task.ps1, then current
 HANDOFF/NEXT/AGENTS/stateboards. Do not rerun for mere compaction.
-Parent owns shared MD/Git/activation. Preserve unrelated %SystemDrive%/.
-Never read KIS_LIVE_*, print secrets/account/order IDs/raw broker or market rows.
-Use uv run --no-env-file for credential-free work and .env.example for Compose.
-MODEoff remains except named delegated Paper paths. ONE original B/10,
-costs/losses/pending/F9 survive restart; no profit expansion or foreign adoption.
+Parent shared MD/Git/activation; preserve unrelated %SystemDrive%/.
+Never KIS_LIVE_* or output secrets/account/order IDs/raw/private values.
+Use uv run --no-env-file and Compose .env.example. Named delegated Paper
+paths retain ONE original B/10/cost/loss/pending/F9, no reset/profit expansion.
 
-## Current Repaired Runtime
+## Current Owned Paths
 
-Observed Oct27UTC19:10/Oct28KST. Company outcome UNFINISHED.
-Original MSFT13:40/47 and r3 15:45/52, LOWVOL15:30/37 are consumed.
-No Task.Run, repeated installer, private state restore, forced entry or B/10 reset.
-MSFT r3 d58 faults af292aaa/ae038e23: exact bound NATIVE_EXECUTION/ValueError/
-transport.py575/worker_frame_invalid. Later actual-constructor/tmpfs probe
-reproduced runtime.lock disappearance; this does not prove every old EOF cause.
-Actual e414 bootstrap help/empty/missing-proof framedJSON tests do not reproduce
-the actual request failure. New safe first_failure_sink PREPb565/4native fixtures
-and Claude refreshedABI b7f6 advisory GO_WITH_LIMITS; not yet broker closure.
+Observed Oct27UTC20:51. Company goal UNFINISHED; old entry/recovery windows
+consumed. Do not Task.Run, repeat consumed installer, restore private state,
+force new intent or silently roll old opportunity dates.
 
-Consumed exact diagnostic single recovery:
-A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1.
-host4b8b4e6c/routef341a625/TRUE9b8eb452/ParentPlan31e23615,
-17:30..34UTC Oct27/02:30KST Oct28, native recovery/outer phase exit NOT a sell.
-Same original65f/a861/cohort/imagee414/privatebank/gate/counters/round/B10/F9.
-Parent alone apply/readback/enable future one-shot, no substitute fresh intent.
-Parent actual17:25:03 activated: parent-activation-r1/RESULT.json,
-newTaskXMLc1bed5d3/API7ACL4f54. Single disabled-create/readback/enable and original
-two future exit action refs; no Task.Run. Activatorbf296446 eightfocusedPASS
-after exact never-run-history fix. This activation scope is CONSUMED, no replay.
-Original MSFTNov2UTC20:45/20:52 and LOWVOLNov3UTC14:35/14:42 exit duties stay.
-Native risk/unknown outcomes/cap eligibility may veto; do not reset them.
+Latest private19:45 Source de429f25/TRUE3d3a9548 callback:
+A/execution/current-msft-observer-aware-exact-recovery-preparation-20261028-v1/
+callback-r1/CONSUMER.json. Exacthostrun/fault bound: actor_unregistered/
+admission.py123/NOT_ENTERED, native/API/order/fillcountsNOT_RETAINED_UNKNOWN.
+Taskexit0 is not success. Earlier runtime.lock bootstrap defect is reproduced
+and fixed with exact ROlockb2a6; later actor denial remains unresolved.
+Old broad e792/r2/r3 overlay is failed/NOTADOPTED.
 
-Current consumed private reader at
-A/execution/current-msft-diagnostic-cohort-reader-preparation-20261028-v1/RESULT-ACTUAL.json
-62e27074 actual17:48 PASS: exact source/private/legacy membership/identity/
-mtime/bytes/ownCIDclosure/allhandlesclosed,3admissions13Jobs/oneROread/17.077s.
-Policy65f/a861 ABSENT/target1UNKNOWN/bound0; complete financial counts NULL,
-NOT zero/no-submit/flat. Original private anchor matches, NOT current .env
-comparison. Own3actors only, not live GPU co-tenancy. Earlier failures retained.
-F9 pending1/UNKNOWN-HELD unchanged, fees/settledcash/netPnL unobserved.
+Actual public scheduled20:25 probe:
+A/execution/current-scheduled-public-admission-probe-20261028-v1/
+public-results/PUBLIC-ADMISSION.json. Sourcebccdb/TRUEe00a/TaskXMLf2d6430c.
+OwnerPASS/own2rows;5OTHER rows map exactly to simultaneous Data
+launch0be3/driver18cf/metadata0fb2. Source-only diagnostic has no privatebank,
+credentials/API/native stage; not historical19:45 attribution or broker admission.
+Three exact additive Data rules28c23d/sourceb1b are source-ready, not deployed.
+Execution current-paper-next-finite-round-readiness prepares a finite native
+path that separates actual financial custody writers from unrelated workers.
+No genericPython/path waiver or new permission platform.
 
-Consumed source-safe diagnostic offline reader:
-A/execution/current-msft-diagnostic-exact-recovery-preparation-20261028-v1/reader-r1/CONSUMER.json.
-Parser713b1cf5 requires exact public record path+SHA, actual TRUE9b8e, source/run/
-window/input/policy/phase binding, no latest scan/private/API/Docker/Task calls.
-Its five synthetic tests qualify parsing, not actual opportunity outcome.
-A missing/invalid diagnostic does not prove effects absent. Its frozen17:35
-callback wrongly added FAULT filenameUUID==hostrun; producerUUIDs independent.
-Do not silently regrade that callback or claim missingfinancialeffects.
+Observer restored EXACT originalXML/API7/enabled19:51:33:
+A/execution/current-observer-finite-yield-preparation-20261028-v1/
+technical-json-time-r1/parent-activation-r1/RESTORE-RESULT.json.
+Restore obligationFALSE. Source8ac6 JSONDateKindString fix passes12mock and
+realUTCpolicy regression; original22b failures retained. No global quiet hold.
+Original future MSFTNov2UTC20:45/52 exit host7a/TRUE288/XML8e6b+d510;
+LOWVOLNov3UTC14:35/42 unchanged. Preserve duties/inputs/unknownF9.
 
-Minimal RO runtime-lock repair and actual later failure:
-A/execution/current-central-runtime-lock-paired-capability-probe-20261028-v1/CONSUMER.json
-cc7a5bd1: actual constructor/ALLproductionflags/tmpfs, missing/tmp/runtime.lock
-failsruntime.py12/EOF/exit1; SAMEhashROfile bind passes/exit0/noOOM. Alljobsclosed,
-ClaudeGO_WITH_LIMITS. Lockb2a6e0c6, no guest/private/API effects in the probe.
+Offline custody reader62e27074 at17:48:
+A/execution/current-msft-diagnostic-cohort-reader-preparation-20261028-v1/RESULT-ACTUAL.json.
+Full source/private/legacy stability/3admissions13Jobs/ownCIDhandlesclosed.
+Policy65f/a861 ABSENT/target1UNKNOWN/bound0, complete financialcountsNULL.
+Original anchor matches, NOT current.env account comparison; no no-order/flat
+inference. No identical reread. DirectV2account probe71b/result2d15 at16:50
+returned NASD/NYSE/referenceorderability and7dedupholdingitems, not AMEX/
+owned attribution/fullrisk/settledcash. F9reservation remains UNKNOWN-HELD.
 
-A/execution/current-msft-runtime-lock-exact-recovery-preparation-20261028-v1/
-parent-activation-r1/RESULT.json: actual18:46:09 installed host7a170d47/
-TRUE2887997f/Plan7d1e96ec/newTaskXMLd2ae6580/API7ACL4f54, recovery18:50..54.
-Only ROlock+required phase/source metadata; actual host/route code unchanged4b8.
-No Task.Run/newentry/bank change; all activation scopes/opportunities consumed.
-Original Nov2MSFT20:45/52 action refs now7a/TRUE288, XML8e6bb8eb/d5106221;
-LOWVOLNov3UTC14:35/42 unchanged. Do not use old XML pins for future updates.
+## Current Data / Research Commands Are Not Replay Commands
 
-callback-r1/CONSUMER.json93856971 records actual failure at admission.py142,
-role_capability_unreviewed. Taskexit0/idle is NOT success. Nativecalls/frame
-NOT_RETAINED. Recorded NATIVE_EXECUTION stage precedes actual guest execution.
-Source-only actual guard test current-runtime-lock-capability-contract-repair-
-20261028-v1 accepts8mountROlock; first predicate means0 OR ambiguous argv rules,
-historical actor unknown. Do not waive roles or treat this as human approval.
-ExistingTask/source argv audit and independently tested categorical diagnostics
-precede another minimal recovery. Broad e792/r2/r3 overlay failed/unadopted.
+Actual20symbol daily capture Source16f2 completed20GET/1POST/0retry/2000rows,
+alllast80sessions throughOct27/44.956s/Jobclosed:
+A/data/current17-forward-modp1-capture-caller-20261028-v1/coherent20-owner-pulse-r1/
+technical-envelope-r1/CONSUMER.json.
+Payload M/us_equities/kis_paper_private/current20-coherent-forward-capture-20261028-v1.
+Its expired capture source is evidence, NOT a reusable collector command.
 
-Paper readonly API V2 Source71b46541/result2d157c64 actual16:50 succeeded:
-1tokenPOST/3GET/0retries, NASD/NYSE/reference orderability,7dedup holding items.
-AMEX unqueried/accountmatch unknown, not cohort custody or executable sizing.
-Official once/min token source +scoped60floor/14tests succeeded, default300
-unchanged. Native worker already explicit60; no token-starvation EOF conclusion.
-No repeated account probes or quota foreground sleep.
+CurrentF3 input Source3b474a7d READY17x20x18:
+A/data/current20-current-f3-proposal-input-20261028-v1/CONSUMER.json.
+FEATURE225a160f/ROLEdb5ec7df/PUBLISHEDa6b56a3f20:45:57.581129UTC.
+Oneprojection/native+independentsavedverifyclosed, no targets/model/credentials.
+Engine current17-current-f3-provisional-inference owns one actual cachedLinear
+forward+fixedUniform SDK proposals. NAS8only,9NYSEweightcash/no renormalization,
+capitalUNALLOCATED/allowfalse until native-owned slot/risk, no alpha claim.
+ResearchOPENH5/native nearCLOSEH5 parity is NOT established.
 
-Broker7a retains inherited claims4ff; research profiles not implicitly admitted.
-Paper numeric yield18:45..55 consumed; Parent current0actor18:56:35 and
-Docker0container18:56:36 census permits independent research resume after own
-checks, not historical handle or financial proof. No continuing global quiet.
-New coexistence needs exact source/profile adoption, not generic whitelist.
-Current economicData49ac/native+coldEngine2446 already qualified;2new economic
-fits128updates each within2160/7200/hard20:08:43UTC, finalresults pending.
-TCN/HGB proper-score tests pass original criteria; fixedHALF and absorption
-utility reject, allclosed. No repeated completed training or outcome rescue.
+Completed CUDA2446VSN/Linear and2602risk plusTCN/HGB/HALF/absorption are
+closed; no repeat fit/native/heldread for utilization. Strategy source/SYN work
+for ONE cost/turnover hypothesis is not currently running GPU training.
 
-Current full authority:
-A/verification/current-paper-runtime-custody-recovery-20261027-v1/worker-telemetry-r1/CONSUMER.json.
-19514PASS26knownSKIP398.53s/eight actualworkerpairs/exact owncleanup; serial370/1.
-Exact1412protected a1500c15 required for MD-only reuse. Fresh external wire/
-account/caller/metadata tests validate their own changed paths; full repo tests
-cannot validate external scripts. Ruff/default/research/accounting Compose use
-.env.example, never implicit real .env. No fresh20k suite merely for MD.
+## Verification
+
+A/verification/current-paper-runtime-custody-recovery-20261027-v1/
+worker-telemetry-r1/CONSUMER.json:19514PASS26knownSKIP398.53s/eightactualpairs/
+owncleanup plusserial370/1. Reuse for MD/external-only ONLY after exact1412
+protected a1500c15 digest/membership check. External D code needs separate
+focused/native/actual proof; repo suite cannot validate it.
+
+Fresh checks, no real.env:
+
+```powershell
+uv run --no-env-file --extra dev ruff check .
+docker compose --env-file .env.example config --quiet
+docker compose --env-file .env.example --profile research config --quiet
+docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.accounting.yml config --quiet
+git diff --check
+```
+
+Tracked code/runtime/test/dependency changes need AGENTS full parallel and
+changed-path serial checks. Do not rerun20k tests for a documentation checkpoint.
+Company completion needs actual bound native decision/reconciliation, not Git.
 
 ## Frozen Installation History
 

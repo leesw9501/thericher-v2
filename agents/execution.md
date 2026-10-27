@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-28 KST; observed Oct27UTC19:10.
+2026-10-28 KST; observed Oct27UTC20:51.
 A=D:/thericher-v2/model-artifacts. Parent TRUE/activation/shared MD/Git.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Never live/KIS_LIVE_*. ONE originalB/10/cost/loss/pending/F9/identities retained.
@@ -49,9 +49,44 @@ rw/target/source/type mutations deny. Line142 means zero OR ambiguous argv
 rule matches. Historical actor/census not retained, cause NOT a proven mount
 permission failure. Do not waive role checks or ask operator approval.
 Safe categorical helper is diagnostic-only, not yet deployed.
-Current next: compare exact existing Task/source argv contracts to claims in
-current-actor-task-contract-audit-20261028-v1; Parent owns minimal integration.
-No another broken recovery schedule before a concrete contract test/fix.
+Audit proves current snapshot-observer shares NASwrapper but mismatchesargv6/8;
+child lacks candidate. Full observer graph remains unqualified (dynamic child
+arguments/image/security/staging), partial8a0 claims NOT adopted. Parent chooses
+finite exclusive window, not a generic role waiver or permanent suspension.
+Observer DISABLED19:39:20,0instances, exactbackup and RESTORE-RESULT at
+A/execution/current-observer-finite-yield-preparation-20261028-v1/
+technical-json-time-r1/parent-activation-r1. Source8ac6cf2b fixes JSON DateKind
+String after original22b two pre-Task suspend_window failures;12mock+realUTC
+policy regression PASS. Restored EXACT originalXML/API7/enabled19:51:33,
+obligationfalse/nextdue19:55. Parentcurrentownerclosure19:51:09 Task0/
+completeprojectactors0/Docker0/sourceXMLstable, not financial/historic proof.
+Parent recovery Source de429f25/TRUE3d3a9548/Planb0889479 ACTUAL installed19:42:13;
+TaskXML971f0f65/ACL4f54, ran19:45/result0/0instances at19:51, financialUNKNOWN.
+Exact callback-r1/CONSUMER.json binds hostrunc784aafe/faultd3cbe20e:
+actor_unregistered/admission.py123/NOT_ENTERED; native/API/order/fill counts
+NOT_RETAINED_UNKNOWN, not zero. Actual constructor/guardSYN,3typedTaskchecks,
+helper16cases+sidecar8+actualcaller3 andsingle-enable8 PASS. Original4ffclaims,
+allrisk/bank/request/mounts preserved; oldFAULTschema unchanged and sidecar
+best-effort separately bound/no effects or OSorigin inference. No newintent.
+
+## Current Coexistence Repair
+
+A/execution/current-scheduled-public-admission-probe-20261028-v1 ran20:25
+through actual scheduled owner. Sourcebccdb67e/TRUEe00a0b7b/TaskXMLf2d6430c;
+public-results/PUBLIC-ADMISSION.json has ownerPASS/own2rows classified and
+5OTHER rows exactly mapped to simultaneous successful Data launch0be3,
+driver18cf and metadata0fb2. Guard denies123. Not historical19:45 attribution,
+private-bank admission, API execution or cryptographic scheduler-origin proof.
+
+Additive exact3rules28c23d6a/sourceb1b35ba8 are source-ready under
+A/execution/current-coherent20-noncustodial-admission-readiness-20261028-v1.
+14retained/negative+4inventedguard+3binarychecks/independentverify/Claude,
+no actualdeployment. Expired exact commands alone cannot solve generalfuture
+coexistence. NEW current-paper-next-finite-round-readiness source/SYN package
+must narrow custody admission to actualfinancial writers while denying unknown
+custody access, retain source/mount/lineage and all bank/risk invariants.
+No genericPython/path waiver, newregistry/platform or blindpostclose retry.
+Parent owns activation; original future duties unchanged.
 
 ## Existing Duties / Limited Capability
 

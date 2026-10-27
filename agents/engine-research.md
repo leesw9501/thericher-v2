@@ -1,10 +1,10 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST; observed Oct27UTC19:10.
+2026-10-28 KST; observed Oct27UTC20:51.
 A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
 Model proposals never alter deterministic broker risk or original shared B/10.
 
-## Current Depth Campaign
+## Latest Economic Campaign / Closed
 
 A/research/current-long17-vsn-economic-development-20261028-v1.
 Frozen readiness contract4b8f7b78; actual Engine source2446057d.
@@ -18,11 +18,16 @@ Combined2160active/7200elapsed, hard20:08:43UTC: source180once/Data300/native240
 128full ordered updates maximum each; chronological INNERpatience16/LRhalf4/
 bestincl0/safe checkpoint, no numerical retry. Keep model/economic/source/data
 clocks and counts distinct. Data49ac handoff qualified, unknowns retained.
-Named real CUDA optimizer/ledger/checkpoint/native+cold paths completed for
-both arms; actual fit directories now exist. Final fit/selection/forecast/
-held readout is NOT yet evidenced by a terminal Consumer. No duplicate launch.
-EVAL held prices unmounted until both forecasts seal. Compare matchedLinear,
-UNIFORM17 and ownINITIAL; aligned growth/DD/turnover, no threshold rescue.
+Actual final CONSUMER.json at19:17:25: REJECT_ECONOMIC_VSN_INCREMENT.
+Both market CUDAfits128updates/selected128/MAX, VSN406.432s/381.38MiB and
+Linear394.974s/80.05MiB, co-tenancy true, NOT proof of convergence. VSN LRhalf1.
+Held prices stayed unmounted until both forecasts sealed; oneheld/6cells.
+20bp VSN growth1.2440735%/DD1.017623%; Linear2.6229543%/DD2.7934015%;
+UNIFORM.9962118%/DD.3721441%. OwnINITIAL improved but growth/DD comparison
+fails. Positive development growth is not a qualified strategy or broker PnL.
+Saved-output independent verify PASS without model/ledger/payload replay;
+10CIDs60CLIJobs/actualPIDstarts absent/handlesjoined/leaseabsent. Combined
+upper1156.4934141/2160, finalelapsed4122.237717/7200. No refunds/new fit grant.
 Global reuse/currentlisting/nonPIT/CA/finality limits remain, not independent alpha.
 
 ## Latest Closed Results
@@ -60,9 +65,26 @@ not independent alpha or broker PnL. Do not repeat completed model/ledger work.
 
 ## Next / Claim Boundary
 
-Finish only unused economic stages inside the frozen family caps and inspect
-terminal closures. Sagan prepares a stronger cost-symmetric economic baseline
-for a FUTURE contract, never changes the current frozen comparison.
+Risk-aware study is now CLOSED_REJECT, not source-only readiness:
+A/research/current-long17-risk-aware-linear-development-20261028-v1/CONSUMER.json,
+Source2602a8bc. OneCUDAfit30epochs/71.44s/80.20MiB/best6/patience24.
+20bp growth/DD risk.991695%/.391548%, cappedcachedLinear1.159057%/.611008%,
+momentum-.042757%/1.137747%, uniform.996212%/.372144%. Oneheld/6newcells,
+no oldledger replay; saved-outputverify/closure, upper338.974/1800. No rescue.
+
+Provisional adapter Source008a4eab at
+A/research/current17-provisional-paper-proposal-readiness-20261028-v1/CONSUMER.json
+closed SYN only: one safecheckpoint load/oneCPUforward17inventedrows and
+SDKfile producer/consumer. CapitalUNALLOCATED/allowfalse, not current inference.
+Actual Data currentF3 Source3b474a7d/ROLEdb5ec7df/FEATURES225a160f READY;
+PUBLISHEDa6b56a3f20:45:57.581129UTC. New owned actual inference package:
+A/research/current17-current-f3-provisional-inference-20261028-v1.
+OneCPUforward retained safeLinear weights plus fixedUniform, no fitting/held
+reopen. Future SDK decision >= exact publication. SDKNAS8 skips9NYSE,
+unsupported weight stayscash/no silentrenorm/fullUS17 replication. Research
+H5OPEN vs nativeH5nearCLOSE nonparity explicit. No profitability gate for Paper.
+Sagan prepares ONE new cost/turnover sequence hypothesis source/SYN only;
+no architectural grid or repeated closed training to occupy GPU.
 Probability proper scores do not establish expected PnL/confidence/Paper
 promotion. Operational Paper LOWVOL58f/f037 and MSFT65f/a861 are independent;
 runtime source7a failed actor admission, not a research permission hold.

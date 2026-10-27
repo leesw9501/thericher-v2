@@ -1,21 +1,26 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST; observed Oct27UTC19:10.
+2026-10-28 KST; observed Oct27UTC20:51.
 A=D:/thericher-v2/model-artifacts. Sagan current source-only proposal owner;
 Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
 
 ## Current Useful Proposal
 
-A/research/current-economic-baseline-readiness-20261028-v1, cap180active/
-1200elapsed, SOURCE/SYNTHETIC ONLY. Concrete consumer: next economic campaign,
-NOT current frozen VSN/Linear contract. Prepare one cross-sectional momentum/
-vol-scaling rule from existing18feature metadata, full lag/unknown/cash/cost
-symmetry vs UNIFORM17. Two primary sources, exact original pure kernel/native
-synthetic ledger check, no grid/market/held/GPU/fits. Produce executable
-readiness or rejection, not another reading list or report system.
+Cost-symmetric momentum/vol kernel is CLOSED and consumed by the risk-aware
+study2602, not an unrun proposal. Feature-support auditb0a2/bceb correctly
+required20OHLC keys/80sessions/39stockvolume;17-only input rejected. Actual
+coherent20 acquisition and currentF3 projection3b474a7d now satisfy the named
+current input guards, not providerfinality or model performance.
 
-Adopted economic family4b8f7b78 is running under Engine/Steward with qualified
-Data49ac. Original smallVSN+LSTM uses source inspiration, not copied weights:
+Current source/SYN-only package:
+A/research/current-long17-cost-turnover-sequence-readiness-20261028-v1.
+One new executable hypothesis addressing a demonstrated cost/turnover weakness
+with compatible baseline, native tiny solver smoke and chronological validation.
+No market/held/weights/GPU intake, architectural grid or rescue of old results.
+Hand off directly to Steward when finite producer/consumer/trial contract ready.
+
+Economic family4b8f7b78 is CLOSED_REJECT, not running. OriginalVSN+LSTM uses
+source inspiration, not copied weights:
 official MIT commits deep_fin_benchmark bee6ee83 and deepm94aa1482. March code
 predates Oct22 paper revision; futures zero-training-cost results are not
 US-equity net-cost evidence or a literal reproduction claim.

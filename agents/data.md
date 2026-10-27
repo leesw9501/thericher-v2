@@ -1,50 +1,59 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-28 KST; observed Oct27UTC19:10.
+2026-10-28 KST; observed Oct27UTC20:51.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Leibniz owns Data/schema; Parent shared MD/Git. A board is not a running worker.
+Leibniz owns Data/schema; Parent shared MD/Git. MD is not running-worker proof.
 
-## Current Qualified Handoff
+## Actual Fresh Acquisition
 
-A/data/current-long17-vsn-economic-packets-20261028-v1/CONSUMER.json:
-READY_REQUIRED_INPUTS_PRESENT_VERIFIED, Source49acb7aa, codecdeba260d,
-ABI-FINALf6e47ea3, family contract4b8f7b78.
-Payload M/us_equities/research_inputs/current-long17-vsn-economic-packets-20261028-v1.
-Named producer Liquid17EconomicSequencePriceProducer; separate fit/forecast/
-readout consumers, role directories RO, not the parent payload root.
+A/data/current17-forward-modp1-capture-caller-20261028-v1/coherent20-owner-pulse-r1/
+technical-envelope-r1/CONSUMER.json, Source16f2f081, runtimeSource8db79059.
+Actual20GET/1POST/0retry,20accepted pages x100=2000dailyrows, Jun5..Oct27.
+Fixed17stocks plusSPY/QQQ/IWM contexts; every required last80session present.
+Ended20:25:47/44.9557s/Jobclosed/pendingfalse. Not a plan or ongoing collector.
+Payload M/us_equities/kis_paper_private/current20-coherent-forward-capture-20261028-v1.
+Generation36b5bd43/outcome71413169 at
+A/data/current20-coherent-forward-capture-readiness-20261028-v1/actual.
+MODP1/GUBN0/BYMD20261027. New scoped60tokenfloor/existing atomic+legacy
+locks; frozen300contracts unchanged. Original17-only plan superseded UNRUN.
+Own-envelope identity faults preserved and repaired exactly, not Python-name waiver.
 
-17stocks/20daily contexts/18features; FIT2818daily/563cadence origins,
-INNER55daily/11cadence, EVAL15origins. Unknown FIT dates64 retained, no imputation
-or outcome-dependent deletion. Context ends before entry OPEN; target exits
-precede next role. Required/unused unknown absolute prices0, purge failures0.
-FIT/INNER absolute prices support self-financing economic loss, not residual
-labels as PnL. EVAL held prices stay physically unmounted until forecasts seal.
+## Current Model Input / Ready
 
-One projection/20CSV+20availability intakes/3old feature packets/22verify checks;
-actual named native producer12checks and cold consumer PASS. Four containers/
-24CLIJobs removed/exited/handles closed. Data upper47.9845591/300seconds;
-prior family source180 charged once, family2160/7200 unchanged. No repeated
-projection or verify payload intake. Engine already owns downstream native/fits.
+A/data/current20-current-f3-proposal-input-20261028-v1/CONSUMER.json:
+READY_ACTUAL_CURRENT_F3_INPUT_VERIFIED, Source3b474a7d/codecdeba260d.
+ONE current feature-only projection17stocks x20contexts x18features; allknown,
+finite beta and positive volume guards. Required80OHLCsessions each20 and
+39volume sessions each17. Original global origin5237/prefixclock preserved;
+no100row local rebase, old-price splice, missingness imputation or targets.
+ROLEdb5ec7df/FEATURES225a160f, actualavailability20:45:57.448166UTC,
+PUBLISHEDa6b56a3f20:45:57.581129. Future inference MUST start after exact
+post-fsync publication and bind ROLE/payload, not backdate decision.
 
-## Other Useful Coverage
+Named producer->typed codec->exact Engine adapter9ad1 native8checks passed
+before actual projection; independent saved-output verify passed without
+reprojection/source reintake/model. Threecontainers/18CLIJobsclosed;
+whole conservative upper85/240, noHTTP/privatebank/credentials/GPU/model.
+ROLE EVAL/FEATURES namespace is legacy feature codec only, NOT held outcomes.
+Current17currentF3 provisional inference owns the next actual model forward.
 
-A/data/current-intraday-research-readiness-20261028-v1/CONSUMER.json 4c8c955e:
-metadata inventory, complete SPY34/QQQ33sessions, partial51/52, four missing days.
-20stocks x10days contain1m/5m/10m/1h/3h, with distinct gaps/final-partial flags.
-Existence is not completeness, provider finality or historical arrival evidence.
+## Useful Existing Research Inputs
 
-C120/H60 PAST source765a60f9 already consumed without rebuilding:
-A/data/current-c120-h60-causal-past-packets-20261027-v1.
-FIT6054/145sessions; INNER1806/43,6unknown retained; EVAL2610/63 reused.
-QQQ/SPY OHLCV context120x10 ends by origin, explicit later entry/exit clocks.
-TCN/HGB/fixedHALF/rule studies are now closed, not unrun Data consumers.
+Historical economic49ac packets remain closed/reused, not the new ROLEsource:
+A/data/current-long17-vsn-economic-packets-20261028-v1/CONSUMER.json.
+FIT2818daily/563cadence, INNER55/11, EVAL15; unknownFITdates64 retained.
+Data oneprojection/native+cold/22verify/fourCIDs24Jobs/upper47.9846 closed.
+
+Intraday inventory4c8c955e:
+A/data/current-intraday-research-readiness-20261028-v1/CONSUMER.json.
+Complete SPY34/QQQ33sessions, partial51/52/fourmissingdays. Stocks20x10days
+include1m/5m/10m/1h/3h with distinct gaps/final-partial flags.
+C120/H60 packets765a already consumed by closedTCN/HGB/HALF/utility studies.
 
 ## Next / Limits
 
-Current economic packets need no new acquisition. Respond directly to exact
-schema/availability questions; do not repeat completed numerical Data work.
-Storage D free36.69percent at18:41 observation, not a prebuild claim.
-Currentlisting/nonPIT/MODP1/corporate-action/total-return/finality/retrospective
-capture limits constrain claims, not unrelated research or provisional Paper.
-Reuse valid token/client; scoped observer60floor does not rewrite frozen Data300.
-Workers own cursors/next_due; no foreground quota wait or invented collection.
+Respond directly to current Engine source/schema/clocks questions; do not
+repeat completed acquisition/projection. Fresh current acquisition is successful,
+not a claim of continuous collection. Dfree36.69percent at20:06 observation.
+Currentlisting/nonPIT/vendor adjustment/CA/totalreturn/providerfinality and
+retrospective capture limits constrain claims, not provisional Paper authority.
