@@ -39,87 +39,134 @@ No actual submit/fill/current broker holdings/PnL is inferred from installation.
 
 ## Current Parallel Work
 
-1. Parent integrates exact verified outcomes/Git; company runtime still awaits
-   original owned MSFT/LOWVOL opportunities above, not research profitability.
-   Clean strict reader Sourceb859/Consumer0b1026 at
-   A/execution/current-msft-lowvol-outcome-reader-readiness-20261027-v1/source-clean-r1
-   has native10/Ruff0/AST parity, NOT full bank-FS/private admission.
-   After due/owner closure bind a NEW finite offline scope/source/argv/SPEC/
-   diagnostic/point/anchor, never a consumed caller. Networknone/private+sourceRO,
-   actual actor/mount custody admission and full before/after membership/identity/
-   mtime/bytes. Exact account/basis/input/policy/request/fill joins; NULL for
-   missing/foreign/unbound. No recovery observe, lock creation or reserve release.
-2. Leibniz: audit057023ba CLOSED at
-   A/execution/current-scheduled-owner-health-audit-20261027-v1.
-   Root96/project88/enabled71/instances0/MSFT+LOWVOL8 XML+ACL exact.
-   ONE source-bound TTM diagnostic actually disabled09:13:49UTC, root
-   A/execution/current-ttm-exhausted-diagnostic-disable-20261027-v1,
-   Consumer3b2ba869/readbackd86bf6d9/Parent09:18exact XML+ACL+disabled+0instances.
-   Only Enabled true->false, other87definitions/ACL/enabled unchanged;
-   DPAPI rollback retained. Initial zero-effect native-default failure kept;
-   derived scope completed within original caps. No Task.Run/delete/API/private
-   effect, no trading-owner retirement. Package consumed/LLM released;
-   F9/MSFT/LOWVOL/future exits/unknown tasks protected.
-3. Socrates: KKT diagnostic CLOSED_VERIFIEDebfd3d00, native6solves97iterations/
-   invented sign oracles PASS; actual old residuals absent/cause UNRESOLVED.
-   No market retry or tolerance relaxation. Diversified20asset Sourcec81c0cce
-   adopted ONE CPU17equity Ridge question. Freeze NEW family at
-   A/research/current-liquid17-ridge-residual-open5-development-20261027-v1,
-   <=600combinedowned/2400elapsed actualstart, Source200 includes prior60once;
-   native90/fit30/infer30/replay30/verify90/cleanup30/reserve100. Existing0820
-   Data/17NAS+NYS/3ETFcontext/600sessions/3prefixes/47OOFcohorts. EXACT Ridge18
-   residualOPEN5/top5fairties vsUNIFORM17, original fractional.10NAV/20bpEACHleg,
-   not NAS100whole-share/KISrisk accounting.3marketfits/3predictionpasses/
-   <=20kfitrows4kpredictionrows/1nativefit+cold/1attempt0retry/2ledgers,
-   allscores+actions before oneHELD. Actual17-axis solver/file/ledger native
-   before market, FIT-only pooled scaler/INNERdiagnostic no selection. Strongest
-   growth>uniform+1e-10 AND peakDD<=uniform+1e-10. No subset/fold rescue.
-   First finish ONE fixed Linear/LSTM action blend
-   Source at A/research/current-predeclared-linear-lstm-fixed-blend-readiness-20261027-v1,
-   <=60owned/900elapsed actualstart. Freeze choice BEFORE LSTM outcomes or
-   label post-observation; no numerical authority/ratio or regime search.
-   Source predeclaration09:14 is before this consumer observed outputs, not
-   a proof of unused data. Parent pre-effect support correction preserves
-   native fairties/all100/exacthalf action weights; union may exceed20.
-   No lexical truncation or Paper10target/risk change. Forecast ABI pending.
-4. Faraday: correlation historyData CLOSED_READY2a4f0ccc; broader metadata
-   CLOSED22587af1 at A/data/current-broader-us-equity-research-input-readiness-20261027-v1.
-   Actual512/~1.2Mrows exist, allNAS tickerA..C, NOT full-US representative.
-   Existing507peer input needs new matched baselines/vintage;17NAS+NYS equities
-   and3ETF600common-session alternative needs exact new consumer scope.
-   No acquisition/build/array effects; direct metadata handoff to Engine.
-5. Halley: recurrent Source8a066987 CLOSED, independently compared9d96ecf3;
-   old GRU/LSTM/TCN already exist, no firstRNN/newraw/causalarchitecture claim.
-   Full invented bank-FS reader proof CLOSED12164f48 at
-   A/execution/current-msft-lowvol-reader-bankfs-native-20261027-v1,
-   4nativecalls/4CIDs28Jobsclosed/240conservativedebit. Actual e414/ded65/748SDK
-   fileloader/native bank/projection PASS, but actual admission UNQUALIFIED:
-   real-writer census unexercised and legacy mount included mutableoutputs.
-   Source-only mount repair CLOSED417ac66e at
-   A/execution/current-msft-lowvol-reader-source-bundle-readiness-20261027-v1,
-   120debit/1newSYNcold/1CID6Jobsclosed: exact access.py+read.py legacy bundle,
-   native imports/guards/fullmembership identity/mtime/bytes PASS. Ready for
-   NEW actual due caller; normal three-phase real-writer admission remains,
-   not a new permission/qualification wait. No actual private read/Task/API/
-   recovery/locks/financial effect/old consumed replay. Infra LLM released.
-6. Schrodinger sole GPU coordinator owns NEW adopted oneLSTM family:
-   A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1.
-   FAMILY-FREEZE actualorigin09:09:42/hard11:09:42UTC,2700combinedowned/
-   7200elapsed; Source500 includes Halley85+comparison15 ONCE. Otherpartitions
-   native240/affine30/fit900/infer180/readout90/verify200/cleanup90/reserve470.
-   One1562paramLSTM16/RAW63+context9/seed20261027, existing14aData/0b26affine
-   reused, same TOTAL_OPEN5/datepairBCE/splits/purges. One marketfit/0retry/
-   <=96epochs13632updates/15300allcalls12Mknownrows/97INNERchecks/2EVALpasses/
-   50000scores/oneheldtarget/0baselineModelcalls/financial. Fit900 includes
-   loading/INITIAL/checkpoint/I/O; stop usefultraining870+30tail. INNER-only
-   earlystop/LR, no EVAL checkpoint selection. New actual native1fit2updates/
-   <=8calls3200rows/1cold restore/model+optimizer+RNG/safeexport before market;
-   measured headroom first, no circular permission hold. Model Source/prep is
-   current, actual market training NOT yet evidenced. No duplicate old fit.
+1. Parent integrates verified outcomes/Git; last push57392429. Company runtime
+   still depends on original MSFT22:40/LOWVOL00:30KST, not research profitability.
+   Source-only reader bundle417ac66e is READY at
+   A/execution/current-msft-lowvol-reader-source-bundle-readiness-20261027-v1.
+   Use exact immutable legacy access.py+read.py, not mutable outputroot.
+   Existing native bankFS12164f48/fresh bundle1cold/1CID6Jobsclosed. At actual
+   due/owner closure freeze NEW finite source/argv/SPEC/point/anchor/diagnostic;
+   normal three-phase actual custody-writer census, source/private RO,
+   networknone and before/after full membership/identity/mtime/bytes remain.
+   No consumed caller, recovery observe, lock creation or reserve release.
+   Exact account/basis/input/policy/intent/fill joins; missing/foreign/unbound NULL.
+2. Socrates CPU: LONG17 Ridge CLOSED_VERIFIED_SCREEN_PASS_NOT_ALPHA9266325e at
+   A/research/current-liquid17-long-history-ridge-open5-development-20261027-v1.
+   Global09:49:18..11:19:18UTC/1300combinedowned5400elapsed: Data500 ONCE+
+   Engine800(Source250/native120/fit60/infer60/replay60/verify120/cleanup50/
+   reserve80). Same18features/residualSPYbeta60 OPEN5/3prefixes, FIT begins2015
+   and ends at original fold cutoffs, oldINNER/47OOF/terminal dates retained.
+   FixedRidge alpha1/lsqr1000/tol1e-6/intercept,3marketfits+1native/0retry/
+   <=200kfitrows4kpredictionrows/2financialcells vsmatchedUNIFORM17.
+   FIT-only datebalanced input scaler and loss, unknown/empty rows retained,
+   OOF all47all17 required; scores/actions seal before oneHELD. Strongestgrowth
+   >uniform+1e-10 AND peakDD<=uniform+1e-10, not zero-DD/cash or alpha.
+   Oldshort comparator allowed only exact source/feature/target/mark parity.
+   Actual3fits/127134supervisedrows/1.131fitseconds/6Jobsclosed, combined
+   Data225.176+Engine278=503.176owned. Growth4.06711336%/peakDD.76057783%
+   versusmatcheduniform1.85962518%/1.04131163%, both frozen conditions PASS.
+   Researchscreen only, not independentalpha/currentPaper fills or permission.
+   Currentpoint Source readiness and actual inactive proposal are CLOSED at
+   A/research/current-liquid17-long-ridge-currentpoint-readiness-20261027-v1,
+   and A/research/current-liquid17-long-ridge-currentpoint-proposal-20261027-v1.
+   Consumer6329b00b/proposala9fd5d1a: latestpredeclaredF3 ONLY/one savedrestore/
+   one17rowCPUforward/0fitGPUtargetAPI/retry, full17known/top5fairties/5positive/
+   exactmass1. Unallocated/requested.025originalB/allowFALSE; no capital/orders.
+   Native real17pointfile/inventedcoef/scaler/action before actualpayload,
+   93owned/3Jobsclosed/Source/F3clockbound, no fold/epoch rerank orrefit.
+3. Faraday Data: long17 packets VERIFIED_READY_CLOSEDf496b3b3 at
+   A/data/current-liquid17-long-history-open5-packets-20261027-v1/HANDOFF.json,
+   M/us_equities/research_inputs/current-liquid17-long-history-open5-packets-20261027-v1.
+   One projection/20CSV+availability intakes/0HTTP/retry/model, fiveJobsclosed,
+   exact named producer-file-cold/empty/gap/targetmask cases.2954origins/
+   46070featureknown/46050labelknown, OOF799rows/47x17 allrequiredmarks known.
+   Preserve historical NYS gaps2021-05-05/2023-06-05 and allcalendar slots;
+   exact old600 overlapfeature/target/mark/UTC parity PROVEN. No Data rebuild.
+   Previous NYS discoveryf29ff287 reused2007/08..2026existinghistory; StageB
+   NOT_NEEDED/0network. Existing512NASA..C is not representative wholeUS.
+   Current17point Data VERIFIED_READY_CLOSED335fb02f at
+   A/data/current-liquid17-feature18-currentpoint-20261027-v1 +M equivalent,
+   <=350owned2400elapsed actualfreeze. Source120/native60/reuse-or-fetch100/
+   build30/verify20/cleanup20. Prefer saved e76 20contexts61priorD1 through
+   Oct26; one17pointprojection only after newtyped producer-file-cold native.
+   Conditionalmissing-input KIS_PAPERmarketD1 <=40GETincl2technicalretries/
+   <=1POST onlyifnovalidtoken/atomic+legacygate300s/1.25pace, no account/order/
+   live/Tiingo/newTask. Do not fetch alreadyretainedsuccessfulpages. Preserve
+   actual capture vsdelivery clocks/asofOct26/17axis/masks/no futurelabels.
+   Actual20retainedrawfiles/1220rows reused/GET0POST0/oneprojection/fiveJobs
+   closed/141.758owned. All17known, exact18features; capture05:49KST/newData
+   delivery19:30KST are distinct, before22:30KSTentry, not inference clocks.
+4. Schrodinger remains sole GPU resource coordinator. Last new static+sequence
+   hybrid CLOSED4fe28c9f/oneCUDAfit29epochs4118updates/best14/111.020s/766MiB;
+   BCE.67629455 losesLinear.67568712, no repeat/currentRNN variants.
+   Source0a4976d9 adopted ONE MLP18 long17 practicalcontrast, notfirstMLP/grid.
+   NEW A/research/current-liquid17-long-history-mlp-development-20261027-v1,
+   2400combinedowned7200elapsed actualfreeze, Source250inclprior25once/native180/
+   stats60/fits1440/infer120/proper+cost120/verify120/cleanup60/reserve50.
+   One1153param18->32->16->1/GELU/drop.1/seed20261027 across3requiredprefixes,
+   <=2concurrentready distinctprefixchildren underONEcoordinator/headroom4GiB.
+   3fits/0marketretry/128epochseach/B32/33152updates/34000allcalls17Mknownrows/
+   6OOFpasses1598scores/1heldLABELS+1MARKS/<=1newledger/0baselinecallsreplays.
+   Eachfit480inclload/scalers/init/INNER/checkpoint/I-O;trainstop450+30tail.
+   FIT-only x/y scaling/datebalancedloss/emptydates0, inverseyONCE. New actual
+   namedDataAPI/modelMSEoptimizer2updates/fullstateRNG/export/cold beforemarket,
+   native1fit<=8calls3200rows1cold; atmost1unusedpremarketcaller correction,
+   no completedstage replay. SixNN forecasts+cachedRidge seal BEFORE labels.
+   All-required: rawMSEbeatsRidge+INITIAL, growth>maxRidge/uniform, DD<=minboth.
+   Exactcontract/native/prospective aggregatecaps before numerical. OldData/
+   Ridge costs not recharged. This family is now CLOSED43c647cc/REJECT:
+   three actualCUDAfits20/32/30epochs, selected0/12/10,6774updates/223.980sum
+   leafwalls/86MiBpeakeach; 6956forwards/3,571,331rows/417.573owned/7CIDs37Jobs
+   closed/leaseabsent. SelectedrawMSE.00166429 losesRidge.00163670;
+   growth2.27091913%/DD1.76913107% losesmatchedRidge, no retry/currentfit.
+   NEW Source-only chronological OOF regimefusion readiness60owned900elapsed
+   at A/research/current-liquid17-ridge-mlp-regime-fusion-readiness-20261027-v1:
+   one2parameter softgate/commonbreadth60, F1+F2trueOOFtrain/purgeexit>=F3entry,
+   laterF3eval15dates. Physicaltrain/eval labels separated iflateradopted,
+   no in-sample expertstack/feature-threshold-grid/numerical authority.
+5. Closed scientific packages below never reopen. Optional Source-only17 fixed
+   half target-inertia proposal may run only during a genuine owned Data wait,
+   not delay qualified long17 handoff; no numerical authority/ratio grid.
+6. Execution audit/one TTM exhausted noncustodial diagnostic retirement complete
+   3b2ba869/Parent09:18currenthashcheck, other87unchanged/rollback kept. No
+   Task.Run/delete/action/trigger/ACL/trading-owner/F9 changes. LLM released.
+   Actual observer/entry outcomes still unknown until exact due evidence.
+7. Claude transport diagnostic ed1031d4 at
+   A/infra/current-claude-advisory-transport-diagnostic-20261027-v1:
+   one harmless public smoke with prior working CLI2.1.296/argv also exits1,
+   subtype success/is_error true. Argument/auth/quota/network cause UNKNOWN;
+   no settings/login/billing change/retry or agreement claimed. Advisory
+   unavailable is not a company hold. Sagan source review6cd3092f closed with
+   no confirmed fault; its row-geometry resolution was supplier-attested.
+   Existing prospective admission960d6778 before LSTM inference counted
+   actual4,293,956rows/5743calls, under unchanged12M/15300; no fit repeat.
 
-Invoked Sagan Source-only LSTM review90owned900elapsed runs independently at
-A/research/current-raw63-lstm-source-review-20261027-v1. No numerical work,
-extra approval or repeat native calls; material findings go directly to Engine.
+Invoked Sagan Source plan at
+A/execution/current-liquid17-nys-paper-compatibility-readiness-20261027-v1,
+<=150owned1800elapsed; existingc891 old-reader migration requirement first,
+currente414/ded65 and oldF9/exitSource compatibility. Noactualprivate/API/
+credentials/schedule/financial effects. Atmost2newinventedofflinecodec cases,
+no oldnativeproof replay; prepare exact affectedpaths/minimalbackcompatibility,
+notanother permission gate or deployment. Plan confirms wholebank NASD-only
+loader and wrapper/profile/reader paths; genericintent enumalreadyNYSE-aware.
+Parent adopted concrete implementation at
+A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1,
+<=1200owned5400elapsed actualfreeze: exacttrusted source-only overlay +focused
+tests, minimalplanfiles/NAS+NYSnewprofile/closedvenueinstrument/persistedexchange
+joins. Preserve oldNAS canonicalbytes/V1-V4/ETFpaths/unknownF9/risk/identity.
+No actualCsource/SDK/image/private/Taskchanges until Parent integration and
+requiredverification; originalMSFT/LOWVOLslots unchanged. Future firstNYSE
+stock write requires compatibleactualreaders/writers and positiveoldactor
+closure, not newbank/reserve reset or a renewedoperatorapproval.
+
+Two finite metadata-only waiters own original task next_due, no new schedule,
+background process, recurrence or follow-upchain: Leibniz MSFT13:52UTC/deadline
+14:00 at A/execution/current-msft-owned-opportunity-readiness-wait-20261027-v1;
+Halley LOWVOL15:42UTC/deadline15:50 at analogous current-lowvol-owned-
+opportunity-readiness-wait-20261027-v1. Worker clock.sleep, one post-due task
+metadata query, then categoricalcallback/stop. No private read or financial
+inference. Parent performs fresh actual reader admission separately. Ready
+Data/research/preparation continues while they wait.
 
 Direct qualified role callbacks need no Parent approval relay. A lane-local
 block does not stop another ready package. An MD is memory, not a running LLM,

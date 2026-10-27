@@ -128,6 +128,34 @@ NEW CPU17Ridge family and separate fixedblend Source roots/caps are NEXT;
 do not execute prior consumers or infer training from a freeze.
 No profitability gate before delegated Paper or arbitrary GPU filler.
 
+Latest completed sources/commands are CONSUMED, do not rerun:
+- A/research/current-liquid17-long-history-ridge-open5-development-20261027-v1,
+  Consumer9266325e:3fits/47OOF/2cells/screenPASS4.067%growth/.761%DD,
+  not actualPaperPnl/alpha. Dataf496 at A/data/current-liquid17-long-history-open5-packets-20261027-v1.
+- A/research/current-liquid17-long-history-mlp-development-20261027-v1,
+  Consumer43c647cc:3CUDAfits20/32/30epochs/best0/12/10/all7CIDs37Jobsclosed,
+  REJECTproper+economicincrement, no retry/model/ledger replay.
+- A/data/current-liquid17-feature18-currentpoint-20261027-v1,
+  Handoff335fb02f:17known/61sessions/20retainedinputs/GET0POST0/oneprojection.
+- A/research/current-liquid17-long-ridge-currentpoint-proposal-20261027-v1,
+  Consumer6329b00b:one17rowCPUforward/5targets/mass1/allowFALSE/UNALLOCATED,
+  requested.025B is not capital or Paper authorization/deployment proof.
+Current helper bodies/registry/timewindows belong to these named completed
+scopes; reuse only qualified pure interfaces in a separately frozen successor.
+
+Future NAS/NYS support is being implemented in SOURCE-ONLY overlay at
+A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1.
+Do not point actual tasks/readers there or writeNYSEentries before compatible
+wholebank readers/writers are deployed after positiveoldactorclosure. Keep
+oldNAS bytes/V1-V4/input/identity/F9reservedbudget/ETFspecialpaths. NoV5bank,
+separatecapitalowner, newpermissiongate or schema-ignored fallback.
+
+Finite original-opportunity clockwaiters (no newTask/process/schedule/chain):
+current-msft-owned-opportunity-readiness-wait-20261027-v1 due13:52UTC/deadline14;
+current-lowvol-owned-opportunity-readiness-wait-20261027-v1 due15:42/deadline15:50,
+bothunder A/execution. OneTaskmetadata inspection thenstop/callback. They do
+not readprivate or qualifyfills. Parent stillbinds NEW actual offlinereadscope.
+
 Native generic financial closure25d932 at A/x/syn-rx-1027-lb/CONSUMER.json
 combines old prefix with exact sameidentity continuation. Both invented
 cohorts ownedflat/F9reserve kept; no real KIS or private bank. Old failed cases
@@ -154,6 +182,11 @@ Claude CLI2.1.296 structured_output ABI smoke works. Reuse strict decoder4053
 and exact COMMAND from A/verification/claude-review-abi-20261027-v1;
 12synthetic tests, no old review reruns. Root0 is not agreement/auth proof.
 Final genuine Source challenge retains only categorical verdict/external pointer.
+That original success is historical: current diagnostic ed1031d4 at
+A/infra/current-claude-advisory-transport-diagnostic-20261027-v1 is CLOSED/
+review_unavailable. SameCLI/oldworkingargv onepublicsmoke exits1 with subtype
+success/is_errortrue; auth/quota/flag/network cause unknown. No repeatedtest,
+login/settings/billing action justified; unavailable is not agreement/globalhold.
 
 ## Verification
 

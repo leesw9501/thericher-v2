@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-27 KST,09:18UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts.
 Parent owns shared MD/Git/cutovers. AGENTS owns standing private Paper authority.
 Never KIS_LIVE_*/live/real money or reset ONE original sharedB/10/F9/cost/loss.
 
@@ -40,6 +40,32 @@ proof; R1/R2 failures preserved. R3 consumed. Review_unavailable/exit1 not
 agreement. Parent accepted narrow measured metadata fix, not new broker risk.
 
 ## Actual Read-only Status
+
+Future Ridge17 source candidate is prepared but NOT active:
+A/research/current-liquid17-long-ridge-currentpoint-proposal-20261027-v1,
+Consumer6329b00b/proposala9fd5d1a. Full17/5positive/exactmass1, latestF3 only,
+oneCPUforward/0fit/API/private. Requested.025originalB is UNALLOCATED,
+allowFALSE, no newbankwriter/intent/order or profitability authority granted.
+
+Concrete NAS/NYS compatibility plan found wholebank stock validation fixed to
+NASD, immutablequoteinstrument and modelprofile wrappers/readers NAS-only.
+Generic order enum alreadyNYSE-aware; V4 persists exchange, no V5 migration.
+Sagan now implements exact minimal source-only overlay+tests at
+A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1,
+1200owned5400elapsed. New separateprofile/instrumentNAS->NASD,NYS->NYSE,
+sealedroute/persistedexchange/intent/fill binding. OldNAS canonicalbytes,
+ETF/QQQpaths/risk/identity/F9reservation/V1-V4 keysets remain. No actualCsource,
+image/Task/private changes while overlay is prepared. BeforefirstNYSEentry,
+Parent must source-attest compatible relevant readers/writers and positive
+oldprocess/containerclosure; no separatebank/foreignadoption/reserve reset.
+This is a codecompatibility requirement, not renewedoperatorapproval.
+
+Finite metadata-only clockwaiters own original MSFT13:52UTC/LOWVOL15:42UTC
+next_due under current-{msft,lowvol}-owned-opportunity-readiness-wait-20261027-v1.
+Leibniz/Halley respectively, one post-dueTaskmetadataquery/callbackthenstop;
+no process/newTask/recurrence/chain/KIS/Docker/private/financialread. Parent's
+actual reader still needs NEW scope/fresh actualcustody admission. Missing/
+Taskexit is not submit/fill/flat; no currentfinancialconclusion from waiters.
 
 Future dual-cohort reader is READY/INACTIVE0b1026 at
 A/execution/current-msft-lowvol-outcome-reader-readiness-20261027-v1/source-clean-r1,

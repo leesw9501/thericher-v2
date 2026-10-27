@@ -1,49 +1,55 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-27 KST,09:04UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c is ONE GPU/registry coordinator.
 Parent owns MD/Git. Model choice belongs Engine, not a resource approval board.
 
 ## Current Ready / Owned
 
-Schrodinger remains ONE GPU/registry coordinator. No active GPU fit claimed.
-Fourfit round CLOSED: LINEAR49epochs3479updates, MLP23/1633,
-crossasset17/1207, TCN16/4528. Old477.659752/324.176247/729.169227 debits,
-checkpoints/failed stages unchanged. No duplicate training after interruption.
+ONE GPU/registry coordinator remains Schrodinger. No active GPU fit claimed.
+Latest complete fits:
+- LSTM82b2b1d1:36epochs5112updates/best21/patience15/137.183s/756MiB,
+  350.946inclusiveowned/3CIDs15Jobsclosed/leaseabsent.5743calls4,293,956rows.
+- Static+sequence4fe28c9f:29epochs4118updates/best14/patience15/111.020s/
+  766MiB,272.591inclusiveowned/3CIDs15Jobsclosed/leaseabsent.4637calls/
+  3,469,601rows,1nativefit2updates/1cold,2EVALpasses before1heldtarget.
+Both lose cachedLinear pairBCE under frozen primary. No repeated fit/checkpoint/
+seed/window rescue. Hybrid used1572param one raw-input learner, not expertstack.
 
-Old forward-risk onehead family TECHNICAL_INCOMPLETE: Ridgefit1.226s complete,
-GPU failed counter os.replace at epoch6/at least736updates/fivecompleteepochs,
-16.719s. No marketretry, no qualified GPU model, all owner/lease closed.
-Ridge3 readout13badf subsequently uses completed Ridge, not a refit.
+LSTM source11c04783 and hybrid72c22fb2 used existing d6 runtime/safeNPZ/typed
+roles/local volatile spool->closedDexport. No crash/power-loss recovery claim.
+Hybrid new397-input join and full optimizer/RNG native checks precededfit.
+LSTM native proof had narrower moment/RNG assertions; do not regrade it.
+Source rowmeter concern: local limits alone exceeded aggregate, but immutable
+geometry upper11,361,712<12M and prospective admission960d before inference.
+Sagan source-only6cd3 depended on supplier role totals, not numerical validation.
+Actual counts stayed below all ceilings; no completed stage was replayed.
 
-Joint familyab98473e at A/research/current-joint-return-risk-learning-development-20261027-v1
-CLOSED_REJECT_DUAL_INCREMENT. One new CUDA fit55epochs7810updates/best40/
-INNER_PATIENCE15/151.811trainerseconds/168MiB. ReturnBCE losesLinear; risk
-improvement cannot promote a partial head or rescue the whole AND criterion.
-Final534.030/1800combinedowned,4CIDs/20CLIJobs closed/leaseabsent,
-7874forwards/two EVALpasses/one dualtarget/Parent21refs exact.
-Old warm native1fit2updates was not repeated; unusedcold286237 restored and
-forwarded once, new marketcallerb205 binds compound native chain.
-Volatile localspool263faa has closed D export/cold proof; not crash recovery.
-No seed/width/lambda rerun or dummy utilization.
+Long17 nonlinear Source0a4976d9 was adopted as ONE MLP18 recipe/threeprefixes,
+notseed/architecturesearch. Actual family CLOSED43c647cc at
+A/research/current-liquid17-long-history-mlp-development-20261027-v1.
+F1/F2/F3 CUDA20/32/30epochs, selected0/12/10, updates1600/2624/2550.
+Leafwall52.008/85.426/74.348s,86MiBpeakeach,<=2co-tenantprefixworkers;
+sumouterfitwalls223.980s includesstats/I-O/cleanup, not isolatedbenchmarks.
+6956forwards3,571,331knownrows/5actualOOFrestores1598logicalscores/
+1LABELS1MARKS1ledger/0baselineReplayretry,7CIDs37Jobsclosed/leaseabsent.
+417.573inclusiveowned/2400, nooldData/Ridge recharges. SelectedMSE/costs fail
+matchedRidge; no width/seed/longer-fit rescue. ModelEpoch0alias avoided one
+redundantrestore/forward, not a missing countedforecast.
 
-CPU Linear/JointRisk7ec7e40d CLOSED/REJECT: one stored forecast/u composition/
-path/ledger/0fitforwardGPUretry/116.779newowned plus55prior once/allclosed.
-CPU covariancea1b19248 CLOSED numerical certification incomplete after first
-solver,209.381inclusiveowned/no costpath/ledger/retry/allclosed. Its new KKT
-diagnostic is invented/source-only, cannot reopen a market trial.
+Current Source-only readiness60owned900elapsed:
+A/research/current-liquid17-ridge-mlp-regime-fusion-readiness-20261027-v1.
+One2parameter truechronologicalOOF expertgate/commonbreadth60, trainF1+F2 with
+targetexit<F3entry purge/evalF3later. No newbasefit/GPU or numerical authority.
+GPU is available, no permission hold; no dummy training while no useful frozen
+GPU question is ready. CurrentNAS100 recurrence intake remains closed.
 
-NEW oneLSTM family adopted/frozen at
-A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1.
-Actual09:09:42..11:09:42UTC/2700combinedowned7200elapsed. Source500 includes
-closed Source8a06685+comparison9d9615 ONCE, not maximum allocations as debits.
-One1562paramLSTM16/RAW63context9/seed20261027;96epochs13632updates/
-fit900includingI/O/0marketretry/15300allcalls12Mknownrows/2EVALpasses/1target.
-Native1fit2updates<=8calls3200rows/1cold and actual safe model/optimizer/RNG
-localspool->Dexport before market; measured headroom before tiny native and
-projected real fit. Full partition/caps FAMILY-FREEZE/NEXT. Existing14aData/
-0b26affine reused, no new build/normalization. Current Source/native preparation,
-not yet an evidenced active marketfit. No oldmodel/cap rescue or dummy GPUload.
+CPU long17 family9266325e CLOSED withscreenPASSgrowth4.067%/DD.761%,
+503.176combined inclData225.176ONCE+Engine278; noGPU. SavedF3 currentpoint
+6329b00b one17-rowCPUforward CLOSED/allowFALSE/unallocated, not a trade.
+Oldshort17b1/Linear-LSTM7246 also closed, no repeated fits/ledgers.
+Old fourfit/TCN/joint/risk-counter failures, weights and debits remain immutable;
+refer engine board/Git57392429 and original Consumers instead of a new diary.
 
 Project first GPU priority still holds during personal apps. For a genuinely
 NEW ready frozen question, source/schema+freeVRAM permits tiny nativeCUDA,

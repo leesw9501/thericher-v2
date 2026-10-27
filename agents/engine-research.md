@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-27 KST,09:04UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own hypotheses/features/targets/fits/replay/composition, not broker risk.
 Parent owns MD/Git. AGENTS owns policy. History: Git57074588/original consumers.
 
@@ -35,60 +35,89 @@ Installation not runtime/fill. Stock-only alternative remains dormant.
 
 ## Ready Research Queues
 
-Schrodinger owns GPU resources. NEW oneLSTM16 family adopted/frozen:
-A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1.
-Actualorigin09:09:42/hard11:09:42UTC/2700owned7200elapsed, Source500 includes
-Halley85+comparison15once. One1562param RAW63_CONTEXT9 LSTM16, seed20261027,
-sameTOTAL_OPEN5/datepairBCE/2015..23FIT/2024INNER/2025EVAL, original14aData/
-0b26affine reused.96epochs13632updates/fit900 includingI/O/0marketretry,
-INNER-only earlystop/scheduler. New actual native optimizer/state/RNG/export/
-cold and measured resources before market. Numerical training not yet evidenced.
-Exact all-call/row/readout/closure caps NEXT/FAMILY-FREEZE, no old fit replay.
-Source8a066987/comparison9d96ecf3 confirm recurrent/RAW63 already studied;
-this is an uncompleted exact task-specific recipe, NOT new data/firstRNN/
-strict information superset or causal architecture attribution.
+CPU longer-history17 family CLOSED_SCREEN_PASS_NOT_ALPHA9266325e:
+A/research/current-liquid17-long-history-ridge-open5-development-20261027-v1.
+Global09:49:18..11:19:18UTC/1300combinedowned inclData500 ONCE+Engine800.
+Same18features/SPYbeta60 residualOPEN5/three prefixcutoffs/47OOFdates,
+extended FIT begins2015. Fixed Ridgealpha1/lsqr1000tol1e-6/intercept,
+three marketfits+one native/0retry/<=200kfitrows4kpredictionrows/2cells;
+FIT-only datebalanced scaler/loss/empty masks, INNERdiagnostic no tuning.
+Dataf496b3b3 now qualified, actual role/file/solver/ledger native first.
+Compare matchedUNIFORM17 growth+DD; oldshort comparator only exactoverlapparity.
+Actual3fits127134supervisedrows/1.131s/LSQR16each/6Jobsclosed,
+Data225.176+Engine278=503.176owned. Growth4.06711336%/peakDD.76057783%
+versusuniform1.85962518%/1.04131163%, both primary conditions PASS.
+This is a developmentscreen, not independentalpha/Paper promotion or PnL.
 
-Socrates: KKT synthetic diagnostic CLOSEDebfd3d00/6solves97iterations,
-sign oracles PASS; conservative mean-nu rule was explicitly frozen, not proven
-implementation defect/oldcause. Actual old residuals absent =>UNRESOLVED.
-Next Source-only20asset input question and one fixed Linear/LSTM blend proposal
-BEFORE new model outcomes; no payload/replay/numerical authority. Faraday22587
-confirms512NASA..C coverage and existing17equity+3ETF alternative, not wholeUS.
+LatestpredeclaredF3 currentpoint proposal6329b00b CLOSED at
+A/research/current-liquid17-long-ridge-currentpoint-proposal-20261027-v1.
+One savedF3restore/one17rowCPUforward/no fitGPUtargetsAPI/retry, native17point/
+scalar/affine/tie beforepayload,93owned/3Jobsclosed. Proposal a9fd5d1a has
+full17/top5fairties/5positive/exactmass1/unallocated/requested.025B/allowFALSE.
+CurrentData335fb02f reused20retainedraw61sessioncontexts/noHTTP; independent
+actual capture/new delivery/inference clocks. MixedNYSE execution compatibility
+is source/runtime work, not a modelprofitability or operatorpermission wait.
 
-Recent completed family consumers (under A/research):
-- current-nas100-ridge-risk-information-readout-20261027-v1,13badf9a:
-  MSE1.258145 vsnaive1.587838/constant2.042956, one feature/three seals/one
-  target/0fitGPUretry/112newowned/native8/independent8/Parent15refs/allclosed.
-  Old five-bundle family remains technically incomplete after counter I/O error.
-- current-fixed-linear-ridge-risk-cost-development-20261027-v1,906576ea:
-  growth.99852744%/peakDD2.17489873% vsLinear.9838582%/2.22661241%.
-  New relative-DD comparator adopted BEFORE effects, absolute unavailable.
-  One arm/path/ledger/0baselineReplay/modelcalls/retry/148newowned/allclosed.
-  LOWVOL2.09734538%/1.90155322% dominates, no current Paper swap.
-- current-joint-return-risk-learning-development-20261027-v1,ab98473e:
-  one1234param2head CUDAfit55epochs7810updates/best40/patience15/151.811s/
-  168MiB. ReturnBCE.67622494 losesLinear.67568712, riskMSE1.153165 beatsRidge,
-  but full REJECT_DUAL_INCREMENT. No partial-head promotion/seed/width rescue.
- 534.030combinedowned/4CIDs20Jobsclosed/leaseabsent/Parent21refs exact.
-  Original warm optimizer retained, unused cold286237 restored once;
-  marketb205 consumes exact native chain, two EVALpasses before dualtarget.
-- current-linear-joint-risk-exploratory-cost-development-20261027-v1,7ec7e40d:
-  POST-observation policy REJECT, growth.97039286%/peakDD2.16995268%, loses
-  frozen maxgrowth/minDD references. One storedforecast/u/composition/path/
-  ledger/0fitforwardGPUretry/native7/independent8/116.779newowned plus55prior
-  Source once/allclosed/Parent14refs exact. Whole joint REJECT unchanged;
-  not head promotion/independent alpha/Paper change or a ratio rescue.
-- current-correlation-aware-fixed-allocation-development-20261027-v1,a1b19248:
-  CLOSED_NUMERICAL_CERTIFICATION_INCOMPLETE, not economic performance failure.
-  Data2a4f0ccc qualified, first LW/SLSQPsuccess8iterations then independent
-  primal/KKT denied. Separate residual magnitudes not saved. No action seal/
-  held cost path/ledger/marketretry, performance UNKNOWN not zero.
- 209.381inclusiveowned/allclosed/Parent9refs. Old caps/results never reopened.
+Schrodinger sole GPU coordinator: no active fit claimed. NEW Source-only
+long17 nonlinear same-feature regression readiness60owned900elapsed at
+A/research/current-liquid17-long-history-nonlinear-hypothesis-readiness-20261027-v1.
+Source0a4976d9 adopted exactlyoneMLP18/3requiredprefixes; actualfamily CLOSED:
+A/research/current-liquid17-long-history-mlp-development-20261027-v1,43c647cc.
+CUDA20/32/30epochs/best0/12/10/6774updates/223.980sumleafs/86MiBpeakeach,
+6956calls3,571,331rows/417.573owned/7CIDs37Jobsclosed/leaseabsent.
+SelectedrawMSE.00166429 losesRidge.00163670; growth2.27091913%/DD1.76913107%
+losesmatchedRidge =>REJECT_NONLINEAR_INCREMENT.0marketretry/baselineReplay,
+5actualOOFrestores/1598logicalINITIAL+SELECTEDscores/1LABELS1MARKS1ledger.
+Output-reader pure-import correction aftermodelcompletion/beforefirstOOFreadout
+preserved oldfailure and completed models; no inference/producer repetition.
 
-Depth: future20session8bf86e20 untouched. New longer training must have a real
-question/learning curves/finite budget, not repeat a completed fit. All above
-are adaptive reused2025/currentlisting/nonPIT/MODP1/CA/finality limited, not
-independent alpha or a prerequisite for provisional Paper.
+NEW Source-only regimefusion readiness60owned900elapsed at
+A/research/current-liquid17-ridge-mlp-regime-fusion-readiness-20261027-v1.
+One2parameter softgate ontrueOOF F1+F2, targetexit<F3entry purge/laterF3eval,
+commonbreadth60 featurebeforeentry. No array/label/solver/GPU/fit authority;
+separatephysicaltrain/eval custody and finite matched15cohort comparators if
+lateradopted. No in-sampleexpertstack, no more standalone width/seed search.
+CurrentNAS100 recurrent recipe intake is CLOSED, no more variants for load.
+
+Recent closed consumers (under A/research):
+- current-nas100-open5-raw63-lstm-learning-development-20261027-v1,82b2b1d1:
+  oneCUDAfit36epochs5112updates/best21/INNER_PATIENCE15/137.183s/756MiB.
+  BCE.67758897 beatsownINITIAL/constant, losesLinear.67568712 =>REJECT.
+  350.946inclusiveowned/3CIDs15Jobsclosed/leaseabsent/16checks/Parent11refs.
+  5743calls4,293,956rows/2EVALpasses/1target/0financial/retry. New prospective
+  aggregate admission960d6778 before unusedinference; SourceReview6cd3 source
+  checks only/supplier-attested rowgeometry. No optimizer or inference replay.
+- current-nas100-open5-static-sequence-learning-development-20261027-v1,4fe28c9f:
+  ONE new1572param LSTM16+fullRAW19 joint-input model, not in-sample expertfusion.
+  ActualCUDA29epochs4118updates/best14/111.020s/766MiB; BCE.67629455 improves
+  standaloneLSTM but losesLinear =>REJECT.272.591owned/3CIDs15Jobsclosed/
+  leaseabsent/4637calls3,469,601rows/oneheldtarget/0financial orretry.
+  Native changed397-input join/optimizer/fullstate/export/cold beforemarket.
+- current-liquid17-ridge-residual-open5-development-20261027-v1,b1e8586f:
+  three CPU prefixfits16,014rows/LSQR16,18,18/1.059fitseconds, one nativefit/
+  cold/13independentchecks/6Jobsclosed/227inclusiveowned.47OOF/all17.
+  Growth2.19142965%/peakDD1.66937122% versusUNIFORM17 1.85962518%/1.04131163%.
+  Growth improves but frozen DD condition fails =>REJECT_INCREMENTAL_CLAIM.
+  Fractional.1initialNAV/20bpEACHleg, fees.98456383% vs.07097380%; not aligned
+  with NAS100 whole-share/2025period or real KIS risk/fees/PnL.
+- current-fixed-linear-lstm-action-blend-cost-development-20261027-v1,7246a276:
+  recipe frozen before observing newLSTM outputs; exacthalf ownfairtop10
+  actions/full100, no raw-scoreblend. Growth1.15485766%/peakDD2.46159075%,
+  fails cachedLOWVOL maxgrowth/minDD =>REJECT_FIXED_FUSION. Oneforecast/u/
+  composition/path/ledger/0modelGPUbaselineReplayretry/native4/checks54/
+  126inclusiveowned/6Jobsclosed. Initialimport failed BEFORE anycase/payload,
+  separate unusedcaller r1 preservedoldsource, completed proofs not repeated.
+- Ridge3 13badf primary logMSE PASS1.258145 vsnaive1.587838/constant2.042956;
+  fixedcost906 growth.99852744%/peakDD2.17489873% narrowly improvesLinear but
+  LOWVOL2.09734538%/1.90155322% dominates. Old absoluteDD unavailable;
+  relative comparator adopted BEFORE effects. All prior debits immutable.
+- Jointab98473e oneCUDA55epochs/best40/151.811s/fullAND REJECT;
+  separate Linear/JointRisk7ec7e40d policy REJECT. Correlationa1b19248 numerical
+  certification incomplete, performanceUNKNOWN; KKTebfd actualcauseUNRESOLVED.
+
+Depth/future20session8bf86e20 untouched. All are adaptive reused historical
+development/currentlisting/nonPIT/MODP1/CA/finality limited, not independent
+alpha. Research rejection or missingprofitability never holds delegated Paper.
 
 ## Completed Information / Financial Comparison
 

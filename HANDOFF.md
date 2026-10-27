@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-27 KST, through09:18UTC.
+2026-10-27 KST, through10:56UTC.
 Root C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
@@ -10,7 +10,7 @@ Parent owns shared MD/Git/activation; AGENTS.md owns authority.
 Private no-cost Paper is delegated. Never KIS_LIVE_*/live/real money.
 Preserve ONE original B/10, costs/losses/pending/F9; no foreign adoption.
 No genuine operator decision. Preserve unrelated %SystemDrive%/.
-Pushed checkpoints84f849a5 and9b881a81; current integration is GitHEAD.
+Pushed checkpoint57392429; current integration is GitHEAD.
 Current actual LOWVOL metadata is separately
 evidenced below; documentation alone is not deployment.
 
@@ -56,23 +56,45 @@ This is installation/readback, NOT submit/fill/runtime closure. R3 is consumed.
   Parent independently confirmed XML/ACL/disabled/instances0 at09:18:46UTC.
   Rollback/failures retained; no Task.Run/KIS/private or trading-owner changes.
   Execution LLM released to standby, not a permanent daemon.
-- Schrodinger / Engine and sole GPU coordinator: joint/JointRisk CLOSED/REJECT.
-  Source8a066987/comparison9d96ecf3 adopted ONE task-specific LSTM16, family
-  actualfreeze09:09:42..11:09:42UTC/2700owned. Current Source/native preparation,
-  not yet an evidenced marketfit. Existing RAW63/context9/affine reused.
-- Socrates / Engine CPU: KKT diagnosis CLOSEDebfd3d00, oldcauseUNRESOLVED,
-  no marketretry. Sourcec81c0cce adopted17equity Ridge residual OPEN5 versus
-  matched uniform17/3prefixes/47cohorts,600owned2400elapsed actualfreeze;
-  start after independent fixed Linear/LSTM Source choice is frozen.
-- Faraday / Data: correlation READY2a4f0ccc; broader metadata22587af1 closed.
-  Actual512/~1.2Mrows but allNAS tickerA..C, not wholeUS; existing507 input
-  needs matched baselines/vintage.17NAS+NYS equities+3ETF alternative identified.
+- Schrodinger / Engine and sole GPU coordinator: LSTM82b2/hybrid4fe2 and
+  long17MLP43c647cc all CLOSED, no active GPUfit. MLP3prefixes20/32/30epochs/
+  6774updates/223.980sumleafwalls failedRidgeMSE/growth/DD; 7CIDs37Jobsclosed.
+  NextSource-only trueOOF regimefusion60owned900elapsed, no basefit/grid.
+- Socrates / Engine CPU: long17Ridge9266325e CLOSED SCREEN_PASS_NOT_ALPHA,
+  growth4.06711336%/DD.76057783% versusuniform1.85962518%/1.04131163%,
+  combined503.176owned/3fits/6Jobsclosed. LatestF3currentpoint6329b00b CLOSED:
+  one17rowCPUforward/top5fairties/5positive/full17/exactmass1/allowFALSE/
+  requested.025B UNALLOCATED/no orders. No EVALwinner/refit/extraallocation.
+- Faraday / Data: long17Dataf496b3b3 VERIFIED_READY_CLOSED:2954origins/
+  46070featureknown/46050labelknown, OOF47x17 required known. Existing20CSV/
+  availability intakes/oneprojection/0HTTP/fiveJobsclosed, exact old600parity.
+  NYS discoveryf29 StageB NOT_NEEDED, existing2007/08..2026 histories reused.
+  Preserve2021-05-05/2023-06-05 gaps/allcalendar slots. Directtypedhandoff.
+  Current17point335fb02f also READY/CLOSED,20retained61-sessioncontexts/
+  all17known/oneprojection/GET0POST0/fiveJobsclosed/141.758owned. Actual old
+  capture05:49KST versus newdelivery19:30KST/inference are distinguished.
 - Halley / invoked Infra: bank-FS12164f48 PASS4coldcalls/4CIDs28Jobsclosed.
   Source-only bundle417ac66e then fixed mutable legacy mount: exactly access.py
   and read.py, full stability/one new SYNcold/1CID6Jobsclosed/120debit. Ready
   for NEW actual caller, with normal fresh three-phase real-writer admission
   still required, not another permission/qualification wait. No actual read;
   invoked Infra LLM released after quiescent handoff.
+
+Sagan now implements a narrow NAS/NYS compatibility overlay at
+A/execution/current-liquid17-nas-nys-compatibility-implementation-20261027-v1,
+1200owned5400elapsed. Source plan found wholebank NASD-only validation would
+reject futureNYSE entries for unrelatedNAS/F9readers. PreserveoldV1-V4/NAS
+bytes/risk/ETFspecialpaths/unknownreservation; genericintent enum alreadyNYSE.
+NO actualCsource/image/Task/private changes during overlay prep; exact actual
+reader/writer migration and positiveoldactor closure needed beforefirstNYSE
+effect. This is implementation work, not renewedoperatorapproval.
+
+Two finite metadata-only workerclock waiters own original next_due:
+Leibniz13:52UTC MSFT / Halley15:42UTC LOWVOL. Exact task/time ScopeJSON under
+A/execution/current-{msft,lowvol}-owned-opportunity-readiness-wait-20261027-v1.
+No newTask/backgroundprocess/recurrence/chain/private/KIS/Docker effects;
+one post-due taskmetadata callback, then stop. Parent's freshactual private
+admission/read remains separate; no fill inferred from taskmetadata.
 
 Parent owns shared MD/Git/activation. Exact package roots are in NEXT/boards.
 Dispatch is not proof of an active numerical worker. Earlier release/native
@@ -131,6 +153,35 @@ was recovered under Gate; no actual bank/Task/KIS/credential effect.
 Earlier failures and arithmetic remain Git440be599/original immutable artifacts.
 
 ## Research / Operations
+
+Latest closed outcomes (all adaptive development, not actual KIS PnL):
+- LSTM82b2b1d1 at A/research/current-nas100-open5-raw63-lstm-learning-development-20261027-v1:
+  36epochs5112updates/best21/137.183s/756MiB, BCE.67758897 losesLinear.67568712.
+  350.946owned/3CIDs15Jobsclosed/5743calls4,293,956rows/16checks/Parent11refs.
+- Joint-input hybrid4fe28c9f at A/research/current-nas100-open5-static-sequence-learning-development-20261027-v1:
+  29epochs4118updates/best14/111.020s/766MiB, BCE.67629455 also losesLinear.
+  1572param one learner/raw19+raw63, NOT in-sample expertfusion.272.591owned/
+  3CIDs15Jobsclosed, no retry/financial. No more currentNAS100 recurrence.
+- Short17Ridgeb1e8586f at A/research/current-liquid17-ridge-residual-open5-development-20261027-v1:
+  3prefixfits/LSQR16,18,18/1.059fitseconds/16,014rows, growth2.19142965%/
+  peakDD1.66937122% vsuniform17 1.85962518%/1.04131163% =>frozenAND REJECT.
+  227owned/6Jobsclosed/13checks. Differentperiod/fractionalaccounting fromNAS100.
+- Fixed Linear/LSTM actionblend7246a276 at A/research/current-fixed-linear-lstm-action-blend-cost-development-20261027-v1:
+  exacthalf fairtie actions/all100, growth1.15485766%/peakDD2.46159075%,
+  REJECT_FIXED_FUSION. Oneforecast/u/path/ledger/0modelGPUbaselineReplayretry,
+  native4/checks54/126owned/6Jobsclosed. Initialimport failed before anycase;
+  separately pinned unusedcaller fixed it without repeated completed proof.
+
+Long17Dataf496b3b3 at A/data/current-liquid17-long-history-open5-packets-20261027-v1/HANDOFF.json
+is READY: one existing-byte projection, no download; all old600 overlapping
+features/targets/marks/UTC equal. New longer-fit Ridge consumer is independent
+of oldshort rejection. Missing two historical dates retained, not imputed.
+Claims remain currentlisting/nonPIT/MODP1/CA/TR/finality limited, no alpha.
+
+Claude diagnosticed1031d4 at A/infra/current-claude-advisory-transport-diagnostic-20261027-v1
+reused prior working2.1.296/publicargv once, exit1/subtype success/is_error true.
+Cause UNKNOWN, not proved auth/quota/unsupportedflag. No retry/login/settings
+change, allJobsclosed; unavailable advisory not agreement or a company hold.
 
 Fourfit information round CLOSED: Linear49epochs/best33, MLP23/best7,
 crossasset17/best1, TCN16/best0; no running GPU worker or permission hold.
@@ -271,6 +322,12 @@ Only PSfa23/test2da30 changed among1411protected members; other1409exact.
 Fresh09:08 protected1411 mismatch0; startup1/Ruff/externalRuff/threeCompose
 PASS, closed-outcome reference checks45/0mismatch. External integration:
 A/verification/current-observer-native-quiet-fix-20261027-v1/EXTERNAL-CLOSED-RESEARCH-0918.json.
+Fresh11:00 tracked production/tests/scripts/dependencies/config/control diff0
+versus57392429, RepoRuff0; sixclosedmodel/Data/currentpoint consumers88host
+refs/0mismatch/0guestunverified, no numerical replay. Exact integration:
+A/verification/current-observer-native-quiet-fix-20261027-v1/EXTERNAL-LONG17-INTEGRATION-1100.json.
+Retain broadD-tree Ruff37 styleissues (frozenlegacy34/prepare2/lease1);
+focused newauthoring PASS is not an entireartifacttree-clean claim.
 Separate serial scratch retained, no all-scratch-clean claim. External code needs its
 own native/source/owner checks; these tests are not deployment or fill evidence.
 Prior full4c9a2956 and docs verification remain historical, not rewritten.

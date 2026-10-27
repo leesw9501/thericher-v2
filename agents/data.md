@@ -1,90 +1,60 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-27 KST,09:04UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Own data/calendars/availability; Parent owns MD/Git. AGENTS owns authority.
 History/debits remain Git57074588 and original immutable consumers.
 
 ## Current Work
 
-Original currentpoint scope CLOSED with unavailable required SPY context:
-A/data/current-nas100-feature19-currentpoint-20261027-v1/token-diagnostic-continuation-r1/CONSUMER.json,
-cb0f8134. Additional token POST1 succeeded/2xx/TTL86400; same in-memory client
-served28GET,27nativeaccepted pages then ATLC rate_limited,0retries. Original
-unclassified token failure remains unclassified, not invalid credentials or
-proof that the old4s timeout caused it. Explicit300s token guard retained.
-26stocks have strict63sessions, but exact SPY/NYS page is empty; date mask
-false/all100featuresunknown, NOT cash/no-signal. Actual schema/cold checks PASS,
-payload cannot drive a model. FournewJobsclosed/238.652cumulativeowned; old
-failure/cost unchanged. No persisted bearer/account/order/Task effects.
+Long17 historical feature/target packets VERIFIED_READY_CLOSEDf496b3b3:
+A/data/current-liquid17-long-history-open5-packets-20261027-v1/HANDOFF.json.
+M/us_equities/research_inputs/current-liquid17-long-history-open5-packets-20261027-v1.
+Source0f62336e/producer and codec frozen before actual native role/file/cold,
+gap/empty/targetmask/futurepoison checks. One projection/20CSV+20availability
+intakes/6oldcached packet intakes/0HTTP/retry/model/GPU, allfiveJobsclosed.
+2954origins/17literal equities/18unchangedcausalfeatures,46070featureknown/
+46050labelknown; OOF47x17=799 required known and heldmarks complete.
+Same captured generation2026-10-17, not historical arrival/PIT proof.
+Two NYS calendar gaps2021-05-05/2023-06-05 retained as masks, no imputation/
+datecompression/future-based eligibility. Empty historical dates preserved.
+Original old600 overlappingfeatures/targets/marks/UTC FULL_PARITY_PROVEN,
+so cached short comparator may be reused only under its unchanged accounting.
 
-Route repair CLOSED_DATA_READY32007b85:
-A/data/current-nas100-feature19-currentpoint-route-r2-20261027-v1/CONSUMER.json.
-Original training creator/capture binds SPY/AMS; actual63sessions confirmed,
-not a new economic context or order-venue alias. New56GET ALLaccepted/0retry,
-26successful stock pages reused; aggregate84GET including oldfailure/empty.
-One new tokenPOST/TTL86400/300s guard/1.25pace. Actual old ATLC500/EGW00201
-is per-second request excess, not daily quota/history limit. Meterdispatch is
-pre-slot, not exact wire telemetry. No more acquisition needed for this point.
-Literal100 retained/81known/dateTRUE/19fixedfalse/63sessionsJul29..Oct26.
-ROLE1a639df4/payload9932b126, actualobserved05:34:52.213233UTC beforeOct27OPEN.
-Source78959e70/effectivebuildf2d93f22/caller60f7f232/native+actualcold PASS.
-243.681owned/600, all6Jobsclosed; old238.652charged separately unchanged.
-Four-literal route guard and missing caller write_set failures preserved;
-neither changed math/keys/masks nor repeated successful HTTP/feature build.
-No labels/affine/model/account/order/LIVE/Task. Old cb0f masked packet remains.
+New Engine consumer: current-liquid17-long-history-ridge-open5-development-20261027-v1.
+Three chronologicalprefixFITs extend to2015 while originalcutoffs/INNER/47OOF/
+terminal dates stay. Combinedfamily1300 includesData500 ONCE+Engine800,
+global09:49:18..11:19:18UTC; no newbuild or Data cost refund/recharge.
+Direct qualified contract/native/output refs delivered to Engine, no Parentrelay.
+Source-only nonlinear same-feature long17 intake is separate, no newData.
 
-Direct callback produced Socrates28e89e10: two actual allowFALSE proposals,
-one saved Linear restore/81-row CPUforward/0fits. Faraday now independently
-checked actual source/capture/proposal clocks and route/profile bindings for
-creatorc919, now frozen actualinert75a7379f/input58f. Actual Data observation,
-pipeline lower/upper bounds and new delivery are explicitly distinguished;
-RAW19N25/SPY63/original100NASroutes preserved. No HTTP/model/private effects.
+Current17 FEATURE18 point VERIFIED_READY_CLOSED335fb02f:
+A/data/current-liquid17-feature18-currentpoint-20261027-v1/HANDOFF.json.
+Exact20retainedrawfiles/1220rows/61priorofficialsessions Jul31..Oct26,
+all17known/full17routes/SPY-QQQ-IWMcontext/same18kernel/no old8featurepayload.
+Oneprojection/one typednativeproducer-file-cold/GET0POST0/retry0/model0,
+141.758owned/fivequietJobsclosed/Dfree36.706%. Raw/model bytes outsideGit.
+FeatureendOct26close, latestoriginalcaptureOct27 05:49:48KST, newData delivery
+19:30:58KST/readback19:30:59KST; not an inference or historicalpublicationtime.
+Direct17point contract toSocrates produced6329 inactiveF3proposal/oneforward,
+no automaticorder/sourcefinality/quote/orderability or capital claim.
 
-NEW risk Data CLOSED/READY02eb785d:
-A/data/current-nas100-forward-risk-packets-20261027-v1/HANDOFF.json.
-Source06c9/native db80/PACKETS9c46/coverage d0b1/verified5b33; producer678c/
-codec d0ed. Actual producer->named file->cold typed consumer before one market
-projection; canonical1+oldRAW19roles3 intakes,0retry/fourJobsclosed/RuffPASS.
-Raw20 adds strictly past21 OPEN logMS; target exact future six OPENs/five
-returns logMS, EPS addition1e-12. No affine, imputation or dropped keys.
-Featureknown100349/17416/17828, lossknown100009/17066/17458; required past/
-future path missing0 under declared population. Zero variation remains valid.
-All100/PIT/independent alpha not claimed. Separate EVAL target stays Data-held
-until five new forecast bundles seal. Direct callbacks to CPU/Steward sent.
-102.039/350owned incl conservative Source/cleanup upper; prior familySource150
-charged once separately, not refunded. No HTTP/model/private/Task/Git effects.
-Next readiness produced fixed return/risk pure kernel under original FIVE ABI,
-not the new THREE proof. That source/native package is CLOSED unchanged.
-New three-method-r1 scope<=90owned900elapsed under composition-readiness root
-adapts only qualified Ridge3 ROLEa5b11502/payloadc2a27646/source72728; one tiny
-invented producer-file-cold proof, no market actions/replay/fit/API. Direct
-qualified handoff lets Socrates start the separately frozen one-arm cost study.
-Do not reuse expired old preparation clocks or change old FIVE-source results.
+NYS9 discovery f29ff287 CLOSED at
+A/data/current-nys9-daily-history-extension-20261027-v1/CONSUMER.json.
+Existing2007/08..2026-10-16 history found; official2015..2023 calendar2264,
+all9 commonknown2262. StageB NOT_NEEDED/GET0/POST0; raw/canonical unchanged.
+This did not itself qualify a numerical input; the separate newproducer above
+does. No new source-wide earliest/1m/provider-finality inference.
 
-Joint dualData CLOSED_READYaf9175:
-A/data/current-joint-return-risk-dual-packets-20261027-v1/HANDOFF.json.
-Source0a0ac846/codec896277/producer764d1b; onebuild12roleintakes/0retry/
-61.9836284owned. First19/masks/keys/clocks and two own-task loss masks exact;
-counts100009/17066/17458 mature, retained100axis/250EVAL/5purges. New typed
-dual producer-file-cold before market; separate held EVAL target, no rawprice/
-canonical/HTTP/model/GPU/Task/Git. Used by one joint model, never rebuild.
-PastOPEN21 correlation Data CLOSED_READY2a4f0ccc:
-A/data/current-past-open21-correlation-packets-20261027-v1/HANDOFF.json,
-M equivalent. Sourcee46df903/ROLEa7889f13/61.381owned, one canonical/q intake/
-projection/native, all49origins100slots/490selected histories have22pastOPEN
-known/nonzeroSD. Unselected29943unknown preserved; no futureentryOPEN/labels.
-Retrospective2026 capture never backdated to2025/PIT. Engine firstsolver KKT
-certification failure is NOT a Data failure; no rebuild or HTTP repetition.
-
-Existing-manifest-only broader-US input feasibility CLOSED22587af1:
-A/data/current-broader-us-equity-research-input-readiness-20261027-v1,
-60newowned/90cap, no arrays/acquisition/build/fullscan/allcommandsclosed.
-Actual512/~1.2Mrows, allNAS tickerA..C; not whole-US/sector representative.
-507peer training input exists but source/vintage differ; need new matched
-baseline, not reuse100BCE as aligned comparator. Existing17NAS+NYS equities
-with3ETF/600common sessions offer no-download diversification. Exact new
-consumer role/target/coverage remains a later numerical scope, not inferred.
-Metadata-only direct handoff to Socrates; no dataset projection authorized here.
+Broader metadata22587af1 CLOSED: actual512/~1.2Mrows allNASA..C, not wholeUS/
+sector representative; existing507peer input needs own matched vintage.
+17NAS+NYS plus3ETF supplies genuinely different membership, not first crossvenue.
+Previous currentpoint32007/LOWVOL+Linearpoint28e89/inertinput75a7,
+RAW19/RAW63/risk02eb/dualDataaf917/correlation2a4f are COMPLETE. Do not repeat
+successful GETs, projection, inference or conversion. Paths/details/debits in
+Git57392429/9b881a81, HANDOFF and original immutable Consumers.
+Currentpoint observed05:34:52UTC/full100/81known/63sessions beforeOct27OPEN.
+Old ATLC500/EGW00201 was per-second excess, not daily quota/history limitation;
+300s token guard/oneclient/cache/1.25s measuredpace retained, no credentiallogs.
 
 ## Qualified Current Inputs
 

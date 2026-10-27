@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-27 KST,08:11UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-27 KST,10:56UTC. A=D:/thericher-v2/model-artifacts.
 Own source-backed mechanisms/pure proposals, not broker risk/credentials.
 Engine owns exact targets/splits/costs/fitting/interpretation. Parent owns MD/Git.
 History/old deprecations remain Git57074588 and original immutable consumers.
@@ -71,6 +71,18 @@ Socrates separately prepares one fixed Linear/LSTM policy BEFORE new outputs;
 proposal does not modify primary, broker risk or grant numerical authority.
 
 ## Checked Project Evidence / Limits
+
+Latest long17 hypothesis uses ACTUAL existing18features:20/60momentum,
+RMSvolatility/simpleRSIfraction/populationBollingerz/relative momentum/coremean
+andpositivebreadth,20:60RMSratio/SPYbeta60/residualmom5/relativevolume5:15.
+These names are not a claim of WilderRSI14 or newly researched indicators.
+Long17Ridge9266 screen4.067%/.761%DD vsmatcheduniform1.860%/1.041% uses
+same47historicalcohorts; Dataold600parity, no paid/newdownload. LatestF3 current
+proposal6329 inactive/allowFALSE, actualNYSE path needs concretecompatibility.
+Threeprefix MLP18/GELU/drop.1/1153params43c6 actuallytrainedCUDA20/32/30epochs,
+MSE/growth/DD loseRidge; no standalonewidth/seed rescue. One chronologicalOOF
+2parameter regimegate Source readiness is next, not in-sampleexpertstack or
+automaticfitting. Reusedgloballyseen labels, sourceMode1/nonPIT/CA limits kept.
 
 Latest NAS1002730/8084: LINEAR49epochs/best33 and MLP23/best7 actually trained
 onCUDA; pairBCE .675687 vs .676095. MLP beats owninitial/constant, notlinear.
