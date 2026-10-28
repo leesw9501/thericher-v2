@@ -6,6 +6,9 @@
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company outcome coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared policy/documents, integration, Git and activation.
+Current Engine/Steward Raman01a1813f-666f-73a3-ae59-dc3ecb40cf31 after
+Turing positive06:39 closure/Parent transfer. Historical Turing facts below
+are completed work, not a second running registry/GPU coordinator.
 No operator decision is pending. Preserve unrelated untracked %SystemDrive%/.
 
 Never read/route KIS_LIVE_* or enable real money. Private no-cost Paper is
@@ -93,9 +96,24 @@ deferred on a NEW overly broad all-Python census; research actor41504 was
 actually Turing's native worker, not a collector. Historical second actor stays
 unknown. Repair gates actual named/source-matching collectors, not unrelated
 Python. Original clocks/debits remain; one additional POST explicitly allowed.
-Actual r2 PROGRESS06:07UTC:1POST420GET/100newcomplete symbol-sessions/
-49,800retainedrows/30oldcomplete-skips. Running finite loop, not final closure
-or a qualified research dataset. Native token/cache guard is collector-scoped.
+Actual r2 CLOSED5ee36f78 at06:13UTC:1POST517GET/123newcomplete symbol-sessions/
+47,970RTHminutes/61,200retainedrows/36oldcomplete-skips. Combined failed+new
+tokenPOST2/GET517/0wire retries. Stopped owned-time cap2680.642845/2700,
+not a provider floor. Root/Job/OS/token gate closed; Parent26refs0mismatch.
+CACHE-MANIFEST185d1bf4 is immutable, not merged into old caches/current33.
+Jason now classifies exact unfinished cursors/required-window support from
+metadata only, not another capture or duplicate source probe.
+
+New Core8 research packets are ACTUAL READY:
+A/data/current-core8-c120h60-packets-20261028-v1/ACTUAL-READY.json,
+Source1d4fae4a, one projection/actual cold PASS. Six stock targets plus QQQ/SPY
+context, ONE120minute lookback/60minute payoff, fixed11:30/12:30/13:30ET.
+FIT216scheduled/147eligible throughOct13, INNER90/87 Oct14..20,
+DEV90/90 Oct21..27. Train/dev features/dev outcomes physically separate.
+Features[N,120,3,5], targets RAW_SIMPLE, full60bar OHLCV paths separate.
+Optional first-lag/flat-range features stay masked; raw past completeness is
+not derivedfeature observed.all(). Canonical bar lag is an offline convention,
+not measured availability/finality/execution parity. No market imputation.
 
 ## Research Results And Queue
 
@@ -143,6 +161,19 @@ Generic FeeProx/gating/capacity repeats are already studied; no new frozen
 campaign inferred from cost drag. Closed accounting300upper preserved.
 Current GPU work is not inferred from assignment or completed31second fits.
 
+current-core8-pooled-c120h60-development-20261028-v1 COMPLETE62551273:
+one HGB57stages/selected37/.424s, one CUDA TCN38updates/selected14/9.39s/
+78.24MiB. HGB/TCN/blend allcash/noninformative; properMSE worse FITconstant.
+Rule17trades growth-.111570percent/DD.113122percent, no threshold/cost rescue.
+61checks/8CIDs48Jobs/lease closed, finalupper2409.543156/3600. Exact crossOS
+bootstrap/typed producer-consumer proof retained; no duplicate fit/readout.
+Raman now prepares ONE BB20/context representation family at
+current-core8-bb-context-ablation-20261028-v1,3600active/7200elapsed/<=3fits:
+two indicator HGB/one raw+indicator TCN, fixedblend; old raw controls reused
+only compatible sealed forecasts. Cicero kernelc1bdd671/10tests/Ruff READY.
+SameData1d4/current20bp eachleg/controller/threshold, no10bp rescue. Source/
+native proof before fits; assignment is not current GPU activity or Paper PnL.
+
 ## Execution Readiness / Unknowns
 
 F9 query f6d996e1/Source6d58: exact original account/basis/request binding,
@@ -167,12 +198,26 @@ current-derived candidateb2fd6247/92ee5fd5 native3tests passed. CurrentLOWVOL
 e2b06935 differs historicalba2a; Planck owns its exact current-source rebind
 in current-legacy-lowvol-current-source-rebind-20261028-v1 (source/SYN only).
 Linear f545/235e matches. No actual migration/NYS registration yet.
+CurrentLOWVOL rebind74388717 also completed: hostcce5f924/route36cb0448,
+4native tests/two cold readers/2CIDs13Jobs closed. Planck prepares minimal
+five-future-action binder/mock checks only; actual cutover remains Parent-owned
+after current f545 positive closure. Do not discard intervening recovery fixes.
 Pascal completed current-finite-multileg-model-round-preparation-20261028-v1:
 one serial shared-bank dispatcher, three invented legs/unknown-restart tests.
 Future uniform engineering baseline needs no fake daily features; unsupported
-mass stays unspent. Final6PASS/1FAIL: olde414 fixture package loader failed,
-so legacy backward compatibility remains unproved. No actual f545/order/Task
-change, substitute unknown request or new capital. All6CIDs37Jobs closed.
+mass stays unspent. Final6PASS/1FAIL is preserved. Separate12bf6b65 native
+probe executes archived e414 parser/projection/legacy writer successfully;
+combined old fixture still6/1 because it compares different projection types.
+Parent accepts exact compound semantic proof, not a fictitious combined PASS.
+Opt-in repo multileg entry API/tests integrated and verified: serial233PASS,
+full19564PASS26knownlinkSKIP/403.69s/8workers/Ruff/3Compose. Default one-effect
+session/budget/current f545 unchanged. Candidate image920d88e5/SDK78c3eba3
+adds only module0f2587ff to1406unchanged old members; actualLinux32tests/cold
+import/nativeclosuree584 PASS, not deployment. Pascal prepares future dated
+NAS_H5 Uniform17 pair under that image root/future-nas-baseline-pair, max3
+serial entry effects/original shared bank and exact owned exits. No fake
+market features; unsupportedNYS cash. Independent of futureF3/ML/NYSE
+migration, not today's cap change/F9 substitute. No actual new Task/release.
 
 ## Outcome Readers / Continue
 
@@ -187,9 +232,12 @@ Existing app oct26-paper follow-up configured one14:40UTC check; accepted
 configuration is not guaranteed delivery/timezone proof. No replacement chain.
 Workers own next_due; do not foreground-wait for sessions while work is ready.
 
-Tracked authority unchanged: b1a05d40/1412members; full53102 PASS19532,
-26known Windows-link SKIP,35warnings/396.43s/8workers; serial165+57/Ruff/
-default+research+accounting Compose PASS/clean owned scratch. Fresh digest
-match permits docs-only reuse; D code requires its own native/actual checks.
+Current tracked authority ec946b4b/1414members at
+A/verification/current-finite-multileg-entry-integration-20261028-v1:
+full19564PASS/26knownlinkSKIP/35warnings/403.69s/19590collected/8actualworkers,
+serial233PASS26.24s/Ruff/default+research+accountingCompose PASS. Posthash0,
+24observedPID-start pairs gone/own temp+lease absent. First serial status was
+lost, not reused; captured second run is authority. Old b1a/base2f retained.
+Docs-only reuse needs exact digest match; D code needs its own native checks.
 Company completion still requires exact actual native runtime/reconciliation,
 not a model, test, installation, document or commit.

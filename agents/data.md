@@ -58,9 +58,13 @@ closed because NEW fallback classified every Python as a collector. One actor
 41504 maps to Engine native Source0ed; historical other actor remains unknown.
 Parent authorized one additional POST for bounded successor inside old clocks/
 remaining caps, preserving old failed debit. Do not claim running/success from
-callback/oldcache skips. Actual r2 progress06:07UTC:1POST420GET/100newcomplete
-symbol-sessions/49,800retainedrows/30oldcache-skips; loop RUNNING, closure and
-final accepted manifest still required before new research-packet derivation.
+callback/oldcache skips. Final r2 Source5ee36f78/manifest185d1bf4:
+1POST517GET/123newcomplete symbol-sessions/47,970RTHminutes/61,200retainedrows,
+36oldcache-skips. Combined failed+newPOST2,0wire retries. Owned-time stop
+2680.642845/2700, not provider floor. Root/Job/OS/token gate closed;
+Parent26hashes0mismatch. No old cache/current33 mutation.
+Jason now owns metadata-only unfinished cursor/required-window classification
+under current-core8-unfinished-cursor-readiness-20261028-v1, not new API calls.
 
 Guard lesson: Data admission scopes to actual cache/account/token collectors,
 not all unrelated Research/Python/GPU processes. Reuse exact named/source/
@@ -68,6 +72,21 @@ argv collector matching, fresh actual Task/process/root lineage and token
 atomic+legacy exclusion. No ready=True, genuine unknown-writer bypass, age
 reclaim, request flood or company-wide wait. Sagan Source324182c2 is a qualified
 collector-scoped example without the erroneous unmatched-Python fallback.
+
+## New Pooled Stock Research Input
+
+Tesla produced current-core8-c120h60-packets-20261028-v1/ACTUAL-READY.json,
+Source1d4fae4a: one actual projection/cold PASS, six stock targets plus QQQ/SPY.
+ONE C120/H60, origins11:30/12:30/13:30ET; RAW_SIMPLE/full60bar path.
+FIT216/147eligible throughOct13; INNER90/87 Oct14..20; DEV90/90 Oct21..27.
+Typed features[N,120,3,5] and target/path consumers physically separated by
+role. Optional first-lag/flat-range masks stay unknown; required raw completeness
+is past_complete, not all derived features observed. No price imputation.
+Canonical start+publicationlag/entry boundary is offline assumption, not
+provider finality, measured historical availability or live/Paper parity.
+Original producer has Windows codec path: Engine must smoke exact actual
+consumer/bootstrap before fits, not assume Linux portability from Windows cold.
+Actual model training is Engine's separate contract, not Data READY evidence.
 
 ## Scheduled Fresh Input
 

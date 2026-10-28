@@ -47,28 +47,42 @@ Existing app follow-up accepted for one14:40UTC; delivery unobserved.
    Data28c8 endpoint354/83/89/same KIS F3. Uniform growth3.831705percent/
    DD1.962512percent beats Ridge/Joint/blend; HGB selected0 equals Uniform,
    raw literal pass is rounding not skill. No duplicate fit/rescue.
-   Turing owns saved-cost diagnosis/one deduplicated next-hypothesis proposal
-   (300active/1800elapsed), no new outcome intake/evaluation/training yet.
-3. Jason owns finite recent-core minute capture/collector-admission repair.
-   Sep15 exact cursors empty, not whole-source failure; Sep28 complete caches
-   were reused, not new downloads. First new job1POST0GET was blocked by an
-   overbroad all-Python rule. Scope guard to actual collectors/token/cache
-   writers; preserve genuine unknown ownership and old failures. One additional
-   POST/remaining900GET/original2700active7200elapsed continuation approved.
-   No current33 or old cache mutation; useful data collection is not a gate.
-4. Planck completed five-Task source match4db9/current-MSFTb2fd native binding.
-   CurrentLOWVOLe2b0 is NOT historicalba2a; exact current-source rebind is next,
-   not blind activation. NewUS17 image6a65/ad9 passed native/mixed-book tests,
+   Saved-cost diagnosis COMPLETE46checks/0new fits/outcome/ledgers: small
+   fixed-path gross edge is outweighed by fees; generic FeeProx repeats rejected.
+   Pooled six-stock62551273 also COMPLETE: one HGB/oneCUDA TCN38updates/
+   9.39s/best14, allcash/noninformative, no proper-score increment. Closed.
+   Raman now owns current-core8-bb-context-ablation-20261028-v1,
+   NEW3600active/7200elapsed/<=3fits, two indicator HGB/one raw+BB TCN.
+   Actual Data1d4f FIT147/INNER87/DEV90, fixedC120/H60/cost20bp eachleg;
+   compatible old raw controls reused, no raw refit/threshold rescue. Native
+   real producer/kernel/model/bootstrap proof before first fits. Assignment
+   is not actual GPU evidence. All forecasts before one new adaptive DEV intake.
+3. Jason recent-core capture COMPLETE5ee3/manifest185d:517GET/123newcomplete
+   symbol-sessions/47,970RTHminutes/61,200rows/36oldskips,0wire retries.
+   Owned-time stop, not provider floor; root/Job/OS/gate closed. Tesla produced
+   actual Core8 packets1d4f with separate train/dev features/dev outcomes.
+   Jason classified17unfinished/20zeroGETwindowpotential. Next bounded
+   targeted recovery max37GET/1POST/600active1800elapsed in NEW immutable
+   roots; no old cache/current33/activeEngineData mutation or floor inference.
+4. Planck completed five-Task source match4db9/current-MSFTb2fd and current-
+   LOWVOLcce5/36cb native binding. NewUS17 image6a65/ad9 passed mixed-book tests,
    but olde414 cannot read NYSE registration. Preserve original NAS profiles/
    identities/paths/windows/F9, no allpositionsflat/reset. CurrentMSFT7a
    differs historicale1b. No actual migration/NYS registration before
    exact current-source qualification/positive owned-process closure.
    Current d892 custody reader already mixed-venue; no blanket migration.
-5. Pascal's finite multileg native prototype preserves one serial B/10 writer
-   and stops later legs on unknown outcome across restart. Final6PASS/1FAIL:
-   olde414 fixture package loading failed, backward compatibility unproved.
-   A scoped software recovery must prove it before a new dated integration;
-   no modification of today's f545 cap or substitute unknown request.
+   Minimal five-future-action binder/mock checks are source-only; actual
+   cutover waits current f545 positive owner closure, not all positions flat.
+5. Opt-in finite multileg entry library/native tests verified in repo.
+   Original6PASS/1FAIL preserved; separate12bf native archived parser/projection/
+   legacy-writer probe PASS is accepted compound proof. Bad cross-type fixture
+   equality is not financial rejection or fictitious combined PASS. Default
+   one-effect session/budget/current f545 unchanged, no substitute unknown.
+   Serial233/full19564+26knownSKIP/Ruff/3Compose PASS. Candidate image920d/
+   SDK78c3 adds only new module; actualLinux32/cold PASS, not deployed.
+   Pascal prepares future dated NAS_H5 Uniform17 pair/max3serial effects/
+   original shared bank/owned exits. Independent of F3/ML/NYSE migration,
+   no currentf545 cap change/F9 substitute/new Task or release yet.
 
 ## Preserve Completed Evidence
 
@@ -87,8 +101,8 @@ remain. Quality limits constrain claims, not delegated Paper authority.
 ## Verify / Continue
 
 Use fresh focused/native checks for D code and actual outputs.
-Tracked authority b1a05d40/1412members: full19532PASS/26knownlinkSKIP,
-serial165+57/Ruff/3Compose/clean scratch. Reuse only after exact digest match;
+Tracked authority ec946b4b/1414members: full19564PASS/26knownlinkSKIP,
+serial233/Ruff/3Compose/own scratch clean. Reuse only exact digest match;
 production/shared-control change requires fresh full per AGENTS.
 At material company completion integrate, verify, commit/push, replace this
 with ONE material next company outcome and continue the active request.

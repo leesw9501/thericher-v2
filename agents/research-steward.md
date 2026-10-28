@@ -1,8 +1,16 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Turing01a180d7-f829-7701-b932-1bba78a71b61 is sole GPU/registry coordinator.
+Raman01a1813f-666f-73a3-ae59-dc3ecb40cf31 is sole GPU/registry coordinator.
 Parent owns shared policy/MD/Git. MD/Source assignment is not process proof.
+
+Current transfer: Turing's62551273 family CLOSED, positive06:39UTC noPID/
+matchingCID/lease,8CIDs48Jobs closed; Parent closed Turing and transferred
+registry/GPU ownership to fresh scoped Raman. No duplicate raw fits.
+Raman owns current-core8-bb-context-ablation-20261028-v1, NEW3600active/
+7200elapsed, <=3newfits (two indicator HGB/one raw+BB TCN), fixedblend.
+Old raw controls reused only exact bindings. Source/native/resources before
+market; no actual new GPU worker inferred from assignment.
 
 ## Ownership Handoff
 
@@ -41,10 +49,14 @@ Initial version/checkpoint failures retained;15EngineCIDs90Jobs/lease absent.
 Final Engineupper1821.525815/shared2670.425815 includes terminal500 once,
 not a new trial/refund. Entire family CLOSED, no unused-cap reruns.
 
-Next owned package current-long17-wide-saved-cost-diagnosis-20261028-v1:
-300active/1800elapsed/sealed aggregate analysis only, no fit/GPU/model forward/
-outcome intake. Do not claim a running GPU worker from completed source.
-New useful campaign needs deduplicated frozen hypothesis; no dummy training.
+Saved-cost diagnosis COMPLETE46checks,0fit/GPU/outcome/ledgers;300upper closed.
+current-core8-pooled-c120h60-development-20261028-v1 is CLOSED62551273:
+one HGB57stages/selected37/.424s, CUDA TCN38updates/selected14/9.39s/78.24MiB,
+fixedblend/allcash/noninformative/noincrement.8CIDs48Jobs/lease absent,
+final2409.543156/3600. Registry family/trial1 final retained, no new trial in
+06:39 resource handoff. Coordinator OS creation time was not retained;
+TCN CLI exact PID/start retained. No inferred isolated benchmark/convergence.
+Raman's next BB/context family above is NEW, not unused old-cap training.
 
 ## Resource Rules / Recovery
 

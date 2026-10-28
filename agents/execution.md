@@ -60,20 +60,25 @@ current-legacy-future-task-source-match-20261028-v1 COMPLETE4db9124a:
 exact five future Task action constructors matched at05:44UTC/instances0.
 CurrentMSFT7a/d1f0/TRUE288 differs historicale1b/bf37; current-derived
 b2fd6247/92ee5fd5 passes3native tests. LOWVOLcurrente2b06935 differs oldba2a,
-route3699 matches. Planck owns current-legacy-lowvol-current-source-rebind-
-20261028-v1 source/SYN successor, not blind historical candidate adoption.
+route3699 matches. Current-LOWVOL74388717/cce5f924/36cb0448 also qualified:
+4native tests/two cold readers/2CIDs13Jobs closed. Planck prepares minimal
+five-future-action binder/mock checks, not blind historical candidate adoption.
 No raw args/private files/Task mutation/TRUE/migration. Preserve todayf545.
 Actual relevant owner/container closure and independent readback still needed.
 Do not register NYSE in real shared V4 until relevant legacy exits compatible.
 
-Pascal current-finite-multileg-model-round-preparation-20261028-v1:
+Completed current-finite-multileg-model-round-preparation-20261028-v1:
 one serial native shared-bank flow/three fake legs/sharedtoken/unknown leg2
-stops leg3 across restart. Final80e2 suite6PASS/1FAIL: olde414 module relative
-package context, so baseline backward compatibility unproved.6CIDs37Jobs closed.
-backward-loader-recovery-r1 is a separate200active/1800elapsed technical fixture
-repair, no prototype/science/cap/private/currentf545 change. StaticUniform17
-baseline needs no fake feature/inference/alpha; NAS unsupported mass unspent.
-No actual new dated integration or company completion from source/native tests.
+stops leg3 across restart. Final80e2 suite6PASS/1FAIL preserved. Separate12bf
+archived parser/projection/legacy writer probe PASS; old combined fixture
+cross-type equality stillFAIL, not native rejection or fictitious combinedPASS.
+Repo opt-in multileg API+32tests now verified233serial/full19564+26knownSKIP/
+Ruff/3Compose. Current one-effect default/session/budget/f545 unchanged.
+Image920d88e5/SDK78c3eba3 adds only module0f2587ff; old1406members unchanged.
+ActualLinux32/cold/closuree584 PASS, not deployment. Pascal prepares future
+NAS_H5 Uniform17 pair/max3entryeffects/bounded owned exits in same bank,
+source/native only. Independent of F3/ML/NYSE migration; no actual Task/TRUE/
+capital or unknown substitute. Static declaration is not market features/alpha.
 
 ## Readonly Point Task / Outcome Readers
 

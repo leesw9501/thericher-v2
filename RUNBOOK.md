@@ -116,14 +116,22 @@ reset/new capital/N-way writer rule. Do not activate historical candidates or
 change today's f545 before exact cross-task contract/owned closure checks.
 Pure candidate source is not actual deployment. Parent owns activation.
 
-Finite multileg prototype:
+Finite multileg preparation:
 A/execution/current-finite-multileg-model-round-preparation-20261028-v1.
-80e2 final6PASS/1FAIL: olde414 fixture relative-package import failed.
-Pascal's backward-loader-recovery-r1 is source/SYN only, no current Task/order/
-bank access. Three fake effects/sharedtoken/unknown-stop do not prove actual
-execution. Static Uniform17 baseline has no market features/inference/alpha;
+80e2 final6PASS/1FAIL retained. Separate12bf archived parser/projection/legacy
+writer probe PASS; old combined fixture stillfails cross-type equality, not
+native compatibility. Parent accepts compound proof, not fictitious PASS.
+Opt-in repo paper_account_multileg_session.py +32newtests verified:
+233serial/full19564+26knownSKIP/Ruff/3Compose. Default one-effect unchanged.
+Candidate A/execution/current-finite-multileg-runtime-image-20261028-v1:
+image920d88e5/SDK78c3eba3/1407members, only module0f2587ff added to unchanged
+old1406. ActualLinux native32/cold/closuree584 PASS, no deployment.
+Pascal prepares future-nas-baseline-pair source/native fixture under that root,
+max3serial NAS entry effects and bounded owned exits in ONE original bank.
+No actual new Task/release yet. Static Uniform17 has no market features/alpha;
 unsupported NAS-profile mass stays unspent, never subset-normalized.
 A new future dated contract, not today's cap mutation or unknown substitute.
+NASDAQ baseline independent of F3/ML/NYSE migration; never force trade.
 
 ## Completed Data / Research Are Not Replay Commands
 
@@ -159,7 +167,16 @@ Do not print private values or repeat identical closed probes.
 
 ## Verification
 
-Current authority A/verification/current-daily-pair-floor60-integration-20261028-v1,
+Current A/verification/current-finite-multileg-entry-integration-20261028-v1:
+Sourceec946b4b/1414protected/baseb1a+2newfiles,19590collected/19564PASS/
+26knownWindowslinkSKIP/35warnings/403.69s/8actualworkers/no replacement.
+Changed-path serial233PASS26.24s/Ruff/threeCompose PASS; posthash0,
+24observedPID-start pairs absent/ownr-9d004d49+lease absent. Serial first
+status lost, not authority; captured rerun retained. Serial scratch not erased.
+Exact source chain recursively resolves base_source_path then overrides.
+This is test authority, NOT actual Task/broker/model deployment proof.
+
+Previous authority A/verification/current-daily-pair-floor60-integration-20261028-v1,
 Sourceb1a05d40/1412protected/base2f053b79+8overrides.
 Full53102:19532PASS/26knownWindowslinkSKIP/35warnings/396.43s/19558collected,
 8actual workers; serial165+57/Ruff/default+research+accountingCompose PASS.

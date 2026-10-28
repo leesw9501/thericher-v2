@@ -1,7 +1,7 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Turing01a180d7-f829-7701-b932-1bba78a71b61 owns Engine/Steward; Parent MD/Git.
+Raman01a1813f-666f-73a3-ae59-dc3ecb40cf31 owns Engine/Steward; Parent MD/Git.
 Research proposes, never alters deterministic Paper risk/ONE original B/10.
 Historical details: Git158bd51a and immutable study consumers, not this backlog.
 
@@ -42,11 +42,44 @@ Initial version/checkpoint-counter failures remain;15CIDs90Jobs/lease closed.
 Final sharedupper2670.425815/6000 includes500terminal review once, not CPU
 benchmark or refunded debit. No duplicate fits/forecast/outcome/ledger replay.
 
-Turing next owns current-long17-wide-saved-cost-diagnosis-20261028-v1,
-300active/1800elapsed: sealed aggregate gross/fee/turnover diagnosis and one
-deduplicated causal next-hypothesis contract. No new labels, fits, forecasts
-or numerical evaluation/ledgers authorized by that package. This is a useful
-next-model consumer, not a profitability permission hold for Paper.
+Saved-cost diagnosis COMPLETE46checks/0new fits/forecast/outcome/ledgers:
+current-long17-wide-saved-cost-diagnosis-20261028-v1/CONSUMER.json.
+Joint fixed-path gross advantage8.515bp minus42.565bp extra fees =-34.050bp
+net; gross DD cannot be inferred by fee subtraction. No generic FeeProx rescue.
+
+## New Pooled Intraday Family
+
+current-core8-pooled-c120h60-development-20261028-v1, Turing sole owner.
+New3600owned-active/7200elapsed, one HGB/one small causalTCN/one fixedblend,
+rule and aligned same-gross control; freeze actual contract before fits.
+Data1d4fae4a actual FIT216/147eligible, INNER90/87, DEV90/90. Targets six stocks,
+QQQ/SPY context, ONE120minute lookback/60minute payoff/three fixed ET origins.
+Typed features[N,120,3,5]/RAW_SIMPLE targets/full60bar paths; separate mounts.
+Required raw availability is past_complete. Optional first-lag/flat-range
+derived features stay masked, not observed.all()/invented price imputation.
+FIT-only observed affine/mask representation must be explicit before dispatch.
+Literal Windows codec import requires actual real producer/consumer bootstrap
+smoke in chosen host/guest path, not a fake Linux ABI. Native optimizer/HGB/
+checkpoint/cold tests precede market. STAGE source authoring has0fits/GPU0,
+not evidence of training. Actual curves/PID/start/CUDA/peak/closure required.
+Chronological INNER selection, forecasts sealed before one DEV intake;20bp
+each-leg cost, same-gross risky/cash/rule comparisons, no threshold/seed sweep.
+Canonical lag/availability is offline assumption, not actual Paper parity.
+
+COMPLETE62551273: one HGB57stages/selected37/.424s, one CUDA TCN38updates/
+selected14/9.39s/78.24MiB, fixedblend and FITconstant allcash; noincrement.
+Rule17trades growth-.111570percent/DD.113122percent. Proper MSE TCN1.032426e-5,
+HGB1.174664e-5 versus FITconstant1.009286e-5. No threshold/cost rescue.
+Finalupper2409.543156/3600,8CIDs48Jobs/lease closed; positive06:39 handoff.
+Turing closed; Raman now owns ONE BB20/context representation ablation:
+current-core8-bb-context-ablation-20261028-v1,3600active/7200elapsed/<=3newfits.
+Cicero kernelc1bdd671/10SYNtests/Ruff READY; exact producer/consumer bridge.
+Two new HGB inputs (indicator+symbol, old51raw+indicator8) and one causalTCN
+raw+indicator fit; old raw controls reused only compatible sealed forecasts.
+Same Data1d4/20bp eachleg/controller/threshold, not proposal's10bp or new grid.
+RAW_PLUS HGB predesignated primary; allcash not skill, secondary TCN/blend
+not rescue. Native actual crossOS producer/kernel/model before market.
+Source authoring/assignment is not running training; actual receipts decide.
 
 ## Latest Closed Results
 

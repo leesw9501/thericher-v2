@@ -1,7 +1,7 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Parent shared MD/Git; Engine/Steward Turing owns targets/splits/fits/resources.
+Parent shared MD/Git; Engine/Steward Raman owns targets/splits/fits/resources.
 No broker/credentials/risk authority in this role. History: Git158bd51a.
 
 ## Current Executable Consumers
@@ -27,8 +27,20 @@ Chronological same-input comparison752f COMPLETE: fresh Ridge360/HGB360/
 JointPatch and equal blend on same KIS/F3 Data28c8, wider INNER/DEV89.
 Uniform growth3.831705percent/DD1.962512percent outperformed all three useful
 nonconstant recipes; selectedHGB0 equals Uniform, raw pass is numerical noise.
-Turing owns saved aggregate cost/turnover diagnosis and one deduplicated next
-proposal, not new fits/evaluation or a rescue of the closed scientific result.
+Saved aggregate cost diagnosis completed46checks: tiny Joint gross edge is
+outweighed by extra fees; generic FeeProx/gating rescue rejected as duplicate.
+Pooled six-stock62551273 is now COMPLETE: HGB/TCN/blendallcash/noninformative,
+TCN38updates/9.39s; proper score worseFITconstant. No threshold/cost rescue.
+Cicero produced ONE masked BB20/context8 kernelc1bdd671, actual source/SYN
+bridge10tests/Ruff PASS. A/research/current-core8-causal-indicator-proposal-
+20261028-v1/READY.json includes reconstructability/dedup/official definition.
+Relative-close representation adds no information/alpha; warmup/flat/gap masks
+remain unknown. No public code/license adopted or absolute price invented.
+Raman's next executable family compares compact indicator/oldraw+indicator
+HGB and raw+BB TCN with compatible cached raw controls, sameData/costs/
+threshold. Parent did NOT adopt proposal's10bp costs/flattened5520/no-symbol
+defaults. One finite representation intervention, not a reading list, old raw
+refit, indicator catalog or current Paper default change.
 No new literal macro-role dependency or hidden feature/window multipliers.
 Globally reused data means adaptive screening, not fresh alpha.
 Fixed blends may be explored without each standalone expert profitable;
