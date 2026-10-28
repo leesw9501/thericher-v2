@@ -12,7 +12,8 @@ Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 On genuine resume run scripts/start_next_codex_task.ps1, then current
 HANDOFF/AGENTS/RUNBOOK/stateboards. Do not rerun startup on compaction.
-Parent owns direction/shared MD/Git/activation/GPU/registry. Private Paper
+Parent owns direction/shared MD/Git/activation; Fermat only newtrainingGPU/
+registry coordination. Private Paper
 standing authority applies; never KIS_LIVE_*/real money. ONE original B/10/
 costs/losses/pending/F9 UNKNOWN-HELD, no reset/refund/profit-expanded bank.
 
@@ -33,32 +34,58 @@ After opportunity use public pairedreaderb3d4 (dropped countersNULL/not0),
 and ONE unused offliner2 ebb972d7/Parent25f5 allowedOct28UTC14:35..
 Oct29UTC14:35 with fresh actualwriteradmission/closure/allRO/networknone/
 exactjoins/stability. No recovery observe()/lockwrite/foreign adoption.
-Existing appoct26-paper one-shotOct28UTC14:40/KST23:40/promptc672278b,
+Existing appoct26-paper one-shotOct28UTC14:40/KST23:40/prompt361780ae,
 sameidentity/thread/notifications, actualdeliveryunobserved. No new chain.
 
 ## Parallel Ready Packages
 
 1. Hubble publisher26b85470 SOURCE+SYN COMPLETE255currentchecks/337.619upper;
    no actualAPI/model/Task yet. New readonly-installation-preparation package
-   tests typedCOM/rollback900active/3000elapsed, Parent actual installation.
+   actualTask NOWenabled/unstarted after scopedParentrecovery;24typedchecks
+   PASS/d560254b/enable1/register-delete-RunStop0, futureactualrununknown.
    Oct28asof->Oct29point/20:50UTC/Datahard21:10/whole21:20;
    <=101GET/POST1/retry0/oneRAM/exactSPYreuseorfallback. Preserve currentf545.
 2. Lovelace original31PASS/1FAIL exposed actual17candidate guard. Minimal
    tracked100target repaire5e0bab4:188serial/19577fullPASS/26knownlinkSKIP.
    Effect/nativecall cap1..17/defaultone unchanged/futuremax3/samebank.
    Candidate37ea/SDK372a qualified88role-serial+14nativecases; finish exact
-   26b8publisher receipt projection separately. Not actual deployment.
+   26b8receiptprojectionafc273f7 qualified30native/88serial/allclosed.
+   Datednativehostd466 SOURCE+SYN complete/allclosed; stage_once freezesFALSE
+   capsule deterministically after actualPUBLISHED, no manualhashcopy.
+   Finiteheadless88feeb16 PARTIAL/notdeployable:20Python/10PScases37checks
+   passed butcombinedhandoff failedbeforetransaction; diagnosticdecodefailed,
+   rootcauseunqualified/6Rufffindings/3nativeexhausted/4Jobsclosed/375.85upper.
+   Newboundedfirstcause/native recovery at>=14:35, no actualnewTask/TRUE.
    Oct29entry/Nov4exit requires freshOct28asof point. Supersede ONLY
    uninstalled futureUniform afterproof, not currentf545/unknownrequest.
 3. Dewey vintage numerical family CLOSED107checks/2actualfits/0marketretry:
    CAT198trees/selected134; GRU54epochs9558updates/best30/6.02GiBpeak.
    AdaptiveINNER rank metrics are not economic evidence. All9CIDs/host/lock
-   closed, Parent resourcecustody returned. New economic replay600activeSUM/
-   1800elapsed(Data180/Engine420) uses32calendar-onlyH5cohorts/10ledgers,
-   savedCAT/GRU/fixedblend/simple/Uniform/cash,10bpprimary/20sensitivity,
-   fiveCLOSEmarks/missingmeansWITHHELD;0fits/GPU/API/numericalretry.
+   closed, economic replay primaryWITHHELD/20READY+2missingmarks+
+   10simplewarmupunavailable/0completeledgers/142.79upper. No economicREJECT
+   or numeric profit claim. Retained-model actualcurrentpoint76bb COMPLETE:
+   onepacket/twoCPUmodel sweeps/2345frameslots/threeUNALLOCATEDvariants,
+   174.17upper/allclosed/0fits/targets/ledgers/API. Source554a isolates40active
+   checks, oldprototypegraph FAIL/sixrefsWITHHELD/nohistoricaldiffclaim.
+   CurrentF3/Paper unchanged.
    Reused selectedINNER is adaptive development, not independentalpha;
    do not refit completed models or infer convergence/alpha/PaperPnL.
+4. Galileo dynamicDataa763 READY/15native/172.71upper/all187dates17assets32
+   cohorts complete. CPUtransfer4ba5 CLOSED/2forwards10ledgers/all32complete/
+   233.24upper/allclosed. Fixedblend REJECT:1.576774percentproxygrowth butDD
+   1.129783>1.042387cap, tinygrowthmarginvsUniform1.570961. Noalphaclaim/
+   actualPaperPnL/posthoc100regrade/retunedfallback.
+5. Fermat3variantprep CLOSED209native/3316saved/85final/Ruff. NEW matched
+   training7200activeSUM/10800elapsed/3fitmax/0retry/192epochs/pat24/bestrestore;
+   actualCUDAfitsGRU+factor10 29epochs5133updates/best5 andTransformer31/
+   5487/best7 complete. TCN0optimizer/noLAST/consumedattempt, no retry.
+   FamilyPARTIAL/combinedlabelreadout0/1354.917upper/all6CIDs40CLI+owner+lease
+   closed/lastGPU14:02:25. No paused/queuedfit, no whole3armcomparison.
+   HubbleCUDAc1d4 PASS/positiveclosure; guardedNVMLfailure notCUDAfailure.
+   Exact currentf545 guard doesnotadmitnewresearch actors automatically:
+   Allnewworkersclosedbefore14:10; existing14:40app aftercurrentclosure
+   continues finite headless firstcause recovery and research interpretation,
+   not identicalconsumedTCNfit retry/unusedbudgetrefund/foregroundwait.
 
 Existing futureNASpair50bd/e9d6/host42047/action6351 remains SOURCE+SYN/
 FALSE/unregistered/unallocated: entryOct29UTC14:15/native14:20,

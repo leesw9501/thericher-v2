@@ -5,12 +5,14 @@
 2026-10-28 KST. Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Parent owns direction/shared MD/Git/activation and returned GPU/registry custody.
+Parent owns direction/shared MD/Git/activation. Fermat coordinates only new
+matched-training GPU/registry resources after Hubble's diagnostic closure.
 No operator decision pending. Two new actual model fits are CLOSED, not running.
-Hubble01a181fe-39c8-7890-b035-3d8a27d3a7a9 owns nextday readonly installer prep.
-Lovelace01a18258-e2d5-7cf1-a71a-d08611118c31 owns NAS100 native recovery.
-Dewey01a18257-3ce3-7e12-bb3d-4e9385d5d014 closed vintage fits and prepares
-the economic follow-on handoff. Data Galileo and actual point workers closed.
+Hubble installer/GPUdiag and Dewey actual100point CLOSED; no running claim.
+Lovelace01a18258-e2d5-7cf1-a71a-d08611118c31 owns finite headlessdeploy prep.
+Galileo01a18268-b998-7a20-85d4-7e56b98f5811 owns frozen-model liquid17 replay.
+Fermat01a182a8-785b-7e70-b380-4b50501217ca CLOSED two actual newGPUfits;
+three-arm campaign PARTIAL. All new research workers positively closed by14:10.
 MD/assignment/source is not process/GPU/deployment proof.
 Preserve unrelated untracked %SystemDrive%/. History Gitb1d1199f/ae1e99a8/
 7ae35ddd/951beb6b/edb81aea and immutable artifacts, not this file.
@@ -62,7 +64,9 @@ fill links and before-after membership/identity/mtime/bytes. No recovery
 observe(), lock writes/foreign adoption/release. Current d892 already mixed-venue.
 
 Existing app oct26-paper one-shot ACTIVE Oct28UTC14:40/KST23:40,
-promptc672278b, same identity/thread/notifications, actual delivery unobserved.
+prompt361780ae, same identity/schedule/thread/notifications, persisted exact
+readback. Prefer qualified Memory100 successor rather than blindly installing
+older Uniform17 fallback. Actual delivery unobserved.
 Exact inspection then independently qualified next finite activation after
 actual owner/custody/observer closure. No replacement follow-up chain.
 No foreground session/quota sleep; package restrictions are local.
@@ -112,7 +116,7 @@ oneSYNforward/210upper, prior consumera9 source-native310 retained.
 ONE stale metadata edge is a9 SOURCE.Data_interface_seen (17dc->e1e), NOT
 an e468 runtime producer defect. Corrected current-binding supplementea1773aa
 checks27current bindings/33final capture refs, all10e468 direct leaves pass.
-Old a9 qualification is NOT upgraded. Parent late-check474refs has explicit
+Old a9 qualification is NOT upgraded. Parent late-check537refs has explicit
 LEGACY_METADATA_EDGE_NOT_REQUALIFIED, not fictitious all-old-sourcePASS.
 Claude REVISE remains retained with named seed/mask/source/clock controls;
 no advisory agreement/authority fabricated. Parent creation-versus-consumption
@@ -125,9 +129,17 @@ and retrospective-warmup adjudication is explicit in new temporaladapter.
   allJobs/CIDsclosed/0HTTP/modelcalls/TaskOSwrites. AsOfOct28->decisionOct29;
   quiet20:50UTC/Datahard21:10/whole21:20, <=101GET/POST1/retry0/oneRAM.
   Same producer/F3/memory, exactSPYreuseorfallback; no stale point retag.
-  New current-memory20-nextday-readonly-installation-preparation-20261028-v1
-  owns typedCOM/mock/rollback integration900active/3000elapsed. Parent alone
-  installs after actual source/native/independent readback. Nothing installed yet.
+  Readonly Task ACTUALLY enabled/unstarted: thericher-memory20-nextday-point-
+  20261029-v1, Oct28UTC20:50/KSTOct29_05:50. Independent24typedchecksPASS
+  d560254b; no demand/catchup/repeat/restart/PT30M/quietpythonw. Future
+  capture/inference NOTOBSERVED. Parent memory-enable-recovery-r2/RESULT:
+  enable1/register-delete-RunStop0/allotherprojectdefs stable.
+  Original e942/597d failures preserved; a950 fixed private GetNewClosure
+  Need/Sort visibility22checks/192.65upper/2Jobsclosed. Actualcreate acknowledged
+  then disabled readback failed ONLY OSUnified=true, ACL/otherfields exact.
+  Parent explicitly adopted that one field/18SYN+Applyflag tests/753dhelper/
+  ClaudeSOUND_WITH_LIMITS. NTAccount API owner translated to exact storedSID,
+  not arbitrary owner waiver. Old failures/true activations are not runtimeproof.
 - Lovelace original native bindingb8dc2b54 CLOSED31PASS/1FAIL: actual opt-in
   dispatcher rejected100axis at legacy17candidate guard, not authority/data.
   Separate bounded recovery changes only multileg module/tests: MAX_TARGETS100,
@@ -136,8 +148,16 @@ and retrospective-warmup adjudication is explicit in new temporaladapter.
   two paths e5e0bab4/1414protected;188serial/19577fullPASS/26knownlinkSKIP.
   Candidateimage37ea192e/SDK372a53e7:88role-serial/2nativechildren/
   14nativecases/RuffPASS/1406legacy membersunchanged/allclosed, notdeployment.
-  Fresh26b8 PUBLISHED chain
-  needs separately qualified Execution projection, not publisher mutation.
+  Fresh26b8 PUBLISHED projectionafc273f7/8f6f2ed2 now qualified:30totalnative/
+  88serial/3CIDs33Jobsclosed/894.30283upper, no publisher mutation.
+  New current-memory20-next-session-native-host-preparation-20261028-v1
+  d4660ce2 SOURCE+SYN COMPLETE16native/2typedTask/18mockobserver/2paircases/
+  Ruff/21Jobs2CIDsclosed/435.48upper, FALSE/unregistered/noactualpublication.
+  stage_once.stage deterministically binds FALSE capsule after actual26b8
+  PUBLISHED, no manual hash-copy requirement. Current14:40app cannot bind
+  a future actualpoint early. New finite-headless-deployment-preparation
+  SOURCE+SYN1200active/3600elapsed explores conditional Parentauthority+
+  existingfixedhashrelease/typedpair, not actualnewTask/TRUE/broker effects.
   Oct29entry/Nov4exit needs freshOct28asof point; no currentf545 replacement.
 - Dewey current-h5-rank-model-vintage-refresh-20261028-v1/numerical-r1 CLOSED:
   oneCAT198trees/10.502s/selectedprefix134; oneGRU54epochs/9558updates/
@@ -146,13 +166,49 @@ and retrospective-warmup adjudication is explicit in new temporaladapter.
   constant rank had lowerMSE. No economicP&L/convergence/alpha established.
   All9CIDs/host49668/GPUlockclosed;107checks/856.45811of6000activeupper,
   elapsed1376of10800. FrozenexternalRuff104diagnostics retained, notPASS.
-  Parent accepted resource custody. New current-h5-vintage-memory-economic-
-  replay-20261028-v1600activeSUM/1800elapsed(Data180/Engine420):32calendar-only
-  nonoverlapH5cohorts/CAT/GRU/fixedhalfblend/simple/Uniform/cash,
-  10bpprimary/20sensitivity/10investedledgers. Onecanonical mark projection/
-  oneactionseal/readout/independent savedcheck;0modelcalls/fits/GPU/API/retry.
-  FullcomparisonWITHHELD if required marks missing; no rescue tuning or
-  fresh-evaluation/PaperPnL claim. Original fit failures/debits immutable.
+  Economic replay CLOSED primaryWITHHELD:32statuses retained/20READY/
+  2missingmarks/10unavailable simplecontrolwarmups;10attempts/0complete
+  ledgers/growth-fees-turnover-DDUNKNOWN.22native/83independent savedchecks/
+  RuffPASS/5CIDs31processesclosed/142.79of600upper. No outcome rescue/reread.
+  Currentpointbridge CPU native COMPLETE; guardedNVMLfailure preserved.
+  Actual current-h5-vintage-current-point-forward-20261028-v1 Source76bb31d0
+  COMPLETE onepacketdecode/twoCPUmodel sweeps/2345frameslots/three immutable
+  CAT134/GRUE30/halfblend UNALLOCATED variants. ActualCATpredict1/GRUforward1;
+  oneCID/sixCLIclosed/174.17upper. No oldF3rerun/fit/target/ledger/API/order/
+  modeldefault or futurepoint swap. ValidTODAY13:30..20UTC only.
+  Sourceclosure554aaeb0 isolates40operativechecks; original recursive graph
+  FAIL/unclosed through CPU.previous_pre_native_source->prototypeSOURCE->
+  oldadapter ref. Sixprototype refs WITHHELD/oldbytesnotrecovered. Revision
+  precedednative/actual; producer unchanged. Archivedcurrentcopies POSTHOC,
+  not historicaldiff/requalification. This affects no currentf545/d466 path.
+- Galileo initial499d SOURCE-only found literal100/min25 incompatibility,
+  no marketdecode/92.68upper. NEW dynamicDataa7634a3f READY/15native/
+  172.71upper/allclosed: preexisting17/b499/KISlong20b7 only, all187dates/
+  17assets/32H5cohorts/controlwarmups/heldmarks complete. Separate row-local
+  contextmin5 contract preserves nine formulas, old min25 studies unchanged.
+  CPUtransfer4ba51d7d COMPLETE all32cohorts/2forwards/one markintake/10ledgers,
+  all6CIDs/processesclosed/233.24upper. Fixedblend increment REJECT at10bp:
+  growth1.576774percent versus GRU1.574067/Uniform1.570961, but absoluteNAVDD
+  1.129783 exceeds1.042387cap.20bpblendgrowth.934262percent descriptive.
+  Feb..Sep2026 researchNAV1/gross.10 proxy, not privateB10feasibility/alpha/
+  actualPaperPnL. No newweights/window/fallback rescue or old100regrade.
+- Fermat current-h5-indicator-matched-model-preparation-20261028-v1 CLOSED:
+  GRU+factor10/causalTCN/temporalTransformer,209native/3316saved/85final/Ruff
+  PASS;3SYNAdamWupdates each/safeNPZ/250.05upper/allclosed. NEW matchedtraining
+  PARTIAL:actualCUDA GRU+factor10 29epochs/5133updates/best5/628MiBpeakreserve;
+  Transformer+factor10 31epochs/5487updates/best7/158MiB. TCN stopped inepoch0
+  diagnostics/0marketoptimizerupdates/noLAST/attemptconsumed/no retry.
+  Source/nativeCUDA/resumeproof/216savedchecks/RuffPASS. Sealedselected
+  forecasts for2models, combinedlabelreadout/finaleval0; no3armcomparison or
+  convergence/PnL claim.6CIDs40CLI/coordinator13072/GPUleaseclosed; lastGPU
+  container14:02:25,1354.917of7200activeupper. No paused/queuedfitexists.
+  Source-only firstcause/next finite research after14:35/currentPaperclosure.
+
+GPU: Hubble c1d4564e actual4bb/PyTorch2.7.0+cu128 allocate/arithmetic/freePASS,
+22MiBpeakreserved/1CID8Jobsclosed/185.05upper. CUDAcapable=true independently
+of guardedNVMLmonitor failure; precise ENV-versus-Job cause unresolved.
+OrdinaryhostSMI RTX4090/610.88 PASS. Recheck actualmem_get_info/headroom for
+newdispatch, not monitor success/personal-process allowlist or stale snapshot.
 
 Existing future finite NAS pair remains SOURCE+SYN READY/FALSE/unregistered:
 A/execution/current-finite-multileg-runtime-image-20261028-v1/
@@ -226,8 +282,11 @@ Ownr-5d6f7ada+lease absent; sourcepoststable/RESULTfb2d1e67. Helper safety
 checks unchanged. Sources stay pinned for candidateimage. D code needs native/independent
 proofs. Parent external integration root
 A/verification/current-monthly-oc-handoff-integration-20261028-v1.
-Latest late-check474refs with ONE named legacy metadata limit, not old-source
-requalification. Source bookkeeping is not runtime/PnL proof.
+Last537ref check predates actualvariant recursive graph extension. Extended
+generic graph currently FAIL at abandonedprototype adapter, not reportedPASS.
+Separate554aaeb0 isolates40operativechecks/sixhistorical refsWITHHELD; don't
+waive/relabel oldgraph or rerun completedforwards. Other native/task proofs
+remain scoped. Source bookkeeping is not runtime/PnL proof.
 After interruption recheck actual owners/PID-starts/cursors; don't repeat
 completed current inference or GETs. Workers own next_due, no foreground
 market/quota wait. Company remains UNFINISHED pending actual native outcome.

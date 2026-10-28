@@ -67,10 +67,29 @@ Oct28_14:40Z/COUNT1 persisted and independently read back, intended23:40KST.
 Same identity/thread/notifications; actual delivery unobserved. Inspection
 scope remains strict but does not globally forbid next approved packages.
 Evidence current-finite-multileg-entry-integration-20261028-v1/FOLLOWUP-UPDATE.
+Current prompt361780ae is independently persisted at
+current-memory20-nas100-integration-20261028-v1/FOLLOWUP-SUCCESSOR-UPDATE.json.
+Same one-shot14:40UTC/schedule/thread; prefer qualifiedMemory100 successor,
+not automatic installation of the older uninstalledUniform17 fallback.
 No recurring report or replacement chain.
 Worker owns next_due; continue another lane rather than foreground waiting.
 
 ## Installed Readonly Daily Point
+
+Memory100 nextday task is ACTUALLY enabled/unstarted:
+thericher-memory20-nextday-point-20261029-v1, Oct28UTC20:50/KSTOct29_05:50,
+Datahard21:10/whole21:20/PT30M. Publisher Source26b85470/RUNPLAN4a6f8176,
+freshOct28CLOSEs -> Oct29 firstbasketH5 UNALLOCATED point only; no account/
+order/capital. <=101GET/POST1/retry0/oneRAM/SPYreuseorfallback.
+Actual installation authority and24typedreadbackd560254b:
+A/verification/current-memory20-nas100-integration-20261028-v1/
+memory-enable-recovery-r2/RESULT.json and
+MEMORY-INSTALLED-READBACK-R2-20261028T1330075505437.json.
+Samepythonw/quietJobchildren/no demand/catchup/repeat/restart; actual future
+run not observed. Do not rerun create/repair or manually Run.
+MeasuredUnified=true is explicitly adopted for this exact task, not a broad
+default waiver. Original installer/invocation failures retained. API owner
+name translates to exactSID; not a new owner. Currentf545 unchanged.
 
 Task thericher-current20-ridge-point-preparation-20261029-v1:
 ENABLED/UNSTARTED; Oct28UTC20:10 = Oct29KST05:10.

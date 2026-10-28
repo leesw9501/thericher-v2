@@ -3,6 +3,16 @@
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git. Roles/MDs are memory, not running-process proof.
 Closed detailed history: Git158bd51a and exact immutable consumers below.
+Galileo source-only499d CLOSED92.68upper: existingmin25/literal100 incompatible,
+not marketdata unavailability. NEW current-liquid17-h5-dynamic-inputs-
+20261028-v1 a7634a3f READY15native/savedverify/172.71of900upper/allclosed:
+preexisting17/b499/KISlong20b7 only, all187featuredates/17assets/32calendar
+H5cohorts/controlwarmups/OPEN+5CLOSEmarks complete. Input-only masks/knownness,
+unscaledraw6/factor10/context9+exactnewFITaffines/separatefeature-mark mounts.
+Namedcontext17 changes onlypopulationgate>=5; nine row-localformulas/subset/
+permutation matchold25leaf; old100/min25studies untouched. No API/model/GPU/
+refit/imputation/posthocdrop. Directhandoff consumed by separate CPUtransfer,
+not regrading100gaps or a sourceparity/PIT/performance claim.
 Galileo current-h5-vintage-training-packets-20261028-v1 CLOSED_READY:
 onecanonicaldecode/projection;2817FIT/173INNER supervised dates,
 47native/16cold/savedfileverifyPASS;176.45811of1200activeupper.
@@ -39,7 +49,8 @@ ActualF3oneCPUforward complete/10selected/UNALLOCATED today, not Paperfill.
 Hubble nextdaypoint current-memory20-nextday-point-preparation-20261028-v1:
 correctedSource26b85470/FINAL-READY255checks/337.61935upper/allclosed,
 prospective asofOct28->decisionOct29. New typedCOM installer prep is separate;
-proposedquietreadonly20:50UTC/Datahard21:10/whole21:20, no Taskinstalledyet.
+quietreadonly20:50UTC/Datahard21:10/whole21:20 TaskACTUALLYenabled/unstarted,
+Parent24typedchecksPASS/d560254b; futureactualcapture/modelpointunknown.
 <=101GET/POST1/retry0/oneRAM/exactSPYreuseorfallback. Futureactualdataunknown;
 do not run oldhistoricalfeatures.py:main or stale-retag today'spoint.
 

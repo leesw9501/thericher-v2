@@ -1,7 +1,9 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Parent accepted GPU/registry custody back after Dewey's two H5vintage fits.
+Parent accepted custody back after Dewey's twofits/currentpoint. Hubble CUDA
+probe positivelyclosed; Fermat now coordinates ONLY new matched3-model
+training GPU/registry. Source/native readiness, not actual marketfit proof.
 All9ownedCIDs/host49668/GPUlock positively closed; no running fit claimed.
 MD/Source/assignment is not process or GPU proof. Parent owns shared MD/Git.
 
@@ -66,6 +68,32 @@ safecheckpoint/sourcehandoff precededfits. SelectedCAT+GRU/frozen forecasts
 stay onD. EconomicP&L stillUNKNOWN; adaptiveINNER rankIC not alpha.
 Frozenexternal Ruff104diagnostics retained, separate source-only cleanup
 must not refit/recompute marketresults. Positive closure returned resources.
-Prefer next saved-prediction cost-aware development replay/qualified future
-point before another trainable campaign. New useful fits still allowed with
-fresh hypotheses and measuredVRAM/headroom. Paper14:20 preemption priority.
+Saved-prediction economic replay CLOSED primaryWITHHELD/20READY+2missingmark+
+10simplewarmup gaps/0completeledgers/142.79upper, not modelprofitfailure.
+Retained-model actualpoint76bb CLOSED174.17upper/twoCPUmodel sweeps/three
+UNALLOCATEDvariants/oneCID6CLIclosed, no refit/targets/ledger/defaultswap.
+Hubble c1d4564e/9706b37b actualCUDA probePASS in4bb/PyTorch2.7.0+cu128:
+allocate/arithmetic/free/22MiBpeakreserved/oneCID8Jobsclosed/185.05upper.
+guardedNVMLmonitor stillunavailable, preciseENV-vsJobcause unresolved; ordinary
+hostSMIworks. Keep monitor failure separate from CUDA capability; freshactual
+mem_get_info and nativefullgeometry peaks may admit newusefuldispatch.
+
+Fermat newcurrent-h5-indicator-matched-training-20261028-v1:
+7200activeSUM/10800elapsed/3fitsmax/onepervariant/0retry/33984updates and
+1800activefitsec each/max192epochs/INNERpat24/LR/bestrestore. OriginalrawGRU
+notrefit, oldprep250.05/native209+3316saved+85final immutable. Newmicro4/
+effective16/batchedmetrics needgradient-equivalence/source-nativeCUDA proof
+before actualmarketpayload/registrydispatch. No actualnewfits claimed yet.
+Up to3readyworkers onlyifsummeasuredpeaks/headroom+desktopreserve supports;
+singlecoordinator/source+PID/start/output perworker/co-tenant timing label.
+LATEST:familyPARTIAL, actualGRU+factor10 29epochs5133updates/best5/628MiBpeak;
+Transformer31epochs5487updates/best7/158MiB. TCNepoch0stop/0updates/noLAST/
+attemptconsumed/no retry. All6CIDs40CLI+coordinator13072+leaseclosed, lastGPU
+14:02:25.1354.917upper/216savedchecks/RuffPASS/combinedreadout0/finaleval0.
+No paused/queuedfit or three-armperformance claim. Resources returnedParent;
+nextresearchaftercurrentPaperclosure, not identicalTCNretry/refundedbudget.
+Currentf545 frozenadmission1c30/claims28c23 doesnotautomaticallyrecognize new
+researchactors/mountedGPUcontainers. Positivelycloseallnewworkersby14:10
+forTHIS14:15..14:34 opportunity; no broadGPUban. Predeclaredprovenexact LAST
+weights/optimizer/scheduler/history/RNG resume maycontinue at>=14:35 within
+samefit/caps; otherwise Source+ownednext_due only, existing14:40appcontinues.

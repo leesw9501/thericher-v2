@@ -1,7 +1,8 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Parent owns Engine integration/MD/Git and returned GPU/registry resources.
+Parent owns Engine integration/MD/Git. Fermat sole newtrainingGPU/registry owner;
+Dewey currentpointcomplete, Galileo temporaryCPU17transfer independent.
 Dewey01a18257-3ce3-7e12-bb3d-4e9385d5d014 CLOSED two actual H5vintage fits.
 Hubble owns nextdayreadonly installer prep, not GPU. Research never changes native
 risk/ONE original B/10/F9. History: Git7ae35ddd/158bd51a and immutable consumers.
@@ -173,5 +174,37 @@ roundtrip zeroerror does not establish GPUdeterminism. Frozenexternal Ruff
 104style/import/unuseddiagnostics retained, notPASS; cleanup never refits.
 107checks/all9CIDs/host49668/GPUlockclosed;family856.45811of6000activeupper,
 elapsed1376of10800. Allsource failures/debits preserved; Parent resourcecustody
-returned. Next useful package compares saved forecasts on compatible keyed
-marks/costs, not another completed-model fit or utilization-only campaign.
+returned. Economic replay current-h5-vintage-memory-economic-replay-20261028-v1
+CLOSED primaryWITHHELD:32statuses/20READY/2missingmarks/10simplecontrolwarmup
+unavailable;10ledgerattempts/0completeledgers, growth/fees/turnover/DDUNKNOWN.
+Onecanonicalprojection/actionssealedbeforemarks/22native/83savedchecks/
+RuffPASS/5CIDs31processesclosed/142.79of600upper, no reread/rescue tuning.
+Currentpointbridge CPU native qualified; actualcurrentpoint76bb COMPLETE
+oneacceptedpacketdecode/twoCPUmodel sweeps/2345frameslots/threeUNALLOCATED
+CAT134/GRUE30/halfblend variants.174.17upper/oneCID+6CLIclosed/actualpredict1
+andGRUforward1,0fits/targets/ledgers/API/defaultswap. ValidTODAY13:30..20UTC,
+nottomorrowretag. OldF3currentforward not repeated.
+Galileo dynamicDataa763 READY187dates17assets32cohorts/allmarks/controlknown;
+15native/172.71upper/oldmin25sources unchanged. New CPUmodel17transfer
+1200active/3600elapsed/2forwards/10ledgers/Top5/rhohalf-life20/23warm+current,
+0fit/GPU/API, not100posthocdrop/regrade/freshindependentperformance.
+Fermat3matchedindicatorvariants SOURCE+SYN CLOSED209native/3316saved/85final/
+Ruff:GRU+factor10/causalTCN/Transformer. NEW training7200activeSUM/10800elapsed/
+3fitsmax/0retry/192maxepochs/pat24/LR/bestrestore. Same100FIT/INNER/affines/
+target; frozennewmicrobatch4/effective16 needs nativegradientequivalence.
+ActualCUDA GRU+factor10 29epochs5133updates/best5/628MiBpeakreserved,
+Transformer31epochs5487updates/best7/158MiB. TCNstoppedepoch0diagnostics/
+0optimizerupdates/noLAST/attemptconsumed; no retry. FamilyPARTIAL, selected
+2forecastssealed/combinedlabelreadout0/0finaleval/216savedchecks/RuffPASS/
+1354.917of7200upper. All6CIDs40CLI/owner13072/leaseclosed/lastGPU14:02:25.
+No paused/queuedfit or whole3armcomparison/convergence/independentclaim.
+CPU17transfer4ba5 COMPLETE32cohorts:CATgrowth.382144/GRU1.574067/
+blend1.576774/simple1.154132/Uniform1.570961percent originalresearchNAV.
+BlendabsDD1.129783 exceeds1.042387cap; exactincrement REJECT/no fallback.
+10bp primary/20bpdescriptiveblend.934262growth/10ledgers/233.24upper/allclosed.
+Not privateB10feasibility/alpha/PaperPnL or original100regrade.
+CurrentvariantSource554aaeb0 isolates40operativechecks; originalrecursive
+prototypegraph FAIL/sixrefsWITHHELD/oldbytesnotrecovered/posthocarchive.
+Producer unchanged/revisionbeforeactual; no currentf545/d466 dependency.
+GPUactualruntimec1d4/PyTorch2.7cu128 PASS; guardedNVMLmonitor unavailable is
+separate, no processallowlist/humanapprovalhold. Freshactualresourceadmission.
