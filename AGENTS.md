@@ -267,6 +267,13 @@ Focused tests give first feedback. Concurrent groups require isolated artifacts/
 services/state. Synthetic Scheduler tests disable PowerShell module auto-loading
 and mock every Scheduler entry point.
 
+For new/changed generated Python adapters, check the emitted runtime files for
+undefined names and syntax (Ruff F821/F822/F823/E9) before market payloads,
+not only the generator/template. A parser handoff smoke invokes its real
+parse-and-return path on invented source-format input, not a mocked intake.
+Keep this focused on the changed adapter; it is not a new approval or a reason
+to rerun immutable completed fits or block another ready lane.
+
 Tracked code/test/dependency/runtime changes, shared-control changes or material
 Execution recovery require changed-path serial coverage and fresh full
 scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, then Ruff and default/
