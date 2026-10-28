@@ -1,79 +1,86 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / Oct28UTC18:26. A=D:/thericher-v2/model-artifacts.
-Parent owns shared MD/Git. Assignments do not establish active fits/GPU leases.
+2026-10-29 KST / Oct28UTC20:23.
+A=D:/thericher-v2/model-artifacts. Parent MD/Git.
+Assignments are not active GPU/fit proof; original trial budgets stay immutable.
 
 ## Ready / Owned
 
-Fermat NEW A/research/current-intraday-multires-h20-development-20261029-v1:
-Parent adopted fixture-repair NEXT35f6aa14/original7b345+2429/Claude bf964649.
-CPU2/memory2GiB; tiny9345parameter fivebranchGRU + one dualRidgealpha1.
-1200activeSUM/3600elapsed,seed20261029,max192/pat24/2112updates,2fits only
-(ridge<=30s/NN<=600s),0retry/search/finalEval,2sealedforecasts/8DEVledgercells.
-Fixedhalf blend only exact compatible keys/masks/gross units.
-Source/data/custody/FIT-only persisted affine/purged split before market.
-Native2updates/1ridge/2restores/portableH20 qualified Sourcec434; original
-case-insensitive FIT/fit checkpoint alias fault retained, prep150+40=190upper.
-No GPU needed for this small CPU-native model.
+Fermat new current-chronos2-postcheckpoint-finetune-preparation-20261029-v1:
+<=240active/1800elapsed/one actual trusted tinyfit3updates+safe restore IF API/
+data-role contract qualifies,0marketfit/payload/evaluation.
+Exact installedChronos2 SDK2.3.2/95a971 checkpoint/ddc safeweights, current
+PyTorch/CUDA only; inspect official API before kwargs, no runtime replacement.
+Hypothesis finite fine-tune vs frozen Chronos on POSTCHECKPOINT2026:
+TRAINJanMar/INNERAprJun/reusedDEVJulSep/context63/future5absoluteCLOSE.
+Chronological purges/innercurves/stoprule/checkpoint restoration before any market
+dispatch. No DEV epoch selection/architecture grid/retries or independent alpha.
+Native3updates qualify a concrete planned optimizer/handoff, not dummy utilization.
+New market campaign remains unadopted until exact Source/data/caps ready.
+Data five-close role prep Galileo, direct schema exchange allowed.
 
-TargetQQQ15:31OPEN->15:51OPEN, C360QQQ/SPY inputs cut15:30/nominal60slag.
-FITthrough2023May31/INNERJuneJuly/reused43DEV AugSep.
-10bp primary/20bp descriptive, fixed netforecast>0 long/cash; no threshold tuning.
-Equal-date MSE on all43scheduledDEV/coverage/NN-minus-ridge squared-error/bias;
-optional1000fixedseed paired sessionbootstrap descriptive only.
-NN innercheckpoint selection vs fixedridge is recipe asymmetry, not causal
-architecture proof. Valid epoch0 not retried. No winner/alpha/independent/Paper/
-default promotion. Fiveviews are transforms, not five independent information sets.
-Close numerical actors before18:34 or own next_due18:50 for frozen B admission;
-source work continues, no experiment-clock refund.
+Kepler point opportunity: Source8792runtime/dea0point/7751contract qualified.
+Parent numerical opportunity adopted600active/1800elapsed from actualfuturelaunch,
+1trustedload/13marketforwards408contexts/0fits/outcomes/retries.
+Exact20:10capture/86freshsessions or reconciled same-source b7union only.
+Finite20:41..43/hard20:49 readonly job installed bf5cf2/plan27a454/noRun; typed
+UNALLOCATED proposal, not performance/default/Paper authority grant.
 
-Kepler fixedblend complete Sourcea55a/FINAL7248:32cohorts,10bp growth1.372383/
-DD1.136906,allfourcriteriafalse,not adopted;no more variants on seen outcomes.
-Chronos17 currentpoint Source dea0/7751/eightSYNchecks ready/noactualpoint.
-Newruntimeprep<=300active/3600elapsed/one tiny trustedcheckpointSYN after18:50;
-0marketforward/fit/API/private/Task. No new bank/risk behavior.
+Ohm603study bcb6/c69 INPUT_UNAVAILABLE unchanged.516eligibility review
+43037fe7/938e6eb8 confirms source-key gaps at two requiredentrydates,0labels/fits.
+New source-key-supported gate delegated600active/1800elapsed/1SYN/4fixedtrees/
+1savedselector/1FITlabels/1seal/1SCREENmarks/<=10cells/0retry/projection/search.
+Freeze roster from input and required source-key presence BEFORE numericpayoff;
+new Source/native/Claude before payload. Same32SCREEN/fullsupport/calendar/
+costs/controls; nonrandomconditional estimand/adaptive not independent alpha.
 
-## Closed Useful Research
+Data ed7e/850d 50invented-file checks READY; actualfive-close target projection
+180/1200/17reads conditionally adopted after minimumsupport/loss freeze.
+No current marketfit/readiness inferred from preparation.
 
-Chronos FINAL A/research/current-foundation17-chronos63-development-20261029-v1/
-FINAL.json,Source8df98160:
-trusted dated Chronos2 checkpoint95a9710e/weightsddcda3c7/SDK2.3.2.
-187x17x63priorcloses/q.5H5endpoint/cross_learningFalse/24frameEWMA20/Top5/.1gross.
+## Closed Material Research
+
+Chronos FINAL8df98160 current-foundation17-chronos63-development-20261029-v1:
+187x17x63priorcloses,q05H5endpoint,cross_learningFalse,24frameEWMA20/Top5/.1gross.
 109actualGPUforwards/3179contexts/0fits/retries/32H5cohorts/twoledgers.
-10bp growth3.278731percent/DD.841107 vsUniform1.570961/.833910,
-H5half1.576774/1.129783;20bp2.6328/.9796.
-Adaptive frozencriteria satisfied, but MAE worse than persistence/DD>Uniform.
-Samegross is not matchedrisk. NonPIT/currentlisting/CAunverified/unknown corpus:
-not independent alpha/qualifiedselection/Paper/default/actualPnL.
-All6CIDs/41CLI/leaseclosed;481.0197605upper incl Data106.7657521.
+10bp growth3.278731%/DD.841107 vsUniform1.570961/.833910 andH5half1.576774/1.129783.
+20bp2.6328/.9796; adaptive frozencriteria satisfied, MAE worse than persistence/
+DD>Uniform. Unknown corpus/nonPIT/currentlisting/CA limitations; no independent
+alpha/qualifiedselection/Paper/default/PnL. All6CIDs/41CLI/leaseclosed,
+481.0197605upper includingData106.7657521. Dated checkpoint2025-10-30.
+Point-runtime8792 one trusted32invented forward/sevenpublisherchecks closed,
+193.151upper; no actualcurrentpoint/marketforward/publication.
 
-H5rankloss FINAL A/research/current-h5-gru-rankloss-development-20261029-v1/
-FINAL.json,Source766c8167:
-1actualGPUfit32epochs/5664updates/best8/pat24,0retry/2seals/twoledgers.
-INNER173dates/13054rows rankIC.1229221 vsMSEGRU.1071515,
-rankMSE.1501097 vs.1528085.
+H5rankloss FINAL766c8167:1actualGPUfit32epochs/5664updates/best8/pat24,
+2seals/twoledgers. INNER rankIC.122922 vsMSEGRU.107152.
 10bp growth1.605612/DD.991595 vsUniform1.570961/.833910;
-20bp.963042/1.119541. MSE control economics withheld exact17forecast missing;
-no substitute/refit. Confounded/adaptive/no causal/objectivealpha/Paper/default.
-338.8056954upper;wholefit172.9695s/628MiBreserved;4CIDs/28CLI/leaseclosed.
+MSE-control economics withheld exact17forecast missing, not refitted.
+338.8056954upper/628MiBreserved/all4CIDs/28CLI/leaseclosed; adaptive/confounded.
 
-Two-retained description8d0b:GRUfactorIC.1071515/Transformer.0930185/raw.0614197,
-confounded checkpoints/features/protocols, no economic/causal claim.
-Original3armPARTIAL/TCN0updates/noLAST preserved. Prior GRU29epochs/best5 and
-Transformer31/best7 closed, not universal16epoch cap.
-Pastvol0c481 fourledgers found nojointincrement. TCN e38b sixSYNprofiles not
-justification to repeat consumed market fit. Closed studies remain unchanged.
+MultiresH20 FINALeec7:2CPUfits,NN29epochs319updates/best5/pat24,
+Ridgealpha1 one solve166FITdates4760columns,2seals/8cells/all43DEVknown.
+MSE3.19191e-6 vsRidge3.39172e-6, descriptive paired interval spans0.
+NN/Ridge/half all43cash under fixedcosts; zero analytical growth is NOT alpha.
+Alwayslong10bp growth-.960982%/DD.988177.162.3627914upper/1744.62elapsed/
+6CIDs+6ownersclosed/GPU0/oldprep190unchanged. No threshold rescue/duplicate fit.
 
-## Data / Queues
+Fixed Chronos/H5 blend FINAL7248/Sourcea55a:32cohorts growth1.372383%/
+DD1.136906, all4criteriafalse; exactcomposition rejected,43.294135aggregateupper.
+Direct-H5policy prep3e7106bd/FINALc6dc scientificREJECT/ClaudeREVISE/106upper,
+no native/market/GPU; similar existing utility, unsupported penalty rationale.
+Archival1800/7200template is NOT ready or numerical authority.
 
-C360Source0aef/READYed3686 and H20Source37ed/READY6d00/portable7fdf READY.
-251scheduled keys not251eligible; masks/earlyclose/gaps/noimputation.
-Feature/target/marks physically separated; no new acquisition needed.
+Two-retained8d0b ICcomparison confounded; original3armPARTIAL/TCN0updates/
+noLAST unchanged. Pastvol0c481 nojointincrement; TCN e38b sixSYNprofiles not
+justification to repeat consumed fit. No old failure rescued by a new study.
 
-Short breadth: CPUmultiresH20 comparison; fixed Chronos/H5 composition now closed
-and rejected. Chronos17 future point runtime preparation is operational transfer,
-not another retrospective performance trial.
-Long depth: no unallocated frozen long fit currently ready; choose a new justified
-campaign after these results, not duplicate old GPU work for utilization.
-Chronos17 currentpoint preparation supports future proposal, not automatic Paper.
-OOF fusion/finitetimeframe-window families remain allowed when actually ready.
+## Data / Queue Discipline
+
+Absolute63 Source6ebd/22857a34,187x17x63 complete inputs.
+C3600aef/ed3686 and H20 37ed/6d00/portable7fdf READY,251scheduled not251eligible.
+Vintage1004459 FIT2817/INNER173 supervised dates, target
+.999*CLOSE[e+4]/OPEN[e]-1.001; does not itself supply five-close target path.
+No inverse clippedraw6/no fabricated marks, no requirement of profitability
+before provisional Paper. OOF learned fusion only, fixed blends allowed.
+Short: currentpoint delivery/inputeligibility. Depth: one justified fine-tune
+capability; no ready numerical GPUfit claimed before Source/data freeze.

@@ -5,101 +5,87 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain an interpretable exactly bound native KIS Paper decision/reconciliation
-while useful independent research continues. Installation, tests and analytical
-returns are not fills or company completion.
+while useful independent research continues. Installation, tests, reports,
+analytical returns and local registration replay are not broker fills.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-On genuine resume run scripts/start_next_codex_task.ps1; do not repeat it on
-compaction. Read HANDOFF/AGENTS/RUNBOOK/current stateboards. Parent owns shared
-MD/Git/activation. Never KIS_LIVE_*/real money. Preserve ONE original B/10,
-costs/losses/pending and F9 UNKNOWN-HELD; no substitute/reset/adoption.
+On genuine resume run scripts/start_next_codex_task.ps1; not on compaction.
+Read HANDOFF/AGENTS/RUNBOOK/current role boards. Parent shared MD/Git/activation.
+Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/F9 held.
 
-## Actual Paper Path
+## Current Evidence
 
-Original Oct28UTC14:21 entry failed Denied/actor_identity. Original R5 strict
-read at14:53:47:8targets/0bound/8UNKNOWN, full request counts NULL, not zero.
-Original owner positively closed16:25; observer restored16:36. Full pins in
-HANDOFF. Broker holdings/fees/settlement/net PnL remain unobserved.
+B recovery b547/TRUE2db/inputf477/policy24d3/same original cohort consumed:
+Oct28UTC18:35:33 PRE_CREDENTIALS Denied/actor_identity atadmission.actor151.
+Exact fault02cff828, actual old row unretained; no rerun/window roll/substitution.
+Pair closed/observer restored; operational closure8eb552f3,0children/0CIDs.
+Actual request/submit/fill/owned counts not inferred from this technical stop.
 
-NEW same-cohort recovery is actually ENABLED:
-A/execution/current-linear17-custody-scoped-integration-20261029-v1.
-Outer Source6431ff02/hostb547f206/route87470122/TRUE2db67c8e.
-Exact task thericher-kis-paper-linear17-same-cohort-recovery-entry-pair-20261028-v1:
-Oct28UTC18:30 trigger/native18:35..39/recovery18:42..46/restore>=18:48/
-hard18:50. Original inputf477/policy24d3/cohort/native requests/8NAS/
-max1effect/B10/F9 unchanged. Do NOT manually run/reregister/roll the clock.
-
-Initial installer CREATE+ENABLE returned then generic readback failed; retain
-that failure. Independent two-read exact XML/API7/enabled readback03011199
-qualified installation, not runtime/fill. Fresh per-effect admission/risk and
-exact unknown-request reconciliation still apply. Original Nov3 exit duty
-remains; source-only migration is not actual deployment.
+Private read repaired and CONSUMED:
+current-linear17-windowless-ro-observation-20261029-v1, Source51e6ac1f/
+RESULT0896d8b1, snapshot19:44:12UTC.3freshadmissions/15Jobs/CIDclosed/networknone/
+allRO/stabilityPASS.8targets/0bound/8UNKNOWN/policyabsent/fullcountsNULL.
+F9/basis unchanged. This reader did not query brokerholdings/fees/settlement/netPnL.
+Separate readonly Sourcee1b53/RESULTa1d46 at20:20:49 authenticated Paper/NASD
+holdings4positive rows/1POST+1GET; orderabilityNOT_REQUESTED/allvenuesrisk/
+ownedfills/settlement/PnL not established. No orders/rawretention.
+Measured pythonw profile fixes reader console sibling without relaxing guard;
+this does NOT explain Bactor151. Full pins/history HANDOFF, not another hold.
 
 ## Ready / Owned / Due
 
-Assignments are not proof of running workers:
-- Parent: shared integration/Git and actual qualified activation; after positive
-  new owner closure, exact public/private categorical read. Never infer a fill
-  from Task exit/missing/latest. Company objective stays unfinished.
-- Dewey: source-only exact original Nov3 exit action migration. Initial native
-  failed from dot-sourced parameter clobber; technical-r1 source8af4 repair,
-  repair also withheld at first negative assertion;227/240upper closed.
-  No actual UPDATE qualified; source-only first-cause diagnosis continues.
-- Lovelace: future Memory100 headless header-r5 qualification. r4 ca06 failed
-  absent allow_execute vs false, not identity/financial failure. New<=120active/
-  600elapsed/1native, old115.13155+new<=240. Guard wrapper7358 has same six
-  code bodies as382; claims8ce unchanged. Qualified5dbf/4918,163.532upper.
-  Parent actiona2ef/authorityc50a/plan1217 actually installed onceTask21:25.
-- Galileo: exact new recovery public/private outcome-reader preparation;
-  source SYN then separately bounded public-only next_due18:50/hard19:00.
-  No private read before fresh positive new custody-writer closure.
-- Fermat: NEW CPU2/memory2GiB C360-H20 two-fit family adopted35f6aa14.
-  1200activeSUM/3600elapsed, ridge1+9345param five-view GRU1, seed20261029,
-  max192/pat24/2112updates/0retry/search, two seals/eight DEV ledger cells.
-  Freeze Source/custody before market. No GPU required for this small model.
-- Kepler: fixedblend completed/rejected all four criteria;Sourcea55a/FINAL7248.
-  Chronos17 currentpoint Source dea0/SYNqualified; newruntimeprep<=300active/
-  3600elapsed/one tiny trusted-checkpoint SYN after18:50,0marketforwards/fits.
+Assignments, not proof of running models:
+- Parent: integrate evidence/Git; activate only qualified exact existing/new owned
+  point tasks. Keep company unfinished until actual native outcome.
+- Lovelace: diagnostic-only future Memory A assembly<=240active/1800elapsed/
+  one exact cold callback-failure SYN. Capture actor_identity via trusted actual
+  function/source, no hardcodedline/no actor grant. Candidate18c9 SYN PASS,
+  new original-A short-child integration180/1800; installed5dbf immutable until
+  Parent qualified same-task UPDATE.0private/API/Task in preparation.
+- Dewey: readonly connection CLOSED; source/current-public-metadata actor
+  admission repair180active/1800elapsed/one invented realguard matrix/Claude.
+  No actual private/API/Task/Dockercreate; preserve actual/unknowncustody-writer
+  denial and exact identity/risk. Parent activates future path only after proof.
+- Kepler: Chronos17 point opportunity; Source8792 runtime/dea0point ready.
+  Qualify exact installed20:10 capture/currentgeneration/closure/86fresh sessions;
+  only exact same-source overlap b7union fallback, else inputunavailable.
+  Parent actually installed one quiet20:41..43/hard20:49 readonly job:
+  Sourcebf5cf2f3/plan27a454db, noRun/otherTasksunchanged, not point success.
+  Future<=600active/1800elapsed from actuallaunch/1load/13forwards408contexts/
+  0fits/outcomes/retries, UNALLOCATED proposal not account writer/default.
+- Fermat: source/native-only Chronos2 postcheckpoint fine-tune capability,
+  <=240active/1800elapsed/one3update trusted tinyfit/restore/0marketfits.
+  Exact installed SDK API, targetroles, chronological2026splits, curves and
+  stoprule before any market dispatch. No new numerical authority yet.
+- Galileo: ed7e/850d source+50nativechecks CLOSED. One new same-b7 five-close
+  target projection conditionally adopted180/1200/17reads/onehandoff/0API/retry
+  after Fermat freezes minimumsupport/loss. Physically separate roles/noinverse.
+- Ohm invoked Strategy:603oldfailure+516source-support failure immutable.
+  New source-key-supported roster beforeprices/payoffs; conditionally adopted
+ 600active/1800elapsed/1SYN/4fixedtrees/1selector/1FITlabels/1seal/1SCREENmarks/
+ <=10cells/0projection/retry/search, Source+native+Claude before payload.
+ Same32SCREEN/fullsupport/costs/calendars; no independent-alpha claim.
 
-Frozen B claims do not automatically admit a newly spawned research process.
-Keep numerical actors closed by18:34 or worker-owned next_due18:50; continue
-source/contract work meanwhile. This exact finite topology constraint is not
-a global research approval hold; future scoped peer admission needs improvement.
+Owned tasks, no manual run or exit-based inference:
+20:10Ridge/Datahard20:30/whole20:40;20:50Memory100/Datahard21:10/whole21:20;
+21:25..27MemoryconditionalA/hard21:35 actually installed5dbf/61ec.
+Exact positive PUBLISHED chain before deriving Oct29entry/Nov4exit.
+Original MSFTNov2/LOWVOLNov3/linear17Nov3exit unchanged.
+Clock-r2 updater16mockpass remains inert, not proof b547 runtime works.
+MonthlyOct30UTC21:00 unchanged; no app replacement follow-up chain.
 
-Installed readonly duties untouched: Oct28UTC20:10 Ridge point;20:50 Memory100
-point26b85470/plan4a6f8176; Oct30UTC21:00 monthly point.
-Future headless once21:25..27/hard21:35 is ENABLED with exact typed readback;
-actual publication/runtime remains unobserved. Conditional
-Oct29 entry/Nov4 exit require actual exact positive Memory publication.
-Original MSFTNov2/LOWVOLNov3 and same-cohort Nov3 exit remain owned.
+## Closed Research / Verification
 
-Galileo actual reader root A/research/current-linear17-recovery-outcome-reader-preparation-20261029-v1,
-Source01b2/public4f6d/sevenchecks ready; private cold-hook constructor still
-pending separately bounded native after18:50. Public followup has one owner Galileo.
-Parent new operational owner-closure helper42645932 is source-prepared, not run.
-Ohm invoked Strategy Discovery new rule-path family adopted97bf:
-900activeSUM/3600elapsed/CPU1/oneData projection/oneSYNfit/fourmarkettrees/
-<=10ledgers/0basefits/retry/search, Source/Claude/native before payload.
-No numerical worker before18:50; no independent alpha/Paper claim.
+Chronos109GPUforwards adaptive development positive, not independent alpha.
+H5rankloss oneGPUfit32epochs/best8 closed. Fixed Chronos/H5 blend rejected.
+H20twoCPUfits Sourceeec7 closed:NN29epochs/best5, all3recipes43cash underfrozen
+costs/no threshold rescue. Direct-H5penalty prep scientificallyrejected/noGPU.
+No duplicate training or dummy resource utilization; ready finite work first.
 
-## Completed Useful Work / Verification
-
-Chronos2 development:109actual GPU forwards/0fits,32cohorts/twoledgers;
-10bp research growth3.278731percent/DD.841107 vsUniform1.570961/.833910.
-MAE worse than persistence, DD slightly higher. Not independent alpha/Paper/PnL.
-H5 rankloss GRU:one actual GPU fit32epochs/5664updates/best8, twoledgers;
-growth1.605612/DD.991595, frozen MSE control economics withheld.
-All corresponding workers closed; do not duplicate training.
-
-C360 five-view QQQ/SPY and separate H20 outcomes READY; source-local retained
-2022-23, input/target masks preserved. New two-fit campaign is adaptive reused
-development, not independent performance or automatic Paper/default promotion.
-
-Fresh full authority: A/verification/current-custody-scoped-paper-integration-20261029-v1,
-SOURCE4484ff90/RESULT8759bd1a:188serialPASS/19577fullPASS/26knownWindowslinkSKIP/
-8workers/410.47s, Ruff and three Compose.env.example PASS; source stable18:13.
-External helpers need their own native proof; repo tests do not validate D: code.
-Reuse for docs only after exact protected digest verification.
-At actual company completion verify/commit/push, replace with ONE next company
-outcome and continue. A package commit does not complete this objective.
+Fresh SOURCE4484/RESULTb3de at
+A/verification/current-windowless-cohort-reader-integration-20261029-v1:
+188serial/19577fullPASS/26knownWindowslinkSKIP/8workers/394.12s/Ruff/
+threeCompose.env.example/source stable20:04. External code needs its own proof.
+At material company completion verify/commit/push, replace with ONE next company
+outcome and continue. Package commits do not complete this unfinished outcome.

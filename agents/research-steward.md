@@ -1,46 +1,42 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / Oct28UTC18:26. A=D:/thericher-v2/model-artifacts.
-Parent owns shared MD/Git. Project first GPU priority/concurrent useful work
-approved; no userapp allowlist/kill/driver change/dummy utilization.
+2026-10-29 KST / Oct28UTC20:23. A=D:/thericher-v2/model-artifacts.
+Parent MD/Git. Project GPU firstpriority/concurrent useful work approved.
+No userapp allowlist/kill/driverchange/dummy utilization.
 
-## Actual Resource State / Ready Contract
+## Current Allocation
 
-Chronos and H5rankloss GPU workers positively CLOSED. No current GPU training
-claimed. GPU is not permission-blocked; next ready family is small CPU-native.
-Fermat coordinates NEW C360-H20 family35f6 at
-A/research/current-intraday-multires-h20-development-20261029-v1:
-CPU2/memory2GiB,1200activeSUM/3600elapsed,2fits/one seed/no search/retries.
-One ridge<=30s +one9345parameter fivebranchGRU<=600s/max192/pat24/2112updates.
-Source/custody/FITaffines/native final driver before market; allfailure/IO/
-cleanup count. Two seals/eightDEVledgercells, no finalEval. Prep190upper immutable.
-No GPU-resource assertion from CPU native proof.
+No running GPU worker claimed from assignment/MD alone.
+Fermat coordinates new Chronos postcheckpoint fine-tune capability240active/
+1800elapsed/one actualtiny3update optimizer/checkpoint smoke IF exactAPI/roles
+qualify,0marketfits/payload/evaluations. Numerical market family unadopted.
+Galileo Data role prep independent. Use trusted cachedsafeweights/current
+SDK2.3.2/Torch, actualPID/start/lease/headroom+4GiBreserve before allocation.
+Personal/unknown GPU use is not approval hold. Safe Execution preemption,
+no silent retry or age-reclaim of unknown live lease.
 
-Frozen B18:35/18:42 admission does not include arbitrary newborn research actors.
-Close numerical OSworkers by18:34 or worker-owned next_due18:50 while source/
-contract prep continues. No foreground wait/global research permission hold or
-reset of3600elapsed. Improve scoped peer admission for future Paper deployments.
+Kepler Source8792 runtime prepared; future currentpoint600active/1800elapsed
+fromactuallaunch,1load/13forwards408contexts/0fits/outcomes/retries.
+20:41..43/hard20:49 actual Taskinstalled bf5cf2/plan27a454, beforeMemory20:50.
+This is installation only, not an active GPU worker or actual point.
+Data freshness/86session contract first; no GPU inference from stale point.
+An old resource/time cap is not global; per-family failures/debits preserved.
 
-Kepler hostfixedblend closed/noGPU,point Source dea0 qualified/noactualpoint.
-New Chronos17 runtimeprep<=300active/3600elapsed includes one actual tiny trusted
-checkpointSYN after18:50;0marketforwards/fits. Fermat coordinates futureGPU
-headroom/lease, no market inference merely from Source readiness.
-If laterGPUneeded: mem_get_info/projected peak/measured desktop reserve, actual
-PID/start/lease per worker. Unknown userGPU use not permission hold. Safe checkpoint
-preemption on actual OOM/instability/Execution emergency; no silent retries.
+## Actual Closed Resources
 
-## Last Actual GPU Results
+- Chronos8df:109GPUforwards/3179contexts/0fits,562MiBreserved;
+  all6CIDs/41CLI/leaseclosed,481.0197605familyupper.
+- H5rankloss766c:1GPUfit32epochs5664updates/best8,628MiBreserved;
+  all4CIDs/28CLI/leaseclosed,338.8056954upper.
+- Chronos currentpoint runtime8792:one trusted load/32inventedcontexts,
+  sevenpublisherchecks,193.151prepupper; GPU/CID/eightCLI/leaseclosed18:51:52,
+  finalizerclosed18:53:53. No marketforward/currentpoint.
+- H20eec7:2CPUfits/6CIDs+6ownersclosed/GPU0,162.3627914upper.
+  NN29epochs/best5; all3policies43cash, not economicedge.
+- Direct-H5penalty prep3e71 scientificallyrejected106upper/noGPU/native.
+- Fixedblend a55a closed/rejected; oldGRU/Transformer/TCN/MLP/CAT closed
+  families remain immutable, not an idle-GPU refill queue.
 
-- Chronos FINAL8df98160:9native+100marketforwards/0fits/retries/3179contexts,
-  marketworker25.636s/562MiBpeakreserved,all6CIDs/41CLI/leaseclosed.
-  481.0197605familyupper inclData/failures. Adaptive development, not alpha/PnL.
-- H5rankloss FINAL766c8167:onefit32epochs/5664updates/best8/pat24,
-  wholefit172.9695s/628MiBreserved;338.8056954familyupper,
-  all4CIDs/28CLI/leaseclosed. Oldprep140 separately closed/no refund.
-- Matched indicators GRU29epochs/best5,Transformer31/best7 closed;
-  original3armPARTIAL/TCN0updates/noLAST/consumed unchanged.
-- TCN e38b sixsyntheticprofiles/4qualified/2limited, no repeated market fit.
-- MonthlyMLP/GRU/Transformer/CAT/oldensembles stay immutable, not utilization queue.
-
-Actual phase/PID/start/closure, not MD narrative, establishes resource use.
-Co-tenant timings are not isolated benchmarks. Never age-reclaim unknown livelease.
+Current verification4484/b3de:8CPUworkers fullsuite completed19577PASS/
+26knownSKIP/394.12s; no test worker still claimed active.
+Dfree36.6% measured, modelsA/dataM. Resource co-tenancy not isolated timing.
