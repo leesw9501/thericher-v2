@@ -63,8 +63,10 @@ callback/oldcache skips. Final r2 Source5ee36f78/manifest185d1bf4:
 36oldcache-skips. Combined failed+newPOST2,0wire retries. Owned-time stop
 2680.642845/2700, not provider floor. Root/Job/OS/token gate closed;
 Parent26hashes0mismatch. No old cache/current33 mutation.
-Jason now owns metadata-only unfinished cursor/required-window classification
-under current-core8-unfinished-cursor-readiness-20261028-v1, not new API calls.
+Unfinished-cursor classification0c247 completed; targeted recovery8d63c42f
+then made37GET/1POST/0retry,4,440rows/3,309required timestamps/15intervals.
+No old-root overwrite,240overlaps/0conflicts; root/Job/OS/cache/token closed.
+Parent16refs0mismatch. AMD/QQQOct7_12:42 persisted; no identical new requests.
 
 Guard lesson: Data admission scopes to actual cache/account/token collectors,
 not all unrelated Research/Python/GPU processes. Reuse exact named/source/
@@ -87,6 +89,43 @@ provider finality, measured historical availability or live/Paper parity.
 Original producer has Windows codec path: Engine must smoke exact actual
 consumer/bootstrap before fits, not assume Linux portability from Windows cold.
 Actual model training is Engine's separate contract, not Data READY evidence.
+
+Window-level V2 is now READY865b1da8:
+current-core8-window-complete-packets-20261028-v2/READY.json,
+396same keys/FIT197/INNER90/DEV90eligible,53additional windows,0GET/0fits.
+Oneprojection/4softwareiterations/cold+independent values/masks/source PASS.
+No full390-session gate or imputation. Capture-incomplete QQQ/SPYSep29_11:29
+and AMD/QQQOct7_12:42 remain unknown. V1/closed Engine families unchanged;
+V2 is future input only, not an automatic refit or fresh independent sample.
+
+## Current Monthly Input
+
+Monthly source56429 READY95FIT/23INNER/21DEV, same retained KISb7/no newAPI
+in that producer. Feynman closed after exact missing-key failure handoff.
+Volta kernel8025a865 requires252official closes/251returns,17stocks+SPY/QQQ,
+firstmonthlyOPEN to nextmonthlyOPEN (NOTexactH20), physically split features/
+outcomes/roles. MissingQQQ is not required; causal eligiblemask/strict role
+purge/retrospective availability limits retained. Native actual file/role/
+consumer proof before payloads. Original source/packet bytes stay immutable.
+Parent defines MODE1 adjusted-price-proxy analytics in normalized synthetic
+units; do not invent corporate actions or claim actual nominal shares/PnL.
+
+Parent endpoint recovery COMPLETE:
+current-long17-monthly-daily-mark-recovery-20261028-v1/endpoint-only-r1/
+QUALIFIED-FINAL.json SHA2db664cc,10keys/total10GET2POST0retry. Original q01
+body reused, no repeated request. All10 strict OHLCV rejections remain due
+to unused LOW faults; valid positive OC/exact shared OC comparison only.
+Job/OS/cache/token positively closed; original156.18 included in310.833/600.
+Initial SYN string-vs-Path caller defect preserved; corrected native3queries
+shared one RAM client and retained strict rejects. Claude GO_WITH_LIMITS.
+New monthly-open-close-overlay READYa167db6d/DELIVERY.json:
+oneprojection/10keys20OC/120past-close masks restored; same95/23/21cohorts,
+DEV unchanged. Native/cold/independent proof PASS,20source72packet files
+unchanged;322.66/600active,2softwareiterations/launchfailure preserved.
+Carson closed after direct Engine handoff. Only absent exact OC keys,
+unchanged calendar/roles/causal eligibility; no strict Bar/OHLCV promotion,
+future-completecase filter or original overwrite. Engine binds new DataVersion
+before first compile. No API/fit/evaluation in this overlay.
 
 ## Scheduled Fresh Input
 

@@ -9,12 +9,13 @@ Original B/10/F9/unrelated %SystemDrive%/ preserved.
 
 | Owner | Actual evidence / next consumer |
 | --- | --- |
-| Parent / 총괄 | Full19564+26knownSKIP/233serial/Ruff/3Compose PASS; image920d native32 PASS. Integrate/commit; currentf545 outcome still future, no company-complete claim. |
-| Raman / 엔진·자원 | Sole coordinator after Turing06:39positive closure. New BB/context family3600active7200elapsed/<=3fits; current6255 rawstudy closed/noincrement. Old raw controls reuse, no duplicate fits. |
-| Jason / 데이터 수집 | Actual5ee3 capture123newcomplete/517GET/rootclosed; metadata17unfinished verified. New targeted37GET/1POST/600active1800elapsed recovery, no old cache/activeEngineData changes. |
-| Planck / 실행 호환성 | Five actual sources4db9/currentMSFTb2fd/currentLOWVOLcce5 native qualified. Minimal five-future-action binder/mock proof prepared; actual COM provider/releases/cutover absent, no currentf545 change. |
-| Pascal / 다종목 실행 | New opt-in library+image920d native32/cold/closure PASS, defaultoneeffect unchanged. Future dated NAS_H5 Uniform pair/max3serial effects/owned exits source preparation; no actual Task/order. |
-| Turing/Tesla/Cicero/Hypatia/Sagan/earlier executors | Completed/closed with exact resources/evidence. Data1d4 actual147FIT87INNER90DEV; maskedBB kernelc1bd/10tests. MD is not permanent running LLM. |
+| Parent / 총괄 | Pushed edb81aea; full19564+26knownSKIP/233serial/Ruff/3Compose PASS. Exact10 OC repair final2db664cc/Jobclosed, original rejected OHLCV preserved. Currentf545/follow-up actual results future. |
+| Raman / 엔진·자원 | Sole coordinator; BB982e closed. Monthly fixed-rule CPU1800active7200elapsed, native25/cold qualified; compile/INNER/DEV0 pending exact OC DataVersion, fits0/GPU0. |
+| Carson / 데이터 입력 | CLOSED: monthly OC-only overlaya167 READY/oneprojection/10keys20OC/120past-close masks,322.66of600active; old56429/V2865b unchanged, direct Engine handoff. |
+| Pascal / 다종목 실행 | Image920d/native32 and future pair8768/9b8d READY. Coexistenceb89c PARTIAL/unwired descriptor,3iterations/95.38active/3CIDs24Jobsclosed. Parent reviews narrower dated finite observer yield; no actual Task/TRUE/allocation. |
+| Averroes / 전략 탐색 | Bounded dedup/official-source proposal for causal covariance allocation, no market readout/fits/GPU; only executable kernel+SYN or concrete rejection. Independent of monthly trend. |
+| Planck / 실행 호환성 | Closed: currentMSFT/LOWVOL bindings and five-action binder4d605/25mockchecks/10childrenclosed/ClaudeGO. Actual COM provider/TRUE/cutover absent, no currentf545 change. |
+| Jason/Volta/Turing/Tesla/Cicero/earlier executors | Completed/closed with exact evidence. Jason targeted37GET complete/rootclosed; Volta monthly kernel8025/10tests. No permanent LLM promised by MD. |
 
 Assignments are not actual worker/GPU proof. One mutable owner per write set,
 sole Steward for registry/GPU. Sibling messaging unavailable in executors:
@@ -35,10 +36,19 @@ ready lane; it is not company completion or permission hold.
 
 ## Throughput Review
 
-Current review06:44UTC: full8workers completed while actual CUDA TCN fit ran,
-not foreground session waiting. GPU fit9.39s is complete, not running inferred.
-Fresh scoped Raman reuses qualified source/bootstrap and raw controls; one
-representation intervention instead of repeated raw fits/threshold sweeps.
+Current integration review: source-only/complete work is not running GPU work.
+Two pooled short-return families failed; no same threshold/indicator rescue.
+Next different monthly holding/rule study is CPU by mechanism, not GPU hold.
+Required OC fields were valid while unused LOW rejected strict OHLCV pages.
+Reuse failed saved body, acquire only nine unattempted keys and compose a
+separate endpoint-grade DataVersion. Avoid whole-page/whole-session gates for
+consumers that provably do not need those fields; preserve actual source faults.
+Parent handles immediate acquisition repair; Data prepares overlay and Execution
+coexistence proceed disjointly. No duplicate query or foreground market sleep.
+Window-based admission produced53extra valid samples with0newGET instead of
+requiring every session's390bars; old data/studies preserved. Reversible
+consumer improvement, not imputation or automatic refit. Monthly Data+Engine
+and future NAS execution are disjoint; no foreground market/quotas wait.
 Data guard regression classified unrelated Research as collector. Correct
 actual source/cache/account/token scope, retain genuine unknown writers and
 atomic exclusion; Source324 already has the scoped guard.
@@ -67,5 +77,6 @@ unchanged/13independent readback PASS. Reader module/default/JSON-time errors
 retained, not real Task fault. Current Task sources read only, instances0 is
 not process/container closure or permission to mutate today's f545.
 
-Last checkpoint36473806. Owned code/documentation integration awaits final
-fresh verification/checkpoint. Package commit is not company completion.
+Last pushed edb81aea. New external evidence/current-only docs await fresh
+protected-hash checks; no new full merely for docs. Company outcome remains
+UNFINISHED until actual native runtime/reconciliation; no company-complete claim.

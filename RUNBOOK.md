@@ -62,8 +62,12 @@ intent/fill links and before-after membership/file identity/mtime/bytes.
 Never recovery-capable observe(), lock creation, foreign adoption or release.
 Current reader imaged892 already has mixed-venue core; no blanket migration.
 
-Existing app oct26-paper follow-up configured one14:40UTC. Acceptance is not
-delivery or independently established RRULE timezone. No replacement chain.
+Existing app oct26-paper updated through automation tool: explicit UTC DTSTART
+Oct28_14:40Z/COUNT1 persisted and independently read back, intended23:40KST.
+Same identity/thread/notifications; actual delivery unobserved. Inspection
+scope remains strict but does not globally forbid next approved packages.
+Evidence current-finite-multileg-entry-integration-20261028-v1/FOLLOWUP-UPDATE.
+No recurring report or replacement chain.
 Worker owns next_due; continue another lane rather than foreground waiting.
 
 ## Installed Readonly Daily Point
@@ -126,14 +130,24 @@ Opt-in repo paper_account_multileg_session.py +32newtests verified:
 Candidate A/execution/current-finite-multileg-runtime-image-20261028-v1:
 image920d88e5/SDK78c3eba3/1407members, only module0f2587ff added to unchanged
 old1406. ActualLinux native32/cold/closuree584 PASS, no deployment.
-Pascal prepares future-nas-baseline-pair source/native fixture under that root,
-max3serial NAS entry effects and bounded owned exits in ONE original bank.
-No actual new Task/release yet. Static Uniform17 has no market features/alpha;
+Future-nas-baseline-pair Source8768/consumer9b8d passed native threeentry/
+threeexit/unknown/partial/default-one-effect and guest publisher roundtrip.
+Pascal actor-coexistence-r1 resolves actual observer/runtime write sets;
+no actual Task/TRUE/allocation yet. Max3serial NAS effects, ONE original bank.
+Static Uniform17 has no market features/alpha;
 unsupported NAS-profile mass stays unspent, never subset-normalized.
 A new future dated contract, not today's cap mutation or unknown substitute.
 NASDAQ baseline independent of F3/ML/NYSE migration; never force trade.
 
 ## Completed Data / Research Are Not Replay Commands
+
+Exact monthly OC recovery is CONSUMED, not a rerun command:
+A/data/current-long17-monthly-daily-mark-recovery-20261028-v1/endpoint-only-r1/
+QUALIFIED-FINAL.json SHA2db664cc.10keys/10GET2POST0retry including original
+failed request reused offline; all strict OHLCV rejections preserved.
+OPEN/CLOSE-only compatibility, no repaired LOW/Bar/Paper grade. All owners/gates
+closed. Carson owns separate monthly OC DataVersion; Engine must bind actual
+READY/native producer-consumer before sole policy compile. No old overwrite.
 
 - Existing20 KIS MODP1 long historyb7fd already feeds49ac:90,819canonical rows.
   NVDA sentinel f17ce4b4/284ea68e:1POST4GET/100dates400OHLCmatch; reuse, no

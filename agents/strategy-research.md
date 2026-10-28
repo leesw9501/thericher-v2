@@ -39,8 +39,15 @@ remain unknown. No public code/license adopted or absolute price invented.
 Raman's next executable family compares compact indicator/oldraw+indicator
 HGB and raw+BB TCN with compatible cached raw controls, sameData/costs/
 threshold. Parent did NOT adopt proposal's10bp costs/flattened5520/no-symbol
-defaults. One finite representation intervention, not a reading list, old raw
-refit, indicator catalog or current Paper default change.
+defaults. BB family now COMPLETE982e/noincrement/allcash; do not repeat it.
+Volta monthly kernel8025a865/10SYNtests/Ruff source-ready after bounded dedup:
+current-long17-h20-trend-proposal-20261028-v1/READY.json. Related monthly
+momentum/ETFvol/sector-relative mechanisms existed; proposed contrast is exact
+fixed postselection gates+nonredistributed vol sleeves, not each component.
+252closes/251returns, variable monthly carry NOTH20. Current executable consumer
+is Raman's one CPU price-proxy monthly study and Feynman's Data252 handoff.
+Original papers inform mechanisms, not a claimed stock/factor replication.
+No learned fusion/new DL fit/profit claim granted by this proposal.
 No new literal macro-role dependency or hidden feature/window multipliers.
 Globally reused data means adaptive screening, not fresh alpha.
 Fixed blends may be explored without each standalone expert profitable;
@@ -55,6 +62,13 @@ retain original failures and scientific criteria. No threshold rescue/list-only
 research or completed training repeats for utilization.
 
 ## Ready Proposal Policy
+
+Averroes01a18195-12c0-79b1-90f1-4c145eafec94 owns bounded
+current-long17-covariance-allocation-proposal-20261028-v1: dedup then ONE
+causal risk-allocation/no-return-forecast kernel+SYN or concrete rejection.
+Official primary sources/existing NumPy/SciPy only;300active1200elapsed,
+no market outcome/fit/GPU/API. Consumer Raman, not a new trading writer.
+No assumed ready GPU campaign or automatic numerical dispatch from a proposal.
 
 A next proposal must address a measured weakness using available causal inputs,
 name baseline/strongest kill/finite trial+compute cap and executable consumer.

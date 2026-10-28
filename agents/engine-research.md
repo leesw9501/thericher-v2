@@ -47,9 +47,9 @@ current-long17-wide-saved-cost-diagnosis-20261028-v1/CONSUMER.json.
 Joint fixed-path gross advantage8.515bp minus42.565bp extra fees =-34.050bp
 net; gross DD cannot be inferred by fee subtraction. No generic FeeProx rescue.
 
-## New Pooled Intraday Family
+## Completed Pooled Intraday Family
 
-current-core8-pooled-c120h60-development-20261028-v1, Turing sole owner.
+current-core8-pooled-c120h60-development-20261028-v1, Turing's closed scope.
 New3600owned-active/7200elapsed, one HGB/one small causalTCN/one fixedblend,
 rule and aligned same-gross control; freeze actual contract before fits.
 Data1d4fae4a actual FIT216/147eligible, INNER90/87, DEV90/90. Targets six stocks,
@@ -79,7 +79,37 @@ raw+indicator fit; old raw controls reused only compatible sealed forecasts.
 Same Data1d4/20bp eachleg/controller/threshold, not proposal's10bp or new grid.
 RAW_PLUS HGB predesignated primary; allcash not skill, secondary TCN/blend
 not rescue. Native actual crossOS producer/kernel/model before market.
-Source authoring/assignment is not running training; actual receipts decide.
+COMPLETE982ed597/READY:3firstfits/oneDEV/fiveledgers/188checks,0rawrefits.
+HGB59 selected0 equalsFITconstant; indicatorHGB14 selected2; TCN40updates/
+best16/11.08sCUDA/81.09MiB. Allcash/noninformative, primaryREJECT; no cost/
+threshold/window rescue.11CIDs66Jobs/PIDs/lease/registry lock closed.
+Finalupper1492.917137/3600 preserves R1/R2 failures; one separate tools-disabled
+Claude GO_WITH_LIMITS. Network exclusion was numerical-worker scope, not a
+global advisory ban; old unavailable marker preserved, not agreement.
+
+## Current Monthly Rule
+
+Raman owns current-long17-monthly-gated-trend-development-20261028-v1:
+NEW1800Engine-active/7200elapsed plus separately owned Data900. Fits0/GPU0.
+Source/native preparation only until Data monthly252 actual handoff. Volta's
+fixed kernel8025 combines Top5 skip21 momentum, own-positive/SPY-relative gates
+and nonredistributed bounded-vol sleeves. Dedup found related components,
+not exact combination. One fixed policy/no parameter/model grid.
+Monthly firstOPEN-to-nextmonthlyOPEN carry/actual-delta20bp eachleg, NOTH20.
+Six aliases before payoff: cash/fullUniform/simpleMom/matchedgross controls.
+INNER must pass entire frozen growth/DD/turnover conjunction before DEV intake;
+otherwise stop without DEV. Reused data/current-universe/PIT limits remain.
+MODE1 adjusted-price-proxy analytical wealth, not actual historical inventory/
+actions/settledPnL. Unknown CA metadata is not a blanket proxy-computation ban;
+never fill required missing prices or claim actual share/cash semantics.
+Research weights at gross.1 are not automatically native relative proposals.
+No Paper default/risk/authority change; GPU currently unnecessary for this rule.
+Original Data56429 remains immutable. New OC-only DataVersiona167db6d is
+actual READY/oneprojection/10keys20OC/120past-close mask repairs, same95/23/21
+cohorts/DEV unchanged. Native/cold+positive Data closure/DELIVERY hashes handed
+to Raman. Only required OPEN/CLOSE qualify; invalid unused LOW warnings and
+strict OHLCV rejects retained. Bind new producer-consumer before sole compile,
+not a new parameter trial or post-result reranking. No imputed price/role change.
 
 ## Latest Closed Results
 

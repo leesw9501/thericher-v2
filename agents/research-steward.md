@@ -7,10 +7,14 @@ Parent owns shared policy/MD/Git. MD/Source assignment is not process proof.
 Current transfer: Turing's62551273 family CLOSED, positive06:39UTC noPID/
 matchingCID/lease,8CIDs48Jobs closed; Parent closed Turing and transferred
 registry/GPU ownership to fresh scoped Raman. No duplicate raw fits.
-Raman owns current-core8-bb-context-ablation-20261028-v1, NEW3600active/
-7200elapsed, <=3newfits (two indicator HGB/one raw+BB TCN), fixedblend.
-Old raw controls reused only exact bindings. Source/native/resources before
-market; no actual new GPU worker inferred from assignment.
+Raman BB/context982e CLOSED3fits/oneDEV/fiveledgers/188checks, no increment.
+TCN40updates/11.08sCUDA/81.09MiB;11CIDs66Jobs/PIDs/lease/registry lock closed,
+final1492.917137/3600. Old raw controls not refitted, no market retries.
+Current monthly fixed-rule family has1800Engine-active/7200elapsed and
+separate Data900/3600; Sourcecarry300 charged once inside Engine allowance.
+Fits0/GPU0 by mechanism, not environmental permission hold. No admitted GPU
+campaign currently; admit useful new ready work under actual headroom, never
+duplicate short-return studies or dummy training while Data/native prepares.
 
 ## Ownership Handoff
 

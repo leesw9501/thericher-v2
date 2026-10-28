@@ -101,8 +101,10 @@ Actual r2 CLOSED5ee36f78 at06:13UTC:1POST517GET/123newcomplete symbol-sessions/
 tokenPOST2/GET517/0wire retries. Stopped owned-time cap2680.642845/2700,
 not a provider floor. Root/Job/OS/token gate closed; Parent26refs0mismatch.
 CACHE-MANIFEST185d1bf4 is immutable, not merged into old caches/current33.
-Jason now classifies exact unfinished cursors/required-window support from
-metadata only, not another capture or duplicate source probe.
+Targeted recovery8d63c42f subsequently completed37GET/1POST/0retry:
+4,440rows/3,309required timestamps/15intervals,240overlaps0conflicts.
+All root/Job/OS/cache/token gates closed; Parent16refs0mismatch.
+No identical retry of persistent AMD/QQQOct7_12:42 gaps.
 
 New Core8 research packets are ACTUAL READY:
 A/data/current-core8-c120h60-packets-20261028-v1/ACTUAL-READY.json,
@@ -114,6 +116,12 @@ Features[N,120,3,5], targets RAW_SIMPLE, full60bar OHLCV paths separate.
 Optional first-lag/flat-range features stay masked; raw past completeness is
 not derivedfeature observed.all(). Canonical bar lag is an offline convention,
 not measured availability/finality/execution parity. No market imputation.
+
+V2 window-level consumer865b1da8 also READY,0API/0fits/oneprojection:
+current-core8-window-complete-packets-20261028-v2/READY.json.
+Same396keys,197FIT/90INNER/90DEV eligible (+53), no full390-session gate.
+Captured-incomplete QQQ/SPYSep29_11:29 and AMD/QQQOct7_12:42 remain unknown.
+OldDataV1/closed studies unchanged; no automatic refit/performance claim.
 
 ## Research Results And Queue
 
@@ -128,9 +136,10 @@ Globally reused outcomes/current-listing/non-PIT/adjustment/finality limits rema
 | Same-KIS GRU/Transformer/HGB9592 | Both DL16epochs448updates/best0; completedHGB reused. Allcash/properMSEconstant, REJECT_NAMED_INCREMENT;9b2aed27/7CIDs42Jobs closed. |
 | Gaussian3846/e2a0, FeeProx, dailyTCN/Logistic blends, earlier public models | Closed outcomes in Git158bd51a/exact immutable consumers; no rescue sweep or duplicate fits. |
 
-Turing01a180d7-f829-7701-b932-1bba78a71b61 is sole Engine/Steward after positive
-05:01 closure/Parent transfer from Schrodinger. Old unexecuted macro draft is
-preserved, not an active dependency or a new resource lease.
+Historical Turing01a180d7-f829-7701-b932-1bba78a71b61 owned the completed
+wide/pooled families after Schrodinger's05:01 handoff and is now closed.
+Raman is current coordinator. Old unexecuted macro draft stays preserved,
+not an active dependency or a new resource lease.
 
 NEW wider chronological Data is READY:
 A/data/current-long17-wide-chronological-packets-20261028-v1/READY.json,
@@ -167,12 +176,38 @@ one HGB57stages/selected37/.424s, one CUDA TCN38updates/selected14/9.39s/
 Rule17trades growth-.111570percent/DD.113122percent, no threshold/cost rescue.
 61checks/8CIDs48Jobs/lease closed, finalupper2409.543156/3600. Exact crossOS
 bootstrap/typed producer-consumer proof retained; no duplicate fit/readout.
-Raman now prepares ONE BB20/context representation family at
-current-core8-bb-context-ablation-20261028-v1,3600active/7200elapsed/<=3fits:
-two indicator HGB/one raw+indicator TCN, fixedblend; old raw controls reused
-only compatible sealed forecasts. Cicero kernelc1bdd671/10tests/Ruff READY.
-SameData1d4/current20bp eachleg/controller/threshold, no10bp rescue. Source/
-native proof before fits; assignment is not current GPU activity or Paper PnL.
+BB20/context family COMPLETE982ed597:3firstfits/oneDEV/fiveledgers/188checks,
+no raw-control refits/market retries. RAW_PLUS HGB selected0=FITconstant,
+indicatorHGB selected2, TCN40updates/best16/11.08sCUDA/81.09MiB. Allcash/
+noninformative/primaryREJECT. Final1492.917137/3600;11CIDs66Jobs/PIDs/lease/
+registry lock closed. One separate Claude GO_WITH_LIMITS after clarifying
+numerical-network exclusion is not a Claude advisory ban; oldmarker retained.
+
+Next Raman CPU rule study current-long17-monthly-gated-trend-development-
+20261028-v1:1800Engine-active/7200elapsed, fits0/GPU0. Volta8025a865 fixed
+Top5 skip21 momentum +own-positive/SPY-relative gates +nonredistributed
+vol sleeves; bounded dedup/10SYNtests/Ruff, not claimed component novelty.
+Monthly Data56429 is READY95FIT/23INNER/21DEV, old source immutable.
+Feynman's first exact missing-key request rejected invalid unused LOW;
+Parent reused that saved body and completed9remaining distinct requests.
+All10 needed OPEN/CLOSE keys valid with exact shared OC compatibility;
+strict OHLCV rejects stay rejected, no repaired LOW/Bar/CA/Paper grade.
+Final A/data/current-long17-monthly-daily-mark-recovery-20261028-v1/
+endpoint-only-r1/QUALIFIED-FINAL.json SHA2db664cc: total10GET2POST0retry,
+positive Job/OS/cache/token closure, old+successor upper310.833/600.
+Claude GO_WITH_LIMITS; original156.18 debit/failed source/deadline preserved.
+OC-only monthly overlay is READY DataVersiona167db6d:
+A/data/current-long17-monthly-open-close-overlay-20261028-v1/DELIVERY.json.
+One projection/10keys20OC;120past-close observation/eligibility masks restored,
+same95/23/21cohorts/DEV unchanged. Native/cold/independent checks passed;
+20source/72packet files unchanged;322.66/600active, no API/fit/eval. Carson
+positively closed and delivered exact hashes to Raman; Feynman also closed.
+Raman owns exact newData binding before sole compile/INNER/conditionalDEV.
+252closes/251returns, variable monthly firstOPEN-to-nextmonthlyOPEN carry,
+NOTexactH20. Native exact Data/consumer/kernel/fee-ledger proof before values.
+Explicit MODE1 adjusted-price-proxy analytics, not nominal historical shares/
+corporate actions/PIT/settledPnL. INNER full frozen conjunction before any DEV;
+unknown required inputs never filled. Model/Paper authority remains separate.
 
 ## Execution Readiness / Unknowns
 
@@ -213,11 +248,19 @@ Opt-in repo multileg entry API/tests integrated and verified: serial233PASS,
 full19564PASS26knownlinkSKIP/403.69s/8workers/Ruff/3Compose. Default one-effect
 session/budget/current f545 unchanged. Candidate image920d88e5/SDK78c3eba3
 adds only module0f2587ff to1406unchanged old members; actualLinux32tests/cold
-import/nativeclosuree584 PASS, not deployment. Pascal prepares future dated
-NAS_H5 Uniform17 pair under that image root/future-nas-baseline-pair, max3
-serial entry effects/original shared bank and exact owned exits. No fake
-market features; unsupportedNYS cash. Independent of futureF3/ML/NYSE
-migration, not today's cap change/F9 substitute. No actual new Task/release.
+import/nativeclosuree584 PASS, not deployment. Future NAS_H5 Uniform17 pair
+under that image root/future-nas-baseline-pair is source/native READY8768/
+consumer9b8d: three invented entries/exits, unknown/partial/default-one-effect
+and publisher roundtrip passed; CIDs/Jobs closed. Max3serial entry effects,
+same original bank/exact owned exits, unsupportedNYS cash, no fake features.
+Actor-coexistence-r1b89c is PARTIAL, not deployable: observer descriptor is
+not wired into ActualCensus and exact host descendant remains unqualified.
+Its3softwareiterations/95.38active/3CIDs24Jobs closed;6native cases/publisher
+passed but do not prove real admission. Parent reviews narrow existing finite
+yield/restore instead of blanket observer exemption/new guard platform.
+Disjoint runtime output may not fork account/basis/journals/emergency controls. No actual
+Task/TRUE/allocation; currentf545 unchanged. Independent of F3/ML/NYSE,
+never an F9 substitute; activation needs positive actual owner closure.
 
 ## Outcome Readers / Continue
 
@@ -228,8 +271,12 @@ fresh relevant-writer admission/positive closure/allRO/networknone/exact joins/
 before-after stability. No recovery observe(), lock write or absence release.
 Current reader image d892 already supports mixed venues.
 
-Existing app oct26-paper follow-up configured one14:40UTC check; accepted
-configuration is not guaranteed delivery/timezone proof. No replacement chain.
+Existing app oct26-paper follow-up updated through the tool, same identity/
+thread/name/notifications. Explicit UTC DTSTART Oct28_14:40Z/COUNT1 persisted
+and independently read back, intended23:40KST; actual delivery unobserved.
+Inspection bans remain local, not global restrictions on next approved goal.
+Evidence: verification current-finite-multileg-entry-integration-20261028-v1/
+FOLLOWUP-UPDATE.json. No recurring report or replacement follow-up chain.
 Workers own next_due; do not foreground-wait for sessions while work is ready.
 
 Current tracked authority ec946b4b/1414members at

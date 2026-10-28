@@ -75,10 +75,16 @@ cross-type equality stillFAIL, not native rejection or fictitious combinedPASS.
 Repo opt-in multileg API+32tests now verified233serial/full19564+26knownSKIP/
 Ruff/3Compose. Current one-effect default/session/budget/f545 unchanged.
 Image920d88e5/SDK78c3eba3 adds only module0f2587ff; old1406members unchanged.
-ActualLinux32/cold/closuree584 PASS, not deployment. Pascal prepares future
-NAS_H5 Uniform17 pair/max3entryeffects/bounded owned exits in same bank,
-source/native only. Independent of F3/ML/NYSE migration; no actual Task/TRUE/
-capital or unknown substitute. Static declaration is not market features/alpha.
+ActualLinux32/cold/closuree584 PASS, not deployment. Future NAS_H5 Uniform17
+pair Source8768/consumer9b8d native3entries3exits/unknown/partial/default-one-
+effect/publisher roundtrip PASS. Max3entryeffects/bounded owned exits in same
+bank; no actual Task/TRUE/capital or unknown substitute. Independent of F3/
+ML/NYSE migration. Static declaration is not market features/alpha.
+actor-coexistence-r1 Sourceb89c is PARTIAL: descriptor not consumed by
+ActualCensus and exact observer host-descendant capability unproved.
+3softwareiterations/95.38active/3CIDs24Jobs closed; native/publisher PASS is
+not real admission. Parent reviews existing dated finite observer yield/restore
+as narrower alternative. No blank observer exemption or actual Task change.
 
 ## Readonly Point Task / Outcome Readers
 
