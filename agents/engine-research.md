@@ -1,7 +1,8 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Raman01a1813f-666f-73a3-ae59-dc3ecb40cf31 owns Engine/Steward; Parent MD/Git.
+Darwin01a181a8-a673-7610-a2a2-f709bfc3473e owns Engine/registry/GPU after
+Parent completed the monthly technical successor. Parent shared MD/Git.
 Research proposes, never alters deterministic Paper risk/ONE original B/10.
 Historical details: Git158bd51a and immutable study consumers, not this backlog.
 
@@ -89,9 +90,15 @@ global advisory ban; old unavailable marker preserved, not agreement.
 
 ## Current Monthly Rule
 
-Raman owns current-long17-monthly-gated-trend-development-20261028-v1:
-NEW1800Engine-active/7200elapsed plus separately owned Data900. Fits0/GPU0.
-Source/native preparation only until Data monthly252 actual handoff. Volta's
+current-long17-monthly-gated-trend-development-20261028-v1 COMPLETE/REJECT.
+Original1800 conservative upper closed unfinished, Data separate. Fits0/GPU0.
+Raman pure25native lacked executable adapters; Parent technical-adapters-r1
+Source745b2a26 repairs those, exacta167 Data/native/cold PASS. One feature-only
+compile of all6policies before INNER1; DEV0/unmounted. PRIMARY growth1.501387
+percent/DD.744499percent versus matchedUniform2.045768/.345380 and matched
+Momentum1.995671/.814317. Growth tests failed, DD/turnover passed; no rescue.
+Saved31checks/4CIDs24Jobs/registryclosed. Successor258.49of900active plus
+original1800 once, not actual compute spend. Volta's
 fixed kernel8025 combines Top5 skip21 momentum, own-positive/SPY-relative gates
 and nonredistributed bounded-vol sleeves. Dedup found related components,
 not exact combination. One fixed policy/no parameter/model grid.
@@ -108,8 +115,29 @@ Original Data56429 remains immutable. New OC-only DataVersiona167db6d is
 actual READY/oneprojection/10keys20OC/120past-close mask repairs, same95/23/21
 cohorts/DEV unchanged. Native/cold+positive Data closure/DELIVERY hashes handed
 to Raman. Only required OPEN/CLOSE qualify; invalid unused LOW warnings and
-strict OHLCV rejects retained. Bind new producer-consumer before sole compile,
+strict OHLCV rejects retained. New producer-consumer bound before sole compile,
 not a new parameter trial or post-result reranking. No imputed price/role change.
+
+Saved convergence diagnosis CLOSED: seven frozen selectors match curves;
+zero-selected DL/BB had no better INNER point; targets already standardized.
+Actual CPU optimizer/checkpoint2steps/7assertions PASS, not CUDA/market
+convergence proof. No demonstrated bug supports selector/target-scale rescue
+or old outcome reopening. current-core8-saved-convergence-diagnosis-
+20261028-v1/CLOSED.json. No diagnosis-driven rerun or utilization-only training.
+
+New family current-nas100-monthly-ranknet-development-20261028-v1:
+pairwise monthly ranking versus fresh Ridge/Uniform/cash, not old H20MSE.
+Data Mendel exact100NAS MODP1/63pastcloses features21return/62return/RMS62,
+monthly OPEN->OPEN/lastoriginAug2026; FIT15..22/INNER23..24/DEV25..Aug26/
+whole-interval purge. Tie-fairTop20/input-only membership, gross.1/20bp
+actualdelta fundedcarry; unknown owned marks stay unknown. Original100axis,
+no future endpoint selection or splice. NEW3600owned-active10800elapsed/
+2fitsmax:CPU Ridge+CUDA RankNet, exact primary-source dedup/contract/native
+producer/consumer/optimizer/checkpoint/complete adapters before payload/fits.
+One DEV intake after frozen forecasts; no profitability authority gate.
+Growth>Uniform andRidge/DD<=1.25Uniform proposed primary; parameters/metrics
+freeze before numeric dispatch. Source authoring/preparation only at assignment,
+not actual fit/GPU evidence. All adaptive/currentlisting/OC-price-proxy limits.
 
 ## Latest Closed Results
 

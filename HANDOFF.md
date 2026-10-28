@@ -6,9 +6,10 @@
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company outcome coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared policy/documents, integration, Git and activation.
-Current Engine/Steward Raman01a1813f-666f-73a3-ae59-dc3ecb40cf31 after
-Turing positive06:39 closure/Parent transfer. Historical Turing facts below
-are completed work, not a second running registry/GPU coordinator.
+Darwin01a181a8-a673-7610-a2a2-f709bfc3473e owns current Engine/registry/GPU
+after Parent's completed monthly comparison. Raman's old1800 closed unfinished,
+Parent's bounded successor completed it. Darwin's new N100 monthly ranking
+family is separate; assignment is not proof of active training/GPU.
 No operator decision is pending. Preserve unrelated untracked %SystemDrive%/.
 
 Never read/route KIS_LIVE_* or enable real money. Private no-cost Paper is
@@ -183,8 +184,8 @@ noninformative/primaryREJECT. Final1492.917137/3600;11CIDs66Jobs/PIDs/lease/
 registry lock closed. One separate Claude GO_WITH_LIMITS after clarifying
 numerical-network exclusion is not a Claude advisory ban; oldmarker retained.
 
-Next Raman CPU rule study current-long17-monthly-gated-trend-development-
-20261028-v1:1800Engine-active/7200elapsed, fits0/GPU0. Volta8025a865 fixed
+Monthly CPU rule study current-long17-monthly-gated-trend-development-
+20261028-v1 is COMPLETE/primaryREJECT, fits0/GPU0. Volta8025a865 fixed
 Top5 skip21 momentum +own-positive/SPY-relative gates +nonredistributed
 vol sleeves; bounded dedup/10SYNtests/Ruff, not claimed component novelty.
 Monthly Data56429 is READY95FIT/23INNER/21DEV, old source immutable.
@@ -202,7 +203,35 @@ One projection/10keys20OC;120past-close observation/eligibility masks restored,
 same95/23/21cohorts/DEV unchanged. Native/cold/independent checks passed;
 20source/72packet files unchanged;322.66/600active, no API/fit/eval. Carson
 positively closed and delivered exact hashes to Raman; Feynman also closed.
-Raman owns exact newData binding before sole compile/INNER/conditionalDEV.
+Raman's25native/cold proof lacked executable compile/readout adapters;
+old1800 conservative debit closed unfinished, not spent GPU/CPU time.
+Parent technical-adapters-r1 Source745b2a26 implements those thin adapters,
+same scientific kernel/costs/criteria/counts. Native adapter/cold PASS;
+one feature-only compile seals all6policies across95/23/21roles before one
+INNER intake. PRIMARY growth1.501387percent/DD.744499percent versus matched
+Uniform2.045768/.345380 and matchedMomentum1.995671/.814317. DD/turnover
+passed, both growth tests failed; DEV unmounted/unopened. Saved31checks/
+4CIDs24Jobs/registry terminal closed, no retry/rescue. CONSUMER.json:
+successor upper258.49/900 plus original1800 preserved once. ClaudeGO.
+Adaptive OC-price-proxy analytics, not actual Paper PnL.
+Saved convergence diagnosis CLOSED: seven frozen selections match;
+zero-selected runs had no better saved INNER point. Standardized targets
+and actual CPU optimizer/checkpoint SYN connected; no proved selector/scale
+bug justifies a GPU rerun. No old outcome/checkpoint reopened.
+
+Next different research family: current-nas100-monthly-ranknet-development-
+20261028-v1, Darwin3600owned-active10800elapsed/<=2fits (CPU Ridge+CUDA RankNet).
+Mendel owns new Data current-nas100-monthly-ranking-packets-20261028-v1,
+1200owned-active3600elapsed/oneprojection. Existing100NAS MODP1 canonical
+f6e5dc18 (159,335known rows/2014..Sep2026), no new collection/Norgate access.
+63completedcloses/62returns:21return,62return,RMS62; monthly OPEN->OPEN,
+calendar exit<=Sep30 so finaloriginAug2026. FIT2015..22/INNER23..24/
+DEV2025..Aug26, full interval purge; all100slots/unknown masks retained.
+One pairwise ranking hypothesis/tie-fairTop20, samegross.1/20bp carry costs,
+not old H20/MSE refit. Exact primary-source dedup, native Data/consumer/
+optimizer/serialization and frozen executable contract precede fits. Current
+stage is preparation, not numerical/Paper result. Model parameters/stop caps
+must freeze before dispatch; queue/LLM time is not measured CPU/GPU spend.
 252closes/251returns, variable monthly firstOPEN-to-nextmonthlyOPEN carry,
 NOTexactH20. Native exact Data/consumer/kernel/fee-ledger proof before values.
 Explicit MODE1 adjusted-price-proxy analytics, not nominal historical shares/
@@ -256,8 +285,14 @@ same original bank/exact owned exits, unsupportedNYS cash, no fake features.
 Actor-coexistence-r1b89c is PARTIAL, not deployable: observer descriptor is
 not wired into ActualCensus and exact host descendant remains unqualified.
 Its3softwareiterations/95.38active/3CIDs24Jobs closed;6native cases/publisher
-passed but do not prove real admission. Parent reviews narrow existing finite
-yield/restore instead of blanket observer exemption/new guard platform.
+passed but do not prove real admission. finite-observer-yield-r2 is READY
+Source50bd4eac/consumere9d66a26/host42047e47, unchanged dated8ac helper,
+18fakeCOM/9wrapper/6native cases/publisher/cold/Ruff PASS. Three iterations/
+211.28active/3CIDs closed;32retained Job receipts are not total launch count.
+Original faults/debits preserved; Pascal closed after handoff. Exact typed
+activation plan and observer XML/ACL are bound, still FALSE/unregistered.
+After actual current f545 positive closure Parent binds release/two Tasks:
+Oct29UTC14:15entry, Nov4UTC20:40exit, same physical bank/risk; not new capital.
 Disjoint runtime output may not fork account/basis/journals/emergency controls. No actual
 Task/TRUE/allocation; currentf545 unchanged. Independent of F3/ML/NYSE,
 never an F9 substitute; activation needs positive actual owner closure.
@@ -275,6 +310,11 @@ Existing app oct26-paper follow-up updated through the tool, same identity/
 thread/name/notifications. Explicit UTC DTSTART Oct28_14:40Z/COUNT1 persisted
 and independently read back, intended23:40KST; actual delivery unobserved.
 Inspection bans remain local, not global restrictions on next approved goal.
+Same one-shot was updated/read back again without schedule/thread/notification
+change to carry exact future50bd activation plan after current inspection and
+actual owner/custody/observer qualification. Promptc672278b, evidence
+verification/current-monthly-oc-handoff-integration-20261028-v1/
+FOLLOWUP-PREPARED-DEPLOYMENT-UPDATE.json. No new follow-up chain.
 Evidence: verification current-finite-multileg-entry-integration-20261028-v1/
 FOLLOWUP-UPDATE.json. No recurring report or replacement follow-up chain.
 Workers own next_due; do not foreground-wait for sessions while work is ready.

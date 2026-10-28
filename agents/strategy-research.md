@@ -63,12 +63,14 @@ research or completed training repeats for utilization.
 
 ## Ready Proposal Policy
 
-Averroes01a18195-12c0-79b1-90f1-4c145eafec94 owns bounded
-current-long17-covariance-allocation-proposal-20261028-v1: dedup then ONE
-causal risk-allocation/no-return-forecast kernel+SYN or concrete rejection.
-Official primary sources/existing NumPy/SciPy only;300active1200elapsed,
-no market outcome/fit/GPU/API. Consumer Raman, not a new trading writer.
-No assumed ready GPU campaign or automatic numerical dispatch from a proposal.
+Averroes CLOSED covariance proposal: prior close252 shrinkage/minvariance
+source+registry found, duplicate mechanism rejected before kernel/market trial.
+Saved convergence diagnosis CLOSED7selectors/32inputhashes/nativeCPU7checks:
+no proved checkpoint/targetscale bug and no rescue rerun. Exact evidence in
+current-core8-saved-convergence-diagnosis-20261028-v1/CLOSED.json.
+No market/DEV/forecast/ledger reopened; next justified campaigns may add
+dimensionless gradient/update diagnostics, not train only to emit diagnostics.
+Parent owns next Engine/registry/GPU; no admitted training from this diagnosis.
 
 A next proposal must address a measured weakness using available causal inputs,
 name baseline/strongest kill/finite trial+compute cap and executable consumer.

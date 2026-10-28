@@ -1,7 +1,8 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Raman01a1813f-666f-73a3-ae59-dc3ecb40cf31 is sole GPU/registry coordinator.
+Darwin01a181a8-a673-7610-a2a2-f709bfc3473e is sole GPU/registry coordinator
+after Parent completed the monthly technical successor. No other fitting owner.
 Parent owns shared policy/MD/Git. MD/Source assignment is not process proof.
 
 Current transfer: Turing's62551273 family CLOSED, positive06:39UTC noPID/
@@ -10,11 +11,21 @@ registry/GPU ownership to fresh scoped Raman. No duplicate raw fits.
 Raman BB/context982e CLOSED3fits/oneDEV/fiveledgers/188checks, no increment.
 TCN40updates/11.08sCUDA/81.09MiB;11CIDs66Jobs/PIDs/lease/registry lock closed,
 final1492.917137/3600. Old raw controls not refitted, no market retries.
-Current monthly fixed-rule family has1800Engine-active/7200elapsed and
-separate Data900/3600; Sourcecarry300 charged once inside Engine allowance.
-Fits0/GPU0 by mechanism, not environmental permission hold. No admitted GPU
-campaign currently; admit useful new ready work under actual headroom, never
-duplicate short-return studies or dummy training while Data/native prepares.
+Monthly fixed-rule family COMPLETE/REJECT, fits0/GPU0. Raman1800 closed
+unfinished; Parent adapter745b completed SAME family1compile/INNER1/DEV0,
+4CIDs24Jobsclosed/registryterminal. Successor258.49/900 plus old1800 once,
+not measured compute. No criterion change or refund. No admitted GPU campaign;
+use actual headroom for useful new work, never duplicate studies/dummy training.
+RTX4090 observed21,982MiB free/4percent/36C about08:20UTC, not future headroom.
+Saved selector/scale diagnosis found no proved defect or rerun justification.
+
+New N100 monthly pairwise ranking family3600owned-active10800elapsed,
+max1CUDA RankNet+1freshCPU Ridge, <=3native technical iterations. Data separate
+1200active3600elapsed; prep charge<=300Engine/200Data, queue/LLM reasoning
+separate not compute. Freeze exact parameters/splits/costs/diagnostics before
+market fits. Recheck actual VRAM/desktop reserve, prove actual PID/update/
+peak/lease closure; assignment/preparation is not active GPU use. No old fit
+rerun or extra trials from concurrency permission.
 
 ## Ownership Handoff
 

@@ -132,14 +132,30 @@ image920d88e5/SDK78c3eba3/1407members, only module0f2587ff added to unchanged
 old1406. ActualLinux native32/cold/closuree584 PASS, no deployment.
 Future-nas-baseline-pair Source8768/consumer9b8d passed native threeentry/
 threeexit/unknown/partial/default-one-effect and guest publisher roundtrip.
-Pascal actor-coexistence-r1 resolves actual observer/runtime write sets;
-no actual Task/TRUE/allocation yet. Max3serial NAS effects, ONE original bank.
+actor-coexistence-r1b89c is PARTIAL/unwired descriptor; do not activate.
+Actual next candidate finite-observer-yield-r2 Source50bd4eac/consumere9d66a26/
+host42047e47 binds existing dated8ac yield/restore,18COM/9wrapper/6native/
+publisher/cold/Ruff PASS;3CIDsclosed/32retained Job receipts, not total count.
+Typed release/two-Task activation remains Parent-owned after current f545
+positive owner/custody/observer qualification; exact plan carried by same
+one-shot14:40UTC promptc672278b. No actual Task/TRUE/allocation yet.
+Max3serial NAS effects, ONE original bank.
 Static Uniform17 has no market features/alpha;
 unsupported NAS-profile mass stays unspent, never subset-normalized.
 A new future dated contract, not today's cap mutation or unknown substitute.
 NASDAQ baseline independent of F3/ML/NYSE migration; never force trade.
 
 ## Completed Data / Research Are Not Replay Commands
+
+Monthly fixed-rule comparison is CONSUMED:
+A/research/current-long17-monthly-gated-trend-development-20261028-v1/
+technical-adapters-r1/CONSUMER.json, Source745b2a26. Actual adapter/native/cold,
+onecompile/INNER1/DEV0,31savedchecks/4CIDs24Jobsclosed. Primary growth1.501387
+percent loses to matched2.045768/1.995671; no DEV/rescue. Old1800closed debit
+plus successor258.49of900 once, not actual GPU time. Read consumer only;
+do not rerun controller market/native commands or reopen outcomes.
+Saved convergence audit also closed/no proved selection or scale defect;
+no diagnosis-driven training rerun.
 
 Exact monthly OC recovery is CONSUMED, not a rerun command:
 A/data/current-long17-monthly-daily-mark-recovery-20261028-v1/endpoint-only-r1/

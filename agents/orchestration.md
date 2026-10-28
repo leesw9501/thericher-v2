@@ -9,11 +9,13 @@ Original B/10/F9/unrelated %SystemDrive%/ preserved.
 
 | Owner | Actual evidence / next consumer |
 | --- | --- |
-| Parent / 총괄 | Pushed edb81aea; full19564+26knownSKIP/233serial/Ruff/3Compose PASS. Exact10 OC repair final2db664cc/Jobclosed, original rejected OHLCV preserved. Currentf545/follow-up actual results future. |
-| Raman / 엔진·자원 | Sole coordinator; BB982e closed. Monthly fixed-rule CPU1800active7200elapsed, native25/cold qualified; compile/INNER/DEV0 pending exact OC DataVersion, fits0/GPU0. |
+| Parent / 총괄 | Completed adapters745b/monthly primaryREJECT/31checks/4CIDs24Jobsclosed. Registry/GPU transferred to Darwin; currentf545/follow-up future. |
+| Raman / 엔진 준비 | CLOSED1800unfinished: pure25native, missing adapters handed off; old debit preserved. Parent successor258.49of900 completed SAME family, no new hypothesis. |
 | Carson / 데이터 입력 | CLOSED: monthly OC-only overlaya167 READY/oneprojection/10keys20OC/120past-close masks,322.66of600active; old56429/V2865b unchanged, direct Engine handoff. |
-| Pascal / 다종목 실행 | Image920d/native32 and future pair8768/9b8d READY. Coexistenceb89c PARTIAL/unwired descriptor,3iterations/95.38active/3CIDs24Jobsclosed. Parent reviews narrower dated finite observer yield; no actual Task/TRUE/allocation. |
-| Averroes / 전략 탐색 | Bounded dedup/official-source proposal for causal covariance allocation, no market readout/fits/GPU; only executable kernel+SYN or concrete rejection. Independent of monthly trend. |
+| Pascal / 다종목 실행 | CLOSED50bd/e9d6/host42047 finiteyield pair READY18COM/9wrapper/6native/211.28active/3CIDs closed. No actual Task/TRUE/allocation; Parent actual cutover after current owned closure. |
+| Averroes / 전략·진단 | CLOSED: covariance duplicate rejected before trial; saved7selectors correct/actual CPU SYN7assertions, no proved scale bug, no outcome reopening/rerun. |
+| Mendel / 데이터 확장 | Existing100NAS MODP1 candidate found/metadata overrun retained. NEW monthly-ranking Data1200active3600elapsed/oneprojection,63pastcloses/monthly payoffs separate/native ABI before payloads, no new API/Norgate. |
+| Darwin / 엔진·자원 | Sole registry/GPU coordinator; NEW N100 monthly pairwise RankNet vs freshRidge/Uniform/cash,3600owned-active10800elapsed/2fitsmax. Dedup/contract/native before fitting; no actual training claimed yet. |
 | Planck / 실행 호환성 | Closed: currentMSFT/LOWVOL bindings and five-action binder4d605/25mockchecks/10childrenclosed/ClaudeGO. Actual COM provider/TRUE/cutover absent, no currentf545 change. |
 | Jason/Volta/Turing/Tesla/Cicero/earlier executors | Completed/closed with exact evidence. Jason targeted37GET complete/rootclosed; Volta monthly kernel8025/10tests. No permanent LLM promised by MD. |
 
@@ -35,6 +37,13 @@ No foreground market/quota sleep. Scoped technical failure repairs/selects a
 ready lane; it is not company completion or permission hold.
 
 ## Throughput Review
+
+Current review: Parent repaired missing executable adapters rather than
+label a pure/native-only module an operational pipeline. Real compile+INNER
+took12.10owned phase seconds including native/cold in the successor, not
+1800seconds GPU spend. Original conservative debit remains immutable.
+Engine result now closes locally; Execution finite yield and broader existing
+Data readiness remain disjoint. No GPU permission problem or dummy work.
 
 Current integration review: source-only/complete work is not running GPU work.
 Two pooled short-return families failed; no same threshold/indicator rescue.
@@ -77,6 +86,7 @@ unchanged/13independent readback PASS. Reader module/default/JSON-time errors
 retained, not real Task fault. Current Task sources read only, instances0 is
 not process/container closure or permission to mutate today's f545.
 
-Last pushed edb81aea. New external evidence/current-only docs await fresh
-protected-hash checks; no new full merely for docs. Company outcome remains
+Production integration edb81aea/OC handoff951beb6b pushed; Git HEAD is the
+authority for subsequent commits. Fresh protected-hash checks before docs
+integration; no new full merely for docs. Company outcome remains
 UNFINISHED until actual native runtime/reconciliation; no company-complete claim.

@@ -83,8 +83,15 @@ ML/NYSE migration. Static declaration is not market features/alpha.
 actor-coexistence-r1 Sourceb89c is PARTIAL: descriptor not consumed by
 ActualCensus and exact observer host-descendant capability unproved.
 3softwareiterations/95.38active/3CIDs24Jobs closed; native/publisher PASS is
-not real admission. Parent reviews existing dated finite observer yield/restore
-as narrower alternative. No blank observer exemption or actual Task change.
+not real admission. Narrow successor finite-observer-yield-r2 READY50bd4eac/
+consumere9d66a26/host42047e47: unchanged8ac helper, dated observer XML/ACL,
+18fakeCOM/9wrapper/6native/publisher/cold/Ruff PASS.211.28active/3CIDsclosed;
+32retained Job receipts not total launch count. Faults/old debits preserved.
+Pascal closed; FALSE/unregistered, no actual Task/privatebank/broker effects.
+Parent next binds exact release/typed entryOct29UTC14:15 and exitNov4UTC20:40
+after current f545 positive owner/custody/observer qualification, no flatness
+or new capital. Existing one-shot14:40UTC promptc672278b carries exact plan,
+same schedule/thread/notifications, not an extra follow-up chain.
 
 ## Readonly Point Task / Outcome Readers
 

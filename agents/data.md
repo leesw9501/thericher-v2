@@ -124,8 +124,23 @@ DEV unchanged. Native/cold/independent proof PASS,20source72packet files
 unchanged;322.66/600active,2softwareiterations/launchfailure preserved.
 Carson closed after direct Engine handoff. Only absent exact OC keys,
 unchanged calendar/roles/causal eligibility; no strict Bar/OHLCV promotion,
-future-completecase filter or original overwrite. Engine binds new DataVersion
-before first compile. No API/fit/evaluation in this overlay.
+future-completecase filter or original overwrite. Parent bound this DataVersion
+before the completed monthly compile/INNER comparison. No API/fit/evaluation
+in the Data overlay itself.
+
+Mendel inventory CLOSED: existing100NAS MODP1 canonicalf6e5/159335knownrows/
+2014..Sep2026, current-broader-equity-panel-readiness-20261028-v1/HANDOFF.json.
+Metadata only/no payload rehash; all-wall overrun180->210 retained, not
+numerical readiness or budget compliance. No new acquisition/Norgate access.
+NEW current-nas100-monthly-ranking-packets-20261028-v1:1200owned-active/
+3600elapsed/oneprojection/<=3native iterations, sourceprepcharge<=200;
+LLM/queue separately notcompute.63completedcloses/62returns ->21return,
+62return,RMS62; monthly firstOPEN->nextfirstOPEN, calendar exit<=Sep30_2026
+so lastoriginAug2026. FIT15..22/INNER23..24/DEV25..Aug26; purge exit>=nextrole
+firstOPEN. All100slots/unknowns retained; no future complete-case selection.
+Target/held outcomes separate from feature mounts; exact native producer/
+Nas100MonthlyRankConsumer/LedgerInputConsumer/ROLE/file/schema handoff before
+projection/fits. Consumer Darwin's separately frozen N100 ranking study.
 
 ## Scheduled Fresh Input
 
