@@ -2,91 +2,77 @@
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Parent shared policy/MD/Git/activation. No operator decision pending.
-Original B/10/F9/unrelated %SystemDrive%/ preserved.
+Parent owns shared policy/MD/Git/activation and GPU/registry coordination.
+No operator decision pending. Preserve ONE original B/10/F9 and unrelated
+untracked %SystemDrive%/. Closed history: Git7ae35ddd/951beb6b/edb81aea.
 
 ## Ready / Owned / Due
 
 | Owner | Actual evidence / next consumer |
 | --- | --- |
-| Parent / 총괄 | Completed adapters745b/monthly primaryREJECT/31checks/4CIDs24Jobsclosed. Registry/GPU transferred to Darwin; currentf545/follow-up future. |
-| Raman / 엔진 준비 | CLOSED1800unfinished: pure25native, missing adapters handed off; old debit preserved. Parent successor258.49of900 completed SAME family, no new hypothesis. |
-| Carson / 데이터 입력 | CLOSED: monthly OC-only overlaya167 READY/oneprojection/10keys20OC/120past-close masks,322.66of600active; old56429/V2865b unchanged, direct Engine handoff. |
-| Pascal / 다종목 실행 | CLOSED50bd/e9d6/host42047 finiteyield pair READY18COM/9wrapper/6native/211.28active/3CIDs closed. No actual Task/TRUE/allocation; Parent actual cutover after current owned closure. |
-| Averroes / 전략·진단 | CLOSED: covariance duplicate rejected before trial; saved7selectors correct/actual CPU SYN7assertions, no proved scale bug, no outcome reopening/rerun. |
-| Mendel / 데이터 확장 | Existing100NAS MODP1 candidate found/metadata overrun retained. NEW monthly-ranking Data1200active3600elapsed/oneprojection,63pastcloses/monthly payoffs separate/native ABI before payloads, no new API/Norgate. |
-| Darwin / 엔진·자원 | Sole registry/GPU coordinator; NEW N100 monthly pairwise RankNet vs freshRidge/Uniform/cash,3600owned-active10800elapsed/2fitsmax. Dedup/contract/native before fitting; no actual training claimed yet. |
-| Planck / 실행 호환성 | Closed: currentMSFT/LOWVOL bindings and five-action binder4d605/25mockchecks/10childrenclosed/ClaudeGO. Actual COM provider/TRUE/cutover absent, no currentf545 change. |
-| Jason/Volta/Turing/Tesla/Cicero/earlier executors | Completed/closed with exact evidence. Jason targeted37GET complete/rootclosed; Volta monthly kernel8025/10tests. No permanent LLM promised by MD. |
+| Parent / 총괄 | Integrates completed packages; currentf545 remains installed unchanged. Exact current runtime result is future, not a permission hold. |
+| Engine Plato / 엔진 연구 | CLOSED7b6001f1: two CUDA fits GRU/Transformer plus fixed rank blend. Original100 Uniform UNKNOWN, primaryWITHHELD. CPU transfer15fd60fa also CLOSED/primaryREJECT; no duplicate training. |
+| Data Mendel / 시장데이터 | CLOSED: R2 packets/raw sequence ready; OC source-QC1POST2GET/0qualifiedpages stopped. All23 gap dates overlap disclosed NAS suspensions; source limitation, not internal-cause proof. |
+| Execution Poincare / 실행 | CLOSED050109f8: distinct adjacent-calendar F9 diagnostic1POST1GET/0rows/10nativePASS; UNKNOWN-HELD unchanged. Currentf545/old duties unchanged. |
+| Data/Execution Carver / 입력 배포 | CLOSED7cb99495: readonly N100 point chain. Parent ACTUALLY registered one quiet Oct31KST06:00 Task;15 independent typed readback checks passed. No future capture/model point yet. |
+| Strategy James / 전략 탐색 | CLOSED current-next-mechanism-dedup-20261028-v1/READY.json NO_NOVEL_READY; four precedents/sevenregistrybindings,0market operations. Not an exhaustive no-strategy claim or economic rejection of technically unfinished work. |
+| Engine Hubble / 엔진 복구 | NEW current-rank-memory-native-recovery-20261028-v1:600active/2400elapsed/<=3native/sourceupper<=240. SYN-only recovery of existing825cb893 native-consumerValueError,0marketfits/payloadintakes. Parent separately assesses numerical admission. |
+| Other executors | Darwin/Pasteur/Pascal/Raman/Carson/Averroes/Planck/earlier agents closed. MD/source/assignment is not an active worker or GPU proof. |
 
-Assignments are not actual worker/GPU proof. One mutable owner per write set,
-sole Steward for registry/GPU. Sibling messaging unavailable in executors:
-exact own-root callbacks plus Parent integration, not invented delivery.
+No numerical training currently running after positive child/container/lease
+closure. Parent rechecks actual resource headroom before any justified NEW
+campaign. No dummy utilization, consumed-fit rerun or unknown lease reclaim.
 
 ## Company Dependency / Alternatives
 
-Installed f545 native23:20..24KST/recovery23:27..31 needs actual exact runtime
-outcome. No permanent profit/ResearchOnly/Modeoff veto; fresh native risk may
-correctly yield no intent. Do not force trade or replay consumed opportunities.
-Original MSFTNov2/LOWVOLNov3 and f545 exit duties remain intact.
+Installed f545 entry Oct28KST23:20..24/recovery23:27..31 needs its actual
+exact result. Do not manually replay that opportunity, infer a fill or force
+whole lots. Original MSFTNov2/LOWVOLNov3 and f545 exit duties remain.
+Existing app oct26-paper one-shot23:40KST carries exact outcome inspection
+and next finite activation after positive actual owner/custody/observer closure.
+No foreground session wait or new follow-up chain.
 
-Independent paths: saved-cost next-hypothesis research, bounded minute data,
-current-source legacy migration and finite multileg preparation. Readonly new
-point Task is registered for afterclose20:10UTC; actual point not observed.
-No foreground market/quota sleep. Scoped technical failure repairs/selects a
-ready lane; it is not company completion or permission hold.
+Independent alternatives already advanced:
+- Retained-model transfer to existing liquid17: COMPLETE/REJECT, no rescue.
+- Fresh daily20 point Task05:10KST and monthly100 point TaskOct31_06:00 are
+  installed readonly preparations; actual future inference remains unobserved.
+- Next finite NAS pair50bd is SOURCE+SYN READY, FALSE/unregistered/unallocated;
+  actual typed release/two-Task binding after currentf545 owned closure.
+- Current source/mixed-venue legacy bindings are ready; no blanket reader
+  migration or all-positions-flat rule. NYSE registration needs relevant old
+  writer compatibility, not a new profitability gate.
 
 ## Throughput Review
 
-Current review: Parent repaired missing executable adapters rather than
-label a pure/native-only module an operational pipeline. Real compile+INNER
-took12.10owned phase seconds including native/cold in the successor, not
-1800seconds GPU spend. Original conservative debit remains immutable.
-Engine result now closes locally; Execution finite yield and broader existing
-Data readiness remain disjoint. No GPU permission problem or dummy work.
+Actual useful fits completed quickly: RankNet7.20s, GRU10.38s,
+Transformer13.48s; no claim of convergence or isolated speed benchmark.
+GPU idleness after completion is not an approval restriction. Source/ABI,
+data projection and numerical work ran as disjoint packages.
+Same closed family is not rerun because its cap was unused.
+An unfinished technical closure is not an economic rejection. Parent chose
+minimal rank-memory native recovery with fresh bounded source/SYN debit,
+preserving old2584.416479/criteria/inputs; not an old-cap extension, new model
+architecture or outcome-driven reranking. No global novelty approval gate.
 
-Current integration review: source-only/complete work is not running GPU work.
-Two pooled short-return families failed; no same threshold/indicator rescue.
-Next different monthly holding/rule study is CPU by mechanism, not GPU hold.
-Required OC fields were valid while unused LOW rejected strict OHLCV pages.
-Reuse failed saved body, acquire only nine unattempted keys and compose a
-separate endpoint-grade DataVersion. Avoid whole-page/whole-session gates for
-consumers that provably do not need those fields; preserve actual source faults.
-Parent handles immediate acquisition repair; Data prepares overlay and Execution
-coexistence proceed disjointly. No duplicate query or foreground market sleep.
-Window-based admission produced53extra valid samples with0newGET instead of
-requiring every session's390bars; old data/studies preserved. Reversible
-consumer improvement, not imputation or automatic refit. Monthly Data+Engine
-and future NAS execution are disjoint; no foreground market/quotas wait.
-Data guard regression classified unrelated Research as collector. Correct
-actual source/cache/account/token scope, retain genuine unknown writers and
-atomic exclusion; Source324 already has the scoped guard.
-Native version/checkpoint fixes completed inside the original wide family.
-Old-module native backward probe PASS; old combined fixture6/1 compared
-different projection types. Accept compound semantic proof, not fictitious
-combined PASS or another cosmetic retry; fresh repo/image32 tests now pass.
-New multileg dispatcher targets actual installed one-effect obstruction;
-ONE account writer, existing native risk and shared budget, not N banks.
-Static Uniform engineering baseline needs no invented feature/model facts.
-NASDAQ-only path does not depend on future NYSE migration or afterclose F3;
-preserve unsupported cash/currentf545/original unknowns and exact risk.
+The N100 missing-mark issue is not repaired by repeated GETs: bounded pages
+miss required dates and those dates overlap disclosed venue suspensions.
+Keep original Uniform UNKNOWN; no OTC/prior-close fill, retroactive asset
+deletion or supplemental replay. Liquid17 is a separate preexisting universe,
+not posthoc removal of those two names; fixed transfer failed growth versus
+its known control. Independent Paper remains authorized and scheduled.
 
-Compact boards retain current owner/resource/result/block/next/evidence;
-history stays Git158bd51a/immutable A/registry. No per-agent next-goal/database.
-D28c8 frozen-source Ruff30style issues are recorded, not mislabeled PASS.
+Reversible efficiency improvements retained: scope collector/custody admission
+to actual actors/write sets rather than all Python/research; CLOSE-only point
+consumers do not require unrelated LOW/high fields; window-complete packets
+added53 eligible intraday samples with0GET. Real unknown writers still defer.
+Reduce stale stateboard projections; history stays Git/immutable evidence.
 
-## Integration / Verification
+## Verification
 
-Production authority ec946b4b/1414files/full19564PASS26knownlinkSKIP,
-serial233/Ruff/3Compose/clean owned full scratch. Fresh protected digest match
-required for docs-only reuse. D code/actual changes require focused/native
-proofs; repeated repo tests do not validate external scripts.
-Parent checked98chain/external members0mismatch; readonly Task otherdefinitions
-unchanged/13independent readback PASS. Reader module/default/JSON-time errors
-retained, not real Task fault. Current Task sources read only, instances0 is
-not process/container closure or permission to mutate today's f545.
-
-Production integration edb81aea/OC handoff951beb6b pushed; Git HEAD is the
-authority for subsequent commits. Fresh protected-hash checks before docs
-integration; no new full merely for docs. Company outcome remains
-UNFINISHED until actual native runtime/reconciliation; no company-complete claim.
+Production ec946b4b/1414protected: serial233PASS, full19564PASS/
+26knownWindowslinkSKIP/8actualworkers/403.69s, Ruff/threeCompose PASS.
+Fresh exact protected digest match is required for docs/external-only reuse.
+D code has separate native/cold/saved-output proofs, not repeated repo tests.
+Parent integration root:
+A/verification/current-monthly-oc-handoff-integration-20261028-v1.
+Company remains UNFINISHED until actual native runtime/reconciliation.

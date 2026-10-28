@@ -23,6 +23,13 @@ Today f545 and other original duties remain unchanged.
 F9 Source6d58/Consumerf6d9 exact-date1POST1GET/0rows/0idless/complete pagination.
 Exact original account/basis/request bound; UNKNOWN acceptance/fill/terminal,
 reservation HELD. No identical query/release from missing orders/holdings.
+Separate current-f9-adjacent-calendar-readonly-diagnostic-20261028-v1/
+CONSUMER.json CLOSED050109f8:1authPOST1GET/0rows/completepagination,
+10nativecasesPASS/identity+custody+stabilityPASS,155.90activeupper.
+All own Jobs/CIDs closed; no order/bank/MD/Git/Task changes. Originalrequest
+UNKNOWN-HELD; adjacentdate diagnostic is not production timezone correction,
+retention proof/no-send/fill/terminal or a reservation release.17externalRuff
+findings/prefreezeelapsed not fully instrumented retained, not compliancePASS.
 Fresh account4805/8314 at01:32:47..52UTC:1POST3GET/6positive instruments,
 three venue groups complete. Not owned attribution/quote/orderability/equity/
 settled cash/PnL. Earlier queries are historical, not current financial zeroes.
@@ -61,8 +68,9 @@ exact five future Task action constructors matched at05:44UTC/instances0.
 CurrentMSFT7a/d1f0/TRUE288 differs historicale1b/bf37; current-derived
 b2fd6247/92ee5fd5 passes3native tests. LOWVOLcurrente2b06935 differs oldba2a,
 route3699 matches. Current-LOWVOL74388717/cce5f924/36cb0448 also qualified:
-4native tests/two cold readers/2CIDs13Jobs closed. Planck prepares minimal
-five-future-action binder/mock checks, not blind historical candidate adoption.
+4native tests/two cold readers/2CIDs13Jobs closed. Planck completed minimal
+five-future-action binder4d605/25mockchecks/10childrenclosed/ClaudeGO;
+source-only, not actual COMprovider/TRUE/cutover or historical adoption.
 No raw args/private files/Task mutation/TRUE/migration. Preserve todayf545.
 Actual relevant owner/container closure and independent readback still needed.
 Do not register NYSE in real shared V4 until relevant legacy exits compatible.
@@ -99,6 +107,14 @@ thericher-current20-ridge-point-preparation-20261029-v1 ENABLED/UNSTARTED:
 Oct28UTC20:10/Oct29KST05:10, Data20:30/chain20:40. Source324182c2/
 installerc5b0/Parent722e/readback13PASS at05:33. Data/F3/Ridge public point only;
 no account/order/bank/capital. Actual point remains future.
+
+Readonly monthly100 chain7cb99495/factory5ae02486 Task
+thericher-nas100-monthly-point-preparation-20261031-v1 also ACTUALLY installed:
+Oct30UTC21:00/KSTOct31_06:00; capturehard21:20/chainhard21:30/PT30M,
+quietpythonw/no demand/catchup/repeat/restart/15freshreadbackPASS09:54UTC.
+Market-only1authPOST/<=100dailyGET/0retry, freshOct30CLOSE context/unknown
+masks/Nov2->Dec1monthlyhorizon/UNALLOCATED. No account/order/privatebank/
+capital or falseH5 map; currentPaperf545 unchanged. Future inference unobserved.
 
 Public paired readerb3d4/5e8d18nativecases: exact result binding; dropped nested
 counters NULL, not0. R2 ebb972d7/Parent25f5/Consumer7940 is adopted ONE unused

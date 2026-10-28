@@ -50,7 +50,7 @@ style issues (29E501/1E731), not PASS; no immutable-source rewrite/reprojection.
 
 ## Actual Capture Recovery / Next
 
-Jason01a180f4-bdfc-73b2-8032-1b26eed55c66 owns
+Jason positively closed
 current-kis-recent-core-minute-capture-20261028-v1.
 Finite six stocks AAPL/AMD/MSFT/NVDA/JPM/JNJ plus QQQ/SPY, recent dated cursors.
 Original2700active/7200elapsed/max900GET/no wire retries. First attempt1POST0GET
@@ -132,15 +132,38 @@ Mendel inventory CLOSED: existing100NAS MODP1 canonicalf6e5/159335knownrows/
 2014..Sep2026, current-broader-equity-panel-readiness-20261028-v1/HANDOFF.json.
 Metadata only/no payload rehash; all-wall overrun180->210 retained, not
 numerical readiness or budget compliance. No new acquisition/Norgate access.
-NEW current-nas100-monthly-ranking-packets-20261028-v1:1200owned-active/
-3600elapsed/oneprojection/<=3native iterations, sourceprepcharge<=200;
-LLM/queue separately notcompute.63completedcloses/62returns ->21return,
-62return,RMS62; monthly firstOPEN->nextfirstOPEN, calendar exit<=Sep30_2026
-so lastoriginAug2026. FIT15..22/INNER23..24/DEV25..Aug26; purge exit>=nextrole
-firstOPEN. All100slots/unknowns retained; no future complete-case selection.
-Target/held outcomes separate from feature mounts; exact native producer/
-Nas100MonthlyRankConsumer/LedgerInputConsumer/ROLE/file/schema handoff before
-projection/fits. Consumer Darwin's separately frozen N100 ranking study.
+current-nas100-monthly-ranking-packets-20261028-v1 R2 READYdd436/ff7a:
+one original canonical projection plus separate calendar-only derivative
+after Parent clarification. Original generation preserved/unqualified;
+R2 purged numerical targets NaN/false and bounds held marks at admitted exit,
+not loss-mask-only leakage. No new canonical decode in derivative.
+63completedcloses/62returns ->21return/62return/RMS62, monthly firstOPEN->
+nextfirstOPEN/exit<=Sep30_2026/lastoriginAug2026. FIT15..22/INNER23..24/
+DEV25..Aug26; purge exit>=nextrolefirstOPEN. All100slots/unknowns/input-only
+eligibility, no future complete-case selection. Actual native producer/
+Nas100MonthlyRankConsumer/LedgerInputConsumer/ROLE/file/schema proof before
+market. Consumed by completed RankNetb75 and sequence7b6001f1 campaigns.
+
+current-nas100-monthly-sequence-packets-20261028-v1/READY.json CLOSED:
+oneprojection/14000saved-key checks/13SYN/host+Linuxcold/4CIDsclosed,
+39.79of900activeupper. FIT[96,100,62,1]/INNER[24,100,62,1]/DEV[20,100,62,1],
+4010/1584/1451eligiblekeys; originalR2keys/symbols/roleflags/masks EXACT.
+62rawlogreturns of same63CLOSEs, no labels/held outcomes copied or hidden
+window multiplier. Source/R2bytes unchanged, direct Engine delivery consumed.
+
+Uniform mask-only diagnosis found44requiredOCfields/23symbol-dates on
+CODX/BKYI, not22dates. Required masks genuinely absent; binding checks passed.
+current-nas100-uniform-oc-source-recovery-20261028-v1/technical-r3/RESULT.json:
+1authPOST/2distinctGET/0retry/200returnedrows,0qualifiedpages. CODX0of10needed
+dates/BKYI1of13, so no overlay/replay. Client/cache/token/artifactownersclosed.
+STOP additional provider requests; old0HTTP guard failures/debits retained.
+Shared required overlap0 means compatibility UNPROVEN, not units conflict.
+VENUE-SCOPE-LIMITATION.json links public issuer facts: all23 gap dates overlap
+Nasdaq suspensions. Supports source-limited venue explanation, not proof of
+KIS internal cause or historical execution for other vendor NAS-route rows.
+No OTC/priorclose fill/retroasset deletion/rescale/control completion. Original
+UniformUNKNOWN/primaryWITHHELD immutable. Adaptive within-source price-proxy
+analytics only, not PIT/historical NAS tradability/PnL; no global Paper hold.
 
 ## Scheduled Fresh Input
 
@@ -148,6 +171,19 @@ Installed thericher-current20-ridge-point-preparation-20261029-v1:
 Oct28UTC20:10/Oct29KST05:10, Data20:30/whole20:40 hard end.
 Source324182c2 ->0978 refresh ->5785 Ridge factory; readonly public point only.
 Parentc5b0/plan722e/readback13PASS. No actual future point yet.
+
+Installed thericher-nas100-monthly-point-preparation-20261031-v1:
+Oct30UTC21:00/KSTOct31_06:00, capturehard21:20/chainhard21:30/PT30M.
+Source7cb99495/factory5ae02486/typedplan2ec2b183/installer59b8b980.
+Actual registration done;15independent typed readbackPASS09:54UTC,
+Ready/instances0/next21:00/other Taskdefinitions+ACL unchanged.
+OneRAMclient/1authPOST/<=100distinctdailyGET/0retry, scoped token/collector;
+market-only/no account/order/bank. FreshOct30asof/63requiredCLOSEs/unknown
+masks/Nov2->Dec1monthlyOPEN/DSTcalendar; no staleOct27retag/OTCsplice.
+UNALLOCATED proposal, not nativecapital/H5/PaperPnL. Source/native1POST100GET
+SYN/22COM117checks/43independentchecks are not actual future capture/inference.
+Exact root A/data/current-nas100-monthly-operational-point-chain-20261028-v1;
+Parent integration/NAS100-TASK-READBACK.json binds actual installation.
 Existing quiet head/daily collectors stay intact. Fresh-session work precedes
 backfill; storage15percent D floor/20percent warning. Quality limits constrain
 claims/consumers, not unrelated Paper/research permission.

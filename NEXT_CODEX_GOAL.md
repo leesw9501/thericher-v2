@@ -6,138 +6,100 @@ coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain an interpretable exactly bound native KIS Paper decision/reconciliation
 in the finite shared-account loop while useful independent research continues.
-Installation, inference, task exit and proper scores are not broker fills.
+Installation, inference, task exit and scores are not broker fills.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-On genuine resume run scripts/start_next_codex_task.ps1, then HANDOFF, AGENTS,
-RUNBOOK and active stateboards. Do not rerun startup on compaction.
-Parent owns shared policy/MD/Git/activation. Follow standing private Paper
-authority; never KIS_LIVE_*/real money. ONE original B/10/F9/pending/costs remain.
+On genuine resume run scripts/start_next_codex_task.ps1, then current HANDOFF,
+AGENTS, RUNBOOK and active stateboards. Do not rerun startup on compaction.
+Parent owns shared policy/MD/Git/activation/GPU coordination. Follow standing
+private Paper authority; never KIS_LIVE_*/real money. ONE original B/10,
+owned costs/losses/pending/F9 UNKNOWN-HELD remain; no reset or substitute.
 
 ## Owned Runtime Outcome
 
 Installed f545/TRUE459f/inputf477/policy24d3:
-- Oct28KST23:15 trigger; native23:20..24; same-owner recovery23:27..31.
-- Nov4KST05:40 exit trigger; native05:45..49; recovery05:52..56.
-- Quiet/no demand/catchup/repetition/restart; exact finite observer restore.
+- Entry Oct28KST23:15 trigger/native23:20..24/recovery23:27..31.
+- Exit Nov4KST05:40 trigger/native05:45..49/recovery05:52..56.
+- Quiet/no demand/catchup/repetition/restart; exact observer restore.
 - Other original MSFTNov2/LOWVOLNov3 duties unchanged.
 
-No hidden profitability/ResearchOnly/Modeoff veto; C=.1originalB, not B/100.
-Whole lots/fresh quotes/orderability/shared risk may correctly yield no intent.
-Do not force a trade, substitute unknown requests or adopt foreign inventory.
+C=.1originalB, not B/100/new bank. Full17/8NAS targets/9unsupportedNYS cash,
+no renormalization. No hidden profitability/ResearchOnly/Modeoff veto.
+Whole lots/fresh quote/orderability/shared risk may correctly yield no intent;
+never force trade, adopt foreign inventory or replace an unknown request.
 
-After opportunity use exact paired outcomes and qualified readers, not latest
-files/exit/missing artifacts. Publicb3d4 cannot recover dropped counters: NULL.
-Offline r2 ebb972d7/Parent25f5 permits ONE unconsumed read Oct28UTC14:35..
-Oct29UTC14:35 with actual writer admission/closure/allRO/networknone/joins/
-stability. No recovery observe(), lock writes or reservation release.
-Existing app follow-up now explicitly UTC DTSTART Oct28_14:40Z/COUNT1,
-tool accepted plus saved readback; intended23:40KST, delivery unobserved.
-Inspection restrictions apply only there, not independent approved goal work.
+After opportunity use exact paired outcome readerb3d4, not latest files/
+exit/missing artifacts. Dropped nested counters are NULL, not0.
+Offline r2 ebb972d7/Parent25f5 permits ONE unused actual read Oct28UTC14:35..
+Oct29UTC14:35 with fresh actual writer admission/closure/networknone/allRO/
+exact joins/stability. Never recovery observe()/locks/reservation release.
+Existing app oct26-paper one-shot Oct28UTC14:40/KST23:40 is ACTIVE,
+promptc672278b; actual delivery unobserved. No new follow-up chain.
 
-## Parallel Ready Work
+## Ready Next Actions / Independent Work
 
-1. Daily point preparation is now INSTALLED, not a future proposal:
-   thericher-current20-ridge-point-preparation-20261029-v1 at Oct29KST05:10
-   (Oct28UTC20:10). Source324182c2/installerc5b0/Parentplan722e/readback13PASS.
-   Readonly coherent20 -> F3 -> retained Ridge -> UNALLOCATED public point
-   for Oct29. No account/orders/private bank. Actual capture/point still future.
-2. Wide chronological comparison is COMPLETE, not a training queue:
-   current-long17-wide-split-model-comparison-20261028-v1/READY.json,
-   r3 Source752f3482/3fits/one fixedblend/one DEV intake/five ledgers.
-   Data28c8 endpoint354/83/89/same KIS F3. Uniform growth3.831705percent/
-   DD1.962512percent beats Ridge/Joint/blend; HGB selected0 equals Uniform,
-   raw literal pass is rounding not skill. No duplicate fit/rescue.
-   Saved-cost diagnosis COMPLETE46checks/0new fits/outcome/ledgers: small
-   fixed-path gross edge is outweighed by fees; generic FeeProx repeats rejected.
-   Pooled six-stock62551273 also COMPLETE: one HGB/oneCUDA TCN38updates/
-   9.39s/best14, allcash/noninformative, no proper-score increment. Closed.
-   BB/context982e also CLOSED3fits/oneDEV/fiveledgers/188checks, allcash/
-   primaryREJECT; TCN40updates/11.08sCUDA, old raw controls not refitted.
-   Monthly family COMPLETE/primaryREJECT: Parent executable adapter745b after
-   Raman1800 closed unfinished. SAME scientific kernel/costs/criteria;
-   onecompile/INNER1/DEV0, native/cold/31savedchecks/4CIDs24Jobsclosed.
-   PRIMARY growth1.501387percent versus matched2.045768/1.995671; no DEV/
-   rescue. Successor258.49/900 plus old1800 once, not GPU compute spend.
-   Monthly carry NOTH20/OC-price-proxy only. Saved7selectors correct/no proved
-   scale bug; no diagnosis-driven rerun. New Engine/Steward Darwin owns
-   current-nas100-monthly-ranknet-development-20261028-v1,3600owned-active/
-   10800elapsed/<=2fits (Ridge+CUDA RankNet), subject to exact dedup/frozen
-   contract/native Data/optimizer handoff. No training claimed from assignment.
-3. Jason recent-core capture COMPLETE5ee3/manifest185d:517GET/123newcomplete
-   symbol-sessions/47,970RTHminutes/61,200rows/36oldskips,0wire retries.
-   Owned-time stop, not provider floor; root/Job/OS/gate closed. Tesla produced
-   actual Core8 packets1d4f with separate train/dev features/dev outcomes.
-   Targeted8d63 recovery COMPLETE37GET/1POST/4440rows/rootclosed. V2 window
-   consumer865b READY0GET/oneprojection/same396keys,197FIT90INNER90DEV (+53).
-   Old datasets/studies unchanged, no automatic refit. Monthly source56429
-   READY95FIT/23INNER/21DEV remains immutable. Exact10 missing held-mark
-   keys recovered by Parent: old q01 saved body +9newGET/1additionalPOST,
-   combined10GET2POST0retry. Strict OHLCV rejects unused LOW inconsistency;
-   positive required OPEN/CLOSE and exact shared OC compatibility qualify
-   ONLY a separate analytical endpoint view, never Bar/Paper/CA/finality.
-   Final2db664cc/endpoint-only-r1/QUALIFIED-FINAL.json, Job/OS/cache/token
-   closed, carried active upper310.833/600. Old failure/debit/deadline retained.
-   New monthly OC overlaya167 READY: oneprojection/10keys20OC/120past-close
-   masks restored, same95/23/21cohorts/DEV unchanged. Native/cold/independent
-   checks passed,20source72packet files unchanged;322.66/600active, owner
-   closed; consumed by the completed same-family monthly comparison.
-   Mendel metadata identified existing100NAS MODP1 canonicalf6e5/159335rows,
-   not a new numerical pass; inventory all-wall overrun180->210 retained.
-   NEW monthly-ranking Data1200owned-active3600elapsed/oneprojection,
-   noAPI/Norgate/splice.63closes/62returns, monthly OPEN->OPEN/exit<=Sep30,
-   lastoriginAug2026; original100slots/masks/role purge retained. Actual native
-   producer-consumer/Source proof before payloads/fits, not GPU filler.
-4. Planck completed five-Task source match4db9/current-MSFTb2fd and current-
-   LOWVOLcce5/36cb native binding. NewUS17 image6a65/ad9 passed mixed-book tests,
-   but olde414 cannot read NYSE registration. Preserve original NAS profiles/
-   identities/paths/windows/F9, no allpositionsflat/reset. CurrentMSFT7a
-   differs historicale1b. No actual migration/NYS registration before
-   exact current-source qualification/positive owned-process closure.
-   Current d892 custody reader already mixed-venue; no blanket migration.
-   Minimal five-future-action binder/mock checks are source-only; actual
-   cutover waits current f545 positive owner closure, not all positions flat.
-5. Opt-in finite multileg entry library/native tests verified in repo.
-   Original6PASS/1FAIL preserved; separate12bf native archived parser/projection/
-   legacy-writer probe PASS is accepted compound proof. Bad cross-type fixture
-   equality is not financial rejection or fictitious combined PASS. Default
-   one-effect session/budget/current f545 unchanged, no substitute unknown.
-   Serial233/full19564+26knownSKIP/Ruff/3Compose PASS. Candidate image920d/
-   SDK78c3 adds only new module; actualLinux32/cold PASS, not deployed.
-   Future dated NAS_H5 Uniform17 pair Source8768/consumer9b8d passed native
-   three entries/three exits/unknown/partial/default-one-effect plus publisher
-   roundtrip. Actor-coexistence-r1b89c PARTIAL: descriptor not wired into
-   ActualCensus/exact host descendant unproved; all3iterations/CIDs/Jobs
-   closed, not admission PASS. finite-observer-yield-r2 now READY50bd/e9d6/
-   host42047:18fakeCOM/9wrapper/6native/publisher/cold/Ruff PASS,211.28active/
-   3CIDs closed;32retained Jobs not total launch count. Typed dated8ac
-   observer policies bound. Same one-shot14:40UTC carries exact successor
-   activation plan after actual current owner/custody/observer qualification.
-   No actual Task/TRUE/book allocation. Same original
-   bank/owned exits, independent of F3/ML/NYSE migration; no currentf545 cap
-   change/F9 substitute. Actual cutover waits positive owned closure.
+1. Inspect actual currentf545 outcome at its owned opportunity, then bind
+   independently qualified next finite NAS pair after positive relevant
+   owner/custody/observer closure, not allpositionsflat.
+   A/execution/current-finite-multileg-runtime-image-20261028-v1/
+   future-nas-baseline-pair/finite-observer-yield-r2:
+   Source50bd4eac/Consumere9d6/host42047/action6351. SOURCE+SYN READY,
+   FALSE/UNREGISTERED/UNALLOCATED. EntryOct29UTC14:15/native14:20/recovery14:27;
+   exitNov4UTC20:40/native20:45/recovery20:52. Uniform17 NAS_H5 engineering
+   baseline/max3serial effects/same physical original bank and owned exits.
+   Existing dated8ac yield/restore; no observer exemption/currentf545 cap
+   mutation/F9 substitute. Actual typed release/twoTask binding Parent-owned.
+2. Installed readonly daily20 point Task:
+   thericher-current20-ridge-point-preparation-20261029-v1,
+   Oct28UTC20:10/KSTOct29_05:10; capturehard20:30/chainhard20:40.
+   Source324182c2/c5b0/plan722e/readback13PASS. coherent20->F3->retainedRidge
+   ->UNALLOCATED Oct29 point. Future capture/inference not yet observed.
+3. Installed readonly monthly100 point Task:
+   thericher-nas100-monthly-point-preparation-20261031-v1,
+   Oct30UTC21:00/KSTOct31_06:00; capturehard21:20/chainhard21:30.
+   Source7cb99495/factory5ae02486/plan2ec2b183/installer59b8b980.
+   Actual Parent registration and15fresh independent typed readbackPASS.
+   OneRAMclient/1authPOST/<=100distinctdailyGET/0retry; KIS_PAPER market-only,
+   freshOct30 CLOSE-only context/unknown masks/Nov2->Dec1monthlyhorizon/DST.
+   Raw/derived M/source/models A. No staleOct27retag/OTCsplice/account/order/
+   live/privatebank/capital. Installation is not actual point or Paper fill.
+4. Hubble current-rank-memory-native-recovery-20261028-v1: SYN-only first-cause/
+   ABI repair of CLOSED_TECHNICAL825cb893 native-consumerValueError,
+   600active/2400elapsed/<=3native/sourceupper<=240;0marketpayload/fits/GPU.
+   Original scientific policies/criteria/inputs/debit2584.416479 unchanged.
+   Parent separately assesses exact numerical readiness; no old-cap reopening.
+   James dedup NO_NOVEL_READY is not economic rejection of unfinished useful
+   work or a global novelty gate. Completed fits are not rerun for utilization.
 
-## Preserve Completed Evidence
+## Completed Evidence / Local Limitations
 
-Current33 HGB/GRU/Transformer, both Gaussian studies, VSN continuation/E232,
-FeeProx/TCN/earlier public models are CLOSED. Latest stock17JointPatch5262
-actually trained73updates/31.4sCUDA, growth1.0224percent/DD.9908percent on seen15;
-weak frozen primary passed, but Ridge stronger/MSE worse. No automatic Paper
-swap or duplicate fit. Older scope epochs/seed/no-rerun protect those results,
-not a global ban on useful new campaigns.
+N100 RankNetb75 CUDA2660updates/28epochs/best4/7.197s and CPU Ridge COMPLETE.
+Sequence7b6001f1 GRU1128updates/47epochs/best15/10.38s and Transformer984/
+41epochs/best9/13.48s COMPLETE; fixed three-expert rank blend evaluated once.
+Original100 Uniform UNKNOWN from44missingOCfields/23dates CODX/BKYI,
+primaryWITHHELD. Bounded sourceQC1POST2GET/0qualifiedpages STOPPED.
+Public suspension intervals cover gap dates; not internal-provider-cause
+proof or historical tradability. No overlay/OTC/priorclose fill/asset deletion/
+supplemental replay. Price-proxy claims only; independent Paper continues.
 
-Existing49ac was ALREADY KIS MODP1;90,819long-history rows are reused after NVDA
-sentinel1POST4GET, not a new provider/dataset or reason to realign old models.
-All outcomes globally reused/adaptive/current-listing/non-PIT/CA/finality limits
-remain. Quality limits constrain claims, not delegated Paper authority.
+Separate frozen-weight liquid17 transfer15fd60fa COMPLETE/primaryREJECT:
+fixedblend growth2.077562percent/DD1.929112 versus Uniform3.618067/2.108351,
+0fits/GPU/API/threeCPUforwards/oneDEV/fiveledgers/347savedchecks.
+Wide17/pooled/BB/monthlyrule/older public-model tracks CLOSED; exact results
+and failures in HANDOFF/role boards/Git/immutable consumers. No rescue/refit.
+F9 distinct adjacent-calendar diagnostic050109f8:1POST1GET/0rows/complete
+pagination/10nativePASS; original UNKNOWN-HELD, no refund/no-send inference.
 
 ## Verify / Continue
 
-Use fresh focused/native checks for D code and actual outputs.
-Tracked authority ec946b4b/1414members: full19564PASS/26knownlinkSKIP,
-serial233/Ruff/3Compose/own scratch clean. Reuse only exact digest match;
-production/shared-control change requires fresh full per AGENTS.
-At material company completion integrate, verify, commit/push, replace this
-with ONE material next company outcome and continue the active request.
-A package commit/due time/local technical failure is not company completion.
+Production authority ec946b4b/1414protected: serial233/full19564PASS/
+26knownlinkSKIP/8workers/Ruff/3Compose/clean owned scratch.
+Docs/external-only reuse requires fresh exact protected digests and separate
+focused/native proof of D code/actual outputs. Tracked/shared-control change
+requires fresh full per AGENTS. Preserve unrelated %SystemDrive%/.
+
+At actual material company completion integrate/verify/commit/push, replace
+this with ONE material next company outcome and continue the active request.
+A package commit/local failure/due time is not completion. Workers own
+next_due; no foreground session/quota sleep or invented background activity.

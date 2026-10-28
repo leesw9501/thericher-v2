@@ -1,7 +1,7 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Parent shared MD/Git; Engine/Steward Raman owns targets/splits/fits/resources.
+Parent shared MD/Git/targets/integration/registry/resources after child closure.
 No broker/credentials/risk authority in this role. History: Git158bd51a.
 
 ## Current Executable Consumers
@@ -45,7 +45,8 @@ current-long17-h20-trend-proposal-20261028-v1/READY.json. Related monthly
 momentum/ETFvol/sector-relative mechanisms existed; proposed contrast is exact
 fixed postselection gates+nonredistributed vol sleeves, not each component.
 252closes/251returns, variable monthly carry NOTH20. Current executable consumer
-is Raman's one CPU price-proxy monthly study and Feynman's Data252 handoff.
+was the completed Parent745b CPU monthly study/Dataa167 handoff: REJECT at
+INNER/noDEV. Its model-side price-proxy claim never delayed Paper authority.
 Original papers inform mechanisms, not a claimed stock/factor replication.
 No learned fusion/new DL fit/profit claim granted by this proposal.
 No new literal macro-role dependency or hidden feature/window multipliers.
@@ -71,6 +72,23 @@ current-core8-saved-convergence-diagnosis-20261028-v1/CLOSED.json.
 No market/DEV/forecast/ledger reopened; next justified campaigns may add
 dimensionless gradient/update diagnostics, not train only to emit diagnostics.
 Parent owns next Engine/registry/GPU; no admitted training from this diagnosis.
+
+Latest distinct monthly-ranking target completed RankNetb75 and GRU/
+Transformer7b6001f1 plus fixedrankblend. Original100 UniformUNKNOWN because
+44requiredOCfields/23dates missing during disclosed NAS suspensions; no
+control fill/retroasset deletion. Known metrics are within-source price-proxy,
+not historical NAS executablePnL. Separate fixed-weight liquid17 transfer
+15fd60fa on preexisting0-overlap universe CLOSED/primaryREJECT:
+fixedblend2.077562percentgrowth/DD1.929112 versusUniform3.618067/2.108351.
+0newfits/GPU/API; no postoutcome recipe selection or generic retry.
+
+James current-next-mechanism-dedup-20261028-v1/READY.json CLOSED
+NO_NOVEL_READY: four mechanism precedents/sevenregistrybindings,
+0market operations/180conservative sourceupper. Not exhaustive or an economic
+rejection of technically unfinished rank-memory825cb893. Parent dispatched
+Hubble current-rank-memory-native-recovery-20261028-v1, SYN-only600active/
+2400elapsed/<=3native/no market admission. Existing useful hypothesis can be
+completed after technical repair; no global novelty gate or old-cap refund.
 
 A next proposal must address a measured weakness using available causal inputs,
 name baseline/strongest kill/finite trial+compute cap and executable consumer.

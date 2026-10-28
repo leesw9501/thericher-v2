@@ -101,6 +101,23 @@ Inspect only exact RUN-PLAN roots, not latest-artifact discovery:
 - Control chain root/runs/current20-ridge-point-20261028-once-v1.
 No actual future capture/model point inferred from Task registration.
 
+## Installed Readonly Monthly Point
+
+Task thericher-nas100-monthly-point-preparation-20261031-v1:
+ACTUALLY ENABLED/UNSTARTED Oct30UTC21:00 = Oct31KST06:00.
+Capture hard21:20/chainhard21:30/PT30M, quietpythonw/no demand/catchup/
+repeat/restart. Do not reapply installer or manually run its opportunity.
+Chain A/data/current-nas100-monthly-operational-point-chain-20261028-v1,
+Source7cb99495/factory5ae02486/plan2ec2b183/installer59b8b980.
+installer/parent-register-once/RESULT.json records actual registration;
+Parent integration/NAS100-TASK-READBACK.json independently15PASS09:54UTC,
+XML612c60d0/Ready/instances0/nextOct30UTC21:00/other definitions+ACL intact.
+OneRAMclient/1authPOST/<=100distinctdailyGET/0retry/scoped collector+token;
+KIS_PAPER market-only, freshOct30asof63CLOSEs/unknown masks/Nov2->Dec1
+monthlyOPEN/DSTcalendar. Output UNALLOCATED, no account/order/privatebank/
+capital/falseH5 map/staleOct27retag/OTCsplice. Actual capture/inference not
+yet observed. Exact source RUN-PLAN roots, never latest-file discovery.
+
 ## Current Source Migration / Preparation
 
 Exact five future Task source match:
@@ -108,8 +125,9 @@ A/execution/current-legacy-future-task-source-match-20261028-v1/CONSUMER.json,
 Source4db9124a/observed05:44UTC. Readonly metadata, instances0, not process
 closure. CurrentMSFT7a170d47/d1f047b1/TRUE2887997f differs olde1b/bf37;
 future current-derived b2fd6247/92ee5fd5 native3tests PASS.
-CurrentLOWVOLe2b06935/route3699bd76 differs oldhostba2a; Planck owns exact
-current-source rebind in current-legacy-lowvol-current-source-rebind-20261028-v1.
+CurrentLOWVOLe2b06935/route3699bd76 differs oldhostba2a; completed current-source
+rebindcce5/36cb and five-action sourcebinder4d605 remain SOURCE-only until
+actual owned closure/typed binding. Planck is closed, not a running worker.
 Linear f545/235e matches installed source.
 
 Image6a65238e/SDKad9f2813 native mixed-book compatibility8a8889e7/93e87304
@@ -162,8 +180,8 @@ A/data/current-long17-monthly-daily-mark-recovery-20261028-v1/endpoint-only-r1/
 QUALIFIED-FINAL.json SHA2db664cc.10keys/10GET2POST0retry including original
 failed request reused offline; all strict OHLCV rejections preserved.
 OPEN/CLOSE-only compatibility, no repaired LOW/Bar/Paper grade. All owners/gates
-closed. Carson owns separate monthly OC DataVersion; Engine must bind actual
-READY/native producer-consumer before sole policy compile. No old overwrite.
+closed. Carson's separate monthly OC DataVersiona167 was consumed by completed
+745b compile/INNER comparison. No old overwrite or repeated projection.
 
 - Existing20 KIS MODP1 long historyb7fd already feeds49ac:90,819canonical rows.
   NVDA sentinel f17ce4b4/284ea68e:1POST4GET/100dates400OHLCmatch; reuse, no
@@ -173,10 +191,11 @@ READY/native producer-consumer before sole policy compile. No old overwrite.
 - Same-KIS33 frozen minute corpus0dd2 remains unchanged; Oct19QQQ/SPY390each
   are separate actual captures. Sep15empty exact cursors, not global floor.
   Existing Sep28complete caches are skips, not new downloads.
-- Current recent-core capture Jason owns2700active/7200elapsed/max900GET.
-  First1POST0GET wrongly gated every Python. Scope-corrected successor retains
-  old clock/debits and one additional POST; actual cursor receipts, not plans,
-  prove acquisition. Guard actual source/cache/account/token collectors only.
+- Current recent-core capture5ee3 COMPLETE:517GET/123newcomplete symbol-
+  sessions/47,970RTHminutes/61,200rows,36oldskips/0wire retries/rootclosed.
+  First1POST0GET wrongly gated every Python; combinedPOST2/failure retained.
+  Targeted8d63 COMPLETE37GET/4440rows/15intervals; Core8V2865b adds53eligible
+  windows with0GET, not old-family refit. Guard actual collectors, not all Python.
 - WideData28c8 READY endpoint354/83/89/5close352/82/89, one projection and
   physically separate train/dev features/outcomes.64inputs stable. Frozen
   Data Ruff30style issues (29E501/1E731) retained, not PASS/reprojection.
@@ -186,10 +205,29 @@ READY/native producer-consumer before sole policy compile. No old overwrite.
   CIDs90Jobs/lease closed; sharedupper2670.425815/6000 includes terminal500.
 - Stock17JointPatch5262, VSN5847/E2329f5c, same-KIS9592 GRU/Transformer/HGB,
   Gaussian/FeeProx/TCN/public-model studies CLOSED. No unused-cap/refit rescue.
-  Turing owns saved aggregate cost diagnosis, not a new GPU fit/evaluation.
+  Saved aggregate cost diagnosis COMPLETE46checks, not a running GPU job.
+
+- N100 RankNetb75/sequence7b6001f1 actual3CUDAfits completed, no duplicate
+  training. Exact callbacks under matching research roots. Original100 Uniform
+  UNKNOWN, primaryWITHHELD. Source-QC technical-r3 COMPLETE1POST2GET/
+  0qualifiedpages STOPPED;44OCfields/23gap dates overlap disclosedNAS
+  suspensions, not internalKIS cause/executablevenue proof. No supplemental
+  control replay/OTCsplice/retroasset deletion or new independent Paper hold.
+- Separate liquid17 frozen-transfer15fd60fa COMPLETE/primaryREJECT:
+  fixedblend2.077562percentgrowth/DD1.929112 versusUniform3.618067/2.108351.
+  0fits/GPU/API/threeCPUforwards/oneDEV/fiveledgers/347savedchecks.
+  No rescue/refit or claim that lower turnover alone caused/equates alpha.
+- Strategy next-mechanism metadata READY NO_NOVEL_READY; existing rank-memory
+  consumer825cb893 is CLOSED_TECHNICAL/0marketfits, not economic rejection.
+  New current-rank-memory-native-recovery-20261028-v1 is SYN-only bounded
+  recovery,600active/2400elapsed/<=3native, no market-payload admission or old
+  cap reopening. Parent separately assesses numerical readiness.
 
 F9 exact-date f6d9/6d58 query1POST1GET/0rows/fullpagination: UNKNOWN-HELD,
 not terminal/absent/no-send. No identical query/release from missing holdings.
+Distinct adjacent-calendar diagnostic050109f8 also1POST1GET/0rows/fullpage,
+10nativePASS/jobs+CIDsclosed; UNKNOWN-HELD unchanged.17externalRufffindings
+and prefreezeelapsed limitations retained, not compliancePASS/datebug proof.
 Fresh account4805/8314 had1POST3GET/6positive instruments, not owned/equity/
 settledcash/PnL. Venue8463/e5301POST4GET all2xx but closed-market timestamps/
 bidask invalid; orderability NOT queried. No future fresh-risk qualification.

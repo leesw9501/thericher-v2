@@ -1,88 +1,51 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Darwin01a181a8-a673-7610-a2a2-f709bfc3473e is sole GPU/registry coordinator
-after Parent completed the monthly technical successor. No other fitting owner.
-Parent owns shared policy/MD/Git. MD/Source assignment is not process proof.
+Parent owns GPU/registry coordination after positive closure of Darwin and
+Plato's numerical workers. No admitted GPU fit is currently running.
+MD/Source/assignment is not process or GPU proof. Parent owns shared MD/Git.
 
-Current transfer: Turing's62551273 family CLOSED, positive06:39UTC noPID/
-matchingCID/lease,8CIDs48Jobs closed; Parent closed Turing and transferred
-registry/GPU ownership to fresh scoped Raman. No duplicate raw fits.
-Raman BB/context982e CLOSED3fits/oneDEV/fiveledgers/188checks, no increment.
-TCN40updates/11.08sCUDA/81.09MiB;11CIDs66Jobs/PIDs/lease/registry lock closed,
-final1492.917137/3600. Old raw controls not refitted, no market retries.
-Monthly fixed-rule family COMPLETE/REJECT, fits0/GPU0. Raman1800 closed
-unfinished; Parent adapter745b completed SAME family1compile/INNER1/DEV0,
-4CIDs24Jobsclosed/registryterminal. Successor258.49/900 plus old1800 once,
-not measured compute. No criterion change or refund. No admitted GPU campaign;
-use actual headroom for useful new work, never duplicate studies/dummy training.
-RTX4090 observed21,982MiB free/4percent/36C about08:20UTC, not future headroom.
-Saved selector/scale diagnosis found no proved defect or rerun justification.
+## Latest Actual Fits / Closure
 
-New N100 monthly pairwise ranking family3600owned-active10800elapsed,
-max1CUDA RankNet+1freshCPU Ridge, <=3native technical iterations. Data separate
-1200active3600elapsed; prep charge<=300Engine/200Data, queue/LLM reasoning
-separate not compute. Freeze exact parameters/splits/costs/diagnostics before
-market fits. Recheck actual VRAM/desktop reserve, prove actual PID/update/
-peak/lease closure; assignment/preparation is not active GPU use. No old fit
-rerun or extra trials from concurrency permission.
+| Campaign | Actual useful work / terminal state |
+| --- | --- |
+| current-nas100-monthly-ranknet-development-20261028-v1 | Sourceb75d7ffe: oneCPU Ridge/oneCUDA RankNet2660updates/28epochs/best4,7.19694s/67.71MiB.348.43of3600activeupper;7CIDs42Jobs/lease closed. Original100 primaryWITHHELD/UniformUNKNOWN. |
+| current-nas100-monthly-sequence-ranking-development-20261028-v1 | Source7b6001f1: GRU1128updates/47epochs/best15,10.37909s/126.15MiB; Transformer984updates/41epochs/best9,13.48086s/129.69MiB. INNER patience/best restore, no convergence claim.7CIDs42Jobs/leases closed;398.44of6000activeupper. |
+| current-liquid17-frozen-rank-transfer-20261028-v1 | Source15fd60fa: threeCPU frozen-model forwards,0fits/GPU/API/registrywrites.5CIDs30Jobs closed;203.96of900activeupper. PrimaryREJECT, no refit/selection rescue. |
 
-## Ownership Handoff
+GRU/Transformer combined actual fit23.85995s is not end-to-end elapsed or
+isolated GPU benchmark. Old results/debits remain unchanged. Safe checkpoints/
+weights/affines on D: retained; unused old caps never authorize another trial.
+Sequence Dataf6e5/R2 uses exactly original63closes/62returns, no hidden window
+grid. Native optimizer/checkpoint and producer/consumer smoke preceded fits.
 
-Schrodinger stopped source authoring04:58:48UTC. Positive05:01 handoff:
-no owned PID/CID/GPU lease/new registry record; native/market counts0.
-Parent closed it and transferred resources/registry to Turing.
-Unexecuted macro draft and stock17-numerical-r1 draft remain preserved.
-Original04:30:09 clock/Source300 debit carried once; no lease age reclaim.
-Turing reused that stock-only draft, not duplicate kernel/training.
+## Closed Earlier Consumers
 
-## Closed Current Resource Consumers
+Wide17 Source752f:3fits/oneDEV/fiveledgers/106checks, shared2670.43of6000;
+Joint71updates/best7, HGBbest0 equalsUniform, no alpha from roundoff.
+Pooled6255: HGB+CUDA TCN38updates/best14/9.39s/allcash/noincrement.
+BB982e:3fits/TCN40updates/best16/11.08s/allcash/REJECT.
+Monthly fixed-rule745b:0fits/GPU, onecompile/INNER1/DEV0/REJECT.
+Joint5262, VSN5847/E232, same-KIS9592, Gaussian/FeeProx/TCN/public-model
+families remain CLOSED. Exact counters/PID-start/leases/failures are in
+immutable consumers and Git7ae35ddd/158bd51a, not a ready training queue.
 
-- Stock17JointPatch5262 completed one CUDAfit73updates/31.40s/97.75MiB,
-  selected9/patience64. SevenCIDs42Jobs/lease absent, upper1219.186186/3000
-  includes prior300+250 once; elapsed2271.493524/7200. Weak primary passed
-  but strongerRidge/MSE not improved. No new fit from unused old caps.
-- VSN continuation5847 restored128 once and168newupdates, selected232;
- 299.50s train/381.38MiB. FiveCIDs30Jobs/lease absent. E2329f5c readout REJECT.
-- Same-KIS DL9592 complete16epochs448updates each/best0/allcash REJECT,
-  sevenCIDs42Jobs/lease absent. HGB reused, not refitted.
-- Gaussian, FeeProx, TCN/Logistic/fixed-blend/nominal probes remain closed.
-  Historical clocks/failures/counters are in immutable consumers/Git158bd51a.
+## Resource Rules / Next
 
-## Completed Wide-Split Campaign
+Project has first GPU priority, including personal apps. Unknown external use
+is not a permission hold; never kill apps/change driver. Before NEW useful
+fits, measure actual free/projected peak VRAM with desktop/driver reserve.
+One coordinator may admit independent children with distinct frozen contracts,
+paths/caps/PID-starts. Co-tenant timings are not isolated benchmarks.
+Execution preempts at a safe checkpoint. Never age-reclaim live/unknown leases.
 
-Root current-long17-wide-split-model-comparison-20261028-v1.
-New6000active/14400elapsed, firstData prep05:15UTC/hard09:15UTC.
-Data1200/Engine4800; Data conservative corrected upper848.9s.
-New Source/native/three fresh same-split fits/one fixedblend/five ledgers.
-One GPU JointPatch, disjoint CPU Ridge/HGB may overlap. Data28c8 physically
-separates DEV outcomes; old controls overlap this DEV and cannot be reused.
-Actual r3 Source752f3482 completed3fits/one blend/one DEV intake/five ledgers.
-Joint71updates/selected7; HGBselected0 is Uniform, not alpha despite raw
-floating pass. All recipes show no increment;106saved checks preserve flags.
-Initial version/checkpoint failures retained;15EngineCIDs90Jobs/lease absent.
-Final Engineupper1821.525815/shared2670.425815 includes terminal500 once,
-not a new trial/refund. Entire family CLOSED, no unused-cap reruns.
-
-Saved-cost diagnosis COMPLETE46checks,0fit/GPU/outcome/ledgers;300upper closed.
-current-core8-pooled-c120h60-development-20261028-v1 is CLOSED62551273:
-one HGB57stages/selected37/.424s, CUDA TCN38updates/selected14/9.39s/78.24MiB,
-fixedblend/allcash/noninformative/noincrement.8CIDs48Jobs/lease absent,
-final2409.543156/3600. Registry family/trial1 final retained, no new trial in
-06:39 resource handoff. Coordinator OS creation time was not retained;
-TCN CLI exact PID/start retained. No inferred isolated benchmark/convergence.
-Raman's next BB/context family above is NEW, not unused old-cap training.
-
-## Resource Rules / Recovery
-
-Project has first GPU priority, including user apps. Unknown external GPU use
-is NOT permission hold; never kill apps/change drivers. Parent observed24,564MiB
-total/21,970free/Docker0 around05:00, not current headroom or lease authority.
-Recheck actual free/projected peak+desktop reserve before each child. Use
-useful ready campaigns, no dummy training/duplicate completed fits.
-One coordinator can admit independent concurrent children with disjoint
-paths/caps/PID-starts; co-tenant timings are not isolated benchmarks.
-Execution reliability preempts at a safe checkpoint. Family hard09:15 ends
-before today's Paper14:20; still obey actual owner/custody contracts.
-Never reclaim live/unknown leases by age. After interruption classify exact
-resume/restart/reconcile/complete, retain checkpoint/counters/failures.
+A new campaign needs an available-input hypothesis/dedup, predeclared active
+and elapsed ceilings, attempted-fit/evaluation caps, suitable maximum epochs,
+INNER curves/early stopping/regularization/best restoration, and exact native
+producer/consumer/optimizer smoke. Missing fields defer only that campaign.
+No training merely to emit diagnostics, occupy GPU or repeat completed work.
+Strategy metadata review CLOSED NO_NOVEL_READY, not an exhaustive/no-strategy
+claim. Parent assigned Hubble SYN-only rank-memory technical recovery with
+no fitting/GPU/market admission. Old2584.416479debit remains unchanged.
+Future readonly100 operational point is CPU inference,
+not training or a new budget allocation.
