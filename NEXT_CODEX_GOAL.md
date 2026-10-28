@@ -5,91 +5,92 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain an interpretable exactly bound native KIS Paper decision/reconciliation
-while independent useful research continues. Installation, tests, model scores
-and analytical returns are not fills or company completion.
+while useful independent research continues. Installation, tests and analytical
+returns are not fills or company completion.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-On genuine resume run scripts/start_next_codex_task.ps1, then current
-HANDOFF/AGENTS/RUNBOOK/stateboards. Do not rerun startup on compaction.
-Parent owns shared MD/Git/activation. Never KIS_LIVE_*/real money.
-Keep ONE original B/10/costs/losses/pending/F9 UNKNOWN-HELD, not a new bank.
+On genuine resume run scripts/start_next_codex_task.ps1; do not repeat it on
+compaction. Read HANDOFF/AGENTS/RUNBOOK/current stateboards. Parent owns shared
+MD/Git/activation. Never KIS_LIVE_*/real money. Preserve ONE original B/10,
+costs/losses/pending and F9 UNKNOWN-HELD; no substitute/reset/adoption.
 
-## Actual Execution State
+## Actual Paper Path
 
-Original hostf545/TRUE459f/inputf477/policy24d3, cohort
-paper-current-linear17-nas5.20261028, remains immutable.
-Oct28UTC14:21:17 entry failed Denied/actor_identity in NATIVE_EXECUTION.
-Public paired visits closed/observer restored; complete request counts NULL.
-Qualified offline R5 at14:53:47:8targets/0bound/8UNKNOWN/policy record absent,
-not zero orders. Broker holdings/fees/settlement/net PnL unobserved.
-Exact results and full pins are in HANDOFF and agents/execution.md.
+Original Oct28UTC14:21 entry failed Denied/actor_identity. Original R5 strict
+read at14:53:47:8targets/0bound/8UNKNOWN, full request counts NULL, not zero.
+Original owner positively closed16:25; observer restored16:36. Full pins in
+HANDOFF. Broker holdings/fees/settlement/net PnL remain unobserved.
 
-Positive original owner closure e70e9015 at16:25:34: root/native children/
-recorded CIDs absent, exact operational CLOSED records validated. Not financial
-closure or classification of every current writer. Observer original XML/
-API7/enabled identity matched at16:36,0instances both reads/no restore obligation.
-Original Nov3UTC20:40 exit and MSFTNov2/LOWVOLNov3 duties remain owned.
+NEW same-cohort recovery is actually ENABLED:
+A/execution/current-linear17-custody-scoped-integration-20261029-v1.
+Outer Source6431ff02/hostb547f206/route87470122/TRUE2db67c8e.
+Exact task thericher-kis-paper-linear17-same-cohort-recovery-entry-pair-20261028-v1:
+Oct28UTC18:30 trigger/native18:35..39/recovery18:42..46/restore>=18:48/
+hard18:50. Original inputf477/policy24d3/cohort/native requests/8NAS/
+max1effect/B10/F9 unchanged. Do NOT manually run/reregister/roll the clock.
+
+Initial installer CREATE+ENABLE returned then generic readback failed; retain
+that failure. Independent two-read exact XML/API7/enabled readback03011199
+qualified installation, not runtime/fill. Fresh per-effect admission/risk and
+exact unknown-request reconciliation still apply. Original Nov3 exit duty
+remains; source-only migration is not actual deployment.
 
 ## Ready / Owned / Due
 
-- Parent: activate only source/native-qualified exact scoped recovery or future
-  deployment; integrate current proof and Git. Actual fresh admission and native
-  reconciliation/quotes/orderability/budget remain mandatory before effects.
-- Dewey: NEW same-cohort runtime materialization, exact f477/24d3/original
-  financial identity/8NAS/max1effect.480active/2700elapsed,1SYN/no actualTask/
-  private/API/order. Qualification missing18:30UTC =>B_DEFER, no clock roll.
-  Proposed ingress18:30/entry18:35..39/recovery18:42..46/restore>=18:48/
-  hard18:50. Fresh compatible original Nov3 exit path required before activation.
-- Lovelace: NEW headless bootstrap recovery after actual c93 Parent action
-  failed ZoneInfoNotFoundError before Task0 under python -I -S -B.
-  Preserve c93/guard3dc/P1-P2 fixes and failed attempt.180active/1200elapsed/
-  one exact-bootstrap native SYN/no actualTask/private/API. Parent installs.
-- Fermat: NEW GRU pair-ranking development, proposal d15ad71a adopted.
- 1800activeSUM/7200elapsed;1fit<=900s/192epochs/pat24/33984updates,
- 0retry/2sealed forecasts/2cost ledgers. Exact final Source/data/purges/native
- driver/headroom before numerical dispatch; assignment is NOT a running fit.
-- Galileo: NEW C360 five-resolution feature packets from retained QQQ/SPY
- 2022-09-30..2023-09-29,251scheduled dates.600active/3600elapsed/oneprojection+
- savedverify,0API/GPU/models/labels. Full SPY/joint masks still unverified.
+Assignments are not proof of running workers:
+- Parent: shared integration/Git and actual qualified activation; after positive
+  new owner closure, exact public/private categorical read. Never infer a fill
+  from Task exit/missing/latest. Company objective stays unfinished.
+- Dewey: source-only exact original Nov3 exit action migration. Initial native
+  failed from dot-sourced parameter clobber; technical-r1 source8af4 repair,
+  repair also withheld at first negative assertion;227/240upper closed.
+  No actual UPDATE qualified; source-only first-cause diagnosis continues.
+- Lovelace: future Memory100 headless header-r5 qualification. r4 ca06 failed
+  absent allow_execute vs false, not identity/financial failure. New<=120active/
+  600elapsed/1native, old115.13155+new<=240. Guard wrapper7358 has same six
+  code bodies as382; claims8ce unchanged. Qualified5dbf/4918,163.532upper.
+  Parent actiona2ef/authorityc50a/plan1217 actually installed onceTask21:25.
+- Galileo: exact new recovery public/private outcome-reader preparation;
+  source SYN then separately bounded public-only next_due18:50/hard19:00.
+  No private read before fresh positive new custody-writer closure.
+- Fermat: NEW CPU2/memory2GiB C360-H20 two-fit family adopted35f6aa14.
+  1200activeSUM/3600elapsed, ridge1+9345param five-view GRU1, seed20261029,
+  max192/pat24/2112updates/0retry/search, two seals/eight DEV ledger cells.
+  Freeze Source/custody before market. No GPU required for this small model.
+- Kepler: fixedblend completed/rejected all four criteria;Sourcea55a/FINAL7248.
+  Chronos17 currentpoint Source dea0/SYNqualified; newruntimeprep<=300active/
+  3600elapsed/one tiny trusted-checkpoint SYN after18:50,0marketforwards/fits.
 
-A and B are independent delegated alternatives, not extra operator approvals.
-Same-cohort failure cannot become a substitute intent, new capital envelope,
-F9 release or reason to stop independent data/research.
+Frozen B claims do not automatically admit a newly spawned research process.
+Keep numerical actors closed by18:34 or worker-owned next_due18:50; continue
+source/contract work meanwhile. This exact finite topology constraint is not
+a global research approval hold; future scoped peer admission needs improvement.
 
-Installed readonly opportunities, DO NOT manually rerun:
-- Oct28UTC20:10: current20 Ridge point preparation.
-- Oct28UTC20:50: Memory100 point26b85470/plan4a6f8176, Datahard21:10/
-  whole21:20. Actual publication is not yet observed.
-- Oct30UTC21:00: NAS100 monthly point.
-Future headless c93/guard3dc prepares a conditional21:25..27/hard21:35 action,
-then Oct29 entry/Nov4 exit ONLY after exact positive PUBLISHED chain and
-fresh actual census. Actual bootstrap is currently NOT qualified/installed.
-Empty reviewed peers grant no actors; they are not a generic waiver.
+Installed readonly duties untouched: Oct28UTC20:10 Ridge point;20:50 Memory100
+point26b85470/plan4a6f8176; Oct30UTC21:00 monthly point.
+Future headless once21:25..27/hard21:35 is ENABLED with exact typed readback;
+actual publication/runtime remains unobserved. Conditional
+Oct29 entry/Nov4 exit require actual exact positive Memory publication.
+Original MSFTNov2/LOWVOLNov3 and same-cohort Nov3 exit remain owned.
 
-## Completed Inputs And Research
+## Completed Useful Work / Verification
 
-Chronos-2 exact dated safe checkpoint/SDK2.3.2: actual109model forwards,
-0fits/retries,32H5cohorts/two cost ledgers; fixed adaptive development criteria
-satisfied.10bp growth3.278731percent/DD.841107 vs Uniform1.570961/.833910.
-MAE worse than persistence and DD slightly higher than Uniform. Not independent
-alpha, qualified selection, Paper permission/default swap or actual PnL.
-Source8df98160/FINAL in current-foundation17-chronos63-development-20261029-v1.
-All workers/6CIDs/41CLI/lease closed;481.0197605/2400activeupper.
-Data repair6ebd4047/FEATURES22857a34 complete; original failed source preserved.
-Two-retained-expert description8d0bee6c complete; original3arm PARTIAL/
-TCN0updates remains. No duplicate fit or historical regrade.
+Chronos2 development:109actual GPU forwards/0fits,32cohorts/twoledgers;
+10bp research growth3.278731percent/DD.841107 vsUniform1.570961/.833910.
+MAE worse than persistence, DD slightly higher. Not independent alpha/Paper/PnL.
+H5 rankloss GRU:one actual GPU fit32epochs/5664updates/best8, twoledgers;
+growth1.605612/DD.991595, frozen MSE control economics withheld.
+All corresponding workers closed; do not duplicate training.
 
-Chronos17 current-point preparation is UNFINISHED/DEFERRED, not deployed.
-Research-only limitations never remove standing Paper authority.
+C360 five-view QQQ/SPY and separate H20 outcomes READY; source-local retained
+2022-23, input/target masks preserved. New two-fit campaign is adaptive reused
+development, not independent performance or automatic Paper/default promotion.
 
-## Verify / Continue
-
-Current full authority4484ff90/RESULTfe427e5b:
-188serialPASS/19577fullPASS/26knownWindowslinkSKIP/8workers/398.29s,
-Ruff/default+research+accountingCompose using.env.example PASS; source stable.
-1414protected includes current AGENTS emitted-adapter rule. Olde5 historical.
-External helpers require their own native/changed-path proof; repo tests do
-not validate D: code. Reuse only exact protected digests, never partial authority.
-At material company completion verify/commit/push, replace with ONE next outcome
-and continue. Package commits do not complete this unfinished company objective.
+Fresh full authority: A/verification/current-custody-scoped-paper-integration-20261029-v1,
+SOURCE4484ff90/RESULT8759bd1a:188serialPASS/19577fullPASS/26knownWindowslinkSKIP/
+8workers/410.47s, Ruff and three Compose.env.example PASS; source stable18:13.
+External helpers need their own native proof; repo tests do not validate D: code.
+Reuse for docs only after exact protected digest verification.
+At actual company completion verify/commit/push, replace with ONE next company
+outcome and continue. A package commit does not complete this objective.

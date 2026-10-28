@@ -1,118 +1,65 @@
-# Strategy Research Stateboard (전략 탐색 담당)
+# Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Parent shared MD/Git/targets/integration/registry/resources after child closure.
-No broker/credentials/risk authority in this role. History: Git158bd51a.
+2026-10-29 KST / Oct28UTC18:26.
+A=D:/thericher-v2/model-artifacts. Parent owns shared MD/Git.
+Kepler owns disjoint fixed-composition repair then current-point source preparation;
+Engine owns numerical interpretation/targets/costs. No broker/private authority.
 
-## Current Executable Consumers
+## Current Executable Proposal
 
-Current sidecar: Dewey owns foundation17 post-checkpoint preparation at
-A/research/current-foundation17-postcheckpoint-preparation-20261028-v1.
-Deduplicate prior exact public-model studies before any download/market trial.
-Official Chronos2 and TimesFM2.5 Apache-2.0 dated checkpoints are candidates,
-not adopted runtime/performance claims; optional TimesFM3 is not adopted under
-its different noncommercial/production restrictions. Exact SDK and actual
-producer-to-consumer smoke precede market payloads. No numerical authority
-or automatic Paper default swap is granted by this source-only package.
+A/research/current-chronos-h5-fixed-composition-preparation-20261029-v1:
+Sourceb9cd15f6/contracta10fe8b5. Fixed equal ranks from exact Chronos8df98160
+and retained H5halfblend4ba51d7d, fixed outerrerank/EWMA20/Top5/samegross.
+13SYN/Ruff/ClaudeGO;180.105813prepupper/allclosed/0market.
 
-- Daily current Ridge source5inventedcases was consumed by actual cddf/ee48:
-  one17rowCPUforward, RAW_SIMPLE/leaky-state, no repeated fit or old EVAL.
-- Generic factory58de had a REAL producer integration mismatch: Data PLAN has
-  no origin field. Corrected5785437a uses externally pinned CLOCKS.origin and
-  retains calendar/asof/entry/header checks. Actual mode cannot inject clock.
-  One real synthetic Data producer/17x20x18 ->factory forward/cold PASS;
-  original failed/intermediate sources remain unchanged.
-- Quiet once chain324182c2 uses corrected factory and separate SDK processes,
-  real collect_coherent (not inert CLI), bounded own token cooldown, exact
-  root/lineage and sanitized terminal failures.15focused checks/real quiet
-  lineage/deferred API, not actual provider/inference.
-- Parent now installed its readonly preparation Task at Oct29KST05:10:
-  c5b0/plan722e/independent13readback PASS. No orders/account/bank; actual point
-  remains future. Source preparation is not a permanent inert trading flag.
+Initial numerical813fe306 in
+A/research/current-chronos-h5-fixed-composition-development-20261029-v1
+closed21.8780281upper BEFOREpayload: attemptedDockerPython3.12.14 differs from
+qualifiedHOSTPython3.14.3/NumPy2.5.1.0intakes/compile/marks/ledgers,not profit0.
+Same-HOST recovery COMPLETE:
+A/research/current-chronos-h5-fixed-composition-host-recovery-20261029-v1/
+FINAL.json7248fb5a/Sourcea55ad8d7,closed18:18:59.
+32cohorts,1intakeeach/1compile/1marks/2ledgers/0fits/forwards/retries/controlreruns.
+10bp growth1.372383percent/DD1.136906; all four frozen criteria false,
+exact composition increment rejected.43.294135aggregateupper including old21.878;
+prep180.105813 separate. No extra blendvariant on seen outcomes/no default swap.
 
-## Research Direction In Use
+## Next Source-Only Current Point
 
-Chronological same-input comparison752f COMPLETE: fresh Ridge360/HGB360/
-JointPatch and equal blend on same KIS/F3 Data28c8, wider INNER/DEV89.
-Uniform growth3.831705percent/DD1.962512percent outperformed all three useful
-nonconstant recipes; selectedHGB0 equals Uniform, raw pass is numerical noise.
-Saved aggregate cost diagnosis completed46checks: tiny Joint gross edge is
-outweighed by extra fees; generic FeeProx/gating rescue rejected as duplicate.
-Pooled six-stock62551273 is now COMPLETE: HGB/TCN/blendallcash/noninformative,
-TCN38updates/9.39s; proper score worseFITconstant. No threshold/cost rescue.
-Cicero produced ONE masked BB20/context8 kernelc1bdd671, actual source/SYN
-bridge10tests/Ruff PASS. A/research/current-core8-causal-indicator-proposal-
-20261028-v1/READY.json includes reconstructability/dedup/official definition.
-Relative-close representation adds no information/alpha; warmup/flat/gap masks
-remain unknown. No public code/license adopted or absolute price invented.
-Raman's next executable family compares compact indicator/oldraw+indicator
-HGB and raw+BB TCN with compatible cached raw controls, sameData/costs/
-threshold. Parent did NOT adopt proposal's10bp costs/flattened5520/no-symbol
-defaults. BB family now COMPLETE982e/noincrement/allcash; do not repeat it.
-Volta monthly kernel8025a865/10SYNtests/Ruff source-ready after bounded dedup:
-current-long17-h20-trend-proposal-20261028-v1/READY.json. Related monthly
-momentum/ETFvol/sector-relative mechanisms existed; proposed contrast is exact
-fixed postselection gates+nonredistributed vol sleeves, not each component.
-252closes/251returns, variable monthly carry NOTH20. Current executable consumer
-was the completed Parent745b CPU monthly study/Dataa167 handoff: REJECT at
-INNER/noDEV. Its model-side price-proxy claim never delayed Paper authority.
-Original papers inform mechanisms, not a claimed stock/factor replication.
-No learned fusion/new DL fit/profit claim granted by this proposal.
-No new literal macro-role dependency or hidden feature/window multipliers.
-Globally reused data means adaptive screening, not fresh alpha.
-Fixed blends may be explored without each standalone expert profitable;
-learned gates need chronological OOF, not old in-sample predictions.
+A/research/current-chronos17-current-point-preparation-20261029-v1.
+Source dea0f8fc/CONTRACT7751afd6/SYN3983b54f qualified:eightchecks/Ruff/
+ClaudeGO_WITH_LIMITS/180.334upper/allJobsclosed18:30:30. Sourceprep complete.
+Consumer one future unallocated proposal for Execution, not a new bank writer.
+Use exact trusted Chronos checkpoint95a9710e/safeweightsddcda3c7/SDK2.3.2/
+8df code/fixedq.5endpoint5/EWMA20/Top5.
+Prefer>=86sessions in actual owned20:10 raw capture. If insufficient, only same
+SourceMode/exactoverlap reconciled b7history (endsOct16), no splice/imputation/
+retagging oldpoint. Actual asofOct28->decisionOct29 still unobserved.
+Exercise actual86-row native producer/forecast consumer/publisher file ABI
+on tiny invented input before future payload.0API/credentials/privatebank/Task/
+realweights/marketfit/realmarketforward in preparation.
+NAS8/unsupportedNYS9cash/no renormalization/originalB10/F9 preserved.
+Parent future activation; Fermat resource coordination.
+NEW current-chronos17-current-point-runtime-preparation-20261029-v1:
+<=300activeSUM/3600elapsed/one actual tiny trustedcheckpointSYN after18:50,
+0marketpayload/marketforward/fit/API/privatebank/Task. Reuse exact trustedruntime/
+SDK/weights; one finite future408context consumer/UNALLOCATEDpublisher, not bank.
+Future actualpoint caps/Source separately adopted; no new numerical authority
+from preparation alone.
 
-Latest stock-onlyJointPatch5262 actually trained73updates/selected9 and passed
-its weak frozen primary on seen15, but Ridge stronger and MSE worse.
-Do not treat architectural complexity as improvement or replace Paper by default.
-Both Gaussian variants, FeeProx, cost-aware momentum/vol study, probabilityTCN/
-HGB/HALF/absorption, older public models remain CLOSED; exact consumers/Git
-retain original failures and scientific criteria. No threshold rescue/list-only
-research or completed training repeats for utilization.
+## Interpretation / Ready Knowledge
 
-## Ready Proposal Policy
+Foundation checkpoint corpus unknown: runtime/representation and postcheckpoint
+adaptive development only, not independent performance.
+Chronos development economics strong descriptively but MAE worse than persistence/
+DDslightly>Uniform. Fixed blending can be explored without individual profitability
+approval; comparisons must retain same row/availability/payoff/cost contracts.
+Learned tree/gate requires chronological OOF expert predictions, never in-sample.
+Finite window/timeframe axes share one budget, not unlimited hyperparameter grid.
+Prior technical indicator GRU/Transformer/raw IC comparison is confounded, not
+isolated feature benefit; original3arm/TCN failure preserved.
 
-Averroes CLOSED covariance proposal: prior close252 shrinkage/minvariance
-source+registry found, duplicate mechanism rejected before kernel/market trial.
-Saved convergence diagnosis CLOSED7selectors/32inputhashes/nativeCPU7checks:
-no proved checkpoint/targetscale bug and no rescue rerun. Exact evidence in
-current-core8-saved-convergence-diagnosis-20261028-v1/CLOSED.json.
-No market/DEV/forecast/ledger reopened; next justified campaigns may add
-dimensionless gradient/update diagnostics, not train only to emit diagnostics.
-Parent owns next Engine/registry/GPU; no admitted training from this diagnosis.
-
-Latest distinct monthly-ranking target completed RankNetb75 and GRU/
-Transformer7b6001f1 plus fixedrankblend. Original100 UniformUNKNOWN because
-44requiredOCfields/23dates missing during disclosed NAS suspensions; no
-control fill/retroasset deletion. Known metrics are within-source price-proxy,
-not historical NAS executablePnL. Separate fixed-weight liquid17 transfer
-15fd60fa on preexisting0-overlap universe CLOSED/primaryREJECT:
-fixedblend2.077562percentgrowth/DD1.929112 versusUniform3.618067/2.108351.
-0newfits/GPU/API; no postoutcome recipe selection or generic retry.
-
-James current-next-mechanism-dedup-20261028-v1/READY.json CLOSED
-NO_NOVEL_READY: four mechanism precedents/sevenregistrybindings,
-0market operations/180conservative sourceupper. Not exhaustive or an economic
-rejection of technically unfinished rank-memory825cb893. Parent dispatched
-Hubble native recoveryd61992fb CLOSED250of600/4498accountingchecks,
-five fixture geometry lines only. Parent reviewed exactdiff and dispatched
-current-rank-memory-bounded-market-recovery-20261028-v1 COMPLETE236267f3:
-14ledgers/9002checks/6fixedcriteriaPASS/0retry/fits/GPU/API/160of1200upper.
-Original scientific policies/criteria unchanged. MEMORY_SLOW20 TOTAL2021..25
-growth6.804694percent/absoluteNAV-DD2.352390; SPY9.538757percent returned
-more, descriptive/not same risk. Adaptive/currentlisting/nonPIT/CAunknown/
-not independentalpha or PaperPnL. ClaudeGO_WITH_LIMITS/source.
-Hubble now owns source+metadata/SYN operational-readiness600active/1800elapsed:
-exactCAT397/literal100/context/affine/dailywarmup, not monthlyRankNet input
-substitution/stale2025OOF as future signal or automatic currentf545 deployment.
-Existing useful hypothesis can be completed after technical repair;
-no global novelty gate or old-cap refund.
-
-A next proposal must address a measured weakness using available causal inputs,
-name baseline/strongest kill/finite trial+compute cap and executable consumer.
-Prefer pure reusable kernels/exact known ABI over new orchestration.
-Check existing registry/source to reject duplicate mechanisms before coding.
-Official-source claims/version/license or not_disclosed remain explicit;
-source claims are not checked project alpha. No arbitrary public code in
-Execution. Model research never alters deterministic broker risk/Paper authority.
+No new reading/report backlog. Next idea becomes executable bounded experiment or
+concrete rejection. Do not repeat closed training just to raise utilization.
+Finite B18:35/18:42 frozen admission has no arbitrary new worker grant: close
+numerical actors before18:34 or own next_due18:50, continue Source prep meanwhile.
