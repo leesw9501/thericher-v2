@@ -1,124 +1,53 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST; result-specific observation clocks below.
-A=D:/thericher-v2/model-artifacts. Sagan Gaussian kernel consumed by Steward;
-Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
+2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
+Parent shared MD/Git; Engine/Steward Turing owns targets/splits/fits/resources.
+No broker/credentials/risk authority in this role. History: Git158bd51a.
 
-## Current Useful Proposal
+## Current Executable Consumers
 
-Ridge source current-leaky-ridge-current-proposal-readiness-20261028-v1
-completed02:02:38 within150/900,5invented-wire cases/Ruff PASS. No actual
-coefficients/current arrays decoded, model forward/refit/deployment0. Engine
-separately freezes first-current-Ridge inference180/900 before actual values.
-RAW_SIMPLE targets sum<=.1initialNAV must become native relative proposals
-inside C=.1originalB, not B/100; unsupported NYS remains unspent. Preparation
-metadata is not a permanent inert native flag or another private-bank writer.
+- Daily current Ridge source5inventedcases was consumed by actual cddf/ee48:
+  one17rowCPUforward, RAW_SIMPLE/leaky-state, no repeated fit or old EVAL.
+- Generic factory58de had a REAL producer integration mismatch: Data PLAN has
+  no origin field. Corrected5785437a uses externally pinned CLOCKS.origin and
+  retains calendar/asof/entry/header checks. Actual mode cannot inject clock.
+  One real synthetic Data producer/17x20x18 ->factory forward/cold PASS;
+  original failed/intermediate sources remain unchanged.
+- Quiet once chain324182c2 uses corrected factory and separate SDK processes,
+  real collect_coherent (not inert CLI), bounded own token cooldown, exact
+  root/lineage and sanitized terminal failures.15focused checks/real quiet
+  lineage/deferred API, not actual provider/inference.
+- Parent now installed its readonly preparation Task at Oct29KST05:10:
+  c5b0/plan722e/independent13readback PASS. No orders/account/bank; actual point
+  remains future. Source preparation is not a permanent inert trading flag.
 
-Pure-source current-kis-intraday-multimodel-kernel-readiness-20261028-v1 is
-READY50132817/Interfaceb36a30c4,9invented cases PASS/Ruff. Raw10/static4/
-HGB1204 causal features and GRU16/Transformer16 scalar heads delivered; actual
-Torch imports/model/optimizer/GPU0, new Engine native proof still required.
-Initial RMS bit-exact test failure retained; only FP64 tolerance test changed,
-feature/model source unchanged. Source150 charged once inside family300/2200,
-first prep02:04:10/hard02:24:10, no active-CPU meter invented. Direct Engine/
-Data handoff completed. Data0dd corpus actual882/252/252 is separately verified.
+## Research Direction In Use
 
-Depth caller was consumed by completed5847/9e85 continuation:128restored once,
-168unique newCUDAupdates/selected232. Economic9f5c/4db9 readout rejected worse
-drawdown; no repeated training or primary rescue. Same-KIS GRU/Transformer/HGB
-9592/9b2 also complete REJECT/allcash, not a queue of pending models.
+Chronological same-input comparison752f COMPLETE: fresh Ridge360/HGB360/
+JointPatch and equal blend on same KIS/F3 Data28c8, wider INNER/DEV89.
+Uniform growth3.831705percent/DD1.962512percent outperformed all three useful
+nonconstant recipes; selectedHGB0 equals Uniform, raw pass is numerical noise.
+Turing owns saved aggregate cost/turnover diagnosis and one deduplicated next
+proposal, not new fits/evaluation or a rescue of the closed scientific result.
+No new literal macro-role dependency or hidden feature/window multipliers.
+Globally reused data means adaptive screening, not fresh alpha.
+Fixed blends may be explored without each standalone expert profitable;
+learned gates need chronological OOF, not old in-sample predictions.
 
-Current actual consumer is repeatable daily proposal preparation. Generic
-current-ridge-explicit-daily-point-factory-source-20261028-v1 is source-ready
-58de78dd/Consumer1fba5d11,16synthetic/cold cases. No old actual forward rerun.
-Sagan now owns current-daily-point-producer-consumer-native-smoke-20261028-v1,
-120active/1200elapsed: actual Data c77a/0978 synthetic publisher->actual file
-factory, invented bars/coefficients only. Correct software integration failures
-inside the frozen work budget; no actual model/market/API/Paper/Task/MD/Git.
+Latest stock-onlyJointPatch5262 actually trained73updates/selected9 and passed
+its weak frozen primary on seen15, but Ridge stronger and MSE worse.
+Do not treat architectural complexity as improvement or replace Paper by default.
+Both Gaussian variants, FeeProx, cost-aware momentum/vol study, probabilityTCN/
+HGB/HALF/absorption, older public models remain CLOSED; exact consumers/Git
+retain original failures and scientific criteria. No threshold rescue/list-only
+research or completed training repeats for utilization.
 
-Gaussian kernel91e8/d7e6 was consumed by actual26epochCUDA study3846/79ab:
-NLL pass/economic REJECT. Separate saved-integrity9132/53e5 PASS without
-model/label/ledger replay. PyTorch GaussianNLLLoss consumes variance; working
-density remains uncalibrated. New fullFIT499/fixed6 experiment belongs to
-Engine/Steward and is now also closedREJECTe2a0/b480; no further Gaussian
-result-driven threshold/weight rescue or baseline refit.
+## Ready Proposal Policy
 
-Daily Open5 cost-event Logistic19 native4686 failed technically, Consumer0935:
-trusted NumPy.testing._private import blocked by audit, no market fit/evaluation.
-Native optimizer counters UNKNOWN/maxcharged, old failure/debits immutable.
-Parent dispatched NEW current-liquid17-open5-logistic-sourcefix-development-
-20261028-v1,240active/1200elapsed. This role implements only minimal eager
-exact solver import before audit, preserving private/EVAL/env/net/write denials
-and unchanged model/target/solver/primary. Direct source/codec handoff to Steward,
-not another architecture grid, human approval or repeated completed model.
-Sourcecd17 now COMPLETE_VERIFIED/propercriteriaPASS,1CPUfit/0EVAL/GPU,
-not profitability or independent alpha. Do not rerun that model.
-Pure TCN20x18 kernel is delivered. Actual dailyTCN5c45/caea is now closed:
-oneCUDAfit22epochs/308updates/8.79s, incremental proper-score REJECT versus
-Logistic. FixedHALFb6ce/1c22 also REJECT,0fit/GPU; no threshold/weight rescue.
-Fullstate safe-checkpoint/nativeRNG restore now passes after Parent callerf58
-fix; old native ABI failure and debits retained. No active GPU job inferred.
-Steward compatibilitya858/310f found missing aligned INNER Linear outputs,
-not a grant to relabel EVAL or forward again. No-model Uniform-prior-gate
-e47a/e914 is now CLOSED_REJECT: growthFALSE/endpointDDtrue,0model/GPU/EVAL.
-Probability skill is not expected PnL. Frozen-model/new-session readinessb739/
-060f confirms saved weights and disjoint old splits; provider basis remains
-unqualified. Unit-required Data bridge closed before decode, old contract kept.
-New separately frozen nominal-only210/900 may reuse exact core/projector/codec
-with one past packet/oneCPUforward,0labels/performance/fit/Paper. Claude review
-supports UNKNOWN units/timing/adjustment only under trusted safe loading,
-source/masks/finite/domain checks and explicit performance/Execution false flags.
-Nominal adapter completed7e546616/42finite/oneCPUforward,0labels/fit/GPU,
-no feature/performance/Paper qualification. Preserve older tests,
-no threshold rescue. Reuse reviewed host lifecycle, not another platform.
-
-Cost-symmetric momentum/vol kernel is CLOSED and consumed by the risk-aware
-study2602, not an unrun proposal. Feature-support auditb0a2/bceb correctly
-required20OHLC keys/80sessions/39stockvolume;17-only input rejected. Actual
-coherent20 acquisition and currentF3 projection3b474a7d now satisfy the named
-current input guards, not providerfinality or model performance.
-
-Completed source/SYN-only package:
-A/research/current-long17-cost-turnover-sequence-readiness-20261028-v1.
-One new executable hypothesis addressing a demonstrated cost/turnover weakness
-with compatible baseline, native tiny solver smoke and chronological validation.
-No market/held/weights/GPU intake, architectural grid or rescue of old results.
-Sourcea12015a4/contract4b4598e READY: oneinventedRidgefit/threeBrent solves+
-coldfile parity. LeakyStateRidge18 plus persistent FeeProx controller, not a
-GPU model. Costs matter forVSN but risk-aware turnover alreadynearUniform,
-so not a claim fees alone explain prior failures. Native optimality not alpha.
-Parent adopted current-long17-feeprox-ridge-development360/1800 and actual
-native/market work is now COMPLETE. FINAL-CONSUMER-R1.json Source8104544f:
-onefit/oneforecast/oneheld/6cells/0numericalretry/CPU1GPU0, all5CIDs30Jobs closed.
-REJECT_FEEPROX_JOINT_RECIPE: at20bp FeeProx growth1.235217%/DD.706998%/
-turnover.293115 loses same-MU costblind1.554715%/.303168%/.458853 on growth/DD.
-Uniform.996212%/.372144%/.248758. Turnover reduction alone did not improve
-the joint recipe. Keep persistent currentOPEN+previousq causal ledger/source
-as tested code, not a reason for a fee/threshold sweep or independent alpha.
-
-Economic family4b8f7b78 is CLOSED_REJECT, not running. OriginalVSN+LSTM uses
-source inspiration, not copied weights:
-official MIT commits deep_fin_benchmark bee6ee83 and deepm94aa1482. March code
-predates Oct22 paper revision; futures zero-training-cost results are not
-US-equity net-cost evidence or a literal reproduction claim.
-
-## Evidence That Changes Direction
-
-TCN original proper-scorePASS and HGB original tolerancePASS are not PnL.
-New fixedHALF b8dba320 REJECT: loss.19085207 vs TCN.18641019; simple
-chronological INNERprior.17535899 is stronger than either learned expert.
-Preserve old result criteria; no posthoc reranking, weight sweep or alpha claim.
-
-Original absorption kernel9913cf96 completed actual utility study:
-A/research/current-c120-absorption-utility-development-20261028-v1/CONSUMER.json.
-All63EVALsessions cash/0trades/growth0, fails predeclared growth>cash.
-Less exposure than losing controls is not alpha. No threshold/window rescue.
-Official KIS strategy_builder3a9be59a80indicators/10presets was source review
-only; reuse license not verified, NO code imported or dependency installed.
-
-RAW397, Lag512, TimesFM head and earlier studies are closed, not ready unrun
-work. Proposals must address an identifiable weakness with an executable finite
-test, not reward architectural complexity. Currentlisting/nonPIT/CA/finality/
-arrival/global outcome reuse and public-model pretraining limits remain explicit.
-Learned fusion needs chronological OOF, not in-sample experts. Model-side
-exploration never changes deterministic Execution risk or Paper permissions.
+A next proposal must address a measured weakness using available causal inputs,
+name baseline/strongest kill/finite trial+compute cap and executable consumer.
+Prefer pure reusable kernels/exact known ABI over new orchestration.
+Check existing registry/source to reject duplicate mechanisms before coding.
+Official-source claims/version/license or not_disclosed remain explicit;
+source claims are not checked project alpha. No arbitrary public code in
+Execution. Model research never alters deterministic broker risk/Paper authority.

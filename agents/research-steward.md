@@ -1,157 +1,61 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-28 KST; result-specific observation clocks below.
-A=D:/thericher-v2/model-artifacts.
-Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c sole GPU/shared registry owner.
-Parent shared policy/MD/Git/activation; other agents have disjoint outputs.
+2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
+Turing01a180d7-f829-7701-b932-1bba78a71b61 is sole GPU/registry coordinator.
+Parent owns shared policy/MD/Git. MD/Source assignment is not process proof.
 
-## Current New Family
+## Ownership Handoff
 
-First-current-Ridge cddf/ee48 COMPLETE1CPUforward17rows/.193s plus native/saved
-PASS, no fit/GPU/private facts,4CIDs24Jobsclosed/upper26.629713/180. ONE next
-same-KIS-native family current-kis-native-c120-multimodel-development-
-20261028-v1 owns2200/7200, first prep02:04:10/hard04:04:10UTC:
-Data200/Source300(includesStrategy150)/native120/DL1200/HGB60/readout120/
-verify80/cleanup60/reserve60. Proposed33sessions/21FIT6INNER6LASTDEV/C120H60,
-max oneHGB/oneGRU/onecompactTransformer fit; eachDL<=150epochs20kupdates600s,
-HGB<=60s, inner earlystop/LR/best checkpoint, <=7ledgers/onefinaltargetintake.
-Data0dd actual33-session packets and Strategy5013 pure kernels are READY;
-HGB import compatibilityd575 passed; actual6286 native/cold passed, then
-HGB16trees/33.33s selected0constant. DLmarketforward/optimizer0 because
-Worker.fit/training.fit both exclusively save STATS.npz. Closed d00473d6,
-6CIDs36Jobs/lease absent/upper474.874774/2200/elapsed3389.227195/7200.
-That initial attempt has no forecast/held/ledger or scientific result.
-Linked dl-stats-ownership-recovery now COMPLETE9592346b/9b2aed27:
-GRU/Transformer each16epochs448updates/best0, cached HGB reused; all three/
-fixed blend cash0trades/properMSE equals FITconstant, REJECT_NAMED_INCREMENT.
-SevenCIDs42Jobs/lease absent;upper246.114605/1800,elapsed308.132854/3600.
-Actual wrapper native proof fixed single STATS writer; old debit unchanged.
-Three experts use shared rawQQQlog target/SPY context. Economic readout uses
-first scheduled origin per6LASTDEV sessions: nonoverlapping nominal .1initial
-NAV/20bp eachleg, endpointDD only. No actual training inferred from readiness.
-CPU/GPU may overlap under measured headroom and exact
-ownership; never extend caps or repeat completed fits for utilization.
+Schrodinger stopped source authoring04:58:48UTC. Positive05:01 handoff:
+no owned PID/CID/GPU lease/new registry record; native/market counts0.
+Parent closed it and transferred resources/registry to Turing.
+Unexecuted macro draft and stock17-numerical-r1 draft remain preserved.
+Original04:30:09 clock/Source300 debit carried once; no lease age reclaim.
+Turing reused that stock-only draft, not duplicate kernel/training.
 
-Depth continuation COMPLETE5847fc72/9e857e83: old128 restored once then168
-unique CUDA updates to296/selected232/INNERpatience64. Original optimizer/
-scheduler/RNG preserved. Training299.50s/peak381.38MiB, not convergence proof.
-FiveCIDs30Jobs/lease absent;upper519.701054/1500,elapsed729.526805/3600.
-CUDA initialization before unchanged audit fixed earlier premodel failure;
-old debit unchanged, no global environment/driver exemption.
-E232 readout COMPLETE9f5c9655/4db93f0a: growth1.255966percent improves128,
-DD1.193926percent worsens128, REJECT. One forecast/held/two ledgers/0fits,
-fiveCIDs30Jobs/lease absent,upper122.971185/300,elapsed237.184054/1800.
-All these workers closed. Current cross-asset patch-attention readiness300/
-2400 is source/native work, not running market training. Measure capacity
-again before dispatch; no duplicate completed model or utilization-only fit.
+## Closed Current Resource Consumers
 
-FullFIT fixed6 is CLOSED_VERIFIED_REJECT, e2a0d26f/b480b55e:499dates/
-6epochs108updates/3.166748sCUDA/66.2MiB. EightCIDs48Jobs/lease closed,
-upper77.511155/500/elapsed718.587289/1800. No Gaussian rescue/refund/regrade.
+- Stock17JointPatch5262 completed one CUDAfit73updates/31.40s/97.75MiB,
+  selected9/patience64. SevenCIDs42Jobs/lease absent, upper1219.186186/3000
+  includes prior300+250 once; elapsed2271.493524/7200. Weak primary passed
+  but strongerRidge/MSE not improved. No new fit from unused old caps.
+- VSN continuation5847 restored128 once and168newupdates, selected232;
+ 299.50s train/381.38MiB. FiveCIDs30Jobs/lease absent. E2329f5c readout REJECT.
+- Same-KIS DL9592 complete16epochs448updates each/best0/allcash REJECT,
+  sevenCIDs42Jobs/lease absent. HGB reused, not refitted.
+- Gaussian, FeeProx, TCN/Logistic/fixed-blend/nominal probes remain closed.
+  Historical clocks/failures/counters are in immutable consumers/Git158bd51a.
 
-Initial Gaussian3846/FINAL79ab scientific REJECT: actual CUDAfit26epochs/
-416updates/5.98s/66.2MiB/selected6, not convergence. Initial children closed,
-8CIDs48Jobs/lease absent, inclusive403.388122/1200/elapsed1440.71278/3600.
-Separate saved-integrity9132/53e5 PASS3CIDs18Jobs/upper71.381791/80, no models/
-originalHELD/ledgers/GPU; old technical failure/science/debits unchanged.
-Use measured headroom/project priority and exact owner/lease lifecycle, never
-infer active CUDA from a Source/assignment or repeat completed training.
+## Completed Wide-Split Campaign
 
-## Current Owned Resources
+Root current-long17-wide-split-model-comparison-20261028-v1.
+New6000active/14400elapsed, firstData prep05:15UTC/hard09:15UTC.
+Data1200/Engine4800; Data conservative corrected upper848.9s.
+New Source/native/three fresh same-split fits/one fixedblend/five ledgers.
+One GPU JointPatch, disjoint CPU Ridge/HGB may overlap. Data28c8 physically
+separates DEV outcomes; old controls overlap this DEV and cannot be reused.
+Actual r3 Source752f3482 completed3fits/one blend/one DEV intake/five ledgers.
+Joint71updates/selected7; HGBselected0 is Uniform, not alpha despite raw
+floating pass. All recipes show no increment;106saved checks preserve flags.
+Initial version/checkpoint failures retained;15EngineCIDs90Jobs/lease absent.
+Final Engineupper1821.525815/shared2670.425815 includes terminal500 once,
+not a new trial/refund. Entire family CLOSED, no unused-cap reruns.
 
-Economic VSN/LSTM+Linear family current-long17-vsn-economic-development-20261028-v1,
-contract4b8f7b78/source2446057d,2160combinedactive/7200elapsed/hard20:08:43UTC.
-Data47.9845591upper/300 and prior source180once remain inside shared2160.
-Final CONSUMER at19:17:25 and independent saved-output verify close the family:
-REJECT_ECONOMIC_VSN_INCREMENT. TWO actual co-tenant CUDA marketfits each128
-updates/selected128/MAX, not convergence; VSN406.432s/381.38MiB and
-Linear394.974s/80.05MiB. Positive exact closure10CIDs60CLIJobs/PIDstarts absent/
-handlesjoined/leaseabsent. Shared upper1156.4934141/2160 includes Data/source
-once; elapsed4122.237717/7200. Closed remaining caps are not another trial grant.
-Risk-aware2602 is CLOSED_REJECT: oneCUDAfit30epochs/71.44s/80.20MiB/best6,
-saved-outputverify/closure and upper338.974/1800. No duplicate or rescue.
-Current17 actualCPUinference is COMPLETE1forward/1load/17rows21:08:05;
-Source dca3/ORIGINAL17b28a/forwardproof156b. Packaging failed descriptorFILE
-mount resolved DIRECTORY. ThreeCIDs18Jobsclosed/upper94.0895/180; no repeat.
-Saved-output-completion-r1 CLOSED_COMPLETE_VERIFIED Source7a94743f,
-SDKpubecbe6e47/independentsavedverify1/twoCIDs12Jobsclosed/upper70.357of120,
-0model/0Data. Source/mountfilekind preflight before children, no repeatedforward.
-LeakyRidge/FeeProx Source8104544f/contract266e3eda is CLOSED_REJECT:
-A/research/current-long17-feeprox-ridge-development-20261028-v1/
-FINAL-CONSUMER-R1.json. One native solver smoke,1marketfit/1forecast/1held/
-6cells/0numericalretry/CPU1GPU0,5CIDs30CLIJobs closed. Activeupper128.198376
-of360/elapsed1697.549413of1800. Precreate failure entered no numerical stage;
-Parent explicitly authorized unused stages inside unchanged caps/deadline,
-not a repeated fit or refunded old debit. Final reject, no parameter rescue.
-Next Logistic19 scope4686/faa6 CLOSED_NATIVE_TECHNICAL_FAILURE, Consumer0935.
-Trusted NumPy private module import hit ownguard. Native countersUNKNOWN/
-max1fit80oracle charged; marketfit/target/predict/EVAL/GPU0. TwoCIDs12Jobs
-closed/absent, upper102.998112/360/elapsed1470.454348/1800, no refund.
-NEW current-liquid17-open5-logistic-sourcefix-development-20261028-v1 is
-assigned240active/1200elapsed with unchanged model/target/split/primary,
-eager exacttrusted solver imports before audit/payloads and all guards retained.
-<=2import-onlypreflights beforeseal then1native/1firstmarketfit/0numericretry.
-Newcd17 now COMPLETE_VERIFIED:1CPUfit35iterations/39FG/converged/.012s,
-1INNERforecast/readout187rows/0EVAL/GPU/retry, propercriteriaPASS (not PnL).
-SixCIDs36Jobs closed/newupper99.339346of240/elapsed353.805476of1200;
-old102.998112debit/cumulative202.337458 retained. No completed fit repeated.
-DailyTCN5c45/caea is CLOSED_REJECT: one CUDAfit22epochs/308updates/8.787719s/
-87.02MiB/best2, fiveCIDs31Jobs closed/lease absent, upper172.078670/720/
-elapsed344.815839/1800. Old checkpoint caller failure276.471960 retained;
-new native12checks/coldRNG proof passed with2additional synthetic updates,
-not a repeated completed market fit. FixedHALFb6ce/1c22 also CLOSED_REJECT:
-one saved projection/target witness/verify,0fits/GPU/financial; fourCIDs26Jobs
-closed, upper84.691817/240/elapsed312.167226/900. No weight rescue.
-No GPU training currently running. Logistic/Linear economic compatibility
-a858/310f found missing aligned INNER weights; no new model call. Alternative
-Uniform-prior-gate e47a/e914 now CLOSED_REJECT/growthFALSE/DDtrue,
-native8PASS/oneprojection/OPENintake/3ledgers/verify/0model/GPU/EVAL/retry,
-fourCIDs25Jobs closed/upper75.646743of240/elapsed377.259546of900.
-Old C120TCN readinessb739 confirms safeweights6001/scaler7c08 retained,
-original2022-2023 splits disjoint Oct27, global untouchedUNKNOWN.
-Original unit-required Data95c15/a97 and Enginef83 closed0native/market/model,
-conservative205allocation retained, not measured combined wall. NEW nominal
-runtime family210active900elapsed(Data90/Engine90/review30), ClaudeGO_WITH_LIMITS:
-one native handoff/onepast packet/oneCPUforward; no targets/labels/fit/GPU/EVAL
-or Paper promotion. Units/time/adjustment UNKNOWN/no guessed scaling; safeown
-NPZ, finite/domain/source checks and performance/Execution flagsfalse required.
-Reuse pinned host.run/child_guard/core/codec rather than new scaffolding.
-Old caps unchanged;
-Nominal family COMPLETE7e546616/b91d/Data9568/d6a7:42finite/oneCPUforward,
-one realweights/scalerload,2SYNcoldforwards,0labels/fit/GPU,4CIDs25Jobsclosed,
-combinedupper93.366741of210/elapsed763.931622of900. No follow-on fromthatbudget.
-complement readiness was already consumed by c88/077a, NOT a new fit grant.
+Next owned package current-long17-wide-saved-cost-diagnosis-20261028-v1:
+300active/1800elapsed/sealed aggregate analysis only, no fit/GPU/model forward/
+outcome intake. Do not claim a running GPU worker from completed source.
+New useful campaign needs deduplicated frozen hypothesis; no dummy training.
 
-Paper numeric yield18:45..55 consumed. Parent complete public census0actors at
-18:56:35/Docker0containers18:56:36 permits independent workers to resume after
-their own checks; not proof of every historical Job handle or financial absence.
-New research profiles are NOT automatically admitted by broker claims4ff.
-Repair exact capability contracts, not a machine-wide permission hold.
+## Resource Rules / Recovery
 
-Measure free/projected peak VRAM and desktop reserve before adding workers.
-Project first GPU priority includes user apps; never kill apps/change drivers.
-Independent ready workers may co-run under this coordinator, each with finite
-caps/PID-start/checkpoint/output and co-tenancy caveats. No dummy training.
-
-## Closed / Never Repeat
-
-TCNc88: oneCUDAfit29epochs/1392updates/best13/33.5949s/136MiB,
-fiveCIDs30Jobsclosed/leaseabsent, upper274.77/1500, original proper-scorePASS.
-HGB technical-readout-integrity-r2: one market56trees/best40/.5515s, unused
-readout repaired without refitting or repeating forecasts/native checks.
-FixedHALF diagnostic REJECT;0fits/forwards/restores/GPU, original models intact.
-Absorption utility REJECT;0fits/GPU/8cells, all EVALcash, no rescue.
-
-RAW3977f40357877epochs/173.1s/528MiB/upper516.10 and Lag512382.162/900 closed.
-TimesFM head19c14903 selectedINITIAL/8epochs/combined797.603703 incl Dataonce.
-Earlier TimesFM/MLP/HGB/ranker/gate/recurrent/hybrid results stay immutable.
-Preserve actual failure/time/trial debits; no age-reclaim, refund or clock reset.
-
-## Next
-
-Record actual worker/concurrency/terminal closure in existing registry, not a
-new resource platform. Closed VSN/Linear/risk models must never duplicate;
-current inference and new cost/turnover source/SYN hypothesis proceed in
-disjoint scopes. Missing fields
-defer that campaign, not a human approval or all lanes. Execution can preempt
-safely at a checkpoint; unresolved actual ownership stays unknown.
+Project has first GPU priority, including user apps. Unknown external GPU use
+is NOT permission hold; never kill apps/change drivers. Parent observed24,564MiB
+total/21,970free/Docker0 around05:00, not current headroom or lease authority.
+Recheck actual free/projected peak+desktop reserve before each child. Use
+useful ready campaigns, no dummy training/duplicate completed fits.
+One coordinator can admit independent concurrent children with disjoint
+paths/caps/PID-starts; co-tenant timings are not isolated benchmarks.
+Execution reliability preempts at a safe checkpoint. Family hard09:15 ends
+before today's Paper14:20; still obey actual owner/custody contracts.
+Never reclaim live/unknown leases by age. After interruption classify exact
+resume/restart/reconcile/complete, retain checkpoint/counters/failures.

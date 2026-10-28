@@ -6,174 +6,90 @@ coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain an interpretable exactly bound native KIS Paper decision/reconciliation
 in the finite shared-account loop while useful independent research continues.
-Installation, tests, inference, task exit and proper scores are not broker fills.
+Installation, inference, task exit and proper scores are not broker fills.
 
-Workspace: C:/Users/Public/Documents/thericher-v2.
+Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 On genuine resume run scripts/start_next_codex_task.ps1, then HANDOFF, AGENTS,
-RUNBOOK and current stateboards. Do not rerun startup on compaction.
-Parent owns shared policy, integration, Git and activation.
+RUNBOOK and active stateboards. Do not rerun startup on compaction.
+Parent owns shared policy/MD/Git/activation. Follow standing private Paper
+authority; never KIS_LIVE_*/real money. ONE original B/10/F9/pending/costs remain.
 
-## Remaining Execution Outcome
+## Owned Runtime Outcome
 
-Installed Linear17 HOSTf545e9b6/TRUE459fa3c4/inputf4775c8a/policy24d339fa.
-Entry Oct28KST23:15 trigger/native23:20..24/exact recovery23:27..31.
-Exit Nov4KST05:40 trigger/native05:45..49/exact recovery05:52..56.
-Same physical owner per pair, finite original observer restoration. Preserve
-all original exit duties and unknown effects. Do not replay consumed installers
-or manually run a Task merely to inspect it. Exact source/commands in HANDOFF.
+Installed f545/TRUE459f/inputf477/policy24d3:
+- Oct28KST23:15 trigger; native23:20..24; same-owner recovery23:27..31.
+- Nov4KST05:40 exit trigger; native05:45..49; recovery05:52..56.
+- Quiet/no demand/catchup/repetition/restart; exact finite observer restore.
+- Other original MSFTNov2/LOWVOLNov3 duties unchanged.
 
-Source-only review7b782ad4 validates8positiveNAS targets and TRUE/--execute;
-READY_FALSE was preparation metadata, no permanent profitability/ResearchOnly
-veto. C=.1 originalB, not B/100. Fresh account/quotes/orderability/shared replay/
-emergency/whole-lot facts can rightfully veto; no forced trade or renormalization.
+No hidden profitability/ResearchOnly/Modeoff veto; C=.1originalB, not B/100.
+Whole lots/fresh quotes/orderability/shared risk may correctly yield no intent.
+Do not force a trade, substitute unknown requests or adopt foreign inventory.
 
-Preserve ONE original shared B/10, owned entry costs/losses/F9 UNKNOWN-HELD/
-pending reservations and exact request identities. No profit expansion, new
-capital, substitute unknown request or foreign inventory adoption.
+After opportunity use exact paired outcomes and qualified readers, not latest
+files/exit/missing artifacts. Publicb3d4 cannot recover dropped counters: NULL.
+Offline r2 ebb972d7/Parent25f5 permits ONE unconsumed read Oct28UTC14:35..
+Oct29UTC14:35 with actual writer admission/closure/allRO/networknone/joins/
+stability. No recovery observe(), lock writes or reservation release.
+Existing app follow-up accepted for one14:40UTC; delivery unobserved.
 
-After the owned opportunity inspect exact paired outcomes and qualified
-readers, not latest-file scans/exit/missing artifacts. Public readerb3d4 cannot
-recover dropped nested native counters: NULL, not0. R2 offline reader ebb972d7/
-Parent25f5 is adopted for ONE unconsumed read Oct28UTC14:35..Oct29UTC14:35:
-fresh actual custody-writer admission, positive owner closure, networknone/
-allRO, exact joins and before-after stability. No recovery observe()/lock write.
-Existing app oct26-paper follow-up is configured for one Oct28UTC14:40 check;
-accepted configuration is not guaranteed delivery or an outcome.
+## Parallel Ready Work
 
-## Parallel Research Packages
+1. Daily point preparation is now INSTALLED, not a future proposal:
+   thericher-current20-ridge-point-preparation-20261029-v1 at Oct29KST05:10
+   (Oct28UTC20:10). Source324182c2/installerc5b0/Parentplan722e/readback13PASS.
+   Readonly coherent20 -> F3 -> retained Ridge -> UNALLOCATED public point
+   for Oct29. No account/orders/private bank. Actual capture/point still future.
+2. Wide chronological comparison is COMPLETE, not a training queue:
+   current-long17-wide-split-model-comparison-20261028-v1/READY.json,
+   r3 Source752f3482/3fits/one fixedblend/one DEV intake/five ledgers.
+   Data28c8 endpoint354/83/89/same KIS F3. Uniform growth3.831705percent/
+   DD1.962512percent beats Ridge/Joint/blend; HGB selected0 equals Uniform,
+   raw literal pass is rounding not skill. No duplicate fit/rescue.
+   Turing owns saved-cost diagnosis/one deduplicated next-hypothesis proposal
+   (300active/1800elapsed), no new outcome intake/evaluation/training yet.
+3. Jason owns finite recent-core minute capture/collector-admission repair.
+   Sep15 exact cursors empty, not whole-source failure; Sep28 complete caches
+   were reused, not new downloads. First new job1POST0GET was blocked by an
+   overbroad all-Python rule. Scope guard to actual collectors/token/cache
+   writers; preserve genuine unknown ownership and old failures. One additional
+   POST/remaining900GET/original2700active7200elapsed continuation approved.
+   No current33 or old cache mutation; useful data collection is not a gate.
+4. Planck completed five-Task source match4db9/current-MSFTb2fd native binding.
+   CurrentLOWVOLe2b0 is NOT historicalba2a; exact current-source rebind is next,
+   not blind activation. NewUS17 image6a65/ad9 passed native/mixed-book tests,
+   but olde414 cannot read NYSE registration. Preserve original NAS profiles/
+   identities/paths/windows/F9, no allpositionsflat/reset. CurrentMSFT7a
+   differs historicale1b. No actual migration/NYS registration before
+   exact current-source qualification/positive owned-process closure.
+   Current d892 custody reader already mixed-venue; no blanket migration.
+5. Pascal's finite multileg native prototype preserves one serial B/10 writer
+   and stops later legs on unknown outcome across restart. Final6PASS/1FAIL:
+   olde414 fixture package loading failed, backward compatibility unproved.
+   A scoped software recovery must prove it before a new dated integration;
+   no modification of today's f545 cap or substitute unknown request.
 
-Initial Gaussian family is CLOSED scientific REJECT, not pending training:
-A/research/current-long17-gaussian-risk-allocation-development-20261028-v1.
-One CUDAfit26epochs416updates/5.98s/66.2MiB, CHECK-selected epoch6. At20bp,
-growth/DD Gaussian1.299523%/.851982%, HALF1.431166%/.525031%, cached Ridge
-1.554715%/.303168%. NLL pass did not establish economic improvement. Separate
-saved-integrity repair91329656/Consumer53e5e477 passed without models, original
-HELD or ledger replay; old failure/history/debits and scientific REJECT remain.
+## Preserve Completed Evidence
 
-FullFIT follow-up is also COMPLETE/REJECT, not queued training:
-current-long17-gaussian-fullfit-fixed6-development-20261028-v1 Sourcee2a0d26f/
-Consumerb480b55e. One fresh499date fit/fixed6epochs108updates/3.17sCUDA,
-growth/DD Gaussian.833811%/.268692%, HALF1.205736%/.204540%, cached Ridge
-1.554715%/.303168%. NLL/DD pass, growth fail. EightCIDs48Jobs/lease closed,
-upper77.511155/500,elapsed718.587289/1800. Old results/debits unchanged;
-no more Gaussian rescue trials or first-Paper-point substitution.
+Current33 HGB/GRU/Transformer, both Gaussian studies, VSN continuation/E232,
+FeeProx/TCN/earlier public models are CLOSED. Latest stock17JointPatch5262
+actually trained73updates/31.4sCUDA, growth1.0224percent/DD.9908percent on seen15;
+weak frozen primary passed, but Ridge stronger/MSE worse. No automatic Paper
+swap or duplicate fit. Older scope epochs/seed/no-rerun protect those results,
+not a global ban on useful new campaigns.
 
-RetainedRidge metadata and pure proposer are READY: saved19coefficients/
-affine/exact18feature order match F3, source/invented-wire5cases pass. Data's
-complete active meter was not recovered; do not claim exact100cap accounting.
-First-current-Ridge inference is COMPLETE cddf581f/Consumeree484273:
-current-leaky-ridge-current-f3-inference-20261028-v1. One actual17rowCPUforward/
-model load/.193s, publication02:11:08UTC/native+saved integrity PASS/4CIDs24Jobs
-closed. UNALLOCATED/allow_submitfalse; no fit/oldEVAL/current Capped replay or
-fake actual q/prices. Future binding adaptera793/20SYN/ClaudeGO and actual
-public binding9641 (INPUT02c1/POLICY06a0/EXPECTED6ca5/Parent6fe2) are validated
-but UNALLOCATED/uninstalled. Native e414 fake-session fixture0995208b passed
-separately from installed37ff. Native C=.1originalB uses
-relative rows, not B/100; unsupported NYS mass unspent. No activation yet.
-
-Next finite same-KIS-source intraday family:2200active/7200elapsed including
-Data200/Source300(includes Strategy150)/native120/twoDLfits1200/HGB60/
-readout120/verify80/cleanup60/reserve60. Start elapsed at earliest actual prep,
-not numerical dispatch. Data metadata7bb30840 finds33common complete sessions:
-proposed FIT21historical June-Jul/INNER6head Oct8..16/LAST_DEV6head Oct20..27.
-New Data corpus0dd26b49/Manifest0593fb00 passed actual raw/native/saved checks:
-FIT882/INNER252/LASTDEV252 allknown,3CIDs18Jobsclosed. QQQ-only y_log target,
-SPY context; entryorigin+60/exitCloseorigin+3660. Endpoint PRICE only: never
-claim full1m DD or overlap10%-per-window capital. No synthetic gap continuity.
-Strategy50132817 pure-source9cases PASS; native models/optimizers still need
-new exact proof. Reuse C120/H60 projector/host/codec; direct contract handoff.
-At most3newfits(HGB/compactGRU/compactTransformer), common frozen rows/targets/
-costs. Each DL<=150epochs20kupdates600fit-seconds with inner earlystop/LR/best
-checkpoint; <=7total ledgers including fixed blend/rule/uniform/cash. Native
-producer/solver/checkpoint proof first, sealed forecasts before final targets.
-Adaptive nominal within-source research, not finality/PIT/FirstRate parity or
-broker PnL. Actual training must be evidenced, never inferred from this queue.
-Initial three-model attempt6286fab9/04c2c778 CLOSED_TECHNICAL_INCOMPLETE,
-Consumerd00473d6: HGB16trees/33.33s selected0constant; GRU/Transformer both
-failed before marketforward/optimizer because worker and trainer each create
-STATS.npz exclusively. Native direct-trainer smoke missed the wrapper seam.
-All6EngineCIDs36Jobs/lease closed;474.874774/2200/3389.227195elapsed/7200,
-old3attempts preserved,0forecasts/held/ledgers, no scientific verdict.
-Linked recovery is COMPLETE9592346b/9b2aed27: actual wrapper native passed,
-GRU/Transformer each16epochs448updates/best0, HGB reused. All three/fixedblend
-cash0trades/MSE equals FITconstant, REJECT_NAMED_INCREMENT. SevenCIDs42Jobs/
-lease closed,upper246.114605/1800,elapsed308.132854/3600. No duplicate fits.
-Root research/current-kis-native-c120-dl-stats-ownership-recovery-20261028-v1.
-Data's next partial-session window metadata scope100/900 cannot change the
-current33/split/caps; missing full390session alone need not invalidate a fully
-observed C120/H60 window in a separately frozen future campaign.
-Result is only17additional path-qualified windows, deferred. Next Data source
-package200/1800 prepares repeatable explicit-asof current20/F3 refresh, no
-repeat of today's completed capture/inference and no schedule installation yet.
-
-Depth is COMPLETE5847fc72/9e857e83: restored128 once,168additionalCUDAupdates
-to296/selected232/INNERpatience64, original optimizer/scheduler/RNG retained.
-Train299.50s/peak381.38MiB, no convergence claim. FiveCIDs30Jobs/lease closed.
-E232 economic readout9f5c9655/4db93f0a is REJECT: growth1.255966percent improves
-old128 but DD1.193926percent worsens. One forecast/held/two20bp ledgers/0fits;
-secondary HALF+Ridge cannot rescue primary. All workers closed, old failures/
-debits unchanged. Next distinct cross-asset patch-attention readiness300/2400
-prepares source/native contract before at most two new fits, not fresh alpha.
-
-US17 image6a65238e/SDKad9f2813 qualified with native core3 and paired foreign
-control6312cf07/cd8ac58f, no actual provider/private success or promotion.
-Socrates current-ridge-us17-next-session-runtime-binding-20261028-v1 now owns
-350/3600 source+invented wrapper proof for Oct29entry/Nov4exit. Keep actual
-fresh Oct28asof point UNBOUND until Data/factory integration and capture; no
-today-point date roll, currentf545 swap, new bank or AMEX expansion.
-
-Data repeatable refreshc77a/0978/8a4 and generic Ridge factory58de/1fba are
-ready sources. Sagan native end-to-end synthetic handoff and Descartes quiet
-prep review continue; proposed20:10..30UTC readonly capture/point chain is NOT
-installed. Parent may adopt a qualified chain under standing authority.
-Actual Oct19QQQ+SPY gap capture390RTH each is complete/ac536477+a7cb14a8;
-current33 dataset remains unchanged. Data adjusted-daily-history2400/7200
-continues original04:10:19..06:10:19UTC clock after clean gap-worker closure,
-official adjustment sentinel first. No actual bulk success inferred from plan.
-
-Use useful ready GPU work under measured headroom/project priority. Unknown
-user GPU apps are not a permission hold; never kill them. No dummy utilization,
-duplicate fits or inference of actual training from Source/MD/plans.
-
-## Completed Independent Packages
-
-Daily collector repair7f93/scoped60c2d1 pushed; actual e4f9/d138 PARTIAL:
-QQQ/SPY each100 MODP0 rows Jun5-Oct27, canonical common60->66/oldprefixes
-preserved/40revisions retained. Actual wire countsUNKNOWN, implementation
-<=1POST4GET/no retry; CID/sixJobs closed. Existing next21:55UTC unchanged,
-no repeat acquisition/cache reset or MODP0->current20MODP1 splice.
-
-Configured Paper account read4805/Consumer8314d7f0 completed Oct28UTC01:32:47..52:
-one token POST/three balance GETs, four2xx,6deduplicated positive instruments,
-three native groups complete. No bank/F9/Task changes. Holdings response is not
-owned attribution, quote/orderability, settled cash, equity or PnL evidence.
-
-Nominal KIS->frozenTCN COMPLETE Data9568/d6a7 + Engine7e54/b91d:
-42finite windows/oneactualCPUforward/weights+scaler once,0labels/fit/GPU/
-evaluation. FourCIDs25Jobs closed. RUNTIME_ONLYtrue/PERFORMANCE_QUALIFIEDfalse/
-EXECUTION_ELIGIBLEfalse. Units/evol scale/time/adjustment/PIT/finalityUNKNOWN.
-It is not a performance/Paper input. Old unit-required scope remains closed,
-not refunded/regraded. Earlier Logistic/TCN/HALF/UniformGate/FeeProx studies
-remain closed; exact outcomes on stateboards, no reruns or threshold rescue.
+Existing49ac was ALREADY KIS MODP1;90,819long-history rows are reused after NVDA
+sentinel1POST4GET, not a new provider/dataset or reason to realign old models.
+All outcomes globally reused/adaptive/current-listing/non-PIT/CA/finality limits
+remain. Quality limits constrain claims, not delegated Paper authority.
 
 ## Verify / Continue
 
-Current tracked authority:
-A/verification/current-daily-pair-floor60-integration-20261028-v1/CONSUMER.json.
-Sourceb1a05d40/1412total/base+8overrides, full53102 PASS19532/26knownlinkSKIP/
-35warnings/396.43s/19558items/8actualworkers; serial165+57/Ruff/3Compose PASS,
-own child/lease absent/source0mismatch. Fresh exact digest check permits docs-
-only reuse; changed D code requires its own focused/native/independent proof.
-No failed/partial/unclean authority reuse. Future worker roster is diagnostic,
-not a new gate; all owner/mutex/lease/cleanup/private/GPU/OS safeguards remain.
-
-Never KIS_LIVE_*/live/real-money, paid/unclear rights/public exposure/major
-runtime replacement without operator authority. Private no-cost Paper/Data/
-Research and owned schedules are delegated. Research-only isolation is local
-to that process/package, never a company-wide prohibition or approval hold.
-
-Integrate material evidence, verify/commit/push and continue ready work.
-Replace this file with ONE next company outcome only after actual completion.
-A package commit or next_due is not company completion. Workers own session/
-quota waits; no foreground waiting while another package is ready.
+Use fresh focused/native checks for D code and actual outputs.
+Tracked authority b1a05d40/1412members: full19532PASS/26knownlinkSKIP,
+serial165+57/Ruff/3Compose/clean scratch. Reuse only after exact digest match;
+production/shared-control change requires fresh full per AGENTS.
+At material company completion integrate, verify, commit/push, replace this
+with ONE material next company outcome and continue the active request.
+A package commit/due time/local technical failure is not company completion.
