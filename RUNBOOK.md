@@ -107,14 +107,46 @@ Existing app oct26-paper deliveryunknown; no replacementfollowupchain/report.
 Roleboards own current exact scope. No worker/GPU inferred from MD.
 Closed Chronos8df109GPUforwards, H5rankloss766cone32epochfit, H20eec7twoCPUfits/
 43cashrecipes, fixedblend7248rejected, directH5c6dcrejected. No duplicatefits.
-Fermat source/native-only Chronosfine-tune240/1800/one3update smoke,
-0marketfit; officialSDK/currentruntime/safecheckpoint and targetroles first.
-Galileo five-close prep ed7e/850d/50SYNchecks CLOSED; newtargetprojection180/1200/
-17reads afterminimumsupport/loss freeze, targetroles separatefromeconomicmarks.
-Ohm newsource-supported conditional gate600/1800/1SYN/4fixedtrees/<=10cells,
-roster source-keypresence BEFOREprices/payoffs; old603and516failures immutable.
-Source/native/Claude beforepayload, no search/retry/canonicalinputreprojection.
-ModelsA/dataM/15percentDfreefloor/20percentwarning, actualPID/start/lease closure.
+Fermat Chronos fine-tune PREP CLOSED:
+Source6ee6e7d1/Nativec380b356,1actualtrusted SDKfit/3optimizerupdates/cold
+BESTsafeweights+LASTmodel/optimizer/scheduler restorePASS. SelectedSYNstep0
+is not learninggain; RNGresume UNQUALIFIED.198.0986397upper/1292.812elapsed/
+1CID+8CLI+leaseclosed/peakreserved3256877056bytes/0marketfit.
+NEW development family current-chronos2-postcheckpoint-finetune-development-20261029-v1
+adopted on e9ea240c:2400activeSUM/7200elapsed inclusivecarry289.7449148 plus
+Dataactual49.6378719 once/allnew I/O/source/failure/cleanup;1fitwhole1200/
+soft1120/max500updates AND64-task-epochs bound/batch2/LR1e-6/seed20261029.
+INNERat0/every20/final/pat5/earliestbest1e-8;0DEVselection/retry/resume/search.
+<=47feature-onlycandidateforwards/88origins,exact savedbaseline44477740intake,
+2seals/1combinedDEVlabel+marks/6cells. No baseline refit/independentalpha/default.
+Final Source/roles/bootstrap before market; no extra trusted nativefit.
+Start after positive20:41pointGPUclosure; Memory20:50 is CPUCatBoost,
+not a GPU reservation. Measure CPU/RAM/VRAM; close before21:23 if Aclaims
+cannot admit new trainer. No active marketGPU fit inferred yet.
+
+Actual five-close Data CLOSED_READY:
+A/data/current-h5-five-close-path-market-20261029-v1,Sourcea23ad77f/
+manifestc8eda73f/closure624cd76d/callbackb5b4e41f.
+TRAIN57/INNER58 wholecomplete dates (minimum50), DEV60mature/all17known;
+all187x17keys retained/4tailpurges perrole. One17CSV+17availability+1packet
+intake/onehandoff/0feature reproject/retry/API/model/private.49.6378719newupper/
+640elapsed/all6instancesabsent/35inputsstable. Scope CONSUMED.
+Targetfuture5absoluteCLOSE physically separate from economic OPEN/payoffs.
+
+New source-supported gate CLOSED_REJECTED:
+A/research/current-daily17-source-supported-gate-development-20261029-v1/
+FINAL.json, Sourceda756226. Roster514 frozen from source-key support before
+prices/payoffs;4actualfixedtreefits/1SYN/1selector/1FITlabels/1seal/1marks/
+10cells/0canonicalprojection/retry.32SCREEN,79.0579915upper/460.867elapsed/
+8Jobsclosed.10bp gate growth2.623372%/originalNAVDD1.126035%;
+REVERSAL5 2.646118/1.325852,Uniform1.570961/.833910.
+Bothfrozencriteriafalse; exactroute rejected, no seen-resultweightrescue.
+Old603/516failures/debits unchanged. Not actualPaper/PnL/independentalpha.
+Ohm next source-only position-conditioned HOLD/EXIT proposal150/1800/
+atmost2officialsources/0marketvalues/fits/labels, pairedGalileo metadata readiness.
+No daily HIGH/LOW order-of-hit/intradayfill assumptions.
+
+ModelsA/dataM/ModelsA/dataM/15percentDfreefloor/20percentwarning, actualPID/start/lease closure.
 
 ## Verification / Git
 

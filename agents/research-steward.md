@@ -1,23 +1,32 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / Oct28UTC20:23. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct28UTC20:39. A=D:/thericher-v2/model-artifacts.
 Parent MD/Git. Project GPU firstpriority/concurrent useful work approved.
 No userapp allowlist/kill/driverchange/dummy utilization.
 
 ## Current Allocation
 
 No running GPU worker claimed from assignment/MD alone.
-Fermat coordinates new Chronos postcheckpoint fine-tune capability240active/
-1800elapsed/one actualtiny3update optimizer/checkpoint smoke IF exactAPI/roles
-qualify,0marketfits/payload/evaluations. Numerical market family unadopted.
-Galileo Data role prep independent. Use trusted cachedsafeweights/current
-SDK2.3.2/Torch, actualPID/start/lease/headroom+4GiBreserve before allocation.
-Personal/unknown GPU use is not approval hold. Safe Execution preemption,
-no silent retry or age-reclaim of unknown live lease.
+Fermat Chronos fine-tune PREP CLOSED:
+Source6ee6e7d1/Nativec380b356,1actualtrusted SDKfit/3optimizerupdates/cold
+BESTsafeweights+LASTmodel/optimizer/scheduler restorePASS. SelectedSYNstep0
+is not learninggain; RNGresume UNQUALIFIED.198.0986397upper/1292.812elapsed/
+1CID+8CLI+leaseclosed/peakreserved3256877056bytes/0marketfit.
+NEW development family current-chronos2-postcheckpoint-finetune-development-20261029-v1
+adopted on e9ea240c:2400activeSUM/7200elapsed inclusivecarry289.7449148 plus
+Dataactual49.6378719 once/allnew I/O/source/failure/cleanup;1fitwhole1200/
+soft1120/max500updates AND64-task-epochs bound/batch2/LR1e-6/seed20261029.
+INNERat0/every20/final/pat5/earliestbest1e-8;0DEVselection/retry/resume/search.
+<=47feature-onlycandidateforwards/88origins,exact savedbaseline44477740intake,
+2seals/1combinedDEVlabel+marks/6cells. No baseline refit/independentalpha/default.
+Final Source/roles/bootstrap before market; no extra trusted nativefit.
+Start after positive20:41pointGPUclosure; Memory20:50 is CPUCatBoost,
+not a GPU reservation. Measure CPU/RAM/VRAM; close before21:23 if Aclaims
+cannot admit new trainer. No active marketGPU fit inferred yet.
 
 Kepler Source8792 runtime prepared; future currentpoint600active/1800elapsed
 fromactuallaunch,1load/13forwards408contexts/0fits/outcomes/retries.
-20:41..43/hard20:49 actual Taskinstalled bf5cf2/plan27a454, beforeMemory20:50.
+20:41..43/hard20:49 actual Taskinstalled bf5cf2/plan27a454, beforeCPU-Memory20:50; no GPU reservation for a CPU-only point.
 This is installation only, not an active GPU worker or actual point.
 Data freshness/86session contract first; no GPU inference from stale point.
 An old resource/time cap is not global; per-family failures/debits preserved.

@@ -54,20 +54,28 @@ Assignments, not proof of running models:
   Sourcebf5cf2f3/plan27a454db, noRun/otherTasksunchanged, not point success.
   Future<=600active/1800elapsed from actuallaunch/1load/13forwards408contexts/
   0fits/outcomes/retries, UNALLOCATED proposal not account writer/default.
-- Fermat: source/native-only Chronos2 postcheckpoint fine-tune capability,
-  <=240active/1800elapsed/one3update trusted tinyfit/restore/0marketfits.
-  Exact installed SDK API, targetroles, chronological2026splits, curves and
-  stoprule before any market dispatch. No new numerical authority yet.
-- Galileo: ed7e/850d source+50nativechecks CLOSED. One new same-b7 five-close
-  target projection conditionally adopted180/1200/17reads/onehandoff/0API/retry
-  after Fermat freezes minimumsupport/loss. Physically separate roles/noinverse.
-- Ohm invoked Strategy:603oldfailure+516source-support failure immutable.
-  New source-key-supported roster beforeprices/payoffs; conditionally adopted
- 600active/1800elapsed/1SYN/4fixedtrees/1selector/1FITlabels/1seal/1SCREENmarks/
- <=10cells/0projection/retry/search, Source+native+Claude before payload.
- Same32SCREEN/fullsupport/costs/calendars; no independent-alpha claim.
+- Fermat prep actual3GPUupdates/checkpointrestore qualified6ee6/c380/allclosed.
+ NEWChronosfine-tune marketfamily adopted2400activeSUM/7200elapsed inclusive
+ oldprep289.7449148+Data49.6378719/allnewcosts;1fitwhole1200/max500updates/
+ fixedbatch2/LR1e-6/INNERstop/0retry/resume/search, finalSourcebeforepayload.
+ Startafterpositive20:41GPUclosure;20:50MemoryCPUonlynotGPUreservation.
+- Galileo actualfive-close DataREADYa23ad77f/57TRAIN58INNER60DEV/allclosed,
+ oneprojection49.6378719upperCONSUMED. Now120/1200 metadata-onlyexitreadiness.
+- Ohm source-supported gate da756 actual4fits/32SCREEN/10cells rejected:
+ gate10bpgrowth2.623372%/DD1.126035, notbetterthanREVERSAL5/Uniformriskcriteria.
+ No seen-resulttuning. Next source-onlyHOLD/EXITproposal150/1800/0payload/fits.
+- Kepler new nonparityoperational Chronosproposal180/1800/oneactualadaptation
+ afterpositivebf5cf2point+GPUclosure. Parent chose nativeNov4UTC20:45 vsoriginal
+ Point21:00 under NEWpolicy/cohort; no performanceparity/extraB10/newwriter.
+ Source/Claude beforevalues/UNALLOCATED/allowexecutefalse, nativebindingseparate.
 
-Owned tasks, no manual run or exit-based inference:
+Exact20:10capture SOURCE_BOUND READY at20:24:55:
+generationd376c56c,all17assets100rows throughOct28,
+capture+coordinatorpositiveclosed.20GET+1POST/0retry underownedcollector.
+Keplerreadback10upper/51824absent/0API/payload. Exact86key/maskconsumer
+validation remains with scheduled20:41worker, not Taskexit inference.
+
+Owned tasks, no manual runOwned tasks, no manual run or exit-based inference:
 20:10Ridge/Datahard20:30/whole20:40;20:50Memory100/Datahard21:10/whole21:20;
 21:25..27MemoryconditionalA/hard21:35 actually installed5dbf/61ec.
 Exact positive PUBLISHED chain before deriving Oct29entry/Nov4exit.

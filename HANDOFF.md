@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-29 KST, Oct28UTC20:23.
+2026-10-29 KST, Oct28UTC20:39.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -141,31 +141,62 @@ Assignments are NOT process proof:
  Exact20:10 installed capture/source/plan/generation/closure and86fresh sessions
  preferred; otherwise exact same-source overlap b7union only (b7endsOct16).
  UNALLOCATED typed proposal, not new account writer/default swap.
-- Fermat: current-chronos2-postcheckpoint-finetune-preparation-20261029-v1,
- <=240active/1800elapsed/one tiny trusted GPU fit3updates+safe restore IF exact
- installed official SDK supports qualified roles.0marketfit/payload/evaluation.
- TRAIN2026JanMar/INNERAprJun/reusedDEVJulSep/context63/H5futureabsoluteCLOSE.
- Review/API/data-role capability first, no blind kwargs or runtime replacement.
- No numerical market campaign adopted yet. Steward coordinates measured headroom/
- 4GiB reserve and current-point/Execution preemption, not utilization filler.
-- Galileo Data prep CLOSED: Sourceed7e1030/READY850df297/codec d7a14858,
- 50invented-file checks/91.646upper/allclosed/0market. Actual targetcoverage NULL.
- New one same-b7 target projection conditionally adopted180active/1200elapsed,
- <=17canonicalreads/onehandoff/0API/model/retry; Fermat must freeze minimumsupport/
- loss BEFORE payload. Outputs M/us_equities/research_inputs/current-h5-five-close-path-market-20261029-v1.
- Future5absoluteCLOSE separate from OPENe->CLOSEe4 economics; no clippedinverse.
-- Ohm invoked Strategy: old603study bcb6/c69 INPUT_UNAVAILABLE unchanged.
- New516roster review43037fe7/FINAL938e6eb8 also source-target-unsupported:
- missing required entry keys at2017-07-03/2023-06-05,0labels/fits/cells.
- Principle ClaudeADOPT_WITH_LIMITS,42.934active/602.332elapsed/allclosed.
- A NEW source-supported eligible study is conditionally delegated600activeSUM/
- 1800elapsed/1SYNfit/4fixedtrees/1savedselector/1FITlabels/1seal/1SCREENmarks/
- <=10cells/0retry/projection/search. Freeze source-key-support roster BEFORE
- prices/payoffs, native+Claude before payload; preserve32SCREEN/fullsupport,
- original calendars/costs/controls. Missing-at-random/independent-alpha NOT claimed.
- New root current-daily17-source-supported-gate-development-20261029-v1.
+- Fermat: Fermat Chronos fine-tune PREP CLOSED:
+Source6ee6e7d1/Nativec380b356,1actualtrusted SDKfit/3optimizerupdates/cold
+BESTsafeweights+LASTmodel/optimizer/scheduler restorePASS. SelectedSYNstep0
+is not learninggain; RNGresume UNQUALIFIED.198.0986397upper/1292.812elapsed/
+1CID+8CLI+leaseclosed/peakreserved3256877056bytes/0marketfit.
+NEW development family current-chronos2-postcheckpoint-finetune-development-20261029-v1
+adopted on e9ea240c:2400activeSUM/7200elapsed inclusivecarry289.7449148 plus
+Dataactual49.6378719 once/allnew I/O/source/failure/cleanup;1fitwhole1200/
+soft1120/max500updates AND64-task-epochs bound/batch2/LR1e-6/seed20261029.
+INNERat0/every20/final/pat5/earliestbest1e-8;0DEVselection/retry/resume/search.
+<=47feature-onlycandidateforwards/88origins,exact savedbaseline44477740intake,
+2seals/1combinedDEVlabel+marks/6cells. No baseline refit/independentalpha/default.
+Final Source/roles/bootstrap before market; no extra trusted nativefit.
+Start after positive20:41pointGPUclosure; Memory20:50 is CPUCatBoost,
+not a GPU reservation. Measure CPU/RAM/VRAM; close before21:23 if Aclaims
+cannot admit new trainer. No active marketGPU fit inferred yet.
 
-## Closed Research / Useful Data
+- Galileo: Actual five-close Data CLOSED_READY:
+A/data/current-h5-five-close-path-market-20261029-v1,Sourcea23ad77f/
+manifestc8eda73f/closure624cd76d/callbackb5b4e41f.
+TRAIN57/INNER58 wholecomplete dates (minimum50), DEV60mature/all17known;
+all187x17keys retained/4tailpurges perrole. One17CSV+17availability+1packet
+intake/onehandoff/0feature reproject/retry/API/model/private.49.6378719newupper/
+640elapsed/all6instancesabsent/35inputsstable. Scope CONSUMED.
+Targetfuture5absoluteCLOSE physically separate from economic OPEN/payoffs.
+
+- Ohm: New source-supported gate CLOSED_REJECTED:
+A/research/current-daily17-source-supported-gate-development-20261029-v1/
+FINAL.json, Sourceda756226. Roster514 frozen from source-key support before
+prices/payoffs;4actualfixedtreefits/1SYN/1selector/1FITlabels/1seal/1marks/
+10cells/0canonicalprojection/retry.32SCREEN,79.0579915upper/460.867elapsed/
+8Jobsclosed.10bp gate growth2.623372%/originalNAVDD1.126035%;
+REVERSAL5 2.646118/1.325852,Uniform1.570961/.833910.
+Bothfrozencriteriafalse; exactroute rejected, no seen-resultweightrescue.
+Old603/516failures/debits unchanged. Not actualPaper/PnL/independentalpha.
+Ohm next source-only position-conditioned HOLD/EXIT proposal150/1800/
+atmost2officialsources/0marketvalues/fits/labels, pairedGalileo metadata readiness.
+No daily HIGH/LOW order-of-hit/intradayfill assumptions.
+
+- Galileo next Data metadata-only exit readiness120active/1200elapsed,
+ 0marketpayload/API/Task/model; source/schema/availability keys, not newprojection.
+- Kepler operational Chronos proposal: Source4a089007 pureadapter15checks,
+ 60upper/allclosed, originalPoint21:00exit incompatible withnative20:45.
+ Parent explicitly chose NEW nonparityNov4UTC20:45 operational derivative,
+ oldPoint unchanged/newinput+policy/cohort/NAS8unchanged/NYS9cash/no renorm.
+ New180/1800/oneactualadaptation only afterexactpositivebf5cf2publication+
+ GPUclosure,0private/API/Task/order/fit/forward. Sourcepolicy/Claude beforevalues,
+ UNALLOCATED/allowexecutefalse; actual native/risk binding still Execution.
+
+Exact20:10capture SOURCE_BOUND READY at20:24:55:
+generationd376c56c,all17assets100rows throughOct28,
+capture+coordinatorpositiveclosed.20GET+1POST/0retry underownedcollector.
+Keplerreadback10upper/51824absent/0API/payload. Exact86key/maskconsumer
+validation remains with scheduled20:41worker, not Taskexit inference.
+
+## Closed Research / Useful Data## Closed Research / Useful Data
 
 Chronos Source8df98160 at current-foundation17-chronos63-development-20261029-v1:
 109actualGPUforwards/0fits/32H5cohorts/twoledgers;10bp originalNAV growth3.278731%/

@@ -1,23 +1,36 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / Oct28UTC20:23.
+2026-10-29 KST / Oct28UTC20:39.
 A=D:/thericher-v2/model-artifacts. Parent MD/Git.
 Assignments are not active GPU/fit proof; original trial budgets stay immutable.
 
 ## Ready / Owned
 
-Fermat new current-chronos2-postcheckpoint-finetune-preparation-20261029-v1:
-<=240active/1800elapsed/one actual trusted tinyfit3updates+safe restore IF API/
-data-role contract qualifies,0marketfit/payload/evaluation.
-Exact installedChronos2 SDK2.3.2/95a971 checkpoint/ddc safeweights, current
-PyTorch/CUDA only; inspect official API before kwargs, no runtime replacement.
-Hypothesis finite fine-tune vs frozen Chronos on POSTCHECKPOINT2026:
-TRAINJanMar/INNERAprJun/reusedDEVJulSep/context63/future5absoluteCLOSE.
-Chronological purges/innercurves/stoprule/checkpoint restoration before any market
-dispatch. No DEV epoch selection/architecture grid/retries or independent alpha.
-Native3updates qualify a concrete planned optimizer/handoff, not dummy utilization.
-New market campaign remains unadopted until exact Source/data/caps ready.
-Data five-close role prep Galileo, direct schema exchange allowed.
+Fermat Chronos fine-tune PREP CLOSED:
+Source6ee6e7d1/Nativec380b356,1actualtrusted SDKfit/3optimizerupdates/cold
+BESTsafeweights+LASTmodel/optimizer/scheduler restorePASS. SelectedSYNstep0
+is not learninggain; RNGresume UNQUALIFIED.198.0986397upper/1292.812elapsed/
+1CID+8CLI+leaseclosed/peakreserved3256877056bytes/0marketfit.
+NEW development family current-chronos2-postcheckpoint-finetune-development-20261029-v1
+adopted on e9ea240c:2400activeSUM/7200elapsed inclusivecarry289.7449148 plus
+Dataactual49.6378719 once/allnew I/O/source/failure/cleanup;1fitwhole1200/
+soft1120/max500updates AND64-task-epochs bound/batch2/LR1e-6/seed20261029.
+INNERat0/every20/final/pat5/earliestbest1e-8;0DEVselection/retry/resume/search.
+<=47feature-onlycandidateforwards/88origins,exact savedbaseline44477740intake,
+2seals/1combinedDEVlabel+marks/6cells. No baseline refit/independentalpha/default.
+Final Source/roles/bootstrap before market; no extra trusted nativefit.
+Start after positive20:41pointGPUclosure; Memory20:50 is CPUCatBoost,
+not a GPU reservation. Measure CPU/RAM/VRAM; close before21:23 if Aclaims
+cannot admit new trainer. No active marketGPU fit inferred yet.
+
+Actual five-close Data CLOSED_READY:
+A/data/current-h5-five-close-path-market-20261029-v1,Sourcea23ad77f/
+manifestc8eda73f/closure624cd76d/callbackb5b4e41f.
+TRAIN57/INNER58 wholecomplete dates (minimum50), DEV60mature/all17known;
+all187x17keys retained/4tailpurges perrole. One17CSV+17availability+1packet
+intake/onehandoff/0feature reproject/retry/API/model/private.49.6378719newupper/
+640elapsed/all6instancesabsent/35inputsstable. Scope CONSUMED.
+Targetfuture5absoluteCLOSE physically separate from economic OPEN/payoffs.
 
 Kepler point opportunity: Source8792runtime/dea0point/7751contract qualified.
 Parent numerical opportunity adopted600active/1800elapsed from actualfuturelaunch,
@@ -26,17 +39,18 @@ Exact20:10capture/86freshsessions or reconciled same-source b7union only.
 Finite20:41..43/hard20:49 readonly job installed bf5cf2/plan27a454/noRun; typed
 UNALLOCATED proposal, not performance/default/Paper authority grant.
 
-Ohm603study bcb6/c69 INPUT_UNAVAILABLE unchanged.516eligibility review
-43037fe7/938e6eb8 confirms source-key gaps at two requiredentrydates,0labels/fits.
-New source-key-supported gate delegated600active/1800elapsed/1SYN/4fixedtrees/
-1savedselector/1FITlabels/1seal/1SCREENmarks/<=10cells/0retry/projection/search.
-Freeze roster from input and required source-key presence BEFORE numericpayoff;
-new Source/native/Claude before payload. Same32SCREEN/fullsupport/calendar/
-costs/controls; nonrandomconditional estimand/adaptive not independent alpha.
-
-Data ed7e/850d 50invented-file checks READY; actualfive-close target projection
-180/1200/17reads conditionally adopted after minimumsupport/loss freeze.
-No current marketfit/readiness inferred from preparation.
+New source-supported gate CLOSED_REJECTED:
+A/research/current-daily17-source-supported-gate-development-20261029-v1/
+FINAL.json, Sourceda756226. Roster514 frozen from source-key support before
+prices/payoffs;4actualfixedtreefits/1SYN/1selector/1FITlabels/1seal/1marks/
+10cells/0canonicalprojection/retry.32SCREEN,79.0579915upper/460.867elapsed/
+8Jobsclosed.10bp gate growth2.623372%/originalNAVDD1.126035%;
+REVERSAL5 2.646118/1.325852,Uniform1.570961/.833910.
+Bothfrozencriteriafalse; exactroute rejected, no seen-resultweightrescue.
+Old603/516failures/debits unchanged. Not actualPaper/PnL/independentalpha.
+Ohm next source-only position-conditioned HOLD/EXIT proposal150/1800/
+atmost2officialsources/0marketvalues/fits/labels, pairedGalileo metadata readiness.
+No daily HIGH/LOW order-of-hit/intradayfill assumptions.
 
 ## Closed Material Research
 

@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-29 KST / Oct28UTC20:23. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct28UTC20:39. A=D:/thericher-v2/model-artifacts.
 Parent MD/Git/actual activation. Kepler and invokedOhm have disjoint write sets.
 Engine owns targets/costs/fitting/interpretation; no broker/private authority.
 
@@ -31,17 +31,27 @@ Sourcebcb60b59/FINALc69d86c8 INPUT_UNAVAILABLE,
 FIT516/603complete/SCREEN32/32,1SYNfit+1projection/0marketfits/outcomes/cells,
 all4Jobsclosed. No retry/regrade/alpha/Paper claim.
 
-Review43037fe7/FINAL938e6eb8:516input-defined roster validinprinciple, but
-required entry source rows missing2017-07-03/2023-06-05, so not numericallyready.
-ClaudeADOPT_WITH_LIMITS on principle,42.934active/602.332elapsed/0labels/fits.
-New source-supported gate delegated under NEW frozen contract:
-600activeSUM/1800elapsed/1SYN/4trees/1selector/1FITlabels/1seal/1SCREENmarks/
-<=10cells/0retry/projection/search. Source-key-presence eligibility BEFORE
-prices/payoffs; no numeric-target selection or oldfailure regrade.
-Same32SCREEN/fullsupport/frozencontrols/costs/calendars, Source+native+Claude
-beforepayload. New root current-daily17-source-supported-gate-development-20261029-v1.
-Claim conditional retrospective adaptive development, not independent alpha.
-No new durable role/approval/report platform.
+New source-supported gate CLOSED_REJECTED:
+A/research/current-daily17-source-supported-gate-development-20261029-v1/
+FINAL.json, Sourceda756226. Roster514 frozen from source-key support before
+prices/payoffs;4actualfixedtreefits/1SYN/1selector/1FITlabels/1seal/1marks/
+10cells/0canonicalprojection/retry.32SCREEN,79.0579915upper/460.867elapsed/
+8Jobsclosed.10bp gate growth2.623372%/originalNAVDD1.126035%;
+REVERSAL5 2.646118/1.325852,Uniform1.570961/.833910.
+Bothfrozencriteriafalse; exactroute rejected, no seen-resultweightrescue.
+Old603/516failures/debits unchanged. Not actualPaper/PnL/independentalpha.
+Ohm next source-only position-conditioned HOLD/EXIT proposal150/1800/
+atmost2officialsources/0marketvalues/fits/labels, pairedGalileo metadata readiness.
+No daily HIGH/LOW order-of-hit/intradayfill assumptions.
+
+## Operational Proposal
+
+Pureadapter4a089007/15checks/60upper/allclosed: originalPointNov4UTC21:00
+exit differs from existingnative20:45. Parent chose explicit NEWnonparity
+20:45operationalpolicy; immutablePoint/payoff not regraded. New180/1800/
+oneactualadaptation after bf5cf2positivepublication+GPUclosure, Source/Claude
+beforevalues.0private/API/Task/order/fit/forward, UNALLOCATED/allowexecutefalse.
+Exactactual native/risk/serialdescriptor still Execution; no additionalbank.
 
 ## Closed Synthesis / Boundaries
 

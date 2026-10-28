@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-29 KST / Oct28UTC20:23.
+2026-10-29 KST / Oct28UTC20:39.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent MD/Git/actual activation; no operator decision pending.
@@ -32,15 +32,25 @@ Assignments, not runningprocess proof; Parent shared MD/Git/activation:
 - Kepler Chronos17 actual Taskinstalled bf5cf2/27a454,20:41..43/hard20:49;
  600active/1800elapsed/1load/13forwards/0fits/outcomes/retry/UNALLOCATED.
  Exact20:10capture readback owned; no Taskexit-based success.
-- Fermat Chronos postcheckpoint finetune capability240/1800/one3update tinyfit,
- 0marketfit; exact API/roles/minsupport/loss and measured GPUcoordination.
-- Galileo ed7e/850d 50SYNchecks/allclosed. New targetprojection180/1200/
- 17reads conditional on frozenFermatsupport/loss,0API/model/retry.
-- Ohm new source-supported gate600/1800/1SYN/4fixedtrees/<=10cells/
- 0canonicalprojection/retry/search. Exactroster BEFOREnumericpayoff,
- Source/native/Claude beforepayload. Old603and516failures retained.
+- Fermat actualnativeChronos3updates/checkpointRESTOREqualified6ee6/c380,
+198.099upper/allclosed. Newmarketfamily2400/7200/onefit1200/500updates/
+INNERstop/0retry, exactSourcebeforepayload; queueafter20:41GPUpositiveclosure.
+Memory20:50 CPUCatBoost, not GPU hold. Closeby21:23 if Aactorclaims incompatible.
+- Galileo actualDataa23ad77f/57TRAIN58INNER60DEV/49.6378719upper/allclosed;
+projectionconsumed, now120/1200 metadata-only exitreadiness.
+- Ohm newda756gate CLOSED_REJECTED4actualfits/32SCREEN/10cells/79.058upper/
+allclosed. Next positionconditionedexitproposal150/1800/0payload/fits/labels.
+- Kepler originalPoint21:00/native20:45 mismatch recorded4a089; Parent chose
+explicitNEWnonparityoperationalproposal180/1800/oneadaptation only after
+positiveactualbf5cf2point+GPUclosure. No broker writer/Task/order/bank added.
 
-## Owned Due / Completed Packages
+Exact20:10capture SOURCE_BOUND READY at20:24:55:
+generationd376c56c,all17assets100rows throughOct28,
+capture+coordinatorpositiveclosed.20GET+1POST/0retry underownedcollector.
+Keplerreadback10upper/51824absent/0API/payload. Exact86key/maskconsumer
+validation remains with scheduled20:41worker, not Taskexit inference.
+
+## Owned Due / Completed Packages## Owned Due / Completed Packages
 
 20:10Ridge TaskReady/last20:10/exit0/nextnull at20:21; exact capture result
 not inferred, Kepler owns readback.20:50Memory100 and21:25onceA

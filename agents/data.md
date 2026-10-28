@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-29 KST / Oct28UTC20:23.
+2026-10-29 KST / Oct28UTC20:39.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Galileo Data role; no permanently running collector/LLM inferred from this board.
 
@@ -28,27 +28,28 @@ needed for these retained-data packages.
 
 ## Current Target Handoff
 
-Prep current-h5-five-close-path-preparation-20261029-v1 CLOSED:
-Sourceed7e1030/READY850df297/codec d7a14858/nativef6bb6f3b,
-50invented-file checks/91.6462751upper/allJobsclosed/0market.
-TRAIN/INNER/DEV61/62/64origins,57/58/60calendar-mature NOT actualcoverage.
-Packet-only Sep30CLOSEgap; raw same-b7 route capability not measuredcoverage.
-Actual projection conditionally adopted180active/1200elapsed/17canonicalreads/
-onehandoff/0API/private/model/retry AFTER Fermat freezes support/loss:
-M/us_equities/research_inputs/current-h5-five-close-path-market-20261029-v1,
-evidence A/data/current-h5-five-close-path-market-20261029-v1.
-Preserve all187keys/4role-tailpurges/falseunknowns/physical feature-target roles.
-Future5absoluteCLOSE forecastsupervision != OPENe->CLOSEe4 economicmarks.
-No clippedraw6inverse/extra acquisition/newtrial implied by Data preparation.
+Actual five-close Data CLOSED_READY:
+A/data/current-h5-five-close-path-market-20261029-v1,Sourcea23ad77f/
+manifestc8eda73f/closure624cd76d/callbackb5b4e41f.
+TRAIN57/INNER58 wholecomplete dates (minimum50), DEV60mature/all17known;
+all187x17keys retained/4tailpurges perrole. One17CSV+17availability+1packet
+intake/onehandoff/0feature reproject/retry/API/model/private.49.6378719newupper/
+640elapsed/all6instancesabsent/35inputsstable. Scope CONSUMED.
+Targetfuture5absoluteCLOSE physically separate from economic OPEN/payoffs.
+
+Galileo next position-conditioned exit metadata readiness120/1200,
+0marketpayload/API/private/Task/model. DailyOHLCsource/schema/availability
+for Ohm, no intradaystopfill claim/priceprojection/modelinputchange.
 
 ## Owned Fresh Opportunities
 
-At20:09 readonly Task facts all enabled/0instances/neverrun beforedue:
-- Oct28UTC20:10 Ridge17,Datahard20:30/whole20:40,Source3241/plan722e.
- Raw capture retainsALLreturnedrows thoughRidgeintake80;20:21 TaskReady/last20:10/
- exit0/nextnull is scheduling metadata only. Exact result readback ownedKepler.
- Do NOT manually invoke or infer collection/publication from Task exit.
--20:50 Memory10026b85470/plan4a6f8176,Datahard21:10/whole21:20.
+Exact20:10capture SOURCE_BOUND READY at20:24:55:
+generationd376c56c,all17assets100rows throughOct28,
+capture+coordinatorpositiveclosed.20GET+1POST/0retry underownedcollector.
+Keplerreadback10upper/51824absent/0API/payload. Exact86key/maskconsumer
+validation remains with scheduled20:41worker, not Taskexit inference.
+
+-20:50 Memory100-20:50 Memory10026b85470/plan4a6f8176,Datahard21:10/whole21:20.
  Positive exact future/publication/PUBLISHED.json -> Source/plan/currentDataREADY/
  point/receipt/closedmodel, not yesterday's point.
 - MonthlyOct30UTC21:00 Source7cb9/plan2ec2,Datahard21:20/whole21:30 unchanged.
