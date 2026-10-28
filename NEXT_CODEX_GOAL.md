@@ -5,95 +5,104 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain an interpretable exactly bound native KIS Paper decision/reconciliation
-while useful independent research continues. Installation, tests, reports,
-analytical returns and local registration replay are not broker fills.
+while independent useful research continues. Model publication/tests/installation
+are not broker fills. Paper permission does not require profitable models.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-On genuine resume run scripts/start_next_codex_task.ps1; not on compaction.
-Read HANDOFF/AGENTS/RUNBOOK/current role boards. Parent shared MD/Git/activation.
-Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/F9 held.
+Startup on genuine resume, not compaction. Read HANDOFF/AGENTS/RUNBOOK/boards.
+Parent sharedMD/Git/activation. Never KIS_LIVE_*/real money.
+ONE original B/10/costs/losses/pending/F9 held, no reset/substitute/adoption.
 
-## Current Evidence
+## Execution
 
-B recovery b547/TRUE2db/inputf477/policy24d3/same original cohort consumed:
-Oct28UTC18:35:33 PRE_CREDENTIALS Denied/actor_identity atadmission.actor151.
-Exact fault02cff828, actual old row unretained; no rerun/window roll/substitution.
-Pair closed/observer restored; operational closure8eb552f3,0children/0CIDs.
-Actual request/submit/fill/owned counts not inferred from this technical stop.
+r6actual21:25 Source66b5/authority0320 firstpreflight PASSED2actors1CID.
+Actual-public stage replayd97d4484/f812 PASSED. Boundactorcallback3b9b2974
+recordsDockerattachment1candidate/0match/1identitymiss; Sourceorder supports
+SECOND/PREINSTALL preflight actor_identity, not stage/packet failure.
+Currentchild custody unproven, not historicalBrow. Expectedpairfilesabsent
+is not Schedulersemanticabsence; no verifiedTRUE/install/newpair/fill.
+Oldr6Task/root/window consumed, no rerun/delete/reset.
 
-Private read repaired and CONSUMED:
-current-linear17-windowless-ro-observation-20261029-v1, Source51e6ac1f/
-RESULT0896d8b1, snapshot19:44:12UTC.3freshadmissions/15Jobs/CIDclosed/networknone/
-allRO/stabilityPASS.8targets/0bound/8UNKNOWN/policyabsent/fullcountsNULL.
-F9/basis unchanged. This reader did not query brokerholdings/fees/settlement/netPnL.
-Separate readonly Sourcee1b53/RESULTa1d46 at20:20:49 authenticated Paper/NASD
-holdings4positive rows/1POST+1GET; orderabilityNOT_REQUESTED/allvenuesrisk/
-ownedfills/settlement/PnL not established. No orders/rawretention.
-Measured pythonw profile fixes reader console sibling without relaxing guard;
-this does NOT explain Bactor151. Full pins/history HANDOFF, not another hold.
+Lovelace current-memory20-bound-metadata-recovery-20261029-v1:
+240active/3600elapsed/one emittedcallbackSYN+one actualmetadata-onlyprefix.
+Newr7 consumes4300source/birth/argv/parent-ownedmetadata-child proof, not
+genericDockerpermission. BroaderPaperparent remainsownedwriter; actual/unknown
+custodywriters deny. Same26b8/e37dpoint/B10F9/max3/businessidentity.
+ShortClaude +exactexpectedpairOSfacts +freshactualprefix beforeParentactivation.
+Preparation has0credentials/privatebook/KIS/order/Taskmutation.
 
-## Ready / Owned / Due
+Kepler nativeSYN4bd5/30upper prefinancialFileNotFound then
+r1b8c7/15used expired0native; r2 Source828bbd27/35inclusive15 closed after
+SDKvsrequiredsdk key failure native_original.py27, financialnotreached.
+Dependency runtime.lock RO mount/assert passed; no account/activationlock.
+Correctedmanifest2fec0901 sourcecheckpassed, actualfrontdoorstillunproved.
+NEWqualification-r3 NORMALENGINEERINGTDD150active inclusiveold30+35/
+3600elapsed/max3correctedSYNattempts predeclared, ownfakebook/fakebroker/
+networknone/0realprivate/API/Task/order/marketfit. Same d133/d01d/clocks/risk.
+Everycodefix freezesnewSourcerevision andretainsfailure/debit; no marketreranking.
+No irrelevantrealAfinancialclosure gate for disjointfakebook. Ohm independent
+manifest/fixtureSourcecontract review60/600/0native, notanotherpermissiongate.
+FALSE retained until actualSDK risk/frontdoorqualifies; Parentrealactivation.
 
-Assignments, not proof of running models:
-- Parent: integrate evidence/Git; activate only qualified exact existing/new owned
-  point tasks. Keep company unfinished until actual native outcome.
-- Lovelace: diagnostic-only future Memory A assembly<=240active/1800elapsed/
-  one exact cold callback-failure SYN. Capture actor_identity via trusted actual
-  function/source, no hardcodedline/no actor grant. Candidate18c9 SYN PASS,
-  new original-A short-child integration180/1800; installed5dbf immutable until
-  Parent qualified same-task UPDATE.0private/API/Task in preparation.
-- Dewey: readonly connection CLOSED; source/current-public-metadata actor
-  admission repair180active/1800elapsed/one invented realguard matrix/Claude.
-  No actual private/API/Task/Dockercreate; preserve actual/unknowncustody-writer
-  denial and exact identity/risk. Parent activates future path only after proof.
-- Kepler: Chronos17 point opportunity; Source8792 runtime/dea0point ready.
-  Qualify exact installed20:10 capture/currentgeneration/closure/86fresh sessions;
-  only exact same-source overlap b7union fallback, else inputunavailable.
-  Parent actually installed one quiet20:41..43/hard20:49 readonly job:
-  Sourcebf5cf2f3/plan27a454db, noRun/otherTasksunchanged, not point success.
-  Future<=600active/1800elapsed from actuallaunch/1load/13forwards408contexts/
-  0fits/outcomes/retries, UNALLOCATED proposal not account writer/default.
-- Fermat prep actual3GPUupdates/checkpointrestore qualified6ee6/c380/allclosed.
- NEWChronosfine-tune marketfamily adopted2400activeSUM/7200elapsed inclusive
- oldprep289.7449148+Data49.6378719/allnewcosts;1fitwhole1200/max500updates/
- fixedbatch2/LR1e-6/INNERstop/0retry/resume/search, finalSourcebeforepayload.
- Startafterpositive20:41GPUclosure;20:50MemoryCPUonlynotGPUreservation.
-- Galileo actualfive-close DataREADYa23ad77f/57TRAIN58INNER60DEV/allclosed,
- oneprojection49.6378719upperCONSUMED. Now120/1200 metadata-onlyexitreadiness.
-- Ohm source-supported gate da756 actual4fits/32SCREEN/10cells rejected:
- gate10bpgrowth2.623372%/DD1.126035, notbetterthanREVERSAL5/Uniformriskcriteria.
- No seen-resulttuning. Next source-onlyHOLD/EXITproposal150/1800/0payload/fits.
-- Kepler new nonparityoperational Chronosproposal180/1800/oneactualadaptation
- afterpositivebf5cf2point+GPUclosure. Parent chose nativeNov4UTC20:45 vsoriginal
- Point21:00 under NEWpolicy/cohort; no performanceparity/extraB10/newwriter.
- Source/Claude beforevalues/UNALLOCATED/allowexecutefalse, nativebindingseparate.
+Dewey: USvenue account probe3662bc88/RESULT3362daca/closure2fe378ed COMPLETE:
+onePOST/fourGET/NASD+NYSEorderablequery2xxcomplete1roweach/NASDholdings4/
+NYSEholdings0/authenticated/72upper/691.616elapsed/allclosed.
+Probeprice1USD is deterministic queryinput, not freshquote oractualsizing.
+No monetaryschema/funds/fullrisk/order/fill/ownedinventory qualification.
+No rawretention/privatebook/Task/order/live, B10/F9/NYS9cash unchanged.
+Current-paper-nyse-route-readiness-20261029-v1 source-only90/1800:
+nativeNYSErouting/profile vsAPI limitation, official/localSDK evidence and
+minimalnewprofile/syntheticplan only. No newAPI/private/Task/order/cashchange.
 
-Exact20:10capture SOURCE_BOUND READY at20:24:55:
-generationd376c56c,all17assets100rows throughOct28,
-capture+coordinatorpositiveclosed.20GET+1POST/0retry underownedcollector.
-Keplerreadback10upper/51824absent/0API/payload. Exact86key/maskconsumer
-validation remains with scheduled20:41worker, not Taskexit inference.
+## Parallel Data / Research
 
-Owned tasks, no manual runOwned tasks, no manual run or exit-based inference:
-20:10Ridge/Datahard20:30/whole20:40;20:50Memory100/Datahard21:10/whole21:20;
-21:25..27MemoryconditionalA/hard21:35 actually installed5dbf/61ec.
-Exact positive PUBLISHED chain before deriving Oct29entry/Nov4exit.
-Original MSFTNov2/LOWVOLNov3/linear17Nov3exit unchanged.
-Clock-r2 updater16mockpass remains inert, not proof b547 runtime works.
-MonthlyOct30UTC21:00 unchanged; no app replacement follow-up chain.
+Groupedcontext bb540bf0/FINALd394297a COMPLETE:
+oneGPUfit25epochs4425updates/best1/194.874s/47datebatches187x100.
+173dates13054supervisedrows:RankIC.1245338/rankMSE.1498338 versus
+savedRankGRU.1229221/.1501097 andMSE-GRU.1071515/.1528085, exactcompatible.
+Bothdescriptivecriteria met on REUSED INNER; not poolingcausality/alpha/PnL.
+485.1275435aggregateupper/807.026elapsed/peak1046MiBreserved,
+4CIDs28CLI/owners/leaseclosed22:06:33. No repeatfit.
+EconomicsWITHHELD100M2M; do notsubset17/changecontextpool.
+Fermat next current-context100-cost-replay-preparation-20261029-v1:
+120active/1800elapsed/Source+artifactmetadataonly/0newfits/forwards/price-target
+payload/replaycells/API/private/Task. One preferredfixedpolicy+roster/mark-source
+contract beforefuturepayoffread, notanotherreadinglist. Endpoint-only growth
+onlyifexactunclippedtargetformula supports it; DD staysunknownwithoutmarks.
 
-## Closed Research / Verification
+ClosedNASaudit90 +timingdiagnosis15 =105upper.
+At22:05:32 inspectedrootlastRESERVEDstart21:55:07.479274,300sfloorwasdue,
+atomicdirectoryabsent. Not actualPOSTtime; historicalstarvationUNPROVED.
+Actualobserverroot/PID/POSTintervals notbound. Cadence4min alone notPOSTcadence.
+NEWcurrent-nas-forward-runtime-root-binding-20261029-v1:
+90active/1800elapsed/installedSource-action-cursor-outcome->actualtokenroot/
+mountRW/permissions mapping,0API/POST/claims/resets/secrets/privatebook.
+OneboundTaskreadonlydefinition/oneexactexistingCIDmetadataEnvNAMESONLY
+orSource-boundclosedISOLATION allowed. No latestscan/exitcodeinference.
+Sourcefalse mayconflate timing/busy/permission/rooterror; one minimalfix only
+afterfacts. Preservecursor/frozen300/default/laststart; Parentcontrolledclient
+calibrationnext, no humanapprovalhold or foregroundwait.
 
-Chronos109GPUforwards adaptive development positive, not independent alpha.
-H5rankloss oneGPUfit32epochs/best8 closed. Fixed Chronos/H5 blend rejected.
-H20twoCPUfits Sourceeec7 closed:NN29epochs/best5, all3recipes43cash underfrozen
-costs/no threshold rescue. Direct-H5penalty prep scientificallyrejected/noGPU.
-No duplicate training or dummy resource utilization; ready finite work first.
+Readyinputs: Memory10026b8/e37d98eligible10selected; publicchainchecked,
+packet/numericalvalidation remains consumer-owned. Chronos3f5a actual13GPU
+forwards408contexts +unallocatedINPUTd133/POLICYd01d; native20:45exit
+explicitNEWnonparityvsresearch21:00/NAS8unchanged/NYS9cash/no renorm.
+No model/bank/default/fill orPnLpromotion.
 
-Fresh SOURCE4484/RESULTb3de at
-A/verification/current-windowless-cohort-reader-integration-20261029-v1:
-188serial/19577fullPASS/26knownWindowslinkSKIP/8workers/394.12s/Ruff/
-threeCompose.env.example/source stable20:04. External code needs its own proof.
-At material company completion verify/commit/push, replace with ONE next company
-outcome and continue. Package commits do not complete this unfinished outcome.
+Fine-tune74f5BEST0/noimprovement, exit6668all32HOLDalias, rulegate da756
+rejected. Preserve all oldresults/debits, don't repeatcompletedfits or
+retune thresholds onseenoutcomes.
+
+## Completion / Evidence
+
+Originalf477/24d3cohort8UNKNOWN/fullcountsNULL; F9UNKNOWN-HELD.
+Separatee1b/a1d46authNASD4positions != ownedfills/allvenues/fullrisk.
+OriginalMSFTNov2/LOWVOLNov3/linear17Nov3exit/monthlyOct30 unchanged.
+No replacementheartbeat/reportchain/extraagentplatform.
+
+Latestverification4484/cdf23:
+188serial/19577fullPASS/26knownWindowslinkSKIP/8workers/Ruff/3Compose.env.example,
+closed21:12. Externalhelpers need separate actual/nativeproof.
+At materialcompanycompletion verify/commit/push, replacewithONE nextoutcome,
+refreshboardsandcontinue. Smallpackagecommit is not thisunfinishedgoal.

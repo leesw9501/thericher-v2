@@ -1,51 +1,37 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / Oct28UTC20:39. A=D:/thericher-v2/model-artifacts.
-Parent MD/Git. Project GPU firstpriority/concurrent useful work approved.
-No userapp allowlist/kill/driverchange/dummy utilization.
+2026-10-29 KST / Oct28UTC22:15. A=D:/thericher-v2/model-artifacts.
+Fermat coordinates GPU/custody; Parent sharedMD/Git/activation.
+Project GPUpriority/concurrentuse approved. No appallowlist/kill/driverchange.
 
-## Current Allocation
+## Current Resource State
 
-No running GPU worker claimed from assignment/MD alone.
-Fermat Chronos fine-tune PREP CLOSED:
-Source6ee6e7d1/Nativec380b356,1actualtrusted SDKfit/3optimizerupdates/cold
-BESTsafeweights+LASTmodel/optimizer/scheduler restorePASS. SelectedSYNstep0
-is not learninggain; RNGresume UNQUALIFIED.198.0986397upper/1292.812elapsed/
-1CID+8CLI+leaseclosed/peakreserved3256877056bytes/0marketfit.
-NEW development family current-chronos2-postcheckpoint-finetune-development-20261029-v1
-adopted on e9ea240c:2400activeSUM/7200elapsed inclusivecarry289.7449148 plus
-Dataactual49.6378719 once/allnew I/O/source/failure/cleanup;1fitwhole1200/
-soft1120/max500updates AND64-task-epochs bound/batch2/LR1e-6/seed20261029.
-INNERat0/every20/final/pat5/earliestbest1e-8;0DEVselection/retry/resume/search.
-<=47feature-onlycandidateforwards/88origins,exact savedbaseline44477740intake,
-2seals/1combinedDEVlabel+marks/6cells. No baseline refit/independentalpha/default.
-Final Source/roles/bootstrap before market; no extra trusted nativefit.
-Start after positive20:41pointGPUclosure; Memory20:50 is CPUCatBoost,
-not a GPU reservation. Measure CPU/RAM/VRAM; close before21:23 if Aclaims
-cannot admit new trainer. No active marketGPU fit inferred yet.
+No runningGPU inferredfromMD. Groupedcontextbb540 actualfit25epochs4425updates/
+194.874s/peakreserved1096810496bytes, all4CIDs28CLIleaseclosed22:06:33.
+485.1275435aggregateupper includes125.511prep. No repeatfit.
+Fermat now CPU/source-only100costreplaypreparation120/1800/no numericalwork.
+OtherreadyfrozenGPUwork maylaunchafteractualheadroom/Source/custody, no dummyjobs.
 
-Kepler Source8792 runtime prepared; future currentpoint600active/1800elapsed
-fromactuallaunch,1load/13forwards408contexts/0fits/outcomes/retries.
-20:41..43/hard20:49 actual Taskinstalled bf5cf2/plan27a454, beforeCPU-Memory20:50; no GPU reservation for a CPU-only point.
-This is installation only, not an active GPU worker or actual point.
-Data freshness/86session contract first; no GPU inference from stale point.
-An old resource/time cap is not global; per-family failures/debits preserved.
+Chronospoint3f5a13forwards/CID7CLIleaseclosed21:09; fine-tune74f5closed20:52.
+Groupnativefirstfailure67.422/r1expired/r2qualified3AdamW totalprep125.511.
+All retained; no silentclockrefund. ExactrealAfinancialclosure notrequired for
+networknonefakebooktests; realPaperunknown-request/riskcontrols remain unchanged.
+UseactualVRAM/headroom+4GiBdesktopreserve, not appallowlists.
+Sourceelapsed ceilings includeknownquiet+Parentqueue; no shortartificialwindow.
+A21:25Taskclosed, currentr7source recovery is not GPUpermissionhold.
 
-## Actual Closed Resources
+## Actual Closed Results
 
-- Chronos8df:109GPUforwards/3179contexts/0fits,562MiBreserved;
-  all6CIDs/41CLI/leaseclosed,481.0197605familyupper.
-- H5rankloss766c:1GPUfit32epochs5664updates/best8,628MiBreserved;
-  all4CIDs/28CLI/leaseclosed,338.8056954upper.
-- Chronos currentpoint runtime8792:one trusted load/32inventedcontexts,
-  sevenpublisherchecks,193.151prepupper; GPU/CID/eightCLI/leaseclosed18:51:52,
-  finalizerclosed18:53:53. No marketforward/currentpoint.
-- H20eec7:2CPUfits/6CIDs+6ownersclosed/GPU0,162.3627914upper.
-  NN29epochs/best5; all3policies43cash, not economicedge.
-- Direct-H5penalty prep3e71 scientificallyrejected106upper/noGPU/native.
-- Fixedblend a55a closed/rejected; oldGRU/Transformer/TCN/MLP/CAT closed
-  families remain immutable, not an idle-GPU refill queue.
+- Fine-tune74f5:BEST0/nolearnedgain; peakallocated2937092608/reserved3256877056.
+609.501aggregateupper,1569elapsed,100updates/124.703s; no convergenceclaim.
+- Chronos8df:109GPUforwards/0fits/481.0197605familyupper/allclosed.
+- H5rankloss766c:32epochs/338.8056954upper/628MiBreserved/allclosed.
+- EXIT6668CPU:525updates/75epochs/best59/allHOLDalias/
+243.367276finalupper/all12EngineData instancesclosed; noGPUneed.
+- H20eec7twoCPUfits/all43cash; fixedblend/directH5rejected.
+No completedfamily is an idle-GPU refill queue.
 
-Current verification4484/b3de:8CPUworkers fullsuite completed19577PASS/
-26knownSKIP/394.12s; no test worker still claimed active.
-Dfree36.6% measured, modelsA/dataM. Resource co-tenancy not isolated timing.
+Parent test78671 CLOSED21:12:8workers/19577PASS26knownSKIP/397.63s.
+Latestauthority4484/cdf23; no testworkers stillclaimedactive.
+ModelsA/dataM/Dfree36.6% measured; resourcecotenant timings notisolatedbenchmark.
+Execution safe checkpointpreemption remains; no unqualifiedresume/silentretry.

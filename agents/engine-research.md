@@ -1,100 +1,77 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / Oct28UTC20:39.
-A=D:/thericher-v2/model-artifacts. Parent MD/Git.
-Assignments are not active GPU/fit proof; original trial budgets stay immutable.
+2026-10-29 KST / Oct28UTC22:15. A=D:/thericher-v2/model-artifacts.
+Parent MD/Git. Durable source contracts own exact caps; no runningGPU inferred.
 
-## Ready / Owned
+## Current Research
 
-Fermat Chronos fine-tune PREP CLOSED:
-Source6ee6e7d1/Nativec380b356,1actualtrusted SDKfit/3optimizerupdates/cold
-BESTsafeweights+LASTmodel/optimizer/scheduler restorePASS. SelectedSYNstep0
-is not learninggain; RNGresume UNQUALIFIED.198.0986397upper/1292.812elapsed/
-1CID+8CLI+leaseclosed/peakreserved3256877056bytes/0marketfit.
-NEW development family current-chronos2-postcheckpoint-finetune-development-20261029-v1
-adopted on e9ea240c:2400activeSUM/7200elapsed inclusivecarry289.7449148 plus
-Dataactual49.6378719 once/allnew I/O/source/failure/cleanup;1fitwhole1200/
-soft1120/max500updates AND64-task-epochs bound/batch2/LR1e-6/seed20261029.
-INNERat0/every20/final/pat5/earliestbest1e-8;0DEVselection/retry/resume/search.
-<=47feature-onlycandidateforwards/88origins,exact savedbaseline44477740intake,
-2seals/1combinedDEVlabel+marks/6cells. No baseline refit/independentalpha/default.
-Final Source/roles/bootstrap before market; no extra trusted nativefit.
-Start after positive20:41pointGPUclosure; Memory20:50 is CPUCatBoost,
-not a GPU reservation. Measure CPU/RAM/VRAM; close before21:23 if Aclaims
-cannot admit new trainer. No active marketGPU fit inferred yet.
+Groupedcontext bb540bf0/FINALd394297a COMPLETE:
+oneGPUfit25epochs4425updates/best1/194.874s/47datebatches187x100.
+173dates13054supervisedrows:RankIC.1245338/rankMSE.1498338 versus
+savedRankGRU.1229221/.1501097 andMSE-GRU.1071515/.1528085, exactcompatible.
+Bothdescriptivecriteria met on REUSED INNER; not poolingcausality/alpha/PnL.
+485.1275435aggregateupper/807.026elapsed/peak1046MiBreserved,
+4CIDs28CLI/owners/leaseclosed22:06:33. No repeatfit.
+EconomicsWITHHELD100M2M; do notsubset17/changecontextpool.
+Fermat next current-context100-cost-replay-preparation-20261029-v1:
+120active/1800elapsed/Source+artifactmetadataonly/0newfits/forwards/price-target
+payload/replaycells/API/private/Task. One preferredfixedpolicy+roster/mark-source
+contract beforefuturepayoffread, notanotherreadinglist. Endpoint-only growth
+onlyifexactunclippedtargetformula supports it; DD staysunknownwithoutmarks.
 
-Actual five-close Data CLOSED_READY:
-A/data/current-h5-five-close-path-market-20261029-v1,Sourcea23ad77f/
-manifestc8eda73f/closure624cd76d/callbackb5b4e41f.
-TRAIN57/INNER58 wholecomplete dates (minimum50), DEV60mature/all17known;
-all187x17keys retained/4tailpurges perrole. One17CSV+17availability+1packet
-intake/onehandoff/0feature reproject/retry/API/model/private.49.6378719newupper/
-640elapsed/all6instancesabsent/35inputsstable. Scope CONSUMED.
-Targetfuture5absoluteCLOSE physically separate from economic OPEN/payoffs.
+Kepler nativeSYN4bd5/30upper prefinancialFileNotFound then
+r1b8c7/15used expired0native; r2 Source828bbd27/35inclusive15 closed after
+SDKvsrequiredsdk key failure native_original.py27, financialnotreached.
+Dependency runtime.lock RO mount/assert passed; no account/activationlock.
+Correctedmanifest2fec0901 sourcecheckpassed, actualfrontdoorstillunproved.
+NEWqualification-r3 NORMALENGINEERINGTDD150active inclusiveold30+35/
+3600elapsed/max3correctedSYNattempts predeclared, ownfakebook/fakebroker/
+networknone/0realprivate/API/Task/order/marketfit. Same d133/d01d/clocks/risk.
+Everycodefix freezesnewSourcerevision andretainsfailure/debit; no marketreranking.
+No irrelevantrealAfinancialclosure gate for disjointfakebook. Ohm independent
+manifest/fixtureSourcecontract review60/600/0native, notanotherpermissiongate.
+FALSE retained until actualSDK risk/frontdoorqualifies; Parentrealactivation.
 
-Kepler point opportunity: Source8792runtime/dea0point/7751contract qualified.
-Parent numerical opportunity adopted600active/1800elapsed from actualfuturelaunch,
-1trustedload/13marketforwards408contexts/0fits/outcomes/retries.
-Exact20:10capture/86freshsessions or reconciled same-source b7union only.
-Finite20:41..43/hard20:49 readonly job installed bf5cf2/plan27a454/noRun; typed
-UNALLOCATED proposal, not performance/default/Paper authority grant.
+Paper r7 metadata-child recovery240/3600 proceeds independently of model quality.
 
-New source-supported gate CLOSED_REJECTED:
-A/research/current-daily17-source-supported-gate-development-20261029-v1/
-FINAL.json, Sourceda756226. Roster514 frozen from source-key support before
-prices/payoffs;4actualfixedtreefits/1SYN/1selector/1FITlabels/1seal/1marks/
-10cells/0canonicalprojection/retry.32SCREEN,79.0579915upper/460.867elapsed/
-8Jobsclosed.10bp gate growth2.623372%/originalNAVDD1.126035%;
-REVERSAL5 2.646118/1.325852,Uniform1.570961/.833910.
-Bothfrozencriteriafalse; exactroute rejected, no seen-resultweightrescue.
-Old603/516failures/debits unchanged. Not actualPaper/PnL/independentalpha.
-Ohm next source-only position-conditioned HOLD/EXIT proposal150/1800/
-atmost2officialsources/0marketvalues/fits/labels, pairedGalileo metadata readiness.
-No daily HIGH/LOW order-of-hit/intradayfill assumptions.
+## Completed Material Studies
 
-## Closed Material Research
+- Fine-tune74f5 under current-chronos2-postcheckpoint-finetune-development-20261029-v1:
+ oneGPUfit100updates/124.703s/patience/BEST0, safeBEST+LASTrestore;
+47forwards/2seals/6cells/12JulSepH5cohorts.10bp growth.522671%/DD.413121,
+identical frozenChronos; Uniform.519902/.266967. Bothcriteriafalse.
+No learnedgain/convergence/alpha/default.609.501upper/5CIDs35CLIleaseclosed.
+UnrelatedCatBoost handshake import failure/r2fix preserved; no repeatedtrustedfit.
+- Chronos8df old32cohorts:109GPUforwards3179contexts/0fits,
+growth3.278731%/DD.841107 vsUniform1.570961/.833910 at10bp.
+Dated95a971checkpoint2025-10-30/ddcsafeweights/SDK2.3.2; unknowncorpus/
+nonPIT/currentlisting/CA/adaptivereuse, not independentalpha/Paper/PnL.
+Currentpoint13forward recovery is newasof, not duplicatecompletedfit.
+- H5rankloss766c:oneGPUfit32epochs5664updates/best8,
+growth1.605612/DD.991595; MSEcomparisonwithheld whenexact17forecast absent.
+- H20eec7:twoCPUfits/NN29epochsbest5/Ridge166FIT/43DEV,
+allNN/Ridge/half policiescash atfixedcosts. No threshold rescue.
+- Source-supported rulegate da756:514FIT/32SCREEN/4trees/10cells,
+growth2.623372/DD1.126035, bothcriteriafalse. Old603/516failures unregraded.
+- EXIT6668/673afe9b/e88012cb:
+413FIT100INNER32SCREEN,oneCPUfit75epochs525updates/best59/pat16.
+All32HOLDfixedH5, NONINFORMATIVE. Growth1.570961%/DD.876534 includesOPENmarks,
+NOT oldCLOSE-only .833910%. Two newcontrolcells/oneSCREENintake/no retry.
+Final243.367276upper includingactualData38.5539876 once; prefinalconservative
+294.813 remains historical. All12Engine/Data instancesclosed.
+- Synthesis e208/88db: same32keys/193events align.
+ a55 score-average->Top5 != portfolioaverage. Exact50:50Chronos/REVERSAL5
+ DDlowerbound1.058353% >Chronos.841107%; no newcells/fit. Not allensembleban.
+ Other fixeda55/directH5/pastvol/TCN failures remain immutable.
 
-Chronos FINAL8df98160 current-foundation17-chronos63-development-20261029-v1:
-187x17x63priorcloses,q05H5endpoint,cross_learningFalse,24frameEWMA20/Top5/.1gross.
-109actualGPUforwards/3179contexts/0fits/retries/32H5cohorts/twoledgers.
-10bp growth3.278731%/DD.841107 vsUniform1.570961/.833910 andH5half1.576774/1.129783.
-20bp2.6328/.9796; adaptive frozencriteria satisfied, MAE worse than persistence/
-DD>Uniform. Unknown corpus/nonPIT/currentlisting/CA limitations; no independent
-alpha/qualifiedselection/Paper/default/PnL. All6CIDs/41CLI/leaseclosed,
-481.0197605upper includingData106.7657521. Dated checkpoint2025-10-30.
-Point-runtime8792 one trusted32invented forward/sevenpublisherchecks closed,
-193.151upper; no actualcurrentpoint/marketforward/publication.
+## Queue / Data
 
-H5rankloss FINAL766c8167:1actualGPUfit32epochs/5664updates/best8/pat24,
-2seals/twoledgers. INNER rankIC.122922 vsMSEGRU.107152.
-10bp growth1.605612/DD.991595 vsUniform1.570961/.833910;
-MSE-control economics withheld exact17forecast missing, not refitted.
-338.8056954upper/628MiBreserved/all4CIDs/28CLI/leaseclosed; adaptive/confounded.
-
-MultiresH20 FINALeec7:2CPUfits,NN29epochs319updates/best5/pat24,
-Ridgealpha1 one solve166FITdates4760columns,2seals/8cells/all43DEVknown.
-MSE3.19191e-6 vsRidge3.39172e-6, descriptive paired interval spans0.
-NN/Ridge/half all43cash under fixedcosts; zero analytical growth is NOT alpha.
-Alwayslong10bp growth-.960982%/DD.988177.162.3627914upper/1744.62elapsed/
-6CIDs+6ownersclosed/GPU0/oldprep190unchanged. No threshold rescue/duplicate fit.
-
-Fixed Chronos/H5 blend FINAL7248/Sourcea55a:32cohorts growth1.372383%/
-DD1.136906, all4criteriafalse; exactcomposition rejected,43.294135aggregateupper.
-Direct-H5policy prep3e7106bd/FINALc6dc scientificREJECT/ClaudeREVISE/106upper,
-no native/market/GPU; similar existing utility, unsupported penalty rationale.
-Archival1800/7200template is NOT ready or numerical authority.
-
-Two-retained8d0b ICcomparison confounded; original3armPARTIAL/TCN0updates/
-noLAST unchanged. Pastvol0c481 nojointincrement; TCN e38b sixSYNprofiles not
-justification to repeat consumed fit. No old failure rescued by a new study.
-
-## Data / Queue Discipline
-
-Absolute63 Source6ebd/22857a34,187x17x63 complete inputs.
-C3600aef/ed3686 and H20 37ed/6d00/portable7fdf READY,251scheduled not251eligible.
-Vintage1004459 FIT2817/INNER173 supervised dates, target
-.999*CLOSE[e+4]/OPEN[e]-1.001; does not itself supply five-close target path.
-No inverse clippedraw6/no fabricated marks, no requirement of profitability
-before provisional Paper. OOF learned fusion only, fixed blends allowed.
-Short: currentpoint delivery/inputeligibility. Depth: one justified fine-tune
-capability; no ready numerical GPUfit claimed before Source/data freeze.
+Short: repair actualnativehandoffs/consume ready modelproposals, not repeatfits.
+Depth: qualify one cross-sectional-context architecture, then frozenonefit
+proposal if useful; no dummyGPUtraining.
+Data absolute6ebd/22857, fiveclosea23/57TRAIN58INNER60DEV, EXITca73,
+vintage1004459/FIT2817INNER173, C3600aef/H2037ed ready.
+New campaigns explicit source/target/split/purge/baseline/cost/curves/stop/caps.
+Learned fusion chronologicalOOF; fixedfusion exploratory allowed.
+Independentperformance requires untouched later/disjoint outcomes; current
+reused development cannot be relabeled. Paper is not profitability reward.
