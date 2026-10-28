@@ -1,6 +1,6 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST; evidence integrated through Oct28UTC01:32.
+2026-10-28 KST; result-specific observation clocks below.
 A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
 Model proposals never alter deterministic broker risk or original shared B/10.
 
@@ -10,13 +10,52 @@ Short breadth: nominal KIS->frozenTCN7e546616 COMPLETE42finite, no labels or
 performance/Paper qualification. No repeat training/forward for that probe.
 Data/Strategy now prepare retained8104 Ridge/currentF3 metadata/pure proposer,
 not another fit, old EVAL replay or current CappedLinear forward.
-Depth: current-long17-gaussian-fullfit-fixed6-development-20261028-v1,
-500active/1800elapsed; one fresh same-recipe fit on499known FITdates, not the
-old448train subset. Fixed6epochs/max200updates120fit-seconds/no new epoch
-choice. Distinct actual rows required; old CHECK now training, not validation.
-Full-FIT normalization/new target view may use FIT-only inputs. One forecast
-before1HELD/<=3new20bp cells/cached controls. Adaptive post-result development,
-not independent alpha, old-study rescue or frozen Paper-point replacement.
+First-Ridge current-leaky-ridge-current-f3-inference-20261028-v1 COMPLETE:
+Sourcecddf581f/Consumeree484273/PROPOSALac785ca7, actual17rowCPUforward/
+one load/.193065s/pub02:11:08UTC, native+saved integrity PASS/4CIDs24Jobsclosed.
+EightNASpositive/11totalpositive/17known/unsupported9cash, UNALLOCATED/
+allow_submitfalse/no fit/oldEVAL/HELD/ledger/GPU/privatefacts. Upper26.629713/
+180/elapsed499.978896/900; current3b47/original49ac separately bound.
+
+Next family2200active/7200elapsed: same-KIS native33sessions, proposed21FIT/
+6INNER/6LASTDEV, common C120/H60/rows/targets/costs. Max3fits HGB/GRU/compact
+Transformer; DL each<=150epochs20kupdates600s/inner earlystop/LR/checkpoint,
+HGB<=60s. Data200/Source300(includesStrategy150)/native120/DL1200/HGB60/
+readout120/verify80/cleanup60/reserve60. Earliest preparation starts elapsed;
+one forecast seal before final targets/<=7ledgers incl fixed blend/rule/
+uniform/cash. Raw validation/native handoff/optimizer/cold proof precede fits.
+Data0dd26b49/Manifest0593fb00 is actual COMPLETE:882FIT/252INNER/252LASTDEV,
+allknown/new named raw+saved native checks PASS/3CIDs18Jobsclosed. QQQ-only
+y_log, SPYcontext, exact +60entry/+3660exitClose. PRICE endpoint-only: no full
+intradayMDD or overlapping10%-per-window portfolio. Strategy50132817 source9
+cases PASS/0Torch/model/optimizer. Native actual model APIs/cold proof pending.
+Within-source nominal developmental replay, not FirstRate parity/finality/
+PIT/broker PnL or independent alpha. Initial attempt6286/04c is now CLOSED
+TECHNICAL_INCOMPLETE d00473d6: HGB16trees/33.33s selected0constant; both DL
+marketforward/optimizer0 because duplicate exclusive STATS.npz writers in
+Worker.fit/training.fit. Direct-trainer native smoke missed actual wrapper.
+All6CIDs36Jobs/lease closed/upper474.874774/2200/elapsed3389.227195/7200,
+3phase attempts/0forecasts/held/ledgers. No scientific result or HGB refit.
+New linked dl-stats-ownership-recovery scope1800/3600 repairs single writer
+with SAME worker.fit nativeSYN/cold before only2unstarted DLfits; cachedHGB/
+Data unchanged. Source200/native120/DL1200/readout120/verify80/cleanup60/
+reserve20, all startup handling predeclared/no old retry or budget refund.
+
+Depth readiness has exact retained old VSN128 prefix fullstate/AdamW/RNG/
+STATS/4595params; metadata only, no restore. Sagan implements disjoint new
+bounded continuation caller100 inside prospectiveSource300/1800active5400elapsed
+(metadata100/caller100/Steward100). Firstprep02:51:05/hard04:21:05UTC,
+native120/train1000/val100/verify80/cleanup80/reserve120. Max512ADDITIONAL
+updates129..640/INNER-only curves/best/patience64, preserve oldstate/runtime/
+Plateau4/cadence, no EVAL/PnL/new optimizer reset/old128replay. Steward owns
+registry/resources/native and actual dispatch, <=2total useful CUDAchildren.
+Completed metadata/source is not actual continuation or convergence proof.
+
+FullFIT499/fixed6 is COMPLETE_VERIFIED/REJECT e2a0d26f/b480b55e:
+one CUDAfit6epochs108updates/3.166748s/66.2MiB; growth/DD.833811%/.268692%,
+HALF1.205736%/.204540%, cachedRidge1.554715%/.303168%. NLL/DD pass/growthfail,
+no further Gaussian rescue. EightCIDs48Jobs/lease closed, upper77.511155/500,
+elapsed718.587289/1800. Old results/debits remain, no first-Paper-point swap.
 
 Initial Gaussian Source384615c8/FINAL79ab2668 is scientific REJECT: one actual
 CUDAfit26epochs416updates/5.98s/66.2MiB, selected6 by chronological CHECK,

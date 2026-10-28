@@ -184,6 +184,11 @@ Tracked code/runtime/test/dependency changes need AGENTS full parallel and
 changed-path serial checks. Do not rerun20k tests for a documentation checkpoint.
 Company completion needs actual bound native decision/reconciliation, not Git.
 
+Latest doc-only checkpoint03:21UTC:1412protected Sourceb1 members unchanged,
+24new exact Data/public-binding/closed-study refs hashPASS,0array decode/
+privatefinancial reads/model reexecution. Ruff/three Compose/diff checks PASS.
+This reuses the passing full, not new20k tests or qualification of failed D code.
+
 Latest doc-only integration Oct28UTC01:53 rechecked all1412 protected members:
 zero mismatch. Fresh Ruff/default+research+accounting Compose/diff checks pass.
 Thirty-two exact D-artifact reference hashes passed without decoding arrays or
@@ -203,8 +208,31 @@ FINAL-CONSUMER.json79ab2668, economic REJECT despite NLL pass, one CUDAfit
 at current-long17-gaussian-risk-saved-integrity-repair-20261028-v1 passed with
 no models/originalHELD/ledger replay. Failed original verification stays failed.
 New fullFIT499/fixed6 scope500/1800 is adaptive follow-up, not another run of
-the old command or a new CHECK/epoch choice. RetainedRidge/currentF3 readiness
-prepares source/metadata only, not an activated Paper cohort or market forward.
+the old command or a new CHECK/epoch choice. FullFIT is now consumed/verified
+e2a0d26f/b480b55e:6epochs108updates/3.17sCUDA, economicREJECT; do not rerun.
+RetainedRidge/currentF3 source5casePASS precedes separately frozen first actual
+CPUinference180/900; no activated Paper cohort. Future exact Execution binding
+is a separate uninstalled source, never mutate37ff/current f545 in place.
+First-current-Ridge is consumed cddf581f/ee484273:1CPUforward17/.193s,
+PROPOSALac785ca7/pub02:11:08UTC/native+savedPASS/4CIDs24Jobsclosed. Do not
+rerun inference. Actual public binding has separately pinned Parent6fe2anchors,
+not an activated cohort/TRUE release or permission to edit current37ff.
+Same-KIS33 comparative root current-kis-native-c120-multimodel-development-
+20261028-v1/2200active7200elapsed/02:04:10..04:04:10UTC. Data0dd/0593 actual
+882FIT/252INNER/252LASTDEV and Strategy5013 source9casePASS are READY; actual
+native model/GRU/Transformer/HGB fits require separate receipts. PRICE endpoints
+only, never full1m DD/physical broker PnL. Partial17extra windows are deferred,
+not another mutable current33 expansion or old-probe replay instruction.
+Initial6286 three-model market attempt is CLOSED_TECHNICAL_INCOMPLETE d004:
+HGB16selected0 completed; bothDL0marketforward/optimizer due duplicateSTATS
+exclusive writers in worker.fit/training.fit. All6CIDs36Jobs/lease closed;
+do not rerun HGB/Data/old run.py. Linked dl-stats-ownership-recovery1800/3600
+must exercise same full Worker.fit SYN first, then only2unstartedDLfits and
+one new shared forecast/heldreadout. Preserve old failures/debits/criteria.
+Actual Ridge public binding9641/INPUT02c1/POLICY06a0/EXPECTED6ca5 is ready
+but UNALLOCATED/uninstalled; next e414 fake-session fixture is not actualfill.
+VSN depth is a new additional-training caller from retained128fullstate,
+not old learn.fit (which resets0), no old128/EVAL/PnL replay or optimizerreset.
 
 Daily-pair repair is runtime-tested and consumed, not an instruction to repeat:
 canonical preflight79bd r1 exited10 without KIS; one separately frozen collector

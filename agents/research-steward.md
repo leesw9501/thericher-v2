@@ -1,19 +1,47 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-28 KST; evidence integrated through Oct28UTC01:32.
+2026-10-28 KST; result-specific observation clocks below.
 A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c sole GPU/shared registry owner.
 Parent shared policy/MD/Git/activation; other agents have disjoint outputs.
 
 ## Current New Family
 
-NEW current-long17-gaussian-fullfit-fixed6-development-20261028-v1:
-500owned/1800elapsed, one same-recipe fresh fit on499known FITdates rather
-than old448train subset; fixed6epochs/max200updates120fit-seconds. Previous
-CHECK selected6 before HELD; former CHECK now training, no validation/epoch
-selection claim. Distinct actual row identities required before fit. One
-forecast before1HELD/<=3new20bp cells/cached controls. Reused EVAL/adaptive
-follow-up, not independent alpha/old-result regrade or today's Paper swap.
+First-current-Ridge cddf/ee48 COMPLETE1CPUforward17rows/.193s plus native/saved
+PASS, no fit/GPU/private facts,4CIDs24Jobsclosed/upper26.629713/180. ONE next
+same-KIS-native family current-kis-native-c120-multimodel-development-
+20261028-v1 owns2200/7200, first prep02:04:10/hard04:04:10UTC:
+Data200/Source300(includesStrategy150)/native120/DL1200/HGB60/readout120/
+verify80/cleanup60/reserve60. Proposed33sessions/21FIT6INNER6LASTDEV/C120H60,
+max oneHGB/oneGRU/onecompactTransformer fit; eachDL<=150epochs20kupdates600s,
+HGB<=60s, inner earlystop/LR/best checkpoint, <=7ledgers/onefinaltargetintake.
+Data0dd actual33-session packets and Strategy5013 pure kernels are READY;
+HGB import compatibilityd575 passed; actual6286 native/cold passed, then
+HGB16trees/33.33s selected0constant. DLmarketforward/optimizer0 because
+Worker.fit/training.fit both exclusively save STATS.npz. Closed d00473d6,
+6CIDs36Jobs/lease absent/upper474.874774/2200/elapsed3389.227195/7200.
+No forecast/held/ledger or scientific result. New linked dl-stats-ownership-
+recovery1800/3600 repairs one writer and SAME Worker.fit native seam before
+two unstarted DLfits; cachedHGB/Data retained/no retry refund or old refit.
+Source200/native120/DL1200/readout120/verify80/cleanup60/reserve20.
+Three experts use shared rawQQQlog target/SPY context. Economic readout uses
+first scheduled origin per6LASTDEV sessions: nonoverlapping nominal .1initial
+NAV/20bp eachleg, endpointDD only. No actual training inferred from readiness.
+CPU/GPU may overlap under measured headroom and exact
+ownership; never extend caps or repeat completed fits for utilization.
+
+Depth metadata confirms old selected128 full safe state/AdamW/scheduler/RNG/
+STATS/4595params, no restore/numerical start. Sagan owns new continuation
+caller source100, metadata100+caller100+Steward100 inside Source300/new1800/
+5400, firstprep02:51:05/hard04:21:05UTC. Native120/train1000/val100/verify80/
+cleanup80/reserve120, <=512ADDITIONALglobal129..640/INNER-only/best/patience64,
+oldoptimizer/Plateau4/RNG/cadence preserved. No EVAL/PnL/old128replay/reset
+rescue or bitexactCUDA claim. Source readiness not running CUDA; sole Steward
+admits at most2total useful CUDAchildren with disjoint clocks/outputs.
+
+FullFIT fixed6 is CLOSED_VERIFIED_REJECT, e2a0d26f/b480b55e:499dates/
+6epochs108updates/3.166748sCUDA/66.2MiB. EightCIDs48Jobs/lease closed,
+upper77.511155/500/elapsed718.587289/1800. No Gaussian rescue/refund/regrade.
 
 Initial Gaussian3846/FINAL79ab scientific REJECT: actual CUDAfit26epochs/
 416updates/5.98s/66.2MiB/selected6, not convergence. Initial children closed,

@@ -1,25 +1,44 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST; evidence integrated through Oct28UTC01:32.
+2026-10-28 KST; result-specific observation clocks below.
 A=D:/thericher-v2/model-artifacts. Sagan Gaussian kernel consumed by Steward;
 Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
 
 ## Current Useful Proposal
 
-Current source-only assignment150active/900elapsed:
-current-leaky-ridge-current-proposal-readiness-20261028-v1. Prepare actual
-retained8104 19coefficients/scaler/leaky transform/costblind controller for
-current F3 with invented math/file/schema tests. Data supplies exact input
-metadata. No actual market forward/refit/old EVAL replay/deployment yet.
+Ridge source current-leaky-ridge-current-proposal-readiness-20261028-v1
+completed02:02:38 within150/900,5invented-wire cases/Ruff PASS. No actual
+coefficients/current arrays decoded, model forward/refit/deployment0. Engine
+separately freezes first-current-Ridge inference180/900 before actual values.
 RAW_SIMPLE targets sum<=.1initialNAV must become native relative proposals
 inside C=.1originalB, not B/100; unsupported NYS remains unspent. Preparation
 metadata is not a permanent inert native flag or another private-bank writer.
+
+Pure-source current-kis-intraday-multimodel-kernel-readiness-20261028-v1 is
+READY50132817/Interfaceb36a30c4,9invented cases PASS/Ruff. Raw10/static4/
+HGB1204 causal features and GRU16/Transformer16 scalar heads delivered; actual
+Torch imports/model/optimizer/GPU0, new Engine native proof still required.
+Initial RMS bit-exact test failure retained; only FP64 tolerance test changed,
+feature/model source unchanged. Source150 charged once inside family300/2200,
+first prep02:04:10/hard02:24:10, no active-CPU meter invented. Direct Engine/
+Data handoff completed. Data0dd corpus actual882/252/252 is separately verified.
+
+Current temporary Engine source package: VSN depth metadata readiness verified
+selected128 safe weights/fullstate/AdamW/Plateau/RNG/STATS headers,4595params;
+no numerical decode/restore. New continuation caller source100/1200 in
+current-vsn-depth-continuation-source-20261028-v1 is inside prospective1800/
+5400 Source300(metadata100/caller100/Steward100), earliest02:51:05/hard04:21:05.
+Reuse exact old factory/inputs/state APIs but never old learn.fit fresh0.
+Unique new global129..<=640/INNER-only/1000CUDAsec under Steward, no duplicate
+old128/EVAL/PnL/reset rescue. Source-only here/no Torch/arrays/GPU/registry
+ownership; actual native/cold/resource dispatch belongs to Schrodinger.
 
 Gaussian kernel91e8/d7e6 was consumed by actual26epochCUDA study3846/79ab:
 NLL pass/economic REJECT. Separate saved-integrity9132/53e5 PASS without
 model/label/ledger replay. PyTorch GaussianNLLLoss consumes variance; working
 density remains uncalibrated. New fullFIT499/fixed6 experiment belongs to
-Engine/Steward; no result-driven threshold/weight rescue or baseline refit.
+Engine/Steward and is now also closedREJECTe2a0/b480; no further Gaussian
+result-driven threshold/weight rescue or baseline refit.
 
 Daily Open5 cost-event Logistic19 native4686 failed technically, Consumer0935:
 trusted NumPy.testing._private import blocked by audit, no market fit/evaluation.

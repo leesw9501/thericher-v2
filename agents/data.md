@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-2026-10-28 KST; observed Oct27UTC22:48.
+2026-10-28 KST; result-specific observation clocks below.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Leibniz owns Data/schema; Parent shared MD/Git. MD is not running-worker proof.
 
@@ -137,12 +137,37 @@ Cached Ridge mean is also RAW_SIMPLE, NOT LOG. OldGaussian448train+50CHECK
 versus cachedRidge499train is not a matched-training ablation. Engine new
 fullFIT499/fixed6 scope preserves old roles/targets/results, adaptive only.
 
-Current assignment current-leaky-ridge-f3-input-readiness-20261028-v1:
-100active/900elapsed, metadata-only saved19coefficients/scaler/leaky transform
-versus F3 Source3b474a7d/ROLEdb5ec7df/features225a160f/17x20x18. Verify feature
-order/window/schema/stat retention before any numeric decode; if no retained
-normalizer, name exact deterministic FIT-input-only recomputation, never guess
-or refit. Direct qualified handoff to Strategy/Engine; no arrays/labels/API.
+Ridge metadata current-leaky-ridge-f3-input-readiness-20261028-v1 is READY:
+saved19coefficients/mean18/scale18/zero18 headers match,18names/order/window/
+symbol hash and6source pairs match currentF3. No numeric decode/labels/API.
+Stored affine present, no reconstruction needed. Complete active-meter sum
+unrecovered after context transition; no invented all-worker cap proof.
+
+Intraday metadata current-kis-intraday-native-source-training-readiness-
+20261028-v1 Source7bb30840 validates260manifests/264metadatafiles/stable/no
+overlap disagreements. Common complete sessions33, not individual35/34:
+21historicalJun22-Jul21 plus12headOct8..27. Actual values not yet validated.
+Actual current-kis-native-c120-multimodel-packets-20261028-v1 COMPLETE:
+Source0dd26b49/Manifest0593fb00,882FIT/252INNER/252LASTDEV allknown. Named
+native/raw/saved verification PASS/3CIDs18Jobsclosed; native catalog read260
+pages/87776records and emitted25740selected session bars. Not selected-lines-
+only intake. Original b214 QQQ-only y_log target/+60entry/+3660exitClose,
+SPYcontext; PRICE endpoints only, no full minute DD. LASTDEV target/price
+leaves separate from PAST. Original Source/index/membership stable, no retry.
+
+Partial-session metadata3591231b complete: only17extra path-qualified windows
+on Jul22(11)/Oct7(6), versus1386current. No expansion/rebuild of current33;
+small marginal gain is deferred. Missing full390day alone is not a future
+window ban; missing required context/holding-path bars stays a factual limit.
+
+Next current20-f3-repeatable-refresh-source-20261028-v1 owns200/1800 separate
+from closed corpus/currentfamily. Reuse16f2 capture/3b47 F3/36d6 featurecode
+with explicit completed-session/run-ID/new immutable output; invented native
+file handoff only now, no recapture/reprojectiontoday/API/credentials/Task.
+Future trusted expectedSource explicit per new point, never latest-file or
+auto-roll of frozen old dates. Prepare the runnable refresh path and proposed
+non-overlapping owned opportunity, not a new collector/platform/install yet.
+Source fields/nominal ratios do not prove units/finality/PIT/FirstRate parity.
 
 Respond directly to current Engine source/schema/clocks questions; do not
 repeat completed acquisition/projection. Fresh current acquisition is successful,

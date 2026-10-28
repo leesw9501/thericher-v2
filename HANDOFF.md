@@ -242,21 +242,91 @@ Source91329656/Consumer53e5e477 independently verifies saved policy arrays:
 PASS/0models/originalHELD/ledgers/GPU,3CIDs18Jobsclosed,upper71.381791/80,
 elapsed457.344304/900. Scientific REJECT and old clocks/debits unchanged.
 
-NEW Engine scope current-long17-gaussian-fullfit-fixed6-development-20261028-v1
-500active/1800elapsed: one same-recipe fresh initialization on499known FITdates,
-not old448train dates; fixed6epochs selected by previous CHECK before EVAL,
-max200updates120fit-seconds. Distinct training rows required, no new epoch
-choice. Full-FIT normalization permitted, former CHECK is now training, not
-validation. One forecast before1HELD/<=3new20bp cells/cached controls only.
-Post-EVAL adaptive development, not independent alpha/regrade/first-point swap.
+FullFIT follow-up current-long17-gaussian-fullfit-fixed6-development-20261028-v1
+is COMPLETE_VERIFIED/REJECT, Sourcee2a0d26f/Consumerb480b55e. One fresh499date
+fit/fixed6epochs108updates/3.166748sCUDA/66.2MiB; previous preHELD CHECK selected6,
+no new validation/epoch choice. At20bp growth/DD Gaussian.833811%/.268692%,
+HALF1.205736%/.204540%, cachedRidge1.554715%/.303168%. NLL/DD pass/growthfail;
+no Gaussian rescue or first-point swap. EightCIDs48Jobs/lease closed, upper
+77.511155/500,elapsed718.587289/1800. Parent19 bound-reference hashes pass.
 
-Data current-leaky-ridge-f3-input-readiness-20261028-v1 metadata100/900 and
-Strategy current-leaky-ridge-current-proposal-readiness-20261028-v1 source150/900
-prepare retained8104 Ridge/currentF3 compatibility. Its mean is RAW_SIMPLE,
-not LOG. No model forward/refit/current20 recapture/old EVAL replay yet. Avoid
-B/100: convert initial-NAV .1 targets to native relative proposals inside
-C=.1originalB; do not redistribute unsupported NYS weights. Parent will adopt
-actual readiness evidence, not infer deployment/training from these assignments.
+Data Ridge metadata is READY: actual retained19coefficients/affine/header and
+18feature order/source bytes match currentF3. Complete active meter unrecovered,
+no invented all-worker cap proof. Strategy current-leaky-ridge-current-proposal-
+readiness-20261028-v1 completed02:02:38,5invented-wire cases/Ruff. Engine's
+current-leaky-ridge-current-f3-inference-20261028-v1 is now COMPLETE Source
+cddf581f/Consumer ee484273/Contract553b99e7/PROPOSALac785ca7. Actual ONE CPU
+forward17rows/one retained-model load/.193065s, published02:11:08.057814UTC;
+native file handoff and independent saved integrity PASS,4CIDs24Jobsclosed,
+upper26.629713/180/elapsed499.978896/900. Eight positive NAS targets,11total
+positive/17known,9unsupported slots preserved. UNALLOCATED/allow_submitfalse,
+no fit/oldEVAL/HELD/ledger/GPU/private facts or activation. RAW_SIMPLE, not LOG.
+No fake actual q/quotes or B/100:
+native relative rows inside C=.1originalB, unsupported9 unspent. Execution
+adaptera793f44b/fd2ec807 passed20invented SDK cases/ClaudeGO_WITH_LIMITS.
+Actual public binding is now VALIDATED9641c434: INPUT02c18cb9/POLICY06a06db4/
+EXPECTED6ca5f753/JOIN2ef803c4, Parent6fe2d762 independent anchors. One actual
+qualified-proposal decode/build plus separate saved validation, no model rerun,
+private state/API/financial core/Task/activation. Old proposal/publication bytes
+unchanged; UNALLOCATED/no privatecohort. Sourceactive total unproven,120upper/
+720.836059elapsed/1200. Native e414 fake-session fixture is next200/1800,
+not actual acceptance/fill evidence; installed37ff/f545 remain unchanged.
+
+Next family is same-KIS-source intraday comparison2200active/7200elapsed:
+Data200/Source300(includesStrategy150)/native120/DL1200/HGB60/readout120/
+verify80/cleanup60/reserve60; earliest actual prep starts elapsed. Metadata
+Source7bb30840 metadata led to actual new Data corpus0dd26b49/MANIFEST0593fb00:
+FIT21sessions882windows/INNER6x42/LASTDEV6x42, all known; native/raw/saved
+verification PASS,3CIDs18Jobsclosed. Existing catalog decoded87776records from
+260pages, emitted25740selected session bars; not selected-lines-only intake.
+Old/raw/index bytes stable. Literal QQQ+SPY context, QQQ-only raw y_log target,
+entryorigin+60/exitCloseorigin+3660. PRICE is endpoint-only, not full1m DD path.
+LASTDEV targets/prices physically sealed apart from PAST until forecast seal.
+Strategy50132817/b36a30c4 source9casesPASS, actual Torch/model/optimizer0;
+Engine still needs exact new native producer/solver/checkpoint/cold proof.
+At most1HGB+1GRU+1compactTransformer fit, common C120/H60/rows/targets/costs,
+<=7ledgers including fixed blend/rule/controls. No overlapping10%-per-window
+portfolio; sampled/endpoint DD only, not full intraday MDD or broker PnL.
+No new collector/platform/FirstRate parity/finality/PIT claim. Actual fit receipts,
+not assignments, establish CPU/GPU activity. Data separately checks whether
+partial sessions have complete required windows; current33/split stays frozen.
+That check3591231b found only17extra path-qualified windows, deferred rather
+than rebuilding1386current windows. Data now prepares repeatable current20/F3
+refresh source200/1800, explicit completed-session/new immutable point, no
+today recapture/API/install. Next Native3-model root is
+A/research/current-kis-native-c120-multimodel-development-20261028-v1,
+first prep02:04:10/hard04:04:10UTC; import-only HGB1.9.1 compatibility is not fit.
+That family is now CLOSED_TECHNICAL_INCOMPLETE Source6286fab9/Contract04c2c778/
+Consumerd00473d6 plus FINAL-FIRST-CAUSE. Native direct-trainer/cold3models
+passed but actual Worker.fit and training.fit both exclusively save STATS.npz;
+GRU/Transformer marketforward/optimizer0. HGB completed16trees/33.33s and
+selected0constant, never force/refit it. Three marketphase attempts/0forecasts/
+held/ledgers, no scientific performance result. SixEngineCIDs36Jobs/lease
+closed, upper474.874774/2200/elapsed3389.227195/7200. All old evidence retained.
+Linked technical completion current-kis-native-c120-dl-stats-ownership-recovery-
+20261028-v1 owns1800/3600: Source200/native120/DL1200/readout120/verify80/
+cleanup60/reserve20. Minimal single stats writer, actual same Worker.fit SYN
+and cold proof first, then only two unstarted DLnumerical fits/same recipe;
+reuse completedHGB/Data33, forecast seal before one final held intake. No old
+retry refund/regrade/repeated completed training or extra hypothesis sweep.
+
+Depth queue: current-vsn-depth-continuation-readiness-20261028-v1 verified old
+selected128 safe weights/full AdamW/scheduler/RNG/STATS headers/hashes,4595
+parameters;0numeric decode/restore/GPU. New Source caller is prepared by Sagan
+in parallel, Steward owns final/native/resource dispatch. Proposed family1800/
+5400, firstprep02:51:05/hard04:21:05UTC; Source300(metadata100/caller100/
+Steward100)/native120/train1000/val100/verify80/cleanup80/reserve120. At most
+512ADDITIONALupdates129..640 from exactprefix128, INNER-only convergence/best
+checkpoint/patience64, no EVAL/price/PnL/Paper or duplicate old128training.
+State is retained, no optimizerreset rescue; CUDA nondeterminism prevents
+bit-exact numerical claims. At most2total useful CUDAchildren under Steward.
+
+Temporary source review found existing current-repo US_H5 supports NAS+NYS,
+unlike frozen e414NAS-only. Source support is not provider success. Separate
+US17 runtime build/native invented fixture900/3600 is preparing with explicit
+secret-free buildcontext/unique image/networknone/no private mounts; no current
+service/image/Task/binding change. AMEX stock expansion deferred. This could
+use all17 targets later without permanently discarding NYS mass; not deployment.
 Faraday source-only history clarification is complete/agent closed.
 Halley public-reader delivery is complete. Data auditfbcdae4e confirms actual
 Oct27 SPY/QQQ each390/390 regular-session minutes; old+head unmerged complete
