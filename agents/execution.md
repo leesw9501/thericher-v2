@@ -34,6 +34,12 @@ Fresh account4805/8314 at01:32:47..52UTC:1POST3GET/6positive instruments,
 three venue groups complete. Not owned attribution/quote/orderability/equity/
 settled cash/PnL. Earlier queries are historical, not current financial zeroes.
 No accepted new-model submit/fill/ownedposition/PnL established by current work.
+New offline current-f9-budget-footprint-readonly-20261028-v1/CONSUMER.json:
+F9UNKNOWN-HELD/PARTIAL originaltenth reservation/POSITIVE internal nativebank
+headroom; exact account/basis/input/policy/intent binding and stabilityPASS.
+API0/oneprivateintake/networknone/allRO/19Jobsclosed/CIDremoved,262.70of600
+verificationupper. Brokerbuyingpower/settledcash/equity NOTOBSERVED;
+no release/profit expansion/privatewrite and unusedf545r2 untouched.
 
 Readonly venue84637/e53059 at05:03UTC:1POST4GET, NAS+NYS asking/detail routes
 all2xx/positive last/tick. Closed-market bid-ask/timestamps unusable; no
@@ -124,6 +130,28 @@ recovery observe()/lock write/foreign adoption/reservation release.
 Existing one-shot app follow-up14:40UTC configured, delivery unobserved.
 
 ## Before Each Actual Effect
+
+Current Lovelace01a18258-e2d5-7cf1-a71a-d08611118c31 owns
+current-memory20-nas100-native-binding-preparation-20261028-v1:
+original31PASS/1FAIL closed; actualdispatcher17candidate guard rejected100.
+Separate recovery1800active/3600elapsed changes exactly multilegmodule/tests:
+MAX_TARGETS100, nativecall/effectcap1..17/defaultone unchanged/futuremax3.
+101 rejects beforeclient/token/wire; no truncation/renormalization/newbank.
+Parent sourcee5e0bab4/1414protected:188serial/19577fullPASS/26knownlinkSKIP/
+8workers/Ruff/threeCompose/sourcepostPASS. Candidateimage37ea192e/
+SDK372a53e7 qualified88role-serial/14nativecases/2nativechildren/allclosed;
+old1406members unchanged/currentf545/oldimages unchanged. Not deployment.
+Actual modelpoint5d9ad595/7bdb68ad nowpublished/UNALLOCATED, current98eligible/
+10selected/validOct28UTC13:30..20.0capital/orders/currentf545replacement.
+Adapter targets literal100 NAS_H5 with separately refreshedcandidateSDK/max3serial
+effects/sameB10/persist-before-effect/unknownstops/boundedownedexit.
+Candidate Oct29entry/Nov4exit MUST useFRESHOct28asof/Oct29point, no retagging
+today's expiringpoint. May supersede ONLY UNINSTALLED nextUniform candidate,
+never today'sf545/F9/otherowners. Existingdatedobserver controls, no exemption.
+Hubble nextdaypublisher26b85470 SOURCE+SYN complete; exact PUBLISHED chain
+needs separately qualified Execution projection, not publisher mutation.
+TypedCOMreadonlyinstaller prep separate; no actualfuturepoint,
+registration/deployment/fill inferred. Directexact qualifiedschemahandoff.
 
 Virtual host/persisted identity/shared original budget+ownedinventory/fresh
 quote+orderability/exact unknown-request reconciliation remain mandatory.

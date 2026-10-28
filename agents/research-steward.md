@@ -1,14 +1,15 @@
 # Research Steward Stateboard (연구 자원 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Parent owns GPU/registry coordination after positive closure of Darwin and
-Plato's numerical workers. No admitted GPU fit is currently running.
+Parent accepted GPU/registry custody back after Dewey's two H5vintage fits.
+All9ownedCIDs/host49668/GPUlock positively closed; no running fit claimed.
 MD/Source/assignment is not process or GPU proof. Parent owns shared MD/Git.
 
 ## Latest Actual Fits / Closure
 
 | Campaign | Actual useful work / terminal state |
 | --- | --- |
+| current-h5-rank-model-vintage-refresh-20261028-v1/numerical-r1 | CLOSED107checks: CAT198trees/10.502s/bestprefix134; GRU54epochs9558updates/70.764s/best30/6.02GiBpeakTorchreservation.0marketretry;856.45811of6000activeupper/1376of10800elapsed. |
 | current-nas100-monthly-ranknet-development-20261028-v1 | Sourceb75d7ffe: oneCPU Ridge/oneCUDA RankNet2660updates/28epochs/best4,7.19694s/67.71MiB.348.43of3600activeupper;7CIDs42Jobs/lease closed. Original100 primaryWITHHELD/UniformUNKNOWN. |
 | current-nas100-monthly-sequence-ranking-development-20261028-v1 | Source7b6001f1: GRU1128updates/47epochs/best15,10.37909s/126.15MiB; Transformer984updates/41epochs/best9,13.48086s/129.69MiB. INNER patience/best restore, no convergence claim.7CIDs42Jobs/leases closed;398.44of6000activeupper. |
 | current-liquid17-frozen-rank-transfer-20261028-v1 | Source15fd60fa: threeCPU frozen-model forwards,0fits/GPU/API/registrywrites.5CIDs30Jobs closed;203.96of900activeupper. PrimaryREJECT, no refit/selection rescue. |
@@ -49,7 +50,22 @@ claim. Hubble rank-memory native recoveryd61992fb CLOSED250of600,
 3children/18CLI/4498accountingchecks. Bounded CPU market continuation236267f3
 COMPLETE160of1200/14ledgers/9002checks/6fixedcriteriaPASS/2CIDs12CLIclosed/
 0retry/fits/GPU/API. Old2584.416479/native250 remain unchanged.
-Now source+metadata/SYN operational-readiness600active/1800elapsed/
-no marketarrays or GPU. No refunded caps/duplicate training/dummy GPU work.
+That operational prerequisite is resolved by actual Datae723/point5d9a.
+No refunded caps/duplicate training/dummy GPU work.
 Future readonly100 operational point is CPU inference,
 not training or a new budget allocation.
+
+## Latest Closed Family / Next Resource Use
+
+current-h5-rank-model-vintage-refresh-20261028-v1/numerical-r1:
+NEW6000activeSUM/10800elapsed consumed856.45811/1376; Data176.45811+
+Engine680upper, not measuredGPU seconds. No caprefund/thirdmodel/rerun.
+Canonicalf6e5/FIT2014..2025/INNERJan..Sep2026/fullH5purge/newFITaffines;
+55extraFITdates are2014, not newlytrained2026labels. Native actualsolver/
+safecheckpoint/sourcehandoff precededfits. SelectedCAT+GRU/frozen forecasts
+stay onD. EconomicP&L stillUNKNOWN; adaptiveINNER rankIC not alpha.
+Frozenexternal Ruff104diagnostics retained, separate source-only cleanup
+must not refit/recompute marketresults. Positive closure returned resources.
+Prefer next saved-prediction cost-aware development replay/qualified future
+point before another trainable campaign. New useful fits still allowed with
+fresh hypotheses and measuredVRAM/headroom. Paper14:20 preemption priority.

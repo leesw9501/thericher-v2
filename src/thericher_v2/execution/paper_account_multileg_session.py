@@ -23,6 +23,8 @@ from thericher_v2.execution.paper_account_session import (
     _snapshot,
 )
 
+MAX_TARGETS = 100
+
 
 class PaperAccountMultilegSessionError(ValueError):
     """Categorical contract failure without private native state."""
@@ -154,7 +156,10 @@ def run_native_account_multileg_session(
         "multileg_input_changed",
     )
     core._validate_input(value, value.entry_session.open_ts, cohort.profile)
-    _need(len(value.metadata.rows) <= 17 and len(value.targets) <= 17, "multileg_target_limit")
+    _need(
+        len(value.metadata.rows) <= MAX_TARGETS and len(value.targets) <= MAX_TARGETS,
+        "multileg_target_limit",
+    )
     if not initial_pending:
         if not value.entry_session.open_ts <= require_utc(clock()) < value.entry_session.close_ts:
             return result("outside_original_entry_session")

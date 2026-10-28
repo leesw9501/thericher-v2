@@ -3,6 +3,45 @@
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git. Roles/MDs are memory, not running-process proof.
 Closed detailed history: Git158bd51a and exact immutable consumers below.
+Galileo current-h5-vintage-training-packets-20261028-v1 CLOSED_READY:
+onecanonicaldecode/projection;2817FIT/173INNER supervised dates,
+47native/16cold/savedfileverifyPASS;176.45811of1200activeupper.
+Exact canonicalf6e5/literal100/FIT2014..2025/INNERJan..Sep2026/H5purge,
+input-onlyFITaffines beforetargets/separatefeature-target mounts/fingerprints.
+55additional FITdates are2014, not newer2026traininglabels. No API/model/GPU/
+registry/MD/Git. Direct DataREADY->Dewey handoff consumed; twofits nowCLOSED.
+Original full-historyCAT alreadyfitthrough2025: no isolated latest-era
+benefit claim. Paper independent; old datasets/source/debits unchanged.
+
+## Actual Current CAT397 Input
+
+Archimedesproducer4c10/e468 CLOSED31nativePASS; extra cold helper failed
+ASTModule-source-segment None. Parent separate22coldPASS/122.6147upper,
+alloldfiles/packetunchanged; old555debit/failure preserved. Source/current
+runtime leaves all10pass. ONE stale17dc->e1e INTERFACEdocedge belongs to
+oldEnginea9 SOURCE.Data_interface_seen, NOT e468runtimeproducerdefect.
+Currentbindingea1773aa recordscorrectedges; oldqualificationnotupgraded.
+
+Parent actual current-cat397-market-point-utf8-recovery-20261028-v1 READY:
+Sourcee7236479/packet9bbd34ac,1authPOST100GET0retry/oneRAMclient/SPYretained
+reuse0SPYGET/capture214.293s/completed100/all213Jobsclosed/ownersreleased.
+M/us_equities/kis_paper_private/samebasename stores raw/canonical/packet.
+Oct27asof->Oct28decision/86priorofficialsessions/24frames/literal100,
+all24dateknown/97..98eligible. Exactraw63x6/factor10/SPYcontext9/past-only
+membership/unknowns/officialclocks, no targets/newaffine/source splice.
+Original450 and Parentfailedqueryscope150+actualI/O preserved. Two pre-HTTP
+faults fixed: SPYquerykeyhasheswhole20-route scope; WinPS factsJSON needsUTF8.
+Same-root point/host ancestors admitted explicitly, not blanket Python waiver.
+ROOT-exclusiveactive376.76354upper/1200; legacyREADY420.4925 conservative
+nestedCLI doublecount retained, not measuredCPU/GPUspend/refundedbudget.
+ActualF3oneCPUforward complete/10selected/UNALLOCATED today, not Paperfill.
+
+Hubble nextdaypoint current-memory20-nextday-point-preparation-20261028-v1:
+correctedSource26b85470/FINAL-READY255checks/337.61935upper/allclosed,
+prospective asofOct28->decisionOct29. New typedCOM installer prep is separate;
+proposedquietreadonly20:50UTC/Datahard21:10/whole21:20, no Taskinstalledyet.
+<=101GET/POST1/retry0/oneRAM/exactSPYreuseorfallback. Futureactualdataunknown;
+do not run oldhistoricalfeatures.py:main or stale-retag today'spoint.
 
 ## Existing Useful Inputs
 

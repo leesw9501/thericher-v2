@@ -245,7 +245,14 @@ Do not print private values or repeat identical closed probes.
 
 ## Verification
 
-Current A/verification/current-finite-multileg-entry-integration-20261028-v1:
+Current tracked100candidate patch is frozen in
+A/verification/current-memory20-nas100-integration-20261028-v1:
+Sourcee5e0bab4/1414protected,188serial/19577fullPASS/26knownWindowslinkSKIP/
+35warnings/19603collected/8actualworkers/435.23s/Ruff/threeCompose PASS.
+Ownr-5d6f7ada+leaseabsent/sourcepoststable/RESULTfb2d1e67. Logs retained.
+The previous authority below cannot cover this new two-path patch.
+
+Previous A/verification/current-finite-multileg-entry-integration-20261028-v1:
 Sourceec946b4b/1414protected/baseb1a+2newfiles,19590collected/19564PASS/
 26knownWindowslinkSKIP/35warnings/403.69s/8actualworkers/no replacement.
 Changed-path serial233PASS26.24s/Ruff/threeCompose PASS; posthash0,

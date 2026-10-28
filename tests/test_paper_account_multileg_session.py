@@ -386,9 +386,10 @@ def test_source_admission_and_deadlines_precede_callbacks(h, change):
 
 
 @pytest.mark.parametrize("cap", [0, 18, True, 1.0])
-def test_invalid_caps_refuse_without_callbacks(h, cap):
+@pytest.mark.parametrize("field", ["max_effects", "max_native_calls"])
+def test_invalid_caps_refuse_without_callbacks(h, cap, field):
     with pytest.raises(ValueError, match="limit_invalid"):
-        invoke(h, max_effects=cap, loader=serial.forbidden)
+        invoke(h, **{field: cap}, loader=serial.forbidden)
     assert h["tokens"] == h["wires"] == 0
 
 
@@ -462,12 +463,18 @@ def test_nas_h5_uniform17_preserves_unsupported_mass(h):
     preserved(h)
 
 
-def test_more_than_seventeen_axis_rows_rejected_without_wire(h):
+def bind_axis(h, *, count=100, positive=10, routed=True):
     old = h["data"]
     rows = tuple(
-        ModelPaperWeightRow(i, "SYN" + chr(65 + i) + "/NAS", True, D(repr(1.0 / 18.0)))
-        for i in range(18)
+        ModelPaperWeightRow(
+            i,
+            "SYN" + chr(65 + i // 26) + chr(65 + i % 26) + ("/NAS" if routed else "/NYS"),
+            i < count - 2 if positive < count else True,
+            D(repr(1.0 / positive)) if i < positive else D(0),
+        )
+        for i in range(count)
     )
+    profile = core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5
     value = prepare_model_paper_weights_input(
         replace(
             metadata_fixture._metadata(old.entry_session, old.exit_session, rows),
@@ -475,9 +482,131 @@ def test_more_than_seventeen_axis_rows_rejected_without_wire(h):
         ),
         entry_session=old.entry_session,
         exit_session=old.exit_session,
-        profile=venues.PROFILE.value,
+        profile=profile.value,
     )
-    weights.bind(h, value, venues.PROFILE)
+    weights.bind(h, value, profile)
+    return value
+
+
+@pytest.mark.parametrize("positive", [10, 100])
+def test_full100_candidates_preserve_axis_and_three_effect_cap(h, positive):
+    value = bind_axis(h, positive=positive)
+    assert multileg.MAX_TARGETS == len(value.metadata.rows) == 100
+    assert len(value.targets) == positive
+    before = preserved(h)
+    result = invoke(h)
+    assert result["stop"] == "persisted_effect_cap"
+    assert result["cursor"] == result["persisted_plans"] == h["wires"] == 3
+    assert h["factories"] == h["tokens"] == 1
+    assert core._unpack(weights.record(h)["active"]["model_input"]) == value
+    for target, intent in zip(value.targets, h["submits"], strict=False):
+        assert intent.symbol == target.proposal.symbol
+        assert intent.quantity * intent.limit_price <= (
+            D(h["protected"]["basis_usd"]) * D(".1") * target.research_weight
+        )
+    assert preserved(h).reserved_buys == before.reserved_buys
+    assert invoke(h, loader=serial.forbidden)["native_calls"] == 0
+    assert h["wires"] == 3
+
+
+def test_allpositive100_still_yields_after_seventeen_native_calls(h):
+    value = bind_axis(h, positive=100)
+    h["stale"] = True
+    result = invoke(h)
+    assert result["stop"] == "native_call_limit"
+    assert result["cursor"] == result["native_calls"] == result["skipped"] == 17
+    assert result["persisted_plans"] == h["wires"] == 0 and not h["submits"]
+    assert len(value.targets) == 100
+    serial.advance(h, 61)
+    next_result = invoke(h, loader=serial.forbidden)
+    assert next_result["cursor"] == 34 and next_result["native_calls"] == 17
+    assert h["wires"] == 0 and h["loads"] == 1
+    preserved(h)
+
+
+def test_full100_zero_native_targets_never_construct_client(h):
+    value = bind_axis(h, positive=100, routed=False)
+    assert len(value.metadata.rows) == 100 and not value.targets
+    before = weights.bank_bytes(h)
+    result = invoke(h)
+    assert result["stop"] == "empty_original_basket" and result["native_calls"] == 0
+    assert h["tokens"] == h["factories"] == h["wires"] == 0
+    assert weights.bank_bytes(h) == before and weights.record(h) is None
+
+
+def test_full100_existing_default_still_yields_one_effect(h):
+    bind_axis(h)
+    result = serial.visit(h)
+    assert result["stop"] == "yield_after_first_native_leg" and h["wires"] == 1
+    preserved(h)
+
+
+@pytest.mark.parametrize("partial", [False, True])
+def test_full100_exact_unknown_or_partial_restart_preserves_original_reservations(h, partial):
+    bind_axis(h)
+    h["partial"] = partial
+    h["unknown_leg"] = None if partial else 2
+    result = invoke(h)
+    assert result["pending"] and h["wires"] == (1 if partial else 2)
+    pending = copy.deepcopy(weights.record(h)["pending"])
+    reserved = preserved(h).reserved_buys
+    count = len(h["submits"])
+    serial.advance(h, 61)
+    recovered = invoke(h, loader=serial.forbidden)
+    assert recovered["stop"] == "initial_pending_recovery_once" and recovered["pending"]
+    assert len(h["submits"]) == count and preserved(h).reserved_buys == reserved
+    after = weights.record(h)["pending"]
+    for key in ("plan_ref", "seed", "arguments", "side", "symbol", "session"):
+        assert after[key] == pending[key]
+
+
+def test_full100_prior_nonflat_cohort_token_floor_and_bounded_recovery(h, monkeypatch):
+    value = bind_axis(h)
+    assert invoke(h, max_native_calls=1)["persisted_plans"] == 1
+    old_pointer = weights.pointer(h)
+    old_bytes = old_pointer.read_bytes()
+    symbol = h["submits"][0].symbol
+    registration = copy.deepcopy(core.budget._load_binding(h["root"])["stocks"][symbol])
+    replacement = prepare_model_paper_weights_input(
+        replace(value.metadata, policy_ref="sha256:" + "b" * 64),
+        entry_session=value.entry_session,
+        exit_session=value.exit_session,
+        profile=value.profile,
+    )
+    at = h["now"]
+    weights.bind(h, replacement, core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5)
+    h["now"] = at + timedelta(seconds=1)
+    rejected_claims = []
+    claim = serial.w.KisPaperMarketDataTokenStartGate.claim_token_request_start
+
+    def observed_claim(gate):
+        result = claim(gate)
+        rejected_claims.append(not result)
+        return result
+
+    monkeypatch.setattr(
+        serial.w.KisPaperMarketDataTokenStartGate, "claim_token_request_start", observed_claim
+    )
+    early = invoke(h)
+    assert early["stop"] == "native_non_progress_stop" and rejected_claims == [True]
+    assert h["wires"] == 1 and symbol not in weights.record(h)["owners"]
+    assert weights.record(h)["pending"] is None
+    assert old_pointer.read_bytes() == old_bytes
+    serial.advance(h, 61)
+    recovered = invoke(h, loader=serial.forbidden)
+    assert recovered["stop"] == "persisted_effect_cap" and recovered["persisted_plans"] == 3
+    assert h["wires"] == 4 and recovered["cursor"] == 4
+    assert old_pointer.read_bytes() == old_bytes
+    assert core.budget._load_binding(h["root"])["stocks"][symbol] == registration
+    preserved(h)
+
+
+@pytest.mark.parametrize("positive", [10, 101])
+def test_101_axis_rows_rejected_before_client_token_wire(h, positive):
+    bind_axis(h, count=101, positive=positive)
+    before = {p.name: p.read_bytes() for p in h["root"].iterdir() if p.is_file()}
     with pytest.raises(ValueError, match="target_limit"):
         invoke(h)
-    assert h["tokens"] == h["wires"] == 0
+    assert h["tokens"] == h["factories"] == h["wires"] == 0
+    assert weights.record(h) is None
+    assert {p.name: p.read_bytes() for p in h["root"].iterdir() if p.is_file()} == before

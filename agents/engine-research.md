@@ -1,8 +1,9 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
-Parent owns Engine integration/registry/GPU after positive worker closure.
-No fitting worker currently running. Research proposes, never changes native
+Parent owns Engine integration/MD/Git and returned GPU/registry resources.
+Dewey01a18257-3ce3-7e12-bb3d-4e9385d5d014 CLOSED two actual H5vintage fits.
+Hubble owns nextdayreadonly installer prep, not GPU. Research never changes native
 risk/ONE original B/10/F9. History: Git7ae35ddd/158bd51a and immutable consumers.
 
 ## Completed New Ranking Family
@@ -123,13 +124,54 @@ return/peakrelativeDD/same-risk/independentalpha/PaperPnL/private-ringfence.
 old2584.416479/native250 separate unchanged. Pre-freeze path-text mismatch
 fixed, no market retry. Parent ClaudeGO_WITH_LIMITS/source; existing custody
 trial1/nonpromoting appended AFTERruntime, explicitly not preregistration.
-Hubble now owns current-rank-memory-operational-readiness-20261028-v1:
-600active/1800elapsed/<=3SYN/no marketarrays/modelcalls/fits/GPU/API/Task.
-ExactCAT397/literal100/context/affine/dailywarmup source readiness only,
-not stale2025OOF as current or monthlyRankNet63CLOSE input as CAT features.
-Prospective clock/cadence must be explicit distinct operational contract;
-do not silently replace currentf545 or claim historical/operational parity.
+Old ops-readiness7ca5c451 prerequisite is now resolved by Datae7236479 and
+currentpoint5d9ad595 below. Original240upper/native failures remain unchanged.
+Original prefix_bridge.py features/FITaffines reused, no substitute inputs.
+Explicit MEMORY20_FIRST_BASKET_H5_SNAPSHOT_ENGINEERING_V1:23dailywarm+current
+EWMA20/firstbasket/topkernel/relative100weights/UNALLOCATED NAS_H5 proposal.
+Deliberately not historicalSLOW20 continuouscarry or return/parity transfer.
+Predeclare latestF3, priorCLOSE inputs/currentOPEN..CLOSE validity; no staleOOF,
+adopted2021phase/currentf545 swap/privatebasis/order. Claude challenges mapping.
 No global novelty veto on finishing useful work.
 Next numerics need a frozen scope/native smoke/compute+selection limits.
 Learned fusion requires chronological OOF; fixed exploratory fusion need not
 require individual profit. Neither changes deterministic Paper authority.
+
+## Actual Current Point / Next Work
+
+Data e7236479/9bbd34ac READY actual100GET1POST0retry/retainedSPYreuse,
+24frames/allknown/97..98eligible, allowned213Jobsclosed. Engine5d9ad595
+COMPLETE oneCPUrestore/oneforward24frames/2345eligibleframeslots,
+current98/10selected/11:35:09UTC. Point7bdb68ad validOct28UTC13:30..20,
+UNALLOCATED/no capital/order/deployment/f545swap. OneCID/sixCLIclosed/
+210upper. No rerun. SnapshotH5 deliberatelyNOTSLOW20continuouscarry;
+no transferredreturn/parity/independentalpha/PaperPnL. ClaudeREVISE retained;
+preOPENcreation allowed, early/expired/pre-inference consumption blocked.
+Warmframe cuts reconstructed now, not historicalarrival or23realtimewait.
+
+Hubble nextdaypoint26b85470 SOURCE+SYN COMPLETE255checks/337.61935upper/
+allclosed/0HTTP/modelcalls/TaskOSwrites. AsOfOct28->decisionOct29,
+quiet20:50UTC/Datahard21:10/whole21:20; separate typedCOM installer prep now.
+No actualfutureAPI/point/Task yet. Lovelace full100native adapter recovery
+keeps actual effect caps/bank/unknown controls; no publisher source mutation.
+
+Dewey preparation HANDOFF current-h5-rank-model-vintage-refresh-20261028-v1
+checked161sourcemetadatafiles/472registryrecords: F3FIT2015Jan2..2023Oct26,
+INNER2023Oct27..2024Apr29; existingfull-historyCAT fits DO exist. Source-age
+alone is not refitjustification.12focusedtests/Ruff/SOUND_WITH_LIMITS,0fits.
+numerical-r1/PARENT-HANDOFF.json CLOSED_VERIFIED_BOUNDED_FAMILY_NONPROMOTING:
+oneCAT fit198trees/10.502s/selectedprefix134 and oneGRU54epochs/9558updates/
+70.764s/best30/peakTorchreserved6463422464bytes. INNERpatience24/LR/best
+checkpoint restored, not fixed16epochs or proof of convergence.0marketretry.
+187featuredates/173wholeknownsuperviseddates/10unknownendpointdates/4tailpurges;
+CATrankIC.1189/GRU.0614/fixedhalfblend.1105, constant rank has lowerMSE.
+These are adaptiveINNER conditional descriptive metrics, not economic gains.
+No admitted five-close marks/financial ledger/PaperPnL/independentalpha.
+DataGalileo2817FIT/173INNER/55extra2014dates, not isolated latest-era benefit.
+NativeCATbit-equality originalfailure WITHHELD; retained final-prefix/cold
+roundtrip zeroerror does not establish GPUdeterminism. Frozenexternal Ruff
+104style/import/unuseddiagnostics retained, notPASS; cleanup never refits.
+107checks/all9CIDs/host49668/GPUlockclosed;family856.45811of6000activeupper,
+elapsed1376of10800. Allsource failures/debits preserved; Parent resourcecustody
+returned. Next useful package compares saved forecasts on compatible keyed
+marks/costs, not another completed-model fit or utilization-only campaign.
