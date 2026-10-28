@@ -8,8 +8,8 @@ Model proposals never alter deterministic broker risk or original shared B/10.
 
 Short breadth: nominal KIS->frozenTCN7e546616 COMPLETE42finite, no labels or
 performance/Paper qualification. No repeat training/forward for that probe.
-Data/Strategy now prepare retained8104 Ridge/currentF3 metadata/pure proposer,
-not another fit, old EVAL replay or current CappedLinear forward.
+Retained8104 Ridge/currentF3 inference and actual public binding are complete;
+the next consumer is a fresh explicitly dated point, not another old forward.
 First-Ridge current-leaky-ridge-current-f3-inference-20261028-v1 COMPLETE:
 Sourcecddf581f/Consumeree484273/PROPOSALac785ca7, actual17rowCPUforward/
 one load/.193065s/pub02:11:08UTC, native+saved integrity PASS/4CIDs24Jobsclosed.
@@ -36,20 +36,40 @@ marketforward/optimizer0 because duplicate exclusive STATS.npz writers in
 Worker.fit/training.fit. Direct-trainer native smoke missed actual wrapper.
 All6CIDs36Jobs/lease closed/upper474.874774/2200/elapsed3389.227195/7200,
 3phase attempts/0forecasts/held/ledgers. No scientific result or HGB refit.
-New linked dl-stats-ownership-recovery scope1800/3600 repairs single writer
-with SAME worker.fit nativeSYN/cold before only2unstarted DLfits; cachedHGB/
-Data unchanged. Source200/native120/DL1200/readout120/verify80/cleanup60/
-reserve20, all startup handling predeclared/no old retry or budget refund.
+Linked dl-stats-ownership-recovery is now COMPLETE, Source9592346b /
+Consumer9b2aed27. Actual GRU and Transformer each16epochs/448updates/best0;
+completed HGB was reused, not fitted again. Actual wrapper native/cold passed.
+All three and their fixed blend stayed cash/0trades/0analytical growth on six
+nonoverlapping LASTDEV cohorts. Proper MSE about3.37511e-6 equals FITconstant;
+all REJECT_NAMED_INCREMENT, not profit from zero exposure. MOM -.010466percent
+and Uniform -.210807percent are losing analytical controls, not broker PnL.
+One held intake/three unique ledgers, sevenCIDs42Jobs/lease closed;
+upper246.114605/1800,elapsed308.132854/3600. Old failed attempt stays charged.
 
-Depth readiness has exact retained old VSN128 prefix fullstate/AdamW/RNG/
-STATS/4595params; metadata only, no restore. Sagan implements disjoint new
-bounded continuation caller100 inside prospectiveSource300/1800active5400elapsed
-(metadata100/caller100/Steward100). Firstprep02:51:05/hard04:21:05UTC,
-native120/train1000/val100/verify80/cleanup80/reserve120. Max512ADDITIONAL
-updates129..640/INNER-only curves/best/patience64, preserve oldstate/runtime/
-Plateau4/cadence, no EVAL/PnL/new optimizer reset/old128replay. Steward owns
-registry/resources/native and actual dispatch, <=2total useful CUDAchildren.
-Completed metadata/source is not actual continuation or convergence proof.
+Depth is COMPLETE: current-vsn-depth-cuda-bootstrap-recovery-20261028-v1,
+Source5847fc72/Consumer9e857e83. Restored exact128 prefix once,168ADDITIONAL
+CUDA updates to296, INNER-selected232/patience64. AdamW/Plateau/RNG preserved,
+no optimizer reset/old-step replay. Train299.50s/validation6.04s/checkpoint76.08s,
+peak381.38MiB; these wall phases are not isolated GPU timings or convergence.
+FiveCIDs30Jobs/lease closed;upper519.701054/1500,elapsed729.526805/3600.
+Earlier CUDA bootstrap audit failure7df/77c stayed premodel and charged.
+
+Frozen E232 economic readout is also COMPLETE, not queued training:
+current-vsn232-readout-native-mask-recovery-20261028-v1,
+Source9f5c9655/Consumer4db93f0a/resultb2ebd134. One restore/forecast255rows,
+one held intake/two new20bp ledgers;0fits/baseline replays. Growth1.255966percent
+versus cached128 1.244074percent improves, but DD1.193926percent versus
+1.017623percent fails: REJECT_VSN232_INCREMENT. Fixed HALF+Ridge secondary
+growth1.411484percent/DD.738377percent cannot rescue primary or establish alpha.
+FiveCIDs30Jobs/lease closed;upper122.971185/300,elapsed237.184054/1800.
+Earlier synthetic fixed-sample-mask failure remains closed, not regraded.
+
+Next depth/breadth: current-long17-cross-asset-patch-attention-readiness-
+20261028-v1,300active/2400elapsed SOURCE/native readiness. Test whether explicit
+cross-asset/regime context addresses independent-stock model weakness; reject
+duplicates before freezing at most two new fits. Reused data/seen15 outcomes
+remain adaptive development, never fresh holdout. No actual new market fit
+is inferred from this assignment. Steward remains sole GPU/resource owner.
 
 FullFIT499/fixed6 is COMPLETE_VERIFIED/REJECT e2a0d26f/b480b55e:
 one CUDAfit6epochs108updates/3.166748s/66.2MiB; growth/DD.833811%/.268692%,

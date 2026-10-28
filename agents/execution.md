@@ -52,7 +52,8 @@ rerun/private/bank/API/nativecore/Task/activation. Four proof processes exited,
 finalizer root exit still requires caller-tool confirmation, not inference from
 the written Consumer. Its no-background claim is not independent exit proof.
 Sourceactive sum not proven:120conservative/720.836059elapsed/1200.
-Next current-leaky-ridge-native-session-fixture-20261028-v1 owns200/1800:
+Completed current-leaky-ridge-native-session-fixture-20261028-v1 Consumer
+0995208b passed the
 exact actual public input RO but invented broker/book/quotes/fills, pinned
 e414/networknone/no private or credentials. Test actual invoke_model_visit/
 serialsession, bounded fakeentry/exactpending recovery without resubmit; not
@@ -61,10 +62,21 @@ Current f545/37ff definitions and today's frozen point remain unchanged.
 
 Temporary review found currentRepo US_H5 supports NAS+NYS, not e414NAS-only;
 AMEX stock mapping incomplete/deferred, source support not provider success.
-Descartes now owns current-us17-native-runtime-fixture-preparation-20261028-v1,
-900/3600/one build<=240s, explicit secret-free allowlisted context/unique tag/
-newSource-image/native invented fixture/networknone/no private/API/service/
-Task change. Source/image construction is not runtime adoption or extra B/10.
+Separate image6a65238e/SDKad9f2813 is built, not promoted. Native core3cases
+passed after exact pytest py.py support repair. Linked foreign-owner fixture
+completion Source6312cf07/Consumercd8ac58f also passed actual network-none
+paired controls: NYS positive makes1fake submit; same facts with foreign
+registration make0, no adoption or shared-cap/custody change. Earlier test
+API/path failures remain. OneCID10Jobs closed/18.07ownedseconds. No actual
+provider, private custody, fill or deployment claim.
+
+Next-session source template2a558afd/Consumer8310dc40 is complete but point
+UNBOUND. New current-ridge-us17-next-session-runtime-binding-20261028-v1
+owns350/3600: bind qualified current US_H5/image/full17 NAS8+NYS9 to separate
+Oct29entry/Nov4exit source template and invented native wrapper proof.
+Fresh Oct28asof Data/factory input remains required, not today's02c retagged.
+No actual Task/privatebank/TRUE/credential/API change in this package; Parent
+later adopts under standing authority, not a new profitability approval.
 
 Root A/execution/current-linear17-finite-account-round-preparation-20261028-v1.
 HOSTf545e9b6 / ROUTE235ea94b / TRUE459fa3c4 / inputf4775c8a /

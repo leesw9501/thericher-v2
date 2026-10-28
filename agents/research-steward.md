@@ -20,24 +20,30 @@ HGB import compatibilityd575 passed; actual6286 native/cold passed, then
 HGB16trees/33.33s selected0constant. DLmarketforward/optimizer0 because
 Worker.fit/training.fit both exclusively save STATS.npz. Closed d00473d6,
 6CIDs36Jobs/lease absent/upper474.874774/2200/elapsed3389.227195/7200.
-No forecast/held/ledger or scientific result. New linked dl-stats-ownership-
-recovery1800/3600 repairs one writer and SAME Worker.fit native seam before
-two unstarted DLfits; cachedHGB/Data retained/no retry refund or old refit.
-Source200/native120/DL1200/readout120/verify80/cleanup60/reserve20.
+That initial attempt has no forecast/held/ledger or scientific result.
+Linked dl-stats-ownership-recovery now COMPLETE9592346b/9b2aed27:
+GRU/Transformer each16epochs448updates/best0, cached HGB reused; all three/
+fixed blend cash0trades/properMSE equals FITconstant, REJECT_NAMED_INCREMENT.
+SevenCIDs42Jobs/lease absent;upper246.114605/1800,elapsed308.132854/3600.
+Actual wrapper native proof fixed single STATS writer; old debit unchanged.
 Three experts use shared rawQQQlog target/SPY context. Economic readout uses
 first scheduled origin per6LASTDEV sessions: nonoverlapping nominal .1initial
 NAV/20bp eachleg, endpointDD only. No actual training inferred from readiness.
 CPU/GPU may overlap under measured headroom and exact
 ownership; never extend caps or repeat completed fits for utilization.
 
-Depth metadata confirms old selected128 full safe state/AdamW/scheduler/RNG/
-STATS/4595params, no restore/numerical start. Sagan owns new continuation
-caller source100, metadata100+caller100+Steward100 inside Source300/new1800/
-5400, firstprep02:51:05/hard04:21:05UTC. Native120/train1000/val100/verify80/
-cleanup80/reserve120, <=512ADDITIONALglobal129..640/INNER-only/best/patience64,
-oldoptimizer/Plateau4/RNG/cadence preserved. No EVAL/PnL/old128replay/reset
-rescue or bitexactCUDA claim. Source readiness not running CUDA; sole Steward
-admits at most2total useful CUDAchildren with disjoint clocks/outputs.
+Depth continuation COMPLETE5847fc72/9e857e83: old128 restored once then168
+unique CUDA updates to296/selected232/INNERpatience64. Original optimizer/
+scheduler/RNG preserved. Training299.50s/peak381.38MiB, not convergence proof.
+FiveCIDs30Jobs/lease absent;upper519.701054/1500,elapsed729.526805/3600.
+CUDA initialization before unchanged audit fixed earlier premodel failure;
+old debit unchanged, no global environment/driver exemption.
+E232 readout COMPLETE9f5c9655/4db93f0a: growth1.255966percent improves128,
+DD1.193926percent worsens128, REJECT. One forecast/held/two ledgers/0fits,
+fiveCIDs30Jobs/lease absent,upper122.971185/300,elapsed237.184054/1800.
+All these workers closed. Current cross-asset patch-attention readiness300/
+2400 is source/native work, not running market training. Measure capacity
+again before dispatch; no duplicate completed model or utilization-only fit.
 
 FullFIT fixed6 is CLOSED_VERIFIED_REJECT, e2a0d26f/b480b55e:499dates/
 6epochs108updates/3.166748sCUDA/66.2MiB. EightCIDs48Jobs/lease closed,

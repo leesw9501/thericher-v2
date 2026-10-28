@@ -23,15 +23,18 @@ feature/model source unchanged. Source150 charged once inside family300/2200,
 first prep02:04:10/hard02:24:10, no active-CPU meter invented. Direct Engine/
 Data handoff completed. Data0dd corpus actual882/252/252 is separately verified.
 
-Current temporary Engine source package: VSN depth metadata readiness verified
-selected128 safe weights/fullstate/AdamW/Plateau/RNG/STATS headers,4595params;
-no numerical decode/restore. New continuation caller source100/1200 in
-current-vsn-depth-continuation-source-20261028-v1 is inside prospective1800/
-5400 Source300(metadata100/caller100/Steward100), earliest02:51:05/hard04:21:05.
-Reuse exact old factory/inputs/state APIs but never old learn.fit fresh0.
-Unique new global129..<=640/INNER-only/1000CUDAsec under Steward, no duplicate
-old128/EVAL/PnL/reset rescue. Source-only here/no Torch/arrays/GPU/registry
-ownership; actual native/cold/resource dispatch belongs to Schrodinger.
+Depth caller was consumed by completed5847/9e85 continuation:128restored once,
+168unique newCUDAupdates/selected232. Economic9f5c/4db9 readout rejected worse
+drawdown; no repeated training or primary rescue. Same-KIS GRU/Transformer/HGB
+9592/9b2 also complete REJECT/allcash, not a queue of pending models.
+
+Current actual consumer is repeatable daily proposal preparation. Generic
+current-ridge-explicit-daily-point-factory-source-20261028-v1 is source-ready
+58de78dd/Consumer1fba5d11,16synthetic/cold cases. No old actual forward rerun.
+Sagan now owns current-daily-point-producer-consumer-native-smoke-20261028-v1,
+120active/1200elapsed: actual Data c77a/0978 synthetic publisher->actual file
+factory, invented bars/coefficients only. Correct software integration failures
+inside the frozen work budget; no actual model/market/API/Paper/Task/MD/Git.
 
 Gaussian kernel91e8/d7e6 was consumed by actual26epochCUDA study3846/79ab:
 NLL pass/economic REJECT. Separate saved-integrity9132/53e5 PASS without

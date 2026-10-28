@@ -13,6 +13,22 @@ paths retain ONE original B/10/cost/loss/pending/F9, no reset/profit expansion.
 
 ## Current Owned Paths
 
+Current Oct28 checkpoint: actual installed Linear17 pair f545/459f remains
+Oct28KST23:15/native23:20..24/recovery23:27..31; exit Nov4KST05:40/native05:45.
+No actual new-model broker outcome yet. Do not replay consumed preparations.
+Current Ridge native fixture0995 passed; tomorrow US17 wrapper/source is still
+unallocated/uninstalled with new Oct28asof point UNBOUND. Image6a65238e/
+SDKad9f2813 has network-none core+foreign paired proof6312/cd8a, not deployment.
+
+Completed new learning is not a command queue: same-KIS DL recovery9592/9b2
+REJECT/allcash; VSN depth5847/9e85 completed168newupdates/selected232, readout
+9f5c/4db9 REJECT on drawdown. Do not replay their model/held/ledger commands.
+Data Oct19 QQQ+SPY capturesac536/a7cb each390RTH are saved/closed; current33
+dataset unchanged. Adjusted-history owns original04:10:19..06:10:19UTC clock.
+Repeatable refreshc77a/0978 and Ridge factory58de sources require their actual
+native integration before one explicit after-close prep adoption; not installed.
+Older sections below retain frozen commands/history, not instructions to rerun.
+
 Observed Oct27UTC22:44. Company goal UNFINISHED; old entry/recovery windows
 consumed. Do not Task.Run, repeat consumed installer, restore private state,
 force new intent or silently roll old opportunity dates.

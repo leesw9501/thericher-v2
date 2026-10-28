@@ -160,14 +160,30 @@ on Jul22(11)/Oct7(6), versus1386current. No expansion/rebuild of current33;
 small marginal gain is deferred. Missing full390day alone is not a future
 window ban; missing required context/holding-path bars stays a factual limit.
 
-Next current20-f3-repeatable-refresh-source-20261028-v1 owns200/1800 separate
-from closed corpus/currentfamily. Reuse16f2 capture/3b47 F3/36d6 featurecode
-with explicit completed-session/run-ID/new immutable output; invented native
-file handoff only now, no recapture/reprojectiontoday/API/credentials/Task.
-Future trusted expectedSource explicit per new point, never latest-file or
-auto-roll of frozen old dates. Prepare the runnable refresh path and proposed
-non-overlapping owned opportunity, not a new collector/platform/install yet.
+Repeatable refresh source is READY, current20-f3-repeatable-refresh-source-
+20261028-v1, rootc77a4683/program0978d17f/Consumer8a4e8e9b. Explicit asof/run-ID/
+new immutable raw and F3 roots; plan->guarded coherent20 capture->bind->build.
+Invented actual producer/file consumer15cases passed, no new actual capture.
+Proposed Oct28close+20:10..30UTC opportunity is not installed. Sagan checks
+the real Data publisher->generic Ridge point factory58de native handoff;
+trusted per-point Source/publication stays explicit, no frozen-date auto-roll.
 Source fields/nominal ratios do not prove units/finality/PIT/FirstRate parity.
+
+Actual Oct19 gap completion: QQQ Source91f14c92/Consumerac536477 then SPY
+Source6165af0b/Consumera7cb14a8. Each1POST4GET0retry,480retained rows/fourpages
+and390regular-session minutes, stored separately under
+M/us_equities/kis_paper_private/recent-gap-backfill-20261028-v1/{qqq,spy}.
+Native timestamp seek/cursor/storage/readback passed, workers/owners closed.
+SPY actual04:26UTC. Old indexes/current33 manifest unchanged; a later frozen
+dataset may qualify34common days, not silently expand the completed study.
+
+Next current-kis-adjusted-daily-history-20261028-v1 owns2400active/7200elapsed,
+original04:10:19..06:10:19UTC. Official MODP semantics/split sentinel first;
+then only useful missing adjusted20symbol history in a separate M mode root,
+2007..Oct27/max1500GET1POST incl probe/bounded cursor retries. Existing owner
+and token gates apply; SPY completion yielded cleanly before bulk. An interim
+DEFERRED_COLLECTOR_OWNER with0GET/POST is not acquisition or source limitation.
+Do not claim bulk running/success until its exact process/receipt proves it.
 
 Respond directly to current Engine source/schema/clocks questions; do not
 repeat completed acquisition/projection. Fresh current acquisition is successful,

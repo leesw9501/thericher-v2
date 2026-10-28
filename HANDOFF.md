@@ -269,8 +269,10 @@ EXPECTED6ca5f753/JOIN2ef803c4, Parent6fe2d762 independent anchors. One actual
 qualified-proposal decode/build plus separate saved validation, no model rerun,
 private state/API/financial core/Task/activation. Old proposal/publication bytes
 unchanged; UNALLOCATED/no privatecohort. Sourceactive total unproven,120upper/
-720.836059elapsed/1200. Native e414 fake-session fixture is next200/1800,
-not actual acceptance/fill evidence; installed37ff/f545 remain unchanged.
+720.836059elapsed/1200. Native e414 fake-session fixture now passed,
+Consumer0995208b: actual public input RO, invented broker/account/quotes only,
+native entry/unknown-pending recovery without resubmit. Not actual acceptance/
+fill or deployment; installed37ff/f545 remain unchanged.
 
 Next family is same-KIS-source intraday comparison2200active/7200elapsed:
 Data200/Source300(includesStrategy150)/native120/DL1200/HGB60/readout120/
@@ -303,30 +305,59 @@ GRU/Transformer marketforward/optimizer0. HGB completed16trees/33.33s and
 selected0constant, never force/refit it. Three marketphase attempts/0forecasts/
 held/ledgers, no scientific performance result. SixEngineCIDs36Jobs/lease
 closed, upper474.874774/2200/elapsed3389.227195/7200. All old evidence retained.
-Linked technical completion current-kis-native-c120-dl-stats-ownership-recovery-
-20261028-v1 owns1800/3600: Source200/native120/DL1200/readout120/verify80/
-cleanup60/reserve20. Minimal single stats writer, actual same Worker.fit SYN
-and cold proof first, then only two unstarted DLnumerical fits/same recipe;
-reuse completedHGB/Data33, forecast seal before one final held intake. No old
-retry refund/regrade/repeated completed training or extra hypothesis sweep.
+Linked current-kis-native-c120-dl-stats-ownership-recovery-20261028-v1 is
+COMPLETE Source9592346b/Consumer9b2aed27. Actual wrapper native/cold passed;
+GRU and Transformer each16epochs448updates/best0, completedHGB reused.
+All three and fixed blend stayed cash/0trades/0analytical growth; proper MSE
+about3.37511e-6 equals FITconstant: REJECT_NAMED_INCREMENT. Losing exposed
+controls do not make cash alpha. One held/three unique ledgers, sevenCIDs42Jobs/
+lease closed;upper246.114605/1800,elapsed308.132854/3600. No further fit rescue.
 
-Depth queue: current-vsn-depth-continuation-readiness-20261028-v1 verified old
-selected128 safe weights/full AdamW/scheduler/RNG/STATS headers/hashes,4595
-parameters;0numeric decode/restore/GPU. New Source caller is prepared by Sagan
-in parallel, Steward owns final/native/resource dispatch. Proposed family1800/
-5400, firstprep02:51:05/hard04:21:05UTC; Source300(metadata100/caller100/
-Steward100)/native120/train1000/val100/verify80/cleanup80/reserve120. At most
-512ADDITIONALupdates129..640 from exactprefix128, INNER-only convergence/best
-checkpoint/patience64, no EVAL/price/PnL/Paper or duplicate old128training.
-State is retained, no optimizerreset rescue; CUDA nondeterminism prevents
-bit-exact numerical claims. At most2total useful CUDAchildren under Steward.
+Depth actually ran and is CLOSED, not another pending training plan:
+current-vsn-depth-cuda-bootstrap-recovery-20261028-v1, Source5847fc72 /
+Consumer9e857e83. Exact128 prefix restored once,168unique additional CUDA
+updates to296, INNER-selected232/patience64. AdamW/scheduler/RNG retained,
+no reset/old-step replay. Train299.50s/validation6.04s/checkpoint76.08s,
+peak381.38MiB; not convergence or isolated GPU timings. FiveCIDs30Jobs/lease
+closed;upper519.701054/1500,elapsed729.526805/3600. Original bootstrap audit
+failure remains charged; trusted CUDA init precedes unchanged payload audit.
+
+E232 frozen readout is COMPLETE Source9f5c9655/Consumer4db93f0a/resultb2ebd134
+at current-vsn232-readout-native-mask-recovery-20261028-v1. One actual255row
+forecast/held intake/two20bp ledgers,0fits/baseline replays. Growth1.255966percent
+versus128 1.244074percent improves, DD1.193926percent versus1.017623percent
+fails: REJECT_VSN232_INCREMENT. Fixed HALF+Ridge secondary growth1.411484percent/
+DD.738377percent does not rescue primary or prove alpha. FiveCIDs30Jobs/lease
+closed;upper122.971185/300,elapsed237.184054/1800. Old synthetic mask failure
+is preserved. New cross-asset patch-attention readiness300/2400 checks a
+distinct useful mechanism before at most two new fits; no numerical start yet.
 
 Temporary source review found existing current-repo US_H5 supports NAS+NYS,
 unlike frozen e414NAS-only. Source support is not provider success. Separate
-US17 runtime build/native invented fixture900/3600 is preparing with explicit
-secret-free buildcontext/unique image/networknone/no private mounts; no current
-service/image/Task/binding change. AMEX stock expansion deferred. This could
-use all17 targets later without permanently discarding NYS mass; not deployment.
+US17 image6a65238e/SDKad9f2813 is built separately, not promoted. Core3native
+tests and paired foreign-owner control pass, Source6312cf07/Consumercd8ac58f
+in current-us17-foreign-owner-fixture-completion-20261028-v1. Same invented
+facts: NYS control1fake submit; foreign registration0/no adoption/shared risk
+unchanged. All sources RO/networknone; oneCID10Jobs closed/18.07ownedseconds.
+Old test/API/path failures remain. AMEX stock expansion stays deferred.
+Next-session source2a558afd/8310dc40 keeps new Oct28asof point UNBOUND;
+Socrates now prepares qualified US_H5/full17 wrapper350/3600, no actual Task/
+bank/credential/broker activation or modification of today's f545.
+
+Repeatable daily Data sourcec77a4683/program0978d17f/Consumer8a4e8e9b and
+Ridge factory58de78dd/Consumer1fba5d11 are source-ready. Sagan exercises their
+actual synthetic producer->file->consumer boundary before adoption; Descartes
+reviews quiet once-only prep integration. Proposed Oct28post-close20:10..30UTC
+capture is not installed/running. No reuse/retag of today's immutable point.
+
+Actual Oct19 gap capture completed separately for QQQ(ac536477) and
+SPY(a7cb14a8), each1POST4GET/480retained rows/390RTHminutes, no retries.
+M/us_equities/kis_paper_private/recent-gap-backfill-20261028-v1/{qqq,spy}.
+Saved native readback and owner closure passed, current33 manifest unchanged.
+Future dataset may qualify34common days; no automatic closed-study expansion.
+Data adjusted-daily-history2400/7200 has original04:10:19..06:10:19UTC clock;
+official adjustment/split sentinel precedes useful missing20symbol backfill.
+An interim owner deferral with0calls is not actual collection/source limitation.
 Faraday source-only history clarification is complete/agent closed.
 Halley public-reader delivery is complete. Data auditfbcdae4e confirms actual
 Oct27 SPY/QQQ each390/390 regular-session minutes; old+head unmerged complete
@@ -374,6 +405,11 @@ fresh Ruff/default/research/accounting-overlay Compose.env.example PASS.
 Future mid-run roster is diagnostic, not an extra pass condition; all other
 mutex/owner/lease/cleanup and private/GPU/OS proofs remain. ClaudeGO_WITH_LIMITS.
 External code keeps separate native proofs. Do not repeat this full for docs.
+Parent04:30UTC independently hashed58 referenced new Data/Research/Execution
+files with0mismatches and0numeric/model/private decodes. At04:33UTC all1412
+protected source members still matchedb1a; fresh Ruff/threeCompose.env.example/
+git-diff-check passed. This is docs-only authority reuse, not another full run
+or verification of future actual broker outcomes.
 
 On genuine resume run scripts/start_next_codex_task.ps1, then current goal/
 AGENTS/stateboards. Do not rerun startup on compaction. Continue ready delegated
