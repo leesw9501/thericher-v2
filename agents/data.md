@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-29 KST / Oct28UTC22:15.
+2026-10-29 KST / Oct28UTC22:40.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Source limitations constrain consumers/claims, not unrelated Paper permission.
 
@@ -10,14 +10,17 @@ ClosedNASaudit90 +timingdiagnosis15 =105upper.
 At22:05:32 inspectedrootlastRESERVEDstart21:55:07.479274,300sfloorwasdue,
 atomicdirectoryabsent. Not actualPOSTtime; historicalstarvationUNPROVED.
 Actualobserverroot/PID/POSTintervals notbound. Cadence4min alone notPOSTcadence.
-NEWcurrent-nas-forward-runtime-root-binding-20261029-v1:
-90active/1800elapsed/installedSource-action-cursor-outcome->actualtokenroot/
-mountRW/permissions mapping,0API/POST/claims/resets/secrets/privatebook.
-OneboundTaskreadonlydefinition/oneexactexistingCIDmetadataEnvNAMESONLY
-orSource-boundclosedISOLATION allowed. No latestscan/exitcodeinference.
-Sourcefalse mayconflate timing/busy/permission/rooterror; one minimalfix only
-afterfacts. Preservecursor/frozen300/default/laststart; Parentcontrolledclient
-calibrationnext, no humanapprovalhold or foregroundwait.
+Root binding042e44f2/callbackccaed4c2 CLOSED10upper/cumulative115.
+Installed configc9deb3f1 -> launcher9fe9750c -> wrapperd83b7296 bound.
+Actual CID/image/controlroot/RW/observer-root equality remain UNKNOWN.
+Offmarket observer may exit without bridge; cadence is not POST frequency.
+Current current-nas-forward-isolation-proof-20261029-v1:120active/3600elapsed,
+ONE owned precredential container,0API/tokenclaim/Taskmutation/privatebook.
+Bind exact returned CID/image/source/roots/mounts/uid/envNAMES; close owners.
+Credential-free qualification uses.env.example, any environment nonparity explicit.
+Optional unique tiny permission file only in verified exactcontrolroot with
+owner exclusion; no timing/lock/ACL/reset changes. Preserve frozen300/cursor.
+Controlled resume command may be prepared, no API inside isolation scope.
 
 Fermat source-only100costreplaypreparation mayrequestcachedabsoluteOPEN/CLOSE
 manifest/canonicalprovenance from4459; no newacquisition orpriceprojection

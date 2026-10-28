@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / Oct28UTC22:15. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct28UTC22:40. A=D:/thericher-v2/model-artifacts.
 Fermat coordinates GPU/custody; Parent sharedMD/Git/activation.
 Project GPUpriority/concurrentuse approved. No appallowlist/kill/driverchange.
 
@@ -9,7 +9,10 @@ Project GPUpriority/concurrentuse approved. No appallowlist/kill/driverchange.
 No runningGPU inferredfromMD. Groupedcontextbb540 actualfit25epochs4425updates/
 194.874s/peakreserved1096810496bytes, all4CIDs28CLIleaseclosed22:06:33.
 485.1275435aggregateupper includes125.511prep. No repeatfit.
-Fermat now CPU/source-only100costreplaypreparation120/1800/no numericalwork.
+Fermat now adopted endpoint-cost study683f2167,600activeSUM including prior
+prep120 once/7200elapsed/8cells/0newfits; CPU arithmetic, not GPU training.
+Ohm prepares ONE distinct attention candidate/native synthetic checkpoint
+for Engine review and useful next GPU campaign; no market fit yet authorized.
 OtherreadyfrozenGPUwork maylaunchafteractualheadroom/Source/custody, no dummyjobs.
 
 Chronospoint3f5a13forwards/CID7CLIleaseclosed21:09; fine-tune74f5closed20:52.

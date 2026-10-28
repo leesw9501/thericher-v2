@@ -2,12 +2,13 @@
 
 ## Current Reality
 
-2026-10-29 KST / Oct28UTC22:18.
+2026-10-29 KST / Oct28UTC22:40.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent owns shared MD/Git/activation. No operator decision pending.
-Latest pushed integration c7198288; current owned documentation pending commit.
+Git HEAD is authoritative for the latest pushed integration; a commit is not
+runtime success. Parent owns the current documentation changes.
 Preserve unrelated untracked %SystemDrive%/. Startup on genuine resume only.
 
 Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/F9
@@ -34,7 +35,8 @@ NEW actual-public stage replay d97d4484/f812dbff PASSED, not stage failure.
 Bound66b5 actor callback3b9b2974 records actor_identity: Dockerattachment
 candidate1/match0/identitymiss1. Source order supports SECOND/PREINSTALL
 preflight failure. Currentchild custody unproven, not oldB actor proof.
-Expected pairfiles absent; OS Schedulersemanticregistration stillunqualified.
+Parent actualRO COM GetTask22:38 confirms exact Memory entryOct29 and exitNov4
+both ABSENT; fresh check required before installation, no Task mutation.
 Source members/externals stable21:30; no verified newpair/TRUE/install.
 Do NOT rerun/reregister/roll the consumedTask/root/clock/deletepartialstate.
 
@@ -116,22 +118,24 @@ NYSEholdings0/authenticated/72upper/691.616elapsed/allclosed.
 Probeprice1USD is deterministic queryinput, not freshquote oractualsizing.
 No monetaryschema/funds/fullrisk/order/fill/ownedinventory qualification.
 No rawretention/privatebook/Task/order/live, B10/F9/NYS9cash unchanged.
-Current-paper-nyse-route-readiness-20261029-v1 source-only90/1800:
-nativeNYSErouting/profile vsAPI limitation, official/localSDK evidence and
-minimalnewprofile/syntheticplan only. No newAPI/private/Task/order/cashchange.
+NYSE route readiness2cae0fd3/FINALfd3580c5 CLOSED46/90upper/0API.
+Existing US_H5 profile maps NYS->NYSE. Official pinned KIS example uses
+VTTT1006U sell, while local legacy source uses1001; old-server alias UNKNOWN.
+Dewey current-paper-us-order-wire-compatibility-20261029-v1:180/3600,
+new-source/fresh-plan wire and native SYN only;0realAPI/private/Task/order.
+Parent selects smallest safe SDK change after caller/source-pin inventory.
+No rewrite or resubmit of unknown legacy1001 intents; original exits preserved.
 
-- Kepler: Kepler nativeSYN4bd5/30upper prefinancialFileNotFound then
-r1b8c7/15used expired0native; r2 Source828bbd27/35inclusive15 closed after
-SDKvsrequiredsdk key failure native_original.py27, financialnotreached.
-Dependency runtime.lock RO mount/assert passed; no account/activationlock.
-Correctedmanifest2fec0901 sourcecheckpassed, actualfrontdoorstillunproved.
-NEWqualification-r3 NORMALENGINEERINGTDD150active inclusiveold30+35/
-3600elapsed/max3correctedSYNattempts predeclared, ownfakebook/fakebroker/
-networknone/0realprivate/API/Task/order/marketfit. Same d133/d01d/clocks/risk.
-Everycodefix freezesnewSourcerevision andretainsfailure/debit; no marketreranking.
-No irrelevantrealAfinancialclosure gate for disjointfakebook. Ohm independent
-manifest/fixtureSourcecontract review60/600/0native, notanotherpermissiongate.
-FALSE retained until actualSDK risk/frontdoorqualifies; Parentrealactivation.
+- Kepler: Kepler R3 actual native SDK SYN PASSED on attempt3/3, Source66875f42.
+One fake submit/two reconciliations; pending/exact_request_retained, not KIS.
+Parent independently verified28 Source/dependency/native-output refs.
+100/150activeupper includes prior65 once; all3CIDs21CLI/PIDs closed.
+Missing generic postflight marker retained separately; no fourth attempt.
+Original inputd133/policyd01d/NAS8/NYS9cash/B10F9/clocks unchanged.
+Next current-chronos17-account-serial-integration-20261029-v1:
+180active/3600elapsed, inactive typed existing-account serial branch plus
+changed-boundary nativeSYN. No realprivate/API/Task/order; Parent activation.
+Actual actor/risk/bank binding remains unqualified, allow_execute=false.
 
 - Fermat: Groupedcontext bb540bf0/FINALd394297a COMPLETE:
 oneGPUfit25epochs4425updates/best1/194.874s/47datebatches187x100.
@@ -141,11 +145,13 @@ Bothdescriptivecriteria met on REUSED INNER; not poolingcausality/alpha/PnL.
 485.1275435aggregateupper/807.026elapsed/peak1046MiBreserved,
 4CIDs28CLI/owners/leaseclosed22:06:33. No repeatfit.
 EconomicsWITHHELD100M2M; do notsubset17/changecontextpool.
-Fermat next current-context100-cost-replay-preparation-20261029-v1:
-120active/1800elapsed/Source+artifactmetadataonly/0newfits/forwards/price-target
-payload/replaycells/API/private/Task. One preferredfixedpolicy+roster/mark-source
-contract beforefuturepayoffread, notanotherreadinglist. Endpoint-only growth
-onlyifexactunclippedtargetformula supports it; DD staysunknownwithoutmarks.
+Cost preparation3efef6a7/FINALe3123d36 CLOSED110.087/120upper,
+0payload/fit/forward/cells. NEXT-CAMPAIGN683f2167 now adopted:
+current-context100-endpoint-cost-study-20261029-v1,600activeSUM including
+oldprep120upper once/7200elapsed,8cells(4fixedpolicies x10/20bp),0newfits.
+Seal all32 policy actions before masks, then whole-member availability scope
+before ONE payoff intake. Full100context retained; missingcohorts stayunknown.
+Endpoint-only conditionalgrowth, DD/M2M/fills/independentalpha withheld.
 
 - Ohm: synthesis e208/88db CLOSED66.793/0newcells; now independent
  nativefixture-contractreview60/600/sourceonly forKepler'sR3, no newmodelstudy.
@@ -153,14 +159,17 @@ onlyifexactunclippedtargetformula supports it; DD staysunknownwithoutmarks.
 At22:05:32 inspectedrootlastRESERVEDstart21:55:07.479274,300sfloorwasdue,
 atomicdirectoryabsent. Not actualPOSTtime; historicalstarvationUNPROVED.
 Actualobserverroot/PID/POSTintervals notbound. Cadence4min alone notPOSTcadence.
-NEWcurrent-nas-forward-runtime-root-binding-20261029-v1:
-90active/1800elapsed/installedSource-action-cursor-outcome->actualtokenroot/
-mountRW/permissions mapping,0API/POST/claims/resets/secrets/privatebook.
-OneboundTaskreadonlydefinition/oneexactexistingCIDmetadataEnvNAMESONLY
-orSource-boundclosedISOLATION allowed. No latestscan/exitcodeinference.
-Sourcefalse mayconflate timing/busy/permission/rooterror; one minimalfix only
-afterfacts. Preservecursor/frozen300/default/laststart; Parentcontrolledclient
-calibrationnext, no humanapprovalhold or foregroundwait.
+Root binding042e44f2/callbackccaed4c2 CLOSED10upper/cumulative115.
+Installed configc9deb3f1 -> launcher9fe9750c -> wrapperd83b7296 bound.
+Actual CID/image/controlroot/RW/observer-root equality remain UNKNOWN.
+Offmarket observer may exit without bridge; cadence is not POST frequency.
+Current current-nas-forward-isolation-proof-20261029-v1:120active/3600elapsed,
+ONE owned precredential container,0API/tokenclaim/Taskmutation/privatebook.
+Bind exact returned CID/image/source/roots/mounts/uid/envNAMES; close owners.
+Credential-free qualification uses.env.example, any environment nonparity explicit.
+Optional unique tiny permission file only in verified exactcontrolroot with
+owner exclusion; no timing/lock/ACL/reset changes. Preserve frozen300/cursor.
+Controlled resume command may be prepared, no API inside isolation scope.
 
 ## Closed Research / Data
 

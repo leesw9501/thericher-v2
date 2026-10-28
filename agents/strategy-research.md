@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-29 KST / Oct28UTC22:15. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct28UTC22:40. A=D:/thericher-v2/model-artifacts.
 Parent sharedMD/Git. Engine owns targets/costs/fits/interpretation.
 No broker/private/budget authority in this role.
 
@@ -23,11 +23,17 @@ threshold rescue, replaycell or generalizedensembleban.
 
 ## Current Review
 
-Ohm invokedSOURCE-contractreview60/600/0native/private/API/Task/model:
-current-chronos17-native-fixture-contract-review-20261029-v1.
-Comparegeneratedmanifest/schema/mounts/fakebookbindings againstunchangedactual
-fixture consumer; catchallfield/path/type errors beforeKeplerR3, notmodeltuning.
-No newapprovalgate oroverwriting hiswrite set; exactfilecallback.
+Ohm native-fixture review6d0c6017/fae1e8ff CLOSED45/60upper; exact SDK paths
+and fake-root geometry defects fixed before Kepler actual R3 PASS66875f42.
+r7 reviewabc85d4e/df8c8455 found mixed FILETIME identity representation;
+relayed to Lovelace technical recovery, not a global approval gate.
+
+Current current-context100-attention-candidate-preparation-20261029-v1:
+150active/3600elapsed, registry dedup and primary-source research, ONE pure
+PyTorch temporal-patch or set-attention mechanism if distinct from old trials.
+Actual invented forward/backward/checkpoint SYN;0marketpayload/fits/API/private.
+Consumer is Fermat's next useful GPU experiment, not a reading list.
+Engine owns final data/split/target/cost/caps/dispatch after endpoint replay.
 
 ## Completed Exit / Rule Research
 
@@ -53,5 +59,6 @@ no performanceparity, extraB10 or newbankwriter.
 Kepler nativeprep4bd5 fixture namespace fault/newtechnical-r1, no actualorder.
 Memory10026b8/e37d positivepoint98eligible10selected. Actualstage replay
 PASSED; boundcallbacksupportssecondpreinstallactorfailure, no fill/deployment.
-Fermat groupedcontext bdf98NativePASS, newonefit adopted2400SUM/7200elapsed;
-finalSource/coldrestore/role-proof beforemarket, no actualfit assumedfromplan.
+Fermat groupedcontext bb540bf0 actual fit COMPLETE25epochs/4425updates,
+best1; descriptive reused-INNER rank improvement only. No duplicate fit.
+Cost replay683f2167 adopted8fixedcells/0fits; full100context preserved.

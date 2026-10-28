@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / Oct28UTC22:15. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct28UTC22:40. A=D:/thericher-v2/model-artifacts.
 Parent MD/Git. Durable source contracts own exact caps; no runningGPU inferred.
 
 ## Current Research
@@ -13,26 +13,28 @@ Bothdescriptivecriteria met on REUSED INNER; not poolingcausality/alpha/PnL.
 485.1275435aggregateupper/807.026elapsed/peak1046MiBreserved,
 4CIDs28CLI/owners/leaseclosed22:06:33. No repeatfit.
 EconomicsWITHHELD100M2M; do notsubset17/changecontextpool.
-Fermat next current-context100-cost-replay-preparation-20261029-v1:
-120active/1800elapsed/Source+artifactmetadataonly/0newfits/forwards/price-target
-payload/replaycells/API/private/Task. One preferredfixedpolicy+roster/mark-source
-contract beforefuturepayoffread, notanotherreadinglist. Endpoint-only growth
-onlyifexactunclippedtargetformula supports it; DD staysunknownwithoutmarks.
+Cost preparation3efef6a7/FINALe3123d36 CLOSED110.087/120upper,
+0payload/fit/forward/cells. NEXT-CAMPAIGN683f2167 now adopted:
+current-context100-endpoint-cost-study-20261029-v1,600activeSUM including
+oldprep120upper once/7200elapsed,8cells(4fixedpolicies x10/20bp),0newfits.
+Seal all32 policy actions before masks, then whole-member availability scope
+before ONE payoff intake. Full100context retained; missingcohorts stayunknown.
+Endpoint-only conditionalgrowth, DD/M2M/fills/independentalpha withheld.
 
-Kepler nativeSYN4bd5/30upper prefinancialFileNotFound then
-r1b8c7/15used expired0native; r2 Source828bbd27/35inclusive15 closed after
-SDKvsrequiredsdk key failure native_original.py27, financialnotreached.
-Dependency runtime.lock RO mount/assert passed; no account/activationlock.
-Correctedmanifest2fec0901 sourcecheckpassed, actualfrontdoorstillunproved.
-NEWqualification-r3 NORMALENGINEERINGTDD150active inclusiveold30+35/
-3600elapsed/max3correctedSYNattempts predeclared, ownfakebook/fakebroker/
-networknone/0realprivate/API/Task/order/marketfit. Same d133/d01d/clocks/risk.
-Everycodefix freezesnewSourcerevision andretainsfailure/debit; no marketreranking.
-No irrelevantrealAfinancialclosure gate for disjointfakebook. Ohm independent
-manifest/fixtureSourcecontract review60/600/0native, notanotherpermissiongate.
-FALSE retained until actualSDK risk/frontdoorqualifies; Parentrealactivation.
+Kepler R3 actual native SDK SYN PASSED on attempt3/3, Source66875f42.
+One fake submit/two reconciliations; pending/exact_request_retained, not KIS.
+Parent independently verified28 Source/dependency/native-output refs.
+100/150activeupper includes prior65 once; all3CIDs21CLI/PIDs closed.
+Missing generic postflight marker retained separately; no fourth attempt.
+Original inputd133/policyd01d/NAS8/NYS9cash/B10F9/clocks unchanged.
+Next current-chronos17-account-serial-integration-20261029-v1:
+180active/3600elapsed, inactive typed existing-account serial branch plus
+changed-boundary nativeSYN. No realprivate/API/Task/order; Parent activation.
+Actual actor/risk/bank binding remains unqualified, allow_execute=false.
 
-Paper r7 metadata-child recovery240/3600 proceeds independently of model quality.
+Paper r7 technical-r1 metadata recovery proceeds independently of model quality.
+Ohm prepares ONE distinct attention candidate/native synthetic checkpoint;
+Fermat owns subsequent campaign adoption/headroom, not an automatic repeatfit.
 
 ## Completed Material Studies
 
