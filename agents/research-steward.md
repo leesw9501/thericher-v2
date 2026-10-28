@@ -45,7 +45,11 @@ INNER curves/early stopping/regularization/best restoration, and exact native
 producer/consumer/optimizer smoke. Missing fields defer only that campaign.
 No training merely to emit diagnostics, occupy GPU or repeat completed work.
 Strategy metadata review CLOSED NO_NOVEL_READY, not an exhaustive/no-strategy
-claim. Parent assigned Hubble SYN-only rank-memory technical recovery with
-no fitting/GPU/market admission. Old2584.416479debit remains unchanged.
+claim. Hubble rank-memory native recoveryd61992fb CLOSED250of600,
+3children/18CLI/4498accountingchecks. Bounded CPU market continuation236267f3
+COMPLETE160of1200/14ledgers/9002checks/6fixedcriteriaPASS/2CIDs12CLIclosed/
+0retry/fits/GPU/API. Old2584.416479/native250 remain unchanged.
+Now source+metadata/SYN operational-readiness600active/1800elapsed/
+no marketarrays or GPU. No refunded caps/duplicate training/dummy GPU work.
 Future readonly100 operational point is CPU inference,
 not training or a new budget allocation.

@@ -219,9 +219,19 @@ closed. Carson's separate monthly OC DataVersiona167 was consumed by completed
   No rescue/refit or claim that lower turnover alone caused/equates alpha.
 - Strategy next-mechanism metadata READY NO_NOVEL_READY; existing rank-memory
   consumer825cb893 is CLOSED_TECHNICAL/0marketfits, not economic rejection.
-  New current-rank-memory-native-recovery-20261028-v1 is SYN-only bounded
-  recovery,600active/2400elapsed/<=3native, no market-payload admission or old
-  cap reopening. Parent separately assesses numerical readiness.
+  current-rank-memory-native-recovery-20261028-v1 CLOSEDd61992fb/250of600,
+  five fixture geometry lines only/4498accountingchecks/3children18CLIclosed.
+  current-rank-memory-bounded-market-recovery-20261028-v1 COMPLETE236267f3:
+ 14ledgers/9002savedchecks/6fixedcriteriaPASS/2CIDs12CLIclosed/160of1200upper,
+  0retry/fits/GPU/API. Original scientific criteria/window/inputs unchanged.
+  MEMORY_SLOW20 total2021..25 growth6.804694percent/absoluteNAV-DD2.352390,
+  SPY9.538757percent returned more, not same risk. Adaptive/proxy only,
+  not annualized/independentalpha/PaperPnL. Parent ClaudeGO_WITH_LIMITS/source;
+  custody appended at actual AFTERruntime time, not preregistration.
+  Do not run either consumed controller or replay completed ledgers.
+  Hubble now source+metadata/SYN operational-readiness600active/1800elapsed,
+  exactCAT397/100slots/context/affine/dailywarmup; not monthlyRankNet input
+  substitution/stale2025OOF as future signal or automatic currentf545 swap.
 
 F9 exact-date f6d9/6d58 query1POST1GET/0rows/fullpagination: UNKNOWN-HELD,
 not terminal/absent/no-send. No identical query/release from missing holdings.

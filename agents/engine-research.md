@@ -107,10 +107,29 @@ VSN5847/E2329f5c, same-KIS9592, Gaussian/TCN/public-model studies CLOSED.
 Strategy metadata-only dedup current-next-mechanism-dedup-20261028-v1 CLOSED
 NO_NOVEL_READY, four mechanism precedents/sevenregistrybindings. This is not
 economic rejection of rank-memory825cb893 CLOSED_TECHNICAL before market.
-Hubble01a181fe-39c8-7890-b035-3d8a27d3a7a9 now owns SYN-only600active/
-2400elapsed/<=3native recovery at current-rank-memory-native-recovery-20261028-v1.
-No market-payload admission/fits/GPU/old-cap refund; Parent assesses exact
-readiness separately. No global novelty veto on finishing useful work.
+Hubble native recoveryd61992fb CLOSED250of600/3children18CLI/4498accounting
+checks. Only five fixture geometry lines changed; Parent exactdiff reviewed.
+current-rank-memory-bounded-market-recovery-20261028-v1 COMPLETE236267f3:
+oneforecast+canonical+calendarintake/onecompile/14ledgerattempts/oneverifier/
+0retry/0fits/GPU/API. OriginalEWMA20 FAST5/SLOW20/1235days/247reviews/62slow/
+fixedgross.10NAV1treasury/10and20bp/criteria unchanged. Six original primary
+criteria PASS; all actual input admission complete, no imputation/shorten/drop.
+MEMORY_SLOW20 totalgrowth6.804694percent/absolute-originalNAV-DD2.352390;
+RAW_FAST5.077049/5.220548, RAW_SLOW2.933330/7.094312,
+MEMORY_FAST4.855610/2.966871, UNIFORM_SLOW1.829690/5.895425,
+SPY_PASSIVE9.538757/3.439684. Full Jan29_2021..Dec29_2025 totals, not annual
+return/peakrelativeDD/same-risk/independentalpha/PaperPnL/private-ringfence.
+9002savedchecks/2CIDs12CLIclosed/38066NAVevents/2964reviews,160of1200upper;
+old2584.416479/native250 separate unchanged. Pre-freeze path-text mismatch
+fixed, no market retry. Parent ClaudeGO_WITH_LIMITS/source; existing custody
+trial1/nonpromoting appended AFTERruntime, explicitly not preregistration.
+Hubble now owns current-rank-memory-operational-readiness-20261028-v1:
+600active/1800elapsed/<=3SYN/no marketarrays/modelcalls/fits/GPU/API/Task.
+ExactCAT397/literal100/context/affine/dailywarmup source readiness only,
+not stale2025OOF as current or monthlyRankNet63CLOSE input as CAT features.
+Prospective clock/cadence must be explicit distinct operational contract;
+do not silently replace currentf545 or claim historical/operational parity.
+No global novelty veto on finishing useful work.
 Next numerics need a frozen scope/native smoke/compute+selection limits.
 Learned fusion requires chronological OOF; fixed exploratory fusion need not
 require individual profit. Neither changes deterministic Paper authority.

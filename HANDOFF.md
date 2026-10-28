@@ -9,8 +9,9 @@ Parent owns direction, shared policy/MD/Git and actual activation.
 Parent owns registry/GPU after positive closure of all numerical workers.
 Plato/Pasteur/Mendel/Darwin/Poincare/Carver and earlier executors are closed.
 James metadata dedup CLOSED NO_NOVEL_READY, no new numerical dispatch.
-Hubble01a181fe-39c8-7890-b035-3d8a27d3a7a9 owns bounded rank-memory native
-recovery, SYN-only/no market payload admission. No GPU fit currently running.
+Hubble01a181fe-39c8-7890-b035-3d8a27d3a7a9 completed rank-memory native and
+market recovery, now owns source/metadata+SYN operational-input readiness.
+No GPU fit currently running; scientific policies/criteria remain unchanged.
 Assignment/MD/source preparation is not an active worker/GPU/deployment proof.
 No operator decision pending. Preserve unrelated untracked %SystemDrive%/.
 
@@ -225,12 +226,40 @@ Fresh10:12UTC exact1414protected/0mismatch, endpoint6tests+4subtests,
 Ruff/3Compose/diffcheckPASS. LATE-HANDOFF-CHECK-20261028T1012044748560.json
 independently verifies69source/reference hashes and narrow result categories;
 metadata only/0marketdecode/forward/replay, not a new runtime claim.
+Latest10:28UTC protected1414/0mismatch; late-handoff check
+LATE-HANDOFF-CHECK-20261028T1028119776331.json now145references plus exact
+memory/native/custody categoriesPASS. External actual native4498 and saved
+market9002checks remain their own evidence; Ruff/3Compose freshPASS.
 Company completion still needs exact actual native runtime/reconciliation.
 Continue ready delegated work; no foreground session/quota sleep.
 
-Next available-input path: rank-memory825cb893 CLOSED_TECHNICAL before any
-market fits, not an economic rejection. New current-rank-memory-native-
-recovery-20261028-v1:600active/2400elapsed/<=3native/sourceupper<=240,
-SYN-only first-cause/ABI repair, original semantics/criteria/debit2584.416479
-unchanged. Parent separately decides market admission after exact readiness;
-metadata dedup is not a blanket ban on completing unfinished useful work.
+Rank-memory825cb893 CLOSED_TECHNICAL before any market fits, not economic
+rejection. Native recoveryd61992fb READY/CLOSED250of600activeupper:
+five fixture geometry lines corrected62->64rows/terminal63->65, no scientific
+market-code change.3nativechildren/18CLIclosures/7fullgeometry synthetic
+ledgers/4498accountingchecksPASS. Parent exact source diff reviewed;
+SOUND_WITH_LIMITS pointer retained, originaldebit2584.416479 unchanged.
+current-rank-memory-bounded-market-recovery-20261028-v1 COMPLETE236267f3:
+oneforecast/onecanonical/onecalendar intake/onecompile/14ledgerattempts/
+oneverifier/0retry/0fits/GPU/API/privatebank. Exact originalEWMA20 FAST5/
+SLOW20/3543..4777/1235days/247reviews/62slow, fixedgross.10 at reviews from
+researchNAV1treasury/10and20bp eachleg, no scientific change.
+MEMORY_SLOW20 growth6.804694percent/absolute-originalNAV-DD2.352390percent,
+RAW_FAST5.077049/5.220548, RAW_SLOW2.933330/7.094312,
+MEMORY_FAST4.855610/2.966871, UNIFORM_SLOW1.829690/5.895425.
+Six original epsilon-adjusted criteria PASS. SPY passive9.538757/3.439684
+returned more, descriptive not same-risk/universe/exposure. These are TOTAL
+Jan29_2021..Dec29_2025 analytical results, not annualized/peak-relative-DD/
+ringfencedPaper feasibility/independent alpha/actual PaperPnL.
+Saved9002checksPASS/2CIDs12CLIclosed/38066NAVevents/2964reviews,
+160of1200activeupper/old2584.416479+native250 unchanged. Windows path-text
+normalization fault fixed before sourcefreeze/market, not a numerical retry.
+Parent Claude MEMORY-INTERPRETATION-REVIEW.json GO_WITH_LIMITS/source.
+Existing custody appended AFTER runtime at actual time/trial1/nonpromoting;
+MEMORY-CUSTODY-INTEGRATION.json explicitly not preregistration/promotion.
+CurrentPaperf545/B10/F9 unchanged. Future operational readiness root
+current-rank-memory-operational-readiness-20261028-v1:600active/1800elapsed/
+<=3SYN, no marketarrays/forwards/fits/API/Task changes. Determine actualCAT397/
+literal100/context/affine/dailywarmup input, not monthlyRankNet substitution
+or stale2025OOF future signal. Prospectivephase needs a distinct contract.
+Metadata dedup is not a blanket ban on finishing useful unfinished work.

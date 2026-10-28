@@ -64,11 +64,13 @@ promptc672278b; actual delivery unobserved. No new follow-up chain.
    freshOct30 CLOSE-only context/unknown masks/Nov2->Dec1monthlyhorizon/DST.
    Raw/derived M/source/models A. No staleOct27retag/OTCsplice/account/order/
    live/privatebank/capital. Installation is not actual point or Paper fill.
-4. Hubble current-rank-memory-native-recovery-20261028-v1: SYN-only first-cause/
-   ABI repair of CLOSED_TECHNICAL825cb893 native-consumerValueError,
-   600active/2400elapsed/<=3native/sourceupper<=240;0marketpayload/fits/GPU.
-   Original scientific policies/criteria/inputs/debit2584.416479 unchanged.
-   Parent separately assesses exact numerical readiness; no old-cap reopening.
+4. Hubble current-rank-memory-operational-readiness-20261028-v1:
+   600active/1800elapsed/<=3SYN/no marketarrays/forwards/fits/GPU/API/Tasks.
+   Assess exact retainedCAT397/literal100/context/affine/23dailyforecastwarmup
+   producer and pure unallocated proposal handoff, or exact smallest input
+   prerequisite. Daily20 F3/monthly100 CLOSE-only is NOT automatically CAT397;
+   stale2025OOF is not current signal. Prospective clock/cadence needs an
+   explicitly distinct operational contract, no silent currentf545 swap.
    James dedup NO_NOVEL_READY is not economic rejection of unfinished useful
    work or a global novelty gate. Completed fits are not rerun for utilization.
 
@@ -90,6 +92,17 @@ Wide17/pooled/BB/monthlyrule/older public-model tracks CLOSED; exact results
 and failures in HANDOFF/role boards/Git/immutable consumers. No rescue/refit.
 F9 distinct adjacent-calendar diagnostic050109f8:1POST1GET/0rows/complete
 pagination/10nativePASS; original UNKNOWN-HELD, no refund/no-send inference.
+
+Rank-memory native d61992fb CLOSED250/4498accountingchecks; only five SYN
+fixture geometry lines changed. Market236267f3 COMPLETE14ledgers/9002checks/
+2CIDs12CLIclosed/160of1200activeupper/0retry/fits/GPU/API. FixedMEMORY_SLOW20
+passed six original criteria: TOTALJan29_2021..Dec29_2025 growth6.804694percent/
+absolute-originalNAV-DD2.352390 versusUNIFORM_SLOW1.829690/5.895425.
+SPY9.538757percent returned more; descriptive not same risk/exposure.
+Not annualized/independentalpha/PaperPnL/private-ringfence feasibility.
+Old2584.416479/native250/market160 distinct unchanged; sourcefreeze before
+onepayloadintake/compile, no hiddenretry. ClaudeGO_WITH_LIMITS/source.
+Existing custody trial1/nonpromoting recorded AFTERruntime, not preregistration.
 
 ## Verify / Continue
 

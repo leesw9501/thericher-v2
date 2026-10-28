@@ -86,9 +86,19 @@ James current-next-mechanism-dedup-20261028-v1/READY.json CLOSED
 NO_NOVEL_READY: four mechanism precedents/sevenregistrybindings,
 0market operations/180conservative sourceupper. Not exhaustive or an economic
 rejection of technically unfinished rank-memory825cb893. Parent dispatched
-Hubble current-rank-memory-native-recovery-20261028-v1, SYN-only600active/
-2400elapsed/<=3native/no market admission. Existing useful hypothesis can be
-completed after technical repair; no global novelty gate or old-cap refund.
+Hubble native recoveryd61992fb CLOSED250of600/4498accountingchecks,
+five fixture geometry lines only. Parent reviewed exactdiff and dispatched
+current-rank-memory-bounded-market-recovery-20261028-v1 COMPLETE236267f3:
+14ledgers/9002checks/6fixedcriteriaPASS/0retry/fits/GPU/API/160of1200upper.
+Original scientific policies/criteria unchanged. MEMORY_SLOW20 TOTAL2021..25
+growth6.804694percent/absoluteNAV-DD2.352390; SPY9.538757percent returned
+more, descriptive/not same risk. Adaptive/currentlisting/nonPIT/CAunknown/
+not independentalpha or PaperPnL. ClaudeGO_WITH_LIMITS/source.
+Hubble now owns source+metadata/SYN operational-readiness600active/1800elapsed:
+exactCAT397/literal100/context/affine/dailywarmup, not monthlyRankNet input
+substitution/stale2025OOF as future signal or automatic currentf545 deployment.
+Existing useful hypothesis can be completed after technical repair;
+no global novelty gate or old-cap refund.
 
 A next proposal must address a measured weakness using available causal inputs,
 name baseline/strongest kill/finite trial+compute cap and executable consumer.

@@ -16,7 +16,7 @@ untracked %SystemDrive%/. Closed history: Git7ae35ddd/951beb6b/edb81aea.
 | Execution Poincare / 실행 | CLOSED050109f8: distinct adjacent-calendar F9 diagnostic1POST1GET/0rows/10nativePASS; UNKNOWN-HELD unchanged. Currentf545/old duties unchanged. |
 | Data/Execution Carver / 입력 배포 | CLOSED7cb99495: readonly N100 point chain. Parent ACTUALLY registered one quiet Oct31KST06:00 Task;15 independent typed readback checks passed. No future capture/model point yet. |
 | Strategy James / 전략 탐색 | CLOSED current-next-mechanism-dedup-20261028-v1/READY.json NO_NOVEL_READY; four precedents/sevenregistrybindings,0market operations. Not an exhaustive no-strategy claim or economic rejection of technically unfinished work. |
-| Engine Hubble / 엔진 복구 | NEW current-rank-memory-native-recovery-20261028-v1:600active/2400elapsed/<=3native/sourceupper<=240. SYN-only recovery of existing825cb893 native-consumerValueError,0marketfits/payloadintakes. Parent separately assesses numerical admission. |
+| Engine Hubble / 엔진 복구 | Native d61992fb CLOSED250; market236267f3 COMPLETE/6fixedcriteriaPASS/14ledgers/9002checks/2CIDs12CLIclosed/160of1200. No fits/GPU/API/Paper changes. Now source+metadata/SYN operational-readiness600active/1800elapsed: exactCAT397/100slots/warmup inputs, not staleOOF/monthlyRankNet substitution. |
 | Other executors | Darwin/Pasteur/Pascal/Raman/Carson/Averroes/Planck/earlier agents closed. MD/source/assignment is not an active worker or GPU proof. |
 
 No numerical training currently running after positive child/container/lease
@@ -34,6 +34,8 @@ No foreground session wait or new follow-up chain.
 
 Independent alternatives already advanced:
 - Retained-model transfer to existing liquid17: COMPLETE/REJECT, no rescue.
+- Previously unfinished rank-memory comparison: COMPLETE/adaptive fixedscreen
+  PASS; investigate concrete operational input readiness, not new training.
 - Fresh daily20 point Task05:10KST and monthly100 point TaskOct31_06:00 are
   installed readonly preparations; actual future inference remains unobserved.
 - Next finite NAS pair50bd is SOURCE+SYN READY, FALSE/unregistered/unallocated;
@@ -51,8 +53,16 @@ data projection and numerical work ran as disjoint packages.
 Same closed family is not rerun because its cap was unused.
 An unfinished technical closure is not an economic rejection. Parent chose
 minimal rank-memory native recovery with fresh bounded source/SYN debit,
-preserving old2584.416479/criteria/inputs; not an old-cap extension, new model
-architecture or outcome-driven reranking. No global novelty approval gate.
+preserving old2584.416479/criteria/inputs; fixture count fix proved same native
+consumer/ledger before separately bounded one-attempt market continuation.
+Not an old-cap extension, new architecture or outcome-driven reranking.
+No global novelty approval gate.
+Rank-memory market continuation completed all14ledgers/9002savedchecks.
+MEMORY_SLOW20 total2021..2025 growth6.804694percent/absoluteNAV-DD2.352390,
+six fixed criteria passed; SPY9.538757percent returned more. No same-risk/
+independentalpha/PaperPnL claim. Native250/market160/old2584.416479 distinct.
+ClaudeGO_WITH_LIMITS/source; custody recorded at actual post-runtime time,
+not preregistration. CurrentPaper unchanged, operational source readiness only.
 
 The N100 missing-mark issue is not repaired by repeated GETs: bounded pages
 miss required dates and those dates overlap disclosed venue suspensions.
