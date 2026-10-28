@@ -53,8 +53,10 @@ No retagged stale point/imputation/splice/newAPI in that Source-only package.
 ## Current Invoked Validation / Next Action
 
 Galileo prepares exact recovery public/private readers at
-A/execution/current-linear17-recovery-outcome-reader-preparation-20261029-v1.
-Public-only next_due18:50/hard19:00 after SourceSYN. No private access/Task/API/
+A/research/current-linear17-recovery-outcome-reader-preparation-20261029-v1.
+Source01b2/public4f6d/sevenchecks closed138.768upper; private cold-hook
+constructor pending separate<=100active/900elapsed/oneSYN after18:50.
+Public-only followup Sourcef534 next_due18:50/hard19:00, Galileo alone. No private access/Task/API/
 GPU/recovery locks by that follow-up. Parent actual strict private reader only
 after fresh positive new B custody-writer closure; full exact input/policy/
 intent/fill link and networknone/allRO/stability mandatory. R5 consumed.

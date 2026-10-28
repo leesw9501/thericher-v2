@@ -47,6 +47,18 @@ SDK/weights; one finite future408context consumer/UNALLOCATEDpublisher, not bank
 Future actualpoint caps/Source separately adopted; no new numerical authority
 from preparation alone.
 
+## Additional Ready Hypothesis
+
+Ohm invoked Strategy Discovery proposal97bf8156 adopted for one new adaptive
+daily17 path-efficiency/breadth depth2 utility tree routing TREND21/REVERSAL5.
+A/research/current-daily17-rule-path-gate-development-20261029-v1:
+900activeSUM/3600elapsed/CPU1/noGPU/oneData projection/oneSYNfit/fourmarkettrees/
+<=10costcells/0basefits/retry/search. Exact historical FIT absolute-close/utility
+role gap needs actual projection/native qualification, not a cached-read claim.
+Claude challenge before payload; no OSworker before18:50. Related rule/gate
+families explicitly recorded: incremental transfer, not first discovery.
+Consumer cost-aware comparison, not a new bank writer/automatic Paper model.
+
 ## Interpretation / Ready Knowledge
 
 Foundation checkpoint corpus unknown: runtime/representation and postcheckpoint

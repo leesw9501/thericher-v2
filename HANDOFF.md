@@ -130,9 +130,18 @@ exact XML/API7/others unchanged. Taskthericher-memory20-conditional-deployment-2
 21:25..27/hard21:35. This is conditional coordinator installation, NOT actual
 future publication/new pair/TRUE/fill. No manual Run or old ca06 deployment.
 
-Galileo: new recovery outcome-reader preparation, then one bounded PUBLIC-only
-next_due18:50/hard19:00. Parent private read needs fresh positive NEW owner closure,
-networknone/source+privateRO/stability/full exact linkage. Old R5 not reusable.
+Galileo actual reader root is A/research/current-linear17-recovery-outcome-reader-preparation-20261029-v1,
+NOT execution. Source01b2752a/public4f6dbbb7/sevenSourceSYNchecks/138.767954upper
+closed. Private cold-hook import still unqualified; do NOT invoke host.py.
+New technical qualification<=100active/900elapsed/one native after18:50.
+Galileo alone owns A/research/current-linear17-recovery-public-result-followup-20261029-v1,
+Sourcef5349e94/worker c15a8ba6,one PUBLICsnapshot next_due18:50/hard19:00.
+Parent owns separate A/execution/current-linear17-recovery-owner-closure-20261029-v1/
+read_owner.py42645932:13SYN+one actual operational metadata attempt after18:50
+and bound public closure. No financial/API/Task effects; exact PID/CID/control.
+Later private read still needs fresh new closure/all3admissions/networknone/allRO/
+stability/full linkage. Old R5 consumed; attest actual research peers or current
+absence, never a generic actor waiver.
 
 ## Completed Research / Data
 
@@ -190,6 +199,14 @@ require separate Source adoption; no automatic default or bank writer.
 Other immutable results: two-retained description8d0b/confounded; original3arm
 PARTIAL/TCN0updates/noLAST; pastvol0c481 no joint increment; TCNthroughput e38b.
 Never duplicate closed training merely for utilization.
+
+Invoked Strategy Discovery Ohm proposal97bf8156 adopted as new
+current-daily17-rule-path-gate-development-20261029-v1: TREND21 vs REVERSAL5,
+path-efficiency/breadth depth2 utility-difference tree.
+900activeSUM/3600elapsed/CPU1/noGPU/oneData projection/oneSYNfit/fourmarkettrees/
+<=10ledgercells/0basefit/forward/retry/search. Source/data roles/custody/Claude/
+native before payload; numerical workers only after18:50. Exact historical FIT
+absolute-close/utility ABI not yet verified. Not new rule discovery/alpha/Paper.
 
 ## Owned Due / Throughput / Verification
 

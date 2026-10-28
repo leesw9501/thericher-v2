@@ -24,6 +24,15 @@ actual/parent-install-r1/INDEPENDENT-READBACK.json03011199 qualified exact enabl
 installation only. No guessed first cause/automatic reinstall/fill inference.
 
 Fresh per-effect risk/reconciliation remains in native path.
+Galileo actual reader Source01b2/public4f6d is under A/research/current-linear17-recovery-outcome-reader-preparation-20261029-v1.
+Private host cold-hook bootstrap is NOT qualified yet; do not invoke host.py.
+Sourcef534 public followup at A/research/current-linear17-recovery-public-result-followup-20261029-v1
+has one owner Galileo/one snapshot due18:50..19:00, no private/API/Task effects.
+Parent new operational closure42645932 at
+A/execution/current-linear17-recovery-owner-closure-20261029-v1:
+13SYN+one actual metadata attempt after18:50 and bound public closure only.
+Old R5 consumed; private constructor native/admission remain separate.
+
 Afterhard18:50 exact PUBLICreader first, positive newownerclosure then separately
 bounded strict PRIVATE reader only. Galileo owns new Sourcepreparation.
 No rawprivateoutput/recovery observe()/newlocks/privateRW mounts.

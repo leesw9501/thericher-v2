@@ -74,6 +74,15 @@ actual publication/runtime remains unobserved. Conditional
 Oct29 entry/Nov4 exit require actual exact positive Memory publication.
 Original MSFTNov2/LOWVOLNov3 and same-cohort Nov3 exit remain owned.
 
+Galileo actual reader root A/research/current-linear17-recovery-outcome-reader-preparation-20261029-v1,
+Source01b2/public4f6d/sevenchecks ready; private cold-hook constructor still
+pending separately bounded native after18:50. Public followup has one owner Galileo.
+Parent new operational owner-closure helper42645932 is source-prepared, not run.
+Ohm invoked Strategy Discovery new rule-path family adopted97bf:
+900activeSUM/3600elapsed/CPU1/oneData projection/oneSYNfit/fourmarkettrees/
+<=10ledgers/0basefits/retry/search, Source/Claude/native before payload.
+No numerical worker before18:50; no independent alpha/Paper claim.
+
 ## Completed Useful Work / Verification
 
 Chronos2 development:109actual GPU forwards/0fits,32cohorts/twoledgers;
