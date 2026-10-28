@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Observed 2026-10-27 UTC23:58 / 2026-10-28 KST.
+2026-10-28 KST; individual evidence below retains its actual observation clock.
 Workspace: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company outcome: coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
@@ -102,10 +102,14 @@ No retention/span/returned-clock guarantee was established; do not substitute
 Korean dates as a documented fix. No additional query was dispatched. This
 scoped unknown does not stop disjoint Paper/research.
 
-Earlier direct account V2 read16:50 returned seven deduplicated holding items;
-not owned attribution, AMEX, settled cash or full risk snapshot. Current Paper
-config matches the original immutable anchor (d5e29bea). Fees/settlement/net
-PnL stay unobserved without exact evidence.
+Latest configured account query completed Oct28UTC01:32:47..52:
+A/execution/current-paper-configured-account-readonly-readiness-20261028-v1/
+CONSUMER.json8314d7f0/Source4805e58f. One token POST/three balance GETs, all2xx,
+three native groups complete/six deduplicated positive instruments. Worker/Job
+closure and token-gate release verified, no bank/F9/Task changes. This is fresh
+query receipt time, not provider position-asof or owned attribution. Quote/
+orderability/settled cash/equity/PnL NOT_OBSERVED. Earlier seven-item V2 query
+is historical. Config matched the original immutable anchor (d5e29bea).
 
 ## Evidence Readers / Follow-Up
 
@@ -192,21 +196,98 @@ RAWUniform1.510498%/.154600%, SAMEGROSSUniform.947073%/.111592%.
 Growth criterionFALSE/DDtrue; samegross contrast is descriptive, not alpha.
 One projection/OPENintake/3whole ledgers/verify,0model/GPU/EVAL/retry;
 fourCIDs25Jobs closed, upper75.646743/240/elapsed377.259546/900.
-Next Data/Engine source-only readiness120/900 each checks Oct27 complete
-SPY/QQQ session coverage against old C120TCN FIT/INNER/EVAL and retained
-checkpoint/schema. No new arrays/fit/forward/labels or unseen claim yet.
-No new training is running; no dummy GPU work or old fit repetition.
+Oct27 readiness060f/b739 is complete: old C120TCN/HGB FIT Sep2022-Apr2023,
+INNER May-Jun2023, EVAL Jul-Sep2023; Oct27SPY/QQQ390/390 do not overlap.
+This is one joint trading day, not two independent dates or global untouched
+proof. Safe TCNweights6001e642/scaler7c08cd59 retained; no refit required.
+Same-unit/clock/adjustment cross-provider ABI is not qualified for performance.
+Original unit-required Data bridge95c15de9/Consumera97e34e6 CLOSED before
+market decode: official sample labels do not establish absolute price/share
+scales. Zero packet/model/label calls; keep its requirements/debits unchanged.
+Engine old scopef83b4714 is CLOSED at00:22:06: native/model/weights/scaler/
+market calls0, no containers/leases. Engine55/Data150 conservative allocations
+205 retained; complete combined actual wall not claimed. No permission hold.
+
+NEW nominal runtime-only boundary received ClaudeGO_WITH_LIMITS:
+A/verification/current-nominal-input-runtime-boundary-review-20261028-v1/CLAUDE.json.
+Parent adopted separate210combinedactive/900elapsed(Data90/Engine90/review30),
+one tiny actual-native handoff, one PAST-only <=42origin packet and one safe
+old-model CPU forward,0targets/labels/fit/EVAL/GPU/broker. Units/currency scale/
+bar timing/adjustment/PIT/finality remain UNKNOWN, no guessed scaling/parity.
+Require trusted non-executable NPZ, source/masks and finite raw/intermediate/
+output checks; positivity is field-specific, not for signed logs/logits.
+New roots: data/current-oct27-kis-c120-nominal-runtime-past-20261028-v1 and
+research/current-oct27-kis-frozen-tcn-nominal-runtime-probe-20261028-v1.
+This family is COMPLETE: Data9568b0a1/Sourced6a7c1ed published42/42known
+windows,650numeric rows/1575timestamp records screened. Native volume is evol,
+NOTdaily tvol/inferred shares. Engine7e546616/Sourceb91dfa88 loaded real own
+weights6001/scaler7c08 once and made ONE CPUforward42finite rows at00:30:22.
+Two SYN forwards/cold restore use invented weights. Independent saved verify,
+4combinedCIDs25Jobs closed; upper93.366741/210/elapsed763.931622/900.
+Parent13hash/count/false-qualification checks PASS00:39:30. Flags RUNTIME_ONLY
+true/PERFORMANCE_QUALIFIEDfalse/EXECUTION_ELIGIBLEfalse,0labels/fit/GPU/evaluation.
+Never treat this as feature/model/Paper qualification or historical availability.
+First Paper point unchanged, no completed fit repeated.
+
+Gaussian raw-H5 SIMPLE allocation study completed ONE actual CUDAfit:
+A/research/current-long17-gaussian-risk-allocation-development-20261028-v1/
+FINAL-CONSUMER.json79ab2668, Source384615c8.26epochs416updates/5.98s/66.2MiB,
+CHECK-selected epoch6, not convergence proof. At20bp growth/DD: Gaussian
+1.299523%/.851982%, HALF1.431166%/.525031%, cached Ridge1.554715%/.303168%.
+NLL passed but economic increment REJECTED; HALF does not rescue it. EightCIDs/
+48Jobs/lease closed; final inclusive upper403.388122/1200,elapsed1440.71278/3600.
+Original saved verification failed path binding and remains immutable.
+Separate current-long17-gaussian-risk-saved-integrity-repair-20261028-v1
+Source91329656/Consumer53e5e477 independently verifies saved policy arrays:
+PASS/0models/originalHELD/ledgers/GPU,3CIDs18Jobsclosed,upper71.381791/80,
+elapsed457.344304/900. Scientific REJECT and old clocks/debits unchanged.
+
+NEW Engine scope current-long17-gaussian-fullfit-fixed6-development-20261028-v1
+500active/1800elapsed: one same-recipe fresh initialization on499known FITdates,
+not old448train dates; fixed6epochs selected by previous CHECK before EVAL,
+max200updates120fit-seconds. Distinct training rows required, no new epoch
+choice. Full-FIT normalization permitted, former CHECK is now training, not
+validation. One forecast before1HELD/<=3new20bp cells/cached controls only.
+Post-EVAL adaptive development, not independent alpha/regrade/first-point swap.
+
+Data current-leaky-ridge-f3-input-readiness-20261028-v1 metadata100/900 and
+Strategy current-leaky-ridge-current-proposal-readiness-20261028-v1 source150/900
+prepare retained8104 Ridge/currentF3 compatibility. Its mean is RAW_SIMPLE,
+not LOG. No model forward/refit/current20 recapture/old EVAL replay yet. Avoid
+B/100: convert initial-NAV .1 targets to native relative proposals inside
+C=.1originalB; do not redistribute unsupported NYS weights. Parent will adopt
+actual readiness evidence, not infer deployment/training from these assignments.
 Faraday source-only history clarification is complete/agent closed.
 Halley public-reader delivery is complete. Data auditfbcdae4e confirms actual
 Oct27 SPY/QQQ each390/390 regular-session minutes; old+head unmerged complete
 date unions35/34, not a new merged dataset/finality proof. Existing quiet1m
 collector works. NAS6MODP0 throughOct27 has retained revision conflicts;
-formal QQQ/SPY MODP0 pair stalledOct19/collection_required. Newcoherent20MODP1
-is unaffected; never splice the modes. Leibniz owns bounded360/1800 daily-pair
-preflight->collector firstcause/fix, not another capture or report platform.
-Prefer existing versionedrepo code; Parent grants tracked writes after exact
-diagnosis and owns fullverification. Roles coordinate direct
-typed handoffs; Parent owns shared policy/Git, not every implementation.
+formal QQQ/SPY MODP0 pair had stalledOct19 before the consumed repair below.
+Newcoherent20MODP1 is unaffected; never splice modes or repeat the repair.
+Native exit fix7f93f029 and scoped60/test-reporting c2d1a1e5 are pushed.
+Canonical derivative79bd actual preflight exited10 at23:57:11 with no
+collector/KIS calls; earlier8127 exit20 was driver-only path spelling.
+Actual ONE existing daily-pair collector then completed PARTIAL at00:05:
+A/data/current-daily-pair-scoped60-actual-acquisition-20261028-v1/CONSUMER.json,
+Sourcee4f9d9bb/Consumerd138165b/receiptbb204fc3. Two whole MODP0 pages each
+100rows Jun5-Oct27; canonical common sessions60->66, exact old60 prefixes
+unchanged. Forty revision conflicts retain both input_unavailable labels;
+no overwrite/splice/clean-data claim. Actual wire counters UNKNOWN, not inferred
+from2accepted pages; implementation bound1POST/4GET/no retry. Exact created/
+destroyed CID and six Jobs closed, source480SDK/before-after stable, Dfree36.69%.
+No Task/account/order/live changes or acquisition retry. Next existing owned
+daily-pair opportunity21:55UTC unchanged. Current20MODP1 is unaffected.
+Execution review7b782ad4 confirms TRUE/--execute path,8positiveNAS targets and
+no permanent ResearchOnly/profitability/Modeoff veto. READY_FALSE was preparation
+metadata, not an inert native input. C=.1 originalB, not B/100. Linked F9 unknown
+reserves remaining cost rather than unconditional global veto; unbound/broken
+states still stop risk. Whole lots may all round0; fresh financial facts UNKNOWN.
+Frozen61modules matched image source, no KIS/Docker/Task/private reads:
+A/execution/current-linear17-no-hidden-inert-guard-review-20261028-v1/CONSUMER.json.
+Parent owns shared policy/Git, not every implementation. Throughput review
+adopts reuse of existing host/child_guard/kernel/codec interfaces, not another
+runner. Its suggested complement readiness is already consumed by c88's
+077a contract; never treat that stale R0 pointer as a new fit grant.
 
 ## Verification / Resume
 

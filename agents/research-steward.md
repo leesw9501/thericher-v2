@@ -1,9 +1,27 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-28 KST; observed Oct27UTC23:45.
+2026-10-28 KST; evidence integrated through Oct28UTC01:32.
 A=D:/thericher-v2/model-artifacts.
 Schrodinger01a175f1-b376-7e32-bbbb-61675f72668c sole GPU/shared registry owner.
 Parent shared policy/MD/Git/activation; other agents have disjoint outputs.
+
+## Current New Family
+
+NEW current-long17-gaussian-fullfit-fixed6-development-20261028-v1:
+500owned/1800elapsed, one same-recipe fresh fit on499known FITdates rather
+than old448train subset; fixed6epochs/max200updates120fit-seconds. Previous
+CHECK selected6 before HELD; former CHECK now training, no validation/epoch
+selection claim. Distinct actual row identities required before fit. One
+forecast before1HELD/<=3new20bp cells/cached controls. Reused EVAL/adaptive
+follow-up, not independent alpha/old-result regrade or today's Paper swap.
+
+Initial Gaussian3846/FINAL79ab scientific REJECT: actual CUDAfit26epochs/
+416updates/5.98s/66.2MiB/selected6, not convergence. Initial children closed,
+8CIDs48Jobs/lease absent, inclusive403.388122/1200/elapsed1440.71278/3600.
+Separate saved-integrity9132/53e5 PASS3CIDs18Jobs/upper71.381791/80, no models/
+originalHELD/ledgers/GPU; old technical failure/science/debits unchanged.
+Use measured headroom/project priority and exact owner/lease lifecycle, never
+infer active CUDA from a Source/assignment or repeat completed training.
 
 ## Current Owned Resources
 
@@ -55,9 +73,20 @@ a858/310f found missing aligned INNER weights; no new model call. Alternative
 Uniform-prior-gate e47a/e914 now CLOSED_REJECT/growthFALSE/DDtrue,
 native8PASS/oneprojection/OPENintake/3ledgers/verify/0model/GPU/EVAL/retry,
 fourCIDs25Jobs closed/upper75.646743of240/elapsed377.259546of900.
-Next120active/900elapsed source-only old C120TCN checkpoint/schema and
-new Oct27session coverage readiness with Data. No extra weights/market arrays,
-model calls, EVAL or GPU lease; missing saved model is NOT a refit grant.
+Old C120TCN readinessb739 confirms safeweights6001/scaler7c08 retained,
+original2022-2023 splits disjoint Oct27, global untouchedUNKNOWN.
+Original unit-required Data95c15/a97 and Enginef83 closed0native/market/model,
+conservative205allocation retained, not measured combined wall. NEW nominal
+runtime family210active900elapsed(Data90/Engine90/review30), ClaudeGO_WITH_LIMITS:
+one native handoff/onepast packet/oneCPUforward; no targets/labels/fit/GPU/EVAL
+or Paper promotion. Units/time/adjustment UNKNOWN/no guessed scaling; safeown
+NPZ, finite/domain/source checks and performance/Execution flagsfalse required.
+Reuse pinned host.run/child_guard/core/codec rather than new scaffolding.
+Old caps unchanged;
+Nominal family COMPLETE7e546616/b91d/Data9568/d6a7:42finite/oneCPUforward,
+one realweights/scalerload,2SYNcoldforwards,0labels/fit/GPU,4CIDs25Jobsclosed,
+combinedupper93.366741of210/elapsed763.931622of900. No follow-on fromthatbudget.
+complement readiness was already consumed by c88/077a, NOT a new fit grant.
 
 Paper numeric yield18:45..55 consumed. Parent complete public census0actors at
 18:56:35/Docker0containers18:56:36 permits independent workers to resume after

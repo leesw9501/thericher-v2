@@ -161,15 +161,14 @@ exact r2 adoption; no additional recurring report or broker worker was created.
 
 ## Verification
 
-A/verification/current-paper-runtime-custody-recovery-20261027-v1/
-worker-telemetry-r1/CONSUMER.json:19514PASS26knownSKIP398.53s/eightactualpairs/
-owncleanup plusserial370/1. Reuse for MD/external-only ONLY after exact1412
-protected a1500c15 digest/membership check. External D code needs separate
-focused/native/actual proof; repo suite cannot validate it.
-Latest protected1412/a150 reuse check22:44:04 passed at
-A/verification/current-paper-research-integration-20261028-r7/SOURCE-CHECK.json;
-Ruff/default/research/accounting Compose freshPASS with .env.example.
-Full suite was reused under exact digests, not rerun for MD/external-only work.
+Current code c2d1a1e5 is pushed. Exact authority:
+A/verification/current-daily-pair-floor60-integration-20261028-v1/CONSUMER.json,
+Sourceb1a05d40/1412total/base+8overrides, full53102 PASS19532/26knownlinkSKIP/
+35warnings/396.43s/19558items/8actualworkers; serial165+57/Ruff/3Compose PASS.
+Own child/lease absent/source0mismatch. Reuse for MD/external-only only while
+all protected digests match. Olda150/2f and failed/test-only histories are not
+current authority. D code retains separate native/actual proof; repo suite
+cannot validate it. Do not repeat the full for documentation checkpoints.
 
 Fresh checks, no real.env:
 
@@ -184,6 +183,41 @@ git diff --check
 Tracked code/runtime/test/dependency changes need AGENTS full parallel and
 changed-path serial checks. Do not rerun20k tests for a documentation checkpoint.
 Company completion needs actual bound native decision/reconciliation, not Git.
+
+Latest doc-only integration Oct28UTC01:53 rechecked all1412 protected members:
+zero mismatch. Fresh Ruff/default+research+accounting Compose/diff checks pass.
+Thirty-two exact D-artifact reference hashes passed without decoding arrays or
+reading private state. This reuses the passing full authority, not a new full.
+
+Consumed actual account-readiness query, NOT a repeat command:
+A/execution/current-paper-configured-account-readonly-readiness-20261028-v1/
+CONSUMER.json8314d7f0/Source4805e58f. Actual01:32:47..52,1POST3GET/all2xx/
+six deduplicated positive instruments/three native groups complete. No bank/
+F9/Task changes. Holdings query does not establish quote/orderability/owned
+custody/settled cash/equity/PnL; do not adopt the foreign inventory.
+
+Consumed Gaussian actual study:
+A/research/current-long17-gaussian-risk-allocation-development-20261028-v1/
+FINAL-CONSUMER.json79ab2668, economic REJECT despite NLL pass, one CUDAfit
+26epochs416updates/5.98s/selected6. Independent saved-integrity Consumer53e5
+at current-long17-gaussian-risk-saved-integrity-repair-20261028-v1 passed with
+no models/originalHELD/ledger replay. Failed original verification stays failed.
+New fullFIT499/fixed6 scope500/1800 is adaptive follow-up, not another run of
+the old command or a new CHECK/epoch choice. RetainedRidge/currentF3 readiness
+prepares source/metadata only, not an activated Paper cohort or market forward.
+
+Daily-pair repair is runtime-tested and consumed, not an instruction to repeat:
+canonical preflight79bd r1 exited10 without KIS; one separately frozen collector
+e4f9/d138/receiptbb204fc3 is PARTIAL. QQQ/SPY each100 wholeMODP0 rows Jun5-Oct27,
+canonical common60->66/oldprefixes unchanged/40revision conflicts retained.
+Wire countersUNKNOWN, implementation<=1POST4GET/no retry. ExactCID create/
+destroy and sixJobs closed. Existing daily-pair next21:55UTC unchanged.
+Do not replay its drivers or reset cache/marks to erase input_unavailable.
+Current20MODP1/firstPaperpoint unaffected. Original unit-required Data bridge
+closed before decode; do not consume/reopen it or refund costs. New nominal
+KIS->oldTCN runtime-only adapter has separate210/900 Data/Engine ownership,
+units/time/adjustment UNKNOWN, safe trusted NPZ/numeric/source guards and false
+performance/Execution flags. No labels/PnL/fit/Paper authority from this probe.
 
 ## Frozen Installation History
 

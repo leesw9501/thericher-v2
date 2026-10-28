@@ -97,10 +97,52 @@ Resolve-Path contract is already normalized, not an additional scheduled bug.
 New canonical derivative Source79bd/Consumer1b6c has current9pins and native
 cold12checks/30SDKhashes PASS, no actualcredentials/client/HTTP/cache/control.
 One coldCID removed/fiveJobsclosed. Parent adopted one actual network-none
-preflight after fresh full; result pending, never collector/API by this driver.
-Next separate metadata readiness120/900 checks Oct27 new complete SPY/QQQ
-against old765a C120TCN/HGB FIT/INNER/EVAL coverage. No new dataset/labels/
-model/weights decoded and no unseen/finality claim until exact evidence.
+preflight after fresh full; actual r1 EXIT10, no collector/API by that driver.
+New separately owned acquisition is COMPLETE:
+current-daily-pair-scoped60-actual-acquisition-20261028-v1, Sourcee4f9d9bb/
+Consumerd138165b/receiptbb204fc3. Exactly one collector invocation, PARTIAL:
+two whole MODP0 pages100rows each Jun5-Oct27; common canonical60->66,
+old60prefix hashes preserved. Forty revision conflicts keep input_unavailable
+for both; no overwrite/splice/current20MODP1 contamination. Actual HTTP counts
+UNKNOWN; implementation bound1POST4GET/no retry, not counts from page receipts.
+Exact CID create/destroy/absence and sixJobs closed, source before-after stable,
+Dfree36.686%; no Task/account/order changes. Existing next21:55UTC unchanged.
+
+Oct27 metadata060f confirms original TCN/HGB FIT2022-09..2023-04,
+INNER2023-05..06/EVAL2023-07..09: new complete390/390 pages do not overlap.
+Not global untouched or physical provider-basis equality; one joint date only.
+Old unit-required bridge95c15/a97 CLOSED before decode/packet/model: official
+sample lacks explicit absolute USD/share scaling. Old contract/debits kept.
+NEW nominal-only Data90/Engine90/review30 within210active/900elapsed, under
+ClaudeGO_WITH_LIMITS at current-nominal-input-runtime-boundary-review-20261028-v1.
+Reuse projector b214/codec/parser with tiny actual named handoff, one PAST-only
+<=42origin KIS packet and current capture/index stability. No guessed scaling:
+units/currency/bar timing/adjustment/PIT/finality UNKNOWN. Raw prices positive,
+volume nonnegative/finite/schema/masks, signed transformed features may be zero
+or negative. No FUTURE/labels/models/API/fit or performance claim. Source root
+current-oct27-kis-c120-nominal-runtime-past-20261028-v1 COMPLETE9568b0a1/d6a7:
+42/42known windows,650numeric rows/1575timestamp records screened, no future
+unselected OHLCV numeric decode. Volume is native evol, NOTdaily tvol or
+inferred shares. ROLE99de2af2/PASTee09f8f9 stored at
+M/us_equities/research_inputs/current-oct27-kis-c120-nominal-runtime-past-20261028-v1.
+Native cold/1projection/1savedverify pass,1CID3Jobs closed, conservative47.296188
+of90/not measured totalCPU. Engine oneCPUforward42finite complete7e546616.
+RUNTIME_ONLYtrue/PERFORMANCE_QUALIFIEDfalse/EXECUTION_ELIGIBLEfalse unchanged.
+Inherited PROCESS.write_set A-only is not complete future M actor attestation;
+actual M output pinned in SCOPE/SOURCE, not a generic custody exemption.
+
+Gaussian alignment current-long17-gaussian-economic-alignment-20261028-v1
+is COMPLETE:49ac rawSIMPLE OPEN[e+5]/OPEN[e]-1/EVAL15/cached8104 controls bound.
+Cached Ridge mean is also RAW_SIMPLE, NOT LOG. OldGaussian448train+50CHECK
+versus cachedRidge499train is not a matched-training ablation. Engine new
+fullFIT499/fixed6 scope preserves old roles/targets/results, adaptive only.
+
+Current assignment current-leaky-ridge-f3-input-readiness-20261028-v1:
+100active/900elapsed, metadata-only saved19coefficients/scaler/leaky transform
+versus F3 Source3b474a7d/ROLEdb5ec7df/features225a160f/17x20x18. Verify feature
+order/window/schema/stat retention before any numeric decode; if no retained
+normalizer, name exact deterministic FIT-input-only recomputation, never guess
+or refit. Direct qualified handoff to Strategy/Engine; no arrays/labels/API.
 
 Respond directly to current Engine source/schema/clocks questions; do not
 repeat completed acquisition/projection. Fresh current acquisition is successful,

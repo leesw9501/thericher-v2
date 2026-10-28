@@ -1,8 +1,32 @@
 # Engine Research Stateboard (엔진 연구 담당)
 
-2026-10-28 KST; observed Oct27UTC23:43.
+2026-10-28 KST; evidence integrated through Oct28UTC01:32.
 A=D:/thericher-v2/model-artifacts. Schrodinger GPU/registry; Parent shared MD/Git.
 Model proposals never alter deterministic broker risk or original shared B/10.
+
+## Current Research Queues
+
+Short breadth: nominal KIS->frozenTCN7e546616 COMPLETE42finite, no labels or
+performance/Paper qualification. No repeat training/forward for that probe.
+Data/Strategy now prepare retained8104 Ridge/currentF3 metadata/pure proposer,
+not another fit, old EVAL replay or current CappedLinear forward.
+Depth: current-long17-gaussian-fullfit-fixed6-development-20261028-v1,
+500active/1800elapsed; one fresh same-recipe fit on499known FITdates, not the
+old448train subset. Fixed6epochs/max200updates120fit-seconds/no new epoch
+choice. Distinct actual rows required; old CHECK now training, not validation.
+Full-FIT normalization/new target view may use FIT-only inputs. One forecast
+before1HELD/<=3new20bp cells/cached controls. Adaptive post-result development,
+not independent alpha, old-study rescue or frozen Paper-point replacement.
+
+Initial Gaussian Source384615c8/FINAL79ab2668 is scientific REJECT: one actual
+CUDAfit26epochs416updates/5.98s/66.2MiB, selected6 by chronological CHECK,
+not convergence proof.20bp growth/DD Gaussian1.299523%/.851982%, HALF
+1.431166%/.525031%, cachedRidge1.554715%/.303168%; NLL pass not economic alpha.
+Old path-binding verification failure remains. Separate Source91329656/
+Consumer53e5e477 saved-integrity PASS without models/originalHELD/ledgers/GPU,
+3CIDs18Jobsclosed/upper71.381791/80. Old inclusive403.388122/1200 and
+1440.71278elapsed/3600,8CIDs48Jobs/lease closed, no refunded trial/debit.
+Both Ridge/Gaussian means RAW_SIMPLE; do not relabel cached Ridge as LOG.
 
 ## Latest Economic Campaign / Closed
 
@@ -55,9 +79,26 @@ SAMEGROSSUniform.947073%/.111592%; growthFALSE/DDtrue. Samegross contrast
 descriptive only, no criterion rescue or independent alpha on reused11dates.
 Native8cases PASS; one projection/OPENintake/3whole ledgers/verify,
 0model/GPU/EVAL/retry. FourCIDs25Jobs closed, upper75.646743/240/
-elapsed377.259546/900. Next source-only frozen C120TCN/new-Oct27-session
-readiness120/900 with Data; retain weights/training coverage or NOT_READY,
-never repeat training to fill missing checkpoint. No active training now.
+elapsed377.259546/900. Frozen C120TCN readinessb739/58f3 is complete:
+safeweights6001e642/scaler7c08cd59 retained, no refit. Old FIT2022-09..2023-04,
+INNER2023-05..06/EVAL2023-07..09 disjoint Oct27, but global untouchedUNKNOWN.
+FirstRate/KIS physical units/clock/adjustment basis not qualified for performance.
+Original unit-required Data95c15/a97 and Enginef83b4714 are closed before
+native/market/model;0containers/leases, conservative205 allocation retained,
+not a measured combined wall claim. NEW nominal-only family210active/900elapsed
+(Data90/Engine90/review30), under concise ClaudeGO_WITH_LIMITS: one native
+handoff/one <=42origin PAST packet/one safe old-model CPU forward,
+0targets/labels/evaluation/fit/GPU/broker. Units/time/adjustment/PIT/finality
+UNKNOWN/no guessed scaling, not a human hold or provider parity. Trusted
+non-executable NPZ/source/masks/finite/domain checks; valid signed logs/logits
+are not rejected for negativity. Output RUNTIME_ONLY/PERFORMANCE_QUALIFIEDfalse/
+EXECUTION_ELIGIBLEfalse. New root
+current-oct27-kis-frozen-tcn-nominal-runtime-probe-20261028-v1 is COMPLETE7e546616/
+b91dfa88:42/42finite, one realCPUforward/load/scaler,2SYNcoldforwards,
+0labels/fit/GPU/performance. FourcombinedCIDs25Jobs closed,
+upper93.366741of210/elapsed763.931622of900. Native evol slot NOTdaily tvol/
+inferred shares. Output9742fb76 remains runtime-only; Parent13hash/count/flags
+checks pass. Exact oldcore reused, not EVAL2610launcher. First Paper unchanged.
 
 Latest new CPU campaign is COMPLETE, not source-only:
 A/research/current-long17-feeprox-ridge-development-20261028-v1/

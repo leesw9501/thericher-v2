@@ -1,10 +1,25 @@
 # Strategy Research Stateboard (전략 탐색 담당)
 
-2026-10-28 KST; observed Oct27UTC23:45.
-A=D:/thericher-v2/model-artifacts. Sagan source package is delivered/agent closed;
+2026-10-28 KST; evidence integrated through Oct28UTC01:32.
+A=D:/thericher-v2/model-artifacts. Sagan Gaussian kernel consumed by Steward;
 Engine owns final targets/splits/fits, Parent shared MD/Git. No broker authority.
 
 ## Current Useful Proposal
+
+Current source-only assignment150active/900elapsed:
+current-leaky-ridge-current-proposal-readiness-20261028-v1. Prepare actual
+retained8104 19coefficients/scaler/leaky transform/costblind controller for
+current F3 with invented math/file/schema tests. Data supplies exact input
+metadata. No actual market forward/refit/old EVAL replay/deployment yet.
+RAW_SIMPLE targets sum<=.1initialNAV must become native relative proposals
+inside C=.1originalB, not B/100; unsupported NYS remains unspent. Preparation
+metadata is not a permanent inert native flag or another private-bank writer.
+
+Gaussian kernel91e8/d7e6 was consumed by actual26epochCUDA study3846/79ab:
+NLL pass/economic REJECT. Separate saved-integrity9132/53e5 PASS without
+model/label/ledger replay. PyTorch GaussianNLLLoss consumes variance; working
+density remains uncalibrated. New fullFIT499/fixed6 experiment belongs to
+Engine/Steward; no result-driven threshold/weight rescue or baseline refit.
 
 Daily Open5 cost-event Logistic19 native4686 failed technically, Consumer0935:
 trusted NumPy.testing._private import blocked by audit, no market fit/evaluation.
@@ -24,8 +39,16 @@ fix; old native ABI failure and debits retained. No active GPU job inferred.
 Steward compatibilitya858/310f found missing aligned INNER Linear outputs,
 not a grant to relabel EVAL or forward again. No-model Uniform-prior-gate
 e47a/e914 is now CLOSED_REJECT: growthFALSE/endpointDDtrue,0model/GPU/EVAL.
-Probability skill is not expected PnL. Next exact frozen-model/new-session
-readiness with Data is source-only; preserve older tests and no threshold rescue.
+Probability skill is not expected PnL. Frozen-model/new-session readinessb739/
+060f confirms saved weights and disjoint old splits; provider basis remains
+unqualified. Unit-required Data bridge closed before decode, old contract kept.
+New separately frozen nominal-only210/900 may reuse exact core/projector/codec
+with one past packet/oneCPUforward,0labels/performance/fit/Paper. Claude review
+supports UNKNOWN units/timing/adjustment only under trusted safe loading,
+source/masks/finite/domain checks and explicit performance/Execution false flags.
+Nominal adapter completed7e546616/42finite/oneCPUforward,0labels/fit/GPU,
+no feature/performance/Paper qualification. Preserve older tests,
+no threshold rescue. Reuse reviewed host lifecycle, not another platform.
 
 Cost-symmetric momentum/vol kernel is CLOSED and consumed by the risk-aware
 study2602, not an unrun proposal. Feature-support auditb0a2/bceb correctly
