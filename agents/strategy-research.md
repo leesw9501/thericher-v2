@@ -6,6 +6,15 @@ No broker/credentials/risk authority in this role. History: Git158bd51a.
 
 ## Current Executable Consumers
 
+Current sidecar: Dewey owns foundation17 post-checkpoint preparation at
+A/research/current-foundation17-postcheckpoint-preparation-20261028-v1.
+Deduplicate prior exact public-model studies before any download/market trial.
+Official Chronos2 and TimesFM2.5 Apache-2.0 dated checkpoints are candidates,
+not adopted runtime/performance claims; optional TimesFM3 is not adopted under
+its different noncommercial/production restrictions. Exact SDK and actual
+producer-to-consumer smoke precede market payloads. No numerical authority
+or automatic Paper default swap is granted by this source-only package.
+
 - Daily current Ridge source5inventedcases was consumed by actual cddf/ee48:
   one17rowCPUforward, RAW_SIMPLE/leaky-state, no repeated fit or old EVAL.
 - Generic factory58de had a REAL producer integration mismatch: Data PLAN has

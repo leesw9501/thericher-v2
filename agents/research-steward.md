@@ -2,8 +2,9 @@
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
 Parent accepted custody back after Dewey's twofits/currentpoint. Hubble CUDA
-probe positivelyclosed; Fermat now coordinates ONLY new matched3-model
-training GPU/registry. Source/native readiness, not actual marketfit proof.
+probe positivelyclosed; matched3-model campaign is CLOSED/PARTIAL. Fermat
+coordinates ONLY the new synthetic TCN throughput diagnosis/proposal, not a
+retry or a running market fit. Fresh actual PID/lease/VRAM evidence required.
 All9ownedCIDs/host49668/GPUlock positively closed; no running fit claimed.
 MD/Source/assignment is not process or GPU proof. Parent owns shared MD/Git.
 

@@ -30,10 +30,18 @@ reconciliation/freshquotes/orderability/deterministicrisk before effects.
 F9 footprint offline PARTIAL/POSITIVE internalbank headroom, API0/binding/
 stabilityPASS, not brokerbuyingpower/settledcash or reservation release.
 
-After opportunity use public pairedreaderb3d4 (dropped countersNULL/not0),
-and ONE unused offliner2 ebb972d7/Parent25f5 allowedOct28UTC14:35..
-Oct29UTC14:35 with fresh actualwriteradmission/closure/allRO/networknone/
-exactjoins/stability. No recovery observe()/lockwrite/foreign adoption.
+Actual entry technical failure now bound: Denied/actor_identity at14:21:17,
+native_stageNATIVE_EXECUTION/admission.actor:134. Fault8db91a00/result at
+A/execution/current-linear17-entry-fault-diagnosis-20261028-v1/RESULT.json.
+Public pairedreader: visitsclosed/observerrestored/recovery no_intent, request
+countsNULL. Actual offliner5 Source4eb2f2ce/RESULTfa20769f qualified all3fresh
+admissions/13Jobs/CIDclosed/stability:8targets/0bound/8UNKNOWN/policy absent.
+Complete countsNULL, not zero; fresh broker holdings/fees/PnL unobserved.
+R2/R3/R4 failures and R3 consumed read retained; R5 closed. Never rerun their
+consumed commands or infer fills/absence from partial zero counts.
+Immediate Execution package: reproduce/fix stale launch-identity candidate
+shadowing and scoped noncustody-worker admission; hypothesis not yet exact
+runtime actor proof. Preserve f545/current IDs/B10/F9/original exit obligations.
 Existing appoct26-paper one-shotOct28UTC14:40/KST23:40/prompt361780ae,
 sameidentity/thread/notifications, actualdeliveryunobserved. No new chain.
 
@@ -55,7 +63,10 @@ sameidentity/thread/notifications, actualdeliveryunobserved. No new chain.
    Finiteheadless88feeb16 PARTIAL/notdeployable:20Python/10PScases37checks
    passed butcombinedhandoff failedbeforetransaction; diagnosticdecodefailed,
    rootcauseunqualified/6Rufffindings/3nativeexhausted/4Jobsclosed/375.85upper.
-   Newboundedfirstcause/native recovery at>=14:35, no actualnewTask/TRUE.
+   New technical-recovery-r1 COMPLETE92082bd0: runtime-alias declaration fixed,
+   20tests/37typedchecks/4aliaschecks/combinedhandoff/quiet/Ruff/9Jobsclosed,
+   126.96upper. Future actor capability readiness still unqualified; fix that
+   before actual headless Task/TRUE, no blind install of inherited stale rules.
    Oct29entry/Nov4exit requires freshOct28asof point. Supersede ONLY
    uninstalled futureUniform afterproof, not currentf545/unknownrequest.
 3. Dewey vintage numerical family CLOSED107checks/2actualfits/0marketretry:

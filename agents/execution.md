@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST (latest evidence Oct28 UTC). A=D:/thericher-v2/model-artifacts.
 Parent integration/activation/MD/Git. No operator decision pending.
 Never KIS_LIVE_*/real money. ONE original B/10/cost/loss/pending/F9 unchanged.
 
@@ -19,6 +19,27 @@ Actual typed Task contractdf026/nativeV4fixture1579 PASS, not real effects.
 Today f545 and other original duties remain unchanged.
 
 ## Actual Financial Knowledge
+
+Oct28UTC14:56 actual current entry readout: public fault8db91a00 at14:21:17
+is Denied/actor_identity/native_stageNATIVE_EXECUTION/admission.actor:134.
+See A/execution/current-linear17-entry-fault-diagnosis-20261028-v1/RESULT.json.
+Paired public reader: visitsclosed/observerrestored/recovery no_intent,
+entry result missing/countersNULL; no financial inference.
+Exact-cohort-reader-readiness/closed-writer-recovery-r5 Source4eb2f2ce/
+RESULTfa20769f: all3actual admissions/13Jobs/CIDremoved/networknone/allRO/
+private+source stabilityPASS. Observed14:53:47UTC,8targets/0bound/8UNKNOWN,
+newpolicyrecord absent. Complete counts NULL; partial zeroes NOT full totals.
+Current broker holdings/fees/settledcash/PnL not observed. No reservation release.
+R2read0/R3read1withheld/R4read0 failures preserved; all scopes consumed/closed.
+R5 adds safe native-result retention when post-read admission fails, never a
+qualification bypass. Do not rerun any consumed reader or recovery observe().
+
+Lovelace owns NEW future worker-capability/identity repair, currentf545 unchanged.
+Hypothesis: first stale concrete launch_identity candidate raises before a
+later matching rule; exact conflicting actor from real entry not recovered yet.
+Headless technical-recovery-r1 Source92082bd0 COMPLETE: runtime alias declaration
+fixed/combinedhandoff/20tests/37transaction/4aliaschecks/Ruff/9Jobsclosed.
+Parent action prepare only after actual qualified authority; no actual newTask.
 
 F9 Source6d58/Consumerf6d9 exact-date1POST1GET/0rows/0idless/complete pagination.
 Exact original account/basis/request bound; UNKNOWN acceptance/fill/terminal,
@@ -39,7 +60,8 @@ F9UNKNOWN-HELD/PARTIAL originaltenth reservation/POSITIVE internal nativebank
 headroom; exact account/basis/input/policy/intent binding and stabilityPASS.
 API0/oneprivateintake/networknone/allRO/19Jobsclosed/CIDremoved,262.70of600
 verificationupper. Brokerbuyingpower/settledcash/equity NOTOBSERVED;
-no release/profit expansion/privatewrite and unusedf545r2 untouched.
+no release/profit expansion/privatewrite. Subsequent r2..r5 outcomes above
+supersede the earlier unused-r2 projection, not this historical F9 result.
 
 Readonly venue84637/e53059 at05:03UTC:1POST4GET, NAS+NYS asking/detail routes
 all2xx/positive last/tick. Closed-market bid-ask/timestamps unusable; no

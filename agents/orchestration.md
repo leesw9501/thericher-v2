@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄 조정)
 
-2026-10-28 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+2026-10-29 KST (latest evidence Oct28 UTC). A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent owns shared MD/Git/activation. Fermat owns only new matched-training
 family GPU/registry coordination after Hubble's positive diagnostic closure.
@@ -9,6 +9,22 @@ Preserve unrelated %SystemDrive%/. History Gitb1d1199f/ae1e99a8 and exact
 immutable evidence, not a second backlog. MD is not worker/runtime proof.
 
 ## Ready / Owned / Due
+
+Oct28UTC14:56 throughput review: current Paper technical first-cause now bound
+to actor_identity at14:21:17/NATIVE_EXECUTION, not a profitability veto. Exact
+offliner5 4eb2/fa207 qualifies actual3admissions/13Jobs/CIDclosed/stability;
+8targets/0bound/8UNKNOWN/policy absent, complete countsNULL. No fill/zero/PnL
+claim. Parent owns current outcome/MD/Git, Lovelace NEW future actor-identity/
+capability repair; oldf545/unknownF9/original exits unchanged.
+Headless92082 combined handoff now qualified, no actual newTask/TRUE. One
+reversible improvement: preserve native categorical output on post-read
+admission failure while withholding conclusions; separate actual private
+writers from source-attested independent research, not blanket GPU/Data waits.
+Dewey owns foundation17 post-checkpoint source dedup/preparation; Galileo one
+predeclared past-vol allocation alternative on frozen17 outputs; Fermat SYN
+TCN stage/throughput diagnosis/new-contract proposal, not consumed-fit retry.
+These are assigned packages, not claims of running GPU/native workers.
+ReaderR2/R3/R4/R5 failures/consumption/closure retained; no follow-up chain.
 
 | Owner | Actual result / next consumer |
 | --- | --- |
@@ -20,12 +36,11 @@ immutable evidence, not a second backlog. MD is not worker/runtime proof.
 | Fermat / 지표 모델 연구 | ActualCUDA GRU+factor10 29epochs5133updates/best5; Transformer31/5487/best7. TCNepoch0/0updates/noLAST/consumedattempt. PARTIAL,readout0/1354.917upper/all6CIDs40CLI+owner+GPUleaseclosed14:02:25; no paused/queuedfit. |
 | Other executors | Gauss F9footprint, NewtonData, PlatoMonthly, MendelOCQC and earlier workers CLOSED. Do not infer active agents/GPU from an MD. |
 
-Current due: f545 entry Oct28UTC14:15 trigger/native14:20..24/recovery14:27..31/
-restore>=14:33/hard14:34. Original MSFTNov2/LOWVOLNov3/f545exitNov3 intact.
-Existing appoct26-paper one-shot14:40UTC/KST23:40/prompt361780ae owns follow-up;
-ONE unused r2offlineread ebb972d7 allowed14:35..nextday14:35, fresh actual
-custodywriter admission/networknone/allRO/exactjoins/stability. No new chain.
-Current f545 actual submission/fill/owned inventory/PnL still not observed.
+Consumed entry opportunity/readers: current technical fault and r5 actual
+readout above, not another due time or unused read. Original MSFTNov2/
+LOWVOLNov3/f545exitNov3 intact. Existing appoct26-paper one-shot14:40UTC,
+delivery not inferred; no replacement chain. Next readonly points20:10/
+20:50UTC remain owned. Actual submit/fill/owned inventory/PnL unestablished.
 
 ## Throughput Review / Dependency
 

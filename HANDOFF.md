@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-28 KST. Workspace C:/Users/Public/Documents/thericher-v2.
+2026-10-29 KST (latest evidence Oct28 UTC). Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent owns direction/shared MD/Git/activation. Fermat coordinates only new
@@ -12,7 +12,8 @@ Hubble installer/GPUdiag and Dewey actual100point CLOSED; no running claim.
 Lovelace01a18258-e2d5-7cf1-a71a-d08611118c31 owns finite headlessdeploy prep.
 Galileo01a18268-b998-7a20-85d4-7e56b98f5811 owns frozen-model liquid17 replay.
 Fermat01a182a8-785b-7e70-b380-4b50501217ca CLOSED two actual newGPUfits;
-three-arm campaign PARTIAL. All new research workers positively closed by14:10.
+three-arm campaign PARTIAL. Original training workers closed by14:10; later
+independent technical/source packages dispatched after14:35, not duplicate fits.
 MD/assignment/source is not process/GPU/deployment proof.
 Preserve unrelated untracked %SystemDrive%/. History Gitb1d1199f/ae1e99a8/
 7ae35ddd/951beb6b/edb81aea and immutable artifacts, not this file.
@@ -24,6 +25,38 @@ blocked by profitability, research-only scopes, missing reports or raw flags.
 Research proposes; deterministic native risk decides. Missing is unknown.
 
 ## Installed Current Paper Opportunity
+
+Latest readout at Oct28UTC14:56: entry FAILED technically at14:21:17 with
+Denied/actor_identity, native_stage=NATIVE_EXECUTION, admission.actor:134.
+Exact public fault reader/result:
+A/execution/current-linear17-entry-fault-diagnosis-20261028-v1/RESULT.json;
+fault8db91a00 binds f545/459f/exact entry run and frozen input/policy. This is
+not broker-effect proof. Public paired outcome: native visits closed/observer
+restored; entry result missing/recovery no_intent/request counters NULL.
+
+Actual offline read qualified: exact-cohort-reader-readiness root/
+closed-writer-recovery-r5, Source4eb2f2ce/RESULTfa20769f, all3fresh admissions/
+13Jobs closed/CID removed/networknone/allRO/private+source bytes stable.
+At14:53:47UTC:8targets/0bound/8UNKNOWN/newpolicyrecord absent. Complete intent/
+submit/acceptance/fill/terminal counts NULL, NOT zero; known-partial zeros
+cannot substitute for complete counts. Broker holdings/fees/settlement/PnL
+unobserved; original B/10/F9 unchanged. Company remains UNFINISHED.
+R2 caller-shell refusal read0; R3 read1 withheld after a new SYN actor appeared
+and old transport discarded its result; R4 read0 refused active SYN actors.
+All failures/debits retained, no old source/result overwritten. R5 was a new
+bounded technical recovery after positive exact-instance closure, not an
+automatic retry or relaxed private-writer check. New transport retains safe
+native output on post-read admission failure but withholds qualification.
+R1 is superseded; R2/R3/R4/R5 are consumed/closed. Do not rerun them.
+
+Priority: Lovelace reproduces stale concrete launch-identity rule shadowing
+in a NEW future capability package; that cause is a hypothesis, not yet the
+exact conflicting actor recovered from today's fault. Currentf545/original
+exits unchanged. Headless technical-recovery-r1 qualifies Source92082bd0:
+missing qualified runtime-alias declaration fixed without reparse waiver;
+20tests/37typed checks/4alias checks/combined handoff/quiet/Ruff,9Jobs closed/
+126.96activeupper. No actual headless Task/TRUE deployment yet; future worker
+capability admission remains unqualified under inherited1c30/28c23 rules.
 
 A/execution/current-linear17-finite-account-round-preparation-20261028-v1:
 HOSTf545e9b6/ROUTE235e/TRUE459f/inputf477/policy24d3/adapter37ff.

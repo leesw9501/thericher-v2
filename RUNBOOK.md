@@ -15,6 +15,26 @@ Historical commands/failed versions remain in Git158bd51a and exact A roots.
 
 ## Installed Paper Opportunity
 
+Current readout (Oct28UTC14:56): actual entry fault Denied/actor_identity at
+14:21:17, native_stageNATIVE_EXECUTION/admission.actor:134. Exact safe result:
+A/execution/current-linear17-entry-fault-diagnosis-20261028-v1/RESULT.json.
+New reader had8SYN binding checks/Ruff F,E9 before bounded public fault intake;
+not latest-file matching, broker calls or a financial conclusion.
+Exact-cohort-reader-readiness/closed-writer-recovery-r5/RESULT-ACTUAL.json
+SHAfa20769f68c195d78bb654806d169896e83a36c92a06978e35ea337bbd76c761,
+Source4eb2f2ce: all3admissions/13Jobs/CIDremoved/private+source stable,
+8targets/0bound/8UNKNOWN/policy absent. Complete counts NULL, partial zeros
+not full counts. Broker holdings/fees/settlement/PnL not observed.
+R1 is superseded; R2/R3/R4/R5 are consumed/closed, NOT commands to replay. Failed
+attempts retained; R3 actual read1 withheld after noncustody actor appeared,
+R4 zero-read refusal, R5 new bounded recovery after exact instances closed.
+No API/order/Task mutation, reservation release or global research restriction.
+
+Headless technical-recovery-r1 PARENT-COMMAND.json (Source92082bd0) prepares
+an exact action only after qualified PARENT-AUTHORITY; it does not install.
+Runtime-alias fix/combined handoff qualifies, inherited worker admission does
+not. Do not install it blindly or mutate originalf545 to repair future guards.
+
 A/execution/current-linear17-finite-account-round-preparation-20261028-v1:
 HOSTf545e9b6 / ROUTE235ea94b / TRUE459fa3c4 / INPUTf4775c8a / POLICY24d339fa.
 Cohort paper-current-linear17-nas5.20261028, full17 input/8NAS targets,

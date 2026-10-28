@@ -9,6 +9,14 @@ risk/ONE original B/10/F9. History: Git7ae35ddd/158bd51a and immutable consumers
 
 ## Completed New Ranking Family
 
+Current independent packages after14:35UTC: Dewey foundation17 dated-checkpoint
+source dedup/preparation; Galileo one frozen-model past-vol allocation study;
+Fermat synthetic TCN latency diagnosis/new-contract proposal. No repeat of the
+completed GRU/Transformer fits or consumed TCN attempt. Assignments do not
+prove active native/GPU workers. Execution's actor_identity failure is local,
+not a profitability/credential/GPU hold on these packages. Source/consumer
+contracts and failure/compute debits remain scoped to each campaign.
+
 current-nas100-monthly-ranknet-development-20261028-v1/FINAL.json,
 Sourceb75d7ffe/Contract30978675:
 oneCPU Ridge plus oneCUDA MLP RankNet2660updates/28epochs/best4,
