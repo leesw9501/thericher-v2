@@ -2,13 +2,30 @@
 
 2026-10-29 KST (latest evidence Oct28 UTC). A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Parent owns shared MD/Git/activation. Fermat owns only new matched-training
-family GPU/registry coordination after Hubble's positive diagnostic closure.
+Parent owns shared MD/Git/activation. Dewey coordinates the new conditional
+Chronos63 GPU campaign; Fermat's retained-expert description is CPU-only.
 No operator decision pending. ONE original B/10/F9 UNKNOWN-HELD unchanged.
 Preserve unrelated %SystemDrive%/. History Gitb1d1199f/ae1e99a8 and exact
 immutable evidence, not a second backlog. MD is not worker/runtime proof.
 
 ## Ready / Owned / Due
+
+At15:05UTC new disjoint dispatch (assignments, not running-job proof):
+- Dewey: current-foundation17-chronos63-development-20261029-v1, conditional
+  exact Chronos63 proposal. Sole GPU coordinator; SDK2.3.2/cached dated safe
+  weights/native qualification first, no repeated old fits.
+- Galileo/Data: current-foundation17-absolute63-inputs-20261029-v1, one same-b7
+  absolute187x17x63 prior-CLOSE packet onM, no labels/marks in forecast input.
+  Direct Data->Dewey qualified handoff authorized, no extra Parent approval.
+- Fermat: current-h5-two-retained-expert-description-20261029-v1, CPU-only
+  distinct descriptive scope; original3armPARTIAL/readout0 unchanged.
+- Lovelace: future worker-capability/identity repair; test stale-instance rule
+  shadowing before broad guard changes. Same-cohort current-session technical
+  recovery may be prepared if justified; actual activation stays Parent-owned.
+Chronos shared caps2400activeSUM/7200elapsed (Data240/Engine2160),0fits/retry,
+9native+100marketcalls max/two new ledgers/one outcome intake. Actual market
+dispatch only after frozen exact Data/SDK/native hashes and source challenge.
+No CPU fallback, hidden axis, broker authority or Paper profitability gate.
 
 Oct28UTC14:56 throughput review: current Paper technical first-cause now bound
 to actor_identity at14:21:17/NATIVE_EXECUTION, not a profitability veto. Exact

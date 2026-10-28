@@ -5,8 +5,8 @@
 2026-10-29 KST (latest evidence Oct28 UTC). Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-Parent owns direction/shared MD/Git/activation. Fermat coordinates only new
-matched-training GPU/registry resources after Hubble's diagnostic closure.
+Parent owns direction/shared MD/Git/activation. At15:05UTC GPU coordination
+passed to Dewey's conditional Chronos63 study; Fermat now CPU-only description.
 No operator decision pending. Two new actual model fits are CLOSED, not running.
 Hubble installer/GPUdiag and Dewey actual100point CLOSED; no running claim.
 Lovelace01a18258-e2d5-7cf1-a71a-d08611118c31 owns finite headlessdeploy prep.
@@ -15,6 +15,14 @@ Fermat01a182a8-785b-7e70-b380-4b50501217ca CLOSED two actual newGPUfits;
 three-arm campaign PARTIAL. Original training workers closed by14:10; later
 independent technical/source packages dispatched after14:35, not duplicate fits.
 MD/assignment/source is not process/GPU/deployment proof.
+
+Latest parallel dispatch: Galileo absolute187x17x63 same-b7 input onM ->Dewey
+Chronos63 exactSDK232/cached safe weights/native-before-market, shared2400active/
+7200elapsed/0fits/retry. Direct qualified peer handoff approved. Fermat one
+distinct two-retained-expert description; old3armPARTIAL/readout0 unchanged.
+Past-vol0c48125e CLOSED4ledgers/no joint increment/144.91upper/4CIDsclosed;
+TCN SYN e38bc698 CLOSED6profiles/4qualified/2limited/no new marketfit justified.
+No new actual GPU/numerical/deployment claim follows from these assignments.
 Preserve unrelated untracked %SystemDrive%/. History Gitb1d1199f/ae1e99a8/
 7ae35ddd/951beb6b/edb81aea and immutable artifacts, not this file.
 

@@ -9,6 +9,30 @@ risk/ONE original B/10/F9. History: Git7ae35ddd/158bd51a and immutable consumers
 
 ## Completed New Ranking Family
 
+Latest completed alternatives: past-vol0c48125e closed4ledgers/all32cohorts,
+144.91activeupper/4CIDsclosed, NO_JOINT_SELECTION_AND_ALLOCATION_INCREMENT.
+At10bp blendRMS growth1.506551percent/DD1.097630percent versus previous
+blend1.576774/1.129783 and Uniform1.570961/.833910; allocation lowers blend
+DD slightly but loses growth. Old rejected study unchanged, no retuned retry.
+
+Foundation preparation completed14registry records/8studies dedup scope,
+11SYN/Ruff/210upper, not an exhaustive novelty claim. Parent conditionally
+adopted exactly one new Chronos63 campaign at15:05UTC: dated cached safe weights,
+SDK2.3.2 native qualification and Galileo absolute prior-CLOSE packet first.
+187x17x63 ->q.5five-step endpoint ranking ->fixedTop5/24-frame EWMA20;
+cross_learningFalse/independent origins. Shared2400activeSUM/7200elapsed,
+0fit/retry/9native+100marketcalls/two new cost ledgers/one outcome intake.
+Engine2160/Data240, sources frozen before market, no hidden fallback/quantile
+or old-model reruns. Adaptive reused2026 selection, not independent alpha.
+Direct qualified Data->Dewey handoff approved, not another Parent wait.
+Actual GPU run unobserved until worker/lease/native evidence exists.
+
+Fermat TCN throughpute38bc698 CLOSED:6SYNprofiles/4qualified/2time-limited,
+~11.5s per64SYNdates, no justified repeat market fit. NativeCID/7Jobs/owner/
+lease closed. New CPU-only two-retained-expert descriptive scope adopted;
+one combined173INNER label intake,0fits/forwards/marks/ledgers/GPU/retry.
+Original3armPARTIAL/readout0 stays; missing TCN not zero/no winner/default swap.
+
 Current independent packages after14:35UTC: Dewey foundation17 dated-checkpoint
 source dedup/preparation; Galileo one frozen-model past-vol allocation study;
 Fermat synthetic TCN latency diagnosis/new-contract proposal. No repeat of the

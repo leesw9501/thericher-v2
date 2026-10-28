@@ -47,6 +47,17 @@ sameidentity/thread/notifications, actualdeliveryunobserved. No new chain.
 
 ## Parallel Ready Packages
 
+Current new dispatch at15:05UTC supersedes old ready projections below:
+Galileo/Data absolute187x17x63 same-b7 packet ->Dewey Chronos63 exactSDK232/
+dated safe checkpoint, direct qualified peer handoff and conditional numerical
+authority inside frozen proposal. Shared2400activeSUM/7200elapsed,Data240/
+Engine2160,0fits/retry/9native+100marketcalls/two new ledgers/one outcomeintake.
+Fermat CPU-only distinct two-retained-expert description; original3armPARTIAL/
+readout0/consumedTCN unchanged. Past-vol0c481 completed/no joint increment;
+TCN throughpute38bc closed/no new market fit justified. Lovelace identity/
+capability repair is the immediate Paper priority, no research-wide hold.
+Actual GPU/native progress must come from current worker evidence, not plans.
+
 1. Hubble publisher26b85470 SOURCE+SYN COMPLETE255currentchecks/337.619upper;
    no actualAPI/model/Task yet. New readonly-installation-preparation package
    actualTask NOWenabled/unstarted after scopedParentrecovery;24typedchecks

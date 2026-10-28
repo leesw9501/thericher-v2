@@ -3,12 +3,22 @@
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts.
 Parent accepted custody back after Dewey's twofits/currentpoint. Hubble CUDA
 probe positivelyclosed; matched3-model campaign is CLOSED/PARTIAL. Fermat
-coordinates ONLY the new synthetic TCN throughput diagnosis/proposal, not a
-retry or a running market fit. Fresh actual PID/lease/VRAM evidence required.
+completed the synthetic TCN diagnosis; no repeat market fit justified.
+At15:05UTC GPU coordination transferred to Dewey's conditional Chronos63
+campaign. Fermat's distinct description is CPU-only. Assignment is not a
+running-GPU claim; fresh PID/lease/headroom/native evidence required.
 All9ownedCIDs/host49668/GPUlock positively closed; no running fit claimed.
 MD/Source/assignment is not process or GPU proof. Parent owns shared MD/Git.
 
 ## Latest Actual Fits / Closure
+
+TCN SYN sidecare38bc698:6profiles/4qualified/2time-limited, near11.5s per64SYN
+dates; chunk1/4/16 or cuDNN-off did not justify another market attempt.
+1CID removed/7CLIJobs/owner31576/GPUlease closed at14:50:44UTC. No pausedfit.
+Chronos new family2400activeSUM/7200elapsed includes Data240+Engine2160,
+9native and100market calls max/0fit/retry/two loads/two ledgers. Cached weights/
+hash+SDK232/native/Data readiness first;4GiB desktop reserve/measured peak/
+freeD>=15percent. No user-app allowlist or dummy utilization training.
 
 | Campaign | Actual useful work / terminal state |
 | --- | --- |

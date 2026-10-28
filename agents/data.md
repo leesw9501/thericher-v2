@@ -2,6 +2,15 @@
 
 2026-10-28 KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git. Roles/MDs are memory, not running-process proof.
+
+At15:05UTC Galileo owns NEW current-foundation17-absolute63-inputs-20261029-v1
+for one Chronos63 consumer. Exact same-b7/preexisting17/187featurekeys:
+absolute natural prior63 CLOSE, not inversion of clipped neural inputs.
+Market packet stays onM; labels/marks absent from forecast mount. Data slice
+240activeSUM within shared Chronos2400/7200elapsed,1projection+1savedverify/
+0retry/API/credentials/privatecustody/GPU. Actual producer/schema native SYN
+before market projection; exact hashes/keys/masks/units to Dewey directly,
+no extra Parent approval. This assignment is not READY/worker proof yet.
 Closed detailed history: Git158bd51a and exact immutable consumers below.
 Galileo source-only499d CLOSED92.68upper: existingmin25/literal100 incompatible,
 not marketdata unavailability. NEW current-liquid17-h5-dynamic-inputs-
