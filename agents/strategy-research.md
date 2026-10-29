@@ -1,57 +1,61 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-30 KST / integrationOct29UTC20:25.
+2026-10-30 KST / integrationOct29UTC20:54.
 A=D:/thericher-v2/model-artifacts. Parent MD/Git; Engine final targets/splits/
 costs/fits/interpretation. No broker/private/execution-risk authority.
 
-## Current Executable Proposal
+## Executable Proposals / Actual Readiness
 
-One volume-confirmed QQQ failed-breakdown/reclaim with SPY confirmation:
-current-dense-h1-next-information-proposal-20261030-v1:
-Sourcef3f15360/PROPOSAL-FINAL55cdf3cf/ADJUDICATION64193c27(REVISE),104upperclosed.
-Contract current-dense-h1-reclaim-event-contract-preparation-20261030-v1/
-CONTRACT.json: fixed120M1 context90/event30, reclaim prior low, volume
-confirmation and causal SPY check. Same information/different inductivebias,
-not new information/alpha or a repaired old model.
-Later43sessions2023-10-02..11-30 Data/native unqualified, no actual dispatch.
-Clock-gate expected prior-notional control/QQQlong/cash and2costs;
-unknown/undefined masks separate, no target-dependent support filtering,
-no threshold rescue or consumed DEV reopening.
+Fixed volume-confirmed QQQ failed-breakdown/reclaim +SPY confirmation:
+proposalSourcef3f1/55cdf3/104upperclosed; contractcc2b unchanged.
+Kernel technicalSourcefcb5/native27plus5161/fullcausal0bcc/FINALef756490,
+120upper/allworkersclosed. Real invented producer/file/typedintent/quantity/
+capital, causal-byte/action invariance and missing/clock/pending checks.
+Review actualREVISE, storedREJECT corrected2df9/14anchored-parser tests,
+oldoutputs preserved/no newreviewcall. Source/native only, no performance claim.
 
-Lovelace purekernel/current-dense-h1-reclaim-event-kernel-preparation-
-20261030-v1 <=180active; native invented real producer/file/typed parser/
-quantity/capital and causal/missing/clock/pending negatives.
-Kepler temporary Data/current-qqq-spy-reclaim-later-input-readiness-
-20261030-v1 <=120active metadata-first later role availability, directschema
-exchange Galileo/Fermat. Fermat final finite family/caps/adoption.
-Strongest kill: unqualified data, unsupported calibration/thin support,
-terminal/capacity unknown, no costed growth/risk advantage vs aligned controls.
-No timing/beta alpha from merely lower gross exposure.
+Later43sessions2023Oct-Nov source not established9cf4/30upper;
+retained2026 block not substitute, no oldDEVtarget rescue.
+Fermat chooses separate2026ten-session C120 INPUT-SUPPORT pilot only,
+no outcome/mark/calibration/fit/costcell authority from this proposal.
+Same inputinformation/different inductivebias, not newinformation/alpha.
+Clock-gate expected-prior-notional control is not exact realized beta matching.
+Strongkill unsupported Data/calibration/thin support/terminal unknown/no costed
+growth-risk advantage, never threshold or target-dependent support tuning.
 
-## Completed Useful Engineering
+Kepler ETF metadatae7eb/385c closed35upper:
+single-source Tiingo rawOHLCV+divcash+splitfactor long SPY/QQQ/IWM history,
+no acquisition required. Exact jointkeys/calendar/economic dividend/split
+consumer unqualified, not a global research/Paper hold.
+One simple SPY_LONG/QQQ_LONG/CASH capital baseline outline; no parameter grid/
+fit needed for an operational benchmark. Engine chooses one final successor.
 
-CapacityPaperReplay integrated2bfffcd9/focused77PASS; actual LocalPaperBroker/
-EventStore, one synthetic B/10/pendingonce/losses/no profitrefill/exactexits/
-restart/unknownNAV. Source tests not market/Paperperformance.
-Linux scaling current-native-capital-replay-scaling-prototype-20261030-v1:
-Source1f73/attempt481f/ADOPTION5be0,15900invented lots/100306events/
-28447fills33.382s/fresh originalSDKcold10.707s/22checks/all19owners3CIDsclosed286.
-Research scratch ONLY, no private Paperstore move.
+## What Completed Work Changed
 
-## Durable Research Lessons
+CapacityPaperReplay integrated2bfffcd9/focused77PASS with real LocalPaperBroker/
+EventStore, one synthetic B/10/pendingonce/loss/no profitrefill/exactexits/
+restart/unknownNAV. Source tests not actual Paper or market performance.
+Linux scaling1f73/481f/5be0:15900invented lots/100306events/28447fills33.382s,
+fresh originalSDKcold10.707s/22checks/all19owners3CIDsclosed286upper;
+research scratch only, no private Paper store move.
+Independent reserved-lot negativesed465/c886 closed35upper confirm intended
+retention and lost-return-with-fill possibility. Old MSE cause still UNKNOWN.
 
-Earlier hypothesisc353 led executed cost-survival fit26epochs: proper score/
-downside MET but utility FAILED. TCN/LSTM29/36 both economiccriteriaFAILED,
-directportfolio33 FAILED, assetMHA utilityMET/riskFAILED, StudentT density/risk
-MET/utilityFAILED; no identical repeats. DenseH1 TCN13+Ridge finished but
-four0entry cells NONINFORMATIVE/whole primaryWITHHELD afterreadoutcap.
-TimesFM/Chronos and transformer/tree/ensemble studies already exist; unknown
-pretraining/reused targets limit comparative claims, not isolated runtime study.
-Individual profitability is not prerequisite for exploratory joint composition.
-Learned gates need chronological OOF, not in-sample expert predictions.
+Parent issuer/SEC context: CODXJan14..Mar11 and BKYIMay13..Jul8,2026 reported
+Nasdaq suspensions overlap exact12missing required D1 dates. URLs HANDOFF.
+Data2GET returned1of12. This challenges always-NAS historical eligibility,
+not proof of KIS cause/noOTCprice. Do not regrade old trials or exclude based on
+future missingness; new eligibility needs as-published-before-decision evidence.
 
-AEMD public split source-checkca82/e8e7 and held diagnostic7dbf/2156 complete:
-sixknownheldwindows plusoneunknown do not cross identified split dates;
-merger announcement is not completed conversion/vendor correctness proof.
-No outlier deletion/regrade/Paperban. Historical sources/results in Git53ef9beb
-and exact artifacts, not another current reading list or report platform.
+Earlier cost-survival26 proper-score/riskMET/utilityFAILED; TCN/LSTM29/36
+economiccriteriaFAILED; directportfolio33FAILED; assetMHA utilityMET/riskFAILED;
+StudentT density/riskMET/utilityFAILED. No identical repeats.
+DenseH1 TCN13+Ridge finished/four0entry cells NONINFORMATIVE/primaryWITHHELD.
+TimesFM/Chronos/transformer/tree/ensemble studies exist; corpus/reused outcomes
+limit comparative claims, not isolated runtime study. Fusion may explore
+nonprofitable experts; learned gates need chronological OOF.
+
+AEMD ca82/e8e7 and held7dbf/2156 complete: no exact identified split overlap
+in sixknownheldwindows plusoneunknown; announcement is not completed
+conversion/vendor correctness. No outlier deletion/regrade/Paperban.
+History in Git97019f9c/artifacts, not another reading list/report platform.

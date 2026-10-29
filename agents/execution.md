@@ -31,7 +31,25 @@ Oldread deadline20:00 was not global authority expiry. New20:05..21:05 scope
 observed20:12 only; no entry backdating. Earlier1730 policyabsent68fa and15:01
 registration0ae9/05ae remain consumed/unknown, not new reads to run.
 
-## Current Work
+## Current API Health / Work
+
+Readonly health ACTUAL20:58:24..30UTC, no longer preparation:
+A/execution/current-paper-readonly-native-health-probe-20261030-v1/
+technical-r1/actual-once/RESULT.json
+d6464fed4f649498c10ebbde77a21c5399e25f2e4dd87aed4ae8e4c568cd20f9.
+Source2af67a84/native50b7b8b8/ParentreviewedCOMMAND22e33cf0.
+Oneclient/onePOST6GET/7responses/6.6445s; strictnative threevenueaccount/
+holdings+openorders complete,4positiveholdingrows/0openorders; bothQQQ/IBM
+reference-funds complete. No freshquote/orderability/fullrisk/ownedfill/fees/
+settlement/PnL proof, no reservationrelease. Sequential snapshot, not atomic.
+No brokerorder/Dataquote/bank/Task mutation. SourceStable; Parent21796/native
+23888 joinedexit0/Jobempty, CLOSUREaa2c8083. CONSUMED, never repeat.
+
+Actual entry19:30 failed worker_wall_exhausted19:34 at transport._exchange567
+(exact476895b5); recovery29508a73 no_retained_pending/0calls is recoveryONLY.
+Static execute=True/kis_paper path present, actualcontrols unobserved.
+Public-native timinge2c64/fbbf hashes1414files~0.033s each,0.495stotal;
+Windowscensus NOTMEASURED/mock replies. Do not optimize hash guards by guess.
 
 Dewey current-memory100-native-entry-readiness-diagnosis-20261030-v1:
 <=180active/3600elapsed, source-qualified public native/session/ROUND stop path
@@ -42,9 +60,11 @@ max1client/cachedtoken/8GET/0retry/1POST only if needed through existing gate,
 max2symbols/no order/live. Publish native-tested Source/plan before actual.
 API health is not market eligibility, fill, full account snapshot or PnL.
 
-Ohm current-memory100-original-exit-current-binding-20261030-v1:
-<=120active/2400elapsed, inert same-original-exit compatibility plan with
-0668/f0d9/9dff/current strict90. No actual Task reads/edits/API/private.
+Ohm actual originalexit metadataf40e/r3/e99a at20:38: enabled/ready/noinstance,
+native16/150upperclosed, no Task mutation. New parent-integration scope240cap
+binds phase-neutral f0d9 release/current source0668 and fresh relevant-owner
+verifier to exact original Nov4 two-fieldCAS. Parent routing adoption is not
+fresh Nov4 custody or financialproof; no actual migration until reviewed.
 Original Nov4 in-place migration requires BOTH Args and RegistrationInfo.Source,
 positive owner/source/financial identity closure, preserved trigger/ACL/risk.
 Future-only failureprojection4d7f/7249/native20 and default-node78a77be6/

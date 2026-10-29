@@ -23,13 +23,24 @@ Require actual exact source/mode/session/SPY/cursor/closure/masks; no retag/swap
 Galileo current-full187-required-mark-gap-readiness-20261030-v1:
 <=120active/3600elapsed; metadata-first exact12missing required-key reasons,
 source/date/field/cursor/provenance and smallest recovery plan.
-Do not assume source-unavailable is venue bug. No whole payload rescan,
-imputation/acquisition/API before exact bounded plan. Existing fresh21:40 first.
-Kepler temporary disjoint current-qqq-spy-reclaim-later-input-readiness-
-20261030-v1 <=120active/3600elapsed: metadata-first QQQ/SPY actual M1 for
-43sessions2023-10-02..11-30/1770origins/full held marks. Direct Galileo/Fermat
-schema exchange. One intake/projection/savedverify only after native plan and
-family adoption; no invented minute bars from D1 or global company hold.
+Inventory Source7a68/FINAL0ec7 closed50upper:12keysCODXFeb/BKYIJun,
+all5fields absent inside acceptedMODE1 pages, not17UNAVAILABLE source scopes.
+New named capture current-full187-exact-required-mark-gap-capture-20261030-v1
+Sourceb09d5b09 ACTUAL20:45:40..44:one tokenPOST200/twoGET200/4.775862s/
+0retry/oneclient; required1/12known, workerclosed/SDK ownerdirsabsent.
+SeparateM/us_equities/kis_paper_private/full187-exact-required-mark-gaps-20261030-v1,
+no oldf6 patch/DataVersion equivalence/imputation/oldtrial or same-query retry.
+Parent official issuer/SEC facts show requestedkeys overlap CODXJan14..Mar11
+and BKYIMay13..Jul8 reported Nasdaq suspensions. URLs in HANDOFF. Historical
+alwaysNAS assumption challenged; KISinternalcause/OTCcoverage still not proved
+(BKYIJun12 returned). Future dated eligibility needs as-published evidence,
+not future missing-price survivor filters or an old outcome regrade.
+
+Kepler later43session metadata9cf4 closed30upper: source not established,
+known block endsSep29,2023; 2026block not substitute. No market dispatch.
+New metadata-only dailyETF baseline readiness <=90active, no payload/API.
+Fermat separate2026ten-session C120 INPUT-SUPPORT preparation, not outcomes/
+marks/model/costcells. Exact roles/native/caps before any actual intake.
 
 ## Completed Actual Roles
 

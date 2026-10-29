@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct29UTC20:25 integration.
+2026-10-30 KST / Oct29UTC20:59 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -71,12 +71,47 @@ reader.read276 record_scope frame, not private exception values. No regrade.
 Old read's20:00 expiry did not revoke standing readonly reconciliation authority;
 new20:05..21:05 scope observes actual20:12 time, never backdates entry validity.
 
-Dewey owns source-qualified native/session/ROUND first cause: policy registration
-without a bound decision. If public records are insufficient, prepare a bounded
-read-only KIS Paper account/funds/orderability readiness probe through existing
-named loader/adapter. No blind repeat of consumed private readers.
-Lovelace hands existing Execution source facts directly to Dewey, then owns
-new pure event kernel. Parent owns actual integration and any new activation.
+Dewey current-memory100-native-entry-readiness-diagnosis-20261030-v1 now
+binds actual entry run152d97b7/visitc0d5 to failure476895b5:
+worker_wall_exhausted at19:34:00.020078UTC, transport._exchange567,
+native stageNATIVE_EXECUTION; validated native result absent. API/effects
+UNKNOWN, not zero. Exact recovery9b5e4a86/result29508a73 says
+no_retained_pending/nativecalls0/reportedGETPOST0 in THAT recovery only;
+source requires record and active value before skipping core. This does not
+prove the earlier entry made no calls or completed. Static actual execute=True/
+kis_paper config path is present; no submit-disabled flag found. Actual runtime
+risk/control contents remain unobserved. Existing inactive-record guard is not
+proven the historical cause. Diagnose source/owner guard latency with bounded
+invented/public-source timing; do not remove checks or enlarge clocks by guess.
+Reuse qualified failure projection in the NEXT source so absent sessions cannot
+erase the child failure. No blind read/replay of consumed opportunities.
+
+Lovelace now owns distinct current-paper-readonly-native-health-probe-
+20261030-v1: existing scoped Paper loader/adapter, max1client/6GET/1tokenPOST
+only if needed/0retry/60s/max2symbols, native+emitted checks before actual;
+no Data quote/order/Task/bank writes. New adapter command needs Parent review.
+Coordinate actual issuer with Galileo's2GET capture; no new permission hold.
+ACTUAL current health is now COMPLETE, not awaiting dispatch:
+technical-r1/actual-once/RESULT.json
+d6464fed4f649498c10ebbde77a21c5399e25f2e4dd87aed4ae8e4c568cd20f9,
+Source2af67a84809ef9be69591400a01ae8ea2b608281416ce423ca9712c94dd87ebb,
+native50b7b8b8/COMMAND22e33cf0/Parent REVIEW in sibling
+current-paper-readonly-native-health-parent-activation-20261030-v1.
+At20:58:24..30UTC: one tokenPOST/sixGET/sevenresponses,6.644507s,
+native typed NASD/NYSE/AMEX holdings+openorders complete, four positive holding
+rows/zero open orders. QQQ/NASD and IBM/NYSE reference-funds typed complete.
+No freshquote: orderability freshness UNKNOWN, sequential not atomic/fullrisk.
+No owned-fill/fees/settlement/PnL or F9 release. No order/Dataquote/bank/Task
+mutation. Source stable. Parent21796 and native23888 joinedexit0/Jobempty;
+actual-CLOSURE.json aa2c8083f631993f8d9549d64a21cd0c087fc45701165e7696a522745ded8884.
+Namespace CONSUMED, never repeat. This is current API health, not proof of
+historical19:30 cause/current-owned fills or authority to clear reservations.
+Parent owns shared integration and any actual activation.
+
+Bounded actual public-source timinge2c64/fbbf:1414files/24.67MB hashes each
+~0.033s, total0.495s; actual Windows census latency NOT measured/mock replies.
+No evidence supports source-hash cache weakening. Inventory remaining source/
+owner/token/wire delays and retain safe next-runtime failure stage/frames.
 
 ## Research: Completed, Not Running Or Repeatable
 
@@ -121,12 +156,43 @@ Next finite proposal:
 current-dense-h1-reclaim-event-contract-preparation-20261030-v1/CONTRACT.json.
 One causal volume-confirmed QQQ failed-breakdown/reclaim with SPY confirmation;
 same information/different inductive bias, not new alpha or threshold rescue.
-Later43session M1 roles and native chain UNQUALIFIED, no market dispatch yet.
-Lovelace pure kernel/native invented handoff <=180active; Kepler later Data
-metadata readiness <=120active; Fermat final contract/family900 cap/adoption.
-Old FIT/INNER calibration only, no consumed DEV targets reopened.
-Galileo investigates exact12missing D1 required keys metadata <=120active.
-No active GPU training claimed; use ready useful campaigns, not utilization fits.
+Later43session M1 source NOT ESTABLISHED in checked metadata (Kepler9cf4,
+30upper closed): retained block ends2023-09-29, 2026block is not a substitute.
+No43session market dispatch or oldDEVtarget reopening. Pure event kernel is
+code/native-ready: technicalSourcefcb5ffac/native27plusdelta5161427a/fullcausal
+0bcc9fe5/CALLBACKFINALef756490, allworkersclosed120upper. Stored REJECT was a
+verdict-parser defect; exact raw advisory is REVISE. Preserve old outputs;
+correction2df9902b/14anchored-parser tests, no review rerun. Fermat adjudication
+keeps original clock and source-limited claims, not performance qualification.
+Fermat selects separate retained2026ten-session C120 INPUT-SUPPORT pilot only,
+no outcomes/marks/calibration/fit/costcells; source/native not assumed ready.
+
+Galileo exact12gap metadata Source7a68/FINAL0ec7 closed50upper: CODXFeb2026/
+BKYIJun2026, all5fields absent inside acceptedMODE1 page ranges. Not the17
+source-unavailable scopes and no venue-cause proof. New separately scoped
+current-full187-exact-required-mark-gap-capture-20261030-v1 adopts2GET/1client/
+0retry/45s/8stimeout/2spacing/300freshPOSTfloor/newnamedM+A roots.
+ACTUAL-RESULT Sourceb09d5b09:20:45:40..44UTC tokenPOST200/twoGET200,
+4.775862s/oneclient/0retry, one of12required dates known. New source vintage
+separate, actual worker joined/Jobempty/SDK ownerdirs absent. No quiet oldf6
+patch, imputation, DataVersion parity, same-query loop or old-cell retry.
+Parent official-source context: CODX issuer filing says Nasdaq suspension
+Jan14..Mar11,2026; BKYI May12 SEC8K says May13 suspension/OTC same ticker,
+July7 issuer release says Nasdaq resumedJul8. Requested Feb/Jun keys overlap
+those reported suspension intervals. This challenges always-NAS historical
+eligibility, NOT proof of KIS internal cause, no OTC trading or zero prices;
+BKYIJun12 was actually returned. No retrospective performance rescue. Future
+date-aware eligibility needs published-before-decision evidence, not a filter
+selected from missing future prices. Official sources:
+https://ir.co-dx.com/sec-filings?action=view&filer=Ticker%3ACODX&item=1003935&pagetemplate=basic
+https://www.nasdaq.com/press-release/co-diagnostics-regains-compliance-nasdaq-listing-requirements-2026-03-10
+https://www.sec.gov/Archives/edgar/data/1019034/000143774926016455/bkyi20260512_8k.htm
+https://www.sec.gov/Archives/edgar/data/1019034/000143774926022880/ex_985172.htm
+Kepler's independent SDK negativesed465/c886 closed35upper: unfilled retention
+intentional; a lost return can coexist with a local fill, so started-only stays
+UNKNOWN. Old actual MSE first cause remains unproved. New metadata-only daily
+ETF capital-baseline readiness <=90active is a candidate, not another campaign.
+No active GPU training claimed; use useful ready work, not utilization fits.
 
 Other completed TCN/LSTM29/36, GRU, Transformer, CatBoost, StudentT,
 asset attention/direct portfolio, TimesFM/Chronos and blends remain closed with

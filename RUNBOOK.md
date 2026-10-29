@@ -32,7 +32,19 @@ This and12bb/517b/68fa/0ae9 reads are CONSUMED, NEVER execute-private-read again
 Only inert source checks/read categorical result; no recovery observe() as reader.
 Two-path public output expectation repair20e8 preserved financial guards.
 Current next work is native/session firstcause and minimum tested recovery,
-not another blind private read. Dewey named readiness scope in execution.md.
+not another blind private read. Entry476895b5 timed out19:34UTC;
+recovery29508a73 no_retained_pending/0nativecalls applies recoveryONLY.
+Native public-source hash timing~0.033s/check does not justify guard changes;
+actual Windows ownership latency unmeasured.
+
+Current readonly account native-health is COMPLETE/CONSUMED:
+A/execution/current-paper-readonly-native-health-probe-20261030-v1/
+technical-r1/actual-once/RESULT.json d6464fed4f649498c10ebbde77a21c5399e25f2e4dd87aed4ae8e4c568cd20f9,
+Source2af67a84/native50b7. Actual20:58:24..30:1POST6GET7responses/6.6445s,
+threevenueholdings/openorders typedcomplete/4positiveholdingrows0openorders,
+QQQ/IBMreferencefunds complete. No freshquote/orderability/fullrisk/ownedfills/
+fees/settlement/PnL/reservation release. Allworkersjoined0/Jobempty/SourceStable.
+Never repeat this actual-once namespace or use raw responses/account values.
 
 Original financial duties:
 F9 current20-equalrank4-paper-20261018-v1 UNKNOWN-HELD, exact volume/book/
