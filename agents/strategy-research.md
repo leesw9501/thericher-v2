@@ -1,109 +1,57 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-30 KST / integrationOct29UTC16:33. A=D:/thericher-v2/model-artifacts.
-Parent MD/Git. Engine owns final targets/splits/costs/fits/interpretation.
-No broker/private/budget authority. New proposals end in a bounded experiment
-or concrete rejection, not an unbounded reading list.
+2026-10-30 KST / integrationOct29UTC20:25.
+A=D:/thericher-v2/model-artifacts. Parent MD/Git; Engine final targets/splits/
+costs/fits/interpretation. No broker/private/execution-risk authority.
 
-## Latest Source Work / Consumer
+## Current Executable Proposal
 
-Kepler capacity replay kernel COMPLETE Source2c6d9d09/focusedSource33efc729:
-77focusedPASS/20newcases/ClaudeKEEP/328upper/allownedworkersclosed. Uses actual
-LocalPaperBroker/EventStore, one synthetic originalB/10, pendingonce/all-inowned
-entrycost/cumulativeclosedloss/no profit expansion, exact lot exits, restart
-idempotency and unknown marks -> NAVnull. No market intake/model/broker call.
-Consumer Fermat prepares realistic full-capital replay with dated Bars and
-frozen scheduling/sizing, not endpoint cohort averages. Parent full verification
-5d916068 PASS19597/26knownSKIP/8workers/Ruff/3Compose; source tests do not
-establish market/Paper performance.
-Next Kepler max2 distinct ready information hypotheses under
-current-next-information-hypotheses-20261030-v1, not another architecture grid.
-Use exact existing inputs/causal formulas/strongest kill/finite executable
-handoff. Historical H1 rule support and later10row challenge FAILED, not rescue
-thresholds or a blanket ban on indicator/regime/volume research.
+One volume-confirmed QQQ failed-breakdown/reclaim with SPY confirmation:
+current-dense-h1-next-information-proposal-20261030-v1:
+Sourcef3f15360/PROPOSAL-FINAL55cdf3cf/ADJUDICATION64193c27(REVISE),104upperclosed.
+Contract current-dense-h1-reclaim-event-contract-preparation-20261030-v1/
+CONTRACT.json: fixed120M1 context90/event30, reclaim prior low, volume
+confirmation and causal SPY check. Same information/different inductivebias,
+not new information/alpha or a repaired old model.
+Later43sessions2023-10-02..11-30 Data/native unqualified, no actual dispatch.
+Clock-gate expected prior-notional control/QQQlong/cash and2costs;
+unknown/undefined masks separate, no target-dependent support filtering,
+no threshold rescue or consumed DEV reopening.
 
-Current14:01UTC assignment: Kepler current-complementary-hypothesis-selection-
-20261029-v1,240active/7200elapsed, max2 mechanisms and ONE executable Engine
-handoff to Fermat. Prefer distinct information/target/horizon rather than more
-correlated architectures after+.863 portfolio correlation. Official sources,
-license/data scope/strongest kill and a concrete pure kernel where useful;
-zero actual market/model/broker/Task calls. Not an unbounded reading list.
-This package COMPLETE Sourcec353096d/MAIN-CALLBACK,126.008upper/allworkers
-closed/ClaudeKEEP. Recommended H5 cost-survival probability FP64 netpayoff5>0,
-unchanged4459 features/GRU32/EWMA20Top5; volume-conditioned H1 reversal standby
-because exact full100H1 targets/controls are not yet qualified. Retained .05*head
-must be undone once only if that scaled model implementation is used; a newly
-unscaled logits class must not multiply again. Engine owns native/fitting.
+Lovelace purekernel/current-dense-h1-reclaim-event-kernel-preparation-
+20261030-v1 <=180active; native invented real producer/file/typed parser/
+quantity/capital and causal/missing/clock/pending negatives.
+Kepler temporary Data/current-qqq-spy-reclaim-later-input-readiness-
+20261030-v1 <=120active metadata-first later role availability, directschema
+exchange Galileo/Fermat. Fermat final finite family/caps/adoption.
+Strongest kill: unqualified data, unsupported calibration/thin support,
+terminal/capacity unknown, no costed growth/risk advantage vs aligned controls.
+No timing/beta alpha from merely lower gross exposure.
 
-Next scoped handoff: Galileo source70e8/235c identifies existing2ETF true1m;
-Parent assigned C30014:31ET QQQ-target/SPY-context ->15:31ET RAW_LOG_H1 role
-materialization. Kepler defines volume-conditioned reversal/matchedQQQH1/cash
-controls and pure kernel within its separate60active extension, max2hypotheses,
-no parameter grid. This is not full100H1/dailyH5/independent alpha. Fermat
-continues daily cost-survival preparation independently; no duplicate fit.
+## Completed Useful Engineering
 
-A/research/current-aemd-corporate-action-source-check-20261029-v1:
-Sourceca82a0bc/RESULTe8e7544a/ClaudeKEEP,134.193364upper/allworkersclosed.
-Nasdaq ECA2026-546 and SEC8K005850 confirm1new-for5old reverse split,
-legalJul31/tradingAug4. SECpressrelease007206 announces conditionalSep17merger,
-not completed conversion. Exact URLs/limits retained in EVIDENCE23e83c91.
-CandidateH5 overlap is NOT exact AEMD-held overlap or proof of vendor error.
-KIS official backtester usesMODP1 as adjusted-price request; actual server
-adjustment formula/AEMD correctness/Paper custody handling INDETERMINATE.
+CapacityPaperReplay integrated2bfffcd9/focused77PASS; actual LocalPaperBroker/
+EventStore, one synthetic B/10/pendingonce/losses/no profitrefill/exactexits/
+restart/unknownNAV. Source tests not market/Paperperformance.
+Linux scaling current-native-capital-replay-scaling-prototype-20261030-v1:
+Source1f73/attempt481f/ADOPTION5be0,15900invented lots/100306events/
+28447fills33.382s/fresh originalSDKcold10.707s/22checks/all19owners3CIDsclosed286.
+Research scratch ONLY, no private Paperstore move.
 
-Engine attribution0281/d2c6 found AEMD66.5055% of net subset contribution.
-Separate held-adjustment diagnostic below is complete. No old-study regrade/outlier deletion/
-numeric correction by guesswork/Paper ban. Public event alone is insufficient.
+## Durable Research Lessons
 
-Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
-20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths
-closed. One exact membership projection: six known AEMD-held windows plus one
-originally unknown window, none crosses the identified Jul31/Aug4 split dates.
-Zero conditional bar intakes. Sep11..17 overlaps merger-agreement announcement
-only; vendor adjustment/gain causation remain INDETERMINATE, dated cached-vector
-parity WITHHELD. No old regrade, outlier deletion or Paper ban.
+Earlier hypothesisc353 led executed cost-survival fit26epochs: proper score/
+downside MET but utility FAILED. TCN/LSTM29/36 both economiccriteriaFAILED,
+directportfolio33 FAILED, assetMHA utilityMET/riskFAILED, StudentT density/risk
+MET/utilityFAILED; no identical repeats. DenseH1 TCN13+Ridge finished but
+four0entry cells NONINFORMATIVE/whole primaryWITHHELD afterreadoutcap.
+TimesFM/Chronos and transformer/tree/ensemble studies already exist; unknown
+pretraining/reused targets limit comparative claims, not isolated runtime study.
+Individual profitability is not prerequisite for exploratory joint composition.
+Learned gates need chronological OOF, not in-sample expert predictions.
 
-Fixed50:50 MSE/asset-MHA PORTFOLIO fusion A/research/current-mse-assetattention-
-fixed-portfolio-fusion-20261029-v1 Source0b3c5f75/FINAL3a42e8d6/RESULT12c6eff7
-COMPLETE190upper/all3Jobs6PIDbirthsclosed. One saved action transaction, one
-cached payoff-vector intake/two cost cells/zero fits, forecasts or baseline
-replays. At10bp utility.03309927>.03268337 but downside second moment
-.00070606>.00038416: primaryFAILED. Correlation+.86254 does not support negative
-covariance. Conditional endpoint contribution10.035689%, not full growth/DD/
-M2M/PnL/alpha. No rescue blend grid/default/Paper change.
-
-## Completed Proposals / What They Taught
-
-Directportfolio067b/9811 cites official Luxenberg/Boyd and neural portfolio
-papers, no runtime replacement. Actual0488/1af6 one33epochGPUfit/BEST9
-FAILED utility/downside,458.531148upper/allclosed. Joint loss+allocation change,
-not clean loss ablation. No rescue grid/extra fit.
-Asset-MHAa328 utilityMET/downsideFAILED; StudentTc8a4 density/downside passed/
-utilityFAILED. CatBoostb0de allprimaryFAILED. These are completed, not queued.
-Transformer201a/322e rank comparison MET on reused INNER; no alpha claim.
-
-TimesFM10e9/fb6c32matched bothcriteriaMET, q50MAE worse than persistence.
-Exact trusted dated2025 safeweights2f776/SDK6bd804/existingTorchCUDA; noJAX.
-Current5d23/ae52 UNALLOCATED17/NYS9cash/no renorm/native20:45nonparity.
-Foundationtreec86e primaryvsHALF MET but all8DEV aliasTimesFM; no conditional
-expert gain or qualified fold-OOF/independent selection. No repeated fit.
-
-Fixedscorefusiond27 bothFAILED, not a general ensemble ban. Synthesis e208/88db
-rejected specific50:50Chronos/reversal portfolio-DD bound; averaging scores
-differs from portfolio averaging. Rulegate da756 rejected, EXIT6668 allHOLD alias.
-Individual profitability is not a prerequisite for exploratory composition/Paper.
-
-Next-date kernel231a/065a now qualifies real397/GRU/proposal ABI with invented
-weights,160upper/all4CPU CIDs29childrenclosed. Future actual point remains
-unbound; no original checkpoint/market input or Paper promotion.
-
-## Data / Next Research Direction
-
-Adapter94e9/8fc4 plus101facade61a9 native producer/file/real-consumer checks
-completed. Actual sameDataTask302a/6656/0d74 now100stocks+SPY/MODP1;
-first scheduled publication21:40UTC remains unobserved. No retag/refit/impute.
-Existing pairMODP0 is not same-mode fallback. Literal mode alignment is not
-numeric/vintage/CA/PIT parity. Training4459/currentlisting/corpus limits remain.
-Next distinct hypothesis should address demonstrated failure/concentration,
-with one executable frozen trial, not duplicate a completed architecture merely
-because GPU has capacity. No new permanent role/indicator MD or data dependency.
+AEMD public split source-checkca82/e8e7 and held diagnostic7dbf/2156 complete:
+sixknownheldwindows plusoneunknown do not cross identified split dates;
+merger announcement is not completed conversion/vendor correctness proof.
+No outlier deletion/regrade/Paperban. Historical sources/results in Git53ef9beb
+and exact artifacts, not another current reading list or report platform.
