@@ -264,24 +264,25 @@ Quiet launch means tested non-interactive path, not HiddenTask metadata alone.
 
 ## Verification / Git
 
-Latest A/verification/current-daily101-model-input-integration-20261029-v1:
-SOURCE4484ff9076f464379c999de9452133fca7a70dda2755d95c1e5017a0ae4248d5;
-RESULTc13013e3636940ed475048722a26ad2d9fd965b5915a03f9c16859cae7d5bcf6.
-188serialPASS22.13s/19577fullPASS26knownWindowslinkSKIP/35warnings/
-19603items/8workers394.00s/Ruff/default+research+accountingCompose.env.example.
-Session44287 exit0/CLOSED03:55UTC; source stable after actual101update03:57UTC.
-Prior07eb/dab60 retained, not latest active sessions. No mutex/lease/process/
-counts/skip/verified-nonreparse-cleanup bypass.
+CURRENT authority A/verification/current-capacity-replay-integration-20261030-v1:
+SOURCE1536d24d6b3520e544ade10ed5e0330988a54074067dbda89584ec95cc8c9a95;
+RESULT5d9160686944c819eb7132e93eea72fc26612537119472b9817590a75360e16c.
+1416protectedfiles/378serialPASS1knownSKIP26.92s/19597fullPASS26knownWindows
+linkSKIP35warnings/created8/8workers[19623items]/397.02s/nativehelper0/
+guardedcleanup/Ruff/default+research+accountingCompose.env.example.
+Session47151 CLOSEDexit0. Earlier4484/c130/1414 does not cover capacity code.
+No mutex/lease/process/count/skip/verified-nonreparse-cleanup bypass.
 
 Docs-only exact protected-source check:
 
 ```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File 'D:/thericher-v2/model-artifacts/verification/current-daily101-model-input-integration-20261029-v1/source.ps1' -Mode verify
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File 'D:/thericher-v2/model-artifacts/verification/current-capacity-replay-integration-20261030-v1/source.ps1' -Mode verify
 ```
 
 External D: code/output requires its own native/actual checks; repo tests cannot
 validate it. Material Execution/shared-control recovery requires AGENTS fresh
 serial/full/Ruff/threeCompose. Package commit is not company completion.
-Parent final05:19UTC protected4484 check PASS; fresh Ruff/threeCompose/diffcheck
-PASS. Unchanged repo code reuses c130 full authority;231a code/native pointers
-and inert entrypoints checked separately, not by that repository suite.
+Parent protected1536/1416 exact check PASS after current docs/external-only
+work. External r2 reader4705 real ABI/native/Claude plus actual68fa admission/
+stability were separately checked; denseH1 actual43b8/b100 12refs rehashed,
+no duplicate model/payload/oldreadout. Those are not inferred from repo tests.

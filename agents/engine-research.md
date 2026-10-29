@@ -14,12 +14,27 @@ canonical, never synthesizeM1 fromD1 or silently change old contract.
 Check if saved full187 outputs support all-window reuse before another32subset
 comparison; no restore/forward unless separately frozen and needed.
 
-Current denseH1 Data complete MAIN620adafc/READYdc47ac7c/Sourcebc7b0cc1,
+Current18:43 denseH1 ACTUAL family COMPLETE/PARTIAL, not still awaiting driver:
+A/research/current-qqq-spy-dense-h1-development-20261030-v1/ACTUAL-CALLBACK.json
+b83513a6; Source43b841f9/FINALb10094c5/CLOSUREa8a3fa81. One actualCUDA TCNfit
+13epochs/BEST1/546updates/27.940145wholephase/144703488peakGPUbytes and one
+CPU Ridgefit6978rows/167sessions/alpha10 completed. Fourforecastarchives/
+30predictionbatches/1806DEVkeys sealed4c3e3521 before outcomes. Readout stopped
+in5th QQQLONG10cell after285s at worker.clock PHASE_WALL_CAP. Four completed
+TCN/Ridge10/20bp cells have0entries; supportNONINFORMATIVE, fullprimaryWITHHELD.
+No model/forward/readoutretry. All28CLI/4CID/4rootsclosed,638.351416activeupper.
+Parent independently rehashed12advertised refs, zero payload/model rereads.
+Kepler now largeinventednative replayprofiling/pureprototype, not oldreadout.
+Lovelace newfinite source-only next-information/decision proposal fromFIT/INNER
+diagnostics; noDEVtarget reopening/threshold rescue/numericaltrial until new
+Fermatcontract. CurrentGPU marketfit not inferred from completed13epochs.
+
+Data complete MAIN620adafc/READYdc47ac7c/Sourcebc7b0cc1,
 251sessions10470keys/6978FIT1686INNER1806DEV/sixINNERinputUNKNOWN, allclosed.
 Fixed120M1+5m/10m/five-minute origins/60mOPENtarget, not10470 independent
 outcomes/PIT/freshreplication. Model technical-r1 Source54046b7f/
-qualification19379672/closurefa6d1c31: real SYN AdamW8steps/checkpoint/Ridge,
-zero marketfits; actual forecast/archive parser delta/finite driver remain.
+qualification19379672/closurefa6d1c31: retained SYN AdamW/checkpoint/Ridge proof.
+Those preparation proofs remain distinct from actual family43b8 above.
 Fermat final contract/Steward; Lovelace numerical executor. Max1GPU+1CPU after
 exact qualification, no launch inferred. Full187 trueD1 role codec4b4cc6a1/
 33119fdc/native12 is source-ready, not actual projection. No fabricatedM1.
@@ -178,12 +193,22 @@ Old434f retains original date. No actual forward/refit authorized by native smok
 
 ## Research Queues / Durable Knowledge
 
-Short: actual Data->397->231a kernel handoff after publication and existing
-unallocated proposal integration. Issuer diagnostic and fixed blend are CLOSED.
-Depth: no currently frozen ready GPU fit; choose a distinct justified hypothesis
-with explicit
-data/target/split/baseline/costs/maximum epochs+active+elapsed+fit/evaluation caps.
-GPU idle after completed jobs is not a permission hold or reason for dummy work.
+Short: NEW full187 TRUE D1 shared-capital analytical campaign under contract
+8f14c958. Preparation821346a1/FINALde33d043 is closed85/120upper, not an actual
+replay. Exact Data codec4b4cc6a1/33119fdc/native12 ready. Fermat owns new actual
+forecast/action/priorquote/quantity/CapacityPaperReplay chain; Galileo may make
+ONE actualcanonical projection after source/native qualification. Carry prior85
+once INSIDE1800active/10800elapsed; max1savedforecast/1compile/6cells,0fits/
+restores/forwards/search/retry. All187/warm23/calendar tails/unknowns retained,
+no fabricatedM1 or futureOPEN sizing. Old32 studies unchanged.
+
+Depth: denseH1 family43b8 is consumed/closed as above; no duplicatefit to use
+GPU. Next useful hypothesis must address information/decision/estimand rather
+than forceallcashmodel throughlowerthreshold. Lovelace source-onlyproposal,
+Fermat finalnewcontract/Steward, Kepler measuredreplaythroughput repair.
+Future daily101 point remains separate21:40 publication dependent, not a reason
+to stop ready research or Paperrepair. Prepared optimizer/parser groups never
+repeated merely because actualfit completed quickly.
 
 Old Chronos8df/fine-tune74f5(BEST0), rankloss766c, H20eec7(allcash),
 rulegate da756(rejected), EXIT6668(allHOLD) and synthesis e208/88db stay closed.

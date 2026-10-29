@@ -8,7 +8,14 @@ paths/leases; measure actual free/projected peak VRAM before new dispatch.
 
 ## Actual Resource State / Ready Work
 
-Current18:20 no newmarketGPUfit claimed. DenseH1 Data READYdc47/bc7b/620a,
+Current18:43 denseH1 actual family43b841f9/FINALb10094c5 completed oneGPUfit
+13epochs/BEST1/546updates/27.940145wholephase/144703488peakGPUbytes plusone
+CPUfit; all28CLI4CID4roots/leaseclosed638.351416upper. Fourforecastarchives
+sealed; readout5thcell285stimeout/fullprimaryWITHHELD/noninformative0entries.
+No duplicatefit/forward/readout. GPU snapshot18:40:42 shows2percent/1929MiB
+of24564MiB/37C, NOT actualtraining or a resourcepermissionhold. NextFermat
+finitehypothesis fromLovelace; Kepler profilesinventedreplay bottleneck.
+Earlier18:20 preparation: DenseH1 Data READYdc47/bc7b/620a,
 251sessions10470keys; model technical-r1 Source54046b7f/native19379672/
 closurefa6d1c31 has realSYN8AdamWsteps/twoCUDA CIDs/one toyRidge, not market
 training. Exact forecast/archive parser and finite driver remain; then measure
@@ -26,9 +33,14 @@ TCN29epochs/BEST5 peakreserved975175680bytes, LSTM36/BEST12/1080033280bytes,
 These are actual CUDA fits, not current GPU activity or evidence of convergence.
 Both economic criteriaFAILED; keep results/debits. H1 laterb17f/7f17 closed
 oneCPU restore/forward10rows/no fit; no active numerical job inferred.
-Next Fermat source-ready capacity replay contract, Kepler information proposals,
-Lovelace input readiness; launch useful new GPU work once its finite contract
-and actual headroom/native checks pass. No global hold from Paper actor fault.
+Current18:31 checkpoint: GPUleaseABSENT, last host34928/birth134377712282223064
+and its CID positivelyclosed. Not currentGPU usage or an activefit claim.
+DenseH1 archive-r2 Source98c55601/native35f2/closure4de0 is closed; only finite
+marketdriverSource/launcher remains. ClosedData+prep259.580119once inside
+1800active/14400elapsed family, not refunded. Fermat measuresactualheadroom/
+coordinatesoneGPUfit+oneCPUbaseline when ready. New full187 trueD1 CPU replay
+is separate1800active/10800elapsed/carry85preponce/max6cells/0models; no extra
+GPU lease, same originalresearchscope. No global hold from Paper actor fault.
 Parent CPU full integration47151 CLOSED exit0/RESULT5d916068:19597PASS26known
 SKIP/created8/8workers[19623]/397.02s/guardedcleanup/Ruff/3ComposePASS.
 Earlier resource projections below are historical, not running workers.

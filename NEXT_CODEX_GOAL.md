@@ -46,8 +46,14 @@ This actual read/namespace is consumed; never rerun or release F9/reservations.
 
 Dewey now owns exact source-bound public native first-cause inspection: why
 the two operational native visits did not yield a bound policy/book record.
-No broker/Task/private reader invocation merely to inspect it. Then prepare
-the smallest reversible tested correction, not the same broken opportunity.
+No broker/Task/private reader invocation merely to inspect it. Firstcause
+Source4031c895/FINAL2faa055d now proves host17:35/17:42 versus mounted route
+6582 clocks14:20/14:27, exact check_clock rejects six tested instants. Historical
+native exception frame remains UNRETAINED, NULL public call counts notzero.
+Dewey new immutable coupled-host-route compiler/proof <=360active/3600elapsed;
+Ohm disjoint safe failure-projection correction <=180active/3600elapsed.
+Freeze NEW window only AFTER source/native/Claude readiness and fresh owner/
+risk facts, originalinputvalid20:00. No old1728 mutation/Run or exit change.
 
 Historical reader preparation Source6f7d8876 under
 A/execution/current-memory100-window1730-result-readiness-20261030-v1
@@ -78,8 +84,13 @@ consumed Task or roll its window. Original Nov4UTC20:40 exit remains unchanged.
   A/data/current-qqq-spy-dense-h1-input-readiness-20261030-v1/MAIN.json620adafc,
   READYdc47ac7c/Sourcebc7b0cc1/nativeb9555b6b/closure3e9a3064;251sessions,
   10470keys,6978FIT/1686INNER/1806DEV, six input-unknown INNER keys retained.
-  Lovelace/Fermat own real optimizer/checkpoint/handoff proof then frozen
-  max1GPUfit+1CPUbaseline with no numerical retry/grid. Do not infer launch.
+  ACTUAL developmentSource43b841f9/FINALb10094c5 nowclosed: oneTCNGPUfit
+  13epochs/BEST1/546updates/27.94wholephase plusoneRidgeCPUfit; fourarchives
+  sealed4c3e. Readout5thcell285stimeout; fourTCN/Ridgecells0entries,
+  noninformative/fullprimaryWITHHELD. All28CLI4CID4rootsclosed638.351upper.
+  Neverrepeatcompletedfits/forwards/readout. Lovelace newfinite information/
+  decisionproposal; Kepler inventedreplayprofile/prototype; Fermat finalnew
+  contract/Steward. Parentverified12exactrefs, no additional marketdecode.
 - Kepler Strategy: resolve concrete pure producer/consumer mismatch if any;
   no new report/indicator platform or unbounded architecture grid.
 - Existing daily101 Task next Oct29UTC21:40/Oct30KST06:40 is unchanged.

@@ -27,6 +27,11 @@ path-stat/handle-fstat comparison, despite matching size/hash. Preserve both
 emptyactivationnamespaces/failure. Technical-r2 Source4705/native540b/ClaudeGO
 fixed measured st_modeABI only, exactidentity/hash/stability remained. Parent
 freshconstructorjoined0/activation7846 and exactnetworknone/allRO read passed.
+Currentfirstcause4031/2faa COMPLETE: host1728 moved17:35/17:42 butroute6582/
+IDENTITY3f3d still14:20/14:27. Exactcheck_clock sourcefunction sixcases rejects
+newtimes; historicalnativeframeNOTRECOVERED, publicoutcomescallcountsNULL.
+Dewey new coupledhost/route immutablecompiler/nativeproof, Ohm safefailure
+projectionfix, not rerun1728 or clear reservations. Originalexitunchanged.
 No consumed15:01 reader reuse, TaskRun, inferredzero or reservationrelease.
 Root...next-fixed-window.../window-1730/runtime-results/paired-entry.
 Same originalc5f5/dbde/basis/B10/F9/pending/exits remain. Ohm future-only
