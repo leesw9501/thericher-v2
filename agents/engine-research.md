@@ -1,27 +1,48 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / integration04:30UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / integration05:15UTC. A=D:/thericher-v2/model-artifacts.
 Fermat Engine/Steward. Parent shared MD/Git. Actual contracts own trial caps.
 
-## Current Diagnostic / Consumer
+## Latest Diagnostic / Fusion / Consumer
 
-New current-aemd-held-adjustment-diagnostic-20261029-v1,180activeSUM/
-1800elapsed, is assigned to Fermat. Freeze exact ACTIONS source/path/schema,
-one AEMD held-date membership projection; only on exact event overlap may it
-consume one explicitly pinned cached canonical event-window. Zero API/credentials/
-Task/private/fits/forecasts/payoff replays/outcome-selection/old regrade.
-Missing exact provenance -> INDETERMINATE. Price jump alone is not a unit/error
-proof. Claude challenges interpretation. No outlier deletion or Paper ban.
+Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
+20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths
+closed. One exact membership projection: six known AEMD-held windows plus one
+originally unknown window, none crosses the identified Jul31/Aug4 split dates.
+Zero conditional bar intakes. Sep11..17 overlaps merger-agreement announcement
+only; vendor adjustment/gain causation remain INDETERMINATE, dated cached-vector
+parity WITHHELD. No old regrade, outlier deletion or Paper ban.
 
-Issuer attribution current-mse100-retained-issuer-attribution-20261029-v1,
-Source028130ea/RESULTd2c6f304 COMPLETE190upper/all3CLI6PIDbirthsclosed:
-AEMD66.5055% of net/53.1739% of positive sum, top3issuers83.6001%.
-31heldissuers21positive10negative. Issuer/cohort/aggregate plus original65d/
-051c summary reconcile2e-12; dated cached cohort-vector parity WITHHELD because
-the exact reference vector was not retained. No extra intake to invent it.
-Primary-source checkca82a0bc/e8e7544a confirms1:5 reverse split tradingAug4,
-but candidate-window overlap is not AEMD-held overlap or vendor-error proof.
-MODP1 intended adjusted request is not server/custody action validation.
+Fixed50:50 MSE/asset-MHA PORTFOLIO fusion A/research/current-mse-assetattention-
+fixed-portfolio-fusion-20261029-v1 Source0b3c5f75/FINAL3a42e8d6/RESULT12c6eff7
+COMPLETE190upper/all3Jobs6PIDbirthsclosed. One saved action transaction, one
+cached payoff-vector intake/two cost cells/zero fits, forecasts or baseline
+replays. At10bp utility.03309927>.03268337 but downside second moment
+.00070606>.00038416: primaryFAILED. Correlation+.86254 does not support negative
+covariance. Conditional endpoint contribution10.035689%, not full growth/DD/
+M2M/PnL/alpha. No rescue blend grid/default/Paper change.
+
+Issuer attribution0281/d2c6: AEMD66.5055% net subset/top3issuers83.6001%.
+Aggregate/cohort summary parity established, dated cached-vector parity still
+WITHHELD. Event finding is not an adjustment/finality/independent-alpha proof.
+
+Next-date kernel A/data/current-daily101-nextpoint-chain-preparation-20261029-v1/
+model-abi-r4 SOURCE231a3c20d8b6e4793b4df06d5f50d3697e7f624567bb8018463cb14ce94a3d58,
+READY93bb92e5/FINAL065ab99b/native4e7305dc/closure48db4e0e COMPLETE.
+Real producer/saved397feature ROLE -> actual GRU/safe-NPZ coldrestore with
+invented weights -> real unrouted proposal codec passed; original13fields/
+100slots/masks/FITaffines once, explicit routes:null/date/source/mount mapping.
+160/300activeSUM includes original50once/all failures/cleanup;4invented CPU
+CIDs/all29guarded children closed. Six cumulative SYN restores/forwards,
+zero true checkpoint/affine loads, market payload/forecast/fit/API/Task.
+r1 unknown capture timestamps/r2 missing unrouted.py mount preserved; r3 passed,
+r4 additionally exercises actual codec import before forwards. No old regrade.
+Unactivated executable kernel/builder, NOT actual Oct30 point readiness.
+Future Oct29asof/Oct30decision DataREADY/ownerclosure/packet hashes remainNULL.
+After publication bind ONE exact input and separately freeze actual one-restore/
+one-forward contract; no stale decision retag, fakehash, broker allocation or
+new Task from this preparation. Reusable kernel code is not a claim to reopen
+a closed engineering clock. Exact operational commands are in r4/COMMANDS.json.
 
 ## Completed Campaigns / Do Not Repeat
 
@@ -69,9 +90,10 @@ Old434f retains original date. No actual forward/refit authorized by native smok
 
 ## Research Queues / Durable Knowledge
 
-Short: issuer/adjustment diagnostic, actual Data->397 feature handoff after
-publication, existing unallocated proposal integration; no duplicate readouts.
-Depth: choose a distinct justified hypothesis after diagnostic, with explicit
+Short: actual Data->397->231a kernel handoff after publication and existing
+unallocated proposal integration. Issuer diagnostic and fixed blend are CLOSED.
+Depth: no currently frozen ready GPU fit; choose a distinct justified hypothesis
+with explicit
 data/target/split/baseline/costs/maximum epochs+active+elapsed+fit/evaluation caps.
 GPU idle after completed jobs is not a permission hold or reason for dummy work.
 

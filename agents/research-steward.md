@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / integration04:30UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / integration05:18UTC. A=D:/thericher-v2/model-artifacts.
 Fermat coordinates GPU/custody; Parent MD/Git/activation.
 Project first GPU priority and useful concurrency approved. No app allowlist,
 user-process kill or driver change. One coordinator, separate campaign clocks/
@@ -19,16 +19,20 @@ All current numerical campaigns positively CLOSED, not running GPU claims:
 - Transformer201a25epochs/BEST1 and groupedcontextbb54025epochs/BEST1 closed.
 - CPU CatBoostb0de157updates/BEST56 and foundationtreec86e onefit also closed.
 
-Fermat now owns bounded AEMD held-adjustment diagnostic, not training:
-180activeSUM/1800elapsed/one membership projection/conditional one pinned
-cached event-window/zeroAPI/fits/forwards/payoff replay. It targets concentration
-risk in existing results, not GPU utilization. Other ready useful campaigns may
-run independently; no new fits from this assignment or old-clock refunds.
+AEMD diagnostic7dbf/2156 COMPLETE155upper/allclosed/one membershipprojection/
+zero bar intakes; no exact held split overlap. New fixed portfolio blend0b3c/
+3a42 COMPLETE190upper/allclosed/primaryFAILED/zero GPU/model calls.
+No active numerical worker remains; do not duplicate completed experiments.
 
-Immutable public model-peer component1d4/918c/READY5702 now qualified, serial
-consumer2fde/b372 verified54 hashes after cleanup. Old mutable historical edges
-stay WITHHELD. Qualified components are not adoption of an actual campaign or
-whole-machine Paper admission. Current reader-host prep contains no market fit.
+Ohm next-date model-ABI231a/065a COMPLETE160upper/all4CPU CIDs29childrenclosed,
+six cumulative invented restores/forwards/zero actualdata/checkpoints/forecasts.
+Future101 publication still unknown; kernel unactivated. All model fits and
+current engineering workers closed, no active GPU inferred. No utilization-only trial.
+
+Immutable public model-peer component1d4/918c/READY5702 qualified; serial2fde/
+b372 verified54 hashes postcleanup. Old mutable historical edges WITHHELD.
+Current reader hostcb8d/14d0 native qualified, no actual custody admission.
+None is an active GPU campaign or whole-machine permission grant.
 
 ## Custody / Recovery / Verification
 

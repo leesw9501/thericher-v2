@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-29 KST. Actual action update03:57UTC; current integration04:30UTC.
+2026-10-29 KST. Actual action update03:57UTC; current integration05:15UTC.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Quality limitations constrain claims/consumers, not unrelated Paper authority.
 
@@ -48,6 +48,24 @@ imply POST. Keep300floor/atomic+legacylocks/clientreuse/worker-owned next_due.
 Actual ad-hoc writers not fully attested; no inferred starvation or floor change.
 Current observerenabled is not proof of exact original restoration.
 
+Next-date kernel A/data/current-daily101-nextpoint-chain-preparation-20261029-v1/
+model-abi-r4 SOURCE231a3c20d8b6e4793b4df06d5f50d3697e7f624567bb8018463cb14ce94a3d58,
+READY93bb92e5/FINAL065ab99b/native4e7305dc/closure48db4e0e COMPLETE.
+Real producer/saved397feature ROLE -> actual GRU/safe-NPZ coldrestore with
+invented weights -> real unrouted proposal codec passed; original13fields/
+100slots/masks/FITaffines once, explicit routes:null/date/source/mount mapping.
+160/300activeSUM includes original50once/all failures/cleanup;4invented CPU
+CIDs/all29guarded children closed. Six cumulative SYN restores/forwards,
+zero true checkpoint/affine loads, market payload/forecast/fit/API/Task.
+r1 unknown capture timestamps/r2 missing unrouted.py mount preserved; r3 passed,
+r4 additionally exercises actual codec import before forwards. No old regrade.
+Unactivated executable kernel/builder, NOT actual Oct30 point readiness.
+Future Oct29asof/Oct30decision DataREADY/ownerclosure/packet hashes remainNULL.
+After publication bind ONE exact input and separately freeze actual one-restore/
+one-forward contract; no stale decision retag, fakehash, broker allocation or
+new Task from this preparation. Reusable kernel code is not a claim to reopen
+a closed engineering clock. Exact operational commands are in r4/COMMANDS.json.
+
 ## Completed Capture / Evidence
 
 Actual native100batch284b/bf0e/manifest64db:
@@ -69,8 +87,13 @@ CA/finality/totalreturn limits remain. Directdaily differs from derived1m.
 C3600aef QQQ/SPY2022-23 has251scheduled not251eligible;1m360/5m72/10m36/
 1h6/3h2 masks. Original monthlyOct30UTC21:00..21:30 unchanged.
 
-Fermat's separate AEMD held-adjustment diagnostic may consume at most one
-explicitly pinned cached event-window, conditional on exact held overlap.
-No API/new collection/payoff replay/old regrade/Paper hold in that package.
+Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
+20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths
+closed. One exact membership projection: six known AEMD-held windows plus one
+originally unknown window, none crosses the identified Jul31/Aug4 split dates.
+Zero conditional bar intakes. Sep11..17 overlaps merger-agreement announcement
+only; vendor adjustment/gain causation remain INDETERMINATE, dated cached-vector
+parity WITHHELD. No old regrade, outlier deletion or Paper ban.
+
 First101scheduled run is due, not already successful. Keep15% D: free/warn
 projected20%; last observed36.49%, remeasure before adding payloads.

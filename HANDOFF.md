@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-29 KST / Oct29UTC04:30.
+2026-10-29 KST / Oct29UTC05:18.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -23,6 +23,9 @@ Exact pair REGISTERED AND ENABLED, not a fill:
   Nov4UTC20:40/Nov5KST05:40, hard21:00UTC.
 
 Both enabled/state3/instances0/never-run at actual00:18:39UTC readback.
+Fresh source-safe Scheduler query05:17UTC reconfirmed both enabled/state3/
+instances0 with original KST next times; Data21:40UTC also enabled/instances0.
+No Task Run or broker effect from this status inspection.
 Quiet pythonw -I -S -B; original clocks/ACL/business identity retained.
 A/execution/current-memory20-bound-metadata-recovery-20261029-v1/technical-r7:
 coordinator SOURCE5813cd481bbd99e5b09f023aa1710340dd555f8d037ec9164a53254eee4d4509;
@@ -57,18 +60,24 @@ effect. Actual live collector/writer admission remains a fresh runtime fact.
 
 ## Result Reader / Inactive Serial Successor
 
-Reader core A/execution/current-memory100-result-reader-preparation-20261029-v1:
-READER-SOURCE7587ed97110b133cd6ca92601ea158390fc6fba2a36ac84245a76066b7b0c611,
-FINALdf8e24039275386456426daddd42ec3e111c207269ba1bebd51e52e056a187c5,
-FOLLOWUP-CONTRACTb8ffbcf5e368ec76837abb8f8010054a060225ce76a2b779480469b625ea3634.
-100slots/10targets/11cold parser cases/native admission matrix,135upper/
-allownersclosed/zero actualprivate reads. Default followup inert/current
-actual command NULL. Lovelace owns separate current-memory100-reader-host-
-integration-20261029-v1: quiet-pythonw identity/relevant financial writer census/
-positive paired-owner closure hooks/one future network-none allRO command.
-No actual read before14:34UTC and fresh exact admission. Missing future result
-is not positive closure. Journal at read time is not fresh broker holdings.
-No recovery-capable observe(), old consumed r2 or new recurring follow-up chain.
+Reader core7587/df8e is complete. Host integration
+A/execution/current-memory100-reader-host-integration-20261029-v1/technical-r1:
+SOURCEcb8d4e2dbe1ac9ea16ce8b8e17839491570c289ac4af97f57a43f22a4c66f8ab,
+QUALIFICATION14d054a1/Parent contracte0df2fe4/closurea39e7b16.
+Real quiet-pythonw/venv-parent caller, three transport admissions with invented
+custody and immutable postcleanup refs passed;12unique matrix cases/24case
+evaluations across two attempts. Additive COUNT-CLARIFICATION corrects old
+closure's11 invocation-label count without modifying the original proof.
+200upper includes original failure80once/all54Jobs55PIDbirths/2CIDsclosed.
+Original -I-S import failure occurred before readercreate; derivative now
+loads pinned module by path/hash, old Source/member bytes/debits retained.
+Parent independent --check-sources-only passed. Future command requires actual
+14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
+closure/complete relevant financial-writer census/exact joins/network-none allRO/
+before-after stability. No actual activation/private read/current custody
+admission performed. Missing future receipt is not closure. Journal inventory
+is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
+recovery-capable observe() merely offline.
 
 Serial derivative engineering-r3 under current-native-paper-serial-descriptor-
 derivative-20261029-v1: Sourcedea56a92/FINAL870f833c, two changed native
@@ -174,6 +183,24 @@ remain unmeasured. Current observerenabled is not old exact restoration proof.
 MODP auditce0477bd/86534243: literal alignment only, no numeric/vintage/CA/PIT
 equivalence. Foundation roleb992/7019 consumed16FIT8INNER8DEV, no repeat intake.
 
+Next-date kernel A/data/current-daily101-nextpoint-chain-preparation-20261029-v1/
+model-abi-r4 SOURCE231a3c20d8b6e4793b4df06d5f50d3697e7f624567bb8018463cb14ce94a3d58,
+READY93bb92e5/FINAL065ab99b/native4e7305dc/closure48db4e0e COMPLETE.
+Real producer/saved397feature ROLE -> actual GRU/safe-NPZ coldrestore with
+invented weights -> real unrouted proposal codec passed; original13fields/
+100slots/masks/FITaffines once, explicit routes:null/date/source/mount mapping.
+160/300activeSUM includes original50once/all failures/cleanup;4invented CPU
+CIDs/all29guarded children closed. Six cumulative SYN restores/forwards,
+zero true checkpoint/affine loads, market payload/forecast/fit/API/Task.
+r1 unknown capture timestamps/r2 missing unrouted.py mount preserved; r3 passed,
+r4 additionally exercises actual codec import before forwards. No old regrade.
+Unactivated executable kernel/builder, NOT actual Oct30 point readiness.
+Future Oct29asof/Oct30decision DataREADY/ownerclosure/packet hashes remainNULL.
+After publication bind ONE exact input and separately freeze actual one-restore/
+one-forward contract; no stale decision retag, fakehash, broker allocation or
+new Task from this preparation. Reusable kernel code is not a claim to reopen
+a closed engineering clock. Exact operational commands are in r4/COMMANDS.json.
+
 ## Research / Scientific Limits
 
 All these jobs positively CLOSED, not a claim of active GPU:
@@ -208,9 +235,23 @@ Primary-source check A/research/current-aemd-corporate-action-source-check-
 1:5 reverse split legalJul31/tradingAug4, plusSep17conditional merger agreement.
 Candidate-window overlap is NOT exact AEMD-held overlap or vendor-error proof.
 MODP1 means intended adjusted request, not observed AEMD server/custody behavior.
-Fermat owns new current-aemd-held-adjustment-diagnostic-20261029-v1,180/1800:
-one exact membership projection, conditional one pinned cached event-window
-intake. No API/refits/payoff replay/old regrade/outlier deletion/Paper ban.
+Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
+20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths
+closed. One exact membership projection: six known AEMD-held windows plus one
+originally unknown window, none crosses the identified Jul31/Aug4 split dates.
+Zero conditional bar intakes. Sep11..17 overlaps merger-agreement announcement
+only; vendor adjustment/gain causation remain INDETERMINATE, dated cached-vector
+parity WITHHELD. No old regrade, outlier deletion or Paper ban.
+
+Fixed50:50 MSE/asset-MHA PORTFOLIO fusion A/research/current-mse-assetattention-
+fixed-portfolio-fusion-20261029-v1 Source0b3c5f75/FINAL3a42e8d6/RESULT12c6eff7
+COMPLETE190upper/all3Jobs6PIDbirthsclosed. One saved action transaction, one
+cached payoff-vector intake/two cost cells/zero fits, forecasts or baseline
+replays. At10bp utility.03309927>.03268337 but downside second moment
+.00070606>.00038416: primaryFAILED. Correlation+.86254 does not support negative
+covariance. Conditional endpoint contribution10.035689%, not full growth/DD/
+M2M/PnL/alpha. No rescue blend grid/default/Paper change.
+
 Old models/results/debits/known data reuse/nonPIT/CA/corpus limits unchanged.
 No independent alpha, full32/DD/M2M or actual Paper PnL inferred.
 
@@ -260,3 +301,15 @@ separate native/actual checks; repo tests cannot validate it. AGENTS fresh-full
 requirement for material Execution/shared-control recovery unchanged. Batch
 integration, not repeated full tests for every stable-code research helper.
 After interruption recheck owners/exact receipts, not duplicate completed fits.
+Final throughput challenge A/orchestration/current-post-preparation-throughput-
+challenge-20261029-v1/FINAL.json da7c675a: NO_READY_CONFLICT_EVIDENCED,
+description-only advisory, not actual live inventory proof. One CLI exit0/joined/
+empty/5.117s/separate15upper/allclosed. Current prepared packages are closed;
+runtime14:15UTC and Data21:40UTC remain owned dependencies, not company completion.
+Parent05:19UTC final integration: protected4484/1414files still identical;
+fresh Ruff/default+research+accountingCompose.env.example/gitdiffcheck PASS.
+Full19577/26skip authority above reused for unchanged repo code, not rerun for
+docs alone. New external sources/native outputs independently checked;231a
+10code members/6terminal pins match, run/build defaults both inert/zero intake.
+All assigned agent workers are closed; no current GPU fit or Parent exec session
+remains running. Owned future Scheduler opportunities remain enabled.

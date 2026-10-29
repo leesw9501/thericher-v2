@@ -32,13 +32,23 @@ inventory with strict categorical readers. Task exit/absent file is not a fill
 or zero. Reconcile exact unknown identity before another effect. F9 held is not
 a global stop for correctly bounded other proposals.
 
-Reader core7587ed97/FINALdf8e2403 is complete,135upper/allownersclosed/zero
-actual private reads. Lovelace owns current-memory100-reader-host-integration-
-20261029-v1: quiet-pythonw identity, relevant financial-writer census and
-positive paired-owner closure hooks. Before one future RO read after14:34UTC,
-require fresh actual admission and exact account/basis/input/policy/intent/fill
-joins plus before/after stability. Missing future receipt is not closure.
-No consumed old reader rerun or recovery-capable observe() as offline reader.
+Reader core7587/df8e is complete. Host integration
+A/execution/current-memory100-reader-host-integration-20261029-v1/technical-r1:
+SOURCEcb8d4e2dbe1ac9ea16ce8b8e17839491570c289ac4af97f57a43f22a4c66f8ab,
+QUALIFICATION14d054a1/Parent contracte0df2fe4/closurea39e7b16.
+Real quiet-pythonw/venv-parent caller, three transport admissions with invented
+custody and immutable postcleanup refs passed;12unique matrix cases/24case
+evaluations across two attempts, additive count clarification retained.
+200upper includes original failure80once/all54Jobs55PIDbirths/2CIDsclosed.
+Original -I-S import failure occurred before readercreate; derivative now
+loads pinned module by path/hash, old Source/member bytes/debits retained.
+Parent independent --check-sources-only passed. Future command requires actual
+14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
+closure/complete relevant financial-writer census/exact joins/network-none allRO/
+before-after stability. No actual activation/private read/current custody
+admission performed. Missing future receipt is not closure. Journal inventory
+is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
+recovery-capable observe() merely offline.
 
 ## Ready Inactive Execution
 
@@ -86,6 +96,24 @@ Oct28asof/Oct29decision. Existing pair is MODP0, not a same-mode SPY substitute.
 Token audit5a4afdd5 NO_PROVEN_CONFLICT: observer session checks precede POST;
 no floor/schedule change. Actual ad-hoc writers/first245s completion unmeasured.
 
+Next-date kernel A/data/current-daily101-nextpoint-chain-preparation-20261029-v1/
+model-abi-r4 SOURCE231a3c20d8b6e4793b4df06d5f50d3697e7f624567bb8018463cb14ce94a3d58,
+READY93bb92e5/FINAL065ab99b/native4e7305dc/closure48db4e0e COMPLETE.
+Real producer/saved397feature ROLE -> actual GRU/safe-NPZ coldrestore with
+invented weights -> real unrouted proposal codec passed; original13fields/
+100slots/masks/FITaffines once, explicit routes:null/date/source/mount mapping.
+160/300activeSUM includes original50once/all failures/cleanup;4invented CPU
+CIDs/all29guarded children closed. Six cumulative SYN restores/forwards,
+zero true checkpoint/affine loads, market payload/forecast/fit/API/Task.
+r1 unknown capture timestamps/r2 missing unrouted.py mount preserved; r3 passed,
+r4 additionally exercises actual codec import before forwards. No old regrade.
+Unactivated executable kernel/builder, NOT actual Oct30 point readiness.
+Future Oct29asof/Oct30decision DataREADY/ownerclosure/packet hashes remainNULL.
+After publication bind ONE exact input and separately freeze actual one-restore/
+one-forward contract; no stale decision retag, fakehash, broker allocation or
+new Task from this preparation. Reusable kernel code is not a claim to reopen
+a closed engineering clock. Exact operational commands are in r4/COMMANDS.json.
+
 Completed GPU/CPU campaigns must not repeat:
 - StudentTc8a4:42epochs/BEST18/utilityFAILED/398.693214upper/allclosed.
 - CatBoostb0de:157updates/BEST56/primaryFAILED/309.003393upper/allclosed.
@@ -100,11 +128,25 @@ Completed GPU/CPU campaigns must not repeat:
 Issuer attribution028130ea/d2c6f304 completed190upper/allclosed:
 AEMD66.5055% of MSE net subset contribution/top3issuers83.6001%.
 Issuer/cohort/aggregate totals reconcile; exact dated cached vector parity
-remains WITHHELD. Public-source checkca82a0bc/e8e7544a confirms1:5 reverse
-split tradingAug4; exact held overlap and gain/vendor-error cause INDETERMINATE.
-Fermat owns current-aemd-held-adjustment-diagnostic-20261029-v1,180/1800:
-one membership projection, conditional one pinned cached event-window intake,
-zero API/refits/payoff replays/old regrade/outlier deletion/Paper ban.
+remains WITHHELD. Public sourceca82/e8e7 is separate from actual held membership.
+
+Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
+20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths
+closed. One exact membership projection: six known AEMD-held windows plus one
+originally unknown window, none crosses the identified Jul31/Aug4 split dates.
+Zero conditional bar intakes. Sep11..17 overlaps merger-agreement announcement
+only; vendor adjustment/gain causation remain INDETERMINATE, dated cached-vector
+parity WITHHELD. No old regrade, outlier deletion or Paper ban.
+
+Fixed50:50 MSE/asset-MHA PORTFOLIO fusion A/research/current-mse-assetattention-
+fixed-portfolio-fusion-20261029-v1 Source0b3c5f75/FINAL3a42e8d6/RESULT12c6eff7
+COMPLETE190upper/all3Jobs6PIDbirthsclosed. One saved action transaction, one
+cached payoff-vector intake/two cost cells/zero fits, forecasts or baseline
+replays. At10bp utility.03309927>.03268337 but downside second moment
+.00070606>.00038416: primaryFAILED. Correlation+.86254 does not support negative
+covariance. Conditional endpoint contribution10.035689%, not full growth/DD/
+M2M/PnL/alpha. No rescue blend grid/default/Paper change.
+
 No active GPU fit inferred. New trials need a distinct justified finite
 hypothesis, not GPU utilization or rescue of old failed criteria.
 

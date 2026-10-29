@@ -28,16 +28,23 @@ CreateUpdateRunStopDelete; process closure/native14mock+2actualXML proven.
 Never rerun technical-r7/activate_parent or recovery, manually Run or roll time.
 Installation/Task exit/latest scan/absent file is not a broker effect.
 
-Reader core A/execution/current-memory100-result-reader-preparation-20261029-v1,
-Source7587/FINALdf8e/FOLLOWUPb8ff complete. Default inert/actual commandNULL.
-Current host integration A/execution/current-memory100-reader-host-integration-
-20261029-v1 is separate, not current actual read authority. Qualify its exact
-Source/native/closure first. Future one read after14:34UTC needs fresh relevant
-financial-writer admission/positive pairedowner closure/exact account/basis/
-input/policy/intent/fill joins/network-none allRO/no locks or recovery/
-before-after membership,identity,mtime,bytes stability. Missing future receipt
-is not closure; journal inventory is not a fresh broker holdings query.
-No consumed old r2 read or recovery-capable observe() merely offline.
+Reader core7587/df8e is complete. Host integration
+A/execution/current-memory100-reader-host-integration-20261029-v1/technical-r1:
+SOURCEcb8d4e2dbe1ac9ea16ce8b8e17839491570c289ac4af97f57a43f22a4c66f8ab,
+QUALIFICATION14d054a1/Parent contracte0df2fe4/closurea39e7b16.
+Real quiet-pythonw/venv-parent caller, three transport admissions with invented
+custody and immutable postcleanup refs passed;12unique matrix cases/24case
+evaluations across two attempts, additive count clarification retained.
+200upper includes original failure80once/all54Jobs55PIDbirths/2CIDsclosed.
+Original -I-S import failure occurred before readercreate; derivative now
+loads pinned module by path/hash, old Source/member bytes/debits retained.
+Parent independent --check-sources-only passed. Future command requires actual
+14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
+closure/complete relevant financial-writer census/exact joins/network-none allRO/
+before-after stability. No actual activation/private read/current custody
+admission performed. Missing future receipt is not closure. Journal inventory
+is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
+recovery-capable observe() merely offline.
 
 ## Current Data Task / Feature Consumer
 
@@ -73,6 +80,24 @@ postclose ticks do not imply POST. Keep300floor/validclientreuse/atomic+legacy
 locks/worker-owned next_due. Actual ad-hoc writers/245s throughput unmeasured.
 No floor/schedule change from cadence alone; no foreground cooldown sleep.
 
+Next-date kernel A/data/current-daily101-nextpoint-chain-preparation-20261029-v1/
+model-abi-r4 SOURCE231a3c20d8b6e4793b4df06d5f50d3697e7f624567bb8018463cb14ce94a3d58,
+READY93bb92e5/FINAL065ab99b/native4e7305dc/closure48db4e0e COMPLETE.
+Real producer/saved397feature ROLE -> actual GRU/safe-NPZ coldrestore with
+invented weights -> real unrouted proposal codec passed; original13fields/
+100slots/masks/FITaffines once, explicit routes:null/date/source/mount mapping.
+160/300activeSUM includes original50once/all failures/cleanup;4invented CPU
+CIDs/all29guarded children closed. Six cumulative SYN restores/forwards,
+zero true checkpoint/affine loads, market payload/forecast/fit/API/Task.
+r1 unknown capture timestamps/r2 missing unrouted.py mount preserved; r3 passed,
+r4 additionally exercises actual codec import before forwards. No old regrade.
+Unactivated executable kernel/builder, NOT actual Oct30 point readiness.
+Future Oct29asof/Oct30decision DataREADY/ownerclosure/packet hashes remainNULL.
+After publication bind ONE exact input and separately freeze actual one-restore/
+one-forward contract; no stale decision retag, fakehash, broker allocation or
+new Task from this preparation. Reusable kernel code is not a claim to reopen
+a closed engineering clock. Exact operational commands are in r4/COMMANDS.json.
+
 ## Inactive Proposals / Research
 
 Serial engineering-r3 dea5/870f native2ABIcalls+14counterexamples COMPLETE.
@@ -96,12 +121,25 @@ fusiond27, StudentTc8a4, CatBoostb0de, asset-MHAa328, directportfolio1af6,
 TimesFMfb6c/current5d23, foundationtreec86e. Allownersclosed; no activeGPU
 inferred. Exact metrics/caps/limits HANDOFF/Engineboard, old failures unchanged.
 
-Issuer attribution0281/d2c6 COMPLETE: AEMD66.5055% of net subset contribution;
-aggregate summaries reconcile, dated vector parity withheld. Source-only
-ca82/e8e7 publicCA check cannot establish exact held overlap/vendorerror.
-Fermat current-aemd-held-adjustment-diagnostic-20261029-v1,180/1800:
-one membershipprojection/conditional one pinned cachedwindow,0API/refits/
-payoffreplay/oldregrade/Paperban. Do not add hidden intakes or correction factors.
+Issuer attribution0281/d2c6 COMPLETE, AEMD66.5055% of net subset contribution;
+aggregate summaries reconcile, dated vector parity withheld.
+
+Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
+20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths
+closed. One exact membership projection: six known AEMD-held windows plus one
+originally unknown window, none crosses the identified Jul31/Aug4 split dates.
+Zero conditional bar intakes. Sep11..17 overlaps merger-agreement announcement
+only; vendor adjustment/gain causation remain INDETERMINATE, dated cached-vector
+parity WITHHELD. No old regrade, outlier deletion or Paper ban.
+
+Fixed50:50 MSE/asset-MHA PORTFOLIO fusion A/research/current-mse-assetattention-
+fixed-portfolio-fusion-20261029-v1 Source0b3c5f75/FINAL3a42e8d6/RESULT12c6eff7
+COMPLETE190upper/all3Jobs6PIDbirthsclosed. One saved action transaction, one
+cached payoff-vector intake/two cost cells/zero fits, forecasts or baseline
+replays. At10bp utility.03309927>.03268337 but downside second moment
+.00070606>.00038416: primaryFAILED. Correlation+.86254 does not support negative
+covariance. Conditional endpoint contribution10.035689%, not full growth/DD/
+M2M/PnL/alpha. No rescue blend grid/default/Paper change.
 
 ## Original Custody / Exits
 
@@ -149,3 +187,6 @@ Docs-only exact protected-source check:
 External D: code/output requires its own native/actual checks; repo tests cannot
 validate it. Material Execution/shared-control recovery requires AGENTS fresh
 serial/full/Ruff/threeCompose. Package commit is not company completion.
+Parent final05:19UTC protected4484 check PASS; fresh Ruff/threeCompose/diffcheck
+PASS. Unchanged repo code reuses c130 full authority;231a code/native pointers
+and inert entrypoints checked separately, not by that repository suite.
