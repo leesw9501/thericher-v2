@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-29 KST / Oct29UTC00:34.
+2026-10-29 KST / Oct29UTC01:24.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -120,24 +120,58 @@ MR2.4963%/DeltaMR -3.6689pp, MRC2.0566%/DeltaContext -.4397pp at10bp.
 Both predeclared criteria failed;202.201/480upper/all4CIDs29CLI closed.
 No retuning/general ensemble ban. Learned gates require chronological OOF.
 
+StudentT100 A/research/current-studentt100-cost-tail-development-20261029-v1
+FINALc8a4c34f COMPLETE, primaryFAILED:42epochs7434updates/BEST18/pat24,
+43curves/safeBEST31130f08/LAST93936ffe, no repeated fit or convergence claim.
+INNER NLL -1.037393 vs constant -.930747; density/downside proxy passed,
+utility .004689 vs MSE .032683 failed. Conditional10bp endpoint1.4283% vs
+MSE9.8626%,30known2unknown, no full32/DD/M2M/PnL/alpha.398.693214upper
+including old debit/failures,7CIDs49CLI/PID-starts/lease allclosed00:55:42UTC.
+Pre-fit Windows fit.py/FIT namespace faults and peer-lease deferral retained;
+one actual market fit, not outcome-driven retries. No lambda/epoch rescue.
+
+TimesFM25 matched17 A/research/current-timesfm25-close63-h5-development-20261029-v1:
+Source10e929fd/FINAL1e9ee497/CALLBACKfb6cd516 COMPLETE, both criteriaMET.
+At10bp: growth3.350154%/absolute-original-NAV DD.751342%, Chronos3.278731%/
+.841107%,Uniform1.570961%/.833910 on32exact matched cohorts. At20bp
+TimesFM2.704098%/.889922%. Paired10bp growth+.071423pp/DD-.089765pp.
+ONE load/2invented+187marketGPUforwards/one seal/two costledgers/no oldcontrol
+replay/fit/retry.14.159s body including6.114s market inference, not training
+hours.531.114347upper inclreadiness240once/all3CIDs21CLI/owners/ownlease closed.
+Relative q50 MAE still worse than persistence; reused retrospective/nonPIT/
+CA/corpus limits, not independent alpha/realized Paper profit or deployment.
+
+TimesFM currentpoint A/research/current-timesfm25-current-point-preparation-20261029-v1:
+Source0e51c32c/CALLBACK5d2341cf/INPUTae52bc02/POLICYfb7bd299 published
+UNALLOCATED, one load/2invented+24currentGPUforwards/408contexts/all17 known.
+218upper/all3CIDs21CLI/owners closed. OriginalOct28asof/Oct29decision;
+NAS8 unchanged/NYS9 cash .6 model weight/no renorm, nativeNov4UTC20:45
+nonparity vsresearch21:00. OldChronosd133/B10/schedules unchanged. It is a
+typed proposal for the existing one-account dispatcher, not another writer.
+
 Fermat concentration diagnostic Sourcec041b88d/FINAL051c41bc COMPLETE:
 102.775752/120upper/all1CID8CLI/PIDs closed00:21UTC. MSE top1/top3 cohorts
 contribute66.10%/90.80% of its net subset contribution;15wins/15losses vs
 rank20/10. Per-issuer/CA attribution unavailable without unretained components;
-no new payoff intake or claim that large gains are spurious. Next ONE
-adopted StudentT4 H5 GRU location/scale experiment. Root
-A/research/current-studentt100-cost-tail-development-20261029-v1,
-1800activeSUM including diagnostic120 once/7200elapsed,1fit/no market retry,
-seed20261104/max128epochs/patience24/1200fitseconds/one seal/8cells.
-Native actual producer/loss/AdamW/checkpoint ABI before market fit; use GPU
-headroom, no completed-fit duplication. Primary density and fixed downside
-utility, not another RankIC-only experiment. Adaptive development/CA limits stay.
+no new payoff intake or claim that large gains are spurious.
 
-Ohm: A/research/current-timesfm25-torch-readiness-20261029-v1,
-official Google dated checkpoint/rights/safe weights/existing PyTorch CUDA;
-240active/7200elapsed, max1load2invented forwards, no market fit/evaluation.
-This is an assigned preparation, not proof of active GPU. No JAX/global runtime
-replacement without authority. Steward coordinates useful co-tenancy.
+Ready research queues, not claims of active GPU:
+- Short: CatBoost100 payoff expert readiness0c59/e863 first invented fit
+  completed but eval diagnostics failed; CBM coldrestore withheld. Technical-r1
+  family360SUM inclclosed150once/original7200elapsed/max15TOTALtoyupdates,
+  zero market payload/fits until native proof. Same source/seed/data repair,
+  no market criterion rescue. Engine may adopt exact one CPU fit after proof.
+- Foundation17 tree prep FINAL57783cb5: one invented sklearn fit/parser/safe
+  JSON restore passed,129.938upper/2CLIclosed/zero market values. Proposed
+  depth2/minleaf6 whole-expert gate,16FIT8INNER8reusedDEV. Data retained-role
+  projection and independent Ohm review pending; computational out-of-fit is
+  not unconditional independence or historical forecast arrival. ClaudeREVISE
+  limitations retained; no meta-market fit yet.
+- Depth: adopted current-asset-attention100-payoff-development-20261029-v1,
+  dedup-first masked cross-ASSET attention/GRU/MSE, not201a temporalPAIRLOSS.
+  One fit/seed20261106/max128epochs/pat24/1200fitseconds/2400SUM7200elapsed,
+  actual native ABI before market/47forecastbatches/8costcells. Fixed utility
+  and downside vs same-gross MSE, no new grid, alpha or profitability gate.
 
 Old studies remain in Git/artifacts: Chronos8df reused32, fine-tune74f5 BEST0,
 rankloss766c, H20eec7 allcash, rulegate da756 rejected, EXIT6668 allHOLD alias,
@@ -157,18 +191,26 @@ Source284ba698/manifest64dbea4f/100GET+1POST/101HTTP200/zero retry,
 Actual222.386s/allowners closed/550of600upper. Existing CaptureSession2s
 floor frozen, measured2.167..2.318s GET spacing; not an API minimum claim.
 MODP0 not proven equivalent to old MODP1; no splice/reproject/oldresult regrade.
-Next current-nas100-owned-daily-capture-preparation-20261029-v1,
-240active/7200elapsed/zeroAPIorTaskmutation: one quiet native daily100 path
-for existing owned21:40UTC opportunity, dynamic completed-session clock and
-cursor/restart dedup. Existing six-symbol Task/cache unchanged until exact
-Parent migration. No broad all-agent quiescence or optional Docker proof hold.
+Daily100 preparation READYbc28697e/Sourceede430db/nativef93b5017:
+literalMODP1 verified against current consumer, nine native checks/zeroAPI/
+Taskmutation/allownersclosed240of240upper. Dynamic completed XNYS session,
+mode/date immutable manifest/pointer and restart dedup. Parent action-only
+update still PENDING; existing six-symbol Task/cache unchanged. Old NAS model
+Task20261015 disabled at01:17UTC; historical source references are not active
+consumers. Current-data100 task next21:40UTC remains an owned opportunity,
+not an actual new acquisition. Ohm temporary Infra prepares exact CAS updater.
+Galileo now current-foundation17-meta-role-projection-20261029-v1,240/7200,
+one retained expert/ledger/feature value transaction, physically split roles,
+no new raw prices/marks/payoff-source/API/model calls; exact consumer smoke.
 
 Dewey ready-set1725/FINALcfdf7203 COMPLETE: six native slot roundtrips/nine
 negatives/1407image files/oneCID7CLI/allclosed110of180upper. Three proposals
 UNALLOCATED, zero selected rows; no actual financial ABI/deployment claim.
 Next current-native-paper-serial-descriptor-derivative-20261029-v1,
-360activeSUM inclprior110once/7200elapsed/max2networknone changed-boundary
-native CIDs/zeroAPIprivatebookTask. Prefer common f12/6dd backend for new
+Oldderivative FINAL9f5178a1 withheld after two fixture failures,270SUM incl110
+once/all2CIDs14Jobs closed. engineering-r3 follow-on family600SUM including
+closed270once/original7200elapsed/max10TOTALroutineSYN CIDs; zero real API/
+privatebook/Task/modelpayload. Prefer common f12/6dd backend for new
 proposals, preserve original legacy recovery binding. Explicit fixed registry/
 namespace/IPC/driver, not generic plugins or another writer/platform. Memory
 installed pair remains unchanged; parent future migration only after proof.
@@ -176,9 +218,21 @@ Kepler: A/execution/current-mse100-paper-proposal-projection-20261029-v1:
 COMPLETE callback303f above. Next current-paper-orderability-shape-audit-
 20261029-v1,90active/3600elapsed/pure invented native/code checks of actual
 installed runtime quote/funds/order wire adapters; no API/privatebook/Task.
-Lovelace independent saved readbackf840495d PASS,10bound refs stable,15/30upper
-all readers closed. Now current-memory20-installed-future-guard-audit-20261029-v1,
-90active/3600elapsed/source-only future-identity review, no OS mutation.
+Lovelace saved readbackf840 PASS/closed. Guard freshness audit9b6d passed
+fresh PID/census logic, NOT all noncustodial coexistence: clarification-r1
+proves actor_unregistered before public-only peer proof. No actual live conflict
+established. Now current-paper-noncustodial-peer-admission-repair-20261029-v1,
+240/7200/source-native only; private/unknown writers still deny, public RO+
+own-output RW/no socket/private/network requires actual source-bound proof,
+not a generic Python allowlist or per-campaign Task reinstall. Existing pair
+unchanged until qualified derivative/Parent integration; no research pause.
+
+Quote support current-paper-quote-readiness-probe-20261029-v1 Sourcec6103402/
+RESULTd0f4faa7/CALLBACK8aea4c91:1POST1SPY-AMS-GET/HTTP200/provider success,
+native last/scale parsed. Core session closed, bid/ask invalid and KST-stale/
+NY-future candidate timestamps. Timezone UNDETERMINED; no fresh execution
+qualification. Original QQQ adapter fault retained before sole actual call.
+90upper/all9PIDs3Jobs closed/zero account/order/privatebook/Task operation.
 
 Official SELL image A/execution/current-official-us-sell-runtime-image-20261029-v1
 FINALf25b5ef0: SDK6dd/1407files, only SELL1001->1006; BUY1002 unchanged,
@@ -226,3 +280,9 @@ Source stable00:31:59UTC Oct29, session55034 exit0/closed; no safety bypass.
 Repo suite does not validate D: helpers; each needs its separate native/actual
 proof. Docs-only reuse requires exact protected digest match. After interruption
 recheck actual owners, exact receipts and scopes; do not repeat completed fits.
+
+Verification impact challenge A/orchestration/verification-impact-review-20261029-v1/
+CLAUDE.json: GO_WITH_LIMITS/digest_scope, advisory only. Current AGENTS fresh
+full requirement for material Execution recovery remains unchanged. Batch a
+material integration once; do not rerun full tests for each unrelated stable-code
+external research helper. Native external proof cannot be replaced by repo tests.

@@ -1,30 +1,51 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / Oct29UTC00:34. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC01:24. A=D:/thericher-v2/model-artifacts.
 Fermat Engine/Steward; Parent shared MD/Git. Actual contracts own caps.
 
-## Current Next Experiment
+## Latest Results / Ready Queues
 
 Concentration diagnostic c041/FINAL051c COMPLETE102.775752/120upper/
 all1CID8CLI/PIDs closed00:21UTC. MSE net top1/top3 cohort shares66.10%/90.80%,
 15wins15losses vsrank20/10; per-issuer/CA attribution unretained/withheld,
 no new payoff reads/cells or spurious-gain assertion.
-Continue adopted ONE current-studentt100-cost-tail-development-20261029-v1:
-StudentT4 GRU location+scale, mu-.5sigma input-only rank/EWMA20/Top5 policy;
-same100pool/raw63x6+factor10/context9/unclipped originalH5 target.
-1800activeSUM inclprior120once/7200elapsed;seed20261104/1fit0marketretry,
-max128epochs22656updates/1200wholefitseconds1100soft/patience24/LRplateau,
-BEST/LAST safe numeric weights. Train and chronological INNER NLL curves.
-One187x100 seal/max47forward batches/one payoff intake/8costcells.
-Primary density vs deterministic constant AND fixed downside utility vs saved
-same-gross MSE on identical known cohorts, not another RankIC-only criterion.
+StudentT100 FINALc8a4c34f COMPLETE/primaryFAILED:42epochs7434updates/BEST18/
+pat24/43curves/checkpoint31130f08. INNER NLL-1.037393 vsconstant-.930747
+and downside proxy passed; utility.004689 vsMSE.032683 failed.
+Conditional10bp endpoint1.4283% vsMSE9.8626%,30known2unknown; no DD/M2M/
+alpha/Paper claim.398.693214upper/all7CIDs49CLI/lease/PID-starts closed.
+One marketfit, Windows pre-fit namespace faults/peer-lock deferral retained;
+no lambda/epoch rescue or repeated fit.
 
-Before market, native actual role producer->model/StudentT loss oracle/
-microgradient equivalence/3AdamW updates/checkpoint coldrestore ABI;
-max3 engineering checks within180, no market retry/clock refund.
-Steward checks actual headroom/4GiB desktop reserve, permits useful co-tenancy.
-Adaptive reused development/CA unknown; no independent alpha/Paper promotion.
-No numerical dispatch inferred from this assignment; use actual PID/lease.
+TimesFM25 matched17 Source10e929fd/CALLBACKfb6cd516 COMPLETE/bothMET:
+32matchedcohorts,10bp growth3.350154%/absolute-original-NAV DD.751342%
+vsChronos3.278731%/.841107/Uniform1.570961%/.833910.
+One load/189GPUcore(2invented+187market)/two newledgers/zero oldcontrolreplay.
+14.159s modelbody/6.114market,531.114347upper inclreadiness240once,
+all3CIDs21CLI/owners/ownleaseclosed. Adaptive reused data/corpus/CA limits,
+not alpha; q50MAE still worse than persistence. No benchmark rerun.
+Currentpoint Source0e51c32c/callback5d2341cf/INPUTae52bc02/POLICYfb7bd299:
+one load/2invented24current/408contexts/all17/218upper/all3CIDs21CLI closed,
+UNALLOCATED/NYS9cash.6/no renorm/Nov4UTC20:45 nonparity. No newbank/writer.
+
+Short queue: CatBoost100 readiness0c59/e863 native diagnostics failure after
+toyfit; technical-r1 recovery360SUM incl150once/original7200/max15TOTALtoy
+updates/0marketpayload. CBM/Pool/eval/coldrestore before Engine may adopt
+exactoneCPUmarketfit. Ordinary fixture fixes are not holdout/model rescue.
+
+Foundation17 gate prep FINAL57783cb5: one invented sklearn fit/parser/safe
+JSON coldrestore passed/129.938upper/2CLI closed/zero market values.
+Depth2/minleaf6 whole-expert selection,16FIT8INNER8reusedDEV. Data role
+projection/Ohm review pending; ClaudeREVISE limits retained. No numerical
+marketfit yet, no independence/historical-arrival claim from zero 2026 fits.
+
+Depth queue adopted current-asset-attention100-payoff-development-20261029-v1:
+dedup-first masked4head cross-ASSET attention+GRU/MSE, distinct from temporal
+pairloss201a/mean-contextpairlossbb540. Same4459full100/target/splits,
+seed20261106/1fit0marketretry/max128epochs22656updates/pat24/1200fitseconds,
+2400SUM7200elapsed/one187x100seal/8costcells/fixed U and downside vsMSE.
+Actual native mask/permutation/optimizer/checkpoint tests before market,
+finite ordinary TDD within300source/native budget; no dummy GPU or newgrid.
 
 ## New Completed Results
 
@@ -62,9 +83,9 @@ NAS8unchanged/NYS9cash/Nov4native20:45 vsresearch21:00 nonparity.
 Namespace5075 native qualified, not deployed/broker evidence.
 Model output remains proposal, not separate writer or profitability approval.
 
-Ohm TimesFM2.5 Torch readiness240active/7200elapsed/1load2inventedforwards,
-official dated checkpoint/license/safe weights, no marketfit/evaluation.
-Native output handoff before any future market benchmark.
+Official TimesFM readiness3519/6b36 completed147upper before actual benchmark;
+dated2025weights2f776/SDK6bd804/existingTorchCUDA, no JAX/global replacement.
+Ohm now independent meta-gate review then temporary Data action-updater Infra.
 
 ## Closed Families / Claim Boundaries
 
