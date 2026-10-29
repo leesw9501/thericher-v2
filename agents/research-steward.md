@@ -1,12 +1,25 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / integration05:18UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / integration14:50UTC. A=D:/thericher-v2/model-artifacts.
 Fermat coordinates GPU/custody; Parent MD/Git/activation.
 Project first GPU priority and useful concurrency approved. No app allowlist,
 user-process kill or driver change. One coordinator, separate campaign clocks/
 paths/leases; measure actual free/projected peak VRAM before new dispatch.
 
 ## Actual Resource State / Ready Work
+
+At14:49 Parent lifted the post-opportunity readonly-reader queue. Exact positive
+d60cb6fc operational closure is established; Fermat continues native proof and
+may launch the new a45f/fabb cost-survival campaign when its own source/caps/
+resource evidence passes. Old reader unknown-actor/namespace problems withhold
+that read only, not useful GPU work. No actual market fit inferred from release.
+
+Current14:01UTC: Fermat resumed as sole GPU coordinator for one new complementary
+campaign, not a repeat of any job below. Actual numerical launch remains
+unobserved until PID/start/lease/native resource evidence. New finite contract
+and useful hypothesis required. Execution14:15..14:34 preempts only unqualified
+new actors under measured installed7358/8ce conflict, not arbitrary personal
+GPU use or all research. Ready code/source work continues during that interval.
 
 All current numerical campaigns positively CLOSED, not running GPU claims:
 - StudentTc8a4:42epochs/BEST18/398.693214upper, peakreserved3114270720bytes.

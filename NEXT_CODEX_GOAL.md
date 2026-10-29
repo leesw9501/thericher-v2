@@ -16,6 +16,26 @@ ONE original B/10/costs/losses/pending/F9 held; no reset/substitute/foreign adop
 
 ## Installed Paper / Next Runtime Evidence
 
+Active dispatch Oct29: Parent handles actual runtime failure/readback;
+Lovelace prepares exact cb8d activation builder, Galileo closes61a9->231a
+publication-schema gap, Kepler selects a distinct mechanism/target hypothesis,
+Fermat freezes and executes one genuinely new finite campaign as sole GPU owner.
+At14:34UTC both exact entry/recovery visits closed with zero native visits,
+but ROUND52db657b/f842d6e5 stopped_for_adapter_recovery. Faults9ffb8507/
+07a6a777 identify actor_identity, not a broker rejection/no signal/fill.
+Ohm owns narrow source-bound first-cause/reproducer/repair; Dewey owns the
+inactive finite successor compiler. Neither may replay the consumed Task.
+Original observer restore96f38f53 binds exact operational closure d60cb6fc.
+Lovelace also repairs the activation builder's trusted-EXE2MiB bug and isolates
+SYN/ACTUAL fixed-name outputs without deleting or overwriting old evidence.
+No actual private read yet. Preserve exact inputs/B10/F9 and original exits.
+New generated adapters require emitted Ruff F821/F822/F823/E9 and real native
+source-format parse-and-return smoke. Old closed fits/readouts are not repeated.
+Installed7358/8ce does not automatically admit new1d4 research actors. Preserve
+the14:15..14:34 opportunity: only positively compatible new long workers may
+overlap; otherwise source/preparation continues and numerical launch follows
+positive paired closure. This scoped deployed limitation is not an approval hold.
+
 Memory100 pair remains registered/enabled:
 - thericher-memory20-nas100-entry-20261029-v1: Oct29UTC14:15/KST23:15,
   native14:20/recovery14:27/controller hard14:34.

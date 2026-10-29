@@ -1,10 +1,85 @@
 # Orchestration Stateboard (총괄)
 
-2026-10-29 KST / review05:18UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Throughput Review14:49UTC. A=D:/thericher-v2/model-artifacts.
 Parent shared MD/Git/activation. No operator decision pending.
 ONE original B/10/costs/losses/pending/F9 held. Preserve %SystemDrive%/.
 
 ## Ready / Owned / Due
+
+Current review supersedes the pre-opportunity projections below:
+- Parent: actual technical runtime failure, exact private readback, integration.
+  Both consumed visits fault actor_identity before native effects;0native visits
+  is not a whole-account zero. Exact closure d60cb6fc/controls5cc1/e83f and
+  observer restore96f38f53 are positive operational facts, not a fill.
+- Ohm: current-memory20-actor-identity-failure-repair-20261029-v1, exact public
+  faults -> firstcause/reproducer/narrow successor patch, no API/Task/private.
+- Lovelace: activation-builder technical-r1, exact pinned EXE size bug plus
+  separate working namespace for ACTUAL reader. No deletion of SYN proofs.
+- Dewey: finite serial successor compiler; positive closure callback sent,
+  native invented smoke/Claude/Ruff now ready inside original caps.
+- Fermat: new cost-survival estimand, native optimizer/checkpoint preparation;
+  native preparation then market launch when its own source/resource checks
+  pass. At14:49 Parent lifted the readback queue; actual fit not yet evidenced.
+- Galileo/Kepler: exact existing H1 reversal input gap/schema handoff, pure
+  preparation/native invented parsing; no false full100 intraday claim.
+
+Reversible throughput improvement: separate actual Paper firstcause, readonly
+reader-constructor repair and independent research work rather than one serial
+wait. The14:15..14:34 oldguard preemption ended with positive exact closure;
+it is not a standing actor/GPU ban. Parent readback takes a short isolated
+window only if compatible; unknown custody withholds that reader, not research.
+Do not prolong research launch merely because an MD says queued.
+No operator decision pending. Current company objective remains unfinished.
+
+Current long-request dispatch14:01UTC supersedes the earlier standby projection:
+- Parent owns immediate Memory14:15/native14:20/recovery14:27/hard14:34
+  status, exact runtime evidence and integration. Three named Tasks enabled/
+  state3/instances0 at14:01UTC. Capsule578f:21local+88external hashes match;
+  f12a image present. These are readiness facts, not future effects/admission.
+- Lovelace assigned execution/current-memory100-activation-builder-20261029-v1:
+  exact future operational pair/control -> cb8d activation/command. No actual
+  private read/API/Task mutation; Parent owns actual inspection after closure.
+  Now COMPLETE be72242b/31e9d9aa/21invented checks/60upper/all3Jobsclosed,
+  zeroCID/private/API/Task. Source constructor ready, not actual custody proof.
+- Dewey assigned execution/current-serial-successor-plan-preparation-20261029-v1:
+  reuse inactive2fde/1d4 components for one future finite serial plan/compiler,
+  not current Task replacement/extra bank. Future point bindings UNKNOWN,
+  zero actualprivate/API/Task; no native workers during protected interval.
+- Galileo assigned data/current-daily101-publication-binding-adapter-20261029-v1:
+  actual61a9 publisher schema ->231a binding adapter using invented source-format
+  parse/return smoke. No actual cache/API/model intake now, future inputsUNKNOWN.
+  COMPLETE c3a0f71b/a318b32f/9549a2d4,75upper/all7identities absent14:12:48UTC,
+  zeroCID/realrows/Task. Exact future publication remains required.
+- Kepler assigned research/current-complementary-hypothesis-selection-20261029-v1:
+  max2 distinct information/target/mechanism proposals; one actionable handoff
+  direct to Fermat, not another correlated architecture or a reading list.
+  COMPLETE c353096d/126.008upper/allclosed/zero actualdata/model/Task:
+  recommended H5 cost-survival probability, fixed oldfeatures/GRU32/EWMA20Top5;
+  proper-score alone insufficient, profit/downside strongest kill. Retained
+  .05*head scaling must not be blindly inverted on a new unscaled-logit class.
+- Fermat assigned research/current-complementary-engine-campaign-20261029-v1:
+  sole GPU coordinator, new finite contract before any new numerical dispatch;
+  no duplicate closed fits. Source/contract first, useful GPU training when ready.
+
+Measured deployment limitation: installed7358 actor()/decide() still requires
+registered live project entrypoints; metadata wrapper adds only its own helper
+children. New inactive1d4/2fde proof is NOT installed in578f/8ce. Thus unqualified
+new long Python/CID workers are queued outside this exact14:15..14:34 native
+opportunity unless their admission is positively proved. Source/web/preparation
+continues; short new native work before14:13 or after positive paired closure.
+This is one scoped Execution resource preemption, not a human/GPU permission
+hold, general ban or durable rule. Do not upgrade the imminent capsule blindly.
+Clarified14:20: even project-referencing PowerShell control commands may enter
+the old census, so Parent/new roles avoid spawning them through the protected
+native interval. Already-loaded source analysis/web/apply_patch continues.
+This is measured deployed incompatibility to eliminate in the successor, not
+a design to retain permanently or evidence that the opportunity actually ran.
+Next runtime repair should remove this measured broad actor conflict through
+a qualified successor, preserving exact pending requests/bank and original exits.
+Assignments are not proof a numerical worker has started.
+
+Earlier closed evidence below remains retained; its old 'no ready work' and
+released-LLM statements are historical, not the current dispatch state.
 
 - Parent: installed Memory100 pair5813/578f/f12a/6dd remains enabled:
   entryOct29UTC14:15/KST23:15/native14:20/recovery14:27/hard14:34,

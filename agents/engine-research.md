@@ -1,9 +1,31 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / integration05:15UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / integration14:50UTC. A=D:/thericher-v2/model-artifacts.
 Fermat Engine/Steward. Parent shared MD/Git. Actual contracts own trial caps.
 
 ## Latest Diagnostic / Fusion / Consumer
+
+Current14:01UTC assignment: Fermat current-complementary-engine-campaign-
+20261029-v1, preparation300active/7200elapsed; a distinct new target/information/
+mechanism contract after Kepler handoff. Parent delegates one genuinely new fit
+once its exact data/split/purge/costs/criteria/compute/stop caps are frozen:
+max1fit/no marketretry/<=150epochs/3600active/14400elapsed with predeclared
+evaluation caps, earlystop/LR/checkpoint diagnostics. Not a new trial authority
+for closed families. Actual worker/GPU not started from assignment alone.
+Measure native CUDA/headroom/storage and qualify emitted/native handoff first.
+Numerical dispatch must coexist with current installed actor guard or follow
+the exact14:15..14:34 opportunity's positive closure; code/source work continues.
+Kepler's c353096d recommendation selected H5 cost-survival probability on
+unchanged4459 features. Target FP64 netpayoff5>0 is not expected net return;
+proper-score gains cannot substitute for cost/utility/downside outcomes.
+Frozen a45f1b43/fabb18ea instead uses retained scaled encoder divided by.05
+ONCE; earlier standalone-head draft is not the frozen implementation. Native
+train/restore/inference parity must prove that exact choice, no second inverse.
+At14:49 Parent lifted the readback queue after positive d60cb6fc operational
+closure. Fermat may launch after its own native/source/resource checks; a broken
+readonly reader cannot globally withhold GPU research. Actual fit not inferred.
+Galileo/Kepler prepare separate true-intraday QQQ-target/SPY-context C300/H1
+reversal inputs/controls, not another correlated daily architecture or full100H1.
 
 Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
 20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths

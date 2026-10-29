@@ -13,6 +13,22 @@ Evidence paths below are NOT instructions to rerun consumed workers/installers.
 
 ## Installed Paper / Future Read
 
+Oct29UTC14:34 actual opportunity: technical_failure, not no signal or a fill.
+Exact ROUND52db657b/f842d6e5 stopped_for_adapter_recovery; Source-bound faults
+9ffb8507/07a6a777 identify actor_identity before native/credentials. Use exact
+capsule host-results and bound control joins, not Task result0 as effects.
+OWN-NATIVE-CLOSUREd60cb6fc/control5cc1a6a0/e83fe2b4 positively close zero
+native visits; PAIR2d4ceba1 is operational only. Observer restore96f38f53
+binds that closure and preserves original history. Original exit is unchanged.
+Ohm owns source-only narrow repair; never rerun consumed entry/recovery Task.
+
+Do not use cb8d original ACTUAL command yet: qualified SYN run left fixed
+ADMISSION-CENSUS/TRANSPORT-CREATED names. Preserve proof. Lovelace owns fresh
+byte-identical instance qualification. Original be722 activation builder also
+failed its2MiB Docker size check in Parent metadata-only r1/r2; derivative
+technical-r1 must pass native emitted/source-format and real metadata branch.
+No current private reader consumed. Parent alone binds a fresh actual command.
+
 A/execution/current-memory20-bound-metadata-recovery-20261029-v1/technical-r7:
 coordinator5813/capsule578f/imagef12a/SDK6dd/inputc5f5/policydbde/releasee903;
 full exact hashes HANDOFF.

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-29 KST / Oct29UTC05:18.
+2026-10-29 KST / Oct29UTC14:49 integration in progress.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -16,16 +16,22 @@ Private no-cost Paper is delegated; research limitations are not global holds.
 
 ## Installed Memory100 Opportunity
 
-Exact pair REGISTERED AND ENABLED, not a fill:
+Exact entry opportunity consumed; original exit remains installed, not a fill:
 - thericher-memory20-nas100-entry-20261029-v1:
   Oct29UTC14:15/KST23:15, native14:20/recovery14:27/controller hard14:34.
 - thericher-memory20-nas100-exit-20261104-v1:
   Nov4UTC20:40/Nov5KST05:40, hard21:00UTC.
 
-Both enabled/state3/instances0/never-run at actual00:18:39UTC readback.
-Fresh source-safe Scheduler query05:17UTC reconfirmed both enabled/state3/
-instances0 with original KST next times; Data21:40UTC also enabled/instances0.
-No Task Run or broker effect from this status inspection.
+Actual14:34UTC ENTRY enabled/state3/instances0/last23:15KST/result0.
+Its result0 is not a broker result. Both exact entry/recovery ROUND results
+stopped_for_adapter_recovery. Source-bound FAULT9ffb8507/07a6a777 identify
+actor_identity in actual admission.py:151, entry NOT_ENTERED and recovery
+PRE_CREDENTIALS. ACTOR diagnostics1e87ca36/9cfbdebc identify exact Docker
+births40140/39100 and a mismatch against the old source-owned research
+attachment rule; this does not establish those actors' actual capability.
+Parent owns actual readback; Ohm owns narrow first-cause/reproducer/repair
+under A/execution/current-memory20-actor-identity-failure-repair-20261029-v1.
+Do not repeat the consumed opportunity or relabel this as no signal/success.
 Quiet pythonw -I -S -B; original clocks/ACL/business identity retained.
 A/execution/current-memory20-bound-metadata-recovery-20261029-v1/technical-r7:
 coordinator SOURCE5813cd481bbd99e5b09f023aa1710340dd555f8d037ec9164a53254eee4d4509;
@@ -51,6 +57,11 @@ One existing ENTRY enable/zero CreateUpdateRunStopDelete; EXIT unchanged.
 14mock+2actual savedXML tests/positive installer/job/process closure.
 Both installers consumed, never rerun or manually Run Task.
 
+PAIR-RESULT2d4ceba1 and OWN-NATIVE-CLOSUREd60cb6fc bind the exact Source,
+release and round. Both controls5cc1a6a0/e83fe2b4 positively close operational
+visits with zero native visits/children; these are not full-account zeroes.
+Observer original enabled restoration96f38f53 binds d60cb6fc, history preserved,
+TaskRun/Kill/newTask0; earlier unrelated restoration remains its own question.
 Actual current submit/acceptance/fill/owned inventory still NOT_OBSERVED.
 Runtime must validate exact inputs/budget/quote/orderability/reconciliation.
 Static compatibility A/execution/current-installed-memory-daily100-
@@ -71,11 +82,20 @@ closure's11 invocation-label count without modifying the original proof.
 200upper includes original failure80once/all54Jobs55PIDbirths/2CIDsclosed.
 Original -I-S import failure occurred before readercreate; derivative now
 loads pinned module by path/hash, old Source/member bytes/debits retained.
-Parent independent --check-sources-only passed. Future command requires actual
+Parent independent --check-sources-only passed. The command requires actual
 14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
 closure/complete relevant financial-writer census/exact joins/network-none allRO/
 before-after stability. No actual activation/private read/current custody
-admission performed. Missing future receipt is not closure. Journal inventory
+admission performed. Original cb8d directory retains SYN fixed-name outputs;
+do not run ACTUAL there or delete them. Parent found ADMISSION-CENSUS and
+TRANSPORT-CREATED create-exclusive collisions. Lovelace prepares an isolated
+byte-identical working instance plus exact command binding, not overwritten proof.
+Activation builder be72242b/31e9d9aa originally passed21 invented boundaries,
+but Parent metadata attempts r1/r2 failed before private reads: its ordinary
+2MiB limit rejected the exact pinned42082736-byte Docker executable.
+Derivative current-memory100-activation-builder-20261029-v1/technical-r1 is
+being independently checked; preserve both old attempts/debits/partial dirs.
+Missing future receipt is not closure. Journal inventory
 is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
 recovery-capable observe() merely offline.
 

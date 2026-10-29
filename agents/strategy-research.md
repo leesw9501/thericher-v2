@@ -7,6 +7,26 @@ or concrete rejection, not an unbounded reading list.
 
 ## Latest Source Work / Consumer
 
+Current14:01UTC assignment: Kepler current-complementary-hypothesis-selection-
+20261029-v1,240active/7200elapsed, max2 mechanisms and ONE executable Engine
+handoff to Fermat. Prefer distinct information/target/horizon rather than more
+correlated architectures after+.863 portfolio correlation. Official sources,
+license/data scope/strongest kill and a concrete pure kernel where useful;
+zero actual market/model/broker/Task calls. Not an unbounded reading list.
+This package COMPLETE Sourcec353096d/MAIN-CALLBACK,126.008upper/allworkers
+closed/ClaudeKEEP. Recommended H5 cost-survival probability FP64 netpayoff5>0,
+unchanged4459 features/GRU32/EWMA20Top5; volume-conditioned H1 reversal standby
+because exact full100H1 targets/controls are not yet qualified. Retained .05*head
+must be undone once only if that scaled model implementation is used; a newly
+unscaled logits class must not multiply again. Engine owns native/fitting.
+
+Next scoped handoff: Galileo source70e8/235c identifies existing2ETF true1m;
+Parent assigned C30014:31ET QQQ-target/SPY-context ->15:31ET RAW_LOG_H1 role
+materialization. Kepler defines volume-conditioned reversal/matchedQQQH1/cash
+controls and pure kernel within its separate60active extension, max2hypotheses,
+no parameter grid. This is not full100H1/dailyH5/independent alpha. Fermat
+continues daily cost-survival preparation independently; no duplicate fit.
+
 A/research/current-aemd-corporate-action-source-check-20261029-v1:
 Sourceca82a0bc/RESULTe8e7544a/ClaudeKEEP,134.193364upper/allworkersclosed.
 Nasdaq ECA2026-546 and SEC8K005850 confirm1new-for5old reverse split,
