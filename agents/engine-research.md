@@ -5,6 +5,19 @@ Fermat Engine/Steward. Parent shared MD/Git. Actual contracts own trial caps.
 
 ## Latest Diagnostic / Fusion / Consumer
 
+New cost-survival COMPLETE FINAL7022853d0b75072503e3a2b5e2c1e883bb452feccddd79ceb2d8e7da293eb99d:
+one fit/26epochs/BEST2/patience24/4602updates, peakreserved1193279488bytes.
+Logloss.686672 vsconstant.689938/Brier.246210 vs.248397: propercriterionMET.
+10bp utility.0104502 vsMSE.0326834 FAILED; downside second moment.000266205
+vs.000384161 MET.30known/32planned,2UNKNOWN; correlation+.0139333 vsMSE.
+Allguardedinstances/CIDs/leasesclosed/375.188upper, no refit/retry/Paper change.
+These reused conditional endpoint results are not full growth/DD/fees/PnL/alpha.
+Next delegated: one new fixed50:50 PORTFOLIO composition (not average net
+vectors/old-study rerun), plus one justified shared-encoder mean-payoff+win-prob
+GPU campaign; exact contracts/caps/units/native delta before new payload/fit.
+Lovelace separately owns current-h1-volume-reversal-cpu-study-20261030-v1:
+<=360active/7200elapsed/onefit/no search/retry, exact Kepler/Data handoff first.
+
 Current14:01UTC assignment: Fermat current-complementary-engine-campaign-
 20261029-v1, preparation300active/7200elapsed; a distinct new target/information/
 mechanism contract after Kepler handoff. Parent delegates one genuinely new fit
@@ -24,8 +37,9 @@ train/restore/inference parity must prove that exact choice, no second inverse.
 At14:49 Parent lifted the readback queue after positive d60cb6fc operational
 closure. Fermat may launch after its own native/source/resource checks; a broken
 readonly reader cannot globally withhold GPU research. Actual fit not inferred.
-Galileo/Kepler prepare separate true-intraday QQQ-target/SPY-context C300/H1
-reversal inputs/controls, not another correlated daily architecture or full100H1.
+Galileo H1 actual materialization695fc26f/Sourcefd6a60c2 is now complete,
+251dates/248input-targetknown; Kepler handoff -> Lovelace bounded CPU comparison.
+This is true-intraday QQQ-target/SPY-context, not dailyH5/full100H1.
 
 Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
 20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths

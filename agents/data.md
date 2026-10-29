@@ -28,6 +28,13 @@ intakes/one savedverify after actual inventedCSV/resample/file-consumer smoke,
 targets remain physically separate on M, all251dates/missing masks retained.
 Kepler supplies exact matching hypothesis/controls; no dailyHIGH/LOW path
 fabrication, API/acquisition/windowgrid/old-role changes or model fitting.
+Materialization now COMPLETE MAIN/READY695fc26f/Sourcefd6a60c2/closure1e64ffde,
+50new upper/prior10source unchanged.251scheduled/248featurejointknown/
+249targetknown/248both,1targetknown-inputUNKNOWN retained. Parent independently
+rehashed3handoff refs/3own code pins without market decode. Native invented
+CSV->real resampler/file/consumer and actual projection/savedverify passed.
+Lovelace Engine CPU study consumes exact roles under its own future frozen
+contract, not automatic whole-data/Paper qualification. No full100H1 claim.
 
 thericher-kis-paper-daily-nas-forward is now quiet native100stocks+SPY/AMS,
 literalGUBN0/MODP1. Next Oct29UTC21:40/Oct30KST06:40, enabled/instances0.

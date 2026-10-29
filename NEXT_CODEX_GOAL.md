@@ -28,7 +28,10 @@ inactive finite successor compiler. Neither may replay the consumed Task.
 Original observer restore96f38f53 binds exact operational closure d60cb6fc.
 Lovelace also repairs the activation builder's trusted-EXE2MiB bug and isolates
 SYN/ACTUAL fixed-name outputs without deleting or overwriting old evidence.
-No actual private read yet. Preserve exact inputs/B10/F9 and original exits.
+Actual strict offline read15:01:39UTC completed, Parent projection0ae9dd0c/
+exact reader05ae657a:3admissions/16Jobsclosed/CIDabsent/stabilitypassed.
+Policyabsent/10targets0bound10UNKNOWN/fullcountsNULL, not whole-cohort zero.
+Preserve exact inputs/B10/F9 and original exits; company outcome unfinished.
 New generated adapters require emitted Ruff F821/F822/F823/E9 and real native
 source-format parse-and-return smoke. Old closed fits/readouts are not repeated.
 Installed7358/8ce does not automatically admit new1d4 research actors. Preserve
@@ -65,8 +68,11 @@ loads pinned module by path/hash, old Source/member bytes/debits retained.
 Parent independent --check-sources-only passed. Future command requires actual
 14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
 closure/complete relevant financial-writer census/exact joins/network-none allRO/
-before-after stability. No actual activation/private read/current custody
-admission performed. Missing future receipt is not closure. Journal inventory
+before-after stability. Actual fresh byte-identical instance read is complete:
+current-memory100-actual-read-20261029-v1/RESULT.json0ae9dd0c binds05ae657a.
+It is consumed, do not repeat or invoke the old SYN namespace. Original anchor
+matches/no reset; policyabsent and all10 targets unknown, not a zero-fill claim.
+Missing future receipt is not closure. Journal inventory
 is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
 recovery-capable observe() merely offline.
 
@@ -170,6 +176,15 @@ M2M/PnL/alpha. No rescue blend grid/default/Paper change.
 No active GPU fit inferred. New trials need a distinct justified finite
 hypothesis, not GPU utilization or rescue of old failed criteria.
 
+Subsequent actual cost-survival campaign a45f/fabb/FINAL7022853d COMPLETE:
+onefit26epochs/BEST2/pat24, proper-score/downsideMET but utilityFAILED vsMSE,
+correlation+.01393,30known/32planned2UNKNOWN,375.188upper/allclosed.
+New finite fixedportfolio composition and justified multitaskGPU preparation
+delegated, no completed training repeated or Paper default automatically swapped.
+Actual H1 Data695fc26f/Sourcefd6a60c2 complete251dates/248jointknown; Kepler
+pure mechanism -> Lovelace new one-fit H1CPU comparison under Engine custody.
+Future callbacks/native/source readiness, not assignment, prove actual launches.
+
 ## Completion / Verification
 
 Actual exactly bound native decision/reconciliation is required. Distinguish
@@ -180,6 +195,12 @@ No foreground market wait, new app follow-up chain or recurring report.
 
 Latest full authority4484/c13013e3:
 188serial/19577fullPASS/26knownWindowslinkSKIP/8workers/Ruff/threeCompose.
+Fresh actual-read recovery authority A/verification/current-memory100-actual-
+custody-recovery-20261030-v1/RESULT.jsoncd9b0c8d supersedes it for the same
+protected4484source:301serialPASS1knownSKIP/19577fullPASS26knownSKIP/
+created8/8workers/8workers[19603items]/391.14s/nativehelper0/cleanup/Ruff/
+3Compose. External actual reader independently checked; repo tests alone
+do not validate generated external code or establish a broker effect.
 Verify exact protected digest before docs-only reuse and independently check
 changed external code/outputs. AGENTS verification controls remain unchanged.
 At material COMPANY completion verify/commit/push, replace this with exactly

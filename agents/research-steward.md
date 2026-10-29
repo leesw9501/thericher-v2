@@ -8,6 +8,14 @@ paths/leases; measure actual free/projected peak VRAM before new dispatch.
 
 ## Actual Resource State / Ready Work
 
+Actual new cost-survival GPU fit completed14:53:46UTC/FINAL7022853d.
+26epochs/BEST2/4602updates/onefit/no retry, peakreserved1193279488bytes,
+allownedguardedinstances/CIDs/leases positively closed/375.188upper total.
+It is not currently training. Proper/downside criteriaMET, utilityFAILED.
+Next justified multitask GPU preparation and fixed portfolio fusion delegated
+to Fermat under new finite contracts, not replay of the completed job. Lovelace
+owns separate H1CPU study/<=2CPU/2GiB, no GPU lease. No new fit inferred yet.
+
 At14:49 Parent lifted the post-opportunity readonly-reader queue. Exact positive
 d60cb6fc operational closure is established; Fermat continues native proof and
 may launch the new a45f/fabb cost-survival campaign when its own source/caps/

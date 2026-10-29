@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-29 KST / Oct29UTC14:49 integration in progress.
+2026-10-30 KST / Oct29UTC15:06 integration in progress.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -13,6 +13,22 @@ Preserve unrelated untracked %SystemDrive%/. Startup on genuine resume only.
 Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/
 F9 UNKNOWN-HELD. No reset/refund/profit-expanded bank/substitute/foreign adoption.
 Private no-cost Paper is delegated; research limitations are not global holds.
+
+Latest integration: actual readonly custody recovery COMPLETE0ae9dd0c (below),
+fresh guarded verificationcd9b0c8d/Source4484:301serialPASS1knownSKIP/
+19577fullPASS26knownSKIP/created8/8workers[19603items]/391.14s/nativehelper0/
+cleanup/Ruff/3Compose. Evidence A/verification/current-memory100-actual-custody-
+recovery-20261030-v1/RESULT.json, fullSHAcd9b0c8d16cf1595e065123a3fbcca80e72947bb00a5991f302ff49b8480066a.
+No running exec test session remains; this verifies source/recovery, not a fill.
+
+New GPU campaign Sourcea45f/CONTRACTfabb/FINAL7022853d COMPLETE1fit26epochs/
+BEST2/pat24/4602updates/allclosed/375.188upper. Proper/downside criteriaMET,
+utilityFAILED vsMSE; low contribution correlation+.01393 makes a bounded new
+fixedportfolio composition worth testing, not a profitability/default claim.
+Fermat owns next finite composition/multitask preparation; no rerun of this fit.
+Actual QQQ/SPY H1 input roles ready695fc26f/fd6a60c2/1e64ffde with251dates/
+248jointknown. Lovelace assigned one-fit/no-search H1CPU study after Kepler
+exact hypothesis handoff; the same durable Engine role owns interpretation.
 
 ## Installed Memory100 Opportunity
 
@@ -85,16 +101,25 @@ loads pinned module by path/hash, old Source/member bytes/debits retained.
 Parent independent --check-sources-only passed. The command requires actual
 14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
 closure/complete relevant financial-writer census/exact joins/network-none allRO/
-before-after stability. No actual activation/private read/current custody
-admission performed. Original cb8d directory retains SYN fixed-name outputs;
-do not run ACTUAL there or delete them. Parent found ADMISSION-CENSUS and
-TRANSPORT-CREATED create-exclusive collisions. Lovelace prepares an isolated
-byte-identical working instance plus exact command binding, not overwritten proof.
-Activation builder be72242b/31e9d9aa originally passed21 invented boundaries,
-but Parent metadata attempts r1/r2 failed before private reads: its ordinary
-2MiB limit rejected the exact pinned42082736-byte Docker executable.
-Derivative current-memory100-activation-builder-20261029-v1/technical-r1 is
-being independently checked; preserve both old attempts/debits/partial dirs.
+before-after stability. Original cb8d retains SYN fixed-name outputs: never
+invoke ACTUAL there or delete proof. Narrow recovery READY8688fb4b/contract5429ba0b
+qualifies builder28d7c0ad/native155ba06e/real metadataee0eedfc and fresh byte-
+identical37-member instance/alias0d0e663f/native4a1269bc. Its ordinary2MiB bound
+remains; exact pinned42082736-byte Docker exception only. Prior Parent r1/r2
+failures/partial dirs/debits remain intact. Recovery180upper/240cap/allclosed.
+
+ACTUAL read completed15:01:39UTC through fresh read-runtime, not original SYN
+namespace. A/execution/current-memory100-actual-read-20261029-v1/RESULT.json
+0ae9dd0c9ddd57dfbbc9ced3fde46b4a821cff54040e235b02dac79b99893c99
+binds exact reader RESULT-ACTUAL05ae657a0f428bdfad6fe6fd42d9a002970bf9691952d2c4794475634e8cf655.
+Three actual admissions/16Jobs closed/one readerCID absent/two exact root birth
+instances absent/three immutable refs rehashed after cleanup; network-none allRO,
+private/source/input/anchor membership-identity-mtime-byte stability passed.
+Parent launcher exited before census; rootJob/OS scheduler origin not claimed.
+No credential/broker/recovery/lock/private write, basis unchanged and anchorMATCH.
+Policy record absent,10targets0bound10UNKNOWN; full-cohort counts/current-owned
+positive count NULL. Partial zeroes are NOT whole-cohort zeroes. F9 held stays.
+This reader consumed; never rerun its current root or manufacture zeroes.
 Missing future receipt is not closure. Journal inventory
 is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
 recovery-capable observe() merely offline.

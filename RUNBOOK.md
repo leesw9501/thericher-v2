@@ -22,12 +22,18 @@ native visits; PAIR2d4ceba1 is operational only. Observer restore96f38f53
 binds that closure and preserves original history. Original exit is unchanged.
 Ohm owns source-only narrow repair; never rerun consumed entry/recovery Task.
 
-Do not use cb8d original ACTUAL command yet: qualified SYN run left fixed
+Do not use cb8d original ACTUAL command: qualified SYN run left fixed
 ADMISSION-CENSUS/TRANSPORT-CREATED names. Preserve proof. Lovelace owns fresh
 byte-identical instance qualification. Original be722 activation builder also
 failed its2MiB Docker size check in Parent metadata-only r1/r2; derivative
-technical-r1 must pass native emitted/source-format and real metadata branch.
-No current private reader consumed. Parent alone binds a fresh actual command.
+technical-r1 READY8688/contract5429 now passes native/real metadata/fresh-root
+checks. Actual read CONSUMED: A/execution/current-memory100-actual-read-20261029-v1/
+RESULT.json0ae9dd0c -> fresh clone reader05ae657a, observed15:01:39UTC.
+3actualadmissions/16Jobsclosed/readerCIDabsent/2rootbirthsabsent/stabilityPASS.
+Policyabsent/10targets0bound10UNKNOWN/fullcountsNULL, originalbasisMATCH/F9held.
+No broker/credential/recovery/lock/private writes. Do not repeat this read.
+Parent prepare-only helper exited before quiet source reader census; no root
+Job or OS Scheduler origin proof claimed. Full exact pointers in HANDOFF.
 
 A/execution/current-memory20-bound-metadata-recovery-20261029-v1/technical-r7:
 coordinator5813/capsule578f/imagef12a/SDK6dd/inputc5f5/policydbde/releasee903;
@@ -57,8 +63,9 @@ loads pinned module by path/hash, old Source/member bytes/debits retained.
 Parent independent --check-sources-only passed. Future command requires actual
 14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
 closure/complete relevant financial-writer census/exact joins/network-none allRO/
-before-after stability. No actual activation/private read/current custody
-admission performed. Missing future receipt is not closure. Journal inventory
+before-after stability. Actual fresh37-member clone read completed as above;
+original SYN output namespace remains untouched and neither read may rerun.
+Missing future receipt is not closure. Journal inventory
 is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
 recovery-capable observe() merely offline.
 
