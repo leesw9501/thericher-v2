@@ -1,84 +1,54 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-29 KST / Oct29UTC02:51. A=D:/thericher-v2/model-artifacts.
-Parent shared MD/Git. Engine owns targets/splits/costs/fits/interpretation.
-No broker/private/budget authority.
+2026-10-29 KST / integration04:30UTC. A=D:/thericher-v2/model-artifacts.
+Parent MD/Git. Engine owns final targets/splits/costs/fits/interpretation.
+No broker/private/budget authority. New proposals end in a bounded experiment
+or concrete rejection, not an unbounded reading list.
 
-## Current Work / Consumer
+## Latest Source Work / Consumer
 
-Direct portfolio proposal Source067b5a7e/contract9811bd25 references official
-Luxenberg/Boyd exponential utility and direct neural portfolio papers; no new
-package or model weights. Parent-adopted actual MAIN1af65175 COMPLETE:
-oneGPUfit33epochs5841updates/BEST9/pat24/102.662s/primaryFAILED, allclosed
-458.531148upper. Conditional10bp contribution3.722942%, utility/downside both
-worse than savedMSE; joint loss+allocation change, not clean loss ablation.
-No retune/grid/extra fit. MODP1 audit ce047/8653 COMPLETE/25upper: literal
-mode aligns, no numeric/vintage/CA/PIT parity or drop-in397 feature packet.
-Kepler now minimal native CSV+SPY -> canonical86 -> actual feature consumer
-adapter240/7200/invented-only, no market data/model/API/Task/retag/impute.
+A/research/current-aemd-corporate-action-source-check-20261029-v1:
+Sourceca82a0bc/RESULTe8e7544a/ClaudeKEEP,134.193364upper/allworkersclosed.
+Nasdaq ECA2026-546 and SEC8K005850 confirm1new-for5old reverse split,
+legalJul31/tradingAug4. SECpressrelease007206 announces conditionalSep17merger,
+not completed conversion. Exact URLs/limits retained in EVIDENCE23e83c91.
+CandidateH5 overlap is NOT exact AEMD-held overlap or proof of vendor error.
+KIS official backtester usesMODP1 as adjusted-price request; actual server
+adjustment formula/AEMD correctness/Paper custody handling INDETERMINATE.
 
-Foundation17 Data b992/Source7019 complete; Parent adopted one depth2/minleaf6
-tree in causal-tree-fusion-development,16FIT8INNER8reusedDEV/600SUM incl
-prep180+Data30once/7200/20cells. Existing ClaudeREVISE remains, conditional
-project-out-of-fit NOT qualified fold-OOF/independence/historicalarrival.
-Actual tree FINALc86ee74e COMPLETE/depth1/twoleaves/primary vsHALF MET,
-but all8 reusedDEV decisions alias alwaysTimesFM; no conditional expert gain.
-339.120991upper/allclosed. Ohm source review92a651d4 ADOPT_WITH_LIMITS is
-advisory, not classical OOF/independent selection evidence or an approval stage.
-Ohm UTF8 boundary fix plus Parent persisted-proof schema/native tests enabled
-actual sameDataTask action-only6->100 update6949/c4f1/a1a3, not a new role.
+Engine attribution0281/d2c6 found AEMD66.5055% of net subset contribution.
+New Fermat held-adjustment diagnostic180/1800 separately tests exact membership
+and conditional pinned cached window. No old-study regrade/outlier deletion/
+numeric correction by guesswork/Paper ban. Public event alone is insufficient.
 
-CatBoost actual worker-v1 Source2109/RESULTb0de COMPLETE157updates/BEST56/
-57trees/pat100/primaryFAILED;30known2unknown/309.003393upper/allclosed.
-Asset-MHA FINALa328 COMPLETE26epochs4602updates/BEST2/pat24/349.351723upper/
-allclosed;utilityMET/downsideFAILED. These are not pending jobs. No duplicate
-fits or numerical rescue. Models/context/indicators reuse existing4459; no
-new sector/PIT/fundamental data dependency or Paper profitability gate.
+## Completed Proposals / What They Taught
 
-## Completed Proposals / Evidence
+Directportfolio067b/9811 cites official Luxenberg/Boyd and neural portfolio
+papers, no runtime replacement. Actual0488/1af6 one33epochGPUfit/BEST9
+FAILED utility/downside,458.531148upper/allclosed. Joint loss+allocation change,
+not clean loss ablation. No rescue grid/extra fit.
+Asset-MHAa328 utilityMET/downsideFAILED; StudentTc8a4 density/downside passed/
+utilityFAILED. CatBoostb0de allprimaryFAILED. These are completed, not queued.
+Transformer201a/322e rank comparison MET on reused INNER; no alpha claim.
 
-TimesFM official dated2025SDK6bd804/safeweights2f776 readiness3519 passed;
-actual matched17 Source10e9/CALLBACKfb6c both criteriaMET on32reusedcohorts:
-10bp growth3.350154%/absoluteNAV DD.751342 vsChronos3.278731/.841107.
-189GPUcore/1load/two ledgers/no oldcontrolreplay,531.114347upper/allclosed.
-Not independent alpha or proof of a superior price forecaster: q50MAE still
-worse than persistence. Currentpoint5d23/INPUTae52 UNALLOCATED17/NYS9cash.6,
-one load26core/218upper/allclosed; newnonparity20:45exit, no bank/writer.
+TimesFM10e9/fb6c32matched bothcriteriaMET, q50MAE worse than persistence.
+Exact trusted dated2025 safeweights2f776/SDK6bd804/existingTorchCUDA; noJAX.
+Current5d23/ae52 UNALLOCATED17/NYS9cash/no renorm/native20:45nonparity.
+Foundationtreec86e primaryvsHALF MET but all8DEV aliasTimesFM; no conditional
+expert gain or qualified fold-OOF/independent selection. No repeated fit.
 
-StudentTc8a4 actual42epoch/BEST18/pat24 studyfailed utilitycriterion,
-although NLL/downsideproxy passed;1.4283%conditionalendpoint vsMSE9.8626%.
-398.693214upper/all7CIDs49CLI/leaseclosed, no repeatfit/lambda rescue.
-Concentration top1/top3 shares do not prove spurious CA or benefit of robust
-loss. MODP1 raw/adjusted meaning remains unknown, no outlier deletion.
+Fixedscorefusiond27 bothFAILED, not a general ensemble ban. Synthesis e208/88db
+rejected specific50:50Chronos/reversal portfolio-DD bound; averaging scores
+differs from portfolio averaging. Rulegate da756 rejected, EXIT6668 allHOLD alias.
+Individual profitability is not a prerequisite for exploratory composition/Paper.
 
-Temporal-patch candidate6087 nativef5a2/ab22:
-10inventedforwards/3updates/coldrestore/nextupdateparity,234.721upper/allclosed.
-Actual Engine201a GPU25epochs4425updates completed, original comparison322e
-now primaryMET/RankIC.1288711 vsmeancontext.1245338 on reused INNER.
-No alpha/causalattention/PnL qualification and no repeated training.
+## Data / Next Research Direction
 
-Fixed score fusion6e6b/native18checks implemented two exact score mixtures
-before originalEWMA20Top5, not portfolio averaging/in-sample learned gate.
-Actuald27 completed14cells/30known2unknown, bothcriteriaFAILED:
-MR Delta -3.6689pp/MRCvsMR -.4397pp at10bp. No newblendgrid or rescue.
-Engine handles exact economic masks; no independent performance claim.
-
-Synthesis e2088a3f/callback88db1715/ClaudeADOPT_WITH_LIMITS:
-32keys/clocks/funding/costs/193events align. Specific50:50Chronos/reversal
-portfolio DDlowerbound1.058353%>Chronos.841107, concreteREJECT.
-a55 averaged scores, not portfolios; not general ensemble ban.
-66.793253upper/allreviewJobsclosed/0newfits/cells/forwards.
-
-Exitb8b4/760d -> actual6668 oneCPUfit75epochs525updates/best59,
-all32HOLDfixedH5/noninformativealias. No soft/hard threshold rescue.
-Rulegate da7564trees/514FIT32SCREEN rejected; oldsupportfailures immutable.
-Individualprofitability not prerequisite for exploratory composition/Paper.
-
-## Operational Handoffs
-
-Memory26b8/e37d futurepair now installed/enabled5813/578f/f12a,
-not broker success. MSE22dc/eb38 plus typed303f/3c17 complete, no duplicate
-restore. Chronos3f5a/d133 and TimesFM5d23/ae52 unallocated,
-NAS8/NYS9cash/nativeexit20:45 nonparityvsresearch21:00; namespace5075 qualified
-SYN, corrected runtime deployment separate. No extra B10 or peerbankwriter.
-New research must end in executable bounded hypothesis or concrete rejection.
+Adapter94e9/8fc4 plus101facade61a9 native producer/file/real-consumer checks
+completed. Actual sameDataTask302a/6656/0d74 now100stocks+SPY/MODP1;
+first scheduled publication21:40UTC remains unobserved. No retag/refit/impute.
+Existing pairMODP0 is not same-mode fallback. Literal mode alignment is not
+numeric/vintage/CA/PIT parity. Training4459/currentlisting/corpus limits remain.
+Next distinct hypothesis should address demonstrated failure/concentration,
+with one executable frozen trial, not duplicate a completed architecture merely
+because GPU has capacity. No new permanent role/indicator MD or data dependency.

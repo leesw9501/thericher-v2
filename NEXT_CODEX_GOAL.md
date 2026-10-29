@@ -5,118 +5,121 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain an interpretable exactly bound native KIS Paper decision/reconciliation
-while useful independent research continues. Model publication/tests/installation
-are not fills. Paper permission does not require a profitable model.
+while useful independent research continues. Publication/tests/installation are
+not fills. Paper permission does not require a profitable model.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Startup on genuine resume, not compaction. Follow HANDOFF/AGENTS/RUNBOOK/
-active boards. Parent shared MD/Git/activation; never KIS_LIVE_*/real money.
-ONE original B/10/costs/losses/pending/F9 held; no substitute/reset/adoption.
+Startup on genuine resume, not compaction. Follow HANDOFF/AGENTS/RUNBOOK/boards.
+Parent owns shared MD/Git/activation. Never KIS_LIVE_*/real money.
+ONE original B/10/costs/losses/pending/F9 held; no reset/substitute/foreign adoption.
 
-## Execution
+## Installed Paper / Next Runtime Evidence
 
-Memory100 pair is REGISTERED AND ENABLED:
-thericher-memory20-nas100-entry-20261029-v1 at Oct29UTC14:15/KST23:15;
-thericher-memory20-nas100-exit-20261104-v1 at Nov4UTC20:40/Nov5KST05:40.
-Both ready/instances0 at00:18:39UTC Oct29, no runtime broker outcome yet.
-Exact technical-r7 coordinator5813/capsule578f/imagef12a/SDK6dd/inputc5f5/
-policydbde/Memorye37d remains unchanged. Read HANDOFF for full pins.
+Memory100 pair remains registered/enabled:
+- thericher-memory20-nas100-entry-20261029-v1: Oct29UTC14:15/KST23:15,
+  native14:20/recovery14:27/controller hard14:34.
+- thericher-memory20-nas100-exit-20261104-v1: Nov4UTC20:40/Nov5KST05:40,
+  hard21:00UTC.
 
-Actual initial installation failed readback after EXIT enable, before ENTRY.
-Enable-only recovery Sourcebf194/parent-enable-r1 RESULT24641c84 now succeeded:
-one existing ENTRY enable/zero CreateUpdateRunStopDelete; EXIT preserved.
-Native14mock+2savedXML checks; actual installer/process closure independently
-bound. Neither installer is reusable. No manual Run or opportunity roll.
+Exact coordinator5813/capsule578f/imagef12a/SDK6dd/inputc5f5/policydbde/
+publicatione37d remains unchanged. Full pins and consumed enable recovery
+24641c84/74b41b2b are in HANDOFF. No manual Run, installer rerun or opportunity
+roll. Actual current submit/acceptance/fill/owned inventory remain unobserved.
 
-At the owned opportunity inspect exact dispatch/input/intent/fill/current-owned
-inventory through strict readers. Do not infer success/zero from install, Task
-exit or absent files. Reconcile exact unknown identity before any further effect.
-F9 remains held, not a global stop for correctly bounded other proposals.
-Do not foreground-wait for the session; continue below.
+At the opportunity inspect exact dispatch/input/intent/fill/current-owned
+inventory with strict categorical readers. Task exit/absent file is not a fill
+or zero. Reconcile exact unknown identity before another effect. F9 held is not
+a global stop for correctly bounded other proposals.
 
-Dewey completed ONE fixed account serial derivative, not peer bank writers:
-A/execution/current-native-paper-serial-descriptor-derivative-20261029-v1/
-engineering-r3. Old9f51 fixture failures closed270upper; follow-on600SUM
-including270once/original7200elapsed/max10TOTALroutineSYN CIDs, zero real
-API/privatebook/Task/modelpayload. FINAL870f833c passed two changed native
-financial ABI calls and14 counterexamples,446/600upper/allownersclosed.
-It remains inactive. Operational-prefix Source8c034f71/FINAL8869912f passed
-two actual metadata stages/eight negatives/allownersclosed115upper, but the
-hashed callback path was overwritten during cleanup; exact handoff WITHHELD.
-Immutable-peer integration now owns a fresh qualified producer/consumer proof,
-240SUM incl115once/7200, zero Task/API/privatebook. Memory pair unchanged.
-Kepler MSE100 typed UNALLOCATED input is COMPLETE, callback303f9d8b:
-INPUT3c172855/Sourcecaf8fdb3/POLICY55887f2f/all five selected routes known.
-Use official96reference routes/4unknown, no redistribution/extra B10, fresh
-inference or oldcohort replacement. Quote probe8aea confirms virtual SPY
-endpoint success, not offmarket freshness/timezone semantics. Chronos namespace5075
-qualified SYN only; corrected-image/source/runtime compatibility remains explicit.
+Reader core7587ed97/FINALdf8e2403 is complete,135upper/allownersclosed/zero
+actual private reads. Lovelace owns current-memory100-reader-host-integration-
+20261029-v1: quiet-pythonw identity, relevant financial-writer census and
+positive paired-owner closure hooks. Before one future RO read after14:34UTC,
+require fresh actual admission and exact account/basis/input/policy/intent/fill
+joins plus before/after stability. Missing future receipt is not closure.
+No consumed old reader rerun or recovery-capable observe() as offline reader.
 
-Lovelace technical-r2/dad68e0b completed actual CPU launcher/census/Docker
-projection9f97b3dd,12negativecases/allownersclosed. This is not whole-machine
-Paper/GPU admission. GPU prefix2acadde9 passed3native/seven negatives/allclosed
-60upper, but postclosure hash audit withheld its mutable callback edges too.
-current-model-peer-immutable-callback-repair-20261029-v1 now fixes immutable
-publication once for both consumers,300SUM incl60once/7200/max2 invented
-CIDs/zero market fits/Task/API/private. Old missing callback bytes stay unknown.
-Private/unknown writers still deny; no blanket allowlist or research pause.
+## Ready Inactive Execution
+
+Serial financial derivative dea56a92/FINAL870f833c completed two changed native
+ABI calls/14counterexamples/446upper/allclosed. Old8c03/8869 and2acad callback
+edges remain WITHHELD because cleanup overwrote the historical hashed bytes.
+
+New immutable producer1d4ddc13/reader918c64ca/READY5702b5a9 verified62
+postcleanup references. New serial integration2fde856d/FINALb37292ea verified54
+exact hashes after cleanup/second pass,178upper/allownersclosed. It is
+INACTIVE_UNALLOCATED, not actual financial admission or deployed dispatcher.
+Wholecf6b launcher EXIT20 is not standalone READY. Keep old FALSE releases.
+Fixed three-proposal registry Memory20/MSE100/Chronos17 uses commonf12/6dd;
+TimesFM is not automatically a fourth writer. Installed Memory pair unchanged.
+
+MSE typed303f/INPUT3c17/Sourcecaf8/policy5588 complete, all five selected routes
+known; no duplicate inference. Future full100+allocationCASH codec collision
+is retained, not triggered here. Chronosd133/d01d and TimesFMae52/fb7b are
+UNALLOCATED17 proposals, NAS8 unchanged/NYS9cash/no renormalization,
+nativeNov4UTC20:45 exit nonparity vs research21:00. No extra bank or default swap.
 
 ## Parallel Data / Research
 
-Galileo100batchbf0e COMPLETE100GET1POST/9797rows/98current2empty/allclosed.
-Daily100 READYbc286/Sourceede4 chooses literalMODP1 for consumer alignment,
-nine native tests/allclosed240upper. Existing six-symbol Task still unchanged;
-Existing dailyDataTask is now UPDATED to quiet native100 literalMODP1:
-parent-r13 SOURCE-r11/694913c5, ADOPTIONc4f100c3/RESULTa1a3cc44.
-One UPDATE4/zero Run; original trigger/ACL/history/otherTasks preserved.
-Next Oct29UTC21:40/Oct30KST06:40, enabled/instances0 at02:51UTC.
-Typed child collection, strict UTF8 process decoding and persisted JSON
-Int64/Hashtable consumer repaired and native file-roundtrip tested.
-Actual daily100 scheduled collection remains NOT_OBSERVED; do not rerun driver.
-Foundation17 Data projection b992/Source7019 COMPLETE, physical16FIT8INNER8DEV
-roles/native consumer verified/allclosed; do not repeat retained intake.
-MODP1 compatibility audit ce0477bd/86534243 COMPLETE,25upper/allclosed:
-literal mode aligns, numerical/vintage/CA parity unproved. Daily100 CSV lacks
-same-asof SPY/context/canonical86 handoff, not a drop-in397 packet. Kepler now
-prepares native-daily100-feature-adapter240/7200 with invented producer/file/
-real consumer only; no actual payload/API/model/Task. No retag or imputation.
+Actual batch284b/bf0e completed100GET1POST/9797rows/98current2empty/allclosed;
+MODP0 is not proven equivalent to trainingMODP1. Keep original caches.
 
-StudentTc8a4 COMPLETE42epochs7434updates/BEST18/utilityFAILED/allclosed.
-TimesFMfb6c COMPLETE32matched/bothMET and currentpoint5d23 published
-INPUTae52/POLICYfb7b UNALLOCATED/NYS9cash.6/no renorm, allworkersclosed.
-Do not repeat fits/forwards/readouts. Reused/corpus/nonPIT/CA limits remain.
+Current same dailyDataTask now uses100stocks plus SPY/AMS, literalMODP1:
+A/data/current-native-daily100-spy-context-runtime-preparation-20261029-v1/
+technical-r1 SOURCE61a9e508/native03132cfd/READY8db01b1a.
+One reused client/1POST/101 plannedGET/130GET ceiling/zero retries/245s inner
+capture unchanged. Actual action upgrade03:57UTC: A/infra/daily100-spy-context-
+action-upgrade-preparation-20261029-v1, Source302a050b/ADOPTION66567afc/
+RESULT0d741a5a. One UPDATE4/zero Run; original triggers/ACL/settings/history/
+otherTasks preserved. Next Oct29UTC21:40/Oct30KST06:40, enabled/instances0.
+Prior6->100 update6949/c4f1/a1a3 is superseded history, not another collector.
+Actual101 acquisition/feature/model publication remain NOT_OBSERVED; never
+rerun consumed installers/claims. Static Memory compatibilityb47b63a2 found
+no material effect, not future actual actor admission or245s completion proof.
 
-CatBoost100 worker-v1 Source21092003/RESULTb0de COMPLETE, primaryFAILED:
-157updates/BEST56/57trees/pat100/onefit/allclosed309.003393upper.
-Asset-attention100 FINALa328 COMPLETE26epochs4602updates/BEST2/pat24,
-utilityMET/downsideFAILED/allclosed349.351723upper. Neither is a pending fit.
-Do not duplicate completed fits, forecasts or cost cells.
+Feature adapter HANDOFF94e9a150/Source8fc4b488 completed10 native checks:
+inventedCSV100+boundSPY/calendar86 -> actual4c10/8e40 consumer,
+24x100x397/13fields/FIT affines once. New61a9 facade separately passed8checks.
+Actual payload still needs original source/date/mode bindings. Old434f stays
+Oct28asof/Oct29decision. Existing pair is MODP0, not a same-mode SPY substitute.
+Token audit5a4afdd5 NO_PROVEN_CONFLICT: observer session checks precede POST;
+no floor/schedule change. Actual ad-hoc writers/first245s completion unmeasured.
 
-Foundation17 tree FINALc86ee74e COMPLETE/primaryMET, actual depth1/two leaves;
-all8 reusedDEV decisions equal alwaysTimesFM. No conditional ensemble gain
-over that expert demonstrated; computational project-out-of-fit NOT qualified
-fold-OOF/independence/arrival. Onefit/20cells/allclosed339.120991upper.
-Direct exponential portfolio100 MAIN1af65175/Source0488db06 COMPLETE:
-33epochs5841updates/BEST9/pat24/102.662sGPU, primaryFAILED/allclosed458.531148
-upper. Conditional10bp contribution3.722942%, not full growth/DD/alpha/PnL.
-Do not repeat these fits/forecasts/readouts. Resource utilization alone never
-adds another trial. Next research may use a distinct justified frozen hypothesis.
+Completed GPU/CPU campaigns must not repeat:
+- StudentTc8a4:42epochs/BEST18/utilityFAILED/398.693214upper/allclosed.
+- CatBoostb0de:157updates/BEST56/primaryFAILED/309.003393upper/allclosed.
+- Asset-MHAa328:26epochs/BEST2/utilityMET/downsideFAILED/349.351723upper.
+- Direct portfolio1af6/0488:33epochs/BEST9/primaryFAILED/458.531148upper.
+- TimesFMfb6c:32matched/bothMET on reused data; current5d23 published unallocated.
+- Foundation17 treec86e:primary vsHALF MET, all8DEV alias alwaysTimesFM;
+  no conditional gain over component/339.120991upper/allclosed.
+- Transformer201a/322e rank comparison MET on reused INNER; fusiond27 bothFAILED.
+- MSE current22dc, Chronos3f5a and TimesFM5d23 actual forwards complete.
 
-Completed: Transformer201a/322e primary rank comparison MET on reused INNER;
-fixed score fusiond27 both criteria FAILED; MSE current inference22dc COMPLETE.
-Do not repeat these fits, forecasts or readouts. Current boards hold evidence
-and limits; untested artifact/readiness is not a running worker.
+Issuer attribution028130ea/d2c6f304 completed190upper/allclosed:
+AEMD66.5055% of MSE net subset contribution/top3issuers83.6001%.
+Issuer/cohort/aggregate totals reconcile; exact dated cached vector parity
+remains WITHHELD. Public-source checkca82a0bc/e8e7544a confirms1:5 reverse
+split tradingAug4; exact held overlap and gain/vendor-error cause INDETERMINATE.
+Fermat owns current-aemd-held-adjustment-diagnostic-20261029-v1,180/1800:
+one membership projection, conditional one pinned cached event-window intake,
+zero API/refits/payoff replays/old regrade/outlier deletion/Paper ban.
+No active GPU fit inferred. New trials need a distinct justified finite
+hypothesis, not GPU utilization or rescue of old failed criteria.
 
-## Completion Evidence
+## Completion / Verification
 
-An actual exact native Paper decision/reconciliation is required, with submit/
-acceptance/fill/owned inventory/terminal status distinguished and missing fees/
-settled cash/netPnL left unknown. Original cohort8UNKNOWN and F9 held remain
-independent facts. Existing exit/data schedules and original business clocks
-unchanged; no replacement follow-up chain.
+Actual exactly bound native decision/reconciliation is required. Distinguish
+no-intent/technical failure/attempt/acceptance/exact fill/current owned inventory/
+terminal reconciliation. Fees/settled cash/netPnL remain unknown without proof.
+Original cohort8UNKNOWN/F9 held and original exits remain independent facts.
+No foreground market wait, new app follow-up chain or recurring report.
 
-Verify changed paths and actual external code separately; use exact current
-protected digest before reusing fresh full repo authority4484/07eb270b.
-At material COMPANY completion commit/push, replace with exactly ONE next
-company outcome, refresh boards and continue. A package commit is not completion.
+Latest full authority4484/c13013e3:
+188serial/19577fullPASS/26knownWindowslinkSKIP/8workers/Ruff/threeCompose.
+Verify exact protected digest before docs-only reuse and independently check
+changed external code/outputs. AGENTS verification controls remain unchanged.
+At material COMPANY completion verify/commit/push, replace this with exactly
+ONE next company outcome, refresh boards and continue. Package commit is not
+company completion.
