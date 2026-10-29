@@ -74,9 +74,12 @@ A/data/current-native-daily100-spy-context-runtime-preparation-20261029-v1/
 technical-r1/SOURCE.json61a9e50887aa88a47ee8de6cfd6ed3f4570143e2a53505f632914676347c4011.
 100stocks+SPY/MODP1/101plannedGET/130cap/0retry/2spacing/oneclient/
 300freshPOSTfloor/245s capture. Actual session20261029 pointer/manifest8e6eb0dd
-exists, not qualified modelinput. Galileo actualconsumer root failed fixedaffine
-schema at prepare_binding91 before modelwork; repair exactboundary/native smoke,
-no refit/recollect. Model point remains UNKNOWN. No pointer/Task-exit inference.
+exists and repaired consumer32945a6f/READY3fd42931/FINAL158d481d/
+CLOSURE6fa20c4c completed110upper/one24x100x397projection/21owners9Jobsclosed.
+Both failures retained, no refit/recollect/reconsume. Model operational point
+f09d6296/FINAL612b6923/CLOSUREa13e34f3 completed65upper/oneCPUrestore+forward,
+UNALLOCATED/UNROUTED/notbrokerinput. Separate native-input preparation180cap
+must preserve exact weights/clocks/venue provenance/H5calendar. No rerun.
 Next-publication source-only callback3ca57541 ready52pins, no stalepointretag.
 Data94e9/a318/8821/model231a only preparation.
 MSE best-005.npz SHA4b8a46611b03b8cf9245c188f21b27ba141a1eb17b7215e4c3dfaa98a6ce5d71,

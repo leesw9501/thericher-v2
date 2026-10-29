@@ -36,28 +36,36 @@ persist; no reset/profit refill/foreign adoption/substitute unknown request.
 ## Ready Parallel Packages
 
 1. Execution/Dewey: stage persistence fd8ab25d passed23invented cases. Future
-   compiler30027 failed nested physical graph context; correction8a263111 is
-   source-only. Separate corrected-qualification root, one native program/
-   120active/1800elapsed, no market/API/Task/private/TRUE. Prove actual mounted
+   compiler30027 failed nested physical graph context; correction8a263111 then
+   failed actual native at result_sink Windows descriptor in Linux. Both closed
+   (100+40upper), no runtime qualification. New physical-alias-repair root,
+   360SUM/3600elapsed/MAX3code-only natives, no market/API/Task/private/TRUE.
+   Inventory all actual cross-host loaders before native. Prove actual mounted
    graph and typed consumer without weakening guards. Proposed360s new phases
    preserve280nativecap/8sHTTP/3effects/128calls/0retry; clock not selected.
 2. Data/Galileo: consume actual existing daily101 publication, not recollect.
    Source61a9e508/current session20261029/manifest8e6eb0dd; pointer alone is
-   not qualification. current-daily101-actual-publication-consumer-20261030-v1
-   first path failed SAFE_FIXED_AFFINE_SCHEMA_NO_REFIT at prepare_binding91.
-   Repair native schema boundary, preserve failed source/debits, no refit.
-   Direct exact frame/source/closure callback to Engine and compiler.
-3. Engine/Fermat: separate one operational restore/forward using exact MSE
-   best-005 checkpoint4b8a4661/model585e3a20/affines23fc49b1/source6fe12b,
-   NOT60127ff alias. Only qualified fresh frame; no stale point retag or model/
-   bank swap. Parent selects future finite release/clock with actual owner/risk.
+   not qualification. Actual consumer is now READY/CLOSED3fd42931/158d481d/
+   6fa20c4c/Source32945a6f/native0182c2bd,110upper/one24x100x397projection/
+   21owners9Jobsclosed. Two failedpaths preserved, no refit/reconsume. Direct
+   exact frame/source/closure reached Engine. Separate ETF source-only Data
+   readiness60cap may precede Engine contract; no actualpayload until frozen.
+3. Engine/Fermat: operational point f09d6296/FINAL612b6923/CLOSUREa13e34f3
+   is ACTUAL/CLOSED65upper,1restore/1CPUforward/2347known predictions,100slots/
+   98eligible/5positive. Existing MSE4b8a4661, NOT60127ff alias. UNROUTED/
+   UNALLOCATED/allow_execute=false. New native-input preparation180cap preserves
+   exact weights/masks/clocks and source-supported venues/H5calendar, no refit/
+   forward/API/Task. Parent WINDOW chooses Oct30UTC13:40trigger/13:45entry
+   preparation ONLY; actual binding/owned exit/runtime remain unqualified.
 4. Strategy/Kepler: one nonduplicate trainable ETF hypothesis from existing
    rights-bound July source,180active/source-only. Include causal splits/costs/
    strongest kill and distinguish exposure/gross-loss-budget exhaustion from
-   model advantage. Engine freezes a separate campaign before numerical work.
-5. Lovelace: official Tiingo event-field semantics120active/source-only.
-   Pure accrual699c/dff7 passed37cases/closed70upper but rawmapping remains
-   UNQUALIFIED; no silent dividend/settlement addition to closed price-only run.
+   model advantage. Proposed EXPECTILE25 linear14parameter CPU model, not a
+   GPU utilization run. Engine freezes separate campaign before numerical work.
+5. Lovelace: official event-field review COMPLETE but EOD units/rebasing remain
+   unresolved. Pure accrual699c/dff7 passed37cases/closed70upper; rawmapping
+   UNQUALIFIED, no silent dividend/settlement addition. Temporary90active source-
+   only throughput review of actual Data schema/loader handoff, one improvement.
 
 ETF526f is COMPLETE/CLOSED224upper, Sourcece29684b/FINAL709e841b/
 CLOSURE2570962a/resultf4776c8b:6price-only cells/0fits/GPU/retries.

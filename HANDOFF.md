@@ -118,8 +118,13 @@ current-nextday-native-telemetry-compiler-preparation-20261030-v1 failed at
 graph.verify86: nested frozen_driver omitted explicit /route+/point context.
 Original100upper/failedCID closed, no actual deployment. Source-only correction
 8a263111 supplies context only for literal/central, all strict guards retained.
-Dewey owns separate corrected-qualification root, one native run/120active/
-1800elapsed; no market/API/Task/private/TRUE. New360s entry/recovery slot is
+Corrected qualification084cf8ff also failed: frozen_driver34 -> publisher.
+sink_type13 passed Windows result_sink descriptor into Linux unchanged.
+Closed40upper/all6Jobs/CID absent; no repeat or qualified runtime claim.
+Dewey now owns current-nextday-native-physical-alias-repair-20261030-v1:
+360SUM/3600elapsed/MAX3code-only native programs, same invented consumer,
+all exact cross-host descriptors/loaders inventoried before native; no market/
+API/Task/private/TRUE. Ohm independent alias/exit review. New360s slot is
 a sizing proposal (observed58s attach+280s native+22s slack), not a selected
 clock or guarantee. Original Nov4 clocks remain unchanged.
 
@@ -201,6 +206,11 @@ and SPY-2.5616838percent; cash0. Local_paper, NOT KIS/totalreturn/netPnL/alpha.
 retrospective reused history not PIT/independent performance.
 Cumulative gross-loss debits caused2456QQQ10/2333SPY10 capacity-blocked
 entries: intended allocation is not matched realized exposure or buy-and-hold.
+Parent descriptive audit of closed journal timestamps against exact COLD-INPUT
+hashes and before/after bytes/mtime/hash stability: QQQ10 lastbuy2019-07-31,
+QQQ20 lastbuy2018-11-13; SPY10 lastbuy2020-03-17,SPY20 lastbuy2019-11-25.
+No later buys through2025. This adds no market intake/replay/fit/performance
+regrade or continuous dollar-time estimate. Kepler/Fermat received this finding.
 No Paper bank change, profit refill, old regrade or result-driven retry.
 Data one bundle/projection, Engine one prior/marks intake, six native journals
 and original-SDK cold rebuilds; all17Enginebirths/14Jobs/2CIDs closed plus
@@ -208,15 +218,23 @@ Data/Kepler closures. Explicit code-only fourth ABI amendment923ec0c was
 after Data consumption but BEFORE Engine values, original three checks/debits
 preserved; no silent native-check increase or market replay.
 
-Kepler now owns source-only current-etf-next-hypothesis-selection-20261030-v1:
-one nonduplicate causal trainable proposal, exposure/budget confound explicit,
-180active/1800elapsed/0market. Fermat freezes any new campaign after the
-operational model point, not an automatic extension of closed526f.
+Kepler current-etf-next-hypothesis-selection-20261030-v1 proposes ONE
+ETF_H5_LOSS_BUDGET_EXPECTILE25_LINEAR_V1:13features/14parameters, asymmetric
+cost-aware surplus per reserved dollar, one CPU SciPy fit, no GPU needed.
+Explicit FIT2002..2012/INNER2013..2015/DEV2016..2025, purgeH5, new same-basis
+controls and matched-entry-notional/lot-clock shadows to expose truncation.
+Source proposal only until final Engine contract; not an old526f regrade or
+automatic second model/seed/threshold. Fermat freezes actual data/caps/kill
+before numerical work and may dispatch disjoint Data/kernel preparation.
 Lovelace pure accrual Source699cd153/nativedff7bd6b passed37invented cases,
 closed70upper: split/basis and dividend RECEIVABLE, no cash/B10 refill.
 Raw Tiingo mapping UNQUALIFIED, review_unavailable not approval. Separate
-current-tiingo-accrual-field-semantics-20261030-v1 checks official field units/
-timing,120active/source-only; never silently add totalreturn to526f.
+current-tiingo-accrual-field-semantics-20261030-v1 COMPLETE/source-only:
+official docs establish ex-date tagging and corporate API splitTo/splitFrom,
+but EOD dividend units/currency/historical rebasing/same-day split basis remain
+UNRESOLVED. No fabricated adapter or market smoke. Never silently add totalreturn
+to526f. Lovelace now reviews one concrete current Data handoff throughput repair,
+90active/source-only, no new platform/gate or repeated completed point.
 
 Galileo exact12gap metadata Source7a68/FINAL0ec7 closed50upper: CODXFeb2026/
 BKYIJun2026, all5fields absent inside acceptedMODE1 page ranges. Not the17
@@ -266,10 +284,34 @@ Actual current pointer now names session20261029/MODP1 and manifest
 under technical-r1/runtime/MODP=1/dates/20261029. Pointer/Task exit alone
 does NOT qualify actual completion/model input. Galileo owns exact-source
 current-daily101-actual-publication-consumer-20261030-v1,180active/3600elapsed.
-First real path failed prepare_binding91 SAFE_FIXED_AFFINE_SCHEMA_NO_REFIT;
-0restore/forward/API/Task. Repair exact schema boundary, preserve failure,
-no refit/recollect/retag. Fermat owns separate one operational restore/forward
-only after qualified new frame, not a new research fit or performance trial.
+First path failed prepare_binding91 SAFE_FIXED_AFFINE_SCHEMA_NO_REFIT;
+zero modelwork in THAT failed path. Galileo technical-schema-r1/bootstrap-r2
+repairs preserved original failure, no refit/recollect/retag.
+Data READY3fd42931/FINAL158d481d/CLOSURE6fa20c4c are COMPLETE:
+Source32945a6f/native0182c2bd, one24x100x397 projection/98currenteligible/
+two masked,110upper incl60failed,21owners/9Jobs/0CID closed. No Data API/model/
+Task/GPU or further consume. No original source finality/PIT inferred.
+Throughput9b268375/6e787e03/10upper found stale two-field synthetic affine
+fixture versus real writer mean/scale/dates, then NumPy-before-bootstrap in
+the repair. R2 production path fixed. Next fixture must follow actual writer
+schema after production bootstrap, not per-leaf rewrites/new gate/repeated point.
+Fermat operational point is now ACTUAL/CLOSED, not awaiting a forward:
+A/research/current-mse100-oct30-operational-point-20261030-v1,
+Sourcef09d6296/FINAL612b6923/CLOSUREa13e34f3/PUBLISHED8fe8047d.
+One restore/one CPU forward4.933317s/65activeupper,2347known row predictions,
+100symbol proposal/98eligible/5positive/unitmass1, literal stockCASH preserved.
+FORECAST7aa7abf5/ROLEeef9f318/SYMBOL-PROPOSALba0b16a1,
+centered-midrank EWMA20/fractional-tieTop5 policy unchanged.
+UNALLOCATED/UNROUTED/allow_execute=false; not a broker input/order/alpha.
+No checkpoint/model alias60127ff, fit/GPU/market evaluation or repeated forward.
+All8births/7Jobs/CID positively closed. Fermat next prepares exact native
+Input/Policy/Model metadata with source-supported venue provenance and official
+H5 calendar,180active/0fit/forward/API/private/Task. Unknown venues retain skipped
+mass, no inference from symbols/rank, renormalization or new bank.
+Parent A/execution/current-oct30-native-paper-preparation-20261030-v1/WINDOW.json
+selects PREPARATION ONLY Oct30UTC13:40trigger/13:45..51entry/13:54..14:00recovery/
+14:02restore/14:03hard. Actual typed refs still unknown/not installed; exact new
+H5 exit duty required separately, old Nov4 remains unchanged. No forced activation.
 Cache M/us_equities/kis_paper_private/daily-nas100-spy-owned/v1/MODP=1.
 Next-publication CALLBACK3ca57541 is source-only52pins/15upper closed.
 Data94e9/a318/8821 and model231a are consumer preparation, not a model point.

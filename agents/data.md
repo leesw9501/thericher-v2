@@ -14,18 +14,25 @@ technical-r1/SOURCE.json
 100stocks+SPY/AMS/GUBN0/MODP1;1client/1POST/101plannedGET/130cap/0retry/
 2spacing/300freshPOSTfloor/245sinnercapture. Cache
 M/us_equities/kis_paper_private/daily-nas100-spy-owned/v1/MODP=1.
-Current session20261029 pointer/manifest8e6eb0dd exists, not yet a qualified
-model frame. No manualTaskRun/duplicate collector.
+Current session20261029 pointer/manifest8e6eb0dd was consumed once through
+qualified repaired consumer, not merely inferred from Task exit.
+No manualTaskRun/duplicate collector.
 Next-publication-readiness CALLBACK3ca57541/52pins/15upper source-onlyclosed.
 Consumer94e9/a318/8821/model231a ready as preparation, not an actual point.
 CorrectMSE4b8a4661/source6fe12b/BEST005, not60127ff Memoryalias.
 Require actual exact source/mode/session/SPY/cursor/closure/masks; no retag/swap.
 Galileo owns current-daily101-actual-publication-consumer-20261030-v1,
-180active/3600elapsed/0API. First real path failed SAFE_FIXED_AFFINE_SCHEMA_NO_REFIT
-at postclose.prepare_binding91; zero modelrestore/forward. Preserve failed
-output, fix exact schema/role handoff with invented native path before any
-further payload; no refit, repeated Data capture or fabricated finality.
-Direct callback to Fermat for one operational point, Dewey for future compiler.
+Two failures preserved (affine extra dates field, bootstrap order).
+Actual Source32945a6f/native0182c2bd/READY3fd42931/FINAL158d481d/
+CLOSURE6fa20c4c COMPLETE110upper incl60failed/21owners9Jobs/0CID closed.
+One24x100x397 role,98currenteligible/two masked,0Data model/API/Task/GPU.
+Fermat actual operational pointf09d6296/612b6923 closed65upper, no repeat.
+No refit, repeated Data capture or fabricated finality. Throughput9b268375/
+6e787e03 recommends actual mean/scale/dates writer fixture after bootstrap;
+R2 production fixed, no completed rerun.
+Next distinct current-etf-expectile-data-readiness-20261030-v1 source-only
+60cap: July loader/253-close roles for Engine's ONE new expectile proposal.
+No actualpayload until final frozen Engine contract; no acquisition/API.
 
 Galileo current-full187-required-mark-gap-readiness-20261030-v1:
 <=120active/3600elapsed; metadata-first exact12missing required-key reasons,

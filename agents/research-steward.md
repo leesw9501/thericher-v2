@@ -42,11 +42,14 @@ Actual API health2af/d646 closed73.8078561SUM, not a GPU/training activity.
 GPU snapshot20:31:34:2percent/22210MiBfree/37C; Dfree36.47percent,
 Cfree22.09percent/24cores32logical. Snapshot is not a current resource lease.
 
-Fermat owns one operational existing-checkpoint forward only after qualified
-current daily101 frame; no fit or new research evaluation. Kepler source-only
-next-hypothesis selection180cap produces ONE nonduplicate trainable ETF
-proposal for Engine, not a proposal grid/automatictraining. Lovelace official
-Tiingo accrual-field semantics120cap is separate, no market fitting.
+Fermat existing-checkpoint operational pointf09d/612b/a13e CLOSED65upper,
+1CPUrestore/forward4.933s/2347knownpredictions/8births7Jobs1CIDclosed,
+0fits/GPU/outcomes. No repeat. Separate native-input metadata180cap no modelwork.
+Kepler next-hypothesis Sourcea2139b12/proposal17ff5425/callback7eb971d1
+CLOSED60upper selects ONE expectile25 linear14parameter CPU fit, not a grid.
+Engine freezes final masks/support/caps before numericalwork, then Data/solver
+prepare disjoint roles. Data source-only readiness60cap not payload authority.
+Official Tiingo event semantics remains incomplete; no new accrual market run.
 Fixedrule/NumPyforward need no GPU. New useful trainable campaign measures
 headroom and freezes chronology/earlystop/checkpoint/caps before dispatch.
 Independent CPU preparation continues during Paper/data due times.

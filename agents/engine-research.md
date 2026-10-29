@@ -53,12 +53,22 @@ not totalreturn/netPnL/independent alpha or a trained model.
 Cumulative gross-loss debits block2456QQQ10/2333SPY10 entries. Same intended
 allocation does not mean matched exposure/buy-and-hold. No profitrefill,
 Paperbank change or oldregrade. No repeat of sixcells to add attribution.
+Existing sealed-journal timestamps only: QQQ10 lastbuy2019-07-31/QQQ20
+2018-11-13,SPY10 2020-03-17/SPY20 2019-11-25, no later buys through2025.
+Parent pinned COLD hashes and before/after bytes/mtime/hash; no market readout/
+fit/replay. New experiment must predeclare evaluation basis/date and coverage.
 
-Fermat next owns one OPERATIONAL currentMSE restore/forward after Galileo's
-qualified session20261029 daily101 frame. Current consumer failed fixedaffine
-schema before model work; repair boundary, no refit/recollect/retag. Exact
-4b8a4661/model585e3a20/affines23fc49b1/source6fe12b, not60127ff alias.
-Point valid on actual future date, not an independent-performance claim.
+Operational currentMSE point is now ACTUAL/CLOSED65upper:
+current-mse100-oct30-operational-point-20261030-v1 Sourcef09d6296/
+FINAL612b6923/CLOSUREa13e34f3/PUBLISHED8fe8047d,1restore/1CPUforward/
+2347knownpredictions/100slots98eligible5positive/unitmass1. All8births7Jobs/
+CIDclosed,0fit/GPU/outcomes. Exact4b8a4661, NOT60127ff alias. UNALLOCATED/
+UNROUTED/allow_execute=false, not brokerinput/order/alpha, never repeat.
+Galileo Data32945/READY3fd4/closure6fa2 completed110upper/oneprojection.
+Fermat current-mse100-oct30-native-paper-input-preparation-20261030-v1
+180cap now binds unchanged weights/masks/causal clocks/source-backed venues/
+H5calendar to native weights parser. Unknown venue skipped, no renormalizing,
+newfit/forward/private/API/Task or bank reset. Direct compiler/review callbacks.
 Kepler current-etf-next-hypothesis-selection-20261030-v1 source-only180cap
 selects ONE nonduplicate trainable proposal with exposure/budget confound and
 causal split/costs/kill/earlystop. Engine freezes distinct contract before fit.
@@ -107,5 +117,5 @@ alpha or duplicate fits. TCN/LSTM16=BATCHsize, actualFIT2817dates2014..2025/
 INNER173supervised187origins;4459 is a Sourcehash.
 Truefull100M1/09:29/heldmarks a197/f73f NOT_READY; D1 is not M1.
 Next-dateMSE4b8a4661 BEST005/source6fe12b, not60127ff Memory alias.
-Actual daily101 pointer exists; full model frame/point UNKNOWN until repaired
-qualified handoff. No stale retag/model-bank swap.
+Actual model point exists but typed routed Paper input remains unqualified
+until its separate exact handoff. No stale retag/model-bank swap.

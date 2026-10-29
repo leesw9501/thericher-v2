@@ -7,10 +7,12 @@ costs/fits/interpretation. No broker/private/execution-risk authority.
 ## Executable Proposals / Actual Readiness
 
 Current Kepler package: current-etf-next-hypothesis-selection-20261030-v1,
-180active/1800elapsed/source-only/0market. Select ONE nonduplicate trainable
-causal momentum/volatility/cost-aware ETF hypothesis using JulyTiingo rights-
-bound history. Explicit splits/purge/availability, baseline/costs/kill and
-bounded epochs/earlystop/checkpoints/trials; Engine owns final contract/fits.
+Sourcea2139b12/proposal17ff5425/callback7eb971d1 CLOSED60upper/0market/native.
+Exactly ONE ETF_H5_LOSS_BUDGET_EXPECTILE25_LINEAR_V1,13features/14parameters/
+CPU SciPy/one fit proposed, FIT2002..2012/INNER2013..2015/DEV2016..2025/purgeH5.
+Asymmetric cost-aware surplus per reserved dollar, new same-basis native controls
+and matched-entry-notional/lot-clock shadows. Engine final masks/support/criteria/
+caps before payload; no automatic fit/oldgrade/GPU utilization work.
 Closed526f/ce29684b/709e841b/f4776c8b completed6price-only cells224upper:
 QQQ10bp+0.7954percent account but20bpnegative, dividends excluded/nonPIT.
 Gross-loss-budget blocked most later entries, not matched realized exposure

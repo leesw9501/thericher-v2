@@ -55,9 +55,13 @@ not a historical full-request trace. Do not optimize hash/owner guards by guess.
 Dewey native stage persistence fd8ab25d/b417471f:23invented cases/15financial
 AST comparisons PASS, closed. Future compiler source30027 failed nested
 graph.verify86 missing /route+/point context,100upper/all6Jobs/CIDclosed.
-Small literal/central correction8a263111 preserves all guards. Separate
-current-nextday-native-telemetry-corrected-qualification-20261030-v1 owns
-one native program/120active/1800elapsed/0market/API/Task/private/TRUE.
+Small literal/central correction8a263111 preserves all guards but corrected
+native084cf8ff failed frozen_driver34 -> publisher.sink_type13, Windows sink
+descriptor passed into Linux. Closed40upper/6Jobs/CID absent, no repeat.
+New current-nextday-native-physical-alias-repair-20261030-v1 owns360SUM/
+3600elapsed/MAX3code-only native programs, same invented consumer. Inventory
+all physical descriptors/loaders before native, exact strict resolve_reference,
+no market/API/Task/private/TRUE or guard weakening. Ohm independent review.
 360s entry/recovery proposal preserves280nativecap/8sHTTP/3effects/128calls/
 zero retry; real future clock/input remain unselected. No old clock change.
 Parent advisoryc23e9bce/b57df32f permits invented admission-multiplicity study
