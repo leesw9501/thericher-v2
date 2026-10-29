@@ -6,6 +6,15 @@ ONE original B/10/costs/losses/pending/F9 held. No operator decision pending.
 
 ## Installed / Due
 
+CURRENT19:59:1925operationalpair39b4/closure0236 closed/observerrestorefalse,
+source0668/f0d9 exact. Actualreader82ef/RESULT12bb andfreshdiag4099/RESULT517b
+bothUNKNOWN/CONSUMED after3admissions16closedJobs/CIDabsent, nofinancial/stability
+projection. Safeframes point reader.read276 record_scope account/basis/policy/
+profile/paths mismatch. Scopeguardretained; no financialzero/holdings/fill/PnL
+claim or repeat. Lovelacesource-derivedpathscomparison/strictfix; newreadonly
+observation scopeafter20allowedonlyseparatefrozencontract+freshadmissionallRO/
+networknone/stability. Originalentryinputexpires20, no newentryorretag.
+
 CURRENT19:14: new coupled-entry Task installed/enabled under06680cf4/route5cd3,
 trigger19:25/native19:30..34/recovery19:37..41/hard19:44UTC, originalinput20:00.
 Compiler365e4/nativea40/QUALIFIED3ea9 couplesactualmountedhost+route clocks;

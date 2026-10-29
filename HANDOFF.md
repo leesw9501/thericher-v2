@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct29UTC19:14 integration.
+2026-10-30 KST / Oct29UTC19:59 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -15,6 +15,41 @@ Earlier detailed dispatch history is retained in Git at c86d7185 and immutable
 artifacts, not a second current backlog. Source-only plans are not active workers.
 
 ## Paper Result And Proven Defect
+
+CURRENT actual1925 opportunity is operationally CLOSED, financial outcome
+UNKNOWN. Exact pair39b426df/closure023643e4890e6b5768a64d9fa2a98996100b5cfccf0b11fc2d2be5c62ee68d3e
+under coupled/window/runtime-results/paired-entry matches0668/f0d9/round,
+restore_obligationfalse. Parent prepare positively validated original controls/
+root/CIDabsence after19:44. Do not invoke this consumed Task or substitute orders.
+
+Fresh reader1925 Source82efda8c actual RESULT
+12bb35c741397d80f7d68fee5e17153610114f895eea0fa578c11921235bb278
+is CONSUMED/UNKNOWN:3immutableadmissions/16closedJobs/CIDabsent, container
+exit20 at start_wrapper/ValueError. No financial projection or private stability
+completion; all financial counts NULL, not zero. Its startmarker is not proof
+of actual financial payload access. Transport discarded the safe error frame.
+
+New diagnostic Sourcecba505e4/reader40996a7f preserved only codeframes, no
+private exception text/values. Parent actual diagnostic RESULT
+517b4b37405ebc0bf1cbd78a83307ef8aceaf78a2fa4a02d9c97fcd7658c8fdb
+under window1925-readiness/technical-diagnosis-r1/reader-diagnostic is also
+CONSUMED/UNKNOWN,3admissions/16closedJobs/CIDabsent/exit20. Exact safe frames:
+read_offline.main54 -> native_guest.main55 -> reader.read276 -> reader.need6.
+Source276 is record_scope: record account/basis/policy/profile/paths must match
+book/spec. No guard is removed; account/holdings/intent/fill/PnL remain UNKNOWN.
+Lovelace owns source-derived current-path comparison/strict bounded repair,
+or a fresh stable readonly static-boolean scope diagnostic if necessary.
+Never repeat12bb/517b namespaces or infer positive/zero financial facts from
+reaching a code line without the final stability proof.
+
+Old read capsules expire20:00, NOT company/private-read authority. No new
+entry from expired original input. A separately frozen new exact-cohort
+readonly reconciliation scope after20 may observe current state with fresh
+writer admission/allRO/networknone/stability and actual observation time;
+never retag the model point/backdate outcomes or waive record_scope.
+Independent Data/research continue. Company remains UNFINISHED.
+
+Prior deployment proof (installation is not runtime success):
 
 CURRENT new finite opportunity is INSTALLED/ENABLED with independent full RO
 proof, NOT runtime or fill evidence:
