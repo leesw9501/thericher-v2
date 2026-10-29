@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / Oct29UTC02:05. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC02:51. A=D:/thericher-v2/model-artifacts.
 Fermat Engine/Steward; Parent shared MD/Git. Actual contracts own caps.
 
 ## Latest Results / Ready Queues
@@ -43,18 +43,33 @@ Source7019 complete/allclosed30upper. Parent adopted current-foundation17-
 causal-tree-fusion-development-20261029-v1: onefit0retry/600SUM including
 prep180+Data30once/7200elapsed/20cells. Actual consumer smoke before payload,
 actions sealed before payoff; all8 contrasts/leafcounts/LOO arithmetic0refits.
+Actual FINALc86ee74e COMPLETE at02:24UTC: onefit, depth1/twoleaves,
+FIT10+6/INNER6+2/DEV8+0. Primary vsHALF MET, but DEV all8 equal alwaysTimesFM;
+no conditional gain over that component. Net contribution.604954%, segment
+close-cashflow DD.269502%;339.120991upper/oneCID11Jobs20PIDstartsclosed.
 ClaudeREVISE limits retained: conditional project-out-of-fit is NOT qualified
-fold-OOF/independence/historicalarrival; reusedDEV/no Paper promotion.
+fold-OOF/independence/historicalarrival; reusedDEV/no Paper promotion. No rerun.
 
 Asset-attention100 FINALa328/Source0315 COMPLETE26epochs4602updates/BEST2/
 pat24/59.668sGPUfit,349.351723upper/all7CIDs50CLI/leaseclosed01:38UTC.
 10bp conditional endpoint10.208745% vsMSE9.862635%; utility.03330797 vs
 .03268337 MET, downside second moment.00144236 vs.00038416 FAILED.
 30known2unknown/no full32/DD/M2M/PnL/alpha. Do not duplicate training.
-Kepler source-only current-engine-next-hypothesis-selection-20261029-v1,
-120/3600: one risk-aware experiment or rejection addressing concentration/tails,
-not a hyperparameter grid. New useful GPU campaign requires its own frozen
-scientific contract/headroom; current assignments are not active-GPU proof.
+Direct exponential portfolio100 MAIN1af65175/Source0488db06 COMPLETE:
+33epochs5841updates/BEST9/pat24/102.662sGPU; primaryFAILED. Utility.01124529
+vsMSE.03268337/downside.00232903 vs.00038416, conditional10bp contribution
+3.722942%/30known2unknown. One47batch direct-weight archive/eightcells/
+zero oldcontrol reruns/458.531148upper/all9CIDs63CLI72PIDstarts/leasesclosed.
+Different joint loss/allocation mechanism, not a pure loss ablation. Existing
+architecture reused/newseed20261107; native launcher faults retained, no
+duplicated marketfit. No full32/DD/M2M/PnL/independent alpha/Paper promotion.
+Current prepared campaigns completed, not active GPU claims. Next hypothesis
+must address a concrete failure with its own finite contract, not utilization.
+Data audit ce047/8653 completed literalMODP1 alignment/no numerical parity.
+Existing dailyTask now quiet100MODP1/first actual future publication unobserved.
+Kepler adapter240/7200 only invented CSV+SPY/86clocks -> real4c10/8e40 feature
+consumer; no model refit/forward/new affines, no retag or imputation. This
+prepares the next model-input loop, not another numerical trial or Paper gate.
 
 ## New Completed Results
 

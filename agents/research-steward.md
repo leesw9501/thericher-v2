@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / Oct29UTC02:05. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC02:51. A=D:/thericher-v2/model-artifacts.
 Fermat coordinates GPU/custody; Parent shared MD/Git/activation.
 Project GPU priority/concurrent useful use approved. No app allowlist/kill/
 driver change. One resource owner, separate campaign clocks/paths/leases.
@@ -20,12 +20,18 @@ Asset-attention100 FINALa328 COMPLETE26epochs4602updates/BEST2/pat24,
 59.668s fit/peakallocated916667904/reserved1195376640,349.351723upper/
 all7CIDs50CLI/lease/PIDstartsclosed01:38UTC. UtilityMET/downsideFAILED;
 not a queued or running GPU fit. No duplicate training.
+Direct exponential portfolio100 MAIN1af65175 COMPLETE33epochs5841updates/
+BEST9/pat24/102.662sGPU/peakallocated916667904/reserved1195376640,
+458.531148upper/all9CIDs63CLI72PIDstarts/ownleasesclosed02:30UTC.
+PrimaryFAILED/no repeated fit; GPU idle after closure is not a permission hold.
 CPU CatBoostb0de COMPLETE157updates/BEST56/57trees/pat100/primaryFAILED,
-309.003393upper/all6CIDs36CLI41PIDsclosed. Foundation17 tree now adopted
-onefit/600SUM inclprep180+Data30once/7200elapsed/20cells, no GPU needed.
-Kepler source-only next risk-aware hypothesis selection and Lovelace actual
-GPU-peer prefix qualification run independently. The latter is tiny invented
-resource compatibility testing, NOT market training or utilization evidence.
+309.003393upper/all6CIDs36CLI41PIDsclosed. Foundation17 treec86e COMPLETE
+onefit/20cells/339.120991upper/allclosed, no GPU needed; DEV aliases TimesFM.
+Lovelace GPU prefix nativePASS but historical callback hash edge WITHHELD;
+immutable publication repair now separate. Tiny invented resource checks are
+NOT market training or utilization evidence. No active research GPU worker
+inferred from completed assignments; Parent eight-worker verification16228 is
+separate CPU work, not a GPU campaign or a model-fit clock debit.
 Useful co-tenancy allowed under one measured actual owner; do not delay a ready
 campaign for a helper redesign, repeat completed fits or run dummy training.
 
@@ -56,5 +62,6 @@ H20CPU allcash and oldfixedblend/directH5 remain failures, no automatic refills.
 Old scopes/seeds/caps/debits immutable. Native technical checks before
 numerical work are charged, not another approval/platform. No age-reclaim live
 or unknown leases, no silent OOM retries or invented convergence.
-Parent tests55034 closed00:31UTC Oct29/19577PASS26SKIP395.58s;
-repo authority4484/dab6. D:helpers separately qualified.
+Parent tests16228 now closed02:46UTC Oct29/188serialPASS22.42s/19577fullPASS/
+26knownSKIP394.84s/8workers/Ruff/3Compose. Fresh authority4484/07eb270b,
+source stable after actual DataTask update02:51UTC. D:helpers separately qualified.

@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-29 KST / Oct29UTC02:05.
+2026-10-29 KST / Oct29UTC02:51.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Quality limitations constrain claims/consumers, not unrelated Paper authority.
 
@@ -18,10 +18,13 @@ Daily100 READYbc28697e/Sourceede430db/nativef93b5017 COMPLETE ninechecks/
 allclosed240of240upper/zeroactualAPIorTask. LiteralMODP1 verified against
 current consumer, no price-adjustment semantics invented; oldMODP0immutable.
 Quiet native100 dynamic completed-XNYSsession/date-mode manifest/pointer/
-restart dedup. Existing21:40UTC Task remains old6 until Parent CAS action update;
-Ohm updater READY is SYN-only5cd6/actual Docker metadata parser failed;
-fresh old6 owner proof NOT qualified/no Apply. Bounded remaining technical
-repair required before Parent same-Task CAS; no new Task/manual Run.
+restart dedup. Existing21:40UTC Task now ACTUALLY UPDATED to this100source:
+parent-r13 Source694913c5/ADOPTIONc4f100c3/RESULTa1a3cc44, one UPDATE4/zero
+Run/API/collector. Original triggers/ACL/settings/enabled/history/otherTasks
+preserved; independent02:51UTC ready/instances0/next21:40. Actual scheduled
+daily100 acquisition remains NOT_OBSERVED; no rerun consumed driver/claim.
+Typed child list/strictUTF8 vsCP949/persisted JSON integral+Hashtable defects
+fixed and native actual file-roundtrip tested; old failures/debits immutable.
 Old6source/cache/pending preserved;
 NAS-modelTask20261015 disabled atParent01:17UTC, source reference notactivejob.
 
@@ -31,9 +34,15 @@ action/ledger transaction/16FIT8INNER8DEV physical roles/native consumer PASS,
 allclosed30upper. Zero newrawprice/payoff-source/API/model/Task; retained PnL
 decoding counted honestly. No repeat intake/projection; Engine now owns one
 adopted finite meta-fit. Not a fresh holdout/historicalarrival/qualified fold-OOF.
-Now current-modp1-training-execution-compatibility-20261029-v1,120/3600:
+current-modp1-training-execution-compatibility-20261029-v1,120/3600:
 source+metadata-only exact model-input/source-mode audit, no decoded market
 rows/API/refit/reprojection/Task mutation; no invented MODP0/1 equivalence.
+CALLBACKce0477bd/Source86534243 COMPLETE/25upper/allclosed after exact
+takeover readback. Literal mode aligns; numerical/vintage/CA/PIT parity not
+proved. StockCSV lacks same-asofSPY/AMS and canonical86/masks/clocks; not
+drop-in397 packet. Now Kepler native-daily100-feature-adapter preparation
+240/7200/only invented producer/file/real4c10->8e40 consumer, no actual payload/
+API/model/Task/retag/impute. Existing434f stays its original date; b992 consumed.
 
 Predecessor current-nas-forward-native-single-read-20261029-v1 FINAL88f43faa:
 1POST1GET both200/100AAPL sessions throughOct28/45of180upper/0retry/allclosed.

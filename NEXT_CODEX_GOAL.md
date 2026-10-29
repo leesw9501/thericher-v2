@@ -41,9 +41,11 @@ engineering-r3. Old9f51 fixture failures closed270upper; follow-on600SUM
 including270once/original7200elapsed/max10TOTALroutineSYN CIDs, zero real
 API/privatebook/Task/modelpayload. FINAL870f833c passed two changed native
 financial ABI calls and14 counterexamples,446/600upper/allownersclosed.
-It remains inactive; current-native-serial-operational-prefix-preparation-
-20261029-v1 now qualifies actual source/census/metadata integration,240/7200,
-zero actual Task/API/privatebook. Installed Memory pair unchanged.
+It remains inactive. Operational-prefix Source8c034f71/FINAL8869912f passed
+two actual metadata stages/eight negatives/allownersclosed115upper, but the
+hashed callback path was overwritten during cleanup; exact handoff WITHHELD.
+Immutable-peer integration now owns a fresh qualified producer/consumer proof,
+240SUM incl115once/7200, zero Task/API/privatebook. Memory pair unchanged.
 Kepler MSE100 typed UNALLOCATED input is COMPLETE, callback303f9d8b:
 INPUT3c172855/Sourcecaf8fdb3/POLICY55887f2f/all five selected routes known.
 Use official96reference routes/4unknown, no redistribution/extra B10, fresh
@@ -53,9 +55,11 @@ qualified SYN only; corrected-image/source/runtime compatibility remains explici
 
 Lovelace technical-r2/dad68e0b completed actual CPU launcher/census/Docker
 projection9f97b3dd,12negativecases/allownersclosed. This is not whole-machine
-Paper/GPU admission. current-paper-model-gpu-peer-admission-preparation-
-20261029-v1 now qualifies the existing Steward lease/actual GPU prefix,
-240/7200/max2 invented CIDs/zero market fits or Task/API/private work.
+Paper/GPU admission. GPU prefix2acadde9 passed3native/seven negatives/allclosed
+60upper, but postclosure hash audit withheld its mutable callback edges too.
+current-model-peer-immutable-callback-repair-20261029-v1 now fixes immutable
+publication once for both consumers,300SUM incl60once/7200/max2 invented
+CIDs/zero market fits/Task/API/private. Old missing callback bytes stay unknown.
 Private/unknown writers still deny; no blanket allowlist or research pause.
 
 ## Parallel Data / Research
@@ -63,12 +67,20 @@ Private/unknown writers still deny; no blanket allowlist or research pause.
 Galileo100batchbf0e COMPLETE100GET1POST/9797rows/98current2empty/allclosed.
 Daily100 READYbc286/Sourceede4 chooses literalMODP1 for consumer alignment,
 nine native tests/allclosed240upper. Existing six-symbol Task still unchanged;
-Ohm temporary Infra SYN_READY but actual Docker metadata parser failed;
-Source5cd6 is NOT admitted. Repair within remaining finite engineering scope
-before Parent same-Task CAS action-only update/rollback; no manual Run.
+Existing dailyDataTask is now UPDATED to quiet native100 literalMODP1:
+parent-r13 SOURCE-r11/694913c5, ADOPTIONc4f100c3/RESULTa1a3cc44.
+One UPDATE4/zero Run; original trigger/ACL/history/otherTasks preserved.
+Next Oct29UTC21:40/Oct30KST06:40, enabled/instances0 at02:51UTC.
+Typed child collection, strict UTF8 process decoding and persisted JSON
+Int64/Hashtable consumer repaired and native file-roundtrip tested.
+Actual daily100 scheduled collection remains NOT_OBSERVED; do not rerun driver.
 Foundation17 Data projection b992/Source7019 COMPLETE, physical16FIT8INNER8DEV
 roles/native consumer verified/allclosed; do not repeat retained intake.
-Galileo now source-only MODP1 training/execution compatibility audit120/3600.
+MODP1 compatibility audit ce0477bd/86534243 COMPLETE,25upper/allclosed:
+literal mode aligns, numerical/vintage/CA parity unproved. Daily100 CSV lacks
+same-asof SPY/context/canonical86 handoff, not a drop-in397 packet. Kepler now
+prepares native-daily100-feature-adapter240/7200 with invented producer/file/
+real consumer only; no actual payload/API/model/Task. No retag or imputation.
 
 StudentTc8a4 COMPLETE42epochs7434updates/BEST18/utilityFAILED/allclosed.
 TimesFMfb6c COMPLETE32matched/bothMET and currentpoint5d23 published
@@ -81,14 +93,15 @@ Asset-attention100 FINALa328 COMPLETE26epochs4602updates/BEST2/pat24,
 utilityMET/downsideFAILED/allclosed349.351723upper. Neither is a pending fit.
 Do not duplicate completed fits, forecasts or cost cells.
 
-Parent adopted foundation17-causal-tree-fusion-development-20261029-v1:
-ONE depth2/minleaf6/seed20261104 tree,16FIT8INNER8reusedDEV,600SUM including
-prep180+Data30once/7200elapsed/onefit0retry/20cells. Reuse physical Data roles;
-seal actions before payoff. Conditional project-out-of-fit is NOT qualified
-fold-OOF, independence or historical arrival; retain ClaudeREVISE limitations.
-Kepler source-only next-hypothesis selection120/3600 supplies one concrete
-risk-aware experiment/rejection, not a new grid. Steward measures headroom;
-no dummy GPU or unsupported claim of active training.
+Foundation17 tree FINALc86ee74e COMPLETE/primaryMET, actual depth1/two leaves;
+all8 reusedDEV decisions equal alwaysTimesFM. No conditional ensemble gain
+over that expert demonstrated; computational project-out-of-fit NOT qualified
+fold-OOF/independence/arrival. Onefit/20cells/allclosed339.120991upper.
+Direct exponential portfolio100 MAIN1af65175/Source0488db06 COMPLETE:
+33epochs5841updates/BEST9/pat24/102.662sGPU, primaryFAILED/allclosed458.531148
+upper. Conditional10bp contribution3.722942%, not full growth/DD/alpha/PnL.
+Do not repeat these fits/forecasts/readouts. Resource utilization alone never
+adds another trial. Next research may use a distinct justified frozen hypothesis.
 
 Completed: Transformer201a/322e primary rank comparison MET on reused INNER;
 fixed score fusiond27 both criteria FAILED; MSE current inference22dc COMPLETE.
@@ -104,6 +117,6 @@ independent facts. Existing exit/data schedules and original business clocks
 unchanged; no replacement follow-up chain.
 
 Verify changed paths and actual external code separately; use exact current
-protected digest before reusing full repo authority4484/dab6.
+protected digest before reusing fresh full repo authority4484/07eb270b.
 At material COMPANY completion commit/push, replace with exactly ONE next
 company outcome, refresh boards and continue. A package commit is not completion.

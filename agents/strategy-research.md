@@ -1,23 +1,32 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-29 KST / Oct29UTC02:05. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC02:51. A=D:/thericher-v2/model-artifacts.
 Parent shared MD/Git. Engine owns targets/splits/costs/fits/interpretation.
 No broker/private/budget authority.
 
 ## Current Work / Consumer
 
-Kepler current-engine-next-hypothesis-selection-20261029-v1,120/3600:
-official-source concrete risk-aware expert/causal multiscale proposal addressing
-MSE concentration/asset-MHA downside failure. At most two finite candidates,
-one GPU-useful only if scientifically justified. Zero market payload/fit/payoff/
-replay/API/private; actual experiment or rejection, not a reading list/grid.
+Direct portfolio proposal Source067b5a7e/contract9811bd25 references official
+Luxenberg/Boyd exponential utility and direct neural portfolio papers; no new
+package or model weights. Parent-adopted actual MAIN1af65175 COMPLETE:
+oneGPUfit33epochs5841updates/BEST9/pat24/102.662s/primaryFAILED, allclosed
+458.531148upper. Conditional10bp contribution3.722942%, utility/downside both
+worse than savedMSE; joint loss+allocation change, not clean loss ablation.
+No retune/grid/extra fit. MODP1 audit ce047/8653 COMPLETE/25upper: literal
+mode aligns, no numeric/vintage/CA/PIT parity or drop-in397 feature packet.
+Kepler now minimal native CSV+SPY -> canonical86 -> actual feature consumer
+adapter240/7200/invented-only, no market data/model/API/Task/retag/impute.
 
 Foundation17 Data b992/Source7019 complete; Parent adopted one depth2/minleaf6
 tree in causal-tree-fusion-development,16FIT8INNER8reusedDEV/600SUM incl
 prep180+Data30once/7200/20cells. Existing ClaudeREVISE remains, conditional
 project-out-of-fit NOT qualified fold-OOF/independence/historicalarrival.
-Ohm prior independent review remains separately evidenced/advisory, not an
-approval stage. Ohm now technical sameDataTask CAS parser repair, no new role.
+Actual tree FINALc86ee74e COMPLETE/depth1/twoleaves/primary vsHALF MET,
+but all8 reusedDEV decisions alias alwaysTimesFM; no conditional expert gain.
+339.120991upper/allclosed. Ohm source review92a651d4 ADOPT_WITH_LIMITS is
+advisory, not classical OOF/independent selection evidence or an approval stage.
+Ohm UTF8 boundary fix plus Parent persisted-proof schema/native tests enabled
+actual sameDataTask action-only6->100 update6949/c4f1/a1a3, not a new role.
 
 CatBoost actual worker-v1 Source2109/RESULTb0de COMPLETE157updates/BEST56/
 57trees/pat100/primaryFAILED;30known2unknown/309.003393upper/allclosed.
