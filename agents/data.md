@@ -6,6 +6,18 @@ Quality limitations constrain claims/consumers, not unrelated Paper authority.
 
 ## Current Owned Runtime
 
+Current17:33 Data work: denseQQQ/SPY H1 inputs from existing2022-23canonical
+1m, not a new acquisition. Agree exact Engine schema/windows/lag/origin stride/
+calendar split+purge, then nativeCSV->resampler->consumer before one bounded
+two-canonical intake/projection/savedverify into newM roles. Existing21:40
+daily101 collector untouched. Hypothesis is denser causalH1 origins, not a
+duplicate of earlier25114:31-only rows or fabricated full100M1.
+History inventory must correct Parent's mistake: TCN/LSTM16 is BATCH size,
+actualFIT2817dates2014..2025/INNER173supervised187origins/Data4459SHAprefix.
+Do not rebuild/retrain already broad history from a fictitious16-day limit.
+Actual13-year daily canonicalf6e5 remains separately useful for trueD1 capital
+study; olda197 actualM1 request remains unqualified, not a global Data/Paper hold.
+
 Current Galileo consumer composition current-daily101-postclose-consumer-
 preparation-20261030-v1 MAINce53b40a/Source8821fc78/native3a8575ca complete
 source-only6checks/all6PIDbirths2Jobsclosed/65upper, no actual future payload.

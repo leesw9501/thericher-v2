@@ -8,6 +8,16 @@ paths/leases; measure actual free/projected peak VRAM before new dispatch.
 
 ## Actual Resource State / Ready Work
 
+Current17:33 no newGPUfit claimed. DaynightRidge80ec/02b2 closed oneCPUfit/
+205.518upper/primaryFAILED. NewdenseH1 finite family preparation, finalData/
+native/checkpoint contract before numerical dispatch; one Steward/Fermat.
+TCN/LSTM16 is BATCH size, actualFIT2817dates; no duplicate broad-history fit.
+Actual currentPaper TaskSource1728/ROreadback44182ea1 native17:35/recovery
+17:42/hard17:49. Defer only NEW unqualified actors across measured effect
+slots, checkpoint only owned workers per predeclared contract; source work
+continues. Resume needs applicable actual owner/resource facts, never user-app
+allowlist or a blanket GPU ban. Preserve all old fit/evaluation/time debits.
+
 Latest sequence family0ad1488e/a2f5 positively CLOSED all65Jobs/9CIDs/leases;
 TCN29epochs/BEST5 peakreserved975175680bytes, LSTM36/BEST12/1080033280bytes,
 323.879upper cumulative active. Both market fits completed, no retry/rerun.

@@ -6,6 +6,21 @@ ONE original B/10/costs/losses/pending/F9 held. No operator decision pending.
 
 ## Installed / Due
 
+CURRENT17:33: newTask thericher-memory20-nas100-ready-window-entry-20261029-v1
+installed/enabled under172854ac0d5443d53bb49dd3440f228ffcc510eff6a43a2e2f781e6fa4321b18.
+Trigger17:30/native17:35..39/recovery17:42..46/restore17:48/hard17:49UTC,
+round memory20-nas100-ready-window-recovery-20261029-v1, TRUEd2d4ab45.
+IndependentROreadback44182ea1 whole semantic definition/Source/Action/ACL/
+triggers/enabled plus allother projectdefinitions unchanged. Installer failed
+aftercreate+enable on raw+09-vsZ QuietXml comparison; no retry/recoverymutation,
+old failure preserved. Source runtime task_contract already usesSameInstant.
+Taskstate4/instances0/last267009 is apparent activity, not effects/closure.
+Parent owns actual outcomes, Dewey new exact reader readiness. No TaskRun or
+competing private action. Root...next-fixed-window.../window-1730/runtime-
+results/paired-entry; full paths HANDOFF. No financial result yet inferred.
+Same originalc5f5/dbde/basis/B10/F9/pending/exits remain. Ohm future-only
+boundary reader repair must never alter installed1728/4cfe bytes.
+
 Current fixed16:35 candidate8ac0 never installed: Parent actual publicpreflight
 at16:28 withheld actor_unregistered/allmetadataJobsclosed; no offending actor
 row retained. This consumed scope did not run activation/Task/broker or alter

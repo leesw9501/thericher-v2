@@ -5,6 +5,28 @@ Fermat Engine/Steward. Parent shared MD/Git. Actual contracts own trial caps.
 
 ## Latest Diagnostic / Fusion / Consumer
 
+Current17:33: daynight residualRidge80ec5784/FINAL02b288d1 complete onefit/
+205.518upper/allclosed/primaryFAILED/no rescue or refit. Source proposal863d/
+cfb7 is not observed performance. TrueM1 capital requesta197/f73f is source-
+native complete but market replay NOT_READY (full100actualM1/09:29/held marks).
+Prepare separately frozen TRUE D1 analytical capital alternative on actualdaily
+canonical, never synthesizeM1 fromD1 or silently change old contract.
+Check if saved full187 outputs support all-window reuse before another32subset
+comparison; no restore/forward unless separately frozen and needed.
+
+New denseH1 family: existingQQQ/SPYRTH1m/~251sessioncalendar, many eligible
+5min origins vs old14:31-only study, fixedM1+5m/10m causal inputs andH1target.
+Fermat final contract/Steward; Galileo Data roles/native resampling; Lovelace
+actual solver/checkpoint/consumer coldprep. Max1GPU+1CPU after exact Data/
+contract/caps/native qualification, no fake GPU activity or old fit rerun.
+Current Paper1730 Task native17:35/recovery17:42/hard17:49 holds only its
+measured unqualified-actor effect slots, not research/authority in general.
+
+Durable correction: physical/effective_dates16 in TCN/LSTM results is batch
+size. Actual fitter/SPLIT8a19 requires FIT2817 dates2014..2025 and INNER173
+supervised/187origins.4459 is DataSource hash prefix, not4459rows. Parent's
+brief16-day premise was wrong/revoked; no broad-data duplicate based on it.
+
 Current dispatch supersedes old next-work projections below. TCN/LSTM family
 current-h5-tcn-lstm-meanpayoff-development-20261030-v1 Source0ad1488e/
 contracta2f5 COMPLETE2fits/no retry/all65Jobs9CIDs/leasesclosed/323.879upper.

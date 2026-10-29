@@ -23,6 +23,26 @@ against prior known26, no pytest rerun or skip-authority relaxation.
 
 ## Installed Paper / Future Read
 
+CURRENT17:33: installed finite ready-window Task under Source172854ac (full
+HANDOFF), trigger17:30UTC/Oct30KST02:30, native17:35..39/recovery17:42..46/
+restore17:48/hard17:49. Do not Run/retry/replace/mutate active opportunity.
+Exact public runtime root:
+A/execution/current-memory100-next-fixed-window-preparation-20261030-v1/
+window-1730/runtime-results/paired-entry.
+Current installation proof:
+A/execution/current-memory100-enabled-readback-recovery-20261030-v1/RESULT.json
+44182ea13d072498fe0913f3eef2035883aa28b51920be7dbe3f506af66201d8.
+Parent17:19 create/enable returned but QuietXml raw UTC-Z equality failed on
+Windows +09 equivalent; failed install evidence remains. New9case/read-only
+whole semantic comparator verified actual Source/Action/ACL/time/enabled and
+allother Tasks unchanged, zero recoverymutations. Original task_contract uses
+SameInstant. Future helper correction belongs in new source only.
+Taskexit/state/installation does not prove native decision, accepted order or
+fill. Use exact bound fresh immutable runtime receipts; private custody only
+through current qualified reader after positive owner closure/admission/stability.
+Never repeat consumed15:01 reader, old16:35 preflight or current installer.
+No replacement follow-up/recurring worker. Current company goal UNFINISHED.
+
 Current16:33UTC: original-input recovery16:00 was never installed. New fixed
 16:35 candidate8ac0 actual preflight16:28 withheld actor_unregistered; all
 metadata Jobs closed, offending row not retained. Parent did not call activate

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct29UTC16:33 integration in progress.
+2026-10-30 KST / Oct29UTC17:33 integration in progress.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -10,11 +10,55 @@ Parent owns shared MD/Git/activation. No operator decision pending.
 Git HEAD proves pushed integration, not runtime success.
 Preserve unrelated untracked %SystemDrive%/. Startup on genuine resume only.
 
+ACTUAL current finite Task installed/enabled with independent RO contract proof:
+thericher-memory20-nas100-ready-window-entry-20261029-v1. Trigger17:30UTC/
+Oct30KST02:30, native17:35..39/recovery17:42..46/restore17:48/hard17:49.
+At17:31 Taskstate4/instances0/last_result267009: apparent running state only,
+NOT native entry, submit, acceptance or fill evidence. Do not compete or Run it.
+Source172854ac0d5443d53bb49dd3440f228ffcc510eff6a43a2e2f781e6fa4321b18;
+round memory20-nas100-ready-window-recovery-20261029-v1;
+TRUEd2d4ab4559ac5419e40813952b9aed415438e1ceb956daa4d7b842d43f05f1e2.
+A/execution/current-memory100-next-fixed-window-preparation-20261030-v1/
+window-1730 contains exact plan6e1d53cd/window89c15990 and runtime-results/
+paired-entry. InstallerSource4cfe9ce1/fresh20native8dc57874; no old16:35 roll.
+Parent actual chain is current-memory100-next-finite-parent-activation-
+20261030-v1: freshcandidatecensus d761/Native8, original owner/public gate/
+exactobserver facts bfc7 and binding6e69 passed. CREATE+ENABLE returned, then
+old QuietXml raw Z-vs+09 comparison failed. Preserve install/FAILURE and jobs.
+Independent current-memory100-enabled-readback-recovery-20261030-v1/RESULT.json
+44182ea13d072498fe0913f3eef2035883aa28b51920be7dbe3f506af66201d8:
+9nativecases, actual entire semantic XML/ACL/Action/Source/enabled/unstarted/
+trigger identity and ALL other project definitions unchanged. Zero recovery
+Task mutations, no installer retry. Runtime task_contract already SameInstant.
+This proves installation only. Broker/owned inventory/PnL outcome NOT_OBSERVED.
+Original B10/F9/pending/all exits untouched. Current inputc5f5/policydbde same.
+Parent owns actual exact result inspection after positive closure, not latest-
+file/Task-exit inference. Dewey prepares new result namespace; never repeat the
+consumed15:01 reader. No new follow-up/recurring worker or schedule expansion.
+
+Current parallel work: Fermat owns genuine D1 shared-capital analytical alternative
+to unfinished actualM1 requesta197 (full100M1 not qualified), and denseQQQ/SPY
+H1 family contract/soleGPU coordination. Lovelace delivered daynightRidge80ec/
+FINAL02b288d1: one fit/primaryFAILED/allclosed/no rerun, then prepares denseH1
+model/native consumer. Galileo prepares denseH1 existing canonical2ETF roles;
+no new acquisition or fictitious broad-data rebuild. Ohm closes facts producer
+and prospective raw-UTC reader fix, with current installed bytes unchanged.
+Short native-effect preemption covers only unqualified new actors in current
+deployed guard; source work continues. Not a general GPU/private-work ban.
+
+IMPORTANT correction: TCN/LSTM physical_dates/effective_dates16 is BATCH size,
+not total training period. Actual SPLIT8a19/fitter FIT2014..2025=2817dates,
+INNER187origins/173supervised. Data4459 is a Source SHA prefix, NOT row count.
+Parent briefly misread these and corrected the operator/roles; do not duplicate
+already broad training from that premise. DenseH1 is a new horizon/origin design,
+not a remedy for fictitious16-day training. Existing cached output reuse needs
+exact keys/availability and new finite contract, never independent-alpha relabel.
+
 Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/
 F9 UNKNOWN-HELD. No reset/refund/profit-expanded bank/substitute/foreign adoption.
 Private no-cost Paper is delegated; research limitations are not global holds.
 
-Current priority: new fixed16:35 candidate8ac0 was NOT installed: Parent ONE
+Historical failed preparation: fixed16:35 candidate8ac0 was NOT installed: Parent ONE
 actual preflight at16:28 returned actor_unregistered, with all metadata Jobs
 closed; the offending actor row was not retained, so its capability is UNKNOWN.
 No activation script, installer or broker call ran. Keep this consumed attempt

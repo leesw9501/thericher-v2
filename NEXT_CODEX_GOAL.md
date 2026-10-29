@@ -43,6 +43,29 @@ Full exact pins and command boundaries are in HANDOFF and RUNBOOK.
 
 ## Ready / Owned / Due
 
+- CURRENT17:33UTC supersedes old preparation projections below: actual finite
+  Task thericher-memory20-nas100-ready-window-entry-20261029-v1 is installed/
+  enabled under Source172854ac (full HANDOFF), original samec5f/dbde/B10/F9.
+  Trigger17:30/native17:35..39/recovery17:42..46/restore17:48/hard17:49UTC.
+  IndependentRO fullcontract44182ea1 verified after installer rawtimezone
+  readback fault; failure retained/no retry/no recoverymutations. Taskstate4
+  alone is not native/financial evidence. No TaskRun, source swap or competition.
+  Exactroot A/execution/current-memory100-next-fixed-window-preparation-
+  20261030-v1/window-1730/runtime-results/paired-entry. Parent after positive
+  closure uses current exact reader, not consumed15:01 namespace/latest scan.
+  Company remains UNFINISHED until exactly bound native decision/reconciliation.
+- Current research: genuine trueD1 capital alternative (no fabricatedM1),
+  optional all187 saved outputs only if ABI actually supports them; dense2ETF
+  H1 new finite family/roles from existing1m. DaynightRidge80ec/02b2 closed
+  onefit/FAILED. Keep all old outcomes/debits, no duplicate fits or alpha claim.
+  FIT2817dates, INNER173supervised/187origins;16isBATCH,4459isSourcehash.
+- Ohm current purefacts bfc7/binder6e69 source/native/actualRO probe ready;
+  prospective raw-boundary comparison fix must not edit installed1728/4cfe.
+  Data history inventory must not rebuild broad data from Parent's corrected
+ 16-day misunderstanding. DenseH1 readiness is a distinct research consumer.
+
+Earlier package history retained until next integration:
+
 - Parent: technical recovery and tracked integration, not a market wait.
   Fixed16:35 candidate8ac0 actual16:28 preflight withheld actor_unregistered;
   all metadata Jobs closed, offending row not retained. ONE attempt consumed,
