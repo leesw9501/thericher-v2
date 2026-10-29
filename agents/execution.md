@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-30 KST / integrationOct29UTC20:25.
+2026-10-30 KST / integrationOct29UTC22:10.
 A=D:/thericher-v2/model-artifacts. Parent activation/MD/Git.
 Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/F9 held.
 No operator decision pending. Exact historical detail in Git53ef9beb/HANDOFF.
@@ -49,24 +49,28 @@ Actual entry19:30 failed worker_wall_exhausted19:34 at transport._exchange567
 (exact476895b5); recovery29508a73 no_retained_pending/0calls is recoveryONLY.
 Static execute=True/kis_paper path present, actualcontrols unobserved.
 Public-native timinge2c64/fbbf hashes1414files~0.033s each,0.495stotal;
-Windowscensus NOTMEASURED/mock replies. Do not optimize hash guards by guess.
+Separate actual Windows census f8c1078d/e534c054 took4.208096s/closedPID936,
+not a historical full-request trace. Do not optimize hash/owner guards by guess.
 
-Dewey current-memory100-native-entry-readiness-diagnosis-20261030-v1:
-<=180active/3600elapsed, source-qualified public native/session/ROUND stop path
-and first cause. Prioritize minimum reversible tested fix, not another blind
-private reader or broken schedule. If needed prepare tiny readonly KIS Paper
-account/funds/orderability facts via existing scoped loader/adapter:
-max1client/cachedtoken/8GET/0retry/1POST only if needed through existing gate,
-max2symbols/no order/live. Publish native-tested Source/plan before actual.
-API health is not market eligibility, fill, full account snapshot or PnL.
+Dewey native stage persistence fd8ab25d/b417471f:23invented cases/15financial
+AST comparisons PASS, closed. Future compiler source30027 failed nested
+graph.verify86 missing /route+/point context,100upper/all6Jobs/CIDclosed.
+Small literal/central correction8a263111 preserves all guards. Separate
+current-nextday-native-telemetry-corrected-qualification-20261030-v1 owns
+one native program/120active/1800elapsed/0market/API/Task/private/TRUE.
+360s entry/recovery proposal preserves280nativecap/8sHTTP/3effects/128calls/
+zero retry; real future clock/input remain unselected. No old clock change.
+Parent advisoryc23e9bce/b57df32f permits invented admission-multiplicity study
+only; no guard cache/coalescing deployed. API health is not owned-fill/PnL.
 
-Ohm actual originalexit metadataf40e/r3/e99a at20:38: enabled/ready/noinstance,
-native16/150upperclosed, no Task mutation. New parent-integration scope240cap
-binds phase-neutral f0d9 release/current source0668 and fresh relevant-owner
-verifier to exact original Nov4 two-fieldCAS. Parent routing adoption is not
-fresh Nov4 custody or financialproof; no actual migration until reviewed.
-Original Nov4 in-place migration requires BOTH Args and RegistrationInfo.Source,
-positive owner/source/financial identity closure, preserved trigger/ACL/risk.
+Parent ACTUAL original Nov4 same-task UPDATE4 completed, no repeat:
+current-memory100-original-exit-parent-integration-20261030-v1/r7,
+Source73a6ee3c/decision62a9da07/planb0126b70/result678bf316.
+ONE_UPDATE4_EXACT_READBACK, fresh relevant-ownerafe72a20, CLI45352 joined0/
+Jobempty. Ohm callbackc0c3911c/readback92942f62/closuree774b8ce/30upper.
+Both Args+RegistrationInfo.Source now route0668/5cd3/f0d9;
+wholedefinition/ACL/triggers/history/enabled unchanged. No newTask/Run/order/
+capital. No repeat apply/census. Not fresh Nov4 custody/runtime/fill evidence.
 Future-only failureprojection4d7f/7249/native20 and default-node78a77be6/
 f0ee08bc/native14 are qualified preparation, not installed runtime or entry gates.
 
@@ -91,3 +95,6 @@ Persist intents before effects, exact quote/orderability/reconciliation/risk
 before each side effect. No budget reset/profit expansion/reservation release
 from expired jobs. Taskexit/preview/install/missing evidence is not a fill.
 Quiet noninteractive launch only. No new app follow-up chain/report.
+Fresh routing verification Source39bfc02d/RESULT72e92ed7:209serialPASS1skip,
+19597fullPASS26knownskip/8workers[19623]/guardedcleanup/Ruff/3Compose,
+actual session11671exit0. External/native proof remains separate.

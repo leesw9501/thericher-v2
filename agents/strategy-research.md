@@ -1,10 +1,22 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-30 KST / integrationOct29UTC20:54.
+2026-10-30 KST / integrationOct29UTC22:10.
 A=D:/thericher-v2/model-artifacts. Parent MD/Git; Engine final targets/splits/
 costs/fits/interpretation. No broker/private/execution-risk authority.
 
 ## Executable Proposals / Actual Readiness
+
+Current Kepler package: current-etf-next-hypothesis-selection-20261030-v1,
+180active/1800elapsed/source-only/0market. Select ONE nonduplicate trainable
+causal momentum/volatility/cost-aware ETF hypothesis using JulyTiingo rights-
+bound history. Explicit splits/purge/availability, baseline/costs/kill and
+bounded epochs/earlystop/checkpoints/trials; Engine owns final contract/fits.
+Closed526f/ce29684b/709e841b/f4776c8b completed6price-only cells224upper:
+QQQ10bp+0.7954percent account but20bpnegative, dividends excluded/nonPIT.
+Gross-loss-budget blocked most later entries, not matched realized exposure
+or buy-and-hold alpha. Do not change Paper B10/oldgrade or replay oldcells.
+Lovelace official event-field semantics120cap supports later accounting;
+pure699c/dff7 37casesPASS/70upperclosed, rawmapping remains UNQUALIFIED.
 
 Fixed volume-confirmed QQQ failed-breakdown/reclaim +SPY confirmation:
 proposalSourcef3f1/55cdf3/104upperclosed; contractcc2b unchanged.
@@ -16,8 +28,8 @@ oldoutputs preserved/no newreviewcall. Source/native only, no performance claim.
 
 Later43sessions2023Oct-Nov source not established9cf4/30upper;
 retained2026 block not substitute, no oldDEVtarget rescue.
-Fermat chooses separate2026ten-session C120 INPUT-SUPPORT pilot only,
-no outcome/mark/calibration/fit/costcell authority from this proposal.
+Separate2026ten-session C120 INPUT-SUPPORT pilot CLOSED351.0011upper,
+11triggers/5sessions NONINFORMATIVE/0outcomes/fits/costcells; no economic rescue.
 Same inputinformation/different inductivebias, not newinformation/alpha.
 Clock-gate expected-prior-notional control is not exact realized beta matching.
 Strongkill unsupported Data/calibration/thin support/terminal unknown/no costed
@@ -27,8 +39,8 @@ Kepler ETF metadatae7eb/385c closed35upper:
 single-source Tiingo rawOHLCV+divcash+splitfactor long SPY/QQQ/IWM history,
 no acquisition required. Exact jointkeys/calendar/economic dividend/split
 consumer unqualified, not a global research/Paper hold.
-One simple SPY_LONG/QQQ_LONG/CASH capital baseline outline; no parameter grid/
-fit needed for an operational benchmark. Engine chooses one final successor.
+Simple SPY_LONG/QQQ_LONG/CASH benchmark became closed526f above. It is not
+a pending proposal, totalreturn or trained profitable model.
 
 ## What Completed Work Changed
 

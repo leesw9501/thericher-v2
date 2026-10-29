@@ -35,7 +35,8 @@ Current next work is native/session firstcause and minimum tested recovery,
 not another blind private read. Entry476895b5 timed out19:34UTC;
 recovery29508a73 no_retained_pending/0nativecalls applies recoveryONLY.
 Native public-source hash timing~0.033s/check does not justify guard changes;
-actual Windows ownership latency unmeasured.
+Separate actual Windows census f8c1078d/e534c054 measured4.208096s; historical
+full-request latency still unknown. No guard cache/coalescing deployed.
 
 Current readonly account native-health is COMPLETE/CONSUMED:
 A/execution/current-paper-readonly-native-health-probe-20261030-v1/
@@ -54,19 +55,28 @@ F9-RECOVERY-HANDOFF.json. Missing holdings/orders never release reservation.
 No identical original-date query without new source/date evidence.
 MSFTNov2/LOWVOLNov3/Linear17Nov3 exits20:40..21:00, monthlyNAS100
 Oct30UTC21:00..21:30, MemoryNov4UTC20:40/native20:45/hard21:00 unchanged.
-Ohm inert current-binding preparation1520-compatible must preserve original
-Task/trigger/ACL/bank and change BOTH Args+RegistrationInfo.Source if adopted;
-no actual migration yet. Official SELL1001->1006 only, BUY1002 unchanged;
+Nov4 SAME original Task routing update is now ACTUAL/CONSUMED:
+A/execution/current-memory100-original-exit-parent-integration-20261030-v1/r7,
+Source73a6ee3c/PARENT-UPDATE-RESULT.json678bf316,ONE_UPDATE4_EXACT_READBACK.
+Both Args+RegistrationInfo.Source bind0668/5cd3/f0d9. Wholedefinition/ACL/
+trigger/history/enabled unchanged; CLI45352joined0/Jobempty. NEVER repeat
+PARENT-APPLY.js/execute.py apply/owner instance parent-apply-001. Rollback is
+separate exact reconciled snapshot/freshowner only, never automatic. No new
+Task/Run/order/capital; routing adoption not future custody/runtime/fill.
+Official SELL1001->1006 only, BUY1002 unchanged;
 unknown old requests retain old wire, never substitute. No new exits/capital.
 
 ## Data / Model Consumer
 
-Existing thericher-kis-paper-daily-nas-forward next Oct29UTC21:40 /
+Existing thericher-kis-paper-daily-nas-forward had Oct29UTC21:40 /
 Oct30KST06:40 untouched; no manual run/new collector.
 A/data/current-native-daily100-spy-context-runtime-preparation-20261029-v1/
 technical-r1/SOURCE.json61a9e50887aa88a47ee8de6cfd6ed3f4570143e2a53505f632914676347c4011.
 100stocks+SPY/MODP1/101plannedGET/130cap/0retry/2spacing/oneclient/
-300freshPOSTfloor/245s capture. Actual future publication/point UNKNOWN.
+300freshPOSTfloor/245s capture. Actual session20261029 pointer/manifest8e6eb0dd
+exists, not qualified modelinput. Galileo actualconsumer root failed fixedaffine
+schema at prepare_binding91 before modelwork; repair exactboundary/native smoke,
+no refit/recollect. Model point remains UNKNOWN. No pointer/Task-exit inference.
 Next-publication source-only callback3ca57541 ready52pins, no stalepointretag.
 Data94e9/a318/8821/model231a only preparation.
 MSE best-005.npz SHA4b8a46611b03b8cf9245c188f21b27ba141a1eb17b7215e4c3dfaa98a6ce5d71,
@@ -86,22 +96,27 @@ DenseH1 current-qqq-spy-dense-h1-development-20261030-v1 Source43b8/
 FINALb100/a8a3 closed638.351upper, TCN13epochs+Ridge fitcomplete/fifthcellcap/
 primaryWITHHELD. No duplicate fit/forward/readout.
 New fixed reclaim-event contract preparation, exact later M1 Data/native
-qualification before finite market trial; current roots/owners in boards.
+qualification was unavailable; separate2026input-support CLOSED351upper,
+11triggers/5sessions NONINFORMATIVE. No readout rescue.
+ETF526f/ce29684b/709e841b/2570962a/f4776c8b COMPLETE6price-only cells224upper,
+0fits/GPU/retries. QQQ10bp+0.7954percent account,20bpnegative, no dividends/
+totalreturn/PIT/alpha. Most later entries loss-budget capacityblocked. Never
+rerun consumed Data/prior/marks/readout or change Paper bank to improve it.
 No GPUworker inferred from an assignment or completed fit.
 History in Git53ef9beb/exact immutable sources, not current run commands.
 
 ## Verification / Recovery
 
-A/verification/current-capacity-replay-integration-20261030-v1:
-SOURCE1536d24d6b3520e544ade10ed5e0330988a54074067dbda89584ec95cc8c9a95;
-RESULT5d9160686944c819eb7132e93eea72fc26612537119472b9817590a75360e16c.
-378serialPASS1knownWindowslinkSKIP;19597fullPASS26knownSKIP35warnings,
-created8/8workers[19623items]/397.02s/native-helper0/guardedcleanup/Ruff/
-default+research+accounting Compose .env.example. Session47151closedexit0.
+A/verification/current-original-exit-routing-integration-20261030-v1:
+SOURCE39bfc02dbcf4f459feb9244547fb4dddf6b69abb4b1fe93a066e74220785dea5;
+RESULT72e92ed7cb95469f5b1cb9ad2d970fa2f7fc77a4bd5eb2b65e77f74ed7629575.
+209changed-path serialPASS1knownWindowslinkSKIP;19597fullPASS26knownSKIP35warnings,
+created8/8workers[19623items]/396.92s/native-helper0/guardedcleanup/Ruff/
+default+research+accounting Compose .env.example. Session11671closedexit0.
 
 Docs/external-only exact-source verification:
-`& 'D:\thericher-v2\model-artifacts\verification\current-capacity-replay-integration-20261030-v1\source.ps1' -Mode verify`
-Checker SHA a76455ce39b567092b75d80f154e365369b5e615864fd66df0767af86067b73a.
+`& 'D:\thericher-v2\model-artifacts\verification\current-original-exit-routing-integration-20261030-v1\source.ps1' -Mode verify`
+Checker SHA94d6f39dbfbee3080e9b92683b8061a3e0803b39017755b44095719aa63de5b3.
 Only reuse if protected1416 source exact. Independently native-test external
 helpers; repo tests cannot validate them. Changed tracked code/control/material
 recovery requires AGENTS fresh serial/full/Ruff/3Compose.

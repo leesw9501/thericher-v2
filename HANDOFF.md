@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct29UTC20:59 integration.
+2026-10-30 KST / Oct29UTC22:10 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -86,12 +86,8 @@ invented/public-source timing; do not remove checks or enlarge clocks by guess.
 Reuse qualified failure projection in the NEXT source so absent sessions cannot
 erase the child failure. No blind read/replay of consumed opportunities.
 
-Lovelace now owns distinct current-paper-readonly-native-health-probe-
-20261030-v1: existing scoped Paper loader/adapter, max1client/6GET/1tokenPOST
-only if needed/0retry/60s/max2symbols, native+emitted checks before actual;
-no Data quote/order/Task/bank writes. New adapter command needs Parent review.
-Coordinate actual issuer with Galileo's2GET capture; no new permission hold.
 ACTUAL current health is now COMPLETE, not awaiting dispatch:
+current-paper-readonly-native-health-probe-20261030-v1/
 technical-r1/actual-once/RESULT.json
 d6464fed4f649498c10ebbde77a21c5399e25f2e4dd87aed4ae8e4c568cd20f9,
 Source2af67a84809ef9be69591400a01ae8ea2b608281416ce423ca9712c94dd87ebb,
@@ -108,10 +104,24 @@ Namespace CONSUMED, never repeat. This is current API health, not proof of
 historical19:30 cause/current-owned fills or authority to clear reservations.
 Parent owns shared integration and any actual activation.
 
-Bounded actual public-source timinge2c64/fbbf:1414files/24.67MB hashes each
-~0.033s, total0.495s; actual Windows census latency NOT measured/mock replies.
-No evidence supports source-hash cache weakening. Inventory remaining source/
-owner/token/wire delays and retain safe next-runtime failure stage/frames.
+Bounded public-source timinge2c64/fbbf:1414files/24.67MB hashes each
+~0.033s, total0.495s. Separate actual Windows census f8c1078d/e534c054
+took4.208096s, PID936 joined/closed; not a complete historical request trace.
+RequestBudget.start has four execution-window checks per request; actual
+historical count unknown. Parent advisoryc23e9bce/b57df32f GO_WITH_LIMITS
+allows only an invented trace comparison, NOT guard coalescing or deployment.
+No source/owner/risk check removed or cached.
+
+Native stage persistence fd8ab25d/b417471f passed23invented cases and15
+financial-call AST invariants, allworkersclosed. Actual-next-source compiler
+current-nextday-native-telemetry-compiler-preparation-20261030-v1 failed at
+graph.verify86: nested frozen_driver omitted explicit /route+/point context.
+Original100upper/failedCID closed, no actual deployment. Source-only correction
+8a263111 supplies context only for literal/central, all strict guards retained.
+Dewey owns separate corrected-qualification root, one native run/120active/
+1800elapsed; no market/API/Task/private/TRUE. New360s entry/recovery slot is
+a sizing proposal (observed58s attach+280s native+22s slack), not a selected
+clock or guarantee. Original Nov4 clocks remain unchanged.
 
 ## Research: Completed, Not Running Or Repeatable
 
@@ -164,8 +174,49 @@ code/native-ready: technicalSourcefcb5ffac/native27plusdelta5161427a/fullcausal
 verdict-parser defect; exact raw advisory is REVISE. Preserve old outputs;
 correction2df9902b/14anchored-parser tests, no review rerun. Fermat adjudication
 keeps original clock and source-limited claims, not performance qualification.
-Fermat selects separate retained2026ten-session C120 INPUT-SUPPORT pilot only,
-no outcomes/marks/calibration/fit/costcells; source/native not assumed ready.
+Separate2026ten-session C120 INPUT-SUPPORT pilot is COMPLETE/CLOSED:
+A/research/current-reclaim-event-2026-input-support-pilot-20261030-v1/
+CALLBACK.json, Sourcee7b253f7/FINAL8a94a449/CLOSURE929d9e2c/
+RESULT8b8d28eb:420scheduled/420known/11triggers in5sessions,
+NONINFORMATIVE/0outcomes/0costcells/0fits/351.0011familyupper.
+All17births14Jobs2CIDs closed, no eventeconomicreadout or threshold rescue.
+
+Completed ETF baseline, never repeat:
+A/research/current-etf-daily-price-only-capital-preparation-20261030-v1/
+NEXT-CONTRACT.json
+526f529a8ee1ecd0458e027152b0aa1c785ce714563bcb6a1b0549c4bb3f9286.
+Exact rights-bound JulyTiingo manifest7d16513e/dataset9ee21 selected, not
+Augustdifferentbytes. 2014..2025/3018officialcalendarorigins/5fixedtails,
+QQQ_LONG/SPY_LONG/CASH x10/20bp,6cells, original shared B10/prioronly q.
+PRICE_ONLY: omitted dividends not economic/settledcash/PnL; any requiredsplit
+or missing neededrole withholds whole policy, no future-price survivorfilter.
+ACTUAL-CALLBACK f0807e751142449539c6dd2fe2c0c85c29359c4fb18b81cde5a0da01e990cd4a
+under current-etf-daily-price-only-capital-development-20261030-v1:
+Sourcece29684b/FINAL709e841b/CLOSURE2570962a/RESULTf4776c8b,
+COMPLETE_SIX_PRICE_ONLY_CELLS_MET_CLOSED/224activeupper/0fits/GPU/retries.
+At10bp QQQ growth+0.7954089percent account/DD0.934157percent/557entries;
+SPY-0.6664854percent/DD1.131091percent/680entries. At20bp QQQ-1.3959815
+and SPY-2.5616838percent; cash0. Local_paper, NOT KIS/totalreturn/netPnL/alpha.
+98source dividend rows omitted, logical D1 labels not measured exchangeOPEN,
+retrospective reused history not PIT/independent performance.
+Cumulative gross-loss debits caused2456QQQ10/2333SPY10 capacity-blocked
+entries: intended allocation is not matched realized exposure or buy-and-hold.
+No Paper bank change, profit refill, old regrade or result-driven retry.
+Data one bundle/projection, Engine one prior/marks intake, six native journals
+and original-SDK cold rebuilds; all17Enginebirths/14Jobs/2CIDs closed plus
+Data/Kepler closures. Explicit code-only fourth ABI amendment923ec0c was
+after Data consumption but BEFORE Engine values, original three checks/debits
+preserved; no silent native-check increase or market replay.
+
+Kepler now owns source-only current-etf-next-hypothesis-selection-20261030-v1:
+one nonduplicate causal trainable proposal, exposure/budget confound explicit,
+180active/1800elapsed/0market. Fermat freezes any new campaign after the
+operational model point, not an automatic extension of closed526f.
+Lovelace pure accrual Source699cd153/nativedff7bd6b passed37invented cases,
+closed70upper: split/basis and dividend RECEIVABLE, no cash/B10 refill.
+Raw Tiingo mapping UNQUALIFIED, review_unavailable not approval. Separate
+current-tiingo-accrual-field-semantics-20261030-v1 checks official field units/
+timing,120active/source-only; never silently add totalreturn to526f.
 
 Galileo exact12gap metadata Source7a68/FINAL0ec7 closed50upper: CODXFeb2026/
 BKYIJun2026, all5fields absent inside acceptedMODE1 page ranges. Not the17
@@ -203,14 +254,22 @@ Never duplicate broad-history fits from the corrected Parent misreading.
 
 ## Data / Next Actual Publication
 
-Existing task thericher-kis-paper-daily-nas-forward next Oct29UTC21:40 /
-Oct30KST06:40, untouched/no manual invoke.
+Existing task thericher-kis-paper-daily-nas-forward had Oct29UTC21:40 /
+Oct30KST06:40 opportunity, untouched/no manual invoke.
 A/data/current-native-daily100-spy-context-runtime-preparation-20261029-v1/
 technical-r1/SOURCE.json
 61a9e50887aa88a47ee8de6cfd6ed3f4570143e2a53505f632914676347c4011.
 100stocks+SPY/AMS/GUBN0/MODP1;1client/1POST/101planned GET/130cap/
 0retry/2spacing/300freshPOSTfloor/245s inner capture.
-Future actual completion/point UNKNOWN, not company-wide wait.
+Actual current pointer now names session20261029/MODP1 and manifest
+8e6eb0dda238d68caee283718a951243bfdf904c4b78b0121b104a46e19725f2
+under technical-r1/runtime/MODP=1/dates/20261029. Pointer/Task exit alone
+does NOT qualify actual completion/model input. Galileo owns exact-source
+current-daily101-actual-publication-consumer-20261030-v1,180active/3600elapsed.
+First real path failed prepare_binding91 SAFE_FIXED_AFFINE_SCHEMA_NO_REFIT;
+0restore/forward/API/Task. Repair exact schema boundary, preserve failure,
+no refit/recollect/retag. Fermat owns separate one operational restore/forward
+only after qualified new frame, not a new research fit or performance trial.
 Cache M/us_equities/kis_paper_private/daily-nas100-spy-owned/v1/MODP=1.
 Next-publication CALLBACK3ca57541 is source-only52pins/15upper closed.
 Data94e9/a318/8821 and model231a are consumer preparation, not a model point.
@@ -244,23 +303,33 @@ is not an offline reader.
 Original MSFTNov2/LOWVOLNov3/Linear17Nov3 exits20:40..21:00 and monthly
 NAS100Oct30UTC21:00..21:30 unchanged. Memory original
 thericher-memory20-nas100-exit-20261104-v1 Nov4UTC20:40/hard21:00/native20:45.
-Compatibility3b13/e17a/57db and coupled1520/757d/5d74 are conditional:
-future in-place BOTH Arguments and RegistrationInfo.Source migration, not a new
-exit. Ohm current-binding preparation attaches0668/f0d9/9dff; no actual edit yet.
-Preserve original triggers/ACL/requests/duties. Officialf12/SDK6dd
+Original Nov4 same-task source-routing migration is now ACTUAL:
+A/execution/current-memory100-original-exit-parent-integration-20261030-v1/r7,
+Source73a6ee3c/Parentdecision62a9da07/planb0126b70.
+PARENT-UPDATE-RESULT.json
+678bf316326f620f4afa3bcfebd7ac7099636f5415057b08babbf6136a8e6dc9.
+ONE_UPDATE4_EXACT_READBACK: both Args and RegistrationInfo.Source bind
+0668/5cd3/f0d9 payload; full definition/ACL/triggers/history/enabled preserved,
+no new Task/Run/Enable/order/capital. Fresh proofafe72a20; CLI45352 joined0/
+Jobempty. UPDATE CONSUMED, never repeat; rollback only separate reconciled
+exact snapshot/fresh owner. Routing adoption is NOT Nov4 custody/runtime/fill.
+Ohm POST-APPLY-CALLBACK.json c0c3911c/readback92942f62/positiveclosuree774b8ce
+independently binds saved result and closed original owners,30upper. No repeated
+apply/census/Task/API/private read. Original requests/duties persist.
+Officialf12/SDK6dd
 SELL1001->1006 only, BUY1002 unchanged; unknown old1001 requests keep old wire.
 No substitute request, all-positions-flat veto or expired-job reservation release.
 
 ## Verification / Recovery
 
 Tracked capacity replay integrated2bfffcd9; subsequent work docs/external-only.
-A/verification/current-capacity-replay-integration-20261030-v1:
-SOURCE1536d24d6b3520e544ade10ed5e0330988a54074067dbda89584ec95cc8c9a95;
-RESULT5d9160686944c819eb7132e93eea72fc26612537119472b9817590a75360e16c.
-1416protectedfiles;378serialPASS1known WindowslinkSKIP;
-19597fullPASS26knownSKIP35warnings/397.02s;
+A/verification/current-original-exit-routing-integration-20261030-v1:
+SOURCE39bfc02dbcf4f459feb9244547fb4dddf6b69abb4b1fe93a066e74220785dea5;
+RESULT72e92ed7cb95469f5b1cb9ad2d970fa2f7fc77a4bd5eb2b65e77f74ed7629575.
+1416protectedfiles;209changed-path serialPASS1known WindowslinkSKIP;
+19597fullPASS26knownSKIP35warnings/396.92s;
 created8/8workers[19623items]/native-helper0/guardedcleanup/Ruff/3Compose
-with .env.example. Session47151 positively closed.
+with .env.example. Session11671 positively closed exit0 before actual UPDATE4.
 Reuse docs/external-only authority only after exact protected-source match.
 Independently native/actual-test changed external helpers. Repo tests cannot
 validate external code; no redundant full suite for unchanged production source.
