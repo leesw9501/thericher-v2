@@ -4,205 +4,100 @@
 
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
-Obtain an interpretable exactly bound native KIS Paper decision/reconciliation
-while useful independent research continues. Publication/tests/installation are
-not fills. Paper permission does not require a profitable model.
+Obtain an interpretable, exactly bound native KIS Paper decision/reconciliation
+while independent useful research continues. Tests, installation, technical
+failure and offline book registration are not that company outcome.
+Paper permission does not depend on a profitable model.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Startup on genuine resume, not compaction. Follow HANDOFF/AGENTS/RUNBOOK/boards.
-Parent owns shared MD/Git/activation. Never KIS_LIVE_*/real money.
-ONE original B/10/costs/losses/pending/F9 held; no reset/substitute/foreign adoption.
+Parent owns shared documents, Git and activation. Private no-cost Paper is
+delegated. Never KIS_LIVE_*/real money. Preserve ONE original B/10, costs,
+losses, pending/F9, exact requests and exits: no reset, profit-expanded bank,
+foreign adoption or substitute unknown request.
 
-## Installed Paper / Next Runtime Evidence
+## Current Paper Facts
 
-Active dispatch Oct29: Parent handles actual runtime failure/readback;
-Lovelace prepares exact cb8d activation builder, Galileo closes61a9->231a
-publication-schema gap, Kepler selects a distinct mechanism/target hypothesis,
-Fermat freezes and executes one genuinely new finite campaign as sole GPU owner.
-At14:34UTC both exact entry/recovery visits closed with zero native visits,
-but ROUND52db657b/f842d6e5 stopped_for_adapter_recovery. Faults9ffb8507/
-07a6a777 identify actor_identity, not a broker rejection/no signal/fill.
-Ohm owns narrow source-bound first-cause/reproducer/repair; Dewey owns the
-inactive finite successor compiler. Neither may replay the consumed Task.
-Original observer restore96f38f53 binds exact operational closure d60cb6fc.
-Lovelace also repairs the activation builder's trusted-EXE2MiB bug and isolates
-SYN/ACTUAL fixed-name outputs without deleting or overwriting old evidence.
-Actual strict offline read15:01:39UTC completed, Parent projection0ae9dd0c/
-exact reader05ae657a:3admissions/16Jobsclosed/CIDabsent/stabilitypassed.
-Policyabsent/10targets0bound10UNKNOWN/fullcountsNULL, not whole-cohort zero.
-Preserve exact inputs/B10/F9 and original exits; company outcome unfinished.
-New generated adapters require emitted Ruff F821/F822/F823/E9 and real native
-source-format parse-and-return smoke. Old closed fits/readouts are not repeated.
-Installed7358/8ce does not automatically admit new1d4 research actors. Preserve
-the14:15..14:34 opportunity: only positively compatible new long workers may
-overlap; otherwise source/preparation continues and numerical launch follows
-positive paired closure. This scoped deployed limitation is not an approval hold.
+Original Memory100 entry Oct29UTC14:15/native14:20/recovery14:27/hard14:34 is
+CONSUMED. Source5813/capsule578f/imagef12a/SDK6dd/inputc5f5/policydbde.
+Exact ROUND52db657b/f842d6e5 stopped_for_adapter_recovery; faults9ffb8507/
+07a6a777 identify actor_identity before native/credentials. Historical rejected
+Docker actors' ownership stays UNKNOWN, not presumed malicious or read-only.
 
-Memory100 pair remains registered/enabled:
-- thericher-memory20-nas100-entry-20261029-v1: Oct29UTC14:15/KST23:15,
-  native14:20/recovery14:27/controller hard14:34.
-- thericher-memory20-nas100-exit-20261104-v1: Nov4UTC20:40/Nov5KST05:40,
-  hard21:00UTC.
+Closure d60cb6fc/controls5cc1a6a0/e83fe2b4 proves zero native visits for those
+two dispatches, not all-account zeroes. Original observer restoration96f38f53
+binds that closure. Original exit Task thericher-memory20-nas100-exit-20261104-v1
+remains Nov4UTC20:40/hard21:00, native exit_not_before20:45.
+Preserve every other original exit and F9 duty.
 
-Exact coordinator5813/capsule578f/imagef12a/SDK6dd/inputc5f5/policydbde/
-publicatione37d remains unchanged. Full pins and consumed enable recovery
-24641c84/74b41b2b are in HANDOFF. No manual Run, installer rerun or opportunity
-roll. Actual current submit/acceptance/fill/owned inventory remain unobserved.
+Actual offline read Oct29UTC15:01:39 completed: Parent0ae9dd0c binds exact
+reader05ae657a under A/execution/current-memory100-actual-read-20261029-v1.
+Three actual admissions/16closedJobs/CIDabsent/two root births absent/source-
+private-input-anchor stability passed; original basis matches/no reset.
+Policy absent,10targets0bound10UNKNOWN; full counts/current owned count NULL.
+Partial zeroes are NOT whole-cohort zeroes. Holdings/fees/settlement/netPnL
+remain unobserved. This read/namespace is consumed; never rerun. Original cb8d
+SYN evidence is intact; recovered fresh37-member clone only.
+Full exact pins and command boundaries are in HANDOFF and RUNBOOK.
 
-At the opportunity inspect exact dispatch/input/intent/fill/current-owned
-inventory with strict categorical readers. Task exit/absent file is not a fill
-or zero. Reconcile exact unknown identity before another effect. F9 held is not
-a global stop for correctly bounded other proposals.
+## Ready / Owned / Due
 
-Reader core7587/df8e is complete. Host integration
-A/execution/current-memory100-reader-host-integration-20261029-v1/technical-r1:
-SOURCEcb8d4e2dbe1ac9ea16ce8b8e17839491570c289ac4af97f57a43f22a4c66f8ab,
-QUALIFICATION14d054a1/Parent contracte0df2fe4/closurea39e7b16.
-Real quiet-pythonw/venv-parent caller, three transport admissions with invented
-custody and immutable postcleanup refs passed;12unique matrix cases/24case
-evaluations across two attempts, additive count clarification retained.
-200upper includes original failure80once/all54Jobs55PIDbirths/2CIDsclosed.
-Original -I-S import failure occurred before readercreate; derivative now
-loads pinned module by path/hash, old Source/member bytes/debits retained.
-Parent independent --check-sources-only passed. Future command requires actual
-14:34..20:00UTC clock/activation freshness180s/positive exact paired-owner
-closure/complete relevant financial-writer census/exact joins/network-none allRO/
-before-after stability. Actual fresh byte-identical instance read is complete:
-current-memory100-actual-read-20261029-v1/RESULT.json0ae9dd0c binds05ae657a.
-It is consumed, do not repeat or invoke the old SYN namespace. Original anchor
-matches/no reset; policyabsent and all10 targets unknown, not a zero-fill claim.
-Missing future receipt is not closure. Journal inventory
-is not a fresh broker holdings query. Never rerun consumed old r2 or invoke
-recovery-capable observe() merely offline.
+- Parent: technical recovery and tracked integration, not a market wait.
+  Fixed16:35 candidate8ac0 actual16:28 preflight withheld actor_unregistered;
+  all metadata Jobs closed, offending row not retained. ONE attempt consumed,
+  no activation/Task/broker calls. CREATE/ENABLE deadline16:33 passed without
+  Parent install. Never roll this window or regrade earlierafdd PASS as current.
+- Dewey: current-memory100-public-actor-diagnostic-recovery-20261030-v1:
+  existing diagnostic projector/native negatives then ONE fresh public capture.
+  Exact source/birth/argvhash/mount attribution, no generic process allowance.
+- Ohm: current-memory100-parent-activation-contract-repair-20261030-v1:
+  native-test whole-second StrictUtc and actual public ACTIVE-LEG owner proof,
+  exact observer and source checks. No actual Task/private mutation in prep.
+  Original Nov4 exit compatibility3b13/e17a requires future same-Task Arguments
+  AND RegistrationInfo.Source migration; no new exit or actual mutation yet.
+- Parent may freeze ONE NEW finite window only after actual repair readiness
+  and fresh source/owner/observer/census/clock/risk facts, original input valid
+  20:00. Original bank/cohort/request/exits/F9 persist. No old installer rerun.
+- Fermat sole GPU coordinator: TCN/LSTM0ad1/a2f5 COMPLETE2fits/29+36epochs,
+  both utility/downsideFAILED/allclosed. Multitask913b/7555 alsoFAILED; fixed
+  half6c39/1529 algebraically rejected without new payload. Do not rerun.
+  Next ONE shared-capital realistic replay contract using CapacityPaperReplay;
+  freeze exact dated Bars/ordering/sizing/costs/missing/caps before payload.
+- Lovelace: laterH1b17f/7f17 COMPLETE1restore/forward10rows/no fit/FAILED,
+  reuse unaudited. Next capital-replay exact input readiness, no new fit.
+- Kepler: capacity kernel2c6d/33ef delivered77focusedPASS/ClaudeKEEP; new code
+  requires Parent fresh full authority. Next max2 distinct information-feature
+  hypotheses with executable finite handoff, not another architecture grid.
+- Galileo: postclose composition8821 plus resolved exact4b8a BEST005 MSE
+  identity/source6fe12b; bind metadata, not60127ff Memory replacement. Existing
+  future publication and actual new model point remain UNKNOWN.
 
-## Ready Inactive Execution
+Existing daily101 Task next Oct29UTC21:40/Oct30KST06:40 remains owned/unchanged.
+Source61a9e508,100stocks+separateSPY/AMS/MODP1; one client,101plannedGET/130cap/
+0retry/245s innercapture. Actual completion/publication UNKNOWN.
+Future Oct29-asof/Oct30-decision feature/point hashes stay UNKNOWN until actual
+publication/closure. Qualified adaptersa318/231a are preparation, not future
+input readiness or authority to retag the old point.
 
-Serial financial derivative dea56a92/FINAL870f833c completed two changed native
-ABI calls/14counterexamples/446upper/allclosed. Old8c03/8869 and2acad callback
-edges remain WITHHELD because cleanup overwrote the historical hashed bytes.
+## Completion And Verification
 
-New immutable producer1d4ddc13/reader918c64ca/READY5702b5a9 verified62
-postcleanup references. New serial integration2fde856d/FINALb37292ea verified54
-exact hashes after cleanup/second pass,178upper/allownersclosed. It is
-INACTIVE_UNALLOCATED, not actual financial admission or deployed dispatcher.
-Wholecf6b launcher EXIT20 is not standalone READY. Keep old FALSE releases.
-Fixed three-proposal registry Memory20/MSE100/Chronos17 uses commonf12/6dd;
-TimesFM is not automatically a fourth writer. Installed Memory pair unchanged.
+Interpret exact no-intent/technical fault/attempt/acceptance/linked fill/current
+owned inventory/terminal reconciliation separately. Retain unknowns. Prioritize
+actual faults/owned duties; continue independent lanes. No all-positions-flat,
+profitability, blanket actor/GPU pause or foreground quota/session sleep.
 
-MSE typed303f/INPUT3c17/Sourcecaf8/policy5588 complete, all five selected routes
-known; no duplicate inference. Future full100+allocationCASH codec collision
-is retained, not triggered here. Chronosd133/d01d and TimesFMae52/fb7b are
-UNALLOCATED17 proposals, NAS8 unchanged/NYS9cash/no renormalization,
-nativeNov4UTC20:45 exit nonparity vs research21:00. No extra bank or default swap.
+Prior full evidence A/verification/current-memory100-actual-custody-recovery-
+20261030-v1/RESULT.jsoncd9b0c8d, protected source4484ff90:
+301serialPASS1knownWindowslinkSKIP;19577fullPASS26knownSKIP;created8/8workers;
+8workers[19603items];391.14s;native/helper0;guarded cleanup;Ruff;3Compose.
+New capacity replay additions invalidate reuse for current source. Fresh
+A/verification/current-capacity-replay-integration-20261030-v1 Source1536d24d/
+1416files/RESULT5d916068:378serialPASS1knownWindowslinkSKIP;19597fullPASS/
+26knownWindowslinkSKIP35warnings/397.02s/created8/8workers[19623items]/
+nativehelper0/guardedcleanup/Ruff/3Compose. Session47151 CLOSED exit0.
+Reuse only on exact protected source; independently test changed external code.
 
-## Parallel Data / Research
-
-Actual batch284b/bf0e completed100GET1POST/9797rows/98current2empty/allclosed;
-MODP0 is not proven equivalent to trainingMODP1. Keep original caches.
-
-Current same dailyDataTask now uses100stocks plus SPY/AMS, literalMODP1:
-A/data/current-native-daily100-spy-context-runtime-preparation-20261029-v1/
-technical-r1 SOURCE61a9e508/native03132cfd/READY8db01b1a.
-One reused client/1POST/101 plannedGET/130GET ceiling/zero retries/245s inner
-capture unchanged. Actual action upgrade03:57UTC: A/infra/daily100-spy-context-
-action-upgrade-preparation-20261029-v1, Source302a050b/ADOPTION66567afc/
-RESULT0d741a5a. One UPDATE4/zero Run; original triggers/ACL/settings/history/
-otherTasks preserved. Next Oct29UTC21:40/Oct30KST06:40, enabled/instances0.
-Prior6->100 update6949/c4f1/a1a3 is superseded history, not another collector.
-Actual101 acquisition/feature/model publication remain NOT_OBSERVED; never
-rerun consumed installers/claims. Static Memory compatibilityb47b63a2 found
-no material effect, not future actual actor admission or245s completion proof.
-
-Feature adapter HANDOFF94e9a150/Source8fc4b488 completed10 native checks:
-inventedCSV100+boundSPY/calendar86 -> actual4c10/8e40 consumer,
-24x100x397/13fields/FIT affines once. New61a9 facade separately passed8checks.
-Actual payload still needs original source/date/mode bindings. Old434f stays
-Oct28asof/Oct29decision. Existing pair is MODP0, not a same-mode SPY substitute.
-Token audit5a4afdd5 NO_PROVEN_CONFLICT: observer session checks precede POST;
-no floor/schedule change. Actual ad-hoc writers/first245s completion unmeasured.
-
-Next-date kernel A/data/current-daily101-nextpoint-chain-preparation-20261029-v1/
-model-abi-r4 SOURCE231a3c20d8b6e4793b4df06d5f50d3697e7f624567bb8018463cb14ce94a3d58,
-READY93bb92e5/FINAL065ab99b/native4e7305dc/closure48db4e0e COMPLETE.
-Real producer/saved397feature ROLE -> actual GRU/safe-NPZ coldrestore with
-invented weights -> real unrouted proposal codec passed; original13fields/
-100slots/masks/FITaffines once, explicit routes:null/date/source/mount mapping.
-160/300activeSUM includes original50once/all failures/cleanup;4invented CPU
-CIDs/all29guarded children closed. Six cumulative SYN restores/forwards,
-zero true checkpoint/affine loads, market payload/forecast/fit/API/Task.
-r1 unknown capture timestamps/r2 missing unrouted.py mount preserved; r3 passed,
-r4 additionally exercises actual codec import before forwards. No old regrade.
-Unactivated executable kernel/builder, NOT actual Oct30 point readiness.
-Future Oct29asof/Oct30decision DataREADY/ownerclosure/packet hashes remainNULL.
-After publication bind ONE exact input and separately freeze actual one-restore/
-one-forward contract; no stale decision retag, fakehash, broker allocation or
-new Task from this preparation. Reusable kernel code is not a claim to reopen
-a closed engineering clock. Exact operational commands are in r4/COMMANDS.json.
-
-Completed GPU/CPU campaigns must not repeat:
-- StudentTc8a4:42epochs/BEST18/utilityFAILED/398.693214upper/allclosed.
-- CatBoostb0de:157updates/BEST56/primaryFAILED/309.003393upper/allclosed.
-- Asset-MHAa328:26epochs/BEST2/utilityMET/downsideFAILED/349.351723upper.
-- Direct portfolio1af6/0488:33epochs/BEST9/primaryFAILED/458.531148upper.
-- TimesFMfb6c:32matched/bothMET on reused data; current5d23 published unallocated.
-- Foundation17 treec86e:primary vsHALF MET, all8DEV alias alwaysTimesFM;
-  no conditional gain over component/339.120991upper/allclosed.
-- Transformer201a/322e rank comparison MET on reused INNER; fusiond27 bothFAILED.
-- MSE current22dc, Chronos3f5a and TimesFM5d23 actual forwards complete.
-
-Issuer attribution028130ea/d2c6f304 completed190upper/allclosed:
-AEMD66.5055% of MSE net subset contribution/top3issuers83.6001%.
-Issuer/cohort/aggregate totals reconcile; exact dated cached vector parity
-remains WITHHELD. Public sourceca82/e8e7 is separate from actual held membership.
-
-Held-adjustment diagnostic A/research/current-aemd-held-adjustment-diagnostic-
-20261029-v1 Source7dbf3a13/FINAL2156cbe0 COMPLETE155upper/all3Jobs6PIDbirths
-closed. One exact membership projection: six known AEMD-held windows plus one
-originally unknown window, none crosses the identified Jul31/Aug4 split dates.
-Zero conditional bar intakes. Sep11..17 overlaps merger-agreement announcement
-only; vendor adjustment/gain causation remain INDETERMINATE, dated cached-vector
-parity WITHHELD. No old regrade, outlier deletion or Paper ban.
-
-Fixed50:50 MSE/asset-MHA PORTFOLIO fusion A/research/current-mse-assetattention-
-fixed-portfolio-fusion-20261029-v1 Source0b3c5f75/FINAL3a42e8d6/RESULT12c6eff7
-COMPLETE190upper/all3Jobs6PIDbirthsclosed. One saved action transaction, one
-cached payoff-vector intake/two cost cells/zero fits, forecasts or baseline
-replays. At10bp utility.03309927>.03268337 but downside second moment
-.00070606>.00038416: primaryFAILED. Correlation+.86254 does not support negative
-covariance. Conditional endpoint contribution10.035689%, not full growth/DD/
-M2M/PnL/alpha. No rescue blend grid/default/Paper change.
-
-No active GPU fit inferred. New trials need a distinct justified finite
-hypothesis, not GPU utilization or rescue of old failed criteria.
-
-Subsequent actual cost-survival campaign a45f/fabb/FINAL7022853d COMPLETE:
-onefit26epochs/BEST2/pat24, proper-score/downsideMET but utilityFAILED vsMSE,
-correlation+.01393,30known/32planned2UNKNOWN,375.188upper/allclosed.
-New finite fixedportfolio composition and justified multitaskGPU preparation
-delegated, no completed training repeated or Paper default automatically swapped.
-Actual H1 Data695fc26f/Sourcefd6a60c2 complete251dates/248jointknown; Kepler
-pure mechanism -> Lovelace new one-fit H1CPU comparison under Engine custody.
-Future callbacks/native/source readiness, not assignment, prove actual launches.
-
-## Completion / Verification
-
-Actual exactly bound native decision/reconciliation is required. Distinguish
-no-intent/technical failure/attempt/acceptance/exact fill/current owned inventory/
-terminal reconciliation. Fees/settled cash/netPnL remain unknown without proof.
-Original cohort8UNKNOWN/F9 held and original exits remain independent facts.
-No foreground market wait, new app follow-up chain or recurring report.
-
-Latest full authority4484/c13013e3:
-188serial/19577fullPASS/26knownWindowslinkSKIP/8workers/Ruff/threeCompose.
-Fresh actual-read recovery authority A/verification/current-memory100-actual-
-custody-recovery-20261030-v1/RESULT.jsoncd9b0c8d supersedes it for the same
-protected4484source:301serialPASS1knownSKIP/19577fullPASS26knownSKIP/
-created8/8workers/8workers[19603items]/391.14s/nativehelper0/cleanup/Ruff/
-3Compose. External actual reader independently checked; repo tests alone
-do not validate generated external code or establish a broker effect.
-Verify exact protected digest before docs-only reuse and independently check
-changed external code/outputs. AGENTS verification controls remain unchanged.
-At material COMPANY completion verify/commit/push, replace this with exactly
-ONE next company outcome, refresh boards and continue. Package commit is not
-company completion.
+At material company completion verify, commit/push, replace this with ONE next
+company outcome, refresh stateboards and continue. Package commits are not
+company completion. History stays in Git/role boards/immutable artifacts.

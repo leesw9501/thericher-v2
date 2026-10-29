@@ -1,12 +1,25 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / integration14:50UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-30 KST / integrationOct29UTC16:33. A=D:/thericher-v2/model-artifacts.
 Fermat coordinates GPU/custody; Parent MD/Git/activation.
 Project first GPU priority and useful concurrency approved. No app allowlist,
 user-process kill or driver change. One coordinator, separate campaign clocks/
 paths/leases; measure actual free/projected peak VRAM before new dispatch.
 
 ## Actual Resource State / Ready Work
+
+Latest sequence family0ad1488e/a2f5 positively CLOSED all65Jobs/9CIDs/leases;
+TCN29epochs/BEST5 peakreserved975175680bytes, LSTM36/BEST12/1080033280bytes,
+323.879upper cumulative active. Both market fits completed, no retry/rerun.
+These are actual CUDA fits, not current GPU activity or evidence of convergence.
+Both economic criteriaFAILED; keep results/debits. H1 laterb17f/7f17 closed
+oneCPU restore/forward10rows/no fit; no active numerical job inferred.
+Next Fermat source-ready capacity replay contract, Kepler information proposals,
+Lovelace input readiness; launch useful new GPU work once its finite contract
+and actual headroom/native checks pass. No global hold from Paper actor fault.
+Parent CPU full integration47151 CLOSED exit0/RESULT5d916068:19597PASS26known
+SKIP/created8/8workers[19623]/397.02s/guardedcleanup/Ruff/3ComposePASS.
+Earlier resource projections below are historical, not running workers.
 
 Actual new cost-survival GPU fit completed14:53:46UTC/FINAL7022853d.
 26epochs/BEST2/4602updates/onefit/no retry, peakreserved1193279488bytes,

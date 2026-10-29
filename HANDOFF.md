@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct29UTC15:06 integration in progress.
+2026-10-30 KST / Oct29UTC16:33 integration in progress.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -13,6 +13,52 @@ Preserve unrelated untracked %SystemDrive%/. Startup on genuine resume only.
 Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/
 F9 UNKNOWN-HELD. No reset/refund/profit-expanded bank/substitute/foreign adoption.
 Private no-cost Paper is delegated; research limitations are not global holds.
+
+Current priority: new fixed16:35 candidate8ac0 was NOT installed: Parent ONE
+actual preflight at16:28 returned actor_unregistered, with all metadata Jobs
+closed; the offending actor row was not retained, so its capability is UNKNOWN.
+No activation script, installer or broker call ran. Keep this consumed attempt
+at A/execution/current-memory100-window1635-parent-activation-20261030-v1.
+Earlier afdd8133 PASS applies only to its own earlier read and sourcee873.
+Dewey owns a fresh diagnostic derivative using existing actor_diagnostic;
+Ohm owns native-tested activation projection repair (StrictUtc whole seconds
+and actual public ACTIVE-LEG proof). No generic Python allowance, clock roll,
+bank reset or retry of the consumed root. Originalc5f expires20:00UTC;
+choose another finite window only after readiness, never alter this16:35 one.
+Guardccbc is Parent-adoptedb3b64589/Claude5205, not actual deployment.
+Original Nov4 exit compatibility3b13e0f8/e17a/57db is conditional: a future
+same-Task migration needs BOTH Arguments and RegistrationInfo.Source changes,
+not a new exit Task. No original exit mutation has occurred.
+
+TCN/LSTM family0ad1488e/a2f5 COMPLETE: TCN29epochs/BEST5/5133updates,
+LSTM36epochs/BEST12/6372updates, two fits/no retry/all65Jobs9CIDs/leases closed,
+323.879upper. Both10bp utility/downside FAILED vs frozenMSE; no rerun/default
+change or independent-alpha claim. H1 later challengeb17ff69e/FINAL7f17474e
+complete one restore/forward/10rows/no fit; rule0entries/ridge4, criteriaFAILED.
+Reuse unaudited, smallN10, no independent replication or rescue threshold.
+Kepler capacity replay2c6d9d09/33efc729 ready77focusedPASS/ClaudeKEEP;
+378serialPASS1knownSKIP; fresh protected1416 Source1536d24d full verification
+COMPLETE RESULT5d916068:19597PASS26knownWindowslinkSKIP35warnings/397.02s/
+created8/8workers[19623items]/nativehelper0/guardedcleanup/Ruff/3Compose.
+Session47151 CLOSED exit0. Prior1414 authority does not cover the new code.
+Next Engine work is realistic ONE shared-capital MSE replay preparation;
+Lovelace checks exact dated Bar readiness, Kepler distinct-information proposals,
+Galileo binds correct4b8a BEST005 metadata for existing future21:40 publication.
+The earlier60127ff Memory reference is not the MSE checkpoint; no model swap.
+
+Subsequent research: multitask mean/probability913b/FINAL7555 COMPLETE onefit/
+34epochs/BEST10/6018updates/allclosed/244.425upper. ProperMET, utility.031406
+vsMSE.032683 and downside.001902 vs.000384 FAILED; no promotion/refit.
+Fixed halfportfolio6c39/FINAL1529 rejected prepayload by utility upper bound
+.021729<.032683,85.217upper/allabsent/zero new fits/forwards/market intakes.
+This is not a ban on other ensembles or observed blend performance.
+H1CPU9299/FINAL10e7 COMPLETE onefit/90upper/11workersclosed/primaryFAILED,
+ruleFIT6/DEV1. Later10-date2026FirstRate9c20/bf53 roles ready/allclosed; exact
+H1scoring reuse unaudited, not independentreplication. Lovelace freezes one
+no-fit operational challenge. Fermat prepares finite TCN/LSTM family max2fits;
+Galileo prepares existing21:40 consumer composition, not another collector.
+Kepler delivered tracked capacity_paper_replay.py/test; Parent owns integration
+and fresh full verification (old4484 authority is stale for these additions).
 
 Latest integration: actual readonly custody recovery COMPLETE0ae9dd0c (below),
 fresh guarded verificationcd9b0c8d/Source4484:301serialPASS1knownSKIP/

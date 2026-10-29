@@ -1,10 +1,80 @@
 # Orchestration Stateboard (총괄)
 
-2026-10-30 KST / integrationOct29UTC15:14. A=D:/thericher-v2/model-artifacts.
+2026-10-30 KST / Throughput ReviewOct29UTC16:33. A=D:/thericher-v2/model-artifacts.
 Parent shared MD/Git/activation. No operator decision pending.
 ONE original B/10/costs/losses/pending/F9 held. Preserve %SystemDrive%/.
 
 ## Ready / Owned / Due
+
+Current review16:33 supersedes all older projections below:
+- Parent16:35 candidate8ac0 NOT INSTALLED. Actual16:28 preflight withheld
+  actor_unregistered/allJobsclosed; no offending row retained. That attempt is
+  consumed, not evidence of a private writer, no broker or install occurred.
+  No fresh evidence means no forced PASS; fixed window must never roll.
+- Dewey now diagnostic recovery using existing actor_diagnostic with native
+  invented boundary tests then ONE fresh public capture. Ohm native-tests the
+  activation timestamp/public ACTIVE-LEG checks; disjoint external roots.
+  Original Nov4 exit compatibility3b13/e17a needs future same-Task Arguments+
+  RegistrationInfo.Source migration, no actual mutation yet.
+- Fermat TCN/LSTM0ad1/a2f5 COMPLETE2fits/29+36epochs/allclosed, both primary
+  FAILED. No rerun. Next realistic shared-B10 replay source contract, not
+  another endpoint-average profitability claim or architecture grid.
+- Lovelace H1 laterb17f/7f17 COMPLETE1restore/forward10rows/zero fits/FAILED;
+  now exact Bar/capital-replay input readiness, no market replay yet.
+- Kepler kernel2c6d/33ef ready77PASS/ClaudeKEEP. Parent integration378serial
+  PASS1knownSKIP/full19597PASS26knownSKIP/8workers[19623]/397.02s/cleanup/Ruff/
+  3Compose PASS RESULT5d916068, run47151 CLOSED exit0. Kepler next max2 distinct
+  information hypotheses, executable handoff not reading list.
+- Galileo postclose composition8821 source-only; exact MSE4b8a identity now
+  resolved by6fe12b source. Bind metadata only; future publication/pointUNKNOWN.
+
+Exact company block: candidate-specific actual actor attribution/admission and
+tested activation projection, NOT operator permission, research profitability
+or company-wide quiescence. Alternatives: (1) retain source-qualified relevant
+actor diagnostic and repair exact claims, (2) finish original exit migration
+preparation, (3) realistic capital-aware research, (4) existing21:40 publication
+and next-date point. Execute these in parallel; no foreground market waiting.
+Reversible improvement: retain allowlisted diagnostic actor identity at first
+failure rather than lose its row and repeat an uninformative census. Fresh
+post-repair facts cannot retroactively qualify consumed prior observations.
+
+Earlier review16:08 (historical, not current dispatch):
+- Parent guard adoptionb3b64589/Claude5205 GO_WITH_LIMITS and actual public
+  preflightafdd8133 PASS3actors0containers/3Jobs after 5-case CIMmicrosecond
+  comparator calibration. Two exact root births absent; no financial admission.
+- Old original-input16:00 candidatee873 was never installed/TRUE; expired FALSE
+  source remains intact. Its first preflight supervisor fault is preserved.
+- Dewey now owns tested singleENTRY installer/late-bound finite window, not
+  another preset deadline or general3-model framework. Freeze actual window
+  only after code/readiness; originalc5f valid20:00 and B10/F9/exits unchanged.
+- Ohm prepares original Nov4 exit compatibility, no Task/private/API mutation.
+- Fermat completed multitask7555/913b (utility/downsideFAIL) and algebraically
+  rejected fixedhalf1529/6c39 without new market transaction. Next2fit TCN/LSTM
+  family under one Steward, source/publicpeer/resource proof before launch.
+- Lovelace completed H1CPU10e7/9299/90upper/11workersclosed/primaryFAIL; new
+  frozen no-fit later-vintage challenge. Galileo10-date9c20/bf53 ready/allclosed,
+  now existing21:40 postclose consumer composition. No new collector/schedule.
+- Kepler assigned ONLY tracked capacity_paper_replay.py and its test: reusable
+  local simulator/capital-aware replay, no real data. Parent owns integration.
+  Old4484 full authority cannot cover changed protected code after first edit.
+
+Improvement: use advertised CALLBACK/FINAL/MAIN references, not a guessed
+filename or only terminal LLM notifications while a successor is already active.
+Freeze operational clocks after implementation readiness; never roll consumed
+opportunities. Ongoing work/ordinary scheduling is not operator approval.
+No genuine operator decision pending; company outcome still unfinished.
+
+Review15:22: Parent actual read/tests integrated and pushed5ff4a99f. Immediate
+company path is a small same-original-input technical recovery, not broader
+future3-model template work. Ohm supplied prospective fix ba1c/ccbc after this
+review; historical actors remain UNKNOWN and Claude timeout is not agreement.
+Dewey must checkpoint unfinished template under its old unchanged300cap, then
+own new original-input-recovery preparation <=480active/3600elapsed.
+Candidate16:00/native16:05/recovery16:12/hard16:19 is NOT installed; inputc5f
+valid20:00. No time roll/intent change/oldTaskRun. Parent owns activation;
+single bank/B10/F9/original exits unchanged. Independent research continues.
+One reversible improvement: stop adding generality; deliver tested immutable
+components directly to consumers and keep NEXT only current outcome/dispatch.
 
 Current review supersedes the pre-opportunity projections below:
 - Parent actual read COMPLETE0ae9dd0c/05ae657a at15:01:39UTC:3admissions,

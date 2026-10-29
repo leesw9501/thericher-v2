@@ -11,7 +11,35 @@ Credential-free uv --no-env-file; Compose --env-file .env.example.
 ONE original B/10/costs/losses/pending/F9 held. Preserve %SystemDrive%/.
 Evidence paths below are NOT instructions to rerun consumed workers/installers.
 
+Current tracked code verification:
+A/verification/current-capacity-replay-integration-20261030-v1/RESULT.json
+5d9160686944c819eb7132e93eea72fc26612537119472b9817590a75360e16c;
+protected1416 Source1536d24d6b3520e544ade10ed5e0330988a54074067dbda89584ec95cc8c9a95.
+378serialPASS1knownSKIP/19597fullPASS26knownWindowslinkSKIP35warnings/
+created8/8workers[19623items]/397.02s/nativehelper0/guardedcleanup/Ruff/3Compose.
+Session47151 closedexit0. Initial finalizer assumed every skip summary had[1];
+fixed count parser sums one[2]+24[1] and checks exact25path:line/count groups
+against prior known26, no pytest rerun or skip-authority relaxation.
+
 ## Installed Paper / Future Read
+
+Current16:33UTC: original-input recovery16:00 was never installed. New fixed
+16:35 candidate8ac0 actual preflight16:28 withheld actor_unregistered; all
+metadata Jobs closed, offending row not retained. Parent did not call activate
+or installer; its16:33 CREATE/ENABLE deadline passed. Never roll/retry this
+consumed scope or infer broker effects. Evidence:
+A/execution/current-memory100-window1635-parent-activation-20261030-v1.
+Dewey diagnostic derivative/Ohm activation contract repair own new distinct
+roots. Whole-second StrictUtc and actual public ACTIVE-LEG checks need native
+qualification before another activation. No unknown-bank age reclaim.
+Earlier read-time-only preflight PASS afdd8133 remains under
+A/execution/current-memory100-preflight-supervisor-repair-20261030-v1:
+native5-case microsecond comparison/3metadataJobs/3actors0containers/two exact
+root births absent. Guardccbc is component-adoptedb3b64589, Claude5205 GO.
+Neither this metadata snapshot nor source tests grants future broker effects.
+Use Dewey's separately qualified singleENTRY ready-window installer only after
+fresh exact source/owner/observer/census/clock/risk checks. No source/input/intent
+retag, B10/F9 reset, consumedTaskRun or original Nov4 exit mutation.
 
 Oct29UTC14:34 actual opportunity: technical_failure, not no signal or a fill.
 Exact ROUND52db657b/f842d6e5 stopped_for_adapter_recovery; Source-bound faults

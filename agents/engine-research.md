@@ -1,9 +1,35 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / integration14:50UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-30 KST / integrationOct29UTC16:33. A=D:/thericher-v2/model-artifacts.
 Fermat Engine/Steward. Parent shared MD/Git. Actual contracts own trial caps.
 
 ## Latest Diagnostic / Fusion / Consumer
+
+Current dispatch supersedes old next-work projections below. TCN/LSTM family
+current-h5-tcn-lstm-meanpayoff-development-20261030-v1 Source0ad1488e/
+contracta2f5 COMPLETE2fits/no retry/all65Jobs9CIDs/leasesclosed/323.879upper.
+TCN29epochs/BEST5/5133updates/peakreserved975175680bytes; LSTM36/BEST12/
+6372updates/1080033280bytes. At10bp utility.01875894/.02745075 vsMSE.03268337;
+downside.00067934/.00115273 vs.00038416. Both primaryFAILED. Reused conditional
+endpoints30known2UNKNOWN, not full portfolio growth/DD/PnL or independent alpha.
+No repeats or winner promotion. Multitask913b/7555 FAILED; fixed half6c39/1529
+rejected by exact utility upper bound before any new market intake/fit.
+
+H1 later technical-r1 Sourceb17ff69e/FINAL7f17474e/RESULT2d1d7dc8 complete:
+one saved Ridge restore/one10-row forward/one target intake/no fit; rule0entries,
+Ridge4/half4. Predicate AND failed (utility vsrule/downside vssamegross),
+no threshold rescue. SmallN10/reuse not audited; not independent replication.
+
+Next Fermat prepares ONE realistic shared-capital replay using newly integrated
+CapacityPaperReplay, not independent funding per overlapping cohort. Freeze
+chronological availability/exit-first ordering/quantities/reservations/costs/
+marks/missing/CA limitations and finite intakes/evals before payload. Lovelace
+checks dated Bar readiness. Parent owns full verification/Git; no actual replay
+in source preparation. A distinct-information GPU proposal may follow Kepler;
+do not keep GPU busy by duplicating completed fits.
+Correct next-date MSE identity is4b8a4661 safe BEST005/585e models/source6fe12b,
+not60127ff Memory alias. Data may bind exact metadata for existing future
+publication; actual one-restore/forward still requires fresh input contract.
 
 New cost-survival COMPLETE FINAL7022853d0b75072503e3a2b5e2c1e883bb452feccddd79ceb2d8e7da293eb99d:
 one fit/26epochs/BEST2/patience24/4602updates, peakreserved1193279488bytes.

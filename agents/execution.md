@@ -1,10 +1,22 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-30 KST / reviewOct29UTC15:06. A=D:/thericher-v2/model-artifacts.
+2026-10-30 KST / reviewOct29UTC16:33. A=D:/thericher-v2/model-artifacts.
 Parent activation/MD/Git. Never KIS_LIVE_*/real money.
 ONE original B/10/costs/losses/pending/F9 held. No operator decision pending.
 
 ## Installed / Due
+
+Current fixed16:35 candidate8ac0 never installed: Parent actual publicpreflight
+at16:28 withheld actor_unregistered/allmetadataJobsclosed; no offending actor
+row retained. This consumed scope did not run activation/Task/broker or alter
+original exit/bank/observer. Earlierafdd PASS is only its own readtime/source.
+Dewey owns source-qualified diagnostic recovery; Ohm activation projection
+repair: whole-second StrictUtc and actual public ACTIVE-LEG checks before owner
+clearance, no age-reclaim. No generic process allowance or clock roll.
+Original Nov4 compatibility FINAL3b13e0f8/Sourcee17a/native57db (9positive/
+12negative request variants) is conditional. Existing runtime requires BOTH
+Task Arguments and RegistrationInfo.Source migration; no new exit Task and
+no actual exit edit/deployment yet. Keep original pending/F9/exit duties.
 
 Actual entry/recovery opportunity is consumed. ROUND52db657b/f842d6e5 both
 stopped_for_adapter_recovery; exact FAULT9ffb8507/07a6a777: actor_identity,

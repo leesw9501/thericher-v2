@@ -1,11 +1,26 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-29 KST / integration05:18UTC. A=D:/thericher-v2/model-artifacts.
+2026-10-30 KST / integrationOct29UTC16:33. A=D:/thericher-v2/model-artifacts.
 Parent MD/Git. Engine owns final targets/splits/costs/fits/interpretation.
 No broker/private/budget authority. New proposals end in a bounded experiment
 or concrete rejection, not an unbounded reading list.
 
 ## Latest Source Work / Consumer
+
+Kepler capacity replay kernel COMPLETE Source2c6d9d09/focusedSource33efc729:
+77focusedPASS/20newcases/ClaudeKEEP/328upper/allownedworkersclosed. Uses actual
+LocalPaperBroker/EventStore, one synthetic originalB/10, pendingonce/all-inowned
+entrycost/cumulativeclosedloss/no profit expansion, exact lot exits, restart
+idempotency and unknown marks -> NAVnull. No market intake/model/broker call.
+Consumer Fermat prepares realistic full-capital replay with dated Bars and
+frozen scheduling/sizing, not endpoint cohort averages. Parent full verification
+5d916068 PASS19597/26knownSKIP/8workers/Ruff/3Compose; source tests do not
+establish market/Paper performance.
+Next Kepler max2 distinct ready information hypotheses under
+current-next-information-hypotheses-20261030-v1, not another architecture grid.
+Use exact existing inputs/causal formulas/strongest kill/finite executable
+handoff. Historical H1 rule support and later10row challenge FAILED, not rescue
+thresholds or a blanket ban on indicator/regime/volume research.
 
 Current14:01UTC assignment: Kepler current-complementary-hypothesis-selection-
 20261029-v1,240active/7200elapsed, max2 mechanisms and ONE executable Engine
