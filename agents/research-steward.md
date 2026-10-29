@@ -1,40 +1,46 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / Oct28UTC22:40. A=D:/thericher-v2/model-artifacts.
-Fermat coordinates GPU/custody; Parent sharedMD/Git/activation.
-Project GPUpriority/concurrentuse approved. No appallowlist/kill/driverchange.
+2026-10-29 KST / Oct29UTC00:34. A=D:/thericher-v2/model-artifacts.
+Fermat coordinates GPU/custody; Parent shared MD/Git/activation.
+Project GPU priority/concurrent useful use approved. No app allowlist/kill/
+driver change. One resource owner, separate campaign clocks/paths/leases.
 
-## Current Resource State
+## Ready Resource Work
 
-No runningGPU inferredfromMD. Groupedcontextbb540 actualfit25epochs4425updates/
-194.874s/peakreserved1096810496bytes, all4CIDs28CLIleaseclosed22:06:33.
-485.1275435aggregateupper includes125.511prep. No repeatfit.
-Fermat now adopted endpoint-cost study683f2167,600activeSUM including prior
-prep120 once/7200elapsed/8cells/0newfits; CPU arithmetic, not GPU training.
-Ohm prepares ONE distinct attention candidate/native synthetic checkpoint
-for Engine review and useful next GPU campaign; no market fit yet authorized.
-OtherreadyfrozenGPUwork maylaunchafteractualheadroom/Source/custody, no dummyjobs.
+Adopted StudentT100 cost/tail campaign:
+current-studentt100-cost-tail-development-20261029-v1,
+1800activeSUM inclprior diagnostic120once/7200elapsed/1fit0marketretry,
+max128epochs/1200fitseconds/one forecastseal/8cells. Actual native solver/
+checkpoint handoff before market; actual headroom plus4GiB desktop reserve.
+Ohm TimesFM25 readiness240active/7200elapsed/1load2invented forecasts may
+co-tenant if measured projected peaks allow. No model/data/rights unknown
+becomes a global GPU permission hold. No dummy work for utilization.
 
-Chronospoint3f5a13forwards/CID7CLIleaseclosed21:09; fine-tune74f5closed20:52.
-Groupnativefirstfailure67.422/r1expired/r2qualified3AdamW totalprep125.511.
-All retained; no silentclockrefund. ExactrealAfinancialclosure notrequired for
-networknonefakebooktests; realPaperunknown-request/riskcontrols remain unchanged.
-UseactualVRAM/headroom+4GiBdesktopreserve, not appallowlists.
-Sourceelapsed ceilings includeknownquiet+Parentqueue; no shortartificialwindow.
-A21:25Taskclosed, currentr7source recovery is not GPUpermissionhold.
+Assignments are not running-process evidence. Latest observed completed GPU:
+Transformer201a25epochs4425updates/239.905s/best1, peakallocated698215424/
+reserved1495269376bytes. All3CIDs23CLI/owners/lease closed23:14UTC Oct28.
+Its readout322e also completed without newGPU/fit/forward/restore.
+Groupedcontextbb54025epochs4425updates194.874s/peakreserved1096810496,
+all4CIDs28CLI/lease closed22:06. No repeated completed training.
 
-## Actual Closed Results
+Last Parent hardware22:43UTC Oct28:4090/free22252MiB/36C,
+Dfree36.50%/Cfree21.98%; historical observation, remeasure at launch.
+Execution preempts safely; active desktop work is not approval/refusal reason.
 
-- Fine-tune74f5:BEST0/nolearnedgain; peakallocated2937092608/reserved3256877056.
-609.501aggregateupper,1569elapsed,100updates/124.703s; no convergenceclaim.
-- Chronos8df:109GPUforwards/0fits/481.0197605familyupper/allclosed.
-- H5rankloss766c:32epochs/338.8056954upper/628MiBreserved/allclosed.
-- EXIT6668CPU:525updates/75epochs/best59/allHOLDalias/
-243.367276finalupper/all12EngineData instancesclosed; noGPUneed.
-- H20eec7twoCPUfits/all43cash; fixedblend/directH5rejected.
-No completedfamily is an idle-GPU refill queue.
+## Closed Debits / Custody
 
-Parent test78671 CLOSED21:12:8workers/19577PASS26knownSKIP/397.63s.
-Latestauthority4484/cdf23; no testworkers stillclaimedactive.
-ModelsA/dataM/Dfree36.6% measured; resourcecotenant timings notisolatedbenchmark.
-Execution safe checkpointpreemption remains; no unqualifiedresume/silentretry.
+Transformer readout765.493243upper includes original635.825836once.
+Groupedcontext485.1275435 includes prep125.511; original failures retained.
+Endpoint65d207.281634upper/8cells and fusiond27202.201upper/14cells closed.
+Fine-tune74f5:609.501upper/BEST0/no learnedgain, peakreserved3256877056.
+Chronos8df481.0197605familyupper/109forwards0fits/allclosed.
+Chronospoint3f5a190.801772upper/13forwards/leaseclosed21:09.
+Rankloss766c338.8056954upper/32epochs/628MiBreserved/allclosed.
+EXIT6668CPU243.367276upper/all12instancesclosed; noGPUneed.
+H20CPU allcash and oldfixedblend/directH5 remain failures, no automatic refills.
+
+Old scopes/seeds/caps/debits immutable. Native technical checks before
+numerical work are charged, not another approval/platform. No age-reclaim live
+or unknown leases, no silent OOM retries or invented convergence.
+Parent tests55034 closed00:31UTC Oct29/19577PASS26SKIP395.58s;
+repo authority4484/dab6. D:helpers separately qualified.

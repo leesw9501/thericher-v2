@@ -1,64 +1,56 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-29 KST / Oct28UTC22:40. A=D:/thericher-v2/model-artifacts.
-Parent sharedMD/Git. Engine owns targets/costs/fits/interpretation.
-No broker/private/budget authority in this role.
+2026-10-29 KST / Oct29UTC00:34. A=D:/thericher-v2/model-artifacts.
+Parent shared MD/Git. Engine owns targets/splits/costs/fits/interpretation.
+No broker/private/budget authority.
 
-## Closed Synthesis
+## Current Work / Consumer
 
-Invoked Ohm:
-A/research/current-chronos-rule-composition-synthesis-20261029-v1,
-Sourcee2088a3f/callback88db1715/ClaudeADOPT_WITH_LIMITS.
-Exact32keys/clocks/funding/costs/193events align across frozenChronos/
-REVERSAL5 ledgers. a55 averaged rank scores beforeEWMA/Top5, not portfolios.
-Its failure does not reject all ensemble mechanisms.
+Ohm current-timesfm25-torch-readiness-20261029-v1:
+240active/7200elapsed/max1load2invented forwards,0marketfit/evaluation.
+Official Google SDK/safecheckpoint/date/hash/license/pretraining coverage,
+existing PyTorchCUDA; no JAX/global framework replacement/remote arbitrary
+code. Native output schema handoff to future Engine17H5 benchmark, not a
+reading list or automatic qualified comparison. Unknown corpus scope remains
+a claim limitation; ambiguous rights require operator.
 
-ConcreteREJECT for fixed50:50 portfolio onthese reused32:
-terminalgrowth exactlycomponentmean underconstantfundedbasis cannotbeatbest.
-Concurrentdrawdown givesDDlowerbound1.058353%, aboveChronos.841107%;
-DDbelowboth impossible here. Netcorr.477/Uniform-relative-.080 descriptive,
-not forecast-error complementarity or independent selection.
-66.793253upper/allreviewJobsclosed/0fits/forwards/newcells. No weights chosen,
-threshold rescue, replaycell or generalizedensembleban.
+Fermat adopted a distinct StudentT4 H5 location/scale GRU from retained-output
+concentration diagnostic, not another plain rank expert. Consumer is fixed
+same-gross cost/downside utility study, one fit/no market retry; exact contract/
+native numerical checks owned by Engine. Concentration alone cannot prove
+bad data or that robustification helps; MODP1 raw/adjusted semantics unresolved.
+No outlier deletion/CA invention/retrospective correction.
 
-## Current Review
+## Completed Proposals / Evidence
 
-Ohm native-fixture review6d0c6017/fae1e8ff CLOSED45/60upper; exact SDK paths
-and fake-root geometry defects fixed before Kepler actual R3 PASS66875f42.
-r7 reviewabc85d4e/df8c8455 found mixed FILETIME identity representation;
-relayed to Lovelace technical recovery, not a global approval gate.
+Temporal-patch candidate6087 nativef5a2/ab22:
+10inventedforwards/3updates/coldrestore/nextupdateparity,234.721upper/allclosed.
+Actual Engine201a GPU25epochs4425updates completed, original comparison322e
+now primaryMET/RankIC.1288711 vsmeancontext.1245338 on reused INNER.
+No alpha/causalattention/PnL qualification and no repeated training.
 
-Current current-context100-attention-candidate-preparation-20261029-v1:
-150active/3600elapsed, registry dedup and primary-source research, ONE pure
-PyTorch temporal-patch or set-attention mechanism if distinct from old trials.
-Actual invented forward/backward/checkpoint SYN;0marketpayload/fits/API/private.
-Consumer is Fermat's next useful GPU experiment, not a reading list.
-Engine owns final data/split/target/cost/caps/dispatch after endpoint replay.
+Fixed score fusion6e6b/native18checks implemented two exact score mixtures
+before originalEWMA20Top5, not portfolio averaging/in-sample learned gate.
+Actuald27 completed14cells/30known2unknown, bothcriteriaFAILED:
+MR Delta -3.6689pp/MRCvsMR -.4397pp at10bp. No newblendgrid or rescue.
+Engine handles exact economic masks; no independent performance claim.
 
-## Completed Exit / Rule Research
+Synthesis e2088a3f/callback88db1715/ClaudeADOPT_WITH_LIMITS:
+32keys/clocks/funding/costs/193events align. Specific50:50Chronos/reversal
+portfolio DDlowerbound1.058353%>Chronos.841107, concreteREJECT.
+a55 averaged scores, not portfolios; not general ensemble ban.
+66.793253upper/allreviewJobsclosed/0newfits/cells/forwards.
 
-Exitproposalb8b421cf/760db333 led toactual6668study:
-fixedUniform17BUY, prefixCLOSEHOLD/EXITnextOPEN, fifthCLOSEforced.
-Four-parameter hazard, no oraclemax/teacher/intradaystop/policyOOF.
-Onefit75epochs525updates/best59,32SCREEN allHOLDfixedH5 alias.
-Final243.367276upper/closuree88012cb/allinstancesclosed.
-No thresholdblendrescue; soft-training/hard-decision mismatch explicit.
+Exitb8b4/760d -> actual6668 oneCPUfit75epochs525updates/best59,
+all32HOLDfixedH5/noninformativealias. No soft/hard threshold rescue.
+Rulegate da7564trees/514FIT32SCREEN rejected; oldsupportfailures immutable.
+Individualprofitability not prerequisite for exploratory composition/Paper.
 
-Rulegate da7564trees/514FIT/32SCREEN rejected;
-old bcb6/c69 completeness failure and4303/938e516supportfailure preserved.
-No profitability prerequisite for exploratoryfusion/Paper permission.
-Public datedcheckpoint residualcorpus/currentlisting/nonPIT/CA limits remain.
-New mechanism must become one executable finite hypothesis or concrete rejection,
-not readinglist/indicatorrole/permanentLLM daemon.
+## Operational Handoffs
 
-## Operational Proposals
-
-Chronos3f5a actual13forward point -> d133/d01d unallocated17proposal.
-ExplicitNEW nativeNov4UTC20:45 exit differs from immutable research21:00;
-no performanceparity, extraB10 or newbankwriter.
-Kepler nativeprep4bd5 fixture namespace fault/newtechnical-r1, no actualorder.
-Memory10026b8/e37d positivepoint98eligible10selected. Actualstage replay
-PASSED; boundcallbacksupportssecondpreinstallactorfailure, no fill/deployment.
-Fermat groupedcontext bb540bf0 actual fit COMPLETE25epochs/4425updates,
-best1; descriptive reused-INNER rank improvement only. No duplicate fit.
-Cost replay683f2167 adopted8fixedcells/0fits; full100context preserved.
+Memory26b8/e37d futurepair now installed/enabled5813/578f/f12a,
+not broker success. MSE22dc/eb38 actualcurrentinference completed, typed route
+projection is separate, no duplicate restore. Chronos3f5a/d133 unallocated,
+NAS8/NYS9cash/nativeexit20:45 nonparityvsresearch21:00; namespace5075 qualified
+SYN, corrected runtime deployment separate. No extra B10 or peerbankwriter.
+New research must end in executable bounded hypothesis or concrete rejection.

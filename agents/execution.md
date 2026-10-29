@@ -1,83 +1,73 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-29 KST / Oct28UTC22:40. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC00:34. A=D:/thericher-v2/model-artifacts.
 Parent activation/MD/Git. Never KIS_LIVE_*/real money.
 ONE original B/10/costs/losses/pending/F9 held. No operator decision pending.
 
-## Actual Current Outcome
+## Installed / Due
 
-r6actual21:25 Source66b5/authority0320 firstpreflight PASSED2actors1CID.
-Actual-public stage replayd97d4484/f812 PASSED. Boundactorcallback3b9b2974
-recordsDockerattachment1candidate/0match/1identitymiss; Sourceorder supports
-SECOND/PREINSTALL preflight actor_identity, not stage/packet failure.
-Currentchild custody unproven, not historicalBrow. Expectedpairfilesabsent
-is not Schedulersemanticabsence; no verifiedTRUE/install/newpair/fill.
-Oldr6Task/root/window consumed, no rerun/delete/reset.
+Memory100 exact entryOct29KST23:15 and exitNov5KST05:40 both enabled,
+state3/instances0/neverrun at00:18:39UTC. Full Task names/pins in HANDOFF.
+technical-r7 SOURCE5813/capsule578f/imagef12a/SDK6dd/inputc5f5/policydbde.
+Initial installer created pair/EXIT enabled then failed default-value/timezone
+XML readback; retained partial, not broker failure. bf194 enable-only recovery:
+parent-enable-r1/RESULT24641c84, one enable, no CreateUpdateRunStopDelete;
+AFTER74b41b2b, EXIT unchanged.14mock+2actualXML parser checks/Claude limits.
+Parent positive actual installer/job/process closure, not financialflat.
+Do not rerun installer/recovery or manually Run. No submit/fill observed yet.
 
-Lovelace current-memory20-bound-metadata-recovery-20261029-v1:
-Source9e9303f5 15case emitted/native SYN PASS. Actual public prefix failed
-in0.12644s at import audit/nonpublic_file_forbidden, before census;
-this is a harness dependency allowance fault, not actual custody evidence.
-Ohm reviewdf8c8455 identified mixed FILETIME representation at metadata101.
-Old one-prefix scope consumed; technical-r1 now600activeSUM including old240
-once/7200elapsed/max3 technical-prefix attempts, fresh Source each revision.
-Narrow trusted-import allowance and canonical birth identity; no generic
-Docker/Python/private writer exception. Same point/B10F9/max3/business clocks.
-No credentials/privatebook/API/order/Taskmutation during preparation.
-Parent activates only qualified exact source/current prefix/pair OS binding.
+## Current Work
 
-## Ready Proposals / Integration
+Dewey ready-set1725/FINALcfdf COMPLETE: six slot roundtrips/nine negatives/
+1407imagechecks/oneCID7CLI/allclosed110upper; no financialABI claim.
+Next current-native-paper-serial-descriptor-derivative-20261029-v1,
+360SUM incl110once/7200elapsed/max2networknone changed-boundarynative CIDs.
+Fixed registry/namespace/IPC/driver, prefercommonf12/6dd newbackend while
+preserving exact old pending recovery. No actualAPI/privatebook/Task/newbank;
+Memory installed pair untouched. Short architecture Claude before edits.
+Kepler MSE projection COMPLETE: callback303f/Sourcecaf8/INPUT3c17/policy5588,
+typed UNALLOCATED from22dc/eb38, allfive selected routes known,80/150upper/
+allclosed. No repeat restore/forward or unknown renorm. Future full100 plus
+allocationCASH codec collision retained, untriggered here.
+Next current-paper-orderability-shape-audit-20261029-v1,90/3600/pure native
+checks only, no API/privatebook/Task/installed source change.
+Existing concrete consumer is the serial registry, not another model writer.
 
-Chronos3f5a recovery13forwards/1load/408contexts positivelyGPUclosed.
-INPUTd1335585/POLICYd01db554,17rows/NAS8unchanged/NYS9cash/no renorm.
-Explicit NEW nonparityNov4UTC20:45 exit vs research21:00, UNALLOCATED/
-allowexecutefalse/not newbankwriter or substituteunknownintent.
-Kepler R3 actual native SDK SYN PASSED on attempt3/3, Source66875f42.
-One fake submit/two reconciliations; pending/exact_request_retained, not KIS.
-Parent independently verified28 Source/dependency/native-output refs.
-100/150activeupper includes prior65 once; all3CIDs21CLI/PIDs closed.
-Missing generic postflight marker retained separately; no fourth attempt.
-Original inputd133/policyd01d/NAS8/NYS9cash/B10F9/clocks unchanged.
-Next current-chronos17-account-serial-integration-20261029-v1:
-180active/3600elapsed, inactive typed existing-account serial branch plus
-changed-boundary nativeSYN. No realprivate/API/Task/order; Parent activation.
-Actual actor/risk/bank binding remains unqualified, allow_execute=false.
+Chronos INPUTd133/POLICYd01d: NAS8unchanged/NYS9cash, new native20:45 exit
+nonparity with research21:00. NativeR3 6687 one fake submit/two reconciliations
+passed attempt3/3/allclosed; no fourth financial fixture. Namespace engineering-r2
+callback5075fb45 hostc696/namespaceb72a/guard2d57/OP598a now passed1positive/
+11negative constructor/launch checks,130/240upper/allclosed.
+Neither is actual corrected-image deployment or a separate bank permission.
 
-Memory26b8/e37d positivepoint100slots98eligible10selected at20:53:59.
-Lovelace4cb21d68 LIMITED publicfrozenconsumer/JSONchain/clocks/closuresPASS;
-packet bytes/numerical arrays not opened. Runtime consumer must validate them.
-No model output is broker authority or a profitability-pass prerequisite.
+## Corrected SELL / Account Facts
 
-Dewey metadata4300d6e9:11SYN/oneactualps+inspect/twonamedadmissions,
-85upper/allclosed. NAMED_METADATA_ONLY, not wholehost/brokerready; broader
-Paperparent stays ownedwriter. Frozen r6/b547/oldTasks unmodified.
-USvenue account probe3662bc88/RESULT3362daca/closure2fe378ed COMPLETE:
-onePOST/fourGET/NASD+NYSEorderablequery2xxcomplete1roweach/NASDholdings4/
-NYSEholdings0/authenticated/72upper/691.616elapsed/allclosed.
-Probeprice1USD is deterministic queryinput, not freshquote oractualsizing.
-No monetaryschema/funds/fullrisk/order/fill/ownedinventory qualification.
-No rawretention/privatebook/Task/order/live, B10/F9/NYS9cash unchanged.
-NYSE route readiness2cae0fd3/FINALfd3580c5 CLOSED46/90upper/0API.
-Existing US_H5 profile maps NYS->NYSE. Official pinned KIS example uses
-VTTT1006U sell, while local legacy source uses1001; old-server alias UNKNOWN.
-Dewey current-paper-us-order-wire-compatibility-20261029-v1:180/3600,
-new-source/fresh-plan wire and native SYN only;0realAPI/private/Task/order.
-Parent selects smallest safe SDK change after caller/source-pin inventory.
-No rewrite or resubmit of unknown legacy1001 intents; original exits preserved.
+current-official-us-sell-runtime-image-20261029-v1 FINALf25b:
+imagef12a/SDK6dd/1407files; only SELL1001->1006, BUY1002 unchanged.
+31cold-native/4mock opens/4unknown-recovery tests/all3CIDs17CLI closed.
+Old snapshots/tasks/unknown1001 intents untouched; alias behavior unknown.
+No new SDK substitution for an unresolved old request.
 
-## Financial Facts / Obligations
+current-paper-native-funds-readiness-20261029-v1 Sourceade657ea/FINAL9e84c92d:
+one client1POST2GET/NASD+NYSE, actual native cash/orderable parsers passed,
+70/180upper/allclosed. Deterministic queryprice1USD is not a fresh quote,
+actual sizing/fullrisk/settledcash/fill. No private amounts retained.
+Older3662/3362 broker reads NASD4positivepositions/NYSE0, not owned fills.
 
-f477input/24d3policy/originalcohort paper-current-linear17-nas5.20261028.
-Original14:21 and18:35entry technicalfailures consumed, oldrowunretained.
-Operational closure8eb55 != financialflat/F9release.
-Actual strictread51e/0896 at19:44:8targets/0bound/8UNKNOWN/policyabsent/
-fullcountsNULL; partialknownpositive0 != wholecohortzero. AllROstable/closed.
-Separate e1b/a1d46 brokerNASDread20:20 authenticates/4positivepositionrows,
-orderabilityNOT_REQUESTED/notallvenues/notownedfills/settlement/PnL.
-Never reconcile/reset from missing evidence or invoke observe() as offline read.
+## Preserved Custody / Recovery
 
-OriginalMSFTNov2/LOWVOLNov3/linear17Nov3exit20:40..21:00 unchanged.
-eb97exitupdaterinert; do not deploy knownfaultyb547 merely on updatertests.
-Every effect still needs virtualhost/persistedaccount+basis+intent/budget/
-freshquote/orderability/exactunknownreconcile/ownedinventory/emergency controls.
-Latestverify4484/cdf23 passed188serial+19577full/26knownSKIP/3Compose/Ruff.
+Original paper-current-linear17-nas5.20261028 inputf477/policy24d3:
+f545/b547 entry failures consumed; operationalclosure8eb55 not financialflat.
+Strictread51e6/0896:8targets/0bound/8UNKNOWN/policyabsent/fullcountsNULL.
+Partialknownpositive0 not wholecohortzero. Never invoke observe() offline.
+F9 exact handoff current-paper-us-order-wire-compatibility-20261029-v1/
+F9-RECOVERY-HANDOFF.json; originalbb77/f66e/2a38 held.
+Original-date history already absent/insufficient idless link; no identical
+query repeated without new source/date evidence. No release from empty holdings.
+HANDOFF preserves exact private reader paths, volume and pointer.
+
+Original MSFTNov2/LOWVOLNov3/linear17Nov3exit20:40..21:00 unchanged;
+eb97 updater inert. Fresh exact virtualhost/account/basis/input/intent/
+aggregatebudget/quote/orderability/reconciliation checks remain at every effect.
+Missing fees/PnL knowledge does not prevent exact reconciliation.
+Repo4484/dab6 passing; separate external native/actual evidence required.
