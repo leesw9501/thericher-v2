@@ -36,15 +36,31 @@ trigger identity and ALL other project definitions unchanged. Zero recovery
 Task mutations, no installer retry. Runtime task_contract already SameInstant.
 This readback proves installation only. Broker/owned inventory/PnL UNKNOWN.
 Original B10/F9/pending/all exits untouched. Current inputc5f5/policydbde same.
-Parent owns fresh exact financial interpretation. Dewey reader preparation
+Actual fresh financial interpretation COMPLETE at Oct29UTC18:27:42:
+A/execution/current-memory100-window1730-result-readiness-20261030-v1/
+reader1730/RESULT-ACTUAL.json
+68fa1b0f5abf66f626fcb990937c03908d89026e73ec4e02a3286e057b7af9af.
+Sourceea91e399/three exact immutable admissions/16closedJobs/CIDabsent/
+input-source-private-anchor stability/basisMATCH/noreset passed; policyabsent,
+10targets0bound10UNKNOWN, fullcounts/currentowned countNULL. Partialzeroes
+are NOT wholecohortzeroes. No holdings/fees/settlement/netPnL observation.
+This read is CONSUMED, never rerun. No broker/credential/private write/lock/
+recovery call. Parent joinedactualexit0; postreadpublicsourcecheckPASS.
+Dewey next source-bound public native firstcause: why two visits did not yield
+a bound policy/book. No private replay/Task/broker invocation for inspection.
+
+Historical Dewey reader preparation
 A/execution/current-memory100-window1730-result-readiness-20261030-v1
 Source6f7d8876 passed public binding checks; constructor failed before private
 reader at builder._read_exact_binary path-stat/handle-fstat identity equality.
 Docker size42082736/hash0097e635 independently match. Both empty activation
 namespaces parent-post1749-one/parent-post1749-joined-r1 and categorical failure
-remain. Dewey narrow native correction/Claude; Ohm independent source diagnosis.
-Actual1730 financial read has NOT executed. Never reuse consumed15:01 reader,
-infer zeroes or release reservations. No new follow-up/recurring schedule.
+remain. Narrow technical-r2 Source4705183b/native540b50ae/Clauded233a93a GO
+measured only st_mode33279-vs33206 differs. Exact OSidentity/type/nlink/size/
+mtime/hash/reparse and fullpath/path+handle/handle stability remain. Parent
+constructor joinedexit0/activation784678c0 then actual reader above completed.
+Never reuse consumed15:01 or18:27 reader, inferzeroes/release reservations.
+No new follow-up/recurring schedule.
 
 Current parallel work: Fermat owns genuine D1 shared-capital analytical alternative
 to unfinished actualM1 requesta197 (full100M1 not qualified), and denseQQQ/SPY

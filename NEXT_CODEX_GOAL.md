@@ -34,16 +34,32 @@ A/execution/current-memory100-window1730-public-closure-read-20261030-v1
 validated exact public controls and original root PID47732/birth absence.
 This is NOT proof of a submit, acceptance, fill, holdings, fees or PnL.
 
-Parent owns fresh strict financial inspection; Dewey owns constructor repair.
-Current reader preparation Source6f7d8876 under
+Fresh strict financial inspection is COMPLETE, not queued. At Oct29UTC18:27:42,
+A/execution/current-memory100-window1730-result-readiness-20261030-v1/
+reader1730/RESULT-ACTUAL.json
+68fa1b0f5abf66f626fcb990937c03908d89026e73ec4e02a3286e057b7af9af
+binds readerSourceea91e399/three verified immutable admissions/16closedJobs/
+CIDabsent/input-source-private-anchor stability/basisMATCH/noreset. Policy
+absent,10targets0bound10UNKNOWN; fullcounts/currentowned count NULL. Partial
+zeroes are NOT all-cohort zeroes. Fees/holdings/settlement/netPnL unobserved.
+This actual read/namespace is consumed; never rerun or release F9/reservations.
+
+Dewey now owns exact source-bound public native first-cause inspection: why
+the two operational native visits did not yield a bound policy/book record.
+No broker/Task/private reader invocation merely to inspect it. Then prepare
+the smallest reversible tested correction, not the same broken opportunity.
+
+Historical reader preparation Source6f7d8876 under
 A/execution/current-memory100-window1730-result-readiness-20261030-v1
 qualifies public bindings, but actual constructor failed BEFORE private read at
 builder._read_exact_binary's path-stat/handle-fstat identity comparison.
-Docker size/hash match; preserve failed empty parent-post1749-one and
-parent-post1749-joined-r1 plus categorical failure. Diagnose real native
-metadata, qualify a narrow correction and fresh namespace, then perform only
-the exact network-disabled/all-RO strict read with actual writer admission and
-before/after stability. Do not rerun the consumed15:01 reader or infer zeroes.
+Docker size/hash match; failed empty parent-post1749-one and
+parent-post1749-joined-r1 plus categorical failure remain. Actual native ABI
+confirmed only st_mode33279-vs33206 differs. Technical-r2 Source4705183b/
+native540b50ae/Clauded233a93a GO_WITH_LIMITS preserves OSidentity/type/nlink/
+size/mtime/hash/reparse and separate fullsameAPI stability. Parent fresh
+constructor joinedexit0/activation784678c0 then exact networknone/allRO reader
+completed above. Both15:01 and18:27 consumed reads must never repeat.
 
 Installation was independently verified by RESULT44182ea1 after retained
 QuietXml timezone readback fault. Ohm's prospective boundary repair Sourceb1ae

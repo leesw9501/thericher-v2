@@ -17,11 +17,16 @@ old failure preserved. Source runtime task_contract already usesSameInstant.
 Current operational closure PAIRc9e59dfd/OWN2ab933fb has one nativevisit/two
 joinedchildren in EACHphase. Parent public reader d5fa33c5 binds exactcontrols/
 source/release/round and root47732/birth134377686003935959 absence at17:56.
-This is not actual submit/acceptance/fill/holdings. Parent owns fresh financial
-read; Dewey constructorSource6f7 failed before private execution on exact Docker
+This is not actual submit/acceptance/fill/holdings. Actualfinancialread18:27:42UTC
+reader1730/RESULT-ACTUAL68fa1b0f Sourceea91:3immutableadmissions/16closedJobs/
+CIDabsent/stability/basisMATCH/noreset;policyabsent10targets0bound10UNKNOWN,
+fullcounts/currentownedNULL, partialzeroesnotwholezeroes. ReadCONSUMED; no
+holdings/fees/settlement/netPnL claim. Dewey publicnativefirstcause next; no
+broker/Task/private rerun. ConstructorSource6f7 failed before private on Docker
 path-stat/handle-fstat comparison, despite matching size/hash. Preserve both
-emptyactivationnamespaces/failure. Narrow native correction/Claude/realnegative
-tests then fresh namespace, relevantwriteradmission/networknone/allRO/stability.
+emptyactivationnamespaces/failure. Technical-r2 Source4705/native540b/ClaudeGO
+fixed measured st_modeABI only, exactidentity/hash/stability remained. Parent
+freshconstructorjoined0/activation7846 and exactnetworknone/allRO read passed.
 No consumed15:01 reader reuse, TaskRun, inferredzero or reservationrelease.
 Root...next-fixed-window.../window-1730/runtime-results/paired-entry.
 Same originalc5f5/dbde/basis/B10/F9/pending/exits remain. Ohm future-only

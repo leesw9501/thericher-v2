@@ -34,7 +34,16 @@ BEFORE private read at builder._read_exact_binary path-stat/fstat comparison.
 Docker size/hash match. Failed empty parent-post1749-one/parent-post1749-joined-r1
 are consumed; preserve. Dewey owns native correction; Parent actual read only
 after exact source/command/fresh relevantwriteradmission/allRO/networknone/
-stability checks. No unsafe retry, old15:01 read, TaskRun or inferred zeroes.
+stability checks. Correction now COMPLETE technical-r2 Source4705183b/
+native540b50ae/Clauded233 GO_WITH_LIMITS; exact st_modeABI33279-vs33206 only,
+allidentity/type/nlink/size/mtime/hash/reparse+sameAPI stability retained.
+Parent constructorjoined0/activation784678c0 then actualstrictreader completed
+Oct29UTC18:27:42: reader1730/RESULT-ACTUAL.json68fa1b0f, Sourceea91e399,
+3immutableadmissions/16closedJobs/CIDabsent/stability/basisMATCH/noreset.
+Policyabsent/10targets0bound10UNKNOWN/fullcounts/currentownedNULL, NOT whole
+cohortzeroes. Readerconsumed, no repeat/TaskRun/reservationrelease/PnLclaim.
+Only public --check-sources-only after completion is inert; --execute-private-read
+must NOT repeat. Dewey next exactpublicnativefirstcause/boundedtechnicalrepair.
 Prospective QuietXml boundary repair b1ae/67a2/native23/FINAL926fad7a closed;
 installed1728/4cfe untouched. Native slot ended17:49, no global research hold.
 

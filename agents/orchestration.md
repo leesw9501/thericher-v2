@@ -7,16 +7,19 @@ No genuine operator decision pending. Preserve unrelated %SystemDrive%/.
 
 ## Ready / Owned / Due
 
-- Parent: integrate exact1730 operational result and obtain fresh strict
-  financial interpretation. Pairc9e59dfd/closure2ab933fb/public read d5fa33c5
+- Parent: integrate exact1730 operational and actual financial interpretation.
+  Pairc9e59dfd/closure2ab933fb/public read d5fa33c5
   prove two phases with one native visit/two joined children each and exact
-  root47732/birth absent. Financial attempt/acceptance/fill/inventory UNKNOWN.
+  root47732/birth absent. Actual18:27 reader68fa1b0f/Sourceea91 has3immutable
+  admissions/16closedJobs/CIDabsent/stability/basisMATCH; policyabsent,
+  10targets0bound10UNKNOWN/fullcountsNULL. Attempts/fills/inventory UNKNOWN,
+  partialzeroes not wholezeroes. Read consumed, no rerun.
   Original B10/F9/pending/exits unchanged; no release/reset/substitute.
-- Dewey Execution: narrow native Docker executable identity correction for
-  fresh reader constructor. Source6f7 prep passed bindings; builder stat/fstat
-  comparison failed before actual private reader. Preserve failed namespaces,
-  qualify real executable metadata boundary/Claude/native negatives, deliver
-  fresh command. No generic process allowance or automatic private read.
+- Dewey Execution: exact current native public firstcause inspection, why two
+  visits yield no boundpolicy. Reader fix4705/native540b/Clauded233 GO is
+  qualified/closed and Parent used it successfully; do not redo. Preserve
+  source/namespace failures and exact identities; no broker/Task/private calls
+  for public inspection, then smallest tested correction if actualcause proven.
 - Ohm Infra/Review: independent source diagnosis to Dewey, no duplicate actual
   queries/writes. Future-only QuietXml repair Sourceb1ae/helper67a255f6/
   native23/FINAL926fad7a complete/allclosed; installed1728/4cfe untouched.
@@ -38,12 +41,13 @@ No genuine operator decision pending. Preserve unrelated %SystemDrive%/.
 
 ## Bottleneck / Alternatives
 
-Exact company block is financial-reader native path-stat/handle-fstat mismatch,
-not operator authority, GPU permission, model profitability or Data completeness.
-Docker size/hash independently match. Parent namespace failures happened before
-private execution; keep financial facts unknown, not zero.
+Exact company block is unresolved native runtime firstcause/book linkage after
+operational closure, NOT operator authority/GPU permission/modelprofitability/
+Data completeness. Reader Windows st_mode ABI fault is solved by4705; exact
+nativeidentity/hash/stability retained. Actual financial read has no boundpolicy,
+not proof of no orders or no holdings. Keep UNKNOWN and original reservations.
 
-Execute delegated alternatives in parallel: (1) narrow native reader repair,
+Execute delegated alternatives in parallel: (1) exact native firstcause repair,
 (2) full187 trueD1 capital attribution using actual daily roles,
 (3) distinct denseH1 model/CPU baseline after Data/native readiness,
 (4) source-ready consumer of the existing future daily101 publication.
