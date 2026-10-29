@@ -1,18 +1,24 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-30 KST / integrationOct29UTC22:10.
+2026-10-30 KST / integrationOct29UTC23:40.
 A=D:/thericher-v2/model-artifacts. Parent MD/Git; Engine final targets/splits/
 costs/fits/interpretation. No broker/private/execution-risk authority.
 
 ## Executable Proposals / Actual Readiness
 
-Current Kepler package: current-etf-next-hypothesis-selection-20261030-v1,
-Sourcea2139b12/proposal17ff5425/callback7eb971d1 CLOSED60upper/0market/native.
-Exactly ONE ETF_H5_LOSS_BUDGET_EXPECTILE25_LINEAR_V1,13features/14parameters/
-CPU SciPy/one fit proposed, FIT2002..2012/INNER2013..2015/DEV2016..2025/purgeH5.
-Asymmetric cost-aware surplus per reserved dollar, new same-basis native controls
-and matched-entry-notional/lot-clock shadows. Engine final masks/support/criteria/
-caps before payload; no automatic fit/oldgrade/GPU utilization work.
+Completed proposala2139b12/17ff5425 plus calendarcorrigendum65upper and actual
+kernel e23fbfac/c25f7d45/100upper led to CPU0232/8065/6ce6 COMPLETE359upper.
+ONE14parameter SciPy lower-expectile fit34accepted/BEST4/INNER_EARLY_STOP,
+18entries all2016/zero later, growth/shadow/supportfailed. No criterion rescue.
+GPU1b3f causal path expert frozen BEFORE CPU outcome; native579bd4/25b7
+actually passed3AdamW/5054params. Source55upper; no current-contract mutation.
+
+Current Kepler current-etf-expected-surplus-next-proposal-20261030-v1:
+120SUM/1800elapsed/maxONE source-only proposal, mean-NET-surplus/return rather
+than lower-tail expectile mislabeled expected profit. Existing supported tooling/
+exact July roles/same capital feasibility; no newlibrary, market payload/fit,
+DEV reranking/API/private/GPU. Explicit executable contract or rejection, not
+a reading list/grid. Engine final targets/splits/caps before any next fit.
 Closed526f/ce29684b/709e841b/f4776c8b completed6price-only cells224upper:
 QQQ10bp+0.7954percent account but20bpnegative, dividends excluded/nonPIT.
 Gross-loss-budget blocked most later entries, not matched realized exposure

@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-30 KST / integrationOct29UTC22:10.
+2026-10-30 KST / integrationOct29UTC23:40.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Quality limitations constrain claims/consumers, not unrelated Paper authority.
 
@@ -18,7 +18,7 @@ Current session20261029 pointer/manifest8e6eb0dd was consumed once through
 qualified repaired consumer, not merely inferred from Task exit.
 No manualTaskRun/duplicate collector.
 Next-publication-readiness CALLBACK3ca57541/52pins/15upper source-onlyclosed.
-Consumer94e9/a318/8821/model231a ready as preparation, not an actual point.
+Consumer32945/3fd4 and operational pointf09d/612b are actually closed.
 CorrectMSE4b8a4661/source6fe12b/BEST005, not60127ff Memoryalias.
 Require actual exact source/mode/session/SPY/cursor/closure/masks; no retag/swap.
 Galileo owns current-daily101-actual-publication-consumer-20261030-v1,
@@ -30,9 +30,19 @@ Fermat actual operational pointf09d6296/612b6923 closed65upper, no repeat.
 No refit, repeated Data capture or fabricated finality. Throughput9b268375/
 6e787e03 recommends actual mean/scale/dates writer fixture after bootstrap;
 R2 production fixed, no completed rerun.
-Next distinct current-etf-expectile-data-readiness-20261030-v1 source-only
-60cap: July loader/253-close roles for Engine's ONE new expectile proposal.
-No actualpayload until final frozen Engine contract; no acquisition/API.
+ETF current-etf-expectile-data-readiness-20261030-v1 is now COMPLETE:
+READYc44a723a/CLOSURE0d983580/85upper/all8births3Jobsclosed, one actual
+Julybundle/projection/savedverify. Extended FIT2002 calendar/253priorcloses,
+separate FIT/INNER labels and held DEV marks; masks retained, no imputation.
+CPU0232 COMPLETE359upper; GPU1b3f reuses these exact roles, no reprojection/
+reacquisition/API or dividend/PIT/finality claim.
+
+current-daily101-masked-input-diagnosis-20261030-v1 CALLBACKf23c4144:
+CLOSED60upper/2Jobsempty,zeroAPI/model/reprojection. BTAIslot55/CRNXslot97
+accepted-but-empty NAS/MODP1 histories, masked before features, not a feature
+calculation defect. Official SEC/Nasdaq reported suspension/merger context,
+not proven KISinternalcause. Preserve exact98eligible/twomasked Oct30point,
+no retag/reprojection. No further acquisition needed for the current consumer.
 
 Galileo current-full187-required-mark-gap-readiness-20261030-v1:
 <=120active/3600elapsed; metadata-first exact12missing required-key reasons,

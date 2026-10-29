@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-30 KST / integrationOct29UTC22:10.
+2026-10-30 KST / integrationOct29UTC23:40.
 A=D:/thericher-v2/model-artifacts. Fermat Engine/sole Steward; Parent MD/Git.
 Contracts own caps; old sources/results/debits immutable.
 
@@ -65,13 +65,34 @@ FINAL612b6923/CLOSUREa13e34f3/PUBLISHED8fe8047d,1restore/1CPUforward/
 CIDclosed,0fit/GPU/outcomes. Exact4b8a4661, NOT60127ff alias. UNALLOCATED/
 UNROUTED/allow_execute=false, not brokerinput/order/alpha, never repeat.
 Galileo Data32945/READY3fd4/closure6fa2 completed110upper/oneprojection.
-Fermat current-mse100-oct30-native-paper-input-preparation-20261030-v1
-180cap now binds unchanged weights/masks/causal clocks/source-backed venues/
-H5calendar to native weights parser. Unknown venue skipped, no renormalizing,
-newfit/forward/private/API/Task or bank reset. Direct compiler/review callbacks.
-Kepler current-etf-next-hypothesis-selection-20261030-v1 source-only180cap
-selects ONE nonduplicate trainable proposal with exposure/budget confound and
-causal split/costs/kill/earlystop. Engine freezes distinct contract before fit.
+Native input current-mse100-oct30-native-paper-input-preparation-20261030-v1
+Source9fc0b4cb/FINAL71cc494f/CLOSURE99983217 CLOSED106upper:
+Input20f9418b/Policy05e29c36/MODELb6e0468d,100slots98known5targets,
+same weights/masks/clocks, no newfit/forward/API/private/Task. Parent candidate
+094d6a0d is preparation, not default-model/bank swap or actual orderability.
+
+CPU current-etf-expectile25-capital-development-20261030-v1 COMPLETE:
+contract02321c7c/Source80655af2/FINAL6ce66eb5/CLOSURE3fb280f0,
+CONTROL-ARCHIVE38728afc,359activeupper/allworkersclosed. ONE14parameter
+SciPyfit/34accepted/BEST4/INNER_EARLY_STOP, optimizer_converged=false;
+8nativecells/4matched shadows/0retry. Data c44a723a/0d983580 CLOSED85upper,
+kernel e23fbfac/c25f7d45 CLOSED100upper, no repeat/reprojection.
+NONINFORMATIVE_TEMPORAL_SUPPORT:18entries Aug15..Sep9,2016/zero late;
+10bp accountgrowth-0.2565684percent/DD0.2600355percent. Growth/shadow/support
+failed, risk passed. Same-basis QQQ10 control+1.5436973percent/559entries ends
+2021-02-16. No threshold/checkpoint/criterion rescue or independent alpha.
+
+GPU current-etf-expectile25-causal-path-development-20261030-v1:
+contract1b3f2971 frozen BEFORE CPUDEV:ONE causalTCN16/252returns+13summary/
+5054params,1800SUM/10800elapsed/hardOct30UTC01:40. ONEfit/max100epochs/
+9000updates/900s/earlystop15/LRscheduler/safeNPZ. Actual native579bd4f9/
+25b7183a/b81feec4 QUALIFIED/CLOSED:3AdamW updates,free24104665088bytes,
+peakreserved113246208bytes; host receipt failure retained/adjudicated.
+Marketfit starts0 at native callback; Fermat owns fresh resource/lease/dispatch.
+Reuse exact Data/CPU controls, no source-native/fit retry or new projection.
+Kepler separate current-etf-expected-surplus-next-proposal-20261030-v1 owns
+120SUM/maxONE source-only mean-net-surplus proposal; not current GPU mutation,
+market selection/grid/fit or another approval. Engine freezes any next contract.
 
 Fixed QQQ volume-confirmed reclaim +SPY kernel:
 current-dense-h1-reclaim-event-kernel-preparation-20261030-v1,
@@ -104,11 +125,11 @@ as-published-before-decision evidence under new adaptive development contract.
 
 ## Queues / Claim Boundaries
 
-Short breadth: qualified currentMSE operational point and next distinct causal
-proposal; growth/DD/turnover/exposure/costs reported separately.
-Long depth: trainable target/information when genuinely distinct and ready,
-chronological inner curves/checkpoints/finite caps before fit. No dummy GPUwork.
-No current GPU training claimed; authorized useful concurrency/headroom ready.
+Short breadth: next distinct expected-surplus hypothesis, not lower-tail score
+misrepresented as expected profit; growth/risk/support/exposure reported apart.
+Long depth: frozen causalTCN onefit after actual native success. Chronological
+inner curves/checkpoints/finite caps; actual dispatch evidence, not utilization
+targets. Native success alone is not an active GPU market worker.
 
 Already tested GRU, TCN/LSTM29/36, Transformer25, StudentT42, CatBoost157,
 AssetMHA26, directportfolio33, TimesFM/Chronos, cost-survival26 and blends.
@@ -117,5 +138,6 @@ alpha or duplicate fits. TCN/LSTM16=BATCHsize, actualFIT2817dates2014..2025/
 INNER173supervised187origins;4459 is a Sourcehash.
 Truefull100M1/09:29/heldmarks a197/f73f NOT_READY; D1 is not M1.
 Next-dateMSE4b8a4661 BEST005/source6fe12b, not60127ff Memory alias.
-Actual model point exists but typed routed Paper input remains unqualified
-until its separate exact handoff. No stale retag/model-bank swap.
+Actual model point and typed native input now exist; final controller/installer/
+fresh relevant-owner admission remain separate from actual Paper deployment.
+No stale retag/model-bank swap.

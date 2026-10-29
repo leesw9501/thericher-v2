@@ -78,8 +78,14 @@ exists and repaired consumer32945a6f/READY3fd42931/FINAL158d481d/
 CLOSURE6fa20c4c completed110upper/one24x100x397projection/21owners9Jobsclosed.
 Both failures retained, no refit/recollect/reconsume. Model operational point
 f09d6296/FINAL612b6923/CLOSUREa13e34f3 completed65upper/oneCPUrestore+forward,
-UNALLOCATED/UNROUTED/notbrokerinput. Separate native-input preparation180cap
-must preserve exact weights/clocks/venue provenance/H5calendar. No rerun.
+UNALLOCATED/UNROUTED/notbrokerinput. Native-input9fc0/71cc/9998 CLOSED106upper,
+Input20f9418b/Policy05e29c36/MODELb6e0468d, no rerun. Parent candidate094d/
+windowb1ab preparationonly. Entry25cf/37component proof is NOT finalcontroller:
+df08 found old20min/PT22M/worker1200, Dewey prospective correction ongoing.
+Nov5 exit105d/7b2a/8f8f/d2bb/c7be qualified19inventedcases, ownPT22M;
+full exact source/current-owner+qualified installer before any activation.
+Installer ff3d/a2441 failed beforeCREATE/closed24.3937692upper; new precreate
+repair180scope, not actualTask installation. Never run preparation as effect.
 Next-publication source-only callback3ca57541 ready52pins, no stalepointretag.
 Data94e9/a318/8821/model231a only preparation.
 MSE best-005.npz SHA4b8a46611b03b8cf9245c188f21b27ba141a1eb17b7215e4c3dfaa98a6ce5d71,
@@ -106,6 +112,12 @@ ETF526f/ce29684b/709e841b/2570962a/f4776c8b COMPLETE6price-only cells224upper,
 totalreturn/PIT/alpha. Most later entries loss-budget capacityblocked. Never
 rerun consumed Data/prior/marks/readout or change Paper bank to improve it.
 No GPUworker inferred from an assignment or completed fit.
+CPU expectile0232/8065/6ce6/3fb2 COMPLETE359upper/onefit34updates/BEST4/
+18earlyentries/zero late, support/growth/shadowfailed. No rerun/rescue.
+GPU causalTCN contract1b3f frozen BEFORE CPUoutcome, actualnative579b/25b7/b81f
+QUALIFIED/CLOSED3AdamW/5054params; not marketfit. Fermat owns fresh resource/
+lease and ONEfit/max100epochs9000updates900s/hardOct30UTC01:40.
+Reuse Data c44a/0d98 and controls38728afc; no projection/baseline/native repeat.
 History in Git53ef9beb/exact immutable sources, not current run commands.
 
 ## Verification / Recovery

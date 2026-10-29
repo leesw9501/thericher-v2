@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-30 KST / integrationOct29UTC22:10.
+2026-10-30 KST / integrationOct29UTC23:40.
 A=D:/thericher-v2/model-artifacts. Fermat coordinates resources/custody;
 Parent MD/Git/activation. Project first GPU priority/useful concurrency approved.
 No app allowlist, app kill or driver change. Measure reserve/actual free and
@@ -8,7 +8,14 @@ projected peak VRAM per new ready campaign; each keeps exact caps/path/lease.
 
 ## Current Resource State
 
-No currently active GPU training claimed.
+GPU causalTCN native579bd4f9/25b7183a/b81feec4 is actually QUALIFIED/CLOSED:
+3synthetic AdamW updates/5054parameters/peakreserved113246208bytes,
+freebefore24104665088bytes. Host receipt failure retained/adjudicated, no rerun.
+This is not a market fit or active worker. Fermat owns fresh lease/headroom and
+ONE frozen1b3f2971 fit, max100epochs9000updates900s/0retry/hard01:40UTC.
+Exact Data c44a/0d98 and CPU control38728afc reuse, no projection/control rerun.
+CPU expectile0232/8065/6ce6/3fb2 COMPLETE359upper, onefit34updates/BEST4,
+supportfailed18earlyentries,allclosed. No duplicate training or refunded debits.
 DenseH1 actual43b841f9/FINALb10094c5/CLOSUREa8a3fa81:
 one CUDA TCN13epochs/BEST1/546updates/27.940145wholephase/
 144703488peak bytes plus CPU Ridge complete. All28CLI4CID4roots/leaseclosed,
@@ -45,10 +52,11 @@ Cfree22.09percent/24cores32logical. Snapshot is not a current resource lease.
 Fermat existing-checkpoint operational pointf09d/612b/a13e CLOSED65upper,
 1CPUrestore/forward4.933s/2347knownpredictions/8births7Jobs1CIDclosed,
 0fits/GPU/outcomes. No repeat. Separate native-input metadata180cap no modelwork.
-Kepler next-hypothesis Sourcea2139b12/proposal17ff5425/callback7eb971d1
-CLOSED60upper selects ONE expectile25 linear14parameter CPU fit, not a grid.
-Engine freezes final masks/support/caps before numericalwork, then Data/solver
-prepare disjoint roles. Data source-only readiness60cap not payload authority.
+Kepler proposal17ff5425/calendarcorrigendum65upper and nativekernel100upper
+are closed inside completed CPU campaign. GPU contract was frozen BEFORE that
+CPUDEV readout, not outcome-adapted. Source contribution55upper and one actual
+native retained; no extra native/update/trial from source repair. Separate next
+mean-surplus proposal120cap source-only; no GPU allocations for a reading list.
 Official Tiingo event semantics remains incomplete; no new accrual market run.
 Fixedrule/NumPyforward need no GPU. New useful trainable campaign measures
 headroom and freezes chronology/earlystop/checkpoint/caps before dispatch.
