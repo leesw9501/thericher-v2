@@ -5,122 +5,93 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain an interpretable, exactly bound native KIS Paper decision/reconciliation
-while independent useful research continues. Tests, installation, technical
-failure and offline book registration are not that company outcome.
+while independent useful research continues. Installation, operational closure,
+tests and offline registration alone are not this company outcome.
 Paper permission does not depend on a profitable model.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Startup on genuine resume, not compaction. Follow HANDOFF/AGENTS/RUNBOOK/boards.
-Parent owns shared documents, Git and activation. Private no-cost Paper is
-delegated. Never KIS_LIVE_*/real money. Preserve ONE original B/10, costs,
-losses, pending/F9, exact requests and exits: no reset, profit-expanded bank,
+Parent owns shared documents, Git and actual activation. Private no-cost Paper
+is delegated. Never KIS_LIVE_*/real money. Preserve ONE original B/10, costs,
+losses, pending/F9, exact requests and exits. No reset, profit-expanded bank,
 foreign adoption or substitute unknown request.
 
-## Current Paper Facts
+## Current Execution
 
-Original Memory100 entry Oct29UTC14:15/native14:20/recovery14:27/hard14:34 is
-CONSUMED. Source5813/capsule578f/imagef12a/SDK6dd/inputc5f5/policydbde.
-Exact ROUND52db657b/f842d6e5 stopped_for_adapter_recovery; faults9ffb8507/
-07a6a777 identify actor_identity before native/credentials. Historical rejected
-Docker actors' ownership stays UNKNOWN, not presumed malicious or read-only.
+The Oct29UTC17:30 finite Task has completed its two operational phases:
+thericher-memory20-nas100-ready-window-entry-20261029-v1.
+Source172854ac0d5443d53bb49dd3440f228ffcc510eff6a43a2e2f781e6fa4321b18,
+round memory20-nas100-ready-window-recovery-20261029-v1,
+TRUEd2d4ab4559ac5419e40813952b9aed415438e1ceb956daa4d7b842d43f05f1e2.
+Original inputc5f5/policydbde/shared basis/pending/F9/exits unchanged.
 
-Closure d60cb6fc/controls5cc1a6a0/e83fe2b4 proves zero native visits for those
-two dispatches, not all-account zeroes. Original observer restoration96f38f53
-binds that closure. Original exit Task thericher-memory20-nas100-exit-20261104-v1
-remains Nov4UTC20:40/hard21:00, native exit_not_before20:45.
-Preserve every other original exit and F9 duty.
+Exact root A/execution/current-memory100-next-fixed-window-preparation-
+20261030-v1/window-1730/runtime-results/paired-entry:
+PAIRc9e59dfd/OWN-NATIVE-CLOSURE2ab933fb bind entry and recovery, each with one
+native visit/two joined children. Parent public reader RESULTd5fa33c5 under
+A/execution/current-memory100-window1730-public-closure-read-20261030-v1
+validated exact public controls and original root PID47732/birth absence.
+This is NOT proof of a submit, acceptance, fill, holdings, fees or PnL.
 
-Actual offline read Oct29UTC15:01:39 completed: Parent0ae9dd0c binds exact
-reader05ae657a under A/execution/current-memory100-actual-read-20261029-v1.
-Three actual admissions/16closedJobs/CIDabsent/two root births absent/source-
-private-input-anchor stability passed; original basis matches/no reset.
-Policy absent,10targets0bound10UNKNOWN; full counts/current owned count NULL.
-Partial zeroes are NOT whole-cohort zeroes. Holdings/fees/settlement/netPnL
-remain unobserved. This read/namespace is consumed; never rerun. Original cb8d
-SYN evidence is intact; recovered fresh37-member clone only.
-Full exact pins and command boundaries are in HANDOFF and RUNBOOK.
+Parent owns fresh strict financial inspection; Dewey owns constructor repair.
+Current reader preparation Source6f7d8876 under
+A/execution/current-memory100-window1730-result-readiness-20261030-v1
+qualifies public bindings, but actual constructor failed BEFORE private read at
+builder._read_exact_binary's path-stat/handle-fstat identity comparison.
+Docker size/hash match; preserve failed empty parent-post1749-one and
+parent-post1749-joined-r1 plus categorical failure. Diagnose real native
+metadata, qualify a narrow correction and fresh namespace, then perform only
+the exact network-disabled/all-RO strict read with actual writer admission and
+before/after stability. Do not rerun the consumed15:01 reader or infer zeroes.
 
-## Ready / Owned / Due
+Installation was independently verified by RESULT44182ea1 after retained
+QuietXml timezone readback fault. Ohm's prospective boundary repair Sourceb1ae
+is source/native only; it did not mutate the installed Task. Never Run a
+consumed Task or roll its window. Original Nov4UTC20:40 exit remains unchanged.
 
-- CURRENT17:33UTC supersedes old preparation projections below: actual finite
-  Task thericher-memory20-nas100-ready-window-entry-20261029-v1 is installed/
-  enabled under Source172854ac (full HANDOFF), original samec5f/dbde/B10/F9.
-  Trigger17:30/native17:35..39/recovery17:42..46/restore17:48/hard17:49UTC.
-  IndependentRO fullcontract44182ea1 verified after installer rawtimezone
-  readback fault; failure retained/no retry/no recoverymutations. Taskstate4
-  alone is not native/financial evidence. No TaskRun, source swap or competition.
-  Exactroot A/execution/current-memory100-next-fixed-window-preparation-
-  20261030-v1/window-1730/runtime-results/paired-entry. Parent after positive
-  closure uses current exact reader, not consumed15:01 namespace/latest scan.
-  Company remains UNFINISHED until exactly bound native decision/reconciliation.
-- Current research: genuine trueD1 capital alternative (no fabricatedM1),
-  optional all187 saved outputs only if ABI actually supports them; dense2ETF
-  H1 new finite family/roles from existing1m. DaynightRidge80ec/02b2 closed
-  onefit/FAILED. Keep all old outcomes/debits, no duplicate fits or alpha claim.
-  FIT2817dates, INNER173supervised/187origins;16isBATCH,4459isSourcehash.
-- Ohm current purefacts bfc7/binder6e69 source/native/actualRO probe ready;
-  prospective raw-boundary comparison fix must not edit installed1728/4cfe.
-  Data history inventory must not rebuild broad data from Parent's corrected
- 16-day misunderstanding. DenseH1 readiness is a distinct research consumer.
+## Parallel Ready Work
 
-Earlier package history retained until next integration:
+- Fermat Engine/sole GPU coordinator: finish true D1 shared-capital analytical
+  contract using retained full187 outputs if ABI qualifies. Original actualM1
+  requesta197 remains NOT_READY; do not synthesize M1 or relabel old32 study.
+  Data source/native full187 codec4b4cc6a1/33119fdc/12checks is ready, not a
+  market projection. Freeze new role/quantity/action seals before payloads.
+- Dense QQQ/SPY H1: Data completed one projection of existing canonical1m into
+  fixed120M1/5m/10m inputs, five-minute origins and60-minute target/marks.
+  A/data/current-qqq-spy-dense-h1-input-readiness-20261030-v1/MAIN.json620adafc,
+  READYdc47ac7c/Sourcebc7b0cc1/nativeb9555b6b/closure3e9a3064;251sessions,
+  10470keys,6978FIT/1686INNER/1806DEV, six input-unknown INNER keys retained.
+  Lovelace/Fermat own real optimizer/checkpoint/handoff proof then frozen
+  max1GPUfit+1CPUbaseline with no numerical retry/grid. Do not infer launch.
+- Kepler Strategy: resolve concrete pure producer/consumer mismatch if any;
+  no new report/indicator platform or unbounded architecture grid.
+- Existing daily101 Task next Oct29UTC21:40/Oct30KST06:40 is unchanged.
+  Source61a9e508/100stocks+SPY/MODP1; actual future publication UNKNOWN.
+  Data8821/a318 and model231a are preparation. Exact MSE checkpoint4b8a4661/
+  source6fe12b is not60127ff Memory alias. No stale point retag/model-bank swap.
 
-- Parent: technical recovery and tracked integration, not a market wait.
-  Fixed16:35 candidate8ac0 actual16:28 preflight withheld actor_unregistered;
-  all metadata Jobs closed, offending row not retained. ONE attempt consumed,
-  no activation/Task/broker calls. CREATE/ENABLE deadline16:33 passed without
-  Parent install. Never roll this window or regrade earlierafdd PASS as current.
-- Dewey: current-memory100-public-actor-diagnostic-recovery-20261030-v1:
-  existing diagnostic projector/native negatives then ONE fresh public capture.
-  Exact source/birth/argvhash/mount attribution, no generic process allowance.
-- Ohm: current-memory100-parent-activation-contract-repair-20261030-v1:
-  native-test whole-second StrictUtc and actual public ACTIVE-LEG owner proof,
-  exact observer and source checks. No actual Task/private mutation in prep.
-  Original Nov4 exit compatibility3b13/e17a requires future same-Task Arguments
-  AND RegistrationInfo.Source migration; no new exit or actual mutation yet.
-- Parent may freeze ONE NEW finite window only after actual repair readiness
-  and fresh source/owner/observer/census/clock/risk facts, original input valid
-  20:00. Original bank/cohort/request/exits/F9 persist. No old installer rerun.
-- Fermat sole GPU coordinator: TCN/LSTM0ad1/a2f5 COMPLETE2fits/29+36epochs,
-  both utility/downsideFAILED/allclosed. Multitask913b/7555 alsoFAILED; fixed
-  half6c39/1529 algebraically rejected without new payload. Do not rerun.
-  Next ONE shared-capital realistic replay contract using CapacityPaperReplay;
-  freeze exact dated Bars/ordering/sizing/costs/missing/caps before payload.
-- Lovelace: laterH1b17f/7f17 COMPLETE1restore/forward10rows/no fit/FAILED,
-  reuse unaudited. Next capital-replay exact input readiness, no new fit.
-- Kepler: capacity kernel2c6d/33ef delivered77focusedPASS/ClaudeKEEP; new code
-  requires Parent fresh full authority. Next max2 distinct information-feature
-  hypotheses with executable finite handoff, not another architecture grid.
-- Galileo: postclose composition8821 plus resolved exact4b8a BEST005 MSE
-  identity/source6fe12b; bind metadata, not60127ff Memory replacement. Existing
-  future publication and actual new model point remain UNKNOWN.
-
-Existing daily101 Task next Oct29UTC21:40/Oct30KST06:40 remains owned/unchanged.
-Source61a9e508,100stocks+separateSPY/AMS/MODP1; one client,101plannedGET/130cap/
-0retry/245s innercapture. Actual completion/publication UNKNOWN.
-Future Oct29-asof/Oct30-decision feature/point hashes stay UNKNOWN until actual
-publication/closure. Qualified adaptersa318/231a are preparation, not future
-input readiness or authority to retag the old point.
+Completed TCN/LSTM0ad1, multitask913b, cost-survivala45f, daynightRidge80ec,
+laterH1b17f and fixed blends stay closed with original results/debits.
+TCN/LSTM16 is BATCH size, not training length: actual FIT2817dates2014..2025,
+INNER173supervised/187origins;4459 is a Source hash prefix, not a row count.
+No duplicate fits or independent-alpha claim from reused outcomes.
+The financial-reader fault withholds that read only, not independent research.
 
 ## Completion And Verification
 
-Interpret exact no-intent/technical fault/attempt/acceptance/linked fill/current
-owned inventory/terminal reconciliation separately. Retain unknowns. Prioritize
-actual faults/owned duties; continue independent lanes. No all-positions-flat,
-profitability, blanket actor/GPU pause or foreground quota/session sleep.
+Distinguish no-intent, technical failure, attempt, acceptance, exact linked fill,
+current owned inventory and terminal reconciliation. Fees/settlement/netPnL
+stay unknown without proof. Prioritize real faults/owned duties; no foreground
+market/quota waiting while another package is ready.
 
-Prior full evidence A/verification/current-memory100-actual-custody-recovery-
-20261030-v1/RESULT.jsoncd9b0c8d, protected source4484ff90:
-301serialPASS1knownWindowslinkSKIP;19577fullPASS26knownSKIP;created8/8workers;
-8workers[19603items];391.14s;native/helper0;guarded cleanup;Ruff;3Compose.
-New capacity replay additions invalidate reuse for current source. Fresh
-A/verification/current-capacity-replay-integration-20261030-v1 Source1536d24d/
-1416files/RESULT5d916068:378serialPASS1knownWindowslinkSKIP;19597fullPASS/
-26knownWindowslinkSKIP35warnings/397.02s/created8/8workers[19623items]/
-nativehelper0/guardedcleanup/Ruff/3Compose. Session47151 CLOSED exit0.
-Reuse only on exact protected source; independently test changed external code.
+Current protected1416 source1536d24d / RESULT5d916068 under
+A/verification/current-capacity-replay-integration-20261030-v1:
+378serialPASS1knownSKIP;19597fullPASS26knownWindowslinkSKIP35warnings;
+created8/8workers[19623items],397.02s,native/helper0,guardedcleanup,Ruff,3Compose.
+Reuse only after exact protected-source match. Independently test changed
+external code; a repeated repo test cannot validate an external helper.
 
-At material company completion verify, commit/push, replace this with ONE next
-company outcome, refresh stateboards and continue. Package commits are not
-company completion. History stays in Git/role boards/immutable artifacts.
+At material company completion integrate exact evidence, verify, commit/push,
+replace this with ONE next material company outcome and continue. Package
+commits are not company completion. History stays in Git/immutable artifacts.

@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-30 KST / integrationOct29UTC16:33. A=D:/thericher-v2/model-artifacts.
+2026-10-30 KST / integrationOct29UTC18:20. A=D:/thericher-v2/model-artifacts.
 Fermat coordinates GPU/custody; Parent MD/Git/activation.
 Project first GPU priority and useful concurrency approved. No app allowlist,
 user-process kill or driver change. One coordinator, separate campaign clocks/
@@ -8,15 +8,17 @@ paths/leases; measure actual free/projected peak VRAM before new dispatch.
 
 ## Actual Resource State / Ready Work
 
-Current17:33 no newGPUfit claimed. DaynightRidge80ec/02b2 closed oneCPUfit/
-205.518upper/primaryFAILED. NewdenseH1 finite family preparation, finalData/
-native/checkpoint contract before numerical dispatch; one Steward/Fermat.
+Current18:20 no newmarketGPUfit claimed. DenseH1 Data READYdc47/bc7b/620a,
+251sessions10470keys; model technical-r1 Source54046b7f/native19379672/
+closurefa6d1c31 has realSYN8AdamWsteps/twoCUDA CIDs/one toyRidge, not market
+training. Exact forecast/archive parser and finite driver remain; then measure
+actual free/projected peakVRAM and launch qualified max1GPU+1CPU through Fermat.
+DaynightRidge80ec/02b2 closed oneCPUfit/205.518upper/primaryFAILED.
 TCN/LSTM16 is BATCH size, actualFIT2817dates; no duplicate broad-history fit.
-Actual currentPaper TaskSource1728/ROreadback44182ea1 native17:35/recovery
-17:42/hard17:49. Defer only NEW unqualified actors across measured effect
-slots, checkpoint only owned workers per predeclared contract; source work
-continues. Resume needs applicable actual owner/resource facts, never user-app
-allowlist or a blanket GPU ban. Preserve all old fit/evaluation/time debits.
+PaperTaskSource1728 operational pairc9e5/two nativevisits and exactroot47732
+closure d5fa is positive; scoped effect slot ENDED17:49. Financial-reader
+constructor failure is not a research/GPU hold. Use actual owner/resource
+facts, not user-app allowlist or blanket pause. Preserve all old debits.
 
 Latest sequence family0ad1488e/a2f5 positively CLOSED all65Jobs/9CIDs/leases;
 TCN29epochs/BEST5 peakreserved975175680bytes, LSTM36/BEST12/1080033280bytes,
