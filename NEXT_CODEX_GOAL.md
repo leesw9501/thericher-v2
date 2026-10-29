@@ -19,6 +19,24 @@ foreign adoption or substitute unknown request.
 
 ## Current Execution
 
+CURRENT19:14UTC supersedes prior1730 projections: coupled compiler365e4/native
+mountedgrapha40/QUALIFIED3ea9 was materialized only after readiness. New finite
+thericher-memory20-nas100-coupled-recovery-entry-20261029-v1 is installed/enabled
+under host06680cf49ffa86a7a7e3d887487209fd54229049ce78141634f8c8a33e7e4ea7,
+route5cd389b0cc39b6ba388605eafae4f7e8628a3dbcdbf33cd61ec1777b9afd1175.
+Trigger19:25/native19:30..34/recovery19:37..41/hard19:44, originalinputuntil20:00.
+Exactroots/fullTRUE/DESIRED in HANDOFF. Actualcensus/facts/binder passed; installer
+failed after write+enable. IndependentfullROproof9dff6fce under
+A/execution/current-memory100-coupled-enabled-readback-recovery-20261030-v1/
+RESULT.json confirms exactfullcontract/ACL/otherTasksunchanged at19:13:23,
+zero recoverymutations. No retry/Run, no runtime/fill inferred from installation.
+Current failurecause UNKNOWN, not oldtimezone assumed. Optional future-only
+failureprojector4d7f/7249 is not integrated and not an execution gate.
+Lovelace fresh window1925 reader prep, Parent actual after positive exactclosure/
+freshadmission, no oldreader reuse. Futurepairhash/root/financialoutcomesUNKNOWN.
+
+Prior consumed1730 facts:
+
 The Oct29UTC17:30 finite Task has completed its two operational phases:
 thericher-memory20-nas100-ready-window-entry-20261029-v1.
 Source172854ac0d5443d53bb49dd3440f228ffcc510eff6a43a2e2f781e6fa4321b18,

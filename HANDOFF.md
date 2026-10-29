@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct29UTC18:48 integration.
+2026-10-30 KST / Oct29UTC19:14 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -15,6 +15,46 @@ Earlier detailed dispatch history is retained in Git at c86d7185 and immutable
 artifacts, not a second current backlog. Source-only plans are not active workers.
 
 ## Paper Result And Proven Defect
+
+CURRENT new finite opportunity is INSTALLED/ENABLED with independent full RO
+proof, NOT runtime or fill evidence:
+thericher-memory20-nas100-coupled-recovery-entry-20261029-v1,
+round memory20-nas100-coupled-window-recovery-20261029-v1.
+Trigger19:25/native19:30..34/recovery19:37..41/restore19:43/hard19:44UTC
+(Oct30KST04:25/04:30/04:37/04:44). No manual Run, retry or clock roll.
+A/execution/current-memory100-coupled-host-route-window-repair-20261030-v1/
+window: hostSource06680cf49ffa86a7a7e3d887487209fd54229049ce78141634f8c8a33e7e4ea7;
+routeSource5cd389b0cc39b6ba388605eafae4f7e8628a3dbcdbf33cd61ec1777b9afd1175;
+WINDOW305ede9c/PLAN0b1d7625. Compiler365e4a06/QUALIFIED3ea9a86a/nativea40fb5a4
+proves same mounted host/route clocks, original request/journal/exit identity,
+actual typed input parser and stale/mismatch denial in one pinned networknone
+image. Original inputc5f/policydbde/B10/F9/exits persist, validuntil20:00UTC.
+
+Parent activation A/execution/current-memory100-coupled-parent-activation-
+preparation-20261030-v1: code15bd57eb/native5/CONFIG8628902f/census5138f4e3.
+Actual public census46740 PASS and rootabsent/facts+binder passed. INSTALL15120
+returned20 AFTER write+enable returnedtrue. Failure retained, no retry.
+TRUE activation/RELEASE-TRUE.json
+f0d99bacc794dcec0a58aabe5bb9c4c6d93dcb5880aa967c78f9888229b8762e;
+DESIRED activation/install/DESIRED.json
+0b38e72361feca552a4e7c336644e997047e8cf2c5a40abe3094846e26c73867.
+Independent A/execution/current-memory100-coupled-enabled-readback-recovery-
+20261030-v1/RESULT.json
+9dff6fce4d93334cdd4ecff8ca470bd3569c99e28e502932b56752394791a33e
+at19:13:23 confirms entire semantic definition/Source/Action/ACL/clock/enabled/
+unstarted and allother projectdefinitions unchanged;0recoverymutations.
+Body557e371a/Sourcea69b0174/native4e22eb66. Current installer failure cause is
+UNKNOWN, not automatically the old timezone problem. No installer rerun.
+Known lossy native-failure projection remains in365e4; future-only4d7f6131/
+FINAL72494820/native20PASS is not integrated or an execution prerequisite.
+
+Lovelace prepares fresh window1925 strict reader; Parent alone actual after
+positive exact operational/root closure and fresh writer-scoped admission.
+Expected pair path window/runtime-results/paired-entry/OWN-NATIVE-CLOSURE.json;
+its future hash/root/outcomes UNKNOWN. No latest-scan/Task-exit inference,
+consumed reader reuse or reservation release. Window1925 code remains prep.
+
+Prior1730 history follows; it is consumed, not a current Task to run:
 
 The finite thericher-memory20-nas100-ready-window-entry-20261029-v1 Task is
 CONSUMED. Trigger Oct29UTC17:30; native17:35..39/recovery17:42..46/hard17:49.
@@ -65,17 +105,12 @@ correction, not repeat the known broken raw comparison.
 
 ## Ready / Owned / Due
 
-- Dewey Execution: A/execution/current-memory100-coupled-host-route-window-
-  repair-20261030-v1, <=360active/3600elapsed. Derive ONE new finite host and
-  route clock graph from the same input; repin routeSource/BINDING/mounted
-  /route/host graph. Real invented producer-consumer/bootstrap proof and Claude
-  before Parent activation. No actual Task/API/private effects in preparation.
-  Preserve financial/request/journal identity and demonstrate original exit
-  interoperability. Actual window frozen only AFTER readiness/current facts.
-- Ohm Infra: A/execution/current-memory100-native-failure-projection-repair-
-  20261030-v1, <=180active/3600elapsed. Minimal safe stage/category/frame/
-  source-run-phase projection when session is missing. Financial counts stay
-  NULL, historical frames never manufactured. Disjoint pure source/native work.
+- Dewey Execution: coupledcompiler365e4 and parentactivation15bd are complete;
+  exact actualreadonly9dff is complete. Close/preserve proofs, optionally identify
+  new installer predicate from retained XML/source only, no Task mutation.
+- Ohm Infra: future-only failureprojection4d7f/7249/native20 is closed90upper.
+  New original-exit-coupled compatibility prep <=180active/3600elapsed, reuse
+  original3b13/e17a; source-routing migration template only, no actualexit edit.
 - Fermat Engine/sole Steward: NEW full187 TRUE D1 capital analytical campaign
   under fixed8f14c958. Preparation821346a1/FINALde33d043 closed85/120upper.
   Carry85once inside1800active/10800elapsed;1savedforecast/1actioncompile/
@@ -86,15 +121,18 @@ correction, not repeat the known broken raw comparison.
   79058c66 ready; actual market projection not inferred. ONE exact f6e canonical
   projection only after Engine readiness, <=300active INSIDE same1800 cap.
   Actions sealed before prior quotes, quantities before execution/mark roles.
-- Lovelace Engine: closed denseH1 family below. New source-only next-information/
-  decision proposal <=180active/3600elapsed, FIT/INNER diagnostics only; no DEV
-  reopening, threshold rescue or old numerical repeat. Fermat freezes any new
-  justified finite campaign before fits.
-- Kepler Strategy/Kernel: A/research/current-native-capital-replay-throughput-
-  profile-20261030-v1, <=240active/3600elapsed. LARGE INVENTED native profiling/
-  smallest pure prototype, separate CPU from Windows-bind I/O, exact event/
-  fill/NAV/unknown/restart parity. No tracked edits or old market replay.
-  Hand measured evidence directly to Fermat.
+- Lovelace: denseH1 and new eventproposal f3f15360/55cdf3cf are closed. Temporary
+  Execution readiness A/execution/current-memory100-window1925-result-readiness-
+  20261030-v1 <=240active/2700elapsed, fresh strict100slot namespace/bindings,
+  existing4705 binaryABI fix/unchanged financial parser. Actual pairhash required
+  from Parent afterclosure, readscope19:44<=now<20:00, no guessedfuturehash.
+- Kepler Strategy/Kernel: profilingee652e75 closed204/240upper. Samecontainer
+  12origin bind2.366247s vs/tmp.041572s=56.919x, exactjournal/cash/fill/NAV/cold
+  copyback parity;1806zeroentry.719s. LargeNONZEROonlyprefix1013fills, notfull
+  15.9klots qualification. New scalingprototype root current-native-capital-
+  replay-scaling-prototype-20261030-v1 <=360active/3600elapsed; incremental
+  folds/hash/hotcache withmutation/restart/coldproof, INVENTED only. No actual
+  private store move, tracked edit, oldreadout retry or alpha claim.
 - Existing daily101 Task next Oct29UTC21:40/Oct30KST06:40 unchanged. Future
   publication/feature/model point UNKNOWN, not a company-wide wait.
 
