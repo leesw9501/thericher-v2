@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 담당)
 
-2026-10-29 KST / Oct29UTC01:24. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC02:05. A=D:/thericher-v2/model-artifacts.
 Fermat coordinates GPU/custody; Parent shared MD/Git/activation.
 Project GPU priority/concurrent useful use approved. No app allowlist/kill/
 driver change. One resource owner, separate campaign clocks/paths/leases.
@@ -16,13 +16,18 @@ TimesFMcurrent5d23:1load/26core(24current)/218upper/all3CIDs21CLI closed.
 Old exclusive shared helper lock serialized these short phases; not an operator
 hold or permission to delete/rename a live lease. No dummy utilization work.
 
-Depth queued: current-asset-attention100-payoff-development-20261029-v1,
-dedup-first cross-assetMHA/GRU/MSE/seed20261106/1fit0retry/max128epochs/pat24/
-1200fitseconds/2400SUM7200elapsed/one seal8cells. Native before market and
-actual headroom+4GiB desktop reserve. Do not claim GPU running from queue.
-CPU CatBoost readiness recovery and foundation17 meta-role/tree work proceed
-independently. Useful co-tenancy allowed under one measured actual owner;
-do not delay first ready work merely to redesign concurrency helpers.
+Asset-attention100 FINALa328 COMPLETE26epochs4602updates/BEST2/pat24,
+59.668s fit/peakallocated916667904/reserved1195376640,349.351723upper/
+all7CIDs50CLI/lease/PIDstartsclosed01:38UTC. UtilityMET/downsideFAILED;
+not a queued or running GPU fit. No duplicate training.
+CPU CatBoostb0de COMPLETE157updates/BEST56/57trees/pat100/primaryFAILED,
+309.003393upper/all6CIDs36CLI41PIDsclosed. Foundation17 tree now adopted
+onefit/600SUM inclprep180+Data30once/7200elapsed/20cells, no GPU needed.
+Kepler source-only next risk-aware hypothesis selection and Lovelace actual
+GPU-peer prefix qualification run independently. The latter is tiny invented
+resource compatibility testing, NOT market training or utilization evidence.
+Useful co-tenancy allowed under one measured actual owner; do not delay a ready
+campaign for a helper redesign, repeat completed fits or run dummy training.
 
 Assignments are not running-process evidence. Latest observed completed GPU:
 Transformer201a25epochs4425updates/239.905s/best1, peakallocated698215424/

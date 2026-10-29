@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-29 KST / Oct29UTC01:24. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC02:05. A=D:/thericher-v2/model-artifacts.
 Fermat Engine/Steward; Parent shared MD/Git. Actual contracts own caps.
 
 ## Latest Results / Ready Queues
@@ -28,24 +28,33 @@ Currentpoint Source0e51c32c/callback5d2341cf/INPUTae52bc02/POLICYfb7bd299:
 one load/2invented24current/408contexts/all17/218upper/all3CIDs21CLI closed,
 UNALLOCATED/NYS9cash.6/no renorm/Nov4UTC20:45 nonparity. No newbank/writer.
 
-Short queue: CatBoost100 readiness0c59/e863 native diagnostics failure after
-toyfit; technical-r1 recovery360SUM incl150once/original7200/max15TOTALtoy
-updates/0marketpayload. CBM/Pool/eval/coldrestore before Engine may adopt
-exactoneCPUmarketfit. Ordinary fixture fixes are not holdout/model rescue.
+CatBoost100 current-catboost100-payoff-development-20261029-v1/worker-v1:
+Source21092003/RESULTb0de COMPLETE, all3primary conditionsFAILED.
+One CPU fit157updates/BEST56/57trees/pat100/6.187s/157curves/coldCBM;
+one187x100forecastseal/onepayoffintake/eightcells/zero controlreruns.
+10bp conditional endpoint-.144614% vsMSE9.862635%/Uniform.127304%,
+30known2unknown/309.003393upper inclprep180once/all6CIDs36CLI41PIDsclosed.
+Not pending or a reason to repeat fit; no full32/DD/M2M/alpha.
 
 Foundation17 gate prep FINAL57783cb5: one invented sklearn fit/parser/safe
 JSON coldrestore passed/129.938upper/2CLI closed/zero market values.
-Depth2/minleaf6 whole-expert selection,16FIT8INNER8reusedDEV. Data role
-projection/Ohm review pending; ClaudeREVISE limits retained. No numerical
-marketfit yet, no independence/historical-arrival claim from zero 2026 fits.
+Depth2/minleaf6 whole-expert selection,16FIT8INNER8reusedDEV. DataREADYb992/
+Source7019 complete/allclosed30upper. Parent adopted current-foundation17-
+causal-tree-fusion-development-20261029-v1: onefit0retry/600SUM including
+prep180+Data30once/7200elapsed/20cells. Actual consumer smoke before payload,
+actions sealed before payoff; all8 contrasts/leafcounts/LOO arithmetic0refits.
+ClaudeREVISE limits retained: conditional project-out-of-fit is NOT qualified
+fold-OOF/independence/historicalarrival; reusedDEV/no Paper promotion.
 
-Depth queue adopted current-asset-attention100-payoff-development-20261029-v1:
-dedup-first masked4head cross-ASSET attention+GRU/MSE, distinct from temporal
-pairloss201a/mean-contextpairlossbb540. Same4459full100/target/splits,
-seed20261106/1fit0marketretry/max128epochs22656updates/pat24/1200fitseconds,
-2400SUM7200elapsed/one187x100seal/8costcells/fixed U and downside vsMSE.
-Actual native mask/permutation/optimizer/checkpoint tests before market,
-finite ordinary TDD within300source/native budget; no dummy GPU or newgrid.
+Asset-attention100 FINALa328/Source0315 COMPLETE26epochs4602updates/BEST2/
+pat24/59.668sGPUfit,349.351723upper/all7CIDs50CLI/leaseclosed01:38UTC.
+10bp conditional endpoint10.208745% vsMSE9.862635%; utility.03330797 vs
+.03268337 MET, downside second moment.00144236 vs.00038416 FAILED.
+30known2unknown/no full32/DD/M2M/PnL/alpha. Do not duplicate training.
+Kepler source-only current-engine-next-hypothesis-selection-20261029-v1,
+120/3600: one risk-aware experiment or rejection addressing concentration/tails,
+not a hyperparameter grid. New useful GPU campaign requires its own frozen
+scientific contract/headroom; current assignments are not active-GPU proof.
 
 ## New Completed Results
 

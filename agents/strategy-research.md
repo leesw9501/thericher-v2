@@ -1,28 +1,30 @@
 # Strategy Research Stateboard (전략·지표 연구)
 
-2026-10-29 KST / Oct29UTC01:24. A=D:/thericher-v2/model-artifacts.
+2026-10-29 KST / Oct29UTC02:05. A=D:/thericher-v2/model-artifacts.
 Parent shared MD/Git. Engine owns targets/splits/costs/fits/interpretation.
 No broker/private/budget authority.
 
 ## Current Work / Consumer
 
-Ohm independent review of foundation17 tree prep5778,90active/source-only:
-zero numerical 2026 expert fits supports only conditional computational
-out-of-fit; adaptive selection/corpus/nonhistorical arrival remain. Check
-16FIT8INNER8reusedDEV/purge/label maturity/future invariance, maxdepth2/
-minleaf6 whole-expert portfolios, not score blend. ClaudeREVISE limitations
-retained; Data role projection pending before any actual meta-fit.
-Then temporary Infra sameDataTask CAS action updater240/7200/0actualTask,
-native Scheduler mocks/rollback/oldowner proof; no new durable role/platform.
+Kepler current-engine-next-hypothesis-selection-20261029-v1,120/3600:
+official-source concrete risk-aware expert/causal multiscale proposal addressing
+MSE concentration/asset-MHA downside failure. At most two finite candidates,
+one GPU-useful only if scientifically justified. Zero market payload/fit/payoff/
+replay/API/private; actual experiment or rejection, not a reading list/grid.
 
-CatBoost100 readiness0c59/e863 requires diagnostic/CBB coldrestore recovery,
-one proposed nonlinear payoff CPU expert, not another RankIC-only network.
-Engineering recovery keeps old150upper/3toyupdates closed and finite new
-family360SUM/max15TOTALtoyupdates/zero market data until qualified. No
-numerical rescue or old study regrade; Engine may adopt exact one CPUfit.
-New depth hypothesis masked cross-ASSET MHA/GRU/MSE on same100pool,
-not old temporal pairloss, one fit after dedup/native. Models/context/indicators
-reuse existing4459; no new sector/PIT/fundamental data requirement.
+Foundation17 Data b992/Source7019 complete; Parent adopted one depth2/minleaf6
+tree in causal-tree-fusion-development,16FIT8INNER8reusedDEV/600SUM incl
+prep180+Data30once/7200/20cells. Existing ClaudeREVISE remains, conditional
+project-out-of-fit NOT qualified fold-OOF/independence/historicalarrival.
+Ohm prior independent review remains separately evidenced/advisory, not an
+approval stage. Ohm now technical sameDataTask CAS parser repair, no new role.
+
+CatBoost actual worker-v1 Source2109/RESULTb0de COMPLETE157updates/BEST56/
+57trees/pat100/primaryFAILED;30known2unknown/309.003393upper/allclosed.
+Asset-MHA FINALa328 COMPLETE26epochs4602updates/BEST2/pat24/349.351723upper/
+allclosed;utilityMET/downsideFAILED. These are not pending jobs. No duplicate
+fits or numerical rescue. Models/context/indicators reuse existing4459; no
+new sector/PIT/fundamental data dependency or Paper profitability gate.
 
 ## Completed Proposals / Evidence
 
