@@ -7,6 +7,34 @@ Limitations constrain exact consumers/claims, not unrelated Paper authority.
 
 ## Current Ready Work
 
+Galileo current-qqq-spy-m1-continuation-readiness-20261030-v1:
+600SUM/5400elapsed, existing exact caches/cursors/active collector first.
+Consumer next multi-timeframe QQQ/SPY intraday research, not a closed H1/C120
+rerun. At most32GET/1freshPOSTifneeded/0retry/oneclient/documented pacing,
+no account/order/live/Task/new schedule. Reuse validtoken/atomic freshPOST gate;
+defer only exact occupied collector, never age-reclaim or global-hold.
+Prefer missing recent fullyclosed sessions throughOct29; stop exact cursor on
+duplicate/no-progress/sourcefloor. Market bytes only M:, manifest/count/coverage/
+resample1m5m10m1h3h/availability limits, no model/readout/PIT/finality claim.
+An assignment is not an active collector or successful data acquisition.
+
+OOF derived role family COMPLETE88.7773573upper:Source355b81df/
+nativea6933877/READY1c8d3a9e/manifest7a4297b6/closure4b27083a, one actual
+derived publication/API0/fits0, no duplicate projection. Engine owns native/fits.
+
+## Closed ETF Current Input
+
+Successor8ba9da84/native8177e21c/actuala41b51e1 CLOSED120upper: actual1POST/
+6GETall200/0retry/oneclient,253known closes each/one projection/allJobsclosed.
+Header85ce54e8/payload3bc6fe39 only M:, old failed scope below unchanged.
+Data current-etf-modp1-input-domain-20261030-v1 caf5be8c/64b8ce02/c16159ab
+CLOSED60upper/no API/projection/model. Official KIS documents MODP1 as
+adjustment-on, NOT raw; issuer USD/venue facts documented. Numerical adjustment
+algorithm/dividend coverage/Tiingo parity/exhaustive CA chain/captured currency/
+provider finality remain unverified. Old NON_RANKABLE diagnostic untouched;
+prospective Engine dimensionless input policy may use facts without inventing
+units/finality or changing installed MSE/bank. Sources in exact external bundle.
+
 Galileo A/data/current-etf-current-close-native-repair-20261030-v1:
 300 active SUM/3600elapsed/MAX3 invented engineering feedback programs.
 Old current-etf-current-close-input-readiness-20261030-v1 CLOSED60upper,

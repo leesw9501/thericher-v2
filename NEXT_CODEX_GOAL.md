@@ -19,10 +19,13 @@ persist; no reset/profit refill/foreign adoption/substitute unknown request.
 
 1. Execution/Dewey+Ohm: qualify complete original GRU/TimesFM/LQQQ exit callers
    with original2ff-compatible d65c1b77 image and exact shared guard416383d3.
-   No new build/component rerun. GRU/TFM firstscope CLOSED180upper/2of2/
-   0qualified (invented grammar/namespace errors), new gru-timesfm-probe-r2
-   360SUM/MAX3; L-probe-r2 300SUM/MAX3 invented feedback/native programs.
-   Prior fixture failures/debits stay closed, not a broker/provider failure.
+   No new build/component rerun. GRU/TFM secondscope COMPLETE100upper/
+   41cases85assertions/GRU69dc+TFMaa2b/closure0637, core not wholehost.
+   Current gru-timesfm-host-binding240SUM/MAX4 fixes two NATIVE_OPS_ROOT
+   expressions/tinychangedcoldhandoff/sameTaskCAS; no41case repeat.
+   L-probe-r2 COMPLETE150upper/25cases+6CASchecks/a6aa/e601/5bee; current
+   l-host-binding600/MAX3 completegraph/strict ingress/sameTaskCAS.
+   All prior fixture failures/debits stay closed, not broker/provider failures.
    Require real cold source/roles, wire1006, exact denial category/injection hit.
    Old requests including intent_recorded keep old wire/source/reservations.
    Parent exact custody/CAS migration only after full proof; no fake snapshots.
@@ -67,6 +70,10 @@ persist; no reset/profit refill/foreign adoption/substitute unknown request.
    Current Galileo modp1-input-domain240SUM/noAPI/no model/projection verifies
    official source semantics for future provisional consumer, not permanent
    blanket UNKNOWN or relaxation of old frozen diagnostic criteria.
+   That domain work caf5/64b8/c161 is COMPLETE60upper: official MODP1 adjustment-
+   on, not raw; olddiagnostic unchanged. Current M1-continuation-readiness600SUM/
+   32GETcap1freshPOST0retry/existingcursor+collectorfirst, no account/order/Task;
+   future intraday consumer, stop sourcefloor/duplicates, no closed trial rerun.
 6. Data peer-admission635e/361f CLOSED120,21checks/24mountpositive/33deny;
    source-only component, NOT current runtime integration. Parent/Execution
    separate reviewed claims/CONTROL/cold binder before runtime consumes it.
@@ -88,10 +95,11 @@ replace this with ONE next material outcome and continue active human request.
 
 ## Verification
 
-Fresh authority A/verification/current-oct30-native-paper-control-integration-
-20261030-v1 Source39bfc02d/RESULT7638c11e:209serialPASS1skip,
-19597fullPASS26knownskip/35warnings/415.49s/created8of8/8workers[19623]/
-helper0/verified cleanup/Ruff/3Compose .env.example/13606joinedexit0.
+Fresh authority A/verification/current-oct30-future-definition-policy-integration-
+20261030-v1 Sourced428ccaf/RESULT0b55d3ff:209serialPASS1skip/21.89s,
+19597fullPASS26knownskip/35warnings/394.17s/created8of8/8workers[19623]/
+helper0/verified cleanup/Ruff/3Compose .env.example/9987joinedexit0.
+Only protected overrides are AGENTS+DECISIONS; old39bfc no current-policy match.
 Docs/external-only reuse exact protected1416 digests and independent external
 native checks; tracked changes/material recovery follow AGENTS fresh coverage.
 No foreground market wait or new app follow-up chain.

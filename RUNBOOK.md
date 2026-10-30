@@ -138,13 +138,15 @@ separate reviewedclaims/CONTROL/binder/coldproof, not blanket private mount acce
 
 Fresh authority:
 A/verification/current-oct30-native-paper-control-integration-20261030-v1,
-SOURCE39bfc02d/RESULT7638c11e,209serialPASS1knownskip/23.13s,
-19597fullPASS26knownskip35warnings/415.49s/created8of8/8workers[19623]/
+SOURCE39bfc02d/RESULT7638c11e is PRIOR only, no longer current-policy match.
+Newest A/verification/current-oct30-future-definition-policy-integration-
+20261030-v1 SOURCEd428ccaf/RESULT0b55d3ff:209serialPASS1knownskip/21.89s,
+19597fullPASS26knownskip35warnings/394.17s/created8of8/8workers[19623]/
 native-helper0/verified current-child+lease cleanup/Ruff/3Compose .env.example/
-actual13606joinedexit0.
+actual9987joinedexit0. Only protected changes AGENTS+DECISIONS, runtime224 exact.
 
 Docs/external-only exact-source check:
-`& 'D:/thericher-v2/model-artifacts/verification/current-oct30-native-paper-control-integration-20261030-v1/source.ps1' -Mode verify`
+`& 'D:/thericher-v2/model-artifacts/verification/current-oct30-future-definition-policy-integration-20261030-v1/source.ps1' -Mode verify`
 Protected1416 exact required; independently native-test external helpers.
 Repo suite cannot validate external code. Tracked/control/material recovery
 follows AGENTS fresh serial/full/Ruff/3Compose.

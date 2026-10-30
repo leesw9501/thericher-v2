@@ -100,9 +100,10 @@ holdings/openorders/expired job, no foreign inventory adoption.
 
 ## Verification
 
-Fresh protected1416 Source39bfc/RESULT7638:209serialPASS1skip/19597fullPASS/
-26knownskip/8workers[19623]/415.49s/helper0/cleanup/Ruff/3Compose .env.example/
-13606joined0. External controls require actual independent native proofs;
+Fresh protected1416 Sourced428ccaf/RESULT0b55d3ff:209serialPASS1skip/
+19597fullPASS26knownskip/8workers[19623]/394.17s/helper0/cleanup/Ruff/
+3Compose .env.example/9987joined0. AGENTS+DECISIONS only protected overrides;
+prior39bfc no current-policy match. External controls need independent proofs;
 repeated repo green tests cannot validate changed external code.
 Distinguish technicalfailure/no-intent/attempt/acceptance/exactfill/currentowned/
 terminal closure; missing state unknown. Continue independent research/Data.

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct30UTC01:39 integration.
+2026-10-30 KST / Oct30UTC01:58 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -128,9 +128,15 @@ closure1ded416c/firstcause6c896c90. GRU invented symbol grammar failed before
 native path; TimesFM invented stock-*.json selector differs from actual bk-
 codec. Sell-post counter1 is not wire success; old inner assertion unrecovered.
 Host/guest verified aliases require separate physical binding, not generic rewrite.
-Parent new /gru-timesfm-probe-r2:360SUM/3600elapsed/MAX3 feedback programs,
-same image/guard/SDK, exact native grammar/codec/roles and deny/injection checks.
-Old scopes/attempts stay consumed; primary job not replaced by a token peer ACK.
+Subsequent /gru-timesfm-probe-r2 COMPLETE100upper/3of3 programs/41cases/
+85assertions, GRU69dc6fa4/TimesFMaa2b4743/closure06379c5f/FINALead5151b.
+Actual native core PASS, whole host still needs two launch.py visit/reconcile
+NATIVE_OPS_ROOT corrections. Current /gru-timesfm-host-binding240SUM/
+3600elapsed/MAX4 tiny feedback programs preserves native proofs/old requests/
+clocks/bank, no new image or41case rerun. Parent actual snapshots GRUb81778fc/
+TimesFM93c2762f under current-original-three-exit-parent-snapshot-20261030-v1,
+Ready/enabled/instances0; unsuffixed COM history is KST, not UTC.
+Old scopes/attempts stay consumed; no Task metadata as financial admission.
 Ohm /l failed210upper before genuine wire due inherited datetime subclass;
 old15 returns/5 errors are not qualified cases. /l-clock-r1 failed180upper:
 invented producer /probe versus cold intake /proof. No financial source defect.
@@ -231,8 +237,16 @@ fullFIT refit, new DEV expert forward or old control replay. Derived roles1,
 two retained DEV score files/one marks intake/four cells/four shadows.
 Fermat existing Steward may coordinate <=3 useful GPU fold workers with actual
 headroom and >=4GiB reserve, disjoint outputs/PID births; concurrent wall times
-ADDED. Never infer training from assignment. Kepler source/native work and
-Galileo existing-role derivation may run in parallel after final contract.
+ADDED. Never infer training from assignment. Derived Data is now COMPLETE
+88.7773573upper, Source355b81df/nativea6933877/READY1c8d3a9e/
+manifest7a4297b6/closure4b27083a, ONE derived publication/API0/fits0 under
+A/data/current-etf-chronological-fusion-role-family-20261030-v1.
+Combined native7fa2e893/406ab8d1 PASS/15.6627508active/6JobsCIDclosed/
+lease released: actual3AdamW+1SVD+1CatBoost update/safe cold checkpoints/
+real producer-parser/source/key/mask/clock negatives. Synthetic only, market
+fits0. Fermat owns actual market fits/cache compatibility/readout; do not infer
+active GPU training from native success. Kepler next cost-horizon proposal120SUM/0numerics, not cosmetic
+width/seed/grid or changes to installed Paper H5/exits/bank.
 OOF does not erase repeated DEV selection; no fresh independent-performance claim.
 
 ## Financial Knowledge / Verification
@@ -257,12 +271,21 @@ F9 UNKNOWN-HELD; exact volume/book/pointer/recovery in
 A/execution/current-paper-us-order-wire-compatibility-20261029-v1/F9-RECOVERY-HANDOFF.json.
 Missing holdings/open orders/expired jobs never release unknown reservations.
 
-Fresh full authority A/verification/current-oct30-native-paper-control-
-integration-20261030-v1: SOURCE39bfc02d/RESULT7638c11e,
-209serialPASS1knownWindowslinkSKIP/23.13s;19597fullPASS26knownskip35warnings/
-415.49s/created8of8/8workers[19623]/native-helper0/verified child+lease cleanup/
-Ruff/default+research+accounting Compose .env.example/actual13606joinedexit0.
-Protected1416 digests exact; docs/external-only reuse plus independent external
-checks. Repo suite cannot validate external helpers.
+AGENTS/DECISIONS clarify future-definition versus effect-time guards; no new
+live/bank authority. Review decoder42dad4ae/36tests/CLOSED30upper, one Claude
+GO_WITH_LIMITS at A/review/current-future-definition-scope-challenge-20261030-v1/
+CLAUDE.json4fcb7389, advisory not runtime proof. Old unavailable not regraded.
+Lovelace next F9 exact-recovery-nextpath240SUM/noactualAPI/private, new causal
+discriminator or documented genuinely different read-only query, not repeated
+failed date-only query or reservation release.
+
+Newest full authority A/verification/current-oct30-future-definition-policy-
+integration-20261030-v1: SOURCEd428ccaf/RESULT0b55d3ff,
+209serialPASS1knownWindowslinkSKIP/21.89s;19597fullPASS26knownskip35warnings/
+394.17s/created8of8/8workers[19623]/native-helper0/verified child+lease cleanup/
+Ruff/default+research+accounting Compose .env.example/actual9987joinedexit0.
+AGENTS+DECISIONS are the only protected overrides to prior39bfc/7638 authority,
+which no longer matches current policy. Protected1416 digests exact at new run;
+external helpers separately checked, suite cannot prove their financial effects.
 Continue active human long request while ready work exists; no foreground market
 wait/new app follow-up chain, no company completion from a package/install/test.

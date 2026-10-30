@@ -1,10 +1,20 @@
 # Strategy Research Stateboard (전략 탐색)
 
-2026-10-30 KST / Oct30UTC01:28.
+2026-10-30 KST / Oct30UTC02:02.
 A=D:/thericher-v2/model-artifacts. Parent MD/Git; Engine final targets/splits/
 costs/contracts/fit interpretation. No broker/credential/risk authority.
 
 ## Ready Executable Hypothesis
+
+Kepler next current-etf-cost-horizon-next-proposal-20261030-v1:
+120SUM/1800elapsed/MAXONE source-only proposal/0payloads/fits/forwards/
+readouts/API/GPU. Consumer next Engine contract after current OOF, not width/
+seed/grid busywork. Use actual closed aggregate evidence to distinguish weak
+forecasts, H5 roundtrip costs and loss-budget temporal coverage. Recommend ONE
+distinct executable hypothesis or concrete rejection with data/target/availability/
+cost/baseline/kill/finite budget; no old regrade or current PaperH5/bank change.
+Longer holding requires actual horizon/holiday/early-close alignment in a future
+Paper consumer, not automatic reuse of the inclusive-H5 current controller.
 
 Kepler current-etf-chronological-fusion-next-proposal-20261030-v1:
 Source269821b7/CLOSED60upper, no payload/fit/GPU.
@@ -20,6 +30,9 @@ One tree is a small composition pilot, not claimed optimal/general best model.
 6000SUM/14400elapsed/max7fits/0marketretry, one derived role bundle/four cells.
 Kepler may own pure meta/source/actual native solver/checkpoint/producer code
 in assigned disjoint paths after final Engine contract; no unowned numerical run.
+That work is now source-ready3ec24378/451f941f; derived Data355b actual one
+publication and combined Native7fa2/406a passed3AdamW1SVD1tree synthetic only.
+Fermat owns actual market fits/cache/readout. No current GPU training inferred.
 
 Official CatBoost/PyTorch/native release sources and version/license/data scope
 remain in exact proposal. Unknown corpus/foundation coverage cannot qualify

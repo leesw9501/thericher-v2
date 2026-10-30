@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-30 KST / Oct30UTC01:30.
+2026-10-30 KST / Oct30UTC02:02.
 A=D:/thericher-v2/model-artifacts. Fermat Engine/sole Steward; Parent MD/Git.
 Hypothesis/targets/splits/costs/trials belong to Engine, not advisory/profit gates.
 History Git d8b02f3d/38777752 and exact immutable artifacts.
@@ -18,7 +18,13 @@ Fixed50:50 comparator. One tree is a bounded pilot, not optimal architecture.
 files2, marks1, four cells/four shadows. Exact cache/keys/cost/basis compatibility
 before comparisons. Proposal60upper charged once; all native/failures/I/O/
 cleanup count. Actual training not inferred from this assignment.
-Kepler source/native and Data existing-role derivation after final contract.
+Contract is frozen. Derived Data355b81df/a6933877/1c8d3a9e/7a4297b6/
+4b27083a COMPLETE88.7773573upper/one publication/API0/fits0.
+Combined native7fa2e893/406ab8d1 PASS/15.6627508active/6JobsCIDclosed/
+GPU lease released:3actualAdamW/1SVD/1tree update, safe cold TCNNPZ/CBM/
+linear codecs and actual producer/parser/cache source/key/mask/clock negatives.
+Synthetic only, market fits0 at this evidence. Fermat actual market controller/
+cache compatibility/fits/readout next, no completed fullFIT replay.
 One Steward <=3 measured useful GPU folds/4GiB reserve/disjoint roots/PID births.
 Concurrent worker walls ADDED, not isolated benchmarks.
 OOF/reused DEV remains adaptive development, not untouched independent alpha.

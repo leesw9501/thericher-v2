@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·실험 관리)
 
-2026-10-30 KST / Oct30UTC01:28.
+2026-10-30 KST / Oct30UTC02:02.
 A=D:/thericher-v2/model-artifacts. Fermat sole resource coordinator/custody.
 Resource permission is delegated, not a model-choice/human approval gate.
 Project is first GPU priority, useful concurrent training allowed; never kill
@@ -17,6 +17,13 @@ Proposal60upper charged once, all Data/native/failed/I/O/cleanup walls count.
 Native max3 programs/small real optimizer+SVD+CatBoost/checkpoint/producer
 smoke inside caps. No fake fixture-only qualification.
 One derived bundle/two score intakes/one marks/four cells/four shadows.
+
+Actual Data355b/a693/1c8d/7a42 COMPLETE88.7773573upper/onepublication.
+Combined native7fa2e893/406ab8d1 PASS15.6627508active/6JobsCIDclosed/
+lease released,3AdamW1SVD1tree/safe cold codecs/actual producer-parser.
+Synthetic only/marketfits0 at that receipt. Native success is not active training.
+Engine owns actual market-controller/source/dedup/cache/headroom checks and
+dispatch within the same seven trials, no new permission wait.
 
 <=3 useful GPU fold children may run under one existing Steward lease only
 after actual capacity measurement; >=4GiB desktop/driver reserve and projected
@@ -57,5 +64,5 @@ not DEV/Paper outcomes. OOF does not erase historical DEV selection.
 Peer adapter635e/361f component-qualified24mount positive/33deny, not adopted
 current runtime. Harmless future Task creation independent of actual effect-time
 custody admission. No fake legacy owner aliases/private mounts/credentialenv.
-Docs/external-only full source39bfc/RESULT7638 reusable only exact1416 digest
+Docs/external-only full sourced428ccaf/RESULT0b55d3ff reusable only exact1416 digest
 plus actual independent external tests. No redundant suite as external proof.

@@ -56,6 +56,17 @@ and measured fees/settlement/net PnL. A task exit/preview/timestamp/installation
 is not a fill. Missing evidence is unknown, not zero profit. Never invoke a
 recovery-capable observe() merely as an offline reader.
 
+Distinguish future definition installation from actual financial execution.
+For exact absent project-owned future targets, a qualified installer may create
+disabled definitions, read back the complete definitions/ACLs and enable the
+owned exit before its entry without financial-writer/observer quiescence, ONLY
+when it cannot invoke a Task, touch financial/observer state or permit catchup,
+demand start, repetition or early effects. Preserve exact source, owner, future
+clocks and one-attempt identity. Mandatory relevant-owner, account/budget,
+unknown-request, fresh quote/orderability and observer checks still occur at
+actual effects. Existing-writer migration still needs positive original owner
+closure. Installation never proves runtime admission, restoration or a fill.
+
 Read-only custody readers scope admission to actual private-custody writers,
 not all market-data/research actors or unrelated future due times. Source-attest
 the actual actor and mounts; retain exact account/basis/input/policy/intent/fill
