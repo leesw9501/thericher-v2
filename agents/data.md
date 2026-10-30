@@ -51,9 +51,10 @@ two recoveries/550s cap, cumulative282GET/2POST. PARTIAL/CAPPED, not provider
 floor; preserve acceptedcache/cursors/debits. Old pilot superseded/unused318
 not refunded. Current current-nas8-rth20-acquisition-20261030-v1 targets20 prior
 complete RTH throughOct29 for the same NAS8; round-robin breadth first.
-Max1200 additionalGET/200each/one freshPOST if required/3600SUM/5400elapsed/
+Max1200 additionalGET/200each/one freshPOST if required/7200SUM/5400elapsed/
 eight finite recoverableGET retries. Native resume/error/terminal-supervision
-first; TTL includes actual2s starts/backoff/I/O, no arbitrary550s. Exact worker/
+first; collector3300soft3420hard/supervisor3460 includes actual2s starts/backoff/
+I/O, no550s brake. Supervisor wait separately from compute. Exact worker/
 supervisor/Job/cache closure and terminal precedence; no standing worker/Task.
 One collector/account-cache gate/valid-token reuse; no speculative concurrency.
 Named originalpilot target atmost20priorRTHsessions for NAS AAPL/MSFT/NVDA/

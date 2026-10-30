@@ -131,9 +131,10 @@ cachelockreleased. Continuation0ea7/e4be/a82f CLOSED551.269s/243GET1POST/two
 recoveries at550s cap; cumulative282GET2POST, partial not provider floor.
 Current current-nas8-rth20-acquisition-20261030-v1 targets20prior completeRTH
 throughOct29/sameNAS8/breadth-first/reuse. Max1200additionalGET/200each/
-onefreshPOST/3600SUM/5400elapsed/eight boundedGETretries, onecollector/2sstarts/
+onefreshPOST/7200SUM/5400elapsed/eight boundedGETretries, onecollector/2sstarts/
 validtokenreuse/workerownedcooldown. Native error/resume/terminal first; TTL
-accounts for pacing/I/O, no550s brake. Olddebits/unused318 not refunded.
+accounts for pacing/I/O/backoff, collector3300soft3420hard/supervisor3460;
+supervisor wait not compute. Olddebits/unused318 not refunded.
 Terminal wins over staleprogress; no standingmonitor/Task/duplicatecollector.
 
 Outcome reader a3f3dcd CLOSED153/MAX3 locking-helper fault; lockless9d9a677c/

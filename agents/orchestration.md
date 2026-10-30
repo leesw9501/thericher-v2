@@ -83,9 +83,10 @@ No operator decision pending. Preserve unrelated %SystemDrive%/.
   5completeRTH; worker9456/owner17532 positively absent/cachelockreleased.
   Continuation0ea7/e4be/a82f now CLOSED551.269s/243GET1POST/two recoveries/
   550s cap; cumulative282GET2POST/partialcoverage, not provider floor. New NAS8
-  RTH20 scope1200additionalGET/200each/onefreshPOST/3600SUM/5400elapsed/eight
+  RTH20 scope1200additionalGET/200each/onefreshPOST/7200SUM/5400elapsed/eight
   boundedGETretry, round-robin/samecache/native supervision first. Olddebits/
-  unused318 unchanged; no arbitrary550s brake/staleRUNNING/globalhold/tokenreset.
+  unused318 unchanged; collector3300soft3420hard/supervisor3460 includes pacing/
+  backoff/I/O, supervisor wait separately from compute. No550s brake/globalhold.
   ActualRateGate2s, not Parent's earlier1.25assumption; concurrency is not
   justified by a measured2.06s pace matching that floor. D1 roles may proceed
   independently while one named market collector runs. No completeNAS8 claim.

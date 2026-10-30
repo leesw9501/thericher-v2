@@ -111,11 +111,14 @@ profit refill, foreign adoption or substitute unknown request.
    New current-nas8-rth20-acquisition-20261030-v1 owns NAS AAPL/MSFT/NVDA/
    AMZN/GOOGL/META/TSLA/AVGO, target20 prior complete RTH sessions throughOct29.
    Reuse acceptedcache/cursors; breadth/round-robin before single-asset depth.
-   Max1200 ADDITIONAL GET/200each/one freshPOST if required/3600workerSUM/
+   Max1200 ADDITIONAL GET/200each/one freshPOST if required/7200workerSUM/
   5400elapsed/eight predeclared recoverableGET retries within those caps.
    One collector/account-cache gate, valid-client token reuse, measured2s
    request starts/finite worker-owned cooldown. TTL includes pacing/backoff/I/O,
-   no arbitrary550s brake. Native resume/error/terminal-supervision check before
+   no arbitrary550s brake. Collector soft3300/hard3420 and supervisor3460
+   include1200*2s pacing plus backoff/I/O; record supervisor wait separately
+   from compute. Prospective correction only, no old debit/Source rewrite.
+   Native resume/error/terminal-supervision check before
    calls; auth/ownership faults stop worker, isolated exhausted cursor stops its
    stream only. Exact PID/Job/cache closure and final safe counts required.
    Raw on M:, artifacts on A:,15percent D: reserve. Frozen panels/models unchanged;

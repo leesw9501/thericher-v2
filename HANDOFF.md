@@ -190,7 +190,10 @@ over stale progress. Acceptedcache/cursors/debits retained; unused318 not refund
 Galileo now current-nas8-rth20-acquisition-20261030-v1 targets20 prior complete
 RTH throughOct29 for NAS AAPL/MSFT/NVDA/AMZN/GOOGL/META/TSLA/AVGO;
 round-robin breadth/reuse first. Max1200 additionalGET/200each/one freshPOST if
-required/3600SUM/5400elapsed/eight bounded recoverableGET retries. One collector,
+required/7200SUM/5400elapsed/eight bounded recoverableGET retries. Collector
+soft3300/hard3420/supervisor3460 include actual pacing/backoff/I/O; supervisor
+wait separately from compute. Prospective correction, no old debit rewrite.
+One collector,
 measured2s starts/validclient reuse/finite ownedbackoff, native resume/terminal
 checks first. TTL accounts for pacing/I/O/backoff, no550s brake. Activity only
 from exact worker proof; no completeNAS8/CA/PIT/finality or standingTask claim.
