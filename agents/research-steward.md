@@ -18,12 +18,16 @@ CLOSED100upper/420contexts. No duplicate load/forecast/readout.
 Native739d/c8ba one synthetic CUDA call101upper carried once. Exact2025weights
 95a971/ddcda predate2026targets; corpus/SDK/unit/finality limits unchanged.
 
-Current ready: Fermat past-context multivariate native only, 180SUM/1800elapsed/
-MAX2/hard04:57:23UTC, source/actual resource evidence required before saying
-CUDA is running. Next LoRA proposal90db/7f0b is not yet final fit authority.
-Engine must freeze actual full62 FIT/INNER support and native optimizer/BEST/
-LAST/safetensors/coldrestore, exact24time-onlyQ/V/73728trainables. MissingPEFT
-fatal; compatible isolated free dependencies delegated, no global runtime swap.
+Past-context native c2d18b64/351d9018/46d56e57 CLOSED104upper/one realCUDAcall,
+0.372s/peak565MBallocated642MBreserved/allworkersleaseclosed. Structural
+group masks only, no empirical invariant/market benefit or duplicate native.
+Current LoRA contract150d0c20 adopted04:44:49/hard06:44:49/2400SUM/onefit0retry/
+400updatesmax/fourcells. PEFT0.18.1 isolated imagef14fb8ba/95ba068b ready,
+sameTorchCUDA/Transformers, no global/runtime replacement. Data-native4db1/
+cf27/924d CLOSED60upper; actual projection0/full62 support unknown.
+Model-native actual optimizer/BEST-LAST/safetensors/coldrestore pending;
+exact24time-onlyQ/V73728trainables/missingPEFT fatal/no fullfallback.
+No actual fit asserted from a frozen contract or Docker build.
 Kepler purehelper and Galileo Data may hand off directly inside final caps.
 Maintain measured desktop reserve4GiB; useful concurrency allowed, no appkill.
 

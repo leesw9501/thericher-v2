@@ -21,14 +21,21 @@ roles-20261030-v1 Source695d9bc8/READYed569b4e/nativefa0b9c1c/closure98f892e4,
 ContextHeader3f5bac48/payloadd8d7ba17/keys8e4cbd00; actual PANEL->codec->consumer
 native passed. Closed Engine readout3ab6/ce54 NONINFORMATIVE; no reproject.
 
-Current consumer: retained ETF cash-distribution source readiness only,
-current-etf-cash-distribution-source-readiness-20261030-v1,180SUM/1800elapsed,
-existing July Tiingo manifests/aggregate divCash/splitFactor/adjClose coverage
-and official semantics. No raw rows/amounts, new API/model/labels or retroactive
-H20 regrade. Exdate entitlement/payment/tax/adjustment leakage must stay distinct.
-Next final Engine LoRA may need NEW FIT/INNER OPEN120+futureOPEN62 roles;
-existing endpoint counts do not prove full62 support. Coordinate directly with
-Fermat after final contract, no DEV labels in fitting or old study mutation.
+ETF cash-distribution facts COMPLETE b1cca7ab/d9372d90/2b0ea675/59649327,
+CLOSED90upper/API0/model0/labels0. Selected fields complete3018sessions each
+2014..2025; SPY48/QQQ50 cash-event rows/no splits. Ordinary entitlement
+e<exdate<=x, not payment/netcash; tax/specialevent/PIT/KISparity unknown.
+No old H20 regrade or future adjustment in past-only features.
+
+Current LoRA roles current-intraday-chronos-lora-open182-roles-20261030-v1:
+Source4db124d8/NATIVE-READYcf273880/native924da1d1 CLOSED60upper/oneprogram/
+41FIT33INNER invented tasks/2Jobsclosed/API0/model0. Real PANEL->OPEN182->
+parser5180/masks/NaNmiddlefuture/purge/mode tested. Engine contract150d0c20,
+240Data inside2400/hard06:44:49. Actual projection0/savedverify0 requires exact
+matching model optimizer/checkpoint native PASS, then one actual M1+availability
+intake/full62-support projection/all1806FIT420INNER keys. No DEV fit.
+Read exact known Engine callback; Parent relays if child messaging unavailable,
+not extra approval. Prepare actual command/bindings while model-native runs.
 
 Recent gap review38f89842/9fbd44fe/a85cc1d1 CLOSED30/API0: Sep1..Oct29 has
 one missing QQQOct7 12:42ET, recent other slots/Oct28-29 complete;19olderAugust

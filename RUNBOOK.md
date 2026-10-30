@@ -98,8 +98,11 @@ Canonical singleETF3dd52654/4684af0a/native85051278/closure6240c22f code complet
 not deployed. Frozen new module9fa8fe10/test090f912f; SPY/AMEX only, existing
 bank/owner/native per-wire binding, immutable entry/H20 duty before effects.
 Explicit OPEN[e+20]/21sessions/holidays/earlyclose, Oct30->Nov30UTC14:30.
-Current finite operational-worker preparation is source/SYN only; no actual
-command to run a strategy, retag expired point, new bank or MSE replacement.
+Changed worker e856b009/98a2f151/9970e1b7/97a6e47a native-qualified with real
+account guard BEFORE private load/persistence. Parent selected future entry
+Oct30UTC14:15..21/exitNov30UTC14:30..36, provisional once not researchOPEN.
+Actual-host binding still inert: no H20 Task/TRUE/strategy command yet.
+No expired-point retag, new bank, borrowed MSE markers or MSE replacement.
 
 OOF7 e586/a11c/b5db/face CLOSED1890upper; H20D2 d9aa/5e53/6b5d/7040 CLOSED979upper.
 All GPU/CPUworkers/leases closed; primaryclaims did not pass, noindependentalpha.
@@ -109,16 +112,22 @@ CB14 bb73/2877/8a35/b6f3 CLOSED465upper/onefit38updatesBEST14/ten cells/
 NONINFORMATIVE. Chronos univariate6724/3ab6/ce54/eb8f CLOSED486upper/
 14GPUforwards/420contexts/0fits/two cells/NONINFORMATIVE, all workers closed.
 Data OPEN120695d/ed56/98f8 CLOSED100upper; no duplicate fitting/projection/readout.
-Current Fermat past-context native invented-only; proposed time-only LoRA
-90db/7f0b needs final Engine full62-support contract and real optimizer/checkpoint
-smoke before market. MissingPEFT fatal/no fullfallback; routine compatible
-isolated free setup delegated, not a framework replacement or operator hold.
+Past-context c2d1/351d/46d5 CLOSED104/oneCUDAcall/structural isolation only.
+LoRA Engine150d0c20 now adopted2400SUM/onefit0retry/400updatesmax/hard06:44:49;
+isolatedPEFT imagef14fb8ba/95ba068b ready/no core upgrade. Data-native4db1/cf27/
+924d CLOSED60/actualprojection0. Real optimizer/BEST-LAST/safe cold restore then
+full62 support remain before fit. MissingPEFT fatal/no fullfallback; no active
+fit inferred from build or source. Compatible isolated free setup delegated.
 
-Outcome reader a3f3dcd CLOSED153/MAX3 with new adapter locking-helper fault;
-current lockless completion is NOT yet actual read authority. Parent actual
-per-cohort financial-writer admission/networknone/allRO/stability still needed.
+Outcome reader a3f3dcd CLOSED153/MAX3 locking-helper fault; lockless9d9a677c/
+QUAL6192df63 CLOSED360/MAX4 now MSE+L native readiness only. Factory72292306
+still needs actual fresh per-cohort admission/boundedJob/networknone/allRO/
+stability. GRU/TFM olderSDK ABI withheld; stock-compat continuation not a hold
+on qualified MSE/L. No actual financial read yet.
 Peer r2 f81e/9d33 CLOSED60/7cases; fullcaller a317/03d0 CLOSED180/15checks/
-LtemplateFAILED. Current schema completion does not change installed Sources.
+LtemplateFAILED. Schema bd7f/4375/f7ca CLOSED75/7checks now qualified/not active.
+Selectionbb80 has no real normalized peer set; fixedMSE16argv kernel preparation
+is not old GRU14argv/pipe-marker/ROOTS schema. Installed Sources unchanged.
 Future adoption requires real reviewed record+planrefs/fresh exact Task snapshots/
 positive relevant owner closure, not all Data/GPU quiescence.
 

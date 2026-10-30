@@ -43,19 +43,25 @@ profit refill, foreign adoption or substitute unknown request.
    versus distinct KST-hypothesisOct20 does NOT resolve acceptance/fill/terminal.
    F9 stays UNKNOWN-HELD. No repeat query/reservation release. Canonical H20
    singleETF code3dd52654/4684af0a/native85051278 is complete, not deployed.
-   Lovelace now prepares real finite operational worker/guarded1006 capsule,
-   producer->persisted intent/native per-wire binding/serial registry/exit duty.
+   Worker changed completion e856b009/98a2f151/9970e1b7 is native-qualified,
+   not deployed. Parent selected Oct30UTC14:15..21 operational once, not research
+   OPEN parity; exitNov30UTC14:30..36. Lovelace now prepares complete actual
+   scheduled-owner/TaskPlan/conditional exactMSEclosure/typed-install host graph,
+   using guarded1006 overlay/producer->persisted intent/per-wire/serial exit.
    SPY/AMEX only, explicit OPEN[e+20]=21sessions; ONE existing account-owned
    writer/bank, no MSE swap/QQQ alias/retag of an expired Oct30 point.
 5. Engine/Steward/Fermat + Kepler/Galileo: dated univariate Chronos2 heuristic
    family67246b66/3ab6d61e/ce54bb8e/eb8f4fb3 CLOSED486upper/14GPUforwards/
    420contexts/0fits/two cells/NONINFORMATIVE, all workers closed. Data695d9bc8/
    ed569b4e/98f892e4 CLOSED100upper/420known. Do not duplicate completed work.
-   Current past-context multivariate native is synthetic-only; final LoRA
-   proposal90db70a9/7f0b36cb adoption/full62 FIT-INNER roles/real optimizer and
-   checkpoint native must precede new fitting. Time-only Q/V24modules/73728
-   trainables; missingPEFT fatal, no fullfallback. Routine compatible isolated
-   free setup delegated. Ratio of marginal medians is NOT expected profit;
+   Past-context native c2d18b64/351d9018/46d56e57 CLOSED104upper/oneCUDAcall,
+   structural group isolation only, no market benefit. LoRA contract150d0c20
+   adopted04:44:49/hard06:44:49/2400SUM/onefit0retry/max400updates/fourcells.
+   Isolated PEFT imagef14fb8ba/95ba068b ready, no core upgrade. Data-native
+   4db124d8/cf273880/924da1d1 CLOSED60, actual projection0. Real optimizer/
+   BEST-LAST/cold restore then full62 actual support must precede fitting.
+   Time-only Q/V24modules/73728trainables; missingPEFT fatal/no fullfallback.
+   Routine compatible free setup delegated. Ratio of medians NOT expected profit;
    reused2026DEV/post2025checkpoint/unit/finality limits remain.
    Closed CB14 bb73256e/28774696/FINAL8a353258/closureb6f3f7a1:465upper,
    onefit38updates/BEST14/ten cells/NONINFORMATIVE/no volume features used.
@@ -63,12 +69,16 @@ profit refill, foreign adoption or substitute unknown request.
 6. Execution/Dewey: actual MSE/L actor code rejects an attested public worker
    as actor_unregistered. R2 f81e70e4/9d33b883/fe713233 CLOSED60/7cases;
    fullcaller a31723cf/03d0914f CLOSED180/15checks/LtemplateFAILED exact release
-   field mismatch, not complete runtime authority. Finish changed L schema,
-   then Parent source/task adoption needs real reviewed records/current source-
+   field mismatch preserved. Schema bd7f12fd/4375ff3c/f7ca01d9 CLOSED75/7checks
+   now ready. Real selectionbb806a72 found descriptive record/plan mismatch,
+   no real set selected; Engine actual normalized phase publication needed.
+   Dewey fixed MSE16argv target-census/UPDATE4 kernel next; no GRU14argv copy.
+   Parent source/task adoption needs real reviewed records/current source-
    safe Task snapshots/positive relevant owner closure. No allow-all-Python or
    all-GPU quiescence gate. Installed sources unchanged until actual update.
-   Archimedes old reader a3f3dcd CLOSED153/MAX3; proven new adapter lock misuse.
-   Separate lockless completion/MSE parser native/factory remains needed.
+   Archimedes lockless9d9a677c/QUAL6192df63 CLOSED360/MAX4: MSE+L readinessPASS,
+   noactualread; older GRU/TFM ABI still withheld. Separate stock-compat
+   completion underway; Parent actual per-cohort financial admission remains.
 7. H20 provisional current point is COMPLETE, not allocated/routed:
    Source2fdb7ed0/FINAL42ff317c/PROPOSALd5804301/closure6e01d4cf,185upper,
    two current CPU restores/forwards, no fit/readout/Data reacquisition.

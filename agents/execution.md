@@ -44,9 +44,11 @@ Parent actual scoped metadata/cold startup/readback independently passed.
 Outcome-reader a3f3dcd CLOSED153upper/MAX3/exits0/20/20, no actual private reads.
 New L adapter incorrectly used locking _book->Store.read; native strict parser
 returned but invented membership check caught four locks. Not writer defect.
-Archimedes now owns separate lockless completion/MSE exact parser/factory native,
-360SUM/3600elapsed/MAX4tinyfeedback. No actual private read or all-future-exits
-timing veto; Parent actual relevant-writer admission remains separate.
+Lockless9d9a677c/QUAL6192df63 CLOSED360/MAX4 exits0/0/20/20: MSE/L readinessPASS,
+all28Jobs4CIDsclosed/noactualread. Frozen factory72292306. GRU/TFM olderSDK
+enum/instrument helper mismatch, not native writer/daemon defect. Archimedes
+stock-compat continuation300SUM/3600/MAX4changedfeedback, no MSE/L rerun.
+Parent actual fresh per-cohort admission/boundedJob separate, no all-exits veto.
 
 ## F9 / Independent Next Preparation
 
@@ -71,16 +73,24 @@ CapsuleVisit/CanaryIntent/PortfolioExecutionBinding two invented native rounds.
 SPY/AMEX only; immutable control/entry/H20 duty before effects; exact same-parent
 restart, no resize/reset/adoption/allflat gate. Oct30->Nov30UTC14:30 exit,
 explicit OPEN[e+20]=21inclusive sessions. Same-owner ambiguous lot withholds exit.
-Lovelace next finite-operational-worker preparation600SUM/5400/MAX4coldfeedback,
-new guarded1006 capsule/native per-wire guard/serial registry/exact future duty.
-No actual private/API/Task/model, no old point retag/new bank/MSE swap. Parent
-owns current exact deployment/source/owner admission/Git, not code-only promotion.
+Changed worker e856b009/98a2f151/9970e1b7/97a6e47a PASS one new invented round/
+real account-before-load/write. Parent SELECTED entryOct30UTC14:15..21 and
+exitNov30UTC14:30..36, provisional once NOT research OPEN parity. No actual
+H20 Task/TRUE/effects. Lovelace actual-host-binding900SUM/7200/MAX6cold:
+real scheduled-owner/TaskPlan/conditional exactMSEclosure/typed-install graph.
+Original bank/emergency/token/gate/F9 fixed, owned cohort outputs disjoint,
+no MSE marker borrowing. Future definitions need not await future closure;
+effect-time exact closure/fresh native risk mandatory. Parent actual activation.
 
 Dewey peer readiness1f59/5a95 remains PARTIAL; r2 f81e70e4/9d33b883/fe713233/
 f1bd9243 CLOSED60/7cases fixes revalidation before nonempty publication.
 Fullcaller a31723cf/03d0914f/be623169 CLOSED180/15checks, Ltemplate FAILED
-excluded_until mismatch. Current Lrelease-schema completion180SUM/MAX3tiny;
-installed MSE2a0d/105d/L5862 unchanged. Parent real public record+planrefs,
+excluded_until mismatch. Schema bd7f/4375/f7ca CLOSED75/7checks now qualified,
+not installed. Selectionbb806a72 CLOSED60/2checks/no real record-plan set;
+Engine actual phase Source/start/isolation/normalized record needed, not closed
+native authority. Dewey fixedMSE16argv target-census/UPDATE4 kernel600SUM/5400/
+MAX6cold; old GRU14argv incompatible. Installed MSE2a0d/105d/L5862 unchanged.
+Parent real public record+planrefs,
 fresh exact Task snapshot/positive scoped owner closure required for new update.
 No allow-all-Python/private writer bypass or all-GPU stop.
 

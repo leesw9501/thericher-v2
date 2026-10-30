@@ -23,9 +23,21 @@ CLOSED150upper/sourceonly/Claude SOUND_WITH_LIMITSff930849.
 One rank2 time-only self_attention.q/v adapter; regex excludes group-attention
 modules, exactly24modules/73728trainables. MissingPEFT must fail, never SDK full
 fallback. Engine owns final full62-support/splits/caps/native/fit interpretation.
-Kepler may implement disjoint pure helper under final Engine caps; no own GPU
-dispatch/marketfit. No historical deployability claim: exact2025
+Engine adopted150d0c20/2400SUM/onefit0retry/400updatesmax/fourcells,
+hard06:44:49. Kepler kernel-source under120source allocation;
+codec6bad96f7/537ed1c9/5180b449 source-ready, actual optimizer/checkpoint helper
+and Engine-native readiness separate. No own GPU dispatch/marketfit.
+No historical deployability claim: exact2025
 weights predate2026targets but SDK/code and unknown corpus limitations remain.
+
+Next after helper seal: current-etf-distribution-aware-composition-next-
+proposal-20261030-v1,180SUM/2400elapsed/sourceonly. One daily expert composition
+hypothesis/<=3mechanisms/target-feature-cost-exposure-aligned risk references/
+finite trials. Retained cash-event b1cca7ab/d9372d90/2b0ea675 supports ordinary
+gross e<exdate<=x only, not payment/tax/specialevent/PIT/KISparity. Kill future
+adjustment leakage/doublecredit. Learned fusion needs chronological OOF; fixed
+blend does not require individually profitable experts. No old regrade,
+criterion relaxation/fresh-alpha claim/reading-list/new-platform deliverable.
 
 A/research/current-intraday-m1-model-next-proposal-20261030-v1/
 PROPOSED-CONTRACT.json: QQQ volume-conditioned direct-net H60, one shallow

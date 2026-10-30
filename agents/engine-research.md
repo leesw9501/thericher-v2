@@ -17,16 +17,23 @@ SDK2.3.2/2025checkpoint95a971/ddcda/Apache2 predates2026targets, SDK later;
 corpus/PRICE_ONLY/arrival/finality limitations remain. Median-ratio lead2->62
 is a heuristic, NOT expectedprofit/returnquantile/independent alpha.
 
-Current Fermat past-context multivariate native: invented32origins/3variates,
-actual96batch/onecoreforward/past-only SPYOPEN+QQQrelativevolume, future62NaN.
-Exact masks must block cross-origin attention; no silent univariate fallback.
-Native-only current contract180SUM/1800elapsed/MAX2, hard04:57:23UTC.
-Kepler LoRA proposal90db70a9/7f0b36cb/0f79ebe6 is advisory, not a frozen fit:
-one rank2 time-only Q/V regex, exactly24modules/73728trainables/basefrozen.
-MissingPEFT fatal, no SDK silent fullfallback. Engine owns final chronological
-FIT/INNER OPEN182/full62-support contract and actual optimizer/checkpoint smoke
-before market; Data/Kepler coordinate directly. Compatible isolated free setup
-delegated. Proposed400updates/onefit is not proof of convergence or active GPU.
+Past-context multivariate native COMPLETE Sourcec2d18b64/native351d9018/
+closure46d56e57 CLOSED104upper/oneCUDAforward0.372s/32origins3variates/
+12observed group masks block cross-origin. No empirical output-invariance,
+covariate benefit/market qualification or univariate rerun.
+
+LoRA is now Engine-adopted contract150d0c20 under current-intraday-chronos-lora-
+development-20261030-v1, anchor04:44:49/hard06:44:49/2400SUM/onefit0retry/
+max400updates/fourcells. Exact time-only Q/V24modules73728trainables/basefrozen;
+missingPEFT fatal/no fullfallback. Isolated officialPEFT imagef14fb8ba/
+IMAGE-READY95ba068b, no core/global upgrade. Data-native4db124d8/cf273880/
+924da1d1 COMPLETE60upper/41FIT33INNER invented tasks, actual projection0.
+Kepler codec6bad96f7/537ed1c9 source-ready. Actual native optimizer/BEST-LAST/
+safe cold restore remains before single actual FIT/INNER projection/full62
+support/onefit. A contract/image/source file is not evidence of active fitting.
+Exact artifact callbacks coordinate roles; Parent thin relay where child-message
+tools unavailable is not additional approval. New distribution-aware daily
+composition proposal may prepare independently after current helper seals.
 
 Current-intraday-m1-volume-net-h60-development-20261030-v1 is FROZEN:
 contractbb73256e/custodye33db3e3/Datarequestcf05c7ea,1500SUM/7200elapsed/
