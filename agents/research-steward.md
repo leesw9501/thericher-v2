@@ -1,86 +1,61 @@
-# Research Steward Stateboard (연구 자원 담당)
+# Research Steward Stateboard (연구 자원·실험 관리)
 
-2026-10-30 KST / integrationOct29UTC23:40.
-A=D:/thericher-v2/model-artifacts. Fermat coordinates resources/custody;
-Parent MD/Git/activation. Project first GPU priority/useful concurrency approved.
-No app allowlist, app kill or driver change. Measure reserve/actual free and
-projected peak VRAM per new ready campaign; each keeps exact caps/path/lease.
+2026-10-30 KST / Oct30UTC01:28.
+A=D:/thericher-v2/model-artifacts. Fermat sole resource coordinator/custody.
+Resource permission is delegated, not a model-choice/human approval gate.
+Project is first GPU priority, useful concurrent training allowed; never kill
+personal apps or require a process-name allowlist.
 
-## Current Resource State
+## Current Queue
 
-GPU causalTCN native579bd4f9/25b7183a/b81feec4 is actually QUALIFIED/CLOSED:
-3synthetic AdamW updates/5054parameters/peakreserved113246208bytes,
-freebefore24104665088bytes. Host receipt failure retained/adjudicated, no rerun.
-Later actual1b3f marketfit COMPLETE:Source05ade08b/FINAL7ce65a74/closureaa892ff6,
-457activeupper,23epochs2001updates/BEST8/earlystop/convergenceunproved.
-Fit326.9533s/forecast10.1299s/readout6.2800s,allPID-CID-GPUleaseclosed.
-Risk/supportpass,growth/shadowfail; no training repeated for utilization.
-Exact Data c44a/0d98 and CPUcontrol38728afc reused, no projection/control rerun.
-CPU expectile0232/8065/6ce6/3fb2 COMPLETE359upper, onefit34updates/BEST4,
-supportfailed18earlyentries,allclosed. No duplicate training or refunded debits.
-DenseH1 actual43b841f9/FINALb10094c5/CLOSUREa8a3fa81:
-one CUDA TCN13epochs/BEST1/546updates/27.940145wholephase/
-144703488peak bytes plus CPU Ridge complete. All28CLI4CID4roots/leaseclosed,
-638.351416activeupper; readout cap/whole primaryWITHHELD, no retry.
-Snapshot18:40:42 GPU2percent/1929of24564MiB/37C is NOT current training
-or permission hold. Do not duplicate fits merely to increase utilization.
+Parent selected current-etf-chronological-fusion-development-20261030-v1
+from Kepler proposal269821b7. Engine final freeze BEFORE payload/numerics:
+6000 active SUM/14400elapsed/max7fits (3TCN+3linear+1tree),0marketretry/
+0fullFITrefit/0newDEVexpertforward/0controlreplay. Three purged chronological
+OOF folds/FIT-only scales, retained fullDEV expert caches, fixed-half comparator.
+Proposal60upper charged once, all Data/native/failed/I/O/cleanup walls count.
+Native max3 programs/small real optimizer+SVD+CatBoost/checkpoint/producer
+smoke inside caps. No fake fixture-only qualification.
+One derived bundle/two score intakes/one marks/four cells/four shadows.
 
-Full187 D1 Sourcec2ff/RESULT2bf77/FINAL80ea/CLOSURE7fc9 closed:
-29PIDbirths/20Jobs/2CIDs,664/1800activeupper including286prototype,
-6cells/0fits/restores/forwards, primaryWITHHELD.
-All old clocks/debits closed; no refunds or repeated readout.
-Linux scaling1f73/481f/5be0 synthetic qualification closed286upper:
-15900lots33.382s/fresh nativecold10.707s, isolated research scratch only.
-Current pure event kernel/Data metadata preparation is CPU/source work.
+<=3 useful GPU fold children may run under one existing Steward lease only
+after actual capacity measurement; >=4GiB desktop/driver reserve and projected
+peaks per child, disjoint outputs/Source/PID births/counters. Concurrent walls
+ADDED, not isolated timing. If tight, stagger under SAME trials/caps.
+Execution emergency preempts at safe checkpoint; future due times are not
+automatic global holds. OOM/driver failures retained, no silent retry.
+An assignment is not evidence of an active CUDA worker.
 
-## Ready Coordination
+## Closed / Do Not Repeat
 
-CURRENT21:24: eventpilot e7b253f7/8a94a449 CLOSED351.0011upper,
-420known/11triggers/5sessions NONINFORMATIVE/0outcomes/fits/GPU,
-all17births14Jobs2CIDsclosed. No eventeconomicreadout or old family reuse.
-ETF526f529a is now CLOSED224activeupper:Sourcece29684b/FINAL709e841b/
-CLOSURE2570962a/resultsf4776c8b, six fixed price-only decisions MET_PRICE_ONLY.
-July7d16513e/9ee21/0fits/restores/forwards/GPU/marketretries. All17Engine
-births14Jobs2CIDs+Data/Kepler closed. Original3source checks preserved; explicit
-code-only ABI4 amendment923ec0c BEFORE Enginevalues, after Data consumption,
-inside180source-native/900active/10800elapsed, no reproject/regrade/refund.
-QQQ10bp+0.7954percent account,20bpnegative; omitted dividends and cumulative
-loss-budget/exposure confound prevent totalreturn/alpha claims.
-Lovelace accrual699c/dff7 37casesPASS/70upperclosed, rawmappingUNQUALIFIED.
-Actual API health2af/d646 closed73.8078561SUM, not a GPU/training activity.
-GPU snapshot20:31:34:2percent/22210MiBfree/37C; Dfree36.47percent,
-Cfree22.09percent/24cores32logical. Snapshot is not a current resource lease.
+GPUmean current-etf-mean-path-development-20261030-v1:
+contract5b1e59f8/Sourcec29059ea/FINAL82a32518/closurebdc1c492 CLOSED471upper,
+one5054TCN/19epochs1653updates/BEST4/earlystop/notconverged,
+fit264.712s/forecast10.240/readout8.617; all workers/CIDs/lease closed.
+GPUexpectile05ade/7ce6/aa89 CLOSED457upper/23epochs2001updates/BEST8,
+all workers/lease closed. Native579b/25b7/b81f is also consumed.
+CPUmean eb1f/0f2e/8fa5/dded CLOSED205upper/one rank14SVD.
+CPUexpectile8065/6ce6/3fb2 CLOSED359upper/one14parameter SciPyfit.
+Data c44a/0d98 CLOSED85upper and controls38728afc remain exact, no replay.
+No independent alpha/profitability promotion from these adaptive price-only
+results; growth/risk/support/shadow facts in Engine board.
+Older denseH1 TCN13+Ridge638.351, full187664 withheld, ETF526f224,
+GRU/LSTM/Transformer/StudentT/CatBoost/attention/foundations/ensembles retain
+original results/debits in Git d8b02f3d/external evidence. No duplicate fits.
 
-Fermat existing-checkpoint operational pointf09d/612b/a13e CLOSED65upper,
-1CPUrestore/forward4.933s/2347knownpredictions/8births7Jobs1CIDclosed,
-0fits/GPU/outcomes. No repeat. Separate native-input metadata180cap no modelwork.
-Kepler proposal17ff5425/calendarcorrigendum65upper and nativekernel100upper
-are closed inside completed CPU campaign. GPU contract was frozen BEFORE that
-CPUDEV readout, not outcome-adapted. Source contribution55upper and one actual
-native retained; no extra native/update/trial from source repair. Separate next
-mean-surplus proposal became actualeb1f/0f2e/8fa5 COMPLETE205upper/ONErank14SVD/
-oneforecast/twocells/fourshadows/GPU0/all33births27Jobs4CIDsclosed; growthfailed.
-Current Kepler mean-path proposal120cap source-only checks exact old identities
-before a new GPU contract; no GPU allocations for a reading list or duplicate.
-Official Tiingo event semantics remains incomplete; no new accrual market run.
-Fixedrule/NumPyforward need no GPU. New useful trainable campaign measures
-headroom and freezes chronology/earlystop/checkpoint/caps before dispatch.
-Independent CPU preparation continues during Paper/data due times.
+Operationalpointf09d/612b/a13e CLOSED65 one CPU restore+forward, not GPU.
+ETF proposer2053/a1b7/d159 CLOSED126 one invented CPU restore+inference/
+writer-parser, actual current market point not ready. No repeated smoke for
+Data query_key repair. Historical resource snapshots are not fresh leases.
 
-New native producer->consumer/solver smoke inside unchanged caps, actual
-sources/bootstrap/roles/schema and failure stages, not fake fixtures alone.
-Time cumulative active workers separately from elapsed/queue/review;
-preserve failures/timeouts/I/O/cleanup and exact attempted-fit/evaluation counts.
-Execution emergency preempts at safe checkpoint; Paper profitability not a gate.
-Never age-reclaim live/unknown lease or close personal apps.
-Actualworker uses campaign/PID/birth/lease, not generic Python process names.
+## Custody / Runtime Separation
 
-## Durable Custody
-
-Already closed TCN/LSTM, GRU, Transformers, StudentT, CatBoost, assetattention,
-directportfolio, cost-survival and public foundations retain original outcomes/
-debits. Historical full detail in Git53ef9beb/exact artifacts.
-TCN/LSTM16=BATCHsize;actualFIT2817dates2014..2025;4459 Sourcehash.
-Protected1416 Source39bfc02d/RESULT72e92ed7 passes19597full/26knownSKIP/
-8workers/Ruff/3Compose; docs/external-only reuse needs exact source match.
-External helpers require independent native checks, not redundant repo suites.
+Identify project duplicates by exact campaign/PID/birth/lease, not Python names.
+No age reclaim of live/unknown lease. Keep trial/holdout custody existing,
+no agent/resource platform. Epoch/time/checkpoint selection uses inner data,
+not DEV/Paper outcomes. OOF does not erase historical DEV selection.
+Peer adapter635e/361f component-qualified24mount positive/33deny, not adopted
+current runtime. Harmless future Task creation independent of actual effect-time
+custody admission. No fake legacy owner aliases/private mounts/credentialenv.
+Docs/external-only full source39bfc/RESULT7638 reusable only exact1416 digest
+plus actual independent external tests. No redundant suite as external proof.

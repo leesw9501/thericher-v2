@@ -1,88 +1,58 @@
-# Strategy Research Stateboard (전략·지표 연구)
+# Strategy Research Stateboard (전략 탐색)
 
-2026-10-30 KST / integrationOct29UTC23:40.
+2026-10-30 KST / Oct30UTC01:28.
 A=D:/thericher-v2/model-artifacts. Parent MD/Git; Engine final targets/splits/
-costs/fits/interpretation. No broker/private/execution-risk authority.
+costs/contracts/fit interpretation. No broker/credential/risk authority.
 
-## Executable Proposals / Actual Readiness
+## Ready Executable Hypothesis
 
-Completed proposala2139b12/17ff5425 plus calendarcorrigendum65upper and actual
-kernel e23fbfac/c25f7d45/100upper led to CPU0232/8065/6ce6 COMPLETE359upper.
-ONE14parameter SciPy lower-expectile fit34accepted/BEST4/INNER_EARLY_STOP,
-18entries all2016/zero later, growth/shadow/supportfailed. No criterion rescue.
-GPU1b3f causal path expert frozen BEFORE CPU outcome; later05ade/7ce6/aa89
-COMPLETE457upper/23epochs2001updates/BEST8/earlystop/allworkersclosed.
-10bp+0.7288991percent185entries but growth/shadowFAIL, risk/supportpass.
+Kepler current-etf-chronological-fusion-next-proposal-20261030-v1:
+Source269821b7/CLOSED60upper, no payload/fit/GPU.
+Parent selected ONE follow-on current-etf-chronological-fusion-development-
+20261030-v1; Fermat final freeze BEFORE source/native/numerics.
+Three expanding OOF folds with per-fold FIT-only affines/target scales/purged
+H5 labels, three5054TCN+three rank14 linear mean fits, ONE depth2 CatBoost
+mean-score/context tree and fixed50:50 blend comparator.
+Cached fullDEV expert score files retained: no repeated fullFIT training,
+new DEV expert forward or old control replay. Actual cache/row/cost/basis
+compatibility required; unavailable cache withholds that comparison.
+One tree is a small composition pilot, not claimed optimal/general best model.
+6000SUM/14400elapsed/max7fits/0marketretry, one derived role bundle/four cells.
+Kepler may own pure meta/source/actual native solver/checkpoint/producer code
+in assigned disjoint paths after final Engine contract; no unowned numerical run.
 
-Meanproposal0c8c0abc/3d552817 CLOSED60upper + native7d6647ae CLOSED60upper
-led to eb1f/0f2e/8fa5 COMPLETE205upper/ONErank14SVD/525entries/10bp+0.0027994
-percent/growthFAIL/risk-support-shadowpass. Exact objective/gradient and MEAN
-checkpoint verified, no old criterion/capital change or independent alpha.
+Official CatBoost/PyTorch/native release sources and version/license/data scope
+remain in exact proposal. Unknown corpus/foundation coverage cannot qualify
+independent performance. OOF prevents in-sample meta fitting but does not erase
+repeated DEV selection or OOF-to-fullFIT distribution shift. Report split
+features/leaf support/degeneration; no forced expert use or retuned second fit.
 
-Current Kepler current-etf-mean-path-next-proposal-20261030-v1:
-120SUM/1800elapsed/maxONE source-only nonlinear expected-mean path proposal.
-Check exact earlier H5TCN/LSTM/multitask identities first, reject/reuse any same
-data/split/target/model fit instead of another namespace. Prefer qualified
-5054TCN geometry/seed/batch/caps to isolate functional when genuinely distinct.
-No currentcontract mutation/market fit/GPU/DEVreranking or newlibrary/grid.
-Concrete nextcontract or rejection, not reading list or utilization work.
-Closed526f/ce29684b/709e841b/f4776c8b completed6price-only cells224upper:
-QQQ10bp+0.7954percent account but20bpnegative, dividends excluded/nonPIT.
-Gross-loss-budget blocked most later entries, not matched realized exposure
-or buy-and-hold alpha. Do not change Paper B10/oldgrade or replay oldcells.
-Lovelace official event-field semantics120cap supports later accounting;
-pure699c/dff7 37casesPASS/70upperclosed, rawmapping remains UNQUALIFIED.
+## What Completed Research Changed
 
-Fixed volume-confirmed QQQ failed-breakdown/reclaim +SPY confirmation:
-proposalSourcef3f1/55cdf3/104upperclosed; contractcc2b unchanged.
-Kernel technicalSourcefcb5/native27plus5161/fullcausal0bcc/FINALef756490,
-120upper/allworkersclosed. Real invented producer/file/typedintent/quantity/
-capital, causal-byte/action invariance and missing/clock/pending checks.
-Review actualREVISE, storedREJECT corrected2df9/14anchored-parser tests,
-oldoutputs preserved/no newreviewcall. Source/native only, no performance claim.
+CPUexpectile8065/6ce6/3fb2 CLOSED359upper:lower-tail score yielded18early/
+zero late entries, growth/shadow/support failed. Not expected profit.
+GPUexpectile05ade/7ce6/aa89 CLOSED457upper:23epochs/BEST8, growth/shadowfailed.
+Separate CPUmean eb1f/0f2e/8fa5 CLOSED205upper one rank14SVD and GPUmean
+c290/82a3/bdc1 CLOSED471upper one5054TCN/19epochs/BEST4 both growthfailed,
+despite positive10bp account growth. Support/risk/shadow passed, but entries
+truncated before2025. Do not repeat models, rescue criteria or claim alpha.
+Mean predictions make a source-compatible exploratory fusion question concrete;
+individual profitability is not prerequisite for OOF composition.
 
-Later43sessions2023Oct-Nov source not established9cf4/30upper;
-retained2026 block not substitute, no oldDEVtarget rescue.
-Separate2026ten-session C120 INPUT-SUPPORT pilot CLOSED351.0011upper,
-11triggers/5sessions NONINFORMATIVE/0outcomes/fits/costcells; no economic rescue.
-Same inputinformation/different inductivebias, not newinformation/alpha.
-Clock-gate expected-prior-notional control is not exact realized beta matching.
-Strongkill unsupported Data/calibration/thin support/terminal unknown/no costed
-growth-risk advantage, never threshold or target-dependent support tuning.
+Data c44a/0d98 and controls38728afc remain exact. Long ETF Tiingo raw prices/
+divCash/splitFactor already exist, no extra acquisition needed for price-only
+pilot. Dividends/PIT/finality not qualified; do not relabel total return.
+ETF526f224 sixcells, denseH1 TCN13+Ridge638.351 zero-entry/withheld,
+full187664 withheld remain closed. Other GRU/LSTM/Transformer/StudentT/
+CatBoost/attention/directportfolio/TimesFM/Chronos/cost-survival/blend studies
+exist; this is not a GRU/Ridge-only queue or a reading-list output.
 
-Kepler ETF metadatae7eb/385c closed35upper:
-single-source Tiingo rawOHLCV+divcash+splitfactor long SPY/QQQ/IWM history,
-no acquisition required. Exact jointkeys/calendar/economic dividend/split
-consumer unqualified, not a global research/Paper hold.
-Simple SPY_LONG/QQQ_LONG/CASH benchmark became closed526f above. It is not
-a pending proposal, totalreturn or trained profitable model.
+## Operational Consumer / Scope
 
-## What Completed Work Changed
-
-CapacityPaperReplay integrated2bfffcd9/focused77PASS with real LocalPaperBroker/
-EventStore, one synthetic B/10/pendingonce/loss/no profitrefill/exactexits/
-restart/unknownNAV. Source tests not actual Paper or market performance.
-Linux scaling1f73/481f/5be0:15900invented lots/100306events/28447fills33.382s,
-fresh originalSDKcold10.707s/22checks/all19owners3CIDsclosed286upper;
-research scratch only, no private Paper store move.
-Independent reserved-lot negativesed465/c886 closed35upper confirm intended
-retention and lost-return-with-fill possibility. Old MSE cause still UNKNOWN.
-
-Parent issuer/SEC context: CODXJan14..Mar11 and BKYIMay13..Jul8,2026 reported
-Nasdaq suspensions overlap exact12missing required D1 dates. URLs HANDOFF.
-Data2GET returned1of12. This challenges always-NAS historical eligibility,
-not proof of KIS cause/noOTCprice. Do not regrade old trials or exclude based on
-future missingness; new eligibility needs as-published-before-decision evidence.
-
-Earlier cost-survival26 proper-score/riskMET/utilityFAILED; TCN/LSTM29/36
-economiccriteriaFAILED; directportfolio33FAILED; assetMHA utilityMET/riskFAILED;
-StudentT density/riskMET/utilityFAILED. No identical repeats.
-DenseH1 TCN13+Ridge finished/four0entry cells NONINFORMATIVE/primaryWITHHELD.
-TimesFM/Chronos/transformer/tree/ensemble studies exist; corpus/reused outcomes
-limit comparative claims, not isolated runtime study. Fusion may explore
-nonprofitable experts; learned gates need chronological OOF.
-
-AEMD ca82/e8e7 and held7dbf/2156 complete: no exact identified split overlap
-in sixknownheldwindows plusoneunknown; announcement is not completed
-conversion/vendor correctness. No outlier deletion/regrade/Paperban.
-History in Git97019f9c/artifacts, not another reading list/report platform.
+Existing account-owned bounded Paper dispatcher may consume a separately
+qualified proposal independent of research profitability. Current MSE2a0d/105d
+pair remains Parent work, no automatic model/bank swap.
+ETF proposer2053/a1b7/d159 closed126 invented CPU writer/parser only;
+Data current-close constructor repair needed, no actual market forward yet.
+Unknown units/finality remain nonrankable, not assumed1 or imputed prices.
+History Git d8b02f3d/38777752 and exact external evidence; no new report platform.

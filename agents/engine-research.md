@@ -1,158 +1,79 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-30 KST / integrationOct29UTC23:40.
+2026-10-30 KST / Oct30UTC01:30.
 A=D:/thericher-v2/model-artifacts. Fermat Engine/sole Steward; Parent MD/Git.
-Contracts own caps; old sources/results/debits immutable.
+Hypothesis/targets/splits/costs/trials belong to Engine, not advisory/profit gates.
+History Git d8b02f3d/38777752 and exact immutable artifacts.
 
-## Completed Actual Work / No Repeat
+## Current Work
 
-DenseH1 current-qqq-spy-dense-h1-development-20261030-v1:
-Source43b841f9/FINALb10094c5/CLOSUREa8a3fa81/CALLBACKb83513a6.
-One CUDA TCN13epochs/BEST1/546updates/27.940145wholephase/
-144703488peak bytes; CPU Ridge6978rows167sessions/alpha10.
-Four archives sealed4c3e before outcomes. Fifth-cell285s readout cap;
-fourTCN/Ridge10/20 cells0entries NONINFORMATIVE/whole primaryWITHHELD.
-All28CLI4CID4roots closed638.351416upper. No fit/forward/readout retry.
-Data620a/dc47/bc7b:251sessions10470keys,6978FIT/1686INNER(sixUNKNOWN)/
-1806DEV,120M1+5m24+10m12/stride5/60minOPEN target. Reused2022-23/overlap/
-nominal lag, not actual arrival/PIT/independent replication.
+Parent selected ONE chronological fusion pilot from Kepler269821b7:
+A/research/current-etf-chronological-fusion-development-20261030-v1.
+Final Engine freeze BEFORE intake/numerics: three expanding OOF folds, per-fold
+FIT-only affines/target scales and purged H5 target intervals. Three causalTCN+
+three linear mean experts plus ONE depth2 CatBoost score/context tree.
+Fixed50:50 comparator. One tree is a bounded pilot, not optimal architecture.
+6000 active SUM/14400elapsed/max7fits/0marketretry/0fullFITrefit/
+0newDEVexpertforward/0oldcontrolreplay. Derived roles1, cached fullDEV score
+files2, marks1, four cells/four shadows. Exact cache/keys/cost/basis compatibility
+before comparisons. Proposal60upper charged once; all native/failures/I/O/
+cleanup count. Actual training not inferred from this assignment.
+Kepler source/native and Data existing-role derivation after final contract.
+One Steward <=3 measured useful GPU folds/4GiB reserve/disjoint roots/PID births.
+Concurrent worker walls ADDED, not isolated benchmarks.
+OOF/reused DEV remains adaptive development, not untouched independent alpha.
 
-Full187 TRUE D1 current-mse100-full-inner-d1-capital-development-20261030-v1:
-readout-r1 Sourcec2ff/ACTUAL-MARKET-CALLBACK85008231/RESULT2bf77d2f/
-FINAL80ea/CLOSURE7fc9. Six fixedcells/oneforecast-action-priorquote-mark/
-0models,187origins159ready23warm5tails.
-MSE10/20 WITHHELD at terminal predicate: one reserved/zeroopen lot each;
-entry-return reason not retained, not proven bug. Uniform10/20 require12missing
-bars; cashcomplete but whole primaryWITHHELD. No risky growth/DD/PnL claim.
-All29PIDbirths20Jobs2CIDs closed664/1800upper incl286prototype.
-No forceflat/cancel/old retry/regrade. Independent native negativesed465/c886/
-722a closed35upper: intentional reservation retention; lost return can coexist
-with real local fill. Started-only staysUNKNOWN; old cause remains unproved.
-Separate action-return persistence/reproducer is not a new market trial.
+## Closed Actual Work / Never Repeat
 
-Linux research scaling Source1f73/attempt481f/ADOPTION5be0:
-15900invented lots/100306events/28447fills33.382164s; fresh original-SDK
-cold parity10.706891s/22checks/all19owners3CIDsclosed286upper.
-Research scratch only, never private Paper state/admission.
+All ETF studies below reused PRICE_ONLY data, no dividends/PIT/total return.
+Data c44a723a/0d983580 CLOSED85upper, control archive38728afc unchanged.
+- CPUexpectile8065/6ce6/3fb2 CLOSED359upper:14params/34updates/BEST4,
+  18earlyentries/zero late/10bp-0.2565684percent; growth/shadow/support fail.
+- GPUexpectile05ade/7ce6/aa89 CLOSED457upper:5054TCN/23epochs2001updates/BEST8,
+  10bp185entries/+0.7288991percent/DD0.7894788; growth/shadow fail,
+  risk/support pass. Not convergence, all workers/leases closed.
+- CPUmean eb1f/0f2e/8fa5/dded CLOSED205upper:one rank14 SVD/525entries/
+  10bp+0.0027994percent, growth fail/risk/support/shadow pass;
+  last buy2023-02-16, not continuously active through2025.
+- GPUmean current-etf-mean-path-development-20261030-v1:
+  contract5b1e59f8/Sourcec29059ea/FINAL82a32518/closurebdc1c492 CLOSED471upper.
+  One5054TCN/19epochs1653updates/BEST4/earlystop/notconverged;
+  fit264.712s/forecast10.240/readout8.617.10bp515entries/+0.9188721percent/
+  DD1.0717833;20bp492/-0.3734682percent. Growth fail, other3 pass.
+  Lastbuy2022-04-27. All workers/leases closed, no rerun for attribution.
+- ETF526f224upper six price-only cells, QQQ10bp+0.7954percent/20bpnegative.
+  DenseH1 TCN13+Ridge638.351upper four zero-entry cells/primaryWITHHELD.
+  Full187 readout664upper/primaryWITHHELD due reservations/missing marks.
+  No forceflat, old cancellation/regrade, readout or duplicate fit.
+Earlier GRU/LSTM/TCN/Transformer/StudentT/CatBoost/attention/directportfolio/
+TimesFM/Chronos/cost-survival/ensembles remain immutable, not merely GRU/Ridge.
+Epoch16 in some records is batch size, not all training epochs.
 
-## Current Ready Work
+## Operational Consumer / Separate From Research Performance
 
-ETF526f price-only campaign COMPLETE/CLOSED224upper:
-A/research/current-etf-daily-price-only-capital-development-20261030-v1,
-Sourcece29684b/FINAL709e841b/CLOSURE2570962a/RESULTf4776c8b.
-2014..2025/3018origins/3013entryorigins/5fixedtails, one Data projection/
-one Engine prior+marks intake/sixfixedcells/sixoriginalSDKcold rebuilds,
-0fits/restores/forwards/GPU/marketretries. All17Enginebirths14Jobs2CIDs plus
-Data/Kepler closed. Explicit ABI4 amendment923ec0c after Data but before Engine
-values, original3checks preserved/180source-native cap, no silent replay.
-10bp QQQ accountgrowth+0.7954089percent/DD0.934157percent/557entries;
-SPY-0.6664854percent/DD1.131091percent/680entries. 20bpQQQ-1.3959815percent/
-SPY-2.5616838percent. Cash0, all fills local_paper, no actual broker effect.
-Price-only logical D1/not exchangeOPEN, dividends omitted, reusedhistory/nonPIT,
-not totalreturn/netPnL/independent alpha or a trained model.
-Cumulative gross-loss debits block2456QQQ10/2333SPY10 entries. Same intended
-allocation does not mean matched exposure/buy-and-hold. No profitrefill,
-Paperbank change or oldregrade. No repeat of sixcells to add attribution.
-Existing sealed-journal timestamps only: QQQ10 lastbuy2019-07-31/QQQ20
-2018-11-13,SPY10 2020-03-17/SPY20 2019-11-25, no later buys through2025.
-Parent pinned COLD hashes and before/after bytes/mtime/hash; no market readout/
-fit/replay. New experiment must predeclare evaluation basis/date and coverage.
+MSE point current-mse100-oct30-operational-point-20261030-v1
+f09d/612b/a13e COMPLETE65upper/one CPU restore+forward/2347known.
+Checkpoint4b8a4661 BEST005, NOT60127ff;100slots98eligible5targets.
+Data32945/3fd4/6fa2 COMPLETE110; nativeinput9fc0/71cc/9998 COMPLETE106,
+Input20f/Policy05e/Modelb6e. No repeated model forward/projection.
+Entry2a0d/exit105d controllers qualified, actual install failed; HANDOFF current.
+No alpha/profitability gate or default-model/bank swap.
 
-Operational currentMSE point is now ACTUAL/CLOSED65upper:
-current-mse100-oct30-operational-point-20261030-v1 Sourcef09d6296/
-FINAL612b6923/CLOSUREa13e34f3/PUBLISHED8fe8047d,1restore/1CPUforward/
-2347knownpredictions/100slots98eligible5positive/unitmass1. All8births7Jobs/
-CIDclosed,0fit/GPU/outcomes. Exact4b8a4661, NOT60127ff alias. UNALLOCATED/
-UNROUTED/allow_execute=false, not brokerinput/order/alpha, never repeat.
-Galileo Data32945/READY3fd4/closure6fa2 completed110upper/oneprojection.
-Native input current-mse100-oct30-native-paper-input-preparation-20261030-v1
-Source9fc0b4cb/FINAL71cc494f/CLOSURE99983217 CLOSED106upper:
-Input20f9418b/Policy05e29c36/MODELb6e0468d,100slots98known5targets,
-same weights/masks/clocks, no newfit/forward/API/private/Task. Parent candidate
-094d6a0d is preparation, not default-model/bank swap or actual orderability.
-
-CPU current-etf-expectile25-capital-development-20261030-v1 COMPLETE:
-contract02321c7c/Source80655af2/FINAL6ce66eb5/CLOSURE3fb280f0,
-CONTROL-ARCHIVE38728afc,359activeupper/allworkersclosed. ONE14parameter
-SciPyfit/34accepted/BEST4/INNER_EARLY_STOP, optimizer_converged=false;
-8nativecells/4matched shadows/0retry. Data c44a723a/0d983580 CLOSED85upper,
-kernel e23fbfac/c25f7d45 CLOSED100upper, no repeat/reprojection.
-NONINFORMATIVE_TEMPORAL_SUPPORT:18entries Aug15..Sep9,2016/zero late;
-10bp accountgrowth-0.2565684percent/DD0.2600355percent. Growth/shadow/support
-failed, risk passed. Same-basis QQQ10 control+1.5436973percent/559entries ends
-2021-02-16. No threshold/checkpoint/criterion rescue or independent alpha.
-
-GPU current-etf-expectile25-causal-path-development-20261030-v1 COMPLETE:
-contract1b3f2971 frozen BEFORE CPUDEV:ONE causalTCN16/252returns+13summary/
-5054params,1800SUM/10800elapsed/hardOct30UTC01:40. ONEfit/max100epochs/
-9000updates/900s/earlystop15/LRscheduler/safeNPZ. Actual native579bd4f9/
-25b7183a/b81feec4 QUALIFIED/CLOSED:3AdamW updates,free24104665088bytes,
-peakreserved113246208bytes; host receipt failure retained/adjudicated.
-Later Source05ade08b/FINAL7ce65a74/CLOSUREaa892ff6 CLOSED457upper:
-ONEactualfit23epochs/2001updates/BEST8/earlystop/convergenceunproved,
-fit326.953s/forecast10.130s/readout6.280s/twoowncells/fourshadows/0controlreplay.
-10bp185entries(85early100late)/+0.7288991percent/DD0.7894788percent;
-20bp184/+0.0823746percent/DD1.0120762percent. Support/riskpass, growth/
-matchedshadowFAIL. Not alpha/totalreturn/Paperpromotion. AllPID-CID-leaseclosed,
-no repeated training/source-native/readout or new projection.
-
-Next mean proposal0c8c0abc/3d552817 led to actual current-etf-expected-surplus-
-capital-development-20261030-v1 COMPLETE205upper:Sourceeb1f3ebb/FINAL0f2e9a97/
-CLOSURE8fa587f5/CALLBACKdded8153. ONErank14FP64SVD/oneforecast/twocostcells/
-fourshadows/0retry/GPU/controlreplay,all33births27Jobs4CIDsclosed.
-10bp525entries/+0.0027994percent/DD0.9855559percent,lastbuy2023-02-16;
-20bp481/-1.7116252percent/DD1.7631823percent,lastbuy2022-10-28.
-Risk/support/shadowpass,growthFAIL. Later capacityblocking retained, not
-continuous exposure or independent alpha. Objective/design/analyticgradient
-equivalence qualified; distinctMEANheader not tau25. No new bank/oldgrade.
-Kepler current-etf-mean-path-next-proposal-20261030-v1 owns120SUM/maxONE
-source-only distinct GPUmean-path proposal or exact-duplicate rejection,
-check earlier H5TCN/LSTM/multitask identities. No current numerical work.
-
-Fixed QQQ volume-confirmed reclaim +SPY kernel:
-current-dense-h1-reclaim-event-kernel-preparation-20261030-v1,
-technicalSourcefcb5/native27plus5161/fullcausal0bcc/FINALef756490,
-120upper/allworkersclosed. Review actualREVISE; storedREJECT was verdict-parser
-defect corrected2df9/14anchored tests/no review rerun, oldoutputs preserved.
-Fermat ENGINE-ADJUDICATION-r1 accepts exact causality/quantities/unknowns only,
-keeps original clock, not bypass advice or performance qualification.
-
-Original43session2023Oct-Nov M1 source NOT ESTABLISHED9cf4/30upper.
-NO marketdispatch/date substitution/oldDEVtargets or threshold rescue.
-Separate retained2026ten-session C120 INPUT-SUPPORT pilot CLOSED351.0011upper,
-11triggers/5sessions NONINFORMATIVE,0outcomes/fits/costcells; no economic readout
-or threshold rescue. Actual source/role/native not assumed from oldC300.
-
-Kepler ETF metadatae7eb/385c closed35upper:
-existing Tiingo rawOHLCV/divcash/splitfactor SPY1993/QQQ1999/IWM2000..Aug7,2026,
-no acquisition needed. Exact joint calendar/session keys and native dividend/
-split economics unqualified. Freeze explicit economic assumptions or limited
-price-only claim, not a new platform/approval/global gate.
-This led to closed526f above, not another pending candidate or permission hold.
-Lovelace pure accrual699c/dff7/37cases/70upperclosed is follow-on only;
-raw Tiingo mapping unqualified, never change the closed price-only results.
-
-Galileo gap captureb09d actual2GET200/1of12known/0retry/newvintage.
-Official reported Nasdaq suspension intervals overlap requested CODX/BKYI keys;
-URLs HANDOFF. KIS internal cause/OTCcoverage not proved. No old trial rescue,
-missing-price survivor filter or guessed prices; new dated eligibility needs
-as-published-before-decision evidence under new adaptive development contract.
+ETF next operational proposer2053106a/a1b77c03/d1590905 CLOSED126upper:
+one actual checkpoint restore/invented two-row CPU inference/real file parser.
+No actual asof forward. Consumer existing account-owned future dispatcher,
+not simultaneous private-bank writer/current MSE replacement.
+Data current-close21d9/7adc/ef21 failed duplicate query_key before writer/parser,
+actual API/model/projection0. Galileo native-repair300/MAX3 then original6GET/
+8GETcap1freshPOST0retry, no provider-unavailable inference.
+No repeat model smoke/fit because Data repairs. Missing units/finality remain
+unknown/nonrankable. A future actual point needs its own exact source/session.
 
 ## Queues / Claim Boundaries
 
-Short breadth: next distinct expected-surplus hypothesis, not lower-tail score
-misrepresented as expected profit; growth/risk/support/exposure reported apart.
-Long depth: frozen causalTCN onefit after actual native success. Chronological
-inner curves/checkpoints/finite caps; actual dispatch evidence, not utilization
-targets. Native success alone is not an active GPU market worker.
-
-Already tested GRU, TCN/LSTM29/36, Transformer25, StudentT42, CatBoost157,
-AssetMHA26, directportfolio33, TimesFM/Chronos, cost-survival26 and blends.
-Details in Git97019f9c/immutable roots; not merely GRU/Ridge, no independent
-alpha or duplicate fits. TCN/LSTM16=BATCHsize, actualFIT2817dates2014..2025/
-INNER173supervised187origins;4459 is a Sourcehash.
-Truefull100M1/09:29/heldmarks a197/f73f NOT_READY; D1 is not M1.
-Next-dateMSE4b8a4661 BEST005/source6fe12b, not60127ff Memory alias.
-Actual model point and typed native input now exist; final controller/installer/
-fresh relevant-owner admission remain separate from actual Paper deployment.
-No stale retag/model-bank swap.
+Short breadth: chronological fusion tests complementarity, not a reading list.
+Long depth: useful frozen OOF causalTCN fits with curves/earlystop/checkpoints,
+no repeated completed fullFIT. Fit cap is not GPU utilization target.
+No individual-profit prerequisite for exploratory fusion; learned gates OOF.
+Missing exact input withholds that consumer, not independent Data/Paper work.
+Company remains UNFINISHED until actual native decision/reconciliation.
