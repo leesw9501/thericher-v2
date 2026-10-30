@@ -1,71 +1,44 @@
 # Strategy Research Stateboard (전략 탐색)
 
-2026-10-30 KST / Oct30UTC02:02.
-A=D:/thericher-v2/model-artifacts. Parent MD/Git; Engine final targets/splits/
-costs/contracts/fit interpretation. No broker/credential/risk authority.
+2026-10-30 KST / Oct30UTC03:26.
+A=D:/thericher-v2/model-artifacts. Kepler proposals; Engine final contracts/
+fits/interpretation. Parent shared MD/Git. No broker/credential/risk authority.
 
-## Ready Executable Hypothesis
+## Current Executable Proposal
 
-Kepler next current-etf-cost-horizon-next-proposal-20261030-v1:
-120SUM/1800elapsed/MAXONE source-only proposal/0payloads/fits/forwards/
-readouts/API/GPU. Consumer next Engine contract after current OOF, not width/
-seed/grid busywork. Use actual closed aggregate evidence to distinguish weak
-forecasts, H5 roundtrip costs and loss-budget temporal coverage. Recommend ONE
-distinct executable hypothesis or concrete rejection with data/target/availability/
-cost/baseline/kill/finite budget; no old regrade or current PaperH5/bank change.
-Longer holding requires actual horizon/holiday/early-close alignment in a future
-Paper consumer, not automatic reuse of the inclusive-H5 current controller.
+A/research/current-intraday-m1-model-next-proposal-20261030-v1/
+PROPOSED-CONTRACT.json: QQQ volume-conditioned direct-net H60, one shallow
+CPU CatBoost14. Existing numeric retained panel3b1b/95ba,120pastminutes/5minute
+stride/60minute target,14price/relative-volume/time features. Fixed price-only
+relative-reversal/QQQ/SPY/cash references; chronological whole-session roles,
+future-path-held dimensional research proxy, no original bank accounting claim.
+Engine final dedup/split/support/finite budget BEFORE new roles/fitting.
+Proposed1500SUM/7200elapsed/onefit/0retry/ten cells, no window/seed/cost rescue.
+Actual historical arrival/unit/CA/finality limitations remain explicit.
 
-Kepler current-etf-chronological-fusion-next-proposal-20261030-v1:
-Source269821b7/CLOSED60upper, no payload/fit/GPU.
-Parent selected ONE follow-on current-etf-chronological-fusion-development-
-20261030-v1; Fermat final freeze BEFORE source/native/numerics.
-Three expanding OOF folds with per-fold FIT-only affines/target scales/purged
-H5 labels, three5054TCN+three rank14 linear mean fits, ONE depth2 CatBoost
-mean-score/context tree and fixed50:50 blend comparator.
-Cached fullDEV expert score files retained: no repeated fullFIT training,
-new DEV expert forward or old control replay. Actual cache/row/cost/basis
-compatibility required; unavailable cache withholds that comparison.
-One tree is a small composition pilot, not claimed optimal/general best model.
-6000SUM/14400elapsed/max7fits/0marketretry, one derived role bundle/four cells.
-Kepler may own pure meta/source/actual native solver/checkpoint/producer code
-in assigned disjoint paths after final Engine contract; no unowned numerical run.
-That work is now source-ready3ec24378/451f941f; derived Data355b actual one
-publication and combined Native7fa2/406a passed3AdamW1SVD1tree synthetic only.
-Fermat owns actual market fits/cache/readout. No current GPU training inferred.
+Distinct mechanism is volume-conditioned arithmetic net-return interaction,
+not another TCN architecture or frequent-origin novelty. Old H20 intraday meant
+20MINUTES/two ETFs, not20daily/100stocks; corrigendum501940f5 preserves original.
+Old denseH1 already used120context/24five-minute/12ten-minute/frequent origins;
+do not rename it as a new hypothesis. Foundation/public checkpoints considered:
+trusted dated Chronos before2026 targets supports restricted post-checkpoint
+development only; no automatic quantile-to-expected-profit/extra ensemble arm.
+Exact sources/license/checkpoint scope live in proposal, not a reading list.
 
-Official CatBoost/PyTorch/native release sources and version/license/data scope
-remain in exact proposal. Unknown corpus/foundation coverage cannot qualify
-independent performance. OOF prevents in-sample meta fitting but does not erase
-repeated DEV selection or OOF-to-fullFIT distribution shift. Report split
-features/leaf support/degeneration; no forced expert use or retuned second fit.
+## Evidence That Changed Direction
 
-## What Completed Research Changed
+OOF7 e586/a11c/b5db/face CLOSED1890upper: actual3TCN+3linear+1tree;
+learned gate zero DEV admissions/noninformative temporal support. Fixedhalf
+10bp+0.516568percent,20bpnegative. OOF alone does not erase reused DEV selection.
+H20daily d9aa/5e53/6b5d/7040 CLOSED979upper/twofits: later-year admissions
+restored; TCN10bp+4.931615percent versusQQQ+6.579699, both learned primary
+conjunctions failed. This is joint horizon/stride/target change, not pure ablation.
+Current H20 fixedhalf proposal2fdb/42ff/d580 complete185upper, UNALLOCATED/
+UNROUTED/allow_execute=false, asofOct29/decisionOct30. Execution compatibility
+may proceed without profitability gate; actual H20 calendar cannot alias H5.
 
-CPUexpectile8065/6ce6/3fb2 CLOSED359upper:lower-tail score yielded18early/
-zero late entries, growth/shadow/support failed. Not expected profit.
-GPUexpectile05ade/7ce6/aa89 CLOSED457upper:23epochs/BEST8, growth/shadowfailed.
-Separate CPUmean eb1f/0f2e/8fa5 CLOSED205upper one rank14SVD and GPUmean
-c290/82a3/bdc1 CLOSED471upper one5054TCN/19epochs/BEST4 both growthfailed,
-despite positive10bp account growth. Support/risk/shadow passed, but entries
-truncated before2025. Do not repeat models, rescue criteria or claim alpha.
-Mean predictions make a source-compatible exploratory fusion question concrete;
-individual profitability is not prerequisite for OOF composition.
-
-Data c44a/0d98 and controls38728afc remain exact. Long ETF Tiingo raw prices/
-divCash/splitFactor already exist, no extra acquisition needed for price-only
-pilot. Dividends/PIT/finality not qualified; do not relabel total return.
-ETF526f224 sixcells, denseH1 TCN13+Ridge638.351 zero-entry/withheld,
-full187664 withheld remain closed. Other GRU/LSTM/Transformer/StudentT/
-CatBoost/attention/directportfolio/TimesFM/Chronos/cost-survival/blend studies
-exist; this is not a GRU/Ridge-only queue or a reading-list output.
-
-## Operational Consumer / Scope
-
-Existing account-owned bounded Paper dispatcher may consume a separately
-qualified proposal independent of research profitability. Current MSE2a0d/105d
-pair remains Parent work, no automatic model/bank swap.
-ETF proposer2053/a1b7/d159 closed126 invented CPU writer/parser only;
-Data current-close constructor repair needed, no actual market forward yet.
-Unknown units/finality remain nonrankable, not assumed1 or imputed prices.
-History Git d8b02f3d/38777752 and exact external evidence; no new report platform.
+Earlier mean/expectile/GRU/LSTM/Transformer/TCN/StudentT/CatBoost/attention/
+TimesFM/Chronos/ensemble studies remain closed in Git/external evidence.
+No additional permanent agent per indicator or speculative GPU use. A proposal
+becomes a bounded experiment or concrete rejection. Useful new hypothesis,
+source scope and strongest kill matter more than number of model families.

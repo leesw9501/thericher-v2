@@ -1,68 +1,48 @@
 # Research Steward Stateboard (연구 자원·실험 관리)
 
-2026-10-30 KST / Oct30UTC02:02.
+2026-10-30 KST / Oct30UTC03:26.
 A=D:/thericher-v2/model-artifacts. Fermat sole resource coordinator/custody.
-Resource permission is delegated, not a model-choice/human approval gate.
-Project is first GPU priority, useful concurrent training allowed; never kill
-personal apps or require a process-name allowlist.
+Project first GPU priority; useful concurrent workers allowed, no app killing
+or name allowlist. Resource permission is delegated, not a model-choice gate.
 
 ## Current Queue
 
-Parent selected current-etf-chronological-fusion-development-20261030-v1
-from Kepler proposal269821b7. Engine final freeze BEFORE payload/numerics:
-6000 active SUM/14400elapsed/max7fits (3TCN+3linear+1tree),0marketretry/
-0fullFITrefit/0newDEVexpertforward/0controlreplay. Three purged chronological
-OOF folds/FIT-only scales, retained fullDEV expert caches, fixed-half comparator.
-Proposal60upper charged once, all Data/native/failed/I/O/cleanup walls count.
-Native max3 programs/small real optimizer+SVD+CatBoost/checkpoint/producer
-smoke inside caps. No fake fixture-only qualification.
-One derived bundle/two score intakes/one marks/four cells/four shadows.
+Current CPU CatBoost14 volume/H60 contractbb73256e/custodye33db3e3 is frozen,
+1500SUM/7200elapsed/onefit/0retry/ten proxy cells. Data af12ce32/4c8190ac/
+9aadcea3 COMPLETE120upper/oneprojection; combined native before actual fit.
+No GPU arm just for occupancy; no old completed fit. Kepler dated foundation
+proposal may supply a separately frozen useful GPU job, not an extra CB arm.
 
-Actual Data355b/a693/1c8d/7a42 COMPLETE88.7773573upper/onepublication.
-Combined native7fa2e893/406ab8d1 PASS15.6627508active/6JobsCIDclosed/
-lease released,3AdamW1SVD1tree/safe cold codecs/actual producer-parser.
-Synthetic only/marketfits0 at that receipt. Native success is not active training.
-Engine owns actual market-controller/source/dedup/cache/headroom checks and
-dispatch within the same seven trials, no new permission wait.
+All actual OOF/H20 training below is COMPLETE/CLOSED, not currently running:
+- OOF familye586/a11c/b5db/face:1890upper/7fits. Three TCN fold children really
+  ran concurrently Oct30UTC02:01..02:10, under one Steward lease with measured
+  headroom/4GiB reserve.25/19/26epochs;800/912/1638updates;BEST10/4/11;
+  per-worker fit403.570/424.415/531.093s, concurrent worker walls ADDED.
+  Three CPU SVDs plusoneCatBoost; no fullFIT/DEV expert replay. All CIDs/lease
+  closed. Parent earlier filename filter missed ACTUAL-LAUNCH-CALLBACK; never
+  infer idle GPU from absence of a specially named MARKET file.
+- H20 familyd9aa/5e53/6b5d/7040:979upper/twofits. One5054TCN actually ran
+  Oct30UTC02:44..02:49,22epochs1914updates/BEST2/294.877s, peak103MB allocated/
+  113MB reserved; earlystop not convergence. One CPU rank14SVD. All closed.
+- H20 current point2fdb/42ff/d580:185upper, two CPU model restores+current
+  forwards, zero fitting/GPU training. Unallocated/unrouted proposal only.
+- Throughput probe e014/582e/2885:103upper/one synthetic program, all closed.
+  Current tiny5054 geometry CPU2 about2.97x GPU128,512barelyfaster128 at2.90x
+  VRAM. Candidate future physical128 only under a NEW matching contract. This
+  does not prohibit useful larger CUDA work or alter completed batch settings.
 
-<=3 useful GPU fold children may run under one existing Steward lease only
-after actual capacity measurement; >=4GiB desktop/driver reserve and projected
-peaks per child, disjoint outputs/Source/PID births/counters. Concurrent walls
-ADDED, not isolated timing. If tight, stagger under SAME trials/caps.
-Execution emergency preempts at safe checkpoint; future due times are not
-automatic global holds. OOM/driver failures retained, no silent retry.
-An assignment is not evidence of an active CUDA worker.
+## Custody / Recovery
 
-## Closed / Do Not Repeat
+Old GPUmean471/GPUexpectile457/CPUmean205/CPUexpectile359/Data85 and all earlier
+campaigns remain closed with original debit/checkpoint/seed/split/stop facts.
+Never repeat completed training for a utilization screenshot. New campaigns may
+use convergence diagnosis/early stopping/LR schedules/BEST restoration as frozen.
+Identify duplicates by campaign/PID/birth/lease, not Python names. No age reclaim
+of a live/unknown lease. Each child retains its own resource/time/evaluation caps;
+concurrent wall times are not isolated benchmarks. Actual OOM/thermal/driver or
+Execution emergency checkpoint/yield safely, preserve failure/debits.
 
-GPUmean current-etf-mean-path-development-20261030-v1:
-contract5b1e59f8/Sourcec29059ea/FINAL82a32518/closurebdc1c492 CLOSED471upper,
-one5054TCN/19epochs1653updates/BEST4/earlystop/notconverged,
-fit264.712s/forecast10.240/readout8.617; all workers/CIDs/lease closed.
-GPUexpectile05ade/7ce6/aa89 CLOSED457upper/23epochs2001updates/BEST8,
-all workers/lease closed. Native579b/25b7/b81f is also consumed.
-CPUmean eb1f/0f2e/8fa5/dded CLOSED205upper/one rank14SVD.
-CPUexpectile8065/6ce6/3fb2 CLOSED359upper/one14parameter SciPyfit.
-Data c44a/0d98 CLOSED85upper and controls38728afc remain exact, no replay.
-No independent alpha/profitability promotion from these adaptive price-only
-results; growth/risk/support/shadow facts in Engine board.
-Older denseH1 TCN13+Ridge638.351, full187664 withheld, ETF526f224,
-GRU/LSTM/Transformer/StudentT/CatBoost/attention/foundations/ensembles retain
-original results/debits in Git d8b02f3d/external evidence. No duplicate fits.
-
-Operationalpointf09d/612b/a13e CLOSED65 one CPU restore+forward, not GPU.
-ETF proposer2053/a1b7/d159 CLOSED126 one invented CPU restore+inference/
-writer-parser, actual current market point not ready. No repeated smoke for
-Data query_key repair. Historical resource snapshots are not fresh leases.
-
-## Custody / Runtime Separation
-
-Identify project duplicates by exact campaign/PID/birth/lease, not Python names.
-No age reclaim of live/unknown lease. Keep trial/holdout custody existing,
-no agent/resource platform. Epoch/time/checkpoint selection uses inner data,
-not DEV/Paper outcomes. OOF does not erase historical DEV selection.
-Peer adapter635e/361f component-qualified24mount positive/33deny, not adopted
-current runtime. Harmless future Task creation independent of actual effect-time
-custody admission. No fake legacy owner aliases/private mounts/credentialenv.
-Docs/external-only full sourced428ccaf/RESULT0b55d3ff reusable only exact1416 digest
-plus actual independent external tests. No redundant suite as external proof.
+No agent/resource platform. Private-custody writer admission is separate from
+GPU ownership. Future Task definitions do not require all research to stop;
+effect-time risk remains mandatory. Full d428/0b55 authority and independent
+external native evidence in HANDOFF; no stale snapshot as a fresh resource lease.

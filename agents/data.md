@@ -1,101 +1,71 @@
 # Data Stateboard (시장데이터)
 
-2026-10-30 KST / Oct30UTC01:30.
+2026-10-30 KST / Oct30UTC03:26.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
-Data owns market endpoints; Execution owns account/orders. Never KIS_LIVE_*.
+Galileo Data. Market endpoints only; Execution owns account/orders. Never LIVE.
+
+## Ready / Next Consumer
+
+Intraday roles COMPLETE: current-intraday-m1-volume-net-h60-roles-20261030-v1,
+Sourceaf12ce32/READY4c8190ac/nativec5b282ff/actual728b42a3/closure9aadcea3.
+One actual projection/savedverify1/120upper inside240/7births3Jobsclosed/API0.
+Fermat contractbb73256e/custodye33d froze before payload; M1-only14features,
+no5m role join.1008FIT/396INNER supervised;24/9sessions with>=20origins;
+420DEV features+pairedpaths known. All63dates2646keys/798FIT+24INNER input-
+unknown retained, zero known-undefined. Actual FRAME+00:00 aware, no KSTretag.
+Consumer Engine combined native/fit next; no repeat projection/native.
+
+Next candidate is targeted recent partial-session repair with a genuinely new
+cursor/source fact, not stoppedQQQ8/27 retry.600SUM/5400elapsed/32GETcap/
+1freshPOSTifneeded/0retry/oneclient/existingcollector gate/tokenreuse/15%Dfree.
+First keymask-only readiness/official cursor/sourcefloor review; stop when no
+useful sound cursor. Canonical new capture only, no mutation/reprojection of
+closed CB input, account/order/Task/newschedule. Galileo reports usefulness
+before launch, no human permission wait. L review remains source-only.
+
+## Actual Retained Minute Panel / Complete
+
+A/data/current-qqq-spy-retained-minute-panel-readiness-20261030-v1:
+Source3b1b925a/READY95ba2405/MAIN8839a8d7/closuree11874fc,
+COMPLETE200upper/900elapsed/twoengineeringprograms/oneprojection/savedverify1,
+11births5Jobsclosed/API0/model0. PANEL under
+M/us_equities/research_inputs/current-qqq-spy-retained-minute-panel-20261030-v1/PANEL.
+Header85be7dff/frame890ae2c5/availabilityfacaca6e/knownmask3015eda2.
+Actual numeric raw/provider/Bar validation:264rawfiles/75519rows/9555equal
+completed duplicates/92incompleteexcluded/zero completed conflicts/611 source
+files before-after stable.63dates Aug3..Oct29/43jointcomplete/20partial retained.
+1m known20096each/expected24570/unknown4474;5m3997,3998/10m1985,1986/
+1h283,284/3h87,88.63 terminal partial1h/3h bins each UNKNOWN, not full bars.
+FP64 OHLCV[2,N,5]/boolknown/fixedUnicodekeys/NaNunknown/noobjects;
+actual source hashes/availability links. No label/fit/performance qualification.
+CA/unit/providerfinality/PIT/actual historical arrival remain unverified.
+
+Prior current-qqq-spy-m1-continuation-readiness-20261030-v1 cc8d/0652/cb6b/
+08bf CLOSED250upper:actual1POST1GET/HTTP200twice/zero newbars/0retry;
+QQQ NAS KEYB20260827151900 NEXT1/NMIN1/PINC1 returned zero rows.
+Only that exact cursor stopped;15unattempted are not a SPY/all-history floor.
+Do not repeat the same stopped cursor without new source/cursor facts.
+
+## Current Daily Inputs / Complete
+
+ETF current-close repair8ba9da84/8177/a41b CLOSED120upper:1POST6GETall200/
+0retry/oneclient/253known closes each/one projection/Jobsclosed. Header85ce54e8/
+payload3bc6fe39 under M:, asofOct29/decisionOct30. Old21d9/7adc/ef21 duplicate
+query_key failure actualAPI0 retained. No point retag or duplicate projection.
+Official MODP1 domaincaf5/64b8/c161 CLOSED60/API0: adjustmentON, not raw;
+issuer USD/venue facts supported. Numerical Tiingo parity/dividend/CA/sharefactor/
+captured currency/providerfinality still unverified. New provisional H20 policy
+may use those facts while old NON_RANKABLE diagnostic remains unchanged.
+Actual H20 current point2fdb/42ff/d580 is now complete, not allocated/routed.
+
+Daily10161a9/manifest8e6e/sessionOct29 consumed once by32945/3fd4/6fa2,
+24x100x397/98eligible/two masked/CLOSED110. BTAI55/CRNX97 accepted-empty;
+official contextf23c does not prove KIS internal cause. MSEpointf09d/native9fc0
+already closed, installed MSEpair29703d08 not runtime/fill. No repeats.
+
+OOF roles355b/a693/1c8d/7a42/4b27 COMPLETE88.7773573upper/onepublication/
+API0/fits0; Engine OOF7 now CLOSED. H20 derived roles/fit/readout also closed.
+Original ETF c44a/0d98/control38728afc/July manifest64b1 retained PRICE_ONLY,
+not dividends/PIT/totalreturn. Old captured marksb09d1of12known not imputed.
+Peer compatibility635e/361f/24positive33deny is a component, not runtime adoption.
 Limitations constrain exact consumers/claims, not unrelated Paper authority.
-
-## Current Ready Work
-
-Galileo current-qqq-spy-m1-continuation-readiness-20261030-v1:
-600SUM/5400elapsed, existing exact caches/cursors/active collector first.
-Consumer next multi-timeframe QQQ/SPY intraday research, not a closed H1/C120
-rerun. At most32GET/1freshPOSTifneeded/0retry/oneclient/documented pacing,
-no account/order/live/Task/new schedule. Reuse validtoken/atomic freshPOST gate;
-defer only exact occupied collector, never age-reclaim or global-hold.
-Prefer missing recent fullyclosed sessions throughOct29; stop exact cursor on
-duplicate/no-progress/sourcefloor. Market bytes only M:, manifest/count/coverage/
-resample1m5m10m1h3h/availability limits, no model/readout/PIT/finality claim.
-An assignment is not an active collector or successful data acquisition.
-
-OOF derived role family COMPLETE88.7773573upper:Source355b81df/
-nativea6933877/READY1c8d3a9e/manifest7a4297b6/closure4b27083a, one actual
-derived publication/API0/fits0, no duplicate projection. Engine owns native/fits.
-
-## Closed ETF Current Input
-
-Successor8ba9da84/native8177e21c/actuala41b51e1 CLOSED120upper: actual1POST/
-6GETall200/0retry/oneclient,253known closes each/one projection/allJobsclosed.
-Header85ce54e8/payload3bc6fe39 only M:, old failed scope below unchanged.
-Data current-etf-modp1-input-domain-20261030-v1 caf5be8c/64b8ce02/c16159ab
-CLOSED60upper/no API/projection/model. Official KIS documents MODP1 as
-adjustment-on, NOT raw; issuer USD/venue facts documented. Numerical adjustment
-algorithm/dividend coverage/Tiingo parity/exhaustive CA chain/captured currency/
-provider finality remain unverified. Old NON_RANKABLE diagnostic untouched;
-prospective Engine dimensionless input policy may use facts without inventing
-units/finality or changing installed MSE/bank. Sources in exact external bundle.
-
-Galileo A/data/current-etf-current-close-native-repair-20261030-v1:
-300 active SUM/3600elapsed/MAX3 invented engineering feedback programs.
-Old current-etf-current-close-input-readiness-20261030-v1 CLOSED60upper,
-Source21d987fc/FIRSTCAUSE7adc8387/CALLBACKef211bfa. CaptureResult already
-contains query_key; duplicate kwargs TypeError before CSV/Close253 writer/parser.
-One invented page accepted100rows; actual POST/GET/projection/model/Task all0.
-This is a local constructor bug, NOT provider unavailable or token cooldown.
-Take asdict identity and assert frozen query key, never override it.
-Disjoint SYN outputs/same6query/calendar/consumer c44c6212; actual cold
-loader/client/page->CSV->Close253 writer/parser and emitted Ruff/syntax first.
-Feedback attempts retain source/failure/debits, no old namespace replay.
-Only after PASS original fixed6GET/max8GET/1freshPOST/0retry/oneclient;
-old actual0, cumulative external cap not refunded/expanded. Use valid client/
-scoped atomic+legacy fresh-token guard and measured documented pacing.
-253keys2025Oct28..2026Oct29/Oct30decision/QQQNAS+SPYAMS/MODP1;
-no fake unit1/finality/missing prices or next-session retag. Bytes only M:.
-Consumer ETF proposer2053/a1b7/d159 closed126; no duplicate model smoke/fit.
-
-Engine new OOF fusion proposal2698 selected; final Fermat contract BEFORE
-one endpoint-free derived role bundle from existing c44a/0d98 data. Per-fold
-FIT-only affines/target scales/H5 purge and exact OOF masks/keys; direct schema
-handoffs allowed. Current-close fix independent of historical OOF readiness.
-
-## Completed Data / No Repeat
-
-Existing thericher-kis-paper-daily-nas-forward Oct29UTC21:40/KST06:40 unchanged,
-Source61a9e508/session20261029/MODP1/manifest8e6eb0dd/SPY binding.
-100stocks+SPY/101plannedGET130cap/0retry/2spacing/oneclient/300freshPOSTfloor/
-245s capture. No manualTaskRun/duplicate collector.
-Cache M/us_equities/kis_paper_private/daily-nas100-spy-owned/v1/MODP=1.
-Consumer current-daily101-actual-publication-consumer-20261030-v1:
-Source32945a6f/READY3fd42931/closure6fa20c4c CLOSED110upper,
-one24x100x397 projection/98eligible/two masked/21owners9Jobsclosed.
-BTAI55/CRNX97 accepted-empty; official suspension/merger contextf23c
-CLOSED60upper is not KIS internal-cause proof. No reproject/retag.
-MSE actual CPU pointf09d/612b/a13e closed65, nativeinput9fc0/71cc/9998
-closed106, not60127ff alias. No repeated Data/model forward.
-
-ETF current-etf-expectile-data-readiness-20261030-v1 c44a723a/0d983580
-CLOSED85upper, oneJuly projection/saved verify/FIT2002 calendar/253priorcloses/
-separate FIT INNER labels/held DEV marks. CPU/GPUexpectile and CPU/GPUmean
-reuse exact data; all completed, no acquisition/projection repeat.
-July manifest64b1ffd5/Data8a9f7258/calendarfc6fdb58/snapshot7d16513e/
-dataset9ee21b6d, not August alias. PRICE_ONLY/nonPIT/dividend/finality limits.
-Full187 required12mark captureb09d actual1POST2GET200/4.775862s/1of12known/
-0retry, separate vintage/cache. Official suspension context challenges alwaysNAS
-history; no imputation/future-missing-price survivor filter/old trial rescue.
-Other old data/cursor studies remain in Git d8b02f3d/external artifacts.
-
-## Peer Admission / Separate Ownership
-
-current-oct30-research-peer-native-compatibility-20261030-v1:
-Source635ee0d1/closure361f1ee3 CLOSED120upper/21nativechecks/
-24mountpositive/33deny. Normalizer7aa5cf82/guarded402b54/admission1a7ca5eb.
-Exact source-bound owner/real CLI INTENT/STARTED ABI, no fake legacy aliases.
-Old4259/2e7/eight-mount guards unchanged.
-Component ONLY, actual queries/private/API0. Current2a0d/105d do not import it.
-Parent/Execution future reviewed claims/CONTROL/at-decision binder/cold proof
-before actual consumption; no silent trust-pin alias. Harmless future Task
-definition install does not need this; actual relevant runtime admission does.
-
-Keep 15percent D: free/warn below projected20percent, no Git market bytes.
-Missing fields stay unknown; use existing data/cursors and actual next_due,
-not foreground sleeps, imagined provider limits or global permission holds.
