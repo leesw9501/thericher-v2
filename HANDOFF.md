@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct30UTC03:26 integration.
+2026-10-30 KST / Oct30UTC04:52 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -101,9 +101,26 @@ Ohm model-capacity error replaced by Archimedes with same r4 anchor/debits.
 L /l-parent-cas-integration-r5 Source1a3a7b4e/FINAL889fe88e/CASccdff6b8
 CLOSED120upper/4of4 programs/9typedCAS+5ingresschecks/allJobsclosed.
 Real ParentApply/physical TRUE-copy callback was not exercised by that proof.
-Current /l-parent-final-copy-integration-r6 finishes that changed cold branch/
-real copy on invented target,180SUM/MAX3tinyfeedback, no old90s/9case repeat.
-Parent actual L migration still pending. No fifth r5 program or fake owner.
+R6 Source555d9afd/FINALfce341eb/closure8f5d46fb CLOSED90upper/3programs,
+exactcopy proof81995240 from immutable Source e70d2825 snapshot,9checksPASS.
+Seven public refs/three unchanged producer files independently checked.
+Optional broader ParentApply mock FAILED, not regraded: dot-sourced common
+local functions were not replaced by global fixture substitutes. One actual
+original routing mutex briefly acquired/released, no Task/private/API/copy;
+inner mock message remains unknown. Source inference, not recovered exception.
+Actual Parent cold fresh startup and exact live L metadata probe64277c8a passed.
+
+L original Task UPDATE4 is now ACTUAL/CONSUMED:
+/l-parent-activation-r1/actual/held-apply/RESULT.json
+57218fe90464ad62cfbd169273210cb59e62f11fdd524e8bc4e194eeaa3ff15c.
+Independent current readback4d72bb91/8.387476s/exit0/Jobempty/mutexreleased.
+Factory1a3a7b4e/graph5862/common5491; original19:55/wholeXML/API7/history/
+enabled/quiet launch/otherTasks/financial origins retained; no Run/broker calls.
+Parent explicitly adopted required copy+typed+actual metadata boundaries,
+not failed optional broader mocks. TRUE from Parent r1, source/authority/
+retirement roles checked; fresh census held SAME original routing mutex before
+copy/update/readback. Never replay apply_once or consume this update twice.
+Archimedes next existing strict outcome-reader readiness; no private read now.
 
 Original Nov4 SAME-task UPDATE4 is ACTUAL/CONSUMED:
 A/execution/current-memory100-original-exit-parent-integration-20261030-v1/r7
@@ -165,8 +182,17 @@ Old diagnostic remains unchanged. New H20 provisional point2fdb7ed0/
 FINAL42ff317c/PROPOSALd5804301/closure6e01d4cf COMPLETE185upper:
 two CPU current restores/forwards/no fit/readout/reacquisition, SPYselected,
 UNALLOCATED/UNROUTED/allow_execute=false. Never retag/reforward.
-Lovelace current H20 existing-dispatcher compatibility300/MAX3, source-only;
-actual OPEN[e+20]/21inclusive sessions/holidays/earlyclose, NOT H5alias.
+Canonical singleETF code is COMPLETE, not deployed:
+A/execution/current-etf-h20-canonical-serial-leg-20261030-v1,
+Source3dd52654/FINAL4684af0a/native85051278/closure6240c22f.
+Two frozen tracked additions kis_paper_single_etf_leg.py9fa8fe10 and test090f912f;
+22new/198existing focused PASS, real existing owner/bank/native classes in two
+invented entry+ownedexit rounds. Persist control/entry/H20 duty before effects,
+exact restart only; no new bank, QQQ alias or all-flat prerequisite.
+SPY/AMEX only; explicit OPEN[e+20]=21inclusive sessions, Oct30->Nov30UTC14:30,
+not legacy20inclusive/H5. Same canonical-owner lot ambiguity withholds that
+exit only. Runtime guarded1006 capsule/per-wire guards/registry still needed.
+Lovelace owns finite operational-worker preparation, no actual deployment yet.
 
 OOF current-etf-chronological-fusion-development-20261030-v1:
 contracte586380c/Sourcea11ce5da/FINALb5db5fe1/closureface715c CLOSED1890upper/
@@ -184,25 +210,63 @@ Older GPUmean471/GPUexpectile457/CPUmean205/CPUexpectile359/Data85/
 denseH1638.351/full187664/ETF526f224 and other models remain immutable.
 Reused PRICE_ONLY studies are not dividends/PIT/totalreturn/independent alpha.
 
-Intraday volume/H60 CatBoost14 now FROZEN bb73256e/custodye33db3e3,
+Intraday volume/H60 CatBoost14 contract bb73256e/custodye33db3e3,
 1500SUM/7200elapsed/oneCPUfit/0retry/tenproxycells. Simplified M1-only14features,
 no5m role join. Data af12ce32/READY4c8190ac/closure9aadcea3 COMPLETE120upper/
 oneprojection/7births3Jobsclosed/API0;1008FIT+396INNER supervised,24/9sessions
 with>=20origins,420DEVfeatures+pairedpaths known/all2646keys retained.
 Actual FRAME+00:00, not proposal's unverified+09assumption. Engine combined
 real solver/checkpoint/proxy native before fit; Data recent partial-session
-cursor review/repair separate, no mutation of this closed input. Kepler dated
-foundation proposal next after sharedkernel handoff, not an extra currentCBarm.
-No new operator approval for this private no-cost work.
+cursor review/repair separate, no mutation of this closed input. Actual family
+28774696/FINAL8a353258/closureb6f3f7a1 CLOSED465upper/onefit38updates/BEST14;
+ten cells NONINFORMATIVE, no volume feature used. Do not repeat fitting.
+
+Dated univariate Chronos policy family67246b66/Source3ab6d61e/FINALce54bb8e/
+closureeb8f4fb3 CLOSED486upper:1load/14GPUforwards/420contexts/0fits/0retry/
+two cells/all workers and lease closed. Thirteen long signals across3sessions
+below20/8 support, NONINFORMATIVE;10bp/leg growth-0.2773997percent,
+20bp-0.4930246percent. Median-ratio heuristic is not expected profit.
+OPEN120 Data695d9bc8/READYed569b4e/closure98f892e4 CLOSED100upper:
+oneprojection/420known/context payloadd8d7ba17, actual codec/consumer native.
+Exact2025 Chronos revision95a971/ddcda precedes2026targets; corpus/SDK timing/
+PRICE_ONLY/finality/arrival limits remain. No duplicate restore/readout.
+Fermat now owns past-context multivariate native (synthetic only) and final
+adoption of Kepler LoRA proposal90db70a9/7f0b36cb. No LoRA fit yet evidenced.
+Time-only Q/V regex must match24modules/73728trainables; missing PEFT is fatal,
+never silent full-finetune fallback. Routine compatible isolated free setup is
+delegated, not operator approval. New FIT/INNER full62-future roles still needed.
+
+Galileo singleton probe b9e78a8a/ef0a33a7/97e9b4d4 CLOSED100upper/1POST2GET:
+QQQOct7 12:42 still UNKNOWN after adjacent1243/1244 keys; no repeated consumed
+requests or global source-floor inference. Current retained cash-distribution
+source readiness may proceed independently, not a retroactive H20 regrade.
+
+Peer publication repair f81e70e4/9d33b883/fe713233/f1bd9243 CLOSED60upper/7cases.
+Fullcaller a31723cf/03d0914f/be623169 CLOSED180upper/4programs/15checks,
+L template FAILED exact excluded_until field mismatch; NOT complete authority.
+Dewey owns exact L release-schema completion. Current installed MSE2a0d/105d
+and L5862 remain unchanged; real reviewed public records and fresh source-safe
+Task snapshots/owner closure are still required before any successor update.
+No allow-all-process bypass or all-Data/GPU quiescence requirement.
+
+Outcome-reader a3f3dcd callback CLOSED153upper/MAX3, exits0/20/20, no actual
+private/API/Task reads. Proven new L adapter _book invoked locking Store.read;
+not a native writer defect. Prepared lockless correction is untested. Archimedes
+owns separately bounded lockless completion/MSE exact parser/factory native,
+not replay of old MAX3 or permission to read private state yet.
+No new operator approval for these private no-cost packages.
 
 ## Verification / Continuation
 
-Fresh A/verification/current-oct30-original-exit-recovery-integration-20261030-v1
-SOURCEd428ccaf/RESULTe73c9dbe:209serialPASS1knownWindowslinkSKIP/22.02s;
-19597fullPASS26knownskip35warnings/397.10s/created8of8/8workers[19623]/
-helper0/verifiedchild+leasecleanup/Ruff/3Compose .env.example/17609joinedexit0.
-Protected1416 exact independently verified. Prior d428/0b55 remains historical
-passing authority; old39bfc/7638 has no current-policy match.
+Fresh A/verification/current-single-etf-native-integration-20261030-v1:
+SOURCE934f30b08a9d61fa85780ff173c9caa02d8158cb35a078712358bdda089bfccf,
+RESULT63803768751548b93154c67c5322b0a247d88ccf8730f42161842f00dae90153.
+231serialPASS1knownWindowslinkSKIP/23.11s;
+19619fullPASS26knownskip35warnings/402.37s/created8of8/8workers[19645]/
+helper0/verifiedchild+leasecleanup/Ruff/3Compose .env.example/71510joinedexit0.
+Protected1418 are prior1416 unchanged plus exactly two frozen ETF additions.
+Prior d428/e73c and d428/0b55 remain historical passing authority, not current
+1418 reuse; old39bfc/7638 has no current-policy match.
 Changed external helpers have actual separate native proofs; repo tests cannot
 prove external effects. Material recovery integration follows AGENTS verification.
 Keep company UNFINISHED until actual runtime decision/reconciliation.

@@ -1,10 +1,31 @@
 # Strategy Research Stateboard (전략 탐색)
 
-2026-10-30 KST / Oct30UTC03:26.
+2026-10-30 KST / Oct30UTC04:53.
 A=D:/thericher-v2/model-artifacts. Kepler proposals; Engine final contracts/
 fits/interpretation. Parent shared MD/Git. No broker/credential/risk authority.
 
 ## Current Executable Proposal
+
+Dated foundation proposal7406d77d/f7379675/EVIDENCE7d7be421 COMPLETE120upper,
+Claude SOUND_WITH_LIMITS. Engine has separately frozen Chronos2 OPEN120/q50OPEN62
+policy family1020SUM/no fitting/max14marketforwards/two cells. Fixed marginal-
+median ratio lead2->62, NOT expectedprofit or returnquantile. Exact2025weights
+95a971/ddcda before2026targets; SDK2.3.2 later, no historicaldeployability claim.
+Actual univariate family3ab6d61e/ce54bb8e/eb8f4fb3 now CLOSED486upper,
+14GPUforwards/420contexts/0fits/two cells/NONINFORMATIVE13longs3sessions.
+Data695d/ed56/98f8 and real native739d/c8ba completed; no old forward/readout
+repetition, automatic new ensemble arm or performance promotion.
+
+Current concrete LoRA proposal:
+current-intraday-chronos-adaptation-next-proposal-20261030-v1,
+Source90db70a9/PROPOSED-CONTRACT7f0b36cb/EVIDENCE0f79ebe6,
+CLOSED150upper/sourceonly/Claude SOUND_WITH_LIMITSff930849.
+One rank2 time-only self_attention.q/v adapter; regex excludes group-attention
+modules, exactly24modules/73728trainables. MissingPEFT must fail, never SDK full
+fallback. Engine owns final full62-support/splits/caps/native/fit interpretation.
+Kepler may implement disjoint pure helper under final Engine caps; no own GPU
+dispatch/marketfit. No historical deployability claim: exact2025
+weights predate2026targets but SDK/code and unknown corpus limitations remain.
 
 A/research/current-intraday-m1-model-next-proposal-20261030-v1/
 PROPOSED-CONTRACT.json: QQQ volume-conditioned direct-net H60, one shallow
@@ -12,8 +33,9 @@ CPU CatBoost14. Existing numeric retained panel3b1b/95ba,120pastminutes/5minute
 stride/60minute target,14price/relative-volume/time features. Fixed price-only
 relative-reversal/QQQ/SPY/cash references; chronological whole-session roles,
 future-path-held dimensional research proxy, no original bank accounting claim.
-Engine final dedup/split/support/finite budget BEFORE new roles/fitting.
-Proposed1500SUM/7200elapsed/onefit/0retry/ten cells, no window/seed/cost rescue.
+Engine froze bb73256e before roles/fitting; actual CB family2877/8a35/b6f3 now
+CLOSED465upper/onefit38updatesBEST14/ten cells/NONINFORMATIVE, no volume feature
+used. No refit, window/seed/cost/threshold rescue. Shared kernel is unchanged.
 Actual historical arrival/unit/CA/finality limitations remain explicit.
 
 Distinct mechanism is volume-conditioned arithmetic net-return interaction,

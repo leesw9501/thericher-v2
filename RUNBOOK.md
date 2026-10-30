@@ -33,7 +33,10 @@ independent current wholeXML/API7/history/newSource readback PASS.
 Original times Oct30UTC19:45/19:49, quietpythonw/argsidentity/bank retained.
 NEVER repeat prepare_parent.py --apply, actual namespaces or oldr3attempt.
 This is routing metadata, not custody/fill/profit.
-L19:55 still needs own actual Parent update after sourcequalified r5 readiness.
+L19:55 also ACTUAL/CONSUMED: full-caller-root/l-parent-activation-r1/
+actual/held-apply/RESULT57218fe9, independent readback4d72bb91;8.387476s/
+Jobclosed/mutexreleased/wholeXMLAPI7history unchanged. Runtime5862/factory1a3,
+no Run/broker. NEVER replay apply_once. No owned fill/PnL inferred.
 
 Common owner fix is explicit Utility/Management import plus strictUTF8 native
 Docker stdout/stderr. OldhiddenJob defaultdecode50of57validJSON versusUTF8
@@ -43,10 +46,12 @@ not saved static booleans/all research-data-GPU quiescence. Runtime financial
 account/basis/bank/quote/orderability/unknown/observer checks remain mandatory.
 
 L full-host r4 graph586237af/Native8e10a673/FINAL72237fdb/closurecfbf PASS230upper/
-7Jobs/CIDclosed; no more90s fullnative. Current Archimedes l-parent-cas-
-integration-r5 changed ingress/owner/CAS300/MAX4tinyfeedback. No actualLrelease
-orTaskmigration yet. Old /l-probe-r2 component25cases+6CAS,597.497host and
-349.491timing progress stay immutable; no source proof as actual deployment.
+7Jobs/CIDclosed; no more90s fullnative. R5 1a3a/889f/ccdff closed120/typed9+
+ingress5;R6 555d/fce3/8f5d closed90/realcopy9 from e70dsnapshot/81995240.
+Broader R6 mock FAILED and briefly acquired/released actual routing mutex,
+no Task/private/API/copy; do not call it complete ParentApply mock PASS.
+Parent separately adopted exact cold/metadata/copy/typed boundaries, actual
+update/readback above. Old25+6/597.497/349.491 failures/progress stay immutable.
 
 Original Nov4 actualUPDATE4:
 A/execution/current-memory100-original-exit-parent-integration-20261030-v1/r7,
@@ -89,27 +94,44 @@ each/asofOct29/decisionOct30. MODP1 means adjustmentON officialcaf5 facts,
 numeric Tiingo/CA/finality parity unverified.
 H20 current point2fdb/42ff/d580/6e01 COMPLETE185upper/twoCPUforwards,
 allow_execute=false/UNALLOCATED/UNROUTED. No retag/forward/reprojection repeat.
-Lovelace future existing-dispatcher compatibility300/MAX3sourceonly must use
-explicit OPEN[e+20]/21inclusive sessions/holidays/earlyclose, no H5alias/newbank.
+Canonical singleETF3dd52654/4684af0a/native85051278/closure6240c22f code complete,
+not deployed. Frozen new module9fa8fe10/test090f912f; SPY/AMEX only, existing
+bank/owner/native per-wire binding, immutable entry/H20 duty before effects.
+Explicit OPEN[e+20]/21sessions/holidays/earlyclose, Oct30->Nov30UTC14:30.
+Current finite operational-worker preparation is source/SYN only; no actual
+command to run a strategy, retag expired point, new bank or MSE replacement.
 
 OOF7 e586/a11c/b5db/face CLOSED1890upper; H20D2 d9aa/5e53/6b5d/7040 CLOSED979upper.
 All GPU/CPUworkers/leases closed; primaryclaims did not pass, noindependentalpha.
 Syntheticthroughput e014/582e/2885 CLOSED103upper currenttinygeometryCPU2~3xGPU;
 not a globalGPUban. Oldclosedmodels/debits retained, no duplication.
-Next finalEngine intradayvolume/H60CatBoost14 on existingM1panel, proposed1500SUM/
-7200elapsed/onefit/0retry/tenproxycells. Data one derived role family AFTERfinal
-freeze, direct role handoff. No marketpayload/fit just from a proposal.
+CB14 bb73/2877/8a35/b6f3 CLOSED465upper/onefit38updatesBEST14/ten cells/
+NONINFORMATIVE. Chronos univariate6724/3ab6/ce54/eb8f CLOSED486upper/
+14GPUforwards/420contexts/0fits/two cells/NONINFORMATIVE, all workers closed.
+Data OPEN120695d/ed56/98f8 CLOSED100upper; no duplicate fitting/projection/readout.
+Current Fermat past-context native invented-only; proposed time-only LoRA
+90db/7f0b needs final Engine full62-support contract and real optimizer/checkpoint
+smoke before market. MissingPEFT fatal/no fullfallback; routine compatible
+isolated free setup delegated, not a framework replacement or operator hold.
+
+Outcome reader a3f3dcd CLOSED153/MAX3 with new adapter locking-helper fault;
+current lockless completion is NOT yet actual read authority. Parent actual
+per-cohort financial-writer admission/networknone/allRO/stability still needed.
+Peer r2 f81e/9d33 CLOSED60/7cases; fullcaller a317/03d0 CLOSED180/15checks/
+LtemplateFAILED. Current schema completion does not change installed Sources.
+Future adoption requires real reviewed record+planrefs/fresh exact Task snapshots/
+positive relevant owner closure, not all Data/GPU quiescence.
 
 ## Verification / Resume
 
-Fresh full A/verification/current-oct30-original-exit-recovery-integration-20261030-v1
-SOURCEd428ccaf/RESULTe73c9dbe:209serialPASS1knownskip22.02s;
-19597fullPASS26knownskip35warnings/397.10s/created8of8/8workers[19623]/
-helper0/verifiedcurrentchild+leasecleanup/Ruff/3Compose .env.example/17609joined0.
+Fresh full A/verification/current-single-etf-native-integration-20261030-v1
+SOURCE934f30b0/RESULT63803768:231serialPASS1knownskip23.11s;
+19619fullPASS26knownskip35warnings/402.37s/created8of8/8workers[19645]/
+helper0/verifiedcurrentchild+leasecleanup/Ruff/3Compose .env.example/71510joined0.
 Old39bfc/7638 is prior only, no current-policy match.
 Exact-source check:
-`& 'D:/thericher-v2/model-artifacts/verification/current-oct30-original-exit-recovery-integration-20261030-v1/source.ps1' -Mode verify`
-Protected1416 exact; independently test changed external helpers. Material recovery/
+`& 'D:/thericher-v2/model-artifacts/verification/current-single-etf-native-integration-20261030-v1/source.ps1' -Mode verify`
+Protected1418 = prior1416 unchanged plus two ETF additions; independently test changed external helpers. Material recovery/
 tracked/control integration follows AGENTS required verification. Repeated repo
 suite is not proof of external financial effects. Recheck actual owners/time/
 exact immutable outcomes after interruption; no age reclaim/zeroes from missing.

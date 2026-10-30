@@ -1,10 +1,32 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-30 KST / Oct30UTC03:26.
+2026-10-30 KST / Oct30UTC04:53.
 A=D:/thericher-v2/model-artifacts. Fermat Engine/sole resource Steward.
 Parent shared MD/Git. Reused PRICE_ONLY data, not independent alpha/total return.
 
 ## Current Ready Work
+
+Current-intraday-dated-foundation-policy-development-20261030-v1 COMPLETE:
+contract67246b66/Source3ab6d61e/FINALce54bb8e/closureeb8f4fb3 CLOSED486upper,
+1load/14GPUforwards/420contexts/0fits/0retry/two cells/all workers/lease closed.
+13longs/3sessions below20/8support: NONINFORMATIVE. Growth10bp-0.2773997percent,
+20bp-0.4930246percent; growthfail/riskpass/supportfail, not profitable evidence.
+Data695d9bc8/ed569b4e/98f892e4 CLOSED100upper/420known/actualcodec handoff.
+Native739d/c8ba realCUDA proof carried once; no duplicate model/role/readout.
+SDK2.3.2/2025checkpoint95a971/ddcda/Apache2 predates2026targets, SDK later;
+corpus/PRICE_ONLY/arrival/finality limitations remain. Median-ratio lead2->62
+is a heuristic, NOT expectedprofit/returnquantile/independent alpha.
+
+Current Fermat past-context multivariate native: invented32origins/3variates,
+actual96batch/onecoreforward/past-only SPYOPEN+QQQrelativevolume, future62NaN.
+Exact masks must block cross-origin attention; no silent univariate fallback.
+Native-only current contract180SUM/1800elapsed/MAX2, hard04:57:23UTC.
+Kepler LoRA proposal90db70a9/7f0b36cb/0f79ebe6 is advisory, not a frozen fit:
+one rank2 time-only Q/V regex, exactly24modules/73728trainables/basefrozen.
+MissingPEFT fatal, no SDK silent fullfallback. Engine owns final chronological
+FIT/INNER OPEN182/full62-support contract and actual optimizer/checkpoint smoke
+before market; Data/Kepler coordinate directly. Compatible isolated free setup
+delegated. Proposed400updates/onefit is not proof of convergence or active GPU.
 
 Current-intraday-m1-volume-net-h60-development-20261030-v1 is FROZEN:
 contractbb73256e/custodye33db3e3/Datarequestcf05c7ea,1500SUM/7200elapsed/
@@ -14,7 +36,11 @@ no5m runtime join;120pastminutes/5minute stride/60minute labels/whole-session
 chronological roles/nominal60s availability. Actual roles af12ce32/READY4c8190ac/
 closure9aadcea3 COMPLETE120upper:1008FIT/396INNER supervised,24/9sessions with
 at least20origins,420DEV features+pairedpaths known. All2646keys retained.
-Engine combined actual solver/checkpoint/proxy native BEFORE one fit/readout.
+This CB family is now CLOSED465upper: marketSource28774696/FINAL8a353258/
+closureb6f3f7a1, native983fc6ea. Onefit0.245s/38updates/BEST14, tenfixedcells/
+threepredicts/oneDEVseal/onepathread/0retry. PrimaryNONINFORMATIVE, no volume
+feature used/NO_VOLUME_MECHANISM_EVIDENCE. No active worker/GPUlease created.
+Do not repeat fitting, threshold or readout. No economic/Paper promotion.
 Future-label completeness cannot select prior actions. Aware FRAME is actually
 +00:00; parser accepts aware offsets, not proposal's unverified+09 assumption.
 Units/finality/actual historical arrival unqualified.

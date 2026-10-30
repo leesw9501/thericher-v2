@@ -29,28 +29,47 @@ profit refill, foreign adoption or substitute unknown request.
    original routing mutex held across fresh scoped census/update/readback;
    whole XML/API7/history/quiet launch/other Tasks preserved. No Run/broker call.
    Original Oct30UTC19:45/19:49 exit duties unchanged; NEVER repeat apply.
-3. Execution/Archimedes: L full host r4 is qualified586237af/8e10a673/
-   FINAL72237fdb/closurecfbf8a62,230upper/7Jobs/CIDclosed; no90s rerun.
-   Current l-parent-cas-integration-r5 adapts actual L ingress/routing producer/
-   same-Task two-field CAS using common qualified owner5491. Parent actual
-   L release/admission/update still pending; original Oct30UTC19:55 retained.
+3. Parent L original exit UPDATE4 is ACTUAL/CONSUMED: full-caller root/
+   l-parent-activation-r1 actual RESULT57218fe9/independent readback4d72bb91,
+   8.387476s/exit0/Jobempty/mutexreleased. Runtime586237af/native8e10a673,
+   factory1a3a7b4e/common5491 unchanged; original19:55 and financial origins/
+   bank/unknowns retained. No Run/broker calls; NEVER replay apply_once.
+   Required real-copy9+cold boundary proved by r6/e70d snapshot/81995240;
+   optional broader mock failures remain FAILED, not whole-branch PASS.
+   Archimedes next exact outcome-reader readiness, not another exit rerun.
 4. Execution/Lovelace: F9 distinct-date diagnostic is CONSUMED, resultcfcc0979.
    Source360ae2cb/native69516686, actual1POST1GET/24.7743s/zero rows/four
    admissions PASS/private-source stable/Jobsclosed/CIDabsent. Original NYOct19
    versus distinct KST-hypothesisOct20 does NOT resolve acceptance/fill/terminal.
-   F9 stays UNKNOWN-HELD. No repeat query/reservation release. New H20 existing-
-   dispatcher compatibility300SUM/MAX3 tiny feedback/noactualprivateAPI/Task:
-   actual producer->proposal->native intent/sizing, explicit OPEN[e+20] calendar,
-   ONE existing account-owned serial writer, no new bank or MSE swap.
-5. Engine/Steward/Fermat: intraday volume-conditioned direct-net H60 CatBoost14
-   family is FROZEN bb73256e/custodye33db3e3,1500SUM/7200elapsed/oneCPUfit/
-   0retry/ten proxy cells. Simplified M1-only features, no5m runtime join.
-   Data actual roles af12ce32/READY4c8190ac/closure9aadcea3 COMPLETE120upper/
-   one projection/7births3Jobsclosed/API0.1008FIT/396INNER supervised;
-   420DEV features+paired paths known, all2646keys/partial masks retained.
-   Engine combined real solver/proxy native BEFORE one fit/readout. Data next
-   recent missing-session repair is separate, never changes this closed input.
-6. H20 provisional current point is COMPLETE, not allocated/routed:
+   F9 stays UNKNOWN-HELD. No repeat query/reservation release. Canonical H20
+   singleETF code3dd52654/4684af0a/native85051278 is complete, not deployed.
+   Lovelace now prepares real finite operational worker/guarded1006 capsule,
+   producer->persisted intent/native per-wire binding/serial registry/exit duty.
+   SPY/AMEX only, explicit OPEN[e+20]=21sessions; ONE existing account-owned
+   writer/bank, no MSE swap/QQQ alias/retag of an expired Oct30 point.
+5. Engine/Steward/Fermat + Kepler/Galileo: dated univariate Chronos2 heuristic
+   family67246b66/3ab6d61e/ce54bb8e/eb8f4fb3 CLOSED486upper/14GPUforwards/
+   420contexts/0fits/two cells/NONINFORMATIVE, all workers closed. Data695d9bc8/
+   ed569b4e/98f892e4 CLOSED100upper/420known. Do not duplicate completed work.
+   Current past-context multivariate native is synthetic-only; final LoRA
+   proposal90db70a9/7f0b36cb adoption/full62 FIT-INNER roles/real optimizer and
+   checkpoint native must precede new fitting. Time-only Q/V24modules/73728
+   trainables; missingPEFT fatal, no fullfallback. Routine compatible isolated
+   free setup delegated. Ratio of marginal medians is NOT expected profit;
+   reused2026DEV/post2025checkpoint/unit/finality limits remain.
+   Closed CB14 bb73256e/28774696/FINAL8a353258/closureb6f3f7a1:465upper,
+   onefit38updates/BEST14/ten cells/NONINFORMATIVE/no volume features used.
+   Do not refit/regrade/rescue threshold. Old Data af12/4c81 stays unchanged.
+6. Execution/Dewey: actual MSE/L actor code rejects an attested public worker
+   as actor_unregistered. R2 f81e70e4/9d33b883/fe713233 CLOSED60/7cases;
+   fullcaller a31723cf/03d0914f CLOSED180/15checks/LtemplateFAILED exact release
+   field mismatch, not complete runtime authority. Finish changed L schema,
+   then Parent source/task adoption needs real reviewed records/current source-
+   safe Task snapshots/positive relevant owner closure. No allow-all-Python or
+   all-GPU quiescence gate. Installed sources unchanged until actual update.
+   Archimedes old reader a3f3dcd CLOSED153/MAX3; proven new adapter lock misuse.
+   Separate lockless completion/MSE parser native/factory remains needed.
+7. H20 provisional current point is COMPLETE, not allocated/routed:
    Source2fdb7ed0/FINAL42ff317c/PROPOSALd5804301/closure6e01d4cf,185upper,
    two current CPU restores/forwards, no fit/readout/Data reacquisition.
    DecisionOct30/asofOct29; no next-session retag or extra current forward.
@@ -64,11 +83,11 @@ interpretable native decision/reconciliation, not a scheduled future due time.
 No profitability/all-flat gate. An unknown F9 does not disable another correctly
 bounded proposal inside the unchanged shared envelope.
 
-Fresh full authority A/verification/current-oct30-original-exit-recovery-
-integration-20261030-v1 Source d428ccaf/RESULTe73c9dbe:209serialPASS1knownskip/
-22.02s;19597fullPASS26knownskip/397.10s/created8of8/8workers[19623]/helper0/
-verified cleanup/Ruff/3Compose .env.example/17609joinedexit0.
-Protected1416 match independently checked.
+Fresh full authority A/verification/current-single-etf-native-integration-
+20261030-v1 SOURCE934f30b0/RESULT63803768:231serialPASS1knownskip/23.11s;
+19619fullPASS26knownskip/402.37s/created8of8/8workers[19645]/helper0/
+verified cleanup/Ruff/3Compose .env.example/71510joinedexit0.
+Protected1418 = prior1416 unchanged plus exactly two ETF source/test additions.
 Use exact-source reuse only as AGENTS permits; changed external helpers need
 their own real native checks. Material recovery integration follows required
 verification, then commit/push. Do not repeatedly test unchanged code as proof

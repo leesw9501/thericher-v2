@@ -1,17 +1,31 @@
 # Research Steward Stateboard (연구 자원·실험 관리)
 
-2026-10-30 KST / Oct30UTC03:26.
+2026-10-30 KST / Oct30UTC04:53.
 A=D:/thericher-v2/model-artifacts. Fermat sole resource coordinator/custody.
 Project first GPU priority; useful concurrent workers allowed, no app killing
 or name allowlist. Resource permission is delegated, not a model-choice gate.
 
 ## Current Queue
 
-Current CPU CatBoost14 volume/H60 contractbb73256e/custodye33db3e3 is frozen,
-1500SUM/7200elapsed/onefit/0retry/ten proxy cells. Data af12ce32/4c8190ac/
-9aadcea3 COMPLETE120upper/oneprojection; combined native before actual fit.
-No GPU arm just for occupancy; no old completed fit. Kepler dated foundation
-proposal may supply a separately frozen useful GPU job, not an extra CB arm.
+CB14 volume/H60 bb73256e/28774696/8a353258/b6f3f7a1 CLOSED465upper/onefit/
+38updates/BEST14/0retry/ten cells/NONINFORMATIVE, no volume used. CPUfit0.245s,
+all workers closed/GPUleases0, not a task waiting for more epochs.
+
+Univariate Chronos67246b66/3ab6d61e/ce54bb8e/eb8f4fb3 CLOSED486upper,
+1load/14GPUforwards/420contexts/0fits/0retry/two cells/NONINFORMATIVE.
+Actual2CIDs/14CLIJobs/16births/lease positively closed. Data695d/ed56/98f8
+CLOSED100upper/420contexts. No duplicate load/forecast/readout.
+Native739d/c8ba one synthetic CUDA call101upper carried once. Exact2025weights
+95a971/ddcda predate2026targets; corpus/SDK/unit/finality limits unchanged.
+
+Current ready: Fermat past-context multivariate native only, 180SUM/1800elapsed/
+MAX2/hard04:57:23UTC, source/actual resource evidence required before saying
+CUDA is running. Next LoRA proposal90db/7f0b is not yet final fit authority.
+Engine must freeze actual full62 FIT/INNER support and native optimizer/BEST/
+LAST/safetensors/coldrestore, exact24time-onlyQ/V/73728trainables. MissingPEFT
+fatal; compatible isolated free dependencies delegated, no global runtime swap.
+Kepler purehelper and Galileo Data may hand off directly inside final caps.
+Maintain measured desktop reserve4GiB; useful concurrency allowed, no appkill.
 
 All actual OOF/H20 training below is COMPLETE/CLOSED, not currently running:
 - OOF familye586/a11c/b5db/face:1890upper/7fits. Three TCN fold children really
@@ -44,5 +58,5 @@ Execution emergency checkpoint/yield safely, preserve failure/debits.
 
 No agent/resource platform. Private-custody writer admission is separate from
 GPU ownership. Future Task definitions do not require all research to stop;
-effect-time risk remains mandatory. Full d428/0b55 authority and independent
+effect-time risk remains mandatory. Current full934f/6380 authority and separate
 external native evidence in HANDOFF; no stale snapshot as a fresh resource lease.
