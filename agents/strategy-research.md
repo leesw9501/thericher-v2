@@ -23,7 +23,12 @@ family under Fermat final freeze/custody; old source-only proposal remains
 source-only. Disjoint writes/actual numerical authority follow the final contract,
 not this MD or a favorable advisory. Real producer/file/parser/feature-label/
 SVD/safe checkpoint/nativeLocalPaper/accrual+cold consumer before market data.
-Native/SYN/source readiness is not evidence an actual fit or replay ran.
+Actual CPU family now CLOSED505upper: Source57b17ff5/FINAL071f243f,
+oneSVD/oneDEVforecast/pathintake/14cells/NONINFORMATIVE. Seven of25 origins
+filled and8.8549percent exposure mismatch; no old regrade or threshold rescue.
+Kepler next helps Fermat source-only execution-mechanism diagnosis, not another
+fit. Engine worker closure positive; two Data coordinator births not retained,
+not invented. Native/source readiness alone is not market evidence.
 
 Raw2014..25 source plus ordinary e<exdate<=exit gross receivable proxy only.
 Retained source b1cca7ab/d9372d90/2b0ea675/59649327:3018sessions each,

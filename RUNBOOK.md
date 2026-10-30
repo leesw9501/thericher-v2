@@ -118,22 +118,33 @@ LoRA150d/34bb/28dc/9485 COMPLETE536.972upper/oneGPUfit400updatesBEST400/
 CLOSED100/oneprojection/1008FIT384INNER. Depth3f58/882d/3d39/9df7 CLOSED353.773,
 1100NEWupdates/BEST1000/patience4/95.997s/ZERODEV. Both allworkers/lease CLOSED,
 never replay prefix/fits/forecasts/readouts. Imagef14fb8ba/95ba068b unchanged.
-Current CPUcomposition50a861ee/1500SUM/hard07:05:06 and future separatelyfrozen
-past-context market family are independent, not current Paper profitability gates.
+CPUcomposition50a861ee/57b17ff5/071f243f CLOSED505upper/oneSVD/14cells:
+NONINFORMATIVE7of25filled/8.8549percent exposure mismatch. Source mechanism
+review next, not repeated fit/readout or relaxed old criterion. Past-context
+policy02a92735 CLOSED399/900 before payload/model, missing Linux mapping of
+old Windows codec. Named remaining501 technical continuation/native first;
+not scientific rejection/GPU ban. Neither is a Paper profitability gate.
 
 NAS8pilotd009/6d29 actualRESULT STOPPED05:41:02 after39GET(38success1rate500)/
 1POST/38AAPLpages4560rows5completeRTH, workers9456/17532 positively absent/
-cachelockreleased. StalePROGRESS RUNNING is NOTactivity. Data new bounded
-continuation/supervision repair retains39debit/cursor/cap60075each/noSource
-floor inference. ActualoldRateGate2s; do not silently revert to1.25 or reset
-token/cache state. Role callback/source-qualified owner+terminal reader, no new
-recurring monitor or blind duplicate collector.
+cachelockreleased. Continuation0ea7/e4be/a82f CLOSED551.269s/243GET1POST/two
+recoveries at550s cap; cumulative282GET2POST, partial not provider floor.
+Current current-nas8-rth20-acquisition-20261030-v1 targets20prior completeRTH
+throughOct29/sameNAS8/breadth-first/reuse. Max1200additionalGET/200each/
+onefreshPOST/3600SUM/5400elapsed/eight boundedGETretries, onecollector/2sstarts/
+validtokenreuse/workerownedcooldown. Native error/resume/terminal first; TTL
+accounts for pacing/I/O, no550s brake. Olddebits/unused318 not refunded.
+Terminal wins over staleprogress; no standingmonitor/Task/duplicatecollector.
 
 Outcome reader a3f3dcd CLOSED153/MAX3 locking-helper fault; lockless9d9a677c/
 QUAL6192df63 CLOSED360/MAX4 now MSE+L native readiness only. Factory72292306
 still needs actual fresh per-cohort admission/boundedJob/networknone/allRO/
-stability. GRU/TFM olderSDK ABI withheld; stock-compat continuation not a hold
-on qualified MSE/L. No actual financial read yet.
+stability. GRU/TFM stockcompatd687/d3e6 CLOSED300/43checks. Actualreaderb61f/
+45c6 CLOSED420upper: stable admittedGRU/TFM oneeach, targetsUNKNOWN because
+projection discarded categorical reasons. L withheld beforecreate, MSE due.
+Changed reason/current-custody repair next; Parent ClaudeREVISE0925 supports
+complete fresh writerabsence/allRO/stability CURRENT-only snapshot, never
+historicalLclosure/zero fills/freshbrokerholdings/reservationrelease.
 Peer r2 f81e/9d33 CLOSED60/7cases; fullcaller a317/03d0 CLOSED180/15checks/
 LtemplateFAILED. Schema bd7f/4375/f7ca CLOSED75/7checks now qualified/not active.
 Selectionbb80 has no real normalized peer set; fixedMSE16argv kernel preparation

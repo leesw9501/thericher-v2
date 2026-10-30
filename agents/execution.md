@@ -39,9 +39,9 @@ its exit only. No QQQ alias/legacy20inclusive shortcut/adoption.
 Parent selected Oct30UTC14:15..21 provisional operational once (not research
 OPEN-fill parity), exitNov30UTC14:30..36. Genuine d580/2fdb/42ff point remains
 asofOct29/decisionOct30; never retag or overwrite producer flags.
-Current current-etf-h20-actual-host-binding-preparation-20261030-v1,
-900SUM/7200elapsed/MAX6cold, complete owner/TaskPlan/typed futurepair/native
-protocol/conditional exactMSEclosure graph still under qualification.
+Old host30b1/81a4 cold-import failed. Cold completion64ed passed host16/typed9/
+ROpacket9, Bind fixture reserved $false failed; corrected1d1f unrun at closure.
+Lovelace changed Bind/Parent handoff600/MAX6, preserve old tests/debits/no replay.
 No actual H20 Task/TRUE/effects. Future definition creation need not await
 future MSE closure; actual consumption requires exact resource/native closure,
 not technical success/fill/profit/flatness, then fresh native risk each wire.
@@ -63,23 +63,26 @@ MSE/L lockless readiness9d9a677c/QUAL6192df63/factory72292306 CLOSED360upper/
 MAX4/all28Jobs4CIDsclosed. GRU/TFM stockcompat d687a58a/QUALd3e642ad/
 GLUE082978e8 CLOSED300upper/43checks/18Jobs2CIDsclosed. Old SDK enum/
 instrument ABI adapted, old writers untouched; no MSE/L matrix repetition.
-Current invoked current-oct30-owned-reader-actual-integration-20261030-v1:
-600SUM/3600/MAX1actual offline read eachGRU/TFM/L. Actual GRU attempt recorded,
-no validated private projection yet. Exact current Source/proofs per-phase,
-fresh actual relevant financial-writer admission/networknone/allRO/beforeafter
-membership/identity/mtime/bytes/owned Job-CID closure. No broker/API/credentials/
-TaskRun/mutation. Return categorical/object counts, never shares/IDs/amounts/
-prices. Owned LEDGER is not fresh broker holdings. One withheld read is local.
+Actual readerb61f/45c6 CLOSED420upper: GRU/TFM one each fresh-admitted stable
+allRO read, all financial fields UNKNOWN. L withheld beforecreate for missing
+historicalclose; MSE deferred until due. Source reviewb638/ec6b identified
+discarded targets[].counts.reason; public bindings agree, exact cause lost.
+New changed reason/current-custody native parser repair then separately scoped
+read; no unchanged reread/API/credentials/TaskRun/recovery. Parent advisory
+REVISE0925 at current-readonly-custody-admission-challenge-20261030-v1 supports
+fresh complete actual write-capable actor absence+allRO/stability for CURRENT
+snapshot only, not historicalLclosure/terminal/freshbrokerholdings/release.
+Unknown actor/coverage/unstability denies only that read. Exact joins remain;
+no allresearchshutdown or new platform/journal.
 
 ## Coexistence / Next
 
 Fixed MSE16argv kernel108d5c5e/71361f3b/587325b5 CLOSED210upper/20checks,
 UNACTIVATED; old GRU14argv profile incompatible. Historical normalized depth
 publicationdec41e9a/1f3ed7ab is closed, not current admission.
-Dewey additive current-source-fixed-research-launcher-capability-20261030-v1
-under ClaudeREVISE76530224: pinned existing launcher/closed grammar/known
-public root+image IDs/actual OS+daemon capability checks/frozen publication
-freshness. No per-fit Task-definition churn/new platform/private-writer waiver.
+First fixed-launcher54fd/strictconsumer4de4 CLOSED420upper/twoCPU-noassets
+capsules/24Jobsclosed. Dewey assets/GPU/exact MSE metadata boundary720/MAX5
+next under ClaudeREVISE76530224; no per-fit Task churn/platform/writer waiver.
 Actual MSE2a0d/105d/L5862 stay until qualified Parent adoption. Coordinate
 H20's exact dependency before any Task write; never compete with actual reader.
 Current full934f/6380 protects1418/19619PASS26knownskip/8workers[19645]/Ruff/

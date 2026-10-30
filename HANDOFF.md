@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct30UTC06:03 integration.
+2026-10-30 KST / Oct30UTC06:55 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -61,8 +61,12 @@ Parent selected Oct30UTC14:15..21 (KST23:15..21), provisional operational once,
 NOT research OPEN-fill parity. Exit Nov30UTC14:30..36. Producer d5804301/
 2fdb7ed0/42ff317c remains asofOct29/decisionOct30/unallocated source; never retag.
 
-Lovelace owns current-etf-h20-actual-host-binding-preparation-20261030-v1:
-real scheduled-owner/TaskPlan/typed future-pair installation/native guard graph.
+Old actual-host preparation30b169c3/81a4ecd1 ended after six programs:
+cold harness failed importing pinned job_popen; production path already correct.
+Cold completionafd0f352/64ed09f2 passed host16/typedpair9/ROpacket9 but Bind
+fixture assigned reserved $false. Corrected1d1f4ae2 unrun at that close; four
+programs consumed/ten Jobs closed/zero effects. Lovelace continues only changed
+Bind/Parent handoff paths,600active/MAX6; old proofs/debits not replayed/refunded.
 No actual H20 Task/TRUE/effect qualified yet. Exact MSE resource/native closure
 is a runtime dependency, NOT success/fill/profit/flatness. Future definitions
 may be prepared before future closure. Original bank/emergency/token/gate/F9
@@ -96,11 +100,24 @@ Qualified offline readers (not actual account refresh or recovery observe):
   18Jobs2CIDsclosed/CLOSED300upper. Older enum/instrument ABI adapted without
   changing old SDKs. Existing F9 scoped admission/Job glue is SYN-qualified.
 
-Archimedes now owns current-oct30-owned-reader-actual-integration-20261030-v1:
-fresh actual source-attested relevant financial-writer admission, exact current
-graph proofs per phase, networknone/allRO/stability, at most one actual ledger
-read each GRU/TFM/L. Actual GRU attempt recorded; no validated private projection
-received by Parent yet. Source/Job/CID closure mandatory. MSE deferred until due.
+Actual current-oct30-owned-reader-actual-integration-20261030-v1 ended:
+Sourceb61f39c7/FINAL45c62bc6/callback393dafeb/CLOSED420upper. GRU and TFM
+each one fresh-admitted stable networknone/allRO ledger read; all financial
+fields UNKNOWN, not zero. Strict target reasons discarded by stock_projection.
+L withheld before create because original historical closure receipt absent;
+MSE deferred until due. Source reviewb63874ad/ec6be34e/aae0d35d confirmed public
+bindings agree but cannot recover discarded reasons;189s exceeded180 before
+closure accounting, no refund. F9 date derives from submission_started_at,
+not campaign name; public Task time is not that effect timestamp.
+Archimedes now current-owned-reader-reason-custody-completion-20261030-v1:
+native allowlisted count reasons, then separately scoped changed actual reads.
+Parent ClaudeREVISE0925ee34 at A/execution/current-readonly-custody-admission-
+challenge-20261030-v1/ADVISORY.json supports current admission separately from
+historical closure: complete both-boundary relevant write-capable actor absence,
+exact joins/allRO/stability/no ownwrites; unknown coverage/writer denies that
+read only. Current-window-only/assumed-honest-host, not OS-origin proof,
+historical closure or fresh broker holdings. No new journal/platform/global
+research stop. L remains financially unknown/non-terminal.
 Read owned LEDGER, not fresh broker holdings. Only categorical/object counts,
 never shares/IDs/amounts/prices. Unknown stays unknown; no reservation release.
 One withheld cohort does not withhold other ready work.
@@ -132,15 +149,19 @@ Never duplicate completed fits/projections/forwards/readouts.
   ZERO DEV calls/paths/cells/performance claim. All2CIDs14Jobs17births/lease
   CLOSED. No further call authorized merely by improved loss.
 
-Next breadth: current-etf-distribution-aware-composition-development-20261030-v1
-contract50a861ee frozen05:35:06/hard07:05:06/1500SUM/oneCPU SVD/14cells,
-Kepler temporary Engine CPU executor, Fermat final targets/custody/interpretation.
-Relative gross-receivable H20 mean + fixed trend half, six causal features,
-nonspendable cash overlay/common-gross balanced comparison; no old regrade.
-Proposal e6ccd8bc/aa2e7067/cb4c6792/bb78bb8f CLOSED120/sourceonly.
-Fermat next separately frozen past-context market family may use its closed SDK
-proof and one disjoint immutable-PANEL derived role; no wait on market collector,
-old replay or assumption inference equals training. Not yet market result.
+CPU composition current-etf-distribution-aware-composition-development-20261030-v1
+50a861ee/57b17ff5/FINAL071f243f/callback736b62ad CLOSED505upper: oneSVD,
+oneDEVforecast/pathintake/14cells/NONINFORMATIVE. Only7of25 origins filled,
+8.8549percent exposure mismatch; both10/20bp growth/risk criteria false.
+Engine workers closed; two Data coordinator births unretained, not fabricated
+full closure authority. Fermat/Kepler now source-only mechanism review before
+a prospective repair, no more fits or relaxed old criteria.
+Past-context policy current-intraday-chronos-past-context-policy-development-
+20261030-v1 FINAL02a92735/FIRSTCAUSE343fc36e/closurefe58f318 CLOSED399/900.
+Failed invented Data native before market/model: Windows codec missing in Linux
+mount. Named technical continuation uses remaining501 after explicit pinned
+producer/SDK RO native repair; old failed attempt/debits fixed. Not scientific
+rejection or GPU limitation.
 Image18909604 + isolated officialPEFT0.18.1 imagef14fb8ba, original Torch/CUDA/
 SDK2.3.2 unchanged; trusted Chronos2025revision95a971/ddcda predates2026targets,
 corpus/context/SDK timing/unit/finality limitations explicit.
@@ -162,17 +183,17 @@ Retained cash-event b1cc/d937/2b0e/5964 CLOSED90/API0/labels0:3018sessions each
 2014..25,48SPY50QQQcash events/no splits. Ordinary e<exdate<=exit is a gross
 proxy, not payment/tax/PIT/special-event/settled cash or old result regrade.
 
-NAS8 current-nas8-minute-pilot-acquisition-20261030-v1 d00997a7/6d2924be:
-actual worker9456/birth134378123832639925 started05:39:43, STOPPED05:41:02,
-39GET(38HTTP200/1HTTP500 rate_limited)+1POST200/38acceptedAAPLpages/
-4560rows/5completeRTHsessions. Both worker9456/owner17532 positively absent,
-cache lock released. Stale PROGRESS/RUNNING is NOT current activity; terminal
-RESULT wins. No complete NAS8 dataset. Galileo urgent bounded continuation/
-terminal supervision repair: preserve cache/cursor/old39debit/old0retry Source,
-remaining562GET with cumulative75each/600total, no source-floor inference.
-Actual old RateGate2seconds, NOT Parent's earlier1.25assumption; no speculative
-parallelHTTP until measured bottleneck supports it. Reuse client while valid;
-new process has no external-token restore API, no foreign secret-store reading.
+NAS8 old pilotd009/6d29 stopped39GET/1POST; worker/owner absent.
+Continuation0ea7/e4be RESULTa82fe794 closed551.269s/243GET/1POST/two recoveries
+at550s cap. Cumulative282GET/2POST, partial not provider floor; terminal wins
+over stale progress. Acceptedcache/cursors/debits retained; unused318 not refund.
+Galileo now current-nas8-rth20-acquisition-20261030-v1 targets20 prior complete
+RTH throughOct29 for NAS AAPL/MSFT/NVDA/AMZN/GOOGL/META/TSLA/AVGO;
+round-robin breadth/reuse first. Max1200 additionalGET/200each/one freshPOST if
+required/3600SUM/5400elapsed/eight bounded recoverableGET retries. One collector,
+measured2s starts/validclient reuse/finite ownedbackoff, native resume/terminal
+checks first. TTL accounts for pacing/I/O/backoff, no550s brake. Activity only
+from exact worker proof; no completeNAS8/CA/PIT/finality or standingTask claim.
 
 ## Throughput / Verification / Recovery
 
@@ -183,11 +204,13 @@ accepts historical depth plan dec41e9a/record1f3ed7ab, NOT current admission.
 Per-fit immutable PID rules requiring Scheduler UPDATE4 are not durable
 coexistence. Parent Claude REVISE76530224 at
 A/execution/current-research-paper-coexistence-trust-challenge-20261030-v1.
-Dewey owns additive current-source-fixed-research-launcher-capability-20261030-v1:
-pinned existing host launcher/closed grammar/known public roots+image IDs,
-actual OS/daemon identity+mount+isolation/publication freeze checks, no private
-writer waiver/new platform. Current actual Sources remain unchanged until proof
-and Parent adoption; coordinate exact MSE dependency with H20 before any update.
+First fixed-launcher54fd4689/strictconsumer4de46035 CLOSED420upper:
+two actual CPU/no-assets capsules through same launcher,24Jobs/CIDs closed.
+GPU/assets not qualified. Dewey current-source-fixed-research-capability-assets-
+gpu-20261030-v1 tests bounded declared descendants/known public roots, actual
+GPU requests/existing Steward lease and exact MSE producer-consumer boundary.
+No market fits/Task mutation/platform/private-writer waiver. Installed Sources
+unchanged until native proof/Parent adoption; H20 binds exact selected dependency.
 
 Fresh full A/verification/current-single-etf-native-integration-20261030-v1:
 SOURCE934f30b08a9d61fa85780ff173c9caa02d8158cb35a078712358bdda089bfccf,

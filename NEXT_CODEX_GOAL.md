@@ -36,7 +36,11 @@ profit refill, foreign adoption or substitute unknown request.
    bank/unknowns retained. No Run/broker calls; NEVER replay apply_once.
    Required real-copy9+cold boundary proved by r6/e70d snapshot/81995240;
    optional broader mock failures remain FAILED, not whole-branch PASS.
-   Archimedes next exact outcome-reader readiness, not another exit rerun.
+   Actual reader45c62bc6 closed: GRU/TFM each one stable RO read, all financial
+   fields UNKNOWN because target cause was discarded in projection. L withheld
+   for absent historical close record. Archimedes next retains categorical
+   parser reasons; Parent challenges current-read admission separately from
+   historical closure. No unchanged reread or unknown-reservation release.
 4. Execution/Lovelace: F9 distinct-date diagnostic is CONSUMED, resultcfcc0979.
    Source360ae2cb/native69516686, actual1POST1GET/24.7743s/zero rows/four
    admissions PASS/private-source stable/Jobsclosed/CIDabsent. Original NYOct19
@@ -61,10 +65,14 @@ profit refill, foreign adoption or substitute unknown request.
    Actual Data4db1/c3ab/06b1/b7b5 CLOSED100/oneprojection/1008FIT384INNER.
    Warm depth3f58/882d/3d39/9df7 now COMPLETE353.773upper/1100NEWupdates/
    BEST1000/patience4/95.997s/ZERODEV/allworkersclosed. No prefixrefit/resume
-   claim/convergence/profit claim or repeat. Current CPU daily composition
-   contract50a861ee/1500SUM/hard07:05:06 belongs Kepler Engine executor under
-   Fermat final custody. Next separately frozen past-context market family may
-   derive its own immutable-PANEL role without waiting for provider collection.
+   claim/convergence/profit claim or repeat. CPU composition50a861ee now
+   CLOSED505upper/oneSVD/14cells/NONINFORMATIVE: seven of25 origins filled,
+  8.8549percent paired exposure mismatch. Fermat/Kepler diagnose execution
+   mechanism from sealed source/counts before new market work; no old regrade.
+   Past-context policy02a92735 CLOSED399/900 before market/model intake:
+   original Windows codec path missing in Linux mount. Named technical
+   continuation uses remaining501 with qualified explicit producer path/minimal
+   RO graph; preserve failed native/debits. No scientific rejection/GPU hold.
    Time-only Q/V24modules/73728trainables; missingPEFT fatal/no fullfallback.
    Routine compatible free setup delegated. Ratio of medians NOT expected profit;
    reused2026DEV/post2025checkpoint/unit/finality limits remain.
@@ -82,28 +90,36 @@ profit refill, foreign adoption or substitute unknown request.
    safe Task snapshots/positive relevant owner closure. No allow-all-Python or
    all-GPU quiescence gate. Installed sources unchanged until actual update.
    Fixed MSE16argv108d/7136 CLOSED210/20checks now ready/unactivated. Dewey
-   next source-fixed research launcher/capability validator under ClaudeREVISE
-   76530224, no per-fit Task update/new platform/private-writer waiver.
+   source-fixed launcher54fd4689/consumer4de46035 now CLOSED420upper:
+   same launcher ran two CPU/no-assets capsules; assets/GPU unqualified.
+   Dewey next declared-asset physical-alias/GPU-lease capability and exact MSE
+   producer-consumer handoff, no per-fit Task update/platform/writer waiver.
    Stockcompatd687a58a/d3e642ad CLOSED300/43checks now GRU/TFM ready alongside
-   MSE/L6192. Archimedes invoked actual offline ledger-read integration for
-   GRU/TFM/L with fresh actual per-phase admission/allRO/stability/closure,
-   no broker/credentials/TaskRun/recovery. No validated projection yet.
+   MSE/L6192. Actual GRU/TFM reads are UNKNOWN, not zero holdings. Changed
+   reason/current-custody repair owns the next scoped read; no broker,
+   credentials, TaskRun or recovery.
 7. H20 provisional current point is COMPLETE, not allocated/routed:
    Source2fdb7ed0/FINAL42ff317c/PROPOSALd5804301/closure6e01d4cf,185upper,
    two current CPU restores/forwards, no fit/readout/Data reacquisition.
    DecisionOct30/asofOct29; no next-session retag or extra current forward.
    Engine OOF7 and H20D2 fits/readouts, all workers/leases are CLOSED.
-8. Data: NAS8 pilotd009/6d29 STOPPED39GET(38HTTP200/1rate500)+1POST at05:41:02;
-   worker9456/owner17532 positively absent/cachelockreleased. StalePROGRESS
-   RUNNING is not activity. Repair terminal-supervision and bounded new Source
-   continuation, preserve acceptedcache/cursor/old39debit/no old0retry rewrite.
-   Pilot scope AAPL/MSFT/NVDA/AMZN/GOOGL/
-   META/TSLA/AVGO NAS), target<=20priorRTHsessions throughOct29, max600GET/
-   75each/1800workerSUM/3600elapsed, actualold2s pacing/token reuse/
-   finite failure-cursor stops and one cache/account collector. Data on M: only,
-   remaining562GET/finite declared recoverableGETbackoff, old panel/model roles
-   immutable. Target is not complete coverage/CA/PIT/
-   finality/performance proof. No new standing worker/Task/platform/cost.
+8. Data: old NAS8 pilotd009/6d29 and continuation0ea7/e4be CLOSED at cumulative
+  282GET/2POST. Continuationa82fe794 hit550s cap after243GET/551.269s/two
+   recoveries; cap exhaustion is partial coverage, not a provider floor.
+   Preserve acceptedcache/cursors/debits; unused old318GET are not refunded.
+   Terminal result precedes stale progress.
+   New current-nas8-rth20-acquisition-20261030-v1 owns NAS AAPL/MSFT/NVDA/
+   AMZN/GOOGL/META/TSLA/AVGO, target20 prior complete RTH sessions throughOct29.
+   Reuse acceptedcache/cursors; breadth/round-robin before single-asset depth.
+   Max1200 ADDITIONAL GET/200each/one freshPOST if required/3600workerSUM/
+  5400elapsed/eight predeclared recoverableGET retries within those caps.
+   One collector/account-cache gate, valid-client token reuse, measured2s
+   request starts/finite worker-owned cooldown. TTL includes pacing/backoff/I/O,
+   no arbitrary550s brake. Native resume/error/terminal-supervision check before
+   calls; auth/ownership faults stop worker, isolated exhausted cursor stops its
+   stream only. Exact PID/Job/cache closure and final safe counts required.
+   Raw on M:, artifacts on A:,15percent D: reserve. Frozen panels/models unchanged;
+   no complete coverage/CA/PIT/finality claim or standing worker/Task/cost.
 
 ## Evidence / Verification
 

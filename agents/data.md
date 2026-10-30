@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-30 KST / Oct30UTC04:53.
+2026-10-30 KST / Oct30UTC06:55.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Galileo Data. Market endpoints only; Execution owns account/orders. Never LIVE.
 
@@ -46,9 +46,15 @@ NAS8 current-nas8-minute-pilot-acquisition-20261030-v1 Source d00997a7/native
 cache lock released. PROGRESSmtime05:41:02/RUNNING was stale; terminalRESULT
 wins. Old zero-retry Source/debits stay immutable, no completeNAS8/PIT/finality
 claim or provider-floor inference. ActualRateGate2s, not earlier Parent1.25
-assumption. Galileo urgent new bounded continuation/terminal-supervision repair,
-preserve cache/exact cursor/cumulative39spent/max600total75each/remaining562,
-at most2declared recoverableGET retries/finite ownedbackoff/no lock/tokenreset.
+assumption. Continuation0ea7/e4be now CLOSED a82fe794:243GET/1POST/551.269s/
+two recoveries/550s cap, cumulative282GET/2POST. PARTIAL/CAPPED, not provider
+floor; preserve acceptedcache/cursors/debits. Old pilot superseded/unused318
+not refunded. Current current-nas8-rth20-acquisition-20261030-v1 targets20 prior
+complete RTH throughOct29 for the same NAS8; round-robin breadth first.
+Max1200 additionalGET/200each/one freshPOST if required/3600SUM/5400elapsed/
+eight finite recoverableGET retries. Native resume/error/terminal-supervision
+first; TTL includes actual2s starts/backoff/I/O, no arbitrary550s. Exact worker/
+supervisor/Job/cache closure and terminal precedence; no standing worker/Task.
 One collector/account-cache gate/valid-token reuse; no speculative concurrency.
 Named originalpilot target atmost20priorRTHsessions for NAS AAPL/MSFT/NVDA/
 AMZN/GOOGL/META/TSLA/AVGO throughOct29; allnewrawM: only/oldpanelunchanged.
