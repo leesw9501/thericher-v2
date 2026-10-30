@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-2026-10-30 KST / Throughput Review Oct30UTC05:16 (material handoffs).
+2026-10-30 KST / Throughput Review Oct30UTC06:03 (completion/failure handoffs).
 A=D:/thericher-v2/model-artifacts. Parent shared MD/Git/actual deployment.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 No operator decision pending. Preserve unrelated %SystemDrive%/.
@@ -29,39 +29,61 @@ No operator decision pending. Preserve unrelated %SystemDrive%/.
 - Dewey: peer r2 f81e/9d33/fe71 CLOSED60/7cases. Fullcaller a317/03d0/be62
   CLOSED180/15checks/LtemplateFAILED retained. Schema bd7f/4375/f7ca now
   CLOSED75/7checks. Real selectionbb80 CLOSED60/2checks: descriptive packets
-  rejected/no real set, actual phase publication needed from Engine. Current
-  fixedMSE16argv census/UPDATE4 kernel600SUM/5400/MAX6; no GRU14argv borrowing.
+  rejected/no real set. FixedMSE16argv108d5c5e/71361f3b/587325b5 now CLOSED210/
+  20checks/3programs, not activated. Historical depth publicationdec41e9a/
+  1f3ed7ab normalizer PASS but closed, not fresh admission.
+  Current source-fixed-research-launcher-capability900SUM/7200/MAX6: existing
+  launcher/normalizer/census additive V2, no per-fit Task updates/new platform.
+  ClaudeREVISE76530224 requires closed grammar/known publicroot-imageIDs/
+  actual OS-daemon identity/mount/isolation/create-freeze/fresh checks, no
+  private-writer waiver. Current actual Sources unchanged until Parent adoption.
   Parent source-safe exact2Task snapshots6881 Ready/enabled/instances0, not
   process/financial closure. Installed sources unchanged until actual update.
 - Archimedes: exact reader a3f3dcd CLOSED153/MAX3, exits0/20/20. New L adapter
   misused locking _book->Store.read; not native writer fault. Lockless9d9a/6192
-  CLOSED360/MAX4: MSE/L native readinessPASS, GRU/TFM olderSDK ABI withheld.
-  Current stock-compat completion300SUM/3600/MAX4 plus concrete Parent glue,
-  no old MSE/L matrix. No actual private read; Parent admission separately.
+  CLOSED360/MAX4: MSE/L readinessPASS. Stockcompatd687a58a/d3e642ad now
+  CLOSED300/43checks/18Jobs2CIDsclosed: GRU/TFM readinessPASS, concrete F9glue.
+  Current delegated actual-read integration600SUM/3600/MAX1read eachGRU/TFM/L,
+  source-qualified actual scoped admission/networknone/allRO/stability/closure;
+  GRU attempt recorded, no validated projection yet. No broker/credentials/
+  orders/TaskRun/mutation, MSE deferred until due. Never infer holdings from plan.
 - Fermat: CB14 CLOSED465/onefit/NONINFORMATIVE; univariate Chronos CLOSED486/
   14GPUforwards/420contexts/0fits/NONINFORMATIVE, all workers/lease closed.
   Past-context c2d1/351d/46d5 CLOSED104/oneCUDAforward/structural masks only.
-  Current LoRA150d adopted2400SUM/onefit0retry/400updatesmax/hard06:44:49,
-  isolatedPEFT imagef14f/95ba ready/no core upgrade. Data-native4db1/cf27/924d
-  CLOSED60/actualprojection0; optimizer/checkpoint native then full62 support
-  precede fitting. No actual fit asserted yet. Sole resource Steward, measured
-  desktop reserve/useful concurrency/no appkill/missingPEFT fatal unchanged.
+  LoRA34bb/28dc/9485 CLOSED536.972/400updatesBEST400/44.136s/NONINFORMATIVE.
+  Warmdepth882d/3d39/9df7 CLOSED353.773/1100NEWupdatesBEST1000/patience4/
+  95.997s/ZERODEV; no prefixrefit/trajectoryresume/convergence/profit claim.
+  All workers/lease closed, not currently training. Next breadth: separately
+  frozen past-context market family/one disjoint immutable-panel role, no wait
+  on provider collector or old forward replay. Sole Steward/resource reserve
+  and useful concurrency unchanged; no dummy occupancy.
 - Kepler: LoRA source proposal complete150upper/90db/7f0b/0f79, advisory
-  SOUND_WITH_LIMITS. Codec6bad/537e source-ready; current actualfit/safeadapter
-  helper under Engine caps, no own model/GPU launch. Time-only Q/V24/73728.
-  Next distribution-aware daily <=3expert composition source proposal180SUM,
-  no old regrade/unmatched-risk shortcut/new report platform.
+  SOUND_WITH_LIMITS; helpers6bad/537e/native9721 now used by closed LoRA.
+  Daily composition proposal e6cc/aa2e/cb4c/bb78 CLOSED120/sourceonly.
+  Current temporary Engine CPU executor under final50a861ee contract,
+  1500SUM/hard07:05:06/oneRidge+trendhalf/14cells; actual native/data/runtime
+  readiness before fit. No old regrade/unmatched-risk shortcut/new platform.
 - Galileo: OPEN120695d/ed56/98f8 COMPLETE100/420known, no repeat projection.
   Singleton b9e7/ef0a/97e9 CLOSED100/1POST2GET/target stillUNKNOWN, no samequery.
   Cash-distribution b1cc/d937/2b0e/5964 CLOSED90/3018sessions each48SPY50QQQ
-  cash events/no labels/API/model. Current LoRAOPEN1824db1/cf27/924d NativePASS
-  60upper/41FIT33INNER invented; actualprojection waits matching model-native,
-  then one actual full62-support role. Existing old panel/roles immutable.
+  cash events/no labels/API/model. LoRA roles4db1/c3ab/06b1/b7b5 CLOSED100/
+  oneprojection/1008FIT384INNER; old panel/roles immutable. NAS8d009/6d29
+  ACTUALSTOPPED05:41:02:39GET(38HTTP200/1rate500)+1POST, AAPL38pages4560rows/
+  5completeRTH; worker9456/owner17532 positively absent/cachelockreleased.
+  Oldcallback wrongly inferred RUNNING from stalePROGRESS. Urgent new bounded
+  continuation/supervision repair: preserve acceptedcursor/cumulative39debit/
+  max600total75each/finiteGETretry+ownedbackoff, no global hold/tokenreset.
+  ActualRateGate2s, not Parent's earlier1.25assumption; concurrency is not
+  justified by a measured2.06s pace matching that floor. D1 roles may proceed
+  independently while one named market collector runs. No completeNAS8 claim.
 
 ## Bottleneck / Reversible Improvement
 
-Current bottlenecks are exact caller/schema/parser integration, not operator
-approval, GPU entitlement, profitability, quota or all-flat state. Earlier hidden
+Execution bottleneck is exact caller/schema integration, not operator approval,
+GPU entitlement/profitability/all-flatness. Data has an actual rate-limit event
+plus a supervision failure: terminalRESULT already existed while old callback
+reported staleRUNNING. Diagnose/repair those scoped faults, not company hold.
+Earlier hidden
 Docker default pipe decode50/57 versus strictUTF8 57/57 and cold Utility/
 Management imports are repaired. Do not reproduce closed technical attempts.
 
@@ -76,6 +98,11 @@ known artifact callbacks and Parent thin relay; never guess app thread IDs or
 wait for a message that cannot be delivered. No extra Parent approval. Independent
 work continues. Choose technical feedback bounds proportionate to package work;
 new changed-path continuations preserve consumed counts, never regrade failures.
+Improvement now: terminal result precedes progress/exit guesses, prove exact
+worker identity/closure and deliver material failure; keep finite recovery inside
+owned worker. Inspect actual timing code before speculating throughput changes.
+Fixed-launcher capability removes future per-fit definition churn only AFTER
+native proof/Parent adoption, not by weakening current account-risk controls.
 
 ## Recovery
 

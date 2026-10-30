@@ -21,13 +21,19 @@ Native739d/c8ba one synthetic CUDA call101upper carried once. Exact2025weights
 Past-context native c2d18b64/351d9018/46d56e57 CLOSED104upper/one realCUDAcall,
 0.372s/peak565MBallocated642MBreserved/allworkersleaseclosed. Structural
 group masks only, no empirical invariant/market benefit or duplicate native.
-Current LoRA contract150d0c20 adopted04:44:49/hard06:44:49/2400SUM/onefit0retry/
-400updatesmax/fourcells. PEFT0.18.1 isolated imagef14fb8ba/95ba068b ready,
-sameTorchCUDA/Transformers, no global/runtime replacement. Data-native4db1/
-cf27/924d CLOSED60upper; actual projection0/full62 support unknown.
-Model-native actual optimizer/BEST-LAST/safetensors/coldrestore pending;
-exact24time-onlyQ/V73728trainables/missingPEFT fatal/no fullfallback.
-No actual fit asserted from a frozen contract or Docker build.
+LoRA150d/34bb/28dc/cfc9/9485 CLOSED536.972upper, one actualGPUfit44.136s/
+400updates/BEST400/13native+618marketcores/14DEVforwards/fourcells/0retry.
+Peak1307826176allocated/1325400064reserved, same desktop co-tenancy not isolated
+benchmark. All6CIDs43CLIJobs49births/lease closed, do not repeat completed work.
+INNERstill improving at cap, NOT convergence; NONINFORMATIVE12longs3sessions.
+Data4db1/c3ab/06b1/b7b5 CLOSED100 includingnative60once, oneprojection/
+1008FIT384INNER. Imagef14f/95ba/actual optimizer3/coldparity proof unchanged.
+
+Next CPU composition + separate usefulGPU warm-start depth may run concurrently
+after their own final freezes/native qualification. Depth starts ownedBEST400,
+not replayprefix/resumeclaim; proposed6000updates900sfit/zeroDEVreadout, exact
+new caps/source/PID/start/lease/headroom required. CPUexecutorKepler disjoint
+from FermatGPUroot; one Steward. No model launch inferred from queued plans.
 Kepler purehelper and Galileo Data may hand off directly inside final caps.
 Maintain measured desktop reserve4GiB; useful concurrency allowed, no appkill.
 

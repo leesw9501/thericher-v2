@@ -31,11 +31,28 @@ Current LoRA roles current-intraday-chronos-lora-open182-roles-20261030-v1:
 Source4db124d8/NATIVE-READYcf273880/native924da1d1 CLOSED60upper/oneprogram/
 41FIT33INNER invented tasks/2Jobsclosed/API0/model0. Real PANEL->OPEN182->
 parser5180/masks/NaNmiddlefuture/purge/mode tested. Engine contract150d0c20,
-240Data inside2400/hard06:44:49. Actual projection0/savedverify0 requires exact
-matching model optimizer/checkpoint native PASS, then one actual M1+availability
-intake/full62-support projection/all1806FIT420INNER keys. No DEV fit.
+Actual READYc3abae85/RESULT06b14137/closureb7b5d771 COMPLETE100upper including
+native60once, projection1/savedverify1. Full62 support1008FIT24sessions and
+384INNER10sessions;12INNER loss-only masks false/allinputkeys retained. Model
+native97212109 passed; Engine LoRA34bb/28dc and warmdepth882d/3d39 now CLOSED.
+No duplicate projection/native, no DEV fit.
 Read exact known Engine callback; Parent relays if child messaging unavailable,
-not extra approval. Prepare actual command/bindings while model-native runs.
+not extra approval. Separate future studies may reuse these exact frozen roles.
+
+NAS8 current-nas8-minute-pilot-acquisition-20261030-v1 Source d00997a7/native
+6d2924be is STOPPED, not running. Worker9456/birth134378123832639925 launched
+05:39:43, terminal05:41:02 after39GET(38HTTP200/1HTTP500 rate_limited)+1POST200.
+38acceptedAAPLpages4560rows/5completeRTH. Both9456/owner17532 positively absent,
+cache lock released. PROGRESSmtime05:41:02/RUNNING was stale; terminalRESULT
+wins. Old zero-retry Source/debits stay immutable, no completeNAS8/PIT/finality
+claim or provider-floor inference. ActualRateGate2s, not earlier Parent1.25
+assumption. Galileo urgent new bounded continuation/terminal-supervision repair,
+preserve cache/exact cursor/cumulative39spent/max600total75each/remaining562,
+at most2declared recoverableGET retries/finite ownedbackoff/no lock/tokenreset.
+One collector/account-cache gate/valid-token reuse; no speculative concurrency.
+Named originalpilot target atmost20priorRTHsessions for NAS AAPL/MSFT/NVDA/
+AMZN/GOOGL/META/TSLA/AVGO throughOct29; allnewrawM: only/oldpanelunchanged.
+Stopped-minute source review retained PARTIAL30upper, not global Data hold.
 
 Recent gap review38f89842/9fbd44fe/a85cc1d1 CLOSED30/API0: Sep1..Oct29 has
 one missing QQQOct7 12:42ET, recent other slots/Oct28-29 complete;19olderAugust

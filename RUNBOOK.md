@@ -113,11 +113,21 @@ NONINFORMATIVE. Chronos univariate6724/3ab6/ce54/eb8f CLOSED486upper/
 14GPUforwards/420contexts/0fits/two cells/NONINFORMATIVE, all workers closed.
 Data OPEN120695d/ed56/98f8 CLOSED100upper; no duplicate fitting/projection/readout.
 Past-context c2d1/351d/46d5 CLOSED104/oneCUDAcall/structural isolation only.
-LoRA Engine150d0c20 now adopted2400SUM/onefit0retry/400updatesmax/hard06:44:49;
-isolatedPEFT imagef14fb8ba/95ba068b ready/no core upgrade. Data-native4db1/cf27/
-924d CLOSED60/actualprojection0. Real optimizer/BEST-LAST/safe cold restore then
-full62 support remain before fit. MissingPEFT fatal/no fullfallback; no active
-fit inferred from build or source. Compatible isolated free setup delegated.
+LoRA150d/34bb/28dc/9485 COMPLETE536.972upper/oneGPUfit400updatesBEST400/
+44.136s/fourcells/NONINFORMATIVE12longs3sessions. Data4db1/c3ab/06b1/b7b5
+CLOSED100/oneprojection/1008FIT384INNER. Depth3f58/882d/3d39/9df7 CLOSED353.773,
+1100NEWupdates/BEST1000/patience4/95.997s/ZERODEV. Both allworkers/lease CLOSED,
+never replay prefix/fits/forecasts/readouts. Imagef14fb8ba/95ba068b unchanged.
+Current CPUcomposition50a861ee/1500SUM/hard07:05:06 and future separatelyfrozen
+past-context market family are independent, not current Paper profitability gates.
+
+NAS8pilotd009/6d29 actualRESULT STOPPED05:41:02 after39GET(38success1rate500)/
+1POST/38AAPLpages4560rows5completeRTH, workers9456/17532 positively absent/
+cachelockreleased. StalePROGRESS RUNNING is NOTactivity. Data new bounded
+continuation/supervision repair retains39debit/cursor/cap60075each/noSource
+floor inference. ActualoldRateGate2s; do not silently revert to1.25 or reset
+token/cache state. Role callback/source-qualified owner+terminal reader, no new
+recurring monitor or blind duplicate collector.
 
 Outcome reader a3f3dcd CLOSED153/MAX3 locking-helper fault; lockless9d9a677c/
 QUAL6192df63 CLOSED360/MAX4 now MSE+L native readiness only. Factory72292306

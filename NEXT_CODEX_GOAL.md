@@ -55,11 +55,16 @@ profit refill, foreign adoption or substitute unknown request.
    420contexts/0fits/two cells/NONINFORMATIVE, all workers closed. Data695d9bc8/
    ed569b4e/98f892e4 CLOSED100upper/420known. Do not duplicate completed work.
    Past-context native c2d18b64/351d9018/46d56e57 CLOSED104upper/oneCUDAcall,
-   structural group isolation only, no market benefit. LoRA contract150d0c20
-   adopted04:44:49/hard06:44:49/2400SUM/onefit0retry/max400updates/fourcells.
-   Isolated PEFT imagef14fb8ba/95ba068b ready, no core upgrade. Data-native
-   4db124d8/cf273880/924da1d1 CLOSED60, actual projection0. Real optimizer/
-   BEST-LAST/cold restore then full62 actual support must precede fitting.
+   structural group isolation only. LoRA150d/34bb0c0a/28dccf7d/94856202 now
+   COMPLETE536.972upper/onefit400updatesBEST400/14DEVforwards/fourcells/
+   NONINFORMATIVE12longs3sessions. All workers/lease closed, no repeat.
+   Actual Data4db1/c3ab/06b1/b7b5 CLOSED100/oneprojection/1008FIT384INNER.
+   Warm depth3f58/882d/3d39/9df7 now COMPLETE353.773upper/1100NEWupdates/
+   BEST1000/patience4/95.997s/ZERODEV/allworkersclosed. No prefixrefit/resume
+   claim/convergence/profit claim or repeat. Current CPU daily composition
+   contract50a861ee/1500SUM/hard07:05:06 belongs Kepler Engine executor under
+   Fermat final custody. Next separately frozen past-context market family may
+   derive its own immutable-PANEL role without waiting for provider collection.
    Time-only Q/V24modules/73728trainables; missingPEFT fatal/no fullfallback.
    Routine compatible free setup delegated. Ratio of medians NOT expected profit;
    reused2026DEV/post2025checkpoint/unit/finality limits remain.
@@ -76,14 +81,29 @@ profit refill, foreign adoption or substitute unknown request.
    Parent source/task adoption needs real reviewed records/current source-
    safe Task snapshots/positive relevant owner closure. No allow-all-Python or
    all-GPU quiescence gate. Installed sources unchanged until actual update.
-   Archimedes lockless9d9a677c/QUAL6192df63 CLOSED360/MAX4: MSE+L readinessPASS,
-   noactualread; older GRU/TFM ABI still withheld. Separate stock-compat
-   completion underway; Parent actual per-cohort financial admission remains.
+   Fixed MSE16argv108d/7136 CLOSED210/20checks now ready/unactivated. Dewey
+   next source-fixed research launcher/capability validator under ClaudeREVISE
+   76530224, no per-fit Task update/new platform/private-writer waiver.
+   Stockcompatd687a58a/d3e642ad CLOSED300/43checks now GRU/TFM ready alongside
+   MSE/L6192. Archimedes invoked actual offline ledger-read integration for
+   GRU/TFM/L with fresh actual per-phase admission/allRO/stability/closure,
+   no broker/credentials/TaskRun/recovery. No validated projection yet.
 7. H20 provisional current point is COMPLETE, not allocated/routed:
    Source2fdb7ed0/FINAL42ff317c/PROPOSALd5804301/closure6e01d4cf,185upper,
    two current CPU restores/forwards, no fit/readout/Data reacquisition.
    DecisionOct30/asofOct29; no next-session retag or extra current forward.
    Engine OOF7 and H20D2 fits/readouts, all workers/leases are CLOSED.
+8. Data: NAS8 pilotd009/6d29 STOPPED39GET(38HTTP200/1rate500)+1POST at05:41:02;
+   worker9456/owner17532 positively absent/cachelockreleased. StalePROGRESS
+   RUNNING is not activity. Repair terminal-supervision and bounded new Source
+   continuation, preserve acceptedcache/cursor/old39debit/no old0retry rewrite.
+   Pilot scope AAPL/MSFT/NVDA/AMZN/GOOGL/
+   META/TSLA/AVGO NAS), target<=20priorRTHsessions throughOct29, max600GET/
+   75each/1800workerSUM/3600elapsed, actualold2s pacing/token reuse/
+   finite failure-cursor stops and one cache/account collector. Data on M: only,
+   remaining562GET/finite declared recoverableGETbackoff, old panel/model roles
+   immutable. Target is not complete coverage/CA/PIT/
+   finality/performance proof. No new standing worker/Task/platform/cost.
 
 ## Evidence / Verification
 

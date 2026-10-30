@@ -1,78 +1,58 @@
 # Strategy Research Stateboard (전략 탐색)
 
-2026-10-30 KST / Oct30UTC04:53.
-A=D:/thericher-v2/model-artifacts. Kepler proposals; Engine final contracts/
-fits/interpretation. Parent shared MD/Git. No broker/credential/risk authority.
+2026-10-30 KST / Oct30UTC06:13.
+A=D:/thericher-v2/model-artifacts. Kepler; Fermat final hypotheses/targets/
+splits/costs/trial custody/interpretation, Parent MD/Git/direction. No broker/
+credential/private-account authority. No permanent agent per indicator/model.
 
-## Current Executable Proposal
+## Current Delegation
 
-Dated foundation proposal7406d77d/f7379675/EVIDENCE7d7be421 COMPLETE120upper,
-Claude SOUND_WITH_LIMITS. Engine has separately frozen Chronos2 OPEN120/q50OPEN62
-policy family1020SUM/no fitting/max14marketforwards/two cells. Fixed marginal-
-median ratio lead2->62, NOT expectedprofit or returnquantile. Exact2025weights
-95a971/ddcda before2026targets; SDK2.3.2 later, no historicaldeployability claim.
-Actual univariate family3ab6d61e/ce54bb8e/eb8f4fb3 now CLOSED486upper,
-14GPUforwards/420contexts/0fits/two cells/NONINFORMATIVE13longs3sessions.
-Data695d/ed56/98f8 and real native739d/c8ba completed; no old forward/readout
-repetition, automatic new ensemble arm or performance promotion.
+Daily distribution-aware composition proposal is COMPLETE SOURCE-ONLY:
+current-etf-distribution-aware-composition-next-proposal-20261030-v1,
+Sourcee6ccd8bc/contractaa2e7067/MAINcb4c6792/closurebb78bb8f,
+CLOSED120upper/Claude SOUND_WITH_LIMITS/no numerics.
+Concrete consumer: one relative QQQ-minus-SPY H20 arithmetic gross-receivable
+mean expert plus fixed trend half, six causal relative/regime features.
+One Ridge/lambda.001/no seed-model-window grid or learned gate. No individual
+profitability prerequisite. Learned future fusion requires chronological OOF.
 
-Current concrete LoRA proposal:
-current-intraday-chronos-adaptation-next-proposal-20261030-v1,
-Source90db70a9/PROPOSED-CONTRACT7f0b36cb/EVIDENCE0f79ebe6,
-CLOSED150upper/sourceonly/Claude SOUND_WITH_LIMITSff930849.
-One rank2 time-only self_attention.q/v adapter; regex excludes group-attention
-modules, exactly24modules/73728trainables. MissingPEFT must fail, never SDK full
-fallback. Engine owns final full62-support/splits/caps/native/fit interpretation.
-Engine adopted150d0c20/2400SUM/onefit0retry/400updatesmax/fourcells,
-hard06:44:49. Kepler kernel-source under120source allocation;
-codec6bad96f7/537ed1c9/5180b449 source-ready, actual optimizer/checkpoint helper
-and Engine-native readiness separate. No own GPU dispatch/marketfit.
-No historical deployability claim: exact2025
-weights predate2026targets but SDK/code and unknown corpus limitations remain.
+Engine adopted current-etf-distribution-aware-composition-development-20261030-v1
+contract50a861ee,05:35:06..07:05:06UTC/1500SUM/oneSVD/no retry/14cells.
+Parent temporarily assigned Kepler as bounded Engine CPU executor in that NEW
+family under Fermat final freeze/custody; old source-only proposal remains
+source-only. Disjoint writes/actual numerical authority follow the final contract,
+not this MD or a favorable advisory. Real producer/file/parser/feature-label/
+SVD/safe checkpoint/nativeLocalPaper/accrual+cold consumer before market data.
+Native/SYN/source readiness is not evidence an actual fit or replay ran.
 
-Next after helper seal: current-etf-distribution-aware-composition-next-
-proposal-20261030-v1,180SUM/2400elapsed/sourceonly. One daily expert composition
-hypothesis/<=3mechanisms/target-feature-cost-exposure-aligned risk references/
-finite trials. Retained cash-event b1cca7ab/d9372d90/2b0ea675 supports ordinary
-gross e<exdate<=x only, not payment/tax/specialevent/PIT/KISparity. Kill future
-adjustment leakage/doublecredit. Learned fusion needs chronological OOF; fixed
-blend does not require individually profitable experts. No old regrade,
-criterion relaxation/fresh-alpha claim/reading-list/new-platform deliverable.
+Raw2014..25 source plus ordinary e<exdate<=exit gross receivable proxy only.
+Retained source b1cca7ab/d9372d90/2b0ea675/59649327:3018sessions each,
+48SPY50QQQ cash-event rows/no splits. No acquisition. Missing cash notzero,
+factor notone; no global adjusted features/cash doublecredit. Unknown payment/
+tax/currency/specialevent/PIT remains explicit, not settled/net wealth.
+New overlay nonspendable/ownedlot-exdate dedup, never expands native budget or
+settles cash. Primary fixedhalf vs same-clock/common-gross paired balanced,
+growth/DD/turnover/coverage separately; paired capacity endogenous/not risk
+parity. No unmatched full-risk hurdle, zero-DD cash rule or old criterion rescue.
 
-A/research/current-intraday-m1-model-next-proposal-20261030-v1/
-PROPOSED-CONTRACT.json: QQQ volume-conditioned direct-net H60, one shallow
-CPU CatBoost14. Existing numeric retained panel3b1b/95ba,120pastminutes/5minute
-stride/60minute target,14price/relative-volume/time features. Fixed price-only
-relative-reversal/QQQ/SPY/cash references; chronological whole-session roles,
-future-path-held dimensional research proxy, no original bank accounting claim.
-Engine froze bb73256e before roles/fitting; actual CB family2877/8a35/b6f3 now
-CLOSED465upper/onefit38updatesBEST14/ten cells/NONINFORMATIVE, no volume feature
-used. No refit, window/seed/cost/threshold rescue. Shared kernel is unchanged.
-Actual historical arrival/unit/CA/finality limitations remain explicit.
+## Reusable / Closed
 
-Distinct mechanism is volume-conditioned arithmetic net-return interaction,
-not another TCN architecture or frequent-origin novelty. Old H20 intraday meant
-20MINUTES/two ETFs, not20daily/100stocks; corrigendum501940f5 preserves original.
-Old denseH1 already used120context/24five-minute/12ten-minute/frequent origins;
-do not rename it as a new hypothesis. Foundation/public checkpoints considered:
-trusted dated Chronos before2026 targets supports restricted post-checkpoint
-development only; no automatic quantile-to-expected-profit/extra ensemble arm.
-Exact sources/license/checkpoint scope live in proposal, not a reading list.
+- LoRA proposal90db/7f0b/0f79 CLOSED150upper and pure helpers6bad/537e/5180
+  were consumed by Engine34bb/28dc COMPLETE400updates/NONINFORMATIVE, not a
+  still-running helper task. Exact time-layer0Q/V24modules73728trainables,
+  missingPEFT fatal; no suffix expansion into group attention/full fallback.
+- Warm stage882d/3d39 CLOSED1100newupdates/BEST1000/ZERODEV; no repeat,
+  profit claim or independent evidence from lower reused INNER loss.
+- Univariate Chronos3ab6/ce54 NONINFORMATIVE; past-context c2d1/351d native
+  only proves structural group isolation, not covariate benefit/economic alpha.
+- CB2877/8a35 CLOSED onefit38updatesBEST14/NONINFORMATIVE/no volume used.
+- Prior OOF7/H20/mean/expectile/GRU/LSTM/Transformer/TCN/StudentT/attention/
+  TimesFM/Chronos/ensembles remain immutable in Git/external ledger. Existing
+  monthlytrend already had a distribution collection proxy; no novelty or
+  regrade claim. New composition is a joint target/feature/cadence/basis change.
 
-## Evidence That Changed Direction
-
-OOF7 e586/a11c/b5db/face CLOSED1890upper: actual3TCN+3linear+1tree;
-learned gate zero DEV admissions/noninformative temporal support. Fixedhalf
-10bp+0.516568percent,20bpnegative. OOF alone does not erase reused DEV selection.
-H20daily d9aa/5e53/6b5d/7040 CLOSED979upper/twofits: later-year admissions
-restored; TCN10bp+4.931615percent versusQQQ+6.579699, both learned primary
-conjunctions failed. This is joint horizon/stride/target change, not pure ablation.
-Current H20 fixedhalf proposal2fdb/42ff/d580 complete185upper, UNALLOCATED/
-UNROUTED/allow_execute=false, asofOct29/decisionOct30. Execution compatibility
-may proceed without profitability gate; actual H20 calendar cannot alias H5.
-
-Earlier mean/expectile/GRU/LSTM/Transformer/TCN/StudentT/CatBoost/attention/
-TimesFM/Chronos/ensemble studies remain closed in Git/external evidence.
-No additional permanent agent per indicator or speculative GPU use. A proposal
-becomes a bounded experiment or concrete rejection. Useful new hypothesis,
-source scope and strongest kill matter more than number of model families.
+Adaptive reused outcomes, not untouched replication/independent alpha or Paper
+promotion. Official-source hypotheses become executable finite experiments or
+concrete rejection, not reading lists/new platforms. Exact known callback files
+support role handoff; Parent thin relay if child-message tools unavailable,
+never an extra approval or guessed app-thread target.
