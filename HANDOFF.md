@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct30UTC06:55 integration.
+2026-10-30 KST / Oct30UTC07:27 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -64,9 +64,12 @@ NOT research OPEN-fill parity. Exit Nov30UTC14:30..36. Producer d5804301/
 Old actual-host preparation30b169c3/81a4ecd1 ended after six programs:
 cold harness failed importing pinned job_popen; production path already correct.
 Cold completionafd0f352/64ed09f2 passed host16/typedpair9/ROpacket9 but Bind
-fixture assigned reserved $false. Corrected1d1f4ae2 unrun at that close; four
-programs consumed/ten Jobs closed/zero effects. Lovelace continues only changed
-Bind/Parent handoff paths,600active/MAX6; old proofs/debits not replayed/refunded.
+fixture assigned reserved $false. Changed completiona3caf4b0/callback1157616d/
+commandsf7f760bd now CODE_READY:22changed cases/three programs/six Jobsclosed/
+90upper/zero effects. Original tests/debits fixed. Lovelace next prepares H20's
+own fixed-research capability boundary, not blind MSE metadata drop-in; current
+h2 rejects unregistered research/Data actors. Exact qualified MSE successor is
+selected first, no arbitrary aliases or forced research shutdown.
 No actual H20 Task/TRUE/effect qualified yet. Exact MSE resource/native closure
 is a runtime dependency, NOT success/fill/profit/flatness. Future definitions
 may be prepared before future closure. Original bank/emergency/token/gate/F9
@@ -109,8 +112,15 @@ MSE deferred until due. Source reviewb63874ad/ec6be34e/aae0d35d confirmed public
 bindings agree but cannot recover discarded reasons;189s exceeded180 before
 closure accounting, no refund. F9 date derives from submission_started_at,
 not campaign name; public Task time is not that effect timestamp.
-Archimedes now current-owned-reader-reason-custody-completion-20261030-v1:
-native allowlisted count reasons, then separately scoped changed actual reads.
+Changed reasone4e07ae2/callbackee999a2e qualified real strict-parser output;
+three CIDs/Jobs closed/584of600upper. Actual completion-r1 f6eafb44/16fa6d7b
+then withheld before reads on unregistered NAS8 Data actors. Five feedbacks/
+1110upper/zero reads; final canonical-source/declared-argv repair unqualified at
+that close. Archimedes continues changed cold qualification and at most one
+actual changed read each GRU/TFM, not waiting for collector closure. New technical
+scope uses actual worker wall/elapsed limits, source/queue separate; no arbitrary
+feedback-count stop per typo or unchanged broken repeat. Old caps/debits/failed
+Sources fixed. L remains withheld for concrete census coverage gaps.
 Parent ClaudeREVISE0925ee34 at A/execution/current-readonly-custody-admission-
 challenge-20261030-v1/ADVISORY.json supports current admission separately from
 historical closure: complete both-boundary relevant write-capable actor absence,
@@ -159,9 +169,15 @@ a prospective repair, no more fits or relaxed old criteria.
 Past-context policy current-intraday-chronos-past-context-policy-development-
 20261030-v1 FINAL02a92735/FIRSTCAUSE343fc36e/closurefe58f318 CLOSED399/900.
 Failed invented Data native before market/model: Windows codec missing in Linux
-mount. Named technical continuation uses remaining501 after explicit pinned
-producer/SDK RO native repair; old failed attempt/debits fixed. Not scientific
-rejection or GPU limitation.
+mount. Repairae89b258/FINAL3e565f38/closureda227009 now COMPLETE202.917newupper/
+601.917combined:one projection/14GPUcores/420origins/two cells/zero longs/
+NONINFORMATIVE. Four CIDs/28Jobs/32births/lease closed. No repeat.
+Source mechanismecf47282/MAIN8fb7d587 found reservation_exceeded25/38 positive
+legs; exits precede entries, exact gap-versus-rounding contribution unknown.
+Sizing SYN00258031/7f242f75 failed fixture-only EventStore.close after one
+invented fill;137.385upper/JobsCIDclosed/no market. Fermat fixes fixture and
+cold-restart/limit-reservation cases, no old grade/native risk change. Kepler
+prepares causal NAS8 expert proposal/pure kernels for actual canonical Data.
 Image18909604 + isolated officialPEFT0.18.1 imagef14fb8ba, original Torch/CUDA/
 SDK2.3.2 unchanged; trusted Chronos2025revision95a971/ddcda predates2026targets,
 corpus/context/SDK timing/unit/finality limitations explicit.
@@ -197,6 +213,12 @@ One collector,
 measured2s starts/validclient reuse/finite ownedbackoff, native resume/terminal
 checks first. TTL accounts for pacing/I/O/backoff, no550s brake. Activity only
 from exact worker proof; no completeNAS8/CA/PIT/finality or standingTask claim.
+Current actual Source23347f5e/native9f3e0d22/START21680984 launched07:00.
+At07:25:56 Parent confirmed collector16680 and supervisor1036 exact same births,
+terminal absent:783newGET/1065alltime/onePOST/zero retry. AAPL/MSFT/NVDA20RTH
+complete, AMZN19complete+onepartial/7799of7800known; remaining stocks13-14RTH.
+Checkpoint only, not final. Galileo next canonical NAS8+QQQ/SPY RTH panel and
+1m/5m/10m/1h/3h masks after collector closure; no new API/targets/fits/imputation.
 
 ## Throughput / Verification / Recovery
 
@@ -209,11 +231,13 @@ coexistence. Parent Claude REVISE76530224 at
 A/execution/current-research-paper-coexistence-trust-challenge-20261030-v1.
 First fixed-launcher54fd4689/strictconsumer4de46035 CLOSED420upper:
 two actual CPU/no-assets capsules through same launcher,24Jobs/CIDs closed.
-GPU/assets not qualified. Dewey current-source-fixed-research-capability-assets-
-gpu-20261030-v1 tests bounded declared descendants/known public roots, actual
-GPU requests/existing Steward lease and exact MSE producer-consumer boundary.
-No market fits/Task mutation/platform/private-writer waiver. Installed Sources
-unchanged until native proof/Parent adoption; H20 binds exact selected dependency.
+Assets/GPU ae873e5f/metadata77ab10c2/callbacka4f0a3ca COMPLETE480upper:
+16asset/GPU+four coldMSE checks/two actual invented capsules/25Jobs/leaseclosed.
+Not deployed or whole-host financial admission. Dewey now current-mse-fixed-
+capability-host-completion-20261030-v1: actual host/frame/custody call placement,
+new exact kernel profile and known CPU2/RAM6-8GiB/long-profile resource grammar.
+Static SYN2GiB/1200s is not global research policy. Native proof/Parent adoption
+still required; all actual Sources unchanged and H20 exact dependency unselected.
 
 Fresh full A/verification/current-single-etf-native-integration-20261030-v1:
 SOURCE934f30b08a9d61fa85780ff173c9caa02d8158cb35a078712358bdda089bfccf,

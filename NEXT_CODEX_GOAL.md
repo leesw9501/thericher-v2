@@ -38,9 +38,10 @@ profit refill, foreign adoption or substitute unknown request.
    optional broader mock failures remain FAILED, not whole-branch PASS.
    Actual reader45c62bc6 closed: GRU/TFM each one stable RO read, all financial
    fields UNKNOWN because target cause was discarded in projection. L withheld
-   for absent historical close record. Archimedes next retains categorical
-   parser reasons; Parent challenges current-read admission separately from
-   historical closure. No unchanged reread or unknown-reservation release.
+   for absent historical close record. Reasone4e0/ee99 native-qualified; actual
+   r1f6ea/16fa withheld on unregistered Data actors/0reads. Changed canonical
+   actor/declaredargv qualification and one scoped read eachGRU/TFM continue
+   without waitingData. HistoricalLclosure/financialunknowns preserved.
 4. Execution/Lovelace: F9 distinct-date diagnostic is CONSUMED, resultcfcc0979.
    Source360ae2cb/native69516686, actual1POST1GET/24.7743s/zero rows/four
    admissions PASS/private-source stable/Jobsclosed/CIDabsent. Original NYOct19
@@ -49,8 +50,9 @@ profit refill, foreign adoption or substitute unknown request.
    singleETF code3dd52654/4684af0a/native85051278 is complete, not deployed.
    Worker changed completion e856b009/98a2f151/9970e1b7 is native-qualified,
    not deployed. Parent selected Oct30UTC14:15..21 operational once, not research
-   OPEN parity; exitNov30UTC14:30..36. Lovelace now prepares complete actual
-   scheduled-owner/TaskPlan/conditional exactMSEclosure/typed-install host graph,
+   OPEN parity; exitNov30UTC14:30..36. H20a3caf/1157/f7f7 code-ready22cases,
+   not activated. Lovelace prepares own fixed-research capability boundary and
+   exact selected MSE dependency before Parent scheduled-owner/typed install,
    using guarded1006 overlay/producer->persisted intent/per-wire/serial exit.
    SPY/AMEX only, explicit OPEN[e+20]=21sessions; ONE existing account-owned
    writer/bank, no MSE swap/QQQ alias/retag of an expired Oct30 point.
@@ -70,9 +72,12 @@ profit refill, foreign adoption or substitute unknown request.
   8.8549percent paired exposure mismatch. Fermat/Kepler diagnose execution
    mechanism from sealed source/counts before new market work; no old regrade.
    Past-context policy02a92735 CLOSED399/900 before market/model intake:
-   original Windows codec path missing in Linux mount. Named technical
-   continuation uses remaining501 with qualified explicit producer path/minimal
-   RO graph; preserve failed native/debits. No scientific rejection/GPU hold.
+   original Windows codec path missing in Linux mount. Repairae89/3e56/da22
+   COMPLETE202.917new/601.917combined/oneprojection/14GPUcores/420origins/
+   twocells/0longs/NONINFORMATIVE/allworkersclosed. Do not repeat. Mechanism
+   ecf4/8fb7 found reservation_exceeded25/38; gap-vs-rounding unknown. Fermat
+   repairs sizingSYN fixture0025/7f24 EventStore.close/coldrestart, no market
+   intake/oldregrade/riskchange. Kepler next causal NAS8 expert sourceproposal.
    Time-only Q/V24modules/73728trainables; missingPEFT fatal/no fullfallback.
    Routine compatible free setup delegated. Ratio of medians NOT expected profit;
    reused2026DEV/post2025checkpoint/unit/finality limits remain.
@@ -91,9 +96,10 @@ profit refill, foreign adoption or substitute unknown request.
    all-GPU quiescence gate. Installed sources unchanged until actual update.
    Fixed MSE16argv108d/7136 CLOSED210/20checks now ready/unactivated. Dewey
    source-fixed launcher54fd4689/consumer4de46035 now CLOSED420upper:
-   same launcher ran two CPU/no-assets capsules; assets/GPU unqualified.
-   Dewey next declared-asset physical-alias/GPU-lease capability and exact MSE
-   producer-consumer handoff, no per-fit Task update/platform/writer waiver.
+   same launcher ran two CPU/no-assets capsules. Assets/GPUae873/77ab/a4f0 now
+   COMPLETE480/16+4checks/twoactualSYNcapsules/25Jobsclosed, not deployed.
+   Dewey next whole MSE host/frame/custody and exact changed kernel profile,
+   bounded CPU2/RAM6-8GiB/long-resource grammar; no per-fit Task churn/platform.
    Stockcompatd687a58a/d3e642ad CLOSED300/43checks now GRU/TFM ready alongside
    MSE/L6192. Actual GRU/TFM reads are UNKNOWN, not zero holdings. Changed
    reason/current-custody repair owns the next scoped read; no broker,
@@ -123,6 +129,12 @@ profit refill, foreign adoption or substitute unknown request.
    stream only. Exact PID/Job/cache closure and final safe counts required.
    Raw on M:, artifacts on A:,15percent D: reserve. Frozen panels/models unchanged;
    no complete coverage/CA/PIT/finality claim or standing worker/Task/cost.
+   Actual2334/native9f3e launched07:00. At07:25:56 exact two owner births alive/
+   terminalabsent/new783GET1065alltime/no retries; AAPL/MSFT/NVDA20completeRTH,
+   AMZN19plusonepartial7799known, others13-14RTH. Checkpoint not final.
+   Next after collector closure: canonical NAS8+cachedQQQ/SPY RTH20 panel,
+   1m5m10m1h3h masks/oneprojection/savedverify/nativeproducer-consumer first;
+   no newAPI/targets/fits/imputation/oldpanel mutation.
 
 ## Evidence / Verification
 

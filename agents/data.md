@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-30 KST / Oct30UTC06:55.
+2026-10-30 KST / Oct30UTC07:27.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Galileo Data. Market endpoints only; Execution owns account/orders. Never LIVE.
 
@@ -59,6 +59,13 @@ supervisor/Job/cache closure and terminal precedence; no standing worker/Task.
 One collector/account-cache gate/valid-token reuse; no speculative concurrency.
 Named originalpilot target atmost20priorRTHsessions for NAS AAPL/MSFT/NVDA/
 AMZN/GOOGL/META/TSLA/AVGO throughOct29; allnewrawM: only/oldpanelunchanged.
+Current Source23347f5e/native9f3e0d22 actual07:00 start; Parent07:25:56 exact
+collector16680/supervisor1036 births alive/terminal absent/783newGET1065alltime/
+zero retries. AAPL/MSFT/NVDA20completeRTH, AMZN7799of7800/19complete+onepartial,
+others13-14RTH. Checkpoint only, no final dataset claim. Next after closure:
+current-nas8-canonical-minute-panel-20261030-v1/oneprojection/savedverify/
+actual Bar-loader-resampler SYN first, NAS8+cachedQQQ/SPY Oct2..29 RTH grid/
+1m5m10m1h3h masks/NaNunknown/no label/model/newAPI/oldpanel mutation.
 Stopped-minute source review retained PARTIAL30upper, not global Data hold.
 
 Recent gap review38f89842/9fbd44fe/a85cc1d1 CLOSED30/API0: Sep1..Oct29 has

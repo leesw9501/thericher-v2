@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·실험 관리)
 
-2026-10-30 KST / Oct30UTC06:55.
+2026-10-30 KST / Oct30UTC07:27.
 A=D:/thericher-v2/model-artifacts. Fermat sole resource coordinator/custody.
 Project first GPU priority; useful concurrent workers allowed, no app killing
 or name allowlist. Resource permission is delegated, not a model-choice gate.
@@ -34,10 +34,14 @@ Warm depth882d/3d39/9df7 CLOSED353.773upper/1100newupdates/BEST1000/
 CLOSED505upper/oneSVD/14cells/NONINFORMATIVE; source mechanism review next.
 Past-context policy02a92735 CLOSED399/900 before market/model intake because
 Windows codec path missing in Linux mount, not CUDA permission/resources.
-Fermat owns changed technical continuation within remaining501 and exact native
-handoff before useful GPU calls. No active training inferred from a plan.
-Dewey may coordinate harmless GPU capability SYN with existing Steward lease;
-no market fit/weights decode or new resource platform.
+Repairae89/3e56/da22 COMPLETE202.917new/601.917combined:14GPUcores/420origins/
+two cells/zero longs/NONINFORMATIVE; all4CIDs28Jobs32births/lease closed.
+ActualCUDAinference7.683s/wholecapsule10.763s/peak565MBallocated646MBreserved,
+not training/convergence/profit. No active training inferred from a plan.
+Dewey assets/GPUae873/a4f0 probe completed/leaseclosed; new MSE whole-host
+profiles6-8GiB/longwall under qualification, no global SYN2GiB/1200s trainingban.
+Fermat fixes sizingSYN fixture, next useful NAS8 model contract follows actual
+Data panel/proposal; no dummy GPU occupancy or completed-work reruns.
 Kepler purehelper and Galileo Data may hand off directly inside final caps.
 Maintain measured desktop reserve4GiB; useful concurrency allowed, no appkill.
 

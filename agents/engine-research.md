@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-30 KST / Oct30UTC06:55.
+2026-10-30 KST / Oct30UTC07:27.
 A=D:/thericher-v2/model-artifacts. Fermat Engine/sole resource Steward.
 Parent shared MD/Git. Reused PRICE_ONLY data, not independent alpha/total return.
 
@@ -42,9 +42,15 @@ old grade fixed. Two Data coordinator birth identities unretained, no fabricated
 full closure authority or replay to repair logs.
 Past-context policy02a92735/343fc36e/fe58f318 CLOSED399/900 premarket/model:
 invented Data native failed because old Windows codec path was not Linux-mapped.
-Named technical continuation uses remaining501 only after exact producer/SDK
-mount repair native; old failed attempt/debits unchanged. Not a covariate
-scientific failure or GPU permission hold. No duplicate old forecasts/readouts.
+Repairae89/FINAL3e56/closureda22 COMPLETE202.917newupper/601.917combined:
+oneprojection/14GPUcores/420origins/twocells/zero longs/NONINFORMATIVE.
+All4CIDs28Jobs32births/lease closed. No duplicate forecasts/readouts/old regrade.
+Mechanismecf4/8fb7 found reservation_exceeded25/38; same-clock exits precede
+entry, exact gap-vs-rounding unknown. SizingSYN0025/7f24 failed fixture-only
+EventStore.close afteroneinventedfill/137.385upper, workers closed/no market.
+Changed cold/restart/limit-reservation technical repair next, not native risk
+relaxation. Kepler prepares causal NAS8 proposal/pure kernels; Data current
+collection precedes canonical panel, not yet a frozen research dataset.
 Exact artifact callbacks coordinate roles; Parent thin relay where child-message
 tools unavailable is not additional approval. New distribution-aware daily
 composition proposal may prepare independently after current helper seals.
