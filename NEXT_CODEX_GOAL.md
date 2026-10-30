@@ -26,6 +26,11 @@ persist; no reset/profit refill/foreign adoption/substitute unknown request.
    intent_recorded cannot silently use1006. Prepare strict actual-state reader
    only, Parent exact owner/RO/stability admission before any read/migration.
    No ordinary recovery-as-offline-reader or company-wide hold.
+   Components now d65image/guard8a40/30inventedcases, NOT fullcaller-ready.
+   New current-original-three-exit-full-caller-integration-20261030-v1 splits
+   900SUM/5400elapsed/MAX3: Dewey gru-timesfm450/MAX2, Ohm l450/MAX1.
+   Use actual corrected image and complete original callers/mounts; no newbuild,
+   component rerun, actualprivate/API/Task/TRUE or placeholder CAS snapshot.
 2. New provisional MSE candidate preparation: Parent CANDIDATE094d6a0d/
    WINDOWb1ab/ENTRY-BINDING at current-oct30-native-paper-preparation-20261030-v1.
    Input20f9418b/Policy05e29c36/MODELb6e0468d/Source9fc0b4cb CLOSED106upper,
@@ -37,6 +42,10 @@ persist; no reset/profit refill/foreign adoption/substitute unknown request.
    Full-consumer auditdf08 found paired validator20min/PT22M/worker1200 still
    incompatible23min. Dewey current-oct30-entry-controller-completion-20261030-v1
    owns240SUM/3600elapsed/MAX2invented full-controller proofs, no old regrade.
+   Now QUALIFIED2a0d/7025/0ba1/8aee/9754/1a3b,10fullpaired+8negatives/
+   12ParentcallbacklinksPASS, inert. Final binding uses2a0d, not prior25cf.
+   Exit original25cf provenance retained; actual consumer identity compatibility
+   clarification required, no hash alias or extra consumed native rerun.
 3. Lovelace exact quiet two-Task installer is PARTIAL118upper/2programs closed.
    ABIff3d/a2441/5d868 failed BEFORECREATE/closed24.3937692upper/oneprogram.
    New current-oct30-install-precreate-repair-20261030-v1 owns180SUM/2400elapsed/
@@ -61,10 +70,22 @@ persist; no reset/profit refill/foreign adoption/substitute unknown request.
    onefit/max100epochs9000updates/900s/earlystop15/LRscheduler/safeNPZ/coldrestore.
    Reuse exact qualified Data roles/CPUcontrols, no projections or baseline
    replays. Native579b/25b7/b81f QUALIFIED/CLOSED,3AdamW/5054params;
-   no second synthetic native. Fermat fresh lease/headroom then ONEactualfit,
-   do not infer activeGPU from native or plan. Desktop use not permission hold.
-   Kepler separate next mean-surplus proposal120SUM/maxONE source-only,
-   no marketfit/currentcontract mutation or grid/readinglist.
+   Later actualONEfit COMPLETE457upper:Source05ade/FINAL7ce6/closureaa89,
+   23epochs/2001updates/BEST8/fit326.953s/twocells/fourshadows/0retry/
+   controlsreplayed0/allworkersclosed.10bp+0.7288991percent but growth/shadow
+   criteriaFAILED, no repeat/independent alpha/Paperpromotion.
+   Next CPUmean also COMPLETE205upper:eb1f/0f2e/8fa5/dded,ONErank14SVD/
+   twocells/fourshadows/0GPU/retries/controlreplay.10bp+0.0027994percent,
+   growthFAIL, support/risk/shadowpass, no continuous exposure claim.
+   Kepler current-etf-mean-path-next-proposal-20261030-v1 owns120SUM/maxONE
+   source-only distinct mean-path GPU proposal or exact-duplicate rejection.
+6. Galileo admission4259/17nativechecks CLOSED75upper is COMPONENT ONLY,
+   not actual05ade peer/runtime support: different ownerrecord ABI/24mounts
+   versusold8/current2a0d not importingadapter. New research-peer-native-
+   compatibility240SUM/5400elapsed/MAX1actual-schema invented proof, noactual
+   queries/private/API. Exact source-attested normalizer + separately pinned
+   reviewed/disjointmax32 profile, oldguards immutable/per-mount protections
+   unchanged. Execution/Parent must separately adopt runtime Source/claims.
 
 ## Completed / Preserve
 
@@ -83,7 +104,11 @@ totalreturn/alpha. Other completed fits/readouts remain closed, no duplicate wor
 
 ## Verification / Continue
 
-Last full authority current-original-exit-routing-integration-20261030-v1:
+Fresh full authority current-oct30-native-paper-control-integration-20261030-v1:
+Source39bfc02d/RESULT7638c11e,209serialPASS1skip/19597fullPASS26knownskip/
+35warnings415.49s/8workers[19623]/native-helper0/guardedcleanup/Ruff/3Compose/
+actual13606exit0. External runtime proofs remain separate.
+Prior full authority current-original-exit-routing-integration-20261030-v1:
 Source39bfc02d/RESULT72e92ed7,209serialPASS1knownskip/19597fullPASS26knownskip/
 35warnings/396.92s/8workers[19623]/native-helper0/guardedcleanup/Ruff/3Compose,
 session11671exit0. Docs/external-only reuse needs exact protected1416 digests

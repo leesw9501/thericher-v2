@@ -81,11 +81,15 @@ f09d6296/FINAL612b6923/CLOSUREa13e34f3 completed65upper/oneCPUrestore+forward,
 UNALLOCATED/UNROUTED/notbrokerinput. Native-input9fc0/71cc/9998 CLOSED106upper,
 Input20f9418b/Policy05e29c36/MODELb6e0468d, no rerun. Parent candidate094d/
 windowb1ab preparationonly. Entry25cf/37component proof is NOT finalcontroller:
-df08 found old20min/PT22M/worker1200, Dewey prospective correction ongoing.
+df08 found old20min/PT22M/worker1200; full-controller correction now qualified
+2a0d/7025/0ba1/8aee/9754/1a3b,10paired+8negatives/12Parentlinks. Still inert.
 Nov5 exit105d/7b2a/8f8f/d2bb/c7be qualified19inventedcases, ownPT22M;
 full exact source/current-owner+qualified installer before any activation.
 Installer ff3d/a2441 failed beforeCREATE/closed24.3937692upper; new precreate
-repair180scope, not actualTask installation. Never run preparation as effect.
+repair then a662/c3d6/aa28 CLOSED75.948upper: both actualparserspassed,
+wrong native_source sharedfinancialjoin. Source-only a974 fixes phase-specific
+route equality; new native-pair-installer-completion180/MAX2 finite matrix,
+not actualTask installation. Never run preparation as effect.
 Next-publication source-only callback3ca57541 ready52pins, no stalepointretag.
 Data94e9/a318/8821/model231a only preparation.
 MSE best-005.npz SHA4b8a46611b03b8cf9245c188f21b27ba141a1eb17b7215e4c3dfaa98a6ce5d71,
@@ -117,11 +121,22 @@ CPU expectile0232/8065/6ce6/3fb2 COMPLETE359upper/onefit34updates/BEST4/
 GPU causalTCN contract1b3f frozen BEFORE CPUoutcome, actualnative579b/25b7/b81f
 QUALIFIED/CLOSED3AdamW/5054params; not marketfit. Fermat owns fresh resource/
 lease and ONEfit/max100epochs9000updates900s/hardOct30UTC01:40.
+Later actualGPU05ade/7ce6/aa89 COMPLETE457upper/23epochs2001updates/BEST8,
+10bp+0.7288991percent but growth/shadowFAIL/allworkersclosed. No repeat.
+CPUmean eb1f/0f2e/8fa5/dded COMPLETE205upper/ONErank14SVD/525entries/
+10bp+0.0027994percent/growthFAIL/allworkersclosed. Reusedprice-onlyadaptive,
+not totalreturn/independent alpha/Paperpromotion. Next distinct mean-path
+proposalacc2 selected, Engine freezes contract before source/native/market.
 Reuse Data c44a/0d98 and controls38728afc; no projection/baseline/native repeat.
 History in Git53ef9beb/exact immutable sources, not current run commands.
 
 ## Verification / Recovery
 
+Fresh current-oct30-native-paper-control-integration-20261030-v1:
+Source39bfc02d/RESULT7638c11e,209serialPASS1knownskip/23.13s;
+19597fullPASS26knownskip35warnings/415.49s/created8/8workers[19623items]/
+helper0/guardedcleanup/Ruff/3Compose/actual13606joinedexit0.
+Independent external-source/runtime proof remains separate. Prior authority:
 A/verification/current-original-exit-routing-integration-20261030-v1:
 SOURCE39bfc02dbcf4f459feb9244547fb4dddf6b69abb4b1fe93a066e74220785dea5;
 RESULT72e92ed7cb95469f5b1cb9ad2d970fa2f7fc77a4bd5eb2b65e77f74ed7629575.

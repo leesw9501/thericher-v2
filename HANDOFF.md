@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-30 KST / Oct29UTC23:40 integration.
+2026-10-30 KST / Oct30UTC00:18 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -33,6 +33,22 @@ reader. Prepare strict offline classification only; Parent actual read needs
 qualified relevant-writer admission, networknone/allRO/no locks or recovery,
 exact bindings and before/after membership/identity/mtime/bytes stability.
 Original exit repair takes priority over optional new entry, not a global hold.
+Original3 component package now has d65c1b77 original2ff+ONEconstant image,
+two buildCLIs(firstfrontend125)/onebackend,30inventedcases/twoCIDsclosed.
+FULL original callers/newimage cold path NOT qualified; actual reader ingress
+unbound, no migration. Next current-original-three-exit-full-caller-integration-
+20261030-v1 splits900SUM/5400elapsed/MAX3natives: Dewey /gru-timesfm450/MAX2,
+Ohm /l450/MAX1. Reuse immutable image/guard8a402d37, no newbuild or component
+rerun; preserve all original Ops/private paths/counters/requests/Tasks.
+Actual stock executor/canary double-record the same new intent; guard8a
+wrongly denies the second read. Ohm owns separately pinned /l/wire_guard_r1.py
+for both executors: ONE exact idempotent reread on existing unused RAM permit,
+bind mint/reread/prewire to actual outermost execution-lock scope, expire loans
+on scope exit. Retained/restarted/used/thread/scope/third-record mismatches stay
+denied. No extra build/component trial/permit file/SDK body change.
+Tracked main canary still has SELL1001; do not rebuild/route naked main as the
+qualified fix or flip its constant across old unknown requests. Future tracked
+consolidation needs request custody and literal wire contract tests.
 
 Original MSFTNov2/LOWVOLNov3/Linear17Nov3 and monthlyNAS100Oct30UTC21:00
 duties remain unchanged. Original MemoryNov4UTC20:40/native20:45/hard21:00
@@ -103,6 +119,15 @@ PT22M/worker<=1320 and CONTROLworker1200 for23min. Prior37component proof
 does NOT qualify it. Dewey current-oct30-entry-controller-completion-20261030-v1
 owns240SUM/3600elapsed/MAX2invented programs for actual full paired contract;
 old proofs/debits unchanged, no widening native280/HTTP8/3effects128calls.
+This full-controller repair now QUALIFIED/inert: host2a0d250f/route70252e86/
+Control0ba1adcd/Plan8aee1b40/controller73b9762a/deadline9754c9c4/native1a3b519c/
+FINALc9dc9c7b/closure1a0e8c29,10fullpaired scenarios/8malformedcontrols.
+Parent verified12callback links. Real1380monotonic/PT25M/120cleanup, prior37
+component reused, no rerun. First launcher failed unsupported measured_wall
+before native; retained exact firstcause, not a passing closure. Exit105d
+compat275b36f6 matches financial tuple/commonbank but retains original25cf
+origin; actual consumer identity clarification requested before final binding.
+No Task/API/private/TRUE activation or manufactured Source-hash alias.
 
 Lovelace initial installer66c586c2/2ba1a144/closure5cb2fd37 is PARTIAL/closed
 118upper/2programs, not install-ready. ABIqualification ff3dd59f/FINALa2441c29/
@@ -114,6 +139,13 @@ controller and exit ownPT22M bind separately; no schema masquerade. Enable
 exactexit BEFORE entry only after full binding/current relevant-owner proof,
 no Run/placeholder/automatic ambiguous rollback. Old entry validity does not
 revoke separately typed owned-exit duty.
+That precreate package now CLOSED75.948upper/2programs(a662/c3d6/aa28/f6cd):
+both actual component parsers passed. exact_structured_binding wrongly joined
+different per-phase native_source route refs7025/7b2a as financial identity.
+Source-only a974ebc6 binds routes separately/preserves other10financial keys.
+New current-oct30-native-pair-installer-completion-20261030-v1 owns180SUM/
+2400elapsed/MAX2invented programs for complete mocked finite matrix.
+No actual Scheduler/API/private/TRUE effects or historical failure regrade.
 
 ## Independent Research
 
@@ -147,12 +179,30 @@ Same target/chronology, no Data reprojection/CPUcontrol reruns or outcome-driven
 architecture. Actual native579bd4f9/25b7183a/b81feec4 QUALIFIED/CLOSED,
 3AdamW updates/5054params/peakreserved113246208bytes/free24104665088bytes.
 Host receipt failure retained/adjudicated, no second synthetic native. Native
-callback records0marketfits; Fermat owns fresh lease/headroom/actualdispatch.
+callback recorded0marketfits, later ONE actual marketfit is COMPLETE:
+Source05ade08b/FINAL7ce65a74/CLOSUREaa892ff6/457upper/allPID-CID-leaseclosed,
+23epochs/2001updates/BEST8/INNER_EARLY_STOP/convergenceunproved.
+Actual fit326.9533s/forecast10.1299s/readout6.2800s,oneforecast/oneheldmarks/
+twoowncostcells/fourshadows/zero controlreplays or retries. Primary FAILED:
+10bp185lots85early100late, price-onlybankgrowth+0.7288991percent/
+DD0.7894788percent;20bp184lots/+0.0823746percent/DD1.0120762percent.
+Risk/support pass, growth/matchedshadow fail. NOT independentalpha/totalreturn/
+qualified model/Paper promotion. No more current-family numerical work.
 Snapshot22:48:39UTC RTX4090 free22191/24564MiB/2percent/37C,
 Cfree22.09percent/Dfree36.47percent is NOT fit/admission evidence.
 Kepler separate current-etf-expected-surplus-next-proposal-20261030-v1:
-120SUM/1800elapsed/maxONE source-only mean-net-surplus proposal, no market/
-fit/GPU or current1b3f mutation. Lower-tail expectile is not expected profit.
+Source0c8c0abc/NEXT-CONTRACT3d552817 CLOSED60upper, no payload/fit/GPU.
+Parent selected ONE next adaptive CPUmean, Fermat froze current-etf-expected-
+surplus-capital-development-20261030-v1/CONTRACT before numerical intake:
+Now COMPLETE205upper: Sourceeb1f3ebb/FINAL0f2e9a97/CLOSURE8fa587f5/
+CALLBACKdded8153,oneFP64rank14SVD/oneforecast/twoowncells/fourshadows/
+zero retries/controlreplays/GPU. All33births27Jobs4CIDs closed.
+10bp525entries/+0.0027994percent/DD0.9855559percent, lastentry2023-02-16;
+20bp481entries/-1.7116252percent/DD1.7631823percent,lastentry2022-10-28.
+Risk/support/matchedshadow pass, growthFAIL, not success or continuous exposure.
+Exact objective/design/gradient matched, distinct MEANcheckpoint; no oldgrade/
+bank change/independentalpha. Kepler next mean-path proposal120SUM source-only,
+check earlier H5TCN/LSTM/multitask exact identities before any new GPU fit.
 Galileo masked-input diagnosisf23c4144 CLOSED60upper/zeroAPI: BTAI55/CRNX97
 accepted-empty NAS histories, masked before features. Official suspension/
 merger context is not proven KIScause. Preserve exact98eligible/twomasked point.
@@ -205,6 +255,25 @@ No owner/source/risk check cache/coalescing implemented.
 ## Verification / Resume
 
 Production last changed2bfffcd9; subsequent work docs/external-only.
+Fresh current-oct30-native-paper-control-integration-20261030-v1:
+same protected Source39bfc02d, RESULT7638c11e2f9118855c206b335d4c1220fe2d886d1a75ae82cf058f5245c60994.
+209serialPASS1knownskip/23.13s;19597fullPASS26knownskip35warnings/415.49s,
+created8/8workers[19623items]/helper0/guardedcleanup/Ruff/3Compose,
+actual13606joinedexit0. Does not prove external runtime or any fill.
+Parent Claude f11e59df/current-oct30-finite-activation-challenge-20261030-v1
+ADVISORY REVISE/conceptual falsifiers, closed17.286s. Existing source/physical
+wire/clock/readback/unknowns checks retained; RAMpermit+ONEdisk sidecar and
+commonphysicalbank exclusion clarified, not new approval/gate/platform.
+Galileo relevant-writer readiness42599127/ba46d92b/4f2ed668/f297fe13 CLOSED75upper,
+17inventedchecks/oneprogram/3Jobsempty,actualqueries/private0. Component ONLY:
+actual05ade owner-record format unsupported and24mounts exceed old8; current
+2a0d runtime does not import adapter. New current-oct30-research-peer-native-
+compatibility-20261030-v1 owns240SUM/5400elapsed/MAX1actual-schema invented
+smoke, source-only normalizer and separately pinned reviewed/disjoint max32
+profile; old2e7/8limit unchanged. Per-mount/source/birth/command/credential/
+network/private-writer guards remain, no shutdown/unknown exemption. Actual
+runtime/claims/Source adoption still separate, never preflight-only permission.
+Prior authority preserved:
 A/verification/current-original-exit-routing-integration-20261030-v1:
 SOURCE39bfc02dbcf4f459feb9244547fb4dddf6b69abb4b1fe93a066e74220785dea5,
 RESULT72e92ed7cb95469f5b1cb9ad2d970fa2f7fc77a4bd5eb2b65e77f74ed7629575.

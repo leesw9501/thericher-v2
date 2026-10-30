@@ -10,15 +10,22 @@ Completed proposala2139b12/17ff5425 plus calendarcorrigendum65upper and actual
 kernel e23fbfac/c25f7d45/100upper led to CPU0232/8065/6ce6 COMPLETE359upper.
 ONE14parameter SciPy lower-expectile fit34accepted/BEST4/INNER_EARLY_STOP,
 18entries all2016/zero later, growth/shadow/supportfailed. No criterion rescue.
-GPU1b3f causal path expert frozen BEFORE CPU outcome; native579bd4/25b7
-actually passed3AdamW/5054params. Source55upper; no current-contract mutation.
+GPU1b3f causal path expert frozen BEFORE CPU outcome; later05ade/7ce6/aa89
+COMPLETE457upper/23epochs2001updates/BEST8/earlystop/allworkersclosed.
+10bp+0.7288991percent185entries but growth/shadowFAIL, risk/supportpass.
 
-Current Kepler current-etf-expected-surplus-next-proposal-20261030-v1:
-120SUM/1800elapsed/maxONE source-only proposal, mean-NET-surplus/return rather
-than lower-tail expectile mislabeled expected profit. Existing supported tooling/
-exact July roles/same capital feasibility; no newlibrary, market payload/fit,
-DEV reranking/API/private/GPU. Explicit executable contract or rejection, not
-a reading list/grid. Engine final targets/splits/caps before any next fit.
+Meanproposal0c8c0abc/3d552817 CLOSED60upper + native7d6647ae CLOSED60upper
+led to eb1f/0f2e/8fa5 COMPLETE205upper/ONErank14SVD/525entries/10bp+0.0027994
+percent/growthFAIL/risk-support-shadowpass. Exact objective/gradient and MEAN
+checkpoint verified, no old criterion/capital change or independent alpha.
+
+Current Kepler current-etf-mean-path-next-proposal-20261030-v1:
+120SUM/1800elapsed/maxONE source-only nonlinear expected-mean path proposal.
+Check exact earlier H5TCN/LSTM/multitask identities first, reject/reuse any same
+data/split/target/model fit instead of another namespace. Prefer qualified
+5054TCN geometry/seed/batch/caps to isolate functional when genuinely distinct.
+No currentcontract mutation/market fit/GPU/DEVreranking or newlibrary/grid.
+Concrete nextcontract or rejection, not reading list or utilization work.
 Closed526f/ce29684b/709e841b/f4776c8b completed6price-only cells224upper:
 QQQ10bp+0.7954percent account but20bpnegative, dividends excluded/nonPIT.
 Gross-loss-budget blocked most later entries, not matched realized exposure

@@ -82,17 +82,32 @@ NONINFORMATIVE_TEMPORAL_SUPPORT:18entries Aug15..Sep9,2016/zero late;
 failed, risk passed. Same-basis QQQ10 control+1.5436973percent/559entries ends
 2021-02-16. No threshold/checkpoint/criterion rescue or independent alpha.
 
-GPU current-etf-expectile25-causal-path-development-20261030-v1:
+GPU current-etf-expectile25-causal-path-development-20261030-v1 COMPLETE:
 contract1b3f2971 frozen BEFORE CPUDEV:ONE causalTCN16/252returns+13summary/
 5054params,1800SUM/10800elapsed/hardOct30UTC01:40. ONEfit/max100epochs/
 9000updates/900s/earlystop15/LRscheduler/safeNPZ. Actual native579bd4f9/
 25b7183a/b81feec4 QUALIFIED/CLOSED:3AdamW updates,free24104665088bytes,
 peakreserved113246208bytes; host receipt failure retained/adjudicated.
-Marketfit starts0 at native callback; Fermat owns fresh resource/lease/dispatch.
-Reuse exact Data/CPU controls, no source-native/fit retry or new projection.
-Kepler separate current-etf-expected-surplus-next-proposal-20261030-v1 owns
-120SUM/maxONE source-only mean-net-surplus proposal; not current GPU mutation,
-market selection/grid/fit or another approval. Engine freezes any next contract.
+Later Source05ade08b/FINAL7ce65a74/CLOSUREaa892ff6 CLOSED457upper:
+ONEactualfit23epochs/2001updates/BEST8/earlystop/convergenceunproved,
+fit326.953s/forecast10.130s/readout6.280s/twoowncells/fourshadows/0controlreplay.
+10bp185entries(85early100late)/+0.7288991percent/DD0.7894788percent;
+20bp184/+0.0823746percent/DD1.0120762percent. Support/riskpass, growth/
+matchedshadowFAIL. Not alpha/totalreturn/Paperpromotion. AllPID-CID-leaseclosed,
+no repeated training/source-native/readout or new projection.
+
+Next mean proposal0c8c0abc/3d552817 led to actual current-etf-expected-surplus-
+capital-development-20261030-v1 COMPLETE205upper:Sourceeb1f3ebb/FINAL0f2e9a97/
+CLOSURE8fa587f5/CALLBACKdded8153. ONErank14FP64SVD/oneforecast/twocostcells/
+fourshadows/0retry/GPU/controlreplay,all33births27Jobs4CIDsclosed.
+10bp525entries/+0.0027994percent/DD0.9855559percent,lastbuy2023-02-16;
+20bp481/-1.7116252percent/DD1.7631823percent,lastbuy2022-10-28.
+Risk/support/shadowpass,growthFAIL. Later capacityblocking retained, not
+continuous exposure or independent alpha. Objective/design/analyticgradient
+equivalence qualified; distinctMEANheader not tau25. No new bank/oldgrade.
+Kepler current-etf-mean-path-next-proposal-20261030-v1 owns120SUM/maxONE
+source-only distinct GPUmean-path proposal or exact-duplicate rejection,
+check earlier H5TCN/LSTM/multitask identities. No current numerical work.
 
 Fixed QQQ volume-confirmed reclaim +SPY kernel:
 current-dense-h1-reclaim-event-kernel-preparation-20261030-v1,

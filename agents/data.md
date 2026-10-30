@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-2026-10-30 KST / integrationOct29UTC23:40.
+2026-10-30 KST / integrationOct30UTC00:18.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent MD/Git.
 Quality limitations constrain claims/consumers, not unrelated Paper authority.
 
@@ -43,6 +43,16 @@ accepted-but-empty NAS/MODP1 histories, masked before features, not a feature
 calculation defect. Official SEC/Nasdaq reported suspension/merger context,
 not proven KISinternalcause. Preserve exact98eligible/twomasked Oct30point,
 no retag/reprojection. No further acquisition needed for the current consumer.
+
+Invoked public-admission Source42599127/MAINba46d92b/edge4f2ed668/
+closuref297fe13 COMPLETE75upper/17inventedchecks/3Jobsempty,actualqueries0.
+Component ONLY: actual05ade record owner.pid/creation_FILETIME differs from
+old coordinator fields,24mounts exceedold8/current2a0d does not importadapter.
+New current-oct30-research-peer-native-compatibility-20261030-v1 owns240SUM/
+5400elapsed/MAX1actual-schema invented smoke, source-only normalizer and
+separately pinned reviewed/disjoint32profile. Old2e7/8limit unchanged, exact
+per-mount/source/birth/command/credential/network guards retained. No actual
+census/private/API/Data intake or runtime adoption; Parent/Execution own that.
 
 Galileo current-full187-required-mark-gap-readiness-20261030-v1:
 <=120active/3600elapsed; metadata-first exact12missing required-key reasons,

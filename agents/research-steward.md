@@ -11,9 +11,11 @@ projected peak VRAM per new ready campaign; each keeps exact caps/path/lease.
 GPU causalTCN native579bd4f9/25b7183a/b81feec4 is actually QUALIFIED/CLOSED:
 3synthetic AdamW updates/5054parameters/peakreserved113246208bytes,
 freebefore24104665088bytes. Host receipt failure retained/adjudicated, no rerun.
-This is not a market fit or active worker. Fermat owns fresh lease/headroom and
-ONE frozen1b3f2971 fit, max100epochs9000updates900s/0retry/hard01:40UTC.
-Exact Data c44a/0d98 and CPU control38728afc reuse, no projection/control rerun.
+Later actual1b3f marketfit COMPLETE:Source05ade08b/FINAL7ce65a74/closureaa892ff6,
+457activeupper,23epochs2001updates/BEST8/earlystop/convergenceunproved.
+Fit326.9533s/forecast10.1299s/readout6.2800s,allPID-CID-GPUleaseclosed.
+Risk/supportpass,growth/shadowfail; no training repeated for utilization.
+Exact Data c44a/0d98 and CPUcontrol38728afc reused, no projection/control rerun.
 CPU expectile0232/8065/6ce6/3fb2 COMPLETE359upper, onefit34updates/BEST4,
 supportfailed18earlyentries,allclosed. No duplicate training or refunded debits.
 DenseH1 actual43b841f9/FINALb10094c5/CLOSUREa8a3fa81:
@@ -56,7 +58,10 @@ Kepler proposal17ff5425/calendarcorrigendum65upper and nativekernel100upper
 are closed inside completed CPU campaign. GPU contract was frozen BEFORE that
 CPUDEV readout, not outcome-adapted. Source contribution55upper and one actual
 native retained; no extra native/update/trial from source repair. Separate next
-mean-surplus proposal120cap source-only; no GPU allocations for a reading list.
+mean-surplus proposal became actualeb1f/0f2e/8fa5 COMPLETE205upper/ONErank14SVD/
+oneforecast/twocells/fourshadows/GPU0/all33births27Jobs4CIDsclosed; growthfailed.
+Current Kepler mean-path proposal120cap source-only checks exact old identities
+before a new GPU contract; no GPU allocations for a reading list or duplicate.
 Official Tiingo event semantics remains incomplete; no new accrual market run.
 Fixedrule/NumPyforward need no GPU. New useful trainable campaign measures
 headroom and freezes chronology/earlystop/checkpoint/caps before dispatch.

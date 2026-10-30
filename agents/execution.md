@@ -1,6 +1,6 @@
 # Execution Stateboard (실행 담당)
 
-2026-10-30 KST / integrationOct29UTC23:40.
+2026-10-30 KST / integrationOct30UTC00:18.
 A=D:/thericher-v2/model-artifacts. Parent activation/MD/Git.
 Never KIS_LIVE_*/real money. ONE original B/10/costs/losses/pending/F9 held.
 No operator decision pending. Exact historical detail in Git53ef9beb/HANDOFF.
@@ -63,7 +63,9 @@ host25cf/plan3c106/deadline69a/native4578 closed73upper/37inventedcases:
 exactOct30slot/outer360/PT25M fixed. COMPONENT ONLY: later full-controller
 auditdf08 found paired validator still20min/PT22M and CONTROLworker1200 for
 23min. Dewey new current-oct30-entry-controller-completion-20261030-v1 owns
-240SUM/3600elapsed/MAX2invented programs to fix actual paired contract.
+240SUM/3600elapsed/MAX2invented programs now complete:2a0d/7025/0ba1/8aee/
+9754/1a3b/c9dc/1a0e,10fullpaired/8negatives/12ParentcallbacklinksPASS.
+First launcher measured_wall error retained before native, not passing closure.
 Native280/HTTP8/3effects/128calls/0retry stay unchanged; no actual activation.
 
 New MSE input9fc0/20f/05e/b6e is qualified/CLOSED106upper, Parent094d/windowb1ab
@@ -76,9 +78,12 @@ not guessedNov6UTC/analyticalOPEN[e+5]. No Task installation or new order.
 
 Lovelace old installer partial118upper plus ABI ff3dd5/a2441/5d868b failure
 beforeCREATE24.3937692upper/oneprogram CLOSED. New current-oct30-install-
-precreate-repair-20261030-v1 owns180SUM/2400elapsed/MAX2invented programs:
-retain first inner error, fix real report/exitPT22M/defaultelision/exit-first
-and finite matrix. No actualScheduler/API/private/TRUE/placeholder binding.
+precreate-repair-20261030-v1 now CLOSED75.948upper/2programs(a662/c3d6/aa28/
+f6cd), both actual component parsers passed. Exact wrong financial join used
+different per-phase route refs7025/7b2a(native_source). Source-only a974 binds
+routes separately/preserves other10sharedfinancial keys. New native-pair-
+installer-completion-20261030-v1 owns180SUM/2400elapsed/MAX2invented programs,
+complete finite matrix next. No actualScheduler/API/private/TRUE/placeholder.
 Parent advisoryc23e9bce/b57df32f permits invented admission-multiplicity study
 only; no guard cache/coalescing deployed. API health is not owned-fill/PnL.
 
@@ -116,6 +121,13 @@ Any old intent INCLUDING intent_recorded retains exact original source/wire,
 never silently1006. Prospective guard under actual native lock/source, separate
 strict RO classification preparation; Parent admission before actual read/
 migration. No recovery-capable observe as offline reader or originalexit hold.
+Old600scope components CLOSED:d65image/30cases/twoCLIs(first125)/onebackend,
+fullcallers NOTqualified. New original-three-exit-full-caller-integration-
+20261030-v1 splits900SUM/5400elapsed/MAX3: Dewey /gru-timesfm450/MAX2,
+Ohm /l450/MAX1, no newbuild. Real double-record sourceflow requires derivative
+guard_r1 ownedOhm/consumedRO byDewey: one same-call reread, same outermost
+native execution-lock scope token, expire loans onscopeexit; oldrequest/used/
+restart/thread/scope/thirdrecord still blocked. Actual migration Parentonly.
 
 Persist intents before effects, exact quote/orderability/reconciliation/risk
 before each side effect. No budget reset/profit expansion/reservation release
