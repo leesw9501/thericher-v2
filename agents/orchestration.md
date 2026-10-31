@@ -1,81 +1,70 @@
 # Orchestration Stateboard (총괄)
 
-Oct31UTC12:17 Throughput Review: resume/completed handoffs/first-cause repair.
-A=D:/thericher-v2/model-artifacts. Parent shared policy/MD/Git/actual installation.
+Oct31UTC13:03 Throughput Review: actual H20 deployment / completed learning.
+A=D:/thericher-v2/model-artifacts. Parent direction/shared MD/Git/actual install.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 No operator decision pending. Preserve unrelated %SystemDrive%/.
 
 ## Ready / Owned / Due
 
-| Owner | Current package | Status / next consumer |
+| Owner | Actual state | Next package / consumer |
 | --- | --- | --- |
-| Parent | MSE diagnosis / H20 integration | Actual MSE Sources e362/13e4 adopted; Oct30 pair technical failure55a6, no fill established. Helper-output mismatch diagnosed; H20 new source must repair actual CLI handoff. Parent owns actual future install and Git. |
-| Herschel / Data | current-nas8-later-session-20261031-v1 | ONE Oct30 later RTH session10 symbols, cache-first/bounded calls. Outcomes reserved for old frozen candidate validation. |
-| Schrodinger / Engine + Steward | current-h20-next-session-point-20261031-v1; current-nas8-next-campaign-20261031-v1 | Fresh H20 inference first using DataREADY0f41; useful new frozen campaign next. Sole GPU coordinator, no duplicate completed training. |
-| Hilbert / H20 Execution+Infra | current-h20-next-session-deployment-preparation-20261031-v1 | Fresh Nov2 source/point/current MSE dependency/observer output/real CLI tests; Parent prepare/TRUE/install next. |
-| Hegel / Execution | current-legacy-paper-reconciliation-20261031-v1 | Actual original GRU/TFM/L and F9 exact reconciliation; actual-writer RO admission and bounded range probe, no orders/reset. |
-| Huygens / Strategy | current-nas8-frozen-later-replay-contract-20261031-v1 | Source-only pre-open frozen old model proof + unchanged later-replay contract. Validation only after Data+freeze ready. |
-| Harvey / invoked Infra | current-original-exit-bootstrap-repair-20261031-v1 | Precise GRU/TFM/L owner-probe call-chain repair and cold invented native checks; no Task/private/broker changes. |
+| Parent | H20 actually installed c428/a4a7/a588/8a7d/d39c, no financial effects yet | Integrate actual evidence, retain exact future opportunities and original unknowns; no repeated installer/forward. |
+| Hegel / Execution | F9 capability fix12bb queried2GET1POST, guest diagnostics lost; closed/financialUNKNOWN | f9-diagnostic-completion-r2: real parse-return repair then bounded readonly diagnosis/optional separate holdings. No reservation release. |
+| Harvey / invoked Infra | Original-exit40ec/7a07 source-native31+two cold bootstrap ready, inactive | Whole-ingress completion: actual constructor and owner-parser boundary, source-only, no Task/broker/private. |
+| Herschel / Data | Canonical20day and Oct30one-day complete; historical60 plan6e27/native077e ready, actual0HTTP | Complete actual60session collector cache/cursor integration/native, then bounded acquisition; single named collector, source/PID callback at actual start. |
+| Schrodinger / Engine + Steward | Three-mask TCN144c/96c6 and H20point7030 COMPLETE/allworkersclosed | Informative P20/fixedfusion or distinct ML ranking campaign, frozen caps/native first; useful GPU only, no duplicate fits. |
+| Huygens / Strategy | Future candidate420c/0826/47a3/dateadapter9cc4/23checks ready | Direct Engine pure-kernel handoff if not already implemented; actual Nov2..4 inputs remain due. |
+| Hilbert / invoked runtime support | H20 componentda812/31checks finished/frozen | Engine-specific runtime handoff only if concrete unmet need; no redundant native work. |
 
-MD assignment is not evidence of running numerical workers. Direct exact role
-callbacks are supported; Parent is not another approval/serial relay.
-MSE original exit Nov5UTC20:40 remains; other original exit duties unchanged.
-H20 provisional Nov2UTC15:15..21, trigger15:10/hard15:24; calendar exit not yet adopted.
-Existing source/point d580 for Oct30 expired, never retag or apply again.
+An MD/assignment is not an active worker. Agents may exchange exact schemas,
+sources and readiness directly; Parent is not another approval or serial relay.
+GPU observed low after completed jobs is not evidence of a runtime entitlement
+failure. No dummy training or completed-fit reruns.
 
-Oct31UTC12:30 update: H20 first point d876/2816 closed unavailable, native exit1/
-forward progress unknown2 reserved. Parent assigned separately bounded same-input
-operational continuation05cfd4d4:2additionalCPUforwards/cumulativepossible4,
-0fits/0performance readouts; oldcaps/debits unchanged. Actual fresh point still due.
-H20 calendar f788 confirms Dec1UTC14:30..36 exit. Hegel6ad1/6a4d closed F9
-before private/API(0calls):public-capability binding missing; changed F9-only
-adapter/native+query assigned, not approval wait. GRU4/TFM3 census failures,
-L2 pre-native owner-probe failures, no matching observer-output bug.
-Data Oct30 one-day977e/b11c COMPLETE3900known/32GET1POST, pacing deviation19d4
-retained; no duplicate acquisition. Historical60 separate bounded continuation
-assigned after new monotonic-floor native proof. Source7023/ea1d failed to prove
-old Ridge pre-open exact bytes, so no Oct30 independent model evaluation.
-Strategy now future Nov2/3/4 exact weight freeze/date-adapter native readiness.
+## Actual Paper Clocks
 
-## Completed / Integrate
+H20 root current-h20-next-session-deployment-preparation-20261031-v1/
+point-root-binding-r2: final host a/graph/host/SOURCEc42867fa, p2/TRUEa4a7ceb1,
+plan a58862e9, actual-install/RESULT8a7df6de/readbackd39cdc36.
+Entry Nov2UTC15:10trigger/15:15..21native (KSTNov3 00:15).
+Exit Dec1UTC14:25trigger/14:30..36native (KST23:30).
+Both enabled/unstarted/instances0; no Run/Stop/Delete/Update/broker call.
+Actual fresh admission is mandatory at each effect. Original MSE Nov5 exit,
+other original exits and F9 UNKNOWN-HELD persist. No profit refill/new bank.
 
-- NAS8 canonical20 sessions: Source5e26/READYa483/datasetf971/closure1334;
-  77995/78000 known,5holes retained. Collection closed7f9f/callback672c.
-- NAS8 Ridge+TCN completed FINALca31/Source33a0/closure8bb2; TCN41epochs/
-  BEST17, fixedhalf -3.4695013percent vs EW8 -2.9788817percent10bp;
-  descriptive conjunction not met. No duplicate fits or alpha promotion.
-- Strategy new P20 reversal proposal d855/callbackc718 source-only ready;
-  costs-only explanation unsupported by saved diagnostics.
-- Sizing SYN completion80e5/f95e/21cc:24cases/40.0107worker, no market regrade.
-- Fresh H20 DataREADY0f41/closure93e8:253 known closes each throughOct30,
-  6GET1POST. Next consumer Engine point -> H20 builder -> Parent.
-- Firstcause A/execution/current-mse-observer-path-firstcause-20261031-v1:
-  RESULT1739/closure9f6a four mocked CLI cases; CURRENT-CLOSURE1b91 current
-  exact roots closed/observer original metadata match. Claude REVISE74b6:
-  strongly diagnosed pre-native, historical restoration/no-effect NOT proven.
+## Bottleneck / Reversible Improvement
 
-## Bottleneck / One Reversible Improvement
+Current named company runtime result is time-dependent until the owned Nov2
+opportunity, NOT an approval/GPU/Data/profitability wait. Ready alternatives:
+F9 technical read repair; original owner-bootstrap diagnostics; new economic
+mechanism/ML research; useful historical data acquisition. All assigned above.
 
-Bottleneck is actual configuration-to-helper/runtime integration, not operator
-authority/profitability/GPU entitlement or a global Data wait. Test generated
-configuration against the real full CLI entry point, not only mocked Core
-functions. Keep helper ownership guard; fix caller output child. Use current
-qualified runtime admission, never demand nonexistent old closure forever or
-invent one. Existing bank/unknown/quote controls remain.
-Prepare safe disabled future definitions before financial execution; keep actual
-effect checks at their original clocks. No company-wide market sleep.
+Concrete improvement adopted: test actual configuration -> full CLI AND real
+cold capability constructor before private/native dispatch. The discovered JSON
+bug required preserving semantically unchanged bytes, not recalculating pins
+from arbitrary disk state. Source3182/nativec279 retains strict source checks.
+Use short final paths: one uninstalled source exceeded old240 SDK limit.
+Invoke the qualified target collector with all four arguments; actual SID
+remains checked. Reuse qualified APIs instead of changing authority to fix calls.
 
-## Recovery / Verification
+## Completed Evidence / Recovery
 
-ONE original B/10/costs/losses/pending/F9/all exits persist. F9 UNKNOWN-HELD.
-Current custody projection unknown is not zero. Parent owns shared Git.
-Last valid source934f/RESULT6380 authority1418stable/231serial1skip/
-19619full26skip/8workers[19645]/cleanup/Ruff/3Compose. Interrupted later run's
-passing log lacks native outer-exit/result, so not authority. Fresh verification
-at material recovery/activation; unchanged docs/external source reuse only as
-AGENTS permits plus changed external native checks.
+- NAS8 canonical5e26/a483/f971:77995of78000known/5maskedholes.
+  Oct30later977e/b11c:3900known/32GET1POST/closure; pacing deviation19d4.
+- NAS8 old33a0/ca31:twofits/BEST17/growthfailed; no repeat.
+- New144c/96c6:threefits/rawBEST0/indicatorBEST5/both6/descriptiveconjunctionMET.
+  ReusedDEV only, raw untrained so no learning/alpha/promotion claim.
+  Original launcher failure retained, complete saved outputs salvaged, no refit.
+- H20point effc/7030/ceb7/5b61:2additionalCPUforwards/0fits/69.941upper/
+  allclosed. Originalunknown2/107.764olddebit retained, not reset.
+- Original MSE pair55a6 STOPPED_UNKNOWN; firstcause strongly diagnosed only,
+  historical restoration unknown. Future H20 risk/current-resource predicate
+  does not rewrite old financial evidence.
 
-Fresh Oct31UTC12:33 authority current-paper-h20-recovery-integration-20261031-v1:
-RESULT346f8890/SOURCE934f/1418stable/231serial1knownskip/19619full26knownskip/
-8of8workers[19645]/415.80s/cleanup/Ruff/3Compose .env.example/exec97821joined0.
-Old interrupted run remains unqualified. No repeat suite for unchanged docs.
+Fresh verification934f/346f:1418stable,231serial1knownskip,
+19619full26knownskip/8of8workers[19645]/415.80s/cleanup/Ruff/3Compose .env.example/
+exec97821joined0. Source-identical reuse plus new focused external native checks;
+old interrupted logs not authority. Parent only Git; latest integrated commit
+d385b855 PUSHED, next actual-deployment integration pending. Do not mark company
+complete or replace its goal from installation/research/package commit.

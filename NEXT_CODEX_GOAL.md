@@ -4,80 +4,87 @@
 
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
-Finish interpretable native KIS Paper decision/acceptance/fill/reconciliation,
-including next-session H20 deployment, while independent engine research moves.
-Installation, a Task exit, a report or GPU occupancy is not company completion.
+Obtain an interpretable native KIS Paper entry decision and exact
+acceptance/fill/owned-position reconciliation while useful research continues.
+Installation is now achieved, not runtime completion or a profitable engine.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Read HANDOFF/AGENTS/RUNBOOK and active stateboards. Parent shared integration,
-actual installation and Git; roles own disjoint external roots.
-ONE original B/10/costs/losses/pending/F9/exits persist. Never KIS_LIVE_*,
-reset, profit refill, foreign adoption or substitute unknown requests.
-No operator decision pending.
+Follow HANDOFF/AGENTS/RUNBOOK/current stateboards. Parent shared MD/Git/actual
+deployment; roles disjoint roots. No operator decision pending. ONE original
+B/10/costs/losses/pending/F9/all exits persist. Never KIS_LIVE_*, reset,
+profit refill, foreign adoption or substitute unknown requests.
 
-## Critical Path
+## Actual Deployment / Owned Opportunity
 
-1. Parent integrates actual MSE Oct30 bound technical failure. Current installed
-   Sources e362a884/13e04e11, migration consumed. Pair55a68232 reports
-   STOPPED_UNKNOWN_RuntimeError/empty visits/restore obligation. Parent firstcause
-   package current-mse-observer-path-firstcause-20261031-v1 proves output-root
-   configuration mismatch with mocked real CLI. Strongly diagnosed pre-native,
-   not historical zero-order/restoration proof. Do not repeat consumed Task or
-   forge OWN-NATIVE-CLOSURE. Preserve original Nov5 exit.
-2. Hegel examines exact original GRU/TFM/L outcomes/current custody and F9
-   UNKNOWN-HELD under current-legacy-paper-reconciliation-20261031-v1.
-   Use actual-writer scoped RO readers, not recovery observe(). A bounded newly
-   qualified historical range query may diagnose F9; empty data never releases
-   its reservation. Prior record_absent is not zero orders/positions.
-3. Hilbert builds H20 next-session deployment from fresh data/point, fixedcap2f1,
-   actual MSE source e362, helper-owned observer output and real full-CLI smoke.
-   Root current-h20-next-session-deployment-preparation-20261031-v1.
-   DataREADY0f4123d1 throughOct30 is complete; Engine produces one genuine
-   asofOct30/decisionNov2 point, not expired d580 retag/refit.
-   First point d876/2816 closed unavailable; new explicit operational technical
-   continuation05cfd4d4 allows2additional deterministic forwards while retaining
-   original unknown2/debits. No fits/readout/oldcap reset. Qualified point due.
-   Selected Nov2UTC15:15..21 operational entry, trigger15:10/hard15:24 provisional;
-   calendarf788 confirms OPEN[e+20]=21-inclusive Dec1UTC14:30..36 exit.
-4. Parent qualifies prepare/TRUE/bind and one finite quiet future pair.
-   AGENTS permits narrow disabled-definition installation/complete ACL/XML
-   readback/exit-first enable before future financial admission. No Run/catchup/
-   demand/repetition/early effects. Actual financial effects retain fresh owner,
-   account, aggregate budget, unknown-request, quote/orderability and observer
-   guards. No profitability/all-flat veto or substitute for unknown requests.
-   A prepared/installed pair is not actual runtime closure.
+H20 ACTUAL finite pair installed Oct31UTC12:55:
+A/execution/current-h20-next-session-deployment-preparation-20261031-v1/point-root-binding-r2.
+Host a/graph/host/SOURCEc42867fa / p2/TRUEa4a7ceb1 / plan a58862e9 /
+actual-install/RESULT8a7df6de / independent-readbackd39cdc36.
+Exact definitions/ACL/Source/quiet launch/enabled/unstarted/instances0 confirmed.
+Create disabled exit+entry, read back, enable exit before entry; no Run or
+broker calls. Do NOT replay installer, prepare, point inference or old sources.
 
-## Parallel Work
+Entry Task thericher-etf-h20-spy-once-entry-20261102-v1:
+Nov2UTC15:10 trigger/15:15..21 native/15:24hard (KSTNov3 00:15 native).
+Exit Task thericher-etf-h20-spy-owned-exit-20261201-v1:
+Dec1UTC14:25 trigger/14:30..36 native/14:39hard (KST23:30 native).
+OPEN[e+20]=21inclusive calendar-qualified, not legacy20inclusive.
+Fresh SPY point effc/7030/ceb7 from actual Data0f41 throughOct30; no stale retag.
+Actual effect-time owner/account/budget/unknown/quote/orderability/observer
+checks remain. PC/user session/Docker availability is not inferred from install.
 
-- Data Herschel: ONE later Oct30 RTH session NAS8+QQQ/SPY under
-  current-nas8-later-session-20261031-v1, cache-first/bounded calls/masks/closure.
-  Existing20day canonical panel is ready, not still collecting.
-- Engine/Steward Schrodinger: H20 fresh inference point then one informative
-  frozen campaign under current-nas8-next-campaign-20261031-v1.
-  New P20 reversal proposal d8559ade is ready; final contract/native optimizer/
-  inner curves/early stop/purge/costs/caps before market fits. Useful GPU work
-  approved including concurrent workers with measured headroom. No duplicate
-  Ridge/TCN/LoRA/depth/foundation training or completed readouts.
-- Strategy Huygens: old frozen NAS8 model timestamp/hash proof and unchanged
-  later-replay contract7023/ea1d closed: Ridge historical exact digest not proven,
-  no Oct30 independent numerical activation. Data977e/b11c now3900known with
-  explicit pacing deviation19d4, not a reason to reacquire or claim protocolPASS.
-  Future Nov2/3/4 exact current-weight freeze/native date-adapter readiness next,
-  zero market readout. No support relaxation/retroactive proof/PIT/alpha claim.
-- Harvey invoked Infra: disjoint original-exit-bootstrap-repair-20261031-v1,
-  source-only precise GRU/TFM/L owner-call-chain repair/cold native checks;
-  Hegel independently completes F9 current-capability adapter+bounded read.
+When opportunity occurs, inspect exact bound dispatch/input/request/fill and
+current owned inventory through strict current-writer-scoped readers. Distinguish
+no intent, technical fault, submit attempt, acceptance, exact fill and current
+reconciliation. An installed future exit is a duty, not terminal financial
+closure. Fees/settlement/net PnL remain unknown without their own evidence.
 
-## Completion Evidence / Continue
+## Ready Parallel Work
 
-Require exact actual dispatch/input/request/fill/current-owned-inventory linkage
-or a narrowly stated native decision/technical failure/recovery result. Unknown
-remains unknown; fees/settlement/net PnL require their own evidence.
-Run required verification; commit/push owned integration. Replace this with
-ONE material next company outcome only after actual runtime closure, then
-continue the active long request. Small package completion is not company closure.
-No foreground market wait or replacement app follow-up chain.
-Fresh test authority346f8890/source934f is in HANDOFF; interrupted
-fixedcap full logs are not authority. New external code needs native checks;
-material recovery/activation requires fresh company-goal verification.
+- Execution Hegel: F9 UNKNOWN-HELD; changed diagnostic completion-r2 under
+  current-legacy-paper-reconciliation-20261031-v1. Last actual range query
+  consumed2GET1POST but guest failure lost categorical diagnostics; financial
+  facts unknown. Fix actual parse/host-return branch first, then separately
+  bounded approved readonly diagnosis. Original read/debits preserved, no
+  substitute order/reservation release/approval-looking operational-read wait.
+- Invoked Infra Harvey: original-exit-bootstrap-repair-20261031-v1 whole-ingress
+  completion. Earlier31mocked/two cold bootstraps qualified, not installed.
+  Real production-like capability/owner-return boundaries, no private/Task/API
+  effects. Parent migration only after exact full proof/current owner closure.
+- Data Herschel: historical60 plan6e27/native077e is ready, collector NOT yet
+  claimed running. Complete cache/cursor integration/native and run within
+  original2000GET/240each/onePOST/8recoveries/5200soft5400hard5500supervisor/
+  12000workerSUM14400elapsed. Public source/mount/PID callback at actual start.
+  Existing canonical20day panel and Oct30one-day3900known stay immutable;
+  pacing deviation19d4 retained. Missing stream constrains itself, not all lanes.
+- Engine/Steward Schrodinger: next informative P20 fixed expert/fusion or
+  distinct ML ranker from actual diagnostics, freeze target/data/costs/caps/native
+  before market fits. Three-mask TCN study144c/96c6 COMPLETE, rawBEST0/untrained,
+  indicatorBEST5/both6; descriptive reused-data conjunction, not learning/alpha.
+  No duplicate old training/readout. Useful ready GPU jobs use measured headroom,
+  project priority and one coordinator; a plan is not a running CUDA worker.
+- Strategy Huygens: direct exact pure-kernel support to Engine, not duplicated
+  implementation. Future Nov2/3/4 old-candidate freeze420c/0826/47a3 and
+  native date adapter9cc4/23checks ready. No Oct30 independent evaluation:
+  old Ridge pre-open content digest unproven. Actual future input remains due.
+- Hilbert invoked runtime support only for Engine's concrete unmet handoff;
+  existing H20 component source da812/31checks is frozen and consumed by Parent.
+
+## Integration / Verification / Continue
+
+Actual MSE installed e362/13e4 still has Oct30 pair55a6 technical failure;
+pre-native output-root cause strongly diagnosed, not historical zeroeffect/
+restoration proof. Current observer original metadata matches, original Nov5
+exit remains. H20 future-only predicate preserves those unknowns and all risk
+checks, never forges a missing old closure or imposes all-flat/profit gates.
+
+Fresh company verification Source934f/RESULT346f8890:
+231serialPASS1knownskip;19619fullPASS26knownskip/8of8workers[19645]/cleanup/
+Ruff/3Compose .env.example/exec97821joined0.1418 protected files unchanged.
+Changed external builder/native/adapter tests separately; repeated repo suites
+cannot prove external runtime. Interrupted prior full log remains unqualified.
+Run required source/focused checks, verify/commit/push material owned integration.
+Replace this with ONE material next company outcome only after actual named
+runtime closure, not this deployment/package commit. Continue another ready
+package without foreground market waiting or new app follow-up chain.

@@ -23,6 +23,28 @@ Original MSE exit Nov5UTC20:40 remains. Other original duties untouched.
 
 ## H20 Next Session / Not Installed Yet
 
+SUPERSEDED BY ACTUAL Oct31UTC12:55 installation:
+current-h20-next-session-deployment-preparation-20261031-v1/point-root-binding-r2,
+host a/graph/host/SOURCEc42867fa, p2/TRUEa4a7ceb1/plan a58862e9,
+p2/actual-install/RESULT8a7df6de/independent-readbackd39cdc36.
+Exact two absent targets -> create disabled -> complete readback -> exit-first
+enable. No Run/Stop/Delete/Update/other project definition change/broker call.
+Entry thericher-etf-h20-spy-once-entry-20261102-v1 Nov2UTC15:10trigger/
+15:15..21native (KSTNov3 00:15), exit thericher-etf-h20-spy-owned-exit-20261201-v1
+Dec1UTC14:25trigger/14:30..36native (KST23:30). Both enabled/unstarted/instances0.
+Fresh point703025e4/ceb7ee20 is SPY; Data0f41. Actual bankROe4af/sourcec428/
+one nativeRO/0broker/noreset/norelease, TRUE onlyallow_execute change.
+Actual risk/unknown/quote/orderability/observer checks remain at effects;
+no actual acceptance/fill/owned position/netPnL established by installation.
+Original MSE/F9/bank/all exit duties preserved. Never reapply consumed install.
+Root31827c22/nativec279: fix builder by preserving unchanged JSON bytes, not
+recomputing trusted hashes. Actual failed6034 source pin kept; uninstalled4f6
+too-long SDK path243 kept. Final short graph max224 meets original240 limit.
+Observe CLI's missing observedSid repaired at Parent call via existing qualified
+four-argument collector; no SID/custody guard weakened. Current H20 runtime paths
+and immutable evidence are in HANDOFF/RUNBOOK. The paragraphs below describe
+superseded preparation, NOT an alternate active source.
+
 A/execution/current-h20-next-session-deployment-preparation-20261031-v1.
 Old component6654/f093/native2240/closure28a4 qualified; canonical source9fa8/
 test090f committedb3ad. SPY/AMEX, one existing serial bank, explicit21inclusive

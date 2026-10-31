@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-10-31 KST / Oct31UTC12:17 integration.
+2026-10-31 KST / Oct31UTC13:09 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -48,50 +48,70 @@ Original GRU b8d8629f, TimesFM df98e1bc and L586237af routing updates are consum
 with Oct30UTC19:45/19:49/19:55 original duties. Current scoped results are being
 examined, not inferred from Task exit. Other original exits remain unchanged.
 
-## H20 Next Session
+## H20 Actual Future Deployment
 
-Old Oct30 H20 point d5804301/Source2fdb7ed0 is expired and never installed.
-Do not retag it, repeat its forecasts, or replay MSE migration.
-Canonical single-ETF module9fa8fe10/test090f912f committed b3adf2e7.
-Existing fixed-capability preparation:
-A/execution/current-etf-h20-fixed-capability-host-preparation-20261030-v1,
-Source6654a687 / FINALf093bfd2 / native224060e5 / closure28a4d1f4.
-SPY/AMEX, existing native single owner/bank, immutable intent/control/exit duty,
-explicit OPEN[e+20]=21 inclusive sessions; no new bank/all-flat/profit gate.
+Oct31UTC12:55 ACTUAL finite pair installed, not submitted or filled.
+Root:
+A/execution/current-h20-next-session-deployment-preparation-20261031-v1/point-root-binding-r2.
+Actual host a/graph/host/SOURCE.json:
+c42867faeaa16211913c708ef83e5a110e80ff11f878b18d5a43da0f6c3708ad.
+Parent release p2/PARENT-TRUE.json:
+a4a7ceb1b6f06254567d1cd3c46dc6e1f1f83f0ca365a3926eae4c1a9a60983f.
+Plan p2/bound/PLAN.json:
+a58862e96dd8af4975d5a03a157633a28c57fa3b8d12cc1ce03edbb722f4d4b4.
+Actual p2/actual-install/RESULT.json8a7df6de, independent
+p2/INDEPENDENT-READBACK.jsond39cdc36: exact XML/API7/source/quiet/enabled/
+unstarted/instances0 match. Created disabled exit+entry, enabled exit first;
+Run/Stop/Delete/Update0 and other project definitions unchanged. Never replay.
 
-Hilbert owns
-A/execution/current-h20-next-session-deployment-preparation-20261031-v1.
-Fresh DataREADY0f4123d1 from
-A/data/current-h20-next-session-data-20261031-v1:253 known daily closes each
-SPY/QQQ throughOct30;6GET1POST/zero retries/positive closure93e8a906.
-Schrodinger produces ONE genuine asofOct30/decisionNov2 point from frozen H20D2
-models under A/research/current-h20-next-session-point-20261031-v1, at most
-two CPU forwards/no fit. A plan is not an actual point.
-Selected future entry Nov2UTC15:15..21, physical15:10/hard15:24 provisional.
-US DST ends Nov1:Nov2 regular open14:30UTC=23:30KST.
-Calendar native check f7887351 confirms OPEN[e+20] Dec1UTC14:30..36,
-including Thanksgiving exclusion and Nov27 early close. Final source still due.
-New source must include observer-path repair, actual full-CLI smoke and exact
-current MSE dependency, not a forged historical closure.
+- Entry Task thericher-etf-h20-spy-once-entry-20261102-v1:
+  Nov2UTC15:10 trigger /15:15..21 native /15:24hard /PT16M.
+  KST Nov3 00:10 trigger /00:15..21 native. NOT Nov2KST23:15.
+- Exit Task thericher-etf-h20-spy-owned-exit-20261201-v1:
+  Dec1UTC14:25 trigger /14:30..36 native /14:39hard /PT16M.
+  KST Dec1 23:25 trigger /23:30..36 native.
+- Calendarf7887351: OPEN[e+20]=21inclusive, Thanksgiving excluded,
+  Nov27 early close retained. Operational entry is OPEN+45min, not analytical
+  OPEN-fill parity. SPY/AMEX only; no QQQ substitution/new bank.
+- Runtime fresh actual owner/account/shared B10/unknown request/quote/
+  orderability/observer checks remain. Original MSE/other exits and F9 intact.
+  This scheduled definition is not financial admission, OS-origin proof or fill.
+  PC/user session/Docker must actually be available at the owned opportunity.
 
-Parent owns prepare/TRUE/bind/actual future installation. Future disabled
-definition creation, complete ACL/XML readback and exit-first enable can precede
-financial/observer quiescence under AGENTS' narrow no-effects installer contract.
-Actual effects still require fresh relevant-owner/account/budget/unknown-request/
-quote/orderability/observer checks. Installation never proves runtime readiness
-or a fill. H20 is NOT yet deployed at this integration checkpoint.
-
-Fresh point attempt Source d87630ed / FINAL2816b9d0 closed unavailable after
-uncontained native exit1; actual forward count unknown, original2 conservatively
-reserved and107.764worker upper preserved. No retag or completed-fit repetition.
-Parent separately assigned operational same-input technical continuation:
+Fresh point is COMPLETE:
 A/research/current-h20-next-session-point-technical-continuation-20261031-v1,
-contract05cfd4d4; at most2additional deterministic CPU forwards, cumulative
-possible4 including original unknown2,0fits/0performance readouts/300newworker/
-3600elapsed. Native stages/START-DONE/categorical fatal diagnostics and review
-before new calls. This explicit new operational allowance does not reopen,
-refund or regrade the old frozen study. H20 source packaging consumes only an
-actually qualified fresh point, not this plan or a placeholder hash.
+Sourceeffc277f/FINAL703025e4/PROPOSALceb7ee20/HILBERT-HANDOFF5b612bf3.
+As-ofOct30/decisionNov2/SPY,2additionalCPUforwards/0fits/readouts, all closed.
+Original failed d876/2816 unknown2forward reservation/107.764debit preserved;
+cumulative possible4.69.941newworker upper; no old point retag/retraining.
+Fresh DataREADY0f4123d1:253 known daily closes each SPY/QQQ throughOct30,
+6GET1POST/positive closure93e8a906. Source quality limits unchanged.
+
+Parent actual bank RO p2/prepare/PREPARED.jsone4afcb6e:
+sourcec428/one admitted native original-bank RO read/0broker calls,
+no reset/reservation release; current prepare host32068 positively absent.
+FALSE4c2bba30 -> TRUEa4a7 changes only allow_execute.
+Canonical single-ETF module9fa8fe10/test090f912f remains tracked b3adf2e7.
+
+Preserved technical history, NOT alternate scheduled sources:
+- Original component preparation da81265e/FINAL9b457694:31focused checks,
+ 32prior workers absent. Engine-root literal derivativefd485291 qualifies
+ actual producer schema/root without rerunning any model.
+- Graph60341c75 prepare failed4d2b4c31 before bank/native creation:
+ builder reserialized unchanged guard JSON, invalidating internal member pins.
+ Parent chose a SMALLER fix than hash recomputation: skip writing semantically
+ unchanged JSON; original guard bytes/pins stay exact. Source31827c22/
+ nativec27955f7 real cold constructor/check, wrong-pin/tamper/original-failure
+ cases passed. Claude REVISE9caeef88 adopted via PARENT-ADJUDICATION.json.
+ No checked()/risk/custody weakening or rehashed unrelated drift.
+- Graph4f6d5f4c RO preparation succeeded, but installer rejected one SDK path
+ length243 (limit240). Use shorter final graph a/, maximum224; old TRUE22b501b2
+ never deployed. Partial PURE Bind outputs stay preserved, no OS effects.
+- Original Observe CLI omitted required observedSid parameter. Parent used
+ existing exact qualified LibraryOnly collector with all FOUR arguments and
+ actual current SID; TARGETSc9c3db36 proved exact two targets absent immediately
+ before installation. No SID check bypass/foreign owner or repeated Task apply.
+Detailed failed graphs/debits remain in that root; never execute them as fallback.
 
 ## Financial Knowledge / Recovery
 
@@ -120,6 +140,14 @@ F9 native parser/guest/cold bootstrap passed, but current public-capability
 bindings absent:0GET0POST0private reads, no released reservation.
 Changed F9-only adapter/read completion at that root/f9-fixed-capability-
 completion-r1 is now assigned, not an operator approval wait.
+
+That completion12bba0d0/actualruntimeff6848fe did make2historyGET1POST,
+before-create/start/history admission passed, then guest exit20 lost categorical
+reply. Failure3b69711f/closure93f4ec1b/firstcause08bfdccf preserved. Rows and
+acceptance/fill/current-owned/terminal still UNKNOWN; no unused-cap refund.
+Current changed f9-diagnostic-completion-r2 fixes real parse/host-return/error
+branches before a separately bounded technical readonly diagnosis. It is not
+a new operator-authority decision or permission hold.
 
 ## Completed Research / Data
 
@@ -169,6 +197,14 @@ No actual exchange limit order, market replay, risk relaxation or old regrade.
   actual native optimizer/checkpoint/handoff first. No duplicate completed fits.
   GPU first priority/concurrency approved; measure headroom/keep4GiB reserve.
   Dispatch assignment is not proof of an active CUDA worker.
+  UPDATE: both packages COMPLETE. New three-mask study Source144c7e71/
+  FINAL96c6ab1a:3fits/3forecast sweeps/14cells/one reused-DEV intake;
+  raw24epochs360updates/BEST0(untrained), indicator29/435/BEST5, both30/450/BEST6.
+  Descriptive conjunction MET on reused4DEVclusters, not learning/alpha or
+  independent selection/Paper promotion. Original launcher exit20 retained;
+  complete saved outputs recovered, no repeated fits. All4CIDs34CLIJobs/hosts/
+  GPUlease closed,665.485worker upper/1430.081elapsed. Next informative fixed
+  P20/fusion or distinct ML ranking campaign assigned, contract/native first.
 - Huygens Strategy: A/research/current-nas8-frozen-later-replay-contract-20261031-v1.
   Source7023bb33/MAINa63bd96a/contractea1d8d94 COMPLETE129checks; artifact
   chronology predates open but exact Ridge historical digest not proven.

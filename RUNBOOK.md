@@ -52,37 +52,62 @@ New bounded qualified originaldate..currentdate readonly capability probe is
 separate. Empty/currentday control never proves history/noeffect/releases.
 Never use recovery-capable observe() as reader, substitute intent/reset/bank.
 
-## H20 Future Installation / Actual Effects Separate
+## H20 Actual Installed Pair / Do Not Replay
 
-Builder:
-A/execution/current-h20-next-session-deployment-preparation-20261031-v1.
-Actual fresh DataREADY0f41:
-A/data/current-h20-next-session-data-20261031-v1/DataREADY.json.
-Point producer:
-A/research/current-h20-next-session-point-20261031-v1.
-Existing H20D2 models, asofOct30/decisionNov2, max2CPUforwards/no fit.
-Old d580/Oct30 point is expired/uninstalled, never retagged.
-This new point attempt d876/2816 ALSO closed unavailable after native exit1,
-not qualified input. Separate operational same-input technical continuation:
+Current root:
+A/execution/current-h20-next-session-deployment-preparation-20261031-v1/point-root-binding-r2.
+Host a/graph/host/SOURCE.json c42867faeaa16211913c708ef83e5a110e80ff11f878b18d5a43da0f6c3708ad.
+p2/PARENT-TRUE.json a4a7ceb1b6f06254567d1cd3c46dc6e1f1f83f0ca365a3926eae4c1a9a60983f.
+p2/bound/PLAN.json a58862e96dd8af4975d5a03a157633a28c57fa3b8d12cc1ce03edbb722f4d4b4.
+p2/actual-install/RESULT.json8a7df6de:
+EXACT_NEW_PAIR_ENABLED_EXIT_BEFORE_ENTRY_NO_RUN.
+p2/INDEPENDENT-READBACK.jsond39cdc36:
+exact semantic XML/API7/Source/quiet/enabled/unstarted/instances0.
+Create disabled two absent tasks, enable exit before entry. No Run/Stop/Delete/
+Update/broker call; other project definitions/ACLs/enabled state unchanged.
+Install is CONSUMED. Never repeat Prepare/TRUE/Bind/Apply or old namespaces.
+
+Entry thericher-etf-h20-spy-once-entry-20261102-v1:
+Nov2UTC15:10trigger/15:15..21native/15:24hard/PT16M.
+KSTNov3 00:10trigger/00:15..21native.
+Exit thericher-etf-h20-spy-owned-exit-20261201-v1:
+Dec1UTC14:25trigger/14:30..36native/14:39hard/PT16M.
+KSTDec1 23:25trigger/23:30..36native.
+Calendarf788 confirms21inclusive OPEN[e+20], Thanksgiving excluded, Nov27earlyclose.
+Entry OPEN+45minutes is operational, not research OPEN-fill parity.
+Current source/runtime per-effect account/budget/unknown/quote/orderability/
+observer admission remains. No acceptance/fill/ownedposition/PnL from install.
+PC/user session/Docker availability at the exact opportunity is required.
+
+Actual point:
 A/research/current-h20-next-session-point-technical-continuation-20261031-v1,
-contract05cfd4d4;2additionalCPUforwards/cumulativepossible4 with oldunknown2
-and debits retained,0fits/0performance readouts. Only actual qualified FINAL
-from that continuation may feed current builder; no placeholder/source swap.
-Selected entry Nov2UTC15:15..21/trigger15:10/hard15:24 provisional.
-Nov2 regular open14:30UTC after DST endsNov1. Compute OPEN[e+20]=21inclusive
-exit with actual calendar, not old Nov30 label. Calendarf788 qualifies Dec1
-UTC14:30..36 including Thanksgiving/Nov27 early close. SPY/AMEX/one oldbank.
+Sourceeffc277f/FINAL703025e4/PROPOSALceb7ee20/HILBERT-HANDOFF5b612bf3.
+SPY/asofOct30/decisionNov2,2additionalCPUforwards/0fits/readouts/allclosed.
+Original d876/2816 unknown2/debit preserved, not reopened. DataREADY0f4123d1.
+Actual original-bank RO p2/prepare/PREPARED.jsone4afcb6e:
+one admitted RO/0broker/no reset/no reservation release; current host32068 absent.
 
-Parent uses source-qualified prepare/TRUE/bind before one finite pair install.
-Exact future absent project tasks only: create disabled, complete XML/ACL
-readback, enable owned exit before entry. No Run/demand/catchup/repetition/
-earlyeffects/private-state touch. This narrow installer need not wait for
-financial/observer quiescence. Original-writer migration still requires
-positive relevant original owner closure.
-Actual runtime independently checks current owner/account/budget/unknown/
-freshquote/orderability/observer. No allflat/profit gate or forged old closure.
-Repair caller observer output to helper-owned child; test full actual CLI, not
-just Core mocks. Quiet tested pythonw/JobPopen, never visible command windows.
+Failure recovery facts, NOT alternate deploy commands:
+- Prior source60341c75 fault4d2b4c31 occurred at real Capability constructor before
+ bank/native. Semantically unchanged guard JSON was rewritten with new formatting,
+ invalidating existing member pins. Minimal builder31827c22 preserves those bytes,
+ rather than recomputing hashes. Cold real constructor/check + wrong-pin/tamper/
+ old-failure negatives c27955f7, emitted runtime Ruff passed.
+- Prior graph4f6/TRUE22b never installed: SDK path max243 violated original240
+ cap. Final short graph a/ max224, original cap intact. No new alias/link.
+- Target Observe CLI omitted observedSid argument; existing qualified LibraryOnly
+ collector invoked with all four arguments/current actual SID, proofc9c3db36.
+ SID/ACL checks unchanged. Do not call the broken Observe CLI or reapply the pair.
+- Older Oct30 d580 point and old preparation remain expired/uninstalled.
+ Full failed graphs/debits remain immutable; no old closure/restoration forged.
+- Exact mounted SDK keeps guarded virtual BUY VTTT1002U / SELL VTTT1006U.
+ No tracked main global wire flip or blind replacement of old cohort SDKs.
+
+At owned opportunity inspect exact Source/release/round/input/request/fill/current
+inventory joins through strict existing readers. Missing/Taskexit/preview not fill.
+Read-only source-safe Task status/last/next may be inspected; never Run merely
+to check effects. Quiet pythonw/hidden native child paths remain; no cmd popups
+introduced by these tasks. Preserve all original exits/F9/shared bank.
 
 ## Useful Research / No Duplicate Training
 

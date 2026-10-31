@@ -27,6 +27,28 @@ Sizing SYN80e5/f95e/21cc now24cases complete; no market regrade/actual limit ord
 
 ## Priority Current Work
 
+Oct31UTC12:59 CURRENT: H20 operational continuation COMPLETE:
+Sourceeffc277f/FINAL703025e4/pointceb7ee20/handoff5b612,SPY/asofOct30/Nov2,
+2additionalCPUforwards/0fits/readouts/allclosed; oldunknown2/debits retained.
+Parent ACTUALLY installed H20 sourcec428/TRUEa4a7/plan a588/RESULT8a7d/
+independentreadbackd39c. EntryNov2UTC15:15/exitDec1UTC14:30; not yet a fill.
+
+Ordinal three-mask campaign is COMPLETE, NOT RUNNING:
+current-nas8-next-campaign-20261031-v1 Source144c7e71/FINAL96c6ab1a,
+3fits/3forecast sweeps/14cells/one DEV path intake, no old fits repeated.
+raw_only24epochs360updates/BEST0(untrained); indicator29epochs435updates/BEST5;
+both30epochs450updates/BEST6. Descriptive conjunction met on reused4DEVclusters,
+NOT training benefit/alpha/convergence/independent selection or Paper promotion.
+Actual model worker passed; original forecast launcher exit20 preserved. Complete
+saved outputs recovered with exact manifests, not repeated training/readout.
+All4CIDs34CLIJobs/hosts/GPUlease closed;665.485worker upper/1430.081elapsed.
+Next assigned useful P20 fixed rule/fusion or distinct ML rank-learning mechanism,
+chosen/frozen by Engine from diagnostics; no identical TCN/seed rerun.
+Strategy direct pure-kernel support; Hilbert invoked concrete runtime support.
+Data historical60 is assigned, never assume published or wait globally for it.
+
+Earlier bounded assignments/failures below are retained context, not relaunch:
+
 Oct31UTC12:30: original H20 point d876/FINAL2816 closed unavailable after
 native exit1, trained-forward progress unknown. Original2 conservatively
 reserved and107.764worker upper unchanged. Parent explicitly assigned separate
@@ -64,6 +86,24 @@ replay. Future exact weights/Nov2..4 date adapter readiness is assigned instead.
    evidence. One later session is not contemporaneous/PIT/robust alpha evidence.
 
 ## Resources / Next Consumer
+
+### Breadth Queue
+
+Next: fixed P20 reversal/rank rule and an aligned fixed blend, or a distinct
+ML ranking objective, driven by completed diagnostics. Source/cheap CPU
+screening is useful even when GPU is free. Strategy's pure kernel must have
+one actual consumer, not become another reading list. Frozen prior studies
+are closed; any new comparison is honestly adaptive on reused data.
+
+### Depth Queue
+
+Next candidate: larger-history rank model or representation adaptation after
+the useful historical60 input and its exact target/splits are ready. Choose
+from the breadth evidence and predeclare convergence/overfit diagnostics,
+epochs/time/early-stop/LR/BEST and finite trials, rather than extending old
+immutable fits or calling BEST0 a trained improvement. Preparation may start
+now; actual GPU dispatch needs a concrete ready campaign, not GPU occupancy.
+This queue is not a profitability requirement for operational Paper trading.
 
 Schrodinger coordinates useful CPU/CUDA jobs via qualified fixed launcher2f1
 and exact asset/image manifests. GPU first priority; measure free/projected

@@ -5,6 +5,20 @@ A=D:/thericher-v2/model-artifacts; Parent shared MD/Git. No approval gate.
 
 ## Owned Queue
 
+Oct31UTC12:59 update: three-mask ordinal study144c7e71/96c6ab1a COMPLETE,
+3GPUfits/3forecasts/14cells/rawBEST0/indicatorBEST5/bothBEST6, all4CIDs34CLIJobs/
+hosts/lease closed. Actual model worker passed, original launcher failure retained;
+saved complete outputs salvaged, no training repetition.665.485worker upper.
+H20 operational continuation effc/7030 COMPLETE2additionalCPUforwards/0fits/
+69.941newworker upper/allclosed; oldunknown2 retained. Parent actual finite H20
+deployment c428/a4a7/a588/8a7d/d39c is installed, not a GPU job or fill.
+Next independent informative campaign assigned to Engine (P20/fixedfusion or
+distinct ML ranking), exact contract/native first. These old three fits are NOT
+currently running; no duplicate for utilization. Hilbert public runtime support
+only on a concrete unmet boundary. Historical60 Data is not yet assumed ready.
+
+Prior frozen assignments below are history/context, not a command to repeat:
+
 - Priority CPU: fresh H20 Nov2 point, at most2existing-model forwards/no fits,
   root current-h20-next-session-point-20261031-v1,300worker/3600elapsed.
 - Next useful numerical campaign: current-nas8-next-campaign-20261031-v1;
