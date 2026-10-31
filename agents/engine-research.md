@@ -70,13 +70,58 @@ next numerical dispatch must abort on any required checker's nonzero exit.
 Preserve old INNER/DEV globalorigin/funded12sleeve phase and apply the new
 FIT-only affine consistently; extra dates cannot silently renumber old clocks.
 
-Current next separate CPU mechanism: Strategydc8c/CALLBACKbbe3/offer5cb7 fixed-half
+Completed separate CPU mechanism: Strategydc8c/CALLBACKbbe3/offer5cb7 fixed-half
 MARKED-inventory adjustment versus same-clock persistent full/EW8 controls,
 same-tape gross/net/duty-fee attribution. Not calibrated logits or old H60
 study regrade. Harvey owns pure invented-data kernel under
 current-nas8-persistent-position-kernel-20261031-v1 (<=300worker/1800elapsed),
-not market numerics. Engine final campaign/costs/splits still required.
-This does not change the frozen GRU25 contract or broker risk.
+not market numerics. Engine actual study is now COMPLETE:
+current-nas8-persistent-book-cost-attribution-20261031-v1,
+Source62a02924/FINAL16f52c15/CALLBACK9c6a0826.0fits/0newforecasts/
+3policytapes9views/164proposals160updates4sessions. HALF reduced total fees,
+improved net versus persistent FULL and passed risk/gross matching, but did
+NOT beat EW8: COST_IMPROVEMENT_WITHOUT_SELECTION_VALUE, adaptive only.
+Actual host8064 14:59:21..30UTC/all3CIDs25Jobsclosed/136.103workerupper.
+Fail-fast guard native now actually enforced before market decoding;
+failures/debits preserved, no old model/forecast/readout repeats or regrade.
+
+Future source-only package COMPLETE:
+current-nas8-persistent-future-replay-readiness-20261031-v1,
+freeze ONE exact existingTree+HALF candidate for untouched Nov2/3/4 outcomes,
+fixed FULL/EW controls/cost0shadow10primary20stress/seed+exit/cumulativecash.
+No new fits/real-model restores/forecasts/readouts/Task/API/placeholder Data.
+<=600worker3600elapsed/tiny invented actual producer-consumer date/schema.
+Do not modify original Ridge/TCN future420c/0826/47a3 or tune four reusedDEVs.
+Actual later replay is not verified decision-time availability/PIT/finality or
+independent alpha; Validation waits only its exact future frozen input.
+Sourcea56f4d9c/candidateeb8f02d8/contract4f56d368/FINALbbfeb328/
+callbackc10f312b/DataRequest1158ef09; native actual post-DST14:30UTCopen,
+123proposalkeys/120updates/9negativechecks/oneinventedpredict-schema call.
+OneCID9Jobsclosed/72.827workerupper. No real CBM restore/market forward;
+native ABI readiness is not runtime model compatibility or numerical authority.
+Support>=100of120 updates and>=25eachdate, excluding3seed-only keys.
+Original Ridge/TCN420c/0826/47a3 unchanged. Future Data currently absent.
+DataSource1c97 finite3-session collector is now actually enabled viaad1b;
+nominal afterclose capture still does not prove decision-time availability.
+
+Future worker preparation is COMPLETE: current-nas8-future-evaluation-worker-
+preparation-20261031-v1/Sourcec2b1086d, actual trustedCBM restore1/invented128-
+feature predict1/3tapes9views,7CLIJobs/hostJob/CIDclosed/0marketforecasts/fits.
+Parent ACTUALLY installed and enabled ONE task at Nov4UTC21:35..45 (KSTNov5
+06:35), activation20261101-v1/Source8c1d391f/enabledaf4961be/readback3f7ff62c.
+No Run/catchup/demand/repetition. Genuine qualifying combinedDataREADY only,
+original4f56caps/model/affine/kernel/controls; <=1restore/1forecast/0fits/
+0retry/3tapes9views/600active/3600elapsed. CPU2/RAM6/networknone/allinputRO,
+source-bound GUI launch. Missing input is unavailable, not a zero/winner.
+No actual future evaluation now; this is not GPU work or broker risk change.
+
+Ampere next owns current-nas8-relative-return-head-preparation-20261101-v1:
+inspect existing-family/saved GRU INNER diagnostics, then ONE distinct
+market-relative continuous/ranking target proposal/native or concrete rejection.
+<=600active/3600elapsed/invented only/no fits/marketforecasts/DEV readouts.
+A future new trainable campaign needs frozen actual target/split/availability/
+affine/costs/budget/stop and real optimizer/checkpoint/producer-consumer native
+before numerical dispatch. Completed fits and old holdout custody unchanged.
 
 No identical old-target/seed repetition.
 Explicit windows/timeframes share finite trial family. Predeclare maxepochs/

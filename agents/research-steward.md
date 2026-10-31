@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Oct31UTC14:12. Schrodinger sole coordinator; Parent shared MD/Git.
+Oct31UTC16:43. Ampere current coordinator; Parent shared MD/Git.
 A=D:/thericher-v2/model-artifacts. Custody/resource owner, not approval gate.
 
 ## Completed / Not Running
@@ -31,11 +31,18 @@ all4CIDs32Jobs/leaseclosed.219.947workerupper/1239.885elapsed; no repeat.
 Original model/data natives preceded fit, extra phase checker passed late after
 path-spelling assertion plus tool batch failed to abort. Deviationecae retained,
 not pre-fit proof; next dispatch fails fast on nonzero checks.
-Parallel pure persistent-position kernel assigned Harvey300worker1800elapsed,
-invented only/no GPU/evaluation. It is not another resource coordinator.
-Engine next freezes one separate zero-fit persistent-policy CPU comparison;
-current GPU is not claimed active. Useful new CUDA work needs a distinct ready
-hypothesis, not extending this failed frozen campaign to fill the device.
+Pure persistent-position kernel0c14/5563/native44 is complete/allclosed,
+invented only/no GPU/evaluation; Harvey role is closed, not a resource owner.
+Persistent-policy CPU comparison62a0/16f5 is COMPLETE,0fits/0newforwards/
+3tapes9views/all3CIDs25Jobsclosed/136.103workerupper. HALF cost/net better than
+FULL but not EW8; no alpha/old-family regrade. Current GPU is not active.
+Future freezea56f/eb8f/4f56 is complete. WorkerSourcec2b1 has actual trusted
+CBM restore/invented-predict native/allclosed; Parent activation8c1d enabled
+ONE Nov4UTC21:35..45 CPU evaluation, genuine futureDataREADY only/0fits.
+No active GPU worker. Ampere now owns relative-return-head preparation20261101:
+ONE distinct hypothesis/native or rejection, <=600active/3600elapsed/invented
+only, no market numerics/fits/DEV readout. Useful new CUDA work requires an
+actual ready frozen hypothesis, not extending closed fits to fill the device.
 
 Use one existing coordinator for concurrent ready independent workers.
 Freeze exact data/split/seed/trials/fit/evaluation/activeSUM/elapsed caps before

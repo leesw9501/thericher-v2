@@ -139,6 +139,14 @@ matches; native candidate0 explains this batch, not historical retention/
 no-ever-order/acceptance/fill/release. F9UNKNOWN-HELD. Next assigned local
 current-bank headroom categorical scope has no broker calls; no amounts/IDs.
 
+That headroom read is CONSUMED/COMPLETE at14:56UTC:
+same root/h20-current-headroom-r1/CALLBACK5435a162/Sourcea0d79f76/
+RESULT4f4aaa8b/categoryff338743/closure1393de58. Localbasis/accountbindingYES,
+localheadroomYES/pending1unknown1 preserved. OneofflineRO/0API/threeadmissions/
+14Jobsclosed/stable; no repeatactualread. Not current broker buying power,
+full account snapshot, integer-share eligibility or fill. Source-only F9 date
+audit3f242f03 confirms actual submission_started_at, not creation date.
+
 Additional completed adaptive research, NOT relaunch commands:
 - A/research/current-nas8-next-campaign-20261031-v1:144c/96c6,3TCNfits,
   rawBEST0(untrained)/indicator5/both6. Descriptive reused-DEV pass, not alpha.
@@ -181,6 +189,47 @@ inner-validation/caps before fits. Schrodinger sole GPU coordinator, measured
 headroom/4GiB desktopreserve; useful concurrency allowed, no dummy utilization.
 
 ## Verification / Recovery
+
+### Current Finite Data / Frozen Evaluation
+
+These are installed definitions, NOT commands to replay:
+- Data thericher-data-nas8-future-three-session-20261102-v1:
+  Nov2/3/4UTC21:10,start<21:11/hard21:25,KSTnextday06:10.
+  A/data/current-nas8-future-session-acquisition-preparation-20261031-v1/
+  Source1c97eafe. Parent activation same namespace20261031-v1/Source-r3ad1b,
+  ENABLED-READBACK846e68b2/independent4de6ec3a. Exact3finite triggers,
+  no catchup/demand/repetition/manual Run. Named Paper market-only authority,
+  <=160GET/20each/1freshPOST/2recoveries/day/2scompletion/300POSTfloor.
+  Original cache/token/once/deadline guards persist; actual DataREADY absent.
+- Evaluation thericher-engine-nas8-frozen-three-session-eval-20261104-v1:
+  Nov4UTC21:35..45,KSTNov5 06:35. A/research/current-nas8-future-evaluation-
+  worker-preparation-20261031-v1/Sourcec2b1086d; Parent activation20261101-v1/
+  Source8c1d391f/ENABLED-READBACKaf4961be/independent3f7ff62c.
+  Complete XML/ACL/source checked,0instances at readback/no Run. Quiet GUI
+  interpreter checks original Source/members/launcher bytes before imports.
+  Only actual qualifying3dateDataREADY; no placeholder digest/retag/old DEV.
+  Frozen contract4f56/model7457/affinea9a2/kernel5563, <=1restore/1forecast/
+  3tapes9views/0fits/0retry/600active/3600elapsed,CPU2/RAM6/networknone/
+  ROsource-model-data. Missing source/input becomes unavailable, not a zero.
+
+PC/user session/Docker availability must actually hold. Future afterclose
+capture/replay is not decision-time availability/PIT/finality or independent
+alpha. Do not invoke supervisor/worker merely to inspect an installed task.
+Read safe Task status/times and exact immutable bound outcome when due.
+
+Optional H20 after-entry worker is NOT installed or runtime ready:
+A/execution/current-h20-after-entry-read-worker-preparation-20261031-v1,
+firstSource17435/ABI7e36; r4 strict native parser65f is separately ready.
+Feynman transport-r2 must prove real invented guest/duplex admission/parse/Job/
+CIDclosure before a proposed Nov2UTC15:35..40 one-read definition is eligible.
+No actual private read now, recovery observe(), fake proof fields or retrychain.
+Claude REVISE at current-h20-future-read-worker-recovery-review-20261101-v1/
+ADVISORY.json preserves this distinction. It is not a hold on installed H20.
+
+Current consumed CPU cost case62a0/16f5: HALF improves cost/net over FULL but
+not EW8;0fits/0newforwards/3tapes9views/allclosed. Future freezea56f/eb8f/4f56
+complete, current relative-return-head preparation20261101 invented only.
+No duplicate fits/forwards/readouts, no GPU worker active from a plan alone.
 
 Current fresh authority:
 A/verification/current-paper-h20-recovery-integration-20261031-v1,

@@ -52,9 +52,45 @@ network job selected. Existing60-session ETF coverage: QQQ44complete14partial/
 2empty, SPY45complete13partial/2empty; each19494known3906missing1m.
 Nineteen earlier complete sessions each beforeSep25 could support a separate
 ETF expert if Engine selects that concrete need; no new job/projection selected.
-Data LLM closed after completed handoff, not a continuously running collector.
+Prior Data LLM closed after completed handoff, not a continuously running collector.
 Public source/mount/PID callback can go directly Hilbert for actual coexistence
 measurement; do not create dummy workers to manufacture evidence.
+
+## Finite Future Capture Actually Enabled
+
+New source preparation current-nas8-future-session-acquisition-preparation-
+20261031-v1 is COMPLETE: Source1c97eafe/installer609bb2a7/real invented
+parser->codec->Engineconsumer native,123keys/missingmasks/deadline/token/
+mockedScheduler/Ruff. Existing observer source supports21:10UTC timing;
+no existing eligible NAS8 future collector. No actual market calls in preparation.
+
+Parent ACTUALLY created ONE disabled target then enabled Oct31UTC16:14:
+current-nas8-future-session-parent-activation-20261031-v1,
+Source-r3ad1b1f74/ENABLED-READBACK846e68b2/independent4de6ec3a.
+Task thericher-data-nas8-future-three-session-20261102-v1:
+Nov2/3/4UTC21:10 (KST Nov3/4/5 06:10), entry<21:11/hard21:25;
+exact3finite triggers/no catchup/demand/repetition/instances0 at readback.
+Full XML/ACL/source checked before enable, no Run/Stop/Delete/Update/account/
+order calls. PC/user session must actually be available. DataREADY not published.
+
+Task directly launches GUI pythonw with source1c97 and launcherfb46e5be pins;
+unchanged original collector runs only after both source/member checks.
+<=160GET/20each/1freshPOST/2recoveries/session/2scompletion/300POSTfloor;
+single cache owner/valid-client reuse/840child900supervisor. Preserve unknown
+locks/cursors/POST marks; never age-reclaim. Runtime records its own next_due.
+Per-day immutable DataREADY needs actual capture/codec readback/positive child
+closure. Nov4 combined READY requires all3dates; missing remains unavailable.
+Afterclose capture is NOT decision-time availability/PIT/provider finality.
+
+Activation failures are preserved, not alternate install commands:
+8026 initial source created disabled target, full comparison caught URI tuple,
+explicit+09:00 serialization and measured UnifiedSchedulingEngine=true.
+R2b7a7 readback made no mutations; R3ad1b compares original creation export
+against SAME serializer and complete desired XML independently against COM.
+No Task recreate/update; originalSource1c97 unchanged. UTC future-mutation
+guard uses DateTimeOffset.UtcDateTime, not a Z cast converted to KST.
+Original helper dot-source parameter overwrite/missing module import caught
+before real effects; fullCLI mocks and8 source-bound/quiet-GUI cases passed.
 
 ## Recovery
 
