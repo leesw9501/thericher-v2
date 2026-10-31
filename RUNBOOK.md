@@ -1,184 +1,136 @@
 # Runbook
 
-## Entry / Authority
+## Current Entry / Authority
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Run scripts/start_next_codex_task.ps1 on genuine resume, not compaction.
-Follow NEXT_CODEX_GOAL/HANDOFF/AGENTS/current boards.
-Parent sharedMD/Git/actual activation, roles disjoint external roots.
-Never KIS_LIVE_*/realmoney/secrets/account-order IDs/rawbroker-market-private
-values. Credential-free uv run --no-env-file; Compose --env-file .env.example.
-ONE original B/10/costs/losses/pending/F9/exits persist; preserve %SystemDrive%/.
-All paths below are evidence, NOT instructions to repeat consumed execution.
+Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1
+on genuine resume, not compaction. Follow current goal/HANDOFF/AGENTS/stateboards.
+Parent owns shared policy/MD/Git/actual activation. Never KIS_LIVE_*, secrets,
+account/order IDs/raw broker-market-private values. ONE original B/10/costs/
+losses/pending/F9/all exits persist; preserve unrelated %SystemDrive%/.
+Credential-free work: uv run --no-env-file; Compose --env-file .env.example.
+Evidence paths below are NOT instructions to repeat consumed operations.
+Detailed superseded commands/source failures remain in Git4fca1b2a.
 
-## Actual Tasks / Pending Runtime
+## Actual Installed / Exact Inspection
 
-MSE pair ACTUAL/CONSUMED:
-A/execution/current-oct30-native-paper-preparation-20261030-v1/
-activation-constructor-r3/PARENT-RESULT.json29703d08.
-Entry2a0d/7025:Oct30UTC13:40trigger/13:45..51entry/13:54..14:00recovery/
-14:02restore/14:03hard/PT25M (KST22:40trigger).
-Exit105d/7b2a:Nov5UTC20:40trigger/20:45..51exit/20:52..58reconcile/
-20:58:30restore/21:00hard/PT22M (Nov6KST05:40trigger).
-Input20f9418b/Policy05e29c36/Modelb6e0468d; nativeinclusiveH5 NOT OPEN[e+5].
-No TaskRun/broker effect from install, no runtime/fill/PnL yet.
-Do NOT repeat installer/create/apply or current Data/model forward.
+MSE actual fixedcap migration:
+A/execution/current-mse-fixedcap-parent-adoption-20261030-v1,
+entry RESULT532c2e42/exit RESULTf04f5e64/independent readbackebee8bdb.
+Current Sourcee362a884/13e04e11/fixedcap2f1/kernelc571; old2a0d/105d superseded.
+Do not replay UPDATE4/apply. Entry Oct30UTC13:40 trigger consumed.
+Original exit Nov5UTC20:40 (Nov6KST05:40) remains, no change.
 
-GRU/TimesFM ACTUAL sameoriginalTask UPDATE4:
-A/execution/current-original-three-exit-full-caller-integration-20261030-v1/
-gru-timesfm-parent-owner-integration-r4/FINAL.json548dc6a5.
-Source5491e2bb/plan0bc7bf78, oneupdateeach/Jobsclosed/mutexreleased,
-independent current wholeXML/API7/history/newSource readback PASS.
-Original times Oct30UTC19:45/19:49, quietpythonw/argsidentity/bank retained.
-NEVER repeat prepare_parent.py --apply, actual namespaces or oldr3attempt.
-This is routing metadata, not custody/fill/profit.
-L19:55 also ACTUAL/CONSUMED: full-caller-root/l-parent-activation-r1/
-actual/held-apply/RESULT57218fe9, independent readback4d72bb91;8.387476s/
-Jobclosed/mutexreleased/wholeXMLAPI7history unchanged. Runtime5862/factory1a3,
-no Run/broker. NEVER replay apply_once. No owned fill/PnL inferred.
+Exact historical pair:
+A/execution/current-oct30-entry-controller-completion-20261030-v1/entry/runtime-results/paired-entry/PAIR-RESULT.json
+SHA55a68232a033fb02e76ac6245c635d2421cbcaaa5fcd401fe3ef63c8f5061048:
+STOPPED_UNKNOWN_RuntimeError/empty visits/restore obligation, no native closure.
+Read only categorical source-qualified results; Taskexit0 is not acceptance/fill.
 
-Common owner fix is explicit Utility/Management import plus strictUTF8 native
-Docker stdout/stderr. OldhiddenJob defaultdecode50of57validJSON versusUTF8
-57of57 on SAME IDs, under r3/parser-diagnostic-job-3/probe/RESULT.json.
-Sameprocess actual per-cohort Local routing mutex/census/CAS/readback required,
-not saved static booleans/all research-data-GPU quiescence. Runtime financial
-account/basis/bank/quote/orderability/unknown/observer checks remain mandatory.
+Parent firstcause:
+A/execution/current-mse-observer-path-firstcause-20261031-v1/PARENT-DIAGNOSIS.json.
+RESULT1739c215/closure9f6a:4mocked realCLI boundary cases/0actual Task calls.
+CURRENT-CLOSURE1b91:current exact resources closed/original observer enabled/XML/
+ACLmatch; not historical restoration/custody. Claude REVISE/text74b64f1a:
+strongly diagnosed pre-native output-root mismatch, no zeroeffect inference.
+Do not rerun old observer helper or invent OWN-NATIVE-CLOSURE.
 
-L full-host r4 graph586237af/Native8e10a673/FINAL72237fdb/closurecfbf PASS230upper/
-7Jobs/CIDclosed; no more90s fullnative. R5 1a3a/889f/ccdff closed120/typed9+
-ingress5;R6 555d/fce3/8f5d closed90/realcopy9 from e70dsnapshot/81995240.
-Broader R6 mock FAILED and briefly acquired/released actual routing mutex,
-no Task/private/API/copy; do not call it complete ParentApply mock PASS.
-Parent separately adopted exact cold/metadata/copy/typed boundaries, actual
-update/readback above. Old25+6/597.497/349.491 failures/progress stay immutable.
+Original GRUb8d8629f/TFMdf98e1bc/L586237af UPDATE4 consumed at original
+Oct30UTC19:45/19:49/19:55 duties. Hegel current scoped inspection:
+A/execution/current-legacy-paper-reconciliation-20261031-v1.
+Fresh exact current financial-writer admission, allRO/networknone/no recovery/
+lock creation, exact input/policy/fill joins and before-after stability.
+Public Data/research activity alone is not financial writer conflict.
+Previous record_absent/withheld/unknown is not zero positions/orders.
 
-Original Nov4 actualUPDATE4:
-A/execution/current-memory100-original-exit-parent-integration-20261030-v1/r7,
-73a6/678b to0668/5cd3/f0d9,45352joined0. Never repeat apply/census.
-MSFTNov2/LOWVOLNov3/Linear17Nov3/monthlyNAS100Oct30UTC21:00 retained.
-Unsuffixed COM timestamps are KST, not UTC.
-
-## F9 / Financial Readers
-
-F9 original UNKNOWN-HELD; exact identity/volume/book/pointer:
+F9 exact private pointers:
 A/execution/current-paper-us-order-wire-compatibility-20261029-v1/F9-RECOVERY-HANDOFF.json.
-Consumed oldNYqueryf6d9 and distinctdateSource360ae2cb/native69516686:
-A/execution/current-f9-distinct-date-diagnostic-preparation-20261030-v1/
-technical-r2/parent-distinct-date-r1/RESULT.jsoncfcc0979.
-03:24:08/24.7743s/1POST1GET/0retry/zero rows; NYOct19 versus KSThypothesisOct20,
-four fresh scoped admissions/private-source stable/18Jobsclosed/CIDabsent.
-Acceptance/fill/terminal UNKNOWN, no release/adoption/submit/cancel/recovery.
-No repeated date/namespace/query. Displayhash is not orderID/acknowledgment.
+Current20-equalrank4-paper-20261018-v1 UNKNOWN-HELD/Inputbb77/Policyf66e/
+Anchor2a38. Oldcfcc0979 zero-row distinct-date query consumed/inconclusive.
+New bounded qualified originaldate..currentdate readonly capability probe is
+separate. Empty/currentday control never proves history/noeffect/releases.
+Never use recovery-capable observe() as reader, substitute intent/reset/bank.
 
-Consumed strictreader90bae5b5:
-current-memory100-window1925-result-readiness-20261030-v1/path-binding-r2/
-reader-post20/RESULT-ACTUAL.json;10targets0bound10UNKNOWN/fullcountsNULL.
-Consumed healthd6464fed:
-current-paper-readonly-native-health-probe-20261030-v1/technical-r1/actual-once;
-fourpositiveholdingrows/zeroopenorders/referencefundscomplete, not ownedfills/
-fullrisk/fees/settlement/netPnL/F9release. Recovery observe() never offline.
-Coupled1925 operationalclosure39b4/0236 is not entryeffects; entry4768timedout,
-recovery2950no_retained_pending/0calls recoveryONLY. Expiredc5f5 never retag.
+## H20 Future Installation / Actual Effects Separate
 
-## Ready Data / Research Consumers
+Builder:
+A/execution/current-h20-next-session-deployment-preparation-20261031-v1.
+Actual fresh DataREADY0f41:
+A/data/current-h20-next-session-data-20261031-v1/DataREADY.json.
+Point producer:
+A/research/current-h20-next-session-point-20261031-v1.
+Existing H20D2 models, asofOct30/decisionNov2, max2CPUforwards/no fit.
+Old d580/Oct30 point is expired/uninstalled, never retagged.
+This new point attempt d876/2816 ALSO closed unavailable after native exit1,
+not qualified input. Separate operational same-input technical continuation:
+A/research/current-h20-next-session-point-technical-continuation-20261031-v1,
+contract05cfd4d4;2additionalCPUforwards/cumulativepossible4 with oldunknown2
+and debits retained,0fits/0performance readouts. Only actual qualified FINAL
+from that continuation may feed current builder; no placeholder/source swap.
+Selected entry Nov2UTC15:15..21/trigger15:10/hard15:24 provisional.
+Nov2 regular open14:30UTC after DST endsNov1. Compute OPEN[e+20]=21inclusive
+exit with actual calendar, not old Nov30 label. Calendarf788 qualifies Dec1
+UTC14:30..36 including Thanksgiving/Nov27 early close. SPY/AMEX/one oldbank.
 
-ActualM1panel3b1b/95ba/e118 COMPLETE200upper:
-M/us_equities/research_inputs/current-qqq-spy-retained-minute-panel-20261030-v1/PANEL.
-264rawfiles75519rows validated/63dates43jointcomplete20partial/20096knownM1each;
-1m5m10m1h3h masks/terminalpartials preserved. NoCA/unit/finality/PIT claim.
-Stopped QQQ cursorcc8d/0652/cb6b zero rows is not globalhistoryfloor.
+Parent uses source-qualified prepare/TRUE/bind before one finite pair install.
+Exact future absent project tasks only: create disabled, complete XML/ACL
+readback, enable owned exit before entry. No Run/demand/catchup/repetition/
+earlyeffects/private-state touch. This narrow installer need not wait for
+financial/observer quiescence. Original-writer migration still requires
+positive relevant original owner closure.
+Actual runtime independently checks current owner/account/budget/unknown/
+freshquote/orderability/observer. No allflat/profit gate or forged old closure.
+Repair caller observer output to helper-owned child; test full actual CLI, not
+just Core mocks. Quiet tested pythonw/JobPopen, never visible command windows.
 
-Current ETF daily8ba9/8177/a41b/Header85ce54e8/payload3bc6fe39 complete253closes
-each/asofOct29/decisionOct30. MODP1 means adjustmentON officialcaf5 facts,
-numeric Tiingo/CA/finality parity unverified.
-H20 current point2fdb/42ff/d580/6e01 COMPLETE185upper/twoCPUforwards,
-allow_execute=false/UNALLOCATED/UNROUTED. No retag/forward/reprojection repeat.
-Canonical singleETF3dd52654/4684af0a/native85051278/closure6240c22f code complete,
-not deployed. Frozen new module9fa8fe10/test090f912f; SPY/AMEX only, existing
-bank/owner/native per-wire binding, immutable entry/H20 duty before effects.
-Explicit OPEN[e+20]/21sessions/holidays/earlyclose, Oct30->Nov30UTC14:30.
-Changed worker e856b009/98a2f151/9970e1b7/97a6e47a native-qualified with real
-account guard BEFORE private load/persistence. Parent selected future entry
-Oct30UTC14:15..21/exitNov30UTC14:30..36, provisional once not researchOPEN.
-Actual-host binding still inert: no H20 Task/TRUE/strategy command yet.
-Changed Bind completiona3caf/1157/f7f7 is code-ready22cases/threeprograms/
-sixJobsclosed, not installed. Exact pipeline is at current-etf-h20-cold-host-
-pair-completion-20261030-v1/changed-bind-completion/READY-COMMANDS.json.
-Parent must first select actual qualified MSE successor; H20's own fixedcap
-boundary remains under preparation. No manual Run or old Source alias.
-No expired-point retag, new bank, borrowed MSE markers or MSE replacement.
+## Useful Research / No Duplicate Training
 
-OOF7 e586/a11c/b5db/face CLOSED1890upper; H20D2 d9aa/5e53/6b5d/7040 CLOSED979upper.
-All GPU/CPUworkers/leases closed; primaryclaims did not pass, noindependentalpha.
-Syntheticthroughput e014/582e/2885 CLOSED103upper currenttinygeometryCPU2~3xGPU;
-not a globalGPUban. Oldclosedmodels/debits retained, no duplication.
-CB14 bb73/2877/8a35/b6f3 CLOSED465upper/onefit38updatesBEST14/ten cells/
-NONINFORMATIVE. Chronos univariate6724/3ab6/ce54/eb8f CLOSED486upper/
-14GPUforwards/420contexts/0fits/two cells/NONINFORMATIVE, all workers closed.
-Data OPEN120695d/ed56/98f8 CLOSED100upper; no duplicate fitting/projection/readout.
-Past-context c2d1/351d/46d5 CLOSED104/oneCUDAcall/structural isolation only.
-LoRA150d/34bb/28dc/9485 COMPLETE536.972upper/oneGPUfit400updatesBEST400/
-44.136s/fourcells/NONINFORMATIVE12longs3sessions. Data4db1/c3ab/06b1/b7b5
-CLOSED100/oneprojection/1008FIT384INNER. Depth3f58/882d/3d39/9df7 CLOSED353.773,
-1100NEWupdates/BEST1000/patience4/95.997s/ZERODEV. Both allworkers/lease CLOSED,
-never replay prefix/fits/forecasts/readouts. Imagef14fb8ba/95ba068b unchanged.
-CPUcomposition50a861ee/57b17ff5/071f243f CLOSED505upper/oneSVD/14cells:
-NONINFORMATIVE7of25filled/8.8549percent exposure mismatch. Source mechanism
-review next, not repeated fit/readout or relaxed old criterion. Past-context
-policy02a92735 CLOSED399/900 before payload/model, missing Linux codec mapping.
-Repairae89/3e56/da22 COMPLETE202.917new/601.917combined/14GPUcores/420origins/
-twocells/zero longs/NONINFORMATIVE/allworkersclosed. No repeat. SizingSYN0025/
-7f24 fixture EventStore.close failed; changed fixture/cold/native reservation
-checks next, no market/riskchange/oldgrade rescue. Not a Paper profitability gate.
+Canonical20day dataset:
+A/data/current-nas8-canonical-minute-panel-20261030-v1/READY.json
+READYa4833592/Source5e26/datasetf971;77995of78000known/5maskedholes.
+Closed NAS8 family:
+A/research/current-nas8-causal-experts-development-20261030-v1/FINAL.json
+ca31/Source33a0/Ridge1TCN1/BEST17/conjunctionnotmet. No refit/readout rerun.
+Fresh later one-day Data:
+A/data/current-nas8-later-session-20261031-v1.
+Old frozen model timestamp/contract source:
+A/research/current-nas8-frozen-later-replay-contract-20261031-v1.
+Temporary Validation only after actual Data and pre-open freeze proof; unchanged
+policies/criteria, one-day laterreplay not actual PIT/robust independent alpha.
+New Engine campaign:
+A/research/current-nas8-next-campaign-20261031-v1.
+Strategy proposald855/c718 ready; final contract/native optimizer/checkpoint/
+inner-validation/caps before fits. Schrodinger sole GPU coordinator, measured
+headroom/4GiB desktopreserve; useful concurrency allowed, no dummy utilization.
 
-NAS8pilotd009/6d29 actualRESULT STOPPED05:41:02 after39GET(38success1rate500)/
-1POST/38AAPLpages4560rows5completeRTH, workers9456/17532 positively absent/
-cachelockreleased. Continuation0ea7/e4be/a82f CLOSED551.269s/243GET1POST/two
-recoveries at550s cap; cumulative282GET2POST, partial not provider floor.
-Current current-nas8-rth20-acquisition-20261030-v1 targets20prior completeRTH
-throughOct29/sameNAS8/breadth-first/reuse. Max1200additionalGET/200each/
-onefreshPOST/7200SUM/5400elapsed/eight boundedGETretries, onecollector/2sstarts/
-validtokenreuse/workerownedcooldown. Native error/resume/terminal first; TTL
-accounts for pacing/I/O/backoff, collector3300soft3420hard/supervisor3460;
-supervisor wait not compute. Olddebits/unused318 not refunded.
-Terminal wins over staleprogress; no standingmonitor/Task/duplicatecollector.
-Source2334/native9f3e actual07:00 launch. Parent07:25:56 verified exact two
-births alive/terminalabsent/783newGET1065alltime/zero retry; three stocks20RTH,
-AMZN7799of7800known, others13-14RTH. Checkpoint only. After exact closure,
-canonical NAS8+cached benchmark panel/multitimeframe masks, no extraAPI/labels.
+## Verification / Recovery
 
-Outcome reader a3f3dcd CLOSED153/MAX3 locking-helper fault; lockless9d9a677c/
-QUAL6192df63 CLOSED360/MAX4 now MSE+L native readiness only. Factory72292306
-still needs actual fresh per-cohort admission/boundedJob/networknone/allRO/
-stability. GRU/TFM stockcompatd687/d3e6 CLOSED300/43checks. Actualreaderb61f/
-45c6 CLOSED420upper: stable admittedGRU/TFM oneeach, targetsUNKNOWN because
-projection discarded categorical reasons. L withheld beforecreate, MSE due.
-Changed reason/current-custody repair next; Parent ClaudeREVISE0925 supports
-complete fresh writerabsence/allRO/stability CURRENT-only snapshot, never
-historicalLclosure/zero fills/freshbrokerholdings/reservationrelease.
-Reasone4e0/ee99 native-qualified, actualcompletionf6ea/16fa withheld on new Data
-actors before private reads. Canonical-file versus declared-argv repair next;
-do not wait for collector or admit arbitrary Python. All earlier failures/caps
-retained, no current changed financial histograms yet.
-Peer r2 f81e/9d33 CLOSED60/7cases; fullcaller a317/03d0 CLOSED180/15checks/
-LtemplateFAILED. Schema bd7f/4375/f7ca CLOSED75/7checks now qualified/not active.
-Selectionbb80 has no real normalized peer set; fixedMSE16argv kernel preparation
-is not old GRU14argv/pipe-marker/ROOTS schema. Installed Sources unchanged.
-Future adoption requires real reviewed record+planrefs/fresh exact Task snapshots/
-positive relevant owner closure, not all Data/GPU quiescence.
+Current fresh authority:
+A/verification/current-paper-h20-recovery-integration-20261031-v1,
+RESULT346f8890/SOURCE934f/1418stable,231serialPASS1knownskip/23.81s,
+19619fullPASS26knownskip35warnings/415.80s,8of8workers[19645]/helper+native0/
+verifiedcleanRoot+leasecleanup/Ruff/3Compose .env.example/exec97821joined0.
+Current source checker is that root/source.ps1 -Mode verify. Source-identical
+doc/external-only integration may reuse this with changed external native checks.
 
-## Verification / Resume
+Previous valid full authority:
+A/verification/current-single-etf-native-integration-20261030-v1,
+SOURCE934f30b0/RESULT63803768,1418protected,231serialPASS1knownskip,
+19619fullPASS26knownskip/8of8workers[19645]/helper+native0/verifiedcleanup/
+Ruff/default+research+accountingCompose/exec71510joined0.
+Verify source reuse:
+& 'D:/thericher-v2/model-artifacts/verification/current-single-etf-native-integration-20261030-v1/source.ps1' -Mode verify
 
-Fresh full A/verification/current-single-etf-native-integration-20261030-v1
-SOURCE934f30b0/RESULT63803768:231serialPASS1knownskip23.11s;
-19619fullPASS26knownskip35warnings/402.37s/created8of8/8workers[19645]/
-helper0/verifiedcurrentchild+leasecleanup/Ruff/3Compose .env.example/71510joined0.
-Old39bfc/7638 is prior only, no current-policy match.
-Exact-source check:
-`& 'D:/thericher-v2/model-artifacts/verification/current-single-etf-native-integration-20261030-v1/source.ps1' -Mode verify`
-Protected1418 = prior1416 unchanged plus two ETF additions; independently test changed external helpers. Material recovery/
-tracked/control integration follows AGENTS required verification. Repeated repo
-suite is not proof of external financial effects. Recheck actual owners/time/
-exact immutable outcomes after interruption; no age reclaim/zeroes from missing.
-Continue ready packages, no foreground market wait/new app follow-up chain.
+Interrupted
+A/verification/current-fixedcap-mse-control-integration-20261030-v1
+has full-log19619PASS26skip but no RESULT/native outer-exit witness. NOT authority;
+do not finalize from logs. Keep original failed/interrupted history.
+At material recovery/activation run required changed-path serial and fresh
+C:/Users/Public/Documents/thericher-v2/scripts/run_parallel_tests.ps1 -RequireCleanTempRoot,
+then Ruff and default/research/accounting Compose using .env.example.
+Retain exact counts/workers/helper/native exits/source digests/verified cleanup.
+Changed external adapters need own actual native handoff+Ruff F821/F822/F823/E9;
+repo tests do not validate external code. Docs-only source-identical reuse as
+AGENTS permits, not another full-suite loop for formatting or plans.
+No foreground session sleep or new recurring app follow-up chain.

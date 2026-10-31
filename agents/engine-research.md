@@ -1,122 +1,73 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-10-30 KST / Oct30UTC07:27.
-A=D:/thericher-v2/model-artifacts. Fermat Engine/sole resource Steward.
-Parent shared MD/Git. Reused PRICE_ONLY data, not independent alpha/total return.
+Oct31UTC12:17. Schrodinger Engine + sole resource Steward; Parent shared MD/Git.
+A=D:/thericher-v2/model-artifacts. No broker/risk/credential authority.
+Reused research data is adaptive development, not independent alpha.
 
-## Current Ready Work
+## Completed, Do Not Repeat
 
-Current-intraday-dated-foundation-policy-development-20261030-v1 COMPLETE:
-contract67246b66/Source3ab6d61e/FINALce54bb8e/closureeb8f4fb3 CLOSED486upper,
-1load/14GPUforwards/420contexts/0fits/0retry/two cells/all workers/lease closed.
-13longs/3sessions below20/8support: NONINFORMATIVE. Growth10bp-0.2773997percent,
-20bp-0.4930246percent; growthfail/riskpass/supportfail, not profitable evidence.
-Data695d9bc8/ed569b4e/98f892e4 CLOSED100upper/420known/actualcodec handoff.
-Native739d/c8ba realCUDA proof carried once; no duplicate model/role/readout.
-SDK2.3.2/2025checkpoint95a971/ddcda/Apache2 predates2026targets, SDK later;
-corpus/PRICE_ONLY/arrival/finality limitations remain. Median-ratio lead2->62
-is a heuristic, NOT expectedprofit/returnquantile/independent alpha.
+A/research/current-nas8-causal-experts-development-20261030-v1:
+Source33a0671b/FINALca31bf74/closure8bb2dc7c. Ridge1 + TCN1 fits,
+TCN41epochs615updates/BEST17;12cells/two forecast sweeps/one path intake.
+Fixedhalf10bp growth -3.4695013percent vs aligned EW8 -2.9788817percent.
+DESCRIPTIVE_CONJUNCTION_NOT_MET: growthfalse/riskyDDtrue/supporttrue/exposuretrue.
+All8CIDs57CLIJobs closed;787.0968worker upper/5011.738elapsed,0marketretry.
+No refit/reforecast/readout merely to repair logs; no alpha/Paper promotion.
+Actual Data Source5e26/READYa483/datasetf971:20sessions/77995of78000known.
+Five holes masked; CA/PIT/finality/volume-unit limitations remain.
 
-Past-context multivariate native COMPLETE Sourcec2d18b64/native351d9018/
-closure46d56e57 CLOSED104upper/oneCUDAforward0.372s/32origins3variates/
-12observed group masks block cross-origin. No empirical output-invariance,
-covariate benefit/market qualification or univariate rerun.
+Prior OOF7/H20D2 and GRU/LSTM/Transformer/TCN/StudentT/attention/TimesFM/
+Chronos/fixed blends remain immutable in Git4fca1b2a/existing ledger.
+Recent LoRA400updates/BEST400 NONINFORMATIVE; warmdepth1100NEW/BEST1000
+ZERODEV; dated Chronos14forwards NONINFORMATIVE; past-context14cores/zero longs
+NONINFORMATIVE. All closed, not queued for rerun. Lower reused INNER loss is
+not convergence or profit. CPU composition50a861ee/FINAL071f243f closed oneSVD,
+7of25fill origins/8.8549percent exposure mismatch, not a qualified comparison.
+Sizing SYN80e5/f95e/21cc now24cases complete; no market regrade/actual limit order.
 
-LoRA current-intraday-chronos-lora-development-20261030-v1 COMPLETE:
-150d0c20/34bb0c0a/28dccf7d/cfc93b11/94856202 CLOSED536.972upper,
-onefit400updates/BEST400/fit44.136s/14DEVforwards/fourcells/0retry.
-INNER8.9811068->8.9131746, capped NOT converged; actiondiff1of420/unadapted.
-12longs3sessions/NONINFORMATIVE,10bp growth-0.2703154percent/20bp-0.4693044,
-growthfail/riskpass/supportfail. Basefrozen/24timeQV73728; all6CIDs43Jobs49births/
-GPUleaseclosed. Model-native6cc3/2f57/9721/cfd9 actual3AdamW/coldparityPASS.
-Data4db1/c3ab/06b1/b7b5 CLOSED100/1008FIT24sessions/384INNER10sessions,
-oneprojection; no completed model/data/DEV repetition. Imagef14f/95ba unchanged.
+## Priority Current Work
 
-Warm depth3f58/882d/3d39/9df7 COMPLETE353.773upper/1100newupdates/BEST1000/
-95.997s/patience4/ZERODEV; INNER8.91317->8.57520, newoptimizer reset,
-not trajectory resume/profit/convergence. All workers/lease closed; no repeat.
-CPU composition50a861ee/57b17ff5/071f243f CLOSED505upper/oneSVD/14cells:
-NONINFORMATIVE7of25 origins filled/8.8549percent exposure mismatch. Fermat/
-Kepler source-only execution-mechanism review before any new numerical study;
-old grade fixed. Two Data coordinator birth identities unretained, no fabricated
-full closure authority or replay to repair logs.
-Past-context policy02a92735/343fc36e/fe58f318 CLOSED399/900 premarket/model:
-invented Data native failed because old Windows codec path was not Linux-mapped.
-Repairae89/FINAL3e56/closureda22 COMPLETE202.917newupper/601.917combined:
-oneprojection/14GPUcores/420origins/twocells/zero longs/NONINFORMATIVE.
-All4CIDs28Jobs32births/lease closed. No duplicate forecasts/readouts/old regrade.
-Mechanismecf4/8fb7 found reservation_exceeded25/38; same-clock exits precede
-entry, exact gap-vs-rounding unknown. SizingSYN0025/7f24 failed fixture-only
-EventStore.close afteroneinventedfill/137.385upper, workers closed/no market.
-Changed cold/restart/limit-reservation technical repair next, not native risk
-relaxation. Kepler prepares causal NAS8 proposal/pure kernels; Data current
-collection precedes canonical panel, not yet a frozen research dataset.
-Exact artifact callbacks coordinate roles; Parent thin relay where child-message
-tools unavailable is not additional approval. New distribution-aware daily
-composition proposal may prepare independently after current helper seals.
+Oct31UTC12:30: original H20 point d876/FINAL2816 closed unavailable after
+native exit1, trained-forward progress unknown. Original2 conservatively
+reserved and107.764worker upper unchanged. Parent explicitly assigned separate
+operational same-input technical continuation under
+A/research/current-h20-next-session-point-technical-continuation-20261031-v1,
+contract05cfd4d4: <=2additional deterministic CPUforwards/cumulativepossible4,
+0fits/0performance readouts/300newworker/3600elapsed. New stage/START-DONE/
+categorical fatal logging and brief review before dispatch; no weight/input/
+model selection, oldgrade/cap reset or stale point substitution. Consumer
+Hilbert only receives an actual qualified point.
+NAS8 next campaign contractbf80c163 freezes three identical-architecture TCN
+feature masks raw/indicator/both under a new ordinal objective; native required
+before fits. P20 source proposal remains a separate hypothesis, not chosen.
+Strategy7023/ea1d cannot prove old Ridge exact pre-open bytes; no Oct30 independent
+replay. Future exact weights/Nov2..4 date adapter readiness is assigned instead.
 
-Current-intraday-m1-volume-net-h60-development-20261030-v1 is FROZEN:
-contractbb73256e/custodye33db3e3/Datarequestcf05c7ea,1500SUM/7200elapsed/
-oneCPUfit/0retry/ten proxy cells. One shallow CatBoost14 interaction model,
-fixed price-only relative-reversal/risky/cash references. Simplified M1-only,
-no5m runtime join;120pastminutes/5minute stride/60minute labels/whole-session
-chronological roles/nominal60s availability. Actual roles af12ce32/READY4c8190ac/
-closure9aadcea3 COMPLETE120upper:1008FIT/396INNER supervised,24/9sessions with
-at least20origins,420DEV features+pairedpaths known. All2646keys retained.
-This CB family is now CLOSED465upper: marketSource28774696/FINAL8a353258/
-closureb6f3f7a1, native983fc6ea. Onefit0.245s/38updates/BEST14, tenfixedcells/
-threepredicts/oneDEVseal/onepathread/0retry. PrimaryNONINFORMATIVE, no volume
-feature used/NO_VOLUME_MECHANISM_EVIDENCE. No active worker/GPUlease created.
-Do not repeat fitting, threshold or readout. No economic/Paper promotion.
-Future-label completeness cannot select prior actions. Aware FRAME is actually
-+00:00; parser accepts aware offsets, not proposal's unverified+09 assumption.
-Units/finality/actual historical arrival unqualified.
-No extra GPU/foundation arm merely to occupy resources. No old H1C120 rerun.
+1. A/research/current-h20-next-session-point-20261031-v1:
+   ONE actual asofOct30/decisionNov2 point from existing frozen H20D2 models,
+   at most2CPUforwards/no fit/300worker/3600elapsed. Fresh DataREADY0f4123d1
+   under A/data/current-h20-next-session-data-20261031-v1.
+   Deliver exact Source/point to Hilbert/Parent, not expired d580 retag.
+2. A/research/current-nas8-next-campaign-20261031-v1:
+   Choose an informative next hypothesis, freeze data/features/target/splits/
+   baseline/costs/metrics/kill/finite fits/epochs/time/caps before numbers.
+   Strategy d8559ade/callbackc718bcbe proposes one P20 reversal broad-rank
+   non-overlapH60 expert vs matchedEW8; saved diagnostics undermine costs-only
+   explanation, exact causes unknown. Engine final interpretation controls.
+   Actual optimizer/checkpoint plus tiny producer-consumer native smoke first.
+   Chronological inner curves/early stop/LR/BEST/purge; no final-evaluation
+   checkpoint selection. Up to7200workerSUM/14400elapsed family, may freeze tighter.
+   Old20day panel reused adaptively; no new independent-performance claim.
+3. Data's Oct30 minute outcomes are reserved for validation of OLD frozen models.
+   Do not train/screen new candidates on them. Strategy source-only freeze proof
+   first; temporary Validation only after actual Data and before-open hash/clock
+   evidence. One later session is not contemporaneous/PIT/robust alpha evidence.
 
-## Newly Completed / Never Repeat
+## Resources / Next Consumer
 
-- current-etf-chronological-fusion-development-20261030-v1:
-  contracte586380c/Sourcea11ce5da/FINALb5db5fe1/closureface715c,
-  CLOSED1890upper/7fits/0retry/fourcells/fourshadows. Three actual concurrent
-  TCN folds25/19/26epochs,800/912/1638updates,BEST10/4/11; three rank14SVDs and
-  one depth2CatBoost. Cached fullDEV scores, no fullFIT refit/new DEV expert
-  forward/control replay. Tree zero DEV admissions: NONINFORMATIVE temporal
-  support, not alpha. Fixedhalf10bp +0.516568percent/DD1.007919percent;
-  20bp -1.205405percent/DD1.344587percent, late2025 coverage absent.
-- current-etf-h20-cost-horizon-development-20261030-v1:
-  contractd9aaafdd/Source5e53900f/FINAL6b5d0f5f/closure704064de,
-  CLOSED979upper/2fits/14cells/8shadows/0retry. New OPEN[e+20]/21inclusive
-  sessions/stride4 joint change, not pure horizon ablation. Rank14SVD plus
-  TCN5054/22epochs1914updates/BEST2/294.877s/earlystop, not convergence.
-  10bp linear +3.518157percent/DD1.705967;TCN +4.931615/DD1.670893;
-  fixedhalf +4.600760/DD1.605582. QQQ aligned reference +6.579699percent.
-  Both learned primaries FAILED frozen conjunction. Later2023/24/25 entries
-  present; all terminalflat/pending0 only within this research replay.
-- current-etf-h20-operational-proposer-preparation-20261030-v1:
-  Source2fdb7ed0/FINAL42ff317c/PROPOSALd5804301/closure6e01d4cf,
-  COMPLETE185upper/two actual CPU restores+forwards/one current input intake.
-  AsOfOct29/decisionOct30, provisional dimensionless policy2aeb7eb4, selected
-  SPY; allow_execute=false/UNALLOCATED/UNROUTED. No fit/readout/reacquisition.
-  Numerical KIS/Tiingo adjustment/CA/finality parity remains unverified.
-  No regrade of old NON_RANKABLE diagnostic, no point retag or installedMSE swap.
-- current-tcn-batch-throughput-probe-20261030-v1 e0147f13/582e5b63/2885680c:
-  COMPLETE103upper/one synthetic CPU2+CUDA32/128/512 program, all closed.
-  CPU128 about2.97x GPU128; GPU512 only1.0097x128 examples/sec at2.90x VRAM.
-  Future matching-geometry batch128 candidate only, not market authority or
-  instruction to modify completed campaigns. Intraday geometry differs.
-
-## Existing Closed Studies / Operational Separation
-
-GPUmean c290/82a3/bdc1 CLOSED471upper/19epochs1653/BEST4/10bp+0.918872percent,
-growthfailed/lastbuy2022Apr. GPUexpectile05ade/7ce6/aa89 CLOSED457/23epochs/BEST8;
-CPUmeaneb1f/0f2e/8fa5 CLOSED205;CPUexpectile8065/6ce6/3fb2 CLOSED359.
-Data c44a/0d98 CLOSED85/control38728afc unchanged. DenseH1 TCN13+Ridge638.351/
-full187664/ETF526f224/GRU/LSTM/Transformer/StudentT/CatBoost/TimesFM/Chronos/
-attention/ensembles remain immutable in Git/external artifacts, not rerun queues.
-
-MSE actual pointf09d/612b/a13e and nativeinput9fc0/71cc/9998 closed; provisional
-MSE pair IS installed29703d08, runtime/fill not observed. Paper does not wait for
-profitable research. H20 future consumer must use actual OPEN[e+20] calendar,
-not inclusiveH5 alias; Execution owns deterministic account/budget/risk.
-Individual profitability is not required for exploratory OOF fusion. Reused DEV
-and dated public checkpoints do not by themselves qualify independent alpha.
+Schrodinger coordinates useful CPU/CUDA jobs via qualified fixed launcher2f1
+and exact asset/image manifests. GPU first priority; measure free/projected
+peak VRAM,4GiB desktop reserve, concurrent useful workers allowed, no user-app kill.
+A dispatch/MD is not proof of current training. Record actual PID/birth/caps/
+checkpoints/closure. Completed campaigns never duplicated for utilization.
+H20 outputs feed Execution; research outputs are proposals, not bank writers.

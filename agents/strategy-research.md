@@ -1,63 +1,54 @@
 # Strategy Research Stateboard (전략 탐색)
 
-2026-10-30 KST / Oct30UTC06:13.
-A=D:/thericher-v2/model-artifacts. Kepler; Fermat final hypotheses/targets/
-splits/costs/trial custody/interpretation, Parent MD/Git/direction. No broker/
-credential/private-account authority. No permanent agent per indicator/model.
+Oct31UTC12:17. Huygens; Parent direction/sharedMD/Git, Engine final targets/
+splits/costs/contracts/fitting/interpretation. No broker/private-account access.
+A=D:/thericher-v2/model-artifacts.
 
-## Current Delegation
+## Completed / Concrete Consumer
 
-Daily distribution-aware composition proposal is COMPLETE SOURCE-ONLY:
-current-etf-distribution-aware-composition-next-proposal-20261030-v1,
-Sourcee6ccd8bc/contractaa2e7067/MAINcb4c6792/closurebb78bb8f,
-CLOSED120upper/Claude SOUND_WITH_LIMITS/no numerics.
-Concrete consumer: one relative QQQ-minus-SPY H20 arithmetic gross-receivable
-mean expert plus fixed trend half, six causal relative/regime features.
-One Ridge/lambda.001/no seed-model-window grid or learned gate. No individual
-profitability prerequisite. Learned future fusion requires chronological OOF.
+A/research/current-nas8-next-hypothesis-20261031-v1:
+Sourced8559ade/CALLBACKc718bcbe,55source/calendarchecks/Ruff/
+Claude SOUND_WITH_LIMITS, no market/model calls. Saved diagnostics undermine
+costs-only explanation; exact target/learning/turnover causes remain unknown.
+Proposes ONE unfitted P20 reversal, broad rankweights/non-overlapH60 vs matchedEW8;
+momentum diagnostic only. Engine decides/final-freezes next campaign, not a new
+approval chain. Source/calendar proof is not performance evidence.
 
-Engine adopted current-etf-distribution-aware-composition-development-20261030-v1
-contract50a861ee,05:35:06..07:05:06UTC/1500SUM/oneSVD/no retry/14cells.
-Parent temporarily assigned Kepler as bounded Engine CPU executor in that NEW
-family under Fermat final freeze/custody; old source-only proposal remains
-source-only. Disjoint writes/actual numerical authority follow the final contract,
-not this MD or a favorable advisory. Real producer/file/parser/feature-label/
-SVD/safe checkpoint/nativeLocalPaper/accrual+cold consumer before market data.
-Actual CPU family now CLOSED505upper: Source57b17ff5/FINAL071f243f,
-oneSVD/oneDEVforecast/pathintake/14cells/NONINFORMATIVE. Seven of25 origins
-filled and8.8549percent exposure mismatch; no old regrade or threshold rescue.
-Kepler next helps Fermat source-only execution-mechanism diagnosis, not another
-fit. Engine worker closure positive; two Data coordinator births not retained,
-not invented. Native/source readiness alone is not market evidence.
+Old causal expert proposal03be/amendment3d0812e7 and adapter43f7ff38 consumed by
+actual NAS8 Source33a0/FINALca31: Ridge1/TCN1/BEST17, conjunction not met.
+All8 fixed definition/lag5m/H60/120pastM5x24, meanreturn not ratio of medians.
+Old distribution composition50a8/071f closed execution-support limited; sizing
+SYN80e5/f95e now24cases, no market regrade. Earlier official-source proposals,
+public-model release/license and original failures remain in Git4fca1b2a.
 
-Raw2014..25 source plus ordinary e<exdate<=exit gross receivable proxy only.
-Retained source b1cca7ab/d9372d90/2b0ea675/59649327:3018sessions each,
-48SPY50QQQ cash-event rows/no splits. No acquisition. Missing cash notzero,
-factor notone; no global adjusted features/cash doublecredit. Unknown payment/
-tax/currency/specialevent/PIT remains explicit, not settled/net wealth.
-New overlay nonspendable/ownedlot-exdate dedup, never expands native budget or
-settles cash. Primary fixedhalf vs same-clock/common-gross paired balanced,
-growth/DD/turnover/coverage separately; paired capacity endogenous/not risk
-parity. No unmatched full-risk hurdle, zero-DD cash rule or old criterion rescue.
+## Current Source-Only Assignment
 
-## Reusable / Closed
+A/research/current-nas8-frozen-later-replay-contract-20261031-v1.
+Within600actualworker/5400elapsed: inspect exact FINALca31/Source33a0/
+CONTRACT-r2/fitStart/CLOSED/safe weights, prove frozen BEFORE Oct30 USopen13:30UTC.
+Do not inspect later market payloads/outcomes, fit, forecast or read out.
+Prepare unchanged Ridge/TCN/fixedhalf/EW8/cash replay at10/20bp with original
+lag5m/H60/all8 and criteria, no new thresholds/ranking/sizing/checkpoints.
+If freeze clocks fail, no numerical replay; use future untouched outcomes instead.
+Data root current-nas8-later-session-20261031-v1 is a future dependency until
+actual publication; no placeholder hashes. Temporary independent Validation
+activates only with candidate freeze plus actual later input ready.
+A single later session is later-out-of-time replay only, not contemporaneous
+decisions/PIT/independent alpha; original support criteria remain unchanged.
 
-- LoRA proposal90db/7f0b/0f79 CLOSED150upper and pure helpers6bad/537e/5180
-  were consumed by Engine34bb/28dc COMPLETE400updates/NONINFORMATIVE, not a
-  still-running helper task. Exact time-layer0Q/V24modules73728trainables,
-  missingPEFT fatal; no suffix expansion into group attention/full fallback.
-- Warm stage882d/3d39 CLOSED1100newupdates/BEST1000/ZERODEV; no repeat,
-  profit claim or independent evidence from lower reused INNER loss.
-- Univariate Chronos3ab6/ce54 NONINFORMATIVE; past-context c2d1/351d native
-  only proves structural group isolation, not covariate benefit/economic alpha.
-- CB2877/8a35 CLOSED onefit38updatesBEST14/NONINFORMATIVE/no volume used.
-- Prior OOF7/H20/mean/expectile/GRU/LSTM/Transformer/TCN/StudentT/attention/
-  TimesFM/Chronos/ensembles remain immutable in Git/external ledger. Existing
-  monthlytrend already had a distribution collection proxy; no novelty or
-  regrade claim. New composition is a joint target/feature/cadence/basis change.
+Completed Source7023bb33/MAINa63bd96a/contractea1d8d94,129checks:
+local artifact chronology predatesOct30open but exact Ridge historical content
+digest absent. NO Oct30 independent numerical activation/currenthash retrofit/
+TCN-only substitution. Data's separately complete later session does not repair
+candidate history. All original failed results/debits unchanged.
+Next assigned A/research/current-nas8-future-replay-readiness-20261031-v1:
+freeze exact current old-model weights/codec/policies for untouched Nov2/3/4;
+minimal date-envelope/provenance adapter and invented realproducer-consumer
+native only, <=900worker/7200elapsed. No fits/forecasts/readout/schedule. Future
+actual Data needed before numerical; original support/criteria stay fixed.
 
-Adaptive reused outcomes, not untouched replication/independent alpha or Paper
-promotion. Official-source hypotheses become executable finite experiments or
-concrete rejection, not reading lists/new platforms. Exact known callback files
-support role handoff; Parent thin relay if child-message tools unavailable,
-never an extra approval or guessed app-thread target.
+## Handoff
+
+Exact source/schema/readiness callbacks may go directly to Engine/Data.
+No permanent MD per indicator/model or new research report platform.
+A proposal becomes an experiment or concrete rejection, not a reading list.
