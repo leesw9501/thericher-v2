@@ -31,9 +31,21 @@ saved curves and payoff diagnostics. Pairwise treeea886/8149 is now completed,
 growthfailed,86iterationsBEST6. No duplicate P20/tree kernel or numerical DEV
 readout merely for proposal selection. A pure proposal gets an actual Engine
 consumer or concrete rejection, not a reading list.
-Data common26RTH cache publication is assigned; historical60 is partial,
-not global approval/wait. Oct30 remains reserved for old validation.
+Data Engine25 callback66b7/READYc9b8 now published/closed; historical60 is
+partial, not global approval/wait. Oct30 remains reserved for old validation.
 Exchange exact source/schema/readiness directly Engine/Data.
+
+Completed next concrete economic proposal (no new market readout):
+current-nas8-p20-rule-kernel-20261031-v1/next-mechanism-r1,
+SOURCEdc8cd28e/CALLBACKbbe31019/offer5cb73ed1/verify7f7c1f6e,
+24checks/Ruff/ClaudeSOUND_WITH_LIMITS/allreviewjobsclosed.
+Fixed half MARKED-holdings composition adjustment, same fixed gross/seed/duty
+as full/EW8 controls; frozen same-tape gross/no-fee/net attribution separates
+opportunity cost, rebalance fees and mandatory exit. No rank-logit threshold,
+cost-optimality claim or old H60 amendment. H120 draft withdrawn, not trial.
+Harvey temporary pure kernel implementation owns a DISJOINT root
+current-nas8-persistent-position-kernel-20261031-v1; Strategy does not duplicate.
+Engine owns any later frozen market experiment; current GRU25e274 unchanged.
 
 Existing official-source factors/public-model release/license and prior
 failures remain in Git/external evidence. Unknown pretraining overlap stays

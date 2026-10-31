@@ -34,7 +34,9 @@ existing custody. Do not repeat them to repair logs or raise GPU occupancy.
 
 Data historical60 closed partial: technical-r2/FINAL-CALLBACK1db8a280,
 376newGET1POST/40321newrows, useful common26RTH NAS8; not60complete.
-Herschel owns cache-only canonical handoff; Oct30 reserved for old validation.
+Herschel handoff is COMPLETE: common26-v1/ENGINE-CALLBACK66b7a652/
+ENGINE-READYc9b89153/Sourceb4e6/codec5f97/PANELce9e/dataset42451471,
+97495known Sep25..Oct29/Oct30excluded/alljobsclosed. Parent relay14:31.
 Additional pre-Oct2 history can support a NEW adaptive campaign, not independent
 replication. Do not wait globally for unavailable60sessions.
 
@@ -48,8 +50,35 @@ Learned fusion requires chronological OOF, not in-sample expert predictions.
 
 ### Depth Queue
 
-Prepare useful larger-history sequence/rank or representation campaign after
-exact usable Data contract; no identical old-target/seed repetition.
+Regularized sequence25 is now COMPLETE, not running:
+current-nas8-regularized-sequence25-development-20261031-v1,
+Sourcef4d54b62/FINALca1ab638/CALLBACK39d2a68a/CONTRACTe274acda.
+ONE393parameter shared GRU8,
+raw+indicator/17FIT4INNER4reusedDEV, five additional pre-Oct2 FIT sessions;
+compare trained versus OWN initialization and carried controls, not old rawBEST0
+as learned benefit.<=160epochs/4000updates/onefit/no optimizer-start retry,
+earlystop24/LRschedule/BEST/3600workerSUM/10800elapsed. Actual CUDA fit
+14:30:59..14:31:07UTC,66epochs1386updates/BEST42. Trained INNER improved
+versus own INITIAL but failed frozen zero-margin baseline;0DEVforwards/
+0cells/0heldpathintakes, growth/DD NOT evaluated, not failed or zero.
+All4CIDs32Jobs/host55272/GPUlease closed;219.947workerupper/1239.885elapsed.
+No repeat/regrade/alpha/convergence/Paper claim. Original model+data natives
+preceded fit; extra funding-phase checker failed path-spelling comparison,
+but tool batch did not short-circuit launch. Corrected phase/affine check
+passed AFTER fit start14:32, not pre-fit authority. Deviationecae52b6 retained;
+next numerical dispatch must abort on any required checker's nonzero exit.
+Preserve old INNER/DEV globalorigin/funded12sleeve phase and apply the new
+FIT-only affine consistently; extra dates cannot silently renumber old clocks.
+
+Current next separate CPU mechanism: Strategydc8c/CALLBACKbbe3/offer5cb7 fixed-half
+MARKED-inventory adjustment versus same-clock persistent full/EW8 controls,
+same-tape gross/net/duty-fee attribution. Not calibrated logits or old H60
+study regrade. Harvey owns pure invented-data kernel under
+current-nas8-persistent-position-kernel-20261031-v1 (<=300worker/1800elapsed),
+not market numerics. Engine final campaign/costs/splits still required.
+This does not change the frozen GRU25 contract or broker risk.
+
+No identical old-target/seed repetition.
 Explicit windows/timeframes share finite trial family. Predeclare maxepochs/
 active-workerSUM/end-to-end elapsed/fit/evaluation caps/stop, chronological
 inner curves/earlystop/LR/regularization/BEST and target purge before fitting.

@@ -51,18 +51,33 @@ closure. Fees/settlement/net PnL remain unknown without their own evidence.
   brokerIDabsent, do not fabricate exact-ID linkage. Real full native return+
   emittedRuff first; <=3GETincludingretries/1POST/noholdings/600query/900worker/
   5400elapsed, marker/output outside code, unchanged identity/stability guard.
-  Existing failures/debits preserved; no substitute/reset/reservation release.
+  UPDATE: consumed actual inquiry14:38..39UTC Source33e8/CALLBACK90bcc/
+  RESULT3a52,2GET1POST/0holdings/23rows/all4admissionsPASS/stable/closed.
+  All23dates later than original submission,0originalsymbolmatches, so native
+  candidates0. No historical-retention/no-ever-order/fill/release inference.
+  No repeated query selected. Next H20 consumer is current original-bank
+  headroom categorical only, <=1admittedofflineRO/noAPI/180worker1800elapsed,
+  reuse prior qualified category if already retained. No substitute/reset/release.
 - Data Herschel: historical60 acquisition ba89/FINAL-CALLBACK1db8 CLOSED_PARTIAL,
   376newGET1POST/40321newrows/common26RTH; jobs closed/min2.045758sgap.
   Source-limited exact streams are NOT a global history floor or rate quota.
-  Cache-only common26 canonical handoff directly Engine, no reacquire/duplicate
-  projection. Existing20day/Oct30 inputs and Oct30 validation reservation persist.
+  Cache-only Engine25 handoff COMPLETE: canonical-common26-v1/Sourceb4e6/
+  ENGINE-READYc9b8/CALLBACK66b7/PANELce9e/dataset4245,97495known Sep25..Oct29/
+  fiveholes/Oct30excluded/alljobsclosed. Relayed14:31, no reacquire/projection.
 - Engine/Steward Schrodinger: ordinal144c/96c6, P20de6b/9506 and pairwisetree
   ea886/8149 COMPLETE, no repeated fits/readouts. Last two growthfailed; raw
   ordinalBEST0 is untrained, not a learned benefit. Select distinct useful
-  target/ranking/sequence or chronological-OOF fusion from saved diagnostics
-  and actual usable Data; freeze finite caps/native first. Useful ready GPU
-  jobs have measured-headroom priority; no plan is claimed running CUDA.
+  target/ranking/sequence or chronological-OOF fusion from saved diagnostics.
+  Current new regularized-sequence25 CONTRACTe274/diagnosis86bb freezes ONE
+  GRU8/393parameters/own-initialcontrol/17FIT4INNER4reusedDEV.
+  UPDATE: Sourcef4d5/FINALca1a COMPLETE1CUDAfit66epochs1386updates/BEST42,
+  all4CIDs32Jobsclosed. Own-initial improved but zero-margin INNER gate failed,
+  so0DEV/readout; growth/DD not evaluated. No repeat. Extra phase check passed
+  only after fit start due path-spelling assertion and non-aborting tool batch;
+  deviationecae preserved, not pre-fit authority. Next CPU numerical dispatch
+  must fail fast and freeze its own zero-fit cost-aware comparison contract.
+  Preserve old INNERDEV IDs/funding phase, not shifted by prepended dates.
+  Useful ready GPU jobs have measured-headroom priority, no duplicate fits.
 - Strategy Huygens: direct exact pure-kernel support to Engine, not duplicated
   implementation. Future Nov2/3/4 old-candidate freeze420c/0826/47a3 and
   native date adapter9cc4/23checks ready. No Oct30 independent evaluation:
@@ -72,6 +87,13 @@ closure. Fees/settlement/net PnL remain unknown without their own evidence.
   callback qualifies a live measurement, no dummy job/global allowall.
   Harvey original whole-ingress050e/d05c ready but inactive/role closed;
   no expired metadata-only Task update merely for another receipt.
+  Harvey is separately reassigned temporary PURE Research implementation at
+  current-nas8-persistent-position-kernel-20261031-v1, <=300worker1800elapsed,
+  invented only/no GPU/market. UPDATE purekernel0c14/5563/native dbe0 COMPLETE
+  44inventedchecks/Ruff/all4Jobsclosed/0.856worker, callback relayed Engine.
+  Strategy offerdc8c/bbe3/5cb7 fixed-half marked
+  inventory adjustment and same-tape cost/duty accounting; Engine alone freezes
+  later numerical campaign. No change current GRU/Execution/risk/oldstudy.
 
 ## Integration / Verification / Continue
 

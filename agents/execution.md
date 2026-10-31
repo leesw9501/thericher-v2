@@ -73,10 +73,27 @@ network qualification or release. Native51/guest17/local6/closure6176/debits6b8e
 Portable pure public adapter09e6fb09 consumed by Parent, not a broker query.
 Previous cfcc zero-row query and12bb guest-return failure remain inconclusive.
 
-Next: one changed-scope readonly diagnosis only after real full guest/host
-parse-return and source-stability native; original exact pending identity,
-bounded query/time/retries, no substitute/reset/release. Routine read authority
-already delegated, no operator approval wait.
+Changed range-linkage diagnostic is COMPLETE:
+f9-range-linkage-completion-r3/CALLBACK90bcc43f, runtime-r3/Source33e82fd8,
+actual-range-linkage-once/RESULT3a5248d0/guest ea31a0be/closure4b8db37c.
+Actual14:38:42..14:39:02UTC,2historyGET1POST/0holdings/0retries/two pages/
+23row objects. All23 dates were LATER than original submission date;
+unchanged date predicate rejects all23. Independently0original-symbol matches.
+Four admissionsPASS/strict source+private stable/19Jobsclosed/CIDremoved;
+original pending/account/basis/input/policy bound unchanged. OuterOSexit not
+retained, no inference from absence. Actual queryhard120s after focused
+3deadline/return native and emittedRuff; old26cases/failures/debits retained.
+374.631of900worker charged, no refunds. No further same-query repeat selected.
+This explains THIS batch only, not historical retention/no-ever-order or
+acceptance/fill/ownership/release. F9 remains UNKNOWN-HELD.
+
+Next H20 consumer: existing exact bank parser/admitted offlineRO should answer
+only current original-B10 basis/account validity, headroom_positive and allowed
+reservation counts; reuse prior qualified categories if already retained.
+No amounts/IDs, no broker calls/reset/adoption/release. At most one new
+purpose-bound read<=180worker1800elapsed, source+private RO/networknone,
+actual custody-writer admission and before/after stability. Do not turn lack
+of categorical evidence into zero headroom or another approval hold.
 
 ## Original Legacy / Runtime Support
 

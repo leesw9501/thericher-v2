@@ -131,6 +131,14 @@ mounted code. Parent selected F9-NEXT-EXECUTABLE-OPTIONc110a68f next bounded
 changed diagnostic, real full native first; no substitute/reset/ID fabrication.
 Original broker ID absent; returned ID is not original-ID evidence.
 
+Consumed changed inquiry (do NOT rerun): same root/f9-range-linkage-completion-r3,
+Source33e82fd8/CALLBACK90bcc43f/RESULT3a5248d0/closure4b8db37c.
+Actual2GET1POST/0holdings/23rows/two pages/four admissionsPASS/stable/closed.
+All23dates later than original submission and0independent original-symbol
+matches; native candidate0 explains this batch, not historical retention/
+no-ever-order/acceptance/fill/release. F9UNKNOWN-HELD. Next assigned local
+current-bank headroom categorical scope has no broker calls; no amounts/IDs.
+
 Additional completed adaptive research, NOT relaunch commands:
 - A/research/current-nas8-next-campaign-20261031-v1:144c/96c6,3TCNfits,
   rawBEST0(untrained)/indicator5/both6. Descriptive reused-DEV pass, not alpha.
@@ -139,6 +147,13 @@ Additional completed adaptive research, NOT relaunch commands:
 - A/research/current-nas8-pairwise-tree-learning-development-20261031-v1:
   ea886/8149,1trustedCPU CatBoostfit86iterationsBEST6/primarygrowthfailed,
   allclosed. Tiny3648row input; CPU fallback is not GPU permission failure.
+- A/research/current-nas8-regularized-sequence25-development-20261031-v1:
+  Sourcef4d54b62/FINALca1ab638/CALLBACK39d2a68a COMPLETE1CUDAfit,
+  66epochs1386updates/BEST42/all4CIDs32Jobsclosed. Own-initial improved but
+  zero-margin INNER gate failed,0DEV/readout; not measured growth/DD.
+  Extra phase check passed AFTER fit start due path-spelling assertion plus
+  non-aborting tool batch; deviationecae retained, not pre-fit authority.
+  Never repeat this fit to repair sequencing; next dispatch aborts nonzero tests.
 - A/data/current-nas8-historical60-acquisition-20261031-v1/technical-r2/
   FINAL-CALLBACK1db8/recovery-r1/Sourceba89/RESULT5474/closure5d1a:
   CLOSED_PARTIAL376newGET1POST/40321newrows/common26RTH/min2.045758sgap,

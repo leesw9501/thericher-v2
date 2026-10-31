@@ -20,8 +20,22 @@ Parent actually installed H20 pair; this is not a training job or fill.
 Engine selects next distinct informative campaign from saved diagnostics,
 Strategy pure mechanism support and actual Data readiness.
 Data historical60closedpartial/sourceba89/376GET1POST/common26RTH;
-cache-only canonical handoff is assigned. No60complete assumption/globalwait.
+actual canonical Engine25 callback66b7/READYc9b8/Sourceb4e6/97495known is
+published/closed, relayed14:31. No60complete assumption/globalwait.
 Oct30 outcomes remain reserved for old-candidate validation.
+
+GRU25 f4d5/FINALca1a COMPLETE:1CUDAfit66epochs1386updates/BEST42,
+own-initial INNER improved but failed frozen zero-margin gate;0DEV/readout,
+not a growth failure/zero. Actual14:30:59..14:31:07,host55272closed14:31:09,
+all4CIDs32Jobs/leaseclosed.219.947workerupper/1239.885elapsed; no repeat.
+Original model/data natives preceded fit, extra phase checker passed late after
+path-spelling assertion plus tool batch failed to abort. Deviationecae retained,
+not pre-fit proof; next dispatch fails fast on nonzero checks.
+Parallel pure persistent-position kernel assigned Harvey300worker1800elapsed,
+invented only/no GPU/evaluation. It is not another resource coordinator.
+Engine next freezes one separate zero-fit persistent-policy CPU comparison;
+current GPU is not claimed active. Useful new CUDA work needs a distinct ready
+hypothesis, not extending this failed frozen campaign to fill the device.
 
 Use one existing coordinator for concurrent ready independent workers.
 Freeze exact data/split/seed/trials/fit/evaluation/activeSUM/elapsed caps before
