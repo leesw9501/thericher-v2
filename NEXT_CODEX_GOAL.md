@@ -44,17 +44,26 @@ F9 range inquiry33e8/90bcc/3a52 is consumed; no same-query repeat/release.
 
 ## Parallel Named Packages
 
-- Execution Feynman: current-h20-after-entry-read-worker-preparation-20261031-v1.
-  First preparation17435/ABI7e36 is PARTIAL, NOT runtime ready or installed.
-  Exact r4 parser65f exists; the host lacks H20 binding/duplex admission.
-  New transport-r2 is a separate bounded invented-only technical completion,
-  <=600 active/3600elapsed; no actual private/API/Task effects now. Real guest
-  duplex/parse/closure smoke first, then source/quiet-window/once readiness.
-  Proposed ONE Nov2UTC15:35..40 read may be installed only after actual proof.
-  All private/source RO, network-none, fresh actual-custody admissions, exact
-  source/input/policy/intent/fill joins, stability and positive owner closure.
-  No recovery observe(), locks, fake proof fields or retry chain. Failure stays
-  UNKNOWN for this read; it does not block the installed H20 pair.
+- Execution H20 reader is now ACTUALLY installed, not a financial result:
+  A/execution/current-h20-reader-parent-completion-20261101-v1/Sourceb2e0ec73,
+  NATIVE4a891fda/DTO-NATIVE5negativechecks; Parent activation20261101-v1/
+  Source3565d0e7/enabled1db04f09/independent1802effa.
+  Task thericher-etf-h20-spy-once-outcome-read-20261102-v1 triggers
+  Nov2UTC15:35 (KSTNov3 00:35); actual start window15:35..<15:40,
+  shared150swork+30scleanup/180total from metadata/transport start/PT5M.
+  Source/native-proof-pinned quiet GUI, fullXML/ACL readback, no Run/catchup/
+  demand/repetition. At most one actual read; currently NOT_DUE/0private reads.
+  Existing native CAPABILITY verdicts+actual caller lineage prove relevant
+  current-writer exclusion; unchanged r4 guest65f performs exact account/basis/
+  input/policy/intent/fill joins and private/source stability, networknone/allRO.
+  Real metadata+invented guest duplex/parser positive and timeout/CID/Job
+  cleanup passed, no invented guest proof fields/new quiescence API.
+  Fixed actual evidence pointer is that completion root/actual-once/RESULT.json;
+  require complete bound admissions/closure, missing/withheld stays UNKNOWN.
+  Current read is not historical OS-scheduler origin, fresh broker holdings,
+  fees/settlement/netPnL or reservation release. No orders/recovery/locks here.
+  Earlier17435/6cdc/10f2 remain partial historical preparations; NEVER run
+  their stubs or repeat consumed private reads/failed installs.
 - Data finite task is ACTUALLY enabled: thericher-data-nas8-future-three-session-20261102-v1.
   Origin current-nas8-future-session-acquisition-preparation-20261031-v1/Source1c97eafe;
   Parent current-nas8-future-session-parent-activation-20261031-v1/Source-r3ad1b1f74,
@@ -73,13 +82,24 @@ F9 range inquiry33e8/90bcc/3a52 is consumed; no same-query repeat/release.
   1forecast/3tapes9views/0fits/0retry/600active, genuine qualifying DataREADY
   only. Missing input is unavailable, not a zero/winner. No old DEV reopening.
   Source-bound quiet pythonw, CPU2/RAM6GiB/network-none/RO data-model-source.
-- Engine/Steward Ampere next owns current-nas8-relative-return-head-preparation-
-  20261101-v1: ONE distinct market-relative target proposal/native preparation
-  or concrete rejection after existing-family/saved-INNER diagnostic review.
-  <=600active/3600elapsed, invented only; no fit/market forecast/DEV readout now.
-  A later genuinely ready CUDA campaign needs its own frozen contract/native
-  optimizer/checkpoint/producer-consumer smoke and measured resource admission.
-  No completed training repeated just to occupy the GPU.
+- Engine/Steward Ampere completed relative-return-heade922 target-novelty
+  rejection, then actually ran a distinct continuous-loss GRU recombination:
+  current-nas8-gru-continuous-development-20261101-v1/Source87ab/contract4a35,
+  1CUDAfit88epochs1848updates/BEST64/INNERpass/1forecast4seenDEVcells, allclosed.
+  DEVgrowthfailed, not independent alpha or a repeat of the old pairwise fit.
+  Sequence comparison ea510604/842debbc is also COMPLETE2CUDAfits:
+  LSTM32 43epochs/BEST19, causalTransformer32 50epochs/BEST26, both INNERpass
+  but DEVgrowthfailed.3CIDs27CLIJobs3outerJobs3leasesclosed; Ampere closed,
+  no more architecture sweep/fit-ready contract queued. Preserve all results.
+- Hooke fixedblend5461/7586/b787 is COMPLETE0fits/newforecasts: blend growth/risk
+  failed, no promotion; twoCPUJobsclosed. New named CPU package is
+  H60cadence study8fbaf258/cb5c1e74/c3b8c548 is also COMPLETE:16rebalances/
+  144skipped/1044markspertape/0fits-newforecasts-restores-retries/
+  2newtapes6views+2carriedtapes6views/allCPUJobsclosed. Cost/net better than
+  GRU5m despite worse gross; trails matchedH60EW and growth/riskfailed.
+  Four reusedDEV/adaptive only, no selection-edge or futurecandidate change.
+  Hooke closed; no ready fit or GPU/CPU research worker currently queued.
+  Do not repeat these campaigns for utilization or turn failure into Paper ban.
 
 ## Evidence / Integration
 

@@ -115,13 +115,48 @@ original4f56caps/model/affine/kernel/controls; <=1restore/1forecast/0fits/
 source-bound GUI launch. Missing input is unavailable, not a zero/winner.
 No actual future evaluation now; this is not GPU work or broker risk change.
 
-Ampere next owns current-nas8-relative-return-head-preparation-20261101-v1:
-inspect existing-family/saved GRU INNER diagnostics, then ONE distinct
-market-relative continuous/ranking target proposal/native or concrete rejection.
-<=600active/3600elapsed/invented only/no fits/marketforecasts/DEV readouts.
-A future new trainable campaign needs frozen actual target/split/availability/
-affine/costs/budget/stop and real optimizer/checkpoint/producer-consumer native
-before numerical dispatch. Completed fits and old holdout custody unchanged.
+Relative-return-head preparatione922/decision9ff9 was REJECTED as target novelty:
+33a0 already has continuous market-relative H60; f4d5 is pairwise, not binary.
+This did not reject an untested architecture/loss recombination.
+New current-nas8-gru-continuous-development-20261101-v1/Source87abd9f4/
+contract4a35ec2c/DONE16:53:30UTC is COMPLETE:1CUDAfit88epochs1848updates/
+BEST64, earlystop24, actual optimizer16:53:15 and8.694s trainwall.
+393parameters/peakallocated85.1MB/reserved92.3MB, all3CIDs/leases/Jobsclosed.
+INNERnormalizedMSE0.7387997 vs constant0.7543227 PASS;1forecast/4reusedDEVcells.
+Readoutcb061a7c primarygrowthfailed:10bp -3.39415percent vs EW8 -2.97888percent.
+Adaptive only, not alpha/Paper approval/convergence; no repeated fit.
+New prefitc4bd/source-affine/phase/native checks preceded fit, ClaudeSOUNDLIMITS.
+
+Sequence comparison is COMPLETE:
+current-nas8-sequence-architecture-comparison-20261101-v1/Sourceea510604/
+contract842debbc/FINAL-CALLBACK90ee25bf.2CUDAfits/2forecasts8seenDEVcells,
+all3CIDs27CLIJobs3outerJobs3leases closed/fresh host and lease absence.
+LSTM32:5097parameters/43epochs903updates/BEST19/INNERMSE0.741869,
+10bp growth -3.50273percent. CausalTransformer32:8841parameters/
+50epochs1050updates/BEST26/INNERMSE0.741112,10bp growth -3.40831percent.
+Both INNER passed but DEVprimarygrowthfailed versus EW8 -2.97888percent.
+530.520of3600activeupper, sequential coordinator, no reruns/winner/causal
+architecture effect or independent alpha. Ampere closed, no active GPU queue.
+
+Fixedblend is COMPLETE:
+current-nas8-gru-tree-persistent-blend-20261101-v1/Source5461a42b/
+contract758600d3/readoutb7878e25/CALLBACK.0fits/newforecasts,one saved intake,
+2newtapes6views+2carriedtapes6views; native7negatives/fullRuff/ClaudeSOUNDLIMITS.
+Growth/risk failed, exposure/support passed; blend net beats Tree from lower
+modeled fees despite worse gross, trails GRU and EW gross/net. No promotion.
+BothCPUJobsclosed/314.743of900active. Four reusedDEV remain adaptive.
+
+H60cadence study COMPLETE:
+current-nas8-h60-cadence-cost-development-20261101-v1/Source8fbaf258/
+contractcb5c1e74/readoutc3b8c548/CALLBACK.16rebalances/144skipped/
+1044markspertape,0fits/newforecasts/restores/retries/one intake,
+2newtapes6views+2carriedtapes6views/allCPUJobsclosed/317.711activeupper.
+Growth/riskfailed, exposure/supportpassed. Net improves versus GRU5m from
+lower modeled fees despite worse gross, trails matchedH60EW; no selection
+edge or lower-exposure/fee-saving alpha claim. Four reusedDEV/adaptive only.
+Hooke closed. No ready fit or active CPU/GPU research worker remains queued;
+future eb8/4f56/c2b and H20 writer unchanged. Continue on genuine later input
+or separately frozen distinct utility/target mechanism, not completed reruns.
 
 No identical old-target/seed repetition.
 Explicit windows/timeframes share finite trial family. Predeclare maxepochs/

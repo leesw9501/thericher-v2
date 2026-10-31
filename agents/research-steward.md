@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Oct31UTC16:43. Ampere current coordinator; Parent shared MD/Git.
+Oct31UTC17:12. GPU coordinator role currently dormant; Parent shared MD/Git.
 A=D:/thericher-v2/model-artifacts. Custody/resource owner, not approval gate.
 
 ## Completed / Not Running
@@ -39,10 +39,20 @@ FULL but not EW8; no alpha/old-family regrade. Current GPU is not active.
 Future freezea56f/eb8f/4f56 is complete. WorkerSourcec2b1 has actual trusted
 CBM restore/invented-predict native/allclosed; Parent activation8c1d enabled
 ONE Nov4UTC21:35..45 CPU evaluation, genuine futureDataREADY only/0fits.
-No active GPU worker. Ampere now owns relative-return-head preparation20261101:
-ONE distinct hypothesis/native or rejection, <=600active/3600elapsed/invented
-only, no market numerics/fits/DEV readout. Useful new CUDA work requires an
-actual ready frozen hypothesis, not extending closed fits to fill the device.
+Relative-target novelty e922 rejected, then new continuousGRU87ab/4a35 actually
+completed1CUDAfit88epochs1848updates/BEST64/INNERpass/DEVgrowthfailed/allclosed.
+393parameters/actual8.694s trainwall/85.1MBallocated92.3MBreserved; tiny useful
+workload explains brief low utilization, not a permission/environment hold.
+Sequence familyea510604/842debbc COMPLETE2CUDAfits: LSTM43epochs/BEST19,
+Transformer50/BEST26, both INNERpass/DEVgrowthfailed.3CIDs27CLIJobs3outerJobs/
+3GPUleasesclosed/fresh exacthost+leaseabsence,530.520workerSUMupper.
+No more fit-ready contract or active GPU worker; Ampere closed. Models were
+small useful studies, not hardware utilization benchmarks or training permission
+failures. Fixedblend5461 also complete/allCPUJobsclosed/growth+riskfailed.
+H60cadence8fba/cb5c/c3b8 also complete/allCPUJobsclosed,0fits/forecasts/
+GPU,317.711activeupper. Fee savings vs GRU5m did not beat matchedH60EW.
+Hooke closed, no active or queued fit-ready CPU/GPU research worker. Future
+Data/frozen evaluation owners remain due; no dummy utilization or global ban.
 
 Use one existing coordinator for concurrent ready independent workers.
 Freeze exact data/split/seed/trials/fit/evaluation/activeSUM/elapsed caps before

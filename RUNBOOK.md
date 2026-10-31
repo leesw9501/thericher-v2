@@ -217,19 +217,52 @@ capture/replay is not decision-time availability/PIT/finality or independent
 alpha. Do not invoke supervisor/worker merely to inspect an installed task.
 Read safe Task status/times and exact immutable bound outcome when due.
 
-Optional H20 after-entry worker is NOT installed or runtime ready:
-A/execution/current-h20-after-entry-read-worker-preparation-20261031-v1,
-firstSource17435/ABI7e36; r4 strict native parser65f is separately ready.
-Feynman transport-r2 must prove real invented guest/duplex admission/parse/Job/
-CIDclosure before a proposed Nov2UTC15:35..40 one-read definition is eligible.
-No actual private read now, recovery observe(), fake proof fields or retrychain.
-Claude REVISE at current-h20-future-read-worker-recovery-review-20261101-v1/
-ADVISORY.json preserves this distinction. It is not a hold on installed H20.
+Current H20 after-entry reader is ACTUALLY installed; old17435/6cdc/10f2 stubs
+remain historical/uninstalled and must not be used:
+A/execution/current-h20-reader-parent-completion-20261101-v1/Sourceb2e0ec73,
+NATIVE4a891fda. Actual current metadata + invented guest/duplex/parser/timeout
+cleanup passed; original r4 guest65f unchanged. Existing CAPABILITY verdicts+
+actual source caller lineage, no new quiescence DTO/API or fake proof fields.
+All private/source mounts RO/networknone/exact joins/stability/no recoverylocks.
+Parent activation current-h20-reader-parent-activation-20261101-v1/Source3565d0e7,
+enabled1db04f09/independent1802effa/fullXML+ACL/source readback/no Run.
+Task thericher-etf-h20-spy-once-outcome-read-20261102-v1 triggers Nov2UTC15:35
+(KSTNov3 00:35). Start15:35..<15:40, shared150work+30cleanup/180total from
+metadata/transport start/PT5M; no demand/catchup/repetition. Currently0actual
+private reads, actual-clock NOT_DUE smoke. H20 entry/exit/bank/F9 untouched.
+Prior failed native registration/root-atom probes preserved; source/exe/literal
+argv/child-bound no-account driver fix, no actor/guard bypass. Focused F/E9 PASS,
+27runtime style diagnostics retained, no full external-Ruff or financial claim.
+
+Do NOT manually run the Task/coordinator/private guest just to inspect results.
+Exact future pointer: completion root/actual-once/RESULT.json. Safe OFFLINE public
+envelope reader, zero private/broker/credentials/Scheduler calls:
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-h20-reader-parent-activation-20261101-v1/read_outcome.py'
+Verify activation-root READER-SOURCE.json and its exact members before use;
+real invented full parse/return +6negative links/closure/effect cases passed.
+It independently rehashes Source/native/binding/admission/closure refs and returns
+only categories/count-safe provenance. Missing/invalid/unstable is UNKNOWN, not
+Task-exit success/busy/no order. Actual read time is not historical/cryptographic
+OS-scheduler origin; fresh broker holdings/fees/settlement/netPnL not observed.
 
 Current consumed CPU cost case62a0/16f5: HALF improves cost/net over FULL but
 not EW8;0fits/0newforwards/3tapes9views/allclosed. Future freezea56f/eb8f/4f56
 complete, current relative-return-head preparation20261101 invented only.
 No duplicate fits/forwards/readouts, no GPU worker active from a plan alone.
+New completed CUDA models (not launch commands):
+A/research/current-nas8-gru-continuous-development-20261101-v1/Source87ab/
+contract4a35/DONE:88epochs/BEST64/1fit1forecast4seenDEVcells/INNERpass/growthfailed.
+A/research/current-nas8-sequence-architecture-comparison-20261101-v1/Sourceea51/
+contract842d/FINAL-CALLBACK90ee: LSTM43/BEST19,Transformer50/BEST26,
+2fits2forecasts8seenDEVcells/INNERpass/growthfailed;3CIDs27CLIJobs3outerJobs/
+3leasesclosed/fresh hostabsence. No outstanding owned GPU resources.
+A/research/current-nas8-gru-tree-persistent-blend-20261101-v1/Source5461/
+contract7586/readoutb787:0fits/newforecasts,blendgrowth+riskfailed/allCPUJobsclosed.
+No future candidate rerank/retraining from these four reusedDEV outcomes.
+H60cadence study20261101 COMPLETE8fba/cb5c/c3b8:16rebalances/144skipped/
+1044markspertape/zero fits-forecasts-restores-retries/allCPUJobsclosed;
+growth/riskfailed, fee savings vs GRU5m do not beat matchedH60EW. No ready fit
+or active research worker now; preserve upcoming Data/evaluation/Paper clocks.
 
 Current fresh authority:
 A/verification/current-paper-h20-recovery-integration-20261031-v1,

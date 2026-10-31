@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-01 KST / Oct31UTC16:43 integration.
+2026-11-01 KST / Oct31UTC17:43 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -303,12 +303,94 @@ A/execution/current-h20-future-read-worker-recovery-review-20261101-v1/ADVISORY.
 new thin integration, not already-qualified reuse; failed smoke leaves optional
 worker uninstalled/UNKNOWN. It does not stop H20 or independent evaluation.
 
-Ampere next owns Engine/Steward current-nas8-relative-return-head-preparation-
-20261101-v1: review existing family/saved INNER aggregates, then ONE distinct
-market-relative continuous/ranking target proposal/native or concrete rejection.
-<=600active/3600elapsed, invented only/no fit/marketforecast/DEV now.
-No GPU worker is currently claimed active; useful future frozen CUDA work has
-project priority/concurrency under measured headroom, never duplicate training.
+Optional worker final qualification-r3Source10f235ec/callback final: real09e/2f1
+decision fixture+5negatives/shareddeadline native/fullRuff PASS, cumulative
+553.721of600active. No actual custody census/private read. Current-quiescence,
+parser publication and timeout-cleanup composition remain incomplete; LLM closed,
+NOT installed. Do not create a historical closure prerequisite or call an
+always-UNKNOWN stub a completed reader. H20 native execution is unchanged.
+
+That partial is now superseded by ACTUAL Parent reader deployment, not by
+promoting its stub. A/execution/current-h20-reader-parent-completion-20261101-v1,
+SOURCEb2e0ec7324844d604bdc572873990f77121b0334c84078537b29c1234503418a,
+NATIVE4a891fdac118e7ce7b5a6b345d8f0a3ef212d052497031fda0ddbcabdff6e5db.
+Unchanged r4 guest65f/native exact ledger joins plus EXISTING native CAPABILITY
+verdicts/actual caller lineage, no new quiescence DTO/API or fake guest flags.
+Real current metadata/invented guest positive and timeout cleanup passed;
+all owned Jobs/CIDs closed, actual private/broker/credential/Task calls0 in smoke.
+Five DTO rejection checks and emitted F/E9 pass; runtime coordinator/native full
+Ruff retains27style diagnostics, not claimed full-pass or rewritten after freeze.
+Two failed pre-create probes correctly rejected native driver registration and
+undeclared root atom. Fixed exact source/exe/literalargv/child-bound no-account
+driver rule, never owned-row/guard bypass. Failures/debits preserved.
+
+Parent A/execution/current-h20-reader-parent-activation-20261101-v1,
+SOURCE3565d0e7bf313c09a19ad18900153d2c3c421da9d626d9ba0bd7929593df004e,
+ENABLED-READBACK1db04f09/INDEPENDENT1802effa/fullXML+ACL+source checked.
+Task thericher-etf-h20-spy-once-outcome-read-20261102-v1:
+Nov2UTC15:35/KSTNov3 00:35, actual start15:35..<15:40, shared150swork+
+30cleanup/180total from metadata/transport start/PT5M. Quiet GUI/source+native
+proof pinned; create disabled/readback/enable, no Run/catchup/demand/repetition.
+Currently NOT_DUE/0 actual private reads. Existing H20 entry/exit unchanged.
+Exact future result: completion root/actual-once/RESULT.json; independently check
+Source/contract/input/policy/admission/closure/native financial joins, not latest
+file/Taskexit/install. Missing/withheld remains UNKNOWN. Current ledger read is
+not fresh broker holdings, historical/cryptographic scheduler-origin proof,
+fees/settlement/netPnL or reservation release. No broker/recovery/private locks.
+Public-only offline consumer: activation-root/read_outcome.py,
+READER-SOURCE3402c337/ENVELOPE-NATIVE6negativecases/full invented parse-return.
+It rehashes exact source/native/binding/admission/closure refs and emits only
+categories/evidence pointers; current UNKNOWN_NO_COMPLETE_OUTCOME is expected.
+
+Ampere relative-target novelty proposal e922/9ff9 was rejected: continuousH60
+and pairwise ranking already studied. An untested continuous-loss GRU combination
+was separately frozen and ACTUALLY completed:
+A/research/current-nas8-gru-continuous-development-20261101-v1,
+Source87abd9f452c6edb8f59edf3d1a576ed7540dfc954a590e0f055ba8fb360fd21f,
+contract4a35ec2c/DONE16:53:30UTC/readoutcb061a7c.
+1CUDAfit88epochs1848updates/BEST64, actual optimizer16:53:15/8.694s trainwall,
+393parameters/85.1MB allocated92.3MBreserved; all3CIDs/leases/Jobs closed.
+INNERMSE0.7387997 vs constant0.7543227 PASS,1forecast/4seenDEVcells;
+10bp growth -3.39415percent vs EW8 -2.97888percent: primarygrowthfailed.
+Adaptive only, not alpha/convergence/Paper authority. Required prefit/native/
+affine/phase checks preceded fit; ClaudeSOUNDLIMITS, no old fit rerun.
+
+Sequence family is COMPLETE at17:06UTC:
+A/research/current-nas8-sequence-architecture-comparison-20261101-v1,
+Sourceea510604c263f4399b84105cb95563893186e4b9964c1ab343ab416d1cf3570f,
+contract842debbc/FINAL-CALLBACK90ee25bf.2CUDAfits/2forecasts8seenDEVcells.
+LSTM32:5097params/43epochs903updates/BEST19/INNERMSE0.741869/10bp -3.50273pct.
+CausalTransformer32:8841params/50epochs1050updates/BEST26/INNERMSE0.741112/
+10bp -3.40831pct. Both learned INNER but DEVgrowthfailed vs EW8 -2.97888pct.
+3CIDs27CLIJobs3outerJobs3leasesclosed/fresh exacthost+leaseabsence, no outstanding
+resources.530.520activeupper, no winner/causalarchitectureclaim/alpha/rerun.
+Ampere closed, no fit-ready contract or GPU worker queued.
+
+Fixedblend is COMPLETE:
+A/research/current-nas8-gru-tree-persistent-blend-20261101-v1,
+Source5461a42b469a067695953a74058bea8746321171140911199e69ee49192c4762,
+contract758600d3/readoutb7878e25/CALLBACK.0fits/forecasts/restores/retries,
+one savedintake/2newtapes6views+2carriedtapes6views/native7negatives/Ruff/
+ClaudeSOUNDLIMITS/bothCPUJobsclosed/314.743activeupper.
+Blend growth/risk failed, exposure/supportpassed. Net improvement over Tree
+is lower modeled fees despite worse gross; trails GRU and EW gross/net.
+No promotion/independent alpha or replacement of future eb8/4f56/c2b.
+
+H60cadence mechanism also COMPLETE:
+A/research/current-nas8-h60-cadence-cost-development-20261101-v1,
+Source8fbaf258/contractcb5c1e74/readoutc3b8c548/CALLBACK.
+One fixed60RTHminute cadence:16rebalances/144skipped/1044markspertape,
+0fits/newforecasts/restores/retries/2newtapes6views+2carriedtapes6views,
+matchedcadenceEW/seed+exitfees/native/Ruff/ClaudeSOUNDLIMITS/allCPUJobsclosed.
+317.711activeupper/367.501elapsed. Growth/risk failed, exposure/supportpassed.
+Net better than GRU5m from lower modeled fees despite worse gross, trails
+matchedH60EW; no selection-edge/promotion claim. Hooke closed, no active
+CPU/GPU research worker or fit-ready contract remains queued.
+Claude current direction SOUND_WITH_LIMITS at prior review root/
+THROUGHPUT-ADVISORY.json17:08: execute this ready alternative during time-bound
+Paper wait, now completed; Parent also completed/installed exact reader.
+Actual runtime/input opportunities remain future, no permission/global hold.
+All results are adaptive on four reusedDEV, not independent alpha/PIT/finality.
 
 Parent integrates exact evidence/Git. Company runtime outcome remains UNFINISHED.
 No operator decision pending, foreground market sleep or new app follow-up chain.

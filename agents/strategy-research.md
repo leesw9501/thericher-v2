@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Oct31UTC14:12. Huygens; Parent sharedMD/Git.
+Oct31UTC17:12. Strategy role dormant; Parent sharedMD/Git.
 Engine owns final targets/splits/costs/fitting/interpretation, not Strategy.
 A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
 
@@ -46,6 +46,22 @@ cost-optimality claim or old H60 amendment. H120 draft withdrawn, not trial.
 Harvey temporary pure kernel implementation owns a DISJOINT root
 current-nas8-persistent-position-kernel-20261031-v1; Strategy does not duplicate.
 Engine owns any later frozen market experiment; current GRU25e274 unchanged.
+
+New concrete holding mechanism has an Engine consumer, not another reading list:
+current-nas8-h60-cadence-cost-development-20261101-v1 (Hooke CPU).
+Parent verified primary sources:
+- https://arxiv.org/abs/2301.02754v1 : rebalancing frequency and transaction costs
+  jointly affect portfolio construction; NOT a proof of project60min optimality.
+- https://proceedings.mlr.press/v108/uziel20a.html : long/short forecast expert
+  combinations with costs; NOT a replication or evidence for our equal blend.
+No external code/weights/license dependency introduced; conceptual inspiration.
+Project inference: forecast-loss learning without cost-aware selection warrants
+one predeclaredH60 holding-cadence study, matchedcadenceEW/gross/net/fees,
+not another architecture sweep or alpha-from-reduced-turnover claim.
+No fit/new forecast/GPU or alteration of future Tree+HALF freeze.
+That consumer now COMPLETE8fba/cb5c/c3b8: lower fees/net improvement vs GRU5m,
+worse gross and below matchedH60EW, growth/riskfailed. No promotion. Preserve
+this concrete rejection, not a new reading-list/parameter sweep or Paper gate.
 
 Existing official-source factors/public-model release/license and prior
 failures remain in Git/external evidence. Unknown pretraining overlap stays

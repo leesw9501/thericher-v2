@@ -132,8 +132,49 @@ No actual Task installed for this worker. Feynman separately owns transport-r2,
 first; no fake proof fields/new platform/actual private reads now.
 Claude REVISE at current-h20-future-read-worker-recovery-review-20261101-v1/
 ADVISORY.json: treat as new thin integration; install only after real smoke.
+Source6cdc31c4 real unchanged-guest cold smoke PASS on invented journals,
+five duplex phases/5Jobsclosed/CIDabsent, no actual custody census/private read.
+Qualification-r3/Source-FINAL10f235ec/CALLBACK-FINAL has real09e/2f1 decision
+fixture,5negatives/shared180s clock/no-spawn checks/fullRuff PASS;
+cumulative553.721of600active. Still NOT runtime ready: current census proof,
+parser publication and qualified timeout cleanup are not composed end-to-end.
+Feynman role closed. Do not install partial launch which cannot read actual
+state. Historical OWN-NATIVE-CLOSURE is NOT a new prerequisite: positive
+current relevant-writer exclusion/quiescence and exact financial joins remain.
 Failure remains UNKNOWN for this one read, not an automatic retry/repair chain
-or a hold on installed H20/Paper/research. Parent owns any actual installation.
+or a hold on installed H20/Paper/research. Parent owns actual later read scope.
+
+## Current Parent Outcome Reader / Installed
+
+The above incomplete preparations are historical, NOT the scheduled source.
+Parent completion current-h20-reader-parent-completion-20261101-v1/
+Sourceb2e0ec73/NATIVE4a891fda is now qualified and ACTUALLY installed via
+current-h20-reader-parent-activation-20261101-v1/Source3565d0e7,
+ENABLED-READBACK1db04f09/INDEPENDENT1802effa.
+Task thericher-etf-h20-spy-once-outcome-read-20261102-v1 triggers
+Nov2UTC15:35/KSTNov3 00:35, actual start15:35..<15:40, shared150swork+
+30scleanup/180total from metadata/transport start/PT5M. No Run/catchup/demand/
+repetition; completeXML/ACL/source checked, no actual financial read yet.
+
+Uses unchanged r4 guest65f/account-basis-input-policy-intent-fill joins/stability
+and existing CAPABILITY verdict+actual caller lineage at all five phases.
+No new quiescence DTO/API, invented proof flags, recovery observe() or locks.
+Real current metadata/invented private positive+timeout cleanup passed with
+owned Jobs/CIDs closed; actual private/broker/credentials0. Two pre-create
+failures preserved: source/exe/literalargv/child-bound native driver registration,
+not an owned-row bypass. Five DTO negatives/emittedF/E9 pass,27runtime style
+diagnostics retained, no full external-Ruff claim or post-native code rewrite.
+Actual-clock NOT_DUE0private smoke passed. Prior failed work/debits unchanged.
+
+Exact current result pointer: completion root/actual-once/RESULT.json.
+Only complete source/contract/input/policy/admission/closure/native joins qualify
+current retained H20 outcomes; missing/withheld stays unknown. This is actual
+read-time evidence, not historical scheduler origin/fresh broker holdings/
+fees/settlement/netPnL. Original B10/F9/reservations/H20entry+exit untouched.
+Public-only envelope consumer is activation-root/read_outcome.py,
+READER-SOURCE3402c337: actual full invented parse/return plus6negative link/
+closure/effect cases, zero private/API/credential/Scheduler calls. Current
+UNKNOWN_NO_COMPLETE_OUTCOME is expected before the opportunity, not failure.
 
 ## Original Legacy / Runtime Support
 
