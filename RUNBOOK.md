@@ -111,6 +111,42 @@ introduced by these tasks. Preserve all original exits/F9/shared bank.
 
 ## Useful Research / No Duplicate Training
 
+Current consumed offline MSE reader:
+A/execution/current-mse-current-custody-read-20261031-v1,
+SOURCE-r3bb42e677/NATIVE-r3b768bbd0/actual-r3/RESULT960638d7.
+Actual14:03UTC, four admissionsPASS/19Jobsclosed/native0/containerabsent/
+allRO/networknone/source+private stable. Financial fields all UNKNOWN;
+reason detail unretained, no inferred zeroes or repeat for logging.
+Earlier r2 failuref246 consumed one read before projection rejected extra
+native proof fields; r3 exact full reply native16checks then second read.
+No replay actual(), no guards weakened, original scope e362 preserved.
+
+F9 consumed diagnostic:
+A/execution/current-legacy-paper-reconciliation-20261031-v1/f9-diagnostic-completion-r2.
+Source d68f/2historyGET3holdingsGET1POST/history23rows/holdings4objects;
+source self-write caused strict snapshot failure, financial use withheld.
+Separate local-custody-r3/RESULT2b845804 current stable pending,0wire.
+No F9-attributed acceptance/fill/terminal/release. Marker/output now outside
+mounted code. Parent selected F9-NEXT-EXECUTABLE-OPTIONc110a68f next bounded
+changed diagnostic, real full native first; no substitute/reset/ID fabrication.
+Original broker ID absent; returned ID is not original-ID evidence.
+
+Additional completed adaptive research, NOT relaunch commands:
+- A/research/current-nas8-next-campaign-20261031-v1:144c/96c6,3TCNfits,
+  rawBEST0(untrained)/indicator5/both6. Descriptive reused-DEV pass, not alpha.
+- A/research/current-nas8-p20-fixed-fusion-development-20261031-v1:
+  de6b/9506,0fits12cells16origins/primarygrowthfailed,allclosed.
+- A/research/current-nas8-pairwise-tree-learning-development-20261031-v1:
+  ea886/8149,1trustedCPU CatBoostfit86iterationsBEST6/primarygrowthfailed,
+  allclosed. Tiny3648row input; CPU fallback is not GPU permission failure.
+- A/data/current-nas8-historical60-acquisition-20261031-v1/technical-r2/
+  FINAL-CALLBACK1db8/recovery-r1/Sourceba89/RESULT5474/closure5d1a:
+  CLOSED_PARTIAL376newGET1POST/40321newrows/common26RTH/min2.045758sgap,
+  no active collector/next_due. Exact empty streams not global providerfloor.
+  New cache-only common26 canonical handoff assigned, no network/replay.
+  Oct30 outcomes remain reserved; futureNov2..4 old-model freeze420c/0826/47a3
+  ready but actual input due. Historical Ridge digest cannot be retrofitted.
+
 Canonical20day dataset:
 A/data/current-nas8-canonical-minute-panel-20261030-v1/READY.json
 READYa4833592/Source5e26/datasetf971;77995of78000known/5maskedholes.

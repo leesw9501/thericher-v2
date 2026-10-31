@@ -1,54 +1,41 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Oct31UTC12:17. Huygens; Parent direction/sharedMD/Git, Engine final targets/
-splits/costs/contracts/fitting/interpretation. No broker/private-account access.
-A=D:/thericher-v2/model-artifacts.
+Oct31UTC14:12. Huygens; Parent sharedMD/Git.
+Engine owns final targets/splits/costs/fitting/interpretation, not Strategy.
+A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
 
-## Completed / Concrete Consumer
+## Complete / Consumers
 
-A/research/current-nas8-next-hypothesis-20261031-v1:
-Sourced8559ade/CALLBACKc718bcbe,55source/calendarchecks/Ruff/
-Claude SOUND_WITH_LIMITS, no market/model calls. Saved diagnostics undermine
-costs-only explanation; exact target/learning/turnover causes remain unknown.
-Proposes ONE unfitted P20 reversal, broad rankweights/non-overlapH60 vs matchedEW8;
-momentum diagnostic only. Engine decides/final-freezes next campaign, not a new
-approval chain. Source/calendar proof is not performance evidence.
+- current-nas8-next-hypothesis-20261031-v1:
+  d8559ade/CALLBACKc718bcbe,55source/calendarchecks. Proposed P20 reversal
+  broad ranks/nonoverlapH60 vs matchedEW8; costs-only explanation unsupported.
+  Actual Engine adaptiveP20de6b/9506 completedgrowthfailed; blends diagnostic.
+- current-nas8-p20-rule-kernel-20261031-v1/CALLBACK.json:
+  duplicate implementation withdrawn because Engine owns actual kernel.
+  Direct support does not create another ownership/approval relay.
+- current-nas8-frozen-later-replay-contract-20261031-v1:
+  Source7023bb33/MAINa63bd96a/contractea1d8d94/129checks.
+  Old chronology predatesOct30open but exact historical Ridge digest unproven.
+  NO Oct30 independent numerical replay/currenthash retrofit/TCNsubstitution.
+- current-nas8-future-replay-readiness-20261031-v1:
+  Source420ced9a/CANDIDATE-FREEZE082608a7/CONTRACT47a3c993/
+  adapter9cc4e0ec/23nativechecks, allclosed. Exact current old weights frozen
+  for untouchedNov2/3/4; actual future Data still due. No fit/forecast/readout/
+  schedule and no new support/criteria relaxation. Single later session is
+  later-out-of-time replay, not contemporaneous/PIT/independent alpha.
 
-Old causal expert proposal03be/amendment3d0812e7 and adapter43f7ff38 consumed by
-actual NAS8 Source33a0/FINALca31: Ridge1/TCN1/BEST17, conjunction not met.
-All8 fixed definition/lag5m/H60/120pastM5x24, meanreturn not ratio of medians.
-Old distribution composition50a8/071f closed execution-support limited; sizing
-SYN80e5/f95e now24cases, no market regrade. Earlier official-source proposals,
-public-model release/license and original failures remain in Git4fca1b2a.
+## Ready / Current Assignment
 
-## Current Source-Only Assignment
+Help Engine choose ONE distinct target/ranking/ensemble mechanism from actual
+saved curves and payoff diagnostics. Pairwise treeea886/8149 is now completed,
+growthfailed,86iterationsBEST6. No duplicate P20/tree kernel or numerical DEV
+readout merely for proposal selection. A pure proposal gets an actual Engine
+consumer or concrete rejection, not a reading list.
+Data common26RTH cache publication is assigned; historical60 is partial,
+not global approval/wait. Oct30 remains reserved for old validation.
+Exchange exact source/schema/readiness directly Engine/Data.
 
-A/research/current-nas8-frozen-later-replay-contract-20261031-v1.
-Within600actualworker/5400elapsed: inspect exact FINALca31/Source33a0/
-CONTRACT-r2/fitStart/CLOSED/safe weights, prove frozen BEFORE Oct30 USopen13:30UTC.
-Do not inspect later market payloads/outcomes, fit, forecast or read out.
-Prepare unchanged Ridge/TCN/fixedhalf/EW8/cash replay at10/20bp with original
-lag5m/H60/all8 and criteria, no new thresholds/ranking/sizing/checkpoints.
-If freeze clocks fail, no numerical replay; use future untouched outcomes instead.
-Data root current-nas8-later-session-20261031-v1 is a future dependency until
-actual publication; no placeholder hashes. Temporary independent Validation
-activates only with candidate freeze plus actual later input ready.
-A single later session is later-out-of-time replay only, not contemporaneous
-decisions/PIT/independent alpha; original support criteria remain unchanged.
-
-Completed Source7023bb33/MAINa63bd96a/contractea1d8d94,129checks:
-local artifact chronology predatesOct30open but exact Ridge historical content
-digest absent. NO Oct30 independent numerical activation/currenthash retrofit/
-TCN-only substitution. Data's separately complete later session does not repair
-candidate history. All original failed results/debits unchanged.
-Next assigned A/research/current-nas8-future-replay-readiness-20261031-v1:
-freeze exact current old-model weights/codec/policies for untouched Nov2/3/4;
-minimal date-envelope/provenance adapter and invented realproducer-consumer
-native only, <=900worker/7200elapsed. No fits/forecasts/readout/schedule. Future
-actual Data needed before numerical; original support/criteria stay fixed.
-
-## Handoff
-
-Exact source/schema/readiness callbacks may go directly to Engine/Data.
-No permanent MD per indicator/model or new research report platform.
-A proposal becomes an experiment or concrete rejection, not a reading list.
+Existing official-source factors/public-model release/license and prior
+failures remain in Git/external evidence. Unknown pretraining overlap stays
+representation/runtime-only; no foundation-model shortcut to alpha claims.
+No permanent MD per indicator, new report platform or independent broker writer.
