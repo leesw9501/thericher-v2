@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlsplit
 
+from thericher_v2.dashboard.operations import build_operations_snapshot
 from thericher_v2.dashboard.view import build_snapshot, render_dashboard
 from thericher_v2.execution.emergency import EmergencyStore, PaperExecutionControlStore
 from thericher_v2.serialization import to_jsonable
@@ -96,6 +97,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 market_data_freshness_path=self.server.market_data_freshness_path,
                 qqq_gross_receipt_path=self.server.qqq_gross_receipt_path,
                 qqq_gross_receipt_sha256=self.server.qqq_gross_receipt_sha256,
+                operations_snapshot=build_operations_snapshot(self.server.operations_artifact_root),
             )
             _html_response(
                 self,
@@ -114,6 +116,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 market_data_freshness_path=self.server.market_data_freshness_path,
                 qqq_gross_receipt_path=self.server.qqq_gross_receipt_path,
                 qqq_gross_receipt_sha256=self.server.qqq_gross_receipt_sha256,
+                operations_snapshot=build_operations_snapshot(self.server.operations_artifact_root),
             )
             _json_response(self, HTTPStatus.OK, snapshot.to_dict())
         elif path == "/health":
@@ -200,7 +203,11 @@ class DashboardHandler(BaseHTTPRequestHandler):
         supplied = form.get("token", [""])[0]
         if not expected or not hmac.compare_digest(supplied, expected):
             if self._prefers_html():
-                _html_response(self, HTTPStatus.UNAUTHORIZED, _login_html(error="Invalid token."))
+                _html_response(
+                    self,
+                    HTTPStatus.UNAUTHORIZED,
+                    _login_html(error="토큰을 확인해 주세요. (Invalid token.)"),
+                )
             else:
                 _json_response(self, HTTPStatus.UNAUTHORIZED, {"error": "unauthorized"})
             return
@@ -290,6 +297,7 @@ class DashboardServer(ThreadingHTTPServer):
         market_data_freshness_path: Path | None = None,
         qqq_gross_receipt_path: Path | None = None,
         qqq_gross_receipt_sha256: str | None = None,
+        operations_artifact_root: Path | None = None,
     ) -> None:
         super().__init__(address, DashboardHandler)
         self.event_store = event_store
@@ -304,6 +312,7 @@ class DashboardServer(ThreadingHTTPServer):
         self.market_data_freshness_path = market_data_freshness_path
         self.qqq_gross_receipt_path = qqq_gross_receipt_path
         self.qqq_gross_receipt_sha256 = qqq_gross_receipt_sha256
+        self.operations_artifact_root = operations_artifact_root
         self.form_nonce = secrets.token_urlsafe(32)
         self.session_value = _session_value(token) if token else ""
 
@@ -340,12 +349,13 @@ def _cookie(name: str, value: str, *, max_age: int | None = None) -> str:
 def _login_html(*, error: str = "") -> str:
     error_markup = "" if not error else f'<p role="alert">{error}</p>'
     return f"""<!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TheRicher v2 Dashboard</title>
+  <title>TheRicher v2 | 모의투자 운영</title>
   <style>
+    * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
       min-height: 100vh;
@@ -378,12 +388,12 @@ def _login_html(*, error: str = "") -> str:
 <body>
   <main>
     <h1>TheRicher v2</h1>
-    <p>Local paper console</p>
+    <p>모의투자 운영 · Paper Console</p>
     {error_markup}
     <form method="post" action="/login">
-      <label for="token">Dashboard token</label>
+      <label for="token">접속 토큰 (Dashboard token)</label>
       <input id="token" name="token" type="password" autocomplete="current-password" required>
-      <button type="submit">Open console</button>
+      <button type="submit">운영 화면 열기 (Open console)</button>
     </form>
   </main>
 </body>
@@ -429,6 +439,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mode", default=os.environ.get("THERICHER_MODE", "off"))
     parser.add_argument("--qqq-gross-receipt", type=Path)
     parser.add_argument("--qqq-gross-receipt-sha256")
+    parser.add_argument(
+        "--operations-artifact-root",
+        type=Path,
+        default=os.environ.get("THERICHER_OPERATIONS_ROOT"),
+        help="read-only categorical Paper outcome projections; never private custody state",
+    )
     parser.add_argument("--token", default=os.environ.get("THERICHER_DASHBOARD_TOKEN", ""))
     return parser
 
@@ -455,6 +471,7 @@ def main() -> None:
         market_data_freshness_path=args.market_data_freshness,
         qqq_gross_receipt_path=args.qqq_gross_receipt,
         qqq_gross_receipt_sha256=args.qqq_gross_receipt_sha256,
+        operations_artifact_root=args.operations_artifact_root,
     )
     print(f"dashboard listening on http://{host}:{args.port}")
     server.serve_forever()

@@ -585,6 +585,11 @@ def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
         assert ("Content-Type", "text/html; charset=utf-8") in headers
         assert "Local paper console" in html
         assert "KIS broker state" in html
+        assert '<html lang="ko">' in html
+        assert "KIS Paper 실행 현황" in html
+        assert "로컬 시뮬레이터" in html
+        assert "실행기 반영: 미확인" in html
+        assert "제어 요청 저장 ≠ 모든 실행기 반영" in html
         assert "Pause buys" in html
         assert "Pause sells" in html
         cookie_header = _cookies(headers)
@@ -619,6 +624,14 @@ def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
         assert json.loads(action_body)["status"] == "pause_buys_set"
         assert server.execution_control_store.read().pause_buys
         assert events.jsonl_path.read_bytes() == event_bytes
+
+        status, _, updated_html = _request(server, "GET", "/", headers=form_headers)
+        assert status == 200
+        assert "일시정지 요청 · Paused" in updated_html
+        assert "매수 정지 해제 · Resume buys" in updated_html
+        assert "실행기 반영: 미확인" in updated_html
+        assert 'action="/controls/resume-buys"' in updated_html
+        assert _nonce(updated_html) == nonce
 
         status, _, action_body = _request(
             server,

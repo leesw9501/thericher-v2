@@ -1,7 +1,14 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Nov1UTC13:40. Ptolemy quantile campaign CLOSED; no active owned CUDA worker/
-lease or further fit queued. Actual callback, not a dispatch, proves completion.
+Nov1UTC15:20. Ptolemy quantile remains CLOSED. Singer exposure/downside CUDA
+study also CLOSED:1fit256epochs2304updates/BEST256/MAX_EPOCHS/0retry, actual
+cuda:0/RTX4090/peak95.3MBallocated119.5MBreserved,22.797soptimizer phase.
+Source2f4902f6/callback/verifyc8599736,932.137of2400activeupper, allowned
+GPU/container/PID/lease resources positively closed. Utilityfailed; no claim
+that reaching epoch cap proves convergence or that GPU occupancy is an outcome.
+Singer now coordinates a distinct CPU-only holding-interval/cost-aware Ridge
+diagnostic,1200activeSUM3600elapsed/1fit1forecast1readout/0retry. No current
+GPU training is inferred or required for this small linear problem.
 Parent owns MD/Git and direction, not an extra qualified-handoff approval.
 
 ## Current Resources

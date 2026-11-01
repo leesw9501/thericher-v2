@@ -911,16 +911,20 @@ not prerequisites for starting bounded paper evidence collection.
 
 ## Dashboard Boundary
 
-The 2026-10-13 operator request defers implementation of the next monitor.
-Keep the Docker-server architecture, but redesign later around Korean primary
-labels with English technical names, owned holdings/orders, worker status,
-actionable error/recovery explanations and honest unknown/stale states.
+The 2026-11-01 operator request activates a bounded local monitor redesign,
+superseding the October deferral. Keep the existing Python/Docker server and
+use Korean primary labels with English technical names, owned holdings/orders,
+worker status, actionable failures and honest unknown/stale states. Installed
+H20/GOOGL opportunities are schedules, not acceptance/fill evidence. The web
+process consumes only qualified categorical public outcomes, not private
+custody mounts or arbitrary executable artifacts. Display saved directional
+controls as requests unless actual consumer acknowledgement is evidenced.
 Future outside access should use authenticated private access (for example a
 private tunnel), not default public port forwarding. Public exposure remains
-reserved authority. No web runtime, port, language or access change is claimed
-by the current operating-policy and quiet-task repair.
+reserved authority. Local monitor deployment is distinct from financial runtime
+closure; it cannot create capital, submit orders or resolve unknown requests.
 
-The dashboard is authenticated, local/LAN-bound, and mostly read-only. The
+The dashboard is loopback-published, supports authentication, and is mostly read-only. The
 existing Docker `web` service is a local monitor only; it neither reads KIS
 credentials nor calls a broker. It may render a credential-free virtual-paper
 canary projection produced by the separate goal-owned Execution service, but

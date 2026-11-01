@@ -10604,3 +10604,27 @@ and attempts remain immutable. No live/capital/new bank authority is added.
 Claude GO_WITH_LIMITS is advisory, not effect-time guard or financial proof:
 D:/thericher-v2/model-artifacts/review/current-future-definition-scope-challenge-20261030-v1/CLAUDE.json
 SHA256 4fcb7389feaeaad49b64eba62d08f5afa0579ad35ca0e3af58cf045783573dfc.
+
+## 2026-11-01 Korean Local Monitor And Exposure Research
+
+The operator activated Korean-primary local operating-monitor work alongside
+the already-owned H20/GOOGL result preparation and distinct market-exposure/
+downside research. This supersedes the October monitor deferral, not the
+single company financial-runtime outcome or its original Paper allocation.
+Reuse the Python-rendered Docker console; no new framework or public serving.
+Its consumer is the operator distinguishing next opportunities, technical
+failure, actual acceptance/fill and owned inventory without opening private
+files. Missing/stale/invalid outcomes remain unknown. Existing strict offline
+readers, not schedule installation or Task exits, supply financial categories.
+Web cannot import arbitrary artifact code, read broker credentials or mount
+private custody; saved pause requests are not consumer acknowledgements.
+
+Research separately tests absolute market exposure/downside rather than
+repeating completed relative-ranking fits. Existing failures and reused-data
+limitations remain immutable; fresh risk/utility definitions are frozen before
+new numerical dispatch. Useful CUDA work is permitted under measured headroom.
+Neither research profitability nor frontend completion gates approved Paper.
+
+Claude SOUND_WITH_LIMITS is advisory; concrete falsifiers are forged/stale/
+wrong-cohort evidence and falsely acknowledged controls. Original advisory:
+D:/thericher-v2/model-artifacts/review/current-korean-paper-monitor-20261101-v1/response.json

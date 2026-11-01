@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-01 KST / Nov1UTC14:20 integration.
+2026-11-02 KST / Nov1UTC15:20 integration in progress.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -12,6 +12,61 @@ persist. Never KIS_LIVE_*, reset, profit refill, foreign adoption or substitute
 an unknown request. Preserve unrelated %SystemDrive%/.
 Git 4fca1b2a and immutable artifacts retain superseded details/failures.
 A stateboard or plan is not a running worker, deployment, acceptance or fill.
+
+## Active Nov1 Parallel Work
+
+Operator approved Korean local monitor implementation, exact future Paper
+result preparation and distinct market-exposure/downside research in parallel.
+Parent owns server/Compose/shared docs/Git. Sagan view/tests are complete and
+closed. Leibniz prepares two finite quiet public-summary publications, not new
+financial reads. Singer's distinct downside CUDA study is CLOSED; a new CPU
+holding-interval/cost-aware diagnostic is preparing under separate frozen caps.
+No completed study is repeated. Actual callbacks, not dispatch, prove starts.
+H20/GOOGL definitions/entry/exit/result readers and original B10/F9 remain
+unchanged. Korean frontend is ACTUALLY running at http://127.0.0.1:8787,
+image5d29fc0448d2217e65f12f73a10a84bca5de59ba29e38bde4551255e4c0387d3.
+Health200/broker_callsFalse, Korean HTML200, loopback-only publication and
+runtimeRO/emergencyRW/public-summaryRO mounts checked. No private custody,
+credentials or broker route; no production control write during QA.
+Playwright Edge1440x1000/390x844 synthetic screenshots/no-overflow/button-fit/
+saved-pause roundtrip passed. This is monitor deployment, not a fill or PnL.
+Public host publisher ran once; exact H20/GOOGL results absent/UNKNOWN. It
+retains historical validated submit/fill receipts, while inventory expires
+after300s and is never relabeled fresh broker holdings. Finite future summary
+publication remains preparation, not installed, until actual readback exists.
+Claude monitor SOUND_WITH_LIMITS:
+A/review/current-korean-paper-monitor-20261101-v1/response.json.
+The new local UI scope supersedes the old monitor deferral; no public exposure,
+new broker authority, private web mounts or financial outcome is implied.
+
+NEW downside study A/research/current-us19-market-exposure-downside-development-
+20261101-v1: Source2f4902f6/CALLBACK/INDEPENDENT-VERIFYc8599736. Actual1CUDAfit/
+256epochs2304updates/BEST256/MAX_EPOCHS/1forecast9policies27views/0numericalretry.
+Net10GRU growth15.9009pct/DD3.5850 versus average-requested-exposure EW17
+16.2610/DD4.2137; primary utilityFAILED versus that control and historical20.
+ForecastMSE slightly improved, not economic pass/convergence/independent alpha.
+Activeupper932.137of2400/elapsed1350.481of7200, allresourcespositivelyclosed.
+Four predispatch control failures/repairs retained,0marketfits in those attempts.
+Existing old studies/points/Paper definitions remain unchanged.
+
+Monitor verification: changed-path220PASS; original full19765PASS26knownskip
+but helperexit1 from an unremoved test hardlink, NOT passing authority. Parent
+fixed that fixture's finally cleanup;90focusedPASS and fresh full-r2 now has
+19765PASS26knownWindowslinkSKIP35warnings/387.77s/created8of8workers[19791]/
+native+helper0/verified managed cleanup. Exact1423source hashes match manifest
+b454fb78, Ruff and default/research/accounting/monitor Compose passed.
+No cleanup bypass or retroactive reuse. Evidence under
+A/verification/current-korean-paper-monitor-20261101-v1.
+
+OPEN compatibility repair: frozen H20/GOOGL reader admission recognizes an
+older web image; its generic unrelated branch requires zero mounts. The new
+web has only runtimeRO/emergencyRW/public-summaryRO but source qualification
+is not yet proven. This is a technical actor-classification issue, not actual
+financial evidence or operator permission. Leibniz is checking the exact source
+and compatible typed policy/successor route, including entry-owner gates.
+No private read or manual Task invocation. Do not assume upcoming readers
+qualified solely from web health. Claude scoped SOUND_WITH_LIMITS:
+A/review/current-korean-paper-monitor-admission-20261102-v1/response.json.
 
 ## Latest Research / Next Execution
 

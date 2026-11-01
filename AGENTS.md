@@ -349,7 +349,7 @@ and isolation. Prefer safe serialization, never untrusted pickle-style public
 weights in trusted processes. Paid/unclear-rights/major-runtime/public changes
 require the operator. Do not build another agent platform to dispatch subagents.
 
-## Quiet Operations And Deferred Monitor
+## Quiet Operations And Monitor
 
 Scheduled work must not open interactive command windows. Audit all tasks but
 modify only verified project owners; preserve original definitions/rollback.
@@ -357,12 +357,16 @@ HiddenTask metadata alone does not hide a console. Use a tested non-interactive
 launch path, preserve arguments/triggers/identity and skip active owners.
 Disable exhausted diagnostics rather than erase unknown recovery state.
 
-The next monitor redesign is deferred: Korean primary labels with English
-technical names, clear owned holdings/orders, worker failures and recovery,
-and a Docker-served private interface. Do not implement or expose it during
-the operating-policy repair. Future external access should be authenticated
-private access; public serving remains an operator decision. UI controls never
-override deterministic risk or unknown-request reconciliation.
+On 2026-11-01 the operator activated the bounded monitor redesign in parallel
+with Paper result preparation and research, superseding the October deferral.
+Use Korean primary labels with English technical names, clear owned orders/
+holdings, worker failures/recovery and honest unknown/stale states in the
+existing Docker-served local interface. Read only qualified public categorical
+outcomes; the web process must not import artifact executables, mount private
+custody or acquire broker/credential authority. A saved pause is a control
+request, not proof every worker acknowledged it. Future external access should
+be authenticated private access; public serving remains an operator decision.
+UI controls never override deterministic risk or unknown-request reconciliation.
 
 ## Memory, Stateboards And Goals
 

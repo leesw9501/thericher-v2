@@ -75,6 +75,30 @@ No new app follow-up chain or foreground market wait.
 
 ## Current Packages
 
+Nov1 operator activated three disjoint packages under this SAME unfinished
+company outcome. Parent owns server/Docker integration/shared MD/Git; Sagan
+owns Korean view/tests, Leibniz owns the categorical public operations adapter,
+Singer owns a NEW market-exposure/downside research root and GPU coordination.
+Existing H20/GOOGL tasks, exact identities, bank/F9 and exits are unchanged.
+No private result read or completed fit is repeated. Current package sources/
+actual numerical starts and closure, not this dispatch, determine readiness.
+
+Monitor: reuse the Python-rendered console, Korean primary/bilingual technical
+labels, schedule versus actual submit/fill/owned state, honest unknown/stale,
+and saved pause requests rather than inferred worker acknowledgement. Web
+reads only a narrowly mounted public projection; no artifact executables,
+private custody, broker credentials or public access. Keep the default Compose
+independent of external artifacts; opt-in docker-compose.monitor.yml mounts
+only D:/thericher-v2/model-artifacts/monitor/paper-operations read-only.
+
+Research: NEW current-us19-market-exposure-downside-development-20261101-v1,
+fixed absolute-market trend CPU comparator and causal portfolio downside-risk
+CUDA model on existing retained daily inputs. Freeze exact data/calendar/
+availability, chronological splits/costs/risky matched baselines/finite trials/
+active-SUM and elapsed ceilings before numerical dispatch. No old evaluation
+regrade, independent alpha, completed-fit repeat or automatic Paper replacement.
+Public callback/source/actual CUDA counts will replace this preparation state.
+
 Ptolemy CLOSED: A/research/current-us19-quantile-transformer-development-20261101-v1.
 NEW downside-distribution hypothesis, not an old5fit retry. Sole GPU coordinator;
 measure current headroom/reserve4GiB, no user-app permission hold. One CUDA
@@ -135,7 +159,8 @@ No Run/Stop/Delete/Update,private/broker0; H20/original trading unchanged.
 Only scheduled one actual read with fresh real admission/allRO/networknone/
 stability; actual-once/RESULT currently absent, public consumer UNKNOWN.
 No latest scan/origin inference/fresh broker holdings/fees/PnL claim.
-All role/numerical workers closed. Do not repeat completed training/read/Task
+That integration closed its role/numerical workers before the new parallel
+dispatch above. Do not repeat completed training/read/Task
 installation. No foreground session wait or app follow-up chain.
 
 ## Closed Studies And Inputs

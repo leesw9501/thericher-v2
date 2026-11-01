@@ -1,0 +1,12 @@
+services:
+  web:
+    restart: unless-stopped
+    environment:
+      THERICHER_OPERATIONS_ROOT: /app/operations
+    volumes:
+      - type: bind
+        source: ${THERICHER_HOST_MONITOR_ROOT:-D:/thericher-v2/model-artifacts/monitor/paper-operations}
+        target: /app/operations
+        read_only: true
+        bind:
+          create_host_path: false

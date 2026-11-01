@@ -1,12 +1,28 @@
 # Orchestration Stateboard (총괄)
 
-Nov1UTC14:20 Throughput Review.
+Nov1UTC15:26 Throughput Review; new active dispatch supersedes the closed
+worker projection below, not its completed evidence or due opportunities.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/integration. No operator decision pending.
 Preserve unrelated %SystemDrive%/ and ONE original B/10/F9/all exits.
 
 ## Ready / Owned / Due
+
+Sagan UI/tests CLOSED; Parent ACTUALLY deployed Korean web5d29fc04 at loopback
+8787, synthetic PC/mobile/form QA passed. Public summaries2UNKNOWN, not fills.
+Leibniz adapter complete90focusedPASS; two finite quiet publication definitions
+Source50851af7 prepared/not installed. Its source audit found frozen old-web
+image admission may reject the new harmless mounted web. Current priority is
+exact non-custody actor qualification, including entry/reader compatibility;
+no trading/unknown-request bypass, private read, manual Task or company hold.
+Singer downside CUDA CLOSED1fit256epochs2304updates/BEST256, primaryutility
+FAILED. NEW CPU-only holding-interval/cost-aware diagnostic active/preparing;
+no duplicate fit or current GPU worker. Parent owns shared MD/Git/integration.
+Reversible improvements: narrow public summary leaf, existing web runtime,
+venv/scratch-excluded626KBbuild; hardlink fixture finally cleanup repaired,
+fresh full-r2 authority rather than cleanup-denial bypass. Future exact Paper
+results remain worker-owned due, not foreground waiting or company completion.
 
 | Owner | Actual evidence | Next action |
 | --- | --- | --- |

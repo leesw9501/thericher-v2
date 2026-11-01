@@ -1,8 +1,21 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Nov1UTC13:40. All numerical research workers/containers/GPU leases closed.
+Nov1UTC15:20. Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
+256epochs2304updates/BEST256/MAX_EPOCHS,1forecast9policies27views/0retry.
+Net10growth15.9009/DD3.5850; matchedaverageEW16.2610/DD4.2137. Primary
+utilityFAILED versus matchedaverage/historical20, not convergence/alpha/PnL.
+Source2f4902f6/INDEPENDENT-VERIFYc8599736 under
+A/research/current-us19-market-exposure-downside-development-20261101-v1.
+Allresourcesclosed;932.137of2400active/1350.481of7200elapsed,4predispatch
+failures preserved with0marketfits. No completed numerical study is repeated.
+NEW CPU-only current-us19-holding-interval-cost-aware-exposure-20261102-v1
+tests actual executable holding-interval return/downside and switching costs.
+Exactly1jointRidge fit/1forecast/1readout/0numericalretry;1200activeSUM/
+3600elapsed. Stop this exposure family if frozen primary fails; no old regrade.
+New source/actual run evidence remains pending, not inferred from preparation.
 Covariance and quantile Transformer completed, neither passed primary criteria.
-GOOGL future pair deployed; no new numerical campaign or operator decision.
+GOOGL future pair deployed; no operator decision. New studies use retained daily
+inputs and do not repeat closed relative fits or change current Paper points.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent owns MD/Git.
 Models are untrusted proposals, not risk/capital/broker authority.
 
