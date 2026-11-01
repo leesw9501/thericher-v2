@@ -10,6 +10,9 @@ not cryptographic host authentication. A validated category describes a retained
 public-reader result at evidence_at, not fresh broker holdings or net PnL.
 Submit/fill receipts remain historical facts; only inventory expires after 300s.
 Publication is finite/manual; no background refresh or Scheduler is installed.
+V2 separates the stable display/cohort contract from operational source pins.
+Only the trusted host publisher validates those dynamic runtime pins; the web
+does not execute artifacts or claim to authenticate a host publication.
 """
 
 from __future__ import annotations
@@ -30,6 +33,7 @@ HOST_ARTIFACT_ROOT = Path("D:/thericher-v2/model-artifacts")
 PUBLIC_PROJECTION_ROOT = HOST_ARTIFACT_ROOT / "monitor/paper-operations"
 PROJECTION_TTL = timedelta(seconds=300)
 _SCHEMA = "PAPER_OPERATIONS_PUBLIC_PROJECTION_V1"
+_SCHEMA_V2 = "PAPER_OPERATIONS_PUBLIC_PROJECTION_V2"
 _TRUST = "host_published_public_outcome_not_authenticated"
 _PHASES = ("before_create", "before_start", "before_read", "after_read", "after_remove")
 _FINANCIAL = ("submit", "fill", "inventory")
@@ -108,6 +112,33 @@ _PROJECTION_KEYS = {
     "evidence_at",
     "evidence_pointer",
 }
+_PROJECTION_V2_KEYS = (_PROJECTION_KEYS - {"source_sha256"}) | {
+    "display_contract_sha256",
+    "operational_source_sha256",
+}
+
+
+def display_contract_sha256(key: str) -> str:
+    """Stable cohort/display routing, NOT attestation of currently executed code.
+
+    Runtime source/native/reader pins belong to the separately qualified host
+    publisher. Keeping them out of this digest prevents a web-image/source cycle.
+    """
+    run = next(run for run in _RUNS if run.key == key)
+    contract = {
+        "schema": "PAPER_OPERATIONS_DISPLAY_CONTRACT_V1",
+        "key": run.key,
+        "symbol": run.symbol,
+        "entry_due_at": run.entry,
+        "read_due_at": run.read,
+        "exit_due_at": run.exit,
+        "original_reader_source": run.source,
+        "original_native": run.native,
+        "original_reader": run.reader,
+        "evidence_pointer": run.evidence_pointer,
+    }
+    raw = json.dumps(contract, sort_keys=True, separators=(",", ":")).encode("ascii")
+    return hashlib.sha256(raw).hexdigest()
 
 
 def _need(condition: object) -> None:
@@ -219,13 +250,19 @@ def _projection(run: _Run, checked: datetime) -> dict:
 
 def _decode_projection(raw: bytes, run: _Run, now: datetime) -> dict:
     value = _json(raw)
-    _need(set(value) == _PROJECTION_KEYS)
-    _need(value["schema"] == _SCHEMA and value["trust"] == _TRUST and value["key"] == run.key)
-    _need(
-        value["source_sha256"] == run.source
-        and value["native_sha256"] == run.native
-        and value["reader_sha256"] == run.reader
-    )
+    _need(value["trust"] == _TRUST and value["key"] == run.key)
+    if value["schema"] == _SCHEMA:
+        _need(set(value) == _PROJECTION_KEYS)
+        _need(
+            value["source_sha256"] == run.source
+            and value["native_sha256"] == run.native
+            and value["reader_sha256"] == run.reader
+        )
+    else:
+        _need(value["schema"] == _SCHEMA_V2 and set(value) == _PROJECTION_V2_KEYS)
+        _need(value["display_contract_sha256"] == display_contract_sha256(run.key))
+        for name in ("operational_source_sha256", "native_sha256", "reader_sha256"):
+            _need(_digest(value[name]) and value[name] != "0" * 64)
     _need(value["reason_code"] in _REASONS)
     checked = _timestamp(value["checked_at"])
     _need(checked <= now + timedelta(seconds=30))

@@ -1,281 +1,78 @@
 # Execution Stateboard (모의투자 실행)
 
-Nov1UTC15:26. Parent actual deployment/sharedMD/Git. Leibniz operations adapter
-complete90focusedPASS; Parent published2UNKNOWN public files and deployed
-Korean web image5d29fc04, loopback8787/runtimeRO/emergencyRW/publicleafRO.
-Actual health/HTML/sourcehashes passed; this is not financial runtime evidence.
-Parent owns the hardlink-test finally cleanup; full-r2 verified strict cleanup.
-Finite quiet public publication Source50851af7 is preparation only/not installed.
-OPEN: newweb actor is not qualified by frozen reader source's old image rule/
-zero-mount generic branch. Leibniz checks actual source/metadata-compatible
-scoped repair for readers and entry owner, no private/TaskRun/broker call.
-Original trading definitions/identities/bank/F9/exits remain unchanged.
-No actual financial runtime outcome or operator decision pending.
-A=D:/thericher-v2/model-artifacts. Never KIS_LIVE_*.
-ONE original B/10/costs/losses/pending/F9/original exits, no reset/refill/adoption.
+Nov2 KST / Nov1 UTC. Parent owns actual deployment/shared MD/Git.
+A=D:/thericher-v2/model-artifacts. No operator decision pending.
+ONE original B/10/costs/losses/pending/F9/all original exits; never KIS_LIVE_*,
+reset, profit refill, unknown-request substitution or foreign inventory adoption.
 
-## Current Model Bridge
+## Current Repair
 
-Outcome-reader first d2e packet closed614.07/600
-upper deviation,13parser/coldcases but real producer-control compatibility and
-actual admission ABI unqualified; synthetic flag bypassed fresh admission.
-Proposed XML incorrectly retained H20 URI/end15:40/PT3M; never installed.
-Claude REVISE reason was discarded, UNKNOWN_NOT_RETAINED/not agreement.
-Repair current-us19-unit-reader-binding-repair-20261101-v1 CLOSED Source12e4/
-reader7540/NATIVE96ab:real UnitController->reader/fiveactualmetadataadmissions,
-1028.601/1200upper/allJobs-CIDsclosed/private0. Claude REVISE/missing_evidence
-retained; producer/metadata pointers supplied, no favorable rereview.
-Parent current-us19-unit-reader-parent-activation-20261101-v1 ACTUALLY installed
-thericher-us19-unit-outcome-read-20261102-v1,Nov2UTC21:05 start<21:10/PT5M,
-KSTNov3 06:05.9mockeddefinitioncases/actualfullXML+ACL disabled-create/enable/
-independentreadback5e6c6137/21c79839,Run-Stop-Delete-Update/private/broker0.
-actual-once/RESULT absent; public consumerUNKNOWN, no current financial claim.
-Actual read still needs fivefreshrelevant-writer/caller checks/allRO/networknone/
-stability; host-origin chainunknownwithoutpointer, no latestscan/freshbroker
-holdings/PnL. Do not manuallyrun/readtwice. H20/GOOGL/B10/F9/exits unchanged.
+Korean web be48f29e is ACTUALLY running at http://127.0.0.1:8787.
+It has no private custody/credentials/broker path. New typed web descriptor
+e07a569f qualifies only its exact image/argv/bootstrap/security/physical mounts.
+Old admission source did not recognize this image. Entry and reader successors
+are SOURCE/NATIVE qualified, not proof of future effect-time admission.
 
-ACTUAL new finite GOOGL pair:
-A/execution/current-us19-unit-parent-adoption-20261101-v1,
-g/host/SOURCE85de6f24/TRUE0703fbc7/actual-install963ff324/readback2719a35b.
-Entry thericher-us19-half-unit-entry-20261102-v1 Nov2UTC20:55..<21:00,
-exit thericher-us19-half-unit-exit-20261109-v1 Nov9same. KSTNov3/Nov10 05:55.
-Registered disabled/read complete XML+ACL/exit-first enable,2register2enable,
-Run-Stop-Delete-Update/broker0/otherdefinitions unchanged. PT7M including
-120scleanup, quiet pythonw/no demand/catchup/repetition, bothinstances0.
-Do not reapply or mutate deployed graph. One-share CAP only, no forced buy,
-new bank/identity/budget, actual admission/acceptance/fill/PnL claim.
-Original b92fc2cb identity continuity is not fresh current broker funds.
+A/execution/current-paper-monitor-admission-repair-20261102-v1:
+ADOPTION-READINESS2e23c159,53focusedtests/92entryABI/real5phase metadata
+admissions/invented native producer->reader. Actual private/broker reads0.
+Original45financialfiles and actual-once/journal paths remain unchanged.
+New operational entry79a43070/54f61fe0 and readerac733e04/61673bc5 do NOT
+replace original financial H20c42867fa/a4a7ceb1 and GOOGL85de6f24/0703fbc7.
 
-Parent filled actual owner ABI release.source_sha256 alias/SID/runtime plan,
-matched Task contract/dated observer policy. Independent actual readback
-passed; actual effects still require current caller/owner/source/book/unknown/
-quote/orderability/observer. Marker/source under honest-host assumption is
-not cryptographic origin. H20, F9 and all original duties remain unchanged.
-Token-ready7b5d8c21:9tests+3cold host/guest rounds with real native first-token
-path/invented HTTP, original60s/POST1/atomic locks unchanged,490.85upper closed.
-Runtime predecessor18ce26native/3cold/5mockPS/1763.50upper closed. Atomic duty,
-retained-only recovery and finally operational restore fixed. Parent16typed
-Task cases/mock fullCLI/actualCOMpreview passed; no real broker call in setup.
+Parent A/execution/current-paper-monitor-parent-adoption-20261102-v1:
+adopt.ps1 2dff7837 passed34mockedcases and exact6native memory previews.
+Actual update partially completed: BOTH exits amended/enabled/exact ACL.
+H20 reader was left disabled after explicit-SDDL UpdateOnly added only an embedded
+SecurityDescriptor matching the unchanged ACL. Other reader/entries were untouched
+at that failed attempt; the completed recovery below supersedes that state.
+The consumed attempt/RECOVERY-REQUIRED stays retained, not success.
+Parent scoped recover.ps1 SHA48b15e9d passed7mockedcases and ACTUALLY repaired
+four remaining definitions, readers before entries, with null SDDL and original
+ACL. RECOVERED.json/RECOVERY-READBACK.json verify exact SIX enabled/full XML/ACL;
+original failed attempt stays failed/historical. No Task Run, credential/private
+read or broker call. Never rerun consumed original/recovery Apply.
 
-New fixedHALF proposal from Heisenberg is public/provisional/untrusted, no
-quantity/capital authority, research riskFAILED/alphaFalse/runtimeNOT_ATTESTED.
-A/research/current-us19-fixedhalf-paper-proposal-20261101-v1/CALLBACK.json:
-onejoint/twoexpertCPUforwards/0fits-EVAL/broker, actual feature-only native and
-full DTO consumer binding. Original models/markers/H20 point unchanged.
-Publication deadline Nov2UTC14:30OPEN differs from effect expiry21:00CLOSE.
-Actual closed producer Source61e8864c/proposal4f9990a9 selects GOOGL;
-no new point, model forecast or quantity authority is required from Research.
+## Exact Owned Opportunities
 
-A/execution/current-us19-paper-unit-probe-preparation-20261101-v1:
-Source53418166/16offlinechecks/578.44upper CLOSED, NOT runtime-ready.
-Integration current-us19-paper-unit-probe-integration-20261101-v1 is CLOSED:
-Source661019bf/21native/5mockedfullPSCLI/195.904upper of900SUM3600elapsed.
-Parent42source/member refs and emitted F/E9 passed. Independent Review found
-expired outer-slot recovery and non-atomic duty publication defects; retain
-A/verification/current-us19-research-paper-integration-20261101-v1/
-EXECUTION-REVIEW.json, do not activate unchanged661 source.
-Runtime-preparation and token-ready successors are CLOSED; actual Parent
-85de deployment above supersedes these historical preparation projections.
-No old-source activation, fit/point repeat, debit reset or real-runtime proof
-inferred from invented fixtures.
+| Scope | Task | UTC |
+| --- | --- | --- |
+| H20 entry | thericher-etf-h20-spy-once-entry-20261102-v1 | Nov2 15:10trigger/15:15..21native/15:24hard |
+| H20 read | thericher-etf-h20-spy-once-outcome-read-20261102-v1 | Nov2 15:35/start<15:40/PT5M |
+| H20 exit | thericher-etf-h20-spy-owned-exit-20261201-v1 | Dec1 14:25trigger/14:30native |
+| GOOGL entry | thericher-us19-half-unit-entry-20261102-v1 | Nov2 20:55..<21:00/PT7M |
+| GOOGL read | thericher-us19-unit-outcome-read-20261102-v1 | Nov2 21:05/start<21:10/PT5M |
+| GOOGL exit | thericher-us19-half-unit-exit-20261109-v1 | Nov9 20:55..<21:00/PT7M |
 
-Proposed atmostONEshare highestfixedHALFweight, original17order tie; entry
-Nov2UTC20:55..<21:00,exitNov9same(e+5=6inclusive), now installed/NOT submitted.
-This is model-to-execution plumbing, not full portfolio or profitability proof.
-Reuse existing one-account serial controller/original bank/identity/unknown-
-request/ownedinventory/fresh quote/orderability/observer checks. No new bank,
-old F9 recovery/substitute/foreign adoption/positions-all-flat veto. Research
-performance does not grant or withhold already-delegated Paper permission.
+KST H20entry/read Nov3 00:15/00:35; GOOGLentry/read Nov3 05:55/06:05.
+Original H20SPY and GOOGL one-share-cap provisional points stay unchanged.
+RiskFAILED/untrusted model is not a Paper permission gate; deterministic broker
+risk/unknown request/current account/budget/fresh quote/orderability remain.
+MSE original Nov5UTC20:40 exit and all other duties persist.
 
-## H20 Actually Installed / Future Effects
+Original one-read output/latch/closure/CAPABILITY namespaces:
+A/execution/current-h20-reader-parent-completion-20261101-v1/actual-once,
+A/execution/current-us19-unit-reader-binding-repair-20261101-v1/actual-once.
+Never manually rerun or invoke recovery-capable observe() as a reader.
+Actual financial effects UNKNOWN, not task exit/installation/preview or zeroes.
 
-A/execution/current-h20-next-session-deployment-preparation-20261031-v1/
-point-root-binding-r2. Host a/graph/host/SOURCEc42867fa,
-p2/TRUEa4a7ceb1/plan a58862e9/actual-installRESULT8a7df6de/
-independent-readbackd39cdc36. Create disabled pair/readback/exit-first enable;
-Run/Stop/Delete/Update0, other definitions/ACLs/enabled unchanged.
-Entry thericher-etf-h20-spy-once-entry-20261102-v1:
-Nov2UTC15:10trigger/15:15..21native/15:24hard (KSTNov3 00:15native).
-Exit thericher-etf-h20-spy-owned-exit-20261201-v1:
-Dec1UTC14:25trigger/14:30..36native/14:39hard (KST23:30native).
-Both enabled/unstarted/instances0 at actual readback. Do not reapply.
-Calendarf788 OPEN[e+20]=21inclusive, not legacy20; Thanksgiving excluded.
-Fresh point7030/ceb7/SPY/Data0f41. Operational entryOPEN+45min, not OPEN-fill
-research parity. PC/session/Docker availability and fresh per-effect current
-owner/account/budget/unknown/quote/orderability/observer checks still required.
-Installation is NOT acceptance/fill/ownedposition/terminal/PnL.
+## Public Summary / Monitor
 
-Parent bankROe4af/sourcec428/one nativeRO/no broker/reset/release.
-Builder3182/nativec279 preserves unchanged JSON bytes, not recomputed trust;
-old6034 source-pin failure and4f6 path243 failure retained. Final pathmax224.
-Qualified four-argument currentSID collector used; no SID/admission weakening.
-Mounted virtual BUYVTTT1002U/SELLVTTT1006U guarded, no global main wire flip.
+A/execution/current-paper-monitor-v2-publication-20261102-v1/SOURCEaa3ef6d6:
+two public-only future tasks actually created disabled, enabled and independently
+read back. Nov2UTC15:46/start<15:47 and21:16/start<21:17/PT2M;103native tests.
+Only categorical public results, no private guest/credentials/broker/Task Run.
+New V2 consumer validates exact source/native/evidence linkage on host; web uses
+stable display identity and unsigned honest-host publication, not OS-origin
+authentication. Historical submit/fill remains historical; inventory expires300s,
+never fresh broker holdings/settled cash/fees/net PnL.
+Production pause controls were not changed; saved request is not consumer ack.
+Use RUNBOOK's exact V2 public consumer, not legacy publisher overwrites.
 
-## Actual MSE / Current Offline Read
+## Next
 
-Actual migration:
-A/execution/current-mse-fixedcap-parent-adoption-20261030-v1,
-entrye362a884/exit13e04e11, actual532c/f04f/readbackebee; UPDATE4consumed.
-Oct30 pair55a68232 STOPPED_UNKNOWN_RuntimeError/visits[]/restoreobligation.
-Output outside helper-root strongly diagnosed before native ingress,
-not historical zeroeffect/restoration proof. Current metadata1b91 matches
-original observer, historical restore UNKNOWN_UNRECEIPTED.
-Original MSE Nov5UTC20:40 exit and all other exit duties remain.
-
-CURRENT actual offline read:
-A/execution/current-mse-current-custody-read-20261031-v1,
-Source-r3bb42e677/NATIVE-r3b768bbd0/actual-r3RESULT960638d7 at14:03UTC.
-Four fresh actual custody admissions PASS/19Jobs0closed/containerabsent/
-networknone/allRO/private-source stable/zero broker/credentials/Task calls.
-Original financial origin/current e362 binding retained. Categorical intent/
-attempt/acceptance/fill/currentowned/terminal all UNKNOWN, not zero effects.
-Reason detail not retained by Parent projection, do not guess or repeat read.
-Earlier r2 read consumed then extra native proof fields rejected by projection;
-failuref246 preserved. R3 exact envelope16checks before separate current read,
-no custody weakening. Total2actualreads/no refunds/host25020closed.
-
-## F9 Exact Identity / UNKNOWN-HELD
-
-Hegel root A/execution/current-legacy-paper-reconciliation-20261031-v1.
-Exact original references:
-A/execution/current-paper-us-order-wire-compatibility-20261029-v1/F9-RECOVERY-HANDOFF.json.
-Inputbb77/Policyf66e/Anchor2a38, same original pending identity/reservation.
-
-f9-diagnostic-completion-r2/CALLBACK.json at13:40:
-Sourced68fd0e5, actual2historyGET+3separateholdingsGET+1POST/0orders/retries.
-Business history23rows/two complete pages; separate holdings4positiveobjects.
-NOT F9 fills/attributed inventory: source snapshot failed because host wrote
-capability/once marker inside mounted code after guest snapshot. Financial use
-withheld; outer native exit unretained. Retain original measured wire/debits.
-
-Fixed output topology outside code; separate local-custody-r3
-Source14546f92/RESULT2b845804 at13:37 passes4freshadmissions/source+private
-stability/allclosed/0wire. CURRENT stable pending identity only, not retroactive
-network qualification or release. Native51/guest17/local6/closure6176/debits6b8e.
-Portable pure public adapter09e6fb09 consumed by Parent, not a broker query.
-Previous cfcc zero-row query and12bb guest-return failure remain inconclusive.
-
-Changed range-linkage diagnostic is COMPLETE:
-f9-range-linkage-completion-r3/CALLBACK90bcc43f, runtime-r3/Source33e82fd8,
-actual-range-linkage-once/RESULT3a5248d0/guest ea31a0be/closure4b8db37c.
-Actual14:38:42..14:39:02UTC,2historyGET1POST/0holdings/0retries/two pages/
-23row objects. All23 dates were LATER than original submission date;
-unchanged date predicate rejects all23. Independently0original-symbol matches.
-Four admissionsPASS/strict source+private stable/19Jobsclosed/CIDremoved;
-original pending/account/basis/input/policy bound unchanged. OuterOSexit not
-retained, no inference from absence. Actual queryhard120s after focused
-3deadline/return native and emittedRuff; old26cases/failures/debits retained.
-374.631of900worker charged, no refunds. No further same-query repeat selected.
-This explains THIS batch only, not historical retention/no-ever-order or
-acceptance/fill/ownership/release. F9 remains UNKNOWN-HELD.
-
-H20 current-bank categorical read COMPLETE at14:56UTC:
-h20-current-headroom-r1/Sourcea0d79f76/CALLBACK5435a162/
-RESULT4f4aaa8b/categoryff338743/closure1393de58.
-basis_accountbinding_valid YES/headroom_positive YES/pending_count1/unknown1.
-One admitted offlineRO/0GET0POST/no credential client/three admissionsPASS/
-14Jobsclosed/CIDremoved/private-source membership-identity-mtime-bytes stable.
-Original B10/costs/losses/F9/all reservations/exits preserved; no release.
-This is CURRENT LOCAL bank headroom, NOT fresh broker buying power, full risk
-snapshot, integer-share eligibility or a fill. H20 effect-time checks remain.
-Source-only date audit3f242f03 confirms F9 filter uses submission_started_at,
-not intent creation; no dates retagged. No further history/read selected.
-Execution reader source-only package COMPLETE:
-current-h20-exact-outcome-reader-readiness-20261031-v1,
-reuse existing strict H20/native journal parser if compatible, otherwise minimal
-exact c428/input/policy/session/intent/fill/owned projection. <=180worker/
-1800elapsed/invented native only, no actual private/API/Task/order/read here.
-Actual after-event use separately needs fresh custody-writer admission/allRO/
-networknone/stability/exact runtime joins. No observe/recovery/lock creation,
-new platform, historical-proof hold, H20 source change or repeat consumed reads.
-Reader reason categories retained; missing/unbound stays unknown. Existing
-schedules remain owned; this is preparation, not an actual H20 financial result.
-Exactr4Source65f6639e/commandf42e5c6f/native696ae1ff/callback1eee7004;
-14real native cases+2admission denials/allJobsCIDsclosed/45.014worker.
-Actualinput5435a7bd/policy82c19a97/contract614035e7/c428 source bound.
-Existing uniform17 outcome_reader is counter-only, not H20 custody evidence.
-Generic installed result_sink does not prove fills or recover unpersisted
-failure frames. Missing producer reasons remain unknown; no H20 source change.
-
-Feynman first preparation of ONE finite after-entry read worker under
-current-h20-after-entry-read-worker-preparation-20261031-v1,
-proposed Nov2UTC15:35..40.<=600worker3600elapsed preparation, invented only,
-zero actual private/API/credentials/Task effects now. Reuse exactr4 and current
-09e/2f1 admission; no new parser/platform/strategy writer. Runtime only one
-fresh admitted allRO/networknone read after positive actual owner/native
-closure/source bindings; missing/unstable/active owner withholds that read.
-No latest scan/Taskexit inference/observe/recovery/locks/substitute/release.
-Offline retained owned inventory is not fresh broker holdings/fees/settlement/
-netPnL. FirstSource17435/ABI7e36/CALLBACK is PARTIAL_NOT_RUNTIME_READY:
-frozen Parent catalog lacks H20 binding and headroom transport lacks r4 fresh
-duplex admissions. Its46local checks are NOT a cold Job/guest qualification.
-No actual Task installed for this worker. Feynman separately owns transport-r2,
-<=600active/3600elapsed/invented only. Real guest duplex/parse/closure smoke
-first; no fake proof fields/new platform/actual private reads now.
-Claude REVISE at current-h20-future-read-worker-recovery-review-20261101-v1/
-ADVISORY.json: treat as new thin integration; install only after real smoke.
-Source6cdc31c4 real unchanged-guest cold smoke PASS on invented journals,
-five duplex phases/5Jobsclosed/CIDabsent, no actual custody census/private read.
-Qualification-r3/Source-FINAL10f235ec/CALLBACK-FINAL has real09e/2f1 decision
-fixture,5negatives/shared180s clock/no-spawn checks/fullRuff PASS;
-cumulative553.721of600active. Still NOT runtime ready: current census proof,
-parser publication and qualified timeout cleanup are not composed end-to-end.
-Feynman role closed. Do not install partial launch which cannot read actual
-state. Historical OWN-NATIVE-CLOSURE is NOT a new prerequisite: positive
-current relevant-writer exclusion/quiescence and exact financial joins remain.
-Failure remains UNKNOWN for this one read, not an automatic retry/repair chain
-or a hold on installed H20/Paper/research. Parent owns actual later read scope.
-
-## Current Parent Outcome Reader / Installed
-
-The above incomplete preparations are historical, NOT the scheduled source.
-Parent completion current-h20-reader-parent-completion-20261101-v1/
-Sourceb2e0ec73/NATIVE4a891fda is now qualified and ACTUALLY installed via
-current-h20-reader-parent-activation-20261101-v1/Source3565d0e7,
-ENABLED-READBACK1db04f09/INDEPENDENT1802effa.
-Task thericher-etf-h20-spy-once-outcome-read-20261102-v1 triggers
-Nov2UTC15:35/KSTNov3 00:35, actual start15:35..<15:40, shared150swork+
-30scleanup/180total from metadata/transport start/PT5M. No Run/catchup/demand/
-repetition; completeXML/ACL/source checked, no actual financial read yet.
-
-Uses unchanged r4 guest65f/account-basis-input-policy-intent-fill joins/stability
-and existing CAPABILITY verdict+actual caller lineage at all five phases.
-No new quiescence DTO/API, invented proof flags, recovery observe() or locks.
-Real current metadata/invented private positive+timeout cleanup passed with
-owned Jobs/CIDs closed; actual private/broker/credentials0. Two pre-create
-failures preserved: source/exe/literalargv/child-bound native driver registration,
-not an owned-row bypass. Five DTO negatives/emittedF/E9 pass,27runtime style
-diagnostics retained, no full external-Ruff claim or post-native code rewrite.
-Actual-clock NOT_DUE0private smoke passed. Prior failed work/debits unchanged.
-
-Exact current result pointer: completion root/actual-once/RESULT.json.
-Only complete source/contract/input/policy/admission/closure/native joins qualify
-current retained H20 outcomes; missing/withheld stays unknown. This is actual
-read-time evidence, not historical scheduler origin/fresh broker holdings/
-fees/settlement/netPnL. Original B10/F9/reservations/H20entry+exit untouched.
-Public-only envelope consumer is activation-root/read_outcome.py,
-READER-SOURCE3402c337: actual full invented parse/return plus6negative link/
-closure/effect cases, zero private/API/credential/Scheduler calls. Current
-UNKNOWN_NO_COMPLETE_OUTCOME is expected before the opportunity, not failure.
-
-## Original Legacy / Runtime Support
-
-GRU4/TFM3 genericcensus/L2owner-probe failures pre-native, not matching MSEbug.
-Prior TimesFM record_absent is not zero holdings/orders; GRU discarded when
-new actors unbound. Original current duties preserved.
-A/execution/current-original-exit-bootstrap-repair-20261031-v1:
-whole-ingress qualified050e/qualificationd05c/native13+CAS14+ParentCLI, allclosed.
-Inactive readiness only; do not patch expired metadata solely for a receipt.
-Hilbert coexistence-r1 sourceea8f/native d420/current snapshotafd3 ready;
-actual peer measurement needs fresh source-bound Data/GPU callback, not dummy
-worker/global allowall. No broker/private/Task mutation in that probe.
-
-## Claims / Verification
-
-Never invoke recovery-capable observe() as offline reader. Admission targets
-actual custody writers, not unrelated public Data/research actors.
-Distinguish nointent/technicalfail/submitattempt/acceptance/exactfill/
-currentowned/terminal. Fees/settlement/netPnL unknown without own evidence.
-Current full authority934f/346f:231serial1knownskip,19619full26knownskip,
-8workers[19645]/cleanup/Ruff/3Compose/exec97821joined0; exact source reuse plus
-focused actual changed external native checks, not repeated full suites.
+Operational recovery/readback complete; next is exact future runtime evidence.
+Fresh effect-time relevant owner/custody/quote/orderability/risk checks remain.
+Independent Data/Research need not wait for this scope. All new research fits
+closed; no automatic point/model swap. Current goal completes only on actual
+interpretable financial runtime closure, not policy/install/test/commit.

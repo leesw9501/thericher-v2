@@ -10,6 +10,9 @@ from pathlib import Path
 import pytest
 
 from thericher_v2.dashboard import operations as ops
+from thericher_v2.dashboard.view import build_snapshot, render_dashboard
+from thericher_v2.execution.emergency import EmergencyStore
+from thericher_v2.state.event_log import EventStore
 
 NOW = datetime(2026, 11, 2, 21, 6, tzinfo=UTC)
 
@@ -486,6 +489,95 @@ def test_hardlink_projection_is_rejected_without_reading(tmp_path, monkeypatch):
         assert ops.build_operations_snapshot(tmp_path, now=NOW)["runs"][0]["status"] == "invalid"
     finally:
         alias.unlink()
+
+
+def _v2(projection, run):
+    result = dict(projection)
+    result.pop("source_sha256")
+    result.update(
+        schema=ops._SCHEMA_V2,
+        display_contract_sha256=ops.display_contract_sha256(run.key),
+        operational_source_sha256="c" * 64,
+        native_sha256="d" * 64,
+        reader_sha256="e" * 64,
+    )
+    return result
+
+
+def test_v2_separates_fixed_display_contract_from_host_validated_runtime(graph, tmp_path):
+    run, _, _, _, when = graph
+    projection = _v2(ops._collect_public_projection(run, when), run)
+    contract = projection["display_contract_sha256"]
+    for operational in ("c" * 64, "f" * 64):
+        projection["operational_source_sha256"] = operational
+        write(tmp_path / f"{run.key}.json", projection)
+        row = ops.build_operations_snapshot(tmp_path, now=when)["runs"][0]
+        assert row["submit"] == "accepted" and row["fill"] == "confirmed"
+        assert ops.display_contract_sha256(run.key) == contract
+        assert operational not in json.dumps(row)
+
+
+@pytest.mark.parametrize(
+    "fault",
+    ["contract", "source", "native", "reader", "pointer", "extra", "legacy_source", "trust"],
+)
+def test_v2_rejects_malformed_or_foreign_display_contract(graph, tmp_path, fault):
+    run, _, _, _, when = graph
+    projection = _v2(ops._collect_public_projection(run, when), run)
+    if fault == "contract":
+        projection["display_contract_sha256"] = "0" * 64
+    elif fault in {"source", "native", "reader"}:
+        field = "operational_source_sha256" if fault == "source" else fault + "_sha256"
+        projection[field] = "0" * 64
+    elif fault == "pointer":
+        projection["evidence_pointer"] = "artifact:foreign/actual-once/RESULT.json"
+    elif fault == "extra":
+        projection["order_identifier"] = "private-marker"
+    elif fault == "legacy_source":
+        projection["source_sha256"] = run.source
+    else:
+        projection["trust"] = "cryptographically_authenticated"
+    write(tmp_path / f"{run.key}.json", projection)
+    row = ops.build_operations_snapshot(tmp_path, now=when)["runs"][0]
+    assert row["status"] == "invalid"
+    assert all(row[field] == "unknown" for field in ops._FINANCIAL)
+    assert "private-marker" not in json.dumps(row)
+
+
+def test_v2_preserves_only_historical_outcome_when_inventory_expires(graph, tmp_path):
+    run, _, _, _, when = graph
+    projection = _v2(ops._collect_public_projection(run, when), run)
+    write(tmp_path / f"{run.key}.json", projection)
+    row = ops.build_operations_snapshot(
+        tmp_path, now=when + ops.PROJECTION_TTL + timedelta(seconds=1)
+    )["runs"][0]
+    assert row["submit"] == "accepted" and row["fill"] == "confirmed"
+    assert row["inventory"] == "unknown" and row["reason_code"] == "historical_public_outcome"
+
+
+def test_v2_native_file_to_snapshot_to_korean_html_handoff(graph, tmp_path):
+    run, _, _, _, when = graph
+    projection = _v2(ops._collect_public_projection(run, when), run)
+    public = tmp_path / "public-operations"
+    write(public / f"{run.key}.json", projection)
+    events = EventStore(tmp_path / "view.sqlite", tmp_path / "view-events.jsonl")
+    events.bootstrap()
+    snapshot = build_snapshot(
+        events,
+        EmergencyStore(tmp_path / "view-emergency.json"),
+        now=when,
+        operations_snapshot=ops.build_operations_snapshot(public, now=when),
+    )
+    row = next(
+        item
+        for item in snapshot.to_dict()["operations_snapshot"]["runs"]
+        if item["key"] == run.key
+    )
+    assert row["submit"] == "accepted" and row["fill"] == "confirmed"
+    html = render_dashboard(snapshot)
+    assert '<html lang="ko">' in html and run.symbol in html
+    assert "operational_source_sha256" not in html
+    assert projection["operational_source_sha256"] not in html
 
 
 def test_stability_check_catches_replacement(graph, monkeypatch):

@@ -6,198 +6,92 @@ coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain interpretable native KIS Paper entry, exact acceptance/fill and current
 owned-position reconciliation while cost-aware research continues. A study,
-source/native test, installation or commit is not financial runtime closure.
+source/native test, installation, UI or commit is not financial runtime closure.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Follow AGENTS/HANDOFF/RUNBOOK/active stateboards. Parent owns MD/Git/actual
-deployment. No operator decision pending. Never KIS_LIVE_*, real money, paid/
-public behavior or another capital envelope. Preserve ONE original B/10,
-costs/losses/F9 UNKNOWN-HELD/pending identities/all exits and unrelated
-%SystemDrive%/. No profit refill, foreign adoption or unknown-request substitute.
+Follow AGENTS.md, HANDOFF.md, RUNBOOK.md and active stateboards.
+Parent owns shared MD/Git/integration. No operator decision pending.
+Keep ONE original B/10, costs/losses/F9 UNKNOWN-HELD/pending/all exits.
+Never KIS_LIVE_*, capital reset/refill, foreign adoption, unknown-request
+substitution or retagging. Preserve unrelated %SystemDrive%/.
 
-## Actual Future Deployments
+## Immediate Execution Package
 
-H20 pair/read remain installed and unchanged, NOT a submit/fill:
-A/execution/current-h20-next-session-deployment-preparation-20261031-v1/point-root-binding-r2.
-Sourcec42867fa/releasea4a7ceb1/plana58862e9/install8a7df6de/readbackd39cdc36.
-Entry thericher-etf-h20-spy-once-entry-20261102-v1:
-Nov2UTC15:10trigger/15:15..21native/15:24hard, KSTNov3 00:15native.
-Exit Dec1UTC14:25trigger/14:30..36native/14:39hard, e+20=21inclusive.
-Original SPY point Oct30-asof/Nov2-decision, never retag or replace.
+Scoped recovery at A/execution/current-paper-monitor-parent-adoption-20261102-v1
+is ACTUALLY COMPLETE. RECOVERED.json/RECOVERY-READBACK.json prove all SIX future
+definitions enabled/full XML/ACL matches, readers before entries and original
+exits preserved. Old incomplete original attempt remains failed/historical.
+Actual first cause: explicit-SDDL UpdateOnly adds embedded ACL metadata,
+although ACL itself stays unchanged. recover.ps1 preserves current ACL with
+null SDDL;7mockedcases and actual four-update/native independent readback passed.
+Do not rerun consumed adopt.ps1, recover.ps1 Apply or original installations.
+Next dependent input is the exact worker-owned future financial result, not
+another installation/replay. Continue the independent Data sidecar meanwhile.
 
-H20 outcome reader installed Nov2UTC15:35, start<15:40,150work+30cleanup/PT5M,
-KSTNov3 00:35. Completion20261101-v1 Sourceb2e0/native4a89; parent-activation
-Source3565/enabled1db0/readback1802. One admitted private read, CAPABILITY/
-caller-lineage/strict r4guest65f. Use RUNBOOK's public envelope reader; no
-manual Task/coordinator/guest or consumed read. Missing result UNKNOWN;
-current linkage is not historical/cryptographic OS-scheduler-origin proof.
+Qualified source/native packet:
+A/execution/current-paper-monitor-admission-repair-20261102-v1.
+Original financial identity remains H20c42867fa and GOOGL85de6f24; actual
+operational sources are distinct/truthful. Original actual-once/journals,
+bank/input/policy/control/exit IDs remain unchanged.45originalfiles preserved.
+Source/native proof is not future runtime admission.
 
-NEW GOOGL engineering unit pair ACTUALLY installed exit-first Nov1UTC13:07:
-A/execution/current-us19-unit-parent-adoption-20261101-v1.
-Host g/host/SOURCE85de6f24, TRUE0703fbc7, PREPAREDf1e0fe51,
-actual-install/RESULT963ff324, independent-readback/RESULT2719a35b.
-Entry thericher-us19-half-unit-entry-20261102-v1: Nov2UTC20:55..<21:00,
-KSTNov3 05:55. Exit thericher-us19-half-unit-exit-20261109-v1: Nov9same,
-KSTNov10 05:55, e+5=6inclusive. PT7M includes120s cleanup, no fresh order
-after21:00. Both enabled/unstarted/instances0 at exact readback; no demand,
-catchup/repetition/manual Run. Registration2/enable2/other-definition changes0/
-broker calls0. Same original bank/account/basis, not a fresh funds snapshot.
-One-share CAP, not forced buy/full portfolio/profit validation/new bank.
-Do not reapply installation or mutate deployed g/host/runtime/frozen files.
+Keep exact existing task clocks:
+- H20 trigger Nov2UTC15:10, native15:15..21, hard15:24; result read15:35,
+ start<15:40/PT5M. KSTNov3 00:15native/00:35read.
+- GOOGL unit Nov2UTC20:55..<21:00/PT7M; result read21:05,
+ start<21:10/PT5M. KSTNov3 05:55entry/06:05read.
+- GOOGL owned exit Nov9same; H20 owned exit Dec1UTC14:30native.
+- MSE original Nov5UTC20:40 exit, F9 reservation and other duties unchanged.
 
-The old exact fixedHALF point Source61e8864c/proposal4f9990a9 remains GOOGL,
-riskFAILED/alphaFalse/untrusted/no quantity authority. Publication freeze
-Nov2UTC14:30OPEN differs from effect expiry21:00. No new inference was run.
-Parent completed owner ABI/release alias/SID/runtime plan/dated observer policy.
-Runtime still proves real caller/owner, exact unknown request, current book/
-B10/quote/orderability and observer admission. Tests/installation are not those
-facts. Source-assumed-honest host, not cryptographic origin. Never invoke a
-recovery-capable observe() as an offline financial reader.
+Two new PUBLIC-only summary tasks SOURCEaa3ef6d6 are installed/enabled with
+independent full XML/ACL readback at
+A/execution/current-paper-monitor-v2-publication-20261102-v1:
+Nov2UTC15:46/start<15:47 and21:16/start<21:17/PT2M; no demand/catchup/repetition.
+They do not run a private reader or broker path. No manual Task Run merely
+to inspect. Future financial result remains UNKNOWN, not zero or no intent.
+Use exact public V2 consumer/readback commands in RUNBOOK.md.
+No new app follow-up chain or foreground session waiting.
 
-Token source7b5d8c21/host45a63cb3/guest48d39ab9 preserves60s guard, atomic+
-legacy exclusion/POST1, worker-owned readiness<=60s.9token tests and3cold
-host->bridge->guest rounds passed, no cached-token bypass. Predecessor18ce
-26native/3coldrounds/5mockPS and old66121native retained. Outer retained-only
-recovery, atomic duty and finally observer restoration fixed; old failures/
-sources/debits closed. Real current financial facts remain unobserved until
-exact runtime evidence; never infer zeroes from missing receipts.
+## Independent Packages
 
-Future Data enabled Nov2/3/4UTC21:10 hard21:25:
-thericher-data-nas8-future-three-session-20261102-v1, Source1c97/Parentad1b.
-Frozen evaluation Nov4UTC21:35..45:
-thericher-engine-nas8-frozen-three-session-eval-20261104-v1,
-Sourcec2b1/Parent8c1d/candidateeb8f/contract4f56. Actual3date READY only,
-1restore/1forecast/3tapes9views/0fits-retries/600active; no new tuning.
-Original MSE Nov5UTC20:40 exit/all other duties persist; MSE financial UNKNOWN.
-F9 inquiry33e8/90bcc/3a52 and consumed readers remain consumed.
-No new app follow-up chain or foreground market wait.
+Korean local monitor ACTUALLY deployed at http://127.0.0.1:8787,
+imagebe48f29e, loopback only. Public-summaryRO/runtimeRO/emergencyRW, no
+private bank/credentials. Korean bilingual labels, scheduled versus actual
+submit/fill/owned, unknown/stale and request-versus-ack controls.
+V2 display identity is stable; HOST validates actual runtime pins. Unsigned
+honest-host publication is not authenticated OS-origin evidence or broker PnL.
+Do not expose this example-config monitor externally or use old repo publisher
+to overwrite new V2 summaries.
 
-## Current Packages
+Exposure/downside1CUDAfit, holding-interval1CPUfit, monthly selection2fits
+(RidgeCPU+GRUCuda) are CLOSED. All resources closed; no current numerical job.
+Primary frozen economic/risk criteria failed. Families stopped, no grid/refit/
+replay, independent-alpha claim or automatic Paper-point change.
+Completed models are not repeated to occupy GPU. Distinct useful campaigns may
+start under a NEW frozen contract, real native optimizer smoke, actual resource
+ownership and their own finite caps; no global16epoch or user-app GPU hold.
 
-Nov1 operator activated three disjoint packages under this SAME unfinished
-company outcome. Parent owns server/Docker integration/shared MD/Git; Sagan
-owns Korean view/tests, Leibniz owns the categorical public operations adapter,
-Singer owns a NEW market-exposure/downside research root and GPU coordination.
-Existing H20/GOOGL tasks, exact identities, bank/F9 and exits are unchanged.
-No private result read or completed fit is repeated. Current package sources/
-actual numerical starts and closure, not this dispatch, determine readiness.
+Data rejected cross-vintage monthly-Ridge endpoints because PG's138overlap
+dates differ. No splice/rescale/fill. Mendel owns NEW market-only17required
+endpoint acquisition at A/data/current-monthly-ridge-required-endpoint-
+acquisition-20261102-v1; atmost20GET/1POST/bounded original token+pacing,
+600activeSUM/1800elapsed, no account/orders/fits/forecasts/evaluation.
+Nov2 decision close is not present before actual Nov2UTC21:00.
+Current H20/GOOGL points stay unchanged.
 
-Monitor: reuse the Python-rendered console, Korean primary/bilingual technical
-labels, schedule versus actual submit/fill/owned state, honest unknown/stale,
-and saved pause requests rather than inferred worker acknowledgement. Web
-reads only a narrowly mounted public projection; no artifact executables,
-private custody, broker credentials or public access. Keep the default Compose
-independent of external artifacts; opt-in docker-compose.monitor.yml mounts
-only D:/thericher-v2/model-artifacts/monitor/paper-operations read-only.
+Existing NAS8 future Data Nov2/3/4UTC21:10 and frozen evaluation
+Nov4UTC21:35 remain unchanged, no reserved outcomes used for new training.
 
-Research: NEW current-us19-market-exposure-downside-development-20261101-v1,
-fixed absolute-market trend CPU comparator and causal portfolio downside-risk
-CUDA model on existing retained daily inputs. Freeze exact data/calendar/
-availability, chronological splits/costs/risky matched baselines/finite trials/
-active-SUM and elapsed ceilings before numerical dispatch. No old evaluation
-regrade, independent alpha, completed-fit repeat or automatic Paper replacement.
-Public callback/source/actual CUDA counts will replace this preparation state.
+## Evidence And Continuation
 
-Ptolemy CLOSED: A/research/current-us19-quantile-transformer-development-20261101-v1.
-NEW downside-distribution hypothesis, not an old5fit retry. Sole GPU coordinator;
-measure current headroom/reserve4GiB, no user-app permission hold. One CUDA
-Transformer(20x6,d32,2heads,2layers) monotone(.1,.5,.9) pinball fit/seed20261101,
-one forward/3policies9costviews/1readout/0numericalretry. Max512epochs/12288
-updates/600s optimizer/1200activeSUM3600elapsed; chronological INNER curves/
-earlystop32/LR/best checkpoint, never EVAL epochs. Primary old saved Trend+
-q.1 weights50/50; secondary Trend+median; thirdq.1alone. Same old support/
-costs/G0/kill thresholds: net10growth>49.5086pct/DD<=10.4509pct/turnover
-<53.4854438214. Actual producer/parser/full optimizer/checkpoint/3head forecast/
-native book before market. Existing trusted CUDA image only; source/version/
-actual counts and lease/PID/container determine start, not this MD dispatch.
-Actual SOURCE72196882/CALLBACKdb83649b:49epochs1764updates/BEST17,
-earlystop32/0retry/1forecast9views. Primary net10growth32.8522pct/
-DD11.0263/turnover30.5451: growth+riskFAILED, turnover passed.212.986/1200
-active/23.159soptimizer/887.367elapsed,allownedresourcesclosed. No duplicate
-fit, reranking, automatic point change or current GPU worker.
+Fresh repo authority:
+A/verification/current-korean-paper-monitor-20261101-v1/RESULT-V2.json.
+Exact1423pins7f0c495a;242serialPASS;19787fullPASS26knownWindowslinkSKIP/
+8createdworkers[19813]/native+helper0/verifiedcleanup; Ruff/4ComposePASS.
+Original failed cleanup remains failed; fresh reruns passed, no bypass.
+External runtime code needs its own focused/native evidence.
 
-Heisenberg's current-us19-buffer-covariance-allocation-20261101-v1 is CLOSED:
-144market covariance fits/144SLSQP solves,1policy3views,0expert training/
-restores/forecasts/retries. Net10growth46.66pct/DD13.38/turnover20.017:
-growth and riskFAILED, turnover passed. No retune or current-point change.
-
-Both are adaptive reused/current-listing/revised MODE1 price-proxy studies,
-not independent alpha/TR/broker net PnL/new Paper points. No credentials/KIS/
-private state/Tasks/Git/shared MD in Research packets. Parent integrates;
-research profitability is not a gate on independently approved Paper.
-
-Historical Aquinas A/execution/current-us19-unit-outcome-reader-preparation-20261101-v1:
-600activeSUM1800elapsed/0fits, source/offline preparation of ONE exact unit
-post-entry read Nov2UTC21:05 start<21:10/150work30cleanup, no current private/
-credentials/API/Task calls or install. Reuse strict existing offline machinery,
-actual relevant custody-writer admission, networknone/allRO/no recovery/locks,
-exact source/account/basis/input/policy/intent/fill/current-local-owned joins
-and before-after membership/identity/mtime/bytes. Missing/unbound evidence
-UNKNOWN, no latest scan/Task-exit inference or fresh broker holdings claim.
-Parent owns qualified future activation; consumed H20 readers stay consumed.
-No app follow-up chain, new capital or live behavior. No more numerical work
-is currently queued; next distinct research direction is absolute market-
-regime/downside rather than another seen relative-rank threshold grid.
-
-That first reader packet is now CLOSED/NOT activation-ready: source d2e787b0,
-13parser/cold tests but actual caller admission was bypassed in the fixture,
-real UnitController->reader shape not qualified; proposed XML retained H20 URI/
-wrong end15:40 before start21:05/PT3M. NO installation of that proposal.
-Claude REVISE reason UNKNOWN_NOT_RETAINED, not agreement.614.07upper/600cap
-deviation retained. NEW current-us19-unit-reader-binding-repair-20261101-v1,
-1200SUM3600elapsed: actual producer/parser and genuine metadata-only caller/
-Source85 writer admission integration,0private/credentials/broker/Task effects.
-Repair now CLOSED Source12e4d008/reader75401254/NATIVE96ab848b, actual
-UnitController->reader agreement/five actual metadata admissions/zero private
-reads/1028.601of1200upper, allownedresourcesclosed. Claude REVISE/missing_evidence
-retained; actual pointers supply scoped evidence, future private read unknown.
-Parent current-us19-unit-reader-parent-activation-20261101-v1 corrected target
-thericher-us19-unit-outcome-read-20261102-v1 ACTUALLY installed/enabled/readback:
-5e6c6137/21c79839,Nov2UTC21:05 start<21:10/PT5M,KSTNov3 06:05.
-No Run/Stop/Delete/Update,private/broker0; H20/original trading unchanged.
-Only scheduled one actual read with fresh real admission/allRO/networknone/
-stability; actual-once/RESULT currently absent, public consumer UNKNOWN.
-No latest scan/origin inference/fresh broker holdings/fees/PnL claim.
-That integration closed its role/numerical workers before the new parallel
-dispatch above. Do not repeat completed training/read/Task
-installation. No foreground session wait or app follow-up chain.
-
-## Closed Studies And Inputs
-
-Original5fit cohort closed:2Ridge+GRU151epochs5436updates/BEST127, CPU
-PairLogit54iterations/BEST4, CUDA TCN45epochs1620updates/BEST21. Base net10
-HALF49.5086growth/DD12.0457>10.4509: FAILED. Tree/TCN failed too. No fit6,
-rerank/old forecast replay under that cohort. Verified upper742.170442/3300;
-old erroneous757.17 projection corrected, no debit/cap refund. TCN effective7/
-input20 preserved, no context-matched causal claim. Distinct new studies keep
-their own counts and cumulative reuse history, not retroactive old promotion.
-
-Turnover studyf964/CALLBACKef784/native107f/audit200d closed2policies6views,
-0fits-restores-expertforwards-retries. Buffer66.176growth/DD15.230/turnover
-13.898 versus HALF49.509/12.052/53.485: lower fees/growth gain, riskFAILED.
-Band49.439/DD12.052 weak. Joint concentration/membership/fee package, not
-causal fee-only alpha. Engine99.681/600active, allresourcesclosed;
-Strategy360upper/300cap overrun retained. No automatic signal replacement.
-
-Retained daily catalogue Source5322379a: Current20 MODE1 has90819rows20assets;
-broader5121.17m MODE0 rows have weaker split/CA economics. Actual19panel
-READY-r2 Source74830b6d/manifest1834f311:2965scheduled dates2015..Oct16,
-56325known10missing838conditional. Preserve provenance/masks/calendar rows,
-no imputation/splice/PIT/allCA/TR claims. Fresh KIS19 context38GET/Oct30/
-127+closes closed; no more acquisition needed for the current point.
-
-## Verification And Continuation
-
-Parent A/verification/current-us19-research-paper-integration-20261101-v1:
-RESULTd80442e6 checks85savedrefs/5closedfits; TURNOVER-HANDOFFd3981075 checks
-519pins/0newnumerics; FINAL-INTEGRATION3e286fec checks1154pins plus exact
-future-definition readback/0newnumerics-API. Fresh FULL-REPO-CHECK578a8392:19619PASS26knownWindows
-linkSKIP35warnings/386.68s/actual8of8workers[19645]/native+helper0/verified
-child+leasecleanup/Ruff/3Compose.env.example. Protected1418Source934f unchanged;
-prior exact changed-path serial231PASS1knownskip retained. No unchanged suite
-loop; external adapters need actual focused/native/F821-F822-F823-E9 checks.
-
-Integrate material evidence, verify, commit/push and keep ready lanes moving.
-Only after actual company runtime closure replace with ONE material next
-company outcome. Scoped failures/clock dependencies are not permission holds.
+After material integration verify/commit/push owned changes and continue ready
+work. Replace this file with ONE next company outcome only after actual runtime
+closure, never merely a preparation commit or future due time.

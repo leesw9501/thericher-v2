@@ -924,6 +924,18 @@ private tunnel), not default public port forwarding. Public exposure remains
 reserved authority. Local monitor deployment is distinct from financial runtime
 closure; it cannot create capital, submit orders or resolve unknown requests.
 
+Financial identity and operational provenance are separate boundaries. Preserve
+the original financial Contract/Control, fingerprints, request/exit identities,
+owned journals and one-shot namespaces across a harmless UI/admission release.
+Admission evidence must instead bind the actually executed current ingress,
+descriptor, source and Task action; an old proof is never a substitute for a
+new runtime. The V2 public monitor projection uses a stable display/cohort
+contract plus actual operational source/native/reader pins validated by the
+qualified host publisher. Those dynamic pins are not compiled into the web
+image, avoiding an image -> admission-source -> image hash cycle. Web validates
+its allowlisted display contract, not authenticated host origin. Source-ready
+successor preparation does not prove financial runtime or authorize a reset.
+
 The dashboard is loopback-published, supports authentication, and is mostly read-only. The
 existing Docker `web` service is a local monitor only; it neither reads KIS
 credentials nor calls a broker. It may render a credential-free virtual-paper

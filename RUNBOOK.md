@@ -1,10 +1,62 @@
 # Runbook
 
-Current GOOGL offline result reader is INSTALLED, not consumed:
+## Korean Local Paper Monitor
+
+Current local URL: http://127.0.0.1:8787. Korean-primary operating view,
+not a broker client. Parent deployed with the credential-free example config;
+external/private-tunnel access is NOT configured and no public port is exposed.
+Existing auth support remains; do not forward this local-only deployment.
+
+```powershell
+docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.monitor.yml up -d --no-deps --build web
+```
+
+Only the dedicated public summary leaf is mounted read-only, never the whole
+artifact root or private custody. Local controls are saved requests, not proof
+of consumer acknowledgement. Existing shared emergency/control volume remains.
+The monitor never runs an artifact executable, broker request or Task on GET.
+
+Current source-qualified public-only status check (no private/broker/Scheduler
+read, no publication, no Task Run):
+
+```powershell
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-paper-monitor-v2-publication-20261102-v1/launcher.py' --source-sha256 aa3ef6d60279a64bb8b56443c5f5f1db7b35f95b95cdcc10cc73c69bf9ae812c --opportunity h20 --dry-run
+```
+
+This validates both exact V2 public envelopes. Missing stays UNKNOWN, writes0.
+Two quiet PUBLIC-only summary tasks are ACTUALLY installed/enabled with complete
+independent XML/ACL readback under the same packet: Nov2UTC15:46/start<15:47
+and21:16/start<21:17/PT2M (KSTNov3 00:46/06:16). They write h20.json/googl.json
+under D:/thericher-v2/model-artifacts/monitor/paper-operations after their owned
+readers, never invoke those private readers. Do not Run them manually.
+The old repo --publish-public-projections command uses historical V1 bindings;
+do not use it to overwrite the adopted V2 projection.
+It is unsigned trusted-host publication, not authenticated OS-origin proof.
+Historical submit/fill receipt facts retain evidence time; current-local-owned
+inventory expires after300s. Neither is fresh broker holdings, fees or net PnL.
+The existing actual private readers remain one-shot/owned; never rerun them
+merely to refresh this UI. Actual future financial results remain UNKNOWN.
+
+## Current Financial Outcome Readers
+
+Nov2 KST operational-source amendment is COMPLETE at
+A/execution/current-paper-monitor-parent-adoption-20261102-v1:
+RECOVERED.json/RECOVERY-READBACK.json, all SIX future entry/exit/reader definitions
+enabled/full XML/ACL matches. Original financial identity/points/B10/F9/exits
+and one-read namespaces unchanged. Old explicit-SDDL attempt stays failed;
+null-SDDL recovery passed7mockedcases and actual readback. Never rerun Apply.
+New entry Sources79a43070/54f61fe0 and readerSourcesac733e04/61673bc5 are actual
+operational provenance, not a new financial identity.45originalfiles unchanged.
+For current public status use the V2 command above. No manual Task/private read.
+
+The remainder of this section is historical installation context, NOT current
+public-reader commands. Old12e4/96ab cannot validate the new operational source.
+
+Historical GOOGL offline result reader installation:
 A/execution/current-us19-unit-reader-parent-activation-20261101-v1,
 enabled5e6c6137/independent21c79839; Nov2UTC21:05 start<21:10/PT5M,
 KSTNov3 06:05,150work30cleanup. No manual Task/host/guest/read replay.
-Exact public outcome-only command (no private reads or broker calls):
+Historical pre-amendment public outcome-only command; do NOT invoke as current:
 
 ```powershell
 & 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-us19-unit-reader-binding-repair-20261101-v1/read_outcome.py' 12e4d0087f0eb6e7cf720980096c105debd454a339b80b7f97b3ec9d2386235b 96ab848b4c370ac9e96b6968c7038872f4247ebffb6388bb347af5ae8d74b369
@@ -14,7 +66,8 @@ Immutable actual result pointer: same root/actual-once/RESULT.json. Missing is
 UNKNOWN, not busy/success/zero. Source/pin/closure/admission links must validate;
 current-local-owned is not fresh broker holdings. No exact host-origin claim
 without retained pointer, cryptographic OS-origin, fees/settlement/net PnL.
-Old d2e reader proposal was NOT installed; use repaired12e4/7540/96ab only.
+Old d2e reader proposal was NOT installed.12e4/7540/96ab is historical now;
+use the adopted V2 source-qualified command at the top, not this old command.
 
 Current Nov1 model bridge pair is INSTALLED, not a financial outcome:
 A/execution/current-us19-unit-parent-adoption-20261101-v1.

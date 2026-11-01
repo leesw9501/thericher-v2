@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Nov1UTC15:20. Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
+Nov1UTC17:53 / Nov2 KST. Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
 256epochs2304updates/BEST256/MAX_EPOCHS,1forecast9policies27views/0retry.
 Net10growth15.9009/DD3.5850; matchedaverageEW16.2610/DD4.2137. Primary
 utilityFAILED versus matchedaverage/historical20, not convergence/alpha/PnL.
@@ -8,16 +8,40 @@ Source2f4902f6/INDEPENDENT-VERIFYc8599736 under
 A/research/current-us19-market-exposure-downside-development-20261101-v1.
 Allresourcesclosed;932.137of2400active/1350.481of7200elapsed,4predispatch
 failures preserved with0marketfits. No completed numerical study is repeated.
-NEW CPU-only current-us19-holding-interval-cost-aware-exposure-20261102-v1
-tests actual executable holding-interval return/downside and switching costs.
-Exactly1jointRidge fit/1forecast/1readout/0numericalretry;1200activeSUM/
-3600elapsed. Stop this exposure family if frozen primary fails; no old regrade.
-New source/actual run evidence remains pending, not inferred from preparation.
+CPU-only current-us19-holding-interval-cost-aware-exposure-20261102-v1 is now
+CLOSED Sourcecaf043a1/CALLBACKd89e02d1/VERIFYa31dbe71. Exactly1jointRidgefit/
+1forecast1evaluation/6policies18views/0numericalretry. Net10policy growth21.6432/
+DD4.8556/utility.06802 versus historical20growth21.9595/DD4.6546/utility.06964
+and average-exposureEW26.3273/DD6.5401/utility.08145: primaryFAILED, riskpassed.
+STOP this exposure-timing family; no grid/architecture/fit/evaluation queued.
+First native calendar-fixture assertion failed BEFORE market work; r2 reused
+saved synthetic outputs and continued remaining checks, no completed training
+repeat. Bothcontainers/PIDs/leaseclosed;510.041of1200active including failure/
+1046.811of3600elapsed. No old regrade, independentalpha or Paperpointchange.
 Covariance and quantile Transformer completed, neither passed primary criteria.
 GOOGL future pair deployed; no operator decision. New studies use retained daily
 inputs and do not repeat closed relative fits or change current Paper points.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent owns MD/Git.
 Models are untrusted proposals, not risk/capital/broker authority.
+
+Monthly constant-gross selection CLOSED Source0cdd8c75 at
+A/research/current-us19-monthly-selection-development-20261102-v1/CALLBACK.json.
+2marketfits(Ridge+GRU)/2forecasts1readout/7policies21views/0numericalretry.
+GRUactualCUDA33epochs132updates/BEST1/INNERearlystop; allresourcesclosed,
+914.788of2400active. Initial native CUDA failure preserved, no completed fit
+repeat.33monthlyDEVintervals2024Jan..2026Oct: net10growth/DD Ridge86.47/14.88,
+GRU33.96/9.90, fixedblend63.92/13.52, momentum62.41/17.69, EW17 39.99/9.37.
+Ridge/blend exceed frozenDDbound11.708; GRUfailsutility. STOP family/no new
+fit/grid/DEVreadout. Ridge's positive development growth/risk tradeoff is
+interesting, not independentalpha or automatic Paper promotion. Current points
+and all broker risk/bank/identities remain unchanged.
+
+Monthly input preparation is separate from the closed numerical family:
+A/data/current-monthly-ridge-endpoint-reuse-qualification-20261102-v1 rejected
+old/fresh cross-vintage reuse (PG differs138overlapdates). No splice/rescale.
+Mendel owns only17required d-252 endpoint acquisition under a new Data packet;
+no fitting/forecast/evaluation or automatic Paper point. Nov2 closing inputs
+remain future until actual21:00UTC. Current H20/GOOGL points stay unchanged.
 
 ## Current Handoff
 

@@ -1,14 +1,24 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Nov1UTC15:20. Ptolemy quantile remains CLOSED. Singer exposure/downside CUDA
+Nov1UTC17:53 / Nov2 KST. All numerical workers remain CLOSED. Singer exposure/downside CUDA
 study also CLOSED:1fit256epochs2304updates/BEST256/MAX_EPOCHS/0retry, actual
 cuda:0/RTX4090/peak95.3MBallocated119.5MBreserved,22.797soptimizer phase.
 Source2f4902f6/callback/verifyc8599736,932.137of2400activeupper, allowned
 GPU/container/PID/lease resources positively closed. Utilityfailed; no claim
 that reaching epoch cap proves convergence or that GPU occupancy is an outcome.
-Singer now coordinates a distinct CPU-only holding-interval/cost-aware Ridge
-diagnostic,1200activeSUM3600elapsed/1fit1forecast1readout/0retry. No current
-GPU training is inferred or required for this small linear problem.
+Singer's CPU-only holding-interval/cost-aware Ridge diagnostic is also CLOSED:
+Sourcecaf043a1/CALLBACKd89e02d1/VERIFYa31dbe71,1fit1forecast1evaluation/
+6policies18views/0numericalretry. First native assertion failed pre-market;
+r2 continued from saved synthetic outputs, not a repeated market fit.
+510.041of1200active/1046.811of3600elapsed, bothcontainers/PIDs/leaseclosed.
+Primaryutilityfailed; this exposure-timing family STOPPED.
+Darwin's DISTINCT constant-gross monthly stock-selection family is also CLOSED:
+Source0cdd8c75,2fits(RidgeCPU+GRUCuda)/2forecasts/1readout/7policies21views/
+0numericalretry. ActualGRU33epochs132updates/BEST1/INNERearlystop;914.788of2400
+activeupper/allownedresourcesclosed. Initial CUDA native failure retained;
+completed synthetic Ridge was not repeated. Ridge/blend riskboundfailed;
+GRUutilityfailed, this monthly family STOPPED. No numerical/GPU worker queued,
+dummy occupation or general ban on distinct future model hypotheses.
 Parent owns MD/Git and direction, not an extra qualified-handoff approval.
 
 ## Current Resources

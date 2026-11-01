@@ -10628,3 +10628,25 @@ Neither research profitability nor frontend completion gates approved Paper.
 Claude SOUND_WITH_LIMITS is advisory; concrete falsifiers are forged/stale/
 wrong-cohort evidence and falsely acknowledged controls. Original advisory:
 D:/thericher-v2/model-artifacts/review/current-korean-paper-monitor-20261101-v1/response.json
+
+## 2026-11-02 Financial Identity Versus Operational Provenance
+
+A local web image update exposed old admission descriptors coupled to frozen
+entry/readers. Rebuilding a financial source_ref can alter an H20 exit request,
+GOOGL whole-control comparison or a reader's one-shot namespace. Preserve the
+original financial Contract/Control and every request, journal, bank and exit
+identity; bind current ingress/admission code and Task provenance separately.
+Never use original provenance to pretend a new runtime was qualified.
+
+The monitor V2 display contract is stable for its original cohort/namespace.
+Actual source/native/reader pins are validated by the qualified host publisher,
+not compiled back into the web image. This breaks an image/source hash cycle
+without treating the unsigned public projection as authenticated evidence.
+Consumer: existing account-owned Paper entry/reconciliation and the operator's
+local monitor remain compatible across non-custody UI releases, without new
+capital, writer authority, request resets or profitability gates.
+
+Qualification/activation of the exact successor remains a separate unfinished
+technical package; this decision is not runtime admission or a fill.
+Claude SOUND_WITH_LIMITS, with identity-drift/borrowed-proof falsifiers:
+D:/thericher-v2/model-artifacts/review/current-paper-source-identity-separation-20261102-v1/response.json

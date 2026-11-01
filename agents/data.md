@@ -1,6 +1,13 @@
 # Data Stateboard (시장데이터)
 
-Nov1UTC11:45. Russell latest publications closed; no active Data worker.
+Nov1UTC17:53 / Nov2 KST. Russell publications closed. Mendel owns only a new
+bounded17required daily-endpoint acquisition at A/data/current-monthly-ridge-
+required-endpoint-acquisition-20261102-v1; atmost20GET/1POST/600activeSUM/
+1800elapsed, original token/pacing/storage controls, no account/order/fit.
+Actual start/readiness/closure must come from its callback, not this dispatch.
+Predecessor endpoint-reuse qualification rejected old/fresh splicing because
+PG differs138overlapdates. Keep17missing d-252 endpoints missing until proven;
+Nov2decision close is future until actual21:00UTC. H20/GOOGL points untouched.
 Parent shared MD/Git.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Market calls only; Execution owns account/orders. Never KIS_LIVE_*.
