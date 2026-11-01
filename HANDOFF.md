@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-01 KST / Nov1UTC13:25 integration.
+2026-11-01 KST / Nov1UTC14:20 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -57,10 +57,26 @@ Next distinct research direction is absolute market-regime/downside, not a
 seen threshold grid; no further numerical campaign currently queued.
 Parent FINAL-INTEGRATION3e286fec verifies1154source/handoff pins and exact
 actual future-definition readback,0newnumerics/API. Not financial evidence.
-NEW Aquinas current-us19-unit-outcome-reader-preparation-20261101-v1 prepares
-ONE exact post-entry offline read Nov2UTC21:05 (KSTNov3 06:05), no current
-private/API/Task calls or install; Parent owns qualified activation. Existing
-H20 reader/consumed reads are unchanged, not substituted or repeated.
+GOOGL exact outcome reader is now ACTUALLY installed/enabled/read back:
+A/execution/current-us19-unit-reader-parent-activation-20261101-v1,
+ENABLED-READBACK5e6c6137/INDEPENDENT-READBACK21c79839.
+Task thericher-us19-unit-outcome-read-20261102-v1 Nov2UTC21:05 start<21:10,
+KSTNov3 06:05,150work30cleanup/PT5M,quiet pythonw/no demand/catchup/repetition.
+Qualified code A/execution/current-us19-unit-reader-binding-repair-20261101-v1,
+Source12e4d008/reader75401254/NATIVE96ab848b: real installed constructor/control
+producer->reader and five ACTUAL metadata admissions; Jobs/containersclosed,
+0private reads/broker.1028.601/1200upper, prior614.07/600 overrun retained.
+Claude REVISE/missing_evidence remains adverse; exact producer/metadata pointers
+supplied, no favorable rereview or future private-read claim. Old wrong H20
+URI/end/PT3M proposal was NEVER installed. Parent corrected9definitioncases/
+actual full XML+ACL disabled-create/enable/independent-readback passed.
+actual-once/RESULT.json absent; public consumer returns UNKNOWN. No manual
+host/Task/guest or consumed read. Future actual read requires five fresh
+relevant-writer/caller checks,networknone/allRO/before-after stability.
+Exact host-origin linkage stays UNKNOWN without pointer; no latest scan,
+fresh broker holdings/cryptographic OS-origin/fees/settlement/netPnL claims.
+H20/GOOGL entry-exit/B10/F9/all original duties unchanged. All numerical and
+LLM role workers closed; no operator decision. Company runtime UNFINISHED.
 
 The linked broad-stock cohort is CLOSED5fits: two Ridge, GRU, CPU PairLogit,
 causal TCN. No fit6/grid/repeated training or EVAL replay is queued.

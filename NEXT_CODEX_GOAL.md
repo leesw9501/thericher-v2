@@ -103,7 +103,7 @@ not independent alpha/TR/broker net PnL/new Paper points. No credentials/KIS/
 private state/Tasks/Git/shared MD in Research packets. Parent integrates;
 research profitability is not a gate on independently approved Paper.
 
-NEW Aquinas A/execution/current-us19-unit-outcome-reader-preparation-20261101-v1:
+Historical Aquinas A/execution/current-us19-unit-outcome-reader-preparation-20261101-v1:
 600activeSUM1800elapsed/0fits, source/offline preparation of ONE exact unit
 post-entry read Nov2UTC21:05 start<21:10/150work30cleanup, no current private/
 credentials/API/Task calls or install. Reuse strict existing offline machinery,
@@ -115,6 +115,28 @@ Parent owns qualified future activation; consumed H20 readers stay consumed.
 No app follow-up chain, new capital or live behavior. No more numerical work
 is currently queued; next distinct research direction is absolute market-
 regime/downside rather than another seen relative-rank threshold grid.
+
+That first reader packet is now CLOSED/NOT activation-ready: source d2e787b0,
+13parser/cold tests but actual caller admission was bypassed in the fixture,
+real UnitController->reader shape not qualified; proposed XML retained H20 URI/
+wrong end15:40 before start21:05/PT3M. NO installation of that proposal.
+Claude REVISE reason UNKNOWN_NOT_RETAINED, not agreement.614.07upper/600cap
+deviation retained. NEW current-us19-unit-reader-binding-repair-20261101-v1,
+1200SUM3600elapsed: actual producer/parser and genuine metadata-only caller/
+Source85 writer admission integration,0private/credentials/broker/Task effects.
+Repair now CLOSED Source12e4d008/reader75401254/NATIVE96ab848b, actual
+UnitController->reader agreement/five actual metadata admissions/zero private
+reads/1028.601of1200upper, allownedresourcesclosed. Claude REVISE/missing_evidence
+retained; actual pointers supply scoped evidence, future private read unknown.
+Parent current-us19-unit-reader-parent-activation-20261101-v1 corrected target
+thericher-us19-unit-outcome-read-20261102-v1 ACTUALLY installed/enabled/readback:
+5e6c6137/21c79839,Nov2UTC21:05 start<21:10/PT5M,KSTNov3 06:05.
+No Run/Stop/Delete/Update,private/broker0; H20/original trading unchanged.
+Only scheduled one actual read with fresh real admission/allRO/networknone/
+stability; actual-once/RESULT currently absent, public consumer UNKNOWN.
+No latest scan/origin inference/fresh broker holdings/fees/PnL claim.
+All role/numerical workers closed. Do not repeat completed training/read/Task
+installation. No foreground session wait or app follow-up chain.
 
 ## Closed Studies And Inputs
 

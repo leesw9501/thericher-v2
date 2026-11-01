@@ -1,5 +1,21 @@
 # Runbook
 
+Current GOOGL offline result reader is INSTALLED, not consumed:
+A/execution/current-us19-unit-reader-parent-activation-20261101-v1,
+enabled5e6c6137/independent21c79839; Nov2UTC21:05 start<21:10/PT5M,
+KSTNov3 06:05,150work30cleanup. No manual Task/host/guest/read replay.
+Exact public outcome-only command (no private reads or broker calls):
+
+```powershell
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-us19-unit-reader-binding-repair-20261101-v1/read_outcome.py' 12e4d0087f0eb6e7cf720980096c105debd454a339b80b7f97b3ec9d2386235b 96ab848b4c370ac9e96b6968c7038872f4247ebffb6388bb347af5ae8d74b369
+```
+
+Immutable actual result pointer: same root/actual-once/RESULT.json. Missing is
+UNKNOWN, not busy/success/zero. Source/pin/closure/admission links must validate;
+current-local-owned is not fresh broker holdings. No exact host-origin claim
+without retained pointer, cryptographic OS-origin, fees/settlement/net PnL.
+Old d2e reader proposal was NOT installed; use repaired12e4/7540/96ab only.
+
 Current Nov1 model bridge pair is INSTALLED, not a financial outcome:
 A/execution/current-us19-unit-parent-adoption-20261101-v1.
 Host g/host/SOURCE85de6f24/TRUE0703fbc7/install963ff324/readback2719a35b.

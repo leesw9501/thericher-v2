@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Nov1UTC13:40 Throughput Review.
+Nov1UTC14:20 Throughput Review.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared MD/Git/integration. No operator decision pending.
@@ -15,7 +15,7 @@ Preserve unrelated %SystemDrive%/ and ONE original B/10/F9/all exits.
 | Engine Heisenberg CLOSED | Turnoverf964/ef784 closed; covariance d329/cadad0e1 closed144fits144solves/1policy3views/0expertfits-forwards-restores,100.610active | Covariance46.656growth/DD13.380 failedgrowth+risk; no retune/point change. |
 | Engine CPU Descartes | PairLogit1fit54iterations/BEST4/6newviews+27carried; primaryfailed; all resources closed | Closed, no rerank/refit/replay. |
 | Engine/GPU Ptolemy CLOSED | Quantile7219/db83:49epochs1764updates/BEST17/9views/0retry/212.986active; allGPUresourcesclosed | Growth32.8522/DD11.0263 primaryfailed, no regrade/refit/currentpointchange. No numerical campaign queued. |
-| Execution Aquinas | Runtime18ce/token7b5 CLOSED; Parent85de actual pair installed | NEW unit-outcome-reader-preparation20261101,600SUM1800elapsed:one exact future post-entry offline reader, no current private/API/Task/effects/install. |
+| Execution Aquinas CLOSED | Repair12e4/7540/96ab:actualproducer/fiveactualmetadataadmissions/1028.601of1200,private0; oldd2e614.07of600 deviation retained | Parent reader ACTUALLY installed5e6c/readback21c7,Nov2UTC21:05..<21:10/PT5M; no manualRun, futureone-read freshchecks, absentresultUNKNOWN. |
 | Strategy Maxwell CLOSED |2pure kernels/6syntheticgroups/direct Engine handoff;0market reads/fits |360upper/unchanged300cap deviation retained; no repeat or favorable claim. |
 | Invoked Review Aristotle CLOSED | REVISE: expired outer slot hides exact recovery; duty file is not crash-atomic | Exact2defects handed to Aquinas; no new policy/gate or actual effects. |
 
@@ -95,6 +95,9 @@ Actual task/financial facts have not changed from new model tests. Original
 bank local-headroom read is not fresh broker funds; F9 UNKNOWN-HELD is not zero.
 All private reads/installs marked consumed remain consumed. No operator decision,
 company completion, foreground market sleep or replacement app follow-up chain.
+All numerical/LLM workers closed; existing goal-owned future tasks own next_due.
+No new numerical family is queued. Actual financial runtime evidence, not a
+human/profitability permission gate, is the next dependent company input.
 New future unit installation is separately proven85de/963f/2719 above, not a
 model-test inference. Parent FINAL-INTEGRATION3e286fec checked1154pins and
 matching actual definition rows,0newnumerics/API. No numerical worker remains.
