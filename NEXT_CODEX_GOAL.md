@@ -27,7 +27,7 @@ although ACL itself stays unchanged. recover.ps1 preserves current ACL with
 null SDDL;7mockedcases and actual four-update/native independent readback passed.
 Do not rerun consumed adopt.ps1, recover.ps1 Apply or original installations.
 Next dependent input is the exact worker-owned future financial result, not
-another installation/replay. Continue the independent Data sidecar meanwhile.
+another installation/replay. Independent Data sidecar below is also complete.
 
 Qualified source/native packet:
 A/execution/current-paper-monitor-admission-repair-20261102-v1.
@@ -73,10 +73,15 @@ start under a NEW frozen contract, real native optimizer smoke, actual resource
 ownership and their own finite caps; no global16epoch or user-app GPU hold.
 
 Data rejected cross-vintage monthly-Ridge endpoints because PG's138overlap
-dates differ. No splice/rescale/fill. Mendel owns NEW market-only17required
+dates differ. No splice/rescale/fill. Mendel CLOSED market-only17required
 endpoint acquisition at A/data/current-monthly-ridge-required-endpoint-
-acquisition-20261102-v1; atmost20GET/1POST/bounded original token+pacing,
-600activeSUM/1800elapsed, no account/orders/fits/forecasts/evaluation.
+acquisition-20261102-v1:Sourcee055ec80/READY6b8ca48b/CLOSUREaf337858,
+17GET1POST0retry/17endpoints; owner/caches closed. Original token/pacing/
+600activeSUM1800elapsed passed. Endpoint-only READY, cross-capture economics
+and complete monthly feature panel still unqualified. No account/orders/fits/
+forecasts/evaluation/model/Paperpoint or standing acquisition retry.
+Native/parser/payload checks and required emitted undefined-name/syntax lint
+passed; additional full external Ruff retains69findings, not a full-lint pass.
 Nov2 decision close is not present before actual Nov2UTC21:00.
 Current H20/GOOGL points stay unchanged.
 

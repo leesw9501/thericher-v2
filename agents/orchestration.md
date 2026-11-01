@@ -16,11 +16,14 @@ ONE original B/10/F9/pending/all exits; preserve unrelated %SystemDrive%/.
 - Kepler: original34mockedcases/recovery7cases passed; actual first cause
  independently confirmed. Final metadata-only readback is a sidecar, not
  additional trading permission. Parent retains actual effect/Git ownership.
-- Mendel Data: NEW17required olddailyendpoint sidecar, market-only, no financial
- custody/account/order/fit. Bounded source/native/parser/acquisition/closure.
+- Mendel Data CLOSED:Sourcee055ec80/READY6b8ca48b/CLOSUREaf337858,
+ 17GET1POST0retry/17requiredendpoints; minimumgap2.0004s; Job/PID/caches closed.
+ Endpoint-only READY; cross-capture economics/Nov2close still unresolved, no
+ complete model panel or Paper point. Required runtime F/E9/native passed;
+ extra full external Ruff69findings retained, no blanket lint pass/reacquisition.
 - Engine: three new studies CLOSED;1downsideCUDA+1CPUinterval+monthlyCPU/CUDA.
  Primary criteria failed; families stopped, no duplicate fits or current GPU job.
-- Earlier Sagan/Singer/Darwin/Gauss/Meitner/Leibniz/Bohr packages closed.
+- Sagan/Singer/Darwin/Gauss/Meitner/Leibniz/Bohr/Kepler/Mendel packages closed.
  MD/dispatch is durable memory, not proof a process is running.
 
 ## Due
@@ -39,7 +42,7 @@ permission hold. Immediate reversible technical repair is operational-source
 adoption without financial identity/counter reset. Actual Schedule update added
 an ACL XML node; ACL bytes stayed original. Preserve failed attempt and fix
 the exact first cause rather than repeating it. No Task invocation.
-Parent performs actual integration locally; disjoint Data continues in parallel.
+Parent performed actual integration locally; disjoint Data completed in parallel.
 
 Avoid duplicate full suites: V2 exact1423sourcepins still match fresh
 242serial/19787fullPASS26knownskip/8workers[19813]/helper+native0/cleanup.

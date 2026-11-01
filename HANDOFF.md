@@ -112,10 +112,19 @@ Older models/closed trials remain in Git and immutable evidence, never re-run.
 Monthly Ridge input needs2371closes, not every rectangular calendar cell.
 A/data/current-monthly-ridge-endpoint-reuse-qualification-20261102-v1 rejected
 cross-vintage reuse: PG differed on138overlapdates. No splice/rescale/imputation.
-17d-252 endpoints remain missing; Nov2 closing input is future until21:00UTC.
-Mendel owns the bounded market-only17endpoint acquisition sidecar at
+Mendel's bounded market-only17endpoint acquisition is now CLOSED at
 A/data/current-monthly-ridge-required-endpoint-acquisition-20261102-v1.
-No fitting/forecast/evaluation/account/order authority in that package.
+Sourcee055ec80/READY6b8ca48b/CLOSUREaf337858;17GET1POST0retry/17acceptedpages/
+1700returnedrows/17required20251030endpoints, minimum gap2.0004s.
+Actual worker37.077s, activeupper313.701/600,elapsed363.351/1800; Job empty,
+PID absent, caches released. Parent verified4exactrefs/closure. D free34.37pct.
+Endpoint-only READY, NOT a complete coherent monthly feature panel: cross-capture
+basis remains unresolved and Nov2 all19close is future until21:00UTC. No old
+splice/rescale or model/Paper point.0fit/restore/forecast/evaluation/account/order.
+Native producer/parser/features smoke and independent payload readback passed.
+Required emitted F821/F822/F823/E9 checks passed; additional full external Ruff
+retains69findings (mostly style, plus unused names), not a blanket lint-pass.
+Do not repeat completed acquisition to repair logs/lint. No standing retry/job.
 
 ## Verification And Next Action
 
@@ -129,6 +138,6 @@ accounting/monitor Compose using .env.example PASS.
 RUNTIME-V2/BROWSER-RESULT retain actual deployment/visual checks.
 Repo tests do not validate external adapters; those retain their own native tests.
 
-Operational recovery and exact six readback are complete; refresh Data callback,
+Operational recovery/exact six readback and bounded Data work are complete;
 verify owned changes, commit/push. Future worker-owned outcomes remain due,
 not foreground sleeps or company completion. Continue independent useful work.

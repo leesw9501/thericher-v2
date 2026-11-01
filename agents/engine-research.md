@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Nov1UTC17:53 / Nov2 KST. Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
+2026-11-02 KST. Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
 256epochs2304updates/BEST256/MAX_EPOCHS,1forecast9policies27views/0retry.
 Net10growth15.9009/DD3.5850; matchedaverageEW16.2610/DD4.2137. Primary
 utilityFAILED versus matchedaverage/historical20, not convergence/alpha/PnL.
@@ -39,8 +39,10 @@ and all broker risk/bank/identities remain unchanged.
 Monthly input preparation is separate from the closed numerical family:
 A/data/current-monthly-ridge-endpoint-reuse-qualification-20261102-v1 rejected
 old/fresh cross-vintage reuse (PG differs138overlapdates). No splice/rescale.
-Mendel owns only17required d-252 endpoint acquisition under a new Data packet;
-no fitting/forecast/evaluation or automatic Paper point. Nov2 closing inputs
+Mendel's17required d-252 endpoint acquisition CLOSED Sourcee055ec80/
+READY6b8ca48b/CLOSUREaf337858:17GET1POST0retry/17endpoints, owners closed.
+Endpoint-only READY; cross-capture basis still unqualified, no complete panel,
+fitting/forecast/evaluation or automatic Paper point. Nov2 closing inputs
 remain future until actual21:00UTC. Current H20/GOOGL points stay unchanged.
 
 ## Current Handoff
