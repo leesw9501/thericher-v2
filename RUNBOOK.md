@@ -262,7 +262,19 @@ No future candidate rerank/retraining from these four reusedDEV outcomes.
 H60cadence study20261101 COMPLETE8fba/cb5c/c3b8:16rebalances/144skipped/
 1044markspertape/zero fits-forecasts-restores-retries/allCPUJobsclosed;
 growth/riskfailed, fee savings vs GRU5m do not beat matchedH60EW. No ready fit
-or active research worker now; preserve upcoming Data/evaluation/Paper clocks.
+or active worker from that family; preserve Data/evaluation/Paper clocks.
+
+New weekly3ETF paired utility study is also CLOSED, NOT a rerun command:
+A/research/current-etf-daily-net-utility-development-20261101-v1,
+Source36a9533f/contract011a560c/DONE0f039979/independent737494f4.
+2CUDAfits64epochs each/128updates total; both selected untrained BEST0 despite
+FIT improvement. OneDEVintake/twoforecasts15views, primaryfailed/no promotion.
+All3containers/leases closed. Do not rerun training/publication/DEV to fix logs.
+Existing longdaily READY is reusable only under exact source/consumer/calendar
+pins: A/data/current-etf-daily-utility-inputs-20261101-v1/READYa5da1dfb,
+closure19ae07f9; market arrays under M/research_inputs only, not printed.
+Actual weekly-mask-r2/parser/optimizer/checkpoint native0a816451 preceded fit.
+Next current work is saved FIT/INNER recent-window diagnosis, no new fit yet.
 
 Current fresh authority:
 A/verification/current-paper-h20-recovery-integration-20261031-v1,

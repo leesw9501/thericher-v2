@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Oct31UTC17:12. Strategy role dormant; Parent sharedMD/Git.
+Nov1UTC09:05. Dewey current pure policy reference owner; Parent sharedMD/Git.
 Engine owns final targets/splits/costs/fitting/interpretation, not Strategy.
 A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
 
@@ -25,6 +25,21 @@ A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
   later-out-of-time replay, not contemporaneous/PIT/independent alpha.
 
 ## Ready / Current Assignment
+
+Current concrete consumer: new weekly ETF utility actor study.
+current-etf-daily-cost-policy-kernel-20261101-v1 Source17b82197/
+cost_policyca2057f0/native12/fullRuff passed. Reuses pinned pure fixedG0 book;
+generic n-asset EW/lag60/actor/fixedblend, fees0/10/20/no borrow/reset/resizing.
+V1 trades at every price row, so not itself a weekly-hold/daily-mark reference.
+Separate weekly-mask-r2 is COMPLETE Source789b77e4/reference5558e80f/
+NATIVEd024b79f/7invented tests; explicit decision_mask/mark-only quantity/cash,
+zero skipped fees. Actual Engine adapter parity before market optimizer verified.
+Old17b unchanged; faulty aggregate-fee test assertion preserved/corrected, not
+book logic or fee relaxation. No market fits/GPU. New assigned sidecar is
+current-etf-weekly-recent-window-proposal-20261101-v1: concrete recent-window/
+EW-anchored utility proposal and literal dedup from saved FIT/INNER only,
+<=300active1800elapsed/0market numerics; report directly Engine and Parent.
+This is pure mechanism support, not a portfolio-profit or broker-risk claim.
 
 Help Engine choose ONE distinct target/ranking/ensemble mechanism from actual
 saved curves and payoff diagnostics. Pairwise treeea886/8149 is now completed,

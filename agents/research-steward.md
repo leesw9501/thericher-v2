@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Oct31UTC17:12. GPU coordinator role currently dormant; Parent shared MD/Git.
+Nov1UTC09:05. Einstein current sole GPU coordinator; Parent shared MD/Git.
 A=D:/thericher-v2/model-artifacts. Custody/resource owner, not approval gate.
 
 ## Completed / Not Running
@@ -16,6 +16,20 @@ H20 point7030 closed2additionalCPUforwards/0fits; originalunknown2 preserved.
 Parent actually installed H20 pair; this is not a training job or fill.
 
 ## Owned Queue
+
+Weekly ETF paired utility study COMPLETE Source36a9533f/contract011a560c/
+DONE0f039979/independent737494f4:2CUDAfits64epochs each/128updates total,
+both selected untrained BEST0. All3containers/leases closed; no owned running
+GPU worker from this family. ControllerSUM18.194s, chargedupper168.972s,
+elapsed788.921s within original3600SUM10800elapsed; no refunds or repeat fits.
+Actual RTX4090, peak69.2MBallocated/71.3MBreserved; utilization is not an outcome.
+Einstein assigned NEW recent260-utility-diagnosis20261101: one net10fit on
+last260matureFIT intervals, originalscaler/initialMLP32/INNER fixed;
+900activeSUM3600elapsed/512epochs20000updates/early64/0retry-DEV-forecast.
+Source/subset/native before actual optimizer. A dispatch is not training evidence.
+Annual anchored proposal/calendar work is CPU-only, no ten-fit allocation yet.
+Before a new dispatch recheck actual lease/process/free/projected VRAM and D:.
+Data/Strategy own disjoint CPU preparation, not extra GPU coordinators.
 
 Engine selects next distinct informative campaign from saved diagnostics,
 Strategy pure mechanism support and actual Data readiness.

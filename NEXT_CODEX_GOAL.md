@@ -44,6 +44,60 @@ F9 range inquiry33e8/90bcc/3a52 is consumed; no same-query repeat/release.
 
 ## Parallel Named Packages
 
+Current Nov1 research results (NOT reruns of the closed studies):
+- Data Hegel owns A/data/current-etf-daily-utility-inputs-20261101-v1.
+  Capability verified6588common SPY/QQQ/IWM dates May2000-Aug7 2026 from
+  retained Tiingo snapshot20260809T163557Z-tiingo-etf-d1-r1/becc3e4b.
+  Exact private-use rights referenced; no acquisition/API/credential use.
+  Publication is COMPLETE: READYa5da1dfb/closure19ae07f9, actual parser/consumer/
+  phases/scaler native passed before payload;1353complete weekly intervals,
+  no missing required NYSE session. Arrays only under M/research_inputs.
+  Source endsAug7, so no Oct30/Nov2..4 reserved outcomes; no revision splice.
+- Strategy Dewey owns A/research/current-etf-daily-cost-policy-kernel-20261101-v1.
+  V1 daily-rebalance17b8/ca20 is preserved, NOT a weekly-hold ABI.
+  weekly-mask-r2 is COMPLETE789b77e4/5558e80f/natived024b79f/7tests:
+  explicit decision_mask/mark-only holdings/zero skipped fees;0market fits.
+- Engine/soleSteward Einstein owns A/research/current-etf-daily-net-utility-
+  development-20261101-v1 is COMPLETE Source-FINAL36a9533f/contract011a560c/
+  DONE0f039979/independent737494f4. TWO actual CUDA fits,64epochs each/
+  128updates total; both FIT improved but INNER selected own initial BEST0.
+  Selected actors/forecasts are identical UNTRAINED initialization, not a
+  learned gross-vs-net improvement. OneDEVintake/twoforecasts/5policies15views;
+  positive growth/risk passed but EW-growth and gross sameG0 SPY failed.
+  All3containers/leases closed, no outstanding GPU worker from this family.
+  Adapter-native0a816451 at08:54:56 preceded firstoptimizer08:55:32UTC;
+  actual Data parser/weekly NumPy-Torch parity/gradient/optimizer/restore checked.
+  Original3600activeSUM10800elapsed caps/debits and all closed results retained.
+  Next preparation diagnoses saved FIT/INNER regime drift and a distinct recent-
+  window/EW-anchored actor, not another identical fit or DEV-driven reranking.
+  Adjusted CLOSE-only research, last ISO-week session decision -> next actual
+  session CLOSE execution, daily marking and complete weekly reward intervals;
+  no raw-open/adjusted-close mixing or corporate-action double application.
+  Cash depletion withholds, no borrowing/resizing/profit-expanded G0.
+
+New bounded diagnostic, Engine/soleSteward Einstein:
+A/research/current-etf-recent260-utility-diagnosis-20261101-v1.
+ONE new net10bp fit using last260 of original811 mature FIT intervals;
+original full-FIT affine/initial MLP32/seed/book/INNER271 unchanged. This tests
+training-window influence, not a window-matched scaler or independent alpha.
+Max1attempt512epochs20000updates/earlystop64/LR/BEST including initial,
+900activeSUM3600elapsed incl natives/failures/IO/closure,0retry/DEVintake/forecast.
+Freeze actual interval IDs/split/source before optimizer; real subset/scaler/
+optimizer/restore native first. Own-initial INNER improvement is diagnostic,
+not a profitability/Paper gate. No window/seed retune or old result regrade.
+Claude SOUND_WITH_LIMITS at A/review/current-etf-recent-window-diagnosis-
+20261101-v1/ADVISORY.json: explicitly retained FIT affine is a declared control,
+not a recent-window transform. Parallel annual-calendar/anchored-mechanism
+preparation is credential-free and0market fits, not an extra numerical campaign.
+
+All historical daily inputs are reused/revised/non-PIT, not untouched validation,
+KIS feature parity, alpha, broker fees or Paper input promotion. Direct handoffs
+inside these contracts need no extra Parent approval. Parent review REVISE is
+advisory at A/review/current-etf-weekly-net-utility-20261101-v1/ADJUDICATION.json:
+matched net-cost evaluation, literal dedup, depletion and limited effective N.
+Do not adopt a profitability prerequisite or post-result addition for the blend.
+Source-only restrictions here do NOT change independent H20 authority/schedules.
+
 - Execution H20 reader is now ACTUALLY installed, not a financial result:
   A/execution/current-h20-reader-parent-completion-20261101-v1/Sourceb2e0ec73,
   NATIVE4a891fda/DTO-NATIVE5negativechecks; Parent activation20261101-v1/

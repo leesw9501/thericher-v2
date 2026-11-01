@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Oct31UTC17:43 Throughput Review. Company
+Nov1UTC09:18 Throughput Review. Company
 coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 A=D:/thericher-v2/model-artifacts. Parent owns shared MD/Git/actual installation.
 No operator decision pending; preserve unrelated %SystemDrive%/.
@@ -11,10 +11,26 @@ No operator decision pending; preserve unrelated %SystemDrive%/.
 | --- | --- | --- |
 | Parent | H20 pairc428/a4a7/8a7d/d39c, future Dataad1b/evaluation8c1d and new reader3565 ACTUALLY installed without Run | Final exact integration/Git; financial entry still future, not a fill/company completion. |
 | Execution | Parent completionb2e0/native4a89 real metadata+invented duplex/parser/timeout cleanup passed; read task3565 enabled1db0/independent1802 | Nov2UTC15:35 one admitted actual read, currently NOT_DUE/0private reads. Feynman closed; historical partial17435/6cdc/10f2 preserved, no stub/retry/recovery API. |
-| Data | Historical60closed-partial; Engine25b4e6/c9b8/66b7/97495known complete/allclosed | ONE finite capture task enabled Nov2/3/4UTC21:10, source1c97/Parentad1b; actual future DataREADY absent, no LLM/collector running now. |
-| Engine + Steward | GRU87ab complete; sequence familyea510604/842debbc COMPLETE2CUDAfits,3CIDs27CLIJobs3outerJobs3leasesclosed, no outstanding resources | LSTM43epochs/BEST19 and Transformer50/BEST26 learned INNER but DEVgrowthfailed. Ampere closed, no new architecture/fit-ready queue or GPU worker. |
-| Engine CPU | Fixedblend5461 and H60cadence8fba/cb5c/c3b8 COMPLETE, growth/riskfailed/allJobsclosed | Hooke closed. H60 fee savings vs GRU5m are not selection edge vs H60EW; no more fit-ready or active research worker queued. |
-| Strategy | dc8c fixed-half proposal and kernel0c14/native44 complete, role closed | Existing exact schemas/evidence support Engine; no duplicate kernel/reading-list work. |
+| Data Hegel | Longdaily READYa5da/closure19ae COMPLETE6588NYSEdays1353weeks; Engine25 also complete | Own new calendar-only annual-role-map20261101; no prices/API/fits. Future capture task unchanged, Nov2/3/4UTC21:10. |
+| Engine + sole Steward Einstein | Pairedutility36a9/011a/0f03 COMPLETE2CUDAfits, bothBEST0/allresourcesclosed | NEW recent260-utility-diagnosis20261101: max1fit900SUM3600elapsed,0DEV/forecast, real subset native before fit; not running merely from dispatch. |
+| Strategy | Weekly-mask-r2789b/5558/d024/7native consumed; recent-window proposalb7acc2b0/8ac63b81 complete | Matched anchored linear/MLP and continuous annual book offered, NOT ten fits frozen/queued. Dewey closed; reactivate on a distinct concrete consumer. |
+
+Current user-request research supersedes dormant research projections above,
+NOT any old fit/holdout/schedule:
+- Hegel Data: longdaily input COMPLETE READYa5da1dfb/closure19ae07f9,
+ 6588commonNYSEdates/1353weeklyintervals frombecc Tiingo,0network. Actual parser/
+ consumer/native before payload, no duplicate publication; callback corrected.
+- Strategy: weekly-mask-r2 and recent-window proposal COMPLETE,0market numerics.
+- Einstein Engine+soleSteward: pairedutility COMPLETE36a9/011a/DONE0f03/
+ independent7374;2CUDAfits64epochs each/128updates, both BEST0 UNTRAINED.
+ All3containers/leases closed, no active GPU worker from this family. Saved
+ FIT/INNER diagnosis now precedes distinct recent-window/anchored campaign;
+ NEW recent260 diagnostic assigned:1fit900SUM3600elapsed/0DEV-forecast,
+ originalscaler/owninitial/INNER fixed, subset/scaler native before market.
+ ClaudeSOUNDLIMITS at current-etf-recent-window-diagnosis-20261101-v1.
+ Positive growth is not learned alpha.
+Parent owns shared MD/Git and concise direction review, not extra handoff approval.
+Existing Paper/Data/evaluation tasks remain unchanged, no broker call here.
 
 Hegel closed: F9 Source33e8/result3a52 range inquiry consumed, UNKNOWN-HELD.
 All23returned dates later than original submission and0originalsymbol matches;
@@ -37,8 +53,8 @@ No catchup/demand/repetition/manual Run. PC/user session availability not inferr
 ## Bottleneck / Reversible Improvement
 
 Actual Paper outcome is time-dependent, not a research/profit/permission hold.
-Completed representation/blend/H60cadence campaigns do not establish cost-aware
-selection; no architecture sweep or fit-ready numerical contract remains queued.
+Completed representation/blend/H60cadence/pairedutility campaigns do not establish
+cost-aware learned selection. Do not repeat their closed configurations.
 Actual company result is now dependent on the already-owned future H20 session,
 not a permission/profit/Data gate. Alternatives executed: new H60cadence study;
 existing future Data/frozen evaluation installed; exact after-entry reader now
@@ -46,6 +62,16 @@ completed/installed. Continue on actual outcome/input or distinct ready contract
 never duplicate completed fits, force a weekend order or foreground session sleep.
 Do not manufacture new fits to occupy GPU; useful ready frozen CUDA work has
 project priority and measured concurrency under one Steward.
+
+Reversible improvement executed: cost-aware learning/weekly holding contrast
+on retained long daily history, not another H60 architecture. Both selected
+initializations; next diagnose the long FIT/INNER period shift rather than repeat.
+Caught pre-market ABI mismatch: repeating weights at daily marks would restore
+G0/retrade daily. Explicit decision_mask and unchanged quantities/cash at marks
+must match Torch/NumPy before fit. This is one local correction, not a new gate.
+Claude actualREVISE/ADJUDICATION at current-etf-weekly-net-utility-20261101-v1:
+old monthly method is not new; prove literal configuration difference and cost/
+cashflow parity. Original receipt's Markdown parser false-unavailable preserved.
 
 Claude REVISE in current-h20-future-read-worker-recovery-review-20261101-v1/
 ADVISORY.json: H20 cohort+duplex is new thin integration, not qualified reuse.
@@ -69,7 +95,11 @@ launcher bytes before original code; COM XML compares complete definitions.
 
 Source934f/RESULT346f:1418protected stable,231serial1knownskip,
 19619full26knownskip/8of8workers[19645]/415.80s/helper+native0/verifiedcleanup/
-Ruff/3Compose.env.example. External source/native/producer-consumer/quiet GUI
+Ruff/3Compose.env.example. Nov1 Parent saved-linkage check51links/12ASTfiles
+PASS at A/verification/current-etf-weekly-research-integration-20261101-v1/
+RESULT.json; actual native-before-fit and BEST0 identity,0newnumerics.
+Fresh1418protected-source match/repo+externalF/E9Ruff/3Compose/diffcheck passed.
+External source/native/producer-consumer/quiet GUI
 checks separately; docs/external-only reuse, not another unchanged full run.
 Integration base9d8754f1; use actual Git log/status for the latest commit,
 not a self-referential MD hash. Package commit is not company

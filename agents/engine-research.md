@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Oct31UTC14:12. Schrodinger Engine + sole resource Steward; Parent shared MD/Git.
+Nov1UTC09:05. Einstein Engine + sole resource Steward; Parent shared MD/Git.
 A=D:/thericher-v2/model-artifacts. No broker/risk/credential authority.
 Reused development data is adaptive, not independent alpha or Paper permission.
 
@@ -31,6 +31,32 @@ LoRA400/depth1100/pastcontext/composition results remain closed in Git and
 existing custody. Do not repeat them to repair logs or raise GPU occupancy.
 
 ## Ready / Assigned
+
+Einstein completed A/research/current-etf-daily-net-utility-development-20261101-v1:
+Source-FINAL36a9533f/contract011a560c/DONE0f039979/independent737494f4.
+Actual2CUDAfits64epochs each/128updates total; FIT improved but INNER chose
+BEST0 for BOTH. Their identical selected forecasts are untrained initialization,
+not evidence that net-utility learning improved a trained model. Earlystop64,
+AdamW/LR/own-initial checkpoints and original3600SUM10800elapsed debits remain.
+OneDEVintake/twoforecasts/5policies15views: positive growth/risk passed, EW-growth
+and gross sameinitialG0 SPY failed; no promotion or independent alpha.
+All3containers/leases closed; measured controllerSUM18.194s/chargedupper168.972s,
+elapsed788.921s, peak69.2MBallocated/71.3MBreserved, actual RTX4090.
+Calendar/Data producer and weekly-mask-r2 actual adapter/native0a816451 passed
+08:54:56 before first optimizer08:55:32UTC. Mark-only rows incur no retarget/fee.
+Data6588days/1353weekly intervals, consistent adjusted CLOSE/nextsession CLOSE;
+FIT2000..2016/INNER2016..2021, reused non-PIT, not three independent ETF samples.
+No repeat completed fit/DEV intake to repair evidence. NEW assigned diagnostic:
+current-etf-recent260-utility-diagnosis-20261101-v1, exactly one net10fit on
+last260/811originalFIT intervals, original full-FIT affine/owninitial MLP32/seed/
+INNER271 fixed;512epochs20000updates/early64/LR/BEST0 eligible/900SUM3600elapsed,
+0retry/DEVintake/forecast. Tiny actual subset/scaler/optimizer/restore native and
+source IDs before fit. ClaudeSOUNDLIMITS at current-etf-recent-window-diagnosis-
+20261101-v1/ADVISORY.json: original affine is explicit single-axis control,
+not a recent-window fitted transform. Curves support a temporal-transfer
+hypothesis, NOT proven regime cause or convergence. Later annual anchored
+proposal/calendar preparation is separate0fit work, not a ten-fit queue yet.
+H20 and future eb8/4f56/c2b remain unchanged; research failure is not a Paper ban.
 
 Data historical60 closed partial: technical-r2/FINAL-CALLBACK1db8a280,
 376newGET1POST/40321newrows, useful common26RTH NAS8; not60complete.

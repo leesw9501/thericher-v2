@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-Oct31UTC14:12. Herschel; Parent shared MD/Git.
+Nov1UTC09:05. Hegel current research input owner; Parent shared MD/Git.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Market calls only; Execution owns account/orders. Never KIS_LIVE_*.
 
@@ -38,6 +38,31 @@ CA/PIT/arrival/provider-finality/volume-unit limitations constrain claims,
 not exploratory research or unrelated Paper authority. Missing is not zero.
 
 ## Ready / Next Consumer
+
+Current new independent daily-study input:
+A/data/current-etf-daily-utility-inputs-20261101-v1/DATA-CAPABILITY.json.
+Verified6588common SPY/QQQ/IWM dates2000-05-26..2026-08-07, raw+adjusted OHLC/
+action fields present. Retained snapshot20260809T163557Z-tiingo-etf-d1-r1,
+datasetbecc3e4b/manifest4a2344b7, private-use authorityrefs,0API/credentials.
+No new retention/subscription/redistribution rights inferred; licenseversion
+not_disclosed, revised/non-PIT/arrival/finality limitations retained.
+Engine current-etf-daily-net-utility-development-20261101-v1/CONSUMER-REQUEST
+selects adjusted CLOSE-only/no doubleactions, real calendar closeUTC/DST,
+lastweeksession decision->nextsession CLOSE execution and daily marks.
+Publication COMPLETE: READYa5da1dfb/closure19ae07f9, payload73f2e16a under
+M/research_inputs/current-etf-daily-utility-inputs-20261101-v1.
+1353complete weekly intervals,6588NYSEsessions/zero missing required sessions;
+calendar scheduled CLOSE UTC includes DST/early closes, not observed arrival.
+Actual invented source-format parser->consumer/phases/scaler passed before
+payload. PID54340 exited/absent, all publication jobs closed. Original900active/
+5400elapsed caps/debits retained; no duplicated inventory/publication/readout.
+
+Hegel now owns calendar-only current-etf-weekly-annual-role-map-20261101-v1:
+Y2022..2026partial, FITY-6..Y-2/INNERY-1, existing complete weekly intervals,
+cross-role purge and continuous forward mark/switch IDs.0prices/API/fits/GPU/
+canonical writes,300active1800elapsed. Actual invented annual-boundary role-map
+parse/return and emitted checks first. Proposed future anchored actor consumer,
+not permission for extra fits, historical PIT or a new live input.
 
 Cache-only canonical handoff is COMPLETE, no HTTP/reprojection pending:
 same historical60 root/canonical-common26-v1, Sourceb4e6ccc9/

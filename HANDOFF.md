@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-01 KST / Oct31UTC17:43 integration.
+2026-11-01 KST / Nov1UTC09:05 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -364,7 +364,7 @@ CausalTransformer32:8841params/50epochs1050updates/BEST26/INNERMSE0.741112/
 10bp -3.40831pct. Both learned INNER but DEVgrowthfailed vs EW8 -2.97888pct.
 3CIDs27CLIJobs3outerJobs3leasesclosed/fresh exacthost+leaseabsence, no outstanding
 resources.530.520activeupper, no winner/causalarchitectureclaim/alpha/rerun.
-Ampere closed, no fit-ready contract or GPU worker queued.
+Ampere closed; no worker from that closed family remains queued.
 
 Fixedblend is COMPLETE:
 A/research/current-nas8-gru-tree-persistent-blend-20261101-v1,
@@ -384,13 +384,42 @@ One fixed60RTHminute cadence:16rebalances/144skipped/1044markspertape,
 matchedcadenceEW/seed+exitfees/native/Ruff/ClaudeSOUNDLIMITS/allCPUJobsclosed.
 317.711activeupper/367.501elapsed. Growth/risk failed, exposure/supportpassed.
 Net better than GRU5m from lower modeled fees despite worse gross, trails
-matchedH60EW; no selection-edge/promotion claim. Hooke closed, no active
-CPU/GPU research worker or fit-ready contract remains queued.
+matchedH60EW; no selection-edge/promotion claim. Hooke closed; no worker
+from that closed family remains queued.
 Claude current direction SOUND_WITH_LIMITS at prior review root/
 THROUGHPUT-ADVISORY.json17:08: execute this ready alternative during time-bound
 Paper wait, now completed; Parent also completed/installed exact reader.
 Actual runtime/input opportunities remain future, no permission/global hold.
 All results are adaptive on four reusedDEV, not independent alpha/PIT/finality.
+
+New Nov1 long-history weekly utility study is COMPLETE, not an old rerun:
+A/research/current-etf-daily-net-utility-development-20261101-v1,
+Source-FINAL36a9533f/contract011a560c/DONE0f039979/independent737494f4.
+Two actual RTX4090 fits64epochs each/128updates total, gross vs10bp net
+logutility; both FIT improved but INNER selected exact own-initial BEST0.
+Identical selected untrained actors are NOT a trained utility advantage.
+5policies15costviews/oneDEVintake/twoforecasts: positive growth/risk passed,
+EW-growth and sameinitialG0 SPY gross comparison failed. No promotion.
+All3containers/leases closed; measured controllerSUM18.194s/charged168.972s,
+elapsed788.921s/peak69.2MBallocated71.3MBreserved, not GPU utilization success.
+Data A/data/current-etf-daily-utility-inputs-20261101-v1:
+READYa5da1dfb/closure19ae07f9,6588sharedNYSEsessions/1353weekly intervals,
+consistent adjusted CLOSE snapshotbecc/2000..Aug7 2026, no missing sessions.
+Canonical payload73f2e16a only under M/research_inputs;0API/credentials.
+Strategy weekly-mask-r2 Source789b77e4/reference5558e80f/natived024b79f/7tests
+preserves mark-only quantities/cash/zero fees. Actual Data/weekly parity native
+0a816451 at08:54:56 preceded firstoptimizer08:55:32UTC.
+FixedG0=.5INITIALsimulatedNAV, nextsession CLOSE/daily marks/weekly decisions,
+no doubleactions/borrowing/resize. All history is revised/reused non-PIT,
+correlated weekly clusters, not independent alpha, broker execution or fees.
+Einstein now owns NEW current-etf-recent260-utility-diagnosis-20261101-v1:
+max1fit900SUM3600elapsed/0DEV-forecast, last260/811FIT intervals with original
+scaler/initial MLP32/seed/INNER271 fixed. ClaudeSOUNDLIMITS at review/current-
+etf-recent-window-diagnosis-20261101-v1. Not running merely from assignment.
+Data owns calendar-only annual-role-map20261101. Strategyb7ac/8ac6 proposal
+complete/Dewey closed; possible matched EW-anchored linear/MLP annual family
+is NOT tenfits frozen/queued. No repeated completed fit or outcome-driven tuning.
+No repeated completed fit, old DEV reopening or change to H20/future freeze.
 
 Parent integrates exact evidence/Git. Company runtime outcome remains UNFINISHED.
 No operator decision pending, foreground market sleep or new app follow-up chain.
@@ -405,6 +434,11 @@ SOURCE934f30b0/1418 unchanged;231serialPASS1knownskip/23.81s;
 helper0/verifiedcleanRoot+leasecleanup/Ruff/3Compose using .env.example.
 Actual exec97821 joined exit0 observed; finalizer separately exit0. This proves
 regression coverage, not external helper correctness/runtime effects.
+Nov1 exact1418protected-source check PASS. Parent saved-linkage verification at
+A/verification/current-etf-weekly-research-integration-20261101-v1/RESULT.json
+PASS51links/12ASTfiles/native-before-fit/BEST0 identity/0newnumerics; repo Ruff,
+changed external F/E9 and3Compose.env.example/diffcheck passed. No unnecessary
+unchanged full-suite rerun; source-external checks do not prove Paper effects.
 
 Previous VALID full authority retained:
 A/verification/current-single-etf-native-integration-20261030-v1,
