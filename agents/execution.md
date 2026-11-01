@@ -1,11 +1,34 @@
 # Execution Stateboard (모의투자 실행)
 
-Nov1UTC12:05. Parent actual deployment/sharedMD/Git.
-Aquinas source/native integration; no operator decision pending.
+Nov1UTC13:25. Parent actual deployment/sharedMD/Git; Aquinas closed.
+No actual financial runtime outcome or operator decision pending.
 A=D:/thericher-v2/model-artifacts. Never KIS_LIVE_*.
 ONE original B/10/costs/losses/pending/F9/original exits, no reset/refill/adoption.
 
 ## Current Model Bridge
+
+ACTUAL new finite GOOGL pair:
+A/execution/current-us19-unit-parent-adoption-20261101-v1,
+g/host/SOURCE85de6f24/TRUE0703fbc7/actual-install963ff324/readback2719a35b.
+Entry thericher-us19-half-unit-entry-20261102-v1 Nov2UTC20:55..<21:00,
+exit thericher-us19-half-unit-exit-20261109-v1 Nov9same. KSTNov3/Nov10 05:55.
+Registered disabled/read complete XML+ACL/exit-first enable,2register2enable,
+Run-Stop-Delete-Update/broker0/otherdefinitions unchanged. PT7M including
+120scleanup, quiet pythonw/no demand/catchup/repetition, bothinstances0.
+Do not reapply or mutate deployed graph. One-share CAP only, no forced buy,
+new bank/identity/budget, actual admission/acceptance/fill/PnL claim.
+Original b92fc2cb identity continuity is not fresh current broker funds.
+
+Parent filled actual owner ABI release.source_sha256 alias/SID/runtime plan,
+matched Task contract/dated observer policy. Independent actual readback
+passed; actual effects still require current caller/owner/source/book/unknown/
+quote/orderability/observer. Marker/source under honest-host assumption is
+not cryptographic origin. H20, F9 and all original duties remain unchanged.
+Token-ready7b5d8c21:9tests+3cold host/guest rounds with real native first-token
+path/invented HTTP, original60s/POST1/atomic locks unchanged,490.85upper closed.
+Runtime predecessor18ce26native/3cold/5mockPS/1763.50upper closed. Atomic duty,
+retained-only recovery and finally operational restore fixed. Parent16typed
+Task cases/mock fullCLI/actualCOMpreview passed; no real broker call in setup.
 
 New fixedHALF proposal from Heisenberg is public/provisional/untrusted, no
 quantity/capital authority, research riskFAILED/alphaFalse/runtimeNOT_ATTESTED.
@@ -24,16 +47,13 @@ Parent42source/member refs and emitted F/E9 passed. Independent Review found
 expired outer-slot recovery and non-atomic duty publication defects; retain
 A/verification/current-us19-research-paper-integration-20261101-v1/
 EXECUTION-REVIEW.json, do not activate unchanged661 source.
-NEW Aquinas current-us19-paper-unit-probe-runtime-preparation-20261101-v1,
-1800SUM5400elapsed: fix both, actual outer-driver/factory native plus quiet
-host/guest/future-definition preparation. Explicit guest paths/imports, exact
-original bank, no fresh submit outside original windows. Parent supplies
-actual persisted account/basis release/activation separately. No current
-credentials/private financial reads/KIS/Task/service/effects/install. Fixtures
-are not real private-owner/runtime/OS-origin proof; no reset of old debits.
+Runtime-preparation and token-ready successors are CLOSED; actual Parent
+85de deployment above supersedes these historical preparation projections.
+No old-source activation, fit/point repeat, debit reset or real-runtime proof
+inferred from invented fixtures.
 
 Proposed atmostONEshare highestfixedHALFweight, original17order tie; entry
-Nov2UTC20:55..<21:00,exitNov9same(e+5=6inclusive), NOT installed/submitted.
+Nov2UTC20:55..<21:00,exitNov9same(e+5=6inclusive), now installed/NOT submitted.
 This is model-to-execution plumbing, not full portfolio or profitability proof.
 Reuse existing one-account serial controller/original bank/identity/unknown-
 request/ownedinventory/fresh quote/orderability/observer checks. No new bank,

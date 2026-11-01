@@ -1,14 +1,18 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Nov1UTC12:10. Maxwell owns turnover-policy kernels; Parent sharedMD/Git.
+Nov1UTC12:30. Maxwell closed turnover-policy kernels; no active Strategy worker.
 Engine owns final targets/splits/costs/fitting/interpretation, not Strategy.
 A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
 
 Current distinct root current-us19-turnover-policy-proposal-20261101-v1:
-300SUM1200elapsed, pure top4entry/rank8exit buffer and decision-close L1band.20,
-exact synthetic producer/policy/book handoff to Heisenberg. No market payload,
-fits/forecasts/replay or new Paper point. Primary official source research must
-become executable kernels or a concrete rejection, not a reading list.
+pure top4entry/rank8exit buffer and decision-close L1band.20,6synthetic groups/
+F-E9PASS/direct exact Engine handoff,0market payload/fits/forecasts/replay.
+Closure conservative360upper exceeded unchanged300cap; retain deviation, not
+within-budget or refunded. Engine study closed2policies6views, primaryriskfail:
+buffer growth/turnover improve butDD15.230>10.4509; band weak. Whole membership/
+concentration/fee package, not causal fee-only alpha or new Paper point.
+Next useful proposal is diversification/downside mechanism, not another band
+threshold grid. A proposal must become executable research or rejection.
 
 ## Complete / Consumers
 

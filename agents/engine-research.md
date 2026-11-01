@@ -1,7 +1,8 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Nov1UTC12:10. No active training/GPU worker. Heisenberg's fixed-model proposal
-is closed; new CPU turnover-policy study runs separately from Execution repair.
+Nov1UTC13:40. All numerical research workers/containers/GPU leases closed.
+Covariance and quantile Transformer completed, neither passed primary criteria.
+GOOGL future pair deployed; no new numerical campaign or operator decision.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent owns MD/Git.
 Models are untrusted proposals, not risk/capital/broker authority.
 
@@ -20,8 +21,8 @@ Do not rewrite old research markers, repeat point or substitute H20/F9.
 Source61e8864c/proposal4f9990a9 selects GOOGL; actual producer is closed.
 
 Execution integration661019bf closed21native but Review found2defects. Successor
-runtime-preparation must fix outer-driver recovery/crash atomicity and connect
-real host/guest objects. Source/native readiness is not deployment, acceptance,
+18ce/token7b5 fixed recovery/crash atomicity/restore/token readiness; Parent85de/
+0703 actually deployed GOOGL entryNov2UTC20:55/exitNov9same. This is not acceptance,
 fill, measured fees or net PnL. A one-share technical
 probe is not a full-portfolio/profit validation. Original shared B/10 persists.
 
@@ -87,8 +88,26 @@ development, not independent alpha, broker accounting or representative market.
 
 ## Breadth / Depth
 
-Five-fit numerical cohort is exhausted; no fit-ready GPU contract is queued.
-NEW Heisenberg current-us19-turnover-policy-development-20261101-v1 consumes
+Five-fit numerical cohort is exhausted; it is NOT reopened by new studies.
+NEW Ptolemy current-us19-quantile-transformer-development-20261101-v1:
+one Transformer20x6/d32/2heads/2layers monotone(.1,.5,.9) pinball expert,
+1fit/1forward/3policies9costviews/1readout/0numericalretry/seed20261101.
+Max512epochs/12288updates/600soptimizer/1200SUM3600elapsed, chronological
+INNER earlystop32/LR/best curves, no EVAL epochs. Primary savedTrend+q.1
+weights50/50; secondaryTrend+median; thirdq.1alone. Same original data/support/
+payoff/G0/costs/unchanged growth49.5086-DD10.4509-turnover53.4854 kills.
+Actual full producer/solver/checkpoint/3head forecast/native book before market;
+existing CUDA image/resource coordinator, no private/broker/Task behavior.
+New target/loss/architecture joint hypothesis, not old fit6 or causal ablation.
+No independent alpha/automatic current point swap from adaptive reused EVAL.
+Actual SOURCE72196882/CALLBACKdb83649b:CUDA49epochs1764updates/BEST17,
+earlystop32/0retry/1forward9views. Primary32.8522pctnet10growth/DD11.0263/
+turnover30.5451, growth+riskFAILED;212.986/1200active/23.159soptimizer,
+887.367elapsed/180.8MBallocated247.5MBreserved,allownedresourcesclosed.
+Actual resource admission started13:30UTC with22,487MiBfree; no environment/
+unrecognized-user-GPU permission hold. Small data/earlystop explain short fit,
+not an artificial16epoch cap; no convergence or calibration claim.
+Heisenberg current-us19-turnover-policy-development-20261101-v1 CLOSED consumes
 Maxwell current-us19-turnover-policy-proposal-20261101-v1: PRIMARY top4entry/
 rank8exit membership buffer, SECONDARY decision-close L1no-tradeband0.20.
 600SUM1800elapsed/2newpolicies6views/1jointreadout/0fits-restores-newforecasts/
@@ -98,6 +117,31 @@ rank8exit membership buffer, SECONDARY decision-close L1no-tradeband0.20.
 Actual invented producer/policy/book native before market; same support/fees/
 terminal marking, no future execution-price eligibility. Adaptive development,
 not fit6, independent alpha, original-primary regrading or new Paper point.
+Sourcef964d6ef/CALLBACKef784d6f/native107fa4d0/audit200dda8b; actual2policies/
+6views/0fits-restores-newforecasts-retries,99.681/600active,allresourcesclosed.
+Buffer net10growth66.176pct/DD15.230pct/turnover13.898 versus oldHALF
+49.509/12.052/53.485: growth/turnover improve, frozen10.4509DD fails.
+Band49.439/12.052, one skipped decision, no material cost/risk improvement.
+Buffer changes concentration/membership as well as fees, not costs-only alpha.
+Claude REVISE retained/adjudicated, no added controls/trials/favorable rereview.
+Strategy360upper/300cap deviation preserved, not a within-cap claim/refund.
+Parent saved-handoff check519pins/F-E9PASS; no repeated market numerics.
+
+Next distinct research direction: price-only covariance diversification of the
+frozen buffer was COMPLETED in current-us19-buffer-covariance-allocation-
+20261101-v1 Source d329ae6b/CALLBACKcadad0e1/native38c970d7/result080e870b.
+144marketLedoitWolf fits/144SLSQP solves/native10fits9solves,1policy3views,
+0expertfits-restores-forwards/retries. Net10growth46.6557/DD13.3797/turnover
+20.0171, growth+riskFAILED;100.610/600active/resourcesclosed. No covariance
+hypergrid, fallback or policy/point replacement. Quantile expert is now the
+separately frozen next hypothesis. No automatic threshold tuning, old retry,
+GPU occupancy job or current GOOGL/H20 signal replacement. Keep joint-package
+effects distinct from lower exposure, independent alpha and actual Paper PnL.
+The quantile hypothesis is now CLOSED with the failed primary above. Next
+useful distinct research direction is absolute market-regime/downside timing,
+complementary to relative ranks. Prepare a finite new contract before trials;
+do not lower old thresholds/refit completed experts or reopen reserved future
+Nov2..4 evaluation. Actual Paper remains independently authorized.
 
 Priority remains exact native Paper integration and actual future observations,
 not a profitability approval gate. Any later distinct campaign needs its own

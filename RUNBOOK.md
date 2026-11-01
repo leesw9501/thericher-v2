@@ -1,6 +1,15 @@
 # Runbook
 
-Current Nov1 model bridge is PREPARATION, no new activation/run command:
+Current Nov1 model bridge pair is INSTALLED, not a financial outcome:
+A/execution/current-us19-unit-parent-adoption-20261101-v1.
+Host g/host/SOURCE85de6f24/TRUE0703fbc7/install963ff324/readback2719a35b.
+GOOGL one-share cap entry Nov2UTC20:55..<21:00 (KSTNov3 05:55), owned exit
+Nov9same (KSTNov10 05:55), PT7M with120scleanup. Quiet pythonw/no demand/
+catchup/repetition; no Run/Stop/Delete/Update/broker call during installation.
+Do not reapply installation, manually Run or modify deployed graph. Actual
+current caller/source/book/unknown/quote/orderability/observer still required.
+H20 and original exits/B10/F9 unchanged. No actual acceptance/fill/net PnL yet.
+
 A/research/current-us19-fixedhalf-paper-proposal-20261101-v1 is closed one
 public provisional point; do not repeat inference or relabel it as a fill.
 Base/tree/TCN broad cohort is closed5fits; old model entry points are not
@@ -9,7 +18,7 @@ A/execution/current-us19-paper-unit-probe-preparation-20261101-v1 Source5341/
 16offline checks is NOT runtime-ready. Integration661019bf closed21native,
 5mockedfullPSCLI but independent Review found expired outer-slot recovery and
 non-atomic duty publication. Successor runtime-preparation20261101 must fix
-both and connect real host/guest before any actual release/activation.
+both; successors18ce and7b5 token-ready are closed and Parent85de deployed.
 Do not activate old661 unchanged or run a native test label a second time.
 No manual Task/KIS/controller invocation merely to inspect source readiness.
 Original H20 pair/read, original bank/F9/exits and future Data/eval unchanged.

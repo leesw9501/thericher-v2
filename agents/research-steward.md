@@ -1,10 +1,24 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Nov1UTC12:05. No active GPU worker/coordinator lease or new fit queued.
-Most recent resource owner Ptolemy closed after positive own resource checks.
+Nov1UTC13:40. Ptolemy quantile campaign CLOSED; no active owned CUDA worker/
+lease or further fit queued. Actual callback, not a dispatch, proves completion.
 Parent owns MD/Git and direction, not an extra qualified-handoff approval.
 
 ## Current Resources
+
+New distinct current-us19-quantile-transformer-development-20261101-v1:
+one market CUDAfit/oneforward/3policy9views/0numericalretry,1200activeSUM/
+3600elapsed,600s optimizer/512epochs/12288updates max. Same old data/roles/
+support, new monotone quantile loss+Transformer hypothesis, not reopening old
+5fit/seed/window budgets. Sole coordinator Ptolemy measures current free VRAM/
+projected<=2GiB/desktopreserve4GiB, user apps are not a permission hold.
+Checkpoint/curves/actual native API before market and all resource closure
+evidence required. No duplicated completed training or occupancy-only work.
+Actual72196882/db83649b:49epochs1764updates/BEST17/earlystop32,1forecast/
+9newviews/0retry;212.986/1200active,887.367elapsed,23.159soptimizer. Measured
+peak180.8MBallocated/247.5MBreserved,not a VRAM/utilization target. Current
+CID/PIDs/lease positively closed. Resource admission had22,487MiBfree and
+user apps were not a hold. Primarygrowth+riskfailed; no automatic replacement.
 
 Linked broad-stock cohort CLOSED5fits: Base3 + CPU PairLogit1 + CUDA TCN1.
 Base GRU151epochs5436updates/BEST127; TCN45epochs1620updates/BEST21.
@@ -35,6 +49,11 @@ Warmstart preserves the initial512; missing old optimizer moments means new
 AdamW, not exact resume or a causal epoch test. No2024+payoff/DEV used there.
 Recent260 failed before optimizer,1attempt0updates; no learning failure claim.
 All previous clocks/failures/debits are immutable, never refunded.
+Turnover2policies6views closed99.681/600active/0expertfits; Strategy360upper/
+300cap overrun preserved. Covariance1policy3views closed100.610/600active,
+144statistical fits144SLSQP solves/0expertfits-forwards-restores. These are CPU
+studies, not claims of GPU use or zero statistical estimation. Current GOOGL
+future pair85de/0703 installed; no actual financial result yet or new bank.
 
 ## Due / Next
 

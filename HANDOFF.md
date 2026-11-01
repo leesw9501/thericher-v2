@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-01 KST / Nov1UTC12:05 integration.
+2026-11-01 KST / Nov1UTC13:25 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -14,6 +14,53 @@ Git 4fca1b2a and immutable artifacts retain superseded details/failures.
 A stateboard or plan is not a running worker, deployment, acceptance or fill.
 
 ## Latest Research / Next Execution
+
+GOOGL one-share CAP engineering pair is ACTUALLY INSTALLED Nov1UTC13:07:
+A/execution/current-us19-unit-parent-adoption-20261101-v1.
+g/host/SOURCE85de6f24/TRUE0703fbc7/PREPAREDf1e0fe51,
+actual-install/RESULT963ff324/independent-readback/RESULT2719a35b.
+Entry thericher-us19-half-unit-entry-20261102-v1 Nov2UTC20:55..<21:00,
+KSTNov3 05:55; exit thericher-us19-half-unit-exit-20261109-v1 Nov9same,
+KSTNov10 05:55. PT7M=5min band+120scleanup, no late fresh submits.
+Both enabled/instances0, disabled creation/full XML+ACL checks/exit-first
+enable; Register2/Enable2/Run-Stop-Delete-Update0/broker0/otherdefinitions
+unchanged. Quiet pythonw/no demand/catchup/repetition. Do not reapply or mutate
+deployed graph. H20/all original tasks/exits/shared B10/F9 untouched.
+This is installation, NOT actual caller admission/acceptance/fill/PnL.
+Point61e8864c/4f9990a9 is unchanged GOOGL/riskFAILED/untrusted/no alpha.
+
+Actual owner ABI now has full SID/runtime/phase plan and release.source_sha256
+alias, tested7min Task contract and dated observer policy. Restore can occur
+after positive owned-process closure without waiting for financial flatness.
+Original account/basis identity came only from exact existing b92fc2cb ingress;
+not fresh funds or a new private read. Current risk/book/unknown/fresh quote/
+orderability/caller/observer still checked at actual effects. Assumed-honest
+host marker/source linkage, not cryptographic OS-scheduler-origin proof.
+Token-ready source7b5d8c21/host45a63cb3/guest48d39ab9:9native token cases+
+3cold Windows->Docker rounds using invented first-token responses, no cached
+token bypass, original60sguard/POST1/deadlines unchanged.490.85/600upper closed.
+Predecessor18ce94c2 closed26core/3cold/5PS,1763.50/1800upper; old661 failures/
+debits remain. Parent16Task-contract cases/full mocked previewCLI/actual typed
+COM preview/independent actual readback passed. Initial preview helper-name
+collision was fixed by Parent namespacing; old empty attempt remains, no effects.
+
+CPU covariance allocation d329ae6b/CALLBACKcadad0e1 closed144market
+LedoitWolf fits/144SLSQP solves/1policy3views/0expert training-forwards-restores/
+retries. Net10growth46.6557/DD13.3797/turnover20.017: growth+riskFAILED;
+turnover passed.100.610/600active, allresourcesclosed, no retune/current point
+change. Ptolemy quantile Transformer is now CLOSED Source72196882/
+CALLBACKdb83649b:1CUDAfit49epochs1764updates/BEST17/earlystop32,1forward/
+9newviews/0retry. Net10growth32.8522/DD11.0263/turnover30.5451, primary
+growth+riskFAILED;212.986/1200active/23.159soptimizer/887.367elapsed.
+All owned CUDA/container/PID/lease resources closed, no completed fit repeat.
+Next distinct research direction is absolute market-regime/downside, not a
+seen threshold grid; no further numerical campaign currently queued.
+Parent FINAL-INTEGRATION3e286fec verifies1154source/handoff pins and exact
+actual future-definition readback,0newnumerics/API. Not financial evidence.
+NEW Aquinas current-us19-unit-outcome-reader-preparation-20261101-v1 prepares
+ONE exact post-entry offline read Nov2UTC21:05 (KSTNov3 06:05), no current
+private/API/Task calls or install; Parent owns qualified activation. Existing
+H20 reader/consumed reads are unchanged, not substituted or repeated.
 
 The linked broad-stock cohort is CLOSED5fits: two Ridge, GRU, CPU PairLogit,
 causal TCN. No fit6/grid/repeated training or EVAL replay is queued.
@@ -59,20 +106,23 @@ NOT runtime-ready. Integration current-us19-paper-unit-probe-integration-
 Parent42source/member refs and emitted F/E9 pass; independent Review found
 expired outer-slot recovery and non-atomic duty publication defects. Exact
 EXECUTION-REVIEW.json in the Parent verification root is retained.
-Aquinas now owns current-us19-paper-unit-probe-runtime-preparation-20261101-v1,
-1800SUM5400elapsed: fix2defects and implement actual quiet host/guest factory
-and future definition preparation; no actual credentials/private state/KIS/
-Task/effects/install. Parent must bind actual persisted account/basis release
-separately; invented fixtures are not actual admission. Do not activate old
-661 unchanged or extend/refund its debit. Proposed one-share highest fixedHALF
-symbol entryNov2UTC20:55..<21:00/exitNov9same(e+5=6inclusive) is NOT installed.
+Runtime-preparation18ce94c2 and token-ready7b5d8c21 are CLOSED; Parent's
+85de6f24 actual future deployment above supersedes preparation-only projection.
+Never activate old661 unchanged or extend/refund closed debits. Exact actual
+one-share pair is installed, not submitted; invented fixtures are not actual
+private-owner/runtime admission or financial evidence.
 Same original bank/B10/F9/reservations/exits, no new bank/substitute/foreign
 adoption. Paper technical learning is independent of research profitability.
 H20 pair/read/frozen future Data/evaluation and all original duties unchanged.
-Parallel turnover-policy Strategy/Engine roots20261101-v1 add2fixed policies/
-6views using saved HALF forecasts,0fits-restores-newexpertforecasts. Primary
-rank8membership buffer/secondary decision-close L1band.20; no old criteria/
-EVAL winner/point changes. Actual kernel/native contract precedes payload.
+Turnover-policy Strategy/Engine roots20261101-v1 CLOSED2fixed policies/6views,
+0fits-restores-newexpertforecasts-retries. Sourcef964/CALLBACKef784/native107f/
+audit200d. Buffer net10growth66.176/DD15.230/turnover13.898 versus original
+HALF49.509/12.052/53.485: costs/growth improve, frozen10.4509DD fails.
+Band49.439/DD12.052 only skips one decision. No old criteria/EVAL winner/point
+changes, independent alpha or causal fee-only claim. Engine99.681/600active,
+allresourcesclosed; Strategy360upper/300cap overrun retained. Parent519pins/
+F-E9PASS without repeated numerics. Next sizing/diversification hypothesis is
+distinct work, no queued fit or automatic current point replacement.
 Parent full verification FULL-REPO-CHECK578a8392 in current-us19-research-paper-
 integration-20261101-v1:19619PASS26knownWindowslinkSKIP35warnings/386.68s,
 actual8of8workers[19645]/native+helper0/currentchild+leasecleanup/Ruff3Compose.
