@@ -1,9 +1,44 @@
 # Execution Stateboard (모의투자 실행)
 
-Oct31UTC14:12. Parent actual deployment/sharedMD/Git.
-Hegel legacy/F9; Hilbert invoked runtime support. No operator decision pending.
+Nov1UTC12:05. Parent actual deployment/sharedMD/Git.
+Aquinas source/native integration; no operator decision pending.
 A=D:/thericher-v2/model-artifacts. Never KIS_LIVE_*.
 ONE original B/10/costs/losses/pending/F9/original exits, no reset/refill/adoption.
+
+## Current Model Bridge
+
+New fixedHALF proposal from Heisenberg is public/provisional/untrusted, no
+quantity/capital authority, research riskFAILED/alphaFalse/runtimeNOT_ATTESTED.
+A/research/current-us19-fixedhalf-paper-proposal-20261101-v1/CALLBACK.json:
+onejoint/twoexpertCPUforwards/0fits-EVAL/broker, actual feature-only native and
+full DTO consumer binding. Original models/markers/H20 point unchanged.
+Publication deadline Nov2UTC14:30OPEN differs from effect expiry21:00CLOSE.
+Actual closed producer Source61e8864c/proposal4f9990a9 selects GOOGL;
+no new point, model forecast or quantity authority is required from Research.
+
+A/execution/current-us19-paper-unit-probe-preparation-20261101-v1:
+Source53418166/16offlinechecks/578.44upper CLOSED, NOT runtime-ready.
+Integration current-us19-paper-unit-probe-integration-20261101-v1 is CLOSED:
+Source661019bf/21native/5mockedfullPSCLI/195.904upper of900SUM3600elapsed.
+Parent42source/member refs and emitted F/E9 passed. Independent Review found
+expired outer-slot recovery and non-atomic duty publication defects; retain
+A/verification/current-us19-research-paper-integration-20261101-v1/
+EXECUTION-REVIEW.json, do not activate unchanged661 source.
+NEW Aquinas current-us19-paper-unit-probe-runtime-preparation-20261101-v1,
+1800SUM5400elapsed: fix both, actual outer-driver/factory native plus quiet
+host/guest/future-definition preparation. Explicit guest paths/imports, exact
+original bank, no fresh submit outside original windows. Parent supplies
+actual persisted account/basis release/activation separately. No current
+credentials/private financial reads/KIS/Task/service/effects/install. Fixtures
+are not real private-owner/runtime/OS-origin proof; no reset of old debits.
+
+Proposed atmostONEshare highestfixedHALFweight, original17order tie; entry
+Nov2UTC20:55..<21:00,exitNov9same(e+5=6inclusive), NOT installed/submitted.
+This is model-to-execution plumbing, not full portfolio or profitability proof.
+Reuse existing one-account serial controller/original bank/identity/unknown-
+request/ownedinventory/fresh quote/orderability/observer checks. No new bank,
+old F9 recovery/substitute/foreign adoption/positions-all-flat veto. Research
+performance does not grant or withhold already-delegated Paper permission.
 
 ## H20 Actually Installed / Future Effects
 

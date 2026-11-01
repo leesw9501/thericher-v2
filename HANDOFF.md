@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-01 KST / Nov1UTC09:05 integration.
+2026-11-01 KST / Nov1UTC12:05 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
@@ -12,6 +12,71 @@ persist. Never KIS_LIVE_*, reset, profit refill, foreign adoption or substitute
 an unknown request. Preserve unrelated %SystemDrive%/.
 Git 4fca1b2a and immutable artifacts retain superseded details/failures.
 A stateboard or plan is not a running worker, deployment, acceptance or fill.
+
+## Latest Research / Next Execution
+
+The linked broad-stock cohort is CLOSED5fits: two Ridge, GRU, CPU PairLogit,
+causal TCN. No fit6/grid/repeated training or EVAL replay is queued.
+Base A/research/current-us19-weekly-experts-development-20261101-v1:
+GRU151epochs5436updates/BEST127,3forecasts27views. Net10 fixedHALF growth
+49.5086percent,DD12.0457>frozen10.4509: research primaryFAILED, not a Paper ban.
+Pairwise sibling54iterations/BEST4, half-tree/base39.8673/DD11.1792; TCN
+45epochs1620updates/BEST21,half-TCN/trend39.065/DD11.395; bothFAILED.
+Frozen two-block TCN effective7/input20 preserved, no repeat/context-matched
+causal claim. All processes/containers/leases positively closed. Study callbacks
+under A/research/current-us19-weekly-{experts-development,pairwise-sibling,
+tcn-sibling}-20261101-v1 retain exact sources/native/metrics/caps/debits.
+Parent independent saved-handoff check: A/verification/current-us19-research-
+paper-integration-20261101-v1/RESULTd80442e6,85exact refs/5closedfits/0new
+numerics or API. Actual worker-upper sum742.170442/3300s; previous757.17
+projection corrected arithmetically, no worker debit/cap was refunded.
+
+Retained data was already sufficient, not newly acquired history:
+A/data/current-retained-us-daily-research-inventory-20261101-v1/Source5322379a.
+Current20 MODE1 has90819rows20assets; original broad5121,170,008MODE0 rows
+have weaker split/CA economics. New actual close-only panel READY-r2 at
+A/data/current-us19-daily-close-panel-20261101-v1,
+Source74830b6d/manifest1834f311:2965scheduled dates2015..Oct16 2026,
+19assets56325known10missing838conditional cells. No imputation/gap compression,
+dividend-TR/PIT/allCA claim or source splice. Keep this inventory link visible.
+
+Fresh point context COMPLETE at A/data/current-us19-kis-fresh-point-context-
+20261101-v1/READY.json/CLOSURE.json:38GET, same virtual GUBN0/MODP1, Oct30
+asof/19assets/127+closes. No account/order/Task calls or old-panel overwrite.
+No credentials/headers/token values printed, copied to artifacts or Git.
+New A/research/current-us19-fixedhalf-paper-proposal-20261101-v1 is CLOSED
+onejoint/twoexpertCPUforwards/0fits-EVAL, actual Data/model/proposal parser
+native before point. New provisional model proposal remains untrusted,
+risk-failed/no alpha/execution-admission NOT_ATTESTED, never H20 replacement.
+Publication deadline Nov2UTC14:30OPEN differs from effect expiry21:00CLOSE.
+Source61e8864c/proposal4f9990a9 selects GOOGL. Russell and Heisenberg are
+closed after actual handoff; no Data/GPU/training worker remains active.
+
+Execution prep A/execution/current-us19-paper-unit-probe-preparation-
+20261101-v1 Source53418166/16offline native checks/578.44upper is CLOSED,
+NOT runtime-ready. Integration current-us19-paper-unit-probe-integration-
+20261101-v1 Source661019bf is CLOSED21native/5mockedfullPSCLI/195.904upper.
+Parent42source/member refs and emitted F/E9 pass; independent Review found
+expired outer-slot recovery and non-atomic duty publication defects. Exact
+EXECUTION-REVIEW.json in the Parent verification root is retained.
+Aquinas now owns current-us19-paper-unit-probe-runtime-preparation-20261101-v1,
+1800SUM5400elapsed: fix2defects and implement actual quiet host/guest factory
+and future definition preparation; no actual credentials/private state/KIS/
+Task/effects/install. Parent must bind actual persisted account/basis release
+separately; invented fixtures are not actual admission. Do not activate old
+661 unchanged or extend/refund its debit. Proposed one-share highest fixedHALF
+symbol entryNov2UTC20:55..<21:00/exitNov9same(e+5=6inclusive) is NOT installed.
+Same original bank/B10/F9/reservations/exits, no new bank/substitute/foreign
+adoption. Paper technical learning is independent of research profitability.
+H20 pair/read/frozen future Data/evaluation and all original duties unchanged.
+Parallel turnover-policy Strategy/Engine roots20261101-v1 add2fixed policies/
+6views using saved HALF forecasts,0fits-restores-newexpertforecasts. Primary
+rank8membership buffer/secondary decision-close L1band.20; no old criteria/
+EVAL winner/point changes. Actual kernel/native contract precedes payload.
+Parent full verification FULL-REPO-CHECK578a8392 in current-us19-research-paper-
+integration-20261101-v1:19619PASS26knownWindowslinkSKIP35warnings/386.68s,
+actual8of8workers[19645]/native+helper0/currentchild+leasecleanup/Ruff3Compose.
+Protected1418source934f unchanged; no claim that repo tests validate D: code.
 
 ## Paper Runtime And First Cause
 
@@ -412,13 +477,30 @@ preserves mark-only quantities/cash/zero fees. Actual Data/weekly parity native
 FixedG0=.5INITIALsimulatedNAV, nextsession CLOSE/daily marks/weekly decisions,
 no doubleactions/borrowing/resize. All history is revised/reused non-PIT,
 correlated weekly clusters, not independent alpha, broker execution or fees.
-Einstein now owns NEW current-etf-recent260-utility-diagnosis-20261101-v1:
-max1fit900SUM3600elapsed/0DEV-forecast, last260/811FIT intervals with original
-scaler/initial MLP32/seed/INNER271 fixed. ClaudeSOUNDLIMITS at review/current-
-etf-recent-window-diagnosis-20261101-v1. Not running merely from assignment.
-Data owns calendar-only annual-role-map20261101. Strategyb7ac/8ac6 proposal
-complete/Dewey closed; possible matched EW-anchored linear/MLP annual family
-is NOT tenfits frozen/queued. No repeated completed fit or outcome-driven tuning.
+Recent260 diagnostic CLOSED618a8b2b/FIRST-CAUSEa01c8361:1attempt0updates/
+DEV-readouts, missing fit START metadata key; INNER criterion not evaluated.
+All2containers/ownlease closed/104.261upper/192.556elapsed,0retry retained.
+Do not repeat the consumed attempt or call it a model/profitability failure.
+Annual role-map r2 COMPLETE9e46/73f9/89bf/8229: internalFITyear bridges retained,
+15roles/238forwardweeks1144marks/Jan10 2022..Aug3 2026, no annual reset.
+Hegel/Dewey closed, exact callbacks handed to Archimedes annual Engine worker.
+NEW current-etf-annual-anchored-utility-development-20261101-v1 COMPLETE:
+Sourceee6a682d/contractb3b378b6/DONE6480194b/CALLBACK9ebd869a;
+10actualCUDAfits1385updates/6INNERtrained4BEST0, LINEAR/MLP32/initialEW,
+same net10 objective, fixedhalf/EW/weeklySPY controls,15feeviews/oneforwardinput.
+3600SUM10800elapsed/5120marketupdates+<=128synthetic/0retry, all revised/reused
+prequential development only. Actual full fit/telemetry/BEST/output native passed
+before market. Primary met: blend10 growth31.121679percent vs EW30.516001/
+SPY30.363896, maxDD13.642615percent, Jan10 2022..Aug3 2026. Small adaptive
+0.605678percentage-point edge vsEW, not independent alpha or broker PnL.
+Original bitwise-cash check failed/preserved; separate roundoff audit184d7faf
+passed max2.22e-16 with exact no-trade/fee/holdings and unchanged criteria.
+All2containers/leases/knownhosts closed/299.363upper437.508elapsed; Einstein
+closed. Actual marketworker28.990s/peak68.4MBallocated69.2MBreserved.
+Next Archimedes exact2026fixedblend bundle/point preparation0fits-performance;
+Hegel freshTiingo context max6EODGET/tokenonlyapprovedSPYQQQIWM,0KIS/orders.
+New context is one vintage, not old source splice or historical finality proof.
+Future H20/frozen candidate/tasks/bank/F9 remain unchanged.
 No repeated completed fit, old DEV reopening or change to H20/future freeze.
 
 Parent integrates exact evidence/Git. Company runtime outcome remains UNFINISHED.

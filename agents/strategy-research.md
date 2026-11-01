@@ -1,8 +1,14 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Nov1UTC09:05. Dewey current pure policy reference owner; Parent sharedMD/Git.
+Nov1UTC12:10. Maxwell owns turnover-policy kernels; Parent sharedMD/Git.
 Engine owns final targets/splits/costs/fitting/interpretation, not Strategy.
 A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
+
+Current distinct root current-us19-turnover-policy-proposal-20261101-v1:
+300SUM1200elapsed, pure top4entry/rank8exit buffer and decision-close L1band.20,
+exact synthetic producer/policy/book handoff to Heisenberg. No market payload,
+fits/forecasts/replay or new Paper point. Primary official source research must
+become executable kernels or a concrete rejection, not a reading list.
 
 ## Complete / Consumers
 

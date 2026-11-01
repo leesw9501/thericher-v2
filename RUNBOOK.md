@@ -1,5 +1,21 @@
 # Runbook
 
+Current Nov1 model bridge is PREPARATION, no new activation/run command:
+A/research/current-us19-fixedhalf-paper-proposal-20261101-v1 is closed one
+public provisional point; do not repeat inference or relabel it as a fill.
+Base/tree/TCN broad cohort is closed5fits; old model entry points are not
+recovery commands. Use immutable callbacks, not re-fitting to recover logs.
+A/execution/current-us19-paper-unit-probe-preparation-20261101-v1 Source5341/
+16offline checks is NOT runtime-ready. Integration661019bf closed21native,
+5mockedfullPSCLI but independent Review found expired outer-slot recovery and
+non-atomic duty publication. Successor runtime-preparation20261101 must fix
+both and connect real host/guest before any actual release/activation.
+Do not activate old661 unchanged or run a native test label a second time.
+No manual Task/KIS/controller invocation merely to inspect source readiness.
+Original H20 pair/read, original bank/F9/exits and future Data/eval unchanged.
+Current source-of-truth scopes/clocks are NEXT_CODEX_GOAL and stateboards;
+historical commands below remain frozen/consumed wherever marked that way.
+
 ## Current Entry / Authority
 
 Workspace C:/Users/Public/Documents/thericher-v2.
@@ -274,7 +290,17 @@ Existing longdaily READY is reusable only under exact source/consumer/calendar
 pins: A/data/current-etf-daily-utility-inputs-20261101-v1/READYa5da1dfb,
 closure19ae07f9; market arrays under M/research_inputs only, not printed.
 Actual weekly-mask-r2/parser/optimizer/checkpoint native0a816451 preceded fit.
-Next current work is saved FIT/INNER recent-window diagnosis, no new fit yet.
+Recent260 diagnosis CLOSED618a/a01c:1attempt0updates/DEV-readouts,
+fit START metadata KeyError before optimizer, not model failure. Bothcontainers/
+ownlease closed, no retry/repeat under that consumed contract.
+Annual-anchored-utility-development20261101 is now CLOSED ee6a/b3b3/6480/9ebd,
+10CUDAfits1385updates/15views/descriptiveprimarypass/allresourcesclosed. Never
+replay this completed family. Original bitwise verifier failure preserved;
+separate accounting-roundoff audit184d passes, not a new performance evaluation.
+Dataannual-r29e46/73f9/89bf/8229 is the correct input, not V1 internalyearpurge.
+Current work is exact2026bundle/freshcontext preparation; no model swap, new
+Paper writer or manual future Task invocation. Only named Data path may use
+Tiingo-token-only standard3ETF EOD inside max6GET/600SUM1800elapsed.
 
 Current fresh authority:
 A/verification/current-paper-h20-recovery-integration-20261031-v1,

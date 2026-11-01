@@ -1,197 +1,106 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Nov1UTC09:05. Einstein Engine + sole resource Steward; Parent shared MD/Git.
-A=D:/thericher-v2/model-artifacts. No broker/risk/credential authority.
-Reused development data is adaptive, not independent alpha or Paper permission.
+Nov1UTC12:10. No active training/GPU worker. Heisenberg's fixed-model proposal
+is closed; new CPU turnover-policy study runs separately from Execution repair.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent owns MD/Git.
+Models are untrusted proposals, not risk/capital/broker authority.
 
-## Completed / Do Not Repeat
+## Current Handoff
 
-| Campaign root under A/research | Exact outcome |
-| --- | --- |
-| current-nas8-causal-experts-development-20261030-v1 | Source33a0671b/FINALca31bf74: Ridge1+TCN1,41epochs615updates/BEST17;12cells/two forecasts. Fixedhalf10bp -3.4695013percent vs EW8 -2.9788817percent; primarygrowthfailed. All8CIDs57Jobsclosed. |
-| current-nas8-next-campaign-20261031-v1 | Source144c7e71/FINAL96c6ab1a:3TCNfits/raw24epochsBEST0(untrained),indicator29BEST5,both30BEST6;3forecasts14cells/oneDEVintake. Descriptive conjunction met on reused4clusters, NOT trained benefit/alpha. Original launcher exit20 kept; complete saved results recovered without rerun. All4CIDs34Jobs/leaseclosed. |
-| current-nas8-p20-fixed-fusion-development-20261031-v1 | Sourcede6b5f8b/FINAL95067d9e:0fits/0forwards/16nonoverlaporigins12cells. Primarygrowthfailed; risk/support/exposurepassed. Fixedblend beat EW8/P20 but not ordinal, diagnostic only. All2CIDs18Jobsclosed/69.876workerupper. |
-| current-nas8-pairwise-tree-learning-development-20261031-v1 | Sourceea886bd1/FINAL81498041: ONE CatBoostCPU pairwise fit86iterations/BEST6trees,oneDEVforecast4cells. Primarygrowthfailed; risk/support/exposurepassed. Train3648rows/12768within-cutoff pairs, inner1312rows/4592pairs. All31Jobs/hostsclosed/138.866workerupper. |
+A/research/current-us19-fixedhalf-paper-proposal-20261101-v1/CALLBACK.json:
+CLOSED_ONE_PROVISIONAL_PAPER_PROPOSAL_NOT_RUNTIME_ADMITTED.
+ONE joint market point/twoexpertCPUforwards/0fits-EVAL-replays, two safe restores.
+Exact closed TrendRidge+GRU/scalers/fixedHALF, no winner/weight retuning.
+Oct30asof/Nov2decision; publication beforeNov2UTC14:30OPEN, proposed effect
+20:55..<21:00/expiry21:00, exitNov9same. Actual feature-only native does not need
+future target prices. Exact producer/consumer/full-DTO handoff is with Aquinas.
+New provisional proposal keeps research risk FAILED, alpha false, quantity/
+capital authority absent and execution-admission NOT_ATTESTED.
+Do not rewrite old research markers, repeat point or substitute H20/F9.
+Source61e8864c/proposal4f9990a9 selects GOOGL; actual producer is closed.
 
-Tree used already trusted CatBoost1.2.10 Apache2 image4bb201b5 CPU fallback
-for tiny3648row input, not a GPU permission hold or current CUDA worker.
-Inner loss improved versus zero-score baseline but selected BEST on INNER;
-optimization sanity, not unbiased generalization. No same fit/grid rerun.
+Execution integration661019bf closed21native but Review found2defects. Successor
+runtime-preparation must fix outer-driver recovery/crash atomicity and connect
+real host/guest objects. Source/native readiness is not deployment, acceptance,
+fill, measured fees or net PnL. A one-share technical
+probe is not a full-portfolio/profit validation. Original shared B/10 persists.
 
-H20 operational point COMPLETE:
-current-h20-next-session-point-technical-continuation-20261031-v1,
-Sourceeffc277f/FINAL703025e4/pointceb7ee20/handoff5b612bf3;
-SPY/asofOct30/Nov2,2additionalCPUforwards/0fits/readouts/allclosed.
-Oldunknown2/debit107.764 retained, new69.941upper.
-Parent actual H20 deploymentc428/a4a7/a588/8a7d/d39c installed;
-Nov2UTC15:15 entry/Dec1UTC14:30 exit, not acceptance/fill.
+## Closed Linked Cohort
 
-Earlier OOF7/H20D2/GRU/LSTM/Transformer/TCN/StudentT/attention/TimesFM/Chronos/
-LoRA400/depth1100/pastcontext/composition results remain closed in Git and
-existing custody. Do not repeat them to repair logs or raise GPU occupancy.
+Five fits total, not a new budget on every callback:
+- Base current-us19-weekly-experts-development-20261101-v1: two Ridge fits and
+  GRU151epochs5436updates/BEST127;3EVALforecasts27views. FixedHALF net10 modeled
+  growth49.5086percent,DD12.0457>frozen10.4509 ceiling: primaryFAILED.
+- Pairwise sibling current-us19-weekly-pairwise-sibling-20261101-v1:
+  ONE CPU CatBoost54iterations/BEST4/1forecast6newviews+27carried; fixed
+  half-tree/base39.8673/DD11.1792: primaryFAILED.
+- TCN sibling current-us19-weekly-tcn-sibling-20261101-v1:
+  ONE CUDAfit45epochs1620updates/BEST21/1forecast6newviews+27carried; TCNalone
+  20.575/DD12.881, fixedhalf-TCN/trend39.065/DD11.395: primaryFAILED.
+  Already-frozen2blocks effective7/input20 preserved, no rerun or context-
+  matched causal claim. No architecture/window/seed sweep or old Base replay.
 
-## Ready / Assigned
+All processes/containers/leases closed; actual CUDA was used, not an environment
+or user-app permission hold. Verified cohort upper742.170442/3300; original3+1+1
+caps/debits and elapsed clocks remain. No fit6, automatic fallback or EVAL
+winner reclassification. Full callbacks/native/accounting retain exact hashes.
+Parent saved-reference check RESULTd80442e6 at A/verification/current-us19-
+research-paper-integration-20261101-v1 verifies85refs and the unchanged worker
+sum231.922903+133.967867+376.279672; old757.17 projection was not that sum.
+Research risk failure does NOT prohibit approved provisional Paper engineering.
 
-Einstein completed A/research/current-etf-daily-net-utility-development-20261101-v1:
-Source-FINAL36a9533f/contract011a560c/DONE0f039979/independent737494f4.
-Actual2CUDAfits64epochs each/128updates total; FIT improved but INNER chose
-BEST0 for BOTH. Their identical selected forecasts are untrained initialization,
-not evidence that net-utility learning improved a trained model. Earlystop64,
-AdamW/LR/own-initial checkpoints and original3600SUM10800elapsed debits remain.
-OneDEVintake/twoforecasts/5policies15views: positive growth/risk passed, EW-growth
-and gross sameinitialG0 SPY failed; no promotion or independent alpha.
-All3containers/leases closed; measured controllerSUM18.194s/chargedupper168.972s,
-elapsed788.921s, peak69.2MBallocated/71.3MBreserved, actual RTX4090.
-Calendar/Data producer and weekly-mask-r2 actual adapter/native0a816451 passed
-08:54:56 before first optimizer08:55:32UTC. Mark-only rows incur no retarget/fee.
-Data6588days/1353weekly intervals, consistent adjusted CLOSE/nextsession CLOSE;
-FIT2000..2016/INNER2016..2021, reused non-PIT, not three independent ETF samples.
-No repeat completed fit/DEV intake to repair evidence. NEW assigned diagnostic:
-current-etf-recent260-utility-diagnosis-20261101-v1, exactly one net10fit on
-last260/811originalFIT intervals, original full-FIT affine/owninitial MLP32/seed/
-INNER271 fixed;512epochs20000updates/early64/LR/BEST0 eligible/900SUM3600elapsed,
-0retry/DEVintake/forecast. Tiny actual subset/scaler/optimizer/restore native and
-source IDs before fit. ClaudeSOUNDLIMITS at current-etf-recent-window-diagnosis-
-20261101-v1/ADVISORY.json: original affine is explicit single-axis control,
-not a recent-window fitted transform. Curves support a temporal-transfer
-hypothesis, NOT proven regime cause or convergence. Later annual anchored
-proposal/calendar preparation is separate0fit work, not a ten-fit queue yet.
-H20 and future eb8/4f56/c2b remain unchanged; research failure is not a Paper ban.
+## Data Contract
 
-Data historical60 closed partial: technical-r2/FINAL-CALLBACK1db8a280,
-376newGET1POST/40321newrows, useful common26RTH NAS8; not60complete.
-Herschel handoff is COMPLETE: common26-v1/ENGINE-CALLBACK66b7a652/
-ENGINE-READYc9b89153/Sourceb4e6/codec5f97/PANELce9e/dataset42451471,
-97495known Sep25..Oct29/Oct30excluded/alljobsclosed. Parent relay14:31.
-Additional pre-Oct2 history can support a NEW adaptive campaign, not independent
-replication. Do not wait globally for unavailable60sessions.
+Historical A/data/current-us19-daily-close-panel-20261101-v1/READY-r2:
+Source74830b6d/manifest1834f311,19assets2965calendar dates2015..Oct16 2026,
+56325known/10missing/838conditional cells. Fixed17tradables, SPY required
+context, QQQ unused/non-gating. Source-qualified masks/conditional provenance,
+no imputation/compressed dates. MODE1 close price proxy, not allCA/dividendTR.
+Actual CSV->producer->Data reader and Engine full solver/fit/restore/book native
+preceded market. Features/targets/splits/costs/caller/runtime pins are frozen.
 
-### Breadth Queue
+Fresh A/data/current-us19-kis-fresh-point-context-20261101-v1/READY:
+Oct30-asof,38GET/19assets/127+closes, separate same-MODP1 source, no old-panel
+splice. Actual observed capture is not historical availability/PIT/finality.
+No reserved NAS Oct30 minute/Nov2..4 targets were fitted or evaluated.
+Current listings/survivors/revised/conditional price proxies support adaptive
+development, not independent alpha, broker accounting or representative market.
 
-Diagnose actual saved curves/payoff failures, then freeze ONE distinct useful
-target/ranking/ensemble mechanism with Strategy. P20 and pairwise completed,
-not queued. Compare raw/single/fixedblend/cash and aligned same-gross EW8,
-costs/turnover/drawdown. No new DEV readout just to choose old candidates.
-Learned fusion requires chronological OOF, not in-sample expert predictions.
+## Earlier Results / Do Not Repeat
 
-### Depth Queue
+- current-etf-daily-net-utility-development-20261101-v1:2CUDAfits64epochs each,
+  both selected untrained BEST0; no trained gross-vs-net advantage.
+- current-etf-annual-anchored-utility-development-20261101-v1:10CUDAfits1385
+  updates,6INNERlearned4BEST0; small descriptive historical edge. Frozen later
+  cost check Aug3..Oct26 failed: blend10-0.575pct/EW-0.571/SPY+0.561.
+- current-etf-recent260-utility-diagnosis-20261101-v1:1consumed attempt0updates,
+  preoptimizer telemetry key error, INNER not evaluated; not a model failure.
+- current-etf-maxcap-warmstart-diagnosis-20261101-v1:858ADDITIONALupdates/
+  BEST794, ownINNER improved6.61478e-6,0DEV/forecast. New optimizer from saved
+  weights is NOT exact resume, convergence or isolated moreepochs causal proof.
+- Older GRU/LSTM/Transformer/TCN/StudentT/attention/TimesFM/Chronos/LoRA/
+  current20/Linear17/NAS100/pastcontext/compositions remain closed in their
+  immutable artifacts/Git. Do not repeat fits to repair logs or occupy GPU.
+- Historical NAS8 canonical25: b4e6/c9b8/66b7/dataset4245,97495known/97500slots;
+  old minute60 acquisition closed-partial, not a daily-history/global floor.
+  Earlier late phase-check deviationecae remains, not pre-fit proof.
 
-Regularized sequence25 is now COMPLETE, not running:
-current-nas8-regularized-sequence25-development-20261031-v1,
-Sourcef4d54b62/FINALca1ab638/CALLBACK39d2a68a/CONTRACTe274acda.
-ONE393parameter shared GRU8,
-raw+indicator/17FIT4INNER4reusedDEV, five additional pre-Oct2 FIT sessions;
-compare trained versus OWN initialization and carried controls, not old rawBEST0
-as learned benefit.<=160epochs/4000updates/onefit/no optimizer-start retry,
-earlystop24/LRschedule/BEST/3600workerSUM/10800elapsed. Actual CUDA fit
-14:30:59..14:31:07UTC,66epochs1386updates/BEST42. Trained INNER improved
-versus own INITIAL but failed frozen zero-margin baseline;0DEVforwards/
-0cells/0heldpathintakes, growth/DD NOT evaluated, not failed or zero.
-All4CIDs32Jobs/host55272/GPUlease closed;219.947workerupper/1239.885elapsed.
-No repeat/regrade/alpha/convergence/Paper claim. Original model+data natives
-preceded fit; extra funding-phase checker failed path-spelling comparison,
-but tool batch did not short-circuit launch. Corrected phase/affine check
-passed AFTER fit start14:32, not pre-fit authority. Deviationecae52b6 retained;
-next numerical dispatch must abort on any required checker's nonzero exit.
-Preserve old INNER/DEV globalorigin/funded12sleeve phase and apply the new
-FIT-only affine consistently; extra dates cannot silently renumber old clocks.
+## Breadth / Depth
 
-Completed separate CPU mechanism: Strategydc8c/CALLBACKbbe3/offer5cb7 fixed-half
-MARKED-inventory adjustment versus same-clock persistent full/EW8 controls,
-same-tape gross/net/duty-fee attribution. Not calibrated logits or old H60
-study regrade. Harvey owns pure invented-data kernel under
-current-nas8-persistent-position-kernel-20261031-v1 (<=300worker/1800elapsed),
-not market numerics. Engine actual study is now COMPLETE:
-current-nas8-persistent-book-cost-attribution-20261031-v1,
-Source62a02924/FINAL16f52c15/CALLBACK9c6a0826.0fits/0newforecasts/
-3policytapes9views/164proposals160updates4sessions. HALF reduced total fees,
-improved net versus persistent FULL and passed risk/gross matching, but did
-NOT beat EW8: COST_IMPROVEMENT_WITHOUT_SELECTION_VALUE, adaptive only.
-Actual host8064 14:59:21..30UTC/all3CIDs25Jobsclosed/136.103workerupper.
-Fail-fast guard native now actually enforced before market decoding;
-failures/debits preserved, no old model/forecast/readout repeats or regrade.
+Five-fit numerical cohort is exhausted; no fit-ready GPU contract is queued.
+NEW Heisenberg current-us19-turnover-policy-development-20261101-v1 consumes
+Maxwell current-us19-turnover-policy-proposal-20261101-v1: PRIMARY top4entry/
+rank8exit membership buffer, SECONDARY decision-close L1no-tradeband0.20.
+600SUM1800elapsed/2newpolicies6views/1jointreadout/0fits-restores-newforecasts/
+0numericalretries. Exact saved fixedHALF scores,693marks144decisions,G0=.5,
+0/10/20bps,27carriedBaseviews unchanged. Primary net10 must exceed original
+49.5086pct growth, DD<=10.4509pct and lower turnover, no threshold tuning.
+Actual invented producer/policy/book native before market; same support/fees/
+terminal marking, no future execution-price eligibility. Adaptive development,
+not fit6, independent alpha, original-primary regrading or new Paper point.
 
-Future source-only package COMPLETE:
-current-nas8-persistent-future-replay-readiness-20261031-v1,
-freeze ONE exact existingTree+HALF candidate for untouched Nov2/3/4 outcomes,
-fixed FULL/EW controls/cost0shadow10primary20stress/seed+exit/cumulativecash.
-No new fits/real-model restores/forecasts/readouts/Task/API/placeholder Data.
-<=600worker3600elapsed/tiny invented actual producer-consumer date/schema.
-Do not modify original Ridge/TCN future420c/0826/47a3 or tune four reusedDEVs.
-Actual later replay is not verified decision-time availability/PIT/finality or
-independent alpha; Validation waits only its exact future frozen input.
-Sourcea56f4d9c/candidateeb8f02d8/contract4f56d368/FINALbbfeb328/
-callbackc10f312b/DataRequest1158ef09; native actual post-DST14:30UTCopen,
-123proposalkeys/120updates/9negativechecks/oneinventedpredict-schema call.
-OneCID9Jobsclosed/72.827workerupper. No real CBM restore/market forward;
-native ABI readiness is not runtime model compatibility or numerical authority.
-Support>=100of120 updates and>=25eachdate, excluding3seed-only keys.
-Original Ridge/TCN420c/0826/47a3 unchanged. Future Data currently absent.
-DataSource1c97 finite3-session collector is now actually enabled viaad1b;
-nominal afterclose capture still does not prove decision-time availability.
-
-Future worker preparation is COMPLETE: current-nas8-future-evaluation-worker-
-preparation-20261031-v1/Sourcec2b1086d, actual trustedCBM restore1/invented128-
-feature predict1/3tapes9views,7CLIJobs/hostJob/CIDclosed/0marketforecasts/fits.
-Parent ACTUALLY installed and enabled ONE task at Nov4UTC21:35..45 (KSTNov5
-06:35), activation20261101-v1/Source8c1d391f/enabledaf4961be/readback3f7ff62c.
-No Run/catchup/demand/repetition. Genuine qualifying combinedDataREADY only,
-original4f56caps/model/affine/kernel/controls; <=1restore/1forecast/0fits/
-0retry/3tapes9views/600active/3600elapsed. CPU2/RAM6/networknone/allinputRO,
-source-bound GUI launch. Missing input is unavailable, not a zero/winner.
-No actual future evaluation now; this is not GPU work or broker risk change.
-
-Relative-return-head preparatione922/decision9ff9 was REJECTED as target novelty:
-33a0 already has continuous market-relative H60; f4d5 is pairwise, not binary.
-This did not reject an untested architecture/loss recombination.
-New current-nas8-gru-continuous-development-20261101-v1/Source87abd9f4/
-contract4a35ec2c/DONE16:53:30UTC is COMPLETE:1CUDAfit88epochs1848updates/
-BEST64, earlystop24, actual optimizer16:53:15 and8.694s trainwall.
-393parameters/peakallocated85.1MB/reserved92.3MB, all3CIDs/leases/Jobsclosed.
-INNERnormalizedMSE0.7387997 vs constant0.7543227 PASS;1forecast/4reusedDEVcells.
-Readoutcb061a7c primarygrowthfailed:10bp -3.39415percent vs EW8 -2.97888percent.
-Adaptive only, not alpha/Paper approval/convergence; no repeated fit.
-New prefitc4bd/source-affine/phase/native checks preceded fit, ClaudeSOUNDLIMITS.
-
-Sequence comparison is COMPLETE:
-current-nas8-sequence-architecture-comparison-20261101-v1/Sourceea510604/
-contract842debbc/FINAL-CALLBACK90ee25bf.2CUDAfits/2forecasts8seenDEVcells,
-all3CIDs27CLIJobs3outerJobs3leases closed/fresh host and lease absence.
-LSTM32:5097parameters/43epochs903updates/BEST19/INNERMSE0.741869,
-10bp growth -3.50273percent. CausalTransformer32:8841parameters/
-50epochs1050updates/BEST26/INNERMSE0.741112,10bp growth -3.40831percent.
-Both INNER passed but DEVprimarygrowthfailed versus EW8 -2.97888percent.
-530.520of3600activeupper, sequential coordinator, no reruns/winner/causal
-architecture effect or independent alpha. Ampere closed, no active GPU queue.
-
-Fixedblend is COMPLETE:
-current-nas8-gru-tree-persistent-blend-20261101-v1/Source5461a42b/
-contract758600d3/readoutb7878e25/CALLBACK.0fits/newforecasts,one saved intake,
-2newtapes6views+2carriedtapes6views; native7negatives/fullRuff/ClaudeSOUNDLIMITS.
-Growth/risk failed, exposure/support passed; blend net beats Tree from lower
-modeled fees despite worse gross, trails GRU and EW gross/net. No promotion.
-BothCPUJobsclosed/314.743of900active. Four reusedDEV remain adaptive.
-
-H60cadence study COMPLETE:
-current-nas8-h60-cadence-cost-development-20261101-v1/Source8fbaf258/
-contractcb5c1e74/readoutc3b8c548/CALLBACK.16rebalances/144skipped/
-1044markspertape,0fits/newforecasts/restores/retries/one intake,
-2newtapes6views+2carriedtapes6views/allCPUJobsclosed/317.711activeupper.
-Growth/riskfailed, exposure/supportpassed. Net improves versus GRU5m from
-lower modeled fees despite worse gross, trails matchedH60EW; no selection
-edge or lower-exposure/fee-saving alpha claim. Four reusedDEV/adaptive only.
-Hooke closed. No ready fit or active CPU/GPU research worker remains queued;
-future eb8/4f56/c2b and H20 writer unchanged. Continue on genuine later input
-or separately frozen distinct utility/target mechanism, not completed reruns.
-
-No identical old-target/seed repetition.
-Explicit windows/timeframes share finite trial family. Predeclare maxepochs/
-active-workerSUM/end-to-end elapsed/fit/evaluation caps/stop, chronological
-inner curves/earlystop/LR/regularization/BEST and target purge before fitting.
-Real native optimizer/checkpoint plus actual producer-to-consumer smoke first.
-No GPU worker is claimed active from assignment alone. Useful ready CUDA jobs
-have project priority/concurrency under measured headroom and one Steward.
-
-Future old-model freeze420c/0826/47a3/dateadapter9cc4 is ready for Nov2/3/4;
-actual future input due, no Oct30 retroactive independent replay. Strategy's
-historical Ridge pre-open byte proof failed. Preserve original criteria.
+Priority remains exact native Paper integration and actual future observations,
+not a profitability approval gate. Any later distinct campaign needs its own
+frozen hypothesis/split/actual support/baselines/costs/trial and time caps;
+retain cumulative selection/reuse history. No final/Paper outcome epoch tuning.
+Data-ready is not a fake Engine-native proof; actual changed paths are tested.

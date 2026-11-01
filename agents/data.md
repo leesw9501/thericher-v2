@@ -1,10 +1,35 @@
 # Data Stateboard (시장데이터)
 
-Nov1UTC09:05. Hegel current research input owner; Parent shared MD/Git.
+Nov1UTC11:45. Russell latest publications closed; no active Data worker.
+Parent shared MD/Git.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Market calls only; Execution owns account/orders. Never KIS_LIVE_*.
 
-## Completed Inputs
+## Retained Long Daily Catalogue
+
+Keep this pointer visible across minute/ETF campaigns:
+A/data/current-retained-us-daily-research-inventory-20261101-v1/Source5322379a.
+Retained current20 MODE1:90819rows/20assets,17stocks+SPY/QQQ preferred.
+Original broad512 has1,170,008MODE0 rows; split/CA economics are weaker.
+No acquisition was needed to obtain long multi-stock research input.
+Actual new panel A/data/current-us19-daily-close-panel-20261101-v1/READY-r2:
+Source74830b6d/manifest1834f311,19assets2965scheduled dates2015..Oct16 2026,
+56325known/10missing/838conditional cells,2962common sessions. Actual source
+CSV hashes/identity/stability and parser/producer/DataPanelReader native passed.
+Three gap dates20170703/20210505/20230605 remain, no row compression/fill.
+Conditional native-valid subsets preserve failed strict-page provenance, not
+inferred prices. Model consumers must retain that qualification/used counts.
+MODE1 CLOSE proxy is not dividendTR/allCA/PIT; one NVDA split witness only.
+
+Fresh A/data/current-us19-kis-fresh-point-context-20261101-v1 is COMPLETE:
+38GET/19assets/Oct30asof/127+required closes, strict-accepted fresh pages,
+one same-MODP1 source, no old-panel splice. READY/CLOSURE retain exact source/
+payload/mask/native/actual PID+Job/cache/token closure and debits. No account/
+order/quote/observer/Task/financial-custody calls, no live credential routing.
+Heisenberg received the exact context and closed ONE public provisional point;
+no further acquisition/rebuild/replay needed. Future NAS8 task remains separate.
+
+## Other Completed Inputs
 
 - Canonical Oct2..29 NAS8+QQQ/SPY20-session panel:
   A/data/current-nas8-canonical-minute-panel-20261030-v1,
@@ -39,6 +64,18 @@ not exploratory research or unrelated Paper authority. Missing is not zero.
 
 ## Ready / Next Consumer
 
+Fresh annual-model context COMPLETE at
+A/data/current-etf-annual-fresh-context-20261101-v1:
+snapshot20261101T094142Z/manifest91ea02c6/canonicala1a9e4e0/
+payload36f38263.6647commonNYSEsessions May2000..Oct30 2026,19941known slots,
+all12fields populated, one new Tiingo vintage/no splice. Actual3GET0retry/
+5.038s acquisition, native actual parser->consumer before token/market, both
+PIDs closed. Approved TIINGO_API_TOKEN exactkey only, no KIS credentials/API/
+orders/Tasks. Data readiness is context-only, not forecast/PIT/finality.
+Engine reports joint native then ONE Nov2researchpoint complete; no refresh
+needed. Next later-period check is Engine-owned0fit historical stress, not new
+Data acquisition. All original caps/debits/sources/future tasks unchanged.
+
 Current new independent daily-study input:
 A/data/current-etf-daily-utility-inputs-20261101-v1/DATA-CAPABILITY.json.
 Verified6588common SPY/QQQ/IWM dates2000-05-26..2026-08-07, raw+adjusted OHLC/
@@ -57,12 +94,16 @@ Actual invented source-format parser->consumer/phases/scaler passed before
 payload. PID54340 exited/absent, all publication jobs closed. Original900active/
 5400elapsed caps/debits retained; no duplicated inventory/publication/readout.
 
-Hegel now owns calendar-only current-etf-weekly-annual-role-map-20261101-v1:
-Y2022..2026partial, FITY-6..Y-2/INNERY-1, existing complete weekly intervals,
-cross-role purge and continuous forward mark/switch IDs.0prices/API/fits/GPU/
-canonical writes,300active1800elapsed. Actual invented annual-boundary role-map
-parse/return and emitted checks first. Proposed future anchored actor consumer,
-not permission for extra fits, historical PIT or a new live input.
+Calendar-only current-etf-weekly-annual-role-map-20261101-v1 is COMPLETE;
+adopt only role-boundary-r2 Source9e465815/map73f9aa20/native89bff22a/
+READINESS822949e7. V1 overpurged internalFITyear bridges, preserved not adopted.
+Y2022..2026partial, FITY-6..Y-2/INNERY-1; whole-role targets preserve20internal
+FITbridges and purge real role boundaries. Continuous238weeks1144daily marks
+Jan10 2022..Aug3 2026, initial Jan7decision/singleJan10seed, no annual reset.
+Actual source-format parse/role consumer invented internal/boundary tests pass;
+independent15role sets verified.0prices/API/fits/GPU/canonical writes, oldcaps/
+debits retained, worker11096exit0/absent. Direct callback sent Archimedes/Parent;
+Hegel closed. This is analytical chronology, not PIT/arrival/Paper qualification.
 
 Cache-only canonical handoff is COMPLETE, no HTTP/reprojection pending:
 same historical60 root/canonical-common26-v1, Sourceb4e6ccc9/
