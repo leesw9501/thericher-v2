@@ -36,6 +36,14 @@ source changes or disabled triggers alone do not prove that closure.
 
 ## Deployability-First Input Contract
 
+Primary strategy scope is intraday and one-to-several-session short swings.
+The input timeframe/lookback is not the forecast horizon or holding policy:
+daily context may inform an intraday decision, and minute evidence may inform
+a multi-session position. Each new proposal freezes its target interval,
+decision-time availability, entry/exit clocks and matching cost-aware payoff.
+Do not relabel a20-session forecast or replay as1/3/5-session evidence, or
+shorten an already-owned exit to implement this research-priority change.
+
 The active paper-trading graph prefers inputs that KIS can provide at the
 decision timestamp, not the broadest offline dataset that happens to be
 available. A feature that cannot yet be recreated during a KIS paper session is

@@ -10,6 +10,15 @@ Preserve ONE original B/10, costs/losses, F9 UNKNOWN-HELD, pending identities,
 all original exits and unrelated %SystemDrive%/. Never KIS_LIVE_*.
 Plans, tests, installation and a healthy monitor do not prove financial effects.
 
+Operator clarified on Nov2: PRIMARY strategy is intraday plus1-to-several-
+session short swings. Initial new research axes may be same-day/1/3/5sessions,
+not a hard5-day exit rule.20-session studies/H20 are legacy reference and
+execution learning, not the main new engine target. GOOGL5-session probe fits
+this horizon, still no actual fill claim. Preserve existing deployed jobs and
+ALL original exits/pending/B10/F9; clarification changed documents only, not
+runtime or old results. No completed training is repeated or20-day return
+retagged as short-horizon performance.
+
 ## Paper Runtime And Result Preparation
 
 The old web descriptor rejected the new harmless monitor in entry/reader

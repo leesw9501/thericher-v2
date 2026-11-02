@@ -1,5 +1,12 @@
 # Strategy Research Stateboard (전략 탐색)
 
+Operator horizon Nov2: prioritize intraday and one-to-several-session short
+swings. Proposals need deployable short-horizon entry/hold/exit mechanisms and
+cost/turnover controls, not only long-horizon ranking gains. Minute/hour/daily
+evidence may combine; do not equate candle size with trade duration or reopen
+completed20-session studies. Same-day/1/3/5 are finite initial research axes,
+not a hard maximum holding mandate or reason to force trading.
+
 2026-11-02 KST. Residual/downside mechanism was consumed by C1 fits, explicit
 cashstart replay and daily-LSTM sibling; all now CLOSED. Primary criteria
 failed for cashstart/LSTM, original C1 stays INVALID due initial input support.

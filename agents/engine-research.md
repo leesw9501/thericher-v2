@@ -1,5 +1,12 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
+Primary horizon clarified Nov2: intraday plus1-to-several-session short swings.
+Next NEW family should choose a finite same-day/1/3/5-session axis, align the
+target with actual entry/holding/exit/payoff/costs, and bound timeframe/window/
+horizon/model combinations under one campaign. Long context is allowed;
+20-session targets are not short-swing evidence or the default priority.
+No existing fit, sealed criterion, deployed point or owned exit is changed.
+
 2026-11-02 KST. NEW residual/downside C1 is CLOSED_INVALID_UNAVAILABLE at
 A/research/current-us19-residual-downside-experts-20261102-v1:
 Sourceef81c9f8/CALLBACK1df126a6,2actualfits(RidgeCPU+MLPCUDA)/2forecasts/

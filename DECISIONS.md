@@ -10672,3 +10672,26 @@ POST and bounded due wait; old300s contracts/defaults are not redefined.
 Consumer: coherent future required2371-close monthly feature handoff.
 Source/native/official token and scoped SOUND_WITH_LIMITS disposition:
 D:/thericher-v2/model-artifacts/data/current-us19-coherent-future-daily-input-20261102-v1/ADVISORY-DISPOSITION.json
+
+## 2026-11-02 Primary Intraday And Short-Swing Horizon
+
+The operator clarified that the intended short-term target includes intraday
+trading and positions held one to several trading sessions. Prioritize this
+scope in new engine research; initial same-day/1/3/5-session axes are bounded
+comparison choices, not an operator-imposed hard5-day exit rule. Profit after
+costs remains the objective; no required trading frequency or model family.
+
+Separate input timeframe/lookback, forecast target and actual holding/exit
+policy. New labels, entry/exit clocks, baselines and fees must match. Keep
+completed20-session evidence unchanged and do not retag it as short-horizon
+performance. Long-context features remain useful;20-session studies are not
+the default next priority. Consumer: the short-horizon target-position graph.
+
+Existing deployed H20/GOOGL jobs and ALL pending requests, original exits,
+shared initial Paper allocation and live prohibition remain unchanged. H20 is
+a clearly labeled legacy reference/execution-learning lane; GOOGL5-session
+probe is within the clarified horizon. No order, schedule or fit is changed
+by this documentation decision. The company runtime outcome stays unfinished.
+Claude SOUND_WITH_LIMITS, advisory only; strongest reversal is silent relabeling
+of long-horizon evidence or changing owned exits to match research axes:
+D:/thericher-v2/model-artifacts/review/current-short-horizon-priority-20261102-v1/response.json

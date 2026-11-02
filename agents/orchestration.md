@@ -5,6 +5,13 @@ UNFINISHED. Parent owns shared MD/Git/actual deployment. No operator decision.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original B/10/F9/pending/all exits; preserve unrelated %SystemDrive%/.
 
+Direction clarified Nov2: new development primarily targets intraday and
+1-to-several-session swings. Initial bounded same-day/1/3/5 axes, no hard5-day
+liquidation mandate. Existing H20 remains legacy execution/reference, GOOGL5-
+session probe within scope; neither is evidence of actual fills. Documentation
+clarification does not mutate any installed job/exit/request or start training.
+Prioritize this scope at next dispatch, not another automatic20-day campaign.
+
 ## Current Parallel Assignment
 
 2026-11-02 KST: Peirce adjustment-basis witnesses CLOSED6GET1POST0retry,

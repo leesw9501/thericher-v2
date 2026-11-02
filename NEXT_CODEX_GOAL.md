@@ -55,6 +55,17 @@ No new app follow-up chain or foreground session waiting.
 
 ## Independent Packages
 
+Operator clarified the PRIMARY horizon on Nov2: intraday plus1-to-several-
+session short swings. Next NEW research prioritizes finite same-day/1/3/5-
+session targets with aligned entry/holding/exit/costs, not another default20-
+session model. These axes are not a hard5-day liquidation instruction. Keep
+the SAME unfinished company runtime outcome. Existing H20 is a legacy
+execution/reference lane; GOOGL5-session probe is within scope but not a fill
+or alpha claim. Preserve ALL original Task clocks/exits/pending/B10/F9; no
+automatic replacement, order, schedule change or completed-fit repeat here.
+Existing20-session metrics remain20-session evidence. Daily-data preparation
+still serves short-swing features and higher-timeframe context.
+
 Nov2 KST requested research/maintenance packages are COMPLETE:
 - Adjustment-basis Sourcee7c35990:6GET1POST0retry, PG capture-vintage revision
  supported; exact action cause unknown. No splice/rescale or allCA/PIT claim.

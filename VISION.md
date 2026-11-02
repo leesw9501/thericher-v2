@@ -5,8 +5,19 @@
 TheRicher v2 helps one Korea-based operator build, validate, and operate
 automated trading engines for US equities through KIS, with longer-term
 market expansion only when it adds useful evidence. Profitability may come
-from rules, statistics, ML, deep learning or a composition; no model family or
-short holding period is the business objective.
+from rules, statistics, ML, deep learning or a composition; no model family is
+the business objective. The primary strategy horizon is intraday trading and
+short swings held one to several trading sessions, as clarified by the operator
+on 2026-11-02. Profit after realistic costs, not trading frequency, is the goal.
+
+Initial horizon comparisons may use same-day and 1/3/5-session holds; these are
+bounded research axes, not an operator-imposed hard five-day liquidation rule.
+Minute/hour/daily inputs may inform the same short-horizon decision graph.
+Input timeframe, lookback window, forecast target and actual holding/exit policy
+are distinct and must agree causally. Longer 20-session studies are reference
+or explicitly justified auxiliary work, not the default research priority.
+Existing installed jobs, pending requests and owned exits are preserved; this
+clarification does not retag old research or change financial runtime state.
 
 The center of the product is a repeatable loop:
 
