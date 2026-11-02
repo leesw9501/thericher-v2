@@ -2,8 +2,20 @@
 
 ## Current Resource Coordination
 
-Nov3 KST / Nov2UTC. McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03
-coordinates new ready campaigns; ALL completed numerical workers are closed.
+Nov3KST/Nov2UTC20:38. McClintock's numerical scope is CLOSED; Parent checked
+8exactPIDbirths absent/2CIDs absent/leaseabsent,22350MiBfree35C before dispatch.
+Gauss failed remote compaction at capacity before any new root/lease/dispatch;
+old numerical results untouched. Fresh same-default-model Fermat
+agent01a19dc4-9095-7cb3-88d4-6d7271e5f75f completed and CLOSED
+current-four-expert-h3-point-kernel-20261103-v1/r3:
+Source77d63050/API3143c06d/codec effbb228/PARENT-CLOSEe8d0dba9.
+One invented17stock native batch/3safe restores/17COMBO/17TCN/1GPUtreepredict,
+41checks; r3 adds41clock checks on saved outputs with0additionalmodels.
+518.578of900SUM, exact actors/leases absent before20:37:54. Initial setup
+failure retained, same-source replay is codec-only. No fits/marketpayload/eval/
+Task/private/credentials/broker. Existing trusted4bbimage/4GiBdesktop reserve.
+No current training or automatic three-expert publisher/Execution image swap.
+All completed numerical workers below are closed.
 No MD/queued dispatch is evidence of current GPU training. No duplicate fits.
 
 New PairLogit/CatBoost1.2.10 GPU campaign current-h3-ohlc-pairwise-boosting-
@@ -21,11 +33,14 @@ origin18:42:06.7396187UTC:prep600SUM1800elapsed/TOTAL2400SUM7200elapsed inclprep
 failures. Actual1GPUfit/forecast/sixviews,0marketretry,Source7167a0d4/RESULT6066f4fd.
 65evaluatediterations/BESTindex0=1trainedtree,0.962optimizersec, actualGPUforecast;
 primary risk+turnoverfailed, noadoption.43.922controllersec/worker0/leaseabsent;
-final all-resource/debit audit owned by Engine, no current training claim.
+Final CALLBACK95aa53f8 proves8exactPIDs/2CIDs/leaseclosed,410.728/2400activeupper,
+2326.926/7200elapsed. No current training claim.
 FIT/INNER-only fixed20bps pair weights, not a new seed/grid or old fit repeat.
 All owned work must close by min(frozen expiry,20:45UTC), before original
 GOOGL20:55. Fresh headroom/lease proof before useful native/market dispatch.
-Next OOF-gate source proposal only, no new numerical family released. No dummy
+OOF-gate proposal recommends DEFER:6newfoldexpertfits+1gatefit would add cost;
+Parent agrees, prioritizes already-ready4expert point adapter. No new numerical
+family released. No dummy
 utilization job or current-training inference from this MD.
 
 Joint Source6a0c2d21/AUDITED-CALLBACK-r3.json29e5ed00:5fits99views COMPLETE.

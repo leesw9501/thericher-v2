@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov2UTC19:20 integration.
+2026-11-03 KST / Nov2UTC20:38 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -124,9 +124,27 @@ butDD30.669 andturnover189.026 fail frozen conjunction. No rescue/adoption.
 65iterations evaluated, INNER best index0 means ONE trained tree, not an
 untrained zero fallback;0.962optimizerseconds. Native actual155CSV/parser/
 weightedPool/checkpoint/forecast/book and17negative/sensitivity checks PASS.
-Market43.922controllerseconds/worker0/ownleaseabsent; final resource/debit audit
-owned by Engine. Original18:42:06.7396187UTC/2400SUM7200elapsed caps unchanged.
+Market43.922controllerseconds/worker0/ownleaseabsent; final CALLBACK95aa53f8:
+8exactPIDs/2CIDs/leaseclosed,410.728of2400activeupper/2326.926of7200elapsed.
+Original18:42:06.7396187UTC caps unchanged.
 No current training claim; no completed model repeated or prospective swap.
+OOF-gate proposal recommends DEFER(6distinctfoldexpertfits+1gate), Parent agrees.
+Four-expert point adapter COMPLETE at
+A/research/current-four-expert-h3-point-kernel-20261103-v1/r3,
+Source77d63050/API3143c06d/CALLBACK.json, codec effbb228/PARENT-CLOSEe8d0dba9.
+Original r2 native629a92e5 passed41checks: one invented17stock batch,3safe
+restores/17COMBO/17TCN/1GPUtreeprediction,0fits/marketpayload/evaluation.
+r3 adds41clock checks and actual fresh SDK parse/codec using SAVED outputs,
+zero additional restore/forward/fit. UTC publication ceils integer nanoseconds;
+started>=asof>=publication>=capture, rejecting early starts/non-UTC clocks.
+Initial parent-setup failure is retained; same source replay did not repeat
+models.518.578of900activeSUM; exact actors/leases closed before20:37:54.
+No current GPU training; original3expert publisher/Execution image unchanged.
+Actual4expert DataREADY/point/adoption UNKNOWN, new candidate policy required.
+Gauss's resumed context failed remote compaction at service capacity before
+new root/lease/dispatch existed. Fresh same-default-model Fermat agent
+01a19dc4-9095-7cb3-88d4-6d7271e5f75f replaced only this source scope and is now
+closed; no fit repeat.
 
 Late-day reversal COMPLETE at A/research/current-nas8-preclose-reversal-
 development-20261103-v1, Source32c67f20/CONTRACT-r2 444e1c64.
@@ -191,24 +209,54 @@ a4 remains failed and is NOT an unsupported-factory finding. Alternative B is
 NOT needed. Original physical bank/gate/private-mount template preserved in
 process; actual financial admission/point unknown, not installable yet.
 
-Actual-point-required production renderer COMPLETE at
-A/execution/current-h3-finite-native-release-preparation-20261103-v1,
-Source44958ea3/smoke3RESULTf5b0510d. Exact original PREPARED/CONTRACT/PARENT-TRUE
-refs derive owner inputs; missing actual POINT/SEAL returns INCOMPLETE with
-zero artifacts. New source/control/release/plan only; no Task installation,
-private bank/credentials/broker or synthetic admission in production. Exact
-actual publisher/Data/model/seal/clock binding required, not fake future hashes.
-Keep SAME original bank/gate/emergency/token/journals/old cohorts and original
-exit duties; future H3 entryNov3UTC20:55/exitNov6UTC20:45 is only a proposal.
-Current owner/unknown-request/quote/orderability/risk/observer checks remain at
-effects. Rearm/token code is implemented, but full production-native/quiet
-scheduled-owner/observer/second-exit qualification is not complete. Beauvoir
-owns that concrete package at current-h3-finite-native-runtime-qualification-
-20261103-v1,1200SUM3600elapsed: invented custody/broker, actual unchanged
-factories/WinPID/Job/Docker, network-none, no actual Task/private/credentials.
-Disabled release is not installable or financial proof.
+Old production-native qualification current-h3-finite-native-runtime-
+qualification-20261103-v1 CLOSED FAILED:1384.237SUM+unmeteredIO exceeded1200.
+Do not regrade or repeat its matrix. First cause: observer pause happened after
+initial writer admission; pausing before acquiring the bank would also be unsafe.
+Separate targeted repair current-h3-observer-admission-order-repair-20261103-v1
+native/FINAL.json96aed06b PASS: acquire original leg, pause once inside admission,
+then unchanged guard; held leg never pauses/restores another owner. Exact own
+closure precedes restoration.10Parentunit checks,3logical native cases/4host
+launches,1223.164of1800SUM, all Jobs/containers/legs closed20:26:08. Initial
+XML bootstrap retry and red-case assertion repair retained,0completedcase repeats.
+Actual unchanged factories/WinPID/Job/Docker, invented observer census/broker;
+not actual OS-origin or financial admission. Positive native case uses quiet
+pythonw->ownedpython -I-S-B,2visits/sameleg/deadline/exactBUYterminal->SELL.
+New date-correct observer policy preparation Source3eab4e6d/PREPAREDab12f814/
+release-dataSOURCE7979cac9 passes58checks/20denials using real helper parser,
+all Scheduler calls mocked. Nov3/Nov6 namespaces unconsumed; old GOOGL unchanged.
+
+Parent ACTUALLY connected the preparer at
+A/execution/current-h3-actual-preparer-r3-20261103-v1:
+SOURCE1b63eecd/READYd40941b9/API12ed5492/smoke1RESULT62cad197.
+Byte-exact qualified native launch8a903160 (including quiet GUI shim),
+rearm87e949fe, new source-bound observer refs, emitted XML-I-S-B. Real saved
+producer bytes -> strict consumer -> cold SDK/native codec PASS plus6denials;
+exact emitted bytes/policy/XML/source audit PASS/F-E9/syntax.0newmodelinference.
+USE THIS additive API, not old44958 renderer with stale runtime/observer dates.
+Actual missing point/seal returnsINCOMPLETE/0artifacts. No financial Task created
+or enabled. Exact actual publisher/Data/model/seal/clock binding remains required.
+Keep SAME original bank/gate/emergency/token/journals/old cohorts/all original
+exits. Future H3 entryNov3UTC20:55/exitNov6UTC20:45 is not installed; actual
+effect-time owner/account/basis/F9/observer/token/quote/orderability/risk remains.
+No synthetic admission or placeholder hash in production.
 Claude GO_WITH_LIMITS at A/review/current-h3-account-owner-registration-
 challenge-20261103-v1/response.json. No human-permission/global hold.
+Ordering repair challenge separately GO_WITH_LIMITS at
+A/review/current-h3-observer-order-repair-challenge-20261103-v1/response.json.
+
+Observer19:35 outcome independently reader-validated complete/read_only/
+submitfalse: A/execution/kis-paper-snapshot-observer/
+20261102T193513069373Z-e2053d35-7a0a-4424-8da2-d98db23bf078-complete.json
+SHA149f8520e1c85b4b1aff339bd165778dc42e5c7de7fc9204a91d67c822537458.
+Reader recomputed bridge SHA and matched invocation/status/time. Marker-present
+provenance assumes honest host, not cryptographic Scheduler origin; Operational
+logging disabled. This is not submit/fill/owned inventory or private-bank proof.
+Paper-only config subject check consumed once at
+A/execution/current-paper-subject-preflight-20261103-v1/RESULT.json58ebb110:
+subject matches original contract, file stable,3invented tests PASS,0HTTP/orders/
+privatebankreads. Scoped loader materializes only approved Paper fields; no live
+values/secret output/persistence. Do not replay CONFIG-ONCE. Broker state unknown.
 Half-adjustment diagnostic COMPLETE0fits/3views/0retry,
 CALLBACKe81f313b. Net10growth146.410pct<149.176FAIL,DD26.535PASS/turnover99.439PASS.
 17max/15.55mean holdings; continuous-positive tail699sessions including tiny

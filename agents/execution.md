@@ -25,20 +25,34 @@ twoinventedDockerprocesses/nine denial controls, restart0freshloads/BUYposts.
 Actual guard/evaluators, invented external OS census; noactualprivate/broker.
 a4 reused old closed Visit caused failed restart test, not an unsupported
 factory finding. B notneeded. Actual financial admission remains unperformed.
-Actual-point-required renderer COMPLETE current-h3-finite-native-release-
-preparation-20261103-v1,Source44958ea3/nativef5b0510d; original pinned financial
-refs derive owner inputs, missing actualpoint/seal returnsINCOMPLETE/0artifacts.
-Beauvoir now owns production-native qualification current-h3-finite-native-
-runtime-qualification-20261103-v1,1200SUM3600elapsed,
-same original physical bank/gate/emergency/token/journals/oldcohorts. Newsource/
-control/release/taskplan and invented runtime tests only, noTask/privatebank/
-credentials/broker. Full observer/quiet scheduledowner/rearm/secondexit native
-matrix is not yet qualified. Reject
-invented/absent point; correct SDK strings and realproducer binding mandatory.
+Old renderer44958 is superseded for actual preparation. Old production-native
+qualification CLOSED FAILED1384.237SUM+unmeteredIO>1200, not regraded.
+Separate observer-order repair native/FINAL96aed06b PASS:3logicalcases/
+4hostlaunches/1223.164of1800SUM/allclosed; heldleg0pause/restore, acquiredleg
+pauses before unchanged admission, exact owned closure precedes restoration.
+Invented observer census/broker, actual unchanged factories/WinPID/Job/Docker;
+no actual OS-origin/private/financial proof.58mocked real-helper tests qualify
+new Nov3/Nov6 observer policy Source3eab4e6d/PREPAREDab12f814.
+Parent completed actual preparer current-h3-actual-preparer-r3-20261103-v1:
+SOURCE1b63eecd/READYd40941b9/API12ed5492/smoke62cad197. Byte-exact qualified
+quiet GUI->console runtime8a903160/rearm87e949fe/new source-bound policies/
+XML-I-S-B; cold actual SDK/strict producer/codec+6denials and emitted binding
+audit/F-E9/syntaxPASS. No fit/inference repeat. Missingactualpoint/seal ->
+INCOMPLETE/0artifacts. SAME original bank/gate/emergency/token/journals/oldcohorts.
+Future H3 entryNov3UTC20:55/exitNov6UTC20:45 NOT installed. Use new API after
+actual source-bound point, then original effect-time owner/account/basis/F9/
+observer/token/quote/orderability/risk admission. No fixture-as-production.
 Claude GO_WITH_LIMITS in HANDOFF; no stub guard or frozen-root repoint.
 Immutable same-HOST SDK937f4a5d/runtime8a833b3d/87files38tests is COMPLETE.
 Parent owns shared MD/Git/actual adoption; new H3 financial task NOT installed.
 ONE original B/10/costs/losses/pending/F9/all exits; never KIS_LIVE_*.
+
+Observer19:35 complete/read_only/submitfalse independently bridge-hash/invocation
+validated; exact immutable path/hash in HANDOFF. Honest-host marker provenance,
+not cryptographic OS-origin (Operational logging disabled) or financial effect.
+Paper subject CONFIG-ONCE consumed at current-paper-subject-preflight-20261103-v1/
+RESULT58ebb110: original config subject matches/stable/3inventedtests/0HTTP/orders/
+privatebankreads. No live values materialized or secrets retained; do not replay.
 
 H20 entry failed manual_lineage_unbound/ValueError before native control.
 Owned reader15:35 CONTROL/NO_NATIVE_CONTROL; submit/acceptance/fill/owned
