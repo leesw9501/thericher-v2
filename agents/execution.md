@@ -1,5 +1,23 @@
 # Execution Stateboard (모의투자 실행)
 
+## Active Opt-In Short-Horizon Source
+
+Pasteur agent01a19c87-8295-79d1-bf4f-2ab7b2ef06ca owns ONLY new elapsedH1/H3/H5
+weight/horizon source and focused tests, plus A/execution/current-short-horizon-
+weight-readiness-20261102-v1. Parent owns integration/deployment/shared MD/Git.
+New entrysession e/exit e+h semantics must not alias old5-inclusive/20 profiles.
+Research proxy closes are not native fills; explicit actual near-close window
+must match the proposal contract. Source/codec preparation COMPLETE,
+READINESS.json;491changed-path serial PASS with fresh short scratch root,
+48new focused cases/fullRuff/F-E9 PASS. Old5/20 golden bytes unchanged.
+New DTOs intentionally remain REJECTED by unchanged native enum/account/worker
+allowlists: no near-close runtime admission or deployment claim. Parent fresh
+full integration verification is running. Long-root synthetic staging failure
+remains failed; short-root reproducer isolates it without unrelated production
+edits. No installed task/exit/financial-source change.
+All original owned opportunities/readers below remain untouched. No private
+reader/broker/Task invocation is assigned to this source-preparation worker.
+
 Nov2 KST / Nov1 UTC. Parent owns actual deployment/shared MD/Git.
 A=D:/thericher-v2/model-artifacts. No operator decision pending.
 ONE original B/10/costs/losses/pending/F9/all original exits; never KIS_LIVE_*,

@@ -1,5 +1,21 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
+## Active Resource Coordination
+
+McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03 coordinates the NEW
+current-short-horizon-joint-development-20261102-v1 campaign. Actual TCN CUDA
+fit began14:32:49UTC under SOURCE-r2.json6a0c2d21; owned market controller48260,
+worker9436 plus GPU child/start/CID in market/tcn-output/START.json. Checkpoint
+updates/GPU41pct observed, final fit/readout/closure unknown. Actual native
+r2 closed positively; first native failure/recovery retained, no market retry.
+Recheck exact current owned leases/PID births before another job. Nov2UTC14:14 host
+snapshot showed22369MiB free; this is not a future capacity/ownership grant.
+Five total marketfits/99views/zero retries,5400activeSUM/10800elapsed, including
+native/failures/I/O/cleanup; separate actual optimizer/queue/review timing.
+Keep previous completed training closed, user apps running, desktop headroom
+and independent Paper priority. Source/schema/native freeze, not occupancy,
+determines readiness. Parent owns Git, Data/Strategy their disjoint roots.
+
 2026-11-02 KST. Residual/downside C1 actual2fits CLOSED_INVALID_UNAVAILABLE,
 not model failure: MLP70epochs210updates/BEST6, no convergence; no-late-seed
 input refusal before any completed cost view. All exact owned processes/
@@ -11,7 +27,8 @@ Sourcec57b6fb3/CALLBACK3fbe3a9f,925.925of2400active; fresh exact CIDs/PIDs/
 lease closure confirmed on resume. Actual fit phase7.658s/optimizer5.260s,
 peak203.5MBallocated209.7MBreserved; small network/data and early stop explain
 short GPU use. No environment/user-app permission hold or convergence claim.
-No completed fit repeated. All current numerical workers CLOSED/no queue.
+No completed fit repeated. Those previous numerical workers CLOSED; NEW source
+preparation is assigned above, not yet an actual market fit.
 Copernicus CPU replay closed27views/0fits,654.135of900active, independent paths.
 
 Prior Singer exposure/downside CUDA

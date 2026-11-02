@@ -55,6 +55,31 @@ No new app follow-up chain or foreground session waiting.
 
 ## Independent Packages
 
+The operator approved the Nov2 parallel review for implementation. CURRENT:
+- Data/Bacon: source-bound61-close stock-local+SPY support and separate matured
+ label masks, plus retained25-session minute contract. No acquisition/fits.
+- Strategy/Gauss: pure price-only raw/indicator/combined and sequence kernels;
+ exact invented producer/parser handoff, no market readout.
+- Engine/McClintock also coordinates current GPU resources: NEW H3-primary,
+ H1/H5-diagnostic elapsed-close development, maximum5fits/99views/zero retries.
+ CPU raw/indicator/combined Ridge and intraday Ridge, one small causal TCN,
+ fixed composition. SOURCE-r2.json6a0c2d21/nativebed5a5b5 qualified; market
+ worker began14:32:42UTC,3CPUfits complete and1TCNCUDAfit actually running.
+ Final economics/closure unknown; no completed fit repeats.
+- Execution/Pasteur: opt-in elapsedH1/H3/H5 typed weight source/tests only;
+ preserve old5-inclusive/20 profiles and every installed financial path.
+Parent owns shared MD/Git, integration, source release and existing public
+Paper result inspection. Roots are in current stateboards. No operator hold.
+Data/feature publication is complete:31Data and15feature native cases plus
+26/19Parent bound-reference checks PASS. Future inert point707d121b remains
+SOURCE_ONLY/NO_POINT: sparse allocations cannot pass the old noncash unit-mass
+DTO. Next source package is distinct cash-elapsedH3/native near-close binding,
+without renormalization or touching any installed job/budget/request/exit.
+Claude GO_WITH_LIMITS and scoped Parent dispositions:
+A/review/current-short-horizon-joint-challenge-20261102-v1/response.json.
+This campaign is adaptive development on reused data, not independent alpha.
+Its new research-only growth/DD screen cannot prohibit provisional Paper.
+
 Operator clarified the PRIMARY horizon on Nov2: intraday plus1-to-several-
 session short swings. Next NEW research prioritizes finite same-day/1/3/5-
 session targets with aligned entry/holding/exit/costs, not another default20-
@@ -101,7 +126,7 @@ Do not expose this example-config monitor externally or use old repo publisher
 to overwrite new V2 summaries.
 
 Exposure/downside1CUDAfit, holding-interval1CPUfit, monthly selection2fits
-(RidgeCPU+GRUCuda) are CLOSED. All resources closed; no current numerical job.
+(RidgeCPU+GRUCuda) are CLOSED. Their resources closed; new preparation is above.
 Primary frozen economic/risk criteria failed. Families stopped, no grid/refit/
 replay, independent-alpha claim or automatic Paper-point change.
 Completed models are not repeated to occupy GPU. Distinct useful campaigns may
@@ -126,6 +151,13 @@ Existing NAS8 future Data Nov2/3/4UTC21:10 and frozen evaluation
 Nov4UTC21:35 remain unchanged, no reserved outcomes used for new training.
 
 ## Evidence And Continuation
+
+Initial NEW short-horizon source full authority:
+A/verification/current-short-horizon-integration-20261102-v1/RESULT.json,
+f598ea49/cdc1659c/1424pins;491serialPASS/19835fullPASS26knownskip35warnings/
+8createdworkers[19861items]/native+helper0/verified managed cleanup; Ruff/
+4ComposePASS. Separate later native cash-H3 edits need fresh changed/full
+authority. Source-only tests do not validate market economics or financial effects.
 
 Fresh repo authority:
 A/verification/current-korean-paper-monitor-20261101-v1/RESULT-V2.json.

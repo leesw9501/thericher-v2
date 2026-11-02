@@ -1,5 +1,21 @@
 # Runbook
 
+## Active Short-Horizon Development
+
+Research source A/research/current-short-horizon-joint-development-20261102-v1,
+SOURCE-r2.json6a0c2d21/CONTRACT-r2f3ccca66/nativebed5a5b5. Actual market worker
+started Nov2UTC14:32:42;3CPUfits completed, one TCN CUDA active from14:32:49.
+Inspect exact terminal callback/closure before any resume. Do not rerun a
+completed fit, consumed market dispatch or clear an unknown/live GPU lease.
+Data source218141be at A/data/current-short-horizon-causal-input-20261102-v1;
+feature source2e033f37 at A/research/current-short-horizon-feature-kernels-
+20261102-v1. No market cache acquisition is required for this development.
+Future point707d121b is SOURCE_ONLY/NO_POINT, with sparse/noncash DTO
+incompatibility. Next source fix explicitly represents terminal cash; never
+renormalize stock weights, invent a venue or treat source readiness as native
+admission. New native cash-H3 is not installed and requires its own qualification.
+Today's original H20/GOOGL commands and exits remain unchanged below.
+
 ## Coherent Daily Input One-Shot
 
 ACTUALLY installed/enabled: thericher-data-us19-coherent-daily-20261102-v1,

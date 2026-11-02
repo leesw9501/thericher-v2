@@ -1,5 +1,25 @@
 # Strategy Research Stateboard (전략 탐색)
 
+## Active Price-Only Kernels
+
+Owner Gauss, agent01a19c9a-e031-7792-bc5d-9beb84c33471, exclusive
+A/research/current-short-horizon-feature-kernels-20261102-v1. Consumer is
+McClintock's NEW short-horizon campaign, not any completed20-session result.
+Implement fixed61-close raw40/indicator/combined, sequence20x4+terminal
+indicators, trend60/reversal5 and intraday pure helpers. No invented high/low/
+volume or changed labels/book. Freeze RSI/EMA seeds, zero-denominator behavior,
+key order/source/schema and prefix tests. No market payloads/fits/readout.
+First kernel package COMPLETE/FROZEN:Source2e033f37/CALLBACK2ff5fdf2,
+15native cases/fullRuff/F-E9/compile/19exactrefs PASS; Parent freshly checked
+all19refs. Worker closed, no market reads or trained-model claim.
+New exclusive source-only next package:
+A/research/current-short-horizon-next-session-point-preparation-20261102-v1.
+Consumer is one future inert H3 fixed-thirds point from actual safe Engine
+checkpoints and actual sealed Nov2 coherent61-close input, never an Oct16 retag.
+Prepare exact actual APIs/codec on invented input, no live weights/market
+forward/publication or schedule. Future source/input bindings remain unknown
+until positive readiness. Separate900activeSUM/2700elapsed/zero market numerics.
+
 Operator horizon Nov2: prioritize intraday and one-to-several-session short
 swings. Proposals need deployable short-horizon entry/hold/exit mechanisms and
 cost/turnover controls, not only long-horizon ranking gains. Minute/hour/daily

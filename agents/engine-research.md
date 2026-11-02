@@ -1,5 +1,29 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
+## Active Short-Horizon Campaign
+
+Owner McClintock, agent01a19c9a-e10d-7be2-a551-14096fecdd03; exclusive
+A/research/current-short-horizon-joint-development-20261102-v1. Actual market
+worker began14:32:42UTC,3CPU Ridge fits completed; TCN CUDA started14:32:49,
+checkpoint updates/GPU41pct observed. Final readout/closure not yet attested.
+SOURCE-r2.json6a0c2d21/CONTRACT-r2f3ccca66/nativebed5a5b5; first native failure
+and scoped recovery remain preserved, no market-fit retry. Data/Strategy exact
+callbacks adopted directly. H3 primary, H1/H5 diagnostic, no winner swap.
+New stock-local61-close support; decisionclose d/entryproxyclose d+1/exitclose
+d+1+h. FIT2015..21/INNER2022..23/reusedDEV2024..Oct16 with actual-target purge.
+Maximum3multioutputRidge+1intradayRidge+1causalTCN fits;5forecasts/one joint
+readout/daily81+intraday18=99views/zero retries. Costs0/10/20bps PER SIDE.
+Fixed thirds combinedRidge/TCN/trend is primary, not hindsight ensemble choice.
+New net10H3 research screen: growth above aligned fullEW, DD<=1.5*fullEW DD;
+report matched eligibility, gross/exposure/turnover/cash reference separately.
+This is not the old11.71bound or a Paper permission gate. No independent alpha.
+Caps5400activeSUM/10800elapsed, TCN<=256epochs/20000updates/1200optimizersec,
+patience24/LRpatience8/best INNER checkpoint including epoch0. Native real
+producer/parser/optimizer/checkpoint/forecast/book must precede market fits.
+Reserved minute dates are loader-excluded; missing held marks never become0.
+Claude GO_WITH_LIMITS and exact Parent dispositions:
+A/review/current-short-horizon-joint-challenge-20261102-v1/response.json.
+
 Primary horizon clarified Nov2: intraday plus1-to-several-session short swings.
 Next NEW family should choose a finite same-day/1/3/5-session axis, align the
 target with actual entry/holding/exit/payoff/costs, and bound timeframe/window/
@@ -32,10 +56,9 @@ PIDs/CIDs/lease closed. No convergence/alpha/qualified model or Paper change.
 Both retained the new frozen cash kernel/past-only mask and actual native/
 whole-calendar preflight. Claude REVISE/Parent dispositions at
 A/review/current-us19-cashstart-daily-lstm-challenge-20261102-v1/ADJUDICATION.json.
-All current numerical families CLOSED; no GPU worker queued. Next useful
-source-only question is whether symbol-local gaps can have symbol-local
-eligibility rather than unnecessarily blocking a full universe; no frozen
-support/forecast/criterion change or new fit is authorized by that note.
+These PREVIOUS numerical families CLOSED. The new approved preparation above
+uses symbol-local eligibility without changing any frozen old support,
+forecast, criterion or result. No completed fit is repeated.
 Original future observations/H20/GOOGL points/risk unchanged; Parent owns Git.
 
 Prior Singer exposure/downside CUDA campaign is CLOSED; actual1fit/

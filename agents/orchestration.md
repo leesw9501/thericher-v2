@@ -14,6 +14,28 @@ Prioritize this scope at next dispatch, not another automatic20-day campaign.
 
 ## Current Parallel Assignment
 
+CURRENT Nov2UTC14:14 implementation dispatch:
+- Bacon/Data: local61-close support, separate labels/calendar and retained
+ minute input contract; A/data/current-short-horizon-causal-input-20261102-v1.
+- Gauss/Strategy: pure raw/indicator/sequence/rule kernels, no market readout;
+ A/research/current-short-horizon-feature-kernels-20261102-v1.
+- McClintock/Engine+GPU coordinator: NEW fivefit/99view elapsedH3-primary
+ campaign, actual market14:32:42UTC/3CPUfits complete/TCNCUDA14:32:49 active;
+ A/research/current-short-horizon-joint-development-20261102-v1.
+- Pasteur/Execution: opt-in elapsed1/3/5 weight/horizon source/tests only;
+ A/execution/current-short-horizon-weight-readiness-20261102-v1.
+One owner per root/write set. Qualified schema callbacks flow directly, Parent
+owns shared MD/Git/integration and existing public Paper outcome inspection.
+Claude GO_WITH_LIMITS at A/review/current-short-horizon-joint-challenge-20261102-v1.
+Data and kernels COMPLETE, direct callbacks adopted,26/19Parent refs PASS.
+Initial source-only elapsed DTO COMPLETE491serialPASS; fresh Parent full
+19835PASS26knownskip/8workers[19861]/cleanup/Ruff/4ComposePASS. Next native
+cash-H3 source package fixes observed sparseDTO dependency without reweighting;
+future point707d121b stays SOURCE_ONLY/NO_POINT. Current actual TCN training is
+distinct from any financial result. Due: original Paper/Data opportunities below.
+Reversible throughput improvement: local stock+SPY support, not the unnecessary
+all18/253-close veto. Preserve missing held marks and all old study outcomes.
+
 2026-11-02 KST: Peirce adjustment-basis witnesses CLOSED6GET1POST0retry,
 PGcapture-vintage revision supported, exactevent unknown; no corrupt-parser
 or old-splice claim. Ramanujan clean3adapter successor CLOSED69lintfindings

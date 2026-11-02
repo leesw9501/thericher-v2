@@ -99,7 +99,46 @@ Production controls were not clicked/written.
 
 ## Research And Data
 
-Current Nov2 results are COMPLETE, not running or queued training:
+CURRENT operator-approved parallel implementation at Nov2UTC14:14:
+Data/Bacon owns A/data/current-short-horizon-causal-input-20261102-v1 and
+M/research_inputs/current-short-horizon-causal-input-20261102-v1; Strategy/Gauss
+owns A/research/current-short-horizon-feature-kernels-20261102-v1; Engine/
+McClintock owns A/research/current-short-horizon-joint-development-20261102-v1
+and its GPU coordination; Execution/Pasteur owns the opt-in elapsed horizon/
+weight source and tests plus A/execution/current-short-horizon-weight-readiness-
+20261102-v1. Source/native preparation active, market fits0; do not claim a
+running GPU training job. Maximum5fits/99views/zero retries, H3 primary.
+Daily decisionclose d -> proxy entryclose d+1 -> exitclose d+1+h, h1/3/5;
+these elapsed holds are not the old native5-inclusive profile. Existing
+H20/GOOGL/MSE/all exits/pending/F9/original bank remain unchanged.
+Claude GO_WITH_LIMITS, with explicit multiplicity/private-ID dispositions:
+A/review/current-short-horizon-joint-challenge-20261102-v1/response.json.
+Past-only per-stock+SPY support must not use label masks or fill missing marks.
+Raw/indicator/combined inputs, CPU/DL and fixed composition share exact clocks/
+costs. Reserved minute outcomes remain loader-excluded. These are reused-data
+development results only; fitting starts only after real native handoff smoke.
+
+NEW short-horizon runtime began Nov2UTC14:32:42 under SOURCE-r2.json6a0c2d21,
+CONTRACT-r2f3ccca66 and nativebed5a5b5 after actual handoff/optimizer smoke.
+Three CPU Ridge fits completed. One TCN CUDA market fit actually started
+14:32:49 in networknone trusted image; checkpoint writes and41pct GPU observed.
+Final fit/readout/closure NOT yet attested. No completed fit is repeated.
+First source native control failure remains failed; recovery and r2 actual
+native pass/closure are retained, not a market-fit retry.
+
+Data input COMPLETE Source218141be,31native tests/26Parent bound refs PASS,
+DEV701dates11917inputslots; original cells and separate label masks preserved.
+Feature kernels COMPLETE Source2e033f37/CALLBACK2ff5fdf2,15native tests/
+19Parent bound refs PASS. Execution source-only elapsed DTO COMPLETE,491serial
+PASS/oldgolden bytes unchanged; native admission is still unimplemented.
+Future-point Source707d121b is SOURCE_READY_ONLY, no actual models/input/point;
+its sparse weights correctly refuse the old unit-mass/noncash DTO. Preserve
+that packet. Next scoped fix is a DISTINCT cash-elapsedH3 path preserving all
+original stock weights, separate unsupported mass and explicit terminal cash;
+no renormalization, fake venue, new bank or model selection. Source prep does
+not change today's H20/GOOGL. Parent owns next native integration.
+
+PREVIOUS Nov2 results are COMPLETE, not running or queued training:
 - Residual/downside C1 Sourceef81c9f8 completed RidgeCPU+MLPCUDA fits,
  MLP70epochs210updates/BEST6, but frozen no-late-seed input refusal made the
  ORIGINAL study INVALID/UNAVAILABLE before any completed cost view. Not model
@@ -158,8 +197,8 @@ Earlier three distinct studies remain CLOSED:
  Ridge86.47growth/DD14.88 and fixedblend63.92/DD13.52 fail frozen11.708DD bound;
  GRU33.96/DD9.90 failsutility. Monthly family STOPPED, no automatic Paper swap.
 
-All numerical GPU/PID/container/leases closed. No current fit or utilization-only
-job. These are reused/current-listing/revised MODE1 close-price development
+All PREVIOUS numerical GPU/PID/container/leases closed. New source preparation
+above has not started fitting. These are reused/current-listing/revised MODE1 close-price development
 studies, not independent alpha, total return or measured Paper PnL.
 Paths: A/research/current-us19-market-exposure-downside-development-20261101-v1,
 current-us19-holding-interval-cost-aware-exposure-20261102-v1,
@@ -184,6 +223,15 @@ retains69findings (mostly style, plus unused names), not a blanket lint-pass.
 Do not repeat completed acquisition to repair logs/lint. No standing retry/job.
 
 ## Verification And Next Action
+
+NEW initial short-horizon source authority at
+A/verification/current-short-horizon-integration-20261102-v1/RESULT.json
+SHA f598ea49c296854adb754bd9a9e8403ba655e25261e284824222b243c4d97cda:
+1424source files/cdc1659c unchanged before-after,491changed-path serialPASS,
+19835fullPASS26knownWindowslinkSKIP35warnings/429.70s,created8/8workers
+[19861items],native/helper0/required managed cleanup. Ruff/4Compose using
+.env.example PASS. This is initial source/codec authority, not future native
+cash-H3 changes, numerical economics, financial admission or a fill.
 
 A/verification/current-korean-paper-monitor-20261101-v1/RESULT-V2.json:
 1423exactsourcepins7f0c495a,242focusedserialPASS;

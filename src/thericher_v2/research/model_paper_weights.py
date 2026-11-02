@@ -20,6 +20,10 @@ from thericher_v2.research.decision_receipt import (
 from thericher_v2.research.model_paper_horizon import (
     MODEL_PAPER_5_SESSION_PROFILE,
     MODEL_PAPER_20_SESSION_PROFILE,
+    MODEL_PAPER_ELAPSED_H1_PROFILE,
+    MODEL_PAPER_ELAPSED_H3_PROFILE,
+    MODEL_PAPER_ELAPSED_H5_PROFILE,
+    prior_official_session_close,
     validate_model_paper_horizon,
 )
 from thericher_v2.research.model_paper_proposal import (
@@ -38,11 +42,23 @@ MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE = (
 MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE = "model-weights-nas-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE = "model-weights-us-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE = "model-weights-nas-cash-5session-2026-v1"
+MODEL_PAPER_WEIGHTS_ELAPSED_H1_PROFILE = "model-weights-nas-elapsed-h1-prior-close-2026-v1"
+MODEL_PAPER_WEIGHTS_ELAPSED_H3_PROFILE = "model-weights-nas-elapsed-h3-prior-close-2026-v1"
+MODEL_PAPER_WEIGHTS_ELAPSED_H5_PROFILE = "model-weights-nas-elapsed-h5-prior-close-2026-v1"
+_ELAPSED_WEIGHT_PROFILES = {
+    MODEL_PAPER_WEIGHTS_ELAPSED_H1_PROFILE: MODEL_PAPER_ELAPSED_H1_PROFILE,
+    MODEL_PAPER_WEIGHTS_ELAPSED_H3_PROFILE: MODEL_PAPER_ELAPSED_H3_PROFILE,
+    MODEL_PAPER_WEIGHTS_ELAPSED_H5_PROFILE: MODEL_PAPER_ELAPSED_H5_PROFILE,
+}
 MODEL_PAPER_WEIGHTS_SCHEMA = "model-paper-target-weight-input-v1"
 WEIGHT_UNITS = "fraction_of_one_original_basis_gross_cohort_ceiling"
 EXECUTION_BASIS = "gross_limit_cost_not_fees_settlement_or_replay_equivalence"
 EARLY_EXIT_EXECUTION_BASIS = (
     "NON_PARITY_analytical_C_e19_early_exit_gross_limit_cost_not_fees_settlement"
+)
+ELAPSED_EXECUTION_BASIS = (
+    "SOURCE_ONLY_NON_PARITY_replay_close_e_to_close_e_plus_h_"
+    "not_fresh_quote_fills_or_native_near_close_admission"
 )
 
 
@@ -54,6 +70,8 @@ def _need(value, reason):
 def model_paper_weights_horizon_profile(profile):
     """Map only explicit weight profiles; never infer a horizon from dates."""
     _need(type(profile) is str, "weights_profile_invalid")
+    if profile in _ELAPSED_WEIGHT_PROFILES:
+        return _ELAPSED_WEIGHT_PROFILES[profile]
     if profile in (MODEL_PAPER_WEIGHTS_PROFILE, MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE):
         return MODEL_PAPER_20_SESSION_PROFILE
     if profile in (
@@ -282,7 +300,11 @@ class ModelPaperWeightsInput:
 
 
 def _weight_targets(metadata, entry_session, profile=MODEL_PAPER_WEIGHTS_PROFILE):
-    reference = _digest(asdict(metadata))
+    reference = _digest(
+        {"metadata": asdict(metadata), "profile": profile}
+        if profile in _ELAPSED_WEIGHT_PROFILES
+        else asdict(metadata)
+    )
     refs = DecisionReceiptReferences(
         "ref:" + metadata.policy_ref[7:],
         "ref:" + metadata.model_ref[7:],
@@ -350,6 +372,8 @@ def prepare_model_paper_weights_input(
         execution_basis=(
             EARLY_EXIT_EXECUTION_BASIS
             if profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
+            else ELAPSED_EXECUTION_BASIS
+            if profile in _ELAPSED_WEIGHT_PROFILES
             else EXECUTION_BASIS
         ),
     )
@@ -359,9 +383,17 @@ def validate_model_paper_weights_input(value):
     _need(type(value) is ModelPaperWeightsInput, "weights_profile_invalid")
     horizon_profile = model_paper_weights_horizon_profile(value.profile)
     early = value.profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
+    elapsed = value.profile in _ELAPSED_WEIGHT_PROFILES
+    basis = (
+        EARLY_EXIT_EXECUTION_BASIS
+        if early
+        else ELAPSED_EXECUTION_BASIS
+        if elapsed
+        else EXECUTION_BASIS
+    )
     _need(
         value.weight_units == WEIGHT_UNITS
-        and value.execution_basis == (EARLY_EXIT_EXECUTION_BASIS if early else EXECUTION_BASIS),
+        and value.execution_basis == basis,
         "weights_semantics_invalid",
     )
     _need(type(value.metadata) is ModelPaperWeightsMetadata, "weights_metadata_invalid")
@@ -370,6 +402,11 @@ def validate_model_paper_weights_input(value):
     first, last = value.entry_session, value.exit_session
     _need(type(first) is SessionWindow and type(last) is SessionWindow, "weights_sessions_invalid")
     validate_model_paper_horizon(first, last, profile=horizon_profile)
+    if elapsed:
+        _need(
+            value.metadata.feature_window_end == prior_official_session_close(first),
+            "weights_prior_session_close_invalid",
+        )
     _need(
         value.metadata.weights_observed_at < first.open_ts
         and value.metadata.exit_not_before
@@ -464,12 +501,15 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
             MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
+            *_ELAPSED_WEIGHT_PROFILES,
         )
         and document["weight_units"] == WEIGHT_UNITS
         and document["execution_basis"]
         == (
             EARLY_EXIT_EXECUTION_BASIS
             if document["profile"] == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
+            else ELAPSED_EXECUTION_BASIS
+            if document["profile"] in _ELAPSED_WEIGHT_PROFILES
             else EXECUTION_BASIS
         ),
         "weights_input_schema_invalid",

@@ -10695,3 +10695,22 @@ by this documentation decision. The company runtime outcome stays unfinished.
 Claude SOUND_WITH_LIMITS, advisory only; strongest reversal is silent relabeling
 of long-horizon evidence or changing owned exits to match research axes:
 D:/thericher-v2/model-artifacts/review/current-short-horizon-priority-20261102-v1/response.json
+
+## 2026-11-02 Local Support And Explicit Elapsed Horizons
+
+New short-horizon development may use stock-local plus market-context input
+support instead of an unrelated missing stock vetoing the whole universe.
+Input eligibility remains past-only and separate from matured-label support;
+missing allocations remain cash and missing held marks are never zero/imputed.
+Do not change completed studies or relabel reused development as independent.
+Consumer: the intraday/short-swing target-position research graph.
+
+New explicit elapsed1/3/5-session weight profiles use entry e and exit e+h;
+they do not alias the existing five-INCLUSIVE profile. Freeze decision,
+entry/exit, costs and source/schema before fitting or native consumption.
+Research close proxies are not execution prices. Existing account-owned Paper
+dispatcher retains all financial identities, original bank/reservations and
+owned exits; public model proposals never acquire private custody identifiers.
+Consumer: new inert short-swing proposals, not a new broker writer per model.
+Claude GO_WITH_LIMITS/Parent dispositions, advisory only:
+D:/thericher-v2/model-artifacts/review/current-short-horizon-joint-challenge-20261102-v1/response.json

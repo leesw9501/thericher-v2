@@ -1,5 +1,22 @@
 # Data Stateboard (시장데이터)
 
+## Active Short-Horizon Input
+
+Owner Bacon, agent01a19c87-81b6-73d3-99de-1105a6bed567. Nov2 parallel
+implementation approved. Exclusive A/data/current-short-horizon-causal-input-
+20261102-v1 and M/research_inputs/current-short-horizon-causal-input-20261102-v1.
+Consumer McClintock's new H1/H3/H5 elapsed-close campaign; Gauss owns features.
+Preserve61-close stock-local+SPY input support separately from matured labels,
+calendar and conditional provenance. Retained25-session minute contract keeps
+reserved Oct30/Nov2..4 unreadable. No HTTP/credentials/fits or old-source edits.
+Publication COMPLETE, source218141be/schema0490e234/CALLBACK.json.31invented
+producer/parser/causality/calendar/crossOS cases PASS, fullRuff/F-E9/consumer
+readback/mask rederivation PASS. INPUT_ONLY/no fits or payoff readout. Daily
+DEV701dates/11917local input slots supported; label maturity remains separate.
+All exact publication owners absent;135.051activeupper/943.607elapsed within
+900/2700caps. Direct callbacks delivered Engine/Strategy, no source/payload redo.
+Today's installed coherent-daily worker remains separately owned/due below.
+
 2026-11-02 KST. Adjustment-basis package CLOSED at
 A/data/current-kis-daily-adjustment-basis-20261102-v1:6GET1POST0retry/600rows,
 minimumgap2.000238s; fiveworkers/caches closed. Sourcee7c35990/READY a54446ac/
