@@ -2,12 +2,24 @@
 
 ## Current Ownership
 
-Nov3 KST / Nov2UTC. Pasteur agent01a19c87-8295-79d1-bf4f-2ab7b2ef06ca now owns
-SOURCE-ONLY immutable newCashH3 SDK readiness at
-A/execution/current-cash-h3-sdk-readiness-20261103-v1,600activeSUM1800elapsed.
-Coordinate actual runtime/import/API callback directly with Gauss finite-native
-preparation. No new runtime/framework/old image replacement/private/broker/Task
-effects. Parent owns shared MD/Git/actual operational adoption.
+Nov3KST/Nov2UTC18:40. Pasteur owns SOURCE-ONLY retention.py/native proof at
+A/execution/current-f9-offline-reader-evidence-retention-20261103-v1.
+Consumed current-binding offline read969fe066/WITHHELD-r4 7ed9be85 failed
+post-admission UNKNOWN_CUSTODY_CAPABILITY; in-memory result and full stability/
+closure evidence were lost. Public diagnostic461da43b is INDETERMINATE, not
+authority to bless unknown actors. No replay/release/private facts inferred.
+Persist unqualified diagnostics through tail failures, never weaken admission.
+
+Beauvoir owns concrete unchanged-factory new matching control/registry/context
+at A/execution/current-h3-matching-owner-construction-20261103-v1. Same original
+physical bank/gate/emergency/token/journals and exact old cohorts, no private/
+broker/Task in source preparation. Corrected actual producer SDK-string
+consumer d39a63d9/c83f33bc passes actual AST/seal/native-codec smoke; old
+transport-r1 dictionary-ABI proof is insufficient for corrected Docker chain.
+Actual guard/exclusion/restart qualification and fresh point are still needed,
+not a human-permission hold. Claude GO_WITH_LIMITS in HANDOFF; no stub guard.
+Immutable same-HOST SDK937f4a5d/runtime8a833b3d/87files38tests is COMPLETE.
+Parent owns shared MD/Git/actual adoption; new H3 financial task NOT installed.
 ONE original B/10/costs/losses/pending/F9/all exits; never KIS_LIVE_*.
 
 H20 entry failed manual_lineage_unbound/ValueError before native control.
@@ -99,6 +111,10 @@ Use RUNBOOK's exact V2 public consumer, not legacy publisher overwrites.
 ## Next
 
 Operational recovery/readback complete; next is exact future runtime evidence.
+Read-only rankpoint publisher ACTUALLY installed at21:46UTC Sourceefb7817f;
+actual DataREADY/seal UNKNOWN. Original GOOGL20:55/read21:05/public21:16 and
+all exits persist. Codex thericher-1 one-shot21:52UTC follows actual results,
+no duplicate follow-up or manual Run. The publisher cannot submit orders.
 Fresh effect-time relevant owner/custody/quote/orderability/risk checks remain.
 Independent Data/Research need not wait for this scope. All new research fits
 closed; no automatic point/model swap. Current goal completes only on actual

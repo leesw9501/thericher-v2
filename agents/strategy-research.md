@@ -2,6 +2,21 @@
 
 ## Current Source Handoff
 
+Nov2UTC18:40: finite read-only rankpoint publisher ACTUALLY installed/enabled
+by Parent. A/execution/current-h3-rank-point-publisher-preparation-20261103-v1,
+SOURCE-r2 efb7817f, exact task thericher-h3-rank-point-publisher-20261102-v1,
+Nov2UTC21:46/start<21:47/hard21:49, pythonw -I-S-B/noDemandCatchupRepeat.
+Actual coherent DataREADY/point/seal remain UNKNOWN. Nine invented native
+producer/seal cases and23mocked installer assertions PASS, Parent complete
+native XML/UTC/ACL readback PASS. Independent lexical XML/ACL readback failure
+remains failed, not runtime evidence. No financial effects/actual point yet.
+Same-user trusted-source contract, not an OS-denial sandbox. Original old
+financial definitions/three-expert models unchanged. New four-expert research
+passes reused DEV, but is not automatically swapped into this frozen publisher.
+Actual producer SDK metadata strings now join strict consumer Source d39a63d9;
+same-process real AST/seal/native-codec smoke passes. Corrected native Docker
+and guard/context construction are separately Beauvoir-owned, not complete.
+
 Gauss agent01a19c9a-e031-7792-bc5d-9beb84c33471 owns
 A/research/current-h3-rank-ensemble-next-session-point-preparation-20261103-v1.
 Preferred separate H3 point: exact original COMBO/TCN/trend60 mean-percentile
@@ -9,8 +24,9 @@ top4 policy from Source9552e128, full17 original routes/weights.
 CLOCK-r2 Source08380014/CALLBACKaa757847 qualifies exact integer UTC fractional
 capture/publication clocks,6native tests/Ruff/F-E9/compile PASS, worker closed.
 Original source/debits and earlier fixed-thirds707d121b remain unchanged.
-Actual fresh DATAREADY/input hash is UNKNOWN;0marketrestores/forwards/points/
-schedules. No Oct16 retag, fake hash, stale splice or wrong venue fallback.
+Actual fresh DATAREADY/input hash is UNKNOWN;0actualmarketrestores/forwards/
+points. Publisher installation above is real; old source-only packet had no
+schedule. No Oct16 retag, fake hash, stale splice or wrong venue fallback.
 
 Consume qualified CASH_ELAPSED_H3 API95cd2733 and actual safe checkpoint/predictor
 APIs. Unsupported NYS/AMS mass remains skipped, not redistributed or folded

@@ -69,14 +69,38 @@ distinguish attempted submit/acceptance/fill/owned reconciliation/PnL unknown.
  0fit/3views/0retry:net10growth146.410<149.176FAIL,DD26.535/turnover99.439PASS.
  Residual exposure tail699sessions is not FIFO/share age or3-session liquidation.
  No fraction tuning/adoption; original preferred candidate stays unchanged.
- Next distinct hypothesis source proposal only, no unannounced fit/readout.
+ New OHLC155 GPU PairLogit campaign current-h3-ohlc-pairwise-boosting-
+ 20261103-v1 is COMPLETE Source49039e9b/FINAL-AUDIT.json:1marketfit/1forecast/
+ 6newviews/6oldcontrols carried/0retry. Four-expert primary185.478pct/DD25.879
+ passes frozen reused-DEV screen, not independent alpha/Paper PnL. All14PIDs/
+ 5CIDs/lease closed; best5trainedtrees/0.935optimizerseconds. Never repeat it
+ for logging/GPU use. Current three-expert future point remains unchanged.
+ Late-day reversal0fit9views COMPLETE:net10-4.924pct,relativePASS but absolute
+ loss; no standalone adoption. Next distinct source proposal, no silent fits.
 - Execution/Parent: operational lineage repair ACTUALLY adopted. CashElapsedH3
  source/native path qualified/full-tested but NOT deployed. Gauss finite-native
  5cases and Pasteur same-HOST SDK87files/38nativecases are COMPLETE, not Docker
- qualification. Gauss executable/seal publisher sourceprep21:46UTC and Pasteur
- smallest future Paper contract/runtime readiness proceed; then connect one
- qualified finite future candidate with actual fresh input, original bank and
- exact current owner/unknown-request/quote/orderability admission.
+ qualification. Read-only publisher ACTUALLY installed/enabled for Nov2UTC21:46,
+ start<21:47/hard21:49, Sourceefb7817f; exact Task
+ thericher-h3-rank-point-publisher-20261102-v1. Parent native XML/UTC/ACL and
+ 23mocked assertions PASS; independent lexical-readback failure stays failed.
+ Actual fresh DataREADY/POINT/SEAL UNKNOWN, no order authority. Codex heartbeat
+ thericher-1 one COUNT=1 existing-chat follow-up Nov3KST06:52 is saved, no chain.
+- Execution/Beauvoir: corrected real producer SDK-string consumer Source d39a63d9
+ at current-h3-rank-account-owner-join-preparation-20261103-v1/producer-contract-r2
+ passes actual producer AST/seal/native-codec smoke and seven negatives. Old
+ transport-r1's dictionary ABI is NOT proof for this successor. Build actual
+ unchanged-factory matching guard/control/registry/context and corrected Docker
+ restart chain at current-h3-matching-owner-construction-20261103-v1, SAME
+ original bank/gate/emergency/token/journals/old cohorts. No stub guard, root
+ repoint, placeholder point, private/broker/Task effects in source preparation.
+ Claude GO_WITH_LIMITS at current-h3-account-owner-registration-challenge-
+ 20261103-v1; narrow same-core fallback only after concrete factory failure.
+- Execution/Pasteur: source-only F9 reader evidence-retention fix/native proof
+ at current-f9-offline-reader-evidence-retention-20261103-v1. One current-binding
+ offline read was consumed WITHHELD after unknown actor post-admission; lost
+ in-memory result is UNKNOWN, not current private facts or released reservation.
+ Do not replay consumed reader or repeat old broker history without new scope.
 
 Primary new strategies target intraday and1-to-several-session swings, initial
 same-day/H1/H3/H5 finite axes, not hard5-day liquidation. H20 remains legacy

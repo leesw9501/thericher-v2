@@ -2,6 +2,27 @@
 
 ## Current Results And Next
 
+Nov3KST/Nov2UTC18:40 update. New GPU PairLogit/CatBoost campaign COMPLETE at
+A/research/current-h3-ohlc-pairwise-boosting-20261103-v1, Source49039e9b/
+CONTRACT-r2 ef6797c8/FINAL-AUDIT.json. One market fit/forecast, six new cost
+views, six old controls carried unchanged, zero retries. Four-expert mean-rank
+COMBO/TCN/trend/tree top4 primary net10growth185.478pct/DD25.879 versus
+149.176/DD26.914 passes frozen development screen. Tree alone secondary158.089/
+27.397, not a separate selected winner. FIT15..21/INNER22..23/reusedDEV24..Oct16
+2026, current-listing/conditional MODE1 price proxy, not independent alpha,
+annual return, qualified total return or Paper PnL. Best5trainedtrees, optimizer
+0.935s. Initial native API failure retained, same saved checkpoint completion
+did not repeat fitting. All14PIDs/5CIDs/lease closed. Current three-expert
+prospective publisher remains unchanged, no automatic model swap.
+
+Late-day reversal COMPLETE at current-nas8-preclose-reversal-development-
+20261103-v1, Source32c67f20/CONTRACT-r2 444e1c64:0fits/nine views/25sessions.
+Net10primary-4.924pct/DD5.077, fullEW-5.894/DD6.035; relativePASS but gross
+primary-0.249pct, unpromising standalone, no Paper selection. Conditional
+canonical timestamp proxy is not provider stamp/fill proof. All resources closed.
+Next distinct mechanism may be source-prepared, not a silent new market trial.
+Completed fits below MUST NOT be repeated. Numerical closure is not convergence.
+
 McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03 is current Engine and sole
 GPU coordinator. All model-training campaigns below COMPLETE; no running GPU
 training claim. New current-h3-half-adjustment-policy-20261103-v1 is a zero-fit
@@ -16,9 +37,9 @@ NOW COMPLETE CALLBACKe81f313b:0fits/3views/0retry,21nativechecksPASS/all6PIDs+
 leaseclosed,201.769/600active724.386/1800elapsed. Net10growth146.410FAIL versus
 149.176;DD26.535PASS,turnover99.439PASS. Max17/mean15.55stocks and699-session
 continuous-positive exposure tail(notFIFO/shareage) do not support calling it
-3-session liquidation. No fraction tuning/adoption; nextdistinct hypothesis
-current-short-horizon-next-hypothesis-20261103-v1 source-only300SUM900elapsed,
-0newmarketread/fit/restore/forward/eval. Preferred rankpoint stays unchanged.
+3-session liquidation. No fraction tuning/adoption. Its next source proposal
+was consumed by the distinct reversal/PairLogit campaigns above; it is not a
+still-running worker. Preferred frozen prospective rankpoint stays unchanged.
 
 A/research/current-short-horizon-joint-development-20261102-v1:
 SOURCE-r2.json6a0c2d21/CONTRACTf3ccca66/nativebed5a5b5/

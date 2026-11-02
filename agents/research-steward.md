@@ -6,6 +6,18 @@ Nov3 KST / Nov2UTC. McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03
 coordinates new ready campaigns; ALL completed numerical workers are closed.
 No MD/queued dispatch is evidence of current GPU training. No duplicate fits.
 
+New PairLogit/CatBoost1.2.10 GPU campaign current-h3-ohlc-pairwise-boosting-
+20261103-v1 COMPLETE Source49039e9b/FINAL-AUDIT.json. Existing trusted image4bb201b5,
+one market GPU fit/one forecast/six new views, zero retries/old model operations.
+INNER best5trainedtrees/0.935optimizerseconds; brief use reflects small data and
+early stopping, not GPU restriction. Native failed inference API attempt is
+retained; correction restored SAME safe CBM without refitting. All14exactPIDs/
+5CIDs/lease fresh absent;955.960/2400activeSUMupper2941.677/7200elapsed at audit.
+Four-expert adaptive DEV primary passed; no automatic point/deployment claim.
+Late-day reversal0fit9views COMPLETE, no GPU required/all6PIDs+lease closed,
+303.289/600activeSUM. Relative pass but absolute loss, no standalone adoption.
+Next useful campaign requires a distinct frozen mechanism; no utilization filler.
+
 Joint Source6a0c2d21/AUDITED-CALLBACK-r3.json29e5ed00:5fits99views COMPLETE.
 TCN26epochs1456updates/BEST2,657.347optimizerseconds/1203.756worker seconds,
 activeupper3149.792/5400,elapsed2780.447/10800. All exact PIDs/CIDs/lease closed.

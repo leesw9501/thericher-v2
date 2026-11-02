@@ -2,6 +2,16 @@
 
 ## Current Ownership And Ready Inputs
 
+Nov2UTC18:40: coherent19daily owned task remains due21:30/start<21:31/hard21:45.
+Parent installed read-only H3 publisher21:46/start<21:47/hard21:49 and Codex
+thericher-1 COUNT1 follow-up21:52UTC. Actual DataREADY/point hashes UNKNOWN;
+no manual collector/task Run. Data input contracts remain unchanged.
+Late-day reversal input r2 Sourceeff44414/READY7e48599f at
+A/data/current-preclose-reversal-input-readiness-20261103-v1/r2 was consumed
+once by closed0fit9view study. Canonical15:00signal/15:32entry/15:55exit bucket
+proxies have unknown provider START/END stamp, not qualified execution prices.
+Reserved Oct30/Nov2..4 NAS8 observations remain excluded from model selection.
+
 Bacon agent01a19c87-81b6-73d3-99de-1105a6bed567 owns SOURCE-ONLY
 A/data/current-next-session-ohlc-consumer-20261103-v1.
 600activeSUM/2400elapsed,0marketprojection/fit/forecast/HTTP/Task change.

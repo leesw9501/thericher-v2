@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov2UTC16:46 integration.
+2026-11-03 KST / Nov2UTC18:40 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -51,6 +51,8 @@ Original opportunities (Task status/installation never proves financial effects)
 | GOOGL unit entry | Nov2 20:55..<21:00/PT7M | Nov3 05:55 |
 | GOOGL one-read/public | Nov2 21:05 /21:16 | Nov3 06:05 /06:16 |
 | Coherent19daily Data | Nov2 21:30/start<21:31/hard21:45 | Nov3 06:30 |
+| Read-only H3 rankpoint publisher | Nov2 21:46/start<21:47/hard21:49 | Nov3 06:46 |
+| Codex one-shot follow-up thericher-1 | Nov2 21:52 | Nov3 06:52 |
 | GOOGL original exit | Nov9 20:55 | Nov10 05:55 |
 | MSE original exit | Nov5 20:40 | Nov6 05:40 |
 | H20 original exit | Dec1 14:25trigger/14:30native | Dec1 23:30native |
@@ -101,6 +103,28 @@ Earlier Ridge/GRU/LSTM/MLP/TCN/Transformer/CatBoost/TimesFM/Chronos/LoRA and
 20-session studies remain closed in Git/immutable artifacts. Never repeat a
 completed fit to repair reporting or occupy GPU. No current live training claim.
 
+New GPU PairLogit/CatBoost1.2.10 campaign COMPLETE:
+A/research/current-h3-ohlc-pairwise-boosting-20261103-v1,
+Source49039e9b/CONTRACT-r2 ef6797c8/FINAL-AUDIT.json. One GPU market fit,
+one forecast/six new views/six old controls carried unchanged/zero retries.
+Four-expert COMBO/TCN/trend/tree primary net10growth185.478pct/DD25.879,
+versus frozen old149.176/DD26.914: declared development screen PASS.
+FIT2015..21/INNER22..23/reusedDEV2024..Oct16 2026; not independent alpha,
+annual return, total return or Paper PnL. Training stopped at INNER best5trained
+trees, optimizer0.935s; small data/early stopping explain brief GPU use.
+All14exactPIDs/5CIDs/lease positively closed,955.960/2400activeSUMupper,
+2941.677/7200elapsed at audit. Initial native unsupported predict keyword
+failure preserved; safe same-checkpoint completion did NOT repeat that fit.
+Current frozen three-expert prospective publisher is NOT automatically swapped.
+
+Late-day reversal COMPLETE at A/research/current-nas8-preclose-reversal-
+development-20261103-v1, Source32c67f20/CONTRACT-r2 444e1c64.
+Zero fits/one readout/nine cost views:25sessions primary net10growth-4.924pct,
+DD5.077 versus EW-5.894/DD6.035. Relative screen PASS but absolute loss even
+before costs(-0.249pct); not selected for standalone Paper. Source timing is
+an explicitly conditional canonical bucket proxy, not provider-stamp/fill proof.
+No GPU needed, all6PIDs/lease closed;303.289/600activeSUM.
+
 ## Ready And Owned Next Work
 
 Bacon: source-only future61local OHLC consumer COMPLETE at
@@ -116,15 +140,41 @@ Data independent rankpoint input audit Sourcee0f1c185/CALLBACK5dbbce61 verified
 40refs/local61/clocks, Parent40ref recheck PASS. Fixed future caller passes;
 P3 generic API hash-before-root-admission note does not affect hardcoded caller.
 Gauss finite H3 native preparation COMPLETE5invented chain cases/25pins,
-CALLBACK7fcb68a9; no actual point/effects. Pasteur immutable same-HOST SDK
-Source937f4a5d/runtime8a833b3d/CALLBACKee98d919 COMPLETE87unchanged files/
-38native tests/-I-S import origin/RuffPASS. Not an installed Docker SDK/image.
-NEW Gauss source-only executable/seal publisher preparation at
-A/execution/current-h3-rank-point-publisher-preparation-20261103-v1; proposed
-one quiet21:46UTC opportunity after exact Data closure, NOT yet installed.
-Pasteur prepares smallest future Paper contract/Docker-runtime qualification at
-A/execution/current-h3-rank-future-paper-contract-20261103-v1; no broker/Task.
-McClintock's distinct half-adjustment diagnostic COMPLETE0fits/3views/0retry,
+CALLBACK7fcb68a9; no actual point/effects. Same-HOST SDK Source937f4a5d/
+runtime8a833b3d/CALLBACKee98d919 COMPLETE87files/38native checks, not a new image.
+
+Read-only H3 publisher ACTUALLY installed/enabled by Parent at
+A/execution/current-h3-rank-point-publisher-preparation-20261103-v1:
+SOURCE-r2.json efb7817fe6548f3da232227e16436a65292c76e5714807a25ab1f4f6168f9260,
+parent-activation/ACTUAL-ACTIVATION.json and ENABLED.json. Exact Task
+thericher-h3-rank-point-publisher-20261102-v1 runs pythonw -I-S-B at21:46UTC,
+start<21:47/hard21:49, no demand/catchup/repeat. One forecast/max17calls/two
+safe restores/zero fit/readout/retry. Actual new DataREADY and sealed point
+remain UNKNOWN. Nine native producer/DTO/seal cases and23mocked installer
+assertions PASS; Parent full native XML/UTC/ACL readback PASS. Initial creation
+failure and independent reader's lexical XML/ACL mismatch remain failed,
+not retrospectively graded PASS. Seven old definitions unchanged. Same-user
+trusted source scope, not an OS sandbox denying file access. Claude's REVISE
+clock objection was rejected using actual UTC; accepted tests/limits retained.
+
+H3 account join source A/execution/current-h3-rank-account-owner-join-
+preparation-20261103-v1 has two invented Docker process/restart proofs, but
+old transport-r1 used an incorrect dictionary SDK metadata ABI. New actual
+producer string ABI consumer is producer-contract-r2, Source d39a63d9/
+FINAL.json c83f33bc; actual producer AST -> seal -> strict consumer -> native
+codec fixture PASS, seven negatives deny. Corrected Docker transport and new
+matching actual-owner guard/context are NOT yet fully qualified or installed.
+Beauvoir owns concrete construction at
+A/execution/current-h3-matching-owner-construction-20261103-v1:
+unchanged existing guard factories, new matching source/control/registry,
+SAME original physical bank/gate/emergency/token/journals, old cohorts intact.
+Do not repoint a frozen root or call a stub guard proof. Parent chose this
+smallest path after Claude GO_WITH_LIMITS at A/review/current-h3-account-owner-
+registration-challenge-20261103-v1/response.json. Only a concrete construction
+failure may justify the narrow same-native-core exclusion-adapter alternative.
+Fresh point and effect-time relevant ownership/risk still required; no global
+data/research hold or human approval invented for this technical gap.
+Half-adjustment diagnostic COMPLETE0fits/3views/0retry,
 CALLBACKe81f313b. Net10growth146.410pct<149.176FAIL,DD26.535PASS/turnover99.439PASS.
 17max/15.55mean holdings; continuous-positive tail699sessions including tiny
 tails is NOT FIFO/share age or3-session liquidation. No fraction tuning or
@@ -138,6 +188,28 @@ A/data/current-us19-coherent-future-daily-input-20261102-v1 is already installed
 Actual capture/DataREADY/fresh hash remain UNKNOWN until its owned opportunity.
 MODE1 within-batch consistency is not atomic provider finality. Original token
 contracts remain; new caller60s floor only. No manual Run to obtain evidence.
+
+## F9 And Follow-Up Recovery
+
+One actual offline read was consumed at A/execution/current-f9-current-binding-
+offline-read-20261103-v1. Initial admission passed; after_remove census returned
+UNKNOWN_CUSTODY_CAPABILITY. WITHHELD-r4.json7ed9be85, not a qualified account/
+request result. Post-admission exception lost the in-memory categorical result
+and aggregate stability/closure output; no full closure or private fact is
+inferred. Original F9 UNKNOWN-HELD reservation remains unchanged. No replay.
+Public diagnostic post-admission-diagnostic-r1/CONCLUSION.json461da43b is
+INDETERMINATE: retained actor hashes lack enough exact source/mount context.
+Unknown actual private writers still deny that read, not other lanes.
+Pasteur owns source-only retention.py/native proof at
+A/execution/current-f9-offline-reader-evidence-retention-20261103-v1:
+persist UNQUALIFIED categorical diagnostics before a tail exception; never turn
+failed admission/stability/closure into a qualified private conclusion.
+
+Codex automation thericher-1 is ACTUALLY saved for Nov3KST06:52, existing chat,
+RRULE:FREQ=DAILY;COUNT=1;BYHOUR=6;BYMINUTE=52;BYSECOND=0. No follow-up chain.
+It checks exact GOOGL outcome/DataREADY/sealed point and continues ready work,
+quiet on unchanged state. Local PC and Codex app must be running; no guaranteed
+background service. Do not create a duplicate or manually Run owned tasks.
 
 ## Source Integration And Local Monitor
 

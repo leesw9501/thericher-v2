@@ -1,5 +1,44 @@
 # Runbook
 
+## Current Installed Follow-Up
+
+Nov3KST/Nov2UTC18:40. Company objective remains UNFINISHED. No manually Run
+existing financial/Data/reader/publisher tasks merely to inspect evidence.
+Original GOOGL entry20:55UTC/read21:05/public21:16 and Data21:30 remain owned.
+
+Read-only H3 rankpoint task thericher-h3-rank-point-publisher-20261102-v1 is
+ACTUALLY installed/enabled at21:46UTC/start<21:47/hard21:49. Source authority:
+D:/thericher-v2/model-artifacts/execution/current-h3-rank-point-publisher-preparation-20261103-v1/SOURCE-r2.json
+SHA256 efb7817fe6548f3da232227e16436a65292c76e5714807a25ab1f4f6168f9260.
+Parent activation/ENABLED.json/full native XML/UTC/ACL readback are in its
+parent-activation directory. Independent lexical reader failed, preserved.
+Oneforecast/max17calls/twosaferestores/zerofit/readout/retry, no broker authority.
+Actual output ACTUAL-ONCE-20261102/POINT/POINT.json plus POINT-SEAL.json remains
+UNKNOWN until positively sealed through exact source/Data/model/runtime/clock
+binding. Do not guess an outcome path; use the pinned launch_r2.pyw contract.
+Do not retag a stale point or treat an invented fixture as actual publication.
+
+Codex automation thericher-1 is saved in the existing chat for Nov3KST06:52:
+RRULE:FREQ=DAILY;COUNT=1;BYHOUR=6;BYMINUTE=52;BYSECOND=0. PC/Codex app must
+remain running. It inspects exact owned results, integrates material evidence
+and continues ready work; quiet if unchanged. No recurring report/duplicate
+replacement chain. This is not a Windows strategy worker or guaranteed daemon.
+
+Corrected H3 point consumer/source-only native account preparation:
+D:/thericher-v2/model-artifacts/execution/current-h3-rank-account-owner-join-preparation-20261103-v1/producer-contract-r2/FINAL.json
+SHA256 c83f33bcca1c7cced699cf99e57a73270547de7db8580b7a4a350f408303ce04.
+SDK metadata are strings, not dictionaries. Old transport-r1 does not prove
+the corrected chain. New matching unchanged-guard construction is owned at
+current-h3-matching-owner-construction-20261103-v1; NOT financial deployment.
+No actual private/broker effects during source preparation. Only actual fresh
+sealed input and qualified current-owner/native/risk path may finalize future
+Nov3UTC20:55 entry/Nov6UTC20:45 original-H3 exit proposal.
+
+F9 current-binding offline read was consumed WITHHELD on unknown post-admission
+actor. Never replay it or infer private facts/reservation release. Retention
+bug source fix/native proof at current-f9-offline-reader-evidence-retention-
+20261103-v1 does not authorize a new read or make old evidence qualified.
+
 ## Active Short-Horizon Development
 
 Current time Nov3 KST / Nov2UTC. Completed numerical jobs MUST NOT be restarted:
@@ -10,6 +49,14 @@ Current time Nov3 KST / Nov2UTC. Completed numerical jobs MUST NOT be restarted:
  preferred prospective candidate, not an installed H20/GOOGL replacement.
 - A/research/current-h3-ohlc-learning-to-rank-20261103-v1:
  Source79928fd1,2fits15views COMPLETE; GPUprimary growth/riskfailed.
+- A/research/current-h3-ohlc-pairwise-boosting-20261103-v1:
+ Source49039e9b/CONTRACT-r2 ef6797c8/FINAL-AUDIT.json,1GPUmarketfit/1forecast/
+ 6newviews/0retry COMPLETE; best5trainedtrees/0.935optimizersec. Four-expert
+ reusedDEV primary185.478pct/DD25.879 passed, not independent alpha/Paper PnL.
+ No automatic prospective point swap. All14PIDs/5CIDs/lease closed.
+- A/research/current-nas8-preclose-reversal-development-20261103-v1:
+ Source32c67f20/CONTRACT-r2 444e1c64,0fits9views COMPLETE. Net10-4.924pct,
+ relativePASS/absoluteLOSS, no standalone adoption. No GPU needed.
 All exact owned numerical resources closed. No convergence/independent alpha.
 
 Qualified source-only CASH_ELAPSED_H3/native profile and full17 derived residual
@@ -24,7 +71,8 @@ RESULT.json:1426sourcepins44c218f3/370serial+3checks/19873fullPASS26knownskip/
 Future preferred point source:
 A/research/current-h3-rank-ensemble-next-session-point-preparation-20261103-v1/
 clock-r2, Source08380014/CALLBACKaa757847.6native tests/exact fractional UTC
-clocks PASS. NO actual fresh input hash, model inference, point or installation.
+clocks PASS. NO actual fresh input hash, model inference or point. Source-only
+packet is distinct from the actually installed read-only publisher above.
 Coherent19daily task Source9c5ec985 already installed Nov2UTC21:30/start<21:31/
 hard21:45. Never Run manually or retag an Oct16/Oct30 point. Read actual future
 DataREADY only through exact source-qualified native reader.
