@@ -26,16 +26,17 @@ owned inventory UNKNOWN. Do not replay consumed H20 entry or reader.
 Exact first cause and16invented tests:
 A/execution/current-h20-entry-runtime-diagnosis-20261103-v1.
 
-Pasteur prepares additive SOURCE-ONLY operational successor at
+Operational successor is ACTUALLY adopted at
 A/execution/current-paper-operational-lineage-repair-20261103-v1.
-Bind verified actual operational launch to original manual argv/PID/birth guard;
-retain complete original financial source/release/state/one-shot identities.
-Qualify real producer -> scheduled-owner ABI -> manual guard -> NativeBridge
-on invented inputs with original-fault negative control. No guard bypass.
-Parent reviews native/source/reader compatibility and tested full XML/ACL
-rollback before amending ONLY future GOOGL entry and original GOOGL/H20 exits.
-Old operational artifacts and consumed entry/reader remain immutable.
-No new trigger, Run, catchup, demand, budget, intent or broker action for inspection.
+Source703d74d0/READY08acd9f2,56native/45mockedTask assertions PASS.
+Parent amended ONLY future GOOGL entry and original GOOGL/H20 exits with full
+independent XML/ACL/enabled readback. Current opH20a62fd1c5/GOOGL410b55b8.
+parent-adoption/ACTUAL-COMPLETE.json9e489ebe preserves exact effect scope.
+Original manual argv/PID/birth guard and financial/state/one-shot identities
+unchanged. No Task Run, new trigger/budget/intent, private read or broker effect.
+Do not replay consumed Apply/H20 entry/reader. Existing GOOGL reader/V2 unchanged.
+Next dependent evidence is original future GOOGL actual result, not another
+installation or a forced replacement order. Original effect-time risk remains.
 Claude GO_WITH_LIMITS:
 A/review/current-paper-operational-lineage-repair-challenge-20261103-v1/response.json.
 Technical repair is delegated, not a new operator-permission hold.
@@ -64,9 +65,16 @@ distinguish attempted submit/acceptance/fill/owned reconciliation/PnL unknown.
  No duplicate training. Mean-rank top4 predeclared screen passed on reused DEV;
  preferred next prospective candidate, not independent alpha or current swap.
  OHLCTransformer primary failed; no secondary rescue. Propose a distinct
- cost/churn hypothesis before numerical dispatch under a new finite contract.
-- Execution/Parent: CashElapsedH3 source/native path qualified/full-tested but
- NOT deployed. Finish actual operational lineage repair first; then connect one
+ cost/churn diagnostic current-h3-half-adjustment-policy-20261103-v1 is CLOSED
+ 0fit/3views/0retry:net10growth146.410<149.176FAIL,DD26.535/turnover99.439PASS.
+ Residual exposure tail699sessions is not FIFO/share age or3-session liquidation.
+ No fraction tuning/adoption; original preferred candidate stays unchanged.
+ Next distinct hypothesis source proposal only, no unannounced fit/readout.
+- Execution/Parent: operational lineage repair ACTUALLY adopted. CashElapsedH3
+ source/native path qualified/full-tested but NOT deployed. Gauss finite-native
+ 5cases and Pasteur same-HOST SDK87files/38nativecases are COMPLETE, not Docker
+ qualification. Gauss executable/seal publisher sourceprep21:46UTC and Pasteur
+ smallest future Paper contract/runtime readiness proceed; then connect one
  qualified finite future candidate with actual fresh input, original bank and
  exact current owner/unknown-request/quote/orderability admission.
 
@@ -86,6 +94,10 @@ Source44c218f3/1426protectedfiles,370serialPASS+3recoverychecks,
 required managed cleanup; Ruff/4Compose(.env.example) PASS.
 Repo authority does not validate external code; each external change needs its
 actual native/focused proof. Reuse only with exact protected source match.
+Fresh material-recovery authority current-paper-lineage-recovery-integration-
+20261103-v1/RESULT.json:1426pins768dbc73,19873PASS26knownskip/400.11s/
+8workers[19899]/native+helper0/managedcleanup; Parent56externalserial+45mocked
+Task assertions/Ruff/4ComposePASS. Financial effects still unknown.
 Korean bilingual monitor http://127.0.0.1:8787 remains local/private-only,
 no credential/private custody imports. Do not rebuild source-pinned runtime
 casually or use historical V1 publisher over the adopted V2 summaries.

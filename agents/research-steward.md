@@ -22,7 +22,10 @@ Small data/model and early stopping explain short GPU use, not environment or
 user-app permission hold. Primary failed, no automatic point replacement.
 Original99/21 outputs and all old model/debit records unchanged.
 
-Next source-only distinct cost/churn hypothesis requested. Measure actual
+New current-h3-half-adjustment-policy-20261103-v1 CLOSED0fit/3views/0retry,
+CALLBACKe81f313b/21nativechecksPASS/6PIDs+leaseclosed;201.769/600active,
+724.386/1800elapsed. Primarygrowthfailed; no fractiontuning/adoption. No GPU
+needed or model restore/forward/retraining; preferred point unchanged. Measure actual
 headroom before a ready frozen numerical dispatch; first useful project GPU
 priority and concurrent useful work remain approved. Never kill user apps or
 reclaim unknown live leases by age. Keep independent Paper priority and qualified

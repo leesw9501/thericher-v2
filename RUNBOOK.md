@@ -35,12 +35,15 @@ H20 actual15:15 failed manual_lineage_unbound before native control; owned15:35
 reader CONTROL/NO_NATIVE_CONTROL, financial categories UNKNOWN.
 A/execution/current-h20-entry-runtime-diagnosis-20261103-v1 contains exact public
 first-cause/native evidence, no replay instruction.
-SOURCE-ONLY next operational repair:
+ACTUALLY adopted operational repair:
 A/execution/current-paper-operational-lineage-repair-20261103-v1.
-Do not run any new amendment until qualified current-source/native readiness
-and exact future XML/ACL rollback reviewed. Old operational artifacts and consumed
-H20 entry/reader stay immutable. Existing future GOOGL20:55 plus GOOGL/H20 exits
-must retain original financial source/state, identity, quote/recovery/budget risk.
+Source703d74d0/READY08acd9f2/native56/mockedTask45, Parent full19873PASS/
+26skip/768dbc73/1426pins. parent-adoption/ACTUAL-COMPLETE.json9e489ebe and
+INDEPENDENT-READBACK.json prove ONLY future GOOGL entry plus original GOOGL/H20
+exits amended/enabled/full XML+ACL equal. OpH20a62fd1c5/GOOGL410b55b8.
+Consumed Apply must NOT be rerun. Old artifacts, H20 consumed entry/reader and
+current GOOGL reader/V2 unchanged. No Run/new trigger/bank/intent/private/broker
+effects. Future runtime admission/quote/recovery/risk still required.
 Historical installation commands below do not become current recovery commands.
 
 ## Korean Local Paper Monitor

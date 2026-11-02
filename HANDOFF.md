@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov2UTC16:30 integration.
+2026-11-03 KST / Nov2UTC16:46 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -29,17 +29,21 @@ Original financial Source/release/journal/bank/intent identifiers are untouched.
 The recorded observer restoration is historical, not fresh private custody.
 Consumed H20 entry/reader must not be replayed or replaced.
 
-Pasteur now owns SOURCE-ONLY successor
+Pasteur's qualified operational successor is now ACTUALLY adopted:
 A/execution/current-paper-operational-lineage-repair-20261103-v1.
-Copy/qualify the operational shim, preserve the original manual actor/argv/PID/
-birth checks and full financial binding. Exercise the actual actor producer ->
-scheduled-owner ABI -> manual guard -> NativeBridge on invented input, including
-the old-fault negative control. Parent reviews readiness before actual amendment.
-Priority: existing future GOOGL entry plus original GOOGL/H20 exits, no new clocks
-or financial identity. Consumed H20 entry/reader unchanged. Reader compatibility
-must be proven, not assumed. Claude GO_WITH_LIMITS at
+Source703d74d0/READY08acd9f2/CALLBACKf1da6fbb;56native tests/45mockedTask
+assertions, old-fault negative control and actual actor producer -> guard ->
+NativeBridge source chain on invented fixtures PASS. Parent repeated56serial/
+45mocked checks, then amended ONLY existing future GOOGL entry and original
+GOOGL/H20 exits. parent-adoption/ACTUAL-COMPLETE.json9e489ebe and independent
+full expanded-name XML/ACL/enabled/0instance readback PASS. Only namespace-prefix
+and declaration-encoding serialization ignored, not settings/arguments/values.
+No Run/new clock/financial identity/private/broker effects. Consumed H20 entry/
+reader and existing GOOGL reader/V2 unchanged. Do not rerun consumed Apply.
+Actual effect-time risk/admission/reconciliation still apply. Claude GO_WITH_LIMITS:
 A/review/current-paper-operational-lineage-repair-challenge-20261103-v1/response.json.
-No actual lineage successor deployment is yet claimed.
+Current operational H20 Sourcea62fd1c5/GOOGL410b55b8, original financial pins
+unchanged. This is operational repair deployment, not acceptance/fill.
 
 Original opportunities (Task status/installation never proves financial effects):
 | Scope | UTC | KST |
@@ -54,8 +58,8 @@ Original opportunities (Task status/installation never proves financial effects)
 NAS8 Data Nov2/3/4UTC21:10 and frozen evaluation Nov4UTC21:35 are unchanged;
 their reserved outcomes are excluded from new training/checkpoint selection.
 Existing financial H20 Sourcec42867fa/releasea4a7ceb1 and GOOGL85de6f24/0703fbc7
-remain original; operational79a43070/54f61fe0 and readersac733e04/61673bc5
-are separate provenance, not new financial identities. Verify full exact pins.
+remain original; operational a62fd1c5/410b55b8 supersede79a43070/54f61fe0 for
+the THREE future duties only. Readersac733e04/61673bc5 unchanged. Verify full pins.
 
 ## Completed Data And Research
 
@@ -85,7 +89,8 @@ are separate provenance, not new financial identities. Verify full exact pins.
  not an H20/GOOGL replacement or profitability claim.
 - OHLC learning-to-rank COMPLETE2newfits/2forecasts/15views/0retry:
  A/research/current-h3-ohlc-learning-to-rank-20261103-v1, Source79928fd1.
- CPU pairwise SGD used50000sampleupdates/BEST0; CUDA cross-stock Transformer
+ CPU pairwise SGD used50000sampleupdates/BEST0(untrained zero-score tie ranking,
+ NOT learned selection performance); CUDA cross-stock Transformer
  26epochs1404updates/BEST2/7.880optimizerseconds. Primary net10growth63.766pct,
  DD31.512 versus old meanrank149.176/DD26.914: growth/riskFAIL. Secondary
  four-expert143.207/DD29.373 is not a rescue/winner. All exact resources closed.
@@ -107,8 +112,24 @@ A/research/current-h3-rank-ensemble-next-session-point-preparation-20261103-v1/
 clock-r2, SOURCE08380014/CALLBACKaa757847. Exact fractional UTC clocks,
 6native tests/Ruff/F-E9 PASS; NO fresh input, market inference, point or schedule.
 Preserve old fixed-thirds707d121b as a distinct source-only packet.
-McClintock: sole GPU coordinator, completed fits closed; propose a distinct
-cost/churn hypothesis, do not silently repeat fits or change the preferred point.
+Data independent rankpoint input audit Sourcee0f1c185/CALLBACK5dbbce61 verified
+40refs/local61/clocks, Parent40ref recheck PASS. Fixed future caller passes;
+P3 generic API hash-before-root-admission note does not affect hardcoded caller.
+Gauss finite H3 native preparation COMPLETE5invented chain cases/25pins,
+CALLBACK7fcb68a9; no actual point/effects. Pasteur immutable same-HOST SDK
+Source937f4a5d/runtime8a833b3d/CALLBACKee98d919 COMPLETE87unchanged files/
+38native tests/-I-S import origin/RuffPASS. Not an installed Docker SDK/image.
+NEW Gauss source-only executable/seal publisher preparation at
+A/execution/current-h3-rank-point-publisher-preparation-20261103-v1; proposed
+one quiet21:46UTC opportunity after exact Data closure, NOT yet installed.
+Pasteur prepares smallest future Paper contract/Docker-runtime qualification at
+A/execution/current-h3-rank-future-paper-contract-20261103-v1; no broker/Task.
+McClintock's distinct half-adjustment diagnostic COMPLETE0fits/3views/0retry,
+CALLBACKe81f313b. Net10growth146.410pct<149.176FAIL,DD26.535PASS/turnover99.439PASS.
+17max/15.55mean holdings; continuous-positive tail699sessions including tiny
+tails is NOT FIFO/share age or3-session liquidation. No fraction tuning or
+adoption; preferred rankpoint unchanged. All6PIDs/lease closed,201.769/600active,
+724.386/1800elapsed. Engine's next distinct hypothesis is source-only proposal.
 Qualified roles may exchange exact contracts directly; Parent not a serial relay.
 
 Future coherent Data task Source9c5ec985/PARENT-ACTIVATION04f71bc2 at
@@ -133,7 +154,10 @@ RESULT.json: Source44c218f3/1426protectedfiles unchanged;370serialPASS+
 created8/8workers[19899items], native/helper0/required managed cleanup;
 Ruff/default/research-profile/accounting/monitor Compose(.env.example) PASS.
 External adapters retain independent native evidence; repo tests cannot validate
-them, financial admission or economics. Initial source milestone8f2b0321 pushed.
+them, financial admission or economics. Source milestones8f2b0321/9bc509a7 pushed.
+Fresh material recovery authority current-paper-lineage-recovery-integration-
+20261103-v1/RESULT.json:1426pins768dbc73/19873PASS26knownskip/400.11s/
+8createdworkers[19899]/native+helper0/managedcleanup/Ruff4Compose(.env.example).
 
 Korean bilingual monitor ACTUALLY deployed at http://127.0.0.1:8787,
 imagebe48f29e, loopback only. runtimeRO/emergencyRW/public-summaryRO, no private

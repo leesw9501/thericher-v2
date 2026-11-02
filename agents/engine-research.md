@@ -3,9 +3,22 @@
 ## Current Results And Next
 
 McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03 is current Engine and sole
-GPU coordinator. All numerical campaigns below COMPLETE; no running training
-claim. Parent requested one next distinct cost/churn hypothesis SOURCE-ONLY,
-not another completed fit, result-driven secondary switch or current point swap.
+GPU coordinator. All model-training campaigns below COMPLETE; no running GPU
+training claim. New current-h3-half-adjustment-policy-20261103-v1 is a zero-fit
+policy package:600activeSUM1800elapsed/one readout3costviews0retry, initial full
+target then0.5actualpretrade marked weights+0.5saved original ranktarget.
+Frozennet10 growth>149.175598324,DD<=1.5*18.372760012,turnover<170.294474149.
+Actual native stateful-book smoke/source freeze before once readout; no fraction
+grid/secondary rescue/automatic point change. H3 rebalance cadence, not every
+position liquidated after3sessions; residual exposure/lag/breadth jointly change.
+Claude GO_WITH_LIMITS at A/review/current-h3-half-adjustment-challenge-20261103-v1.
+NOW COMPLETE CALLBACKe81f313b:0fits/3views/0retry,21nativechecksPASS/all6PIDs+
+leaseclosed,201.769/600active724.386/1800elapsed. Net10growth146.410FAIL versus
+149.176;DD26.535PASS,turnover99.439PASS. Max17/mean15.55stocks and699-session
+continuous-positive exposure tail(notFIFO/shareage) do not support calling it
+3-session liquidation. No fraction tuning/adoption; nextdistinct hypothesis
+current-short-horizon-next-hypothesis-20261103-v1 source-only300SUM900elapsed,
+0newmarketread/fit/restore/forward/eval. Preferred rankpoint stays unchanged.
 
 A/research/current-short-horizon-joint-development-20261102-v1:
 SOURCE-r2.json6a0c2d21/CONTRACTf3ccca66/nativebed5a5b5/
@@ -32,7 +45,8 @@ A/research/current-h3-ohlc-learning-to-rank-20261103-v1:
 Source79928fd1/contract281c7689/native9f83435d/RESULTd04b84c7.
 2newfits/2forecasts/15views/1readout/0retry COMPLETE.155price-only OHLC+daily
 features, within-date RankNet CPU plus cross-stock Transformer17tokens.
-CPU15epochs50000sampleupdates/BEST0/cap; GPU26epochs1404updates/BEST2/
+CPU15epochs50000sampleupdates/BEST0/cap is UNTRAINEDzero-score/tie-order ranking,
+not learned selection alpha; GPU26epochs1404updates/BEST2/
 7.880optimizerseconds/peak107375104allocated125829120reserved. No convergence.
 PrimaryGPUnet10growth63.766/DD31.512 failed both growth/risk versus existing
 meanrank149.176/DD26.914. CPU160.304/DD31.315 fails risk; four-expert secondary
