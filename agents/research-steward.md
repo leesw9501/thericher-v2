@@ -2,6 +2,18 @@
 
 ## Current Resource Coordination
 
+Nov2UTC22:46: original robust-four/r1 EXPIRED CLOSED0marketattempts, seven
+known actors absent/810debit preserved. Negative-clock receipts remain failed;
+metadata fix did not reset the clock or rerun models. NEW Parent-assigned
+current-h3-robust-four-development-readout-20261103-v1 is CPU-only:
+900newSUM1800elapsed/hard<=23:16, one zero-fit pipeline/sixviews/0retry.
+Old810+newactual stays charged; same fixed candidate, oldmean3 parity inside
+sole attempt. No fresh/reserved outcomes or current point swap. Actual worker
+start/result must come from its callback, not this assignment. No GPU needed.
+Actual RTX4090 check21:36:3pct/1788of24564MiB/35C; not a future headroom promise.
+All old GPU campaigns below closed. Ready useful fitting is allowed, none is
+currently frozen/released; don't fabricate utilization work or active training.
+
 Nov3KST/Nov2UTC20:38. McClintock's numerical scope is CLOSED; Parent checked
 8exactPIDbirths absent/2CIDs absent/leaseabsent,22350MiBfree35C before dispatch.
 Gauss failed remote compaction at capacity before any new root/lease/dispatch;

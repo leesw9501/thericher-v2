@@ -1,76 +1,76 @@
 # Runbook
 
-## Current Installed Follow-Up
+## Current Operations
 
-Nov3KST/Nov2UTC20:57. Company objective remains UNFINISHED. No manually Run
-existing financial/Data/reader/publisher tasks merely to inspect evidence.
-Original GOOGL entry20:55UTC/read21:05/public21:16 and Data21:30 remain owned.
+Nov3KST / Nov2UTC22:46. Company objective UNFINISHED. Current exact sources,
+receipts and owner scopes are in HANDOFF.md and agents/orchestration.md.
+Do not manually Run consumed financial/Data/reader/publisher tasks merely to
+inspect results. Preparation/Task exit/installation is not a financial outcome.
 
-Read-only H3 rankpoint task thericher-h3-rank-point-publisher-20261102-v1 is
-ACTUALLY installed/enabled at21:46UTC/start<21:47/hard21:49. Source authority:
-D:/thericher-v2/model-artifacts/execution/current-h3-rank-point-publisher-preparation-20261103-v1/SOURCE-r2.json
-SHA256 efb7817fe6548f3da232227e16436a65292c76e5714807a25ab1f4f6168f9260.
-Parent activation/ENABLED.json/full native XML/UTC/ACL readback are in its
-parent-activation directory. Independent lexical reader failed, preserved.
-Oneforecast/max17calls/twosaferestores/zerofit/readout/retry, no broker authority.
-Actual output ACTUAL-ONCE-20261102/POINT/POINT.json plus POINT-SEAL.json remains
-UNKNOWN until positively sealed through exact source/Data/model/runtime/clock
-binding. Do not guess an outcome path; use the pinned launch_r2.pyw contract.
-Do not retag a stale point or treat an invented fixture as actual publication.
+Actual H3 proposal already published:
+D:/thericher-v2/model-artifacts/execution/current-h3-rank-point-publisher-preparation-20261103-v1/ACTUAL-ONCE-20261102/POINT/POINT.json
+SHA ad3b0bcf7cda223e2897c04dc744097f2444ba4916ac3820962731d63c46375c.
+SEAL f8fe560355d979839b1da8a482b735c46e5c085cfc60749f43ed90f0f9b9563d.
+Parent strict R5 binding:
+D:/thericher-v2/model-artifacts/execution/current-h3-actual-point-parent-binding-20261103-v1/RESULT.json
+SHA111129a66717d96c87fddba2b92470c56414e606ff998ff4f4d8d6de792f2c5b.
+Actual coherent DATAREADY2d5e183b/manifest122b369c/closure9a5bd544 already
+qualified required2371+19currentcells. No recollection/model rerun is needed.
 
-Codex automation thericher-1 is saved in the existing chat for Nov3KST06:52:
-RRULE:FREQ=DAILY;COUNT=1;BYHOUR=6;BYMINUTE=52;BYSECOND=0. PC/Codex app must
-remain running. It inspects exact owned results, integrates material evidence
-and continues ready work; quiet if unchanged. No recurring report/duplicate
-replacement chain. This is not a Windows strategy worker or guaranteed daemon.
+R5 actual package:
+D:/thericher-v2/model-artifacts/execution/current-h3-actual-preparer-r5-20261103-v1/actual-ad3b0bcf7cda223e
+hostSOURCE6ae54088/ParentTrue32f5a92e/plan d3b8ac9d. Never rerun prepare_actual
+against its consumed output or use RELEASE-DISABLED as execution permission.
+Actual CreateDisabled PARTIALLY FAILED22:20:50:
+- thericher-h3-rank-cash-owned-exit-20261106-v1 exists DISABLED/state1/0instances.
+- thericher-h3-rank-cash-once-entry-20261103-v1 ABSENT.
+Do not replay original Create, delete/update existing task, shift clocks or Run.
+Exact raw native backup CAPTUREe9558971:
+D:/thericher-v2/model-artifacts/execution/current-h3-partial-install-parent-capture-20261103-v1/CAPTURE.json
+UNQUALIFIED until complete native semantic source/definition/ACL match.
+Lovelace source-only calibration:
+D:/thericher-v2/model-artifacts/execution/current-h3-native-scheduler-calibration-20261103-v1
+600SUM1800elapsed/hard23:00. Parent may adopt only qualified exact-own-exit
+recovery, create-only missing entry, full readback, exit enabled before entry.
+Measured state1/3 (Queued2 denies), explicit offset-equivalent UTC clocks and
+native sparse defaults are not reasons to drop arbitrary settings. Trusted
+ACL only; original R5 runtime already accepts measured caller-read duplicate.
+Future entry Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55;
+exit Nov6UTC20:45..<21:00/PT7M = Nov7KST05:45. No manual demand/catchup/repeat.
+Original effect-time account/basis/F9/unknown/token/quote/orderability/observer/
+risk checks remain mandatory. No new capital bank or live behavior.
 
-Corrected H3 point consumer/source-only native account preparation:
-D:/thericher-v2/model-artifacts/execution/current-h3-rank-account-owner-join-preparation-20261103-v1/producer-contract-r2/FINAL.json
-SHA256 c83f33bcca1c7cced699cf99e57a73270547de7db8580b7a4a350f408303ce04.
-SDK metadata are strings, not dictionaries. Old transport-r1 does not prove
-the corrected chain. New matching unchanged-guard construction COMPLETE at
-current-h3-matching-owner-construction-20261103-v1/a5,Source404fdec9/native3e3f6eb6,
-twoinventedDockerprocesses/nine denial controls/restart0newBUY. Actual-point-
-required current preparer is current-h3-actual-preparer-r5-20261103-v1,
-SOURCE47d78f26/READY9b215476/API21820873; NOT financial deployment. Never run the a5 fixture as
-production or treat a retained stale return as a new guest response.
-No actual private/broker effects during source preparation. Only actual fresh
-sealed input and qualified current-owner/native/risk path may finalize future
-Nov3UTC20:55 entry/Nov6UTC20:45 original-H3 exit proposal.
+GOOGL original entry FAULT48166777/nativeNOT_ENTERED; original read consumed
+WITHHELD57a51d17 after_read. New retained host21a200b7/API5a009894/NATIVEf5936fb1
+read also CONSUMED WITHHELD before_create under release41f9b96c:
+D:/thericher-v2/model-artifacts/execution/current-googl-retained-reader-host-preparation-20261103-v1/read-once/output
+ADMISSION-FAILURE private_reads0/four Jobs closed. No qualified result.
+Unknown6499a380 is Parent adopt.ps1 wrapper, not an external KIS quota.
+No replay/new read chain or blanket parent/PowerShell/Python exemption.
+Do not run public monitor dryruns concurrently with a private read; source
+preparation/Parent release must not introduce an unqualified launch ancestor.
+No original unknown reservation release from missing local or broker evidence.
 
-Old F9 offline read remains consumed WITHHELD, never replay/regrade. Retention
-fix e5ace913/17Parenttests is complete. A separately scoped NEW retained read
-ACTUALLY consumed PASS at current-f9-current-binding-retained-read-20261103-v1:
-Source7899e6c2/release62bd2731/QUALIFIED-RESULTa7ad07e6/CALLBACK0c14b3b6.
-Oneguest/3freshadmissions/22Jobsclosed/CIDabsent/stable offline binding only.
-Original broker-ID absent, financial outcome remains UNKNOWN-HELD; no HTTP/
-fresh broker account/fill/terminal/reservationrelease. Do NOT rerun this scope.
-Old renderer44958 is superseded; old native scope failed1384.237SUM+IO>1200.
-Separate targeted order repair native/FINAL96aed06b passed3logicalcases/
-4hostlaunches/1223.164of1800SUM/allclosed. New policy58mockedrealhelperchecks
-Source3eab4e6d/PREPAREDab12f814 qualifies Nov3/Nov6 namespaces, not old GOOGL.
-Current preparer uses exact qualified launch8a903160 WITH quietGUIshim,
-rearm87e949fe/new policies/XML-I-S-B. Cold strict SDK/codec smoke7336d793+
-6denials/emittedbindingauditPASS. Actualpoint+seal absent ->0artifacts.
-API (verify all source/member/READY refs before loading):
-D:/thericher-v2/model-artifacts/execution/current-h3-actual-preparer-r5-20261103-v1/API.json
-SHA256 218208735b86a2d068a4f9052a2f397ef96c8b274f3928657b95c1d8e0983dab.
-Call renderer.prepare_actual(actualPointRef, actualSealRef, originalControlRef)
-only with qualified actual fixed publisher refs, never guessed/fixture hashes.
-This emits disabled release/definitions, NOT admission/installation/effects.
-No H3 financial Task installed; current original financial safeguards remain.
-R3 missed owner helper/Task fields; R4 native COM XML had incorrect byte encoding.
-Both remain incomplete, not current actual-preparation authority. R5 includes
-source-bound owner helpers, exact GUI-console role proof and UTF16LE+BOM XML.
-Mock-fixture repair Source3638688c/VALIDATEDf0402901:2phase/14denials and14
-unchanged Python-validator checks; no actual registered Task/CIM/OS-origin.
-Old fixture failures remain failed; never use invented owner facts in production.
+F9 retained current-binding offline read is consumed PASS, Source7899e6c2/
+release62bd2731/QUALIFIED-RESULTa7ad07e6/CALLBACK0c14b3b6. Broker-IDabsent,
+financial UNKNOWN-HELD, reservation unchanged. CONFIG-ONCE subject58ebb110 is
+also consumed and config-only, not funds/holdings/bank proof. No raw .env/Live.
+Original GOOGLexitNov9, MSEexitNov5UTC20:40, H20exitDec1UTC14:30native persist.
+NAS8 Nov3/4UTC21:10/frozen evaluationNov4UTC21:35 remain separately owned.
+Codex thericher-1 was a single Nov3KST06:52 follow-up, not a permanent daemon.
+No replacement follow-up chain.
 
-Observer19:35 reader-validated complete/read_only/submitfalse exact receipt in
-HANDOFF; honest-host marker provenance only, Operational logging disabled.
-Paper-only subject CONFIG-ONCE at current-paper-subject-preflight-20261103-v1
-consumed: subjectmatch/stable/0HTTP/orders. Never replay its once check or infer
-current broker holdings/bank/fill. F9 remains UNKNOWN-HELD.
+Fresh repo verification:
+D:/thericher-v2/model-artifacts/verification/current-h3-deployment-integration-20261103-v1/RESULT.json
+SHA7ff3887ab54ea9619a7d87b09ade0978aa2bf1eeedbca8f23e0de5303476df5a:
+1426pins768dbc73/0mismatch/actual8of8[19899]/19873PASS26knownskip/389.24s/
+helper+native0/checkedcleanup/Ruff4Compose.env.example PASS.
+full-standard-tests.log is authority; extra-quiet full-tests.log is NOT.
+External D code still needs separate focused native/negative proofs.
+Do not rerun the full suite for unchanged docs/external-only source.
+
+The following retained sections contain source-specific and historical commands.
+Current status above/HANDOFF takes precedence; do not replay consumed packages.
 
 ## Active Short-Horizon Development
 
