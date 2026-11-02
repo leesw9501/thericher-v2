@@ -1,6 +1,37 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-2026-11-02 KST. Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
+2026-11-02 KST. NEW residual/downside C1 is CLOSED_INVALID_UNAVAILABLE at
+A/research/current-us19-residual-downside-experts-20261102-v1:
+Sourceef81c9f8/CALLBACK1df126a6,2actualfits(RidgeCPU+MLPCUDA)/2forecasts/
+2restores/one readout attempt/0completedviews. MLP70epochs210updates/BEST6,
+INNERearlystop64, no convergence. First DEV20240112/execution20240116 lacks
+252lookback due20230605 hole; rawDEVmarks passed. Frozen no-late-seed rule
+withheld ALL economics. This is NOT model unprofitability; no retry/refit/
+original result rescue. Source/weights/forecasts/debits917.032of2400 preserved,
+allGPU/PIDs/containers/lease closed. Claude REVISE scoped claim ceiling:
+A/review/current-us19-residual-downside-challenge-20261102-v1/ADJUDICATION.json.
+
+Copernicus CPU cashstart CLOSED SOURCE-r2.json0ea0d1bb,0fits/restores/newforecasts,
+one27view readout/34intervals681marks/originalNAV1+100cashsessions, entryJun7
+2024. BLENDnet10growth37.38pct/DD15.252/utility.09352 vs FULL-EW17.10840,
+frozenprimaryFAILED;654.135of900active, allresourcesclosed. No late reseed.
+Gibbs daily-trained residual LSTM CLOSED Sourcec57b6fb3/CALLBACK3fbe3a9f:
+oneCUDAfit65epochs2600updates/BEST1/inner earlystop64,1forecast/9newviews;
+carry27unchanged, no old refit/restore/forecast/replay.1193FITdaily dates/
+84INNER dates are overlapping, not independent. Primary thirdsnet10 cumulative
+growth48.26pct/DD15.520 exceeds11.710bound, FAILED; halfLSTM/Ridge50.13/
+15.426 secondary only, no selected winner.925.925of2400active, all exact
+PIDs/CIDs/lease closed. No convergence/alpha/qualified model or Paper change.
+Both retained the new frozen cash kernel/past-only mask and actual native/
+whole-calendar preflight. Claude REVISE/Parent dispositions at
+A/review/current-us19-cashstart-daily-lstm-challenge-20261102-v1/ADJUDICATION.json.
+All current numerical families CLOSED; no GPU worker queued. Next useful
+source-only question is whether symbol-local gaps can have symbol-local
+eligibility rather than unnecessarily blocking a full universe; no frozen
+support/forecast/criterion change or new fit is authorized by that note.
+Original future observations/H20/GOOGL points/risk unchanged; Parent owns Git.
+
+Prior Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
 256epochs2304updates/BEST256/MAX_EPOCHS,1forecast9policies27views/0retry.
 Net10growth15.9009/DD3.5850; matchedaverageEW16.2610/DD4.2137. Primary
 utilityFAILED versus matchedaverage/historical20, not convergence/alpha/PnL.

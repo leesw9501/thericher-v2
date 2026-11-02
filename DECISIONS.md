@@ -10650,3 +10650,25 @@ Qualification/activation of the exact successor remains a separate unfinished
 technical package; this decision is not runtime admission or a fill.
 Claude SOUND_WITH_LIMITS, with identity-drift/borrowed-proof falsifiers:
 D:/thericher-v2/model-artifacts/review/current-paper-source-identity-separation-20261102-v1/response.json
+
+## 2026-11-02 Causal Input Abstention And Capture Basis
+
+Missing past inputs may produce an explicitly declared cash/carry proposal,
+not a shortened calendar, new starting NAV, imputed feature or global Paper
+permission hold. Freeze the past-only support mask before forecasts and compare
+matched-availability plus full-opportunity controls. A new policy cannot rewrite
+an old no-late-seed study's INVALID result or repeat its completed training.
+Daily overlapping-label training does not create independent observations;
+joint sampling/architecture changes are not causal architecture evidence.
+Consumer: the target-position proposal graph under sparse historical inputs.
+Claude REVISE conditions/Parent disposition:
+D:/thericher-v2/model-artifacts/review/current-us19-cashstart-daily-lstm-challenge-20261102-v1/ADJUDICATION.json
+
+KIS MODE1 labels do not identify capture vintage or prove total return/allCA.
+New runtime inputs use one bounded batch and measured overlap consistency,
+never silent old/new splicing or rescaling. A dated market-only caller may use
+the official60s issuance floor with the existing atomic/legacy gate, one token
+POST and bounded due wait; old300s contracts/defaults are not redefined.
+Consumer: coherent future required2371-close monthly feature handoff.
+Source/native/official token and scoped SOUND_WITH_LIMITS disposition:
+D:/thericher-v2/model-artifacts/data/current-us19-coherent-future-daily-input-20261102-v1/ADVISORY-DISPOSITION.json

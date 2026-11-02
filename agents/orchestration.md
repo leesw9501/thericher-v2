@@ -1,11 +1,40 @@
 # Orchestration Stateboard (총괄)
 
-Nov2 KST / Nov1 UTC. Company coexistent-native-paper-execution-runtime-v1
+2026-11-02 KST integration. Company coexistent-native-paper-execution-runtime-v1
 UNFINISHED. Parent owns shared MD/Git/actual deployment. No operator decision.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original B/10/F9/pending/all exits; preserve unrelated %SystemDrive%/.
 
-## Ready / Owned / Due
+## Current Parallel Assignment
+
+2026-11-02 KST: Peirce adjustment-basis witnesses CLOSED6GET1POST0retry,
+PGcapture-vintage revision supported, exactevent unknown; no corrupt-parser
+or old-splice claim. Ramanujan clean3adapter successor CLOSED69lintfindings
+fixed/fullRuff/actualinvented parity,30originalfiles unchanged/0wire.
+Gibbs C1 residual/downside CLOSED_INVALID:2completedfits,MLP70epochs/BEST6,
+input no-late-seed refusal/0completedviews, no economic/model-failure claim.
+
+Copernicus CPU cashstart CLOSED27views/0fit-restore-newforecast, original
+34intervals681marks/NAV1/100cashsessions. BLENDprimaryfailed. Gibbs LSTM CLOSED
+1CUDAfit65epochs2600updates/BEST1/9newviews/carry27unchanged. Primarythirds
+growth48.26pct/DD15.520 exceeds11.710bound, FAILED; no selected winner or
+automatic Paper change. Native/whole-calendar/past-only mask tests and exact
+source/closure audits passed. Claude REVISE conditions retained, not alpha.
+Parent ACTUALLY installed one future coherent19daily Data task Nov2UTC21:30/
+start<21:31/hard21:45. Source9c5ec985/activation04f71bc2, independent full XML/
+ACL enabled readback. Actual DataREADY remains unknown. All LLM/numerical
+packages closed; no live training or new numerical queue. Original8Paper
+definitions/ACL/enabled unchanged. Parent owns docs/Git; no operator decision.
+
+Throughput Review: parallel packages completed, future Paper/Data results due;
+no operator decision or foreground market wait. Reversible improvement:
+lint-only successor and invented parity tests instead of touching executed
+source or reacquiring its completed17endpoint payload. After C1 failure, add
+ACTUAL support/schema preflight before fitting and explicit full-span cash
+abstention, not another completed-model retry or changed starting bank/date.
+Research uses retained single-vintage input independently of basis work.
+
+## Prior Completed Packages / Due
 
 - Parent: monitor V2 actually deployed be48f29e on loopback8787.
  Two public-summary future tasks aa3ef6d6 installed/enabled/read back.
@@ -33,6 +62,7 @@ GOOGL Nov2UTC20:55entry; reader21:05; public21:16.
 KSTNov3 00:15/00:35/00:46 and05:55/06:05/06:16.
 GOOGL Nov9 exit/H20 Dec1 exit/MSE Nov5UTC20:40 persist.
 Data Nov2/3/4UTC21:10; frozen evaluation Nov4UTC21:35 unchanged.
+New coherent19daily Data Nov2UTC21:30 (KSTNov3 06:30), one finite opportunity.
 Acceptance/fill/current owned inventory/fees/PnL UNKNOWN until exact evidence.
 
 ## Bottleneck / Throughput Review

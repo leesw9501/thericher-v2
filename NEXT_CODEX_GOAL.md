@@ -55,6 +55,31 @@ No new app follow-up chain or foreground session waiting.
 
 ## Independent Packages
 
+Nov2 KST requested research/maintenance packages are COMPLETE:
+- Adjustment-basis Sourcee7c35990:6GET1POST0retry, PG capture-vintage revision
+ supported; exact action cause unknown. No splice/rescale or allCA/PIT claim.
+- Clean3adapter successor SOURCE-V3a5cc7b47/NATIVE-V3c5ebc37d:69findings fixed,
+ fullRuff/native equivalence passed,30oldfiles unchanged/no market reacquisition.
+- Residual/downside C1 Sourceef81c9f8:2completedfits, original study remains
+ INVALID due initial feature support,0completedviews. Never retry/refit it.
+- NEW cashstart Source0ea0d1bb:0fits/restores/forecasts,27views completed on
+ original34intervals/681marks/NAV1,100cashsessions; primaryfailed.
+- NEW daily-trained LSTM Sourcec57b6fb3:1CUDAfit65epochs2600updates/BEST1,
+ 9newviews/carry27unchanged, primarythirdsnet10growth48.26pct/DD15.520 exceeds
+ 11.710bound. All workers/PIDs/CIDs/leases closed, no duplicate training.
+ All research is descriptive/reused, no alpha/qualified model or Paper change.
+ Exact callbacks/native/source/review pointers are in HANDOFF/stateboards.
+
+ONE coherent future Data task is ACTUALLY installed/enabled, not DataREADY:
+thericher-data-us19-coherent-daily-20261102-v1 at Nov2UTC21:30/start<21:31/
+hard21:45 (KSTNov3 06:30). Source9c5ec985/PARENT-ACTIVATION04f71bc2 at
+A/data/current-us19-coherent-future-daily-input-20261102-v1.57plannedGET/60max,
+1POST/0retry, quietpythonw/no demand/catchup/repeat. Within-batch MODE1/calendar/
+overlap consistency serves required2371closes, not provider atomicity/finality.
+Newcaller60sfloor only; old300s contracts unchanged. No actual capture yet.
+No manual Run or consumed installation replay. Parent verified original8Paper
+XML/ACL/enabled unchanged; shared bank/pending/F9/exits remain original.
+
 Korean local monitor ACTUALLY deployed at http://127.0.0.1:8787,
 imagebe48f29e, loopback only. Public-summaryRO/runtimeRO/emergencyRW, no
 private bank/credentials. Korean bilingual labels, scheduled versus actual
@@ -81,7 +106,8 @@ acquisition-20261102-v1:Sourcee055ec80/READY6b8ca48b/CLOSUREaf337858,
 and complete monthly feature panel still unqualified. No account/orders/fits/
 forecasts/evaluation/model/Paperpoint or standing acquisition retry.
 Native/parser/payload checks and required emitted undefined-name/syntax lint
-passed; additional full external Ruff retains69findings, not a full-lint pass.
+passed; predecessor's69lintfailure remains historical, clean successor above
+passed without modifying or re-running that acquisition.
 Nov2 decision close is not present before actual Nov2UTC21:00.
 Current H20/GOOGL points stay unchanged.
 
@@ -96,6 +122,9 @@ Exact1423pins7f0c495a;242serialPASS;19787fullPASS26knownWindowslinkSKIP/
 8createdworkers[19813]/native+helper0/verifiedcleanup; Ruff/4ComposePASS.
 Original failed cleanup remains failed; fresh reruns passed, no bypass.
 External runtime code needs its own focused/native evidence.
+Fresh token/daily serial181PASS and Ruff/4ComposePASS; exact1423source digest
+match permits reuse of that full authority, not a claim it was rerun. Changed
+external code has fresh native tests, masks/preflight and independent audits.
 
 After material integration verify/commit/push owned changes and continue ready
 work. Replace this file with ONE next company outcome only after actual runtime

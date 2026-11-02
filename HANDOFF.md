@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-02 KST / Nov1 UTC. Workspace C:/Users/Public/Documents/thericher-v2.
+2026-11-02 KST integration. Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No operator decision pending. Parent owns integration, shared MD and Git.
@@ -90,7 +90,55 @@ Production controls were not clicked/written.
 
 ## Research And Data
 
-Three distinct studies CLOSED, no completed training repeated:
+Current Nov2 results are COMPLETE, not running or queued training:
+- Residual/downside C1 Sourceef81c9f8 completed RidgeCPU+MLPCUDA fits,
+ MLP70epochs210updates/BEST6, but frozen no-late-seed input refusal made the
+ ORIGINAL study INVALID/UNAVAILABLE before any completed cost view. Not model
+ unprofitability. Exact weights/forecasts/source/debits retained, no refit/retry.
+- NEW causal cashstart SOURCE-r2.json0ea0d1bb used ONLY saved outputs,0fits/restores/
+ forecasts, one27view readout. Same34intervals/681marks/originalNAV1 from
+ Jan16 2024,100initialcashsessions, first supported entryJun7 2024. BLEND
+ net10growth37.38pct/DD15.252/utility.09352 vs FULL-EW17 .10840utility:
+ frozen primaryFAILED. Original C1 stays INVALID, not retrospectively rescued.
+- NEW daily-trained residual LSTM Sourcec57b6fb3/CALLBACK3fbe3a9f completed
+ oneCUDAfit65epochs2600updates/BEST1/inner earlystop64,1forecast/9newviews;
+ prior27views carried unchanged. Primary fixed thirds modelednet10 cumulative
+ growth48.26pct/DD15.520 >11.710bound onJan2024..Oct2026 development span:
+ primaryFAILED. FixedhalfLSTM/Ridge50.13growth/DD15.426 is a secondary result,
+ not a selected winner or automatic deployment. No convergence/independent
+ alpha/qualified selection/PaperPnL. All exact CIDs/PIDs/GPUleases closed.
+
+Paths: A/research/current-us19-residual-downside-experts-20261102-v1,
+current-us19-causal-cashstart-replay-20261102-v1,
+current-us19-daily-residual-lstm-sibling-20261102-v1. Claude REVISE and scoped
+Parent dispositions remain at A/review/current-us19-residual-downside-challenge-
+20261102-v1 and current-us19-cashstart-daily-lstm-challenge-20261102-v1.
+No completed fit/forecast/readout is repeated or criteria changed after results.
+
+Adjustment-basis verification CLOSED6GET1POST0retry. Same-anchor PG MODE1
+capture-vintage revision is supported, parser corruption/exact action cause
+is not. No rescale/splice. A/data/current-kis-daily-adjustment-basis-20261102-v1
+Sourcee7c35990/READY a54446ac/CLOSURE28060862 retain evidence and limitations.
+MODP0/1 is unadjusted/adjusted, not a promise of total return or capture vintage.
+Clean adapter successor A/data/current-monthly-endpoint-adapter-maintenance-
+20261102-v1 SOURCE-V3a5cc7b47/NATIVE-V3c5ebc37d fixes all69findings, fullRuff/
+F-E9/compile/two native parity cases PASS; original30files and old failure
+unchanged. No network/market reacquisition was used for lint.
+
+ONE coherent19asset daily-input task is ACTUALLY installed/enabled:
+thericher-data-us19-coherent-daily-20261102-v1, Nov2UTC21:30/start<21:31/
+hard21:45 = KSTNov3 06:30. A/data/current-us19-coherent-future-daily-input-
+20261102-v1 SOURCE9c5ec985/PARENT-ACTIVATION04f71bc2/INDEPENDENT-READBACK.
+Source/native/23mockScheduler/disabled independent full XML+ACL/enable/final
+readback passed.57plannedGET/60max/1POST/0retry, same bounded MODE1 batch and
+overlap checks,2371requiredcells. Newcaller60s token floor only; old300default
+contracts unchanged, same atomic+legacy exclusion/mark preservation. Quiet
+pythonw/no demand/catchup/repetition. Original8PaperTaskXML/ACL/enabled unchanged.
+This is definition readiness, NOT actual capture/DataREADY/PIT/finality/model
+point or order. No manual Task Run or new broker/account/order/private read.
+PC/user session must be available; owned worker reports its own due/failure.
+
+Earlier three distinct studies remain CLOSED:
 - Exposure/downside Source2f4902f6:1CUDAfit256epochs2304updates/BEST256,
  1forecast/9policies27views. Net10growth15.90pct/DD3.585, utilityFAILED against
  aligned exposure/historical controls. Reaching maximum epochs is not convergence.
@@ -137,7 +185,12 @@ fresh runs passed, no bypass/regrade. Ruff and default/research-profile/
 accounting/monitor Compose using .env.example PASS.
 RUNTIME-V2/BROWSER-RESULT retain actual deployment/visual checks.
 Repo tests do not validate external adapters; those retain their own native tests.
+Current integration rechecked exact1423protected source digests, so that full
+authority is REUSED, not rerun. Fresh token/daily serial181PASS, repository
+Ruff and default/research/accounting/monitor Compose PASS; changed emitted
+F821/F822/F823/E9 PASS. Exact packet/native/activation refs are recorded at
+A/verification/current-data-research-maintenance-integration-20261102-v1/RESULT.json.
 
-Operational recovery/exact six readback and bounded Data work are complete;
-verify owned changes, commit/push. Future worker-owned outcomes remain due,
+Operational recovery/readback, lint, basis checks and bounded research complete;
+verify/integrate/commit/push owned work. Future worker-owned outcomes remain due,
 not foreground sleeps or company completion. Continue independent useful work.

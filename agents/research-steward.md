@@ -1,6 +1,20 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-2026-11-02 KST. All numerical workers remain CLOSED. Singer exposure/downside CUDA
+2026-11-02 KST. Residual/downside C1 actual2fits CLOSED_INVALID_UNAVAILABLE,
+not model failure: MLP70epochs210updates/BEST6, no convergence; no-late-seed
+input refusal before any completed cost view. All exact owned processes/
+containers/GPUlease positively closed; actualcontroller17.032s and activeupper
+917.032of2400 retained, never refunded. No old training is repeated.
+Gibbs daily-trained residual LSTM sibling is now CLOSED:1actualCUDAfit,
+65epochs2600updates/BEST1/inner earlystop64,1forecast9newviews/carry27unchanged.
+Sourcec57b6fb3/CALLBACK3fbe3a9f,925.925of2400active; fresh exact CIDs/PIDs/
+lease closure confirmed on resume. Actual fit phase7.658s/optimizer5.260s,
+peak203.5MBallocated209.7MBreserved; small network/data and early stop explain
+short GPU use. No environment/user-app permission hold or convergence claim.
+No completed fit repeated. All current numerical workers CLOSED/no queue.
+Copernicus CPU replay closed27views/0fits,654.135of900active, independent paths.
+
+Prior Singer exposure/downside CUDA
 study also CLOSED:1fit256epochs2304updates/BEST256/MAX_EPOCHS/0retry, actual
 cuda:0/RTX4090/peak95.3MBallocated119.5MBreserved,22.797soptimizer phase.
 Source2f4902f6/callback/verifyc8599736,932.137of2400activeupper, allowned

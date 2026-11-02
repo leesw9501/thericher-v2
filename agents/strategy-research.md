@@ -1,6 +1,20 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Nov1UTC12:30. Maxwell closed turnover-policy kernels; no active Strategy worker.
+2026-11-02 KST. Residual/downside mechanism was consumed by C1 fits, explicit
+cashstart replay and daily-LSTM sibling; all now CLOSED. Primary criteria
+failed for cashstart/LSTM, original C1 stays INVALID due initial input support.
+No original-study rescue, causal architecture attribution or automatic Paper
+point. Claude REVISE and exact Parent dispositions remain under
+A/review/current-us19-residual-downside-challenge-20261102-v1 and
+current-us19-cashstart-daily-lstm-challenge-20261102-v1.
+Primary conceptual sources: https://www.nber.org/papers/w25398 and
+https://www.nber.org/papers/w16601. Broad nonlinear/BAB evidence does not
+replicate a17-stock surviving, long-only price-proxy study. No code/weights added.
+Next source-only proposal: measure whether missing cells are SPY-context or
+symbol-local, then consider symbol-local eligibility rather than a full-universe
+feature hold. No new fit, support change or threshold tuning from this note.
+
+Prior Maxwell turnover-policy kernels CLOSED; no permanent Strategy worker.
 Engine owns final targets/splits/costs/fitting/interpretation, not Strategy.
 A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
 

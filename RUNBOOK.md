@@ -1,5 +1,26 @@
 # Runbook
 
+## Coherent Daily Input One-Shot
+
+ACTUALLY installed/enabled: thericher-data-us19-coherent-daily-20261102-v1,
+Nov2UTC21:30/start<21:31/hard21:45 = KSTNov3 06:30. Quiet pythonw/InteractiveToken,
+PT15M, no demand/catchup/repetition. PC/user session must be available.
+Root D:/thericher-v2/model-artifacts/data/current-us19-coherent-future-daily-input-20261102-v1.
+SOURCE9c5ec985/PARENT-ACTIVATION04f71bc2/INDEPENDENT-READBACK.json, full XML+ACL.
+Do not replay installer, enable again or manually Run merely to inspect.
+It is market-only,57plannedGET/60max/1POST/0retry, one MODE1 bounded capture
+with explicit calendar/overlap consistency for2371required CLOSE cells.
+Raw bytes remain under D:/market_data. It does not create a forecast/order.
+Newcaller60s token floor follows official one/min issuance and synthetic
+cross-process tests; default/frozen old300s callers remain unchanged. One lazy
+client/token is reused for the batch; held/unknown ownership is not age-cleared.
+
+Future exact evidence: root/ACTUAL-ONCE.json, ACTUAL-CLOSED.json,
+actual/RESULT.json and DATAREADY.json. A missing result/Task exit/definition is
+not DataREADY. Validate exact source, attempt/result/closure hashes and positive
+worker/cache closure; retain unknown/PIT/finality/allCA/TR limitations. No retry
+or schedule chain from a partial outcome. Original Paper8tasks unchanged.
+
 ## Korean Local Paper Monitor
 
 Current local URL: http://127.0.0.1:8787. Korean-primary operating view,

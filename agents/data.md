@@ -1,6 +1,34 @@
 # Data Stateboard (시장데이터)
 
-2026-11-02 KST. All Data workers CLOSED. Mendel completed
+2026-11-02 KST. Adjustment-basis package CLOSED at
+A/data/current-kis-daily-adjustment-basis-20261102-v1:6GET1POST0retry/600rows,
+minimumgap2.000238s; fiveworkers/caches closed. Sourcee7c35990/READY a54446ac/
+closure28060862/VERIFIED54be0acc. PG138mismatches reproduced. Exact same-anchor
+old/current MODE1 disagreement supports capture-vintage revision, not parser/
+CSV corruption; exact corporate-action event/TR/allCA/PIT/finality UNKNOWN.
+MODP0/1 official semantics are unadjusted/adjusted; BYMD is reference date,
+not a documented capture-vintage selector. No splice/rescale/rebase.
+
+Ramanujan clean3adapter successor CLOSED at
+A/data/current-monthly-endpoint-adapter-maintenance-20261102-v1:
+SOURCE-V3a5cc7b47/NATIVE-V3c5ebc37d; all69findings fixed/fullRuff/F-E9/compile/
+two paired invented real-producer/parser/features parity passed. Parent full
+Ruff independently passed, no blanket suppressions. All30originalfiles stable,
+3children closed,0network/credentials/acquisition/model/Task/deployment.
+Old e055 code and historical69failure remain unchanged, not retrograded.
+
+Peirce preparation CLOSED; Parent ACTUALLY installed/enabled ONE future coherent
+19asset daily capture at A/data/current-us19-coherent-future-daily-input-
+20261102-v1: Source9c5ec985/READY6841b3e6/PARENT-ACTIVATION04f71bc2.
+Task thericher-data-us19-coherent-daily-20261102-v1 Nov2UTC21:30/start<21:31/
+hard21:45 (KSTNov3 06:30),57plannedGET/60max/1POST/0retry. GUI/CPU native,
+cross-process token tests,23Scheduler mocks, COM preview and complete disabled/
+enabled/independent XML+ACL readbacks PASS. Quiet pythonw/no demand/catchup/
+repeat. Newcaller60s floor only, original300s contracts unchanged. Original
+Paper8definitions unchanged. No actual capture/DataREADY/modelpoint yet;
+no manual Task Run or account/order/private access. Worker owns due/failure.
+
+Prior Mendel acquisition completed:
 A/data/current-monthly-ridge-required-endpoint-acquisition-20261102-v1:
 Sourcee055ec80/READY6b8ca48b/CLOSUREaf337858,17GET1POST0retry/17acceptedpages/
 1700returnedrows/17required20251030 MODE1 endpoints. Minimumgap2.0004s;
