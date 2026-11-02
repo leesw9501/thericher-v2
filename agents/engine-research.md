@@ -1,28 +1,59 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-## Active Short-Horizon Campaign
+## Current Results And Next
 
-Owner McClintock, agent01a19c9a-e10d-7be2-a551-14096fecdd03; exclusive
-A/research/current-short-horizon-joint-development-20261102-v1. Actual market
-worker began14:32:42UTC,3CPU Ridge fits completed; TCN CUDA started14:32:49,
-checkpoint updates/GPU41pct observed. Final readout/closure not yet attested.
-SOURCE-r2.json6a0c2d21/CONTRACT-r2f3ccca66/nativebed5a5b5; first native failure
-and scoped recovery remain preserved, no market-fit retry. Data/Strategy exact
-callbacks adopted directly. H3 primary, H1/H5 diagnostic, no winner swap.
-New stock-local61-close support; decisionclose d/entryproxyclose d+1/exitclose
-d+1+h. FIT2015..21/INNER2022..23/reusedDEV2024..Oct16 with actual-target purge.
-Maximum3multioutputRidge+1intradayRidge+1causalTCN fits;5forecasts/one joint
-readout/daily81+intraday18=99views/zero retries. Costs0/10/20bps PER SIDE.
-Fixed thirds combinedRidge/TCN/trend is primary, not hindsight ensemble choice.
-New net10H3 research screen: growth above aligned fullEW, DD<=1.5*fullEW DD;
-report matched eligibility, gross/exposure/turnover/cash reference separately.
-This is not the old11.71bound or a Paper permission gate. No independent alpha.
-Caps5400activeSUM/10800elapsed, TCN<=256epochs/20000updates/1200optimizersec,
-patience24/LRpatience8/best INNER checkpoint including epoch0. Native real
-producer/parser/optimizer/checkpoint/forecast/book must precede market fits.
-Reserved minute dates are loader-excluded; missing held marks never become0.
-Claude GO_WITH_LIMITS and exact Parent dispositions:
-A/review/current-short-horizon-joint-challenge-20261102-v1/response.json.
+McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03 is current Engine and sole
+GPU coordinator. All numerical campaigns below COMPLETE; no running training
+claim. Parent requested one next distinct cost/churn hypothesis SOURCE-ONLY,
+not another completed fit, result-driven secondary switch or current point swap.
+
+A/research/current-short-horizon-joint-development-20261102-v1:
+SOURCE-r2.json6a0c2d21/CONTRACTf3ccca66/nativebed5a5b5/
+AUDITED-CALLBACK-r3.json29e5ed00.5fits/5forecasts/99views/0retry.
+CPU raw40/indicator15/combined55 multioutputRidge, intraday Ridge, causal TCN.
+TCN26epochs1456updates/BEST2/657.347optimizersec/1203.756workersec;
+26epochs includes INNER earlystop24, not convergence. All exact resources closed.
+H3primaryfixedthirdsnet10growth64.454pct/DD12.337/gross.679 versus
+fullEW95.322/DD18.367/gross1: growthFAIL/riskPASS. Lower exposure != alpha.
+Actual activeupper3149.792/5400,elapsed2780.447/10800; old failures preserved.
+
+A/research/current-short-horizon-selection-versus-exposure-20261102-v1:
+Source9552e128/contract124f7b79,0fits/restores/newforecasts/1readout21views/
+0retry COMPLETE. Primary mean-percentile(COMBO/TCN/trend60) top4 at fixedgross1:
+net10growth149.176pct/DD26.914/turnover170.294, primaryscreenPASS.
+EWsameexantegross56.092/DD11.457/gross.679, not a future-realized gross control.
+Rank4entry/rank8exit buffer secondary125.66/DD28.06, no secondary winner switch.
+305.875activeupper/1200,1101.693elapsed/3600, all exact owners closed.
+Parent selected this separately named original primary as preferred NEXT
+prospective Paper input. Adaptive seen-DEV, not independent alpha or current
+H20/GOOGL/oldfixedthirds replacement.
+
+A/research/current-h3-ohlc-learning-to-rank-20261103-v1:
+Source79928fd1/contract281c7689/native9f83435d/RESULTd04b84c7.
+2newfits/2forecasts/15views/1readout/0retry COMPLETE.155price-only OHLC+daily
+features, within-date RankNet CPU plus cross-stock Transformer17tokens.
+CPU15epochs50000sampleupdates/BEST0/cap; GPU26epochs1404updates/BEST2/
+7.880optimizerseconds/peak107375104allocated125829120reserved. No convergence.
+PrimaryGPUnet10growth63.766/DD31.512 failed both growth/risk versus existing
+meanrank149.176/DD26.914. CPU160.304/DD31.315 fails risk; four-expert secondary
+143.207/DD29.373 is not a rescue or new point. Original controls bitwise same.
+Activeupper1862.262/7200,elapsed1310.967/14400, all exact PIDs/CIDs/lease closed.
+No old checkpoint restore/forward or completed model refit.
+
+All use FIT2015..21/INNER22..23/reusedDEV24..Oct16, actual target interval purge,
+daily decisionclose d/entryproxyclose d+1/exitclose e+h(H3primary).
+Costs0/10/20bps PER SIDE. Current-listing/conditional/revised MODE1 price proxy,
+not TR/PIT/finality, independent alpha or broker PnL. Reserved minute outcomes
+Oct30/Nov2..4 loader-excluded, not new evaluation/checkpoint selection data.
+Cash is a growth reference, risk screen uses aligned risky EW, not zero-DD cash.
+
+Data61local Source218141be/feature2e033f37/OHLCed401bc2 are qualified for named
+development scope. Volume unqualified, no made-up OHLCV. Strategy next point
+CLOCK-r2 Source08380014/CALLBACKaa757847 is SOURCE_ONLY/NO_POINT, actual fresh
+DataREADY remains unknown. Qualified native CASH_ELAPSED_H3 source fulltested
+19873PASS/26skip/1426pins44c218f3, not installed or financial admission.
+Parent owns operational recovery, shared MD/Git. Historical studies below stay
+closed; a new campaign needs a distinct frozen hypothesis and finite caps.
 
 Primary horizon clarified Nov2: intraday plus1-to-several-session short swings.
 Next NEW family should choose a finite same-day/1/3/5-session axis, align the

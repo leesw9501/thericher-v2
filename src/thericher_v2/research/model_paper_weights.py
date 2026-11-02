@@ -45,10 +45,14 @@ MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE = "model-weights-nas-cash-5session-20
 MODEL_PAPER_WEIGHTS_ELAPSED_H1_PROFILE = "model-weights-nas-elapsed-h1-prior-close-2026-v1"
 MODEL_PAPER_WEIGHTS_ELAPSED_H3_PROFILE = "model-weights-nas-elapsed-h3-prior-close-2026-v1"
 MODEL_PAPER_WEIGHTS_ELAPSED_H5_PROFILE = "model-weights-nas-elapsed-h5-prior-close-2026-v1"
+MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE = (
+    "model-weights-nas-cash-elapsed-h3-prior-close-2026-v1"
+)
 _ELAPSED_WEIGHT_PROFILES = {
     MODEL_PAPER_WEIGHTS_ELAPSED_H1_PROFILE: MODEL_PAPER_ELAPSED_H1_PROFILE,
     MODEL_PAPER_WEIGHTS_ELAPSED_H3_PROFILE: MODEL_PAPER_ELAPSED_H3_PROFILE,
     MODEL_PAPER_WEIGHTS_ELAPSED_H5_PROFILE: MODEL_PAPER_ELAPSED_H5_PROFILE,
+    MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE: MODEL_PAPER_ELAPSED_H3_PROFILE,
 }
 MODEL_PAPER_WEIGHTS_SCHEMA = "model-paper-target-weight-input-v1"
 WEIGHT_UNITS = "fraction_of_one_original_basis_gross_cohort_ceiling"
@@ -59,6 +63,10 @@ EARLY_EXIT_EXECUTION_BASIS = (
 ELAPSED_EXECUTION_BASIS = (
     "SOURCE_ONLY_NON_PARITY_replay_close_e_to_close_e_plus_h_"
     "not_fresh_quote_fills_or_native_near_close_admission"
+)
+CASH_ELAPSED_H3_EXECUTION_BASIS = (
+    "NON_PARITY_replay_close_e_to_close_e_plus_3_"
+    "native_fresh_quote_gross_cost_not_fees_settlement_or_replay_fill_equivalence"
 )
 
 
@@ -150,6 +158,19 @@ def model_weight_bytes_ref(rows):
 
 def model_weight_mask_ref(rows):
     return "sha256:" + hashlib.sha256(_canonical([row.feature_known for row in rows])).hexdigest()
+
+
+def append_derived_cash_h3_row(stock_rows):
+    """Preserve the full17 axis; round only its exact residual to binary64 once."""
+    _need(type(stock_rows) is tuple and len(stock_rows) == 17, "weights_cash_h3_axis_invalid")
+    for slot, row in enumerate(stock_rows):
+        _need(type(row) is ModelPaperWeightRow, "weights_cash_h3_axis_invalid")
+        row.__post_init__()
+        _need(row.slot == slot and row.route != "CASH", "weights_cash_h3_axis_invalid")
+    mass = sum((Fraction(row.weight) for row in stock_rows), Fraction())
+    _need(0 <= mass <= 1, "weights_cash_h3_stock_mass_invalid")
+    cash = Decimal(repr(float(1 - mass)))
+    return (*stock_rows, ModelPaperWeightRow(17, "CASH", True, cash))
 
 
 @dataclass(frozen=True, slots=True)
@@ -268,7 +289,16 @@ class ModelPaperWeightsMetadata:
 
 def _validate_cash_profile(metadata, profile):
     slots = tuple(row.slot for row in metadata.rows if row.route == "CASH")
-    if profile == MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE:
+    if profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE:
+        _need(len(metadata.rows) == 18 and slots == (17,), "weights_cash_h3_axis_invalid")
+        derived = append_derived_cash_h3_row(metadata.rows[:17])
+        _need(
+            metadata.rows == derived
+            and struct.pack("<d", float(metadata.rows[-1].weight))
+            == struct.pack("<d", float(derived[-1].weight)),
+            "weights_cash_h3_residual_invalid",
+        )
+    elif profile == MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE:
         _need(
             len(metadata.rows) > 1 and slots == (len(metadata.rows) - 1,),
             "weights_cash_axis_invalid",
@@ -370,7 +400,9 @@ def prepare_model_paper_weights_input(
         exit_session,
         profile=profile,
         execution_basis=(
-            EARLY_EXIT_EXECUTION_BASIS
+            CASH_ELAPSED_H3_EXECUTION_BASIS
+            if profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
+            else EARLY_EXIT_EXECUTION_BASIS
             if profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
             else ELAPSED_EXECUTION_BASIS
             if profile in _ELAPSED_WEIGHT_PROFILES
@@ -385,7 +417,9 @@ def validate_model_paper_weights_input(value):
     early = value.profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
     elapsed = value.profile in _ELAPSED_WEIGHT_PROFILES
     basis = (
-        EARLY_EXIT_EXECUTION_BASIS
+        CASH_ELAPSED_H3_EXECUTION_BASIS
+        if value.profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
+        else EARLY_EXIT_EXECUTION_BASIS
         if early
         else ELAPSED_EXECUTION_BASIS
         if elapsed
@@ -419,6 +453,35 @@ def validate_model_paper_weights_input(value):
         "weights_target_composition_changed",
     )
     return value
+
+
+@dataclass(frozen=True, slots=True)
+class ModelPaperCashH3Window:
+    entry_start: datetime
+    entry_end: datetime
+    exit_start: datetime
+    exit_end: datetime
+
+
+def model_paper_cash_h3_window(value, *, operational_session=None):
+    """Fresh-order bands only; never an expiry rule for exact reconciliation."""
+    validate_model_paper_weights_input(value)
+    _need(value.profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE, "weights_profile_invalid")
+    session = value.exit_session if operational_session is None else operational_session
+    _need(type(session) is SessionWindow, "weights_sessions_invalid")
+    official = us_equity_2026_session(session.open_ts.astimezone(US_EQUITY_EASTERN).date())
+    _need(
+        official is not None and official.window == session
+        and session.open_ts >= value.exit_session.open_ts,
+        "weights_sessions_invalid",
+    )
+    return ModelPaperCashH3Window(
+        value.entry_session.close_ts - timedelta(minutes=5),
+        value.entry_session.close_ts,
+        (session.close_ts - timedelta(minutes=15)
+         if session == value.exit_session else session.open_ts),
+        session.close_ts,
+    )
 
 
 @dataclass(frozen=True, slots=True)
@@ -506,7 +569,9 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
         and document["weight_units"] == WEIGHT_UNITS
         and document["execution_basis"]
         == (
-            EARLY_EXIT_EXECUTION_BASIS
+            CASH_ELAPSED_H3_EXECUTION_BASIS
+            if document["profile"] == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
+            else EARLY_EXIT_EXECUTION_BASIS
             if document["profile"] == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
             else ELAPSED_EXECUTION_BASIS
             if document["profile"] in _ELAPSED_WEIGHT_PROFILES

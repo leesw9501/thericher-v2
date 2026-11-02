@@ -1,21 +1,44 @@
 # Data Stateboard (시장데이터)
 
-## Active Short-Horizon Input
+## Current Ownership And Ready Inputs
 
-Owner Bacon, agent01a19c87-81b6-73d3-99de-1105a6bed567. Nov2 parallel
-implementation approved. Exclusive A/data/current-short-horizon-causal-input-
-20261102-v1 and M/research_inputs/current-short-horizon-causal-input-20261102-v1.
-Consumer McClintock's new H1/H3/H5 elapsed-close campaign; Gauss owns features.
-Preserve61-close stock-local+SPY input support separately from matured labels,
-calendar and conditional provenance. Retained25-session minute contract keeps
-reserved Oct30/Nov2..4 unreadable. No HTTP/credentials/fits or old-source edits.
-Publication COMPLETE, source218141be/schema0490e234/CALLBACK.json.31invented
-producer/parser/causality/calendar/crossOS cases PASS, fullRuff/F-E9/consumer
-readback/mask rederivation PASS. INPUT_ONLY/no fits or payoff readout. Daily
-DEV701dates/11917local input slots supported; label maturity remains separate.
-All exact publication owners absent;135.051activeupper/943.607elapsed within
-900/2700caps. Direct callbacks delivered Engine/Strategy, no source/payload redo.
-Today's installed coherent-daily worker remains separately owned/due below.
+Bacon agent01a19c87-81b6-73d3-99de-1105a6bed567 owns SOURCE-ONLY
+A/data/current-next-session-ohlc-consumer-20261103-v1.
+600activeSUM/2400elapsed,0marketprojection/fit/forecast/HTTP/Task change.
+Consumer: future rankpoint/one native Paper dispatcher using actual new coherent
+DataREADY and same-capture canonical OHLC refs. Actual future hashes UNKNOWN.
+Use exact integer UTC fractional clocks, native invented producer/parser/
+consumer and emitted Ruff/F-E9. No reacquisition or whole-second floor.
+COMPLETE Sourcef00de41b/CALLBACK62aed5f0,24native checks/fullRuff/F-E9/syntax
+PASS. All6ownedprocess identities closed,128.341/600activeupper,
+744.725/2400elapsed. Exact direct callback delivered Engine/Gauss.0actual
+futuremarketreads/projections/features/fits/forecasts/HTTP; hashes remain null.
+
+Completed price OHLC recovery:
+A/data/current-us19-ohlc-input-recovery-20261103-v1, Sourceed401bc2/
+schema1efaf3e6/manifestf5dc904c at M/research_inputs/same-root/project1/MANIFEST.json.
+19assets/2965dates/56325known per OHLC/10missing/838conditional.
+OHLCPanelReader.load returns panel/manifest, values[N,19,5]; source volume
+retained but qualified volume mask false: units/adjustment UNKNOWN.
+No shares/dollarliquidity/qualified volume claim. Original abd8beab whole-second
+timestamp failure remains failed; corrected integer UTC clock matches56325cells.
+One recovery projection/0retry/all publication owners closed, no network/models.
+
+Causal61-close support COMPLETE:
+A/data/current-short-horizon-causal-input-20261102-v1, Source218141be/
+schema0490e234,31native cases/26Parent refs PASS, DEV701dates11917inputslots.
+Per-stock+SPY history separated from matured label support; QQQ non-gating,
+no missing mark imputation or global all18/253close veto. Conditional/revised/
+current-listing non-PIT limitations remain, not a company-wide research ban.
+Retained minute25-session input excludes reserved Oct30/Nov2..4 outcomes.
+
+Existing coherent19daily Task Source9c5ec985 already installed Nov2UTC21:30/
+start<21:31/hard21:45,57plannedGET/60max/1POST/0retry. Actual DataREADY remains
+UNKNOWN before its owned capture. Quiet pythonw/no demand/catchup/repeat;
+no manual Run. Original NAS8 collector/evaluation contracts remain unchanged.
+Market calls only; Execution owns accounts/orders. Never KIS_LIVE_*.
+Parent owns shared MD/Git. Historical acquisition/basis notes below do not
+override these current source/ownership facts.
 
 2026-11-02 KST. Adjustment-basis package CLOSED at
 A/data/current-kis-daily-adjustment-basis-20261102-v1:6GET1POST0retry/600rows,

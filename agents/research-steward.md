@@ -1,20 +1,36 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-## Active Resource Coordination
+## Current Resource Coordination
 
-McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03 coordinates the NEW
-current-short-horizon-joint-development-20261102-v1 campaign. Actual TCN CUDA
-fit began14:32:49UTC under SOURCE-r2.json6a0c2d21; owned market controller48260,
-worker9436 plus GPU child/start/CID in market/tcn-output/START.json. Checkpoint
-updates/GPU41pct observed, final fit/readout/closure unknown. Actual native
-r2 closed positively; first native failure/recovery retained, no market retry.
-Recheck exact current owned leases/PID births before another job. Nov2UTC14:14 host
-snapshot showed22369MiB free; this is not a future capacity/ownership grant.
-Five total marketfits/99views/zero retries,5400activeSUM/10800elapsed, including
-native/failures/I/O/cleanup; separate actual optimizer/queue/review timing.
-Keep previous completed training closed, user apps running, desktop headroom
-and independent Paper priority. Source/schema/native freeze, not occupancy,
-determines readiness. Parent owns Git, Data/Strategy their disjoint roots.
+Nov3 KST / Nov2UTC. McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03
+coordinates new ready campaigns; ALL completed numerical workers are closed.
+No MD/queued dispatch is evidence of current GPU training. No duplicate fits.
+
+Joint Source6a0c2d21/AUDITED-CALLBACK-r3.json29e5ed00:5fits99views COMPLETE.
+TCN26epochs1456updates/BEST2,657.347optimizerseconds/1203.756worker seconds,
+activeupper3149.792/5400,elapsed2780.447/10800. All exact PIDs/CIDs/lease closed.
+Separate selection/exposure diagnostic Source9552e128:0fit21views COMPLETE,
+305.875activeupper/1200,1101.693elapsed/3600. No CUDA repeated.
+
+New OHLCranking Source79928fd1/CALLBACK.json:2fits15views COMPLETE,
+CPU50000sampleupdates/BEST0, GPU26epochs1404updates/BEST2/7.880optimizerseconds/
+10.476workerseconds,107375104allocated125829120reserved bytes.
+Measured native+market lifecycleSUM62.262s; preparation/audit worker upper1800s
+retained gives1862.262/7200activeupper; elapsed1310.967/14400.
+Exact native+market controller/interpreter/CID/CLI/lease closures positive.
+Small data/model and early stopping explain short GPU use, not environment or
+user-app permission hold. Primary failed, no automatic point replacement.
+Original99/21 outputs and all old model/debit records unchanged.
+
+Next source-only distinct cost/churn hypothesis requested. Measure actual
+headroom before a ready frozen numerical dispatch; first useful project GPU
+priority and concurrent useful work remain approved. Never kill user apps or
+reclaim unknown live leases by age. Keep independent Paper priority and qualified
+physical actor compatibility; do not infer a global GPU permission wait from
+one frozen capsule's admission. Actual financial custody readers scope actual
+private writers, not every market-data/research process.
+
+Historical resource records below remain closed, not queued/running work.
 
 2026-11-02 KST. Residual/downside C1 actual2fits CLOSED_INVALID_UNAVAILABLE,
 not model failure: MLP70epochs210updates/BEST6, no convergence; no-late-seed

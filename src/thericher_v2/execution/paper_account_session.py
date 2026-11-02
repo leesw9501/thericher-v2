@@ -51,6 +51,7 @@ class PaperAccountCohort:
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
                 core.StockCycleProfile.MODEL_WEIGHTS_US_H5,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
+                core.StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3,
             }
             and type(self.mode) is str
             and self.mode in {"entry", "exit", "recovery"}
@@ -127,6 +128,7 @@ def run_native_account_session(
     monotonic: Callable,
     first_failure_sink: Callable | None = None,
     max_native_calls: int = 32,
+    configure_cash_h3: Callable | None = None,
 ) -> dict:
     """Skip only exact unreserved native prefix steps, then yield first leg.
 
@@ -215,6 +217,9 @@ def run_native_account_session(
             clock=clock, execute=True, first_failure_sink=first_failure_sink,
             **({"configure_early_exit": configure_early_exit}
                if cohort.profile is core.StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT
+               else {}),
+            **({"configure_cash_h3": configure_cash_h3}
+               if cohort.profile is core.StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3
                else {}),
         )
         guard()

@@ -1,55 +1,56 @@
 # Execution Stateboard (모의투자 실행)
 
-## Active Opt-In Short-Horizon Source
+## Current Ownership
 
-Pasteur agent01a19c87-8295-79d1-bf4f-2ab7b2ef06ca owns ONLY new elapsedH1/H3/H5
-weight/horizon source and focused tests, plus A/execution/current-short-horizon-
-weight-readiness-20261102-v1. Parent owns integration/deployment/shared MD/Git.
-New entrysession e/exit e+h semantics must not alias old5-inclusive/20 profiles.
-Research proxy closes are not native fills; explicit actual near-close window
-must match the proposal contract. Source/codec preparation COMPLETE,
-READINESS.json;491changed-path serial PASS with fresh short scratch root,
-48new focused cases/fullRuff/F-E9 PASS. Old5/20 golden bytes unchanged.
-New DTOs intentionally remain REJECTED by unchanged native enum/account/worker
-allowlists: no near-close runtime admission or deployment claim. Parent fresh
-full integration verification is running. Long-root synthetic staging failure
-remains failed; short-root reproducer isolates it without unrelated production
-edits. No installed task/exit/financial-source change.
-All original owned opportunities/readers below remain untouched. No private
-reader/broker/Task invocation is assigned to this source-preparation worker.
+Nov3 KST / Nov2UTC. Pasteur agent01a19c87-8295-79d1-bf4f-2ab7b2ef06ca owns
+SOURCE-ONLY operational lineage repair at
+A/execution/current-paper-operational-lineage-repair-20261103-v1,
+1800activeSUM/5400elapsed. Parent owns shared MD/Git/actual adoption.
+No private/credential/broker/scheduler effects assigned before qualification.
+ONE original B/10/costs/losses/pending/F9/all exits; never KIS_LIVE_*.
 
-Nov2 KST / Nov1 UTC. Parent owns actual deployment/shared MD/Git.
-A=D:/thericher-v2/model-artifacts. No operator decision pending.
-ONE original B/10/costs/losses/pending/F9/all original exits; never KIS_LIVE_*,
-reset, profit refill, unknown-request substitution or foreign inventory adoption.
+H20 entry failed manual_lineage_unbound/ValueError before native control.
+Owned reader15:35 CONTROL/NO_NATIVE_CONTROL; submit/acceptance/fill/owned
+inventory remain UNKNOWN. A/execution/current-h20-entry-runtime-diagnosis-
+20261103-v1 FIRST-CAUSEa5c3ee3f/16inventedtests/public-binding audit.
+Actual qualified operational launch hash differs from old financial launch.
+Fix by source-qualified operational input to unchanged manual actor/argv/PID/
+birth guard, not bypass or fabricated identity. Old financial/state/one-shot
+namespaces immutable. Recorded observer restoration is not fresh custody proof.
 
-## Current Repair
+Successor must exercise real actor producer -> scheduled-owner ABI -> manual
+guard -> NativeBridge on invented fixtures and reproduce old-fault negative
+control. Phase from exact argv/control, not folder name. Prepare bounded future
+GOOGL entry plus original GOOGL/H20 exit amendments/full XML/ACL/nullSDDL rollback,
+active-owner skip, no Run/new clocks/catchup/demand/replay. Consumed H20entry/
+reader unchanged. Exact GOOGL reader compatibility required.
+Claude GO_WITH_LIMITS at A/review/current-paper-operational-lineage-repair-
+challenge-20261103-v1/response.json. Actual successor not yet deployed.
 
-Korean web be48f29e is ACTUALLY running at http://127.0.0.1:8787.
-It has no private custody/credentials/broker path. New typed web descriptor
-e07a569f qualifies only its exact image/argv/bootstrap/security/physical mounts.
-Old admission source did not recognize this image. Entry and reader successors
-are SOURCE/NATIVE qualified, not proof of future effect-time admission.
+## Completed Native Source
 
-A/execution/current-paper-monitor-admission-repair-20261102-v1:
-ADOPTION-READINESS2e23c159,53focusedtests/92entryABI/real5phase metadata
-admissions/invented native producer->reader. Actual private/broker reads0.
-Original45financialfiles and actual-once/journal paths remain unchanged.
-New operational entry79a43070/54f61fe0 and readerac733e04/61673bc5 do NOT
-replace original financial H20c42867fa/a4a7ceb1 and GOOGL85de6f24/0703fbc7.
+New distinct CASH_ELAPSED_H3/native source COMPLETE:
+A/execution/current-short-horizon-native-cash-h3-20261102-v1/FINAL-CALLBACK.json.
+Full17 binary64 stock rows unchanged; terminal cash derived once, NYS/AMS
+positive mass remains skipped/unspent, not CASH/renormalized NAS exposure.
+Actual parser/codec/configure and after-pacing pre-wire window checks passed.
+BUY final5min e, first SELL final15min e+3, later owned recovery retained.
+Allcash/unsupported-only creates no client/intent/order; original unknown
+requests reconciled first, never replaced or released from missing evidence.
+Old5/20/noncash goldens unchanged. Not installed/deployed.
+370changedserial+3recoveryPASS; fresh Parent19873fullPASS26knownskip/
+8workers[19899]/1426pins44c218f3/managedcleanup/Ruff/4ComposePASS.
+Seven repo source/test edits frozen for Parent integration. Source authority
+does not prove actual financial admission, fill, fees or net PnL.
 
-Parent A/execution/current-paper-monitor-parent-adoption-20261102-v1:
-adopt.ps1 2dff7837 passed34mockedcases and exact6native memory previews.
-Actual update partially completed: BOTH exits amended/enabled/exact ACL.
-H20 reader was left disabled after explicit-SDDL UpdateOnly added only an embedded
-SecurityDescriptor matching the unchanged ACL. Other reader/entries were untouched
-at that failed attempt; the completed recovery below supersedes that state.
-The consumed attempt/RECOVERY-REQUIRED stays retained, not success.
-Parent scoped recover.ps1 SHA48b15e9d passed7mockedcases and ACTUALLY repaired
-four remaining definitions, readers before entries, with null SDDL and original
-ACL. RECOVERED.json/RECOVERY-READBACK.json verify exact SIX enabled/full XML/ACL;
-original failed attempt stays failed/historical. No Task Run, credential/private
-read or broker call. Never rerun consumed original/recovery Apply.
+## Historical Installation Context
+
+Old monitor-admission source79a43070/54f61fe0 and readersac733e04/61673bc5
+were installed with exact six-definition/nullSDDL/XML/ACL recovery. That result
+proves installation only, not a successful native entry.45originalfinancial
+files stayed unchanged. Never rerun consumed Apply/entry/reader.
+Monitor http://127.0.0.1:8787/imagebe48f29e local only, no private custody.
+Older opportunity definitions/evidence below remain context, not fresh results.
 
 ## Exact Owned Opportunities
 

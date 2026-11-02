@@ -1,24 +1,30 @@
 # Strategy Research Stateboard (전략 탐색)
 
-## Active Price-Only Kernels
+## Current Source Handoff
 
-Owner Gauss, agent01a19c9a-e031-7792-bc5d-9beb84c33471, exclusive
-A/research/current-short-horizon-feature-kernels-20261102-v1. Consumer is
-McClintock's NEW short-horizon campaign, not any completed20-session result.
-Implement fixed61-close raw40/indicator/combined, sequence20x4+terminal
-indicators, trend60/reversal5 and intraday pure helpers. No invented high/low/
-volume or changed labels/book. Freeze RSI/EMA seeds, zero-denominator behavior,
-key order/source/schema and prefix tests. No market payloads/fits/readout.
-First kernel package COMPLETE/FROZEN:Source2e033f37/CALLBACK2ff5fdf2,
-15native cases/fullRuff/F-E9/compile/19exactrefs PASS; Parent freshly checked
-all19refs. Worker closed, no market reads or trained-model claim.
-New exclusive source-only next package:
-A/research/current-short-horizon-next-session-point-preparation-20261102-v1.
-Consumer is one future inert H3 fixed-thirds point from actual safe Engine
-checkpoints and actual sealed Nov2 coherent61-close input, never an Oct16 retag.
-Prepare exact actual APIs/codec on invented input, no live weights/market
-forward/publication or schedule. Future source/input bindings remain unknown
-until positive readiness. Separate900activeSUM/2700elapsed/zero market numerics.
+Gauss agent01a19c9a-e031-7792-bc5d-9beb84c33471 owns
+A/research/current-h3-rank-ensemble-next-session-point-preparation-20261103-v1.
+Preferred separate H3 point: exact original COMBO/TCN/trend60 mean-percentile
+top4 policy from Source9552e128, full17 original routes/weights.
+CLOCK-r2 Source08380014/CALLBACKaa757847 qualifies exact integer UTC fractional
+capture/publication clocks,6native tests/Ruff/F-E9/compile PASS, worker closed.
+Original source/debits and earlier fixed-thirds707d121b remain unchanged.
+Actual fresh DATAREADY/input hash is UNKNOWN;0marketrestores/forwards/points/
+schedules. No Oct16 retag, fake hash, stale splice or wrong venue fallback.
+
+Consume qualified CASH_ELAPSED_H3 API95cd2733 and actual safe checkpoint/predictor
+APIs. Unsupported NYS/AMS mass remains skipped, not redistributed or folded
+into derived CASH. No automatic model/financial identity swap. Future inference
+requires positive actual coherent Nov2 DataREADY; entryNov3/elapsed exitNov6
+must match official sessions and actual near-close native admission.
+Data owns same-capture future OHLC source consumer; exchange exact schema
+directly. Parent owns shared MD/Git and actual activation.
+
+Pure feature kernels COMPLETE/FROZEN:
+A/research/current-short-horizon-feature-kernels-20261102-v1,
+Source2e033f37/CALLBACK2ff5fdf2,15native cases/19Parent refs/fullRuff/F-E9PASS.
+RAW40/IND15/COMBINED55/sequence20x4/intraday pure price-only. Do not redo.
+Old notes below are historical proposal context; current outcomes in HANDOFF.
 
 Operator horizon Nov2: prioritize intraday and one-to-several-session short
 swings. Proposals need deployable short-horizon entry/hold/exit mechanisms and

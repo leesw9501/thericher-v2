@@ -487,6 +487,8 @@ class RequestBudget:
         self.starts = []
         self.early_exit_window = None
         self.early_exit_side = None
+        self.cash_h3_input = None
+        self.cash_h3_side = None
         self.token = KisPaperMarketDataTokenStartGate(
             control_root=control_root,
             minimum_request_interval_seconds=60,
@@ -514,7 +516,40 @@ class RequestBudget:
         self.early_exit_window = window
         self.early_exit_side = side
 
+    def configure_cash_h3(self, value, side, operational_session=None):
+        from thericher_v2.research.model_paper_weights import model_paper_cash_h3_window
+
+        model_paper_cash_h3_window(value)
+        _require(side in {"buy", "sell"}, "cash_h3_side_invalid")
+        _require(self.cash_h3_input in (None, value), "cash_h3_input_changed")
+        _require(self.cash_h3_side in (None, side), "cash_h3_side_changed")
+        self.cash_h3_input, self.cash_h3_side = value, side
+
     def _execution_window_check(self, request):
+        value = getattr(self, "cash_h3_input", None)
+        if value is not None and request.method == "POST":
+            from thericher_v2.data.us_equity_session import (
+                US_EQUITY_EASTERN,
+                us_equity_2026_session,
+            )
+            from thericher_v2.research.model_paper_weights import model_paper_cash_h3_window
+
+            at = readonly.require_utc(self.clock())
+            tr_id = request.headers.get("tr_id")
+            if tr_id == canary.KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
+                window = model_paper_cash_h3_window(value)
+                _require(self.cash_h3_side == "buy"
+                         and window.entry_start <= at < window.entry_end,
+                         "cash_h3_fresh_buy_closed")
+            elif tr_id == canary.KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID:
+                official = us_equity_2026_session(at.astimezone(US_EQUITY_EASTERN).date())
+                _require(official is not None
+                         and official.window.open_ts >= value.exit_session.open_ts,
+                         "cash_h3_fresh_sell_closed")
+                window = model_paper_cash_h3_window(value, operational_session=official.window)
+                _require(self.cash_h3_side == "sell"
+                         and window.exit_start <= at < window.exit_end,
+                         "cash_h3_fresh_sell_closed")
         window = getattr(self, "early_exit_window", None)
         if window is None:
             return
@@ -726,6 +761,7 @@ def run(
                 StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
                 StockCycleProfile.MODEL_WEIGHTS_US_H5,
                 StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
+                StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3,
             }
             or not callable(target_loader)
             or any(
@@ -742,6 +778,8 @@ def run(
     limits = RequestBudget(control_root=CONTROL, clock=clock)
     if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT:
         injected["configure_early_exit"] = limits.configure_early_exit
+    if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3:
+        injected["configure_cash_h3"] = limits.configure_cash_h3
     paths = native_paths()
     try:
         result = _categorical(
@@ -880,6 +918,9 @@ def run_account_session(
     def configure(value, side, operational_session):
         resources().configure_early_exit(value, side, operational_session)
 
+    def configure_cash(value, side, operational_session):
+        resources().configure_cash_h3(value, side, operational_session)
+
     result = run_native_account_session(
         cohort=cohort, paths=native_paths() if paths is None else paths,
         expected_account_ref=budget._digest(
@@ -888,6 +929,7 @@ def run_account_session(
         target_loader=target_loader, client_factory=client, configure_early_exit=configure,
         admit=admission, deadline=deadline, clock=clock, monotonic=monotonic,
         first_failure_sink=first_failure_sink, max_native_calls=max_native_calls,
+        configure_cash_h3=configure_cash,
     )
     result.update(
         calls=dict.fromkeys(("token_posts", "get_requests", "buy_posts", "sell_posts",

@@ -2,40 +2,46 @@
 
 ## Active Short-Horizon Development
 
-Research source A/research/current-short-horizon-joint-development-20261102-v1,
-SOURCE-r2.json6a0c2d21/CONTRACT-r2f3ccca66/nativebed5a5b5. Actual market worker
-started Nov2UTC14:32:42;3CPUfits completed, one TCN CUDA active from14:32:49.
-Inspect exact terminal callback/closure before any resume. Do not rerun a
-completed fit, consumed market dispatch or clear an unknown/live GPU lease.
-Data source218141be at A/data/current-short-horizon-causal-input-20261102-v1;
-feature source2e033f37 at A/research/current-short-horizon-feature-kernels-
-20261102-v1. No market cache acquisition is required for this development.
-Future point707d121b is SOURCE_ONLY/NO_POINT, with sparse/noncash DTO
-incompatibility. Next source fix explicitly represents terminal cash; never
-renormalize stock weights, invent a venue or treat source readiness as native
-admission. New native cash-H3 is not installed and requires its own qualification.
-Today's original H20/GOOGL commands and exits remain unchanged below.
+Current time Nov3 KST / Nov2UTC. Completed numerical jobs MUST NOT be restarted:
+- A/research/current-short-horizon-joint-development-20261102-v1:
+ SOURCE-r2.json6a0c2d21/AUDITED-CALLBACK-r3.json29e5ed00,5fits99views.
+- A/research/current-short-horizon-selection-versus-exposure-20261102-v1:
+ Source9552e128,0fit21views COMPLETE. Mean-rank top4 is the separately named
+ preferred prospective candidate, not an installed H20/GOOGL replacement.
+- A/research/current-h3-ohlc-learning-to-rank-20261103-v1:
+ Source79928fd1,2fits15views COMPLETE; GPUprimary growth/riskfailed.
+All exact owned numerical resources closed. No convergence/independent alpha.
 
-## Coherent Daily Input One-Shot
+Qualified source-only CASH_ELAPSED_H3/native profile and full17 derived residual
+are in A/execution/current-short-horizon-native-cash-h3-20261102-v1/
+FINAL-CALLBACK.json/API.json. Fresh BUY final5min e; first SELL final15min e+3,
+later official-session recovery retained. Unsupported routes stay skipped mass,
+never renormalized. Source qualified is not deployment/financial admission.
+Parent full A/verification/current-cash-h3-native-integration-20261103-v1/
+RESULT.json:1426sourcepins44c218f3/370serial+3checks/19873fullPASS26knownskip/
+8workers[19899]/native+helper0/managedcleanup/Ruff/4Compose(.env.example)PASS.
 
-ACTUALLY installed/enabled: thericher-data-us19-coherent-daily-20261102-v1,
-Nov2UTC21:30/start<21:31/hard21:45 = KSTNov3 06:30. Quiet pythonw/InteractiveToken,
-PT15M, no demand/catchup/repetition. PC/user session must be available.
-Root D:/thericher-v2/model-artifacts/data/current-us19-coherent-future-daily-input-20261102-v1.
-SOURCE9c5ec985/PARENT-ACTIVATION04f71bc2/INDEPENDENT-READBACK.json, full XML+ACL.
-Do not replay installer, enable again or manually Run merely to inspect.
-It is market-only,57plannedGET/60max/1POST/0retry, one MODE1 bounded capture
-with explicit calendar/overlap consistency for2371required CLOSE cells.
-Raw bytes remain under D:/market_data. It does not create a forecast/order.
-Newcaller60s token floor follows official one/min issuance and synthetic
-cross-process tests; default/frozen old300s callers remain unchanged. One lazy
-client/token is reused for the batch; held/unknown ownership is not age-cleared.
+Future preferred point source:
+A/research/current-h3-rank-ensemble-next-session-point-preparation-20261103-v1/
+clock-r2, Source08380014/CALLBACKaa757847.6native tests/exact fractional UTC
+clocks PASS. NO actual fresh input hash, model inference, point or installation.
+Coherent19daily task Source9c5ec985 already installed Nov2UTC21:30/start<21:31/
+hard21:45. Never Run manually or retag an Oct16/Oct30 point. Read actual future
+DataREADY only through exact source-qualified native reader.
+DataOHLC Sourceed401bc2/manifestf5dc904c price-ready, volume-unqualified.
+Source-only future OHLC consumer is independently Data-owned.
 
-Future exact evidence: root/ACTUAL-ONCE.json, ACTUAL-CLOSED.json,
-actual/RESULT.json and DATAREADY.json. A missing result/Task exit/definition is
-not DataREADY. Validate exact source, attempt/result/closure hashes and positive
-worker/cache closure; retain unknown/PIT/finality/allCA/TR limitations. No retry
-or schedule chain from a partial outcome. Original Paper8tasks unchanged.
+H20 actual15:15 failed manual_lineage_unbound before native control; owned15:35
+reader CONTROL/NO_NATIVE_CONTROL, financial categories UNKNOWN.
+A/execution/current-h20-entry-runtime-diagnosis-20261103-v1 contains exact public
+first-cause/native evidence, no replay instruction.
+SOURCE-ONLY next operational repair:
+A/execution/current-paper-operational-lineage-repair-20261103-v1.
+Do not run any new amendment until qualified current-source/native readiness
+and exact future XML/ACL rollback reviewed. Old operational artifacts and consumed
+H20 entry/reader stay immutable. Existing future GOOGL20:55 plus GOOGL/H20 exits
+must retain original financial source/state, identity, quote/recovery/budget risk.
+Historical installation commands below do not become current recovery commands.
 
 ## Korean Local Paper Monitor
 
