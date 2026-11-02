@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov2UTC18:40 integration.
+2026-11-03 KST / Nov2UTC19:20 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -116,6 +116,17 @@ All14exactPIDs/5CIDs/lease positively closed,955.960/2400activeSUMupper,
 2941.677/7200elapsed at audit. Initial native unsupported predict keyword
 failure preserved; safe same-checkpoint completion did NOT repeat that fit.
 Current frozen three-expert prospective publisher is NOT automatically swapped.
+Cost-margin PairLogit numerical campaign COMPLETE at
+current-h3-cost-margin-pairlogit-20261103-v1, Source7167a0d4/contract18ae2ce1/
+market/RESULT.json6066f4fd.1GPUmarketfit/1forecast/sixnewviews/zero retry,
+six old controls carried unchanged. Net10growth186.001pct exceeds185.478,
+butDD30.669 andturnover189.026 fail frozen conjunction. No rescue/adoption.
+65iterations evaluated, INNER best index0 means ONE trained tree, not an
+untrained zero fallback;0.962optimizerseconds. Native actual155CSV/parser/
+weightedPool/checkpoint/forecast/book and17negative/sensitivity checks PASS.
+Market43.922controllerseconds/worker0/ownleaseabsent; final resource/debit audit
+owned by Engine. Original18:42:06.7396187UTC/2400SUM7200elapsed caps unchanged.
+No current training claim; no completed model repeated or prospective swap.
 
 Late-day reversal COMPLETE at A/research/current-nas8-preclose-reversal-
 development-20261103-v1, Source32c67f20/CONTRACT-r2 444e1c64.
@@ -153,7 +164,14 @@ safe restores/zero fit/readout/retry. Actual new DataREADY and sealed point
 remain UNKNOWN. Nine native producer/DTO/seal cases and23mocked installer
 assertions PASS; Parent full native XML/UTC/ACL readback PASS. Initial creation
 failure and independent reader's lexical XML/ACL mismatch remain failed,
-not retrospectively graded PASS. Seven old definitions unchanged. Same-user
+not retrospectively graded PASS. Seven old definitions unchanged. Separate
+Data typed readback r2 FINAL-CALLBACK84e6a913/EVIDENCEbdd8d070 retains full-XML
+FAIL(first differing node SecurityDescriptor); actual full ACL/clocks/source/
+state/old seven definitions PASS,34native tests. One actual publisher query,
+two attempt markers(first pre-query). Do not infer all other XML nodes equal
+from its shifted difference list. Parent installer separately validated actual
+GetSecurityDescriptor and excluded supersedable registration-SDDL metadata;
+its prior scoped readback is distinct, not a retrospective audit PASS. Same-user
 trusted source scope, not an OS sandbox denying file access. Claude's REVISE
 clock objection was rejected using actual UTC; accepted tests/limits retained.
 
@@ -162,18 +180,35 @@ preparation-20261103-v1 has two invented Docker process/restart proofs, but
 old transport-r1 used an incorrect dictionary SDK metadata ABI. New actual
 producer string ABI consumer is producer-contract-r2, Source d39a63d9/
 FINAL.json c83f33bc; actual producer AST -> seal -> strict consumer -> native
-codec fixture PASS, seven negatives deny. Corrected Docker transport and new
-matching actual-owner guard/context are NOT yet fully qualified or installed.
-Beauvoir owns concrete construction at
-A/execution/current-h3-matching-owner-construction-20261103-v1:
-unchanged existing guard factories, new matching source/control/registry,
-SAME original physical bank/gate/emergency/token/journals, old cohorts intact.
-Do not repoint a frozen root or call a stub guard proof. Parent chose this
-smallest path after Claude GO_WITH_LIMITS at A/review/current-h3-account-owner-
-registration-challenge-20261103-v1/response.json. Only a concrete construction
-failure may justify the narrow same-native-core exclusion-adapter alternative.
-Fresh point and effect-time relevant ownership/risk still required; no global
-data/research hold or human approval invented for this technical gap.
+codec fixture PASS, seven negatives deny. New matching unchanged-guard/native
+restart preparation COMPLETE at current-h3-matching-owner-construction-
+20261103-v1, a5/host/SOURCE404fdec9/a5/RESULT3e3f6eb6/CALLBACK.json:
+two independent invented Docker processes, same persisted bank/pending arguments,
+restart zero fresh-point loads/BUY posts, nine guard negatives deny. Real
+guard/evaluators, invented external OS census, no actual private/broker/Task.
+Fresh factory instances per wake fix the a4 test's stale closed-visit reuse;
+a4 remains failed and is NOT an unsupported-factory finding. Alternative B is
+NOT needed. Original physical bank/gate/private-mount template preserved in
+process; actual financial admission/point unknown, not installable yet.
+
+Actual-point-required production renderer COMPLETE at
+A/execution/current-h3-finite-native-release-preparation-20261103-v1,
+Source44958ea3/smoke3RESULTf5b0510d. Exact original PREPARED/CONTRACT/PARENT-TRUE
+refs derive owner inputs; missing actual POINT/SEAL returns INCOMPLETE with
+zero artifacts. New source/control/release/plan only; no Task installation,
+private bank/credentials/broker or synthetic admission in production. Exact
+actual publisher/Data/model/seal/clock binding required, not fake future hashes.
+Keep SAME original bank/gate/emergency/token/journals/old cohorts and original
+exit duties; future H3 entryNov3UTC20:55/exitNov6UTC20:45 is only a proposal.
+Current owner/unknown-request/quote/orderability/risk/observer checks remain at
+effects. Rearm/token code is implemented, but full production-native/quiet
+scheduled-owner/observer/second-exit qualification is not complete. Beauvoir
+owns that concrete package at current-h3-finite-native-runtime-qualification-
+20261103-v1,1200SUM3600elapsed: invented custody/broker, actual unchanged
+factories/WinPID/Job/Docker, network-none, no actual Task/private/credentials.
+Disabled release is not installable or financial proof.
+Claude GO_WITH_LIMITS at A/review/current-h3-account-owner-registration-
+challenge-20261103-v1/response.json. No human-permission/global hold.
 Half-adjustment diagnostic COMPLETE0fits/3views/0retry,
 CALLBACKe81f313b. Net10growth146.410pct<149.176FAIL,DD26.535PASS/turnover99.439PASS.
 17max/15.55mean holdings; continuous-positive tail699sessions including tiny
@@ -200,10 +235,26 @@ inferred. Original F9 UNKNOWN-HELD reservation remains unchanged. No replay.
 Public diagnostic post-admission-diagnostic-r1/CONCLUSION.json461da43b is
 INDETERMINATE: retained actor hashes lack enough exact source/mount context.
 Unknown actual private writers still deny that read, not other lanes.
-Pasteur owns source-only retention.py/native proof at
-A/execution/current-f9-offline-reader-evidence-retention-20261103-v1:
-persist UNQUALIFIED categorical diagnostics before a tail exception; never turn
-failed admission/stability/closure into a qualified private conclusion.
+Retention.py fix COMPLETE at A/execution/current-f9-offline-reader-evidence-
+retention-20261103-v1, SOURCE-FINAL-r1 e5ace913/CALLBACK6b278671:17Parentserial/
+RuffPASS, all35native evidence pins unchanged/three invented real-parser cases.
+It persists UNQUALIFIED diagnostics before tail exceptions. New one-public-
+census diagnosis Source978d186b/RESULTa0a6cada passed current relevant-writer
+admission; historical unknown actor is NOT retrospectively classified.
+
+A separately frozen NEW one-read scope was ACTUALLY consumed successfully:
+A/execution/current-f9-current-binding-retained-read-20261103-v1,
+Source7899e6c2/Parentrelease62bd2731/native9a4cbfa2/
+FINAL-CALLBACK.json0c14b3b6/actual-output/QUALIFIED-RESULT.jsona7ad07e6.
+Offline binding only: account-basis/input-policy/original-request/primary join
+yes, original broker-ID absent, evidence-changed no. One guest/three fresh
+positive admissions/22distinctJobs joined-closed-exit0/exactCIDabsent/stable
+membership+fileidentity+mtime+bytes. No HTTP/credentials/Task/private writes.
+Current env/broker account/holdings/fill/terminal/fees/netPnL NOT observed.
+F9 remains UNKNOWN-HELD, reservation NOT released. Missing broker-ID is not
+proof of no order. Source controls unchanged; old once remains WITHHELD.
+Whole emitted runtime F/E9 and new launch Ruff PASS; inherited/style-only
+helper findings are not misreported as a full external Ruff PASS.
 
 Codex automation thericher-1 is ACTUALLY saved for Nov3KST06:52, existing chat,
 RRULE:FREQ=DAILY;COUNT=1;BYHOUR=6;BYMINUTE=52;BYSECOND=0. No follow-up chain.
@@ -230,6 +281,10 @@ them, financial admission or economics. Source milestones8f2b0321/9bc509a7 pushe
 Fresh material recovery authority current-paper-lineage-recovery-integration-
 20261103-v1/RESULT.json:1426pins768dbc73/19873PASS26knownskip/400.11s/
 8createdworkers[19899]/native+helper0/managedcleanup/Ruff4Compose(.env.example).
+Latest docs/external-only integration rechecked ALL1426protected digests with
+zero mismatch, reused that full authority, and ran17Parent focused retention
+tests plus actual new native/reader proofs. Repo Ruff/4Compose/diffcheck PASS.
+External inherited/style-only lint limitations above are not hidden by this.
 
 Korean bilingual monitor ACTUALLY deployed at http://127.0.0.1:8787,
 imagebe48f29e, loopback only. runtimeRO/emergencyRW/public-summaryRO, no private

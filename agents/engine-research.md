@@ -20,7 +20,25 @@ Late-day reversal COMPLETE at current-nas8-preclose-reversal-development-
 Net10primary-4.924pct/DD5.077, fullEW-5.894/DD6.035; relativePASS but gross
 primary-0.249pct, unpromising standalone, no Paper selection. Conditional
 canonical timestamp proxy is not provider stamp/fill proof. All resources closed.
-Next distinct mechanism may be source-prepared, not a silent new market trial.
+New current-h3-cost-margin-pairlogit-20261103-v1 numerical work is COMPLETE:
+charged origin Nov2UTC18:42:06.7396187, prep600SUM1800elapsed and TOTAL2400SUM/
+7200elapsed including preparation/failures. One future fit/forecast/readout,
+six new cost views,0marketretry; Parent released exact Source7167a0d4/
+contract18ae2ce1/native3986da0e. RESULT6066f4fd net10growth186.001PASS versus
+185.478,DD30.669FAIL/turnover189.026FAIL. Primary conjunction rejected, no
+secondary rescue/publisher change. Actual GPU65evaluatediterations/BESTindex0
+ONEtrainedtree,0.962optimizerseconds/bestrestored/nozero fallback. Worker0/
+leaseabsent43.922controllersec; final aggregate audit pending, no active
+training inferred. Next OOF-gate mechanism is source-only proposal, not a new
+family dispatch. Explicit PairLogit
+pairs_weight uses max(relativeH3gap-.002,0), per-date original strict-pair total;
+zero dates skip loss only, no changed input eligibility. FIT/INNER-only weights,
+ESS/maxshare diagnostic, same155features/model/seed/splits. Primary growth>
+185.478445995,DD<=1.5*18.372760012,turnover<185.995826906; no secondary rescue.
+Heuristic, not stateful cost optimizer or independent alpha. Real weighted GPU
+Pool/checkpoint/forecast/native producer-consumer smoke before market. Stop by
+min(frozen expiry,20:45UTC), no GOOGL opportunity collision. Claude GO_WITH_LIMITS
+at A/review/current-f9-retention-and-cost-margin-challenge-20261103-v1/response.json.
 Completed fits below MUST NOT be repeated. Numerical closure is not convergence.
 
 McClintock agent01a19c9a-e10d-7be2-a551-14096fecdd03 is current Engine and sole

@@ -16,7 +16,17 @@ retained; correction restored SAME safe CBM without refitting. All14exactPIDs/
 Four-expert adaptive DEV primary passed; no automatic point/deployment claim.
 Late-day reversal0fit9views COMPLETE, no GPU required/all6PIDs+lease closed,
 303.289/600activeSUM. Relative pass but absolute loss, no standalone adoption.
-Next useful campaign requires a distinct frozen mechanism; no utilization filler.
+New numerical work current-h3-cost-margin-pairlogit-20261103-v1 COMPLETE:
+origin18:42:06.7396187UTC:prep600SUM1800elapsed/TOTAL2400SUM7200elapsed inclprep/
+failures. Actual1GPUfit/forecast/sixviews,0marketretry,Source7167a0d4/RESULT6066f4fd.
+65evaluatediterations/BESTindex0=1trainedtree,0.962optimizersec, actualGPUforecast;
+primary risk+turnoverfailed, noadoption.43.922controllersec/worker0/leaseabsent;
+final all-resource/debit audit owned by Engine, no current training claim.
+FIT/INNER-only fixed20bps pair weights, not a new seed/grid or old fit repeat.
+All owned work must close by min(frozen expiry,20:45UTC), before original
+GOOGL20:55. Fresh headroom/lease proof before useful native/market dispatch.
+Next OOF-gate source proposal only, no new numerical family released. No dummy
+utilization job or current-training inference from this MD.
 
 Joint Source6a0c2d21/AUDITED-CALLBACK-r3.json29e5ed00:5fits99views COMPLETE.
 TCN26epochs1456updates/BEST2,657.347optimizerseconds/1203.756worker seconds,

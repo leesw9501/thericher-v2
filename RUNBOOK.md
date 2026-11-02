@@ -28,16 +28,27 @@ Corrected H3 point consumer/source-only native account preparation:
 D:/thericher-v2/model-artifacts/execution/current-h3-rank-account-owner-join-preparation-20261103-v1/producer-contract-r2/FINAL.json
 SHA256 c83f33bcca1c7cced699cf99e57a73270547de7db8580b7a4a350f408303ce04.
 SDK metadata are strings, not dictionaries. Old transport-r1 does not prove
-the corrected chain. New matching unchanged-guard construction is owned at
-current-h3-matching-owner-construction-20261103-v1; NOT financial deployment.
+the corrected chain. New matching unchanged-guard construction COMPLETE at
+current-h3-matching-owner-construction-20261103-v1/a5,Source404fdec9/native3e3f6eb6,
+twoinventedDockerprocesses/nine denial controls/restart0newBUY. Actual-point-
+required renderer is separately owned at current-h3-finite-native-release-
+preparation-20261103-v1; NOT financial deployment. Never run the a5 fixture as
+production or treat a retained stale return as a new guest response.
 No actual private/broker effects during source preparation. Only actual fresh
 sealed input and qualified current-owner/native/risk path may finalize future
 Nov3UTC20:55 entry/Nov6UTC20:45 original-H3 exit proposal.
 
-F9 current-binding offline read was consumed WITHHELD on unknown post-admission
-actor. Never replay it or infer private facts/reservation release. Retention
-bug source fix/native proof at current-f9-offline-reader-evidence-retention-
-20261103-v1 does not authorize a new read or make old evidence qualified.
+Old F9 offline read remains consumed WITHHELD, never replay/regrade. Retention
+fix e5ace913/17Parenttests is complete. A separately scoped NEW retained read
+ACTUALLY consumed PASS at current-f9-current-binding-retained-read-20261103-v1:
+Source7899e6c2/release62bd2731/QUALIFIED-RESULTa7ad07e6/CALLBACK0c14b3b6.
+Oneguest/3freshadmissions/22Jobsclosed/CIDabsent/stable offline binding only.
+Original broker-ID absent, financial outcome remains UNKNOWN-HELD; no HTTP/
+fresh broker account/fill/terminal/reservationrelease. Do NOT rerun this scope.
+New H3 renderer Source44958ea3/nativef5b0510d is source-qualified/incomplete
+on actual point+seal; production-native runtime qualification is separately
+owned at current-h3-finite-native-runtime-qualification-20261103-v1. No H3
+financial Task installed yet; do not run an invented fixture as production.
 
 ## Active Short-Horizon Development
 
@@ -57,6 +68,10 @@ Current time Nov3 KST / Nov2UTC. Completed numerical jobs MUST NOT be restarted:
 - A/research/current-nas8-preclose-reversal-development-20261103-v1:
  Source32c67f20/CONTRACT-r2 444e1c64,0fits9views COMPLETE. Net10-4.924pct,
  relativePASS/absoluteLOSS, no standalone adoption. No GPU needed.
+- A/research/current-h3-cost-margin-pairlogit-20261103-v1:
+ Source7167a0d4/RESULT6066f4fd,1GPUfit1forecast6newviews0retry COMPLETE.
+ Net10growth186.001/DD30.669/turnover189.026, primaryrisk+turnoverFAIL.
+ BESTindex0 means1trainedtree, not untrained zero; no repeat/adoption.
 All exact owned numerical resources closed. No convergence/independent alpha.
 
 Qualified source-only CASH_ELAPSED_H3/native profile and full17 derived residual

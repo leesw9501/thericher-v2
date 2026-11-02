@@ -14,8 +14,12 @@ Same-user trusted-source contract, not an OS-denial sandbox. Original old
 financial definitions/three-expert models unchanged. New four-expert research
 passes reused DEV, but is not automatically swapped into this frozen publisher.
 Actual producer SDK metadata strings now join strict consumer Source d39a63d9;
-same-process real AST/seal/native-codec smoke passes. Corrected native Docker
-and guard/context construction are separately Beauvoir-owned, not complete.
+same-process real AST/seal/native-codec smoke passes. Matching unchanged guard/
+Docker restart COMPLETE a5Source404fdec9/native3e3f6eb6/nine denials. Renderer
+Source44958ea3/nativef5b0510d derives original owner inputs, actualpoint/seal
+unknown. Beauvoir owns separate production-native host/observer/secondexit
+qualification, not complete/installed. Gauss source scope closed; future
+publisher is an owned Windows duty, not evidence of a permanent LLM daemon.
 
 Gauss agent01a19c9a-e031-7792-bc5d-9beb84c33471 owns
 A/research/current-h3-rank-ensemble-next-session-point-preparation-20261103-v1.

@@ -76,7 +76,11 @@ distinguish attempted submit/acceptance/fill/owned reconciliation/PnL unknown.
  5CIDs/lease closed; best5trainedtrees/0.935optimizerseconds. Never repeat it
  for logging/GPU use. Current three-expert future point remains unchanged.
  Late-day reversal0fit9views COMPLETE:net10-4.924pct,relativePASS but absolute
- loss; no standalone adoption. Next distinct source proposal, no silent fits.
+ loss; no standalone adoption. New cost-margin Source7167a0d4/contract18ae2ce1
+ numerics COMPLETE1GPUfit/1forecast/6newviews/0retry, RESULT6066f4fd:
+ net10growth186.001/DD30.669/turnover189.026, risk+turnoverFAIL. No rescue,
+ point swap or completed fit repeat. Final closure audit/source-only next OOF
+ proposal owned by Engine; no next campaign numerical dispatch is implied.
 - Execution/Parent: operational lineage repair ACTUALLY adopted. CashElapsedH3
  source/native path qualified/full-tested but NOT deployed. Gauss finite-native
  5cases and Pasteur same-HOST SDK87files/38nativecases are COMPLETE, not Docker
@@ -89,18 +93,29 @@ distinguish attempted submit/acceptance/fill/owned reconciliation/PnL unknown.
 - Execution/Beauvoir: corrected real producer SDK-string consumer Source d39a63d9
  at current-h3-rank-account-owner-join-preparation-20261103-v1/producer-contract-r2
  passes actual producer AST/seal/native-codec smoke and seven negatives. Old
- transport-r1's dictionary ABI is NOT proof for this successor. Build actual
+ transport-r1's dictionary ABI is NOT proof for this successor. The actual
  unchanged-factory matching guard/control/registry/context and corrected Docker
- restart chain at current-h3-matching-owner-construction-20261103-v1, SAME
- original bank/gate/emergency/token/journals/old cohorts. No stub guard, root
- repoint, placeholder point, private/broker/Task effects in source preparation.
+ restart chain are COMPLETE at current-h3-matching-owner-construction-20261103-v1,
+ a5Source404fdec9/native3e3f6eb6/twoinventedprocesses/nine denials, restart0fresh
+ loads/BUYposts. a4 reused closed context failure does not justify alternativeB.
+ Actual-point-required renderer current-h3-finite-native-release-preparation-
+ 20261103-v1 COMPLETE Source44958ea3/nativef5b0510d, exact original financial
+ refs derive owner inputs; actual missing point/seal yields INCOMPLETE/0artifacts.
+ Now finish production-native host/observer/rearm/secondexit qualification at
+ current-h3-finite-native-runtime-qualification-20261103-v1,1200SUM3600elapsed.
+ SAME bank/gate/emergency/token/journals/oldcohorts; invented custody/broker,
+ actual factories/WinPID/Job/Docker, no actualTask/private/credentials/network.
+ Still not installed/admitted; no placeholderpoint/fixture-as-production.
  Claude GO_WITH_LIMITS at current-h3-account-owner-registration-challenge-
  20261103-v1; narrow same-core fallback only after concrete factory failure.
-- Execution/Pasteur: source-only F9 reader evidence-retention fix/native proof
- at current-f9-offline-reader-evidence-retention-20261103-v1. One current-binding
- offline read was consumed WITHHELD after unknown actor post-admission; lost
- in-memory result is UNKNOWN, not current private facts or released reservation.
- Do not replay consumed reader or repeat old broker history without new scope.
+- Execution/Pasteur: F9 retention fix COMPLETE SOURCE-FINAL-r1 e5ace913/
+ CALLBACK6b278671,17ParentserialPASS/Ruff/three unchanged native cases. NEW
+ current-f9-current-binding-retained-read-20261103-v1 ACTUALLY consumed PASS,
+ Source7899e6c2/release62bd2731/QUALIFIED-RESULTa7ad07e6/CALLBACK0c14b3b6.
+ Oneguest/3freshadmissions/22Jobsclosed/CIDabsent/stable exact offline binding.
+ Original request/primary join yes, broker-IDabsent/evidencechangedno. F9 still
+ UNKNOWN-HELD, no reservationrelease or broker/fill/terminal proof. Old failed
+ once remains WITHHELD. No further read/history replay from this completion.
 
 Primary new strategies target intraday and1-to-several-session swings, initial
 same-day/H1/H3/H5 finite axes, not hard5-day liquidation. H20 remains legacy

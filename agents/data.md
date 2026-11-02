@@ -11,6 +11,12 @@ A/data/current-preclose-reversal-input-readiness-20261103-v1/r2 was consumed
 once by closed0fit9view study. Canonical15:00signal/15:32entry/15:55exit bucket
 proxies have unknown provider START/END stamp, not qualified execution prices.
 Reserved Oct30/Nov2..4 NAS8 observations remain excluded from model selection.
+Separate publisher readback r2 CLOSED at current-h3-publisher-independent-
+native-readback-20261103-v1/r2, FINAL-CALLBACK84e6a913/EVIDENCEbdd8d070:
+34nativePASS, fullXMLFAIL(firstSecurityDescriptor), fullactualACL/clocks/source/
+state/old7PASS. One publisher query, no Task mutation. Failure is retained,
+not an inferred runtime failure or company hold. Data LLM scope closed;
+coherent19daily21:30 and NAS8 owned opportunities remain scheduled duties.
 
 Bacon agent01a19c87-81b6-73d3-99de-1105a6bed567 owns SOURCE-ONLY
 A/data/current-next-session-ohlc-consumer-20261103-v1.
