@@ -33,8 +33,8 @@ pauses before unchanged admission, exact owned closure precedes restoration.
 Invented observer census/broker, actual unchanged factories/WinPID/Job/Docker;
 no actual OS-origin/private/financial proof.58mocked real-helper tests qualify
 new Nov3/Nov6 observer policy Source3eab4e6d/PREPAREDab12f814.
-Parent completed actual preparer current-h3-actual-preparer-r3-20261103-v1:
-SOURCE1b63eecd/READYd40941b9/API12ed5492/smoke62cad197. Byte-exact qualified
+Parent completed current preparer current-h3-actual-preparer-r5-20261103-v1:
+SOURCE47d78f26/READY9b215476/API21820873/smoke7336d793. Byte-exact qualified
 quiet GUI->console runtime8a903160/rearm87e949fe/new source-bound policies/
 XML-I-S-B; cold actual SDK/strict producer/codec+6denials and emitted binding
 audit/F-E9/syntaxPASS. No fit/inference repeat. Missingactualpoint/seal ->
@@ -42,6 +42,12 @@ INCOMPLETE/0artifacts. SAME original bank/gate/emergency/token/journals/oldcohor
 Future H3 entryNov3UTC20:55/exitNov6UTC20:45 NOT installed. Use new API after
 actual source-bound point, then original effect-time owner/account/basis/F9/
 observer/token/quote/orderability/risk admission. No fixture-as-production.
+R3 missing owner helpers/Task fields and R4 COM XML encoding error are retained.
+R5 source-bound owner/taskcontract c8d18dd2/4eed6386, full native memory COM
+definitions/UTF16LE+BOM bytes; exact GUI/console PID/birth/argv/parent/hash roles.
+Separate mock-fixture Source3638688c/VALIDATEDf0402901 passes2phase/14denials+
+14unchanged Python-validator checks, not actual OS-origin/runtime admission.
+Two initial fixture-scope failures retained. Three denials have category only.
 Claude GO_WITH_LIMITS in HANDOFF; no stub guard or frozen-root repoint.
 Immutable same-HOST SDK937f4a5d/runtime8a833b3d/87files38tests is COMPLETE.
 Parent owns shared MD/Git/actual adoption; new H3 financial task NOT installed.
@@ -53,6 +59,14 @@ not cryptographic OS-origin (Operational logging disabled) or financial effect.
 Paper subject CONFIG-ONCE consumed at current-paper-subject-preflight-20261103-v1/
 RESULT58ebb110: original config subject matches/stable/3inventedtests/0HTTP/orders/
 privatebankreads. No live values materialized or secrets retained; do not replay.
+GOOGL Task query20:57 Ready/last20:55/nextnull, no submit/fill inference. Keep
+owned21:05 reader/21:16 publication. Four-expert contract sidecar guard failed
+beforeparse; Mencius repair CLOSED WITHHELD Source9713fc53/CALLBACKd31f2721,
+checksumfixed but SciPyimportguardfailed/0parse. Parent follow-up CALLBACK6bea7626
+also CLOSED WITHHELD beforeparse: bootstrap guard/output-name errors.0models/
+market/private/Task/broker; no native-success or all-actor timing claim. Defer
+further helper chaining, do not replay. Current3publisher/bank/pending/exits
+unchanged. V2 public dry-run21:06 UNKNOWN/NOT_OBSERVED/writes0, no private read.
 
 H20 entry failed manual_lineage_unbound/ValueError before native control.
 Owned reader15:35 CONTROL/NO_NATIVE_CONTROL; submit/acceptance/fill/owned

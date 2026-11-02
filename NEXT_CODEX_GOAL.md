@@ -114,10 +114,14 @@ distinguish attempted submit/acceptance/fill/owned reconciliation/PnL unknown.
  invented source-bound proxy, not actual OS proof.58real-helper mocked tests
  qualify new Nov3/Nov6 observer policies Source3eab4e6d/PREPAREDab12f814.
  Parent actual preparer binding COMPLETE:
- A/execution/current-h3-actual-preparer-r3-20261103-v1,
- SOURCE1b63eecd/READYd40941b9/API12ed5492. USE this additive API, not old44958.
+ A/execution/current-h3-actual-preparer-r5-20261103-v1,
+ SOURCE47d78f26/READY9b215476/API21820873. USE this API, not old44958/R3/R4.
  Exact qualified quiet runtime/rearm/newpolicy/XML-I-S-B, actual cold strict
- SDK/codec smoke62cad197+6denials and emitted byte/policy/source audit PASS.
+ SDK/codec smoke7336d793+6denials and emitted byte/policy/source audit PASS.
+ Added missing owner helpers/full Task fields; exact pinned GUI-console role
+ chain and UTF16LE+BOM native COM XML. Mock-fixture Source3638688c/VALIDATED
+ f0402901:2phase/14denials plus14unchanged Python-validator checks. No actual
+ OS-origin/admission from mocks; initial fixture/XML failures retained.
  No Task installed; actual missing point/seal returnsINCOMPLETE/0artifacts.
  After actual DataREADY/point, validate exact refs and finalize only through
  this API and original bank/gate/token/journals/oldcohorts/effect-time controls.
@@ -146,6 +150,14 @@ exact immutable path/hash), marker-present honest-host provenance only, not OS
 origin/fill. Paper-only subject CONFIG-ONCE consumed at current-paper-subject-
 preflight-20261103-v1/RESULT58ebb110: original subject match/stable/0HTTP/orders;
 do not replay. Actual GOOGL financial effects still UNKNOWN.
+Task query20:57 Ready/last20:55/nextnull is NOT a financial outcome; preserve
+21:05 reader/21:16 public duties. Four-expert financial sidecars are CLOSED
+WITHHELD, not deployment readiness: initial checksum guard, then scientific
+import guard, then bootstrap/attempt-output collision;0successfulparse/models/
+market/private/Task/broker. Exact pointers/failures in HANDOFF, no scope replay.
+DEFER further sidecar chaining; prioritize actual current3 input/Paper result.
+Original r3 inference/clock proof remains separate; no current publisher swap.
+Public V2 dry-run21:06 returned UNKNOWN/NOT_OBSERVED/writes0, not financial proof.
 
 ## Integration And Continuation
 

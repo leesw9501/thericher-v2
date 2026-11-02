@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov2UTC20:38 integration.
+2026-11-03 KST / Nov2UTC21:06 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
@@ -227,13 +227,28 @@ release-dataSOURCE7979cac9 passes58checks/20denials using real helper parser,
 all Scheduler calls mocked. Nov3/Nov6 namespaces unconsumed; old GOOGL unchanged.
 
 Parent ACTUALLY connected the preparer at
-A/execution/current-h3-actual-preparer-r3-20261103-v1:
-SOURCE1b63eecd/READYd40941b9/API12ed5492/smoke1RESULT62cad197.
+A/execution/current-h3-actual-preparer-r5-20261103-v1:
+SOURCE47d78f26/READY9b215476/API21820873/smoke1RESULT7336d793.
 Byte-exact qualified native launch8a903160 (including quiet GUI shim),
 rearm87e949fe, new source-bound observer refs, emitted XML-I-S-B. Real saved
 producer bytes -> strict consumer -> cold SDK/native codec PASS plus6denials;
 exact emitted bytes/policy/XML/source audit PASS/F-E9/syntax.0newmodelinference.
-USE THIS additive API, not old44958 renderer with stale runtime/observer dates.
+USE THIS additive API, not old44958 or incomplete R3/R4 renderers.
+Parent found R3 omitted owner_library.ps1/task_contract.ps1 and required Task
+plan fields. R4 added source-bound helpers/full native COM definitions and
+exact GUIredirector->baseGUI->consoleredirector->baseconsole PID/birth/argv/
+parent/runtime-pin proof, unchanged strict Python owner validator. R4 XML bytes
+then failed because COM's UTF16 declaration was written as UTF8. R5 corrects
+UTF16LE+BOM; native memory COM Definition/ValidateDefinition, XML byte parsing,
+full disabled/no-catchup settings and strict cold bootstrap now PASS.
+Owner helpers c8d18dd2/taskcontract4eed6386 are byte-identical to qualified R4
+logic. Separate mock-fixture repair Source3638688c/VALIDATEDf0402901 proves
+2phase positives/14denials plus14 unchanged Python-validator checks, no actual
+registered Task/CIM/effects. Initial two fixture failures captured a production
+local variable instead of the fixture process map; retained, not regraded.
+Three denials retain RuntimeException only, not an inferred specific reason.
+Real caller SID exercises unchanged identity check; process paths/PIDs invented.
+No actual OS-origin/financial admission or installation proof from these mocks.
 Actual missing point/seal returnsINCOMPLETE/0artifacts. No financial Task created
 or enabled. Exact actual publisher/Data/model/seal/clock binding remains required.
 Keep SAME original bank/gate/emergency/token/journals/old cohorts/all original
@@ -244,6 +259,8 @@ Claude GO_WITH_LIMITS at A/review/current-h3-account-owner-registration-
 challenge-20261103-v1/response.json. No human-permission/global hold.
 Ordering repair challenge separately GO_WITH_LIMITS at
 A/review/current-h3-observer-order-repair-challenge-20261103-v1/response.json.
+Owner bootstrap challenge GO_WITH_LIMITS at
+A/review/current-h3-owner-bootstrap-repair-challenge-20261103-v1/response.json.
 
 Observer19:35 outcome independently reader-validated complete/read_only/
 submitfalse: A/execution/kis-paper-snapshot-observer/
@@ -257,6 +274,30 @@ A/execution/current-paper-subject-preflight-20261103-v1/RESULT.json58ebb110:
 subject matches original contract, file stable,3invented tests PASS,0HTTP/orders/
 privatebankreads. Scoped loader materializes only approved Paper fields; no live
 values/secret output/persistence. Do not replay CONFIG-ONCE. Broker state unknown.
+Source-safe GOOGL Task query20:57: Ready/last20:55/nextnull; not interpreted as
+submit/fill/native closure. Original21:05 reader/21:16 public duties unchanged.
+
+Separate four-expert financial-contract sidecar CLOSED WITHHELD at
+A/execution/current-four-expert-h3-contract-20261103-v1/CALLBACK.json:
+consumer checksum read of pinned SCORES.npz denied by its local guard before
+DTO parse;0successfulparse/negativegroups/models, aggregate SUM incomplete.
+No source/model/Paper promotion. Read-guard repair at
+current-four-expert-h3-contract-read-guard-repair-20261103-v1 also CLOSED
+WITHHELD, Source9713fc53/CALLBACKd31f2721: exact SCORES checksum now passes,
+but a broad private-substring guard denied SciPy dependency import.0parse/
+negativegroups/models; recorded actors absent/current-root census0, initial
+PID roster incomplete, no complete independent all-actor timing claim.
+Parent scientific-import follow-up also CLOSED WITHHELD at
+current-four-expert-h3-scientific-import-repair-20261103-v1/CALLBACK6bea7626:
+two bootstrap guard failures, then occupied RETRY2 artifact name before
+bootstrap,0parse/models/market/private/Task/broker. Do not replay these scopes.
+Defer this non-critical financial adapter; original r3 inference/clock proof
+remains valid but is NOT financial-contract readiness. Reuse existing qualified
+consumer/scoped clients and explicit attempt namespaces in a future successor,
+not blanket private-substring guards over trusted scientific imports or another
+helper chain. Current THREE-expert publisher/preparer remains unchanged.
+Public V2 dry-run21:06 returned googl/h20 UNKNOWN/NOT_OBSERVED, writes0; not a
+private read/reconciliation or permission to rerun the owned21:05 reader.
 Half-adjustment diagnostic COMPLETE0fits/3views/0retry,
 CALLBACKe81f313b. Net10growth146.410pct<149.176FAIL,DD26.535PASS/turnover99.439PASS.
 17max/15.55mean holdings; continuous-positive tail699sessions including tiny

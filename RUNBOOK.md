@@ -2,7 +2,7 @@
 
 ## Current Installed Follow-Up
 
-Nov3KST/Nov2UTC20:38. Company objective remains UNFINISHED. No manually Run
+Nov3KST/Nov2UTC20:57. Company objective remains UNFINISHED. No manually Run
 existing financial/Data/reader/publisher tasks merely to inspect evidence.
 Original GOOGL entry20:55UTC/read21:05/public21:16 and Data21:30 remain owned.
 
@@ -31,8 +31,8 @@ SDK metadata are strings, not dictionaries. Old transport-r1 does not prove
 the corrected chain. New matching unchanged-guard construction COMPLETE at
 current-h3-matching-owner-construction-20261103-v1/a5,Source404fdec9/native3e3f6eb6,
 twoinventedDockerprocesses/nine denial controls/restart0newBUY. Actual-point-
-required current preparer is current-h3-actual-preparer-r3-20261103-v1,
-SOURCE1b63eecd/READYd40941b9/API12ed5492; NOT financial deployment. Never run the a5 fixture as
+required current preparer is current-h3-actual-preparer-r5-20261103-v1,
+SOURCE47d78f26/READY9b215476/API21820873; NOT financial deployment. Never run the a5 fixture as
 production or treat a retained stale return as a new guest response.
 No actual private/broker effects during source preparation. Only actual fresh
 sealed input and qualified current-owner/native/risk path may finalize future
@@ -50,15 +50,21 @@ Separate targeted order repair native/FINAL96aed06b passed3logicalcases/
 4hostlaunches/1223.164of1800SUM/allclosed. New policy58mockedrealhelperchecks
 Source3eab4e6d/PREPAREDab12f814 qualifies Nov3/Nov6 namespaces, not old GOOGL.
 Current preparer uses exact qualified launch8a903160 WITH quietGUIshim,
-rearm87e949fe/new policies/XML-I-S-B. Cold strict SDK/codec smoke62cad197+
+rearm87e949fe/new policies/XML-I-S-B. Cold strict SDK/codec smoke7336d793+
 6denials/emittedbindingauditPASS. Actualpoint+seal absent ->0artifacts.
 API (verify all source/member/READY refs before loading):
-D:/thericher-v2/model-artifacts/execution/current-h3-actual-preparer-r3-20261103-v1/API.json
-SHA256 12ed5492590219bd121bceea3da66dc0805a510de2baaa9052be194f5fff0e90.
+D:/thericher-v2/model-artifacts/execution/current-h3-actual-preparer-r5-20261103-v1/API.json
+SHA256 218208735b86a2d068a4f9052a2f397ef96c8b274f3928657b95c1d8e0983dab.
 Call renderer.prepare_actual(actualPointRef, actualSealRef, originalControlRef)
 only with qualified actual fixed publisher refs, never guessed/fixture hashes.
 This emits disabled release/definitions, NOT admission/installation/effects.
 No H3 financial Task installed; current original financial safeguards remain.
+R3 missed owner helper/Task fields; R4 native COM XML had incorrect byte encoding.
+Both remain incomplete, not current actual-preparation authority. R5 includes
+source-bound owner helpers, exact GUI-console role proof and UTF16LE+BOM XML.
+Mock-fixture repair Source3638688c/VALIDATEDf0402901:2phase/14denials and14
+unchanged Python-validator checks; no actual registered Task/CIM/OS-origin.
+Old fixture failures remain failed; never use invented owner facts in production.
 
 Observer19:35 reader-validated complete/read_only/submitfalse exact receipt in
 HANDOFF; honest-host marker provenance only, Operational logging disabled.

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Nov3 KST / Nov2UTC20:38. Company coexistent-native-paper-execution-runtime-v1
+Nov3 KST / Nov2UTC21:06. Company coexistent-native-paper-execution-runtime-v1
 UNFINISHED. Parent owns shared MD/Git/actual adoption. No operator decision.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original B/10/F9 UNKNOWN-HELD/pending/all exits. Never KIS_LIVE_*.
@@ -27,10 +27,13 @@ Primary strategies intraday plus one-to-several-session swings.
  Separate targeted ordering repair COMPLETE native/FINAL96aed06b:3logicalcases/
  4hostlaunches/1223.164of1800SUM/allclosed.58real-helper mocked checks qualify
  newdate observerpolicy Source3eab4e6d/PREPAREDab12f814. Parent connected actual
- preparer current-h3-actual-preparer-r3-20261103-v1,Source1b63eecd/READYd40941b9/
- API12ed5492. Exact qualified quiet runtime/rearm/newpolicies/XML-I-S-B,
- cold strict SDK/nativecodec smoke62cad197+6denials/emittedbindingauditPASS.
- Use this new API, not old44958. Real sealed point unknown; no H3 financial
+ preparer current-h3-actual-preparer-r5-20261103-v1,Source47d78f26/READY9b215476/
+ API21820873. Exact qualified quiet runtime/rearm/newpolicies/XML-I-S-B,
+ cold strict SDK/nativecodec smoke7336d793+6denials/emittedbindingauditPASS.
+ R3 missing owner helpers/fields and R4 XML encoding failed, retained. R5 exact
+ GUI-console owner chain/full native COM UTF16LE+BOM definitions; mockfixture
+ Source3638688c/VALIDATEDf0402901:2phase14denials+14Pythonchecks, noactualOSproof.
+ Use this API, not old44958/R3/R4. Real sealed point unknown; no H3 financial
  Task installed/admitted. Same original bank/pending/exits/effect-time checks.
 - Bacon/Data: A/data/current-next-session-ohlc-consumer-20261103-v1 COMPLETE,
  sourcef00de41b/CALLBACK62aed5f0/24nativePASS/all6ownersclosed. Future61local
@@ -66,6 +69,13 @@ Primary strategies intraday plus one-to-several-session swings.
  400.11s/1426pins768dbc73 plus56serial45mockedTask/Ruff4Compose. Actual3future
  task amendment completed; latest integration1426protectedpins0mismatch,
  17Parentretentiontests/RepoRuff4Compose/diffcheckPASS, docs/Git owned.
+- Mencius/Execution CLOSED WITHHELD at current-four-expert-h3-contract-read-
+ guard-repair-20261103-v1,Source9713fc53/CALLBACKd31f2721: checksumfixed but
+ SciPyimportguardfailed/0parse. Parent follow-up CALLBACK6bea7626 also CLOSED
+ WITHHELD, bootstrap/output-name failures/0parse.0models/market/private/Task/
+ broker, no full independent actor-timing claim. No active role workers here.
+ DEFER financial sidecar chaining; current3publisher unchanged. Original r3
+ four-expert inference/clock evidence survives, not financial readiness.
 
 Due original GOOGL Nov2UTC20:55/read21:05/public21:16; coherent Data21:30/
 hard21:45; read-only rankpublisher21:46/hard21:49, Codex thericher-1 COUNT1
@@ -103,15 +113,23 @@ custody, OS-origin proof, settled cash or measured PnL.
 
 ## Throughput Review / Reversible Improvement
 
-Nov2UTC20:38 review: retained F9 read, completed cost-margin GPU study, four-
+Nov2UTC21:06 review: retained F9 read, completed cost-margin GPU study, four-
 expert adapter and targeted H3 repair are CLOSED. Parent final preparer binding
 now passes cold SDK/parser/codec and emitted-source checks. No active model
 training or ready frozen fit; completed models are not repeated for utilization.
 GOOGL/Data/publisher keep owned clocks; actual next point/financial effects are
 unknown. Improvement implemented: bind the qualified quiet launch/rearm and NEW
 date-correct observer policy in the actual preparer, not just a test fixture.
-Next ready path after exact future inputs is that source-qualified preparer;
-independent four-expert financial contract remains separate, no automatic swap.
+Next ready path after exact future inputs is R5 source-qualified preparer.
+New audit found missing owner helper/Task fields and UTF16/UTF8 XML mismatch;
+fixed before any H3 installation, no GOOGL mutation. GOOGL Task Ready/last20:55/
+nextnull is not a financial result; owned reader21:05/public21:16 remain due.
+Four-expert financial sidecars closed without native success; no automatic swap.
+Reversible improvement for their successor: reuse qualified consumer/scoped
+clients, exact private roots and explicit attempt namespaces. Broad substring
+file guards over trusted scientific imports and two fixed retry filenames caused
+repeated artificial failures. Do not spend another helper chain on them before
+current3 actual input/Paper result. Public V2 dry-run UNKNOWN/writes0, not fill.
 
 Operational lineage is repaired for3future definitions, runtime not yet proven.
 Matching new H3 source/control/guard plus corrected real producer ABI now passed
