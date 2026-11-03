@@ -42,8 +42,10 @@ new enclosing invented pair. Use actual guard/provider protocol and retain
 categorized ctx.run/guest failures; no fake guard bypass. Positive complete
 source/native/closure before Parent installs financial entry/owned-exit.
 Hooke publisher Task is a disjoint Data target: Parent06:51creation left it
-DISABLED after exact DACL readback mismatch. No financial Task installed by
-that metadata operation; do not depend on an unproven future publication.
+DISABLED after exact DACL readback mismatch. Same-target source-qualified
+recoveryf4599669/native46 is now COMPLETE07:15; independent73d5f0fb proves
+publisher ENABLEDReady3/0instances/never-run. No financial Task installed by
+that operation; actual future publication remains UNKNOWN. No metadata replay.
 
 Chronos pure proposal66002104/26a29ccf/native11 is source-only; daily bridge,
 financial deadline and exact third-close exit integration remain unqualified.

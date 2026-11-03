@@ -63,16 +63,20 @@ Snapshot Nov3UTC06:54. These are assignments, not proof of running workers.
    DISABLED/state1/0instances/never-run. CREATE-ATTEMPT exists, completion
    withheld protected_DACL_required; actual Scheduler returns unprotected
    four-ACE DACL. No duplicate creation, delete, force update or old retry.
-   Diagnose exact ACL equivalence and prepare source-qualified same-identity
-   recovery; Parent owns actual enable. Future Data trigger15:07:30,
+   Recovery is ACTUALLY COMPLETE07:15:Sourcef4599669/native46/17pinsmatch,
+   qualifiedc6031a7d/Enable82d1ad35/independentenabled73d5f0fb prove sameTask
+   ENABLEDReady3/0instances/never-run. Eight metadata actors absent07:16.
+   No oldCreate replay/TaskRun/ACLsetter. Exact rights equivalence only, no
+   protected-inheritance guarantee; review_unavailable/subcapoverrun retained.
+   Do not replay consumed recovery commands. Future Data trigger15:07:30,
    capture15:16..15:16:25, score15:16:30..15:16:55. Installation is not data
    publication, financial runtime admission or a fill.
-3. Data / Copernicus: current-chronos2-h3-daily-bridge-preparation-20261103-v1,
+3. Data / Euclid (temporary capacity-recovery owner): current-chronos2-h3-daily-bridge-preparation-20261103-v1,
    600SUM3600elapsed. Exact Engine proposal ABI66002104; smallest coherent
    C60/H3 daily input/future clock contract, same source/adjustment convention,
    tiny invented producer-to-consumer smoke. No implicit source-mode mixing,
    stale H3 replacement, actual future collection/model/Task in this prep.
-4. Engine + sole GPU coordinator / Harvey: current-short-swing-next-campaign-
+4. Engine + sole GPU coordinator / Confucius (temporary recovery): current-short-swing-next-campaign-
    design-20261103-v1, 300SUM1800elapsed. Inspect registry and actual inputs;
    ONE useful nonduplicate cost/turnover/downside hypothesis, explicit temporal
    split/purge/baselines/compute and trial caps, real optimizer/checkpoint smoke.

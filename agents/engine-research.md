@@ -2,8 +2,11 @@
 
 ## Current Results And Next
 
-Nov3UTC06:56. Harvey owns Engine science and sole GPU coordination;
-Ohm supplies proposals and disjoint CPU compositions. A=D:/thericher-v2/
+Nov3UTC07:14. Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 temporarily owns
+Engine science and sole GPU coordination after Harvey's model-capacity failure.
+Old LLM owner is closed; same partial contract/caps/clocks are preserved.
+Numerical launch still needs actual lease/resource admission. Ohm supplies
+proposals and disjoint CPU compositions. A=D:/thericher-v2/
 model-artifacts; M=D:/market_data. Intraday and1..several-session swings.
 
 | Latest Closed Study | Net10 Growth / Close-only DD | Frozen Result |
@@ -31,7 +34,7 @@ Future Data/deadline/third-close integration remains unqualified; no current
 H3AMDpoint swap or arbitrary daily-entry claim from weekly backtest.
 Copernicus owns exact daily bridge source prep,600SUM3600elapsed.
 
-Next Harvey: A/research/current-short-swing-next-campaign-design-20261103-v1,
+Current recovery: A/research/current-short-swing-next-campaign-design-20261103-v1,
 300SUM1800elapsed. Dedup registry, actual data, cost/downside hypothesis,
 causal temporal split/purge/baselines/finite caps and real optimizer/checkpoint
 smoke. Then autonomously freeze and dispatch ONE qualified numerical study

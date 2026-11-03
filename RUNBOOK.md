@@ -11,7 +11,13 @@ protected_DACL_required after CREATE-ATTEMPT; actual Scheduler returns an
 unprotected four-ACE DACL. Do NOT replay Create, delete/update the target or
 force enable. Source-qualified same-identity recovery is owned by Hooke at
 D:/thericher-v2/model-artifacts/data/current-open45-publisher-task-dacl-recovery-20261103-v1.
-Parent owns actual recovery/enable after native checks; no Task Run. Publisher
+That same-target recovery is now ACTUALLY COMPLETE07:15, Sourcef4599669/
+native46/17pinsmatch. DISABLED-QUALIFIEDc6031a7d/Enable82d1ad35/independent
+PARENT-ENABLED-READ73d5f0fb prove ENABLEDReady3/0instances/never-run/full
+source-action-clocks match; eight metadata actors absent07:16. No TaskRun or
+Create replay/ACLsetter. Do NOT replay consumed recovery/enable/readbacks.
+Protected-inheritance guarantee remains false; exact effective rights match.
+Review_unavailable/internalreview subcap overrun retained. Publisher
 Source14268659/Definition77513d80 remains frozen, not an actual publication.
 Open45 financial host64a67f89 is UNQUALIFIED after three invented failures;
 Helmholtz owns one typed native repair, not actual deployment. No broker/private

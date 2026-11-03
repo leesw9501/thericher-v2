@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov3UTC06:56 integration.
+2026-11-03 KST / Nov3UTC07:16 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
@@ -202,15 +202,27 @@ thericher-open45-finite-publisher-20261103-v1 presentDISABLED/state1/0instances/
 never-run/next15:07:30. Only control/actual/CREATE-ATTEMPT exists; source-native
 readback withheld protected_DACL_required because actual Scheduler returned
 unprotected four-ACE DACL. Do not replay Create/delete/update/force enable.
-Hooke owns separately bounded same-identity ACL recovery500SUM1800elapsed.
+Same-identity recovery is ACTUALLY COMPLETE at07:15:
+A/data/current-open45-publisher-task-dacl-recovery-20261103-v1,
+Sourcef4599669/native46/17pinsmatch/417.741169upper. Parent AdoptDisabled0
+c6031a7d, independentdisabled5de6818f, Enable0/82d1ad35 and independent
+PARENT-ENABLED-READ73d5f0fb prove same target ENABLED/Ready3/0instances/
+never-run/full source-GUI-action-clocks match. Eight metadata actors absent07:16.
+No Create replay/Run/update/delete/ACL setter; old failed attempt retained.
+Current rights match requested grants plus redundant CALLER read; protected
+inheritance guarantee remains false. Claude review_unavailable and review
+139.188200>internal100subcap retained, overall417.741169/500. No replay.
 Future capture15:16..15:16:25/score15:16:30..15:16:55; actual latency/publication
 UNKNOWN, no deadline extension or human placeholder future point.
 
 Current Engine/Strategy next campaign design and cost/risk proposal are
-disjoint300SUM1800elapsed packages. Harvey sole GPU coordinator may freeze
+disjoint300SUM1800elapsed packages. Temporary sole GPU coordinator Confucius may freeze
 and dispatch one qualified nonduplicate numerical successor <=1500SUM5400elapsed/
 1fit1forecast/<=12newviews after data/native/resource checks, no Parent relay
 approval. Source design does not mean a GPU process is running.
+After LLM capacity failures, Euclid owns the same daily bridge and Confucius
+owns the same Engine design. Prior LLM owners closed; original caps/debits/hard
+clocks preserved. This is not a GPU or operator-permission failure.
 No completed training is repeated for utilization; short-swing and intraday
 remain in scope. NAS8 reserved and frozenNov4evaluation stay excluded.
 

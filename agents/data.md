@@ -2,8 +2,12 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC06:56. Copernicus owns the new Chronos daily bridge; Hooke temporarily
-owns exact publisher Task recovery. A=D:/thericher-v2/model-artifacts;
+Nov3UTC07:14. Euclid01a1a039-0eca-7da2-8169-78b765567785 temporarily owns the
+Chronos daily bridge after Copernicus's model-capacity failure/positive handback.
+Original receipt06:51:36/hard07:51:36/caps600SUM3600elapsed stay unchanged;
+90s conservative source/I-O allowance retained, not a measured debit. Only
+bridge.py+CONTRACT.json existed, no package workers/market calls had started.
+Hooke owns exact publisher Task recovery. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Assignments are not proof of running PIDs.
 
 Completed usable minute input:
@@ -28,7 +32,7 @@ Current-listing/nonPIT/notTR/CA/finality/START-END and clock-proxy limits remain
 Both source clocks are retained; never silently shift Korea+1h labels.
 
 Current packages:
-- Copernicus: A/data/current-chronos2-h3-daily-bridge-preparation-20261103-v1,
+- Euclid: A/data/current-chronos2-h3-daily-bridge-preparation-20261103-v1,
   600SUM3600elapsed. Exact Engine proposal66002104 C60/H3 input, coherent
   adjustment/source and future availability, actual invented parser handoff.
   No actual future collection/model forecast/private/Task in this source prep.
@@ -40,8 +44,13 @@ Current packages:
   produced exact thericher-open45-finite-publisher-20261103-v1 but readback
   withheld protected_DACL_required. Current target DISABLED/state1/0instances/
   never-run/next15:07:30; only CREATE-ATTEMPT exists. Preserve target/identity,
-  no replayCreate/update/delete/TaskRun. Source-qualified exact DACL recovery
-  before Parent actual enable; financial host is independently owned.
+  no replayCreate/update/delete/TaskRun. Recovery now ACTUALLY COMPLETE07:15,
+  Sourcef4599669/native46/17pinsmatch/417.741169upper. Parent qualifiedc6031a7d/
+  Enable82d1ad35/independentenabled73d5f0fb prove ENABLEDReady3/0instances/
+  never-run/full source-action-clocks match. Eight metadata actors absent07:16.
+  No Create replay/TaskRun/ACLsetter; protected-inheritance guarantee false.
+  Claude review_unavailable/review139.188>internal100subcap retained. No replay.
+  Financial host is independently owned.
 
 Publisher future window is Nov3UTC15:07:30..<15:10:30, prewarm15:08..<15:11,
 capture15:16..15:16:25, score15:16:30..15:16:55. Actual latency/publication

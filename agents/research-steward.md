@@ -2,7 +2,10 @@
 
 ## Current Resource Coordination
 
-Nov3UTC06:56. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is sole GPU coordinator.
+Nov3UTC07:14. Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 is temporary sole
+GPU coordinator after Harvey's model-capacity failure and LLM closure. Original
+partial contract/design-hard07:21:08/total-hard08:21:08 remain unchanged.
+Actual numerical lease/resource admission is not inferred from this transfer.
 Project is first useful GPU priority including alongside user apps. Measure
 free/projected VRAM and desktop reserve, no app-name permission hold or killing
 user apps. Execution reliability preempts safely; no dummy work for utilization.

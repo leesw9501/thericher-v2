@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Nov3UTC06:54. coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Nov3UTC07:14. coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent owns shared MD/Git/adoption. No operator decision pending.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original B/10/F9 UNKNOWN-HELD/pending/all original exits unchanged.
@@ -27,12 +27,16 @@ Intraday plus one-to-several-session short swings; never KIS_LIVE_*.
   left target presentDISABLED/0instances/never-run at06:51. Native returned
   protected_DACL_required; only CREATE-ATTEMPT recorded. Preserve target and
   original installation identity; no duplicate Create/update/delete/TaskRun.
-  Source-qualified same-target metadata recovery before Parent enable.
-- Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c: NEW exact Chronos daily Data
+  Same-target recoveryf4599669/native46/17pinsmatch is now ACTUALLY COMPLETE
+  07:15:qualifiedc6031a7d/Enable82d1ad35/independent73d5f0fb prove publisher
+  ENABLEDReady3/0instances/never-run. Eight metadata actors absent07:16.
+  No Create/Run/ACLsetter; inheritance guarantee remains false/review subcap
+  overrun retained. No consumed command replay; future publication UNKNOWN.
+- Euclid01a1a039-0eca-7da2-8169-78b765567785: recovery owner of exact Chronos daily Data
   bridge600SUM3600elapsed, A/data/current-chronos2-h3-daily-bridge-preparation-
   20261103-v1. Coherent source/adjustment/future clock to proposal66002104;
   source/native only, no market/model/Task/private effects in this prep.
-- Harvey01a19e80-1586-7fe2-9587-9b44f510842b: sole GPU coordinator + new campaign
+- Confucius01a1a03a-0fe3-7770-986a-b769954c52f2: recovery sole GPU coordinator + campaign
   design300SUM1800elapsed, A/research/current-short-swing-next-campaign-design-
   20261103-v1. Registry/dedup, actual data, cost/downside and native solver
   contract first; then dispatch useful ready GPU work, not dummy occupation.
@@ -62,6 +66,13 @@ All are reused-data/modelled-cost/close-only-DD development, not broker PnL.
 No completed forecasts/fits rerun, no automatic current H3 replacement.
 
 ## Throughput Review
+
+07:14: two LLM capacity failures affected Data/Engine design, not the GPU or
+market provider. Prior LLM owners closed, Data positive handback/no workers;
+named scope process probes empty. Temporary default-model recovery executors
+received disjoint existing partials with ORIGINAL caps/debits/hard clocks, no
+new market trial. This is not an operator permission hold or GPU environment
+failure. Actual GPU lease admission is still required before the new fit.
 
 06:54: all five prior packages have closed, so reassigned disjoint successors.
 Paper host failures need typed first-cause repair; actual Scheduler ACL mismatch
