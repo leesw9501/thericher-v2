@@ -2,13 +2,36 @@
 
 ## Current Reality
 
-Updated Nov3UTC22:12 / Nov4KST.
+Updated Nov3UTC23:39 / Nov4KST.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original initial B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending
 identities and ALL original exits remain. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
+Actual Data fa918/aa047, OHLC60ab158/64b1 and score-only dc9d are complete.
+Full17 producer Task ACTUALLY migrated23:19:07 to c1e/e4a/metadata5956716d;
+runtime READY is present. Financial pair ACTUALLY migrated23:33:37 tobd7b5c0c/
+metadata38021922/release793c1dc6, full independent enabled readback7d60d61e,
+both Ready3/0instances/never run. Future point/submit/fill/owned state/PnL still
+UNKNOWN; company unfinished. See actual proof below; do not replay modes.
+
+Current financial proof:
+A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json
+SHA70181640; Parent7boundrefs rehashed/0mismatches. Exact c1e/e4a/READY6b98/
+reader3cbc/e557/fa918 binding. Fresh old/new source-scoped owner closure,
+full old XML/API7 backup, disable entry/exit, UPDATE28 exit then entry, disabled
+readbacks, exact authority once, exit-first enable, separate enabled readback.
+Native/three actual metadata exits0/stderr0, all recorded Jobs/PID births
+closed; cumulative680.9836/900upper includes prior qualifier debits/reserves.
+Original entryNov4UTC14:31..<14:34/hard14:37 and exitNov6UTC20:54..<21:00/
+hard21:07 unchanged. Original B10/F9/pending/cost/loss/native33b/risk/quote/
+orderability/emergency/reconciliation/current H3/all old exits unchanged.
+Once bounded readonly observer-idle readiness before ONE Suspend plus original
+H3d62 first-issuance readiness after pause; source/owner/Bank/writer/deadline
+rechecks/unchanged60floor/final claim, no reset/retry or historical-fix claim.
+0Task.Run/create/delete/model/market/KIS/private financial/credential calls
+during adoption. Native/Task installation is NOT financial execution evidence.
 
 ## Actual H3 Result
 
@@ -228,8 +251,17 @@ Source3cbc76a0/readere557d488/nativeb34cfd30,2groups/real Win32 live+closed/
 strict16-member parse-return/Ruff/0retry/226of240upper; original logical roots
 and c1e/e4a unchanged. Parent hashes matched. Hooke owns narrow future metadata
 completion, Helm financial binding; neither deployment is inferred from this.
-Old failures/caps unchanged. Existing producer still binds old dc8 until
-positive actual update evidence; new Data success is not deployment.
+Old failures/caps unchanged. A NEW whole-adoption package now ACTUALLY updated
+the existing producer to c1e/e4a, not old-scope regrading:
+A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+Proof71b1df6a,metadata5956716d/launcherba6ebffb/READY6b98eae0 at23:19:07UTC.
+One disabled UPDATE28, full protected XML/API7 readbacks then enable and
+independent enabled readbackac2cad6a; Ready3/0instances/never run. Constructor/
+required-READY paths qualified, original14:25..<14:25:45/hard14:29:45 unchanged.
+Parent rehashed15bound refs+5operation refs,0mismatches.277.5454/600upper,
+10technical attempts/recorded actors closed. No Task.Run/model/KIS/private
+effects. Actual future full17 point remains UNKNOWN. Financial5a consumer
+still needs its OWN exact new adoption; producer installation is not a fill.
 Metadata completion b84d4228 also closed PARTIAL,0Task effects. Parent isolated
 its native XSD failure with4in-memory cases,0named Task queries/mutations:
 A/verification/current-full17-definition-declaration-probe-20261104-v1/RESULT.json.

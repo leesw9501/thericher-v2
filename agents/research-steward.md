@@ -58,6 +58,12 @@ closed,1075.3470/7800upper including600reserve; no CUDA fit. See Engine and
 A/research/current-short-swing-h3-cpu-fp32-moments-continuation-development-20261104-v1/FINAL-CALLBACK.json.
 This measured faster CPU path used actual learning, not a GPU permission hold.
 Next distinct useful hypothesis remains Engine-owned; no completed-fit replay.
+Later DeepSet5c240507 ACTUALLY used CUDA:50epochs700updates/INNER-best2,
+13.128s training,1forecast9views/0numericalretry; all62actors/CIDs/leases closed.
+Peak123724288allocated/150994944reserved bytes, not a utilization target;
+707.4215/6600upper includes600reserve. Old d94 native failure/debit retained.
+See Engine for primary failure. New cost/turnover-aware loss is one separate
+preparation, not active numerical work until actual Source/PID/lease evidence.
 
 ## Frozen Resource Index
 

@@ -103,6 +103,23 @@ lower DD/turnover than saved RAW, worse growth/predictive MSE. Frozen primary
 FAIL, not regraded/Paper/independent alpha. Next parallel candidates: finite
 fixed RAW/CB composition using only aligned saved forecasts, and a distinct
 GPU-friendly raw/indicator hypothesis. Neither is claimed fitted/active yet.
+Both successors are now CLOSED, not active:
+- CPU fixed-capital compositionf55a2b7b,0fits/forecasts/6views,
+  net10+9.4201%,DD3.8738%,turnover4.0084 versus score-blend3.1642;
+  primary FAIL on turnover.278.4677/900upper, all actors closed.
+  A/research/current-short-swing-h3-fixed-capital-netted-composition-development-20261104-v1/FINAL-CALLBACK.json.
+- New DeepSet5c240507 actual CUDA1fit/50epochs700updates/INNER-best2,
+  13.128s training/earlystop48,1forecast9views/0numericalretry. Net10+7.6956%,
+  DD3.8641%,turnover8.9368: primary FAIL on saved RAW growth/MSE/turnover.
+  707.4215/6600upper including600reserve; all62actors/CIDs/leases closed.
+  A/research/current-short-swing-h3-deepset-native-successor-development-20261104-v1/FINAL-CALLBACK.json.
+Old d94 fixture-missing-dates failure remains0forward/update/marketfit and its
+616.5530debit unchanged; successor3native attempts passed before market, not a
+regrade/independent replication. No GPU permission/environment block occurred.
+Next ONE active preparation: cost/turnover-aware direct allocation or ranking
+loss on available price/indicator data, new finite contract/chronological
+training and INNER selection before GPU dispatch. No epochs-only repeat, old
+primary relaxation, native risk/Paper change or actual new fit claim.
 
 ## Closed Paper Handoff
 

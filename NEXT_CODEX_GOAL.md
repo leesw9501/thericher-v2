@@ -22,14 +22,16 @@ foreign adoption/unknown-request substitution. No operator decision pending.
   native_stage NOT_ENTERED. Financial effects remain UNKNOWN, not zero/fill.
   Actual9410/45e9 reader at21:10 WITHHELD missing exact entry closure.
   No Task replay, substitute request or reservation release.
-- Execution priority: reproduce the actual observer-bridge/minimal-environment
-  CLI with invented Scheduler facts; repair the first cause and diagnostic
-  retention before another qualified finite opportunity. Do not rerun expired
-  Suspend/entry or recovery-capable observe() as a reader. Current observer
-  XML/ACL/enabled matches original; that is not historical restore proof.
-- Full17 future Tasks ACTUALLY migrated to5a571/release4eb10:
+- Historical H3 first cause remains UNKNOWN. Minimal-ENV/native diagnostics
+  and manual readonly pair are complete; no old Suspend/entry/read replay.
+  Future bd7 runtime now has safe diagnostic retention, bounded observer-idle
+  readiness and first-issuance readiness with original checks, not proof that
+  historical restoration or broker effects occurred.
+- Full17 future Tasks ACTUALLY migrated tobd7b5c0c/release793c1dc6:
   Nov4UTC14:31 entry, Nov6UTC20:54 exit. Original H3 exit stays20:45.
-  See D:/thericher-v2/model-artifacts/execution/current-full17-finite-account-consumer-readiness-20261104-v1/earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+  See D:/thericher-v2/model-artifacts/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
+  Metadata38021922, separate full enabled readback7d60d61e at23:33:37UTC,
+  both enabled/Ready3/0instances/never run. All modes consumed; no Task.Run.
   Nominal separation is not prior-owner closure, a queue, input readiness or
   a fill. Review shared observer helper; actual effect-time checks remain.
 - Data's original coherent19 opportunity21:30 is CONSUMED before capture;
@@ -44,15 +46,21 @@ foreign adoption/unknown-request substitution. No operator decision pending.
   New OHLC60 derivativeab158 ALSO ACTUALLY published/input64b1ad44,0new HTTP/
   model calls; actual typed consumer/closed publisher+worker passed:
   D:/thericher-v2/model-artifacts/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
-  Old3a574/ad7/7360/financial5a consumers need explicit new bindings; do not
-  retag/copy old DATAREADY or pass unbound raw OPEN. No foreground waiting.
+  Producer binding is now ACTUAL c1e/e4a under metadata5956716d at23:19:07:
+  D:/thericher-v2/model-artifacts/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+  Required READY6b98eae0/independent full XML+ACL enabled readbackac2cad6a
+  verified,0instances/never run. Same14:25 opportunity; not future model output.
+  Financial adoption is also ACTUAL bd7/380, exact producer/READY/reader3cbc
+  binding; actual future point and financial effects still UNKNOWN. Old5a/
+  6175 and failed aggregates remain history, not regraded. No implicit old
+  source upgrade, raw-OPEN retag, substitute request or foreground waiting.
 - Engine/Steward owns distinct useful convergence/feature research and safe
   resource coordination. Finished fits/forecasts are not repeated. TCN,
   attention and L1/HiGHS development results are in Engine stateboard; positive
   modeled growth is not independent alpha or Paper PnL. Freeze new trials,
   splits, curves/stop/time caps before dispatch; use GPU when actually needed.
-- Data/Engine may prepare raw-TCN checkpoint9364 proposal inference. Unknown
-  input produces unavailable/null scores, not zero scores or broker authority.
+- Raw-TCN forecast-only dc9d is ACTUALLY complete:1restore/1forward,17 native
+  abstains/0orders, policy UNBOUND. Do not rerun or call it a valid trade point.
   No automatic strategy/bank swap from codec acceptance.
 - Monitor stays existing be48/127.0.0.1:8787. GOOGL baseline provenance and
   Korean UI compatibility are scoped work, not a Paper/GPU permission hold.

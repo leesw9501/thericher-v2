@@ -1,6 +1,25 @@
 # Execution Stateboard (모의투자 실행)
 
-## Current Execution
+## Active Work Package
+
+Financial metadata completion is CLOSED ACTUAL at Nov3UTC23:33:37:
+D:/thericher-v2/model-artifacts/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
+Proof70181640/metadata38021922/runtimebd7b5c0c/release793c1dc6, separate
+enabled readback7d60d61e, both Ready3/0instances/never run. Original pair times,
+c1e/e4a/READY6b98/reader3cbc/fa918 and ONE B10/F9/all risk/exits preserved.
+Fresh old/new source-scoped owner closure/full XML/API7 backup, disabled
+UPDATE28 exit then entry/readbacks/exit-first enable/separate readback passed.
+No Task.Run/create/delete/KIS/model/market/private/credential calls. All known
+Job/PID births closed; cumulative680.9836/900upper includes prior debits.
+All actual modes consumed: DO NOT replay. bd7 has bounded observer-idle/
+first-issuance readiness and safe error retention with original post-wait
+source/owner/Bank/writer/deadline checks/60floor/final claim; no reset/retry.
+Future point/submit/acceptance/fill/owned inventory/terminal/fees/settlement/
+net PnL remain UNKNOWN. Company unfinished, not a runtime closure.
+Next: exact task-owned future receipts when due, independent research now.
+Parent owns shared MD/Git; peer callbacks never cancel a named active package.
+
+## Retained Current Facts
 
 Updated Nov3UTC21:20 / Nov4KST. Parent owns actual metadata/shared MD/Git.
 Workspace C:/Users/Public/Documents/thericher-v2.

@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov3UTC22:13 / Nov4KST.
+Updated Nov3UTC23:39 / Nov4KST.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -21,11 +21,20 @@ DO NOT rerun its launch/collector. New OHLC60 ab158 also actually published,
 typed consumer/closures PASS, input64b1ad44 with0new HTTP/model calls:
 A/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
 Do not rerun that publisher. Old releases do not implicitly accept new input;
-Hooke owns new Full17 producer/owner, Helm financial refs, Erdos TCN bridge.
+Full17 producer c1e/e4a is ACTUALLY updated/enabled with required READY:
+A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+Metadata5956716d/READY6b98eae0/readbackac2cad6a,0instances/never run.
+Do not rerun consumed Capture/Update/Enable. Original14:25 clock unchanged.
+Financial pair also ACTUALLY migrated tobd7b5c0c/release793c1dc6/metadata38021922:
+A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
+Full separate enabled readback7d60d61e; both Ready3/0instances/never run,
+clocks unchanged. Capture/Migrate/Readback CONSUMED, DO NOT replay/Task.Run.
+Score-only TCNdc9d complete/abstain is NOT a valid trade point. Actual future
+full17 forecast/input/submit/fill/owned inventory/net PnL still UNKNOWN.
 No future point/order/fill/PnL follows Data publication. No foreground wait.
 Tomorrow Full17 producer14:25/entry14:31 and Open45 publisher15:07:30/
 entry15:17/exit16:17 are installed, not actual financial outcomes.
-Full17 two actual future Tasks are now migrated to5a571 with exit20:54.
+Full17 current runtime is bd7, superseding actual historical5a; exit20:54.
 Do NOT rerun consumed Capture/Migrate/Create phases. Original H3 stays20:45;
 actual owner/observer/bank/input/quote checks still govern future effects.
 Original H3/GOOGL/MSE/H20/all original exits unchanged.

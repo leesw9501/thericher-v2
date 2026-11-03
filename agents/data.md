@@ -6,6 +6,13 @@ Updated Nov3UTC22:13 / Nov4KST. Erdos owns new recovery/consumer bindings.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
 Current fa918 recovery/DataREADYaa047 and OHLC60ab158/INPUT64b1 are ACTUALLY
 published/closed/typed-consumer PASS; see Actual Data Opportunity below.
+Full17 future producer is now ACTUALLY migrated to c1e/e4a with READY6b98eae0:
+A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+Metadata5956716d/independent enabledac2cad6a/0instances/never run, no model call.
+Future full17 point unknown; financial pair is ALSO ACTUALLY updatedbd7b5c0c/
+metadata38021922 with same c1e/e4a/READY/reader3cbc binding:
+A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
+Readback7d60d61e/both enabled0instances/never run, no financial runtime claim.
 Old dc8/3a/41f remain consumed/unqualified, never implicit aliases. Hooke owns
 Full17 producer/owner derivative; Helm financial refs; Erdos new TCN bridge.
 
