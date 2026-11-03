@@ -2,63 +2,22 @@
 
 ## Current Resource Coordination
 
-Updated Nov3UTC14:54. Confucius is sole GPU coordinator. Project first useful
-GPU priority includes user apps; use measured headroom/reserve, no app-name
-veto/killing apps/driver changes/age-reclaim/dummy training.
-Broad5129b52 stays CLOSED: CPU CatBoost completed/BEST92 retained; CUDA
-TCN watchdog124/partial weights, not convergence or certified BEST. All old
-actors/CIDs/lease/debits are closed/preserved, no refit or refunded attempt.
-Separate frozen-checkpoint diagnosticc4bfaeec ran two forecasts/12fixed views
-then failed numpy.bool_ summary serialization. Cache-only recovery25926cf3/
-RESULT8602c483 completed those SAME views with0fits/forwards/rebooking.
-Both U-positiveTop4 policies were ALLCASH and failed growth/nonempty/samegross
-controls; no alpha or qualified selection pass. Lower DD from no exposure
-is not alpha. Actual full-gross return-head net10 growth was negative
-(CPU-47.223929%, partialTCN-38.853943%), not broker PnL.
-Fixedhalf c23b remains source-only/input_unavailable/0views; no silent rebound.
+Updated Nov3UTC17:01 / Nov4KST. Confucius is sole GPU resource coordinator.
+Daily maxH3 source8e961834/RESULTa76a is CLOSED:0fits2marketforecasts12views,
+TimesFM16.858s1.059GB / Chronos10.814s0.519GB actual CUDA inference;42recorded
+original actors/4CIDs/leases/finalizer closed via DELIVERY-CLOSED.json.
+2140.706347upper includes allowances, not GPU seconds. No repeat/rescue.
+PeerOC0ca2 CPU+CUDA fits also closed; no worker inferred running from its MD.
 
-Peer-relative OC study CLOSED: Source0ca2a022/RESULTfb7444f7 under
-A/research/current-broad512-peer-intraday-residual-selection-development-
-20261103-v1. Actual2fits+2forecasts/10views/0retry; CPU/CUDA fit in parallel.
-CPU53trees/BEST52; CUDA19epochs494updates/BEST6/INNER_EARLYSTOP12, safe cold
-restores/durable curves. Net10 growth CPU-41.309432%/TCN-52.037411%: both
-primaryFAILED. Gross CPU+28.545034% is NOT net profit; daily-flat turnover
-dominates. No current Paper/full17/Nov9 model or bank swap.
-Parent43sourcepins0mismatch/resultmatch;50PIDbirths/6CIDs/lease closed/finalizer
-absent.847.162812 upper includes source/closure reserves, not measured GPU time.
-Adaptive/currentlisting/nonPIT/notTR/MODEshift/costproxy/close-DD limits remain.
-
-Next Engine priority: separately deduplicated inventory-coupled1..3session
-cost/turnover mechanism, not old OC refits or relaxed frozen criteria.
-Euclid source-only current-short-swing-turnover-mechanism-proposal-20261103-v1,
-240SUM1800elapsed/0fits/forwards/readouts; direct Engine handoff. Engine may
-freeze a distinct <=7800SUM10800elapsed/<=2fits/<=12views/0retry campaign after
-native/contract/resource checks. Delegation is not an actual GPU launch.
-
-Original GPU attempt had22,355MiBfree/4GiBprojected/4GiBdesktopreserve; old
-44percent snapshot was total co-tenancy, not a model benchmark. No GPU
-environment/user permission hold caused the watchdog. Current actual ownership
-must be measured before a new launch; old closed PIDs are not running work.
-Independent CPU/CUDA workers may run concurrently if headroom/disjoint output/
-SUM and frozen elapsed ceilings permit. Record actual PID/start/lease and
-co-tenancy. Execution safely preempts on relevant resource need, not a global
-ban for a CPU-only Open45 worker.
-
-Nov9 full17 meanrank PRODUCER is ACTUALLY installed/enabled, not a financial
-account round. Taskthericher-full17-h3-finite-producer-20261109-v1,
-Nov9UTC14:25..<14:30 =Nov9KST23:25. Typed Task XML1.3 repaired the measured
-1.2/UseUnifiedSchedulingEngine XSD failure without changing action/caps.
-A/research/current-full17-h3-producer-native-xsd-diagnostic-20261103-v1/
-ACTUAL-COMPLETE.json SHA5f26bd94; independentread84147aac;
-adoption22f389f1/metadata926e8f8c/runtimefb3a1deb/Definitiond732a90a.
-Four consumed metadata phases passed/Jobs joined empty/0TaskRun/modelcalls.
-Original1db .005 proposal bytes, two future trusted model calls/0fits/replays/
-retries remain; input/scores/weights/runtime result UNKNOWN. Old7b52 Create
-failed PRE_CREATE and is not replayed. Full17 financial deployment NOT installed.
-
-Reserved NAS8Nov3/4 and frozenNov4UTC21:35 excluded from new fitting.
-Earlier CPU674.962278/TCN944.587592/GRU288.375985 and quantile490.108245
-debits/failures remain immutable. No duplicate completed training.
+Next distinct ready campaign delegated <=7800SUM10800elapsed/<=2fits12views/
+0retry. Require exact frozen Source/target/split/native API/caps and actual
+PID/start/resource callback before describing it as active. GPU first project
+priority and useful concurrency remain approved; measured desktop reserve,
+no unknown-user-app veto, dummy training or completed-fit duplicate.
+Open45 is CPU-only; old15:00 cutoff applies only to old closed campaign.
+Independent H3/NAS8 metadata and Execution repairs continue without GPU wait.
+No operator decision pending; actual effects preempt safely, not retroactive
+trial debit refunds. ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
 
 ## Frozen Resource Index
 

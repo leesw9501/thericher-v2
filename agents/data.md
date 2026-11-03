@@ -1,62 +1,74 @@
 # Data Stateboard (시장데이터)
 
-## Current Ownership And Ready Inputs
+## Current Data
 
-Updated Nov3UTC14:54. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Open45 publisher is ACTUALLY migrated to frozen D SDK Sourceecfc19c0/
-Definitioneaacee75/metadataSourcebb777f4f. Exact old source/complete XML/ACL
-capture, UPDATE4-only disabled definition, independent disabled readback,
-Enable and independent enabled readback all passed. Finalread0c4cda29:
-enabledReady3/0instances/neverrun267011, same Nov3UTC15:07:30 trigger,
-capture15:16..15:16:25/score<=15:16:55. Parent proofEF2BCEA1:
-A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/PARENT-ACTUAL-COMPLETE.json.
-Five hidden metadata workers joined/exit0/exact births absent,9.156780s upper.
-No TaskRun/KIS/credentials/models/private-state calls during this migration.
-Original142/775 stays immutable; its THREE mutable C pin failures were source
-drift, not a provider quota failure. Frozen SDK489 and actual CPU tensor
-bootstrap/native lifecycle/schema24 are checked; full45 capacity/future point
-remain UNKNOWN. This is CPU-only scoring, not a GPU reservation.
+Updated Nov3UTC17:01 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
+frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
+uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
+the actual receipt did not retain which. Current later gate state cannot prove
+past cause. Do not call this a KIS quota/server rejection or lower 300 to60.
+A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/actual-20261103
+retains FAILURE/GUEST-FAILURE/WORKER-RESULT and positive worker/container closure.
+No fresh Open45 point/model forward was produced.
 
-Broad512 input remains CLOSED requalified: basead9a5120/completion361d293a/
-DATASETdf021e49/READINESS35c6/VERIFY3069/37Parentrefs0mismatch.1,170,008MODE0
-rows/512assets; separate paper17MODE1/75,391used rows/52,903,131bytes under M,
-0newHTTP. Original partial failure retained; fullSUM unmeasured, not cap proof.
-Past20 within-bar features/independent matured labels, no PIT/TR/CA/finality
-claim or current-open feature/imputation.
+Actual Open45 entry15:17 and owned exit16:17 both produced exact public
+DENY_ACTUAL_OPERATIONAL_OWNER RuntimeException receipts, task result20 and
+0instances. The source dot-sources installer parameters into caller scope,
+clobbering source/release pins; Parent reproduced64/64 ->0/0 without effects.
+This source defect is proven; the generic actual failure did not retain its
+exact guard. No acceptance/fill/current inventory conclusion follows.
+Exact public files are runtime/host-results/OWNER-FAILURE-e05ce5e037ba4864b6b7386513d7db33.json
+and OWNER-FAILURE-475f5c5493974a9d8ee6b4be2c0f87ab.json under
+A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
+Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
+expired opportunities remain immutable. No replay/retag/manual TaskRun.
 
-NAS8 original freeze CLOSED partial:487SDK files exact/six Git recoveries;
-Dataec810e85/EVAL228254e6 not installed. Qualification8191a615 retained
-coreproducer PASS20/currentSource, then failed POST-success timing append
-outside fixture audit boundary; consumer never launched. Not a timeout/
-source-parser/market failure.160.115081upper/actors closed.
-Ohm current-nas8-retained-producer-consumer-completion-20261103-v1,
-180SUM900elapsed requalifies exact retained producer plus ONE unattempted
-consumer parse/return,0producer replays/models/market/Tasks. Recovered partial,
-not regraded original whole pipeline. Original future clocks/caps/model/
-split/criteria/untouched outcomes unchanged. Actual migration Parent-only.
+Parent actual market-only probe187fbc0e is COMPLETE:
+A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
+Nov3UTC16:00:48 token POST200 +16:00:50 QQQ daily GET200, one each/sameRAMclient,
+already-seen20261016 date/source stable/no account/order/live/raw/token retention.
 
-## Actually Installed Data
+Parent actual positions-only health probee8a3c418 is also COMPLETE:
+A/execution/current-paper-account-categorical-health-probe-20261104-v1/ACTUAL-RESULT.json
+and PARENT-CLOSED.json. Nov3UTC16:56:14..20 auth200 +NASD/NYSE/AMEX GET200,
+three complete one-page native parses, count4dedup (pergroup4/0/2), source stable.
+23invented native tests; actual hidden child exit0/Job3members joinedempty/
+closed/0stderr/7.168569s. Counts are serial non-atomic configured-account facts,
+NOT strategy ownership/order eligibility/full account-risk/fees/settlement/PnL.
+No funds/open-orders/order/recovery/private-custody calls, adoption or F9 release.
+Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
+do not ask operator to change keys from the earlier local pre-HTTP failure.
 
-- Open45 publisherecfc19c0/Definitioneaacee75/metadata bb777f4f:
-  actualupdated+enabled; independent0c4cda29, sameNov3UTC15:07:30/capture15:16.
-  Future input UNKNOWN; original142/775 and consumed metadata immutable.
-- Nov6 coherent19 C60 capture is ACTUALLY ENABLEDReady3/0instances/neverrun:
-  thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1,
-  Nov6UTC21:10..<21:11/PT15M = Nov7KST06:10.19GET1POST0retry.
-  Root current-chronos2-h3-nov6-frozen-release-finalization-20261103-v1,
-  runtime310619b1/SDK e1aa1e33/meta473ca0ad/55metadata checks.
-  First invocation failed PRE-CREATE memory XML, not missing output directory;
-  readonly capture3ad871a0 confirmed absence and exact unhandled IdleSettings.
-  Parent composition4da1b73d has18native+8adversarial/ClaudeGO_WITH_LIMITS;
-  only exact default parent removed.310/473 unchanged; receipts explicitly
-  carry composition AND base refs, not false old-source attribution.
-  CREATE5174f8cf/independentdisabled7f9671ea/ENABLEe3355294/
-  independentenabled d8aa2822bf8546e2258311c5cdafa35990ed20f76c60a9166dabd4d406db0212.
-  No TaskRun/KIS/models now; actual future INPUT/modelpoint UNKNOWN.
-  Prep fullSUM unmeasured remains a limitation, not a proven cap pass.
-  Core-before-reader bootstrap in fresh -I-B-S host, explicit trusted NumPy,
-  never mixed with financial/model SDK; closed addendum preserved.
-  DO NOT replay Create/Enable/composition/readbacks.
+NAS8 remaining original DataNov3/4UTC21:10 and EVALNov4UTC21:35 are ACTUALLY
+updated/enabled to frozen Dataec810e85/EVAL228254e6/nativef0866506.
+A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json binds
+metadata106ac819 + exact redundant-ACL readback compositiond4aeea1f.
+Full XML/ACL/principal/all3Data+1EVALtriggers/history are retained; original
+Nov2Data last21:10/result20 unchanged, EVAL unattempted. No TaskRun/new schedule,
+models, data acquisition or evaluation occurred during migration.
+Original readback failed on Windows-inserted redundant SecurityDescriptor;
+exact saved/current ACL equality only is normalized (2positive8negative).
+Earlier failed readback/enable attempts are not passing authority. Actual future
+DataREADY/EVAL outcome UNKNOWN. No reserved outcome reopening.
+
+Daily C60 Source1b1c9759/Dataset9b111314/manifest1707aba4 ready:
+141origins,17assets/2397known,139newentry+2continuation, independent price
+support and no outcome-based selection. Parent12exact refs/hash/stability PASS.
+A/data/current-short-swing-daily-c60-input-preparation-20261104-v1/API.json.
+Original native failure and separate completion retained; no whole-pass rewrite.
+
+## Next / Ownership
+
+Euclid owns source-only local-prewarm-deferral repair,480SUM2400elapsed/
+5invented iterations; distinguish local busy/notdue before sole wire attempt.
+Do not replay consumed ecfc or guess past local gate reason.
+Parent owns actual future metadata. Engine consumes the qualified C60 API.
+Coherent19 Nov6UTC21:10 and full17 producer Nov9UTC14:25 remain future.
+
+## Retained Reference
+
+Below is retained dataset/history context, not an active worker roster.
 
 ## Closed Inputs
 

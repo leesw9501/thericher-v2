@@ -2,152 +2,120 @@
 
 ## Current Operations
 
-Updated Nov3UTC14:54. Company coexistent-native-paper-execution-runtime-v1
-UNFINISHED. Resume with C:/Users/Public/Documents/thericher-v2/scripts/
-start_next_codex_task.ps1 then current goal/handoff/AGENTS/active boards.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Source/installation/process exit is not broker effects.
+Updated Nov3UTC17:01 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
+Start with scripts/start_next_codex_task.ps1 and current HANDOFF/NEXT/AGENTS.
+Parent owns shared MD/Git/actual metadata; agents own disjoint D roots.
 
-Actually installed:
-- Open45 Data ecfc19c0/Definitioneaacee75/metadata bb777f4f, ACTUAL same-task
-  update+Enable+independentread0c4cda29, ParentEF2BCEA1 at
-  A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/
-  PARENT-ACTUAL-COMPLETE.json. EnabledReady3/0instances/neverrun267011.
-  Nov3UTC15:07:30 trigger/capture15:16..25/score<=15:16:55; CPU-only model.
-  Five hidden metadata workers9.156780supper joined/zero/absent.0TaskRun/API.
-  Original142/775 source drift immutable; NEW489-file frozenD SDK used.
-- Open45 financial c4b38148/release6e3d61a1 ACTUALLY migrated/enabled:
-  sameentry15:17..18/exit16:17..18/PT7M/KSTNov4 00:17/01:17/BUYdeadline15:22.
-  A/execution/current-open45-metadata-docker-query-calibration-20261103-v1/
-  PARENT-ACTUAL-COMPLETE.json SHA BB516F69; metadataSourcee8099c57.
-  Actualcapture2b68111d/completecd098a3b/independentread77e9bfb0 under
-  current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
-  Three Jobs42members joinedempty/closed/0TaskRun/broker/private/models.
-  Positive process ExitCode/join/source-filter query fixed nullable module
-  LASTEXITCODE without guard bypass. Old no-op/r2/r3/DF413 history retained.
-  All metadata phases consumed; DO NOT rerun Capture/Recover/Readback.
+Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
+frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
+uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
+the actual receipt did not retain which. Current later gate state cannot prove
+past cause. Do not call this a KIS quota/server rejection or lower 300 to60.
+A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/actual-20261103
+retains FAILURE/GUEST-FAILURE/WORKER-RESULT and positive worker/container closure.
+No fresh Open45 point/model forward was produced.
 
-- H3 finite AMD entryNov3UTC20:55/exitNov6UTC20:45/readNov3UTC21:10:
-  Source6ae/TRUE32f/POINTad3b/SEALf8fe/reader9410/authority6247/D-frozen SDK,
-  no silent C update; not full17 automation.
-- Coherent19 C60 Data thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1,
-  Nov6UTC21:10..<21:11/PT15M =Nov7KST06:10, runtime310/meta473/Parent4da,
-  actual enabled d8aa2822,19GET1POST0retry/futureinput UNKNOWN.
-- Full17 PRODUCER thericher-full17-h3-finite-producer-20261109-v1 is ACTUALLY
-  installed/enabled Nov9UTC14:25..<14:30 =Nov9KST23:25.
-  A/research/current-full17-h3-producer-native-xsd-diagnostic-20261103-v1/
-  ACTUAL-COMPLETE.json SHA5f26bd94/independent enabled84147aac.
-  Source22f3/meta926e/runtimefb3a/Defd732. Measured XSD1.2 unexpected
-  UseUnifiedSchedulingEngine repaired by typed1.3, not broad normalization.
-  Four actual metadata phases consumed/Jobsjoinedempty/0TaskRun/modelcalls.
-  Two future model calls/0fits/replays/retries; original1db .005 proposal
-  unchanged. Old7b52 PRE_CREATE failure retained, NEVER replay.
-  Full17 FINANCIAL deployment NOT installed. Hooke's new source/native
-  lifecycle diagnostic is separate from this actual producer.
+Actual Open45 entry15:17 and owned exit16:17 both produced exact public
+DENY_ACTUAL_OPERATIONAL_OWNER RuntimeException receipts, task result20 and
+0instances. The source dot-sources installer parameters into caller scope,
+clobbering source/release pins; Parent reproduced64/64 ->0/0 without effects.
+This source defect is proven; the generic actual failure did not retain its
+exact guard. No acceptance/fill/current inventory conclusion follows.
+Exact public files are runtime/host-results/OWNER-FAILURE-e05ce5e037ba4864b6b7386513d7db33.json
+and OWNER-FAILURE-475f5c5493974a9d8ee6b4be2c0f87ab.json under
+A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
+Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
+expired opportunities remain immutable. No replay/retag/manual TaskRun.
 
-All future input/point/acceptance/fills/current inventory/fees/settlement/net
-PnL UNKNOWN unless exact later evidence proves them. No manual TaskRun/
-catchup/repetition/consumed metadata replay. Inspect exact immutable outcome
-with source-qualified readers, not latest-file scans/task exit/recovery observe().
-Custody reads require actual relevant writer admission/exact account-basis-
-input-intent-fill joins/network-none/source+privateRO/stability.
-Source markers assume honest host, not cryptographic OS Scheduler origin;
-Operational logging disabled. Preserve ONE original B10/F9 UNKNOWN-HELD/
-identities/reservations/GOOGLNov9UTC20:55/MSENov5UTC20:40/H20Dec1UTC14:30/
-NAS8Nov3/4UTC21:10/reservedNov4UTC21:35/all exits. No follow-up chain.
+Parent actual market-only probe187fbc0e is COMPLETE:
+A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
+Nov3UTC16:00:48 token POST200 +16:00:50 QQQ daily GET200, one each/sameRAMclient,
+already-seen20261016 date/source stable/no account/order/live/raw/token retention.
 
-Current research: original9b52 CPU completed/TCN watchdog retained; separate
-diagnosticc4bf twoforecasts/12views then summary npbool failure. Cache-only
-2592/RESULT8602c483 recovered SAME12views/0fits/forwards/rebooking: both
-utility-positiveTop4 ALLCASH/growthFAIL. No old rerun/alpha/ensemble claim.
-Peer-relative OC0ca2/RESULTfb7444f7 is now CLOSED actual2fits2forecasts/10views:
-CPU53treesBEST52, CUDA19epochs494updatesBEST6/early12; fits actually parallel.
-Net10growth CPU-41.309432%/TCN-52.037411%, both primaryFAILED; gross gain is
-not net profit.43Parentpins0mismatch/50PIDs6CIDsleaseclosed/finalizerabsent.
-Next separately deduplicated short-swing inventory/cost mechanism prepares
-new finite campaign, not another old fit or relaxed criterion. No global GPU
-ban; actual resource/safe Execution preemption checks remain.
+Parent actual positions-only health probee8a3c418 is also COMPLETE:
+A/execution/current-paper-account-categorical-health-probe-20261104-v1/ACTUAL-RESULT.json
+and PARENT-CLOSED.json. Nov3UTC16:56:14..20 auth200 +NASD/NYSE/AMEX GET200,
+three complete one-page native parses, count4dedup (pergroup4/0/2), source stable.
+23invented native tests; actual hidden child exit0/Job3members joinedempty/
+closed/0stderr/7.168569s. Counts are serial non-atomic configured-account facts,
+NOT strategy ownership/order eligibility/full account-risk/fees/settlement/PnL.
+No funds/open-orders/order/recovery/private-custody calls, adoption or F9 release.
+Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
+do not ask operator to change keys from the earlier local pre-HTTP failure.
 
-Exact new public host-result reader readiness:
-A/execution/current-open45-c4b-runtime-outcome-reader-readiness-20261103-v1.
-Actual future results UNKNOWN; source-qualified reader/API only once ready,
-no latest scan or recovery observe. Composed new Data->OneLeg smoke PASS with
-405inventedbars/4negatives/separate SDKs/no models or actual future point.
+H3 original finite AMD entry/exit are ACTUALLY migrated and enabled to
+operational Source2873c60a/releaseaa0be4cd/metadata SOURCE-r2 9b38bc3e.
+A/execution/current-h3-current-web-parent-migration-20261104-v1/PARENT-COMPLETE.json:
+exact current be48 projected-bootstrap/physical-mount/volume census PASS;
+UPDATE-only disabled/readback/exit-first enable/independent enabled readback
+PASS. Existing runtime TaskContract ValidateDefinition + original ValidateAcl
+also passed on BOTH actual COM definitions, not just mocked XML.
+Original financial6ae/TRUE32f/POINTad3b/SEALf8fe/D-frozenSDK/bank/B10/F9/
+paths/reader9410/authority6247/run45e9 and all exit duties unchanged.
+EntryNov3UTC20:55=Nov4KST05:55; exitNov6UTC20:45=Nov7KST05:45;
+static offline readNov3UTC21:10 unchanged, all future/0instances at readback.
+Root draft6d2 source was rejected before query; final immutable SOURCE-r2 is
+qualified14metadata cases/native78df. Original readback failed because Windows
+rewrote an existing embedded partial SD to the supplied full ACL. Actual full
+GetSecurityDescriptor stayed byte-identical; Parent composition50bad625
+normalizes ONLY exact bound embedded TEXT to captured AND current full ACL
+(2positive8negative), all other XML/owner/settings/history remain exact.
+No UPDATE replay or TaskRun/broker/private/model calls. Claude local review
+JSON parse was review_unavailable, not agreement/authority; earlier directional
+GO_WITH_LIMITS remains advisory. Real effect-time owner/bank/unknown/quote/
+orderability/observer checks remain. No actual submit/fill/owned-inventory/PnL
+or full17 financial installation is claimed.
 
-Data310 reader remains separate fresh -I-B-S/core-before-reader/trusted explicit
-NumPy, no mixed financial SDK. NAS8 mutable C pin repair is separate source-
-only preparation, not actual future deployment or untouched outcome replay.
+NAS8 remaining original DataNov3/4UTC21:10 and EVALNov4UTC21:35 are ACTUALLY
+updated/enabled to frozen Dataec810e85/EVAL228254e6/nativef0866506.
+A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json binds
+metadata106ac819 + exact redundant-ACL readback compositiond4aeea1f.
+Full XML/ACL/principal/all3Data+1EVALtriggers/history are retained; original
+Nov2Data last21:10/result20 unchanged, EVAL unattempted. No TaskRun/new schedule,
+models, data acquisition or evaluation occurred during migration.
+Original readback failed on Windows-inserted redundant SecurityDescriptor;
+exact saved/current ACL equality only is normalized (2positive8negative).
+Earlier failed readback/enable attempts are not passing authority. Actual future
+DataREADY/EVAL outcome UNKNOWN. No reserved outcome reopening.
 
-Monitor http://127.0.0.1:8787 stays pinnedbe48f29e/publicV2aa3.
-Minimal H3 Korean UI source and isolatedpreview5ee6/69tests/32pins/3viewports/
-7screenshots closed NOT deployed. No casual pinned-image replacement/private
-custody/web executable imports/public serving.
+Current remaining exact clocks (UTC):
+- H3 AMD entryNov3 20:55, static offline reader21:10, original exitNov6 20:45.
+- NAS8 DataNov3/4 21:10, frozen EVALNov4 21:35.
+- Coherent19 DataNov6 21:10; full17 producerNov9 14:25..<14:30.
+- GOOGL original exitNov9 20:55; MSE Nov5 20:40; H20 Dec1 14:30.
+No TaskRun/catchup/repetition or replay of consumed metadata/health markers.
+Actual installation/readback is not submit/fill/owned-position/PnL proof.
 
-Current repo authority (Parent33b0ae80 pushed):
-A/execution/current-paper-account-repeat-cohort-repair-20261103-v1/RESULT-r2.json,
-4997d859/SOURCEdff04cb0/1432pins0mismatch/269serial/15repeatcases/
-actual8of8[20071]/20045PASS26knownskip389.02s/native-helper0/pinned-helper
-guarded currentchild+leasecleanup/Ruff/4Compose.env.example PASS.
-Same-policy terminal-flat next-input and firstquote/sizing/foreign skip fixed;
-old scheduled SDKs NOT upgraded. Old53c9/20042 pass retained with found P1.
-Docs/D-only may reuse full authority only while exact code/config/policy pins
-match; D executables need focused native/negative/closure checks, not20k reruns.
+Actual monitor http://127.0.0.1:8787 remains imagebe48f29e/publicV2aa3ef6d6.
+Korean source preview5ee6/69tests/32pins/3viewports/7screenshots is closed.
+New tracked-commit b696765e image was built and network-none/RO/zero-mount
+server-import checked: canonical Engine image
+sha256:29f6d1365e75a0efde6856f4a564fd7c88700dec1119587a857f8121d4323ee1.
+A/monitor/current-korean-monitor-image-build-20261104-v1/PARENT-BUILD-PROOF.json.
+NOT deployed/admitted; f488 is build config, not Engine image ID.
+Do not casually swap a runtime dependency of a financial owner. No public
+exposure/private custody/credentials/broker authority in web.
 
-Inspect exact CALLBACK/API/closure at handoff: last peer ACK can mask completion.
-Current role scopes/owners/caps in orchestration.md. No pending operator decision.
+Tracked production/tests/config/policy unchanged from Parent33b0ae80.
+A/execution/current-paper-account-repeat-cohort-repair-20261103-v1/RESULT-r2.json
+SHA4997d859/SOURCE-r2dff04cb0:269serial/15repeatcases;actual created8of8,
+8workers[20071],20045PASS26knownWindowslinkSKIP/native+helper0, guarded
+current-child+leasecleanup. Fresh1432pins0mismatch/AGENTS match/Ruff and
+default/research/accounting/monitor Compose .env.example PASS.
+Reuse applies only while exact protected digests match. D code needs its own
+native/negative/source/closure evidence; the C suite cannot validate D code.
 
-Earlier commands/evidence below are frozen history. Do not replay them.
+For changed external adapters, actual emitted native producer-to-consumer
+parse/return, failure and closure checks are required. Preserve all failed
+attempts. Abort on nonzero before later modes; do not infer success from
+nullable LASTEXITCODE or a source/native verdict for different bytes.
 
-Historical repo verification (before current production integration):
-D:/thericher-v2/model-artifacts/verification/current-raw-historical-capture-integration-20261103-v1/RESULT.json
-SHA4d61223023c8b561720af962e11641da4d481ba2df959c095495c3ec964a844a:
-1429protectedpins/0mismatch/202serialPASS/actual8of8[19943]/19917PASS26knownskip/388.36s/
-helper+native0/checked cleanup/Ruff4Compose.env.example PASS.
-Current full-tests-r2.log is authority. Prior0661/7ff are historical;
-its extra-quiet diagnostic is still NOT authority. Research is an existing
-Compose --profile research, not a docker-compose.research.yml file.
-External D code still needs separate focused native/negative proofs.
-No repeated full suite for unchanged docs/external-only source.
-Current definitive sources/status above and HANDOFF take precedence over
-retained historical source-specific commands below; do not replay closed jobs.
+## Frozen Reference Index
 
-Actual raw494 source03567531/PLAN16d17ac9/release48f66d69 launched03:51:11,
-host38820/birth134381514718000731, now CLOSED04:45:35/RESULTed518f26/
-HOST-CLOSURE8bd07e99:494GET1POST59256rows/0remaining0technical0unresolved/
-qualification0/workerjoinedexit0/Jobempty/991helpersclosed/8276.139325SUM.
-Parent hostabsent04:46:26. Never relaunch. Exact actual-once metadata only:
-D:/thericher-v2/model-artifacts/data/current-us19-raw-historical494-continuation-preparation-20261103-v1.
-Original70ef161GET19320rows is CLOSED, not another running collector.
-Opening30 source findingb44ca37f/25d05872 proves40closed captures contain
-complete opening rows; old research reader discarded whole mixed-session
-pages. No blind250query batch. New explicit mixed-session view must validate
-ALL rows before filtering RTH, retain exclusion/missing/proxy flags and pass
-native consumer tests. It does not rewrite old raw qualification0 or Paper input.
-Source-only feed60d53da0d7/53checks and CPU66a5600b are not actual Feed runtime.
-New finite Feed->CPU publication wrapper is preparation only; missing/late
-capture or score abstains, never catchup. Full-dayTCN is now CLOSED91126913/
-RESULT118849a4:1CUDAfit420updates/BEST3/1CPUforecast12views, primarygrowthFAIL,
-allCIDleaseabsent. Fitwall292.700>declared285/no convergence; do not refit/regrade.
-Next separately frozen postcheckpoint TimesFM2.5 weekly/H3 study is preparation,
-not actual running inference. No current Paper point/exit/risk change.
-
-Holdings-only preflight is consumed COMPLETE, not a general query command:
-D:/thericher-v2/model-artifacts/execution/current-paper-holdings-readonly-preflight-20261103-v1/CALLBACK.json.
-Sourceede107e4/RESULT9f381b90/Nov3UTC02:23:15,1POST3GET/threegroups/4positions.
-No full-risk/funds/exact-owned-fill/subject-match claim or F9 release.
-
-Raw historical batch readiness is at current-us19-raw-historical-batch-
-preparation-20261103-v1, current Source70ef5448/PLAN0b1b3a66/native135checks.
-Parent fresh202serial/19917fullPASS/Ruff/4Compose; actual quiet hostPID9332/
-birthFILETIME134381478035082513 launchedNov3UTC02:50:03/releasece1649c6.
-Original terminal03:06:41:161GET1POST/19320rows/494remaining/0technicalfailures/
-0pending/0unresolvedGET, Jobempty/joined/exit0/1995.312719SUM.
-Hard-network-denied native fixture30624/5040 was source-regex misclassified.
-New current-us19-raw-historical494-continuation-preparation-20261103-v1
-owns qualified recovery, not original relaunch/reset. Raw M quarantine is NOT a
-canonical/model/Paper input. Existing strict clock validators remain unchanged.
-Phase45 and absolute cost-gate numerical jobs are COMPLETE/primary rejected;
-no fits/forecasts/replays restarted by retained historical commands below.
+The material below is historical source/command context, NOT authority to
+replay a consumed mode, invoke an old Task or claim current deployment.
+Current facts/commands above and the exact named qualified API take priority.
 
 ## Active Short-Horizon Development
 

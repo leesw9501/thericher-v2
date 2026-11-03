@@ -1,111 +1,93 @@
 # Execution Stateboard (모의투자 실행)
 
-## Current Ownership
+## Current Execution
 
-Updated Nov3UTC14:54. Parent owns actual metadata/shared MD/integration/Git.
-Open45 Data is ACTUALLY updated to ecfc19c0/metadata bb777f4f, enabled read0c4c.
-Open45 financial c4b38148/release6e3d61a1 is ACTUALLY migrated/enabled and
-independently read back77e9bfb0 at14:52:34. Same exact entry15:17..<15:18/
-ownedexit16:17..<16:18/PT7M, BUYdeadline15:22/account/basis/run/policy/original
-quarter/B10/F9/reservations/identities/all exits; exit enabled before entry.
-Parent proofBB516F69 at A/execution/current-open45-metadata-docker-query-
-calibration-20261103-v1/PARENT-ACTUAL-COMPLETE.json; capture2b68111d/
-recoverycd098a3b/read77e9. Three hidden metadata workers11.482337supper/
-42Jobmembers all joinedempty/closed/exactPIDs absent;0TaskRun/broker/private/
-credentials/models. MetadataSourcee8099c57 adds qualified positive process
-ExitCode/join/source-filter query only. Seven focused fixtures include null/
-nonzero/timeout rejection; original actual actor/source/financial guards remain.
-Prior no-op/r2/r3 failures/debits retained; r2 exact cause still UNKNOWN.
-Nullable module LASTEXITCODE is not treated as0. Original DF413/529 history
-is superseded operationally, not replayed/erased. Actual future point/financial
-effects UNKNOWN. Dataecfc is separately actually enabled/independent0c4c.
+Updated Nov3UTC17:01 / Nov4KST. Parent owns actual metadata/sharedMD/Git.
+ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
 
-New Data->OneLeg composed smoke COMPLETE:405inventedbars/8knowninputs/
-one original quarter target plus4negative rejections; separate SDK489/577
-processes, no class mixing/models/market/Task effects. Only fixture Windows
-read-access mask repaired. Callback current-open45-frozen-publication-to-
-oneleg-smoke-20261103-v1; not actual future data/financial execution.
+Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
+frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
+uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
+the actual receipt did not retain which. Current later gate state cannot prove
+past cause. Do not call this a KIS quota/server rejection or lower 300 to60.
+A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/actual-20261103
+retains FAILURE/GUEST-FAILURE/WORKER-RESULT and positive worker/container closure.
+No fresh Open45 point/model forward was produced.
 
-Nov9 full17 meanrank PRODUCER is ACTUALLY installed/enabled, not a financial
-account round. Taskthericher-full17-h3-finite-producer-20261109-v1,
-Nov9UTC14:25..<14:30 =Nov9KST23:25. Typed Task XML1.3 repaired the measured
-1.2/UseUnifiedSchedulingEngine XSD failure without changing action/caps.
-A/research/current-full17-h3-producer-native-xsd-diagnostic-20261103-v1/
-ACTUAL-COMPLETE.json SHA5f26bd94; independentread84147aac;
-adoption22f389f1/metadata926e8f8c/runtimefb3a1deb/Definitiond732a90a.
-Four consumed metadata phases passed/Jobs joined empty/0TaskRun/modelcalls.
-Original1db .005 proposal bytes, two future trusted model calls/0fits/replays/
-retries remain; input/scores/weights/runtime result UNKNOWN. Old7b52 Create
-failed PRE_CREATE and is not replayed. Full17 financial deployment NOT installed.
+Actual Open45 entry15:17 and owned exit16:17 both produced exact public
+DENY_ACTUAL_OPERATIONAL_OWNER RuntimeException receipts, task result20 and
+0instances. The source dot-sources installer parameters into caller scope,
+clobbering source/release pins; Parent reproduced64/64 ->0/0 without effects.
+This source defect is proven; the generic actual failure did not retain its
+exact guard. No acceptance/fill/current inventory conclusion follows.
+Exact public files are runtime/host-results/OWNER-FAILURE-e05ce5e037ba4864b6b7386513d7db33.json
+and OWNER-FAILURE-475f5c5493974a9d8ee6b4be2c0f87ab.json under
+A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
+Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
+expired opportunities remain immutable. No replay/retag/manual TaskRun.
 
-Full17 financial d9e1 and7a0 stay CLOSED UNQUALIFIED/NOT installed.
-First driver discarded real exit20 JSON; first causes/failures/debits retained.
-Hooke now owns NEW current-full17-h3-native-lifecycle-diagnostic-20261103-v1,
-600SUM2700elapsed/<=2invented technical attempts/1inert boot. D-freeze current
-Parent33b repeat-wrapper, actual adapter/full18/nativeaccount lifecycle with
-fake external I/O, decode category BEFORE rc. Network-none/all sourceRO/
-ownfixtureRW/no private/credentials/KIS/models/Task or C/Git writes.
-This preparation cannot silently upgrade old SDKs or substitute original intents.
+Parent actual market-only probe187fbc0e is COMPLETE:
+A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
+Nov3UTC16:00:48 token POST200 +16:00:50 QQQ daily GET200, one each/sameRAMclient,
+already-seen20261016 date/source stable/no account/order/live/raw/token retention.
 
-Parent repeat repair33b0ae80 pushed:15native repeat cases/269serial/full20045PASS
-26skip/currentauthority4997d859. Only SAMEpolicy terminal-flat next-input
-admission, firstquote/sizing/foreign skip fixed. No pending/active replacement,
-completed replay, bank reset or implicit frozen-worker upgrade.
+Parent actual positions-only health probee8a3c418 is also COMPLETE:
+A/execution/current-paper-account-categorical-health-probe-20261104-v1/ACTUAL-RESULT.json
+and PARENT-CLOSED.json. Nov3UTC16:56:14..20 auth200 +NASD/NYSE/AMEX GET200,
+three complete one-page native parses, count4dedup (pergroup4/0/2), source stable.
+23invented native tests; actual hidden child exit0/Job3members joinedempty/
+closed/0stderr/7.168569s. Counts are serial non-atomic configured-account facts,
+NOT strategy ownership/order eligibility/full account-risk/fees/settlement/PnL.
+No funds/open-orders/order/recovery/private-custody calls, adoption or F9 release.
+Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
+do not ask operator to change keys from the earlier local pre-HTTP failure.
 
-Review current-f9-readonly-reconciliation-path-readiness-20261103-v1,
-180SUM1200elapsed/source-only0private/KIS/Tasks identifies existing exact-
-request read methods, no recovery observe/submit. F9 stays UNKNOWN-HELD;
-missing holdings/open orders never release its reservation.
+H3 original finite AMD entry/exit are ACTUALLY migrated and enabled to
+operational Source2873c60a/releaseaa0be4cd/metadata SOURCE-r2 9b38bc3e.
+A/execution/current-h3-current-web-parent-migration-20261104-v1/PARENT-COMPLETE.json:
+exact current be48 projected-bootstrap/physical-mount/volume census PASS;
+UPDATE-only disabled/readback/exit-first enable/independent enabled readback
+PASS. Existing runtime TaskContract ValidateDefinition + original ValidateAcl
+also passed on BOTH actual COM definitions, not just mocked XML.
+Original financial6ae/TRUE32f/POINTad3b/SEALf8fe/D-frozenSDK/bank/B10/F9/
+paths/reader9410/authority6247/run45e9 and all exit duties unchanged.
+EntryNov3UTC20:55=Nov4KST05:55; exitNov6UTC20:45=Nov7KST05:45;
+static offline readNov3UTC21:10 unchanged, all future/0instances at readback.
+Root draft6d2 source was rejected before query; final immutable SOURCE-r2 is
+qualified14metadata cases/native78df. Original readback failed because Windows
+rewrote an existing embedded partial SD to the supplied full ACL. Actual full
+GetSecurityDescriptor stayed byte-identical; Parent composition50bad625
+normalizes ONLY exact bound embedded TEXT to captured AND current full ACL
+(2positive8negative), all other XML/owner/settings/history remain exact.
+No UPDATE replay or TaskRun/broker/private/model calls. Claude local review
+JSON parse was review_unavailable, not agreement/authority; earlier directional
+GO_WITH_LIMITS remains advisory. Real effect-time owner/bank/unknown/quote/
+orderability/observer checks remain. No actual submit/fill/owned-inventory/PnL
+or full17 financial installation is claimed.
 
-Actual effects check virtual host/account/basis/budget/inventory/exact unknown
-outcome/fresh quote+orderability/emergency/relevant owners. No allflat/profit
-gate, foreign adoption or reservation release. No operator decision pending.
+Full17 native integrationc4b297e/8cases PASS source-only, not deployed.
+Original producer enabledNov9UTC14:25..<14:30; future point UNKNOWN.
+Preserve GOOGLNov9UTC20:55/MSENov5UTC20:40/H20Dec1UTC14:30/ALL exits.
 
-## Actually Installed
+## Ready / Owners
 
-H3 finite AMD first-leg unchanged:
-entryNov3UTC20:55; exitNov6UTC20:45; strict offline readNov3UTC21:10.
-Source6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/reader9410/authority6247,
-D-frozen SDK, financial31e83c91/reader1886c323+b9801906. Not full17 automation.
+Helm current-f9-current-request-readonly-preparation-20261104-v1,
+420SUM2400elapsed/4invented sets; current strict existing API+exact identity
+joins, no actual/private query by agent, no recovery observe or release.
+Ohm H3 metadata CLOSED; Parent actual migration complete above.
+Hooke source-contract mapf2fd9ef5 CLOSED; now implements runtime/ child,
+900SUM3600elapsed/5invented iterations, original serial bank/native guards,
+actual envelope/closure smoke, no actual broker/model/Task/private/C/Git.
+Erdos health helper closed; Parent positions-only read is complete above.
+Open45 param619a/13native PASS source-only; original577SDK/paths/bank remain.
 
-Open45 financial c4b38148/release6e3d61a1 is ACTUALLY migrated/enabled and
-independently read back77e9bfb0 at14:52:34. Same exact entry15:17..<15:18/
-ownedexit16:17..<16:18/PT7M, BUYdeadline15:22/account/basis/run/policy/original
-quarter/B10/F9/reservations/identities/all exits; exit enabled before entry.
-Parent proofBB516F69 at A/execution/current-open45-metadata-docker-query-
-calibration-20261103-v1/PARENT-ACTUAL-COMPLETE.json; capture2b68111d/
-recoverycd098a3b/read77e9. Three hidden metadata workers11.482337supper/
-42Jobmembers all joinedempty/closed/exactPIDs absent;0TaskRun/broker/private/
-credentials/models. MetadataSourcee8099c57 adds qualified positive process
-ExitCode/join/source-filter query only. Seven focused fixtures include null/
-nonzero/timeout rejection; original actual actor/source/financial guards remain.
-Prior no-op/r2/r3 failures/debits retained; r2 exact cause still UNKNOWN.
-Nullable module LASTEXITCODE is not treated as0. Original DF413/529 history
-is superseded operationally, not replayed/erased. Actual future point/financial
-effects UNKNOWN. Dataecfc is separately actually enabled/independent0c4c.
+## Claims / Reference
 
-Data publisher ecfc19c0/metadata bb777f4f is actually updated/enabled;
-independent0c4cda29, sameNov3UTC15:07:30/capture15:16. Old142/775 retained.
-Actual future point/date/checkpoint/seal/source/publisher closure still required;
-forecast originaladmit15:17..<15:18/separate BUYdeadline15:22/no expiryretag.
-No TaskRun/catchup/repetition or consumed metadata replay.
-
-Data310/meta473+Parent4da Nov6coherent capture now separately installed:
-Nov6UTC21:10; no financial authority or current Paper state changes.
-
-## Outcome Limits And Duties
-
-All new installation facts are NOT submit/acceptance/exact fill/current
-inventory/fees/settled cash/net PnL. Actual financial results remain UNKNOWN.
-Source marker provenance assumes honest host, not cryptographic OS origin;
-Operational logging disabled. Custody reads need relevant-writer admission,
-exact joins/network-none RO/stability, never recovery-capable observe().
-
-Preserve GOOGLNov9UTC20:55, MSENov5UTC20:40, H20Dec1UTC14:30,
-NAS8Nov3/4UTC21:10/frozenNov4UTC21:35 and ALL original exits.
-F9 UNKNOWN-HELD unchanged; holdings-only4positions is not ownership/adoption.
-Monitor127.0.0.1:8787 stays pinnedbe48f29e, no public exposure/casual rebuild.
-Full18 profile source/native ready, NOT financial deployment.
+No operator decision pending. Actual effects require current relevant owner,
+account/basis/B10/F9/exact unknown/quote/orderability/emergency guards.
+Missing/file/Task exit is not acceptance, fill or current inventory. Original
+readers remain strict network-none/RO/stable. Below is frozen reference, not
+current deployment authority or a list of running agents.
 
 ## Frozen Execution Index
 

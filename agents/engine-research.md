@@ -2,36 +2,42 @@
 
 ## Current Results And Next
 
-Updated Nov3UTC14:54. Confucius owns Engine and sole GPU coordination.
-Broad5129b52 stays CLOSED: CPU CatBoost completed/BEST92 retained; CUDA
-TCN watchdog124/partial weights, not convergence or certified BEST. All old
-actors/CIDs/lease/debits are closed/preserved, no refit or refunded attempt.
-Separate frozen-checkpoint diagnosticc4bfaeec ran two forecasts/12fixed views
-then failed numpy.bool_ summary serialization. Cache-only recovery25926cf3/
-RESULT8602c483 completed those SAME views with0fits/forwards/rebooking.
-Both U-positiveTop4 policies were ALLCASH and failed growth/nonempty/samegross
-controls; no alpha or qualified selection pass. Lower DD from no exposure
-is not alpha. Actual full-gross return-head net10 growth was negative
-(CPU-47.223929%, partialTCN-38.853943%), not broker PnL.
-Fixedhalf c23b remains source-only/input_unavailable/0views; no silent rebound.
+Updated Nov3UTC17:01 / Nov4KST. Confucius owns Engine and sole GPU coordination.
+Daily C60 Data1b1c9759/Dataset9b111314 is ready:141dailyorigins,
+17assets/2397known inputs,139new-entry dates plus2continuation-only;
+independent H3 price support, no outcome-based selection, no future rows/impute.
+A/data/current-short-swing-daily-c60-input-preparation-20261104-v1/API.json:
+Parent12exact refs/hash/stability checked. Original native failure and separate
+completionf1f23c63 remain distinct, not an original whole-pipeline pass.
 
-Peer-relative OC study CLOSED: Source0ca2a022/RESULTfb7444f7 under
-A/research/current-broad512-peer-intraday-residual-selection-development-
-20261103-v1. Actual2fits+2forecasts/10views/0retry; CPU/CUDA fit in parallel.
-CPU53trees/BEST52; CUDA19epochs494updates/BEST6/INNER_EARLYSTOP12, safe cold
-restores/durable curves. Net10 growth CPU-41.309432%/TCN-52.037411%: both
-primaryFAILED. Gross CPU+28.545034% is NOT net profit; daily-flat turnover
-dominates. No current Paper/full17/Nov9 model or bank swap.
-Parent43sourcepins0mismatch/resultmatch;50PIDbirths/6CIDs/lease closed/finalizer
-absent.847.162812 upper includes source/closure reserves, not measured GPU time.
-Adaptive/currentlisting/nonPIT/notTR/MODEshift/costproxy/close-DD limits remain.
+Engine daily maxH3 meanrank inventory study is CLOSED_FAIL_FROZEN_PRIMARY:
+A/research/current-short-swing-maxh3-daily-meanrank-inventory-development-
+20261103-v1/SYNTHESIS.json and DELIVERY-CLOSED.json.
+Source8e961834/RESULTa76a02d8;0fits,2market logical forecasts,12newcost views,
+0retry;42recorded original actors/4CIDs/leases/finalizer closed.
+TimesFM market runtime16.858s/peak1.059GB and Chronos10.814s/peak0.519GB
+were actual CUDA inference, NOT new training or isolated benchmarks.
+Net10 modeled growth primary+0.0647935%, DD1.10544%, turnover10.14053;
+blindH3+0.828084% and event/samegrossEW17+0.412062% beat it.
+Turnover improved vs daily-flat H1 (-1.774887%), but the frozen primary failed.
+No threshold rescue, repeat, alpha claim or current Paper/model/bank swap.
+2140.706347 upper includes allowances, not measured GPU time.
+Confucius owns the next distinct cost/turnover-aware hypothesis and GPU
+coordination; actual new Source/PID must be evidenced, not inferred from MD.
+All reused-development/MODE1/currentlisting/nonPIT/notTR/unknownCA/finality/
+modeled-cost/analytical-versus-native OPEN5/PRE_CLOSE15 limitations remain.
 
-Next Engine priority: separately deduplicated inventory-coupled1..3session
-cost/turnover mechanism, not old OC refits or relaxed frozen criteria.
-Euclid source-only current-short-swing-turnover-mechanism-proposal-20261103-v1,
-240SUM1800elapsed/0fits/forwards/readouts; direct Engine handoff. Engine may
-freeze a distinct <=7800SUM10800elapsed/<=2fits/<=12views/0retry campaign after
-native/contract/resource checks. Delegation is not an actual GPU launch.
+Next distinct cost/turnover-aware trainable selection/risk/sizing hypothesis
+must beat meaningful risky/samegross baselines, preserve chronological splits,
+OOF learned-fusion inputs, real native optimizer/checkpoint/earlystop/curves
+and finite caps. No rescue of failed frozen targets or repeat for utilization.
+Parent delegated <=7800SUM10800elapsed/<=2fits/12views/0retry; actual next
+Source/PID remains to be reported, not assumed running.
+
+PeerOC0ca2/RESULTfb7444f7 CLOSED2fits2forecasts10views:CPU53trees/BEST52;
+CUDA TCN19epochs494updates/BEST6/early12, net10growth-41.309432%/-52.037411%,
+both FAILED. Original9b52 and diagnostic/cache2592 failures/ALLCASH results
+remain closed, no refit/rebooking. Current full17/native/Nov9 or B10 unchanged.
 
 ## Closed Paper Handoff
 
