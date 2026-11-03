@@ -2,167 +2,40 @@
 
 ## Current Resource Coordination
 
-Nov3UTC01:29: Harvey coordinates NEW Phase45 single GPU fit, conditional after
-exact staged Data/source/native CUDA/checkpoint/score/book/Claude/headroom.
-Root current-phase45-engine-development-20261103-v1; total3000SUM7200elapsed
-fromearliest01:03:46/hard03:03:46, partitions in NEXT_CODEX_GOAL. DataStage240,
-original600Strategy+120consumer retained, old late metadata not regraded.
-Onefit1forecast3views/no marketretry;max512updates/120optimizersec/patience48,
-not a request to fill GPU artificially. No actual new fit claimed from dispatch.
-Old fits/forecasts and leases stay closed; +4GiB desktop reserve/current exact
-PID/start/lease/headroom before native or market worker, no user-app allowlist.
+Nov3UTC02:30. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is sole current
+GPU coordinator. Open45, Phase45 and cost-gate numerical work is COMPLETE,
+not still pending. Open45 Paper readiness is COMPLETEc9eae425/native52.
+Current source-only CPU point-producer preparation needs no GPU: native trusted
+original checkpoint restore/invented-input forward only, no market evaluation.
+No environment, user-app or operator-permission hold on useful GPU training.
 
-Nov3UTC01:10: Open45 numerical2fits/2forecasts/15views COMPLETE. Actual CUDA
-LSTM34updates/BEST10/INNERearlystop/.269500optimizersec/.549433fitwallsec,
-80.13MBallocated/81.79MBreserved. Small120FITrows explain brief GPU use, not
-an environment/permission hold. Reused5DEVdates primaryPASS is not independent
-alpha/convergence/PaperPnL. RESULTb6f0deff closes57actors/6CIDs/lease and
-1071.522273upper. NonlinearGPUhazard final audit98a492 closes17actors/lease,
-972.158975upper/0newnumerics. Fixed savedforecast composition also COMPLETE:
-Sourcea9cb5e82/RESULT0e131978/0fits3views/fourclosedactors/409.721335upper,
-net10+1.185653pct/DD.743823 fails growth versus savedLSTM. No GPU needed there.
-Next early-phase rolling-context source preparation is owned jointly through
-disjoint Strategy kernel/Engine contract roles; ONE proposal before schema/
-data/trial freeze, no numerical dispatch yet. No current active training claim,
-dummy utilization or more epochs/seeds on completed models. Old debits unchanged.
+- Original Open45: LSTM34updates/BEST10/.269500optimizersec/.549433fitwall,
+  80.13MBallocated81.79MBreserved; RESULTb6f0deff,57actors6CIDsleaseclosed,
+  1071.522273upper. Small120FIT rows explain the short fit.
+- Phase45: 1CUDAfit55updates/BEST7/.259228optimizersec/.607427fitwall,
+  98.23MBallocated117.44MBreserved; RESULT12f16aa2,41actors4CIDsleaseclosed,
+  1956.372048upper.600FIT rows from five overlapping phases are not new dates.
+- Absolute cost gate: 1GPUfit49iterations/BEST0=one trained tree/
+  .620536fitwall; RESULT06851f0c,40actors4CIDsleaseclosed/1525.412293upper.
+  All cash, primary rejected; no threshold/seed/epoch retry.
+- Fixed saved-forecast composition:0fits3views/fouractorsclosed/
+  409.721335upper; CPU only, primary rejected.
+- Earlier nonlinear GPU hazard:114iterations/BEST81=82trees/
+  .589849optimizersec; audit98a492/17actorsclosed/972.158975upper,
+  zero audit numerics. No repeat to repair logs.
 
-Nov3UTC00:35. Sole current GPU coordinator Harvey01a19e80-1586-7fe2-9587-
-9b44f510842b owns Open45 two-fit family (indicatorRidgeCPU/combinedLSTM32CUDA)
-at D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1.
-Original Nov2UTC23:46..Nov3UTC01:16/1800ownedSUM5400elapsed/2fits2forecasts/
-15views0marketretry; oldprep300+staging180 upper retained. Actual CUDA/checkpoint/
-handoff/Claude readiness precedes conditional delegated market release.
-Sourceffa13cce/STAGED48a8b342 Data ready25sessions/120FIT40INNER40DEV; no new
-acquisition required. Keep current actual PID/start/lease/headroom proof, +4GiB
-desktop reserve, project priority/concurrent useful work, no user-app allowlist.
+Exact paths and metrics are in agents/engine-research.md and the immutable
+callbacks. Prior scope clocks/failures/caps/debits remain unchanged. Unused
+budget is not extra trial authority. Current dispatch/MD is not a live PID.
 
-CPU H3 hazard COMPLETE546.266upper/1fit133updates/BEST101/.070583optimizersec.
-GPU nonlinear first-passage COMPLETE1fit114iterations/BEST81=82trainedtrees/
-.589849optimizersec; net10growth109.553207/DD20.866974/turn142.695227, primary
-growth failed. marketSUM12.158975, CID/CLI/lease closed. Device5661MiB includes
-co-tenancy, not isolated allocator. Final audit consumes existing reserved
-budget only, no numerical replay. Initial native bootstrap and invalid Parent
-release were pre-market failures, preserved. Do not interpret a historical
-prep callback as the later run's current status. All older completed fits stay
-closed; small useful fits/earlystop explain brief utilization, not GPU denial.
+Next resource demand depends on genuinely ready new data/hypotheses, not
+artificial GPU occupancy. Measure current free/projected peak VRAM, keep
+desktop/driver headroom and recheck before adding concurrent useful workers.
+Personal apps are not a permission hold; never kill user apps or reclaim
+live/unknown project leases by age. Execution reliability preempts safely.
+The historical evidence below is CLOSED, not the current resource queue.
 
-Original robust-four/r1 EXPIRED CLOSED0marketattempts, old810
-debit/seven absent actors/negative-clock failures retained, no reset/refund.
-New current-h3-robust-four-development-readout-20261103-v1 COMPLETE/CLOSED:
-one zero-fit CPU pipeline/sixviews/0retry/oldmean3parityPASS; old810+new7.456=
-817.456owned-wall debit, seven actors absent. No GPU needed. Growth+riskPASS,
-turnoverFAIL, primary rejected. No regrade/current point swap.
-
-Never kill user applications. Historical resource checks are not fresh capacity
-proof. All older GPU campaigns below stay closed; no dummy utilization/repeats.
-
-Nov3KST/Nov2UTC20:38. McClintock's numerical scope is CLOSED; Parent checked
-8exactPIDbirths absent/2CIDs absent/leaseabsent,22350MiBfree35C before dispatch.
-Gauss failed remote compaction at capacity before any new root/lease/dispatch;
-old numerical results untouched. Fresh same-default-model Fermat
-agent01a19dc4-9095-7cb3-88d4-6d7271e5f75f completed and CLOSED
-current-four-expert-h3-point-kernel-20261103-v1/r3:
-Source77d63050/API3143c06d/codec effbb228/PARENT-CLOSEe8d0dba9.
-One invented17stock native batch/3safe restores/17COMBO/17TCN/1GPUtreepredict,
-41checks; r3 adds41clock checks on saved outputs with0additionalmodels.
-518.578of900SUM, exact actors/leases absent before20:37:54. Initial setup
-failure retained, same-source replay is codec-only. No fits/marketpayload/eval/
-Task/private/credentials/broker. Existing trusted4bbimage/4GiBdesktop reserve.
-No current training or automatic three-expert publisher/Execution image swap.
-All completed numerical workers below are closed.
-No MD/queued dispatch is evidence of current GPU training. No duplicate fits.
-
-New PairLogit/CatBoost1.2.10 GPU campaign current-h3-ohlc-pairwise-boosting-
-20261103-v1 COMPLETE Source49039e9b/FINAL-AUDIT.json. Existing trusted image4bb201b5,
-one market GPU fit/one forecast/six new views, zero retries/old model operations.
-INNER best5trainedtrees/0.935optimizerseconds; brief use reflects small data and
-early stopping, not GPU restriction. Native failed inference API attempt is
-retained; correction restored SAME safe CBM without refitting. All14exactPIDs/
-5CIDs/lease fresh absent;955.960/2400activeSUMupper2941.677/7200elapsed at audit.
-Four-expert adaptive DEV primary passed; no automatic point/deployment claim.
-Late-day reversal0fit9views COMPLETE, no GPU required/all6PIDs+lease closed,
-303.289/600activeSUM. Relative pass but absolute loss, no standalone adoption.
-New numerical work current-h3-cost-margin-pairlogit-20261103-v1 COMPLETE:
-origin18:42:06.7396187UTC:prep600SUM1800elapsed/TOTAL2400SUM7200elapsed inclprep/
-failures. Actual1GPUfit/forecast/sixviews,0marketretry,Source7167a0d4/RESULT6066f4fd.
-65evaluatediterations/BESTindex0=1trainedtree,0.962optimizersec, actualGPUforecast;
-primary risk+turnoverfailed, noadoption.43.922controllersec/worker0/leaseabsent;
-Final CALLBACK95aa53f8 proves8exactPIDs/2CIDs/leaseclosed,410.728/2400activeupper,
-2326.926/7200elapsed. No current training claim.
-FIT/INNER-only fixed20bps pair weights, not a new seed/grid or old fit repeat.
-All owned work must close by min(frozen expiry,20:45UTC), before original
-GOOGL20:55. Fresh headroom/lease proof before useful native/market dispatch.
-OOF-gate proposal recommends DEFER:6newfoldexpertfits+1gatefit would add cost;
-Parent agrees, prioritizes already-ready4expert point adapter. No new numerical
-family released. No dummy
-utilization job or current-training inference from this MD.
-
-Joint Source6a0c2d21/AUDITED-CALLBACK-r3.json29e5ed00:5fits99views COMPLETE.
-TCN26epochs1456updates/BEST2,657.347optimizerseconds/1203.756worker seconds,
-activeupper3149.792/5400,elapsed2780.447/10800. All exact PIDs/CIDs/lease closed.
-Separate selection/exposure diagnostic Source9552e128:0fit21views COMPLETE,
-305.875activeupper/1200,1101.693elapsed/3600. No CUDA repeated.
-
-New OHLCranking Source79928fd1/CALLBACK.json:2fits15views COMPLETE,
-CPU50000sampleupdates/BEST0, GPU26epochs1404updates/BEST2/7.880optimizerseconds/
-10.476workerseconds,107375104allocated125829120reserved bytes.
-Measured native+market lifecycleSUM62.262s; preparation/audit worker upper1800s
-retained gives1862.262/7200activeupper; elapsed1310.967/14400.
-Exact native+market controller/interpreter/CID/CLI/lease closures positive.
-Small data/model and early stopping explain short GPU use, not environment or
-user-app permission hold. Primary failed, no automatic point replacement.
-Original99/21 outputs and all old model/debit records unchanged.
-
-New current-h3-half-adjustment-policy-20261103-v1 CLOSED0fit/3views/0retry,
-CALLBACKe81f313b/21nativechecksPASS/6PIDs+leaseclosed;201.769/600active,
-724.386/1800elapsed. Primarygrowthfailed; no fractiontuning/adoption. No GPU
-needed or model restore/forward/retraining; preferred point unchanged. Measure actual
-headroom before a ready frozen numerical dispatch; first useful project GPU
-priority and concurrent useful work remain approved. Never kill user apps or
-reclaim unknown live leases by age. Keep independent Paper priority and qualified
-physical actor compatibility; do not infer a global GPU permission wait from
-one frozen capsule's admission. Actual financial custody readers scope actual
-private writers, not every market-data/research process.
-
-Historical resource records below remain closed, not queued/running work.
-
-2026-11-02 KST. Residual/downside C1 actual2fits CLOSED_INVALID_UNAVAILABLE,
-not model failure: MLP70epochs210updates/BEST6, no convergence; no-late-seed
-input refusal before any completed cost view. All exact owned processes/
-containers/GPUlease positively closed; actualcontroller17.032s and activeupper
-917.032of2400 retained, never refunded. No old training is repeated.
-Gibbs daily-trained residual LSTM sibling is now CLOSED:1actualCUDAfit,
-65epochs2600updates/BEST1/inner earlystop64,1forecast9newviews/carry27unchanged.
-Sourcec57b6fb3/CALLBACK3fbe3a9f,925.925of2400active; fresh exact CIDs/PIDs/
-lease closure confirmed on resume. Actual fit phase7.658s/optimizer5.260s,
-peak203.5MBallocated209.7MBreserved; small network/data and early stop explain
-short GPU use. No environment/user-app permission hold or convergence claim.
-No completed fit repeated. Those previous numerical workers CLOSED; NEW source
-preparation is assigned above, not yet an actual market fit.
-Copernicus CPU replay closed27views/0fits,654.135of900active, independent paths.
-
-Prior Singer exposure/downside CUDA
-study also CLOSED:1fit256epochs2304updates/BEST256/MAX_EPOCHS/0retry, actual
-cuda:0/RTX4090/peak95.3MBallocated119.5MBreserved,22.797soptimizer phase.
-Source2f4902f6/callback/verifyc8599736,932.137of2400activeupper, allowned
-GPU/container/PID/lease resources positively closed. Utilityfailed; no claim
-that reaching epoch cap proves convergence or that GPU occupancy is an outcome.
-Singer's CPU-only holding-interval/cost-aware Ridge diagnostic is also CLOSED:
-Sourcecaf043a1/CALLBACKd89e02d1/VERIFYa31dbe71,1fit1forecast1evaluation/
-6policies18views/0numericalretry. First native assertion failed pre-market;
-r2 continued from saved synthetic outputs, not a repeated market fit.
-510.041of1200active/1046.811of3600elapsed, bothcontainers/PIDs/leaseclosed.
-Primaryutilityfailed; this exposure-timing family STOPPED.
-Darwin's DISTINCT constant-gross monthly stock-selection family is also CLOSED:
-Source0cdd8c75,2fits(RidgeCPU+GRUCuda)/2forecasts/1readout/7policies21views/
-0numericalretry. ActualGRU33epochs132updates/BEST1/INNERearlystop;914.788of2400
-activeupper/allownedresourcesclosed. Initial CUDA native failure retained;
-completed synthetic Ridge was not repeated. Ridge/blend riskboundfailed;
-GRUutilityfailed, this monthly family STOPPED. No numerical/GPU worker queued,
-dummy occupation or general ban on distinct future model hypotheses.
-Parent owns MD/Git and direction, not an extra qualified-handoff approval.
-
-## Current Resources
+## Closed Resource Evidence
 
 New distinct current-us19-quantile-transformer-development-20261101-v1:
 one market CUDAfit/oneforward/3policy9views/0numericalretry,1200activeSUM/
@@ -213,7 +86,7 @@ Turnover2policies6views closed99.681/600active/0expertfits; Strategy360upper/
 studies, not claims of GPU use or zero statistical estimation. Current GOOGL
 future pair85de/0703 installed; no actual financial result yet or new bank.
 
-## Due / Next
+## Retained Duties
 
 H20 entry Nov2UTC15:15/read15:35; future Data Nov2/3/4UTC21:10 and frozen
 candidateeb8f evaluation Nov4UTC21:35..45 unchanged. No new training from those

@@ -5,205 +5,148 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain interpretable native KIS Paper entry, exact acceptance/fill and current
-owned-position reconciliation while cost-aware short-horizon research continues.
-Tests, installation, proposals, UI and commits are not financial closure.
-Paper execution learning is not gated by model profitability.
+owned-position reconciliation while cost-aware intraday and short-swing research
+continues. Installation, tests, UI and commits are not financial closure.
+Paper engineering does not require model profitability.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Follow AGENTS.md, HANDOFF.md, RUNBOOK.md and current role stateboards.
-Parent owns shared MD/Git/adoption. No operator decision pending.
-Preserve ONE original B/10, costs/losses, F9 UNKNOWN-HELD, pending identities
-and ALL original exits. Never KIS_LIVE_*, foreign inventory adoption, unknown
-request substitution, profit refill or stale-point retag. Preserve %SystemDrive%/.
+Parent owns integration/shared MD/Git. Follow AGENTS.md and current stateboards.
+No operator decision pending. Preserve ONE original B/10, costs/losses,
+F9 UNKNOWN-HELD, pending identities and ALL original exits. Never KIS_LIVE_*,
+foreign adoption, substitute unknown requests, profit refill or stale-point
+retag. Leave unrelated %SystemDrive%/ untouched.
 
-## Critical Execution Path
+## Execution Critical Path
 
-1. H3 future entry and exit are ACTUALLY installed/enabled, Ready3/0instances.
- Do not replay Create/Recover/Enable/Finalize. Financial runtime is unchanged:
- hostSOURCE6ae54088/ParentTRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603.
- Exact task names/clocks:
- entry thericher-h3-rank-cash-once-entry-20261103-v1,
- Nov3UTC20:55..<21:00/PT7M (Nov4KST05:55);
- exit thericher-h3-rank-cash-owned-exit-20261106-v1,
- Nov6UTC20:45..<21:00/PT7M (Nov7KST05:45).
- H3 means three sessions. This is the finite first instrument leg, not full
- 17-stock automation. No manual Run, catchup/repetition or clock shift.
-2. Actual full source/registered+definition XML/ACL/SID/clock/settings readback:
- A/execution/current-h3-enable-default-repair-20261103-v1/READBACK.json
- SHA31e83c91325d95ab9bf507e781afb10c38db4df1f351935e1002e9d12627f6ef.
- COMPLETEfc1c35b6, changed-path native9PASS/Source9bc93d9e; inherited calibrated
- Source6ebb205c/native39cases164assertions/old385debit all closed.
- Original partial Create and Enable failures remain immutable. Native sparse
- Settings.Enabled=true is normalized only as the exact documented default;
- false, attributes, clock/ACL/other drift still deny. No financial runtime edit.
- Parent precheckf1bce6e9/recoveraa3b6d5a and raw backupCAPTUREe9558971 retained.
-3. Complete the enclosing H3 strict read host/guest readiness before the owned
- opportunity. Public parser03ec/14tests, active SDK0ad/15tests and completed
- decodere1b/10tests are complete. Helmholtz now owns
- A/execution/current-h3-offline-guest-host-readiness-20261103-v1,
- 600ownedSUM1800elapsed/hard<=01:00. Native Docker may use only invented RO
- custody/network-none to test actual bootstrap/admission/stability/closure.
- No actual private/broker/Task call or new schedule in this package. Future
- actual read requires separately qualified exact source/run/window; release
- preparation closes before launch. No recovery-capable observe() as reader.
- Enclosing host Source7a5d1aef/SPEC7050119d/NATIVEe7220a9a is now COMPLETE:
- three invented-custody Docker guests/24Jobsclosed/3CIDsabsent/new290.374552SUM,
- no actual private/census or financial claims. Helmholtz owns separate future
- preparation current-h3-post-entry-reader-future-preparation-20261103-v1,
- 900ownedSUM2700elapsed, ONE proposed Nov3UTC21:10..<21:17 read after original
- entry closure. Actual source/metadata/quiet native installer/readback must
- qualify before Parent installation; no actual definition installed yet.
- Fresh <=3min release and positive releasewriter/original-runtime closure
- must precede future direct host; no generic ancestor exemption or Task exit.
-4. Installation is NOT runtime admission/submit/acceptance/fill/PnL. Original
- effect-time account/basis/F9/unknown/token/quote/orderability/observer/risk
- checks remain. Keep company outcome UNFINISHED until actual runtime closure.
- Earlier GOOGL/H20 results remain UNKNOWN. Original GOOGL read and new retained
- host21a200b7/release41f9b96c consumed WITHHELD; no replay/new read chain.
- Boyle first-cause11fda1d0/callback5015fc30 proved Parent adopt.ps16499a380 was
- the unqualified launch ancestor; private_reads0/four Jobs closed in new read.
- Separate preparation from qualified future launches, no blanket exemption.
+H3 is the bounded AMD first-instrument leg, not full17-stock automation.
+HostSource6ae54088/ParentTRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603 unchanged.
+The entry and exit are installed/enabled:
+- thericher-h3-rank-cash-once-entry-20261103-v1:
+  Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
+- thericher-h3-rank-cash-owned-exit-20261106-v1:
+  Nov6UTC20:45..<21:00/PT7M = Nov7KST05:45.
 
-## Parallel Packages
+Full native readback:
+A/execution/current-h3-enable-default-repair-20261103-v1/READBACK.json,
+SHA31e83c91325d95ab9bf507e781afb10c38db4df1f351935e1002e9d12627f6ef.
+Do not rerun consumed Create/Recover/Enable/Finalize or manually Run either task.
+Original effect-time account/basis/F9/unknown/token/quote/orderability/observer/
+risk controls remain. Submit/acceptance/fill/owned inventory/PnL stay UNKNOWN.
 
-- Data preparation COMPLETE: Sourcea6668bfa/45native/fullRuff/15Jobsclosed,
- canonical original19 overlap9/87746of87750 minute cells/25sessions; gaps AMD
- plus nine NYSE names. Proposed665GET/800cap/2h/zero retry, zero actual HTTP.
- Copernicus now owns finite runtime integration at
- D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1,
- 900ownedSUM2700elapsed from actual dispatch. Reuse existing Paper Data client/
- valid token, exact cache/account ownership and tested quiet host; canonical
- bytes remain D:/market_data. At most4 market probes/1POST for proven invalid
- local token OR new isolated client without usable retained token, under
- unchanged issuer/timing gates. Initial issuance is one persisted instance-
- bound attempt, not a false claim another bearer expired. Unknown/lost issuance
- stays consumed; midbatch401/403 never reauthenticates. No account/order/live/
- raw env. Long batch
- deployment still needs actual source/native adoption, not a human approval.
- Runtime Source3e0a4b4b/NATIVE74/closure874bad78 ACTUALLY adopted; Parent release
- 48c3f5c5 launched quiet hostPID39544 atNov3UTC01:13:23.904539 with safe explicit
- environment. One batch only/worker7200s/14550SUM/800GETcap665planned/1POST/
- 0retry; no Task/service. TERMINAL01:14:12 SCOPED_UNAVAILABLE11GET/1POST/
- 10accepted heads/1200unique rows/1failure/pendingGET. No historical page
- accepted; SDK continuity predicate failed, exact condition unknown. Host/
- workerJobsclosed/97.684494SUM/exacthost39544freshabsent; exit0 is not complete.
- Cache M/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
- Original actual-once/cursor/marks immutable, heads not selection-ready.
- Copernicus owns NEW current-us19-minute-continuation-recovery-20261103-v1:
- prep600SUM1800elapsed, once4GETmax/1initialPOST with actual ceilings/source/
- quiet ownership/native diagnostic consumer/Claude frozen before dispatch.
- Use previous returned last-bar-minus1 continuation per official source,
- not unproven arbitrary historical seeds. Record categorical continuity/clock
- flags/counts only, preserve old request; no665massretry/financial reservation
- semantics or fresh-head qualification. Delegated once after exact readiness,
- no extra Parent/operator approval wait.
-- Data actual coherent19daily DATAREADY2d5e183b/manifest122b369c/closure9a5bd544
- and Parent2371+19currentcells remain complete. Reserved NAS8 Nov3/4UTC21:10
- and frozenNov4UTC21:35 eval stay separate, excluded from new selection.
- New old-data hazard input a3cd755a QUALIFIED: 233exact savedrank3 decisions/
- 11917packetkeys, FIT1699/INNER497/DEV233. Exact staging HANDOFF25a88b1b:
- A/research/current-h3-absolute-regime-expert-preparation-20261103-v1/research/
- current-h3-absolute-regime-input-staging-20261103-v1/HANDOFF.json.
- Worker unexpectedly used that nested new D subtree; Parent accepted its exact
- bytes only, not a general write-scope change. Old56sources unchanged, no restaging.
-- CPU absolute hazard COMPLETE: Sourcea275643d/contract3feb3c90,1fit/1forecast/
- 6views/0retry,133updates/BEST101/INNERearlystop/.07058optimizersec.
- Net10 cumulative120.910531pct/DD22.742307/turn151.007615, samegrossEW77.101409.
- Risk+turnoverPASS, growth149.175598floorFAIL => primary rejected. No rescue/
- current Paper swap. Parent COMPLETEb1697d31/546.266familyactiveupper,
- PID29600absent. Old prep300/staging180/Parent60 reserved, no refund.
-- Robust-four trimmed-rank readout75865f5c/d9487d3f/RESULT1d8c81ba COMPLETE:
- zero-fit1pipeline/6views/0retry/oldmean3parityPASS.242.377556pct/DD22.434191/
- turn188.726218: growth+riskPASS but frozen185.995827turnoverFAIL, not regraded.
- Old810+new7.456=817.456worker-wall debit, seven actors absent. Reused DEV,
- not independent alpha/Paper PnL or current point replacement.
-- GPU nonlinear hazard ACTUALLY COMPLETE: Source5a0e0d88/contract3153276a/
- release17d53600,1CUDAfit/1CBMrestore/1CPUforecast/6views,114iterations/
- BEST81=82trees/INNERearlystop/.589849optimizersec. Net10growth109.553207/
- DD20.866974/turn142.695227: growthFAIL, risk+turnoverPASS, primary rejected.
- Actual control0/COMPLETE, marketSUM12.158975/CID+CLI+leaseclosed. No point swap.
-- NEW Open45 intraday: Harvey Engine/soleSteward owns
- A/research/current-open45-engine-development-20261103-v1. Original family
- Nov2UTC23:46..Nov3UTC01:16/1800ownedSUM5400elapsed,2fits/2forecasts/15views/
- 0marketretry. CPU indicatorRidge vs combined9x16 CUDA LSTM32, first45RTH
- minutes, entryEND10:17/exitEND11:17/top4quarters/cost0/10/20bps.
- Ohm DATA_READY_CLOSED00:30:55 at
- A/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json:
- Sourceffa13cce/STAGED48a8b342/native2c0a0787/FIT120INNER40DEV40/25sessions.
- No new acquisition required. Actual native CUDA/checkpoint/handoff and short
- Claude challenge precede market. Parent conditional two-fit release already
- delegated; direct qualified Data handoff needs no extra Parent approval.
- Keep provider-clock/finality/CA/current-listing/reusedDEV limits and original
- reserved outcomes excluded. Completed old fits never repeated for utilization.
+Finish ONE automatic post-entry offline read without a human JIT release.
+A/execution/current-h3-automatic-post-entry-reader-preparation-20261103-v1:
+Source9410af60/authority624719ad/run45e9ad3e7c464827a6a09a415b0f4106.
+Actual installation failed after creating ONLY the disabled reader task:
+thericher-h3-automatic-post-entry-offline-read-once-20261103-v1,
+Nov3UTC21:10..<21:12/hard21:17/PT7M = Nov4KST06:10.
+Positive read-only facts: Disabled1/0instances, install ATTEMPT present,
+PARENT-STATIC-RELEASE absent. Do NOT replay Install or reset the latch.
+First cause: full native XML comparison omitted Actions.Context=Author and
+WakeToRun=false sparse-default handling. Actual stderr was not retained;
+the read-only reproducer, not stderr length, establishes this diagnosis.
 
- Open45 numerical comparison is NOW COMPLETE: Source37e58ff4/release exact
- OPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry, actual CUDA LSTM34updates/
- BEST10/INNERearlystop/.269500optimizersec. Reused5DEVdate clusters net10:
- LSTM+1.216960pct/DD.651134, Ridge+1.068984/DD.743823, samegrossEW+1.092579/
- DD.815521. Frozen primary PASS, not independent alpha/qualified Paperinput
- or current H3 point replacement. Final RESULTb6f0deff closes57actors/6CIDs/
- lease/1071.522273upper. PriorGPUhazard audit98a492 closes17actors/972.158975upper.
- Fixed three-expert mean-rank composition is also COMPLETE:
- A/research/current-open45-three-expert-composition-development-20261103-v1,
- Sourcea9cb5e82/RESULT0e131978/native11PASS/0fits0forecasts3views; net10+1.185653/
- DD.743823, growth versus LSTMFAIL/riskPASS => primary rejected. Old15metrics
- unchanged/fouractorsclosed/409.721335upper. No current point change.
- Next Engine/Strategy coordinate ONE distinct early-phase rolling-context
- preparation; source-only Ohm root current-rolling-intraday-expert-kernel-
- preparation-20261103-v1/600ownedSUM1800elapsed. More earlier training contexts
- plus known phase/equalDATE may be evaluated at original once-session clock,
- not hidden multiple-funded sleeves. Exact schema/data/model/trial caps before
- numerical release; no old fits/forecasts/replays or reserved-data selection.
+Helmholtz completed NEW bounded exact-definition recovery:
+A/execution/current-h3-static-reader-definition-recovery-20261103-v1,
+600ownedSUM1800elapsed from receipt. New source/native negative tests and
+Claude challenge before Parent adoption. Preserve exact existing task,
+source9410/action/run/authority/clocks/ACL and original failed evidence.
+Parent Repair returned0 and separate independent readback returned0:
+RECOVERY-COMPLETE1886c323/INDEPENDENT-READBACKb9801906,222sourcepins stable,
+exact reader ENABLED/Ready3/0instances. No Install replay or financial change.
+The failed9410 installation paragraph above is the retained first cause, not
+the current task state. Do not rerun consumed Repair/Readback.
+No Task Run/delete/recreate or financial runtime change. Source-qualified
+read-time writer admission, original closure, RO/network-none stability and
+exact intent/fill binding still apply. Old7a5/d45 results are immutable.
+Static authority is not current financial evidence or cryptographic OS-origin
+proof; the old fresh-release age is not a global hold.
 
- Phase45 is NOW the single chosen next campaign, conditional numerical authority
- delegated: original earliest prepNov3UTC01:03:46, total3000ownedSUM7200elapsed/
- hard03:03:46. Partitions oldStrategy600+oldEngineconsumer120+DataStage240+
- EngineSource/native360+GPUfit600+forecast180+readout180+audit600+prefitnative
- contingency120=3000; old metadata lateness/debits retained, no clock reset.
- Engine root A/research/current-phase45-engine-development-20261103-v1;
- Data root A/research/current-phase45-input-staging-20261103-v1 (240SUM/
- 900elapsed/hardmin(receipt+900,01:45)). Source36native f73e5221/actual named
- consumer66b8b791, ONE9M5/45min encoder with known phase feature17; FIT origins
- 45/60/75/90/105min max600rows, INNER/DEV origin0 only40/40, equalDATE/origin/
- stock loss and original10:17..11:17 economic clock. No extra funded sleeves.
- One new CUDA LSTM32 fit/max512updates/120optimizersec/INNERpatience48/
- LR schedule/best restoration; BEST0/noINNER improvement kills candidate.
- Exactly1fit1forecast1readout3newviews/0marketretry; carry old metrics unchanged.
- Primary net10>savedLSTM1.216960 ANDsamegrossEW1.092579, DD<=1.5*.815521.
- Actual strict new Data stage/nativeCUDA/checkpoint/score/book smoke, scoped
- Claude and fresh GPU/lease/headroom before delegated once release. No extra
- Parent approval wait after qualification, no claim actual fit has started.
+Execution next source-only package (after closed reader repair):
+A/execution/current-open45-intraday-native-profile-preparation-20261103-v1,
+900ownedSUM3600elapsed from receipt. Integrate Engine's exact original Open45
+proposal ABI into a separately named finite same-session native profile using
+the existing serial account-owned dispatcher/risk/bank paths. Invented-only
+real adapter/native entry->exit smoke first. No Task/broker/private state or
+actual deployment in this preparation. No new bank, later-session spoof,
+unknown-request substitution, gate by model profitability or all-positions-flat
+veto. Expose actual same-session input/capture requirements; existing H3 and
+other original duties remain unchanged.
 
-- Monitor H3 minimal tracked display integration: exact public AMD first-leg
- mapping, qualified read clock null, financialUNKNOWN always; preserve old
- H20/GOOGL digests and legacy publisher exclusion. Serial259PASS, new full8worker
- authority PASS under current-h3-monitor-integration-20261103-v1,
- Sourcead63e025/1427pins. Current Dockerbe48 remains unchanged; no actual rollout
- inferred. Rollout must preserve named financial admission compatibility.
+## Parallel Ready Work
 
-Initial-client issuance clarification: Claude SOUND_WITH_LIMITS at
-A/data/current-us19-minute-runtime-binding-20261103-v1/CLAUDE-AUTH.json.
-Old known_invalid_token adapter remains immutable; source-revised initial
-issuance path must qualify before use. No actual HTTP/deployment inferred.
+Data/Copernicus:
+A/data/current-us19-raw-historical-batch-preparation-20261103-v1.
+Pure shared module src/thericher_v2/data/kis_historical_capture.py and focused
+tests are its assigned repo writes; freeze/review/integrate before adoption.
+Current corrected Source70ef5448/PLAN0b1b3a66/native-r4; actual HTTP not yet
+inferred. Old711/native-r2 plus failed lint retained. StrEnum/format corrected;
+Parent serial202/fullRuff pass; fresh full helper r2 underway.
+Proposed655 historicalGET/800totalcap/1initialPOST/0retry/7200s worker,
+NEW raw quarantine under M. Preserve exchange/Korea labels verbatim; exchange
+order/duplicates/maxKEY control cursor progress, secondary clock mismatch is
+diagnostic. Captured is NOT canonical/model/Paper-qualified.
+Original3e batch is closed11GET/1POST/10heads1200rows; Source2c probe proved
+head/proper continuation valid but old key120ordered rows had Korea+1h.
+No quota/fallback/history-floor claim or guessed clock repair.
+Actual Parent adoption is COMPLETE, worker launched Nov3UTC02:50:03.517370:
+quiet hostPID9332/birthFILETIME134381478035082513/releasece1649c6.
+Exact actual-once/PROGRESS/RESULT/HOST-CLOSURE only; launch is not completion.
+Copernicus owns actual progress/terminal callback, no replay/reset. Keep all
+old cursor/attempt/timing state unchanged.
 
-Claude GO_WITH_LIMITS for exact native recovery and separately new DEV readout:
-A/review/current-h3-native-calibration-and-dev-readout-challenge-20261103-v1/response.json.
+Temporary Execution/Ohm holdings-only preflight is COMPLETE:
+A/execution/current-paper-holdings-readonly-preflight-20261103-v1/CALLBACK.json.
+Sourceede107e4/RESULT9f381b90, Nov3UTC02:23:15, 1POST/3GET/three completed
+exchange groups/current broker position count4. No retry. Holdings-only is NOT
+full account/risk/funds or exact owned-fill proof; subject match not checked.
+No private identifiers/amounts/raw values retained; no F9 release/adoption.
+
+Ohm next owns source-only offline clock-anchor preparation at
+A/data/current-us19-raw-clock-anchor-preparation-20261103-v1,
+600SUM1800elapsed from receipt. Fixed exchange-label->NewYorkUTC mapping and
+exact old canonical-row/OHLC digest overlap; no offset search/new HTTP.
+Native invented producer-consumer first. Parity cannot prove PIT/finality/CA/
+START-END or automatically promote raw quarantine.
+
+Engine/sole Steward Harvey: closed Open45 comparison, fixed composition,
+Phase45 and absolute-cost gate; do not repeat completed numerics.
+Open45 LSTM net10+1.216960pct/DD.651134 on only5reused DEV dates is a
+development result, not independent alpha or actual Paper PnL.
+Phase45 RESULT12f16aa2:55updates/BEST7/net10+1.205178/DD.735003, primary reject.
+Cost gate RESULT06851f0c:1GPUfit/49iterations/BEST0=one trained tree,
+1forecast/6views, all20original quarters rejected to cash; primary reject.
+Original Open45 source-only Paper-proposal readiness COMPLETE at
+A/research/current-open45-paper-proposal-readiness-20261103-v1,
+Sourcec9eae425/RESULT0bcc549a/native52/482.351581upper, no market fit/forecast/
+evaluation/broker/private state. Execution consumes its exact ABI directly.
+Next Engine package: A/research/current-open45-cpu-point-producer-preparation-20261103-v1,
+600SUM1800elapsed from receipt. Restore the trusted original BEST10 checkpoint
+once on invented input through the actual CPU model API, bind feature16/axis/
+observed-asof/model/source/output and strict input/proposal consumers. No market
+forecast/evaluation, fitting, GPU occupation or Task/broker/private state in
+this preparation. Original Paper risk and prospective point clocks remain.
+Do not tune the
+same5DEVdates again or reopen reserved NAS8 Nov3/4 outcomes.
+
+Monitor: tracked H3 Korean AMD/unknown-only display is tested, NOT deployed.
+Current local imagebe48f29e at http://127.0.0.1:8787 remains unchanged.
+No public exposure, private custody mount or executable artifact import.
 
 ## Verification And Continuation
 
-CURRENT authority A/verification/current-h3-monitor-integration-20261103-v1/
-RESULT.json SHA0661cf494a9e18aa36c6040e8efb845f1237bb8cf1a6ba36b20ac5811710b8ed:
-1427protectedpinsad63e025/0mismatch,259changed-pathserialPASS/24.84s,
-actual8/8workers/8[19916items],19890PASS/26knownWindowslinkSKIP/
-35warnings/387.29s/helper+native0/checked
-helper cleanup, Ruff and default/research/base+accounting/base+monitor Compose
-with .env.example PASS. Current full-tests.log SHA44dcb39a is authority;
-old7ff/1426pins only historical, old extra-quiet diagnostic still not authority.
-External D: adapters still need their own focused native/negative checks.
+Current authority including the new Data module:
+A/verification/current-raw-historical-capture-integration-20261103-v1/RESULT.json,
+SHA4d61223023c8b561720af962e11641da4d481ba2df959c095495c3ec964a844a:
+202serialPASS, actual8/8workers[19943items],19917PASS/26knownWindowslinkskip/
+35warnings/388.36s,1429protectedpins0mismatch, helper/native0/verified cleanup,
+Ruff/default/research/accounting/monitor Compose with .env.example PASS.
+Initial argument-binding failure and pre-lint r1 are retained, not authority.
+Prior0661 evidence remains historical. No more full suite for unchanged docs.
+External adapters require their own native source tests; repo tests do not
+validate them.
 
-At material company completion verify, commit/push, replace this file with ONE
-next company outcome and continue. Until actual runtime closure, keep this
-outcome UNFINISHED; do not relabel installation or a package commit as complete.
-Workers own due/cooldowns. Continue ready independent work, no foreground
-market wait, no replacement follow-up chain or repeated failed one-shot.
+Workers own cooldowns/next_due. No foreground market wait or replacement app
+follow-up chain. Integrate material evidence, commit/push owned changes; keep
+this company outcome UNFINISHED until actual runtime closure. At that point
+replace this file with exactly ONE material next company outcome and continue.

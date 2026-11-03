@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Nov3KST / Nov3UTC01:15. Company objective UNFINISHED. H3 future definitions
+Nov3KST / Nov3UTC02:30. Company objective UNFINISHED. H3 future definitions
 are ACTUALLY installed/enabled Ready3/0instances, not actual financial execution:
 - thericher-h3-rank-cash-once-entry-20261103-v1,
  Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
@@ -36,11 +36,22 @@ Helmholtz prepares the enclosing native offline host/guest in
 D:/thericher-v2/model-artifacts/execution/current-h3-offline-guest-host-readiness-20261103-v1
 Source7a5d1aef/SPEC7050119d/NATIVEe7220a9a COMPLETE3invented guests/
 24Jobsclosed/3CIDsabsent/new290.374552SUM. No actual private/Task/broker calls.
-Separate current-h3-post-entry-reader-future-preparation-20261103-v1 prepares
-ONE proposedNov3UTC21:10..<21:17 read; not installed yet. Requires fresh<=3min
-release and positive releasewriter/original-runtime closure before direct
-qualified launch; no generic ancestor exemption or Task-exit inference.
-Missing runtime outcome remains UNKNOWN.
+The uninstalled d45 manual-JIT proposal is superseded by NEW automatic static
+Source9410af60 at current-h3-automatic-post-entry-reader-preparation-20261103-v1.
+Its Install is CONSUMED: exact reader task exists DISABLED1/0instances,
+install-once/ATTEMPT exists, PARENT-STATIC-RELEASE absent. Do not rerun Install.
+Owned opportunity Nov3UTC21:10..<21:12/hard21:17; original financial pins intact.
+Read-only diagnosis capture parent-adoption/DISABLED-CAPTURE.json SHA34f9a75e
+proves only Author-context and WakeToRun=false sparse-default comparison gaps.
+NEW current-h3-static-reader-definition-recovery-20261103-v1 COMPLETE:
+Source5dd5a2b5/native23/ClaudeGO_WITH_LIMITS, actual Repair0 and independent
+Readback0. RECOVERY-COMPLETE1886c323/INDEPENDENT-READBACKb9801906 prove exact
+reader ENABLED/Ready3/0instances/authority624719ad. Do not replay these consumed
+metadata commands. Installation still does not prove future runtime admission.
+No new Task Run/definition/retry namespace or human future release. Static age
+is not current admission: source/original closure/actual writers/RO stability
+and strict exact financial joins remain effect-time conditions. Missing runtime
+outcome stays UNKNOWN, no proof of OS scheduler origin inferred.
 After future opportunity use only its qualified existing exact schema/links;
 public status cannot invent private custody/fill/fees/PnL.
 
@@ -72,17 +83,32 @@ Codex thericher-1 was single Nov3KST06:52 follow-up, not a permanent daemon;
 no replacement follow-up chain.
 
 Fresh repo verification:
-D:/thericher-v2/model-artifacts/verification/current-h3-monitor-integration-20261103-v1/RESULT.json
-SHA0661cf494a9e18aa36c6040e8efb845f1237bb8cf1a6ba36b20ac5811710b8ed:
-1427pinsad63e025/0mismatch/259serialPASS/actual8of8[19916]/19890PASS26knownskip/387.29s/
+D:/thericher-v2/model-artifacts/verification/current-raw-historical-capture-integration-20261103-v1/RESULT.json
+SHA4d61223023c8b561720af962e11641da4d481ba2df959c095495c3ec964a844a:
+1429protectedpins/0mismatch/202serialPASS/actual8of8[19943]/19917PASS26knownskip/388.36s/
 helper+native0/checked cleanup/Ruff4Compose.env.example PASS.
-Current full-tests.log SHA44dcb39a is authority. Prior7ff/1426pins only historical;
+Current full-tests-r2.log is authority. Prior0661/7ff are historical;
 its extra-quiet diagnostic is still NOT authority. Research is an existing
 Compose --profile research, not a docker-compose.research.yml file.
 External D code still needs separate focused native/negative proofs.
 No repeated full suite for unchanged docs/external-only source.
 Current definitive sources/status above and HANDOFF take precedence over
 retained historical source-specific commands below; do not replay closed jobs.
+
+Holdings-only preflight is consumed COMPLETE, not a general query command:
+D:/thericher-v2/model-artifacts/execution/current-paper-holdings-readonly-preflight-20261103-v1/CALLBACK.json.
+Sourceede107e4/RESULT9f381b90/Nov3UTC02:23:15,1POST3GET/threegroups/4positions.
+No full-risk/funds/exact-owned-fill/subject-match claim or F9 release.
+
+Raw historical batch readiness is at current-us19-raw-historical-batch-
+preparation-20261103-v1, current Source70ef5448/PLAN0b1b3a66/native135checks.
+Parent fresh202serial/19917fullPASS/Ruff/4Compose; actual quiet hostPID9332/
+birthFILETIME134381478035082513 launchedNov3UTC02:50:03/releasece1649c6.
+655historicalGET/800cap/1POST/0retry, exact actual-once progress/terminal only;
+no relaunch/reset. Raw M quarantine is NOT a
+canonical/model/Paper input. Existing strict clock validators remain unchanged.
+Phase45 and absolute cost-gate numerical jobs are COMPLETE/primary rejected;
+no fits/forecasts/replays restarted by retained historical commands below.
 
 ## Active Short-Horizon Development
 
@@ -108,7 +134,8 @@ preparation is now adopted: Source3e0a4b4b/native74/release48c3f5c5 actual quiet
 hostPID39544/birthNov3UTC01:13:23.904539. Exact runtimeRoot/actual-once only;
 01:14:12 terminal11GET/1POST/10heads/1200rows/1failure/pendingGET,
 SCOPED_UNAVAILABLE. Host/worker closed97.684494SUM, host39544freshabsent.
-SDK historical continuity predicate failed, not a proven quota/history floor.
+SDK line1781 is historical_minute_clock_mismatch, not continuity1776; Parent
+initial line interpretation corrected from exact numbered source and probe.
 665planned/800cap/2h/zero retry/one retained RAM token. Cache:
 D:/market_data/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
 Copernicus owns bounded first-cause continuation probe at
@@ -116,6 +143,10 @@ D:/thericher-v2/model-artifacts/data/current-us19-minute-continuation-recovery-2
 max4GET/1initialPOST/native+Claude+exactsource/caps before delegated once.
 Previous returned last-bar-minus1 is the official continuation contract;
 arbitrary historical seed support remains unknown. Original batch stays stopped.
+Completed Source2c2e62f8 probe3GET1POST: head/continuation each120strictPASS;
+oldkey120ordered/max<=KEY but120Korea labels+1h/clock reject, no repair. Do not
+replay this probe or label a history floor/quota. Raw acquisition/quarantine
+and canonicalization are next separate consumers, not another human approval.
 Do NOT run its launch command again,
 reset actual-once/unknown cursor or infer training eligibility. No current
 GPU training inferred from these boards; exact callbacks own current state.

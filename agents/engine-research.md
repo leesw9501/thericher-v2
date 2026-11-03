@@ -2,289 +2,68 @@
 
 ## Current Results And Next
 
-Nov3UTC01:29: ONE Phase45 campaign conditionally delegated at
-D:/thericher-v2/model-artifacts/research/current-phase45-engine-development-20261103-v1.
-Earliestprep01:03:46/3000ownedSUM7200elapsed/hard03:03:46. Exact partitions in
-NEXT_CODEX_GOAL.md, includes old600Strategy+120consumer/no refund; source-only
-consumer metadata21sec late stays recorded, actual native within its clock.
-New staging once at current-phase45-input-staging-20261103-v1/240SUM900elapsed.
-Chosen45min9M5/17features inclknown phase, fiveFIT origins/max600rows,
-INNER/DEV originalorigin0/40+40. EqualDATE/origin/stock; original economic clock.
-One CUDA LSTM32 fit/max512updates/120optimizersec/patience48/LRschedule/best
-restore, one forecast/3newviews/no marketretry. Oldmetrics carried, no oldmodels.
-Native actual producer/consumer+CUDA/checkpoint/score/book/Claude/resource
-qualification before delegated once, no extra Parent approval. No actual fit
-claimed yet. Primary beats savedLSTM andEW/net10/DD<=1.5EW/BEST0kills; adaptive
-reusedDATE development only. Data API recovery does not gate this old-data task.
+Nov3UTC02:30. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is Engine owner and
+sole GPU coordinator. Numerical campaigns below are CLOSED; no actual running
+training is inferred from a dispatch or an MD. Source-only package COMPLETE:
+D:/thericher-v2/model-artifacts/research/current-open45-paper-proposal-readiness-20261103-v1,
+Sourcec9eae425/RESULT0bcc549a/native52/482.351581upper/sixknownactorsclosed.
+Original Open45 input/policy ABI and invented native producer-consumer pass;
+no new fit, restore
+of old models for evaluation, forecast, market replay, broker or private state.
+Need fresh/broader dates and a deployable proposal path, not indefinite tuning
+of the same five DEV sessions. Paper engineering remains separately authorized.
 
-Nov3UTC01:10 update: Open45 comparison and fixed composition are COMPLETE.
-Source37e58ff4/OPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry;
-LSTM CUDA34updates/BEST10/INNERearlystop/.269500optimizersec,80.13MBallocated.
-Net10 on reused5DEVdate clusters: LSTM+1.216960pct/DD.651134,
-Ridge+1.068984/DD.743823, samegrossEW+1.092579/DD.815521; frozenprimaryPASS.
-No convergence, independent alpha, qualified Paperinput or actual PaperPnL.
-Current H3 point unchanged. Final RESULTb6f0deff closes57actors/6CIDs/lease,
-1071.522273familyupper. Prior nonlinearGPUhazard audit98a492 closes17actors/
-972.158975upper, no audit numerics. Fixed three-expert composition COMPLETE at
-D:/thericher-v2/model-artifacts/research/current-open45-three-expert-composition-development-20261103-v1:
-Sourcea9cb5e82/contract20a30e0c/RESULT0e131978/native11/ClaudeGO_WITH_LIMITS,
-0fits0restores0newforecasts/3newviews/old15metricsunchanged. Net10+1.185653pct/
-DD.743823, growth versus savedLSTMFAIL/riskPASS, primary rejected. Four actors
-closed/409.721335of600SUM, no old cap extension/secondary rescue/point swap.
-Next Harvey/Ohm coordinate ONE early-phase rolling-context mechanism, not both
-the proposed60min4-origin and45min-phase alternatives as hidden trials.
-Prefer train earlier45/60/75/90/105min phases/equalDATE/explicit phase input
-and evaluate original once-session payoff; new data/schema/caps must qualify.
-Ohm pure source/kernel root current-rolling-intraday-expert-kernel-preparation-
-20261103-v1,600ownedSUM1800elapsed, no market projection or fitting. More
-overlapped rows are not independent dates. No completed numerics repeated.
-Earlier readiness description below retains the original contract, not a
-current-running claim. Numerical evidence is readout/RESULT.json and actual
-temporal_fit/RESULT.json under current-open45-engine-development-20261103-v1.
+Next current-open45-cpu-point-producer-preparation-20261103-v1,
+600SUM1800elapsed from receipt: trusted original BEST10 CPU model restore and
+invented-input inference/native strict feature16/input/score/proposal handoff.
+No market inference/evaluation or new fit. This is not GPU training; all
+completed numerical campaigns remain closed. Direct qualified API to Execution.
 
-Nov3UTC00:35. Harvey01a19e80-1586-7fe2-9587-9b44f510842b owns current Open45
-Engine/soleGPU coordination at
-D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1.
-CPU indicatorRidge(alpha1) and combined9x16 LSTM32 CUDA, exactly2fits/2forecasts/
-one readout15views/zero market retries. First45RTHminutes, entryEND10:17,
-exitEND11:17/top4quarters. Original familyNov2UTC23:46..Nov3UTC01:16,
-1800ownedSUM5400elapsed includes preparation/native/failures/audit. Actual CUDA
-checkpoint/handoff smoke and Claude challenge precede delegated market release.
-LSTM max256updates/120optimizersec/INNERpatience24/best restoration; BEST0 is
-untrained. Primary net10 must beat Ridge AND same-preentry-gross EW, risky DD
-<=1.5samegrossEW; no secondary rescue. Cash/growth/risk reported separately.
-Ohm actual separate-role staging CLOSED00:30:55: Sourceffa13cce/STAGED48a8b342/
-native2c0a0787 at current-open45-input-staging-20261103-v1. FIT120/INNER40/DEV40,
-25sessionsSep25..Oct29/eight stocks inclAVGO notAMD/SPYcontext; required masks
-complete, old300+new180upper retained/fouractorsclosed. No new data acquisition.
-Canonical START/END/finality/arrival/CA unknown: causal proxy/reusedDEV only,
-not independent alpha or qualified Paper inputs. Original reserved data excluded.
+A=D:/thericher-v2/model-artifacts.
 
-CPU H3 absolute hazard ACTUALLY COMPLETE:1fit1forecast6views/133updates/BEST101/
-INNERearlystop/.070583optimizersec,120.910531pct/DD22.742307/turn151.007615.
-Growth149.175598FAIL, risk+turnoverPASS, primary rejected. COMPLETEb1697d31 at
-current-h3-absolute-regime-parent-market-20261103-v1;546.266familyupper/closed.
-GPU nonlinear first-passage ACTUALLY COMPLETE: Source5a0e0d88/contract3153276a/
-release17d53600,1CUDAfit/1CBMrestore/1CPUforecast/6views/114iterations/BEST81=
-82trainedtrees/.589849optimizersec,109.553207pct/DD20.866974/turn142.695227.
-GrowthFAIL, risk+turnoverPASS; primary rejected. marketSUM12.158975/CID+CLI+
-leaseclosed. Native bootstrap and Parent invalid release failures preserved,
-neither a market fit. No duplicate training or current three-expert point swap.
-Exact result/source/closure paths are in HANDOFF.md; old prep-only status is
-historical, not evidence that the later actual market run is still pending.
+| Closed Study | New Work | Net10 Growth / DD | Decision |
+| --- | --- | --- | --- |
+| Original Open45 | Ridge + CUDA LSTM, 2fits/2forecasts/15views | LSTM +1.216960% / .651134%; Ridge +1.068984% / .743823%; EW +1.092579% / .815521% | frozen development PASS, only5reused DEV dates |
+| Fixed three-expert Open45 | 0fits/0newforecasts/3views | +1.185653% / .743823% | growth vs original LSTM FAIL |
+| Phase45 | 1CUDAfit/1forecast/3views | +1.205178% / .735003% | growth vs original LSTM FAIL |
+| Absolute cost gate | 1GPUtreefit/1forecast/6views | all cash, growth/DD0 | no useful trade; primary FAIL |
+| H3 CPU hazard | 1fit/1forecast/6views | 120.910531% / 22.742307% | growth FAIL |
+| H3 GPU nonlinear first-passage | 1fit/1forecast/6views | 109.553207% / 20.866974% | growth FAIL |
+| H3 robust-four trimmed rank | 0fits/6views | 242.377556% / 22.434191% | turnover188.726218 exceeds185.995827 |
 
-Original robust-four/r1 EXPIRED CLOSED0marketattempts; old810
-debit/seven absent actors/negative-clock receipts preserved. New distinct
-current-h3-robust-four-development-readout-20261103-v1 COMPLETE/CLOSED:
-Source75865f5c/contractd9487d3f/RESULT1d8c81ba, one zero-fit CPU pipeline/
-sixviews/0retry, originaltrend60 projection+exact233decision oldmean3 parityPASS.
-Net10 cumulative242.377556pct/DD22.434191/turn188.726218: growth+riskPASS,
-frozen turnover<185.995827FAIL => primary conjunction REJECTED.
-No rescue/regrade/current3point swap; reused DEV, not independent alpha/PaperPnL.
-Old810+new7.456=817.456owned-wall debit; all seven actors absent.
+These are modeled price/cost research, not actual Paper PnL or independent alpha.
+Old primary criteria/results/caps/debits stay immutable; no threshold rescue.
 
-Actual three-expert POINTad3b0bcf/SEALf8fe5603 on qualifiedDATAREADY2d5e183b,
-R5hostSOURCE6ae54088 future entry/exit ACTUALLY installed/enabled.
-READBACK31e83c91/COMPLETEfc1c35b6, not a fill. Current proposal unchanged.
-Deployment is not a financial result. Current numerical activity is established
-only by the Open45 worker evidence, not this board or an old preparation status.
-Claude reused-DEV/recovery GO_WITH_LIMITS pointer in NEXT_CODEX_GOAL.md.
-All completed models below stay closed, no utilization repeats.
+Exact current intraday evidence:
+- A/research/current-open45-engine-development-20261103-v1:
+  Source37e58ff4/RESULTb6f0deff. LSTM34updates/BEST10/INNERstop24,
+  .269500optimizersec/.549433fitwall/80.13MBallocated81.79MBreserved.
+  57actors6CIDslease closed,1071.522273upper.
+- A/research/current-open45-three-expert-composition-development-20261103-v1:
+  Sourcea9cb5e82/RESULT0e131978/native11. Old15metrics unchanged,
+  fouractorsclosed/409.721335upper.
+- A/research/current-phase45-engine-development-20261103-v1:
+  Sourcee950e584/RESULT12f16aa2/native2c20ebda. LSTM55updates/BEST7/
+  INNERstop48/.259228optimizersec/.607427fitwall.41actors4CIDsleaseclosed/
+  1956.372048upper. Data Source06ae7057/STAGEDddba2819,600FIT40INNER40DEV,
+  26original DEV parity checks PASS. Five overlapping FIT origins are not
+  independent dates or funded sleeves. Original01:03:46/hard03:03:46 retained.
+- A/research/current-intraday-absolute-cost-gate-development-20261103-v1:
+  Source25d09e39/RESULT06851f0c/CALLBACK.json. CatBoost GPU49iterations/
+  BESTindex0=ONE trained tree, not untrained LSTM0. .620536fitwall,
+  all20original top4quarters rejected, five sessions cash, six views0.
+  Scores nearconstant negative, no useful allocation; not cost-saving alpha.
+  Old15metrics carried;40actors4CIDsleaseclosed/1525.412293upper.
+  Original01:49:53/hard03:49:53/3000cap retained, unused cap is not more trials.
 
-Nov3KST/Nov2UTC18:40 update. New GPU PairLogit/CatBoost campaign COMPLETE at
-A/research/current-h3-ohlc-pairwise-boosting-20261103-v1, Source49039e9b/
-CONTRACT-r2 ef6797c8/FINAL-AUDIT.json. One market fit/forecast, six new cost
-views, six old controls carried unchanged, zero retries. Four-expert mean-rank
-COMBO/TCN/trend/tree top4 primary net10growth185.478pct/DD25.879 versus
-149.176/DD26.914 passes frozen development screen. Tree alone secondary158.089/
-27.397, not a separate selected winner. FIT15..21/INNER22..23/reusedDEV24..Oct16
-2026, current-listing/conditional MODE1 price proxy, not independent alpha,
-annual return, qualified total return or Paper PnL. Best5trainedtrees, optimizer
-0.935s. Initial native API failure retained, same saved checkpoint completion
-did not repeat fitting. All14PIDs/5CIDs/lease closed. Current three-expert
-prospective publisher remains unchanged, no automatic model swap.
-
-Late-day reversal COMPLETE at current-nas8-preclose-reversal-development-
-20261103-v1, Source32c67f20/CONTRACT-r2 444e1c64:0fits/nine views/25sessions.
-Net10primary-4.924pct/DD5.077, fullEW-5.894/DD6.035; relativePASS but gross
-primary-0.249pct, unpromising standalone, no Paper selection. Conditional
-canonical timestamp proxy is not provider stamp/fill proof. All resources closed.
-New current-h3-cost-margin-pairlogit-20261103-v1 numerical work is COMPLETE:
-charged origin Nov2UTC18:42:06.7396187, prep600SUM1800elapsed and TOTAL2400SUM/
-7200elapsed including preparation/failures. One future fit/forecast/readout,
-six new cost views,0marketretry; Parent released exact Source7167a0d4/
-contract18ae2ce1/native3986da0e. RESULT6066f4fd net10growth186.001PASS versus
-185.478,DD30.669FAIL/turnover189.026FAIL. Primary conjunction rejected, no
-secondary rescue/publisher change. Actual GPU65evaluatediterations/BESTindex0
-ONEtrainedtree,0.962optimizerseconds/bestrestored/nozero fallback. Worker0/
-leaseabsent43.922controllersec; final aggregate CALLBACK95aa53f8 closes all
-8PIDs/2CIDs/lease/410.728of2400activeupper, no active
-training inferred. Next OOF-gate mechanism is source-only proposal, not a new
-family dispatch. Explicit PairLogit
-pairs_weight uses max(relativeH3gap-.002,0), per-date original strict-pair total;
-zero dates skip loss only, no changed input eligibility. FIT/INNER-only weights,
-ESS/maxshare diagnostic, same155features/model/seed/splits. Primary growth>
-185.478445995,DD<=1.5*18.372760012,turnover<185.995826906; no secondary rescue.
-Heuristic, not stateful cost optimizer or independent alpha. Real weighted GPU
-Pool/checkpoint/forecast/native producer-consumer smoke before market. Stop by
-min(frozen expiry,20:45UTC), no GOOGL opportunity collision. Claude GO_WITH_LIMITS
-at A/review/current-f9-retention-and-cost-margin-challenge-20261103-v1/response.json.
-Completed fits below MUST NOT be repeated. Numerical closure is not convergence.
-
-McClintock's numerical scope is CLOSED, CALLBACK95aa53f8/410.728activeupper,
-8PIDbirths/2CIDs/leaseclosed. Parent agrees with NEXT-OOF-GATE-PROPOSAL DEFER:
-six distinct fold expert fits plus one gate are not the current priority.
-Fermat completed the four-expert point adapter r3,Source77d63050/API3143c06d:
-41native-inference+41clockchecks, oneinvented17stockbatch/0fits, savedoutput
-clockrepair0additionalmodels,518.578of900SUM/allactorsclosed before20:37:54.
-Actual market point/financial join remains separate; current3publisher unchanged.
-No new training family released. All campaigns below COMPLETE; no running GPU
-training claim. New current-h3-half-adjustment-policy-20261103-v1 is a zero-fit
-policy package:600activeSUM1800elapsed/one readout3costviews0retry, initial full
-target then0.5actualpretrade marked weights+0.5saved original ranktarget.
-Frozennet10 growth>149.175598324,DD<=1.5*18.372760012,turnover<170.294474149.
-Actual native stateful-book smoke/source freeze before once readout; no fraction
-grid/secondary rescue/automatic point change. H3 rebalance cadence, not every
-position liquidated after3sessions; residual exposure/lag/breadth jointly change.
-Claude GO_WITH_LIMITS at A/review/current-h3-half-adjustment-challenge-20261103-v1.
-NOW COMPLETE CALLBACKe81f313b:0fits/3views/0retry,21nativechecksPASS/all6PIDs+
-leaseclosed,201.769/600active724.386/1800elapsed. Net10growth146.410FAIL versus
-149.176;DD26.535PASS,turnover99.439PASS. Max17/mean15.55stocks and699-session
-continuous-positive exposure tail(notFIFO/shareage) do not support calling it
-3-session liquidation. No fraction tuning/adoption. Its next source proposal
-was consumed by the distinct reversal/PairLogit campaigns above; it is not a
-still-running worker. Preferred frozen prospective rankpoint stays unchanged.
-
-A/research/current-short-horizon-joint-development-20261102-v1:
-SOURCE-r2.json6a0c2d21/CONTRACTf3ccca66/nativebed5a5b5/
-AUDITED-CALLBACK-r3.json29e5ed00.5fits/5forecasts/99views/0retry.
-CPU raw40/indicator15/combined55 multioutputRidge, intraday Ridge, causal TCN.
-TCN26epochs1456updates/BEST2/657.347optimizersec/1203.756workersec;
-26epochs includes INNER earlystop24, not convergence. All exact resources closed.
-H3primaryfixedthirdsnet10growth64.454pct/DD12.337/gross.679 versus
-fullEW95.322/DD18.367/gross1: growthFAIL/riskPASS. Lower exposure != alpha.
-Actual activeupper3149.792/5400,elapsed2780.447/10800; old failures preserved.
-
-A/research/current-short-horizon-selection-versus-exposure-20261102-v1:
-Source9552e128/contract124f7b79,0fits/restores/newforecasts/1readout21views/
-0retry COMPLETE. Primary mean-percentile(COMBO/TCN/trend60) top4 at fixedgross1:
-net10growth149.176pct/DD26.914/turnover170.294, primaryscreenPASS.
-EWsameexantegross56.092/DD11.457/gross.679, not a future-realized gross control.
-Rank4entry/rank8exit buffer secondary125.66/DD28.06, no secondary winner switch.
-305.875activeupper/1200,1101.693elapsed/3600, all exact owners closed.
-Parent selected this separately named original primary as preferred NEXT
-prospective Paper input. Adaptive seen-DEV, not independent alpha or current
-H20/GOOGL/oldfixedthirds replacement.
-
-A/research/current-h3-ohlc-learning-to-rank-20261103-v1:
-Source79928fd1/contract281c7689/native9f83435d/RESULTd04b84c7.
-2newfits/2forecasts/15views/1readout/0retry COMPLETE.155price-only OHLC+daily
-features, within-date RankNet CPU plus cross-stock Transformer17tokens.
-CPU15epochs50000sampleupdates/BEST0/cap is UNTRAINEDzero-score/tie-order ranking,
-not learned selection alpha; GPU26epochs1404updates/BEST2/
-7.880optimizerseconds/peak107375104allocated125829120reserved. No convergence.
-PrimaryGPUnet10growth63.766/DD31.512 failed both growth/risk versus existing
-meanrank149.176/DD26.914. CPU160.304/DD31.315 fails risk; four-expert secondary
-143.207/DD29.373 is not a rescue or new point. Original controls bitwise same.
-Activeupper1862.262/7200,elapsed1310.967/14400, all exact PIDs/CIDs/lease closed.
-No old checkpoint restore/forward or completed model refit.
-
-All use FIT2015..21/INNER22..23/reusedDEV24..Oct16, actual target interval purge,
-daily decisionclose d/entryproxyclose d+1/exitclose e+h(H3primary).
-Costs0/10/20bps PER SIDE. Current-listing/conditional/revised MODE1 price proxy,
-not TR/PIT/finality, independent alpha or broker PnL. Reserved minute outcomes
-Oct30/Nov2..4 loader-excluded, not new evaluation/checkpoint selection data.
-Cash is a growth reference, risk screen uses aligned risky EW, not zero-DD cash.
-
-Data61local Source218141be/feature2e033f37/OHLCed401bc2 are qualified for named
-development scope. Volume unqualified, no made-up OHLCV. Strategy next point
-CLOCK-r2 Source08380014/CALLBACKaa757847 is SOURCE_ONLY/NO_POINT, actual fresh
-DataREADY remains unknown. Qualified native CASH_ELAPSED_H3 source fulltested
-19873PASS/26skip/1426pins44c218f3, not installed or financial admission.
-Parent owns operational recovery, shared MD/Git. Historical studies below stay
-closed; a new campaign needs a distinct frozen hypothesis and finite caps.
-
-Primary horizon clarified Nov2: intraday plus1-to-several-session short swings.
-Next NEW family should choose a finite same-day/1/3/5-session axis, align the
-target with actual entry/holding/exit/payoff/costs, and bound timeframe/window/
-horizon/model combinations under one campaign. Long context is allowed;
-20-session targets are not short-swing evidence or the default priority.
-No existing fit, sealed criterion, deployed point or owned exit is changed.
-
-2026-11-02 KST. NEW residual/downside C1 is CLOSED_INVALID_UNAVAILABLE at
-A/research/current-us19-residual-downside-experts-20261102-v1:
-Sourceef81c9f8/CALLBACK1df126a6,2actualfits(RidgeCPU+MLPCUDA)/2forecasts/
-2restores/one readout attempt/0completedviews. MLP70epochs210updates/BEST6,
-INNERearlystop64, no convergence. First DEV20240112/execution20240116 lacks
-252lookback due20230605 hole; rawDEVmarks passed. Frozen no-late-seed rule
-withheld ALL economics. This is NOT model unprofitability; no retry/refit/
-original result rescue. Source/weights/forecasts/debits917.032of2400 preserved,
-allGPU/PIDs/containers/lease closed. Claude REVISE scoped claim ceiling:
-A/review/current-us19-residual-downside-challenge-20261102-v1/ADJUDICATION.json.
-
-Copernicus CPU cashstart CLOSED SOURCE-r2.json0ea0d1bb,0fits/restores/newforecasts,
-one27view readout/34intervals681marks/originalNAV1+100cashsessions, entryJun7
-2024. BLENDnet10growth37.38pct/DD15.252/utility.09352 vs FULL-EW17.10840,
-frozenprimaryFAILED;654.135of900active, allresourcesclosed. No late reseed.
-Gibbs daily-trained residual LSTM CLOSED Sourcec57b6fb3/CALLBACK3fbe3a9f:
-oneCUDAfit65epochs2600updates/BEST1/inner earlystop64,1forecast/9newviews;
-carry27unchanged, no old refit/restore/forecast/replay.1193FITdaily dates/
-84INNER dates are overlapping, not independent. Primary thirdsnet10 cumulative
-growth48.26pct/DD15.520 exceeds11.710bound, FAILED; halfLSTM/Ridge50.13/
-15.426 secondary only, no selected winner.925.925of2400active, all exact
-PIDs/CIDs/lease closed. No convergence/alpha/qualified model or Paper change.
-Both retained the new frozen cash kernel/past-only mask and actual native/
-whole-calendar preflight. Claude REVISE/Parent dispositions at
-A/review/current-us19-cashstart-daily-lstm-challenge-20261102-v1/ADJUDICATION.json.
-These PREVIOUS numerical families CLOSED. The new approved preparation above
-uses symbol-local eligibility without changing any frozen old support,
-forecast, criterion or result. No completed fit is repeated.
-Original future observations/H20/GOOGL points/risk unchanged; Parent owns Git.
-
-Prior Singer exposure/downside CUDA campaign is CLOSED; actual1fit/
-256epochs2304updates/BEST256/MAX_EPOCHS,1forecast9policies27views/0retry.
-Net10growth15.9009/DD3.5850; matchedaverageEW16.2610/DD4.2137. Primary
-utilityFAILED versus matchedaverage/historical20, not convergence/alpha/PnL.
-Source2f4902f6/INDEPENDENT-VERIFYc8599736 under
-A/research/current-us19-market-exposure-downside-development-20261101-v1.
-Allresourcesclosed;932.137of2400active/1350.481of7200elapsed,4predispatch
-failures preserved with0marketfits. No completed numerical study is repeated.
-CPU-only current-us19-holding-interval-cost-aware-exposure-20261102-v1 is now
-CLOSED Sourcecaf043a1/CALLBACKd89e02d1/VERIFYa31dbe71. Exactly1jointRidgefit/
-1forecast1evaluation/6policies18views/0numericalretry. Net10policy growth21.6432/
-DD4.8556/utility.06802 versus historical20growth21.9595/DD4.6546/utility.06964
-and average-exposureEW26.3273/DD6.5401/utility.08145: primaryFAILED, riskpassed.
-STOP this exposure-timing family; no grid/architecture/fit/evaluation queued.
-First native calendar-fixture assertion failed BEFORE market work; r2 reused
-saved synthetic outputs and continued remaining checks, no completed training
-repeat. Bothcontainers/PIDs/leaseclosed;510.041of1200active including failure/
-1046.811of3600elapsed. No old regrade, independentalpha or Paperpointchange.
-Covariance and quantile Transformer completed, neither passed primary criteria.
-GOOGL future pair deployed; no operator decision. New studies use retained daily
-inputs and do not repeat closed relative fits or change current Paper points.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data. Parent owns MD/Git.
-Models are untrusted proposals, not risk/capital/broker authority.
-
-Monthly constant-gross selection CLOSED Source0cdd8c75 at
-A/research/current-us19-monthly-selection-development-20261102-v1/CALLBACK.json.
-2marketfits(Ridge+GRU)/2forecasts1readout/7policies21views/0numericalretry.
-GRUactualCUDA33epochs132updates/BEST1/INNERearlystop; allresourcesclosed,
-914.788of2400active. Initial native CUDA failure preserved, no completed fit
-repeat.33monthlyDEVintervals2024Jan..2026Oct: net10growth/DD Ridge86.47/14.88,
-GRU33.96/9.90, fixedblend63.92/13.52, momentum62.41/17.69, EW17 39.99/9.37.
-Ridge/blend exceed frozenDDbound11.708; GRUfailsutility. STOP family/no new
-fit/grid/DEVreadout. Ridge's positive development growth/risk tradeoff is
-interesting, not independentalpha or automatic Paper promotion. Current points
-and all broker risk/bank/identities remain unchanged.
-
-Monthly input preparation is separate from the closed numerical family:
-A/data/current-monthly-ridge-endpoint-reuse-qualification-20261102-v1 rejected
-old/fresh cross-vintage reuse (PG differs138overlapdates). No splice/rescale.
-Mendel's17required d-252 endpoint acquisition CLOSED Sourcee055ec80/
-READY6b8ca48b/CLOSUREaf337858:17GET1POST0retry/17endpoints, owners closed.
-Endpoint-only READY; cross-capture basis still unqualified, no complete panel,
-fitting/forecast/evaluation or automatic Paper point. Nov2 closing inputs
-remain future until actual21:00UTC. Current H20/GOOGL points stay unchanged.
+Current H3 three-expert POINTad3b0bcf/SEALf8fe5603/host6ae54088 is unchanged.
+Actual entryNov3UTC20:55/exitNov6UTC20:45 installed, financial outcomeUNKNOWN.
+NAS8 Nov3/4UTC21:10 and frozenNov4UTC21:35 evaluation remain separate.
+MODE1/current-listing/non-PIT/clock/finality/CA/arrival and reused selection
+limitations constrain claims, not independent Paper engineering authority.
+All historical model families and safe checkpoints remain on D:; no repeats
+for GPU utilization or to repair logs. The linked closed evidence below is an
+index, not the current queue.
 
 ## Current Handoff
 
@@ -366,7 +145,7 @@ development, not independent alpha, broker accounting or representative market.
   old minute60 acquisition closed-partial, not a daily-history/global floor.
   Earlier late phase-check deviationecae remains, not pre-fit proof.
 
-## Breadth / Depth
+## Closed Campaign Definitions
 
 Five-fit numerical cohort is exhausted; it is NOT reopened by new studies.
 NEW Ptolemy current-us19-quantile-transformer-development-20261101-v1:

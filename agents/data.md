@@ -2,171 +2,57 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC01:27: ACTUAL finite breadth collection CLOSED_SCOPED_UNAVAILABLE:
-D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1/actual-once.
-Parent adopted Source3e0a4b4b/28pins0mismatch/NATIVE74/closure874bad78,
-834.315762integrationSUM (old failures preserved), release48c3f5c5.
-Quiet hostPID39544/birthNov3UTC01:13:23.904539, safe explicit environment;
-one owned worker/665planned/800GETmax/1POST/0retry/7200worker/14550SUM.
-Terminal01:14:12:11GET/1POST/10accepted heads/1200unique rows/1failure/
-pendingGET/UNKNOWN_EXACT_REQUEST_RECOVERY_REQUIRED; no historical page accepted.
-97.684494ownedSUM/Jobsjoinedempty/exacthost39544freshabsent01:19:36.
-SDK KisPaperMarketDataError historical continuity predicate line1781, not a
-proven APIquota/auth failure or identified source floor. Exact predicate unknown.
-No complete-plan/training promotion. Actual cache:
-D:/market_data/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
-No Task/service or financial endpoints. No second launch/reset/unknown cursor
-release. Copernicus monitors count-safe progress/terminal/source/Job closure.
-Source-only initialization failures were repaired before actual HTTP; the later
-historical-page failure above is separate. Fresh heads quarantined.
-NEW Copernicus scope current-us19-minute-continuation-recovery-20261103-v1,
-prep600SUM1800elapsed, max4GET/1initialPOST once after explicit actual runtime
-caps/quiet original guards/native diagnostic parser/Claude/source freeze.
-Official KEYB is previous returned lastbar-minus1orNminutes, not guaranteed
-arbitrary historical date. Test proper continuation/categorical failure flags;
-never relabel newer fallback as old history. No old665retry/reset, original
-pendingGET evidence preserved; idempotent DataGET is not a financial reservation.
-Official continuation source:
-https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_time_itemchartprice/inquire_time_itemchartprice.py
-The initial preparation description below is superseded by this actual run.
+Nov3UTC02:30. Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c owns
+D:/thericher-v2/model-artifacts/data/current-us19-raw-historical-batch-preparation-20261103-v1.
+Original01:56:04/900ownedSUM3600elapsed/hard02:56:04; no clock reset.
+CurrentSource70ef5448/PLAN0b1b3a66/native135checks and quiet source-ready.
+Assigned repo writes: src/thericher_v2/data/kis_historical_capture.py and
+tests/test_kis_historical_capture.py. Parent serial202/fullRuffPASS; source20pins match;
+fresh full r2 integration PASS4d612230/19917PASS26skip/8of8[19943]/1429pins.
+Actual quiet hostPID9332/birthFILETIME134381478035082513 launchedNov3UTC02:50:03,
+releasece1649c6; exact actual-once only, no relaunch/reset. First02:50:45
+progress6GET1POST/6responses720rows/649remaining/0technicalfailures. Not complete.
+StrEnum/format correct initial7lint errors; old711/native-r2/full-r1 remain
+historical only. Prep725conservative upper of900, original clocks unchanged.
 
-Retained Open45 actual input DATA_READY_CLOSED00:30:55 at
-D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json.
-Sourceffa13cce/APIeada9635/STAGED48a8b342/native2c0a0787;25sessionsSep25..Oct29,
-FIT120/INNER40/reusedDEV40 stock keys, separate INPUT/TARGET/HELD roles/masks.
-Eight-stock axis includes AVGO not AMD, SPY context/QQQ not a gate. Complete
-required cells; provider START/END/finality/arrival/CA unknown, causal proxy
-only. Old300+new180upper retained/four stage actors closed. Direct qualified
-handoff to Harvey, no restaging/acquisition needed for the current two fits.
+One new raw batch:655historicalGET/800aggregate/80asset/1initialPOST/0retry,
+7200worker/7260host/14550SUM/10800elapsed. Source-pinned quiet pythonw owner,
+existing token300 atomic+legacy/rate guards, no Task/service/account/order/live.
+Market bytes stay in a NEW M/raw_quarantine/kis_paper child, not Git.
+Retain exchange and Korea labels verbatim. Exchange clock/order/duplicate/
+maxKEY checks control raw cursor progress; Korea offsets are quality diagnostics.
+Captured count separate from qualified0; no canonical names/provider/model/Paper
+handoff from raw quarantine. No guessed one-hour shift.
+Future canonicalization needs exact label/OHLC anchor and declared clock policy,
+not another acquisition permission wait. Unknown token reply stays consumed.
 
-Copernicus acquisition preparation COMPLETE45native/fullRuff/15Jobsclosed:
-D:/thericher-v2/model-artifacts/data/current-us19-minute-acquisition-preparation-20261103-v1/FINAL-CALLBACK.json.
-Sourcea6668bfa/READINESSfbb4209e; canonical original19 overlap9 names/
-87746of87750 minute cells/25sessions. AMD plus nine NYSE names lack this
-canonical coverage; retained old8session data kept separate, no vintage splice.
-Proposed665GET/800cap/2h/zero retry is NOT actual collection, zero HTTP/creds
-in preparation. NEW owner scope current-us19-minute-runtime-binding-20261103-v1
-under same absolute data artifact root,900ownedSUM2700elapsed from dispatch:
-existing Paper Data client/protected valid token/shared timing and exact same
-cache/account ownership, quiet finite host/cursors/native producer-consumer.
-At most4 scoped market GETs+1POST for invalid local token OR initial isolated
-client without usable retained token, one persisted instance-bound attempt
-under unchanged issuer/timing gates. No false global-invalidity claim or token
-store search; unknown issuance stays consumed,401/403 no reauth. Claude
-SOUND_WITH_LIMITS runtimeRoot/CLAUDE-AUTH.json. Old adapter immutable; changed
-initial-client path needs native proof. No account/order/live/rawenv or long
-collector deployment before actual adoption.
-Current Open45/H3 work does not depend on this acquisition package.
+Original batch Source3e0a4b4b at
+D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1:
+closed11GET/1POST/10heads1200rows/1failure, no historical page accepted.
+Original actual-once/cursor/marks immutable. SDK line1781 was clock mismatch,
+not continuity1776. Parent's initial label is corrected; no quota/floor claim.
 
-Retained completed input: coherent19daily ACTUALLY COMPLETE at21:32:08.360115,
-Source9c5ec985/DATAREADY2d5e183b/manifest122b369c/closure9a5bd544. Parent original
-DataPanelReader/source/allcanonical/positiveclosure/required2371+19currentcloses
-PASS at A/data/current-coherent-input-parent-readiness-20261103-v1/RESULTd4d22f05.
-Zero normalized changes within batch; MODE1/nonPIT/notTR/finality/decision-time
-availability limits remain.0newmodel/HTTP/credentials in Parent offline check.
-Parent installed read-only H3 publisher21:46/start<21:47/hard21:49 and Codex
-thericher-1 COUNT1 follow-up21:52UTC. ACTUAL publisher PUBLISHED POINTad3b0bcf/
-SEALf8fe5603; Parent exact-source/clock/model/DTO R5 binding RESULT111129a6,
-hostSOURCE6ae54088. H3 future entryNov3UTC20:55 and exitNov6UTC20:45 are now
-ACTUALLY installed/enabled Ready3, READBACK31e83c91/COMPLETEfc1c35b6 at
-current-h3-enable-default-repair-20261103-v1. No broker/private effects or fill
-proof from adoption. No reason to collect/replay the same Data/model point.
-No manual collector/task Run. Data contracts unchanged; do not replay these jobs.
-Late-day reversal input r2 Sourceeff44414/READY7e48599f at
-A/data/current-preclose-reversal-input-readiness-20261103-v1/r2 was consumed
-once by closed0fit9view study. Canonical15:00signal/15:32entry/15:55exit bucket
-proxies have unknown provider START/END stamp, not qualified execution prices.
-Reserved Oct30/Nov2..4 NAS8 observations remain excluded from model selection.
-Separate publisher readback r2 CLOSED at current-h3-publisher-independent-
-native-readback-20261103-v1/r2, FINAL-CALLBACK84e6a913/EVIDENCEbdd8d070:
-34nativePASS, fullXMLFAIL(firstSecurityDescriptor), fullactualACL/clocks/source/
-state/old7PASS. One publisher query, no Task mutation. Failure is retained,
-not an inferred runtime failure or company hold. Data LLM scope closed;
-coherent19daily21:30 opportunity is complete; remaining NAS8 owned duties remain.
+Completed bounded diagnostic at
+D:/thericher-v2/model-artifacts/data/current-us19-minute-continuation-recovery-20261103-v1:
+Source2c2e62f8/ACTUAL-FINDING8c8cb8f6/closure66703445.3GET1POST0retry:
+fresh head and proper last-bar-minus1 continuation each120strictPASS;
+exact old key120ordered/no duplicate/max<=KEY, but all Korea labels+1h.
+Not a fallback page or history floor. DST/current-offset hypothesis unproven.
+Old strict SDK/query identity/defaults are unchanged.
 
-Bacon source scope is CLOSED (not a running agent): SOURCE-ONLY
-A/data/current-next-session-ohlc-consumer-20261103-v1.
-600activeSUM/2400elapsed,0marketprojection/fit/forecast/HTTP/Task change.
-Consumer: future rankpoint/one native Paper dispatcher using actual new coherent
-DataREADY and same-capture canonical OHLC refs. Actual future hashes UNKNOWN.
-Use exact integer UTC fractional clocks, native invented producer/parser/
-consumer and emitted Ruff/F-E9. No reacquisition or whole-second floor.
-COMPLETE Sourcef00de41b/CALLBACK62aed5f0,24native checks/fullRuff/F-E9/syntax
-PASS. All6ownedprocess identities closed,128.341/600activeupper,
-744.725/2400elapsed. Exact direct callback delivered Engine/Gauss.0actual
-futuremarketreads/projections/features/fits/forecasts/HTTP; hashes remain null.
+Open45 inputs already READY, no new HTTP needed for completed fits:
+D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1,
+Sourceffa13cce/STAGED48a8b342,120FIT40INNER40DEV/25dates.
+Phase45 stage COMPLETE at current-phase45-input-staging-20261103-v1,
+Source06ae7057/STAGEDddba2819/600FIT40INNER40DEV/26original DEV parity checks.
+Required masks complete; overlapping phases do not add independent sessions.
+Both use AVGO, not AMD; current-listing/clock/CA/finality/PIT limits retained.
 
-Completed price OHLC recovery:
-A/data/current-us19-ohlc-input-recovery-20261103-v1, Sourceed401bc2/
-schema1efaf3e6/manifestf5dc904c at M/research_inputs/same-root/project1/MANIFEST.json.
-19assets/2965dates/56325known per OHLC/10missing/838conditional.
-OHLCPanelReader.load returns panel/manifest, values[N,19,5]; source volume
-retained but qualified volume mask false: units/adjustment UNKNOWN.
-No shares/dollarliquidity/qualified volume claim. Original abd8beab whole-second
-timestamp failure remains failed; corrected integer UTC clock matches56325cells.
-One recovery projection/0retry/all publication owners closed, no network/models.
-
-Causal61-close support COMPLETE:
-A/data/current-short-horizon-causal-input-20261102-v1, Source218141be/
-schema0490e234,31native cases/26Parent refs PASS, DEV701dates11917inputslots.
-Per-stock+SPY history separated from matured label support; QQQ non-gating,
-no missing mark imputation or global all18/253close veto. Conditional/revised/
-current-listing non-PIT limitations remain, not a company-wide research ban.
-Retained minute25-session input excludes reserved Oct30/Nov2..4 outcomes.
-
-Existing coherent19daily Task Source9c5ec985 already installed Nov2UTC21:30/
-start<21:31/hard21:45,57plannedGET/60max/1POST/0retry. Actual DataREADY remains
-UNKNOWN before its owned capture. Quiet pythonw/no demand/catchup/repeat;
-no manual Run. Original NAS8 collector/evaluation contracts remain unchanged.
-Market calls only; Execution owns accounts/orders. Never KIS_LIVE_*.
-Parent owns shared MD/Git. Historical acquisition/basis notes below do not
-override these current source/ownership facts.
-
-2026-11-02 KST. Adjustment-basis package CLOSED at
-A/data/current-kis-daily-adjustment-basis-20261102-v1:6GET1POST0retry/600rows,
-minimumgap2.000238s; fiveworkers/caches closed. Sourcee7c35990/READY a54446ac/
-closure28060862/VERIFIED54be0acc. PG138mismatches reproduced. Exact same-anchor
-old/current MODE1 disagreement supports capture-vintage revision, not parser/
-CSV corruption; exact corporate-action event/TR/allCA/PIT/finality UNKNOWN.
-MODP0/1 official semantics are unadjusted/adjusted; BYMD is reference date,
-not a documented capture-vintage selector. No splice/rescale/rebase.
-
-Ramanujan clean3adapter successor CLOSED at
-A/data/current-monthly-endpoint-adapter-maintenance-20261102-v1:
-SOURCE-V3a5cc7b47/NATIVE-V3c5ebc37d; all69findings fixed/fullRuff/F-E9/compile/
-two paired invented real-producer/parser/features parity passed. Parent full
-Ruff independently passed, no blanket suppressions. All30originalfiles stable,
-3children closed,0network/credentials/acquisition/model/Task/deployment.
-Old e055 code and historical69failure remain unchanged, not retrograded.
-
-Peirce preparation CLOSED; Parent ACTUALLY installed/enabled ONE future coherent
-19asset daily capture at A/data/current-us19-coherent-future-daily-input-
-20261102-v1: Source9c5ec985/READY6841b3e6/PARENT-ACTIVATION04f71bc2.
-Task thericher-data-us19-coherent-daily-20261102-v1 Nov2UTC21:30/start<21:31/
-hard21:45 (KSTNov3 06:30),57plannedGET/60max/1POST/0retry. GUI/CPU native,
-cross-process token tests,23Scheduler mocks, COM preview and complete disabled/
-enabled/independent XML+ACL readbacks PASS. Quiet pythonw/no demand/catchup/
-repeat. Newcaller60s floor only, original300s contracts unchanged. Original
-Paper8definitions unchanged. No actual capture/DataREADY/modelpoint yet;
-no manual Task Run or account/order/private access. Worker owns due/failure.
-
-Prior Mendel acquisition completed:
-A/data/current-monthly-ridge-required-endpoint-acquisition-20261102-v1:
-Sourcee055ec80/READY6b8ca48b/CLOSUREaf337858,17GET1POST0retry/17acceptedpages/
-1700returnedrows/17required20251030 MODE1 endpoints. Minimumgap2.0004s;
-worker37.077s/activeupper313.701of600/elapsed363.351of1800. Job empty/PIDabsent/
-cachesreleased; Parent4refsverified; Dfree34.37pct. No standing retry or Task.
-Endpoint-only READY, NOT a complete coherent model panel. Prior PG138date
-cross-vintage mismatch stays; no splice/rescale. New endpoints do not prove
-cross-capture economic alignment. Nov2 all19close is future until21:00UTC.
-Native real producer/parser/frozenfeatures smoke, independent payload readback
-and emitted F821/F822/F823/E9 passed. Additional full external Ruff69findings
-retained (mostly style and unusednames), no blanket full-lint pass.
-No account/order/quote/fit/restore/forecast/evaluation/model/Paperpoint. Original
-H20/GOOGL untouched. Do not reacquire completed data to repair logs or lint.
-Parent shared MD/Git.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Market calls only; Execution owns account/orders. Never KIS_LIVE_*.
+Coherent19daily actual DATAREADY2d5e183b/manifest122b369c/closure9a5bd544
+and Parent2371required+19currentcells proofd4d22f05 COMPLETE; H3 point consumes
+that exact result. Reserved NAS8 Nov3/4UTC21:10 and frozenNov4UTC21:35
+evaluation remain separate, never new selection data. Original future duties
+below remain owned; no task replay or fresh-head qualification.
 
 ## Retained Long Daily Catalogue
 

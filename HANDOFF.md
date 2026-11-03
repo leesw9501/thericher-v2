@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03KST / Nov3UTC01:10 integration.
+2026-11-03KST / Nov3UTC02:50 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
@@ -12,6 +12,69 @@ original exits persist. Never KIS_LIVE_*, foreign adoption, unknown-request
 substitution, profit refill or stale-point retag. Preserve unrelated %SystemDrive%/.
 Primary new strategies: intraday and one-to-several-session swings. H3 means
 three trading sessions, not three hours or proof of FIFO/share-age liquidation.
+
+## Current Delta / Exact Next Actions
+
+H3 financial definitions below remain enabled and unchanged. ONE automatic
+post-entry reader Source9410af60 replaces the uninstalled d45 manual-JIT
+proposal, not the financial host. Actual reader install failed after disabled
+task creation: thericher-h3-automatic-post-entry-offline-read-once-20261103-v1,
+Nov3UTC21:10..<21:12/hard21:17. No authority was published; never replay Install.
+Read-only first-cause capture is
+A/execution/current-h3-automatic-post-entry-reader-preparation-20261103-v1/parent-adoption/DISABLED-CAPTURE.json,
+SHA34f9a75e4c9c98ffec6c30bd33246dfeb5b9705511621aabe7da0a2f2fa869a3.
+Full XML/Definition/ACL stable, Disabled1/0instances. Correct Author context and
+exact sparse WakeToRun=false are the only measured comparison differences.
+NEW current-h3-static-reader-definition-recovery-20261103-v1 is COMPLETE:
+Source5dd5a2b5/native23/ClaudeGO_WITH_LIMITS,222pins stable. Parent metadata
+Repair returned0; RECOVERY-COMPLETE1886c323 and separate INDEPENDENT-READBACK
+b9801906 prove exact reader ENABLED/Ready3/0instances/authority624719ad.
+Future Nov3UTC21:10..<21:12/hard21:17; never rerun consumed Repair/Readback.
+Worker300upper/cumulative2106.475604, Parent90upper; all launches joined.
+Old9410 attempt, failed tests and lost-stderr limitation stay retained. Static
+future authority is not financial evidence or proof of OS scheduler origin.
+
+Holdings-only actual read COMPLETE at Nov3UTC02:23:15:
+A/execution/current-paper-holdings-readonly-preflight-20261103-v1/CALLBACK.json,
+Sourceede107e4/RESULT9f381b90.1POST3GET/three completed exchange groups/four
+broker positions, zero retry/all Jobs closed. Eight callback references match.
+No exact-owned fill, full risk/funds or subject-match proof; no F9 release or
+foreign adoption. No private identifiers/raw values/amounts retained.
+
+Phase45 COMPLETE RESULT12f16aa2:55updates/BEST7/net10+1.205178pct/DD.735003,
+primary rejected vs saved LSTM. Absolute-cost gate COMPLETE RESULT06851f0c:
+oneGPUfit49iterations/BEST0=one trained tree/oneforecast6views, all cash,
+primary rejected. No completed fit is running or repeated. Next Engine work is
+original Open45 Paper-proposal readiness, not more seen-DEV tuning. That source
+package is now COMPLETEc9eae425/RESULT0bcc549a/native52/482.351581upper,
+six known actors closed. Execution consumes its exact ABI in a separate
+same-session native profile. No model restore/forecast/fit/market evaluation
+or financial effect occurred in the synthetic readiness package.
+Current exact roots/contracts are in NEXT_CODEX_GOAL.md and Engine stateboard.
+
+Data raw historical preparation current Source70ef5448/PLAN0b1b3a66/native135 at
+A/data/current-us19-raw-historical-batch-preparation-20261103-v1 is ACTUALLY
+adopted. Quiet hostPID9332/birthFILETIME134381478035082513 launched
+Nov3UTC02:50:03.517370/releasece1649c6. First exact progress02:50:45:
+6GET/1POST/6responses720rows/649remaining/0technicalfailures; not completion.
+One quiet655historicalGET/800cap/1POST batch; never replay/reset actual-once.
+Raw capture in NEW M quarantine retains both clocks; qualified rows stay zero.
+New reuse-safe assessment does not weaken the strict SDK or guess a clock fix.
+Original3e batch/2c diagnostic are closed, not current workers. Initial new
+module lint7errors corrected with StrEnum/format; old711/native/full-r1 result
+retained, not regraded as current authority. No operator or canonical-clock
+permission hold on the actual raw-capture batch.
+Ohm prepares offline fixed exchange-clock/OHLC anchor; no offset search or HTTP.
+
+CURRENT repo verification including new Data code:
+A/verification/current-raw-historical-capture-integration-20261103-v1/RESULT.json,
+SHA4d61223023c8b561720af962e11641da4d481ba2df959c095495c3ec964a844a:
+202serialPASS/actual8of8workers[19943]/19917PASS26knownWindowslinkSKIP/
+35warnings/388.36s/1429protectedpins0mismatch/helper+native0/checked cleanup/
+Ruff4Compose.env.example PASS. Prior0661 below is historical, not current.
+
+This delta and current goal supersede older preparation projections below;
+closed contract descriptions are an evidence index, never replay commands.
 
 ## Actual H3 Proposal And Deployment
 
@@ -306,8 +369,10 @@ All ten heads succeeded; no historical page accepted. Host/worker closure
 97.684494ownedSUM/Jobs joined+empty; Parent independently found exacthost39544
 absent01:19:36. Native exit0 means graceful scoped stop, not plan completion.
 Cursor failure projection is KisPaperMarketDataError at SDK
-_validate_historical_minute_page line1781 (continuity predicate), not evidence
-of quota/auth failure or an identified historical floor. Exact predicate unknown.
+_validate_historical_minute_page line1781, historical_minute_clock_mismatch,
+not quota/auth failure or an identified history floor. Parent's initial
+continuity label was a line-numbering mistake: continuity raise is1776, clock
+raise1781. Exact source/probe below correct the interpretation, not the bytes.
 Original actual-once/cursor/timing marks remain immutable.
 Canonical bytes: M/us_equities/kis_paper_market/current-us19-minute-gap-batch-
 20261103-v1; fresh heads quarantined, old frozen panels/reserved inputs unchanged.
@@ -321,6 +386,20 @@ seeds are not promised. Test proper head->continuation and categorical predicate
 flags, never accept newer fallback bars as historical support. This does not
 reset/retry the old665plan, reopen a financial request or release a reservation.
 No automatic massive retry; DataGET is idempotent, original evidence preserved.
+That probe is NOW COMPLETE: Source2c2e62f8/FINAL-CALLBACK.json,
+ACTUAL-FINDING8c8cb8f6/closure66703445,3GET/1POST/0retry. Fresh head and proper
+lastbar-minus1 continuation each returned120rows/strict native PASS. The old
+absolute key ALSO returned120ordered rows at/beforeKEY/no duplicates, but all
+120 Korea clock labels differ +1h; strict clock rejection reproduced. No newer
+fallback/max-key violation. DST/capture-offset is a hypothesis, not proven;
+no timestamp repair or historical dataset promotion. All owned Jobs closed.
+Data now prepares reusable raw-capture/quarantine assessment, not another
+mandatory Korean-clock-repair gate before downloading. Proposed repo write set
+data/kis_historical_capture.py and tests/test_kis_historical_capture.py is
+disjoint, Parent owns Git. Preserve strict SDK/defaults and all raw clock fields;
+new M raw pages can be quarantined while canonicalization/clock anchors remain
+unqualified. No raw quarantine input may silently reach a model/Paper consumer.
+Short Claude/native/source/finite plan/quiet ownership before actual batch.
 Official continuation source (inspected Nov3UTC01:23):
 https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_time_itemchartprice/inquire_time_itemchartprice.py
 
@@ -364,6 +443,27 @@ Exact staging/source/nativeCUDA/checkpoint/score/book/Claude/headroom must
 qualify before conditional once; no extra Parent approval. No actual new fit
 claimed yet. Strongestkill BEST0/noINNERimprovement; growth>oldLSTM+samegrossEW
 and DD<=1.5EW. Adaptive reused-date development, no independent alpha/Paper swap.
+
+Phase45 is NOW COMPLETE, not awaiting fitting: DataSource06ae7057/
+STAGEDddba2819,600FIT40INNER40DEV all required masks known,26exact oldDEV
+parity checks PASS, staged/closed01:38:29 before01:40:01 hard.
+EngineSourcee950e58/contract53b6f853/native2c20ebda/RESULT12f16aa2:
+1CUDAfit1forecast3newviews/0retry,55updates/BEST7/INNERearlystop/
+.259228optimizersec/.607427fitwallsec,98.23MBallocated117.44MBreserved.
+Net10+1.205178pct/DD.735003 beats EW but not savedLSTM+1.216960; primary
+rejected.41actors/4CIDs/lease closed/1956.372048of3000SUM, old15metrics carried.
+No old refit, convergence claim or current Paper change.
+
+Next conditional campaign: current-intraday-absolute-cost-gate-development-
+20261103-v1,3000SUM7200elapsed from receipt, ONEGPUCatBoostRegressor on retained
+Phase45 rows with OWN net10 return target, not relative-to-SPY ranking alone.
+Gate ORIGINAL savedLSTMtop4; rejectedquarterscash, no rank5 replacements.
+Onefit1forecast/6newviews including all-input-known EW at same PREENTRYgross,
+oldmetrics carried. All-cash/inert unchanged targets kill mechanism claim;
+net10>0 and>matchedEW/DD<=1.5EW, fullLSTM opportunity reference separate.
+Actual label/solver/checkpoint/score/book native +Claude/source/resources before
+delegated once. No actual cost-gate market fit claimed yet, no extra Parent
+approval wait or current financial writer/point change.
 
 ## Owned Duties And Operations
 
