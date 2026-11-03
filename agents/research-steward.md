@@ -15,8 +15,15 @@ CURRENT04:35: Harvey owns NEW full-day TCN family at
 A/research/current-full-day-intraday-tcn-development-20261103-v1,
 3000SUM7200elapsed/onefit/oneforecast/finite views. Existing original8+SPY
 fullRTH25dates support this distinct context/horizon study independently of494.
-Require actual source/native/Claude/headroom/lease before dispatch; do not
-report a running GPU fit from MD/queued instructions. Preserve deferred3040
+TCN is now CLOSED Source91126913/RESULT118849a4/1809.771977upper,
+1CUDAfit420updates/BEST3/172.230478optimizersec/77.826MBallocated96.469MBreserved,
+oneCPUforecast12views/allCIDsleaseabsent. Time/update stop/no convergence;
+fitwall292.700357 >declared285, retain that sub-bound overrun/no refit.
+Next new postcheckpoint TimesFM H3 family1500SUM5400elapsed/0fit/1forecast/
+1readout/<=12views uses existing trusted local2.5 snapshot1d952420, not new
+GPU training or a completed inference yet. Qualify source/native/headroom/lease
+before actual dispatch; no another always-in15min turnover study merely for
+occupancy. Preserve deferred3040
 and every old cap/debit; no completed-fit repeat or more-independent-date claim.
 No environment, user-app or operator-permission hold on useful GPU training.
 

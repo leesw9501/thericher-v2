@@ -11,7 +11,16 @@ profitability veto. Current new partial/restart qualification owns its own
 pre-collection failures/zero recovery assertions. NEW direct semantic tests
 at current-open45-direct-partial-recovery-20261103-v1 invoke real prepared
 functions in fresh guests without pytest capture; do not replay old control.
-Untested partial-fill extension is not claimed PASS.
+That NEW scope is now CLOSED qualified invented-only: Source8db9c475/
+API347f89b6/CALLBACKdf129360/CLOSED71ab10e6/497.521598upper of600.
+Cold sanity plus two semantic cases in seed and fresh resume passed, four
+CIDs/recordedactorsclosed. No actual broker/private/market calls.
+NEW current-open45-oneleg-operational-preparation-20261103-v1,
+900SUM3600elapsed from receipt: original-ranked one quarter, othercash,
+on-time forecast admission before old expiry, separate new operational intent
+dispatch10:17..<10:22 and original11:17exit. Not4orders/renorm/old source retag.
+Native real counter/unknown/partial/restart/latefact checks and short challenge
+first; no actual effect or installation authority from this preparation.
 Old flat stock registrations can make new-cohort entries skip; actual current
 overlap has NOT been read. Never remove old plans/losses/reservations to trade.
 CPU point66a560 and Data Feed source55checks are ready ingredients, not a

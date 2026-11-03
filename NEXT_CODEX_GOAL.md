@@ -45,13 +45,14 @@ NAS8 Nov3/4UTC21:10 and frozenNov4UTC21:35 evaluation. No new follow-up chain.
 
 ## Ready Parallel Packages
 
-Data / Copernicus owns the ACTUAL raw494 continuation:
+Data / Copernicus closed the ACTUAL raw494 continuation:
 A/data/current-us19-raw-historical494-continuation-preparation-20261103-v1.
 Source03567531/PLAN16d17ac9/release48f66d69; host38820/birth134381514718000731.
-Launched03:51:11; exact04:32:10 progress374GET/1POST/44880rows/120remaining/
-0technical failures. Keep caps494GET1POST0retry/5400worker5460host/
-16350full actorSUM and original pacing/token guards. Require positive terminal
-host/worker/helper closure; running progress is not completion.
+Launched03:51:11, terminal04:45:35 RESULTed518f26/HOST-CLOSURE8bd07e99:
+494GET1POST59256rows/0remaining0retry0technical0unresolved/qualification0,
+workerexit0/joined/Jobempty/991helpersclosed/8276.139325SUM.
+Parent host38820absent04:46:26. Old161+new494=78576rawrows, not qualified input.
+Original caps/pacing/token/source/debits stay unchanged. Never replay completion.
 Original70ef161GET19320rows is closed and immutable, not a second live collector.
 
 Opening30 SOURCE FINDING corrected the apparent missing-data diagnosis:
@@ -73,16 +74,23 @@ Keep old strict SDK, raw qualification0, d8 reader and old161 stage immutable.
 After exact completed captures/source freeze, separately stage usable contexts
 and targets; no raw count -> Paper/canonical promotion.
 
-Execution / Helmholtz owns direct partial/restart semantics:
+Execution / Helmholtz closed direct partial/restart semantics:
 A/execution/current-open45-direct-partial-recovery-20261103-v1,
 600SUM1800elapsed from original receipt. Invoke the two real prepared semantic
 functions directly in fresh bounded guests; no pytest capture/collection.
 Prove partial BUY/unknown/cancel/restart and partial SELL/remaining inventory/
 loss/reservation preservation. Old pytest harness393.932664upper had zero
 recovery assertions; do not replay it or count bootstrap as a passing test.
-Existing62eed9c7 same-session profile and H3 financial source remain unchanged.
-Obtain a short challenge before any NEW operational dispatch-window definition;
-do not extend expired original intents or change old research conclusions.
+NEW direct Source8db9c475/API347f89b6/CALLBACKdf129360/CLOSED71ab10e6,
+five invented assertion phases/fourCIDsclosed/497.521598upper of600.
+Next current-open45-oneleg-operational-preparation-20261103-v1,
+900SUM3600elapsed from receipt: ONE original-ranked quarter/othercash,
+actual on-time original forecast admission before old expiry, separately named
+operational intent/effect window10:17..<10:22/original11:17exit. No4orderbank,
+renormalization/expired-point reuse/unknown reset or old research regrade.
+Real counter/partial/restart/latefact native checks and short Claude challenge
+before adoption. No actual effects/private/Task in this source preparation;
+existing62eed9c7 and H3 remain unchanged.
 
 Engine / sole GPU coordinator Harvey owns NEW full-day TCN campaign:
 A/research/current-full-day-intraday-tcn-development-20261103-v1,
@@ -93,6 +101,16 @@ chronological splits/purge, maximum epochs/updates/time, INNER early stopping/
 best restore and aligned risky baseline/costs before numerics. Tiny actual
 Data-solver-checkpoint-score-book native smoke, Claude and measured VRAM/lease
 first. Dense FIT origins remain the same date clusters, not independent dates.
+Now CLOSED91126913/RESULT118849a4/1809.771977upper:1CUDAfit420updates/BEST3/
+172.230478optimizersec/1CPUforecast12views, net10 -10.811273pct versusEW
+-10.572730/rule -11.502356, primarygrowthFAIL, allCIDleaseabsent.
+Actualfitwall292.700357 >declared285 sub-bound; retain overrun/no convergence,
+never refit/regrade. NEXT new current-postcheckpoint-timesfm-h3-development-
+20261103-v1,1500SUM5400elapsed/0fit/1marketforecast/1readout/<=12views:
+trusted local2.5 safetensors/dated1d952420, postcheckpoint2026 weekly H3
+price-only ranking with comparable risky EW/momentum/cash/costs. Native actual
+producer/model/score/book and headroom/lease before market; no current Paper
+swap, foundation pretraining guarantee beyond exact release or independent alpha.
 Preserve deferred transfer3040/debits and exclude reserved NAS8 outcomes.
 No duplicate completed training or automatic current Paper point swap.
 

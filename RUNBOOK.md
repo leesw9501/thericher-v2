@@ -96,7 +96,10 @@ Current definitive sources/status above and HANDOFF take precedence over
 retained historical source-specific commands below; do not replay closed jobs.
 
 Actual raw494 source03567531/PLAN16d17ac9/release48f66d69 launched03:51:11,
-host38820/birth134381514718000731. Inspect exact actual-once metadata only:
+host38820/birth134381514718000731, now CLOSED04:45:35/RESULTed518f26/
+HOST-CLOSURE8bd07e99:494GET1POST59256rows/0remaining0technical0unresolved/
+qualification0/workerjoinedexit0/Jobempty/991helpersclosed/8276.139325SUM.
+Parent hostabsent04:46:26. Never relaunch. Exact actual-once metadata only:
 D:/thericher-v2/model-artifacts/data/current-us19-raw-historical494-continuation-preparation-20261103-v1.
 Original70ef161GET19320rows is CLOSED, not another running collector.
 Opening30 source findingb44ca37f/25d05872 proves40closed captures contain
@@ -106,8 +109,11 @@ ALL rows before filtering RTH, retain exclusion/missing/proxy flags and pass
 native consumer tests. It does not rewrite old raw qualification0 or Paper input.
 Source-only feed60d53da0d7/53checks and CPU66a5600b are not actual Feed runtime.
 New finite Feed->CPU publication wrapper is preparation only; missing/late
-capture or score abstains, never catchup. Full-dayTCN is independently assigned
-existing8+SPY fullRTH data; no live GPU fit is inferred from this runbook.
+capture or score abstains, never catchup. Full-dayTCN is now CLOSED91126913/
+RESULT118849a4:1CUDAfit420updates/BEST3/1CPUforecast12views, primarygrowthFAIL,
+allCIDleaseabsent. Fitwall292.700>declared285/no convergence; do not refit/regrade.
+Next separately frozen postcheckpoint TimesFM2.5 weekly/H3 study is preparation,
+not actual running inference. No current Paper point/exit/risk change.
 
 Holdings-only preflight is consumed COMPLETE, not a general query command:
 D:/thericher-v2/model-artifacts/execution/current-paper-holdings-readonly-preflight-20261103-v1/CALLBACK.json.

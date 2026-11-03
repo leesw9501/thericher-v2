@@ -27,8 +27,19 @@ remains deferred with original caps/debits; no automatic intake/fit restart.
 Harvey owns NEW current-full-day-intraday-tcn-development-20261103-v1,
 3000SUM7200elapsed/onefit/oneforecast/finitecostviews, using existing original8+
 SPY fullRTH25dates. Exact causal context/receptive field/horizon/grid/purge/
-INNERstop/maxepochs-updates-time/native/Claude/VRAM before fitting. Dispatch
-is not a running GPU PID. Dense origins do not add independent DEV dates;
+INNERstop/maxepochs-updates-time/native/Claude/VRAM before fitting. Now CLOSED
+Source91126913/RESULT118849a4/1809.771977upper/allCIDleaseabsent:
+1CUDAfit420updates/BEST3/172.230478optimizersec,1CPUforecast12views.
+Net10 -10.811273pct/DD11.007170 vsEW -10.572730/rule -11.502356, growthFAIL.
+Modeled cost~10.445234percent initialNAV/55rounds; not actual Paper fees.
+Time/update stop/no convergence, fitwall292.700357 >declared285; preserve
+the overrun, never label within285 or repeat completed fit to repair it.
+Next new current-postcheckpoint-timesfm-h3-development-20261103-v1,
+1500SUM5400elapsed/0fits/oneforecast/one readout/<=12views: exact trusted cached
+TimesFM2.5 revision1d952420 (official2025-10-02/Apache2), weekly2026/H3
+postcheckpoint targets, source/native/resources first. Reused2026 development
+is not independent alpha; no old forecast repeat/current Paper point swap.
+Dense origins do not add independent DEV dates;
 exclude reservedNASNov3/4 and keep all old campaigns/results immutable.
 Price-only exit expert647d9bf6/native35/240upper is ready for ONE future
 Engine-frozen entry/base-exit/next-bar-cost readout, not current H3 changes.

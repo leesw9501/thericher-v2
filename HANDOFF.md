@@ -2,12 +2,12 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov3UTC04:35 integration.
+2026-11-03 KST / Nov3UTC04:47 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared MD, integration and Git. No operator decision pending.
-Latest pushed integration: 5a171481; later current-state docs may be dirty.
+Production integration9d04e169; current-state docs last pushed44d360e0.
 
 Preserve ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, original
 pending identities and ALL original exits. Never KIS_LIVE_*, substitute unknown
@@ -116,9 +116,15 @@ Source03567531fa6ef56feff5e24e77a967bbbb9e254820a950a845a33cca9fcc1804;
 PLAN16d17ac9f8497da8a5dc83ed7ff868f32926c9e3316cd736fc1bbd51b0a526ee;
 native156/ClaudeSOUND_WITH_LIMITS/32pins stable/750prep upper of900.
 Quiet actual hostPID38820/birthFILETIME134381514718000731 launched
-Nov3UTC03:51:11.809191/release48f66d69. Exact04:35:16 progress:
-402GET1POST/402responses48240rows/92remaining/0technicalfailures.
-This is RUNNING, not completion. Inspect only its exact actual-once paths.
+Nov3UTC03:51:11.809191/release48f66d69. CLOSED04:45:35:
+494GET1POST/59256capturedrows/0remaining/0retry/0technicalfailures/
+0unresolvedGET/0conflicting-or-overlap-labels, raw qualification0 unchanged.
+RESULTed518f26e679599f763c0e1981755d00e9f26d9621cbb85f80146e833f2f8e7f;
+HOST-CLOSURE8bd07e992a1137c22a40c766936ceaf044c457f57c5b79b4ac036e2b1b4e005a.
+Workerexit0/joined/Jobempty,991censushelpersclosed0/8276.139325SUM;
+Parent independently observed host38820 absent04:46:26.
+Old161+new494 captured78576rawrows, NOT model-qualified rows.
+Inspect only its exact actual-once paths; never relaunch a completed worker.
 Caps494GET/1initialPOST/0retry/5400worker5460host/16350full actor-SUM.
 Known exact synthetic collisions get at most30s worker-owned wait until a
 positive no-writer snapshot; never active exemption. Unknown real API/token
@@ -181,8 +187,19 @@ Do not repeat completed fits/forecasts to occupy GPU or repair logs.
 Harvey now owns a distinct full-day rolling-context TCN campaign using the
 existing original8+SPY fullRTH25-date source, independently of new raw494:
 A/research/current-full-day-intraday-tcn-development-20261103-v1,
-3000SUM7200elapsed/onefit/oneforecast/finite views. Source/native/Claude/VRAM
-qualification precedes actual fitting. Do not infer running GPU from dispatch;
+3000SUM7200elapsed/onefit/oneforecast/finite views. Now CLOSED Source91126913/
+RESULT118849a4/1809.771977upper/allCIDandleaseabsent. One actual CUDAfit420updates/
+BEST3/172.230478optimizersec, one CPUforecast/12views. Net10 -10.811273pct
+versus samegrossEW -10.572730/rule -11.502356, primarygrowthFAIL on5reused dates.
+Modeled costs~10.445234percent initialNAV across55rounds, not measured fees.
+StopTIME_OR_UPDATE/no convergence; actualfitwall292.700357 exceeds frozen285
+sub-bound and must not be called within285. No corrective refit or regrade.
+Next new current-postcheckpoint-timesfm-h3-development-20261103-v1,
+1500SUM5400elapsed/0fits/oneforecast/one readout/<=12views. Existing trusted
+TimesFM2.5 local safetensors/revision1d952420 (officialHF dated2025-10-02,
+Apache2) supports a post-checkpoint2026 weekly/H3 development comparison.
+Exact source/native/actual GPU/resource qualification first; no new running
+inference is inferred from this dispatch. Prior studies/rights/claims unchanged.
 preserve deferred transfer3040 and exclude reserved NAS8 Nov3/4 outcomes.
 Dense origins are not more independent dates or an old5DEV winner reranking.
 
@@ -203,7 +220,13 @@ Current disjoint source/native packages are in NEXT_CODEX_GOAL:
 Execution direct partial/restart qualification, mixed-session input repair,
 full-day TCN preparation and actual Data494. The original pytest partial harness
 closed393.932664upper after3pre-collection failures, zero recovery assertions;
-the NEW direct scope invokes the real semantic functions without pytest capture.
+the NEW direct scope is now CLOSED qualified invented-only: Source8db9c475/
+API347f89b6/CALLBACKdf129360/CLOSED71ab10e6,497.521598upper of600.
+Cold sanity and two cases in seed plus fresh resume passed (five assertion
+phases), fourCIDs/recordedactors closed. No actual broker/private/market effect.
+Next new one-leg operational preparation preserves the original quarter with
+remaining quarters cash, exact on-time forecast admission and new10:22 dispatch
+deadline; old1min research/source/results are unchanged, no expired-intent reuse.
 Data Feed must prewarm/reuse valid RAM token and obtain SPY first.
 10:16..10:16:25 capture/10:16:55 score are proposed budgets, not measured
 latency promises. Bind actual Broker token/cache/floor before runtime release;

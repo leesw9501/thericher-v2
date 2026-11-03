@@ -2,11 +2,14 @@
 
 ## Current Ownership And Ready Inputs
 
-CURRENT04:35: NEW494 continuation is ACTUALLY running:
+CURRENT04:47: NEW494 continuation is CLOSED:
 D:/thericher-v2/model-artifacts/data/current-us19-raw-historical494-continuation-preparation-20261103-v1,
 Source03567531/PLAN16d17ac9/native156/750prepupper. Parent launch03:51:11,
-host38820/birthFILETIME134381514718000731/release48f66d69; exact04:35:16
-progress402GET1POST/48240rows/92remaining/0technicalfailures. No replay/reset.
+host38820/birthFILETIME134381514718000731/release48f66d69; terminal04:45:35
+494GET1POST/59256rows/0remaining0technical0unresolved/qualification0.
+RESULTed518f26/HOST-CLOSURE8bd07e99,exit0/joined/Jobempty/991helpersclosed0/
+8276.139325SUM. Parent hostabsent04:46:26. Never relaunch/replay/reset.
+Combined original161+new494 =78576rawrows, not model-qualified input.
 Original70ef161GET/19320rows is closed, not this worker. Exact known synthetic
 collision permits only bounded30s worker wait for positive closure, never an
 active actor exemption. Unknown actual API/token writers still defer.

@@ -17,6 +17,15 @@ pages. Strictly validate all rows then select RTH with exclusions/proxy masks;
 no new HTTP, raw qualification rewrite or more-independent-date claim.
 Earlier preparation prose below is historical, not active work.
 
+Parent additional source check: official Google TimesFM2.5 model card is
+Apache2, exact cached revision1d952420fba87f3c6dee4f240de0f1a0fbc790e3
+officialHF lastModified2025-10-02T17:21:38Z. Exact existing safetensors/local
+project loader, not new3.0 rights/runtime. Consumer is Engine's NEW bounded
+2026 weekly/H3 postcheckpoint benchmark after cost-dominated H15 TCN closed.
+https://huggingface.co/google/timesfm-2.5-200m-pytorch/blob/1d952420fba87f3c6dee4f240de0f1a0fbc790e3/README.md
+Release precedence limits target-contamination claims; it does not prove
+independent alpha or negate currentlisting/nonPIT/CA limitations.
+
 Nov3UTC03:05 CURRENT. Phase45 is CLOSED RESULT12f16aa2 (net10+1.205178pct,
 below original LSTM); absolute-cost gate CLOSED RESULT06851f0c (all cash,
 no useful trade). No more repeated tuning of the same5DEVdates.
