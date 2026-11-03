@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov3UTC17:01 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Updated Nov3UTC17:27 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
 Start with scripts/start_next_codex_task.ps1 and current HANDOFF/NEXT/AGENTS.
 Parent owns shared MD/Git/actual metadata; agents own disjoint D roots.
@@ -66,6 +66,16 @@ JSON parse was review_unavailable, not agreement/authority; earlier directional
 GO_WITH_LIMITS remains advisory. Real effect-time owner/bank/unknown/quote/
 orderability/observer checks remain. No actual submit/fill/owned-inventory/PnL
 or full17 financial installation is claimed.
+
+A finance-free actual Scheduler role-ABI probe also PASSED Nov3UTC17:26:03..08:
+A/execution/current-h3-scheduled-owner-abi-probe-20261104-v1/RESULT.json/
+CLOSURE.json, Sourcefdcea44b/RESULTa6e4df32. Same H3 task-contract/owner functions
+and GUI/venv/base-console/Job roles; actual PASS_STOCK_INGRESS_SCHEDULED_OWNER,
+five lineage roles/4.457s/ownerJob2members joinedempty. No broker/account/market/
+private/credential/model calls. Positive source-scoped actor closure and exact
+new inert probe disabled17:27; original H3/NAS8 Tasks untouched. This is actual
+role-ABI measurement only, NOT financial admission/fill or cryptographic OS
+origin. No manual TaskRun, recurring worker or follow-up chain.
 
 NAS8 remaining original DataNov3/4UTC21:10 and EVALNov4UTC21:35 are ACTUALLY
 updated/enabled to frozen Dataec810e85/EVAL228254e6/nativef0866506.

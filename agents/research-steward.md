@@ -2,7 +2,20 @@
 
 ## Current Resource Coordination
 
-Updated Nov3UTC17:01 / Nov4KST. Confucius is sole GPU resource coordinator.
+Current Engine package is
+A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
+20261104-v1. SCOPE/PREPARATION-CALLBACK: source qualification ONLY, no numerical
+Source/PID/CID/lease/fit/forecast/view or reserved GPU yet. Joint pathwise H3
+downside PSD risk allocation versus same-model diagonal/constant risky controls.
+Original16:42:19..19:42:19UTC,7600activeSUM10800elapsed/2fits/12views/0retry.
+The first feedback nominee was rejected as duplicate of completed c59088ed
+before numerics; source work is charged, not reset/refunded.
+Before numerical freeze prefer existing2015..2025 strict same-capture OHLC
+training prefix over fitting17x17 risk from only~100dates. Euclid and Engine
+exchange exact schema directly; no new network acquisition or Parent-JIT gate.
+
+
+Updated Nov3UTC17:27 / Nov4KST. Confucius is sole GPU resource coordinator.
 Daily maxH3 source8e961834/RESULTa76a is CLOSED:0fits2marketforecasts12views,
 TimesFM16.858s1.059GB / Chronos10.814s0.519GB actual CUDA inference;42recorded
 original actors/4CIDs/leases/finalizer closed via DELIVERY-CLOSED.json.

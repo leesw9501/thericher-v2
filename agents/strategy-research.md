@@ -2,19 +2,21 @@
 
 ## Current Source Handoff
 
-Updated Nov3UTC17:01 / Nov4KST. Euclid's maxH3 proposal8bfb/API9c6834ad and daily C60
+Updated Nov3UTC17:27 / Nov4KST. Euclid's maxH3 proposal8bfb/API9c6834ad and daily C60
 Source1b1c9759 have been consumed by Engine's CLOSED meanrank experiment
 8e961834/a76a. Inventory-coupled rank exits cut daily-flat turnover but did
 not beat blindH3 or causal samegrossEW17. See Engine SYNTHESIS.json; no
 threshold rescue/seen-control promotion or fresh independent alpha claim.
+Next hypothesis is the distinct joint-downside risk allocation campaign;
+Engine owns numerical specification, Data prepares long2015..2025 prefix.
 The proposed book was actually implemented/tested in that campaign; it was
 not an installed Execution adapter. Analytical OPEN/thirdCLOSE remains
 NON_PARITY with native OPEN5/PRE_CLOSE15/integer lots/actualfees.
 
 Next useful mechanism should target after-cost incremental value over strong
 hold/inventory baselines; Engine owns final targets/splits/costs and fitting.
-No new reading-list or permanent role per indicator. Euclid currently owns
-local Data prewarm fix; Ohm owns bounded H3 metadata compatibility work.
+No new reading-list or permanent role per indicator. Euclid now prepares
+long training inputs; Ohm integrates the new dated Open45 source.
 Actual new Strategy numerical work is not inferred from this stateboard.
 
 ## Closed Executable Handoffs

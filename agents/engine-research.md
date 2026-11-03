@@ -2,7 +2,20 @@
 
 ## Current Results And Next
 
-Updated Nov3UTC17:01 / Nov4KST. Confucius owns Engine and sole GPU coordination.
+Current Engine package is
+A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
+20261104-v1. SCOPE/PREPARATION-CALLBACK: source qualification ONLY, no numerical
+Source/PID/CID/lease/fit/forecast/view or reserved GPU yet. Joint pathwise H3
+downside PSD risk allocation versus same-model diagonal/constant risky controls.
+Original16:42:19..19:42:19UTC,7600activeSUM10800elapsed/2fits/12views/0retry.
+The first feedback nominee was rejected as duplicate of completed c59088ed
+before numerics; source work is charged, not reset/refunded.
+Before numerical freeze prefer existing2015..2025 strict same-capture OHLC
+training prefix over fitting17x17 risk from only~100dates. Euclid and Engine
+exchange exact schema directly; no new network acquisition or Parent-JIT gate.
+
+
+Updated Nov3UTC17:27 / Nov4KST. Confucius owns Engine and sole GPU coordination.
 Daily C60 Data1b1c9759/Dataset9b111314 is ready:141dailyorigins,
 17assets/2397known inputs,139new-entry dates plus2continuation-only;
 independent H3 price support, no outcome-based selection, no future rows/impute.

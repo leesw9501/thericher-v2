@@ -75,6 +75,16 @@ GO_WITH_LIMITS remains advisory. Real effect-time owner/bank/unknown/quote/
 orderability/observer checks remain. No actual submit/fill/owned-inventory/PnL
 or full17 financial installation is claimed.
 
+A finance-free actual Scheduler role-ABI probe also PASSED Nov3UTC17:26:03..08:
+A/execution/current-h3-scheduled-owner-abi-probe-20261104-v1/RESULT.json/
+CLOSURE.json, Sourcefdcea44b/RESULTa6e4df32. Same H3 task-contract/owner functions
+and GUI/venv/base-console/Job roles; actual PASS_STOCK_INGRESS_SCHEDULED_OWNER,
+five lineage roles/4.457s/ownerJob2members joinedempty. No broker/account/market/
+private/credential/model calls. Positive source-scoped actor closure and exact
+new inert probe disabled17:27; original H3/NAS8 Tasks untouched. This is actual
+role-ABI measurement only, NOT financial admission/fill or cryptographic OS
+origin. No manual TaskRun, recurring worker or follow-up chain.
+
 NAS8 remaining original DataNov3/4UTC21:10 and EVALNov4UTC21:35 are ACTUALLY
 updated/enabled to frozen Dataec810e85/EVAL228254e6/nativef0866506.
 A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json binds
@@ -93,25 +103,34 @@ Native full17 integrationc4b297e/8cases is source-only PASS, not deployment.
 Coherent19 Data310/meta473/Parent4da is enabled Nov6UTC21:10/PT15M.
 Preserve GOOGLNov9UTC20:55/MSENov5UTC20:40/H20Dec1UTC14:30/all original exits.
 
-## Parallel Ready Work
+## Parallel Assignments
 
-- Parent: integrate final H3 operational metadata/native callback, fresh relevant
-  original-owner closure, exact future UPDATE-only/exit-first enable/readback.
-- Helm Execution: current-f9-current-request-readonly-preparation-20261104-v1,
-  <=420SUM2400elapsed/4invented sets; existing strict read APIs, no actual API/
-  private/Task/model/C/Git work. Prior F9 readiness expired partial, not qualified.
-- Ohm H3 metadata preparation is CLOSED; Parent actual migration COMPLETE above.
-- Euclid Data: current-open45-local-prewarm-deferral-repair-20261104-v1,
-  <=480SUM2400elapsed/5invented iterations; bounded worker local deferral BEFORE
-  sole wire-attempt consumption. Source-only next session, no old replay.
-- Hooke Infra: full17 source-contract mapf2fd9ef5 CLOSED, no new runtime. Now
-  implements runtime/ child under that same root, <=900SUM3600elapsed/
-  5invented iterations: one finite original-bank enclosure + actual guest
-  envelope/host closure; reuse old8native cases, no model/private/Task/C/Git.
-- Erdos positions helper is CLOSED; Parent actual read COMPLETE as above.
-- Confucius Engine/Steward: previous maxH3 campaign closed; next distinct
-  source/native/target/split/cost/cap-qualified research, <=7800SUM10800elapsed/
-  <=2fits/12views/0retry. No repeated completed fits or implied active GPU.
+- Confucius Engine/Steward: joint-downside PSD campaign above, source-only
+  preparation; do not claim GPU training running before exact Source/PID.
+- Euclid Data: current-h3-risk-historical-training-input-preparation-20261104-v1,
+  <=600SUM2400elapsed/4invented sets; retained74830/ed401 same-capture strict
+  2015..2025 C60/OHLC/masks to Engine,0HTTP/marketreadout/models/private/Task/C/Git.
+- Ohm Infra: current-open45-next-session-integration-preparation-20261104-v1,
+  <=900SUM3600elapsed/5invented iterations; qualify Nov4US finite publisher+
+  original-bank financial compatibility from Data7323 and owner619a, no old
+  Nov3 replay/retag or actual Task/API/private/model/C/Git. Direct role handoff.
+- Hooke Infra: current-full17-finite-account-consumer-readiness-20261104-v1/runtime,
+  <=900SUM3600elapsed/5invented iterations; original serial bank/native246dfSDK/
+  Phase financial enclosure and changed exact envelope/host-guest closure smoke.
+  Source-contract mapf2fd9ef5 is CLOSED. No new dispatch platform/actual effects.
+- Helm Execution: F9 component86f44f40 is CLOSED source-native ready only;
+  actual original private input/HTTP/effects UNKNOWN. Now implements enclosing/
+  child in that same root,<=600SUM2700elapsed/4invented iterations: exact
+  network-none RO producer -> RAM capsule -> Windows native query with no
+  private mount, typed/bound closure and worker-local token deferral. Parent
+  actual read awaits that qualified integration; F9 UNKNOWN-HELD unchanged.
+- Erdos invoked Monitor Infra: current-korean-monitor-candidate-admission-
+  preparation-20261104-v1,<=480SUM2400elapsed/4invented suites. Exact29f image/
+  source/role compatibility and concrete relevant-owner migration delta only;
+  no actual Docker/Task/private/deployment or repeat of closed UI experiment.
+
+Parent owns C/sharedMD/Git/integration and actual effects. Assignments are not
+proof of active numerical workers. No operator decision pending.
 
 Daily C60 Data1b1c9759/Dataset9b111314 is ready:141dailyorigins,
 17assets/2397known inputs,139new-entry dates plus2continuation-only;
@@ -132,8 +151,17 @@ blindH3+0.828084% and event/samegrossEW17+0.412062% beat it.
 Turnover improved vs daily-flat H1 (-1.774887%), but the frozen primary failed.
 No threshold rescue, repeat, alpha claim or current Paper/model/bank swap.
 2140.706347 upper includes allowances, not measured GPU time.
-Confucius owns the next distinct cost/turnover-aware hypothesis and GPU
-coordination; actual new Source/PID must be evidenced, not inferred from MD.
+Current Engine package is
+A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
+20261104-v1. SCOPE/PREPARATION-CALLBACK: source qualification ONLY, no numerical
+Source/PID/CID/lease/fit/forecast/view or reserved GPU yet. Joint pathwise H3
+downside PSD risk allocation versus same-model diagonal/constant risky controls.
+Original16:42:19..19:42:19UTC,7600activeSUM10800elapsed/2fits/12views/0retry.
+The first feedback nominee was rejected as duplicate of completed c59088ed
+before numerics; source work is charged, not reset/refunded.
+Before numerical freeze prefer existing2015..2025 strict same-capture OHLC
+training prefix over fitting17x17 risk from only~100dates. Euclid and Engine
+exchange exact schema directly; no new network acquisition or Parent-JIT gate.
 All reused-development/MODE1/currentlisting/nonPIT/notTR/unknownCA/finality/
 modeled-cost/analytical-versus-native OPEN5/PRE_CLOSE15 limitations remain.
 

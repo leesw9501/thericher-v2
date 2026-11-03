@@ -2,7 +2,7 @@
 
 ## Current Data
 
-Updated Nov3UTC17:01 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Updated Nov3UTC17:27 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
 frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
 uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
@@ -60,9 +60,15 @@ Original native failure and separate completion retained; no whole-pass rewrite.
 
 ## Next / Ownership
 
-Euclid owns source-only local-prewarm-deferral repair,480SUM2400elapsed/
-5invented iterations; distinguish local busy/notdue before sole wire attempt.
-Do not replay consumed ecfc or guess past local gate reason.
+
+Open45 local deferral template732378c2/API f149ad3b is CLOSED and consumed by
+Ohm's next-dated integration preparation:5native scenarios/97assertions,
+519independent checks/506sourcepins and closurebf7a68c9; no actual HTTP/model/
+credentials/private/Task calls or next-session source/installation yet.
+Current Euclid assignment: current-h3-risk-historical-training-input-preparation-20261104-v1,
+600SUM2400elapsed/4invented sets, retained2015..2025 same-capture strict
+training C60 + independent OPEN/CLOSE/masks to Engine;0HTTP/models/Task/C/Git.
+Direct schema handoff, not a new dataset platform or permission hold.
 Parent owns actual future metadata. Engine consumes the qualified C60 API.
 Coherent19 Nov6UTC21:10 and full17 producer Nov9UTC14:25 remain future.
 
