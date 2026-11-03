@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Nov3KST / Nov3UTC00:35. Company objective UNFINISHED. H3 future definitions
+Nov3KST / Nov3UTC01:15. Company objective UNFINISHED. H3 future definitions
 are ACTUALLY installed/enabled Ready3/0instances, not actual financial execution:
 - thericher-h3-rank-cash-once-entry-20261103-v1,
  Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
@@ -34,8 +34,13 @@ Exact current sources/evidence are in HANDOFF.md. Public H3 parser03ec,
 active SDK0ad and completed decodere1b are source-ready, not actual custody proof.
 Helmholtz prepares the enclosing native offline host/guest in
 D:/thericher-v2/model-artifacts/execution/current-h3-offline-guest-host-readiness-20261103-v1
-Only invented private RO mounts/network-none during native tests; no actual
-private/Task/broker calls or schedule. Missing runtime outcome remains UNKNOWN.
+Source7a5d1aef/SPEC7050119d/NATIVEe7220a9a COMPLETE3invented guests/
+24Jobsclosed/3CIDsabsent/new290.374552SUM. No actual private/Task/broker calls.
+Separate current-h3-post-entry-reader-future-preparation-20261103-v1 prepares
+ONE proposedNov3UTC21:10..<21:17 read; not installed yet. Requires fresh<=3min
+release and positive releasewriter/original-runtime closure before direct
+qualified launch; no generic ancestor exemption or Task-exit inference.
+Missing runtime outcome remains UNKNOWN.
 After future opportunity use only its qualified existing exact schema/links;
 public status cannot invent private custody/fill/fees/PnL.
 
@@ -46,6 +51,9 @@ model repeat, fixture substitution or stale retag. MODE1/nonPIT/notTR/finality
 limits remain factual, not a global authority hold.
 Current Korean monitor http://127.0.0.1:8787 remains local, pinned imagebe48f29e;
 H3 is not yet wired into its default H20/GOOGL public mapping. No public exposure.
+Minimal H3 display code is now tracked/tested, NOT deployed to the pinned image.
+It shows exact AMD first-leg schedule/read-clockunknown/financialUNKNOWN,
+not private custody or an execution result. Local /health actually200/ok.
 Do not rebuild pinned image or run public dryruns during a private read.
 
 GOOGL original entry FAULT48166777/nativeNOT_ENTERED; original read consumed
@@ -64,11 +72,13 @@ Codex thericher-1 was single Nov3KST06:52 follow-up, not a permanent daemon;
 no replacement follow-up chain.
 
 Fresh repo verification:
-D:/thericher-v2/model-artifacts/verification/current-h3-deployment-integration-20261103-v1/RESULT.json
-SHA7ff3887ab54ea9619a7d87b09ade0978aa2bf1eeedbca8f23e0de5303476df5a:
-1426pins768dbc73/0mismatch/actual8of8[19899]/19873PASS26knownskip/389.24s/
+D:/thericher-v2/model-artifacts/verification/current-h3-monitor-integration-20261103-v1/RESULT.json
+SHA0661cf494a9e18aa36c6040e8efb845f1237bb8cf1a6ba36b20ac5811710b8ed:
+1427pinsad63e025/0mismatch/259serialPASS/actual8of8[19916]/19890PASS26knownskip/387.29s/
 helper+native0/checked cleanup/Ruff4Compose.env.example PASS.
-full-standard-tests.log is authority; extra-quiet full-tests.log is NOT.
+Current full-tests.log SHA44dcb39a is authority. Prior7ff/1426pins only historical;
+its extra-quiet diagnostic is still NOT authority. Research is an existing
+Compose --profile research, not a docker-compose.research.yml file.
 External D code still needs separate focused native/negative proofs.
 No repeated full suite for unchanged docs/external-only source.
 Current definitive sources/status above and HANDOFF take precedence over
@@ -84,15 +94,24 @@ Comparison at D:/thericher-v2/model-artifacts/research/current-open45-engine-dev
 is numerically COMPLETE:2fits2forecasts15views/0retry, LSTM34updates/BEST10/
 INNERearlystop/.269500optimizersec; reused5DEVdays net10+1.216960pct/DD.651134,
 Ridge+1.068984/EW+1.092579, primaryPASS only in this development scope.
-Final actor/debit audit remains owned; no repeated fits/automatic Paper swap.
+Final RESULTb6f0deff closes57actors/6CIDs/lease/1071.522273upper. No repeated
+fits/automatic Paper swap. Fixed three-expert composition also COMPLETE at
+D:/thericher-v2/model-artifacts/research/current-open45-three-expert-composition-development-20261103-v1/RESULT.json:
+0fits3views/+1.185653pct/DD.743823, growthFAIL versus savedLSTM, closed.
 Original expiryNov3UTC01:16 unchanged. Next fixed savedforecast composition
 is a separate0fit3view campaign, not another forecast or reopening old trials.
 Separate-role actual input DATA_READY_CLOSED at
 D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json.
 Current data suffice. US19 broader gap collection is separate runtime binding
 at D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1;
-preparation665GET/800cap/2h is not an actually running collector. Do not infer
-active GPU/HTTP workers from these boards; exact role callbacks own current state.
+preparation is now adopted: Source3e0a4b4b/native74/release48c3f5c5 actual quiet
+hostPID39544/birthNov3UTC01:13:23.904539. Exact runtimeRoot/actual-once only;
+01:14:00 progress8acceptedGET/1POST/960unique rows, RUNNING/ETAunknown.
+665planned/800cap/2h/zero retry/one retained RAM token. Cache:
+D:/market_data/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
+Copernicus owns safe progress and closure. Do NOT run its launch command again,
+reset actual-once/unknown cursor or infer training eligibility. No current
+GPU training inferred from these boards; exact callbacks own current state.
 
 Retained completed numerical jobs MUST NOT be restarted:
 - A/research/current-short-horizon-joint-development-20261102-v1:

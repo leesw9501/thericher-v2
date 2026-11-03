@@ -2,19 +2,27 @@
 
 ## Current Results And Next
 
-Nov3UTC00:46 update: Open45 numerical comparison is COMPLETE, not queued.
+Nov3UTC01:10 update: Open45 comparison and fixed composition are COMPLETE.
 Source37e58ff4/OPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry;
 LSTM CUDA34updates/BEST10/INNERearlystop/.269500optimizersec,80.13MBallocated.
 Net10 on reused5DEVdate clusters: LSTM+1.216960pct/DD.651134,
 Ridge+1.068984/DD.743823, samegrossEW+1.092579/DD.815521; frozenprimaryPASS.
 No convergence, independent alpha, qualified Paperinput or actual PaperPnL.
-Current H3 point unchanged. Harvey owns final actor/debit audit, then a NEW
-saved-forecast fixed three-expert mean-percentile LSTM/Ridge/past-relative45
-top4 composition:0fits/0newforecasts/1readout3costviews/600SUM1800elapsed,
-native actual parser/book and scoped Claude review before conditional once.
-Adaptive seenDEV only, beat savedLSTM ANDsamegrossEW/net10/DD<=1.5EW,
-no rescue/original clock extension. Next materially distinct GPU mechanism
-may be prepared; no completed old fit/forecast/readout repeated.
+Current H3 point unchanged. Final RESULTb6f0deff closes57actors/6CIDs/lease,
+1071.522273familyupper. Prior nonlinearGPUhazard audit98a492 closes17actors/
+972.158975upper, no audit numerics. Fixed three-expert composition COMPLETE at
+D:/thericher-v2/model-artifacts/research/current-open45-three-expert-composition-development-20261103-v1:
+Sourcea9cb5e82/contract20a30e0c/RESULT0e131978/native11/ClaudeGO_WITH_LIMITS,
+0fits0restores0newforecasts/3newviews/old15metricsunchanged. Net10+1.185653pct/
+DD.743823, growth versus savedLSTMFAIL/riskPASS, primary rejected. Four actors
+closed/409.721335of600SUM, no old cap extension/secondary rescue/point swap.
+Next Harvey/Ohm coordinate ONE early-phase rolling-context mechanism, not both
+the proposed60min4-origin and45min-phase alternatives as hidden trials.
+Prefer train earlier45/60/75/90/105min phases/equalDATE/explicit phase input
+and evaluate original once-session payoff; new data/schema/caps must qualify.
+Ohm pure source/kernel root current-rolling-intraday-expert-kernel-preparation-
+20261103-v1,600ownedSUM1800elapsed, no market projection or fitting. More
+overlapped rows are not independent dates. No completed numerics repeated.
 Earlier readiness description below retains the original contract, not a
 current-running claim. Numerical evidence is readout/RESULT.json and actual
 temporal_fit/RESULT.json under current-open45-engine-development-20261103-v1.

@@ -58,7 +58,7 @@ def test_state_uses_explicit_operations_root(tmp_path, monkeypatch):
     assert status == 200
     operations = json.loads(body)["operations_snapshot"]
     assert operations["observed_at"] == projected["observed_at"]
-    assert {run["key"] for run in operations["runs"]} == {"h20", "googl"}
+    assert {run["key"] for run in operations["runs"]} == {"h20", "googl", "h3"}
     assert all(run["fill"] == "unknown" for run in operations["runs"])
     assert calls == [tmp_path / "public-operations"]
 

@@ -77,6 +77,7 @@ _OPERATION_RUNS = {
         "GOOGL",
         "artifact:execution/current-us19-unit-reader-binding-repair-20261101-v1/actual-once/RESULT.json",
     ),
+    "h3": ("H3", "AMD", None),
 }
 _OPERATION_VALUES = {
     "status": frozenset({"scheduled", "unknown", "validated", "invalid", "unavailable"}),
@@ -96,6 +97,10 @@ _OPERATION_REASONS = {
     "public_evidence_withheld": "근거 판정 보류 · 미확인 요청 조정 필요",
     "host_published_public_outcome": "공개 판독 결과 · 호스트 게시; 현재 상태 재확인 필요",
     "historical_public_outcome": "과거 공개 판독 결과 · 접수·체결 기록 보존, 현재 보유 미확인",
+    "h3_installation_retained": "진입·청산 정의 설치 근거 보존 · 금융 결과 미확인",
+    "h3_future_outcome_unknown": "향후 실행 결과 미수신 · 실패 또는 무주문 근거 아님",
+    "h3_host_diagnostic_unknown_finance": "호스트 실행 진단만 관측 · 제출·체결·보유 미확인",
+    "h3_technical_fault_unknown_finance": "호스트 기술 실패 기록 · 금융 효과는 미확인",
 }
 _STATUS_LABELS = {
     "unknown": "미확인",
@@ -910,7 +915,7 @@ def _status_badge(value: object) -> str:
 
 
 def _safe_operations(value: object, *, now: str | None = None) -> dict[str, object] | None:
-    """Project only the two public run contracts; never follow their evidence pointers."""
+    """Project allowlisted public display contracts; never follow evidence pointers."""
     if not isinstance(value, dict):
         return None
     observed = _parse_time(value.get("observed_at"))
@@ -970,6 +975,44 @@ def _safe_operations(value: object, *, now: str | None = None) -> dict[str, obje
                 "historical_public_outcome",
             ):
                 run["reason_code"] = "public_evidence_missing"
+        if key == "h3":
+            # Installed definitions and host diagnostics cannot prove financial facts.
+            invalid = (
+                run["status"] != "unknown"
+                or any(
+                    raw.get(field, "unknown") != "unknown"
+                    for field in ("submit", "fill", "inventory")
+                )
+                or any(
+                    raw.get(field) is not None
+                    for field in ("read_due_at", "evidence_at", "evidence_pointer")
+                )
+                or _parse_time(raw.get("entry_due_at"))
+                not in (
+                    None,
+                    _parse_time("2026-11-03T20:55:00Z"),
+                )
+                or _parse_time(raw.get("exit_due_at"))
+                not in (
+                    None,
+                    _parse_time("2026-11-06T20:45:00Z"),
+                )
+            )
+            run.update(
+                status="invalid" if invalid else "unknown",
+                submit="unknown",
+                fill="unknown",
+                inventory="unknown",
+                read_due_at=None,
+                evidence_at=None,
+                evidence_pointer=None,
+                entry_due_at="2026-11-03T20:55:00+00:00",
+                exit_due_at="2026-11-06T20:45:00+00:00",
+            )
+            if invalid:
+                run["reason_code"] = "public_evidence_invalid"
+            elif run["reason_code"] in (None, "public_evidence_missing"):
+                run["reason_code"] = "h3_future_outcome_unknown"
         runs.append(run)
     return {"observed_at": observed.isoformat(), "runs": runs}
 
@@ -990,6 +1033,13 @@ def _operations_details(snapshot: DashboardSnapshot) -> str:
                 ("read_due_at", "결과 판독 · Read trigger"),
                 ("exit_due_at", "청산 시작 · Exit"),
             )
+            if key != "h3" or field != "read_due_at"
+        )
+        h3_scope = (
+            '<p class="scope">첫 종목 한정 · First instrument only. '
+            "정의 설치 근거 보존 · 금융 실행과 별개. 판독 예약 시각 미확인.</p>"
+            if key == "h3"
+            else ""
         )
         facts = "".join(
             f"<div><dt>{name}</dt><dd>{_status_badge(run.get(field))}</dd></div>"
@@ -1003,6 +1053,7 @@ def _operations_details(snapshot: DashboardSnapshot) -> str:
         <li class="run" data-run="{key}">
           <div class="run-header"><h3>{display_label} · {symbol}</h3>
             {_status_badge(run.get("status"))}</div>
+          {h3_scope}
           <ol class="timeline" aria-label="{display_label} 예약 시각">{stages}</ol>
           <dl class="run-facts">{facts}</dl>
           <p class="followup">{_text(followup)}</p>

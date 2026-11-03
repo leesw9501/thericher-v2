@@ -2,7 +2,22 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC00:35: Ohm Open45 actual input DATA_READY_CLOSED00:30:55 at
+Nov3UTC01:17: ACTUAL finite breadth collection RUNNING under Copernicus:
+D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1/actual-once.
+Parent adopted Source3e0a4b4b/28pins0mismatch/NATIVE74/closure874bad78,
+834.315762integrationSUM (old failures preserved), release48c3f5c5.
+Quiet hostPID39544/birthNov3UTC01:13:23.904539, safe explicit environment;
+one owned worker/665planned/800GETmax/1POST/0retry/7200worker/14550SUM.
+Progress01:14:00:8acceptedGET/1POST/960unique rows/0failures/pendingnull/
+ETAunknown, not complete or training promotion. Actual cache:
+D:/market_data/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
+No Task/service or financial endpoints. No second launch/reset/unknown cursor
+release. Copernicus monitors count-safe progress/terminal/source/Job closure.
+Source-only initialization failures were repaired before actual HTTP, not KIS
+credential/provider failures. Fresh heads quarantined; original inputs intact.
+The initial preparation description below is superseded by this actual run.
+
+Retained Open45 actual input DATA_READY_CLOSED00:30:55 at
 D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json.
 Sourceffa13cce/APIeada9635/STAGED48a8b342/native2c0a0787;25sessionsSep25..Oct29,
 FIT120/INNER40/reusedDEV40 stock keys, separate INPUT/TARGET/HELD roles/masks.

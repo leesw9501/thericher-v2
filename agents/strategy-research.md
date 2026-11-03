@@ -2,18 +2,30 @@
 
 ## Current Source Handoff
 
-Nov3UTC00:46: Open45 actual two-fit comparison COMPLETE, CUDA LSTM34updates/
+Nov3UTC01:10: Open45 actual two-fit comparison COMPLETE, CUDA LSTM34updates/
 BEST10/INNERearlystop; net10+1.216960pct/DD.651134 vsRidge+1.068984 and
 samegrossEW+1.092579, primaryPASS on only5reusedDEVdate clusters. No independent
-alpha/Paperinput/currentH3swap. Harvey owns audit then fixed saved-forecast
-LSTM/Ridge/rule composition, no refit. Ohm now owns source-only existing Korean
+alpha/Paperinput/currentH3swap. Final RESULTb6f0deff/57actors6CIDsclosed/
+1071.522273upper. Fixed LSTM/Ridge/rule composition also COMPLETE Sourcea9cb5e82/
+RESULT0e131978/0fits3views/+1.185653pct/DD.743823/primarygrowthFAIL/fouractorsclosed.
+Ohm completed source-only existing Korean
 monitor handoff at
 D:/thericher-v2/model-artifacts/execution/current-h3-public-monitor-handoff-preparation-20261103-v1,
 450ownedSUM1500elapsed/hard01:03:19. Minimal D-only patch/real invented public
 parse->projection->backend/view; exact public point symbol, null read clock,
 financialUNKNOWN. No current publication/rebuild/Task/private/model/API/Git.
-Parent owns tracked integration; this is an invoked cross-lane UI capability,
-not a new durable agent or web broker authority.
+Parent integrated minimal tracked patch+17newtests/259serialPASS, full8worker
+verification runs; actual Docker monitor unchanged. Parent wording/golden
+contract distinguish missing qualified read clock from proof of absent duty.
+This is invoked UI capability, not a new durable role/web broker authority.
+
+Ohm now owns current-rolling-intraday-expert-kernel-preparation-20261103-v1,
+600ownedSUM1800elapsed from receipt. Coordinate ONE early-phase context/known-
+phase/equalDATE proposal directly with Harvey before source freeze; prefer
+original once-session evaluation over extra funded sleeves. Retained25days,
+separate INPUT/TARGET/HELD and origin IDs, tiny actual producer/parser/consumer
+on invented data only. No current market projection/fitting/GPU/HTTP. More
+overlapping examples do not add independent date clusters or reopen old studies.
 
 Nov3UTC00:35: Open45 candidate Sourceb9d07c17/contractb71f10d3/API80cb8101/
 native37/closure-r28e5021f6 COMPLETE at

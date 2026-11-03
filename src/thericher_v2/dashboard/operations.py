@@ -1,4 +1,4 @@
-"""Display-only Paper outcomes from two exact, host-published public files.
+"""Display-only Paper outcomes from exact, host-published public files.
 
 ``artifact_root`` is the dedicated projection directory, NOT model-artifacts.
 Docker needs only that directory mounted read-only. It never executes readers
@@ -53,7 +53,7 @@ class _Run:
     label: str
     symbol: str
     entry: str
-    read: str
+    read: str | None
     exit: str
     producer: str
     reader_root: str
@@ -62,7 +62,9 @@ class _Run:
     reader: str
 
     @property
-    def evidence_pointer(self) -> str:
+    def evidence_pointer(self) -> str | None:
+        if self.key == "h3":
+            return None
         return f"artifact:execution/{self.producer}/actual-once/RESULT.json"
 
 
@@ -95,6 +97,34 @@ _RUNS = (
     ),
 )
 _H20_READER_MANIFEST = "3402c3378e69ebe8fe9fa2ba15872ede0a25e02894886df7e0479e2b43475bfd"
+# Display-only H3 is deliberately absent from the legacy host publisher's _RUNS.
+_H3_RUN = _Run(
+    "h3",
+    "H3",
+    "AMD",
+    "2026-11-03T20:55:00Z",
+    None,
+    "2026-11-06T20:45:00Z",
+    "current-h3-runtime-result-reader-preparation-20261103-v1",
+    "current-h3-runtime-result-reader-preparation-20261103-v1",
+    "03ecf2ae05f78bca3ff676ad618c26beb85d934bb18ee5c2695b4aa225d757ad",
+    "c045d21e66fb7263739995cbab02e5b0ee9f6a6490479ca30b4fa015d0edfb3f",
+    "4990c3dfd5b3c93a53e3e808648cdf30d045987d3b72fa50f356a704ca3fe85f",
+)
+_H3_POINT = "ad3b0bcf7cda223e2897c04dc744097f2444ba4916ac3820962731d63c46375c"
+_H3_SEAL = "f8fe560355d979839b1da8a482b735c46e5c085cfc60749f43ed90f0f9b9563d"
+_H3_INSTALLATION = "31e83c91325d95ab9bf507e781afb10c38db4df1f351935e1002e9d12627f6ef"
+_H3_FINANCIAL_SOURCE = "6ae5408804b8dea0dc47552f071cd44b6401a3497dd1d2524ac16eccf88ab9af"
+_H3_RELEASE = "32f5a92eb9c5d3ac51eb028bba5f70f6462c20e18a43d731d2553366ed50de3a"
+_H3_POLICY = "sha256:3ff30cdebd1941efb8979a2a4e6f3e73f1829cf8f15873f45a95211dc7e500ad"
+_H3_REASONS = {
+    "h3_installation_retained",
+    "h3_future_outcome_unknown",
+    "h3_host_diagnostic_unknown_finance",
+    "h3_technical_fault_unknown_finance",
+    "public_evidence_invalid",
+    "public_evidence_withheld",
+}
 _PROJECTION_KEYS = {
     "schema",
     "trust",
@@ -124,7 +154,7 @@ def display_contract_sha256(key: str) -> str:
     Runtime source/native/reader pins belong to the separately qualified host
     publisher. Keeping them out of this digest prevents a web-image/source cycle.
     """
-    run = next(run for run in _RUNS if run.key == key)
+    run = _H3_RUN if key == "h3" else next(run for run in _RUNS if run.key == key)
     contract = {
         "schema": "PAPER_OPERATIONS_DISPLAY_CONTRACT_V1",
         "key": run.key,
@@ -137,6 +167,13 @@ def display_contract_sha256(key: str) -> str:
         "original_reader": run.reader,
         "evidence_pointer": run.evidence_pointer,
     }
+    if key == "h3":
+        contract.update(
+            point_sha256=_H3_POINT,
+            seal_sha256=_H3_SEAL,
+            installation_readback_sha256=_H3_INSTALLATION,
+            financial_projection="UNKNOWN_ONLY_NO_QUALIFIED_READ_CLOCK",
+        )
     raw = json.dumps(contract, sort_keys=True, separators=(",", ":")).encode("ascii")
     return hashlib.sha256(raw).hexdigest()
 
@@ -263,7 +300,17 @@ def _decode_projection(raw: bytes, run: _Run, now: datetime) -> dict:
         _need(value["display_contract_sha256"] == display_contract_sha256(run.key))
         for name in ("operational_source_sha256", "native_sha256", "reader_sha256"):
             _need(_digest(value[name]) and value[name] != "0" * 64)
-    _need(value["reason_code"] in _REASONS)
+    _need(value["reason_code"] in (_H3_REASONS if run.key == "h3" else _REASONS))
+    if run.key == "h3":
+        _need(value["schema"] == _SCHEMA_V2 and value["status"] == "unknown")
+        _need(all(value[name] == "unknown" for name in _FINANCIAL))
+        _need(
+            all(
+                value[name] is None for name in ("evidence_at", "evidence_pointer", "result_sha256")
+            )
+        )
+        _need(value["operational_source_sha256"] == _H3_FINANCIAL_SOURCE)
+        _need(value["native_sha256"] == run.native and value["reader_sha256"] == run.reader)
     checked = _timestamp(value["checked_at"])
     _need(checked <= now + timedelta(seconds=30))
     evidence = value["evidence_at"]
@@ -320,11 +367,11 @@ def build_operations_snapshot(
     *,
     now: datetime | None = None,
 ) -> dict[str, object]:
-    """Read exactly h20.json and googl.json; no environment, discovery or effects."""
+    """Read only h20.json, googl.json and h3.json; no discovery or effects."""
     current = now if now is not None else datetime.now(UTC)
     observed = _iso(current)
     runs = []
-    for run in _RUNS:
+    for run in (*_RUNS, _H3_RUN):
         row = _row(run)
         if artifact_root is not None:
             try:
@@ -341,6 +388,70 @@ def build_operations_snapshot(
                 row = _row(run, "projection_invalid", "invalid")
         runs.append(row)
     return {"observed_at": observed, "runs": runs}
+
+
+def build_h3_public_projection(
+    *,
+    now: datetime,
+    diagnostic: dict | None = None,
+    installation_only: bool = False,
+) -> dict:
+    """Pure HOST-side display adapter, never a GET-time parser or publisher.
+
+    Caller separately qualifies the pinned public parser and exact input path/hash.
+    The diagnostic DTO is NOT financial evidence. No financial categories/times,
+    counters, raw errors or evidence paths are promoted into the V2 envelope.
+    This function performs no I/O and cannot publish, schedule or query anything.
+    """
+    _need(type(installation_only) is bool)
+    value = _projection(_H3_RUN, now)
+    value.pop("source_sha256")
+    value.update(
+        schema=_SCHEMA_V2,
+        display_contract_sha256=display_contract_sha256("h3"),
+        operational_source_sha256=_H3_FINANCIAL_SOURCE,
+        reason_code="h3_installation_retained"
+        if installation_only
+        else "h3_future_outcome_unknown",
+    )
+    if diagnostic is not None:
+        _need(type(diagnostic) is dict and not installation_only)
+        _need(diagnostic["schema"] == "H3_FUTURE_RUNTIME_DIAGNOSTIC_PROJECTION_V1")
+        _need(diagnostic["trust"] == "host_diagnostic_not_authenticated_not_financial_evidence")
+        _need(diagnostic["key"] == "h3" and diagnostic["deployable_monitor_v2"] is False)
+        _need(diagnostic["source_sha256"] == _H3_FINANCIAL_SOURCE)
+        _need(diagnostic["release_sha256"] == _H3_RELEASE)
+        _need(diagnostic["input_ref"] == "sha256:" + _H3_POINT)
+        _need(diagnostic["policy_ref"] == _H3_POLICY)
+        _need(diagnostic["round_id"] == "h3-rank-preferred-finite-20261103-v1")
+        _need(diagnostic["phase"] in {"entry", "exit"})
+        _need(_timestamp(diagnostic["checked_at"]) <= now)
+        financial = diagnostic["financial"]
+        _need(
+            type(financial) is dict
+            and set(financial)
+            == {
+                "signal",
+                "no_intent",
+                "attempt",
+                "acceptance",
+                "exact_linked_fill",
+                "current_owned_inventory",
+                "terminal_reconciliation",
+                "fees",
+                "settlement",
+                "net_PnL",
+            }
+        )
+        _need(all(item == "UNKNOWN" for item in financial.values()))
+        _need(diagnostic["status"] in {"diagnostic_only", "technical_failure"})
+        value["reason_code"] = (
+            "h3_technical_fault_unknown_finance"
+            if diagnostic["status"] == "technical_failure"
+            else "h3_host_diagnostic_unknown_finance"
+        )
+    _decode_projection(json.dumps(value).encode("ascii"), _H3_RUN, now)
+    return value
 
 
 class _PublicFiles:

@@ -1,123 +1,98 @@
 # Orchestration Stateboard (총괄)
 
-Nov3KST / Nov3UTC00:35. Company coexistent-native-paper-execution-runtime-v1
-UNFINISHED. Parent owns shared MD/Git/adoption. No operator decision.
+Nov3KST / Nov3UTC01:15. Company coexistent-native-paper-execution-runtime-v1
+UNFINISHED. Parent owns shared MD/Git/adoption. No operator decision pending.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-ONE original B/10/F9 UNKNOWN-HELD/pending/all exits. Never KIS_LIVE_*.
-Primary strategies intraday plus one-to-several-session swings.
+ONE original B/10/F9 UNKNOWN-HELD/pending/all exits remain. Never KIS_LIVE_*.
+Primary strategies: intraday plus one-to-several-session swings.
 
 ## Ready / Owned / Due
 
-- H3 future deployment COMPLETE: entryNov3UTC20:55/exitNov6UTC20:45,
- exact tasks both enabled/Ready3/0instances, no manual Run/broker/private call.
- OriginalSource6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/risk/bank same.
- COMPLETEfc1c35b6 and READBACK31e83c91 at
- A/execution/current-h3-enable-default-repair-20261103-v1. Source9bc93d9e/
- native9checks plus inherited6ebb205c/39cases164assertions, closed.
- Installation is NOT submit/acceptance/fill/current inventory/PnL.
-- Helmholtz01a19e81-10fb-7781-9d3a-53f8ef407883/Execution owns
- current-h3-offline-guest-host-readiness-20261103-v1,
- 600ownedSUM1800elapsed/hard<=01:00. Public parser14tests/active SDK15tests/
- completed decoder10tests are COMPLETE. Actual network-none/RO Docker uses
- INVENTED custody only to qualify host/bootstrap/admission/stability/closure.
- No actual private/Task/broker call or new GOOGL chain/current read release.
-- Harvey01a19e80-1586-7fe2-9587-9b44f510842b/Engine+soleSteward owns
- current-open45-engine-development-20261103-v1: indicatorRidgeCPU vs combined
- LSTM32CUDA, exactly2fits2forecasts15views0retry, original Nov2UTC23:46..
- Nov3UTC01:16/1800ownedSUM5400elapsed. Native actual CUDA/checkpoint/handoff
- and scoped Claude review qualify conditional delegated market release.
- Ohm separate-role input DATA_READY_CLOSED00:30:55/Sourceffa13cce/STAGED48a8b342/
- 120FIT40INNER40DEV/25sessions; no new collection needed. Four stage actors
- closed, old300+new180upper unchanged. No current-running GPU inference from MD.
-- Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c/Data owns NEW
- current-us19-minute-runtime-binding-20261103-v1,900ownedSUM2700elapsed from
- actual dispatch. PrepSourcea6668bfa/45native/fullRuff/15Jobsclosed: original19
- canonical overlap9/87746of87750 minute cells/25sessions; AMD+nineNYSE gaps.
- Proposed665GET/800cap/2h/0retry, no actual long collector yet. Bind quiet finite
- host/existing Paper Data client/valid token/exact cache ownership/cursors;
- max4market probes/1initialPOST under unchanged gates, noaccount/order/live.
- Newclient-no-usable-token is initial issuance, not proof another token expired;
- instance-bound persisted once, unknown/lostreply remains consumed. Scoped
- Claude SOUND_WITH_LIMITS, oldadapter immutable/newnative path required.
-- Data scope CLOSED: coherent19daily DATAREADY2d5e183b/manifest122b369c/
- closure9a5bd544, required2371+19currentcells PASS ParentRESULTd4d22f05.
- Existing NAS8 Nov3/4UTC21:10/frozen evalNov4UTC21:35 separately owned and
- excluded from new selection. No duplicate collection/projection.
-- Strategy/Ohm staging scope complete; original three-expert point unchanged. Four-expert r3
- inference kernel77d63050 ready, financial sidecars WITHHELD. Trimmed-four
- new DEV result below is promising, not an automatic current point swap.
-- Original exits persist: GOOGLNov9UTC20:55, MSENov5UTC20:40,
- H20Dec1UTC14:30native. No missing-evidence reservation release/foreign adoption.
-- Boyle/Lovelace/Ptolemy scopes CLOSED, not permanent active agents.
- Parent integrates verified docs/Git; base2141595e pushed.
+- H3 finite first-instrument AMD leg ACTUALLY installed/enabled:
+ entryNov3UTC20:55 (Nov4KST05:55), exitNov6UTC20:45 (Nov7KST05:45).
+ Source6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603 unchanged.
+ READBACK31e83c91/COMPLETEfc1c35b6 at
+ A/execution/current-h3-enable-default-repair-20261103-v1.
+ Installation is not submit/acceptance/fill/current holdings/PnL.
+- Execution/Helmholtz01a19e81-10fb-7781-9d3a-53f8ef407883 owns
+ A/execution/current-h3-post-entry-reader-future-preparation-20261103-v1,
+ 900ownedSUM2700elapsed. ONE proposedNov3UTC21:10..<21:17 post-entry read,
+ not installed. Actual metadata bootstrap2positive/11negative invented cases
+ PASS; exact native quiet definition/installer/closure still preparation.
+ Fresh <=3min release and positive preparer/original-runtime closure must
+ precede direct launch. No current private read, Task Run, generic ancestor
+ exemption, all-Data quiescence or new GOOGL chain.
+- Data/Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c monitors ACTUAL finite
+ A/data/current-us19-minute-runtime-binding-20261103-v1/actual-once.
+ Parent adopted Source3e0a4b4b/native74/closure874bad78/release48c3f5c5;
+ quiet hostPID39544/birthNov3UTC01:13:23.904539. Progress01:14:00 RUNNING:
+ 8acceptedGET/1POST/960unique rows/0accepted failures/pendingnull/ETAunknown.
+ 665planned/800GETmax/1POST/0retry/7200worker/7260host/14550SUM/10800E2E.
+ Cache M/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
+ One owned collector only; no duplicate launch/reset/unknown cursor release.
+ Fresh heads remain quarantined, not selection-ready/PIT/finality/CA proof.
+- Engine/soleSteward Harvey01a19e80-1586-7fe2-9587-9b44f510842b completed
+ Open45 and its fixed composition. Next coordinate ONE early-phase rolling-
+ context/explicit-phase/equalDATE source mechanism with Strategy. Prefer
+ original once-session evaluation rather than extra funded sleeves. No next
+ market projection/fit/forecast released yet; completed models never repeated.
+- Strategy/Ohm01a19ea9-7bd8-7042-adf9-38ba566aba95 owns
+ A/research/current-rolling-intraday-expert-kernel-preparation-20261103-v1,
+ 600ownedSUM1800elapsed. Retained25days/stock-local contexts/origin IDs/
+ separate INPUT-TARGET-HELD; invented actual producer/parser/consumer only.
+ Direct schema handoff to Engine; more overlapping rows are not independent
+ dates. Resolve the phase-conditioned45min vs60min4-origin proposals into
+ ONE frozen contract, not hidden trial multipliers.
+- Parent integrated minimal H3 Korean display, financialUNKNOWN/readclocknull,
+ old H20/GOOGL digests and legacy publisher preserved. Serial259/full19890PASS;
+ current Dockerbe48 remains unchanged, local /health actually200/ok. Tracked
+ source/tests are not rollout. Preserve current financial admission compatibility.
+- Original exits persist: original GOOGLNov9UTC20:55,
+ MSENov5UTC20:40 and H20Dec1UTC14:30native. NAS8Nov3/4UTC21:10 and
+ frozenNov4UTC21:35 evaluation remain separate and excluded from new selection.
 
-## Integrated Results / Failures
+## Integrated Evidence
 
-Actual coherent19daily21:32 and three-expert publisher21:46 COMPLETE,
-Parent strict R5 source/Data/model/clock/SDK bindingRESULT111129a6.
-Original H3 Create failed after only disabled exit; Source6ebb recovered exact
-exit and created missing entry. Original Enable then failed after exitReady
-because native Settings.Enabled=true default was omitted. Exact source9bc
-changed only that default; all other drift denies, actual final pair enabled.
-Old raw CAPTUREe955 and failed attempts immutable. No full-suite rerun for
-D-only repair; focused real native/default/negative tests + actual readback.
+Open45 Source37e58ff4/RESULTb6f0deff:
+2fits2forecasts15views/0retry, CUDA LSTM34updates/BEST10/INNERearlystop/
+.269500optimizersec. Reused5DEVdate clusters net10+1.216960pct/DD.651134
+versus Ridge+1.068984 andsamegrossEW+1.092579, primary development PASS.
+57exact actors/6CIDs/lease closed,1071.522273upper. Not independent alpha,
+convergence, qualified Paperinput or measured PaperPnL.
 
-H20 old entry manual_lineage_unbound, readerCONTROL/NO_NATIVE_CONTROL.
-GOOGL old entryFAULT48166777/nativeNOT_ENTERED; original readWITHHELD57a51d17
-from Parent concurrent public-dryrun actor contention. New retained host21a/
-release41f also WITHHELD before_create/private_reads0/fourJobsclosed;
-FIRST-CAUSE11fda1d0/CALLBACK5015fc30 proves Parent adopt.ps1 wrapper6499a380
-was the unqualified ancestor. No financial conclusion/new read chain/exemption.
+Fixed composition Sourcea9cb5e82/contract20a30e0c/RESULT0e131978 at
+A/research/current-open45-three-expert-composition-development-20261103-v1:
+0fits0restores0newforecasts/3newviews, old15metrics unchanged.
+Net10+1.185653pct/DD.743823, riskPASS/growth versus LSTMFAIL, primary rejected.
+Fouractorsclosed/409.721335upper; no current H3 point swap.
 
-New robust-four DEV readout75865f5c/d9487d3f/RESULT1d8c81ba COMPLETE/CLOSED:
-one zero-fit pipeline/sixviews/0retry, exact oldmean3parityPASS.
-Net10 cumulative242.377556pct/DD22.434191/turn188.726218: growth+riskPASS,
-frozen turnover<185.995827FAIL => conjunction rejected, not regraded.
-Old810+new7.456=817.456worker-wall debit, seven actors absent. ReusedDEV,
-not independent alpha/PaperPnL. Old expired0attempt scope remains expired.
+CPU hazard COMPLETE120.910531pct/DD22.742307/546.266upper, growthFAIL.
+GPU nonlinear hazard COMPLETE109.553207/DD20.866974/82trees/.589849optimizersec,
+growthFAIL; finalaudit98a492/17actorsclosed/972.158975upper/0auditnumerics.
+Enclosing H3 read host Source7a5d1aef/SPEC7050119d/NATIVEe7220a9a COMPLETE:
+3invented-custody actual Docker guests/24Jobsclosed/3CIDsabsent/290.374552newSUM.
+No actual private/census/OS-origin proof; Claude REVISE is not agreement.
 
-CPU H3 hazard COMPLETE1fit133updates/BEST101/120.910531pct/DD22.742307/
-turn151.007615, primarygrowthFAIL,546.266upper/closed. GPU nonlinear hazard
-COMPLETE1CUDAfit/1CBMrestore/1CPUforecast/6views/114iterations/BEST81=82trees/
-.589849optimizersec,109.553207pct/DD20.866974/turn142.695227, primarygrowthFAIL.
-marketSUM12.158975/CID+CLI+leaseclosed; final audit only, no numerical replay.
-No point swap or independent alpha/PaperPnL claim.
+CURRENT repo authority:
+A/verification/current-h3-monitor-integration-20261103-v1/RESULT.json
+SHA0661cf494a9e18aa36c6040e8efb845f1237bb8cf1a6ba36b20ac5811710b8ed.
+1427pinsad63e025/0mismatch/259serialPASS/actual8of8[19916items]/
+19890PASS26knownskip35warnings/387.29s/helper+native0/checkedcleanup/
+Ruff/default+research+accounting+monitorCompose(.env.example)PASS.
+External D code needs its own focused native proof, not another repo rerun.
 
-Open45 numerical work ACTUALLY COMPLETE00:42:44/Source37e58ff4:
-2fits2forecasts15views/0retry, CUDA LSTM34updates/BEST10/.269500optimizersec.
-Net10LSTM+1.216960pct/DD.651134 vsRidge+1.068984 andEW+1.092579, primaryPASS.
-Only5reusedDEVdate clusters, no independent alpha/Paperinput/pointswap.
-Harvey owns final actor/debit audit, then separate fixed three-expert mean-rank
-savedforecast composition0fits/3views/600ownedSUM1800elapsed, native+Claude
-before conditionalonce. No rerun or original clock extension.
-- Ohm01a19ea9-7bd8-7042-adf9-38ba566aba95 now owns disjoint
- current-h3-public-monitor-handoff-preparation-20261103-v1,
- 450ownedSUM1500elapsed/hard01:03:19. D-only proposed minimal existing Korean
- monitor patch/invented parse->projection->backend/view smoke; no current
- publication/rebuild/private/Task/model operations. Readclock remains null
- until actually installed; financial categories UNKNOWN, no artifact imports
- or private custody in web. Parent owns tracked adoption/deployment.
-
-Fresh repo authority RESULT7ff3887a at
-A/verification/current-h3-deployment-integration-20261103-v1:
-1426pins768dbc73/actual8of8[19899]/19873PASS26knownskip/389.24s/helper+native0/
-checkedcleanup/Ruff4Compose.env.example. Reuse only under exact source digests;
-external D code still requires focused real native evidence.
+Earlier H20/GOOGL effects remain UNKNOWN. Parent's unqualified adopt.ps1
+ancestor caused the consumed GOOGL read failure, not an operator approval or
+KIS quota. Never replay that namespace, release F9 or fabricate zero holdings.
+Detailed immutable evidence and recoverability are in HANDOFF.md.
 
 ## Throughput Review
 
-00:35: actual future Paper deployment finished; strict result interpretation,
-intraday learned comparison and useful broader collection integration are
-independent and owned. Existing Open45 data are already sufficient; acquisition
-does not gate fitting. Data handed exact schema directly to Engine, conditional
-market dispatch delegated so Parent is not another serial approval relay.
-Native defaults/Parent launch integration, not operator approval or KIS quota,
-caused recent faults. Reversible improvements adopted: measured COM/schema
-semantics replace incorrect mocks; exact launch ancestry tested, no unqualified
-wrapper during custody reads; closed scopes/debits preserved; same-default-model
-capacity recovery reuses partial source without repeating completed numerics.
-Use explicit absolute output roots (previous alias produced a nested new D
-subtree); full descriptive PowerShell hash function names avoid Get-History's
-H alias. Separate release preparation/closure from actual reader launch.
-Workers own due/cooldowns. No foreground market wait, new agent platform,
-replacement follow-up chain or dummy GPU training.
+01:15: useful Data collection is actually running; research, future reader
+preparation and source integration are independent. No foreground market wait.
+Current reversible improvement: consume each producer's exact API/RESULT path,
+not filename globs. Parent's FINAL/CALLBACK/AUDIT-only filter missed already
+completed RESULT.json audits and wrongly suggested agent idleness; corrected.
+Reuse closed forecasts/metrics and exact source handoffs, not duplicate fits.
+Workers own next_due/cooldowns. No new platform, app follow-up chain, dummy GPU
+training or company-complete claim from installation/test/commit.

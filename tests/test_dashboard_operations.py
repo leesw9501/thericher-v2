@@ -165,7 +165,7 @@ def test_no_configuration_does_no_io_or_inference(monkeypatch):
     monkeypatch.setattr(Path, "open", lambda *a, **k: pytest.fail("unexpected I/O"))
     snapshot = ops.build_operations_snapshot(None, now=NOW)
     assert snapshot["observed_at"] == "2026-11-02T21:06:00Z"
-    assert [row["key"] for row in snapshot["runs"]] == ["h20", "googl"]
+    assert [row["key"] for row in snapshot["runs"]] == ["h20", "googl", "h3"]
     for row in snapshot["runs"]:
         assert row["status"] == "unknown"
         assert all(row[key] == "unknown" for key in ops._FINANCIAL)
@@ -173,7 +173,7 @@ def test_no_configuration_does_no_io_or_inference(monkeypatch):
 
 
 def test_exact_schedule_exposes_native_times_not_early_task_triggers():
-    h20, googl = ops.build_operations_snapshot(None, now=NOW)["runs"]
+    h20, googl, h3 = ops.build_operations_snapshot(None, now=NOW)["runs"]
     assert (h20["entry_due_at"], h20["read_due_at"], h20["exit_due_at"]) == (
         "2026-11-02T15:15:00Z",
         "2026-11-02T15:35:00Z",
@@ -183,6 +183,11 @@ def test_exact_schedule_exposes_native_times_not_early_task_triggers():
         "2026-11-02T20:55:00Z",
         "2026-11-02T21:05:00Z",
         "2026-11-09T20:55:00Z",
+    )
+    assert (h3["entry_due_at"], h3["read_due_at"], h3["exit_due_at"]) == (
+        "2026-11-03T20:55:00Z",
+        None,
+        "2026-11-06T20:45:00Z",
     )
 
 
@@ -474,7 +479,7 @@ def test_old_missing_projection_is_stale_unknown_not_historical_success(graph, t
 )
 def test_malformed_projection_is_local_failure_only(tmp_path, raw):
     (tmp_path / "h20.json").write_bytes(raw)
-    h20, googl = ops.build_operations_snapshot(tmp_path, now=NOW)["runs"]
+    h20, googl, h3 = ops.build_operations_snapshot(tmp_path, now=NOW)["runs"]
     assert h20["status"] == "invalid" and h20["inventory"] == "unknown"
     assert googl["reason_code"] == "projection_missing"
 

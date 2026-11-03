@@ -133,7 +133,7 @@ def test_empty_runs_keep_a_safe_envelope_with_explicit_unknown_rows(snapshot) ->
     result = replace(snapshot, operations_snapshot={"observed_at": NOW.isoformat(), "runs": []})
     operations = result.to_dict()["operations_snapshot"]
     assert operations["observed_at"] == NOW.isoformat()
-    assert [run["key"] for run in operations["runs"]] == ["h20", "googl"]
+    assert [run["key"] for run in operations["runs"]] == ["h20", "googl", "h3"]
     assert all(
         run["submit"] == run["fill"] == run["inventory"] == "unknown" for run in operations["runs"]
     )
@@ -155,7 +155,9 @@ def test_native_operations_producer_to_snapshot_to_html_without_io(tmp_path, mon
     assert "2026-11-03 05:55 KST" in html and "2026-11-03 06:05 KST" in html
     assert "2026-11-10 05:55 KST" in html
     runs = result.to_dict()["operations_snapshot"]["runs"]
-    assert [(row["key"], row["symbol"]) for row in runs] == [("h20", "SPY"), ("googl", "GOOGL")]
+    assert [(row["key"], row["symbol"]) for row in runs] == [
+        ("h20", "SPY"), ("googl", "GOOGL"), ("h3", "AMD")
+    ]
     assert all(row["submit"] == row["fill"] == row["inventory"] == "unknown" for row in runs)
     assert "synthetic-handoff-nonce" in html
 
@@ -189,8 +191,9 @@ def test_native_public_projection_to_backend_to_view_retains_history(tmp_path, a
         now=current,
     )
     rows = result.to_dict()["operations_snapshot"]["runs"]
-    assert len(rows) == 2
-    for row in rows:
+    assert len(rows) == 3
+    assert rows[-1]["key"] == "h3" and rows[-1]["status"] == "unknown"
+    for row in rows[:2]:
         assert row["status"] == "validated"
         assert row["submit"] == "accepted" and row["fill"] == "confirmed"
         assert row["evidence_pointer"] == POINTERS[row["key"]]
@@ -373,7 +376,7 @@ def test_duplicate_wrong_symbol_and_extra_runs_do_not_borrow_evidence(snapshot) 
     operations["runs"] += [deepcopy(operations["runs"][0]), {"key": "other", "label": "RAW"}]
     result = replace(snapshot, operations_snapshot=operations)
     runs = result.to_dict()["operations_snapshot"]["runs"]
-    assert len(runs) == 2 and runs[0]["fill"] == "unknown"
+    assert len(runs) == 3 and runs[0]["fill"] == "unknown"
     operations = _validated(symbol="GOOGL", fill="confirmed")
     result = replace(snapshot, operations_snapshot=operations)
     assert result.to_dict()["operations_snapshot"]["runs"][0]["fill"] == "unknown"
