@@ -127,12 +127,20 @@ Source9794400c/RESULTbeafa39f/HOSTab0ab6a8/catalog95039795,
 AMD/NAS,JPM/NYS Aug3/Sep1/Sep24 only; no repeated anchors or global floor,
 TPS/auth inference. Existing lawful date-depth/prospective work remains allowed.
 
-Current Copernicus package:
+Completed Data bridge (Euclid after Copernicus handback):
 A/data/current-chronos2-h3-daily-bridge-preparation-20261103-v1,
 600SUM3600elapsed from receipt. Exact Chronos proposal66002104 C60/H3
 daily source/adjustment/future-clock bridge and invented native handoff.
+Source1cf2c7e9/RESULT157bdc3e/native12positive26negative/8own+32upstream pins
+match; exact actors/finalizerclosed. Original CLOSURE time projection is
+preserved plus CLOSURE-TIME-CORRECTION:1996.825383seconds, not34396.829221.
+Full lineage measured SUM unavailable;90predecessor allowance/390reserve is
+not measured cap proof. Runtime UTC admission/PLAN/source unchanged.
 No actual future collection/model forecast/Task/private effects in this prep.
 Existing coherent19daily/H3 point is not automatically retagged/replaced.
+NEXT Euclid current-chronos2-h3-nov6-coherent-capture-preparation-20261103-v1,
+600SUM3600elapsed: finite Nov6postclose coherent19daily C60 input for Nov9
+weekly entry, <=19GET1POST/0retry future definition/source-native only.
 
 ## Research And Paper Preparation
 
@@ -148,6 +156,7 @@ drawdown, not independent alpha, actual broker PnL or intraday drawdown.
 | Fixed TimesFM chart exit af193e38 | 0modelcalls/1CPUreadout | +12.794580% /12.326755% | growth+riskFAIL |
 | Fixed meanrank fusion3fdd8285 | 0modelcalls/1CPUreadout | +27.295698% /7.353924% | standalone developmentPASS |
 | Fixed consensus-quarter fusion3fdd8285 | shared CPUreadout | +17.627845% /6.304031% | own matched-EW riskFAIL |
+| Relative-MAEq80 CPUtree039c7399 | 1CPUfit/1forecast12views | +15.281894% /4.340869% | standalone developmentPASS |
 
 TCN actual fitwall292.700357 exceeded frozen285 sub-bound; time/update stop is
 not convergence. Preserve overrun and all original failures/debits, no refit.
@@ -157,6 +166,13 @@ not missing Flaxeinshape or a model-performance failure. Trusted extractedsite
 qualified one r2 forecast; lineage1005.322108upper/1500, allactorsleaseclosed.
 
 Exact closed outcomes:
+- A/research/current-short-swing-next-campaign-design-20261103-v1,
+  Source039c7399/RESULTc595452e/native13/45pinsmatch/314.962278upper including
+  original300design reserve. One CPU CatBoostfit.212922sec/BEST246/294steps,
+  INNERearlystop48/oneforecast12views/0retry/no convergence claim. Selective
+  risk attenuation modestly improves scalar same-stock/samegross control
+  +14.777921pct/DD4.417190. Lower total growth than unattenuated meanrank is
+  reported, not hidden. All17recordedactorsabsent; Parent adapterlintPASS.
 - A/research/current-postcheckpoint-timesfm-h3-development-20261103-v1/continuation-r2,
   RESULT5fb31f96/native12/6.533796cold GPU seconds/1.059GBallocated.
 - A/research/current-postcheckpoint-chronos2-h3-development-20261103-v1,
@@ -215,11 +231,12 @@ inheritance guarantee remains false. Claude review_unavailable and review
 Future capture15:16..15:16:25/score15:16:30..15:16:55; actual latency/publication
 UNKNOWN, no deadline extension or human placeholder future point.
 
-Current Engine/Strategy next campaign design and cost/risk proposal are
-disjoint300SUM1800elapsed packages. Temporary sole GPU coordinator Confucius may freeze
-and dispatch one qualified nonduplicate numerical successor <=1500SUM5400elapsed/
-1fit1forecast/<=12newviews after data/native/resource checks, no Parent relay
-approval. Source design does not mean a GPU process is running.
+Current Engine/Strategy successors are causal-sequence relative-MAE research
+<=1800SUM7200elapsed/1fit1forecast/<=12views and pure fixedmeanrank Paper packet
+preparation500SUM3600elapsed. Original CPU study/Strategy proposal are CLOSED,
+not regraded/reopened. Confucius owns GPU resources; actual source/native/lease
+admission before numerical launch, no Parent relay approval. A new CONTRACT
+does not mean GPU training is running.
 After LLM capacity failures, Euclid owns the same daily bridge and Confucius
 owns the same Engine design. Prior LLM owners closed; original caps/debits/hard
 clocks preserved. This is not a GPU or operator-permission failure.

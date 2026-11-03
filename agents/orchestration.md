@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Nov3UTC07:14. coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Nov3UTC07:33. coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent owns shared MD/Git/adoption. No operator decision pending.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original B/10/F9 UNKNOWN-HELD/pending/all original exits unchanged.
@@ -36,13 +36,25 @@ Intraday plus one-to-several-session short swings; never KIS_LIVE_*.
   bridge600SUM3600elapsed, A/data/current-chronos2-h3-daily-bridge-preparation-
   20261103-v1. Coherent source/adjustment/future clock to proposal66002104;
   source/native only, no market/model/Task/private effects in this prep.
+  Bridge now CLOSED1cf2c7e9/157bdc3e/native38/40pinsmatch/actorsclosed;
+  time-projection correction retained/full historical measured SUM unknown.
+  NEXT finite Nov6coherent19 capture prep600SUM3600elapsed for Nov9weekly
+  entry; no actual future collector/data/model installed/produced yet.
 - Confucius01a1a03a-0fe3-7770-986a-b769954c52f2: recovery sole GPU coordinator + campaign
   design300SUM1800elapsed, A/research/current-short-swing-next-campaign-design-
   20261103-v1. Registry/dedup, actual data, cost/downside and native solver
   contract first; then dispatch useful ready GPU work, not dummy occupation.
+  CPUtree039c7399/c595452e is now CLOSED:1fit1forecast12views/native13/
+  45pinsmatch/314.962278upper/all17actorsabsent, selective15.281894pct/
+  DD4.340869 vsscalar14.777921/DD4.417190, standalone developmentPASS.
+  NEXT causal-sequence relative-MAE counterpart<=1800SUM7200elapsed/
+  1fit1forecast/<=12views, actual GPU admission before launch.
 - Ohm01a19ea9-7bd8-7042-adf9-38ba566aba95: new cost/risk hypothesis proposal
   300SUM1800elapsed at A/research/current-short-swing-cost-risk-proposal-
-  20261103-v1, direct handoff to Harvey. No new market readout in design.
+  20261103-v1 CLOSEDf77a3469/native16/181.730771upper, adopted by Confucius.
+  NEXT current-foundation-h3-meanrank-paper-proposal-preparation-20261103-v1,
+  500SUM3600elapsed/0models/marketviews, strict two fresh packets to fixed
+  meanrank proposal; direct Data/Execution handoff, no current H3 replacement.
 
 Assignments and MDs do not prove an active PID. Workers own elapsed/active caps,
 resource leases and completion callbacks. Parent is not a serial schema relay.
@@ -62,10 +74,21 @@ Research now CLOSED:
 - Fixed exit af193e38/e053ffd2:+12.794580/DD12.326755 FAIL.
 - Fixed fusion3fdd8285/76fc275c/native24/346.307972upper: meanrankTop4
   +27.295698/DD7.353924 standalonePASS; consensus own riskFAIL.
+- CPU relative-MAEq80 tree039c7399/c595452e:+15.281894/DD4.340869,
+  standalonePASS over same-stock/samegross scalar, not total-growth dominance.
 All are reused-data/modelled-cost/close-only-DD development, not broker PnL.
 No completed forecasts/fits rerun, no automatic current H3 replacement.
 
 ## Throughput Review
+
+07:33: CPU riskhead and coherent daily bridge are closed; disjoint successors
+are useful sequence-risk study, fixedblend proposal handoff and future Nov6
+capture prep. Financial typed integration is still owned/unfinished, not a
+market wait or permission hold. Parent inspected original H3 source maps:
+no mutable HANDOFF/goal/stateboard dependency, original Source6ae unchanged.
+Protected1429pins still0mismatch. Reversible improvement: timezone reports
+parse literal UTC strings; preserve erroneous elapsed projection and correct
+it without repeating native/market work. No fresh20k tests for MD/D-only work.
 
 07:14: two LLM capacity failures affected Data/Engine design, not the GPU or
 market provider. Prior LLM owners closed, Data positive handback/no workers;

@@ -16,6 +16,7 @@ model-artifacts; M=D:/market_data. Intraday and1..several-session swings.
 | Fixed chart exit af193e38/e053ffd2 | +12.794580% /12.326755% | growth+riskFAIL |
 | Fixed meanrank fusion3fdd8285/76fc275c | +27.295698% /7.353924% | standalone developmentPASS |
 | Consensus-quarter fusion3fdd8285 | +17.627845% /6.304031% | own matched-EW riskFAIL |
+| Relative-MAEq80 CPUtree039c7399/c595452e | +15.281894% /4.340869% | standalone developmentPASS |
 
 Same41weekly2026cohorts/697keys/C60H3. Modeled costs, adaptive reused data,
 currentlisting/nonPIT/notTR/CA/finalityunknown; not independent alpha or actual
@@ -34,13 +35,27 @@ Future Data/deadline/third-close integration remains unqualified; no current
 H3AMDpoint swap or arbitrary daily-entry claim from weekly backtest.
 Copernicus owns exact daily bridge source prep,600SUM3600elapsed.
 
-Current recovery: A/research/current-short-swing-next-campaign-design-20261103-v1,
+Closed recovery: A/research/current-short-swing-next-campaign-design-20261103-v1,
 300SUM1800elapsed. Dedup registry, actual data, cost/downside hypothesis,
 causal temporal split/purge/baselines/finite caps and real optimizer/checkpoint
 smoke. Then autonomously freeze and dispatch ONE qualified numerical study
 <=1500SUM5400elapsed/<=1fit1forecast/1readout<=12newviews/0outcome-drivenretry.
 No parent approval relay; actual resource/source/caps/PIDstart evidence before
 claiming running GPU. Ohm cost-risk proposal directly supports this contract.
+
+Actual CPU campaign039c7399/c595452e CLOSED07:19:05, native13/45pinsmatch/
+314.962278upper including original300design reserve,17recordedactorsabsent.
+One CatBoost1.2.10 CPUfit .212922seconds/294curve steps/BEST246/48patience,
+one forecast/12newviews/0retry/no convergence claim. Scalar same-stock/samegross
+control+14.777921pct/DD4.417190; selective+15.281894/DD4.340869 is a modest
+development improvement, not total-growth dominance over meanrank+27.295698.
+Parent emitted-adapter F821/F822/F823/E9 check PASS, no market/model rerun.
+NEXT new current-short-swing-relative-mae-causal-sequence-20261103-v1,
+<=1800SUM7200elapsed/1fit1forecast/<=12views: same policy/target/splits/costs,
+new causal sequence information, compare CPUtree/scalar/growth-risk. Actual
+native/resource/lease admission before GPU; a CONTRACT is not running training.
+Ohm fixedmeanrank Paper packet preparation500SUM3600elapsed is independent,
+source-only, no historic score retag/current H3 replacement.
 
 Actual expanded minute view:
 A/data/current-us19-prior93-input-reuse-20261103-v1, Sourceb12126a6/

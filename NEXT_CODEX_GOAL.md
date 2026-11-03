@@ -45,7 +45,7 @@ No replacement app follow-up chain.
 
 ## Current Ready / Owned Packages
 
-Snapshot Nov3UTC06:54. These are assignments, not proof of running workers.
+Snapshot Nov3UTC07:33. These are assignments, not proof of running workers.
 
 1. Execution / Helmholtz: current-open45-finite-host-typed-repair-20261103-v1,
    900SUM5400elapsed from receipt. Prior finite-session host is CLOSED
@@ -76,15 +76,21 @@ Snapshot Nov3UTC06:54. These are assignments, not proof of running workers.
    C60/H3 daily input/future clock contract, same source/adjustment convention,
    tiny invented producer-to-consumer smoke. No implicit source-mode mixing,
    stale H3 replacement, actual future collection/model/Task in this prep.
-4. Engine + sole GPU coordinator / Confucius (temporary recovery): current-short-swing-next-campaign-
-   design-20261103-v1, 300SUM1800elapsed. Inspect registry and actual inputs;
-   ONE useful nonduplicate cost/turnover/downside hypothesis, explicit temporal
-   split/purge/baselines/compute and trial caps, real optimizer/checkpoint smoke.
-   Source design alone is not GPU training. Dispatch qualified numerical
-   successor promptly; no duplicate completed fits or occupancy-only work.
-5. Strategy / Ohm: current-short-swing-cost-risk-proposal-20261103-v1,
-   300SUM1800elapsed. Directly support Engine with one executable underrepresented
-   hypothesis and strongest kill, not another reading list or parameter grid.
+   Bridge is now CLOSED1cf2c7e9/157bdc3e/native38/40pinsmatch; future data absent.
+   Next finite Nov6coherent-capture source prep600SUM3600elapsed, <=19GET1POST
+   for Nov9weeklyentry; no actual collector installed yet. Measured full bridge
+   lineage SUM unavailable/allowance not proof; time-report correction retained.
+4. Engine + sole GPU coordinator / Confucius: current-short-swing-relative-mae-
+   causal-sequence-20261103-v1, <=1800SUM7200elapsed/1fit1forecast/<=12views.
+   CPUtree039c7399/c595452e is CLOSED314.962278upper:selective15.281894pct/
+   DD4.340869 vsscalar14.777921/DD4.417190, standalone developmentPASS.
+   New sequence information test keeps same target/policy/splits/costs and
+   compares CPUtree/scalar/growth-risk; real native/checkpoint/resource checks
+   before actual GPU. No duplicate completed models or occupancy-only work.
+5. Strategy / Ohm: current-foundation-h3-meanrank-paper-proposal-preparation-
+   20261103-v1,500SUM3600elapsed/0modelcalls/marketviews. New pure two fresh
+   exact score packets -> fixed meanrank -> project proposal handoff. Old
+   cost-risk proposal f77a3469/native16/181.730771upper is CLOSED and adopted.
    New data view has249first45/60 contexts and239first60+next60 contexts,
    SAME25dates. Continuous level features cannot silently cross vintage seams.
 

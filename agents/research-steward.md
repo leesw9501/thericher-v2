@@ -27,6 +27,13 @@ Current source design A/research/current-short-swing-next-campaign-design-
 trial and active+elapsed ceilings, actual optimizer/checkpoint synthetic API.
 Dispatch qualified numerical work promptly, retain attempts/failures/debits.
 Completed CPU fixed fusion76fc275c used no new model calls/GPU lease.
+New CPU riskhead039c7399/c595452e is also CLOSED:1CatBoostfit.212922seconds,
+BEST246/294steps/1forecast12views,314.962278upper/all17recordedactorsabsent.
+CPU was appropriate for this small tree workload; no GPU used/claimed.
+New current-short-swing-relative-mae-causal-sequence-20261103-v1 may use GPU
+after source/native/actualresource/lease qualification, <=1800SUM7200elapsed/
+1fit1forecast/<=12views. Same fixed policy/target/splits, distinct sequence
+information hypothesis; no completed LSTM/TCN/Transformer rerun for occupancy.
 Chronos proposal66002104 had one invented native model handoff, not a market
 forecast; future daily bridge/deadline integration remains separate.
 Reserved NAS8Nov3/4 and frozenNov4UTC21:35 outcomes stay outside selection.

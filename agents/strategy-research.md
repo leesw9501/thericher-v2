@@ -8,6 +8,14 @@ A/research/current-short-swing-cost-risk-proposal-20261103-v1,
 using actual data; registry and strongest kill first. Official primary-source
 research when needed, concrete executable consumer rather than a reading list.
 No market fits/forecasts/readout/private/Task in proposal preparation.
+That proposal is now CLOSED f77a3469/native16/181.730771upper, exact kernel/API
+directly adopted by Confucius's CPU risk campaign. No source-only profit claim.
+NEXT current-foundation-h3-meanrank-paper-proposal-preparation-20261103-v1,
+500SUM3600elapsed: pure two fresh exact C60/H3 score packets -> fixed meanrank
+Top4/original quarters -> existing untrusted project proposal consumer. Exact
+same input/asof/routes/source-mode/clock, both trusted dated model refs and
+fresh runtime binding required. Invented packet smoke only,0models/market/
+fits/forecasts/readouts; no old saved-score retag, Paper swap or broker authority.
 
 Closed saved-score studies:
 - Fixed chart exit647d9bf6/API d8508d9b/native35 is a pure nextOPEN proposal,
