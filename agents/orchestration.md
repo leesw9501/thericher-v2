@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Nov3UTC07:33. coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Nov3UTC08:18. coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Parent owns shared MD/Git/adoption. No operator decision pending.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original B/10/F9 UNKNOWN-HELD/pending/all original exits unchanged.
@@ -10,54 +10,39 @@ Intraday plus one-to-several-session short swings; never KIS_LIVE_*.
 
 ## Ready / Owned / Due
 
-- H3 AMD entryNov3UTC20:55/exitNov6UTC20:45 and automatic21:10offline reader
-  installed/enabled. Source6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603;
-  reader9410af60/authority624719ad/COMPLETE1886c323/READBACKb9801906.
-  These are FUTURE definitions, not submit/fill/PnL. Original commands consumed.
-- Helmholtz01a19e81-10fb-7781-9d3a-53f8ef407883: NEW typed minimal host repair,
-  A/execution/current-open45-finite-host-typed-repair-20261103-v1,
-  900SUM5400elapsed. Old host64a67f89 is UNQUALIFIED after three native failures;
-  firstcause86817df4, actual guest exception remains unknown. At most ONE new
-  enclosing invented pair after typed parse/return smoke. No fake guard bypass,
-  old gate reset, actual private/broker/Task effects or forced financial deploy.
-- Hooke01a19f79-0881-7d80-8bbf-05056c5f0d22: NEW exact publisher DACL recovery,
-  A/data/current-open45-publisher-task-dacl-recovery-20261103-v1,
-  500SUM1800elapsed. Publisher14268659/Definition77513d80 native74 and
-  installerdce3d5c8 native56+facade8 are closed. Parent actual CreateDisabled
-  left target presentDISABLED/0instances/never-run at06:51. Native returned
-  protected_DACL_required; only CREATE-ATTEMPT recorded. Preserve target and
-  original installation identity; no duplicate Create/update/delete/TaskRun.
-  Same-target recoveryf4599669/native46/17pinsmatch is now ACTUALLY COMPLETE
-  07:15:qualifiedc6031a7d/Enable82d1ad35/independent73d5f0fb prove publisher
-  ENABLEDReady3/0instances/never-run. Eight metadata actors absent07:16.
-  No Create/Run/ACLsetter; inheritance guarantee remains false/review subcap
-  overrun retained. No consumed command replay; future publication UNKNOWN.
-- Euclid01a1a039-0eca-7da2-8169-78b765567785: recovery owner of exact Chronos daily Data
-  bridge600SUM3600elapsed, A/data/current-chronos2-h3-daily-bridge-preparation-
-  20261103-v1. Coherent source/adjustment/future clock to proposal66002104;
-  source/native only, no market/model/Task/private effects in this prep.
-  Bridge now CLOSED1cf2c7e9/157bdc3e/native38/40pinsmatch/actorsclosed;
-  time-projection correction retained/full historical measured SUM unknown.
-  NEXT finite Nov6coherent19 capture prep600SUM3600elapsed for Nov9weekly
-  entry; no actual future collector/data/model installed/produced yet.
-- Confucius01a1a03a-0fe3-7770-986a-b769954c52f2: recovery sole GPU coordinator + campaign
-  design300SUM1800elapsed, A/research/current-short-swing-next-campaign-design-
-  20261103-v1. Registry/dedup, actual data, cost/downside and native solver
-  contract first; then dispatch useful ready GPU work, not dummy occupation.
-  CPUtree039c7399/c595452e is now CLOSED:1fit1forecast12views/native13/
-  45pinsmatch/314.962278upper/all17actorsabsent, selective15.281894pct/
-  DD4.340869 vsscalar14.777921/DD4.417190, standalone developmentPASS.
-  NEXT causal-sequence relative-MAE counterpart<=1800SUM7200elapsed/
-  1fit1forecast/<=12views, actual GPU admission before launch.
-- Ohm01a19ea9-7bd8-7042-adf9-38ba566aba95: new cost/risk hypothesis proposal
-  300SUM1800elapsed at A/research/current-short-swing-cost-risk-proposal-
-  20261103-v1 CLOSEDf77a3469/native16/181.730771upper, adopted by Confucius.
-  NEXT current-foundation-h3-meanrank-paper-proposal-preparation-20261103-v1,
-  500SUM3600elapsed/0models/marketviews, strict two fresh packets to fixed
-  meanrank proposal; direct Data/Execution handoff, no current H3 replacement.
+- Installed H3 AMD entryNov3UTC20:55/exitNov6UTC20:45/readNov3UTC21:10.
+  Source6ae/TRUE32f/POINTad3b/SEALf8fe/reader9410/authority6247 unchanged.
+  Original commands consumed; financial outcomes UNKNOWN. Pure source-bound
+  actual entry/exit parser smoke proves NOT the Open45 sentinel bug.
+- Installed Data-only Open45 publisher Nov3UTC15:07:30, capture15:16..15:16:25.
+  Source14268659/Definition77513d80/recoveryf4599669/native46/independent
+  73d5f0fb ENABLEDReady3/0instances. Installation is not data publication.
+- Helmholtz01a19e81-10fb-7781-9d3a-53f8ef407883 owns one synthetic guest-startup
+  boundary probe600SUM3600elapsed/guestmax90. Typedrepairb263/6ddb and new
+  correctedCLI17ff seed UNQUALIFIED/consumed/noresume. Parent did not compete.
+  Firstcause/stage measurement before another pair; no private/KIS/model/Task.
+- Hooke01a19f79-0881-7d80-8bbf-05056c5f0d22 owns bounded actual9head latency
+  probe prep600SUM3600elapsed, actual9GET1POST0retry/180worker240host900SUM.
+  Named Paper two-key loader/virtual Data only; qualified source/native+current
+  token/Data admission before quiet autonomous round. Frozen publisher unchanged.
+  Support9d438a36 is CLOSED182.939394upper/capture feasibilityUNKNOWN.
+- Euclid01a1a039-0eca-7da2-8169-78b765567785 owns Nov6metadata installer prep
+  350SUM1800elapsed. Runtimee149f2dd/definitionb294a90d source-native CLOSED,
+  not installed. Repair sparse Enabled/Wake/Author handling+containment before
+  Parent metadata effects. No actual future data, model or currentH3 change.
+- Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 owns Engine/GPU and ONE new
+  Chronos q0.1 uncertainty study900SUM3600elapsed/0fits/1forecast/<=12views,
+  native/resource qualification first. CPUtree/TCN/GRU all CLOSED, no GPU job
+  inferred from assignment or another completed model.
+- Ohm01a19ea9-7bd8-7042-adf9-38ba566aba95 owns route-clock operational consumer
+  600SUM3600elapsed: existing typed17NAS+NYS outputs, explicit firstOPEN/
+  thirdPRE_CLOSE variant, pure invented smoke/0models-market-private-Task.
+  Prior fusion8f740232/native30/48pins/236.089upper CLOSED; no actualprofile
+  installation or fake old NAS-only ModelPaperInput.
 
-Assignments and MDs do not prove an active PID. Workers own elapsed/active caps,
-resource leases and completion callbacks. Parent is not a serial schema relay.
+Workers own caps/clocks/resources and direct qualified schema handoffs;
+Parent owns shared MD/Git/integration. No Parent approval relay for delegated
+private free work. One mutable owner per write set, no new bank or app worker.
 
 ## Integrated Evidence
 
@@ -80,6 +65,16 @@ All are reused-data/modelled-cost/close-only-DD development, not broker PnL.
 No completed forecasts/fits rerun, no automatic current H3 replacement.
 
 ## Throughput Review
+
+08:18: TCN and GRU are CLOSED primaryCPUgrowthFAIL; useful next research is
+one distinct foundation lower-quantile uncertainty proxy, not more architecture
+sweeps on seen2026. Data9head latency probe, futureNov6metadata installer and
+route-aware operational consumer are disjoint owned packages. Open45 corrected
+CLI seed stillfailed/consumed, no resume or Parentduplicate. H3 actual-source
+entry/exit parser smokePASS proves the same terminal-sentinel bug does not apply.
+Reversible improvement: measure startup/sourcehash/owner-handshake boundary
+before another full native pair; do not turn guessed22s into a durable capability
+limit or repeat the same opaque failure. New diagnostic does not change oldcaps.
 
 07:33: CPU riskhead and coherent daily bridge are closed; disjoint successors
 are useful sequence-risk study, fixedblend proposal handoff and future Nov6

@@ -16,6 +16,25 @@ inputs. Leave unrelated %SystemDrive%/ untouched.
 Primary strategies are intraday and one-to-several-session short swings.
 H3 means three sessions, not three hours or proof of FIFO/share-age liquidation.
 
+## Current Parallel Work
+
+Nov3UTC08:18 current roster is in NEXT_CODEX_GOAL and orchestration.md.
+Existing H3 and Data-only publisher definitions remain enabled; no new actual
+financial result or Open45 financial Task installed. H3 actual-source entry/
+exit parser smoke at current-open45-corrected-cli-native-pair-20261103-v1/
+H3-IMPACT.json proves no Open45 terminal-sentinel defect, not runtime admission.
+Typedrepairb263/6ddb and correctedCLI17ff seed are CLOSED UNQUALIFIED/consumed;
+resume not launched/Parent did not compete. New one-guest startup/handshake
+boundary probe measures exact cause/time before any further pair.
+Hooke owns one9head latency probe, Data-market-only under named scoped two-key
+loader; current-session first45 absence is separate from latency. Euclid owns
+Nov6Data metadata installer repair using measured native defaults, not another
+data/model test or actual collection. New future runtimeSourcee149/definition
+b294 is source-native ready, NOT installed. Ohm owns strict17route/clock pure
+operational consumer. Confucius owns one new lower-quantile uncertainty study;
+CPU/TCN/GRU all CLOSED. All roots/caps are in current goal, no approval pending.
+Later preparation evidence below is an index, not an active worker roster.
+
 ## Actual H3 Installation
 
 H3 is the finite AMD first-instrument leg, not full17-stock automation.
@@ -167,7 +186,7 @@ qualified one r2 forecast; lineage1005.322108upper/1500, allactorsleaseclosed.
 
 Exact closed outcomes:
 - A/research/current-short-swing-next-campaign-design-20261103-v1,
-  Source039c7399/RESULTc595452e/native13/45pinsmatch/314.962278upper including
+  Source039c7399/RESULTc595452e/native13/45pinsmatch/674.962278conservativeupper including
   original300design reserve. One CPU CatBoostfit.212922sec/BEST246/294steps,
   INNERearlystop48/oneforecast12views/0retry/no convergence claim. Selective
   risk attenuation modestly improves scalar same-stock/samegross control

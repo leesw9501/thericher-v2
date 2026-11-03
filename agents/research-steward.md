@@ -2,47 +2,45 @@
 
 ## Current Resource Coordination
 
-Nov3UTC07:14. Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 is temporary sole
-GPU coordinator after Harvey's model-capacity failure and LLM closure. Original
-partial contract/design-hard07:21:08/total-hard08:21:08 remain unchanged.
-Actual numerical lease/resource admission is not inferred from this transfer.
-Project is first useful GPU priority including alongside user apps. Measure
-free/projected VRAM and desktop reserve, no app-name permission hold or killing
-user apps. Execution reliability preempts safely; no dummy work for utilization.
+Nov3UTC08:18. Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 is sole GPU
+coordinator after Harvey's LLM-capacity handback. Existing clocks/debits were
+not restarted. Project first useful GPU priority includes user-app co-tenancy;
+measure free/projected VRAM+desktop reserve, never kill user apps or age-reclaim
+unknown/live leases. No dummy work or forced duration for utilization.
 
-Last actually completed GPU work:
-- TCN91126913/118849a4:1fit420updates/BEST3/172.230478optimizersec,
-  77.826MBallocated96.469MBreserved. Fitwall292.700357>declared285 retained,
-  no convergence/corrective refit;1809.771977upper, growthFAIL.
-- TimesFM r2d9bca820/5fb31f96:1forecast697x3/6.533796coldseconds,
-  1.059GBallocated1.067GBreserved/0fits. RiskFAIL, all42actors4CIDsleaseclosed.
-  Lineage1005.322108upper includes original bootstrap/diagnostic/debit limits.
-- Chronos2 f9d77613/5b888592:1forecast697x3/2.551105seconds,
-  519.417MBallocated589.300MBreserved/0fits,450.477664upper/actorsleaseclosed.
-  DevelopmentPASS, no independent alpha or repeat for occupancy.
+Latest actual work is CLOSED:
+- CPUtree039c7399/c595452e:1fit.212922s/BEST246/294steps/1forecast12views,
+  all-in674.962278conservativeupper (314.962278subtotal+360frozenreserves).
+  CPU was appropriate, no GPU used. Modest selective developmentPASS.
+- TCN8718410e/5a3ca7b9:1CUDAfit18epochs792updates/BEST4,
+  182.707543wall/90.084691optimizersec/timepreflight, no convergence.
+  81.227MBallocated98.566MBreserved/native11/audit66/944.587592upper.
+- GRU576cb605/5f24a503:1CUDAfit81epochs3564updates/BEST33/INNERearlystop48,
+  11.706983wall/9.661050optimizersec/151.124MBallocated247.464MBreserved,
+  native11/audit67/Ruff/288.375985upper.
+Both neural campaigns:1coldforecast12views/0numericalretry/21recordedCLI
+identities absent/positiveCID+leaseclosure. CPUgrowth primaryFAIL, not repaired
+by rerunning or extending old caps. The GPU39pct/2412of24564MiB snapshot was
+co-tenant observation during TCN, not an isolated benchmark.
 
-No current GPU process is claimed from these finished campaigns or an MD.
-Current source design A/research/current-short-swing-next-campaign-design-
-20261103-v1,300SUM1800elapsed: dedup/data/target/costs/temporal purge/finite
-trial and active+elapsed ceilings, actual optimizer/checkpoint synthetic API.
-Dispatch qualified numerical work promptly, retain attempts/failures/debits.
-Completed CPU fixed fusion76fc275c used no new model calls/GPU lease.
-New CPU riskhead039c7399/c595452e is also CLOSED:1CatBoostfit.212922seconds,
-BEST246/294steps/1forecast12views,314.962278upper/all17recordedactorsabsent.
-CPU was appropriate for this small tree workload; no GPU used/claimed.
-New current-short-swing-relative-mae-causal-sequence-20261103-v1 may use GPU
-after source/native/actualresource/lease qualification, <=1800SUM7200elapsed/
-1fit1forecast/<=12views. Same fixed policy/target/splits, distinct sequence
-information hypothesis; no completed LSTM/TCN/Transformer rerun for occupancy.
-Chronos proposal66002104 had one invented native model handoff, not a market
-forecast; future daily bridge/deadline integration remains separate.
-Reserved NAS8Nov3/4 and frozenNov4UTC21:35 outcomes stay outside selection.
-More stock rows/origins are not additional independent dates.
+Current next is one Chronos lower-quantile uncertainty-proxy family:
+A/research/current-chronos2-h3-lower-quantile-risk-development-20261103-v1,
+900SUM3600elapsed/0fits/1newq0.1forecast/<=12views/0retry. Exact trusted dated
+checkpoint/runtime, actual new output API and native/VRAM/lease before launch.
+No completed median forecast replay; batch count and logical call both retained.
+After it closes, synthesize rather than manufacture a GPU queue on reused data.
+Short and longer queues were exercised; a900s ceiling did not force GRU to run
+past INNER earlystop. No current GPU process inferred from this MD.
+
+Earlier TCN91126913 sub-bound overrun292.700357>285, TimesFM bootstrap/debit
+limitations and all trial/holdout custody remain immutable. Reserved NAS8Nov3/4
+and frozenNov4UTC21:35 outcomes stay excluded. Paper reliability preempts at a
+safe checkpoint; no profitability permission gate. Source model/claims and
+actual deployments remain distinct.
 
 ## Frozen Resource Index
 
-Earlier studies below retain their own clocks/caps/custody and cannot be rerun
-or regraded from spare resources.
+Prior resource evidence below keeps its own source/clocks/caps/results.
 
 ## Closed Resource Evidence
 

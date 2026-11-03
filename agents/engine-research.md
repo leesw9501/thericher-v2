@@ -2,78 +2,73 @@
 
 ## Current Results And Next
 
-Nov3UTC07:14. Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 temporarily owns
-Engine science and sole GPU coordination after Harvey's model-capacity failure.
-Old LLM owner is closed; same partial contract/caps/clocks are preserved.
-Numerical launch still needs actual lease/resource admission. Ohm supplies
-proposals and disjoint CPU compositions. A=D:/thericher-v2/
-model-artifacts; M=D:/market_data. Intraday and1..several-session swings.
+Nov3UTC08:18. Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 owns Engine
+science and sole GPU coordination. A=D:/thericher-v2/model-artifacts;
+M=D:/market_data. Intraday and1..several-session short swings, no operator
+decision pending. Source assignments are not running GPU jobs.
 
-| Latest Closed Study | Net10 Growth / Close-only DD | Frozen Result |
+| Closed Study | Net10 Growth / Close-only DD | Frozen Result |
 | --- | --- | --- |
-| TimesFM2.5r2d9bca820/5fb31f96 | +21.935650% /12.367194% | riskFAIL |
+| Open45 LSTM | +1.216960% / .651134% | developmentPASS on5DEVdates |
+| Full-day TCN91126913 | -10.811273% /11.007170% | growthFAIL |
+| TimesFM2.5d9bca820/5fb31f96 | +21.935650% /12.367194% | riskFAIL |
 | Chronos2f9d77613/5b888592 | +25.641041% /9.214451% | developmentPASS |
-| Fixed chart exit af193e38/e053ffd2 | +12.794580% /12.326755% | growth+riskFAIL |
-| Fixed meanrank fusion3fdd8285/76fc275c | +27.295698% /7.353924% | standalone developmentPASS |
-| Consensus-quarter fusion3fdd8285 | +17.627845% /6.304031% | own matched-EW riskFAIL |
-| Relative-MAEq80 CPUtree039c7399/c595452e | +15.281894% /4.340869% | standalone developmentPASS |
+| Chart exit af193e38/e053ffd2 | +12.794580% /12.326755% | FAIL |
+| Fixed meanrank3fdd8285/76fc275c | +27.295698% /7.353924% | standalone developmentPASS |
+| Consensus-quarter3fdd8285 | +17.627845% /6.304031% | own matched-EW riskFAIL |
+| CPU MAEq80tree039c7399/c595452e | +15.281894% /4.340869% | standalone developmentPASS |
+| Sequence TCN8718410e/5a3ca7b9 | +15.119434% /4.049037% | CPUgrowthFAIL |
+| Sequence GRU576cb605/5f24a503 | +14.406670% /4.038226% | CPUgrowthFAIL |
 
-Same41weekly2026cohorts/697keys/C60H3. Modeled costs, adaptive reused data,
-currentlisting/nonPIT/notTR/CA/finalityunknown; not independent alpha or actual
-Paper PnL. Meanrank and consensus are separately predeclared, not an automatic
-winner. No new weightgrid/threshold rescue/oldscore rerun.
-Fusion native24/32pinsmatch/346.307972upper/0modelcalls/allactorsclosed.
-Chronos GPU1forecast2.551105sec/0fits; old C63H5forecast keys not repeated,
-663asset-dateoutcomes reused. TimesFM GPU1forecast6.533796sec/0fits, original
-bootstrap/sub-cap failures retained; r2lineage1005.322108upper/allactorsclosed.
-Full-day TCN91126913/118849a4 failedgrowth:1CUDAfit420updates/BEST3,
-net10-10.811273%, actualfitwall292.700357>frozen285/no convergence/no refit.
+Weekly foundation/risk studies share41reused2026cohorts/697keys/C60H3,
+modeled costs/currentlisting/nonPIT/notTR/CA/finalityunknown. No independent
+replication, alpha, intraday DD or actual Paper PnL. Lower exposure alone is
+not alpha. Meanrank27.30growth is not dominated by15.28lower-risk CPU policy.
 
-Chronos proposal66002104/26a29ccf/callback826ff98b CLOSED419.414177upper,
-one invented model handoff/11consumerchecks/26source+SDKpinsmatch.
-Future Data/deadline/third-close integration remains unqualified; no current
-H3AMDpoint swap or arbitrary daily-entry claim from weekly backtest.
-Copernicus owns exact daily bridge source prep,600SUM3600elapsed.
+Actual closed resource/evidence:
+- CPUtree1fit .212922sec/294curve steps/BEST246/INNERpatience48,1forecast12views.
+  Native13/45pinsmatch/17actorsabsent. ACCOUNTING-CLOSURE plus TCN-root
+  REPORTING-RECONCILIATION:314.962278subtotal+360frozen source/audit reserves
+  =674.962278conservativeupper, not new measured compute or a historical refit.
+  Own scalar+14.777921/DD4.417190, modest selective development improvement.
+- SequenceTCN1CUDAfit18epochs792updates/BEST4, timepreflight182.707543wall/
+  90.084691optimizersec,81.227MBallocated98.566MBreserved. No convergence.
+  Native11/saved-audit66/59pinsmatch/21CLIidentities absent/CID+leaseclosed/
+  944.587592upper. AuditUnicode-date failure+oneaudit-only recovery retained,
+  no fit/forecast/readout retry. Source8718410e is not old full-day TCN91126913.
+- SequenceGRU1CUDAfit81epochs3564updates/BEST33, INNERearlystop48,
+  11.706983wall/9.661050optimizersec,151.124MBallocated247.464MBreserved.
+  Native11/audit67/Ruff/21CLIidentities absent/CID+leaseclosed/288.375985upper.
+  No numerical retry or forced900s spend. Callback821996a4.
+- Earlier full-dayTCN actual292.700357fitwall>frozen285 overrun stays retained.
+  TimesFM bootstrap failures/sub-cap limitation and all old results stay closed.
 
-Closed recovery: A/research/current-short-swing-next-campaign-design-20261103-v1,
-300SUM1800elapsed. Dedup registry, actual data, cost/downside hypothesis,
-causal temporal split/purge/baselines/finite caps and real optimizer/checkpoint
-smoke. Then autonomously freeze and dispatch ONE qualified numerical study
-<=1500SUM5400elapsed/<=1fit1forecast/1readout<=12newviews/0outcome-drivenretry.
-No parent approval relay; actual resource/source/caps/PIDstart evidence before
-claiming running GPU. Ohm cost-risk proposal directly supports this contract.
+Ready next:
+A/research/current-chronos2-h3-lower-quantile-risk-development-20261103-v1,
+900SUM3600elapsed/0fits/ONEnewq0.1forecast/ONEreadout<=12costviews/0retry.
+New lower-quantile uncertainty proxy on fixed original meanrank quarters;
+saved median/weights unchanged. Actual API smoke/resource/lease before GPU.
+Predeclare one scale/no grid, scalar same-stock/samegross/CPU growth-risk kills.
+Not calibrated entry-MAE/joint-risk or independent alpha. Stop after this
+hypothesis and synthesize, no endless architecture sweep on reused2026.
 
-Actual CPU campaign039c7399/c595452e CLOSED07:19:05, native13/45pinsmatch/
-314.962278upper including original300design reserve,17recordedactorsabsent.
-One CatBoost1.2.10 CPUfit .212922seconds/294curve steps/BEST246/48patience,
-one forecast/12newviews/0retry/no convergence claim. Scalar same-stock/samegross
-control+14.777921pct/DD4.417190; selective+15.281894/DD4.340869 is a modest
-development improvement, not total-growth dominance over meanrank+27.295698.
-Parent emitted-adapter F821/F822/F823/E9 check PASS, no market/model rerun.
-NEXT new current-short-swing-relative-mae-causal-sequence-20261103-v1,
-<=1800SUM7200elapsed/1fit1forecast/<=12views: same policy/target/splits/costs,
-new causal sequence information, compare CPUtree/scalar/growth-risk. Actual
-native/resource/lease admission before GPU; a CONTRACT is not running training.
-Ohm fixedmeanrank Paper packet preparation500SUM3600elapsed is independent,
-source-only, no historic score retag/current H3 replacement.
+Paper handoffs remain independent of profitability:
+Chronos pure proposal66002104; dailybridge1cf2c7e9/native38/40pinsmatch;
+fixed meanrank8f740232/APIcd4c2d4e/native30/48pins/236.089upper.
+New route-clock consumer600SUM3600elapsed uses existing ModelPaperTarget/
+TargetExposureProposal/ResearchDecisionReceipt for NAS+NYS, distinct pre-close
+operational policy. Do not forge old NAS-only ModelPaperInput or benchmark
+third-CLOSE fills. Source-only does not install a financial profile.
 
-Actual expanded minute view:
-A/data/current-us19-prior93-input-reuse-20261103-v1, Sourceb12126a6/
-recoverye4c79cee/API29799657/headered9df438/payload40420fc9/330upper.
-75493RTH/249first45/60 contexts/239first60+next60 contexts, SAME25dates.
-Publication from unhashed partial is limited; JNJOct20withheld and vintage
-seams cannot silently enter continuous level features. Existing original8+SPY
-fullRTH source is separate. NAS8Nov3/4 and frozenNov4UTC21:35 stay excluded.
-
-Paper H3 future entry/read/exit remain installed, not financial closure.
-Open45 enclosing host is UNQUALIFIED64a67f89; typed repair and publisher ACL
-recovery are independently owned, not research/GPU authority holds.
-ONE original B/10/F9 UNKNOWN-HELD/all original exits unchanged.
+Minute viewb12126a6/recoverye4c79cee/API29799657 has75493RTH/249first45/60
+contexts/239first60+next60, SAME25dates. JNJOct20/seams masked, recovered
+unhashed-partial publication limitation retained. Original8+SPY source separate.
+Reserved NAS8Nov3/4 and frozenNov4UTC21:35 stay outside new selection.
+ONE original B/10/F9 UNKNOWN-HELD/current H3 point/all original exits unchanged.
 
 ## Frozen Comparison And Contract Index
 
-Earlier handoffs below are historical, not current running assignments.
-More modelled growth on reused data is not independent replication.
+Earlier handoffs below are historical, not running assignments.
 
 ## Current Handoff
 

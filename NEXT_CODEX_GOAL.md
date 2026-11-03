@@ -45,54 +45,55 @@ No replacement app follow-up chain.
 
 ## Current Ready / Owned Packages
 
-Snapshot Nov3UTC07:33. These are assignments, not proof of running workers.
+Snapshot Nov3UTC08:18. Named owned paths are below; an MD is not a running PID.
 
-1. Execution / Helmholtz: current-open45-finite-host-typed-repair-20261103-v1,
-   900SUM5400elapsed from receipt. Prior finite-session host is CLOSED
-   UNQUALIFIED64a67f89/firstcause86817df4/550.070293upper: lineage, provider ABI
-   and unretained guest EOF failures; pure projection repair is not enclosing
-   native qualification. New typed native smoke then at most ONE enclosing
-   invented pair; preserve all real custody/risk checks. No actual broker,
-   private, Task or market effects in preparation. Original quarter/cash,
-   forecast admission15:17..<15:18, operational BUYdeadline15:22 and owned
-   exit16:17 are distinct contracts; no expired-point or old-slot reset.
-2. Temporary Data/Infra / Hooke: current-open45-publisher-task-dacl-recovery-
-   20261103-v1, 500SUM1800elapsed. Publisher14268659/Definition77513d80 and
-   installer dce3d5c8/56native+8facade are frozen. Parent actual creation
-   Nov3UTC06:51 left EXACT thericher-open45-finite-publisher-20261103-v1
-   DISABLED/state1/0instances/never-run. CREATE-ATTEMPT exists, completion
-   withheld protected_DACL_required; actual Scheduler returns unprotected
-   four-ACE DACL. No duplicate creation, delete, force update or old retry.
-   Recovery is ACTUALLY COMPLETE07:15:Sourcef4599669/native46/17pinsmatch,
-   qualifiedc6031a7d/Enable82d1ad35/independentenabled73d5f0fb prove sameTask
-   ENABLEDReady3/0instances/never-run. Eight metadata actors absent07:16.
-   No oldCreate replay/TaskRun/ACLsetter. Exact rights equivalence only, no
-   protected-inheritance guarantee; review_unavailable/subcapoverrun retained.
-   Do not replay consumed recovery commands. Future Data trigger15:07:30,
-   capture15:16..15:16:25, score15:16:30..15:16:55. Installation is not data
-   publication, financial runtime admission or a fill.
-3. Data / Euclid (temporary capacity-recovery owner): current-chronos2-h3-daily-bridge-preparation-20261103-v1,
-   600SUM3600elapsed. Exact Engine proposal ABI66002104; smallest coherent
-   C60/H3 daily input/future clock contract, same source/adjustment convention,
-   tiny invented producer-to-consumer smoke. No implicit source-mode mixing,
-   stale H3 replacement, actual future collection/model/Task in this prep.
-   Bridge is now CLOSED1cf2c7e9/157bdc3e/native38/40pinsmatch; future data absent.
-   Next finite Nov6coherent-capture source prep600SUM3600elapsed, <=19GET1POST
-   for Nov9weeklyentry; no actual collector installed yet. Measured full bridge
-   lineage SUM unavailable/allowance not proof; time-report correction retained.
-4. Engine + sole GPU coordinator / Confucius: current-short-swing-relative-mae-
-   causal-sequence-20261103-v1, <=1800SUM7200elapsed/1fit1forecast/<=12views.
-   CPUtree039c7399/c595452e is CLOSED314.962278upper:selective15.281894pct/
-   DD4.340869 vsscalar14.777921/DD4.417190, standalone developmentPASS.
-   New sequence information test keeps same target/policy/splits/costs and
-   compares CPUtree/scalar/growth-risk; real native/checkpoint/resource checks
-   before actual GPU. No duplicate completed models or occupancy-only work.
-5. Strategy / Ohm: current-foundation-h3-meanrank-paper-proposal-preparation-
-   20261103-v1,500SUM3600elapsed/0modelcalls/marketviews. New pure two fresh
-   exact score packets -> fixed meanrank -> project proposal handoff. Old
-   cost-risk proposal f77a3469/native16/181.730771upper is CLOSED and adopted.
-   New data view has249first45/60 contexts and239first60+next60 contexts,
-   SAME25dates. Continuous level features cannot silently cross vintage seams.
+1. Execution / Helmholtz: current-open45-guest-startup-boundary-probe-
+   20261103-v1,600SUM3600elapsed/ONEinventednetwork-none guest<=90s.
+   Typedrepairb263/6ddb and correctedCLI17ffa92a seed are CLOSED UNQUALIFIED;
+   seed consumed/resume not launched/no Parentduplicate. Retain originalcaps/
+   CIDs/Jobs/failures. Measure sourcehash/bootstrap/first owner-handshake and
+   exact safe failure stage before another enclosing pair; no blind rerun,
+   private/broker/model/Task calls or guessed22s durable capability limit.
+   H3 actual Source6ae entry+exit command-parser smokePASS: NOT affected by
+   Open45 terminal-sentinel bug; this is not financial/runtime proof.
+2. Temporary Data/Infra / Hooke: current-open45-nine-head-latency-probe-
+   20261103-v1, prep<=600SUM3600elapsed; actual<=9GET1initialPOST/0retry/
+   180worker240host900fullactorSUM. Named two-Paper-key loader ONLY, virtual
+   market endpoint/original8NAS+SPYAMS/same RAMtoken+atomic60 gate/pacing,
+   no account/private/model/broker/Task calls. Source/native/actual token-Data
+   writer admission before one autonomous quiet round, not a Parent approval.
+   Measure actual wire/admission/waits/parse/I/O. Prior-session first45 input
+   may be unavailable; keep it separate from latency, never forge future point.
+   Market bytes only a NEW M/raw_quarantine child, no raw values in output.
+   Installed publisher14268659/Definition77513d80 remains unchanged/ENABLED,
+   Nov3UTC15:07:30 trigger/capture15:16..15:16:25/score<=15:16:55.
+   Recoveryf4599669/native46/independent73d5f0fb proves installation, not success.
+3. Data / Euclid: current-chronos2-h3-nov6-metadata-installer-preparation-
+   20261103-v1,350SUM1800elapsed. Runtimee149f2dd/definitionb294a90d/native
+   capture+23Scheduler mocks are CLOSED source-only, actualTask not installed.
+   New metadata wrapper reuses measured Hnc sparse defaults/ACL semantics and
+   post-enable containment; old installer/source unchanged. Parent actual
+   disabled-create/readback/enable/readback only after qualified exact source.
+   Future coherent19capture Nov6UTC21:10 for Nov9weeklyentry, <=19GET1POST/
+   0retry/C60Aug14..Nov6. Dailybridge1cf2c7e9/native38/40pinsmatch is closed.
+   Historical bridge full measured SUM unknown;390reserve is not measuredproof.
+4. Engine + sole GPU coordinator / Confucius: current-chronos2-h3-lower-quantile-
+   risk-development-20261103-v1,900SUM3600elapsed/0fits/ONEnewq0.1forecast/
+   <=12views/0retry. New uncertainty proxy on fixed original ranked quarters;
+   saved medians/weights unchanged. Native actual output API/resource/lease
+   before GPU. Same-stock/samegross scalar+CPU growth-risk kill, no model grid,
+   independent-alpha claim or current H3 swap. CPU/TCN/GRU studies CLOSED.
+5. Strategy / Ohm: current-foundation-h3-route-clock-operational-consumer-
+   20261103-v1,600SUM3600elapsed/0models/marketviews. Strict17route NAS+NYS
+   proposal through existing typed TargetExposureProposal/ResearchDecisionReceipt,
+   not forged old NAS-only ModelPaperInput. Explicit firstOPEN/thirdPRE_CLOSE
+   operational policy differs from benchmark exact thirdCLOSE. Actual invented
+   producer->fusion->consumer smoke; no broker risk/authority/deployment change.
+   Prior fixedblend8f740232/native30/48pins/236.089upper is CLOSED with gaps.
+
+All paths are children of A/data, A/execution or A/research as their roles imply.
+Original slots/bank/F9/unknown requests/all exits persist. No operator decision
+pending and no new app follow-up/report chain.
 
 ## Completed Evidence / Do Not Repeat
 
