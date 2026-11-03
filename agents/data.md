@@ -2,117 +2,56 @@
 
 ## Current Ownership And Ready Inputs
 
-CURRENT04:47: NEW494 continuation is CLOSED:
-D:/thericher-v2/model-artifacts/data/current-us19-raw-historical494-continuation-preparation-20261103-v1,
-Source03567531/PLAN16d17ac9/native156/750prepupper. Parent launch03:51:11,
-host38820/birthFILETIME134381514718000731/release48f66d69; terminal04:45:35
-494GET1POST/59256rows/0remaining0technical0unresolved/qualification0.
-RESULTed518f26/HOST-CLOSURE8bd07e99,exit0/joined/Jobempty/991helpersclosed0/
-8276.139325SUM. Parent hostabsent04:46:26. Never relaunch/replay/reset.
-Combined original161+new494 =78576rawrows, not model-qualified input.
-Original70ef161GET/19320rows is closed, not this worker. Exact known synthetic
-collision permits only bounded30s worker wait for positive closure, never an
-active actor exemption. Unknown actual API/token writers still defer.
+Nov3UTC06:56. Copernicus owns the new Chronos daily bridge; Hooke temporarily
+owns exact publisher Task recovery. A=D:/thericher-v2/model-artifacts;
+M=D:/market_data. Assignments are not proof of running PIDs.
 
-Actual161 CLOSED view reported14520RTHknown of97500cells and zero first45/60
-contexts. New opening30 finding b44ca37f/25d05872/180upper proves40selected
-closed captures DO have09:30..09:59. Old reader rejects whole mixed-session
-pages due to premarket rows; this was a consumer limitation, not raw absence.
-No extra GET justified. Ohm owns NEW current-us19-mixed-session-research-view-
-20261103-v1/600SUM1800elapsed: validate all rows then select RTH, retaining
-exclusions/masks/proxy limits; source/native/Claude before separate intake.
-Old161/d8/rawqualification0 unchanged; no extra calls in frozen494.
-Mixed-session view is now CLOSEDready eed40af8/API0d5f319f/25native+
-5independent+2boundarychecks/360upper/GO_WITH_LIMITS,35pins0mismatch.
-Copernicus owns NEW current-us19-mixed-session-input-staging-20261103-v1,
-600SUM1800elapsed, exact655closedpages<=78576rows only, no prior93implicitjoin/
-HTTP/model. New market view bytes stay M/research_provisional/kis_paper/
-current-us19-mixed-session-20261103-v1. First tiny invented writer/consumer
-assertion failed BEFORE intake and is retained. Stage now CLOSED05:19:07:
-COMPLETED-CALLBACKbb1abe0c/SOURCE-r3.json747ad96c/590upper, oneactualintake/64470RTH/
-14106excluded0denied/HEADER45d5f0b5/PANELe84ccb8a. Parent15pins/payloadhashes
-match, selectedbeforeafterstable/launcher+stageabsent/Jobemptyexit0.
-STAGEDc09f0b97; RootSOURCE.json310a467f is earlier failedsource, not747ad96c.
-First45/60+next60 support:JNJ14dates,JPM15,other8stocks16, not25newdates.
-Prior93notjoined; rawqualification0/nonPIT/CA/finality/secondaryclock+1h remain.
-Next current-intraday-date-depth-six-probe-20261103-v1,600SUM3600elapsed:
-AMD/NAS+JPM/NYS x3older keys/<=6GET1POST/original300+pacing, source/nativequiet
-plan before Parent actualadoption. This actual probe is now CLOSED:
-Source9794400c/PLANede8ebd1/release97d385b8/host44828 launched05:33:41,
-RESULTbeafa39f/HOSTab0ab6a8/catalog95039795,6GET1POST/6EMPTY_PAGE/0rows/
-0technical0retry0unresolved/115.144895SUM/Jobempty/15helpersclosed.
-Parent host+worker57148absent05:38:40. No repeatedemptyanchors or globalfloor
-claim. Prior93/existinglegaldate-depth/prospective are scoped alternatives,
-not a research/Paper permission hold. Originalexpireddepth budgets unchanged.
-Ohm completed read-only Throughput review and is closed, not active intake.
-Old date-depth prep120/600 expired unfinished, not refunded or reopened.
+Completed usable minute input:
+- Raw161+494:655pages/78576rows, qualification0 unchanged, actual actors closed.
+- Mixed-session reader eed40af8/native25+5+2 and successful stage
+  SOURCE-r3.json747ad96c/STAGEDc09f0b97/header45d5f0b5/panele84ccb8a:
+  64470RTH/14106excluded/0denied. Failed rootSOURCE310a467f is not747ad96c.
+- Prior93 explicit reuse at A/data/current-us19-prior93-input-reuse-20261103-v1:
+  Sourceb12126a6/recoverye4c79cee/API29799657/STAGEDaca8f225,
+  headered9df438/payload40420fc9. Added92windows/11023rows, total75493RTH;
+  first45/60 contexts249, first60+next60 contexts239, SAME25dates.
+  JNJOct20 withheld; JPMOct5/JNJOct1 seams defaultFalse for continuous level
+  features. No silent vintage preference or additional independent dates.
+  Native20+4/RuffPASS,60+9pinsmatch/22actorsabsent/14Jobsempty/330upper.
+  Publication recovered from an unhashed partial NPZ; not an original producer
+  seal. No raw655-body reintake, HTTP, credentials or model calls.
+- Six older-key probe9794400c/beafa39f:6GET1POST/6EMPTY_PAGE/0rows/0technical,
+  host+workerclosed. Do not repeat anchors or infer global history/TPS limits.
 
-Temporary Data Feed source-native is closed55checks/RESULT-v2/373.033207upper,
-network-none/no private mounts/no actual calls; old controller accounting is
-invalid and consumed. NEW feed-only60-floor source calibration is separately
-COMPLETEd53da0d7/API92d94e1f/native53/292.951636upper, source-only NOT adopted,
-review_unavailable. Old default/494300 unchanged. See NEXT_CODEX_GOAL for exact
-input/deadline/native/accounting boundaries. No actual Feed installation.
+Derived provisional research use does not rewrite raw qualification0.
+Current-listing/nonPIT/notTR/CA/finality/START-END and clock-proxy limits remain.
+Both source clocks are retained; never silently shift Korea+1h labels.
 
-Nov3UTC02:30. Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c owns
-D:/thericher-v2/model-artifacts/data/current-us19-raw-historical-batch-preparation-20261103-v1.
-Original01:56:04/900ownedSUM3600elapsed/hard02:56:04; no clock reset.
-CurrentSource70ef5448/PLAN0b1b3a66/native135checks and quiet source-ready.
-Assigned repo writes: src/thericher_v2/data/kis_historical_capture.py and
-tests/test_kis_historical_capture.py. Parent serial202/fullRuffPASS; source20pins match;
-fresh full r2 integration PASS4d612230/19917PASS26skip/8of8[19943]/1429pins.
-Actual quiet hostPID9332/birthFILETIME134381478035082513 launchedNov3UTC02:50:03,
-releasece1649c6; exact actual-once only, no relaunch/reset. First02:50:45
-progress6GET1POST/6responses720rows was early only. Original batch NOW CLOSED
-03:06:41:161GET1POST/19320rows/494remaining/0technicalfailures/0pending/
-0unresolvedGET/0overlap0conflict; Jobsjoinedempty/1995.312719SUM.
-Source regex misclassified pure hard-network-denied Open45 fixture30624/5040
-(native.py:38), not APIquota/auth/historyfloor. Exact OWNER/NativeJob/CLOSED
-join retained. NEW current-us19-raw-historical494-continuation-preparation-
-20261103-v1/900SUM3600elapsed, source/native/Claude narrow fixture capability
-admission before one new494GET/1POST/0retry/5400worker generation. Unknown real
-API/token writers still defer; no generic Python/test/Parent exemption.
-StrEnum/format correct initial7lint errors; old711/native-r2/full-r1 remain
-historical only. Prep725conservative upper of900, original clocks unchanged.
+Current packages:
+- Copernicus: A/data/current-chronos2-h3-daily-bridge-preparation-20261103-v1,
+  600SUM3600elapsed. Exact Engine proposal66002104 C60/H3 input, coherent
+  adjustment/source and future availability, actual invented parser handoff.
+  No actual future collection/model forecast/private/Task in this source prep.
+  Existing coherent19daily input and current H3 point are not retagged.
+- Hooke: A/data/current-open45-publisher-task-dacl-recovery-20261103-v1,
+  500SUM1800elapsed. Quiet publisher Source14268659/Definition77513d80/
+  seal fdeb6fc7/native74/799.459604upper is CLOSED. Installerdce3d5c8
+  native56+8/212.065292upper is CLOSED. Parent actual CreateDisabled06:51
+  produced exact thericher-open45-finite-publisher-20261103-v1 but readback
+  withheld protected_DACL_required. Current target DISABLED/state1/0instances/
+  never-run/next15:07:30; only CREATE-ATTEMPT exists. Preserve target/identity,
+  no replayCreate/update/delete/TaskRun. Source-qualified exact DACL recovery
+  before Parent actual enable; financial host is independently owned.
 
-One new raw batch:655historicalGET/800aggregate/80asset/1initialPOST/0retry,
-7200worker/7260host/14550SUM/10800elapsed. Source-pinned quiet pythonw owner,
-existing token300 atomic+legacy/rate guards, no Task/service/account/order/live.
-Market bytes stay in a NEW M/raw_quarantine/kis_paper child, not Git.
-Retain exchange and Korea labels verbatim. Exchange clock/order/duplicate/
-maxKEY checks control raw cursor progress; Korea offsets are quality diagnostics.
-Captured count separate from qualified0; no canonical names/provider/model/Paper
-handoff from raw quarantine. No guessed one-hour shift.
-Future canonicalization needs exact label/OHLC anchor and declared clock policy,
-not another acquisition permission wait. Unknown token reply stays consumed.
+Publisher future window is Nov3UTC15:07:30..<15:10:30, prewarm15:08..<15:11,
+capture15:16..15:16:25, score15:16:30..15:16:55. Actual latency/publication
+UNKNOWN, deadline abstention/no catchup. Fresh atomic60 token floor is scoped
+to this publisher; original historical300+pacing are unchanged.
+No current actual collector or active model process is inferred from an MD.
 
-Original batch Source3e0a4b4b at
-D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1:
-closed11GET/1POST/10heads1200rows/1failure, no historical page accepted.
-Original actual-once/cursor/marks immutable. SDK line1781 was clock mismatch,
-not continuity1776. Parent's initial label is corrected; no quota/floor claim.
+## Frozen Data Index
 
-Completed bounded diagnostic at
-D:/thericher-v2/model-artifacts/data/current-us19-minute-continuation-recovery-20261103-v1:
-Source2c2e62f8/ACTUAL-FINDING8c8cb8f6/closure66703445.3GET1POST0retry:
-fresh head and proper last-bar-minus1 continuation each120strictPASS;
-exact old key120ordered/no duplicate/max<=KEY, but all Korea labels+1h.
-Not a fallback page or history floor. DST/current-offset hypothesis unproven.
-Old strict SDK/query identity/defaults are unchanged.
-
-Open45 inputs already READY, no new HTTP needed for completed fits:
-D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1,
-Sourceffa13cce/STAGED48a8b342,120FIT40INNER40DEV/25dates.
-Phase45 stage COMPLETE at current-phase45-input-staging-20261103-v1,
-Source06ae7057/STAGEDddba2819/600FIT40INNER40DEV/26original DEV parity checks.
-Required masks complete; overlapping phases do not add independent sessions.
-Both use AVGO, not AMD; current-listing/clock/CA/finality/PIT limits retained.
-
-Coherent19daily actual DATAREADY2d5e183b/manifest122b369c/closure9a5bd544
-and Parent2371required+19currentcells proofd4d22f05 COMPLETE; H3 point consumes
-that exact result. Reserved NAS8 Nov3/4UTC21:10 and frozenNov4UTC21:35
-evaluation remain separate, never new selection data. Original future duties
-below remain owned; no task replay or fresh-head qualification.
+The retained catalogue below is evidence/history, not an active worker roster.
 
 ## Retained Long Daily Catalogue
 

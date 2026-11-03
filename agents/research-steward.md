@@ -2,42 +2,37 @@
 
 ## Current Resource Coordination
 
-Nov3UTC05:50. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is sole GPU coordinator.
-Permission/resource policy: project first useful GPU priority, personal apps
-are not permission holds. Measure free/projected peak VRAM and desktop reserve;
-never kill user apps or age-reclaim a live/unknown owned lease. Execution
-reliability preempts at a safe checkpoint; no dummy training for utilization.
+Nov3UTC06:56. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is sole GPU coordinator.
+Project is first useful GPU priority including alongside user apps. Measure
+free/projected VRAM and desktop reserve, no app-name permission hold or killing
+user apps. Execution reliability preempts safely; no dummy work for utilization.
 
-Latest actual closed GPU work:
-- Full-dayTCN91126913/RESULT118849a4:1CUDAfit420updates/BEST3,
-  172.230478optimizersec/77.826MBallocated96.469MBreserved,1CPUforecast12views.
-  Time/update stop/no convergence, actualfitwall292.700357>frozen285.
-  Retain sub-bound overrun/no corrective refit.1809.771977upper/3000,
-  allCIDleaseclosed, growthFAIL.
-- TimesFM2.5 r2d9bca820/RESULT5fb31f96:ONEGPUforecast697x3/
-  6.533796coldload-compile-forecastsec/1.059GBallocated1.067GBreserved,
-  noCPUfallback/0fits/ONEreadout12views. PrimaryriskFAIL.
-  All42r2actors4CIDsleaseclosed. Lineage1005.322108upper/1500 includes
-  oldfailed708.220600+importdiagnostic35.353312+r2261.748195; old220upper
-  vsParent180repairsubcap unproven compliance stays retained.
-  Original06:27:06expiry/old contracts/debits unchanged, no further calls
-  from unused budgets.
+Last actually completed GPU work:
+- TCN91126913/118849a4:1fit420updates/BEST3/172.230478optimizersec,
+  77.826MBallocated96.469MBreserved. Fitwall292.700357>declared285 retained,
+  no convergence/corrective refit;1809.771977upper, growthFAIL.
+- TimesFM r2d9bca820/5fb31f96:1forecast697x3/6.533796coldseconds,
+  1.059GBallocated1.067GBreserved/0fits. RiskFAIL, all42actors4CIDsleaseclosed.
+  Lineage1005.322108upper includes original bootstrap/diagnostic/debit limits.
+- Chronos2 f9d77613/5b888592:1forecast697x3/2.551105seconds,
+  519.417MBallocated589.300MBreserved/0fits,450.477664upper/actorsleaseclosed.
+  DevelopmentPASS, no independent alpha or repeat for occupancy.
 
-Runtime lesson: exact-image wheelzip failed namespace discovery, not model
-performance or missing Flaxeinshape. Diagnostic760f8d99/d821185b used no
-model/GPU; existing extractedsite16filesmatch led to source-qualified r2.
-Do not repeat failed bootstrap or completed forecast to repair logs.
+No current GPU process is claimed from these finished campaigns or an MD.
+Current source design A/research/current-short-swing-next-campaign-design-
+20261103-v1,300SUM1800elapsed: dedup/data/target/costs/temporal purge/finite
+trial and active+elapsed ceilings, actual optimizer/checkpoint synthetic API.
+Dispatch qualified numerical work promptly, retain attempts/failures/debits.
+Completed CPU fixed fusion76fc275c used no new model calls/GPU lease.
+Chronos proposal66002104 had one invented native model handoff, not a market
+forecast; future daily bridge/deadline integration remains separate.
+Reserved NAS8Nov3/4 and frozenNov4UTC21:35 outcomes stay outside selection.
+More stock rows/origins are not additional independent dates.
 
-Current disjoint resource demand:
-- Ohm price-exit composition is CPU-only:900SUM3600elapsed/0fit/forecast/
-  restore/ONEpipeline<=6newviews+12carried. No GPU lease needed.
-- Harvey may prepare Chronos2 same-target proposal only after datedsafe
-  checkpoint/runtime/priorstudy dedup. New proposed900SUM3600elapsed/
-  0fit1forecast1readout<=12views0retry needs actual frozen science/native/
-  measured headroom/lease before dispatch. An MD is not a running PID.
-- Paper/Data preparation/cooldowns never become a global GPU hold.
-  Preserve deferred3040 and all closed studies/holdouts; more origins/
-  stockrows do not add independent date clusters.
+## Frozen Resource Index
+
+Earlier studies below retain their own clocks/caps/custody and cannot be rerun
+or regraded from spare resources.
 
 ## Closed Resource Evidence
 

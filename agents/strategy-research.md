@@ -2,216 +2,35 @@
 
 ## Current Source Handoff
 
-CURRENT05:50: Ohm now executes a bounded CPU composite for Engine/Harvey:
-A/research/current-timesfm-h3-price-exit-composition-20261103-v1,
-900SUM3600elapsed/0fits0forecasts0restores/ONEpipeline<=6newviews+12carried.
-Use SAVED TimesFM2.5 r2scores47bdccee/RESULT5fb31f96 (41weekly2026cohorts)
-and this role's fixed647d9bf6 exit expert. Original+21.935650pct/DD12.367194
-failed frozenrisk10.073158 and staysFAILED. New adaptive composite applies
-nextbarOPEN reduce/exit and mandatorythirdCLOSE; compare deterministic2ndOPEN
-exit plus carriedmodel/EW/momentum/cash/costs/gross. No grid, threshold tuning,
-modelrerun/currentPaperchange or alpha from lowerexposure. Harvey owns exact
-OHLC/cohort/cost contract; native realpacket/book+Claude before one CPU readout.
-Earlier Data view and Throughput review are CLOSED, not active collectors.
+Nov3UTC06:56. Ohm owns new bounded proposal, direct handoff to Engine/Harvey:
+A/research/current-short-swing-cost-risk-proposal-20261103-v1,
+300SUM1800elapsed. One useful nonduplicate cost/turnover/downside hypothesis
+using actual data; registry and strongest kill first. Official primary-source
+research when needed, concrete executable consumer rather than a reading list.
+No market fits/forecasts/readout/private/Task in proposal preparation.
 
-CURRENT04:35: one price-only exit expert is COMPLETE at
-D:/thericher-v2/model-artifacts/research/current-price-only-exit-expert-proposal-20261103-v1,
-Source647d9bf6/API d8508d9b/native35/240upper/GO_WITH_LIMITS. Independent
-standard math, no licensed public code copied, no actual market readout.
-Close-based failed-breakout/trailing evidence acts only next declared bar;
-it is not an intrabar stop fill or current H3 exit/risk change. Engine owns
-one future frozen entry/base-exit/cost readout, not a parameter grid.
-Ohm now has a temporary Data assignment: mixed-session research view at
-D:/thericher-v2/model-artifacts/data/current-us19-mixed-session-research-view-20261103-v1,
-600SUM1800elapsed from receipt. Opening30 findingb44ca37f/25d05872 proves
-40closed captures contain opening rows; old reader discarded whole mixed
-pages. Strictly validate all rows then select RTH with exclusions/proxy masks;
-no new HTTP, raw qualification rewrite or more-independent-date claim.
-Earlier preparation prose below is historical, not active work.
+Closed saved-score studies:
+- Fixed chart exit647d9bf6/API d8508d9b/native35 is a pure nextOPEN proposal,
+  never an intrabar stop fill/current deterministic-risk change.
+- TimesFM exit composition af193e38/e053ffd2:0modelcalls/1CPUreadout,
+  net10+12.794580pct/DD12.326755, fails growth and risk. Original namespace
+  collision retained, new11Windowschecks+27numericproofs;700.878399upper.
+- TimesFM+Chronos fusion3fdd8285/RESULT76fc275c/native24:
+  mean-rankTop4 net10+27.295698pct/DD7.353924, standalone developmentPASS;
+  consensus original quarters+17.627845/DD6.304031, own matched-EW riskFAIL.
+  0fits/forecasts/restores/1CPUreadout9newviews+24carried/346.307972upper,
+  actorsclosed. No threshold/weight grid/automatic winner/independent alpha.
 
-Parent additional source check: official Google TimesFM2.5 model card is
-Apache2, exact cached revision1d952420fba87f3c6dee4f240de0f1a0fbc790e3
-officialHF lastModified2025-10-02T17:21:38Z. Exact existing safetensors/local
-project loader, not new3.0 rights/runtime. Consumer is Engine's NEW bounded
-2026 weekly/H3 postcheckpoint benchmark after cost-dominated H15 TCN closed.
-https://huggingface.co/google/timesfm-2.5-200m-pytorch/blob/1d952420fba87f3c6dee4f240de0f1a0fbc790e3/README.md
-Release precedence limits target-contamination claims; it does not prove
-independent alpha or negate currentlisting/nonPIT/CA limitations.
+All are adaptive reused2026/modelled-cost/close-only-DD comparisons; not
+independent replication, actual Paper PnL or intraday risk. Do not rescue
+failed old thresholds or repeat completed model calls.
+Prior93 view75493RTH/249contexts/25same dates is available; explicit vintage
+seams/held masks and source rights remain. Harvey owns fitting/targets/splits/
+costs/interpretation; Strategy owns source proposals, not financial authority.
 
-Nov3UTC03:05 CURRENT. Phase45 is CLOSED RESULT12f16aa2 (net10+1.205178pct,
-below original LSTM); absolute-cost gate CLOSED RESULT06851f0c (all cash,
-no useful trade). No more repeated tuning of the same5DEVdates.
-Original Open45 pure proposal handoff COMPLETEc9eae425/RESULT0bcc549a/
-native52/482.351581upper, direct to Execution's same-session profile.
-Engine prepares trusted original BEST10 CPU point producer, not a new fit.
+## Frozen Strategy Index
 
-Ohm is temporarily assigned Data capability: fixed raw-clock anchor native9
-PASS, but shared raw/reference assets0 => missing exact symbol-matched anchor,
-not a source-wide research ban. Next separately bounded
-D:/thericher-v2/model-artifacts/data/current-us19-provisional-minute-panel-preparation-20261103-v1,
-600SUM1800elapsed from receipt, source/native only. New explicit research-proxy
-manifest/reader, no old raw qualification rewrite or canonical/Paper promotion.
-Official KIS field mapping supports declaring xymd/xhms as local labels:
-https://raw.githubusercontent.com/koreainvestment/open-trading-api/main/examples_llm/overseas_stock/inquire_time_itemchartprice/chk_inquire_time_itemchartprice.py
-This is documentation, not independent historical-clock/PIT/finality proof.
-Current raw655 collector continues on its own source/caps; no extra HTTP here.
-Earlier preparation projections below are closed evidence, not running agents.
-
-Nov3UTC01:10: Open45 actual two-fit comparison COMPLETE, CUDA LSTM34updates/
-BEST10/INNERearlystop; net10+1.216960pct/DD.651134 vsRidge+1.068984 and
-samegrossEW+1.092579, primaryPASS on only5reusedDEVdate clusters. No independent
-alpha/Paperinput/currentH3swap. Final RESULTb6f0deff/57actors6CIDsclosed/
-1071.522273upper. Fixed LSTM/Ridge/rule composition also COMPLETE Sourcea9cb5e82/
-RESULT0e131978/0fits3views/+1.185653pct/DD.743823/primarygrowthFAIL/fouractorsclosed.
-Ohm completed source-only existing Korean
-monitor handoff at
-D:/thericher-v2/model-artifacts/execution/current-h3-public-monitor-handoff-preparation-20261103-v1,
-450ownedSUM1500elapsed/hard01:03:19. Minimal D-only patch/real invented public
-parse->projection->backend/view; exact public point symbol, null read clock,
-financialUNKNOWN. No current publication/rebuild/Task/private/model/API/Git.
-Parent integrated minimal tracked patch+17newtests/259serialPASS, full8worker
-verification runs; actual Docker monitor unchanged. Parent wording/golden
-contract distinguish missing qualified read clock from proof of absent duty.
-This is invoked UI capability, not a new durable role/web broker authority.
-
-Ohm now owns current-rolling-intraday-expert-kernel-preparation-20261103-v1,
-600ownedSUM1800elapsed from receipt. Coordinate ONE early-phase context/known-
-phase/equalDATE proposal directly with Harvey before source freeze; prefer
-original once-session evaluation over extra funded sleeves. Retained25days,
-separate INPUT/TARGET/HELD and origin IDs, tiny actual producer/parser/consumer
-on invented data only. No current market projection/fitting/GPU/HTTP. More
-overlapping examples do not add independent date clusters or reopen old studies.
-
-Nov3UTC00:35: Open45 candidate Sourceb9d07c17/contractb71f10d3/API80cb8101/
-native37/closure-r28e5021f6 COMPLETE at
-D:/thericher-v2/model-artifacts/research/current-intraday-learned-expert-candidate-preparation-20261103-v1.
-First45RTHminutes, raw9x8/indicator8/combined9x16, fixed top4quarters and one-hour
-intraday payoff. CPU Ridge vs CUDA LSTM32 is now Harvey's two-fit family;
-no claim of learning/results until actual worker evidence. Original family
-expiryNov3UTC01:16,2fits2forecasts15views0retry/1800ownedSUM5400elapsed.
-Ohm actual separate-role staging Sourceffa13cce/STAGED48a8b342/native2c0a0787
-DATA_READY_CLOSED00:30:55/120FIT40INNER40DEV/25sessions, four stage actors closed.
-No current data acquisition needed. Preserve canonical-clock/CA/current-listing/
-reusedDEV limits and excluded reserved outcomes; no independent alpha/Paperinput.
-CPU H3 hazard and GPU nonlinear hazard actual fits are COMPLETE, both fail
-frozen growth while passing risk/turnover; no current three-expert point change.
-No indicator/architecture shopping on seen DEV or repeated completed training.
-
-Retained H3 facts: actualthreeexpert publisher PUBLISHEDPOINTad3b0bcf/SEALf8fe5603
-from qualified coherentDATAREADY2d5e183b. Parent actual strictR5 binding111129a6
-renders hostSOURCE6ae54088; future H3 entry/exit now ACTUALLY installed/enabled,
-READBACK31e83c91/COMPLETEfc1c35b6, not financial execution. Existing3point stays.
-Original robust-four/r1 EXPIRED0attempt/810debit preserved. NEW distinct CPU
-trimmedrank readout COMPLETE Source75865f5c/RESULT1d8c81ba:1pipeline/6views/
-0fits/retries, oldmean3parityPASS, new7.456+old810=817.456debit/allactorsclosed.
-Net10growth242.377556pct/DD22.434191/turn188.726218: growth+riskPASS but frozen
-turnoverFAIL, primary conjunction rejected. No regrade/secondary rescue/current
-point swap. Promising reusedDEV observation, not alpha/Paper promotion.
-Exact latest numerical status/caps are in Engine stateboard, not old prep notes.
-
-Nov2UTC20:38 Fermat scope COMPLETE/CLOSED:
-A/research/current-four-expert-h3-point-kernel-20261103-v1/r3,
-Source77d63050/API3143c06d/codec effbb228/PARENT-CLOSEe8d0dba9.
-Concrete4expert COMBO/TCN/trend60/unweightedTREE mean-rank point adapter,
-not failed marginweightedtree or a current3expert publisher retag. Source/
-invented native inference only; no fits/marketpayload/performanceeval/Task/
-private/credentials/broker. Same original17routes/quarters/cash/unsupportedmass,
-new candidate policy identity, exact same-capture OHLC155/61local+SPY context.
-Real producer/safe checkpoint restore/predictor/seal/strict consumer/SDK smoke
-passed41native checks on oneinvented17stockbatch,3restores/17COMBO/17TCN/
-1GPUtreepredict. Clock-only r3 passed41checks using SAVED outputs/0newmodelruns,
-ceilUTCnanoseconds and started>=asof>=publication>=capture. Initial setup failure
-retained, weights byte-identical.518.578of900SUM, exact actors/leases closed
-before20:37:54, trusted4bbimage/4GiBreserve. No dummy training. Parent
-owns later actual candidate selection/adoption; original21:46publisher untouched.
-Gauss's resumed context failed service-capacity compaction before any new root,
-lease or native dispatch. Fermat01a19dc4-9095-7cb3-88d4-6d7271e5f75f uses fresh
-same-default-model context; no completed fit rerun or stale owner reclaimed.
-Subsequent FOUR-expert financial contract sidecars CLOSED WITHHELD beforeparse
-(checksum/import guards and attempt-name failures). Original r3 inference/clock
-proof remains valid; no financial readiness or new market inference. Parent
-defers further helper chaining in favor of actual3expert input/Paper result.
-
-Nov2UTC18:40: finite read-only rankpoint publisher ACTUALLY installed/enabled
-by Parent. A/execution/current-h3-rank-point-publisher-preparation-20261103-v1,
-SOURCE-r2 efb7817f, exact task thericher-h3-rank-point-publisher-20261102-v1,
-Nov2UTC21:46/start<21:47/hard21:49, pythonw -I-S-B/noDemandCatchupRepeat.
-Actual coherent DataREADY/point/seal remain UNKNOWN. Nine invented native
-producer/seal cases and23mocked installer assertions PASS, Parent complete
-native XML/UTC/ACL readback PASS. Independent lexical XML/ACL readback failure
-remains failed, not runtime evidence. No financial effects/actual point yet.
-Same-user trusted-source contract, not an OS-denial sandbox. Original old
-financial definitions/three-expert models unchanged. New four-expert research
-passes reused DEV, but is not automatically swapped into this frozen publisher.
-Actual producer SDK metadata strings now join strict consumer Source d39a63d9;
-same-process real AST/seal/native-codec smoke passes. Matching unchanged guard/
-Docker restart COMPLETE a5Source404fdec9/native3e3f6eb6/nine denials. Renderer
-Old44958 renderer is historical. Parent connected qualified quiet runtime/
-rearm/date-correct observer/XML-I-S-B at current-h3-actual-preparer-r5-
-20261103-v1,Source47d78f26/READY9b215476/API21820873/coldsmoke7336d793PASS.
-Old native scope failed budget, separate targeted3case repair PASS; no actual
-financial Task/point/admission. Gauss/Fermat source scopes closed; future
-publisher is an owned Windows duty, not evidence of a permanent LLM daemon.
-
-Gauss agent01a19c9a-e031-7792-bc5d-9beb84c33471 owns
-A/research/current-h3-rank-ensemble-next-session-point-preparation-20261103-v1.
-Preferred separate H3 point: exact original COMBO/TCN/trend60 mean-percentile
-top4 policy from Source9552e128, full17 original routes/weights.
-CLOCK-r2 Source08380014/CALLBACKaa757847 qualifies exact integer UTC fractional
-capture/publication clocks,6native tests/Ruff/F-E9/compile PASS, worker closed.
-Original source/debits and earlier fixed-thirds707d121b remain unchanged.
-Actual fresh DATAREADY/input hash is UNKNOWN;0actualmarketrestores/forwards/
-points. Publisher installation above is real; old source-only packet had no
-schedule. No Oct16 retag, fake hash, stale splice or wrong venue fallback.
-
-Consume qualified CASH_ELAPSED_H3 API95cd2733 and actual safe checkpoint/predictor
-APIs. Unsupported NYS/AMS mass remains skipped, not redistributed or folded
-into derived CASH. No automatic model/financial identity swap. Future inference
-requires positive actual coherent Nov2 DataREADY; entryNov3/elapsed exitNov6
-must match official sessions and actual near-close native admission.
-Data owns same-capture future OHLC source consumer; exchange exact schema
-directly. Parent owns shared MD/Git and actual activation.
-
-Pure feature kernels COMPLETE/FROZEN:
-A/research/current-short-horizon-feature-kernels-20261102-v1,
-Source2e033f37/CALLBACK2ff5fdf2,15native cases/19Parent refs/fullRuff/F-E9PASS.
-RAW40/IND15/COMBINED55/sequence20x4/intraday pure price-only. Do not redo.
-Old notes below are historical proposal context; current outcomes in HANDOFF.
-
-Operator horizon Nov2: prioritize intraday and one-to-several-session short
-swings. Proposals need deployable short-horizon entry/hold/exit mechanisms and
-cost/turnover controls, not only long-horizon ranking gains. Minute/hour/daily
-evidence may combine; do not equate candle size with trade duration or reopen
-completed20-session studies. Same-day/1/3/5 are finite initial research axes,
-not a hard maximum holding mandate or reason to force trading.
-
-2026-11-02 KST. Residual/downside mechanism was consumed by C1 fits, explicit
-cashstart replay and daily-LSTM sibling; all now CLOSED. Primary criteria
-failed for cashstart/LSTM, original C1 stays INVALID due initial input support.
-No original-study rescue, causal architecture attribution or automatic Paper
-point. Claude REVISE and exact Parent dispositions remain under
-A/review/current-us19-residual-downside-challenge-20261102-v1 and
-current-us19-cashstart-daily-lstm-challenge-20261102-v1.
-Primary conceptual sources: https://www.nber.org/papers/w25398 and
-https://www.nber.org/papers/w16601. Broad nonlinear/BAB evidence does not
-replicate a17-stock surviving, long-only price-proxy study. No code/weights added.
-Next source-only proposal: measure whether missing cells are SPY-context or
-symbol-local, then consider symbol-local eligibility rather than a full-universe
-feature hold. No new fit, support change or threshold tuning from this note.
-
-Prior Maxwell turnover-policy kernels CLOSED; no permanent Strategy worker.
-Engine owns final targets/splits/costs/fitting/interpretation, not Strategy.
-A=D:/thericher-v2/model-artifacts. No broker/credentials/private account.
-
-Current distinct root current-us19-turnover-policy-proposal-20261101-v1:
-pure top4entry/rank8exit buffer and decision-close L1band.20,6synthetic groups/
-F-E9PASS/direct exact Engine handoff,0market payload/fits/forecasts/replay.
-Closure conservative360upper exceeded unchanged300cap; retain deviation, not
-within-budget or refunded. Engine study closed2policies6views, primaryriskfail:
-buffer growth/turnover improve butDD15.230>10.4509; band weak. Whole membership/
-concentration/fee package, not causal fee-only alpha or new Paper point.
-Next useful proposal is diversification/downside mechanism, not another band
-threshold grid. A proposal must become executable research or rejection.
+Earlier completed consumers below are retained evidence, not active assignments.
 
 ## Complete / Consumers
 

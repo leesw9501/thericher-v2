@@ -2,7 +2,26 @@
 
 ## Current Operations
 
-Nov3KST / Nov3UTC04:40. Company objective UNFINISHED. H3 future definitions
+Nov3KST / Nov3UTC06:56. Company objective UNFINISHED.
+
+Open45 publisher ACTUAL CreateDisabled at06:51 produced ONLY the exact Data
+target thericher-open45-finite-publisher-20261103-v1, currently DISABLED/state1/
+0instances/never-run/next15:07:30UTC. Installerdce3d5c8/native56+8 withheld
+protected_DACL_required after CREATE-ATTEMPT; actual Scheduler returns an
+unprotected four-ACE DACL. Do NOT replay Create, delete/update the target or
+force enable. Source-qualified same-identity recovery is owned by Hooke at
+D:/thericher-v2/model-artifacts/data/current-open45-publisher-task-dacl-recovery-20261103-v1.
+Parent owns actual recovery/enable after native checks; no Task Run. Publisher
+Source14268659/Definition77513d80 remains frozen, not an actual publication.
+Open45 financial host64a67f89 is UNQUALIFIED after three invented failures;
+Helmholtz owns one typed native repair, not actual deployment. No broker/private
+effects from those preparation packages. Current active stateboards supersede
+older research projections below; do not rerun completed fits/forecasts/intakes.
+Prior93 recovered view75493RTH/249contexts/25same dates is explicit research
+input, with seams and an unhashed-partial publication limitation. Fixed fusion
+76fc275c is development-only, not an automatic current H3 model replacement.
+
+H3 future definitions
 are ACTUALLY installed/enabled Ready3/0instances, not actual financial execution:
 - thericher-h3-rank-cash-once-entry-20261103-v1,
  Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
