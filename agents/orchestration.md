@@ -35,7 +35,10 @@ Primary strategies intraday plus one-to-several-session swings.
  canonical overlap9/87746of87750 minute cells/25sessions; AMD+nineNYSE gaps.
  Proposed665GET/800cap/2h/0retry, no actual long collector yet. Bind quiet finite
  host/existing Paper Data client/valid token/exact cache ownership/cursors;
- max4market probes/1POST only proven invalid token, noaccount/order/live.
+ max4market probes/1initialPOST under unchanged gates, noaccount/order/live.
+ Newclient-no-usable-token is initial issuance, not proof another token expired;
+ instance-bound persisted once, unknown/lostreply remains consumed. Scoped
+ Claude SOUND_WITH_LIMITS, oldadapter immutable/newnative path required.
 - Data scope CLOSED: coherent19daily DATAREADY2d5e183b/manifest122b369c/
  closure9a5bd544, required2371+19currentcells PASS ParentRESULTd4d22f05.
  Existing NAS8 Nov3/4UTC21:10/frozen evalNov4UTC21:35 separately owned and
@@ -79,6 +82,21 @@ COMPLETE1CUDAfit/1CBMrestore/1CPUforecast/6views/114iterations/BEST81=82trees/
 .589849optimizersec,109.553207pct/DD20.866974/turn142.695227, primarygrowthFAIL.
 marketSUM12.158975/CID+CLI+leaseclosed; final audit only, no numerical replay.
 No point swap or independent alpha/PaperPnL claim.
+
+Open45 numerical work ACTUALLY COMPLETE00:42:44/Source37e58ff4:
+2fits2forecasts15views/0retry, CUDA LSTM34updates/BEST10/.269500optimizersec.
+Net10LSTM+1.216960pct/DD.651134 vsRidge+1.068984 andEW+1.092579, primaryPASS.
+Only5reusedDEVdate clusters, no independent alpha/Paperinput/pointswap.
+Harvey owns final actor/debit audit, then separate fixed three-expert mean-rank
+savedforecast composition0fits/3views/600ownedSUM1800elapsed, native+Claude
+before conditionalonce. No rerun or original clock extension.
+- Ohm01a19ea9-7bd8-7042-adf9-38ba566aba95 now owns disjoint
+ current-h3-public-monitor-handoff-preparation-20261103-v1,
+ 450ownedSUM1500elapsed/hard01:03:19. D-only proposed minimal existing Korean
+ monitor patch/invented parse->projection->backend/view smoke; no current
+ publication/rebuild/private/Task/model operations. Readclock remains null
+ until actually installed; financial categories UNKNOWN, no artifact imports
+ or private custody in web. Parent owns tracked adoption/deployment.
 
 Fresh repo authority RESULT7ff3887a at
 A/verification/current-h3-deployment-integration-20261103-v1:

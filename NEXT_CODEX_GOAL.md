@@ -65,8 +65,12 @@ request substitution, profit refill or stale-point retag. Preserve %SystemDrive%
  D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1,
  900ownedSUM2700elapsed from actual dispatch. Reuse existing Paper Data client/
  valid token, exact cache/account ownership and tested quiet host; canonical
- bytes remain D:/market_data. At most4 market probes/1POST only if token proven
- invalid and issuance gate permits. No account/order/live/raw env. Long batch
+ bytes remain D:/market_data. At most4 market probes/1POST for proven invalid
+ local token OR new isolated client without usable retained token, under
+ unchanged issuer/timing gates. Initial issuance is one persisted instance-
+ bound attempt, not a false claim another bearer expired. Unknown/lost issuance
+ stays consumed; midbatch401/403 never reauthenticates. No account/order/live/
+ raw env. Long batch
  deployment still needs actual source/native adoption, not a human approval.
 - Data actual coherent19daily DATAREADY2d5e183b/manifest122b369c/closure9a5bd544
  and Parent2371+19currentcells remain complete. Reserved NAS8 Nov3/4UTC21:10
@@ -106,6 +110,24 @@ request substitution, profit refill or stale-point retag. Preserve %SystemDrive%
  delegated; direct qualified Data handoff needs no extra Parent approval.
  Keep provider-clock/finality/CA/current-listing/reusedDEV limits and original
  reserved outcomes excluded. Completed old fits never repeated for utilization.
+
+ Open45 numerical comparison is NOW COMPLETE: Source37e58ff4/release exact
+ OPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry, actual CUDA LSTM34updates/
+ BEST10/INNERearlystop/.269500optimizersec. Reused5DEVdate clusters net10:
+ LSTM+1.216960pct/DD.651134, Ridge+1.068984/DD.743823, samegrossEW+1.092579/
+ DD.815521. Frozen primary PASS, not independent alpha/qualified Paperinput
+ or current H3 point replacement. Final actor/debit audit is still owned.
+ After closure, a separately frozen fixed three-expert mean-rank composition
+ may use saved LSTM/Ridge forecasts and past-relative45 rule:0fits/0newforecasts/
+ one readout3costviews/600ownedSUM1800elapsed, native real parser/book smoke
+ and scoped Claude review first. Adaptive seenDEV, no secondary rescue or
+ old-family clock extension; no automatic Paper swap. Parent delegates once
+ after actual source/cap/readiness freeze, not another human approval.
+
+Initial-client issuance clarification: Claude SOUND_WITH_LIMITS at
+A/data/current-us19-minute-runtime-binding-20261103-v1/CLAUDE-AUTH.json.
+Old known_invalid_token adapter remains immutable; source-revised initial
+issuance path must qualify before use. No actual HTTP/deployment inferred.
 
 Claude GO_WITH_LIMITS for exact native recovery and separately new DEV readout:
 A/review/current-h3-native-calibration-and-dev-readout-challenge-20261103-v1/response.json.

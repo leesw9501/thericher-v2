@@ -275,8 +275,30 @@ zero actual HTTP/credential calls in preparation. Copernicus01a19ebd-e066-
 A/data/current-us19-minute-runtime-binding-20261103-v1,
 900ownedSUM2700elapsed from actual dispatch: connect existing Paper-scoped
 client/token/quiet launch/actual same-cache ownership and durable cursor.
-At most4 scoped market probes plus1POST only for proven invalid token; no
-account/order/live routes. Long collector starts only after actual adoption.
+At most4 scoped market probes plus1POST for proven invalid local token OR a
+new isolated client without usable retained token. Initial issuance is one
+persisted instance-bound attempt under unchanged issuer/timing guards, never
+a false claim another bearer expired. Unknown/lost response stays consumed;
+midbatch401/403 ends/defer, no reauth. Claude SOUND_WITH_LIMITS at runtimeRoot/
+CLAUDE-AUTH.json. AGENTS clarifies this; old known_invalid_token adapter stays
+immutable and the changed path needs native proof. No account/order/live.
+Long collector starts only after actual adoption; zero actual deployment yet.
+
+Open45 numerical comparison completed Nov3UTC00:42:44:
+Source37e58ff4/releaseOPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry.
+LSTM actual CUDA34updates/BEST10/INNERearlystop/.269500optimizersec,
+80.13MBallocated/81.79MBreserved, not convergence. Train15/INNER5/DEV5 DATE
+clusters, not200 independent observations. Net10 on reused5DEVdays:
+LSTM+1.216960pct/DD.651134; Ridge+1.068984/DD.743823; samegrossEW+1.092579/
+DD.815521. Frozen primary PASS; not independent alpha, qualified live feature
+or measured Paper PnL. Current H3 point unchanged. Actual native/market stages
+exit0, final aggregate PID/CID/lease/debit audit still owned by Harvey.
+After closure, Parent conditionally delegated a NEW fixed mean-percentile
+LSTM/Ridge/past-relative45 top4 composition: saved forecasts only,0fits/
+0newforecasts/1readout3views/600ownedSUM1800elapsed, actual native parser/book
+and short Claude challenge before once readout. No original cap extension,
+DEV winner rescue or automatic Paper adoption. Next distinct GPU mechanism
+may be prepared without repeating completed fits.
 
 ## Owned Duties And Operations
 

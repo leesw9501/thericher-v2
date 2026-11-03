@@ -2,6 +2,23 @@
 
 ## Current Results And Next
 
+Nov3UTC00:46 update: Open45 numerical comparison is COMPLETE, not queued.
+Source37e58ff4/OPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry;
+LSTM CUDA34updates/BEST10/INNERearlystop/.269500optimizersec,80.13MBallocated.
+Net10 on reused5DEVdate clusters: LSTM+1.216960pct/DD.651134,
+Ridge+1.068984/DD.743823, samegrossEW+1.092579/DD.815521; frozenprimaryPASS.
+No convergence, independent alpha, qualified Paperinput or actual PaperPnL.
+Current H3 point unchanged. Harvey owns final actor/debit audit, then a NEW
+saved-forecast fixed three-expert mean-percentile LSTM/Ridge/past-relative45
+top4 composition:0fits/0newforecasts/1readout3costviews/600SUM1800elapsed,
+native actual parser/book and scoped Claude review before conditional once.
+Adaptive seenDEV only, beat savedLSTM ANDsamegrossEW/net10/DD<=1.5EW,
+no rescue/original clock extension. Next materially distinct GPU mechanism
+may be prepared; no completed old fit/forecast/readout repeated.
+Earlier readiness description below retains the original contract, not a
+current-running claim. Numerical evidence is readout/RESULT.json and actual
+temporal_fit/RESULT.json under current-open45-engine-development-20261103-v1.
+
 Nov3UTC00:35. Harvey01a19e80-1586-7fe2-9587-9b44f510842b owns current Open45
 Engine/soleGPU coordination at
 D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1.

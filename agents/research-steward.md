@@ -2,6 +2,16 @@
 
 ## Current Resource Coordination
 
+Nov3UTC00:46: Open45 numerical2fits/2forecasts/15views COMPLETE. Actual CUDA
+LSTM34updates/BEST10/INNERearlystop/.269500optimizersec/.549433fitwallsec,
+80.13MBallocated/81.79MBreserved. Small120FITrows explain brief GPU use, not
+an environment/permission hold. Reused5DEVdates primaryPASS is not independent
+alpha/convergence/PaperPnL. Harvey owns exact all-stage PID/CID/lease/debit
+audit; no actual active training inferred after returned stage exits.
+Next fixed three-expert savedforecast composition needs no GPU/refit. A distinct
+larger useful intraday training mechanism may be prepared, not dummy utilization
+or more epochs/seeds on completed campaigns. Previous caps/debits unchanged.
+
 Nov3UTC00:35. Sole current GPU coordinator Harvey01a19e80-1586-7fe2-9587-
 9b44f510842b owns Open45 two-fit family (indicatorRidgeCPU/combinedLSTM32CUDA)
 at D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1.

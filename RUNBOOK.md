@@ -80,8 +80,13 @@ Current Nov3UTC00:35: CPU H3 hazard and GPU nonlinear first-passage are COMPLETE
 not pending fits. CPU120.910531pct/DD22.742307, GPU109.553207/DD20.866974:
 both fail frozen growth149.175598, no point swap. GPU114iterations/BEST81=
 82trees/.589849optimizersec. Preserve checkpoints/results; do not rerun.
-Active comparison: D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1,
-two fits (indicatorRidgeCPU/combinedLSTMCUDA), expiryNov3UTC01:16 unchanged.
+Comparison at D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1
+is numerically COMPLETE:2fits2forecasts15views/0retry, LSTM34updates/BEST10/
+INNERearlystop/.269500optimizersec; reused5DEVdays net10+1.216960pct/DD.651134,
+Ridge+1.068984/EW+1.092579, primaryPASS only in this development scope.
+Final actor/debit audit remains owned; no repeated fits/automatic Paper swap.
+Original expiryNov3UTC01:16 unchanged. Next fixed savedforecast composition
+is a separate0fit3view campaign, not another forecast or reopening old trials.
 Separate-role actual input DATA_READY_CLOSED at
 D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json.
 Current data suffice. US19 broader gap collection is separate runtime binding

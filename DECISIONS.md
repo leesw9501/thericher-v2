@@ -10714,3 +10714,20 @@ owned exits; public model proposals never acquire private custody identifiers.
 Consumer: new inert short-swing proposals, not a new broker writer per model.
 Claude GO_WITH_LIMITS/Parent dispositions, advisory only:
 D:/thericher-v2/model-artifacts/review/current-short-horizon-joint-challenge-20261102-v1/response.json
+
+## 2026-11-03 Initial Client Authentication Is Not Expiry Proof
+
+Consumer: the finite US19 intraday collection worker. The existing Data SDK
+retains its bearer in client RAM, not a qualified cross-process token store.
+A genuinely new isolated client without a usable retained token may perform
+one initial issuance under the unchanged shared issuer/timing guards and a
+persisted instance-bound attempt. Do not set known_invalid_token merely to
+mean no local token or claim another client's bearer expired. Preserve frozen
+adapters and qualify the explicit new-client path before actual use.
+
+This uses standing private Paper authority, not a new approval or relaxed
+token cadence. Reuse the authenticated client for the batch. Lost/unknown
+issuance stays consumed/pending; restart or401/403 does not grant another POST.
+No age reclamation, unknown token-store search, raw env or Live access. Other
+lanes continue during a scoped issuer block. Claude SOUND_WITH_LIMITS:
+D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1/CLAUDE-AUTH.json

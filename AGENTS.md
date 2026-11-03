@@ -326,7 +326,14 @@ or unknown/next_due/recovery. Source-limited closes only its exact cursor,
 not all history/endpoints. Fresh-session work precedes backfill. Canonical1m
 may derive5m/10m/1h/3h; direct daily history is a separate source.
 
-Reuse one authenticated client/token while valid. Data's default five-minute
+Reuse one authenticated client/token while valid. A new isolated client with
+no usable retained token may make its first issuance under the same gates and
+one persisted, instance-bound attempt; it need not falsely prove another
+client's bearer expired. Establish this from the client's own state, not an
+arbitrary caller flag or unknown token store. Preserve a lost/unknown issuance
+as consumed/pending; restart or a mid-batch 401/403 never grants another POST.
+This clarifies initial issuance, not relaxed timing, owner checks or retries.
+Data's default five-minute
 cross-process guard controls only a fresh token POST, not token lifetime/
 existing-client work/orchestration. The snapshot observer uses the same timing
 file with an explicit 60-second floor, per the official KIS one-per-minute

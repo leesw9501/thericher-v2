@@ -21,8 +21,13 @@ in preparation. NEW owner scope current-us19-minute-runtime-binding-20261103-v1
 under same absolute data artifact root,900ownedSUM2700elapsed from dispatch:
 existing Paper Data client/protected valid token/shared timing and exact same
 cache/account ownership, quiet finite host/cursors/native producer-consumer.
-At most4 scoped market GETs+1POST only proven invalid token/gate; no account/
-order/live/rawenv or long collector deployment before actual adoption.
+At most4 scoped market GETs+1POST for invalid local token OR initial isolated
+client without usable retained token, one persisted instance-bound attempt
+under unchanged issuer/timing gates. No false global-invalidity claim or token
+store search; unknown issuance stays consumed,401/403 no reauth. Claude
+SOUND_WITH_LIMITS runtimeRoot/CLAUDE-AUTH.json. Old adapter immutable; changed
+initial-client path needs native proof. No account/order/live/rawenv or long
+collector deployment before actual adoption.
 Current Open45/H3 work does not depend on this acquisition package.
 
 Retained completed input: coherent19daily ACTUALLY COMPLETE at21:32:08.360115,
