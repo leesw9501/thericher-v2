@@ -300,12 +300,29 @@ runtimeRoot/PARENT-ACTUAL.json. Quiet hostPID39544/birthNov3UTC01:13:23.904539
 launched with explicit non-secret environment whitelist/CreateNoWindow/Hidden;
 no Live values read/routed. This is one finite run, no Task/service registration.
 Worker7200s/host7260s/aggregate14550SUM/E2E10800s/800GETmax/665planned/1POST/
-0retry. Actual progress01:14:00.608 RUNNING:8GETaccepted/1POST/960unique rows/
-0accepted failures/pendingnull/ETAunknown. Not complete or training promotion.
+0retry. Actual terminal01:14:12.690 SCOPED_UNAVAILABLE:11GET/1POST/10accepted
+pages/1200unique rows/1failure/pendingGET/UNKNOWN_EXACT_REQUEST_RECOVERY_REQUIRED.
+All ten heads succeeded; no historical page accepted. Host/worker closure
+97.684494ownedSUM/Jobs joined+empty; Parent independently found exacthost39544
+absent01:19:36. Native exit0 means graceful scoped stop, not plan completion.
+Cursor failure projection is KisPaperMarketDataError at SDK
+_validate_historical_minute_page line1781 (continuity predicate), not evidence
+of quota/auth failure or an identified historical floor. Exact predicate unknown.
+Original actual-once/cursor/timing marks remain immutable.
 Canonical bytes: M/us_equities/kis_paper_market/current-us19-minute-gap-batch-
 20261103-v1; fresh heads quarantined, old frozen panels/reserved inputs unchanged.
-Copernicus owns count-safe progress/closure, never launch a second collector or
-reset actual-once, timing marks, unknown pending outcome or original cursor.
+Copernicus owns NEW bounded first-cause/continuation probe at
+A/data/current-us19-minute-continuation-recovery-20261103-v1,
+600prepSUM1800elapsed from receipt. At most4marketGET/1initialPOST, frozen actual
+runtime ceilings/unchanged quiet owner+token gates/native diagnostic parser/
+short Claude challenge before delegated once probe. Official KIS docs require
+next KEYB from the previous returned bar minus1orNminutes; arbitrary historical
+seeds are not promised. Test proper head->continuation and categorical predicate
+flags, never accept newer fallback bars as historical support. This does not
+reset/retry the old665plan, reopen a financial request or release a reservation.
+No automatic massive retry; DataGET is idempotent, original evidence preserved.
+Official continuation source (inspected Nov3UTC01:23):
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_time_itemchartprice/inquire_time_itemchartprice.py
 
 Open45 numerical comparison completed Nov3UTC00:42:44:
 Source37e58ff4/releaseOPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry.
@@ -331,6 +348,22 @@ Ohm source-only root current-rolling-intraday-expert-kernel-preparation-
 20261103-v1 has600ownedSUM1800elapsed from receipt; no market projection or
 GPU fitting until exact schema/data/model/trial caps qualify. Completed fits
 and forecasts stay closed; more overlapping rows are not independent samples.
+
+Parent chose/delegated ONE Phase45 next campaign, not another old fit:
+A/research/current-phase45-engine-development-20261103-v1 and separate
+A/research/current-phase45-input-staging-20261103-v1. Earliestprep01:03:46,
+3000ownedSUM7200elapsed/hard03:03:46 includes oldStrategy600/consumer120,
+newStage240/native360/GPUfit600/forecast180/readout180/audit600/contingency120.
+Data stage once240SUM900elapsed/hardmin(receipt+900,01:45); no new acquisition.
+Chosen9M5 context/known phase feature17, fiveFITorigins45..105min/max600keys,
+INNER/DEV onlyoriginal origin0/40+40, equalDATE/origin/stock loss. Original
+once-session10:17..11:17 cash book and carried old baselines unchanged.
+One new CUDA LSTM32/max512updates/120optimizersec/INNERpatience48/LRschedule/
+bestcheckpoint;1fit1forecast3newviews/0marketretry, oldmetrics carried only.
+Exact staging/source/nativeCUDA/checkpoint/score/book/Claude/headroom must
+qualify before conditional once; no extra Parent approval. No actual new fit
+claimed yet. Strongestkill BEST0/noINNERimprovement; growth>oldLSTM+samegrossEW
+and DD<=1.5EW. Adaptive reused-date development, no independent alpha/Paper swap.
 
 ## Owned Duties And Operations
 

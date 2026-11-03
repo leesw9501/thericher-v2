@@ -2,6 +2,16 @@
 
 ## Current Resource Coordination
 
+Nov3UTC01:29: Harvey coordinates NEW Phase45 single GPU fit, conditional after
+exact staged Data/source/native CUDA/checkpoint/score/book/Claude/headroom.
+Root current-phase45-engine-development-20261103-v1; total3000SUM7200elapsed
+fromearliest01:03:46/hard03:03:46, partitions in NEXT_CODEX_GOAL. DataStage240,
+original600Strategy+120consumer retained, old late metadata not regraded.
+Onefit1forecast3views/no marketretry;max512updates/120optimizersec/patience48,
+not a request to fill GPU artificially. No actual new fit claimed from dispatch.
+Old fits/forecasts and leases stay closed; +4GiB desktop reserve/current exact
+PID/start/lease/headroom before native or market worker, no user-app allowlist.
+
 Nov3UTC01:10: Open45 numerical2fits/2forecasts/15views COMPLETE. Actual CUDA
 LSTM34updates/BEST10/INNERearlystop/.269500optimizersec/.549433fitwallsec,
 80.13MBallocated/81.79MBreserved. Small120FITrows explain brief GPU use, not

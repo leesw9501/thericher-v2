@@ -2,6 +2,21 @@
 
 ## Current Results And Next
 
+Nov3UTC01:29: ONE Phase45 campaign conditionally delegated at
+D:/thericher-v2/model-artifacts/research/current-phase45-engine-development-20261103-v1.
+Earliestprep01:03:46/3000ownedSUM7200elapsed/hard03:03:46. Exact partitions in
+NEXT_CODEX_GOAL.md, includes old600Strategy+120consumer/no refund; source-only
+consumer metadata21sec late stays recorded, actual native within its clock.
+New staging once at current-phase45-input-staging-20261103-v1/240SUM900elapsed.
+Chosen45min9M5/17features inclknown phase, fiveFIT origins/max600rows,
+INNER/DEV originalorigin0/40+40. EqualDATE/origin/stock; original economic clock.
+One CUDA LSTM32 fit/max512updates/120optimizersec/patience48/LRschedule/best
+restore, one forecast/3newviews/no marketretry. Oldmetrics carried, no oldmodels.
+Native actual producer/consumer+CUDA/checkpoint/score/book/Claude/resource
+qualification before delegated once, no extra Parent approval. No actual fit
+claimed yet. Primary beats savedLSTM andEW/net10/DD<=1.5EW/BEST0kills; adaptive
+reusedDATE development only. Data API recovery does not gate this old-data task.
+
 Nov3UTC01:10 update: Open45 comparison and fixed composition are COMPLETE.
 Source37e58ff4/OPEN45_TWO_FIT_ONCE,2fits/2forecasts/15views/0retry;
 LSTM CUDA34updates/BEST10/INNERearlystop/.269500optimizersec,80.13MBallocated.

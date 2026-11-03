@@ -2,19 +2,32 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC01:17: ACTUAL finite breadth collection RUNNING under Copernicus:
+Nov3UTC01:27: ACTUAL finite breadth collection CLOSED_SCOPED_UNAVAILABLE:
 D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1/actual-once.
 Parent adopted Source3e0a4b4b/28pins0mismatch/NATIVE74/closure874bad78,
 834.315762integrationSUM (old failures preserved), release48c3f5c5.
 Quiet hostPID39544/birthNov3UTC01:13:23.904539, safe explicit environment;
 one owned worker/665planned/800GETmax/1POST/0retry/7200worker/14550SUM.
-Progress01:14:00:8acceptedGET/1POST/960unique rows/0failures/pendingnull/
-ETAunknown, not complete or training promotion. Actual cache:
+Terminal01:14:12:11GET/1POST/10accepted heads/1200unique rows/1failure/
+pendingGET/UNKNOWN_EXACT_REQUEST_RECOVERY_REQUIRED; no historical page accepted.
+97.684494ownedSUM/Jobsjoinedempty/exacthost39544freshabsent01:19:36.
+SDK KisPaperMarketDataError historical continuity predicate line1781, not a
+proven APIquota/auth failure or identified source floor. Exact predicate unknown.
+No complete-plan/training promotion. Actual cache:
 D:/market_data/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
 No Task/service or financial endpoints. No second launch/reset/unknown cursor
 release. Copernicus monitors count-safe progress/terminal/source/Job closure.
-Source-only initialization failures were repaired before actual HTTP, not KIS
-credential/provider failures. Fresh heads quarantined; original inputs intact.
+Source-only initialization failures were repaired before actual HTTP; the later
+historical-page failure above is separate. Fresh heads quarantined.
+NEW Copernicus scope current-us19-minute-continuation-recovery-20261103-v1,
+prep600SUM1800elapsed, max4GET/1initialPOST once after explicit actual runtime
+caps/quiet original guards/native diagnostic parser/Claude/source freeze.
+Official KEYB is previous returned lastbar-minus1orNminutes, not guaranteed
+arbitrary historical date. Test proper continuation/categorical failure flags;
+never relabel newer fallback as old history. No old665retry/reset, original
+pendingGET evidence preserved; idempotent DataGET is not a financial reservation.
+Official continuation source:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_time_itemchartprice/inquire_time_itemchartprice.py
 The initial preparation description below is superseded by this actual run.
 
 Retained Open45 actual input DATA_READY_CLOSED00:30:55 at

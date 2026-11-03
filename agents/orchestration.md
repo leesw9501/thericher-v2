@@ -22,27 +22,34 @@ Primary strategies: intraday plus one-to-several-session swings.
  Fresh <=3min release and positive preparer/original-runtime closure must
  precede direct launch. No current private read, Task Run, generic ancestor
  exemption, all-Data quiescence or new GOOGL chain.
-- Data/Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c monitors ACTUAL finite
+- Data/Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c original finite batch CLOSED:
  A/data/current-us19-minute-runtime-binding-20261103-v1/actual-once.
  Parent adopted Source3e0a4b4b/native74/closure874bad78/release48c3f5c5;
- quiet hostPID39544/birthNov3UTC01:13:23.904539. Progress01:14:00 RUNNING:
- 8acceptedGET/1POST/960unique rows/0accepted failures/pendingnull/ETAunknown.
+ quiet hostPID39544/birthNov3UTC01:13:23.904539. Terminal01:14:12:
+ 11GET/1POST/10heads/1200rows/1failure/pendingGET/SCOPED_UNAVAILABLE.
  665planned/800GETmax/1POST/0retry/7200worker/7260host/14550SUM/10800E2E.
  Cache M/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
- One owned collector only; no duplicate launch/reset/unknown cursor release.
+ Host/workerclosed97.684494SUM/Jobsjoinedempty/host39544freshabsent. SDK
+ historical continuity predicate failed, not proven APIquota/sourcefloor.
+ NEW current-us19-minute-continuation-recovery-20261103-v1:600prepSUM1800elapsed,
+ max4GET/1initialPOST after actual source/caps/native/Claude/quiet ownership.
+ Proper last-returned-bar-minus1 continuation, no massive665retry or reset.
  Fresh heads remain quarantined, not selection-ready/PIT/finality/CA proof.
 - Engine/soleSteward Harvey01a19e80-1586-7fe2-9587-9b44f510842b completed
- Open45 and its fixed composition. Next coordinate ONE early-phase rolling-
- context/explicit-phase/equalDATE source mechanism with Strategy. Prefer
- original once-session evaluation rather than extra funded sleeves. No next
- market projection/fit/forecast released yet; completed models never repeated.
+ Open45/fixedcomposition and now owns current-phase45-engine-development-
+ 20261103-v1. ONE17feature LSTM32/five earlyFIT phases/original once-session
+ INNER/DEV,1fit1forecast3newviews after exact staging/nativeCUDA/Claude/source/
+ resources qualify.3000SUM7200elapsed from01:03:46/hard03:03:46, oldprep
+ debits included. Conditional once already delegated, no extra Parent wait.
+ No actual new fit claimed; old models/forecasts/replays never repeated.
 - Strategy/Ohm01a19ea9-7bd8-7042-adf9-38ba566aba95 owns
  A/research/current-rolling-intraday-expert-kernel-preparation-20261103-v1,
- 600ownedSUM1800elapsed. Retained25days/stock-local contexts/origin IDs/
- separate INPUT-TARGET-HELD; invented actual producer/parser/consumer only.
- Direct schema handoff to Engine; more overlapping rows are not independent
- dates. Resolve the phase-conditioned45min vs60min4-origin proposals into
- ONE frozen contract, not hidden trial multipliers.
+ 600ownedSUM1800elapsed is now CLOSED/native36. ONEphase45 contract selected
+ before source freeze, no60min4-origin parallel family. Ohm now stages once at
+ current-phase45-input-staging-20261103-v1/240SUM900elapsed/hardmin(receipt+900,
+ 01:45). Retained25days/max600FIT40INNER40DEV/source-native strict roles and
+ original DEV parity, no models/GPU/API. Direct qualified handoff to Engine;
+ more overlapping rows are not independent dates or extra funded sleeves.
 - Parent integrated minimal H3 Korean display, financialUNKNOWN/readclocknull,
  old H20/GOOGL digests and legacy publisher preserved. Serial259/full19890PASS;
  current Dockerbe48 remains unchanged, local /health actually200/ok. Tracked
@@ -88,8 +95,9 @@ Detailed immutable evidence and recoverability are in HANDOFF.md.
 
 ## Throughput Review
 
-01:15: useful Data collection is actually running; research, future reader
-preparation and source integration are independent. No foreground market wait.
+01:27: Data collected ten heads, then its historical cursor failed locally;
+bounded diagnosis, new research and future reader preparation are independent.
+No foreground market wait or global unknown-order hold from an idempotent GET.
 Current reversible improvement: consume each producer's exact API/RESULT path,
 not filename globs. Parent's FINAL/CALLBACK/AUDIT-only filter missed already
 completed RESULT.json audits and wrongly suggested agent idleness; corrected.

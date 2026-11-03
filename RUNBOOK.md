@@ -106,10 +106,17 @@ Current data suffice. US19 broader gap collection is separate runtime binding
 at D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1;
 preparation is now adopted: Source3e0a4b4b/native74/release48c3f5c5 actual quiet
 hostPID39544/birthNov3UTC01:13:23.904539. Exact runtimeRoot/actual-once only;
-01:14:00 progress8acceptedGET/1POST/960unique rows, RUNNING/ETAunknown.
+01:14:12 terminal11GET/1POST/10heads/1200rows/1failure/pendingGET,
+SCOPED_UNAVAILABLE. Host/worker closed97.684494SUM, host39544freshabsent.
+SDK historical continuity predicate failed, not a proven quota/history floor.
 665planned/800cap/2h/zero retry/one retained RAM token. Cache:
 D:/market_data/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
-Copernicus owns safe progress and closure. Do NOT run its launch command again,
+Copernicus owns bounded first-cause continuation probe at
+D:/thericher-v2/model-artifacts/data/current-us19-minute-continuation-recovery-20261103-v1,
+max4GET/1initialPOST/native+Claude+exactsource/caps before delegated once.
+Previous returned last-bar-minus1 is the official continuation contract;
+arbitrary historical seed support remains unknown. Original batch stays stopped.
+Do NOT run its launch command again,
 reset actual-once/unknown cursor or infer training eligibility. No current
 GPU training inferred from these boards; exact callbacks own current state.
 

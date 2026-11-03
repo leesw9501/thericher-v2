@@ -84,10 +84,20 @@ request substitution, profit refill or stale-point retag. Preserve %SystemDrive%
  Runtime Source3e0a4b4b/NATIVE74/closure874bad78 ACTUALLY adopted; Parent release
  48c3f5c5 launched quiet hostPID39544 atNov3UTC01:13:23.904539 with safe explicit
  environment. One batch only/worker7200s/14550SUM/800GETcap665planned/1POST/
- 0retry; no Task/service. Progress01:14:00 RUNNING8acceptedGET/1POST/960unique
- rows/0acceptedfailures/ETAunknown. Cache M/us_equities/kis_paper_market/
- current-us19-minute-gap-batch-20261103-v1. Copernicus monitors counts/closure;
- no duplicate launch/reset or qualification of fresh heads as selection input.
+ 0retry; no Task/service. TERMINAL01:14:12 SCOPED_UNAVAILABLE11GET/1POST/
+ 10accepted heads/1200unique rows/1failure/pendingGET. No historical page
+ accepted; SDK continuity predicate failed, exact condition unknown. Host/
+ workerJobsclosed/97.684494SUM/exacthost39544freshabsent; exit0 is not complete.
+ Cache M/us_equities/kis_paper_market/current-us19-minute-gap-batch-20261103-v1.
+ Original actual-once/cursor/marks immutable, heads not selection-ready.
+ Copernicus owns NEW current-us19-minute-continuation-recovery-20261103-v1:
+ prep600SUM1800elapsed, once4GETmax/1initialPOST with actual ceilings/source/
+ quiet ownership/native diagnostic consumer/Claude frozen before dispatch.
+ Use previous returned last-bar-minus1 continuation per official source,
+ not unproven arbitrary historical seeds. Record categorical continuity/clock
+ flags/counts only, preserve old request; no665massretry/financial reservation
+ semantics or fresh-head qualification. Delegated once after exact readiness,
+ no extra Parent/operator approval wait.
 - Data actual coherent19daily DATAREADY2d5e183b/manifest122b369c/closure9a5bd544
  and Parent2371+19currentcells remain complete. Reserved NAS8 Nov3/4UTC21:10
  and frozenNov4UTC21:35 eval stay separate, excluded from new selection.
@@ -145,6 +155,25 @@ request substitution, profit refill or stale-point retag. Preserve %SystemDrive%
  plus known phase/equalDATE may be evaluated at original once-session clock,
  not hidden multiple-funded sleeves. Exact schema/data/model/trial caps before
  numerical release; no old fits/forecasts/replays or reserved-data selection.
+
+ Phase45 is NOW the single chosen next campaign, conditional numerical authority
+ delegated: original earliest prepNov3UTC01:03:46, total3000ownedSUM7200elapsed/
+ hard03:03:46. Partitions oldStrategy600+oldEngineconsumer120+DataStage240+
+ EngineSource/native360+GPUfit600+forecast180+readout180+audit600+prefitnative
+ contingency120=3000; old metadata lateness/debits retained, no clock reset.
+ Engine root A/research/current-phase45-engine-development-20261103-v1;
+ Data root A/research/current-phase45-input-staging-20261103-v1 (240SUM/
+ 900elapsed/hardmin(receipt+900,01:45)). Source36native f73e5221/actual named
+ consumer66b8b791, ONE9M5/45min encoder with known phase feature17; FIT origins
+ 45/60/75/90/105min max600rows, INNER/DEV origin0 only40/40, equalDATE/origin/
+ stock loss and original10:17..11:17 economic clock. No extra funded sleeves.
+ One new CUDA LSTM32 fit/max512updates/120optimizersec/INNERpatience48/
+ LR schedule/best restoration; BEST0/noINNER improvement kills candidate.
+ Exactly1fit1forecast1readout3newviews/0marketretry; carry old metrics unchanged.
+ Primary net10>savedLSTM1.216960 ANDsamegrossEW1.092579, DD<=1.5*.815521.
+ Actual strict new Data stage/nativeCUDA/checkpoint/score/book smoke, scoped
+ Claude and fresh GPU/lease/headroom before delegated once release. No extra
+ Parent approval wait after qualification, no claim actual fit has started.
 
 - Monitor H3 minimal tracked display integration: exact public AMD first-leg
  mapping, qualified read clock null, financialUNKNOWN always; preserve old
