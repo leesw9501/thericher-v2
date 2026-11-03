@@ -2,39 +2,40 @@
 
 ## Current Source Handoff
 
-Nov3UTC06:56. Ohm owns new bounded proposal, direct handoff to Engine/Harvey:
-A/research/current-short-swing-cost-risk-proposal-20261103-v1,
-300SUM1800elapsed. One useful nonduplicate cost/turnover/downside hypothesis
-using actual data; registry and strongest kill first. Official primary-source
-research when needed, concrete executable consumer rather than a reading list.
-No market fits/forecasts/readout/private/Task in proposal preparation.
-That proposal is now CLOSED f77a3469/native16/181.730771upper, exact kernel/API
-directly adopted by Confucius's CPU risk campaign. No source-only profit claim.
-NEXT current-foundation-h3-meanrank-paper-proposal-preparation-20261103-v1,
-500SUM3600elapsed: pure two fresh exact C60/H3 score packets -> fixed meanrank
-Top4/original quarters -> existing untrusted project proposal consumer. Exact
-same input/asof/routes/source-mode/clock, both trusted dated model refs and
-fresh runtime binding required. Invented packet smoke only,0models/market/
-fits/forecasts/readouts; no old saved-score retag, Paper swap or broker authority.
+Nov3UTC10:20. Ohm owns
+A/research/current-us-cash-h3-executable-proposal-handoff-preparation-20261103-v1,
+<=500SUM3600elapsed/0fits0forecasts0marketviews. Consumer: existing fixed
+foundation meanrank proposal through new actual full18 native weights profile.
+Invented producer->consumer smoke now; final SDK/source freeze only after
+Parent final integration commit/verification callback. No repo edits/Git/
+broker/private/Task, fake old NAS-only type or financial deployment.
 
-Closed saved-score studies:
-- Fixed chart exit647d9bf6/API d8508d9b/native35 is a pure nextOPEN proposal,
-  never an intrabar stop fill/current deterministic-risk change.
-- TimesFM exit composition af193e38/e053ffd2:0modelcalls/1CPUreadout,
-  net10+12.794580pct/DD12.326755, fails growth and risk. Original namespace
-  collision retained, new11Windowschecks+27numericproofs;700.878399upper.
-- TimesFM+Chronos fusion3fdd8285/RESULT76fc275c/native24:
-  mean-rankTop4 net10+27.295698pct/DD7.353924, standalone developmentPASS;
-  consensus original quarters+17.627845/DD6.304031, own matched-EW riskFAIL.
-  0fits/forecasts/restores/1CPUreadout9newviews+24carried/346.307972upper,
-  actorsclosed. No threshold/weight grid/automatic winner/independent alpha.
+Prior pure handoffs CLOSED:
+- meanrank8f740232/APIcd4c2d4e/native30/48pins/236.089upper;
+- route-clock63d19514/API251d9bbb/native89/305.875730upper;
+- weights contributioncb81a32f/PATCH180b2da8/21pins/639.881251upper,
+  applied by Parent, do NOT apply again.
+New profile:17exact NAS/NYS stocks plus CASH slot17, exact binary64/Fraction
+residual, no normalization; prior-close features and weights observed BEFORE
+entry OPEN; inclusive3 firstOPEN5/thirdPRE_CLOSE15 is explicit NON_PARITY with
+research thirdCLOSE. Old elapsedH3 meanings and current H3 deployment unchanged.
+Parent integrates native risk/account/session and boundary regressions.
 
-All are adaptive reused2026/modelled-cost/close-only-DD comparisons; not
-independent replication, actual Paper PnL or intraday risk. Do not rescue
-failed old thresholds or repeat completed model calls.
-Prior93 view75493RTH/249contexts/25same dates is available; explicit vintage
-seams/held masks and source rights remain. Harvey owns fitting/targets/splits/
-costs/interpretation; Strategy owns source proposals, not financial authority.
+Closed science:
+- cost-risk proposalf77a3469/native16/181.730771upper was consumed by CPU
+  riskhead039c7399, not a reading-list artifact.
+- chart exit af193e38/e053ffd2:+12.794580/DD12.326755, growth+riskFAIL.
+- TimesFM+Chronos fixed fusion3fdd8285/76fc275c/native24:
+  meanrankTop4+27.295698/DD7.353924 standalonePASS;
+  consensus original quarters+17.627845/DD6.304031 own riskFAIL.
+  0fits/forecasts/restores/1CPUreadout9newviews+24carried,346.307972upper.
+All reused2026/modelled-cost/close-only-DD, not independent alpha or broker PnL.
+No outcome-driven grid/threshold rescue or old packet retag.
+
+Actual minute view75493RTH/249contexts/SAME25dates, seams/withheld masks and
+publication limitations remain. Engine owns target/split/cost/fits and meaning;
+Strategy supplies executable mechanisms, not financial authority or allocation.
+Earlier sections below are frozen history, not current running assignments.
 
 ## Frozen Strategy Index
 

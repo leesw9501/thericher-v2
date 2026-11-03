@@ -10,6 +10,7 @@ from thericher_v2.market.resample import SessionWindow
 
 MODEL_PAPER_20_SESSION_PROFILE = "model-proposal-nas-20session-2026-v1"
 MODEL_PAPER_5_SESSION_PROFILE = "model-proposal-nas-5session-2026-v1"
+MODEL_PAPER_3_SESSION_PROFILE = "model-proposal-us-inclusive3-2026-v1"
 MODEL_PAPER_V1_PROFILE = "model-proposal-nas-v1"
 MODEL_PAPER_POST_OPEN_PRIOR_SESSION_PROFILE = "model-proposal-nas-post-open-prior-session-v1"
 MODEL_PAPER_ELAPSED_H1_PROFILE = "model-proposal-nas-elapsed-h1-2026-v1"
@@ -73,6 +74,10 @@ def validate_model_paper_horizon(first, last, *, profile):
         raise ValueError("model_sessions_invalid")
     if not first.open_ts < first.close_ts < last.open_ts < last.close_ts:
         raise ValueError("model_session_clocks_invalid")
+    if profile == MODEL_PAPER_3_SESSION_PROFILE:
+        # Three inclusive sessions are entry e through e+2, not elapsed e+3.
+        _validate_elapsed_sessions(first, last, 2)
+        return
     if type(profile) is str and profile in _ELAPSED_HORIZONS:
         _validate_elapsed_sessions(first, last, _ELAPSED_HORIZONS[profile])
         return

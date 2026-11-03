@@ -2,41 +2,48 @@
 
 ## Current Resource Coordination
 
-Nov3UTC08:18. Confucius01a1a03a-0fe3-7770-986a-b769954c52f2 is sole GPU
-coordinator after Harvey's LLM-capacity handback. Existing clocks/debits were
-not restarted. Project first useful GPU priority includes user-app co-tenancy;
-measure free/projected VRAM+desktop reserve, never kill user apps or age-reclaim
-unknown/live leases. No dummy work or forced duration for utilization.
+Nov3UTC10:20. Confucius is sole GPU coordinator; review write set is closed.
+Project remains first useful-GPU priority with user-app co-tenancy. Measure
+free/projected VRAM+desktop reserve, never kill apps or age-reclaim unknown
+leases. No dummy workload, forced duration or completed-training repeat.
 
-Latest actual work is CLOSED:
+Actual closed:
 - CPUtree039c7399/c595452e:1fit.212922s/BEST246/294steps/1forecast12views,
-  all-in674.962278conservativeupper (314.962278subtotal+360frozenreserves).
-  CPU was appropriate, no GPU used. Modest selective developmentPASS.
+  674.962278upper includes original frozen source/audit reserves. CPU appropriate.
 - TCN8718410e/5a3ca7b9:1CUDAfit18epochs792updates/BEST4,
-  182.707543wall/90.084691optimizersec/timepreflight, no convergence.
+  182.707543wall/90.084691optimizersec/timepreflight, not convergence.
   81.227MBallocated98.566MBreserved/native11/audit66/944.587592upper.
-- GRU576cb605/5f24a503:1CUDAfit81epochs3564updates/BEST33/INNERearlystop48,
+- GRU576cb605/5f24a503:1CUDAfit81epochs3564updates/BEST33/INNERpatience48,
   11.706983wall/9.661050optimizersec/151.124MBallocated247.464MBreserved,
-  native11/audit67/Ruff/288.375985upper.
-Both neural campaigns:1coldforecast12views/0numericalretry/21recordedCLI
-identities absent/positiveCID+leaseclosure. CPUgrowth primaryFAIL, not repaired
-by rerunning or extending old caps. The GPU39pct/2412of24564MiB snapshot was
-co-tenant observation during TCN, not an isolated benchmark.
+  native11/audit67/288.375985upper.
+Both neural primary CPUgrowthFAIL; all actual actors/CIDs/leases closed.
+Observed GPU39pct/2412of24564MiB duringTCN was co-tenant, not isolated timing.
+- Quantile839520af:0modelcalls/forecast/readout, null image entrypoint failed
+  before Python. FIRST-CAUSEb130b345/FINAL-CALLBACK6326b366/506.532775SUM,
+  positive nativeCID/Job/lease closure. No oldretry, economic result UNKNOWN.
 
-Current next is one Chronos lower-quantile uncertainty-proxy family:
-A/research/current-chronos2-h3-lower-quantile-risk-development-20261103-v1,
-900SUM3600elapsed/0fits/1newq0.1forecast/<=12views/0retry. Exact trusted dated
-checkpoint/runtime, actual new output API and native/VRAM/lease before launch.
-No completed median forecast replay; batch count and logical call both retained.
-After it closes, synthesize rather than manufacture a GPU queue on reused data.
-Short and longer queues were exercised; a900s ceiling did not force GRU to run
-past INNER earlystop. No current GPU process inferred from this MD.
+Separate successor now CLOSED:
+A/research/current-chronos2-h3-coherent-quantile-recovery-development-20261103-v1,
+<=1200activeSUM5400elapsed/ONEnewlogicalGPUforecast/<=12costviews/0fit0retry.
+Actual trusted entrypoint/API/producer-consumer smoke, source/plan/caps/
+resource/lease before launch. Same-call coherent p10/p50 width; no replay of
+completed median packets or changed oldcaps. Numerical study only if science
+usable and new short review adjudicated; closed priorREVISE remains.
+Actual10ab2777/bc7bd1c8/callback5f63f54a:1GPUforecast22forwards12views,
+0fits0retry,490.108245upper/27PIDidentities2CIDsleasesclosed.
+GrowthFAIL vs scalar/CPU; numerical family stopped, no architecture queue.
 
-Earlier TCN91126913 sub-bound overrun292.700357>285, TimesFM bootstrap/debit
-limitations and all trial/holdout custody remain immutable. Reserved NAS8Nov3/4
-and frozenNov4UTC21:35 outcomes stay excluded. Paper reliability preempts at a
-safe checkpoint; no profitability permission gate. Source model/claims and
-actual deployments remain distinct.
+Next useful GPU work is source-only future meanrank producer preparation,
+current-full17-h3-future-meanrank-producer-preparation-20261103-v1:
+1200SUM5400elapsed/0marketforecasts0fits0replays, at most one tiny invented
+native handoff per already-trusted model runtime under actual headroom/lease.
+Native bootstrap/schema tests charge their actual forwards/restores/resources;
+they are not another market experiment or completed training repeat.
+
+No running GPU process inferred from this stateboard or queued source.
+Old TCN fitwall/subcap and TimesFM bootstrap limitations remain immutable.
+NAS8Nov3/4 and frozenNov4UTC21:35 outcomes excluded. Execution reliability
+preempts at a safe checkpoint; no research profitability permission gate.
 
 ## Frozen Resource Index
 

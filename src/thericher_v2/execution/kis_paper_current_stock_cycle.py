@@ -59,11 +59,13 @@ from thericher_v2.research.model_paper_weights import (
     MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
     MODEL_PAPER_WEIGHTS_PROFILE,
     MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
+    MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
     ModelPaperWeightsMetadata,
     model_paper_cash_h3_window,
     model_paper_early_exit_window,
+    model_paper_us_cash_h3_ops_window,
     model_paper_weights_horizon_profile,
     validate_model_paper_weights_input,
 )
@@ -111,6 +113,7 @@ class StockCycleProfile(Enum):
     MODEL_WEIGHTS_NAS_H5 = MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE
     MODEL_WEIGHTS_NAS_CASH_H5 = MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE
     MODEL_WEIGHTS_US_H5 = MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE
+    MODEL_WEIGHTS_US_CASH_H3_OPS = MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
     MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3 = MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
 
 
@@ -121,6 +124,7 @@ _MODEL_INPUT_TYPES = {
     StockCycleProfile.MODEL_WEIGHTS_NAS_H5: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_US_H5: ModelPaperWeightsInput,
+    StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3: ModelPaperWeightsInput,
 }
 
@@ -131,12 +135,24 @@ _MODEL_WEIGHT_PROFILES = frozenset(
         StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
         StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_H5,
         StockCycleProfile.MODEL_WEIGHTS_US_H5,
+        StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
         StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3,
     )
 )
 _H5_NO_ORDER_SIZING_REASONS = frozenset({"target_already_satisfied", "whole_share_capacity_zero"})
+_US_WEIGHT_PROFILES = frozenset(
+    (
+        StockCycleProfile.MODEL_WEIGHTS_US_H5,
+        StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
+    )
+)
+# Retain the legacy name for the shared native no-order completion protocol.
 _H5_STOCK_PROFILES = frozenset(
-    (StockCycleProfile.MODEL_WEIGHTS_NAS_H5, StockCycleProfile.MODEL_WEIGHTS_US_H5)
+    (
+        StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+        StockCycleProfile.MODEL_WEIGHTS_US_H5,
+        StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
+    )
 )
 _H5_STOCK_PROFILE_VALUES = frozenset(profile.value for profile in _H5_STOCK_PROFILES)
 
@@ -488,7 +504,7 @@ def model_paper_pointer(policy_ref):
 
 def _target_instrument(target, profile):
     symbol, binding = target.proposal.symbol, target.receipt.instrument_binding_ref
-    if profile is StockCycleProfile.MODEL_WEIGHTS_US_H5:
+    if profile in _US_WEIGHT_PROFILES:
         _check(target.route in (symbol + "/NAS", symbol + "/NYS"), "cycle_target_invalid")
         return KisPaperUsStockInstrument(symbol, binding, target.route.rsplit("/", 1)[1])
     return KisPaperStockInstrument(symbol, binding)
@@ -552,6 +568,9 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
         "cycle_session_invalid",
     )
     _check(type(value.targets) is tuple, "cycle_target_invalid")
+    if profile is StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS:
+        window = model_paper_us_cash_h3_ops_window(value)
+        _check(window.entry_start <= at < window.entry_end, "cycle_session_invalid")
     if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3 and value.targets:
         window = model_paper_cash_h3_window(value)
         _check(window.entry_start <= at < window.entry_end, "cycle_session_invalid")
@@ -568,7 +587,7 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
         slots.add(target.slot)
         _check(
             (target.route in (p.symbol + "/NAS", p.symbol + "/NYS")
-             if profile is StockCycleProfile.MODEL_WEIGHTS_US_H5
+             if profile in _US_WEIGHT_PROFILES
              else target.route == p.symbol + "/NAS")
             and p.market == "US"
             and p.action == "enter"
@@ -626,7 +645,7 @@ def _model_record_input(
             and args["request_id"].startswith("model-"),
             "cycle_input_binding_mismatch",
         )
-        if profile is StockCycleProfile.MODEL_WEIGHTS_US_H5:
+        if profile in _US_WEIGHT_PROFILES:
             _validate_model_input(value, value.entry_session.open_ts, profile)
             selected = [t for t in value.targets if t.proposal.symbol == args["instrument"].symbol]
             _check(
@@ -909,7 +928,7 @@ def _h5_no_order_absent(root, record, active, binding, replayed, proofs, project
     return True
 
 
-def _complete_h5_no_order(root, record, pointer, at):
+def _complete_h5_no_order(root, record, pointer, at, *, clock=None, entry_window=None):
     """Retire only positively recorded sizing skips, never an inferred flat slot."""
     active = record["active"]
     if _h5_no_order_value(record, active) is None:
@@ -943,6 +962,10 @@ def _complete_h5_no_order(root, record, pointer, at):
                 active["input_ref"]: active,
             },
         }
+        if entry_window is not None:
+            at = require_utc(clock())
+            if not entry_window.entry_start <= at < entry_window.entry_end:
+                return False
         _save(pointer, closed)
         record.update(closed)
         return True
@@ -1228,6 +1251,7 @@ def run_kis_paper_current_stock_cycle(
         scoped = current20 or model_profile
         early = profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT
         cash_h3 = profile is StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3
+        windowed_h3 = cash_h3 or profile is StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS
         if early:
             _check(callable(configure_early_exit), "cycle_configuration_invalid")
         if cash_h3:
@@ -1439,6 +1463,13 @@ def run_kis_paper_current_stock_cycle(
                     record["active"]["model_input"] = _pack(value)
                 if profile in _H5_STOCK_PROFILES:
                     record["active"]["entry_no_order"] = {}
+                if windowed_h3:
+                    initial_window = (
+                        model_paper_cash_h3_window if cash_h3 else model_paper_us_cash_h3_ops_window
+                    )(value)
+                    at = require_utc(clock())
+                    if not initial_window.entry_start <= at < initial_window.entry_end:
+                        return CurrentStockCycleOutcome("hold", "outside_declared_session")
                 _save(pointer, record)
             active = record["active"]
             targets = _unpack(active["targets"])
@@ -1471,16 +1502,19 @@ def run_kis_paper_current_stock_cycle(
             if session is None or not session.open_ts <= at < session.close_ts:
                 return CurrentStockCycleOutcome("hold", "outside_declared_session")
             cash_window = (
-                model_paper_cash_h3_window(
+                (model_paper_cash_h3_window if cash_h3 else model_paper_us_cash_h3_ops_window)(
                     _unpack(active["model_input"]),
                     operational_session=session if side == "sell" else None,
-                ) if cash_h3 else None
+                ) if windowed_h3 else None
             )
-            if cash_h3 and not (
-                cash_window.entry_start <= at < cash_window.entry_end
-                if side == "buy" else cash_window.exit_start <= at < cash_window.exit_end
-            ):
-                return CurrentStockCycleOutcome("hold", "outside_declared_session")
+            if windowed_h3:
+                window_start, window_end = (
+                    (cash_window.entry_start, cash_window.entry_end) if side == "buy"
+                    else (cash_window.exit_start, cash_window.exit_end)
+                )
+                at = require_utc(clock())
+                if not window_start <= at < window_end:
+                    return CurrentStockCycleOutcome("hold", "outside_declared_session")
             binding = _book(root, expected_account_ref, record["basis_ref"])
             _owned_registry(record, binding)
             states, _, _, projection = _projection(root, binding, at)
@@ -1502,6 +1536,10 @@ def run_kis_paper_current_stock_cycle(
                     else quantities.get(t.proposal.symbol, Decimal(0)) > 0
                 )
             ]
+            if windowed_h3:
+                at = require_utc(clock())
+                if not window_start <= at < window_end:
+                    return CurrentStockCycleOutcome("hold", "outside_declared_session")
             if not candidates:
                 if side == "buy":
                     return CurrentStockCycleOutcome("hold", "await_declared_exit")
@@ -1555,6 +1593,10 @@ def run_kis_paper_current_stock_cycle(
                     ),
                 )
             client = _client(client_factory, instrument, expected_account_ref)
+            if windowed_h3:
+                at = require_utc(clock())
+                if not window_start <= at < window_end:
+                    return CurrentStockCycleOutcome("hold", "outside_declared_session")
             try:
                 reads = (
                     client.stock_preview_snapshot(
@@ -1568,16 +1610,16 @@ def run_kis_paper_current_stock_cycle(
             except KisPaperReadOnlyError as error:
                 if side != "buy" or error.code != "quote_timestamp_unavailable":
                     raise
+                at = require_utc(clock())
+                if windowed_h3 and not cash_window.entry_start <= at < cash_window.entry_end:
+                    return CurrentStockCycleOutcome("hold", "outside_declared_session")
                 # No plan or reservation exists here. Keep the basket, not a substitute.
                 _check(record["pending"] is None, "cycle_checkpoint_invalid")
                 active["entries_done"].append(instrument.symbol)
                 _save(pointer, record)
                 return CurrentStockCycleOutcome("no_intent", "cycle_target_quote_unavailable")
             at = require_utc(clock())
-            if cash_h3 and not (
-                cash_window.entry_start <= at < cash_window.entry_end
-                if side == "buy" else cash_window.exit_start <= at < cash_window.exit_end
-            ):
+            if windowed_h3 and not window_start <= at < window_end:
                 return CurrentStockCycleOutcome("hold", "outside_declared_session")
             if early and not (
                 (early_window.entry_start <= at < early_window.entry_end)
@@ -1619,6 +1661,10 @@ def run_kis_paper_current_stock_cycle(
                 else exits.build_kis_paper_stock_exit_plan
             )
             result = build(binding=binding, states=states, **args)
+            if windowed_h3:
+                at = require_utc(clock())
+                if not window_start <= at < window_end:
+                    return CurrentStockCycleOutcome("hold", "outside_declared_session")
             if result.status != "prepared":
                 if side == "buy":
                     active["entries_done"].append(instrument.symbol)
@@ -1634,8 +1680,18 @@ def run_kis_paper_current_stock_cycle(
                         and result.reservation is None
                     ):
                         active["entry_no_order"][instrument.symbol] = result.reason
-                        if _complete_h5_no_order(root, record, pointer, at):
+                        completed_no_order = (
+                            _complete_h5_no_order(
+                                root, record, pointer, at,
+                                clock=clock, entry_window=cash_window,
+                            ) if windowed_h3 else _complete_h5_no_order(root, record, pointer, at)
+                        )
+                        if completed_no_order:
                             return CurrentStockCycleOutcome("complete", "policy_no_order_complete")
+                    if windowed_h3:
+                        at = require_utc(clock())
+                        if not window_start <= at < window_end:
+                            return CurrentStockCycleOutcome("hold", "outside_declared_session")
                     _save(pointer, record)
                 return CurrentStockCycleOutcome("no_intent", "native_risk_no_intent")
             owner = record["owners"].setdefault(
@@ -1654,6 +1710,10 @@ def run_kis_paper_current_stock_cycle(
             )
             if side == "sell":
                 active["exit_attempts"] += 1
+            if windowed_h3:
+                at = require_utc(clock())
+                if not window_start <= at < window_end:
+                    return CurrentStockCycleOutcome("hold", "outside_declared_session")
             _save(pointer, record)
             leg_count = 1
             outcome = (

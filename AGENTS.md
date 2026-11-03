@@ -107,6 +107,12 @@ Codex owns direction, dispatch and integration, not every lane's implementation.
   independent data/research preparation moving during repairs.
 - Workers own cooldowns/next_due. Do not foreground-wait for sessions/quotas
   while another package is ready. A due time is not company completion.
+- Prebind qualified source/plan/opportunity authority before a short owned job
+  starts. PID/progress callbacks are notifications, not new LLM approvals or
+  post-start release barriers. The launcher binds actual PID/birth internally;
+  actual owner/token/account/risk checks still occur at effects. Do not spend a
+  short prewire deadline waiting for a tool or another model to acknowledge an
+  already delegated launch. This does not upgrade an old frozen launcher.
 - If the company outcome has no ready path, state its exact block/original
   dependencies and 2-4 alternatives in orchestration.md, challenge the
   classification with Claude, and execute delegated alternatives. No new report.

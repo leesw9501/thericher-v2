@@ -760,6 +760,7 @@ def run(
                 StockCycleProfile.MODEL_WEIGHTS_NAS,
                 StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
                 StockCycleProfile.MODEL_WEIGHTS_US_H5,
+                StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
                 StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
                 StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3,
             }

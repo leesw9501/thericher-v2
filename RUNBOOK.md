@@ -2,7 +2,49 @@
 
 ## Current Operations
 
-Nov3KST / Nov3UTC06:56. Company objective UNFINISHED.
+Nov3KST / Nov3UTC10:20. Company objective UNFINISHED.
+
+Current production integration: full17NAS+NYS/CASH inclusive3 OPEN5/
+PRE_CLOSE15 profile, explicit NON_PARITY research-thirdCLOSE, NOT deployed.
+Reviewer source/test write set positively closed. Final authority root:
+D:/thericher-v2/model-artifacts/verification/current-us-cash-h3-ops-integration-20261103-v1.
+RESULT25c0120a/SOURCE-r4a93b0d87 binds1431protectedpins0mismatch:
+521serial/183finalworker/current40/actual8of8[20056]/20030PASS26knownskip/
+35warnings390.50s/helper-native0/verified current-child+lease cleanup/
+Ruff/default+research+accounting+monitor Compose.env.example PASS.
+Named worker enum injection now includes new profile; strings stay rejected.
+Earlier full/partial sources are not current authority. Interrupted r2 scratch
+is retained inactive after rejected cleanup, not bypassed or claimed clean.
+Docs/external-only changes reuse current authority only while pins match;
+external executable sources need their own native/negative/closure evidence.
+
+Open45 financial runtime2307 is frozen on D:, no mutable repo SDK dependency.
+Invented pair FINAL-SOURCEce6d58c2/nativefc178c10/RESULTffca66dc passed14checks.
+Parent actual Install ONCE09:38 failed full_XML_drift; exact capture43d84fbf/
+FIRST-CAUSE5c9095a2 proves only missing expected exact task-path URI.
+Actual exit DISABLED/state1/0instances; entry ABSENT; release ABSENT.
+Do not replay installer or force enable. Helmholtz owns NEW URI-bound recovery
+preparation; Hooke independently compares the exact captured native defaults.
+Parent RecoverONCE/independentReadback only after qualified source/native.
+Metadata-only prototype300/500upper found the SAME URI defect in runtime
+owner_library.ps1 before inner Readback; no NATIVE/Recover issued. New owned
+current-open45-uri-bound-runtime-recovery-preparation-20261103-v1 must bind
+exact URI in shared installer/runtime N-Definition, new source/action/release,
+same financial tuple/clocks and exact old disabled-target ownership. Existing
+2307/consumed attempts immutable; old14native is not new-source qualification.
+The future runtime still needs actual exact publisher/point/clock/closure and
+original shared bank/F9/pending/quote/orderability/custody/risk admission.
+No manual TaskRun, substitute order, new bank or early financial effect.
+
+Actual nine-head latency recovery67070e78 is CLOSED:1POST9GET/all200,
+99premarketrows/17.899650sround/15.984643ssleep/26.289803host/allactorsclosed.
+Current first45 UNAVAILABLE, full45/open-session/compression still unmeasured.
+No replay or assumption that arithmetic7.100350s proves spare budget.
+Old0HTTP failure was a39s callback exceeding30s, not a provider rate limit.
+New source/plan authority is prebound; callback is notification, not release.
+
+Current NEXT_CODEX_GOAL/HANDOFF/role boards supersede older prep descriptions
+below. Existing H3 Source6ae SDK is D-frozen and actual future tasks unchanged.
 
 Open45 publisher ACTUAL CreateDisabled at06:51 produced ONLY the exact Data
 target thericher-open45-finite-publisher-20261103-v1, currently DISABLED/state1/
@@ -19,9 +61,9 @@ Create replay/ACLsetter. Do NOT replay consumed recovery/enable/readbacks.
 Protected-inheritance guarantee remains false; exact effective rights match.
 Review_unavailable/internalreview subcap overrun retained. Publisher
 Source14268659/Definition77513d80 remains frozen, not an actual publication.
-Open45 financial host64a67f89 is UNQUALIFIED after three invented failures;
-Helmholtz owns one typed native repair, not actual deployment. No broker/private
-effects from those preparation packages. Current active stateboards supersede
+Original Open45 host64a67f89 and failed typed successors stay UNQUALIFIED;
+new ce6/fc pair and current exact URI recovery status above supersede them.
+No broker/private effects from those preparation packages. Active stateboards supersede
 older research projections below; do not rerun completed fits/forecasts/intakes.
 Prior93 recovered view75493RTH/249contexts/25same dates is explicit research
 input, with seams and an unhashed-partial publication limitation. Fixed fusion
@@ -107,7 +149,7 @@ NAS8 Nov3/4UTC21:10/frozen evaluationNov4UTC21:35 remain separately owned.
 Codex thericher-1 was single Nov3KST06:52 follow-up, not a permanent daemon;
 no replacement follow-up chain.
 
-Fresh repo verification:
+Historical repo verification (before current production integration):
 D:/thericher-v2/model-artifacts/verification/current-raw-historical-capture-integration-20261103-v1/RESULT.json
 SHA4d61223023c8b561720af962e11641da4d481ba2df959c095495c3ec964a844a:
 1429protectedpins/0mismatch/202serialPASS/actual8of8[19943]/19917PASS26knownskip/388.36s/

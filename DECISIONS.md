@@ -10731,3 +10731,30 @@ issuance stays consumed/pending; restart or401/403 does not grant another POST.
 No age reclamation, unknown token-store search, raw env or Live access. Other
 lanes continue during a scoped issuer block. Claude SOUND_WITH_LIMITS:
 D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1/CLAUDE-AUTH.json
+
+## 2026-11-03 Full-US Inclusive3 Operational Weights
+
+Consumer: the existing account-owned native Paper dispatcher, not a second
+bank or a new broker writer per model. A distinct full17 NAS/NYS plus CASH
+profile uses three INCLUSIVE sessions, first OPEN+5 entry expiry and third
+official CLOSE-15 owned exit. Holiday/early-close clocks come from the existing
+calendar. This is explicitly NON_PARITY with research firstOPEN/thirdCLOSE
+prices; no historical return or old elapsed-H3 profile is relabeled.
+
+Use the fixed18 axis, exact canonical binary64 residual, prior-close feature
+window and pre-open weight availability. Never drop NYS mass, normalize a
+partial basket, extend an expired entry or release an unknown reservation.
+Existing pending-first reconciliation, ONE original B/10 and all original
+exits remain. Source integration does not install or upgrade an old runtime.
+
+Claude GO_WITH_LIMITS on the initial weights description only; exact-sum and
+half-day objections required actual tests, not reliance on advisory agreement:
+D:/thericher-v2/model-artifacts/research/current-us-cash-h3-ops-weights-integration-preparation-20261103-v1/CALLBACK.json
+
+Consumer: bounded short Data workers. Source/plan/opportunity authority is
+bound before launch; PID and progress callbacks notify, not a late LLM network
+release barrier. This does not remove actual token/owner/effect-time checks or
+upgrade frozen launchers. A measured39-second callback exceeded an old30-second
+wait before any credential or HTTP use; the new prebound launcher completed
+its exact9GET round. This is not a provider quota or universal timing claim:
+D:/thericher-v2/model-artifacts/data/current-open45-prebound-latency-recovery-20261103-v1/TIMING-SUMMARY.json

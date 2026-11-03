@@ -2,71 +2,68 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC07:14. Euclid01a1a039-0eca-7da2-8169-78b765567785 temporarily owns the
-Chronos daily bridge after Copernicus's model-capacity failure/positive handback.
-Original receipt06:51:36/hard07:51:36/caps600SUM3600elapsed stay unchanged;
-90s conservative source/I-O allowance retained, not a measured debit. Only
-bridge.py+CONTRACT.json existed, no package workers/market calls had started.
-Hooke owns exact publisher Task recovery. A=D:/thericher-v2/model-artifacts;
-M=D:/market_data. Assignments are not proof of running PIDs.
+Nov3UTC10:20. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Euclid owns new frozen-SDK Nov6 daily release preparation. Hooke owns a
+temporary independent native Task-definition compatibility review, not Data
+collection. Actual9head probe is CLOSED. No current collector inferred from MD.
 
-Completed usable minute input:
-- Raw161+494:655pages/78576rows, qualification0 unchanged, actual actors closed.
-- Mixed-session reader eed40af8/native25+5+2 and successful stage
-  SOURCE-r3.json747ad96c/STAGEDc09f0b97/header45d5f0b5/panele84ccb8a:
-  64470RTH/14106excluded/0denied. Failed rootSOURCE310a467f is not747ad96c.
-- Prior93 explicit reuse at A/data/current-us19-prior93-input-reuse-20261103-v1:
-  Sourceb12126a6/recoverye4c79cee/API29799657/STAGEDaca8f225,
-  headered9df438/payload40420fc9. Added92windows/11023rows, total75493RTH;
-  first45/60 contexts249, first60+next60 contexts239, SAME25dates.
-  JNJOct20 withheld; JPMOct5/JNJOct1 seams defaultFalse for continuous level
-  features. No silent vintage preference or additional independent dates.
-  Native20+4/RuffPASS,60+9pinsmatch/22actorsabsent/14Jobsempty/330upper.
-  Publication recovered from an unhashed partial NPZ; not an original producer
-  seal. No raw655-body reintake, HTTP, credentials or model calls.
-- Six older-key probe9794400c/beafa39f:6GET1POST/6EMPTY_PAGE/0rows/0technical,
-  host+workerclosed. Do not repeat anchors or infer global history/TPS limits.
+Usable provisional minute view:
+- Raw655GET/78576rows CLOSED, raw qualification0 unchanged.
+- Mixed-session actual SOURCE-r3.json747ad96c (not failed310a467f):
+  64470RTH/14106excluded/0denied.
+- Prior93 explicit reuse b12126a6/recoverye4c79cee/API29799657:
+  92windows/11023added ->75493RTH on SAME25dates,249first45/60 and
+  239first60+next60 contexts. Headered9df438/payload40420fc9/330upper.
+  JNJOct20 withheld; JPMOct5/JNJOct1 seams defaultFalse for continuous levels.
+  Recovered unhashed partial publication is not original producer sealing.
+- Older six AMD/JPM keys9794400c/beafa39f:6EMPTY_PAGE0rows0technical.
+  No repeated anchors/global history floor/TPS/auth inference.
 
-Derived provisional research use does not rewrite raw qualification0.
-Current-listing/nonPIT/notTR/CA/finality/START-END and clock-proxy limits remain.
-Both source clocks are retained; never silently shift Korea+1h labels.
+Current listing/nonPIT/notTR/CA/finality/START-END/clock proxy limits remain;
+no silent clock shift, row fill or independent dates. Limits scope consumers,
+not all research or Paper permission.
 
-Current packages:
-- Euclid: A/data/current-chronos2-h3-daily-bridge-preparation-20261103-v1,
-  600SUM3600elapsed. Exact Engine proposal66002104 C60/H3 input, coherent
-  adjustment/source and future availability, actual invented parser handoff.
-  No actual future collection/model forecast/private/Task in this source prep.
-  Existing coherent19daily input and current H3 point are not retagged.
-  Bridge now CLOSED1cf2c7e9/RESULT157bdc3e/native12positive26negative,
-  8own+32upstreampinsmatch/actorsclosed. Future input not acquired or installed.
-  CLOSURE-TIME-CORRECTION.json preserves original timezone-report bug:
-  elapsed1996.825383s, not34396.829221; actual UTC admission/source unchanged.
-  Full historical measured SUM unavailable,90allowance/390reserve is not a
-  measured cap proof. No native/market rerun to repair reporting.
-  NEXT current-chronos2-h3-nov6-coherent-capture-preparation-20261103-v1,
-  600SUM3600elapsed: reuse exact quiet coherent19 source, <=19GET1POST/0retry
-  future Nov6postclose/asofNov6/Nov9weeklyentry/C60Aug14..Nov6. Source/native
-  preparation only, no actual future Task/data/model or stale Nov2 retag.
-- Hooke: A/data/current-open45-publisher-task-dacl-recovery-20261103-v1,
-  500SUM1800elapsed. Quiet publisher Source14268659/Definition77513d80/
-  seal fdeb6fc7/native74/799.459604upper is CLOSED. Installerdce3d5c8
-  native56+8/212.065292upper is CLOSED. Parent actual CreateDisabled06:51
-  produced exact thericher-open45-finite-publisher-20261103-v1 but readback
-  withheld protected_DACL_required. Current target DISABLED/state1/0instances/
-  never-run/next15:07:30; only CREATE-ATTEMPT exists. Preserve target/identity,
-  no replayCreate/update/delete/TaskRun. Recovery now ACTUALLY COMPLETE07:15,
-  Sourcef4599669/native46/17pinsmatch/417.741169upper. Parent qualifiedc6031a7d/
-  Enable82d1ad35/independentenabled73d5f0fb prove ENABLEDReady3/0instances/
-  never-run/full source-action-clocks match. Eight metadata actors absent07:16.
-  No Create replay/TaskRun/ACLsetter; protected-inheritance guarantee false.
-  Claude review_unavailable/review139.188>internal100subcap retained. No replay.
-  Financial host is independently owned.
+## Current Packages
 
-Publisher future window is Nov3UTC15:07:30..<15:10:30, prewarm15:08..<15:11,
-capture15:16..15:16:25, score15:16:30..15:16:55. Actual latency/publication
-UNKNOWN, deadline abstention/no catchup. Fresh atomic60 token floor is scoped
-to this publisher; original historical300+pacing are unchanged.
-No current actual collector or active model process is inferred from an MD.
+- Actual DATA-only publisher thericher-open45-finite-publisher-20261103-v1:
+  Source14268659/Definition77513d80/recoveryf4599669/native46/actual73d5f0fb,
+  ENABLEDReady3/0instances at07:16. TriggerNov3UTC15:07:30..<15:10:30,
+  prewarm15:08..<15:11, capture15:16..15:16:25, score<=15:16:55.
+  Actual publication/full45 point UNKNOWN. No consumed metadata replay.
+  Effective rights match original grants; protected inheritance not claimed.
+- Actual current-open45-prebound-latency-recovery-20261103-v1 CLOSED:
+  Source67070e78/PLAN4ef1446c/SDKsnapshotc01c31c1,
+  1POST9GET/all200/99premarketrows,17.899650s round incl15.984643s sleep.
+  Wire/body.486422s, host26.289803s/fullactor127.520257/allJobsCIDclosed.
+  Current first45 INPUT_UNAVAILABLE; full45/open-session feature/compression
+  feasibility UNMEASURED. Arithmetic7.100350s is not measured spare budget.
+  Before-sourcea1bd57ff retained; final admission denies unknown mutable C-src
+  actors without reading their source, no actor/pytest exemption. Census is
+  bounded entrypoint knowledge, not universal transitive-client proof.
+  Old nine-head failure39s callback>30s had0credential0POST0GET; prebound
+  source/plan authority removes late notification as a network gate.
+  No replay of either consumed probe. Market bytes in a NEW M/raw_quarantine child.
+- Euclid current-chronos2-h3-frozen-sdk-release-preparation-20261103-v1:
+  <=600SUM3600elapsed, final freeze/native bridge only after Parent source/
+  integration callback. Old dailybridge1cf2c7e9/RESULT157bdc3e/native38,
+  capturee149f2dd/definitionb294a90d and wrapper56fdfecb NOT installed.
+  Their direct mutable horizon dependency needs a new frozen successor.
+  Coherent19 C60Aug14..Nov6 futureNov6UTC21:10 capture forNov9weekly entry,
+  <=19GET1POST0retry. No actual future acquisition/point created.
+  Original bridge elapsed-report correction1996.825383 retained; historical
+  full measuredSUM unknown/390reserve not measured proof.
+  Prechange scope is now CLOSED before original09:52hard:29file23edge
+  snapshot61759f6b/3537.889elapsed/knownwall4.840046/actorsabsent.
+  NEW final release scope after Parent commit/source callback, not old extension.
+- Hooke current-open45-future-definition-compatibility-review-20261103-v1:
+  <=240SUM1800elapsed, readonly exact Helm capture/native-default comparison.
+  No Task call/duplicate installer/private/broker; direct qualified handoff.
+  This peer scope closed192/240upper; new current-open45-uri-bound-runtime-
+  peer-review-20261103-v1 has180SUM1800elapsed/0TaskCIMcalls, covering shared
+  exact-URI installer/runtime source after same runtime defect was demonstrated.
+
+No model repeat, current H3 retag, token guard reset or new bank.
+Relevant actual token/Data writers remain scoped; no blanket process exemption.
 
 ## Frozen Data Index
 

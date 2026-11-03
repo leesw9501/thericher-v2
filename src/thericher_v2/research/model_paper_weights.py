@@ -18,6 +18,7 @@ from thericher_v2.research.decision_receipt import (
     receipt_from_target_exposure_proposal,
 )
 from thericher_v2.research.model_paper_horizon import (
+    MODEL_PAPER_3_SESSION_PROFILE,
     MODEL_PAPER_5_SESSION_PROFILE,
     MODEL_PAPER_20_SESSION_PROFILE,
     MODEL_PAPER_ELAPSED_H1_PROFILE,
@@ -41,6 +42,14 @@ MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE = (
 )
 MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE = "model-weights-nas-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE = "model-weights-us-5session-2026-v1"
+MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE = (
+    "model-weights-us-cash-inclusive3-open5-preclose15-2026-v1"
+)
+MODEL_PAPER_US_CASH_H3_OPS_ROUTES = (
+    "AAPL/NAS", "AMD/NAS", "AMZN/NAS", "GOOGL/NAS", "META/NAS", "MSFT/NAS",
+    "NVDA/NAS", "TSLA/NAS", "JPM/NYS", "JNJ/NYS", "XOM/NYS", "PG/NYS",
+    "KO/NYS", "HD/NYS", "V/NYS", "DIS/NYS", "UNH/NYS", "CASH",
+)
 MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE = "model-weights-nas-cash-5session-2026-v1"
 MODEL_PAPER_WEIGHTS_ELAPSED_H1_PROFILE = "model-weights-nas-elapsed-h1-prior-close-2026-v1"
 MODEL_PAPER_WEIGHTS_ELAPSED_H3_PROFILE = "model-weights-nas-elapsed-h3-prior-close-2026-v1"
@@ -68,6 +77,11 @@ CASH_ELAPSED_H3_EXECUTION_BASIS = (
     "NON_PARITY_replay_close_e_to_close_e_plus_3_"
     "native_fresh_quote_gross_cost_not_fees_settlement_or_replay_fill_equivalence"
 )
+US_CASH_H3_OPS_EXECUTION_BASIS = (
+    "NON_PARITY_research_first_OPEN_to_third_session_CLOSE_"
+    "operational_OPEN5_entry_THIRD_PRE_CLOSE15_fresh_quote_gross_cost_"
+    "not_benchmark_fills_fees_settlement_or_replay_equivalence"
+)
 
 
 def _need(value, reason):
@@ -78,6 +92,8 @@ def _need(value, reason):
 def model_paper_weights_horizon_profile(profile):
     """Map only explicit weight profiles; never infer a horizon from dates."""
     _need(type(profile) is str, "weights_profile_invalid")
+    if profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE:
+        return MODEL_PAPER_3_SESSION_PROFILE
     if profile in _ELAPSED_WEIGHT_PROFILES:
         return _ELAPSED_WEIGHT_PROFILES[profile]
     if profile in (MODEL_PAPER_WEIGHTS_PROFILE, MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE):
@@ -140,7 +156,10 @@ class ModelPaperWeightRow:
     def eligibility_for_profile(self, profile):
         model_paper_weights_horizon_profile(profile)
         if (
-            profile == MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE
+            profile in (
+                MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
+                MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
+            )
             and self.feature_known
             and self.route.endswith(("/NAS", "/NYS"))
         ):
@@ -289,7 +308,21 @@ class ModelPaperWeightsMetadata:
 
 def _validate_cash_profile(metadata, profile):
     slots = tuple(row.slot for row in metadata.rows if row.route == "CASH")
-    if profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE:
+    if profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE:
+        _need(
+            tuple(row.route for row in metadata.rows) == MODEL_PAPER_US_CASH_H3_OPS_ROUTES
+            and slots == (17,),
+            "weights_us_cash_h3_ops_axis_invalid",
+        )
+        # Compare the supplied CASH value; never add or repair a missing residual.
+        derived = append_derived_cash_h3_row(metadata.rows[:17])
+        _need(
+            metadata.rows == derived
+            and struct.pack("<d", float(metadata.rows[-1].weight))
+            == struct.pack("<d", float(derived[-1].weight)),
+            "weights_us_cash_h3_ops_residual_invalid",
+        )
+    elif profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE:
         _need(len(metadata.rows) == 18 and slots == (17,), "weights_cash_h3_axis_invalid")
         derived = append_derived_cash_h3_row(metadata.rows[:17])
         _need(
@@ -333,6 +366,7 @@ def _weight_targets(metadata, entry_session, profile=MODEL_PAPER_WEIGHTS_PROFILE
     reference = _digest(
         {"metadata": asdict(metadata), "profile": profile}
         if profile in _ELAPSED_WEIGHT_PROFILES
+        or profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
         else asdict(metadata)
     )
     refs = DecisionReceiptReferences(
@@ -342,7 +376,16 @@ def _weight_targets(metadata, entry_session, profile=MODEL_PAPER_WEIGHTS_PROFILE
         "ref:" + reference[7:],
     )
     ceiling = Fraction(metadata.original_basis_gross_ceiling)
-    namespace = "us" if profile == MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE else "nas"
+    us_profile = profile in (
+        MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
+        MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
+    )
+    namespace = "us" if us_profile else "nas"
+    valid_until = (
+        entry_session.open_ts + timedelta(minutes=5)
+        if profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
+        else entry_session.close_ts
+    )
     remaining = ceiling
     targets = []
     for row in metadata.rows:
@@ -366,7 +409,7 @@ def _weight_targets(metadata, entry_session, profile=MODEL_PAPER_WEIGHTS_PROFILE
             metadata.feature_schema_id,
             "ready",
             metadata.weights_observed_at,
-            entry_session.close_ts,
+            valid_until,
             metadata.feature_window_end,
             "untrusted_weight_gross_ceiling_native_risk_may_reduce_not_replay_or_alpha",
         )
@@ -400,7 +443,9 @@ def prepare_model_paper_weights_input(
         exit_session,
         profile=profile,
         execution_basis=(
-            CASH_ELAPSED_H3_EXECUTION_BASIS
+            US_CASH_H3_OPS_EXECUTION_BASIS
+            if profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
+            else CASH_ELAPSED_H3_EXECUTION_BASIS
             if profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
             else EARLY_EXIT_EXECUTION_BASIS
             if profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
@@ -417,7 +462,9 @@ def validate_model_paper_weights_input(value):
     early = value.profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
     elapsed = value.profile in _ELAPSED_WEIGHT_PROFILES
     basis = (
-        CASH_ELAPSED_H3_EXECUTION_BASIS
+        US_CASH_H3_OPS_EXECUTION_BASIS
+        if value.profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
+        else CASH_ELAPSED_H3_EXECUTION_BASIS
         if value.profile == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
         else EARLY_EXIT_EXECUTION_BASIS
         if early
@@ -436,7 +483,7 @@ def validate_model_paper_weights_input(value):
     first, last = value.entry_session, value.exit_session
     _need(type(first) is SessionWindow and type(last) is SessionWindow, "weights_sessions_invalid")
     validate_model_paper_horizon(first, last, profile=horizon_profile)
-    if elapsed:
+    if elapsed or value.profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE:
         _need(
             value.metadata.feature_window_end == prior_official_session_close(first),
             "weights_prior_session_close_invalid",
@@ -461,6 +508,30 @@ class ModelPaperCashH3Window:
     entry_end: datetime
     exit_start: datetime
     exit_end: datetime
+
+
+def model_paper_us_cash_h3_ops_window(value, *, operational_session=None):
+    """OPEN5/preclose15 request bands, never fill or reconciliation deadlines."""
+    validate_model_paper_weights_input(value)
+    _need(
+        value.profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
+        "weights_profile_invalid",
+    )
+    session = value.exit_session if operational_session is None else operational_session
+    _need(type(session) is SessionWindow, "weights_sessions_invalid")
+    official = us_equity_2026_session(session.open_ts.astimezone(US_EQUITY_EASTERN).date())
+    _need(
+        official is not None and official.window == session
+        and session.open_ts >= value.exit_session.open_ts,
+        "weights_sessions_invalid",
+    )
+    return ModelPaperCashH3Window(
+        value.entry_session.open_ts,
+        value.entry_session.open_ts + timedelta(minutes=5),
+        (session.close_ts - timedelta(minutes=15)
+         if session == value.exit_session else session.open_ts),
+        session.close_ts,
+    )
 
 
 def model_paper_cash_h3_window(value, *, operational_session=None):
@@ -521,6 +592,8 @@ def model_paper_early_exit_window(value, *, operational_session=None):
 
 def serialize_model_paper_weights_input(value):
     _need(type(value) is ModelPaperWeightsInput, "weights_input_type_invalid")
+    if value.profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE:
+        validate_model_paper_weights_input(value)
     return _canonical(dict(schema=MODEL_PAPER_WEIGHTS_SCHEMA, **asdict(value)))
 
 
@@ -562,6 +635,7 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
             MODEL_PAPER_WEIGHTS_PROFILE,
             MODEL_PAPER_WEIGHTS_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
+            MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
             MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
             *_ELAPSED_WEIGHT_PROFILES,
@@ -569,7 +643,9 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
         and document["weight_units"] == WEIGHT_UNITS
         and document["execution_basis"]
         == (
-            CASH_ELAPSED_H3_EXECUTION_BASIS
+            US_CASH_H3_OPS_EXECUTION_BASIS
+            if document["profile"] == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
+            else CASH_ELAPSED_H3_EXECUTION_BASIS
             if document["profile"] == MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
             else EARLY_EXIT_EXECUTION_BASIS
             if document["profile"] == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE

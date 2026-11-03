@@ -50,6 +50,7 @@ class PaperAccountCohort:
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
                 core.StockCycleProfile.MODEL_WEIGHTS_US_H5,
+                core.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3,
             }

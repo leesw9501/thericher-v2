@@ -77,7 +77,9 @@ def _mock_construction(monkeypatch):
 @pytest.mark.parametrize(
     "profile",
     [cycle.StockCycleProfile.MODEL_PROPOSAL_NAS, cycle.StockCycleProfile.MODEL_WEIGHTS_NAS,
-     cycle.StockCycleProfile.MODEL_WEIGHTS_NAS_H5],
+     cycle.StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
+     cycle.StockCycleProfile.MODEL_WEIGHTS_US_H5,
+     cycle.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS],
 )
 def test_model_profiles_forward_exact_loader_refs_and_metadata(monkeypatch, profile):
     limits, client, seen, paths = _mock_construction(monkeypatch)
@@ -139,8 +141,9 @@ def test_default_run_and_cli_are_inert_with_zero_constructions(monkeypatch, caps
     "profile",
     ["invented-unknown-profile", cycle.StockCycleProfile.CURRENT20_EQUALRANK4,
      cycle.StockCycleProfile.MODEL_WEIGHTS_NAS.value,
-     cycle.StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value],
-    ids=["unknown", "current20", "nonenum-spelling", "nonenum-h5-spelling"],
+     cycle.StockCycleProfile.MODEL_WEIGHTS_NAS_H5.value,
+     cycle.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS.value],
+    ids=["unknown", "current20", "nonenum-spelling", "nonenum-h5-spelling", "nonenum-us-h3"],
 )
 def test_other_profiles_reject_before_budget_client_or_core(profile):
     with pytest.raises(ValueError, match="^model_profile_injection_invalid$"):
