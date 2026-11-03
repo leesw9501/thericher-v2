@@ -66,9 +66,11 @@ No MD alone proves an active worker.
    release after Parent commit/source callback. Prechange61759f6b closed before
    old09:52hard; do not extend old caps or upgrade1cf/e149/56f silently.
    Future input/Task installation still UNKNOWN/not installed.
-5. Strategy/Ohm: finish exact full18 executable-proposal adapter SDK freeze/
-   native smoke after Parent callback, original500SUM/hard10:35:44.
-   Provisional79984ae9/480checks/267.860804upper is not final-source proof.
+5. Strategy/Ohm: adapter finalbd6f1fa8/API308f6d30/SDK6ac7d4e7/callback724b2c07
+   CLOSED480checks/160pins0mismatch/273.016805upper. NEW named-account-worker
+   smoke root450SUM2700elapsed joins invented adapter output through actual
+   named worker/native account core with synthetic bank/fake broker only.
+   No actual credentials/private/market/Task or mocked core/intake.
 6. Engine/Confucius: new current-full17-h3-future-meanrank-producer-
    preparation-20261103-v1, <=1200SUM5400elapsed/0marketforecasts0fits0replays.
    Future exact coherent Data -> trusted fresh TimesFM+Chronos17stockH3 scores

@@ -2,13 +2,23 @@
 
 ## Current Source Handoff
 
-Nov3UTC10:20. Ohm owns
+Nov3UTC10:50. Ohm completed
 A/research/current-us-cash-h3-executable-proposal-handoff-preparation-20261103-v1,
-<=500SUM3600elapsed/0fits0forecasts0marketviews. Consumer: existing fixed
-foundation meanrank proposal through new actual full18 native weights profile.
-Invented producer->consumer smoke now; final SDK/source freeze only after
-Parent final integration commit/verification callback. No repo edits/Git/
-broker/private/Task, fake old NAS-only type or financial deployment.
+Original500SUM3600elapsed scope CLOSED273.016805upper, before10:35:44hard.
+SOURCEbd6f1fa8/API308f6d30/SDK6ac7d4e7/CALLBACK724b2c07:
+fresh480invented checks on final frozen SDK,160sourcepins0mismatch checked
+by Parent, named worker ABI pinned to integration09ddaa22. All owned actors
+closed,0market/model/broker/private/Task effects, no financial deployment.
+Exact API was sent directly to Engine/Data; old provisional79984ae9 remains
+prechange-only history, not current proof.
+
+NEW current-full17-h3-named-account-worker-smoke-20261103-v1,
+450SUM2700elapsed/0models0marketviews0actualcredentialsAPIprivateTask.
+Invented scores -> frozenbd adapter -> real full18 DTO -> actual named
+run_account_session/native core with only synthetic bank/fake broker I/O.
+Cover NYS owned entry/exit, allcash/zero-share and unknown pending after OPEN5,
+preserving synthetic oneB10/F9held. No mocked core/intake or repo edits;
+external focused native proof, not another full repo run or approval gate.
 
 Prior pure handoffs CLOSED:
 - meanrank8f740232/APIcd4c2d4e/native30/48pins/236.089upper;

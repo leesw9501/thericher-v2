@@ -188,8 +188,13 @@ meanrank8f740232/native30 are source preparation, NOT financial deployment.
 Confucius closes boundary regressions; Parent verifies/commits; Ohm prepares
 invented exact native proposal handoff after final SDK freeze. No old model
 fit/forecast is rerun for occupancy. No running GPU worker inferred from MD.
-Ohm provisional79984ae9/480checks/267.860804upper awaits final commit/source
-native freeze. Confucius owns NEW isolated future meanrank producer prep:
+Ohm final SOURCEbd6f1fa8/API308f6d30/SDK6ac7d4e7/callback724b2c07 is CLOSED:
+fresh480checks/160pins0mismatch independently checked/273.016805upper/
+allactorsclosed, integration09ddaa22/namedworkerABI pinned. Provisional79984ae9
+is prechange-only history. Next450SUM2700elapsed external synthetic smoke
+joins this adapter to actual named account worker/core with fake broker I/O,
+not mocked intake; no actual credentials/private state/market effects.
+Confucius owns NEW isolated future meanrank producer prep:
 current-full17-h3-future-meanrank-producer-preparation-20261103-v1,
 1200SUM5400elapsed/0marketforecasts0fits0replays/at most one tiny invented
 native handoff per model runtime. Future exact Data C60 -> fresh trusted dated
