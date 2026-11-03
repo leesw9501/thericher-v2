@@ -22,6 +22,29 @@ No extra GET justified. Ohm owns NEW current-us19-mixed-session-research-view-
 20261103-v1/600SUM1800elapsed: validate all rows then select RTH, retaining
 exclusions/masks/proxy limits; source/native/Claude before separate intake.
 Old161/d8/rawqualification0 unchanged; no extra calls in frozen494.
+Mixed-session view is now CLOSEDready eed40af8/API0d5f319f/25native+
+5independent+2boundarychecks/360upper/GO_WITH_LIMITS,35pins0mismatch.
+Copernicus owns NEW current-us19-mixed-session-input-staging-20261103-v1,
+600SUM1800elapsed, exact655closedpages<=78576rows only, no prior93implicitjoin/
+HTTP/model. New market view bytes stay M/research_provisional/kis_paper/
+current-us19-mixed-session-20261103-v1. First tiny invented writer/consumer
+assertion failed BEFORE intake and is retained. Stage now CLOSED05:19:07:
+COMPLETED-CALLBACKbb1abe0c/SOURCE-r3.json747ad96c/590upper, oneactualintake/64470RTH/
+14106excluded0denied/HEADER45d5f0b5/PANELe84ccb8a. Parent15pins/payloadhashes
+match, selectedbeforeafterstable/launcher+stageabsent/Jobemptyexit0.
+STAGEDc09f0b97; RootSOURCE.json310a467f is earlier failedsource, not747ad96c.
+First45/60+next60 support:JNJ14dates,JPM15,other8stocks16, not25newdates.
+Prior93notjoined; rawqualification0/nonPIT/CA/finality/secondaryclock+1h remain.
+Next current-intraday-date-depth-six-probe-20261103-v1,600SUM3600elapsed:
+AMD/NAS+JPM/NYS x3older keys/<=6GET1POST/original300+pacing, source/nativequiet
+plan before Parent actualadoption. This actual probe is now CLOSED:
+Source9794400c/PLANede8ebd1/release97d385b8/host44828 launched05:33:41,
+RESULTbeafa39f/HOSTab0ab6a8/catalog95039795,6GET1POST/6EMPTY_PAGE/0rows/
+0technical0retry0unresolved/115.144895SUM/Jobempty/15helpersclosed.
+Parent host+worker57148absent05:38:40. No repeatedemptyanchors or globalfloor
+claim. Prior93/existinglegaldate-depth/prospective are scoped alternatives,
+not a research/Paper permission hold. Originalexpireddepth budgets unchanged.
+Ohm completed read-only Throughput review and is closed, not active intake.
 Old date-depth prep120/600 expired unfinished, not refunded or reopened.
 
 Temporary Data Feed source-native is closed55checks/RESULT-v2/373.033207upper,

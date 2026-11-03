@@ -2,49 +2,63 @@
 
 ## Current Results And Next
 
-Nov3UTC02:30. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is Engine owner and
-sole GPU coordinator. Numerical campaigns below are CLOSED; no actual running
-training is inferred from a dispatch or an MD. Source-only package COMPLETE:
-D:/thericher-v2/model-artifacts/research/current-open45-paper-proposal-readiness-20261103-v1,
-Sourcec9eae425/RESULT0bcc549a/native52/482.351581upper/sixknownactorsclosed.
-Original Open45 input/policy ABI and invented native producer-consumer pass;
-no new fit, restore
-of old models for evaluation, forecast, market replay, broker or private state.
-Need fresh/broader dates and a deployable proposal path, not indefinite tuning
-of the same five DEV sessions. Paper engineering remains separately authorized.
+Nov3UTC05:50. Harvey01a19e80-1586-7fe2-9587-9b44f510842b owns Engine science
+and sole GPU coordination. A=D:/thericher-v2/model-artifacts.
+Primary scope is intraday plus one-to-several-session swings. Preserve current
+Paper point/exits/risk; research failures are not Paper permission holds.
 
-Next current-open45-cpu-point-producer-preparation-20261103-v1,
-is now COMPLETE: Source66a5600b/RESULTee918c90/native25/432.705026upper,
-one trusted BEST10 weights_only CPU restore/one invented forward.025sec,
-13actors/CIDclosed, no market inference/evaluation/new fit/GPU. Direct API
-handed to Execution and Data. Earlier pending wording is historical.
+Latest actual result:
+A/research/current-postcheckpoint-timesfm-h3-development-20261103-v1/continuation-r2,
+Sourced9bca820/RESULT5fb31f96/FINAL-CALLBACK reference4124db23/native12.
+ONE actual GPU forecast697x3 over41weekly2026cohorts/ONEreadout12views/0fits,
+6.533796coldload-compile-forecastsec/1.059GBallocated1.067GBreserved/noCPUfallback.
+Net10+21.935650pct/close-onlyDD12.367194 vsEW+10.286293/DD6.715438,
+momentum+13.816188. FrozenDDlimit10.073158 => primaryRISKFAIL.
+Post2025checkpoint is not independent alpha, total return or actual Paper PnL.
 
-CURRENT04:35: raw161 old view reported no opening contexts, but opening30
-findingb44ca37f/25d05872 proves40selected captures contain them; old whole-page
-RTH filtering discarded mixed-session pages. Ohm repairs a separate explicit
-research view, not old raw qualification or original results. Transfer3040
-remains deferred with original caps/debits; no automatic intake/fit restart.
-Harvey owns NEW current-full-day-intraday-tcn-development-20261103-v1,
-3000SUM7200elapsed/onefit/oneforecast/finitecostviews, using existing original8+
-SPY fullRTH25dates. Exact causal context/receptive field/horizon/grid/purge/
-INNERstop/maxepochs-updates-time/native/Claude/VRAM before fitting. Now CLOSED
-Source91126913/RESULT118849a4/1809.771977upper/allCIDleaseabsent:
-1CUDAfit420updates/BEST3/172.230478optimizersec,1CPUforecast12views.
-Net10 -10.811273pct/DD11.007170 vsEW -10.572730/rule -11.502356, growthFAIL.
-Modeled cost~10.445234percent initialNAV/55rounds; not actual Paper fees.
-Time/update stop/no convergence, fitwall292.700357 >declared285; preserve
-the overrun, never label within285 or repeat completed fit to repair it.
-Next new current-postcheckpoint-timesfm-h3-development-20261103-v1,
-1500SUM5400elapsed/0fits/oneforecast/one readout/<=12views: exact trusted cached
-TimesFM2.5 revision1d952420 (official2025-10-02/Apache2), weekly2026/H3
-postcheckpoint targets, source/native/resources first. Reused2026 development
-is not independent alpha; no old forecast repeat/current Paper point swap.
-Dense origins do not add independent DEV dates;
-exclude reservedNASNov3/4 and keep all old campaigns/results immutable.
-Price-only exit expert647d9bf6/native35/240upper is ready for ONE future
-Engine-frozen entry/base-exit/next-bar-cost readout, not current H3 changes.
+Original968c/bootstrap and8e6/native failures stay immutable. Diagnostic760f8d99/
+d821185b proved wheelzip namespace ABI failure; existing extracted site16files
+match. That first-cause proof justified r2, not a blind retry or new market trial.
+Historical masked inner exception remains unknown; missingFlaxeinshape was NOT
+the Torch cause. Retained lineage708.220600+35.353312+261.748195=1005.322108upper/
+1500, all42r2actors4CIDsleaseclosed. Old additional220upper vsParent180repair
+subcap remains unproven compliance, not refunded/regraded. No duplicate forecast.
 
-A=D:/thericher-v2/model-artifacts.
+Current ready work:
+- Ohm temporary CPU executor with Harvey science custody:
+  current-timesfm-h3-price-exit-composition-20261103-v1,
+  900SUM3600elapsed/0fit0forecast0restore/ONEpipeline<=6newviews+12oldcarried.
+  Use saved scores47bdccee/original weekly allocations and fixed price-exit
+  kernel647d9bf6. NextbarOPEN reduce/exit only, originalthirdCLOSE mandatory.
+  Compare deterministic2ndOPEN exit and carried model/EW/momentum/cash/costs.
+  No threshold grid, target/held-mask input gating, missingheld zero PnL or
+  entry renormalization. New adaptive composite, not regrading failed TimesFM.
+  Freeze exact OHLC/source/causal book/native/Claude before one CPU readout.
+- Harvey checks one Chronos2 same-target proposal for trusted dated checkpoint,
+  safe runtime and prior-study dedup before freezing any new numerical family.
+  Proposed900SUM3600elapsed/0fit/1forecast/1readout<=12views/0retry; no automatic
+  repeated completed study or GPU occupation from an MD/unused trial budget.
+
+Actual Data now available:
+A/data/current-us19-mixed-session-input-staging-20261103-v1:
+SOURCE-r3.json747ad96c/STAGEDc09f0b97/COMPLETED-CALLBACKbb1abe0c,
+HEADER45d5f0b5/PANELe84ccb8a under M/research_provisional/kis_paper/
+current-us19-mixed-session-20261103-v1. Ten stocks64470RTHrows,14..16first45/60+
+next60 dates; prior93notjoined. RootSOURCE.json310a467f is failed history, not747.
+Explicit currentlisting/nonPIT/CA/finality/START-END/clockproxy limits remain;
+these are not new independent dates or qualified Paper input. Six older AMD/JPM
+anchors returnedEMPTY_PAGE; no repeatedemptykeys/globalfloor/permission hold.
+Original8+SPY fullRTH25dates remain a separate existing source. Reserved NAS8
+Nov3/4 outcomes and frozenNov4UTC21:35 evaluation stay outside new selection.
+
+Closed deployment ingredients: original proposalc9eae425/native52, CPU
+point66a5600b/native25/oneinventedforward (no new fit), same-session62eed9c7
+and new oneleg10ce0fb2/native47. Hooke/Execution own actual finite publisher/
+account-host preparation; source tests are not deployment or financial fills.
+H3 AMD entryNov3UTC20:55/exitNov6UTC20:45 and automatic21:10read remain installed,
+not financial results. ONE original B/10/F9 UNKNOWN-HELD/all original exits stay.
+
+## Closed Comparison Index
 
 | Closed Study | New Work | Net10 Growth / DD | Decision |
 | --- | --- | --- | --- |

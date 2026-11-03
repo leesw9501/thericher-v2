@@ -63,7 +63,7 @@ reader rejects an entire page if any premarket row exists. Zero extra GETs are
 justified now. More rows or more assets are not more independent dates.
 Do not repeat the proposed250 opening queries or reopen expired depth budgets.
 
-Ohm owns NEW source/native mixed-session research view:
+Ohm CLOSED NEW source/native mixed-session research view:
 A/data/current-us19-mixed-session-research-view-20261103-v1,
 600ownedSUM1800elapsed from receipt. Strictly parse and validate ALL rows before
 selecting wellformed RTH rows; retain exclusion counts, raw/body/outcome pins,
@@ -71,8 +71,27 @@ masks and explicit non-PIT/CA/finality/mixed-vintage clock-proxy limitations.
 Malformed outside rows cannot bypass checks. Short Claude challenge and actual
 invented producer-parser-feature-consumer smoke precede new actual intake.
 Keep old strict SDK, raw qualification0, d8 reader and old161 stage immutable.
-After exact completed captures/source freeze, separately stage usable contexts
-and targets; no raw count -> Paper/canonical promotion.
+Ready Sourceeed40af8/API0d5f319f/25native5independent2boundarychecks/360upper,
+GO_WITH_LIMITS,35members0mismatch. Copernicus owns separate actual stage at
+A/data/current-us19-mixed-session-input-staging-20261103-v1,
+600SUM1800elapsed: exact655closedpages<=78576rawrows, source/outcome/body pins,
+no prior93 implicitjoin, zeroHTTP/model. Store actual view under
+M/research_provisional/kis_paper/current-us19-mixed-session-20261103-v1.
+Stage CLOSED05:19:07/COMPLETED-CALLBACKbb1abe0c/SOURCE-r3.json747ad96c/590upperof600,
+one actual intake:64470RTH/14106excluded/0denied, per-stock first45/60+next60
+support14..16dates (not25new dates). HEADER45d5f0b5/PANELe84ccb8a,
+RootSOURCE.json310a467f is retained failedsource, never pair it with747ad96c.
+Parent15sourcepins and payload hashes match; selected stability and exact
+launcher/stageclosure verified. Preserve failed inventedfixture/bootstrap
+attempts and all proxy masks, no raw count -> Paper/canonical promotion.
+Throughput review is CLOSED, not another permanent role/report. Data next
+prepares current-intraday-date-depth-six-probe-20261103-v1,600SUM3600elapsed:
+AMD/NAS,JPM/NYS x3older dates/<=6GET1initialPOST/originaltoken300+pacing,
+source/native/quiet plan first. Actual9794400c/PLANede8ebd1/release97d385b8
+launched05:33:41 and is CLOSEDbeafa39f/ab0ab6a8/catalog95039795:
+6GET1POST/6EMPTY_PAGE/0rows0technical0unresolved/115.144895SUM/Jobempty/
+15helpersclosed/host+workerabsent. No oldcursorreset, repeatedemptyanchor or
+globalhistoryfloor inference; use existing date-depth/prior93/prospective paths.
 
 Execution / Helmholtz closed direct partial/restart semantics:
 A/execution/current-open45-direct-partial-recovery-20261103-v1,
@@ -91,6 +110,14 @@ renormalization/expired-point reuse/unknown reset or old research regrade.
 Real counter/partial/restart/latefact native checks and short Claude challenge
 before adoption. No actual effects/private/Task in this source preparation;
 existing62eed9c7 and H3 remain unchanged.
+Oneleg now CLOSED qualified Source10ce0fb2/APIc345bdca/RESULT18f7246c,
+native47/653.244067upper/GO_WITH_LIMITS, actualfinancial/deploymentUNKNOWN.
+NEW current-open45-finite-session-host-preparation-20261103-v1,
+900SUM3600elapsed: real existing account-owned custody/native dispatcher,
+runtime-resolved actualpublisher+positiveclosure, finite quiet entry/ownedexit
+definitions/strictcategoricaloutcomes. No actualTaskinstall/Run/private/broker/
+market in this prep; coordinate directly with Hooke quietpublisher. No Parent
+JIT, placeholderfuturehash, oldcounterreset or newprivatebank.
 
 Engine / sole GPU coordinator Harvey owns NEW full-day TCN campaign:
 A/research/current-full-day-intraday-tcn-development-20261103-v1,
@@ -111,6 +138,37 @@ trusted local2.5 safetensors/dated1d952420, postcheckpoint2026 weekly H3
 price-only ranking with comparable risky EW/momentum/cash/costs. Native actual
 producer/model/score/book and headroom/lease before market; no current Paper
 swap, foundation pretraining guarantee beyond exact release or independent alpha.
+This public-model family is now CLOSEDFAILED native only: original968c9261
+failed missingruntime beforeAPI; linked8e6df96b/f1bb6a32 actual inventedAPI
+failed RuntimeError at safeAPI124, underlying causeunknown,0marketforecasts/
+readouts/allCIDleaseclosed. Combined708.220600upper, additional220upper vs
+Parent180repairsubcap compliance unproven. Never repeat failedAPI/reopenold0retry.
+Harvey next only inspects cached-wheel metadata/one import in separate
+A/infra/current-timesfm-import-diagnostic-20261103-v1,120SUM600elapsed,
+no weights/modelconstructor/forecast/GPU/market/dependencyinstall. Diagnostic
+760f8d99/d821185b CLOSED35.353312upper proves wheelzip namespace ABI defect;
+existing extracted site matches16files and namespace finder works. NOT einshape
+or model-performance evidence; historical inner exception remains unknown.
+Parent evidence-based reversal permits ONE continuation-r2 using exact existing
+site RO, original scientific contract/data/41cohorts697rows unchanged. Across
+old708.220600+diagnostic35.353312+r2<=1500SUM, r2<=750 and original06:27:06hard;
+one inventedAPI then <=1marketforecast/readout/12views acrosslineage, no install/
+download/oldcontract rewrite/refund/blindretry. New source/native/remaining
+resource proof first. R2 now CLOSEDd9bca820/RESULT5fb31f96/native12:
+oneactualGPUforecast697x3/6.533796sec/one readout12views/0fits/0retry,
+net10+21.935650pct/close-onlyDD12.367194>frozen10.073158 =>RISKFAIL.
+Lineage1005.322108upper/all42actors4CIDsleaseclosed; no current Paper swap.
+NEXT Ohm/Harvey own fixed price-exit composition at
+A/research/current-timesfm-h3-price-exit-composition-20261103-v1,
+900SUM3600elapsed/0fit0forecast0restore/ONEpipeline<=6newcostviews+12oldcarried.
+Same saved41weeklycohorts/scores47bdccee and647d9bf6 close-based exit rule,
+nextbarOPEN reduce/exit only/mandatorythirdCLOSE preserved, no thresholdgrid,
+missingheldimputation or entryrenorm. Compare deterministicsecondOPENexit,
+oldmodel/momentum/EW/cash/costs/gross; lowerexposurealone is notalpha.
+Freeze source/targets/costs/newprimary/native/Claude beforeoneCPUreadout.
+Harvey may prepare one distinct Chronos2 same-target source-ready proposal only
+if trusted datedsafecheckpoint/runtime/priorstudyDEDUP pass; no automatic
+extra forecast or unqualified current Paper adoption. Other ready work continues.
 Preserve deferred transfer3040/debits and exclude reserved NAS8 outcomes.
 No duplicate completed training or automatic current Paper point swap.
 
@@ -124,6 +182,10 @@ most, no market/HTTP/credentials/Task/private/GPU. Persist one attempt, enforce
 unchanged input/score deadlines, report exact component pacing and abstain on
 missing/late input. Separately adopt actual launch only after native/source
 closure; no placeholder hashes or implicit .env/broker authority.
+Frozen Source/PLAN must resolve and bind the ACTUAL future point at runtime,
+with admission before original expiry; no Parent manual-JIT installation in
+the five seconds between score publication and intended entry. Exact retained
+input/intent also binds owned exit. This is preparation, not runtime activation.
 
 - Original Open45 proposal c9eae425/native52/482.351581upper.
 - Trusted CPU point66a5600b/native25/432.705026upper; one invented forward,

@@ -7,7 +7,7 @@ Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared MD, integration and Git. No operator decision pending.
-Production integration9d04e169; current-state docs last pushed44d360e0.
+Production integration9d04e169; current-state doc history is in Git.
 
 Preserve ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, original
 pending identities and ALL original exits. Never KIS_LIVE_*, substitute unknown
@@ -151,11 +151,44 @@ Forty selected closed raw pages contain complete opening30 labels (1200cells).
 Old reader.py rejects a WHOLE page when any row is outside RTH; these120-row
 pages also contain90premarket rows. No extra opening GETs are justified now.
 The old161 stage/reader remain immutable, not silently regraded.
-Ohm owns NEW current-us19-mixed-session-research-view-20261103-v1,
-600SUM1800elapsed: parse/validate ALL rows, then select RTH with exclusion
-counts, explicit proxy manifest and actual native consumer tests. Malformed
-outside rows cannot bypass validation. Separately stage completed immutable
-pages after source freeze; do not invent more independent dates or Paper input.
+NEW current-us19-mixed-session-research-view-20261103-v1 is CLOSED ready:
+Sourceeed40af8/API0d5f319f/25native+5independent+2boundarychecks/360upperof600,
+GO_WITH_LIMITS f11253fa after initialREVISE. Parent verified35members0mismatch.
+Parse/validate ALL rows then select RTH with exclusion counts; malformed outside
+rows cannot bypass validation, overlap includes all labels, denied-page domains
+cannot be rescued by another page. Strict saved safeNPZ masks survive actual
+fresh-process consumer checks. No actual intake in that source scope.
+Copernicus now owns current-us19-mixed-session-input-staging-20261103-v1,
+600SUM1800elapsed, exact completed655pages<=78576rawrows only, no HTTP/model.
+Prior93 opening windows are NOT implicitly joined. Market view bytes stay in
+M/research_provisional/kis_paper/current-us19-mixed-session-20261103-v1.
+Stage now CLOSED05:19:07 within original05:19:47hard:
+COMPLETED-CALLBACKbb1abe0c/SOURCE-r3.json747ad96c/FROZEN3f578808/590upperof600,
+one actual intake/655pages78576source rows/64470RTH/14106excluded/0denied.
+Ten stocks each have14..16 complete first45/60 plus next60 dates (JNJ14,JPM15,
+others16), not25 new independent dates. Prior93 were NOT joined.
+STAGEDc09f0b97/HEADER45d5f0b5/PANELe84ccb8a, Parent15sourcepins+bothpayloadhash/bytes match;
+Root SOURCE.json310a467f is a retained earlier failure, NOT the747ad96c source.
+selected input before/after stable, launcher/stage exact identities absent/
+Jobemptyexit0. Original native fixture final-verdict omission and separate
+bootstrap failure are retained; no reporting reintake or refund.
+Rawqualification0/nonPIT/secondaryclock+1h/CA/finality/START-END unknown stay.
+Ohm's Throughput review is CLOSED read-only: remove human-JIT, retain fresh
+actual-wire admission while avoiding repeated cold census, favor date-depth/
+lower-turnover research. Known public monitor image compatibility remains a
+narrow old-H3 deployment dependency, not a global UI/research approval hold.
+Six exact older-key probes are now ACTUALLY CLOSED at
+current-intraday-date-depth-six-probe-20261103-v1:
+Source9794400c/PLANede8ebd1/native43/49pins0mismatch, Parentrelease97d385b8,
+quiet host44828/birth134381576214415198 launched05:33:41.
+RESULTbeafa39f/HOST-CLOSUREab0ab6a8/catalog95039795:
+6GET1POST/0rows/6EMPTY_PAGE cursorcloses/0technical0retry0unresolved,
+115.144895SUM/workerjoinedexit0/Jobempty/15helpersclosed; Parent host+worker
+57148absent05:38:40. Exact AMD/NAS and JPM/NYS anchors Aug3/Sep1/Sep24 only,
+not TPS/auth failure, not a proven global historical floor. Do not repeat
+empty cursors or run a blind earlier-date loop. Next useful choices are
+existing prior93 input coverage or separately licensed existing date-depth;
+current research/Paper authority is unaffected.
 Old depth120/600 expired unfinished, never refunded/reopened.
 
 Proxy research manifests retain explicit unverified NY local-label mapping,
@@ -199,7 +232,42 @@ Next new current-postcheckpoint-timesfm-h3-development-20261103-v1,
 TimesFM2.5 local safetensors/revision1d952420 (officialHF dated2025-10-02,
 Apache2) supports a post-checkpoint2026 weekly/H3 development comparison.
 Exact source/native/actual GPU/resource qualification first; no new running
-inference is inferred from this dispatch. Prior studies/rights/claims unchanged.
+inference is inferred from this dispatch. That original native bootstrap FAILED
+before import/checkpoint/API (PackageNotFoundError, cached wheel path omitted).
+One linked continuation8e6df96b/RESULTf1bb6a32 then CLOSEDFAILED at safeAPI
+timesfm_local.py:124 RuntimeError, underlying exception not retained.
+Original source/contracts and zero-retry evidence unchanged, zero market
+forecasts/readouts and allCID/lease/actorsclosed. Combined708.220600upperof1500;
+additional220upper does not establish compliance with Parent180repair subcap.
+No second BLIND model/API chain. The separate import diagnostic is now CLOSED:
+Source760f8d99/RESULTd821185b/35.353312upperof120/oneimport/zeroAPI-GPU-weights.
+Exact-image Python3.12 cannot discover the wheelzip's timesfm_2p5 namespace;
+root import swallows ImportError and exports no Torch class. Missing einshape
+is Flax-only and is NOT evidence of the Torch failure. Existing extracted
+public-runtime/timesfm25-c7bde94b.../site has matching16Python/metadata files
+and working namespace lookup. Historical masked inner exception stays unknown.
+This new first-cause proof reverses only the stop-on-unknown condition:
+Harvey owns ONE continuation-r2 using that exact existing site RO, no install/
+download/newdeps. Old failed results/zero-retry contracts stay immutable;
+old708.220600+diagnostic35.353312+r2<=1500SUM, r2<=750, original06:27:06hard,
+one new invented API before at most ONE marketforecast/readout across lineage.
+Retain safe exception stage/category/frame; no blind extra retry, actual results
+or convergence claims from this dispatch. R2 has now actually CLOSED:
+Sourced9bca820/RESULT5fb31f96/FINAL-CALLBACK4124db23reference/native12,
+0fits/ONEGPUmarketforecast697x3/ONEreadout12views,41weekly2026cohorts.
+GPUload+compile+forecast6.533796sec/1.058706GBallocated1.067450GBreserved,
+noCPUfallback. Net10 growth21.935650pct/close-onlyDD12.367194; momentum13.816188,
+samegrossEW10.286293/DD6.715438, frozenDDlimit10.073158 =>primaryRISKFAIL.
+Not model-performance evidence from earlier bootstrap failures, independent
+alpha, measured Paper fees/returns or permission to replace current H3 point.
+Old708.220600+diagnostic35.353312+r2261.748195=1005.322108upperof1500;
+all42r2actors/4CIDs/leaseclosed, originalhard06:27:06 unchanged.
+Next Ohm CPU executor/Harvey science custody own one fixed price-exit composite
+using SAVED scores47bdccee and original647d9bf6 pure rule,0fit/forecast/restores,
+900SUM3600elapsed/ONEpipeline<=6newviews+12oldcarried. New adaptive composition,
+not regrading failed TimesFM; no Paper-point/exit/risk change. Harvey separately
+checks whether a trusted dated Chronos2 same-target benchmark is genuinely new
+and ready, no automatic duplicate/dummy GPU dispatch.
 preserve deferred transfer3040 and exclude reserved NAS8 Nov3/4 outcomes.
 Dense origins are not more independent dates or an old5DEV winner reranking.
 
@@ -227,6 +295,10 @@ phases), fourCIDs/recordedactors closed. No actual broker/private/market effect.
 Next new one-leg operational preparation preserves the original quarter with
 remaining quarters cash, exact on-time forecast admission and new10:22 dispatch
 deadline; old1min research/source/results are unchanged, no expired-intent reuse.
+Hooke's finite Feed->CPU publisher and Helmholtz's one-leg consumer must bind
+the actual future packet at runtime to a frozen Source/PLAN, not a placeholder
+point/hash or Parent manual-JIT between10:16:55 publication and10:17 entry.
+These are source preparations; no actual Open45 task/market/broker effects yet.
 Data Feed must prewarm/reuse valid RAM token and obtain SPY first.
 10:16..10:16:25 capture/10:16:55 score are proposed budgets, not measured
 latency promises. Bind actual Broker token/cache/floor before runtime release;

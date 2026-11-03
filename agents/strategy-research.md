@@ -2,6 +2,18 @@
 
 ## Current Source Handoff
 
+CURRENT05:50: Ohm now executes a bounded CPU composite for Engine/Harvey:
+A/research/current-timesfm-h3-price-exit-composition-20261103-v1,
+900SUM3600elapsed/0fits0forecasts0restores/ONEpipeline<=6newviews+12carried.
+Use SAVED TimesFM2.5 r2scores47bdccee/RESULT5fb31f96 (41weekly2026cohorts)
+and this role's fixed647d9bf6 exit expert. Original+21.935650pct/DD12.367194
+failed frozenrisk10.073158 and staysFAILED. New adaptive composite applies
+nextbarOPEN reduce/exit and mandatorythirdCLOSE; compare deterministic2ndOPEN
+exit plus carriedmodel/EW/momentum/cash/costs/gross. No grid, threshold tuning,
+modelrerun/currentPaperchange or alpha from lowerexposure. Harvey owns exact
+OHLC/cohort/cost contract; native realpacket/book+Claude before one CPU readout.
+Earlier Data view and Throughput review are CLOSED, not active collectors.
+
 CURRENT04:35: one price-only exit expert is COMPLETE at
 D:/thericher-v2/model-artifacts/research/current-price-only-exit-expert-proposal-20261103-v1,
 Source647d9bf6/API d8508d9b/native35/240upper/GO_WITH_LIMITS. Independent

@@ -21,6 +21,16 @@ on-time forecast admission before old expiry, separate new operational intent
 dispatch10:17..<10:22 and original11:17exit. Not4orders/renorm/old source retag.
 Native real counter/unknown/partial/restart/latefact checks and short challenge
 first; no actual effect or installation authority from this preparation.
+That oneleg scope is now CLOSED qualified invented-only Source10ce0fb2/
+APIc345bdca/RESULT18f7246c/native47/653.244067upperof900,
+GO_WITH_LIMITS8f169537, all recorded guest/host actors closed. Initial cold
+fixture/host-summary failures retained, no model/private/broker/Task effects.
+NEW current-open45-finite-session-host-preparation-20261103-v1,
+900SUM3600elapsed from receipt, binds actual account-owned controller/custody/
+native risk to runtime-resolved publisher+positiveclosure and finite quiet
+entry/ownedexit definitions. No human-JIT/placeholderpoint/repeatedreadout
+worker, Taskinstall/Run or actual effects in this preparation. Hooke owns
+current-open45-quiet-future-publisher-preparation-20261103-v1 in parallel.
 Old flat stock registrations can make new-cohort entries skip; actual current
 overlap has NOT been read. Never remove old plans/losses/reservations to trade.
 CPU point66a560 and Data Feed source55checks are ready ingredients, not a

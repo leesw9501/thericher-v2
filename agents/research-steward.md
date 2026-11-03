@@ -2,56 +2,42 @@
 
 ## Current Resource Coordination
 
-Nov3UTC02:30. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is sole current
-GPU coordinator. Open45, Phase45 and cost-gate numerical work is COMPLETE,
-not still pending. Open45 Paper readiness is COMPLETEc9eae425/native52.
-CPU point-producer preparation is now COMPLETE66a5600b/RESULTee918c90/native25,
-432.705026upper/13actorsCIDclosed; trusted original checkpoint restore plus
-invented CPUforward only, no market evaluation/GPU. New GPU training depends
-on a frozen useful hypothesis and actual support. The raw161 old view had
-opening masks0 because mixed-session pages were discarded; findingb44ca37f
-corrects raw-absence inference, not old study qualification.
-CURRENT04:35: Harvey owns NEW full-day TCN family at
-A/research/current-full-day-intraday-tcn-development-20261103-v1,
-3000SUM7200elapsed/onefit/oneforecast/finite views. Existing original8+SPY
-fullRTH25dates support this distinct context/horizon study independently of494.
-TCN is now CLOSED Source91126913/RESULT118849a4/1809.771977upper,
-1CUDAfit420updates/BEST3/172.230478optimizersec/77.826MBallocated96.469MBreserved,
-oneCPUforecast12views/allCIDsleaseabsent. Time/update stop/no convergence;
-fitwall292.700357 >declared285, retain that sub-bound overrun/no refit.
-Next new postcheckpoint TimesFM H3 family1500SUM5400elapsed/0fit/1forecast/
-1readout/<=12views uses existing trusted local2.5 snapshot1d952420, not new
-GPU training or a completed inference yet. Qualify source/native/headroom/lease
-before actual dispatch; no another always-in15min turnover study merely for
-occupancy. Preserve deferred3040
-and every old cap/debit; no completed-fit repeat or more-independent-date claim.
-No environment, user-app or operator-permission hold on useful GPU training.
+Nov3UTC05:50. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is sole GPU coordinator.
+Permission/resource policy: project first useful GPU priority, personal apps
+are not permission holds. Measure free/projected peak VRAM and desktop reserve;
+never kill user apps or age-reclaim a live/unknown owned lease. Execution
+reliability preempts at a safe checkpoint; no dummy training for utilization.
 
-- Original Open45: LSTM34updates/BEST10/.269500optimizersec/.549433fitwall,
-  80.13MBallocated81.79MBreserved; RESULTb6f0deff,57actors6CIDsleaseclosed,
-  1071.522273upper. Small120FIT rows explain the short fit.
-- Phase45: 1CUDAfit55updates/BEST7/.259228optimizersec/.607427fitwall,
-  98.23MBallocated117.44MBreserved; RESULT12f16aa2,41actors4CIDsleaseclosed,
-  1956.372048upper.600FIT rows from five overlapping phases are not new dates.
-- Absolute cost gate: 1GPUfit49iterations/BEST0=one trained tree/
-  .620536fitwall; RESULT06851f0c,40actors4CIDsleaseclosed/1525.412293upper.
-  All cash, primary rejected; no threshold/seed/epoch retry.
-- Fixed saved-forecast composition:0fits3views/fouractorsclosed/
-  409.721335upper; CPU only, primary rejected.
-- Earlier nonlinear GPU hazard:114iterations/BEST81=82trees/
-  .589849optimizersec; audit98a492/17actorsclosed/972.158975upper,
-  zero audit numerics. No repeat to repair logs.
+Latest actual closed GPU work:
+- Full-dayTCN91126913/RESULT118849a4:1CUDAfit420updates/BEST3,
+  172.230478optimizersec/77.826MBallocated96.469MBreserved,1CPUforecast12views.
+  Time/update stop/no convergence, actualfitwall292.700357>frozen285.
+  Retain sub-bound overrun/no corrective refit.1809.771977upper/3000,
+  allCIDleaseclosed, growthFAIL.
+- TimesFM2.5 r2d9bca820/RESULT5fb31f96:ONEGPUforecast697x3/
+  6.533796coldload-compile-forecastsec/1.059GBallocated1.067GBreserved,
+  noCPUfallback/0fits/ONEreadout12views. PrimaryriskFAIL.
+  All42r2actors4CIDsleaseclosed. Lineage1005.322108upper/1500 includes
+  oldfailed708.220600+importdiagnostic35.353312+r2261.748195; old220upper
+  vsParent180repairsubcap unproven compliance stays retained.
+  Original06:27:06expiry/old contracts/debits unchanged, no further calls
+  from unused budgets.
 
-Exact paths and metrics are in agents/engine-research.md and the immutable
-callbacks. Prior scope clocks/failures/caps/debits remain unchanged. Unused
-budget is not extra trial authority. Current dispatch/MD is not a live PID.
+Runtime lesson: exact-image wheelzip failed namespace discovery, not model
+performance or missing Flaxeinshape. Diagnostic760f8d99/d821185b used no
+model/GPU; existing extractedsite16filesmatch led to source-qualified r2.
+Do not repeat failed bootstrap or completed forecast to repair logs.
 
-Next resource demand depends on genuinely ready new data/hypotheses, not
-artificial GPU occupancy. Measure current free/projected peak VRAM, keep
-desktop/driver headroom and recheck before adding concurrent useful workers.
-Personal apps are not a permission hold; never kill user apps or reclaim
-live/unknown project leases by age. Execution reliability preempts safely.
-The historical evidence below is CLOSED, not the current resource queue.
+Current disjoint resource demand:
+- Ohm price-exit composition is CPU-only:900SUM3600elapsed/0fit/forecast/
+  restore/ONEpipeline<=6newviews+12carried. No GPU lease needed.
+- Harvey may prepare Chronos2 same-target proposal only after datedsafe
+  checkpoint/runtime/priorstudy dedup. New proposed900SUM3600elapsed/
+  0fit1forecast1readout<=12views0retry needs actual frozen science/native/
+  measured headroom/lease before dispatch. An MD is not a running PID.
+- Paper/Data preparation/cooldowns never become a global GPU hold.
+  Preserve deferred3040 and all closed studies/holdouts; more origins/
+  stockrows do not add independent date clusters.
 
 ## Closed Resource Evidence
 
