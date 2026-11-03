@@ -77,6 +77,28 @@ and frozenNov4UTC21:35 evaluation excluded from new selection.
 
 ## Throughput Review
 
+03:15 material first-cause: raw70ef stopped03:06:41 at161GET/19320rows,
+494remaining/no pending/unresolvedGET/technicalfailure. Actual OWNER30624/5040
+joins Execution invented nativeJob (network request method hard-denied).
+Broad source regex misclassified its denial code. Copernicus owns new494
+continuation with exact synthetic capability/source/argv/path attestation;
+unknown actual API/token writers still defer. Preserve old source/attempt/data,
+no original replay or generic test exemption. Franklin's warm census prototype
+is separate and does not alter the running/consumed old source. This corrects
+the earlier running projection; company remains UNFINISHED.
+
+03:05: raw655 is actually running,55GET/1POST/6600captured rows/0technical
+failures at02:55:39; all secondary clocks differ+1h, no qualified rows inferred.
+Source-only same-session profile/CPU point producer and provisional research
+panel proceed independently. More independent dates, not only more stocks on
+the same5DEVdates, is the next data consumer. Copernicus prepares date-depth
+scope without spending extra requests from the active frozen batch.
+Temporary Franklin01a19f5d-cfc5-7643-ad9a-63855fffcb4f owns
+A/infra/current-quiet-census-throughput-prototype-20261103-v1,600SUM1800elapsed,
+invented quiet native cold/warm census prototype only. Measured6.11sec/GET
+includes repeated process bootstrap; reduce that future overhead, not frozen
+pacing/source/ownership controls or the current worker. No new durable role.
+
 02:30: ready Data capture and original-candidate Paper preparation proceed
 while Parent repairs the source-qualified automatic reader. No market wait.
 Improvement: replace stale pending projections with producer callback facts;

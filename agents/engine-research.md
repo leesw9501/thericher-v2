@@ -14,10 +14,18 @@ Need fresh/broader dates and a deployable proposal path, not indefinite tuning
 of the same five DEV sessions. Paper engineering remains separately authorized.
 
 Next current-open45-cpu-point-producer-preparation-20261103-v1,
-600SUM1800elapsed from receipt: trusted original BEST10 CPU model restore and
-invented-input inference/native strict feature16/input/score/proposal handoff.
-No market inference/evaluation or new fit. This is not GPU training; all
-completed numerical campaigns remain closed. Direct qualified API to Execution.
+is now COMPLETE: Source66a5600b/RESULTee918c90/native25/432.705026upper,
+one trusted BEST10 weights_only CPU restore/one invented forward.025sec,
+13actors/CIDclosed, no market inference/evaluation/new fit/GPU. Direct API
+handed to Execution and Data. Earlier pending wording is historical.
+
+Actual new raw161 stage cannot support opening45/60 contexts (first30missing,
+only4datesmostly/AMD5). Existing original8+SPY fullRTH25dates remain available
+for ONE distinct all-day rolling-context/horizon experiment if it is genuinely
+useful; not another old5DEV winner search or dummy GPU job. Harvey owns choice,
+actual source/support/caps/native/Claude and resource qualification; no new
+actual training is claimed from this option. Preserve every existing family
+clock/debit and exclude reservedNASNov3/4. Data morning-gap plan proceeds.
 
 A=D:/thericher-v2/model-artifacts.
 

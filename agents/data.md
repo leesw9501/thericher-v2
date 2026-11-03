@@ -2,6 +2,28 @@
 
 ## Current Ownership And Ready Inputs
 
+CURRENT03:55: NEW494 continuation is ACTUALLY running:
+D:/thericher-v2/model-artifacts/data/current-us19-raw-historical494-continuation-preparation-20261103-v1,
+Source03567531/PLAN16d17ac9/native156/750prepupper. Parent launch03:51:11,
+host38820/birthFILETIME134381514718000731/release48f66d69; first03:52:32
+progress12GET1POST/1440rows/482remaining/0technicalfailures. No replay/reset.
+Original70ef161GET/19320rows is closed, not this worker. Exact known synthetic
+collision permits only bounded30s worker wait for positive closure, never an
+active actor exemption. Unknown actual API/token writers still defer.
+
+Actual161 proxy staging coverage:14520RTHknown of97500declared cells,
+all10assets first45/first60 input dates0; known runs start10:00ET. Raw count is
+not model-input count. Finishing494 does not repair opening09:30..09:59.
+NEW current-us19-opening30-gap-preparation-20261103-v1/600SUM1800elapsed
+derives<=250missing09:59 requests; no extra calls in the frozen494 batch.
+Old date-depth prep120/600 expired unfinished, not refunded or reopened.
+
+Temporary Data Feed source-native is closed55checks/RESULT-v2/373.033207upper,
+network-none/no private mounts/no actual calls; old controller accounting is
+invalid and consumed. NEW feed-only60-floor source calibration is separately
+owned by Hooke; old default/494300 unchanged. See NEXT_CODEX_GOAL for exact
+input/deadline/native/accounting boundaries. No actual Feed installation.
+
 Nov3UTC02:30. Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c owns
 D:/thericher-v2/model-artifacts/data/current-us19-raw-historical-batch-preparation-20261103-v1.
 Original01:56:04/900ownedSUM3600elapsed/hard02:56:04; no clock reset.
@@ -11,7 +33,15 @@ tests/test_kis_historical_capture.py. Parent serial202/fullRuffPASS; source20pin
 fresh full r2 integration PASS4d612230/19917PASS26skip/8of8[19943]/1429pins.
 Actual quiet hostPID9332/birthFILETIME134381478035082513 launchedNov3UTC02:50:03,
 releasece1649c6; exact actual-once only, no relaunch/reset. First02:50:45
-progress6GET1POST/6responses720rows/649remaining/0technicalfailures. Not complete.
+progress6GET1POST/6responses720rows was early only. Original batch NOW CLOSED
+03:06:41:161GET1POST/19320rows/494remaining/0technicalfailures/0pending/
+0unresolvedGET/0overlap0conflict; Jobsjoinedempty/1995.312719SUM.
+Source regex misclassified pure hard-network-denied Open45 fixture30624/5040
+(native.py:38), not APIquota/auth/historyfloor. Exact OWNER/NativeJob/CLOSED
+join retained. NEW current-us19-raw-historical494-continuation-preparation-
+20261103-v1/900SUM3600elapsed, source/native/Claude narrow fixture capability
+admission before one new494GET/1POST/0retry/5400worker generation. Unknown real
+API/token writers still defer; no generic Python/test/Parent exemption.
 StrEnum/format correct initial7lint errors; old711/native-r2/full-r1 remain
 historical only. Prep725conservative upper of900, original clocks unchanged.
 

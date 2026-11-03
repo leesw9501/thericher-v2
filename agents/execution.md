@@ -2,6 +2,17 @@
 
 ## Current Ownership
 
+CURRENT03:55: Open45 same-session source-native profile preparation CLOSED:
+Source62eed9c7/API0149bb80/32focusedchecks/700upper at
+D:/thericher-v2/model-artifacts/execution/current-open45-intraday-native-profile-preparation-20261103-v1.
+No actual effects/deployment. Claude REVISE retained (timing/AST/proxy), not a
+profitability veto. Current new partial/restart qualification owns its own
+600SUM1800elapsed scope; untested partial-fill extension is not claimed PASS.
+Old flat stock registrations can make new-cohort entries skip; actual current
+overlap has NOT been read. Never remove old plans/losses/reservations to trade.
+CPU point66a560 and Data Feed source55checks are ready ingredients, not a
+complete actual caller/factory/token timeline or finite release.
+
 Nov3UTC02:30 CURRENT delta. H3 financial entry/exit below remain enabled.
 New automatic post-entry reader Source9410af60 actual Install failed after
 disabled exact task creation; no Parent authority published. Name

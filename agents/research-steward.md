@@ -5,8 +5,12 @@
 Nov3UTC02:30. Harvey01a19e80-1586-7fe2-9587-9b44f510842b is sole current
 GPU coordinator. Open45, Phase45 and cost-gate numerical work is COMPLETE,
 not still pending. Open45 Paper readiness is COMPLETEc9eae425/native52.
-Current source-only CPU point-producer preparation needs no GPU: native trusted
-original checkpoint restore/invented-input forward only, no market evaluation.
+CPU point-producer preparation is now COMPLETE66a5600b/RESULTee918c90/native25,
+432.705026upper/13actorsCIDclosed; trusted original checkpoint restore plus
+invented CPUforward only, no market evaluation/GPU. New GPU training depends
+on a frozen useful hypothesis and actual support; raw161 has opening masks0.
+Original8+SPY fullRTH25dates remain a possible rolling-context research input,
+not permission to repeat completed fits or claim more independent dates.
 No environment, user-app or operator-permission hold on useful GPU training.
 
 - Original Open45: LSTM34updates/BEST10/.269500optimizersec/.549433fitwall,

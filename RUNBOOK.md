@@ -104,8 +104,11 @@ Raw historical batch readiness is at current-us19-raw-historical-batch-
 preparation-20261103-v1, current Source70ef5448/PLAN0b1b3a66/native135checks.
 Parent fresh202serial/19917fullPASS/Ruff/4Compose; actual quiet hostPID9332/
 birthFILETIME134381478035082513 launchedNov3UTC02:50:03/releasece1649c6.
-655historicalGET/800cap/1POST/0retry, exact actual-once progress/terminal only;
-no relaunch/reset. Raw M quarantine is NOT a
+Original terminal03:06:41:161GET1POST/19320rows/494remaining/0technicalfailures/
+0pending/0unresolvedGET, Jobempty/joined/exit0/1995.312719SUM.
+Hard-network-denied native fixture30624/5040 was source-regex misclassified.
+New current-us19-raw-historical494-continuation-preparation-20261103-v1
+owns qualified recovery, not original relaunch/reset. Raw M quarantine is NOT a
 canonical/model/Paper input. Existing strict clock validators remain unchanged.
 Phase45 and absolute cost-gate numerical jobs are COMPLETE/primary rejected;
 no fits/forecasts/replays restarted by retained historical commands below.

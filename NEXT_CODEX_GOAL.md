@@ -75,25 +75,72 @@ other original duties remain unchanged.
 
 ## Parallel Ready Work
 
-Data/Copernicus:
-A/data/current-us19-raw-historical-batch-preparation-20261103-v1.
-Pure shared module src/thericher_v2/data/kis_historical_capture.py and focused
-tests are its assigned repo writes; freeze/review/integrate before adoption.
-Current corrected Source70ef5448/PLAN0b1b3a66/native-r4; actual HTTP not yet
-inferred. Old711/native-r2 plus failed lint retained. StrEnum/format corrected;
-Parent serial202/fullRuff pass; fresh full helper r2 underway.
-Proposed655 historicalGET/800totalcap/1initialPOST/0retry/7200s worker,
-NEW raw quarantine under M. Preserve exchange/Korea labels verbatim; exchange
-order/duplicates/maxKEY control cursor progress, secondary clock mismatch is
-diagnostic. Captured is NOT canonical/model/Paper-qualified.
-Original3e batch is closed11GET/1POST/10heads1200rows; Source2c probe proved
-head/proper continuation valid but old key120ordered rows had Korea+1h.
-No quota/fallback/history-floor claim or guessed clock repair.
-Actual Parent adoption is COMPLETE, worker launched Nov3UTC02:50:03.517370:
-quiet hostPID9332/birthFILETIME134381478035082513/releasece1649c6.
-Exact actual-once/PROGRESS/RESULT/HOST-CLOSURE only; launch is not completion.
-Copernicus owns actual progress/terminal callback, no replay/reset. Keep all
-old cursor/attempt/timing state unchanged.
+After closing161 staging, Ohm returns to Strategy Research:
+A/research/current-price-only-exit-expert-proposal-20261103-v1,
+600SUM1800elapsed from receipt. ONE pure close-based failed-breakout/trailing
+exit-evidence kernel with causal invented Bar/typed-decision tests, then direct
+Engine handoff. No actual data, fitting or current owned-exit/risk change.
+Official KIS preset documentation is an idea source only; no unlicensed code
+reuse or new framework. Do not infer intrabar stop fills from daily closes.
+
+Execution profile62eed source-native preparation is COMPLETE32checks/700upper;
+Claude remains REVISE (timing/AST/proxy limits), not a profitability veto.
+Next Helmholtz owns
+A/execution/current-open45-partial-recovery-qualification-20261103-v1,
+600SUM1800elapsed from receipt, invented-only partial BUY/SELL/restart/pending
+reconciliation plus focused old-native regression through the emitted core.
+No production source change, Task/broker/private state or model call. Prefer
+network-none/no-private-mount tests to avoid becoming another false API actor.
+An unqualified partial-fill test is not claimed PASS from old full-fill cases.
+
+Temporary Data Feed capability owns source-only
+A/data/current-open45-first45-feed-preparation-20261103-v1,
+600SUM1800elapsed from receipt. Concrete consumer is Engine CPU point66a560
+and Execution same-session profile. One finite worker may prewarm before capture,
+reuse one valid RAM token and fetch SPY first then eight exact NAS stocks.
+Proposed10:16..10:16:25 capture/score<=10:16:55 are measured-or-abstain budgets,
+not a latency promise. No actual HTTP/credential/Task in this prep. Invented
+real-client/strict input handoff must be physically broker/credential-isolated
+and non-conflicting with Data494; prefer network-none/no-private-mount guest.
+No actual source/timing/PIT promotion, no public exposure or new service.
+Feed source-native preparation is COMPLETE55checks/RESULT-v2/373.033207upper;
+old controller accounting is invalid/consumed and must not be reused.
+Hooke next owns NEW feed-only token-floor calibration at
+A/data/current-open45-feed60-calibration-preparation-20261103-v1,
+300SUM900elapsed from receipt. Official KIS README documents one issuance per
+minute; exact Broker worker uses60. New feed may explicitly use60 on the SAME
+atomic+legacy timing gate, one initialPOST/RAM reuse/no capture-windowPOST.
+Do not change old494/default300 or claim observed starvation/latency. Native
+shared-clock/held-lock/one-attempt tests and short Claude challenge first;
+no real HTTP/credentials/Task or old accounting-helper reuse.
+
+Data/Copernicus actual494 continuation:
+A/data/current-us19-raw-historical494-continuation-preparation-20261103-v1,
+Source03567531/PLAN16d17ac9/native156/750prepupper,32pins stable.
+Quiet actual host38820/birthFILETIME134381514718000731 launched03:51:11.809191,
+release48f66d69. First03:52:32 progress12GET1POST/1440rows/482remaining/
+0technicalfailures. RUNNING, not complete. Exact actual-once paths only.
+Caps494GET1POST0retry/5400worker5460host/16350full actorSUM. Same300 issuance/
+atomic+legacy guards and request pacing. No original replay or hidden requests.
+Known exact synthetic collisions get30s worker-owned wait for positive closure,
+never active exemption. Unknown actual API/token writers still defer.
+
+Original70ef source/raw generation closed03:06:41 after161GET1POST/19320rows/
+494remaining/0technicalfailures/0pending/0unresolvedGET/0overlap0conflict,
+Jobsjoinedempty/1995.312719SUM. Exact network-denied fixture30624/5040 was
+misclassified by source regex; not quota/auth/historyfloor. Preserve all old
+source/attempt/cursor/bytes. Older3e heads/probe2c remain closed.
+Pure module/test integration is9d04e169; current full authority below PASS.
+
+Actual161 staging shows ZERO first45/60 contexts across10assets because
+09:30..09:59 is missing; finishing494 does not fix it. NEXT source-only
+A/data/current-us19-opening30-gap-preparation-20261103-v1,
+600SUM1800elapsed from receipt, derives<=250 exact09:59 queries. Actual launch
+waits positive494 closure, not operator approval. More independent dates after
+usable input; expired depth120/600 prep stays unfinished/charged.
+Raw captures retain both clocks; qualification0 remains. Explicit exploratory
+proxy staging is a separate manifest with missing masks/PIT/CA/finality limits,
+never silent canonical/Paper promotion.
 
 Temporary Execution/Ohm holdings-only preflight is COMPLETE:
 A/execution/current-paper-holdings-readonly-preflight-20261103-v1/CALLBACK.json.
@@ -108,6 +155,36 @@ A/data/current-us19-raw-clock-anchor-preparation-20261103-v1,
 exact old canonical-row/OHLC digest overlap; no offset search/new HTTP.
 Native invented producer-consumer first. Parity cannot prove PIT/finality/CA/
 START-END or automatically promote raw quarantine.
+
+After closing that exact anchor scope, Ohm owns NEW source-only provisional
+research-panel preparation at
+A/data/current-us19-provisional-minute-panel-preparation-20261103-v1,
+600SUM1800elapsed from receipt. Official KIS xymd/xhms are local date/time;
+declare fixed NewYorkUTC label proxy and explicit unknown timing/finality/CA.
+No cross-asset anchor invention, offset tuning or raw qualification rewrite.
+Design a separate research-only manifest/reader with strict OHLC, calendar,
+duplicate, coverage and masks plus native invented producer/consumer checks.
+No actual network/fitting/Paper/canonical promotion; immutable completed raw
+page intake may be separately bounded only after its exact contract freezes.
+That source-only reader is COMPLETEd8d6c8c7/API2b3881d1/native24/240upper.
+Next Ohm owns ONE actual old161-page exploratory staging at
+A/data/current-us19-provisional161-input-staging-20261103-v1,
+600SUM1800elapsed from receipt. Freeze exact original70ef/PLAN0b1b/terminal/
+Ledger outcome/CAPTURE/body pins before intake; at most161pages19320rows,
+original25-session date axis and original missing10 symbol axis, no price
+output/new HTTP. Preserve all missing cells/masks and proxy/PIT/CA/finality/
+mixed-vintage limitations. Report usable input/target coverage, not invented
+more-independent dates or Paper promotion. No fitting/evaluation in staging.
+
+Temporary Throughput/Infra owns
+A/infra/current-quiet-census-throughput-prototype-20261103-v1,
+600SUM1800elapsed from receipt. Prototype a quiet source-bound reusable census
+for NEXT Data acquisition; measure invented fixture semantics/cold/warm cost,
+timeout/Job closure and negative cases. No mutation/adoption into the running
+70ef collector, no private/broker/Task call or new runtime/platform. Actual
+request pacing remains unchanged. Copernicus separately prepares date-depth
+acquisition, current-intraday-history-depth-preparation-20261103-v1,
+600SUM1800elapsed, source-only while the original raw batch runs.
 
 Engine/sole Steward Harvey: closed Open45 comparison, fixed composition,
 Phase45 and absolute-cost gate; do not repeat completed numerics.

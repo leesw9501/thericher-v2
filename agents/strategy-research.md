@@ -2,6 +2,25 @@
 
 ## Current Source Handoff
 
+Nov3UTC03:05 CURRENT. Phase45 is CLOSED RESULT12f16aa2 (net10+1.205178pct,
+below original LSTM); absolute-cost gate CLOSED RESULT06851f0c (all cash,
+no useful trade). No more repeated tuning of the same5DEVdates.
+Original Open45 pure proposal handoff COMPLETEc9eae425/RESULT0bcc549a/
+native52/482.351581upper, direct to Execution's same-session profile.
+Engine prepares trusted original BEST10 CPU point producer, not a new fit.
+
+Ohm is temporarily assigned Data capability: fixed raw-clock anchor native9
+PASS, but shared raw/reference assets0 => missing exact symbol-matched anchor,
+not a source-wide research ban. Next separately bounded
+D:/thericher-v2/model-artifacts/data/current-us19-provisional-minute-panel-preparation-20261103-v1,
+600SUM1800elapsed from receipt, source/native only. New explicit research-proxy
+manifest/reader, no old raw qualification rewrite or canonical/Paper promotion.
+Official KIS field mapping supports declaring xymd/xhms as local labels:
+https://raw.githubusercontent.com/koreainvestment/open-trading-api/main/examples_llm/overseas_stock/inquire_time_itemchartprice/chk_inquire_time_itemchartprice.py
+This is documentation, not independent historical-clock/PIT/finality proof.
+Current raw655 collector continues on its own source/caps; no extra HTTP here.
+Earlier preparation projections below are closed evidence, not running agents.
+
 Nov3UTC01:10: Open45 actual two-fit comparison COMPLETE, CUDA LSTM34updates/
 BEST10/INNERearlystop; net10+1.216960pct/DD.651134 vsRidge+1.068984 and
 samegrossEW+1.092579, primaryPASS on only5reusedDEVdate clusters. No independent
