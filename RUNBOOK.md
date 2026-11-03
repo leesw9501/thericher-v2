@@ -2,189 +2,71 @@
 
 ## Current Operations
 
-Updated Nov3UTC19:25 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data. ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
-Start with scripts/start_next_codex_task.ps1 and current HANDOFF/NEXT/AGENTS.
-Parent owns shared MD/Git/actual metadata; agents own disjoint D roots.
+Updated Nov3UTC20:22 / Nov4KST.
+Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Workspace C:/Users/Public/Documents/thericher-v2.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+ONE original initial B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending
+identities and ALL original exits remain. No live/new bank/profit refill/
+foreign adoption/unknown-request substitution. No operator decision pending.
 
-Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
-frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
-uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
-the actual receipt did not retain which. Current later gate state cannot prove
-past cause. Do not call this a KIS quota/server rejection or lower 300 to60.
-A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/actual-20261103
-retains FAILURE/GUEST-FAILURE/WORKER-RESULT and positive worker/container closure.
-No fresh Open45 point/model forward was produced.
+Read HANDOFF/NEXT/AGENTS and role stateboards; parent owns actual metadata/Git,
+roles disjoint D: roots. Current H3 entryNov3UTC20:55/static reader21:10,
+NAS8 Data21:10, coherent19 Data21:30/hard21:45. No foreground waiting.
+Tomorrow Full17 producer14:25/entry14:31 and Open45 publisher15:07:30/
+entry15:17/exit16:17 are installed, not actual financial outcomes.
+Full17 installed e126 exit overlaps H3 Nov6UTC20:45. Derived5a571 exit20:54
+is source-native ready ONLY; Parent exact2futureTasks UPDATE28 migration
+must finish before entry. Never rerun consumed CREATE26 or silently retime e126.
+Original H3/GOOGL/MSE/H20/all original exits unchanged.
 
-Actual Open45 entry15:17 and owned exit16:17 both produced exact public
-DENY_ACTUAL_OPERATIONAL_OWNER RuntimeException receipts, task result20 and
-0instances. The source dot-sources installer parameters into caller scope,
-clobbering source/release pins; Parent reproduced64/64 ->0/0 without effects.
-This source defect is proven; the generic actual failure did not retain its
-exact guard. No acceptance/fill/current inventory conclusion follows.
-Exact public files are runtime/host-results/OWNER-FAILURE-e05ce5e037ba4864b6b7386513d7db33.json
-and OWNER-FAILURE-475f5c5493974a9d8ee6b4be2c0f87ab.json under
-A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
-Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
-expired opportunities remain immutable. No replay/retag/manual TaskRun.
+Current executable evidence pointers:
+- H3: A/execution/current-h3-current-web-parent-migration-20261104-v1/PARENT-COMPLETE.json.
+- NAS8: A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json.
+- Open45: A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
+- Earlier Data: A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/metadata-create26-delta-v6/PARENT-COMPLETE.json.
+- Earlier point: A/research/current-nov4-full17-earlier-point-preparation-20261104-v1/task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
+- Full17 installed (known exit collision): A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/earlier-nov4/installer-repair-r1/PARENT-COMPLETE.json.
+- Proposed exact migration, NOT yet actual: same earlier-nov4/serial-exit-source-r1/API.json and MIGRATION.json, Source6884cfff/runtime5a571b07.
 
-Open45 Nov4 future publisher/entry/original owned exit are ACTUALLY enabled:
-A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
-PublisherNov4UTC15:07:30, entry15:17, exit16:17;0instances/lastYear1999/
-four intended protected ACEs on all3actual Tasks. Existing H3/NAS8/web unchanged.
-Metadata0efb9fd5/nativeeb5e9b33 and Parent composition47e10c43/native9fb08297
-qualify exact disabled/readback/authority/exit-first enable/enabled readback.
-Eight positive/24negative native checks plus independent actual3Task readback.
-Prior partial creates/failures remain. No repeated completed create/repair:
-exit preserved, completed publisher own repair adopted, exact absent entry
-created flags26. The comparison handles ONLY paired same schema versions,
-measured defaults, official xs:all paths and protected descriptor representation
-with identical owner/group/ACEs/all other flags except AutoInherited control bit.
-Triggers/Actions order, clocks/arguments/principal and effect-time checks remain.
-Official schema: https://learn.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-schema
-Actual pinned Linux import passed in import-r2, without private/credential/model
-forward. Candidate is LSTM32 BEST10, not MLP; checkpoint3d74a247 remains fixed.
-Fresh future point/submit/acceptance/fill/owned inventory/PnL are UNKNOWN.
-This is installation, not a broker effect. Consumed phases are not replayed.
+F9 R5 actual original-request readonly query COMPLETED Nov3UTC20:12:
+A/execution/current-open45-nov4-parent-adoption-20261104-v1/diagnosis-r5/
+f9-lineage-probe/r3/enclosing-successor-r5/parent-once/RESULT.json,
+PARENT-CLOSED.json and ../QUIET-CLOSED.json.
+Runtime6aea4a75/final754ea374; exact original anchor/account/basis/date binding,
+network-none RO capsule reader and before/after stability passed. Native client
+used1POST/1GET, zero retry, returned history absent/0rows/0candidates.
+Bounded pages are NOT historical coverage proof. Acceptance/fill/current owned
+inventory/terminal/fees/settlement/net PnL remain UNKNOWN; reservation stays HELD.
+Job53members joined/empty/closed, exact CID absent, capsule not persisted.
+Original86f wire and R5 read are consumed: DO NOT REPLAY/reset/resubmit/release.
+Earlier r2/r3 admission failures and fault-r4 first cause remain immutable.
+Helm now checks exact ORIGINAL public dispatch/submit-stage evidence only;
+absence alone cannot close or release the request.
 
-Parent actual market-only probe187fbc0e is COMPLETE:
-A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
-Nov3UTC16:00:48 token POST200 +16:00:50 QQQ daily GET200, one each/sameRAMclient,
-already-seen20261016 date/source stable/no account/order/live/raw/token retention.
+AMD actual quote Source329feaf7/CALLBACK under
+A/data/current-amd-paper-quote-schema-probe-20261104-v1 is consumed:
+token_deferred/0HTTP, no provider timestamp/schema observed. No replay.
+OHLC60 source66c25cad is native-ready; new actual raw/INPUT.npz publication
+needs original DataREADY/cache/actor closure, no additional HTTP. Never pass
+unbound raw OPEN or placeholder/future hashes to a current model.
 
-Parent actual positions-only health probee8a3c418 is also COMPLETE:
-A/execution/current-paper-account-categorical-health-probe-20261104-v1/ACTUAL-RESULT.json
-and PARENT-CLOSED.json. Nov3UTC16:56:14..20 auth200 +NASD/NYSE/AMEX GET200,
-three complete one-page native parses, count4dedup (pergroup4/0/2), source stable.
-23invented native tests; actual hidden child exit0/Job3members joinedempty/
-closed/0stderr/7.168569s. Counts are serial non-atomic configured-account facts,
-NOT strategy ownership/order eligibility/full account-risk/fees/settlement/PnL.
-No funds/open-orders/order/recovery/private-custody calls, adoption or F9 release.
-Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
-do not ask operator to change keys from the earlier local pre-HTTP failure.
+Research return-risk ede843 and joint-patch21f2 are CLOSED; numerical results
+in Engine stateboard, not evidence of active training. No repeat completed fits.
+Local monitor http://127.0.0.1:8787 staysbe48; Korean29f6 build NOT deployed.
+Current consumer inventory includes new Open45/NAS8/full17, not just old5.
 
-F9 readonly recovery remains UNKNOWN-HELD, not a broker rejection or fill:
-r2 Source2b2837f0 actual attempt was consumed before CID/network worker/HTTP;
-root Job7 joinedempty/closed. The exact finance-free Windows probe then proved
-all own PID/birth/argv/source/exe fields matched; the legacy parent check rejected
-one positively verified console-host child. Source8077a6a8 r3 provided a narrow
-console-qualified lineage and one exact quiet-wrapper role; Native1..3/
-Claude GO_WITH_LIMITS017ef414 are source/invented proof, not financial facts.
-Parent actual r3 atNov3UTC19:10 was also WITHHELD before private CID/network:
-BEFORE_CREATE retained ValueError; AFTER_REMOVE hit a fixed-output
-FileExistsError and masked the first source frame. Quiet Job19members joined/
-empty/closed/0stderr, CIDnull/no networkJobs, capsule not persisted.
-Exact root is A/execution/current-open45-nov4-parent-adoption-20261104-v1/
-diagnosis-r5/f9-lineage-probe/r3; QUIET-CLOSED and parent-once/RESULT/
-FAILURE-BEFORE_CREATE/PARENT-CLOSED preserve facts. Both attempts are consumed,
-no replay/reset. Helm now diagnoses only fresh public admission/phase-output
-names under r3/fault-r4 before any new private attempt. Scope actual custody
-writers, not unrelated GPU/Data actors; unknown relevant writers still deny.
-Original request/anchor/B10/reservation and unknown acceptance/fills/owned
-inventory/fees/settlement/net PnL remain unchanged.
-
-H3 original finite AMD entry/exit are ACTUALLY migrated and enabled to
-operational Source2873c60a/releaseaa0be4cd/metadata SOURCE-r2 9b38bc3e.
-A/execution/current-h3-current-web-parent-migration-20261104-v1/PARENT-COMPLETE.json:
-exact current be48 projected-bootstrap/physical-mount/volume census PASS;
-UPDATE-only disabled/readback/exit-first enable/independent enabled readback
-PASS. Existing runtime TaskContract ValidateDefinition + original ValidateAcl
-also passed on BOTH actual COM definitions, not just mocked XML.
-Original financial6ae/TRUE32f/POINTad3b/SEALf8fe/D-frozenSDK/bank/B10/F9/
-paths/reader9410/authority6247/run45e9 and all exit duties unchanged.
-EntryNov3UTC20:55=Nov4KST05:55; exitNov6UTC20:45=Nov7KST05:45;
-static offline readNov3UTC21:10 unchanged, all future/0instances at readback.
-Root draft6d2 source was rejected before query; final immutable SOURCE-r2 is
-qualified14metadata cases/native78df. Original readback failed because Windows
-rewrote an existing embedded partial SD to the supplied full ACL. Actual full
-GetSecurityDescriptor stayed byte-identical; Parent composition50bad625
-normalizes ONLY exact bound embedded TEXT to captured AND current full ACL
-(2positive8negative), all other XML/owner/settings/history remain exact.
-No UPDATE replay or TaskRun/broker/private/model calls. Claude local review
-JSON parse was review_unavailable, not agreement/authority; earlier directional
-GO_WITH_LIMITS remains advisory. Real effect-time owner/bank/unknown/quote/
-orderability/observer checks remain. No actual submit/fill/owned-inventory/PnL
-or full17 financial installation is claimed.
-
-A finance-free actual Scheduler role-ABI probe also PASSED Nov3UTC17:26:03..08:
-A/execution/current-h3-scheduled-owner-abi-probe-20261104-v1/RESULT.json/
-CLOSURE.json, Sourcefdcea44b/RESULTa6e4df32. Same H3 task-contract/owner functions
-and GUI/venv/base-console/Job roles; actual PASS_STOCK_INGRESS_SCHEDULED_OWNER,
-five lineage roles/4.457s/ownerJob2members joinedempty. No broker/account/market/
-private/credential/model calls. Positive source-scoped actor closure and exact
-new inert probe disabled17:27; original H3/NAS8 Tasks untouched. This is actual
-role-ABI measurement only, NOT financial admission/fill or cryptographic OS
-origin. No manual TaskRun, recurring worker or follow-up chain.
-
-NAS8 remaining original DataNov3/4UTC21:10 and EVALNov4UTC21:35 are ACTUALLY
-updated/enabled to frozen Dataec810e85/EVAL228254e6/nativef0866506.
-A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json binds
-metadata106ac819 + exact redundant-ACL readback compositiond4aeea1f.
-Full XML/ACL/principal/all3Data+1EVALtriggers/history are retained; original
-Nov2Data last21:10/result20 unchanged, EVAL unattempted. No TaskRun/new schedule,
-models, data acquisition or evaluation occurred during migration.
-Original readback failed on Windows-inserted redundant SecurityDescriptor;
-exact saved/current ACL equality only is normalized (2positive8negative).
-Earlier failed readback/enable attempts are not passing authority. Actual future
-DataREADY/EVAL outcome UNKNOWN. No reserved outcome reopening.
-
-Current remaining exact clocks (UTC):
-- H3 AMD entryNov3 20:55, static offline reader21:10, original exitNov6 20:45.
-- NAS8 DataNov3/4 21:10, frozen EVALNov4 21:35.
-- Coherent19 DataNov6 21:10; full17 producerNov9 14:25..<14:30.
-- GOOGL original exitNov9 20:55; MSE Nov5 20:40; H20 Dec1 14:30.
-No TaskRun/catchup/repetition or replay of consumed metadata/health markers.
-Actual installation/readback is not submit/fill/owned-position/PnL proof.
-
-Actual monitor http://127.0.0.1:8787 remains imagebe48f29e/publicV2aa3ef6d6.
-Korean source preview5ee6/69tests/32pins/3viewports/7screenshots is closed.
-New tracked-commit b696765e image was built and network-none/RO/zero-mount
-server-import checked: canonical Engine image
-sha256:29f6d1365e75a0efde6856f4a564fd7c88700dec1119587a857f8121d4323ee1.
-A/monitor/current-korean-monitor-image-build-20261104-v1/PARENT-BUILD-PROOF.json.
-NOT deployed/admitted; f488 is build config, not Engine image ID.
-Do not casually swap a runtime dependency of a financial owner. No public
-exposure/private custody/credentials/broker authority in web.
-
-Current Korean monitor work is still NOT deployed; be48/8787 stays working.
-All5consumer source enclosures and a six-definition metadata source8d6bdf48
-exist, but its480-SUM preparation overran: FAILED_PARTIAL, no refunded/regraded
-authority. Separate actual-inert Windows6of6/corrected comparer proof f0427efc
-does not prove installed ACL equivalence or owner closure. Claude verdict
-PARTIAL_DEFAULTS_NARROWLY_ACCEPT_SD_EQUIVALENCE_WITHHELD, pointerda8ae3f2.
-Parent readonly Capture first failed missing Management module before effects;
-explicit preimport reached one actual H3-exit capture, then failed original
-GOOGL full-definition comparison. No Task update/enable/Run or service swap.
-Exact public diagnosis is under current-korean-monitor-consumer-compatibility-
-implementation-20261104-v1/exact-nov3-windows-compatibility/capture-diagnosis.
-Current dependency inventory must also include new Open45/NAS8/full17 paths;
-do not swap only the older5 and break new Paper/Data. Lagrange owns the narrow
-semantic first-cause and stable public-schema/UI capability-boundary review,
-not a new platform or global Paper/GPU hold.
-
-Korean monitor consumer completion is source-native READY, not deployed:
-A/monitor/current-korean-monitor-consumer-compatibility-implementation-
-20261104-v1/completion/API.json, Source1b7ef139/native6c5ca695.
-MSE original exit e0aa6822 and H3 static reader84552985 preserve original
-financial/authority/run/read-once namespace; actual native driver factory and
-invented source-format parse-and-return paths passed. All five consumer source
-enclosures now exist. Parent actual Task migration, physical single-monitor
-readback and later image swap remain separate unfinished operations. Current
-be48 stays working; no public/private/broker authority is added to the web.
-
-Tracked production/tests/config/policy unchanged from Parent33b0ae80.
+Tracked production/tests/config/AGENTS unchanged from33b0ae80.
+Reusable full authority:
 A/execution/current-paper-account-repeat-cohort-repair-20261103-v1/RESULT-r2.json
-SHA4997d859/SOURCE-r2dff04cb0:269serial/15repeatcases;actual created8of8,
-8workers[20071],20045PASS26knownWindowslinkSKIP/native+helper0, guarded
-current-child+leasecleanup. Fresh1432pins0mismatch/AGENTS match/Ruff and
-default/research/accounting/monitor Compose .env.example PASS.
-Reuse applies only while exact protected digests match. D code needs its own
-native/negative/source/closure evidence; the C suite cannot validate D code.
-
-For changed external adapters, actual emitted native producer-to-consumer
-parse/return, failure and closure checks are required. Preserve all failed
-attempts. Abort on nonzero before later modes; do not infer success from
-nullable LASTEXITCODE or a source/native verdict for different bytes.
+4997d859/SOURCE-r2 dff04cb0:269serial/15repeat cases;actual8of8 workers[20071],
+20045PASS/26known Windows link SKIP/native+helper0/guarded current-child+lease
+cleanup. Reuse ONLY while1432protected digests and AGENTS match. Fresh Ruff,
+default/research/accounting/monitor Compose with .env.example and git diff check
+required at integration. D code needs its own focused/native/closure evidence;
+repeated C tests cannot validate external code. No secrets/raw/private outputs.
+Marker-present provenance assumes honest host, not cryptographic OS origin;
+Task Scheduler Operational logging disabled.
 
 ## Frozen Reference Index
 

@@ -1,36 +1,25 @@
 # Strategy Research Stateboard (전략 탐색)
 
-## New Ready Work
-
-Erdos now prepares current-cross-asset-patch-attention-candidate-preparation-
-20261104-v1 under A/research: a small joint stock/time-patch return expert,
-existing PyTorch only, <=480SUM2700elapsed/3invented native groups. No market
-payload/fit/GPU allocation/adoption yet. Confucius owns final contract/resources.
-Official conceptual sources checked by Parent: Crossformer ICLR2023
-https://github.com/Thinklab-SJTU/Crossformer (Apache2.0 LICENSE on master) and
-iTransformer ICLR2024 https://github.com/thuml/iTransformer (MIT LICENSE on main).
-Cross-time/cross-dimension or variate-token mechanisms are source claims,
-not project stock alpha. Exact release pin is not yet adopted; own small native
-variant is not a paper reproduction. No old runtime/checkpoint/bulk import.
-
 ## Current Source Handoff
 
-Updated Nov3UTC19:25 / Nov4KST. Euclid's maxH3 proposal8bfb/API9c6834ad and daily C60
-Source1b1c9759 have been consumed by Engine's CLOSED meanrank experiment
-8e961834/a76a. Inventory-coupled rank exits cut daily-flat turnover but did
-not beat blindH3 or causal samegrossEW17. See Engine SYNTHESIS.json; no
-threshold rescue/seen-control promotion or fresh independent alpha claim.
-Next hypothesis is the distinct joint-downside risk allocation campaign;
-Engine owns numerical specification, Data prepares long2015..2025 prefix.
-The proposed book was actually implemented/tested in that campaign; it was
-not an installed Execution adapter. Analytical OPEN/thirdCLOSE remains
-NON_PARITY with native OPEN5/PRE_CLOSE15/integer lots/actualfees.
+Updated Nov3UTC20:22 / Nov4KST. The small joint cross-asset/time-patch kernel
+is COMPLETE and already consumed by Engine, not a pending GPU proposal:
+A/research/current-cross-asset-patch-attention-candidate-preparation-20261104-v1/
+API.json, Sourcebacd8aaa/kernel12495619/nativeb20cc070.
+Native invented producer-to-consumer checks passed; actual campaign21f2e6f2
+completed1GPUfit/1forecast/12views. Frozen primary failed raw/turnover controls;
+see Engine stateboard, not a reason to repeat completed attention training.
 
-Next useful mechanism should target after-cost incremental value over strong
-hold/inventory baselines; Engine owns final targets/splits/costs and fitting.
-No new reading-list or permanent role per indicator. Euclid now prepares
-long training inputs; Ohm integrates the new dated Open45 source.
-Actual new Strategy numerical work is not inferred from this stateboard.
+Conceptual primary sources (not stock-profit claims):
+https://github.com/Thinklab-SJTU/Crossformer (Apache2.0) and
+https://github.com/thuml/iTransformer (MIT).
+Own small variant, not paper reproduction or bulk code/weights import.
+Next executable hypothesis must target after-cost incremental value and
+turnover, not another architecture list. Confucius owns frozen target/splits/
+costs/fit/evaluation and GPU resources. Erdos now owns the concrete OHLC60
+same-capture publication handoff; no separate Strategy GPU or broker authority.
+Individual expert profitability is not a prerequisite for exploratory fusion;
+learned fusion needs chronological OOF predictions, no in-sample fitting.
 
 ## Closed Executable Handoffs
 

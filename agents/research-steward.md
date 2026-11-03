@@ -2,68 +2,24 @@
 
 ## Current Resource Coordination
 
-Current independent return-risk fixed-blend campaign has COMPLETED BOTH FITS:
-A/research/current-short-swing-h3-return-risk-fixedblend-development-
-20261104-v1, frozen Sourceede84336c399d1525037cba919f40be4ac95dddf928130aed43c8a87fd45e64c.
-CPU Ridge fit is CLOSED; new CUDA return TCN ranNov3UTC19:04:10..19:23:31,
-hostPID7840/birth1793732650.417784/CIDb877939e, now absent/lease absent/
-positive worker closure. Guest1160.808952s,17epochs/119updates/INNER-best9,
-process cutoff, not convergence. Checkpoint9364b09d is safe on D:.
-Actual GPU sample19:07 was36percent/1935MiB of24564MiB. CPU forecast is
-CLOSED; GPU forecast/cost-aware readout are pending, not a profitability claim.
-New target is all17 cross-sectional excess O[e+3]/O[e]-1; same causal prior60,
-indicator Ridge plus raw TCN, fixed50/50 fusion and deterministic risk/cost
-allocation. This is not the prior downside-MSE fit or an old model restart.
-Original18:34:07..21:34:07UTC/7700SUM10800elapsed/2fits2forecasts12views/
-zero numerical retries. Max512epochs/8192updates, INNER-only checkpoint,
-early48/LR schedule, no-new-update1150s/hard1400s/host1500s, not convergence
-assurance. Native batch128/256/aggregate-gradient timings precede market freeze.
-Reused-development/current-listing/MODE1/nonPIT/notTR/unknownCA/finality and
-analytical versus actual execution limitations remain; no Paper-bank promotion.
-Confucius owns GPU resources. Erdos is preparing a separate small joint
-cross-asset/time-patch attention kernel under Strategy Research, with invented
-native checks only; no second GPU fit/source/adoption is claimed.
+Updated Nov3UTC20:22 / Nov4KST. Confucius is sole GPU resource coordinator.
+Return-risk Sourceede84336 CLOSED CPU1fit/GPU1fit/2forecasts/12views; raw TCN
+17epochs119updates/best9/process cutoff, not convergence.
+Joint patch Source21f2e6f2 CLOSED GPU1fit/1forecast/12views;51epochs714updates/
+best3/earlystop48,25.4215s process, no convergence proof. Five stage CIDs/leases
+are absent; see exact FINAL-CALLBACK and stage closures in Engine artifact root.
+No active later fit is claimed. Completed work is not restarted for utilization.
+Finalizer/actor closure is verified separately from lease absence.
+Old downside39cb and meanrank8e96 studies are also closed; budgets/debits remain.
 
-Joint-downside risk campaign is COMPLETE_CLOSED_NONDEGENERACY_FAIL_BEFORE_DEV:
-A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
-20261104-v1/SYNTHESIS.json, frozen Source39cb05e8.
-CPU1fit and actual CUDA TCN1fit completed; GPU8epochs/56updates/INNER-best8,
-561.486301s process, convergence NOT proven. FIT/INNER response test failed:
-gradient-to-roundtrip-cost ratio0.575446<1 and KEEP0.8125>0.80. Therefore
-DEV forecasts/readouts/new cost views are0; profitability is NOT EVALUATED,
-not zero and not an economic failure. No relaxed threshold, numerical retry,
-model/Paper-bank swap or repeated fit. Ten CIDs/93recorded actor births closed,
-GPU lease absent; DELIVERY-CLOSED8b26c93f/final-callback9833494d.
-Conservative SUM upper6073.732391 includes3400reserved-not-measured allowance,
-not measured CPU/GPU spend. Original7600SUM/10800elapsed/hard19:42:19UTC
-and all native failures/debits remain unchanged.
-Strict2015..2025 historical Data is COMPLETE:
-A/data/current-h3-risk-historical-training-input-preparation-20261104-v1/API.json,
-Sourcec1a36b16/API353ddf80/manifestccec384a/closureed562268.
-2766dates/17stocks,46174strictOC/838conditional;1739FIT/479INNER support,
-jointC602276,0HTTP/models/2026readout. Parent9exact reference hashes matched.
-Euclid's completed executor is closed, durable Data memory remains active.
-Next distinct expected-net-return/risk/turnover campaign is assigned to
-Confucius, including a tiny actual optimizer/batch/transfer timing diagnosis
-before long fitting. Current return-risk Sourceede84336/PID7840 is evidenced and closed; no later fit is launched.
-
-
-Updated Nov3UTC19:25 / Nov4KST. Confucius is sole GPU resource coordinator.
-Daily maxH3 source8e961834/RESULTa76a is CLOSED:0fits2marketforecasts12views,
-TimesFM16.858s1.059GB / Chronos10.814s0.519GB actual CUDA inference;42recorded
-original actors/4CIDs/leases/finalizer closed via DELIVERY-CLOSED.json.
-2140.706347upper includes allowances, not GPU seconds. No repeat/rescue.
-PeerOC0ca2 CPU+CUDA fits also closed; no worker inferred running from its MD.
-
-Next distinct ready campaign delegated <=7800SUM10800elapsed/<=2fits12views/
-0retry. Require exact frozen Source/target/split/native API/caps and actual
-PID/start/resource callback before describing it as active. GPU first project
-priority and useful concurrency remain approved; measured desktop reserve,
-no unknown-user-app veto, dummy training or completed-fit duplicate.
-Open45 is CPU-only; old15:00 cutoff applies only to old closed campaign.
-Independent H3/NAS8 metadata and Execution repairs continue without GPU wait.
-No operator decision pending; actual effects preempt safely, not retroactive
-trial debit refunds. ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
+Next useful cost/turnover-aware hypothesis is Engine-owned. Measure current
+free/projected peak VRAM and desktop/driver reserve before useful launch;
+unrecognized personal GPU activity is not permission hold. Coordinate distinct
+ready campaigns without adding trials to frozen one-fit contracts. No dummy
+training, global all-GPU-idle rule or old cap reuse. Safe Execution yields
+preempt at checkpoints. New source/caps/PID/birth must be observed, not planned.
+No independent-alpha/Paper-PnL inference from development growth; see Engine.
+Checkpoint9364/c0b9 stays on D:; no automatic bank/model swap.
 
 ## Frozen Resource Index
 

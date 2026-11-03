@@ -1,119 +1,42 @@
 # Data Stateboard (시장데이터)
 
-## Current Data
+## Current Data / Next
 
-Updated Nov3UTC19:25 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
-frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
-uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
-the actual receipt did not retain which. Current later gate state cannot prove
-past cause. Do not call this a KIS quota/server rejection or lower 300 to60.
-A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/actual-20261103
-retains FAILURE/GUEST-FAILURE/WORKER-RESULT and positive worker/container closure.
-No fresh Open45 point/model forward was produced.
+Updated Nov3UTC20:22 / Nov4KST. Erdos owns same-capture OHLC60 integration.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
 
-Actual Open45 entry15:17 and owned exit16:17 both produced exact public
-DENY_ACTUAL_OPERATIONAL_OWNER RuntimeException receipts, task result20 and
-0instances. The source dot-sources installer parameters into caller scope,
-clobbering source/release pins; Parent reproduced64/64 ->0/0 without effects.
-This source defect is proven; the generic actual failure did not retain its
-exact guard. No acceptance/fill/current inventory conclusion follows.
-Exact public files are runtime/host-results/OWNER-FAILURE-e05ce5e037ba4864b6b7386513d7db33.json
-and OWNER-FAILURE-475f5c5493974a9d8ee6b4be2c0f87ab.json under
-A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
-Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
-expired opportunities remain immutable. No replay/retag/manual TaskRun.
+Long training input c1a36b16/manifestccec384a is CLOSED:
+A/data/current-h3-risk-historical-training-input-preparation-20261104-v1/API.json.
+2015..2025,2766dates/17stocks,46174strictOC/838conditional,1739FIT/479INNER,
+2276joint C60 contexts. Daily development input1b1c9759/dataset9b111314:
+141origins/17assets/2397known inputs;139entry+2continuation dates.
 
-Open45 Nov4 future publisher/entry/original owned exit are ACTUALLY enabled:
-A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
-PublisherNov4UTC15:07:30, entry15:17, exit16:17;0instances/lastYear1999/
-four intended protected ACEs on all3actual Tasks. Existing H3/NAS8/web unchanged.
-Metadata0efb9fd5/nativeeb5e9b33 and Parent composition47e10c43/native9fb08297
-qualify exact disabled/readback/authority/exit-first enable/enabled readback.
-Eight positive/24negative native checks plus independent actual3Task readback.
-Prior partial creates/failures remain. No repeated completed create/repair:
-exit preserved, completed publisher own repair adopted, exact absent entry
-created flags26. The comparison handles ONLY paired same schema versions,
-measured defaults, official xs:all paths and protected descriptor representation
-with identical owner/group/ACEs/all other flags except AutoInherited control bit.
-Triggers/Actions order, clocks/arguments/principal and effect-time checks remain.
-Official schema: https://learn.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-schema
-Actual pinned Linux import passed in import-r2, without private/credential/model
-forward. Candidate is LSTM32 BEST10, not MLP; checkpoint3d74a247 remains fixed.
-Fresh future point/submit/acceptance/fill/owned inventory/PnL are UNKNOWN.
-This is installation, not a broker effect. Consumed phases are not replayed.
+Raw-TCN next-input adapter is source-native ready, not actual publication:
+A/data/current-return-tcn-paper-ohlc60-input-preparation-20261104-v1/API.json.
+Source66c25cad/native92726359/adapter248714bb/reader edc90640.
+Same dc8c capture retains OPEN, but old C127 close-only hash graph DOES NOT
+bind it. New role Data.KisPaperOhlc60Producer -> Engine.PaperReturnInputConsumer,
+x[1,17,60,4]/z[1,17,20]/v[1,17]/known[1], invented real parser-to-role smoke PASS.
+Erdos prepares same-capture closure/raw/INPUT.npz publication with zero new HTTP.
+Actual new manifest/input/hash remain UNKNOWN until positive original DataREADY,
+cache/actor closure and separately sealed raw/publication linkage. No old
+close-only claim is changed; no model/Paper/bank swap follows adapter readiness.
 
-Parent actual market-only probe187fbc0e is COMPLETE:
-A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
-Nov3UTC16:00:48 token POST200 +16:00:50 QQQ daily GET200, one each/sameRAMclient,
-already-seen20261016 date/source stable/no account/order/live/raw/token retention.
-
-Parent actual positions-only health probee8a3c418 is also COMPLETE:
-A/execution/current-paper-account-categorical-health-probe-20261104-v1/ACTUAL-RESULT.json
-and PARENT-CLOSED.json. Nov3UTC16:56:14..20 auth200 +NASD/NYSE/AMEX GET200,
-three complete one-page native parses, count4dedup (pergroup4/0/2), source stable.
-23invented native tests; actual hidden child exit0/Job3members joinedempty/
-closed/0stderr/7.168569s. Counts are serial non-atomic configured-account facts,
-NOT strategy ownership/order eligibility/full account-risk/fees/settlement/PnL.
-No funds/open-orders/order/recovery/private-custody calls, adoption or F9 release.
-Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
-do not ask operator to change keys from the earlier local pre-HTTP failure.
-
-NAS8 remaining original DataNov3/4UTC21:10 and EVALNov4UTC21:35 are ACTUALLY
-updated/enabled to frozen Dataec810e85/EVAL228254e6/nativef0866506.
-A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json binds
-metadata106ac819 + exact redundant-ACL readback compositiond4aeea1f.
-Full XML/ACL/principal/all3Data+1EVALtriggers/history are retained; original
-Nov2Data last21:10/result20 unchanged, EVAL unattempted. No TaskRun/new schedule,
-models, data acquisition or evaluation occurred during migration.
-Original readback failed on Windows-inserted redundant SecurityDescriptor;
-exact saved/current ACL equality only is normalized (2positive8negative).
-Earlier failed readback/enable attempts are not passing authority. Actual future
-DataREADY/EVAL outcome UNKNOWN. No reserved outcome reopening.
-
-Daily C60 Source1b1c9759/Dataset9b111314/manifest1707aba4 ready:
-141origins,17assets/2397known,139newentry+2continuation, independent price
-support and no outcome-based selection. Parent12exact refs/hash/stability PASS.
-A/data/current-short-swing-daily-c60-input-preparation-20261104-v1/API.json.
-Original native failure and separate completion retained; no whole-pass rewrite.
-
-## Next / Ownership
-
-
-Open45 template732378c2/API f149ad3b is CLOSED:5native scenarios/97assertions,
-519independent checks/506pins. Parent next-dated Nov4 integration is now actually
-enabled as above, not a claim of future data/model success.
-Historical training Sourcec1a36b16/API353ddf80/manifestccec384a/closureed562268
-is COMPLETE:2766dates/17stocks,46174strictOC/838conditional,1739FIT/479INNER,
-jointC602276. Parent9refs verified;0HTTP/models/2026readout. Euclid closed.
-Earlier coherent19 capture is ACTUALLY installed/enabled for Nov3UTC21:30:
+Earlier coherent19 Data dc8c48fc ACTUALLY enabledNov3UTC21:30/hard21:45:
 A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/
-metadata-create26-delta-v6/PARENT-COMPLETE.json.
-Source2d7ba96e/native891387eb, immutable Data release dc8c48fc unchanged.
-CREATE26 disabled/readback/enable/independent enabled readback all exit0;
-actual0instances/lastYear1999/three protected intended ACEs. Readback6d31296d.
-V5 failed before CREATE on actual in-memory XML defaults, target stayed absent.
-V6 retained that counterexample, passed25 changed/native cases with4 actual
-COM in-memory definitions plus77 unchanged metadata checks. Only measured
-IdleSettings defaults/newly emptied container semantics corrected; source/
-principal/clock/actual privileges preserved. No manual TaskRun/HTTP/models.
-At effects require exact positive NAS8 relevant worker/cache closure; unknown
-withholds only this capture. Actual DataREADY/model point remain UNKNOWN.
+metadata-create26-delta-v6/PARENT-COMPLETE.json; Source2d7ba96e/native891387eb.
+Positive original NAS8 source/cache closure required; no machine-wide idle gate.
+Original NAS8 DataNov3/4UTC21:10 and EVALNov4UTC21:35 remain installed.
+Full17 point producer ACTUALLY enabledNov4UTC14:25..<14:25:45/hard14:29:45:
+A/research/current-nov4-full17-earlier-point-preparation-20261104-v1/
+task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
+Source d0de1b91/native8e18cbe0, producerad7d0459/owner73600af0.
+Future DataREADY/point/runtime outcomes UNKNOWN; original Nov6/Nov9 unchanged.
 
-Parent owns actual future metadata. Same source127 -> explicit
-last60 model input, no padding/imputation or old point retag. Coherent19 Nov6
-and full17 producer Nov9 remain unchanged; new earlier capture enabled, actual outcome unknown.
-
-Earlier full17 direction received Claude GO_WITH_LIMITS:
-A/execution/current-earlier-full17-direction-challenge-20261104-v1/
-PARENT-REVIEW.json, session08e6aad7-1d47-4982-a334-4eec3e62023e.
-Prepare genuine Nov3-asof/Nov4-decision Data at21:30UTC after positive NAS8
-closure, then same trusted two-model producer and one finite native financial
-round Nov4 packet-compatible entry -> Nov6PRECLOSE15 only when exact fresh input and runtime
-admission qualify. Earlier Data schedule is enabled; model-producer/financial Tasks are not yet installed.
-Original H3/Nov6 Data/Nov9 producer remain unchanged; old Nov9 producer is not
-an automatic second financial writer. Same-policy active/pending namespace
-collision withholds the new round, not all research or a new-bank reset.
+AMD actual quote Source329feaf7 is CLOSED token_deferred/0POST0GET:
+A/data/current-amd-paper-quote-schema-probe-20261104-v1/CALLBACK.json.
+No provider timestamp/schema response observed; do not infer provider failure
+or replay consumed read. Ohm checks code-scoped reuse/due-issuance separately.
 
 ## Retained Reference
 
