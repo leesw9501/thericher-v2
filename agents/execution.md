@@ -2,7 +2,7 @@
 
 ## Current Execution
 
-Updated Nov3UTC18:45 / Nov4KST. Parent owns actual metadata/sharedMD/Git.
+Updated Nov3UTC19:25 / Nov4KST. Parent owns actual metadata/sharedMD/Git.
 ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
 
 Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
@@ -61,17 +61,25 @@ No funds/open-orders/order/recovery/private-custody calls, adoption or F9 releas
 Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
 do not ask operator to change keys from the earlier local pre-HTTP failure.
 
-F9 exact original-request readonly r2 Source2b2837f0 was actually attempted
-Nov3UTC18:28 through quiet Parent Job. It returned WITHHELD before private CID
-creation/network worker/HTTP at hooks.caller_identity -> owned_lineage line31.
-A/execution/current-f9-current-request-readonly-preparation-20261104-v1/
-enclosing/PARENT-LAUNCH-CLOSED.json and r2/parent-once/RESULT.json/
-PARENT-CLOSED.json retain category/source frames and positive Job closure.
-Root Job7members joinedempty/closed/0stderr; no private capsule persisted.
-The exact r2 marker is consumed; no replay/reset. Investigate the self identity
-field mismatch using retained source-safe census, not an exemption for unknown
-writers. Acceptance/fills/owned inventory and fees/settlement/PnL remain UNKNOWN;
-F9 stays UNKNOWN-HELD with its original reservation.
+F9 readonly recovery remains UNKNOWN-HELD, not a broker rejection or fill:
+r2 Source2b2837f0 actual attempt was consumed before CID/network worker/HTTP;
+root Job7 joinedempty/closed. The exact finance-free Windows probe then proved
+all own PID/birth/argv/source/exe fields matched; the legacy parent check rejected
+one positively verified console-host child. Source8077a6a8 r3 provided a narrow
+console-qualified lineage and one exact quiet-wrapper role; Native1..3/
+Claude GO_WITH_LIMITS017ef414 are source/invented proof, not financial facts.
+Parent actual r3 atNov3UTC19:10 was also WITHHELD before private CID/network:
+BEFORE_CREATE retained ValueError; AFTER_REMOVE hit a fixed-output
+FileExistsError and masked the first source frame. Quiet Job19members joined/
+empty/closed/0stderr, CIDnull/no networkJobs, capsule not persisted.
+Exact root is A/execution/current-open45-nov4-parent-adoption-20261104-v1/
+diagnosis-r5/f9-lineage-probe/r3; QUIET-CLOSED and parent-once/RESULT/
+FAILURE-BEFORE_CREATE/PARENT-CLOSED preserve facts. Both attempts are consumed,
+no replay/reset. Helm now diagnoses only fresh public admission/phase-output
+names under r3/fault-r4 before any new private attempt. Scope actual custody
+writers, not unrelated GPU/Data actors; unknown relevant writers still deny.
+Original request/anchor/B10/reservation and unknown acceptance/fills/owned
+inventory/fees/settlement/net PnL remain unchanged.
 
 H3 original finite AMD entry/exit are ACTUALLY migrated and enabled to
 operational Source2873c60a/releaseaa0be4cd/metadata SOURCE-r2 9b38bc3e.

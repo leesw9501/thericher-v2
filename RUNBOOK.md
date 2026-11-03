@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov3UTC18:45 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Updated Nov3UTC19:25 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
 Start with scripts/start_next_codex_task.ps1 and current HANDOFF/NEXT/AGENTS.
 Parent owns shared MD/Git/actual metadata; agents own disjoint D roots.
@@ -63,17 +63,25 @@ No funds/open-orders/order/recovery/private-custody calls, adoption or F9 releas
 Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
 do not ask operator to change keys from the earlier local pre-HTTP failure.
 
-F9 exact original-request readonly r2 Source2b2837f0 was actually attempted
-Nov3UTC18:28 through quiet Parent Job. It returned WITHHELD before private CID
-creation/network worker/HTTP at hooks.caller_identity -> owned_lineage line31.
-A/execution/current-f9-current-request-readonly-preparation-20261104-v1/
-enclosing/PARENT-LAUNCH-CLOSED.json and r2/parent-once/RESULT.json/
-PARENT-CLOSED.json retain category/source frames and positive Job closure.
-Root Job7members joinedempty/closed/0stderr; no private capsule persisted.
-The exact r2 marker is consumed; no replay/reset. Investigate the self identity
-field mismatch using retained source-safe census, not an exemption for unknown
-writers. Acceptance/fills/owned inventory and fees/settlement/PnL remain UNKNOWN;
-F9 stays UNKNOWN-HELD with its original reservation.
+F9 readonly recovery remains UNKNOWN-HELD, not a broker rejection or fill:
+r2 Source2b2837f0 actual attempt was consumed before CID/network worker/HTTP;
+root Job7 joinedempty/closed. The exact finance-free Windows probe then proved
+all own PID/birth/argv/source/exe fields matched; the legacy parent check rejected
+one positively verified console-host child. Source8077a6a8 r3 provided a narrow
+console-qualified lineage and one exact quiet-wrapper role; Native1..3/
+Claude GO_WITH_LIMITS017ef414 are source/invented proof, not financial facts.
+Parent actual r3 atNov3UTC19:10 was also WITHHELD before private CID/network:
+BEFORE_CREATE retained ValueError; AFTER_REMOVE hit a fixed-output
+FileExistsError and masked the first source frame. Quiet Job19members joined/
+empty/closed/0stderr, CIDnull/no networkJobs, capsule not persisted.
+Exact root is A/execution/current-open45-nov4-parent-adoption-20261104-v1/
+diagnosis-r5/f9-lineage-probe/r3; QUIET-CLOSED and parent-once/RESULT/
+FAILURE-BEFORE_CREATE/PARENT-CLOSED preserve facts. Both attempts are consumed,
+no replay/reset. Helm now diagnoses only fresh public admission/phase-output
+names under r3/fault-r4 before any new private attempt. Scope actual custody
+writers, not unrelated GPU/Data actors; unknown relevant writers still deny.
+Original request/anchor/B10/reservation and unknown acceptance/fills/owned
+inventory/fees/settlement/net PnL remain unchanged.
 
 H3 original finite AMD entry/exit are ACTUALLY migrated and enabled to
 operational Source2873c60a/releaseaa0be4cd/metadata SOURCE-r2 9b38bc3e.
@@ -137,6 +145,22 @@ A/monitor/current-korean-monitor-image-build-20261104-v1/PARENT-BUILD-PROOF.json
 NOT deployed/admitted; f488 is build config, not Engine image ID.
 Do not casually swap a runtime dependency of a financial owner. No public
 exposure/private custody/credentials/broker authority in web.
+
+Current Korean monitor work is still NOT deployed; be48/8787 stays working.
+All5consumer source enclosures and a six-definition metadata source8d6bdf48
+exist, but its480-SUM preparation overran: FAILED_PARTIAL, no refunded/regraded
+authority. Separate actual-inert Windows6of6/corrected comparer proof f0427efc
+does not prove installed ACL equivalence or owner closure. Claude verdict
+PARTIAL_DEFAULTS_NARROWLY_ACCEPT_SD_EQUIVALENCE_WITHHELD, pointerda8ae3f2.
+Parent readonly Capture first failed missing Management module before effects;
+explicit preimport reached one actual H3-exit capture, then failed original
+GOOGL full-definition comparison. No Task update/enable/Run or service swap.
+Exact public diagnosis is under current-korean-monitor-consumer-compatibility-
+implementation-20261104-v1/exact-nov3-windows-compatibility/capture-diagnosis.
+Current dependency inventory must also include new Open45/NAS8/full17 paths;
+do not swap only the older5 and break new Paper/Data. Lagrange owns the narrow
+semantic first-cause and stable public-schema/UI capability-boundary review,
+not a new platform or global Paper/GPU hold.
 
 Korean monitor consumer completion is source-native READY, not deployed:
 A/monitor/current-korean-monitor-consumer-compatibility-implementation-

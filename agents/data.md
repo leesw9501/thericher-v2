@@ -2,7 +2,7 @@
 
 ## Current Data
 
-Updated Nov3UTC18:45 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Updated Nov3UTC19:25 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
 frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
 uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
@@ -86,10 +86,23 @@ enabled as above, not a claim of future data/model success.
 Historical training Sourcec1a36b16/API353ddf80/manifestccec384a/closureed562268
 is COMPLETE:2766dates/17stocks,46174strictOC/838conditional,1739FIT/479INNER,
 jointC602276. Parent9refs verified;0HTTP/models/2026readout. Euclid closed.
-Erdos now owns earlier Nov3-asof C127 sourcedc8c48fc/metadata380719a7 source
-compatibility; Parent owns actual future metadata. Same source127 -> explicit
+Earlier coherent19 capture is ACTUALLY installed/enabled for Nov3UTC21:30:
+A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/
+metadata-create26-delta-v6/PARENT-COMPLETE.json.
+Source2d7ba96e/native891387eb, immutable Data release dc8c48fc unchanged.
+CREATE26 disabled/readback/enable/independent enabled readback all exit0;
+actual0instances/lastYear1999/three protected intended ACEs. Readback6d31296d.
+V5 failed before CREATE on actual in-memory XML defaults, target stayed absent.
+V6 retained that counterexample, passed25 changed/native cases with4 actual
+COM in-memory definitions plus77 unchanged metadata checks. Only measured
+IdleSettings defaults/newly emptied container semantics corrected; source/
+principal/clock/actual privileges preserved. No manual TaskRun/HTTP/models.
+At effects require exact positive NAS8 relevant worker/cache closure; unknown
+withholds only this capture. Actual DataREADY/model point remain UNKNOWN.
+
+Parent owns actual future metadata. Same source127 -> explicit
 last60 model input, no padding/imputation or old point retag. Coherent19 Nov6
-and full17 producer Nov9 remain unchanged; new earlier capture not installed.
+and full17 producer Nov9 remain unchanged; new earlier capture enabled, actual outcome unknown.
 
 Earlier full17 direction received Claude GO_WITH_LIMITS:
 A/execution/current-earlier-full17-direction-challenge-20261104-v1/
@@ -97,7 +110,7 @@ PARENT-REVIEW.json, session08e6aad7-1d47-4982-a334-4eec3e62023e.
 Prepare genuine Nov3-asof/Nov4-decision Data at21:30UTC after positive NAS8
 closure, then same trusted two-model producer and one finite native financial
 round Nov4 packet-compatible entry -> Nov6PRECLOSE15 only when exact fresh input and runtime
-admission qualify. No actual earlier schedule/point/financial installation yet.
+admission qualify. Earlier Data schedule is enabled; model-producer/financial Tasks are not yet installed.
 Original H3/Nov6 Data/Nov9 producer remain unchanged; old Nov9 producer is not
 an automatic second financial writer. Same-policy active/pending namespace
 collision withholds the new round, not all research or a new-bank reset.

@@ -2,6 +2,28 @@
 
 ## Current Results And Next
 
+Current independent return-risk fixed-blend campaign has COMPLETED BOTH FITS:
+A/research/current-short-swing-h3-return-risk-fixedblend-development-
+20261104-v1, frozen Sourceede84336c399d1525037cba919f40be4ac95dddf928130aed43c8a87fd45e64c.
+CPU Ridge fit is CLOSED; new CUDA return TCN ranNov3UTC19:04:10..19:23:31,
+hostPID7840/birth1793732650.417784/CIDb877939e, now absent/lease absent/
+positive worker closure. Guest1160.808952s,17epochs/119updates/INNER-best9,
+process cutoff, not convergence. Checkpoint9364b09d is safe on D:.
+Actual GPU sample19:07 was36percent/1935MiB of24564MiB. CPU forecast is
+CLOSED; GPU forecast/cost-aware readout are pending, not a profitability claim.
+New target is all17 cross-sectional excess O[e+3]/O[e]-1; same causal prior60,
+indicator Ridge plus raw TCN, fixed50/50 fusion and deterministic risk/cost
+allocation. This is not the prior downside-MSE fit or an old model restart.
+Original18:34:07..21:34:07UTC/7700SUM10800elapsed/2fits2forecasts12views/
+zero numerical retries. Max512epochs/8192updates, INNER-only checkpoint,
+early48/LR schedule, no-new-update1150s/hard1400s/host1500s, not convergence
+assurance. Native batch128/256/aggregate-gradient timings precede market freeze.
+Reused-development/current-listing/MODE1/nonPIT/notTR/unknownCA/finality and
+analytical versus actual execution limitations remain; no Paper-bank promotion.
+Confucius owns GPU resources. Erdos is preparing a separate small joint
+cross-asset/time-patch attention kernel under Strategy Research, with invented
+native checks only; no second GPU fit/source/adoption is claimed.
+
 Joint-downside risk campaign is COMPLETE_CLOSED_NONDEGENERACY_FAIL_BEFORE_DEV:
 A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
 20261104-v1/SYNTHESIS.json, frozen Source39cb05e8.
@@ -23,10 +45,10 @@ jointC602276,0HTTP/models/2026readout. Parent9exact reference hashes matched.
 Euclid's completed executor is closed, durable Data memory remains active.
 Next distinct expected-net-return/risk/turnover campaign is assigned to
 Confucius, including a tiny actual optimizer/batch/transfer timing diagnosis
-before long fitting. No new numerical Source/PID is yet evidenced.
+before long fitting. Current return-risk Sourceede84336/PID7840 is evidenced and closed; no later fit is launched.
 
 
-Updated Nov3UTC18:45 / Nov4KST. Confucius owns Engine and sole GPU coordination.
+Updated Nov3UTC19:25 / Nov4KST. Confucius owns Engine and sole GPU coordination.
 Daily C60 Data1b1c9759/Dataset9b111314 is ready:141dailyorigins,
 17assets/2397known inputs,139new-entry dates plus2continuation-only;
 independent H3 price support, no outcome-based selection, no future rows/impute.
@@ -70,7 +92,7 @@ PARENT-REVIEW.json, session08e6aad7-1d47-4982-a334-4eec3e62023e.
 Prepare genuine Nov3-asof/Nov4-decision Data at21:30UTC after positive NAS8
 closure, then same trusted two-model producer and one finite native financial
 round Nov4 packet-compatible entry -> Nov6PRECLOSE15 only when exact fresh input and runtime
-admission qualify. No actual earlier schedule/point/financial installation yet.
+admission qualify. Earlier Data schedule is enabled; model-producer/financial Tasks are not yet installed.
 Original H3/Nov6 Data/Nov9 producer remain unchanged; old Nov9 producer is not
 an automatic second financial writer. Same-policy active/pending namespace
 collision withholds the new round, not all research or a new-bank reset.

@@ -1,8 +1,21 @@
 # Strategy Research Stateboard (전략 탐색)
 
+## New Ready Work
+
+Erdos now prepares current-cross-asset-patch-attention-candidate-preparation-
+20261104-v1 under A/research: a small joint stock/time-patch return expert,
+existing PyTorch only, <=480SUM2700elapsed/3invented native groups. No market
+payload/fit/GPU allocation/adoption yet. Confucius owns final contract/resources.
+Official conceptual sources checked by Parent: Crossformer ICLR2023
+https://github.com/Thinklab-SJTU/Crossformer (Apache2.0 LICENSE on master) and
+iTransformer ICLR2024 https://github.com/thuml/iTransformer (MIT LICENSE on main).
+Cross-time/cross-dimension or variate-token mechanisms are source claims,
+not project stock alpha. Exact release pin is not yet adopted; own small native
+variant is not a paper reproduction. No old runtime/checkpoint/bulk import.
+
 ## Current Source Handoff
 
-Updated Nov3UTC18:45 / Nov4KST. Euclid's maxH3 proposal8bfb/API9c6834ad and daily C60
+Updated Nov3UTC19:25 / Nov4KST. Euclid's maxH3 proposal8bfb/API9c6834ad and daily C60
 Source1b1c9759 have been consumed by Engine's CLOSED meanrank experiment
 8e961834/a76a. Inventory-coupled rank exits cut daily-flat turnover but did
 not beat blindH3 or causal samegrossEW17. See Engine SYNTHESIS.json; no
