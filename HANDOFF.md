@@ -2,13 +2,37 @@
 
 ## Current Reality
 
-Updated Nov3UTC20:50 / Nov4KST.
+Updated Nov3UTC21:20 / Nov4KST.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original initial B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending
 identities and ALL original exits remain. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
+
+## Actual H3 Result
+
+Actual H3 Nov3UTC20:55 entry FAILED technically at20:55:11.578682:
+Task exit20/0instances is diagnostic only. Exact source-bound public fault
+A/execution/current-h3-actual-preparer-r5-20261103-v1/actual-ad3b0bcf7cda223e/
+results/FAULT-8128750b7a40479e8370d5e537f4ed87.json SHAe7354654 binds
+6ae/TRUE32f/run4fd9f1575edf4095a03931fcb1226347/round/input/policy/entry.
+RuntimeError source_metadata_unavailable, metadata.py call136, native_stage
+NOT_ENTERED. Broker effects remain UNKNOWN by producer, not a zero/fill claim.
+Original public run directory is empty; entry closure is missing.
+Old UTC-only diagnostic rejected the producer's explicit KST offset. New pure
+same-instant projection has2positive/5negative native checks and emitted Ruff:
+A/execution/current-h3-actual-public-fault-projection-20261104-v1/ACTUAL-PROJECTION.json
+SHAa0711264. Original fault bytes/membership/identity/mtime stable; all financial
+categories remain UNKNOWN, not monitor V2 or custody authority.
+Actual scheduled9410 reader at21:10 consumed45e9/authority6247 and WITHHELD
+exact_one_entry_operational_receipt_required. DO NOT replay it or the expired
+entry. OBSERVER-UNRESOLVED pause-outcome marker remains historical UNKNOWN.
+Current observer full XML/ACL/enabled match original policy at21:02:31,0instances;
+that is current identity, not proof of exact historical restoration. No Restore
+or broker action was invoked. Ohm owns real observer-CLI/minimal-ENV/mocked-
+Scheduler reproducer; the shared Full17 observer helper also needs review.
+No operator decision/global Data or Research hold follows this technical fault.
 
 ## Execution / Due
 
@@ -39,16 +63,17 @@ foreign adoption/unknown-request substitution. No operator decision pending.
   Source d0de1b91/native8e18cbe0; producerad7d0459/owner73600af0.
   Two trusted model calls, zero fits; future Data/point hashes UNKNOWN.
 - Full17 new financial entry Nov4UTC14:31..<14:34/hard14:37 and exit
-  Nov6UTC20:45..<21:00/hard21:07 ACTUALLY enabled under runtimee126ba3e:
+  Nov6UTC20:54..<21:00/hard21:07 ACTUALLY enabled under runtime5a571b07
+  after the retained initial e126 installation:
   A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
   earlier-nov4/installer-repair-r1/PARENT-COMPLETE.json.
   Installerf90f8e10/native77f88fbc passed CREATE26/protected-ACL repair.
-  KNOWN UNRESOLVED exit collision with original H3: same20:45, bank deferral
-  is terminal, NOT a queue. Hooke prepares exact two-future-definition migration
-  to derived runtime5a571b07 with ONLY new exit20:54..<21:00/hard21:07.
-  Source6884cfff/nativea962a975 is source-native ready, NOT migrated.
-  Original H3, entry, round/input/policy/point/SDK/B10/F9/exits stay unchanged.
-  No source-only timing proposal is a promise of H3 closure or a financial exit.
+  The old20:45 collision is now repaired by ACTUAL UPDATE28 migration to
+  runtime5a571b07, with ONLY new exit20:54..<21:00/hard21:07.
+  Source93b1f1b4/Parent independent qualification and full enabled readback:
+  earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+  Original H320:45/entry/round/input/policy/point/SDK/B10/F9/exits unchanged.
+  Nominal separation does not prove prior-owner closure or a financial exit.
 - Original NAS8 Data Nov3/4UTC21:10, EVAL Nov4UTC21:35 actually migrated;
   A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json.
   Preserve original GOOGL Nov9UTC20:55, MSE Nov5UTC20:40, H20 Dec1UTC14:30,
@@ -150,18 +175,18 @@ Web remains credential/private-custody/broker-free; no public serving.
   inspect H3/task-owned receipts when due, no foreground session wait.
 - Helm Execution: exact original F9 public submit/dispatch source-stage evidence;
   R5 actual query complete, no repeat/reservation release.
-- Hooke Infra: serial5a571 source ready; migration facade93b1 prep exceeded
-  original native/attempt limits and is NOT original-budget PASS. Invoked
-  independent Validation owns a fresh two-group integration check; no actual
-  Full17 migration yet, no original H3 retime or Task effects by role.
-- Ohm Infra: AMD native quote capability complete; first-issuance amendment
-  d62 operationally installed by Parent. No consumed probe/Task replay.
+- Hooke Infra/Parent: Full17 runtime5a571 ACTUALLY migrated with exit20:54;
+  original prep caps/independent partial remain failed/partial. Parent fresh
+  qualification13+16cases and actual3phase metadata closure are separate.
+- Ohm Infra: AMD quote capability/first-wait installation complete. Actual H3
+  metadata fault now owns minimal-ENV observer-CLI reproducer/shared helper
+  correction; no expired opportunity/private/broker/Task replay.
 - Erdos Data/Strategy: same-capture OHLC60 publisher/native handoff; completed
   attention kernel already consumed, not another GPU fit.
 - Confucius Engine/Steward: distinct cost/turnover-aware campaign, useful GPU
   when ready; no completed fit repeat, no profitability gate on Paper.
-- Lagrange invoked Validation: independent final Full17 migration checks;
-  Monitor staysbe48. GOOGL actual Arguments/Source differ; provenance attempt
+- Lagrange invoked Validation: partial proof frozen honestly; Parent completed
+  separate qualification/migration. Monitor staysbe48. GOOGL provenance attempt
   hit an invalid parsed-vs-raw XML comparison, not proven instability. No
   baseline/comparison waiver or web swap; preserve failed evidence.
 Role MDs are durable memory, not evidence of active LLMs/numerical workers.

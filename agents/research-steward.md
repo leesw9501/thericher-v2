@@ -2,7 +2,7 @@
 
 ## Current Resource Coordination
 
-Updated Nov3UTC20:50 / Nov4KST. Confucius is sole GPU resource coordinator.
+Updated Nov3UTC21:20 / Nov4KST. Confucius is sole GPU resource coordinator.
 Return-risk Sourceede84336 CLOSED CPU1fit/GPU1fit/2forecasts/12views; raw TCN
 17epochs119updates/best9/process cutoff, not convergence.
 Joint patch Source21f2e6f2 CLOSED GPU1fit/1forecast/12views;51epochs714updates/
@@ -20,6 +20,30 @@ training, global all-GPU-idle rule or old cap reuse. Safe Execution yields
 preempt at checkpoints. New source/caps/PID/birth must be observed, not planned.
 No independent-alpha/Paper-PnL inference from development growth; see Engine.
 Checkpoint9364/c0b9 stays on D:; no automatic bank/model swap.
+
+New selective-budget SLSQP study76715278 closed TECHNICALLY UNQUALIFIED,
+not economic failure: native passed but market solver-success invariant failed;
+status/nit/residual not retained, no numerical retry or old fit repeated.
+Distinct L1-tracking HiGHS policy study52b5a74d completed with0fits/0forecasts/
+0GPU/12views/0retry:
+A/research/current-short-swing-h3-l1-tracking-highs-development-20261104-v1/
+SYNTHESIS.json. At10bps per side selective growth+7.29%,DD4.98%,turnover1.86;
+simple scalar-step+7.35%,DD4.97%,turnover1.86. Frozen primary FAILS scalar and
+old-blend-DD checks despite lower turnover. Reused-development only, not alpha
+or Paper PnL. Next useful GPU work is a NEW convergence/feature contract after
+same-shape TCN throughput diagnosis, not a completed-fit replay. No later fit
+is claimed active without actual source/PID/resource evidence.
+
+
+Current continuation attempt20ca313e is CLOSED PARTIAL before optimizer/profile
+execution: local profile.py shadowed Python's standard-library module.
+A/research/current-short-swing-h3-return-tcn-continuation-development-20261104-v1/
+FINAL-CALLBACK.json. Zero forwards/updates/GPU work/fits/forecasts; safe optimizer
+restore remains unqualified, not an unavailable GPU environment.
+Old zero-retry result/debits stay closed. A NEW small readiness package owns
+the prepared rename, resolved stdlib/cProfile/Torch bootstrap and actual
+invented-input optimizer/moments-restore/throughput check before another market
+contract. No finished fit is restarted; no current training is inferred.
 
 ## Frozen Resource Index
 

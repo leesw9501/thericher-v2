@@ -2,7 +2,7 @@
 
 ## Current Execution
 
-Updated Nov3UTC20:50 / Nov4KST. Parent owns actual metadata/shared MD/Git.
+Updated Nov3UTC21:20 / Nov4KST. Parent owns actual metadata/shared MD/Git.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original initial B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending
@@ -51,16 +51,17 @@ absence alone cannot close or release the request.
   Source d0de1b91/native8e18cbe0; producerad7d0459/owner73600af0.
   Two trusted model calls, zero fits; future Data/point hashes UNKNOWN.
 - Full17 new financial entry Nov4UTC14:31..<14:34/hard14:37 and exit
-  Nov6UTC20:45..<21:00/hard21:07 ACTUALLY enabled under runtimee126ba3e:
+  Nov6UTC20:54..<21:00/hard21:07 ACTUALLY enabled under runtime5a571b07
+  after the retained initial e126 installation:
   A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
   earlier-nov4/installer-repair-r1/PARENT-COMPLETE.json.
   Installerf90f8e10/native77f88fbc passed CREATE26/protected-ACL repair.
-  KNOWN UNRESOLVED exit collision with original H3: same20:45, bank deferral
-  is terminal, NOT a queue. Hooke prepares exact two-future-definition migration
-  to derived runtime5a571b07 with ONLY new exit20:54..<21:00/hard21:07.
-  Source6884cfff/nativea962a975 is source-native ready, NOT migrated.
-  Original H3, entry, round/input/policy/point/SDK/B10/F9/exits stay unchanged.
-  No source-only timing proposal is a promise of H3 closure or a financial exit.
+  The old20:45 collision is now repaired by ACTUAL UPDATE28 migration to
+  runtime5a571b07, with ONLY new exit20:54..<21:00/hard21:07.
+  Source93b1f1b4/Parent independent qualification and full enabled readback:
+  earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+  Original H320:45/entry/round/input/policy/point/SDK/B10/F9/exits unchanged.
+  Nominal separation does not prove prior-owner closure or a financial exit.
 - Original NAS8 Data Nov3/4UTC21:10, EVAL Nov4UTC21:35 actually migrated;
   A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json.
   Preserve original GOOGL Nov9UTC20:55, MSE Nov5UTC20:40, H20 Dec1UTC14:30,
@@ -79,6 +80,49 @@ Native financial SDK5files independently byte-equal current33b; Linux guest
 importede9463a/nativee270ef0c passed actual4bb image/networknone/allRO/no private
 or credentials. Import proof is not financial admission/fill.
 Current be48 monitor unchanged; do not swap incomplete consumer dependencies.
+
+## Actual H3 Result / Full17 Migration
+
+Actual H3 Nov3UTC20:55 entry FAILED technically at20:55:11.578682:
+Task exit20/0instances is diagnostic only. Exact source-bound public fault
+A/execution/current-h3-actual-preparer-r5-20261103-v1/actual-ad3b0bcf7cda223e/
+results/FAULT-8128750b7a40479e8370d5e537f4ed87.json SHAe7354654 binds
+6ae/TRUE32f/run4fd9f1575edf4095a03931fcb1226347/round/input/policy/entry.
+RuntimeError source_metadata_unavailable, metadata.py call136, native_stage
+NOT_ENTERED. Broker effects remain UNKNOWN by producer, not a zero/fill claim.
+Original public run directory is empty; entry closure is missing.
+Old UTC-only diagnostic rejected the producer's explicit KST offset. New pure
+same-instant projection has2positive/5negative native checks and emitted Ruff:
+A/execution/current-h3-actual-public-fault-projection-20261104-v1/ACTUAL-PROJECTION.json
+SHAa0711264. Original fault bytes/membership/identity/mtime stable; all financial
+categories remain UNKNOWN, not monitor V2 or custody authority.
+Actual scheduled9410 reader at21:10 consumed45e9/authority6247 and WITHHELD
+exact_one_entry_operational_receipt_required. DO NOT replay it or the expired
+entry. OBSERVER-UNRESOLVED pause-outcome marker remains historical UNKNOWN.
+Current observer full XML/ACL/enabled match original policy at21:02:31,0instances;
+that is current identity, not proof of exact historical restoration. No Restore
+or broker action was invoked. Ohm owns real observer-CLI/minimal-ENV/mocked-
+Scheduler reproducer; the shared Full17 observer helper also needs review.
+No operator decision/global Data or Research hold follows this technical fault.
+
+Full17 exact two-future-definition migration is ACTUALLY COMPLETE:
+A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
+earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+Source93b1f1b4 -> runtime5a571b07/release4eb10f99; Capture/Migrate/independent
+Readback native exits0/stderr0. Fresh old/new-root process/mount/no-attempt
+checks; disabled UPDATE28 only, protected full XML/ACL readbacks, exit-first
+enable,0instances/lastYear1999 on both actual Tasks.
+Entry stays Nov4UTC14:31..<14:34/hard14:37; ONLY new exit is now
+Nov6UTC20:54..<21:00/hard21:07, original H3 remains20:45. Same initial B/10/F9/
+costs/losses/pending identities/input/policy/round/SDK/bank/all original exits.
+Nominal separation is not guaranteed prior-owner closure or an automatic queue.
+Actual fresh point/admission/submit/acceptance/fill/inventory remain UNKNOWN.
+Original preparation cap deviation stays NOT PASS; independent partial also
+stays partial. Parent separately verified3491pins/13classification cases/
+16flow cases/inert XML, positive native exits and source stability:
+A/execution/current-full17-serial-exit-parent-qualification-20261104-v1/RESULT-r2.json.
+The initial Parent wrapper expected-status failure is retained; completed
+classification was not replayed. Actual migration does not regrade any failure.
 
 ## Ready / Owners
 

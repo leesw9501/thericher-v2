@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov3UTC20:50 / Nov4KST.
+Updated Nov3UTC21:20 / Nov4KST.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -16,18 +16,18 @@ foreign adoption/unknown-request substitution. No operator decision pending.
   inspect H3/task-owned receipts when due, no foreground session wait.
 - Helm Execution: exact original F9 public submit/dispatch source-stage evidence;
   R5 actual query complete, no repeat/reservation release.
-- Hooke Infra: serial5a571 source ready; migration facade93b1 prep exceeded
-  original native/attempt limits and is NOT original-budget PASS. Invoked
-  independent Validation owns a fresh two-group integration check; no actual
-  Full17 migration yet, no original H3 retime or Task effects by role.
-- Ohm Infra: AMD native quote capability complete; first-issuance amendment
-  d62 operationally installed by Parent. No consumed probe/Task replay.
+- Hooke Infra/Parent: Full17 runtime5a571 ACTUALLY migrated with exit20:54;
+  original prep caps/independent partial remain failed/partial. Parent fresh
+  qualification13+16cases and actual3phase metadata closure are separate.
+- Ohm Infra: AMD quote capability/first-wait installation complete. Actual H3
+  metadata fault now owns minimal-ENV observer-CLI reproducer/shared helper
+  correction; no expired opportunity/private/broker/Task replay.
 - Erdos Data/Strategy: same-capture OHLC60 publisher/native handoff; completed
   attention kernel already consumed, not another GPU fit.
 - Confucius Engine/Steward: distinct cost/turnover-aware campaign, useful GPU
   when ready; no completed fit repeat, no profitability gate on Paper.
-- Lagrange invoked Validation: independent final Full17 migration checks;
-  Monitor staysbe48. GOOGL actual Arguments/Source differ; provenance attempt
+- Lagrange invoked Validation: partial proof frozen honestly; Parent completed
+  separate qualification/migration. Monitor staysbe48. GOOGL provenance attempt
   hit an invalid parsed-vs-raw XML comparison, not proven instability. No
   baseline/comparison waiver or web swap; preserve failed evidence.
 Role MDs are durable memory, not evidence of active LLMs/numerical workers.
@@ -36,9 +36,52 @@ Next actual opportunities: H3 entry20:55/static reader21:10; NAS8 Data21:10;
 new coherent19 Data21:30. Tomorrow Full17 producer14:25/entry14:31 and Open45
 publisher15:07:30/entry15:17/exit16:17. These are task-owned, not foreground wait.
 Actual installed evidence is indexed in HANDOFF; no future fill inferred.
-Full17 installed e126 exit collides with H3 atNov6UTC20:45. Derived5a571
-exit20:54 is source-native ready only; finish exact UPDATE28 migration before
-entry, or keep affected new definitions safely disabled. Original H3 unchanged.
+Full17 ACTUALLY migrated to5a571; new exitNov6UTC20:54, originalH3 stays20:45.
+Actual outcome/point remains UNKNOWN. Shared observer-helper fault diagnosis
+is now the Execution priority; no claim tomorrow will pass actual admission.
+
+## Actual Runtime / Next
+
+Actual H3 Nov3UTC20:55 entry FAILED technically at20:55:11.578682:
+Task exit20/0instances is diagnostic only. Exact source-bound public fault
+A/execution/current-h3-actual-preparer-r5-20261103-v1/actual-ad3b0bcf7cda223e/
+results/FAULT-8128750b7a40479e8370d5e537f4ed87.json SHAe7354654 binds
+6ae/TRUE32f/run4fd9f1575edf4095a03931fcb1226347/round/input/policy/entry.
+RuntimeError source_metadata_unavailable, metadata.py call136, native_stage
+NOT_ENTERED. Broker effects remain UNKNOWN by producer, not a zero/fill claim.
+Original public run directory is empty; entry closure is missing.
+Old UTC-only diagnostic rejected the producer's explicit KST offset. New pure
+same-instant projection has2positive/5negative native checks and emitted Ruff:
+A/execution/current-h3-actual-public-fault-projection-20261104-v1/ACTUAL-PROJECTION.json
+SHAa0711264. Original fault bytes/membership/identity/mtime stable; all financial
+categories remain UNKNOWN, not monitor V2 or custody authority.
+Actual scheduled9410 reader at21:10 consumed45e9/authority6247 and WITHHELD
+exact_one_entry_operational_receipt_required. DO NOT replay it or the expired
+entry. OBSERVER-UNRESOLVED pause-outcome marker remains historical UNKNOWN.
+Current observer full XML/ACL/enabled match original policy at21:02:31,0instances;
+that is current identity, not proof of exact historical restoration. No Restore
+or broker action was invoked. Ohm owns real observer-CLI/minimal-ENV/mocked-
+Scheduler reproducer; the shared Full17 observer helper also needs review.
+No operator decision/global Data or Research hold follows this technical fault.
+
+Full17 exact two-future-definition migration is ACTUALLY COMPLETE:
+A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
+earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+Source93b1f1b4 -> runtime5a571b07/release4eb10f99; Capture/Migrate/independent
+Readback native exits0/stderr0. Fresh old/new-root process/mount/no-attempt
+checks; disabled UPDATE28 only, protected full XML/ACL readbacks, exit-first
+enable,0instances/lastYear1999 on both actual Tasks.
+Entry stays Nov4UTC14:31..<14:34/hard14:37; ONLY new exit is now
+Nov6UTC20:54..<21:00/hard21:07, original H3 remains20:45. Same initial B/10/F9/
+costs/losses/pending identities/input/policy/round/SDK/bank/all original exits.
+Nominal separation is not guaranteed prior-owner closure or an automatic queue.
+Actual fresh point/admission/submit/acceptance/fill/inventory remain UNKNOWN.
+Original preparation cap deviation stays NOT PASS; independent partial also
+stays partial. Parent separately verified3491pins/13classification cases/
+16flow cases/inert XML, positive native exits and source stability:
+A/execution/current-full17-serial-exit-parent-qualification-20261104-v1/RESULT-r2.json.
+The initial Parent wrapper expected-status failure is retained; completed
+classification was not replayed. Actual migration does not regrade any failure.
 
 ## Integrated Evidence
 

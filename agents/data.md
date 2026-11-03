@@ -2,7 +2,7 @@
 
 ## Current Data / Next
 
-Updated Nov3UTC20:50 / Nov4KST. Erdos owns same-capture OHLC60 integration.
+Updated Nov3UTC21:20 / Nov4KST. Erdos owns same-capture OHLC60 integration.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
 
 Long training input c1a36b16/manifestccec384a is CLOSED:
