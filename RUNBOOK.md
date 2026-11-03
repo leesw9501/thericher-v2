@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov3UTC20:22 / Nov4KST.
+Updated Nov3UTC20:50 / Nov4KST.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -44,9 +44,13 @@ Earlier r2/r3 admission failures and fault-r4 first cause remain immutable.
 Helm now checks exact ORIGINAL public dispatch/submit-stage evidence only;
 absence alone cannot close or release the request.
 
-AMD actual quote Source329feaf7/CALLBACK under
-A/data/current-amd-paper-quote-schema-probe-20261104-v1 is consumed:
-token_deferred/0HTTP, no provider timestamp/schema observed. No replay.
+AMD actual quote c97223b8 under same root/h3-parity-opportunity-r2 is consumed:
+1POST2GET/0retry, existing strict parser accepted fresh provider fields20:30:53.
+Earlier329f/4a55 default300 probes closed0HTTP, not actual H3 gate parity.
+H3 first-issuance d62/e689 amendment is ACTUALLY enabled/native-ACL checked:
+A/execution/current-h3-first-issuance-parent-migration-20261104-v1/PARENT-COMPLETE.json.
+Same original20:55/exit20:45 and financial6ae/TRUE32f/reader9410/bank.
+No TaskRun or broker calls during migration; future results remain UNKNOWN.
 OHLC60 source66c25cad is native-ready; new actual raw/INPUT.npz publication
 needs original DataREADY/cache/actor closure, no additional HTTP. Never pass
 unbound raw OPEN or placeholder/future hashes to a current model.

@@ -2,7 +2,7 @@
 
 ## Current Execution
 
-Updated Nov3UTC20:22 / Nov4KST. Parent owns actual metadata/shared MD/Git.
+Updated Nov3UTC20:50 / Nov4KST. Parent owns actual metadata/shared MD/Git.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 ONE original initial B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending
@@ -25,8 +25,14 @@ Helm now checks exact ORIGINAL public dispatch/submit-stage evidence only;
 absence alone cannot close or release the request.
 
 - H3 AMD original entry Nov3UTC20:55, exit Nov6UTC20:45; static reader
-  Nov3UTC21:10. Actual migration2873c60a/releaseaa0be4cd is complete:
-  A/execution/current-h3-current-web-parent-migration-20261104-v1/PARENT-COMPLETE.json.
+  Nov3UTC21:10. Latest actual operational migration d62b2c03/e6892aef:
+  A/execution/current-h3-first-issuance-parent-migration-20261104-v1/PARENT-COMPLETE.json.
+  Once-only <=60s readiness after observer pause precedes first native call;
+  original admission/source/observer/bank/deadline rechecked after wait.
+  Same60-floor/final atomic claim, no reset/retry/second or midworker wait.
+  UPDATE28/disabled+enabled readbacks and real native TaskContract/ACL passed
+  at20:48:53; original clocks/financial tuple/reader/bank stay unchanged.
+  Prior2873/aa0 migration remains retained history.
   Original financial6ae54088/TRUE32f/POINTad3b/reader9410/bank remain unchanged.
   Actual scheduled-owner ABI passed separately; this is not a fill.
 - Open45 Nov4 publisher15:07:30, entry15:17, exit16:17 ACTUALLY enabled:
@@ -64,8 +70,11 @@ All future runtime input/submit/acceptance/fill/current owned inventory/PnL
 remain UNKNOWN until exact qualified receipts prove them. Installation and
 Task exit are not financial effects. Never manually Run/replay consumed tasks.
 
-AMD quote probe329feaf7 CLOSED token_deferred/0HTTP; no actual quote schema
-verified. Ohm checks code-scoped client reuse/due issuance. No guard weakened.
+AMD quote c97223b8 ACTUALLY parsed fresh at20:30:53,1POST2GET/0retry using
+same H3 scoped60 floor. Earlier329f/4a55 probes closed0HTTP at default300;
+not H3 parity or a provider failure. No future freshness/fill inferred.
+Actual first-issuance operational amendment d62/e689 installed20:48:53;
+seven host cases/14metadata cases plus real native definition/ACL checks passed.
 Native financial SDK5files independently byte-equal current33b; Linux guest
 importede9463a/nativee270ef0c passed actual4bb image/networknone/allRO/no private
 or credentials. Import proof is not financial admission/fill.

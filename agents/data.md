@@ -2,7 +2,7 @@
 
 ## Current Data / Next
 
-Updated Nov3UTC20:22 / Nov4KST. Erdos owns same-capture OHLC60 integration.
+Updated Nov3UTC20:50 / Nov4KST. Erdos owns same-capture OHLC60 integration.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
 
 Long training input c1a36b16/manifestccec384a is CLOSED:
@@ -33,10 +33,15 @@ task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
 Source d0de1b91/native8e18cbe0, producerad7d0459/owner73600af0.
 Future DataREADY/point/runtime outcomes UNKNOWN; original Nov6/Nov9 unchanged.
 
-AMD actual quote Source329feaf7 is CLOSED token_deferred/0POST0GET:
-A/data/current-amd-paper-quote-schema-probe-20261104-v1/CALLBACK.json.
-No provider timestamp/schema response observed; do not infer provider failure
-or replay consumed read. Ohm checks code-scoped reuse/due-issuance separately.
+AMD actual scoped60 quote c97223b8 passed at20:30:53,1POST2GET/0retry:
+A/data/current-amd-paper-quote-schema-probe-20261104-v1/h3-parity-opportunity-r2/CALLBACK.json.
+Existing strict parser accepted provider timestamp fields; not future freshness
+or independent timezone/financial proof. Old300-floor0HTTP probes retained.
+Same-capture OHLC60 publication3a574bee/native90f6f4e6 is executable-ready:
+A/data/current-return-tcn-paper-ohlc60-publication-preparation-20261104-v1/API.json.
+Actual once remains uninvoked pending original dc8 DataREADY and positive cache/
+actor closure after21:30. No extra HTTP. Erdos prepares checkpoint9364 pure
+proposal inference bridge, no fitting or automatic Paper strategy swap.
 
 ## Retained Reference
 

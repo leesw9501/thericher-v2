@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov3UTC20:22 / Nov4KST.
+Updated Nov3UTC20:50 / Nov4KST.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -13,8 +13,14 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 ## Execution / Due
 
 - H3 AMD original entry Nov3UTC20:55, exit Nov6UTC20:45; static reader
-  Nov3UTC21:10. Actual migration2873c60a/releaseaa0be4cd is complete:
-  A/execution/current-h3-current-web-parent-migration-20261104-v1/PARENT-COMPLETE.json.
+  Nov3UTC21:10. Latest actual operational migration d62b2c03/e6892aef:
+  A/execution/current-h3-first-issuance-parent-migration-20261104-v1/PARENT-COMPLETE.json.
+  Once-only <=60s readiness after observer pause precedes first native call;
+  original admission/source/observer/bank/deadline rechecked after wait.
+  Same60-floor/final atomic claim, no reset/retry/second or midworker wait.
+  UPDATE28/disabled+enabled readbacks and real native TaskContract/ACL passed
+  at20:48:53; original clocks/financial tuple/reader/bank stay unchanged.
+  Prior2873/aa0 migration remains retained history.
   Original financial6ae54088/TRUE32f/POINTad3b/reader9410/bank remain unchanged.
   Actual scheduled-owner ABI passed separately; this is not a fill.
 - Open45 Nov4 publisher15:07:30, entry15:17, exit16:17 ACTUALLY enabled:
@@ -71,11 +77,14 @@ absence alone cannot close or release the request.
 
 Actual configured-account health earlier16:56 was auth200 plus3complete native
 holdings GETs/count4dedup. It is NOT ownership/orderability/full-risk/PnL.
-AMD quote probe actual Source329feaf7/CALLBACK under
-A/data/current-amd-paper-quote-schema-probe-20261104-v1 closed token_deferred:
-0POST/0GET, no provider response or timestamp observed. Token guard not due
-within local60s precheck; no provider-failure or unusable-schema inference.
-Do not replay it. Same-client reuse/due-issuance diagnosis continues separately.
+AMD native quote capability ACTUALLY passed at20:30:53UTC:
+A/data/current-amd-paper-quote-schema-probe-20261104-v1/h3-parity-opportunity-r2/CALLBACK.json.
+Sourcec97223b8,1POST2GET/0retry, existing strict Korea/120s typed parser accepted
+provider timestamp fields. No raw prices/token/account/response retained.
+This single observation is not future freshness, independent timezone proof,
+account admission or a fill. Earlier329f/4a55 probes used default300 and closed
+0HTTP; actual H3 worker uses60, so old probes were not full gate parity.
+All quote opportunities consumed/no replay; no global token-floor change.
 
 ## Engine / Data
 
@@ -141,16 +150,20 @@ Web remains credential/private-custody/broker-free; no public serving.
   inspect H3/task-owned receipts when due, no foreground session wait.
 - Helm Execution: exact original F9 public submit/dispatch source-stage evidence;
   R5 actual query complete, no repeat/reservation release.
-- Hooke Infra: new source-bound serial exit and UPDATE28-only migration facade;
-  no original H3 retime, no actual Task mutation by role.
-- Ohm Infra: AMD actual quote probe closed token_deferred/0HTTP; code-scoped
-  client-reuse/legitimately-due issuance diagnosis, no consumed probe replay.
+- Hooke Infra: serial5a571 source ready; migration facade93b1 prep exceeded
+  original native/attempt limits and is NOT original-budget PASS. Invoked
+  independent Validation owns a fresh two-group integration check; no actual
+  Full17 migration yet, no original H3 retime or Task effects by role.
+- Ohm Infra: AMD native quote capability complete; first-issuance amendment
+  d62 operationally installed by Parent. No consumed probe/Task replay.
 - Erdos Data/Strategy: same-capture OHLC60 publisher/native handoff; completed
   attention kernel already consumed, not another GPU fit.
 - Confucius Engine/Steward: distinct cost/turnover-aware campaign, useful GPU
   when ready; no completed fit repeat, no profitability gate on Paper.
-- Lagrange Monitor: expanded consumer inventory/stable UI boundary diagnosis;
-  preserve working be48 until exact qualified migration.
+- Lagrange invoked Validation: independent final Full17 migration checks;
+  Monitor staysbe48. GOOGL actual Arguments/Source differ; provenance attempt
+  hit an invalid parsed-vs-raw XML comparison, not proven instability. No
+  baseline/comparison waiver or web swap; preserve failed evidence.
 Role MDs are durable memory, not evidence of active LLMs/numerical workers.
 
 ## Verification / Claims

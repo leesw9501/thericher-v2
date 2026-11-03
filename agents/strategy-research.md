@@ -2,7 +2,7 @@
 
 ## Current Source Handoff
 
-Updated Nov3UTC20:22 / Nov4KST. The small joint cross-asset/time-patch kernel
+Updated Nov3UTC20:50 / Nov4KST. The small joint cross-asset/time-patch kernel
 is COMPLETE and already consumed by Engine, not a pending GPU proposal:
 A/research/current-cross-asset-patch-attention-candidate-preparation-20261104-v1/
 API.json, Sourcebacd8aaa/kernel12495619/nativeb20cc070.
