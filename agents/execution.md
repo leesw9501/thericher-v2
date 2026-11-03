@@ -2,95 +2,60 @@
 
 ## Current Ownership
 
-Nov3UTC10:20. Helmholtz owns finite Open45 URI-bound runtime recovery prep;
-Hooke independently reviews native definition equivalence. Parent owns actual
-metadata adoption/shared MD/Git. A=D:/thericher-v2/model-artifacts.
-ONE original B/10/costs/losses/F9 UNKNOWN-HELD/identities/ALL exits unchanged.
-No operator decision pending. Never KIS_LIVE_* or foreign inventory adoption.
+Nov3UTC11:40. Helmholtz owns current-full17-h3-finite-account-deployment-
+preparation-20261103-v1,1200SUM5400elapsed/SOURCE ONLY/0actualKISprivateTask.
+Consumer: one account-owned finite serial Nov9OPEN5 entry/Nov11PRE_CLOSE15
+owned exit, using09dd native full18 profile/producer1db/Data310/adapterbd/
+named-worker783. Future exact point/hash UNKNOWN; no human-JIT placeholder.
+Review proposal .005 sizing/minlots within ONE original B10 maximum, not a
+new tiny permission gate/spending target. A new contract must not rewrite
+frozen proposals; deterministic broker risk unchanged.
+
+Actual effects still check virtual host/account/basis/budget/owned inventory/
+pending exact unknown/fresh quote+orderability/emergency/current owners.
+No allflat/profit gate, substitute, new bank, foreign adoption or reservation
+release. Old cohorts/exits migrate only with positive original owner closure.
+Parent owns actual qualified metadata/integration/Git.
 
 ## Actually Installed
 
-H3 AMD first-leg, NOT full17-stock automation:
-- entryNov3UTC20:55..<21:00/PT7M;
-- owned exitNov6UTC20:45..<21:00/PT7M;
-- strict offline readerNov3UTC21:10..<21:12/hard21:17/PT7M.
-Source6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603 unchanged;
-financial READBACK31e83c91/reader9410af60/authority624719ad/
-COMPLETE1886c323/READBACKb9801906. Actual SDK is frozen on D:, not repository.
-Parser H3-IMPACT.json proves no Open45 sentinel defect, not runtime success.
-No consumed command replay or manual TaskRun.
+H3 finite AMD first-leg unchanged:
+entryNov3UTC20:55; exitNov6UTC20:45; strict offline readNov3UTC21:10.
+Source6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/reader9410/authority6247,
+D-frozen SDK, financial31e83c91/reader1886c323+b9801906. Not full17 automation.
 
-Data-only Open45 publisher Source14268659/Definition77513d80/
-recoveryf4599669/independent73d5f0fb enabledReady3/0instances at07:16.
-Trigger15:07:30/capture15:16..15:16:25/score<=15:16:55.
-Not a financial Task or actual data publication.
+Open45 ACTUALLY enabled/Ready3/0instances after recovery+independentread:
+- thericher-open45-oneleg-ops-entry-20261103-v1,Nov3UTC15:17..<15:18/PT7M;
+- thericher-open45-oneleg-ops-owned-exit-20261103-v1,Nov3UTC16:17..<16:18/PT7M.
+KST Nov4 00:17/01:17. RuntimeDF413fe8/release529e0692,
+ROOT current-open45-uri-bound-runtime-recovery-preparation-20261103-v1.
+Complete3ee0c17f/independentread3a6597d6a337763e65a69216f9ad8d0c96755b53ab10ff808124b4dcb94cf371.
+Prep791.173030upper/native43+bootstrap5; old2307/failed attempts preserved.
+Parent Inert/recover/readback Jobs2each active0 joined/handlesclosed.
+Exact URI fixed shared installer AND runtime owner, not broad XML ignore.
+AdvisoryGO_WITH_LIMITS/partialpeer/nonatomic honest-host race limits retained.
 
-Actual H3 submit/acceptance/fill/current owned inventory/fees/settled cash/
-net PnL UNKNOWN. Task exit/installation/preview not effects.
-Offline custody proof needs relevant actual writer admission/exact joins/
-network-none RO mounts/stability, never recovery-capable observe().
-Source markers assume honest host, not cryptographic OS scheduler origin;
-Operational logging disabled.
+Data publisher142/775 remains enabled Nov3UTC15:07:30/capture15:16.
+Actual future point/date/checkpoint/seal/source/publisher closure still required;
+forecast originaladmit15:17..<15:18/separate BUYdeadline15:22/no expiryretag.
+No TaskRun/catchup/repetition or consumed metadata replay.
 
-## Open45 Financial Installation Recovery
+Data310/meta473+Parent4da Nov6coherent capture now separately installed:
+Nov6UTC21:10; no financial authority or current Paper state changes.
 
-Closed ingredients: originalprofile62eed9c7/native32, directpartial8db9c475/
-native5phases, oneleg10ce0fb2/native47. One ranked quarter/other cash, no
-renormalization. Original forecast admission15:17..<15:18, separate BUYdeadline
-15:22, owned exit16:17. No expired-point extension, reset or new bank.
+## Outcome Limits And Duties
 
-New enclosing invented pair PASSED:
-A/execution/current-open45-immutable-guest-envelope-pair-20261103-v1,
-FINAL-SOURCEce6d58c2/nativefc178c10/RESULTffca66dc/CLOSURE337c1b35,
-14native/7adversarial/6argv/Ruff/all48Jobs96members2CIDsclosed,
-364.727613upper. Guest immutable snapshot before required host UNKNOWN_HELD
-annotation; recovery semantics unchanged. Prior failed source/caps preserved.
+All new installation facts are NOT submit/acceptance/exact fill/current
+inventory/fees/settled cash/net PnL. Actual financial results remain UNKNOWN.
+Source marker provenance assumes honest host, not cryptographic OS origin;
+Operational logging disabled. Custody reads need relevant-writer admission,
+exact joins/network-none RO/stability, never recovery-capable observe().
 
-Parent checked runtime2307c6dd659members0mismatch/no mutable repoSDK;
-staged exact candidated89cde87, ClaudeGO_WITH_LIMITS at parent-claude-review.json.
-Actual Install ONCE09:38 failed full_XML_drift.
-Exact readonly capture:
-A/execution/current-open45-native-definition-drift-capture-20261103-v1,
-CAPTURE43d84fbf/FIRST-CAUSE5c9095a2.
-Only drift: expected RegistrationInfo/URI absent; native exact task path URI
-makes both canonical XML comparisons match, ACL passes.
-Actual EXIT disabled/state1/0instances; ENTRY absent.
-Original ATTEMPT consumed, Parent release absent; do NOT replay Install.
-
-Helmholtz new current-open45-native-uri-definition-recovery-preparation-
-20261103-v1, <=500SUM2700elapsed:
-bind exact task URI, qualify synthetic Scheduler/recovery/containment;
-recover existing exact disabled exit, create only absent entry disabled,
-fullXML/ACL verify, publish original d89 release, enable EXIT before ENTRY.
-Parent actual RecoverONCE+independentReadback only after source/native closure.
-No ignoring arbitrary URI, oldsource edit, force-enable, TaskRun or guest refit.
-Hooke direct readonly peer review, not duplicate installer.
-That metadata-only prototype is CLOSED300/500upper WITHOUT NATIVE/Recover:
-owner_library.ps1:30-31 repeats URI-less N-Definition before inner Readback.
-New current-open45-uri-bound-runtime-recovery-preparation-20261103-v1,
-900SUM3600elapsed/at most one invented pair, fixes shared exact URI for BOTH
-installer and runtime owner in a new D source/action/release version.
-Preserve2307/oldattempts/financial tuple/clocks, exact positive old-disabled-
-target ownership before migration; no broad URI ignore or oldproof regrade.
-Hooke new peer180SUM1800elapsed/0TaskCIMcalls; oldpeer192/240 remains closed.
-Future actual point/source/date/checkpoint/seal/publisher closure and original
-account/basis/unknown/token/quote/orderability/custody/observer/risk checks remain.
-
-## New Full17 Profile / Preserved Duties
-
-Parent integrates full17NAS+NYS/CASH inclusive3 OPEN5/PRE_CLOSE15 through
-existing weights/native dispatcher/session types. Explicit NON_PARITY with
-research thirdCLOSE; old elapsedH3 and current H3 source unchanged.
-Confucius owns focused boundary fixes, Parent final source-matched verification.
-Ohm owns pure executable-proposal handoff. This profile is NOT deployed.
-
-Preserve GOOGLexitNov9UTC20:55, MSEexitNov5UTC20:40, H20exitDec1UTC14:30,
-NAS8Nov3/4UTC21:10 and frozenNov4UTC21:35 evaluation.
-Earlier holdings-only9f381b90 saw4broker positions, not exact-owned fill/
-funds/fullrisk/adoption. F9 exact read remains UNKNOWN-HELD, reservation held.
-Monitor127.0.0.1:8787 stays imagebe48f29e, pinned by original H3.
-New minimal H3 UI source is tracked/tested NOT deployed; no public exposure.
-Earlier source/installation sections below are frozen history, not assignments.
+Preserve GOOGLNov9UTC20:55, MSENov5UTC20:40, H20Dec1UTC14:30,
+NAS8Nov3/4UTC21:10/frozenNov4UTC21:35 and ALL original exits.
+F9 UNKNOWN-HELD unchanged; holdings-only4positions is not ownership/adoption.
+Monitor127.0.0.1:8787 stays pinnedbe48f29e, no public exposure/casual rebuild.
+Full18 profile source/native ready, NOT financial deployment.
 
 ## Frozen Execution Index
 

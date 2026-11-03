@@ -6,102 +6,93 @@ coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain interpretable native KIS Paper entry, exact acceptance/fill and current
 owned-position reconciliation while cost-aware intraday and short-swing research
-continues. Installation/tests/UI/commits are not financial closure.
-Paper engineering does not require model profitability.
+continues. Tests, installation, UI and commits are not financial closure.
+Paper execution learning does not require a profitable model.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Parent owns policy/goal/integration/Git. No operator decision pending.
-Preserve ONE original B/10/costs/losses/F9 UNKNOWN-HELD/original identities/
-ALL exits. Never KIS_LIVE_*, foreign adoption, unknown-request substitution,
-profit refill or stale-point retag. Leave unrelated %SystemDrive%/ untouched.
+Parent owns shared policy/goal/integration/Git. No operator decision pending.
+Preserve ONE original B/10/costs/losses/F9 UNKNOWN-HELD/identities/ALL exits.
+Never KIS_LIVE_*, foreign adoption, profit refill or substitute unknown requests.
+Leave unrelated %SystemDrive%/ untouched.
 
 ## Actual Installed Opportunities
 
-H3 is a finite AMD first-instrument leg, not full17-stock automation.
-Host6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603 and D-frozen SDK unchanged.
+- Open45 Data publisher142/775,Nov3UTC15:07:30; capture15:16..15:16:25,
+  score<=15:16:55. Actual full45 point UNKNOWN.
+- Open45 entry thericher-open45-oneleg-ops-entry-20261103-v1:
+  Nov3UTC15:17..<15:18/PT7M =Nov4KST00:17.
+- Open45 owned exit thericher-open45-oneleg-ops-owned-exit-20261103-v1:
+  Nov3UTC16:17..<16:18/PT7M =Nov4KST01:17.
+  RuntimeDF413fe8/release529e0692,actual COMPLETE3ee0c17f/
+  independentread3a6597d6,enabledReady3/0instances.
+  Original forecast admission/BUYdeadline15:22/risk/input identity unchanged.
+- H3 finite AMD entryNov3UTC20:55/ownedexitNov6UTC20:45/
+  strict offline readNov3UTC21:10; Source6ae/TRUE32f/POINTad3b/SEALf8fe/
+  reader9410/authority6247 and D-frozen SDK unchanged, not full17 automation.
+- thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1:
+  Nov6UTC21:10..<21:11/PT15M =Nov7KST06:10.
+  Runtime310619b1/meta473ca0ad +Parent exactIdle composition4da1b73d,
+  actualenabledread d8aa2822,enabledReady3/0instances/neverrun.
+  19GET1POST0retry; actual future input/modelpoint UNKNOWN.
 
-- H3 entry thericher-h3-rank-cash-once-entry-20261103-v1:
-  Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
-- H3 exit thericher-h3-rank-cash-owned-exit-20261106-v1:
-  Nov6UTC20:45..<21:00/PT7M = Nov7KST05:45.
-- H3 strict offline result reader:
-  thericher-h3-automatic-post-entry-offline-read-once-20261103-v1,
-  Nov3UTC21:10..<21:12/hard21:17/PT7M = Nov4KST06:10.
-- Data-only thericher-open45-finite-publisher-20261103-v1:
-  Nov3UTC15:07:30 trigger/capture15:16..15:16:25/score<=15:16:55.
-  Source14268659/Definition77513d80/actualenabled73d5f0fb.
-
-H3 financial READBACK31e83c91; reader9410af60/authority624719ad/
-COMPLETE1886c323/READBACKb9801906. No consumed metadata replay/TaskRun.
-Actual financial results remain UNKNOWN. Exact relevant-writer admission,
-joins/network-none RO/stability and original effect-time risk still apply.
+No manual TaskRun/catchup/repetition or consumed Create/Recover/Enable/
+composition/readback replay. Installation is not submit/fill/inventory/PnL.
+Effect-time virtual account/basis/budget/pending unknown/fresh quote+orderability/
+owner/observer/risk checks remain. Custody evidence requires exact joins,
+relevant actual writer admission/network-none RO/stability, never observe().
 Source markers assume honest host, not cryptographic OS Scheduler proof;
-Operational logging is disabled.
+Operational logging disabled.
 
-Preserve GOOGLNov9UTC20:55, MSENov5UTC20:40, H20Dec1UTC14:30,
+Preserve GOOGLNov9UTC20:55,MSENov5UTC20:40,H20Dec1UTC14:30,
 NAS8Nov3/4UTC21:10 and reserved evaluationNov4UTC21:35. No follow-up chain.
 
 ## Ready Company Work
 
-Current named roots, caps, write sets and actual closures:
-agents/orchestration.md and the active Data/Engine/Strategy/Execution boards.
-No MD alone proves an active worker.
+Exact roots/caps/write sets: agents/orchestration.md and active stateboards.
+An assigned MD is not proof of running LLM/process/GPU.
 
-1. Parent integrates verified full17NAS+NYS/CASH inclusive3 OPEN5/PRE_CLOSE15
-   typed weights/native account/named-worker path. Explicit NON_PARITY with
-   research thirdCLOSE; old elapsedH3 and installed runtimes unchanged.
-   Commit/push source and refresh dependent SDK handoffs; NOT yet deployed.
-2. Execution/Helmholtz: new current-open45-uri-bound-runtime-recovery-
-   preparation-20261103-v1, <=900SUM3600elapsed/at most one invented pair.
-   Actual2307 Install09:38 failed exact URI drift; last captured exit disabled/
-   0instances, entry/release absent. Old metadata prototype300/500 found same
-   defect in runtime owner_library before inner Readback. New shared exact-URI
-   N-Definition must cover installer AND runtime owner, qualified source/native
-   before Parent same-target migration/enable. Preserve oldsource/attempts,
-   original clock/financial tuple; no broad normalization/TaskRun/broker.
-3. Hooke peer-review new exact URI-bound source/native under its own
-   <=180SUM1800elapsed root; no Task/CIM/mutation/duplicate installer.
-4. Data/Euclid: finalize a NEW frozen-SDK Nov6 coherent19 C60 capture/bridge
-   release after Parent commit/source callback. Prechange61759f6b closed before
-   old09:52hard; do not extend old caps or upgrade1cf/e149/56f silently.
-   Future input/Task installation still UNKNOWN/not installed.
-5. Strategy/Ohm: adapter finalbd6f1fa8/API308f6d30/SDK6ac7d4e7/callback724b2c07
-   CLOSED480checks/160pins0mismatch/273.016805upper. NEW named-account-worker
-   smoke root450SUM2700elapsed joins invented adapter output through actual
-   named worker/native account core with synthetic bank/fake broker only.
-   No actual credentials/private/market/Task or mocked core/intake.
-6. Engine/Confucius: new current-full17-h3-future-meanrank-producer-
-   preparation-20261103-v1, <=1200SUM5400elapsed/0marketforecasts0fits0replays.
-   Future exact coherent Data -> trusted fresh TimesFM+Chronos17stockH3 scores
-   -> fixedmeanrank quarters -> strict full18 adapter. At most one tiny invented
-   native handoff per model runtime. Final freeze after Parent callback;
-   no saved-forecast retag, placeholder point hash, current H3 swap or new bank.
+1. Execution/Helmholtz: full17 finite account deployment prep1200SUM5400elapsed,
+   source-only Nov9OPEN5 entry/Nov11PRE_CLOSE15 ownedexit, native typed profile/
+   one shared bank. Exact actual future producer point resolved without a
+   placeholder or human-JIT. All original pending/exit obligations retained.
+2. Infra/Hooke: finite quiet future producer Task prep700SUM3600elapsed,
+   proposed Nov9UTC14:25..<14:30,600SUM300elapsed/one fresh call per model/
+   0fits-replays-retries. Existing producer1db remains uninstalled/proposed;
+   no future weights inferred.
+3. Data/Euclid: broad512 intraday-ratio input prep600SUM3600elapsed,
+   existing MODE0 daily OHLC eligibility/calendar/keys/masks,0newHTTP.
+4. Strategy/Ohm: causal economic kernel proposal500SUM3600elapsed,
+   registry dedup + primary sources + one executable consumer,0marketnumerics.
+5. Engine/Steward/Confucius: broad512 same-session selection family
+   4800activeSUM10800elapsed, proposed CPU1+CUDA1/finite<=12costviews/
+   0numericalretry. Exact source/targets/splits/caps/native first; CPU baseline
+   then useful GPU work under actual headroom/lease. Candidate past20 within-
+   session ratios -> O/C on paper17; no overnight rawprice split contamination,
+   intrabar ordering/stop fills, imputation, nonPIT concealment or untouched claim.
 
-Direct qualified role handoffs are allowed; Parent is not a late PID/network
-release barrier. Actual source/account/budget/unknown/quote/orderability/
-owner/observer controls remain. Missing input blocks only its consumer.
+Roles exchange qualified exact schemas/evidence directly. Parent is not a late
+PID/network-release approval barrier. A local failure does not stop other work.
+No allflat/profitability/GPU-occupancy gate or extra bank.
 
-## Closed Work / Verification
+## Closed Evidence And Verification
 
-Data75493RTH/same25dates/249contexts and all completed fits/forecasts remain
-closed with their source/CA/finality/vintage/publication limitations.
-Actual9head67070e78:1POST9GET/all200/17.899650sround, first45 UNAVAILABLE;
-full45/open-session/compression not measured. No repeated anchor/probe.
-Coherent quantile10ab2777:1GPUforecast22forwards12views/0fits0retry,
-+11.687878/DD3.132555 vs scalar+11.973643/DD3.228971, growthFAIL/allclosed.
-Stop numerical family. This is reused modeled-cost development, not broker PnL.
+Code09ddaa22 pushed; full18 adapterbd6f1fa8/480checks/160pins,
+named-worker/account/native smoke2d9c55fd/783checks/139pins CLOSED.
+Producer1db5c196/595pins native Data-reader -> TimesFM+Chronos -> fixedmeanrank
+-> strict full18 passed,0marketforecasts/fits/replays; only one tiny synthetic
+call per model. No actual full17 financial deployment.
+Prior research metrics are reused modeled-cost development, not broker PnL.
+Current new Data1.17M-row feasibility is a new family, not a repeated H3 study.
 
-Final repo authority:
-A/verification/current-us-cash-h3-ops-integration-20261103-v1/RESULT.json,
-SHA25c0120a93aea55f17d46930aa8687b26b59bb5f8f323f6bea4f87ab5970b911.
-SOURCE-r4a93b0d87/1431pins0mismatch; serial521 plus final worker183/current
-native40; actual8/8workers[20056]/20030PASS26knownWindowslinkSKIP/35warnings/
-390.50s/helper-native0/currentchild+leaseclean/Ruff/4Compose.env.example PASS.
-Earlier partial/runs are historical source only; no cleanup-denial bypass.
-External D code needs its own focused native/negative/source/closure proofs.
-Do not repeat full tests for docs/external-only work while exact pins match.
+Repo authority A/verification/current-us-cash-h3-ops-integration-20261103-v1/RESULT.json,
+SHA25c0120a93aea55f17d46930aa8687b26b59bb5f8f323f6bea4f87ab5970b911:
+1431pins0mismatch/521serial+183finalworker/current40/full20030PASS26knownskip/
+8of8[20056]/390.50s/helper-native0/verified currentchildcleanup/Ruff/
+4Compose.env.example PASS. Earlier partial/runs are historical source only.
+D-only executables need their own focused native/negative/closure evidence;
+do not repeat20k tests for docs/external-only while exact pins match.
 
-Continue ready packages without foreground market/quota sleep.
-Only actual company runtime completion permits ONE next company outcome;
-package commits or future due times do not complete this goal.
+Integrate/verify/commit/push ready packages and continue without foreground
+market/quota sleep. Replace this file with ONE next company outcome only at
+actual runtime completion, never to end a package or because a due time exists.

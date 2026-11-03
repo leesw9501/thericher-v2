@@ -2,82 +2,54 @@
 
 ## Current Results And Next
 
-Nov3UTC10:20. Confucius owns Engine/GPU coordination and future meanrank
-producer preparation; cycle review write set is closed2b889431.
-A=D:/thericher-v2/model-artifacts.
-Intraday and1..several-session short swings; no operator decision pending.
-An assignment is not proof a CUDA worker is running.
+Nov3UTC11:40. Confucius owns Engine and sole GPU coordination.
+NEW current-broad512-intraday-selection-development-20261103-v1,
+4800activeSUM10800elapsed; proposed max1CPUfit+1CUDAfit, one forecast each,
+finite<=12compatible cost views/0numericalretry. Data/Strategy contracts first,
+then freeze exact source/target/splits/features/trials/epochs/time/stop rules.
+Not proof training is running.
 
-| Closed Study | Net10 Growth / Close-only DD | Frozen Result |
-| --- | --- | --- |
-| Open45 LSTM | +1.216960% / .651134% | developmentPASS on5DEVdates |
-| Full-day TCN91126913 | -10.811273% /11.007170% | growthFAIL; time sub-bound overrun |
-| TimesFM2.5d9bca820/5fb31f96 | +21.935650% /12.367194% | riskFAIL |
-| Chronos2f9d77613/5b888592 | +25.641041% /9.214451% | developmentPASS |
-| Chart exit af193e38/e053ffd2 | +12.794580% /12.326755% | FAIL |
-| Fixed meanrank3fdd8285/76fc275c | +27.295698% /7.353924% | standalone developmentPASS |
-| Consensus-quarter3fdd8285 | +17.627845% /6.304031% | own matched-EW riskFAIL |
-| CPU MAEq80tree039c7399/c595452e | +15.281894% /4.340869% | standalone developmentPASS |
-| Sequence TCN8718410e/5a3ca7b9 | +15.119434% /4.049037% | CPUgrowthFAIL |
-| Sequence GRU576cb605/5f24a503 | +14.406670% /4.038226% | CPUgrowthFAIL |
+Candidate: existing broad512 MODE0 daily OHLC, past20 within-session ratios
+and causal market context -> same-session O/C on fixed paper17.
+Tentative FIT<=2023/INNER2024/adaptiveDEV2025..later, all assets date-split,
+reserved NAS8/current fresh outcomes excluded. No interday raw price/split
+claims, intrabar barriers, nonPIT/survivor concealment or untouched-alpha claim.
+Strong cost-aware CPU baseline first, useful shared causal neural comparison
+only when Data sound. Real tiny optimizer/producer-consumer smoke before fits;
+inner curves/earlystop/LR/regularization/bestcheckpoint/purge and actual
+headroom/lease required. Reject duplicate/unusable family, no occupancy work.
 
-Weekly foundation/risk studies share41reused2026cohorts/697keys/C60H3,
-modeled costs/currentlisting/nonPIT/notTR/CA/finalityunknown. No independent
-alpha/replication, intraday DD or actual broker PnL. Lower exposure not alpha.
-Meanrank27.30growth is not dominated by15.28lower-risk CPU policy.
+## Closed Paper Handoff
 
-Actual fits CLOSED:
-- CPU1fit.212922s/294steps/BEST246/INNERpatience48/1forecast12views,
-  native13/45pins/674.962278conservativeupper including frozen reserves.
-  Matched scalar+14.777921/DD4.417190, modest selective improvement.
-- TCN1CUDAfit18epochs792updates/BEST4/timepreflight182.707543wall/
-  90.084691optimizersec/81.227MBallocated98.566MBreserved, no convergence;
-  native11/audit66/944.587592upper, positive actors/CID/lease closure.
-- GRU1CUDAfit81epochs3564updates/BEST33/INNERearlystop48,
-  11.706983wall/9.661050optimizersec/151.124MBallocated247.464MBreserved;
-  native11/audit67/288.375985upper, positive actors/CID/lease closure.
-- Earlier TCN91126913 fitwall292.700357>285 and TimesFM bootstrap/subcap
-  limitations remain immutable; no refund or numerical retry.
+current-full17-h3-future-meanrank-producer-preparation-20261103-v1:
+Source1db5c1962d1c09ca0bccc7051d60d62187a35dbbefc9a3d3f3874cc4ff8f7809,
+callback473b361b/595sourcepins/nativePASS,451.633839upper.
+Real Data-reader -> each trusted model -> fixed meanrank -> strict full18.
+One tiny synthetic TimesFM call and one Chronos call/two restores,
+0marketforecasts/fits/replays/retries; actors/CIDs/leases closed.
+REVISE/limitations retained. Actual Nov6 input/scores/weights UNKNOWN.
+Proposed separately owned Nov9UTC14:25..<14:30 producer600SUM300elapsed,
+one fresh market call per model, NOT installed. Hooke owns finite Task prep.
+No human-JIT future hash, stale forecast retag, current H3 or bank swap.
 
-Lower-quantile839520af is CLOSED_UNQUALIFIED_BEFORE_PYTHON:
-A/research/current-chronos2-h3-lower-quantile-risk-development-20261103-v1,
-FIRST-CAUSEb130b345/FINAL-CALLBACK6326b366/506.532775SUM.
-Null image Entrypoint caused exec-format;0checkpoint/model/forecast/readout.
-REVISE retained, native retry0 remains binding. Saved-p50/new-p10 parity not
-measured; width-crossing g1 limitation retained. Not a model/API/economic FAIL.
+Adapterbd6f1fa8/480checks and named-account smoke2d9c55fd/783checks are CLOSED:
+actual typed parse/worker/account/core with fake broker only, no deployment.
 
-Separate successor now CLOSED, not queued:
-current-chronos2-h3-coherent-quantile-recovery-development-20261103-v1,
-<=1200SUM5400elapsed/1newlogicalGPUforecast/<=12views/0fit0retry.
-Separate frozen successor: explicit trusted Python entrypoint, tiny actual
-producer->consumer/native output API before market. Same-call p10/p50 width,
-invalid/crossing abstention, fixed original meanrank quarters, one risk map,
-scalar+CPU same-stock/samegross growth-risk kills. Preserve old packets/debits,
-no oldmedian packet rerun, new weight grid, independent-alpha or Paper swap.
-New short Claude challenge and actual resource/lease/source before launch.
-Result10ab2777/bc7bd1c8/callback5f63f54a:1GPUforecast22forwards12views,
-net10+11.687878/DD3.132555 vs scalar+11.973643/DD3.228971;
-scalar/CPU growthFAIL.490.108245upper/27PIDidentities2CIDsleasesclosed.
-REVISE/limits retained; stop numerical family, no rescue or Paper swap.
+## Retained Research Results
 
-NEW current-full17-h3-future-meanrank-producer-preparation-20261103-v1,
-1200SUM5400elapsed/0marketforecasts0fits0replays, at most one tiny invented
-native handoff per trusted model runtime. Future exact coherent19 C60 Data ->
-fresh17stock TimesFM+ChronosH3 scores -> fixed meanrank quarters -> Ohm full18
-typed adapter. Actual producer/bootstrap/file/schema smoke, final SDK/source
-freeze after Parent commit. Native synthetic checks are not market reruns.
-Direct Data/Strategy contracts; actual future input/hash UNKNOWN, weights
-must exist before Nov9OPEN. No placeholder hash, stale score retag or new bank.
+Meanrank3fdd8285:+27.295698/DD7.353924 developmentPASS; Chronos2f9d77613
++25.641041/DD9.214451 PASS; TimesFM r2d9bca820+21.935650/DD12.367194 riskFAIL.
+CPU risk039c7399+15.281894/DD4.340869 PASS; TCN8718410e+15.119434/DD4.049037
+and GRU576cb605+14.406670/DD4.038226 CPUgrowthFAIL. CUDA fits CLOSED.
+Coherent quantile10ab2777+11.687878/DD3.132555 vs scalar11.973643/DD3.228971
+growthFAIL,1GPUforecast22forwards12views/0fits0retry/490.108245upper/allclosed.
+Old839520af before-Python failure/debits preserved; numerical family stopped.
 
-Parent integrates existing full18 typed native profile: full17NAS+NYS+CASH,
-inclusive3 OPEN5/PRE_CLOSE15, explicit NON_PARITY with research thirdCLOSE.
-Ohm owns invented executable-proposal handoff after final SDK/source freeze.
-Source/native readiness is not financial deployment; profitability not required.
-Data future bridge/release owned by Euclid, no current H3 point retag.
-
-Minute75493RTH/249contexts on SAME25dates; JNJOct20/seams masked and partial
-publication limitation retained. Reserved NAS8Nov3/4/frozenNov4eval excluded.
-ONE original B/10/F9 UNKNOWN-HELD/all exits preserved.
+All adaptive/reused MODE1/currentlisting/nonPIT/notTR/unknownCA/finality/
+modeled-cost/close-only-DD, not independent alpha or actual broker PnL.
+Old TCN time overrun/TimesFM bootstrap/subcap limitations remain immutable.
+Current full18 ops is NON_PARITY with benchmark thirdCLOSE; Paper profit not
+an authority gate. ONE B10/F9 UNKNOWN-HELD/all original exits unchanged.
 
 ## Frozen Comparison And Contract Index
 

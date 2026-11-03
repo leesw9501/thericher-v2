@@ -2,50 +2,36 @@
 
 ## Current Source Handoff
 
-Nov3UTC10:50. Ohm completed
-A/research/current-us-cash-h3-executable-proposal-handoff-preparation-20261103-v1,
-Original500SUM3600elapsed scope CLOSED273.016805upper, before10:35:44hard.
-SOURCEbd6f1fa8/API308f6d30/SDK6ac7d4e7/CALLBACK724b2c07:
-fresh480invented checks on final frozen SDK,160sourcepins0mismatch checked
-by Parent, named worker ABI pinned to integration09ddaa22. All owned actors
-closed,0market/model/broker/private/Task effects, no financial deployment.
-Exact API was sent directly to Engine/Data; old provisional79984ae9 remains
-prechange-only history, not current proof.
+Nov3UTC11:40. Ohm owns
+current-broad512-intraday-economic-kernel-proposal-20261103-v1,
+500SUM3600elapsed/0fitsforecastsmarketreadoutsKISprivateTask.
+Registry literal dedup first. Consumer: actual broad512 OHLC past20 scale-free
+within-bar features -> cost-aware same-session selection on paper17.
+Data/Engine direct contracts. One executable kernel, not architecture grid or
+reading list. Primary official sources only for conceptual research; source
+performance is not project evidence. No licensed sector data/new framework.
+Avoid overnight split-contaminated returns, intrabar high/low ordering/fills,
+future feature availability and missing imputation. Engine owns final splits,
+costs/targets/fits/interpretation. Strongest matched-risk/growth/cost kill first.
 
-NEW current-full17-h3-named-account-worker-smoke-20261103-v1,
-450SUM2700elapsed/0models0marketviews0actualcredentialsAPIprivateTask.
-Invented scores -> frozenbd adapter -> real full18 DTO -> actual named
-run_account_session/native core with only synthetic bank/fake broker I/O.
-Cover NYS owned entry/exit, allcash/zero-share and unknown pending after OPEN5,
-preserving synthetic oneB10/F9held. No mocked core/intake or repo edits;
-external focused native proof, not another full repo run or approval gate.
+## Closed Executable Handoffs
 
-Prior pure handoffs CLOSED:
-- meanrank8f740232/APIcd4c2d4e/native30/48pins/236.089upper;
-- route-clock63d19514/API251d9bbb/native89/305.875730upper;
-- weights contributioncb81a32f/PATCH180b2da8/21pins/639.881251upper,
-  applied by Parent, do NOT apply again.
-New profile:17exact NAS/NYS stocks plus CASH slot17, exact binary64/Fraction
-residual, no normalization; prior-close features and weights observed BEFORE
-entry OPEN; inclusive3 firstOPEN5/thirdPRE_CLOSE15 is explicit NON_PARITY with
-research thirdCLOSE. Old elapsedH3 meanings and current H3 deployment unchanged.
-Parent integrates native risk/account/session and boundary regressions.
+- Full18 adapterbd6f1fa8/API308f6d30/SDK6ac7d4e7/callback724b2c07:
+  fresh480checks/160pins0mismatch/273.016805upper/allactorsclosed.
+- current-full17-h3-named-account-worker-smoke-20261103-v1:
+  Source2d9c55fd62980e380dc9d593a1e16ff3736d78df5d7ead17e241510ba4409409,
+  API793290d2,783checks/139pins0mismatch/202.519746upper/all18actorsclosed.
+  Real bd adapter -> strict full18 parse -> actual named run_account_session/
+  native account/core/planning/execution/reconciliation; external I/O only fake.
+  NYS buy/ownedexit, zero-share cursor, allcash and exact unknown pending after
+  OPEN5 passed; original synthetic B10/F9 held. Actual RequestBudget exercised.
+  0realcredentials/models/market/broker/private/Task, NOT financial deployment.
+- Producer1db5c196 native whole handoff is CLOSED,0market forecasts.
+  Exact API supplied Engine/Data directly. Actual future input/point UNKNOWN.
 
-Closed science:
-- cost-risk proposalf77a3469/native16/181.730771upper was consumed by CPU
-  riskhead039c7399, not a reading-list artifact.
-- chart exit af193e38/e053ffd2:+12.794580/DD12.326755, growth+riskFAIL.
-- TimesFM+Chronos fixed fusion3fdd8285/76fc275c/native24:
-  meanrankTop4+27.295698/DD7.353924 standalonePASS;
-  consensus original quarters+17.627845/DD6.304031 own riskFAIL.
-  0fits/forecasts/restores/1CPUreadout9newviews+24carried,346.307972upper.
-All reused2026/modelled-cost/close-only-DD, not independent alpha or broker PnL.
-No outcome-driven grid/threshold rescue or old packet retag.
-
-Actual minute view75493RTH/249contexts/SAME25dates, seams/withheld masks and
-publication limitations remain. Engine owns target/split/cost/fits and meaning;
-Strategy supplies executable mechanisms, not financial authority or allocation.
-Earlier sections below are frozen history, not current running assignments.
+Full17 NAS/NYS+CASH inclusive3 OPEN5/PRE_CLOSE15 is explicit NON_PARITY with
+research thirdCLOSE. No venue dropping, normalization or old NAS type forgery.
+Old weighted results/debits remain in Git/artifacts; no reapply/retag/retry.
 
 ## Frozen Strategy Index
 

@@ -2,152 +2,72 @@
 
 ## Current Operations
 
-Nov3KST / Nov3UTC10:20. Company objective UNFINISHED.
+Nov3UTC11:48 / Nov3KST. Company runtime goal UNFINISHED.
+Resume with scripts/start_next_codex_task.ps1, then current goal/handoff/
+AGENTS/active boards. Source/installation is not actual broker effects.
 
-Current production integration: full17NAS+NYS/CASH inclusive3 OPEN5/
-PRE_CLOSE15 profile, explicit NON_PARITY research-thirdCLOSE, NOT deployed.
-Reviewer source/test write set positively closed. Final authority root:
-D:/thericher-v2/model-artifacts/verification/current-us-cash-h3-ops-integration-20261103-v1.
-RESULT25c0120a/SOURCE-r4a93b0d87 binds1431protectedpins0mismatch:
-521serial/183finalworker/current40/actual8of8[20056]/20030PASS26knownskip/
-35warnings390.50s/helper-native0/verified current-child+lease cleanup/
+Actually installed, all last verified enabledReady3/0instances:
+- Open45 Data142/775: Nov3UTC15:07:30 trigger/capture15:16..15:16:25.
+- Open45 entry Nov3UTC15:17..<15:18 and ownedexit16:17..<16:18/PT7M,
+  KSTNov4 00:17/01:17. RuntimeDF413fe8/release529e0692,
+  A/execution/current-open45-uri-bound-runtime-recovery-preparation-20261103-v1,
+  COMPLETE3ee0c17f/independentread3a6597d6. Exact URI shared installer+owner;
+  inherited core proof and native43+bootstrap5, no financial effect inferred.
+- H3 AMD entryNov3UTC20:55/exitNov6UTC20:45/readNov3UTC21:10.
+  Host6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/reader9410/
+  authority6247 unchanged. SDK is D-frozen, no silent C source upgrade.
+- Coherent19 C60 Data Nov6UTC21:10..<21:11/PT15M =Nov7KST06:10,
+  thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1.
+  A/data/current-chronos2-h3-nov6-frozen-release-finalization-20261103-v1,
+  runtime310619b1/meta473ca0ad +qualified Parent4da1b73d,
+  independentenabledread d8aa2822.19GET1POST0retry.
+  Original precreate memory-default failure preserved;18+8exact Idle tests and
+  explicit composition provenance, no oldsource change or broad XML ignore.
+
+Do NOT replay consumed Create/Recover/Enable/composition/independent-readback
+commands or manually Run a task/catchup/repeat. Use exact immutable runtime
+outcomes and named qualified readers after the actual opportunity, not a
+latest-file scan/Task exit/timestamp or recovery-capable observe().
+Relevant actual writer admission/exact account-basis-input-intent-fill joins/
+network-none RO/stability still required. Source markers assume honest host,
+not cryptographic OS origin; Operational logging disabled.
+Actual submit/acceptance/fill/current inventory/fees/settlement/netPnL UNKNOWN.
+
+Full18 profile code09ddaa22 source-ready, NOT financially deployed.
+Adapterbd/native480; named account/core2d9c/native783 with fake broker only;
+futureproducer1db/native whole handoff with one tiny synthetic call per model,
+0market forecasts/fits/replays. Proposed producer Nov9UTC14:25..<14:30 and
+full17 Nov9OPEN5/Nov11PRE_CLOSE15 account round are NOT installed.
+Current disjoint scope/caps are in orchestration.md, not historical commands.
+
+The Data310 reader MUST run in a separate fresh -I-B-S host:
+preload exact source-pinned core.py/verify_source(), then exact reader.py.
+Trusted explicit NumPy site, no .pth/site auto-load or financial SDK mixing.
+Future INPUT/hash/scores/weights remain UNKNOWN; no placeholder/human-JIT.
+Prep fullSUM unknown remains a limitation, not a claimed cap pass.
+
+Monitor http://127.0.0.1:8787 stays pinnedbe48f29e/publicV2aa3ef6d6.
+Minimal H3 UI source is tracked/tested NOT deployed; no casual image swap,
+private custody/web artifact executable import/public exposure.
+Keep ONE original B10/F9 UNKNOWN-HELD/all original exits:
+GOOGLNov9UTC20:55,MSENov5UTC20:40,H20Dec1UTC14:30 and NAS8/reservedNov4eval.
+
+Current repo authority:
+A/verification/current-us-cash-h3-ops-integration-20261103-v1/RESULT.json,
+25c0120a/SOURCEa93b0d87/1431pins0mismatch/521serial+183worker/current40/
+full20030PASS26knownskip/actual8of8[20056]/390.50s/helper0/currentchildclean/
 Ruff/default+research+accounting+monitor Compose.env.example PASS.
-Named worker enum injection now includes new profile; strings stay rejected.
-Earlier full/partial sources are not current authority. Interrupted r2 scratch
-is retained inactive after rejected cleanup, not bypassed or claimed clean.
-Docs/external-only changes reuse current authority only while pins match;
-external executable sources need their own native/negative/closure evidence.
+Docs/external-only reuse only while code/config/policy digests match; D-only
+code needs its own focused native/negative/closure proofs, not another20k run.
+Inactive interrupted r2 scratch retained after rejected cleanup, no bypass or
+partial authority reuse.
 
-Open45 financial runtime2307 is frozen on D:, no mutable repo SDK dependency.
-Invented pair FINAL-SOURCEce6d58c2/nativefc178c10/RESULTffca66dc passed14checks.
-Parent actual Install ONCE09:38 failed full_XML_drift; exact capture43d84fbf/
-FIRST-CAUSE5c9095a2 proves only missing expected exact task-path URI.
-Actual exit DISABLED/state1/0instances; entry ABSENT; release ABSENT.
-Do not replay installer or force enable. Helmholtz owns NEW URI-bound recovery
-preparation; Hooke independently compares the exact captured native defaults.
-Parent RecoverONCE/independentReadback only after qualified source/native.
-Metadata-only prototype300/500upper found the SAME URI defect in runtime
-owner_library.ps1 before inner Readback; no NATIVE/Recover issued. New owned
-current-open45-uri-bound-runtime-recovery-preparation-20261103-v1 must bind
-exact URI in shared installer/runtime N-Definition, new source/action/release,
-same financial tuple/clocks and exact old disabled-target ownership. Existing
-2307/consumed attempts immutable; old14native is not new-source qualification.
-The future runtime still needs actual exact publisher/point/clock/closure and
-original shared bank/F9/pending/quote/orderability/custody/risk admission.
-No manual TaskRun, substitute order, new bank or early financial effect.
+At role handoff inspect the exact assigned root's frozen callback/API/closure;
+a later peer ACK may mask the completed package in the last LLM message.
+That source-readiness check is not financial evidence or permission to use an
+unbound runtime receipt. Do not infer workers/GPU/deployment from MD or ACK.
 
-Actual nine-head latency recovery67070e78 is CLOSED:1POST9GET/all200,
-99premarketrows/17.899650sround/15.984643ssleep/26.289803host/allactorsclosed.
-Current first45 UNAVAILABLE, full45/open-session/compression still unmeasured.
-No replay or assumption that arithmetic7.100350s proves spare budget.
-Old0HTTP failure was a39s callback exceeding30s, not a provider rate limit.
-New source/plan authority is prebound; callback is notification, not release.
-
-Current NEXT_CODEX_GOAL/HANDOFF/role boards supersede older prep descriptions
-below. Existing H3 Source6ae SDK is D-frozen and actual future tasks unchanged.
-
-Open45 publisher ACTUAL CreateDisabled at06:51 produced ONLY the exact Data
-target thericher-open45-finite-publisher-20261103-v1, currently DISABLED/state1/
-0instances/never-run/next15:07:30UTC. Installerdce3d5c8/native56+8 withheld
-protected_DACL_required after CREATE-ATTEMPT; actual Scheduler returns an
-unprotected four-ACE DACL. Do NOT replay Create, delete/update the target or
-force enable. Source-qualified same-identity recovery is owned by Hooke at
-D:/thericher-v2/model-artifacts/data/current-open45-publisher-task-dacl-recovery-20261103-v1.
-That same-target recovery is now ACTUALLY COMPLETE07:15, Sourcef4599669/
-native46/17pinsmatch. DISABLED-QUALIFIEDc6031a7d/Enable82d1ad35/independent
-PARENT-ENABLED-READ73d5f0fb prove ENABLEDReady3/0instances/never-run/full
-source-action-clocks match; eight metadata actors absent07:16. No TaskRun or
-Create replay/ACLsetter. Do NOT replay consumed recovery/enable/readbacks.
-Protected-inheritance guarantee remains false; exact effective rights match.
-Review_unavailable/internalreview subcap overrun retained. Publisher
-Source14268659/Definition77513d80 remains frozen, not an actual publication.
-Original Open45 host64a67f89 and failed typed successors stay UNQUALIFIED;
-new ce6/fc pair and current exact URI recovery status above supersede them.
-No broker/private effects from those preparation packages. Active stateboards supersede
-older research projections below; do not rerun completed fits/forecasts/intakes.
-Prior93 recovered view75493RTH/249contexts/25same dates is explicit research
-input, with seams and an unhashed-partial publication limitation. Fixed fusion
-76fc275c is development-only, not an automatic current H3 model replacement.
-
-H3 future definitions
-are ACTUALLY installed/enabled Ready3/0instances, not actual financial execution:
-- thericher-h3-rank-cash-once-entry-20261103-v1,
- Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
-- thericher-h3-rank-cash-owned-exit-20261106-v1,
- Nov6UTC20:45..<21:00/PT7M = Nov7KST05:45.
-Original hostSOURCE6ae54088/ParentTRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/
-policy/bank/F9/pending/exits remain unchanged. H3 means three sessions.
-No manual Run/catchup/repetition, force trade or clock shift. At effects original
-account/basis/F9/unknown/token/quote/orderability/observer/risk checks still apply.
-Do not infer submit/acceptance/fill/inventory/PnL from this installation.
-
-Full exact native actual readback:
-D:/thericher-v2/model-artifacts/execution/current-h3-enable-default-repair-20261103-v1/READBACK.json
-SHA31e83c91325d95ab9bf507e781afb10c38db4df1f351935e1002e9d12627f6ef.
-COMPLETEfc1c35b6, SOURCE9bc93d9e/native9PASS, original calibrated6ebb205c/
-39cases164assertions. Registered XML AND Definition.XmlText, ACL/SID/actions/
-clocks/settings/full source/TRUE/point/plan independently qualify.
-Only exact Settings.Enabled=true/noattrs normalizes to its native XSD default;
-false and any nondefault/attribute/clock/ACL drift remain significant.
-Original Create failed after disabled exit creation; recovered exact own exit,
-created only absent entry disabled. Original Enable failed after exit became
-Ready due default omission. Separate exact entry recovery then completed.
-Original consumed failures, capture and attempts remain immutable.
-Do NOT rerun Create/Recover/Enable/Finalize or consumed readbacks as observers.
-Parent deployment scripts are not general read/repair commands.
-No broker/private-custody calls or Task Run during adoption.
-
-Exact current sources/evidence are in HANDOFF.md. Public H3 parser03ec,
-active SDK0ad and completed decodere1b are source-ready, not actual custody proof.
-Helmholtz prepares the enclosing native offline host/guest in
-D:/thericher-v2/model-artifacts/execution/current-h3-offline-guest-host-readiness-20261103-v1
-Source7a5d1aef/SPEC7050119d/NATIVEe7220a9a COMPLETE3invented guests/
-24Jobsclosed/3CIDsabsent/new290.374552SUM. No actual private/Task/broker calls.
-The uninstalled d45 manual-JIT proposal is superseded by NEW automatic static
-Source9410af60 at current-h3-automatic-post-entry-reader-preparation-20261103-v1.
-Its original Install is CONSUMED and failed after disabled task creation;
-that failure is historical, not the current enabled state. Do not rerun Install.
-Owned opportunity Nov3UTC21:10..<21:12/hard21:17; original financial pins intact.
-Read-only diagnosis capture parent-adoption/DISABLED-CAPTURE.json SHA34f9a75e
-proves only Author-context and WakeToRun=false sparse-default comparison gaps.
-NEW current-h3-static-reader-definition-recovery-20261103-v1 COMPLETE:
-Source5dd5a2b5/native23/ClaudeGO_WITH_LIMITS, actual Repair0 and independent
-Readback0. RECOVERY-COMPLETE1886c323/INDEPENDENT-READBACKb9801906 prove exact
-reader ENABLED/Ready3/0instances/authority624719ad. Do not replay these consumed
-metadata commands. Installation still does not prove future runtime admission.
-No new Task Run/definition/retry namespace or human future release. Static age
-is not current admission: source/original closure/actual writers/RO stability
-and strict exact financial joins remain effect-time conditions. Missing runtime
-outcome stays UNKNOWN, no proof of OS scheduler origin inferred.
-After future opportunity use only its qualified existing exact schema/links;
-public status cannot invent private custody/fill/fees/PnL.
-
-Actual coherent19daily DATAREADY2d5e183b/manifest122b369c/closure9a5bd544 and
-Parent2371required+19currentcells PASS already consumed by owned21:46publisher.
-Point/root/source/clock/SDK/actualR5 binding111129a6 in HANDOFF. No recollection,
-model repeat, fixture substitution or stale retag. MODE1/nonPIT/notTR/finality
-limits remain factual, not a global authority hold.
-Current Korean monitor http://127.0.0.1:8787 remains local, pinned imagebe48f29e;
-H3 is not yet wired into its default H20/GOOGL public mapping. No public exposure.
-Minimal H3 display code is now tracked/tested, NOT deployed to the pinned image.
-It shows exact AMD first-leg schedule/read-clockunknown/financialUNKNOWN,
-not private custody or an execution result. Local /health actually200/ok.
-Do not rebuild pinned image or run public dryruns during a private read.
-
-GOOGL original entry FAULT48166777/nativeNOT_ENTERED; original read consumed
-WITHHELD57a51d17. New retained host21a200b7/release41f9b96c also consumed
-WITHHELD before_create, private_reads0/four Jobs closed/no qualified result.
-Unknown6499a380 was Parent adopt.ps1 wrapper, not a KIS quota. Firstcause11fda1d0/
-callback5015fc30 proves all29auditedinputs unchanged. No replay/new read chain
-or generic PowerShell/Python/parent exemption. A genuinely future qualified
-launch separates release preparation and positive preparer closure.
-F9 retained read Source7899e6c2/release62bd2731/QUALIFIEDa7ad07e6 is consumed,
-broker-IDabsent/UNKNOWN-HELD/reservation unchanged. CONFIG-ONCE58ebb110 is also
-consumed and config-only, not funds/holdings/bank proof. No raw .env/Live reads.
-Original GOOGLexitNov9, MSEexitNov5UTC20:40, H20exitDec1UTC14:30native persist.
-NAS8 Nov3/4UTC21:10/frozen evaluationNov4UTC21:35 remain separately owned.
-Codex thericher-1 was single Nov3KST06:52 follow-up, not a permanent daemon;
-no replacement follow-up chain.
+Earlier commands/evidence below are frozen history. Do not replay them.
 
 Historical repo verification (before current production integration):
 D:/thericher-v2/model-artifacts/verification/current-raw-historical-capture-integration-20261103-v1/RESULT.json

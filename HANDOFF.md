@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Nov3UTC10:20 / Nov3KST. Workspace C:/Users/Public/Documents/thericher-v2.
+Nov3UTC11:48 / Nov3KST. Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared MD/integration/Git. Production source/verification is below;
@@ -66,61 +66,49 @@ Task Scheduler Operational logging is disabled.
 Actual H3 submit/acceptance/fill/current inventory/fees/settlement/net PnL UNKNOWN.
 Pure H3 parser H3-IMPACT.json proves no Open45 sentinel defect, not execution.
 
-## Open45 Runtime Preparation
+## Actual Open45 Runtime
 
-Data-only publisher ACTUALLY enabled, Ready3/0instances at07:16:
-thericher-open45-finite-publisher-20261103-v1.
-Source14268659b375dca6f0a40f099a0d571058a159563d687d42012cdf923e1f393f;
-Definition77513d8048b13864a10b7af80eca57ce9c3af0130d73e8d3a42a7b1611a9d552.
-Trigger Nov3UTC15:07:30..<15:10:30, prewarm15:08..<15:11,
+Data-only publisher ACTUALLY enabled14268659/Definition77513d80/
+readback73d5f0fb. Nov3UTC15:07:30 trigger, prewarm15:08..<15:11,
 capture15:16..15:16:25, score15:16:30..15:16:55.
-Same-identity DACL recoveryf4599669/native46/actual73d5f0fb completed07:15;
-no protected-inheritance claim. Original failures/internal review subcap
-limitation remain; do not replay consumed metadata commands.
-Installation is NOT data publication; future full45 point still UNKNOWN.
+Actual full45 point UNKNOWN. No old consumed metadata replay.
 
-Actual new nine-head latency probe is CLOSED:
-A/data/current-open45-prebound-latency-recovery-20261103-v1,
-Source67070e78f3c2fea83e14cca69289d825a724592c84a7cece39fdeeff9c4d7885,
-PLAN4ef1446cce642afaacc0ce03791629bd5c5813a0b3fd61161ebb277094098347.
-1POST9GET/allHTTP200/99premarketrows; round17.899650s with15.984643s sleep,
-wire/body.486422s; actualhost26.289803s/127.520257fullactorSUM.
-All Jobs/CID/worker identities positively closed,0retry.
-Current first45 input UNAVAILABLE; full45/open-session/model compression not
-measured.7.100350s arithmetic headroom is NOT a measured remaining guarantee.
-Market bytes only M/raw_quarantine/kis_paper/current-open45-prebound-latency-recovery-20261103-v1.
-Old probe0credential/0HTTP failed39s callback>30s, not provider capability.
-New launcher prebinds source/plan authority before PID notification.
-Its C-source census change denies unknown live C-src actors without reading
-mutable source; it does not exempt pytest/actors or prove all transitive clients.
+New financial runtime is ACTUALLY installed/enabledReady3/0instances:
+- thericher-open45-oneleg-ops-entry-20261103-v1,
+  Nov3UTC15:17..<15:18/PT7M =Nov4KST00:17.
+- thericher-open45-oneleg-ops-owned-exit-20261103-v1,
+  Nov3UTC16:17..<16:18/PT7M =Nov4KST01:17.
+Root A/execution/current-open45-uri-bound-runtime-recovery-preparation-20261103-v1.
+RuntimeDF413fe837137d1bd12700af7aa582d00ad76ca32468804a196c6f8ab95614b5,
+release529e0692a74fa3642deaa44dfc8a80d0dd59f4908317e1f3c6b317e285328499.
+RECOVERY-COMPLETE3ee0c17fd4821f487f78c35bccc165bbda64503c51b9e389bb86698f045953bb;
+INDEPENDENT-READBACK3a6597d6a337763e65a69216f9ad8d0c96755b53ab10ff808124b4dcb94cf371.
+Parent Inert/recover/readback each Jobtotal2/active0/joined/handlesclosed.
+No TaskRun, KIS/account/private/financial call during adoption.
 
-Financial invented pair now qualified:
-A/execution/current-open45-immutable-guest-envelope-pair-20261103-v1,
-FINAL-SOURCEce6d58c2/nativefc178c10/RESULTffca66dc/CLOSURE337c1b35,
-14native/7adversarial/6argv/Ruff; all Jobs/CIDs closed/364.727613upper.
-Immutable guest envelope is qualified before mandatory host UNKNOWN_HELD
-annotation; host recovery semantics unchanged. Prior failed pairs stay closed.
-Actual frozen runtime2307c6dd has659members0mismatch/no mutable repoSDK.
-Parent advisory GO_WITH_LIMITS:
-parent-claude-review.json/session54e652e2-9ed7-4ecc-b31b-dc893cbce78a.
+Original2307 Install09:38 failed URI-only readback; readonly capture43d84fbf
+and prototype300/500 found the same defect in runtime owner_library.
+New shared exact-URI N-Definition fixes installer AND owner validation.
+Prep source8e0d8ee5/finala87ae62a/native43+realbootstrap5/791.173030upper,
+three mock attempts/two retained fixture failures/0financialguestpairs.
+Inherited14 guest proof remains unchanged-core-only. Missing directly pinned
+metadata manifest was restored from exact original bytes; assembly29701c22/
+real bootstrap5, no code/financial change. Old failures/debits/latches retained.
+ClaudeGO_WITH_LIMITS/partialpeer/non-atomic honest-host verification-update
+race limits remain. No broad URI ignore, unknown adoption or old Install replay.
 
-Parent staged exact finite candidated89cde87 and Install ONCE at09:38.
-Install failed full_XML_drift. Exact capture43d84fbf/FIRST-CAUSE5c9095a2:
-only missing expected task-path URI; last captured EXIT disabled/state1/
-0instances, ENTRY/release absent. Do not infer a newer state or replay Install.
-Metadata recovery prototype300/500upper closed without NATIVE/Recover because
-owner_library.ps1:30-31 repeats the URI-less N-Definition and rejects runtime
-before inner Readback. New URI-bound D-only source must fix BOTH installer
-and owner validation, not only enable a still-broken runtime.
-Helmholtz owns current-open45-uri-bound-runtime-recovery-preparation-
-20261103-v1,900SUM3600elapsed/at most one invented pair; Hooke independently
-reviews exact changed source/native180SUM1800elapsed. Actual migration only
-after qualification/positive exact old-owner closure, preserving financial
-tuple/clocks/2307/consumed attempts. No URI ignore, TaskRun or new bank.
-Proposed original forecast admission15:17..<15:18, separate BUYdeadline15:22,
-owned exit16:17; unchanged one ranked quarter/other cash, no renormalization.
-Positive exact future point/source/date/checkpoint/seal/publisher closure and
-all actual financial admission still required. No forced trade or new bank.
+Actual source/date/asof/checkpoint/point/seal/publisher positive closure still
+runtime-required; original forecast admit15:17..<15:18, separate BUYdeadline15:22.
+One original ranked quarter/other cash, no renormalization/new bank.
+Installation is NOT submit/acceptance/exact fill/current inventory/PnL.
+
+Actual nine-head probe67070e78/PLAN4ef1446c is CLOSED:
+1POST9GET/all200/99premarketrows,17.899650sround/15.984643ssleep,
+wire/body.486422s/host26.289803s/fullactor127.520257/allclosed.
+First45 input UNAVAILABLE then; full45/open-session/compression unmeasured.
+Arithmetic7.100350s is not measured spare budget. Old0HTTP failure was callback
+39s>30s, not provider capacity. New prebound launcher is not a late LLM network
+release barrier; C-source census denies unknown actors, never exempts them.
 
 ## Data And Successors
 
@@ -138,15 +126,31 @@ Do not repeat anchors or infer a global history/TPS/auth limit.
 
 Long daily inventory and19asset2015..2026 panel remain usable within explicit
 limitations; exact catalogue and sources are in agents/data.md.
-Daily bridge1cf2c7e9/RESULT157bdc3e/native12positive26negative is CLOSED;
-time-report correction1996.825383s retained, full historical measuredSUM
-unknown/390reserve not measured proof.
-Future Nov6 coherent19 C60 capture e149f2dd/definitionb294a90d and metadata
-wrapper56fdfecb are NOT installed. Their mutable horizon dependency must not
-be silently upgraded. Euclid owns a new frozen-SDK successor after Parent
-production integration; old sources remain immutable. Prechange29file/23edge
-snapshot61759f6b closed before09:52hard,3537.889elapsed/knownwall4.840046,
-full measuredSUM unknown. Final release uses a NEW scope, not old-cap extension.
+Old bridge1cf2c7e9 and e149/56f stay immutable/uninstalled; corrected elapsed
+1996.825383/fullSUM unknown is not a measured cap pass. Prechange61759f6b
+closed before09:52hard; no clock/debit extension.
+
+NEW coherent19 C60 capture is ACTUALLY enabledReady3/0instances/neverrun:
+thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1,
+Nov6UTC21:10..<21:11/PT15M =Nov7KST06:10,19GET1POST0retry.
+Root A/data/current-chronos2-h3-nov6-frozen-release-finalization-20261103-v1.
+Runtime310619b1e5f784a9bdf6240ed703c87688ea40c6826f6e5219d25352e6758ca5,
+meta473ca0ada00bf74be2046f61cd0dbc0f77f584c5f1259be2330a1e51416ff10a.
+Original invocation failed PRE-CREATE memory XML, no mutation. Readonly capture
+3ad871a0 confirmed target absent and six native defaults; only IdleSettings
+parent unhandled. Missing-directory hypothesis disproved by pure boundary test.
+Parent composition4da1b73d7c2e2a6a76110fcea512ca33826ed77dd6b3a5309136b5578229d83e
+normalizes only exact default parent;18native+8adversarial/ClaudeGO_WITH_LIMITS.
+Version1.4/namespace/source-no-idle context pinned; malformed/extra/wrong fields
+still fail. Base310/473 unmodified; receipts explicitly include composition
+and base refs, not new behavior falsely attributed to old473 alone.
+CREATE5174f8cf/independentdisabled7f9671ea/ENABLEe3355294/
+independentenabled d8aa2822bf8546e2258311c5cdafa35990ed20f76c60a9166dabd4d406db0212.
+No consumed Create/Enable/composition/readback replay or TaskRun.
+Actual future input/modelpoint/runtime admission UNKNOWN. Prep fullSUM remains
+unmeasured; readiness is not a claimed700SUM pass.
+Separate Data-only -I-B-S core-before-reader/trusted NumPy, no mixed financial/
+model namespace or implicit .env. Next Data scope is broad512 OHLC feasibility.
 
 ## Research And New Native Profile
 
@@ -188,19 +192,33 @@ meanrank8f740232/native30 are source preparation, NOT financial deployment.
 Confucius closes boundary regressions; Parent verifies/commits; Ohm prepares
 invented exact native proposal handoff after final SDK freeze. No old model
 fit/forecast is rerun for occupancy. No running GPU worker inferred from MD.
-Ohm final SOURCEbd6f1fa8/API308f6d30/SDK6ac7d4e7/callback724b2c07 is CLOSED:
-fresh480checks/160pins0mismatch independently checked/273.016805upper/
-allactorsclosed, integration09ddaa22/namedworkerABI pinned. Provisional79984ae9
-is prechange-only history. Next450SUM2700elapsed external synthetic smoke
-joins this adapter to actual named account worker/core with fake broker I/O,
-not mocked intake; no actual credentials/private state/market effects.
-Confucius owns NEW isolated future meanrank producer prep:
-current-full17-h3-future-meanrank-producer-preparation-20261103-v1,
-1200SUM5400elapsed/0marketforecasts0fits0replays/at most one tiny invented
-native handoff per model runtime. Future exact Data C60 -> fresh trusted dated
-TimesFM+Chronos -> fixed meanrank quarters -> strict full18 weights. No stale
-score retag, placeholder hash/human-JIT, current H3 swap or arbitrary public
-code in Execution. Direct Data/Strategy handoff; actual future input UNKNOWN.
+Ohm finalbd6f1fa8/API308f6d30/SDK6ac7d4e7/callback724b2c07:
+480checks/160pins0mismatch/273.016805upper/allclosed.
+Named account integration2d9c55fd/API793290d2:
+783checks/139pins0mismatch/202.519746upper/all18actorsclosed.
+Actual typed adapter -> parse -> named worker/account/core/plan/reconcile,
+real RequestBudget, fake broker only; NYS lifecycle/zero shares/allcash/unknown
+pending afterOPEN5 preserve synthetic B10/F9held. No actual effects.
+
+Future meanrank producer is CLOSED source/native-ready:
+A/research/current-full17-h3-future-meanrank-producer-preparation-20261103-v1,
+Source1db5c1962d1c09ca0bccc7051d60d62187a35dbbefc9a3d3f3874cc4ff8f7809,
+callback473b361b/595pins0mismatch/451.633839upper/nativePASS.
+Real Data reader -> TimesFM+Chronos APIs -> fixed meanrank -> strict full18;
+one tiny synthetic call per model/two restores,0marketforecasts/fits/replays/
+retries/allactorsCIDsleasesclosed. REVISE/limitations retained, no alpha claim.
+Actual future input/scores/weights UNKNOWN. Proposed Nov9UTC14:25..<14:30 once
+producer600SUM300elapsed NOT installed. Infra prepares its finite ownership/
+clock/resource path; Execution prepares source-only Nov9OPEN5/Nov11PRE_CLOSE15
+serial account round. No human-JIT hash, score retag, Nway bank or H3 swap.
+
+NEW independent family: existing broad512 MODE0 daily OHLC, past20 within-bar
+scale-free ratios -> same-sessionO/C on paper17. Data feasibility first;
+Strategy dedup/primary-source economic kernel; Engine proposes CPU1+CUDA1
+under4800activeSUM10800elapsed/finite views/0numericalretry. Freeze exact
+source/splits/availability/native/epochs/time/inner stopping before fits.
+No raw cross-day gaps/split/PIT claims, intrabar fills, missing imputation or
+untouched-alpha claim. An assignment is not evidence training is running.
 
 ## Preserved Duties / Monitor / Verification
 

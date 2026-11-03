@@ -2,68 +2,48 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC10:20. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Euclid owns new frozen-SDK Nov6 daily release preparation. Hooke owns a
-temporary independent native Task-definition compatibility review, not Data
-collection. Actual9head probe is CLOSED. No current collector inferred from MD.
+Nov3UTC11:40. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Euclid owns current-broad512-intraday-ratio-input-preparation-20261103-v1,
+600SUM3600elapsed/0HTTPcredentialsKISmodels. Existing catalogue5322379a has
+~1,170,008 MODE0 broad512 daily rows. Verify exact OHLC/source/calendar/keys/
+vintage/masks before research past20 within-bar ratios -> same-sessionO/C.
+No overnight rawprice gaps, invented adjustment/PIT claims or silent missing
+fill. Fixed paper17 evaluation distinguished from broad training universe.
+Direct contract to Strategy/Engine; reject incoherent/missing OHLC concretely.
 
-Usable provisional minute view:
-- Raw655GET/78576rows CLOSED, raw qualification0 unchanged.
-- Mixed-session actual SOURCE-r3.json747ad96c (not failed310a467f):
-  64470RTH/14106excluded/0denied.
-- Prior93 explicit reuse b12126a6/recoverye4c79cee/API29799657:
-  92windows/11023added ->75493RTH on SAME25dates,249first45/60 and
-  239first60+next60 contexts. Headered9df438/payload40420fc9/330upper.
-  JNJOct20 withheld; JPMOct5/JNJOct1 seams defaultFalse for continuous levels.
-  Recovered unhashed partial publication is not original producer sealing.
-- Older six AMD/JPM keys9794400c/beafa39f:6EMPTY_PAGE0rows0technical.
-  No repeated anchors/global history floor/TPS/auth inference.
+## Actually Installed Data
 
-Current listing/nonPIT/notTR/CA/finality/START-END/clock proxy limits remain;
-no silent clock shift, row fill or independent dates. Limits scope consumers,
-not all research or Paper permission.
+- Open45 publisher14268659/Definition77513d80/actualenabled73d5f0fb:
+  Nov3UTC15:07:30 trigger/capture15:16..15:16:25/score<=15:16:55.
+  Future input UNKNOWN, no consumed metadata replay.
+- Nov6 coherent19 C60 capture is ACTUALLY ENABLEDReady3/0instances/neverrun:
+  thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1,
+  Nov6UTC21:10..<21:11/PT15M = Nov7KST06:10.19GET1POST0retry.
+  Root current-chronos2-h3-nov6-frozen-release-finalization-20261103-v1,
+  runtime310619b1/SDK e1aa1e33/meta473ca0ad/55metadata checks.
+  First invocation failed PRE-CREATE memory XML, not missing output directory;
+  readonly capture3ad871a0 confirmed absence and exact unhandled IdleSettings.
+  Parent composition4da1b73d has18native+8adversarial/ClaudeGO_WITH_LIMITS;
+  only exact default parent removed.310/473 unchanged; receipts explicitly
+  carry composition AND base refs, not false old-source attribution.
+  CREATE5174f8cf/independentdisabled7f9671ea/ENABLEe3355294/
+  independentenabled d8aa2822bf8546e2258311c5cdafa35990ed20f76c60a9166dabd4d406db0212.
+  No TaskRun/KIS/models now; actual future INPUT/modelpoint UNKNOWN.
+  Prep fullSUM unmeasured remains a limitation, not a proven cap pass.
+  Core-before-reader bootstrap in fresh -I-B-S host, explicit trusted NumPy,
+  never mixed with financial/model SDK; closed addendum preserved.
+  DO NOT replay Create/Enable/composition/readbacks.
 
-## Current Packages
+## Closed Inputs
 
-- Actual DATA-only publisher thericher-open45-finite-publisher-20261103-v1:
-  Source14268659/Definition77513d80/recoveryf4599669/native46/actual73d5f0fb,
-  ENABLEDReady3/0instances at07:16. TriggerNov3UTC15:07:30..<15:10:30,
-  prewarm15:08..<15:11, capture15:16..15:16:25, score<=15:16:55.
-  Actual publication/full45 point UNKNOWN. No consumed metadata replay.
-  Effective rights match original grants; protected inheritance not claimed.
-- Actual current-open45-prebound-latency-recovery-20261103-v1 CLOSED:
-  Source67070e78/PLAN4ef1446c/SDKsnapshotc01c31c1,
-  1POST9GET/all200/99premarketrows,17.899650s round incl15.984643s sleep.
-  Wire/body.486422s, host26.289803s/fullactor127.520257/allJobsCIDclosed.
-  Current first45 INPUT_UNAVAILABLE; full45/open-session feature/compression
-  feasibility UNMEASURED. Arithmetic7.100350s is not measured spare budget.
-  Before-sourcea1bd57ff retained; final admission denies unknown mutable C-src
-  actors without reading their source, no actor/pytest exemption. Census is
-  bounded entrypoint knowledge, not universal transitive-client proof.
-  Old nine-head failure39s callback>30s had0credential0POST0GET; prebound
-  source/plan authority removes late notification as a network gate.
-  No replay of either consumed probe. Market bytes in a NEW M/raw_quarantine child.
-- Euclid current-chronos2-h3-frozen-sdk-release-preparation-20261103-v1:
-  <=600SUM3600elapsed, final freeze/native bridge only after Parent source/
-  integration callback. Old dailybridge1cf2c7e9/RESULT157bdc3e/native38,
-  capturee149f2dd/definitionb294a90d and wrapper56fdfecb NOT installed.
-  Their direct mutable horizon dependency needs a new frozen successor.
-  Coherent19 C60Aug14..Nov6 futureNov6UTC21:10 capture forNov9weekly entry,
-  <=19GET1POST0retry. No actual future acquisition/point created.
-  Original bridge elapsed-report correction1996.825383 retained; historical
-  full measuredSUM unknown/390reserve not measured proof.
-  Prechange scope is now CLOSED before original09:52hard:29file23edge
-  snapshot61759f6b/3537.889elapsed/knownwall4.840046/actorsabsent.
-  NEW final release scope after Parent commit/source callback, not old extension.
-- Hooke current-open45-future-definition-compatibility-review-20261103-v1:
-  <=240SUM1800elapsed, readonly exact Helm capture/native-default comparison.
-  No Task call/duplicate installer/private/broker; direct qualified handoff.
-  This peer scope closed192/240upper; new current-open45-uri-bound-runtime-
-  peer-review-20261103-v1 has180SUM1800elapsed/0TaskCIMcalls, covering shared
-  exact-URI installer/runtime source after same runtime defect was demonstrated.
-
-No model repeat, current H3 retag, token guard reset or new bank.
-Relevant actual token/Data writers remain scoped; no blanket process exemption.
+Raw655GET/78576rows qualification0; mixed-session747ad96c then explicit
+prior93 b12126a6/e4c79cee ->75493RTH/SAME25dates/249first45/60 contexts.
+JNJOct20 withheld; source seams masked. Unhashed-partial publication recovery
+not original sealing/PIT/finality. Six older anchors6EMPTY_PAGE, no repeat.
+Actual9head67070e78:1POST9GET/all200/99premarketrows,17.899650sround/
+15.984643ssleep/26.289803host/allclosed. First45 UNAVAILABLE, full45/open-session
+feasibility unmeasured. Old0HTTP failure callback39s>30s, not provider limits.
+No live/raw/credential outputs or current H3/bank/exits changes.
 
 ## Frozen Data Index
 

@@ -2,48 +2,28 @@
 
 ## Current Resource Coordination
 
-Nov3UTC10:20. Confucius is sole GPU coordinator; review write set is closed.
-Project remains first useful-GPU priority with user-app co-tenancy. Measure
-free/projected VRAM+desktop reserve, never kill apps or age-reclaim unknown
-leases. No dummy workload, forced duration or completed-training repeat.
+Nov3UTC11:40. Confucius is sole resource owner. Project first useful GPU
+priority includes user apps; actual headroom/reserve, no app-name veto,
+killing apps/driver changes, age-reclaim or dummy training.
 
-Actual closed:
-- CPUtree039c7399/c595452e:1fit.212922s/BEST246/294steps/1forecast12views,
-  674.962278upper includes original frozen source/audit reserves. CPU appropriate.
-- TCN8718410e/5a3ca7b9:1CUDAfit18epochs792updates/BEST4,
-  182.707543wall/90.084691optimizersec/timepreflight, not convergence.
-  81.227MBallocated98.566MBreserved/native11/audit66/944.587592upper.
-- GRU576cb605/5f24a503:1CUDAfit81epochs3564updates/BEST33/INNERpatience48,
-  11.706983wall/9.661050optimizersec/151.124MBallocated247.464MBreserved,
-  native11/audit67/288.375985upper.
-Both neural primary CPUgrowthFAIL; all actual actors/CIDs/leases closed.
-Observed GPU39pct/2412of24564MiB duringTCN was co-tenant, not isolated timing.
-- Quantile839520af:0modelcalls/forecast/readout, null image entrypoint failed
-  before Python. FIRST-CAUSEb130b345/FINAL-CALLBACK6326b366/506.532775SUM,
-  positive nativeCID/Job/lease closure. No oldretry, economic result UNKNOWN.
+NEW broad512 intraday family4800activeSUM10800elapsed, proposed CPU1+CUDA1.
+No numerical launch until exact Data/kernel/native/contract ready; then
+dispatch autonomously under source/trial/lease caps, not late Parent approval.
+GPU epochs/time/updates, inner stopping and all active failures/I/O/cleanup
+predeclared. Whole elapsed/queue/LLM review separate from actual CPU/GPU spend.
+No training inferred from a stateboard. Execution preempts safely.
 
-Separate successor now CLOSED:
-A/research/current-chronos2-h3-coherent-quantile-recovery-development-20261103-v1,
-<=1200activeSUM5400elapsed/ONEnewlogicalGPUforecast/<=12costviews/0fit0retry.
-Actual trusted entrypoint/API/producer-consumer smoke, source/plan/caps/
-resource/lease before launch. Same-call coherent p10/p50 width; no replay of
-completed median packets or changed oldcaps. Numerical study only if science
-usable and new short review adjudicated; closed priorREVISE remains.
-Actual10ab2777/bc7bd1c8/callback5f63f54a:1GPUforecast22forwards12views,
-0fits0retry,490.108245upper/27PIDidentities2CIDsleasesclosed.
-GrowthFAIL vs scalar/CPU; numerical family stopped, no architecture queue.
+Future meanrank producer1db native is CLOSED: one tiny invented model call
+per TimesFM/Chronos, two safe restores/0marketforecasts/fits/retries/replays,
+451.633839upper/actorscontainersleasesclosed. Proposed Nov9 producer600SUM/
+300elapsed is not installed; Infra prepares its one finite ownership/clock/
+resource contract. Existing kernels/source cannot be silently expanded.
 
-Next useful GPU work is source-only future meanrank producer preparation,
-current-full17-h3-future-meanrank-producer-preparation-20261103-v1:
-1200SUM5400elapsed/0marketforecasts0fits0replays, at most one tiny invented
-native handoff per already-trusted model runtime under actual headroom/lease.
-Native bootstrap/schema tests charge their actual forwards/restores/resources;
-they are not another market experiment or completed training repeat.
-
-No running GPU process inferred from this stateboard or queued source.
-Old TCN fitwall/subcap and TimesFM bootstrap limitations remain immutable.
-NAS8Nov3/4 and frozenNov4UTC21:35 outcomes excluded. Execution reliability
-preempts at a safe checkpoint; no research profitability permission gate.
+Earlier CPU674.962278/TCN944.587592/GRU288.375985 upper/debits remain.
+Coherent quantile10ab2777 closed1GPUforecast22forwards12views/490.108245,
+growthFAIL; no new architecture queue on the same H3 target.
+Old839520af0model failure and older TCN/TimesFM limits not refunded.
+Reserved NAS8Nov3/4 and frozenNov4UTC21:35 remain excluded.
 
 ## Frozen Resource Index
 
