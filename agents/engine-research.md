@@ -2,22 +2,38 @@
 
 ## Current Results And Next
 
-Nov3UTC11:40. Confucius owns Engine and sole GPU coordination.
-NEW current-broad512-intraday-selection-development-20261103-v1,
-4800activeSUM10800elapsed; proposed max1CPUfit+1CUDAfit, one forecast each,
-finite<=12compatible cost views/0numericalretry. Data/Strategy contracts first,
-then freeze exact source/target/splits/features/trials/epochs/time/stop rules.
-Not proof training is running.
+Updated Nov3UTC13:08. Confucius owns Engine and sole GPU coordination.
+current-broad512-intraday-selection-development-20261103-v1 is actually
+dispatched: SOURCE9b5206a3, qualified Dataad9a/361d/df021, kernelb8c370bf.
+4800activeSUM10800elapsed through14:38:55;1CPUfit+1CUDAfit/oneforecasteach/
+12whole-family cost views/0numericalretry. CPU fit stage COMPLETE; actual CUDA
+fit launch observed12:28:30 with owned lease/CID, not merely a planned MD.
+Native real two optimizers/safe cold checkpoints and producer-consumer PASS.
+Family is now CLOSED UNQUALIFIED: actual TCN watchdog124 after750.564558s,
+0market forecasts/economic readouts/retries. CPU completed CBM/best92 retained;
+TCN weights are partial, not completed/converged or certified final BEST.
+All38actors/4CIDs/lease closed; failedCUDA2254.362248SUM retained.
 
-Candidate: existing broad512 MODE0 daily OHLC, past20 within-session ratios
-and causal market context -> same-session O/C on fixed paper17.
-Tentative FIT<=2023/INNER2024/adaptiveDEV2025..later, all assets date-split,
-reserved NAS8/current fresh outcomes excluded. No interday raw price/split
-claims, intrabar barriers, nonPIT/survivor concealment or untouched-alpha claim.
-Strong cost-aware CPU baseline first, useful shared causal neural comparison
-only when Data sound. Real tiny optimizer/producer-consumer smoke before fits;
-inner curves/earlystop/LR/regularization/bestcheckpoint/purge and actual
-headroom/lease required. Reject duplicate/unusable family, no occupancy work.
+Fixed OWN20x4 log(C/O),log(H/L),upper/O,lower/O; no assetID/SPY/volume/current
+OPEN or raw interday gaps. Train broad512MODE0; separately evaluate paper17
+MODE1. Date FIT<=2023/INNER2024/adaptiveDEV2025..2026Jul28 with20sessionpurge;
+reserved current fresh/NAS8 outcomes excluded. Fixed gross+U10 downside heads,
+utilitypositiveTop4/original quarters/cash against full/samegross return-head
+and samegrossEW. Shared-head POLICY control is not an independent model.
+CatBoost2048max/inner80/soft150s; TCN512max/inner48/LR/best-safe restore/
+soft720s/hard750s. No DEV checkpoint choice, unseen-alpha/PIT/TR/CA claim.
+Ohm independent source9b52 review81checks/48pins closed; equal-DATE minibatch
+weighting and physical HELD-isolation wording corrected before source freeze.
+No remaining source stop is not market-result certification.
+
+Fixedhalf c23bb15e is CLOSED source-only/input_unavailable,0actualviews; no
+qualified two-model prediction pair and no silent source/model substitution.
+Confucius next chooses exactly ONE new frozen technical successor by evidence:
+partial-checkpoint diagnostic0fits/oneforecasteach <=1800SUM1800elapsed OR
+bootstrap-aware convergence1CUDAfit/0CPUrefit <=7800SUM7200elapsed,oneforecast
+per model/<=12views/0retry. Reuse completed CPU checkpoint, never refit it.
+New source/caps/native/Claude first; per-epoch durable curves/stages and actual
+process-time setup/inner/checkpoint reserves. Stop safely by15:00 for Paper.
 
 ## Closed Paper Handoff
 

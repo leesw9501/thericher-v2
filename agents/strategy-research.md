@@ -2,17 +2,23 @@
 
 ## Current Source Handoff
 
-Nov3UTC11:40. Ohm owns
-current-broad512-intraday-economic-kernel-proposal-20261103-v1,
-500SUM3600elapsed/0fitsforecastsmarketreadoutsKISprivateTask.
-Registry literal dedup first. Consumer: actual broad512 OHLC past20 scale-free
-within-bar features -> cost-aware same-session selection on paper17.
-Data/Engine direct contracts. One executable kernel, not architecture grid or
-reading list. Primary official sources only for conceptual research; source
-performance is not project evidence. No licensed sector data/new framework.
-Avoid overnight split-contaminated returns, intrabar high/low ordering/fills,
-future feature availability and missing imputation. Engine owns final splits,
-costs/targets/fits/interpretation. Strongest matched-risk/growth/cost kill first.
+Nov3UTC12:39. Economic kernel scope is CLOSED source1f76ea56/API06d151db/
+native7d9580f7:106invented checks/28pins0mismatch/223.703236upper/allclosed,
+0actualmodels/marketreadouts. Fixed lower-partial U10 ranking is not an affine
+cost-shift alpha claim. Samegross controls, explicitcash, missingheld withhold
+and shared-head policy-only comparison are executable. Primary paper is idea
+support, not copied performance/code or a new dependency.
+Independent Engine-source review9b52 is CLOSED81checks/48pins/122.918763upper;
+equal-DATE gradient and physical HELD wording fixed before freeze. No market
+results certified,0model/readout calls. Exact evidence sent directly to Engine.
+
+Ohm owns current-broad512-utility-tree-tcn-fixedhalf-preparation-20261103-v1,
+180SUM1200elapsed/0actualprediction-metricreads/fits/forecasts. Freeze literal
+dedup and one equalhalf per-head composition BEFORE seeing results; exact
+prediction row/source/target/stat/closed-family joins. Same original quarters/
+cash and four proposed net10 views, no learned gate/rerank/individual-profit
+prerequisite. NEW numerical scope would be separate, not extra old12views.
+Consumer Engine exploratory fusion; no broker/private/Task/MD/Git authority.
 
 ## Closed Executable Handoffs
 

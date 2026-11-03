@@ -2,16 +2,26 @@
 
 ## Current Resource Coordination
 
-Nov3UTC11:40. Confucius is sole resource owner. Project first useful GPU
+Updated Nov3UTC13:08. Confucius is sole resource owner. Project first useful GPU
 priority includes user apps; actual headroom/reserve, no app-name veto,
 killing apps/driver changes, age-reclaim or dummy training.
 
-NEW broad512 intraday family4800activeSUM10800elapsed, proposed CPU1+CUDA1.
-No numerical launch until exact Data/kernel/native/contract ready; then
-dispatch autonomously under source/trial/lease caps, not late Parent approval.
-GPU epochs/time/updates, inner stopping and all active failures/I/O/cleanup
-predeclared. Whole elapsed/queue/LLM review separate from actual CPU/GPU spend.
-No training inferred from a stateboard. Execution preempts safely.
+Broad512 intraday family SOURCE9b5206a3 is actually dispatched under
+4800activeSUM10800elapsed, CPU1+CUDA1/0retry; native optimizers and handoff PASS.
+Actual CUDA launch12:28:30:22,355MiBfree/4GiBprojected/4GiBdesktopreserve,
+D free33.94percent/no unresolved project lease. Current totalGPU snapshot
+2,634MiB/44percent at12:36 is co-tenancy, NOT model peak or benchmark.
+CPU fit COMPLETE, but CUDA hit750.564558s watchdog124; no market forecast or
+economic readout. All38actors/4CIDs/lease closed. Old failed CUDA2254.362248SUM
+and safe partial checkpoints remain; not a completed fit or refunded budget.
+Curves/inner48/LR/best safetensors,512epochs/131072updates/soft720-hard750
+frozen before fits. No DEV epoch choice or duplicate completed training.
+Parent full test co-tenancy is reported, not isolated training speed.
+Next ONE technical successor may diagnose exact partial checkpoints0fits under
+1800SUM1800elapsed OR run one new bootstrap-aware CUDAfit/0CPUrefit under
+7800SUM7200elapsed. No dispatch until new source/claim/caps/native qualify;
+no old-family retry or CPU duplicate. Durable per-epoch diagnostics and safe
+preemption by15:00 precede today's Open45 prewarm. Execution preempts safely.
 
 Future meanrank producer1db native is CLOSED: one tiny invented model call
 per TimesFM/Chronos, two safe restores/0marketforecasts/fits/retries/replays,

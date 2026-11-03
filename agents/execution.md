@@ -2,14 +2,37 @@
 
 ## Current Ownership
 
-Nov3UTC11:40. Helmholtz owns current-full17-h3-finite-account-deployment-
-preparation-20261103-v1,1200SUM5400elapsed/SOURCE ONLY/0actualKISprivateTask.
-Consumer: one account-owned finite serial Nov9OPEN5 entry/Nov11PRE_CLOSE15
-owned exit, using09dd native full18 profile/producer1db/Data310/adapterbd/
-named-worker783. Future exact point/hash UNKNOWN; no human-JIT placeholder.
-Review proposal .005 sizing/minlots within ONE original B10 maximum, not a
-new tiny permission gate/spending target. A new contract must not rewrite
-frozen proposals; deterministic broker risk unchanged.
+Updated Nov3UTC13:08. Full17 preparation d9e1d62a is CLOSED UNQUALIFIED, not installed.
+One invented guest failed at Docker start; secondary empty-JSON error masked
+the original error. No guest lifecycle assertion qualified; exact CID/Jobs
+closed. Suspected absent nested SOURCE under RO parent is not a proven actual
+Docker error. Earlier review log failure leaves fullSUM unmeasured, not refunded.
+New sizing V2 strictly retains original1db .005 bytes and derives NEW .1 input/
+policy/source identity, unchanged quarters/one initial sharedB10/native risk.
+Pure15producer+10other/8mock-definition checks do not prove native lifecycle.
+
+Second full17 startup7a0efc0c is CLOSED UNQUALIFIED: complete RO inert boot PASS,
+lifecycle exit20 returned256bytes discarded by driver89 before parse. No
+lifecycle assertion qualified; CIDs/14Jobs/16actor identities closed,
+263.530310upper. No retry/source rewrite or actual financial deployment.
+Parent repeat-wrapper now269serial/full20045PASS26skip at4997d859, including
+firstquote/sizing/foreign skip repair; old frozen SDKs remain unchanged.
+
+PRIORITY Helmholtz current-open45-frozen-publisher-financial-binding-repair-
+20261103-v1,900SUM4500elapsed/0actualKISprivateTask/marketmodelcalls.
+Installed Data142/775 has deterministic mutable-C SDK source rejection before
+credentials. Euclid freezes a new D SDK/publisher; qualify new financial Source/
+Definition/point+closure joins for SAME original entry/exit/BUYdeadline/B10/F9/
+identities. Preserve DF413/529 and consumed recovery. Up to3bounded invented
+technical fixture iterations/2inert startups within scope, no market trials;
+decode allowlisted guest failure BEFORE rejecting nonzero rc. Parent actual
+future Update needs exact old XML capture and positive relevant-owner closure.
+
+Nov9 producer installer repair7b52/native29cd passed23Task+8facade. Parent
+actual CreateDisabled failed PRE_CREATE COMException13:05, joinedempty and
+no CREATE-ATTEMPT/COMPLETE. Fresh target absence UNKNOWN, no consumed replay.
+Hooke now separately diagnoses actual native XSD/read-only target,180SUM1200,
+0Task mutations. Original cfb420upper/failures remain immutable.
 
 Actual effects still check virtual host/account/basis/budget/owned inventory/
 pending exact unknown/fresh quote+orderability/emergency/current owners.

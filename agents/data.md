@@ -2,14 +2,32 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC11:40. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Euclid owns current-broad512-intraday-ratio-input-preparation-20261103-v1,
-600SUM3600elapsed/0HTTPcredentialsKISmodels. Existing catalogue5322379a has
-~1,170,008 MODE0 broad512 daily rows. Verify exact OHLC/source/calendar/keys/
-vintage/masks before research past20 within-bar ratios -> same-sessionO/C.
-No overnight rawprice gaps, invented adjustment/PIT claims or silent missing
-fill. Fixed paper17 evaluation distinguished from broad training universe.
-Direct contract to Strategy/Engine; reject incoherent/missing OHLC concretely.
+Nov3UTC12:39. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+current-broad512-intraday-ratio-input-preparation-20261103-v1 is CLOSED:
+basead9a5120/completion361d293a/DATASETdf021e49/READINESS35c6d247/
+VERIFY30692d00. Parent independently checked37refs0mismatch;25nativepositive/
+8negative/5completion checks, six exact actors positively closed.
+1,170,008 MODE0 rows/512assets (510 with any prior20); separate paper17MODE1
+75,391 used rows. Generated52,903,131bytes under M,0newHTTP/models/fits.
+Original projection failed on its own-output audit allowlist AFTER atomic
+train512 close. Completion requalified that exact partial plus the unattempted
+tail;0canonical512rereads, not an original sealed success. Full-lineage SUM
+unmeasured remains explicit; known59.388079 is not a600-cap proof.
+Own past20 OHLC -> within-bar features, independent matured O/C label mask;
+no currentOPEN/SPY feature, interday split/PIT/TR/finality claim or imputation.
+Exact API handed directly to Engine/Strategy before numerical dispatch.
+
+Preflight current-open45-owned-publisher-throughput-preflight-20261103-v1 is
+CLOSED: deterministic THREE C SDK pin drifts at142 ownerlib105 stop before
+credentials (account session/horizon/weights). No claim KIS quota or timing
+failure; actual9GET/1prewarmPOST/2secondpace implies16s minimum eight gaps.
+Full45/scoring still unmeasured.0HTTP/Task effects, fullSUM unknown retained.
+Euclid now owns current-open45-frozen-sdk-publisher-repair-20261103-v1,
+780SUM4500elapsed/0APIcredentialsmodelsactualTasks. Freeze required exact SDK
+bytes on D, explicit new publisher Source/Definition and real bootstrap/schema
+proof; preserve original15:07:30/15:16 clocks, request caps and cache semantics.
+Direct qualified binding to Execution/Review; Parent owns actual migration.
+Do not edit142/775, retag old points, replay tasks or depend on mutable GitHEAD.
 
 ## Actually Installed Data
 

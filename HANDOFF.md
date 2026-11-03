@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Nov3UTC11:48 / Nov3KST. Workspace C:/Users/Public/Documents/thericher-v2.
+Updated Nov3UTC13:08 / Nov3KST. Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared MD/integration/Git. Production source/verification is below;
@@ -15,6 +15,30 @@ identities and ALL exits. Never KIS_LIVE_*, foreign adoption, unknown-request
 substitution, profit refill or stale input retag. Leave %SystemDrive%/ untouched.
 Primary horizon: intraday plus one-to-several-session short swings.
 H3 can mean different explicit profiles; never silently alias elapsed/inclusive.
+
+## Priority Recovery And Repeatability
+
+Today's Open45 Data142/775 is installed but its actual source is NOT ready:
+Euclid's exact source preflight found THREE changed mutable C SDK pins
+(account session, model horizon, model weights), rejected by ownerlib.py:105
+before credentials/collection. This is source drift, not a KIS quota/capacity
+failure.9GET+1prewarmPOST/2second pacing/25s capture are not disproven by timing;
+9head17.899650s does not prove full45 input/scoring. Do not replay142/775.
+Data owns current-open45-frozen-sdk-publisher-repair-20261103-v1,780SUM4500elapsed;
+Execution owns current-open45-frozen-publisher-financial-binding-repair-
+20261103-v1,900SUM4500elapsed. Freeze required SDK on D and qualify explicit
+new publisher/Definition/financial bindings with SAME original clocks/B10/F9/
+pending identities/exits. Parent alone updates exact future definitions after
+positive relevant old-owner closure. Independent Review runs in parallel.
+Existing installation below is historical fact, not proof this drift is fixed.
+
+Parent repaired same-policy H3ops next-dated-cohort admission ONLY after
+positive prior owned-terminal-flat completion. Pending/active substitution,
+completed-input replay, foreign adoption and budget reset remain rejected.
+Independent Review found first-skip active=None crash; exact native initial
+active comparison plus quote/sizing/foreign regressions now cover it.
+15repeat cases included in269serial and fresh20045PASS/26skip; authority below.
+Old D-frozen scheduled SDKs are NOT automatically upgraded by this C edit.
 
 ## Actual H3 Installation
 
@@ -212,13 +236,25 @@ producer600SUM300elapsed NOT installed. Infra prepares its finite ownership/
 clock/resource path; Execution prepares source-only Nov9OPEN5/Nov11PRE_CLOSE15
 serial account round. No human-JIT hash, score retag, Nway bank or H3 swap.
 
-NEW independent family: existing broad512 MODE0 daily OHLC, past20 within-bar
-scale-free ratios -> same-sessionO/C on paper17. Data feasibility first;
-Strategy dedup/primary-source economic kernel; Engine proposes CPU1+CUDA1
-under4800activeSUM10800elapsed/finite views/0numericalretry. Freeze exact
-source/splits/availability/native/epochs/time/inner stopping before fits.
-No raw cross-day gaps/split/PIT claims, intrabar fills, missing imputation or
-untouched-alpha claim. An assignment is not evidence training is running.
+Broad512 input is CLOSED requalified: basead9a/completion361d/DATASETdf021/
+READINESS35c6/VERIFY3069,37Parentpins0mismatch/sixactorsclosed.1,170,008MODE0
+rows/512assets; separate paper17MODE1.52,903,131generatedbytes under M,0newHTTP.
+Original failed partial was recovered/requalified, not an original sealed pass;
+full-lineage SUM unmeasured remains, no cap-pass claim. No PIT/TR/CA/finality.
+Strategy kernel1f76/native106/28pins and independent source review81 are closed.
+
+Actual Engine9b5206a3 broad512 U10 family is CLOSED UNQUALIFIED:
+ONE completed CPU CatBoost fit/best92/safe CBM preserved; ONE actual CUDA TCN
+attempt reached watchdog124 after750.564558s. No market forecast/economic
+readout or qualified fixedhalf pair;0retry. All38actors/4CIDs/lease closed.
+FailedCUDA2254.362248SUM retained, not refunded or called completed training.
+Confucius owns a separately frozen technical successor choice: exact partial
+checkpoint diagnostic0fits within1800SUM1800elapsed OR one bootstrap-aware
+convergence CUDAfit/0CPUrefit within7800SUM7200elapsed. Choose one by technical
+evidence before new numerical dispatch; durable per-epoch diagnostics and
+source/caps/native first. Stop/yield safely before15:00 for owned Paper.
+Fixedhalf c23bb15e remains pure source preparation/input_unavailable,0newviews;
+never silently rebind it to a different model or expand old12views.
 
 ## Preserved Duties / Monitor / Verification
 
@@ -232,11 +268,25 @@ No additional private query or read chain has been performed here.
 
 Local Korean monitor http://127.0.0.1:8787 remains pinned imagebe48f29e/
 publicV2aa3ef6d6; minimal H3 display is tracked/tested NOT deployed.
+Isolated invented-source preview5ee60575 passed69tests/32pins/threeviewport
+sizes/seven screenshots. Parent viewed mobile320/H3; temporary servers/browser
+closed. This is NOT production deployment or actual financial evidence.
 Do not replace pinned image casually: original H3 admission binds it.
 No public exposure/private custody/credential/broker authority in web.
 Saved pause is not proof every worker acknowledged it.
 
-New tracked integration authority root:
+Current tracked repeatability authority:
+A/execution/current-paper-account-repeat-cohort-repair-20261103-v1/RESULT-r2.json,
+SHA4997d85948ee35bec063040e1e19b23f5262e7f8f54ba392715d985b21111778.
+SOURCE-r2dff04cb0/1432pins0mismatch;269serial77.89s;actual8of8[20071]/
+20045PASS26knownWindowslinkSKIP/35warnings389.02s/native+helper0/pinned-helper
+guarded current-child+leasecleanup/Ruff/4Compose.env.example PASS.
+ClaudeGO_WITH_LIMITS/session7ba0378f plus independent P1/followup177460b4;
+exact completion, replay, unknown, guard-crossing and first-skip tests passed.
+Earlier53c9/20042 matching-source pass is historical only, known P1 not hidden.
+No actual broker/private/financial effects or scheduled-SDK update in this fix.
+
+Historical full18 integration authority root:
 A/verification/current-us-cash-h3-ops-integration-20261103-v1.
 RESULT25c0120a93aea55f17d46930aa8687b26b59bb5f8f323f6bea4f87ab5970b911:
 SOURCE-r4a93b0d87/1431pins0mismatch;521serial plus183exactworker/current40;

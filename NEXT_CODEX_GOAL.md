@@ -38,6 +38,10 @@ Leave unrelated %SystemDrive%/ untouched.
 
 No manual TaskRun/catchup/repetition or consumed Create/Recover/Enable/
 composition/readback replay. Installation is not submit/fill/inventory/PnL.
+PRIORITY: installed publisher142 rejects THREE changed mutable-C SDK pins
+(account session/horizon/weights) BEFORE credentials. Enabled is not current
+source readiness. Data/Execution prepare new D-frozen bindings with SAME clocks.
+Do not replay142/775/DF413 or retag a stale point to hide this source failure.
 Effect-time virtual account/basis/budget/pending unknown/fresh quote+orderability/
 owner/observer/risk checks remain. Custody evidence requires exact joins,
 relevant actual writer admission/network-none RO/stability, never observe().
@@ -50,28 +54,38 @@ NAS8Nov3/4UTC21:10 and reserved evaluationNov4UTC21:35. No follow-up chain.
 ## Ready Company Work
 
 Exact roots/caps/write sets: agents/orchestration.md and active stateboards.
-An assigned MD is not proof of running LLM/process/GPU.
+Assigned MDs are not running-process/GPU evidence. No operator decision pending.
 
-1. Execution/Helmholtz: full17 finite account deployment prep1200SUM5400elapsed,
-   source-only Nov9OPEN5 entry/Nov11PRE_CLOSE15 ownedexit, native typed profile/
-   one shared bank. Exact actual future producer point resolved without a
-   placeholder or human-JIT. All original pending/exit obligations retained.
-2. Infra/Hooke: finite quiet future producer Task prep700SUM3600elapsed,
-   proposed Nov9UTC14:25..<14:30,600SUM300elapsed/one fresh call per model/
-   0fits-replays-retries. Existing producer1db remains uninstalled/proposed;
-   no future weights inferred.
-3. Data/Euclid: broad512 intraday-ratio input prep600SUM3600elapsed,
-   existing MODE0 daily OHLC eligibility/calendar/keys/masks,0newHTTP.
-4. Strategy/Ohm: causal economic kernel proposal500SUM3600elapsed,
-   registry dedup + primary sources + one executable consumer,0marketnumerics.
-5. Engine/Steward/Confucius: broad512 same-session selection family
-   4800activeSUM10800elapsed, proposed CPU1+CUDA1/finite<=12costviews/
-   0numericalretry. Exact source/targets/splits/caps/native first; CPU baseline
-   then useful GPU work under actual headroom/lease. Candidate past20 within-
-   session ratios -> O/C on paper17; no overnight rawprice split contamination,
-   intrabar ordering/stop fills, imputation, nonPIT concealment or untouched claim.
+1. Data/Euclid: current-open45-frozen-sdk-publisher-repair-20261103-v1,
+   780SUM4500elapsed/source-only0APIcredentialsactualTasks/models. Freeze
+   required SDK on D; new Source/Definition/bootstrap/schema proof with SAME
+   original capture/scoring clocks/caps. Direct Execution/Review handoff.
+2. Execution/Helmholtz: current-open45-frozen-publisher-financial-binding-
+   repair-20261103-v1,900SUM4500elapsed/0actualKISprivateTask/modelcalls.
+   New publisher Source/Def/point/closure joins for SAME original DF413
+   opportunity/BUYdeadline15:22/B10/F9/identities/exits. Up to3 bounded invented
+   fixture iterations/2inert startups, not market trials. Decode nonzero guest
+   categorical replies before classification. Parent actual future migration
+   needs exact old XML capture and positive relevant-owner closure.
+3. Infra/Hooke: current-full17-h3-producer-native-xsd-diagnostic-20261103-v1,
+   180SUM1200elapsed/<=4actual COM-memory/read-only calls/0mutations.
+   Actual7b52 Create failed PRE_CREATE COMException, child closed. Fresh target
+   absence UNKNOWN; classify XSD/target, no consumed Create replay.
+4. Strategy/Ohm invoked Infra: current-owned-future-sdk-pin-audit-20261103-v1,
+   180SUM1800elapsed/public-source-only. Known original exit/NAS8 mutableC vs
+   frozenD CODE refs; no private data/Task calls/broad scan/new approval gate.
+5. Engine/Steward/Confucius: old9b52 CLOSED failed CUDA watchdog, CPU fit
+   retained/0forecasts. Choose ONE new source-frozen technical successor:
+   exact partial-checkpoint diagnostic0fits <=1800SUM1800elapsed OR one new
+   bootstrap-aware CUDAfit/0CPUrefit <=7800SUM7200elapsed;oneforecasteach/
+   <=12views/0retry. Source/data/claim/native/caps before numerical launch;
+   durable per-epoch diagnostics and safe preemption before15:00 for Paper.
+   Never duplicate completed CPU fit/refund old attempt/choose on DEV.
+6. Independent Review: current-open45-publisher-binding-repair-independent-
+   review-20261103-v1,240SUM3600elapsed/source-only; exact SDK/producer/
+   consumer/definition joins and emitted adapter's actual return path.
 
-Roles exchange qualified exact schemas/evidence directly. Parent is not a late
+Roles directly exchange qualified schemas/evidence. Parent is not a late
 PID/network-release approval barrier. A local failure does not stop other work.
 No allflat/profitability/GPU-occupancy gate or extra bank.
 
@@ -83,13 +97,21 @@ Producer1db5c196/595pins native Data-reader -> TimesFM+Chronos -> fixedmeanrank
 -> strict full18 passed,0marketforecasts/fits/replays; only one tiny synthetic
 call per model. No actual full17 financial deployment.
 Prior research metrics are reused modeled-cost development, not broker PnL.
-Current new Data1.17M-row feasibility is a new family, not a repeated H3 study.
+Broad512 Dataad9a/361d/df021 is CLOSED requalified/37Parentpins0mismatch;
+not original sealed-partial success, fullSUM unmeasured explicit.
+Engine9b52 actually attempted1CPU+1CUDA: CUDAwatchdog750.564558s/0forecasts/
+0economicreadouts;all38actors/4CIDs/leaseclosed. Fixedhalf c23b remains pure
+source preparation/input_unavailable/0views, no silent model substitution.
+H3 UI preview5ee6 passed69tests/32pins/3viewports/7screenshots, NOT deployed.
 
-Repo authority A/verification/current-us-cash-h3-ops-integration-20261103-v1/RESULT.json,
-SHA25c0120a93aea55f17d46930aa8687b26b59bb5f8f323f6bea4f87ab5970b911:
-1431pins0mismatch/521serial+183finalworker/current40/full20030PASS26knownskip/
-8of8[20056]/390.50s/helper-native0/verified currentchildcleanup/Ruff/
-4Compose.env.example PASS. Earlier partial/runs are historical source only.
+Current repo authority:
+A/execution/current-paper-account-repeat-cohort-repair-20261103-v1/RESULT-r2.json,
+SHA4997d85948ee35bec063040e1e19b23f5262e7f8f54ba392715d985b21111778:
+1432pins0mismatch/269serial/all15repeatcases/full20045PASS26knownskip/
+actual8of8[20071]/389.02s/native-helper0/pinned-helper guarded currentchild+
+leasecleanup/Ruff/4Compose.env.example PASS. Same-policy owned-terminal-flat
+next-input and first quote/sizing/foreign-skip crash repaired; old D SDKs NOT
+upgraded. Prior25c0/02eb/53c9 full passes remain historical exact-source only.
 D-only executables need their own focused native/negative/closure evidence;
 do not repeat20k tests for docs/external-only while exact pins match.
 

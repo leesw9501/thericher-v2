@@ -169,6 +169,7 @@ def run_native_account_session(
     before = _snapshot(paths, expected_account_ref, cohort)
     initial_pending = before[1] is not None and before[1]["pending"] is not None
     value = before[2]
+    fresh_entry = False
 
     def forbidden():
         raise PaperAccountSessionError("account_session_retained_input_must_not_reload")
@@ -179,13 +180,29 @@ def run_native_account_session(
         return result("no_retained_pending")
     elif before[1] is not None:
         if value is None:
-            return result("retained_inactive_no_new_cohort")
-        loader = forbidden
+            if (
+                cohort.mode != "entry"
+                or cohort.profile is not core.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS
+            ):
+                return result("retained_inactive_no_new_cohort")
+            record = before[1]
+            if cohort.slot.input_ref in record["completed"]:
+                return result("retained_completed_input")
+            _need(bool(record["completed"]), "account_session_prior_completion_missing")
+            # The core rechecks owned-flat under its lock before any new effect.
+            core._completed_flat(Path(paths["state_root"]), record, require_utc(clock()))
+            guard()
+            fresh_entry = True
+        else:
+            loader = forbidden
     elif cohort.mode != "entry":
         return result("no_retained_owned_cycle")
     else:
+        fresh_entry = True
+    if fresh_entry:
         guard()
         value = target_loader()
+        guard()
         _need(
             type(value) is core.ModelPaperWeightsInput
             and value.input_ref == cohort.slot.input_ref
@@ -243,11 +260,24 @@ def run_native_account_session(
             "account_session_skip_changed",
         )
         if oldrecord is not None:
+            oldactive = oldrecord["active"]
+            if oldactive is None:
+                _need(
+                    fresh_entry and not oldprefix
+                    and cohort.profile is core.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
+                    "account_session_skip_changed",
+                )
+                oldactive = dict(
+                    input_ref=value.input_ref, targets=core._pack(value.targets),
+                    entry_session=core._pack(value.entry_session),
+                    exit_session=core._pack(value.exit_session), entries_done=[],
+                    exit_attempts=0, model_input=core._pack(value), entry_no_order={},
+                )
             _need(
                 {k: v for k, v in newrecord.items() if k not in {"ref", "active"}}
                 == {k: v for k, v in oldrecord.items() if k not in {"ref", "active"}}
                 and _same_skip_active(
-                    oldrecord["active"], newrecord["active"], cohort.profile,
+                    oldactive, newrecord["active"], cohort.profile,
                     value.targets[len(oldprefix)].proposal.symbol,
                 ),
                 "account_session_skip_changed",

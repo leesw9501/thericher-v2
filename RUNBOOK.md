@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Nov3UTC11:48 / Nov3KST. Company runtime goal UNFINISHED.
+Updated Nov3UTC13:08 / Nov3KST. Company runtime goal UNFINISHED.
 Resume with scripts/start_next_codex_task.ps1, then current goal/handoff/
 AGENTS/active boards. Source/installation is not actual broker effects.
 
@@ -23,6 +23,18 @@ Actually installed, all last verified enabledReady3/0instances:
   independentenabledread d8aa2822.19GET1POST0retry.
   Original precreate memory-default failure preserved;18+8exact Idle tests and
   explicit composition provenance, no oldsource change or broad XML ignore.
+
+PRIORITY: installed Open45 publisher142 now rejects THREE changed mutable-C
+SDK pins at ownerlib105 BEFORE credentials. Enabled is not source readiness.
+Data current-open45-frozen-sdk-publisher-repair-20261103-v1 and Execution
+current-open45-frozen-publisher-financial-binding-repair-20261103-v1 qualify
+new D-frozen SDK/publisher/financial joins, unchanged clocks/caps/B10/F9/
+identities/exits. Parent-only future migration after positive relevant old-owner
+closure, no allflat/profit gate. Never replay142/775 or consumedDF413 recovery.
+
+Nov9 producer Create7b52 failed PRE_CREATE COMException13:05, childclosed;
+no CREATE-ATTEMPT/COMPLETE. Fresh target absence UNKNOWN until Hooke's separate
+actual native-XSD/read-only diagnostic. No consumed Create replay.
 
 Do NOT replay consumed Create/Recover/Enable/composition/independent-readback
 commands or manually Run a task/catchup/repeat. Use exact immutable runtime
@@ -49,14 +61,22 @@ Prep fullSUM unknown remains a limitation, not a claimed cap pass.
 Monitor http://127.0.0.1:8787 stays pinnedbe48f29e/publicV2aa3ef6d6.
 Minimal H3 UI source is tracked/tested NOT deployed; no casual image swap,
 private custody/web artifact executable import/public exposure.
+Invented source preview5ee6:69tests/32pins/three viewports/seven screenshots,
+temporary server/browserclosed. Not8787 deployment or financial evidence.
 Keep ONE original B10/F9 UNKNOWN-HELD/all original exits:
 GOOGLNov9UTC20:55,MSENov5UTC20:40,H20Dec1UTC14:30 and NAS8/reservedNov4eval.
 
 Current repo authority:
-A/verification/current-us-cash-h3-ops-integration-20261103-v1/RESULT.json,
-25c0120a/SOURCEa93b0d87/1431pins0mismatch/521serial+183worker/current40/
-full20030PASS26knownskip/actual8of8[20056]/390.50s/helper0/currentchildclean/
+A/execution/current-paper-account-repeat-cohort-repair-20261103-v1/RESULT-r2.json,
+4997d859/SOURCEdff04cb0/1432pins0mismatch/269serial/all15repeatcases/
+full20045PASS26knownskip/actual8of8[20071]/389.02s/native-helper0/pinned-helper
+guarded currentchild+leasecleanup/
 Ruff/default+research+accounting+monitor Compose.env.example PASS.
+SAMEpolicy owned-terminal-flat next input and first quote/sizing/foreign skip
+repaired; no active/pending substitution, completed replay or old D SDK update.
+Prior53c9/20042 matching-source pass contained an independent-review P1;
+historical only, no current authority reuse. Initial argument binding failed
+before helper/pytest; inherited caller0 is not authority. Exact source-r2 only.
 Docs/external-only reuse only while code/config/policy digests match; D-only
 code needs its own focused native/negative/closure proofs, not another20k run.
 Inactive interrupted r2 scratch retained after rejected cleanup, no bypass or
