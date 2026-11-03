@@ -2,38 +2,44 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov3UTC12:39. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-current-broad512-intraday-ratio-input-preparation-20261103-v1 is CLOSED:
-basead9a5120/completion361d293a/DATASETdf021e49/READINESS35c6d247/
-VERIFY30692d00. Parent independently checked37refs0mismatch;25nativepositive/
-8negative/5completion checks, six exact actors positively closed.
-1,170,008 MODE0 rows/512assets (510 with any prior20); separate paper17MODE1
-75,391 used rows. Generated52,903,131bytes under M,0newHTTP/models/fits.
-Original projection failed on its own-output audit allowlist AFTER atomic
-train512 close. Completion requalified that exact partial plus the unattempted
-tail;0canonical512rereads, not an original sealed success. Full-lineage SUM
-unmeasured remains explicit; known59.388079 is not a600-cap proof.
-Own past20 OHLC -> within-bar features, independent matured O/C label mask;
-no currentOPEN/SPY feature, interday split/PIT/TR/finality claim or imputation.
-Exact API handed directly to Engine/Strategy before numerical dispatch.
+Updated Nov3UTC14:54. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Open45 publisher is ACTUALLY migrated to frozen D SDK Sourceecfc19c0/
+Definitioneaacee75/metadataSourcebb777f4f. Exact old source/complete XML/ACL
+capture, UPDATE4-only disabled definition, independent disabled readback,
+Enable and independent enabled readback all passed. Finalread0c4cda29:
+enabledReady3/0instances/neverrun267011, same Nov3UTC15:07:30 trigger,
+capture15:16..15:16:25/score<=15:16:55. Parent proofEF2BCEA1:
+A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/PARENT-ACTUAL-COMPLETE.json.
+Five hidden metadata workers joined/exit0/exact births absent,9.156780s upper.
+No TaskRun/KIS/credentials/models/private-state calls during this migration.
+Original142/775 stays immutable; its THREE mutable C pin failures were source
+drift, not a provider quota failure. Frozen SDK489 and actual CPU tensor
+bootstrap/native lifecycle/schema24 are checked; full45 capacity/future point
+remain UNKNOWN. This is CPU-only scoring, not a GPU reservation.
 
-Preflight current-open45-owned-publisher-throughput-preflight-20261103-v1 is
-CLOSED: deterministic THREE C SDK pin drifts at142 ownerlib105 stop before
-credentials (account session/horizon/weights). No claim KIS quota or timing
-failure; actual9GET/1prewarmPOST/2secondpace implies16s minimum eight gaps.
-Full45/scoring still unmeasured.0HTTP/Task effects, fullSUM unknown retained.
-Euclid now owns current-open45-frozen-sdk-publisher-repair-20261103-v1,
-780SUM4500elapsed/0APIcredentialsmodelsactualTasks. Freeze required exact SDK
-bytes on D, explicit new publisher Source/Definition and real bootstrap/schema
-proof; preserve original15:07:30/15:16 clocks, request caps and cache semantics.
-Direct qualified binding to Execution/Review; Parent owns actual migration.
-Do not edit142/775, retag old points, replay tasks or depend on mutable GitHEAD.
+Broad512 input remains CLOSED requalified: basead9a5120/completion361d293a/
+DATASETdf021e49/READINESS35c6/VERIFY3069/37Parentrefs0mismatch.1,170,008MODE0
+rows/512assets; separate paper17MODE1/75,391used rows/52,903,131bytes under M,
+0newHTTP. Original partial failure retained; fullSUM unmeasured, not cap proof.
+Past20 within-bar features/independent matured labels, no PIT/TR/CA/finality
+claim or current-open feature/imputation.
+
+NAS8 original freeze CLOSED partial:487SDK files exact/six Git recoveries;
+Dataec810e85/EVAL228254e6 not installed. Qualification8191a615 retained
+coreproducer PASS20/currentSource, then failed POST-success timing append
+outside fixture audit boundary; consumer never launched. Not a timeout/
+source-parser/market failure.160.115081upper/actors closed.
+Ohm current-nas8-retained-producer-consumer-completion-20261103-v1,
+180SUM900elapsed requalifies exact retained producer plus ONE unattempted
+consumer parse/return,0producer replays/models/market/Tasks. Recovered partial,
+not regraded original whole pipeline. Original future clocks/caps/model/
+split/criteria/untouched outcomes unchanged. Actual migration Parent-only.
 
 ## Actually Installed Data
 
-- Open45 publisher14268659/Definition77513d80/actualenabled73d5f0fb:
-  Nov3UTC15:07:30 trigger/capture15:16..15:16:25/score<=15:16:55.
-  Future input UNKNOWN, no consumed metadata replay.
+- Open45 publisherecfc19c0/Definitioneaacee75/metadata bb777f4f:
+  actualupdated+enabled; independent0c4cda29, sameNov3UTC15:07:30/capture15:16.
+  Future input UNKNOWN; original142/775 and consumed metadata immutable.
 - Nov6 coherent19 C60 capture is ACTUALLY ENABLEDReady3/0instances/neverrun:
   thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1,
   Nov6UTC21:10..<21:11/PT15M = Nov7KST06:10.19GET1POST0retry.

@@ -2,43 +2,64 @@
 
 ## Current Ownership
 
-Updated Nov3UTC13:08. Full17 preparation d9e1d62a is CLOSED UNQUALIFIED, not installed.
-One invented guest failed at Docker start; secondary empty-JSON error masked
-the original error. No guest lifecycle assertion qualified; exact CID/Jobs
-closed. Suspected absent nested SOURCE under RO parent is not a proven actual
-Docker error. Earlier review log failure leaves fullSUM unmeasured, not refunded.
-New sizing V2 strictly retains original1db .005 bytes and derives NEW .1 input/
-policy/source identity, unchanged quarters/one initial sharedB10/native risk.
-Pure15producer+10other/8mock-definition checks do not prove native lifecycle.
+Updated Nov3UTC14:54. Parent owns actual metadata/shared MD/integration/Git.
+Open45 Data is ACTUALLY updated to ecfc19c0/metadata bb777f4f, enabled read0c4c.
+Open45 financial c4b38148/release6e3d61a1 is ACTUALLY migrated/enabled and
+independently read back77e9bfb0 at14:52:34. Same exact entry15:17..<15:18/
+ownedexit16:17..<16:18/PT7M, BUYdeadline15:22/account/basis/run/policy/original
+quarter/B10/F9/reservations/identities/all exits; exit enabled before entry.
+Parent proofBB516F69 at A/execution/current-open45-metadata-docker-query-
+calibration-20261103-v1/PARENT-ACTUAL-COMPLETE.json; capture2b68111d/
+recoverycd098a3b/read77e9. Three hidden metadata workers11.482337supper/
+42Jobmembers all joinedempty/closed/exactPIDs absent;0TaskRun/broker/private/
+credentials/models. MetadataSourcee8099c57 adds qualified positive process
+ExitCode/join/source-filter query only. Seven focused fixtures include null/
+nonzero/timeout rejection; original actual actor/source/financial guards remain.
+Prior no-op/r2/r3 failures/debits retained; r2 exact cause still UNKNOWN.
+Nullable module LASTEXITCODE is not treated as0. Original DF413/529 history
+is superseded operationally, not replayed/erased. Actual future point/financial
+effects UNKNOWN. Dataecfc is separately actually enabled/independent0c4c.
 
-Second full17 startup7a0efc0c is CLOSED UNQUALIFIED: complete RO inert boot PASS,
-lifecycle exit20 returned256bytes discarded by driver89 before parse. No
-lifecycle assertion qualified; CIDs/14Jobs/16actor identities closed,
-263.530310upper. No retry/source rewrite or actual financial deployment.
-Parent repeat-wrapper now269serial/full20045PASS26skip at4997d859, including
-firstquote/sizing/foreign skip repair; old frozen SDKs remain unchanged.
+New Data->OneLeg composed smoke COMPLETE:405inventedbars/8knowninputs/
+one original quarter target plus4negative rejections; separate SDK489/577
+processes, no class mixing/models/market/Task effects. Only fixture Windows
+read-access mask repaired. Callback current-open45-frozen-publication-to-
+oneleg-smoke-20261103-v1; not actual future data/financial execution.
 
-PRIORITY Helmholtz current-open45-frozen-publisher-financial-binding-repair-
-20261103-v1,900SUM4500elapsed/0actualKISprivateTask/marketmodelcalls.
-Installed Data142/775 has deterministic mutable-C SDK source rejection before
-credentials. Euclid freezes a new D SDK/publisher; qualify new financial Source/
-Definition/point+closure joins for SAME original entry/exit/BUYdeadline/B10/F9/
-identities. Preserve DF413/529 and consumed recovery. Up to3bounded invented
-technical fixture iterations/2inert startups within scope, no market trials;
-decode allowlisted guest failure BEFORE rejecting nonzero rc. Parent actual
-future Update needs exact old XML capture and positive relevant-owner closure.
+Nov9 full17 meanrank PRODUCER is ACTUALLY installed/enabled, not a financial
+account round. Taskthericher-full17-h3-finite-producer-20261109-v1,
+Nov9UTC14:25..<14:30 =Nov9KST23:25. Typed Task XML1.3 repaired the measured
+1.2/UseUnifiedSchedulingEngine XSD failure without changing action/caps.
+A/research/current-full17-h3-producer-native-xsd-diagnostic-20261103-v1/
+ACTUAL-COMPLETE.json SHA5f26bd94; independentread84147aac;
+adoption22f389f1/metadata926e8f8c/runtimefb3a1deb/Definitiond732a90a.
+Four consumed metadata phases passed/Jobs joined empty/0TaskRun/modelcalls.
+Original1db .005 proposal bytes, two future trusted model calls/0fits/replays/
+retries remain; input/scores/weights/runtime result UNKNOWN. Old7b52 Create
+failed PRE_CREATE and is not replayed. Full17 financial deployment NOT installed.
 
-Nov9 producer installer repair7b52/native29cd passed23Task+8facade. Parent
-actual CreateDisabled failed PRE_CREATE COMException13:05, joinedempty and
-no CREATE-ATTEMPT/COMPLETE. Fresh target absence UNKNOWN, no consumed replay.
-Hooke now separately diagnoses actual native XSD/read-only target,180SUM1200,
-0Task mutations. Original cfb420upper/failures remain immutable.
+Full17 financial d9e1 and7a0 stay CLOSED UNQUALIFIED/NOT installed.
+First driver discarded real exit20 JSON; first causes/failures/debits retained.
+Hooke now owns NEW current-full17-h3-native-lifecycle-diagnostic-20261103-v1,
+600SUM2700elapsed/<=2invented technical attempts/1inert boot. D-freeze current
+Parent33b repeat-wrapper, actual adapter/full18/nativeaccount lifecycle with
+fake external I/O, decode category BEFORE rc. Network-none/all sourceRO/
+ownfixtureRW/no private/credentials/KIS/models/Task or C/Git writes.
+This preparation cannot silently upgrade old SDKs or substitute original intents.
 
-Actual effects still check virtual host/account/basis/budget/owned inventory/
-pending exact unknown/fresh quote+orderability/emergency/current owners.
-No allflat/profit gate, substitute, new bank, foreign adoption or reservation
-release. Old cohorts/exits migrate only with positive original owner closure.
-Parent owns actual qualified metadata/integration/Git.
+Parent repeat repair33b0ae80 pushed:15native repeat cases/269serial/full20045PASS
+26skip/currentauthority4997d859. Only SAMEpolicy terminal-flat next-input
+admission, firstquote/sizing/foreign skip fixed. No pending/active replacement,
+completed replay, bank reset or implicit frozen-worker upgrade.
+
+Review current-f9-readonly-reconciliation-path-readiness-20261103-v1,
+180SUM1200elapsed/source-only0private/KIS/Tasks identifies existing exact-
+request read methods, no recovery observe/submit. F9 stays UNKNOWN-HELD;
+missing holdings/open orders never release its reservation.
+
+Actual effects check virtual host/account/basis/budget/inventory/exact unknown
+outcome/fresh quote+orderability/emergency/relevant owners. No allflat/profit
+gate, foreign adoption or reservation release. No operator decision pending.
 
 ## Actually Installed
 
@@ -47,18 +68,24 @@ entryNov3UTC20:55; exitNov6UTC20:45; strict offline readNov3UTC21:10.
 Source6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/reader9410/authority6247,
 D-frozen SDK, financial31e83c91/reader1886c323+b9801906. Not full17 automation.
 
-Open45 ACTUALLY enabled/Ready3/0instances after recovery+independentread:
-- thericher-open45-oneleg-ops-entry-20261103-v1,Nov3UTC15:17..<15:18/PT7M;
-- thericher-open45-oneleg-ops-owned-exit-20261103-v1,Nov3UTC16:17..<16:18/PT7M.
-KST Nov4 00:17/01:17. RuntimeDF413fe8/release529e0692,
-ROOT current-open45-uri-bound-runtime-recovery-preparation-20261103-v1.
-Complete3ee0c17f/independentread3a6597d6a337763e65a69216f9ad8d0c96755b53ab10ff808124b4dcb94cf371.
-Prep791.173030upper/native43+bootstrap5; old2307/failed attempts preserved.
-Parent Inert/recover/readback Jobs2each active0 joined/handlesclosed.
-Exact URI fixed shared installer AND runtime owner, not broad XML ignore.
-AdvisoryGO_WITH_LIMITS/partialpeer/nonatomic honest-host race limits retained.
+Open45 financial c4b38148/release6e3d61a1 is ACTUALLY migrated/enabled and
+independently read back77e9bfb0 at14:52:34. Same exact entry15:17..<15:18/
+ownedexit16:17..<16:18/PT7M, BUYdeadline15:22/account/basis/run/policy/original
+quarter/B10/F9/reservations/identities/all exits; exit enabled before entry.
+Parent proofBB516F69 at A/execution/current-open45-metadata-docker-query-
+calibration-20261103-v1/PARENT-ACTUAL-COMPLETE.json; capture2b68111d/
+recoverycd098a3b/read77e9. Three hidden metadata workers11.482337supper/
+42Jobmembers all joinedempty/closed/exactPIDs absent;0TaskRun/broker/private/
+credentials/models. MetadataSourcee8099c57 adds qualified positive process
+ExitCode/join/source-filter query only. Seven focused fixtures include null/
+nonzero/timeout rejection; original actual actor/source/financial guards remain.
+Prior no-op/r2/r3 failures/debits retained; r2 exact cause still UNKNOWN.
+Nullable module LASTEXITCODE is not treated as0. Original DF413/529 history
+is superseded operationally, not replayed/erased. Actual future point/financial
+effects UNKNOWN. Dataecfc is separately actually enabled/independent0c4c.
 
-Data publisher142/775 remains enabled Nov3UTC15:07:30/capture15:16.
+Data publisher ecfc19c0/metadata bb777f4f is actually updated/enabled;
+independent0c4cda29, sameNov3UTC15:07:30/capture15:16. Old142/775 retained.
 Actual future point/date/checkpoint/seal/source/publisher closure still required;
 forecast originaladmit15:17..<15:18/separate BUYdeadline15:22/no expiryretag.
 No TaskRun/catchup/repetition or consumed metadata replay.

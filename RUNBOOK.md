@@ -2,90 +2,99 @@
 
 ## Current Operations
 
-Updated Nov3UTC13:08 / Nov3KST. Company runtime goal UNFINISHED.
-Resume with scripts/start_next_codex_task.ps1, then current goal/handoff/
-AGENTS/active boards. Source/installation is not actual broker effects.
+Updated Nov3UTC14:54. Company coexistent-native-paper-execution-runtime-v1
+UNFINISHED. Resume with C:/Users/Public/Documents/thericher-v2/scripts/
+start_next_codex_task.ps1 then current goal/handoff/AGENTS/active boards.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Source/installation/process exit is not broker effects.
 
-Actually installed, all last verified enabledReady3/0instances:
-- Open45 Data142/775: Nov3UTC15:07:30 trigger/capture15:16..15:16:25.
-- Open45 entry Nov3UTC15:17..<15:18 and ownedexit16:17..<16:18/PT7M,
-  KSTNov4 00:17/01:17. RuntimeDF413fe8/release529e0692,
-  A/execution/current-open45-uri-bound-runtime-recovery-preparation-20261103-v1,
-  COMPLETE3ee0c17f/independentread3a6597d6. Exact URI shared installer+owner;
-  inherited core proof and native43+bootstrap5, no financial effect inferred.
-- H3 AMD entryNov3UTC20:55/exitNov6UTC20:45/readNov3UTC21:10.
-  Host6ae54088/TRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/reader9410/
-  authority6247 unchanged. SDK is D-frozen, no silent C source upgrade.
-- Coherent19 C60 Data Nov6UTC21:10..<21:11/PT15M =Nov7KST06:10,
-  thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1.
-  A/data/current-chronos2-h3-nov6-frozen-release-finalization-20261103-v1,
-  runtime310619b1/meta473ca0ad +qualified Parent4da1b73d,
-  independentenabledread d8aa2822.19GET1POST0retry.
-  Original precreate memory-default failure preserved;18+8exact Idle tests and
-  explicit composition provenance, no oldsource change or broad XML ignore.
+Actually installed:
+- Open45 Data ecfc19c0/Definitioneaacee75/metadata bb777f4f, ACTUAL same-task
+  update+Enable+independentread0c4cda29, ParentEF2BCEA1 at
+  A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/
+  PARENT-ACTUAL-COMPLETE.json. EnabledReady3/0instances/neverrun267011.
+  Nov3UTC15:07:30 trigger/capture15:16..25/score<=15:16:55; CPU-only model.
+  Five hidden metadata workers9.156780supper joined/zero/absent.0TaskRun/API.
+  Original142/775 source drift immutable; NEW489-file frozenD SDK used.
+- Open45 financial c4b38148/release6e3d61a1 ACTUALLY migrated/enabled:
+  sameentry15:17..18/exit16:17..18/PT7M/KSTNov4 00:17/01:17/BUYdeadline15:22.
+  A/execution/current-open45-metadata-docker-query-calibration-20261103-v1/
+  PARENT-ACTUAL-COMPLETE.json SHA BB516F69; metadataSourcee8099c57.
+  Actualcapture2b68111d/completecd098a3b/independentread77e9bfb0 under
+  current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
+  Three Jobs42members joinedempty/closed/0TaskRun/broker/private/models.
+  Positive process ExitCode/join/source-filter query fixed nullable module
+  LASTEXITCODE without guard bypass. Old no-op/r2/r3/DF413 history retained.
+  All metadata phases consumed; DO NOT rerun Capture/Recover/Readback.
 
-PRIORITY: installed Open45 publisher142 now rejects THREE changed mutable-C
-SDK pins at ownerlib105 BEFORE credentials. Enabled is not source readiness.
-Data current-open45-frozen-sdk-publisher-repair-20261103-v1 and Execution
-current-open45-frozen-publisher-financial-binding-repair-20261103-v1 qualify
-new D-frozen SDK/publisher/financial joins, unchanged clocks/caps/B10/F9/
-identities/exits. Parent-only future migration after positive relevant old-owner
-closure, no allflat/profit gate. Never replay142/775 or consumedDF413 recovery.
+- H3 finite AMD entryNov3UTC20:55/exitNov6UTC20:45/readNov3UTC21:10:
+  Source6ae/TRUE32f/POINTad3b/SEALf8fe/reader9410/authority6247/D-frozen SDK,
+  no silent C update; not full17 automation.
+- Coherent19 C60 Data thericher-data-chronos2-h3-nov6-coherent-once-20261106-v1,
+  Nov6UTC21:10..<21:11/PT15M =Nov7KST06:10, runtime310/meta473/Parent4da,
+  actual enabled d8aa2822,19GET1POST0retry/futureinput UNKNOWN.
+- Full17 PRODUCER thericher-full17-h3-finite-producer-20261109-v1 is ACTUALLY
+  installed/enabled Nov9UTC14:25..<14:30 =Nov9KST23:25.
+  A/research/current-full17-h3-producer-native-xsd-diagnostic-20261103-v1/
+  ACTUAL-COMPLETE.json SHA5f26bd94/independent enabled84147aac.
+  Source22f3/meta926e/runtimefb3a/Defd732. Measured XSD1.2 unexpected
+  UseUnifiedSchedulingEngine repaired by typed1.3, not broad normalization.
+  Four actual metadata phases consumed/Jobsjoinedempty/0TaskRun/modelcalls.
+  Two future model calls/0fits/replays/retries; original1db .005 proposal
+  unchanged. Old7b52 PRE_CREATE failure retained, NEVER replay.
+  Full17 FINANCIAL deployment NOT installed. Hooke's new source/native
+  lifecycle diagnostic is separate from this actual producer.
 
-Nov9 producer Create7b52 failed PRE_CREATE COMException13:05, childclosed;
-no CREATE-ATTEMPT/COMPLETE. Fresh target absence UNKNOWN until Hooke's separate
-actual native-XSD/read-only diagnostic. No consumed Create replay.
+All future input/point/acceptance/fills/current inventory/fees/settlement/net
+PnL UNKNOWN unless exact later evidence proves them. No manual TaskRun/
+catchup/repetition/consumed metadata replay. Inspect exact immutable outcome
+with source-qualified readers, not latest-file scans/task exit/recovery observe().
+Custody reads require actual relevant writer admission/exact account-basis-
+input-intent-fill joins/network-none/source+privateRO/stability.
+Source markers assume honest host, not cryptographic OS Scheduler origin;
+Operational logging disabled. Preserve ONE original B10/F9 UNKNOWN-HELD/
+identities/reservations/GOOGLNov9UTC20:55/MSENov5UTC20:40/H20Dec1UTC14:30/
+NAS8Nov3/4UTC21:10/reservedNov4UTC21:35/all exits. No follow-up chain.
 
-Do NOT replay consumed Create/Recover/Enable/composition/independent-readback
-commands or manually Run a task/catchup/repeat. Use exact immutable runtime
-outcomes and named qualified readers after the actual opportunity, not a
-latest-file scan/Task exit/timestamp or recovery-capable observe().
-Relevant actual writer admission/exact account-basis-input-intent-fill joins/
-network-none RO/stability still required. Source markers assume honest host,
-not cryptographic OS origin; Operational logging disabled.
-Actual submit/acceptance/fill/current inventory/fees/settlement/netPnL UNKNOWN.
+Current research: original9b52 CPU completed/TCN watchdog retained; separate
+diagnosticc4bf twoforecasts/12views then summary npbool failure. Cache-only
+2592/RESULT8602c483 recovered SAME12views/0fits/forwards/rebooking: both
+utility-positiveTop4 ALLCASH/growthFAIL. No old rerun/alpha/ensemble claim.
+Peer-relative OC0ca2/RESULTfb7444f7 is now CLOSED actual2fits2forecasts/10views:
+CPU53treesBEST52, CUDA19epochs494updatesBEST6/early12; fits actually parallel.
+Net10growth CPU-41.309432%/TCN-52.037411%, both primaryFAILED; gross gain is
+not net profit.43Parentpins0mismatch/50PIDs6CIDsleaseclosed/finalizerabsent.
+Next separately deduplicated short-swing inventory/cost mechanism prepares
+new finite campaign, not another old fit or relaxed criterion. No global GPU
+ban; actual resource/safe Execution preemption checks remain.
 
-Full18 profile code09ddaa22 source-ready, NOT financially deployed.
-Adapterbd/native480; named account/core2d9c/native783 with fake broker only;
-futureproducer1db/native whole handoff with one tiny synthetic call per model,
-0market forecasts/fits/replays. Proposed producer Nov9UTC14:25..<14:30 and
-full17 Nov9OPEN5/Nov11PRE_CLOSE15 account round are NOT installed.
-Current disjoint scope/caps are in orchestration.md, not historical commands.
+Exact new public host-result reader readiness:
+A/execution/current-open45-c4b-runtime-outcome-reader-readiness-20261103-v1.
+Actual future results UNKNOWN; source-qualified reader/API only once ready,
+no latest scan or recovery observe. Composed new Data->OneLeg smoke PASS with
+405inventedbars/4negatives/separate SDKs/no models or actual future point.
 
-The Data310 reader MUST run in a separate fresh -I-B-S host:
-preload exact source-pinned core.py/verify_source(), then exact reader.py.
-Trusted explicit NumPy site, no .pth/site auto-load or financial SDK mixing.
-Future INPUT/hash/scores/weights remain UNKNOWN; no placeholder/human-JIT.
-Prep fullSUM unknown remains a limitation, not a claimed cap pass.
+Data310 reader remains separate fresh -I-B-S/core-before-reader/trusted explicit
+NumPy, no mixed financial SDK. NAS8 mutable C pin repair is separate source-
+only preparation, not actual future deployment or untouched outcome replay.
 
-Monitor http://127.0.0.1:8787 stays pinnedbe48f29e/publicV2aa3ef6d6.
-Minimal H3 UI source is tracked/tested NOT deployed; no casual image swap,
-private custody/web artifact executable import/public exposure.
-Invented source preview5ee6:69tests/32pins/three viewports/seven screenshots,
-temporary server/browserclosed. Not8787 deployment or financial evidence.
-Keep ONE original B10/F9 UNKNOWN-HELD/all original exits:
-GOOGLNov9UTC20:55,MSENov5UTC20:40,H20Dec1UTC14:30 and NAS8/reservedNov4eval.
+Monitor http://127.0.0.1:8787 stays pinnedbe48f29e/publicV2aa3.
+Minimal H3 Korean UI source and isolatedpreview5ee6/69tests/32pins/3viewports/
+7screenshots closed NOT deployed. No casual pinned-image replacement/private
+custody/web executable imports/public serving.
 
-Current repo authority:
+Current repo authority (Parent33b0ae80 pushed):
 A/execution/current-paper-account-repeat-cohort-repair-20261103-v1/RESULT-r2.json,
-4997d859/SOURCEdff04cb0/1432pins0mismatch/269serial/all15repeatcases/
-full20045PASS26knownskip/actual8of8[20071]/389.02s/native-helper0/pinned-helper
-guarded currentchild+leasecleanup/
-Ruff/default+research+accounting+monitor Compose.env.example PASS.
-SAMEpolicy owned-terminal-flat next input and first quote/sizing/foreign skip
-repaired; no active/pending substitution, completed replay or old D SDK update.
-Prior53c9/20042 matching-source pass contained an independent-review P1;
-historical only, no current authority reuse. Initial argument binding failed
-before helper/pytest; inherited caller0 is not authority. Exact source-r2 only.
-Docs/external-only reuse only while code/config/policy digests match; D-only
-code needs its own focused native/negative/closure proofs, not another20k run.
-Inactive interrupted r2 scratch retained after rejected cleanup, no bypass or
-partial authority reuse.
+4997d859/SOURCEdff04cb0/1432pins0mismatch/269serial/15repeatcases/
+actual8of8[20071]/20045PASS26knownskip389.02s/native-helper0/pinned-helper
+guarded currentchild+leasecleanup/Ruff/4Compose.env.example PASS.
+Same-policy terminal-flat next-input and firstquote/sizing/foreign skip fixed;
+old scheduled SDKs NOT upgraded. Old53c9/20042 pass retained with found P1.
+Docs/D-only may reuse full authority only while exact code/config/policy pins
+match; D executables need focused native/negative/closure checks, not20k reruns.
 
-At role handoff inspect the exact assigned root's frozen callback/API/closure;
-a later peer ACK may mask the completed package in the last LLM message.
-That source-readiness check is not financial evidence or permission to use an
-unbound runtime receipt. Do not infer workers/GPU/deployment from MD or ACK.
+Inspect exact CALLBACK/API/closure at handoff: last peer ACK can mask completion.
+Current role scopes/owners/caps in orchestration.md. No pending operator decision.
 
 Earlier commands/evidence below are frozen history. Do not replay them.
 

@@ -2,38 +2,36 @@
 
 ## Current Results And Next
 
-Updated Nov3UTC13:08. Confucius owns Engine and sole GPU coordination.
-current-broad512-intraday-selection-development-20261103-v1 is actually
-dispatched: SOURCE9b5206a3, qualified Dataad9a/361d/df021, kernelb8c370bf.
-4800activeSUM10800elapsed through14:38:55;1CPUfit+1CUDAfit/oneforecasteach/
-12whole-family cost views/0numericalretry. CPU fit stage COMPLETE; actual CUDA
-fit launch observed12:28:30 with owned lease/CID, not merely a planned MD.
-Native real two optimizers/safe cold checkpoints and producer-consumer PASS.
-Family is now CLOSED UNQUALIFIED: actual TCN watchdog124 after750.564558s,
-0market forecasts/economic readouts/retries. CPU completed CBM/best92 retained;
-TCN weights are partial, not completed/converged or certified final BEST.
-All38actors/4CIDs/lease closed; failedCUDA2254.362248SUM retained.
+Updated Nov3UTC14:54. Confucius owns Engine and sole GPU coordination.
+Broad5129b52 stays CLOSED: CPU CatBoost completed/BEST92 retained; CUDA
+TCN watchdog124/partial weights, not convergence or certified BEST. All old
+actors/CIDs/lease/debits are closed/preserved, no refit or refunded attempt.
+Separate frozen-checkpoint diagnosticc4bfaeec ran two forecasts/12fixed views
+then failed numpy.bool_ summary serialization. Cache-only recovery25926cf3/
+RESULT8602c483 completed those SAME views with0fits/forwards/rebooking.
+Both U-positiveTop4 policies were ALLCASH and failed growth/nonempty/samegross
+controls; no alpha or qualified selection pass. Lower DD from no exposure
+is not alpha. Actual full-gross return-head net10 growth was negative
+(CPU-47.223929%, partialTCN-38.853943%), not broker PnL.
+Fixedhalf c23b remains source-only/input_unavailable/0views; no silent rebound.
 
-Fixed OWN20x4 log(C/O),log(H/L),upper/O,lower/O; no assetID/SPY/volume/current
-OPEN or raw interday gaps. Train broad512MODE0; separately evaluate paper17
-MODE1. Date FIT<=2023/INNER2024/adaptiveDEV2025..2026Jul28 with20sessionpurge;
-reserved current fresh/NAS8 outcomes excluded. Fixed gross+U10 downside heads,
-utilitypositiveTop4/original quarters/cash against full/samegross return-head
-and samegrossEW. Shared-head POLICY control is not an independent model.
-CatBoost2048max/inner80/soft150s; TCN512max/inner48/LR/best-safe restore/
-soft720s/hard750s. No DEV checkpoint choice, unseen-alpha/PIT/TR/CA claim.
-Ohm independent source9b52 review81checks/48pins closed; equal-DATE minibatch
-weighting and physical HELD-isolation wording corrected before source freeze.
-No remaining source stop is not market-result certification.
+Peer-relative OC study CLOSED: Source0ca2a022/RESULTfb7444f7 under
+A/research/current-broad512-peer-intraday-residual-selection-development-
+20261103-v1. Actual2fits+2forecasts/10views/0retry; CPU/CUDA fit in parallel.
+CPU53trees/BEST52; CUDA19epochs494updates/BEST6/INNER_EARLYSTOP12, safe cold
+restores/durable curves. Net10 growth CPU-41.309432%/TCN-52.037411%: both
+primaryFAILED. Gross CPU+28.545034% is NOT net profit; daily-flat turnover
+dominates. No current Paper/full17/Nov9 model or bank swap.
+Parent43sourcepins0mismatch/resultmatch;50PIDbirths/6CIDs/lease closed/finalizer
+absent.847.162812 upper includes source/closure reserves, not measured GPU time.
+Adaptive/currentlisting/nonPIT/notTR/MODEshift/costproxy/close-DD limits remain.
 
-Fixedhalf c23bb15e is CLOSED source-only/input_unavailable,0actualviews; no
-qualified two-model prediction pair and no silent source/model substitution.
-Confucius next chooses exactly ONE new frozen technical successor by evidence:
-partial-checkpoint diagnostic0fits/oneforecasteach <=1800SUM1800elapsed OR
-bootstrap-aware convergence1CUDAfit/0CPUrefit <=7800SUM7200elapsed,oneforecast
-per model/<=12views/0retry. Reuse completed CPU checkpoint, never refit it.
-New source/caps/native/Claude first; per-epoch durable curves/stages and actual
-process-time setup/inner/checkpoint reserves. Stop safely by15:00 for Paper.
+Next Engine priority: separately deduplicated inventory-coupled1..3session
+cost/turnover mechanism, not old OC refits or relaxed frozen criteria.
+Euclid source-only current-short-swing-turnover-mechanism-proposal-20261103-v1,
+240SUM1800elapsed/0fits/forwards/readouts; direct Engine handoff. Engine may
+freeze a distinct <=7800SUM10800elapsed/<=2fits/<=12views/0retry campaign after
+native/contract/resource checks. Delegation is not an actual GPU launch.
 
 ## Closed Paper Handoff
 
@@ -44,8 +42,11 @@ Real Data-reader -> each trusted model -> fixed meanrank -> strict full18.
 One tiny synthetic TimesFM call and one Chronos call/two restores,
 0marketforecasts/fits/replays/retries; actors/CIDs/leases closed.
 REVISE/limitations retained. Actual Nov6 input/scores/weights UNKNOWN.
-Proposed separately owned Nov9UTC14:25..<14:30 producer600SUM300elapsed,
-one fresh market call per model, NOT installed. Hooke owns finite Task prep.
+Nov9UTC14:25..<14:30 producer is ACTUALLY installed/enabled:
+ACTUAL-COMPLETE5f26bd94/independent84147aac under current-full17-h3-producer-
+native-xsd-diagnostic-20261103-v1. Typed metadata926e/source22f3/runtimefb3a,
+two future model calls/0fits/replays/retries; actual future point UNKNOWN.
+This is not full17 financial deployment. Consumed metadata commands not replayed.
 No human-JIT future hash, stale forecast retag, current H3 or bank swap.
 
 Adapterbd6f1fa8/480checks and named-account smoke2d9c55fd/783checks are CLOSED:

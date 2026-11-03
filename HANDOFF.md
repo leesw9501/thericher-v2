@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov3UTC13:08 / Nov3KST. Workspace C:/Users/Public/Documents/thericher-v2.
+Updated Nov3UTC14:54 / Nov3KST. Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared MD/integration/Git. Production source/verification is below;
@@ -18,27 +18,47 @@ H3 can mean different explicit profiles; never silently alias elapsed/inclusive.
 
 ## Priority Recovery And Repeatability
 
-Today's Open45 Data142/775 is installed but its actual source is NOT ready:
-Euclid's exact source preflight found THREE changed mutable C SDK pins
-(account session, model horizon, model weights), rejected by ownerlib.py:105
-before credentials/collection. This is source drift, not a KIS quota/capacity
-failure.9GET+1prewarmPOST/2second pacing/25s capture are not disproven by timing;
-9head17.899650s does not prove full45 input/scoring. Do not replay142/775.
-Data owns current-open45-frozen-sdk-publisher-repair-20261103-v1,780SUM4500elapsed;
-Execution owns current-open45-frozen-publisher-financial-binding-repair-
-20261103-v1,900SUM4500elapsed. Freeze required SDK on D and qualify explicit
-new publisher/Definition/financial bindings with SAME original clocks/B10/F9/
-pending identities/exits. Parent alone updates exact future definitions after
-positive relevant old-owner closure. Independent Review runs in parallel.
-Existing installation below is historical fact, not proof this drift is fixed.
+Open45 publisher is ACTUALLY migrated to frozen D SDK Sourceecfc19c0/
+Definitioneaacee75/metadataSourcebb777f4f. Exact old source/complete XML/ACL
+capture, UPDATE4-only disabled definition, independent disabled readback,
+Enable and independent enabled readback all passed. Finalread0c4cda29:
+enabledReady3/0instances/neverrun267011, same Nov3UTC15:07:30 trigger,
+capture15:16..15:16:25/score<=15:16:55. Parent proofEF2BCEA1:
+A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/PARENT-ACTUAL-COMPLETE.json.
+Five hidden metadata workers joined/exit0/exact births absent,9.156780s upper.
+No TaskRun/KIS/credentials/models/private-state calls during this migration.
+Original142/775 stays immutable; its THREE mutable C pin failures were source
+drift, not a provider quota failure. Frozen SDK489 and actual CPU tensor
+bootstrap/native lifecycle/schema24 are checked; full45 capacity/future point
+remain UNKNOWN. This is CPU-only scoring, not a GPU reservation.
 
-Parent repaired same-policy H3ops next-dated-cohort admission ONLY after
-positive prior owned-terminal-flat completion. Pending/active substitution,
-completed-input replay, foreign adoption and budget reset remain rejected.
-Independent Review found first-skip active=None crash; exact native initial
-active comparison plus quote/sizing/foreign regressions now cover it.
-15repeat cases included in269serial and fresh20045PASS/26skip; authority below.
-Old D-frozen scheduled SDKs are NOT automatically upgraded by this C edit.
+Open45 financial c4b38148/release6e3d61a1 is ACTUALLY migrated/enabled and
+independently read back77e9bfb0 at14:52:34. Same exact entry15:17..<15:18/
+ownedexit16:17..<16:18/PT7M, BUYdeadline15:22/account/basis/run/policy/original
+quarter/B10/F9/reservations/identities/all exits; exit enabled before entry.
+Parent proofBB516F69 at A/execution/current-open45-metadata-docker-query-
+calibration-20261103-v1/PARENT-ACTUAL-COMPLETE.json; capture2b68111d/
+recoverycd098a3b/read77e9. Three hidden metadata workers11.482337supper/
+42Jobmembers all joinedempty/closed/exactPIDs absent;0TaskRun/broker/private/
+credentials/models. MetadataSourcee8099c57 adds qualified positive process
+ExitCode/join/source-filter query only. Seven focused fixtures include null/
+nonzero/timeout rejection; original actual actor/source/financial guards remain.
+Prior no-op/r2/r3 failures/debits retained; r2 exact cause still UNKNOWN.
+Nullable module LASTEXITCODE is not treated as0. Original DF413/529 history
+is superseded operationally, not replayed/erased. Actual future point/financial
+effects UNKNOWN. Dataecfc is separately actually enabled/independent0c4c.
+
+New Data->OneLeg composed smoke COMPLETE:405inventedbars/8knowninputs/
+one original quarter target plus4negative rejections; separate SDK489/577
+processes, no class mixing/models/market/Task effects. Only fixture Windows
+read-access mask repaired. Callback current-open45-frozen-publication-to-
+oneleg-smoke-20261103-v1; not actual future data/financial execution.
+
+Parent C repeat-wrapper repair33b0ae80 is pushed: SAME-policy H3ops next dated
+input ONLY after positive prior owned-terminal-flat. Pending/active substitution,
+completed replay, foreign adoption and budget reset remain rejected. Review
+P1 first-skip active=None fixed;15native repeat cases in269serial and fresh
+20045PASS/26skip. Old D-frozen scheduled SDKs are NOT implicitly upgraded.
 
 ## Actual H3 Installation
 
@@ -92,47 +112,51 @@ Pure H3 parser H3-IMPACT.json proves no Open45 sentinel defect, not execution.
 
 ## Actual Open45 Runtime
 
-Data-only publisher ACTUALLY enabled14268659/Definition77513d80/
-readback73d5f0fb. Nov3UTC15:07:30 trigger, prewarm15:08..<15:11,
-capture15:16..15:16:25, score15:16:30..15:16:55.
-Actual full45 point UNKNOWN. No old consumed metadata replay.
+Open45 publisher is ACTUALLY migrated to frozen D SDK Sourceecfc19c0/
+Definitioneaacee75/metadataSourcebb777f4f. Exact old source/complete XML/ACL
+capture, UPDATE4-only disabled definition, independent disabled readback,
+Enable and independent enabled readback all passed. Finalread0c4cda29:
+enabledReady3/0instances/neverrun267011, same Nov3UTC15:07:30 trigger,
+capture15:16..15:16:25/score<=15:16:55. Parent proofEF2BCEA1:
+A/data/current-open45-frozen-sdk-publisher-repair-20261103-v1/PARENT-ACTUAL-COMPLETE.json.
+Five hidden metadata workers joined/exit0/exact births absent,9.156780s upper.
+No TaskRun/KIS/credentials/models/private-state calls during this migration.
+Original142/775 stays immutable; its THREE mutable C pin failures were source
+drift, not a provider quota failure. Frozen SDK489 and actual CPU tensor
+bootstrap/native lifecycle/schema24 are checked; full45 capacity/future point
+remain UNKNOWN. This is CPU-only scoring, not a GPU reservation.
 
-New financial runtime is ACTUALLY installed/enabledReady3/0instances:
-- thericher-open45-oneleg-ops-entry-20261103-v1,
-  Nov3UTC15:17..<15:18/PT7M =Nov4KST00:17.
-- thericher-open45-oneleg-ops-owned-exit-20261103-v1,
-  Nov3UTC16:17..<16:18/PT7M =Nov4KST01:17.
-Root A/execution/current-open45-uri-bound-runtime-recovery-preparation-20261103-v1.
-RuntimeDF413fe837137d1bd12700af7aa582d00ad76ca32468804a196c6f8ab95614b5,
-release529e0692a74fa3642deaa44dfc8a80d0dd59f4908317e1f3c6b317e285328499.
-RECOVERY-COMPLETE3ee0c17fd4821f487f78c35bccc165bbda64503c51b9e389bb86698f045953bb;
-INDEPENDENT-READBACK3a6597d6a337763e65a69216f9ad8d0c96755b53ab10ff808124b4dcb94cf371.
-Parent Inert/recover/readback each Jobtotal2/active0/joined/handlesclosed.
-No TaskRun, KIS/account/private/financial call during adoption.
+Open45 financial c4b38148/release6e3d61a1 is ACTUALLY migrated/enabled and
+independently read back77e9bfb0 at14:52:34. Same exact entry15:17..<15:18/
+ownedexit16:17..<16:18/PT7M, BUYdeadline15:22/account/basis/run/policy/original
+quarter/B10/F9/reservations/identities/all exits; exit enabled before entry.
+Parent proofBB516F69 at A/execution/current-open45-metadata-docker-query-
+calibration-20261103-v1/PARENT-ACTUAL-COMPLETE.json; capture2b68111d/
+recoverycd098a3b/read77e9. Three hidden metadata workers11.482337supper/
+42Jobmembers all joinedempty/closed/exactPIDs absent;0TaskRun/broker/private/
+credentials/models. MetadataSourcee8099c57 adds qualified positive process
+ExitCode/join/source-filter query only. Seven focused fixtures include null/
+nonzero/timeout rejection; original actual actor/source/financial guards remain.
+Prior no-op/r2/r3 failures/debits retained; r2 exact cause still UNKNOWN.
+Nullable module LASTEXITCODE is not treated as0. Original DF413/529 history
+is superseded operationally, not replayed/erased. Actual future point/financial
+effects UNKNOWN. Dataecfc is separately actually enabled/independent0c4c.
 
-Original2307 Install09:38 failed URI-only readback; readonly capture43d84fbf
-and prototype300/500 found the same defect in runtime owner_library.
-New shared exact-URI N-Definition fixes installer AND owner validation.
-Prep source8e0d8ee5/finala87ae62a/native43+realbootstrap5/791.173030upper,
-three mock attempts/two retained fixture failures/0financialguestpairs.
-Inherited14 guest proof remains unchanged-core-only. Missing directly pinned
-metadata manifest was restored from exact original bytes; assembly29701c22/
-real bootstrap5, no code/financial change. Old failures/debits/latches retained.
-ClaudeGO_WITH_LIMITS/partialpeer/non-atomic honest-host verification-update
-race limits remain. No broad URI ignore, unknown adoption or old Install replay.
+No TaskRun/catchup/consumed mode replay. Installation is not submit/acceptance/
+fill/current inventory/fees/settlement/netPnL.
 
-Actual source/date/asof/checkpoint/point/seal/publisher positive closure still
-runtime-required; original forecast admit15:17..<15:18, separate BUYdeadline15:22.
-One original ranked quarter/other cash, no renormalization/new bank.
-Installation is NOT submit/acceptance/exact fill/current inventory/PnL.
+Read-only original3-definition capturea6a21d3a/RESULT at
+A/execution/current-open45-original-definition-quiescence-capture-20261103-v1
+matched exact original full XML/Definition/ACL at14:07:56..58 and visible scoped
+actors absent then. It is point-time evidence only, not a substitute for actual
+migration's fresh checks. Three rollback definitions retained. No broad
+version/URI/unknown-field normalization or unrelated research-actor veto.
 
-Actual nine-head probe67070e78/PLAN4ef1446c is CLOSED:
-1POST9GET/all200/99premarketrows,17.899650sround/15.984643ssleep,
-wire/body.486422s/host26.289803s/fullactor127.520257/allclosed.
-First45 input UNAVAILABLE then; full45/open-session/compression unmeasured.
-Arithmetic7.100350s is not measured spare budget. Old0HTTP failure was callback
-39s>30s, not provider capacity. New prebound launcher is not a late LLM network
-release barrier; C-source census denies unknown actors, never exempts them.
+Actual nine-head probe67070e78 remains CLOSED:1POST9GET/all200/99premarketrows,
+17.899650sround/15.984643ssleep; full45/open-session capacity unmeasured.
+New source retains9GET1prewarmPOST/0retry/2s pace, not an invented provider limit.
+Source markers assume honest host, NOT cryptographic Scheduler origin;
+Operational logging disabled. All actual financial effects UNKNOWN.
 
 ## Data And Successors
 
@@ -231,10 +255,17 @@ callback473b361b/595pins0mismatch/451.633839upper/nativePASS.
 Real Data reader -> TimesFM+Chronos APIs -> fixed meanrank -> strict full18;
 one tiny synthetic call per model/two restores,0marketforecasts/fits/replays/
 retries/allactorsCIDsleasesclosed. REVISE/limitations retained, no alpha claim.
-Actual future input/scores/weights UNKNOWN. Proposed Nov9UTC14:25..<14:30 once
-producer600SUM300elapsed NOT installed. Infra prepares its finite ownership/
-clock/resource path; Execution prepares source-only Nov9OPEN5/Nov11PRE_CLOSE15
-serial account round. No human-JIT hash, score retag, Nway bank or H3 swap.
+Nov9 full17 meanrank PRODUCER is ACTUALLY installed/enabled, not a financial
+account round. Taskthericher-full17-h3-finite-producer-20261109-v1,
+Nov9UTC14:25..<14:30 =Nov9KST23:25. Typed Task XML1.3 repaired the measured
+1.2/UseUnifiedSchedulingEngine XSD failure without changing action/caps.
+A/research/current-full17-h3-producer-native-xsd-diagnostic-20261103-v1/
+ACTUAL-COMPLETE.json SHA5f26bd94; independentread84147aac;
+adoption22f389f1/metadata926e8f8c/runtimefb3a1deb/Definitiond732a90a.
+Four consumed metadata phases passed/Jobs joined empty/0TaskRun/modelcalls.
+Original1db .005 proposal bytes, two future trusted model calls/0fits/replays/
+retries remain; input/scores/weights/runtime result UNKNOWN. Old7b52 Create
+failed PRE_CREATE and is not replayed. Full17 financial deployment NOT installed.
 
 Broad512 input is CLOSED requalified: basead9a/completion361d/DATASETdf021/
 READINESS35c6/VERIFY3069,37Parentpins0mismatch/sixactorsclosed.1,170,008MODE0
@@ -243,18 +274,35 @@ Original failed partial was recovered/requalified, not an original sealed pass;
 full-lineage SUM unmeasured remains, no cap-pass claim. No PIT/TR/CA/finality.
 Strategy kernel1f76/native106/28pins and independent source review81 are closed.
 
-Actual Engine9b5206a3 broad512 U10 family is CLOSED UNQUALIFIED:
-ONE completed CPU CatBoost fit/best92/safe CBM preserved; ONE actual CUDA TCN
-attempt reached watchdog124 after750.564558s. No market forecast/economic
-readout or qualified fixedhalf pair;0retry. All38actors/4CIDs/lease closed.
-FailedCUDA2254.362248SUM retained, not refunded or called completed training.
-Confucius owns a separately frozen technical successor choice: exact partial
-checkpoint diagnostic0fits within1800SUM1800elapsed OR one bootstrap-aware
-convergence CUDAfit/0CPUrefit within7800SUM7200elapsed. Choose one by technical
-evidence before new numerical dispatch; durable per-epoch diagnostics and
-source/caps/native first. Stop/yield safely before15:00 for owned Paper.
-Fixedhalf c23bb15e remains pure source preparation/input_unavailable,0newviews;
-never silently rebind it to a different model or expand old12views.
+Broad5129b52 stays CLOSED: CPU CatBoost completed/BEST92 retained; CUDA
+TCN watchdog124/partial weights, not convergence or certified BEST. All old
+actors/CIDs/lease/debits are closed/preserved, no refit or refunded attempt.
+Separate frozen-checkpoint diagnosticc4bfaeec ran two forecasts/12fixed views
+then failed numpy.bool_ summary serialization. Cache-only recovery25926cf3/
+RESULT8602c483 completed those SAME views with0fits/forwards/rebooking.
+Both U-positiveTop4 policies were ALLCASH and failed growth/nonempty/samegross
+controls; no alpha or qualified selection pass. Lower DD from no exposure
+is not alpha. Actual full-gross return-head net10 growth was negative
+(CPU-47.223929%, partialTCN-38.853943%), not broker PnL.
+Fixedhalf c23b remains source-only/input_unavailable/0views; no silent rebound.
+
+Peer-relative OC study CLOSED: Source0ca2a022/RESULTfb7444f7 under
+A/research/current-broad512-peer-intraday-residual-selection-development-
+20261103-v1. Actual2fits+2forecasts/10views/0retry; CPU/CUDA fit in parallel.
+CPU53trees/BEST52; CUDA19epochs494updates/BEST6/INNER_EARLYSTOP12, safe cold
+restores/durable curves. Net10 growth CPU-41.309432%/TCN-52.037411%: both
+primaryFAILED. Gross CPU+28.545034% is NOT net profit; daily-flat turnover
+dominates. No current Paper/full17/Nov9 model or bank swap.
+Parent43sourcepins0mismatch/resultmatch;50PIDbirths/6CIDs/lease closed/finalizer
+absent.847.162812 upper includes source/closure reserves, not measured GPU time.
+Adaptive/currentlisting/nonPIT/notTR/MODEshift/costproxy/close-DD limits remain.
+
+Next Engine priority: separately deduplicated inventory-coupled1..3session
+cost/turnover mechanism, not old OC refits or relaxed frozen criteria.
+Euclid source-only current-short-swing-turnover-mechanism-proposal-20261103-v1,
+240SUM1800elapsed/0fits/forwards/readouts; direct Engine handoff. Engine may
+freeze a distinct <=7800SUM10800elapsed/<=2fits/<=12views/0retry campaign after
+native/contract/resource checks. Delegation is not an actual GPU launch.
 
 ## Preserved Duties / Monitor / Verification
 
