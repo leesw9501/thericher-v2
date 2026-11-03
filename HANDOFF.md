@@ -2,12 +2,12 @@
 
 ## Current Reality
 
-2026-11-03 KST / Nov3UTC03:55 integration.
+2026-11-03 KST / Nov3UTC04:35 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
 Parent owns shared MD, integration and Git. No operator decision pending.
-Latest pushed integration: 9d04e169; later current-state docs may be dirty.
+Latest pushed integration: 5a171481; later current-state docs may be dirty.
 
 Preserve ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, original
 pending identities and ALL original exits. Never KIS_LIVE_*, substitute unknown
@@ -116,8 +116,8 @@ Source03567531fa6ef56feff5e24e77a967bbbb9e254820a950a845a33cca9fcc1804;
 PLAN16d17ac9f8497da8a5dc83ed7ff868f32926c9e3316cd736fc1bbd51b0a526ee;
 native156/ClaudeSOUND_WITH_LIMITS/32pins stable/750prep upper of900.
 Quiet actual hostPID38820/birthFILETIME134381514718000731 launched
-Nov3UTC03:51:11.809191/release48f66d69. First03:52:32 progress:
-12GET1POST/12responses1440rows/482remaining/0technicalfailures.
+Nov3UTC03:51:11.809191/release48f66d69. Exact04:35:16 progress:
+402GET1POST/402responses48240rows/92remaining/0technicalfailures.
 This is RUNNING, not completion. Inspect only its exact actual-once paths.
 Caps494GET/1initialPOST/0retry/5400worker5460host/16350full actor-SUM.
 Known exact synthetic collisions get at most30s worker-owned wait until a
@@ -130,22 +130,27 @@ M/raw_quarantine/kis_paper/current-us19-raw-historical-batch-20261103-v1;
 M/raw_quarantine/kis_paper/current-us19-raw-historical494-continuation-20261103-v1.
 Raw capture retains both clocks verbatim; qualified_count0 stays unchanged.
 
-### Usable Input, Not Row Count
+### Usable Input And Corrected Opening Diagnosis
 
 Source-only exploratory reader COMPLETE:
 A/data/current-us19-provisional-minute-panel-preparation-20261103-v1,
 Sourced8d6c8c7/API2b3881d1/native24/240upper, no actual input in that scope.
 A separate actual stage is at
 A/data/current-us19-provisional161-input-staging-20261103-v1.
-Its counts show all10 assets have ZERO complete first45/first60 input dates.
-Observed runs start10:00ET, omitting09:30..09:59. Only4dates mostly/AMD5 have
-rows on the original25-date axis; raw19320 is not19320 model-usable rows.
-Finishing494 does NOT fill the missing opening30minutes.
-Next Data source-only priority:
+Its CLOSED view reported zero first45/60 contexts and runs starting10:00ET.
+That is NOT proof the raw captures lack09:30..09:59. Exact new source finding:
 A/data/current-us19-opening30-gap-preparation-20261103-v1,
-600SUM1800elapsed, derive<=250 exact09:59 queries for10assets x25dates.
-No hidden extra requests in494. Acquire more independent dates after usable
-contexts; old depth120/600 prep expired unfinished, never refunded/reopened.
+FINAL-SOURCE-r2 b44ca37f/finding25d05872/180upper of600, sixnativechecks.
+Forty selected closed raw pages contain complete opening30 labels (1200cells).
+Old reader.py rejects a WHOLE page when any row is outside RTH; these120-row
+pages also contain90premarket rows. No extra opening GETs are justified now.
+The old161 stage/reader remain immutable, not silently regraded.
+Ohm owns NEW current-us19-mixed-session-research-view-20261103-v1,
+600SUM1800elapsed: parse/validate ALL rows, then select RTH with exclusion
+counts, explicit proxy manifest and actual native consumer tests. Malformed
+outside rows cannot bypass validation. Separately stage completed immutable
+pages after source freeze; do not invent more independent dates or Paper input.
+Old depth120/600 expired unfinished, never refunded/reopened.
 
 Proxy research manifests retain explicit unverified NY local-label mapping,
 non-PIT/current-listing/CA/finality/START-END/mixed-vintage/missing masks.
@@ -173,8 +178,13 @@ Harvey is sole GPU coordinator. Completed numerical work is not running:
 All remaining historical study/checkpoint/custody links and original caps,
 failures and debits are indexed in agents/engine-research.md and Git.
 Do not repeat completed fits/forecasts to occupy GPU or repair logs.
-Next trainable campaign depends on actual usable support, not raw count;
-exclude reserved NAS8 Nov3/4 outcomes and avoid another5DEV winner search.
+Harvey now owns a distinct full-day rolling-context TCN campaign using the
+existing original8+SPY fullRTH25-date source, independently of new raw494:
+A/research/current-full-day-intraday-tcn-development-20261103-v1,
+3000SUM7200elapsed/onefit/oneforecast/finite views. Source/native/Claude/VRAM
+qualification precedes actual fitting. Do not infer running GPU from dispatch;
+preserve deferred transfer3040 and exclude reserved NAS8 Nov3/4 outcomes.
+Dense origins are not more independent dates or an old5DEV winner reranking.
 
 Closed source-only deployment ingredients:
 - A/research/current-open45-paper-proposal-readiness-20261103-v1:
@@ -190,13 +200,20 @@ Closed source-only deployment ingredients:
   has NOT been read. Never adopt foreign inventory to force a trade.
 
 Current disjoint source/native packages are in NEXT_CODEX_GOAL:
-Execution partial/restart qualification; Data Feed first45/prewarm; Data old161
-proxy stage; Engine next useful campaign; Data494 actual + opening gap plan.
+Execution direct partial/restart qualification, mixed-session input repair,
+full-day TCN preparation and actual Data494. The original pytest partial harness
+closed393.932664upper after3pre-collection failures, zero recovery assertions;
+the NEW direct scope invokes the real semantic functions without pytest capture.
 Data Feed must prewarm/reuse valid RAM token and obtain SPY first.
 10:16..10:16:25 capture/10:16:55 score are proposed budgets, not measured
 latency promises. Bind actual Broker token/cache/floor before runtime release;
 Data300/observer240+60 interaction is a SOURCE HYPOTHESIS, not measured
-starvation. No old guard recalibration or actual Feed installation is inferred.
+starvation. NEW feed60 source-only facade d53da0d7/API92d94e1f/native53/
+292.951636upper uses the SAME timing gate and one initialPOST/RAM reuse;
+review_unavailable is not agreement. No actual Feed adoption, old guard change
+or measured latency is inferred. Original feed55checks/373.033207upper stays.
+Price-only exit expert647d9bf6/native35/240upper/GO_WITH_LIMITS is a ready
+pure next-bar proposal, not an actual market readout or H3 exit/risk change.
 
 Temporary Throughput Franklin CLOSED:
 A/infra/current-quiet-census-throughput-prototype-20261103-v1/API.json,

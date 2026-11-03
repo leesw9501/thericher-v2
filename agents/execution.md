@@ -2,16 +2,24 @@
 
 ## Current Ownership
 
-CURRENT03:55: Open45 same-session source-native profile preparation CLOSED:
+CURRENT04:35: Open45 same-session source-native profile preparation CLOSED:
 Source62eed9c7/API0149bb80/32focusedchecks/700upper at
 D:/thericher-v2/model-artifacts/execution/current-open45-intraday-native-profile-preparation-20261103-v1.
 No actual effects/deployment. Claude REVISE retained (timing/AST/proxy), not a
 profitability veto. Current new partial/restart qualification owns its own
-600SUM1800elapsed scope; untested partial-fill extension is not claimed PASS.
+600SUM1800elapsed scope. Old pytest harness393.932664upper closed after3
+pre-collection failures/zero recovery assertions. NEW direct semantic tests
+at current-open45-direct-partial-recovery-20261103-v1 invoke real prepared
+functions in fresh guests without pytest capture; do not replay old control.
+Untested partial-fill extension is not claimed PASS.
 Old flat stock registrations can make new-cohort entries skip; actual current
 overlap has NOT been read. Never remove old plans/losses/reservations to trade.
 CPU point66a560 and Data Feed source55checks are ready ingredients, not a
-complete actual caller/factory/token timeline or finite release.
+complete actual caller/factory/token timeline or finite release. NEW feed60
+facade d53da0d7/native53/292.951636upper is source-only NOT adopted;
+review_unavailable, old Data/default300 unchanged. Any new operational
+dispatch-window identity needs explicit source/native/short challenge, not
+extension of expired original intents or regrading original model payoff.
 
 Nov3UTC02:30 CURRENT delta. H3 financial entry/exit below remain enabled.
 New automatic post-entry reader Source9410af60 actual Install failed after

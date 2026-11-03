@@ -2,26 +2,30 @@
 
 ## Current Ownership And Ready Inputs
 
-CURRENT03:55: NEW494 continuation is ACTUALLY running:
+CURRENT04:35: NEW494 continuation is ACTUALLY running:
 D:/thericher-v2/model-artifacts/data/current-us19-raw-historical494-continuation-preparation-20261103-v1,
 Source03567531/PLAN16d17ac9/native156/750prepupper. Parent launch03:51:11,
-host38820/birthFILETIME134381514718000731/release48f66d69; first03:52:32
-progress12GET1POST/1440rows/482remaining/0technicalfailures. No replay/reset.
+host38820/birthFILETIME134381514718000731/release48f66d69; exact04:35:16
+progress402GET1POST/48240rows/92remaining/0technicalfailures. No replay/reset.
 Original70ef161GET/19320rows is closed, not this worker. Exact known synthetic
 collision permits only bounded30s worker wait for positive closure, never an
 active actor exemption. Unknown actual API/token writers still defer.
 
-Actual161 proxy staging coverage:14520RTHknown of97500declared cells,
-all10assets first45/first60 input dates0; known runs start10:00ET. Raw count is
-not model-input count. Finishing494 does not repair opening09:30..09:59.
-NEW current-us19-opening30-gap-preparation-20261103-v1/600SUM1800elapsed
-derives<=250missing09:59 requests; no extra calls in the frozen494 batch.
+Actual161 CLOSED view reported14520RTHknown of97500cells and zero first45/60
+contexts. New opening30 finding b44ca37f/25d05872/180upper proves40selected
+closed captures DO have09:30..09:59. Old reader rejects whole mixed-session
+pages due to premarket rows; this was a consumer limitation, not raw absence.
+No extra GET justified. Ohm owns NEW current-us19-mixed-session-research-view-
+20261103-v1/600SUM1800elapsed: validate all rows then select RTH, retaining
+exclusions/masks/proxy limits; source/native/Claude before separate intake.
+Old161/d8/rawqualification0 unchanged; no extra calls in frozen494.
 Old date-depth prep120/600 expired unfinished, not refunded or reopened.
 
 Temporary Data Feed source-native is closed55checks/RESULT-v2/373.033207upper,
 network-none/no private mounts/no actual calls; old controller accounting is
 invalid and consumed. NEW feed-only60-floor source calibration is separately
-owned by Hooke; old default/494300 unchanged. See NEXT_CODEX_GOAL for exact
+COMPLETEd53da0d7/API92d94e1f/native53/292.951636upper, source-only NOT adopted,
+review_unavailable. Old default/494300 unchanged. See NEXT_CODEX_GOAL for exact
 input/deadline/native/accounting boundaries. No actual Feed installation.
 
 Nov3UTC02:30. Copernicus01a19ebd-e066-7f90-87c5-cd5096e0d59c owns

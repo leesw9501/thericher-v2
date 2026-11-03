@@ -8,9 +8,16 @@ not still pending. Open45 Paper readiness is COMPLETEc9eae425/native52.
 CPU point-producer preparation is now COMPLETE66a5600b/RESULTee918c90/native25,
 432.705026upper/13actorsCIDclosed; trusted original checkpoint restore plus
 invented CPUforward only, no market evaluation/GPU. New GPU training depends
-on a frozen useful hypothesis and actual support; raw161 has opening masks0.
-Original8+SPY fullRTH25dates remain a possible rolling-context research input,
-not permission to repeat completed fits or claim more independent dates.
+on a frozen useful hypothesis and actual support. The raw161 old view had
+opening masks0 because mixed-session pages were discarded; findingb44ca37f
+corrects raw-absence inference, not old study qualification.
+CURRENT04:35: Harvey owns NEW full-day TCN family at
+A/research/current-full-day-intraday-tcn-development-20261103-v1,
+3000SUM7200elapsed/onefit/oneforecast/finite views. Existing original8+SPY
+fullRTH25dates support this distinct context/horizon study independently of494.
+Require actual source/native/Claude/headroom/lease before dispatch; do not
+report a running GPU fit from MD/queued instructions. Preserve deferred3040
+and every old cap/debit; no completed-fit repeat or more-independent-date claim.
 No environment, user-app or operator-permission hold on useful GPU training.
 
 - Original Open45: LSTM34updates/BEST10/.269500optimizersec/.549433fitwall,

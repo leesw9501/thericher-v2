@@ -2,6 +2,21 @@
 
 ## Current Source Handoff
 
+CURRENT04:35: one price-only exit expert is COMPLETE at
+D:/thericher-v2/model-artifacts/research/current-price-only-exit-expert-proposal-20261103-v1,
+Source647d9bf6/API d8508d9b/native35/240upper/GO_WITH_LIMITS. Independent
+standard math, no licensed public code copied, no actual market readout.
+Close-based failed-breakout/trailing evidence acts only next declared bar;
+it is not an intrabar stop fill or current H3 exit/risk change. Engine owns
+one future frozen entry/base-exit/cost readout, not a parameter grid.
+Ohm now has a temporary Data assignment: mixed-session research view at
+D:/thericher-v2/model-artifacts/data/current-us19-mixed-session-research-view-20261103-v1,
+600SUM1800elapsed from receipt. Opening30 findingb44ca37f/25d05872 proves
+40closed captures contain opening rows; old reader discarded whole mixed
+pages. Strictly validate all rows then select RTH with exclusions/proxy masks;
+no new HTTP, raw qualification rewrite or more-independent-date claim.
+Earlier preparation prose below is historical, not active work.
+
 Nov3UTC03:05 CURRENT. Phase45 is CLOSED RESULT12f16aa2 (net10+1.205178pct,
 below original LSTM); absolute-cost gate CLOSED RESULT06851f0c (all cash,
 no useful trade). No more repeated tuning of the same5DEVdates.

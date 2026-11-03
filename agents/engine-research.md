@@ -19,13 +19,19 @@ one trusted BEST10 weights_only CPU restore/one invented forward.025sec,
 13actors/CIDclosed, no market inference/evaluation/new fit/GPU. Direct API
 handed to Execution and Data. Earlier pending wording is historical.
 
-Actual new raw161 stage cannot support opening45/60 contexts (first30missing,
-only4datesmostly/AMD5). Existing original8+SPY fullRTH25dates remain available
-for ONE distinct all-day rolling-context/horizon experiment if it is genuinely
-useful; not another old5DEV winner search or dummy GPU job. Harvey owns choice,
-actual source/support/caps/native/Claude and resource qualification; no new
-actual training is claimed from this option. Preserve every existing family
-clock/debit and exclude reservedNASNov3/4. Data morning-gap plan proceeds.
+CURRENT04:35: raw161 old view reported no opening contexts, but opening30
+findingb44ca37f/25d05872 proves40selected captures contain them; old whole-page
+RTH filtering discarded mixed-session pages. Ohm repairs a separate explicit
+research view, not old raw qualification or original results. Transfer3040
+remains deferred with original caps/debits; no automatic intake/fit restart.
+Harvey owns NEW current-full-day-intraday-tcn-development-20261103-v1,
+3000SUM7200elapsed/onefit/oneforecast/finitecostviews, using existing original8+
+SPY fullRTH25dates. Exact causal context/receptive field/horizon/grid/purge/
+INNERstop/maxepochs-updates-time/native/Claude/VRAM before fitting. Dispatch
+is not a running GPU PID. Dense origins do not add independent DEV dates;
+exclude reservedNASNov3/4 and keep all old campaigns/results immutable.
+Price-only exit expert647d9bf6/native35/240upper is ready for ONE future
+Engine-frozen entry/base-exit/next-bar-cost readout, not current H3 changes.
 
 A=D:/thericher-v2/model-artifacts.
 
