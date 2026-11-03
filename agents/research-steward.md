@@ -40,10 +40,18 @@ execution: local profile.py shadowed Python's standard-library module.
 A/research/current-short-swing-h3-return-tcn-continuation-development-20261104-v1/
 FINAL-CALLBACK.json. Zero forwards/updates/GPU work/fits/forecasts; safe optimizer
 restore remains unqualified, not an unavailable GPU environment.
-Old zero-retry result/debits stay closed. A NEW small readiness package owns
-the prepared rename, resolved stdlib/cProfile/Torch bootstrap and actual
-invented-input optimizer/moments-restore/throughput check before another market
-contract. No finished fit is restarted; no current training is inferred.
+Old zero-retry result/debits stay closed. The NEW stdlib/bootstrap and actual
+optimizer/moments-restore/throughput package is CLOSED native PASS:
+A/research/current-return-tcn-throughput-native-recovery-20261104-v1/FINAL-CALLBACK.json.
+Same-shape CPU1.0332s versus CUDA5.4587s step; eval512 CPU0.2805s/CUDA6.8975s.
+These are co-tenanted observations, not isolated benchmarks or market results.
+Distinct BF16 proposal also CLOSED before updates:
+A/research/current-short-swing-h3-bf16-tcn-moments-continuation-development-20261104-v1/FINAL-CALLBACK.json.
+Frozen output parity4.7841%>2%;0updates/market fits/forecasts/views,1technical
+retry,645.5924/7800upper, all actors/CID/lease closed. No global GPU permission
+hold follows this scoped rejection. Choose faster useful CPU FP32 convergence
+or a separately frozen GPU-friendly hypothesis, not a threshold waiver or
+completed-fit replay. At21:57 GPU1%,23130MiBfree/36C; no owned fit active.
 
 ## Frozen Resource Index
 

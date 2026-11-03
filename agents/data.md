@@ -2,7 +2,7 @@
 
 ## Current Data / Next
 
-Updated Nov3UTC21:20 / Nov4KST. Erdos owns same-capture OHLC60 integration.
+Updated Nov3UTC21:55 / Nov4KST. Erdos owns new recovery/consumer bindings.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
 
 Long training input c1a36b16/manifestccec384a is CLOSED:
@@ -22,7 +22,7 @@ Actual new manifest/input/hash remain UNKNOWN until positive original DataREADY,
 cache/actor closure and separately sealed raw/publication linkage. No old
 close-only claim is changed; no model/Paper/bank swap follows adapter readiness.
 
-Earlier coherent19 Data dc8c48fc ACTUALLY enabledNov3UTC21:30/hard21:45:
+Earlier coherent19 Data dc8c48fc CONSUMED and failed before capture:
 A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/
 metadata-create26-delta-v6/PARENT-COMPLETE.json; Source2d7ba96e/native891387eb.
 Positive original NAS8 source/cache closure required; no machine-wide idle gate.
@@ -39,9 +39,10 @@ Existing strict parser accepted provider timestamp fields; not future freshness
 or independent timezone/financial proof. Old300-floor0HTTP probes retained.
 Same-capture OHLC60 publication3a574bee/native90f6f4e6 is executable-ready:
 A/data/current-return-tcn-paper-ohlc60-publication-preparation-20261104-v1/API.json.
-Actual once remains uninvoked pending original dc8 DataREADY and positive cache/
-actor closure after21:30. No extra HTTP. Erdos prepares checkpoint9364 pure
-proposal inference bridge, no fitting or automatic Paper strategy swap.
+Actual once remains uninvoked; original dc8 failed before DataREADY. Newfa918
+release needs explicit new OHLC60 binding, never old3a invocation on new data.
+No extra HTTP in that derivative. Checkpoint9364 proposal bridge remains pure,
+not fitting or automatic Paper strategy/bank authority.
 
 ## Retained Reference
 
@@ -221,3 +222,26 @@ Keep data/models on D:,15percent free. Original60 caps and failures remain in
 the immutable plan/terminal; no repeated whole scan or claims of60complete.
 Fresh-session work precedes backfill. Direct daily differs from derived1m.
 Collector cooldown belongs to that worker, never foreground/company sleep.
+
+## Actual Data Opportunity
+
+Nov3UTC21:30 coherent19 opportunity is CONSUMED and stopped in its NAS8
+readonly prerequisite; no DATAREADY/capture was published. Exact publication/
+nas8-readonly.stdout reports NAS8_CLOSURE_UNKNOWN_OR_ACTIVE; bound CLI
+PID43916/Source dc8c48fc joined/empty/exit20 in0.485s. Task exit is not data.
+Original guard text was not retained. A fresh21:35:51 invocation of the same
+pure Assert-Nas8Closed reproduced NAS8_DEFINITION_CHANGED with equal ACL,
+0instances and actual NAS8 lastRun21:10. Fresh21:37:10 getter diagnosis:
+registeredTask.Xml differs, but registeredTask.Definition.XmlText is BYTE-EQUAL
+to the qualified Parent ReadbackEnabled.row.xml (same full DOM too).
+The closure helper consumed a different XML API surface than its producer.
+No broad normalization waiver or historical-cause claim follows this current
+reproducer. New same-asof recovery sourcefa918b3f/native81ccca40 has3native
+groups PASS,66source pins and180.8571/480worker-upper debit. Parent independently
+rehashes all66pins; zero mismatches. New capture window22:05..<22:06/hard22:20,
+<=1POST38GET/2s completion floor/0retry; no actual capture/DataREADY yet.
+A/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
+Erdos owns explicit new consumer bindings, not implicit old3a/ad7/7360/5a
+upgrades. No old-marker replay, fake DATAREADY, stale point retag or new bank.
+Point/TCN scores remain unavailable until actual qualified recovery/publication.
+This is an internal adapter/precondition fault, not observed KIS quota failure.

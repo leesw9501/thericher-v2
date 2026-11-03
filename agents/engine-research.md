@@ -59,10 +59,21 @@ execution: local profile.py shadowed Python's standard-library module.
 A/research/current-short-swing-h3-return-tcn-continuation-development-20261104-v1/
 FINAL-CALLBACK.json. Zero forwards/updates/GPU work/fits/forecasts; safe optimizer
 restore remains unqualified, not an unavailable GPU environment.
-Old zero-retry result/debits stay closed. A NEW small readiness package owns
-the prepared rename, resolved stdlib/cProfile/Torch bootstrap and actual
-invented-input optimizer/moments-restore/throughput check before another market
-contract. No finished fit is restarted; no current training is inferred.
+Old zero-retry result/debits stay closed. The NEW stdlib/bootstrap and actual
+optimizer/moments-restore/throughput package is now CLOSED native PASS:
+A/research/current-return-tcn-throughput-native-recovery-20261104-v1/FINAL-CALLBACK.json.
+Source5526732d/GPU41da6517;0market fits/forecasts/views, CPU1 and CUDA2 synthetic
+updates. Same-shape batch256 CPU1.0332s versus CUDA5.4587s per step; eval512
+CPU0.2805s versus CUDA6.8975s, co-tenanted observations not isolated benchmarks.
+GPU is available, but forcing that FP32 path is not faster convergence.
+Distinct BF16 proposal CLOSED before updates at worker.py108:
+A/research/current-short-swing-h3-bf16-tcn-moments-continuation-development-20261104-v1/FINAL-CALLBACK.json.
+Output-relative parity4.7841% exceeds its frozen2% rule;0updates/market fits/
+forecasts/views,1predeclared technical retry,645.5924/7800upper. All actors/CID/
+lease closed; this is a scoped numerical rejection, not a global GPU ban.
+Next: CPU FP32 convergence or a distinct GPU-friendly hypothesis under a NEW
+contract; no completed-fit replay, precision threshold waiver or exact-RNG
+resume claim. No current training is inferred from a proposal or idle GPU.
 
 ## Closed Paper Handoff
 

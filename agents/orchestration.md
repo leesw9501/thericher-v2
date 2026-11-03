@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov3UTC21:20 / Nov4KST.
+Updated Nov3UTC21:55 / Nov4KST.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -12,8 +12,8 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Ready / Owned / Due
 
-- Parent: exact Full17 two-future-definition migration, current integration/Git;
-  inspect H3/task-owned receipts when due, no foreground session wait.
+- Parent: Full17 actual migration complete; current integration/Git and new
+  qualified Data recovery dispatch22:05. No foreground session wait.
 - Helm Execution: exact original F9 public submit/dispatch source-stage evidence;
   R5 actual query complete, no repeat/reservation release.
 - Hooke Infra/Parent: Full17 runtime5a571 ACTUALLY migrated with exit20:54;
@@ -32,8 +32,9 @@ foreign adoption/unknown-request substitution. No operator decision pending.
   baseline/comparison waiver or web swap; preserve failed evidence.
 Role MDs are durable memory, not evidence of active LLMs/numerical workers.
 
-Next actual opportunities: H3 entry20:55/static reader21:10; NAS8 Data21:10;
-new coherent19 Data21:30. Tomorrow Full17 producer14:25/entry14:31 and Open45
+H3 entry20:55/reader21:10 and coherent19 Data21:30 are consumed with technical
+failure, not waiting/running. New Data fa918 capture22:05..<22:06/hard22:20 is
+source/native ready, actual output UNKNOWN. Tomorrow producer14:25/entry14:31 and Open45
 publisher15:07:30/entry15:17/exit16:17. These are task-owned, not foreground wait.
 Actual installed evidence is indexed in HANDOFF; no future fill inferred.
 Full17 ACTUALLY migrated to5a571; new exitNov6UTC20:54, originalH3 stays20:45.
@@ -158,3 +159,26 @@ required at integration. D code needs its own focused/native/closure evidence;
 repeated C tests cannot validate external code. No secrets/raw/private outputs.
 Marker-present provenance assumes honest host, not cryptographic OS origin;
 Task Scheduler Operational logging disabled.
+
+## Actual Data Opportunity
+
+Nov3UTC21:30 coherent19 opportunity is CONSUMED and stopped in its NAS8
+readonly prerequisite; no DATAREADY/capture was published. Exact publication/
+nas8-readonly.stdout reports NAS8_CLOSURE_UNKNOWN_OR_ACTIVE; bound CLI
+PID43916/Source dc8c48fc joined/empty/exit20 in0.485s. Task exit is not data.
+Original guard text was not retained. A fresh21:35:51 invocation of the same
+pure Assert-Nas8Closed reproduced NAS8_DEFINITION_CHANGED with equal ACL,
+0instances and actual NAS8 lastRun21:10. Fresh21:37:10 getter diagnosis:
+registeredTask.Xml differs, but registeredTask.Definition.XmlText is BYTE-EQUAL
+to the qualified Parent ReadbackEnabled.row.xml (same full DOM too).
+The closure helper consumed a different XML API surface than its producer.
+No broad normalization waiver or historical-cause claim follows this current
+reproducer. New same-asof recovery sourcefa918b3f/native81ccca40 has3native
+groups PASS,66source pins and180.8571/480worker-upper debit. Parent independently
+rehashes all66pins; zero mismatches. New capture window22:05..<22:06/hard22:20,
+<=1POST38GET/2s completion floor/0retry; no actual capture/DataREADY yet.
+A/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
+Erdos owns explicit new consumer bindings, not implicit old3a/ad7/7360/5a
+upgrades. No old-marker replay, fake DATAREADY, stale point retag or new bank.
+Point/TCN scores remain unavailable until actual qualified recovery/publication.
+This is an internal adapter/precondition fault, not observed KIS quota failure.

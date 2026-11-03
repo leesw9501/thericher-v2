@@ -11,8 +11,13 @@ identities and ALL original exits remain. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
 
 Read HANDOFF/NEXT/AGENTS and role stateboards; parent owns actual metadata/Git,
-roles disjoint D: roots. Current H3 entryNov3UTC20:55/static reader21:10,
-NAS8 Data21:10, coherent19 Data21:30/hard21:45. No foreground waiting.
+roles disjoint D: roots. H3 entryNov3UTC20:55/static reader21:10 and coherent19
+Data21:30 are consumed; see actual failures below, never manually replay them.
+New Data sourcefa918b3f/native81ccca40 has Parent-owned readonly capture
+Nov3UTC22:05..<22:06/hard22:20, not actual capture/DataREADY yet:
+A/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
+Use only its exact source-bound launch once; old downstream releases do not
+implicitly accept this input. No foreground market/cooldown waiting.
 Tomorrow Full17 producer14:25/entry14:31 and Open45 publisher15:07:30/
 entry15:17/exit16:17 are installed, not actual financial outcomes.
 Full17 two actual future Tasks are now migrated to5a571 with exit20:54.
@@ -67,8 +72,9 @@ Current executable evidence pointers:
 - Open45: A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
 - Earlier Data: A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/metadata-create26-delta-v6/PARENT-COMPLETE.json.
 - Earlier point: A/research/current-nov4-full17-earlier-point-preparation-20261104-v1/task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
-- Full17 installed (known exit collision): A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/earlier-nov4/installer-repair-r1/PARENT-COMPLETE.json.
-- Proposed exact migration, NOT yet actual: same earlier-nov4/serial-exit-source-r1/API.json and MIGRATION.json, Source6884cfff/runtime5a571b07.
+- Full17 current actual migration: A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+  Metadata93b1f1b4/runtime5a571b07; earlier installer-repair-r1 is retained
+  pre-migration history. Current new exit20:54, original H3 exit20:45 unchanged.
 
 F9 R5 actual original-request readonly query COMPLETED Nov3UTC20:12:
 A/execution/current-open45-nov4-parent-adoption-20261104-v1/diagnosis-r5/
