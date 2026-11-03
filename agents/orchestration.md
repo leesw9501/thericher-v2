@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov3UTC21:55 / Nov4KST.
+Updated Nov3UTC22:13 / Nov4KST.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -12,18 +12,17 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Ready / Owned / Due
 
-- Parent: Full17 actual migration complete; current integration/Git and new
-  qualified Data recovery dispatch22:05. No foreground session wait.
-- Helm Execution: exact original F9 public submit/dispatch source-stage evidence;
-  R5 actual query complete, no repeat/reservation release.
-- Hooke Infra/Parent: Full17 runtime5a571 ACTUALLY migrated with exit20:54;
-  original prep caps/independent partial remain failed/partial. Parent fresh
-  qualification13+16cases and actual3phase metadata closure are separate.
-- Ohm Infra: AMD quote capability/first-wait installation complete. Actual H3
-  metadata fault now owns minimal-ENV observer-CLI reproducer/shared helper
-  correction; no expired opportunity/private/broker/Task replay.
-- Erdos Data/Strategy: same-capture OHLC60 publisher/native handoff; completed
-  attention kernel already consumed, not another GPU fit.
+- Parent: Full17 actual migration and Data/OHLC60 publication complete;
+  current integration/Git and explicit future consumer binding, no session wait.
+- Helm Execution: F9 public forensics closed unknown, no repeat/release;
+  new Full17 financial binding to Hooke producer and safe diagnostic retention.
+- Hooke Infra: new Full17 producer/owner binding to actual fa918 Data, no fits
+  or future point claimed. Existing5a migration remains actual; original
+  preparation caps/independent partial remain failed/partial.
+- Ohm Infra: mocked minimal-ENV native passed, actual H3 cause unknown;
+  scheduled diagnostic UNINSTALLED, new bounded readonly-context probe only.
+- Erdos Data/Strategy: actual OHLC60 ab158 publication complete; explicit new
+  checkpoint9364 proposal bridge binding, no fit/old inference replay.
 - Confucius Engine/Steward: distinct cost/turnover-aware campaign, useful GPU
   when ready; no completed fit repeat, no profitability gate on Paper.
 - Lagrange invoked Validation: partial proof frozen honestly; Parent completed
@@ -33,8 +32,8 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 Role MDs are durable memory, not evidence of active LLMs/numerical workers.
 
 H3 entry20:55/reader21:10 and coherent19 Data21:30 are consumed with technical
-failure, not waiting/running. New Data fa918 capture22:05..<22:06/hard22:20 is
-source/native ready, actual output UNKNOWN. Tomorrow producer14:25/entry14:31 and Open45
+failure, not waiting/running. New Data fa918/aa047 and OHLCab158/64b1 are
+ACTUALLY closed/published, not a point/order/fill. Tomorrow producer14:25/entry14:31 and Open45
 publisher15:07:30/entry15:17/exit16:17. These are task-owned, not foreground wait.
 Actual installed evidence is indexed in HANDOFF; no future fill inferred.
 Full17 ACTUALLY migrated to5a571; new exitNov6UTC20:54, originalH3 stays20:45.
@@ -138,13 +137,19 @@ Lagrange-owned. No model/bank/service swap inferred from source readiness.
 
 ## Throughput Review
 
-20:22UTC: useful parallel work exists in exact schedule repair, data handoff,
-turnover-aware research and UI compatibility; none is a company-wide hold.
-Completed TCN/Ridge/attention fits are closed and not repeated for utilization.
-Immediate reversible improvement: replace duplicated stale preparation prose
-with current results and exact evidence pointers; preserve history in Git/D:.
-Parent consumes callback once and dispatches concrete next work, not repeated
-admission probes or another report platform. No operator decision pending.
+22:03UTC: H3 and original Data are technically failed, not waiting/running.
+Ready paths: Parent's named Data-only recovery22:05; Ohm's finite readonly
+Scheduler-context diagnostic preparation; Hooke's explicit Full17 producer
+binding; Erdos's narrow path-classifier correction; Engine's distinct CPU/GPU
+convergence choice. None substitutes for an unknown financial request.
+CPU is faster than measured FP32 CUDA for this small TCN; closed BF16 rejected
+its own parity rule. Do not repeat either to occupy GPU or call that a ban.
+Immediate reversible improvement: prebind qualified launch authority/PID birth
+and let workers close their own Jobs; no post-start LLM ACK or machine-wide
+idle prerequisite. Parent sole integration/Git, named disjoint D: writers.
+Original wrappers/caps/failures remain immutable, while an invalid downstream
+path comparison is repaired separately without repeating completed numerics.
+No operator decision pending; runtime closure still required for company goal.
 
 ## Verification
 
@@ -175,10 +180,23 @@ The closure helper consumed a different XML API surface than its producer.
 No broad normalization waiver or historical-cause claim follows this current
 reproducer. New same-asof recovery sourcefa918b3f/native81ccca40 has3native
 groups PASS,66source pins and180.8571/480worker-upper debit. Parent independently
-rehashes all66pins; zero mismatches. New capture window22:05..<22:06/hard22:20,
-<=1POST38GET/2s completion floor/0retry; no actual capture/DataREADY yet.
+rehashes all66pins; zero mismatches. New capture ACTUALLY completed22:06:59:
+1POST38GET/all200/0retry,2413/2413known cells19assets x127dates; min completion
+gap2.0001504s,81.4316s worker. Parent outer Job82.9825s and inner Jobs are
+joined/empty/exit0/persisted, cache released. Strict actual parse/return PASS:
+DATAREADYaa04705d/inputf3e79f32/manifestb75d724e/outputPin07475af0, publisher/
+worker positively closed and membership/file identity/mtime/bytes stable.
 A/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
-Erdos owns explicit new consumer bindings, not implicit old3a/ad7/7360/5a
-upgrades. No old-marker replay, fake DATAREADY, stale point retag or new bank.
-Point/TCN scores remain unavailable until actual qualified recovery/publication.
+Parent first dispatch failed BEFORE Popen on Windows case-insensitive receipt
+name collision. Original helper/native/intent remain; separately pinned r2
+receipt namespace passed fresh inert Job+Ruff then launched Data exact ONCE.
+A/data/current-nov3-coherent19-parent-recovery-dispatch-20261104-v1/r2/ACTUAL-CLOSED.json.
+No HTTP retry or original-marker replay followed. New OHLC60 derivativeab158
+then ACTUALLY published with0new HTTP/model calls and typed consumer PASS:
+A/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
+Input64b1ad44,manifest883f0651/outputPinf7603266, all38raw/native/outcome hash
+links and publisher/worker closure/stability checked. Actual bytes remain on M.
+Hooke owns explicit Full17 producer/owner binding; Helm financial5a derivative;
+Erdos new checkpoint9364 bridge binding, not implicit old3a/ad7/7360/5a/658a
+upgrades. No future point/model score, order acceptance/fill or new bank implied.
 This is an internal adapter/precondition fault, not observed KIS quota failure.

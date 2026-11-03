@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov3UTC21:20 / Nov4KST.
+Updated Nov3UTC22:13 / Nov4KST.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -13,11 +13,16 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 Read HANDOFF/NEXT/AGENTS and role stateboards; parent owns actual metadata/Git,
 roles disjoint D: roots. H3 entryNov3UTC20:55/static reader21:10 and coherent19
 Data21:30 are consumed; see actual failures below, never manually replay them.
-New Data sourcefa918b3f/native81ccca40 has Parent-owned readonly capture
-Nov3UTC22:05..<22:06/hard22:20, not actual capture/DataREADY yet:
+New Data sourcefa918b3f/native81ccca40 ACTUALLY completed22:06:59:
+1POST38GET/all200/0retry,2413known cells19x127, DataREADYaa04705d/inputf3e79f32.
+Both publisher/worker Job and current PID closure/stability passed. Consumed:
 A/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
-Use only its exact source-bound launch once; old downstream releases do not
-implicitly accept this input. No foreground market/cooldown waiting.
+DO NOT rerun its launch/collector. New OHLC60 ab158 also actually published,
+typed consumer/closures PASS, input64b1ad44 with0new HTTP/model calls:
+A/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
+Do not rerun that publisher. Old releases do not implicitly accept new input;
+Hooke owns new Full17 producer/owner, Helm financial refs, Erdos TCN bridge.
+No future point/order/fill/PnL follows Data publication. No foreground wait.
 Tomorrow Full17 producer14:25/entry14:31 and Open45 publisher15:07:30/
 entry15:17/exit16:17 are installed, not actual financial outcomes.
 Full17 two actual future Tasks are now migrated to5a571 with exit20:54.
@@ -46,6 +51,9 @@ that is current identity, not proof of exact historical restoration. No Restore
 or broker action was invoked. Ohm owns real observer-CLI/minimal-ENV/mocked-
 Scheduler reproducer; the shared Full17 observer helper also needs review.
 No operator decision/global Data or Research hold follows this technical fault.
+Proposed22:15 readonly Scheduler diagnostic was NOT installed: edfde623 failed
+native XML-builder validation before registration; existing Tasks unchanged.
+See HANDOFF for exact source and new scoped readonly-context probe ownership.
 
 Full17 exact two-future-definition migration is ACTUALLY COMPLETE:
 A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/

@@ -2,8 +2,12 @@
 
 ## Current Data / Next
 
-Updated Nov3UTC21:55 / Nov4KST. Erdos owns new recovery/consumer bindings.
+Updated Nov3UTC22:13 / Nov4KST. Erdos owns new recovery/consumer bindings.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
+Current fa918 recovery/DataREADYaa047 and OHLC60ab158/INPUT64b1 are ACTUALLY
+published/closed/typed-consumer PASS; see Actual Data Opportunity below.
+Old dc8/3a/41f remain consumed/unqualified, never implicit aliases. Hooke owns
+Full17 producer/owner derivative; Helm financial refs; Erdos new TCN bridge.
 
 Long training input c1a36b16/manifestccec384a is CLOSED:
 A/data/current-h3-risk-historical-training-input-preparation-20261104-v1/API.json.
@@ -238,10 +242,23 @@ The closure helper consumed a different XML API surface than its producer.
 No broad normalization waiver or historical-cause claim follows this current
 reproducer. New same-asof recovery sourcefa918b3f/native81ccca40 has3native
 groups PASS,66source pins and180.8571/480worker-upper debit. Parent independently
-rehashes all66pins; zero mismatches. New capture window22:05..<22:06/hard22:20,
-<=1POST38GET/2s completion floor/0retry; no actual capture/DataREADY yet.
+rehashes all66pins; zero mismatches. New capture ACTUALLY completed22:06:59:
+1POST38GET/all200/0retry,2413/2413known cells19assets x127dates; min completion
+gap2.0001504s,81.4316s worker. Parent outer Job82.9825s and inner Jobs are
+joined/empty/exit0/persisted, cache released. Strict actual parse/return PASS:
+DATAREADYaa04705d/inputf3e79f32/manifestb75d724e/outputPin07475af0, publisher/
+worker positively closed and membership/file identity/mtime/bytes stable.
 A/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
-Erdos owns explicit new consumer bindings, not implicit old3a/ad7/7360/5a
-upgrades. No old-marker replay, fake DATAREADY, stale point retag or new bank.
-Point/TCN scores remain unavailable until actual qualified recovery/publication.
+Parent first dispatch failed BEFORE Popen on Windows case-insensitive receipt
+name collision. Original helper/native/intent remain; separately pinned r2
+receipt namespace passed fresh inert Job+Ruff then launched Data exact ONCE.
+A/data/current-nov3-coherent19-parent-recovery-dispatch-20261104-v1/r2/ACTUAL-CLOSED.json.
+No HTTP retry or original-marker replay followed. New OHLC60 derivativeab158
+then ACTUALLY published with0new HTTP/model calls and typed consumer PASS:
+A/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
+Input64b1ad44,manifest883f0651/outputPinf7603266, all38raw/native/outcome hash
+links and publisher/worker closure/stability checked. Actual bytes remain on M.
+Hooke owns explicit Full17 producer/owner binding; Helm financial5a derivative;
+Erdos new checkpoint9364 bridge binding, not implicit old3a/ad7/7360/5a/658a
+upgrades. No future point/model score, order acceptance/fill or new bank implied.
 This is an internal adapter/precondition fault, not observed KIS quota failure.

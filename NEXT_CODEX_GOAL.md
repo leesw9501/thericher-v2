@@ -33,12 +33,17 @@ foreign adoption/unknown-request substitution. No operator decision pending.
   Nominal separation is not prior-owner closure, a queue, input readiness or
   a fill. Review shared observer helper; actual effect-time checks remain.
 - Data's original coherent19 opportunity21:30 is CONSUMED before capture;
-  no DataREADY exists. Current reproducer found Task.Xml differs from the
+  no old dc8 DataREADY exists. Current reproducer found Task.Xml differs from the
   producer's exact Definition.XmlText. New sourcefa918b3f/native81ccca40
   fixes only that API surface, preserving strict XML/ACL/owner/cache checks:
   D:/thericher-v2/model-artifacts/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
-  Qualified new readonly capture window22:05..<22:06/hard22:20 is Parent-owned,
-  <=1POST/38GET/0retry, not a replay of old dc8. Actual new DataREADY UNKNOWN.
+  New capture ACTUALLY completed22:06:59:1POST38GET/all200/0retry,
+  2413/2413required cells19assets x127dates. DataREADYaa04705d/inputf3e79f32,
+  manifestb75d724e/outputPin07475af0; strict actual parse/return validates both
+  owner closures and exact stable files. New fa918 is not old dc8 retag/replay.
+  New OHLC60 derivativeab158 ALSO ACTUALLY published/input64b1ad44,0new HTTP/
+  model calls; actual typed consumer/closed publisher+worker passed:
+  D:/thericher-v2/model-artifacts/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
   Old3a574/ad7/7360/financial5a consumers need explicit new bindings; do not
   retag/copy old DATAREADY or pass unbound raw OPEN. No foreground waiting.
 - Engine/Steward owns distinct useful convergence/feature research and safe

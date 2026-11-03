@@ -23,6 +23,11 @@ Original86f wire and R5 read are consumed: DO NOT REPLAY/reset/resubmit/release.
 Earlier r2/r3 admission failures and fault-r4 first cause remain immutable.
 Helm now checks exact ORIGINAL public dispatch/submit-stage evidence only;
 absence alone cannot close or release the request.
+That forensics package is now closed with2pure checks, not a resolution:
+A/execution/current-f9-current-request-readonly-preparation-20261104-v1/
+original-submit-source-forensics-20261104-v1/RESULT.json SHAe53b691a,
+Sourceea03ac3a. No exact rejection/pre-HTTP proof; zero-POST counters lack
+original-request/full opener linkage. F9UNKNOWN-HELD, no new query or release.
 
 - H3 AMD original entry Nov3UTC20:55, exit Nov6UTC20:45; static reader
   Nov3UTC21:10. Latest actual operational migration d62b2c03/e6892aef:

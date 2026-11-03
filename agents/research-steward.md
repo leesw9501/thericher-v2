@@ -52,6 +52,12 @@ retry,645.5924/7800upper, all actors/CID/lease closed. No global GPU permission
 hold follows this scoped rejection. Choose faster useful CPU FP32 convergence
 or a separately frozen GPU-friendly hypothesis, not a threshold waiver or
 completed-fit replay. At21:57 GPU1%,23130MiBfree/36C; no owned fit active.
+New CPU FP32 continuation7505485e CLOSED after48additional epochs/336updates/
+138.064s; INNER no new best, exact9364 retained,0DEVforecasts/views. All actors
+closed,1075.3470/7800upper including600reserve; no CUDA fit. See Engine and
+A/research/current-short-swing-h3-cpu-fp32-moments-continuation-development-20261104-v1/FINAL-CALLBACK.json.
+This measured faster CPU path used actual learning, not a GPU permission hold.
+Next distinct useful hypothesis remains Engine-owned; no completed-fit replay.
 
 ## Frozen Resource Index
 

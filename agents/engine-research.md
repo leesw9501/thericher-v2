@@ -35,8 +35,13 @@ Next: one distinct cost/turnover-aware experiment using compatible frozen
 inputs/outputs; freeze finite trials/compute/splits/stop rule before dispatch.
 No independent-performance promotion, old holdout reopening or finished-fit
 repeat. Useful new GPU work may proceed when actually ready, not inferred.
-Data OHLC60 source66c25cad is ready; actual same-capture raw/publication binding
-is pending. Safe checkpoint9364 remains on D:, not silently installed in Paper.
+Data OHLC60 ab158/readyb5690bcd is ACTUALLY published with typed consumer PASS:
+A/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
+Input64b1ad44/manifest883f0651/outputPinf7603266 binds all38raw/native/outcome
+hash links, positive publisher/worker closure and file stability;0new HTTP or
+model calls. Nov3asof/Nov4decision x[1,17,60,4]/z[1,17,20]/v[1,17]/known[1].
+Checkpoint9364 remains on D:; Erdos owns explicit NEW bridge/publisher binding,
+not an old658a inference replay or silently installed Paper strategy.
 Full17 point producer is actually enabledNov4UTC14:25; future outputs UNKNOWN.
 Paper entry14:31 is independent of research profitability, under native risk.
 
@@ -74,6 +79,15 @@ lease closed; this is a scoped numerical rejection, not a global GPU ban.
 Next: CPU FP32 convergence or a distinct GPU-friendly hypothesis under a NEW
 contract; no completed-fit replay, precision threshold waiver or exact-RNG
 resume claim. No current training is inferred from a proposal or idle GPU.
+Distinct CPU FP32 moments continuation7505485e is now CLOSED:
+A/research/current-short-swing-h3-cpu-fp32-moments-continuation-development-20261104-v1/FINAL-CALLBACK.json.
+1new CPU fit,48additional epochs/336updates/138.064s, chronological INNER
+early-stop with no new best; BEST remains exact9364. Frozen guard skipped
+DEV:0forecasts/views. All actors closed,1075.3470/7800upper including600reserve,
+1predeclared pre-update native technical retry. Not an old fit replay or exact
+RNG resume; more training did not improve this INNER, no independent-alpha
+claim. Next distinct nonlinear raw/indicator or tensor-friendly expert is
+Engine-owned; freeze it first, not another epochs-only repeat.
 
 ## Closed Paper Handoff
 
