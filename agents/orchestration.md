@@ -38,6 +38,9 @@ Intraday plus one-to-several-session short swings. Never KIS_LIVE_*.
   running GPU fit from this dispatch. Preserve deferred3040 and all old clocks.
 - Temporary Hooke feed60 preparation CLOSED d53da0d7/native53/
   292.951636upper. Source-only, NOT actual Feed adoption, review_unavailable.
+  NEW source-only current-open45-finite-feed-cpu-publication-20261103-v1,
+  900SUM3600elapsed from receipt, composes one finite Feed->trustedCPU->strict
+  proposal worker on invented input. No actual HTTP/credentials/market/Task.
   Franklin quiet census CLOSED475.128674upper, fixture speed only, not runtime
   deployment or actual GET throughput improvement.
 

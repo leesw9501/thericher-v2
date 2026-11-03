@@ -98,6 +98,15 @@ No duplicate completed training or automatic current Paper point swap.
 
 ## Closed Ingredients And Next Integration
 
+Hooke owns the concrete source-only Feed->CPU publication worker at
+A/data/current-open45-finite-feed-cpu-publication-20261103-v1,
+900SUM3600elapsed from receipt. Compose frozen Feed60 and66a560 CPU core with
+the strict original proposal ABI; one invented end-to-end restore/forward at
+most, no market/HTTP/credentials/Task/private/GPU. Persist one attempt, enforce
+unchanged input/score deadlines, report exact component pacing and abstain on
+missing/late input. Separately adopt actual launch only after native/source
+closure; no placeholder hashes or implicit .env/broker authority.
+
 - Original Open45 proposal c9eae425/native52/482.351581upper.
 - Trusted CPU point66a5600b/native25/432.705026upper; one invented forward,
   not actual market inference or new training.

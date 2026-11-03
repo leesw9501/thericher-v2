@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Nov3KST / Nov3UTC02:30. Company objective UNFINISHED. H3 future definitions
+Nov3KST / Nov3UTC04:40. Company objective UNFINISHED. H3 future definitions
 are ACTUALLY installed/enabled Ready3/0instances, not actual financial execution:
 - thericher-h3-rank-cash-once-entry-20261103-v1,
  Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
@@ -38,8 +38,8 @@ Source7a5d1aef/SPEC7050119d/NATIVEe7220a9a COMPLETE3invented guests/
 24Jobsclosed/3CIDsabsent/new290.374552SUM. No actual private/Task/broker calls.
 The uninstalled d45 manual-JIT proposal is superseded by NEW automatic static
 Source9410af60 at current-h3-automatic-post-entry-reader-preparation-20261103-v1.
-Its Install is CONSUMED: exact reader task exists DISABLED1/0instances,
-install-once/ATTEMPT exists, PARENT-STATIC-RELEASE absent. Do not rerun Install.
+Its original Install is CONSUMED and failed after disabled task creation;
+that failure is historical, not the current enabled state. Do not rerun Install.
 Owned opportunity Nov3UTC21:10..<21:12/hard21:17; original financial pins intact.
 Read-only diagnosis capture parent-adoption/DISABLED-CAPTURE.json SHA34f9a75e
 proves only Author-context and WakeToRun=false sparse-default comparison gaps.
@@ -94,6 +94,20 @@ External D code still needs separate focused native/negative proofs.
 No repeated full suite for unchanged docs/external-only source.
 Current definitive sources/status above and HANDOFF take precedence over
 retained historical source-specific commands below; do not replay closed jobs.
+
+Actual raw494 source03567531/PLAN16d17ac9/release48f66d69 launched03:51:11,
+host38820/birth134381514718000731. Inspect exact actual-once metadata only:
+D:/thericher-v2/model-artifacts/data/current-us19-raw-historical494-continuation-preparation-20261103-v1.
+Original70ef161GET19320rows is CLOSED, not another running collector.
+Opening30 source findingb44ca37f/25d05872 proves40closed captures contain
+complete opening rows; old research reader discarded whole mixed-session
+pages. No blind250query batch. New explicit mixed-session view must validate
+ALL rows before filtering RTH, retain exclusion/missing/proxy flags and pass
+native consumer tests. It does not rewrite old raw qualification0 or Paper input.
+Source-only feed60d53da0d7/53checks and CPU66a5600b are not actual Feed runtime.
+New finite Feed->CPU publication wrapper is preparation only; missing/late
+capture or score abstains, never catchup. Full-dayTCN is independently assigned
+existing8+SPY fullRTH data; no live GPU fit is inferred from this runbook.
 
 Holdings-only preflight is consumed COMPLETE, not a general query command:
 D:/thericher-v2/model-artifacts/execution/current-paper-holdings-readonly-preflight-20261103-v1/CALLBACK.json.
