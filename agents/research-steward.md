@@ -2,20 +2,31 @@
 
 ## Current Resource Coordination
 
-Current Engine package is
+Joint-downside risk campaign is COMPLETE_CLOSED_NONDEGENERACY_FAIL_BEFORE_DEV:
 A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
-20261104-v1. SCOPE/PREPARATION-CALLBACK: source qualification ONLY, no numerical
-Source/PID/CID/lease/fit/forecast/view or reserved GPU yet. Joint pathwise H3
-downside PSD risk allocation versus same-model diagonal/constant risky controls.
-Original16:42:19..19:42:19UTC,7600activeSUM10800elapsed/2fits/12views/0retry.
-The first feedback nominee was rejected as duplicate of completed c59088ed
-before numerics; source work is charged, not reset/refunded.
-Before numerical freeze prefer existing2015..2025 strict same-capture OHLC
-training prefix over fitting17x17 risk from only~100dates. Euclid and Engine
-exchange exact schema directly; no new network acquisition or Parent-JIT gate.
+20261104-v1/SYNTHESIS.json, frozen Source39cb05e8.
+CPU1fit and actual CUDA TCN1fit completed; GPU8epochs/56updates/INNER-best8,
+561.486301s process, convergence NOT proven. FIT/INNER response test failed:
+gradient-to-roundtrip-cost ratio0.575446<1 and KEEP0.8125>0.80. Therefore
+DEV forecasts/readouts/new cost views are0; profitability is NOT EVALUATED,
+not zero and not an economic failure. No relaxed threshold, numerical retry,
+model/Paper-bank swap or repeated fit. Ten CIDs/93recorded actor births closed,
+GPU lease absent; DELIVERY-CLOSED8b26c93f/final-callback9833494d.
+Conservative SUM upper6073.732391 includes3400reserved-not-measured allowance,
+not measured CPU/GPU spend. Original7600SUM/10800elapsed/hard19:42:19UTC
+and all native failures/debits remain unchanged.
+Strict2015..2025 historical Data is COMPLETE:
+A/data/current-h3-risk-historical-training-input-preparation-20261104-v1/API.json,
+Sourcec1a36b16/API353ddf80/manifestccec384a/closureed562268.
+2766dates/17stocks,46174strictOC/838conditional;1739FIT/479INNER support,
+jointC602276,0HTTP/models/2026readout. Parent9exact reference hashes matched.
+Euclid's completed executor is closed, durable Data memory remains active.
+Next distinct expected-net-return/risk/turnover campaign is assigned to
+Confucius, including a tiny actual optimizer/batch/transfer timing diagnosis
+before long fitting. No new numerical Source/PID is yet evidenced.
 
 
-Updated Nov3UTC17:27 / Nov4KST. Confucius is sole GPU resource coordinator.
+Updated Nov3UTC18:45 / Nov4KST. Confucius is sole GPU resource coordinator.
 Daily maxH3 source8e961834/RESULTa76a is CLOSED:0fits2marketforecasts12views,
 TimesFM16.858s1.059GB / Chronos10.814s0.519GB actual CUDA inference;42recorded
 original actors/4CIDs/leases/finalizer closed via DELIVERY-CLOSED.json.

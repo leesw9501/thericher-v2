@@ -2,7 +2,7 @@
 
 ## Current Data
 
-Updated Nov3UTC17:27 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Updated Nov3UTC18:45 / Nov4KST. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
 frozen kis_market_data.py:380 local token_request_is_due guard. Feed60 already
 uses a 60-second floor. FALSE could mean cooldown OR atomic-directory busy;
@@ -23,6 +23,25 @@ and OWNER-FAILURE-475f5c5493974a9d8ee6b4be2c0f87ab.json under
 A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1.
 Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
 expired opportunities remain immutable. No replay/retag/manual TaskRun.
+
+Open45 Nov4 future publisher/entry/original owned exit are ACTUALLY enabled:
+A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
+PublisherNov4UTC15:07:30, entry15:17, exit16:17;0instances/lastYear1999/
+four intended protected ACEs on all3actual Tasks. Existing H3/NAS8/web unchanged.
+Metadata0efb9fd5/nativeeb5e9b33 and Parent composition47e10c43/native9fb08297
+qualify exact disabled/readback/authority/exit-first enable/enabled readback.
+Eight positive/24negative native checks plus independent actual3Task readback.
+Prior partial creates/failures remain. No repeated completed create/repair:
+exit preserved, completed publisher own repair adopted, exact absent entry
+created flags26. The comparison handles ONLY paired same schema versions,
+measured defaults, official xs:all paths and protected descriptor representation
+with identical owner/group/ACEs/all other flags except AutoInherited control bit.
+Triggers/Actions order, clocks/arguments/principal and effect-time checks remain.
+Official schema: https://learn.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-schema
+Actual pinned Linux import passed in import-r2, without private/credential/model
+forward. Candidate is LSTM32 BEST10, not MLP; checkpoint3d74a247 remains fixed.
+Fresh future point/submit/acceptance/fill/owned inventory/PnL are UNKNOWN.
+This is installation, not a broker effect. Consumed phases are not replayed.
 
 Parent actual market-only probe187fbc0e is COMPLETE:
 A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
@@ -61,16 +80,27 @@ Original native failure and separate completion retained; no whole-pass rewrite.
 ## Next / Ownership
 
 
-Open45 local deferral template732378c2/API f149ad3b is CLOSED and consumed by
-Ohm's next-dated integration preparation:5native scenarios/97assertions,
-519independent checks/506sourcepins and closurebf7a68c9; no actual HTTP/model/
-credentials/private/Task calls or next-session source/installation yet.
-Current Euclid assignment: current-h3-risk-historical-training-input-preparation-20261104-v1,
-600SUM2400elapsed/4invented sets, retained2015..2025 same-capture strict
-training C60 + independent OPEN/CLOSE/masks to Engine;0HTTP/models/Task/C/Git.
-Direct schema handoff, not a new dataset platform or permission hold.
-Parent owns actual future metadata. Engine consumes the qualified C60 API.
-Coherent19 Nov6UTC21:10 and full17 producer Nov9UTC14:25 remain future.
+Open45 template732378c2/API f149ad3b is CLOSED:5native scenarios/97assertions,
+519independent checks/506pins. Parent next-dated Nov4 integration is now actually
+enabled as above, not a claim of future data/model success.
+Historical training Sourcec1a36b16/API353ddf80/manifestccec384a/closureed562268
+is COMPLETE:2766dates/17stocks,46174strictOC/838conditional,1739FIT/479INNER,
+jointC602276. Parent9refs verified;0HTTP/models/2026readout. Euclid closed.
+Erdos now owns earlier Nov3-asof C127 sourcedc8c48fc/metadata380719a7 source
+compatibility; Parent owns actual future metadata. Same source127 -> explicit
+last60 model input, no padding/imputation or old point retag. Coherent19 Nov6
+and full17 producer Nov9 remain unchanged; new earlier capture not installed.
+
+Earlier full17 direction received Claude GO_WITH_LIMITS:
+A/execution/current-earlier-full17-direction-challenge-20261104-v1/
+PARENT-REVIEW.json, session08e6aad7-1d47-4982-a334-4eec3e62023e.
+Prepare genuine Nov3-asof/Nov4-decision Data at21:30UTC after positive NAS8
+closure, then same trusted two-model producer and one finite native financial
+round Nov4 packet-compatible entry -> Nov6PRECLOSE15 only when exact fresh input and runtime
+admission qualify. No actual earlier schedule/point/financial installation yet.
+Original H3/Nov6 Data/Nov9 producer remain unchanged; old Nov9 producer is not
+an automatic second financial writer. Same-policy active/pending namespace
+collision withholds the new round, not all research or a new-bank reset.
 
 ## Retained Reference
 

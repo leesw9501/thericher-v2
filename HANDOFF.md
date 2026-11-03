@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov3UTC17:27 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
+Updated Nov3UTC18:45 / Nov4KST. Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns C/shared MD/integration/Git. No operator decision pending.
 Primary horizon: intraday plus one-to-several-session short swings.
@@ -32,6 +32,25 @@ A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1
 Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
 expired opportunities remain immutable. No replay/retag/manual TaskRun.
 
+Open45 Nov4 future publisher/entry/original owned exit are ACTUALLY enabled:
+A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
+PublisherNov4UTC15:07:30, entry15:17, exit16:17;0instances/lastYear1999/
+four intended protected ACEs on all3actual Tasks. Existing H3/NAS8/web unchanged.
+Metadata0efb9fd5/nativeeb5e9b33 and Parent composition47e10c43/native9fb08297
+qualify exact disabled/readback/authority/exit-first enable/enabled readback.
+Eight positive/24negative native checks plus independent actual3Task readback.
+Prior partial creates/failures remain. No repeated completed create/repair:
+exit preserved, completed publisher own repair adopted, exact absent entry
+created flags26. The comparison handles ONLY paired same schema versions,
+measured defaults, official xs:all paths and protected descriptor representation
+with identical owner/group/ACEs/all other flags except AutoInherited control bit.
+Triggers/Actions order, clocks/arguments/principal and effect-time checks remain.
+Official schema: https://learn.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-schema
+Actual pinned Linux import passed in import-r2, without private/credential/model
+forward. Candidate is LSTM32 BEST10, not MLP; checkpoint3d74a247 remains fixed.
+Fresh future point/submit/acceptance/fill/owned inventory/PnL are UNKNOWN.
+This is installation, not a broker effect. Consumed phases are not replayed.
+
 Parent actual market-only probe187fbc0e is COMPLETE:
 A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
 Nov3UTC16:00:48 token POST200 +16:00:50 QQQ daily GET200, one each/sameRAMclient,
@@ -47,6 +66,18 @@ NOT strategy ownership/order eligibility/full account-risk/fees/settlement/PnL.
 No funds/open-orders/order/recovery/private-custody calls, adoption or F9 release.
 Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
 do not ask operator to change keys from the earlier local pre-HTTP failure.
+
+F9 exact original-request readonly r2 Source2b2837f0 was actually attempted
+Nov3UTC18:28 through quiet Parent Job. It returned WITHHELD before private CID
+creation/network worker/HTTP at hooks.caller_identity -> owned_lineage line31.
+A/execution/current-f9-current-request-readonly-preparation-20261104-v1/
+enclosing/PARENT-LAUNCH-CLOSED.json and r2/parent-once/RESULT.json/
+PARENT-CLOSED.json retain category/source frames and positive Job closure.
+Root Job7members joinedempty/closed/0stderr; no private capsule persisted.
+The exact r2 marker is consumed; no replay/reset. Investigate the self identity
+field mismatch using retained source-safe census, not an exemption for unknown
+writers. Acceptance/fills/owned inventory and fees/settlement/PnL remain UNKNOWN;
+F9 stays UNKNOWN-HELD with its original reservation.
 
 ## Owned Future Paper
 
@@ -136,19 +167,41 @@ blindH3+0.828084% and event/samegrossEW17+0.412062% beat it.
 Turnover improved vs daily-flat H1 (-1.774887%), but the frozen primary failed.
 No threshold rescue, repeat, alpha claim or current Paper/model/bank swap.
 2140.706347 upper includes allowances, not measured GPU time.
-Current Engine package is
+Joint-downside risk campaign is COMPLETE_CLOSED_NONDEGENERACY_FAIL_BEFORE_DEV:
 A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
-20261104-v1. SCOPE/PREPARATION-CALLBACK: source qualification ONLY, no numerical
-Source/PID/CID/lease/fit/forecast/view or reserved GPU yet. Joint pathwise H3
-downside PSD risk allocation versus same-model diagonal/constant risky controls.
-Original16:42:19..19:42:19UTC,7600activeSUM10800elapsed/2fits/12views/0retry.
-The first feedback nominee was rejected as duplicate of completed c59088ed
-before numerics; source work is charged, not reset/refunded.
-Before numerical freeze prefer existing2015..2025 strict same-capture OHLC
-training prefix over fitting17x17 risk from only~100dates. Euclid and Engine
-exchange exact schema directly; no new network acquisition or Parent-JIT gate.
+20261104-v1/SYNTHESIS.json, frozen Source39cb05e8.
+CPU1fit and actual CUDA TCN1fit completed; GPU8epochs/56updates/INNER-best8,
+561.486301s process, convergence NOT proven. FIT/INNER response test failed:
+gradient-to-roundtrip-cost ratio0.575446<1 and KEEP0.8125>0.80. Therefore
+DEV forecasts/readouts/new cost views are0; profitability is NOT EVALUATED,
+not zero and not an economic failure. No relaxed threshold, numerical retry,
+model/Paper-bank swap or repeated fit. Ten CIDs/93recorded actor births closed,
+GPU lease absent; DELIVERY-CLOSED8b26c93f/final-callback9833494d.
+Conservative SUM upper6073.732391 includes3400reserved-not-measured allowance,
+not measured CPU/GPU spend. Original7600SUM/10800elapsed/hard19:42:19UTC
+and all native failures/debits remain unchanged.
+Strict2015..2025 historical Data is COMPLETE:
+A/data/current-h3-risk-historical-training-input-preparation-20261104-v1/API.json,
+Sourcec1a36b16/API353ddf80/manifestccec384a/closureed562268.
+2766dates/17stocks,46174strictOC/838conditional;1739FIT/479INNER support,
+jointC602276,0HTTP/models/2026readout. Parent9exact reference hashes matched.
+Euclid's completed executor is closed, durable Data memory remains active.
+Next distinct expected-net-return/risk/turnover campaign is assigned to
+Confucius, including a tiny actual optimizer/batch/transfer timing diagnosis
+before long fitting. No new numerical Source/PID is yet evidenced.
 All reused-development/MODE1/currentlisting/nonPIT/notTR/unknownCA/finality/
 modeled-cost/analytical-versus-native OPEN5/PRE_CLOSE15 limitations remain.
+
+Earlier full17 direction received Claude GO_WITH_LIMITS:
+A/execution/current-earlier-full17-direction-challenge-20261104-v1/
+PARENT-REVIEW.json, session08e6aad7-1d47-4982-a334-4eec3e62023e.
+Prepare genuine Nov3-asof/Nov4-decision Data at21:30UTC after positive NAS8
+closure, then same trusted two-model producer and one finite native financial
+round Nov4 packet-compatible entry -> Nov6PRECLOSE15 only when exact fresh input and runtime
+admission qualify. No actual earlier schedule/point/financial installation yet.
+Original H3/Nov6 Data/Nov9 producer remain unchanged; old Nov9 producer is not
+an automatic second financial writer. Same-policy active/pending namespace
+collision withholds the new round, not all research or a new-bank reset.
 
 ## Monitor
 
@@ -162,31 +215,47 @@ NOT deployed/admitted; f488 is build config, not Engine image ID.
 Do not casually swap a runtime dependency of a financial owner. No public
 exposure/private custody/credentials/broker authority in web.
 
+Korean monitor consumer completion is source-native READY, not deployed:
+A/monitor/current-korean-monitor-consumer-compatibility-implementation-
+20261104-v1/completion/API.json, Source1b7ef139/native6c5ca695.
+MSE original exit e0aa6822 and H3 static reader84552985 preserve original
+financial/authority/run/read-once namespace; actual native driver factory and
+invented source-format parse-and-return paths passed. All five consumer source
+enclosures now exist. Parent actual Task migration, physical single-monitor
+readback and later image swap remain separate unfinished operations. Current
+be48 stays working; no public/private/broker authority is added to the web.
+
 ## Parallel Assignments
 
-- Confucius Engine/Steward: joint-downside PSD campaign above, source-only
-  preparation; do not claim GPU training running before exact Source/PID.
-- Euclid Data: current-h3-risk-historical-training-input-preparation-20261104-v1,
-  <=600SUM2400elapsed/4invented sets; retained74830/ed401 same-capture strict
-  2015..2025 C60/OHLC/masks to Engine,0HTTP/marketreadout/models/private/Task/C/Git.
-- Ohm Infra: current-open45-next-session-integration-preparation-20261104-v1,
-  <=900SUM3600elapsed/5invented iterations; qualify Nov4US finite publisher+
-  original-bank financial compatibility from Data7323 and owner619a, no old
-  Nov3 replay/retag or actual Task/API/private/model/C/Git. Direct role handoff.
-- Hooke Infra: current-full17-finite-account-consumer-readiness-20261104-v1/runtime,
-  <=900SUM3600elapsed/5invented iterations; original serial bank/native246dfSDK/
-  Phase financial enclosure and changed exact envelope/host-guest closure smoke.
-  Source-contract mapf2fd9ef5 is CLOSED. No new dispatch platform/actual effects.
-- Helm Execution: F9 component86f44f40 is CLOSED source-native ready only;
-  actual original private input/HTTP/effects UNKNOWN. Now implements enclosing/
-  child in that same root,<=600SUM2700elapsed/4invented iterations: exact
-  network-none RO producer -> RAM capsule -> Windows native query with no
-  private mount, typed/bound closure and worker-local token deferral. Parent
-  actual read awaits that qualified integration; F9 UNKNOWN-HELD unchanged.
-- Erdos invoked Monitor Infra: current-korean-monitor-candidate-admission-
-  preparation-20261104-v1,<=480SUM2400elapsed/4invented suites. Exact29f image/
-  source/role compatibility and concrete relevant-owner migration delta only;
-  no actual Docker/Task/private/deployment or repeat of closed UI experiment.
+- Confucius Engine/Steward: joint-downside risk synthesis is CLOSED_FAIL_BEFORE_DEV;
+  a distinct new expected-net-return/risk/turnover campaign and native throughput
+  diagnosis are assigned, no new numerical launch evidenced. No fit repeat.
+- Euclid Data executor: historical training delivery COMPLETE and closed;
+  durable Data memory remains, no idle LLM implied by its MD.
+- Helm Execution: F9 enclosing r2 native-ready but actual read WITHHELD before
+  CID/HTTP on exact caller-lineage guard; consumed marker stays immutable.
+  Diagnose that first cause after Open45 r5 definition comparison recovery;
+  no broker retry or blanket Parent exemption.
+- Ohm Infra: Open45 Nov4 source COMPLETE and Parent actually installed/enabled;
+  now genuine Nov3-asof/Nov4-decision earlier full17 point preparation at
+  A/research/current-nov4-full17-earlier-point-preparation-20261104-v1.
+  Same trusted foundation releases/recipes, two future calls/zero fits; no
+  stale point retag, current H3 replacement or new private bank.
+- Erdos invoked Data: earlier coherent19 C127 source/native READY dc8c48fc/
+  metadata b57efe47, not installed/captured. Exact future Nov3UTC21:30 capture
+  depends only on positive original NAS8 relevant-worker closure. Incorporate
+  measured Windows XML/default/ACL compatibility without old-source mutation.
+- Hooke Infra: old Nov9 full17 financial enclosure SOURCE939bc4ab/host1c19b58a
+  is CLOSED source-native ready, not installed. New separate Nov4 packet-compatible early-entry/
+  Nov6PRECLOSE15 financial source preparation preserves native one-bank sizing,
+  current H3/F9/pending identities and every original exit.
+- Lagrange invoked Monitor Infra: MSE/static-reader completion1b7ef139 is
+  CLOSED; all five consumer source enclosures ready, actual deployment absent.
+  Prepare exact current operational Task metadata migration only; keep working
+  be48 until actual owner closure and complete qualified migration/swap.
+  No repeat of closed UI/model/core matrices.
+Parent owns C/sharedMD/Git/integration and actual effects. Role documents are
+durable memory, not proof that an LLM, Task or numerical worker is running.
 
 Parent owns C/sharedMD/Git/integration and actual effects. Assignments are not
 proof of active numerical workers. No operator decision pending.

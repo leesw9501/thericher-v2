@@ -2,20 +2,31 @@
 
 ## Current Results And Next
 
-Current Engine package is
+Joint-downside risk campaign is COMPLETE_CLOSED_NONDEGENERACY_FAIL_BEFORE_DEV:
 A/research/current-short-swing-h3-joint-downside-risk-allocation-development-
-20261104-v1. SCOPE/PREPARATION-CALLBACK: source qualification ONLY, no numerical
-Source/PID/CID/lease/fit/forecast/view or reserved GPU yet. Joint pathwise H3
-downside PSD risk allocation versus same-model diagonal/constant risky controls.
-Original16:42:19..19:42:19UTC,7600activeSUM10800elapsed/2fits/12views/0retry.
-The first feedback nominee was rejected as duplicate of completed c59088ed
-before numerics; source work is charged, not reset/refunded.
-Before numerical freeze prefer existing2015..2025 strict same-capture OHLC
-training prefix over fitting17x17 risk from only~100dates. Euclid and Engine
-exchange exact schema directly; no new network acquisition or Parent-JIT gate.
+20261104-v1/SYNTHESIS.json, frozen Source39cb05e8.
+CPU1fit and actual CUDA TCN1fit completed; GPU8epochs/56updates/INNER-best8,
+561.486301s process, convergence NOT proven. FIT/INNER response test failed:
+gradient-to-roundtrip-cost ratio0.575446<1 and KEEP0.8125>0.80. Therefore
+DEV forecasts/readouts/new cost views are0; profitability is NOT EVALUATED,
+not zero and not an economic failure. No relaxed threshold, numerical retry,
+model/Paper-bank swap or repeated fit. Ten CIDs/93recorded actor births closed,
+GPU lease absent; DELIVERY-CLOSED8b26c93f/final-callback9833494d.
+Conservative SUM upper6073.732391 includes3400reserved-not-measured allowance,
+not measured CPU/GPU spend. Original7600SUM/10800elapsed/hard19:42:19UTC
+and all native failures/debits remain unchanged.
+Strict2015..2025 historical Data is COMPLETE:
+A/data/current-h3-risk-historical-training-input-preparation-20261104-v1/API.json,
+Sourcec1a36b16/API353ddf80/manifestccec384a/closureed562268.
+2766dates/17stocks,46174strictOC/838conditional;1739FIT/479INNER support,
+jointC602276,0HTTP/models/2026readout. Parent9exact reference hashes matched.
+Euclid's completed executor is closed, durable Data memory remains active.
+Next distinct expected-net-return/risk/turnover campaign is assigned to
+Confucius, including a tiny actual optimizer/batch/transfer timing diagnosis
+before long fitting. No new numerical Source/PID is yet evidenced.
 
 
-Updated Nov3UTC17:27 / Nov4KST. Confucius owns Engine and sole GPU coordination.
+Updated Nov3UTC18:45 / Nov4KST. Confucius owns Engine and sole GPU coordination.
 Daily C60 Data1b1c9759/Dataset9b111314 is ready:141dailyorigins,
 17assets/2397known inputs,139new-entry dates plus2continuation-only;
 independent H3 price support, no outcome-based selection, no future rows/impute.
@@ -40,17 +51,29 @@ coordination; actual new Source/PID must be evidenced, not inferred from MD.
 All reused-development/MODE1/currentlisting/nonPIT/notTR/unknownCA/finality/
 modeled-cost/analytical-versus-native OPEN5/PRE_CLOSE15 limitations remain.
 
-Next distinct cost/turnover-aware trainable selection/risk/sizing hypothesis
-must beat meaningful risky/samegross baselines, preserve chronological splits,
-OOF learned-fusion inputs, real native optimizer/checkpoint/earlystop/curves
-and finite caps. No rescue of failed frozen targets or repeat for utilization.
-Parent delegated <=7800SUM10800elapsed/<=2fits/12views/0retry; actual next
-Source/PID remains to be reported, not assumed running.
+Next distinct expected-net-return/risk/turnover hypothesis must retain aligned
+risky/samegross baselines, chronological splits/purged targets, OOF learned
+fusion, native optimizer/checkpoint/early-stop/curves and finite predeclared caps.
+Diagnose the actual small-batch/transfer/CPU overhead on tiny invented inputs
+before long fitting; do not rerun completed market training for profiling.
+Confucius owns the new source/clock/budget freeze and GPU headroom. A ready
+campaign may use useful concurrent CPU/CUDA workers; no new launch is assumed.
 
 PeerOC0ca2/RESULTfb7444f7 CLOSED2fits2forecasts10views:CPU53trees/BEST52;
 CUDA TCN19epochs494updates/BEST6/early12, net10growth-41.309432%/-52.037411%,
 both FAILED. Original9b52 and diagnostic/cache2592 failures/ALLCASH results
 remain closed, no refit/rebooking. Current full17/native/Nov9 or B10 unchanged.
+
+Earlier full17 direction received Claude GO_WITH_LIMITS:
+A/execution/current-earlier-full17-direction-challenge-20261104-v1/
+PARENT-REVIEW.json, session08e6aad7-1d47-4982-a334-4eec3e62023e.
+Prepare genuine Nov3-asof/Nov4-decision Data at21:30UTC after positive NAS8
+closure, then same trusted two-model producer and one finite native financial
+round Nov4 packet-compatible entry -> Nov6PRECLOSE15 only when exact fresh input and runtime
+admission qualify. No actual earlier schedule/point/financial installation yet.
+Original H3/Nov6 Data/Nov9 producer remain unchanged; old Nov9 producer is not
+an automatic second financial writer. Same-policy active/pending namespace
+collision withholds the new round, not all research or a new-bank reset.
 
 ## Closed Paper Handoff
 

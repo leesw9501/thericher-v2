@@ -2,7 +2,7 @@
 
 ## Current Execution
 
-Updated Nov3UTC17:27 / Nov4KST. Parent owns actual metadata/sharedMD/Git.
+Updated Nov3UTC18:45 / Nov4KST. Parent owns actual metadata/sharedMD/Git.
 ONE original B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending identities and ALL original exits remain. No KIS_LIVE_*, new bank, profit refill, foreign adoption or unknown-request substitution.
 
 Open45 actual Nov3 data attempt failed at prewarm before market HTTP: exact
@@ -26,6 +26,25 @@ A/execution/current-open45-frozen-publisher-financial-binding-repair-20261103-v1
 Source-only owner repair619a9a1d has13native cases PASS; old c4b/577SDK and
 expired opportunities remain immutable. No replay/retag/manual TaskRun.
 
+Open45 Nov4 future publisher/entry/original owned exit are ACTUALLY enabled:
+A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
+PublisherNov4UTC15:07:30, entry15:17, exit16:17;0instances/lastYear1999/
+four intended protected ACEs on all3actual Tasks. Existing H3/NAS8/web unchanged.
+Metadata0efb9fd5/nativeeb5e9b33 and Parent composition47e10c43/native9fb08297
+qualify exact disabled/readback/authority/exit-first enable/enabled readback.
+Eight positive/24negative native checks plus independent actual3Task readback.
+Prior partial creates/failures remain. No repeated completed create/repair:
+exit preserved, completed publisher own repair adopted, exact absent entry
+created flags26. The comparison handles ONLY paired same schema versions,
+measured defaults, official xs:all paths and protected descriptor representation
+with identical owner/group/ACEs/all other flags except AutoInherited control bit.
+Triggers/Actions order, clocks/arguments/principal and effect-time checks remain.
+Official schema: https://learn.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-schema
+Actual pinned Linux import passed in import-r2, without private/credential/model
+forward. Candidate is LSTM32 BEST10, not MLP; checkpoint3d74a247 remains fixed.
+Fresh future point/submit/acceptance/fill/owned inventory/PnL are UNKNOWN.
+This is installation, not a broker effect. Consumed phases are not replayed.
+
 Parent actual market-only probe187fbc0e is COMPLETE:
 A/data/current-paper-market-auth-categorical-probe-20261104-v1/ACTUAL-RESULT.json.
 Nov3UTC16:00:48 token POST200 +16:00:50 QQQ daily GET200, one each/sameRAMclient,
@@ -41,6 +60,18 @@ NOT strategy ownership/order eligibility/full account-risk/fees/settlement/PnL.
 No funds/open-orders/order/recovery/private-custody calls, adoption or F9 release.
 Both actual run markers are consumed: NEVER REPLAY. Authentication works now;
 do not ask operator to change keys from the earlier local pre-HTTP failure.
+
+F9 exact original-request readonly r2 Source2b2837f0 was actually attempted
+Nov3UTC18:28 through quiet Parent Job. It returned WITHHELD before private CID
+creation/network worker/HTTP at hooks.caller_identity -> owned_lineage line31.
+A/execution/current-f9-current-request-readonly-preparation-20261104-v1/
+enclosing/PARENT-LAUNCH-CLOSED.json and r2/parent-once/RESULT.json/
+PARENT-CLOSED.json retain category/source frames and positive Job closure.
+Root Job7members joinedempty/closed/0stderr; no private capsule persisted.
+The exact r2 marker is consumed; no replay/reset. Investigate the self identity
+field mismatch using retained source-safe census, not an exemption for unknown
+writers. Acceptance/fills/owned inventory and fees/settlement/PnL remain UNKNOWN;
+F9 stays UNKNOWN-HELD with its original reservation.
 
 H3 original finite AMD entry/exit are ACTUALLY migrated and enabled to
 operational Source2873c60a/releaseaa0be4cd/metadata SOURCE-r2 9b38bc3e.
