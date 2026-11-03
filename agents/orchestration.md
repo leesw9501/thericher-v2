@@ -187,7 +187,10 @@ UNKNOWN and company unfinished.
 adoptions are complete. Execution/Infra/Validation scopes are closed, not busy.
 Engine's ONE current cost-aware preparation root is
 A/research/current-short-swing-h3-direct-cost-utility-allocation-development-20261104-v1.
-No new fit is inferred before actual worker evidence. Due14:25 producer/14:31
+That package is now CLOSED at23:49:1GPUfit/54epochs540updates/1forecast9views,
+matchedEW dominates primary, all8CIDs/81actors/finalizer closed. No active
+numerical worker; next research candidate is stateful cost/book alignment
+diagnosis with a new frozen contract, not a completed-fit repeat. Due14:25 producer/14:31
 entry belongs to existing Tasks, not foreground waiting. Parent owns current
 integration/verification/Git, no operator decision pending.
 Reversible improvement: one explicit canonical active workorder per dispatch,

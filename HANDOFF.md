@@ -15,6 +15,11 @@ runtime READY is present. Financial pair ACTUALLY migrated23:33:37 tobd7b5c0c/
 metadata38021922/release793c1dc6, full independent enabled readback7d60d61e,
 both Ready3/0instances/never run. Future point/submit/fill/owned state/PnL still
 UNKNOWN; company unfinished. See actual proof below; do not replay modes.
+Latest independent research direct-costa14d43bd is CLOSED primary FAIL versus
+matchedEW after54epochs540updates/21.288s CUDA training,1forecast9views.
+All8CIDs/81actors/finalizer closed; no Paper/risk/model swap. See Engine for
+metrics/debits and next stateful-cost diagnosis. Assigned role scopes closed,
+not evidence of permanently running LLMs/GPU. Existing future Tasks remain owned.
 
 Current financial proof:
 A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json

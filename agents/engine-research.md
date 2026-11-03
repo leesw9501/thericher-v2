@@ -116,10 +116,19 @@ Both successors are now CLOSED, not active:
 Old d94 fixture-missing-dates failure remains0forward/update/marketfit and its
 616.5530debit unchanged; successor3native attempts passed before market, not a
 regrade/independent replication. No GPU permission/environment block occurred.
-Next ONE active preparation: cost/turnover-aware direct allocation or ranking
-loss on available price/indicator data, new finite contract/chronological
-training and INNER selection before GPU dispatch. No epochs-only repeat, old
-primary relaxation, native risk/Paper change or actual new fit claim.
+The distinct direct-cost utility study is now CLOSED primary FAIL:
+A/research/current-short-swing-h3-direct-cost-utility-allocation-development-20261104-v1/FINAL-CALLBACK.json.
+Sourcea14d43bd,1GPUfit/54epochs540updates/INNER-best6/21.288s training,
+1forecast9views/0numericalretry. Net10 direct+5.8639%,DD5.6799%,turn3.6074
+versus matchedEW+6.0197%,DD4.9976%,turn1.6444; secondary also trails EW.
+746.9639/7200upper includes600reserve,8CIDs/81actors/finalizer closed.
+Positive growth does not rescue frozen failures; no old criteria/grid change,
+independent alpha or Paper strategy/risk update. No numerical worker active.
+Next candidate is diagnosis of persistent-inventory versus conditional pair
+cost-state alignment before a NEW utility fit; current result does not prove
+that mismatch caused failure. Freeze distinct contract/native stateful-book
+comparison, retain old debits/outcomes. Do not repeat completed fits or treat
+future Paper execution as a profitability reward.
 
 ## Closed Paper Handoff
 

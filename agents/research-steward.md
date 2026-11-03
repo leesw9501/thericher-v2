@@ -64,6 +64,13 @@ Peak123724288allocated/150994944reserved bytes, not a utilization target;
 707.4215/6600upper includes600reserve. Old d94 native failure/debit retained.
 See Engine for primary failure. New cost/turnover-aware loss is one separate
 preparation, not active numerical work until actual Source/PID/lease evidence.
+Direct-cost a14d43bd then completed1CUDAfit/54epochs540updates/INNER-best6/
+21.288s training,1forecast9views/0numericalretry. Primary FAIL versus matchedEW;
+746.9639/7200upper including600reserve,8CIDs/81actors/finalizer closed.
+A/research/current-short-swing-h3-direct-cost-utility-allocation-development-20261104-v1/FINAL-CALLBACK.json.
+Assigned numerical studies are closed, not currently active GPU workers.
+Next stateful-cost diagnosis/new contract is not a completed-fit retry, debit
+refund or claim that more utilization would improve alpha.
 
 ## Frozen Resource Index
 
