@@ -42,6 +42,12 @@ hash links, positive publisher/worker closure and file stability;0new HTTP or
 model calls. Nov3asof/Nov4decision x[1,17,60,4]/z[1,17,20]/v[1,17]/known[1].
 Checkpoint9364 remains on D:; Erdos owns explicit NEW bridge/publisher binding,
 not an old658a inference replay or silently installed Paper strategy.
+New forecast-only dc9dad3b ACTUALLY restored9364 and made1market forward:
+A/research/current-return-tcn-paper-recovery-forecast-only-point-20261104-v1/CALLBACK.json.
+dd2850c4, strict codec parse/hash PASS,124.5215/240upper/all Jobs closed.
+All17 proposals abstain/exposure0/confidence0/orders0, policy UNBOUND. Scores
+known is not a valid Paper point or measured future performance. No fit/EVAL/
+selection/API/GPU/retry; raw scores remain in D envelope, not Git/Claude/UI.
 Full17 point producer is actually enabledNov4UTC14:25; future outputs UNKNOWN.
 Paper entry14:31 is independent of research profitability, under native risk.
 
@@ -88,6 +94,15 @@ DEV:0forecasts/views. All actors closed,1075.3470/7800upper including600reserve,
 RNG resume; more training did not improve this INNER, no independent-alpha
 claim. Next distinct nonlinear raw/indicator or tensor-friendly expert is
 Engine-owned; freeze it first, not another epochs-only repeat.
+Distinct nonlinear raw/indicator CatBoostdd813f9b also CLOSED:
+A/research/current-short-swing-h3-catboost-raw-indicator-development-20261104-v1/FINAL-CALLBACK.json.
+1CPUfit/204iterations/INNER-best103/1forecast/9views/0retry,
+683.2392/6600upper including600reserve, all
+actors closed. Net10 modeled growth+7.878858%,DD3.682373%,turnover2.621505;
+lower DD/turnover than saved RAW, worse growth/predictive MSE. Frozen primary
+FAIL, not regraded/Paper/independent alpha. Next parallel candidates: finite
+fixed RAW/CB composition using only aligned saved forecasts, and a distinct
+GPU-friendly raw/indicator hypothesis. Neither is claimed fitted/active yet.
 
 ## Closed Paper Handoff
 

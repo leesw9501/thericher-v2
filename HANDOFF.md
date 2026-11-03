@@ -210,6 +210,48 @@ Web remains credential/private-custody/broker-free; no public serving.
   hit an invalid parsed-vs-raw XML comparison, not proven instability. No
   baseline/comparison waiver or web swap; preserve failed evidence.
 Role MDs are durable memory, not evidence of active LLMs/numerical workers.
+At22:24 Parent prebound qualified future-metadata adoption to the named owners,
+not a post-start ACK: Hooke only the existing Nov4 producer Task; Helm only
+the existing Full17 entry/owned-exit pair. Require exact new source/native,
+positive original owner/no-attempt closure, disabled UPDATE-only/full XML/API7
+readbacks and exit-first enable for the pair. Original clocks/principal/ACL/
+bank/B10/F9/risk/all exits unchanged; no Task.Run/broker/private-state effects.
+No actual new adoption is claimed until exact completion/readback callbacks.
+Latest producer c1e27d95/ownere4a37f03 is CLOSED PARTIAL, NOT deployed:
+A/research/current-nov4-full17-data-fa918-point-producer-preparation-20261104-v1/API.json.
+Data/full18 and quiet GUI components pass; whole-publication fixture and
+UPDATE-only metadata qualification do not. Parent found real e993 reader
+birth-path string.read_bytes() bug too. Lagrange owns new corrected-reader
+qualification is now PASS in a NEW independent scope, not old regrading:
+A/research/current-nov4-full17-fa918-independent-reader-repair-20261104-v1/API.json.
+Source3cbc76a0/readere557d488/nativeb34cfd30,2groups/real Win32 live+closed/
+strict16-member parse-return/Ruff/0retry/226of240upper; original logical roots
+and c1e/e4a unchanged. Parent hashes matched. Hooke owns narrow future metadata
+completion, Helm financial binding; neither deployment is inferred from this.
+Old failures/caps unchanged. Existing producer still binds old dc8 until
+positive actual update evidence; new Data success is not deployment.
+Metadata completion b84d4228 also closed PARTIAL,0Task effects. Parent isolated
+its native XSD failure with4in-memory cases,0named Task queries/mutations:
+A/verification/current-full17-definition-declaration-probe-20261104-v1/RESULT.json.
+Same semantic DOM: new UTF-8 declaration fails COM8004131A; UTF-16 or absent
+declaration passes; old UTF-16 passes and old UTF-8 negative fails. Same host/
+principal; not a SID/permission waiver. Old bb28 XML/source remain unchanged.
+Hooke owns a NEW narrow metadata/required-READY completion with measured XML
+serialization fix. Helm old61754dbb preparation is also unqualified/no effects;
+its synthetic caller omitted required process_birth, not another reader bug.
+New finite technical completion scopes retain all failed versions/caps and
+allow bounded ordinary fixture iteration, not extra market/model/broker trials.
+Claude block/repair challenge: ADOPT, advisory only, exact pointer
+A/execution/current-company-block-direction-challenge-20261104-v1/RESULT.json.
+No guard, cap, original failure or runtime requirement was waived by review.
+Separately, forecast-only pointdc9dad3b is ACTUALLY complete22:25:19:
+A/research/current-return-tcn-paper-recovery-forecast-only-point-20261104-v1/CALLBACK.json.
+1safe9364restore/1market forward, strict codec/hash PASS, Parent0refmismatches;
+Job joined/empty/exit0,124.5215/240upper. All17 native proposals abstain/
+exposure0/confidence0/orders0; policy UNBOUND, not a valid trade point, no
+Full17 swap/profitability claim.0fit-EVAL-selection-HTTP-GPU-retry. No rerun.
+Parent remains sole shared-MD/Git owner; do not compete with these metadata
+owners after resume. Their original scope/retry/elapsed caps remain unchanged.
 
 ## Verification / Claims
 

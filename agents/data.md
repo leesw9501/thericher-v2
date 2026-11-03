@@ -261,4 +261,14 @@ links and publisher/worker closure/stability checked. Actual bytes remain on M.
 Hooke owns explicit Full17 producer/owner binding; Helm financial5a derivative;
 Erdos new checkpoint9364 bridge binding, not implicit old3a/ad7/7360/5a/658a
 upgrades. No future point/model score, order acceptance/fill or new bank implied.
+New bridge941f0447/nativeb27edea4 explicitly binds ab158 and checkpoint9364:
+A/research/current-return-tcn-paper-recovery-publisher-binding-preparation-20261104-v1/API.json.
+The separately bounded forecast-only scope is ACTUALLY complete22:25:19:
+A/research/current-return-tcn-paper-recovery-forecast-only-point-20261104-v1/CALLBACK.json.
+Sourcedc9dad3b/callbackdd2850c4;1restore/1market forward/0fit-EVAL-selection-
+retry/API/GPU,124.5215/240upper, quiet Job joined/empty/exit0/stderr0 in4.52s.
+Parent rehashed exact Source/result/envelope/closure refs,0mismatches. Exact
+readyb569/input64b1;17 native abstain/exposure0/confidence0/orders0, strict
+codec parse/hash passed. Scores remain only on D:; policy UNBOUND, NOT a valid
+trade point, signal/no-signal verdict, profitability claim or Full17 swap.
 This is an internal adapter/precondition fault, not observed KIS quota failure.
