@@ -2,7 +2,32 @@
 
 ## Current Ownership
 
-Nov2UTC22:46: GOOGL entry exact-bound FAULT48166777 at20:55:13/nativeNOT_ENTERED/
+Nov3UTC00:35: ACTUAL H3 entry/exit installed/enabled Ready3/0instances.
+Exact future entryNov3UTC20:55/exitNov6UTC20:45, originalSource6ae/TRUE32f/
+POINTad3b/SEALf8fe unchanged. Full native source/registered+definition XML/ACL/
+SID/args/clock/settings READBACK31e83c91 and COMPLETEfc1c35b6 under
+A/execution/current-h3-enable-default-repair-20261103-v1. Source9bc93d9e/
+native9PASS plus calibrated6ebb205c/39cases164assertions, all owners closed.
+Only exact Settings.Enabled=true default omission added; false/attrs/other
+drift denied. Old partial Create/Enable and fixture failures retained/consumed,
+no replay. No Run/broker/private calls, no actual financial result from install.
+Public parser03ec/APIaad8 COMPLETE14tests+2actual pinned-producer smokes/Parent
+14PASS; diagnostic only, financial UNKNOWN. StrictSDK0ad/API39a COMPLETE15tests,
+old40+new151.870upper. Completed decoder e1b3c359 COMPLETE10tests/actual public
+R5 ABI/123source hashes stable/new94.231upper. Exact sealedpoint/retainedplan/
+unique SELLcounter joins handle completed-flat, zeroSELL/ambiguous unsupported.
+No synthetic active DTO, guessed targets or all-bank-flat veto/F9 release.
+
+Helmholtz01a19e81-10fb-7781-9d3a-53f8ef407883 now owns
+D:/thericher-v2/model-artifacts/execution/current-h3-offline-guest-host-readiness-20261103-v1,
+600ownedSUM1800elapsed/hard<=01:00. Native Docker uses INVENTED custody only,
+network-none/source+privateRO and actual SDK/bootstrap/parser/admission/stability/
+PID-Job-CID closure. No actual private/Task/broker call or new GOOGL chain.
+Future actual read needs exact source/run/window adoption and preparer closure
+before host launch, no generic parent/uv/PowerShell exemption or observe().
+Current financial categories UNKNOWN. Original risk/F9/bank/old exits unchanged.
+
+Earlier GOOGL entry exact-bound FAULT48166777 at20:55:13/nativeNOT_ENTERED/
 ValueError/custodylambda92/not_retained. Originalfinancialsource/release/round/
 input/policy/phase/timeMATCH, not fill/no-order proof.21:05 reader consumed
 WITHHELD57a51d17 after_read/ADMISSION-FAILURE70339013,3admissions27JobsCIDabsent,
@@ -15,7 +40,8 @@ Boyle prep f39d3411/API18551b15/NATIVE7d5d8249 COMPLETE55tests/14Jobsclosed,
 WITHHELD before_create, release41f9b96c/private_reads0/four Jobs closed/no
 qualified result. Unknown6499a380 is Parent adopt.ps1 wrapper; actual host
 15ddbfa3 was recognized owned. No replay/new read chain or blanket parent
-PowerShell exemption. Boyle diagnoses source-only, not another actual read.
+PowerShell exemption. Boyle diagnosis COMPLETE11fda1d0/CALLBACK5015fc30,
+29auditedinputs unchanged; its scope CLOSED, not another actual read.
 Boole originalfutureexit CLOSED WITHHELD7ad919ed/callbackcf328fa6:1positive/
 6negativesPASS,2fixturefailures,893.803of900SUM/knownactorsclosed; not adopted.
 H20 already has pre-admission pause/differenthelper; no duplicate patch.
@@ -29,14 +55,13 @@ DATAREADY2d5e183b/2371required+19currentcells. Parent original panel+strict
 producer/SDK/clock/model bindingPASS, R5actualhostSOURCE6ae54088/disabledrelease
 ec8a70f0 at current-h3-actual-preparer-r5-20261103-v1/actual-ad3b0bcf7cda223e.
 ParentRESULT111129a6,0modelreruns. ParentTRUE32f5a92e/plan d3b8ac9d actual
-CreateDisabled PARTIALLY FAILED22:20:50: exit exists DISABLED/state1/0instances,
-entry ABSENT, neither enabled. Old CREATE attempt consumed, never replay.
+CreateDisabled PARTIALLY FAILED22:20:50 with only disabled exit; historical
+partial state was recovered as above, old CREATE attempt consumed/never replay.
 Stable raw native backup CAPTUREe9558971 at current-h3-partial-install-parent-
-capture-20261103-v1 is UNQUALIFIED until complete native semantic comparison.
-Lovelace owns current-h3-native-scheduler-calibration-20261103-v1,
-600SUM1800elapsed/hard23:00: exact state1/3/Queued2deny, equivalent UTC offsets,
-trusted ACL/native sparse defaults. Parent recovery of exact own disabled exit
-only, create-only absent entry/fullreadback/exit-before-entry enable after proof.
+capture-20261103-v1 remains UNQUALIFIED under its old comparison; new source
+independently qualifies exact bytes. Lovelace calibration scope CLOSED385SUM,
+state1/3/Queued2deny/equivalent offsets/trusted ACL/native sparse defaults.
+Parent recovered exact own exit, created missing entry and enabled exit first.
 No delete/update/foreign adoption/earlyeffects. Original risk/F9/bank unchanged.
 
 Nov3KST/Nov2UTC. Retention fix COMPLETE at A/execution/current-f9-offline-reader-
@@ -76,8 +101,8 @@ quiet GUI->console runtime8a903160/rearm87e949fe/new source-bound policies/
 XML-I-S-B; cold actual SDK/strict producer/codec+6denials and emitted binding
 audit/F-E9/syntaxPASS. No fit/inference repeat. Missingactualpoint/seal ->
 INCOMPLETE/0artifacts. SAME original bank/gate/emergency/token/journals/oldcohorts.
-Future H3 entryNov3UTC20:55/exitNov6UTC20:45 not yet enabled: exact disabled
-exit partially created, entry absent. Actual source-bound point is qualified;
+Future H3 entryNov3UTC20:55/exitNov6UTC20:45 now ACTUALLY enabled, Ready3.
+Actual source-bound point and definition installation qualify, not a fill;
 retain original effect-time owner/account/basis/F9/
 observer/token/quote/orderability/risk admission. No fixture-as-production.
 R3 missing owner helpers/Task fields and R4 COM XML encoding error are retained.

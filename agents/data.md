@@ -2,7 +2,30 @@
 
 ## Current Ownership And Ready Inputs
 
-Nov2UTC22:46: coherent19daily ACTUALLY COMPLETE at21:32:08.360115,
+Nov3UTC00:35: Ohm Open45 actual input DATA_READY_CLOSED00:30:55 at
+D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json.
+Sourceffa13cce/APIeada9635/STAGED48a8b342/native2c0a0787;25sessionsSep25..Oct29,
+FIT120/INNER40/reusedDEV40 stock keys, separate INPUT/TARGET/HELD roles/masks.
+Eight-stock axis includes AVGO not AMD, SPY context/QQQ not a gate. Complete
+required cells; provider START/END/finality/arrival/CA unknown, causal proxy
+only. Old300+new180upper retained/four stage actors closed. Direct qualified
+handoff to Harvey, no restaging/acquisition needed for the current two fits.
+
+Copernicus acquisition preparation COMPLETE45native/fullRuff/15Jobsclosed:
+D:/thericher-v2/model-artifacts/data/current-us19-minute-acquisition-preparation-20261103-v1/FINAL-CALLBACK.json.
+Sourcea6668bfa/READINESSfbb4209e; canonical original19 overlap9 names/
+87746of87750 minute cells/25sessions. AMD plus nine NYSE names lack this
+canonical coverage; retained old8session data kept separate, no vintage splice.
+Proposed665GET/800cap/2h/zero retry is NOT actual collection, zero HTTP/creds
+in preparation. NEW owner scope current-us19-minute-runtime-binding-20261103-v1
+under same absolute data artifact root,900ownedSUM2700elapsed from dispatch:
+existing Paper Data client/protected valid token/shared timing and exact same
+cache/account ownership, quiet finite host/cursors/native producer-consumer.
+At most4 scoped market GETs+1POST only proven invalid token/gate; no account/
+order/live/rawenv or long collector deployment before actual adoption.
+Current Open45/H3 work does not depend on this acquisition package.
+
+Retained completed input: coherent19daily ACTUALLY COMPLETE at21:32:08.360115,
 Source9c5ec985/DATAREADY2d5e183b/manifest122b369c/closure9a5bd544. Parent original
 DataPanelReader/source/allcanonical/positiveclosure/required2371+19currentcloses
 PASS at A/data/current-coherent-input-parent-readiness-20261103-v1/RESULTd4d22f05.
@@ -11,9 +34,10 @@ availability limits remain.0newmodel/HTTP/credentials in Parent offline check.
 Parent installed read-only H3 publisher21:46/start<21:47/hard21:49 and Codex
 thericher-1 COUNT1 follow-up21:52UTC. ACTUAL publisher PUBLISHED POINTad3b0bcf/
 SEALf8fe5603; Parent exact-source/clock/model/DTO R5 binding RESULT111129a6,
-hostSOURCE6ae54088/disabledreleaseec8a70f0. Actual installer later created only
-a disabled future H3 exit; entry absent. Native calibration is Execution-owned,
-not a reason to collect or replay Data. No financial execution proof.
+hostSOURCE6ae54088. H3 future entryNov3UTC20:55 and exitNov6UTC20:45 are now
+ACTUALLY installed/enabled Ready3, READBACK31e83c91/COMPLETEfc1c35b6 at
+current-h3-enable-default-repair-20261103-v1. No broker/private effects or fill
+proof from adoption. No reason to collect/replay the same Data/model point.
 No manual collector/task Run. Data contracts unchanged; do not replay these jobs.
 Late-day reversal input r2 Sourceeff44414/READY7e48599f at
 A/data/current-preclose-reversal-input-readiness-20261103-v1/r2 was consumed

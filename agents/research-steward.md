@@ -2,17 +2,35 @@
 
 ## Current Resource Coordination
 
-Nov2UTC22:46: original robust-four/r1 EXPIRED CLOSED0marketattempts, seven
-known actors absent/810debit preserved. Negative-clock receipts remain failed;
-metadata fix did not reset the clock or rerun models. NEW Parent-assigned
-current-h3-robust-four-development-readout-20261103-v1 is CPU-only:
-900newSUM1800elapsed/hard<=23:16, one zero-fit pipeline/sixviews/0retry.
-Old810+newactual stays charged; same fixed candidate, oldmean3 parity inside
-sole attempt. No fresh/reserved outcomes or current point swap. Actual worker
-start/result must come from its callback, not this assignment. No GPU needed.
-Actual RTX4090 check21:36:3pct/1788of24564MiB/35C; not a future headroom promise.
-All old GPU campaigns below closed. Ready useful fitting is allowed, none is
-currently frozen/released; don't fabricate utilization work or active training.
+Nov3UTC00:35. Sole current GPU coordinator Harvey01a19e80-1586-7fe2-9587-
+9b44f510842b owns Open45 two-fit family (indicatorRidgeCPU/combinedLSTM32CUDA)
+at D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1.
+Original Nov2UTC23:46..Nov3UTC01:16/1800ownedSUM5400elapsed/2fits2forecasts/
+15views0marketretry; oldprep300+staging180 upper retained. Actual CUDA/checkpoint/
+handoff/Claude readiness precedes conditional delegated market release.
+Sourceffa13cce/STAGED48a8b342 Data ready25sessions/120FIT40INNER40DEV; no new
+acquisition required. Keep current actual PID/start/lease/headroom proof, +4GiB
+desktop reserve, project priority/concurrent useful work, no user-app allowlist.
+
+CPU H3 hazard COMPLETE546.266upper/1fit133updates/BEST101/.070583optimizersec.
+GPU nonlinear first-passage COMPLETE1fit114iterations/BEST81=82trainedtrees/
+.589849optimizersec; net10growth109.553207/DD20.866974/turn142.695227, primary
+growth failed. marketSUM12.158975, CID/CLI/lease closed. Device5661MiB includes
+co-tenancy, not isolated allocator. Final audit consumes existing reserved
+budget only, no numerical replay. Initial native bootstrap and invalid Parent
+release were pre-market failures, preserved. Do not interpret a historical
+prep callback as the later run's current status. All older completed fits stay
+closed; small useful fits/earlystop explain brief utilization, not GPU denial.
+
+Original robust-four/r1 EXPIRED CLOSED0marketattempts, old810
+debit/seven absent actors/negative-clock failures retained, no reset/refund.
+New current-h3-robust-four-development-readout-20261103-v1 COMPLETE/CLOSED:
+one zero-fit CPU pipeline/sixviews/0retry/oldmean3parityPASS; old810+new7.456=
+817.456owned-wall debit, seven actors absent. No GPU needed. Growth+riskPASS,
+turnoverFAIL, primary rejected. No regrade/current point swap.
+
+Never kill user applications. Historical resource checks are not fresh capacity
+proof. All older GPU campaigns below stay closed; no dummy utilization/repeats.
 
 Nov3KST/Nov2UTC20:38. McClintock's numerical scope is CLOSED; Parent checked
 8exactPIDbirths absent/2CIDs absent/leaseabsent,22350MiBfree35C before dispatch.

@@ -2,23 +2,54 @@
 
 ## Current Results And Next
 
-Nov2UTC22:46: original robust-four/r1 CLOSED EXPIRED0marketattempts/models;
-FINAL-EXPIRED-CALLBACK and FINAL-EXPIRED-CLOSUREa46a8b3f at
-A/research/current-h3-robust-four-expert-composition-r1-20261103-v1.
-Old810debit/seven absent actors/negative-clock failures preserved, not refunded.
-NEW Parent-assigned current-h3-robust-four-development-readout-20261103-v1:
-900newSUM1800elapsed/hard<=23:16, one zero-fit CPU pipeline/sixviews/0retry,
-same fixed trimmed-four candidate/thresholds. Exact originaltrend60 projection
-and oldmean3 parity INSIDE sole market attempt; failure consumes it. No old
-clock extension/model repeat/heldout/fresh/reserved outcomes or rescue.
-Source/native prep reuse only with exact producer/consumer/bootstrap/schema
-hash match. New numerical dispatch/result remains whatever actual callbacks
-prove, not inferred from this assignment. Old810+newactual stays charged.
-Claude GO_WITH_LIMITS: review/current-h3-native-calibration-and-dev-readout-
-challenge-20261103-v1/response.json. Reused DEV, not independent alpha/Paper pass.
-Actualthreeexpert PUBLISHEDPOINTad3b0bcf/SEALf8fe5603 on qualifiedDATAREADY
-2d5e183b; Parent R5hostSOURCE6ae54088 rendereddisabled/0financialeffects. This
-existing candidate is NOT swapped by the new research. No current GPU training.
+Nov3UTC00:35. Harvey01a19e80-1586-7fe2-9587-9b44f510842b owns current Open45
+Engine/soleGPU coordination at
+D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1.
+CPU indicatorRidge(alpha1) and combined9x16 LSTM32 CUDA, exactly2fits/2forecasts/
+one readout15views/zero market retries. First45RTHminutes, entryEND10:17,
+exitEND11:17/top4quarters. Original familyNov2UTC23:46..Nov3UTC01:16,
+1800ownedSUM5400elapsed includes preparation/native/failures/audit. Actual CUDA
+checkpoint/handoff smoke and Claude challenge precede delegated market release.
+LSTM max256updates/120optimizersec/INNERpatience24/best restoration; BEST0 is
+untrained. Primary net10 must beat Ridge AND same-preentry-gross EW, risky DD
+<=1.5samegrossEW; no secondary rescue. Cash/growth/risk reported separately.
+Ohm actual separate-role staging CLOSED00:30:55: Sourceffa13cce/STAGED48a8b342/
+native2c0a0787 at current-open45-input-staging-20261103-v1. FIT120/INNER40/DEV40,
+25sessionsSep25..Oct29/eight stocks inclAVGO notAMD/SPYcontext; required masks
+complete, old300+new180upper retained/fouractorsclosed. No new data acquisition.
+Canonical START/END/finality/arrival/CA unknown: causal proxy/reusedDEV only,
+not independent alpha or qualified Paper inputs. Original reserved data excluded.
+
+CPU H3 absolute hazard ACTUALLY COMPLETE:1fit1forecast6views/133updates/BEST101/
+INNERearlystop/.070583optimizersec,120.910531pct/DD22.742307/turn151.007615.
+Growth149.175598FAIL, risk+turnoverPASS, primary rejected. COMPLETEb1697d31 at
+current-h3-absolute-regime-parent-market-20261103-v1;546.266familyupper/closed.
+GPU nonlinear first-passage ACTUALLY COMPLETE: Source5a0e0d88/contract3153276a/
+release17d53600,1CUDAfit/1CBMrestore/1CPUforecast/6views/114iterations/BEST81=
+82trainedtrees/.589849optimizersec,109.553207pct/DD20.866974/turn142.695227.
+GrowthFAIL, risk+turnoverPASS; primary rejected. marketSUM12.158975/CID+CLI+
+leaseclosed. Native bootstrap and Parent invalid release failures preserved,
+neither a market fit. No duplicate training or current three-expert point swap.
+Exact result/source/closure paths are in HANDOFF.md; old prep-only status is
+historical, not evidence that the later actual market run is still pending.
+
+Original robust-four/r1 EXPIRED CLOSED0marketattempts; old810
+debit/seven absent actors/negative-clock receipts preserved. New distinct
+current-h3-robust-four-development-readout-20261103-v1 COMPLETE/CLOSED:
+Source75865f5c/contractd9487d3f/RESULT1d8c81ba, one zero-fit CPU pipeline/
+sixviews/0retry, originaltrend60 projection+exact233decision oldmean3 parityPASS.
+Net10 cumulative242.377556pct/DD22.434191/turn188.726218: growth+riskPASS,
+frozen turnover<185.995827FAIL => primary conjunction REJECTED.
+No rescue/regrade/current3point swap; reused DEV, not independent alpha/PaperPnL.
+Old810+new7.456=817.456owned-wall debit; all seven actors absent.
+
+Actual three-expert POINTad3b0bcf/SEALf8fe5603 on qualifiedDATAREADY2d5e183b,
+R5hostSOURCE6ae54088 future entry/exit ACTUALLY installed/enabled.
+READBACK31e83c91/COMPLETEfc1c35b6, not a fill. Current proposal unchanged.
+Deployment is not a financial result. Current numerical activity is established
+only by the Open45 worker evidence, not this board or an old preparation status.
+Claude reused-DEV/recovery GO_WITH_LIMITS pointer in NEXT_CODEX_GOAL.md.
+All completed models below stay closed, no utilization repeats.
 
 Nov3KST/Nov2UTC18:40 update. New GPU PairLogit/CatBoost campaign COMPLETE at
 A/research/current-h3-ohlc-pairwise-boosting-20261103-v1, Source49039e9b/

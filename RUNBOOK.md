@@ -2,79 +2,94 @@
 
 ## Current Operations
 
-Nov3KST / Nov2UTC22:46. Company objective UNFINISHED. Current exact sources,
-receipts and owner scopes are in HANDOFF.md and agents/orchestration.md.
-Do not manually Run consumed financial/Data/reader/publisher tasks merely to
-inspect results. Preparation/Task exit/installation is not a financial outcome.
+Nov3KST / Nov3UTC00:35. Company objective UNFINISHED. H3 future definitions
+are ACTUALLY installed/enabled Ready3/0instances, not actual financial execution:
+- thericher-h3-rank-cash-once-entry-20261103-v1,
+ Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55.
+- thericher-h3-rank-cash-owned-exit-20261106-v1,
+ Nov6UTC20:45..<21:00/PT7M = Nov7KST05:45.
+Original hostSOURCE6ae54088/ParentTRUE32f5a92e/POINTad3b0bcf/SEALf8fe5603/
+policy/bank/F9/pending/exits remain unchanged. H3 means three sessions.
+No manual Run/catchup/repetition, force trade or clock shift. At effects original
+account/basis/F9/unknown/token/quote/orderability/observer/risk checks still apply.
+Do not infer submit/acceptance/fill/inventory/PnL from this installation.
 
-Actual H3 proposal already published:
-D:/thericher-v2/model-artifacts/execution/current-h3-rank-point-publisher-preparation-20261103-v1/ACTUAL-ONCE-20261102/POINT/POINT.json
-SHA ad3b0bcf7cda223e2897c04dc744097f2444ba4916ac3820962731d63c46375c.
-SEAL f8fe560355d979839b1da8a482b735c46e5c085cfc60749f43ed90f0f9b9563d.
-Parent strict R5 binding:
-D:/thericher-v2/model-artifacts/execution/current-h3-actual-point-parent-binding-20261103-v1/RESULT.json
-SHA111129a66717d96c87fddba2b92470c56414e606ff998ff4f4d8d6de792f2c5b.
-Actual coherent DATAREADY2d5e183b/manifest122b369c/closure9a5bd544 already
-qualified required2371+19currentcells. No recollection/model rerun is needed.
+Full exact native actual readback:
+D:/thericher-v2/model-artifacts/execution/current-h3-enable-default-repair-20261103-v1/READBACK.json
+SHA31e83c91325d95ab9bf507e781afb10c38db4df1f351935e1002e9d12627f6ef.
+COMPLETEfc1c35b6, SOURCE9bc93d9e/native9PASS, original calibrated6ebb205c/
+39cases164assertions. Registered XML AND Definition.XmlText, ACL/SID/actions/
+clocks/settings/full source/TRUE/point/plan independently qualify.
+Only exact Settings.Enabled=true/noattrs normalizes to its native XSD default;
+false and any nondefault/attribute/clock/ACL drift remain significant.
+Original Create failed after disabled exit creation; recovered exact own exit,
+created only absent entry disabled. Original Enable failed after exit became
+Ready due default omission. Separate exact entry recovery then completed.
+Original consumed failures, capture and attempts remain immutable.
+Do NOT rerun Create/Recover/Enable/Finalize or consumed readbacks as observers.
+Parent deployment scripts are not general read/repair commands.
+No broker/private-custody calls or Task Run during adoption.
 
-R5 actual package:
-D:/thericher-v2/model-artifacts/execution/current-h3-actual-preparer-r5-20261103-v1/actual-ad3b0bcf7cda223e
-hostSOURCE6ae54088/ParentTrue32f5a92e/plan d3b8ac9d. Never rerun prepare_actual
-against its consumed output or use RELEASE-DISABLED as execution permission.
-Actual CreateDisabled PARTIALLY FAILED22:20:50:
-- thericher-h3-rank-cash-owned-exit-20261106-v1 exists DISABLED/state1/0instances.
-- thericher-h3-rank-cash-once-entry-20261103-v1 ABSENT.
-Do not replay original Create, delete/update existing task, shift clocks or Run.
-Exact raw native backup CAPTUREe9558971:
-D:/thericher-v2/model-artifacts/execution/current-h3-partial-install-parent-capture-20261103-v1/CAPTURE.json
-UNQUALIFIED until complete native semantic source/definition/ACL match.
-Lovelace source-only calibration:
-D:/thericher-v2/model-artifacts/execution/current-h3-native-scheduler-calibration-20261103-v1
-600SUM1800elapsed/hard23:00. Parent may adopt only qualified exact-own-exit
-recovery, create-only missing entry, full readback, exit enabled before entry.
-Measured state1/3 (Queued2 denies), explicit offset-equivalent UTC clocks and
-native sparse defaults are not reasons to drop arbitrary settings. Trusted
-ACL only; original R5 runtime already accepts measured caller-read duplicate.
-Future entry Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55;
-exit Nov6UTC20:45..<21:00/PT7M = Nov7KST05:45. No manual demand/catchup/repeat.
-Original effect-time account/basis/F9/unknown/token/quote/orderability/observer/
-risk checks remain mandatory. No new capital bank or live behavior.
+Exact current sources/evidence are in HANDOFF.md. Public H3 parser03ec,
+active SDK0ad and completed decodere1b are source-ready, not actual custody proof.
+Helmholtz prepares the enclosing native offline host/guest in
+D:/thericher-v2/model-artifacts/execution/current-h3-offline-guest-host-readiness-20261103-v1
+Only invented private RO mounts/network-none during native tests; no actual
+private/Task/broker calls or schedule. Missing runtime outcome remains UNKNOWN.
+After future opportunity use only its qualified existing exact schema/links;
+public status cannot invent private custody/fill/fees/PnL.
+
+Actual coherent19daily DATAREADY2d5e183b/manifest122b369c/closure9a5bd544 and
+Parent2371required+19currentcells PASS already consumed by owned21:46publisher.
+Point/root/source/clock/SDK/actualR5 binding111129a6 in HANDOFF. No recollection,
+model repeat, fixture substitution or stale retag. MODE1/nonPIT/notTR/finality
+limits remain factual, not a global authority hold.
+Current Korean monitor http://127.0.0.1:8787 remains local, pinned imagebe48f29e;
+H3 is not yet wired into its default H20/GOOGL public mapping. No public exposure.
+Do not rebuild pinned image or run public dryruns during a private read.
 
 GOOGL original entry FAULT48166777/nativeNOT_ENTERED; original read consumed
-WITHHELD57a51d17 after_read. New retained host21a200b7/API5a009894/NATIVEf5936fb1
-read also CONSUMED WITHHELD before_create under release41f9b96c:
-D:/thericher-v2/model-artifacts/execution/current-googl-retained-reader-host-preparation-20261103-v1/read-once/output
-ADMISSION-FAILURE private_reads0/four Jobs closed. No qualified result.
-Unknown6499a380 is Parent adopt.ps1 wrapper, not an external KIS quota.
-No replay/new read chain or blanket parent/PowerShell/Python exemption.
-Do not run public monitor dryruns concurrently with a private read; source
-preparation/Parent release must not introduce an unqualified launch ancestor.
-No original unknown reservation release from missing local or broker evidence.
-
-F9 retained current-binding offline read is consumed PASS, Source7899e6c2/
-release62bd2731/QUALIFIED-RESULTa7ad07e6/CALLBACK0c14b3b6. Broker-IDabsent,
-financial UNKNOWN-HELD, reservation unchanged. CONFIG-ONCE subject58ebb110 is
-also consumed and config-only, not funds/holdings/bank proof. No raw .env/Live.
+WITHHELD57a51d17. New retained host21a200b7/release41f9b96c also consumed
+WITHHELD before_create, private_reads0/four Jobs closed/no qualified result.
+Unknown6499a380 was Parent adopt.ps1 wrapper, not a KIS quota. Firstcause11fda1d0/
+callback5015fc30 proves all29auditedinputs unchanged. No replay/new read chain
+or generic PowerShell/Python/parent exemption. A genuinely future qualified
+launch separates release preparation and positive preparer closure.
+F9 retained read Source7899e6c2/release62bd2731/QUALIFIEDa7ad07e6 is consumed,
+broker-IDabsent/UNKNOWN-HELD/reservation unchanged. CONFIG-ONCE58ebb110 is also
+consumed and config-only, not funds/holdings/bank proof. No raw .env/Live reads.
 Original GOOGLexitNov9, MSEexitNov5UTC20:40, H20exitDec1UTC14:30native persist.
 NAS8 Nov3/4UTC21:10/frozen evaluationNov4UTC21:35 remain separately owned.
-Codex thericher-1 was a single Nov3KST06:52 follow-up, not a permanent daemon.
-No replacement follow-up chain.
+Codex thericher-1 was single Nov3KST06:52 follow-up, not a permanent daemon;
+no replacement follow-up chain.
 
 Fresh repo verification:
 D:/thericher-v2/model-artifacts/verification/current-h3-deployment-integration-20261103-v1/RESULT.json
 SHA7ff3887ab54ea9619a7d87b09ade0978aa2bf1eeedbca8f23e0de5303476df5a:
 1426pins768dbc73/0mismatch/actual8of8[19899]/19873PASS26knownskip/389.24s/
-helper+native0/checkedcleanup/Ruff4Compose.env.example PASS.
+helper+native0/checked cleanup/Ruff4Compose.env.example PASS.
 full-standard-tests.log is authority; extra-quiet full-tests.log is NOT.
 External D code still needs separate focused native/negative proofs.
-Do not rerun the full suite for unchanged docs/external-only source.
-
-The following retained sections contain source-specific and historical commands.
-Current status above/HANDOFF takes precedence; do not replay consumed packages.
+No repeated full suite for unchanged docs/external-only source.
+Current definitive sources/status above and HANDOFF take precedence over
+retained historical source-specific commands below; do not replay closed jobs.
 
 ## Active Short-Horizon Development
 
-Current time Nov3 KST / Nov2UTC. Completed numerical jobs MUST NOT be restarted:
+Current Nov3UTC00:35: CPU H3 hazard and GPU nonlinear first-passage are COMPLETE,
+not pending fits. CPU120.910531pct/DD22.742307, GPU109.553207/DD20.866974:
+both fail frozen growth149.175598, no point swap. GPU114iterations/BEST81=
+82trees/.589849optimizersec. Preserve checkpoints/results; do not rerun.
+Active comparison: D:/thericher-v2/model-artifacts/research/current-open45-engine-development-20261103-v1,
+two fits (indicatorRidgeCPU/combinedLSTMCUDA), expiryNov3UTC01:16 unchanged.
+Separate-role actual input DATA_READY_CLOSED at
+D:/thericher-v2/model-artifacts/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json.
+Current data suffice. US19 broader gap collection is separate runtime binding
+at D:/thericher-v2/model-artifacts/data/current-us19-minute-runtime-binding-20261103-v1;
+preparation665GET/800cap/2h is not an actually running collector. Do not infer
+active GPU/HTTP workers from these boards; exact role callbacks own current state.
+
+Retained completed numerical jobs MUST NOT be restarted:
 - A/research/current-short-horizon-joint-development-20261102-v1:
  SOURCE-r2.json6a0c2d21/AUDITED-CALLBACK-r3.json29e5ed00,5fits99views.
 - A/research/current-short-horizon-selection-versus-exposure-20261102-v1:

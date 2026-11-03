@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-2026-11-03KST / Nov2UTC22:46 integration.
+2026-11-03KST / Nov3UTC00:35 integration.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Company coexistent-native-paper-execution-runtime-v1 is UNFINISHED.
@@ -13,7 +13,7 @@ substitution, profit refill or stale-point retag. Preserve unrelated %SystemDriv
 Primary new strategies: intraday and one-to-several-session swings. H3 means
 three trading sessions, not three hours or proof of FIFO/share-age liquidation.
 
-## Actual H3 Proposal And Partial Installation
+## Actual H3 Proposal And Deployment
 
 Coherent19daily completed Nov2UTC21:32:08.360115:
 A/data/current-us19-coherent-future-daily-input-20261102-v1.
@@ -55,27 +55,48 @@ A/execution/current-h3-future-definition-installer-preparation-20261103-v1/
 parent-actual-activation/PARENT-PLAN.json
 SHAd3b8ac9dab179b8aa00b76b493269a726c45b1a9c9a891034440b37a85ba5b9f.
 
-Actual CreateDisabled at22:20:50 PARTIALLY FAILED, old attempt consumed:
-thericher-h3-rank-cash-owned-exit-20261106-v1 PRESENT/DISABLED/state1/0instances;
-thericher-h3-rank-cash-once-entry-20261103-v1 ABSENT.
-Neither enabled or manually Run. Original installer Source40fa7212 mocked
-Disabled state wrongly and over-constrained native ACL/XML; do not replay.
-Stable exact raw definition/registered XML/SDDL/source/TRUE/plan/attempt backup:
-A/execution/current-h3-partial-install-parent-capture-20261103-v1/CAPTURE.json
-SHAe9558971d464bf265bab4dc35da2a12eccc7cc4fe20af6e4a2149381c5533cfd.
-UNQUALIFIED until calibrated complete semantic comparison passes.
-Measured real Disabled1/Ready3/Queued2denied, +09:00 equivalent clocks, exactly
-3trusted full ACEs plus duplicate caller-read1179785/flags0/no foreign ACE;
-native scheduler omits defaults. Existing R5 runtime ACL already accepts that
-measured trusted ACL; no financial runtime patch is required.
-Lovelace owns source-only current-h3-native-scheduler-calibration-20261103-v1,
-600SUM1800elapsed/hard23:00. Parent may recover ONLY that exact own disabled
-exit after qualification, create ONLY absent entry, full readback and exit-
-before-entry enable. No deletion/update/foreign adoption/arbitrary field drop.
-Actual effect-time account/basis/F9/unknown/quote/orderability/observer/risk
-checks remain. Installation is not acceptance/fill.
-Future H3 entryNov3UTC20:55..<21:00/PT7M = Nov4KST05:55;
-exitNov6UTC20:45..<21:00/PT7M = Nov7KST05:45.
+Actual future H3 deployment is COMPLETE, not financial execution:
+thericher-h3-rank-cash-once-entry-20261103-v1 and
+thericher-h3-rank-cash-owned-exit-20261106-v1 both enabled/Ready3/0instances.
+Parent independently revalidated registered XML AND Definition.XmlText, complete
+source/TRUE/plan/point/policy/args/clock/settings/SID/ACL. Exact readback:
+A/execution/current-h3-enable-default-repair-20261103-v1/READBACK.json
+SHA31e83c91325d95ab9bf507e781afb10c38db4df1f351935e1002e9d12627f6ef;
+COMPLETEfc1c35b6c1d39492a0351bce22795aa7260d754ff4f84a21db9e6974d8dc67fb.
+Entry Nov3UTC20:55..<21:00/PT7M = Nov4KST05:55;
+exit Nov6UTC20:45..<21:00/PT7M = Nov7KST05:45.
+No manual Task Run, catchup/repetition, broker or private-custody call in adoption.
+This is a bounded first instrument leg, not full17-stock portfolio automation.
+Original financial Source6ae/TRUE32f/point/policy/model/bank and effect-time
+account/basis/F9/unknown/token/quote/orderability/observer/risk remain unchanged.
+
+Recoverable implementation failures are preserved, not replayed/regraded:
+- Original installer Source40fa7212 CreateDisabled22:20:50 consumed after ONLY
+ disabled exit creation. Real state1, explicit +09:00 clocks, exact trusted
+ ACL3full+callerread and sparse defaults differed from its mocks.
+- Stable raw XML/SDDL/source/TRUE/plan/attempt CAPTUREe9558971 at
+ current-h3-partial-install-parent-capture-20261103-v1 stays UNQUALIFIED under
+ its OLD comparison. New calibrated source independently qualifies its bytes.
+- Lovelace source6ebb205c/native39cases164assertions/callbackCLOSURE1c43f399
+ at current-h3-native-scheduler-calibration-20261103-v1 closed385of600SUM.
+ Parent PRECHECKf1bce6e9/Recoveraa3b6d5a passed, preserving exact existing exit
+ and creating ONLY absent entry disabled. Old Enable then consumed after exit
+ became Ready3 because Settings.Enabled=true omission was not allowlisted.
+- Separate Parent repair current-h3-enable-default-repair-20261103-v1,
+ SOURCE9bc93d9e3a94e20293f7ef83cb6eb359e2c0f865537200b754af6feb176f385c
+ normalizes ONLY exact /Task/Settings/Enabled=true/noattrs/one text child per
+ native producer and official XSD. False/attrs/other drift remain significant.
+ Native9checks5f82bd90 reproduced old failure and denied false/attribute/
+ delay/clock/context/queued drift. Initial OrderedDictionary.Clone fixture
+ failure/sourceCFC preserved, repaired before effects. New exact entry-only
+ attempt enabled entry after positive exit; actual final full readback above.
+ Parent repair closed<=90of180owned-upper/600elapsed, all execs returned,
+ zero broker/private calls. Old385 debit unchanged; no financial runtime edit.
+Do not rerun original Create, Recover, Enable, Finalize or consumed readbacks.
+Lovelace/Boyle scopes CLOSED. Actual submit/acceptance/fill/current inventory
+and fees/settlement/PnL are UNKNOWN until exact future evidence.
+Public result parser is complete; current strict host/guest readiness work is
+described below. No actual private result is inferred from source-only tests.
 
 ## Actual Earlier Paper Results / Never Replay
 
@@ -160,12 +181,102 @@ Original robust-four/r1 EXPIRED CLOSED0marketattempts/old810debit/seven actors
 fresh absent: current-h3-robust-four-expert-composition-r1-20261103-v1/
 FINAL-EXPIRED-CALLBACK.json and FINAL-EXPIRED-CLOSURE.jsona46a8b3f.
 Bad negative-clock callbacks retained; correction5dd53634 fixed metadata only.
-NEW Ptolemy study current-h3-robust-four-development-readout-20261103-v1:
-900newSUM1800elapsed/hard<=23:16, one zero-fit CPU pipeline/sixviews/0retry,
-same fixed candidate/thresholds; deterministic trend60+oldmean3parity inside
-sole attempt. Old810 remains charged, no old-clock extension/refund.
-No GPU training currently running/new fit frozen. Historical RTX4090 check
-21:36=3pct/1788of24564MiB/35C, not a current capacity promise or permission hold.
+NEW current-h3-robust-four-development-readout-20261103-v1 COMPLETE/CLOSED:
+Source75865f5c/contractd9487d3f/RESULT1d8c81ba, one zero-fit deterministic trend60
+projection + six views/zero retry; exact233decision oldmean3 parity PASS.
+Trimmed-four net10 cumulative242.377556pct/DD22.434191/turn188.726218:
+growth+riskPASS, frozen turnover<185.995827FAIL => primary conjunction rejected.
+No secondary rescue/regrade/current Paper swap. Same reused DEV, not alpha or
+measured PnL. New7.456+old810=817.456worker-wall debit, seven actors absent.
+This is a promising cost/risk development observation, not a permission gate.
+
+CPU absolute H3 hazard is COMPLETE, not merely prepared:
+Sourcea275643d/contract3feb3c90/native24PASS/initial scheduler sentinel failure
+and bounded preoptimizer continuation preserved. Actual input
+a3cd755ad3a94c70622e5fbc0a1627de40f621c70321c1ffdc87c50916ed5219:
+staged-input.npz under current-h3-absolute-regime-expert-preparation-20261103-v1.
+DataSource1eb32618/NATIVE8893b972/HANDOFF25a88b1b under that prepRoot/research/
+current-h3-absolute-regime-input-staging-20261103-v1 (unexpected nested new D
+subtree, accepted by Parent only for these bytes; no relocation/replay or
+general scope relaxation). 56source hashes stable/233rank3decision parity/
+11917packetkeys/FIT1699/INNER497/DEV233, no reserved/fresh data selection.
+
+Parent market release reserves540oldprep/staging/check upper; actual1fit/
+1forecast/6views/0retry completed133updates/BEST101/INNERearlystop,
+.0705826optimizersec/.265447fitwallsec. Net10 cumulative120.910531pct/
+DD22.742307/turn151.007615 vs samegrossEW77.101409pct. Risk+turnoverPASS,
+growth>149.175598FAIL: primary conjunction rejected, no regrade/current swap.
+A/research/current-h3-absolute-regime-parent-market-20261103-v1/COMPLETE.json
+SHAb1697d31c425b32dd9e8383c3452673bc67caf015a59b6caeec2b68513909edf:
+native0/joined/no timeout/546.266familyactiveupper/PID29600nowabsent.
+No market GPU use;39coefficient CPU model did not need GPU. All old debits stay.
+Source/curve/checkpoint/result in prepRoot/market-once. No rerun.
+
+GPU nonlinear first-passage campaign ACTUALLY COMPLETE at
+A/research/current-h3-nonlinear-first-passage-gpu-preparation-20261103-v1.
+Source5a0e0d88/contract3153276a/native30PASS/marketRelease17d53600;
+one CUDA CatBoost fit/one CBM restoration/one CPU probability forecast/sixviews.
+114evaluatediterations/BESTindex81=82trainedtrees/INNERearlystop,
+.589848566optimizersec; net10growth109.553207pct/DD20.866974/turn142.695227.
+Risk+turnoverPASS, growth149.175598FAIL: primary rejected, no current point swap.
+Actual control returned0/COMPLETE, market process SUM12.158975; exact CID/CLI/
+lease closed in market-CLOSED.json. Device5661MiB is aggregate co-tenancy,
+not isolated model allocator usage. Preparation callback remains historical
+market_not_released; do not mistake it for the later actual market result.
+Initial native API bootstrap failure and Parent invalid-null release are
+preserved; neither performed a market fit. No numerical retry/repeated fit.
+
+NEW Open45 intraday family: Harvey01a19e80-1586-7fe2-9587-9b44f510842b is
+Engine/sole GPU coordinator at
+A/research/current-open45-engine-development-20261103-v1.
+Original family originNov2UTC23:46/expiryNov3UTC01:16/1800ownedSUM5400elapsed,
+two fits/two forecasts/one readout15views/zero market retries. Indicator Ridge
+CPU versus combined9x16 LSTM32 CUDA; first45RTHminutes, entryEND10:17 and
+exitEND11:17, top4 quarters, same-exante-gross EW/cash and costs0/10/20bps.
+Native actual CUDA/checkpoint/consumer smoke and scoped Claude challenge must
+qualify; Parent conditional dispatch is already delegated, not another approval.
+Ohm DATA_READY_CLOSED00:30:55 at
+A/research/current-open45-input-staging-20261103-v1/READY-CALLBACK.json,
+Sourceffa13cce/APIeada9635/STAGED48a8b342/native2c0a0787.
+FIT120/INNER40/reusedDEV40 stock keys,25sessionsSep25..Oct29; AAPL/MSFT/NVDA/
+AMZN/GOOGL/META/TSLA/AVGO, SPY context, not AMD. Inputs/targets/held masks
+separate; all required rows known. Old300+new180upper=480, four stage actors
+closed. Existing25-session data suffice; no acquisition needed for these fits.
+Conditional clock/finality/CA/current-listing/reused-development limitations
+remain; no qualified independent alpha/Paper-feature claim or point change.
+
+Public H3 parser03ecf2ae/APIaad8e90f COMPLETE14tests/two real pinned producer
+AST smokes/Parent14independentPASS. It deliberately returns financial UNKNOWN.
+StrictSDK source0adba9b0/API39a49461 COMPLETE15native-source tests,
+old40+new151.870debit, no actual custody/Task/Docker/broker calls. Candidate-only,
+not admitted/deployed: actual enclosing host/guest/mount/runtime/actor and CID/
+Jobs proof still missing; completedactive=null lacks model DTO in this version.
+Five fixture failures retained. Clarification after23:35:13cutoff adds no authority.
+Completed-record decoder e1b3c359 is COMPLETE10native tests, actual public point/
+R5 ABI/123source hashes stable, old191.870+new94.231=286.101upper. Exact sealed
+point/retained plan/counters permit completed-flat interpretation; zero-SELL/
+ambiguous cases remain withheld, no synthetic active DTO or all-bank-flat veto.
+Helmholtz01a19e81-10fb-7781-9d3a-53f8ef407883 now owns
+A/execution/current-h3-offline-guest-host-readiness-20261103-v1,
+600ownedSUM1800elapsed/hard<=01:00. Actual network-none/RO native Docker with
+INVENTED custody only tests host/bootstrap/active+completed decoder/admission/
+stability/closure. No actual private read, Task/broker call or new GOOGL chain.
+Future actual use requires exact separate source/time/run adoption; preparer
+must close before launch, never a blanket parent/uv/PowerShell exemption.
+
+US19 acquisition preparation COMPLETE45native/fullRuff/15Jobsclosed,
+Sourcea6668bfa/READINESSfbb4209e at
+A/data/current-us19-minute-acquisition-preparation-20261103-v1.
+Canonical original19 overlap9 names/87746of87750 minute cells/25sessions.
+AMD plus nine NYSE names lack that canonical coverage; AVGO is not AMD.
+Proposed finite batch665GET/800ceiling/2h/zero retry is NOT deployed;
+zero actual HTTP/credential calls in preparation. Copernicus01a19ebd-e066-
+7f90-87c5-cd5096e0d59c now owns
+A/data/current-us19-minute-runtime-binding-20261103-v1,
+900ownedSUM2700elapsed from actual dispatch: connect existing Paper-scoped
+client/token/quiet launch/actual same-cache ownership and durable cursor.
+At most4 scoped market probes plus1POST only for proven invalid token; no
+account/order/live routes. Long collector starts only after actual adoption.
 
 ## Owned Duties And Operations
 
@@ -202,6 +313,6 @@ its own focused native/negative/source tests. Reuse exact repo authority only
 while all production/tests/scripts/config/dependency pins match.
 Review GO_WITH_LIMITS:
 A/review/current-h3-native-calibration-and-dev-readout-challenge-20261103-v1/response.json.
-Continue current goal and actual owner scopes; finish exact H3 calibration/
-future definition adoption while CPU readout runs. No foreground market waiting.
+Continue current goal: finish H3 read readiness, Open45 comparison and useful
+finite Data runtime binding in parallel. No foreground market waiting.
 Do not mark company complete without actual financial runtime closure.

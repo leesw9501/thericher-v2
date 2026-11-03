@@ -2,16 +2,32 @@
 
 ## Current Source Handoff
 
-Nov2UTC22:46: actualthreeexpert publisher PUBLISHEDPOINTad3b0bcf/SEALf8fe5603
+Nov3UTC00:35: Open45 candidate Sourceb9d07c17/contractb71f10d3/API80cb8101/
+native37/closure-r28e5021f6 COMPLETE at
+D:/thericher-v2/model-artifacts/research/current-intraday-learned-expert-candidate-preparation-20261103-v1.
+First45RTHminutes, raw9x8/indicator8/combined9x16, fixed top4quarters and one-hour
+intraday payoff. CPU Ridge vs CUDA LSTM32 is now Harvey's two-fit family;
+no claim of learning/results until actual worker evidence. Original family
+expiryNov3UTC01:16,2fits2forecasts15views0retry/1800ownedSUM5400elapsed.
+Ohm actual separate-role staging Sourceffa13cce/STAGED48a8b342/native2c0a0787
+DATA_READY_CLOSED00:30:55/120FIT40INNER40DEV/25sessions, four stage actors closed.
+No current data acquisition needed. Preserve canonical-clock/CA/current-listing/
+reusedDEV limits and excluded reserved outcomes; no independent alpha/Paperinput.
+CPU H3 hazard and GPU nonlinear hazard actual fits are COMPLETE, both fail
+frozen growth while passing risk/turnover; no current three-expert point change.
+No indicator/architecture shopping on seen DEV or repeated completed training.
+
+Retained H3 facts: actualthreeexpert publisher PUBLISHEDPOINTad3b0bcf/SEALf8fe5603
 from qualified coherentDATAREADY2d5e183b. Parent actual strictR5 binding111129a6
-renders hostSOURCE6ae54088. Actual partial installer created only a DISABLED
-future exit; entry absent, no financial effects. Exact native calibration is
-Execution-owned. New research does not swap this proposal. Original robust-four
-r1 EXPIRED0attempt/810debit preserved. NEW separately assigned fixed trimmed-
-rank CPU readout at current-h3-robust-four-development-readout-20261103-v1,
-one zero-fit pipeline/sixviews/0retry,900newSUM1800elapsed/hard<=23:16.
-No outcome-driven candidate change; oldmean3 parity inside sole attempt.
-Review and exact caps in engine stateboard. Reserved/freshoutcomes excluded.
+renders hostSOURCE6ae54088; future H3 entry/exit now ACTUALLY installed/enabled,
+READBACK31e83c91/COMPLETEfc1c35b6, not financial execution. Existing3point stays.
+Original robust-four/r1 EXPIRED0attempt/810debit preserved. NEW distinct CPU
+trimmedrank readout COMPLETE Source75865f5c/RESULT1d8c81ba:1pipeline/6views/
+0fits/retries, oldmean3parityPASS, new7.456+old810=817.456debit/allactorsclosed.
+Net10growth242.377556pct/DD22.434191/turn188.726218: growth+riskPASS but frozen
+turnoverFAIL, primary conjunction rejected. No regrade/secondary rescue/current
+point swap. Promising reusedDEV observation, not alpha/Paper promotion.
+Exact latest numerical status/caps are in Engine stateboard, not old prep notes.
 
 Nov2UTC20:38 Fermat scope COMPLETE/CLOSED:
 A/research/current-four-expert-h3-point-kernel-20261103-v1/r3,
