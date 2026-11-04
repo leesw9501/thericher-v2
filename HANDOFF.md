@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov4UTC19:05 / Nov5KST04:05. Latest facts supersede older projections:
+Updated Nov4UTC19:12 / Nov5KST04:12. Latest facts supersede older projections:
 
 - Korean readonly monitor port is now tracked-source ready: readonly_server.py,
   readonly_view.py and110tests. Parent118related serial PASS; official R3 full
@@ -28,15 +28,16 @@ Updated Nov4UTC19:05 / Nov5KST04:05. Latest facts supersede older projections:
 - Future Full17 Nov6 exit migration is CAPTURE-ONLY. Fresh census API failed
   before Apply; no APPLY-ATTEMPT/Task mutation. Original exit stays unchanged:
   A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.
-- Fresh coherent Data/point future prewire sourceabb723 partially installed.
-  Exact OS normalization repair9b68e449 adopted existing disabled Data and
-  created only missing point. Enable then failed complete XML semantic
-  readback19:01UTC. Actual Data is ENABLED/Ready3/0instances, due21:30UTC;
-  point remains DISABLED/0instances, dueNov5UTC13:30. No Task.Run/KIS/model
-  call during installation. Gibbs owns exact prospective enable/readback fix:
-  A/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair.
-  Original consumed installer/repair receipts remain, no blind retry. Actual
-  fresh Nov4-asof DataREADY/point remain FUTURE UNKNOWN, never retag Nov3.
+- Fresh coherent Data/point future prewire sourceabb723 is now ENABLED.
+  OS repair9b68e449 preserved existing Data/created only missing point; its
+  partial enabled readback failure remains recorded. Continuation70676443
+  at19:12UTC left Data untouched and enabled ONLY Point. Separate fresh COM
+  readback PASS: both Enabled/Ready3/0instances, exact ACL bytes and whole XML
+  semantics, only Settings/Enabled changed from owned disabled receipts:
+  A/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair/enable-drift/CONTINUE-CLOSED.json.
+  Data dueNov4UTC21:30, pointNov5UTC13:30. No Task.Run/KIS/model call during
+  installation. Old consumed sources/markers/receipts remain, no replay.
+  Actual fresh Nov4-asof DataREADY/point remain FUTURE UNKNOWN, never retag Nov3.
 - Raman owns raw-open-elapsed3 financial SDK readiness with honest all3 model
   identity, public quarter-of-ONE-B10 ceiling and fourth-session exit. No
   deployment/admission/fill follows C integration or future definition creation.

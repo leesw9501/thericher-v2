@@ -2,17 +2,17 @@
 
 ## Current Data / Next
 
-Updated Nov4UTC19:05 / Nov5KST04:05. Gibbs owns
+Updated Nov4UTC19:12 / Nov5KST04:12. Gibbs owns
 research/current-full17-next-session-publisher-recovery-20261105-v1:
-fresh next-session prewireabb723 is partially installed, not fully enabled.
-Parent repaired exact native OS XML/ACL normalization through9b68e449:
-existing disabled Data preserved, missing point created disabled. Subsequent
-EnableReadOnly failed complete XML readback19:01UTC after enabling Data.
-Actual Dataenabled/Ready3/0instances dueNov4UTC21:30; pointdisabled/0instances
-dueNov5UTC13:30. No Task.Run/new HTTP/model effects during installation.
-Gibbs owns exact measured enabled-XML continuation; original source/consumed
-markers/receipts remain. Do not rerun InstallDisabled/RecoverDisabled blindly.
-A/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair.
+fresh next-session prewireabb723 is now fully ENABLED. OS repair9b68e449
+preserved existing Data and created only Point; partial enabled-readback fault
+19:01 remains. Continuation70676443 at19:12UTC enabled ONLY Point, Data untouched.
+Separate fresh COM readback PASS: both Enabled/Ready3/0instances, unchanged ACL
+bytes/whole semantics, only owned Settings/Enabled delta. DueNov4UTC21:30 Data
+andNov5UTC13:30 Point. No Task.Run/new HTTP/model effects during installation.
+Original consumed source/markers/receipts remain; do not rerun old modes or
+CONTINUE-START. Exact completion:
+A/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair/enable-drift/CONTINUE-CLOSED.json.
 Capture original21:30..<22:00/hard22:15, point13:30..<14:00/hard14:10;
 actualfreshDataREADY/point UNKNOWN. Honest ensemble02c12011, Data source
 c63290fc/point3e781926, public quarterONEB10/native.025originalB ceiling;

@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov4UTC19:05 / Nov5KST04:05.
+Updated Nov4UTC19:12 / Nov5KST04:12.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -34,11 +34,13 @@ Ruff and four Compose configurations with .env.example PASS. R1/R2 WITHHELD
 remain; test hardlink finally cleanup repaired without changing the helper.
 Current be48/127.0.0.1:8787 remains, no deployed UI replacement yet.
 
-Future readonly Data/point partial installation: sourceabb723, repair9b68e449,
-DataENABLED/pointDISABLED/0instances after enabled XML readback failure19:01UTC.
-Do not replay consumed InstallDisabled/RecoverDisabled/EnableReadOnly. Gibbs
-supplies exact qualified continuation, Parent owns Task mutations. No Task.Run:
-D:/thericher-v2/model-artifacts/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair.
+Future readonly Data/point sourceabb723 is now BOTH ENABLED/Ready3/0instances.
+Exact continuation70676443 at19:12UTC preserved Data and enabled ONLY Point;
+separate fresh COM readback/ACL/whole semantics PASS. No Task.Run. DueNov4UTC
+21:30 Data andNov5UTC13:30 Point; actual outputs remain FUTURE UNKNOWN:
+D:/thericher-v2/model-artifacts/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair/enable-drift/CONTINUE-CLOSED.json.
+Never replay consumed InstallDisabled/RecoverDisabled/EnableReadOnly/Continue.
+Original failed normalization/partial receipts remain; no new tolerance added.
 Future Full17 exit is CAPTURE-ONLY; Apply failed before touching Task. Do not
 repeat Capture/CreateNew or infer migration from prepared source/readbacks:
 D:/thericher-v2/model-artifacts/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.

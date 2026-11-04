@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC19:05 / Nov5KST04:05.
+Updated Nov4UTC19:12 / Nov5KST04:12.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -19,7 +19,7 @@ role-agent assignments below are not proof of a running fit or financial owner.
 | --- | --- | --- |
 | Dalton / Execution | execution/current-actual-private-writer-census-20261105-v1 | Exact early-error/bytecode/actual-actor census diagnosis; future Full17 exit Capture-only, Apply withheld before mutation. Actual custody read not started without exact input/policy bindings. |
 | James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | v3/v4 actual pre-native no-intent faults; finish minimal first-cause repair and real existing native account/risk path. Successor effects not assumed. |
-| Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 | Complete exact partial enable/readback recovery: Dataenabled, pointdisabled, no Task.Run. Fresh Nov4-asof input remains future unknown. |
+| Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 | Both future Data/Point ENABLED by Parent70676443/separate readback; qualified downstream handoff only, outputs future UNKNOWN. |
 | Nietzsche / Engine-Steward | absolute-market/residual and OOF-gate campaigns CLOSED; synthetic book/basis parity audit | Integrate2CUDA+6CPU fits without rerun, explain book differences from saved evidence and verify public quarterB10/native.025B synthetic sizing. |
 | Raman / Strategy-native support | execution/current-raw-open-next-session-native-financial-readiness-20261105-v1 | Generic all3 raw-open profile/actual native SDK/sizing/horizon handoff, D-only source preparation, not deployment. |
 | Mendel / invoked Infra-Monitor | execution/current-korean-readonly-operations-ui-preparation-20261105-v1 | Tracked3files/110tests qualified by Parent fullR3; actual isolated Docker smoke and practical rollback plan. be48 service unchanged until qualified adoption. |
@@ -41,10 +41,10 @@ training, future inputs or financial outcomes from an LLM message.
   recorded. Old persistent and new flat-sleeve results are not directly equal.
 - Baseline RTHv4 exact positive no-intent/pre-native failure is recorded;
   old Full17/Open45/F9 effects remain UNKNOWN. New v5 is not assumed launched.
-- Future Data/point repair9b68e449 adopted Data without update and created only
-  missing point. Partial Enable failed XML readback19:01: Dataenabled,
-  pointdisabled/0instances. Source repair/adoption continues before due time,
-  not foreground waiting or replaying old consumed installer.
+- Future Data/point continuation70676443 COMPLETED19:12UTC, Data untouched/
+  only Point enabled, separate fresh COM XML/ACL readback PASS; both Ready3/
+  0instances. Old partial failure retained, no new XML/ACL tolerance. Actual
+  Data21:30/PointNov5UTC13:30 remain future UNKNOWN; no Task.Run/market call.
 
 - C: native raw-open-elapsed3 profile committed/pushed f9692514.191focused PASS;
   fresh official20129PASS/26known Windows link SKIP/8workers[20155items],

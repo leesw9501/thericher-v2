@@ -17,7 +17,7 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Current Evidence
 
-Updated Nov4UTC19:05 / Nov5KST04:05. See HANDOFF's latest source-safe facts.
+Updated Nov4UTC19:12 / Nov5KST04:12. See HANDOFF's latest source-safe facts.
 Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
 
 - Latest verified C authority is Korean readonly R3:20239PASS/26known-skip,
@@ -28,10 +28,10 @@ Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
   registry recorded/all actors closed. Do not repeat completed training.
 - Baseline v3/v4 actual first-cause failures are positively pre-native/no-intent;
   James owns successor. This does not resolve old Full17/Open45/F9 unknowns.
-- Fresh future Data/point definitions are partially enabled after strict OS
-  readback failure: Dataenabled/pointdisabled/zeroinstances. Gibbs owns exact
-  continuation repair, not original consumed-installer replay. Fresh input and
-  all3 point remain future UNKNOWN. Full17 future exit remains CAPTURE-ONLY,
+- Fresh future Data/point definitions are BOTH ENABLED after exact partial
+  continuation70676443 and separate readback19:12UTC: Ready3/zeroinstances,
+  unchanged ACL/whole semantics; no Task.Run. Fresh input and all3 point remain
+  future UNKNOWN. Full17 future exit remains CAPTURE-ONLY,
   unchanged after census failure before Apply. No new operator decision.
 
 Retained earlier evidence (not current running-work projections):
