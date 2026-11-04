@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov4UTC20:28 / Nov5KST05:28. Latest facts supersede older projections:
+Updated Nov4UTC21:06 / Nov5KST06:06. Latest facts supersede older projections:
 
 - Korean readonly monitor port is now tracked-source ready: readonly_server.py,
   readonly_view.py and110tests. Parent118related serial PASS; official R3 full
@@ -62,7 +62,18 @@ Updated Nov4UTC20:28 / Nov5KST05:28. Latest facts supersede older projections:
   denial found the Docker stats conflict. v7 is a DIFFERENT pre-native census
   child failure with discarded inner cause, not proof of stats-rule failure:
   A/execution/current-bounded-engineering-paper-baseline-20261105-v1/CALLBACK-RTH-v7.json.
-  v6/v7 nativeNOT_ENTERED/0visits. v8 is source work, not an inferred effect.
+  v6/v7 nativeNOT_ENTERED/0visits. Actual v8 is now positively closed:
+  CALLBACK-RTH-v8.json, Source7a6e2eda/releasef86960b5, controller19860/birth
+  639294210089369580. One native capsule was CREATED, but the guest was NOT
+  STARTED;33metadata Jobs closed. AFTER_CREATE metadata.py:189 raised
+  container_membership_changed. Host Paper credentials reached RAM only, not
+  forwarded; native client/token/account/private book/intents were NOT reached.
+  Exact control flow excludes this baseline's submit/acceptance/fill; it does
+  not resolve unrelated historical unknowns or current owned inventory. The
+  actual membership delta was not retained, so its actor/cause remains unknown.
+  v8 is final for that same-day cap: no replay, same-day successor or empty exit.
+  James owns tested delta retention, a separate readonly account connectivity
+  smoke and next valid opportunity readiness; no closing-session trade chase.
 - New policy-cost study6274/7cfb CLOSED:9views/0fits/forwards/retries. Under
   frozen INVENTED B10000/B101000, all47cohorts' whole lots floor0. LOT_INACTIVE,
   not missing signal, actual account capacity, predictive failure or Paper PnL.
@@ -73,6 +84,13 @@ Updated Nov4UTC20:28 / Nov5KST05:28. Latest facts supersede older projections:
   NOT adopted/listening. be48/8787 unchanged. Current new summary is static/
   stale, not an automatic account feed. Do not claim live refresh from page
   refresh alone; source/runtime and changing public payload have different roles.
+- Prospective future-exit stats overlay aff27/7b0 is source-tested, NOT adopted.
+  Parent c5 adapter ba844 passed Inert/self-hash rejection; actual Capture was
+  withheld before Task mutation by a negative fresh census. That invocation's
+  exact negative pointer was not retained, so do not infer its specific actor
+  from another run. Current installed exit remains131e. Mendel owns a separate
+  exact-stats census successor and bound diagnostic retention, not a stats-free
+  gap wait or a blanket Docker exemption. Original sealed sources stay intact.
 
 Earlier retained facts below keep their original source/time; old next-work
 projections are not current running agents, fresh admission or replay authority.

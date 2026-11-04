@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC20:28 / Nov5KST05:28.
+Updated Nov4UTC21:06 / Nov5KST06:06.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -18,11 +18,11 @@ role-agent assignments below are not proof of a running fit or financial owner.
 | Owner | Current package under A | Next concrete consumer/result |
 | --- | --- | --- |
 | Dalton / Execution | census c5ade7/continuationa93df CLOSED; future definition builder10325 CLOSED | Parent applied/read back Full17 exit131e. RAW future builder needs actual host binding, not more mock assertions. No active LLM/actual custody read claimed. |
-| James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | v6 stats guard conflict and v7 different census-child failure are pre-native/0visits. Resolve actual v8 first cause and current native path; no inferred effects or replacement unknown intent. |
+| James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | v8 CLOSED after create/before guest start,33metadata Jobs closed; exact control flow excludes its broker effects. Retain membership delta, run separate readonly connectivity and prepare next valid operation; same-day cap closed. |
 | Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 CLOSED | Both Data/Point ENABLED70676443/separate readback; task owns21:30UTC/Nov5UTC13:30 next_due. No active Data LLM or actual future output claimed. |
 | Nietzsche / Engine-Steward | all3 parity audits and policy6274 CLOSED | Latest9views/0fits LOT_INACTIVE under invented basis; actual capacity unknown. All numerical actors closed, no ready predictive GPU fit or duplicate training. |
 | Raman / temporary Execution-native | execution/current-raw-all3-actual-finite-host-preparation-20261105-v1 | SDK304f/guest5dacc done. Build actual hidden scheduled host/source/release/owner action for tested future builder, not another unbound guest. |
-| Mendel / invoked reliability | execution/current-full17-future-exit-stats-scope-preparation-20261105-v1 | Prospective minimal common-stats scope for original131e future exit; no Task/private changes. UI smoke complete,8788 uninstalled, only empty network/template retained. |
+| Mendel / invoked reliability | execution/current-full17-stats-census-adoption-repair-20261105-v1 | aff27/7b0 future-exit stats overlay tested, unadopted. Fresh c5 Capture withheld before mutation; narrow exact-stats census successor/bound diagnostic retention, not a gap wait. UI8788 uninstalled. |
 
 Roles exchange exact schema/source/readiness directly. One mutable write owner
 per package; Parent Git only. Named workers own next_due. Do not invent active
@@ -106,6 +106,17 @@ training, future inputs or financial outcomes from an LLM message.
   after-cost/market-regime value, not another tiny GRU or a duplicate fit.
 
 ## Bottleneck And Improvement
+
+21:06 Throughput Review: the market session is closed. Ready work is James's
+actual membership-delta retention/readonly account query, Raman's actual finite
+host action and Mendel's precise stats-aware fresh census. Parent integrates
+sources and current facts while task-owned Data21:30 remains due. Reversible
+improvement: preserve the exact failing census pointer before categorization;
+do not repeat blind probes hoping that harmless Desktop polling disappears.
+No more same-day baseline entry under the exhausted v8 cap. A pure broker
+readonly query must not require research point/profitability or private-custody
+mount admission when it does not touch that custody. Actual token/virtual-host/
+scope controls remain. No new operator decision, bank or permission hold.
 
 20:28 Throughput Review: actual Paper remains the critical path, not additional
 model count. Ready owners are James actual runtime, Raman actual finite host,

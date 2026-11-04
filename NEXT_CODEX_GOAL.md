@@ -17,7 +17,7 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Current Evidence
 
-Updated Nov4UTC20:28 / Nov5KST05:28. See HANDOFF's latest source-safe facts.
+Updated Nov4UTC21:06 / Nov5KST06:06. See HANDOFF's latest source-safe facts.
 Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
 
 - Latest verified C authority is Korean readonly R3:20239PASS/26known-skip,
@@ -42,8 +42,16 @@ Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
   but actual scheduled HOST action remains unbound. Do not install a fixture.
 - Policy-aligned6274 study CLOSED9views/0fits/forwards: invented-basis whole
   lots all0 (LOT_INACTIVE), not actual account capacity/predictive failure.
-  No new ready GPU fit is implied. Current main baseline v7 is positively
-  pre-native census-child failure; v8 effects remain unasserted without receipt.
+  No new ready GPU fit is implied. Actual baseline v8 Source7a6e2eda/f869 is
+  CLOSED after capsule creation, before guest start/credential forwarding/
+  native client or intent. Exact CALLBACK-RTH-v8.json excludes THIS baseline's
+  broker effects; historical Full17/Open45/F9/current inventory stay unknown.
+  First cause is container_membership_changed, actual delta not retained.
+  Same-day v8 cap is exhausted; next is diagnostic repair, separate readonly
+  account connectivity and a correctly dated next operation, not a late replay.
+  Prospective future-exit stats overlay aff27/7b0 is tested but NOT adopted:
+  fresh c5 Capture withheld before mutation. Current exit remains131e; narrow
+  exact-stats census repair proceeds independently of source-ready RAW host.
 
 Retained earlier evidence (not current running-work projections):
 

@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov4UTC20:28 / Nov5KST05:28.
+Updated Nov4UTC21:06 / Nov5KST06:06.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -11,6 +11,18 @@ identities and ALL original exits remain. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
 
 Current runtime observations supersede the installation snapshots below:
+- Engineering baseline v8 is consumed/CLOSED after native capsule creation,
+  before guest start/credential forwarding/client/private book/intent. Exact
+  Source7a6e2eda/releasef869 callback:
+  D:/thericher-v2/model-artifacts/execution/current-bounded-engineering-paper-baseline-20261105-v1/CALLBACK-RTH-v8.json.
+  metadata.py:189 container_membership_changed, actual delta not retained;
+  no actor attribution or relaxed admission follows. Same-day cap closed, no
+  replay/empty exit. James owns delta retention/readonly query/next readiness.
+- Prospective aff27/7b0 Full17 stats overlay is NOT installed. Parent c5 adapter
+  ba844 Inert/self-hash rejection passed; actual Capture withheld before Task
+  mutation. Its exact negative pointer was not retained. Mendel prepares a
+  narrow successor with exact stats semantics and bound failure pointers. Do
+  not infer a cause from latest-file discovery or rerun the same blind probe.
 - Full17 producer14:25 consumed ABSTAINe29d3459; derived runtime_files map
   missing at guest_watchdog.py:35 before model child. No published trade point.
 - Full17 entry14:31 diagnostic20/no exact runtime attempt/admission/outcomes.

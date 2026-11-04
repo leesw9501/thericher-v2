@@ -2,18 +2,30 @@
 
 ## Active Work Package
 
-Updated Nov4UTC20:28 / Nov5KST05:28. Parent owns integration/actual Task
+Updated Nov4UTC21:06 / Nov5KST06:06. Parent owns integration/actual Task
 adoption/Git. James owns current bounded engineering runtime: v5 expired
 unlaunched, v6 actual stats conflict before native, v7 DIFFERENT census-child
-failure before native (inner cause not retained), v8 current source/effects
-unasserted without its exact receipt. No new acceptance/fill is claimed.
+failure before native (inner cause not retained). Actual v8 is CLOSED at
+AFTER_CREATE before guest start/packet forwarding: Source7a6e2eda/releasef869,
+one native capsule create/33metadata Jobs closed, controller19860/birth
+639294210089369580 closed. Exact CALLBACK-RTH-v8.json excludes this baseline's
+client/token/account/private-book/intent/submit path. Credential RAM-only reach
+is not a broker call. metadata.py:189 container_membership_changed was retained,
+but its actual delta was not. No inferred benign actor or blanket suppression.
+Same-day v8 cap is exhausted, no replay/successor/empty exit. James now owns
+delta diagnostics, separately scoped readonly account connectivity and next
+valid operation readiness. Old Full17/Open45/F9 effects/inventory stay unknown.
 
 Parent measured the actual a78/0097 Docker Desktop stats false conflict and
 prepared narrow host_rules helper aa4e/66f4,9unchanged native actor/decide tests
 plus Ruff PASS. No OWNED/GUI/Docker-wide exemption or financial deployment:
 A/execution/current-desktop-stats-readonly-scope-repair-20261105-v1/API.md.
-James integrates a qualified current caller; Mendel owns prospective same-scope
-integration into original Full17 future exit. Original131e exit WAS actually
+James integrates a qualified current caller; prospective aff27/7b0 is tested,
+NOT adopted. Parent c5 adapter ba844 passed inert/self-hash rejection but actual
+Capture was withheld before mutation; exact negative pointer was not retained,
+so no specific actor is inferred. Mendel owns a narrow fresh census successor
+using the exact stats rule and bound diagnostics, not waiting for a stats-free
+gap. Original131e exit WAS actually
 updated/read back19:55; exact PARENT-ADOPTION pointer appears below.
 
 Raman owns actual RAW ALL3 finite scheduled HOST action preparation. SDK304f/
