@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov3UTC23:40 / Nov4KST.
+Updated Nov4UTC13:37 / Nov4KST22:37.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -12,39 +12,38 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Ready / Owned / Due
 
-- Parent: Full17 actual migration and Data/OHLC60 publication complete;
-  current integration/Git and explicit future consumer binding, no session wait.
-- Execution: future financial pair ACTUALLY updated bd7/380 at23:33:37,
-  separate full enabled readback7d60d61e/both0instances/never run. Helm closed;
-  exact task-owned future runtime evidence is next, no replay/F9 release.
-- Infra: producer ACTUAL c1e/e4a/595 with READY6b98, all metadata actors closed.
-  Old5a/6175/partial preparations remain history; no future model output claimed.
-- Ohm Infra: mocked minimal-ENV native passed, actual H3 cause unknown;
-  scheduled diagnostic UNINSTALLED, new bounded readonly-context probe only.
-- Erdos Data/Strategy: actual OHLC60 ab158 publication complete; explicit new
-  checkpoint9364 proposal bridge binding, no fit/old inference replay.
-- Confucius Engine/Steward: distinct cost/turnover-aware campaign, useful GPU
-  when ready; no completed fit repeat, no profitability gate on Paper.
-- Lagrange invoked Validation: partial proof frozen honestly; Parent completed
-  separate qualification/migration. Monitor staysbe48. GOOGL provenance attempt
-  hit an invalid parsed-vs-raw XML comparison, not proven instability. No
-  baseline/comparison waiver or web swap; preserve failed evidence.
-Role MDs are durable memory, not evidence of active LLMs/numerical workers.
-At22:24 Parent delegated exact qualified future UPDATE-only metadata adoption:
-Hooke existing producer Task, Helm existing financial pair, disjoint writes;
-Parent shared MD/Git. No post-ready LLM ACK, no scope/cap/clock/bank expansion.
-Original owner closure/native/full protected XML+ACL/readback/exit-first enable
-remain mandatory. No actual deployment inferred before completion callbacks;
-no Task.Run, broker, private financial state or other Task mutation delegated.
+- Parent: exact current future-Task metadata, current facts/integration/Git.
+  Read-only COM snapshot Nov4UTC13:36: producer/entry/exit enabled Ready3,
+  zero instances, never-run sentinel. No Run, migration or effects invoked.
+- Dalton / Execution: current-full17-bd7-exact-outcome-reader-20261104-v1;
+  new exact public outcome/fault reader and inert custody-read readiness.
+  No strategy, private actual read, Task or broker calls in that package.
+- Nietzsche / Engine: current-h3-stateful-cost-parity-20261104-v1;
+  native cost-state comparison and at most two fixed saved path replays,
+  no fit/new forecast/GPU. A mismatch is not causal proof of model failure.
+- Gibbs / Data-Strategy: current-return-tcn-stateful-paper-policy-readiness-20261104-v1;
+  pure proposal kernel/codec and explicit horizon NON_PARITY, synthetic only.
+  No rerun of completed9364 inference or change to tonight's strategy.
+- Mendel / invoked Infra-Monitor: current-korean-monitor-compatible-adoption-20261104-v1;
+  resolve actual consumer pins before a scoped loopback Korean UI adoption.
+  No forced image/source mismatch or new web broker/private authority.
+All four packages have disjoint new D: roots; Parent alone writes shared MD/Git.
+These are dispatched LLM workers, not evidence of numerical training.
+Current CUDA snapshot: RTX4090,0percent,1261/24564MiB,38C. D:33.4percent free;
+no resource/approval hold. No new market fit dispatched. Prior owners/campaigns
+are closed history, not running agents.
+Throughput improvement: remove stale current5a/ad7 projections; reuse exact
+unchanged1432-pin/full policy authority instead of an unrelated full rerun.
 
 H3 entry20:55/reader21:10 and coherent19 Data21:30 are consumed with technical
 failure, not waiting/running. New Data fa918/aa047 and OHLCab158/64b1 are
-ACTUALLY closed/published, not a point/order/fill. Tomorrow producer14:25/entry14:31 and Open45
+ACTUALLY closed/published, not a point/order/fill. Nov4UTC producer14:25/entry14:31 and Open45
 publisher15:07:30/entry15:17/exit16:17. These are task-owned, not foreground wait.
 Actual installed evidence is indexed in HANDOFF; no future fill inferred.
-Full17 ACTUALLY migrated to5a571; new exitNov6UTC20:54, originalH3 stays20:45.
-Actual outcome/point remains UNKNOWN. Shared observer-helper fault diagnosis
-is now the Execution priority; no claim tomorrow will pass actual admission.
+Full17 current runtime is bd7b5c0c/release793c1dc6, producerc1e/e4a/READY6b98;
+new exitNov6UTC20:54, originalH3 stays20:45. Actual future point/effects UNKNOWN.
+Bounded observer-idle/first-issuance readiness is already installed; historical
+H3 first cause remains unknown. Do not repeat consumed diagnostic probes.
 
 ## Actual Runtime / Next
 
@@ -70,7 +69,7 @@ or broker action was invoked. Ohm owns real observer-CLI/minimal-ENV/mocked-
 Scheduler reproducer; the shared Full17 observer helper also needs review.
 No operator decision/global Data or Research hold follows this technical fault.
 
-Full17 exact two-future-definition migration is ACTUALLY COMPLETE:
+Historical Full175a migration (superseded by currentbd7, not current commands):
 A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
 earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
 Source93b1f1b4 -> runtime5a571b07/release4eb10f99; Capture/Migrate/independent

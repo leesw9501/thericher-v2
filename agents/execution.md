@@ -2,6 +2,12 @@
 
 ## Active Work Package
 
+Nov4UTC13:37: Dalton owns only the new D: root
+execution/current-full17-bd7-exact-outcome-reader-20261104-v1.
+Implement exact current public outcome/fault binding and inert offline custody
+readiness; no actual private read, Task, broker or strategy invocation. Parent
+owns Scheduler preflight/shared MD/Git. Future receipts remain UNKNOWN.
+
 Financial metadata completion is CLOSED ACTUAL at Nov3UTC23:33:37:
 D:/thericher-v2/model-artifacts/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
 Proof70181640/metadata38021922/runtimebd7b5c0c/release793c1dc6, separate
@@ -64,26 +70,16 @@ original-request/full opener linkage. F9UNKNOWN-HELD, no new query or release.
   Source47e10c43/native9fb08297, LSTM32 BEST10 checkpoint3d74a247.
   Earlier Nov3 prewarm failed before HTTP at local token guard; both financial
   owners denied. Scope-clobber reproducer/repair retained, no expired replay.
-- Earlier coherent19 Data Nov3UTC21:30..<21:31/hard21:45 ACTUALLY enabled:
-  A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/
-  metadata-create26-delta-v6/PARENT-COMPLETE.json.
-  Installer2d7ba96e/native891387eb binds unchanged Data dc8c48fc.
-  Positive relevant NAS8 worker/cache closure is required, not machine idle.
+- Earlier coherent19 dc8 opportunity is consumed/failed before capture;
+  replacement fa918/aa047 and OHLC60ab158 actually completed. Do not replay.
 - Full17 point producer Nov4UTC14:25..<14:25:45/hard14:29:45 ACTUALLY enabled:
-  A/research/current-nov4-full17-earlier-point-preparation-20261104-v1/
-  task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
-  Source d0de1b91/native8e18cbe0; producerad7d0459/owner73600af0.
-  Two trusted model calls, zero fits; future Data/point hashes UNKNOWN.
+  A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+  Current c1e/e4a/metadata5956716d/READY6b98 replaces oldad7/7360/d0de.
+  Two trusted model calls planned, zero fits; actual future point UNKNOWN.
 - Full17 new financial entry Nov4UTC14:31..<14:34/hard14:37 and exit
-  Nov6UTC20:54..<21:00/hard21:07 ACTUALLY enabled under runtime5a571b07
-  after the retained initial e126 installation:
-  A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
-  earlier-nov4/installer-repair-r1/PARENT-COMPLETE.json.
-  Installerf90f8e10/native77f88fbc passed CREATE26/protected-ACL repair.
-  The old20:45 collision is now repaired by ACTUAL UPDATE28 migration to
-  runtime5a571b07, with ONLY new exit20:54..<21:00/hard21:07.
-  Source93b1f1b4/Parent independent qualification and full enabled readback:
-  earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+  Nov6UTC20:54..<21:00/hard21:07 ACTUALLY enabled under bd7/release793c1dc6:
+  A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
+  Metadata38021922/independent readback7d60d61e replaces historical5a/93b1.
   Original H320:45/entry/round/input/policy/point/SDK/B10/F9/exits unchanged.
   Nominal separation does not prove prior-owner closure or a financial exit.
 - Original NAS8 Data Nov3/4UTC21:10, EVAL Nov4UTC21:35 actually migrated;

@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov3UTC23:39 / Nov4KST.
+Updated Nov4UTC13:37 / Nov4KST22:37.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -32,7 +32,7 @@ clocks unchanged. Capture/Migrate/Readback CONSUMED, DO NOT replay/Task.Run.
 Score-only TCNdc9d complete/abstain is NOT a valid trade point. Actual future
 full17 forecast/input/submit/fill/owned inventory/net PnL still UNKNOWN.
 No future point/order/fill/PnL follows Data publication. No foreground wait.
-Tomorrow Full17 producer14:25/entry14:31 and Open45 publisher15:07:30/
+Nov4UTC Full17 producer14:25/entry14:31 and Open45 publisher15:07:30/
 entry15:17/exit16:17 are installed, not actual financial outcomes.
 Full17 current runtime is bd7, superseding actual historical5a; exit20:54.
 Do NOT rerun consumed Capture/Migrate/Create phases. Original H3 stays20:45;
@@ -64,7 +64,7 @@ Proposed22:15 readonly Scheduler diagnostic was NOT installed: edfde623 failed
 native XML-builder validation before registration; existing Tasks unchanged.
 See HANDOFF for exact source and new scoped readonly-context probe ownership.
 
-Full17 exact two-future-definition migration is ACTUALLY COMPLETE:
+Historical Full175a migration (superseded by currentbd7 above; no replay):
 A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
 earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
 Source93b1f1b4 -> runtime5a571b07/release4eb10f99; Capture/Migrate/independent
@@ -87,11 +87,13 @@ Current executable evidence pointers:
 - H3: A/execution/current-h3-current-web-parent-migration-20261104-v1/PARENT-COMPLETE.json.
 - NAS8: A/data/current-nas8-parent-migration-20261104-v1/PARENT-COMPLETE.json.
 - Open45: A/execution/current-open45-nov4-parent-adoption-20261104-v1/PARENT-COMPLETE.json.
-- Earlier Data: A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/metadata-create26-delta-v6/PARENT-COMPLETE.json.
-- Earlier point: A/research/current-nov4-full17-earlier-point-preparation-20261104-v1/task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
-- Full17 current actual migration: A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
-  Metadata93b1f1b4/runtime5a571b07; earlier installer-repair-r1 is retained
-  pre-migration history. Current new exit20:54, original H3 exit20:45 unchanged.
+- Data completed replacement: A/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/publication/DATAREADY.json.
+- Current point producer: A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+- Full17 current actual migration: A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
+  Metadata38021922/runtimebd7/release793c1dc6; old5a/93b1 and installer phases
+  are retained history. Current new exit20:54, original H3 exit20:45 unchanged.
+  Nov4UTC13:36 readonly Scheduler snapshot: all three current future Tasks
+  enabled/Ready3/zero instances/never run. This is not execution evidence.
 
 F9 R5 actual original-request readonly query COMPLETED Nov3UTC20:12:
 A/execution/current-open45-nov4-parent-adoption-20261104-v1/diagnosis-r5/

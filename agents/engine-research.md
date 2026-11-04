@@ -2,7 +2,14 @@
 
 ## Current Results And Next
 
-Updated Nov3UTC21:20 / Nov4KST. Confucius owns Engine and GPU coordination.
+Updated Nov4UTC13:37 / Nov4KST22:37. Nietzsche owns the new CPU-only
+current-h3-stateful-cost-parity-20261104-v1 diagnosis; Parent coordinates GPU
+resources and integration. No new fit or completed-fit replay is dispatched.
+Consumer: analytical replay and next utility-loss contract. First test real
+synthetic entry/hold/drift/exit/missing paths, then at most two exact saved
+a14/EW action paths without changing forecasts, thresholds or closed results.
+Active900s/elapsed1800s, zero fits/new forecasts/GPU/numerical retries. A cost
+state difference would not by itself prove why the closed model failed.
 
 Completed return-risk study:
 A/research/current-short-swing-h3-return-risk-fixedblend-development-20261104-v1/
@@ -31,8 +38,9 @@ Prior downside39cb05e8 closed BEFORE DEV on response nondegeneracy; profitabilit
 not evaluated. Older meanrank8e961834 failed frozen baseline comparison.
 Use exact existing trial ledger/custody; old debits/clocks/checkpoints unchanged.
 
-Next: one distinct cost/turnover-aware experiment using compatible frozen
-inputs/outputs; freeze finite trials/compute/splits/stop rule before dispatch.
+Next: finish the cost-state diagnosis before selecting another utility fit;
+independent pure TCN policy readiness proceeds in Strategy/Data's own root.
+Freeze finite trials/compute/splits/stop rule before any new numerical dispatch.
 No independent-performance promotion, old holdout reopening or finished-fit
 repeat. Useful new GPU work may proceed when actually ready, not inferred.
 Data OHLC60 ab158/readyb5690bcd is ACTUALLY published with typed consumer PASS:

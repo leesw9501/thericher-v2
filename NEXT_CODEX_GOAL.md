@@ -17,6 +17,17 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Actual State / Next Work
 
+- Nov4UTC13:39 read-only preflight: current producer/entry/exit Task.Xml,
+  Definition.XmlText and API7 protected ACL exactly match retained independent
+  readbacks; all enabled Ready3/zero instances/never run. Current bd7 source
+  and2329members rehashed with0mismatches. No Task/strategy/broker invocation.
+  This confirms installed definitions/source only, not future runtime effects.
+- Current disjoint packages: Dalton exactbd7 public outcome reader/inert
+  custody-read readiness; Nietzsche CPU persistent-cost parity; Gibbs pure TCN
+  policy/codec/horizon readiness; Mendel compatible Korean loopback monitor
+  adoption. Parent owns shared MD/Git and effect-time integration. No completed
+  fit/forecast replay or new market fit is dispatched. Package roots/limits
+  are in orchestration.md. A blocked UI/cost diagnosis cannot stop Paper.
 - H3 owned Nov3UTC20:55 opportunity is CONSUMED and technically failed.
   Source-bound fault6ae/TRUE32f/run4fd9 records source_metadata_unavailable,
   native_stage NOT_ENTERED. Financial effects remain UNKNOWN, not zero/fill.
@@ -59,6 +70,9 @@ foreign adoption/unknown-request substitution. No operator decision pending.
   attention and L1/HiGHS development results are in Engine stateboard; positive
   modeled growth is not independent alpha or Paper PnL. Freeze new trials,
   splits, curves/stop/time caps before dispatch; use GPU when actually needed.
+- Latest a14 direct-cost primary failed versus aligned EW. Diagnose conditional
+  pair-cost versus persistent inventory on identical fixed paths before a new
+  utility fit; no causal failure claim, old threshold waiver or market rerank.
 - Raw-TCN forecast-only dc9d is ACTUALLY complete:1restore/1forward,17 native
   abstains/0orders, policy UNBOUND. Do not rerun or call it a valid trade point.
   No automatic strategy/bank swap from codec acceptance.

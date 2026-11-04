@@ -2,7 +2,10 @@
 
 ## Current Data / Next
 
-Updated Nov3UTC22:13 / Nov4KST. Erdos owns new recovery/consumer bindings.
+Updated Nov4UTC13:37 / Nov4KST22:37. Gibbs owns pure TCN policy-readiness
+handoff in research/current-return-tcn-stateful-paper-policy-readiness-20261104-v1.
+Synthetic inputs only; no new capture, completed inference replay or today's
+Paper strategy replacement. Prior Erdos capture/publication scopes are closed.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
 Current fa918 recovery/DataREADYaa047 and OHLC60ab158/INPUT64b1 are ACTUALLY
 published/closed/typed-consumer PASS; see Actual Data Opportunity below.
@@ -22,16 +25,15 @@ A/data/current-h3-risk-historical-training-input-preparation-20261104-v1/API.jso
 2276joint C60 contexts. Daily development input1b1c9759/dataset9b111314:
 141origins/17assets/2397known inputs;139entry+2continuation dates.
 
-Raw-TCN next-input adapter is source-native ready, not actual publication:
+Historical raw-TCN next-input adapter (actual ab158 publication is above):
 A/data/current-return-tcn-paper-ohlc60-input-preparation-20261104-v1/API.json.
 Source66c25cad/native92726359/adapter248714bb/reader edc90640.
 Same dc8c capture retains OPEN, but old C127 close-only hash graph DOES NOT
 bind it. New role Data.KisPaperOhlc60Producer -> Engine.PaperReturnInputConsumer,
 x[1,17,60,4]/z[1,17,20]/v[1,17]/known[1], invented real parser-to-role smoke PASS.
-Erdos prepares same-capture closure/raw/INPUT.npz publication with zero new HTTP.
-Actual new manifest/input/hash remain UNKNOWN until positive original DataREADY,
-cache/actor closure and separately sealed raw/publication linkage. No old
-close-only claim is changed; no model/Paper/bank swap follows adapter readiness.
+This adapter's old dc8 publication was unavailable; the separately qualified
+fa918/ab158 derivative actually published64b1, with closed actors and exact
+raw/publication links. No old close-only claim or model/Paper/bank is changed.
 
 Earlier coherent19 Data dc8c48fc CONSUMED and failed before capture:
 A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/
@@ -39,10 +41,10 @@ metadata-create26-delta-v6/PARENT-COMPLETE.json; Source2d7ba96e/native891387eb.
 Positive original NAS8 source/cache closure required; no machine-wide idle gate.
 Original NAS8 DataNov3/4UTC21:10 and EVALNov4UTC21:35 remain installed.
 Full17 point producer ACTUALLY enabledNov4UTC14:25..<14:25:45/hard14:29:45:
-A/research/current-nov4-full17-earlier-point-preparation-20261104-v1/
-task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
-Source d0de1b91/native8e18cbe0, producerad7d0459/owner73600af0.
-Future DataREADY/point/runtime outcomes UNKNOWN; original Nov6/Nov9 unchanged.
+A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+Current c1e/e4a/READY6b98/metadata595, replacing oldad7/7360/d0de.
+Future point/runtime outcomes UNKNOWN; actual fa918 DataREADY exists.
+Original Nov6/Nov9 opportunities are unchanged.
 
 AMD actual scoped60 quote c97223b8 passed at20:30:53,1POST2GET/0retry:
 A/data/current-amd-paper-quote-schema-probe-20261104-v1/h3-parity-opportunity-r2/CALLBACK.json.

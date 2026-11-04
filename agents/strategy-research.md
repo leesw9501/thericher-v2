@@ -2,7 +2,14 @@
 
 ## Current Source Handoff
 
-Updated Nov3UTC21:20 / Nov4KST. The small joint cross-asset/time-patch kernel
+Updated Nov4UTC13:37 / Nov4KST22:37. Gibbs owns a new pure TCN proposal
+kernel/codec and explicit elapsed-H3 versus inclusive3 timing contract in
+research/current-return-tcn-stateful-paper-policy-readiness-20261104-v1.
+Synthetic-only active900s/elapsed1800s; no fit/new forecast/raw-score selection,
+GPU/broker/credentials or replacement of tonight's installed strategy. Future
+policy and risk admission remain distinct. Parent owns shared MD/Git.
+
+The small joint cross-asset/time-patch kernel
 is COMPLETE and already consumed by Engine, not a pending GPU proposal:
 A/research/current-cross-asset-patch-attention-candidate-preparation-20261104-v1/
 API.json, Sourcebacd8aaa/kernel12495619/nativeb20cc070.

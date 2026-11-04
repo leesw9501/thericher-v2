@@ -2,7 +2,12 @@
 
 ## Current Resource Coordination
 
-Updated Nov3UTC21:20 / Nov4KST. Confucius is sole GPU resource coordinator.
+Updated Nov4UTC13:37 / Nov4KST22:37. Parent is sole current GPU resource
+coordinator; previous Confucius numerical scopes are closed. Current Engine
+package is CPU cost-state diagnosis, not GPU training. Actual snapshot13:36:
+RTX4090,0percent GPU,1261/24564MiB,38C; D:1244.9GiB/33.4percent free.
+Capacity is available, no unrecognized-user/approval/resource hold. Launch a
+new useful frozen campaign when ready, not a completed fit for occupancy.
 Return-risk Sourceede84336 CLOSED CPU1fit/GPU1fit/2forecasts/12views; raw TCN
 17epochs119updates/best9/process cutoff, not convergence.
 Joint patch Source21f2e6f2 CLOSED GPU1fit/1forecast/12views;51epochs714updates/

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov3UTC23:39 / Nov4KST.
+Updated Nov4UTC13:37 / Nov4KST22:37.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -18,8 +18,14 @@ UNKNOWN; company unfinished. See actual proof below; do not replay modes.
 Latest independent research direct-costa14d43bd is CLOSED primary FAIL versus
 matchedEW after54epochs540updates/21.288s CUDA training,1forecast9views.
 All8CIDs/81actors/finalizer closed; no Paper/risk/model swap. See Engine for
-metrics/debits and next stateful-cost diagnosis. Assigned role scopes closed,
-not evidence of permanently running LLMs/GPU. Existing future Tasks remain owned.
+metrics/debits and next stateful-cost diagnosis. Prior role scopes closed.
+New disjoint delegated work: Dalton exactbd7 outcome reader, Nietzsche
+stateful-cost parity, Gibbs pure TCN policy readiness, Mendel compatible Korean
+monitor adoption; Parent owns current metadata/shared docs/Git. See current
+orchestration board for exact roots/limits. No new fit dispatched.
+Existing future Tasks remain owned. Nov4UTC13:36 read-only Scheduler facts:
+producer14:25/entry14:31/exitNov6UTC20:54 enabled Ready3/zero instances/never-run.
+No Task/strategy manually invoked; future financial effects UNKNOWN.
 
 Current financial proof:
 A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json
@@ -93,26 +99,17 @@ first cause/restoration and financial effects are NOT proven. Do not repeat.
   Source47e10c43/native9fb08297, LSTM32 BEST10 checkpoint3d74a247.
   Earlier Nov3 prewarm failed before HTTP at local token guard; both financial
   owners denied. Scope-clobber reproducer/repair retained, no expired replay.
-- Earlier coherent19 Data Nov3UTC21:30..<21:31/hard21:45 ACTUALLY enabled:
-  A/data/current-nov3-coherent19-earlier-paper-input-preparation-20261104-v1/
-  metadata-create26-delta-v6/PARENT-COMPLETE.json.
-  Installer2d7ba96e/native891387eb binds unchanged Data dc8c48fc.
-  Positive relevant NAS8 worker/cache closure is required, not machine idle.
-- Full17 point producer Nov4UTC14:25..<14:25:45/hard14:29:45 ACTUALLY enabled:
-  A/research/current-nov4-full17-earlier-point-preparation-20261104-v1/
-  task-enclosure/metadata-repair-r1/PARENT-COMPLETE.json.
-  Source d0de1b91/native8e18cbe0; producerad7d0459/owner73600af0.
-  Two trusted model calls, zero fits; future Data/point hashes UNKNOWN.
+- Earlier coherent19 dc8 opportunity is consumed/failed before capture;
+  replacement fa918/aa047 and OHLC60ab158 actually completed. Do not replay.
+- Full17 producer Nov4UTC14:25..<14:25:45/hard14:29:45 is ACTUALLY enabled:
+  A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
+  Current c1e/e4a/metadata5956716d/READY6b98 replaces oldad7/7360/d0de.
+  Two trusted model calls planned, zero fits; actual future point UNKNOWN.
 - Full17 new financial entry Nov4UTC14:31..<14:34/hard14:37 and exit
-  Nov6UTC20:54..<21:00/hard21:07 ACTUALLY enabled under runtime5a571b07
-  after the retained initial e126 installation:
-  A/execution/current-full17-finite-account-consumer-readiness-20261104-v1/
-  earlier-nov4/installer-repair-r1/PARENT-COMPLETE.json.
-  Installerf90f8e10/native77f88fbc passed CREATE26/protected-ACL repair.
-  The old20:45 collision is now repaired by ACTUAL UPDATE28 migration to
-  runtime5a571b07, with ONLY new exit20:54..<21:00/hard21:07.
-  Source93b1f1b4/Parent independent qualification and full enabled readback:
-  earlier-nov4/serial-exit-source-r1/parent-adoption/PARENT-COMPLETE.json.
+  Nov6UTC20:54..<21:00/hard21:07 ACTUALLY enabled under bd7/release793c1dc6:
+  A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
+  Metadata38021922/independent readback7d60d61e replaces historical5a/93b1;
+  the exact current proof is above, not an invitation to replay adoption.
   Original H320:45/entry/round/input/policy/point/SDK/B10/F9/exits unchanged.
   Nominal separation does not prove prior-owner closure or a financial exit.
 - Original NAS8 Data Nov3/4UTC21:10, EVAL Nov4UTC21:35 actually migrated;
