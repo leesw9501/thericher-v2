@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC17:00 / Nov5KST02:00.
+Updated Nov4UTC19:05 / Nov5KST04:05.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -12,23 +12,39 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Ready / Owned / Due
 
-Parent owns shared policy/goal/current boards, integration and Git. Six disjoint
-role-agent assignments are active; an assignment is not proof of a running fit.
+Parent owns shared policy/goal/current boards, integration and Git. Disjoint
+role-agent assignments below are not proof of a running fit or financial owner.
 
 | Owner | Current package under A | Next concrete consumer/result |
 | --- | --- | --- |
-| Dalton / Execution | execution/current-actual-private-writer-census-20261105-v1; execution/current-full17-operational-binding-recovery-20261105-v1 | Fresh source-qualified relevant-writer admission to James; separately scoped strict offline native custody read when no financial writer is active. |
-| James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | Finish actual manual-origin BankLeg/CapsuleVisit/duplex closure test; only then freeze a new valid conservative opportunity and use existing native account/risk/book. |
-| Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 | Actual emitted owner/watchdog/worker/typed-consumer repair, honest ensemble binding and fresh Nov4-asof input preparation. |
-| Nietzsche / Engine-Steward | research/current-nas8-eod-gru-complement-development-20261105-v1 CLOSED; next absolute-net/market-regime hypothesis preparation | Completed ensemble sent to Gibbs, new intraday GRU finished. Freeze distinct larger daily raw/causal-indicator contract, max2fits/forecasts; no actual next fit inferred. |
-| Raman / Strategy | research/current-intraday-signal-candidate-preparation-20261105-v1 | Two kernels and consumer native tests complete; support the actual Engine label/window adapter, not another reading list. |
-| Mendel / invoked Infra-Monitor | execution/current-korean-readonly-operations-ui-preparation-20261105-v1 | Exact rollback-capable local readonly UI adoption and current categorical snapshot; be48 service/guards unchanged until qualified migration. |
+| Dalton / Execution | execution/current-actual-private-writer-census-20261105-v1 | Exact early-error/bytecode/actual-actor census diagnosis; future Full17 exit Capture-only, Apply withheld before mutation. Actual custody read not started without exact input/policy bindings. |
+| James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | v3/v4 actual pre-native no-intent faults; finish minimal first-cause repair and real existing native account/risk path. Successor effects not assumed. |
+| Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 | Complete exact partial enable/readback recovery: Dataenabled, pointdisabled, no Task.Run. Fresh Nov4-asof input remains future unknown. |
+| Nietzsche / Engine-Steward | absolute-market/residual and OOF-gate campaigns CLOSED; synthetic book/basis parity audit | Integrate2CUDA+6CPU fits without rerun, explain book differences from saved evidence and verify public quarterB10/native.025B synthetic sizing. |
+| Raman / Strategy-native support | execution/current-raw-open-next-session-native-financial-readiness-20261105-v1 | Generic all3 raw-open profile/actual native SDK/sizing/horizon handoff, D-only source preparation, not deployment. |
+| Mendel / invoked Infra-Monitor | execution/current-korean-readonly-operations-ui-preparation-20261105-v1 | Tracked3files/110tests qualified by Parent fullR3; actual isolated Docker smoke and practical rollback plan. be48 service unchanged until qualified adoption. |
 
 Roles exchange exact schema/source/readiness directly. One mutable write owner
 per package; Parent Git only. Named workers own next_due. Do not invent active
 training, future inputs or financial outcomes from an LLM message.
 
 ## Material Evidence
+
+- Latest tracked code R3 PASS:20239tests/26knownskip/created8of8/20265items/
+  native+helper0/guarded cleanup/1437pins+AGENTS stable, Ruff/fourCompose PASS:
+  A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
+  R1/R2 remain withheld; leaked hardlink in test finally was corrected, not a
+  cleanup-denial bypass. New Korean UI is code-ready, not currently deployed.
+- Absolute1a03e249 completed2CUDAfits/511updates/18views; raw and indicator
+  gates FAIL economics. OOF92ac3b66 completed6CPUfits/1102updates/18views;
+  shallow gate FAILS fixedTCN/fixedhalf growth/DD. All actors closed/registry
+  recorded. Old persistent and new flat-sleeve results are not directly equal.
+- Baseline RTHv4 exact positive no-intent/pre-native failure is recorded;
+  old Full17/Open45/F9 effects remain UNKNOWN. New v5 is not assumed launched.
+- Future Data/point repair9b68e449 adopted Data without update and created only
+  missing point. Partial Enable failed XML readback19:01: Dataenabled,
+  pointdisabled/0instances. Source repair/adoption continues before due time,
+  not foreground waiting or replaying old consumed installer.
 
 - C: native raw-open-elapsed3 profile committed/pushed f9692514.191focused PASS;
   fresh official20129PASS/26known Windows link SKIP/8workers[20155items],
@@ -77,6 +93,18 @@ training, future inputs or financial outcomes from an LLM message.
 Paper is blocked by concrete runtime composition/diagnostic defects, not model
 profitability or operator permission. Finish the real emitted constructor and
 native whole path instead of repeating broken scheduled opportunities.
+
+19:05 Throughput Review: ready work is exact Task normalization, real native
+Paper first-cause repair, new-profile SDK integration and isolated UI adoption;
+numerical campaigns are closed. Reversible improvement: stop extending generic
+proof replicas; use the precise actual failing field/frame and a small complete
+producer-to-native-consumer test. Preserve actual private-writer/risk/unknown
+binding, but do not make unrelated test/Data actors a machine-wide idle gate.
+Independent Claude challenge GO_WITH_LIMITS, exact external pointer:
+claude sessiond45c3e74-2056-41dd-8a0b-0823a2785fe3. Advisory disposition:
+actual existing native owned-process execution is independent of readonly Task
+XML installation; exact original bank/identity/reservations and live relevant
+writer checks remain mandatory. No new approval/report platform or waiver.
 
 The custody census previously misclassified its own runner/shim. Exact actual
 source/parent/argv/native-CIM birth binding now removes that false conflict;

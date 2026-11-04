@@ -2,7 +2,47 @@
 
 ## Current Reality
 
-Updated Nov4UTC16:40 / Nov5KST01:40.
+Updated Nov4UTC19:05 / Nov5KST04:05. Latest facts supersede older projections:
+
+- Korean readonly monitor port is now tracked-source ready: readonly_server.py,
+  readonly_view.py and110tests. Parent118related serial PASS; official R3 full
+  20239PASS/26known Windows SKIP, created8/8workers,20265items, helper/native0,
+  guarded current-child cleanup and1437protected pins+AGENTS unchanged:
+  A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
+  Ruff/default/research/accounting/monitor Compose(.env.example)/diff PASS.
+  R1/R2 remain WITHHELD: the new hardlink test left an alias that correctly
+  prevented cleanup; only its finally teardown was fixed. No safety bypass.
+  Existing be48 at127.0.0.1:8787 is still served; new UI is NOT deployed.
+- Absolute-market/residual research1a03e249 CLOSED,2CUDAfits/511updates/
+  2forecasts/18views; raw/indicator economic comparisons FAIL. OOF shallow
+  gate92ac3b66 CLOSED,6CPUfits/1102updates/6OOFforecasts/18views, primaryFAIL.
+  All actors closed and existing registry updated. No completed fit repeated.
+  Engine now audits book/basis parity on saved evidence and invented inputs,
+  not another market fit/replay. See Engine/Steward exact callbacks.
+- Bounded baseline v3 and RTHv4 positively failed BEFORE native financial
+  entry. RTHv4 nativeNOT_ENTERED/0visits/0children, original bank control
+  closed; exact control flow excludes credentials/private book/intents/broker.
+  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/CALLBACK-RTH-v4.json.
+  James owns the qualified successor; no later effect is asserted here. This
+  does not prove historical Full17/Open45 zero effects or release F9.
+- Future Full17 Nov6 exit migration is CAPTURE-ONLY. Fresh census API failed
+  before Apply; no APPLY-ATTEMPT/Task mutation. Original exit stays unchanged:
+  A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.
+- Fresh coherent Data/point future prewire sourceabb723 partially installed.
+  Exact OS normalization repair9b68e449 adopted existing disabled Data and
+  created only missing point. Enable then failed complete XML semantic
+  readback19:01UTC. Actual Data is ENABLED/Ready3/0instances, due21:30UTC;
+  point remains DISABLED/0instances, dueNov5UTC13:30. No Task.Run/KIS/model
+  call during installation. Gibbs owns exact prospective enable/readback fix:
+  A/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair.
+  Original consumed installer/repair receipts remain, no blind retry. Actual
+  fresh Nov4-asof DataREADY/point remain FUTURE UNKNOWN, never retag Nov3.
+- Raman owns raw-open-elapsed3 financial SDK readiness with honest all3 model
+  identity, public quarter-of-ONE-B10 ceiling and fourth-session exit. No
+  deployment/admission/fill follows C integration or future definition creation.
+
+Earlier retained facts below keep their original source/time; old next-work
+projections are not current running agents, fresh admission or replay authority.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.

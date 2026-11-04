@@ -70,6 +70,26 @@ Next: proven first-cause fixes, actual scoped writer census and native baseline;
 preserve original future exits and exact pending identities independently.
 Parent owns shared MD/Git; peer callbacks never cancel a named active package.
 
+Latest bounded-baseline facts supersede the early launch projections above:
+- v3 at17:30: PRE_CLIENT_ADMISSION_WITHHELD_NO_INTENT, one host invocation,
+  zero native financial visits; exact parent-spawner classification repaired
+  prospectively. Original consumed source/opportunity is not replayed.
+- RTH v4: TECHNICAL_NO_INTENT_PRE_NATIVE_ADMISSION_DENY, PID55868/birth
+  639294119174704091 closed; native NOT_ENTERED/0visits/0children, eight
+  metadata Jobs closed. Exact pre-native control flow excludes credentials,
+  private book, intents and broker calls. OWNER_RENEWAL guard ValueError is
+  a technical fault, not an order rejection or a fill:
+  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/CALLBACK-RTH-v4.json.
+  James owns the source-qualified successor; no v5 effect is yet asserted.
+- Parent future Full17 Nov6-exit migration is CAPTURE-ONLY. Apply/Readback
+  failed fresh_reader_closure before Task mutation; APPLY-ATTEMPT is absent.
+  Original exit remains unchanged. Dalton diagnoses the actual census API
+  early-error/bytecode/actor failures; do not blind retry or exempt generic -c.
+  A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.
+- Raman owns D-only raw-open-elapsed3 native financial readiness. New generic
+  ensemble profile must retain its actual model identity/fourth-session exit,
+  current native risk/book and ONE original B10. Preparation is not deployment.
+
 ## Retained Current Facts
 
 Updated Nov3UTC21:20 / Nov4KST. Parent owns actual metadata/shared MD/Git.

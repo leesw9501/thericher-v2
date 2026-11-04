@@ -2,8 +2,23 @@
 
 ## Current Data / Next
 
-Updated Nov4UTC16:40 / Nov5KST01:40. Gibbs owns
+Updated Nov4UTC19:05 / Nov5KST04:05. Gibbs owns
 research/current-full17-next-session-publisher-recovery-20261105-v1:
+fresh next-session prewireabb723 is partially installed, not fully enabled.
+Parent repaired exact native OS XML/ACL normalization through9b68e449:
+existing disabled Data preserved, missing point created disabled. Subsequent
+EnableReadOnly failed complete XML readback19:01UTC after enabling Data.
+Actual Dataenabled/Ready3/0instances dueNov4UTC21:30; pointdisabled/0instances
+dueNov5UTC13:30. No Task.Run/new HTTP/model effects during installation.
+Gibbs owns exact measured enabled-XML continuation; original source/consumed
+markers/receipts remain. Do not rerun InstallDisabled/RecoverDisabled blindly.
+A/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair.
+Capture original21:30..<22:00/hard22:15, point13:30..<14:00/hard14:10;
+actualfreshDataREADY/point UNKNOWN. Honest ensemble02c12011, Data source
+c63290fc/point3e781926, public quarterONEB10/native.025originalB ceiling;
+no bank enlargement or retagging. Source preparation is not future execution.
+
+Retained earlier first-cause/input context (not a pending duplicate repair):
 actual emitted manifest->owner->watchdog->child->reader repair and safe failure
 retention, next-session fresh input/capture preparation. No consumed Task replay.
 Actual first cause at guest_watchdog.py:35 is KeyError(runtime_files): derived

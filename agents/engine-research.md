@@ -24,11 +24,42 @@ Frozen relative primary PASS but net growth NEGATIVE:0bps+0.41909%,29bps
 39.0953s measured worker/99.0953s debited upper/722.2549s elapsed throughclosure.
 Only six reused DEV dates, nominal clocks/unknown CA/finality/units/PIT;
 not independent alpha, convergence or Paper PnL. No winner/bank/policy swap.
-Next delegated hypothesis is absolute expected after-cost/market-regime value
-complementary to relative-only ranking, preferably existing larger daily O/C/
-C60F4 with raw/causal-close-indicator arms, finite max2new fits/forecasts and
-predeclared costs/targets/hurdles/inner stopping. Engine owns final contract or
-concrete rejection. No actual next fit is inferred from that assignment.
+Later absolute-market/residual study is COMPLETE, not a pending fit:
+A/research/current-h3-absolute-market-residual-development-20261105-v1/CALLBACK.json.
+Source1a03e249, 2 CUDA fits/511 updates/2 forecasts/18 views/0 market retries.
+Raw and raw-plus-close-indicator arms used INNER-best4/5, earlystop32;
+peak496MB, all8CIDs/18actors closed. Net10 raw gate growth0.987%/DD4.867%
+versus matched event-EW3.251%/3.476%; indicator gate4.126%/4.539% versus
+event-EW6.182%/3.697%. DEVELOPMENT_FAIL; no feature-arm rescue or model swap.
+Registry1347f8e9/2888205b, no independent/Paper profitability claim.
+
+Chronological OOF shallow gate is also COMPLETE:
+A/research/current-h3-oof-shallow-policy-gate-development-20261105-v1/CALLBACK.json.
+Source92ac3b66, 2 purged expanding folds x3 seeds =6CPUfits/1102updates,
+6OOFforecasts/1depth2gate/18views; no final-expert refit or new inference.
+NEW flat-three-session sleeve net10 gate4.604%/DD9.898%, fixedTCN8.526%/
+7.180%, fixedHALF5.895%/5.238%. Frozen primary FAIL; this rejects this recipe,
+not ensembles generally. All10CIDs/22actors closed, registry3c87c5fb/5e18f130.
+The sleeve differs from the old persistent book; do not compare their metrics
+as a model-only effect or reopen completed numerical studies.
+
+Current Nietzsche package is a source/formula and synthetic native sizing
+parity audit, not another fit or market replay. Explain persistent-vs-flat
+book differences from saved evidence; trace public .25 of ONE B10 to native
+.025 of original B using invented B10000/B101000/quote100. Coordinate the
+exact producer/native-consumer contract directly with Gibbs/Raman/James.
+Execution deterministic risk and all old unknown reservations remain unchanged.
+That audit is now COMPLETE Sourcea93ec568/APId76fa124,11invented casegroups:
+A/research/current-all3-book-native-sizing-parity-audit-20261105-v1/API.json.
+Old persistent dense-risk allocation/net-delta trades versus equal-top4 forced
+flat/re-entry have turnover3.414 versus49.942 and284versus376marks. Same funding
+kernel/DD formula; different quantities/marks prevent model-only causal claims.
+No market replay was run. Actual native invented B10000/quote100 sizing gives
+.25B10=.025B ceiling250 and2whole shares costing200; unknown reservations stay
+charged and native clamps only reduce capacity. All3capsules/Jobs/finalizers
+closed, zero market arrays/replays/views/fits/forecasts/broker calls.
+Next source-only task binds actual public point allocation/cadence/exit to the
+Raman native SDK with honest analytical NON_PARITY, not a new profitability gate.
 Raman27kernel+26consumer tests show ORB35-minute prefix cannot feed old36x5m
 model, and EOD25-minute target is not oldH30. New trial contract precedes market
 dispatch; useful CUDA allowed under actual measured headroom.

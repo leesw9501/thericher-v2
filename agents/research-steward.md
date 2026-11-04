@@ -14,9 +14,16 @@ Later distinct intraday2a362c08 ACTUALLY completed one CUDA GRU fit25updates/
 12actors/Jobs/leases closed; freezeac8eb6da/outcome957ce78e. Tiny data explains
 short training; GPU is available, not permission-blocked.39.0953s measured
 owned worker/99.0953upper/722.2549elapsed. Net14bps/leg-0.42010%, not profit.
-Engine now prepares distinct larger daily absolute-net/market-regime hypothesis,
-not another run of closed GRU or fake work for occupancy. Same trial/resource
-owner coordinates actual future batches and measured desktop reserve.
+The larger daily absolute-market/residual campaign1a03e249 subsequently
+completed 2CUDAfits/511updates/2forecasts/18views, peak496MB; both economic
+comparisons FAIL. All8CIDs/18actors closed, registry1347f8e9/2888205b.
+OOF gate92ac3b66 completed 6CPUfits/1102updates/6OOFforecasts/18views and
+one depth2gate; source-measured CPU was faster for that small shape. All
+10CIDs/22actors closed, registry3c87c5fb/5e18f130, frozen primary FAIL.
+No active numerical worker is claimed. Current work is synthetic book/basis
+parity and native Paper handoff, not another completed-fit replay. Useful new
+CUDA campaigns remain delegated under measured reserve and frozen contracts;
+GPU occupancy alone is not a reason to add a trial.
 Current ensemble packaging uses completed weights, not duplicate training.
 One frozen fixed saved-output composition is allowed with0fits/forecasts;
 other useful ready CUDA campaigns may run under measured headroom. Old14:20

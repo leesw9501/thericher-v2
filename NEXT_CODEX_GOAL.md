@@ -17,7 +17,24 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Current Evidence
 
-Updated Nov4UTC16:40 / Nov5KST01:40. These are actual results, not future plans.
+Updated Nov4UTC19:05 / Nov5KST04:05. See HANDOFF's latest source-safe facts.
+Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
+
+- Latest verified C authority is Korean readonly R3:20239PASS/26known-skip,
+  8/8workers/20265items/helper+native0/guarded cleanup/1437pins+AGENTS stable:
+  D:/thericher-v2/model-artifacts/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
+  UI remains undeployed; existing127.0.0.1:8787 remains be48.
+- Absolute-market/residual2CUDAfits and OOF6CPUfits are CLOSED primaryFAIL,
+  registry recorded/all actors closed. Do not repeat completed training.
+- Baseline v3/v4 actual first-cause failures are positively pre-native/no-intent;
+  James owns successor. This does not resolve old Full17/Open45/F9 unknowns.
+- Fresh future Data/point definitions are partially enabled after strict OS
+  readback failure: Dataenabled/pointdisabled/zeroinstances. Gibbs owns exact
+  continuation repair, not original consumed-installer replay. Fresh input and
+  all3 point remain future UNKNOWN. Full17 future exit remains CAPTURE-ONLY,
+  unchanged after census failure before Apply. No new operator decision.
+
+Retained earlier evidence (not current running-work projections):
 
 - Full17 producer14:25 CONSUMED/ABSTAIN, exact receipt e29d3459. Actual
   guest first cause: missing runtime_files in the derived manifest, before
@@ -67,11 +84,11 @@ disjoint D: roots and exchange exact consumer contracts directly.
 3. Data: repair actual emitted owner->watchdog->child->reader handoff, prepare
    fresh next-session coherent input and publisher; retain allowlisted failure
    stages. Reproduce any heartbeat-starvation claim before changing behavior.
-4. Engine/Steward: package the completed three-checkpoint fixed-mean ensemble;
-   synthetic actual restore-to-native-consumer proof, honest ensemble identity.
-   One separately frozen fixed composition may consume saved compatible outputs;
-   no new grid, old holdout reopening or duplicate fits. New useful CPU/CUDA
-   campaigns need finite frozen data/split/trial/compute/stop contracts.
+4. Engine/Steward: integrate completed ensemble/absolute/OOF results, audit
+   source/formula book differences and actual native sizing with invented
+   inputs. No new market replay to explain old results, holdout reopening or
+   duplicate fit. A genuinely new useful CPU/CUDA hypothesis may have its own
+   finite frozen contract; occupancy itself is not a hypothesis.
 5. Strategy: connect two pure intraday mechanisms to existing Bar/resampling/
    replay proposal contracts on invented inputs; freeze a later finite comparison
    only after actual window/clock/cost/coverage compatibility is known.

@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov4UTC16:40 / Nov5KST01:40.
+Updated Nov4UTC19:05 / Nov5KST04:05.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -26,7 +26,24 @@ Current runtime observations supersede the installation snapshots below:
   Existing local monitor stays be48 at http://127.0.0.1:8787. New8c2297da Korean
   GET/HEAD-only UI is a tested candidate, not the currently served screen.
 
-Current code verification (already completed, do not repeat for unchanged docs):
+Latest tracked monitor code authority:
+D:/thericher-v2/model-artifacts/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
+Parent118related serial PASS; clean full20239PASS/26knownskip/created8of8/
+8workers[20265items]/native+helper0/guarded cleanup/1437pins+AGENTS stable.
+Ruff and four Compose configurations with .env.example PASS. R1/R2 WITHHELD
+remain; test hardlink finally cleanup repaired without changing the helper.
+Current be48/127.0.0.1:8787 remains, no deployed UI replacement yet.
+
+Future readonly Data/point partial installation: sourceabb723, repair9b68e449,
+DataENABLED/pointDISABLED/0instances after enabled XML readback failure19:01UTC.
+Do not replay consumed InstallDisabled/RecoverDisabled/EnableReadOnly. Gibbs
+supplies exact qualified continuation, Parent owns Task mutations. No Task.Run:
+D:/thericher-v2/model-artifacts/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair.
+Future Full17 exit is CAPTURE-ONLY; Apply failed before touching Task. Do not
+repeat Capture/CreateNew or infer migration from prepared source/readbacks:
+D:/thericher-v2/model-artifacts/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.
+
+Earlier TCN-profile code verification (unchanged result, not latest authority):
 D:/thericher-v2/model-artifacts/verification/current-raw-open-elapsed3-native-integration-20261105-v1/RESULT.json.
 191changed-path serial PASS; official clean full20129PASS/26known Windows link
 SKIP/8workers[20155items]/created8of8/helper+native0/guarded cleanup.1434source
