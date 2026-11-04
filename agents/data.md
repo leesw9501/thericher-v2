@@ -2,20 +2,34 @@
 
 ## Current Data / Next
 
-Updated Nov4UTC13:37 / Nov4KST22:37. Gibbs owns pure TCN policy-readiness
-handoff in research/current-return-tcn-stateful-paper-policy-readiness-20261104-v1.
-Synthetic inputs only; no new capture, completed inference replay or today's
-Paper strategy replacement. Prior Erdos capture/publication scopes are closed.
+Updated Nov4UTC16:40 / Nov5KST01:40. Gibbs owns
+research/current-full17-next-session-publisher-recovery-20261105-v1:
+actual emitted manifest->owner->watchdog->child->reader repair and safe failure
+retention, next-session fresh input/capture preparation. No consumed Task replay.
+Actual first cause at guest_watchdog.py:35 is KeyError(runtime_files): derived
+seal omitted that map before model launch. Source0c5556f7/6native checks:
+A/research/current-full17-actual-producer-abstention-diagnosis-20261104-v1/CALLBACK.json.
+Staged repair not installed. Whole actual generated flow must be exercised,
+not merely a fake launch boundary. Nov3-asof input cannot be retagged Nov4.
+Open45 actual CLI parser/argv match; guest ValueError frame not retained:
+A/data/current-open45-actual-startup-diagnosis-20261105-v1/CALLBACK.json.
+Heartbeat starvation is only a hypothesis pending invented whole-flow proof.
+Original startup15:07:30/prewarm15:08 is not a premature15:16 capture.
+Raman's metadata census found25sessions/10assets,97,495known1m/19,495known5m.
+Conservative+1/+3 complete path bounds184/160 NAS8assetpaths, not signals or
+returns. Daily history since2007 is not equivalent intraday history.
+Prior pure TCN mapping/native C:consumer is code-integrated, not deployed.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data. No new operator decision.
 Current fa918 recovery/DataREADYaa047 and OHLC60ab158/INPUT64b1 are ACTUALLY
 published/closed/typed-consumer PASS; see Actual Data Opportunity below.
-Full17 future producer is now ACTUALLY migrated to c1e/e4a with READY6b98eae0:
+Full17 installed producer c1e/e4a/READY6b98eae0 has now CONSUMED its opportunity:
 A/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
-Metadata5956716d/independent enabledac2cad6a/0instances/never run, no model call.
-Future full17 point unknown; financial pair is ALSO ACTUALLY updatedbd7b5c0c/
+Metadata5956716d/independent enabledac2cad6a are installation history. Actual
+14:25 WORKER-CLOSED ABSTAINe29d3459 is not a point. Financial pair remainsbd7b5c0c/
 metadata38021922 with same c1e/e4a/READY/reader3cbc binding:
 A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
-Readback7d60d61e/both enabled0instances/never run, no financial runtime claim.
+Readback7d60d61e is installation, not financial proof; actual14:31 result20
+has no exact runtime receipt. Financial outcomes stay UNKNOWN.
 Old dc8/3a/41f remain consumed/unqualified, never implicit aliases. Hooke owns
 Full17 producer/owner derivative; Helm financial refs; Erdos new TCN bridge.
 

@@ -2,9 +2,27 @@
 
 ## Current Resource Coordination
 
-Updated Nov4UTC13:37 / Nov4KST22:37. Parent is sole current GPU resource
-coordinator; previous Confucius numerical scopes are closed. Current Engine
-package is CPU cost-state diagnosis, not GPU training. Actual snapshot13:36:
+Updated Nov4UTC16:40 / Nov5KST01:40. Parent coordinates resources; Nietzsche
+owns the current disjoint Engine numerical family. Ranking023e10c3 actually
+used CUDA6.9736s/118MiB peak and is CLOSED primaryFAIL. New raw-TCN3seed
+43da4041 completed3CPUfits/3forecasts/12views, training total360.14s; measured
+same-shape CPU faster, not a GPU permission/runtime hold. Seven market CIDs,
+controller and finalizer are closed; registry frozen3e387589/outcome6e7b3d7f.
+No current numerical worker is inferred from an LLM assignment.
+Current ensemble packaging uses completed weights, not duplicate training.
+One frozen fixed saved-output composition is allowed with0fits/forecasts;
+other useful ready CUDA campaigns may run under measured headroom. Old14:20
+preparation cutoff is history, not a global stop. Do not require new approval
+for ordinary technical fixes, or impose unrelated future due times as a veto.
+All old partials/debits and actual frozen numerical/effect caps remain intact.
+
+Historical resource observations below are dated, not fresh utilization:
+previous Confucius numerical scopes are closed. CPU cost-state
+diagnosis completed10tests/2fixed replays/0fits. Nietzsche now owns preparation
+and subsequently completed one NEW ranking-objective GPU campaign in
+research/current-h3-rank-objective-gpu-development-20261104-v1. Its original
+14:20 preparation deadline is consumed; do not reuse it as a new barrier.
+Historical snapshot13:36:
 RTX4090,0percent GPU,1261/24564MiB,38C; D:1244.9GiB/33.4percent free.
 Capacity is available, no unrecognized-user/approval/resource hold. Launch a
 new useful frozen campaign when ready, not a completed fit for occupancy.

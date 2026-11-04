@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC13:37 / Nov4KST22:37.
+Updated Nov4UTC16:40 / Nov5KST01:40.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -12,28 +12,84 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Ready / Owned / Due
 
+Current assignments supersede the historical checkpoint below. Parent owns
+shared integration/Git; C: native TCN profile passed191focused and fresh
+20129full/26known-skip/8workers/20155items, not deployed in frozen D: runtimes.
+
+- Dalton / Execution: execution/current-full17-operational-binding-recovery-20261105-v1.
+  Correct proven internal pin/precontext diagnostics in new copies; actual
+  relevant private-custody writer census, directly shared with James.
+- James / temporary Execution: execution/current-bounded-engineering-paper-baseline-20261105-v1.
+  Native existing BankLeg/OrderIntent baseline; original15:45 stayed unlaunched.
+  New16:30..16:40 proposal requires qualified source/owner/risk; no financial
+  launch yet evidenced. No expired clock chase, fake horizon or substitute.
+- Gibbs / Data: research/current-full17-next-session-publisher-recovery-20261105-v1.
+  Actual emitted manifest->watchdog->child->reader repair, safe guest failure
+  retention and fresh Nov4-asof/Nov5-decision capture/publisher preparation.
+- Nietzsche / Engine-Steward: research/current-raw-tcn-three-seed-ensemble-paper-readiness-20261105-v1.
+  Package3completed checkpoints/fixed mean, honest ensemble ref/native smoke;
+  one separately frozen fixed saved-output composition, no repeated fits.
+- Raman / Strategy: research/current-intraday-signal-candidate-preparation-20261105-v1.
+  Two pure candidates/27invented tests complete; now Bar/resampler/replay smoke.
+  Metadata97,495known1m/19,495known5m/25sessions/10assets is not performance.
+- Mendel / invoked Infra-Monitor: execution/current-korean-readonly-operations-ui-preparation-20261105-v1.
+  GET/HEAD-only8c2297da passed16route/30schema/23guard/3viewports, actors closed;
+  now exact adoption/rollback prep. be48/8787 and guards/Tasks unchanged.
+
+Throughput review: six disjoint LLM assignments, not six active fits. New3seed
+TCN actually completed3CPUfits/3forecasts/12views; measured small-shape CPU faster.
+Ranking actually used CUDA6.9736s, primaryFAIL/closed. No GPU permission hold.
+Old preparation cutoffs/debits remain; do not impose them on other packages or
+require another scope per typo. Direct qualified handoffs, ordinary engineering
+iteration and useful resource headroom replace artificial scheduling barriers.
+Frozen numerical/effect caps remain. Last pushed checkpoint d9b32a92.
+
+Full17 producer14:25 consumed ABSTAIN: runtime_files missing before model child.
+Entry14:31 metadata20/no exact runtime receipts: financial UNKNOWN. Open45
+publisher/entry/exit metadata2/20/20 is not zero/fill. CLI mismatch rejected;
+precise guest ValueError remains unknown. Original H3 Nov6UTC20:45, Full17
+Nov6UTC20:54, GOOGL Nov9UTC20:55, MSE Nov5UTC20:40, H20 Dec1UTC14:30 exits
+unchanged. No foreground market wait or operator decision.
+
+## Historical Dispatch Checkpoint
+
+The following13:59 checkpoint is retained evidence, not current assignments.
+
 - Parent: exact current future-Task metadata, current facts/integration/Git.
   Read-only COM snapshot Nov4UTC13:36: producer/entry/exit enabled Ready3,
   zero instances, never-run sentinel. No Run, migration or effects invoked.
-- Dalton / Execution: current-full17-bd7-exact-outcome-reader-20261104-v1;
-  new exact public outcome/fault reader and inert custody-read readiness.
-  No strategy, private actual read, Task or broker calls in that package.
-- Nietzsche / Engine: current-h3-stateful-cost-parity-20261104-v1;
-  native cost-state comparison and at most two fixed saved path replays,
-  no fit/new forecast/GPU. A mismatch is not causal proof of model failure.
-- Gibbs / Data-Strategy: current-return-tcn-stateful-paper-policy-readiness-20261104-v1;
-  pure proposal kernel/codec and explicit horizon NON_PARITY, synthetic only.
-  No rerun of completed9364 inference or change to tonight's strategy.
-- Mendel / invoked Infra-Monitor: current-korean-monitor-compatible-adoption-20261104-v1;
-  resolve actual consumer pins before a scoped loopback Korean UI adoption.
-  No forced image/source mismatch or new web broker/private authority.
+- Dalton / Execution: public reader996a4fde CLOSED/12native groups PASS;
+  Parent source-only check0, no financial conclusions. New package
+  current-full17-bd7-offline-custody-reader-preparation-20261104-v1 prepares
+  native invented custody parser and unique public run/closure locator.
+  No actual private read, strategy/Task/broker call or runtime migration.
+- Nietzsche / Engine-Steward: cost parity9e5a89bd CLOSED/10native PASS/2fixed
+  replays. Specific a14 interior mismatch rejected; no causal-failure claim.
+  New current-h3-rank-objective-gpu-development-20261104-v1 freezes a distinct
+  ranking objective, native-qualifies then may run one useful GPU fit. No
+  actual CUDA fit yet asserted; close/checkpoint before14:20, no old fit repeat.
+- Gibbs / Data-Strategy: pure mappingee1e4be7 CLOSED/20native PASS/33pins;
+  new current-return-tcn-native-consumer-design-20261104-v1 identifies and
+  tests the smallest existing native consumer on invented inputs. No market
+  inference/private access/new dispatcher platform or tonight strategy change.
+- Mendel / invoked Infra-Monitor: first Korean static preview CLOSED/22pure,
+  11route/static checks/three viewports/261protected pins PASS, NOT deployed.
+  Actual guards reject29f image or second listener; no financial-source waiver.
+  New current-korean-paper-briefing-preview-20261104-v1 adds source-qualified
+  current Full17/Open45 plans and historical technical failure to a static
+  Korean first screen, no persistent actor or current financial-source change.
 All four packages have disjoint new D: roots; Parent alone writes shared MD/Git.
 These are dispatched LLM workers, not evidence of numerical training.
 Current CUDA snapshot: RTX4090,0percent,1261/24564MiB,38C. D:33.4percent free;
-no resource/approval hold. No new market fit dispatched. Prior owners/campaigns
-are closed history, not running agents.
+no resource/approval hold. A new frozen ranking fit is delegated but execution
+is not inferred from that instruction. Prior owners/campaigns are closed.
 Throughput improvement: remove stale current5a/ad7 projections; reuse exact
 unchanged1432-pin/full policy authority instead of an unrelated full rerun.
+Current closed callbacks live under the exact package names above in A/research
+or A/execution. Parent independent100case pure funding check passed; a first
+inline syntax error ran0cases, not hidden/regraded. Fresh Ruff and default/
+research/accounting/monitor Compose(.env.example) passed. Parent checkpoint
+d9b32a92 pushed; company objective is still UNFINISHED.
 
 H3 entry20:55/reader21:10 and coherent19 Data21:30 are consumed with technical
 failure, not waiting/running. New Data fa918/aa047 and OHLCab158/64b1 are

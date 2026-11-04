@@ -104,6 +104,9 @@ def test_old_profile_values_and_codec_are_unchanged_by_additive_weights_profile(
         "MODEL_WEIGHTS_US_CASH_H3_OPS": (
             "model-weights-us-cash-inclusive3-open5-preclose15-2026-v1"
         ),
+        "MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3": (
+            "model-weights-us-cash-raw-open-elapsed3-open5-2026-v1"
+        ),
         "MODEL_WEIGHTS_NAS_CASH_H5": MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
         "MODEL_WEIGHTS_NAS_H20_EARLY_EXIT": MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
         "MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3": (

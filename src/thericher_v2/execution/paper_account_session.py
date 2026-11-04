@@ -51,6 +51,7 @@ class PaperAccountCohort:
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H5,
                 core.StockCycleProfile.MODEL_WEIGHTS_US_H5,
                 core.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
+                core.StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT,
                 core.StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3,
             }
@@ -182,7 +183,7 @@ def run_native_account_session(
         if value is None:
             if (
                 cohort.mode != "entry"
-                or cohort.profile is not core.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS
+                or cohort.profile not in core._US_OPEN5_WEIGHT_PROFILES
             ):
                 return result("retained_inactive_no_new_cohort")
             record = before[1]
@@ -264,7 +265,7 @@ def run_native_account_session(
             if oldactive is None:
                 _need(
                     fresh_entry and not oldprefix
-                    and cohort.profile is core.StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
+                    and cohort.profile in core._US_OPEN5_WEIGHT_PROFILES,
                     "account_session_skip_changed",
                 )
                 oldactive = dict(

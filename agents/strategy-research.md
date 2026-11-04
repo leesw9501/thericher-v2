@@ -2,12 +2,32 @@
 
 ## Current Source Handoff
 
-Updated Nov4UTC13:37 / Nov4KST22:37. Gibbs owns a new pure TCN proposal
-kernel/codec and explicit elapsed-H3 versus inclusive3 timing contract in
-research/current-return-tcn-stateful-paper-policy-readiness-20261104-v1.
-Synthetic-only active900s/elapsed1800s; no fit/new forecast/raw-score selection,
-GPU/broker/credentials or replacement of tonight's installed strategy. Future
-policy and risk admission remain distinct. Parent owns shared MD/Git.
+Updated Nov4UTC16:40 / Nov5KST01:40. Raman owns
+A/research/current-intraday-signal-candidate-preparation-20261105-v1.
+Two pure executable candidates: delayed opening-range breakout and end-of-day
+loser reversal with skipped interval/no overnight extrapolation.27invented tests/
+Ruff/zero source mismatch PASS; no market numerics/fits/forecasts/broker calls.
+Official-source scope/license/data limitations and exact kernels are in API.json.
+Next real Bar/resampler->features->proposal/replay smoke on invented inputs;
+direct source/clock/cost/window handoff to Engine/Data, not a reading list.
+Metadata25sessions/10assets/97,495known1m/19,495known5m is not performance;
+volume-based promotion rejected, clock/CA/PIT/cost limitations retained.
+
+Pure TCN proposal kernel/codec is CLOSED; native C:consumer now CODE-INTEGRATED,
+not runtime-deployed. New raw-open-elapsed3 profile passed84new native tests,
+191related serial and fresh20129full/26known-skip; old10golden profiles unchanged.
+17NAS+NYS+CASH, e+3 fourth-session exit/OPEN5 NON_PARITY, native account risk
+unchanged. Checkpoint9364 helper may not masquerade as a new ensemble identity.
+Earlier pure-only handoff:
+A/research/current-return-tcn-stateful-paper-policy-readiness-20261104-v1/CALLBACK.json.
+Sourceee1e4be7/kernel6a22d79e/20native tests/33pins/focused Ruff PASS.
+No retained score read/fit/inference/GPU/broker/credential/private/deployment
+effects. NON_PARITY and RELATIVE_SIGN_ONLY are explicit; original UNBOUND
+forecast and tonight's strategy unchanged. Pure mapping is not accepted risk.
+Gibbs now owns research/current-return-tcn-native-consumer-design-20261104-v1:
+find the smallest existing account-owned native consumer and implement an inert
+invented adapter smoke, or name the exact unsupported interface. No new
+dispatcher platform, market inference, private custody or deployment.
 
 The small joint cross-asset/time-patch kernel
 is COMPLETE and already consumed by Engine, not a pending GPU proposal:

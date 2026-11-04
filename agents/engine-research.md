@@ -2,14 +2,62 @@
 
 ## Current Results And Next
 
-Updated Nov4UTC13:37 / Nov4KST22:37. Nietzsche owns the new CPU-only
-current-h3-stateful-cost-parity-20261104-v1 diagnosis; Parent coordinates GPU
-resources and integration. No new fit or completed-fit replay is dispatched.
-Consumer: analytical replay and next utility-loss contract. First test real
-synthetic entry/hold/drift/exit/missing paths, then at most two exact saved
-a14/EW action paths without changing forecasts, thresholds or closed results.
-Active900s/elapsed1800s, zero fits/new forecasts/GPU/numerical retries. A cost
-state difference would not by itself prove why the closed model failed.
+Updated Nov4UTC16:40 / Nov5KST01:40. Current owner Nietzsche, new package:
+A/research/current-raw-tcn-three-seed-ensemble-paper-readiness-20261105-v1.
+Package completed3saved checkpoints/fixed forecast mean with an honest ensemble
+identity and actual invented restore->native consumer proof. One separately
+frozen50/50 saved mean+CBdd813 composition may run3cost views,0fits/forecasts;
+no grid, winner selection, holdout reopening or completed training repeat.
+
+New three-seed raw-TCN campaign43da4041 is ACTUALLY CLOSED:
+A/research/current-h3-raw-tcn-seed-robustness-native-recovery-20261104-v1/FINAL-CALLBACK.json.
+3CPUfits/3forecasts/12views/861updates/0marketretry; seeds0451/0452/0453 used
+41/44/38epochs, INNER-best9/12/6, training total360.14s. All7CIDs/controller/
+finalizer closed. Fixed all3 mean net10 growth8.9553%/DD3.6908%/turn3.4143;
+seed growth median8.0883%,range7.3025..8.4981. No DEV-best seed chosen.
+CPU is measured faster for this small shape, not an unavailable CUDA runtime.
+Shared registry family h3-raw-tcn-new-seed-robustness trial1 recorded frozen
+3e387589/outcome6e7b3d7f. Reused adaptive sensitivity, not independent replication,
+convergence/alpha/Paper PnL. Old9364 cutoff differs, not a seed-only causal test.
+Old partial preparation remains partial, not the current campaign result.
+
+Native C: raw-open-elapsed3 profile now passed191focused and fresh20129full/
+26known-skip tests. Existing account dispatcher/risk reused, NOT deployed.
+Checkpoint9364 helper is not an ensemble identity; use generic strict DTO with
+actual ensemble bundle ref, fixed17+CASH and explicit fourth-session exit.
+
+Nietzsche's earlier CPU parity package is CLOSED:
+A/research/current-h3-stateful-cost-parity-20261104-v1/CALLBACK.json.
+Source9e5a89bd/kernel163bd0d4/resultb0642b2f:10native tests, exactly2saved
+path replays/zero fits/forecasts/GPU/retries;15.3063s active/277.998s elapsed.
+Claude GO_WITH_LIMITS/exact pointer is retained; all actors/finalizer closed.
+Parent independently checked100invented funding paths and missing-mark denial
+with0market replay. A first parent inline syntax failure executed no cases;
+corrected stdin command passed, no source or closed result was changed.
+Result REJECTS the specific a14 interior persistent-vs-conditional mismatch:
+actual a14 half-gross state agrees. Initial/terminal fees are absent from pair
+loss and matched-dollar EW needs actual prior gross, but neither proves why
+the closed model failed. Do not rerun a14 as a supposed mismatch repair.
+
+Distinct ranking GPU study is CLOSED primary FAIL:
+A/research/current-h3-rank-objective-gpu-development-20261104-v1/CALLBACK.json.
+Source023e10c3,1CUDAfit32epochs448updates/INNERbest2/earlystop30,6.9736s
+training/118MiB peak allocated,1forecast/0retries. Net10 growth4.6894%/
+DD7.1589%/turn5.4981 versus alignedEW6.0269%/5.0203%/1.6457; carried rawTCN
+10.9375%/4.0657%/5.6341 unchanged. Frozen primary fails, not rescued by positive
+growth. Native/Ruff/Claude GO_WITH_LIMITS, all3CIDs closed by14:04:26 and
+Parent independently confirmed0present. Active325.8422upper/1800 including
+300prep reserve, elapsed851.5859/2400; not isolated timing/convergence/alpha.
+Shared registry adoption is complete: frozen92edd9bb/outcomefa722fe0,
+non_promoting_completed/primaryFAIL. No additional fit or holdout use.
+
+Earlier seed-robustness preparation in
+A/research/current-h3-raw-tcn-seed-robustness-preparation-20261104-v1
+is PARTIAL_NOT_READY: proposed3new seeds/fixed aggregation only, no worker/
+Job/CID/market arrays/fits/forecasts. native.py UNRUN/expired prep guard; seed
+dedup/source/custody/Ruff/native/three-fit launcher incomplete. Do not launch.
+next_due14:40 means repair/qualify technical readiness under a named bounded
+scope while preserving original prep/debits, not a human approval or new trial.
 
 Completed return-risk study:
 A/research/current-short-swing-h3-return-risk-fixedblend-development-20261104-v1/
@@ -38,8 +86,9 @@ Prior downside39cb05e8 closed BEFORE DEV on response nondegeneracy; profitabilit
 not evaluated. Older meanrank8e961834 failed frozen baseline comparison.
 Use exact existing trial ledger/custody; old debits/clocks/checkpoints unchanged.
 
-Next: finish the cost-state diagnosis before selecting another utility fit;
-independent pure TCN policy readiness proceeds in Strategy/Data's own root.
+Next: finish ensemble producer/consumer readiness and a distinct fixed saved
+composition; ranking is complete, not an active/pending fit. Raman supplies two
+intraday candidate kernels/clock-cost contracts for a later finite comparison.
 Freeze finite trials/compute/splits/stop rule before any new numerical dispatch.
 No independent-performance promotion, old holdout reopening or finished-fit
 repeat. Useful new GPU work may proceed when actually ready, not inferred.

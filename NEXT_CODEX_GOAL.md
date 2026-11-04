@@ -15,82 +15,80 @@ Preserve ONE original initial B/10, F9 UNKNOWN-HELD, costs/losses/reservations,
 pending identities and ALL original exits. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
 
-## Actual State / Next Work
+## Current Evidence
 
-- Nov4UTC13:39 read-only preflight: current producer/entry/exit Task.Xml,
-  Definition.XmlText and API7 protected ACL exactly match retained independent
-  readbacks; all enabled Ready3/zero instances/never run. Current bd7 source
-  and2329members rehashed with0mismatches. No Task/strategy/broker invocation.
-  This confirms installed definitions/source only, not future runtime effects.
-- Current disjoint packages: Dalton exactbd7 public outcome reader/inert
-  custody-read readiness; Nietzsche CPU persistent-cost parity; Gibbs pure TCN
-  policy/codec/horizon readiness; Mendel compatible Korean loopback monitor
-  adoption. Parent owns shared MD/Git and effect-time integration. No completed
-  fit/forecast replay or new market fit is dispatched. Package roots/limits
-  are in orchestration.md. A blocked UI/cost diagnosis cannot stop Paper.
-- H3 owned Nov3UTC20:55 opportunity is CONSUMED and technically failed.
-  Source-bound fault6ae/TRUE32f/run4fd9 records source_metadata_unavailable,
-  native_stage NOT_ENTERED. Financial effects remain UNKNOWN, not zero/fill.
-  Actual9410/45e9 reader at21:10 WITHHELD missing exact entry closure.
-  No Task replay, substitute request or reservation release.
-- Historical H3 first cause remains UNKNOWN. Minimal-ENV/native diagnostics
-  and manual readonly pair are complete; no old Suspend/entry/read replay.
-  Future bd7 runtime now has safe diagnostic retention, bounded observer-idle
-  readiness and first-issuance readiness with original checks, not proof that
-  historical restoration or broker effects occurred.
-- Full17 future Tasks ACTUALLY migrated tobd7b5c0c/release793c1dc6:
-  Nov4UTC14:31 entry, Nov6UTC20:54 exit. Original H3 exit stays20:45.
-  See D:/thericher-v2/model-artifacts/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
-  Metadata38021922, separate full enabled readback7d60d61e at23:33:37UTC,
-  both enabled/Ready3/0instances/never run. All modes consumed; no Task.Run.
-  Nominal separation is not prior-owner closure, a queue, input readiness or
-  a fill. Review shared observer helper; actual effect-time checks remain.
-- Data's original coherent19 opportunity21:30 is CONSUMED before capture;
-  no old dc8 DataREADY exists. Current reproducer found Task.Xml differs from the
-  producer's exact Definition.XmlText. New sourcefa918b3f/native81ccca40
-  fixes only that API surface, preserving strict XML/ACL/owner/cache checks:
-  D:/thericher-v2/model-artifacts/data/current-nov3-coherent19-finite-capture-recovery-20261104-v1/API.json.
-  New capture ACTUALLY completed22:06:59:1POST38GET/all200/0retry,
-  2413/2413required cells19assets x127dates. DataREADYaa04705d/inputf3e79f32,
-  manifestb75d724e/outputPin07475af0; strict actual parse/return validates both
-  owner closures and exact stable files. New fa918 is not old dc8 retag/replay.
-  New OHLC60 derivativeab158 ALSO ACTUALLY published/input64b1ad44,0new HTTP/
-  model calls; actual typed consumer/closed publisher+worker passed:
-  D:/thericher-v2/model-artifacts/data/current-nov3-recovery-ohlc60-path-correction-20261104-v1/PUBLICATION-CLOSED.json.
-  Producer binding is now ACTUAL c1e/e4a under metadata5956716d at23:19:07:
-  D:/thericher-v2/model-artifacts/research/current-full17-fa918-producer-metadata-runtime-completion-20261104-v1/ACTUAL-COMPLETE.json.
-  Required READY6b98eae0/independent full XML+ACL enabled readbackac2cad6a
-  verified,0instances/never run. Same14:25 opportunity; not future model output.
-  Financial adoption is also ACTUAL bd7/380, exact producer/READY/reader3cbc
-  binding; actual future point and financial effects still UNKNOWN. Old5a/
-  6175 and failed aggregates remain history, not regraded. No implicit old
-  source upgrade, raw-OPEN retag, substitute request or foreground waiting.
-- Engine/Steward owns distinct useful convergence/feature research and safe
-  resource coordination. Finished fits/forecasts are not repeated. TCN,
-  attention and L1/HiGHS development results are in Engine stateboard; positive
-  modeled growth is not independent alpha or Paper PnL. Freeze new trials,
-  splits, curves/stop/time caps before dispatch; use GPU when actually needed.
-- Latest a14 direct-cost primary failed versus aligned EW. Diagnose conditional
-  pair-cost versus persistent inventory on identical fixed paths before a new
-  utility fit; no causal failure claim, old threshold waiver or market rerank.
-- Raw-TCN forecast-only dc9d is ACTUALLY complete:1restore/1forward,17 native
-  abstains/0orders, policy UNBOUND. Do not rerun or call it a valid trade point.
-  No automatic strategy/bank swap from codec acceptance.
-- Monitor stays existing be48/127.0.0.1:8787. GOOGL baseline provenance and
-  Korean UI compatibility are scoped work, not a Paper/GPU permission hold.
+Updated Nov4UTC16:40 / Nov5KST01:40. These are actual results, not future plans.
 
-## Completion / Verification
+- Full17 producer14:25 CONSUMED/ABSTAIN, exact receipt e29d3459. Actual
+  guest first cause: missing runtime_files in the derived manifest, before
+  model-child launch. Six invented checks and staged repair are not deployment:
+  D:/thericher-v2/model-artifacts/research/current-full17-actual-producer-abstention-diagnosis-20261104-v1/CALLBACK.json.
+- Full17 entry14:31 Task result20, but exact runtime attempt/admission/outcomes
+  are absent: broker effects UNKNOWN. A separate native constructor reproducer
+  finds stale internal NATIVE_PIN. Do not call that the proven historical cause
+  or zero effects. Current source bd7/release793c1dc6 and original exits remain.
+- Open45 publisher15:07:30/entry15:17/exit16:17 metadata results2/20/20,
+  Ready3/0instances. Those are not financial receipts. CLI mismatch is ruled
+  out; exact guest failure stage remains unknown. No consumed Task replay.
+- Native raw-TCN profile is code-integrated and freshly verified, not deployed:
+  model-weights-us-cash-raw-open-elapsed3-open5-2026-v1. Existing account-owned
+  dispatcher/risk/book, fixed17+CASH, e+3 fourth-session exit, explicit OPEN5
+  NON_PARITY; missing input never becomes allcash or reservation release.
+- Completed new three-seed TCN sensitivity43da4041:3CPUfits/3forecasts/12views,
+  fixed mean net10 growth8.9553%/DD3.6908%/turnover3.4143. Reused development,
+  not independent alpha/Paper PnL. All workers closed, registry recorded.
+  Completed CUDA ranking023e10c3 used6.9736s training and failed its frozen EW
+  comparison. No completed fits/forecasts are repeated for GPU occupancy.
+- Actual fa918/aa047 and OHLC60ab158/64b1 Data publications are closed. Their
+  Nov3-asof input is not a fresh Nov4-asof/Nov5-decision point. No retagging.
+- Korean readonly candidate8c2297da is tested, not deployed. Existing local
+  monitor be48/127.0.0.1:8787 remains. No public exposure or private web mounts.
 
-Parent integrates disjoint role work, protects shared Git ownership and actual
-pending identities, and continues ready delegated work. Package blocks remain
-local. Old preparation-cap failures and partial proofs stay failed/partial.
-No original/model/data/financial claim is inferred from installation/Task exit.
+## Ready Parallel Work
+
+Parent owns integration, shared policy/goal/stateboards and Git. Roles use
+disjoint D: roots and exchange exact consumer contracts directly.
+
+1. Execution: correct proven operational pin/early-error-retention defects in
+   new source copies; native constructor/whole-flow checks before adoption.
+   Source-qualified actual private-custody writer census must exclude unrelated
+   Data/research/UI actors. Unknown effects stay unknown; reconcile exact old
+   requests without substitute identities, budget reset or foreign inventory.
+2. Execution engineering baseline: connect a separately named conservative
+   proposal to the existing native BankLeg/OrderIntent path, not a fake H3
+   horizon or new account platform. Qualify source/owner/current risk before
+   any bounded effect. Preserve unlaunched opportunities as unlaunched.
+3. Data: repair actual emitted owner->watchdog->child->reader handoff, prepare
+   fresh next-session coherent input and publisher; retain allowlisted failure
+   stages. Reproduce any heartbeat-starvation claim before changing behavior.
+4. Engine/Steward: package the completed three-checkpoint fixed-mean ensemble;
+   synthetic actual restore-to-native-consumer proof, honest ensemble identity.
+   One separately frozen fixed composition may consume saved compatible outputs;
+   no new grid, old holdout reopening or duplicate fits. New useful CPU/CUDA
+   campaigns need finite frozen data/split/trial/compute/stop contracts.
+5. Strategy: connect two pure intraday mechanisms to existing Bar/resampling/
+   replay proposal contracts on invented inputs; freeze a later finite comparison
+   only after actual window/clock/cost/coverage compatibility is known.
+6. Infra/Monitor: qualify exact rollback-capable local Korean GET/HEAD-only UI
+   adoption against relevant actual guards. No private custody/broker authority,
+   source waiver, live-control claim or public listener.
+
+Old technical-preparation cutoffs/debits stay recorded; they do not create a
+company-wide time or permission hold. Continue another ready package while a
+named worker owns its due time. No foreground session sleep or new follow-up
+chain. Original H3/Full17/GOOGL/MSE/H20 exits stay owned and unchanged.
+
+## Completion And Verification
 
 Require exact current source/release/time/input/request/fill/current-owned-state
-binding and positive relevant closure. Company completion needs runtime closure;
-only then replace this file with ONE material next company outcome.
+binding and positive relevant closure. Package completion, commit, installation
+or task exit is not company completion. Only actual required runtime closure
+allows replacement with ONE next material company outcome.
 
-Follow AGENTS.md verification. Current tracked production/tests/config/policy
-match1432pins of passing20045/26known-skip authority; docs/external-only reuse
-requires those exact digests. Fresh focused external proof, Ruff, .env.example
-Compose and diff checks still apply; C tests cannot validate D code.
+Fresh changed-path191PASS and full20129PASS/26known Windows link SKIP:
+D:/thericher-v2/model-artifacts/verification/current-raw-open-elapsed3-native-integration-20261105-v1/RESULT.json.
+Actual created8/8workers,8workers[20155items], helper/native0, guarded cleanup
+and1434protected production/test/config pins plus AGENTS unchanged. Ruff and
+default/research/accounting/monitor Compose(.env.example) passed. Docs/external
+reuse requires exact matching digests; fresh external native proofs remain
+necessary. C suite does not validate D executables or private financial state.

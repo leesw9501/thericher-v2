@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov4UTC13:37 / Nov4KST22:37.
+Updated Nov4UTC16:40 / Nov5KST01:40.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -10,22 +10,57 @@ ONE original initial B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending
 identities and ALL original exits remain. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
 Actual Data fa918/aa047, OHLC60ab158/64b1 and score-only dc9d are complete.
-Full17 producer Task ACTUALLY migrated23:19:07 to c1e/e4a/metadata5956716d;
-runtime READY is present. Financial pair ACTUALLY migrated23:33:37 tobd7b5c0c/
-metadata38021922/release793c1dc6, full independent enabled readback7d60d61e,
-both Ready3/0instances/never run. Future point/submit/fill/owned state/PnL still
-UNKNOWN; company unfinished. See actual proof below; do not replay modes.
-Latest independent research direct-costa14d43bd is CLOSED primary FAIL versus
-matchedEW after54epochs540updates/21.288s CUDA training,1forecast9views.
-All8CIDs/81actors/finalizer closed; no Paper/risk/model swap. See Engine for
-metrics/debits and next stateful-cost diagnosis. Prior role scopes closed.
-New disjoint delegated work: Dalton exactbd7 outcome reader, Nietzsche
-stateful-cost parity, Gibbs pure TCN policy readiness, Mendel compatible Korean
-monitor adoption; Parent owns current metadata/shared docs/Git. See current
-orchestration board for exact roots/limits. No new fit dispatched.
-Existing future Tasks remain owned. Nov4UTC13:36 read-only Scheduler facts:
-producer14:25/entry14:31/exitNov6UTC20:54 enabled Ready3/zero instances/never-run.
-No Task/strategy manually invoked; future financial effects UNKNOWN.
+Full17 Nov4UTC14:25 producer is CONSUMED/UNQUALIFIED: exact WORKER-CLOSED
+ABSTAIN14:25:32.611760UTC, SHAe29d3459; e557 rejects
+WHOLE_OWNER_CLOSURE_STATUS_MODE. Actual guest first cause is
+guest_watchdog.py:35 KeyError(runtime_files), before model-child launch:
+A/research/current-full17-actual-producer-abstention-diagnosis-20261104-v1/CALLBACK.json.
+Source0c5556f7,6invented checks; repair staged, not installed or replayed.
+Full17 entry14:31 Task returned20/Ready3/0instances, but exact ATTEMPT,
+ADMISSION, outcomes and host-results are absent. Financial effects UNKNOWN.
+Public constructor reproducer separately finds admission_binding.py:19 stale
+NATIVE_PINc6cc versus actual+manifest4448. This is NOT proof of the historical
+entry's first cause or zero effects. Safe precontext retention is staged:
+A/execution/current-full17-precontext-failure-retention-repair-20261104-v1/CALLBACK.json.
+Actual current bd7/release793c1dc6 and all original exits remain unchanged.
+Open45 publisher15:07:30/entry15:17/exit16:17 Tasks returned2/20/20,
+Ready3/0instances. Those are metadata diagnostics, NOT submit/fill conclusions.
+Actual registered publisher argv matches its parser; CLI mismatch is rejected.
+Guest ValueError remains unlocalized; heartbeat starvation is only a hypothesis:
+A/data/current-open45-actual-startup-diagnosis-20261105-v1/CALLBACK.json.
+
+New native raw-TCN profile is CODE-INTEGRATED, not deployed:
+model-weights-us-cash-raw-open-elapsed3-open5-2026-v1. Fixed NAS+NYS17+CASH,
+relative OPEN_e->OPEN_e+3 signal, fourth official-session exit and explicit
+OPEN5 timing NON_PARITY. Existing account dispatcher/risk/book reused; missing
+input never becomes allcash. Checkpoint9364 helper is not an ensemble identity.
+Focused191PASS; fresh full20129PASS/26known Windows link SKIP from20155items,
+created8/8workers, helper/native0 and guarded cleanup/source stability PASS:
+A/verification/current-raw-open-elapsed3-native-integration-20261105-v1/RESULT.json.
+1434production/test/config pins plus AGENTS unchanged, FULL log SHAa2dee36f.
+Ruff/default/research/accounting/monitor Compose(.env.example)/diff PASS.
+
+Completed research: cost parity9e5a89bd rejects the specific a14 interior
+mismatch,0fits. Ranking CUDA023e10c3 used32epochs448updates/6.9736s,
+118MiB peak allocated; frozen primary FAIL versus EW. Shared registry adopted.
+New raw-TCN three-seed study43da4041 CLOSED:3CPUfits/3forecasts/12views,
+seed net10 growth7.3025..8.4981%; fixed mean8.9553%/DD3.6908%/turn3.4143.
+CPU was measured faster for this small shape; no GPU permission/environment
+hold. All workers/CIDs/finalizer closed, registry recorded; no duplicate fits.
+Reused development sensitivity, not independent alpha or Paper PnL:
+A/research/current-h3-raw-tcn-seed-robustness-native-recovery-20261104-v1/FINAL-CALLBACK.json.
+
+Six disjoint agents are assigned: Execution operational binding/writer census;
+separate native engineering baseline; Data next-session publisher and exact
+Open45 cause; Engine three-checkpoint ensemble packaging/fixed composition;
+Strategy two intraday kernels/consumer; Infra Korean readonly UI adoption prep.
+No baseline financial launch is yet evidenced. See orchestration for roots.
+Read-only UI candidate8c2297da passed16route/30schema/23guard checks and three
+viewports, actors closed. NOT deployed; existing be48/127.0.0.1:8787 unchanged:
+A/execution/current-korean-readonly-operations-ui-preparation-20261105-v1/RESULT.json.
+No blanket all-writer/market-time hold; current relevant custody admission and
+fresh financial facts still apply at effects. Historical sections below are
+retained evidence, not fresh never-run facts or permission to replay.
 
 Current financial proof:
 A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json

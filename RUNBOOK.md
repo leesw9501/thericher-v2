@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov4UTC13:37 / Nov4KST22:37.
+Updated Nov4UTC16:40 / Nov5KST01:40.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -10,6 +10,32 @@ ONE original initial B/10, owned costs/losses, F9 UNKNOWN-HELD, exact pending
 identities and ALL original exits remain. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
 
+Current runtime observations supersede the installation snapshots below:
+- Full17 producer14:25 consumed ABSTAINe29d3459; derived runtime_files map
+  missing at guest_watchdog.py:35 before model child. No published trade point.
+- Full17 entry14:31 diagnostic20/no exact runtime attempt/admission/outcomes.
+  Separate constructor reproducer finds stale internal NATIVE_PIN. Exact
+  historical cause and financial effects stay UNKNOWN; do not replay entry.
+- Open45 publisher15:07:30/entry15:17/exit16:17 diagnostic2/20/20; argv/parser
+  compatible, exact guest ValueError stage unknown. Task exit is not a fill.
+- Actual original H3/Full17/GOOGL/MSE/H20 exits remain owned. New baseline
+  source/readiness is in execution/current-bounded-engineering-paper-baseline-20261105-v1,
+  not an already launched order or substitute request. Follow its actual current
+  source/native/admission, never its expired unlaunched proposal.
+- No current deployed D: runtime was changed by new C: native TCN integration.
+  Existing local monitor stays be48 at http://127.0.0.1:8787. New8c2297da Korean
+  GET/HEAD-only UI is a tested candidate, not the currently served screen.
+
+Current code verification (already completed, do not repeat for unchanged docs):
+D:/thericher-v2/model-artifacts/verification/current-raw-open-elapsed3-native-integration-20261105-v1/RESULT.json.
+191changed-path serial PASS; official clean full20129PASS/26known Windows link
+SKIP/8workers[20155items]/created8of8/helper+native0/guarded cleanup.1434source
+pins plus AGENTS exact-match before/after; FULL log SHAa2dee36f. Ruff and default/
+research/accounting/monitor Compose with .env.example passed. Changed external
+executables still need their own real native proof; no C-suite/private inference.
+Credential-free commands use uv run --no-env-file and Compose --env-file .env.example.
+
+Historical installation/source index (not never-run/current runtime facts):
 Read HANDOFF/NEXT/AGENTS and role stateboards; parent owns actual metadata/Git,
 roles disjoint D: roots. H3 entryNov3UTC20:55/static reader21:10 and coherent19
 Data21:30 are consumed; see actual failures below, never manually replay them.

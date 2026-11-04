@@ -2,13 +2,41 @@
 
 ## Active Work Package
 
-Nov4UTC13:37: Dalton owns only the new D: root
-execution/current-full17-bd7-exact-outcome-reader-20261104-v1.
-Implement exact current public outcome/fault binding and inert offline custody
-readiness; no actual private read, Task, broker or strategy invocation. Parent
-owns Scheduler preflight/shared MD/Git. Future receipts remain UNKNOWN.
+Updated Nov4UTC16:40 / Nov5KST01:40. Dalton owns
+A/execution/current-full17-operational-binding-recovery-20261105-v1:
+new-source pin/early-error-retention repair and actual relevant custody-writer
+census. Direct qualified source/admission handoff to James; unrelated Data/GPU/
+UI actors are not financial writers. No current Task/source/private migration.
+Separate James package:
+A/execution/current-bounded-engineering-paper-baseline-20261105-v1.
+Small conservative engineering proposal must use existing native account
+BankLeg/OrderIntent, not a fake3/5session horizon or new bank platform. Original
+15:45 preparation stayed BLOCKED_NOT_LAUNCHED/369native tests/5sourcepins.
+New16:30..16:40 entry proposal needs positive current source/owner/risk admission;
+no actual financial launch or submit is yet evidenced. Never chase expiry,
+reset B10/F9 or replace an unknown original request to manufacture a trade.
 
-Financial metadata completion is CLOSED ACTUAL at Nov3UTC23:33:37:
+Actual Full17 producer14:25 is ABSTAINe29d3459; runtime_files KeyError before
+model child independently identified. Actual entry14:31 Task diagnostic20 but
+ATTEMPT/ADMISSION/outcomes/host-results absent: financial UNKNOWN, not zero.
+Native public reproducer finds admission_binding.py:19 stale NATIVE_PINc6cc
+versus actual+manifest4448, before context/error marker. Historical entry cause
+not proven. Safe precontext failure retention staged, six process groups and
+27invented Jobs closed/Ruff PASS:
+A/execution/current-full17-precontext-failure-retention-repair-20261104-v1/CALLBACK.json.
+Open45 publisher/entry/exit Tasks diagnostic2/20/20; no linked fill inferred.
+Actual argv/parser matches, precise guest ValueError unknown. Open45's own
+native pin7e98 must not be replaced with Full17's4448.
+
+Public reader996a4fde/12native groups and Parent source-only exit0 is complete,
+not actual custody authority. Existing source-qualified offline reader prep
+must retain exact bindings/stability and relevant actual writer admission;
+never call recovery-capable observe() as a reader or infer reservation release.
+Native C: raw-open-elapsed3 profile passed191serial/20129full/26known-skip;
+existing account risk/book unchanged, no deployed source or Task changed.
+Parent owns shared MD/Git/actual migrations. Current baseline effects unknown.
+
+Historical financial metadata completion at Nov3UTC23:33:37:
 D:/thericher-v2/model-artifacts/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
 Proof70181640/metadata38021922/runtimebd7b5c0c/release793c1dc6, separate
 enabled readback7d60d61e, both Ready3/0instances/never run. Original pair times,
@@ -20,9 +48,10 @@ Job/PID births closed; cumulative680.9836/900upper includes prior debits.
 All actual modes consumed: DO NOT replay. bd7 has bounded observer-idle/
 first-issuance readiness and safe error retention with original post-wait
 source/owner/Bank/writer/deadline checks/60floor/final claim; no reset/retry.
-Future point/submit/acceptance/fill/owned inventory/terminal/fees/settlement/
-net PnL remain UNKNOWN. Company unfinished, not a runtime closure.
-Next: exact task-owned future receipts when due, independent research now.
+Submit/acceptance/fill/owned inventory/terminal/fees/settlement/net PnL remain
+UNKNOWN. Company unfinished, not a runtime closure.
+Next: proven first-cause fixes, actual scoped writer census and native baseline;
+preserve original future exits and exact pending identities independently.
 Parent owns shared MD/Git; peer callbacks never cancel a named active package.
 
 ## Retained Current Facts
