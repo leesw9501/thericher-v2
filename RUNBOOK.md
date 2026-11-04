@@ -272,12 +272,14 @@ current GOOGL reader/V2 unchanged. No Run/new trigger/bank/intent/private/broker
 effects. Future runtime admission/quote/recovery/risk still required.
 Historical installation commands below do not become current recovery commands.
 
-## Korean Local Paper Monitor
+## Retained Monitor Reference
 
-Current local URL: http://127.0.0.1:8787. Korean-primary operating view,
-not a broker client. Parent deployed with the credential-free example config;
-external/private-tunnel access is NOT configured and no public port is exposed.
-Existing auth support remains; do not forward this local-only deployment.
+The existing local URL is http://127.0.0.1:8787, old be48. The later8c2297da
+Korean readonly UI is NOT deployed. External/private-tunnel access is NOT
+configured and no public port is exposed. Do not forward this local deployment.
+The command below is a HISTORICAL build recipe, NOT a current adoption command:
+it would change the image without migrating the exact current financial guards.
+Use the current source-qualified compatibility/adoption package instead.
 
 ```powershell
 docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.monitor.yml up -d --no-deps --build web
@@ -288,7 +290,7 @@ artifact root or private custody. Local controls are saved requests, not proof
 of consumer acknowledgement. Existing shared emergency/control volume remains.
 The monitor never runs an artifact executable, broker request or Task on GET.
 
-Current source-qualified public-only status check (no private/broker/Scheduler
+Retained source-qualified public-only status check (no private/broker/Scheduler
 read, no publication, no Task Run):
 
 ```powershell

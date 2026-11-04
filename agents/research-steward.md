@@ -9,6 +9,14 @@ used CUDA6.9736s/118MiB peak and is CLOSED primaryFAIL. New raw-TCN3seed
 same-shape CPU faster, not a GPU permission/runtime hold. Seven market CIDs,
 controller and finalizer are closed; registry frozen3e387589/outcome6e7b3d7f.
 No current numerical worker is inferred from an LLM assignment.
+Later distinct intraday2a362c08 ACTUALLY completed one CUDA GRU fit25updates/
+0.44875s/77.49MB peak plus one Ridge fit,2forwards/15views/0retry. All5CIDs/
+12actors/Jobs/leases closed; freezeac8eb6da/outcome957ce78e. Tiny data explains
+short training; GPU is available, not permission-blocked.39.0953s measured
+owned worker/99.0953upper/722.2549elapsed. Net14bps/leg-0.42010%, not profit.
+Engine now prepares distinct larger daily absolute-net/market-regime hypothesis,
+not another run of closed GRU or fake work for occupancy. Same trial/resource
+owner coordinates actual future batches and measured desktop reserve.
 Current ensemble packaging uses completed weights, not duplicate training.
 One frozen fixed saved-output composition is allowed with0fits/forecasts;
 other useful ready CUDA campaigns may run under measured headroom. Old14:20

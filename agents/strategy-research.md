@@ -8,8 +8,13 @@ Two pure executable candidates: delayed opening-range breakout and end-of-day
 loser reversal with skipped interval/no overnight extrapolation.27invented tests/
 Ruff/zero source mismatch PASS; no market numerics/fits/forecasts/broker calls.
 Official-source scope/license/data limitations and exact kernels are in API.json.
-Next real Bar/resampler->features->proposal/replay smoke on invented inputs;
-direct source/clock/cost/window handoff to Engine/Data, not a reading list.
+Real Bar/resampler->features->proposal/replay/OrderIntent smoke also CLOSED:
+consumer-readiness-v1/API.json,26invented tests/Ruff/zero reference mismatch.
+Native nearest-cent ledger is not exact slippage/broker parity. ORB200feature
+windows provide0support for old36x5m model atOPEN+35; EOD184windows/23sessions
+have a delayed25-minute target, not oldH30. Direct contracts sent Engine/Data.
+Next support their concrete short-prefix label/input adapter on invented data,
+not a new candidate, market trial or reading list.
 Metadata25sessions/10assets/97,495known1m/19,495known5m is not performance;
 volume-based promotion rejected, clock/CA/PIT/cost limitations retained.
 

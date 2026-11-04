@@ -43,6 +43,12 @@ Updated Nov4UTC16:40 / Nov5KST01:40. These are actual results, not future plans.
   Nov3-asof input is not a fresh Nov4-asof/Nov5-decision point. No retagging.
 - Korean readonly candidate8c2297da is tested, not deployed. Existing local
   monitor be48/127.0.0.1:8787 remains. No public exposure or private web mounts.
+- Later actual custody census R4 observed current metadata-only writer absence
+  at16:53:15.616458UTC, complete/stable; not historical no-effects/account state.
+  Baseline16:30..16:40 stayed UNLAUNCHED; whole native BankLeg/duplex proof
+  pending. One saved mean+CBhalf composition completed DEVELOPMENT_PASS,
+  not independent alpha or an installed strategy. Exact current facts are in
+  HANDOFF/orchestration; original source/clock/debit failures remain unchanged.
 
 ## Ready Parallel Work
 

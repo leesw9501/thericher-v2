@@ -36,6 +36,22 @@ Native C: raw-open-elapsed3 profile passed191serial/20129full/26known-skip;
 existing account risk/book unchanged, no deployed source or Task changed.
 Parent owns shared MD/Git/actual migrations. Current baseline effects unknown.
 
+Later exact current admission: actual R4 ended16:53:15.616458UTC,
+CURRENT_RELEVANT_WRITER_ABSENCE_OBSERVED_METADATA_ONLY, complete/stable,
+3actors/1container, source-attested reader/runner/shim lineage. Parent verified
+4public source members/result binding/0mismatch, all metadata Jobs joined:
+A/execution/current-actual-private-writer-census-20261105-v1/CURRENT-CENSUS-R4.json.
+This removes the false own-reader conflict, NOT proof of historical zero effects,
+current inventory or financial account admission. r1-r3 remain withheld. Dalton
+hands the fresh actual API to James and prepares one exact offline native custody
+read, networknone/allRO/no recovery/no locks/stability; do not overlap effects.
+Baseline16:30 proposal is now explicitly WINDOW_ELAPSED_UNLAUNCHED/0financial
+launches/private/credential/broker calls;16native controls/actual manual public
+constructors passed but whole BankLeg/duplex/closure proof is incomplete:
+A/execution/current-bounded-engineering-paper-baseline-20261105-v1/DIRECT-CALLBACK.json.
+Technical preparation continues; only a newly qualified source/opportunity may
+launch, never a retag/substitute or a historical no-fill inference.
+
 Historical financial metadata completion at Nov3UTC23:33:37:
 D:/thericher-v2/model-artifacts/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json.
 Proof70181640/metadata38021922/runtimebd7b5c0c/release793c1dc6, separate

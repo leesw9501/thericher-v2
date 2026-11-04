@@ -4,10 +4,34 @@
 
 Updated Nov4UTC16:40 / Nov5KST01:40. Current owner Nietzsche, new package:
 A/research/current-raw-tcn-three-seed-ensemble-paper-readiness-20261105-v1.
-Package completed3saved checkpoints/fixed forecast mean with an honest ensemble
-identity and actual invented restore->native consumer proof. One separately
-frozen50/50 saved mean+CBdd813 composition may run3cost views,0fits/forecasts;
-no grid, winner selection, holdout reopening or completed training repeat.
+Package is now COMPLETE Source37add4d3/model02c12011:3saved checkpoint restores/
+synthetic forwards and generic raw-open native consumer proof. Actual future
+input/market point is NOT produced; Gibbs has exact C60F4 feature/normalizer
+contract6b442802. One separately frozen50/50 saved mean+CBdd813 composition
+completed3cost views/0fits/market forecasts. DEVELOPMENT_PASS at10bps:
+growth6.9953%/DD3.9524%/turn2.4977/grossabout0.5, not independent alpha/Paper PnL
+or proof that less exposure is alpha. Registry outcomea66eaa85, all actors/
+finalizer closed, measured10.9819s owned phase/124.0678s numerical elapsed.
+No grid/winner selection/holdout reopening or repeated completed training.
+Next intraday campaign is now COMPLETE_VERIFIED Source2a362c08:
+A/research/current-nas8-eod-gru-complement-development-20261105-v1/CALLBACK.json.
+FIT11/INNER4/DEV6dates, one CUDA GRU25updates/INNERbest1/earlystop24,
+0.44875s/77.49MB peak; one CPU Ridge,2forwards/15views/0retry. At14bps EACH
+leg GRU growth-0.42010%/DD0.74087%, matched EW/eventEW-0.77854%/DD0.77854%.
+Frozen relative primary PASS but net growth NEGATIVE:0bps+0.41909%,29bps
+-1.31924%. Do not call it profitable or select Ridge after DEV. All5CIDs/
+12PID-birth actors/Jobs/leases closed. Shared freezeac8eb6da/outcome957ce78e;
+39.0953s measured worker/99.0953s debited upper/722.2549s elapsed throughclosure.
+Only six reused DEV dates, nominal clocks/unknown CA/finality/units/PIT;
+not independent alpha, convergence or Paper PnL. No winner/bank/policy swap.
+Next delegated hypothesis is absolute expected after-cost/market-regime value
+complementary to relative-only ranking, preferably existing larger daily O/C/
+C60F4 with raw/causal-close-indicator arms, finite max2new fits/forecasts and
+predeclared costs/targets/hurdles/inner stopping. Engine owns final contract or
+concrete rejection. No actual next fit is inferred from that assignment.
+Raman27kernel+26consumer tests show ORB35-minute prefix cannot feed old36x5m
+model, and EOD25-minute target is not oldH30. New trial contract precedes market
+dispatch; useful CUDA allowed under actual measured headroom.
 
 New three-seed raw-TCN campaign43da4041 is ACTUALLY CLOSED:
 A/research/current-h3-raw-tcn-seed-robustness-native-recovery-20261104-v1/FINAL-CALLBACK.json.

@@ -62,6 +62,37 @@ No blanket all-writer/market-time hold; current relevant custody admission and
 fresh financial facts still apply at effects. Historical sections below are
 retained evidence, not fresh never-run facts or permission to replay.
 
+Later integrated package facts (Nov4UTC17:00 / Nov5KST02:00):
+- Code/current boards committed and pushed f9692514; no D: runtime deployment.
+- Actual custody census R4 ended16:53:15.616458UTC with complete/stable current
+  relevant-writer absence,3actors/1container and exact readonly runner/shim
+  lineage. Parent4source pins/result binding PASS; zero private/credential/
+  broker calls. This is NOT historical Open45 closure/zero or account inventory:
+  A/execution/current-actual-private-writer-census-20261105-v1/CURRENT-CENSUS-R4.json.
+  r1-r3 stay withheld. Each actual read/effect still needs its fresh admission.
+- Baseline16:30..16:40 stayed UNLAUNCHED:16native controls and actual manual
+  constructors pass, whole BankLeg/duplex closure still pending. No financial
+  command/PID/private/credential/broker call; do not chase its expired clocks:
+  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/DIRECT-CALLBACK.json.
+- Three-checkpoint ensemble37add4d3/model02c12011 is native-ready; actual
+  fresh input/market point remains unavailable. One fixed saved mean+CBhalf
+  DEVELOPMENT_PASS: net10 growth6.9953%/DD3.9524%/turn2.4977/grossabout0.5,
+  0fits/market forecasts,3views, registry outcomea66eaa85, all actors closed:
+  A/research/current-raw-tcn-three-seed-ensemble-paper-readiness-20261105-v1/API.json.
+  Lower exposure/reused development is not independent alpha or Paper PnL.
+- Strategy27pure and26consumer invented tests pass. ORB35-minute prefix cannot
+  feed old36x5m model; EOD delayed25-minute target is not oldH30. Engine receives
+  actual clock/cost/window contracts before a new finite intraday campaign:
+  A/research/current-intraday-signal-candidate-preparation-20261105-v1/consumer-readiness-v1/API.json.
+- Later Engine intraday2a362c08 actually CLOSED: one CUDA GRU25updates/
+  0.44875s/77.49MB peak plus one Ridge,2forwards/15views/0retry; all actors closed.
+  Net14bps each leg-0.42010%/DD0.74087% versus matchedEW-0.77854%/DD0.77854%.
+  Relative primary PASS, absolute net NEGATIVE;0bps+0.41909%,29bps-1.31924%.
+  Six reused DEV dates, not independent alpha/Paper PnL or convergence:
+  A/research/current-nas8-eod-gru-complement-development-20261105-v1/CALLBACK.json.
+  Registryac8eb6da/957ce78e. Next absolute-net/market-regime hypothesis is
+  delegated under finite new contract, not a completed-fit repeat or deployment.
+
 Current financial proof:
 A/execution/current-full17-fa918-financial-actual-completion-20261104-v1/ACTUAL-COMPLETE.json
 SHA70181640; Parent7boundrefs rehashed/0mismatches. Exact c1e/e4a/READY6b98/
