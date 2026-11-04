@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC22:43 / Nov5KST07:43.
+Updated Nov4UTC22:53 / Nov5KST07:53.
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared policy/goal/boards, actual adoption, integration and Git.
@@ -16,12 +16,12 @@ Role MDs are durable memory, not proof of a running LLM/worker.
 | Owner | Package / state | Concrete next consumer |
 | --- | --- | --- |
 | Parent / Execution |RAW8fd/plan38 ACTUALLY enabled; public readercd6e complete|Owned entryNov5UTC14:31/exitNov10UTC14:30; inspect exact public chain, then qualified financial facts, never Task-exit inference.|
-| Gibbs / Data |data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1|Source24a39/defs268c ready; prepare tested metadata installer, Parent creates exact absent tasks disabled/readback/enable. Both due21:10UTC on respective dates, not installed yet.|
+| Gibbs / Data-native |research/current-eod-gru-nov6-future-definition-installation-20261105-v1|Data24a39/268c ACTUALLY enabled/sourcea0fd/adoptionec75e58222:50. Now prepare ONE separate research-task installer from0386; Parent actualadoption.|
 | Nietzsche / Engine-Steward |research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1|Source880d/contract36b2 READY,8focused checks/native2savedrestores+2inventedforecasts15views; Parent65refs0mismatch. Prepare hidden one-shot definitionNov6UTC21:35; actual data/numerical execution unknown.|
-| Beauvoir / Strategy |research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1|One price-only technical net-edge mechanism/native invented consumer. Direct Engine handoff; proposed <=4fit campaign is not numerical dispatch.|
+| Beauvoir / Strategy |CLOSED research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1|Source07dab/45tests Parent45PASS36pins stable;9clockheldgap rejected/distinct6clock146event offer. Direct Engine handoff; not numerical dispatch.|
 | Mendel / reliability |execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1|NEW exact original-owner-only definition migration contract; oldaff census remains withheld. Prove original closure/restart exclusion/fullXMLACL/rollback, Claude+mockednative tests before Parent adoption.|
 | Raman / public reader |CLOSED cd6e11ce/95cd1648|Parent8tests passed; entry/exit pointers missing22:05 ->UNKNOWN. No active financial/GPU owner inferred.|
-| James / engineering baseline |CLOSED v8 +readonlyaccount|v8 pre-guest failure/oldcap closed; account6e6a authenticated. No repeated auth/late substitute; historical other effects stay unknown.|
+| James / engineering baseline |execution/current-nextday-single-proposal-paper-engineering-preparation-20261105-v1|NEW next-day source/synthetic prep only, fix scoped metadata actor admission/retain exact delta. Existing BankLeg/ONEbank/F9 native fixture; no actual entry/newbank/substitute. Oldv8/query remainclosed.|
 
 Independent roles exchange exact schemas and readiness directly. One mutable
 write owner per package; workers own next_due. No foreground market wait,
@@ -55,6 +55,12 @@ all-positions-flat/profitability veto or app follow-up chain.
   External/D runtime requires its own checks; docs-only no repeated20Ksuite.
 - Current be48/127.0.0.1:8787 remains; new Korean e200/8788 UI undeployed.
   No private web mounts/broker authority/public listener.
+
+- New Data2future tasks ACTUALLY installed/enabled22:50, separate disabled and
+  enabled fullOSXMLACL readbacks PASS Ready3/0instances,0Task.Run/API. Sourcea0fd/
+  proof2b602/14refs/adoptionec75e582:
+  A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
+  DueNov5/6UTC21:10(KST Nov6/7 06:10); actual futureData remains UNKNOWN.
 
 ## Throughput Review
 

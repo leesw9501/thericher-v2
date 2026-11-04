@@ -71,11 +71,13 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    global custody admission belongs on definition-only work. A new recovery
    contract needs relevant original-owner closure, full XML/ACL/source/rollback
    tests and Claude challenge; no silent waiver of an immutable old contract.
-3. Data: source24a39b83/definitions268c7444 is READY, NOT installed at this update:
+3. Data: source24a39b83/definitions268c7444 ACTUALLY installed/enabled22:50:
    A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
-   Prepare tested metadata adapter, then create ONLY exact absent Nov5/6 tasks
-   disabled, full source/native/OS definition/ACL readback, then enable.
-   Both opportunities21:10..<21:11/hard21:25UTC; no catchup or manual Task.Run.
+   Parent sourcea0fd/proof2b602 created ONLY exact absent two tasks disabled,
+   separate full source/OS definition/ACL readback, enabled2/separate readback
+   PASS Ready3/0instances; adoptionec75e582 under parent-install/PARENT-ADOPTION.json.
+   Both opportunities21:10..<21:11/hard21:25UTC(KST Nov6/7 06:10). No catchup/
+   Task.Run/API during install; consumed modes never replayed. Future data UNKNOWN.
 4. Engine/Steward: source880d/contract36b2 future Nov6 observation is READY using saved
    GRU and new Nov5 context/Nov6 targets, not reserved Nov2..4:
    A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.

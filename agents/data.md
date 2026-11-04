@@ -2,17 +2,21 @@
 
 ## Current Work
 
-Updated Nov4UTC22:39 / Nov5KST07:39. A=D:/thericher-v2/model-artifacts;
+Updated Nov4UTC22:51 / Nov5KST07:51. A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns actual adoption/Git; Gibbs owns separate D: code.
 AGENTS.md is the authority. Historical stateboards remain in Git through b492b639.
 
 Gibbs has completed new finite Nov5/6 NAS8 source24a39b83/definitions268c7444:
 A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
-NOT installed at this update. A tested minimal parent-install adapter is being
-prepared; Parent then checks actual absence, creates disabled, reads complete
-OS definition/ACL/source/principal, enables and independently reads back.
+ACTUALLY INSTALLED/ENABLED22:50, sourcea0fd18ed/proof2b6025d5. Parent created
+only exact absent two disabled tasks, separate complete OS definition/ACL/source/
+principal readback PASS, enabled2, separate readback PASS: Ready3/0instances.
+14exact evidence refs, adoptionec75e582:
+A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
+17mockedgroups/45CLIactors passed first; actual modes now consumed, no replay.
 Only the two new exact tasks; no old replacement, manual Run or catchup.
 Each post-close opportunity21:10..<21:11/hard21:25UTC, hidden pythonw.
+KST Nov6/7 06:10. Installation made0Task.Run/API/credential/financial-state calls.
 160GET/20perasset/2recoveries/1freshPOST, existing cache/token/rate guards.
 Original consumed Nov2..4 opportunities/markers remain unchanged.
 
@@ -46,6 +50,8 @@ META/TSLA/AVGO. Missing stays NaN/false; READY may be MASKED.
 Market bytes stay M/us_equities/kis_paper_market/<package>/<date>/actual.
 New Source24a39 is a dated source, not an ec810 identity alias.
 
+Engine source880d/36b2 is native-qualified with savedGRU+Ridge,15views/0fits;
+future research task installation is separate, no market result claimed.
 Engine's new future Nov6 observation requires all8 Nov5 last official M1 close,
 Nov6 complete prefix through20:00UTC,12M5(19:00..20:00), decision20:25,
 held OPEN keys20:30..20:55 inclusive. No prior-retained-row substitution.

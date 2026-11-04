@@ -19,7 +19,8 @@ Both saved GRU and Ridgecf33418a exist; full5policies/15views/2forecasts retaine
 Native invented2restores/2forecasts/15views and8focused checks PASS, actors closed;
 Parent65source refs/0mismatch22:42. Registry5278b871 frozen before future targets.
 Data24a39/268c supplies exact dated8-axis codec; direct handoff with Gibbs.
-Parent Data installation pending; Engine prepares hidden future one-shot
+Parent Data2tasks ACTUALLY installed/enabled/readback22:50, adoptionec75e582.
+Engine prepared0386 hidden future one-shot; Gibbs now owns tested metadata adapter:
 definitionNov6UTC21:35..<21:36/hard22:10. No sleeping/numerical worker.
 
 The preceding metadata-only audit f1de3722 is CLOSED:

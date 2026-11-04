@@ -115,8 +115,12 @@ separate D: roots. MDs are memory, not proof that workers are running.
   5278b871 is frozen; old f1de audit rejected Nov4 BEFORE arrays, no Nov2..4 release.
 - Gibbs: data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1;
   source24a39/defs268c READY, new exact8-axis source/schema handed to Engine.
-  Hidden Nov5/6 postclose21:10..<21:11/hard21:25 definitions NOT installed yet;
-  prepare tested installer, Parent creates absent disabled/readback/enables.
+  Hidden Nov5/6 postclose21:10..<21:11/hard21:25 definitions ACTUALLY installed/
+  enabled22:50 by Parenta0fd/proof2b602, separate full OSXMLACL/principal/source
+  readback PASS Ready3/0instances,0Task.Run/API.14refs/adoptionec75e582:
+  A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
+  Future data UNKNOWN, modes consumed. Gibbs now separately prepares ONE hidden
+  Nov6 research-task installer; Data24a39/Engine880d remain unchanged.
 - Beauvoir/Strategy: research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1;
   one price-only RSI/Bollinger/ATR/trend net-edge offer/native invented smoke.
   No market numerics/GPU claimed; Engine must freeze any useful new campaign.

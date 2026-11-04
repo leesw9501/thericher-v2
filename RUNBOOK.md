@@ -23,11 +23,14 @@ inventory; financial fields remain UNKNOWN, reservation_releasefalse. Receipt
 provenance assumes an honest host, not cryptographic proof of Scheduler origin.
 When projecting JSON in PowerShell use ConvertFrom-Json -DateKind String.
 
-Data source24a39/definitions268c READY, actual installation still pending:
+Data source24a39/definitions268c ACTUALLY installed/enabled22:50:
 D:/thericher-v2/model-artifacts/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
-Exact new finite hidden Nov5/6 dates21:10..<21:11/hard21:25UTC. Parent must use
-tested installer/complete disabled definition+ACL readback before enabling.
-No source-only receipt proves actual installation or future market data.
+Exact new finite hidden Nov5/6 dates21:10..<21:11/hard21:25UTC(KST Nov6/7 06:10).
+Parenta0fd/proof2b602 created disabled2/separate fullXMLACL readback/enabled2/
+separate fullreadback PASS Ready3/0instances.14refs/adoptionec75e582:
+D:/thericher-v2/model-artifacts/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
+All actual modes consumed; never replay.0Task.Run/API/financialstate access;
+installation proves no actual future data or model result.
 
 Engine source880d/contract36b2 futureNov6 worker READY;65source refs unchanged,
 8focused checks/real native invented2savedrestores+2forecasts/15views,0fits:
