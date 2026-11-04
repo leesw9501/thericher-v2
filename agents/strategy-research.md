@@ -2,172 +2,53 @@
 
 ## Current Source Handoff
 
-Nov4UTC21:48 update: RAW ALL3 actual host8fd/plan38 is now installed/enabled with
-separate complete definition/ACL readback, entryNov5UTC14:31/exitNov10UTC14:30.
-Raman now prepares its exact public result reader, not an unbound host. New
-coherent19 input0c5b is actually typed/closed; future point13:30 still unknown.
-No new strategy fit/readout/GPU worker. Engine checks metadata-only later EOD25
-custody/checkpoint readiness; do not repeat completed kernels or treat partial
-NAS8 three-day input as a profitable/zero-return result.
+Updated Nov4UTC22:47 / Nov5KST07:47. Beauvoir CLOSED D-only source preparation:
+A/research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1.
 
-Updated Nov4UTC20:28 / Nov5KST05:28. Two intraday kernels/consumer handoffs are
-CLOSED; later GRU/Ridge campaign and absolute/OOF/policy studies are complete
-in Engine's stateboard. No strategy reading-list worker or new model fit is
-claimed active. Lot-inactive invented-basis evidence is not predictive failure.
-Raman is temporarily assigned actual finite Paper host integration, not another
-strategy package. Completed research waits for a genuinely useful new contract,
-not operator permission; current Paper source/runtime has priority.
+Consumer is Engine/Nietzsche, not a new broker writer or indicator team.
+ONE price-only RSI/Bollinger/ATR/trend feature/proposal kernel; no volume/VWAP.
+Explicit RTH30-minute events,5-minute feature-to-entry lag,25-minute hold,
+same row masks/complete intervals/no cross-session or lookahead.
+Proposed finite raw120TCN/raw+indicator120TCN/raw+indicator60TCN/indicatorRidge
+offer <=4fits/4forecasts; fixed50/50 blend, no learned gate/search. This is an
+OFFER, not actual numerical authority/readout. Engine owns final contract,
+costs0/14/29bps each leg, split/purge/support/custody and dispatch choice.
+No market arrays/models/heldout reads, credentials/API/Task/Docker or C/Git writes.
 
-Earlier completed source handoff:
-Nov4UTC16:40 / Nov5KST01:40. Raman owned
-A/research/current-intraday-signal-candidate-preparation-20261105-v1.
-Two pure executable candidates: delayed opening-range breakout and end-of-day
-loser reversal with skipped interval/no overnight extrapolation.27invented tests/
-Ruff/zero source mismatch PASS; no market numerics/fits/forecasts/broker calls.
-Official-source scope/license/data limitations and exact kernels are in API.json.
-Real Bar/resampler->features->proposal/replay/OrderIntent smoke also CLOSED:
-consumer-readiness-v1/API.json,26invented tests/Ruff/zero reference mismatch.
-Native nearest-cent ledger is not exact slippage/broker parity. ORB200feature
-windows provide0support for old36x5m model atOPEN+35; EOD184windows/23sessions
-have a delayed25-minute target, not oldH30. Direct contracts sent Engine/Data.
-Next support their concrete short-prefix label/input adapter on invented data,
-not a new candidate, market trial or reading list.
-Metadata25sessions/10assets/97,495known1m/19,495known5m is not performance;
-volume-based promotion rejected, clock/CA/PIT/cost limitations retained.
+Before handoff exercise actual invented Bar/resampler -> features -> typed
+forecast/decision parser, focused tests/emitted F821/E9. Prefer existing native
+kernels/libraries;2-3official sources/version/license/limitations, not a reading
+list/framework. Source claims are not checked stock-profit evidence.
+Source07dabccd/kernel fe6dcac1/API delivered directly to Engine.45invented tests
+PASS; Parent independently repeated45PASS22:47,36source refs/0mismatch, full
+Ruff/emittedF-E9 PASS. All verification actors closed;143/600s activeupper,
+944/1800s sealed elapsed.0market arrays/fits/forecasts/financial effects.
+Original9-clock card is REJECTED: one feature-eligible held path is unknown.
+Distinct6-clock k42..72 offer has146metadata-supported events,134used with
+two session embargoes. Coverage-informed adaptive hypothesis, not missing-row
+deletion/9-clock regrade or independent replication. Engine must verify actual
+support/freeze BEFORE payloads; no numerical permission inferred from this offer.
 
-Pure TCN proposal kernel/codec is CLOSED; native C:consumer now CODE-INTEGRATED,
-not runtime-deployed. New raw-open-elapsed3 profile passed84new native tests,
-191related serial and fresh20129full/26known-skip; old10golden profiles unchanged.
-17NAS+NYS+CASH, e+3 fourth-session exit/OPEN5 NON_PARITY, native account risk
-unchanged. Checkpoint9364 helper may not masquerade as a new ensemble identity.
-Earlier pure-only handoff:
-A/research/current-return-tcn-stateful-paper-policy-readiness-20261104-v1/CALLBACK.json.
-Sourceee1e4be7/kernel6a22d79e/20native tests/33pins/focused Ruff PASS.
-No retained score read/fit/inference/GPU/broker/credential/private/deployment
-effects. NON_PARITY and RELATIVE_SIGN_ONLY are explicit; original UNBOUND
-forecast and tonight's strategy unchanged. Pure mapping is not accepted risk.
-Gibbs now owns research/current-return-tcn-native-consumer-design-20261104-v1:
-find the smallest existing account-owned native consumer and implement an inert
-invented adapter smoke, or name the exact unsupported interface. No new
-dispatcher platform, market inference, private custody or deployment.
+## Closed Executable Work
 
-The small joint cross-asset/time-patch kernel
-is COMPLETE and already consumed by Engine, not a pending GPU proposal:
-A/research/current-cross-asset-patch-attention-candidate-preparation-20261104-v1/
-API.json, Sourcebacd8aaa/kernel12495619/nativeb20cc070.
-Native invented producer-to-consumer checks passed; actual campaign21f2e6f2
-completed1GPUfit/1forecast/12views. Frozen primary failed raw/turnover controls;
-see Engine stateboard, not a reason to repeat completed attention training.
+- current-intraday-signal-candidate-preparation-20261105-v1:
+  delayed opening-range breakout and EOD loser reversal,27invented tests/Ruff.
+  consumer-readiness-v1 adds26real Bar/resampler/replay/OrderIntent tests.
+  ORB35-minute prefix cannot feed old36x5m model; EOD delayed25-minute target
+  is not oldH30. Later2a362c08 GRU/Ridge study is completed, not a pending fit.
+- current-return-tcn-stateful-paper-policy-readiness-20261104-v1:
+  ee1e4be7/kernel6a22d79e,20native tests/33pins,0market reads/fits.
+  17NAS+NYS+CASH/e+3 fourth-session OPEN5/NON_PARITY/RELATIVE_SIGN_ONLY.
+  Native C profile subsequently integrated; actual RAW8fd pair now enabled
+  Nov5UTC14:31/Nov10UTC14:30, not evidence of submit/fill/PnL.
+- current-cross-asset-patch-attention-candidate-preparation-20261104-v1:
+  bacd8aaa/kernel12495619;actual21f2e6f2 CUDA study completed primaryFAIL.
+  Crossformer/iTransformer concepts, not paper reproduction or bulk import.
+- Prior full18 adapterbd6f1fa8 and full17 named-account worker2d9c55fd native
+  invented flows are closed; source-only tests never prove financial deployment.
 
-Conceptual primary sources (not stock-profit claims):
-https://github.com/Thinklab-SJTU/Crossformer (Apache2.0) and
-https://github.com/thuml/iTransformer (MIT).
-Own small variant, not paper reproduction or bulk code/weights import.
-Next executable hypothesis must target after-cost incremental value and
-turnover, not another architecture list. Confucius owns frozen target/splits/
-costs/fit/evaluation and GPU resources. Erdos now owns the concrete OHLC60
-same-capture publication handoff; no separate Strategy GPU or broker authority.
-Individual expert profitability is not a prerequisite for exploratory fusion;
-learned fusion needs chronological OOF predictions, no in-sample fitting.
-
-## Closed Executable Handoffs
-
-- Full18 adapterbd6f1fa8/API308f6d30/SDK6ac7d4e7/callback724b2c07:
-  fresh480checks/160pins0mismatch/273.016805upper/allactorsclosed.
-- current-full17-h3-named-account-worker-smoke-20261103-v1:
-  Source2d9c55fd62980e380dc9d593a1e16ff3736d78df5d7ead17e241510ba4409409,
-  API793290d2,783checks/139pins0mismatch/202.519746upper/all18actorsclosed.
-  Real bd adapter -> strict full18 parse -> actual named run_account_session/
-  native account/core/planning/execution/reconciliation; external I/O only fake.
-  NYS buy/ownedexit, zero-share cursor, allcash and exact unknown pending after
-  OPEN5 passed; original synthetic B10/F9 held. Actual RequestBudget exercised.
-  0realcredentials/models/market/broker/private/Task, NOT financial deployment.
-- Producer1db5c196 native whole handoff is CLOSED,0market forecasts.
-  Exact API supplied Engine/Data directly. Actual future input/point UNKNOWN.
-
-Full17 NAS/NYS+CASH inclusive3 OPEN5/PRE_CLOSE15 is explicit NON_PARITY with
-research thirdCLOSE. No venue dropping, normalization or old NAS type forgery.
-Old weighted results/debits remain in Git/artifacts; no reapply/retag/retry.
-
-## Frozen Strategy Index
-
-Earlier completed consumers below are retained evidence, not active assignments.
-
-## Complete / Consumers
-
-- current-nas8-next-hypothesis-20261031-v1:
-  d8559ade/CALLBACKc718bcbe,55source/calendarchecks. Proposed P20 reversal
-  broad ranks/nonoverlapH60 vs matchedEW8; costs-only explanation unsupported.
-  Actual Engine adaptiveP20de6b/9506 completedgrowthfailed; blends diagnostic.
-- current-nas8-p20-rule-kernel-20261031-v1/CALLBACK.json:
-  duplicate implementation withdrawn because Engine owns actual kernel.
-  Direct support does not create another ownership/approval relay.
-- current-nas8-frozen-later-replay-contract-20261031-v1:
-  Source7023bb33/MAINa63bd96a/contractea1d8d94/129checks.
-  Old chronology predatesOct30open but exact historical Ridge digest unproven.
-  NO Oct30 independent numerical replay/currenthash retrofit/TCNsubstitution.
-- current-nas8-future-replay-readiness-20261031-v1:
-  Source420ced9a/CANDIDATE-FREEZE082608a7/CONTRACT47a3c993/
-  adapter9cc4e0ec/23nativechecks, allclosed. Exact current old weights frozen
-  for untouchedNov2/3/4; actual future Data still due. No fit/forecast/readout/
-  schedule and no new support/criteria relaxation. Single later session is
-  later-out-of-time replay, not contemporaneous/PIT/independent alpha.
-
-## Ready / Current Assignment
-
-Current concrete consumer: new weekly ETF utility actor study.
-current-etf-daily-cost-policy-kernel-20261101-v1 Source17b82197/
-cost_policyca2057f0/native12/fullRuff passed. Reuses pinned pure fixedG0 book;
-generic n-asset EW/lag60/actor/fixedblend, fees0/10/20/no borrow/reset/resizing.
-V1 trades at every price row, so not itself a weekly-hold/daily-mark reference.
-Separate weekly-mask-r2 is COMPLETE Source789b77e4/reference5558e80f/
-NATIVEd024b79f/7invented tests; explicit decision_mask/mark-only quantity/cash,
-zero skipped fees. Actual Engine adapter parity before market optimizer verified.
-Old17b unchanged; faulty aggregate-fee test assertion preserved/corrected, not
-book logic or fee relaxation. No market fits/GPU. New assigned sidecar is
-current-etf-weekly-recent-window-proposal-20261101-v1: concrete recent-window/
-EW-anchored utility proposal and literal dedup from saved FIT/INNER only,
-<=300active1800elapsed/0market numerics; report directly Engine and Parent.
-This is pure mechanism support, not a portfolio-profit or broker-risk claim.
-
-Help Engine choose ONE distinct target/ranking/ensemble mechanism from actual
-saved curves and payoff diagnostics. Pairwise treeea886/8149 is now completed,
-growthfailed,86iterationsBEST6. No duplicate P20/tree kernel or numerical DEV
-readout merely for proposal selection. A pure proposal gets an actual Engine
-consumer or concrete rejection, not a reading list.
-Data Engine25 callback66b7/READYc9b8 now published/closed; historical60 is
-partial, not global approval/wait. Oct30 remains reserved for old validation.
-Exchange exact source/schema/readiness directly Engine/Data.
-
-Completed next concrete economic proposal (no new market readout):
-current-nas8-p20-rule-kernel-20261031-v1/next-mechanism-r1,
-SOURCEdc8cd28e/CALLBACKbbe31019/offer5cb73ed1/verify7f7c1f6e,
-24checks/Ruff/ClaudeSOUND_WITH_LIMITS/allreviewjobsclosed.
-Fixed half MARKED-holdings composition adjustment, same fixed gross/seed/duty
-as full/EW8 controls; frozen same-tape gross/no-fee/net attribution separates
-opportunity cost, rebalance fees and mandatory exit. No rank-logit threshold,
-cost-optimality claim or old H60 amendment. H120 draft withdrawn, not trial.
-Harvey temporary pure kernel implementation owns a DISJOINT root
-current-nas8-persistent-position-kernel-20261031-v1; Strategy does not duplicate.
-Engine owns any later frozen market experiment; current GRU25e274 unchanged.
-
-New concrete holding mechanism has an Engine consumer, not another reading list:
-current-nas8-h60-cadence-cost-development-20261101-v1 (Hooke CPU).
-Parent verified primary sources:
-- https://arxiv.org/abs/2301.02754v1 : rebalancing frequency and transaction costs
-  jointly affect portfolio construction; NOT a proof of project60min optimality.
-- https://proceedings.mlr.press/v108/uziel20a.html : long/short forecast expert
-  combinations with costs; NOT a replication or evidence for our equal blend.
-No external code/weights/license dependency introduced; conceptual inspiration.
-Project inference: forecast-loss learning without cost-aware selection warrants
-one predeclaredH60 holding-cadence study, matchedcadenceEW/gross/net/fees,
-not another architecture sweep or alpha-from-reduced-turnover claim.
-No fit/new forecast/GPU or alteration of future Tree+HALF freeze.
-That consumer now COMPLETE8fba/cb5c/c3b8: lower fees/net improvement vs GRU5m,
-worse gross and below matchedH60EW, growth/riskfailed. No promotion. Preserve
-this concrete rejection, not a new reading-list/parameter sweep or Paper gate.
-
-Existing official-source factors/public-model release/license and prior
-failures remain in Git/external evidence. Unknown pretraining overlap stays
-representation/runtime-only; no foundation-model shortcut to alpha claims.
-No permanent MD per indicator, new report platform or independent broker writer.
+Exact APIs/callbacks and historical studies remain in RUNBOOK/Engine artifacts
+and Git through b492b639. Completed kernels/campaigns are not reimplemented
+merely to keep this role active. No permanent MD per indicator or broker/
+execution-risk authority. Individual profitability is not required for new
+exploratory fusion, learned fusion needs chronological OOF predictions.

@@ -1,6 +1,54 @@
 # Runbook
 
-## Current Operations
+## Current Owned Commands
+
+Updated Nov4UTC22:45 / Nov5KST07:45. Company objective remains UNFINISHED.
+Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
+Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
+replay consumed installer/enable/rollback modes to inspect their result.
+
+Exact installed public outcome reader cd6e11ce/reader95cd1648, Parent8tests PASS:
+D:/thericher-v2/model-artifacts/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.
+Credential-free/std-library/no Task/Docker/private/broker access:
+
+```powershell
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/reader.py' --phase entry
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/reader.py' --phase exit
+```
+
+Exact runtime/<phase>-ATTEMPT selects linked LAUNCH/CHILD-STARTED/HOST-TERMINAL/
+CHILD-CLOSED. Missing/invalid/unstable ->UNKNOWN, no latest-file fallback or
+Task-exit inference. Public operational closure is NOT acceptance/fill/owned
+inventory; financial fields remain UNKNOWN, reservation_releasefalse. Receipt
+provenance assumes an honest host, not cryptographic proof of Scheduler origin.
+When projecting JSON in PowerShell use ConvertFrom-Json -DateKind String.
+
+Data source24a39/definitions268c READY, actual installation still pending:
+D:/thericher-v2/model-artifacts/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
+Exact new finite hidden Nov5/6 dates21:10..<21:11/hard21:25UTC. Parent must use
+tested installer/complete disabled definition+ACL readback before enabling.
+No source-only receipt proves actual installation or future market data.
+
+Engine source880d/contract36b2 futureNov6 worker READY;65source refs unchanged,
+8focused checks/real native invented2savedrestores+2forecasts/15views,0fits:
+D:/thericher-v2/model-artifacts/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1/API.json.
+Hidden future task preparation remains separate; do NOT run its market launch
+beforeNov6UTC21:35 or infer actual future data/results from native fixtures.
+Both saved GRU and Ridge exist, old Nov2..4 custody remains unchanged.
+
+Full17 future exit remains131e/aa416. aff27/7b0 overlay NOT adopted; exact
+v3 Capture6922b017 withheld22:30 before mutation, no opaque retry:
+D:/thericher-v2/model-artifacts/execution/current-full17-stats-census-adoption-repair-20261105-v3/adapter-runs/3647945dd79244d4ab5e5b83d0bd0278/99-withheld.json.
+New original-owner-only definition migration is source preparation, not an
+adopted contract or waiver of actual financial admission. See Execution board.
+Account query6e6a/2a55 is CONSUMED, not a command to reissue authentication.
+
+Docs-only C authority: Korean R3/20239PASS26knownSKIP/8of8/20265items, guarded
+cleanup,1437pins+AGENTS unchanged22:42; Ruff/fourCompose(.env.example) PASS22:43.
+D: executables require their own focused/native proof, never a repeated C suite
+as a substitute. Current HANDOFF/role boards override dated snapshots below.
+
+## Prior Dated Operational Snapshots
 
 Updated Nov4UTC21:46 / Nov5KST06:46.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.

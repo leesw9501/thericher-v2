@@ -5,151 +5,110 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain interpretable native KIS Paper entry, exact acceptance/fill and current
-owned-position reconciliation, with cost-aware intraday/short-swing research
-running independently. Paper permission does not require model profitability.
+owned-position reconciliation. Continue cost-aware intraday and short-swing
+research independently. Paper permission does not require model profitability.
+An installation, package commit or Task exit is not this company outcome.
 
 Read HANDOFF.md, AGENTS.md, RUNBOOK.md and active role stateboards first.
 Workspace C:/Users/Public/Documents/thericher-v2.
-Market bytes D:/market_data; models/generated research D:/thericher-v2/model-artifacts.
-Preserve ONE original initial B/10, F9 UNKNOWN-HELD, costs/losses/reservations,
-pending identities and ALL original exits. No live/new bank/profit refill/
-foreign adoption/unknown-request substitution. No operator decision pending.
+A = D:/thericher-v2/model-artifacts; M = D:/market_data.
+
+Private no-cost Data/Research/KIS Paper authority is delegated. No operator
+decision is pending. Never read/route KIS_LIVE_* or print/persist secrets,
+account/order IDs, raw broker/market values or private amounts. Preserve ONE
+original initial B/10, costs/losses, F9 UNKNOWN-HELD, pending identities/
+reservations and ALL original exits. No reset/profit refill/foreign adoption/
+unknown-request substitution. Provisional funds are not settled cash/equity.
 
 ## Current Evidence
 
-Updated Nov4UTC21:46 / Nov5KST06:46. See HANDOFF's latest source-safe facts.
-Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
+Updated Nov4UTC22:38 / Nov5KST07:38. Historical details remain in Git through
+b492b639, RUNBOOK and immutable artifacts. This is current work, not a diary.
 
-Actual separate readonly account query Source6e6a834c/RESULT2a55 COMPLETED:
-authenticated,3complete venue reads/4holdings, positive provisional funds,
-1POST4GET/0retry/10.928s. No order/intents/private-book writes; not attributed
-owned inventory/full risk/settlement/PnL. Exact evidence:
-D:/thericher-v2/model-artifacts/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
-F9/old histories/reservations remain unchanged; no company completion follows.
-
-Actual RAW ALL3 pair8fd94086/plan38ecd706 is ENABLED/independently read back:
-entryNov5UTC14:31(KST23:31), exitNov10UTC14:30(KST23:30), hidden pythonw,
-Ready3/0instances. Actual bounded future definition adoption, not an order/fill:
-D:/thericher-v2/model-artifacts/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json.
-Fresh coherent19 DATAREADY0c5b66de/closure5c058439 is actually typed-ready/closed;
-point publisher still owns Nov5UTC13:30. NAS8 frozen3-day eval reports input
-unavailable/0forecasts because Nov2 is absent, not a company-wide blocker.
-Engine checks only scoped later-replay custody/checkpoint readiness; no new fit.
-Finish the installed exact result reader and remaining original-exit metadata
-recovery while preserving future tasks; do not replay consumed install modes.
-
-- Latest verified C authority is Korean readonly R3:20239PASS/26known-skip,
-  8/8workers/20265items/helper+native0/guarded cleanup/1437pins+AGENTS stable:
-  D:/thericher-v2/model-artifacts/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
-  UI remains undeployed; existing127.0.0.1:8787 remains be48.
-- Absolute-market/residual2CUDAfits and OOF6CPUfits are CLOSED primaryFAIL,
-  registry recorded/all actors closed. Do not repeat completed training.
-- Baseline v3/v4 actual first-cause failures are positively pre-native/no-intent;
-  James owns successor. This does not resolve old Full17/Open45/F9 unknowns.
-- Fresh future Data/point definitions are BOTH ENABLED after exact partial
-  continuation70676443 and separate readback19:12UTC: Ready3/zeroinstances,
-  unchanged ACL/whole semantics; no Task.Run. Fresh input and all3 point remain
-  future UNKNOWN. Full17 future exit ACTUALLY migrated to131e/releaseaa416
-  at19:55UTC, Apply+separate readback PASS; original entry/financial tuple/
-  B10/F9/clocks preserved, Task.Run0. No new operator decision.
-- Docker Desktop's exact resource-stats command was measured as a false
-  unknown-writer conflict. Narrow prospective helper aa4e/66f4 has9real native
-  actor/final-decision tests and Ruff PASS; not a broad Docker/GUI exemption.
-  Current actual caller and original future-exit integration remain named work.
-- Earlier RAW304f SDK/guest5dacc and installer10325 preparation now has the
-  actual8fd host deployment above; no fixture was installed. Runtime input and
-  financial effects remain unknown until the owned opportunity actually runs.
-- Policy-aligned6274 study CLOSED9views/0fits/forwards: invented-basis whole
-  lots all0 (LOT_INACTIVE), not actual account capacity/predictive failure.
-  No new ready GPU fit is implied. Actual baseline v8 Source7a6e2eda/f869 is
-  CLOSED after capsule creation, before guest start/credential forwarding/
-  native client or intent. Exact CALLBACK-RTH-v8.json excludes THIS baseline's
-  broker effects; historical Full17/Open45/F9/current inventory stay unknown.
-  First cause is container_membership_changed, actual delta not retained.
-  Same-day v8 cap is exhausted; next is diagnostic repair, separate readonly
-  account connectivity and a correctly dated next operation, not a late replay.
-  Prospective future-exit stats overlay aff27/7b0 is tested but NOT adopted:
-  fresh c5 Capture withheld before mutation. Current exit remains131e; narrow
-  exact-stats census repair proceeds independently of source-ready RAW host.
-
-Retained earlier evidence (not current running-work projections):
-
-- Full17 producer14:25 CONSUMED/ABSTAIN, exact receipt e29d3459. Actual
-  guest first cause: missing runtime_files in the derived manifest, before
-  model-child launch. Six invented checks and staged repair are not deployment:
-  D:/thericher-v2/model-artifacts/research/current-full17-actual-producer-abstention-diagnosis-20261104-v1/CALLBACK.json.
-- Full17 entry14:31 Task result20, but exact runtime attempt/admission/outcomes
-  are absent: broker effects UNKNOWN. A separate native constructor reproducer
-  finds stale internal NATIVE_PIN. Do not call that the proven historical cause
-  or zero effects. Current source bd7/release793c1dc6 and original exits remain.
-- Open45 publisher15:07:30/entry15:17/exit16:17 metadata results2/20/20,
-  Ready3/0instances. Those are not financial receipts. CLI mismatch is ruled
-  out; exact guest failure stage remains unknown. No consumed Task replay.
-- Native raw-TCN profile is code-integrated and freshly verified, not deployed:
-  model-weights-us-cash-raw-open-elapsed3-open5-2026-v1. Existing account-owned
-  dispatcher/risk/book, fixed17+CASH, e+3 fourth-session exit, explicit OPEN5
-  NON_PARITY; missing input never becomes allcash or reservation release.
-- Completed new three-seed TCN sensitivity43da4041:3CPUfits/3forecasts/12views,
-  fixed mean net10 growth8.9553%/DD3.6908%/turnover3.4143. Reused development,
-  not independent alpha/Paper PnL. All workers closed, registry recorded.
-  Completed CUDA ranking023e10c3 used6.9736s training and failed its frozen EW
-  comparison. No completed fits/forecasts are repeated for GPU occupancy.
-- Actual fa918/aa047 and OHLC60ab158/64b1 Data publications are closed. Their
-  Nov3-asof input is not a fresh Nov4-asof/Nov5-decision point. No retagging.
-- Korean readonly candidate8c2297da is tested, not deployed. Existing local
-  monitor be48/127.0.0.1:8787 remains. No public exposure or private web mounts.
-- Later actual custody census R4 observed current metadata-only writer absence
-  at16:53:15.616458UTC, complete/stable; not historical no-effects/account state.
-  Baseline16:30..16:40 stayed UNLAUNCHED; whole native BankLeg/duplex proof
-  pending. One saved mean+CBhalf composition completed DEVELOPMENT_PASS,
-  not independent alpha or an installed strategy. Exact current facts are in
-  HANDOFF/orchestration; original source/clock/debit failures remain unchanged.
+- RAW ALL3 host8fd94086/plan38ecd706 is ACTUALLY installed/enabled with separate
+  complete definition/ACL readback21:42UTC. Hidden pythonw entryNov5UTC14:31
+  (KST23:31), owned exitNov10UTC14:30(KST23:30), Ready3/0instances then:
+  A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json.
+  Existing native risk, original bank and actual effect-time checks remain.
+  Point/admission/submit/acceptance/fill/current-owned-state remain UNKNOWN.
+- Installed public result reader cd6e11ce/95cd1648 is COMPLETE; Parent8invented
+  chain tests PASS. Both phase pointers were missing22:05, hence UNKNOWN:
+  A/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.
+  Read exact attempt/terminal/child links, never latest-file/Task-exit inference.
+  Technical closure is not financial attribution.
+- Coherent19 fresh Nov4-asof/Nov5-decision DATAREADY0c5b66de/closure5c058439 is
+  ACTUALLY typed-ready/closed. Point remains owned by Nov5UTC13:30/KST22:30.
+  Never invent its hash or retag old input.
+- Actual readonly Paper query6e6a834c/RESULT2a55e1f4 completed authenticated:
+  3complete venue queries/4holdings/positive provisional funds,1POST4GET/0retry:
+  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
+  No order/intent/private-book writes; not current owned attribution/full risk/
+  fees/settlement/PnL. Reservations are unchanged.
+- Baseline v8 CLOSED after capsule creation BEFORE guest/client/token/intent.
+  CALLBACK-RTH-v8.json excludes its broker effects; membership delta was not
+  retained. Same-day cap closed. Other Full17/Open45/F9 histories stay UNKNOWN.
+- Original Full17 future exit131e/aa416 IS installed/enabled/read back19:55.
+  Prospective aff27/7b0 is NOT adopted. v3 Capture6922b017 was withheld22:30
+  before migration: adapter matched1/stats0/another unknown classification,
+  offender not retained. No asserted historical cause or blind retry:
+  A/execution/current-full17-stats-census-adoption-repair-20261105-v3/adapter-runs/3647945dd79244d4ab5e5b83d0bd0278/99-withheld.json.
+- NAS8 Nov3/4 masked publications are typed/closed; Nov2 absent. Original
+  three-day eval INPUT_UNAVAILABLE3a8c8c67/0forecasts, closure separately unknown.
+  No shrink/regrade/retry or automatic reservation release.
+- Later Nov4 GRU replay was rejected BEFORE arrays: those targets stay reserved.
+  Retained checkpoint/normalizer exist. This is not a global research hold.
 
 ## Ready Parallel Work
 
-Parent owns integration, shared policy/goal/stateboards and Git. Roles use
-disjoint D: roots and exchange exact consumer contracts directly.
+Parent owns shared policy/goal/boards, actual adoption, integration and Git.
+Roles own disjoint D: packages and exchange exact schemas/readiness directly.
 
-1. Execution: correct proven operational pin/early-error-retention defects in
-   new source copies; native constructor/whole-flow checks before adoption.
-   Source-qualified actual private-custody writer census must exclude unrelated
-   Data/research/UI actors. Unknown effects stay unknown; reconcile exact old
-   requests without substitute identities, budget reset or foreign inventory.
-2. Execution engineering baseline: connect a separately named conservative
-   proposal to the existing native BankLeg/OrderIntent path, not a fake H3
-   horizon or new account platform. Qualify source/owner/current risk before
-   any bounded effect. Preserve unlaunched opportunities as unlaunched.
-3. Data: repair actual emitted owner->watchdog->child->reader handoff, prepare
-   fresh next-session coherent input and publisher; retain allowlisted failure
-   stages. Reproduce any heartbeat-starvation claim before changing behavior.
-4. Engine/Steward: integrate completed ensemble/absolute/OOF results, audit
-   source/formula book differences and actual native sizing with invented
-   inputs. No new market replay to explain old results, holdout reopening or
-   duplicate fit. A genuinely new useful CPU/CUDA hypothesis may have its own
-   finite frozen contract; occupancy itself is not a hypothesis.
-5. Strategy: connect two pure intraday mechanisms to existing Bar/resampling/
-   replay proposal contracts on invented inputs; freeze a later finite comparison
-   only after actual window/clock/cost/coverage compatibility is known.
-6. Infra/Monitor: qualify exact rollback-capable local Korean GET/HEAD-only UI
-   adoption against relevant actual guards. No private custody/broker authority,
-   source waiver, live-control claim or public listener.
+1. Execution: inspect installed exact public results after owned opportunities;
+   distinguish failure/no-intent/attempt/acceptance/exact fill/current owned state.
+   Financial facts require a qualified private reader or named reconciliation,
+   not public closure. Preserve all original exits and unknown requests.
+2. Reliability: diagnose exact v3 census without blind reissue. Challenge whether
+   global custody admission belongs on definition-only work. A new recovery
+   contract needs relevant original-owner closure, full XML/ACL/source/rollback
+   tests and Claude challenge; no silent waiver of an immutable old contract.
+3. Data: source24a39b83/definitions268c7444 is READY, NOT installed at this update:
+   A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
+   Prepare tested metadata adapter, then create ONLY exact absent Nov5/6 tasks
+   disabled, full source/native/OS definition/ACL readback, then enable.
+   Both opportunities21:10..<21:11/hard21:25UTC; no catchup or manual Task.Run.
+4. Engine/Steward: source880d/contract36b2 future Nov6 observation is READY using saved
+   GRU and new Nov5 context/Nov6 targets, not reserved Nov2..4:
+   A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
+   Zero fits; both GRU/Ridge exist, full5policies/2forecasts/15views retained.
+   Native invented flow/8focused checks and65pins stable. Prepare hidden future
+   taskNov6UTC21:35; actual data/numerical result remain UNKNOWN.
+5. Strategy: ONE price-only RSI/Bollinger/ATR/trend net-edge candidate plus native
+   invented Bar/resampler/features/typed-output smoke:
+   A/research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1.
+   Source07dab native45tests PASS; Parent repeated45/36pins stable22:47.
+   Original9-clock held-gap card rejected; distinct6-clock offer146metadata
+   events is adaptive development, not a regrade or missing-row deletion.
+   Engine may freeze a useful finite adaptive campaign after contract/support/
+   custody checks. Proposal alone is not market dispatch or old-fit rerun.
+6. Monitor: Korean GET/HEAD-only code is ready; new UI NOT deployed. Existing
+   127.0.0.1:8787 remains last verified be48. No private web mounts/broker authority
+   or public listener; static snapshot is not live account refresh.
 
-Old technical-preparation cutoffs/debits stay recorded; they do not create a
-company-wide time or permission hold. Continue another ready package while a
-named worker owns its due time. No foreground session sleep or new follow-up
-chain. Original H3/Full17/GOOGL/MSE/H20 exits stay owned and unchanged.
+No foreground session/quota sleep or app follow-up chain. Workers own next_due.
+Useful ready CPU/CUDA work is delegated under measured headroom; no duplicate
+completed fit or dummy GPU training. Completed raw-TCN, ranking, GRU/Ridge,
+absolute-market, OOF and lot-policy studies stay closed.
 
 ## Completion And Verification
 
 Require exact current source/release/time/input/request/fill/current-owned-state
-binding and positive relevant closure. Package completion, commit, installation
-or task exit is not company completion. Only actual required runtime closure
-allows replacement with ONE next material company outcome.
+links and positive relevant closure. Only actual required runtime evidence
+completes this outcome and permits ONE next material company objective.
 
-Fresh changed-path191PASS and full20129PASS/26known Windows link SKIP:
-D:/thericher-v2/model-artifacts/verification/current-raw-open-elapsed3-native-integration-20261105-v1/RESULT.json.
-Actual created8/8workers,8workers[20155items], helper/native0, guarded cleanup
-and1434protected production/test/config pins plus AGENTS unchanged. Ruff and
-default/research/accounting/monitor Compose(.env.example) passed. Docs/external
-reuse requires exact matching digests; fresh external native proofs remain
-necessary. C suite does not validate D executables or private financial state.
+Latest full C authority:
+A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
+20239PASS/26known Windows SKIP, created8/8workers[20265items], helper/native0,
+guarded cleanup,1437protected source pins+AGENTS unchanged. Ruff and default/
+research/accounting/monitor Compose(.env.example) PASS21:49. Docs/external reuse
+needs exact matching digests and fresh independent D: checks; C tests cannot
+validate external code or financial state. R1/R2 remain withheld.
