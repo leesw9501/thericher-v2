@@ -2,7 +2,18 @@
 
 ## Current Resource Coordination
 
-Updated Nov4UTC16:40 / Nov5KST01:40. Parent coordinates resources; Nietzsche
+Updated Nov4UTC20:28 / Nov5KST05:28. Parent coordinates resources. All owned
+numerical campaigns are CLOSED, not waiting for GPU permission. Latest6274
+policy-only study used9views/0fits/forwards/retries/GPU and closed every actor;
+LOT_INACTIVE under an invented bank basis is not grounds for another model fit.
+Nvidia snapshot20:26:28UTC: RTX4090,2percent,1735MiB used/22404MiB free/35C.
+This is dated utilization, not a live training/benchmark claim. No duplicate or
+dummy training. Prepared future research may use available CUDA under measured
+headroom; current urgent work is actual Paper source/runtime integration.
+Existing registry remains in use; latest freeze/outcomefa59b492/3381d7f4.
+
+Earlier completed resource evidence:
+Nov4UTC16:40 / Nov5KST01:40. Parent coordinated resources; Nietzsche
 owns the current disjoint Engine numerical family. Ranking023e10c3 actually
 used CUDA6.9736s/118MiB peak and is CLOSED primaryFAIL. New raw-TCN3seed
 43da4041 completed3CPUfits/3forecasts/12views, training total360.14s; measured

@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov4UTC19:12 / Nov5KST04:12.
+Updated Nov4UTC20:28 / Nov5KST05:28.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -41,9 +41,26 @@ separate fresh COM readback/ACL/whole semantics PASS. No Task.Run. DueNov4UTC
 D:/thericher-v2/model-artifacts/research/current-full17-next-session-publisher-recovery-20261105-v1/prewire/os-normalization-repair/enable-drift/CONTINUE-CLOSED.json.
 Never replay consumed InstallDisabled/RecoverDisabled/EnableReadOnly/Continue.
 Original failed normalization/partial receipts remain; no new tolerance added.
-Future Full17 exit is CAPTURE-ONLY; Apply failed before touching Task. Do not
-repeat Capture/CreateNew or infer migration from prepared source/readbacks:
-D:/thericher-v2/model-artifacts/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.
+Future Full17 exit ACTUALLY updated/enabled131e/releaseaa41619:55UTC, separate
+readback PASS. Original entry/financial SDK/input/basis/bank/F9/pending/clocks
+preserved, Task.Run0. Source-bound current proof:
+D:/thericher-v2/model-artifacts/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1/PARENT-ADOPTION.json.
+All Capture/Apply/Readback modes are consumed; do not replay. Operational repair
+does not prove effects or available retained input. Current source still needs
+separate prospective Desktop-stats guard integration; no hotpatch/seal mutation.
+
+Narrow readonly stats helper, Sourceaa4e/helper66f4,9native/Ruff PASS:
+D:/thericher-v2/model-artifacts/execution/current-desktop-stats-readonly-scope-repair-20261105-v1/API.md.
+Source-qualify in NEW caller, native current parent lookup and nonprivate sink,
+same facts/claims to both original decisions. No OWNED/GUI/broker authority.
+Do not substitute it for actual runtime/source/owner/risk/budget admission.
+
+RAW guest5dacc/SDK304f qualified; future definition builder10325 is tested but
+actual host action/release/owner ABI remains unbound. Never install fixture-only
+plans or invented hashes. Raman owns actual finite host preparation, Parent
+actual installation; no company-wide point wait or operator permission hold.
+Korean e200 native Docker smoke PASS, but8788 is NOT listening/adopted. Only a
+qualified empty internal network/template remains; snapshot is static/stale.
 
 Earlier TCN-profile code verification (unchanged result, not latest authority):
 D:/thericher-v2/model-artifacts/verification/current-raw-open-elapsed3-native-integration-20261105-v1/RESULT.json.

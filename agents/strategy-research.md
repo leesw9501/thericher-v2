@@ -2,7 +2,16 @@
 
 ## Current Source Handoff
 
-Updated Nov4UTC16:40 / Nov5KST01:40. Raman owns
+Updated Nov4UTC20:28 / Nov5KST05:28. Two intraday kernels/consumer handoffs are
+CLOSED; later GRU/Ridge campaign and absolute/OOF/policy studies are complete
+in Engine's stateboard. No strategy reading-list worker or new model fit is
+claimed active. Lot-inactive invented-basis evidence is not predictive failure.
+Raman is temporarily assigned actual finite Paper host integration, not another
+strategy package. Completed research waits for a genuinely useful new contract,
+not operator permission; current Paper source/runtime has priority.
+
+Earlier completed source handoff:
+Nov4UTC16:40 / Nov5KST01:40. Raman owned
 A/research/current-intraday-signal-candidate-preparation-20261105-v1.
 Two pure executable candidates: delayed opening-range breakout and end-of-day
 loser reversal with skipped interval/no overnight extrapolation.27invented tests/

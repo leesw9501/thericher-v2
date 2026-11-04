@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC19:12 / Nov5KST04:12.
+Updated Nov4UTC20:28 / Nov5KST05:28.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -17,18 +17,35 @@ role-agent assignments below are not proof of a running fit or financial owner.
 
 | Owner | Current package under A | Next concrete consumer/result |
 | --- | --- | --- |
-| Dalton / Execution | execution/current-actual-private-writer-census-20261105-v1 | Exact early-error/bytecode/actual-actor census diagnosis; future Full17 exit Capture-only, Apply withheld before mutation. Actual custody read not started without exact input/policy bindings. |
-| James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | v3/v4 actual pre-native no-intent faults; finish minimal first-cause repair and real existing native account/risk path. Successor effects not assumed. |
-| Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 | Both future Data/Point ENABLED by Parent70676443/separate readback; qualified downstream handoff only, outputs future UNKNOWN. |
-| Nietzsche / Engine-Steward | absolute-market/residual and OOF-gate campaigns CLOSED; synthetic book/basis parity audit | Integrate2CUDA+6CPU fits without rerun, explain book differences from saved evidence and verify public quarterB10/native.025B synthetic sizing. |
-| Raman / Strategy-native support | execution/current-raw-open-next-session-native-financial-readiness-20261105-v1 | Generic all3 raw-open profile/actual native SDK/sizing/horizon handoff, D-only source preparation, not deployment. |
-| Mendel / invoked Infra-Monitor | execution/current-korean-readonly-operations-ui-preparation-20261105-v1 | Tracked3files/110tests qualified by Parent fullR3; actual isolated Docker smoke and practical rollback plan. be48 service unchanged until qualified adoption. |
+| Dalton / Execution | census c5ade7/continuationa93df CLOSED; future definition builder10325 CLOSED | Parent applied/read back Full17 exit131e. RAW future builder needs actual host binding, not more mock assertions. No active LLM/actual custody read claimed. |
+| James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | v6 stats guard conflict and v7 different census-child failure are pre-native/0visits. Resolve actual v8 first cause and current native path; no inferred effects or replacement unknown intent. |
+| Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 CLOSED | Both Data/Point ENABLED70676443/separate readback; task owns21:30UTC/Nov5UTC13:30 next_due. No active Data LLM or actual future output claimed. |
+| Nietzsche / Engine-Steward | all3 parity audits and policy6274 CLOSED | Latest9views/0fits LOT_INACTIVE under invented basis; actual capacity unknown. All numerical actors closed, no ready predictive GPU fit or duplicate training. |
+| Raman / temporary Execution-native | execution/current-raw-all3-actual-finite-host-preparation-20261105-v1 | SDK304f/guest5dacc done. Build actual hidden scheduled host/source/release/owner action for tested future builder, not another unbound guest. |
+| Mendel / invoked reliability | execution/current-full17-future-exit-stats-scope-preparation-20261105-v1 | Prospective minimal common-stats scope for original131e future exit; no Task/private changes. UI smoke complete,8788 uninstalled, only empty network/template retained. |
 
 Roles exchange exact schema/source/readiness directly. One mutable write owner
 per package; Parent Git only. Named workers own next_due. Do not invent active
 training, future inputs or financial outcomes from an LLM message.
 
 ## Material Evidence
+
+- Parent ACTUALLY updated/enabled original future Full17 exit131e/aa41619:55UTC,
+  Apply+independent readback PASS, same entry/financial tuple/B10/F9/old exits:
+  A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1/PARENT-ADOPTION.json.
+  Task.Run0, no broker/financial effects. Current source may still withhold
+  missing retained input or stats conflict; separate prospective repair only.
+- Actual native/CIM measurement identifies a78 Docker Desktop stats, pinned
+  exe0097/parentfd3f and only existing pinned system console. Parent helper
+  aa4e/66f4 passed9real unchanged actor/final-decide tests/Ruff, not deployment:
+  A/execution/current-desktop-stats-readonly-scope-repair-20261105-v1/API.md.
+  No OWNED/GUI/broker exemption; unknown actors/other commands still deny.
+- RAW304f SDK21tests+sizing1, guest5dacc5ABI and entry/exit duplex tests PASS;
+  actual scheduled host action still unbound. Future builder10325 has574mocked
+  assertions/26cases and3builder tests, not actual runtime/source admission.
+- Policy6274/7cfb CLOSED9views/0fits/forwards/retries, registryfa59b492/3381d7f4.
+  All47cohorts positive, wholelots0 under INVENTED B10000/B101000. Not actual
+  capacity/predictive failure or reason for another GPU fit. Actors all closed.
 
 - Latest tracked code R3 PASS:20239tests/26knownskip/created8of8/20265items/
   native+helper0/guarded cleanup/1437pins+AGENTS stable, Ruff/fourCompose PASS:
@@ -89,6 +106,18 @@ training, future inputs or financial outcomes from an LLM message.
   after-cost/market-regime value, not another tiny GRU or a duplicate fit.
 
 ## Bottleneck And Improvement
+
+20:28 Throughput Review: actual Paper remains the critical path, not additional
+model count. Ready owners are James actual runtime, Raman actual finite host,
+Mendel original future-exit scope; Data workers own future clocks and research
+is closed. Parent identified the actual Desktop stats cause rather than treating
+all unknown Docker activity as writers. The v7 census-child failure is separate.
+Alternatives inside current authority: minimal host_rules integration without
+rewriting proven census; retain the actual child failure category/frame before
+another effect; finish one actual native host rather than more fixture layers.
+Informational peer messages do not complete an unfinished primary assignment;
+require its explicit closure or named remaining dependency, not just an ACK.
+No new report/approval, all-flat condition or market-time foreground waiting.
 
 Paper is blocked by concrete runtime composition/diagnostic defects, not model
 profitability or operator permission. Finish the real emitted constructor and

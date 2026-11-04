@@ -2,7 +2,30 @@
 
 ## Active Work Package
 
-Updated Nov4UTC16:40 / Nov5KST01:40. Dalton owns
+Updated Nov4UTC20:28 / Nov5KST05:28. Parent owns integration/actual Task
+adoption/Git. James owns current bounded engineering runtime: v5 expired
+unlaunched, v6 actual stats conflict before native, v7 DIFFERENT census-child
+failure before native (inner cause not retained), v8 current source/effects
+unasserted without its exact receipt. No new acceptance/fill is claimed.
+
+Parent measured the actual a78/0097 Docker Desktop stats false conflict and
+prepared narrow host_rules helper aa4e/66f4,9unchanged native actor/decide tests
+plus Ruff PASS. No OWNED/GUI/Docker-wide exemption or financial deployment:
+A/execution/current-desktop-stats-readonly-scope-repair-20261105-v1/API.md.
+James integrates a qualified current caller; Mendel owns prospective same-scope
+integration into original Full17 future exit. Original131e exit WAS actually
+updated/read back19:55; exact PARENT-ADOPTION pointer appears below.
+
+Raman owns actual RAW ALL3 finite scheduled HOST action preparation. SDK304f/
+guest5dacc are technically qualified,21SDK+1sizing+5ABI tests and real invented
+entry/exit duplex; actual host source/release/owner ABI remains unbound. Dalton's
+10325 future definition builder is tested, not installable with a fixture or
+invented hash. No actual new RAW entry/exit definitions or point are inferred.
+Original shared B10/F9/pending/all exits stay unchanged, no profit/all-flat gate.
+
+Earlier dated package evidence below is retained context, NOT active ownership:
+
+Nov4UTC16:40 / Nov5KST01:40. Dalton owned
 A/execution/current-full17-operational-binding-recovery-20261105-v1:
 new-source pin/early-error-retention repair and actual relevant custody-writer
 census. Direct qualified source/admission handoff to James; unrelated Data/GPU/
@@ -81,11 +104,12 @@ Latest bounded-baseline facts supersede the early launch projections above:
   a technical fault, not an order rejection or a fill:
   A/execution/current-bounded-engineering-paper-baseline-20261105-v1/CALLBACK-RTH-v4.json.
   James owns the source-qualified successor; no v5 effect is yet asserted.
-- Parent future Full17 Nov6-exit migration is CAPTURE-ONLY. Apply/Readback
-  failed fresh_reader_closure before Task mutation; APPLY-ATTEMPT is absent.
-  Original exit remains unchanged. Dalton diagnoses the actual census API
-  early-error/bytecode/actor failures; do not blind retry or exempt generic -c.
-  A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.
+- Parent Full17 Nov6-exit migration is now ACTUALLY applied19:55UTC, operational
+  131e/releaseaa416, fresh c5ade7 census65e plus Apply/independent readback PASS.
+  Original entry/financial SDK/input/bank/F9/pending/clocks unchanged, Task.Run0:
+  A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1/PARENT-ADOPTION.json.
+  Earlier failed/capture-only attempts remain. Do not replay consumed modes.
+  This is not a fill, current custody or guaranteed future retained input.
 - Raman owns D-only raw-open-elapsed3 native financial readiness. New generic
   ensemble profile must retain its actual model identity/fourth-session exit,
   current native risk/book and ONE original B10. Preparation is not deployment.

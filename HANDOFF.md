@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov4UTC19:12 / Nov5KST04:12. Latest facts supersede older projections:
+Updated Nov4UTC20:28 / Nov5KST05:28. Latest facts supersede older projections:
 
 - Korean readonly monitor port is now tracked-source ready: readonly_server.py,
   readonly_view.py and110tests. Parent118related serial PASS; official R3 full
@@ -25,9 +25,13 @@ Updated Nov4UTC19:12 / Nov5KST04:12. Latest facts supersede older projections:
   A/execution/current-bounded-engineering-paper-baseline-20261105-v1/CALLBACK-RTH-v4.json.
   James owns the qualified successor; no later effect is asserted here. This
   does not prove historical Full17/Open45 zero effects or release F9.
-- Future Full17 Nov6 exit migration is CAPTURE-ONLY. Fresh census API failed
-  before Apply; no APPLY-ATTEMPT/Task mutation. Original exit stays unchanged:
-  A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1.
+- Future Full17 Nov6 exit is ACTUALLY migrated to operational131e/releaseaa416
+  at19:55UTC, Apply plus separate readback PASS, original entry/financial SDK/
+  input/policy/bank/F9/exits/clocks unchanged, Task.Run0. Exact bound proof:
+  A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1/PARENT-ADOPTION.json.
+  Earlier capture-only/failed results remain. Do not replay consumed modes.
+  This fixes an operational pin, not unknown financial effects or unavailable
+  retained input. Prospective Desktop-stats scope repair is still separate.
 - Fresh coherent Data/point future prewire sourceabb723 is now ENABLED.
   OS repair9b68e449 preserved existing Data/created only missing point; its
   partial enabled readback failure remains recorded. Continuation70676443
@@ -41,6 +45,34 @@ Updated Nov4UTC19:12 / Nov5KST04:12. Latest facts supersede older projections:
 - Raman owns raw-open-elapsed3 financial SDK readiness with honest all3 model
   identity, public quarter-of-ONE-B10 ceiling and fourth-session exit. No
   deployment/admission/fill follows C integration or future definition creation.
+- RAW SDK304f/f6 and guest-host5dacc are now source-native qualified:21SDKtests,
+  1sizing supplement,5ABItests and actual invented entry/exit duplex proofs,
+  all actors closed. Actual finite scheduled HOST action is still unbound;
+  Raman owns that next package. Dalton's source10325 installer is tested but
+  NOT installable before that host binding; no placeholder/source-only launch.
+- Actual stats measurement identifies Docker Desktop resource polling, argv
+  a78/exe0097/parentfd3f, with only pinned childless system conhost. Those
+  processes caused observed false custody conflicts, not proven private writes.
+  Parent narrow host_rules helper aa4e/66f4 passed9real native actor/decide tests
+  and Ruff; fresh parent identity/exact args/old console/final checks remain:
+  A/execution/current-desktop-stats-readonly-scope-repair-20261105-v1/API.md.
+  Not a Docker/GUI/OWNED exemption or deployed financial authority. James owns
+  current caller integration; Mendel prepares original future exit integration.
+- Later baseline v5 stayed EXPIRED_UNLAUNCHED. v6 positive pre-native guard
+  denial found the Docker stats conflict. v7 is a DIFFERENT pre-native census
+  child failure with discarded inner cause, not proof of stats-rule failure:
+  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/CALLBACK-RTH-v7.json.
+  v6/v7 nativeNOT_ENTERED/0visits. v8 is source work, not an inferred effect.
+- New policy-cost study6274/7cfb CLOSED:9views/0fits/forwards/retries. Under
+  frozen INVENTED B10000/B101000, all47cohorts' whole lots floor0. LOT_INACTIVE,
+  not missing signal, actual account capacity, predictive failure or Paper PnL.
+  All actors closed; registryfa59b492/3381d7f4. No new GPU fit justified by that
+  inactive-book result. Actual capacity remains Execution-owned/private.
+- Korean e200 Docker smoke8routes/5foreign-Host checks PASS, actors closed.
+  Only an empty qualified internal network/recreate template remains;8788 is
+  NOT adopted/listening. be48/8787 unchanged. Current new summary is static/
+  stale, not an automatic account feed. Do not claim live refresh from page
+  refresh alone; source/runtime and changing public payload have different roles.
 
 Earlier retained facts below keep their original source/time; old next-work
 projections are not current running agents, fresh admission or replay authority.

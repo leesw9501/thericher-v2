@@ -17,7 +17,7 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Current Evidence
 
-Updated Nov4UTC19:12 / Nov5KST04:12. See HANDOFF's latest source-safe facts.
+Updated Nov4UTC20:28 / Nov5KST05:28. See HANDOFF's latest source-safe facts.
 Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
 
 - Latest verified C authority is Korean readonly R3:20239PASS/26known-skip,
@@ -31,8 +31,19 @@ Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
 - Fresh future Data/point definitions are BOTH ENABLED after exact partial
   continuation70676443 and separate readback19:12UTC: Ready3/zeroinstances,
   unchanged ACL/whole semantics; no Task.Run. Fresh input and all3 point remain
-  future UNKNOWN. Full17 future exit remains CAPTURE-ONLY,
-  unchanged after census failure before Apply. No new operator decision.
+  future UNKNOWN. Full17 future exit ACTUALLY migrated to131e/releaseaa416
+  at19:55UTC, Apply+separate readback PASS; original entry/financial tuple/
+  B10/F9/clocks preserved, Task.Run0. No new operator decision.
+- Docker Desktop's exact resource-stats command was measured as a false
+  unknown-writer conflict. Narrow prospective helper aa4e/66f4 has9real native
+  actor/final-decision tests and Ruff PASS; not a broad Docker/GUI exemption.
+  Current actual caller and original future-exit integration remain named work.
+- RAW304f SDK/guest5dacc and future installer10325 are technically tested,
+  but actual scheduled HOST action remains unbound. Do not install a fixture.
+- Policy-aligned6274 study CLOSED9views/0fits/forwards: invented-basis whole
+  lots all0 (LOT_INACTIVE), not actual account capacity/predictive failure.
+  No new ready GPU fit is implied. Current main baseline v7 is positively
+  pre-native census-child failure; v8 effects remain unasserted without receipt.
 
 Retained earlier evidence (not current running-work projections):
 

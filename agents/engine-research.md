@@ -2,7 +2,28 @@
 
 ## Current Results And Next
 
-Updated Nov4UTC16:40 / Nov5KST01:40. Current owner Nietzsche, new package:
+Updated Nov4UTC20:28 / Nov5KST05:28. No owned numerical worker is active.
+Latest completed6274/7cfb policy-cost study:
+A/research/current-raw-all3-positive-sign-policy-cost-alignment-development-20261105-v1/CALLBACK.json.
+ONE new positive-sign equalweight policy/2matchedcontrols/9views,0fits/restores/
+forwards/retries; actual registryfa59b492/3381d7f4, all actors closed19:52:21UTC.
+Frozen INVENTED originalB10000/B101000/.25B10=250 produced positive signals in
+all47cohorts but every whole target quantity0. LOT_INACTIVE, not missing signal,
+actual account capacity, predictive failure or permission to increase budget.
+Candidate/matchedEW stayed cash. Fractional fixedEW opportunity reference net10
+growth0.7220%B10/DD3.2780%, NOT an executable fill or Paper PnL. Frozen primary
+FAIL; no threshold/subset/budget rescue. No predictive GPU hypothesis warranted
+by inactive payoffs; actual capacity is Execution-owned. Completed fits stay
+closed, useful genuinely new frozen campaigns remain delegated when ready.
+
+Point/account policy closure ee335/e289 is COMPLETE:21real native tests reused
+with exact matching sources plus1new quote100 supplement; old dense persistent
+book versus positive-sign once-dated OPEN5 proposal remains explicit NON_PARITY
+across weights/cadence/funding/exit/costs. No market replay/forward/new fit there.
+RAW SDK/guest now ready; actual host action/fresh point/admission remain unknown.
+
+Earlier completed package evidence (not new running work):
+Nov4UTC16:40 / Nov5KST01:40. Nietzsche owned
 A/research/current-raw-tcn-three-seed-ensemble-paper-readiness-20261105-v1.
 Package is now COMPLETE Source37add4d3/model02c12011:3saved checkpoint restores/
 synthetic forwards and generic raw-open native consumer proof. Actual future
