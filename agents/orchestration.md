@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC22:53 / Nov5KST07:53.
+Updated Nov4UTC23:10 / Nov5KST08:10.
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared policy/goal/boards, actual adoption, integration and Git.
@@ -16,10 +16,10 @@ Role MDs are durable memory, not proof of a running LLM/worker.
 | Owner | Package / state | Concrete next consumer |
 | --- | --- | --- |
 | Parent / Execution |RAW8fd/plan38 ACTUALLY enabled; public readercd6e complete|Owned entryNov5UTC14:31/exitNov10UTC14:30; inspect exact public chain, then qualified financial facts, never Task-exit inference.|
-| Gibbs / Data-native |research/current-eod-gru-nov6-future-definition-installation-20261105-v1|Data24a39/268c ACTUALLY enabled/sourcea0fd/adoptionec75e58222:50. Now prepare ONE separate research-task installer from0386; Parent actualadoption.|
-| Nietzsche / Engine-Steward |research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1|Source880d/contract36b2 READY,8focused checks/native2savedrestores+2inventedforecasts15views; Parent65refs0mismatch. Prepare hidden one-shot definitionNov6UTC21:35; actual data/numerical execution unknown.|
+| Gibbs / Data-native |CLOSED research/current-eod-gru-nov6-future-definition-installation-20261105-v1|Data2tasks enabled22:50; Research1task ACTUALLY enabled/readback23:02 source095c/proofaa73/adoption78ecce0f. No active LLM/financial worker; future data/results UNKNOWN.|
+| Nietzsche / Engine-Steward |research/current-short-swing-cost-edge-candidate-preparation-20261105-v1|0323 net-edge campaign CLOSED4fits/244updates/4forecasts36views,primaryFAIL/allcash. Now distinct lower-turnover1-to-several-day mechanism; no duplicate/threshold rescue or Paper swap.|
 | Beauvoir / Strategy |CLOSED research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1|Source07dab/45tests Parent45PASS36pins stable;9clockheldgap rejected/distinct6clock146event offer. Direct Engine handoff; not numerical dispatch.|
-| Mendel / reliability |execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1|NEW exact original-owner-only definition migration contract; oldaff census remains withheld. Prove original closure/restart exclusion/fullXMLACL/rollback, Claude+mockednative tests before Parent adoption.|
+| Mendel / reliability |execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1 successor|Partial192c disabledactual/CIMcoldproducerfailure; Parentalias0825 probe actualPASS/10Jobs+ownCIDclosed. Qualify successor with currentaliasbinding/nativecoldproducer/fullXMLACL/ownerclosure before actualadoption; oldaff unchanged.|
 | Raman / public reader |CLOSED cd6e11ce/95cd1648|Parent8tests passed; entry/exit pointers missing22:05 ->UNKNOWN. No active financial/GPU owner inferred.|
 | James / engineering baseline |execution/current-nextday-single-proposal-paper-engineering-preparation-20261105-v1|NEW next-day source/synthetic prep only, fix scoped metadata actor admission/retain exact delta. Existing BankLeg/ONEbank/F9 native fixture; no actual entry/newbank/substitute. Oldv8/query remainclosed.|
 
@@ -63,6 +63,19 @@ all-positions-flat/profitability veto or app follow-up chain.
   DueNov5/6UTC21:10(KST Nov6/7 06:10); actual futureData remains UNKNOWN.
 
 ## Throughput Review
+
+23:10: Data2 and research1 future tasks are ACTUALLY enabled/read back, no longer
+source-only packages. Ready Parent work is evidence integration/Git; Mendel owns
+scoped source successor, James owns new next-day INTC1share engineering prep,
+Nietzsche owns distinct short-swing cost-edge preparation. Original8fd point/
+entry13:30/14:31UTC remain worker-owned due, no market foreground sleep.
+
+0323 completed4fits/4forecasts in23.527s actual market training. Native same-shape
+CPU .031-.053s vs CUDA1.90-2.02s per3updates selected CPU BEFORE fits; GPU was
+usable. Reversible improvement: choose useful device by native throughput and
+keep active-worker time separate from LLM/queue/elapsed, not launch dummy jobs.
+Alias unknown resolved by one2second publicRO network-none fixture, not another
+opaque all-bank census; only that mapping is qualified, no financial conclusion.
 
 22:41: actual Paper entry is future, not a company completion or foreground
 sleep. Ready independent work: exact two-date Data installation, frozen future

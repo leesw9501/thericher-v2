@@ -2,20 +2,24 @@
 
 ## Current Resource Coordination
 
-Updated Nov4UTC22:39 / Nov5KST07:39. Nietzsche coordinates new Engine resources.
+Updated Nov4UTC23:07 / Nov5KST08:07. Nietzsche coordinates new Engine resources.
 Parent owns integration/Git. Agent assignment is not proof of an active fit.
 
-Current EOD Nov6 work is SOURCE PREPARATION,0fits:
+Current EOD Nov6 future worker is ACTUALLY SCHEDULED,0fits:
 A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
 Use saved825c9a4c GRU/6a0f711c normalizer and new Nov5/6 data24a39, not reserved
 Nov2..4. Existing registry/custody, finite restore/forecast/cost/time caps;
-future worker/data/results not yet qualified. Old f1de metadata audit CLOSED
+Task095c/adoption78ecce0f enabled/readback23:02, dueNov6UTC21:35, no sleeping
+worker. Actual future data/results remain UNKNOWN. Old f1de metadata audit CLOSED
 with Nov4 scoped rejection before payload, not an automatic custody release.
 
-Strategy prepares one different price-only intraday net-edge proposal.
-Engine may freeze useful new finite training AFTER support/native contract/
-custody qualification. Coordinate distinct ready workers under measured
-headroom; no duplicate completed fit or arbitrary utilization target.
+Strategy07dab offer was consumed by Engine0323/58bf, now COMPLETE_VERIFIED:
+3TCN+1Ridge/244updates/4forecasts/36views/0retry,CPU23.527s,4CIDs/allJobs/actors
+closed. Native same-shape CPU3updates .031-.053s vsCUDA1.90-2.02s;24combined
+CPU/CUDA synthetic profile updates, CPU chosen before market. Known allcash, primaryFAIL;
+not a GPU environment/permission hold or reason for duplicate training.
+Registryed2076b0/d40bd9ae,188.81activeupper/304.09elapsed. New short-swing
+cost-edge candidate preparation is Engine-owned, not another old25-minute fit.
 
 ## Measured Resources
 

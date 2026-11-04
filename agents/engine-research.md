@@ -2,9 +2,9 @@
 
 ## Current Work
 
-Updated Nov4UTC22:39 / Nov5KST07:39. A=D:/thericher-v2/model-artifacts.
+Updated Nov4UTC23:07 / Nov5KST08:07. A=D:/thericher-v2/model-artifacts.
 Nietzsche owns Engine/Steward preparation; Parent owns shared policy/Git.
-No new numerical/GPU worker is claimed. Historical boards remain in Git through
+No numerical worker remains active after the completed study below. History is Git through
 b492b639; AGENTS.md owns research/claim boundaries.
 
 Future source preparation is COMPLETE, source880d7704/contract36b2e8d5:
@@ -20,8 +20,10 @@ Native invented2restores/2forecasts/15views and8focused checks PASS, actors clos
 Parent65source refs/0mismatch22:42. Registry5278b871 frozen before future targets.
 Data24a39/268c supplies exact dated8-axis codec; direct handoff with Gibbs.
 Parent Data2tasks ACTUALLY installed/enabled/readback22:50, adoptionec75e582.
-Engine prepared0386 hidden future one-shot; Gibbs now owns tested metadata adapter:
-definitionNov6UTC21:35..<21:36/hard22:10. No sleeping/numerical worker.
+Research task ACTUALLY installed/enabled23:02,095c/proofaa73/separate complete
+OSXMLACL readback Ready3/0instances,0Task.Run/models/API.14refs/adoption78ecce0f:
+A/research/current-eod-gru-nov6-future-definition-installation-20261105-v1/PARENT-ADOPTION.json.
+Hidden Nov6UTC21:35..<21:36/hard22:10(KST Nov7 06:35), no sleeping worker.
 
 The preceding metadata-only audit f1de3722 is CLOSED:
 A/research/current-eod-frozen-gru-later-session-readiness-20261105-v1/API.json.
@@ -37,10 +39,25 @@ Source07dabccd is CLOSED/native-ready45tests; Parent repeated45PASS/36pins stabl
 Price-only RSI/Bollinger/ATR/trend with explicit event/entry/held clocks.
 9-clock card rejected for one held gap; distinct later6-clock offer146metadata
 events is coverage-informed adaptive development, not a regrade/missing-row drop.
-Engine must qualify support/custody and freeze any new finite adaptive campaign;
-a source proposal is not a fit/readout. Useful new CPU/CUDA work is delegated,
-no duplicate completed fits or old reserved dates. Parallel distinct workers
-need disjoint writes/resources and the same Steward coordinator.
+That offer was consumed by a NEW campaign0323e09f/contract58bf6692, now CLOSED:
+A/research/current-intraday-net-edge-indicator-development-20261105-v1/CALLBACK.json.
+3TCN+1Ridge fits/244updates/4DEVforecasts/36views/0retry, all4CIDs/Jobs/actors
+closed; Parent50source refs/0mismatch/result hash matches. TCN50/36/36epochs,
+INNER-best20/6/6,patience30,best checkpoints restored. CPU23.527s markettrain.
+Actual same-shape native CPU3updates .031-.053s versus CUDA1.90-2.02s selected
+CPU BEFORE market; CPU/CUDA profile used24combined synthetic updates, no GPU hold.
+Known all-cash at fixed28bps round-trip hurdle, all experts/fixedhalf0effects;
+not missing data or alpha. Fixedhalf MSE slightly below zero but matched-EW
+cash tie FAILS frozen incremental criterion. UnconditionalEW14 growth-5.4447%.
+Registryed2076b0/d40bd9ae,188.81activeupper/304.09elapsed; no threshold/arm rescue.
+
+Next bounded preparation, not another25-minute repeat:
+A/research/current-short-swing-cost-edge-candidate-preparation-20261105-v1.
+Nietzsche chooses a distinct1-to-several-day/lower-turnover cost-aware mechanism
+from existing metadata and current daily inputs. Native target/exit/quantity/
+cost/split/trial/checkpoint contract before any new fit, <=2newmodels/forecasts;
+no reservedOct30/Nov2..6/oldfit replay/current Paper swap. Useful CPU/CUDA work
+remains delegated under Steward, not an occupancy goal or architecture list.
 
 ## Completed Results / Do Not Repeat
 

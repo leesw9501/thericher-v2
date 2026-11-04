@@ -22,7 +22,7 @@ unknown-request substitution. Provisional funds are not settled cash/equity.
 
 ## Current Evidence
 
-Updated Nov4UTC22:38 / Nov5KST07:38. Historical details remain in Git through
+Updated Nov4UTC23:08 / Nov5KST08:08. Historical details remain in Git through
 b492b639, RUNBOOK and immutable artifacts. This is current work, not a diary.
 
 - RAW ALL3 host8fd94086/plan38ecd706 is ACTUALLY installed/enabled with separate
@@ -82,16 +82,21 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    GRU and new Nov5 context/Nov6 targets, not reserved Nov2..4:
    A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
    Zero fits; both GRU/Ridge exist, full5policies/2forecasts/15views retained.
-   Native invented flow/8focused checks and65pins stable. Prepare hidden future
-   taskNov6UTC21:35; actual data/numerical result remain UNKNOWN.
+   Native invented flow/8focused checks and65pins stable. Hidden future task
+   ACTUALLY enabled/readback23:02,095c/proofaa73/adoption78ecce0f:
+   A/research/current-eod-gru-nov6-future-definition-installation-20261105-v1/PARENT-ADOPTION.json.
+   DueNov6UTC21:35(KST Nov7 06:35); actual data/numerical result remain UNKNOWN.
 5. Strategy: ONE price-only RSI/Bollinger/ATR/trend net-edge candidate plus native
    invented Bar/resampler/features/typed-output smoke:
    A/research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1.
    Source07dab native45tests PASS; Parent repeated45/36pins stable22:47.
    Original9-clock held-gap card rejected; distinct6-clock offer146metadata
    events is adaptive development, not a regrade or missing-row deletion.
-   Engine may freeze a useful finite adaptive campaign after contract/support/
-   custody checks. Proposal alone is not market dispatch or old-fit rerun.
+   NEW campaign0323/58bf COMPLETED4fits/244updates/4forecasts/36views,allclosed;
+   fixed cost hurdle kept allcash, primaryFAIL, no threshold/arm rescue:
+   A/research/current-intraday-net-edge-indicator-development-20261105-v1/CALLBACK.json.
+   Next Engine preparation is lower-turnover1-to-several-day cost-edge, distinct
+   hypothesis/contract before any numerical dispatch; no reserved dates or rerun.
 6. Monitor: Korean GET/HEAD-only code is ready; new UI NOT deployed. Existing
    127.0.0.1:8787 remains last verified be48. No private web mounts/broker authority
    or public listener; static snapshot is not live account refresh.

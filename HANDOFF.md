@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov4UTC22:43 / Nov5KST07:43. Company objective
+Updated Nov4UTC23:08 / Nov5KST08:08. Company objective
 `coexistent-native-paper-execution-runtime-v1` is UNFINISHED. No new accepted
 Paper order, exact fill, current owned-position reconciliation or PnL is claimed.
 
@@ -88,6 +88,15 @@ Provisional USD orderable funds are not settled cash or account equity.
   API7ACL/source/rollback, not an all-private-writers condition or exemption.
   Old aff stays withheld; new adoption is not claimed. Financial checks at
   actual effects remain unchanged; no bank/private-book/observer-state access.
+  Partial new contract192c has a failed cold CIM producer-isolation test and
+  disabled actual anchors. Do NOT Capture/Apply it. Parent ran its separate
+  alias-probe0825 once: PASS Windows-drive-absolute source/in-process invented
+  file identity/current daemon binding, exact own container+10Jobs closed.
+  RESULT0fa77ff9/CLOSURE3ca137c8:
+  A/execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1/alias-probe-handoff-20261105-v1.
+  This is public-path mapping only, not actual original-owner/financial proof.
+  Mendel prepares a tested successor; escaped metadata query in old failed
+  synthetic test remains recorded, not zero-CIM/regraded proof.
 - Old Full17 Nov4 producer ABSTAINe29d3459 had missing runtime_files before model
   child. Its entry lacks runtime receipts: effects UNKNOWN. Reproduced stale
   NATIVE_PIN is NOT asserted as historical cause. Open45's consumed2/20/20 exits
@@ -105,13 +114,18 @@ separate D: roots. MDs are memory, not proof that workers are running.
   pointers missing ->UNKNOWN; reader never qualifies financial facts.
 - Mendel: execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1;
   new scoped future metadata recovery above, not actual adoption.
-- James CLOSED: baseline membership/account packages. Account authentication is
-  consumed; no financial owner or repeated query is inferred.
+- James owns NEW execution/current-nextday-single-proposal-paper-engineering-preparation-20261105-v1;
+  source/synthetic prep only, fixed INTC1share optional Nov5UTC15:10 entry/
+  Nov6UTC15:10 exit, existing BankLeg/ONEbank/F9/native risk. No actual deployment,
+  order or extra capital. Oldv8/account query remain closed/consumed.
 - Nietzsche/Engine-Steward: research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1;
   source880d/contract36b2 READY, full5policies/2savedrestores/2forecasts/15views,
   ZERO fits. Tiny native invented flow and8focused checks PASS,65pins/0mismatch.
-  Both GRU825c9a4c and Ridgecf33418a weights retained; no refit. Preparing a
-  hidden finite taskNov6UTC21:35; future data/numerics NOT ready/run. Registry
+  Both GRU825c9a4c and Ridgecf33418a weights retained; no refit. Hidden finite
+  task ACTUALLY installed/enabled23:02,095c/proofaa73/full independent OSXMLACL
+  readback Ready3/0instances/0Task.Run,14refs/adoption78ecce0f:
+  A/research/current-eod-gru-nov6-future-definition-installation-20261105-v1/PARENT-ADOPTION.json.
+  DueNov6UTC21:35(KST Nov7 06:35); future data/numerics NOT ready/run. Registry
   5278b871 is frozen; old f1de audit rejected Nov4 BEFORE arrays, no Nov2..4 release.
 - Gibbs: data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1;
   source24a39/defs268c READY, new exact8-axis source/schema handed to Engine.
@@ -121,9 +135,14 @@ separate D: roots. MDs are memory, not proof that workers are running.
   A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
   Future data UNKNOWN, modes consumed. Gibbs now separately prepares ONE hidden
   Nov6 research-task installer; Data24a39/Engine880d remain unchanged.
-- Beauvoir/Strategy: research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1;
-  one price-only RSI/Bollinger/ATR/trend net-edge offer/native invented smoke.
-  No market numerics/GPU claimed; Engine must freeze any useful new campaign.
+- Beauvoir CLOSED Strategy07dab/45native tests, Parent45PASS/36pins stable.
+  Offer consumed by NEW Engine0323/58bf campaign, now COMPLETE_VERIFIED:
+  3TCN+1Ridge/244updates/4forecasts/36views,CPU23.527s,all4CIDs/Jobs/actors closed,
+  Parent50pins stable. Known allcash at fixed cost hurdle, primaryFAIL, no rescue.
+  A/research/current-intraday-net-edge-indicator-development-20261105-v1/CALLBACK.json.
+  GPU worked in native profile; same-shape CPU was faster and selected before
+  market. Nietzsche now prepares a distinct lower-turnover short-swing cost-edge
+  mechanism, not another25-minute fit or old result/threshold retuning.
   No foreground market sleep, replacement follow-up chain or recurring report.
 
 Preserve MSE Nov5UTC20:40, H3 AMD Nov6UTC20:45, Full17 Nov6UTC20:54/hard21:07,

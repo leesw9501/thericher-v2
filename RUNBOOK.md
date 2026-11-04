@@ -35,15 +35,21 @@ installation proves no actual future data or model result.
 Engine source880d/contract36b2 futureNov6 worker READY;65source refs unchanged,
 8focused checks/real native invented2savedrestores+2forecasts/15views,0fits:
 D:/thericher-v2/model-artifacts/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1/API.json.
-Hidden future task preparation remains separate; do NOT run its market launch
-beforeNov6UTC21:35 or infer actual future data/results from native fixtures.
+Hidden future task is ACTUALLY installed/enabled/read back23:02,095c/proofaa73:
+D:/thericher-v2/model-artifacts/research/current-eod-gru-nov6-future-definition-installation-20261105-v1/PARENT-ADOPTION.json.
+Adoption78ecce0f/14refs/Ready3/0instances/0Task.Run. DueNov6UTC21:35..<21:36,
+hard22:10(KST Nov7 06:35). Modes consumed; do NOT manually run its market launch
+or infer actual future data/results from native fixtures.
 Both saved GRU and Ridge exist, old Nov2..4 custody remains unchanged.
 
 Full17 future exit remains131e/aa416. aff27/7b0 overlay NOT adopted; exact
 v3 Capture6922b017 withheld22:30 before mutation, no opaque retry:
 D:/thericher-v2/model-artifacts/execution/current-full17-stats-census-adoption-repair-20261105-v3/adapter-runs/3647945dd79244d4ab5e5b83d0bd0278/99-withheld.json.
-New original-owner-only definition migration is source preparation, not an
-adopted contract or waiver of actual financial admission. See Execution board.
+New original-owner-only definition migration is PARTIAL source preparation,
+not adopted: cold CIM mock-isolation failure/disabled actual anchors. See
+Execution board. Separate public alias probe0825 CONSUMED/PASS, exact own
+container+10Jobs closed; RESULT0fa77ff9/CLOSURE3ca137c8. Path form only, NOT
+original-owner/financial admission. No probe retry or source flags bypass.
 Account query6e6a/2a55 is CONSUMED, not a command to reissue authentication.
 
 Docs-only C authority: Korean R3/20239PASS26knownSKIP/8of8/20265items, guarded
