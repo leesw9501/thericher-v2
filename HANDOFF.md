@@ -2,7 +2,56 @@
 
 ## Current Reality
 
-Updated Nov4UTC21:06 / Nov5KST06:06. Latest facts supersede older projections:
+Updated Nov4UTC21:46 / Nov5KST06:46. Latest facts supersede older projections:
+
+- RAW ALL3 finite pair is ACTUALLY INSTALLED/ENABLED with separate complete
+  readback21:42UTC: host8fd94086/plan38ecd706, hidden pythonw, both Ready3/
+  0instances. EntryNov5UTC14:31(KST23:31), owned exitNov10UTC14:30(KST23:30):
+  A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json
+  SHAc48dbe039d0999bfd6eaaa5072a0f32e68c774c146ea619bc567c2aa5db23103.
+  Parent72de continuation preserves the original10325 installer, full expected
+  definitions/ACLs/exit-first ordering. Actual OS in-memory parser expands
+  omitted Task.Xml defaults to byte-equal Definition.XmlText; seven substantive
+  changes remain different.616mocked assertions/26groups and ClaudeSOUND limits
+  passed. Old10407 partial disabled exit was positively owned/rolled back;
+  original failed receipts and sources remain. New host persists categorical
+  terminal/exact hidden-child closure; absent native result is unavailable,
+  not no_intent. No Task.Run/broker/live/private financial effects in adoption.
+  Actual fresh point/admission/submit/fill/owned state/PnL remain UNKNOWN.
+- Fresh Nov4-asof coherent19 input is NOW TYPED_READY_CLOSED, c632 source/
+  DATAREADY0c5b66de/manifestaa740ef3/closure5c058439. Parent's actual existing
+  typed reader validated publisher and worker positive closure21:34UTC:
+  A/data/current-nov4-owned-data-outcome-integration-20261105-v1/API.json.
+  This replaces the earlier FUTURE UNKNOWN projection for Data, not the future
+  point. Existing all3 point publisher still owns Nov5UTC13:30/KST22:30.
+- Existing three-day NAS8 frozen evaluation actually reports INPUT_UNAVAILABLE,
+  receipt3a8c8c67/0forecasts21:35. Its missing Nov2 input is not zero return,
+  independent validation or a company hold; closure stays separately unknown.
+  Engine/Steward now checks metadata-only custody/retained-checkpoint/clock
+  compatibility for a distinct later EOD25 replay; no fit/holdout opening or
+  active GPU worker is claimed. Raman prepares the installed public result
+  reader; James owns the actual membership diagnostic/next native readiness.
+
+- Actual broker-only Paper account query COMPLETED, Source6e6a834c/RESULT2a55:
+  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
+  One RAM-only token POST/four GET, authenticated, all3venue queries complete,
+  4deduplicated holdings and POSITIVE_PROVISIONAL orderability,10.928s query.
+  Parent rehashed Source/two runtime members/RESULT, repeated4invented native
+  consumer tests and emitted F/E9 checks. Current PID31172/wrapper35020 absent
+  at21:16; this absence is not a historical handle-closure proof. No orders,
+  intents/private book/mount writes, bearer file, live access or retry. These
+  are account counts, NOT attributed owned inventory/full risk/settled cash/
+  fees/net PnL; F9/reservations/old histories/exits stay unchanged.
+- Nov4 NAS8 per-day masked DataREADYf5707b78 is now source-qualified/closed,
+  matching Nov3. Parent exact readonly reader validates capture/once/CLI/
+  worker closure and cache release; current operational Dataec810/eval228254
+  differ explicitly from original science/activation, not silent aliases.
+  Nov2 exact receipts/combined3-session READY are absent, so that frozen eval
+  input is unavailable; no fake0rows/retag or company hold. Existing eval21:35
+  result is still unknown. Current three Task XML/ACL matches confirmed21:21,
+  and the actual coherent19 NAS8 prerequisite passed21:20 with no mutations:
+  A/data/current-nov4-owned-data-outcome-integration-20261105-v1/API.json.
+  Coherent19 still owns21:30; future pointNov5UTC13:30 remains unknown.
 
 - Korean readonly monitor port is now tracked-source ready: readonly_server.py,
   readonly_view.py and110tests. Parent118related serial PASS; official R3 full
@@ -17,8 +66,8 @@ Updated Nov4UTC21:06 / Nov5KST06:06. Latest facts supersede older projections:
   2forecasts/18views; raw/indicator economic comparisons FAIL. OOF shallow
   gate92ac3b66 CLOSED,6CPUfits/1102updates/6OOFforecasts/18views, primaryFAIL.
   All actors closed and existing registry updated. No completed fit repeated.
-  Engine now audits book/basis parity on saved evidence and invented inputs,
-  not another market fit/replay. See Engine/Steward exact callbacks.
+  Their subsequent book/basis parity audits are also closed. Current metadata-
+  only later-replay readiness is above; see Engine/Steward exact callbacks.
 - Bounded baseline v3 and RTHv4 positively failed BEFORE native financial
   entry. RTHv4 nativeNOT_ENTERED/0visits/0children, original bank control
   closed; exact control flow excludes credentials/private book/intents/broker.
@@ -47,9 +96,8 @@ Updated Nov4UTC21:06 / Nov5KST06:06. Latest facts supersede older projections:
   deployment/admission/fill follows C integration or future definition creation.
 - RAW SDK304f/f6 and guest-host5dacc are now source-native qualified:21SDKtests,
   1sizing supplement,5ABItests and actual invented entry/exit duplex proofs,
-  all actors closed. Actual finite scheduled HOST action is still unbound;
-  Raman owns that next package. Dalton's source10325 installer is tested but
-  NOT installable before that host binding; no placeholder/source-only launch.
+  all actors closed. The earlier unbound-host dependency is now superseded by
+  actual8fd deployment above;10325 consumed a real qualified host, not a fixture.
 - Actual stats measurement identifies Docker Desktop resource polling, argv
   a78/exe0097/parentfd3f, with only pinned childless system conhost. Those
   processes caused observed false custody conflicts, not proven private writes.
@@ -91,6 +139,12 @@ Updated Nov4UTC21:06 / Nov5KST06:06. Latest facts supersede older projections:
   from another run. Current installed exit remains131e. Mendel owns a separate
   exact-stats census successor and bound diagnostic retention, not a stats-free
   gap wait or a blanket Docker exemption. Original sealed sources stay intact.
+- Later exact stats-aware census5001/adapter2ee Capture was also withheld before
+  migration, but its cause IS bound: run5a62104ddf934476bdbc23c004bbf065,
+  RESULT31367f96/CLOSED30aa5553. Stats matched0; the unclassified actor was the
+  actual Parent metadata adapter2ee, not evidence of a financial writer. Mendel
+  owns an exact source/argv/native-lineage operational-metadata successor, not
+  Parent/OWNED exemption, hidden caller or another blind probe.131e stays current.
 
 Earlier retained facts below keep their original source/time; old next-work
 projections are not current running agents, fresh admission or replay authority.

@@ -2,6 +2,27 @@
 
 ## Current Results And Next
 
+Nov4UTC21:46: Nietzsche is reattached for metadata-only readiness of a distinct
+later EOD25 replay, not another fit. Scope:
+A/research/current-eod-frozen-gru-later-session-readiness-20261105-v1.
+First check existing holdout custody, exact saved2a362 checkpoint, cutoff and
+new Nov4 source/target/window/cost compatibility without arrays/readouts. No
+reserved-byte reopening, refit to recover weights or duplicated completed fit.
+Only if eligible, freeze ONE Nov4 session/0fits/1restore/1forecast/<=3costviews/
+0retry in existing ledger, tiny actual producer-consumer smoke before dispatch.
+Otherwise concrete scoped rejection/executable next preparation, not global hold.
+No numerical/GPU worker claimed. Actual RAW8fd/plan38 future deployment is done;
+fresh coherent19 input0c5b is typed/closed, point publisher still owns13:30UTC.
+
+Nov4UTC21:22 source integration: Data's current operationalec810/228254 (not
+original1c97/c2b1) binds Nov3/Nov4 masked daily NAS8 publications with positive
+exact worker/CLI closure/cache release. Nov2/combined3-date input is absent;
+the existing21:35 frozen evaluation remains input-unavailable/actual outcome
+unknown. Do not shrink/relabel that frozen3-day test, refit or treat missing as
+zero. This constrains that evaluation only, not independent Paper or research.
+Readonly exact commands: A/data/current-nov4-owned-data-outcome-integration-20261105-v1/API.json.
+No new numerical worker/GPU allocation or model promotion is claimed.
+
 Updated Nov4UTC20:28 / Nov5KST05:28. No owned numerical worker is active.
 Latest completed6274/7cfb policy-cost study:
 A/research/current-raw-all3-positive-sign-policy-cost-alignment-development-20261105-v1/CALLBACK.json.
@@ -20,7 +41,8 @@ Point/account policy closure ee335/e289 is COMPLETE:21real native tests reused
 with exact matching sources plus1new quote100 supplement; old dense persistent
 book versus positive-sign once-dated OPEN5 proposal remains explicit NON_PARITY
 across weights/cadence/funding/exit/costs. No market replay/forward/new fit there.
-RAW SDK/guest now ready; actual host action/fresh point/admission remain unknown.
+RAW SDK/guest readiness now led to actual8fd host deployment above; fresh
+point and financial admission remain unknown.
 
 Earlier completed package evidence (not new running work):
 Nov4UTC16:40 / Nov5KST01:40. Nietzsche owned

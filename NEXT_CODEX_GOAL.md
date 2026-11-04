@@ -17,8 +17,26 @@ foreign adoption/unknown-request substitution. No operator decision pending.
 
 ## Current Evidence
 
-Updated Nov4UTC21:06 / Nov5KST06:06. See HANDOFF's latest source-safe facts.
+Updated Nov4UTC21:46 / Nov5KST06:46. See HANDOFF's latest source-safe facts.
 Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
+
+Actual separate readonly account query Source6e6a834c/RESULT2a55 COMPLETED:
+authenticated,3complete venue reads/4holdings, positive provisional funds,
+1POST4GET/0retry/10.928s. No order/intents/private-book writes; not attributed
+owned inventory/full risk/settlement/PnL. Exact evidence:
+D:/thericher-v2/model-artifacts/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
+F9/old histories/reservations remain unchanged; no company completion follows.
+
+Actual RAW ALL3 pair8fd94086/plan38ecd706 is ENABLED/independently read back:
+entryNov5UTC14:31(KST23:31), exitNov10UTC14:30(KST23:30), hidden pythonw,
+Ready3/0instances. Actual bounded future definition adoption, not an order/fill:
+D:/thericher-v2/model-artifacts/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json.
+Fresh coherent19 DATAREADY0c5b66de/closure5c058439 is actually typed-ready/closed;
+point publisher still owns Nov5UTC13:30. NAS8 frozen3-day eval reports input
+unavailable/0forecasts because Nov2 is absent, not a company-wide blocker.
+Engine checks only scoped later-replay custody/checkpoint readiness; no new fit.
+Finish the installed exact result reader and remaining original-exit metadata
+recovery while preserving future tasks; do not replay consumed install modes.
 
 - Latest verified C authority is Korean readonly R3:20239PASS/26known-skip,
   8/8workers/20265items/helper+native0/guarded cleanup/1437pins+AGENTS stable:
@@ -38,8 +56,9 @@ Company outcome is still UNFINISHED; no new actual acceptance/fill is claimed.
   unknown-writer conflict. Narrow prospective helper aa4e/66f4 has9real native
   actor/final-decision tests and Ruff PASS; not a broad Docker/GUI exemption.
   Current actual caller and original future-exit integration remain named work.
-- RAW304f SDK/guest5dacc and future installer10325 are technically tested,
-  but actual scheduled HOST action remains unbound. Do not install a fixture.
+- Earlier RAW304f SDK/guest5dacc and installer10325 preparation now has the
+  actual8fd host deployment above; no fixture was installed. Runtime input and
+  financial effects remain unknown until the owned opportunity actually runs.
 - Policy-aligned6274 study CLOSED9views/0fits/forwards: invented-basis whole
   lots all0 (LOT_INACTIVE), not actual account capacity/predictive failure.
   No new ready GPU fit is implied. Actual baseline v8 Source7a6e2eda/f869 is

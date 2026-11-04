@@ -2,8 +2,25 @@
 
 ## Active Work Package
 
-Updated Nov4UTC21:06 / Nov5KST06:06. Parent owns integration/actual Task
-adoption/Git. James owns current bounded engineering runtime: v5 expired
+Updated Nov4UTC21:46 / Nov5KST06:46. Parent owns integration/actual Task
+adoption/Git. James owns bounded native runtime recovery.
+
+Latest deployment supersedes the earlier unbound-host projection below:
+RAW ALL3 host8fd94086/plan38ecd706 is ACTUALLY installed/enabled and separately
+read back21:42UTC; hidden pythonw/both Ready3/0instances. EntryNov5UTC14:31/
+KST23:31, owned exitNov10UTC14:30/KST23:30. Exact adoptionc48dbe03:
+A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json.
+Actual in-memory OS normalization repairs only Task.Xml omitted defaults;
+full expected Definition/ACL/owner/clock/exit-first checks remain.616mocked
+assertions26groups/seven actual substantive-change cases/ClaudeSOUND limits.
+Old10407 partial disabled exit was positively owned/rolled back before the
+new pair; no original exit/bank/request was changed, no Task.Run/broker call.
+Host output retention and missing-native classification are repaired. Actual
+point/financial admission/acceptance/fill/owned state/fees/settlement/PnL unknown.
+Raman now prepares the exact installed public result-chain reader, not another
+unbound launcher. Fresh coherent19 DATAREADY0c5b is closed; point still13:30.
+
+Earlier current-runtime detail (retained): v5 expired
 unlaunched, v6 actual stats conflict before native, v7 DIFFERENT census-child
 failure before native (inner cause not retained). Actual v8 is CLOSED at
 AFTER_CREATE before guest start/packet forwarding: Source7a6e2eda/releasef869,
@@ -15,6 +32,18 @@ but its actual delta was not. No inferred benign actor or blanket suppression.
 Same-day v8 cap is exhausted, no replay/successor/empty exit. James now owns
 delta diagnostics, separately scoped readonly account connectivity and next
 valid operation readiness. Old Full17/Open45/F9 effects/inventory stay unknown.
+
+Separate actual Paper readonly account query is COMPLETE Source6e6a834c,
+RESULT2a55e1f4. One RAM-only token POST/fourGET/0retry, authenticated,3complete
+venue queries/4deduplicated holdings/POSITIVE_PROVISIONAL funds;10.928s query.
+Parent Source/two members/RESULT digests and4invented native consumer tests/
+emitted F/E9 PASS; PID31172/wrapper35020 currently absent21:16, not historical
+handle proof. No order/intent/private book or custody mount/bearer file/live:
+A/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
+Do not equate account holdings with this project's owned inventory or release
+F9/old reservations. Fees/settlement/net PnL/full risk snapshot remain unknown.
+Public-census diagnostics are separate, not a prerequisite for this broker-only
+query. No repeat of the consumed auth attempt or claimed new financial effects.
 
 Parent measured the actual a78/0097 Docker Desktop stats false conflict and
 prepared narrow host_rules helper aa4e/66f4,9unchanged native actor/decide tests
@@ -28,12 +57,16 @@ using the exact stats rule and bound diagnostics, not waiting for a stats-free
 gap. Original131e exit WAS actually
 updated/read back19:55; exact PARENT-ADOPTION pointer appears below.
 
-Raman owns actual RAW ALL3 finite scheduled HOST action preparation. SDK304f/
-guest5dacc are technically qualified,21SDK+1sizing+5ABI tests and real invented
-entry/exit duplex; actual host source/release/owner ABI remains unbound. Dalton's
-10325 future definition builder is tested, not installable with a fixture or
-invented hash. No actual new RAW entry/exit definitions or point are inferred.
+The earlier RAW304f/guest5dacc unbound-host preparation is superseded by the
+actual8fd deployment above. Raman now owns its public result-chain reader;
+actual point and financial runtime remain unknown, not an installation claim.
 Original shared B10/F9/pending/all exits stay unchanged, no profit/all-flat gate.
+
+Exact5001/2ee fresh census failure is now bound to run5a62104ddf934476bdbc23c004bbf065:
+RESULT31367f96/CLOSED30aa5553, stats matched0. The unknown actor was Parent's
+operational metadata adapter2ee; no private writer or stats causation is inferred.
+Mendel repairs its exact source/argv/native-lineage none-custody classification,
+not Parent/OWNED exemption or hiding the caller. No aff migration was invoked.
 
 Earlier dated package evidence below is retained context, NOT active ownership:
 

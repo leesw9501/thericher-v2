@@ -2,6 +2,14 @@
 
 ## Current Source Handoff
 
+Nov4UTC21:48 update: RAW ALL3 actual host8fd/plan38 is now installed/enabled with
+separate complete definition/ACL readback, entryNov5UTC14:31/exitNov10UTC14:30.
+Raman now prepares its exact public result reader, not an unbound host. New
+coherent19 input0c5b is actually typed/closed; future point13:30 still unknown.
+No new strategy fit/readout/GPU worker. Engine checks metadata-only later EOD25
+custody/checkpoint readiness; do not repeat completed kernels or treat partial
+NAS8 three-day input as a profitable/zero-return result.
+
 Updated Nov4UTC20:28 / Nov5KST05:28. Two intraday kernels/consumer handoffs are
 CLOSED; later GRU/Ridge campaign and absolute/OOF/policy studies are complete
 in Engine's stateboard. No strategy reading-list worker or new model fit is

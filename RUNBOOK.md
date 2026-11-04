@@ -2,7 +2,7 @@
 
 ## Current Operations
 
-Updated Nov4UTC21:06 / Nov5KST06:06.
+Updated Nov4UTC21:46 / Nov5KST06:46.
 Company coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -11,6 +11,38 @@ identities and ALL original exits remain. No live/new bank/profit refill/
 foreign adoption/unknown-request substitution. No operator decision pending.
 
 Current runtime observations supersede the installation snapshots below:
+- ACTUAL installed RAW ALL3 pair: host8fd94086/plan38ecd706, entryNov5UTC14:31
+  (KST23:31), owned exitNov10UTC14:30(KST23:30). Both Enabled/Ready3/0instances,
+  hidden pythonw, independent complete definition/ACL readback21:42:
+  D:/thericher-v2/model-artifacts/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json.
+  SHA c48dbe039d0999bfd6eaaa5072a0f32e68c774c146ea619bc567c2aa5db23103.
+  Original10325 CreateDisabled partial failed on OS default XML omission;
+  only its owned disabled exit was rolled back.72de continuation/new namespace
+  CreateDisabled/exit-first Enable consumed, do not replay. All old sources and
+  failed receipts retained. Full expected semantics/ACL unchanged; actual
+  in-memory OS normalization,616mocked assertions26groups,7substantive-change
+  cases and ClaudeSOUND limits PASS. Future financial admission remains unknown.
+- Fresh coherent19 sourcec632/DATAREADY0c5b66de/closure5c058439 is NOW typed/closed;
+  Parent existing reader passed21:34. PointNov5UTC13:30 remains future unknown.
+  NAS8 three-day eval reports INPUT_UNAVAILABLE3a8c8c67/0forecasts21:35,
+  closure not separately proven. Do not replay/shrink/retag or infer0return.
+- Current NAS8 categorical readers/bindingsd4f70581:
+  D:/thericher-v2/model-artifacts/data/current-nov4-owned-data-outcome-integration-20261105-v1/API.json.
+  Parent actual nas8 reader21:19 validates Nov3/4 masked READY/closure/cache
+  release; Nov2/combined input absent. Current Dataec810/eval228254 Task XML/
+  ACL matches21:21; original1c97/c2b1 are historical. COM1899/1999 sentinel
+  times are not next_due or actual executions. Actual c632 nas8-readonly
+  prerequisite passed21:20, no mutation. Coherent19 due21:30, eval21:35;
+  do not manually Run/replay/retag missing publications or shrink frozen input.
+- Separate broker-only readonly account query is CONSUMED/COMPLETE, not a
+  command to replay. Source6e6a834c/RESULT2a55,1POST4GET/0retry/10.928s;
+  authenticated,3complete venue reads/4holdings/POSITIVE_PROVISIONAL funds:
+  D:/thericher-v2/model-artifacts/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
+  No order/intent/private-book/custody-mount/live effects or bearer file.
+  Account counts are not owned-inventory attribution, settlement/PnL/full-risk
+  facts or authority to release F9/old reservations. Parent4native fake-input
+  consumer tests and source/result rehash/emitted F/E9 PASS. Current process
+  absence was observed21:16, not a historical native-handle closure proof.
 - Engineering baseline v8 is consumed/CLOSED after native capsule creation,
   before guest start/credential forwarding/client/private book/intent. Exact
   Source7a6e2eda/releasef869 callback:
@@ -67,10 +99,10 @@ Source-qualify in NEW caller, native current parent lookup and nonprivate sink,
 same facts/claims to both original decisions. No OWNED/GUI/broker authority.
 Do not substitute it for actual runtime/source/owner/risk/budget admission.
 
-RAW guest5dacc/SDK304f qualified; future definition builder10325 is tested but
-actual host action/release/owner ABI remains unbound. Never install fixture-only
-plans or invented hashes. Raman owns actual finite host preparation, Parent
-actual installation; no company-wide point wait or operator permission hold.
+RAW guest5dacc/SDK304f qualification led to actual8fd/plan38 deployment above.
+Never reinstall fixture-only/old unbound plans or invented hashes. Raman now
+owns its installed public outcome reader; no company-wide point wait or
+operator permission hold. Financial runtime still awaits its owned opportunity.
 Korean e200 native Docker smoke PASS, but8788 is NOT listening/adopted. Only a
 qualified empty internal network/template remains; snapshot is static/stale.
 

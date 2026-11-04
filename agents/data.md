@@ -2,6 +2,38 @@
 
 ## Current Data / Next
 
+Nov4UTC21:46 update: coherent19 actually published fresh Nov4-asof/Nov5-decision
+typed input, sourcec632/DATAREADY0c5b66de/manifestaa740ef3/closure5c058439.
+Existing native reader::read_public_research_input validates actual source,
+payload/manifest/OUTPUT-PIN and positive publisher/worker closure; Parent21:34
+projection prints no market values. This supersedes its earlier FUTURE UNKNOWN.
+Existing all3 point publisher remains dueNov5UTC13:30/KST22:30, outcome unknown.
+RAW host8fd/plan38 pair actually enabled/readback forNov5UTC14:31; deployment
+does not qualify future input or a financial effect. Old3-day NAS8 evaluation
+reports INPUT_UNAVAILABLE3a8c8c67/0forecasts21:35; closure separately unknown.
+Absent Nov2 constrains that frozen study only; do not retry/shrink/retag it.
+
+Updated Nov4UTC21:22 / Nov5KST06:22. Source-qualified Parent readonly integration
+now validates Nov3 and Nov4 per-day NAS8 DataREADY, operational Sourceec810e85;
+Nov4 READYf5707b78 binds its exact capture/once/CLI and worker Job closure/cache
+release. This is MASKED publication readiness, not proof every bar is present.
+Nov2 exact receipts are absent; combined3-session DataREADY is unavailable.
+No replay/retag/assumed0rows. Original1c97/ad1b and c2b1/8c1d are historical;
+current exact COM XML/ACL matches migrationec810(Data)/228254(eval), confirmed
+21:21UTC. NAS8's finite triggers are consumed (COM sentinel is not a due time).
+Frozen eval21:35 actual result remains unknown; missing combined input constrains
+only that evaluation. Coherent19 still owns21:30/hard22:15, pointNov5UTC13:30.
+Parent also exercised the actual sourcec632 NAS8-closure prerequisite21:20:
+PASS Definition.XmlText/ACL,0instances/source-scoped closure. Task result1 did
+not negate a separately valid DataREADY. No Task.Run/collector/broker calls.
+Four invented projection/native-metadata-consumer tests and20pinned source
+members passed; Parent repeated4tests after correcting its -I test-launch path.
+Exact current readonly commands/bindingsd4f70581:
+A/data/current-nov4-owned-data-outcome-integration-20261105-v1/API.json.
+Gibbs handed off and closed; no standing Data LLM/watch process. Existing tasks
+own next_due; future coherent input/point are not fabricated from Nov3 data.
+
+Earlier prewire completion (still valid installation evidence):
 Updated Nov4UTC19:12 / Nov5KST04:12. Gibbs owns
 research/current-full17-next-session-publisher-recovery-20261105-v1:
 fresh next-session prewireabb723 is now fully ENABLED. OS repair9b68e449

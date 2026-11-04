@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC21:06 / Nov5KST06:06.
+Updated Nov4UTC21:46 / Nov5KST06:46.
 coexistent-native-paper-execution-runtime-v1 UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
@@ -17,12 +17,12 @@ role-agent assignments below are not proof of a running fit or financial owner.
 
 | Owner | Current package under A | Next concrete consumer/result |
 | --- | --- | --- |
-| Dalton / Execution | census c5ade7/continuationa93df CLOSED; future definition builder10325 CLOSED | Parent applied/read back Full17 exit131e. RAW future builder needs actual host binding, not more mock assertions. No active LLM/actual custody read claimed. |
+| Dalton / Execution | census c5ade7/continuationa93df CLOSED; future definition builder10325 CLOSED | Parent used10325 plus measured72de surface continuation to actually install/enable/read back RAW8fd. No active LLM/actual custody read claimed. |
 | James / temporary Execution | execution/current-bounded-engineering-paper-baseline-20261105-v1 | v8 CLOSED after create/before guest start,33metadata Jobs closed; exact control flow excludes its broker effects. Retain membership delta, run separate readonly connectivity and prepare next valid operation; same-day cap closed. |
-| Gibbs / Data | research/current-full17-next-session-publisher-recovery-20261105-v1 CLOSED | Both Data/Point ENABLED70676443/separate readback; task owns21:30UTC/Nov5UTC13:30 next_due. No active Data LLM or actual future output claimed. |
-| Nietzsche / Engine-Steward | all3 parity audits and policy6274 CLOSED | Latest9views/0fits LOT_INACTIVE under invented basis; actual capacity unknown. All numerical actors closed, no ready predictive GPU fit or duplicate training. |
-| Raman / temporary Execution-native | execution/current-raw-all3-actual-finite-host-preparation-20261105-v1 | SDK304f/guest5dacc done. Build actual hidden scheduled host/source/release/owner action for tested future builder, not another unbound guest. |
-| Mendel / invoked reliability | execution/current-full17-stats-census-adoption-repair-20261105-v1 | aff27/7b0 future-exit stats overlay tested, unadopted. Fresh c5 Capture withheld before mutation; narrow exact-stats census successor/bound diagnostic retention, not a gap wait. UI8788 uninstalled. |
+| Gibbs / Data | data/current-nov4-owned-data-outcome-integration-20261105-v1 CLOSED | Parent validated coherent19 READY0c5b/typed positive closure21:34. NAS8 Nov3/4 masked READY closed; old3-day eval INPUT_UNAVAILABLE/0forecasts. PointNov5UTC13:30 remains task-owned unknown. |
+| Nietzsche / Engine-Steward | research/current-eod-frozen-gru-later-session-readiness-20261105-v1 | Metadata-only custody/retained checkpoint/cutoff/source compatibility for ONE later EOD25 replay; reserved bytes stay closed unless existing custody permits. No active fit/GPU or old-study rerun claimed. |
+| Raman / temporary Execution-native | execution/current-raw-all3-installed-public-outcome-reader-20261105-v1 | Host8fd/plan38 ACTUALLY enabled/readback. Prepare exact installed public attempt/terminal/hidden-child reader; financial effects remain unknown. |
+| Mendel / invoked reliability | execution/current-full17-stats-census-adoption-repair-20261105-v1 | Actual5001/2ee failure named ONLY Parent metadata adapter; no migration. Narrow source/argv/native caller classification successor, no OWNED exemption. Original131e remains current; UI8788 uninstalled. |
 
 Roles exchange exact schema/source/readiness directly. One mutable write owner
 per package; Parent Git only. Named workers own next_due. Do not invent active
@@ -30,6 +30,22 @@ training, future inputs or financial outcomes from an LLM message.
 
 ## Material Evidence
 
+- ACTUAL RAW8fd/plan38 pair enabled/separate whole-definition/ACL readback
+ 21:42UTC, hidden pythonw/Ready3/0instances; entryNov5UTC14:31/exitNov10UTC14:30:
+  A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json.
+  Actual OS parser repaired omitted default XML fields without semantic waiver;
+  old partial disabled exit rolled back exactly, all failed sources retained.
+  This is actual future deployment, not submit/acceptance/fill or goal completion.
+- Actual coherent19 fresh typed READY0c5b/closure5c058 passed Parent reader21:34;
+  existing3-day eval INPUT_UNAVAILABLE3a8c/0forecasts21:35, closure separate.
+  No Nov2 retag/zero-return or independent-performance claim.
+- Actual separate readonly account query6e6a834c/RESULT2a55 COMPLETED:
+  authenticated/3complete venue reads/4holdings/positive provisional funds,
+  1POST4GET/0retry/10.928s. Parent source/result rehash/4native consumer tests/
+  emitted F/E9 PASS; no financial intent/order/private book or live effects.
+  Account counts are not owned attribution or full risk/settlement/PnL:
+  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
+  F9/reservations/all exits unchanged. Company actual fill outcome unfinished.
 - Parent ACTUALLY updated/enabled original future Full17 exit131e/aa41619:55UTC,
   Apply+independent readback PASS, same entry/financial tuple/B10/F9/old exits:
   A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1/PARENT-ADOPTION.json.
@@ -40,9 +56,10 @@ training, future inputs or financial outcomes from an LLM message.
   aa4e/66f4 passed9real unchanged actor/final-decide tests/Ruff, not deployment:
   A/execution/current-desktop-stats-readonly-scope-repair-20261105-v1/API.md.
   No OWNED/GUI/broker exemption; unknown actors/other commands still deny.
-- RAW304f SDK21tests+sizing1, guest5dacc5ABI and entry/exit duplex tests PASS;
-  actual scheduled host action still unbound. Future builder10325 has574mocked
-  assertions/26cases and3builder tests, not actual runtime/source admission.
+- Earlier RAW304f SDK21tests+sizing1, guest5dacc5ABI and entry/exit duplex
+  tests PASS. Builder10325 subsequently consumed actual8fd host; new72de
+  surface continuation passed616mocked checks/26cases and actual adoption above.
+  Installation is still not financial runtime admission.
 - Policy6274/7cfb CLOSED9views/0fits/forwards/retries, registryfa59b492/3381d7f4.
   All47cohorts positive, wholelots0 under INVENTED B10000/B101000. Not actual
   capacity/predictive failure or reason for another GPU fit. Actors all closed.
@@ -106,6 +123,15 @@ training, future inputs or financial outcomes from an LLM message.
   after-cost/market-regime value, not another tiny GRU or a duplicate fit.
 
 ## Bottleneck And Improvement
+
+21:46 Throughput Review: actual next-session RAW deployment is ready, not an
+unbound host. Parent owns docs/source integration; ready LLM work is installed
+result reader, original-exit metadata caller classification, membership
+diagnostics and scoped later-replay custody readiness. Existing point task owns
+13:30UTC; no market-time foreground wait. Reversible improvement is now measured:
+use the OS in-memory parser to compare the two Task XML surfaces, retaining full
+expected definitions/ACLs rather than misclassifying omitted default fields.
+No financial all-idle/profit gate, operator decision or dummy GPU allocation.
 
 21:06 Throughput Review: the market session is closed. Ready work is James's
 actual membership-delta retention/readonly account query, Raman's actual finite

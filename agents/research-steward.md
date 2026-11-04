@@ -2,6 +2,13 @@
 
 ## Current Resource Coordination
 
+Nov4UTC21:46: Nietzsche reattached for source/checkpoint/custody metadata-only
+later EOD25 readiness. No numerical dispatch or GPU fit is claimed. Closed
+studies/debits remain unchanged, Nov2..4 reserved targets are not automatically
+released because old3-day eval is input_unavailable. A later contract must use
+existing custody/ledger and exact retained weights or reject that scoped replay.
+RAW8fd deployment and fresh input0c5b are actual, not new training authority.
+
 Updated Nov4UTC20:28 / Nov5KST05:28. Parent coordinates resources. All owned
 numerical campaigns are CLOSED, not waiting for GPU permission. Latest6274
 policy-only study used9views/0fits/forwards/retries/GPU and closed every actor;
