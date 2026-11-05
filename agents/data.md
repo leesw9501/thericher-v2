@@ -13,6 +13,15 @@ A/data/current-intraday-window30-120-training-readiness-20261105-v1.
 This DATAREADY is not model training, observed arrival/finality or Paper input
 promotion. Engine owns distinct fixed2fit contract and actual GPU launch.
 
+Actual new19x60 daily capture83963 succeeded at21:30 via ORIGINAL Task:19GET/
+1initialPOST/0failed/42seconds, child joined/empty exit0, OWNER READY_CLOSED.
+Publication DATAREADY at revision-v2/actual/publication/DATAREADY.json, payload
+551a90fb/manifest2876104f/seal68170f08/source83963. Parent manual observer quiet
+window Sourcec43 exactly disabled21:21:38/restored21:32:08 with original full
+XML/API7/enabled positive; no remaining duty/newTask/source/token reset.
+Consumer HALFpoint5bf/third/W25 future inference still unobserved, no model swap.
+CA/PIT/provider finality and same-captureMODE1 vendorproxy limitations unchanged.
+
 Updated Nov5UTC20:05. Post-checkpoint Open60->4 consumer data is DATAREADY:
 A/data/current-postcheckpoint-open4-data-readiness-20261105-v1/READY.json.
 Source5be6238e/manifestca12e0c4, FIT969/INNER340/DEV680,23sessionpurges;
@@ -21,17 +30,14 @@ role references verified. No reservedOct30-Nov6,2026 label release; existing
 CA/PIT/finality/context limitations preserved. Engine consumed it in completed
 Chronos2 forecast-only study, not a qualified market/Paper return comparison.
 
-Original83963 collector has300second token gate/abort-if-not-due versus observer
-4minute schedule. Stable timing-only read20:02:03 saw19:59:02 last POST-start mark,
-no secrets/state writes. A separate finite observer-control preparation is
-under review, not installed; originalTask/source/clocks/publishers unchanged.
-Claude delta871ed27e REVISE and proportionality/restoration concerns retained.
-Mill's source-only feasibility closed5tests/Ruff; no controller/admission/
-restore path implemented, NOT READY. Exact source and timing schema:
+Original83963 collector retained its300second token gate. The earlier separate
+autonomous observer-preparer proposal was never implemented/installed; Claude
+871ed27e REVISE and Mill's limited5test source feasibility remain unchanged:
 A/data/current-net25-83963-observer-preparation-20261105-v1/RESULT.json.
-Do not install an unimplemented preparer or relabel old83963. A future scoped
-token60 successor requires truthful downstream contracts, not global floor
-relaxation. This is not a global collection/research/Paper hold.
+Parent instead completed the one manual source-qualified control window above;
+do not install that rejected preparer or replay consumed83963/control setters.
+A future token60 successor needs truthful downstream contracts, not global
+floor relaxation. Missing/future inputs never become a company-wide hold.
 
 Updated Nov5UTC17:48 / Nov6KST02:48. A=D:/thericher-v2/model-artifacts.
 Later W25 collectorsc7b ACTUALLY enabled Nov10/13UTC21:30..<21:31/hard21:45.
@@ -102,7 +108,9 @@ Full60MODE1 vendorproxyOHLC19 Aug13-Nov5, <=19GET/onePOST/0retry.
 Actual invented rawparser/Bar->60x19OHLC->17x60x12/17x8features PASS.
 Original enableCLI failed after actualenable; Parent read-only recovery proved
 exact source/owner/creation/fullXMLACL twice stable without re-enable/fake receipt.
-Future revision-v2/actual/publication/DATAREADY.json and payload remain UNKNOWN.
+Actual revision-v2/actual/publication/DATAREADY.json and payload are now present,
+source-bound and independently verified as described above. Actual future
+publisher inference remains UNKNOWN.
 Frozen modelhalf25c8 publisher5bf ACTUALLY installed Nov6UTC13:30; no new fit.
 
 Coherent19 Nov4asof/Nov5decision c632/READY0c5b/closure5c058 is typed-ready/closed;
@@ -115,6 +123,12 @@ NAS8Data24a39 hidden tasks Nov5/6UTC21:10..<21:11/hard21:25 actually installed:
 A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
 Saved GRU/Ridge observation880d scheduledNov6UTC21:35,0fits. Old consumed Nov2..4
 evaluation remains INPUT_UNAVAILABLE/0forecasts, not repaired by later backfill.
+Actual Nov5 NAS8 DataREADY699f955245b9f69a3cc7bb357c2c2dff2ba775d5997bf76854c89b56e9df17ac
+passed existing verify_day/read_day with exact source24a39 and all source pins:
+six metadata links, positive owner/child closure, native codec/calendar/role and
+before-after panel stability. All8symbols390/390minutes,3120known rows. No new
+API/training or old reserved-target release. Afterclose capture is NOT observed
+decision-time availability/PIT/finality. Nov6 target capture remains future.
 
 ## Consumer Contract / Recovery
 

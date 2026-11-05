@@ -21,7 +21,7 @@ Actual17:20 holdings4/noINTC and18:10 terminal history0rows are separate as-of
 broker observations; no originalintent/fill/owned/settledcash/PnL inference or
 reservation release. No new order placed by this recovery.
 
-Original MSE exit actual due Nov5UTC20:40..21:00. Parent source-only checked
+Original MSE exit opportunity Nov5UTC20:40..21:00 is consumed. Parent source-only checked
 Task action13e04e11/release6e5d4ea9, pythonw/0instances beforewindow; no Run.
 Dedicated stdlib technical pair reader passes5inventedjoins/Ruff; prewindow
 NOT_DUE,0actualpairreads/no private/broker/Taskeffects:
@@ -37,9 +37,10 @@ A/execution/current-mse-observer-output-route-diagnosis-20261105-v1/RESULT.json.
 No new native financial leg; historical inventory/PnL unknown, old flag remains.
 Godel route bridge patch15+5tests/13childrenclosed is NOT deployable: outer graph
 still binds old Task/Nov5 validity; no future installed/replay/capital change.
-Parent manual Data83963 observer-control Sourcec43 is native17/Readiness0write
-qualified. Exact optional21:21 Suspend and positive child-bound Restore duty
-are in HANDOFF; this is NOT a worker/Task or broker path. No actual Disable yet.
+Actual Data quiet window now CLOSED: oneDisable21:21:38 and exactRestore21:32:08,
+Sourcec43, positive original XML/API7/enabled, after exact Data83963 nativechild
+closure. Collector actually completed19GET1POST/DATAREADY; no broker orders or
+privatebank change. Parent restoration duty resolved, old MSE flag left intact.
 
 ## Closed Evidence
 
@@ -58,7 +59,9 @@ NET25 global.10initialbasis is the existing ONEB10, not a second model allowance
 ## Installed NET25 Pipeline / Recovery
 
 Fresh full60D1OHLC19 Data83963 revision-v2 installedNov5UTC21:30/hard21:45,
-<=19GET/oneinitialPOST/0retry. Actual futureDATAREADY UNKNOWN:
+<=19GET/oneinitialPOST/0retry. Actual DATAREADY published21:30, all four exact
+closure/manifest/payload/seal refs independently verified; future inference is
+still UNKNOWN:
 A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/PARENT-ADOPTION.json.
 Savedweight point publisher5bf installedNov6UTC13:30/hard14:10:
 A/research/current-net25-publisher-parent-readiness-20261105-v1/PARENT-ADOPTION.json.

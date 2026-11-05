@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov5UTC18:58 / Nov6KST03:58. Company outcome UNFINISHED.
+Updated Nov5UTC22:00 / Nov6KST07:00. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -24,12 +24,18 @@ No manual Task.Run/strategy invocation merely to inspect evidence.
 - Data83963 Nov5UTC21:30/hard21:45; halfpoint5bf Nov6UTC13:30/hard14:10;
   thirdshadowc96 Nov6UTC13:45/hard13:50; W25shadowff38313:55/hard14:05 installed.
   D:/thericher-v2/model-artifacts/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json.
-  W25 saved inference only/no bank/orders; future inputs/publication UNKNOWN.
+  Data83963 actually completed19GET/1POST/0failed/42s, real DATAREADY551a90fb
+  payload/2876104f manifest/68170f08 seal. Observer restored21:32:08 with exact
+  original XML/API7/enabled; no pending Parent restoration duty. Future point/
+  inference UNKNOWN. W25 saved inference only/no bank/orders.
 - LaterData c7b Nov10/13UTC21:30/hard21:45 actually enabled:
   D:/thericher-v2/model-artifacts/data/current-w25-engine-true-partial-recovery-20261105-v1/installation/ReadBothEnabled-CLOSED.json.
   All five recovery modes consumed; never replay. First preserved, missing second
   only created; explicit true edition/new measured OS behavior, no ACL waiver.
 - NAS8 Data24a39 Nov5/6UTC21:10; savedGRU/Ridge880d Nov6UTC21:35 installed.
+  Nov5 actual DataREADY699f9552 passes existing cold metadata/native codec
+  reader:8symbols390/390minutes/3120rows/positive child+owner closure/stability.
+  Nov6 target capture/result remains future, no historical target release.
   Preserve original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 duties.
 
 Actual financial effects retain native source/clock/account/budget/unknown-request/
@@ -77,25 +83,33 @@ D:/thericher-v2/model-artifacts/research/current-postcheckpoint-chronos2-full-co
 Exact metrics/source/closure in HANDOFF. All model containers/Jobs/leases closed,
 no dummy GPU/completed-fit reruns. Saved direct consumer bootstrap-r1 PASS,
 3cohorts51rows parity0/no new fit/readout; failed strategy remains failed.
-Next pure turnover-aware policy offer is a preparation, not actual training.
+The turnover-aware policy offer was consumed below, not an active worker.
 Reused DEV is never independent alpha/PaperPnL or automatic model deployment.
 
 New turnover consumer actually completed in separately frozen metadata-corrected
 Source159ec after old4fc software failure0books; old source/debits unchanged:
 D:/thericher-v2/model-artifacts/research/current-w25-continuous-metadata-bound-replay-20261105-v1/PARENT-INTEGRATION.json.
 1readout4books/0fits/bothCIDsclosed20:31. Never replay consumed run.py commands.
-Intraday30/120 source3716c DATAREADY24sessions/57120/14280/14280rows; Ohm's new
-fixed2fit GRU code preparation is not actual training. MSE20:40..21:00 has scoped
-priority before actual GPU launch; fresh native/VRAM/source/owner facts required.
+Intraday30/120 source3716c DATAREADY was consumed by actual2CUDA GRUs22epochs/
+2464updates EACH/best14, all closed21:00. Both choosecash, PRIMARY_FAIL; no rerun.
+Crossasset attention47ce fit closed with strict300s clock failure300.0755 and
+old readout withheld. Separate frozen descriptive consumere6b310 closed0fits/
+1readout6books: newexpert-2.9888%,fixed.25blend1.6173% versus W25 3.6012%.
+All six native checks/Ruff/exactW25parity passed; no alpha/Paper promotion:
+D:/thericher-v2/model-artifacts/research/current-crossasset-frozen-descriptive-consumer-20261105-v1/API.json.
 
 Original MSE exact public technical pair reader, only after real opportunity:
 D:/thericher-v2/model-artifacts/execution/current-mse-nov5-public-pair-reader-20261105-v1/README.md.
 Five invented join tests/Ruff and prewindow NOT_DUE passed. It reads no private
 custody and cannot prove root exit, restored observer or any financial effect.
 
-OriginalData83963/source/window remains unchanged. Potential300second token
-gate versus4minute observer collision has timing-only evidence; no new observer
-preparer installed and no token/timing reset. Current decision in orchestration.
+MSE actual20:40 stopped before native because old observer output_not_owned;
+Taskexit0 was not success. Exact source diagnosis proves original observer not
+mutated; old restoreflag remains untouched, not a current duty:
+D:/thericher-v2/model-artifacts/execution/current-mse-observer-output-route-diagnosis-20261105-v1/RESULT.json.
+Route patch alone NOT deployed. Godel owns retained-exit outer successor/native
+qualification; no consumed opportunity replay/late forecast retag/new bank.
+Planck owns metadata-only native-commandline/lineage repair; no private grant.
 
 ## Verification
 

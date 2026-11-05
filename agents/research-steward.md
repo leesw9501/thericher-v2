@@ -3,7 +3,7 @@
 
 ## Current Resource State
 
-Updated Nov5UTC20:03. Actual full-coverage Chronos2 CUDA fit is CLOSED:
+Updated Nov5UTC21:58. Actual full-coverage Chronos2 CUDA fit is CLOSED:
 8epochs/488updates/969rows each/56.18s, peak2.606GiB reserved, INNER-best0.
 All6containers/70Jobs/GPUlease closed19:43; cumulative269.01/2400SUM includes
 pre-fit failure/debits. API daf3692f source / a600f97c result in HANDOFF.
@@ -12,17 +12,27 @@ no fit duplication or current optimizer claimed. Both studies failed their
 own declared development tests, not a ban on other GPU campaigns or Paper.
 Singer offer and Parent159ec continuous-book readout are now CLOSED,0newfits;
 memoryON versusOFF development tests passed, but different exposure/no alpha.
-New intraday Data3716c is READY24sessions16/4/4, same30/120keys. Ohm owns sole
-coordinator/new2fit GRU family preparation; no GPU optimizer currently launched.
-MSE20:40..21:00 receives scoped Execution priority; source preparation may
-continue without active helpers. Actual later launch needs fresh source/native/
-VRAM headroom and positive relevant owner closure, never Taskexit/timer inference.
+Intraday Data3716c READY24sessions16/4/4 was consumed by the two actual fits
+below. MSE20:40 failed before native; Parent source-bound failure/owner proof
+lifted that scoped resource constraint, not a timer or Task-exit inference.
 Review91701054 GO_WITH_LIMITS retains4DEVday lowpower/adaptive selection limits.
 Existing GPU priority/concurrency authority remains, no external-app veto.
+Intraday familyb26d is actually CLOSED2CUDAfits/22epochs2464updates EACH/best14,
+fit9.15/10.05s/106/300MiB reserved; bothcash, PRIMARY_FAIL. No repetition.
+Planck new crossasset model47ce also CLOSED14full epochs1931updates/best7,
+partial15unselected/300.0755s strict300cap NOTpassed/peak218MiB reserved. All
+3CIDs removed; original evaluation withheld by900SUM runway,748.269finaldebit.
+No old archive/evaluation/books. Separate frozen descriptive consumere6b310
+CLOSED21:42:54/0fits/1readout6books/32.735newactive/781.005combineddebit. Newexpert
+-2.9888% and fixed.25blend1.6173% underperform W25; descriptive only, no old
+pass regrade/promotion. Prevent repeat inefficiency by reserving evaluation/cleanup before
+the long fit, not merely rejecting the readout after spending its runway.
 
 ## Current Work
 
-W25 saved inference is installed Nov6UTC13:55; future input UNKNOWN. Completed
+W25 saved inference is installed Nov6UTC13:55; source83963 DataREADY actually
+published21:30 and Parent independently verified four exact refs. Actual future
+inference/point UNKNOWN. Completed
 studies/leases stay closed. If a distinct frozen campaign becomes ready, choose
 CPU/GPU by useful throughput and fresh measured headroom. Source-only policy
 work is not optimizer activity. Parent Paper recovery is actually deployed,

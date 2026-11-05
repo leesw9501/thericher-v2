@@ -3,51 +3,51 @@
 
 ## Current Research Update
 
-Updated Nov5UTC19:28 / Nov6KST04:28.
-Direct-net-utility one-fit campaign a0eccc is COMPLETE/PRIMARY_FAIL:
-A/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
-One CPU fit29epochs/812updates/INNER-best17 restored;1archive799rows/1readout/
-2final-flat books. Net25 growth3.7056%/DD1.3383%/turnover7.2376, versus saved
-W25 3.6012%/.6505%/2.1286 and samegrossEW2.3991%/.7512%/7.2092.
-Growth tests passed; fixed DD<=.8131% and turnover<=2.1286 failed. No rescue,
-retry, convergence, alpha or Paper model change. All model/container workers
-closed; activeSUMupper259.80. Parent22guestpins+contract/result/closure verified.
-Native allocation bridge6tests/22subtests and current24ab publicreader11tests/
-source-only CLI/fullRuff passed. They are not financial evidence.
+Updated Nov5UTC22:00 / Nov6KST07:00. A=D:/thericher-v2/model-artifacts.
+All listed numerical workers are CLOSED; no optimizer currently claimed active.
+Results below are adaptive development, not independent alpha/Paper PnL.
 
-Post-checkpoint Open60->4 Data5be623/manifestca12 is DATAREADY:
-A/data/current-postcheckpoint-open4-data-readiness-20261105-v1/READY.json.
-FIT969/INNER340/DEV680 complete, actual four-step targets,23sessionpurges,
-all target dates after trusted Oct30,2025 checkpoint95a9710e/weightddcda3c7.
-Parent24source/master/role refs verified. No reserved2026Oct30-Nov6 label use;
-data/corpus/CA/PIT/finality limitations and adaptiveDEV claims remain.
+| Completed study | Actual work | Result / next action |
+| --- | --- | --- |
+| Direct-net utility a0eccc |1CPUfit29epochs812updates/best17;1readout2books | Growth3.7056%/DD1.3383%/turnover7.2376: fixed DD/turnover FAIL. Saved r1 consumer3cohorts51rows parity0/0newfit ready, not promotion. |
+| Post-checkpoint Chronos2 daf369 |8full969-row CUDAepochs488updates/56.18s/best0 restored | MAE.025661 versus persistence.024231; MSE.00125592 versus.00117611. Native funding parity failed before marketbooks:0books/PnL. No repeated fit. |
+| Continuous-book159ec |0fits/1readout4books; actual source-format metadata fix after failed4fc | MemoryON.5533%/DD.1077%/turnover.10612 versusOFF.3067%/.09157%/.13821; tests PASS but exposure differs, signW25 stronger3.7377%. No Paper swap. |
+| Intraday GRU30/120 b26d |2actualCUDAfits22epochs2464updates EACH/best14;9.15/10.05s | Both cash at16DEVslots, PRIMARY_FAIL; MSE120 worse than30. FourDEVdays/within-intervalDD unknown. |
+| Crossasset Conv+attention47ce |1actualCUDAfit14full epochs1931updates/best7; raw receptivefield7bars | Strict300s clock failed300.0755; original readout withheld by900SUM runway. Old748.269debit unchanged. |
+| Frozen descriptive consumere6b310 |0fits/updates/retries;1archive/readout6books;32.735newactive | Newexpert-2.9888%/DD3.5808%/turnover18.7373; fixed.25blend1.6173%/1.2426%/3.6507 versus W25 3.6012%/.6505%/2.1286. All blend diagnostic checks FAIL; no qualified selection. |
 
-Updated Nov5UTC20:03: Chronos2 daf3692f COMPLETE_FORECAST_ONLY/DEVELOPMENT_FAIL.
-Actual CUDA8full969-row epochs/488updates/56.18s, INNER-best0 restored; one680row
-DEV archive/readout. MAE.025661 versus persistence.024231, MSE.00125592 versus
-.00117611. Native funding parity failed on invented input:0marketbooks/PnL.
-Pre-fit /dev guard failure/debit preserved,0marketfit before scoped repair.
-All6CIDs/70Jobs/lease closed; Parent33references verified. Exact result:
-A/research/current-postcheckpoint-chronos2-full-coverage-20261105-v1/API.json.
-Saved direct consumer bootstrap-r1 passed3cohorts/51rows/parity0/5negatives,
-0newfit/economicreadout; PRIMARY_FAIL unchanged. Source/closure in HANDOFF.
-Singer offer CLOSED17native tests; continuous47step bookkeeping now evaluated
-in Parent Source159ec870 after a separately frozen correct-metadata intake.
-Goodall's first4fc836 software failure had0books and stays failed/140SUM.
-New1readout/4books/0fits: memoryON.5533%/DD.1077%/turnover.10612 versus OFF
-.3067%/.09157%/.13821, fixed tests PASS. Exposure differs; continuous signW25
-3.7377%/.65045%/1.58759 remains stronger absolute-growth control, not automatic
-selection/Paper winner. Exact source/result/closure and limitations in HANDOFF.
-Ohm owns a NEW intraday GRU30/120 code/native preparation on Data3716c49c;
-no actual optimizer yet. Original MSE owner has scoped priority20:40..21:00.
+Exact current APIs:
+- A/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
+- A/research/current-postcheckpoint-chronos2-full-coverage-20261105-v1/API.json.
+- A/research/current-w25-continuous-metadata-bound-replay-20261105-v1/PARENT-INTEGRATION.json.
+- A/research/current-intraday-gru-window30-120-20261105-v1/API.json.
+- A/research/current-net25-crossasset-tcn-attention-20261105-v1/API.json.
+- A/research/current-crossasset-frozen-descriptive-consumer-20261105-v1/API.json.
+
+Parent independently verified descriptive API Sourcee6b310/contracte7ea1f/
+result81b4a8 and38frozen members. Native6checks/Ruff/exactW25parity passed, all
+created containers removed21:42:54; combined781.005unrefundeddebit. This separate
+consumer never regraded the original training clock/protocol failure.
 
 ## Current Work
 
-Updated Nov5UTC20:03. W25 shadow/laterData actually installed; future hashes
-UNKNOWN. Direct utility/Chronos studies and saved consumer are closed above.
-Next consumer is intraday fixed2fit window comparison, not a change to old
-failed criteria. Preserve OOF custody for any later learned expert fusion and
-actualfee units. W25 adaptiveDEV is not alpha/PaperPnL; no HALF model hot-swap.
+Darwin prepares ONE pure pairwise-rank kernel with real native DTO/book fixture:
+A/research/current-net25-pairwise-rank-offer-20261105-v1.
+Ranking score is not an absolute-return forecast or automatic cash gate. Engine
+must freeze a distinct chronological/cohort-masked contract with inner selection,
+aligned samegross/cost/risk controls and reserved readout/cleanup before fitting.
+Source preparation is not a GPU launch. Reused DEV remains adaptive; no new
+epoch/threshold/window rescue of closed studies.
+
+Original Data83963 actually published19x60 OHLC for Nov6; Parent verified exact
+closure/manifest/payload/seal. Halfpoint5bf13:30/third13:45/W25shadow13:55 remain
+future inference, not automatic model swap. NAS8 Nov5 actual source24a39 codec
+passes8x390minutes and positive owner/child closure; Nov6 target/result remains
+future for savedGRU/Ridge880d,0fits. No old reserved-target release.
+
+Completed fits stay closed. A distinct ready GPU campaign can run under
+Steward with measured headroom; private-custody/MSE repair does not globally
+block it. Parent prioritizes actual Paper runtime/attribution in parallel.
 
 ## Closed Evidence
 

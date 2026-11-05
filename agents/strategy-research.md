@@ -2,6 +2,14 @@
 
 ## Current Handoff
 
+Updated Nov5UTC22:00. Darwin owns one new pure pairwise-rank mechanism/kernel
+and real invented native DTO/book smoke in assigned D scope:
+A/research/current-net25-pairwise-rank-offer-20261105-v1.
+Ranking is not absolute expected return; a separately supplied cash/absolute-edge
+gate remains necessary. No market fit/label opening or optimizer claimed.
+Crossasset attention descriptive consumer closed: newexpert-2.9888%,fixed.25blend
+1.6173% versus W25 3.6012%; no model adoption. Do not repeat completed weights.
+
 Updated Nov5UTC20:05. Directutility proposal was consumed in one CPU fit:
 29epochs812updates/best17; growth3.7056% but DD1.3383%/turnover7.2376 failed
 its fixed controls. No frozen criterion rescue. Chronos2 full-coverage actual

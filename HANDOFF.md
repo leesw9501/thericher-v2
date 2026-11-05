@@ -68,30 +68,62 @@ model books chose cash at all16slots, momentumcontrol-.7811%. Onejointarchive/
 1evaluation/6books/0marketretry, all actors closed21:00:27/66.71activeupper.
 Native12/Ruff passed; pre-fit serialization failure/debit retained. Four DEV
 days/adaptive reuse/within-interval DD unknown, no alpha/Paper swap.
-Planck owns NEW cross-asset temporalConv+attention expert/fixed.25W25 blend
-preparation, not another window/GRU rerun:
-A/research/current-net25-crossasset-tcn-attention-20261105-v1.
-No new optimizer claimed before actual qualified dispatch callback.
-Completed fits are never repeated for occupancy.
+Crossasset temporalConv+attention47ce is CLOSED:14full epochs/1931updates,
+INNER-best7 restored, partial15 unselected,218MiB peak reserved. Raw causal
+receptive field is7bars, not60. Strict300s clock failed at300.0755; original
+economic readout withheld by900SUM runway. Original748.269debit/failure stays.
+Separate frozen descriptive consumer e6b310 is CLOSED21:42:54,0fits/updates/
+retries,1archive/readout6books. Newexpert growth-2.9888%/DD3.5808%/turnover18.7373;
+fixed.25blend1.6173%/1.2426%/3.6507 versus W25 3.6012%/.6505%/2.1286. All
+descriptive blend checks failed; no qualified selection/Paper swap/alpha.
+Native6checks/exactW25parity/Ruff passed; all created containers removed.
+New32.735/90active, combined781.005 unrefundeddebit, no old clock regrade:
+A/research/current-crossasset-frozen-descriptive-consumer-20261105-v1/API.json.
+Parent verified API Sourcee6b310540c62c4d2c373dbfb8e1fd025a6ad8dabe50bab84aefc1d550d351944,
+contracte7ea1fc5b8b57174d03c73e1424476174a7c49f3f49fac5bcd890f74a6a48dbd,
+result81b4a86b72593ba8b65d9cc50a6326765a55cbc7cbec24a0b5db9b8d2d6aad98.
+No optimizer is currently claimed active. Planck now owns a separate metadata-
+only custody lineage repair; Godel MSE outer recovery; Darwin pure rank offer.
+Parent independently verified all38 frozen descriptive source members; this
+is source integrity, not regrading the old training clock or performance.
 
-## Resume-First Control Duty
+## Control Window Closed
 
-Updated Nov5UTC21:16. Parent owns ONE proposed manual observer quiet interval
+Updated Nov5UTC21:58. Parent completed ONE manual observer quiet interval
 for unchanged Data83963, not a scheduled worker. Sourcec43b6f75/native17tests
 and actual Readiness21:04 ORIGINAL_READY_NO_EFFECT/0writes:
 A/execution/current-parent-data83963-quiet-window-20261105-v1/SOURCE.json.
-Only21:21..<21:22UTC may Parent attempt Suspend after fresh source/XML/API7/
-enabled/idle/relevant-owner checks. NO actual Disable yet. Before any new work
-after interruption inspect this exact path:
+ACTUAL Suspend21:21:38UTC succeeded once. ACTUAL Restore21:32:08UTC succeeded
+after positive exact original child closure. ORIGINAL_OBSERVER_RESTORED_EXACT,
+enabledtrue/XML e2cbf12f/nativeACL fab15077,0instances; pending duty is CLOSED.
+The immutable attempt and paired result are retained at:
 A/execution/current-parent-data83963-quiet-window-20261105-v1/owned-window/SUSPEND-ATTEMPT.json.
-If present, Parent retains restoration responsibility until positively bound
-original actual Data child closure + exact observer Restore/readback. No timer,
-Taskexit, absent pointer or expired cap clears it. Unknown remains explicit.
+Its paired RESTORE-RESULT.json is now positive/source-bound and says
+restore_obligationfalse. A future unmatched attempt would still require exact
+closure, never timer/Taskexit/missing evidence. No timer or flag reset was used.
 Do not reset/replay a consumed setter. Exact original DataTask/source/clock and
 300gate unchanged; no manual Task.Run/API/credential/token-state change.
 Claude51745ab8 GO_WITH_LIMITS; liveness/restore cautions retained. F9 is an
 unchanged financial reservation, not by itself an observer-control owner.
 No current unknown actual observer loan may be overridden.
+OriginalData83963 ACTUALLY ran via its existing schedule21:30:00.934, closed
+child21:30:42.712/exit0/joined/Jobempty, then published READY_CLOSED/HTTP20:
+A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/revision-v2/actual/publication/DATAREADY.json.
+19GET/oneinitialPOST/0failed,19x60 OHLC input, actualpayload551a90fb/manifest
+2876104f/seal68170f08/closure6c3be6bc. SameCaptureMODE1 vendorproxy, CA/PIT/
+finality remain unknown. Parent did not invoke collector/change source/gates.
+ControlSourcec43 had exactly2Taskwrites(oneDisable/oneRestore), no newTask/API/
+bank effects. There is no autonomous restore worker or remaining Parent duty.
+
+NAS8 Nov5 scheduled capture24a39 also ACTUALLY completed. Parent used the existing
+source-pinned verify_day then read_day, not Task.Run/collector/API: six exact
+metadata links, positive owner/child closure and full native codec/role/calendar/
+before-after panel stability PASS. All8symbols390/390minutes,3120known rows.
+DataREADY699f955245b9f69a3cc7bb357c2c2dff2ba775d5997bf76854c89b56e9df17ac:
+A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/2026-11-05/DataREADY.json.
+This is prior-prefix input for savedGRU/Ridge880d's Nov6 observation, not target
+release/decision-time availability/PIT/finality or Paper authority. Nov6 capture
+and actual saved-model result remain future/unobserved,0repeatedtraining.
 
 MSE original Nov5 20:40 opportunity actually stopped20:40:08 before native:
 13e04e11/6e5d4ea9 PairRESULT e28ec540/visits0/restoreflagtrue. Taskexit0 was

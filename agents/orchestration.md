@@ -1,136 +1,75 @@
 # Orchestration Stateboard (총괄)
 
-
-## Current Research Integration
-
-Updated Nov5UTC20:03. Directutility COMPLETE/PRIMARY_FAIL (DD/turnover);
-Chronos2 COMPLETE_FORECAST_ONLY/DEVELOPMENT_FAIL (actual CUDA8epochs488updates,
-best0, worse than persistence,0books). All optimizers/containers/leases closed.
-Saved direct consumer r1 passes exact3cohort/51row parity with0newfit/readout.
-Detailed metrics/evidence belong in HANDOFF and Engine state, not every board.
-Singer's pure offer is CLOSED17native tests; Engine owns its continuous-book
-consumer, not another strategy-model worker. Exact current dispatch below.
-
-## Current Outcome
-
-Updated Nov5UTC18:51 / Nov6KST03:51.
-coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
+Updated Nov5UTC21:58 / Nov6KST06:58.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Parent owns shared policy/integration/Git. No operator decision pending.
-ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits persist.
-No new exact acceptance/fill/current-owned/PnL proven.
+
+## Company Outcome
+
+coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
+No new exact acceptance, linked fill, current-owned reconciliation or net PnL
+proven. Parent owns shared policy/integration/Git. No operator decision pending.
+Preserve ONE initial B/10, F9 UNKNOWN-HELD, exact pending/reservations/costs/losses
+and all original exits. A package/commit/installation is not company completion.
 
 ## Ready / Owned / Due
 
 | Owner | Actual state | Next consumer |
 | --- | --- | --- |
-| Parent / Execution completed | HALF24ab/f611 original pair actually migrated18:48, EXIT then ENTRY with separate proof/readback | Nov6UTC14:31 entry/Nov11UTC14:30 exit; future effect-time checks, not guaranteed fill. |
-| Parent / Execution completed | INTC2dab/8fd686 original EXIT actually migrated18:16; consumed ENTRY untouched | Nov6UTC15:10 original exit/reconciliation, residual60s race explicit. |
-| Parent / public reader completed | a446 current24ab reader11tests/fullRuff/Parentsource-only CLI PASS,0actualfuture reads | Exact README source-pinned command after original opportunity, no new schedule. |
-| Closed Engine workers | Directutility CPU fit and full-coverage Chronos2 CUDA study completed/failed own criteria; saved consumer r1 ready | No duplicate training; preserve failures and choose distinct cost/turnover mechanism. |
-| Closed continuous-book work | Goodall4fc software failure0books retained; Parent159ec corrected metadata scope completed1readout4books/0fits, bothCIDsclosed20:31 | MemoryON declared tests pass versusOFF, but exposure differs and signW25 stronger absolute growth; no Paper swap. |
-| Closed Euclid / Execution |27checks pass, actual oneprobe withheld ancestry-child mismatch,0private/no READY; diagnostic8checks unintegrated | Need actual first-cause lineage, not another actor waiver or consumed-probe replay. |
-| Closed Lorentz / Data | Intraday30/120 same-key roles READY57120/14280/14280,24sessions; all workersclosed20:30:44 | Ohm's new GPU family, not repeated dailyGRU or training already started. |
-| Closed Ohm / Engine | Actual2CUDA intraday GRUs22epochs2464updates each/best14; MSE120 worse than30, bothcash; allclosed21:00 | No fit repetition. FourDEVdays/noalpha; Sourceb26d/API in HANDOFF. |
-| Planck / Engine + GPU coordinator | NEW crossasset temporalConv+attention/fixed.25W25blend source/native preparation | Onefit/onejointreadout after qualified native/book/source/resource prebind, no optimizer claimed yet. |
-| Parent / Data83963 control | Conditional manual quiet window Sourcec43/native17/actualReadiness0writes | OnlySuspend21:21..<21:22 with fresh exact checks; durable Parent restore duty path in HANDOFF. |
-| Parent / scoped private read |233 actual metadata withheld controller+3nullsource actors, allclosed/0private/no READY | New qualified caller/actor/stability, never consumed-probe replay or waiver. |
-| Parent / account evidence |17:20 holdings4/noINTC;18:10 history0rows/terminal response; no order/private effects | As-of broker facts only, not original intent/fill/owned linkage or reservation release. |
-| Parent / Data-Research installed | FirstData21:30, halfpoint13:30, thirdshadow13:45,W25shadow13:55; laterDataNov10/13 installed | Worker-owned future input/inference; actual hashes/outcomes UNKNOWN. |
-| Closed roles | Rawls/Epicurus/Kierkegaard/Confucius/Carson/Curie scoped deliveries/failures retained | Not active optimizers/permanent agents; reinvoke only concrete distinct work. |
+| Parent / integration | Data83963 actually completed21:30:19GET/1POST/0failed/42s; four exact DATAREADY refs verified | HALFpoint5bf Nov6UTC13:30, thirdshadow13:45, W25shadow13:55 remain future/unobserved. |
+| Closed Parent control | One manual observer Disable21:21:38 and exact Restore21:32:08; original XML/API7/enabled restored | No remaining duty. Never replay consumed setters or original collector. |
+| Parent / installed Execution | HALF24ab/f611 original pair migrated18:48; INTC2dab/8fd686 original exit18:16 | HALF Nov6UTC14:31 entry/Nov11UTC14:30 exit; INTC Nov6UTC15:10/hard15:20. Installation is not a fill. |
+| Godel / Execution | Repairing MSE retained-exit outer graph/late-validity/native consumer in assigned D scope | Original20:40 opportunity failed output_not_owned before native; route15+5tests alone is NOT deployable. Preserve original duty/identity/bank. |
+| Planck / Execution metadata only | New current-intc-native-commandline-lineage-20261105-v1 | Replace list2cmdline quoting assumption with native command-line proof; identify exact collector extra child. No private admission/actor waiver. |
+| Darwin / Strategy | New current-net25-pairwise-rank-offer-20261105-v1 | One pure rank mechanism plus actual native DTO/book fixture for Engine, no market fit/label opening. |
+| Closed GPU workers | Chronos2, intraday GRU30/120 and crossasset attention fit closed; no optimizer currently claimed active | New work only after distinct frozen/native-ready campaign and measured headroom, never occupancy reruns. |
+| Closed descriptive consumer | e6b310:0fits/1readout6books; newexpert-2.9888%, fixed.25blend1.6173%, W25 3.6012% | Do not promote this blend; original strict-clock failure/old debit unchanged. |
+| Parent / scoped private read | Original233/6906/2c1 probes consumed and withheld; 0 actual private reads | Source-qualified caller, actual custody-writer admission and stable exact joins, not global Data/GPU silence. |
+| Parent / account facts |17:20 holdings4/noINTC;18:10 terminal history0rows | As-of broker observations only; no exact original custody/fill/PnL or reservation release. |
 
-MD/assignment is not proof of a running process or GPU worker. No current model
-training claimed. Curie bridge preparation used elapsed time but produced no code/
-fit; failure is internal, not a missing operator approval/external queue.
+An assignment/MD is not proof of a running worker. Parent checks actual actors
+before effects. LaterData Nov10/13UTC21:30 is installed, not collected.
 
 ## Exact Evidence
 
-- HALF actual adoption:
-  A/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json.
-  Runtime24ab; migration2576 supported single-role proof branch. Wrapper probe
-  failed after positive producer and stays unqualified, no defaultfactory replay.
-- INTC actual adoption:
+- Actual Data and restoration:
+  A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/revision-v2/actual/publication/DATAREADY.json;
+  A/execution/current-parent-data83963-quiet-window-20261105-v1/owned-window/RESTORE-RESULT.json.
+- HALF and INTC actual installation:
+  A/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json;
   A/execution/current-intc-exit-owner-factory-completion-20261105-v1/PARENT-ADOPTION.json.
-- Actual broker observations:
-  A/execution/current-paper-current-holdings-readonly-20261105-v1/qualified-readonly60-r1/RESULT.json;
-  A/execution/current-paper-intc-session-order-history-readonly-20261105-v1/RESULT.json.
-  Not atomic/fullrisk/attribution/history absence proof; no reservation release.
-- Private reader:
-  A/execution/current-intc-retained-receipt-namespace-repair-20261105-v1/CLOSURE.json.
-- W25 shadow/laterData:
-  A/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json;
-  A/data/current-w25-engine-true-partial-recovery-20261105-v1/installation/ReadBothEnabled-CLOSED.json.
-- New research mechanism/failed broad preparation:
-  A/research/current-cost-aware-next-mechanism-offer-20261105-v1/OFFER.json;
-  A/research/current-direct-net-utility-engine-bridge-20261105-v1/HANDOFF.json.
-  Parent review2d533b61 GO_WITH_LIMITS, not a market launch or financial authority.
-- Fresh full:
+- MSE first cause, no observer mutation/new native leg:
+  A/execution/current-mse-observer-output-route-diagnosis-20261105-v1/RESULT.json.
+- Consumed metadata-only diagnostic:
+  A/execution/current-intc-lineage-diagnostic-only-20261105-v1/NATIVE.json.
+  Root parent/child/source match, but raw command-line heuristic rejected it;
+  collector had one extra child. Neither is permission to ignore unknown actors.
+- Saved-weight descriptive research:
+  A/research/current-crossasset-frozen-descriptive-consumer-20261105-v1/API.json.
+  Exact source/contract/result refs independently verified. Historical result
+  details remain in HANDOFF/Engine/immutable artifacts, not another backlog.
+- Full compatibility:
   A/verification/current-native-paper-recovery-compatibility-20261105-v1/RESULT.json.
- 20239PASS/26knownskip/8of8[20265]/cleanup16:49; exact1437protected+AGENTS reuse.
+  20239PASS/26knownWindowsSKIP/created8of8/8workers[20265items]/cleanup16:49.
+  Reuse only with1437protected+AGENTS unchanged; D code needs its own native tests.
 
 ## Throughput Review
 
-18:51: Parent took urgent native recovery locally. Actual CIM exposed missing
-Management import; actual supported direct owner proof -> validator -> EXIT-first
-updates completed in minutes. Synthetic mocked counters had not exercised the
-real producer. Preserve all failed probes; no safety predicate was relaxed.
-Practical improvement: give new sidecars one executable function plus a native
-consumer test, not broad preparation narratives; require real implementation
-before counting a lane active. No idle GPU occupancy or completed fit reruns.
+21:58: Ready work is disjoint custody lineage, MSE recovery and a pure strategy
+kernel; Parent integrates completed results and checks future input bindings.
+No foreground market wait or operator-approval dependency. Parent's tested
+manual window let the original collector finish and restored the observer;
+the rejected autonomous-preparer proposal was never installed.
 
-Current company bottleneck is actual financial runtime evidence and exact
-custody attribution. Alternatives: finish future public-reader compatibility,
-complete the small analytical bridge, or consume the already-owned scheduled
-input/results after their real opportunities. No foreground market sleep.
-Private reader unknowns withhold THAT read, not public/account/Data/research work.
+Current company bottleneck is financial runtime evidence/attribution, not GPU
+permission. Native self-command-line measurement replaces a fragile quoting
+heuristic without waiving source/argv/ancestry checks. Reserve readout/cleanup
+before a future long fit: the closed attention study used its original runway.
 
-Preserve MSE Nov5UTC20:40,H3AMD Nov6UTC20:45,Full17 Nov6UTC20:54/hard21:07,
-GOOGLNov9UTC20:55,RAWNov10UTC14:30,HALFNov11UTC14:30,memoryNov20,H20Dec1.
-Optional Full17 migration/Korean8788 deferred; current8787/no public exposure.
-20:03 throughput review: completed fits are integrated, no optimizer still
-claimed active. Parent handles immediate data-token cadence decision; Singer
-handles disjoint pure strategy implementation. OriginalData300seconds aborts
-when not due; observer4minute cadence plus stable timing-only read20:02 showed
-last POST-start mark19:59:02 (no credentials/state writes). This supports collision
-concern, not guaranteed future POST. A new observer-control preparer is under
-review, NOT installed. Claude delta871ed27e REVISE: explicit control authority,
-restoration ownership and proportionality must be resolved before adoption.
-OriginalData83963/source/window/publishers and all Paper definitions unchanged.
-Mill's limited source feasibility is CLOSED5tests/Ruff, NOT controller READY;
-no new preparer was installed. Do not trade an unproven collision for an
-unimplemented observer-restoration controller. Preserve original opportunity;
-next scoped token successor must carry truthful Data/downstream source binding.
+If one recovery remains blocked, continue another named package: current24ab
+public reader readiness, source-bound Data/publisher validation, or a distinct
+cost-aware Engine campaign after native handoff. No repeated broken schedule,
+substitute unknown request, global hold or new report/platform.
 
-20:22 review: direct role handoff Singer->Goodall avoids Parent relay. Parent
-source review caught float32 memoryOFF state and unadvanced EW terminal state
-before numerical dispatch; Engine fixes/tests the real complete native book.
-Claude4475bf19 returned NO_GO partly on an already-expired20:35UTC deadline;
-actual Parent clock20:15:45UTCNov5 disproves that premise. Preserve categorical
-advice, do not adopt false clock assertion. Uncalibrated utility/cost-scale
-caution remains a claim limit; Parent prebinds only the new <=4book no-fit test
-after source/native prerequisites, never a Paper permission or old pass regrade.
-Source-only third-party proposed6books does NOT expand frozen Engine caps.
-All new numerical/preparation workers close by20:35 before MSE20:40 opportunity.
-
-20:38: Parent fixed immediate critical book intake locally in minutes, not a
-second broad role handoff. Actual archive fields now prechecked, exact DEV role
-metadata selected without label fields; immutable failed source/debits retained.
-Source159ec/contract089ce/resulta2e951/closure97d215;27refs/native5/fullRuff PASS.
-No financial model change. Intraday source3716c DATAREADY35refs PASS, Ohm source
-preparation continues, CPU/Docker workers quiescent before MSE trigger. Its
-preflight ceiling explicitly includes MSE queue time BEFORE first contract,
-not a retrospective failed-cap extension. Claude91701054 GO_WITH_LIMITS:
-4DEVsessions/selection reuse/assumed arrival/relevant owner closure limitations.
-Parent actual MSE follow-through is next; no Task.Run/substitute/new schedule.
-
-21:16: MSE actual opportunity failed20:40:08 before native due old observer
-output route outside helper-owned root, despite Taskexit0. Parent reproduced
-exact guard denial, proved original observer fullXML/nativeACL/enabled and
-current named owner absence; no restore mutation or financial-flat claim.
-Ohm scoped resource wait lifted on that proof, completed two newCUDAfits and
-closed. Godel small route patch now tested but full successor envelope/late
-validity/owner integration unqualified, NOTDEPLOYED. Do not repeat dead MSE job.
-Original Data83963 still due21:30. Parent's explicit manual quiet-window duty
-replaces the unimplemented autonomous-preparer proposal, not its failed READY
-claim. Sourcec43 Readiness passed0writes; source/native source-format17tests.
-Suspend/Restore remain UNKNOWN until actual effects/positive exact readback.
+Preserve H3AMD Nov6UTC20:45, Full17 Nov6UTC20:54/hard21:07, GOOGLNov9UTC20:55,
+RAWNov10UTC14:30, HALFNov11UTC14:30, memoryNov20, H20Dec1 and every original exit.
+UI8787 only; Korean8788 not deployed. No public exposure or follow-up chain.
