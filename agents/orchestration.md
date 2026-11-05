@@ -8,7 +8,8 @@ Chronos2 COMPLETE_FORECAST_ONLY/DEVELOPMENT_FAIL (actual CUDA8epochs488updates,
 best0, worse than persistence,0books). All optimizers/containers/leases closed.
 Saved direct consumer r1 passes exact3cohort/51row parity with0newfit/readout.
 Detailed metrics/evidence belong in HANDOFF and Engine state, not every board.
-Singer owns a distinct pure turnover-aware policy offer, no market fit yet.
+Singer's pure offer is CLOSED17native tests; Engine owns its continuous-book
+consumer, not another strategy-model worker. Exact current dispatch below.
 
 ## Current Outcome
 
@@ -27,7 +28,10 @@ No new exact acceptance/fill/current-owned/PnL proven.
 | Parent / Execution completed | INTC2dab/8fd686 original EXIT actually migrated18:16; consumed ENTRY untouched | Nov6UTC15:10 original exit/reconciliation, residual60s race explicit. |
 | Parent / public reader completed | a446 current24ab reader11tests/fullRuff/Parentsource-only CLI PASS,0actualfuture reads | Exact README source-pinned command after original opportunity, no new schedule. |
 | Closed Engine workers | Directutility CPU fit and full-coverage Chronos2 CUDA study completed/failed own criteria; saved consumer r1 ready | No duplicate training; preserve failures and choose distinct cost/turnover mechanism. |
-| Singer / Strategy Research | Pure turnover-aware persistence/no-trade-band proposal and invented native kernel tests assigned | One bounded executable Engine offer, no market fit/private/broker/GPU authority. |
+| Closed continuous-book work | Goodall4fc software failure0books retained; Parent159ec corrected metadata scope completed1readout4books/0fits, bothCIDsclosed20:31 | MemoryON declared tests pass versusOFF, but exposure differs and signW25 stronger absolute growth; no Paper swap. |
+| Closed Euclid / Execution |27checks pass, actual oneprobe withheld ancestry-child mismatch,0private/no READY; diagnostic8checks unintegrated | Need actual first-cause lineage, not another actor waiver or consumed-probe replay. |
+| Closed Lorentz / Data | Intraday30/120 same-key roles READY57120/14280/14280,24sessions; all workersclosed20:30:44 | Ohm's new GPU family, not repeated dailyGRU or training already started. |
+| Ohm / Engine + GPU coordinator | New fixed2fit intraday GRU family code preparation; no optimizer/native actor during MSE20:40..21:00 | Actual source/role/native/VRAM readiness and relevant MSE positive closure before numerical launch. |
 | Parent / scoped private read |233 actual metadata withheld controller+3nullsource actors, allclosed/0private/no READY | New qualified caller/actor/stability, never consumed-probe replay or waiver. |
 | Parent / account evidence |17:20 holdings4/noINTC;18:10 history0rows/terminal response; no order/private effects | As-of broker facts only, not original intent/fill/owned linkage or reservation release. |
 | Parent / Data-Research installed | FirstData21:30, halfpoint13:30, thirdshadow13:45,W25shadow13:55; laterDataNov10/13 installed | Worker-owned future input/inference; actual hashes/outcomes UNKNOWN. |
@@ -94,3 +98,25 @@ Mill's limited source feasibility is CLOSED5tests/Ruff, NOT controller READY;
 no new preparer was installed. Do not trade an unproven collision for an
 unimplemented observer-restoration controller. Preserve original opportunity;
 next scoped token successor must carry truthful Data/downstream source binding.
+
+20:22 review: direct role handoff Singer->Goodall avoids Parent relay. Parent
+source review caught float32 memoryOFF state and unadvanced EW terminal state
+before numerical dispatch; Engine fixes/tests the real complete native book.
+Claude4475bf19 returned NO_GO partly on an already-expired20:35UTC deadline;
+actual Parent clock20:15:45UTCNov5 disproves that premise. Preserve categorical
+advice, do not adopt false clock assertion. Uncalibrated utility/cost-scale
+caution remains a claim limit; Parent prebinds only the new <=4book no-fit test
+after source/native prerequisites, never a Paper permission or old pass regrade.
+Source-only third-party proposed6books does NOT expand frozen Engine caps.
+All new numerical/preparation workers close by20:35 before MSE20:40 opportunity.
+
+20:38: Parent fixed immediate critical book intake locally in minutes, not a
+second broad role handoff. Actual archive fields now prechecked, exact DEV role
+metadata selected without label fields; immutable failed source/debits retained.
+Source159ec/contract089ce/resulta2e951/closure97d215;27refs/native5/fullRuff PASS.
+No financial model change. Intraday source3716c DATAREADY35refs PASS, Ohm source
+preparation continues, CPU/Docker workers quiescent before MSE trigger. Its
+preflight ceiling explicitly includes MSE queue time BEFORE first contract,
+not a retrospective failed-cap extension. Claude91701054 GO_WITH_LIMITS:
+4DEVsessions/selection reuse/assumed arrival/relevant owner closure limitations.
+Parent actual MSE follow-through is next; no Task.Run/substitute/new schedule.

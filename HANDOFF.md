@@ -39,10 +39,32 @@ economic readouts/labels/GPU. Original import-order failure retained; result
 does not upgrade the failed direct-utility strategy:
 A/research/current-direct-net-utility-frozen-consumer-20261105-v1/bootstrap-r1/out/RESULT.json.
 
-Singer owns a distinct pure turnover-aware persistence/no-trade policy offer,
-not market training or a Paper model swap:
-A/research/current-turnover-aware-policy-offer-20261105-v1.
-No current optimizer claimed; completed fits are never rerun for occupancy.
+Singer's pure turnover-aware offer is CLOSED17tests/fullRuff. Goodall's first
+continuous-book attempt failed wrong metadata archive before any economic book;
+SOURCE4fc836/140SUM/consumed attempt remain unchanged. Parent made a separately
+frozen metadata-only intake correction using exact original DEV role metadata,
+not model/threshold/score/cost changes or reuse of the old zero-retry contract.
+New Source159ec870/contract089ce2ea,27refs independently verified; native5tests
+and fullRuff; both containers closed20:31. Actual1economicreadout/4books/0fits:
+A/research/current-w25-continuous-metadata-bound-replay-20261105-v1/PARENT-INTEGRATION.json.
+MemoryON growth.5533%/DD.1077%/turnover.10612 versus memoryOFF.3067%/.09157%/
+.13821: declared tests PASS. Mean marked gross.5167% versus.1770% differs, so
+no isolated persistence alpha. Continuous fixedsign W25+3.7377%/.65045%DD/
+1.58759turnover exceeds both smooth policies; its u differs from old funding f.
+SamegrossEW memoryON.2413%/.05340%DD; neither scalar is independent evidence.
+Old failed study1archiveopen + new1open/1completedreadout; old140SUM plus new
+100conservative upper preserved, no old result regrade/Paper model swap.
+
+New intraday Data is READY, Source3716c49c/producerf7011991, Parent35refs PASS:
+A/data/current-intraday-window30-120-training-readiness-20261105-v1/READY.json.
+Same30/120bar keys, nextminuteOPEN->60minuteOPEN,24sessions16FIT4INNER4DEV;
+57120/14280/14280 rows. Initial preflight failure retained, one cached build,
+all workers closed20:30:44. Masks/vendor-clock/PIT/finality limits remain.
+Ohm owns NEW bounded intraday GRU window-family code/native preparation:
+A/research/current-intraday-gru-window30-120-20261105-v1.
+No optimizer launched. Original MSE20:40..21:00 takes scoped priority; before
+actual new training Parent needs positive relevant owner closure, not Task exit.
+Completed fits are never repeated for occupancy.
 
 ## Current Reality
 

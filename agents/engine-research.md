@@ -31,16 +31,23 @@ All6CIDs/70Jobs/lease closed; Parent33references verified. Exact result:
 A/research/current-postcheckpoint-chronos2-full-coverage-20261105-v1/API.json.
 Saved direct consumer bootstrap-r1 passed3cohorts/51rows/parity0/5negatives,
 0newfit/economicreadout; PRIMARY_FAIL unchanged. Source/closure in HANDOFF.
-Singer prepares one distinct turnover-aware policy/no-trade-band pure offer;
-no market optimizer currently claimed and no completed fit may be repeated.
+Singer offer CLOSED17native tests; continuous47step bookkeeping now evaluated
+in Parent Source159ec870 after a separately frozen correct-metadata intake.
+Goodall's first4fc836 software failure had0books and stays failed/140SUM.
+New1readout/4books/0fits: memoryON.5533%/DD.1077%/turnover.10612 versus OFF
+.3067%/.09157%/.13821, fixed tests PASS. Exposure differs; continuous signW25
+3.7377%/.65045%/1.58759 remains stronger absolute-growth control, not automatic
+selection/Paper winner. Exact source/result/closure and limitations in HANDOFF.
+Ohm owns a NEW intraday GRU30/120 code/native preparation on Data3716c49c;
+no actual optimizer yet. Original MSE owner has scoped priority20:40..21:00.
 
 ## Current Work
 
 Updated Nov5UTC20:03. W25 shadow/laterData actually installed; future hashes
 UNKNOWN. Direct utility/Chronos studies and saved consumer are closed above.
-Next consumer is a NEW turnover-aware policy contract, not a change to old
-failed criteria. Preserve OOF custody for learned expert fusion and actualfee
-units. W25 adaptiveDEV is not alpha/PaperPnL; no HALF model hot-swap.
+Next consumer is intraday fixed2fit window comparison, not a change to old
+failed criteria. Preserve OOF custody for any later learned expert fusion and
+actualfee units. W25 adaptiveDEV is not alpha/PaperPnL; no HALF model hot-swap.
 
 ## Closed Evidence
 

@@ -10,8 +10,15 @@ pre-fit failure/debits. API daf3692f source / a600f97c result in HANDOFF.
 Directutility CPU29epochs812updates/best17 and saved consumer r1 also closed;
 no fit duplication or current optimizer claimed. Both studies failed their
 own declared development tests, not a ban on other GPU campaigns or Paper.
-Next ready work is Singer's pure turnover-aware policy offer; numerical launch
-needs an actually implemented new contract, not GPU-utilization justification.
+Singer offer and Parent159ec continuous-book readout are now CLOSED,0newfits;
+memoryON versusOFF development tests passed, but different exposure/no alpha.
+New intraday Data3716c is READY24sessions16/4/4, same30/120keys. Ohm owns sole
+coordinator/new2fit GRU family preparation; no GPU optimizer currently launched.
+MSE20:40..21:00 receives scoped Execution priority; source preparation may
+continue without active helpers. Actual later launch needs fresh source/native/
+VRAM headroom and positive relevant owner closure, never Taskexit/timer inference.
+Review91701054 GO_WITH_LIMITS retains4DEVday lowpower/adaptive selection limits.
+Existing GPU priority/concurrency authority remains, no external-app veto.
 
 ## Current Work
 

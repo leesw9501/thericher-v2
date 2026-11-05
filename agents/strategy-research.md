@@ -7,10 +7,15 @@ Updated Nov5UTC20:05. Directutility proposal was consumed in one CPU fit:
 its fixed controls. No frozen criterion rescue. Chronos2 full-coverage actual
 CUDA8epochs488updates selected best0; forecast worse than persistence,0books.
 Detailed evidence belongs in HANDOFF/Engine, not a source-profitability claim.
-Singer owns a distinct small pure turnover-aware action-persistence/no-trade
-mechanism with invented native tests, no market/GPU/financial authority:
+Singer's turnover-aware action-persistence/no-trade offer is CLOSED17native
+tests/fullRuff, kernel69a1bd/SOURCE6558c0; actual singleW25 DTO/series-step and
+costed terminal reset delivered directly to Engine:
 A/research/current-turnover-aware-policy-offer-20261105-v1.
-No source-only offer is a currently running fit or automatic Paper model swap.
+Engine's first wrong-metadata attempt failed0books; Parent159ec corrected intake
+separately and completed1readout4books/0fits. MemoryON.5533% versusOFF.3067%,
+turnover.10612 versus.13821; exposure differs, signW25stronger3.7377%. No alpha
+or Paper swap claim; exact Engine evidence/limits in HANDOFF. Pure offer's6book
+proposal never expanded the Engine's actual4book frozen cap. No active Singer.
 
 ## Prior Consumed Handoff
 

@@ -51,9 +51,13 @@ Updated Nov5UTC20:05 / Nov6KST05:05.
    Chronos2 new post-checkpoint full-coverage CUDA study COMPLETE_FORECAST_ONLY:
    8epochs488updates/56.18s/best0, worse than persistence,0marketbooks; all
    containers/Jobs/lease closed. API and qualified source refs in HANDOFF.
-   Singer prepares distinct pure turnover-aware persistence/no-trade-band offer:
-   A/research/current-turnover-aware-policy-offer-20261105-v1.
-   No current optimizer, failed-criterion regrade or automatic Paper model swap.
+   Singer offer CLOSED17tests; Parent159ec continuous-book metadata-corrected
+   scope completed1readout4books/0fits after old4fc failed0books. MemoryON.5533%
+   versusOFF.3067%, lowerturnover; exposure differs/no alpha/Paper swap.
+   IntradayData3716c READY same30/120keys24sessions57120/14280/14280rows. Ohm
+   prepares NEW fixed2fit GRU family; no optimizer launched. Actual source/native/
+   GPU headroom and positive MSE original owner closure precede launch:
+   A/research/current-intraday-gru-window30-120-20261105-v1.
 6. Actual Paper query17:20 holdings4/noINTC; history18:10 terminal response0rows.
    Both as-of/read-only and independent of local custody; NOT exact original
    intent/fill/owned/PnL or no-historical-request proof. Sources7f2/05f, exact
@@ -73,6 +77,10 @@ Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original ba
 emergency/token and pending duties. UI8787 only; Korean8788 not deployed.
 Current ready/owned/due lives in agents/orchestration.md. Continue disjoint work,
 no foreground market waiting or new follow-up chain.
+Original MSE20:40..21:00 is next actual owned opportunity, not a new schedule.
+Source-pinned public pair reader is ready5invented tests; it does not prove
+financial effects, root exit or independently verified observer restoration:
+A/execution/current-mse-nov5-public-pair-reader-20261105-v1/README.md.
 
 ## Verification And Completion
 

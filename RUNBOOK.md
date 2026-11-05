@@ -80,6 +80,19 @@ no dummy GPU/completed-fit reruns. Saved direct consumer bootstrap-r1 PASS,
 Next pure turnover-aware policy offer is a preparation, not actual training.
 Reused DEV is never independent alpha/PaperPnL or automatic model deployment.
 
+New turnover consumer actually completed in separately frozen metadata-corrected
+Source159ec after old4fc software failure0books; old source/debits unchanged:
+D:/thericher-v2/model-artifacts/research/current-w25-continuous-metadata-bound-replay-20261105-v1/PARENT-INTEGRATION.json.
+1readout4books/0fits/bothCIDsclosed20:31. Never replay consumed run.py commands.
+Intraday30/120 source3716c DATAREADY24sessions/57120/14280/14280rows; Ohm's new
+fixed2fit GRU code preparation is not actual training. MSE20:40..21:00 has scoped
+priority before actual GPU launch; fresh native/VRAM/source/owner facts required.
+
+Original MSE exact public technical pair reader, only after real opportunity:
+D:/thericher-v2/model-artifacts/execution/current-mse-nov5-public-pair-reader-20261105-v1/README.md.
+Five invented join tests/Ruff and prewindow NOT_DUE passed. It reads no private
+custody and cannot prove root exit, restored observer or any financial effect.
+
 OriginalData83963/source/window remains unchanged. Potential300second token
 gate versus4minute observer collision has timing-only evidence; no new observer
 preparer installed and no token/timing reset. Current decision in orchestration.

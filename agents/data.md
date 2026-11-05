@@ -2,6 +2,17 @@
 
 ## Current Work
 
+Lorentz cached-data preparation is READY/closed20:30:44 (no network/training/GPU)
+for intraday GRU: window30 versus120 canonical1m bars, SAME causal decision keys
+and within-session nextOPEN->60minuteOPEN target. Actual24 usable pre-Oct30
+sessions/16FIT4INNER4DEV,57120/14280/14280rows. Source3716c49c/producerf7011991;
+Parent35refs verified. Synthetic/all-label parity and816sampledwindows passed;
+onecachedbuild, initial preflight failure preserved,61.22conservative activeSUM.
+Missing stays missing and reserved labels stay closed:
+A/data/current-intraday-window30-120-training-readiness-20261105-v1.
+This DATAREADY is not model training, observed arrival/finality or Paper input
+promotion. Engine owns distinct fixed2fit contract and actual GPU launch.
+
 Updated Nov5UTC20:05. Post-checkpoint Open60->4 consumer data is DATAREADY:
 A/data/current-postcheckpoint-open4-data-readiness-20261105-v1/READY.json.
 Source5be6238e/manifestca12e0c4, FIT969/INNER340/DEV680,23sessionpurges;

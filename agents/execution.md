@@ -6,12 +6,28 @@ Updated Nov5UTC18:51 / Nov6KST03:51. A=D:/thericher-v2/model-artifacts.
 Current actual deployment: HALF24ab/f611 original pair18:48; INTC2dab/8fd686
 original EXIT18:16. Exact adoptions in HANDOFF. Consumed entries/updates never
 replayed. Same bank/B10/pending/model25c8/old exits, no new financial effect.
-Volta prepares public24ab reader compatibility. Private233 remains withheld,
+Volta's public24ab reader is READY11tests/source-only CLI/fullRuff; no actual
+future read or active Volta worker. Euclid's source-only self-caller repair is
+CLOSED/NOT_READY:27focusedchecks/Ruff but actual singleprobe withheld
+OWN_ANCESTRY_CHILDREN,0private/0CID. Exact failed role/child set not retained;
+future diagnostic-only helper8checks is not integrated or real ownership proof:
+A/execution/current-intc-custody-self-caller-repair-20261105-v1.
+No actual private caller plan. Five public-source-pin policy delta is explicit,
+not adopted. No replay, actor waiver or retrospective null-source identity.
+Private233 remains withheld,
 allclosed/0private/no READY. Source audit denial fixed, controller+3null-source
 actors were exact observation blockers, not asserted current writers.
 Actual17:20 holdings4/noINTC and18:10 terminal history0rows are separate as-of
 broker observations; no originalintent/fill/owned/settledcash/PnL inference or
 reservation release. No new order placed by this recovery.
+
+Original MSE exit actual due Nov5UTC20:40..21:00. Parent source-only checked
+Task action13e04e11/release6e5d4ea9, pythonw/0instances beforewindow; no Run.
+Dedicated stdlib technical pair reader passes5inventedjoins/Ruff; prewindow
+NOT_DUE,0actualpairreads/no private/broker/Taskeffects:
+A/execution/current-mse-nov5-public-pair-reader-20261105-v1/README.md.
+It cannot prove root exit, observer restoration or financial outcomes, and
+does not grant GPU/private-custody admission.
 
 ## Closed Evidence
 
