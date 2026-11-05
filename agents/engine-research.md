@@ -2,7 +2,7 @@
 
 ## Current Work
 
-Updated Nov5UTC10:48 / KST19:48. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
 OOF family is now COMPLETE_VERIFIED / DEVELOPMENT_FAIL, Parent integrated:
 A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
 Source24bb232f:3folds xHGB/GRU/TCN plus1gate,10completed/11attempted.
@@ -17,14 +17,21 @@ Net25growth1.8178%/DD0.6433% equals third, so incremental-growth test FAIL.
 No changed threshold/seen-DEV rerank or Paper swap. More epochs not justified
 by this result. Adaptive/conditional data and OOF-to-final shift stay explicit.
 
-Current Rawls package is conditional cached Chronos2 Open60->Open4 comparison:
-A/research/current-net25-chronos2-open60-development-20261105-v1.
-Dispatched10:35:46UTC, elapsed3600/SUM1200 including120prep,0fits/one799-key
-archive/6books18views, no inference retry/download/private/broker/Paper swap.
-Checkpoint95a9710e/weightddcda3c7 official Oct30,2025 predates all targets;
-unknown corpus/context remains. Actual native SDK/weight hash/cross-learning
-isolation/CPU-CUDA headroom precede market inference. Assignment is not actual
-GPU use. Rawls owns this resource coordination; no other numerical worker claimed.
+Rawls' Chronos2 comparison is CLOSED; current assigned work is CPU-only actual
+minute-rule benchmark from Popper's native fed81602 offer:
+A/research/current-native-minute-fixed-rule-development-20261105-v1.
+Two fixed ORB15/RSI14-VWAP rules, next d+1OPEN->d+11OPEN, first eligible lot per
+symbol/session, .5/17 fixed slots,25bps eachleg/10legacy/30stress. Only named
+pre-Oct30 all17complete dates selected from metadata before targets; excluded
+keys/support retained. Small reused adaptive development, not independent alpha.
+No fits/GPU/parameter search/old target release or Paper changes. Assignment
+does not establish an actual market readout.
+
+Harvey owns synthetic-only supervised Chronos2 adaptation readiness:
+A/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
+At most2invented updates/one training attempt, real native train/INNER curve/
+safe best-checkpoint restore/parser, no market fits/forecasts/readout. Actual
+headroom and native SDK must qualify; no actual GPU start yet evidenced here.
 
 Old f3e1 unavailable, maskedpreflight, r1mixed-device failure and r2nativefixture
 failures remain immutable with all debits. McClintock model service hit capacity;
@@ -36,6 +43,19 @@ A/review/current-net25-gate-mixed-device-recovery-20261105-v1/verdict.json.
 
 ## Completed Current Results
 
+- Chronos2 df3a7570 CLOSED DEVELOPMENT_FAIL/0fits/one799archive/25forwards:
+  A/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
+  ActualCUDA forecast0.8088s/peak519416832bytes; batch32 native CPU0.1829s/
+  CUDA0.0304s,6API/real sourceCSV->SDK->proposal parser and independent-group
+  future-mutation invariance CPU+CUDA passed. Net25growth-1.6332%/DD2.0660%,
+  half0.8346%/third1.8178%; no tuning/fusion rescue.36Jobs/3CIDs/leaseclosed,
+  340.53SUM/1200,1825.23elapsed/3600,closed11:06:11UTC. Checkpoint before all
+  target dates, but corpus/context/ratio-not-expectation limits remain. This
+  standalone failure does not establish that supervised adaptation cannot work.
+- Minute-rule offer fed81602 source-only READY/33native checks/Ruff;
+  Parent five independent invented parse/causal cases passed,0market payloads:
+  A/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
+  Source-safe exact metadata roots/provisional clocks/masks remain explicit.
 - Frozen-third f0f CLOSED17native/12paritychecks, all799 half/TCN/third forecasts
   bitwise equal,0fits/readouts/GPU/all actors closed:
   A/research/current-net25-fixedthird-frozen-shadow-preparation-20261105-v1/API.json.
@@ -92,8 +112,9 @@ evidence without dated provenance/pretraining-scope qualification.
 
 Breadth: distinct mechanisms only with finite hypothesis/cost/availability/
 window/seed budget; no repeat completed HGB/GRU/TCN for GPU utilization.
-Depth: maskedOOF fusion closed without incremental gain. Current distinct
-foundation Open-path inference may fail; do not rescue by seen-DEV tuning.
+Depth: maskedOOF fusion and standalone foundation Open-path inference closed
+without incremental gain. Synthetic-only trainable adaptation readiness is a
+distinct mechanism, not permission to repeat zero-shot or seen-DEV rescue.
 Training curves/earlystop/checkpoints remain available in new trainable scopes;
 no old immutable epoch cap becomes a global rule.
 Data native minute history is a useful later input, not automatic release of

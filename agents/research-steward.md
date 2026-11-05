@@ -2,14 +2,15 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC10:48 / KST19:48.
-Rawls owns conditional Chronos2 resource coordination, dispatched10:35:46UTC:
-D:/thericher-v2/model-artifacts/research/current-net25-chronos2-open60-development-20261105-v1.
-Zero fits/one799-key Open60/Open4 inference archive/one checkpoint-window,
-elapsed3600/SUM1200 includes120prep; no market inference retry/downloads.
-Native real SDK/weight hash/cross-learning isolation and CPU-CUDA headroom
-checks precede actual inference. No actual GPU launch yet evidenced here.
-No other numerical GPU worker claimed; user apps are not a permission hold.
+Updated Nov5UTC11:18 / KST20:18.
+Chronos2 numerical campaign is CLOSED/GPUlease released; no repeat inference.
+Rawls now assigned CPU-only minute-rule benchmark,0fits/GPU:
+D:/thericher-v2/model-artifacts/research/current-native-minute-fixed-rule-development-20261105-v1.
+Harvey owns synthetic-only Chronos2 supervised-adaptation readiness and GPU
+coordination, at most2invented optimizerupdates/one attempt/0marketfits:
+D:/thericher-v2/model-artifacts/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
+Actual native train/checkpoint/INNER/parser plus measured headroom required.
+Assignment is not actual GPU use; no other numerical GPU worker claimed.
 
 Completed OOF training is COMPLETE and GPUlease released:
 D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
@@ -38,6 +39,12 @@ Claude falsification/leakage challenge belongs to new interpretation.
 
 ## Completed Training / Do Not Repeat
 
+- Chronos2 df3a CLOSED actualCUDA799rows/25forwards/0fits,forecast0.8088s,
+  peak495.35MiB allocated/562MiB reserved; nativebatch32CPU0.1829/CUDA0.0304s.
+  Six actual native API calls/group-mutation checks passed; Net25-1.6332%/
+  DD2.0660%,FAILincrementalgrowth.36Jobs/3CIDs/GPUlease closed11:06:11UTC,
+ 340.53SUM/1200 and1825.23elapsed/3600. Do not repeat for occupancy:
+  A/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
 - TCN3c24 CLOSED32CPUepochs/3744updates/28.065s/best8 restored,
   207checks/allJobs+2CIDsclosed/noGPUlease. Cumulative1059.27active incl798.10old.
   Native same-shape CPU6.53ms vsCUDA219.6ms; CPUchosen for throughput, not a

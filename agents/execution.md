@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Updated Nov5UTC10:48 / KST19:48. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new actual acceptance/fill/current-owned/PnL proven. Preserve ONE original
 initialB/10/F9 UNKNOWN-HELD/all pending/costs/losses/reservations/old exits.
@@ -85,14 +85,18 @@ Never replay consumed installers/enable/readback receipt writers to inspect.
   Parent retained public argv hash match proves five-atom context ls --format
   metadata syntax (official Docker docs), not financial permission/known owner:
   A/execution/current-original-f9-readonly-recovery-readiness-20261105-v1/PARENT-PUBLIC-CLI-SHAPE.json.
-  Maxwell now owns a NEW narrow source/native-instance/argv capability and
-  ONE fresh five-phase actual RO attempt, not replay/reset of consumed r4:
-  A/execution/current-f9-docker-context-metadata-capability-20261105-v1.
-  Real Claude challenge/negative cases first. Unknown/mutating actor guards,
-  exact joins/stability/no locks/recovery remain. R4 2074.2873+R5 conservative
-  305.426 (old180 localcap failed) carried into new4000familySUM/1800elapsed.
-  Oldemptyhistoryquery/independentoriginalsend/brokerID remainsunknown,
-  F9UNKNOWN-HELD. No new broker query/credentials/reservation release.
+  R6 Sourcee8da CLOSED_WITHHELD:22classifierchecks/native; actual RO guest
+  first4admissions passed, after_remove metadata exit1 withheld projection:
+  A/execution/current-f9-docker-context-metadata-capability-20261105-v1/v2/CLOSURE.json.
+  AllJobs/ownCID positively closed,0credentials/broker/Tasks,3782.00familydebit.
+  No matching context-list actor appeared in actual run; runtime rule exercise
+  NOTproven. Source defect: removed ownCID forwarded to final census/inspect.
+  Parent R7 pure correction18checks/Ruff passed; same-path native precreate
+  denied own UV/venv launch chain, then nested direct-launch root locator
+  failed preSource. Technical cap exhausted/allcommandsjoined/0newprivateguests:
+  A/execution/current-f9-after-remove-forwarding-repair-20261105-v1/direct-native-r1/CLOSURE.json.
+  No native qualification/furtherread/replay/reservation release; old failures
+  and4491.99conservative familydebit remain. Originalsend/brokerID UNKNOWN.
 - Consumed accountreadonly6e6a/2a55:3venues/4holdings/positive provisionalfunds,
   1RAM-onlyPOST4GET/0retry. Not owned attribution/fullrisk/settledcash/equity/
   PnL/F9release. Do not repeat for reporting.
@@ -100,6 +104,15 @@ Never replay consumed installers/enable/readback receipt writers to inspect.
   No claim current holdings. HEAD501 is unsupported method, not app health.
 
 ## Scoped Deferred Work
+
+Maxwell current SOURCE-ONLY financial native compatibility preparation:
+A/execution/current-paper-context-listing-native-compatibility-preparation-20261105-v1.
+SOURCE-IMPACT.json at prior R6 root proves RAW8fd/INTCb63/HALF3ee2 omit the
+exact context-ls argv role; actual effect-time fault UNKNOWN. Adapter must
+preserve all actual native instance/source/frame/mount/account/risk/request/
+bank/exit checks. Deliver invented real guard tests and exact future migration
+plan before any new deployment. Installed sources/claims/Tasks remain unchanged;
+R6 readonly capability never silently upgrades them. No further F9 read queued.
 
 Fixedthird f0f has only a nonfinancial CPU/networknone shadow Task c96,
 ACTUALLY installed Nov6UTC13:45/hard13:50/separate fullXMLACL readback10:28:26:

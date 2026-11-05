@@ -2,13 +2,13 @@
 
 ## Current Reality
 
-Updated Nov5UTC10:48 / KST19:48.
+Updated Nov5UTC11:18 / KST20:18.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No new actual acceptance, exact fill, current-owned reconciliation or PnL proven.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Read AGENTS.md, NEXT_CODEX_GOAL.md, RUNBOOK.md and active role stateboards.
-Historical detail remains in Git through63ae332d and immutable external evidence.
+Historical detail remains in Git through04a047e0 and immutable external evidence.
 
 No operator decision pending. Private no-cost Data/Research/KIS Paper delegated.
 Never read/route KIS_LIVE_* or output secrets/account-order IDs/raw private values.
@@ -83,28 +83,14 @@ No Task.Run/broker/private/credential calls during these installations.
   207checks/Ruff/allJobs+2CIDsclosed; cumulative1059.27active incl798.10lineage.
   Parent66refs/60unique stable at this integration:
   A/research/current-net25-tcn-first-market-run-20261105-v1/API.json.
-- First chronological gate attempt f3e1/34ab CLOSED INPUT_UNAVAILABLE/NOT_EVALUATED:
-  fold supports482/482,336/480,83/227; 15independent source-mask checks.
-  One scalar adapter repaired, four native synthetic gate updates;0marketfits/
-  forecasts/readouts, no GPUlease, all Jobs/CIDs closed,758.76active retained.
-  A/research/current-net25-chronological-gate-development-20261105-v1/API.json.
-  McClintock's NEW explicitly masked OOF contract kept the same expert/fold/cost/
-  purge/stop/commonDEV hypothesis: retain full planned keys/missingness, no
-  imputation/outcome-based survivor selection; supervised training only eligible
-  feature+label-known OOF rows. New scope:
-  A/research/current-net25-masked-chronological-gate-development-20261105-v1.
-  After preserved preflight failures, r1 completed fold1HGB20trees and actual
-  CUDA GRU24epochs/864updates/7.249s, then CPU TCN failed before firstupdate:
-  initialized CUDA requires RNG capture even for a later CPU checkpoint.
-  Parent took over after an LLM capacity error. NEW explicit technical restart
-  preserved old failure/debits and reused both successful fits byte-for-byte.
-  Final Source24bb232f is COMPLETE_VERIFIED/DEVELOPMENT_FAIL:
+- Chronological masked OOF Source24bb232f CLOSED DEVELOPMENT_FAIL:
   A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
   10completed/11attempted (one zero-update failure),9852expertupdates/1650gate
   updates/64trees/13archives74batches/6books18views,13882FIT/1399INNER/799DEV.
   Actual CUDA GRUs/CPU TCN/gate; all3CIDs/Jobs/lease freshly positively closed.
   Gate INNER-best0 yields identical sign-slots to fixedthird:1.8178%/.6433%,
   no incremental growth, so gate NOTadopted. No final-expert refits/Paper swap.
+  Old source-mask/bootstrap/zero-update failures and debits stay immutable.
   Mixed-device native negative+positive RNG smoke passed with guard unchanged.
   Claude GO_WITH_LIMITS/e059cba4 in A/review/current-net25-gate-mixed-device-recovery-20261105-v1/verdict.json.
 - These results use adaptive reused Jan-Jul2026 DEV, not independent alpha,
@@ -123,19 +109,34 @@ No Task.Run/broker/private/credential calls during these installations.
   A/research/current-net25-fixedthird-frozen-shadow-preparation-20261105-v1/API.json.
   Shadow c96 actually installed above; neither bundle prep nor Task installation
   is future publication, financial admission or a change to fixedhalf.
+- Chronos2 Open60/Open4 Source df3a7570 CLOSED DEVELOPMENT_FAIL:
+  A/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
+  Actual CUDA799rows/25forwards/0fits, forecast0.8088s/peak519416832bytes;
+  real batch32 CPU0.1829s/CUDA0.0304s. Net25growth-1.6332%/DD2.0660%,
+  half0.8346%/third1.8178%; no checkpoint/window/ensemble rescue or Paper swap.
+  Native6API/sourceCSV/SDK/parser and earlier-case invariance CPU+CUDA passed;
+  cross_learningFalse/unique date-symbol groups.36Jobs/3CIDs/lease closed.
+  340.53ownedSUM/1200,1825.23elapsed/3600, closed11:06:11UTC. Zero-shot
+  failure is not proof all foundation adaptation fails. Dated95a9710e checkpoint
+  precedes targets, unknown corpus/context/ratio-not-expectation remain explicit.
+- Minute-rule Sourcefed81602 source-only READY/33invented checks/Ruff:
+  A/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
+  Actual invented typed parser->ORB15 and RSI14/VWAP proposals,0market fits/
+  forecasts/readouts. Parent separately checked five pure causal/parser cases
+  without overwriting its immutable tests. Numerical scope now delegated below.
 
 ## Current Owners And Recovery
 
-Parent owns integration/Git. Data/OOF/tree/shadow preparation CLOSED.
-Rawls owns one conditional Chronos2 Open60->Open4 development comparison and
-GPU coordination, dispatched10:35:46UTC, not yet verified as actual inference:
-A/research/current-net25-chronos2-open60-development-20261105-v1.
-Cached checkpoint95a9710e/weightddcda3c7/Apache2 predates all Jan-Jul2026
-targets; exact official commit dates Oct30,2025. Corpus/context overlap remains
-unknown. ProposalSourcec2674620 is not a numerical result. Zero fits/one799-key
-archive/one checkpoint-window, no downloads/private/broker/Paper model swap.
-Actual native SDK, fresh weight hash, cross-learning separation and CPU/CUDA
-headroom checks precede market inference; keep elapsed3600/SUM1200 incl120prep.
+Parent owns integration/Git. Completed numerical workers are not rerun.
+Rawls now assigned first actual CPU-only minute-rule cost-aware benchmark:
+A/research/current-native-minute-fixed-rule-development-20261105-v1.
+Two frozen rules/one market readout, pre-Oct30 metadata-complete sessions only;
+no reserved release/fits/GPU/parameter search. Assignment is not a result.
+Harvey owns synthetic-only Chronos2 supervised-adaptation readiness and GPU
+coordination, at most2invented optimizerupdates/one training attempt/0marketfits:
+A/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
+Actual native train/INNER loss/checkpoint restore/parser must qualify before a
+separate market campaign. No current GPU use claimed from this assignment.
 Aquinas publicreader8f5f6f56 and current-custody final-r2 Source218f93b0 READY:
 A/execution/current-net25-current-custody-reader-readiness-20261105-v1/final-r2/CLOSURE.json.
 FullRuff/8groups/real finalSource Linuxnetworknone/allRO/fivephases/12Jobsclosed.
@@ -150,14 +151,27 @@ Parent matched retained public argv hashes to exact five-atom
 docker context ls --format <opaque-template>, confirmed read-only command
 syntax in official Docker docs. This is not all-Docker or ownership permission:
 A/execution/current-original-f9-readonly-recovery-readiness-20261105-v1/PARENT-PUBLIC-CLI-SHAPE.json.
-Maxwell owns a NEW narrow source/native-instance/argv-attested metadata
-capability and one fresh five-phase RO attempt, not replay/reset of r4:
-A/execution/current-f9-docker-context-metadata-capability-20261105-v1.
-All other unknown/mutating actors, private joins and stability checks remain.
-R4 2074.2873 plus R5 conservative305.426 debit (old180 localcap failed) retained
-inside new4000 familySUM/1800elapsed. Claude challenge/native negatives first.
-No current actual reader result or broker authority inferred from assignment;
-missing original evidence cannot release F9 UNKNOWN-HELD.
+R6 Sourcee8da7bee CLOSED_WITHHELD:actual RO guest/first4admissions passed,
+after_remove metadata exit1 withheld projection. AllJobs/ownCID positively
+closed,0broker/credentials/Tasks.22classifierchecks; no matching context-list
+actor appeared, so actual exercise of new metadata rule is NOT proven.
+A/execution/current-f9-docker-context-metadata-capability-20261105-v1/v2/CLOSURE.json.
+Source defect is transport retaining removed ownCID -> Admission forwards it
+-> legacy census re-adds removedCID to inspect. Not a proven external writer.
+Parent R7 pure correction18checks passed, but same-path native was denied on
+its UV/venv launch chain beforecreate. Nested direct-launch continuation then
+failed root locator before Source/native; technical cap exhausted, no retry:
+A/execution/current-f9-after-remove-forwarding-repair-20261105-v1/direct-native-r1/CLOSURE.json.
+All commands joined/0newprivateguests,4491.99conservative familydebit retained.
+R7 is NOT native-qualified; F9 UNKNOWN-HELD/send/brokerID unknown unchanged.
+
+Maxwell now owns source-only native financial compatibility preparation:
+A/execution/current-paper-context-listing-native-compatibility-preparation-20261105-v1.
+RAW8fd/INTCb63/HALF3ee2 are SOURCE_AFFECTED by missing context-list argv rule;
+actual effect-time fault remains unknown. No installed source/Task/claims mutated.
+Deliver exact native guard tests/migration plan first; source preparation never
+silently updates deployed guards or releases reservations. No further F9 read
+queued; prioritize actual Paper execution compatibility over repeated old reads.
 Closed Strategy/Infra/review roles are not permanently running LLMs.
 Current status/callback pointers live in agents/*.md.
 
@@ -184,10 +198,13 @@ Missing or early outcomes stay UNKNOWN; no Task-exit/latest-file fill inference.
 
 Full C authority: A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
 20239PASS/26knownWindowsSKIP/created8of8[20265items]/native+helper0/guardedcleanup.
-1437 protected pins+AGENTS rechecked10:48 unchanged; Ruff PASS10:50,
-four Compose(.env.example) PASS09:52 on the same protected configuration.
-Parent four completed research packages:266structured refs/246unique stable
-hashes PASS,0numerical reruns/private reads. D code has its own
+1437 protected pins+AGENTS rechecked11:21 unchanged; fresh Ruff/four
+Compose(.env.example) PASS11:20 on the same protected configuration.
+Parent four completed research packages:266structured refs/246unique stable;
+Chronos+minute readiness235refs/153unique stable PASS,0numerical reruns/private
+reads. Parent attempted pytest on the executable minute-check script:0collected,
+not a test pass; original33native checks and independent5pure checks apply.
+D code has its own
 native/focused proofs; C tests do not validate external code. R1/R2 stay withheld.
 Use uv --no-env-file; never implicit .env. Leave unrelated %SystemDrive%/ alone.
 Company outcome remains unfinished until actual required financial runtime

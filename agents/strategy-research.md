@@ -2,7 +2,7 @@
 
 ## Current Handoff
 
-Updated Nov5UTC10:48 / KST19:48. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
 Rawls' Chronos2 Open-path proposal c2674620 is CLOSED and consumed by a
 separately scoped Engine campaign, not a Strategy GPU worker:
 A/research/current-net25-public-model-open-forecast-readiness-20261105-v1/READY.json.
@@ -15,14 +15,19 @@ No downloads/inference/GPU/market payload in that proposal.120worker upper,
 pre-first-record full elapsed not retained; no retroactive complete clock pass.
 Parent delegated actual Engine native/inference/readout separately10:35:46UTC.
 
-Popper now owns synthetic-only native-minute rule consumer readiness:
-A/research/current-native-minute-rule-consumer-readiness-20261105-v1.
-Concrete next Engine consumer: two fixed intraday opening-range/RSI-VWAP
-mechanisms, exact typed Data key/mask/clock interface and causal next-open
-proposal. Metadata before reservedOct30 only; no market fit/forecast/readout,
-GPU/Docker/network/Paper authority. Real invented parse-return/causality smoke
-and finite contract must qualify before a separately frozen numerical study.
-Elapsed1800/SUM450 from actual dispatch; source/test/IO/cleanup charged.
+Popper CLOSED minute-rule consumer readiness Sourcefed81602/33native checks/
+Ruff/62refs,0market/GPU/financialeffects. Parent235refs/153unique stable across
+this offer and completed Chronos, plus five independent pure cases passed:
+A/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
+627.385elapsed/1800,190conservativeSUM/450,allcommandsjoined. Claude auth
+unavailable, not agreement. Exact typed Data key/mask/provisionalclock/unknown
+CA/PIT/finality contract stays explicit. Rawls now owns separate Engine market
+benchmark, not Strategy fitting or evaluation authority.
+
+Chronos2 Open-path proposal was consumed: actualCUDA799forecasts/25forwards,
+Net25growth-1.6332%/DD2.0660%,FAIL versus half/third. No proposal/refit rescue.
+Harvey separately investigates synthetic-only native supervised adaptation,
+not another standalone zero-shot run or current profitable model.
 
 Kant's source offer is CLOSED:
 A/research/current-net25-chronological-gate-candidate-20261105-v1.

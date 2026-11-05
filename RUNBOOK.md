@@ -2,7 +2,7 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC10:48 / KST19:48. Company outcome UNFINISHED.
+Updated Nov5UTC11:18 / KST20:18. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. Full current reality is HANDOFF.md.
 No actual acceptance/fill/current-owned/PnL inferred from installation.
 
@@ -44,9 +44,17 @@ Shallow OOF tree a1de CLOSED1CPUfit/0expertrefits/0retry, Net25growth0.4900%/
 DD0.1788%,FAILincrementalgrowth/all3CIDsJobsclosed:
 D:/thericher-v2/model-artifacts/research/current-net25-oof-shallow-tree-development-20261105-v1/API.json.
 See CLOCK-INTERPRETATION.json: runner25.69s/SUM54.04s, fullscope UNKNOWN, no
-retroactive complete budget pass or fit permission. Rawls now owns conditional
-cached Chronos2 Open60/Open4 campaign, actual inference/GPU not yet evidenced:
-D:/thericher-v2/model-artifacts/research/current-net25-chronos2-open60-development-20261105-v1.
+retroactive complete budget pass or fit permission. Chronosdf3a is now CLOSED
+actualCUDA799/25forwards/.8088s/peak495.35MiB,Net25-1.6332%/DD2.0660%,FAIL;
+all36Jobs/3CIDs/GPUleaseclosed, no repeat:
+D:/thericher-v2/model-artifacts/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
+Rawls assigned actual CPU-only minute-rule cost-aware benchmark:
+D:/thericher-v2/model-artifacts/research/current-native-minute-fixed-rule-development-20261105-v1.
+Popper fed81602 offer33nativechecks/0market; Parent independent5pure cases:
+D:/thericher-v2/model-artifacts/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
+Harvey synthetic-only native Chronos2 supervised-adaptation readiness/atmost2
+invented updates, no market fit/GPU-use claim merely from assignment:
+D:/thericher-v2/model-artifacts/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
 ffEA Data closed172GET/22213added; NEWf13a remaining22 closed79GET/
 7677newrows/189376known/26all17complete. No additionalwirequeued.
 D:/thericher-v2/model-artifacts/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
@@ -70,12 +78,17 @@ F9 r4 before_create PASS/before_start denied a new Docker instance; one RO
 container created/neverstarted/removed/positivelyabsent,0private/query:
 D:/thericher-v2/model-artifacts/execution/current-original-f9-readonly-recovery-readiness-20261105-v1/parent-current-read-r4/FIRST-CAUSE.json.
 Parent retained public argv hashes identify context ls --format metadata,
-not an owner proof/all-Docker exemption. Maxwell owns NEW narrow source/native
-instance/argv capability + ONE fresh RO attempt, not consumed r4 replay:
-D:/thericher-v2/model-artifacts/execution/current-f9-docker-context-metadata-capability-20261105-v1.
-No actual result yet; all other guards/exactjoins/stability unchanged. Keep
-originalsend/brokerID UNKNOWN, B10/reservations/exits; never kill unrelated apps,
-releaseUNKNOWNreservation, readcredentials/brokerquery or recover via observe().
+not an owner proof/all-Docker exemption. R6actual first4admissions passed but
+after_remove re-inspected the removed ownCID and withheld projection; allJobs/
+CIDclosed,0broker/credentials/Taskchanges. R7pure18checks passed, same-path
+native denied own UV/venv launch chain, nested direct-rootcopy failed before
+Source/native. Cap exhausted/0newprivateguests; NOTnative-qualified/no moreread:
+D:/thericher-v2/model-artifacts/execution/current-f9-after-remove-forwarding-repair-20261105-v1/direct-native-r1/CLOSURE.json.
+Maxwell now source-only financial compatibility/migration-plan preparation:
+D:/thericher-v2/model-artifacts/execution/current-paper-context-listing-native-compatibility-preparation-20261105-v1.
+RAW8fd/INTCb63/half3ee2 source affected, actual fault UNKNOWN. No installed
+guard/Task/claims mutation or automatic activation. Keep originalsend/brokerID
+UNKNOWN, B10/reservations/exits; never kill apps/releaseUNKNOWN or observe().
 
 INTC15:25UTC A+B readout5c26 actuallyinstalled, AASOF independent of Bdenial;
 RAW13:30point/14:31entry,INTC15:10entry and allolderexits unchanged. Details and

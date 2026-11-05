@@ -2,7 +2,7 @@
 
 ## Current Work
 
-Updated Nov5UTC09:21 / KST18:21. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
 Archimedes CLOSED remaining22 f13a056e revision-v2:
 A/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
 79acceptedGET/0failed/oneinitialPOST/0retry/0recovery,7677newrows;
@@ -13,10 +13,11 @@ Remaining masks:reservedOct30 2730,Nov2 160,Oct7 4. No target release.
 718.74SUMactive/1200,worker209.01s/2.646secGET. Initial gap selector failed
 beforewire; revision-v2 retained old consumed marker and tested301prefix/suffix
 cases, no old outcome regrade. No further wire queued. Future83963 unchanged.
-Popper owns disjoint synthetic-only minute-rule consumer readiness:
-A/research/current-native-minute-rule-consumer-readiness-20261105-v1.
-Metadata/pre-Oct30 masks only, no market fits/forecasts/evaluation or reserved
-target release. Actual future numerical consumer needs its own frozen scope.
+Popper minute-rule consumer fed81602 is CLOSED33native/0market checks:
+A/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
+Rawls now assigned separate actual CPU-only fixed-rule benchmark, metadata-
+complete pre-Oct30 sessions only; no reserved release or source-grade upgrade.
+A/research/current-native-minute-fixed-rule-development-20261105-v1.
 
 ## Current Coverage
 
