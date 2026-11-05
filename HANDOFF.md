@@ -2,13 +2,13 @@
 
 ## Current Reality
 
-Updated Nov5UTC02:56 / KST11:56.
+Updated Nov5UTC05:27 / KST14:27.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No new accepted order, exact fill, current owned reconciliation or PnL is claimed.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Read AGENTS.md, NEXT_CODEX_GOAL.md, RUNBOOK.md and current role stateboards.
-History is Git through9a96e0f2 and immutable artifacts, not a second diary.
+History is Git throughbe9ddb52 and immutable artifacts, not a second diary.
 
 No operator decision pending. Private no-cost Data/Research/KIS Paper authority
 is delegated; never read/route KIS_LIVE_*. No secrets/account/order identifiers/
@@ -118,10 +118,18 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   readbacks03:14 checked17sessions*5TF/relative hashes/semantic keys/masks,
   48749M1known/0HTTP/model, not cwdhashing.17-axis not17complete stocks.
   No duplicate GET.
-  Archimedes assigned source-qualified existing7+missing10 canonical join:
-  A/data/current-native17-historical-source-join-20261105-v1.
-  300active/1800elapsed,0HTTP, retain source/basis/calendar/masks/conflicts/
-  custody; no current result or old reserved-target release inferred.
+  Source-qualified joindedbbd then retained45successorfe793 are CLOSED:
+  A/data/current-native17-retained45-recovery-20261105-v1/CALLBACK.json.
+  17550retained minutes typed-admitted/45streams,159486known/32784missing,
+  29dates/19all17complete;0HTTP/conflicts/duplicates. Headerunknown107719/
+  capturemetadataunknown2413 preserved. Parent250refs/247unique stable and
+  independent29panels/145typedroles PASS.106.78active/618.17elapsed,
+  allJobsclosed. No PIT/CA/finality/targetrelease/Paper promotion.
+  Archimedes next offline Nov2existing7 binding, no reservedOct30 release.
+  Kant recentcontrols7ff4/c5d29 CLOSED9GET1POST0recovery: Nov4 AMD/SPY/QQQ
+  each120matchingrows; six Jan/Jun/Sep ETF pagesempty. Currentrouteworks,
+  not a global retention/30daylimit.83checks/allJobs+cacheclosed/66refs stable.
+  New8GET intermediateOctober scope assigned; future result not inferred.
 - Kant CLOSED HGB familyc31dd342/contract9eecee48:
  3CPUfits63/54/51iterations,12synthetic iterations/3forecasts/1fixedblend/
  18views/0retry. Net10bps PER SIDE growth: raw6.460%,indicator3.202%,
@@ -149,11 +157,27 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   Parent84refs stable. New forced-flat book, not cached RAW8.955/8.526.
   Nietzsche35bd learned-exit PREP failed checkpoint0 scheduler caller before
   updates;1nativecontext/0updates/0market/Job+CID+leaseclosed, not model failure.
-  NEW current-d1-learned-next-open-exit-development-20261105-v1 has bounded
-  technical repair then SAMEfrozenoffer1a688 numerical launch predelegated:
-  1fit/128maxepochs/earlystop20/20000updates/480fitseconds, strict source/native/
-  basis/rows/registry/resources first. No poststartACK or repeated old training.
-  No current marketfit/GPU worker claimed; hypothesis froze before rule outcome.
+  NEW current-d1-learned-next-open-exit-development-20261105-v1 Source20a8/
+  contract091d is CLOSED FAIL: CPU33epochs/best13/3828updates/11.502s,
+  INNERstop20,1fit/1archive/4books12views0retry. Net10growth3.2168%/DD4.8913%
+  vs same-book RAW3.6960%/DD5.4022%,131checks/allJobs/CIDs/GPUleaseclosed,
+  Parent70refs stable. Old failure/debits retained; no rerun or Paper swap.
+- NEW selective-entry Net25 campaign is COMPLETE_VERIFIED DEVELOPMENT_PASS:
+  A/research/current-cost-aware-selective-entry-development-20261105-v1/API.json.
+  Source7eaa8dc0/contractec9f39f7, Parent56absolute refs/54unique stable.
+  CPU HGB84trees/best64/0.159s; CUDA GRU42epochs/best18/4914updates/21.897s,
+  peak311.2MiB. INNER-best restoration, not convergence.2fits/2forecasts/
+  1fixedblend18views0retry,328closeout checks/allactors+GPUleaseclosed.
+  At25bps eachleg fixedblend growth0.8346%/DD0.8901%/turn2.6242, same-book
+  RAW-3.3688%/DD7.5669%,EW-5.5830%/DD8.4324%; activation/gross-matchedEW
+  growth0.1045%/DD0.5271%. Blend10/25/30bps1.2282/0.8346/0.7034%; RAW is
+  stronger at10bps. Low mean gross2.74%/adaptive reused DEV/unknown actual
+  account tariff: not independentalpha/PaperPnL/investment readiness.
+  Official general USonline25bp is a conservative research reference, not
+  verified API/account/Paperfee; old10bp studies stay immutable.
+  Nietzsche owns inference-only frozen-forward preparation, no refit/current
+  RAW8fd or INTCb63 hot-swap. Bacon prepares distinct absolute-Net25 TCN
+  synthetic offer, not an active GPU campaign.168.07active/263.83elapsed.
 - Nietzsche CLOSED1fac signed-payoff CUDA study:47epochs/329updates/best15,
  15.436s/494MB,2forecasts9views.7.161%/DD6.107% vs forced-flatRAW8.526%/7.180%,
   incrementalFAIL despite lower turnover/DD.14checks/all4CIDs/Jobs/GPUleases

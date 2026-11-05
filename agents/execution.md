@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Updated Nov5UTC03:02 / KST12:02. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC05:27 / KST14:27. A=D:/thericher-v2/model-artifacts.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new acceptance/fill/current owned-state/PnL is claimed. ONE initialB/10,
 F9 UNKNOWN-HELD, pending/costs/losses/reservations/ALL original exits persist.
@@ -46,10 +46,19 @@ Create/Enable consumed; NEVER replay. Financial admission/submit/fill/PnL UNKNOW
   acceptance/fill/owned categories AS-OF runtime, not independently current
   custody or OS Scheduler origin. No new mandatory producer pointer; old1ba
   pointer-gap interpretation superseded for public A only, old tests unchanged.
-  James assigned current-intc-current-custody-reader-readiness-20261105-v1
-  PREPONLY,180active1200elapsed: native exact book/plan/intent/fill joins,
-  network-none/allRO/relevantfinancial-writers/before-after stability required
-  at later actual activation. No actual private admission/read claimed.
+  B current-custody kernel29328 passed15native tests; capturehost3058 passed
+  9native tests + real networknone/allRO INVENTED Linux fixture. No actual
+  private admission/read. Exactjoins/relevantfinancial-writers/five phases/
+  before-after stability remain at later effect-time read.
+  A/execution/current-intc-current-custody-capture-host-20261105-v1.
+  Future composite15:25readout preparation877c passed9native/14mocked
+  Scheduler/Ruff/real GUI+Job closure, not installed:
+  A/execution/current-intc-after-entry-readout-preparation-20261105-v1.
+  A publishes before B and survives B denial. Known old3058 ancestor binding
+  does not admit the new composite/GUI. James owns NEW exact source-qualified
+  caller compatibility package, not per-PID/globalOS exemption; no private
+  opens during metadata preflight. Parent final activation/installation only
+  after actual source/native qualification. No current custody/fee/PnL claim.
 - Public readercd6e/95cd validates exact attempt/launch/child/terminal/closure
   source/hash/nativePID/birth/UTC/stability;Parent8invented cases PASS:
   A/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.

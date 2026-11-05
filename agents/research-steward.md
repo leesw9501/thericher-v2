@@ -2,18 +2,27 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC03:02 / KST12:02. Kant owns NEW D1rule common-book replay,
+Updated Nov5UTC05:27 / KST14:27. NET25 campaign7eaa/ec9f is CLOSED:
+CPU84trees/best64/0.159s; CUDA GRU42epochs/best18/4914updates/21.897s,
+peakallocated326269952B/reserved411041792B.328closeout checks/all workers/
+Jobs/CIDs closed/GPUlease released,168.07activeupper/263.83elapsed.
+A/research/current-cost-aware-selective-entry-development-20261105-v1/CALLBACK.json.
+Development-pass is lowexposure/reused-data only, not Paper PnL. No duplicate
+fit or utilization-only job. Nietzsche next owns inference-only frozen-forward
+preparation; Bacon prepares a distinct absolute-Net25 TCN offer, no market
+training predeclared/launched yet. GPU remains available under standing priority.
+
+Kant CLOSED D1rule common-book replay,
 0fits/4books12views/420active1800elapsed, strict exact-source/basis/full-row
 admission; fresh finalBacon20fe producer smoke, no cached RAWscalarcomparison.
 Kant rule8870/e402 CLOSED DEVELOPMENT_FAIL,0fits/4books12views/6Jobsclosed.
 Nietzsche old35bd native checkpoint0 failure closed1context/0updates/0market,
 Job/CID/exactGPUleaseclosed,67.52active/1194.42elapsed; no refund.
-NEW current-d1-learned-next-open-exit-development-20261105-v1 technicalrepair
-180active900elapsed then predelegated SAMEoffer1a688 finite1fit/128maxepochs/
-20000updates/480fitseconds/earlystop20/1800active3600elapsed, if actualsource/
-native/data/registry/resources qualify. One resource owner; measured CPU/CUDA
-choice/headroom, personalapps not permissionhold. No currentGPU/marketfit
-claimed, dummyutilization, duplicate completed training or Paper swap.
+NEW current-d1-learned-next-open-exit-development-20261105-v1 Source20a8
+completed1CPUfit33epochs/best13/3828updates/11.502s, INNERearlystop20.
+Measured native CPU beat CUDA for this small shape; not a permission hold.
+Primary incremental growth FAIL; all Jobs/CIDs/GPUlease closed, no refit.
+One resource coordinator retains measured headroom, not personal-app approval.
 Kant CLOSED preceding indicator-boosting resources.
 Parent owns integration/Git. Agent assignment is not proof of an active fit.
 Package research/current-h3-indicator-boosting-development-20261105-v1:

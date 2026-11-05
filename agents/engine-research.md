@@ -2,7 +2,32 @@
 
 ## Current Work
 
-Updated Nov5UTC03:02 / KST12:02. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC05:27 / KST14:27. A=D:/thericher-v2/model-artifacts.
+NET25 selective-entry campaign is COMPLETE_VERIFIED / DEVELOPMENT_PASS:
+A/research/current-cost-aware-selective-entry-development-20261105-v1/API.json.
+Source7eaa8dc0/contractec9f39f7; Parent56absolute refs/54unique stable.
+CPU indicator HGB84trees/best64/0.159s; actual CUDA GRU42epochs/best18/
+4914updates/21.897s/311.2MiB peakallocated. Best checkpoints restored using
+chronological INNER only; early stopping is not a convergence claim.
+Absolute eOPEN->e+3OPEN Net25 target, fixed half blend, positive predictions
+receive fixed .5/17 slots without renormalization. At25bps each leg, blend
+growth0.8346%/DD0.8901%/turnover2.6242 vs same-book RAW-3.3688%/DD7.5669%,
+EW-5.5830%/DD8.4324%; activation/gross-matched EW0.1045%/DD0.5271%.
+Blend10/25/30bps growth1.2282/0.8346/0.7034%; RAW is stronger at10bps.
+Mean gross only2.74%, adaptive reused DEV and unknown applicable tariff:
+not independent alpha, converged learning, Paper PnL or investment readiness.
+2fits/2forecasts/1fixedblend/18views/0retry,328closeout checks, all actors/
+Jobs/CIDs closed and GPUlease released.168.07active/263.83elapsed, old debits
+unchanged. Do not repeat these completed fits.
+
+Nietzsche owns NEW inference-only preparation:
+A/research/current-net25-frozen-forward-proposal-preparation-20261105-v1.
+Safe existing weights/normalizers -> causal prefix -> typed proposal, actual
+native restore/parity smoke; no new fit/readout/broker/Task/C/Git. Fresh dated
+forward input is a dependency, never a placeholder or current RAW hot-swap.
+Bacon owns a distinct absolute-Net25 TCN candidate/synthetic preparation only;
+no numerical campaign or GPU worker is inferred from the assignment.
+
 Kant CLOSED deterministic common-book D1 exit-rule campaign:
 A/research/current-d1-observed-exit-common-book-development-20261105-v1.
 Source8870bcef/contracte4025ff6/RESULT70912b79 DEVELOPMENT_FAIL. Strict full
@@ -29,16 +54,17 @@ Source35bd7627/offer1a688969 frozen before rule performance. Epochzero
 scheduler.step advancedlast_epoch before checkpoint0, rejected before any
 update:1nativecontext/0updates/0restoredforecasts/0market. Job/CID/GPUlease
 closed;67.52active/1194.42elapsed, old failure/debits unchanged.
-NEW minimal caller repair and same finite numerical offer delegated:
+NEW minimal caller repair and same finite numerical offer is now COMPLETE FAIL:
 A/research/current-d1-learned-next-open-exit-development-20261105-v1.
-Technical180active900elapsed/1context4syntheticupdates; if exact native/source/
-row/calendar/registry/resource-qualified,1neuralfit/128maxepochs/20000updates/
-480fitseconds/earlystop20/LRpatience6/earliestINNERbestincludingepoch0,
-1forecastarchive/1598shadows/4books12views/1alignment1readout0retry/
-1800active3600elapsed. No poststartACK, duplicate finished fit or Paper change.
+Source20a8aba2/contract091d59b5/OUTCOME8809f3b0, Parent70refs stable.
+Actual CPU33epochs/best13/3828updates/11.502s, INNER earlystop20; native
+same-shape CPU beat CUDA, not an environment/permission hold. At10bps each
+leg learned growth3.2168%/DD4.8913% vs same-book RAW3.6960%/DD5.4022%:
+incremental growth FAIL.1fit/1forecastarchive/1598shadows/4books12views/
+0retry,131postchecks and all actors/Jobs/CIDs/leases closed. No rerun/Paper swap.
 Chronological FIT2015..2023/INNER2024..2025, plannedmaturity+20sessionpurge;
 DEV47Jan-Jul2026 reused only. Own-window/state exit advantage vs fixedvertical,
-not Bellman optimum/learned RAWfusion. No current marketfit/GPU activity claimed.
+not Bellman optimum/learned RAWfusion. No current marketfit/GPU worker claimed.
 
 Kant CLOSED preceding non-neural indicator-boosting:
 A/research/current-h3-indicator-boosting-development-20261105-v1.

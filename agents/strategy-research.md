@@ -2,7 +2,21 @@
 
 ## Current Source Handoff
 
-Updated Nov5UTC03:02 / KST12:02. Bacon CLOSED two distinct source proposals:
+Updated Nov5UTC05:27 / KST14:27. Bacon's selective-entry source21d7b907 is
+CLOSED/native-ready41tests/Ruff/Parent22refs stable:
+A/research/current-cost-aware-selective-entry-candidate-20261105-v1.
+Absolute Net25 target and causal entry features consumed by actual Engine
+campaign7eaa/ec9f, now COMPLETE development-pass; not a fit/claim by Strategy.
+Engine328closeout checks/all actorsclosed; lowgross/reusedDEV/fee limitations
+remain. No old relative-score reinterpretation or current Paper hot-swap.
+
+Bacon owns NEW pure TCN expert/synthetic readiness proposal:
+A/research/current-net25-temporal-convolution-candidate-20261105-v1.
+Same absolute target/split/purge/cost-aware book, finite explicit window and
+trial/compute/earlystop contract. No market fit/forecast/eval/GPU launch yet.
+Consumer is Engine's next informed campaign, not an indicator team or platform.
+
+Bacon CLOSED two preceding distinct source proposals:
 - M1ea286/54tests: strict completed-minute/delayed-exit mechanism, daily-only
   input mismatch retained.180charged/1179.53elapsed, no market arrays/fits.
   A/research/current-short-swing-first-passage-candidate-preparation-20261105-v1/final/CALLBACK.json.

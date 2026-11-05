@@ -2,7 +2,28 @@
 
 ## Current Work
 
-Updated Nov5UTC02:55 / KST11:55. Archimedes CLOSED remaining-history acquisition:
+Updated Nov5UTC05:27 / KST14:27. Retained45 qualification is COMPLETE:
+A/data/current-native17-retained45-recovery-20261105-v1/CALLBACK.json.
+Sourcefe793118/RESULT6b25b77c/CLOSEDa0b194e2.45admitted streams/17550new
+typed minutes/0conflicts0duplicates/0HTTP. Joined successor159486known/
+32784missing across29dates;19sessions all17complete, not merely17-axis.
+Headerunknown107719/capturemetadataunknown2413 stay explicit. No PIT/CA/
+finality/target release or automatic model/Paper-input promotion.
+Parent250refs/247unique stable and independently exercised29actual panels/
+145typed roles: hashes/keys/masks/provenance PASS,159486known/19complete.
+106.78chargedactive/618.17elapsed, all native Jobs positively closed.
+
+Archimedes now owns ONE offline existing7 Nov2 binding successor:
+A/data/current-native17-nov2-existing7-binding-20261105-v1.
+Up to2730 previously published minutes only if source/calendar/value/basis
+compatible; preserve reservedOct30 separately, no imputation/newHTTP/targetrelease.
+Kant CLOSED recent-route controls7ff4/c5d29:9GET/1POST/0recoveries,
+Nov4 AMD/SPY/QQQ each120matching-date rows; six Jan/Jun/Sep ETF pages empty.
+83closure checks/Parent66refs stable/cacheownerclosed. This bounds exact
+requests, NOT a global retention/30day limit. A separate8GET intermediate-
+October control package is assigned; no result is inferred before closure.
+
+Archimedes CLOSED preceding remaining-history acquisition:
 A/data/current-native17-remaining-history-acquisition-20261105-v1/CALLBACK.json.
 Source3a80dd76/PLAN35c3ecbe/RESULTf7592340/CLOSED056d2f64:
 500acceptedGET/0failed/1POST/0recoveries,48749new RTH1m rows,125outputs/
@@ -22,14 +43,11 @@ Grade remains provisional local label/clock profile, not PIT/CA/finality/alpha/
 Paper/evaluation promotion. Old9f unattempted status is immutable history, not
 the present coverage of this new independently sourced acquisition.
 
-NEW assigned next package, no actual join/source result yet claimed:
-A/data/current-native17-historical-source-join-20261105-v1.
-Research-grade join existing7 overlap + missing10 only with exact source/
-calendar/venue/UTC/basis compatibility; no conflict override/imputation/raw
-rewrite. Invented producer->join->Bar/resampler before payload; source/masks/
-clock/header lineage and current custody retained,5typed timeframes.
-300summedactive/1800elapsed, zero newHTTP/token/account/order/Task/fit/forecast.
-Publishing does not release reserved Oct30-Nov6 targets or change Paper input.
+Preceding join-recoverydedbbd completed141936known/50334missing/4all17full;
+the current fe793 successor above adds retained45 without rewriting that result.
+First join failure required every price row's raw/capture witness; that was an
+implementation-specific gate, not absence. Successors separate price-known
+from witness-known masks and preserve unknown facts without fabricated values.
 
 Header-compatible completion is CLOSED, not a pending fit/collector:
 A/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.

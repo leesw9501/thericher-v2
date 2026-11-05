@@ -10758,3 +10758,24 @@ upgrade frozen launchers. A measured39-second callback exceeded an old30-second
 wait before any credential or HTTP use; the new prebound launcher completed
 its exact9GET round. This is not a provider quota or universal timing claim:
 D:/thericher-v2/model-artifacts/data/current-open45-prebound-latency-recovery-20261103-v1/TIMING-SUMMARY.json
+
+## 2026-11-05 Cost-Aware Selective Entry Development
+
+Consumer: a saved-weight causal proposal for provisional short-swing Paper,
+not a profitability gate or a replacement for an unknown existing request.
+The new absolute Net25 entry family freezes25bps per leg as a conservative
+public-reference research cost, with10legacy/30stress sensitivity. The
+[official general US online commission](https://securities.koreainvestment.com/main/bond/research/_static/TF03ca050000.jsp)
+does not establish this account's API tariff, promotions or actual Paper fees.
+Taxes, slippage, settlement and net Paper PnL remain separately unobserved.
+This is the named campaign's assumption, not a universal future fee mandate.
+Old10bps studies/results remain immutable; compare identical books and funded
+quantities rather than cached returns from different holding conventions.
+
+Selective-entry7eaa/ec9f completed HGB plus CUDA GRU and fixedhalf composition;
+development-pass has low mean gross and reused-data limitations. Freeze saved
+weights/features/normalizers for a distinct forward proposal, never repeat
+finished fits or hot-swap RAW8fd/INTCb63 identities. A fresh dated input and
+actual native risk/account checks remain necessary at financial effects.
+Claude GO_WITH_LIMITS for this bounded target/cost/claim interpretation:
+D:/thericher-v2/model-artifacts/research/current-cost-aware-selective-entry-campaign-readiness-20261105-v1/REVIEW.json.

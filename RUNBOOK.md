@@ -2,7 +2,7 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC03:10 / KST12:10. Company objective remains UNFINISHED.
+Updated Nov5UTC05:27 / KST14:27. Company objective remains UNFINISHED.
 Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
 Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
 replay consumed installer/enable/rollback modes to inspect their result.
@@ -54,8 +54,23 @@ RESULTf7592340/CLOSED056d2f64,Parent345absolute refs stable. Parent85actual
 codec readbacks03:14 resolved17sessions*5TF relativehashes/masks/semantic keys,
 48749M1known/0HTTP/model; initialbadcwdhash projection is NOTproof.
 Native5TF/masks retained, no all17complete/PIT/CA/finality/Paper/readout claim.
-Do not rerun collection. Source-qualified existing7+missing10 join assigned,
-current-native17-historical-source-join-20261105-v1,300active1800elapsed/0HTTP.
+Do not rerun collection. Joined successorfe793 is COMPLETE:
+D:/thericher-v2/model-artifacts/data/current-native17-retained45-recovery-20261105-v1/API.json.
+17550typed retained minutes/159486known/32784missing/19all17complete,
+0HTTP; Parent29panels/145native typedroles and250refs PASS. Masks preserve
+unknownheader/capture/PIT/CA/finality. Offline Nov2existing7 binding assigned;
+reservedOct30 remains separately reserved, no old target release.
+Recentcontrols7ff4 completed9GET1POST: Nov4AMD/SPY/QQQ each120matchingrows,
+six olderETFpagesempty; exactrequests only, not global retention. New8GET
+October probe is separately owned, no manual collector duplication.
+
+NET25 saved-weight inference preparation, NO refit:
+D:/thericher-v2/model-artifacts/research/current-net25-frozen-forward-proposal-preparation-20261105-v1.
+Actual7eaa/ec9f campaign completedHGB84trees +CUDA GRU42epochs/best18/
+4914updates/21.897s; primaryNet25blend0.8346%/DD0.8901%/mean gross2.74%.
+328checks/allactorsclosed/Parent56refs stable; reused development only,
+not actual tariff/PaperPnL/independentalpha or permission for model hot-swap.
+Closed learnedexit20a8 CPU33epochs is FAIL, never rerun completed fits.
 
 HGB c31dd342/9eecee48 CLOSED3CPUfits/168iterations/18views,primaryblendFAIL
 5.511% vs persistentRAW8.955% at10bps per side.41checks/6Jobs/68refs stable;
@@ -90,8 +105,13 @@ D:/thericher-v2/model-artifacts/execution/current-intc-installed-public-outcome-
 
 Use phase exit only for its exact owned exit. Bounded stable source/phase/UUID/
 clock/input/policy chain, never latestmtime. No private/Task/Docker/broker/env
-access. Current-local-custody reader is separately PREP only; actual writer
-admission/networknone/allRO/exactjoins/stability later. No reservation release.
+access. Current-local-custody kernel29328 and capturehost3058 are source-ready
+only; actual writer admission/networknone/allRO/exactjoins/stability later.
+15:25UTC composite877c Task preparation is NOT installed. Old3058 does not
+admit the new caller lineage; James owns versioned compatibility repair before
+Parent final activation/install. Do not run an early private probe or consume
+the actual phase namespace. A remains available if B is denied. No reservation
+release/currentbrokerholdings/fee/settledcash/PnL inference.
 
 Data source24a39/definitions268c ACTUALLY installed/enabled22:50:
 D:/thericher-v2/model-artifacts/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
